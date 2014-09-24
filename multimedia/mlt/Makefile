@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.9.0
-PORTREVISION?=	5
+PORTVERSION=	0.9.2
+PORTREVISION?=	0
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -32,22 +32,61 @@ CONFIGURE_ARGS+=--disable-debug
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README docs
 PORTEXAMPLES=	demo
 
-MAN1=		melt.1
-
-OPTIONS_DEFINE=	DOCS DV EXAMPLES FFMPEG FREI0R GTK2 JACK KDE4 QT4 QUICKTIME \
-		SAMPLERATE SOX SWFDEC VDPAU VORBIS
-OPTIONS_DEFAULT=DV FFMPEG FREI0R GTK2 QT4 \
-		SAMPLERATE SOX SWFDEC VORBIS
+OPTIONS_DEFINE=	DOCS EXAMPLES FFMPEG FREI0R GTK2 JACK KDE4 QT4 \
+		SAMPLERATE SOX SWFDEC VDPAU VIDSTAB
+OPTIONS_DEFAULT=FFMPEG FREI0R GTK2 QT4 SAMPLERATE SOX SWFDEC VIDSTAB
+OPTIONS_SUB=	yes
 
 GTK2_DESC=	Images and text rendering via GTK+ 2
-KDE4_DESC=	QImage extra formats support
-QT4_DESC=	Kdenlive titles and images support via QImage
+KDE4_DESC=	Qt extra image formats support
+QT4_DESC=	Kdenlive titles and images support via Qt 4
 SOX_DESC=	SoX audio effects support
+VIDSTAB_DESC=	Video stabilization support via Vid.Stab
+
+FFMPEG_SUFX=		# Currently empty.
+FFMPEG_LIB_DEPENDS=	libavformat${FFMPEG_SUFX}.so:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
+FFMPEG_CONFIGURE_ENABLE=avformat
+FFMPEG_CONFIGURE_ON=	--avformat-suffix="${FFMPEG_SUFX}"
+
+FREI0R_BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+FREI0R_CONFIGURE_ENABLE=frei0r
+
+GTK2_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+GTK2_USE=		GNOME=gdkpixbuf2,gtk20,pango
+GTK2_CONFIGURE_ENABLE=	gtk2
+
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+JACK_CONFIGURE_ENABLE=	jackrack
+
+KDE4_CONFIGURE_ENV=	PATH="${KDE4_PREFIX}/bin:$$PATH"
+KDE4_CONFIGURE_WITH=	kde
+
+QT4_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+QT4_USE=		QT4=corelib,gui,opengl,svg,xml
+QT4_CONFIGURE_ENABLE=	qt
+QT4_CONFIGURE_ON=	--qt-libdir="${QT_LIBDIR}" \
+			--qt-includedir="${QT_INCDIR}"
+
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SAMPLERATE_CONFIGURE_ENABLE=resample
+
+SOX_LIB_DEPENDS=	libsox.so:${PORTSDIR}/audio/sox
+SOX_CONFIGURE_ENABLE=	sox
+
+SWFDEC_LIB_DEPENDS=	libswfdec-0.8.so:${PORTSDIR}/graphics/swfdec
+SWFDEC_CONFIGURE_ENABLE=swfdec
+
+VDPAU_CONFIGURE_ON=	--avformat-vdpau
+VDPAU_CONFIGURE_OFF=	--avformat-no-vdpau
+
+VIDSTAB_LIB_DEPENDS=	libvidstab.so:${PORTSDIR}/multimedia/vid.stab
+VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
 .include <bsd.port.options.mk>
 
@@ -55,132 +94,19 @@ SOX_DESC=	SoX audio effects support
 BROKEN=		does not compile on sparc64 (invokes i386 asm)
 .endif
 
-.if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=	libdv.so:${PORTSDIR}/multimedia/libdv
-CONFIGURE_ARGS+=--enable-dv
-PLIST_SUB+=	DV=""
-.else
-CONFIGURE_ARGS+=--disable-dv
-PLIST_SUB+=	DV="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG} || ${PORT_OPTIONS:MVDPAU}
-FFMPEG_SUFX=
-LIB_DEPENDS+=	libavformat${FFMPEG_SUFX}.so:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
-CONFIGURE_ARGS+=--enable-avformat --avformat-swscale \
-		--avformat-suffix="${FFMPEG_SUFX}"
-PLIST_SUB+=	FFMPEG=""
-.else
-CONFIGURE_ARGS+=--disable-avformat
-PLIST_SUB+=	FFMPEG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFREI0R}
-BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
-CONFIGURE_ARGS+=--enable-frei0r
-PLIST_SUB+=	FREI0R=""
-.else
-CONFIGURE_ARGS+=--disable-frei0r
-PLIST_SUB+=	FREI0R="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif
-USE_GNOME+=	gdkpixbuf2 gtk20 pango
-CONFIGURE_ARGS+=--enable-gtk2
-PLIST_SUB+=	GTK2=""
-.else
-CONFIGURE_ARGS+=--disable-gtk2
-PLIST_SUB+=	GTK2="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-CONFIGURE_ARGS+=--enable-jackrack
-PLIST_SUB+=	JACK=""
-.else
-CONFIGURE_ARGS+=--disable-jackrack
-PLIST_SUB+=	JACK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif
-USE_QT4+=	corelib gui opengl svg xml
-CONFIGURE_ARGS+=--enable-qimage \
-		--qimage-includedir="${QT_INCDIR}" \
-		--qimage-libdir="${QT_LIBDIR}"
-PLIST_SUB+=	QT4=""
-. if ${PORT_OPTIONS:MKDE4}
+.if ${PORT_OPTIONS:MKDE4} && ${PORT_OPTIONS:MQT4}
 USE_KDE4+=	kdelibs
-CONFIGURE_ENV+=	PATH="${KDE4_PREFIX}/bin:$$PATH"
-. else
-CONFIGURE_ARGS+=--without-kde
-. endif
-.else
-CONFIGURE_ARGS+=--disable-qimage
-PLIST_SUB+=	QT4="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MQUICKTIME}
-LIB_DEPENDS+=	libdv.so:${PORTSDIR}/multimedia/libdv \
-		quicktime:${PORTSDIR}/multimedia/libquicktime
-CONFIGURE_ARGS+=--enable-kino
-PLIST_SUB+=	QUICKTIME=""
-.else
-CONFIGURE_ARGS+=--disable-kino
-PLIST_SUB+=	QUICKTIME="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-CONFIGURE_ARGS+=--enable-resample
-PLIST_SUB+=	SAMPLERATE=""
-.else
-CONFIGURE_ARGS+=--disable-resample
-PLIST_SUB+=	SAMPLERATE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSOX}
-LIB_DEPENDS+=	libsox.so:${PORTSDIR}/audio/sox
-CONFIGURE_ARGS+=--enable-sox
-PLIST_SUB+=	SOX=""
-.else
-CONFIGURE_ARGS+=--disable-sox
-PLIST_SUB+=	SOX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSWFDEC}
-LIB_DEPENDS+=	libswfdec-0.8.so:${PORTSDIR}/graphics/swfdec
-CONFIGURE_ARGS+=--enable-swfdec
-PLIST_SUB+=	SWFDEC=""
-.else
-CONFIGURE_ARGS+=--disable-swfdec
-PLIST_SUB+=	SWFDEC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVDPAU}
+.if ${PORT_OPTIONS:MVDPAU} && ${PORT_OPTIONS:MFFMPEG}
 USE_XORG+=	x11
-CONFIGURE_ARGS+=--avformat-vdpau
-.else
-CONFIGURE_ARGS+=--avformat-no-vdpau
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=--enable-vorbis
-PLIST_SUB+=	VORBIS=""
-.else
-CONFIGURE_ARGS+=--disable-vorbis
-PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
 		${WRKSRC}/src/modules/avformat/vdpau.c \
 		${WRKSRC}/src/modules/frei0r/factory.c \
-		${WRKSRC}/src/modules/jackrack/plugin_mgr.c \
-		${WRKSRC}/src/modules/linsys/Makefile
+		${WRKSRC}/src/modules/jackrack/plugin_mgr.c
 	@${REINPLACE_CMD} -e 's,-lpthread,-pthread,' \
 			-e 's,-liconv,${ICONV_LIB},' \
 		${WRKSRC}/src/framework/Makefile \
@@ -202,6 +128,10 @@ post-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}
 . endfor
 .endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/melt
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmlt.so.${PORTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmlt++.so.${PORTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mlt/*
 
 .endif # ${SLAVE_PORT} == "no"
 
