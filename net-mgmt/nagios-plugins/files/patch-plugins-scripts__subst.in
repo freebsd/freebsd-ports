@@ -1,5 +1,5 @@
---- ./plugins-scripts/subst.in.orig	2014-03-04 22:41:57.000000000 +0100
-+++ ./plugins-scripts/subst.in	2014-05-09 18:08:34.000000000 +0200
+--- plugins-scripts/subst.in.orig	2014-03-04 21:41:57 UTC
++++ plugins-scripts/subst.in
 @@ -1,7 +1,7 @@
  #!/usr/bin/awk
  
