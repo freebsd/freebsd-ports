@@ -13,7 +13,7 @@ COMMENT=	Perl sources to HTML converter
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	autoconf213
+GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
