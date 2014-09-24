@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg \
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
-		${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity3 \
+		${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity \
 		${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract \
 		${LOCALBASE}/bin/flock:${PORTSDIR}/sysutils/flock \
 		${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg
