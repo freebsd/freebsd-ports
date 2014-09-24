@@ -13,8 +13,7 @@ COMMENT=	Java sources to HTML converter
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	autoconf213
-
+GNU_CONFIGURE=	yes
 PORTDOCS=	AUTHORS NEWS README
 PLIST_FILES=	bin/java2html man/man1/java2html.1.gz
 
