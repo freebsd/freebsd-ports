@@ -57,6 +57,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fb25333d-442f-11e4-98f3-5453ed2e2b49">
+    <topic>krfb -- Multiple security issues in bundled libvncserver</topic>
+    <affects>
+      <package>
+	<name>krfb</name>
+	<range><lt>4.12.5_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Martin Sandsmark reports:</p>
+	<blockquote cite="http://lists.kde.org/?l=kde-announce&amp;m=141153917319769&amp;w=2">
+	  <p>krfb 4.14 [and earlier] embeds libvncserver which has had
+	    several security issues.</p>
+	  <p>Several remotely exploitable security issues have been
+	    uncovered in libvncserver, some of which might allow a
+	    remote authenticated user code execution or application
+	    crashes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6055</cvename>
+      <mlist>http://lists.kde.org/?l=kde-announce&amp;m=141153917319769&amp;w=2</mlist>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2014-09-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="71ad81da-4414-11e4-a33e-3c970e169bc2">
     <topic>bash -- remote code execution vulnerability</topic>
     <affects>
