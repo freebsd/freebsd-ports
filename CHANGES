@@ -13,56 +13,55 @@ All ports committers are allowed to commit to this file.
 20140922:
 AUTHOR: bapt@FreeBSD.org
 
-  pkg(8) now automatically handles the directories under PREFIX and will
-  automatically remove them as needed.
-  The @dir keyword has been introduced to handle special directory handling:
-  - directories with special credentials
+  pkg(8) now handles the directories under PREFIX automatically,
+  and will automatically remove them as needed.
+  A new @dir keyword has been introduced to handle directories specially:
+  - directories with special owner, group, or permissions (access mode)
   - empty directories
   - directories out of PREFIX
   As a consequence @dirrm and @dirrmtry are now considered deprecated.
 
-  Credentials can now be passed in arguments to keywords (empty keyword means
-  file):
+  Credentials can now be passed in arguments to keywords
+  (the empty keyword means "regular file"):
   @(user,group,mode) file1
-  @dir(user,group,mode) directory_with_special_credential
+  @dir(user,group,mode) directory_with_special_owner_or_mode
 
-  PLIST_DIRSTRY is now considered deprecated, PLIST_DIRS should be used
-  instead.
+  PLIST_DIRSTRY is now considered deprecated, use PLIST_DIRS instead.
 
 20140917:
 AUTHOR: tijl@FreeBSD.org
 
   Support for USE_AUTOTOOLS=libtool, USE_GNOME=ltasneededhack,
-  USE_GNOME=lthack and USE_GNOME=ltverhack has been removed.  Ports
-  should use USES=libtool instead.
+  USE_GNOME=lthack and USE_GNOME=ltverhack has been removed.
+  Ports should use USES=libtool instead.
 
-  Support for USE_AUTOTOOLS=libltdl has been removed.  Ports should
-  use LIB_DEPENDS=libltdl.so:${PORTSDIR}/devel/libltdl
+  Support for USE_AUTOTOOLS=libltdl has been removed.
+  Ports should use LIB_DEPENDS=libltdl.so:${PORTSDIR}/devel/libltdl
 
 20140916:
 AUTHOR: tijl@FreeBSD.org
 
   The installation of *.la files without some form of USES=libtool in the
-  port Makefile will now result in a stage-qa error.  Previously this would
-  only cause a warning.
+  port Makefile will now result in a stage-qa error.
+  Previously this would only cause a warning.
 
   The :keepla argument to USES=libtool is no longer special.  It is now
-  only needed if a port uses *.la files at run-time and no longer to fix
+  only needed if a port uses *.la files at run time and no longer to fix
   link problems in other ports.
 
 20140901:
 AUTHOR: bapt@FreeBSD.org
 
-  Support for pkg_install has been removed
-  Note that WITH_PKGNG is now WITH_PKG (still used to define 'devel')
+  Support for pkg_install has been removed.
+  Note that WITH_PKGNG is now called WITH_PKG (still used to define 'devel')
   WITH_PKGNG remains for compatibility
   @stopdaemon support has gone, pkg(8) has a generic mechanism to
-  provide the same functionnality
+  provide the same function, see HANDLE_RC_SCRIPTS in pkg.conf(5).
 
 20140901:
 AUTHOR: bapt@FreeBSD.org
 
-  Support for NO_STAGE has been removed
+  Support for NO_STAGE has been removed.
 
 20140825:
 AUTHOR: antoine@FreeBSD.org
@@ -95,7 +94,7 @@ AUTHOR: mva@FreeBSD.org
 20140715:
 AUTHOR: bapt@FreeBSD.org
 
-  Only one format is now support in LIB_DEPENDS: lib*.so
+  LIB_DEPENDS only supports one form: lib*.so
 
 20140708:
 AUTHOR: mva@FreeBSD.org
