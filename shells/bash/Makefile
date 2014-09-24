@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bash
-PATCHLEVEL=		24
+PATCHLEVEL=		25
 PORTVERSION=		4.3.${PATCHLEVEL:S/^0//g}
 PORTREVISION?=		0
 CATEGORIES=		shells
@@ -30,8 +30,9 @@ IMPLICITCD_DESC=	Use directory name alone to cd into it
 COLONBREAKSWORDS_DESC=	Colons break words
 HELP_DESC=		Enable builtin help
 
-USES=			bison makeinfo
+USES=			bison cpe makeinfo
 OPTIONS_SUB=		yes
+CPE_VENDOR=		gnu
 
 IMPLICITCD_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-implicitcd
 COLONBREAKSWORDS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-colonbreakswords
