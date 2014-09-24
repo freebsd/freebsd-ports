@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.nano-editor.org/dist/v2.2/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 LICENSE=	GPLv3

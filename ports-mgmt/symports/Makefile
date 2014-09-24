@@ -7,7 +7,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://isis.poly.edu/~eitan/files/
 DISTNAME=	auto-symlink-virtual-${PORTVERSION}
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically generate symlinks for virtual categories
 
 LICENSE=	BSD2CLAUSE

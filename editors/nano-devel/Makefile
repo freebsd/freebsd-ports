@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
 
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 LICENSE=	GPLv3

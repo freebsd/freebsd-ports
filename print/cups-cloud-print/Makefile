@@ -4,7 +4,7 @@ PORTNAME=	cups-cloud-print
 PORTVERSION=	0.0.1
 CATEGORIES=	print
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print using Google Cloud Print
 
 LICENSE=	GPLv3

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/timelimit/
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Limit the absolute execution time of a process
 
 LICENSE=	BSD2CLAUSE
