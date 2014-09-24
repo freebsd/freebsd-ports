@@ -11,6 +11,8 @@ COMMENT=	Simple Unicode-aware console-based word processor
 
 LICENSE=	MIT
 
+BROKEN=		Fails to build
+
 RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem
 
 USES=		lua:51 tar:bzip2
