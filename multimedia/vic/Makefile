@@ -14,10 +14,10 @@ COMMENT=	MBone video conferencing tool
 BUILD_DEPENDS=	v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libuclmmbase.so:${PORTSDIR}/devel/uclmmbase
 
-USES=		gmake tk:84 # parallel builds (-jX) are broken with BSD make(1)
+USES=		autoreconf gmake tk:84 # parallel builds (-jX) are broken with BSD make(1)
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	autoconf213
 USE_XORG=	xext
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	-x-libraries=${LOCALBASE}/lib \
 		-x-includes=${LOCALBASE}/include \
 		-without-ucltcl \
