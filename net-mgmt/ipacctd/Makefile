@@ -19,6 +19,9 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
+post-patch:
+	@${REINPLACE_CMD} 's,{MANDIR},{DESTDIR}$$&,' ${WRKSRC}/man_ru/Makefile
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ru
 	${INSTALL_DATA} ${WRKSRC}/README.ipacctd ${STAGEDIR}${DOCSDIR}/ru
