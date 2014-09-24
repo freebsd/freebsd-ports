@@ -9,7 +9,7 @@ MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION
 DISTFILES=	install_flash_player_11_linux.i386.tar.gz:plugin \
 		linux-f10-flashsupport-9.0.1.i386.tar.gz:suplib
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
