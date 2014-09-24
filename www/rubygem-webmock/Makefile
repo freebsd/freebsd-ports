@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmock
-PORTVERSION=	1.13.0
+PORTVERSION=	1.18.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Allows stubbing HTTP requests and setting expectations on the requests
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-crack>=0.3.2:${PORTSDIR}/devel/rubygem-crack \
-		rubygem-addressable>=2.2.7:${PORTSDIR}/www/rubygem-addressable
+		rubygem-addressable>=2.3.6:${PORTSDIR}/www/rubygem-addressable
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
