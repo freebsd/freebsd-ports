@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/tactics/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Open source tactical and strategic RPG
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric \
@@ -17,6 +17,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric 
 USE_PYTHON=	yes
 USES=		gettext twisted
 NO_BUILD=	yes
+
+PORTDATA=	*
+PORTDOCS=	*
+
 OPTIONS_DEFINE=	DOCS
 
 post-configure:
