@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- utils/llvm-build/llvmbuild/main.py.orig
 +++ utils/llvm-build/llvmbuild/main.py
-@@ -699,7 +699,16 @@
+@@ -660,7 +660,17 @@
  
      # We handle a few special cases of target names here for historical
      # reasons, as these are the names configure currently comes up with.
@@ -16,6 +16,7 @@ $FreeBSD$
 +			   'i386' : 'X86',
 +			   'mips' : 'Mips',
 +			   'powerpc' : 'PowerPC',
++			   'powerpc64' : 'PowerPC',
 +			   'sparc64' : 'Sparc',
 +                           'x86' : 'X86',
                             'x86_64' : 'X86',
