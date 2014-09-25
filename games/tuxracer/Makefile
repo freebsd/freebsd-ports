@@ -17,19 +17,14 @@ USE_SDL=	mixer sdl
 USE_GL=		gl
 USE_XORG=	x11 xt xmu xi
 USES=		gmake tk
-USE_AUTOTOOLS=	automake14 autoconf
-AUTOMAKE_ARGS=	-a
-CONFIGURE_ENV=	THREAD_LIB="${PTHREAD_LIBS}"
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-inc="${TCL_INCLUDEDIR}" \
 		--with-tcl-libs="${LOCALBASE}/lib" \
 		--with-tcl-lib-name=tcl${TCL_VER:S/.//} \
 		--with-gl-libs="${LOCALBASE}/lib" \
 		--with-gl-inc="${LOCALBASE}/include" \
 		--with-data-dir=${DATADIR}
-MAKE_ENV=	${CONFIGURE_ENV}
-
-post-extract:
-	@${RM} ${WRKSRC}/missing
+CPPFLAGS+=	-DGLX_GLXEXT_LEGACY
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
