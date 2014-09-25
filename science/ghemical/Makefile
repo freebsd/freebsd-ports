@@ -3,7 +3,7 @@
 
 PORTNAME=	ghemical
 PORTVERSION=	3.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 		http://bioinformatics.org/ghemical/download/current
@@ -25,7 +25,8 @@ USES=		fortran gettext gmake pkgconfig
 USE_GNOME=	glib20 gtk20 libglade2
 USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gamess --enable-mpqc --enable-openbabel --enable-gtk --enable-threads --enable-mopac7
+CONFIGURE_ARGS=	--enable-gamess --enable-mpqc --enable-openbabel --enable-gtk \
+		--enable-threads --enable-mopac7
 PLIST_SUB=	GHEMICAL_VERSION="${PORTVERSION}"
 
 CPPFLAGS=	-I${LOCALBASE}/include
