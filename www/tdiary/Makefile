@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 CATEGORIES?=	www ruby
 MASTER_SITES=	http://www.tdiary.org/download/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -12,9 +12,9 @@ COMMENT=	Web-based diary system (like weblog) written in Ruby
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	rubygem-fastimage>=1.6.0:${PORTSDIR}/graphics/rubygem-fastimage \
-		rubygem-hikidoc>=0:${PORTSDIR}/textproc/rubygem-hikidoc \
-		rubygem-multi_json>=1.8.4:${PORTSDIR}/devel/rubygem-multi_json \
+RUN_DEPENDS=	rubygem-fastimage>=1.6.3:${PORTSDIR}/graphics/rubygem-fastimage \
+		rubygem-hikidoc>=0.1.0:${PORTSDIR}/textproc/rubygem-hikidoc \
+		rubygem-multi_json>=1.10.1:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 
 NO_BUILD=	yes
@@ -47,7 +47,7 @@ PLIST_SUB=	TDIARY_SCRIPT=${TDIARY_SCRIPT} \
 SUB_FILES=	pkg-message tdiaryinst.rb
 SUB_LIST+=	TDIARY_LANG=${TDIARY_LANG} \
 		TDIARY_SCRIPT=${TDIARY_SCRIPT}
-WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}.1
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 WWWDIR=		${PREFIX}/www/${UNIQUENAME}
 
@@ -75,7 +75,7 @@ pre-patch:
 	@${RM} ${WRKSRC}/tdiary.gemspec
 	@${RM} ${WRKSRC}/tmp/.gitkeep
 	@${RM} -rf ${WRKSRC}/.bundle
-	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.6.2
+	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.7.2
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test
