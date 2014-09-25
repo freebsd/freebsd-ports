@@ -3,7 +3,7 @@
 
 PORTNAME=	gracer
 PORTVERSION=	0.1.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -18,15 +18,18 @@ LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 USE_GL=		glut
 USES=		gmake perl5 tcl:84
 USE_PERL5=	build
-USE_AUTOTOOLS=	autoconf213
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${TCL_INCLUDEDIR}
 LIBS+=		-L${LOCALBASE}/lib
-# for plib (sound):
-CONFIGURE_ARGS+=	--with-plib=${LOCALBASE}/plib
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/common/gr_memory.h
+	@${REINPLACE_CMD} \
+		-e 's|lib/tclConfig.sh|lib/tcl${TCL_VER}/tclConfig.sh|' \
+		-e '/SOUND_LIBS=/s/"$$/ -lplibul"/' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
