@@ -1,4 +1,3 @@
-@stopdaemon tor
 bin/tor
 bin/tor-gencert
 bin/tor-resolve
@@ -10,5 +9,3 @@ man/man1/tor.1.gz
 man/man1/torify.1.gz
 %%DATADIR%%/geoip
 %%DATADIR%%/geoip6
-@dirrm %%DATADIR%%
-@dirrmtry etc/tor
