@@ -19,6 +19,26 @@ lib/genius/libtestplugin.so
 libexec/genius-readline-helper-fifo
 share/application-registry/genius.applications
 share/applications/gnome-genius.desktop
+%%DATADIR%%/examples/cantor.gel
+%%DATADIR%%/examples/dalemb-pulse.gel
+%%DATADIR%%/examples/easy-matrix-examples.gel
+%%DATADIR%%/examples/eulers-method-exp-run.gel
+%%DATADIR%%/examples/eulers-method-graphs-exp.gel
+%%DATADIR%%/examples/fourier-series-animation.gel
+%%DATADIR%%/examples/fourier-series-half-sawtooth.gel
+%%DATADIR%%/examples/laplace-fdm.gel
+%%DATADIR%%/examples/linapprox.gel
+%%DATADIR%%/examples/lorenz.gel
+%%DATADIR%%/examples/newton-calc-sqrt2.gel
+%%DATADIR%%/examples/newton-sqrt2.gel
+%%DATADIR%%/examples/peano.gel
+%%DATADIR%%/examples/rsa.gel
+%%DATADIR%%/examples/shocks.gel
+%%DATADIR%%/examples/sierpinski.gel
+%%DATADIR%%/examples/standing-waves.gel
+%%DATADIR%%/examples/strange-attractor.gel
+%%DATADIR%%/examples/taylor-exp.gel
+%%DATADIR%%/examples/taylor-sin.gel
 %%DATADIR%%/gel/calculus/differentiation.gel
 %%DATADIR%%/gel/calculus/fourier.gel
 %%DATADIR%%/gel/calculus/integration.gel
@@ -184,38 +204,3 @@ share/omf/genius/genius-es.omf
 share/omf/genius/genius-fr.omf
 share/omf/genius/genius-pt_BR.omf
 share/omf/genius/genius-ru.omf
-@dirrm share/omf/genius
-@dirrm share/gnome/help/genius/ru/figures
-@dirrm share/gnome/help/genius/ru
-@dirrm share/gnome/help/genius/pt_BR/figures
-@dirrm share/gnome/help/genius/pt_BR
-@dirrm share/gnome/help/genius/fr/figures
-@dirrm share/gnome/help/genius/fr
-@dirrm share/gnome/help/genius/es/figures
-@dirrm share/gnome/help/genius/es
-@dirrm share/gnome/help/genius/el/figures
-@dirrm share/gnome/help/genius/el
-@dirrm share/gnome/help/genius/de/figures
-@dirrm share/gnome/help/genius/de
-@dirrm share/gnome/help/genius/cs/figures
-@dirrm share/gnome/help/genius/cs
-@dirrm share/gnome/help/genius/C/figures
-@dirrm share/gnome/help/genius/C
-@dirrm share/gnome/help/genius
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/gtksourceview
-@dirrm %%DATADIR%%/gel/symbolic
-@dirrm %%DATADIR%%/gel/statistics
-@dirrm %%DATADIR%%/gel/sets
-@dirrm %%DATADIR%%/gel/number_theory
-@dirrm %%DATADIR%%/gel/misc
-@dirrm %%DATADIR%%/gel/linear_algebra
-@dirrm %%DATADIR%%/gel/functions
-@dirrm %%DATADIR%%/gel/equation_solving
-@dirrm %%DATADIR%%/gel/commutative_algebra
-@dirrm %%DATADIR%%/gel/combinatorics
-@dirrm %%DATADIR%%/gel/calculus
-@dirrm %%DATADIR%%/gel
-@dirrm %%DATADIR%%
-@dirrm lib/genius
-@dirrm include/genius
