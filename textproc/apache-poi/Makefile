@@ -2,56 +2,43 @@
 # $FreeBSD$
 
 PORTNAME=	poi
-PORTVERSION=	3.9
+PORTVERSION=	3.10.1
 CATEGORIES=	textproc devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/release/src
+MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/release/bin
 PKGNAMEPREFIX=	apache-
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-20121203
+DISTNAME=	${PORTNAME}-bin-${PORTVERSION}-${RELEASE_DATE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java API To Access Microsoft Format Files
 
-BROKEN=		Tries to fetch files during build stage
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2014-09-28
-
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
-
+PORTDOCS=	*
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-DSTAMP=		`date +%Y%m%d`
-
-USE_ANT=	yes
-MAKE_ARGS=
-MAKE_ENV+=	ANT_INCLUDE_SHARED_JARS=YES
-PORTDOCS=	*
-ALL_TARGET=	jar
-JARFILE=	${PORTNAME}-${PORTVERSION}-${DSTAMP}.jar
-DESTJARFILE=	${PORTNAME}.jar
+NO_BUILD=	yes
+RELEASE_DATE=	20140818
 JARNAMES=	examples excelant scratchpad ooxml ooxml-schemas
-
-PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+OPTIONS_DEFINE=	DOCS
 
 .for i in ${JARNAMES}
-PLIST_FILES+=%%JAVAJARDIR%%/${PORTNAME}-${i}.jar
+PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}-${i}.jar
 .endfor
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/build/dist/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${ECHO_MSG} -n ">> Installing JAR as ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${RELEASE_DATE}.jar..."
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}-${RELEASE_DATE}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 .for i in ${JARNAMES}
-	${INSTALL_DATA} ${WRKSRC}/build/dist/${PORTNAME}-${i}-${PORTVERSION}-${DSTAMP}.jar ${JAVAJARDIR}/${PORTNAME}-${i}.jar
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${i}-${PORTVERSION}-${RELEASE_DATE}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${i}.jar
 .endfor
-	cd ${WRKSRC}/docs/apidocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-
-# Workaround stage and ANT bug
-do-build:
-	@(cd ${BUILD_WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${ANT} ${ALL_TARGET})
+	@${ECHO_MSG} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${STAGEDIR}${DOCSDIR}/..."
+	@cd ${WRKSRC}/docs \
+	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
+	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>
