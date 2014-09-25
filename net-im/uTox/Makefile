@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-DISTVERSION=	0.1.3.git20140902
+DISTVERSION=	0.1.8.git20140925
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	notsecure
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	5e60548
+GH_COMMIT=	3f86bb5
 
 USES=		compiler:c11 desktop-file-utils gmake pkgconfig
 INSTALLS_ICONS=	yes
