@@ -23,7 +23,7 @@ PLIST_FILES=	bin/dbclient \
 		man/man1/dropbearkey.1.gz \
 		man/man8/dropbear.8.gz
 
-PLIST_DIRSTRY=	etc/dropbear
+PLIST_DIRS=	etc/dropbear
 
 OPTIONS_DEFINE=	STATIC
 
