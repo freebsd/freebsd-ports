@@ -122,8 +122,12 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Mozilla Project reports:</p>
-	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
-	  <p>MFSA 2014-73 RSA Signature Forgery in NSS</p>
+	<blockquote cite="https://www.mozilla.org/security/announce/2014/mfsa2014-73.html">
+	  <p>Antoine Delignat-Lavaud discovered that NSS is vulnerable
+	  to a variant of a signature forgery attack previously
+	  published by Daniel Bleichenbacher.  This is due to lenient
+	  parsing of ASN.1 values involved in a signature and could
+	  lead to the forging of RSA certificates.</p>
 	</blockquote>
       </body>
     </description>
