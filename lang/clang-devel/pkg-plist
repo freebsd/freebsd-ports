@@ -134,7 +134,6 @@ llvm-devel/include/clang/ASTMatchers/Dynamic/Registry.h
 llvm-devel/include/clang/ASTMatchers/Dynamic/VariantValue.h
 llvm-devel/include/clang/Analysis/Analyses/CFGReachabilityAnalysis.h
 llvm-devel/include/clang/Analysis/Analyses/Consumed.h
-llvm-devel/include/clang/Analysis/Analyses/DataflowWorklist.h
 llvm-devel/include/clang/Analysis/Analyses/Dominators.h
 llvm-devel/include/clang/Analysis/Analyses/FormatString.h
 llvm-devel/include/clang/Analysis/Analyses/LiveVariables.h
@@ -154,6 +153,7 @@ llvm-devel/include/clang/Analysis/AnalysisDiagnostic.h
 llvm-devel/include/clang/Analysis/CFG.h
 llvm-devel/include/clang/Analysis/CFGStmtMap.h
 llvm-devel/include/clang/Analysis/CallGraph.h
+llvm-devel/include/clang/Analysis/CodeInjector.h
 llvm-devel/include/clang/Analysis/DomainSpecific/CocoaConventions.h
 llvm-devel/include/clang/Analysis/DomainSpecific/ObjCNoReturn.h
 llvm-devel/include/clang/Analysis/FlowSensitive/DataflowValues.h
@@ -171,6 +171,7 @@ llvm-devel/include/clang/Basic/Builtins.h
 llvm-devel/include/clang/Basic/BuiltinsAArch64.def
 llvm-devel/include/clang/Basic/BuiltinsARM.def
 llvm-devel/include/clang/Basic/BuiltinsHexagon.def
+llvm-devel/include/clang/Basic/BuiltinsLe64.def
 llvm-devel/include/clang/Basic/BuiltinsMips.def
 llvm-devel/include/clang/Basic/BuiltinsNEON.def
 llvm-devel/include/clang/Basic/BuiltinsNVPTX.def
@@ -432,6 +433,7 @@ llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/WorkList.h
 llvm-devel/include/clang/StaticAnalyzer/Frontend/AnalysisConsumer.h
 llvm-devel/include/clang/StaticAnalyzer/Frontend/CheckerRegistration.h
 llvm-devel/include/clang/StaticAnalyzer/Frontend/FrontendActions.h
+llvm-devel/include/clang/StaticAnalyzer/Frontend/ModelConsumer.h
 llvm-devel/include/clang/Tooling/ArgumentsAdjusters.h
 llvm-devel/include/clang/Tooling/CommonOptionsParser.h
 llvm-devel/include/clang/Tooling/CompilationDatabase.h
@@ -444,6 +446,7 @@ llvm-devel/include/clang/Tooling/ReplacementsYaml.h
 llvm-devel/include/clang/Tooling/Tooling.h
 llvm-devel/lib/clang/3.6.0/include/__wmmintrin_aes.h
 llvm-devel/lib/clang/3.6.0/include/__wmmintrin_pclmul.h
+llvm-devel/lib/clang/3.6.0/include/adxintrin.h
 llvm-devel/lib/clang/3.6.0/include/altivec.h
 llvm-devel/lib/clang/3.6.0/include/ammintrin.h
 llvm-devel/lib/clang/3.6.0/include/arm_neon.h

@@ -3,7 +3,6 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.6.r${SVN_REV}
-PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -34,8 +33,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
-USES=		compiler:c++11-lib gmake perl5 tar:bzip2
-USE_PYTHON=	yes
+USES=		compiler:c++11-lib gmake perl5 python tar:bzip2
 
 MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \
 		LLVMIncDir=${LLVM_PREFIX}/include \
