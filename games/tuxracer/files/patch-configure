@@ -1,0 +1,21 @@
+--- configure.orig	2001-01-23 21:12:19.000000000 +0100
++++ configure	2014-09-25 11:41:47.000000000 +0200
+@@ -1795,16 +1795,10 @@
+ 
+ 
+ TR_CPPFLAGS=""
+-TR_CFLAGS="-O2 -Wall -fomit-frame-pointer -ffast-math -fexpensive-optimizations"
+-TR_CXXFLAGS="-O2 -Wall -fomit-frame-pointer -ffast-math -fexpensive-optimizations"
++TR_CFLAGS=""
++TR_CXXFLAGS=""
+ TR_LIBS=""
+ 
+-case "$host" in
+-i*86-*-*) TR_CFLAGS="$TR_CFLAGS -malign-loops=2 -malign-jumps=2 -malign-functions=2";
+-          TR_CXXFLAGS="$TR_CXXFLAGS -malign-loops=2 -malign-jumps=2 -malign-functions=2";;
+-alpha*-*-linux-*) TR_CFLAGS="$TR_CFLAGS -mieee";;
+-esac
+-
+ # Check whether --enable-debug or --disable-debug was given.
+ if test "${enable_debug+set}" = set; then
+   enableval="$enable_debug"
