@@ -10,16 +10,13 @@ MASTER_SITES=	http://www.jstrack.org/${PORTNAME}/downloads/ \
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Freeware hurricane tracking program
 
-BROKEN=		Checksum and size mismatch
-
 LICENSE=	JStrack
 LICENSE_NAME=	JStrack
 LICENSE_TEXT=	It is and always will be free, and [Jim Graham] wrote it...\
 		so don't charge money for it, and don't claim that you wrote it
 LICENSE_PERMS=	dist-sell pkg-sell auto-accept
 
-LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm \
-		libimg.so:${PORTSDIR}/graphics/libimg
+LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
