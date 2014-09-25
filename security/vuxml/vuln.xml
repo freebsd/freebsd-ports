@@ -57,6 +57,48 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ca44b64c-4453-11e4-9ea1-c485083ca99c">
+    <topic>Flash player -- Multiple security vulnerabilities in www/linux-*-flashplugin11</topic>
+    <affects>
+      <package>
+	<name>flashplugin11</name>
+	<range><lt>11.2r202.400</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><lt>11.2r202.400</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb14-21.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0547</cvename>
+      <cvename>CVE-2014-0548</cvename>
+      <cvename>CVE-2014-0549</cvename>
+      <cvename>CVE-2014-0550</cvename>
+      <cvename>CVE-2014-0551</cvename>
+      <cvename>CVE-2014-0552</cvename>
+      <cvename>CVE-2014-0553</cvename>
+      <cvename>CVE-2014-0554</cvename>
+      <cvename>CVE-2014-0555</cvename>
+      <cvename>CVE-2014-0556</cvename>
+      <cvename>CVE-2014-0557</cvename>
+      <cvename>CVE-2014-0559</cvename>
+      <url>http://helpx.adobe.com/security/products/flash-player/apsb14-21.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-09</discovery>
+      <entry>2014-09-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="48108fb0-751c-4cbb-8f33-09239ead4b55">
     <topic>NSS -- RSA Signature Forgery</topic>
     <affects>
