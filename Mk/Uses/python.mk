@@ -192,6 +192,7 @@
 #	PYTHON_PLATFORM=${PYTHON_PLATFORM}
 #	PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 #	PYTHON_VERSION=${PYTHON_VERSION}
+#	PYTHON_VER=${PYTHON_VER}
 #
 #
 # Deprecated variables, which exist for compatibility and will be removed
@@ -558,7 +559,6 @@ add-plist-egginfo:
 		${LS} ${PYDISTUTILS_EGGINFODIR}/${egginfo} | while read f; do \
 			${ECHO_CMD} ${PYDISTUTILS_EGGINFODIR:S;^${STAGEDIR}${PYTHONBASE}/;;}/${egginfo}/$${f} >> ${TMPPLIST}; \
 		done; \
-		${ECHO_CMD} "@dirrmtry ${PYDISTUTILS_EGGINFODIR:S;${STAGEDIR}${PYTHONBASE}/;;}/${egginfo}" >> ${TMPPLIST}; \
 	fi;
 . endfor
 .else
@@ -571,33 +571,11 @@ _RELLIBDIR=		${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}
 
 add-plist-post:	add-plist-pymod
 add-plist-pymod:
-	@{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
-		${SED} '/^\.$$/d' > ${WRKDIR}/.localmtree
-	@${ECHO_CMD} "${_RELSITELIBDIR}" >> ${WRKDIR}/.localmtree
-	@${ECHO_CMD} "${_RELLIBDIR}" >> ${WRKDIR}/.localmtree
 	@${SED} -e 's|^${STAGEDIR}${PREFIX}/||' \
 		-e 's|^${PREFIX}/||' \
 		-e 's|^\(man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2.gz|' \
+		-e 's|[[:alnum:]|[:space:]]*/\.\./*||g; s|/\./|/|g' \
 		${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
-	@${SED} -e 's|^${STAGEDIR}${PREFIX}/\(.*\)/\(.*\)|\1|' \
-		-e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
-		${AWK} '{ num = split($$0, a, "/"); res=""; \
-					for(i = 1; i <= num; ++i) { \
-						if (i == 1) res = a[i]; \
-						else res = res "/" a[i]; \
-						print res; \
-					} \
-				}' | \
-		while read line; do \
-			${GREP} -qw "^$${line}$$" ${WRKDIR}/.localmtree || { \
-				[ -n "$${line}" ] && \
-				${ECHO_CMD} "@dirrmtry $${line}"; \
-			}; \
-		done | ${SORT} | uniq | ${SORT} -r >> ${TMPPLIST}
-.if ${PREFIX} != ${LOCALBASE}
-	@${ECHO_CMD} "@dirrmtry ${PYTHON_SITELIBDIR:S;${PYTHONBASE}/;;}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry ${PYTHON_LIBDIR:S;${PYTHONBASE}/;;}" >> ${TMPPLIST}
-.endif
 
 .else
 .if ${PYTHON_REL} >= 320 && defined(_PYTHON_FEATURE_PY3KPLIST)
@@ -611,9 +589,9 @@ add-plist-post:
 		/^@dirrm / {d = substr($$0, 8); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
 		/^@dirrmtry / {d = substr($$0, 11); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
 		{print} \
-		END {if (sp in dirs) {print "@dirrm " sp "/" pc}} \
+		END \
 		' \
-		pc="__pycache__" mt="$$(${PYMAGICTAG})" sp="${PYTHON_SITELIBDIR:S,${PYTHONBASE}/,,g}" \
+		pc="__pycache__" mt="$$(${PYMAGICTAG})" \
 		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
 	@${MV} ${TMPPLIST}.pyc_tmp ${TMPPLIST}
 .endif # ${PYTHON_REL} >= 320 && defined(_PYTHON_FEATURE_PY3KPLIST)
@@ -654,7 +632,8 @@ PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;} \
 		PYTHON_PLATFORM=${PYTHON_PLATFORM} \
 		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
-		PYTHON_VERSION=${PYTHON_VERSION}
+		PYTHON_VERSION=${PYTHON_VERSION} \
+		PYTHON_VER=${PYTHON_VER}
 
 _USES_POST+=	python
 .endif # _INCLUDE_USES_PYTHON_MK
