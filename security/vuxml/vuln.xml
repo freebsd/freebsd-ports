@@ -206,13 +206,13 @@ Notes:
       <package>
 	<name>bash</name>
 	<name>bash-static</name>
-	<range><gt>3.0</gt><lt>3.0.17</lt></range>
-	<range><gt>3.1</gt><lt>3.1.18</lt></range>
-	<range><gt>3.2</gt><lt>3.2.52</lt></range>
-	<range><gt>4.0</gt><lt>4.0.39</lt></range>
-	<range><gt>4.1</gt><lt>4.1.12</lt></range>
-	<range><gt>4.2</gt><lt>4.2.48</lt></range>
-	<range><gt>4.3</gt><lt>4.3.25</lt></range>
+	<range><gt>3.0</gt><le>3.0.17</le></range>
+	<range><gt>3.1</gt><le>3.1.18</le></range>
+	<range><gt>3.2</gt><le>3.2.52</le></range>
+	<range><gt>4.0</gt><le>4.0.39</le></range>
+	<range><gt>4.1</gt><le>4.1.12</le></range>
+	<range><gt>4.2</gt><le>4.2.48</le></range>
+	<range><gt>4.3</gt><lt>4.3.25_1</lt></range>
       </package>
     </affects>
     <description>
@@ -223,16 +223,21 @@ Notes:
 	    while processing the environment for exported function
 	    definitions.</p>
 	</blockquote>
+	<p>The original fix released for CVE-2014-6271 was not adequate. A
+	  similar vulnerability was discovered and tagged as CVE-2014-3659.</p>
       </body>
     </description>
     <references>
       <cvename>CVE-2014-6271</cvename>
+      <cvename>CVE-2014-3659</cvename>
       <url>https://securityblog.redhat.com/2014/09/24/bash-specially-crafted-environment-variables-code-injection-attack/</url>
       <url>https://lists.gnu.org/archive/html/bug-bash/2014-09/msg00081.html</url>
+      <url>http://seclists.org/oss-sec/2014/q3/690</url>
     </references>
     <dates>
       <discovery>2014-09-24</discovery>
       <entry>2014-09-24</entry>
+      <modified>2014-09-25</modified>
     </dates>
   </vuln>
 
