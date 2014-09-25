@@ -32,7 +32,7 @@ VTK6_CMAKE_ON=		-DGDCM_USE_VTK:BOOL=YES \
 # Change this when updating the port
 GDCM_MAJOR=	2
 GDCM_MINOR=	4
-GDCM_PATCH=	3
+GDCM_PATCH=	4
 
 # Change this whenever VTK is updated
 VTK5_VERSION=	5.10
