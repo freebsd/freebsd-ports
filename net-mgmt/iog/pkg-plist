@@ -9,11 +9,9 @@ iog/iog-%%VERSION%%/howto-iog.html
 iog/iog-%%VERSION%%/in.gif
 iog/iog-%%VERSION%%/index.php
 iog/iog-%%VERSION%%/iog
-iog/iog-%%VERSION%%/iog.cfg
 @sample iog/iog-%%VERSION%%/iog.cfg.sample
 iog/iog-%%VERSION%%/ioglogo.gif
 iog/iog-%%VERSION%%/out.gif
-@dirrmtry iog/iog-%%VERSION%%
-@dirrmtry iog
+@dir iog/iog-%%VERSION%%
 @owner
 @group
