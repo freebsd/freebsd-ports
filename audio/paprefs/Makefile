@@ -11,12 +11,13 @@ MAINTAINER=	romain@FreeBSD.org
 COMMENT=	GTK configuration dialog for PulseAudio
 
 LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig
-USE_GNOME=	gnomeprefix intltool
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		gmake pkgconfig
+USE_GNOME=	gconfmm26 gnomeprefix
 
 CONFIGURE_ARGS=	--disable-lynx
 

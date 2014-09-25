@@ -22,7 +22,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-xkb-base=${PREFIX}/share/X11/xkb \
 		--with-xkb-rules-symlink=xorg
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	ETERSOFT
 ETERSOFT_DESC=	Add pre-1918 Russian letters to typographic layout

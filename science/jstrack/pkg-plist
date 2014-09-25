@@ -99,82 +99,7 @@ lib/jstrack/tracker/lib/userdata.tcl
 lib/jstrack/tracker/lib/userdata.tk
 lib/jstrack/tracker/options.tcl
 lib/jstrack/tracker/sample_sysconfig.tcl
-lib/jstrack/tracker/storms/alberto.adv
-lib/jstrack/tracker/storms/alberto.dis
-lib/jstrack/tracker/storms/alberto.fc
-lib/jstrack/tracker/storms/alberto.trk
-lib/jstrack/tracker/storms/beryl.adv
-lib/jstrack/tracker/storms/beryl.dis
-lib/jstrack/tracker/storms/beryl.fc
-lib/jstrack/tracker/storms/beryl.trk
-lib/jstrack/tracker/storms/chris.adv
-lib/jstrack/tracker/storms/chris.dis
-lib/jstrack/tracker/storms/chris.fc
-lib/jstrack/tracker/storms/chris.trk
-lib/jstrack/tracker/storms/debby.adv
-lib/jstrack/tracker/storms/debby.dis
-lib/jstrack/tracker/storms/debby.fc
-lib/jstrack/tracker/storms/debby.trk
-lib/jstrack/tracker/storms/eight.adv
-lib/jstrack/tracker/storms/eight.dis
-lib/jstrack/tracker/storms/eight.fc
-lib/jstrack/tracker/storms/eight.trk
-lib/jstrack/tracker/storms/eleven.adv
-lib/jstrack/tracker/storms/eleven.dis
-lib/jstrack/tracker/storms/eleven.fc
-lib/jstrack/tracker/storms/eleven.trk
-lib/jstrack/tracker/storms/ernesto.adv
-lib/jstrack/tracker/storms/ernesto.dis
-lib/jstrack/tracker/storms/ernesto.fc
-lib/jstrack/tracker/storms/ernesto.trk
-lib/jstrack/tracker/storms/five.adv
-lib/jstrack/tracker/storms/five.dis
-lib/jstrack/tracker/storms/five.fc
-lib/jstrack/tracker/storms/five.trk
-lib/jstrack/tracker/storms/florence.adv
-lib/jstrack/tracker/storms/florence.dis
-lib/jstrack/tracker/storms/florence.fc
-lib/jstrack/tracker/storms/florence.trk
-lib/jstrack/tracker/storms/fourteen.adv
-lib/jstrack/tracker/storms/fourteen.dis
-lib/jstrack/tracker/storms/fourteen.fc
-lib/jstrack/tracker/storms/gordon.adv
-lib/jstrack/tracker/storms/gordon.dis
-lib/jstrack/tracker/storms/gordon.fc
-lib/jstrack/tracker/storms/gordon.trk
-lib/jstrack/tracker/storms/helene.adv
-lib/jstrack/tracker/storms/helene.dis
-lib/jstrack/tracker/storms/helene.fc
-lib/jstrack/tracker/storms/helene.trk
-lib/jstrack/tracker/storms/isaac.adv
-lib/jstrack/tracker/storms/isaac.dis
-lib/jstrack/tracker/storms/isaac.fc
-lib/jstrack/tracker/storms/isaac.trk
-lib/jstrack/tracker/storms/joyce.adv
-lib/jstrack/tracker/storms/joyce.dis
-lib/jstrack/tracker/storms/joyce.fc
-lib/jstrack/tracker/storms/joyce.trk
-lib/jstrack/tracker/storms/kirk.adv
-lib/jstrack/tracker/storms/kirk.dis
-lib/jstrack/tracker/storms/kirk.fc
-lib/jstrack/tracker/storms/kirk.trk
-lib/jstrack/tracker/storms/leslie.adv
-lib/jstrack/tracker/storms/leslie.dis
-lib/jstrack/tracker/storms/leslie.fc
-lib/jstrack/tracker/storms/leslie.trk
 lib/jstrack/tracker/storms/merge
-lib/jstrack/tracker/storms/michael.adv
-lib/jstrack/tracker/storms/michael.dis
-lib/jstrack/tracker/storms/michael.fc
-lib/jstrack/tracker/storms/michael.trk
-lib/jstrack/tracker/storms/nadine.adv
-lib/jstrack/tracker/storms/nadine.dis
-lib/jstrack/tracker/storms/nadine.fc
-lib/jstrack/tracker/storms/nadine.trk
-lib/jstrack/tracker/storms/nine.adv
-lib/jstrack/tracker/storms/nine.dis
-lib/jstrack/tracker/storms/nine.fc
-lib/jstrack/tracker/storms/nine.trk
 lib/jstrack/tracker/storms/old/2007/chantal.adv
 lib/jstrack/tracker/storms/old/2007/chantal.dis
 lib/jstrack/tracker/storms/old/2007/chantal.fc
@@ -643,39 +568,4 @@ lib/jstrack/tracker/storms/old/2011/twelve.dis
 lib/jstrack/tracker/storms/old/2011/twelve.fc
 lib/jstrack/tracker/storms/old/2011/two.dis
 lib/jstrack/tracker/storms/old/2011/two.fc
-lib/jstrack/tracker/storms/seven.adv
-lib/jstrack/tracker/storms/seven.dis
-lib/jstrack/tracker/storms/seven.fc
-lib/jstrack/tracker/storms/seven.trk
-lib/jstrack/tracker/storms/six.adv
-lib/jstrack/tracker/storms/six.dis
-lib/jstrack/tracker/storms/six.fc
-lib/jstrack/tracker/storms/six.trk
-lib/jstrack/tracker/storms/ten.adv
-lib/jstrack/tracker/storms/ten.dis
-lib/jstrack/tracker/storms/ten.fc
-lib/jstrack/tracker/storms/ten.trk
-lib/jstrack/tracker/storms/thirteen.adv
-lib/jstrack/tracker/storms/thirteen.dis
-lib/jstrack/tracker/storms/thirteen.fc
-lib/jstrack/tracker/storms/twelve.adv
-lib/jstrack/tracker/storms/twelve.dis
-lib/jstrack/tracker/storms/twelve.fc
 bin/jstrack
-@dirrmtry lib/jstrack/tracker/storms/old/2011
-@dirrmtry lib/jstrack/tracker/storms/old/2010
-@dirrmtry lib/jstrack/tracker/storms/old/2009
-@dirrmtry lib/jstrack/tracker/storms/old/2008
-@dirrmtry lib/jstrack/tracker/storms/old/2007
-@dirrmtry lib/jstrack/tracker/storms/old
-@dirrmtry lib/jstrack/tracker/storms
-@dirrmtry lib/jstrack/tracker/lib/images
-@dirrmtry lib/jstrack/tracker/lib/autoscroll
-@dirrmtry lib/jstrack/tracker/lib
-@dirrmtry lib/jstrack/tracker/imagery
-@dirrmtry lib/jstrack/tracker
-@dirrmtry lib/jstrack/httpfilt/ts
-@dirrmtry lib/jstrack/httpfilt
-@dirrmtry lib/jstrack/filt/tmp
-@dirrmtry lib/jstrack/filt
-@dirrmtry lib/jstrack

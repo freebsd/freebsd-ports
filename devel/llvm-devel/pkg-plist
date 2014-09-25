@@ -145,6 +145,7 @@ llvm-devel/include/llvm/ADT/iterator.h
 llvm-devel/include/llvm/ADT/iterator_range.h
 llvm-devel/include/llvm/Analysis/AliasAnalysis.h
 llvm-devel/include/llvm/Analysis/AliasSetTracker.h
+llvm-devel/include/llvm/Analysis/AssumptionTracker.h
 llvm-devel/include/llvm/Analysis/BlockFrequencyInfo.h
 llvm-devel/include/llvm/Analysis/BlockFrequencyInfoImpl.h
 llvm-devel/include/llvm/Analysis/BranchProbabilityInfo.h
@@ -164,6 +165,7 @@ llvm-devel/include/llvm/Analysis/DomPrinter.h
 llvm-devel/include/llvm/Analysis/DominanceFrontier.h
 llvm-devel/include/llvm/Analysis/DominanceFrontierImpl.h
 llvm-devel/include/llvm/Analysis/FindUsedTypes.h
+llvm-devel/include/llvm/Analysis/FunctionTargetTransformInfo.h
 llvm-devel/include/llvm/Analysis/IVUsers.h
 llvm-devel/include/llvm/Analysis/InlineCost.h
 llvm-devel/include/llvm/Analysis/InstructionSimplify.h
@@ -224,7 +226,6 @@ llvm-devel/include/llvm/CodeGen/GCStrategy.h
 llvm-devel/include/llvm/CodeGen/GCs.h
 llvm-devel/include/llvm/CodeGen/ISDOpcodes.h
 llvm-devel/include/llvm/CodeGen/IntrinsicLowering.h
-llvm-devel/include/llvm/CodeGen/JITCodeEmitter.h
 llvm-devel/include/llvm/CodeGen/JumpInstrTables.h
 llvm-devel/include/llvm/CodeGen/LatencyPriorityQueue.h
 llvm-devel/include/llvm/CodeGen/LexicalScopes.h
@@ -242,8 +243,6 @@ llvm-devel/include/llvm/CodeGen/MachORelocation.h
 llvm-devel/include/llvm/CodeGen/MachineBasicBlock.h
 llvm-devel/include/llvm/CodeGen/MachineBlockFrequencyInfo.h
 llvm-devel/include/llvm/CodeGen/MachineBranchProbabilityInfo.h
-llvm-devel/include/llvm/CodeGen/MachineCodeEmitter.h
-llvm-devel/include/llvm/CodeGen/MachineCodeInfo.h
 llvm-devel/include/llvm/CodeGen/MachineCombinerPattern.h
 llvm-devel/include/llvm/CodeGen/MachineConstantPool.h
 llvm-devel/include/llvm/CodeGen/MachineDominanceFrontier.h
@@ -265,7 +264,6 @@ llvm-devel/include/llvm/CodeGen/MachinePassRegistry.h
 llvm-devel/include/llvm/CodeGen/MachinePostDominators.h
 llvm-devel/include/llvm/CodeGen/MachineRegionInfo.h
 llvm-devel/include/llvm/CodeGen/MachineRegisterInfo.h
-llvm-devel/include/llvm/CodeGen/MachineRelocation.h
 llvm-devel/include/llvm/CodeGen/MachineSSAUpdater.h
 llvm-devel/include/llvm/CodeGen/MachineScheduler.h
 llvm-devel/include/llvm/CodeGen/MachineTraceMetrics.h
@@ -314,9 +312,7 @@ llvm-devel/include/llvm/DebugInfo/DWARFFormValue.h
 llvm-devel/include/llvm/ExecutionEngine/ExecutionEngine.h
 llvm-devel/include/llvm/ExecutionEngine/GenericValue.h
 llvm-devel/include/llvm/ExecutionEngine/Interpreter.h
-llvm-devel/include/llvm/ExecutionEngine/JIT.h
 llvm-devel/include/llvm/ExecutionEngine/JITEventListener.h
-llvm-devel/include/llvm/ExecutionEngine/JITMemoryManager.h
 llvm-devel/include/llvm/ExecutionEngine/MCJIT.h
 llvm-devel/include/llvm/ExecutionEngine/OProfileWrapper.h
 llvm-devel/include/llvm/ExecutionEngine/ObjectBuffer.h
@@ -412,11 +408,6 @@ llvm-devel/include/llvm/LinkAllIR.h
 llvm-devel/include/llvm/LinkAllPasses.h
 llvm-devel/include/llvm/Linker/Linker.h
 llvm-devel/include/llvm/MC/ConstantPools.h
-llvm-devel/include/llvm/MC/MCAnalysis/MCAtom.h
-llvm-devel/include/llvm/MC/MCAnalysis/MCFunction.h
-llvm-devel/include/llvm/MC/MCAnalysis/MCModule.h
-llvm-devel/include/llvm/MC/MCAnalysis/MCModuleYAML.h
-llvm-devel/include/llvm/MC/MCAnalysis/MCObjectSymbolizer.h
 llvm-devel/include/llvm/MC/MCAsmBackend.h
 llvm-devel/include/llvm/MC/MCAsmInfo.h
 llvm-devel/include/llvm/MC/MCAsmInfoCOFF.h
@@ -450,7 +441,6 @@ llvm-devel/include/llvm/MC/MCLabel.h
 llvm-devel/include/llvm/MC/MCLinkerOptimizationHint.h
 llvm-devel/include/llvm/MC/MCMachOSymbolFlags.h
 llvm-devel/include/llvm/MC/MCMachObjectWriter.h
-llvm-devel/include/llvm/MC/MCObjectDisassembler.h
 llvm-devel/include/llvm/MC/MCObjectFileInfo.h
 llvm-devel/include/llvm/MC/MCObjectStreamer.h
 llvm-devel/include/llvm/MC/MCObjectWriter.h
@@ -517,6 +507,7 @@ llvm-devel/include/llvm/ProfileData/CoverageMappingWriter.h
 llvm-devel/include/llvm/ProfileData/InstrProf.h
 llvm-devel/include/llvm/ProfileData/InstrProfReader.h
 llvm-devel/include/llvm/ProfileData/InstrProfWriter.h
+llvm-devel/include/llvm/ProfileData/SampleProfReader.h
 llvm-devel/include/llvm/Support/AIXDataTypesFix.h
 llvm-devel/include/llvm/Support/ARMBuildAttributes.h
 llvm-devel/include/llvm/Support/ARMEHABI.h
@@ -611,6 +602,7 @@ llvm-devel/include/llvm/Support/Timer.h
 llvm-devel/include/llvm/Support/ToolOutputFile.h
 llvm-devel/include/llvm/Support/Unicode.h
 llvm-devel/include/llvm/Support/UnicodeCharRanges.h
+llvm-devel/include/llvm/Support/UniqueLock.h
 llvm-devel/include/llvm/Support/Valgrind.h
 llvm-devel/include/llvm/Support/Watchdog.h
 llvm-devel/include/llvm/Support/Win64EH.h
@@ -636,7 +628,6 @@ llvm-devel/include/llvm/Target/TargetFrameLowering.h
 llvm-devel/include/llvm/Target/TargetInstrInfo.h
 llvm-devel/include/llvm/Target/TargetIntrinsicInfo.h
 llvm-devel/include/llvm/Target/TargetItinerary.td
-llvm-devel/include/llvm/Target/TargetJITInfo.h
 llvm-devel/include/llvm/Target/TargetLibraryInfo.h
 llvm-devel/include/llvm/Target/TargetLowering.h
 llvm-devel/include/llvm/Target/TargetLoweringObjectFile.h
@@ -714,12 +705,10 @@ llvm-devel/lib/libLLVMIRReader.a
 llvm-devel/lib/libLLVMInstCombine.a
 llvm-devel/lib/libLLVMInstrumentation.a
 llvm-devel/lib/libLLVMInterpreter.a
-llvm-devel/lib/libLLVMJIT.a
 llvm-devel/lib/libLLVMLTO.a
 llvm-devel/lib/libLLVMLineEditor.a
 llvm-devel/lib/libLLVMLinker.a
 llvm-devel/lib/libLLVMMC.a
-llvm-devel/lib/libLLVMMCAnalysis.a
 llvm-devel/lib/libLLVMMCDisassembler.a
 llvm-devel/lib/libLLVMMCJIT.a
 llvm-devel/lib/libLLVMMCParser.a
@@ -791,6 +780,7 @@ llvm-devel/share/llvm/cmake/AddLLVM.cmake
 llvm-devel/share/llvm/cmake/AddLLVMDefinitions.cmake
 llvm-devel/share/llvm/cmake/AddSphinxTarget.cmake
 llvm-devel/share/llvm/cmake/ChooseMSVCCRT.cmake
+llvm-devel/share/llvm/cmake/CrossCompile.cmake
 llvm-devel/share/llvm/cmake/FindSphinx.cmake
 llvm-devel/share/llvm/cmake/GetSVN.cmake
 llvm-devel/share/llvm/cmake/HandleLLVMOptions.cmake
@@ -1082,7 +1072,6 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 @dirrm llvm-devel/include/llvm/Option
 @dirrm llvm-devel/include/llvm/Object
 @dirrm llvm-devel/include/llvm/MC/MCParser
-@dirrm llvm-devel/include/llvm/MC/MCAnalysis
 @dirrm llvm-devel/include/llvm/MC
 @dirrm llvm-devel/include/llvm/Linker
 @dirrm llvm-devel/include/llvm/LineEditor

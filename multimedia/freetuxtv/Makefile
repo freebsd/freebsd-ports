@@ -3,7 +3,7 @@
 
 PORTNAME=	freetuxtv
 PORTVERSION=	0.6.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -12,26 +12,19 @@ COMMENT=	WebTV player based on GTK2+ and LibVLC
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gmake iconv libtool pathfix pkgconfig
-USE_GNOME=	gtk20 cairo
-USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
-		xi xinerama xrandr xrender
+USES=		gmake iconv libtool pkgconfig
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-gtk=2.0
+CONFIGURE_ARGS=	--with-gtk=2.0
 CFLAGS+=	-Wno-return-type -w
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
@@ -48,7 +41,7 @@ SUB_FILES=	pkg-message
 PORTSCOUT=	ignore:1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${pkgdatadir}/doc|$${PREFIX}/share/doc/${PORTNAME}|' \
+	@${REINPLACE_CMD} -e 's|$${pkgdatadir}/doc|$${pkgdocdir}|' \
 		-e 's|install-data-am: install-freetuxtvdocDATA|install-data-am: |' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's/libvlc_media_new_path/libvlc_media_new_location/' \

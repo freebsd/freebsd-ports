@@ -33,8 +33,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^Makefile.gdoc:/s/configure /configure.ac /' \
-		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e '/^Libs.private:/s/$$/ @LTLIBINTL@/' \
 		${WRKSRC}/libidn.pc.in
 

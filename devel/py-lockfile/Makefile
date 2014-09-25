@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lockfile
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +12,9 @@ COMMENT=	Platform-independent file locking module
 
 LICENSE=	MIT
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:${PORTSDIR}/devel/py-pbr
+
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

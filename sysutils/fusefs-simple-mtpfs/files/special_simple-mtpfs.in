@@ -4,7 +4,7 @@
 # /mtp		-simple-mtpfs	-allow_other
 #
 
-out=$(%%PREFIX%%/bin/simple-mtpfs --list-devices 2>&1)
+out=$(%%PREFIX%%/bin/simple-mtpfs --list-devices)
 [ $? -eq 0 ] || exit 1
 
 if [ $# -eq 0 ]; then

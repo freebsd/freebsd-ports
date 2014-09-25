@@ -25,7 +25,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomehier intltool
+USE_GNOME=	gnomehier intlhack
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		IPV6 NLS UPNP VIDEO

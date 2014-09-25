@@ -22,8 +22,10 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
 		libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
-USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes

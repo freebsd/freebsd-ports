@@ -23,12 +23,14 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		gtkspell3>0:${PORTSDIR}/textproc/gtkspell3 \
 		${BUILD_DEPENDS}
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake pkgconfig tar:xz
 USE_GNOME=	gnomedocutils gnomehier gtk30 librsvg2 pygobject3
 USE_GHOSTSCRIPT=yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \

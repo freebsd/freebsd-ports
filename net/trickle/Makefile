@@ -22,7 +22,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS+=--with-libevent=${LOCALBASE} \
 		--sysconfdir=${PREFIX}/etc
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
+CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	*

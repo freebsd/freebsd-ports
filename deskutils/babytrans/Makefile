@@ -10,11 +10,14 @@ MASTER_SITES=	http://fjolliton.free.fr/babytrans/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+/GNOME front-end for Babylon Translator .dic files
 
-USES=		gmake gettext pathfix
+DEPRECATED=	Abandonware, dictionaries unavailable
+EXPIRATION_DATE=2014-10-31
+
+USES=		gmake gettext
 USE_GNOME=	gtk12 gnomeprefix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lintl
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 

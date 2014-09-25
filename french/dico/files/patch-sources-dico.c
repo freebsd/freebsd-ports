@@ -29,15 +29,6 @@
  #ifdef MSDOS                            /* Systeme d'operation de disque */
  #define MYOS "MSDOS"                    /* Microsoft :-)                 */
  #endif
-@@ -49,7 +57,7 @@
- #define ISO_TERM    3
- #define COMMENT_CHAR 35                 /* '#' ligne de commentaire        */
- 
--#define DICT_PATH "/usr/local/lib/dico"  /* path par defaut unix/dos        */
-+#define DICT_PATH "%%PREFIX%%/share/dico" /* path par defaut unix/dos      */
- #define DOS_PATH  "lexique"              /* path par defaut Dos uniquement  */
- #define DICT_EXT ".dic"                  /* extension des fichiers dicos    */
- #define VERSION_FILE "version.dic"       /* fichier texte version dico      */
 @@ -58,11 +66,13 @@
  #define OK    0
  #define MYVBUF 10240                     /* pour setvbuf() eventuel         */
