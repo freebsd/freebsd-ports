@@ -3,7 +3,6 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.6.r${SVN_REV}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -105,10 +104,10 @@ PORTDATA+=	cmake
 
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=		lit.1
-USE_PYTHON=		yes
+USES+=			python
 LIT_COMMANDS=		lit llvm-lit FileCheck
 .else
-USE_PYTHON_BUILD=	yes
+USES+=			python:build
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
