@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -82,11 +82,6 @@ CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 CFLAGS+=	-O2 -ffast-math
 CXXFLAGS+=	-O2 -ffast-math
 .endif
-
-post-patch:
-	# To get so.8.0.1, we need to -version-info to show 8.1.0
-	# <current>:<rev>:<age> => so.(current-age).(age).(rev)
-	${REINPLACE_CMD} -e 's|\[8:0:1\]|\[8:1:0\]|' ${WRKSRC}/configure.in
 
 do-build:
 	(cd ${WRKSRC} && ${MAKE_CMD})
