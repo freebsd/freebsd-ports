@@ -6,10 +6,12 @@ PORTVERSION=	1.5.2
 PORTREVISION=	3
 CATEGORIES=	java graphics games devel
 MASTER_SITES=	https://sites.google.com/site/daemonwizard/
-DISTNAME=	java3d-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides API for creating and manipulation of 3D geometry
+
+LICENSE=	GPLv2 MIT
+LICENSE_COMB=	multi
 
 USES=		tar:bzip2
 USE_JAVA=	yes
@@ -23,8 +25,6 @@ PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/^${PREFIX}\///} ARCH=${ARCH}
 
 DOCSSRC=	${WRKSRC}/j3d-core/build/freebsd/javadocs/docs-public
 PORTDOCS=	*
-
-RESTRICTED=	License does not allow distribution
 
 OPTIONS_DEFINE=	DOCS
 
