@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jaraco.util
-PORTVERSION=	10.2
+PORTVERSION=	10.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}jaraco.timing>0:${PORTSDIR}/devel/py-jaraco.timing
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hgtools>0:${PORTSDIR}/devel/py-hgtools
 
-USES=		zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
