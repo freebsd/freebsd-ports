@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-PORTVERSION=	31.1.0
-PORTREVISION=	1
+PORTVERSION=	31.1.1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -16,7 +15,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		zip:infozip gecko:firefox,build
+USES=		zip:infozip gecko:firefox
 USE_XPI=	firefox
 
 NO_ARCH=	yes
@@ -32,6 +31,9 @@ PLISTF?=	${WRKDIR}/plist_files
 
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.pre.mk>
+
+# make sure that firefox always gets upgraded before this port
+BUILD_DEPENDS+=	firefox-esr>=0:${PORTSDIR}/www/firefox-esr
 
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
