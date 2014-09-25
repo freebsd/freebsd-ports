@@ -30,11 +30,6 @@ DOCS=		AUTHORS ChangeLog NEWS README
 
 PORTDOCS=	*
 
-post-patch:
-	@${REINPLACE_CMD} '/^Makefile.gdoc:/s,$$(top_builddir)/configure,,' \
-		${WRKSRC}/liboath/man/Makefile.in \
-		${WRKSRC}/libpskc/man/Makefile.in
-
 post-install:
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}/
