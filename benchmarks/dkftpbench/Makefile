@@ -13,8 +13,12 @@ COMMENT=	FTP benchmark program
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake14 autoconf
-
 PLIST_FILES=	bin/dkftpbench
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e '/^noinst_PROGRAMS =/s/=.*/=/' \
+		-e '/^lib_LIBRARIES =/s/=.*/=/' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
