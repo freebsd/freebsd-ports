@@ -224,12 +224,12 @@ Notes:
 	    definitions.</p>
 	</blockquote>
 	<p>The original fix released for CVE-2014-6271 was not adequate. A
-	  similar vulnerability was discovered and tagged as CVE-2014-3659.</p>
+	  similar vulnerability was discovered and tagged as CVE-2014-7169.</p>
       </body>
     </description>
     <references>
       <cvename>CVE-2014-6271</cvename>
-      <cvename>CVE-2014-3659</cvename>
+      <cvename>CVE-2014-7169</cvename>
       <url>https://securityblog.redhat.com/2014/09/24/bash-specially-crafted-environment-variables-code-injection-attack/</url>
       <url>https://lists.gnu.org/archive/html/bug-bash/2014-09/msg00081.html</url>
       <url>http://seclists.org/oss-sec/2014/q3/690</url>
