@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxml
-PORTVERSION=	3.3.5
+PORTVERSION=	3.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,8 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libxslt.so:${PORTSDIR}/textproc/libxslt
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib
 
