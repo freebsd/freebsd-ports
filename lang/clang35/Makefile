@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	clang
-DISTVERSION=	3.5.0rc2
-PORTREVISION=	1
+DISTVERSION=	3.5.0
 CATEGORIES=	lang devel
-MASTER_SITES=   http://llvm.org/pre-releases/3.5/rc2/
+MASTER_SITES=   http://llvm.org/releases/3.5.0/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${CLANG_NAME}
 DISTFILES=	${CLANG_SOURCE} \
@@ -15,10 +14,10 @@ COMMENT=	C, Objective-C, and C++ compiler
 
 CLANG_NAME=	cfe-${DISTVERSION}.src
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
-CLANG_EXTRACT=	cfe.src
+CLANG_EXTRACT=	cfe-${DISTVERSION}.src
 LLVM_NAME=	llvm-${DISTVERSION}.src
 LLVM_SOURCE=	${LLVM_NAME}${EXTRACT_SUFX}
-LLVM_EXTRACT=	llvm.src
+LLVM_EXTRACT=	llvm-${DISTVERSION}.src
 LIBNAME=	libLLVM-3.5.so
 
 WRKSRC=		${WRKDIR}/${LLVM_EXTRACT}
@@ -35,9 +34,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
-USES=		compiler:c++11-lib gmake perl5 tar:xz
+USES=		compiler:c++11-lib gmake perl5 python:build tar:xz
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
 
 MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \
 		LLVMIncDir=${LLVM_PREFIX}/include \
@@ -84,10 +82,6 @@ RELTYPE=		Release
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} != clang
-BROKEN=	link errors when build with gcc
-.endif
 
 .if ${PORT_OPTIONS:MASSERTS}
 pre-fetch:
