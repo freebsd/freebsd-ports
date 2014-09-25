@@ -19,27 +19,27 @@ COMMENT?=	Japanese incremental search tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
+		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
+		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-rubydir=${RUBY_SITELIBDIR}
+USES=		autoreconf
+USE_RUBY=	yes
+
 .if !defined(SLAVE_PORT)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.am \
 		${FILESDIR}/extra-patch-configure.in
 PLIST_SUB=	MIGEMO="" ELISP="@comment "
 .endif
 
-USE_RUBY=	yes
-USE_AUTOTOOLS=	automake14 autoconf213
-BUILD_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
-		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
-		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
-
-CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
 MAKE_JOBS_UNSAFE=	yes
 
 SHEBANG_FILES=	migemo migemo-client migemo-grep migemo-server
 
 SKKDIC_FILE=	SKK-JISYO.L-20110813
-
-.include <bsd.port.pre.mk>
 
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.am.ruby19 \
 		${PATCHDIR}/extra-patch-configure.in.ruby19 \
@@ -54,9 +54,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.am.ruby19 \
 		${PATCHDIR}/extra-patch-migemo.rb.in \
 		${PATCHDIR}/extra-patch-tests_Makefile.am
 
-.if ${ARCH} == "ia64"
-BROKEN=		Does not compile on ia64
-.endif
+BROKEN_ia64=	Does not compile
+
+.include <bsd.port.options.mk>
 
 post-extract:
 .if ${SLAVE_PORT} == "no"
@@ -74,13 +74,6 @@ post-patch:
 post-configure:
 .if ${SLAVE_PORT} == "no"
 	(cd ${WRKSRC}; ${CAT} SKK-JISYO.L | ${RUBY} -Ke migemo-convert.rb > migemo-dict)
-	${CP} ${AUTOMAKE_DIR}/config.guess ${WRKSRC}
-	${CP} ${AUTOMAKE_DIR}/config.sub ${WRKSRC}
 .endif
 
-post-install:
-.if ${SLAVE_PORT} == "yes"
-	@${CAT} ${PKGMESSAGE}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
