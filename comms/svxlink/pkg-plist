@@ -151,7 +151,6 @@ man/man5/remotetrx.conf.5.gz
 %%QTEL%%@dirrm share/qtel/translations
 %%QTEL%%@dirrm share/qtel/sounds
 %%QTEL%%@dirrm share/qtel
-%%QTEL%%@dirrmtry share/applications
 %%QTEL%%@dirrmtry share/icons
 @unexec rmdir >/dev/null 2>&1 /var/spool/svxlink/voice_mail || :
 @unexec rmdir >/dev/null 2>&1 /var/spool/svxlink/qso_recorder || :
