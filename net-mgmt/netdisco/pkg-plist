@@ -39,68 +39,73 @@ bin/port_control
 %%DATADIR%%/sql/user_log.sql
 %%DATADIR%%/sql/users.sql
 %%DATADIR%%/Makefile
-%%WWWDIR%%/admin.html
-%%WWWDIR%%/admin_chimp.gif
-%%WWWDIR%%/admin_dev.html
-%%WWWDIR%%/admin_plug.gif
-%%WWWDIR%%/admin_reconfig.html
-%%WWWDIR%%/admin_user.html
-%%WWWDIR%%/apache_login.html
-%%WWWDIR%%/autohandler
-%%WWWDIR%%/bullet.gif
-%%WWWDIR%%/change_pw.html
-%%WWWDIR%%/corner-bl.png
-%%WWWDIR%%/corner-br.png
-%%WWWDIR%%/corner-tl.png
-%%WWWDIR%%/corner-tr.png
-%%WWWDIR%%/device.html
-%%WWWDIR%%/device_inv.html
-%%WWWDIR%%/device_module.html
-%%WWWDIR%%/device_module_search.html
-%%WWWDIR%%/device_search.html
-%%WWWDIR%%/discoball2.gif
-%%WWWDIR%%/doc/index.html
-%%WWWDIR%%/doc/netdisco-api-backend.html
-%%WWWDIR%%/doc/netdisco-api-shared.html
-%%WWWDIR%%/duplex.html
-%%WWWDIR%%/frontpanel.html
-%%WWWDIR%%/icon_down.gif
-%%WWWDIR%%/icon_info.gif
-%%WWWDIR%%/icon_lock.gif
-%%WWWDIR%%/icon_note.gif
-%%WWWDIR%%/icon_up.gif
-%%WWWDIR%%/icon_v.gif
-%%WWWDIR%%/index.html
-%%WWWDIR%%/ip_search.html
-%%WWWDIR%%/jack_search.html
-%%WWWDIR%%/log.html
-%%WWWDIR%%/login.html
-%%WWWDIR%%/logout.html
-%%WWWDIR%%/minus.gif
-%%WWWDIR%%/mktree.css
-%%WWWDIR%%/mktree.js
-%%WWWDIR%%/netdisco.css
-%%WWWDIR%%/netdisco.ico
-%%WWWDIR%%/netdiscoball.gif
-%%WWWDIR%%/netmap.html
-%%WWWDIR%%/node.html
-%%WWWDIR%%/plus.gif
-%%WWWDIR%%/port_info.html
-%%WWWDIR%%/port_report.html
-%%WWWDIR%%/portcontrol.html
-%%WWWDIR%%/powered_by_mason.jpg
-%%WWWDIR%%/public_debugging.html
-%%WWWDIR%%/reports.html
-%%WWWDIR%%/search.html
-%%WWWDIR%%/sidebar.html
-%%WWWDIR%%/stats.html
-%%WWWDIR%%/traceroute.html
-%%WWWDIR%%/valid-html401.png
-%%WWWDIR%%/vcss.gif
-%%WWWDIR%%/port_usage.html
-%%WWWDIR%%/traffic.png
-%%WWWDIR%%/graphs_sample.mas
-%%WWWDIR%%/port_search.html
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+%%WEBUI%%%%WWWDIR%%/admin.html
+%%WEBUI%%%%WWWDIR%%/admin_chimp.gif
+%%WEBUI%%%%WWWDIR%%/admin_dev.html
+%%WEBUI%%%%WWWDIR%%/admin_plug.gif
+%%WEBUI%%%%WWWDIR%%/admin_reconfig.html
+%%WEBUI%%%%WWWDIR%%/admin_user.html
+%%WEBUI%%%%WWWDIR%%/apache_login.html
+%%WEBUI%%%%WWWDIR%%/autohandler
+%%WEBUI%%%%WWWDIR%%/bullet.gif
+%%WEBUI%%%%WWWDIR%%/change_pw.html
+%%WEBUI%%%%WWWDIR%%/corner-bl.png
+%%WEBUI%%%%WWWDIR%%/corner-br.png
+%%WEBUI%%%%WWWDIR%%/corner-tl.png
+%%WEBUI%%%%WWWDIR%%/corner-tr.png
+%%WEBUI%%%%WWWDIR%%/device.html
+%%WEBUI%%%%WWWDIR%%/device_inv.html
+%%WEBUI%%%%WWWDIR%%/device_module.html
+%%WEBUI%%%%WWWDIR%%/device_module_search.html
+%%WEBUI%%%%WWWDIR%%/device_search.html
+%%WEBUI%%%%WWWDIR%%/discoball2.gif
+%%WEBUI%%%%WWWDIR%%/doc/index.html
+%%WEBUI%%%%WWWDIR%%/doc/netdisco-api-backend.html
+%%WEBUI%%%%WWWDIR%%/doc/netdisco-api-shared.html
+%%WEBUI%%%%WWWDIR%%/duplex.html
+%%WEBUI%%%%WWWDIR%%/frontpanel.html
+%%WEBUI%%%%WWWDIR%%/icon_down.gif
+%%WEBUI%%%%WWWDIR%%/icon_info.gif
+%%WEBUI%%%%WWWDIR%%/icon_lock.gif
+%%WEBUI%%%%WWWDIR%%/icon_note.gif
+%%WEBUI%%%%WWWDIR%%/icon_up.gif
+%%WEBUI%%%%WWWDIR%%/icon_v.gif
+%%WEBUI%%%%WWWDIR%%/index.html
+%%WEBUI%%%%WWWDIR%%/ip_search.html
+%%WEBUI%%%%WWWDIR%%/jack_search.html
+%%WEBUI%%%%WWWDIR%%/log.html
+%%WEBUI%%%%WWWDIR%%/login.html
+%%WEBUI%%%%WWWDIR%%/logout.html
+%%WEBUI%%%%WWWDIR%%/minus.gif
+%%WEBUI%%%%WWWDIR%%/mktree.css
+%%WEBUI%%%%WWWDIR%%/mktree.js
+%%WEBUI%%%%WWWDIR%%/netdisco.css
+%%WEBUI%%%%WWWDIR%%/netdisco.ico
+%%WEBUI%%%%WWWDIR%%/netdiscoball.gif
+%%WEBUI%%%%WWWDIR%%/netmap.html
+%%WEBUI%%%%WWWDIR%%/node.html
+%%WEBUI%%%%WWWDIR%%/plus.gif
+%%WEBUI%%%%WWWDIR%%/port_info.html
+%%WEBUI%%%%WWWDIR%%/port_report.html
+%%WEBUI%%%%WWWDIR%%/portcontrol.html
+%%WEBUI%%%%WWWDIR%%/powered_by_mason.jpg
+%%WEBUI%%%%WWWDIR%%/public_debugging.html
+%%WEBUI%%%%WWWDIR%%/reports.html
+%%WEBUI%%%%WWWDIR%%/search.html
+%%WEBUI%%%%WWWDIR%%/sidebar.html
+%%WEBUI%%%%WWWDIR%%/stats.html
+%%WEBUI%%%%WWWDIR%%/traceroute.html
+%%WEBUI%%%%WWWDIR%%/valid-html401.png
+%%WEBUI%%%%WWWDIR%%/vcss.gif
+%%WEBUI%%%%WWWDIR%%/port_usage.html
+%%WEBUI%%%%WWWDIR%%/traffic.png
+%%WEBUI%%%%WWWDIR%%/graphs_sample.mas
+%%WEBUI%%%%WWWDIR%%/port_search.html
+%%WEBUI%%@dir %%WWWDIR%%/mason
+@owner
+@group
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/DiscoveryDatabase.pod
 %%DOCSDIR%%/INSTALL.pod
@@ -113,6 +118,7 @@ bin/port_control
 %%DOCSDIR%%/README-API-BACKEND
 %%DOCSDIR%%/README-API-SHARED
 %%DOCSDIR%%/UPGRADE
+@owner %%NETDISCO_USER%%
 @group %%NETDISCO_GROUP%%
 @sample %%ETCDIR%%/netdisco.conf.sample
 @sample %%ETCDIR%%/netdisco-topology.txt.sample
@@ -121,9 +127,5 @@ bin/port_control
 @sample %%ETCDIR%%/netdisco_apache_dir.conf.sample
 @unexec if [ -L %%APACHEETCDIR%%/Includes/netdisco_apache_dir.conf ] ; then rm %%APACHEETCDIR%%/Includes/netdisco_apache_dir.conf; fi
 @unexec if [ -L %%APACHEETCDIR%%/Includes/netdisco_apache.conf ] ; then rm %%APACHEETCDIR%%/Includes/netdisco_apache.conf; fi
-%%WEBUI%%@dirrm %%WWWDIR%%/doc
-%%WEBUI%%@dirrmtry %%WWWDIR%%
-@dirrm %%DATADIR%%/sql
-@dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@owner
+@group
