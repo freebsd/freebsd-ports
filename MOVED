@@ -7127,3 +7127,8 @@ graphics/libggi||2014-09-22|Has expired: Unmaintained upstream
 devel/libgii||2014-09-22|Has expired: Unmaintained upstream
 graphics/fpc-ggi||2014-09-22|Has expired: Unmaintained upstream
 www/mediawiki121||2014-09-23|Has expired: Not maintained upstream
+sysutils/rubygem-chef-expander||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+sysutils/rubygem-chef-server||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+sysutils/rubygem-chef-solr||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+www/rubygem-chef-server-webui||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+www/rubygem-chef-server-api||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
