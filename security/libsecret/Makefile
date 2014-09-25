@@ -19,6 +19,8 @@ USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-introspection --disable-vala
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsecret-1.so.0

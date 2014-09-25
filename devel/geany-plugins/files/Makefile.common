@@ -22,6 +22,8 @@ USE_GNOME+=	gtk20
 GEANY_PLUGIN=	NLS
 NLS_DIR=	po
 NLS_SWITCH=	--enable-nls
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 .endif
 
 GEANY_PLUGIN?=			${PORTNAME:S,geany-plugin-,,}

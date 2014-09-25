@@ -17,11 +17,11 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
-USE_GNOME=	gtk30 introspection:build
+USE_GNOME=	gtk30 intlhack introspection:build
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=--disable-glade-catalog
 

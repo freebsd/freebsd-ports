@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	intlhack gnomehier introspection:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=22

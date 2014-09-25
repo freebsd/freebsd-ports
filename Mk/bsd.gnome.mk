@@ -477,11 +477,13 @@ pygnome2_USE_GNOME_IMPL=libgnomeui pygtk2
 intltool_DETECT=	${LOCALBASE}/bin/intltool-extract
 intltool_BUILD_DEPENDS=	${intltool_DETECT}:${PORTSDIR}/textproc/intltool
 
-intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
-				's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
-				 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";| ; \
-				 s|/usr/bin/iconv|${ICONV_CMD}|g ; \
-				 s|unpack *[(]'"'"'U\*'"'"'|unpack ('"'"'C*'"'"'|'
+intlhack_PRE_PATCH=	${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} \
+			's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
+			 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";| ; \
+			 s|/usr/bin/iconv|${ICONV_CMD}|g ; \
+			 s|unpack *[(]'"'"'U\*'"'"'|unpack ('"'"'C*'"'"'|' ; \
+			${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} \
+			's/DATADIRNAME=lib/DATADIRNAME=share/'
 intlhack_USE_GNOME_IMPL=intltool
 
 gtkhtml3_LIB_DEPENDS=	libgtkhtml-3.14.so:${PORTSDIR}/www/gtkhtml3

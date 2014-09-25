@@ -17,9 +17,11 @@ LIB_DEPENDS=	libqalculate.so:${PORTSDIR}/math/libqalculate
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		wget:${PORTSDIR}/ftp/wget
 
+USES=		gettext gmake
 USE_GNOME=	gnomehier libglade2 libgnome
-USES=		gettext gmake pathfix
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_OMF=	yes
 
 post-patch:

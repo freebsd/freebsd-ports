@@ -1,0 +1,11 @@
+--- configure.orig	2009-05-02 19:05:57 UTC
++++ configure
+@@ -21567,6 +21567,8 @@
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+         # save current global flags
++        ac_save_LIBS="$LIBS"
++        ac_save_CPPFLAGS="$CPPFLAGS"
+         LIBS="$ac_save_LIBS $PYTHON_LDFLAGS"
+         CPPFLAGS="$ac_save_CPPFLAGS $PYTHON_CPPFLAGS"
+         cat >conftest.$ac_ext <<_ACEOF

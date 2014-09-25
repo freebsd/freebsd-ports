@@ -3149,23 +3149,7 @@ share/locale/vi/LC_MESSAGES/gramps.mo
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
 share/mime-info/gramps.keys
 share/mime-info/gramps.mime
-share/mime/XMLnamespaces
-share/mime/aliases
-share/mime/application/x-geneweb.xml
-share/mime/application/x-gramps-package.xml
-share/mime/application/x-gramps-xml.xml
-share/mime/application/x-gramps.xml
-share/mime/generic-icons
-share/mime/globs
-share/mime/globs2
-share/mime/icons
-share/mime/magic
-share/mime/mime.cache
 share/mime/packages/gramps.xml
-share/mime/subclasses
-share/mime/treemagic
-share/mime/types
-share/mime/version
 share/pixmaps/gramps.png
 @dirrmtry man/cs/man1
 @dirrmtry man/cs
@@ -3255,4 +3239,3 @@ share/pixmaps/gramps.png
 @dirrmtry share/icons/gnome/scalable/mimetypes
 @dirrmtry share/icons/gnome/scalable
 @dirrmtry share/icons/gnome
-@dirrmtry share/mime/application

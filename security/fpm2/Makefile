@@ -13,10 +13,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USES=		gmake pathfix pkgconfig tar:bzip2
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS ChangeLog README
 

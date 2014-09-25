@@ -17,12 +17,14 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala \
 LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
-USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	intltool introspection:build
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	intlhack introspection:build
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	ChangeLog NEWS README
 
@@ -33,8 +35,6 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libskk.so.0
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

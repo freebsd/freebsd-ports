@@ -19,7 +19,7 @@ CONFLICTS=	gitg-[0-9]*
 
 USES=		tar:bzip2 gmake pkgconfig pathfix libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	gconf2 gtk20 gtksourceview2
+USE_GNOME=	gconf2 gtk20 gtksourceview2 intlhack
 INSTALL_TARGET=	install-strip
 
 INSTALLS_ICONS=	yes
@@ -33,6 +33,6 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=nls
 NLS_CPPFLAGS=	-I${LOCALBASE}/include
-NLS_LDFLAGS=	-L${LOCALBASE}/lib
+NLS_LIBS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

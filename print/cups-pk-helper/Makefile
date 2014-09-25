@@ -13,11 +13,11 @@ COMMENT=	Helper that makes system-config-printer use PolicyKit
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
-USE_GNOME=	glib20 intlhack
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 intltool
+USES=		gettext gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/libs
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

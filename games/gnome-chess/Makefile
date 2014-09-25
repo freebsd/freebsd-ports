@@ -16,14 +16,14 @@ BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty \
 		xmllint:${PORTSDIR}/textproc/libxml2 \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USES=		gmake pathfix pkgconfig desktop-file-utils shared-mime-info tar:xz
+USES=		gmake pkgconfig desktop-file-utils shared-mime-info tar:xz
 USE_GL=		gl glu
-USE_GNOME=	gtk30 librsvg2
+USE_GNOME=	gtk30 intlhack librsvg2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	XML_I18N_UPDATE="${TRUE}" XML_I18N_EXTRACT="${TRUE}"
 DATADIR=	${PREFIX}/share/gnome-chess
 
