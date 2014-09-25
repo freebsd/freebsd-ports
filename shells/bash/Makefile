@@ -4,7 +4,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		25
 PORTVERSION=		4.3.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -64,6 +64,9 @@ CONFLICTS+=		bash-static-[0-9]*
 .endif
 
 post-patch:
+# Ensure y.tab.c is regenerated
+	${TOUCH} ${WRKSRC}/parse.y
+	${RM} ${WRKSRC}/y.tab.c
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
 .if ${PORT_OPTIONS:MSYSLOG}
 	@${REINPLACE_CMD} \
