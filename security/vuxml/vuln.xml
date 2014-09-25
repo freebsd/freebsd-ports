@@ -57,6 +57,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="48108fb0-751c-4cbb-8f33-09239ead4b55">
+    <topic>NSS -- RSA Signature Forgery</topic>
+    <affects>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>32.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.1.2</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.29.1</lt></range>
+      </package>
+      <package>
+	<name>nss</name>
+	<range><lt>3.17.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-73 RSA Signature Forgery in NSS</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1568</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-73.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2014-09-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bd2ef267-4485-11e4-b0b7-00262d5ed8ee">
     <topic>chromium -- RSA signature malleability in NSS</topic>
     <affects>
@@ -107,7 +145,7 @@ Notes:
       </body>
     </description>
     <references>
-      <cvename>CVE-2014-6055</cvename>
+      <cvename>CVE-2014-6055</cvename>1
       <mlist>http://lists.kde.org/?l=kde-announce&amp;m=141153917319769&amp;w=2</mlist>
     </references>
     <dates>
