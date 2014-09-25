@@ -57,6 +57,118 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ca44b64c-4453-11e4-9ea1-c485083ca99c">
+    <topic>Flash player -- Multiple security vulnerabilities in www/linux-*-flashplugin11</topic>
+    <affects>
+      <package>
+	<name>flashplugin11</name>
+	<range><lt>11.2r202.400</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><lt>11.2r202.400</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb14-21.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0547</cvename>
+      <cvename>CVE-2014-0548</cvename>
+      <cvename>CVE-2014-0549</cvename>
+      <cvename>CVE-2014-0550</cvename>
+      <cvename>CVE-2014-0551</cvename>
+      <cvename>CVE-2014-0552</cvename>
+      <cvename>CVE-2014-0553</cvename>
+      <cvename>CVE-2014-0554</cvename>
+      <cvename>CVE-2014-0555</cvename>
+      <cvename>CVE-2014-0556</cvename>
+      <cvename>CVE-2014-0557</cvename>
+      <cvename>CVE-2014-0559</cvename>
+      <url>http://helpx.adobe.com/security/products/flash-player/apsb14-21.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-09</discovery>
+      <entry>2014-09-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="48108fb0-751c-4cbb-8f33-09239ead4b55">
+    <topic>NSS -- RSA Signature Forgery</topic>
+    <affects>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>32.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.1.2</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.29.1</lt></range>
+      </package>
+      <package>
+	<name>nss</name>
+	<range><lt>3.17.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/security/announce/2014/mfsa2014-73.html">
+	  <p>Antoine Delignat-Lavaud discovered that NSS is vulnerable
+	  to a variant of a signature forgery attack previously
+	  published by Daniel Bleichenbacher.  This is due to lenient
+	  parsing of ASN.1 values involved in a signature and could
+	  lead to the forging of RSA certificates.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1568</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-73.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2014-09-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bd2ef267-4485-11e4-b0b7-00262d5ed8ee">
+    <topic>chromium -- RSA signature malleability in NSS</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>37.0.2062.124</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>[414124] RSA signature malleability in NSS (CVE-2014-1568).
+	    Thanks to Antoine Delignat-Lavaud of Prosecco/INRIA, Brian Smith
+	    and Advanced Threat Research team at Intel Security</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1568</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-09-24</discovery>
+      <entry>2014-09-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb25333d-442f-11e4-98f3-5453ed2e2b49">
     <topic>krfb -- Multiple security issues in bundled libvncserver</topic>
     <affects>

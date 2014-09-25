@@ -3,13 +3,16 @@ $FreeBSD$
 
 --- utils/llvm-build/llvmbuild/main.py.orig
 +++ utils/llvm-build/llvmbuild/main.py
-@@ -633,7 +633,13 @@
+@@ -652,7 +652,16 @@
  
      # We handle a few special cases of target names here for historical
      # reasons, as these are the names configure currently comes up with.
 -    native_target_name = { 'x86' : 'X86',
 +    native_target_name = { 'amd64' : 'X86',
 +			   'arm' : 'ARM',
++			   'armeb' : 'ARM',
++			   'armv6' : 'ARM',
++			   'armv6hf' : 'ARM',
 +			   'i386' : 'X86',
 +			   'mips' : 'Mips',
 +			   'powerpc' : 'PowerPC',

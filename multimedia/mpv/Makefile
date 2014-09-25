@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -24,11 +24,11 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	5b6a67b
+GH_COMMIT=	 40cd886
 
 WAF_VERSION=	1.7.16
 
-USES=		compiler:c11 desktop-file-utils iconv lua pkgconfig python:build
+USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build
 USE_XORG=	x11 xv xxf86vm
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -38,7 +38,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man \
-		--lua=${LUA_VER_STR}fbsd \
 		--disable-debug-build \
 		--enable-libmpv-shared \
 		--disable-mpg123 \
@@ -46,7 +45,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-portaudio \
 		--disable-pdf
 
-OPTIONS_DEFINE=		BS2B ENCA LADSPA LCMS2 LIBGUESS LIRC ZSH
+OPTIONS_DEFINE=		BS2B ENCA LADSPA LCMS2 LIBGUESS LIRC LUAJIT ZSH
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L QUVI SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
@@ -56,7 +55,8 @@ OPTIONS_SUB=		yes
 BS2B_DESC=	Enable Bauer Stereophonic-to-Binaural DSP support
 ENCA_DESC=	Enable encoding detection support
 LIBGUESS_DESC=	Enable high-speed character set detection support
-QUVI_DESC=	Enable flash media stream support
+LUAJIT_DESC=	Use LuaJIT instead of Lua (Don't use with QUVI)
+QUVI_DESC=	Enable flash media stream support (Don't use with LUAJIT)
 IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
@@ -78,6 +78,11 @@ LIBGUESS_CONFIGURE_ENABLE=	libguess
 
 LIRC_LIB_DEPENDS=		liblirc_client.so:${PORTSDIR}/comms/lirc
 LIRC_CONFIGURE_ENABLE=		lirc
+
+LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_USES_OFF=		lua
+LUAJIT_CONFIGURE_ON=		--lua=luajit
+LUAJIT_CONFIGURE_OFF=		--lua=${LUA_VER_STR}fbsd
 
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build

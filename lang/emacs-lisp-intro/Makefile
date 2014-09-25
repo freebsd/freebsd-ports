@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	emacs
 MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	Introduction to Emacs Lisp programming
 
-USE_AUTOTOOLS=	autoconf213
+GNU_CONFIGURE=	yes
 INFO=		emacs-lisp-intro
 
 .include <bsd.port.mk>

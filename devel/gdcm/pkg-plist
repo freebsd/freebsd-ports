@@ -461,13 +461,3 @@ lib/libgdcmuuid.so.%%GDCM_MAJOR%%.%%GDCM_MINOR%%.%%GDCM_PATCH%%
 %%DATADIR%%/XML/Part7.xml
 %%DATADIR%%/XML/cp699.xml
 %%DATADIR%%/XML/UIDs.xml
-@dirrm include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/socketxx
-@dirrm include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmjpeg/8
-@dirrm include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmjpeg/16
-@dirrm include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmjpeg/12
-@dirrm include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmjpeg
-@dirrm include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmcharls
-@dirrm include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%
-@dirrm lib/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%
-@dirrm %%DATADIR%%/XML
-@dirrm %%DATADIR%%

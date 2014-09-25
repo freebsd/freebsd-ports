@@ -18,7 +18,7 @@ include/owncloudsync/mirall/syncresult.h
 lib/libhttpbf.a
 lib/libowncloudsync.so
 lib/libowncloudsync.so.0
-lib/libowncloudsync.so.1.6.2
+lib/libowncloudsync.so.1.6.3
 lib/owncloud/libocsync.so
 lib/owncloud/libocsync.so.0
 lib/owncloud/libocsync.so.0.2.1
@@ -266,20 +266,3 @@ share/owncloud/i18n/mirall_tr.qm
 share/owncloud/i18n/mirall_uk.qm
 share/owncloud/i18n/mirall_zh_CN.qm
 share/owncloud/i18n/mirall_zh_TW.qm
-@dirrm share/owncloud/i18n
-@dirrm share/owncloud
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/latex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/unthemed/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/unthemed/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/unthemed/_images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/unthemed
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/owncloud
-@dirrmtry include/owncloudsync/mirall
-@dirrmtry include/owncloudsync/creds
-@dirrmtry include/owncloudsync
-@dirrmtry etc/ownCloud

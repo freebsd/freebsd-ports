@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	31.1.0
-PORTREVISION=	1
+PORTVERSION=	31.1.2
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -13,7 +12,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
-USES=		gecko:thunderbird,build zip
+USES=		gecko:thunderbird zip
 USE_XPI=	thunderbird
 
 NO_BUILD=	yes
@@ -30,6 +29,9 @@ PLISTF?=	${WRKDIR}/plist_files
 
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.pre.mk>
+
+# make sure that thunderbird always gets upgraded before this port
+BUILD_DEPENDS=	thunderbird>=0:${PORTSDIR}/mail/thunderbird
 
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher

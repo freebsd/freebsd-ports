@@ -3,7 +3,7 @@
 
 PORTNAME=	radiusd-cistron
 PORTVERSION=	1.6.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.radius.cistron.nl/pub/radius/
 
@@ -12,10 +12,15 @@ COMMENT=	RADIUS-compliant remote authentication and accounting server
 
 CONFLICTS?=	freeradius-0.* gnu-radius-1.* openradius-0.*
 
+USES=		shebangfix
+SHEBANG_FILES=	src/checkrad.pl
 MAKEFILE=	Makefile.BSD
 RADIUS_DIR=	${PREFIX}/etc/raddb
 MAKE_ENV+=	RADIUS_DIR="${RADIUS_DIR}" DESTROOT="${STAGEDIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BUILD_WRKSRC=	${WRKSRC}/src
+INSTALL_WRKSRC=	${WRKSRC}/src
+MAKE_JOBS_UNSAFE=	yes
 
 USE_RC_SUBR=	radiusd-cistron radrelay-cistron
 DOCFILES=	COPYRIGHT INSTALL doc/ChangeLog doc/README doc/README.Y2K \
@@ -26,19 +31,9 @@ OPTIONS_DEFINE=	PAM DOCS
 OPTIONS_DEFAULT=PAM
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-PLIST_SUB+=	PAMBASE="/usr/local/etc"
-
-do-build:
-	${DO_MAKE_BUILD} -C ${WRKSRC}/src
-
-do-install:
-.if ${PORT_OPTIONS:MPAM}
-	${MKDIR} ${STAGEDIR}/etc/pam.d
-.endif
-	${DO_MAKE_BUILD} -C ${WRKSRC}/src install
+post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/var/log/radacct
 
 .include <bsd.port.mk>

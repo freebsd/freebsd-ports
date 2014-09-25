@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	23
+PORTREVISION=	25
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -16,12 +16,11 @@ GNU_CONFIGURE=	yes
 USES=		fortran gmake libtool perl5 tar:bzip2
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
-MPQC_COMMAND=	${PREFIX}/bin/mpqc
 
 CONFIGURE_ARGS+=--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-f77=${FC} \
-		--with-include="-I${WRKDIR} -I${LOCALBASE}/include" \
+		--with-include="-I${LOCALBASE}/include" \
 		--with-libdirs="-L${LOCALBASE}/lib ${LDFLAGS}" \
 		--with-blas="${BLAS}" \
 		--with-lapack="${LAPACK}" \

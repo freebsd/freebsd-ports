@@ -7508,3 +7508,8 @@ x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
 x11/gnome-screensaver||2014-08-26|not used in gnome3.
 x11/zenity3|x11/zenity|2014-09-14|merged
 devel/cluttermm|graphics/cluttermm|2014-09-20|moved to beter cat
+sysutils/rubygem-chef-expander||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+sysutils/rubygem-chef-server||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+sysutils/rubygem-chef-solr||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+www/rubygem-chef-server-webui||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+www/rubygem-chef-server-api||2014-09-25|Has expired: Depends on broken rubygem-dep_selector

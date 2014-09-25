@@ -48,9 +48,5 @@ share/radius/dictionary.versanet
 %%PORTDOCS%%%%DOCSDIR%%/README.proxy
 %%PORTDOCS%%%%DOCSDIR%%/README.simul
 %%PORTDOCS%%%%DOCSDIR%%/README.usersfile
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/raddb
-@dirrm share/radius
-@exec mkdir -m 700 /var/log/radacct || true
-@unexec rmdir /var/log/radacct || true
+@dir(,,700) /var/log/radacct
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radacct alone."

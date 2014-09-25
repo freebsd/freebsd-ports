@@ -6,7 +6,7 @@ PORTVERSION=	0.76.26
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.mikekohn.net/asp2php/
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to convert ASP scripts to PHP
 
 LICENSE=	GPLv2

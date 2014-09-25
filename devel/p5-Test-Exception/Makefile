@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Exception
-PORTVERSION=	0.32
+PORTVERSION=	0.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Test::Exception - test functions for exception based code
+COMMENT=	Test functions for exception based code
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
