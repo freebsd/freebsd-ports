@@ -11,4 +11,3 @@ man/man4/hmrc.4.gz
 %%PORTDOCS%%%%DOCSDIR%%/hypermail.html
 %%PORTDOCS%%%%DOCSDIR%%/hypermail.png
 %%PORTDOCS%%%%DOCSDIR%%/stars.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
