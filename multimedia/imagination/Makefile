@@ -14,8 +14,10 @@ LIB_DEPENDS=	libsox.so:${PORTSDIR}/audio/sox \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig pathfix libtool
-USE_GNOME=	gtk20 intltool intlhack libxslt
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		gmake pkgconfig libtool
+USE_GNOME=	gtk20 intltool libxslt
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 

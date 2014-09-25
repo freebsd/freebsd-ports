@@ -12,11 +12,11 @@ COMMENT=	Volume mixer
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool
-
 CONFIGURE_ARGS+=--enable-oss
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pathfix pkgconfig
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		gmake iconv pkgconfig
 USE_GNOME=	gtk30
 
 PORTDOCS=	AUTHORS ChangeLog README

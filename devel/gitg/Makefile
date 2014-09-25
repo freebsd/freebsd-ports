@@ -24,13 +24,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-maintainer-mode \
 		--enable-compile-warnings=no
-USE_GNOME=	glib20 gtk30 gtksourceview3
+USE_GNOME=	glib20 gtk30 gtksourceview3 intlhack
 INSTALL_TARGET=	install-strip
 
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

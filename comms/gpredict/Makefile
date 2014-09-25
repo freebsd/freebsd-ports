@@ -15,9 +15,11 @@ LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
 
-USES=		gettext pathfix gmake pkgconfig
-USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		gettext gmake pkgconfig
+USE_GNOME=	gtk20
 
 post-patch:
 	@${REINPLACE_CMD} -e \

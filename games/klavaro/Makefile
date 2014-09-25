@@ -12,25 +12,16 @@ COMMENT=	Touchtyping trainer
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libgtkdatabox.so:${PORTSDIR}/x11-toolkits/gtkdatabox
 
-USES=		pkgconfig gettext gmake iconv pathfix tar:bzip2
-USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
-		xfixes xi xinerama xrandr xrender
-USE_GNOME=	gtk20
+USES=		pkgconfig gettext gmake iconv tar:bzip2
+USE_GNOME=	gtk20 intlhack
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/gtkdatabox
-LDFLAGS+=	-L${LOCALBASE}/lib -rdynamic
+LIBS+=		-L${LOCALBASE}/lib
 
 GNU_CONFIGURE=	yes
 

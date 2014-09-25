@@ -3,7 +3,7 @@
 
 PORTNAME=	gramps
 PORTVERSION=	3.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -19,12 +19,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
 
 USE_BDB=	5+
 USE_PYTHON=	yes
-USES=		desktop-file-utils gettext pathfix shared-mime-info gmake
+USES=		desktop-file-utils gettext shared-mime-info gmake
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-mime-install
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV+=	GMSGFMT="${LOCALBASE}/bin/msgfmt"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	ENCHANT PYWEBKITGTK GNOME GRAPHVIZ EXIV

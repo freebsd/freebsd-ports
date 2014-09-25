@@ -25,6 +25,8 @@ USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix pygnome2
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 APPLET_CONFIGURE_ENABLE=	applet

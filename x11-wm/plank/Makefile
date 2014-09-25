@@ -15,11 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	libbamf3.so:${PORTSDIR}/sysutils/bamf \
-	libgee-0.8.so:${PORTSDIR}/devel/libgee
+		libgee-0.8.so:${PORTSDIR}/devel/libgee
 
-USES=	tar:xz pkgconfig gmake pathfix libtool
+USES=		tar:xz pkgconfig gmake pathfix libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk30 gdkpixbuf2 libxml2 libwnck3
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USE_GNOME=	glib20 gtk30 gdkpixbuf2 intlhack libxml2 libwnck3
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
 OPTIONS_SUB=	yes

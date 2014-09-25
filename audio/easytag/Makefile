@@ -21,12 +21,12 @@ LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libtag.so:${PORTSDIR}/audio/taglib
 
-USES=		gmake pkgconfig pathfix desktop-file-utils tar:xz
+USES=		desktop-file-utils gmake pkgconfig tar:xz
 USE_GNOME=	glib20 intltool intlhack libxslt
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_GTK
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--disable-appdata-validate \
 	--without-help-dir \

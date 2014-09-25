@@ -17,10 +17,12 @@ LIB_DEPENDS=	libhangul.so:${PORTSDIR}/korean/libhangul \
 PROJECTHOST=	ibus
 
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
-USE_GNOME=	intltool pygobject3
+USES=		gmake libtool pkgconfig
+USE_GNOME=	intlhack pygobject3
 USE_PYTHON=	yes
-USES=		gmake libtool pathfix pkgconfig
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	NLS
