@@ -23,13 +23,11 @@ MPG321_RUN_DEPENDS_OFF=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_GNOME=	gdkpixbuf
 USES=		gettext libtool
-USE_AUTOTOOLS=	autoconf213
-CONFIGURE_ENV+=	USE_GNOME=""
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_GNOME_CONFIG=no
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-
-.include <bsd.port.options.mk>
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -E -e \
