@@ -261,7 +261,7 @@ do-install:
 
 .if ${USE_PERL5:Mconfigure} || ${USE_PERL5:Mmodbuildtiny} || ${USE_PERL5:Mfixpacklist}
 fix-packlist::
-	-@[ -d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
+	@if [ -d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto ] ; then ${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \; ; fi
 .endif
 
 # Starting with perl 5.20, the empty bootstrap files are not installed any more
