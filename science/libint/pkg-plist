@@ -15,6 +15,3 @@ lib/libr12-stable.so.1
 lib/libr12-stable.so.1.0.0
 lib/libr12.a
 lib/libr12.so
-@dirrm include/libderiv
-@dirrm include/libint
-@dirrm include/libr12

@@ -3,15 +3,13 @@
 
 PORTNAME=	libghemical
 PORTVERSION=	3.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 		http://bioinformatics.org/ghemical/download/current
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
-
-BROKEN=		Fails to configure
 
 BUILD_DEPENDS=	obabel:${PORTSDIR}/science/openbabel \
 		intltool-update:${PORTSDIR}/textproc/intltool \
@@ -26,7 +24,13 @@ USE_LDCONFIG=   yes
 
 CONFIGURE_ARGS+=	--enable-mpqc
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS=	-L${LOCALBASE}/lib -lSCbasis -lSCcints -lSCclass \
+		-lSCcontainer -lSCdft -lSCgroup -lSCintv3 -lSCisosurf \
+		-lSCkeyval -lSCmbpt -lSCmbptr12 -lSCmisc -lSCmolecule \
+		-lSCoint3 -lSCoptimize -lSCoptions -lSCpsi -lSCref \
+		-lSCrender -lSCscf -lSCscmat -lSCsolvent -lSCstate \
+		-lSCsymmetry -lSCwfn \
+		-lgfortran -lpthread -lblas -llapack
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 INSTALL_TARGET=	install-strip
 

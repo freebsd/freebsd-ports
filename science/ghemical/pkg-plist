@@ -151,18 +151,3 @@ share/ghemical/%%GHEMICAL_VERSION%%/pixmaps/ghemical.png
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ghemical.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/ghemical.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/ghemical.mo
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/pixmaps
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/user-docs
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/glade
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/tautomeric_shift_keto_enol
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/sigmatropic_rearrangement_Cope
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/cycloaddition_Diels-Alder
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_methide_shift
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_hydride_shift
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/SN2-reaction
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/E2-reaction
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples
-@dirrm share/ghemical/%%GHEMICAL_VERSION%%
-@dirrm share/ghemical

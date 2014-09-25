@@ -36,7 +36,6 @@ include/ghemical/typedef.h
 include/ghemical/typerule.h
 include/ghemical/utility.h
 include/ghemical/v3d.h
-@dirrm include/ghemical
 lib/libghemical.so.5.0.1
 lib/libghemical.so.5
 lib/libghemical.so
@@ -74,13 +73,3 @@ share/locale/mk/LC_MESSAGES/libghemical.mo
 share/locale/pt_BR/LC_MESSAGES/libghemical.mo
 share/locale/ru/LC_MESSAGES/libghemical.mo
 share/locale/sq/LC_MESSAGES/libghemical.mo
-@dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf/default
-@dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_sf
-@dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_mm/tripos52
-@dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_mm/prmfit
-@dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_mm/default
-@dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/param_mm
-@dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/amber
-@dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%/builder
-@dirrm share/libghemical/%%LIBGHEMICAL_VERSION%%
-@dirrm share/libghemical

@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -16,12 +16,11 @@ GNU_CONFIGURE=	yes
 USES=		fortran gmake libtool perl5 tar:bzip2
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
-MPQC_COMMAND=	${PREFIX}/bin/mpqc
 
 CONFIGURE_ARGS+=--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-f77=${FC} \
-		--with-include="-I${WRKDIR} -I${LOCALBASE}/include" \
+		--with-include="-I${LOCALBASE}/include" \
 		--with-libdirs="-L${LOCALBASE}/lib ${LDFLAGS}" \
 		--with-blas="${BLAS}" \
 		--with-lapack="${LAPACK}" \
@@ -83,6 +82,11 @@ CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 CFLAGS+=	-O2 -ffast-math
 CXXFLAGS+=	-O2 -ffast-math
 .endif
+
+post-patch:
+	# To get so.8.0.1, we need to -version-info to show 8.1.0
+	# <current>:<rev>:<age> => so.(current-age).(age).(rev)
+	${REINPLACE_CMD} -e 's|\[8:0:1\]|\[8:1:0\]|' ${WRKSRC}/configure.in
 
 do-build:
 	(cd ${WRKSRC} && ${MAKE_CMD})
