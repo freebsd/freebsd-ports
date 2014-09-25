@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashplugin
-PORTVERSION=	11.2r202.400
+PORTVERSION=	11.2r202.406
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
 		LOCAL/nox:suplib
@@ -25,11 +25,14 @@ RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-USES=		webplugin:linux desktop-file-utils
+USES=		webplugin:linux desktop-file-utils cpe
 WEBPLUGIN_FILES=	libflashplayer.so
 
 OPTIONS_DEFINE=	GNOME
 GNOME_DESC=	include gnome support for .desktop file
+
+CPE_VENDOR=	adobe
+CPE_PRODUCT=	flash_player
 
 OPTIONS_SUB=	yes
 
