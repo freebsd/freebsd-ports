@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bd2ef267-4485-11e4-b0b7-00262d5ed8ee">
+    <topic>chromium -- RSA signature malleability in NSS</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>37.0.2062.124</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>[414124] RSA signature malleability in NSS (CVE-2014-1568).
+	    Thanks to Antoine Delignat-Lavaud of Prosecco/INRIA, Brian Smith
+	    and Advanced Threat Research team at Intel Security</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1568</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-09-24</discovery>
+      <entry>2014-09-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb25333d-442f-11e4-98f3-5453ed2e2b49">
     <topic>krfb -- Multiple security issues in bundled libvncserver</topic>
     <affects>
