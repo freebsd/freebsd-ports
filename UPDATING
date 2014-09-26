@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140926:
+  AFFECTS: users of shells/bash
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Bash supports a feature of exporting functions in the environment with
+  export -f.  Running bash with exported functioned in the environment will
+  then import those functions into the environment.  This resulted in
+  security issues CVE-2014-6271 and CVE-2014-7169, commonly known as
+  "shellshock".
+
+  To fully mitigate against this sort of attack we have applied a non-upstream
+  patch to disable this functionality by default.  You can execute bash
+  with --import-functions to allow it to import functions from the
+  environment.  The default can also be changed in the port by selecting the
+  IMPORTFUNCTIONS option.
+
+20140926:
   AFFECTS: users of net/asterisk and net/asterisk11
   AUTHOR: madpilot@FreeBSD.org
 
