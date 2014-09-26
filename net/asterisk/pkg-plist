@@ -663,9 +663,9 @@ share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
 share/asterisk/phoneprov/snom-mac.xml
-share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.25
-share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.25
-share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.25
+share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.26
+share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.26
+share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.26
 share/asterisk/sounds/en/ascending-2tone.gsm
 share/asterisk/sounds/en/conf-adminmenu-18.gsm
 share/asterisk/sounds/en/conf-adminmenu-162.gsm
@@ -1170,7 +1170,7 @@ share/asterisk/sounds/en/vm-undeleted.gsm
 share/asterisk/sounds/en/vm-unknown-caller.gsm
 share/asterisk/sounds/en/vm-whichbox.gsm
 share/asterisk/sounds/en/vm-youhave.gsm
-share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.25
+share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.26
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
 share/asterisk/static-http/astman.js
@@ -1192,71 +1192,29 @@ share/asterisk/static-http/mantest.html
 %%LUA%%lib/asterisk/modules/pbx_lua.so
 %%DOCSDIR%%/images/asterisk-intro.jpg
 %%DOCSDIR%%/images/kpad2.jpg
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%
-@dirrm share/asterisk/static-http
-@dirrm share/asterisk/sounds/en/silence
-@dirrm share/asterisk/sounds/en/phonetic
-@dirrm share/asterisk/sounds/en/letters
-@dirrm share/asterisk/sounds/en/followme
-@dirrm share/asterisk/sounds/en/digits
-@dirrm share/asterisk/sounds/en/dictate
-@dirrm share/asterisk/sounds/en
-@dirrm share/asterisk/sounds
-@dirrm share/asterisk/phoneprov
-@dirrm share/asterisk/moh
-@dirrm share/asterisk/keys
-@dirrm share/asterisk/images
-@dirrm share/asterisk/firmware/iax
-@dirrm share/asterisk/firmware
-@dirrm share/asterisk/documentation/thirdparty
-@dirrm share/asterisk/documentation
-@dirrm share/asterisk/agi-bin
-@dirrm share/asterisk
-@dirrm lib/asterisk/modules
-@dirrm lib/asterisk
-@dirrm include/asterisk/doxygen
-@dirrm include/asterisk
-@dirrmtry %%ETCDIR%%
-@exec mkdir -p %D/share/asterisk/keys
-@exec mkdir -p %D/share/asterisk/images
-@exec mkdir -p %D/share/asterisk/firmware/iax
-@exec mkdir -p %D/share/asterisk/documentation/thirdparty
-@cwd %%VARDIR%%
-spool/asterisk/voicemail/default/1234/en/busy.gsm
-spool/asterisk/voicemail/default/1234/en/unavail.gsm
-@exec mkdir -p %D/log/asterisk/cdr-csv
-@exec mkdir -p %D/log/asterisk/cdr-custom
-@exec mkdir -p %D/log/asterisk/cel-custom
-@exec mkdir -p %D/spool/asterisk/dictate
-@exec mkdir -p %D/spool/asterisk/meetme
-@exec mkdir -p %D/spool/asterisk/monitor
-@exec mkdir -p %D/spool/asterisk/outgoing
-@exec mkdir -p %D/spool/asterisk/system
-@exec mkdir -p %D/spool/asterisk/voicemail/default/1234/INBOX
-@exec mkdir -p %D/spool/asterisk/voicemail/default/1234/en
-@exec mkdir -p %D/spool/asterisk/tmp
-@exec mkdir -p %D/db/asterisk
-@exec mkdir -p %D/run/asterisk
-@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/db/asterisk
-@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/spool/asterisk
-@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/log/asterisk
-@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/run/asterisk
-@dirrm spool/asterisk/dictate
-@dirrm spool/asterisk/meetme
-@dirrm spool/asterisk/monitor
-@dirrm spool/asterisk/outgoing
-@dirrm spool/asterisk/system
-@dirrm spool/asterisk/voicemail/default/1234/INBOX
-@dirrm spool/asterisk/voicemail/default/1234/en
-@dirrm spool/asterisk/voicemail/default/1234
-@dirrm spool/asterisk/voicemail/default
-@dirrm spool/asterisk/voicemail
-@dirrm spool/asterisk/tmp
-@dirrm spool/asterisk
-@dirrmtry log/asterisk/cdr-csv
-@dirrmtry log/asterisk/cdr-custom
-@dirrmtry log/asterisk/cel-custom
-@dirrmtry log/asterisk
-@dirrmtry db/asterisk
-@dirrmtry run/asterisk
+@dir share/asterisk/keys
+@dir share/asterisk/images
+@dir share/asterisk/firmware/iax
+@dir share/asterisk/documentation/thirdparty
+@owner %%ASTERISK_USER%%
+@group %%ASTERISK_GROUP%%
+%%VARDIR%%/spool/asterisk/voicemail/default/1234/en/busy.gsm
+%%VARDIR%%/spool/asterisk/voicemail/default/1234/en/unavail.gsm
+@dir %%VARDIR%%/spool/asterisk/voicemail/default/1234/INBOX
+@dir %%VARDIR%%/spool/asterisk/voicemail/default/1234/en
+@dir %%VARDIR%%/spool/asterisk/voicemail/default/1234
+@dir %%VARDIR%%/spool/asterisk/voicemail/default
+@dir %%VARDIR%%/spool/asterisk/voicemail
+@dir %%VARDIR%%/log/asterisk/cdr-csv
+@dir %%VARDIR%%/log/asterisk/cdr-custom
+@dir %%VARDIR%%/log/asterisk/cel-custom
+@dir %%VARDIR%%/log/asterisk
+@dir %%VARDIR%%/spool/asterisk/dictate
+@dir %%VARDIR%%/spool/asterisk/meetme
+@dir %%VARDIR%%/spool/asterisk/monitor
+@dir %%VARDIR%%/spool/asterisk/outgoing
+@dir %%VARDIR%%/spool/asterisk
+@dir %%VARDIR%%/spool/asterisk/system
+@dir %%VARDIR%%/spool/asterisk/tmp
+@dir %%VARDIR%%/db/asterisk
+@dir %%VARDIR%%/run/asterisk
