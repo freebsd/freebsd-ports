@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scummvm-tools
-DISTVERSION=	1.6.0
-PORTREVISION=	3
+DISTVERSION=	1.7.0
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/scummvm/${PORTNAME}/${DISTVERSION}
 
@@ -12,11 +11,10 @@ COMMENT=	Tools for use with the SCUMMVM game emulator
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		flac:${PORTSDIR}/audio/flac \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		oggdec:${PORTSDIR}/audio/vorbis-tools \
+		oggenc:${PORTSDIR}/audio/vorbis-tools
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
@@ -53,12 +51,10 @@ pre-patch:
 		${WRKSRC}/configure
 
 pre-install:
-.for f in ${STRIP_FILES}
-	@${STRIP_CMD} ${WRKSRC}/$f
-.endfor
+	@${STRIP_CMD} ${STRIP_FILES:S|^|${WRKSRC}/|}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
