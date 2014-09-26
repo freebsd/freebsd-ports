@@ -214,6 +214,10 @@ Notes:
 	<range><gt>4.2</gt><le>4.2.48</le></range>
 	<range><gt>4.3</gt><lt>4.3.25_1</lt></range>
       </package>
+      <package>
+	<name>linux_base-c6</name>
+	<range><lt>6.5_1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
