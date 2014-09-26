@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nwdiag
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,19 +11,19 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Simple network-diagram image generator
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}pillow>=2.2.1:${PORTSDIR}/graphics/py-pillow \
 		${PKGNAMEPREFIX}funcparserlib>=0.3.6:${PORTSDIR}/devel/py-funcparserlib \
-		${PKGNAMEPREFIX}blockdiag>=1.3.0:${PORTSDIR}/graphics/py-blockdiag
+		${PKGNAMEPREFIX}blockdiag>=1.4.1:${PORTSDIR}/graphics/py-blockdiag
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=	python
+USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUENAME}
 
-PORTDOCS=	README.txt
+PORTDOCS=	README.rst
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -36,12 +36,13 @@ IGNORE=	does not support in ${PYTHON_VERSION}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/src/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for d in ${PORTNAME} packetdiag
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${d}
 	${INSTALL_DATA} \
 		${INSTALL_WRKSRC}/examples/${d}/${PORTEXAMPLES} \
-		${STAGEDIR}${EXAMPLESDIR}
+		${STAGEDIR}${EXAMPLESDIR}/${d}
 .endfor
 .for f in ${PORTNAME} rackdiag
 	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${PREFIX}/man/man1/
