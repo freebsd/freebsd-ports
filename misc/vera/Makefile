@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vera
-PORTVERSION=	1.21a
+PORTVERSION=	1.22
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	vera
@@ -17,9 +17,9 @@ USES=		makeinfo
 INFO=		vera
 
 do-build:
-	@ (cd ${WRKSRC} && makeinfo --no-split vera.texi)
+	(cd ${WRKSRC} && makeinfo --force --no-split vera.texi)
 
 do-install:
-	@ ${INSTALL_DATA} ${WRKSRC}/vera.info ${STAGEDIR}${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/vera.info ${STAGEDIR}${PREFIX}/info
 
 .include <bsd.port.mk>
