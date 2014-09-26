@@ -3,8 +3,10 @@
 
 PORTNAME=		c6
 PORTVERSION=		6.5
+PORTREVISION=		1
 CATEGORIES=		emulators linux
-MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/
+MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/ \
+		http://mirror.centos.org/centos/6/updates/i386/Packages/
 PKGNAMEPREFIX=		linux_base-
 DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
 EXTRACT_ONLY=		${BIN_DISTFILES}
@@ -17,7 +19,7 @@ LINUX_DIST_VER=6.5
 DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
 BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
-		bash-4.1.2-15.el6_4.${LINUX_RPM_ARCH}.rpm \
+		bash-4.1.2-15.el6_5.2.${LINUX_RPM_ARCH}.rpm \
 		bzip2-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
 		bzip2-libs-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
 		compat-db43-4.3.29-15.el6.${LINUX_RPM_ARCH}.rpm \
@@ -68,10 +70,11 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
-MASTER_SITES+=	http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/
+MASTER_SITES+=	http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/ \
+		http://vault.centos.org/6.5/updates/Source/SPackages/:updates
 
 SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
-		bash-4.1.2-15.el6_4.src.rpm \
+		bash-4.1.2-15.el6_5.2.src.rpm:updates \
 		bzip2-1.0.5-7.el6_0.src.rpm \
 		coreutils-8.4-31.el6.src.rpm \
 		compat-db-4.6.21-15.el6.src.rpm \
@@ -201,7 +204,7 @@ do-build:
 #
 # If ${PREFIX}/etc/krb5.conf exists, don't touch it
 #
-	@${MV} ${WRKSRC}/etc/krb5.conf ${WRKSRC}/etc/krb5.conf.dist
+	@${MV} ${WRKSRC}/etc/krb5.conf ${WRKSRC}/etc/krb5.conf.sample
 
 # Fix usr/bin/*db4* permissions to allow "portupgrade -s"
 #	@${CHMOD} u+w ${WRKSRC}/usr/bin/*db4*
@@ -233,13 +236,5 @@ do-install:
 # Let some linux applications (e.g. print/acroread8) print with default settings
 #
 	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${STAGEDIR}${PREFIX}/usr/bin
-
-post-install:
-	if [ ! -f ${PREFIX}/etc/krb5.conf ] ; then \
-		${CP} -p ${STAGEDIR}${PREFIX}/etc/krb5.conf.dist ${STAGEDIR}${PREFIX}/etc/krb5.conf ; \
-	fi
-	if [ ! -f ${PREFIX}/etc/yp.conf ] ; then \
-		${CP} -p ${STAGEDIR}${PREFIX}/etc/yp.conf.sample ${STAGEDIR}${PREFIX}/etc/yp.conf ; \
-	fi
 
 .include <bsd.port.post.mk>

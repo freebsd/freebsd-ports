@@ -72,9 +72,6 @@ etc/hosts.deny
 etc/inputrc
 etc/issue
 etc/issue.net
-@unexec if cmp -s %D/etc/krb5.conf.dist %D/etc/krb5.conf ; then rm -f %D/etc/krb5.conf ; fi
-etc/krb5.conf.dist
-@exec if [ ! -f %D/etc/krb5.conf ] ; then cp -p %D/%F %B/krb5.conf ; fi
 etc/ld.so.cache
 etc/ld.so.conf
 etc/mke2fs.conf
@@ -121,9 +118,6 @@ etc/skel/.bashrc
 etc/system-release
 etc/system-release-cpe
 etc/udev/rules.d/60-raw.rules
-@unexec if cmp -s %D/etc/yp.conf.sample %D/etc/yp.conf ; then rm -f %D/etc/yp.cpnf ; fi
-etc/yp.conf.sample
-@exec if [ ! -f %D/etc/yp.conf ] ; then cp -p %D/%F %B/yp.conf ; fi
 etc/yum.repos.d/CentOS-Base.repo
 etc/yum.repos.d/CentOS-Debuginfo.repo
 etc/yum.repos.d/CentOS-Media.repo
@@ -2317,8 +2311,11 @@ usr/share/man/man8/switch_root.8.gz
 usr/share/man/man8/tunelp.8.gz
 usr/share/man/man8/umount.8.gz
 usr/share/man/man8/wipefs.8.gz
+usr/tmp
 @unexec rm -f %D/var/cache/ldconfig/aux-cache
 var/mail
+@sample etc/krb5.conf.sample
+@sample etc/yp.conf.sample
 @dirrm bin
 @dirrm var/yp
 @dirrm var/spool/mail
@@ -2339,7 +2336,6 @@ var/mail
 @dirrm var/cache/ldconfig
 @dirrm var/cache
 @dirrm var
-@dirrm usr/tmp
 @dirrm usr/src/kernels
 @dirrm usr/src/debug
 @dirrm usr/src
