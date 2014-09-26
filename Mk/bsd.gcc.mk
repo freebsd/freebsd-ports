@@ -46,7 +46,8 @@ GCCVERSION_040700=	     0       0 4.7
 GCCVERSION_040800=	     0       0 4.8
 GCCVERSION_040900=	     0       0 4.9
 
-GCC_DEFAULT_V=	${GCC_DEFAULT:S/.//}
+# Version of lang/gcc
+GCC_DEFAULT_V=	4.8
 
 # No configurable parts below this. ####################################
 #
@@ -148,7 +149,7 @@ _USE_GCC:=	${GCC_DEFAULT}
 .  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R} || !exists(/usr/bin/gcc)
 V:=			${_GCCVERSION_${v}_V:S/.//}
 _GCC_PORT_DEPENDS:=	gcc${V}
-.   if ${_USE_GCC} == ${GCC_DEFAULT}
+.   if ${_USE_GCC} == ${GCC_DEFAULT_V}
 _GCC_PORT:=		gcc
 .   else
 _GCC_PORT:=		gcc${V}
