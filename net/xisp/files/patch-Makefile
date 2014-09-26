@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Nov  6 22:38:22 2005
-+++ Makefile	Mon Feb 27 08:22:22 2006
+--- Makefile.orig	2005-11-07 00:38:22 UTC
++++ Makefile
 @@ -12,12 +12,12 @@
  #  Compilation/installation vars (global for all following sections) |
  #=====================================================================
@@ -115,46 +115,109 @@
  #
  #=====================================================================
  #                    Program configuration options                   |
-@@ -399,30 +399,39 @@
+@@ -352,32 +352,32 @@
+ 	$(CC) $(CCOPTS) -o xispid xispid.c
+ 
+ xisp.1: xisp.man
+-	sed -e s,@ETCPPP@,$(DESTDIR)$(ETCPPP),g \
+-	-e s,@USRLIBPPP@,$(DESTDIR)$(USRLIBPPP),g \
+-	-e s,@USRLOCAL@,$(DESTDIR)$(USRLOCAL),g < xisp.man > xisp.1
++	sed -e s,@ETCPPP@,$(ETCPPP),g \
++	-e s,@USRLIBPPP@,$(USRLIBPPP),g \
++	-e s,@USRLOCAL@,$(USRLOCAL),g < xisp.man > xisp.1
+ 
+ install: xisp xispdial xisprccv xispterm xispid xisp.1
+ 	if [ ! -d $(DESTDIR)$(BINX11) ]; then \
+ 	  $(INSTALL) -d $(DESTDIR)$(BINX11); fi
+-	$(INSTALL) -g $(GROUP) -m 750 -o $(XISPUSER) -s \
++	$(INSTALL) -m 750 -s \
+ 	  xisp $(DESTDIR)$(BINX11)/xisp
+ 	if [ $(XISPUSER) != root ]; then \
+ 	  chmod 4750 $(DESTDIR)$(BINX11)/xisp; fi
+ 	if [ ! -d $(DESTDIR)$(USRLIBPPP) ]; then \
+ 	  $(INSTALL) -d $(DESTDIR)$(USRLIBPPP); fi
+-	$(INSTALL) -g $(GROUP) -m 750 -o $(XISPUSER) -s \
++	$(INSTALL) -m 750 -s \
+ 	  xispdial $(DESTDIR)$(USRLIBPPP)/xispdial
+ 	if [ $(XISPUSER) != root ]; then \
+ 	  chmod 4750 $(DESTDIR)$(USRLIBPPP)/xispdial; fi
+-	$(INSTALL) -g $(GROUP) -m 750 -o root -s \
++	$(INSTALL) -m 750 -s \
+ 	  xispterm $(DESTDIR)$(USRLIBPPP)/xispterm
+ 	if [ ! -d $(DESTDIR)$(USRLOCAL) ]; then \
+ 	  $(INSTALL) -d $(DESTDIR)$(USRLOCAL); fi
+-	$(INSTALL) -g $(GROUP) -m 750 -o $(XISPUSER) -s \
++	$(INSTALL) -m 750 -s \
+ 	  xisprccv $(DESTDIR)$(USRLOCAL)/xisprccv
+ 	if [ $(XISPUSER) != root ]; then \
+ 	  chmod 4750 $(DESTDIR)$(USRLOCAL)/xisprccv; fi
+-	$(INSTALL) -g $(GROUP) -m 750 -o root -s \
++	$(INSTALL) -m 750 -s \
+ 	  xispid $(DESTDIR)$(USRLOCAL)/xispid
+ #	if [ ! -d $(DESTDIR)$(OPTSDIR) ]; then \
+ #	  $(INSTALL) -d $(DESTDIR)$(OPTSDIR); fi
+@@ -385,44 +385,53 @@
+ #	  options.xisp $(DESTDIR)$(OPTSDIR)/options.xisp
+ 	if [ ! -d $(DESTDIR)$(MANDIR) ]; then \
+ 	  $(INSTALL) -d $(DESTDIR)$(MANDIR); fi
+-	$(INSTALL) -g $(GROUP) -m 644 -o root \
++	$(INSTALL) -m 644 \
+ 	  xisp.1 $(DESTDIR)$(MANDIR)/xisp.1
+ 	sed -e s/__XISPGROUP/$(GROUP)/ \
+-	  -e sM__XISPIDM/$(DESTDIR)$(USRLOCAL)/xispidM \
++	  -e sM__XISPIDM$(USRLOCAL)/xispidM \
+ 	  < ip-up.xisp > ip-up.install
+ 	sed -e s/__XISPGROUP/$(GROUP)/ \
+-	  -e sM__XISPIDM/$(DESTDIR)$(USRLOCAL)/xispidM \
++	  -e sM__XISPIDM$(USRLOCAL)/xispidM \
+ 	  < ip-down.xisp > ip-down.install
+ 	if [ ! -d $(DESTDIR)$(INSTPPPDIR) ]; then \
+ 	  $(INSTALL) -d $(DESTDIR)$(INSTPPPDIR); fi
+ 	if [ -f $(DESTDIR)$(INSTPPPDIR)/ip-up ]; then \
  	  mv -f $(DESTDIR)$(INSTPPPDIR)/ip-up \
  	  $(DESTDIR)$(INSTPPPDIR)/ip-up.bak; fi
- 	$(INSTALL) -g $(GROUP) -m 750 -o root \
+-	$(INSTALL) -g $(GROUP) -m 750 -o root \
 -	  ip-up.install $(DESTDIR)$(INSTPPPDIR)/ip-up
++	$(INSTALL) -m 750 \
 +	  ip-up.install $(DESTDIR)$(INSTPPPDIR)/ip-up.xisp
  	if [ -f $(DESTDIR)$(INSTPPPDIR)/ip-down ]; then \
  	  mv -f $(DESTDIR)$(INSTPPPDIR)/ip-down \
  	  $(DESTDIR)$(INSTPPPDIR)/ip-down.bak; fi
- 	$(INSTALL) -g $(GROUP) -m 750 -o root \
+-	$(INSTALL) -g $(GROUP) -m 750 -o root \
 -	  ip-down.install $(DESTDIR)$(INSTPPPDIR)/ip-down
++	$(INSTALL) -m 750 \
 +	  ip-down.install $(DESTDIR)$(INSTPPPDIR)/ip-down.xisp
  	rm -f ip-up.install ip-down.install
 -	sed -e sM__DEVICEM$(MODEM_PATH)M \
 -	  < xisp.peers.device > xisp_$(MODEM_DEV)
+-	sed -e sM__DIALER_PATHM$(DESTDIR)$(USRLIBPPP)M \
 +	for i in $(MODEM_DEVS); do \
 +	sed -e sM__DEVICEM/dev/$${i}M \
 +	  < xisp.peers.device > xisp_$${i}; \
 +	done
- 	sed -e sM__DIALER_PATHM$(DESTDIR)$(USRLIBPPP)M \
++	sed -e sM__DIALER_PATHM$(USRLIBPPP)M \
  	  < xisp.peers.dialer > xisp_dialer
  	if [ ! -d $(DESTDIR)$(INSTPPPDIR)/peers ]; then \
  	  $(INSTALL) -d $(DESTDIR)$(INSTPPPDIR)/peers; fi
 -	if [ -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV) ]; then \
 -	  mv -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV) \
 -	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV).bak; fi
+-	$(INSTALL) -g $(GROUP) -m 640 -o root \
+-	  xisp_$(MODEM_DEV) $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV)
 +	for i in $(MODEM_DEVS); do \
 +	if [ -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i} ]; then \
 +	  mv -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i} \
 +	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i}.bak; fi; \
 +	done
 +	for i in $(MODEM_DEVS); do \
- 	$(INSTALL) -g $(GROUP) -m 640 -o root \
--	  xisp_$(MODEM_DEV) $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV)
++	$(INSTALL) -m 640 \
 +	  xisp_$$i $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i}; \
 +	done
  	if [ -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer ]; then \
  	  mv -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer \
  	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer.bak; fi
- 	$(INSTALL) -g $(GROUP) -m 640 -o root \
+-	$(INSTALL) -g $(GROUP) -m 640 -o root \
++	$(INSTALL) -m 640 \
  	  xisp_dialer $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer
 -	rm -f xisp_$(MODEM_DEV) xisp_dialer
 +	for i in $(MODEM_DEVS); do \
