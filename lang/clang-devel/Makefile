@@ -3,6 +3,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.6.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -30,6 +31,7 @@ LLVM_SUFFIX=	-devel
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
+PYTHONLIBDIR=	${LLVM_PREFIX}/lib/python
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
@@ -156,12 +158,12 @@ post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Resources
+	${MKDIR} ${STAGEDIR}${PYTHONLIBDIR}
+	${MKDIR} ${STAGEDIR}${PYTHONLIBDIR}/Resources
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-view/*.py \
-	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	    ${STAGEDIR}${PYTHONLIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-view/Resources/* \
-	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Resources
+	    ${STAGEDIR}${PYTHONLIBDIR}/Resources
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css \
 	    ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js \
@@ -175,12 +177,8 @@ PLIST_FILE_LIST=	${COMMANDS:S|^|bin/|} \
 			lib/libclang*
 PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
-			lib/clang
-PLIST_PYFILE_LIST=	ScanView.py \
-			Reporter.py \
-			Resources/* \
-			startfile.py
-PLIST_PYDIR_LIST=	Resources
+			lib/clang \
+			lib/python
 
 build-plist:
 	${RM} -f ${PLIST}
@@ -200,11 +198,5 @@ build-plist:
 	${FIND} ${STAGEDIR}${DOCSDIR} -type d | ${SORT} -r | \
 	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' \
 	    >> ${PLIST}
-	cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && \
-	    ls ${PLIST_PYFILE_LIST} | ${SORT} | \
-	    ${SED} -e 's|^|%%PYTHON_SITELIBDIR%%/|' >> ${PLIST}
-	cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && \
-	    ${FIND} ${PLIST_PYDIR_LIST} -type d | ${SORT} -r | \
-	    ${SED} -e 's|^|@dirrm %%PYTHON_SITELIBDIR%%/|' >> ${PLIST}
 
 .include <bsd.port.post.mk>

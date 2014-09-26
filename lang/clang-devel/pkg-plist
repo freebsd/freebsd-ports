@@ -507,10 +507,18 @@ llvm-devel/lib/libclangStaticAnalyzerCheckers.a
 llvm-devel/lib/libclangStaticAnalyzerCore.a
 llvm-devel/lib/libclangStaticAnalyzerFrontend.a
 llvm-devel/lib/libclangTooling.a
+llvm-devel/lib/python/Reporter.py
+llvm-devel/lib/python/Resources/FileRadar.scpt
+llvm-devel/lib/python/Resources/GetRadarVersion.scpt
+llvm-devel/lib/python/Resources/bugcatcher.ico
+llvm-devel/lib/python/ScanView.py
+llvm-devel/lib/python/startfile.py
 man/man1/clang-devel.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps
+@dirrm llvm-devel/lib/python/Resources
+@dirrm llvm-devel/lib/python
 @dirrm llvm-devel/lib/clang/3.6.0/include
 @dirrm llvm-devel/lib/clang/3.6.0
 @dirrm llvm-devel/lib/clang
@@ -552,10 +560,3 @@ man/man1/clang-devel.1.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/clang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PYTHON_SITELIBDIR%%/Reporter.py
-%%PYTHON_SITELIBDIR%%/Resources/FileRadar.scpt
-%%PYTHON_SITELIBDIR%%/Resources/GetRadarVersion.scpt
-%%PYTHON_SITELIBDIR%%/Resources/bugcatcher.ico
-%%PYTHON_SITELIBDIR%%/ScanView.py
-%%PYTHON_SITELIBDIR%%/startfile.py
-@dirrm %%PYTHON_SITELIBDIR%%/Resources
