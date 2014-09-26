@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	webmin
-PORTVERSION=	1.690
-PORTREVISION=	1
+PORTVERSION=	1.702
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.webmin.com/updates/:up \
-		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
-		${MASTER_SITE_LOCAL:S/$/:up/}
+MASTER_SITES=	http://download.webmin.com/devel/tarballs/:sf \
+		http://download.webmin.com/updates/:up \
+		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
 MASTER_SITE_SUBDIR=	olgeni/:up
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -19,8 +18,7 @@ RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty \
 		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
 
-USES=		perl5
-USE_PYTHON=	yes
+USES=		perl5 python
 USE_RC_SUBR=	webmin
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message
