@@ -1,3 +1,4 @@
+@group dialer
 bin/xisp
 bin/xispid
 bin/xisprccv
@@ -11,6 +12,5 @@ etc/ppp/peers/xisp_dialer
 etc/ppp/peers/xisp_umodem
 libexec/xispdial
 libexec/xispterm
+@group
 man/man1/xisp.1.gz
-@dirrm etc/ppp/peers
-@dirrmtry etc/ppp

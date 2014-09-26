@@ -3,7 +3,7 @@
 
 PORTNAME=	xisp
 PORTVERSION=	2.7p4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://xisp.hellug.gr/release/
 
