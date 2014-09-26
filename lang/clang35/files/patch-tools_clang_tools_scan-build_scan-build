@@ -21,3 +21,12 @@ $FreeBSD$
  
    DieDiag("Cannot find 'scanview.css'.\n")
      if (! -r $CSS);
+@@ -882,7 +882,7 @@
+     Diag("$Num bugs found.\n");
+   }
+   if ($Num > 0 && -r "$Dir/index.html") {
+-    Diag("Run 'scan-view $Dir' to examine bug reports.\n");
++    Diag("Run 'scan-view%%LLVM_SUFFIX%% $Dir' to examine bug reports.\n");
+   }
+ 
+   DiagCrashes($Dir) if (scalar @failures || scalar @attributes_ignored);
