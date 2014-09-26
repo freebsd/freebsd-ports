@@ -10,15 +10,10 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	The Symfony YAML Component
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/pear.symfony-project.com.reg:${PORTSDIR}/devel/pear-channel-symfony
+BUILD_DEPENDS=	${PEARDIR}/.channels/pear.symfony-project.com.reg:${PORTSDIR}/devel/pear-channel-symfony
+RUN_DEPENDS=	${PEARDIR}/.channels/pear.symfony-project.com.reg:${PORTSDIR}/devel/pear-channel-symfony
 
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/pear.symfony-project.com.reg:${PORTSDIR}/devel/pear-channel-symfony
-
+USES=	pear
 PEAR_CHANNEL=	symfony
-PEAR_AUTOINSTALL=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
