@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-tools
 
 COMMENT=	Command line tools from BIND: dig, host, and nslookup
@@ -16,6 +17,8 @@ PKGINSTALL=	/nonexistent
 
 BIND_TOOLS_SLAVE=	YES
 
+INSTALL_WRKSRC=	${WRKSRC}/bin
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
 		-e 's#isc-config.sh installdirs#installdirs#' \
@@ -25,9 +28,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = delv dig dnssec nsupdate \\#' \
 		-e 's#^	.*check confgen ##' \
 		${WRKSRC}/bin/Makefile.in
-
-do-install:
-	@(cd ${INSTALL_WRKSRC}/bin && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-	
 
 .include "${MASTERDIR}/Makefile"
