@@ -17,7 +17,7 @@ LICENSE=	BSD
 
 USES+=		cpe
 
-CPE_VENDOR=	igor_sysoev
+CPE_VENDOR=	nginx
 CPE_PRODUCT=	nginx
 
 NO_OPTIONS_SORT=	yes
