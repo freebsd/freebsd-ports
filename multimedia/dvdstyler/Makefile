@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvdstyler
-PORTVERSION=	2.7.2
-PORTREVISION=	5
+PORTVERSION=	2.8
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
@@ -37,7 +36,7 @@ WX_CONF_ARGS=	absolute
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	-I ${WRKSRC}
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
-CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH=no
+CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH=""
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
