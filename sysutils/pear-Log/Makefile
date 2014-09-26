@@ -8,11 +8,8 @@ CATEGORIES=	sysutils www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR logging utilities
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-
+USES=	pear
 USE_PHP=	yes
-PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-Log
 OPTIONS_DEFINE=	PEAR_DB PEAR_MDB2 PEAR_MAIL PEAR_SQLITE
@@ -21,23 +18,9 @@ PEAR_MDB2_DESC=	PEAR::MDB2 support
 PEAR_MAIL_DESC=	PEAR::Mail support
 PHP_SQLITE_DESC=	PHP sqlite support (php5 only)
 
-.include <bsd.port.options.mk>
+PEAR_DB_BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+PEAR_MDB2_BUILD_DEPENDS=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
+PEAR_MAIL_BUILD_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail
+PHP_SQLITE_USE=	PHP=sqlite
 
-.if ${PORT_OPTIONS:MPEAR_DB}
-BUILD_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-.endif
-
-.if ${PORT_OPTIONS:MPEAR_MDB2}
-BUILD_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
-.endif
-
-.if ${PORT_OPTIONS:MPEAR_MAIL}
-BUILD_DEPENDS+=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail
-.endif
-
-.if ${PORT_OPTIONS:MPHP_SQLITE}
-USE_PHP+=	sqlite
-.endif
-
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.mk>

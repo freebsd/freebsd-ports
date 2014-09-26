@@ -10,16 +10,13 @@ DISTNAME=	php-openid-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP OpenID library v2 for PEAR
 
-RUN_DEPENDS=	pear:${PORTSDIR}/devel/pear
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-
 CONFLICTS=	php-Auth_OpenID-1.*
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	tar:bzip2
-LATEST_LINK=	pear-Auth_OpenID
+
+USES=	tar:bzip2 pear python:build
 
 WRKSRC=		${WRKDIR}/php-openid-${PORTVERSION}
 
@@ -28,12 +25,11 @@ BCMATH_DESC=	Use bcmath instead of libgmp
 PEAR_DB_DESC=	Support SQL stores
 
 USE_PHP=	curl dom
-USE_PYTHON_BUILD=	yes
-PEAR_AUTOINSTALL=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-EXTRACT_SUFX=	.tar.bz2
+PEAR_DB_BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBCMATH}
 USE_PHP+=	bcmath
@@ -41,12 +37,8 @@ USE_PHP+=	bcmath
 USE_PHP+=	gmp
 .endif
 
-.if ${PORT_OPTIONS:MPEAR_DB}
-BUILD_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-RUN_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-.endif
 
 post-configure:
 	@cd ${WRKSRC}/admin && ${PYTHON_CMD} packagexml.py ${PORTVERSION} package2.xml ../CHANGELOG > ${WRKDIR}/package.xml
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
