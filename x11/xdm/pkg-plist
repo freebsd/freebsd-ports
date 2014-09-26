@@ -8,47 +8,18 @@ lib/X11/xdm/pixmaps/xorg.xpm
 man/man1/xdm.1.gz
 %%XDMSHELL%%man/man1/xdmshell.1.gz
 share/X11/app-defaults/Chooser
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/GiveConsole %D/lib/X11/xdm/GiveConsole; then rm -f %D/lib/X11/xdm/GiveConsole; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/TakeConsole %D/lib/X11/xdm/TakeConsole; then rm -f %D/lib/X11/xdm/TakeConsole; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/Xaccess %D/lib/X11/xdm/Xaccess; then rm -f %D/lib/X11/xdm/Xaccess; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/Xreset %D/lib/X11/xdm/Xreset; then rm -f %D/lib/X11/xdm/Xreset; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/Xresources %D/lib/X11/xdm/Xresources; then rm -f %D/lib/X11/xdm/Xresources; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/Xservers %D/lib/X11/xdm/Xservers; then rm -f %D/lib/X11/xdm/Xservers; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/Xsession %D/lib/X11/xdm/Xsession; then rm -f %D/lib/X11/xdm/Xsession; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/Xsetup_0 %D/lib/X11/xdm/Xsetup_0; then rm -f %D/lib/X11/xdm/Xsetup_0; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/Xstartup %D/lib/X11/xdm/Xstartup; then rm -f %D/lib/X11/xdm/Xstartup; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/Xwilling %D/lib/X11/xdm/Xwilling; then rm -f %D/lib/X11/xdm/Xwilling; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/xdm-config %D/lib/X11/xdm/xdm-config; then rm -f %D/lib/X11/xdm/xdm-config; fi
-%%EXAMPLESDIR%%/GiveConsole
-%%EXAMPLESDIR%%/TakeConsole
-%%EXAMPLESDIR%%/Xaccess
-%%EXAMPLESDIR%%/Xreset
-%%EXAMPLESDIR%%/Xresources
-%%EXAMPLESDIR%%/Xservers
-%%EXAMPLESDIR%%/Xsession
-%%EXAMPLESDIR%%/Xsetup_0
-%%EXAMPLESDIR%%/Xstartup
-%%EXAMPLESDIR%%/Xwilling
-%%EXAMPLESDIR%%/xdm-config
-@exec cp -n %D/%%EXAMPLESDIR%%/GiveConsole %D/lib/X11/xdm/GiveConsole
-@exec cp -n %D/%%EXAMPLESDIR%%/TakeConsole %D/lib/X11/xdm/TakeConsole
-@exec cp -n %D/%%EXAMPLESDIR%%/Xaccess %D/lib/X11/xdm/Xaccess
-@exec cp -n %D/%%EXAMPLESDIR%%/Xreset %D/lib/X11/xdm/Xreset
-@exec cp -n %D/%%EXAMPLESDIR%%/Xresources %D/lib/X11/xdm/Xresources
-@exec cp -n %D/%%EXAMPLESDIR%%/Xservers %D/lib/X11/xdm/Xservers
-@exec cp -n %D/%%EXAMPLESDIR%%/Xsession %D/lib/X11/xdm/Xsession
-@exec cp -n %D/%%EXAMPLESDIR%%/Xsetup_0 %D/lib/X11/xdm/Xsetup_0
-@exec cp -n %D/%%EXAMPLESDIR%%/Xstartup %D/lib/X11/xdm/Xstartup
-@exec cp -n %D/%%EXAMPLESDIR%%/Xwilling %D/lib/X11/xdm/Xwilling
-@exec cp -n %D/%%EXAMPLESDIR%%/xdm-config %D/lib/X11/xdm/xdm-config
-@exec mkdir -p /var/lib/xdm/authdir
-@dirrmtry share/X11/app-defaults
-@dirrmtry share/X11
-@unexec rm -f /var/lib/xdm/authdir/authfiles/* 2>/dev/null || true
-@unexec rmdir /var/lib/xdm/authdir/authfiles 2>/dev/null || true
-@unexec rmdir /var/lib/xdm/authdir 2>/dev/null
-@unexec rmdir /var/lib/xdm 2>/dev/null
-@unexec rmdir /var/lib 2>/dev/null
-@dirrm lib/X11/xdm/pixmaps
-@dirrm lib/X11/xdm
-@dirrm %%EXAMPLESDIR%%
+@sample lib/X11/xdm/GiveConsole.sample
+@sample lib/X11/xdm/TakeConsole.sample
+@sample lib/X11/xdm/Xaccess.sample
+@sample lib/X11/xdm/Xreset.sample
+@sample lib/X11/xdm/Xresources.sample
+@sample lib/X11/xdm/Xservers.sample
+@sample lib/X11/xdm/Xsession.sample
+@sample lib/X11/xdm/Xsetup_0.sample
+@sample lib/X11/xdm/Xstartup.sample
+@sample lib/X11/xdm/Xwilling.sample
+@sample lib/X11/xdm/xdm-config.sample
+@unexec rm -rf /var/lib/xdm/authdir/* 2>/dev/null || true
+@dir /var/lib/xdm/authdir
+@dir /var/lib/xdm
+@dir /var/lib
