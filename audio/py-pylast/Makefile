@@ -14,12 +14,7 @@ COMMENT=	Python interface to Last.fm
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-INSTALLS_EGGINFO=	yes
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pylast.py \
-		%%PYTHON_SITELIBDIR%%/pylast.pyc \
-		%%PYTHON_SITELIBDIR%%/pylast.pyo
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
