@@ -20,10 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wojtekka
 GH_COMMIT=	ff39edb	
 
-USES=		gmake libtool pkgconfig tar:bzip2
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf gmake libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static --with-pthread \
 		--disable-tests --without-gnutls
