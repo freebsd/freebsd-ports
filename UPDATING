@@ -5,6 +5,36 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140926:
+  AFFECTS: users of net/asterisk and net/asterisk11
+  AUTHOR: madpilot@FreeBSD.org
+
+  The asterisk ports have been modified to have the LUA option
+  turned on by default to make such functionality available to users
+  of binary packages.
+
+  Some care should be taken before upgrading by people not using lua
+  to avoid the sample extensions.lua file from being loaded on reload
+  after updating the asterisk port/pkg.
+
+  Users compiling from ports not interested in LUA support are advised
+  to disable the option before updating.
+
+  People using binary packages(or not wanting to disable the LUA
+  option in the port) not using the lua functionality should add:
+
+  noload => pbx_lua.so 
+
+  to the PREFIX/etc/asterisk/modules.conf file, if using the
+  autoload=yes option in that same file. People not autoloading
+  modules don't need to perform any special action.
+
+  If asterisk is rebooted and the pbx_lua module gets loaded on a
+  system were it should not, it will load the example extensions.lua
+  configuration file adding unexpected logic to your dialplan. In
+  such a case following the above steps and reloading asterisk will
+  fix the problem.
+
 20140922:
   AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
   AUTHOR: xmj@FreeBSD.org
