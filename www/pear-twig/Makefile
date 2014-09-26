@@ -15,12 +15,10 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PEARDIR}/.channels/pear.twig-project.org.reg:${PORTSDIR}/devel/pear-channel-twig
 RUN_DEPENDS=	${PEARDIR}/.channels/pear.twig-project.org.reg:${PORTSDIR}/devel/pear-channel-twig
 
+USES=	pear
 PEAR_CHANNEL=	twig
-PEAR_AUTOINSTALL=	yes
 
 USE_PHP=	ctype hash
 WANT_PHP_CLI=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

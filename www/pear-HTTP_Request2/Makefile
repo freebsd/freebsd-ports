@@ -17,21 +17,10 @@ CURL_DESC=	PHP CURL extension support
 FILEINF_DESC=	PHP FILEINFO extension support
 ZLI_DESC=	PECL ZLIB support
 
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.options.mk>
+CURL_USE=	PHP=curl
+FILEINFO_USE=	PHP=fileinfo
+ZLIB_USE=	PHP=zlib
 
-.if ${PORT_OPTIONS:MCURL}
-USE_PHP+=	curl
-.endif
-
-.if ${PORT_OPTIONS:MFILEINFO}
-USE_PHP+=	fileinfo
-.endif
-
-.if ${PORT_OPTIONS:MZLIB}
-USE_PHP+=	zlib
-.endif
-
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.mk>
