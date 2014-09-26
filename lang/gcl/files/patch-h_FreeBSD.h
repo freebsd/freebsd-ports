@@ -28,6 +28,15 @@
  #define I386
  #endif
  
+@@ -48,7 +56,7 @@
+ 	int c = 0;						\
+ 								\
+ 	if (							\
+-		(fp)->_r <= 0 &&				\
++		((FILE *)fp)->_r <= 0 &&				\
+ 		(ioctl(((FILE *)fp)->_file, FIONREAD, &c), c <= 0)	\
+ 	)							\
+ 		return(FALSE);					\
 @@ -68,7 +76,11 @@
  #ifdef CLOCKS_PER_SEC
  #define HZ CLOCKS_PER_SEC
@@ -41,19 +50,3 @@
  #endif
  /* #define ss_base ss_sp */
  
-@@ -79,6 +91,7 @@
- #define HAVE_SIGPROCMASK
- #define SIG_STACK_SIZE (SIGSTKSZ/sizeof(double))
- 
-+/*
- #undef SETUP_SIG_STACK
- #define SETUP_SIG_STACK {					\
- 	static struct sigaltstack estack;			\
-@@ -90,6 +103,7 @@
- 	if (sigaltstack(&estack, 0) < 0)			\
- 		perror("sigaltstack");				\
- }
-+ */
- 
- #undef INSTALL_SEGMENTATION_CATCHER
- #define INSTALL_SEGMENTATION_CATCHER				\

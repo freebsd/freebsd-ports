@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcl
-PORTVERSION=	2.6.10
-PORTREVISION=	3
+PORTVERSION=	2.6.11
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	GNU
 
@@ -13,19 +12,16 @@ COMMENT=	GNU Common Lisp
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
-
-OPTIONS_DEFINE=	EMACS X11 DOCS
-OPTIONS_DEFAULT=EMACS X11
-EMACS_DESC=	Install Emacs syntax files
-
-ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake makeinfo readline
+USES=		gmake readline
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_prog_AWK="${LOCALBASE}/bin/gawk" \
+		C_INCLUDE_PATH="${PREFIX}/include" LIBRARY_PATH="${PREFIX}/lib"
 CONFIGURE_ARGS=	--enable-ansi \
 		--enable-machine=${OPSYS} \
 		--enable-emacsdir=${PREFIX}/share/emacs/site-lisp/gcl \
@@ -34,7 +30,6 @@ CONFIGURE_ARGS=	--enable-ansi \
 		--disable-dynsysbfd \
 		--disable-statsysbfd \
 		--enable-custreloc
-CONFIGURE_ENV=	C_INCLUDE_PATH="${PREFIX}/include" LIBRARY_PATH="${PREFIX}/lib"
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-command
 LATE_INSTALL_ARGS=\
@@ -65,6 +60,29 @@ PLIST_DIRS=	lib/${DISTNAME}/unixport \
 		lib/${DISTNAME}/clcs \
 		lib/${DISTNAME}
 
+ONLY_FOR_ARCHS=	amd64 i386
+
+OPTIONS_DEFINE=		DOCS EMACS X11
+OPTIONS_DEFAULT=	EMACS X11
+
+EMACS_DESC=		Install Emacs syntax files
+EMACS_USE=		emacs=yes
+EMACS_PLIST_FILES=	${FILES_ELISP:S|^|%%EMACS_SITE_LISPDIR%%/gcl/|}
+EMACS_PLIST_DIRS=	%%EMACS_SITE_LISPDIR%%/gcl
+X11_USES=		tk
+X11_USE=		xorg=x11
+X11_CONFIGURE_ON=	--enable-tclconfig=${TCL_LIBDIR} \
+			--enable-tkconfig=${TK_LIBDIR} \
+			--with-x
+X11_CONFIGURE_OFF=	--disable-xgcl
+X11_LDFLAGS=		-lX11
+X11_PLIST_FILES=	${FILES_GCLTK:S|^|lib/gcl-${PORTVERSION}/gcl-tk/|} \
+			${FILES_GCLTK_DEMOS:S|^|lib/gcl-${PORTVERSION}/gcl-tk/demos/|} \
+			${FILES_XGCL2:S|^|lib/gcl-${PORTVERSION}/xgcl-2/|}
+X11_PLIST_DIRS=		lib/${DISTNAME}/xgcl-2 \
+			lib/${DISTNAME}/gcl-tk/demos \
+			lib/${DISTNAME}/gcl-tk
+
 FILES_CLCS=	sys-proclaim.lisp
 FILES_CMPNEW=	gcl_cmpmain.lsp gcl_cmpopt.lsp gcl_collectfn.lsp \
 		gcl_collectfn.o gcl_lfun_list.lsp sys-proclaim.lisp
@@ -93,27 +111,7 @@ FILES_XGCL2=	gcl_dwtest.lsp gcl_dwtestcases.lsp sysdef.lisp
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMACS}
-USE_EMACS=	yes
 EMACS_NO_BUILD_DEPENDS=yes
-PLIST_FILES+=	${FILES_ELISP:S|^|%%EMACS_SITE_LISPDIR%%/gcl/|}
-PLIST_DIRS+=	%%EMACS_SITE_LISPDIR%%/gcl
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USES+=		tk
-USE_XORG=	x11
-CONFIGURE_ARGS+=--enable-tclconfig=${TCL_LIBDIR} \
-		--enable-tkconfig=${TK_LIBDIR} \
-		--with-x
-LDFLAGS+=	-lX11
-PLIST_FILES+=	${FILES_GCLTK:S|^|lib/gcl-${PORTVERSION}/gcl-tk/|} \
-		${FILES_GCLTK_DEMOS:S|^|lib/gcl-${PORTVERSION}/gcl-tk/demos/|} \
-		${FILES_XGCL2:S|^|lib/gcl-${PORTVERSION}/xgcl-2/|}
-PLIST_DIRS+=	lib/${DISTNAME}/xgcl-2 \
-		lib/${DISTNAME}/gcl-tk/demos \
-		lib/${DISTNAME}/gcl-tk
-.else
-CONFIGURE_ARGS+=--disable-xgcl
 .endif
 
 post-patch:
@@ -155,11 +153,14 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/${DISTNAME}/pcl)
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${DISTNAME}/unixport
-.for i in ${FILES_UNIXPORT}
+.for i in saved_ansi_gcl
+	(cd ${WRKSRC}/unixport && ${INSTALL_PROGRAM} ${i} \
+		${STAGEDIR}${PREFIX}/lib/${DISTNAME}/unixport)
+.endfor
+.for i in ${FILES_UNIXPORT:Nsaved_ansi_gcl}
 	(cd ${WRKSRC}/unixport && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${PREFIX}/lib/${DISTNAME}/unixport)
 .endfor
-	@${CHMOD} a+x ${STAGEDIR}${PREFIX}/lib/${DISTNAME}/unixport/saved_ansi_gcl
 .if ${PORT_OPTIONS:MEMACS}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/gcl
 .for i in ${FILES_ELISP}
@@ -169,7 +170,11 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MX11}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${DISTNAME}/gcl-tk
-.for i in ${FILES_GCLTK}
+.for i in gcltkaux
+	(cd ${WRKSRC}/gcl-tk && ${INSTALL_LIB} ${i} \
+		${STAGEDIR}${PREFIX}/lib/${DISTNAME}/gcl-tk)
+.endfor
+.for i in ${FILES_GCLTK:Ngcltkaux}
 	(cd ${WRKSRC}/gcl-tk && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${PREFIX}/lib/${DISTNAME}/gcl-tk)
 .endfor
