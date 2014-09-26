@@ -1,5 +1,5 @@
---- configure.in.orig
-+++ configure.in
+--- configure.ac.orig
++++ configure.ac
 @@ -9,6 +9,7 @@
  dnl options
  AM_OPTIONS_WXCONFIG
