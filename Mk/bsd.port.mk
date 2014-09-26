@@ -1221,7 +1221,7 @@ _PKG_VERSION!=	${PKG_BIN} -v
 .endif
 _PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
 .if ${_PKG_STATUS} == "<"
-IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade ${PKG_ORIGIN} first
+IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade the ${PKG_ORIGIN} port first
 .endif
 .endif
 
