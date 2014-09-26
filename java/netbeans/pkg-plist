@@ -124,6 +124,8 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/cnd/bin/SunOS-x86_64/rfs_test_env
 %%DATADIR%%/cnd/bin/dorun.sh
 %%DATADIR%%/cnd/bin/rfs_test_env.sh
+%%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-analysis-api.xml
+%%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-analysis-impl.xml
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-antlr.xml
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-api-model.xml
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd-api-project.xml
@@ -171,6 +173,14 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-cnd.xml
 %%DATADIR%%/cnd/config/Modules/org-netbeans-modules-jellytools-cnd.xml
 %%DATADIR%%/cnd/modules/docs/org-netbeans-modules-cnd.jar
+%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-analysis-api_ja.jar
+%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-analysis-api_pt_BR.jar
+%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-analysis-api_ru.jar
+%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-analysis-api_zh_CN.jar
+%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-analysis-impl_ja.jar
+%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-analysis-impl_pt_BR.jar
+%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-analysis-impl_ru.jar
+%%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-analysis-impl_zh_CN.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-antlr_ja.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-antlr_pt_BR.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-cnd-antlr_ru.jar
@@ -355,6 +365,8 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-jellytools-cnd_pt_BR.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-jellytools-cnd_ru.jar
 %%DATADIR%%/cnd/modules/locale/org-netbeans-modules-jellytools-cnd_zh_CN.jar
+%%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-analysis-api.jar
+%%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-analysis-impl.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-antlr.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-api-model.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-api-project.jar
@@ -401,6 +413,8 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd-utils.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-cnd.jar
 %%DATADIR%%/cnd/modules/org-netbeans-modules-jellytools-cnd.jar
+%%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-analysis-api.xml
+%%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-analysis-impl.xml
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-antlr.xml
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-api-model.xml
 %%DATADIR%%/cnd/update_tracking/org-netbeans-modules-cnd-api-project.xml
@@ -450,6 +464,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/dlight/.lastModified
 %%DATADIR%%/dlight/VERSION.txt
 %%DATADIR%%/dlight/bin/FreeBSD-x86/fs_server
+%%DATADIR%%/dlight/bin/Linux-arm/fs_server
 %%DATADIR%%/dlight/bin/Linux-x86/fs_server
 %%DATADIR%%/dlight/bin/Linux-x86_64/fs_server
 %%DATADIR%%/dlight/bin/MacOSX-x86/fs_server
@@ -544,9 +559,11 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-javaee-project.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-javaee-resources.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-javaee-specs-support.xml
+%%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-javaee-wildfly.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-javaee7-api.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-jellytools-enterprise.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-jsp-lexer.xml
+%%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-ko4j-debugging.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-maven-j2ee.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-maven-jaxws.xml
 %%DATADIR%%/enterprise/config/Modules/org-netbeans-modules-maven-samples.xml
@@ -654,27 +671,22 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/modules/ext/javaee7-endorsed/jsr181-api-license.txt
 %%DATADIR%%/enterprise/modules/ext/javaee7-endorsed/jsr181-api.jar
 %%DATADIR%%/enterprise/modules/ext/jaxrs-2.0/javax.ws.rs-api-2.0.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/ext/asm-all-repackaged-2.1.88.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/ext/cglib-2.1.88.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/asm-all-repackaged-2.2.0-b21.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/cglib-2.2.0-b21.jar
 %%DATADIR%%/enterprise/modules/ext/jersey2/ext/guava-14.0.1.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/ext/hk2-api-2.1.88.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/ext/hk2-locator-2.1.88.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/ext/hk2-utils-2.1.88.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/hk2-api-2.2.0-b21.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/hk2-locator-2.2.0-b21.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/hk2-utils-2.2.0-b21.jar
 %%DATADIR%%/enterprise/modules/ext/jersey2/ext/javax.annotation-api-1.2.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/ext/javax.inject-2.1.88.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/ext/javax.servlet-api-3.1.0.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/javax.inject-2.2.0-b21.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/javax.servlet-api-3.0.1.jar
 %%DATADIR%%/enterprise/modules/ext/jersey2/ext/jaxb-api-2.2.7.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/jersey-entity-filtering-2.5.1.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/jersey-media-moxy-2.5.1.jar
 %%DATADIR%%/enterprise/modules/ext/jersey2/ext/org.osgi.core-4.2.0.jar
 %%DATADIR%%/enterprise/modules/ext/jersey2/ext/osgi-resource-locator-1.0.1.jar
 %%DATADIR%%/enterprise/modules/ext/jersey2/ext/persistence-api-1.0.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/ext/validation-api-1.1.0.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/extensions/jackson-core-asl-1.9.11.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/extensions/jackson-jaxrs-1.9.11.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/extensions/jackson-mapper-asl-1.9.11.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/extensions/jackson-xc-1.9.11.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/extensions/jersey-media-json-jackson-2.0.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/extensions/jersey-media-json-jettison-2.0.jar
-%%DATADIR%%/enterprise/modules/ext/jersey2/extensions/jettison-1.3.3.jar
+%%DATADIR%%/enterprise/modules/ext/jersey2/ext/validation-api-1.1.0.Final.jar
 %%DATADIR%%/enterprise/modules/ext/jersey2/jersey-client.jar
 %%DATADIR%%/enterprise/modules/ext/jersey2/jersey-common.jar
 %%DATADIR%%/enterprise/modules/ext/jersey2/jersey-container-servlet-core.jar
@@ -705,11 +717,11 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/modules/ext/metro/webservices-rt.jar
 %%DATADIR%%/enterprise/modules/ext/metro/webservices-tools.jar
 %%DATADIR%%/enterprise/modules/ext/org-netbeans-modules-web-httpmonitor.jar
-%%DATADIR%%/enterprise/modules/ext/primefaces/primefaces-4.0.jar
+%%DATADIR%%/enterprise/modules/ext/primefaces/primefaces-5.0.jar
 %%DATADIR%%/enterprise/modules/ext/servlet3.1-jsp2.3-api.jar
 %%DATADIR%%/enterprise/modules/ext/struts/antlr-2.7.2.jar
 %%DATADIR%%/enterprise/modules/ext/struts/bsf-2.3.0.jar
-%%DATADIR%%/enterprise/modules/ext/struts/commons-beanutils-1.%%PORTVERSION%%.jar
+%%DATADIR%%/enterprise/modules/ext/struts/commons-beanutils-1.8.0.jar
 %%DATADIR%%/enterprise/modules/ext/struts/commons-chain-1.2.jar
 %%DATADIR%%/enterprise/modules/ext/struts/commons-digester-1.8.jar
 %%DATADIR%%/enterprise/modules/ext/struts/commons-fileupload-1.1.1.jar
@@ -903,6 +915,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee-specs-support_pt_BR.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee-specs-support_ru.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee-specs-support_zh_CN.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee-wildfly_ja.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee-wildfly_pt_BR.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee-wildfly_ru.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee-wildfly_zh_CN.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee7-api_ja.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee7-api_pt_BR.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-javaee7-api_ru.jar
@@ -915,6 +931,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-jsp-lexer_pt_BR.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-jsp-lexer_ru.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-jsp-lexer_zh_CN.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-ko4j-debugging_ja.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-ko4j-debugging_pt_BR.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-ko4j-debugging_ru.jar
+%%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-ko4j-debugging_zh_CN.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-maven-j2ee_ja.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-maven-j2ee_pt_BR.jar
 %%DATADIR%%/enterprise/modules/locale/org-netbeans-modules-maven-j2ee_ru.jar
@@ -1211,9 +1231,11 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-javaee-project.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-javaee-resources.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-javaee-specs-support.jar
+%%DATADIR%%/enterprise/modules/org-netbeans-modules-javaee-wildfly.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-javaee7-api.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-jellytools-enterprise.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-jsp-lexer.jar
+%%DATADIR%%/enterprise/modules/org-netbeans-modules-ko4j-debugging.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-maven-j2ee.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-maven-jaxws.jar
 %%DATADIR%%/enterprise/modules/org-netbeans-modules-maven-samples.jar
@@ -1321,9 +1343,11 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-javaee-project.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-javaee-resources.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-javaee-specs-support.xml
+%%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-javaee-wildfly.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-javaee7-api.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-jellytools-enterprise.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-jsp-lexer.xml
+%%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-ko4j-debugging.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-maven-j2ee.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-maven-jaxws.xml
 %%DATADIR%%/enterprise/update_tracking/org-netbeans-modules-maven-samples.xml
@@ -1408,6 +1432,8 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-beans.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-cloud-amazon.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-cloud-common.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-cnd-analysis-api.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-cnd-analysis-impl.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-cnd-antlr.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-cnd-api-model.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-cnd-apt.xml
@@ -1531,6 +1557,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javaee-beanvalidation.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javaee-injection.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javaee-project.xml
+%%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javaee-wildfly.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javaee7-api.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javafx2-editor.xml
 %%DATADIR%%/ergonomics/config/Modules/org-netbeans-modules-javafx2-kit.xml
@@ -1966,6 +1993,13 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/harness/update_tracking/org-netbeans-modules-nbjunit.xml
 %%DATADIR%%/ide/.lastModified
 %%DATADIR%%/ide/VERSION.txt
+%%DATADIR%%/ide/bin/nativeexecution/Linux-arm/killall
+%%DATADIR%%/ide/bin/nativeexecution/Linux-arm/process_start
+%%DATADIR%%/ide/bin/nativeexecution/Linux-arm/pty
+%%DATADIR%%/ide/bin/nativeexecution/Linux-arm/pty_open
+%%DATADIR%%/ide/bin/nativeexecution/Linux-arm/sigqueue
+%%DATADIR%%/ide/bin/nativeexecution/Linux-arm/stat
+%%DATADIR%%/ide/bin/nativeexecution/Linux-arm/unbuffer.so
 %%DATADIR%%/ide/bin/nativeexecution/Linux-x86/killall
 %%DATADIR%%/ide/bin/nativeexecution/Linux-x86/process_start
 %%DATADIR%%/ide/bin/nativeexecution/Linux-x86/pty
@@ -2068,6 +2102,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/config/Modules/org-eclipse-equinox-preferences.xml
 %%DATADIR%%/ide/config/Modules/org-eclipse-equinox-registry.xml
 %%DATADIR%%/ide/config/Modules/org-eclipse-equinox-security.xml
+%%DATADIR%%/ide/config/Modules/org-eclipse-jgit-java7.xml
 %%DATADIR%%/ide/config/Modules/org-eclipse-jgit.xml
 %%DATADIR%%/ide/config/Modules/org-eclipse-mylyn-bugzilla-core.xml
 %%DATADIR%%/ide/config/Modules/org-eclipse-mylyn-commons-core.xml
@@ -2189,6 +2224,8 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-javascript2-jquery.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-javascript2-kit.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-javascript2-knockout.xml
+%%DATADIR%%/ide/config/Modules/org-netbeans-modules-javascript2-prototypejs.xml
+%%DATADIR%%/ide/config/Modules/org-netbeans-modules-javascript2-requirejs.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-jellytools-ide.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-jumpto.xml
 %%DATADIR%%/ide/config/Modules/org-netbeans-modules-languages-diff.xml
@@ -2321,7 +2358,6 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/ext/jsch-agentproxy-pageant.jar
 %%DATADIR%%/ide/modules/ext/jsch-agentproxy-sshagent.jar
 %%DATADIR%%/ide/modules/ext/jsch-agentproxy-usocket-jna.jar
-%%DATADIR%%/ide/modules/ext/jsch-agentproxy-usocket-nc.jar
 %%DATADIR%%/ide/modules/ext/json-simple-1.1.1.jar
 %%DATADIR%%/ide/modules/ext/jvyamlb-0.2.3.jar
 %%DATADIR%%/ide/modules/ext/libpam4j-1.1.jar
@@ -2365,7 +2401,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/ext/validator.jar
 %%DATADIR%%/ide/modules/ext/webserver.jar
 %%DATADIR%%/ide/modules/ext/winp-1.14-patched.jar
-%%DATADIR%%/ide/modules/ext/xerces-2.%%PORTVERSION%%.jar
+%%DATADIR%%/ide/modules/ext/xerces-2.8.0.jar
 %%DATADIR%%/ide/modules/javaewah-dummy.jar
 %%DATADIR%%/ide/modules/lib/extbrowser.dll
 %%DATADIR%%/ide/modules/lib/extbrowser64.dll
@@ -2817,6 +2853,14 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-knockout_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-knockout_ru.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-knockout_zh_CN.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-prototypejs_ja.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-prototypejs_pt_BR.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-prototypejs_ru.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-prototypejs_zh_CN.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-requirejs_ja.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-requirejs_pt_BR.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-requirejs_ru.jar
+%%DATADIR%%/ide/modules/locale/org-netbeans-modules-javascript2-requirejs_zh_CN.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-jellytools-ide_ja.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-jellytools-ide_pt_BR.jar
 %%DATADIR%%/ide/modules/locale/org-netbeans-modules-jellytools-ide_ru.jar
@@ -3183,6 +3227,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/org-eclipse-equinox-preferences.jar
 %%DATADIR%%/ide/modules/org-eclipse-equinox-registry.jar
 %%DATADIR%%/ide/modules/org-eclipse-equinox-security.jar
+%%DATADIR%%/ide/modules/org-eclipse-jgit-java7.jar
 %%DATADIR%%/ide/modules/org-eclipse-jgit.jar
 %%DATADIR%%/ide/modules/org-eclipse-mylyn-bugzilla-core.jar
 %%DATADIR%%/ide/modules/org-eclipse-mylyn-commons-core.jar
@@ -3304,6 +3349,8 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/modules/org-netbeans-modules-javascript2-jquery.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-javascript2-kit.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-javascript2-knockout.jar
+%%DATADIR%%/ide/modules/org-netbeans-modules-javascript2-prototypejs.jar
+%%DATADIR%%/ide/modules/org-netbeans-modules-javascript2-requirejs.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-jellytools-ide.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-jumpto.jar
 %%DATADIR%%/ide/modules/org-netbeans-modules-languages-diff.jar
@@ -3412,6 +3459,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/update_tracking/org-eclipse-equinox-preferences.xml
 %%DATADIR%%/ide/update_tracking/org-eclipse-equinox-registry.xml
 %%DATADIR%%/ide/update_tracking/org-eclipse-equinox-security.xml
+%%DATADIR%%/ide/update_tracking/org-eclipse-jgit-java7.xml
 %%DATADIR%%/ide/update_tracking/org-eclipse-jgit.xml
 %%DATADIR%%/ide/update_tracking/org-eclipse-mylyn-bugzilla-core.xml
 %%DATADIR%%/ide/update_tracking/org-eclipse-mylyn-commons-core.xml
@@ -3533,6 +3581,8 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-javascript2-jquery.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-javascript2-kit.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-javascript2-knockout.xml
+%%DATADIR%%/ide/update_tracking/org-netbeans-modules-javascript2-prototypejs.xml
+%%DATADIR%%/ide/update_tracking/org-netbeans-modules-javascript2-requirejs.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-jellytools-ide.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-jumpto.xml
 %%DATADIR%%/ide/update_tracking/org-netbeans-modules-languages-diff.xml
@@ -3634,6 +3684,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/config/Modules/org-jdesktop-beansbinding.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-api-debugger-jpda.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-api-java.xml
+%%DATADIR%%/java/config/Modules/org-netbeans-api-maven.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-lib-nbjavac.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-libs-cglib.xml
 %%DATADIR%%/java/config/Modules/org-netbeans-libs-javacapi.xml
@@ -3796,32 +3847,31 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/ext/AbsoluteLayout.jar
 %%DATADIR%%/java/modules/ext/beansbinding-1.2.1.jar
 %%DATADIR%%/java/modules/ext/cglib-2.2.jar
+%%DATADIR%%/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip
 %%DATADIR%%/java/modules/ext/eclipselink/eclipselink.jar
 %%DATADIR%%/java/modules/ext/eclipselink/javax.persistence_2.1.0.v201304241213.jar
-%%DATADIR%%/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.jpql_2.5.1.v20130918-f2b9fc5.jar
-%%DATADIR%%/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.modelgen_2.5.1.v20130918-f2b9fc5.jar
+%%DATADIR%%/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar
+%%DATADIR%%/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.modelgen_2.5.2.v20140319-9ad6abd.jar
 %%DATADIR%%/java/modules/ext/hibernate4/antlr-2.7.7.jar
-%%DATADIR%%/java/modules/ext/hibernate4/asm-3.3.1.jar
-%%DATADIR%%/java/modules/ext/hibernate4/asm-commons-3.3.1.jar
 %%DATADIR%%/java/modules/ext/hibernate4/c3p0-0.9.2.1.jar
 %%DATADIR%%/java/modules/ext/hibernate4/cglib-2.2.jar
 %%DATADIR%%/java/modules/ext/hibernate4/commons-collections-3.2.1.jar
 %%DATADIR%%/java/modules/ext/hibernate4/dom4j-1.6.1.jar
 %%DATADIR%%/java/modules/ext/hibernate4/ehcache-core-2.4.3.jar
-%%DATADIR%%/java/modules/ext/hibernate4/hibernate-c3p0-4.2.6.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate4/hibernate-commons-annotations-4.0.2.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate4/hibernate-core-3.6.10.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate4/hibernate-core-4.2.6.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate4/hibernate-ehcache-4.2.6.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate4/hibernate-entitymanager-4.2.6.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate4/hibernate-jpa-2.0-api-1.0.1.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate4/hibernate-jpamodelgen-1.3.0.Final.jar
-%%DATADIR%%/java/modules/ext/hibernate4/hibernate-tools-3.6.0.CR1.jar
-%%DATADIR%%/java/modules/ext/hibernate4/javassist-3.15.0-GA.jar
-%%DATADIR%%/java/modules/ext/hibernate4/jboss-logging-3.1.0.GA.jar
-%%DATADIR%%/java/modules/ext/hibernate4/jboss-transaction-api_1.1_spec-1.0.1.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-c3p0-4.3.1.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-commons-annotations-4.0.4.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-core-4.3.1.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-ehcache-4.3.1.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-entitymanager-4.3.1.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-jpa-2.1-api-1.0.0.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-jpamodelgen-4.3.1.Final.jar
+%%DATADIR%%/java/modules/ext/hibernate4/hibernate-tools-4.3.1.CR1.jar
+%%DATADIR%%/java/modules/ext/hibernate4/javassist-3.18.1-GA.jar
+%%DATADIR%%/java/modules/ext/hibernate4/jboss-logging-3.1.3.GA.jar
+%%DATADIR%%/java/modules/ext/hibernate4/jboss-transaction-api_1.2_spec-1.0.0.Final.jar
 %%DATADIR%%/java/modules/ext/hibernate4/jtidy-r8-20060801.jar
-%%DATADIR%%/java/modules/ext/hibernate4/log4j-1.2.16.jar
+%%DATADIR%%/java/modules/ext/hibernate4/log4j-1.2.12.jar
+%%DATADIR%%/java/modules/ext/hibernate4/mchange-commons-java-0.2.3.4.jar
 %%DATADIR%%/java/modules/ext/hibernate4/slf4j-api-1.6.1.jar
 %%DATADIR%%/java/modules/ext/hibernate4/slf4j-log4j12-1.6.1.jar
 %%DATADIR%%/java/modules/ext/hibernate4/slf4j-simple-1.6.1.jar
@@ -3911,6 +3961,10 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/locale/org-netbeans-api-java_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-api-java_ru.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-api-java_zh_CN.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-api-maven_ja.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-api-maven_pt_BR.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-api-maven_ru.jar
+%%DATADIR%%/java/modules/locale/org-netbeans-api-maven_zh_CN.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-lib-nbjavac_ja.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-lib-nbjavac_pt_BR.jar
 %%DATADIR%%/java/modules/locale/org-netbeans-lib-nbjavac_ru.jar
@@ -4370,6 +4424,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/modules/org-jdesktop-beansbinding.jar
 %%DATADIR%%/java/modules/org-netbeans-api-debugger-jpda.jar
 %%DATADIR%%/java/modules/org-netbeans-api-java.jar
+%%DATADIR%%/java/modules/org-netbeans-api-maven.jar
 %%DATADIR%%/java/modules/org-netbeans-lib-nbjavac.jar
 %%DATADIR%%/java/modules/org-netbeans-libs-cglib.jar
 %%DATADIR%%/java/modules/org-netbeans-libs-javacapi.jar
@@ -4490,6 +4545,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/java/update_tracking/org-jdesktop-beansbinding.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-api-debugger-jpda.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-api-java.xml
+%%DATADIR%%/java/update_tracking/org-netbeans-api-maven.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-lib-nbjavac.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-libs-cglib.xml
 %%DATADIR%%/java/update_tracking/org-netbeans-libs-javacapi.xml
@@ -5793,7 +5849,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/modules/org-netbeans-modules-php-zend2.jar
 %%DATADIR%%/php/modules/org-netbeans-modules-websvc-saas-codegen-php.jar
 %%DATADIR%%/php/phpstubs/phpruntime/Core.php
+%%DATADIR%%/php/phpstubs/phpruntime/OAuth.php
 %%DATADIR%%/php/phpstubs/phpruntime/PDO.php
+%%DATADIR%%/php/phpstubs/phpruntime/PDO_Firebird.php
 %%DATADIR%%/php/phpstubs/phpruntime/PDO_ODBC.php
 %%DATADIR%%/php/phpstubs/phpruntime/Phar.php
 %%DATADIR%%/php/phpstubs/phpruntime/Reflection.php
@@ -5806,6 +5864,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/phpstubs/phpruntime/bcmath.php
 %%DATADIR%%/php/phpstubs/phpruntime/bz2.php
 %%DATADIR%%/php/phpstubs/phpruntime/calendar.php
+%%DATADIR%%/php/phpstubs/phpruntime/couchbase.php
 %%DATADIR%%/php/phpstubs/phpruntime/ctype.php
 %%DATADIR%%/php/phpstubs/phpruntime/curl.php
 %%DATADIR%%/php/phpstubs/phpruntime/date.php
@@ -5821,6 +5880,7 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/phpstubs/phpruntime/geoip.php
 %%DATADIR%%/php/phpstubs/phpruntime/gettext.php
 %%DATADIR%%/php/phpstubs/phpruntime/gmp.php
+%%DATADIR%%/php/phpstubs/phpruntime/gnupg.php
 %%DATADIR%%/php/phpstubs/phpruntime/hash.php
 %%DATADIR%%/php/phpstubs/phpruntime/iconv.php
 %%DATADIR%%/php/phpstubs/phpruntime/imagick.php
@@ -5853,7 +5913,9 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/php/phpstubs/phpruntime/pspell.php
 %%DATADIR%%/php/phpstubs/phpruntime/readline.php
 %%DATADIR%%/php/phpstubs/phpruntime/recode.php
+%%DATADIR%%/php/phpstubs/phpruntime/redis.php
 %%DATADIR%%/php/phpstubs/phpruntime/removed.php
+%%DATADIR%%/php/phpstubs/phpruntime/sasl.php
 %%DATADIR%%/php/phpstubs/phpruntime/session.php
 %%DATADIR%%/php/phpstubs/phpruntime/shmop.php
 %%DATADIR%%/php/phpstubs/phpruntime/snmp.php
@@ -6036,24 +6098,24 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/platform/lib/org-openide-util.jar
 %%DATADIR%%/platform/modules/ext/felix-4.2.1.jar
 %%DATADIR%%/platform/modules/ext/jhall-2.0_05.jar
-%%DATADIR%%/platform/modules/ext/jna-3.4.0.jar
+%%DATADIR%%/platform/modules/ext/jna-4.1.0.jar
+%%DATADIR%%/platform/modules/ext/jna-platform-4.1.0.jar
 %%DATADIR%%/platform/modules/ext/locale/updater_ja.jar
 %%DATADIR%%/platform/modules/ext/locale/updater_pt_BR.jar
 %%DATADIR%%/platform/modules/ext/locale/updater_ru.jar
 %%DATADIR%%/platform/modules/ext/locale/updater_zh_CN.jar
 %%DATADIR%%/platform/modules/ext/nsProxyAutoConfig.js
-%%DATADIR%%/platform/modules/ext/org.eclipse.osgi_3.%%PORTVERSION%%.v20120529-1548.jar
+%%DATADIR%%/platform/modules/ext/org.eclipse.osgi_3.9.1.v20140110-1610.jar
 %%DATADIR%%/platform/modules/ext/osgi.cmpn-4.2.jar
 %%DATADIR%%/platform/modules/ext/osgi.core-5.0.0.jar
-%%DATADIR%%/platform/modules/ext/platform-3.4.0.jar
 %%DATADIR%%/platform/modules/ext/swing-layout-1.0.4.jar
 %%DATADIR%%/platform/modules/ext/testng-6.8.1-dist.jar
 %%DATADIR%%/platform/modules/ext/updater.jar
-%%DATADIR%%/platform/modules/lib/amd64/jnidispatch-340.dll
-%%DATADIR%%/platform/modules/lib/amd64/linux/libjnidispatch-340.so
-%%DATADIR%%/platform/modules/lib/i386/linux/libjnidispatch-340.so
-%%DATADIR%%/platform/modules/lib/libjnidispatch-340.jnilib
-%%DATADIR%%/platform/modules/lib/x86/jnidispatch-340.dll
+%%DATADIR%%/platform/modules/lib/amd64/jnidispatch-410.dll
+%%DATADIR%%/platform/modules/lib/amd64/linux/libjnidispatch-410.so
+%%DATADIR%%/platform/modules/lib/i386/linux/libjnidispatch-410.so
+%%DATADIR%%/platform/modules/lib/libjnidispatch-410.jnilib
+%%DATADIR%%/platform/modules/lib/x86/jnidispatch-410.dll
 %%DATADIR%%/platform/modules/locale/org-jdesktop-layout_ja.jar
 %%DATADIR%%/platform/modules/locale/org-jdesktop-layout_pt_BR.jar
 %%DATADIR%%/platform/modules/locale/org-jdesktop-layout_ru.jar
@@ -6994,487 +7056,3 @@ bin/netbeans-%%PORTVERSION%%
 %%DATADIR%%/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-services-zillow.xml
 %%DATADIR%%/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-services-zvents.xml
 %%DATADIR%%/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-ui.xml
-@dirrm %%DATADIR%%/websvccommon/update_tracking
-@dirrm %%DATADIR%%/websvccommon/modules/locale
-@dirrm %%DATADIR%%/websvccommon/modules/ext
-@dirrm %%DATADIR%%/websvccommon/modules
-@dirrm %%DATADIR%%/websvccommon/config/Modules
-@dirrm %%DATADIR%%/websvccommon/config
-@dirrm %%DATADIR%%/websvccommon
-@dirrm %%DATADIR%%/webcommon/update_tracking
-@dirrm %%DATADIR%%/webcommon/modules/locale
-@dirrm %%DATADIR%%/webcommon/modules/lib
-@dirrm %%DATADIR%%/webcommon/modules/ext
-@dirrm %%DATADIR%%/webcommon/modules
-@dirrm %%DATADIR%%/webcommon/karma/karma-netbeans-reporter
-@dirrm %%DATADIR%%/webcommon/karma
-@dirrm %%DATADIR%%/webcommon/config/Modules
-@dirrm %%DATADIR%%/webcommon/config
-@dirrm %%DATADIR%%/webcommon/bin
-@dirrm %%DATADIR%%/webcommon/ant/extra
-@dirrm %%DATADIR%%/webcommon/ant
-@dirrm %%DATADIR%%/webcommon
-@dirrm %%DATADIR%%/profiler/update_tracking
-@dirrm %%DATADIR%%/profiler/remote-pack-defs
-@dirrm %%DATADIR%%/profiler/modules/locale
-@dirrm %%DATADIR%%/profiler/modules
-@dirrm %%DATADIR%%/profiler/lib/locale
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/windows-amd64
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/windows
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/solaris-sparcv9
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/solaris-sparc
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/solaris-i386
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/solaris-amd64
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/mac
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/linux-arm-vfp-hflt
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/linux-arm
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/linux-amd64
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/linux
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/hpux-pa_risc2.0w
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16/hpux-pa_risc2.0
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk16
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/windows-amd64
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/windows
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/solaris-sparcv9
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/solaris-sparc
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/solaris-i386
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/solaris-amd64
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/mac
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/linux-amd64
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/linux
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/hpux-pa_risc2.0w
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15/hpux-pa_risc2.0
-@dirrm %%DATADIR%%/profiler/lib/deployed/jdk15
-@dirrm %%DATADIR%%/profiler/lib/deployed/cvm/windows
-@dirrm %%DATADIR%%/profiler/lib/deployed/cvm/linux
-@dirrm %%DATADIR%%/profiler/lib/deployed/cvm
-@dirrm %%DATADIR%%/profiler/lib/deployed
-@dirrm %%DATADIR%%/profiler/lib
-@dirrm %%DATADIR%%/profiler/config/Modules
-@dirrm %%DATADIR%%/profiler/config
-@dirrm %%DATADIR%%/profiler/ant/nblib
-@dirrm %%DATADIR%%/profiler/ant
-@dirrm %%DATADIR%%/profiler
-@dirrm %%DATADIR%%/platform/update_tracking
-@dirrm %%DATADIR%%/platform/modules/locale
-@dirrm %%DATADIR%%/platform/modules/lib/x86
-@dirrm %%DATADIR%%/platform/modules/lib/i386/linux
-@dirrm %%DATADIR%%/platform/modules/lib/i386
-@dirrm %%DATADIR%%/platform/modules/lib/amd64/linux
-@dirrm %%DATADIR%%/platform/modules/lib/amd64
-@dirrm %%DATADIR%%/platform/modules/lib
-@dirrm %%DATADIR%%/platform/modules/ext/locale
-@dirrm %%DATADIR%%/platform/modules/ext
-@dirrm %%DATADIR%%/platform/modules
-@dirrm %%DATADIR%%/platform/lib/locale
-@dirrm %%DATADIR%%/platform/lib
-@dirrm %%DATADIR%%/platform/docs
-@dirrm %%DATADIR%%/platform/core/locale
-@dirrm %%DATADIR%%/platform/core
-@dirrm %%DATADIR%%/platform/config/Modules
-@dirrm %%DATADIR%%/platform/config/ModuleAutoDeps
-@dirrm %%DATADIR%%/platform/config
-@dirrm %%DATADIR%%/platform
-@dirrm %%DATADIR%%/php/zend
-@dirrm %%DATADIR%%/php/update_tracking
-@dirrm %%DATADIR%%/php/phpunit
-@dirrm %%DATADIR%%/php/phpstubs/phpruntime
-@dirrm %%DATADIR%%/php/phpstubs
-@dirrm %%DATADIR%%/php/modules/locale
-@dirrm %%DATADIR%%/php/modules/ext
-@dirrm %%DATADIR%%/php/modules
-@dirrm %%DATADIR%%/php/docs
-@dirrm %%DATADIR%%/php/config/Modules
-@dirrm %%DATADIR%%/php/config
-@dirrm %%DATADIR%%/php
-@dirrm %%DATADIR%%/nb/update_tracking
-@dirrm %%DATADIR%%/nb/modules/locale
-@dirrm %%DATADIR%%/nb/modules/ext/locale
-@dirrm %%DATADIR%%/nb/modules/ext
-@dirrm %%DATADIR%%/nb/modules
-@dirrm %%DATADIR%%/nb/docs/images
-@dirrm %%DATADIR%%/nb/docs
-@dirrm %%DATADIR%%/nb/core/locale
-@dirrm %%DATADIR%%/nb/core
-@dirrm %%DATADIR%%/nb/config/Modules
-@dirrm %%DATADIR%%/nb/config
-@dirrm %%DATADIR%%/nb
-@dirrm %%DATADIR%%/mobility/update_tracking
-@dirrm %%DATADIR%%/mobility/sources
-@dirrm %%DATADIR%%/mobility/modules/locale
-@dirrm %%DATADIR%%/mobility/modules/ext
-@dirrm %%DATADIR%%/mobility/modules/docs
-@dirrm %%DATADIR%%/mobility/modules
-@dirrm %%DATADIR%%/mobility/config/Modules
-@dirrm %%DATADIR%%/mobility/config
-@dirrm %%DATADIR%%/mobility/ant/nblib/locale
-@dirrm %%DATADIR%%/mobility/ant/nblib
-@dirrm %%DATADIR%%/mobility/ant
-@dirrm %%DATADIR%%/mobility
-@dirrm %%DATADIR%%/javafx/update_tracking
-@dirrm %%DATADIR%%/javafx/modules/locale
-@dirrm %%DATADIR%%/javafx/modules
-@dirrm %%DATADIR%%/javafx/config/Modules
-@dirrm %%DATADIR%%/javafx/config
-@dirrm %%DATADIR%%/javafx
-@dirrm %%DATADIR%%/javacard/update_tracking
-@dirrm %%DATADIR%%/javacard/modules/locale
-@dirrm %%DATADIR%%/javacard/modules/ext
-@dirrm %%DATADIR%%/javacard/modules/docs
-@dirrm %%DATADIR%%/javacard/modules
-@dirrm %%DATADIR%%/javacard/javacard302
-@dirrm %%DATADIR%%/javacard/config/Modules
-@dirrm %%DATADIR%%/javacard/config
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/src/com/sun/jchowto/helloworld
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/src/com/sun/jchowto
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/src/com/sun
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/src/com
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/src
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/nbproject/private
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/nbproject
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/html/images
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/html
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/WEB-INF
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld/META-INF
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web/HelloWorld
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/web
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/keystore
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/src/com/sun/jchowto/helloworld
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/src/com/sun/jchowto
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/src/com/sun
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/src/com
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/src
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/scripts
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/nbproject/private
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/nbproject
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/META-INF
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld/APPLET-INF
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets/HelloWorld
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/extended_applets
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/src/com/sun/jcclassic/samples/helloworld
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/src/com/sun/jcclassic/samples
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/src/com/sun/jcclassic
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/src/com/sun
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/src/com
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/src
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/scripts
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/nbproject
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/META-INF
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld/APPLET-INF
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets/HelloWorld
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples/classic_applets
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/samples
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/lib/locale
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/lib
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/legal
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/resources
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/javacardx/spi/security
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/javacardx/spi/framework
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/javacardx/spi/cardmgmt
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/javacardx/spi
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/javacardx
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/com/sun/javacard/spi/security
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/com/sun/javacard/spi/cardmgmt
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/com/sun/javacard/spi
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/com/sun/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/com/sun
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi/com
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/spi
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/resources
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javax/servlet/http
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javax/servlet
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javax/microedition/pki
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javax/microedition/io
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javax/microedition
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javax
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/servlet/http
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/servlet
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/security
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/io
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/framework/util/intx
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/framework/util
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/framework/tlv
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/framework/math
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/framework
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/facilities
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/external
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/crypto
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/biometry
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx/apdu
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacardx
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacard/security
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacard/framework/service
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacard/framework
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/java/util
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/java/security
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/java/rmi
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/java/lang/annotation
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/java/lang
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/java/io
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api/java
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/api
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/apduio/apduiolib/resources
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/apduio/apduiolib/com/sun/javacard/apduio
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/apduio/apduiolib/com/sun/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/apduio/apduiolib/com/sun
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/apduio/apduiolib/com
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/apduio/apduiolib
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/apduio
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/UserGuide_html/shared/chars
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/UserGuide_html/shared
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/UserGuide_html/figures
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs/UserGuide_html
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/docs
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/bin
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/framework/util/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/framework/util/intx/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/framework/util/intx
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/framework/util
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/framework/tlv/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/framework/tlv
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/framework/math/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/framework/math
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/framework
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/external/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/external
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/crypto/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/crypto
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/biometry/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/biometry
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/apdu/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx/apdu
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacardx
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacard/security/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacard/security
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacard/framework/service/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacard/framework/service
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacard/framework/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacard/framework
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/java/rmi/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/java/rmi
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/java/lang/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/java/lang
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/java/io/javacard
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/java/io
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files/java
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/api_export_files
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition/Uninstaller
-@dirrm %%DATADIR%%/javacard/JCDK3.0.2_ConnectedEdition
-@dirrm %%DATADIR%%/javacard
-@dirrm %%DATADIR%%/java/update_tracking
-@dirrm %%DATADIR%%/java/sources/org/netbeans/lib/awtextra
-@dirrm %%DATADIR%%/java/sources/org/netbeans/lib
-@dirrm %%DATADIR%%/java/sources/org/netbeans
-@dirrm %%DATADIR%%/java/sources/org
-@dirrm %%DATADIR%%/java/sources
-@dirrm %%DATADIR%%/java/modules/locale
-@dirrm %%DATADIR%%/java/modules/ext/spring-4
-@dirrm %%DATADIR%%/java/modules/ext/spring-3.0
-@dirrm %%DATADIR%%/java/modules/ext/maven/rootpackage
-@dirrm %%DATADIR%%/java/modules/ext/maven
-@dirrm %%DATADIR%%/java/modules/ext/jaxws22/api
-@dirrm %%DATADIR%%/java/modules/ext/jaxws22
-@dirrm %%DATADIR%%/java/modules/ext/hibernate4
-@dirrm %%DATADIR%%/java/modules/ext/eclipselink
-@dirrm %%DATADIR%%/java/modules/ext
-@dirrm %%DATADIR%%/java/modules
-@dirrm %%DATADIR%%/java/maven/lib/ext
-@dirrm %%DATADIR%%/java/maven/lib
-@dirrm %%DATADIR%%/java/maven/conf
-@dirrm %%DATADIR%%/java/maven/boot
-@dirrm %%DATADIR%%/java/maven/bin
-@dirrm %%DATADIR%%/java/maven-nblib
-@dirrm %%DATADIR%%/java/maven
-@dirrm %%DATADIR%%/java/docs
-@dirrm %%DATADIR%%/java/config/Modules
-@dirrm %%DATADIR%%/java/config/ModuleAutoDeps
-@dirrm %%DATADIR%%/java/config
-@dirrm %%DATADIR%%/java/ant/nblib
-@dirrm %%DATADIR%%/java/ant/extra
-@dirrm %%DATADIR%%/java/ant
-@dirrm %%DATADIR%%/java
-@dirrm %%DATADIR%%/ide/update_tracking
-@dirrm %%DATADIR%%/ide/modules/locale
-@dirrm %%DATADIR%%/ide/modules/lib
-@dirrm %%DATADIR%%/ide/modules/ext/locale
-@dirrm %%DATADIR%%/ide/modules/ext/jaxb/api
-@dirrm %%DATADIR%%/ide/modules/ext/jaxb
-@dirrm %%DATADIR%%/ide/modules/ext
-@dirrm %%DATADIR%%/ide/modules/docs
-@dirrm %%DATADIR%%/ide/modules/dict
-@dirrm %%DATADIR%%/ide/modules
-@dirrm %%DATADIR%%/ide/jsstubs
-@dirrm %%DATADIR%%/ide/docs/org/netbeans/modules/usersguide
-@dirrm %%DATADIR%%/ide/docs/org/netbeans/modules
-@dirrm %%DATADIR%%/ide/docs/org/netbeans
-@dirrm %%DATADIR%%/ide/docs/org
-@dirrm %%DATADIR%%/ide/docs
-@dirrm %%DATADIR%%/ide/config/Modules
-@dirrm %%DATADIR%%/ide/config/ModuleAutoDeps
-@dirrm %%DATADIR%%/ide/config
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/Windows-x86_64
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/Windows-x86
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/SunOS-x86_64
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/SunOS-x86
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/SunOS-sparc_64
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/SunOS-sparc
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/MacOSX-x86_64
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/MacOSX-x86
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/Linux-x86_64
-@dirrm %%DATADIR%%/ide/bin/nativeexecution/Linux-x86
-@dirrm %%DATADIR%%/ide/bin/nativeexecution
-@dirrm %%DATADIR%%/ide/bin
-@dirrm %%DATADIR%%/ide
-@dirrm %%DATADIR%%/harness/update_tracking
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/infra/build/products/helloworld
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/infra/build/products
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/infra/build/engine
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/infra/build
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/infra
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany/installer/wizard/components/sequences
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany/installer/wizard/components/panels/resources
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany/installer/wizard/components/panels
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany/installer/wizard/components/actions
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany/installer/wizard/components
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany/installer/wizard
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany/installer/utils/applications
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany/installer/utils
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany/installer
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org/mycompany
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/org
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/native/launcher/windows/i18n
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/native/launcher/windows
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/native/launcher/unix/i18n
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/native/launcher/unix
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/native/launcher
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/native
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src/data
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/src
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine/nbproject
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/engine
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components/products/helloworld/src/org/mycompany/wizard/panels
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components/products/helloworld/src/org/mycompany/wizard
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components/products/helloworld/src/org/mycompany
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components/products/helloworld/src/org
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components/products/helloworld/src
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components/products/helloworld/nbproject
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components/products/helloworld/data
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components/products/helloworld
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components/products
-@dirrm %%DATADIR%%/harness/nbi/stub/ext/components
-@dirrm %%DATADIR%%/harness/nbi/stub/ext
-@dirrm %%DATADIR%%/harness/nbi/stub
-@dirrm %%DATADIR%%/harness/nbi/.common
-@dirrm %%DATADIR%%/harness/nbi
-@dirrm %%DATADIR%%/harness/modules/locale
-@dirrm %%DATADIR%%/harness/modules/ext/locale
-@dirrm %%DATADIR%%/harness/modules/ext
-@dirrm %%DATADIR%%/harness/modules
-@dirrm %%DATADIR%%/harness/launchers
-@dirrm %%DATADIR%%/harness/jnlp
-@dirrm %%DATADIR%%/harness/etc
-@dirrm %%DATADIR%%/harness/docs
-@dirrm %%DATADIR%%/harness/config/Modules
-@dirrm %%DATADIR%%/harness/config
-@dirrm %%DATADIR%%/harness/antlib
-@dirrm %%DATADIR%%/harness
-@dirrm %%DATADIR%%/groovy/update_tracking
-@dirrm %%DATADIR%%/groovy/modules/locale
-@dirrm %%DATADIR%%/groovy/modules/ext
-@dirrm %%DATADIR%%/groovy/modules
-@dirrm %%DATADIR%%/groovy/config/Modules
-@dirrm %%DATADIR%%/groovy/config
-@dirrm %%DATADIR%%/groovy
-@dirrm %%DATADIR%%/extide/update_tracking
-@dirrm %%DATADIR%%/extide/modules/locale
-@dirrm %%DATADIR%%/extide/modules
-@dirrm %%DATADIR%%/extide/config/Modules
-@dirrm %%DATADIR%%/extide/config
-@dirrm %%DATADIR%%/extide/ant/nblib/locale
-@dirrm %%DATADIR%%/extide/ant/nblib
-@dirrm %%DATADIR%%/extide/ant/lib
-@dirrm %%DATADIR%%/extide/ant/etc/checkstyle
-@dirrm %%DATADIR%%/extide/ant/etc
-@dirrm %%DATADIR%%/extide/ant/bin
-@dirrm %%DATADIR%%/extide/ant
-@dirrm %%DATADIR%%/extide
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%/ergonomics/update_tracking
-@dirrm %%DATADIR%%/ergonomics/modules/locale
-@dirrm %%DATADIR%%/ergonomics/modules
-@dirrm %%DATADIR%%/ergonomics/config/Modules
-@dirrm %%DATADIR%%/ergonomics/config
-@dirrm %%DATADIR%%/ergonomics
-@dirrm %%DATADIR%%/enterprise/update_tracking
-@dirrm %%DATADIR%%/enterprise/modules/locale
-@dirrm %%DATADIR%%/enterprise/modules/ext/struts
-@dirrm %%DATADIR%%/enterprise/modules/ext/primefaces
-@dirrm %%DATADIR%%/enterprise/modules/ext/metro
-@dirrm %%DATADIR%%/enterprise/modules/ext/locale
-@dirrm %%DATADIR%%/enterprise/modules/ext/jsf-2_2
-@dirrm %%DATADIR%%/enterprise/modules/ext/jsf-1_2
-@dirrm %%DATADIR%%/enterprise/modules/ext/jersey2/extensions
-@dirrm %%DATADIR%%/enterprise/modules/ext/jersey2/ext
-@dirrm %%DATADIR%%/enterprise/modules/ext/jersey2
-@dirrm %%DATADIR%%/enterprise/modules/ext/jaxrs-2.0
-@dirrm %%DATADIR%%/enterprise/modules/ext/javaee7-endorsed
-@dirrm %%DATADIR%%/enterprise/modules/ext/javaee6-endorsed
-@dirrm %%DATADIR%%/enterprise/modules/ext/aws-sdk
-@dirrm %%DATADIR%%/enterprise/modules/ext
-@dirrm %%DATADIR%%/enterprise/modules
-@dirrm %%DATADIR%%/enterprise/docs
-@dirrm %%DATADIR%%/enterprise/config/Modules
-@dirrm %%DATADIR%%/enterprise/config
-@dirrm %%DATADIR%%/enterprise/ant/sources/org/netbeans/modules/web/project/ant
-@dirrm %%DATADIR%%/enterprise/ant/sources/org/netbeans/modules/web/project
-@dirrm %%DATADIR%%/enterprise/ant/sources/org/netbeans/modules/web
-@dirrm %%DATADIR%%/enterprise/ant/sources/org/netbeans/modules
-@dirrm %%DATADIR%%/enterprise/ant/sources/org/netbeans
-@dirrm %%DATADIR%%/enterprise/ant/sources/org
-@dirrm %%DATADIR%%/enterprise/ant/sources
-@dirrm %%DATADIR%%/enterprise/ant/nblib/locale
-@dirrm %%DATADIR%%/enterprise/ant/nblib
-@dirrm %%DATADIR%%/enterprise/ant/extra
-@dirrm %%DATADIR%%/enterprise/ant
-@dirrm %%DATADIR%%/enterprise
-@dirrm %%DATADIR%%/dlight/update_tracking
-@dirrm %%DATADIR%%/dlight/modules/locale
-@dirrm %%DATADIR%%/dlight/modules
-@dirrm %%DATADIR%%/dlight/config/Modules
-@dirrm %%DATADIR%%/dlight/config
-@dirrm %%DATADIR%%/dlight/bin/SunOS-x86
-@dirrm %%DATADIR%%/dlight/bin/SunOS-sparc
-@dirrm %%DATADIR%%/dlight/bin/MacOSX-x86
-@dirrm %%DATADIR%%/dlight/bin/Linux-x86_64
-@dirrm %%DATADIR%%/dlight/bin/Linux-x86
-@dirrm %%DATADIR%%/dlight/bin/FreeBSD-x86
-@dirrm %%DATADIR%%/dlight/bin
-@dirrm %%DATADIR%%/dlight
-@dirrm %%DATADIR%%/cnd/update_tracking
-@dirrm %%DATADIR%%/cnd/modules/locale
-@dirrm %%DATADIR%%/cnd/modules/docs
-@dirrm %%DATADIR%%/cnd/modules
-@dirrm %%DATADIR%%/cnd/config/Modules
-@dirrm %%DATADIR%%/cnd/config
-@dirrm %%DATADIR%%/cnd/bin/SunOS-x86_64
-@dirrm %%DATADIR%%/cnd/bin/SunOS-x86
-@dirrm %%DATADIR%%/cnd/bin/SunOS-sparc_64
-@dirrm %%DATADIR%%/cnd/bin/SunOS-sparc
-@dirrm %%DATADIR%%/cnd/bin/MacOSX-x86_64
-@dirrm %%DATADIR%%/cnd/bin/MacOSX-x86
-@dirrm %%DATADIR%%/cnd/bin/Linux-x86_64
-@dirrm %%DATADIR%%/cnd/bin/Linux-x86
-@dirrm %%DATADIR%%/cnd/bin
-@dirrm %%DATADIR%%/cnd
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/apisupport/update_tracking
-@dirrm %%DATADIR%%/apisupport/modules/locale
-@dirrm %%DATADIR%%/apisupport/modules
-@dirrm %%DATADIR%%/apisupport/config/Modules
-@dirrm %%DATADIR%%/apisupport/config
-@dirrm %%DATADIR%%/apisupport/ant/nblib
-@dirrm %%DATADIR%%/apisupport/ant
-@dirrm %%DATADIR%%/apisupport
-@dirrm %%DATADIR%%
