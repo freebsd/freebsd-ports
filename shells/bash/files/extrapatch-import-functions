@@ -1,0 +1,43 @@
+Based on christos@NetBSD's patch
+
+--- shell.c.christos    2014-01-14 08:04:32.000000000 -0500
++++ shell.c     2014-09-25 16:11:51.000000000 -0400
+@@ -229,6 +229,7 @@
+ #else
+ int posixly_correct = 0;       /* Non-zero means posix.2 superset. */
+ #endif
++int import_functions = IMPORT_FUNCTIONS_DEF;      /* Import functions from environment */
+ 
+ /* Some long-winded argument names.  These are obviously new. */
+ #define Int 1
+@@ -248,6 +249,7 @@
+   { "help", Int, &want_initial_help, (char **)0x0 },
+   { "init-file", Charp, (int *)0x0, &bashrc_file },
+   { "login", Int, &make_login_shell, (char **)0x0 },
++  { "import-functions", Int, &import_functions, (char **)0x0 },
+   { "noediting", Int, &no_line_editing, (char **)0x0 },
+   { "noprofile", Int, &no_profile, (char **)0x0 },
+   { "norc", Int, &no_rc, (char **)0x0 },
+
+$NetBSD: patch-variables.c,v 1.1 2014/09/25 20:28:32 christos Exp $
+
+Only read functions from environment if flag is set.
+--- variables.c.christos        2014-09-25 16:09:41.000000000 -0400
++++ variables.c 2014-09-25 16:12:10.000000000 -0400
+@@ -105,6 +105,7 @@
+ extern int assigning_in_environment;
+ extern int executing_builtin;
+ extern int funcnest_max;
++extern int import_functions;
+ 
+ #if defined (READLINE)
+ extern int no_line_editing;
+@@ -349,7 +350,7 @@ initialize_shell_variables (env, privmod
+ 
+       /* If exported function, define it now.  Don't import functions from
+ 	 the environment in privileged mode. */
+-      if (privmode == 0 && read_but_dont_execute == 0 && STREQN ("() {", string, 4))
++      if (import_functions && privmode == 0 && read_but_dont_execute == 0 && STREQN ("() {", string, 4))
+ 	{
+ 	  string_length = strlen (string);
+ 	  temp_string = (char *)xmalloc (3 + string_length + char_index);
