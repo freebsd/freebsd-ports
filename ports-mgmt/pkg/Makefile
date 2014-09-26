@@ -54,7 +54,7 @@ NB_NEWPKGS=	0
 .endif
 # Only show the pre-everything notice if they have not already
 # converted any packages
-.if ${NB_OLDPKGS} > 0 && ${NB_NEWPKGS} == 0
+.if ${NB_OLDPKGS} > 0 && ${NB_NEWPKGS} == 0 && !defined(UPGRADEPKG)
 
 pre-everything::
 	@${ECHO_CMD} "You are about to convert your system to pkg while you have ports/packages"; \
@@ -62,6 +62,7 @@ pre-everything::
 	 ${ECHO_CMD} ""; \
 	 ${ECHO_CMD} "To switch to pkg:"; \
 	 ${ECHO_CMD} "    1) Install ports-mgmt/pkg"; \
+	 ${ECHO_CMD} "       cd ports-mgmt/pkg && make UPGRADEPKG=1 install clean"; \
 	 ${ECHO_CMD} "    2) Convert your package database by running pkg2ng"; \
 	 ${ECHO_CMD} ""; \
 	exit 1
