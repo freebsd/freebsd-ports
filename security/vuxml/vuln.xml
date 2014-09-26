@@ -118,6 +118,10 @@ Notes:
 	<name>nss</name>
 	<range><lt>3.17.1</lt></range>
       </package>
+      <package>
+	<name>linux-c6-nss</name>
+	<range><lt>3.16.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
