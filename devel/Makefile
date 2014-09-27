@@ -4286,6 +4286,7 @@
     SUBDIR += rubygem-debugger-xml
     SUBDIR += rubygem-deep_merge
     SUBDIR += rubygem-deeptest
+    SUBDIR += rubygem-default_value_for
     SUBDIR += rubygem-delayed_job
     SUBDIR += rubygem-delayer
     SUBDIR += rubygem-dep_selector
