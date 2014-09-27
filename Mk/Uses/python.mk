@@ -589,7 +589,6 @@ add-plist-post:
 		/^@dirrm / {d = substr($$0, 8); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
 		/^@dirrmtry / {d = substr($$0, 11); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
 		{print} \
-		END \
 		' \
 		pc="__pycache__" mt="$$(${PYMAGICTAG})" \
 		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
