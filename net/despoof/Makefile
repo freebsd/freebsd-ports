@@ -8,7 +8,7 @@ CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/misc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Command-line anti-spoofing detection utility
 
 DEPRECATED=	Depends on expired net/libnet10
