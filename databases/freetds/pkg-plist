@@ -46,4 +46,3 @@ man/man5/freetds.conf.5.gz
 %%ODBC%%lib/libtdsodbc.so.0.0.0
 %%ODBC%%lib/libtdsodbc.la
 %%ODBC%%lib/libtdsodbc.a
-@dirrm %%ETCDIR%%

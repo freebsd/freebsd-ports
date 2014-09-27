@@ -3,6 +3,7 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.91.103
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
@@ -22,16 +23,16 @@ USE_AUTOTOOLS=	autoconf:env
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-lgcrypt
-CONFIGURE_ARGS=	--with-tdsver=${TDS_VER} --sysconfdir=${ETCDIR}
+CONFIGURE_ARGS=	--with-tdsver=${TDS_VER} --sysconfdir=${ETCDIR} \
+	       	--enable-sybase-compat --enable-msdblib
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		OPENSSL GNUTLS MSDBLIB DOCS
+OPTIONS_DEFINE=		OPENSSL GNUTLS DOCS
 OPTIONS_RADIO=		ODBC
 OPTIONS_RADIO_ODBC=	IODBC UNIXODBC
-MSDBLIB_DESC=		MS SQL Server support (breaks databases/sybtcl)
 OPENSSL_USE=		OPENSSL=yes
 OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
@@ -41,9 +42,6 @@ IODBC_CONFIGURE_ON=	--with-iodbc=${LOCALBASE}
 IODBC_CPPFLAGS=		-I${LOCALBASE}/include/libiodbc
 UNIXODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 UNIXODBC_CONFIGURE_ON=	--with-unixodbc=${LOCALBASE}
-# We cannot use msdblib-style by default, because port databases/sybtcl
-# relies on sybase-style dblib
-MSDBLIB_CONFIGURE_ON=	--enable-msdblib
 
 .include <bsd.port.options.mk>
 

@@ -185,7 +185,7 @@ CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "mssql"
-LIB_DEPENDS+=	libsybdb.so:${PORTSDIR}/databases/freetds-msdblib
+LIB_DEPENDS+=	libsybdb.so:${PORTSDIR}/databases/freetds
 
 CONFIGURE_ARGS+=--with-mssql=${LOCALBASE}
 .endif
@@ -561,7 +561,7 @@ post-extract:
 
 .if ${PHP_MODNAME} == "pdo_dblib"
 .	if ${PORT_OPTIONS:MMSSQL}
-LIB_DEPENDS+=	libsybdb.so:${PORTSDIR}/databases/freetds-msdblib
+LIB_DEPENDS+=	libsybdb.so:${PORTSDIR}/databases/freetds
 .	else
 LIB_DEPENDS+=	libct.so:${PORTSDIR}/databases/freetds
 .	endif

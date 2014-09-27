@@ -7131,3 +7131,4 @@ sysutils/rubygem-chef-server||2014-09-25|Has expired: Depends on broken rubygem-
 sysutils/rubygem-chef-solr||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 www/rubygem-chef-server-webui||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 www/rubygem-chef-server-api||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+databases/freetds-msdblib||2014-09-27|No longer required, now covered by databases/freetds
