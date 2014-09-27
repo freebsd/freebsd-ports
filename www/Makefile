@@ -1852,6 +1852,7 @@
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
     SUBDIR += rubygem-savon
+    SUBDIR += rubygem-sawyer
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-select2-rails
     SUBDIR += rubygem-selenium-webdriver
