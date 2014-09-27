@@ -217,6 +217,7 @@
     SUBDIR += exfat-utils
     SUBDIR += extipl
     SUBDIR += ezjail
+    SUBDIR += f3
     SUBDIR += fanout
     SUBDIR += farbot
     SUBDIR += fastest_cvsup
