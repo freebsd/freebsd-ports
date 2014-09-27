@@ -3,7 +3,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	5.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -28,7 +28,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
-		--enable-function-subdirs --enable-multibyte
+		--enable-function-subdirs --enable-multibyte \
+		--sysconfdir=${PREFIX}/etc
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 #EXTRA_COMPLETION_FILES=	_sockstat

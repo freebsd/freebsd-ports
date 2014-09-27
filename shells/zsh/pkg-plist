@@ -35,11 +35,6 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zpty.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zselect.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zutil.so
-%%GDBM%%%%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%/zsh/db
-%%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%/zsh/net
-%%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%/zsh
-%%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%
-%%NO_STATIC%%@dirrm lib/zsh
 @dir %%DATADIR%%/site-functions
 %%DATADIR%%/%%ZSH_VER%%/functions/Calendar.zwc
 %%DATADIR%%/%%ZSH_VER%%/functions/Calendar/age
