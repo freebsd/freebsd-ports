@@ -1009,6 +1009,7 @@
     SUBDIR += rubygem-network_interface
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
+    SUBDIR += rubygem-octokit
     SUBDIR += rubygem-omniauth-github
     SUBDIR += rubygem-omniauth-google-oauth2
     SUBDIR += rubygem-omniauth-oauth
