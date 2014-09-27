@@ -1,0 +1,9 @@
+--- config/settings.d/tftp.yml.example.orig	2014-09-27 09:03:48.161469593 +0200
++++ config/settings.d/tftp.yml.example	2014-09-27 09:07:14.400462451 +0200
+@@ -1,5 +1,5 @@
+ ---
+ :enabled: false
+-#:tftproot: /var/lib/tftpboot
++#:tftproot: /tftpboot
+ # Defines the TFTP Servername to use, overrides the name in the subnet declaration
+ #:tftp_servername: tftp.domain.com
