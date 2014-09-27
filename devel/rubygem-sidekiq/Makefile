@@ -21,4 +21,11 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/sidekiqctl bin/sidekiq
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${RUBY_VER} == "1.9")
+BROKEN=		Infinite loop during install
+.endif
+
+.include <bsd.port.post.mk>
+
