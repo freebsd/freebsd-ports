@@ -1,0 +1,3 @@
+This plug-in adds support for SaltStack to Foreman's Smart Proxy.
+
+WWW: https://github.com/theforeman/smart_proxy_salt
