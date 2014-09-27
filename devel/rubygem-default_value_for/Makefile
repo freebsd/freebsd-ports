@@ -3,7 +3,7 @@
 
 PORTNAME=	default_value_for
 PORTVERSION=	3.0.0.1
-CATEGORIES=	www rubygems
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
