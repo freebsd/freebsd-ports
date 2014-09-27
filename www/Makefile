@@ -1775,6 +1775,7 @@
     SUBDIR += rubygem-gitlab-grack
     SUBDIR += rubygem-gollum-lib
     SUBDIR += rubygem-gon
+    SUBDIR += rubygem-gon-rails4
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-haml-coderay
     SUBDIR += rubygem-haml-contrib
