@@ -76,17 +76,6 @@
  #CALCPAGER= less.exe -ci
  
  # Debug/Optimize options for ${CC} and ${LCC}
-@@ -978,8 +978,8 @@
- # MKDIR_ARG= -p			# use mkdir -p when creating paths
- # MKDIR_ARG=			# use if system does not understand mkdir -p
- #
--MKDIR_ARG= -p
--#MKDIR_ARG=
-+#MKDIR_ARG= -p
-+MKDIR_ARG=
- 
- # Some out of date operating systems require/want an executable to
- # end with a certain file extension.  Some compiler systems such as
 @@ -1012,35 +1012,36 @@
  
  # standard utilities used during make

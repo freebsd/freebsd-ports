@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calc
-PORTVERSION=	2.12.4.13
+PORTVERSION=	2.12.4.14
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -29,5 +29,9 @@ PLIST_SUB+=	VERSION=${PORTVERSION}	VER1=${PORTVERSION:R} \
 
 regression-test: build
 	( cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check )
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/calc \
+		${STAGEDIR}${PREFIX}/lib/lib*.so
 
 .include <bsd.port.mk>
