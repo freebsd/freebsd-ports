@@ -70,7 +70,6 @@
     SUBDIR += fpc-sqlite
     SUBDIR += freetds
     SUBDIR += freetds-devel
-    SUBDIR += freetds-msdblib
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
     SUBDIR += galera

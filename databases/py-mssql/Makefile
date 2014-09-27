@@ -3,7 +3,7 @@
 
 PORTNAME=	mssql
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ COMMENT=	Python database interface for simple MS-SQL access
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds-msdblib
+LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
 
 USES=		dos2unix python:2
 USE_PYTHON=	autoplist distutils
