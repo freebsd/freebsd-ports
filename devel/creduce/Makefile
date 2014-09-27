@@ -10,6 +10,8 @@ CATEGORIES=	devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces small test cases
 
+DEPRECATED=	Unmaintained and depends on ancient LLVM 3.2
+EXPIRATION_DATE=	2014-12-01
 
 # "University of Illinois Open Source License."
 #LICENSE=	BSD2CLAUSE
