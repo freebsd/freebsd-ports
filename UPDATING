@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140927:
+  AFFECTS: users of net/foreman-proxy
+  AUTHOR: mm@FreeBSD.org
+
+  In version 1.6 Foreman Smart Proxy splits its configuration into multiple
+  ruby files located in PREFIX/etc/foreman-proxy/settings.d.
+  The configuration of each service (dhcp, dhs, bmc, etc.) has been moved
+  into a dedicated file. 
+
+  You can use a bundled script to convert your old settings to new settings:
+  PREFIX/share/foreman/extra/migrate_settings.rb
+
 20140926:
   AFFECTS: users of shells/bash
   AUTHOR: bdrewery@FreeBSD.org

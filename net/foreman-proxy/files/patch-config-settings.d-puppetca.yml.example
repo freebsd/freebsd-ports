@@ -1,0 +1,12 @@
+--- config/settings.d/puppetca.yml.example.orig	2014-09-27 09:16:47.493418158 +0200
++++ config/settings.d/puppetca.yml.example	2014-09-27 09:16:08.243420797 +0200
+@@ -1,6 +1,6 @@
+ ---
+ :enabled: false
+-#:ssldir: /var/lib/puppet/ssl
+-#:puppetdir: /etc/puppet
++#:ssldir: /var/puppet/ssl
++#:puppetdir: %%LOCALBASE%%/etc/puppet
+ #:puppetca_use_sudo: true
+-#:sudo_command: /usr/bin/sudo
++#:sudo_command: %%LOCALBASE%%/bin/sudo
