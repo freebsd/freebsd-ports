@@ -3622,6 +3622,7 @@
     SUBDIR += py-celery
     SUBDIR += py-cffi
     SUBDIR += py-cfgparse
+    SUBDIR += py-characteristic
     SUBDIR += py-checkmanifest
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
