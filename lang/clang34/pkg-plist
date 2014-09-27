@@ -488,11 +488,19 @@ llvm%%LLVM_SUFFIX%%/lib/libclangStaticAnalyzerCheckers.a
 llvm%%LLVM_SUFFIX%%/lib/libclangStaticAnalyzerCore.a
 llvm%%LLVM_SUFFIX%%/lib/libclangStaticAnalyzerFrontend.a
 llvm%%LLVM_SUFFIX%%/lib/libclangTooling.a
+llvm%%LLVM_SUFFIX%%/lib/python/Reporter.py
+llvm%%LLVM_SUFFIX%%/lib/python/Resources/FileRadar.scpt
+llvm%%LLVM_SUFFIX%%/lib/python/Resources/GetRadarVersion.scpt
+llvm%%LLVM_SUFFIX%%/lib/python/Resources/bugcatcher.ico
+llvm%%LLVM_SUFFIX%%/lib/python/ScanView.py
+llvm%%LLVM_SUFFIX%%/lib/python/startfile.py
 man/man1/clang%%LLVM_SUFFIX%%.1.gz
 man/man1/scan-build%%LLVM_SUFFIX%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps
+@dirrm llvm%%LLVM_SUFFIX%%/lib/python/Resources
+@dirrm llvm%%LLVM_SUFFIX%%/lib/python
 @dirrm llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include
 @dirrm llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2
 @dirrm llvm%%LLVM_SUFFIX%%/lib/clang
