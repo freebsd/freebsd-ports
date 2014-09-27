@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apipie-bindings
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
