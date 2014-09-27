@@ -8,6 +8,7 @@ CATEGORIES=	textproc devel pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Providing a unified API for handling Atom/RSS
 
-USE_PHP=	tidy dom pear
+USES=		pear
+USE_PHP=	tidy dom
 
 .include <bsd.port.mk>
