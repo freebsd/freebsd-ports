@@ -780,6 +780,7 @@
     SUBDIR += rsyslog8
     SUBDIR += rsyslog8-devel
     SUBDIR += rtty
+    SUBDIR += rubgem-bundler_ext
     SUBDIR += ruby-quota
     SUBDIR += rubygem-SyslogLogger
     SUBDIR += rubygem-backup
