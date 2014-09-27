@@ -1752,6 +1752,7 @@
     SUBDIR += rubygem-crass
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-d3_rails
+    SUBDIR += rubygem-d3_rails-rails4
     SUBDIR += rubygem-davclient
     SUBDIR += rubygem-domainatrix
     SUBDIR += rubygem-em-http-request
