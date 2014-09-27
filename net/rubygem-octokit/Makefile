@@ -3,7 +3,7 @@
 
 PORTNAME=	octokit
 PORTVERSION=	3.3.1
-CATEGORIES=	www rubygems
+CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
