@@ -916,6 +916,7 @@
     SUBDIR += rubygem-clutter
     SUBDIR += rubygem-clutter-gtk
     SUBDIR += rubygem-dragonfly
+    SUBDIR += rubygem-emoji
     SUBDIR += rubygem-exifr
     SUBDIR += rubygem-ezprint
     SUBDIR += rubygem-fastimage
