@@ -136,7 +136,7 @@ post-extract:
 .endfor
 
 post-patch:
-	### XXX: Hack, some of this should be LOCALBASE
+#	### XXX: Hack, some of this should be LOCALBASE
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g'
 .if defined(DISABLE_SPEEDYCGI)
 	@${ECHO_MSG} ""
@@ -204,7 +204,7 @@ do-install:
 		${COPYTREE_SHARE} . ${STAGEDIR}${OWCGIDIR})
 	@(cd ${WRKSRC}/data/openwebmail && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${OWDATADIR})
-	@${PERL} ${OWCGIDIR}/misc/test/dbmtest.pl | ${GREP} "^dbm" > ${STAGEDIR}${OWCGIDIR}/etc/dbm.conf
+	@${PERL} ${STAGEDIR}${OWCGIDIR}/misc/test/dbmtest.pl | ${GREP} "^dbm" > ${STAGEDIR}${OWCGIDIR}/etc/dbm.conf
 	@${CHMOD} 4755 ${STAGEDIR}${OWCGIDIR}/openwebmail*pl
 
 .include <bsd.port.post.mk>
