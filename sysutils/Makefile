@@ -803,6 +803,7 @@
     SUBDIR += rubygem-guard-rspec
     SUBDIR += rubygem-hammer_cli
     SUBDIR += rubygem-hammer_cli_foreman
+    SUBDIR += rubygem-hammer_cli_foreman_bootdisk
     SUBDIR += rubygem-hiera
     SUBDIR += rubygem-hiera-json
     SUBDIR += rubygem-hiera-puppet
