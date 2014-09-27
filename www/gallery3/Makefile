@@ -20,6 +20,7 @@ WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DCRAW FFMPEG GD GRAPHMAGICK IMAGEMAGICK JHEAD \
@@ -77,11 +78,5 @@ RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 do-install:
 	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
-
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>
