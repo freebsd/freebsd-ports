@@ -4335,6 +4335,7 @@
     SUBDIR += rubygem-gemnasium-gitlab-service
     SUBDIR += rubygem-gems
     SUBDIR += rubygem-generator_spec
+    SUBDIR += rubygem-generator_spec-rails4
     SUBDIR += rubygem-georuby
     SUBDIR += rubygem-getopt
     SUBDIR += rubygem-gettext
