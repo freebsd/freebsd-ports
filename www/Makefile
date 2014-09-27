@@ -1747,6 +1747,7 @@
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chosen-rails
     SUBDIR += rubygem-cookiejar
+    SUBDIR += rubygem-crass
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-d3_rails
     SUBDIR += rubygem-davclient
