@@ -1,0 +1,23 @@
+# Created by: Johannes Meixner <xmj@chaot.net>
+# $FreeBSD$
+
+PORTNAME=	org-ruby
+PORTVERSION=	0.9.9
+CATEGORIES=	textproc rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Org mode parser written in Ruby
+
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-rubypants>=0.2.0:${PORTSDIR}/textproc/rubygem-rubypants
+
+USE_RUBY=	yes
+USE_RAKE=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+PLIST_FILES=	bin/org-ruby
+
+.include <bsd.port.mk>

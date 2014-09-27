@@ -1342,6 +1342,7 @@
     SUBDIR += rubygem-nokogiri
     SUBDIR += rubygem-nokogiri14
     SUBDIR += rubygem-opml
+    SUBDIR += rubygem-org-ruby
     SUBDIR += rubygem-parslet
     SUBDIR += rubygem-phone
     SUBDIR += rubygem-rak
