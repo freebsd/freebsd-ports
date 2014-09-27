@@ -17,6 +17,7 @@ COMMENT=	Japanese translation of FreeBSD manual pages
 
 RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
 
+USES=		uidfix
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST=		${WRKDIR}/pkg-plist
@@ -53,21 +54,15 @@ post-build:
 			shift 2;\
 		esac; \
 		done; \
-		if [ "x$${SUBDIR}" != "x" ]; then  \
-			${ECHO_CMD} "@dirrm man/ja/$${SECNUM}$${SUBDIR}"; \
-		fi; \
 	done | ${SORT} -r | uniq > ${PLIST}
 
-pre-su-install:
+pre-install:
 	for SEC in ${MANSECS}; do \
 		SECNUM=$${SEC%%/*}; \
 		cd ${WRKSRC}/$${SEC} && \
 		SUBDIR=`${MAKE} -VMANSUBDIR` && \
 		${MKDIR} ${STAGEDIR}${PREFIX}/man/ja/$${SECNUM}$${SUBDIR}; \
 	done
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 # XXX: make gendist generates distfile.  Use with WITH_CVS.
 gendist: extract
