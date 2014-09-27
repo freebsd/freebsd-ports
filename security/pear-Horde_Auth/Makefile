@@ -10,4 +10,6 @@ COMMENT=	Horde Authentication API
 USE_HORDE_RUN=	Horde_Exception Horde_Util
 USE_PHP=	hash
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
+.include <bsd.port.post.mk>

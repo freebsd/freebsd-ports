@@ -11,6 +11,8 @@ COMMENT=	Symfony2 Yaml Component
 
 LICENSE=	MIT
 
-USES=	pear
+IGNORE_WITH_PHP=52
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-channel-symfony2/bsd.symfony2.mk"
+.include <bsd.port.post.mk>

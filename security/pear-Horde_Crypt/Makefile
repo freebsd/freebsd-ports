@@ -19,6 +19,11 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util
 USE_PHP=	hash openssl
 
-BCMATH_USE=	PHP=bcmath
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PORT_OPTIONS:MBCMATH}
+USE_PHP+=	bcmath
+.endif
+
+.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
+.include <bsd.port.post.mk>
