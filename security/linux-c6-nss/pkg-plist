@@ -7,6 +7,7 @@ lib/libfreebl3.so
 usr/lib/libfreebl3.chk
 usr/lib/libfreebl3.so
 usr/lib/libnss3.so
+usr/lib/nss/libnssckbi.so
 usr/lib/libnssdbm3.chk
 usr/lib/libnssdbm3.so
 usr/lib/libnsspem.so
