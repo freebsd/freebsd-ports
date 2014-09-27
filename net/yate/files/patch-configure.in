@@ -1,5 +1,5 @@
---- configure.in.orig	2014-08-25 16:38:23.000000000 +0300
-+++ configure.in	2014-08-25 16:38:50.000000000 +0300
+--- configure.in.orig	2014-07-25 17:10:08.000000000 +0300
++++ configure.in	2014-09-03 09:59:20.000000000 +0300
 @@ -1338,7 +1338,7 @@ elif [[ "x$ac_cv_use_openssl" != "xno" ]
      AC_MSG_CHECKING([for OpenSSL in $ac_cv_use_openssl])
      verssl=no
@@ -9,3 +9,12 @@
  	if [[ "x$verssl" != "x" ]]; then
  	    HAVE_OPENSSL=yes
  	    OPENSSL_VER="$verssl"
+@@ -1587,7 +1587,7 @@ AC_SUBST(INSTALL_L)
+ INSTALL_D="install -D"
+ CFLAGS=`echo "$CFLAGS" | sed 's/\(^\| *\)-g[[0-9]]*//' | sed 's/[[[:space:]]]\{2,\}/ /g'`
+ MODULE_CFLAGS="-fno-exceptions -fPIC $HAVE_GCC_FORMAT_CHECK $HAVE_BLOCK_RETURN"
+-MODULE_CPPFLAGS="-fno-check-new $RTTI_OPT $MODULE_CFLAGS"
++MODULE_CPPFLAGS="$RTTI_OPT $MODULE_CFLAGS"
+ MODULE_LDRELAX="-export-dynamic -shared"
+ MODULE_SYMBOLS="-Wl,--retain-symbols-file,/dev/null"
+ SONAME_OPT="-shared -Wl,-soname="
