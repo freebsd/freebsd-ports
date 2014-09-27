@@ -1731,6 +1731,7 @@
     SUBDIR += ruby-aws
     SUBDIR += ruby-google
     SUBDIR += ruby-wgettsv
+    SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-activeresource
