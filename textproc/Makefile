@@ -1321,6 +1321,7 @@
     SUBDIR += rubygem-github-markdown
     SUBDIR += rubygem-github-markup
     SUBDIR += rubygem-gitlab-grit
+    SUBDIR += rubygem-gitlab-linguist
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-htmlentities
