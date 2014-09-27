@@ -7,18 +7,7 @@ POST-DEINSTALL)
     echo "If you are *not* upgrading this package, you may want to"
     echo "remove the following to complete the deinstallation process:"
     echo
-    echo "1) Records in /var/cron/tabs/root"
-    echo
-    echo "  * * * * * /usr/bin/lockf -s -t0 \$workdir/ftmp/periodic_minutes \\"
-    echo "  /usr/sbin/periodic minutes > /dev/null 2>&1"
-    echo "  0 * * * * /usr/bin/lockf -s -t0 \$workdir/ftmp/periodic_hourly \\"
-    echo "  /usr/sbin/periodic hourly > /dev/null 2>&1"
-    echo
-    echo "2) Records in /etc/periodic.conf"
-    echo
-    echo "  local_periodic=\"/usr/local/etc/periodic \$workdir/etc/periodic\""
-    echo
-    echo "3) Records in /etc/rc.conf"
+    echo "1) Records in /etc/rc.conf"
     echo
     echo "  cbsdrsyncd_enable=\"YES\""
     echo "  cbsdrsyncd_flags=\"--config=\$workdir/etc/rsyncd.conf\""
@@ -28,7 +17,7 @@ POST-DEINSTALL)
     echo "  rcshutdown_timeout=\"900\""
     echo "  sshd_flags=\"-oPort=22222\""
     echo
-    echo "4) Remove /usr/local/etc/sudoers.d/cbsd_sudoers"
+    echo "2) Remove /usr/local/etc/sudoers.d/cbsd_sudoers"
     echo
   ;;
 esac
