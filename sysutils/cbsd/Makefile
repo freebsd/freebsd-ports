@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	10.0.7
+PORTVERSION=	10.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
-GH_COMMIT=	74d433e
+GH_COMMIT=	3e08717
 
 USE_RC_SUBR=	cbsdd cbsdrsyncd
 
@@ -46,7 +46,7 @@ post-install:
 	${CAT} ${PKGDIR}/pkg-plist-chunk > ${TMPPLIST} ;
 	@${FIND} -s ${STAGEDIR}${CBSD_HOME} -not -type d | ${SORT} | \
 	${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${CBSD_HOME} -type d | ${SORT} -r | \
-	${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bsdconfig
+	@${LN} -sf ${CBSD_HOME}/share/bsdconfig/cbsd ${STAGEDIR}${PREFIX}/libexec/bsdconfig/cbsd
 
 .include <bsd.port.post.mk>

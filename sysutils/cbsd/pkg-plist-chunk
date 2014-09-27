@@ -6,3 +6,4 @@ bin/cbsd
 @group
 @mode
 man/man8/cbsd.8.gz
+libexec/bsdconfig/cbsd
