@@ -28,8 +28,7 @@
     AddHandler cgi-script .cgi
     Options NONE +ExecCGI
     DirectoryIndex viewvc.cgi
-    Order allow,deny
-    Allow from all
+    Require all granted
  </Directory>
 
 
