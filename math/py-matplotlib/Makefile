@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	matplotlib
-PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTVERSION=	1.4.0
 CATEGORIES=	math python
-MASTER_SITES=	http://cloud.github.com/downloads/matplotlib/matplotlib/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Plotting library uses a syntax familiar to MATLAB users
+
+LICENSE=	PSFL
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
@@ -18,12 +19,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		pkgconfig shebangfix
-SHEBANG_FILES=	examples/pylab_examples/unicode_demo.py \
-		examples/animation/old_animation/movie_demo.py
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=yes
+USES=		pkgconfig shebangfix python
+USE_PYTHON=	distutils autoplist
 CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	EXAMPLES GTKBACKEND GTKAGGBACKEND TKAGGBACKEND WXAGGBACKEND
