@@ -3,7 +3,7 @@
 
 PORTNAME=	pysphere
 PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,17 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Python API for interaction with the vSphere Web Services SDK
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USES=		dos2unix zip
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		dos2unix zip shebangfix python:2.7
+USE_PYTHON=	distutils autoplist
+
+SHEBANG_LANG=	python
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	${PYTHON_CMD}
+SHEBANG_FILES= *.py \
+	       pysphere/ZSI/*.py \
+	       pysphere/ZSI/generate/*.py \
+	       pysphere/ZSI/wstools/*.py
 
 .include <bsd.port.mk>
