@@ -3,7 +3,7 @@
 
 PORTNAME=	syncthing
 PORTVERSION=	0.9.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/:group1 \
 		https://bitbucket.org/kardianos/osext/get/:group2 \
@@ -71,7 +71,6 @@ post-patch:
 do-build:
 	# timestamp here refers to source, not build time
 	cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC} go build -ldflags "-w -X main.Version v${PORTVERSION} -X main.BuildStamp 1411588890 -X main.BuildUser ${USER} -X main.BuildHost ${HOST}" github.com/syncthing/syncthing/cmd/syncthing
-	${STRIP_CMD} ${WRKSRC}/syncthing
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/syncthing ${STAGEDIR}${PREFIX}/bin/
