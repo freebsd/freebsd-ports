@@ -170,7 +170,6 @@
     SUBDIR += rox-archive
     SUBDIR += rpm2cpio
     SUBDIR += rpm4
-    SUBDIR += rpm5
     SUBDIR += ruby-lha
     SUBDIR += ruby-zip
     SUBDIR += rubygem-archive-tar-minitar
