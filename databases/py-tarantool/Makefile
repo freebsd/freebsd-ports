@@ -13,9 +13,7 @@ COMMENT=	Client library for Tarantool Database
 
 LICENSE=	BSD
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-INSTALLS_EGGINFO=yes
-PYDISTUTILS_AUTOPLIST=yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
