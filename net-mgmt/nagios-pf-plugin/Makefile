@@ -17,10 +17,10 @@ GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	2aba423
 
 PLIST_FILES=	libexec/nagios/check_pf
-PLIST_DIRS=	libexec/nagios/
+PLIST_DIRS=	libexec/nagios
 SUB_FILES=	pkg-message
 
-pre-su-install:
+pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
 
 .include <bsd.port.mk>
