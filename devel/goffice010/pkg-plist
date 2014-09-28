@@ -109,6 +109,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-image-sel.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-line-selector.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-locale-sel.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-marker-selector.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-math-editor.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-optionmenu.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-palette.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-pattern-selector.h
@@ -120,6 +121,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/math/go-accumulator.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-complex.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-cspline.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-distribution.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-dtoa.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-fft.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-math.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-matrix.h
@@ -146,6 +148,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/go-libxml-extras.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-line.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-locale.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-marker.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-mml-to-itex.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pango-extras.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-path.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pattern.h
@@ -158,49 +161,40 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/go-style.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-styled-object.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-svg.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-undo.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-unit.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-units.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/goffice-utils.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/regutf8.h
-lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.la
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.so
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.la
 lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.so
 lib/goffice/%%VERSION%%/plugins/plot_distrib/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_distrib/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_pie/pie.la
 lib/goffice/%%VERSION%%/plugins/plot_pie/pie.so
 lib/goffice/%%VERSION%%/plugins/plot_pie/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_pie/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_radar/radar.la
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.so
 lib/goffice/%%VERSION%%/plugins/plot_surface/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_surface/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_surface/surface.la
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.so
 lib/goffice/%%VERSION%%/plugins/plot_xy/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_xy/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_xy/xy.la
 lib/goffice/%%VERSION%%/plugins/plot_xy/xy.so
-lib/goffice/%%VERSION%%/plugins/reg_linear/linreg.la
 lib/goffice/%%VERSION%%/plugins/reg_linear/linreg.so
 lib/goffice/%%VERSION%%/plugins/reg_linear/plugin.xml
 lib/goffice/%%VERSION%%/plugins/reg_linear/reg-types.xml
-lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.la
 lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.so
 lib/goffice/%%VERSION%%/plugins/reg_logfit/plugin.xml
 lib/goffice/%%VERSION%%/plugins/reg_logfit/reg-types.xml
 lib/goffice/%%VERSION%%/plugins/smoothing/plugin.xml
-lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.la
 lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.so
 lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
-lib/libgoffice-%%SHORT_VER%%.la
 lib/libgoffice-%%SHORT_VER%%.so
 lib/libgoffice-%%SHORT_VER%%.so.10
-lib/libgoffice-%%SHORT_VER%%.so.%%LIBVERSION%%
+lib/libgoffice-%%SHORT_VER%%.so.10.0.18
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 share/doc/goffice-%%SHORT_VER%%/GOArrow.html
 share/doc/goffice-%%SHORT_VER%%/GOBezierSpline.html
@@ -222,6 +216,7 @@ share/doc/goffice-%%SHORT_VER%%/GODocControl.html
 share/doc/goffice-%%SHORT_VER%%/GOEditor.html
 share/doc/goffice-%%SHORT_VER%%/GOErrorInfo.html
 share/doc/goffice-%%SHORT_VER%%/GOFileSaver.html
+share/doc/goffice-%%SHORT_VER%%/GOFont.html
 share/doc/goffice-%%SHORT_VER%%/GOFontSel.html
 share/doc/goffice-%%SHORT_VER%%/GOFormat.html
 share/doc/goffice-%%SHORT_VER%%/GOFormatSel.html
@@ -324,7 +319,6 @@ share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOColor.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOComplex.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GODataCVector.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOFileOpeners.html
-share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOFont.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOPattern.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOQuad.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GORange.html
@@ -353,13 +347,24 @@ share/doc/goffice-%%SHORT_VER%%/home.png
 share/doc/goffice-%%SHORT_VER%%/index.html
 share/doc/goffice-%%SHORT_VER%%/index.sgml
 share/doc/goffice-%%SHORT_VER%%/left.png
+share/doc/goffice-%%SHORT_VER%%/left-insensitive.png
 share/doc/goffice-%%SHORT_VER%%/pt01.html
 share/doc/goffice-%%SHORT_VER%%/pt02.html
 share/doc/goffice-%%SHORT_VER%%/pt03.html
 share/doc/goffice-%%SHORT_VER%%/pt04.html
 share/doc/goffice-%%SHORT_VER%%/right.png
+share/doc/goffice-%%SHORT_VER%%/right-insensitive.png
 share/doc/goffice-%%SHORT_VER%%/style.css
 share/doc/goffice-%%SHORT_VER%%/up.png
+share/doc/goffice-%%SHORT_VER%%/up-insensitive.png
+%%DATADIR%%/%%VERSION%%/mmlitex/README
+%%DATADIR%%/%%VERSION%%/mmlitex/cmarkup.xsl
+%%DATADIR%%/%%VERSION%%/mmlitex/entities.xsl
+%%DATADIR%%/%%VERSION%%/mmlitex/glayout.xsl
+%%DATADIR%%/%%VERSION%%/mmlitex/mmlitex.xsl
+%%DATADIR%%/%%VERSION%%/mmlitex/scripts.xsl
+%%DATADIR%%/%%VERSION%%/mmlitex/tables.xsl
+%%DATADIR%%/%%VERSION%%/mmlitex/tokens.xsl
 share/locale/am/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ast/LC_MESSAGES/goffice-%%VERSION%%.mo
@@ -414,41 +419,4 @@ share/locale/vi/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/goffice-%%VERSION%%.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@exec /bin/mkdir -p %D/lib/goffice/%%SHORT_VER%%/plugins
-@dirrm share/doc/goffice-%%SHORT_VER%%
-@dirrm lib/goffice/%%VERSION%%/plugins/smoothing
-@dirrm lib/goffice/%%VERSION%%/plugins/reg_logfit
-@dirrm lib/goffice/%%VERSION%%/plugins/reg_linear
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_xy
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_surface
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_radar
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_pie
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_distrib
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_barcol
-@dirrm lib/goffice/%%VERSION%%/plugins
-@dirrm lib/goffice/%%VERSION%%
-@dirrm lib/goffice/%%SHORT_VER%%/plugins
-@dirrm lib/goffice/%%SHORT_VER%%
-@dirrmtry lib/goffice
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/utils
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/math
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/gtk
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/graph
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/data
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/component
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/canvas
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/app
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice
-@dirrm include/libgoffice-%%SHORT_VER%%
+@dir lib/goffice/%%SHORT_VER%%/plugins
