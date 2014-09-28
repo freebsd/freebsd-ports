@@ -15,10 +15,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tarantool>=0:${PORTSDIR}/databases/py-tarantool \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0:${PORTSDIR}/devel/py-msgpack
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-INSTALLS_EGGINFO=yes
-PYDISTUTILS_AUTOPLIST=yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 do-configure:
 	${REINPLACE_CMD} -i -e "1d" ${WRKSRC}/setup.py
