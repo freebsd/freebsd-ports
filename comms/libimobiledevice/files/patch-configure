@@ -1,0 +1,19 @@
+--- configure.orig	2014-09-24 12:07:10 UTC
++++ configure
+@@ -17090,7 +17090,7 @@
+ 				py_version=$PYTHON_VERSION
+ 			else
+ 				py_version=`$PYTHON -c "import sys; \
+-					print(sys.version[:3]")`
++					print(sys.version[:3])"`
+ 			fi
+ 		fi
+ 
+@@ -17336,6 +17336,7 @@
+ $as_echo "yes" >&6; }
+ 	have_openssl=yes
+ fi
++have_openssl=yes
+ if test "x$have_openssl" = "xyes"; then
+   if test "x$use_openssl" != "xyes"; then
+     enable_openssl=no

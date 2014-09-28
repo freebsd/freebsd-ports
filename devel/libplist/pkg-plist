@@ -1,5 +1,4 @@
 bin/plistutil
-bin/plistutil-1.10
 include/plist/Array.h
 include/plist/Boolean.h
 include/plist/Data.h
@@ -14,12 +13,13 @@ include/plist/Structure.h
 include/plist/Uid.h
 include/plist/plist++.h
 include/plist/plist.h
+lib/libplist++.a
 lib/libplist++.so
-lib/libplist++.so.1
-lib/libplist++.so.1.1.10
+lib/libplist++.so.2
+lib/libplist++.so.2.0.0
+lib/libplist.a
 lib/libplist.so
-lib/libplist.so.1
-lib/libplist.so.1.1.10
+lib/libplist.so.2
+lib/libplist.so.2.0.0
 libdata/pkgconfig/libplist++.pc
 libdata/pkgconfig/libplist.pc
-@dirrm include/plist

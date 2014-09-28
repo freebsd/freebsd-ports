@@ -1,50 +1,42 @@
 # $FreeBSD$
 
 PORTNAME=	usbmuxd
-PORTVERSION=	1.0.8
+DISTVERSION=	1.0.9-alpha1
 CATEGORIES=	comms
-MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Daemon for multiplexing connections over USB to iPhone/iPod Touch
 
-LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
-USES=		cmake pkgconfig tar:bzip2
-USE_LDCONFIG=	yes
+LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
+		libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice
 
-PORTDOCS=	AUTHORS README README.devel
+USE_GITHUB=	yes
+GH_ACCOUNT=	libimobiledevice
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	2f6d9d5
 
-OPTIONS_DEFINE=	INOTIFY
+USES=		autoreconf libtool:build pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-systemd \
+		libusb_CFLAGS="-I/usr/include" \
+		libusb_LIBS="-lusb"
 
-INOTIFY_DESC=	Use inotify instead of polling (saves energy)
+PLIST_FILES=	sbin/usbmuxd
 
-.include <bsd.port.options.mk>
+PORTDOCS=	AUTHORS README
 
-.if ${PORT_OPTIONS:MINOTIFY}
-LIB_DEPENDS+=	libinotify.so:${PORTSDIR}/devel/libinotify
-CMAKE_ARGS+=	-DWANT_INOTIFY:BOOL=TRUE
-.else
-CMAKE_ARGS+=	-DWANT_INOTIFY:BOOL=FALSE
-.endif
+OPTIONS_DEFINE=	DOCS
 
-.if ${OSVERSION} <= 800107 || ${OSVERSION} >= 900000 && ${OSVERSION} <= 900002
-IGNORE=		requires libusb 1.0.3
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,$${LIB_SUFFIX}/pkgconfig,data/pkgconfig,' \
-		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/Modules/FindInotify.cmake
-
-pre-install:
-	@${REINPLACE_CMD} -e '1 s,python,env python,' \
-		${WRKSRC}/python-client/*.py
+pre-configure:
+# TODO: add devd(8) rule.
+	@${REINPLACE_CMD} -e 's,-lpthread,-pthread,g' \
+		-e '/*cygwin*/ s,),|*bsd*),' \
+		${WRKSRC}/configure.ac
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/python-client/*.py ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

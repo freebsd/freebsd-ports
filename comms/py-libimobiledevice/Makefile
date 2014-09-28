@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,8 @@ BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
 		${PYTHON_SITELIBDIR}/plist.so:${PORTSDIR}/devel/py-libplist
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/plist.so:${PORTSDIR}/devel/py-libplist
 
-USE_PYTHON=	yes
+USES=		python
+CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 SLAVE_PORT=	yes
 MASTERDIR=	${.CURDIR:H:H}/comms/libimobiledevice
 
@@ -20,7 +21,8 @@ PLIST=		${.CURDIR}/pkg-plist
 BUILD_WRKSRC=	${WRKSRC}/cython
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.a \
+PLIST_FILES=	include/imobiledevice/cython/imobiledevice.pxd \
+		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.a \
 		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.so
 
 post-patch:
@@ -28,5 +30,10 @@ post-patch:
 		-e 's,../src/libimobiledevice.la,-limobiledevice,' \
 		-e 's/$$(imobiledevice_la_DEPENDENCIES)//' \
 		${BUILD_WRKSRC}/Makefile.in
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/imobiledevice/cython
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/imobiledevice.pxd \
+		${STAGEDIR}${PREFIX}/include/imobiledevice/cython
 
 .include "${MASTERDIR}/Makefile"

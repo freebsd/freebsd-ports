@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140929:
+  AFFECTS: users of comms/usbmuxd
+  AUTHOR: avilla@FreeBSD.org
+
+  libusbmuxd.so was split from comms/usbmuxd into comms/libusbmuxd.
+  Remove usbmuxd before upgrading to avoid conflicts:
+
+  # pkg delete -f usbmuxd
+
+  If you need the daemon usbmuxd(1), you can reinstall the package
+  after the upgrade.
+
 20140928:
   AFFECTS: users of deskutils/calibre
   AUTHOR: madpilot@FreeBSD.org

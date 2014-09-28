@@ -8,10 +8,10 @@ MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for libplist
 
 LIB_DEPENDS=	libplist.so:${PORTSDIR}/${MASTER_PORT}
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
-		swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
 
-USE_PYTHON=	yes
+USES=		python
+CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 SLAVE_PORT=	yes
 MASTERDIR=	${.CURDIR:H:H}/devel/libplist
 # Required to reference installed libplist.
@@ -19,11 +19,22 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST=		${.CURDIR}/pkg-plist
-FILESDIR=	${.CURDIR}/files
 
-post-patch:
-	@${CP} ${FILESDIR}/CMakeLists.txt ${WRKSRC}
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
-		${WRKSRC}/CMakeLists.txt
+BUILD_WRKSRC=	${WRKSRC}/cython
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
+
+PLIST_FILES=	include/plist/cython/plist.pxd \
+		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/plist.a \
+		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/plist.so
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's,../src/libplist.la,-lplist,' \
+		-e 's,$$(plist_la_DEPENDENCIES),,' \
+		${BUILD_WRKSRC}/Makefile.in
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/plist/cython
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/plist.pxd \
+		${STAGEDIR}${PREFIX}/include/plist/cython
 
 .include "${MASTERDIR}/Makefile"

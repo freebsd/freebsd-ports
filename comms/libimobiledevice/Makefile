@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libimobiledevice
-PORTVERSION=	1.1.5
-PORTREVISION?=	1
+PORTVERSION=	1.1.6
+PORTREVISION?=	0
 CATEGORIES?=	comms
 MASTER_SITES=	http://www.${PORTNAME}.org/downloads/
 
@@ -13,19 +13,19 @@ LICENSE?=	LGPL21
 
 SLAVE_PORT?=	no
 
-USES=		libtool pathfix pkgconfig tar:bzip2
+USES+=		libtool pathfix pkgconfig tar:bzip2
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	openssl_CFLAGS="-I${OPENSSLINC}" \
+CONFIGURE_ARGS+=openssl_CFLAGS="-I${OPENSSLINC}" \
 		openssl_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-.if ${SLAVE_PORT} == "no"
+.if ${SLAVE_PORT} == no
 
 LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
-		libusbmuxd.so:${PORTSDIR}/comms/usbmuxd
+		libusbmuxd.so:${PORTSDIR}/comms/libusbmuxd
 
 USE_GNOME=	glib20
 CONFIGURE_ARGS+=--without-cython
@@ -44,6 +44,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.endif # ${SLAVE_PORT} == "no"
+.endif # ${SLAVE_PORT} == no
 
 .include <bsd.port.mk>
