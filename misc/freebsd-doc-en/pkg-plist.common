@@ -38,7 +38,6 @@
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/pam
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/pgpkeys
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines
-@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/imagelib/callouts
