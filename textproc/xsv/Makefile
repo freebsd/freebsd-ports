@@ -14,10 +14,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ltxml>0:${PORTSDIR}/textproc/py-ltxml
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=  yes
-INSTALLS_EGGINFO=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_LDCONFIG=	yes
 
 PORTDOCS=	pc-shrinkwrap xsv-status.xml xsv-status.html
