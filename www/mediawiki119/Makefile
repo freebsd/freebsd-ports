@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.19.18
+PORTVERSION=	1.19.19
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	119
@@ -19,6 +19,7 @@ WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/plist
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL XCACHE IMAGICK
 OPTIONS_DEFAULT=MYSQL
@@ -64,16 +65,19 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/eaccelerator.so:${PORTSDIR}/ww
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
 .endif
 
+pre-install:
+	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
+	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}
+	@${ECHO} @dir ${MEDIAWIKIDIR} >> ${PLIST}
+	@${ECHO_CMD} "@group" >> ${PLIST}
+	@${ECHO_CMD} "@owner" >> ${PLIST}
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${MEDIAWIKIDIR}
 	${CP} -r ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${MEDIAWIKIDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${MEDIAWIKIDIR}
 
 post-install:
-	@${FIND} ${WRKSRC}/${file} -not -type d \
-		| ${SED} -ne 's,^${WRKSRC},${MEDIAWIKIDIR},p' >> ${TMPPLIST}
-	@${FIND} -d ${WRKSRC}/${file} -type d \
-		| ${SED} -ne 's,^${WRKSRC},@dirrm ${MEDIAWIKIDIR},p' >> ${TMPPLIST}
 	@${SED} -e 's|%%MEDIAWIKIDIR%%|${PREFIX}/${MEDIAWIKIDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
