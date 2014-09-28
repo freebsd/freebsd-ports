@@ -82,6 +82,7 @@
     SUBDIR += libmodbus
     SUBDIR += libticables2
     SUBDIR += libticalcs2
+    SUBDIR += libusbmuxd
     SUBDIR += linrad
     SUBDIR += lirc
     SUBDIR += locator
