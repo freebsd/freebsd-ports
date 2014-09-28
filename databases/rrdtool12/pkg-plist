@@ -135,6 +135,7 @@ man/man1/rrdlastupdate.1.gz
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/.packlist
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtoolmodule.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/py_rrdtool-0.2.1-py%%PYTHON_VER%%.egg-info
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
