@@ -15,7 +15,7 @@ bin/ccsm
 %%PYTHON_SITELIBDIR%%/ccm/Window.pyc
 %%PYTHON_SITELIBDIR%%/ccm/__init__.py
 %%PYTHON_SITELIBDIR%%/ccm/__init__.pyc
-%%PYTHON_SITELIBDIR%%/ccsm-0.8.4-py2.7.egg-info
+%%PYTHON_SITELIBDIR%%/ccsm-0.8.4-py%%PYTHON_VER%%.egg-info
 share/applications/ccsm.desktop
 %%DATADIR%%/icons/hicolor/22x22/categories/plugins-accessibility.png
 %%DATADIR%%/icons/hicolor/22x22/categories/plugins-desktop.png
