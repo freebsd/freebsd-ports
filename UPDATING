@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140928:
+  AFFECTS: users of deskutils/calibre
+  AUTHOR: madpilot@FreeBSD.org
+
+  The dependency on graphics/py-imaging in calibre has been changed
+  to using the graphics/py-pillow port.
+
+  Due to this change automatic updating of the port will not work
+  correctly.
+
+  It is suggested to remove calibre and py-imaging from the system
+  and then reinstall calibre again using binary packages or ports.
+
 20140927:
   AFFECTS: users of net/foreman-proxy
   AUTHOR: mm@FreeBSD.org
