@@ -13,10 +13,11 @@ DISTNAME=	Rabbyt-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast sprite library for Python
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_ARCHDEP=	yes
+USES=			python
+USE_PYTHON=		distutils autoplist
 USE_GL=			gl glu
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rabbyt/*.so
 
 .include <bsd.port.mk>
