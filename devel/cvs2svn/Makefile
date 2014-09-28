@@ -3,7 +3,7 @@
 
 PORTNAME=	cvs2svn
 PORTVERSION=	2.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/49237/ \
 		LOCAL/ohauer
@@ -21,14 +21,16 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # 2.4.0 -> svn r5392
 PATCHREV=	5433
 
-USES=			shebangfix
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=			shebangfix python:2.7
+USE_PYTHON=		distutils autoplist
 
-python_OLD_CMD=		/usr/bin/env python
-python_CMD=		/usr/bin/env python2
-SHEBANG_FILES=		cvs2svn cvs2git cvs2bzr
+SHEBANG_LANG=		python python2
+python_CMD=		${PYTHON_CMD}
+python2_OLD_CMD=	/usr/bin/env python
+python2_CMD=		${PYTHON_CMD}
+SHEBANG_FILES=		cvs2svn cvs2git cvs2bzr *.py \
+			contrib/* cvs2svn_lib/*.py \
+			svntest/* cvs2svn_rcsparse/*.py
 
 OPTIONS_MULTI=		SCM
 OPTIONS_MULTI_SCM=	SUBVERSION GIT BAZAAR
@@ -74,28 +76,15 @@ post-patch:
 		${WRKSRC}/PKG-INFO \
 		${WRKSRC}/cvs2svn_lib/version.py
 
-# The only thing different in this target vs. the one found in bsd.port.mk
-# is that the extract command exit code is ignored.  tar exits with status
-# 1 because the distfile contains a symlink that points nowhere.
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@-for f in ${EXTRACT_ONLY}; do \
-		if ! (cd ${WRKDIR} && ${TAR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS});\
-		then \
-			exit 1; \
-		fi; \
-	done
-
 post-build:
 	${MAKE} man -C ${WRKSRC}
 
 post-install:
-	@${INSTALL_MAN} ${MANPAGES:R:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/man/man1/
+	@${INSTALL_MAN} ${MANPAGES:R:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS1:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}/
-	@${INSTALL_DATA} ${DOCS2:S|^|${WRKSRC}/www/|} ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${DOCS1:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS2:S|^|${WRKSRC}/www/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}/
+	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
