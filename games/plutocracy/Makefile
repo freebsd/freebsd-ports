@@ -14,12 +14,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USES=		tar:bzip2
+USES=		python tar:bzip2
 USE_SDL=	sdl pango
 USE_GL=		gl glu
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-INSTALLS_EGGINFO=	yes
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=	0.0
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
