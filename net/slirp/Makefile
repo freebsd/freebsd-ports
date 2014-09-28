@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	(C)SLIP/PPP emulator for users with shell accounts
 
 BROKEN=		Does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-10-28
 
 # serious LP64 issues
 ONLY_FOR_ARCHS=	i386
