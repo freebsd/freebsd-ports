@@ -38,17 +38,14 @@ IGNORE=	'USES+= qmake' must be accompanied with 'USE_QT[${_QT_SUPPORTED:S/ //g}]
 # targets (currently, only qmake-configure), without qmake being added to the
 # configure stage.
 _VALID_ARGS=	norecursive outsource _env
-_qmake_ARGS=	${qmake_ARGS:S/\:/ /g}
 
-.if defined(qmake_ARGS)
-. for arg in ${_qmake_ARGS}
+.for arg in ${qmake_ARGS}
 .  if empty(_VALID_ARGS:M${arg})
 IGNORE=	Incorrect 'USES+= qmake' usage: argument '${arg}' is not recognized
 .  endif
-. endfor
-.endif
+.endfor
 
-.if ! ${_qmake_ARGS:M_env}
+.if ! ${qmake_ARGS:M_env}
 USE_QT${_QT_VERSION:R:R}+=	qmake_build
 .endif
 
@@ -76,7 +73,7 @@ QMAKE_ARGS+=	CONFIG+="release" \
 .endif # defined(WITH_DEBUG)
 
 # We set -recursive by default to keep qmake from running in the build stage.
-.if ! ${_qmake_ARGS:Mnorecursive}
+.if ! ${qmake_ARGS:Mnorecursive}
 QMAKE_ARGS+=	-recursive
 .endif
 
@@ -88,7 +85,7 @@ QMAKE_ARGS+=	-d
 # use it for both qtbase and USES=qmake ports. They are private, not supposed to
 # be used anywhere else.
 _QMAKE_WRKSRC?=	${CONFIGURE_WRKSRC}
-.if ${_qmake_ARGS:Moutsource}
+.if ${qmake_ARGS:Moutsource}
 CONFIGURE_WRKSRC=	${WRKDIR}/.build
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=		${BUILD_WRKSRC}
@@ -97,7 +94,7 @@ QMAKE_SOURCE_PATH?=	${WRKSRC}
 QMAKE_SOURCE_PATH?=	# empty
 .endif
 
-.if ! ${_qmake_ARGS:M_env}
+.if ! ${qmake_ARGS:M_env}
 DESTDIRNAME=	INSTALL_ROOT
 .endif
 
@@ -108,7 +105,7 @@ qmake-configure:
 	@cd ${_QMAKE_WRKSRC} && \
 		${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${QMAKE_SOURCE_PATH}
 
-.if !target(do-configure) && ! ${_qmake_ARGS:M_env}
+.if !target(do-configure) && ! ${qmake_ARGS:M_env}
 do-configure: qmake-configure
 	@${DO_NADA}
 .endif

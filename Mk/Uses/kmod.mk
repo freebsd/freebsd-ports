@@ -13,7 +13,7 @@ _INCLUDE_USES_KMOD_MK=	yes
 
 _USES_POST+=	kmod
 
-.if defined(kmod_ARGS)
+.if !empty(kmod_ARGS)
 IGNORE=	USES=kmod takes no arguments
 .endif
 

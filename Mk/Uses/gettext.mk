@@ -13,7 +13,7 @@ _INCLUDE_USES_GETTEXT_MK=	yes
 
 _GETTEXT_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
-.if !defined(gettext_ARGS)
+.if empty(gettext_ARGS)
 gettext_ARGS=	lib
 .endif
 

@@ -13,8 +13,6 @@
 .if !defined(_INCLUDE_USES_CRAN_MK)
 _INCLUDE_USES_CRAN_MK=	yes
 
-VALID_ARGS=	auto-plist
-
 MASTER_SITE_CRAN+=	http://ftp.ctex.org/mirrors/CRAN/src/contrib/ \
 			http://cran.rakanu.com/src/contrib/ \
 			http://cran.ms.unimelb.edu.au/src/contrib/ \
@@ -30,7 +28,6 @@ MASTER_SITE_CRAN_ARCHIVE+=	${MASTER_SITE_CRAN:S,$,Archive/${PORTNAME}/,}
 
 MASTER_SITES?=	${MASTER_SITE_CRAN} ${MASTER_SITE_CRAN_ARCHIVE}
 
-USES+=		fortran
 BUILD_DEPENDS+=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 RUN_DEPENDS+=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 

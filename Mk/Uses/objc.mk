@@ -10,7 +10,7 @@
 .if !defined(_INCLUDE_USES_OBJC_MK)
 _INCLUDE_USES_OBJC_MK=	yes
 
-.if defined(objc_ARGS)
+.if !empty(objc_ARGS)
 IGNORE=	USES=objc takes no arguments
 .endif
 

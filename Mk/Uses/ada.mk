@@ -13,7 +13,7 @@ _INCLUDE_USES_ADA_MK=    yes
 
 CC= ada
 
-. if defined(ada_ARGS) && ${ada_ARGS} == 47
+. if ${ada_ARGS} == 47
 BUILD_DEPENDS+=	${LOCALBASE}/gcc47-aux/bin/ada:${PORTSDIR}/lang/gcc47-aux
 MAKE_ENV+=	PATH=${LOCALBASE}/gcc47-aux/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${LOCALBASE}/gcc47-aux/bin:${PATH}

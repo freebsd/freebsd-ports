@@ -16,7 +16,6 @@
 .if !defined(_INCLUDE_USES_LIBTOOL_MK)
 _INCLUDE_USES_LIBTOOL_MK=	yes
 _USES_POST+=	libtool
-libtool_ARGS:=	${libtool_ARGS:C/,/ /}
 
 .if ${libtool_ARGS:Mbuild}
 BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool

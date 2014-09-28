@@ -13,25 +13,23 @@
 .if !defined(_INCLUDE_USES_DRUPAL_Mk)
 _INCLUDE_USES_DRUPAL_Mk=	yes
 
-_drupal_ARGS=	${drupal_ARGS:S/,/ /g}
-
-.if ${_drupal_ARGS:M[67]}
-_DRUPAL_VERSION=	${_drupal_ARGS:M[67]}
+.if ${drupal_ARGS:M[67]}
+_DRUPAL_VERSION=	${drupal_ARGS:M[67]}
 .endif
 
 VALID_VERSIONS=	6 7
 
-.if ${_drupal_ARGS:N[67]:Ntheme:Nmodule}
-IGNORE=	Unknown argument for USES=drupal: ${_drupal_ARGS:N[67]:Ntheme:Nmodule}
+.if ${drupal_ARGS:N[67]:Ntheme:Nmodule}
+IGNORE=	Unknown argument for USES=drupal: ${drupal_ARGS:N[67]:Ntheme:Nmodule}
 .endif
 
-_DRUPAL_COMP=	${_drupal_ARGS:N[67]}
+_DRUPAL_COMP=	${drupal_ARGS:N[67]}
 
 .if !defined(_DRUPAL_VERSION) || ! ${VALID_VERSIONS:M${_DRUPAL_VERSION}}
 IGNORE=	Missing or invalid argument for USES=drupal, a version must be provided: ${VALID_VERSIONS}
 .endif
 
-.if ${_drupal_ARGS:Mmodule} && ${_drupal_ARGS:Mtheme}
+.if ${drupal_ARGS:Mmodule} && ${drupal_ARGS:Mtheme}
 IGNORE=	theme and module arguments are mutually exclusive for USES=drupal
 .endif
 

@@ -11,7 +11,7 @@
 .if !defined(_INCLUDE_USES_FUSE_MK)
 _INCLUDE_USES_FUSE_MK=	yes
 
-.if defined(fuse_ARGS)
+.if !empty(fuse_ARGS)
 IGNORE=	USES=fuse does not require args
 .endif
 

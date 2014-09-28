@@ -14,13 +14,8 @@
 .if !defined(_INCLUDE_USES_IMAKE_MK)
 _INCLUDE_USES_IMAKE_MK=	yes
 
-.if defined(imake_ARGS)
-imake_ARGS:=	${imake_ARGS:S/,/ /g}
 .if ${imake_ARGS:Nnotall:Nenv:Nnoman}
 IGNORE=		USES=imake:${imake_ARGS:S/ /,/g} is not a valid argument
-.endif
-.else
-imake_ARGS=
 .endif
 
 BUILD_DEPENDS+=		imake:${PORTSDIR}/devel/imake

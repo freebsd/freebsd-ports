@@ -30,7 +30,7 @@
 .if !defined(_INCLUDE_USES_COMPILER_MK)
 _INCLUDE_USES_COMPILER_MK=	yes
 
-.if !defined(compiler_ARGS)
+.if empty(compiler_ARGS)
 compiler_ARGS=	env
 .endif
 

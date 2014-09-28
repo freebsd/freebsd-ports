@@ -10,7 +10,7 @@
 .if !defined(_INCLUDE_USES_FMAKE_MK)
 _INCLUDE_USES_FMAKE_MK=	yes
 
-.if defined(fmake_ARGS)
+.if !empty(fmake_ARGS)
 IGNORE=	Incorrect 'USES+= fmake:${fmake_ARGS}' fmake takes no arguments
 .endif
 

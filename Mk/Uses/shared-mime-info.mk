@@ -11,7 +11,7 @@
 .if !defined(_INCLUDE_USES_SHARED_MIME_INFO_MK)
 _INCLUDE_USES_SHARED_MIME_INFO_MK=	yes
 
-.if defined(shared-mime-info_ARGS)
+.if !empty(shared-mime-info_ARGS)
 IGNORE=	USES=shared-mime-info does not require args
 .endif
 
