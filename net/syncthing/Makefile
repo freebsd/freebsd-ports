@@ -21,7 +21,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:group1 \
 		text.go-024681b033be${EXTRACT_SUFX}:group3 \
 		snappy-go-12e4b4183793${EXTRACT_SUFX}:group4 \
 		crypto.go-31393df5baea${EXTRACT_SUFX}:group5 \
-		bkaradzic-go-lz4-77e2ba8${EXTRACT_SUFX}:group6 \
+		bkaradzic-go-lz4-93a831d${EXTRACT_SUFX}:group6 \
 		calmh-xdr-e1714bb${EXTRACT_SUFX}:group7 \
 		juju-ratelimit-f9f36d1${EXTACT_SUFX}:group8 \
 		syndtr-goleveldb-9bca75c${EXTRACT_SUFX}:group9 \
