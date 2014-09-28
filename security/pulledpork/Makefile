@@ -19,8 +19,7 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
-PLIST_DIRSTRY=	%%ETCDIR%%
-PLIST_DIRS=	%%DATADIR%%
+PLIST_DIRS=	%%ETCDIR%% %%DATADIR%%
 
 PLIST_FILES=	bin/pulledpork.pl \
 		%%ETCDIR%%/disablesid.conf.sample \
@@ -53,22 +52,19 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/pulledpork.pl ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} -m 750 ${STAGEDIR}${ETCDIR}
 # pulledpork.conf contains the snort user registration key, do not install world readable
-	@${INSTALL_DATA} -m 640 ${WRKSRC}/etc/pulledpork.conf ${STAGEDIR}${ETCDIR}/pulledpork.conf.sample
+	@${INSTALL} -m 640 ${WRKSRC}/etc/pulledpork.conf ${STAGEDIR}${ETCDIR}/pulledpork.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/disablesid.conf ${STAGEDIR}${ETCDIR}/disablesid.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/dropsid.conf    ${STAGEDIR}${ETCDIR}/dropsid.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/enablesid.conf  ${STAGEDIR}${ETCDIR}/enablesid.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/modifysid.conf  ${STAGEDIR}${ETCDIR}/modifysid.conf.sample
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/README.CONTRIB ${STAGEDIR}${DATADIR}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/oink-conv.pl ${STAGEDIR}${DATADIR}/
-
-.if ${PORT_OPTIONS:MDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/README.CONTRIB ${STAGEDIR}${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/oink-conv.pl ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/README.CATEGORIES ${STAGEDIR}${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/README.CHANGES ${STAGEDIR}${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/README.RULESET ${STAGEDIR}${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/README.SHAREDOBJECTS ${STAGEDIR}${DOCSDIR}/
-.endif
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/README.CATEGORIES ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/README.CHANGES ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/README.RULESET ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/README.SHAREDOBJECTS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
