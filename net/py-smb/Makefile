@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smb
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.12
 CATEGORIES=	net python
 MASTER_SITES=	http://miketeo.net/files/Projects/py${PORTNAME}/ \
 		CHEESESHOP
@@ -16,14 +16,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
 
 OPTIONS_DEFINE=	DOCS
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-
-DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}smb
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 PORTDOCS=	*
-
-.include <bsd.port.options.mk>
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
