@@ -241,36 +241,3 @@ viewvc/templates/revision.ezt
 viewvc/templates/roots.ezt
 viewvc/templates/rss.ezt
 @sample viewvc/viewvc.conf.sample
-@dirrm viewvc/bin/cgi
-@dirrm viewvc/bin/mod_python
-@dirrm viewvc/bin/wsgi
-@dirrm viewvc/bin
-@dirrm viewvc/lib/vcauth/forbidden
-@dirrm viewvc/lib/vcauth/forbiddenre
-@dirrm viewvc/lib/vcauth/svnauthz
-@dirrm viewvc/lib/vcauth
-@dirrm viewvc/lib/vclib/ccvs/rcsparse/test-data
-@dirrm viewvc/lib/vclib/ccvs/rcsparse
-@dirrm viewvc/lib/vclib/ccvs
-@dirrm viewvc/lib/vclib/svn
-@dirrm viewvc/lib/vclib
-@dirrm viewvc/lib
-@dirrm viewvc/templates/docroot/images
-@dirrm viewvc/templates/docroot
-@dirrm viewvc/templates/include
-@dirrm viewvc/templates
-@dirrm viewvc/templates-contrib/newvc/templates/docroot/images
-@dirrm viewvc/templates-contrib/newvc/templates/docroot
-@dirrm viewvc/templates-contrib/newvc/templates/include
-@dirrm viewvc/templates-contrib/newvc/templates
-@dirrm viewvc/templates-contrib/newvc
-@dirrm viewvc/templates-contrib/viewsvn/extras
-@dirrm viewvc/templates-contrib/viewsvn/screenshots
-@dirrm viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn
-@dirrm viewvc/templates-contrib/viewsvn/templates/docroot/images
-@dirrm viewvc/templates-contrib/viewsvn/templates/docroot
-@dirrm viewvc/templates-contrib/viewsvn/templates/include
-@dirrm viewvc/templates-contrib/viewsvn/templates
-@dirrm viewvc/templates-contrib/viewsvn
-@dirrm viewvc/templates-contrib
-@dirrmtry viewvc
