@@ -13,7 +13,7 @@
 .if !defined(_INCLUDE_USES_MOTIF_MK)
 _INCLUDE_USES_MOTIF_MK=	yes
 
-.if defined(motif_ARGS)
+.if !empty(motif_ARGS)
 IGNORE=	USES=motif takes no arguments
 .endif
 

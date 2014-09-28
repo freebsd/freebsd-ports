@@ -11,7 +11,7 @@
 .if !defined(_INCLUDE_USES_FORTRAN_MK)
 _INCLUDE_USES_FORTRAN_MK=	yes
 
-.if !defined(fortran_ARGS)
+.if empty(fortran_ARGS)
 fortran_ARGS=	gcc
 .endif
 

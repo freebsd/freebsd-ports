@@ -10,7 +10,7 @@
 .if !defined(_INCLUDE_USES_SCONS_MK)
 _INCLUDE_USES_SCONS_MK=	yes
 
-.if defined(scons_ARGS)
+.if !empty(scons_ARGS)
 IGNORE=	Incorrect 'USES+= scons:${scons_ARGS}' scons takes no arguments
 .endif
 

@@ -13,7 +13,7 @@ _INCLUDE_USES_BISON_MK=	yes
 
 _BISON_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-.if !defined(bison_ARGS)
+.if empty(bison_ARGS)
 bison_ARGS=	build
 .endif
 

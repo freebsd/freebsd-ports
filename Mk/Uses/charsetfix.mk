@@ -11,7 +11,7 @@
 .if !defined(_INCLUDE_USES_CHARSETFIX_MK)
 _INCLUDE_USES_CHARSETFIX_MK=	yes
 
-.if defined(charsetfix_ARGS)
+.if !empty(charsetfix_ARGS)
 IGNORE=	USES=charsetfix does not require args
 .endif
 

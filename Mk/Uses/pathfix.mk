@@ -12,7 +12,7 @@
 .if !defined(_INCLUDE_USES_PATHFIX_MK)
 _INCLUDE_USES_PATHFIX_MK=	yes
 
-.if defined(pathfix_ARGS)
+.if !empty(pathfix_ARGS)
 IGNORE=	USES=pathfix does not require args
 .endif
 

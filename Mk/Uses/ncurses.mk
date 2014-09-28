@@ -26,11 +26,12 @@
 .if !defined(_INCLUDE_USES_NCURSES_MK)
 _INCLUDE_USES_NCURSES_MK=	yes
 
-.if !defined(ncurses_ARGS)
+.if empty(ncurses_ARGS)
 .  if !exists(${DESTDIR}/${LOCALBASE}/lib/libncurses.so) && exists(${DESTDIR}/usr/include/ncurses.h)
 ncurses_ARGS=	base
+.  else
+ncurses_ARGS=	port
 .  endif
-ncurses_ARGS?=	port
 .endif
 
 .if ${ncurses_ARGS} == base

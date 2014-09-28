@@ -20,7 +20,7 @@ _INCLUDE_QMAIL_MK=	yes
 
 QMAIL_PREFIX?=	/var/qmail
 
-.if !defined(qmail_ARGS)
+.if empty(qmail_ARGS)
 qmail_ARGS=	both
 .endif
 

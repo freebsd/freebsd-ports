@@ -13,7 +13,7 @@
 .if !defined(_INCLUDE_USES_NINJA_MK)
 _INCLUDE_USES_NINJA_MK=	yes
 
-.if defined(ninja_ARGS)
+.if !empty(ninja_ARGS)
 IGNORE=	Incorrect 'USES+= ninja:${ninja_ARGS}' ninja takes no arguments
 .endif
 

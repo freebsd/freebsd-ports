@@ -113,19 +113,17 @@ _WEBPLUGIN_APPS_ALL_NATIVE=	gecko opera opera-devel webkit-gtk2
 _WEBPLUGIN_APPS_ALL=		${_WEBPLUGIN_APPS_ALL_LINUX} \
 				${_WEBPLUGIN_APPS_ALL_NATIVE}
 
-webplugin_ARGS?=	all
-_WEBPLUGIN_ARGS=	${webplugin_ARGS:C/,/ /}
 _WEBPLUGIN_TEST=	${_WEBPLUGIN_APPS_ALL}
-.if ${_WEBPLUGIN_ARGS} == all
+.if ${webplugin_ARGS} == all || empty(webplugin_ARGS)
 _WEBPLUGIN_PATTERN=	*
-.elif ${_WEBPLUGIN_ARGS} == native
+.elif ${webplugin_ARGS} == native
 _WEBPLUGIN_PATTERN=	*
 _WEBPLUGIN_TEST=	${_WEBPLUGIN_APPS_ALL_NATIVE}
-.elif ${_WEBPLUGIN_ARGS} == linux
+.elif ${webplugin_ARGS} == linux
 _WEBPLUGIN_PATTERN=	*
 _WEBPLUGIN_TEST=	${_WEBPLUGIN_APPS_ALL_LINUX}
 .else
-_WEBPLUGIN_PATTERN=	${_WEBPLUGIN_ARGS}
+_WEBPLUGIN_PATTERN=	${webplugin_ARGS}
 .endif
 
 .if !defined(WEBPLUGIN_FILES)

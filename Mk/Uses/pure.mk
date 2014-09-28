@@ -15,21 +15,18 @@
 _INCLUDE_USES_PURE_MK=	yes
 
 _valid_ARGS=		ffi
-_pure_ARGS=		${pure_ARGS:C/\:/ /g}
 
 # Sanity check
-.if defined(pure_ARGS)
-.  for arg in ${_pure_ARGS}
+.for arg in ${pure_ARGS}
 .    if empty(_valid_ARGS:M${arg})
 IGNORE= Incorrect 'USES+= pure:${pure_ARGS}' usage: argument [${arg}] is not recognized
 .    endif
-.  endfor
-.endif
+.endfor
 
 LIB_DEPENDS+=	libpure.so:${PORTSDIR}/lang/pure
 .include "${USESDIR}/gmake.mk"
 
-.if ${_pure_ARGS:Mffi}
+.if ${pure_ARGS:Mffi}
 RUN_DEPENDS+=	${LOCALBASE}/lib/pure/ffi.pure:${PORTSDIR}/devel/pure-ffi
 .endif
 

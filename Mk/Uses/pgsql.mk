@@ -67,7 +67,7 @@ _PGSQL_VER!=	${PG_CONFIG} --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]
 .  endif
 
 # Handle the + and - version stuff
-.  if defined(pgsql_ARGS)
+.  if !empty(pgsql_ARGS)
 .    if ${pgsql_ARGS:M*+}
 .      for version in ${VALID_PGSQL_VER}
 .        if ${pgsql_ARGS:S/+//} <= ${version}

@@ -12,7 +12,7 @@
 _INCLUDE_USES_PEAR_MK=	yes
 _USES_POST+=	pear
 
-.if defined(pear_ARGS)
+.if !empty(pear_ARGS)
 IGNORE+=	USES=pear takes not arguments
 .endif
 

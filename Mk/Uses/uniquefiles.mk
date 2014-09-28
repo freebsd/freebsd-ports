@@ -64,10 +64,6 @@
 .if !defined(_INCLUDE_USES_UNIQUEFILES_MK)
 _INCLUDE_USES_UNIQUEFILES_MK=	yes
 
-.if !defined(uniquefiles_ARGS)
-uniquefiles_ARGS=	#empty
-.endif
-
 UNIQUE_PREFIX?=		${PKGNAMEPREFIX}
 UNIQUE_SUFFIX?=		${PKGNAMESUFFIX}
 UNIQUE_PREFIX_FILES?=	# empty

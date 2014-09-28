@@ -16,7 +16,6 @@
 _INCLUDE_USES_OPENAL_MK=	yes
 
 _valid_ARGS=	al si soft alut
-_openal_ARGS=	${openal_ARGS:C/,/ /g}
 
 _si_DEPENDS=	libopenal.so.0:${PORTSDIR}/audio/openal
 _soft_DEPENDS=	libopenal.so.1:${PORTSDIR}/audio/openal-soft
@@ -32,8 +31,8 @@ _HAVE_OPENAL=	soft
 .endif
 
 # Be friendly
-.if ! defined(openal_ARGS)
-_openal_ARGS=	${_DEFAULT_OPENAL}
+.if empty(openal_ARGS)
+openal_ARGS=	${_DEFAULT_OPENAL}
 .endif
 
 # Sanity checks
@@ -41,12 +40,11 @@ _openal_ARGS=	${_DEFAULT_OPENAL}
 IGNORE=	OpenAL mismatch: ${_HAVE_OPENAL} is installed, but ${WANT_OPENAL} desired
 .endif
 
-.if defined(_openal_ARGS)
-.  for _arg in ${_openal_ARGS}
+.for _arg in ${openal_ARGS}
 .    if ! ${_valid_ARGS:M${_arg}}
 IGNORE=	Incorrect 'USES+= openal:${openal_ARGS}' usage: argument [${_arg}] is not recognized
 .    endif
-.    if ${_OPENAL_LIBS:M${_arg}} && ${_openal_ARGS:Mal}
+.    if ${_OPENAL_LIBS:M${_arg}} && ${openal_ARGS:Mal}
 IGNORE=	Incorrect 'USES+= openal:${openal_ARGS}' usage: argument [${_arg}] cannot be used together with al
 .    endif
 .    if ${_OPENAL_LIBS:M${_arg}} && defined(_HAVE_OPENAL) && ${_HAVE_OPENAL} != ${_arg}
@@ -57,18 +55,17 @@ IGNORE=	OpenAL mismatch: port wants to use ${_arg} while you wish to use ${WANT_
 .    endif
 .    if ${_OPENAL_LIBS:M${_arg}}
 .      for _carg in ${_OPENAL_LIBS:N${_arg}}
-.        if ${_openal_ARGS:M${_carg}}
+.        if ${openal_ARGS:M${_carg}}
 IGNORE=	Incorrect 'USES+= openal:${openal_ARGS}' usage: arguments [${_arg}] and [${_carg}] cannot be used together
 .        endif
 .      endfor
 .    endif
-.  endfor
-.endif
+.endfor
 
 # Proceed
 _USE_OPENAL=
 
-.if ${_openal_ARGS:Mal}
+.if ${openal_ARGS:Mal}
 .if defined(_HAVE_OPENAL)
 _USE_OPENAL=	${_HAVE_OPENAL}
 .elif defined(WANT_OPENAL)
@@ -78,7 +75,7 @@ _USE_OPENAL=	${_DEFAULT_OPENAL}
 .endif
 .endif
 
-.for _arg in ${_openal_ARGS:Nal}
+.for _arg in ${openal_ARGS:Nal}
 _USE_OPENAL+=	${_arg}
 .endfor
 

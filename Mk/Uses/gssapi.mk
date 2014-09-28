@@ -81,8 +81,10 @@ _HEIMDAL_DEPENDS=${GSSAPILIBDIR}/libgssapi.so:${PORTSDIR}/security/heimdal
 _MITKRB5_DEPENDS=${GSSAPILIBDIR}/libkrb5support.so:${PORTSDIR}/security/krb5
 _HEADERS=	sys/types.h sys/stat.h stdint.h
 
-gssapi_ARGS?=	base
-.for _A in ${gssapi_ARGS:S/,/ /g}
+.if empty(gssapi_ARGS)
+gssapi_ARGS=	base
+.endif
+.for _A in ${gssapi_ARGS}
 _local:=	${_A}
 .if ${_local} == "base"
 HEIMDAL_HOME=	/usr

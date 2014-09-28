@@ -36,7 +36,7 @@
 .if !defined(_INCLUDE_USES_PERL5_MK)
 _INCLUDE_USES_PERL5_MK=	yes
 
-.if defined(perl5_ARGS)
+.if !empty(perl5_ARGS)
 IGNORE=	Incorrect 'USES+=perl5:${perl5_ARGS}' perl5 takes no arguments
 .endif
 
