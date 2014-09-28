@@ -3,6 +3,7 @@
 
 PORTNAME=	syncthing
 PORTVERSION=	0.9.18
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/:group1 \
 		https://bitbucket.org/kardianos/osext/get/:group2 \
@@ -18,7 +19,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/v${PORTVERSION}
 		LOCAL/swills:group12
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:group1 \
 		5d3ddcf53a50${EXTRACT_SUFX}:group2 \
-		text.go-024681b033be${EXTRACT_SUFX}:group3 \
+		text.go-d65bffbc88a1${EXTRACT_SUFX}:group3 \
 		snappy-go-12e4b4183793${EXTRACT_SUFX}:group4 \
 		crypto.go-31393df5baea${EXTRACT_SUFX}:group5 \
 		bkaradzic-go-lz4-93a831d${EXTRACT_SUFX}:group6 \
@@ -55,7 +56,7 @@ post-patch:
 		${MV} ${WRKDIR}/kardianos-osext-5d3ddcf53a50 ${WRKSRC}/src/bitbucket.org/kardianos/osext ; \
 		${MV} ${WRKDIR}/crypto.go-31393df5baea/ src/code.google.com/p/go.crypto ; \
 		${MV} ${WRKDIR}/snappy-go-12e4b4183793 src/code.google.com/p/snappy-go ; \
-		${MV} ${WRKDIR}/text.go-024681b033be src/code.google.com/p/go.text ; \
+		${MV} ${WRKDIR}/text.go-d65bffbc88a1 src/code.google.com/p/go.text ; \
 		${MV} ${WRKDIR}/tools.go-7a99b946364f src/code.google.com/p/go.tools ; \
 		${MV} ${WRKDIR}/net.go-90e232e2462d src/code.google.com/p/go.net ; \
 		${MV} ${WRKDIR}/bkaradzic-go-lz4-93a831d src/github.com/bkaradzic/go-lz4 ; \
