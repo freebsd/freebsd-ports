@@ -21,8 +21,8 @@
 -	cp tai64nfrac $(bindir)
 -	mkdir -p $(man1dir)
 -	cp tai64nfrac.1 $(man1dir)
-+	install -c -g 0 -o 0 -m 0555 tai64nfrac $(DESTDIR)$(bindir)
-+	install -c -g 0 -o 0 -m 0444 tai64nfrac.1 $(DESTDIR)$(mandir)
++	$(BSD_INSTALL_PROGRAM) tai64nfrac $(DESTDIR)$(bindir)
++	$(BSD_INSTALL_MAN) tai64nfrac.1 $(DESTDIR)$(mandir)
  
  clean:
  	rm -f *.o tai64nfrac
