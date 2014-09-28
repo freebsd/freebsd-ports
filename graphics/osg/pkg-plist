@@ -733,24 +733,3 @@ libdata/pkgconfig/openscenegraph-osgVolume.pc
 libdata/pkgconfig/openscenegraph-osgWidget.pc
 libdata/pkgconfig/openscenegraph.pc
 libdata/pkgconfig/openthreads.pc
-@dirrm lib/osgPlugins-%%OSG_VERSION%%
-@dirrm include/osgWidget
-@dirrm include/osgVolume
-@dirrm include/osgViewer/api/X11
-@dirrm include/osgViewer/api
-@dirrm include/osgViewer
-@dirrm include/osgUtil
-@dirrm include/osgText
-@dirrm include/osgTerrain
-@dirrm include/osgSim
-@dirrm include/osgShadow
-%%QT4%%@dirrm include/osgQt
-@dirrm include/osgPresentation
-@dirrm include/osgParticle
-@dirrm include/osgManipulator
-@dirrm include/osgGA
-@dirrm include/osgFX
-@dirrm include/osgDB
-@dirrm include/osgAnimation
-@dirrm include/osg
-@dirrm include/OpenThreads
