@@ -324,6 +324,8 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/fr/FeynmanDiagrams.lyx
 %%DATADIR%%/examples/fr/Foils.lyx
 %%DATADIR%%/examples/fr/ListesPuces.lyx
+%%DATADIR%%/examples/fr/beamer-article.lyx
+%%DATADIR%%/examples/fr/beamer.lyx
 %%DATADIR%%/examples/fr/exemple-powerdot.lyx
 %%DATADIR%%/examples/fr/exemple_brut.lyx
 %%DATADIR%%/examples/fr/exemple_lyxifie.lyx
