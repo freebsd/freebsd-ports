@@ -319,34 +319,5 @@ share/X11/xkb/types/pc
 %%NLS%%share/locale/vi/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xkeyboard-config.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky
-%%NLS%%@dirrmtry share/locale/crh/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/crh
-@dirrm share/X11/xkb/types
-@dirrm share/X11/xkb/symbols/xfree68_vndr
-@dirrm share/X11/xkb/symbols/sun_vndr
-@dirrm share/X11/xkb/symbols/sony_vndr
-@dirrm share/X11/xkb/symbols/sharp_vndr
-@dirrm share/X11/xkb/symbols/sgi_vndr
-@dirrm share/X11/xkb/symbols/nokia_vndr
-@dirrm share/X11/xkb/symbols/nec_vndr
-@dirrm share/X11/xkb/symbols/macintosh_vndr
-@dirrm share/X11/xkb/symbols/hp_vndr
-@dirrm share/X11/xkb/symbols/fujitsu_vndr
-@dirrm share/X11/xkb/symbols/digital_vndr
-@dirrm share/X11/xkb/symbols
-@dirrm share/X11/xkb/rules
-@dirrm share/X11/xkb/keycodes/sgi_vndr
-@dirrm share/X11/xkb/keycodes/digital_vndr
-@dirrm share/X11/xkb/keycodes
-@dirrm share/X11/xkb/geometry/sgi_vndr
-@dirrm share/X11/xkb/geometry/digital_vndr
-@dirrm share/X11/xkb/geometry
-@dirrm share/X11/xkb/compat
-@dirrm share/X11/xkb
-@dirrmtry share/X11
-@dirrmtry /var/lib/xkb
-@dirrmtry /var/lib
+@dir /var/lib/xkb
+@dir /var/lib
