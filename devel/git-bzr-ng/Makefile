@@ -9,6 +9,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Bi-directional git to bzr bridge
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 		bzr:${PORTSDIR}/devel/bzr \
@@ -19,11 +20,11 @@ GH_ACCOUNT=	termie
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	9878a30
 
+USES=		python:2,run
 NO_BUILD=	yes
 PLIST_FILES=	libexec/git-core/git-bzr
 PLIST_DIRSTRY=	libexec/git-core
 PORTDOCS=	*
-USE_PYTHON_RUN=	2
 
 OPTIONS_DEFINE=	DOCS
 
