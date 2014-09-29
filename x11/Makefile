@@ -245,6 +245,7 @@
     SUBDIR += qt4-graphicssystems-opengl
     SUBDIR += qt4-inputmethods
     SUBDIR += qt5-qev
+    SUBDIR += qt5-x11extras
     SUBDIR += qxkb
     SUBDIR += randrproto
     SUBDIR += recordproto

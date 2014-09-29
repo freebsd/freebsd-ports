@@ -298,7 +298,7 @@ _USE_QT4_ONLY=	accessible assistant-adp assistantclient codecs-cn codecs-jp \
 
 _USE_QT5_ONLY=	buildtools concurrent core graphicaleffects linguisttools \
 				printsupport qdbus qdoc qev qml qmldevtools quick \
-				quickcontrols uitools widgets
+				quickcontrols uitools widgets x11extras
 
 accessible_PORT=	accessibility/${_QT_RELNAME}-accessible
 accessible_PATH=	${QT_PLUGINDIR}/accessible/libqtaccessiblewidgets.so
@@ -511,6 +511,9 @@ webkit_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}WebKit.so
 
 widgets_PORT=		x11-toolkits/${_QT_RELNAME}-widgets
 widgets_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}Widgets.so
+
+x11extras_PORT=		x11/${_QT_RELNAME}-x11extras
+x11extras_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}X11Extras.so
 
 xml_PORT=			textproc/${_QT_RELNAME}-xml
 xml_PATH=			${QT_LIBDIR}/libQt${_QT_LIBVER}Xml.so
