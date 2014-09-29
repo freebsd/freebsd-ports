@@ -3,6 +3,7 @@
 
 PORTNAME=	syncthing-discosrv
 PORTVERSION=	0.0.0.2014081401
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
 		https://codeload.github.com/juju/ratelimit/legacy.tar.gz/f9f36d1?dummy=/:group2 \
@@ -26,12 +27,16 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 GH_ACCOUNT=	syncthing
 GH_PROJECT=	discosrv
-GH_COMMIT=	f2b3bb0
+GH_COMMIT=	f2b3bb063f83f24d6c6e10013ea467d5967eb0cf
 GH_TAGNAME=	${GH_COMMIT}
 
-WRKSRC=		${WRKDIR}/discosrv-f2b3bb063f83f24d6c6e10013ea467d5967eb0cf
+WRKSRC=		${WRKDIR}/discosrv-${GH_COMMIT}
 
 PLIST_FILES=	bin/syncthing-discosrv
+
+USE_RC_SUBR=	syncthing-discosrv
+USERS=		syncthing
+GROUPS=		syncthing
 
 post-patch:
 	cd ${WRKSRC} ; \
@@ -55,7 +60,7 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC} go build
-	${MV} ${WRKSRC}/discosrv-f2b3bb063f83f24d6c6e10013ea467d5967eb0cf ${WRKSRC}/syncthing-discosrv
+	${MV} ${WRKSRC}/discosrv-${GH_COMMIT} ${WRKSRC}/syncthing-discosrv
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/syncthing-discosrv ${STAGEDIR}${PREFIX}/bin/
