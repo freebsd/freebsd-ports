@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmin
-PORTVERSION=	1.702
+PORTVERSION=	1.703
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/devel/tarballs/:sf \
 		http://download.webmin.com/updates/:up \
