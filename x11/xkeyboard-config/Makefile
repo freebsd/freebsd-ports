@@ -11,8 +11,10 @@ COMMENT=	X Keyboard Configuration Database
 LICENSE=	MIT
 
 BUILD_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp
+
 XORG_CAT=	data
 
+NO_ARCH=	yes
 USES=		gmake pathfix perl5 tar:bzip2
 USE_GNOME=	intlhack libxslt:build
 USE_PERL5=	build
@@ -44,7 +46,7 @@ post-patch:
 		${WRKSRC}/rules/merge.sh
 
 post-install:
-	${MKDIR} ${STAGEDIR}/var/lib/xkb
-	${LN} -sf /var/lib/xkb ${STAGEDIR}${PREFIX}/share/X11/xkb/compiled
+	@${MKDIR} ${STAGEDIR}/var/lib/xkb
+	@${LN} -sf /var/lib/xkb ${STAGEDIR}${PREFIX}/share/X11/xkb/compiled
 
 .include <bsd.port.mk>
