@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amqp
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>=0.4.0:${PORTSDIR}/devel/py-unitt
 
 LICENSE=	LGPL21
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 regression-test: build
 	@cd ${WRKSRC}/funtests && ${SETENV} PYTHONPATH=../ ${PYTHON_CMD} run_all.py
