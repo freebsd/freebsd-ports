@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ttfunk
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Font Metrics Parser for Prawn
+
+LICENSE=	RUBY GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
