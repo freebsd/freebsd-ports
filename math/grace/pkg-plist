@@ -21,13 +21,13 @@ man/man1/xmgrace.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/7.1.3.agr
 %%PORTDOCS%%%%DOCSDIR%%/8.2.dat
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.html
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.dvi
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.pdf
 %%PORTDOCS%%%%DOCSDIR%%/GPL.html
-%%PORTDOCS%%%%DOCSDIR%%/Tutorial.dvi
 %%PORTDOCS%%%%DOCSDIR%%/Tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.dvi
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.pdf
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/mygraph.png
 %%PORTDOCS%%%%DOCSDIR%%/nohelp.html
 %%PORTDOCS%%%%DOCSDIR%%/philosophical-gnu-sm.jpg
@@ -88,6 +88,8 @@ man/man1/xmgrace.1.gz
 %%DATADIR%%/auxiliary/README
 %%DATADIR%%/auxiliary/convcal.c
 %%DATADIR%%/auxiliary/magic.grace
+%%PORTDOCS%%%%DATADIR%%/doc
+%%PORTEXAMPLES%%%%DATADIR%%/examples
 %%DATADIR%%/fonts/FontDataBase
 %%DATADIR%%/fonts/enc/CP1251.enc
 %%DATADIR%%/fonts/enc/IsoLatin1.enc
@@ -132,13 +134,4 @@ man/man1/xmgrace.1.gz
 %%DATADIR%%/gracerc
 %%DATADIR%%/gracerc.user
 %%DATADIR%%/templates/Default.agr
-%%PORTEXAMPLES%%%%DATADIR%%/examples
-%%PORTDOCS%%%%DATADIR%%/doc
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/fonts/type1
-@dirrm %%DATADIR%%/fonts/enc
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/auxiliary
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/pixmaps/mini-xmgr3.xpm
