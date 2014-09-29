@@ -17,8 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:${PORTSDIR}/graphics/py-pyp
 		${PYTHON_SITELIBDIR}/web/__init__.py:${PORTSDIR}/www/webpy \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
+USES=		python tar:bzip2
 NO_BUILD=	yes
 
 TWMS_USER?=	twms
