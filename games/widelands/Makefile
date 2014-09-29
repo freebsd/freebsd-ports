@@ -17,14 +17,13 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=		tar:bzip2 cmake:outsource gettext compiler:c++11-lib lua:51
+USES=		cmake:outsource compiler:c++11-lib gettext lua:51 tar:bzip2 python:build
 CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="share/widelands" \
 		-DWL_INSTALL_BINDIR="bin" \
 		-DWL_VERSION="${DISTVERSION}" \
 		-DWL_COMPILERFLAG_OPTIMIZATIONS=""
 USE_SDL=	sdl mixer image net ttf gfx
-USE_PYTHON_BUILD=yes
 
 PLIST_FILES=	bin/widelands
 PORTDATA=	*
