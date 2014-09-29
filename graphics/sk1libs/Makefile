@@ -17,13 +17,18 @@ LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
 
 PROJECTHOST=	uniconvertor
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_BUILD_TARGET=build_ext
 PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib \
 			-I${LOCALBASE}/include:${LOCALBASE}/include/freetype2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/src/utils/fs.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/sk1libs/ft2engine/*.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/sk1libs/pycms/*.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/sk1libs/imaging/*.so
 
 .include <bsd.port.mk>
