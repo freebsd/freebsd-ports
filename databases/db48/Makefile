@@ -13,8 +13,10 @@ DIST_SUBDIR=	bdb
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.8
 
-DEPRECATED=		Please migrate to db5 or db6.
-EXPIRATION_DATE=	2014-11-30 unless *coin ports remain unfixed
+DEPRECATED=		Please migrate to db5 or db6
+# The port is not to be removed unless the bitcoin-related ports can
+# go without this.
+EXPIRATION_DATE=	2014-11-30
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
