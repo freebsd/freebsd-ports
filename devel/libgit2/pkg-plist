@@ -66,8 +66,8 @@ include/git2/sys/reflog.h
 include/git2/sys/refs.h
 include/git2/sys/repository.h
 lib/libgit2.so
-lib/libgit2.so.%%SHLIB_VER1%%
-lib/libgit2.so.%%SHLIB_VER2%%
+lib/libgit2.so.0.%%SHLIB_VER%%.0
+lib/libgit2.so.%%SHLIB_VER%%
 libdata/pkgconfig/libgit2.pc
 @dirrm include/git2/sys
 @dirrm include/git2
