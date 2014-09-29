@@ -2,15 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	libidn
-PORTVERSION=	1.28
-PORTREVISION=	2
+PORTVERSION=	1.29
 CATEGORIES=	dns
 MASTER_SITES=	GNU
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Internationalized Domain Names command line tool
-
-OPTIONS_DEFINE=	DOCS NLS
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -22,15 +19,12 @@ USE_PERL5=	build
 
 INFO=		libidn
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS NLS
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_SUB=yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^Libs.private:/s/$$/ @LTLIBINTL@/' \
