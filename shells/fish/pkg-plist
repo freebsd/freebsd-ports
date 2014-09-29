@@ -565,10 +565,3 @@ man/man1/mimedb.1.gz
 %%NLS%%share/locale/en/LC_MESSAGES/fish.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/fish.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/fish.mo
-@dirrm %%DATADIR%%/tools/web_config/sample_prompts
-@dirrm %%DATADIR%%/tools/web_config
-@dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%/functions
-@dirrm %%DATADIR%%/completions
-@dirrm %%DATADIR%%
-@dirrm %%ETCDIR%%
