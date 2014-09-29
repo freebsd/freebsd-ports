@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	je
-PORTVERSION=	3.2.76
-PORTREVISION=	1
+PORTVERSION=	6.1.5
 CATEGORIES=	java databases
 MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 		http://download-east.oracle.com/berkeley-db/	\
