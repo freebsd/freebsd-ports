@@ -57,6 +57,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6c083cf8-4830-11e4-ae2c-c80aa9043978">
+    <topic>fish -- local privilege escalation and remote code execution</topic>
+    <affects>
+      <package>
+	<name>fish</name>
+	<range><ge>1.6.0</ge><lt>2.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fish developer David Adam reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/09/28/8">
+	  <p>This release fixes a number of local privilege escalation
+	    vulnerability and one remote code execution vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2014/09/28/8</url>
+      <cvename>CVE-2014-2905</cvename>
+      <url>https://github.com/fish-shell/fish-shell/issues/1436</url>
+      <cvename>CVE-2014-2906</cvename>
+      <cvename>CVE-2014-3856</cvename>
+      <url>https://github.com/fish-shell/fish-shell/issues/1437</url>
+      <cvename>CVE-2014-2914</cvename>
+      <url>https://github.com/fish-shell/fish-shell/issues/1438</url>
+      <cvename>CVE-2014-3219</cvename>
+      <url>https://github.com/fish-shell/fish-shell/issues/1440</url>
+    </references>
+    <dates>
+      <discovery>2014-09-28</discovery>
+      <entry>2014-09-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca44b64c-4453-11e4-9ea1-c485083ca99c">
     <topic>Flash player -- Multiple security vulnerabilities in www/linux-*-flashplugin11</topic>
     <affects>
