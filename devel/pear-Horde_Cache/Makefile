@@ -10,18 +10,14 @@ COMMENT=	Horde Caching API
 
 OPTIONS_DEFINE=	APC
 APC_DESC=	Require APC PHP extension
-		
+
+USES=	horde
 USE_HORDE_RUN=	Horde_Compress_Fast \
 		Horde_Exception \
 		Horde_HashTable \
 		Horde_Util
 USE_PHP=	hash
 
-.include <bsd.port.pre.mk>
+APC_USE=	PHP=apc
 
-.if ${PORT_OPTIONS:MAPC}
-USE_PHP+=	apc
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

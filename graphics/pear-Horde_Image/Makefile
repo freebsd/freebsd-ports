@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Image API
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Support \
 		Horde_Translation \
@@ -16,11 +17,6 @@ USE_HORDE_RUN=	Horde_Exception \
 OPTIONS_DEFINE=	GD
 GD_DESC=	Depend on PHP gd extension
 
-.include <bsd.port.pre.mk>
+GD_USE=	PHP=gd
 
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

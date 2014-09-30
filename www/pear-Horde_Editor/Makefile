@@ -10,12 +10,11 @@ COMMENT=	Horde Editor API
 
 CONFLICTS=	horde-3*
 
+USES=	horde
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		Horde_Browser \
 		Horde_Exception \
 		Horde_Serialize
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

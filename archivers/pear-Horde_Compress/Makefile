@@ -12,6 +12,7 @@ OPTIONS_DEFAULT=	ZLIB
 OPTIONS_DEFINE=		ZLIB
 ZLIB_DESC=	Depend on PHP zlib extension
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Translation \
 		Horde_Util \
@@ -19,6 +20,4 @@ USE_HORDE_RUN=	Horde_Exception \
 
 ZLIP_USE=	PHP=zlib
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

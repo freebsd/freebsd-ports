@@ -8,10 +8,9 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Notification System
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util
 USE_PHP=	gettext
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

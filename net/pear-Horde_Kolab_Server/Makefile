@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for manipulating the Kolab user database
 
+USES=	horde
 USE_PHP=	hash
 USE_HORDE_RUN=	Horde_Auth \
 		Horde_Exception
@@ -20,11 +21,6 @@ LDAP_DESC=		Enable LDAP support
 # Not required but we want it
 USE_HORDE_RUN+=	Horde_Date
 
-.include <bsd.port.pre.mk>
+LDAP_USE=	HORDE_RUN=Horde_Ldap
 
-.if ${PORT_OPTIONS:MLDAP}
-USE_HORDE_RUN+=	Horde_Ldap
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

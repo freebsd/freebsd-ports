@@ -8,6 +8,7 @@ CATEGORIES=	comms www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API for processing SyncML requests
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Date \
 		Horde_Icalendar \
 		Horde_Log \
@@ -20,6 +21,4 @@ USE_HORDE_RUN=	Horde_Date \
 USE_HORDE_RUN+= Horde_Auth \
 		Horde_Core
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
