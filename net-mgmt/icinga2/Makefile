@@ -2,6 +2,7 @@
 
 PORTNAME=	icinga2
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://github.com/Icinga/${PORTNAME}/archive/v${DISTVERSION}.tar.gz?dummy=/
 
@@ -20,13 +21,13 @@ USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	MYSQL PGSQL
 OPTIONS_RADIO=		PLUGINS
 OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
 
-OPTIONS_DEFAULT=	MYSQL MONPLUGINS
+OPTIONS_DEFAULT=	MYSQL MONPLUGINS EXAMPLES
 
 MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
@@ -56,6 +57,7 @@ SUB_LIST=	ICINGA2LOGDIR=${ICINGA2LOGDIR} \
 		ICINGA2GROUP=${ICINGA2GROUP} \
 		WWWGRP=${WWWGRP}
 
+# Config files with references to "Linux"
 LINUX_CONFIG=	groups.conf services.conf hosts/localhost.conf
 
 .include <bsd.port.pre.mk>
@@ -75,7 +77,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 PLIST_SUB+=	PGSQL=""
 .else
 PLIST_SUB+=	PGSQL="@comment "
@@ -92,6 +94,14 @@ post-patch:
 .endif
 .if !${PORT_OPTIONS:MMYSQL}
 	${REINPLACE_CMD} '/^add_subdirectory(db_ido_pgsql)/d' ${WRKSRC}/components/CMakeLists.txt
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
+.for db in mysql pgsql
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${db}
+	(cd ${WRKSRC}/components/db_ido_${db} && ${COPYTREE_SHARE} schema ${STAGEDIR}${EXAMPLESDIR}/${db})
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
