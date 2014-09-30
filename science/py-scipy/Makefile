@@ -26,6 +26,8 @@ RUN_DEPENDS=	${PYNUMPY}	\
 USES=		fortran python
 USE_PYTHON=	distutils autoplist concurrent
 
+LDFLAGS+=	-shared
+
 OPTIONS_DEFINE=	ATLAS DOCS SUITESPARSE
 OPTIONS_DEFAULT=SUITESPARSE
 ATLAS_DESC=	Use optimized blas library
