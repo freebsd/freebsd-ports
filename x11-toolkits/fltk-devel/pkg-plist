@@ -91,7 +91,6 @@ include/fltk-devel/FL/Fl_Scroll.H
 include/fltk-devel/FL/Fl_Scrollbar.H
 include/fltk-devel/FL/Fl_Secret_Input.H
 include/fltk-devel/FL/Fl_Select_Browser.H
-include/fltk-devel/FL/Fl_Shaped_Window.H
 include/fltk-devel/FL/Fl_Shared_Image.H
 include/fltk-devel/FL/Fl_Simple_Counter.H
 include/fltk-devel/FL/Fl_Single_Window.H
