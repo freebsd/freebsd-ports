@@ -20,4 +20,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/extlookup2hiera
 
+DEPRECATED=	Has been incorporated into hiera
+EXPIRATION_DATE=	2014-11-30
+
 .include <bsd.port.mk>
