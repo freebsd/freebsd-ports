@@ -3396,6 +3396,7 @@
     SUBDIR += pecl-statgrab
     SUBDIR += pecl-svn
     SUBDIR += pecl-swoole
+    SUBDIR += pecl-sync
     SUBDIR += pecl-test_helpers
     SUBDIR += pecl-uopz
     SUBDIR += pecl-uploadprogress
