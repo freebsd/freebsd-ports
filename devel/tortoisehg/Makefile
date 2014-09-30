@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
 #MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
@@ -26,18 +25,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.10.2:${PORTSDIR}/devel/py-qt4-co
 		pygmentize:${PORTSDIR}/textproc/py-pygments
 
 OPTIONS_DEFINE=	NAUTILUS NLS
-
-NLS_USES=	gettext
-
 NAUTILUS_DESC=	Install TortoiseHG Nautilus extension
-
 OPTIONS_SUB=	yes
+
+USES=		python
+NLS_USES=	gettext
 
 INSTALLS_ICONS=	yes
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-INSTALLS_EGGINFO=yes
+USE_PYTHON=	distutils
 
 SUB_FILES=	pkg-message
 
