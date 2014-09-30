@@ -17,13 +17,15 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
-LIB_DEPENDS=	libc++.so:${PORTSDIR}/devel/libc++
+# libc++.so is a linker script, not a symlink.
+# Ignore portlint, the linker needs the actual library specified
+LIB_DEPENDS=	libc++.so.1:${PORTSDIR}/devel/libc++
 
 OPTIONS_DEFINE=	OPENMPI DOCS
 OPENMPI_DESC=	Use openmpi instead of mpich2
 
 USES=		cmake gmake
-LDFLAGS+=	-lc++
+LDFLAGS+=	-L${LOCALBASE}/lib -lc++
 
 PLIST_FILES=	include/parmetis/metis.h \
 		include/parmetis/parmetis.h \
