@@ -36,14 +36,15 @@ Index: common/src/datafile.cpp
  }
 Index: common/src/logbase.cpp
 ===================================================================
---- common/src/logbase.cpp	(revision 1614)
-+++ common/src/logbase.cpp	(working copy)
-@@ -29,12 +29,7 @@
+--- common/src/logbase.cpp.orig	2014-09-30 18:10:35 UTC
++++ common/src/logbase.cpp
+@@ -29,12 +29,8 @@
  #include "mw_util.h"
  
  #ifndef WIN32
 -#include <malloc.h>
 -#ifdef LINUX
++#include <stdlib.h>
  #include "wintypes.h"
 -#else
 -#include "PCSC/wintypes.h"
@@ -51,7 +52,7 @@ Index: common/src/logbase.cpp
  #include "sys/stat.h"
  #include "util.h"
  
-@@ -575,6 +570,7 @@ bool CLog::open(bool bWchar)
+@@ -575,6 +571,7 @@ bool CLog::open(bool bWchar)
  		else
  			err  = fopen_s(&m_f,utilStringNarrow(filename).c_str(),"a");
  #else
