@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	webmin
-PORTVERSION=	1.703
+PORTVERSION=	1.710
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.webmin.com/devel/tarballs/:sf \
-		http://download.webmin.com/updates/:up \
+MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
-MASTER_SITE_SUBDIR=	olgeni/:up
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
