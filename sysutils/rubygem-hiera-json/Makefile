@@ -17,4 +17,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+DEPRECATED=	Has been incorporated into hiera
+EXPIRATION_DATE=	2014-11-30
+
 .include <bsd.port.mk>
