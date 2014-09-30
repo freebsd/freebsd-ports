@@ -16,17 +16,7 @@ USE_HORDE_RUN=	Horde_Translation \
 OPTIONS_DEFINE=	GEOIP
 GEOIP_DESC=	Depend on geoip PHP extension
 
-.include <bsd.port.options.mk>
+GEOIP_USE=	PHP=yes
+GEOIP_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/geoip.so:${PORTSDIR}/net/pecl-geoip
 
-.if ${PORT_OPTIONS:MGEOIP}
-USE_PHP=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MGEOIP}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/geoip.so:${PORTSDIR}/net/pecl-geoip
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

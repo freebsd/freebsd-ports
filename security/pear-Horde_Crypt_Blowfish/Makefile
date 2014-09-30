@@ -16,15 +16,8 @@ OPTIONS_DEFINE=	MHASH OPENSSL
 MHASH_DESC=	Depend on mhash PHP extension
 OPENSSL_DESC=	Depend on OpenSSL PHP extension
 
-.include <bsd.port.pre.mk>
+USES=	horde
+MHASH_USE=	PHP=mhash
+OPENSSL_USE=	PHP=openssl
 
-.if ${PORT_OPTIONS:MMHASH}
-USE_PHP+=	mhash
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_PHP+=	openssl
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

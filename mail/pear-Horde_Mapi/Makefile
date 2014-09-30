@@ -8,11 +8,10 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde MAPI utility library
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Date \
 		Horde_Exception
 
 USE_PHP+=	bcmath
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

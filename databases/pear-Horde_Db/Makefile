@@ -14,23 +14,13 @@ MYSQL_DESC=		Depend on mysql PHP extension
 MYSQLI_DESC=		Depend on mysqli PHP extension
 PDO_DESC=		Depend on PDO PHP extension
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Date \
 		Horde_Exception \
 		Horde_Support
 
-.include <bsd.port.pre.mk>
+MYSQL_USE=	PHP=mysql
+MYSQLI_USE=	PHP=mysqli
+PDO_USE=	PHP=pdo
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MMYSQLI}
-USE_PHP+=	mysqli
-.endif
-
-.if ${PORT_OPTIONS:MPDO}
-USE_PHP+=	pdo
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

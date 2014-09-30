@@ -8,6 +8,6 @@ CATEGORIES=	textproc www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Javascript Minification
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+USES=	horde
+
+.include <bsd.port.mk>

@@ -8,12 +8,11 @@ CATEGORIES=	net www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for managing an active Kolab session
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Exception
 
 # Optional but we want it
 USE_HORDE_RUN+=	Horde_Kolab_Server \
 		Horde_Log
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

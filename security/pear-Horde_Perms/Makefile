@@ -8,12 +8,11 @@ CATEGORIES=	security www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Permissions System
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Db \
 		Horde_Exception \
 		Horde_Group \
 		Horde_Util \
 		Horde_Translation
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -8,9 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde support package
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Stream_Wrapper
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -8,12 +8,11 @@ CATEGORIES=	www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Facebook client
 
+USES=	horde
 USE_PHP=	json simplexml
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Http \
 		Horde_Translation \
 		Horde_Support
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

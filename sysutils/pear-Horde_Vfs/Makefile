@@ -15,11 +15,8 @@ USE_HORDE_RUN=	Horde_Exception \
 OPTIONS_DEFINE=	FTP
 FTP_DESC=	Depend on FTP PHP extension
 
-.include <bsd.port.pre.mk>
+USES=	horde
 
-.if ${PORT_OPTIONS:MFTP}
-USE_PHP+=	ftp
-.endif
+FTP_USE=	PHP=ftp
 
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
