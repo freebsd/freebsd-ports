@@ -25,7 +25,7 @@ DATADIR=	${PREFIX}/share/postgresql
 DOCSDIR?=	${PREFIX}/share/doc/postgresql
 PLIST_FILES=	lib/postgresql/pg_sphere.so \
 		%%DATADIR%%/contrib/pg_sphere.sql
-PLIST_DIRSTRY=	%%DATADIR%%/contrib
+PLIST_DIRS=	%%DATADIR%%/contrib
 
 DOCS_MAKE_ARGS_OFF=	DOCS=""
 DOCS_PLIST_DIRS=	%%DOCSDIR%%/contrib
