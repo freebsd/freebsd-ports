@@ -3,7 +3,7 @@
 
 PORTNAME=	nrpe
 DISTVERSION=	2.15
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
@@ -35,27 +35,21 @@ SSL_CFLAGS=		-I${OPENSSLINC}
 ARGS_CONFIGURE_ON=	--enable-command-args
 ARGS_CONFIGURE_OFF=	--disable-command-args
 
-.include <bsd.port.options.mk>
-
 NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios
-NAGIOSDIR?=	/var/spool/nagios
 USERS=		${NAGIOSUSER}
 GROUPS=		${NAGIOSGROUP}
 
-NAGIOSUID=	181
-NAGIOSGID=	${NAGIOSUID}
 NRPE_PIDDIR?=	/var/run/nrpe2
 
 CONFIGURE_ARGS+=--bindir=${PREFIX}/sbin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--sysconfdir=${PREFIX}/etc \
-		--localstatedir=${NAGIOSDIR} \
 		--with-nrpe-user=${NAGIOSUSER} \
 		--with-nrpe-group=${NAGIOSGROUP}
 
-PLIST_SUB=	NAGIOSDIR=${NAGIOSDIR} \
-		NAGIOSUID=${NAGIOSUID} \
+PLIST_SUB=	NAGIOSUSER=${NAGIOSUSER} \
+		NAGIOSGROUP=${NAGIOSGROUP} \
 		NRPE_PIDDIR=${NRPE_PIDDIR}
 SUB_LIST+=	PIDDIR=${NRPE_PIDDIR}
 
@@ -68,7 +62,6 @@ post-patch:
 		${WRKSRC}/sample-config/nrpe.cfg.in
 do-install:
 	${INSTALL} -d ${STAGEDIR}${NRPE_PIDDIR}
-	${INSTALL} -m 750 -d ${STAGEDIR}${NAGIOSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${STAGEDIR}${PREFIX}/sbin/nrpe2
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
 	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${STAGEDIR}${PREFIX}/libexec/nagios/check_nrpe2
