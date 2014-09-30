@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--enable-romio --enable-shared	\
 		--docdir="${DOCSDIR}" \
 		--with-python="${PYTHON_CMD}"
 CONFIGURE_ENV=	FCFLAGS="${FFLAGS}" \
-		MPI_CFLAGS="${LOCALBASE}/include" \
+		MPI_CFLAGS="-I${LOCALBASE}/include" \
 		PACKAGE=${PORTNAME} \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
