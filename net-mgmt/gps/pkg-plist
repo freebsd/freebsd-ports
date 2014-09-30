@@ -1,6 +1,0 @@
-bin/gps
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/features.html
-%%PORTDOCS%%%%DOCSDIR%%/links.html
-%%PORTDOCS%%%%DOCSDIR%%/usage.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

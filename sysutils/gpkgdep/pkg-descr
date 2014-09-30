@@ -1,9 +1,0 @@
-gpkgdep shows the FreeBSD package dependencies
-in three different views:
-- a tree view shows all packages required by each package
-- a tree view shows all packages which depend on each package
-- a list view allows to play with the packages. By marking all
-wanted packages all required are marked as well. This helps to
-identify unused packages.
-
-WWW: http://gpkgdep.sourceforge.net

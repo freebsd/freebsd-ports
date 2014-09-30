@@ -1,6 +1,0 @@
-A command-line anti-spoofing detection utility. The idea is simple:
-should you receive a packet that you suspect is spoofed, try to determine the
-real TTL of the packet and compare it to the TTL of the packet you received.
-This is intended for use as a component to an IDS toolkit, and the likes.
-
-WWW: http://BSDforge.com/projects/net/despoof/
