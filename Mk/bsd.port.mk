@@ -1186,10 +1186,10 @@ ARCH!=	${UNAME} -p
 OPSYS!=	${UNAME} -s
 .endif
 
+UNAMER!=${UNAME} -r
+
 # Get the operating system revision
-.if !defined(OSREL)
-OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
-.endif
+OSREL?=	${UNAMER:C/-.*//}
 
 # Get __FreeBSD_version
 .if !defined(OSVERSION)
@@ -1198,8 +1198,17 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/
 .elif exists(${SRC_BASE}/sys/sys/param.h)
 OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC_BASE}/sys/sys/param.h
 .else
-OSVERSION!=	${SYSCTL} -n kern.osreldate
+.error Unable to determine OS version.  Either define OSVERSION, install /usr/include/sys/param.h or define SRC_BASE.
 .endif
+.endif
+
+# Convert OSVERSION to major release number
+_OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
+# Sanity checks for chroot/jail building.
+.if ${_OSVERSION_MAJOR} != ${UNAMER:R}
+.error UNAME_r (${UNAMER}) and OSVERSION (${OSVERSION}) do not agree on major version number.
+.elif ${_OSVERSION_MAJOR} != ${OSREL:R}
+.error OSREL (${OSREL}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .endif
 
 # Enable new xorg for FreeBSD versions after Radeon KMS was imported unless

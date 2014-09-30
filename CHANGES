@@ -10,6 +10,36 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140930:
+AUTHOR: bdrewery@FreeBSD.org
+
+  Building ports in a chroot or jail have always required a particular
+  environment be setup. This was not clear though and the ports framework
+  did not enforce it. These requirements are:
+    1. Either a SRC_BASE/sys/sys/param.h, or /usr/include/sys/param.h be
+       present with the __FreeBSD_version_ number of the target system,
+       or OSVERSION be set in the environment. Lack of these would fallback
+       on kern.osreldate before, which is no longer the case.
+    2. UNAME_r,UNAME_v,UNAME_s all must be set for the target system.
+
+  Not having these values in sync will now cause the build to error until it is
+  resolved.
+
+  Setting these in the environment can be done via your own wrapper scripts,
+  or /etc/login.conf (along with cap_mkdb /etc/login.conf) or
+  via /etc/make.conf using appropriate values. Note that OSVERSION is redundant
+  if a proper param.h is in the environment:
+
+    OSVERSION+=     1100036
+    UNAME_ENV+=     OSVERSION=${OSVERSION}
+    UNAME_ENV+=     UNAME_s=FreeBSD
+    UNAME_ENV+=     UNAME_r=11.0-CURRENT
+    UNAME_ENV+=     UNAME_v="${UNAME_s} ${UNAME_r}"
+    .MAKEFLAGS:     ${UNAME_ENV}
+    MAKE_ENV+=      ${UNAME_ENV}
+    CONFIGURE_ENV+= ${UNAME_ENV}
+    SCRIPTS_ENV+=   ${UNAME_ENV}
+
 20140922:
 AUTHOR: bapt@FreeBSD.org
 
