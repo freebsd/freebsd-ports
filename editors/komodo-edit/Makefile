@@ -20,18 +20,16 @@ ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USE_LINUX=	f10
 USE_LINUX_APPS=	alsalib gtk2 jpeg dbusglib
+
+PLIST_FILES=	bin/komodo
+PORTDATA=	*
+
 DESKTOP_ENTRIES="Komodo Edit" \
 		"Free multi-platform editor that makes it easy to write quality code." \
 		${DATADIR}/share/icons/komodo48.png \
 		"komodo" \
 		"Development;Utility;TextEditor;" \
 		false
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not build
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
@@ -42,4 +40,4 @@ do-install:
 	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/lib/mozilla/run-mozilla.sh
 	${LN} -sf ${DATADIR}/bin/komodo ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
