@@ -3741,6 +3741,7 @@
     SUBDIR += py-jaraco.util
     SUBDIR += py-jcc
     SUBDIR += py-jdcal
+    SUBDIR += py-jedi
     SUBDIR += py-jellyfish
     SUBDIR += py-jira
     SUBDIR += py-jmespath
