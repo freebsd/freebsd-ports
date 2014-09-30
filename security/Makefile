@@ -777,7 +777,6 @@
     SUBDIR += py-oauthlib
     SUBDIR += py-openid
     SUBDIR += py-openssl
-    SUBDIR += py-otr
     SUBDIR += py-paramiko
     SUBDIR += py-passlib
     SUBDIR += py-plaso
@@ -995,7 +994,6 @@
     SUBDIR += unhide
     SUBDIR += unicornscan
     SUBDIR += unssh
-    SUBDIR += vida
     SUBDIR += vinetto
     SUBDIR += vlock
     SUBDIR += vlog
@@ -1024,7 +1022,6 @@
     SUBDIR += ykpers
     SUBDIR += zebedee
     SUBDIR += zenmap
-    SUBDIR += zombiezapper
     SUBDIR += zxid
     SUBDIR += zzuf
 

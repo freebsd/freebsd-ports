@@ -331,7 +331,6 @@
     SUBDIR += goaccess
     SUBDIR += gosa
     SUBDIR += gpart
-    SUBDIR += gpkgdep
     SUBDIR += gpte
     SUBDIR += graffer
     SUBDIR += graid5

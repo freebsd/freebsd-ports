@@ -83,7 +83,6 @@
     SUBDIR += datapipe
     SUBDIR += dbeacon
     SUBDIR += delegate
-    SUBDIR += despoof
     SUBDIR += dgd
     SUBDIR += dgd-kernel
     SUBDIR += dgd-lpmud
@@ -292,7 +291,6 @@
     SUBDIR += libmxp
     SUBDIR += libnatpmp
     SUBDIR += libnet
-    SUBDIR += libnet10
     SUBDIR += libnetdude
     SUBDIR += libnfs
     SUBDIR += libnids
@@ -374,7 +372,6 @@
     SUBDIR += ncp
     SUBDIR += ndisc6
     SUBDIR += ndpi
-    SUBDIR += nemesis
     SUBDIR += nepenthes
     SUBDIR += nepim
     SUBDIR += net6
@@ -1170,7 +1167,6 @@
     SUBDIR += tshark
     SUBDIR += tshark-lite
     SUBDIR += tsocks
-    SUBDIR += ttlscan
     SUBDIR += tucan
     SUBDIR += turnserver
     SUBDIR += turses
@@ -1232,7 +1228,6 @@
     SUBDIR += x11vnc
     SUBDIR += x2goclient
     SUBDIR += x2goclient-cli
-    SUBDIR += xboxproxy
     SUBDIR += xferstats
     SUBDIR += xipmsg
     SUBDIR += xisp
