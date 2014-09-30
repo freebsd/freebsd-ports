@@ -5,7 +5,7 @@ PORTVERSION=	0.91.2
 CATEGORIES=	misc
 
 MAINTAINER=	neel@neelc.org
-COMMENT=	Utility which outputs a number of characters to the screen
+COMMENT=	Command-line based markdown presentation tool
 
 LICENSE=	GPLv3
 
