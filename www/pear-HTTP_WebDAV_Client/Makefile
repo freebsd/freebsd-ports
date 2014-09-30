@@ -12,6 +12,5 @@ BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 RUN_DEPENDS:=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
 USES=	pear
-PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.mk>
