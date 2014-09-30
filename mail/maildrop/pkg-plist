@@ -63,4 +63,3 @@ man/man8/maildrop-deliverquota.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/reformime.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc2045.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc822.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
