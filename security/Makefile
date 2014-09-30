@@ -796,6 +796,7 @@
     SUBDIR += py-pysha3
     SUBDIR += py-python-registry
     SUBDIR += py-rsa
+    SUBDIR += py-service_identity
     SUBDIR += py-slowaes
     SUBDIR += py-ssh
     SUBDIR += py-sslstrip
