@@ -14,7 +14,7 @@ COMMENT=	DNS server with focus on security and simplicity
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	MaraDNS 1 end-of-life: June 21, 2015
+DEPRECATED=	MaraDNS 1 end-of-life: June 21, 2015, use dns/maradns
 EXPIRATION_DATE=2015-06-21
 
 REINPLACE_ARGS=	-i ""
