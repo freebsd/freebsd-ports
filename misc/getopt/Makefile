@@ -13,6 +13,7 @@ COMMENT=	Replacement for getopt(1) that supports GNU-style long options
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
 MAKE_ARGS=	CC=${CC} LIBCGETOPT=0
 USES=		gmake
