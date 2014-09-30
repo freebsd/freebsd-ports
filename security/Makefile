@@ -629,6 +629,7 @@
     SUBDIR += pam_krb5-rh
     SUBDIR += pam_ldap
     SUBDIR += pam_mkhomedir
+    SUBDIR += pam_ocra
     SUBDIR += pam_p11
     SUBDIR += pam_per_user
     SUBDIR += pam_pseudo
