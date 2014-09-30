@@ -7,18 +7,23 @@ CATEGORIES=	misc
 MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/ \
 		LOCAL/sunpoet
 
-MAINTAINER=	sunpoetFreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Replacement for getopt(1) that supports GNU-style long options
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-MAKE_ARGS=	CC=${CC}
-MAKE_ENV=	LIBCGETOPT=0
-USES=		gettext gmake
+OPTIONS_DEFINE=	DOCS NLS
+
+MAKE_ARGS=	CC=${CC} LIBCGETOPT=0
+USES=		gmake
 
 PORTDOCS=	Changelog README
+
+NLS_CFLAGS=		-I${LOCALBASE}/include
+NLS_MAKE_ARGS=		WITHOUT_GETTEXT=0
+NLS_MAKE_ARGS_OFF=	WITHOUT_GETTEXT=1
+NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
+NLS_USES=		gettext
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
