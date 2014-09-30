@@ -11,8 +11,7 @@ COMMENT=	Horde web based notes manager
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LATEST_LINK=	horde-${PORTNAME}
-
+USES=	horde
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
@@ -37,11 +36,6 @@ OPTIONS_DEFAULT=	PDF
 OPTIONS_DEFINE=		PDF
 PDF_DESC=		Support PDF generation
 
-.include <bsd.port.pre.mk>
+PDF_USE=	HORDE_RUN=Horde_Pdf
 
-.if ${PORT_OPTIONS:MPDF}
-USE_HORDE_RUN+=	Horde_Pdf
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

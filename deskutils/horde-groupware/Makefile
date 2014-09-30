@@ -10,8 +10,7 @@ COMMENT=	Horde Groupware
 
 CONFLICTS=	horde-webmail-[456]*
 
-LATEST_LINK=	horde-${PORTNAME}
-
+USES=	horde
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		content \
@@ -24,6 +23,4 @@ USE_HORDE_RUN=	Horde_Role \
 		trean \
 		turba
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
