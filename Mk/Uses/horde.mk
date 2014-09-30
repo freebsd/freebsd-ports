@@ -21,7 +21,6 @@ CONFLICTS+=	horde3-*.[0-9]*
 
 DIST_SUBDIR=	Horde
 PEAR_CHANNEL=	horde
-PEAR_AUTOINSTALL=	yes
 
 horde-Horde_ActiveSync-DEPEND=	${PEARDIR}/Horde/ActiveSync.php:${PORTSDIR}/comms/pear-Horde_ActiveSync
 horde-Horde_Alarm-DEPEND=	${PEARDIR}/Horde/Alarm.php:${PORTSDIR}/devel/pear-Horde_Alarm
