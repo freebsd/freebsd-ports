@@ -1828,6 +1828,7 @@
     SUBDIR += rubygem-net-http-persistent25
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-ntlm-http
+    SUBDIR += rubygem-pagerduty
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-puma
     SUBDIR += rubygem-puma16
