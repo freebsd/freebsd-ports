@@ -259,6 +259,7 @@
     SUBDIR += mbuffer
     SUBDIR += mc
     SUBDIR += mc-light
+    SUBDIR += mdp
     SUBDIR += metalink-checker
     SUBDIR += metalink-editor
     SUBDIR += metalink-tools
