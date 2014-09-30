@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-GSL
-PORTVERSION=	0.32
-PORTREVISION=	1
+PORTVERSION=	0.33
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +17,8 @@ BUILD_DEPENDS=	p5-PkgConfig>=0.07720:${PORTSDIR}/devel/p5-PkgConfig
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 TEST_DEPENDS=	p5-Test-Class>=0.12:${PORTSDIR}/devel/p5-Test-Class \
 		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Most>=0.31:${PORTSDIR}/devel/p5-Test-Most
+		p5-Test-Most>=0.31:${PORTSDIR}/devel/p5-Test-Most \
+		p5-Test-Taint>=1.06:${PORTSDIR}/devel/p5-Test-Taint
 
 USE_PERL5=	modbuild
 USES=		perl5
