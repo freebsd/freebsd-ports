@@ -109,7 +109,6 @@ include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-image-sel.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-line-selector.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-locale-sel.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-marker-selector.h
-include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-math-editor.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-optionmenu.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-palette.h
 include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-pattern-selector.h
@@ -121,7 +120,6 @@ include/libgoffice-%%SHORT_VER%%/goffice/math/go-accumulator.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-complex.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-cspline.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-distribution.h
-include/libgoffice-%%SHORT_VER%%/goffice/math/go-dtoa.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-fft.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-math.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-matrix.h
@@ -148,7 +146,6 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/go-libxml-extras.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-line.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-locale.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-marker.h
-include/libgoffice-%%SHORT_VER%%/goffice/utils/go-mml-to-itex.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pango-extras.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-path.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pattern.h
@@ -161,7 +158,6 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/go-style.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-styled-object.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-svg.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-undo.h
-include/libgoffice-%%SHORT_VER%%/goffice/utils/go-unit.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-units.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/goffice-utils.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/regutf8.h
@@ -194,7 +190,7 @@ lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.so
 lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
 lib/libgoffice-%%SHORT_VER%%.so
 lib/libgoffice-%%SHORT_VER%%.so.10
-lib/libgoffice-%%SHORT_VER%%.so.10.0.18
+lib/libgoffice-%%SHORT_VER%%.so.10.0.11
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 share/doc/goffice-%%SHORT_VER%%/GOArrow.html
 share/doc/goffice-%%SHORT_VER%%/GOBezierSpline.html
@@ -216,7 +212,6 @@ share/doc/goffice-%%SHORT_VER%%/GODocControl.html
 share/doc/goffice-%%SHORT_VER%%/GOEditor.html
 share/doc/goffice-%%SHORT_VER%%/GOErrorInfo.html
 share/doc/goffice-%%SHORT_VER%%/GOFileSaver.html
-share/doc/goffice-%%SHORT_VER%%/GOFont.html
 share/doc/goffice-%%SHORT_VER%%/GOFontSel.html
 share/doc/goffice-%%SHORT_VER%%/GOFormat.html
 share/doc/goffice-%%SHORT_VER%%/GOFormatSel.html
@@ -319,6 +314,7 @@ share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOColor.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOComplex.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GODataCVector.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOFileOpeners.html
+share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOFont.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOPattern.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GOQuad.html
 share/doc/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%-GORange.html
@@ -347,24 +343,13 @@ share/doc/goffice-%%SHORT_VER%%/home.png
 share/doc/goffice-%%SHORT_VER%%/index.html
 share/doc/goffice-%%SHORT_VER%%/index.sgml
 share/doc/goffice-%%SHORT_VER%%/left.png
-share/doc/goffice-%%SHORT_VER%%/left-insensitive.png
 share/doc/goffice-%%SHORT_VER%%/pt01.html
 share/doc/goffice-%%SHORT_VER%%/pt02.html
 share/doc/goffice-%%SHORT_VER%%/pt03.html
 share/doc/goffice-%%SHORT_VER%%/pt04.html
 share/doc/goffice-%%SHORT_VER%%/right.png
-share/doc/goffice-%%SHORT_VER%%/right-insensitive.png
 share/doc/goffice-%%SHORT_VER%%/style.css
 share/doc/goffice-%%SHORT_VER%%/up.png
-share/doc/goffice-%%SHORT_VER%%/up-insensitive.png
-%%DATADIR%%/%%VERSION%%/mmlitex/README
-%%DATADIR%%/%%VERSION%%/mmlitex/cmarkup.xsl
-%%DATADIR%%/%%VERSION%%/mmlitex/entities.xsl
-%%DATADIR%%/%%VERSION%%/mmlitex/glayout.xsl
-%%DATADIR%%/%%VERSION%%/mmlitex/mmlitex.xsl
-%%DATADIR%%/%%VERSION%%/mmlitex/scripts.xsl
-%%DATADIR%%/%%VERSION%%/mmlitex/tables.xsl
-%%DATADIR%%/%%VERSION%%/mmlitex/tokens.xsl
 share/locale/am/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ast/LC_MESSAGES/goffice-%%VERSION%%.mo
