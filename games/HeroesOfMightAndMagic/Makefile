@@ -14,8 +14,7 @@ COMMENT=	BSD Installation of the Linux game "Heroes of Might and Magic III"
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-NO_CDROM=	Software is commercial
-NO_PACKAGE=	Software is commercial
+RESTRICTED=	Software is commercial
 
 GAMESUBDIR=	games/Heroes3
 GAMEDIR=	${STAGEDIR}${PREFIX}/${GAMESUBDIR}
@@ -37,7 +36,6 @@ do-install:
 .endfor
 	${MKDIR} ${GAMEDIR}/data
 	${TOUCH} ${GAMEDIR}/data/hiscore.dat
-	${CHMOD} 666 ${GAMEDIR}/data/hiscore.dat
 .for f in ${DATAFILES}
 	${INSTALL_DATA} ${CDROM_MOUNT}/data/${f} ${GAMEDIR}/data
 .endfor
