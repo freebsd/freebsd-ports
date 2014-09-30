@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bittorrent-libutp
-PORTVERSION=	0.20120526
-DISTVERSION=	d4685a3
+PORTVERSION=	0.20130514
+DISTVERSION=	7c4f19a
 CATEGORIES=	net devel
 MASTER_SITES=	https://github.com/bittorrent/libutp/tarball/${DISTVERSION}/
 
