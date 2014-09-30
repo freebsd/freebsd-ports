@@ -56,14 +56,3 @@ bin/web-service-request
 %%PERL5_MAN3%%/GeoIP2::Record::Subdivision.3.gz
 %%PERL5_MAN3%%/GeoIP2::Record::Traits.3.gz
 %%PERL5_MAN3%%/GeoIP2::WebService::Client.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GeoIP2
-@dirrm %%SITE_PERL%%/GeoIP2/WebService
-@dirrm %%SITE_PERL%%/GeoIP2/Role/Record
-@dirrm %%SITE_PERL%%/GeoIP2/Role/Model
-@dirrm %%SITE_PERL%%/GeoIP2/Role/Error
-@dirrm %%SITE_PERL%%/GeoIP2/Role
-@dirrm %%SITE_PERL%%/GeoIP2/Record
-@dirrm %%SITE_PERL%%/GeoIP2/Model
-@dirrm %%SITE_PERL%%/GeoIP2/Error
-@dirrm %%SITE_PERL%%/GeoIP2/Database
-@dirrm %%SITE_PERL%%/GeoIP2
