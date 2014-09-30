@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140930:
+  AFFECTS: users of mail/maildrop
+  AUTHOR: madpilot@FreeBSD.org
+
+  Due to the way pkg works please note that the configuration
+  variables MAILDROP_SUID and MAILDROP_SGID, despite keeping their
+  old names, are now required to contain a valid username and
+  groupname existing on the system in which the package will be
+  installed, while in the past numeric uids and gids worked fine.
+
+  Wrong values will cause pkg to skip installing the setuid binaries
+  on the system.
+
+  Please check your configuration.
+
+20140930:
   AFFECTS: users of finance/gnucash
   AUTHOR: madpilot@FreeBSD.org
 

@@ -3,14 +3,20 @@
 
 # You can define the following to enable further compile time
 # customizations:
-# MAILDROP_SUID=<uid>,
-# MAILDROP_SGID=<gid>	Maildrop will be installed with suid permissions for
-#			MAILDROP_SUID, and sgid permissions for MAILDROP_SGID.
+# MAILDROP_SUID=<username>,
+# MAILDROP_SGID=<groupname>     Maildrop will be installed with suid
+#				permissions for MAILDROP_SUID, and sgid
+#				permissions for MAILDROP_SGID.
+#				NOTE: must be a valid username/groupname
+#				at installation time, numeric uids/gids
+#				and non existing users will cause the
+#				installed package to miss files.
 # MAILDROP_TRUSTED_USERS=<user> Specify users allowed to use the -d option
 # MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
 
 PORTNAME=	maildrop
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -78,10 +84,10 @@ CONFIGURE_ARGS+=	--enable-maildrop-uid="${MAILDROP_SUID}" --enable-maildrop-gid=
 PLIST_SUB+=		MMODE='6755' MUID='${MAILDROP_SUID}' MGID='${MAILDROP_SGID}'
 .elif defined(MAILDROP_SUID)
 CONFIGURE_ARGS+=	--enable-maildrop-uid="${MAILDROP_SUID}"
-PLIST_SUB+=		MMODE='4755' MUID='${MAILDROP_SUID}'
+PLIST_SUB+=		MMODE='4755' MUID='${MAILDROP_SUID}' MGID='mail'
 .elif defined(MAILDROP_SGID)
 CONFIGURE_ARGS+=	--enable-maildrop-gid="${MAILDROP_SGID}"
-PLIST_SUB+=		MMODE='2755' MGID='${MAILDROP_SGID}'
+PLIST_SUB+=		MMODE='2755' MGID='${MAILDROP_SGID}' MUID='root'
 .else
 PLIST_SUB+=		MMODE='' MUID='root' MGID='mail'
 .endif
