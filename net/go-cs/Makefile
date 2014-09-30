@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-cs
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net
 
 MAINTAINER=	akosela@andykosela.com
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${GO_CMD}:${PORTSDIR}/lang/go
 USE_GITHUB=	yes
 GH_ACCOUNT=	akosela
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	6ae59df
+GH_COMMIT=	887ad42
 
 PLIST_FILES=	bin/cs man/man1/cs.1.gz
 
@@ -24,10 +24,10 @@ GO_CMD=		${LOCALBASE}/bin/go
 GO_ARGS=	build -ldflags "${STRIP}"
 
 do-build:
-	(cd ${WRKSRC} && ${GO_CMD} ${GO_ARGS} cs.go)
+	(cd ${WRKSRC}/cs && ${GO_CMD} ${GO_ARGS} cs.go)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cs ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cs/cs ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cs.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
