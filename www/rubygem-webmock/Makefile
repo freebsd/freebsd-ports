@@ -10,8 +10,8 @@ COMMENT=	Allows stubbing HTTP requests and setting expectations on the requests
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-crack>=0.3.2:${PORTSDIR}/devel/rubygem-crack \
-		rubygem-addressable>=2.3.6:${PORTSDIR}/www/rubygem-addressable
+RUN_DEPENDS=	rubygem-addressable>=2.3.6:${PORTSDIR}/www/rubygem-addressable \
+		rubygem-crack>=0.3.2:${PORTSDIR}/devel/rubygem-crack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
