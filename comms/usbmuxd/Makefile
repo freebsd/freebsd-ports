@@ -18,7 +18,7 @@ GH_ACCOUNT=	libimobiledevice
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	2f6d9d5
 
-USES=		autoreconf libtool:build pathfix pkgconfig tar:bzip2
+USES=		autoreconf libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-systemd \
 		libusb_CFLAGS="-I/usr/include" \
@@ -30,9 +30,9 @@ PORTDOCS=	AUTHORS README
 
 OPTIONS_DEFINE=	DOCS
 
-pre-configure:
+post-patch:
 # TODO: add devd(8) rule.
-	@${REINPLACE_CMD} -e 's,-lpthread,-pthread,g' \
+	@${REINPLACE_CMD} \
 		-e '/*cygwin*/ s,),|*bsd*),' \
 		${WRKSRC}/configure.ac
 
