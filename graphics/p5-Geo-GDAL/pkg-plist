@@ -10,10 +10,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OGR/OGR.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OSR/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OSR/OSR.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OSR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OGR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/Const
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Geo
