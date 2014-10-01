@@ -70,8 +70,3 @@ share/gtk-doc/html/gupnp/style.css
 share/gtk-doc/html/gupnp/tutorial.html
 share/gtk-doc/html/gupnp/up-insensitive.png
 share/gtk-doc/html/gupnp/up.png
-@dirrmtry share/gtk-doc/html/gupnp
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrmtry include/gupnp-1.0/libgupnp
-@dirrmtry include/gupnp-1.0
