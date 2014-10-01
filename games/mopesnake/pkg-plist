@@ -24,8 +24,3 @@ bin/mopesnake
 %%DATADIR%%/sounds/ow1.wav
 %%DATADIR%%/version
 share/pixmaps/mopesnake.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/mopelib
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
