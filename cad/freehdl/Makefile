@@ -10,10 +10,11 @@ MASTER_SITES=	http://freehdl.seul.org/~enaroska/
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Free VHDL simulator
 
+USES=		gmake pathfix libtool makeinfo perl5 pkgconfig
 USE_LDCONFIG=	yes
-USES=		gmake pathfix libtool:build makeinfo perl5 pkgconfig
 USE_GCC=	any
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	SYSTEM_LIBTOOL=${FALSE}
 INSTALL_TARGET=	install-strip
 
 INFO=		fire
