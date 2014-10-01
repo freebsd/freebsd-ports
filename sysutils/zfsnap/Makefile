@@ -5,7 +5,7 @@ PORTNAME=	zfsnap
 PORTVERSION=	1.11.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Simple sh script to make zfs rolling snaphosts with cron
 
 NO_BUILD=	yes
