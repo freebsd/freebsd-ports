@@ -1,13 +1,13 @@
---- CMakeLists.txt.orig	2014-04-18 10:21:16.000000000 +0200
-+++ CMakeLists.txt	2014-04-18 10:22:19.000000000 +0200
-@@ -274,8 +274,8 @@
- SET(FTGLInclude ${PROJECT_SOURCE_DIR}/thirdparty/ftgl/)
+--- CMakeLists.txt.orig	2014-09-28 22:18:14.000000000 +0200
++++ CMakeLists.txt	2014-09-30 12:39:54.000000000 +0200
+@@ -401,8 +401,8 @@
  SET(FTGLLibrary ftgl-tulip-${TulipMMVersion})
- SET(qscintilla2Include ${PROJECT_SOURCE_DIR}/thirdparty/QScintilla-gpl-2.5.1/Qt4/)
+ ENDIF(NOT BUILD_CORE_ONLY)
+ 
 -SET(OGDFInclude ${PROJECT_SOURCE_DIR}/thirdparty/OGDF)
 -SET(OGDFLibrary OGDF-tulip-${TulipMMVersion})
 +#SET(OGDFInclude ${PROJECT_SOURCE_DIR}/thirdparty/OGDF)
 +#SET(OGDFLibrary OGDF-tulip-${TulipMMVersion})
  SET(QHULLInclude ${PROJECT_SOURCE_DIR}/thirdparty)
+ SET(UTF8CppInclude ${PROJECT_SOURCE_DIR}/thirdparty/utf8-cpp/source)
  SET(YajlLibrary yajl-tulip-${TulipMMVersion})
- SET(TulipCoreInclude ${PROJECT_SOURCE_DIR}/library/tulip-core/include/)
