@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/sdlscav-145
 
 USES=		gmake shebangfix tar:tgz
 SHEBANG_FILES=	scavsaver
+bash_CMD=	/bin/sh
 USE_SDL=	sdl image mixer
 USE_GCC=	yes
 ALL_TARGET=
