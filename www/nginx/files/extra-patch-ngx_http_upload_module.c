@@ -1,5 +1,5 @@
---- ../nginx_upload_module-2.2.0/ngx_http_upload_module.c.orig	2010-09-27 21:54:15.000000000 +0300
-+++ ../nginx_upload_module-2.2.0/ngx_http_upload_module.c	2013-09-10 17:40:59.570815847 +0300
+--- ../nginx_upload_module-2.2.0/ngx_http_upload_module.c.orig	2010-09-27 18:54:15.000000000 +0000
++++ ../nginx_upload_module-2.2.0/ngx_http_upload_module.c	2014-07-08 09:25:17.000000000 +0000
 @@ -50,7 +50,7 @@
   * State of multipart/form-data parser
   */
@@ -968,7 +968,7 @@
 +        return NGX_CONF_OK;
 +    }
 +
-+    *path = ngx_palloc(cf->pool, sizeof(ngx_http_upload_path_t));
++    *path = ngx_pcalloc(cf->pool, sizeof(ngx_http_upload_path_t));
 +    if(*path == NULL) {
 +        return NGX_CONF_ERROR;
 +    }
@@ -1600,7 +1600,19 @@
                  upload_ctx->partial_content = 1;
              }
          }
-@@ -3436,8 +4545,8 @@
+@@ -3353,6 +4462,11 @@
+ 
+         boundary_start_ptr += sizeof(BOUNDARY_STRING) - 1;
+         boundary_end_ptr = boundary_start_ptr + strcspn((char*)boundary_start_ptr, " ;\n\r");
++        
++        if ((boundary_end_ptr - boundary_start_ptr) >= 2 && boundary_start_ptr[0] == '"' && *(boundary_end_ptr - 1) == '"') {
++            boundary_start_ptr++;
++            boundary_end_ptr--;
++        }                                               
+ 
+         if(boundary_end_ptr == boundary_start_ptr) {
+             ngx_log_debug0(NGX_LOG_DEBUG_CORE, upload_ctx->log, 0,
+@@ -3436,8 +4550,8 @@
          return NGX_ERROR;
      }
  
@@ -1611,7 +1623,7 @@
      {
          return NGX_ERROR;
      }
-@@ -3673,3 +4782,43 @@
+@@ -3673,3 +4787,43 @@
      }
  } /* }}} */
  
@@ -1655,4 +1667,3 @@
 +
 +    return NGX_ERROR;
 +} /* }}} */
-
