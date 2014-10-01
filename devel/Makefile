@@ -3714,6 +3714,7 @@
     SUBDIR += py-glob2
     SUBDIR += py-gobject
     SUBDIR += py-gobject3
+    SUBDIR += py-google-apputils
     SUBDIR += py-grab
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
