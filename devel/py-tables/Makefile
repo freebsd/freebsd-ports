@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tables
-PORTVERSION=	3.0.0
-PORTREVISION=	4
+PORTVERSION=	3.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/py${PORTNAME:tl}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,8 +22,8 @@ LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libucl.so:${PORTSDIR}/archivers/ucl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=			python
+USE_PYTHON=		distutils
 
 PLIST_FILES=	bin/pt2to3 bin/ptdump bin/ptrepack
 
