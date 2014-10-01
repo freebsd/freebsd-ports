@@ -16,10 +16,8 @@ LICENSE=	APACHE20
 
 WRKSRC=		${WRKDIR}/cmockery2-${PORTVERSION}
 
-USES=		libtool:build pkgconfig
-USE_AUTOTOOLS=	automake autoconf aclocal libtoolize autoheader
-AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
+USES=		autoreconf libtool pkgconfig
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
