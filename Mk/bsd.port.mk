@@ -1217,7 +1217,7 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 
 # Enable new xorg for FreeBSD versions after Radeon KMS was imported unless
 # WITHOUT_NEW_XORG is set.
-.if (${OSVERSION} >= 902510 && ${OSVERSION} < 1000000) || ${OSVERSION} >= 1000704
+.if ${OSVERSION} >= 902510
 . if !defined(WITHOUT_NEW_XORG)
 WITH_NEW_XORG?=	yes
 . else
