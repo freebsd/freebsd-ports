@@ -63,11 +63,3 @@ lib/libprotoc.so.8
 lib/libprotoc.so.8.0.0
 libdata/pkgconfig/protobuf-lite.pc
 libdata/pkgconfig/protobuf.pc
-@dirrm include/google/protobuf/stubs
-@dirrm include/google/protobuf/io
-@dirrm include/google/protobuf/compiler/python
-@dirrm include/google/protobuf/compiler/java
-@dirrm include/google/protobuf/compiler/cpp
-@dirrm include/google/protobuf/compiler
-@dirrm include/google/protobuf
-@dirrmtry include/google
