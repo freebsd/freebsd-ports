@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20141001:
+AUTHOR: tijl@FreeBSD.org
+
+  Support for autoconf213, autoheader213, aclocal14 and automake14 has been
+  removed from USE_AUTOTOOLS.
+
 20140930:
 AUTHOR: bdrewery@FreeBSD.org
 
