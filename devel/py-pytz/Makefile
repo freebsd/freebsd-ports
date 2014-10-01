@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytz
-PORTVERSION=	2014.4
+PORTVERSION=	2014.7
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -13,12 +13,10 @@ COMMENT=	World Timezone Definitions for Python
 
 LICENSE=	MIT
 
-USES=	tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		tar:bzip2
+USE_PYTHON=	autoplist concurrent distutils
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|=True|=False|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|=True|=False|' ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>
