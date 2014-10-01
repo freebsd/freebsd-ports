@@ -1,6 +1,31 @@
---- configure.in.orig	2014-01-30 15:58:25.000000000 +0000
-+++ configure.in	2014-07-26 19:30:21.165009183 +0000
-@@ -1401,11 +1401,11 @@
+--- configure.in.orig	2014-09-26 17:17:06.072358809 +0000
++++ configure.in	2014-09-26 17:17:32.251357664 +0000
+@@ -515,7 +515,7 @@
+ [AC_CACHE_CHECK(whether dtrace USDT is available, rb_cv_dtrace_available,
+ [
+     echo "provider conftest{ probe fire(); };" > conftest_provider.d
+-    if $DTRACE -h -o conftest_provider.h -s conftest_provider.d >/dev/null 2>/dev/null; then
++    if $DTRACE -xnolibs -h -o conftest_provider.h -s conftest_provider.d >/dev/null 2>/dev/null; then
+       # DTrace is available on the system
+       rb_cv_dtrace_available=yes
+     else
+@@ -532,13 +532,13 @@
+ [
+   if {
+     echo "provider conftest{ probe fire(); };" > conftest_provider.d &&
+-    dtrace -h -o conftest_provider.h -s conftest_provider.d >/dev/null 2>/dev/null &&
++    dtrace -xnolibs -h -o conftest_provider.h -s conftest_provider.d >/dev/null 2>/dev/null &&
+     cat >conftest.c <<_CONF &&
+     @%:@include "conftest_provider.h"
+     int main(void){ CONFTEST_FIRE(); return 0; }
+ _CONF
+     $CC $CFLAGS -c -o conftest.o conftest.c &&
+-    $DTRACE -G -s conftest_provider.d conftest.o 2>/dev/null
++    $DTRACE -xnolibs -G -s conftest_provider.d conftest.o 2>/dev/null
+   }; then
+     rb_cv_prog_dtrace_g=yes
+   else
+@@ -1428,11 +1428,11 @@
  AC_CHECK_DECLS([sys_nerr], [], [], [$ac_includes_default
  @%:@include <errno.h>])
  
@@ -17,7 +42,7 @@
  
  AS_CASE(["$target_cpu"],
  [alpha*|sh4|sh4el|sh4eb], [AS_CASE(["$target_os"::"$GCC"],
-@@ -2096,7 +2096,7 @@
+@@ -2123,7 +2123,7 @@
  fi
  
  if test x"$enable_pthread" = xyes; then
@@ -26,7 +51,7 @@
  	AC_CHECK_LIB($pthread_lib, pthread_kill,
  		     rb_with_pthread=yes, rb_with_pthread=no)
  	if test "$rb_with_pthread" = "yes"; then break; fi
-@@ -2110,6 +2110,7 @@
+@@ -2137,6 +2137,7 @@
  	[c],    [],
  	[root], [],
  	[c_r],  [MAINLIBS="-pthread $MAINLIBS"],
@@ -34,7 +59,7 @@
  	        [AS_CASE(["$target_os"],
  		    [openbsd*], [LIBS="-pthread $LIBS"],
  		    [LIBS="-l$pthread_lib $LIBS"])])
-@@ -2341,7 +2342,6 @@
+@@ -2368,7 +2369,6 @@
  			: ${LDSHARED='$(CC) -shared'}
  			if test "$rb_cv_binary_elf" = yes; then
  			    LDFLAGS="$LDFLAGS -rdynamic"
@@ -42,7 +67,7 @@
  			else
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
  			fi
-@@ -2728,6 +2728,7 @@
+@@ -2755,6 +2755,7 @@
      [freebsd*|dragonfly*], [
  	SOLIBS='$(LIBS)'
  	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR)$(MINOR)'
