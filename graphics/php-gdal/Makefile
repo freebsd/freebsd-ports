@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTVERSION=	1.11.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -24,7 +23,7 @@ MAKEFILE=	GNUmakefile
 PHP_MOD_NAME=	php_${PORTNAME}
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
-USES=		gmake
+USES=		gmake tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/php
 
