@@ -357,34 +357,3 @@ include/ogdf/upward/UpwardPlanarModule.h
 include/ogdf/upward/UpwardPlanarSubgraphSimple.h
 include/ogdf/upward/UpwardPlanarizationLayout.h
 include/ogdf/upward/VisibilityLayout.h
-@dirrm include/ogdf/upward
-@dirrm include/ogdf/tree
-@dirrm include/ogdf/simultaneous
-@dirrm include/ogdf/planarlayout
-@dirrm include/ogdf/planarity
-@dirrm include/ogdf/packing
-@dirrm include/ogdf/orthogonal
-@dirrm include/ogdf/module
-@dirrm include/ogdf/misclayout
-@dirrm include/ogdf/lpsolver
-@dirrm include/ogdf/layered
-@dirrm include/ogdf/labeling
-@dirrm include/ogdf/internal/steinertree
-@dirrm include/ogdf/internal/planarity
-@dirrm include/ogdf/internal/orthogonal
-@dirrm include/ogdf/internal/lpsolver
-@dirrm include/ogdf/internal/energybased
-@dirrm include/ogdf/internal/cluster
-@dirrm include/ogdf/internal/basic
-@dirrm include/ogdf/internal/augmentation
-@dirrm include/ogdf/internal
-@dirrm include/ogdf/graphalg
-@dirrm include/ogdf/fileformats
-@dirrm include/ogdf/external
-@dirrm include/ogdf/energybased/multilevelmixer
-@dirrm include/ogdf/energybased
-@dirrm include/ogdf/decomposition
-@dirrm include/ogdf/cluster
-@dirrm include/ogdf/basic
-@dirrm include/ogdf/augmentation
-@dirrm include/ogdf
