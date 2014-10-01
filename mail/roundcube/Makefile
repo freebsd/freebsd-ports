@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	roundcube
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:tu}
@@ -99,8 +99,5 @@ do-install:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} '@exec chown ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/temp' \
 		>> ${TMPPLIST}
-	@(cd ${WRKSRC}; ${FIND} bin ${RCUBECOMP} -type d) | ${SORT} -r | \
-		${SED} -ne 's,^,@dirrm ${WWWDIR_REL}/,p' >> ${TMPPLIST}
-	@${ECHO_CMD} '@dirrm ${WWWDIR_REL}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
