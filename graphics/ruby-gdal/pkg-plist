@@ -2,4 +2,3 @@
 %%RUBY_SITEARCHLIBDIR%%/gdal/gdalconst.so
 %%RUBY_SITEARCHLIBDIR%%/gdal/ogr.so
 %%RUBY_SITEARCHLIBDIR%%/gdal/osr.so
-@dirrm %%RUBY_SITEARCHLIBDIR%%/gdal
