@@ -12,13 +12,13 @@ DISTNAME=		js185-1.0.0
 MAINTAINER=		koobs@FreeBSD.org
 COMMENT=		Standalone JavaScript (1.8.5) interpreter from Mozilla
 
-BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip \
+			autoconf-2.13:${PORTSDIR}/devel/autoconf213
 LIB_DEPENDS=		libnspr4.so:${PORTSDIR}/devel/nspr
 
 CONFLICTS=		njs-[0-9]*
 
 USES=			gmake pathfix perl5 pkgconfig
-USE_AUTOTOOLS=		autoconf213:env
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 USE_PERL5=		build
@@ -108,7 +108,7 @@ PLIST_SUB+=	SPARC="@comment "
 .endif
 
 pre-configure:
-	(cd ${WRKSRC} && ${AUTOCONF})
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf-2.13)
 
 regression-test: build
 	@${ECHO_MSG} -n "===> Running jstests.py: "

@@ -25,6 +25,7 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 		sqlite3>=3.8.4.2:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
+		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 
@@ -34,7 +35,6 @@ EM_VERSION=	1.7.2
 L_VERSION=	3.4
 
 SSP_UNSAFE=	yes
-USE_AUTOTOOLS=	autoconf213:env
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
 WANT_GNOME=	yes
@@ -179,9 +179,9 @@ post-patch:
 .endif
 
 pre-configure:
-	(cd ${WRKSRC} && ${AUTOCONF})
-	(cd ${MOZSRC} && ${AUTOCONF})
-	(cd ${MOZSRC}/js/src/ && ${AUTOCONF})
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf-2.13)
+	(cd ${MOZSRC} && ${LOCALBASE}/bin/autoconf-2.13)
+	(cd ${MOZSRC}/js/src/ && ${LOCALBASE}/bin/autoconf-2.13)
 
 .if ${PORT_OPTIONS:MMAILNEWS} && ${PORT_OPTIONS:MENIGMAIL}
 post-configure:
