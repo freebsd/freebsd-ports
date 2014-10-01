@@ -184,6 +184,7 @@ include/wine/windows/cvconst.h
 include/wine/windows/d2d1.h
 include/wine/windows/d2d1.idl
 include/wine/windows/d2dbasetypes.h
+include/wine/windows/d2derr.h
 include/wine/windows/d3d.h
 include/wine/windows/d3d10.h
 include/wine/windows/d3d10.idl
