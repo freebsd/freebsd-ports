@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTVERSION=	1.11.1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -21,7 +20,7 @@ OPTIONS_DEFINE=	NUMPY
 NUMPY_DESC=	Enable array support via NumPy
 
 USE_PYTHON=	autoplist distutils
-USES=		python shebangfix
+USES=		python shebangfix tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/python
 
