@@ -3,7 +3,7 @@ include/gupnp-igd-1.0/libgupnp-igd/gupnp-simple-igd.h
 lib/libgupnp-igd-1.0.a
 lib/libgupnp-igd-1.0.so
 lib/libgupnp-igd-1.0.so.4
-lib/libgupnp-igd-1.0.so.4.1.1
+lib/libgupnp-igd-1.0.so.4.2.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/__init__.pyo
@@ -19,14 +19,10 @@ share/gtk-doc/html/gupnp-igd/gupnp-igd.devhelp2
 share/gtk-doc/html/gupnp-igd/home.png
 share/gtk-doc/html/gupnp-igd/index.html
 share/gtk-doc/html/gupnp-igd/index.sgml
+share/gtk-doc/html/gupnp-igd/left-insensitive.png
 share/gtk-doc/html/gupnp-igd/left.png
+share/gtk-doc/html/gupnp-igd/right-insensitive.png
 share/gtk-doc/html/gupnp-igd/right.png
 share/gtk-doc/html/gupnp-igd/style.css
+share/gtk-doc/html/gupnp-igd/up-insensitive.png
 share/gtk-doc/html/gupnp-igd/up.png
-@dirrmtry share/gtk-doc/html/gupnp-igd
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/gupnp
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry include/gupnp-igd-1.0/libgupnp-igd
-@dirrmtry include/gupnp-igd-1.0
