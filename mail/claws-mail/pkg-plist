@@ -329,28 +329,3 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/uk/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
-%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/id_ID
-%%MANUAL%%@dirrm %%DOCSDIR%%/manual/pl
-%%MANUAL%%@dirrm %%DOCSDIR%%/manual/fr
-%%MANUAL%%@dirrm %%DOCSDIR%%/manual/es
-%%MANUAL%%@dirrm %%DOCSDIR%%/manual/en
-%%MANUAL%%@dirrm %%DOCSDIR%%/manual/de
-%%MANUAL%%@dirrm %%DOCSDIR%%/manual
-@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%
-@dirrmtry share/appdata
-@dirrmtry lib/claws-mail/plugins
-@dirrmtry lib/claws-mail
-@dirrm include/claws-mail/plugins/vcalendar
-@dirrm include/claws-mail/plugins/smime
-@dirrm include/claws-mail/plugins/pgpmime
-@dirrm include/claws-mail/plugins/pgpinline
-@dirrm include/claws-mail/plugins/pgpcore
-@dirrm include/claws-mail/plugins/claws-mail/gtkhotkey
-@dirrm include/claws-mail/plugins/claws-mail
-@dirrm include/claws-mail/plugins
-@dirrm include/claws-mail/gtk
-@dirrm include/claws-mail/etpan
-@dirrm include/claws-mail/common
-@dirrm include/claws-mail

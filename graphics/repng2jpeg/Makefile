@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	repng2jpeg
-PORTVERSION=	1.0.4
-PORTREVISION=	5
+PORTVERSION=	1.0.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://bsdforge.com/projects/source/graphics/repng2jpeg/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	portmaster@bsdforge.com
-COMMENT=	Tool to recompress JPEG/PNG/GIF
+COMMENT=	Small tool to recompress JPEG, PNG, and GIF images
 
 LICENSE=	GPLv1
 
-USES=		tar:xz
-
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+
+USES=		tar:xz
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lgd

@@ -5,4 +5,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Lzf/.packlist
 %%PERL5_MAN3%%/IO::Compress::Lzf.3.gz
 %%PERL5_MAN3%%/IO::Uncompress::UnLzf.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Lzf

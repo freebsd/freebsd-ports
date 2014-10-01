@@ -5,34 +5,164 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141001:
+  AFFECTS: xorg users
+  AUTHOR: bapt@FreeBSD.org
+
+  The WITH_NEW_XORG setting has been activated by default on FreeBSD 10.0
+  and above, which allows us to have packages for xorg 1.12 and kde4.
+
+  Please be aware that on systems that only support syscons
+  switching virtual terminals or exiting X
+  results in a black screen or the last image of their desktop
+  (like a screenshot) being presented.  Commands can still be typed blindly.
+
+  Most, if not all, systems should be using vt(4) and this can be enabled
+  by setting kern.vty=vt in /boot/loader.conf and reboot to activate.
+
+20140930:
+  AFFECTS: users of mail/maildrop
+  AUTHOR: madpilot@FreeBSD.org
+
+  Due to the way pkg works please note that the configuration
+  variables MAILDROP_SUID and MAILDROP_SGID, despite keeping their
+  old names, are now required to contain a valid username and
+  groupname existing on the system in which the package will be
+  installed, while in the past numeric uids and gids worked fine.
+
+  Wrong values will cause pkg to skip installing the setuid binaries
+  on the system.
+
+  Please check your configuration.
+
+20140930:
+  AFFECTS: users of finance/gnucash
+  AUTHOR: madpilot@FreeBSD.org
+
+  The new version of gnucsh requires guile 2.0. If the update fails
+  because the old guile 1.8 library is still present you will need
+  to manally remove gnucash, guile and, if installed, boehm-gc:
+
+  # pkg delete gnucash guile boehm-gc
+
+  and then install gnucash again the usual way.
+
+20140929:
+  AFFECTS: users of comms/usbmuxd
+  AUTHOR: avilla@FreeBSD.org
+
+  libusbmuxd.so was split from comms/usbmuxd into comms/libusbmuxd.
+  Remove usbmuxd before upgrading to avoid conflicts:
+
+  # pkg delete -f usbmuxd
+
+  If you need the daemon usbmuxd(1), you can reinstall the package
+  after the upgrade.
+
+20140928:
+  AFFECTS: users of deskutils/calibre
+  AUTHOR: madpilot@FreeBSD.org
+
+  The dependency on graphics/py-imaging in calibre has been changed
+  to using the graphics/py-pillow port.
+
+  Due to this change automatic updating of the port will not work
+  correctly.
+
+  It is suggested to remove calibre and py-imaging from the system
+  and then reinstall calibre again using binary packages or ports.
+
+20140927:
+  AFFECTS: users of net/foreman-proxy
+  AUTHOR: mm@FreeBSD.org
+
+  In version 1.6 Foreman Smart Proxy splits its configuration into multiple
+  ruby files located in PREFIX/etc/foreman-proxy/settings.d.
+  The configuration of each service (dhcp, dhs, bmc, etc.) has been moved
+  into a dedicated file. 
+
+  You can use a bundled script to convert your old settings to new settings:
+  PREFIX/share/foreman/extra/migrate_settings.rb
+
+20140926:
+  AFFECTS: users of shells/bash
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Bash supports a feature of exporting functions in the environment with
+  export -f.  Running bash with exported functions in the environment will
+  then import those functions into the environment of the script being ran.
+  This resulted in security issues CVE-2014-6271 and CVE-2014-7169, commonly
+  known as "shellshock".  It also can result in poorly written scripts being
+  tricked into running arbitrary commands.  
+
+  To fully mitigate against this sort of attack we have applied a non-upstream
+  patch to disable this functionality by default.  You can execute bash
+  with --import-functions to allow it to import functions from the
+  environment.  The default can also be changed in the port by selecting the
+  IMPORTFUNCTIONS option.
+
+20140926:
+  AFFECTS: users of net/asterisk and net/asterisk11
+  AUTHOR: madpilot@FreeBSD.org
+
+  The asterisk ports have been modified to have the LUA option
+  turned on by default to make such functionality available to users
+  of binary packages.
+
+  Some care should be taken before upgrading by people not using lua
+  to avoid the sample extensions.lua file from being loaded on reload
+  after updating the asterisk port/pkg.
+
+  Users compiling from ports not interested in LUA support are advised
+  to disable the option before updating.
+
+  People using binary packages(or not wanting to disable the LUA
+  option in the port) not using the lua functionality should add:
+
+  noload => pbx_lua.so 
+
+  to the PREFIX/etc/asterisk/modules.conf file, if using the
+  autoload=yes option in that same file. People not autoloading
+  modules don't need to perform any special action.
+
+  If asterisk is rebooted and the pbx_lua module gets loaded on a
+  system were it should not, it will load the example extensions.lua
+  configuration file adding unexpected logic to your dialplan. In
+  such a case following the above steps and reloading asterisk will
+  fix the problem.
+
 20140922:
   AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
   AUTHOR: xmj@FreeBSD.org
 
-  The complete drop-in replacement linux-c6 port infrastructure is in ports 
-  and will shortly replace the current linux-f10- ports as default.
+  The complete drop-in replacement linux-c6 port infrastructure is in
+  ports and will shortly replace the current linux-f10- ports as default.
 
-  To switch to the linux-c6 infrastructure you should:
+  To switch to the linux-c6 infrastructure:
 
-  0. Backup all your vital information!
-  1. Remove the current linux base port and all linux-f10- ports.
-  2. Add the following lines to /etc/make.conf:
+  0. Back up all your vital information!
+  1. Remove the current linux base port and all linux-f10- ports:
+       # pkg delete -f linux_base-f10 linux-f10-\*
+  2. Add these lines to /etc/make.conf:
        OVERRIDE_LINUX_BASE_PORT=c6
        OVERRIDE_LINUX_NONBASE_PORTS=c6
-  3. Make sure no linux application is running.
-  4. Set appropriate sysctl (compat.linux.osrelease=2.6.18).
+  3. Make sure no Linux application is running.
+  4. Update the Linux kernel version in /etc/sysctl.conf:
+       compat.linux.osrelease=2.6.18
+     Make it take effect immediately:
+       # sysctl compat.linux.osrelease=2.6.18
   5. Install emulators/linux-c6.
 
-  That should be enough in most circumstances. If you experience difficulties,
-  please be sure to expand step 1 to:
+  These steps are usually sufficient. If there are difficulties, expand
+  step 1 to:
 
-  1a. Remove all ports which depend on linux base port.
-  1b. Remove linux base port.
-  1c. Clean /compat/linux/ directory.
+  1a. Remove all ports which depend on the linux base port.
+  1b. Remove the linux base port.
+  1c. Clean the /compat/linux/ directory.
 
-  Should you encounter any other difficulties not fixed by these extended
-  steps, please submit an issue report in Bugzilla and send an email to FreeBSD's
-  emulation@ mailing list.
+  If there are any other difficulties not fixed by these extended steps,
+  please submit an issue report in Bugzilla and send an email to
+  FreeBSD's emulation@ mailing list.
 
 20140909:
   AFFECTS: users seeing build errors about missing *.la files

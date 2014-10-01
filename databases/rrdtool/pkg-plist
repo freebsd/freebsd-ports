@@ -53,6 +53,7 @@ libdata/pkgconfig/librrd.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
 %%WITH_PERL%%%%SITE_PERL%%/RRDp.pm
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtoolmodule.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/py_rrdtool-0.2.2-py%%PYTHON_VER%%.egg-info
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
 %%PORTEXAMPLES%%share/rrdtool/examples/rrdcached/RRDCached.pm
 %%PORTEXAMPLES%%share/rrdtool/examples/rrdcached/rrdcached-size.pl

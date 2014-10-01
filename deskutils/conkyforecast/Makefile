@@ -18,10 +18,8 @@ RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky \
 		pidof:${PORTSDIR}/sysutils/pidof \
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-INSTALLS_EGGINFO=	yes
-USES=		gettext
+USES=		gettext python
+USE_PYTHON=	distutils
 SUB_FILES=	pkg-message
 SUB_LIST+=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"

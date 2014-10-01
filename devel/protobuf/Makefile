@@ -7,22 +7,21 @@ PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data interchange format library
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake pathfix pkgconfig tar:bzip2 libtool
 ONLY_FOR_ARCHS=	i386 amd64
+INSTALL_TARGET=	install-strip
 
 # clang will generate code that just doesn't work with clementine-player
 # if this isn't compiled as though it were C99.
 CFLAGS+=	-std=c99 -DGOOGLE_PROTOBUF_NO_RTTI
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libprotobuf-lite.so.8
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libprotobuf.so.8
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libprotoc.so.8
 
 tests: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)

@@ -56,7 +56,6 @@ RUN_DEPENDS+=	${CLI_DEPS}        \
 
 USES=		cpe perl5
 CPE_VENDOR=	bestpractical
-USE_AUTOTOOLS=	autoconf
 
 RT_LAYOUT=	FreeBSD
 RT_ETC_DIR?=	etc/${PORTNAME}${PKGNAMESUFFIX}
@@ -172,8 +171,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	RT_ETC_PATH=${RT_ETC_PATH}
 PLIST_SUB=	RT_ETC_DIR=${RT_ETC_DIR}
-
-run-autotools:	run-autotools-autoconf
 
 pre-fetch:
 	@${ECHO} ""

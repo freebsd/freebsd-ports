@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	4.6
+PORTVERSION=	4.7
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
@@ -31,20 +31,17 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-post-extract:
-.for CONFIG in ${CONFIGS}
-	@${MV} ${WRKSRC}/config/${CONFIG}_sample ${WRKSRC}/config/${CONFIG}.sample
-.endfor
 do-install:
-	@${ECHO_CMD} '@unexec if [ -f %D/${WWWDIR_REL}/config/shells ]; then ${RM} -f %D/${WWWDIR_REL}/config/shells; fi' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec if [ -f %D/${WWWDIR_REL}/config/shells ]; then ${RM} -f %D/${WWWDIR_REL}/config/shells; fi' >> ${TMPPLIST}
 .for CONFIG in ${CONFIGS}
 	@${ECHO_CMD} '@sample ${WWWDIR_REL}/config/${CONFIG}.sample' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec if [ -f %D/${WWWDIR_REL}/config/${CONFIG}_sample ]; then ${RM} -f %D/${WWWDIR_REL}/config/${CONFIG}_sample; fi' >> ${TMPPLIST}
 .endfor
 .for I in ${LAMDATA}
 	@${FIND} -s ${WRKSRC}/${I} -type f -not -name '*.sample' | ${SED} -e 's,^${WRKSRC},${WWWDIR_REL},' >> ${TMPPLIST}
-	@${FIND} -ds ${WRKSRC}/${I} -type d | ${SED} -e 's,^${WRKSRC},@dirrmtry ${WWWDIR_REL},' >> ${TMPPLIST}
+	@${FIND} -ds ${WRKSRC}/${I} -type d | ${SED} -e 's,^${WRKSRC},@dir ${WWWDIR_REL},' >> ${TMPPLIST}
 .endfor
-	@${ECHO_CMD} '@dirrmtry ${WWWDIR_REL}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dir ${WWWDIR_REL}' >> ${TMPPLIST}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${LAMDATA}" ${STAGEDIR}${WWWDIR}
 .for DIR in ${WRITEABLES}
 	@${CHMOD} -R u+w ${STAGEDIR}${WWWDIR}/${DIR}

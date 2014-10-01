@@ -13,7 +13,7 @@ _INCLUDE_USES_PKGCONFIG_MK=	yes
 
 _PKGCONFIG_DEPENDS=	pkgconf:${PORTSDIR}/devel/pkgconf
 
-.if !defined(pkgconfig_ARGS)
+.if empty(pkgconfig_ARGS)
 pkgconfig_ARGS=	build
 .endif
 

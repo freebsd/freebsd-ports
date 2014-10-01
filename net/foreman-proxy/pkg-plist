@@ -1,72 +1,129 @@
 sbin/smart-proxy
 @sample etc/foreman-proxy/settings.yml.sample
+@sample etc/foreman-proxy/settings.d/bmc.yml.sample
+@sample etc/foreman-proxy/settings.d/chef.yml.sample
+@sample etc/foreman-proxy/settings.d/dhcp.yml.sample
+@sample etc/foreman-proxy/settings.d/dns.yml.sample
+@sample etc/foreman-proxy/settings.d/puppet.yml.sample
+@sample etc/foreman-proxy/settings.d/puppetca.yml.sample
+@sample etc/foreman-proxy/settings.d/realm.yml.sample
+@sample etc/foreman-proxy/settings.d/tftp.yml.sample
+%%DATADIR%%/CHANGELOG
+%%DATADIR%%/Contributors
+%%DATADIR%%/Gemfile
+%%DATADIR%%/Gemfile.in
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README
 %%DATADIR%%/Rakefile
-%%DATADIR%%/config.ru
+%%DATADIR%%/VERSION
+%%DATADIR%%/bundler.d/bmc.rb
+%%DATADIR%%/bundler.d/chef.rb
+%%DATADIR%%/bundler.d/development.rb
+%%DATADIR%%/bundler.d/krb5.rb
+%%DATADIR%%/bundler.d/puppet.rb
+%%DATADIR%%/bundler.d/test.rb
 %%DATADIR%%/config
-%%DATADIR%%/lib/bmc_api.rb
+%%DATADIR%%/config.ru
+%%DATADIR%%/extra/migrate_settings.rb
+%%DATADIR%%/extra/query.rb
+%%DATADIR%%/lib/bundler_helper.rb
 %%DATADIR%%/lib/checks.rb
-%%DATADIR%%/lib/chefproxy_api.rb
 %%DATADIR%%/lib/daemon.rb
-%%DATADIR%%/lib/dhcp_api.rb
-%%DATADIR%%/lib/dns_api.rb
-%%DATADIR%%/lib/facts_api.rb
-%%DATADIR%%/lib/features_api.rb
-%%DATADIR%%/lib/helpers.rb
-%%DATADIR%%/lib/proxy.rb
-%%DATADIR%%/lib/proxy/authentication.rb
-%%DATADIR%%/lib/proxy/bmc.rb
-%%DATADIR%%/lib/proxy/bmc/base.rb
-%%DATADIR%%/lib/proxy/bmc/ipmi.rb
-%%DATADIR%%/lib/proxy/bmc/shell.rb
-%%DATADIR%%/lib/proxy/chefproxy.rb
-%%DATADIR%%/lib/proxy/dhcp.rb
-%%DATADIR%%/lib/proxy/dhcp/monkey_patch_subnet.rb
-%%DATADIR%%/lib/proxy/dhcp/monkey_patches.rb
-%%DATADIR%%/lib/proxy/dhcp/record.rb
-%%DATADIR%%/lib/proxy/dhcp/record/lease.rb
-%%DATADIR%%/lib/proxy/dhcp/record/reservation.rb
-%%DATADIR%%/lib/proxy/dhcp/server.rb
-%%DATADIR%%/lib/proxy/dhcp/server/isc.rb
-%%DATADIR%%/lib/proxy/dhcp/server/ms.rb
-%%DATADIR%%/lib/proxy/dhcp/server/native_ms.rb
-%%DATADIR%%/lib/proxy/dhcp/server/virsh.rb
-%%DATADIR%%/lib/proxy/dhcp/subnet.rb
-%%DATADIR%%/lib/proxy/dns.rb
-%%DATADIR%%/lib/proxy/dns/default_dns_settings.rb
-%%DATADIR%%/lib/proxy/dns/dnscmd.rb
-%%DATADIR%%/lib/proxy/dns/nsupdate.rb
-%%DATADIR%%/lib/proxy/dns/nsupdate_gss.rb
-%%DATADIR%%/lib/proxy/dns/virsh.rb
 %%DATADIR%%/lib/proxy/error.rb
+%%DATADIR%%/lib/proxy/helpers.rb
+%%DATADIR%%/lib/proxy/http_downloads.rb
 %%DATADIR%%/lib/proxy/kerberos.rb
 %%DATADIR%%/lib/proxy/log.rb
-%%DATADIR%%/lib/proxy/puppet.rb
-%%DATADIR%%/lib/proxy/puppet/class_scanner.rb
-%%DATADIR%%/lib/proxy/puppet/class_scanner_eparser.rb
-%%DATADIR%%/lib/proxy/puppet/config_reader.rb
-%%DATADIR%%/lib/proxy/puppet/customrun.rb
-%%DATADIR%%/lib/proxy/puppet/default_puppet_settings.rb
-%%DATADIR%%/lib/proxy/puppet/environment.rb
-%%DATADIR%%/lib/proxy/puppet/initializer.rb
-%%DATADIR%%/lib/proxy/puppet/mcollective.rb
-%%DATADIR%%/lib/proxy/puppet/puppet_class.rb
-%%DATADIR%%/lib/proxy/puppet/puppet_ssh.rb
-%%DATADIR%%/lib/proxy/puppet/puppetrun.rb
-%%DATADIR%%/lib/proxy/puppet/salt.rb
-%%DATADIR%%/lib/proxy/puppetca.rb
-%%DATADIR%%/lib/proxy/realm.rb
-%%DATADIR%%/lib/proxy/realm/freeipa.rb
+%%DATADIR%%/lib/proxy/plugin.rb
+%%DATADIR%%/lib/proxy/request.rb
+%%DATADIR%%/lib/proxy/settings/global.rb
+%%DATADIR%%/lib/proxy/settings/plugin.rb
 %%DATADIR%%/lib/proxy/settings.rb
-%%DATADIR%%/lib/proxy/tftp.rb
 %%DATADIR%%/lib/proxy/util.rb
 %%DATADIR%%/lib/proxy/validations.rb
 %%DATADIR%%/lib/proxy/virsh.rb
-%%DATADIR%%/lib/puppet_api.rb
-%%DATADIR%%/lib/puppetca_api.rb
-%%DATADIR%%/lib/realm_api.rb
+%%DATADIR%%/lib/proxy.rb
+%%DATADIR%%/lib/rack-patch.rb
+%%DATADIR%%/lib/sinatra/trusted_hosts.rb
 %%DATADIR%%/lib/sinatra-patch.rb
 %%DATADIR%%/lib/smart_proxy.rb
-%%DATADIR%%/lib/tftp_api.rb
+%%DATADIR%%/lib/smart_proxy_for_testing.rb
+%%DATADIR%%/modules/bmc/base.rb
+%%DATADIR%%/modules/bmc/bmc.rb
+%%DATADIR%%/modules/bmc/bmc_api.rb
+%%DATADIR%%/modules/bmc/bmc_plugin.rb
+%%DATADIR%%/modules/bmc/http_config.ru
+%%DATADIR%%/modules/bmc/ipmi.rb
+%%DATADIR%%/modules/bmc/shell.rb
+%%DATADIR%%/modules/chef_proxy/authentication.rb
+%%DATADIR%%/modules/chef_proxy/chef.rb
+%%DATADIR%%/modules/chef_proxy/chef_api.rb
+%%DATADIR%%/modules/chef_proxy/chef_plugin.rb
+%%DATADIR%%/modules/chef_proxy/http_config.ru
+%%DATADIR%%/modules/dhcp/dhcp/dhcp_api.rb
+%%DATADIR%%/modules/dhcp/dhcp/dhcp_plugin.rb
+%%DATADIR%%/modules/dhcp/dhcp/http_config.ru
+%%DATADIR%%/modules/dhcp/dhcp/monkey_patch_subnet.rb
+%%DATADIR%%/modules/dhcp/dhcp/monkey_patches.rb
+%%DATADIR%%/modules/dhcp/dhcp/providers/server/isc.rb
+%%DATADIR%%/modules/dhcp/dhcp/providers/server/ms.rb
+%%DATADIR%%/modules/dhcp/dhcp/providers/server/native_ms.rb
+%%DATADIR%%/modules/dhcp/dhcp/providers/server/virsh.rb
+%%DATADIR%%/modules/dhcp/dhcp/record/lease.rb
+%%DATADIR%%/modules/dhcp/dhcp/record/reservation.rb
+%%DATADIR%%/modules/dhcp/dhcp/record.rb
+%%DATADIR%%/modules/dhcp/dhcp/server.rb
+%%DATADIR%%/modules/dhcp/dhcp/subnet.rb
+%%DATADIR%%/modules/dhcp/dhcp.rb
+%%DATADIR%%/modules/dns/dns.rb
+%%DATADIR%%/modules/dns/dns_api.rb
+%%DATADIR%%/modules/dns/dns_plugin.rb
+%%DATADIR%%/modules/dns/http_config.ru
+%%DATADIR%%/modules/dns/providers/dnscmd.rb
+%%DATADIR%%/modules/dns/providers/nsupdate.rb
+%%DATADIR%%/modules/dns/providers/nsupdate_gss.rb
+%%DATADIR%%/modules/dns/providers/virsh.rb
+%%DATADIR%%/modules/facts/facts.rb
+%%DATADIR%%/modules/facts/facts_api.rb
+%%DATADIR%%/modules/facts/facts_plugin.rb
+%%DATADIR%%/modules/facts/http_config.ru
+%%DATADIR%%/modules/puppet_proxy/api_request.rb
+%%DATADIR%%/modules/puppet_proxy/class_scanner.rb
+%%DATADIR%%/modules/puppet_proxy/class_scanner_eparser.rb
+%%DATADIR%%/modules/puppet_proxy/config_reader.rb
+%%DATADIR%%/modules/puppet_proxy/customrun.rb
+%%DATADIR%%/modules/puppet_proxy/environment.rb
+%%DATADIR%%/modules/puppet_proxy/http_config.ru
+%%DATADIR%%/modules/puppet_proxy/initializer.rb
+%%DATADIR%%/modules/puppet_proxy/mcollective.rb
+%%DATADIR%%/modules/puppet_proxy/puppet.rb
+%%DATADIR%%/modules/puppet_proxy/puppet_api.rb
+%%DATADIR%%/modules/puppet_proxy/puppet_class.rb
+%%DATADIR%%/modules/puppet_proxy/puppet_plugin.rb
+%%DATADIR%%/modules/puppet_proxy/puppet_ssh.rb
+%%DATADIR%%/modules/puppet_proxy/puppetrun.rb
+%%DATADIR%%/modules/puppet_proxy/runner.rb
+%%DATADIR%%/modules/puppet_proxy/salt.rb
+%%DATADIR%%/modules/puppetca/http_config.ru
+%%DATADIR%%/modules/puppetca/puppetca.rb
+%%DATADIR%%/modules/puppetca/puppetca_api.rb
+%%DATADIR%%/modules/puppetca/puppetca_main.rb
+%%DATADIR%%/modules/puppetca/puppetca_plugin.rb
+%%DATADIR%%/modules/realm/client.rb
+%%DATADIR%%/modules/realm/freeipa.rb
+%%DATADIR%%/modules/realm/http_config.ru
+%%DATADIR%%/modules/realm/realm.rb
+%%DATADIR%%/modules/realm/realm_api.rb
+%%DATADIR%%/modules/realm/realm_plugin.rb
+%%DATADIR%%/modules/root/http_config.ru
+%%DATADIR%%/modules/root/root.rb
+%%DATADIR%%/modules/root/root_api.rb
+%%DATADIR%%/modules/root/root_plugin.rb
+%%DATADIR%%/modules/tftp/http_config.ru
+%%DATADIR%%/modules/tftp/server.rb
+%%DATADIR%%/modules/tftp/tftp.rb
+%%DATADIR%%/modules/tftp/tftp_api.rb
+%%DATADIR%%/modules/tftp/tftp_plugin.rb
 %%DATADIR%%/public/css/styles.css
 %%DATADIR%%/views/dhcp/index.erb
 %%DATADIR%%/views/dhcp/show.erb
@@ -77,15 +134,25 @@ sbin/smart-proxy
 @dirrm %%DATADIR%%/views
 @dirrm %%DATADIR%%/public/css
 @dirrm %%DATADIR%%/public
-@dirrm %%DATADIR%%/lib/proxy/bmc
-@dirrm %%DATADIR%%/lib/proxy/dhcp/record
-@dirrm %%DATADIR%%/lib/proxy/dhcp/server
-@dirrm %%DATADIR%%/lib/proxy/dhcp
-@dirrm %%DATADIR%%/lib/proxy/dns
-@dirrm %%DATADIR%%/lib/proxy/puppet
-@dirrm %%DATADIR%%/lib/proxy/realm
+@dirrm %%DATADIR%%/modules/tftp
+@dirrm %%DATADIR%%/modules/root
+@dirrm %%DATADIR%%/modules/realm
+@dirrm %%DATADIR%%/modules/puppetca
+@dirrm %%DATADIR%%/modules/puppet_proxy
+@dirrm %%DATADIR%%/modules/facts
+@dirrm %%DATADIR%%/modules/dns/providers
+@dirrm %%DATADIR%%/modules/dhcp/dhcp/record
+@dirrm %%DATADIR%%/modules/dhcp/dhcp/providers
+@dirrm %%DATADIR%%/modules/dhcp/dhcp
+@dirrm %%DATADIR%%/modules/dhcp
+@dirrm %%DATADIR%%/modules/dns
+@dirrm %%DATADIR%%/modules/bmc
+@dirrm %%DATADIR%%/modules/chef_proxy
+@dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%/lib/proxy
 @dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/extra
+@dirrm %%DATADIR%%/bundler.d
 @dirrmtry %%DATADIR%%
 @dirrmtry etc/foreman-proxy
 @cwd /

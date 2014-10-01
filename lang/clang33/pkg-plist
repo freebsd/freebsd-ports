@@ -474,11 +474,19 @@ llvm33/lib/libclangStaticAnalyzerCheckers.a
 llvm33/lib/libclangStaticAnalyzerCore.a
 llvm33/lib/libclangStaticAnalyzerFrontend.a
 llvm33/lib/libclangTooling.a
+llvm33/lib/python/Reporter.py
+llvm33/lib/python/Resources/FileRadar.scpt
+llvm33/lib/python/Resources/GetRadarVersion.scpt
+llvm33/lib/python/Resources/bugcatcher.ico
+llvm33/lib/python/ScanView.py
+llvm33/lib/python/startfile.py
 man/man1/clang33.1.gz
 man/man1/scan-build%%LLVM_SUFFIX%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps
+@dirrm llvm33/lib/python/Resources
+@dirrm llvm33/lib/python
 @dirrm llvm33/lib/clang/3.3/include
 @dirrm llvm33/lib/clang/3.3
 @dirrm llvm33/lib/clang

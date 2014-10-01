@@ -2,6 +2,7 @@
 
 PORTNAME=	android-tools-adb
 DISTVERSION=	4.4.4_r1
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	android-platform_system_core-${GH_COMMIT}
 

@@ -1,0 +1,11 @@
+--- config/settings.d/realm.yml.example.orig	2014-09-27 09:04:28.342471788 +0200
++++ config/settings.d/realm.yml.example	2014-09-27 09:17:21.098415262 +0200
+@@ -6,7 +6,7 @@
+ #:realm_provider: freeipa
+ 
+ # Authentication for Kerberos-based Realms
+-:realm_keytab: /etc/foreman-proxy/freeipa.keytab
++:realm_keytab: %%LOCALBASE%%/etc/foreman-proxy/freeipa.keytab
+ :realm_principal: realm-proxy@EXAMPLE.COM
+ 
+ # FreeIPA specific settings

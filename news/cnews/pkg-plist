@@ -191,20 +191,19 @@ man/man8/rnews.8cn.gz
 @exec chown news:news %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
 @exec mkdir -p %%VARBASE%%/%%NEWSOV%%
 @exec chown news:news %%VARBASE%%/%%NEWSOV%%
-@cwd %%VARBASE%%
-@dirrmtry %%NEWSCTL%%
-@dirrmtry %%NEWSCTLBASE%%
-@dirrmtry %%NEWSOV%%
-@dirrmtry %%NEWSARTS%%/control
-@dirrmtry %%NEWSARTS%%/junk
-@dirrmtry %%NEWSARTS%%/news/announce/newusers
-@dirrmtry %%NEWSARTS%%/news/announce
-@dirrmtry %%NEWSARTS%%/news
-@dirrmtry %%NEWSARTS%%/in.coming/bad
-@dirrmtry %%NEWSARTS%%/in.coming
-@dirrmtry %%NEWSARTS%%/out.going
-@dirrmtry %%NEWSARTS%%/out.master
-@dirrmtry %%NEWSARTS%%/out.nntp
-@dirrmtry %%NEWSARTS%%
+@dirrmtry %%VARBASE%%/%%NEWSCTL%%
+@dirrmtry %%VARBASE%%/%%NEWSCTLBASE%%
+@dirrmtry %%VARBASE%%/%%NEWSOV%%
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/control
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/junk
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/news/announce
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/news
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/in.coming/bad
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/in.coming
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/out.going
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/out.master
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%/out.nntp
+@dirrmtry %%VARBASE%%/%%NEWSARTS%%
 @owner
 @group

@@ -121,10 +121,12 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/objects/ellipse45.xml
 %%DATADIR%%/objects/frame-v3.xml
 %%DATADIR%%/objects/frame45.xml
+%%DATADIR%%/objects/gold-frame.xml
 %%DATADIR%%/objects/image.xml
 %%DATADIR%%/objects/rectangle-v2.xml
 %%DATADIR%%/objects/text-v2.xml
 %%DATADIR%%/rc/add.png
+%%DATADIR%%/rc/addVideo.png
 %%DATADIR%%/rc/dvdstyler.png
 %%DATADIR%%/rc/files.png
 %%DATADIR%%/rc/help.png
@@ -146,6 +148,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/rc/plus.png
 %%DATADIR%%/rc/preferences.png
 %%DATADIR%%/rc/remove.png
+%%DATADIR%%/rc/rotate.cur
 %%DATADIR%%/rc/run.png
 %%DATADIR%%/rc/save.png
 %%DATADIR%%/templates/Basic/blue.dvdt
@@ -208,21 +211,3 @@ share/locale/vi/LC_MESSAGES/dvdstyler.mo
 share/locale/zh_CN/LC_MESSAGES/dvdstyler.mo
 share/locale/zh_TW/LC_MESSAGES/dvdstyler.mo
 share/pixmaps/dvdstyler.png
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/es_ar/LC_MESSAGES
-@dirrmtry share/locale/es_ar
-@dirrm %%DATADIR%%/transitions
-@dirrm %%DATADIR%%/templates/Travel
-@dirrm %%DATADIR%%/templates/Basic
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/rc
-@dirrm %%DATADIR%%/objects/deprecated
-@dirrm %%DATADIR%%/objects
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/buttons/deprecated
-@dirrm %%DATADIR%%/buttons
-@dirrm %%DATADIR%%/backgrounds
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

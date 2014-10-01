@@ -1,6 +1,6 @@
---- ./Makefile.orig	2004-02-14 09:05:13.000000000 +0200
-+++ ./Makefile	2014-03-28 08:43:01.000000000 +0200
-@@ -2,14 +2,19 @@
+--- Makefile.orig	2004-02-14 07:05:13 UTC
++++ Makefile
+@@ -2,14 +2,18 @@
  
  PROG=	linux_kdump
  SRCS=	kdump.c linux_ioctl.c subr.c syscallnames.c
@@ -13,7 +13,6 @@
 -BINDIR=	/bin
 -DESTDIR=${PREFIX}
 -MANDIR=	/man/man
-+DESTDIR?=${STAGEDIR}${PREFIX}
 +BINDIR=	${PREFIX}/bin
 +MANDIR=	${PREFIX}/man/man
  SRCDIR?=/usr/src
@@ -24,7 +23,7 @@
  .PATH:	${SRCDIR}/usr.bin/ktrace
  
  default:	depend all
-@@ -23,4 +28,9 @@
+@@ -23,4 +27,9 @@
  linux_ioctl.c: mkioctls.linux
  	/bin/sh ${.CURDIR}/mkioctls.linux
  

@@ -19,16 +19,14 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 PORTSCOUT=	ignore:1
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USES=		tar:xz
+USES=		python tar:xz
+USE_PYTHON=	distutils autoplist
 
 DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 WRKSRC=		${WRKDIR}/Python-${PORTVERSION}/Modules
 
 PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
-PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.pre.mk>
 

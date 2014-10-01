@@ -23,7 +23,7 @@ USE_PYTHON=	yes
 USE_RC_SUBR=	xenguest
 
 ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	"Requires i385 XEN or amd64 XENHVM kernels"
+ONLY_FOR_ARCHS_REASON=	"Requires i386 XEN or amd64 XENHVM kernels"
 
 PLIST_FILES=	sbin/xe-daemon \
 		sbin/xe-update-guest-attrs

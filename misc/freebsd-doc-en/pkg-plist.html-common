@@ -48,7 +48,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/pgpkeys/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/docbook.css

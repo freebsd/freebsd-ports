@@ -4,7 +4,7 @@
 
 PORTNAME=	system-config-printer
 PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print gnome
 MASTER_SITES=	http://cyberelk.net/tim/data/${PORTNAME}/${PORTVERSION:R}/
 
@@ -18,10 +18,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups \
 		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \
 		${LOCALBASE}/libexec/cups-pk-helper-mechanism:${PORTSDIR}/print/cups-pk-helper
 
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig shebangfix \
-		tar:xz
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig python \
+		shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	intlhack pygobject3
@@ -33,7 +32,6 @@ PLIST_SUB=	PYTHON_VER=${PYTHON_VERSION:S/python//}
 
 SHEBANG_FILES=	*.py troubleshoot/*.py xml/validate.py
 
-INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	cupshelpers
 PYDISTUTILS_PKGVERSION=	1.0
 
@@ -45,7 +43,7 @@ post-patch:
 		${WRKSRC}/cupshelpers/xmldriverprefs.py \
 		${WRKSRC}/dbus/org.fedoraproject.Config.Printing.service \
 		${WRKSRC}/newprinter.py ${WRKSRC}/probe_printer.py
-	@${REINPLACE_CMD} -e 's|setup.py install|setup.py install -c -O1|g' \
+	@${REINPLACE_CMD} -e 's|setup.py install.*|setup.py install -c -O1 --prefix=${PREFIX} --root=${STAGEDIR}|g' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

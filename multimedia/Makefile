@@ -182,7 +182,9 @@
     SUBDIR += libquicktime
     SUBDIR += libquicktime-lame
     SUBDIR += libquvi
+    SUBDIR += libquvi09
     SUBDIR += libquvi-scripts
+    SUBDIR += libquvi-scripts09
     SUBDIR += librtmp
     SUBDIR += libsmacker
     SUBDIR += libtheora
@@ -314,6 +316,7 @@
     SUBDIR += quark
     SUBDIR += quodlibet
     SUBDIR += quvi
+    SUBDIR += quvi09
     SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex

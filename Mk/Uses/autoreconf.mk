@@ -53,7 +53,6 @@
 .if !defined(_INCLUDE_USES_AUTORECONF_MK)
 _INCLUDE_USES_AUTORECONF_MK=	yes
 _USES_POST+=		autoreconf
-autoreconf_ARGS:=	${autoreconf_ARGS}
 
 BUILD_DEPENDS+=	autoconf-2.69:${PORTSDIR}/devel/autoconf \
 		autoheader-2.69:${PORTSDIR}/devel/autoconf \
@@ -61,13 +60,11 @@ BUILD_DEPENDS+=	autoconf-2.69:${PORTSDIR}/devel/autoconf \
 		aclocal-1.14:${PORTSDIR}/devel/automake \
 		automake-1.14:${PORTSDIR}/devel/automake
 
-# Depend on autopoint if USES contains gettext* but not gettext:run
-.if ${USES:Mgettext} || (${USES:Mgettext\:*} && empty(USES:Mgettext\:run))
+.if ${USES:Mgettext} && empty(gettext_ARGS:Mrun)
 BUILD_DEPENDS+=	autopoint:${PORTSDIR}/devel/gettext
 .endif
 
-# Depend on libtoolize if USES contains libtool* but not libtool:build
-.if ${USES:Mlibtool} || (${USES:Mlibtool\:*} && empty(USES:Mlibtool\:*build*))
+.if ${USES:Mlibtool} && empty(libtool_ARGS:Mbuild)
 BUILD_DEPENDS+=	libtoolize:${PORTSDIR}/devel/libtool
 .endif
 

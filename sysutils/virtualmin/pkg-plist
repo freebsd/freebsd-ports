@@ -505,6 +505,7 @@ lib/webmin/virtual-server/help/config_docs_text.html
 lib/webmin/virtual-server/help/config_docs_text.nl.html
 lib/webmin/virtual-server/help/config_domains_sort.html
 lib/webmin/virtual-server/help/config_domains_sort.nl.html
+lib/webmin/virtual-server/help/config_dovecot_ssl.html
 lib/webmin/virtual-server/help/config_edit_afiles.html
 lib/webmin/virtual-server/help/config_edit_afiles.nl.html
 lib/webmin/virtual-server/help/config_edit_ftp.html
@@ -659,6 +660,7 @@ lib/webmin/virtual-server/help/config_post_check.html
 lib/webmin/virtual-server/help/config_post_check.nl.html
 lib/webmin/virtual-server/help/config_post_command.html
 lib/webmin/virtual-server/help/config_post_command.nl.html
+lib/webmin/virtual-server/help/config_postfix_ssl.html
 lib/webmin/virtual-server/help/config_postgres.html
 lib/webmin/virtual-server/help/config_postgres.nl.html
 lib/webmin/virtual-server/help/config_pre_command.html
@@ -1120,6 +1122,7 @@ lib/webmin/virtual-server/help/restore_only.html
 lib/webmin/virtual-server/help/restore_only.nl.html
 lib/webmin/virtual-server/help/restore_reuid.html
 lib/webmin/virtual-server/help/restore_reuid.nl.html
+lib/webmin/virtual-server/help/retention.html
 lib/webmin/virtual-server/help/rubymode.html
 lib/webmin/virtual-server/help/rubymode.nl.html
 lib/webmin/virtual-server/help/sched.html
@@ -1523,6 +1526,7 @@ lib/webmin/virtual-server/images/icon.gif
 lib/webmin/virtual-server/images/money_icon.jpg
 lib/webmin/virtual-server/images/movedown.gif
 lib/webmin/virtual-server/images/moveup.gif
+lib/webmin/virtual-server/images/newautoconfig.gif
 lib/webmin/virtual-server/images/newbw.gif
 lib/webmin/virtual-server/images/newchangelog.gif
 lib/webmin/virtual-server/images/newchroot.gif
@@ -1560,6 +1564,7 @@ lib/webmin/virtual-server/images/newweb.gif
 lib/webmin/virtual-server/images/ok.gif
 lib/webmin/virtual-server/images/postgrey.gif
 lib/webmin/virtual-server/images/provision.gif
+lib/webmin/virtual-server/images/ratelimit.gif
 lib/webmin/virtual-server/images/red.gif
 lib/webmin/virtual-server/images/smallicon.gif
 lib/webmin/virtual-server/images/staroff.gif
@@ -1797,6 +1802,8 @@ lib/webmin/virtual-server/newfeatures-all/4.04/3-directadmin
 lib/webmin/virtual-server/newfeatures-all/4.05/2-transfer
 lib/webmin/virtual-server/newfeatures-all/4.07/1-aliasmove
 lib/webmin/virtual-server/newfeatures-all/4.08/1-domdkim
+lib/webmin/virtual-server/newfeatures-all/4.11/1-dovecotssl
+lib/webmin/virtual-server/newfeatures-all/4.11/3-dovecotssl
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1829,6 +1836,8 @@ lib/webmin/virtual-server/newfeatures-gpl/4.06/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.07/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.08/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.09/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.10/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.11/0-scripts
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
@@ -1981,90 +1990,4 @@ lib/webmin/virtual-server/webmincron-fixed.pl
 lib/webmin/virtual-server/wizard-lib.pl
 lib/webmin/virtual-server/wizard.cgi
 lib/webmin/virtual-server/writelogs.pl
-@dirrm lib/webmin/virtual-server/scripts
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.09
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.08
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.07
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.06
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.05
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.03
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.02
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.01
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.00
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.99
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.93
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.92
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.91
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.90
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.89
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.87
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.84
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.82
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.81
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.78
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.70
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.69
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.66
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.65
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.63
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.60
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.58
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.56
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.55
-@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.52
-@dirrm lib/webmin/virtual-server/newfeatures-gpl
-@dirrm lib/webmin/virtual-server/newfeatures-all/4.08
-@dirrm lib/webmin/virtual-server/newfeatures-all/4.07
-@dirrm lib/webmin/virtual-server/newfeatures-all/4.05
-@dirrm lib/webmin/virtual-server/newfeatures-all/4.04
-@dirrm lib/webmin/virtual-server/newfeatures-all/4.03
-@dirrm lib/webmin/virtual-server/newfeatures-all/4.01
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.99
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.98
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.96
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.94
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.93
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.91
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.90
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.89
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.88
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.85
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.84
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.82
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.81
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.80
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.79
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.78
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.77
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.76
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.75
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.71
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.70
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.69
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.68
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.67
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.66
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.65
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.64
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.63
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.62
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.61
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.60
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.59
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.58
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.56
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.55
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.54
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.53
-@dirrm lib/webmin/virtual-server/newfeatures-all/3.52
-@dirrm lib/webmin/virtual-server/newfeatures-all
-@dirrm lib/webmin/virtual-server/lang
-@dirrm lib/webmin/virtual-server/images
-@dirrm lib/webmin/virtual-server/help
-@dirrm lib/webmin/virtual-server/S3
-@dirrm lib/webmin/virtual-server/PHP
-@dirrm lib/webmin/virtual-server/IDNA
-@dirrm lib/webmin/virtual-server
-@dirrm etc/webmin/virtual-server
-@dirrmtry etc/webmin
-@exec [ -e %D/etc/webmin/virtual-server ] || mkdir -p %D/etc/webmin/virtual-server
+@dir etc/webmin/virtual-server

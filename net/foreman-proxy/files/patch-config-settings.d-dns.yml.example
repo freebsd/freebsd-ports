@@ -1,0 +1,17 @@
+--- config/settings.d/dns.yml.example.orig	2014-09-27 09:03:53.820489863 +0200
++++ config/settings.d/dns.yml.example	2014-09-27 09:06:50.266460447 +0200
+@@ -6,12 +6,12 @@
+ #   virsh
+ #   dnscmd
+ #:dns_provider: nsupdate
+-#:dns_key: /etc/rndc.key
++#:dns_key: %%LOCALBASE%%/etc/namedb/rndc.key
+ # use this setting if you are managing a dns server which is not localhost though this proxy
+ #:dns_server: dns.domain.com
+ # use this setting if you want to override default TTL setting (86400)
+ #:dns_ttl: 86400
+ # use dns_tsig_* for GSS-TSIG updates using Kerberos.  Required for Windows MS DNS with
+ # Secure Dynamic Updates, or BIND as used in FreeIPA.  Set dns_provider to nsupdate_gss.
+-#:dns_tsig_keytab: /usr/share/foreman-proxy/dns.keytab
++#:dns_tsig_keytab: %%PREFIX%%/share/foreman-proxy/dns.keytab
+ #:dns_tsig_principal: DNS/host.example.com@EXAMPLE.COM

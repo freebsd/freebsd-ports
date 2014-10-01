@@ -12,14 +12,10 @@ COMMENT=	Horde Logging library
 OPTIONS_DEFINE=	SCRIBE
 SCRIBE_DESC=	Enable scribe support
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Constraint \
 		Horde_Exception
 
-.include <bsd.port.pre.mk>
+SCRIBE_USE=	HORDE=Horde_Scribe
 
-.if ${PORT_OPTIONS:MSCRIBE}
-USE_HORDE+=	Horde_Scribe
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

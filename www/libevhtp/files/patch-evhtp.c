@@ -1,17 +1,14 @@
---- evhtp.c.orig	2014-03-23 07:50:50.000000000 -0400
-+++ evhtp.c	2014-08-28 09:08:40.970619326 -0400
-@@ -6,6 +6,10 @@
- #include <signal.h>
+--- evhtp.c.orig	2014-03-23 11:50:50.000000000 +0000
++++ evhtp.c	2014-09-13 12:37:11.000000000 +0000
+@@ -7,6 +7,7 @@
  #include <strings.h>
  #include <inttypes.h>
-+#ifdef SO_ACCEPTFILTER 
-+#include <sys/types.h>
-+#include <sys/socket.h>
-+#endif
  #ifndef WIN32
++#include <sys/types.h>
  #include <sys/socket.h>
  #include <netinet/in.h>
-@@ -2740,7 +2744,14 @@
+ #include <netinet/tcp.h>
+@@ -2740,7 +2741,14 @@
  
          sock = evconnlistener_get_fd(htp->server);
  

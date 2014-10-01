@@ -8,6 +8,7 @@ CATEGORIES=	mail www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for handling Kolab data stored on an IMAP server
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Cache \
 		Horde_Exception \
 		Horde_Kolab_Format \
@@ -20,6 +21,4 @@ USE_HORDE_RUN=	Horde_Cache \
 USE_PHP+=	imap
 USE_HORDE_RUN+=	Horde_Imap_Client
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

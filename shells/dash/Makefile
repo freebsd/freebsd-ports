@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dash
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	shells
 MASTER_SITES=	http://gondor.apana.org.au/~herbert/dash/files/
 

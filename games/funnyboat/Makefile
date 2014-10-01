@@ -15,8 +15,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		zip
-USE_PYTHON=	yes
+USES=		python:run zip
 NO_BUILD=	yes
 
 SUB_FILES=	funnyboat_

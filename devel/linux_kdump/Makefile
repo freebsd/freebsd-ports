@@ -13,11 +13,11 @@ COMMENT=	Linux-compatibility ktrace.out processor
 
 BUILD_DEPENDS=	${RUN_DEPENDS} # USE_LINUX_APPS only sets RUN_DEPENDS
 
+USES=		uidfix
 USE_LINUX=	yes
 USE_LINUX_APPS=	devtools
 
 ONLY_FOR_ARCHS=	i386 amd64
-NO_MANCOMPRESS=	yes
 PLIST_FILES=	bin/linux_kdump man/man1/linux_kdump.1.gz
 
 .include <bsd.port.pre.mk>
@@ -31,9 +31,6 @@ IGNORE=	requires kernel source present in ${SRC_BASE}/sys
 .endif
 .if !exists(${SRC_BASE}/usr.bin/ktrace/subr.c)
 IGNORE=	requires ktrace source present in ${SRC_BASE}/usr.bin/ktrace
-.endif
-.if ! (exists(${LINUXBASE}/etc/fedora-release) || exists(${LINUXBASE}/etc/centos-release))
-IGNORE=	does not build without a linux base, use the package instead
 .endif
 
 .include <bsd.port.post.mk>

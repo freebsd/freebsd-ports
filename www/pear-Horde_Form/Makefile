@@ -7,6 +7,7 @@ CATEGORIES=	www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Form API
 
+USES=	horde
 USE_HORDE_RUN=	Horde_Core \
 		Horde_Date \
 		Horde_Exception \
@@ -17,6 +18,4 @@ USE_HORDE_RUN=	Horde_Core \
 		Horde_Translation \
 		Horde_Util
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

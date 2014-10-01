@@ -14,10 +14,8 @@ LICENSE=	LGPL3
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:${PORTSDIR}/devel/py-urwid
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:${PORTSDIR}/devel/py-urwid
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-INSTALLS_EGGINFO=yes
-USES=		tar:bzip2
+USES=		python tar:bzip2
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS
 

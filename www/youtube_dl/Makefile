@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2014.08.10
-PORTREVISION=	1
+PORTVERSION=	2014.09.29.2
 CATEGORIES=	www
 MASTER_SITES=	https://yt-dl.org/downloads/${PORTVERSION}/
 DISTNAME=	youtube-dl-${PORTVERSION}
@@ -44,7 +43,7 @@ post-extract:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/youtube-dl ${STAGEDIR}${PREFIX}/bin/youtube-dl
-	${INSTALL_DATA} ${WRKSRC}/youtube-dl.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/youtube-dl.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MBASH}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/youtube-dl.bash-completion \

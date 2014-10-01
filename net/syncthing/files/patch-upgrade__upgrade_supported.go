@@ -1,5 +1,5 @@
---- ./upgrade/upgrade_supported.go.orig	2014-08-14 02:03:33.321542734 +0000
-+++ ./upgrade/upgrade_supported.go	2014-08-14 02:03:37.807542195 +0000
+--- upgrade/upgrade_supported.go.orig	2014-09-28 21:24:06.335428814 +0000
++++ upgrade/upgrade_supported.go	2014-09-28 21:24:59.699424791 +0000
 @@ -70,6 +70,7 @@
  
  // Returns the latest release, including prereleases or not depending on the argument

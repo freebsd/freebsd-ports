@@ -238,7 +238,6 @@
     SUBDIR += cmph
     SUBDIR += cmunge
     SUBDIR += cobf
-    SUBDIR += cocaine-core
     SUBDIR += coccinelle
     SUBDIR += codeblocks
     SUBDIR += codeville
@@ -3398,6 +3397,7 @@
     SUBDIR += pecl-statgrab
     SUBDIR += pecl-svn
     SUBDIR += pecl-swoole
+    SUBDIR += pecl-sync
     SUBDIR += pecl-test_helpers
     SUBDIR += pecl-uopz
     SUBDIR += pecl-uploadprogress
@@ -3623,6 +3623,7 @@
     SUBDIR += py-celery
     SUBDIR += py-cffi
     SUBDIR += py-cfgparse
+    SUBDIR += py-characteristic
     SUBDIR += py-checkmanifest
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
@@ -3714,6 +3715,7 @@
     SUBDIR += py-glob2
     SUBDIR += py-gobject
     SUBDIR += py-gobject3
+    SUBDIR += py-google-apputils
     SUBDIR += py-grab
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
@@ -3741,6 +3743,7 @@
     SUBDIR += py-jaraco.util
     SUBDIR += py-jcc
     SUBDIR += py-jdcal
+    SUBDIR += py-jedi
     SUBDIR += py-jellyfish
     SUBDIR += py-jira
     SUBDIR += py-jmespath
@@ -3798,6 +3801,7 @@
     SUBDIR += py-ode
     SUBDIR += py-odfpy
     SUBDIR += py-olefileio_pl
+    SUBDIR += py-oletools
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
     SUBDIR += py-optik
@@ -3824,6 +3828,7 @@
     SUBDIR += py-pqueue
     SUBDIR += py-prettytable
     SUBDIR += py-prioritized_methods
+    SUBDIR += py-prompt_toolkit
     SUBDIR += py-protobuf
     SUBDIR += py-protocols
     SUBDIR += py-protocols-devel
@@ -3977,6 +3982,7 @@
     SUBDIR += py-virtualenv-clone
     SUBDIR += py-virtualenvwrapper
     SUBDIR += py-watchdog
+    SUBDIR += py-wcwidth
     SUBDIR += py-wheel
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
@@ -4285,6 +4291,7 @@
     SUBDIR += rubygem-debugger-xml
     SUBDIR += rubygem-deep_merge
     SUBDIR += rubygem-deeptest
+    SUBDIR += rubygem-default_value_for
     SUBDIR += rubygem-delayed_job
     SUBDIR += rubygem-delayer
     SUBDIR += rubygem-dep_selector
@@ -4324,13 +4331,16 @@
     SUBDIR += rubygem-fog-core
     SUBDIR += rubygem-fog-json
     SUBDIR += rubygem-font-awesome-rails
+    SUBDIR += rubygem-font-awesome-rails-rails4
     SUBDIR += rubygem-foreman
     SUBDIR += rubygem-formatador
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-gemcutter
+    SUBDIR += rubygem-gemnasium-gitlab-service
     SUBDIR += rubygem-gems
     SUBDIR += rubygem-generator_spec
+    SUBDIR += rubygem-generator_spec-rails4
     SUBDIR += rubygem-georuby
     SUBDIR += rubygem-getopt
     SUBDIR += rubygem-gettext
@@ -4424,6 +4434,7 @@
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-nori
     SUBDIR += rubygem-notify
+    SUBDIR += rubygem-nprogress-rails
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-orm_adapter
@@ -4498,9 +4509,11 @@
     SUBDIR += rubygem-shoulda
     SUBDIR += rubygem-shoulda-context
     SUBDIR += rubygem-shoulda-matchers
+    SUBDIR += rubygem-sidekiq
     SUBDIR += rubygem-sigdump
     SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-simplecov
+    SUBDIR += rubygem-slack-notifier
     SUBDIR += rubygem-slim
     SUBDIR += rubygem-slop
     SUBDIR += rubygem-soap4r

@@ -54,6 +54,8 @@ fi
 start_precmd=${name}_prestart
 stop_precmd=${name}_prestop
 stop_cmd=${name}_stop
+reload_cmd=${name}_reload
+extra_commands="reload"
 
 command="${toolsdir}/cbsdd"
 pidfile="/var/run/$name.pid"
@@ -61,7 +63,6 @@ command_args="&"
 
 cbsdd_prestart() {
 	%%PREFIX%%/bin/cbsd task mode=flushall > /dev/null 2>&1
-	/usr/bin/find ${ftmpdir} -depth 1 -maxdepth 1 -type f -exec rm -f {} \;
 	%%PREFIX%%/bin/cbsd sysinv mode=update
 	%%PREFIX%%/bin/cbsd netinv
 
@@ -80,6 +81,13 @@ cbsdd_prestop()
 cbsdd_stop()
 {
 	[ -f "${pidfile}" ] && kill -9 $( cat ${pidfile} )
+}
+
+cbsdd_reload()
+{
+	[ -f "${pidfile}" ] && kill -9 $( cat ${pidfile} ) > /dev/null 2>&1
+	run_rc_command "start"
+	exit 0
 }
 
 run_rc_command "$1"

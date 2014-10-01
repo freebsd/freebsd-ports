@@ -86,29 +86,24 @@ IGNORE=	Invalid tcltk version ${TCLTK_DEFAULT}
 _TCLTK_PORT?=	tcl
 
 #
-# Build a make(1)-friendly list of arguments (i.e., space separated).
-#
-_TCL_ARGS=	${tcl_ARGS:S/,/ /g}
-
-#
 # Parse a ver+ argument.
 #
-.if ${_TCL_ARGS:M*+}
-_TCLTK_MIN_VERSION:=	${_TCL_ARGS:M*+:S/+//}
+.if ${tcl_ARGS:M*+}
+_TCLTK_MIN_VERSION:=	${tcl_ARGS:M*+:S/+//}
 _TCLTK_WANTED_VERSIONS:=${_TCLTK_DEFAULT_VERSION}
 .endif
 
 #
 # Parse one or more ver arguments.
 #
-.if ${_TCL_ARGS:M8[4-6]}
-_TCLTK_WANTED_VERSIONS:=${_TCL_ARGS:M8[4-6]}
+.if ${tcl_ARGS:M8[4-6]}
+_TCLTK_WANTED_VERSIONS:=${tcl_ARGS:M8[4-6]}
 .endif
 
 #
 # It makes little sense to specify both the wrapper and a specific version.
 #
-.if ${_TCL_ARGS:Mwrapper} && defined(_TCLTK_WANTED_VERSIONS)
+.if ${tcl_ARGS:Mwrapper} && defined(_TCLTK_WANTED_VERSIONS)
 IGNORE=	USES=${_TCLTK_PORT}: it is not possible to specify both a version and the wrapper: ${tcl_ARGS}
 .endif
 
@@ -175,7 +170,7 @@ _TCLTK_RUN_DEPENDS=
 _TCLTK_LIB_DEPENDS=
 
 # Construct the correct dependency lines (wrapper)
-.if ${_TCL_ARGS:Mwrapper}
+.if ${tcl_ARGS:Mwrapper}
 .  if ${_TCLTK_PORT} == "tcl"
 _TCLTK_WRAPPER_PORT=	tclsh:${PORTSDIR}/lang/tcl-wrapper
 .  elif ${_TCLTK_PORT} == "tk"
@@ -192,10 +187,10 @@ _TCLTK_EXE_LINE=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${_TCLTK_WANTED_VERSIO
 _TCLTK_LIB_LINE=	libtk${TK_SHLIB_VER}.so:${PORTSDIR}/x11-toolkits/tk${_TCLTK_WANTED_VERSION}
 .endif
 
-.if ${_TCL_ARGS:Mbuild}
+.if ${tcl_ARGS:Mbuild}
 BUILD_DEPENDS+=	${_TCLTK_WRAPPER_PORT} \
 		${_TCLTK_EXE_LINE}
-.elif ${_TCL_ARGS:Mrun}
+.elif ${tcl_ARGS:Mrun}
 RUN_DEPENDS+=	${_TCLTK_WRAPPER_PORT} \
 		${_TCLTK_EXE_LINE}
 .else

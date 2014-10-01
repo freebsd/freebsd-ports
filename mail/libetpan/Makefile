@@ -3,7 +3,7 @@
 
 PORTNAME=	libetpan
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -19,9 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dinhviethoa
 GH_COMMIT=	34bab37
 
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
-AUTOMAKE_ARGS=	--add-missing --foreign --force --copy
-USES=		gmake iconv libtool
+USES=		autoreconf gmake iconv libtool
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
@@ -41,5 +40,8 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
 OPENSSL_USE=		OPENSSL=yes
+
+pre-configure:
+	(cd ${WRKSRC} && ${LN} -s README.md README)
 
 .include <bsd.port.mk>

@@ -11,7 +11,9 @@
 .if !defined(_INCLUDE_USES_DISPLAY_MK)
 _INCLUDE_USES_DISPLAY_MK=	yes
 
-display_ARGS?=	install
+.if empty(display_ARGS)
+display_ARGS=	install
+.endif
 
 .if !defined(DISPLAY)
 BUILD_DEPENDS+=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \

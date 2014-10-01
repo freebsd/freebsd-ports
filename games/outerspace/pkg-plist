@@ -96,10 +96,3 @@ lib/outerspace/res/gray/tool.down.png
 lib/outerspace/res/gray/tool.normal.png
 lib/outerspace/res/icon32.png
 lib/outerspace/res/smallicon.ico
-@dirrm lib/outerspace/res/gray
-@dirrm lib/outerspace/res
-@dirrm lib/outerspace/oslauncher/urlgrabber
-@dirrm lib/outerspace/oslauncher/pgu/gui
-@dirrm lib/outerspace/oslauncher/pgu
-@dirrm lib/outerspace/oslauncher
-@dirrm lib/outerspace

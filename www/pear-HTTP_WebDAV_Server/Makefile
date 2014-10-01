@@ -9,8 +9,6 @@ DISTNAME=	${PORTNAME}-1.0.0RC4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	WebDAV Server Baseclass
 
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

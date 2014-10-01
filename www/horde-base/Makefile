@@ -18,6 +18,7 @@ ICONV_DESC=	Depend on PHP iconv extension
 TWITTER_DESC=	Support connections to Twitter
 WEATHER_DESC=	Support weather forecast display
 
+USES=	horde
 USE_PHP=	filter gettext hash
 
 USE_HORDE_BUILD=	Horde_Role
@@ -56,24 +57,9 @@ USE_HORDE_RUN=	Horde_Role \
 # Optional in package but we want them in
 USE_HORDE_RUN+=	Horde_Feed
 
-.include <bsd.port.options.mk>
+FACEBOOK_USE=	HORDE_RUN=Horde_Service_Facebook
+ICONV_USE=	PHP=iconv
+TWITTER_USE=	HORDE_RUN=Horde_Service_Twitter
+WEATHER_USE=	HORDE_RUN=Horde_Service_Weather
 
-.if defined(WITH_FACEBOOK)
-USE_HORDE_RUN+=	Horde_Service_Facebook
-.endif
-
-.if !defined(WITHOUT_ICONV)
-USE_PHP+=	iconv
-.endif
-
-.if defined(WITH_TWITTER)
-USE_HORDE_RUN+=	Horde_Service_Twitter
-.endif
-
-.if defined(WITH_WEATHER)
-USE_HORDE_RUN+=	Horde_Service_Weather
-.endif
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

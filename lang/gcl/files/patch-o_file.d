@@ -5,7 +5,7 @@
  #include <signal.h>
  
 -#if defined(DARWIN)
-+#if defined(BSD)
++#if defined(DARWIN) || defined(__FreeBSD__)
  #define on_exit(a,b)
  #else
  static void

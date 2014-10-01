@@ -1,0 +1,3 @@
+:foreman_bootdisk:
+  # Enable/disable foreman_bootdisk commands
+  :enable_module: true

@@ -14,8 +14,7 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
-USES=		gmake tar:tgz
-USE_PYTHON=	2
+USES=		gmake python:2 tar:tgz
 MAKEFILE=	makefile
 ALL_TARGET=	default
 

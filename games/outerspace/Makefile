@@ -12,7 +12,7 @@ COMMENT=	On-line strategy game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 SUB_FILES=	outerspace

@@ -6,5 +6,3 @@ uses libmp3lame to compress a monster.sou file to about 25% its
 original size.
 
 WWW: http://www.scummvm.org
-
--Miguel Mendez <flynn@energyhq.es.eu.org>

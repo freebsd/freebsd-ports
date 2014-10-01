@@ -4,7 +4,6 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.10.11
-PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	010
@@ -15,8 +14,8 @@ COMMENT=	GLib/GTK+ set of document centric objects and utilities
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	gnomeprefix gtk30 intlhack libgsf librsvg2
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack libgsf librsvg2 libxslt
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -25,8 +24,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-lasem=no --with-config-backend=gsettings
 CONFIGURE_ARGS+=--enable-compile-warnings=no
 
-PLIST_SUB=	VERSION=${PORTVERSION} SHORT_VER=${SHORT_VER} \
-		LIBVERSION=10.0.11
+PLIST_SUB=	VERSION=${PORTVERSION} SHORT_VER=${SHORT_VER}
 SHORT_VER=	0.10
 
 post-install:

@@ -11,4 +11,3 @@
 %%PERL5_MAN3%%/IO::Compress::Xz.3.gz
 %%PERL5_MAN3%%/IO::Uncompress::UnLzma.3.gz
 %%PERL5_MAN3%%/IO::Uncompress::UnXz.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Lzma

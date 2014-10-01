@@ -11,15 +11,20 @@
 .if !defined(_INCLUDE_USES_FORTRAN_MK)
 _INCLUDE_USES_FORTRAN_MK=	yes
 
-.if !defined(fortran_ARGS)
+.if empty(fortran_ARGS)
 fortran_ARGS=	gcc
 .endif
 
 .if ${fortran_ARGS} == gcc
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 _GCC_VER=	${GCC_DEFAULT:S/.//}
+.if ${_GCC_VER} == 48
 BUILD_DEPENDS+=	gfortran${_GCC_VER}:${PORTSDIR}/lang/gcc
 RUN_DEPENDS+=	gfortran${_GCC_VER}:${PORTSDIR}/lang/gcc
+.else
+BUILD_DEPENDS+=	gfortran${_GCC_VER}:${PORTSDIR}/lang/gcc${_GCC_VER}
+RUN_DEPENDS+=	gfortran${_GCC_VER}:${PORTSDIR}/lang/gcc${_GCC_VER}
+.endif
 USE_BINUTILS=	yes
 F77=		gfortran${_GCC_VER}
 FC=		gfortran${_GCC_VER}

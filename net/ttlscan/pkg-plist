@@ -1,3 +1,0 @@
-bin/ttlscan
-%%PORTDOCS%%share/doc/ttlscan/README
-%%PORTDOCS%%@dirrm share/doc/ttlscan

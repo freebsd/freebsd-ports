@@ -12,14 +12,13 @@ COMMENT=	Horde web based calendar
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	horde-${PORTNAME}
-
 OPTIONS_DEFAULT=	DATE_HOLIDAYS TIMEOBJECTS
 OPTIONS_DEFINE=		DATE_HOLIDAYS TIMEOBJECTS XMLWRITER
 DATE_HOLIDAYS_DESC=	Depend on PEAR Date_Holidays
 TIMEOBJECTS_DESC=	Depenbd on Horde timeobjects
 XMLWRITER_DESC=		Depend on PHP xmlwriter extension
 
+USES=	horde
 USE_PHP=	gettext json simplexml
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
@@ -55,19 +54,9 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_View
 
-.include <bsd.port.pre.mk>
+DATE_HOLIDAYS_RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
 
-.if ${PORT_OPTIONS:MDATE_HOLIDAYS}
-RUN_DEPENDS+=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
-.endif
+TIMEOBJECTS_USE=	HORDE_RUN=timeobjects
+XMLWRITER_USE=	PHP=xmlwriter
 
-.if ${PORT_OPTIONS:MTIMEOBJECTS}
-USE_HORDE_RUN+=	timeobjects
-.endif
-
-.if ${PORT_OPTIONS:MXMLWRITER}
-USE_PHP+=	xmlwriter
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

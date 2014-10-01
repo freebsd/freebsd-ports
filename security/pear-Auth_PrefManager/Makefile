@@ -8,11 +8,6 @@ CATEGORIES=	security www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR preferences management class
 
-BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-RUN_DEPENDS:=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+USES=	pear
 
-PEAR_AUTOINSTALL=	yes
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

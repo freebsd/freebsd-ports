@@ -57,6 +57,100 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a4e9f88-491c-11e4-ae2c-c80aa9043978">
+    <topic>bash -- out-of-bounds memory access in parser</topic>
+    <affects>
+      <package>
+	<name>bash</name>
+	<range><lt>4.3.27_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat security team reports:</p>
+	<blockquote cite="https://access.redhat.com/security/cve/CVE-2014-7186">
+	  <p>It was discovered that the fixed-sized redir_stack could be forced
+	    to overflow in the Bash parser, resulting in memory corruption, and
+	    possibly leading to arbitrary code execution when evaluating
+	    untrusted input that would not otherwise be run as code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://access.redhat.com/security/cve/CVE-2014-7186</url>
+      <cvename>CVE-2014-7186</cvename>
+    </references>
+    <dates>
+      <discovery>2014-09-25</discovery>
+      <entry>2014-10-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8e0e86ff-48b5-11e4-ab80-000c29f6ae42">
+    <topic>rsyslog -- remote syslog PRI vulnerability</topic>
+    <affects>
+      <package>
+	<name>rsyslog</name>
+	<range><lt>7.6.6</lt></range>
+	<range><lt>8.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The rsyslog project reports:</p>
+	<blockquote cite="http://www.rsyslog.com/remote-syslog-pri-vulnerability/">
+	  <p>potential abort when a message with PRI > 191 was processed
+	    if the "pri-text" property was used in active templates,
+	    this could be abused to a remote denial of service from
+	    permitted senders</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.rsyslog.com/remote-syslog-pri-vulnerability/</url>
+      <cvename>CVE-2014-3634</cvename>
+    </references>
+    <dates>
+      <discovery>2014-09-30</discovery>
+      <entry>2014-09-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6c083cf8-4830-11e4-ae2c-c80aa9043978">
+    <topic>fish -- local privilege escalation and remote code execution</topic>
+    <affects>
+      <package>
+	<name>fish</name>
+	<range><ge>1.6.0</ge><lt>2.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fish developer David Adam reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/09/28/8">
+	  <p>This release fixes a number of local privilege escalation
+	    vulnerability and one remote code execution vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2014/09/28/8</url>
+      <cvename>CVE-2014-2905</cvename>
+      <url>https://github.com/fish-shell/fish-shell/issues/1436</url>
+      <cvename>CVE-2014-2906</cvename>
+      <cvename>CVE-2014-3856</cvename>
+      <url>https://github.com/fish-shell/fish-shell/issues/1437</url>
+      <cvename>CVE-2014-2914</cvename>
+      <url>https://github.com/fish-shell/fish-shell/issues/1438</url>
+      <cvename>CVE-2014-3219</cvename>
+      <url>https://github.com/fish-shell/fish-shell/issues/1440</url>
+    </references>
+    <dates>
+      <discovery>2014-09-28</discovery>
+      <entry>2014-09-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca44b64c-4453-11e4-9ea1-c485083ca99c">
     <topic>Flash player -- Multiple security vulnerabilities in www/linux-*-flashplugin11</topic>
     <affects>
@@ -117,6 +211,10 @@ Notes:
       <package>
 	<name>nss</name>
 	<range><lt>3.17.1</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-nss</name>
+	<range><lt>3.16.1</lt></range>
       </package>
     </affects>
     <description>
@@ -213,6 +311,10 @@ Notes:
 	<range><gt>4.1</gt><le>4.1.12</le></range>
 	<range><gt>4.2</gt><le>4.2.48</le></range>
 	<range><gt>4.3</gt><lt>4.3.25_1</lt></range>
+      </package>
+      <package>
+	<name>linux_base-c6</name>
+	<range><lt>6.5_1</lt></range>
       </package>
     </affects>
     <description>

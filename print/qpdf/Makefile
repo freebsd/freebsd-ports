@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	SDK
 OPTIONS_DEFAULT=	SDK
 OPTIONS_SUB=	yes
 
-SDK_DESC=	Install header files.
+SDK_DESC=	Install header files (required for cups-filters)
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

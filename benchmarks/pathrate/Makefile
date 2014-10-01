@@ -7,7 +7,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.cc.gatech.edu/fac/Constantinos.Dovrolis/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	dikshie@lapi.itb.ac.id
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Measurement tool for capacity estimation of network paths
 
 GNU_CONFIGURE=	yes

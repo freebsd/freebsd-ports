@@ -133,6 +133,7 @@ include/syslog-ng/rcptid.h
 include/syslog-ng/reloc.h
 include/syslog-ng/rewrite/rewrite-expr-parser.h
 include/syslog-ng/rewrite/rewrite-expr.h
+include/syslog-ng/rewrite/rewrite-groupset.h
 include/syslog-ng/rewrite/rewrite-set-tag.h
 include/syslog-ng/rewrite/rewrite-set.h
 include/syslog-ng/rewrite/rewrite-subst.h

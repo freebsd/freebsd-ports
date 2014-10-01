@@ -10,7 +10,7 @@
 .if !defined(_INCLUDE_USES_MAKESELF_Mk)
 _INCLUDE_USES_MAKESELF_MK=	yes
 
-.if defined(makeself_ARGS)
+.if !empty(makeself_ARGS)
 IGNORE=	Incorrect 'USES+= makeself:${makeself_ARGS}' makeself takes no arguments
 .endif
 

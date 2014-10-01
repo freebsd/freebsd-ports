@@ -11,7 +11,7 @@
 .if !defined(_INCLUDE_USES_MAKEINFO_MK)
 _INCLUDE_USES_MAKEINFO_MK=	yes
 
-.if defined(makeinfo_ARGS)
+.if !empty(makeinfo_ARGS)
 IGNORE=	USES=makeinfo - expects no arguments
 .endif
 

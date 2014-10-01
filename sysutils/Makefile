@@ -221,6 +221,7 @@
     SUBDIR += exfat-utils
     SUBDIR += extipl
     SUBDIR += ezjail
+    SUBDIR += f3
     SUBDIR += fanout
     SUBDIR += farbot
     SUBDIR += fastest_cvsup
@@ -334,7 +335,6 @@
     SUBDIR += goaccess
     SUBDIR += gosa
     SUBDIR += gpart
-    SUBDIR += gpkgdep
     SUBDIR += gpte
     SUBDIR += graffer
     SUBDIR += graid5
@@ -788,6 +788,7 @@
     SUBDIR += rubygem-SyslogLogger
     SUBDIR += rubygem-backup
     SUBDIR += rubygem-bundler
+    SUBDIR += rubygem-bundler_ext
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-capistrano-ext
     SUBDIR += rubygem-chef
@@ -806,6 +807,7 @@
     SUBDIR += rubygem-guard-rspec
     SUBDIR += rubygem-hammer_cli
     SUBDIR += rubygem-hammer_cli_foreman
+    SUBDIR += rubygem-hammer_cli_foreman_bootdisk
     SUBDIR += rubygem-hiera
     SUBDIR += rubygem-hiera-json
     SUBDIR += rubygem-hiera-puppet
@@ -816,6 +818,7 @@
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-parallel
     SUBDIR += rubygem-rubyipmi
+    SUBDIR += rubygem-smart_proxy_salt
     SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu
     SUBDIR += rubygem-sys-filesystem

@@ -11,7 +11,7 @@
 .if !defined(_INCLUDE_USES_DESKTOP_FILE_UTILS_MK)
 _INCLUDE_USES_DESKTOP_FILE_UTILS_MK=	yes
 
-.if defined(desktop-file-utils_ARGS)
+.if !empty(desktop-file-utils_ARGS)
 IGNORE=	USES=desktop-file-utils does not require args
 .endif
 

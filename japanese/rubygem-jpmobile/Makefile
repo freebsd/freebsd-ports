@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jpmobile
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
@@ -10,12 +10,15 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Rails plugin for Japanese mobile-phones
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-rails>=3.2.8:${PORTSDIR}/www/rubygem-rails
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+PORTSCOUT=	limit:^3\.0\.
 
 OPTIONS_DEFINE=		GEOKIT IPADDRESSES TERMINFO
 GEOKIT_DESC=		Run with geokit

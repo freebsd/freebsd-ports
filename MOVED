@@ -6954,7 +6954,6 @@ emulators/psim-freebsd||2014-09-01|Not staged
 emulators/vMac||2014-09-01|Not staged
 finance/opentaxsolver||2014-09-01|Not staged
 french/facturier||2014-09-01|Not staged
-ftp/vsftpd-ext||2014-09-01|Not staged
 games/actx||2014-09-01|Not staged
 games/atitd||2014-09-01|Not staged
 games/avp-demo||2014-09-01|Not staged
@@ -7513,3 +7512,22 @@ sysutils/rubygem-chef-server||2014-09-25|Has expired: Depends on broken rubygem-
 sysutils/rubygem-chef-solr||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 www/rubygem-chef-server-webui||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 www/rubygem-chef-server-api||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
+databases/freetds-msdblib||2014-09-27|No longer required, now covered by databases/freetds
+archivers/rpm5||2014-09-28|Has expired: Broken for more than 6 months
+devel/cocaine-core||2014-09-28|Has expired: Broken for more than 6 months
+graphics/ruby-tgif||2014-09-28|Has expired: Broken for more than 6 months
+net/libnet10||2014-09-30|Has expired: Superseded by net/libnet
+net/despoof||2014-09-30|Has expired: Depends on expired net/libnet10
+sysutils/gpkgdep||2014-09-30|Has expired: Requires old pkg_info
+security/vida||2014-09-30|Has expired: Depends on expired net/libnet10
+net/nemesis||2014-09-30|Has expired: Depends on expired net/libnet10
+net-mgmt/sing||2014-09-30|Has expired: Depends on expired net/libnet10
+net-mgmt/gps||2014-09-30|Has expired: Depends on expired net/libnet10
+net/ttlscan||2014-09-30|Has expired: Depends on expired net/libnet10
+security/zombiezapper||2014-09-30|Has expired: Depends on expired net/libnet10
+dns/dnshijacker||2014-09-30|Has expired: Depends on expired net/libnet10
+net/xboxproxy||2014-09-30|Has expired: Depends on expired net/libnet10
+net-mgmt/scdp||2014-09-30|Has expired: Depends on expired net/libnet10
+net-mgmt/angst||2014-09-30|Has expired: Depends on expired net/libnet10
+security/py-otr||2014-09-30|Has expired: Abandoned upstream
+net-p2p/cdonkey||2014-09-30|Has expired: depends on deprecated db41 version

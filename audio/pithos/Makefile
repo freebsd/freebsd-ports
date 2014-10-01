@@ -24,11 +24,9 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg \
 		git:${PORTSDIR}/devel/git
 
 USE_GNOME=	gtk30 py3gobject3
-USE_PYTHON=	3
-USE_PYDISTUTILS=yes
+USES=		python:3
+USE_PYTHON=	distutils autoplist
 USE_GSTREAMER=	core good bad soup
-PYDISTUTILS_AUTOPLIST=	yes
-INSTALLS_EGGINFO=	yes
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

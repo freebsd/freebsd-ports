@@ -70,7 +70,6 @@
     SUBDIR += fpc-sqlite
     SUBDIR += freetds
     SUBDIR += freetds-devel
-    SUBDIR += freetds-msdblib
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
     SUBDIR += galera
@@ -395,6 +394,7 @@
     SUBDIR += p5-Dancer-Plugin-Database-Core
     SUBDIR += p5-Dancer-Plugin-Redis
     SUBDIR += p5-Dancer-Session-Memcached
+    SUBDIR += p5-Dancer2-Plugin-DBIC
     SUBDIR += p5-Data-Page
     SUBDIR += p5-Data-Pageset
     SUBDIR += p5-Exception-Class-DBI

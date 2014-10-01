@@ -181,6 +181,8 @@
     SUBDIR += kbdscan
     SUBDIR += kcd
     SUBDIR += kde-thumbnailer-chm
+    SUBDIR += kde-thumbnailer-epub
+    SUBDIR += kde-thumbnailer-fb2
     SUBDIR += kde4-l10n
     SUBDIR += kde4-l10n-bg
     SUBDIR += kde4-l10n-bs
@@ -257,6 +259,7 @@
     SUBDIR += mbuffer
     SUBDIR += mc
     SUBDIR += mc-light
+    SUBDIR += mdp
     SUBDIR += metalink-checker
     SUBDIR += metalink-editor
     SUBDIR += metalink-tools

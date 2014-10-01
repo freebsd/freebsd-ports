@@ -2,6 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -31,12 +32,12 @@ LLVM_SUFFIX=	${PORTVERSION:C/([0-9]\.[0-9]).*/\1/:S/.//g:C/r.//}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
+PYTHONLIBDIR=	${LLVM_PREFIX}/lib/python
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
-USES=		gmake perl5
+USES=		gmake perl5 python
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
 
 MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \
 		LLVMIncDir=${LLVM_PREFIX}/include \
@@ -109,6 +110,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' \
 	    ${WRKSRC}/tools/clang/lib/Frontend/InitHeaderSearch.cpp
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}/|g' \
+	    -e 's|%%LLVM_SUFFIX%%|${LLVM_SUFFIX}|g' \
 	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build
 
 pre-build:
@@ -122,9 +124,7 @@ pre-build:
 
 post-build:
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${MAKE_CMD} man
-.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${MAKE_CMD} html ps
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${LLVM_PREFIX}/lib/libclang.so
@@ -146,10 +146,18 @@ post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/tools/clang/docs/tools && \
 	    ${MAKE_CMD} DESTDIR=${STAGEDIR}/ install-html install-ps
-.endif
+	${MKDIR} ${STAGEDIR}${PYTHONLIBDIR}
+	${MKDIR} ${STAGEDIR}${PYTHONLIBDIR}/Resources
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-view/*.py \
+	    ${STAGEDIR}${PYTHONLIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-view/Resources/* \
+	    ${STAGEDIR}${PYTHONLIBDIR}/Resources
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css \
+	    ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js \
+	    ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${STAGEDIR}${MANPREFIX}/man/man1/clang${LLVM_SUFFIX}.1
 	${INSTALL_MAN} ${WRKSRC}/tools/clang/tools/scan-build/scan-build.1 \
@@ -159,7 +167,8 @@ PLIST_FILE_LIST=	${COMMANDS:S|^|bin/|} \
 			lib/libclang*
 PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
-			lib/clang
+			lib/clang \
+			lib/python
 
 build-plist:
 	${RM} -f ${PLIST}

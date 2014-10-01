@@ -52,32 +52,3 @@
 %%PERL5_MAN3%%/Net::CLI::Interact::Transport::SSH.3.gz
 %%PERL5_MAN3%%/Net::CLI::Interact::Transport::Serial.3.gz
 %%PERL5_MAN3%%/Net::CLI::Interact::Transport::Telnet.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CLI/Interact
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CLI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh/sdf
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/bash
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/pixos7
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/fwsm/fwsm3
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/fwsm
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/nortel
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/junos
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/ios
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/hp
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/foundry
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/extremexos
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/catos
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/phrasebook
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/Transport/Wrapper
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/Transport/Role
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/Transport/Platform
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/Transport
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/Role
-@dirrm %%SITE_PERL%%/Net/CLI/Interact/Manual
-@dirrm %%SITE_PERL%%/Net/CLI/Interact
-@dirrmtry %%SITE_PERL%%/Net/CLI
-@dirrmtry %%SITE_PERL%%/Net

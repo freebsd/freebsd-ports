@@ -27,6 +27,8 @@ ALL_TARGET=	all slrnpull
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 JDOCSRC=	${WRKDIR}/${PORTNAME}-doc-j0.9.5.6-0
 
+MAKE_JOBS_UNSAFE=	yes
+
 # Tentatively improve inner makefiles in attempt to fix parallel builds
 post-patch:
 	@${REINPLACE_CMD} -e 's|-mkdir|mkdir -p| ; \

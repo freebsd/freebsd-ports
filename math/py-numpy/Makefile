@@ -3,7 +3,7 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}/:doc \
@@ -23,6 +23,7 @@ RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 
 USES=		fortran python
 USE_PYTHON=	concurrent distutils py3kplist
+LDFLAGS+=	-shared
 
 OPTIONS_DEFINE=		ATLAS SUITESPARSE DOCS
 OPTIONS_DEFAULT=	SUITESPARSE
@@ -48,14 +49,12 @@ PLIST_FILES+=	man/man1/f2py.1.gz
 .endif
 
 post-extract:
-	@${CP} ${DISTDIR}/numpy-ref-${PORTVERSION}.pdf ${WRKDIR}
-	@${CP} ${DISTDIR}/numpy-user-${PORTVERSION}.pdf ${WRKDIR}
+	${CP} ${DISTDIR}/numpy-ref-${PORTVERSION}.pdf ${WRKDIR}
+	${CP} ${DISTDIR}/numpy-user-${PORTVERSION}.pdf ${WRKDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
-	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
-# ignore LDFLAGS from env, as it overrides internal flags (e.g. -shared) for some reason
-	@${REINPLACE_CMD} -e "s|'LDFLAGS'|None|" ${WRKSRC}/numpy/distutils/fcompiler/__init__.py
+	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
+	${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//
 

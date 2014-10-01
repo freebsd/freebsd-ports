@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libplist
-PORTVERSION=	1.10
-PORTREVISION?=	1
+PORTVERSION=	1.11
+PORTREVISION?=	0
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 
@@ -13,13 +13,14 @@ LICENSE?=	LGPL21
 
 SLAVE_PORT?=	no
 
-USES=		cmake pkgconfig tar:bzip2
+USES+=		compiler libtool pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
-.if ${SLAVE_PORT} == "no"
+.if ${SLAVE_PORT} == no
 
 USE_GNOME=	libxml2
-CMAKE_ARGS=	-DENABLE_CYTHON:BOOL=False \
-		-DENABLE_SWIG:BOOL=False
+CONFIGURE_ARGS=	--without-cython
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	${LOCALBASE}/lib
 
@@ -27,20 +28,18 @@ PORTDOCS=	AUTHORS NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-patch:
-# Required for iconv headers (included by libxml2). Do not add to
-# CFLAGS as it may break updates from old versions.
-	@${REINPLACE_CMD} -e 's,$${LIBXML2_INCLUDE_DIR},$${LIBXML2_INCLUDE_DIR} ${LOCALBASE}/include,' \
-		${WRKSRC}/src/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's,$${CMAKE_INSTALL_LIBDIR}/pkgconfig,libdata/pkgconfig,' \
-		${WRKSRC}/CMakeLists.txt
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.endif # ${SLAVE_PORT} == "no"
+.endif # ${SLAVE_PORT} == no
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-build:
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 45
+	@${REINPLACE_CMD} -e '/__attribute__/ s,deprecated(x),deprecated(),' \
+		${WRKSRC}/include/plist/plist.h
+.endif
+
+.include <bsd.port.post.mk>

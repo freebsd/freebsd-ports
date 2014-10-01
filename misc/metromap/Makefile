@@ -14,9 +14,10 @@ COMMENT=	Simple application for finding paths in different subways maps
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USES=		tar:bzip2 gettext gmake
-USE_PYTHON=	yes
+USES=		gettext gmake python shebangfix tar:bzip2
+SHEBANG_FILES=	metromap.py
 USE_GNOME=	pygtk2
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/metromap \
 		share/applications/metromap.desktop \
@@ -26,10 +27,6 @@ PORTDOCS=	AUTHORS NEWS README README.data TODO
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/bin/python,${SETENV} python,' ${WRKSRC}/metromap.py
-	@${RM} -f ${WRKSRC}/modules/ReadMap.py.orig
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

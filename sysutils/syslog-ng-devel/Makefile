@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.6.0b2
+PORTVERSION=	3.6.0r1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -47,8 +47,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking \
 		--enable-debug \
-		--datadir=${PREFIX}/share/syslog-ng/ \
-		--enable-pcre
+		--datadir=${PREFIX}/share/syslog-ng/
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 

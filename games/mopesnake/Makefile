@@ -14,16 +14,18 @@ EXTRACT_ONLY=	${PORTNAME}-pc-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Classic snake game in which you attempt to eat all the pain
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/doc/COPYING.txt
 
 RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-pc-${DISTVERSION}
 
-USES=		zip
-USE_PYTHON=	yes
+USES=		python zip
+NO_ARCH=	yes
 
 PORTDOCS=	index.html
+
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}

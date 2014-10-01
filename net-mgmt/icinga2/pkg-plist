@@ -60,23 +60,35 @@ lib/icinga2/libmmatch.so
 lib/icinga2/libnotification.so
 lib/icinga2/libperfdata.so
 lib/icinga2/libremote.so
-man/man8/icinga2-build-ca.8.gz
-man/man8/icinga2-build-key.8.gz
-man/man8/icinga2-disable-feature.8.gz
-man/man8/icinga2-enable-feature.8.gz
-man/man8/icinga2-prepare-dirs.8.gz
-man/man8/icinga2-sign-key.8.gz
-man/man8/icinga2.8.gz
+%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/icinga2/__init__.py
+%%PYTHON_SITELIBDIR%%/icinga2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/icinga2/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/icinga2/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/icinga2/commands/list_objects.py
+%%PYTHON_SITELIBDIR%%/icinga2/commands/list_objects.pyc
+%%PYTHON_SITELIBDIR%%/icinga2/config.py
+%%PYTHON_SITELIBDIR%%/icinga2/config.pyc
+%%PYTHON_SITELIBDIR%%/icinga2/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/icinga2/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/icinga2/utils/debug.py
+%%PYTHON_SITELIBDIR%%/icinga2/utils/debug.pyc
+%%PYTHON_SITELIBDIR%%/icinga2/utils/netstring.py
+%%PYTHON_SITELIBDIR%%/icinga2/utils/netstring.pyc
 sbin/icinga2
 sbin/icinga2-disable-feature
 sbin/icinga2-enable-feature
+sbin/icinga2-list-objects
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.Exceptions
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/1-about.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/2-getting-started.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/3-monitoring-basics.md
@@ -86,43 +98,43 @@ sbin/icinga2-enable-feature
 %%PORTDOCS%%%%DOCSDIR%%/markdown/7-troubleshooting.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/8-migration.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/9-appendix.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/schema/mysql.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/schema/upgrade/2.0.2.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/schema/upgrade/2.1.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/schema/pgsql.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/schema/upgrade/2.0.2.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/schema/upgrade/2.1.0.sql
 %%DATADIR%%/include/command-icinga.conf
+%%DATADIR%%/include/command-plugins-manubulon.conf
 %%DATADIR%%/include/command-plugins.conf
 %%DATADIR%%/include/command.conf
 %%DATADIR%%/include/itl
+%%DATADIR%%/include/manubulon
 %%DATADIR%%/include/plugins
 %%DATADIR%%/include/timeperiod.conf
 %%DATADIR%%/pki/openssl-quiet.cnf
 %%DATADIR%%/pki/openssl.cnf
 %%DATADIR%%/pki/pkifuncs
 %%DATADIR%%/pki/vars
-@dirrmtry %%ETCDIR%%/conf.d/hosts/localhost
-@dirrmtry %%ETCDIR%%/conf.d/hosts
-@dirrmtry %%ETCDIR%%/conf.d
-@dirrmtry %%ETCDIR%%/features-available
-@dirrmtry %%ETCDIR%%/features-enabled
-@dirrmtry %%ETCDIR%%/pki
-@dirrmtry %%ETCDIR%%/scripts
-@dirrmtry %%ETCDIR%%/zones.d
-@dirrmtry %%ETCDIR%%
-@dirrmtry lib/icinga2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/markdown
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/include
-@dirrmtry %%DATADIR%%/pki
-@dirrmtry %%DATADIR%%
-@unexec rmdir "/var/cache/icinga2" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lib/icinga2/api/log" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lib/icinga2/api/repository" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lib/icinga2/api/zones" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lib/icinga2/api" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lib/icinga2" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lib" >/dev/null 2>&1 || :
-@unexec rmdir "/var/log/icinga2/compat/archives" >/dev/null 2>&1 || :
-@unexec rmdir "/var/log/icinga2/compat" >/dev/null 2>&1 || :
-@unexec rmdir "/var/log/icinga2" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/icinga2/cmd" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/icinga2" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/icinga2/perfdata" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/icinga2/tmp" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/icinga2" >/dev/null 2>&1 || :
+share/man/man8/icinga2-build-ca.8
+share/man/man8/icinga2-build-key.8
+share/man/man8/icinga2-disable-feature.8
+share/man/man8/icinga2-enable-feature.8
+share/man/man8/icinga2-prepare-dirs.8
+share/man/man8/icinga2-sign-key.8
+share/man/man8/icinga2.8
+@dir /var/cache/icinga2
+@dir /var/lib/icinga2/api/log
+@dir /var/lib/icinga2/api/repository
+@dir /var/lib/icinga2/api/zones
+@dir /var/lib/icinga2/api
+@dir /var/lib/icinga2
+@dir /var/lib
+@dir /var/log/icinga2/compat/archives
+@dir /var/log/icinga2/compat
+@dir /var/log/icinga2
+@dir /var/run/icinga2/cmd
+@dir /var/run/icinga2
+@dir /var/spool/icinga2/perfdata
+@dir /var/spool/icinga2/tmp
+@dir /var/spool/icinga2

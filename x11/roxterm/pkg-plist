@@ -59,26 +59,3 @@ share/locale/uk/LC_MESSAGES/roxterm.mo
 %%DATADIR%%/Config/Colours/Tango
 %%DATADIR%%/Config/Shortcuts/Default
 %%DATADIR%%/roxterm-config.ui
-@dirrm %%DATADIR%%/Config/Shortcuts
-@dirrm %%DATADIR%%/Config/Colours
-@dirrm %%DATADIR%%/Config
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/uk
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pt_BR
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/appdata
-@dirrmtry man/uk/man1
-@dirrmtry man/uk
-@dirrmtry man/ru/man1
-@dirrmtry man/ru
-@dirrmtry man/pt_BR/man1
-@dirrmtry man/pt_BR
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/es/man1
-@dirrmtry man/es

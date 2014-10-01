@@ -1,0 +1,4 @@
+The font-awesome-rails provides the Font-Awesome web fonts and stylesheets as a
+Rails engine for use with the asset pipeline.
+
+WWW: https://github.com/bokmann/font-awesome-rails

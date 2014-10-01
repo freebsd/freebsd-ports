@@ -14,9 +14,7 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 #
 # 'tool' can currently be one of the following:
 #	autoconf, autoheader
-#	autoconf213, autoheader213 (legacy version)
 #	automake, aclocal
-#	automake14, aclocal14 (legacy version)
 #	libtoolize
 #
 # ':env' is used to specify that the environmental variables are needed
@@ -52,19 +50,9 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 #---------------------------------------------------------------------------
 
 # Known autotools components
-_AUTOTOOLS_ALL=	autoconf autoheader autoconf213 autoheader213 \
-		automake aclocal automake14 aclocal14 \
+_AUTOTOOLS_ALL=	autoconf autoheader \
+		automake aclocal \
 		libtoolize
-
-# Incompatible autotools mixing
-_AUTOTOOLS_IGN_autoconf=	autoconf213 autoheader213
-_AUTOTOOLS_IGN_autoheader=	autoconf213 autoheader213
-_AUTOTOOLS_IGN_autoconf213=	autoconf autoheader
-_AUTOTOOLS_IGN_autoheader213=	autoconf autoheader
-_AUTOTOOLS_IGN_automake=	automake14 aclocal14
-_AUTOTOOLS_IGN_aclocal=		automake14 aclocal14
-_AUTOTOOLS_IGN_automake14=	automake aclocal
-_AUTOTOOLS_IGN_aclocal14=	automake aclocal
 
 #---------------------------------------------------------------------------
 # Primary magic to break out the USE_AUTOTOOLS stanza into something
@@ -109,20 +97,6 @@ _AUTOTOOLS_BADCOMP+= ${component}:${_AUTOTOOL_${component}}
 IGNORE+=	Bad autotool stanza: ${_AUTOTOOLS_BADCOMP:O:u}
 .endif
 
-# Check for incompatible mixes of components
-#
-_AUTOTOOLS_IGN=
-.for component in ${_AUTOTOOLS_IMPL}
-. for ignore in ${_AUTOTOOLS_IGN_${component}}
-.  if defined(_AUTOTOOL_${ignore})
-_AUTOTOOLS_IGN+=	${component}
-.  endif
-. endfor
-.endfor
-.if !empty(_AUTOTOOLS_IGN)
-IGNORE+=	Incompatible autotools: ${_AUTOTOOLS_IGN:O:u}
-.endif
-
 #---------------------------------------------------------------------------
 # automake and aclocal
 #---------------------------------------------------------------------------
@@ -144,24 +118,6 @@ GNU_CONFIGURE?=			yes
 . endif
 .endif
 
-.if defined(_AUTOTOOL_aclocal14) && ${_AUTOTOOL_aclocal14} == "yes"
-_AUTOTOOL_automake14?=		env
-_AUTOTOOL_rule_aclocal14=	yes
-GNU_CONFIGURE?=			yes
-.endif
-
-.if defined(_AUTOTOOL_automake14)
-AUTOMAKE_VERSION=	1.4
-AUTOMAKE_APIVER=	1.4.6
-AUTOMAKE_PORT=		devel/automake14
-AUTOMAKE_ARGS+=		-i		# backwards compatibility shim
-
-. if ${_AUTOTOOL_automake14} == "yes"
-_AUTOTOOL_rule_automake=	yes
-GNU_CONFIGURE?=			yes
-. endif
-.endif
-
 .if defined(AUTOMAKE_VERSION)
 AUTOMAKE=		${LOCALBASE}/bin/automake-${AUTOMAKE_VERSION}
 AUTOMAKE_DIR=		${LOCALBASE}/share/automake-${AUTOMAKE_VERSION}
@@ -170,9 +126,6 @@ ACLOCAL_DIR=		${LOCALBASE}/share/aclocal-${AUTOMAKE_VERSION}
 
 . if defined(_AUTOTOOL_aclocal)
 ACLOCAL_ARGS?=		--automake-acdir=${ACLOCAL_DIR}
-. endif
-. if defined(_AUTOTOOL_aclocal14)
-ACLOCAL_ARGS?=		--acdir=${ACLOCAL_DIR}
 . endif
 
 AUTOMAKE_VARS=		AUTOMAKE=${AUTOMAKE} \
@@ -201,23 +154,6 @@ AUTOCONF_VERSION=	2.69
 AUTOCONF_PORT=		devel/autoconf
 
 . if ${_AUTOTOOL_autoconf} == "yes"
-_AUTOTOOL_rule_autoconf=	yes
-GNU_CONFIGURE?=			yes
-. endif
-.endif
-
-.if defined(_AUTOTOOL_autoheader213) && ${_AUTOTOOL_autoheader213} == "yes"
-_AUTOTOOL_autoconf213=		yes
-_AUTOTOOL_rule_autoheader=	yes
-GNU_CONFIGURE?=			yes
-.endif
-
-.if defined(_AUTOTOOL_autoconf213)
-AUTOCONF_VERSION=	2.13
-AUTOCONF_PORT=		devel/autoconf213
-AUTOM4TE=		${FALSE}	# doesn't exist here
-
-. if ${_AUTOTOOL_autoconf213} == "yes"
 _AUTOTOOL_rule_autoconf=	yes
 GNU_CONFIGURE?=			yes
 . endif

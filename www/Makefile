@@ -1461,6 +1461,7 @@
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
     SUBDIR += py-django
+    SUBDIR += py-django-allauth
     SUBDIR += py-django-annoying
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-appconf
@@ -1651,6 +1652,7 @@
     SUBDIR += py-requests
     SUBDIR += py-requests-oauth-hook
     SUBDIR += py-requests-oauthlib
+    SUBDIR += py-requests-toolbelt
     SUBDIR += py-requests1
     SUBDIR += py-restclient
     SUBDIR += py-rhodecode
@@ -1731,11 +1733,13 @@
     SUBDIR += ruby-aws
     SUBDIR += ruby-google
     SUBDIR += ruby-wgettsv
+    SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
+    SUBDIR += rubygem-acts-as-taggable-on3
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-akami
     SUBDIR += rubygem-amazon-ecs
@@ -1747,10 +1751,13 @@
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chosen-rails
     SUBDIR += rubygem-cookiejar
+    SUBDIR += rubygem-crass
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-d3_rails
+    SUBDIR += rubygem-d3_rails-rails4
     SUBDIR += rubygem-davclient
     SUBDIR += rubygem-domainatrix
+    SUBDIR += rubygem-dropzonejs-rails
     SUBDIR += rubygem-em-http-request
     SUBDIR += rubygem-em-socksify
     SUBDIR += rubygem-em-twitter
@@ -1768,11 +1775,14 @@
     SUBDIR += rubygem-geminabox
     SUBDIR += rubygem-gitlab-gollum-lib
     SUBDIR += rubygem-gitlab-grack
+    SUBDIR += rubygem-gollum-lib
     SUBDIR += rubygem-gon
+    SUBDIR += rubygem-gon-rails4
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-haml-coderay
     SUBDIR += rubygem-haml-contrib
     SUBDIR += rubygem-haml-rails
+    SUBDIR += rubygem-haml-rails-rails4
     SUBDIR += rubygem-heroku
     SUBDIR += rubygem-heroku-api
     SUBDIR += rubygem-heroku-nav
@@ -1789,6 +1799,7 @@
     SUBDIR += rubygem-jekyll-watch
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
+    SUBDIR += rubygem-jquery-atwho-rails-rails4
     SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-jquery-rails4
     SUBDIR += rubygem-jquery-turbolinks
@@ -1817,6 +1828,7 @@
     SUBDIR += rubygem-net-http-persistent25
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-ntlm-http
+    SUBDIR += rubygem-pagerduty
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-puma
     SUBDIR += rubygem-puma16
@@ -1852,6 +1864,7 @@
     SUBDIR += rubygem-robots
     SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-savon
+    SUBDIR += rubygem-sawyer
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-select2-rails
     SUBDIR += rubygem-selenium-webdriver

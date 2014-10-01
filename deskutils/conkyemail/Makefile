@@ -13,10 +13,9 @@ COMMENT=	Email script for conky
 
 RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky
 
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils
 NO_BUILD=	yes
-USE_PYDISTUTILS=yes
-INSTALLS_EGGINFO=	yes
 
 WRKSRC=		${WRKDIR}/src
 

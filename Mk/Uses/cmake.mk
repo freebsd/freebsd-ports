@@ -41,21 +41,18 @@
 _INCLUDE_USES_CMAKE_MK=	yes
 
 _valid_ARGS=		outsource run
-_cmake_ARGS=		${cmake_ARGS:C/\:/ /g}
 
 # Sanity check
-.if defined(cmake_ARGS)
-.  for arg in ${_cmake_ARGS}
+.for arg in ${cmake_ARGS}
 .    if empty(_valid_ARGS:M${arg})
 IGNORE=	Incorrect 'USES+= cmake:${cmake_ARGS}' usage: argument [${arg}] is not recognized
 .    endif
-.  endfor
-.endif
+.endfor
 
 CMAKE_BIN=		${LOCALBASE}/bin/cmake
 BUILD_DEPENDS+=		${CMAKE_BIN}:${PORTSDIR}/devel/cmake
 
-.if ${_cmake_ARGS:Mrun}
+.if ${cmake_ARGS:Mrun}
 RUN_DEPENDS+=		${CMAKE_BIN}:${PORTSDIR}/devel/cmake
 .endif
 
@@ -109,7 +106,7 @@ CMAKE_ARGS+=		-DCMAKE_COLOR_MAKEFILE:BOOL=OFF
 _CMAKE_MSG=		"===>  Performing in-source build"
 CMAKE_SOURCE_PATH?=	${WRKSRC}
 
-.if ${_cmake_ARGS:Moutsource}
+.if ${cmake_ARGS:Moutsource}
 _CMAKE_MSG=		"===>  Performing out-of-source build"
 CONFIGURE_WRKSRC=	${WRKDIR}/.build
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}

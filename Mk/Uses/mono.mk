@@ -10,7 +10,7 @@
 .if !defined(_INCLUDE_USES_MONO_MK)
 _INCLUDE_USES_MONO_MK=	yes
 
-.if defined(mono_ARGS)
+.if !empty(mono_ARGS)
 IGNORE=	USES=mono takes no arguments
 .endif
 

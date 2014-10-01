@@ -2,11 +2,11 @@
 
 PORTNAME=	metasploit_data_models
 PORTVERSION=	0.17.0
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tanawts@gmail.com
+MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Database layer for Metasploit
 
 LICENSE=	BSD3CLAUSE
@@ -19,5 +19,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=yes
 PLIST_FILES=	bin/mdm_console
+
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>

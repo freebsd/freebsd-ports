@@ -8,12 +8,7 @@ CATEGORIES=	textproc devel pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Providing a unified API for handling Atom/RSS
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-
+USES=		pear
 USE_PHP=	tidy dom
-PEAR_AUTOINSTALL=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

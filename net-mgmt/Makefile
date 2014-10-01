@@ -7,7 +7,6 @@
     SUBDIR += TkTopNetFlows
     SUBDIR += aggregate
     SUBDIR += aircrack-ng
-    SUBDIR += angst
     SUBDIR += ap-utils
     SUBDIR += argus3
     SUBDIR += argus3-clients
@@ -67,7 +66,6 @@
     SUBDIR += glpi-plugins-fusioninventory-server
     SUBDIR += glpi-plugins-tracker-agent
     SUBDIR += glpi-plugins-tracker-server
-    SUBDIR += gps
     SUBDIR += grepcidr
     SUBDIR += grepip
     SUBDIR += gsnmp
@@ -279,12 +277,10 @@
     SUBDIR += rubygem-snmp
     SUBDIR += rubygem-visage-app
     SUBDIR += sblim-wbemcli
-    SUBDIR += scdp
     SUBDIR += scli
     SUBDIR += sdig
     SUBDIR += send
     SUBDIR += sendip
-    SUBDIR += sing
     SUBDIR += sipcalc
     SUBDIR += sjitter
     SUBDIR += slate

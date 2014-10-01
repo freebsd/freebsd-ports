@@ -18,26 +18,15 @@ PEAR_DB_DESC=	PEAR::DB support
 PEAR_MDB_DESC=	PEAR::MDB support
 PEAR_MDB2_DESC=	PEAR::MDB2 support
 
-PEAR_AUTOINSTALL=	yes
+USES=	pear
+
+PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+PEAR_MDB_RUN_DEPENDS=	${PEARDIR}/MDB.php:${PORTSDIR}/databases/pear-MDB
+PEAR_MDB2_RUN_DEPENDS=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 
 post-extract:
 	${MKDIR} ${WRKSRC}/docs
 	${MV} ${WRKSRC}/README ${WRKSRC}/LICENSE ${WRKSRC}/docs
 	${MV} ${WRKDIR}/package2.xml ${WRKDIR}/package.xml
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPEAR_DB}
-RUN_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-.endif
-
-.if ${PORT_OPTIONS:MPEAR_MDB}
-RUN_DEPENDS+=	${PEARDIR}/MDB.php:${PORTSDIR}/databases/pear-MDB
-.endif
-
-.if ${PORT_OPTIONS:MPEAR_MDB2}
-RUN_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
-.endif
-
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.mk>

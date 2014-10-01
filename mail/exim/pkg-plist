@@ -34,23 +34,11 @@
 %%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/experimental-spec.txt
 %%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/filter.txt
 %%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/spec.txt
-%%EXIM%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 %%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/convert4r3
 %%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/convert4r4
 %%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/transport-filter.pl
-%%EXIM%%%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%EXIMDAEMON%%etc/periodic/daily/150.exim-tidydb
 %%EXIMDAEMON%%etc/periodic/daily/460.exim-mail-rejects
-%%EXIMDAEMON%%@dirrmtry etc/periodic/daily
-%%EXIMDAEMON%%@dirrmtry etc/periodic
 @sample %%ETCDIR%%/configure.sample
 %%SA_EXIM%%@sample %%ETCDIR%%/sa-exim.conf.sample
-@dirrmtry %%ETCDIR%%
-%%EXIM%%@owner %%EXIM_USER%%
-%%EXIM%%@group %%EXIM_GROUP%%
-%%EXIM%%@cwd /
-%%EXIM%%@dirrmtry %%LOGDIR%%
-%%EXIM%%@cwd %%RESETPREFIX%%
-%%EXIM%%@owner root
-%%EXIM%%@group wheel
-%%EXIM%%@exec install -d -o %%EXIM_USER%% -g %%EXIM_GROUP%% /%%LOGDIR%%
+%%EXIM%%@dir(%%EXIM_USER%%,%%EXIM_GROUP%%,) /%%LOGDIR%%

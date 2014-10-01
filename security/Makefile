@@ -630,6 +630,7 @@
     SUBDIR += pam_krb5-rh
     SUBDIR += pam_ldap
     SUBDIR += pam_mkhomedir
+    SUBDIR += pam_ocra
     SUBDIR += pam_p11
     SUBDIR += pam_per_user
     SUBDIR += pam_pseudo
@@ -777,7 +778,6 @@
     SUBDIR += py-oauthlib
     SUBDIR += py-openid
     SUBDIR += py-openssl
-    SUBDIR += py-otr
     SUBDIR += py-paramiko
     SUBDIR += py-passlib
     SUBDIR += py-plaso
@@ -797,6 +797,7 @@
     SUBDIR += py-pysha3
     SUBDIR += py-python-registry
     SUBDIR += py-rsa
+    SUBDIR += py-service_identity
     SUBDIR += py-slowaes
     SUBDIR += py-ssh
     SUBDIR += py-sslstrip
@@ -994,7 +995,6 @@
     SUBDIR += unhide
     SUBDIR += unicornscan
     SUBDIR += unssh
-    SUBDIR += vida
     SUBDIR += vinetto
     SUBDIR += vlock
     SUBDIR += vlog
@@ -1023,7 +1023,6 @@
     SUBDIR += ykpers
     SUBDIR += zebedee
     SUBDIR += zenmap
-    SUBDIR += zombiezapper
     SUBDIR += zxid
     SUBDIR += zzuf
 

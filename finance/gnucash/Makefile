@@ -2,8 +2,7 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	2.6.3
-PORTREVISION=	5
+PORTVERSION=	2.6.4
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -13,13 +12,11 @@ COMMENT=	Quicken-like money and finance manager
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
-    		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
+BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile2
 LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
 		libgoffice-0.8.so:${PORTSDIR}/devel/goffice
-RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
-		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile \
+RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile2 \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Finance-Quote>=0:${PORTSDIR}/finance/p5-Finance-Quote

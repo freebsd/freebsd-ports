@@ -15,7 +15,10 @@ load_rc_config $name
 
 : ${volmand_enable:="NO"}
 
-command="%%PREFIX%%/sbin/volmand"
 pidfile="/var/run/volmand.pid"
 
+command_interpreter="/bin/sh"
+command="%%PREFIX%%/sbin/volmand"
+
 run_rc_command "$1"
+

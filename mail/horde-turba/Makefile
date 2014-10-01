@@ -11,13 +11,12 @@ COMMENT=	Horde web based address book
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LATEST_LINK=	horde-${PORTNAME}
-
 OPTIONS_DEFINE=	FACEBOOK IMSP LDAP
 FACEBOOK_DESC=	Support connections with Facebook
 IMSP_DSC=	Support IMSP addressbooks
 LDAP_DESC=	Support LDAP Addressbooks
 
+USES=	horde
 USE_PHP=	gettext hash json
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
@@ -43,19 +42,8 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_View
 
-.include <bsd.port.pre.mk>
+FACEBOOK_USE=	HORDE_RUN=Horde_Service_Facebook
+IMSP_USE=	HORDE_RUN=Horde_Imsp
+LDAP_USE=	HORDE_RUN=Horde_Ldap
 
-.if ${PORT_OPTIONS:MFACEBOOK}
-USE_HORDE_RUN+=	Horde_Service_Facebook
-.endif
-
-.if ${PORT_OPTIONS:MIMSP}
-USE_HORDE_RUN+=	Horde_Imsp
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_HORDE_RUN+=	Horde_Ldap
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

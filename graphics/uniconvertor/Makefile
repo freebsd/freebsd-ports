@@ -12,7 +12,10 @@ COMMENT=	Universal vector graphics translator
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:${PORTSDIR}/graphics/sk1libs
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/uniconvertor/app/modules/*.so
 
 .include <bsd.port.mk>

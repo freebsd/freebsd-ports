@@ -82,6 +82,3 @@ man/man6/airstrike.6.gz
 %%DATADIR%%/data/zeppelin-wreck.png
 %%DATADIR%%/data/zeppelin.png
 share/pixmaps/airstrike.png
-@dirrm %%DATADIR%%/data/sound
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

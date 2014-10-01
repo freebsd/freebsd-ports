@@ -17,7 +17,7 @@ LICENSE=	BSD
 
 USES+=		cpe
 
-CPE_VENDOR=	igor_sysoev
+CPE_VENDOR=	nginx
 CPE_PRODUCT=	nginx
 
 NO_OPTIONS_SORT=	yes
@@ -653,7 +653,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	4.0.50
+PASSENGER_VERSION=	4.0.52
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx

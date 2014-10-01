@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icinga2
-DISTVERSION=	2.0.1
+DISTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://github.com/Icinga/${PORTNAME}/archive/v${DISTVERSION}.tar.gz?dummy=/
@@ -11,22 +11,23 @@ COMMENT=	Monitoring and management system for hosts, services and networks
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX}
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo # for better debugging
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USES=		bison cmake
+USES=		bison cmake python
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	MYSQL PGSQL
 OPTIONS_RADIO=		PLUGINS
 OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
 
-OPTIONS_DEFAULT=	MYSQL MONPLUGINS
+OPTIONS_DEFAULT=	MYSQL MONPLUGINS EXAMPLES
 
 MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
@@ -46,6 +47,7 @@ CMAKE_ARGS+=	-DICINGA2_USER=${ICINGA2USER} \
 		-DICINGA2_GROUP=${ICINGA2GROUP} \
 		-DICINGA2_COMMAND_USER=${ICINGA2USER} \
 		-DICINGA2_COMMAND_GROUP=${ICINGA2USER} \
+		-DICINGA2_PLUGINDIR=${LOCALBASE}/libexec/nagios \
 		-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc \
 		-DCMAKE_INSTALL_LOCALSTATEDIR=${LOCALSTATEDIR} \
 		-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man \
@@ -55,6 +57,7 @@ SUB_LIST=	ICINGA2LOGDIR=${ICINGA2LOGDIR} \
 		ICINGA2GROUP=${ICINGA2GROUP} \
 		WWWGRP=${WWWGRP}
 
+# Config files with references to "Linux"
 LINUX_CONFIG=	groups.conf services.conf hosts/localhost.conf
 
 .include <bsd.port.pre.mk>
@@ -74,7 +77,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 PLIST_SUB+=	PGSQL=""
 .else
 PLIST_SUB+=	PGSQL="@comment "
@@ -83,8 +86,6 @@ PLIST_SUB+=	PGSQL="@comment "
 post-patch:
 	${REINPLACE_CMD} -e '/^add_subdirectory(initsystem)/d' \
 	                 -e '/logrotate\.d/d' ${WRKSRC}/etc/CMakeLists.txt
-	${REINPLACE_CMD} 's,/usr/lib/nagios/plugins,${LOCALBASE}/libexec/nagios,g' \
-	                 ${WRKSRC}/etc/icinga2/constants.conf
 .for f in ${LINUX_CONFIG}
 	${REINPLACE_CMD} 's,[Ll]inux,FreeBSD,g' ${WRKSRC}/etc/icinga2/conf.d/${f}
 .endfor
@@ -93,6 +94,14 @@ post-patch:
 .endif
 .if !${PORT_OPTIONS:MMYSQL}
 	${REINPLACE_CMD} '/^add_subdirectory(db_ido_pgsql)/d' ${WRKSRC}/components/CMakeLists.txt
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
+.for db in mysql pgsql
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${db}
+	(cd ${WRKSRC}/components/db_ido_${db} && ${COPYTREE_SHARE} schema ${STAGEDIR}${EXAMPLESDIR}/${db})
+.endfor
 .endif
 
 .include <bsd.port.post.mk>

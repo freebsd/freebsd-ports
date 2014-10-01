@@ -1,6 +1,6 @@
---- setup.py.orig	2012-03-05 04:41:43.000000000 +0400
-+++ setup.py	2012-03-10 14:17:07.000000000 +0400
-@@ -206,7 +206,6 @@
+--- setup.py.orig	2014-07-09 19:08:22 UTC
++++ setup.py
+@@ -208,7 +208,6 @@
  _ext_modules = []
  
  # Check for a system libtorrent and if found, then do not build the libtorrent extension
@@ -8,7 +8,7 @@
  try:
      from deluge._libtorrent import lt
  except ImportError:
-@@ -214,6 +213,8 @@
+@@ -216,6 +215,8 @@
  else:
      build_libtorrent = False
  
@@ -17,11 +17,12 @@
  if build_libtorrent:
      got_libtorrent = False
      if not os.path.exists("libtorrent"):
-@@ -487,31 +488,8 @@
+@@ -488,31 +489,7 @@
+ }
  
  # Data files to be installed to the system
- _data_files = [
--    ('share/icons/scalable/apps', ['deluge/data/icons/scalable/apps/deluge.svg']),
+-_data_files = [
+-    ('share/icons/hicolor/scalable/apps', ['deluge/data/icons/scalable/apps/deluge.svg']),
 -    ('share/icons/hicolor/128x128/apps', ['deluge/data/icons/hicolor/128x128/apps/deluge.png']),
 -    ('share/icons/hicolor/16x16/apps', ['deluge/data/icons/hicolor/16x16/apps/deluge.png']),
 -    ('share/icons/hicolor/192x192/apps', ['deluge/data/icons/hicolor/192x192/apps/deluge.png']),
@@ -41,11 +42,11 @@
 -        'docs/man/deluge-gtk.1',
 -        'docs/man/deluge-web.1',
 -        'docs/man/deluge-console.1'])
- ]
- 
+-]
+-
 -if not windows_check() and os.path.exists(desktop_data):
 -    _data_files.append(('share/applications', [desktop_data]))
--
++_data_files = []
+ 
  entry_points = {
      "console_scripts": [
-         "deluge-console = deluge.ui.console:start",

@@ -878,6 +878,8 @@ lib32/libintl.so.9
 lib32/libjpeg.so.11
 lib32/liblcms2.so.2
 %%OSREL11%%lib32/libllvmradeon9.1.7.so
+lib32/libltdl.so.7
+lib32/libmpg123.so.0
 lib32/libnettle.so.4
 lib32/libopenal.so.1
 lib32/libp11-kit.so.0
@@ -887,6 +889,9 @@ lib32/libpthread-stubs.so.0
 %%OSREL11%%lib32/libstdc++.so.6
 lib32/libtasn1.so.6
 lib32/libtspi.so.1
+lib32/libv4l1.so.0
+lib32/libv4l2.so.0
+lib32/libv4lconvert.so.0
 lib32/libwine.so
 lib32/libwine.so.1
 %%OSREL11%%lib32/libxcb-dri2.so.0
@@ -1085,6 +1090,7 @@ lib32/wine/dpnet.dll.so
 lib32/wine/dpnhpast.dll.so
 lib32/wine/dpnlobby.dll.so
 lib32/wine/dpnsvr.exe.so
+lib32/wine/dpvoice.dll.so
 lib32/wine/dpwsockx.dll.so
 lib32/wine/drmclien.dll.so
 lib32/wine/dsound.dll.so
@@ -1293,6 +1299,7 @@ lib32/wine/fakedlls/dpnet.dll
 lib32/wine/fakedlls/dpnhpast.dll
 lib32/wine/fakedlls/dpnlobby.dll
 lib32/wine/fakedlls/dpnsvr.exe
+lib32/wine/fakedlls/dpvoice.dll
 lib32/wine/fakedlls/dpwsockx.dll
 lib32/wine/fakedlls/drmclien.dll
 lib32/wine/fakedlls/dsound.dll
@@ -1459,6 +1466,7 @@ lib32/wine/fakedlls/ngen.exe
 lib32/wine/fakedlls/normaliz.dll
 lib32/wine/fakedlls/notepad.exe
 lib32/wine/fakedlls/npmshtml.dll
+lib32/wine/fakedlls/npptools.dll
 lib32/wine/fakedlls/ntdll.dll
 lib32/wine/fakedlls/ntdsapi.dll
 lib32/wine/fakedlls/ntoskrnl.exe
@@ -1635,6 +1643,7 @@ lib32/wine/fakedlls/winefile.exe
 lib32/wine/fakedlls/winemapi.dll
 lib32/wine/fakedlls/winemenubuilder.exe
 lib32/wine/fakedlls/winemine.exe
+lib32/wine/fakedlls/winemp3.acm
 lib32/wine/fakedlls/winemsibuilder.exe
 lib32/wine/fakedlls/wineoss.drv
 lib32/wine/fakedlls/winepath.exe
@@ -2019,6 +2028,7 @@ lib32/wine/ngen.exe.so
 lib32/wine/normaliz.dll.so
 lib32/wine/notepad.exe.so
 lib32/wine/npmshtml.dll.so
+lib32/wine/npptools.dll.so
 lib32/wine/ntdll.dll.so
 lib32/wine/ntdsapi.dll.so
 lib32/wine/ntoskrnl.exe.so
@@ -2195,6 +2205,7 @@ lib32/wine/winefile.exe.so
 lib32/wine/winemapi.dll.so
 lib32/wine/winemenubuilder.exe.so
 lib32/wine/winemine.exe.so
+lib32/wine/winemp3.acm.so
 lib32/wine/winemsibuilder.exe.so
 lib32/wine/wineoss.drv.so
 lib32/wine/winepath.exe.so

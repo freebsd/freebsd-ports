@@ -1186,10 +1186,10 @@ ARCH!=	${UNAME} -p
 OPSYS!=	${UNAME} -s
 .endif
 
+UNAMER!=${UNAME} -r
+
 # Get the operating system revision
-.if !defined(OSREL)
-OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
-.endif
+OSREL?=	${UNAMER:C/-.*//}
 
 # Get __FreeBSD_version
 .if !defined(OSVERSION)
@@ -1198,13 +1198,26 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/
 .elif exists(${SRC_BASE}/sys/sys/param.h)
 OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC_BASE}/sys/sys/param.h
 .else
+.if 0
+.error Unable to determine OS version.  Either define OSVERSION, install /usr/include/sys/param.h or define SRC_BASE.
+.else
 OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
+.endif
+.endif
+
+# Convert OSVERSION to major release number
+_OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
+# Sanity checks for chroot/jail building.
+.if ${_OSVERSION_MAJOR} != ${UNAMER:R}
+.error UNAME_r (${UNAMER}) and OSVERSION (${OSVERSION}) do not agree on major version number.
+.elif ${_OSVERSION_MAJOR} != ${OSREL:R}
+.error OSREL (${OSREL}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .endif
 
 # Enable new xorg for FreeBSD versions after Radeon KMS was imported unless
 # WITHOUT_NEW_XORG is set.
-.if (${OSVERSION} >= 902510 && ${OSVERSION} < 1000000) || ${OSVERSION} >= 1000704
+.if ${OSVERSION} >= 902510
 . if !defined(WITHOUT_NEW_XORG)
 WITH_NEW_XORG?=	yes
 . else
@@ -1221,7 +1234,7 @@ _PKG_VERSION!=	${PKG_BIN} -v
 .endif
 _PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
 .if ${_PKG_STATUS} == "<"
-IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade pkg(8) first
+IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade the ${PKG_ORIGIN} port first
 .endif
 .endif
 
@@ -1493,11 +1506,13 @@ QA_ENV+=	USESSHAREDMIMEINFO=yes
 
 # Loading features
 .for f in ${USES}
-_f=${f:C/\:.*//g}
-.if ${_f} != ${f}
-${_f}_ARGS:=	${f:C/^[^\:]*\://g}
+_f:=		${f:C/\:.*//}
+.if !defined(${_f}_ARGS)
+${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .endif
-.include "${USESDIR}/${_f}.mk"
+.endfor
+.for f in ${USES}
+.include "${USESDIR}/${f:C/\:.*//}.mk"
 .endfor
 
 .if defined(USE_BZIP2)
@@ -1917,11 +1932,13 @@ USE_SUBMAKE=	yes
 
 # Loading features
 .for f in ${_USES_POST}
-_f=${f:C/\:.*//g}
-.if ${_f} != ${f}
-${_f}_ARGS:=	${f:C/^[^\:]*\://g}
+_f:=		${f:C/\:.*//}
+.if !defined(${_f}_ARGS)
+${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .endif
-.include "${USESDIR}/${_f}.mk"
+.endfor
+.for f in ${_USES_POST}
+.include "${USESDIR}/${f:C/\:.*//}.mk"
 .endfor
 
 .if defined(USE_XORG)

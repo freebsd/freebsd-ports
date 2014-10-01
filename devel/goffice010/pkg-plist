@@ -161,46 +161,36 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/go-undo.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-units.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/goffice-utils.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/regutf8.h
-lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.la
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.so
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.la
 lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.so
 lib/goffice/%%VERSION%%/plugins/plot_distrib/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_distrib/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_pie/pie.la
 lib/goffice/%%VERSION%%/plugins/plot_pie/pie.so
 lib/goffice/%%VERSION%%/plugins/plot_pie/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_pie/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_radar/radar.la
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.so
 lib/goffice/%%VERSION%%/plugins/plot_surface/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_surface/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_surface/surface.la
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.so
 lib/goffice/%%VERSION%%/plugins/plot_xy/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_xy/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_xy/xy.la
 lib/goffice/%%VERSION%%/plugins/plot_xy/xy.so
-lib/goffice/%%VERSION%%/plugins/reg_linear/linreg.la
 lib/goffice/%%VERSION%%/plugins/reg_linear/linreg.so
 lib/goffice/%%VERSION%%/plugins/reg_linear/plugin.xml
 lib/goffice/%%VERSION%%/plugins/reg_linear/reg-types.xml
-lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.la
 lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.so
 lib/goffice/%%VERSION%%/plugins/reg_logfit/plugin.xml
 lib/goffice/%%VERSION%%/plugins/reg_logfit/reg-types.xml
 lib/goffice/%%VERSION%%/plugins/smoothing/plugin.xml
-lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.la
 lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.so
 lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
-lib/libgoffice-%%SHORT_VER%%.la
 lib/libgoffice-%%SHORT_VER%%.so
 lib/libgoffice-%%SHORT_VER%%.so.10
-lib/libgoffice-%%SHORT_VER%%.so.%%LIBVERSION%%
+lib/libgoffice-%%SHORT_VER%%.so.10.0.11
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 share/doc/goffice-%%SHORT_VER%%/GOArrow.html
 share/doc/goffice-%%SHORT_VER%%/GOBezierSpline.html
@@ -414,41 +404,4 @@ share/locale/vi/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/goffice-%%VERSION%%.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@exec /bin/mkdir -p %D/lib/goffice/%%SHORT_VER%%/plugins
-@dirrm share/doc/goffice-%%SHORT_VER%%
-@dirrm lib/goffice/%%VERSION%%/plugins/smoothing
-@dirrm lib/goffice/%%VERSION%%/plugins/reg_logfit
-@dirrm lib/goffice/%%VERSION%%/plugins/reg_linear
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_xy
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_surface
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_radar
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_pie
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_distrib
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_barcol
-@dirrm lib/goffice/%%VERSION%%/plugins
-@dirrm lib/goffice/%%VERSION%%
-@dirrm lib/goffice/%%SHORT_VER%%/plugins
-@dirrm lib/goffice/%%SHORT_VER%%
-@dirrmtry lib/goffice
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/utils
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/math
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/gtk
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/graph
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/data
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/component
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/canvas
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice/app
-@dirrm include/libgoffice-%%SHORT_VER%%/goffice
-@dirrm include/libgoffice-%%SHORT_VER%%
+@dir lib/goffice/%%SHORT_VER%%/plugins

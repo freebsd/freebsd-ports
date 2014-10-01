@@ -4,4 +4,3 @@ lib/liblightning.a
 lib/liblightning.so
 lib/liblightning.so.0
 lib/liblightning.so.0.0.0
-@dirrm include/lightning

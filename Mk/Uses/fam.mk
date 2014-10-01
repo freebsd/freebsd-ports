@@ -32,7 +32,7 @@ _HAVE_FAM=	fam
 IGNORE=	FAM mismatch: ${_HAVE_FAM} is installed, but ${WITH_FAM_SYSTEM} desired
 .endif
 
-.if defined(fam_ARGS)
+.if !empty(fam_ARGS)
 .for _fam_ARGS in ${fam_ARGS}
 .  if ! ${_FAM_SYSTEMS:M${_fam_ARGS}}
 IGNORE=	Incorrect 'USES+= fam:${fam_ARGS}' usage: argument [${_fam_ARGS}] is not recognized
@@ -47,7 +47,7 @@ IGNORE=	FAM mismatch: port wants to use ${fam_ARGS} while you wish to use ${WITH
 .endif
 
 # Proceed
-.if defined(fam_ARGS)
+.if !empty(fam_ARGS)
 _USE_FAM=	${fam_ARGS}
 .elif defined(_HAVE_FAM)
 _USE_FAM=	${_HAVE_FAM}

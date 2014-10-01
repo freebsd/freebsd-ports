@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde IMAP abstraction interface
 
+USES=	horde
 USE_PHP=	hash
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Mail \
@@ -21,19 +22,8 @@ IMAP_DESC=	Require PHP imap extension
 MBSTRING_DESC=	Require PHP mbstring extension
 SASL_DESC=	Support SASL Authentication
 
-.include <bsd.port.pre.mk>
+IMAP_USE=	PHP=imap
+MBSTRING_USE=	PHP=mbstring
+SASL_RUN_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
 
-.if ${PORT_OPTIONS:MIMAP}
-USE_PHP+=	imap
-.endif
-
-.if ${PORT_OPTIONS:MMBSTRING}
-USE_PHP+=	mbstring
-.endif
-
-.if ${PORT_OPTIONS:MSASL}
-RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
-.endif
-
-.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

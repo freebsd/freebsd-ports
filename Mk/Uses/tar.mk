@@ -10,8 +10,6 @@
 .if !defined(_INCLUDE_USES_TAR_MK)
 _INCLUDE_USES_TAR_MK=	yes
 
-tar_ARGS?=	none
-
 .if ${tar_ARGS} == xz
 EXTRACT_SUFX?=	.tar.xz
 .elif ${tar_ARGS} == lzma
@@ -26,7 +24,7 @@ EXTRACT_SUFX?=	.tgz
 EXTRACT_SUFX?=	.tbz
 .elif ${tar_ARGS} == Z
 EXTRACT_SUFX?=	.tar.Z
-.elif ${tar_ARGS} == none
+.elif empty(tar_ARGS)
 EXTRACT_SUFX?=	.tar
 .else
 IGNORE=	Incorrect 'USES+=tar:${tar_ARGS}'

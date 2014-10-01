@@ -10,7 +10,7 @@ MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	fbsd@dylanleigh.net
-COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
+COMMENT?=	Advanced Maryland Automatic Network Disk Archiver (server)
 
 RUN_DEPENDS=	perl-amanda:${PORTSDIR}/misc/amanda-perl-wrapper
 BUILD_DEPENDS=	perl-amanda:${PORTSDIR}/misc/amanda-perl-wrapper
@@ -38,6 +38,8 @@ CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl-amanda
 PKG_MESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
+
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GNUTAR
 OPTIONS_DEFAULT=	GNUTAR

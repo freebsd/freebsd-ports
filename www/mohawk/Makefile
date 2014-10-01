@@ -25,7 +25,6 @@ PORTEXAMPLES=	*
 USE_RC_SUBR=	mohawk
 
 CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/event2
 
 OPTIONS_DEFINE=	EXAMPLES
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	xdm
 PORTVERSION=	1.1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,25 +12,21 @@ LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	xmu x11 xau xinerama xpm xdmcp xt xext xaw
-CONFIGURE_ARGS+=	--with-xdmconfigdir=${EXAMPLESDIR} \
-			--with-xdmscriptdir=${EXAMPLESDIR}
+CONFIGURE_ARGS+=	--with-xdmconfigdir=${PREFIX}/lib/X11/xdm \
+			--with-xdmscriptdir=${PREFIX}/lib/X11/xdm
 USES=		libtool
 
 CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 		Xservers Xsession Xsetup_0 Xstartup Xwilling xdm-config
 
+OPTIONS_SUB=	yes
+
 OPTIONS_DEFINE=	XDMSHELL
 XDMSHELL_DESC=	Install xdmshell
 
-.include <bsd.port.options.mk>
+XDMSHELL_CONFIGURE_ENABLE=	xdmshell
 
-.if ${PORT_OPTIONS:MXDMSHELL}
-CONFIGURE_ARGS+=--enable-xdmshell
-PLIST_SUB+=	XDMSHELL=""
-.else
-CONFIGURE_ARGS+=--disable-xdmshell
-PLIST_SUB+=	XDMSHELL="@comment "
-.endif
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
@@ -42,15 +38,11 @@ post-patch:
 			${WRKSRC}/config/Xreset.cpp
 	@${REINPLACE_CMD} -e "s|@DESTDIR@||" ${WRKSRC}/Makefile.in
 
-post-configure:
-	@${REINPLACE_CMD} -e "s|${EXAMPLESDIR}|${PREFIX}/lib/X11/xdm|" \
-			${WRKSRC}/config.h
-
 post-install:
 .for f in ${CFFILES}
-	${CP} -n ${EXAMPLESDIR}/$f ${STAGEDIR}${PREFIX}/lib/X11/xdm/$f || ${TRUE}
+	@${MV} ${STAGEDIR}${PREFIX}/lib/X11/xdm/${f} ${STAGEDIR}${PREFIX}/lib/X11/xdm/${f}.sample
 .endfor
-	${MKDIR} /var/lib/xdm/authdir
-	${LN} -sf /var/lib/xdm/authdir ${STAGEDIR}${PREFIX}/lib/X11/xdm/authdir
+	@${MKDIR} ${STAGEDIR}/var/lib/xdm/authdir
+	@${LN} -sf /var/lib/xdm/authdir ${STAGEDIR}${PREFIX}/lib/X11/xdm/authdir
 
 .include <bsd.port.mk>

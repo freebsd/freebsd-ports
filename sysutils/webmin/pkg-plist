@@ -541,6 +541,8 @@ lib/webmin/apache/cache.pl
 lib/webmin/apache/cgi_args.pl
 lib/webmin/apache/change_dir.cgi
 lib/webmin/apache/change_files.cgi
+lib/webmin/apache/config-CentOS-Linux-7-*
+lib/webmin/apache/config-Fedora-Linux-20-*
 lib/webmin/apache/config-aix
 lib/webmin/apache/config-cobalt-linux
 lib/webmin/apache/config-coherent-linux
@@ -792,6 +794,7 @@ lib/webmin/apache/mod_log_referer.pl
 lib/webmin/apache/mod_mem_cache.pl
 lib/webmin/apache/mod_mime.pl
 lib/webmin/apache/mod_mime_magic.pl
+lib/webmin/apache/mod_mpm_prefork.pl
 lib/webmin/apache/mod_negotiation.pl
 lib/webmin/apache/mod_perl.pl
 lib/webmin/apache/mod_php.pl
@@ -1818,7 +1821,6 @@ lib/webmin/bind8/syslog_logs.pl
 lib/webmin/bind8/unfreeze_zone.cgi
 lib/webmin/bind8/view_form.cgi
 lib/webmin/bind8/view_text.cgi
-lib/webmin/bind8/whois-servers
 lib/webmin/bind8/whois.cgi
 lib/webmin/bind8/xfer.cgi
 lib/webmin/bind8/zone_dnssecmgt_dt.cgi
@@ -4017,10 +4019,12 @@ lib/webmin/cron/help/intro.sv.UTF-8.html
 lib/webmin/cron/help/intro.sv.html
 lib/webmin/cron/help/intro.zh_TW.Big5.html
 lib/webmin/cron/help/intro.zh_TW.UTF-8.html
+lib/webmin/cron/images/bottom.gif
 lib/webmin/cron/images/down.gif
 lib/webmin/cron/images/gap.gif
 lib/webmin/cron/images/icon.gif
 lib/webmin/cron/images/smallicon.gif
+lib/webmin/cron/images/top.gif
 lib/webmin/cron/images/up.gif
 lib/webmin/cron/index.cgi
 lib/webmin/cron/install_check.pl
@@ -4944,9 +4948,12 @@ lib/webmin/dhcpd/acl_security.pl
 lib/webmin/dhcpd/backup_config.pl
 lib/webmin/dhcpd/cgi_args.pl
 lib/webmin/dhcpd/config-CentOS-Linux-5
-lib/webmin/dhcpd/config-CentOS-Linux-6.0-*
-lib/webmin/dhcpd/config-Redhat-Enterprise-Linux-6.0-*
-lib/webmin/dhcpd/config-Scientific-Linux-6.0-*
+lib/webmin/dhcpd/config-CentOS-Linux-6.0-6.9
+lib/webmin/dhcpd/config-CentOS-Linux-7.0-*
+lib/webmin/dhcpd/config-Redhat-Enterprise-Linux-6.0-6.9
+lib/webmin/dhcpd/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/dhcpd/config-Scientific-Linux-6.0-6.9
+lib/webmin/dhcpd/config-Scientific-Linux-7.0-*
 lib/webmin/dhcpd/config-Ubuntu-Linux-12.04-*
 lib/webmin/dhcpd/config-Ubuntu-Linux-8.10-10.04.4
 lib/webmin/dhcpd/config-cobalt-linux
@@ -5371,6 +5378,9 @@ lib/webmin/exim/module.info
 lib/webmin/exports/CHANGELOG
 lib/webmin/exports/backup_config.pl
 lib/webmin/exports/cgi_args.pl
+lib/webmin/exports/config-CentOS-Linux-7.0-*
+lib/webmin/exports/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/exports/config-Scientific-Linux-7.0-*
 lib/webmin/exports/config-aix
 lib/webmin/exports/config-cobalt-linux
 lib/webmin/exports/config-coherent-linux
@@ -5481,6 +5491,8 @@ lib/webmin/exports/help/anonuid.sv.UTF-8.html
 lib/webmin/exports/help/anonuid.sv.html
 lib/webmin/exports/help/anonuid.zh_TW.Big5.html
 lib/webmin/exports/help/anonuid.zh_TW.UTF-8.html
+lib/webmin/exports/help/auth.ca.UTF-8.html
+lib/webmin/exports/help/auth.ca.html
 lib/webmin/exports/help/auth.html
 lib/webmin/exports/help/client.ca.UTF-8.html
 lib/webmin/exports/help/client.ca.html
@@ -5638,6 +5650,8 @@ lib/webmin/exports/help/noaccess.sv.UTF-8.html
 lib/webmin/exports/help/noaccess.sv.html
 lib/webmin/exports/help/noaccess.zh_TW.Big5.html
 lib/webmin/exports/help/noaccess.zh_TW.UTF-8.html
+lib/webmin/exports/help/pfs.ca.UTF-8.html
+lib/webmin/exports/help/pfs.ca.html
 lib/webmin/exports/help/pfs.html
 lib/webmin/exports/help/ro.ca.UTF-8.html
 lib/webmin/exports/help/ro.ca.html
@@ -5656,7 +5670,11 @@ lib/webmin/exports/help/ro.sv.UTF-8.html
 lib/webmin/exports/help/ro.sv.html
 lib/webmin/exports/help/ro.zh_TW.Big5.html
 lib/webmin/exports/help/ro.zh_TW.UTF-8.html
-lib/webmin/exports/help/sec.html
+lib/webmin/exports/help/sec.ca.UTF-8.html
+lib/webmin/exports/help/sec.ca.html
+lib/webmin/exports/help/secs.ca.UTF-8.html
+lib/webmin/exports/help/secs.ca.html
+lib/webmin/exports/help/secs.html
 lib/webmin/exports/help/squash.ca.UTF-8.html
 lib/webmin/exports/help/squash.ca.html
 lib/webmin/exports/help/squash.es.UTF-8.html
@@ -5718,6 +5736,8 @@ lib/webmin/exports/help/sync.it.UTF-8.html
 lib/webmin/exports/help/sync.it.html
 lib/webmin/exports/help/sync.nl.UTF-8.html
 lib/webmin/exports/help/sync.nl.html
+lib/webmin/exports/help/vers.ca.UTF-8.html
+lib/webmin/exports/help/vers.ca.html
 lib/webmin/exports/help/vers.html
 lib/webmin/exports/images/export.gif
 lib/webmin/exports/images/icon.gif
@@ -5780,6 +5800,8 @@ lib/webmin/fail2ban/config
 lib/webmin/fail2ban/config-debian-linux
 lib/webmin/fail2ban/config-redhat-linux
 lib/webmin/fail2ban/config.info
+lib/webmin/fail2ban/config.info.ca
+lib/webmin/fail2ban/config.info.ca.UTF-8
 lib/webmin/fail2ban/config.info.de
 lib/webmin/fail2ban/config.info.de.UTF-8
 lib/webmin/fail2ban/config.info.ms_MY
@@ -5794,6 +5816,8 @@ lib/webmin/fail2ban/edit_jail.cgi
 lib/webmin/fail2ban/edit_jaildef.cgi
 lib/webmin/fail2ban/edit_manual.cgi
 lib/webmin/fail2ban/fail2ban-lib.pl
+lib/webmin/fail2ban/help/intro.ca.UTF-8.html
+lib/webmin/fail2ban/help/intro.ca.html
 lib/webmin/fail2ban/help/intro.html
 lib/webmin/fail2ban/images/actions.gif
 lib/webmin/fail2ban/images/config.gif
@@ -5804,6 +5828,8 @@ lib/webmin/fail2ban/images/manual.gif
 lib/webmin/fail2ban/images/smallicon.gif
 lib/webmin/fail2ban/index.cgi
 lib/webmin/fail2ban/install_check.pl
+lib/webmin/fail2ban/lang/ca
+lib/webmin/fail2ban/lang/ca.UTF-8
 lib/webmin/fail2ban/lang/de
 lib/webmin/fail2ban/lang/de.UTF-8
 lib/webmin/fail2ban/lang/en
@@ -9480,6 +9506,9 @@ lib/webmin/ipsec/CHANGELOG
 lib/webmin/ipsec/backup_config.pl
 lib/webmin/ipsec/bootup.cgi
 lib/webmin/ipsec/config
+lib/webmin/ipsec/config-CentOS-Linux-7.0-*
+lib/webmin/ipsec/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/ipsec/config-Scientific-Linux-7.0-*
 lib/webmin/ipsec/config-coherent-linux
 lib/webmin/ipsec/config-debian-linux
 lib/webmin/ipsec/config-mandrake-linux
@@ -9726,6 +9755,32 @@ lib/webmin/iscsi-target/save_timeout.cgi
 lib/webmin/iscsi-target/start.cgi
 lib/webmin/iscsi-target/stop.cgi
 lib/webmin/iscsi-target/up_allow.cgi
+lib/webmin/iscsi-tgtd/CHANGELOG
+lib/webmin/iscsi-tgtd/atboot.cgi
+lib/webmin/iscsi-tgtd/config
+lib/webmin/iscsi-tgtd/config-debian-linux
+lib/webmin/iscsi-tgtd/config.info
+lib/webmin/iscsi-tgtd/config.info.de
+lib/webmin/iscsi-tgtd/config.info.de.UTF-8
+lib/webmin/iscsi-tgtd/delete_targets.cgi
+lib/webmin/iscsi-tgtd/edit_manual.cgi
+lib/webmin/iscsi-tgtd/edit_target.cgi
+lib/webmin/iscsi-tgtd/images/icon.gif
+lib/webmin/iscsi-tgtd/images/smallicon.gif
+lib/webmin/iscsi-tgtd/index.cgi
+lib/webmin/iscsi-tgtd/install_check.pl
+lib/webmin/iscsi-tgtd/iscsi-tgtd-lib.pl
+lib/webmin/iscsi-tgtd/lang/de
+lib/webmin/iscsi-tgtd/lang/de.UTF-8
+lib/webmin/iscsi-tgtd/lang/en
+lib/webmin/iscsi-tgtd/lang/en.UTF-8
+lib/webmin/iscsi-tgtd/log_parser.pl
+lib/webmin/iscsi-tgtd/module.info
+lib/webmin/iscsi-tgtd/restart.cgi
+lib/webmin/iscsi-tgtd/save_manual.cgi
+lib/webmin/iscsi-tgtd/save_target.cgi
+lib/webmin/iscsi-tgtd/start.cgi
+lib/webmin/iscsi-tgtd/stop.cgi
 lib/webmin/jabber/backup_config.pl
 lib/webmin/jabber/config
 lib/webmin/jabber/config-cobalt-linux
@@ -10045,8 +10100,12 @@ lib/webmin/lang/zh_TW.Big5
 lib/webmin/lang/zh_TW.UTF-8
 lib/webmin/lang_list.txt
 lib/webmin/ldap-client/CHANGELOG
+lib/webmin/ldap-client/atboot.cgi
 lib/webmin/ldap-client/browser.cgi
 lib/webmin/ldap-client/check.cgi
+lib/webmin/ldap-client/config-CentOS-Linux-6.0-*
+lib/webmin/ldap-client/config-Redhat-Enterprise-Linux-6.0-*
+lib/webmin/ldap-client/config-Scientific-Linux-6.0-*
 lib/webmin/ldap-client/config-debian-linux-3.1
 lib/webmin/ldap-client/config-debian-linux-4.0-5.9
 lib/webmin/ldap-client/config-debian-linux-6.0-6.9
@@ -10132,6 +10191,8 @@ lib/webmin/ldap-client/save_base.cgi
 lib/webmin/ldap-client/save_pam.cgi
 lib/webmin/ldap-client/save_server.cgi
 lib/webmin/ldap-client/save_switch.cgi
+lib/webmin/ldap-client/start.cgi
+lib/webmin/ldap-client/stop.cgi
 lib/webmin/ldap-client/switch-lib.pl
 lib/webmin/ldap-server/CHANGELOG
 lib/webmin/ldap-server/acl_form.cgi
@@ -10145,8 +10206,11 @@ lib/webmin/ldap-server/backup_config.pl
 lib/webmin/ldap-server/bootup.cgi
 lib/webmin/ldap-server/cgi_args.pl
 lib/webmin/ldap-server/config
-lib/webmin/ldap-server/config-Redhat-Enterprise-Linux-6.0-*
-lib/webmin/ldap-server/config-Scientific-Linux-6.0-*
+lib/webmin/ldap-server/config-CentOS-Linux-7.0-*
+lib/webmin/ldap-server/config-Redhat-Enterprise-Linux-6.0-6.9
+lib/webmin/ldap-server/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/ldap-server/config-Scientific-Linux-6.0-6.9
+lib/webmin/ldap-server/config-Scientific-Linux-7.0-*
 lib/webmin/ldap-server/config-Ubuntu-Linux-8.10-*
 lib/webmin/ldap-server/config-debian-linux-*-5.9
 lib/webmin/ldap-server/config-debian-linux-6.0-*
@@ -10571,6 +10635,9 @@ lib/webmin/lpadmin/cluster_add.cgi
 lib/webmin/lpadmin/cluster_delete.cgi
 lib/webmin/lpadmin/colour.fig
 lib/webmin/lpadmin/colour.ps
+lib/webmin/lpadmin/config-CentOS-Linux-7.0-*
+lib/webmin/lpadmin/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/lpadmin/config-Scientific-Linux-7.0-*
 lib/webmin/lpadmin/config-aix
 lib/webmin/lpadmin/config-coherent-linux
 lib/webmin/lpadmin/config-corel-linux
@@ -12076,6 +12143,9 @@ lib/webmin/mysql/backup_db.cgi
 lib/webmin/mysql/backup_form.cgi
 lib/webmin/mysql/cgi_args.pl
 lib/webmin/mysql/config
+lib/webmin/mysql/config-CentOS-Linux-7.0-*
+lib/webmin/mysql/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/mysql/config-Scientific-Linux-7.0-*
 lib/webmin/mysql/config-aix
 lib/webmin/mysql/config-cobalt-linux
 lib/webmin/mysql/config-coherent-linux
@@ -12190,6 +12260,8 @@ lib/webmin/mysql/help/cnf.it.UTF-8.html
 lib/webmin/mysql/help/cnf.it.html
 lib/webmin/mysql/help/cnf.nl.UTF-8.html
 lib/webmin/mysql/help/cnf.nl.html
+lib/webmin/mysql/help/cnf.no.UTF-8.html
+lib/webmin/mysql/help/cnf.no.html
 lib/webmin/mysql/help/cpriv.ca.UTF-8.html
 lib/webmin/mysql/help/cpriv.ca.html
 lib/webmin/mysql/help/cpriv.es.UTF-8.html
@@ -12201,6 +12273,8 @@ lib/webmin/mysql/help/cpriv.it.UTF-8.html
 lib/webmin/mysql/help/cpriv.it.html
 lib/webmin/mysql/help/cpriv.nl.UTF-8.html
 lib/webmin/mysql/help/cpriv.nl.html
+lib/webmin/mysql/help/cpriv.no.UTF-8.html
+lib/webmin/mysql/help/cpriv.no.html
 lib/webmin/mysql/help/cpriv.sv.UTF-8.html
 lib/webmin/mysql/help/cpriv.sv.html
 lib/webmin/mysql/help/cpriv.zh_TW.Big5.html
@@ -12216,6 +12290,8 @@ lib/webmin/mysql/help/cprivs.it.UTF-8.html
 lib/webmin/mysql/help/cprivs.it.html
 lib/webmin/mysql/help/cprivs.nl.UTF-8.html
 lib/webmin/mysql/help/cprivs.nl.html
+lib/webmin/mysql/help/cprivs.no.UTF-8.html
+lib/webmin/mysql/help/cprivs.no.html
 lib/webmin/mysql/help/cprivs.sv.UTF-8.html
 lib/webmin/mysql/help/cprivs.sv.html
 lib/webmin/mysql/help/cprivs.zh_TW.Big5.html
@@ -15432,6 +15508,9 @@ lib/webmin/postgresql/backup_config.pl
 lib/webmin/postgresql/backup_form.cgi
 lib/webmin/postgresql/cgi_args.pl
 lib/webmin/postgresql/config
+lib/webmin/postgresql/config-CentOS-Linux-7.0-*
+lib/webmin/postgresql/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/postgresql/config-Scientific-Linux-7.0-*
 lib/webmin/postgresql/config-cobalt-linux
 lib/webmin/postgresql/config-coherent-linux
 lib/webmin/postgresql/config-debian-linux
@@ -16669,6 +16748,9 @@ lib/webmin/proftpd/anon_index.cgi
 lib/webmin/proftpd/apply.cgi
 lib/webmin/proftpd/backup_config.pl
 lib/webmin/proftpd/config
+lib/webmin/proftpd/config-CentOS-Linux-7.0-*
+lib/webmin/proftpd/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/proftpd/config-Scientific-Linux-7.0-*
 lib/webmin/proftpd/config-Ubuntu-Linux
 lib/webmin/proftpd/config-cobalt-linux
 lib/webmin/proftpd/config-coherent-linux
@@ -17554,6 +17636,9 @@ lib/webmin/samba/conf_net.cgi
 lib/webmin/samba/conf_pass.cgi
 lib/webmin/samba/conf_print.cgi
 lib/webmin/samba/conf_smb.cgi
+lib/webmin/samba/config-CentOS-Linux-7.0-*
+lib/webmin/samba/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/samba/config-Scientific-Linux-7.0-*
 lib/webmin/samba/config-aix
 lib/webmin/samba/config-cobalt-linux
 lib/webmin/samba/config-coherent-linux
@@ -17841,6 +17926,9 @@ lib/webmin/sendmail/backup_config.pl
 lib/webmin/sendmail/boxes-lib.pl
 lib/webmin/sendmail/build.cgi
 lib/webmin/sendmail/cgi_args.pl
+lib/webmin/sendmail/config-CentOS-Linux-7.0-*
+lib/webmin/sendmail/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/sendmail/config-Scientific-Linux-7.0-*
 lib/webmin/sendmail/config-aix
 lib/webmin/sendmail/config-cobalt-linux
 lib/webmin/sendmail/config-coherent-linux
@@ -19224,6 +19312,7 @@ lib/webmin/software/config-corel-linux
 lib/webmin/software/config-cygwin
 lib/webmin/software/config-debian-linux
 lib/webmin/software/config-freebsd
+lib/webmin/software/config-freebsd-8.4-*
 lib/webmin/software/config-gentoo-linux
 lib/webmin/software/config-hpux
 lib/webmin/software/config-mandrake-linux
@@ -19643,6 +19732,7 @@ lib/webmin/software/msi-lib.pl
 lib/webmin/software/open.cgi
 lib/webmin/software/openall.cgi
 lib/webmin/software/openbsd-lib.pl
+lib/webmin/software/pkg-lib.pl
 lib/webmin/software/pkgadd-lib.pl
 lib/webmin/software/pkgadd-no-ask
 lib/webmin/software/ports-lib.pl
@@ -19770,6 +19860,9 @@ lib/webmin/squid/calamaris.cgi
 lib/webmin/squid/cgi_args.pl
 lib/webmin/squid/chown.cgi
 lib/webmin/squid/clear.cgi
+lib/webmin/squid/config-CentOS-Linux-7.0-*
+lib/webmin/squid/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/squid/config-Scientific-Linux-7.0-*
 lib/webmin/squid/config-aix
 lib/webmin/squid/config-cobalt-linux
 lib/webmin/squid/config-coherent-linux
@@ -20728,6 +20821,9 @@ lib/webmin/syslog-ng/CHANGELOG
 lib/webmin/syslog-ng/apply.cgi
 lib/webmin/syslog-ng/backup_config.pl
 lib/webmin/syslog-ng/config
+lib/webmin/syslog-ng/config-CentOS-Linux-7.0-*
+lib/webmin/syslog-ng/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/syslog-ng/config-Scientific-Linux-7.0-*
 lib/webmin/syslog-ng/config-debian-linux
 lib/webmin/syslog-ng/config-freebsd
 lib/webmin/syslog-ng/config-gentoo-linux
@@ -20828,6 +20924,7 @@ lib/webmin/syslog/acl_security.pl
 lib/webmin/syslog/backup_config.pl
 lib/webmin/syslog/cgi_args.pl
 lib/webmin/syslog/config-CentOS-Linux-6.0-*
+lib/webmin/syslog/config-Redhat-Enterprise-Linux-6.0-*
 lib/webmin/syslog/config-Ubuntu-Linux-10.04-*
 lib/webmin/syslog/config-aix
 lib/webmin/syslog/config-cobalt-linux
@@ -23368,6 +23465,9 @@ lib/webmin/xinetd/CHANGELOG
 lib/webmin/xinetd/backup_config.pl
 lib/webmin/xinetd/cgi_args.pl
 lib/webmin/xinetd/config
+lib/webmin/xinetd/config-CentOS-Linux-7.0-*
+lib/webmin/xinetd/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/xinetd/config-Scientific-Linux-7.0-*
 lib/webmin/xinetd/config-coherent-linux
 lib/webmin/xinetd/config-debian-linux
 lib/webmin/xinetd/config-freebsd
@@ -23566,1419 +23666,8 @@ lib/webmin/zones/save_pkg.cgi
 lib/webmin/zones/save_rctl.cgi
 lib/webmin/zones/save_zone.cgi
 lib/webmin/zones/zones-lib.pl
-@exec mkdir -p %D/lib/webmin/webmincron/images
-@exec mkdir -p %D/lib/webmin/system-status/images
-@exec mkdir -p %D/lib/webmin/mailboxes/xinha/plugins
-@exec mkdir -p %D/lib/webmin/file/xinha/plugins
-@dirrm lib/webmin/zones/lang
-@dirrm lib/webmin/zones/images
-@dirrm lib/webmin/zones/help
-@dirrm lib/webmin/zones
-@dirrm lib/webmin/xinetd/lang
-@dirrm lib/webmin/xinetd/images
-@dirrm lib/webmin/xinetd
-@dirrm lib/webmin/wuftpd/lang
-@dirrm lib/webmin/wuftpd/images
-@dirrm lib/webmin/wuftpd/help
-@dirrm lib/webmin/wuftpd
-@dirrm lib/webmin/webminlog/lang
-@dirrm lib/webmin/webminlog/images
-@dirrm lib/webmin/webminlog
-@dirrm lib/webmin/webmincron/lang
-@dirrm lib/webmin/webmincron/images
-@dirrm lib/webmin/webmincron
-@dirrm lib/webmin/webmin/subdir
-@dirrm lib/webmin/webmin/lang
-@dirrm lib/webmin/webmin/images
-@dirrm lib/webmin/webmin/help
-@dirrm lib/webmin/webmin
-@dirrm lib/webmin/webalizer/lang
-@dirrm lib/webmin/webalizer/images
-@dirrm lib/webmin/webalizer
-@dirrm lib/webmin/vgetty/lang
-@dirrm lib/webmin/vgetty/images
-@dirrm lib/webmin/vgetty
-@dirrm lib/webmin/usermin/lang
-@dirrm lib/webmin/usermin/images
-@dirrm lib/webmin/usermin
-@dirrm lib/webmin/useradmin/lang
-@dirrm lib/webmin/useradmin/images
-@dirrm lib/webmin/useradmin/help
-@dirrm lib/webmin/useradmin
-@dirrm lib/webmin/updown/lang
-@dirrm lib/webmin/updown/images
-@dirrm lib/webmin/updown
-@dirrm lib/webmin/unauthenticated
-@dirrm lib/webmin/tunnel/lang
-@dirrm lib/webmin/tunnel/images
-@dirrm lib/webmin/tunnel
-@dirrm lib/webmin/time/lang
-@dirrm lib/webmin/time/images
-@dirrm lib/webmin/time/help
-@dirrm lib/webmin/time
-@dirrm lib/webmin/telnet/lang
-@dirrm lib/webmin/telnet/images
-@dirrm lib/webmin/telnet
-@dirrm lib/webmin/tcpwrappers/lang
-@dirrm lib/webmin/tcpwrappers/images
-@dirrm lib/webmin/tcpwrappers/help
-@dirrm lib/webmin/tcpwrappers
-@dirrm lib/webmin/system-status/lang
-@dirrm lib/webmin/system-status/images
-@dirrm lib/webmin/system-status
-@dirrm lib/webmin/syslog/lang
-@dirrm lib/webmin/syslog/images
-@dirrm lib/webmin/syslog-ng/lang
-@dirrm lib/webmin/syslog-ng/images
-@dirrm lib/webmin/syslog-ng/help
-@dirrm lib/webmin/syslog-ng
-@dirrm lib/webmin/syslog
-@dirrm lib/webmin/stunnel/lang
-@dirrm lib/webmin/stunnel/images
-@dirrm lib/webmin/stunnel/help
-@dirrm lib/webmin/stunnel
-@dirrm lib/webmin/status/services
-@dirrm lib/webmin/status/lang
-@dirrm lib/webmin/status/images
-@dirrm lib/webmin/status
-@dirrm lib/webmin/sshd/lang
-@dirrm lib/webmin/sshd/images
-@dirrm lib/webmin/sshd/help
-@dirrm lib/webmin/sshd
-@dirrm lib/webmin/squid/lang
-@dirrm lib/webmin/squid/images
-@dirrm lib/webmin/squid/help
-@dirrm lib/webmin/squid
-@dirrm lib/webmin/spam/lang
-@dirrm lib/webmin/spam/images
-@dirrm lib/webmin/spam
-@dirrm lib/webmin/software/lang
-@dirrm lib/webmin/software/images
-@dirrm lib/webmin/software/help
-@dirrm lib/webmin/software
-@dirrm lib/webmin/smf/lang
-@dirrm lib/webmin/smf/images
-@dirrm lib/webmin/smf/help
-@dirrm lib/webmin/smf
-@dirrm lib/webmin/smart-status/lang
-@dirrm lib/webmin/smart-status/images
-@dirrm lib/webmin/smart-status
-@dirrm lib/webmin/shorewall6/lang
-@dirrm lib/webmin/shorewall6/images
-@dirrm lib/webmin/shorewall6
-@dirrm lib/webmin/shorewall/lang
-@dirrm lib/webmin/shorewall/images
-@dirrm lib/webmin/shorewall
-@dirrm lib/webmin/shell/lang
-@dirrm lib/webmin/shell/images
-@dirrm lib/webmin/shell
-@dirrm lib/webmin/sgiexports/lang
-@dirrm lib/webmin/sgiexports/images
-@dirrm lib/webmin/sgiexports
-@dirrm lib/webmin/servers/lang
-@dirrm lib/webmin/servers/images
-@dirrm lib/webmin/servers
-@dirrm lib/webmin/sentry/lang
-@dirrm lib/webmin/sentry/images
-@dirrm lib/webmin/sentry/help
-@dirrm lib/webmin/sentry
-@dirrm lib/webmin/sendmail/lang
-@dirrm lib/webmin/sendmail/images
-@dirrm lib/webmin/sendmail/help
-@dirrm lib/webmin/sendmail
-@dirrm lib/webmin/sarg/lang
-@dirrm lib/webmin/sarg/images
-@dirrm lib/webmin/sarg
-@dirrm lib/webmin/samba/lang
-@dirrm lib/webmin/samba/images
-@dirrm lib/webmin/samba/help
-@dirrm lib/webmin/samba
-@dirrm lib/webmin/rbac/lang
-@dirrm lib/webmin/rbac/images
-@dirrm lib/webmin/rbac/help
-@dirrm lib/webmin/rbac
-@dirrm lib/webmin/raid/lang
-@dirrm lib/webmin/raid/images
-@dirrm lib/webmin/raid
-@dirrm lib/webmin/quota/lang
-@dirrm lib/webmin/quota/images
-@dirrm lib/webmin/quota/help
-@dirrm lib/webmin/quota
-@dirrm lib/webmin/qmailadmin/lang
-@dirrm lib/webmin/qmailadmin/images
-@dirrm lib/webmin/qmailadmin
-@dirrm lib/webmin/pserver/lang
-@dirrm lib/webmin/pserver/images
-@dirrm lib/webmin/pserver
-@dirrm lib/webmin/proftpd/lang
-@dirrm lib/webmin/proftpd/images
-@dirrm lib/webmin/proftpd
-@dirrm lib/webmin/procmail/lang
-@dirrm lib/webmin/procmail/images
-@dirrm lib/webmin/procmail
-@dirrm lib/webmin/proc/lang
-@dirrm lib/webmin/proc/images
-@dirrm lib/webmin/proc/help
-@dirrm lib/webmin/proc
-@dirrm lib/webmin/pptp-server/lang
-@dirrm lib/webmin/pptp-server/images
-@dirrm lib/webmin/pptp-server/help
-@dirrm lib/webmin/pptp-server
-@dirrm lib/webmin/pptp-client/lang
-@dirrm lib/webmin/pptp-client/images
-@dirrm lib/webmin/pptp-client/help
-@dirrm lib/webmin/pptp-client
-@dirrm lib/webmin/ppp-client/lang
-@dirrm lib/webmin/ppp-client/images
-@dirrm lib/webmin/ppp-client
-@dirrm lib/webmin/postgresql/old
-@dirrm lib/webmin/postgresql/lang
-@dirrm lib/webmin/postgresql/images
-@dirrm lib/webmin/postgresql/help
-@dirrm lib/webmin/postgresql
-@dirrm lib/webmin/postfix/lang
-@dirrm lib/webmin/postfix/images
-@dirrm lib/webmin/postfix/help
-@dirrm lib/webmin/postfix
-@dirrm lib/webmin/phpini/lang
-@dirrm lib/webmin/phpini/images
-@dirrm lib/webmin/phpini/help
-@dirrm lib/webmin/phpini
-@dirrm lib/webmin/passwd/lang
-@dirrm lib/webmin/passwd/images
-@dirrm lib/webmin/passwd
-@dirrm lib/webmin/pap/lang
-@dirrm lib/webmin/pap/images
-@dirrm lib/webmin/pap/help
-@dirrm lib/webmin/pap
-@dirrm lib/webmin/pam/lang
-@dirrm lib/webmin/pam/images
-@dirrm lib/webmin/pam
-@dirrm lib/webmin/package-updates/newfeatures/2.9
-@dirrm lib/webmin/package-updates/newfeatures
-@dirrm lib/webmin/package-updates/lang
-@dirrm lib/webmin/package-updates/images
-@dirrm lib/webmin/package-updates
-@dirrm lib/webmin/openslp/lang
-@dirrm lib/webmin/openslp/images
-@dirrm lib/webmin/openslp/help
-@dirrm lib/webmin/openslp
-@dirrm lib/webmin/nis/lang
-@dirrm lib/webmin/nis/images
-@dirrm lib/webmin/nis
-@dirrm lib/webmin/net/lang
-@dirrm lib/webmin/net/images
-@dirrm lib/webmin/net
-@dirrm lib/webmin/mysql/lang
-@dirrm lib/webmin/mysql/images
-@dirrm lib/webmin/mysql/help
-@dirrm lib/webmin/mysql
-@dirrm lib/webmin/mscstyle3/xinetd/images
-@dirrm lib/webmin/mscstyle3/xinetd
-@dirrm lib/webmin/mscstyle3/wuftpd/images
-@dirrm lib/webmin/mscstyle3/wuftpd
-@dirrm lib/webmin/mscstyle3/webminlog/images
-@dirrm lib/webmin/mscstyle3/webminlog
-@dirrm lib/webmin/mscstyle3/webmin/images
-@dirrm lib/webmin/mscstyle3/webmin
-@dirrm lib/webmin/mscstyle3/usermin/images
-@dirrm lib/webmin/mscstyle3/usermin
-@dirrm lib/webmin/mscstyle3/useradmin/images
-@dirrm lib/webmin/mscstyle3/useradmin
-@dirrm lib/webmin/mscstyle3/unauthenticated/nav
-@dirrm lib/webmin/mscstyle3/unauthenticated
-@dirrm lib/webmin/mscstyle3/time/images
-@dirrm lib/webmin/mscstyle3/time
-@dirrm lib/webmin/mscstyle3/telnet/images
-@dirrm lib/webmin/mscstyle3/telnet
-@dirrm lib/webmin/mscstyle3/syslog/images
-@dirrm lib/webmin/mscstyle3/syslog
-@dirrm lib/webmin/mscstyle3/status/images
-@dirrm lib/webmin/mscstyle3/status
-@dirrm lib/webmin/mscstyle3/ssh/images
-@dirrm lib/webmin/mscstyle3/ssh
-@dirrm lib/webmin/mscstyle3/squid/images
-@dirrm lib/webmin/mscstyle3/squid
-@dirrm lib/webmin/mscstyle3/software/images
-@dirrm lib/webmin/mscstyle3/software
-@dirrm lib/webmin/mscstyle3/sgiexports/images
-@dirrm lib/webmin/mscstyle3/sgiexports
-@dirrm lib/webmin/mscstyle3/servers/images
-@dirrm lib/webmin/mscstyle3/servers
-@dirrm lib/webmin/mscstyle3/sendmail/images
-@dirrm lib/webmin/mscstyle3/sendmail
-@dirrm lib/webmin/mscstyle3/samba/images
-@dirrm lib/webmin/mscstyle3/samba
-@dirrm lib/webmin/mscstyle3/raid/images
-@dirrm lib/webmin/mscstyle3/raid
-@dirrm lib/webmin/mscstyle3/quota/images
-@dirrm lib/webmin/mscstyle3/quota
-@dirrm lib/webmin/mscstyle3/proc/images
-@dirrm lib/webmin/mscstyle3/proc
-@dirrm lib/webmin/mscstyle3/postgresql/images
-@dirrm lib/webmin/mscstyle3/postgresql
-@dirrm lib/webmin/mscstyle3/postfix/images
-@dirrm lib/webmin/mscstyle3/postfix
-@dirrm lib/webmin/mscstyle3/pam/images
-@dirrm lib/webmin/mscstyle3/pam
-@dirrm lib/webmin/mscstyle3/net/images
-@dirrm lib/webmin/mscstyle3/net
-@dirrm lib/webmin/mscstyle3/mysql/images
-@dirrm lib/webmin/mscstyle3/mysql
-@dirrm lib/webmin/mscstyle3/mount/images
-@dirrm lib/webmin/mscstyle3/mount
-@dirrm lib/webmin/mscstyle3/man/images
-@dirrm lib/webmin/mscstyle3/man
-@dirrm lib/webmin/mscstyle3/majordomo/images
-@dirrm lib/webmin/mscstyle3/majordomo
-@dirrm lib/webmin/mscstyle3/lpadmin/images
-@dirrm lib/webmin/mscstyle3/lpadmin
-@dirrm lib/webmin/mscstyle3/lilo/images
-@dirrm lib/webmin/mscstyle3/lilo
-@dirrm lib/webmin/mscstyle3/ipchains/images
-@dirrm lib/webmin/mscstyle3/ipchains
-@dirrm lib/webmin/mscstyle3/inittab/images
-@dirrm lib/webmin/mscstyle3/inittab
-@dirrm lib/webmin/mscstyle3/initnetwork/images
-@dirrm lib/webmin/mscstyle3/initnetwork
-@dirrm lib/webmin/mscstyle3/init/images
-@dirrm lib/webmin/mscstyle3/init
-@dirrm lib/webmin/mscstyle3/inetd/images
-@dirrm lib/webmin/mscstyle3/inetd
-@dirrm lib/webmin/mscstyle3/images/top_bar
-@dirrm lib/webmin/mscstyle3/images/tabs
-@dirrm lib/webmin/mscstyle3/images/nav
-@dirrm lib/webmin/mscstyle3/images/cats_over
-@dirrm lib/webmin/mscstyle3/images/cats
-@dirrm lib/webmin/mscstyle3/images
-@dirrm lib/webmin/mscstyle3/hpuxexports/images
-@dirrm lib/webmin/mscstyle3/hpuxexports
-@dirrm lib/webmin/mscstyle3/format/images
-@dirrm lib/webmin/mscstyle3/format
-@dirrm lib/webmin/mscstyle3/file/images
-@dirrm lib/webmin/mscstyle3/file
-@dirrm lib/webmin/mscstyle3/fdisk/images
-@dirrm lib/webmin/mscstyle3/fdisk
-@dirrm lib/webmin/mscstyle3/exports/images
-@dirrm lib/webmin/mscstyle3/exports
-@dirrm lib/webmin/mscstyle3/dnsadmin/images
-@dirrm lib/webmin/mscstyle3/dnsadmin
-@dirrm lib/webmin/mscstyle3/dhcpd/images
-@dirrm lib/webmin/mscstyle3/dhcpd
-@dirrm lib/webmin/mscstyle3/dfsadmin/images
-@dirrm lib/webmin/mscstyle3/dfsadmin
-@dirrm lib/webmin/mscstyle3/custom/images
-@dirrm lib/webmin/mscstyle3/custom
-@dirrm lib/webmin/mscstyle3/cron/images
-@dirrm lib/webmin/mscstyle3/cron
-@dirrm lib/webmin/mscstyle3/cpan/images
-@dirrm lib/webmin/mscstyle3/cpan
-@dirrm lib/webmin/mscstyle3/cdbackup/images
-@dirrm lib/webmin/mscstyle3/cdbackup
-@dirrm lib/webmin/mscstyle3/bsdexports/images
-@dirrm lib/webmin/mscstyle3/bsdexports
-@dirrm lib/webmin/mscstyle3/bind8/images
-@dirrm lib/webmin/mscstyle3/bind8
-@dirrm lib/webmin/mscstyle3/apache/images
-@dirrm lib/webmin/mscstyle3/apache
-@dirrm lib/webmin/mscstyle3/acl/images
-@dirrm lib/webmin/mscstyle3/acl
-@dirrm lib/webmin/mscstyle3
-@dirrm lib/webmin/mount/lang
-@dirrm lib/webmin/mount/images
-@dirrm lib/webmin/mount/help
-@dirrm lib/webmin/mount
-@dirrm lib/webmin/mon/lang
-@dirrm lib/webmin/mon/images
-@dirrm lib/webmin/mon/help
-@dirrm lib/webmin/mon
-@dirrm lib/webmin/man/lang
-@dirrm lib/webmin/man/images
-@dirrm lib/webmin/man/help
-@dirrm lib/webmin/man
-@dirrm lib/webmin/majordomo/lang
-@dirrm lib/webmin/majordomo/images
-@dirrm lib/webmin/majordomo
-@dirrm lib/webmin/mailcap/lang
-@dirrm lib/webmin/mailcap/images
-@dirrm lib/webmin/mailcap
-@dirrm lib/webmin/mailboxes/xinha/skins/xp-green
-@dirrm lib/webmin/mailboxes/xinha/skins/xp-blue
-@dirrm lib/webmin/mailboxes/xinha/skins/titan
-@dirrm lib/webmin/mailboxes/xinha/skins/silva
-@dirrm lib/webmin/mailboxes/xinha/skins/inditreuse
-@dirrm lib/webmin/mailboxes/xinha/skins/green-look
-@dirrm lib/webmin/mailboxes/xinha/skins/blue-metallic
-@dirrm lib/webmin/mailboxes/xinha/skins/blue-look
-@dirrm lib/webmin/mailboxes/xinha/skins
-@dirrm lib/webmin/mailboxes/xinha/popups
-@dirrm lib/webmin/mailboxes/xinha/plugins
-@dirrm lib/webmin/mailboxes/xinha/modules/WebKit
-@dirrm lib/webmin/mailboxes/xinha/modules/Opera
-@dirrm lib/webmin/mailboxes/xinha/modules/InternetExplorer
-@dirrm lib/webmin/mailboxes/xinha/modules/InsertTable
-@dirrm lib/webmin/mailboxes/xinha/modules/InsertImage
-@dirrm lib/webmin/mailboxes/xinha/modules/InlineStyler
-@dirrm lib/webmin/mailboxes/xinha/modules/GetHtml/lang
-@dirrm lib/webmin/mailboxes/xinha/modules/GetHtml
-@dirrm lib/webmin/mailboxes/xinha/modules/Gecko
-@dirrm lib/webmin/mailboxes/xinha/modules/FullScreen/lang
-@dirrm lib/webmin/mailboxes/xinha/modules/FullScreen
-@dirrm lib/webmin/mailboxes/xinha/modules/Dialogs
-@dirrm lib/webmin/mailboxes/xinha/modules/CreateLink/lang
-@dirrm lib/webmin/mailboxes/xinha/modules/CreateLink
-@dirrm lib/webmin/mailboxes/xinha/modules/ColorPicker/lang
-@dirrm lib/webmin/mailboxes/xinha/modules/ColorPicker
-@dirrm lib/webmin/mailboxes/xinha/modules/AboutBox
-@dirrm lib/webmin/mailboxes/xinha/modules
-@dirrm lib/webmin/mailboxes/xinha/lang
-@dirrm lib/webmin/mailboxes/xinha/images/tango/32x32/places
-@dirrm lib/webmin/mailboxes/xinha/images/tango/32x32/mimetypes
-@dirrm lib/webmin/mailboxes/xinha/images/tango/32x32/apps
-@dirrm lib/webmin/mailboxes/xinha/images/tango/32x32
-@dirrm lib/webmin/mailboxes/xinha/images/tango/16x16/places
-@dirrm lib/webmin/mailboxes/xinha/images/tango/16x16/mimetypes
-@dirrm lib/webmin/mailboxes/xinha/images/tango/16x16/apps
-@dirrm lib/webmin/mailboxes/xinha/images/tango/16x16/actions
-@dirrm lib/webmin/mailboxes/xinha/images/tango/16x16
-@dirrm lib/webmin/mailboxes/xinha/images/tango
-@dirrm lib/webmin/mailboxes/xinha/images/fr
-@dirrm lib/webmin/mailboxes/xinha/images/de
-@dirrm lib/webmin/mailboxes/xinha/images
-@dirrm lib/webmin/mailboxes/xinha/iconsets/Classic/fr
-@dirrm lib/webmin/mailboxes/xinha/iconsets/Classic/de
-@dirrm lib/webmin/mailboxes/xinha/iconsets/Classic
-@dirrm lib/webmin/mailboxes/xinha/iconsets
-@dirrm lib/webmin/mailboxes/xinha/examples/files
-@dirrm lib/webmin/mailboxes/xinha/examples
-@dirrm lib/webmin/mailboxes/xinha/contrib
-@dirrm lib/webmin/mailboxes/xinha
-@dirrm lib/webmin/mailboxes/lang
-@dirrm lib/webmin/mailboxes/images
-@dirrm lib/webmin/mailboxes
-@dirrm lib/webmin/lvm/lang
-@dirrm lib/webmin/lvm/images
-@dirrm lib/webmin/lvm
-@dirrm lib/webmin/lpadmin/lang
-@dirrm lib/webmin/lpadmin/images
-@dirrm lib/webmin/lpadmin
-@dirrm lib/webmin/logrotate/lang
-@dirrm lib/webmin/logrotate/images
-@dirrm lib/webmin/logrotate/help
-@dirrm lib/webmin/logrotate
-@dirrm lib/webmin/lilo/lang
-@dirrm lib/webmin/lilo/images
-@dirrm lib/webmin/lilo
-@dirrm lib/webmin/ldap-useradmin/lang
-@dirrm lib/webmin/ldap-useradmin/images
-@dirrm lib/webmin/ldap-useradmin/help
-@dirrm lib/webmin/ldap-useradmin
-@dirrm lib/webmin/ldap-server/lang
-@dirrm lib/webmin/ldap-server/images
-@dirrm lib/webmin/ldap-server/help
-@dirrm lib/webmin/ldap-server
-@dirrm lib/webmin/ldap-client/lang
-@dirrm lib/webmin/ldap-client/images
-@dirrm lib/webmin/ldap-client/help
-@dirrm lib/webmin/ldap-client
-@dirrm lib/webmin/lang
-@dirrm lib/webmin/krb5/lang
-@dirrm lib/webmin/krb5/images
-@dirrm lib/webmin/krb5/help
-@dirrm lib/webmin/krb5
-@dirrm lib/webmin/jabber/lang
-@dirrm lib/webmin/jabber/images
-@dirrm lib/webmin/jabber/help
-@dirrm lib/webmin/jabber
-@dirrm lib/webmin/iscsi-target/lang
-@dirrm lib/webmin/iscsi-target/images
-@dirrm lib/webmin/iscsi-target/help
-@dirrm lib/webmin/iscsi-target
-@dirrm lib/webmin/iscsi-server/lang
-@dirrm lib/webmin/iscsi-server/images
-@dirrm lib/webmin/iscsi-server/help
-@dirrm lib/webmin/iscsi-server
-@dirrm lib/webmin/iscsi-client/lang
-@dirrm lib/webmin/iscsi-client/images
-@dirrm lib/webmin/iscsi-client/help
-@dirrm lib/webmin/iscsi-client
-@dirrm lib/webmin/ipsec/lang
-@dirrm lib/webmin/ipsec/images
-@dirrm lib/webmin/ipsec/help
-@dirrm lib/webmin/ipsec
-@dirrm lib/webmin/ipfw/lang
-@dirrm lib/webmin/ipfw/images
-@dirrm lib/webmin/ipfw
-@dirrm lib/webmin/ipfilter/lang
-@dirrm lib/webmin/ipfilter/images
-@dirrm lib/webmin/ipfilter
-@dirrm lib/webmin/inittab/lang
-@dirrm lib/webmin/inittab/images
-@dirrm lib/webmin/inittab/help
-@dirrm lib/webmin/inittab
-@dirrm lib/webmin/init/lang
-@dirrm lib/webmin/init/images
-@dirrm lib/webmin/init/help
-@dirrm lib/webmin/init
-@dirrm lib/webmin/inetd/lang
-@dirrm lib/webmin/inetd/images
-@dirrm lib/webmin/inetd/help
-@dirrm lib/webmin/inetd
-@dirrm lib/webmin/images
-@dirrm lib/webmin/idmapd/lang
-@dirrm lib/webmin/idmapd/images
-@dirrm lib/webmin/idmapd/help
-@dirrm lib/webmin/idmapd
-@dirrm lib/webmin/htaccess-htpasswd/lang
-@dirrm lib/webmin/htaccess-htpasswd/images
-@dirrm lib/webmin/htaccess-htpasswd
-@dirrm lib/webmin/hpuxexports/lang
-@dirrm lib/webmin/hpuxexports/images
-@dirrm lib/webmin/hpuxexports/help
-@dirrm lib/webmin/hpuxexports
-@dirrm lib/webmin/heartbeat/lang
-@dirrm lib/webmin/heartbeat/images
-@dirrm lib/webmin/heartbeat
-@dirrm lib/webmin/grub/lang
-@dirrm lib/webmin/grub/images
-@dirrm lib/webmin/grub
-@dirrm lib/webmin/gray-theme/zones/images
-@dirrm lib/webmin/gray-theme/zones
-@dirrm lib/webmin/gray-theme/xinetd/images
-@dirrm lib/webmin/gray-theme/xinetd
-@dirrm lib/webmin/gray-theme/wuftpd/images
-@dirrm lib/webmin/gray-theme/wuftpd
-@dirrm lib/webmin/gray-theme/webminlog/images
-@dirrm lib/webmin/gray-theme/webminlog
-@dirrm lib/webmin/gray-theme/webminguide/images
-@dirrm lib/webmin/gray-theme/webminguide
-@dirrm lib/webmin/gray-theme/webmin/images
-@dirrm lib/webmin/gray-theme/webmin
-@dirrm lib/webmin/gray-theme/webfetch/images
-@dirrm lib/webmin/gray-theme/webfetch
-@dirrm lib/webmin/gray-theme/webalizer/images
-@dirrm lib/webmin/gray-theme/webalizer
-@dirrm lib/webmin/gray-theme/vgetty/images
-@dirrm lib/webmin/gray-theme/vgetty
-@dirrm lib/webmin/gray-theme/usermin/images
-@dirrm lib/webmin/gray-theme/usermin
-@dirrm lib/webmin/gray-theme/useradmin/images
-@dirrm lib/webmin/gray-theme/useradmin
-@dirrm lib/webmin/gray-theme/updown/images
-@dirrm lib/webmin/gray-theme/updown
-@dirrm lib/webmin/gray-theme/unauthenticated/images
-@dirrm lib/webmin/gray-theme/unauthenticated
-@dirrm lib/webmin/gray-theme/tunnel/images
-@dirrm lib/webmin/gray-theme/tunnel
-@dirrm lib/webmin/gray-theme/time/images
-@dirrm lib/webmin/gray-theme/time
-@dirrm lib/webmin/gray-theme/template/images
-@dirrm lib/webmin/gray-theme/template
-@dirrm lib/webmin/gray-theme/telnet/images
-@dirrm lib/webmin/gray-theme/telnet
-@dirrm lib/webmin/gray-theme/sysstats/images
-@dirrm lib/webmin/gray-theme/sysstats
-@dirrm lib/webmin/gray-theme/syslog/images
-@dirrm lib/webmin/gray-theme/syslog
-@dirrm lib/webmin/gray-theme/stunnel/images
-@dirrm lib/webmin/gray-theme/stunnel
-@dirrm lib/webmin/gray-theme/status/images
-@dirrm lib/webmin/gray-theme/status
-@dirrm lib/webmin/gray-theme/sshd/images
-@dirrm lib/webmin/gray-theme/sshd
-@dirrm lib/webmin/gray-theme/ssh/images
-@dirrm lib/webmin/gray-theme/ssh
-@dirrm lib/webmin/gray-theme/squid/images
-@dirrm lib/webmin/gray-theme/squid
-@dirrm lib/webmin/gray-theme/spam/images
-@dirrm lib/webmin/gray-theme/spam
-@dirrm lib/webmin/gray-theme/software/images
-@dirrm lib/webmin/gray-theme/software
-@dirrm lib/webmin/gray-theme/smart-status/images
-@dirrm lib/webmin/gray-theme/smart-status
-@dirrm lib/webmin/gray-theme/simple-firewall/images
-@dirrm lib/webmin/gray-theme/simple-firewall
-@dirrm lib/webmin/gray-theme/shorewall/images
-@dirrm lib/webmin/gray-theme/shorewall
-@dirrm lib/webmin/gray-theme/shell/images
-@dirrm lib/webmin/gray-theme/shell
-@dirrm lib/webmin/gray-theme/servers/images
-@dirrm lib/webmin/gray-theme/servers
-@dirrm lib/webmin/gray-theme/sentry/images
-@dirrm lib/webmin/gray-theme/sentry
-@dirrm lib/webmin/gray-theme/sendmail/images
-@dirrm lib/webmin/gray-theme/sendmail
-@dirrm lib/webmin/gray-theme/sargreports/images
-@dirrm lib/webmin/gray-theme/sargreports
-@dirrm lib/webmin/gray-theme/sarg/images
-@dirrm lib/webmin/gray-theme/sarg
-@dirrm lib/webmin/gray-theme/samba/images
-@dirrm lib/webmin/gray-theme/samba
-@dirrm lib/webmin/gray-theme/raid/images
-@dirrm lib/webmin/gray-theme/raid
-@dirrm lib/webmin/gray-theme/quota/images
-@dirrm lib/webmin/gray-theme/quota
-@dirrm lib/webmin/gray-theme/qmailadmin/images
-@dirrm lib/webmin/gray-theme/qmailadmin
-@dirrm lib/webmin/gray-theme/pserver/images
-@dirrm lib/webmin/gray-theme/pserver
-@dirrm lib/webmin/gray-theme/proftpd/images
-@dirrm lib/webmin/gray-theme/proftpd
-@dirrm lib/webmin/gray-theme/procmail/images
-@dirrm lib/webmin/gray-theme/procmail
-@dirrm lib/webmin/gray-theme/proc/images
-@dirrm lib/webmin/gray-theme/proc
-@dirrm lib/webmin/gray-theme/pptp-server/images
-@dirrm lib/webmin/gray-theme/pptp-server
-@dirrm lib/webmin/gray-theme/pptp-client/images
-@dirrm lib/webmin/gray-theme/pptp-client
-@dirrm lib/webmin/gray-theme/ppp-client/images
-@dirrm lib/webmin/gray-theme/ppp-client
-@dirrm lib/webmin/gray-theme/postgresql/images
-@dirrm lib/webmin/gray-theme/postgresql
-@dirrm lib/webmin/gray-theme/postfix/images
-@dirrm lib/webmin/gray-theme/postfix
-@dirrm lib/webmin/gray-theme/phpini/images
-@dirrm lib/webmin/gray-theme/phpini
-@dirrm lib/webmin/gray-theme/passwd/images
-@dirrm lib/webmin/gray-theme/passwd
-@dirrm lib/webmin/gray-theme/pap/images
-@dirrm lib/webmin/gray-theme/pap
-@dirrm lib/webmin/gray-theme/pam/images
-@dirrm lib/webmin/gray-theme/pam
-@dirrm lib/webmin/gray-theme/openslp/images
-@dirrm lib/webmin/gray-theme/openslp
-@dirrm lib/webmin/gray-theme/nis/images
-@dirrm lib/webmin/gray-theme/nis
-@dirrm lib/webmin/gray-theme/net/images
-@dirrm lib/webmin/gray-theme/net
-@dirrm lib/webmin/gray-theme/mysql/images
-@dirrm lib/webmin/gray-theme/mysql
-@dirrm lib/webmin/gray-theme/mount/images
-@dirrm lib/webmin/gray-theme/mount
-@dirrm lib/webmin/gray-theme/mon/images
-@dirrm lib/webmin/gray-theme/mon
-@dirrm lib/webmin/gray-theme/man/images
-@dirrm lib/webmin/gray-theme/man
-@dirrm lib/webmin/gray-theme/majordomo/images
-@dirrm lib/webmin/gray-theme/majordomo
-@dirrm lib/webmin/gray-theme/mailboxes/images
-@dirrm lib/webmin/gray-theme/mailboxes
-@dirrm lib/webmin/gray-theme/lvm/images
-@dirrm lib/webmin/gray-theme/lvm
-@dirrm lib/webmin/gray-theme/lpadmin/images
-@dirrm lib/webmin/gray-theme/lpadmin
-@dirrm lib/webmin/gray-theme/logrotate/images
-@dirrm lib/webmin/gray-theme/logrotate
-@dirrm lib/webmin/gray-theme/lilo/images
-@dirrm lib/webmin/gray-theme/lilo
-@dirrm lib/webmin/gray-theme/ldap-useradmin/images
-@dirrm lib/webmin/gray-theme/ldap-useradmin
-@dirrm lib/webmin/gray-theme/lang
-@dirrm lib/webmin/gray-theme/krb5/images
-@dirrm lib/webmin/gray-theme/krb5
-@dirrm lib/webmin/gray-theme/jabber/images
-@dirrm lib/webmin/gray-theme/jabber
-@dirrm lib/webmin/gray-theme/iscsi-target/images
-@dirrm lib/webmin/gray-theme/iscsi-target
-@dirrm lib/webmin/gray-theme/iscsi-server/images
-@dirrm lib/webmin/gray-theme/iscsi-server
-@dirrm lib/webmin/gray-theme/iscsi-client/images
-@dirrm lib/webmin/gray-theme/iscsi-client
-@dirrm lib/webmin/gray-theme/iptables/images
-@dirrm lib/webmin/gray-theme/iptables
-@dirrm lib/webmin/gray-theme/ipsec/images
-@dirrm lib/webmin/gray-theme/ipsec
-@dirrm lib/webmin/gray-theme/ipchains/images
-@dirrm lib/webmin/gray-theme/ipchains
-@dirrm lib/webmin/gray-theme/inittab/images
-@dirrm lib/webmin/gray-theme/inittab
-@dirrm lib/webmin/gray-theme/init/images
-@dirrm lib/webmin/gray-theme/init
-@dirrm lib/webmin/gray-theme/inetd/images
-@dirrm lib/webmin/gray-theme/inetd
-@dirrm lib/webmin/gray-theme/images
-@dirrm lib/webmin/gray-theme/idmapd/images
-@dirrm lib/webmin/gray-theme/idmapd
-@dirrm lib/webmin/gray-theme/htpasswd-file/images
-@dirrm lib/webmin/gray-theme/htpasswd-file
-@dirrm lib/webmin/gray-theme/htaccess-htpasswd/images
-@dirrm lib/webmin/gray-theme/htaccess-htpasswd
-@dirrm lib/webmin/gray-theme/help/images
-@dirrm lib/webmin/gray-theme/help
-@dirrm lib/webmin/gray-theme/heartbeat/images
-@dirrm lib/webmin/gray-theme/heartbeat
-@dirrm lib/webmin/gray-theme/grub/images
-@dirrm lib/webmin/gray-theme/grub
-@dirrm lib/webmin/gray-theme/gnupg/images
-@dirrm lib/webmin/gray-theme/gnupg
-@dirrm lib/webmin/gray-theme/fsdump/images
-@dirrm lib/webmin/gray-theme/fsdump
-@dirrm lib/webmin/gray-theme/frox/images
-@dirrm lib/webmin/gray-theme/frox
-@dirrm lib/webmin/gray-theme/firewall/images
-@dirrm lib/webmin/gray-theme/firewall
-@dirrm lib/webmin/gray-theme/file/images
-@dirrm lib/webmin/gray-theme/file
-@dirrm lib/webmin/gray-theme/fetchmail/images
-@dirrm lib/webmin/gray-theme/fetchmail
-@dirrm lib/webmin/gray-theme/fdisk/images
-@dirrm lib/webmin/gray-theme/fdisk
-@dirrm lib/webmin/gray-theme/exports/images
-@dirrm lib/webmin/gray-theme/exports
-@dirrm lib/webmin/gray-theme/download/images
-@dirrm lib/webmin/gray-theme/download
-@dirrm lib/webmin/gray-theme/dovecot/images
-@dirrm lib/webmin/gray-theme/dovecot
-@dirrm lib/webmin/gray-theme/dnsadmin/images
-@dirrm lib/webmin/gray-theme/dnsadmin
-@dirrm lib/webmin/gray-theme/dhcpd/images
-@dirrm lib/webmin/gray-theme/dhcpd
-@dirrm lib/webmin/gray-theme/custom/images
-@dirrm lib/webmin/gray-theme/custom
-@dirrm lib/webmin/gray-theme/cron/images
-@dirrm lib/webmin/gray-theme/cron
-@dirrm lib/webmin/gray-theme/cpan/images
-@dirrm lib/webmin/gray-theme/cpan
-@dirrm lib/webmin/gray-theme/cluster-webmin/images
-@dirrm lib/webmin/gray-theme/cluster-webmin
-@dirrm lib/webmin/gray-theme/cluster-useradmin/images
-@dirrm lib/webmin/gray-theme/cluster-useradmin
-@dirrm lib/webmin/gray-theme/cluster-software/images
-@dirrm lib/webmin/gray-theme/cluster-software
-@dirrm lib/webmin/gray-theme/cluster-shell/images
-@dirrm lib/webmin/gray-theme/cluster-shell
-@dirrm lib/webmin/gray-theme/cluster-passwd/images
-@dirrm lib/webmin/gray-theme/cluster-passwd
-@dirrm lib/webmin/gray-theme/cluster-cron/images
-@dirrm lib/webmin/gray-theme/cluster-cron
-@dirrm lib/webmin/gray-theme/cluster-copy/images
-@dirrm lib/webmin/gray-theme/cluster-copy
-@dirrm lib/webmin/gray-theme/change-user/images
-@dirrm lib/webmin/gray-theme/change-user
-@dirrm lib/webmin/gray-theme/cfengine/images
-@dirrm lib/webmin/gray-theme/cfengine
-@dirrm lib/webmin/gray-theme/burner/images
-@dirrm lib/webmin/gray-theme/burner
-@dirrm lib/webmin/gray-theme/bsdfdisk/images
-@dirrm lib/webmin/gray-theme/bsdfdisk
-@dirrm lib/webmin/gray-theme/bind8/images
-@dirrm lib/webmin/gray-theme/bind8
-@dirrm lib/webmin/gray-theme/bandwidth/images
-@dirrm lib/webmin/gray-theme/bandwidth
-@dirrm lib/webmin/gray-theme/backup-config/images
-@dirrm lib/webmin/gray-theme/backup-config
-@dirrm lib/webmin/gray-theme/at/images
-@dirrm lib/webmin/gray-theme/at
-@dirrm lib/webmin/gray-theme/apache/images
-@dirrm lib/webmin/gray-theme/apache
-@dirrm lib/webmin/gray-theme/adsl-client/images
-@dirrm lib/webmin/gray-theme/adsl-client
-@dirrm lib/webmin/gray-theme/acl/images
-@dirrm lib/webmin/gray-theme/acl
-@dirrm lib/webmin/gray-theme
-@dirrm lib/webmin/fsdump/lang
-@dirrm lib/webmin/fsdump/images
-@dirrm lib/webmin/fsdump/help
-@dirrm lib/webmin/fsdump
-@dirrm lib/webmin/frox/lang
-@dirrm lib/webmin/frox/images
-@dirrm lib/webmin/frox/help
-@dirrm lib/webmin/frox
-@dirrm lib/webmin/format/lang
-@dirrm lib/webmin/format/images
-@dirrm lib/webmin/format/help
-@dirrm lib/webmin/format
-@dirrm lib/webmin/firewall/lang
-@dirrm lib/webmin/firewall/images
-@dirrm lib/webmin/firewall/help
-@dirrm lib/webmin/firewall
-@dirrm lib/webmin/filter/lang
-@dirrm lib/webmin/filter/images
-@dirrm lib/webmin/filter
-@dirrm lib/webmin/file/xinha/skins/xp-green
-@dirrm lib/webmin/file/xinha/skins/xp-blue
-@dirrm lib/webmin/file/xinha/skins/titan
-@dirrm lib/webmin/file/xinha/skins/silva
-@dirrm lib/webmin/file/xinha/skins/inditreuse
-@dirrm lib/webmin/file/xinha/skins/green-look
-@dirrm lib/webmin/file/xinha/skins/blue-metallic
-@dirrm lib/webmin/file/xinha/skins/blue-look
-@dirrm lib/webmin/file/xinha/skins
-@dirrm lib/webmin/file/xinha/popups
-@dirrm lib/webmin/file/xinha/plugins
-@dirrm lib/webmin/file/xinha/modules/WebKit
-@dirrm lib/webmin/file/xinha/modules/Opera
-@dirrm lib/webmin/file/xinha/modules/InternetExplorer
-@dirrm lib/webmin/file/xinha/modules/InsertTable
-@dirrm lib/webmin/file/xinha/modules/InsertImage
-@dirrm lib/webmin/file/xinha/modules/InlineStyler
-@dirrm lib/webmin/file/xinha/modules/GetHtml/lang
-@dirrm lib/webmin/file/xinha/modules/GetHtml
-@dirrm lib/webmin/file/xinha/modules/Gecko
-@dirrm lib/webmin/file/xinha/modules/FullScreen/lang
-@dirrm lib/webmin/file/xinha/modules/FullScreen
-@dirrm lib/webmin/file/xinha/modules/Dialogs
-@dirrm lib/webmin/file/xinha/modules/CreateLink/lang
-@dirrm lib/webmin/file/xinha/modules/CreateLink
-@dirrm lib/webmin/file/xinha/modules/ColorPicker/lang
-@dirrm lib/webmin/file/xinha/modules/ColorPicker
-@dirrm lib/webmin/file/xinha/modules/AboutBox
-@dirrm lib/webmin/file/xinha/modules
-@dirrm lib/webmin/file/xinha/lang
-@dirrm lib/webmin/file/xinha/images/tango/32x32/places
-@dirrm lib/webmin/file/xinha/images/tango/32x32/mimetypes
-@dirrm lib/webmin/file/xinha/images/tango/32x32/apps
-@dirrm lib/webmin/file/xinha/images/tango/32x32
-@dirrm lib/webmin/file/xinha/images/tango/16x16/places
-@dirrm lib/webmin/file/xinha/images/tango/16x16/mimetypes
-@dirrm lib/webmin/file/xinha/images/tango/16x16/apps
-@dirrm lib/webmin/file/xinha/images/tango/16x16/actions
-@dirrm lib/webmin/file/xinha/images/tango/16x16
-@dirrm lib/webmin/file/xinha/images/tango
-@dirrm lib/webmin/file/xinha/images/fr
-@dirrm lib/webmin/file/xinha/images/de
-@dirrm lib/webmin/file/xinha/images
-@dirrm lib/webmin/file/xinha/iconsets/Classic/fr
-@dirrm lib/webmin/file/xinha/iconsets/Classic/de
-@dirrm lib/webmin/file/xinha/iconsets/Classic
-@dirrm lib/webmin/file/xinha/iconsets
-@dirrm lib/webmin/file/xinha/examples/files
-@dirrm lib/webmin/file/xinha/examples
-@dirrm lib/webmin/file/xinha/contrib
-@dirrm lib/webmin/file/xinha
-@dirrm lib/webmin/file/unicode
-@dirrm lib/webmin/file/lang
-@dirrm lib/webmin/file/images
-@dirrm lib/webmin/file
-@dirrm lib/webmin/fetchmail/lang
-@dirrm lib/webmin/fetchmail/images
-@dirrm lib/webmin/fetchmail
-@dirrm lib/webmin/fdisk/lang
-@dirrm lib/webmin/fdisk/images
-@dirrm lib/webmin/fdisk/help
-@dirrm lib/webmin/fdisk
-@dirrm lib/webmin/fail2ban/lang
-@dirrm lib/webmin/fail2ban/images
-@dirrm lib/webmin/fail2ban/help
-@dirrm lib/webmin/fail2ban
-@dirrm lib/webmin/exports/lang
-@dirrm lib/webmin/exports/images
-@dirrm lib/webmin/exports/help
-@dirrm lib/webmin/exports
-@dirrm lib/webmin/exim
-@dirrm lib/webmin/dovecot/lang
-@dirrm lib/webmin/dovecot/images
-@dirrm lib/webmin/dovecot
-@dirrm lib/webmin/dnsadmin/lang
-@dirrm lib/webmin/dnsadmin/images
-@dirrm lib/webmin/dnsadmin/help
-@dirrm lib/webmin/dnsadmin
-@dirrm lib/webmin/dhcpd/lang
-@dirrm lib/webmin/dhcpd/images
-@dirrm lib/webmin/dhcpd/help
-@dirrm lib/webmin/dhcpd
-@dirrm lib/webmin/dfsadmin/lang
-@dirrm lib/webmin/dfsadmin/images
-@dirrm lib/webmin/dfsadmin/help
-@dirrm lib/webmin/dfsadmin
-@dirrm lib/webmin/custom/lang
-@dirrm lib/webmin/custom/images
-@dirrm lib/webmin/custom/help
-@dirrm lib/webmin/custom
-@dirrm lib/webmin/cron/lang
-@dirrm lib/webmin/cron/images
-@dirrm lib/webmin/cron/help
-@dirrm lib/webmin/cron
-@dirrm lib/webmin/cpan/lang
-@dirrm lib/webmin/cpan/images
-@dirrm lib/webmin/cpan
-@dirrm lib/webmin/cluster-webmin/lang
-@dirrm lib/webmin/cluster-webmin/images
-@dirrm lib/webmin/cluster-webmin/help
-@dirrm lib/webmin/cluster-webmin
-@dirrm lib/webmin/cluster-usermin/lang
-@dirrm lib/webmin/cluster-usermin/images
-@dirrm lib/webmin/cluster-usermin/help
-@dirrm lib/webmin/cluster-usermin
-@dirrm lib/webmin/cluster-useradmin/lang
-@dirrm lib/webmin/cluster-useradmin/images
-@dirrm lib/webmin/cluster-useradmin/help
-@dirrm lib/webmin/cluster-useradmin
-@dirrm lib/webmin/cluster-software/lang
-@dirrm lib/webmin/cluster-software/images
-@dirrm lib/webmin/cluster-software/help
-@dirrm lib/webmin/cluster-software
-@dirrm lib/webmin/cluster-shell/lang
-@dirrm lib/webmin/cluster-shell/images
-@dirrm lib/webmin/cluster-shell/help
-@dirrm lib/webmin/cluster-shell
-@dirrm lib/webmin/cluster-passwd/lang
-@dirrm lib/webmin/cluster-passwd/images
-@dirrm lib/webmin/cluster-passwd
-@dirrm lib/webmin/cluster-cron/lang
-@dirrm lib/webmin/cluster-cron/images
-@dirrm lib/webmin/cluster-cron/help
-@dirrm lib/webmin/cluster-cron
-@dirrm lib/webmin/cluster-copy/lang
-@dirrm lib/webmin/cluster-copy/images
-@dirrm lib/webmin/cluster-copy/help
-@dirrm lib/webmin/cluster-copy
-@dirrm lib/webmin/change-user/lang
-@dirrm lib/webmin/change-user/images
-@dirrm lib/webmin/change-user
-@dirrm lib/webmin/cfengine/lang
-@dirrm lib/webmin/cfengine/images
-@dirrm lib/webmin/cfengine/help
-@dirrm lib/webmin/cfengine
-@dirrm lib/webmin/caldera/xinetd/images
-@dirrm lib/webmin/caldera/xinetd
-@dirrm lib/webmin/caldera/wuftpd/images
-@dirrm lib/webmin/caldera/wuftpd
-@dirrm lib/webmin/caldera/webminlog/images
-@dirrm lib/webmin/caldera/webminlog
-@dirrm lib/webmin/caldera/webmin/images
-@dirrm lib/webmin/caldera/webmin
-@dirrm lib/webmin/caldera/webalizer/images
-@dirrm lib/webmin/caldera/webalizer
-@dirrm lib/webmin/caldera/volution/images
-@dirrm lib/webmin/caldera/volution
-@dirrm lib/webmin/caldera/vnc/images
-@dirrm lib/webmin/caldera/vnc
-@dirrm lib/webmin/caldera/virtual-server/images
-@dirrm lib/webmin/caldera/virtual-server
-@dirrm lib/webmin/caldera/vgetty/images
-@dirrm lib/webmin/caldera/vgetty
-@dirrm lib/webmin/caldera/usermin/images
-@dirrm lib/webmin/caldera/usermin
-@dirrm lib/webmin/caldera/useradmin/images
-@dirrm lib/webmin/caldera/useradmin
-@dirrm lib/webmin/caldera/updown/images
-@dirrm lib/webmin/caldera/updown
-@dirrm lib/webmin/caldera/time/images
-@dirrm lib/webmin/caldera/time
-@dirrm lib/webmin/caldera/telnet/images
-@dirrm lib/webmin/caldera/telnet
-@dirrm lib/webmin/caldera/syslog/images
-@dirrm lib/webmin/caldera/syslog-ng/images
-@dirrm lib/webmin/caldera/syslog-ng
-@dirrm lib/webmin/caldera/syslog
-@dirrm lib/webmin/caldera/stunnel/images
-@dirrm lib/webmin/caldera/stunnel
-@dirrm lib/webmin/caldera/status/images
-@dirrm lib/webmin/caldera/status
-@dirrm lib/webmin/caldera/sshd/images
-@dirrm lib/webmin/caldera/sshd
-@dirrm lib/webmin/caldera/ssh/images
-@dirrm lib/webmin/caldera/ssh
-@dirrm lib/webmin/caldera/squid/images
-@dirrm lib/webmin/caldera/squid
-@dirrm lib/webmin/caldera/spam/images
-@dirrm lib/webmin/caldera/spam
-@dirrm lib/webmin/caldera/software/images
-@dirrm lib/webmin/caldera/software
-@dirrm lib/webmin/caldera/smf/images
-@dirrm lib/webmin/caldera/smf
-@dirrm lib/webmin/caldera/shorewall/images
-@dirrm lib/webmin/caldera/shorewall
-@dirrm lib/webmin/caldera/shellinabox/images
-@dirrm lib/webmin/caldera/shellinabox
-@dirrm lib/webmin/caldera/shell/images
-@dirrm lib/webmin/caldera/shell
-@dirrm lib/webmin/caldera/sgiexports/images
-@dirrm lib/webmin/caldera/sgiexports
-@dirrm lib/webmin/caldera/servers/images
-@dirrm lib/webmin/caldera/servers
-@dirrm lib/webmin/caldera/sentry/images
-@dirrm lib/webmin/caldera/sentry
-@dirrm lib/webmin/caldera/sendmail/images
-@dirrm lib/webmin/caldera/sendmail
-@dirrm lib/webmin/caldera/samba/images
-@dirrm lib/webmin/caldera/samba
-@dirrm lib/webmin/caldera/raid/images
-@dirrm lib/webmin/caldera/raid
-@dirrm lib/webmin/caldera/quota/images
-@dirrm lib/webmin/caldera/quota
-@dirrm lib/webmin/caldera/qmailadmin/images
-@dirrm lib/webmin/caldera/qmailadmin
-@dirrm lib/webmin/caldera/pserver/images
-@dirrm lib/webmin/caldera/pserver
-@dirrm lib/webmin/caldera/proftpd/images
-@dirrm lib/webmin/caldera/proftpd
-@dirrm lib/webmin/caldera/procmail/images
-@dirrm lib/webmin/caldera/procmail
-@dirrm lib/webmin/caldera/proc/images
-@dirrm lib/webmin/caldera/proc
-@dirrm lib/webmin/caldera/pptp-server/images
-@dirrm lib/webmin/caldera/pptp-server
-@dirrm lib/webmin/caldera/pptp-client/images
-@dirrm lib/webmin/caldera/pptp-client
-@dirrm lib/webmin/caldera/ppp-client/images
-@dirrm lib/webmin/caldera/ppp-client
-@dirrm lib/webmin/caldera/postgresql/images
-@dirrm lib/webmin/caldera/postgresql
-@dirrm lib/webmin/caldera/postfix/images
-@dirrm lib/webmin/caldera/postfix
-@dirrm lib/webmin/caldera/passwd/images
-@dirrm lib/webmin/caldera/passwd
-@dirrm lib/webmin/caldera/pap/images
-@dirrm lib/webmin/caldera/pap
-@dirrm lib/webmin/caldera/pam/images
-@dirrm lib/webmin/caldera/pam
-@dirrm lib/webmin/caldera/palace/images
-@dirrm lib/webmin/caldera/palace
-@dirrm lib/webmin/caldera/openslp/images
-@dirrm lib/webmin/caldera/openslp
-@dirrm lib/webmin/caldera/openldap/images
-@dirrm lib/webmin/caldera/openldap
-@dirrm lib/webmin/caldera/nis/images
-@dirrm lib/webmin/caldera/nis
-@dirrm lib/webmin/caldera/net/images
-@dirrm lib/webmin/caldera/net
-@dirrm lib/webmin/caldera/mysql/images
-@dirrm lib/webmin/caldera/mysql
-@dirrm lib/webmin/caldera/mount/images
-@dirrm lib/webmin/caldera/mount
-@dirrm lib/webmin/caldera/mon/images
-@dirrm lib/webmin/caldera/mon
-@dirrm lib/webmin/caldera/man/images
-@dirrm lib/webmin/caldera/man
-@dirrm lib/webmin/caldera/majordomo/images
-@dirrm lib/webmin/caldera/majordomo
-@dirrm lib/webmin/caldera/mailcap/images
-@dirrm lib/webmin/caldera/mailcap
-@dirrm lib/webmin/caldera/mailboxes/images
-@dirrm lib/webmin/caldera/mailboxes
-@dirrm lib/webmin/caldera/lvm/images
-@dirrm lib/webmin/caldera/lvm
-@dirrm lib/webmin/caldera/lpadmin/images
-@dirrm lib/webmin/caldera/lpadmin
-@dirrm lib/webmin/caldera/lkmload/images
-@dirrm lib/webmin/caldera/lkmload
-@dirrm lib/webmin/caldera/link/images
-@dirrm lib/webmin/caldera/link
-@dirrm lib/webmin/caldera/lilo/images
-@dirrm lib/webmin/caldera/lilo
-@dirrm lib/webmin/caldera/ldap-useradmin/images
-@dirrm lib/webmin/caldera/ldap-useradmin
-@dirrm lib/webmin/caldera/krb5/images
-@dirrm lib/webmin/caldera/krb5
-@dirrm lib/webmin/caldera/jabber/images
-@dirrm lib/webmin/caldera/jabber
-@dirrm lib/webmin/caldera/ipsec/images
-@dirrm lib/webmin/caldera/ipsec
-@dirrm lib/webmin/caldera/ipfw/images
-@dirrm lib/webmin/caldera/ipfw
-@dirrm lib/webmin/caldera/ipfilter/images
-@dirrm lib/webmin/caldera/ipfilter
-@dirrm lib/webmin/caldera/ipchains/images
-@dirrm lib/webmin/caldera/ipchains
-@dirrm lib/webmin/caldera/inittab/images
-@dirrm lib/webmin/caldera/inittab
-@dirrm lib/webmin/caldera/init/images
-@dirrm lib/webmin/caldera/init
-@dirrm lib/webmin/caldera/inetd/images
-@dirrm lib/webmin/caldera/inetd
-@dirrm lib/webmin/caldera/images/letters
-@dirrm lib/webmin/caldera/images
-@dirrm lib/webmin/caldera/idmapd/images
-@dirrm lib/webmin/caldera/idmapd
-@dirrm lib/webmin/caldera/htaccess-htpasswd/images
-@dirrm lib/webmin/caldera/htaccess-htpasswd
-@dirrm lib/webmin/caldera/hpuxexports/images
-@dirrm lib/webmin/caldera/hpuxexports
-@dirrm lib/webmin/caldera/help/images
-@dirrm lib/webmin/caldera/help
-@dirrm lib/webmin/caldera/heartbeat/images
-@dirrm lib/webmin/caldera/heartbeat
-@dirrm lib/webmin/caldera/grub/images
-@dirrm lib/webmin/caldera/grub
-@dirrm lib/webmin/caldera/fsdump/images
-@dirrm lib/webmin/caldera/fsdump
-@dirrm lib/webmin/caldera/format/images
-@dirrm lib/webmin/caldera/format
-@dirrm lib/webmin/caldera/firewall/images
-@dirrm lib/webmin/caldera/firewall
-@dirrm lib/webmin/caldera/file/images
-@dirrm lib/webmin/caldera/file
-@dirrm lib/webmin/caldera/fetchmail/images
-@dirrm lib/webmin/caldera/fetchmail
-@dirrm lib/webmin/caldera/fdisk/images
-@dirrm lib/webmin/caldera/fdisk
-@dirrm lib/webmin/caldera/exports/images
-@dirrm lib/webmin/caldera/exports
-@dirrm lib/webmin/caldera/escputil/images
-@dirrm lib/webmin/caldera/escputil
-@dirrm lib/webmin/caldera/dnsadmin/images
-@dirrm lib/webmin/caldera/dnsadmin
-@dirrm lib/webmin/caldera/dhcpd/images
-@dirrm lib/webmin/caldera/dhcpd
-@dirrm lib/webmin/caldera/dfsadmin/images
-@dirrm lib/webmin/caldera/dfsadmin
-@dirrm lib/webmin/caldera/custom/images
-@dirrm lib/webmin/caldera/custom
-@dirrm lib/webmin/caldera/cron/images
-@dirrm lib/webmin/caldera/cron
-@dirrm lib/webmin/caldera/cpan/images
-@dirrm lib/webmin/caldera/cpan
-@dirrm lib/webmin/caldera/cluster-webmin/images
-@dirrm lib/webmin/caldera/cluster-webmin
-@dirrm lib/webmin/caldera/cluster-useradmin/images
-@dirrm lib/webmin/caldera/cluster-useradmin
-@dirrm lib/webmin/caldera/cluster-software/images
-@dirrm lib/webmin/caldera/cluster-software
-@dirrm lib/webmin/caldera/change-user/images
-@dirrm lib/webmin/caldera/change-user
-@dirrm lib/webmin/caldera/cfengine/images
-@dirrm lib/webmin/caldera/cfengine
-@dirrm lib/webmin/caldera/certmgr/images
-@dirrm lib/webmin/caldera/certmgr
-@dirrm lib/webmin/caldera/burner/images
-@dirrm lib/webmin/caldera/burner
-@dirrm lib/webmin/caldera/bsdexports/images
-@dirrm lib/webmin/caldera/bsdexports
-@dirrm lib/webmin/caldera/bind8/images
-@dirrm lib/webmin/caldera/bind8
-@dirrm lib/webmin/caldera/bandwidth/images
-@dirrm lib/webmin/caldera/bandwidth
-@dirrm lib/webmin/caldera/at/images
-@dirrm lib/webmin/caldera/at
-@dirrm lib/webmin/caldera/apache/images
-@dirrm lib/webmin/caldera/apache
-@dirrm lib/webmin/caldera/adsl-client/images
-@dirrm lib/webmin/caldera/adsl-client
-@dirrm lib/webmin/caldera/acl/images
-@dirrm lib/webmin/caldera/acl
-@dirrm lib/webmin/caldera
-@dirrm lib/webmin/burner/lang
-@dirrm lib/webmin/burner/images
-@dirrm lib/webmin/burner
-@dirrm lib/webmin/bsdfdisk/lang
-@dirrm lib/webmin/bsdfdisk/images
-@dirrm lib/webmin/bsdfdisk/help
-@dirrm lib/webmin/bsdfdisk
-@dirrm lib/webmin/bsdexports/lang
-@dirrm lib/webmin/bsdexports/images
-@dirrm lib/webmin/bsdexports
-@dirrm lib/webmin/blue-theme/zones/images
-@dirrm lib/webmin/blue-theme/zones
-@dirrm lib/webmin/blue-theme/xinetd/images
-@dirrm lib/webmin/blue-theme/xinetd
-@dirrm lib/webmin/blue-theme/wuftpd/images
-@dirrm lib/webmin/blue-theme/wuftpd
-@dirrm lib/webmin/blue-theme/wpad-wizard/images
-@dirrm lib/webmin/blue-theme/wpad-wizard
-@dirrm lib/webmin/blue-theme/webminlog/images
-@dirrm lib/webmin/blue-theme/webminlog
-@dirrm lib/webmin/blue-theme/webminguide/images
-@dirrm lib/webmin/blue-theme/webminguide
-@dirrm lib/webmin/blue-theme/webmin/images
-@dirrm lib/webmin/blue-theme/webmin-iptables/images
-@dirrm lib/webmin/blue-theme/webmin-iptables
-@dirrm lib/webmin/blue-theme/webmin
-@dirrm lib/webmin/blue-theme/webfetch/images
-@dirrm lib/webmin/blue-theme/webfetch
-@dirrm lib/webmin/blue-theme/webalizer/images
-@dirrm lib/webmin/blue-theme/webalizer
-@dirrm lib/webmin/blue-theme/virtualmin-svn/images
-@dirrm lib/webmin/blue-theme/virtualmin-svn
-@dirrm lib/webmin/blue-theme/virtualmin-mailman/images
-@dirrm lib/webmin/blue-theme/virtualmin-mailman
-@dirrm lib/webmin/blue-theme/virtual-server/images
-@dirrm lib/webmin/blue-theme/virtual-server
-@dirrm lib/webmin/blue-theme/vgetty/images
-@dirrm lib/webmin/blue-theme/vgetty
-@dirrm lib/webmin/blue-theme/usermin/images
-@dirrm lib/webmin/blue-theme/usermin
-@dirrm lib/webmin/blue-theme/useradmin/images
-@dirrm lib/webmin/blue-theme/useradmin
-@dirrm lib/webmin/blue-theme/updown/images
-@dirrm lib/webmin/blue-theme/updown
-@dirrm lib/webmin/blue-theme/unauthenticated
-@dirrm lib/webmin/blue-theme/tunnel/images
-@dirrm lib/webmin/blue-theme/tunnel
-@dirrm lib/webmin/blue-theme/tsunamiguide/images
-@dirrm lib/webmin/blue-theme/tsunamiguide
-@dirrm lib/webmin/blue-theme/time/images
-@dirrm lib/webmin/blue-theme/time
-@dirrm lib/webmin/blue-theme/template/images
-@dirrm lib/webmin/blue-theme/template
-@dirrm lib/webmin/blue-theme/telnet/images
-@dirrm lib/webmin/blue-theme/telnet
-@dirrm lib/webmin/blue-theme/sysstats/images
-@dirrm lib/webmin/blue-theme/sysstats
-@dirrm lib/webmin/blue-theme/syslog/images
-@dirrm lib/webmin/blue-theme/syslog
-@dirrm lib/webmin/blue-theme/sysinfo/images
-@dirrm lib/webmin/blue-theme/sysinfo
-@dirrm lib/webmin/blue-theme/sysgraph/images
-@dirrm lib/webmin/blue-theme/sysgraph
-@dirrm lib/webmin/blue-theme/swell-wizard/images
-@dirrm lib/webmin/blue-theme/swell-wizard
-@dirrm lib/webmin/blue-theme/stunnel/images
-@dirrm lib/webmin/blue-theme/stunnel
-@dirrm lib/webmin/blue-theme/status/images
-@dirrm lib/webmin/blue-theme/status
-@dirrm lib/webmin/blue-theme/sshd/images
-@dirrm lib/webmin/blue-theme/sshd
-@dirrm lib/webmin/blue-theme/ssh/images
-@dirrm lib/webmin/blue-theme/ssh
-@dirrm lib/webmin/blue-theme/squidstat/images
-@dirrm lib/webmin/blue-theme/squidstat
-@dirrm lib/webmin/blue-theme/squidreports/images
-@dirrm lib/webmin/blue-theme/squidreports
-@dirrm lib/webmin/blue-theme/squidinfo/images
-@dirrm lib/webmin/blue-theme/squidinfo
-@dirrm lib/webmin/blue-theme/squidguard/images
-@dirrm lib/webmin/blue-theme/squidguard
-@dirrm lib/webmin/blue-theme/squid/images
-@dirrm lib/webmin/blue-theme/squid
-@dirrm lib/webmin/blue-theme/spam/images
-@dirrm lib/webmin/blue-theme/spam
-@dirrm lib/webmin/blue-theme/software/images
-@dirrm lib/webmin/blue-theme/software
-@dirrm lib/webmin/blue-theme/smart-status/images
-@dirrm lib/webmin/blue-theme/smart-status
-@dirrm lib/webmin/blue-theme/simple-firewall/images
-@dirrm lib/webmin/blue-theme/simple-firewall
-@dirrm lib/webmin/blue-theme/shorewall/images
-@dirrm lib/webmin/blue-theme/shorewall
-@dirrm lib/webmin/blue-theme/shell/images
-@dirrm lib/webmin/blue-theme/shell
-@dirrm lib/webmin/blue-theme/servers/images
-@dirrm lib/webmin/blue-theme/servers
-@dirrm lib/webmin/blue-theme/sentry/images
-@dirrm lib/webmin/blue-theme/sentry
-@dirrm lib/webmin/blue-theme/sendmail/images
-@dirrm lib/webmin/blue-theme/sendmail
-@dirrm lib/webmin/blue-theme/sargreports/images
-@dirrm lib/webmin/blue-theme/sargreports
-@dirrm lib/webmin/blue-theme/sarg/images
-@dirrm lib/webmin/blue-theme/sarg
-@dirrm lib/webmin/blue-theme/samba/images
-@dirrm lib/webmin/blue-theme/samba
-@dirrm lib/webmin/blue-theme/raid/images
-@dirrm lib/webmin/blue-theme/raid
-@dirrm lib/webmin/blue-theme/quota/images
-@dirrm lib/webmin/blue-theme/quota
-@dirrm lib/webmin/blue-theme/qmailadmin/images
-@dirrm lib/webmin/blue-theme/qmailadmin
-@dirrm lib/webmin/blue-theme/pserver/images
-@dirrm lib/webmin/blue-theme/pserver
-@dirrm lib/webmin/blue-theme/proftpd/images
-@dirrm lib/webmin/blue-theme/proftpd
-@dirrm lib/webmin/blue-theme/procyonguide/images
-@dirrm lib/webmin/blue-theme/procyonguide
-@dirrm lib/webmin/blue-theme/procmail/images
-@dirrm lib/webmin/blue-theme/procmail
-@dirrm lib/webmin/blue-theme/proc/images
-@dirrm lib/webmin/blue-theme/proc
-@dirrm lib/webmin/blue-theme/pptp-server/images
-@dirrm lib/webmin/blue-theme/pptp-server
-@dirrm lib/webmin/blue-theme/pptp-client/images
-@dirrm lib/webmin/blue-theme/pptp-client
-@dirrm lib/webmin/blue-theme/ppp-client/images
-@dirrm lib/webmin/blue-theme/ppp-client
-@dirrm lib/webmin/blue-theme/postgresql/images
-@dirrm lib/webmin/blue-theme/postgresql
-@dirrm lib/webmin/blue-theme/postfix/images
-@dirrm lib/webmin/blue-theme/postfix
-@dirrm lib/webmin/blue-theme/phpini/images
-@dirrm lib/webmin/blue-theme/phpini
-@dirrm lib/webmin/blue-theme/passwd/images
-@dirrm lib/webmin/blue-theme/passwd
-@dirrm lib/webmin/blue-theme/pap/images
-@dirrm lib/webmin/blue-theme/pap
-@dirrm lib/webmin/blue-theme/pam/images
-@dirrm lib/webmin/blue-theme/pam
-@dirrm lib/webmin/blue-theme/openslp/images
-@dirrm lib/webmin/blue-theme/openslp
-@dirrm lib/webmin/blue-theme/nis/images
-@dirrm lib/webmin/blue-theme/nis
-@dirrm lib/webmin/blue-theme/nettools/images
-@dirrm lib/webmin/blue-theme/nettools
-@dirrm lib/webmin/blue-theme/net/images
-@dirrm lib/webmin/blue-theme/net
-@dirrm lib/webmin/blue-theme/mysql/images
-@dirrm lib/webmin/blue-theme/mysql
-@dirrm lib/webmin/blue-theme/mount/images
-@dirrm lib/webmin/blue-theme/mount
-@dirrm lib/webmin/blue-theme/mon/images
-@dirrm lib/webmin/blue-theme/mon
-@dirrm lib/webmin/blue-theme/man/images
-@dirrm lib/webmin/blue-theme/man
-@dirrm lib/webmin/blue-theme/majordomo/images
-@dirrm lib/webmin/blue-theme/majordomo
-@dirrm lib/webmin/blue-theme/mailboxes/images
-@dirrm lib/webmin/blue-theme/mailboxes
-@dirrm lib/webmin/blue-theme/lvs/images
-@dirrm lib/webmin/blue-theme/lvs
-@dirrm lib/webmin/blue-theme/lvm/images
-@dirrm lib/webmin/blue-theme/lvm
-@dirrm lib/webmin/blue-theme/lpadmin/images
-@dirrm lib/webmin/blue-theme/lpadmin
-@dirrm lib/webmin/blue-theme/logrotate/images
-@dirrm lib/webmin/blue-theme/logrotate
-@dirrm lib/webmin/blue-theme/lilo/images
-@dirrm lib/webmin/blue-theme/lilo
-@dirrm lib/webmin/blue-theme/ldap-useradmin/images
-@dirrm lib/webmin/blue-theme/ldap-useradmin
-@dirrm lib/webmin/blue-theme/lang
-@dirrm lib/webmin/blue-theme/krb5/images
-@dirrm lib/webmin/blue-theme/krb5
-@dirrm lib/webmin/blue-theme/jsample/images
-@dirrm lib/webmin/blue-theme/jsample
-@dirrm lib/webmin/blue-theme/jabber/images
-@dirrm lib/webmin/blue-theme/jabber
-@dirrm lib/webmin/blue-theme/iscsi-target/images
-@dirrm lib/webmin/blue-theme/iscsi-target
-@dirrm lib/webmin/blue-theme/iscsi-server/images
-@dirrm lib/webmin/blue-theme/iscsi-server
-@dirrm lib/webmin/blue-theme/iscsi-client/images
-@dirrm lib/webmin/blue-theme/iscsi-client
-@dirrm lib/webmin/blue-theme/iptables/images
-@dirrm lib/webmin/blue-theme/iptables
-@dirrm lib/webmin/blue-theme/ipsec/images
-@dirrm lib/webmin/blue-theme/ipsec
-@dirrm lib/webmin/blue-theme/ipchains/images
-@dirrm lib/webmin/blue-theme/ipchains
-@dirrm lib/webmin/blue-theme/inittab/images
-@dirrm lib/webmin/blue-theme/inittab
-@dirrm lib/webmin/blue-theme/init/images
-@dirrm lib/webmin/blue-theme/init
-@dirrm lib/webmin/blue-theme/inetd/images
-@dirrm lib/webmin/blue-theme/inetd
-@dirrm lib/webmin/blue-theme/images
-@dirrm lib/webmin/blue-theme/idmapd/images
-@dirrm lib/webmin/blue-theme/idmapd
-@dirrm lib/webmin/blue-theme/htpasswd-file/images
-@dirrm lib/webmin/blue-theme/htpasswd-file
-@dirrm lib/webmin/blue-theme/htaccess-htpasswd/images
-@dirrm lib/webmin/blue-theme/htaccess-htpasswd
-@dirrm lib/webmin/blue-theme/help/images
-@dirrm lib/webmin/blue-theme/help
-@dirrm lib/webmin/blue-theme/heartbeat/images
-@dirrm lib/webmin/blue-theme/heartbeat
-@dirrm lib/webmin/blue-theme/grub/images
-@dirrm lib/webmin/blue-theme/grub
-@dirrm lib/webmin/blue-theme/gnupg/images
-@dirrm lib/webmin/blue-theme/gnupg
-@dirrm lib/webmin/blue-theme/generate-acls/images
-@dirrm lib/webmin/blue-theme/generate-acls
-@dirrm lib/webmin/blue-theme/fsdump/images
-@dirrm lib/webmin/blue-theme/fsdump
-@dirrm lib/webmin/blue-theme/frox/images
-@dirrm lib/webmin/blue-theme/frox
-@dirrm lib/webmin/blue-theme/firewall/images
-@dirrm lib/webmin/blue-theme/firewall
-@dirrm lib/webmin/blue-theme/file/images
-@dirrm lib/webmin/blue-theme/file
-@dirrm lib/webmin/blue-theme/fetchmail/images
-@dirrm lib/webmin/blue-theme/fetchmail
-@dirrm lib/webmin/blue-theme/fdisk/images
-@dirrm lib/webmin/blue-theme/fdisk
-@dirrm lib/webmin/blue-theme/exports/images
-@dirrm lib/webmin/blue-theme/exports
-@dirrm lib/webmin/blue-theme/escputil/images
-@dirrm lib/webmin/blue-theme/escputil
-@dirrm lib/webmin/blue-theme/download/images
-@dirrm lib/webmin/blue-theme/download
-@dirrm lib/webmin/blue-theme/dovecot/images
-@dirrm lib/webmin/blue-theme/dovecot
-@dirrm lib/webmin/blue-theme/dnsadmin/images
-@dirrm lib/webmin/blue-theme/dnsadmin
-@dirrm lib/webmin/blue-theme/dhcpd/images
-@dirrm lib/webmin/blue-theme/dhcpd-2.0/images
-@dirrm lib/webmin/blue-theme/dhcpd-2.0
-@dirrm lib/webmin/blue-theme/dhcpd
-@dirrm lib/webmin/blue-theme/custom/images
-@dirrm lib/webmin/blue-theme/custom
-@dirrm lib/webmin/blue-theme/cron/images
-@dirrm lib/webmin/blue-theme/cron
-@dirrm lib/webmin/blue-theme/cpan/images
-@dirrm lib/webmin/blue-theme/cpan
-@dirrm lib/webmin/blue-theme/cluster-webmin/images
-@dirrm lib/webmin/blue-theme/cluster-webmin
-@dirrm lib/webmin/blue-theme/cluster-useradmin/images
-@dirrm lib/webmin/blue-theme/cluster-useradmin
-@dirrm lib/webmin/blue-theme/cluster-software/images
-@dirrm lib/webmin/blue-theme/cluster-software
-@dirrm lib/webmin/blue-theme/cluster-shell/images
-@dirrm lib/webmin/blue-theme/cluster-shell
-@dirrm lib/webmin/blue-theme/cluster-passwd/images
-@dirrm lib/webmin/blue-theme/cluster-passwd
-@dirrm lib/webmin/blue-theme/cluster-cron/images
-@dirrm lib/webmin/blue-theme/cluster-cron
-@dirrm lib/webmin/blue-theme/cluster-copy/images
-@dirrm lib/webmin/blue-theme/cluster-copy
-@dirrm lib/webmin/blue-theme/change-user/images
-@dirrm lib/webmin/blue-theme/change-user
-@dirrm lib/webmin/blue-theme/cfengine/images
-@dirrm lib/webmin/blue-theme/cfengine
-@dirrm lib/webmin/blue-theme/burner/images
-@dirrm lib/webmin/blue-theme/burner
-@dirrm lib/webmin/blue-theme/bsdfdisk/images
-@dirrm lib/webmin/blue-theme/bsdfdisk
-@dirrm lib/webmin/blue-theme/bind8/images
-@dirrm lib/webmin/blue-theme/bind8
-@dirrm lib/webmin/blue-theme/bandwidth/images
-@dirrm lib/webmin/blue-theme/bandwidth
-@dirrm lib/webmin/blue-theme/backup-config/images
-@dirrm lib/webmin/blue-theme/backup-config
-@dirrm lib/webmin/blue-theme/at/images
-@dirrm lib/webmin/blue-theme/at
-@dirrm lib/webmin/blue-theme/apache/images
-@dirrm lib/webmin/blue-theme/apache
-@dirrm lib/webmin/blue-theme/adsl-client/images
-@dirrm lib/webmin/blue-theme/adsl-client
-@dirrm lib/webmin/blue-theme/acl/images
-@dirrm lib/webmin/blue-theme/acl
-@dirrm lib/webmin/blue-theme
-@dirrm lib/webmin/bind8/lang
-@dirrm lib/webmin/bind8/images
-@dirrm lib/webmin/bind8
-@dirrm lib/webmin/bandwidth/lang
-@dirrm lib/webmin/bandwidth/images
-@dirrm lib/webmin/bandwidth/help
-@dirrm lib/webmin/bandwidth
-@dirrm lib/webmin/bacula-backup/lang
-@dirrm lib/webmin/bacula-backup/images
-@dirrm lib/webmin/bacula-backup/help
-@dirrm lib/webmin/bacula-backup
-@dirrm lib/webmin/backup-config/lang
-@dirrm lib/webmin/backup-config/images
-@dirrm lib/webmin/backup-config/help
-@dirrm lib/webmin/backup-config
-@dirrm lib/webmin/at/lang
-@dirrm lib/webmin/at/images
-@dirrm lib/webmin/at
-@dirrm lib/webmin/apache/lang
-@dirrm lib/webmin/apache/images
-@dirrm lib/webmin/apache
-@dirrm lib/webmin/ajaxterm/lang
-@dirrm lib/webmin/ajaxterm/images
-@dirrm lib/webmin/ajaxterm/ajaxterm
-@dirrm lib/webmin/ajaxterm
-@dirrm lib/webmin/adsl-client/lang
-@dirrm lib/webmin/adsl-client/images
-@dirrm lib/webmin/adsl-client/help
-@dirrm lib/webmin/adsl-client
-@dirrm lib/webmin/acl/lang
-@dirrm lib/webmin/acl/images
-@dirrm lib/webmin/acl/help
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/man3
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/lib/auto/Authen/SolarisRBAC
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/lib/auto/Authen
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/lib/auto
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/lib/Authen
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/lib
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/arch/auto/Authen/SolarisRBAC
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/arch/auto/Authen
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/arch/auto
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/arch
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1/blib
-@dirrm lib/webmin/acl/Authen-SolarisRBAC-0.1
-@dirrm lib/webmin/acl
-@dirrm lib/webmin/Webmin
-@dirrmtry lib/webmin
+@dir lib/webmin/file/xinha/plugins
+@dir lib/webmin/mailboxes/xinha/plugins
+@dir lib/webmin/system-status/images
+@dir lib/webmin/webmincron/images
 @exec [ -d %D/etc/webmin ] && %D/lib/webmin/setup.sh || true

@@ -1,6 +1,6 @@
---- youtube_dl/__init__.py.orig	2014-07-29 23:18:51.000000000 +0800
-+++ youtube_dl/__init__.py	2014-07-31 01:10:45.923443081 +0800
-@@ -97,7 +97,6 @@
+--- youtube_dl/__init__.py.orig	2014-09-27 21:51:19 UTC
++++ youtube_dl/__init__.py
+@@ -108,7 +108,6 @@
      std_headers,
      write_string,
  )
@@ -8,18 +8,9 @@
  from .downloader import (
      FileDownloader,
  )
-@@ -230,8 +229,6 @@
-             action='help', help='print this help text and exit')
-     general.add_option('-v', '--version',
-             action='version', help='print program version and exit')
--    general.add_option('-U', '--update',
--            action='store_true', dest='update_self', help='update this program to latest version. Make sure that you have sufficient permissions (run with sudo if needed)')
-     general.add_option('-i', '--ignore-errors',
-             action='store_true', dest='ignoreerrors', help='continue on download errors, for example to skip unavailable videos in a playlist', default=False)
-     general.add_option('--abort-on-error',
-@@ -844,10 +841,6 @@
-                 ydl.add_post_processor(FFmpegAudioFixPP())
-             ydl.add_post_processor(AtomicParsleyPP())
+@@ -399,17 +398,13 @@
+             ydl.add_post_processor(ExecAfterDownloadPP(
+                 verboseOutput=opts.verbose, exec_cmd=opts.exec_cmd))
  
 -        # Update version
 -        if opts.update_self:
@@ -27,8 +18,7 @@
 -
          # Remove cache dir
          if opts.rm_cachedir:
-             if opts.cachedir is None:
-@@ -867,7 +860,7 @@
+             ydl.cache.remove()
  
          # Maybe do nothing
          if (len(all_urls) < 1) and (opts.load_info_filename is None):

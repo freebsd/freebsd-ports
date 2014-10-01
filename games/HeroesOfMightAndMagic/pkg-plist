@@ -5,7 +5,9 @@ games/Heroes3/data/h3bitmap.lod
 games/Heroes3/data/h3sprite.lod
 games/Heroes3/data/heroes3.snd
 games/Heroes3/data/heroes3cd.snd
+@mode 666
 games/Heroes3/data/hiscore.dat
+@mode
 games/Heroes3/data/video/3dologo.mpg
 games/Heroes3/data/video/cevil1.mjpg
 games/Heroes3/data/video/cevil2.mjpg
@@ -161,11 +163,3 @@ games/Heroes3/mp3/underground.mp3
 games/Heroes3/mp3/water.mp3
 games/Heroes3/mp3/win battle.mp3
 games/Heroes3/mp3/win scenario.mp3
-@dirrmtry games/Heroes3/mp3
-@dirrmtry games/Heroes3/maps
-@dirrm games/Heroes3/data/video
-@dirrm games/Heroes3/data
-@dirrm games/Heroes3/bin
-@dirrm games/Heroes3
-@dirrmtry games
-
