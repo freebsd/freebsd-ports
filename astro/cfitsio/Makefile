@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.360
-PORTREVISION=	2
+PORTVERSION=	3.370
 CATEGORIES=	astro
 MASTER_SITES=	http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -23,9 +22,9 @@ OPTIONS_DEFINE=	DOCS
 
 ALL_TARGET=	libcfitsio.a shared
 CFLAGS+=	-I${INCLUDEDIR}
-LIBS+=		-L${LIBDIR} -lz
 CONFIGURE_ARGS=	ac_cv_prog_FC=f2c
 GNU_CONFIGURE=	yes
+LIBS+=		-L${LIBDIR} -lz
 MAKE_ARGS=	ZLIB_SOURCES="zlib/zcompress.c zlib/zuncompress.c"
 USE_LDCONFIG=	yes
 USES=		pkgconfig
