@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="512d1301-49b9-11e4-ae2c-c80aa9043978">
+    <topic>bash -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>bash</name>
+	<range><lt>4.3.25_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Note that this is different than the public "Shellshock"
+	  issue.</p>
+	<p>Specially crafted environment variables could lead to remote
+	  arbitrary code execution.  This was fixed in bash 4.3.27, however
+	  the port was patched with a mitigation in 4.3.25_2.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lcamtuf.blogspot.com/2014/09/bash-bug-apply-unofficial-patch-now.html</url>
+      <cvename>CVE-2014-6277</cvename>
+      <cvename>CVE-2014-6278</cvename>
+    </references>
+    <dates>
+      <discovery>2014-09-27</discovery>
+      <entry>2014-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e8b7f8a-49b0-11e4-b711-6805ca0b3d42">
     <topic>phpMyAdmin -- XSS vulnerabilities</topic>
     <affects>
