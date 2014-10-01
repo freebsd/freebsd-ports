@@ -14,6 +14,8 @@ CONFLICTS_INSTALL=	torque-[0-9]*
 
 GNU_CONFIGURE=	yes
 
+PORTDOCS=	*
+
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
