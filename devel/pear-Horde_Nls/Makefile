@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Native Language Support
 
+USES=		horde
 USE_HORDE_RUN=	Horde_Translation \
 		Horde_Util
 
