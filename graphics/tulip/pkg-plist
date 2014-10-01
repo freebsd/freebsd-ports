@@ -234,6 +234,7 @@ include/tulip/StlIterator.h
 include/tulip/StoredType.h
 include/tulip/StringCollection.h
 include/tulip/StringProperty.h
+include/tulip/StringsListSelectionDialog.h
 include/tulip/StringsListSelectionWidget.h
 include/tulip/StringsListSelectionWidgetInterface.h
 include/tulip/SystemDefinition.h
@@ -261,7 +262,7 @@ include/tulip/TulipViewSettings.h
 include/tulip/TypeInterface.h
 include/tulip/Vector.h
 include/tulip/VectorCast.h
-include/tulip/VectorEditionWidget.h
+include/tulip/VectorEditor.h
 include/tulip/VectorPropertyAnimation.h
 include/tulip/View.h
 include/tulip/ViewWidget.h
@@ -314,7 +315,7 @@ lib/libtulip-ogl-%%TULIP_VERS%%.so
 lib/libtulip-python-%%TULIP_VERS%%.so
 lib/libyajl-tulip-%%TULIP_VERS%%.so
 lib/libyajl-tulip-%%TULIP_VERS%%.so.2
-lib/libyajl-tulip-%%TULIP_VERS%%.so.2.0.1
+lib/libyajl-tulip-%%TULIP_VERS%%.so.2.1.0
 lib/python/facebook.py
 lib/python/sip.so
 lib/python/stl.so
@@ -483,7 +484,7 @@ lib/tulip/view/libpythonscriptview-%%TULIP_VERSION%%.so
 %%DATADIR%%/apiFiles/Python-2.4.api
 %%DATADIR%%/apiFiles/Python-2.5.api
 %%DATADIR%%/apiFiles/Python-2.6.api
-%%DATADIR%%/apiFiles/Python-2.7.api
+%%DATADIR%%/apiFiles/Python-%%PYTHON_VER%%.api
 %%DATADIR%%/apiFiles/Python-3.1.api
 %%DATADIR%%/apiFiles/Python-3.2.api
 %%DATADIR%%/apiFiles/Python-3.3.api
@@ -514,6 +515,18 @@ lib/tulip/view/libpythonscriptview-%%TULIP_VERSION%%.so
 %%DATADIR%%/bitmaps/edgeSpring.png
 %%DATADIR%%/bitmaps/font.ttf
 %%DATADIR%%/bitmaps/fontb.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuMono/DejaVuMono.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuMono/DejaVuMono_Bold.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuMono/DejaVuMono_Bold_Italic.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuMono/DejaVuMono_Italic.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuSans/DejaVuSans.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuSans/DejaVuSans_Bold.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuSans/DejaVuSans_Bold_Italic.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuSans/DejaVuSans_Italic.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuSerif/DejaVuSerif.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuSerif/DejaVuSerif_Bold.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuSerif/DejaVuSerif_Bold_Italic.ttf
+%%DATADIR%%/bitmaps/fonts/DejaVuSerif/DejaVuSerif_Italic.ttf
 %%DATADIR%%/bitmaps/fonts/FreeMono/FreeMono.ttf
 %%DATADIR%%/bitmaps/fonts/FreeMono/FreeMono_Bold.ttf
 %%DATADIR%%/bitmaps/fonts/FreeMono/FreeMono_Bold_Italic.ttf
@@ -639,45 +652,3 @@ lib/tulip/view/libpythonscriptview-%%TULIP_VERSION%%.so
 %%DATADIR%%/wizards/tlpview/view.cpp
 %%DATADIR%%/wizards/tlpview/view.h
 %%DATADIR%%/wizards/tlpview/wizard.xml
-@dirrm %%DATADIR%%/wizards/tlpview
-@dirrm %%DATADIR%%/wizards/tlpproperty
-@dirrm %%DATADIR%%/wizards/tlpmain
-@dirrm %%DATADIR%%/wizards/tlpinteractor
-@dirrm %%DATADIR%%/wizards/tlpimport
-@dirrm %%DATADIR%%/wizards/tlpexport
-@dirrm %%DATADIR%%/wizards/tlpalgorithm
-@dirrm %%DATADIR%%/wizards
-@dirrm %%DATADIR%%/bitmaps/samplePictures
-@dirrm %%DATADIR%%/bitmaps/fonts/Waree
-@dirrm %%DATADIR%%/bitmaps/fonts/Umpush
-@dirrm %%DATADIR%%/bitmaps/fonts/Ubuntu
-@dirrm %%DATADIR%%/bitmaps/fonts/TlwgTypo
-@dirrm %%DATADIR%%/bitmaps/fonts/TlwgTypist
-@dirrm %%DATADIR%%/bitmaps/fonts/TlwgTypewriter
-@dirrm %%DATADIR%%/bitmaps/fonts/TlwgMono
-@dirrm %%DATADIR%%/bitmaps/fonts/Sawasdee
-@dirrm %%DATADIR%%/bitmaps/fonts/Purisa
-@dirrm %%DATADIR%%/bitmaps/fonts/Norasi
-@dirrm %%DATADIR%%/bitmaps/fonts/Loma
-@dirrm %%DATADIR%%/bitmaps/fonts/LiberationSerif
-@dirrm %%DATADIR%%/bitmaps/fonts/LiberationSans
-@dirrm %%DATADIR%%/bitmaps/fonts/LiberationMono
-@dirrm %%DATADIR%%/bitmaps/fonts/Kinnari
-@dirrm %%DATADIR%%/bitmaps/fonts/Garuda
-@dirrm %%DATADIR%%/bitmaps/fonts/FreeSerif
-@dirrm %%DATADIR%%/bitmaps/fonts/FreeSans
-@dirrm %%DATADIR%%/bitmaps/fonts/FreeMono
-@dirrm %%DATADIR%%/bitmaps/fonts
-@dirrm %%DATADIR%%/bitmaps/colorscales
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%/apiFiles
-@dirrm %%DATADIR%%
-@dirrm lib/tulip/view
-@dirrm lib/tulip/perspective
-@dirrm lib/tulip/interactor
-@dirrm lib/tulip/glyph
-@dirrm lib/tulip
-@dirrm lib/python
-@dirrm include/tulip2ogdf
-@dirrm include/tulip/cxx
-@dirrm include/tulip
