@@ -105,11 +105,18 @@ Notes:
 	    possibly leading to arbitrary code execution when evaluating
 	    untrusted input that would not otherwise be run as code.</p>
 	</blockquote>
+	<blockquote cite="https://access.redhat.com/security/cve/CVE-2014-7187">
+	  <p>An off-by-one error was discovered in the way Bash was handling
+	    deeply nested flow control constructs. Depending on the layout of
+	    the .bss segment, this could allow arbitrary execution of code that
+	    would not otherwise be executed by Bash.</p>
+	</blockquote>
       </body>
     </description>
     <references>
       <url>https://access.redhat.com/security/cve/CVE-2014-7186</url>
       <cvename>CVE-2014-7186</cvename>
+      <cvename>CVE-2014-7187</cvename>
     </references>
     <dates>
       <discovery>2014-09-25</discovery>
