@@ -13,9 +13,8 @@ COMMENT=	C++ class library for the automatic layout of diagrams
 
 LICENSE=	GPLv2
 
-USES=		zip
+USES=		zip python:build
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tu}
 
