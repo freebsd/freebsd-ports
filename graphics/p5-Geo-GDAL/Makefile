@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GDAL
-PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTVERSION=	1.11.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -19,7 +18,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 
 USE_PERL5=	build fixpacklist run
-USES=		perl5
+USES=		perl5 tar:xz
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/perl
 
 post-patch:
