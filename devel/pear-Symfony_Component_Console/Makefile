@@ -4,8 +4,8 @@
 PORTNAME=	Console
 PORTVERSION=	2.4.4
 CATEGORIES=	devel pear
-PKGNAMEPREFIX=	pear-Symfony_Component_
 MASTER_SITES=	http://pear.symfony.com/get/
+PKGNAMEPREFIX=	pear-Symfony_Component_
 DIST_SUBDIR=	Symfony2
 
 MAINTAINER=	wg@FreeBSD.org
@@ -18,7 +18,5 @@ RUN_DEPENDS+=	${PEARDIR}/.channels/pear.symfony.com.reg:${PORTSDIR}/devel/pear-c
 
 USES=		pear
 PEAR_CHANNEL=	symfony2
-
-IGNORE_WITH_PHP=52
 
 .include <bsd.port.mk>
