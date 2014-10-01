@@ -18,20 +18,30 @@ BUILD_DEPENDS=	libquvi-scripts>=0.4.0:${PORTSDIR}/multimedia/libquvi-scripts
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS LUAJIT
+LUAJIT_DESC=	Use LuaJIT instead of Lua
 
 PORTSCOUT=	limit:0.4.[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		iconv libtool lua pathfix pkgconfig tar:xz
+USES=		iconv libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 PROJECTHOST=	quvi
 
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_USES_OFF=	lua
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} 's/lua-5.1/lua-${LUA_VER}/g' ${WRKSRC}/configure
+.if ${PORT_OPTIONS:MLUAJIT}
+	@${REINPLACE_CMD} 's|lua >= 5.1|luajit|g' ${WRKSRC}/configure
+.else
+	@${REINPLACE_CMD} 's|lua-5.1|lua-${LUA_VER}|g' ${WRKSRC}/configure
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
