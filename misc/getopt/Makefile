@@ -26,6 +26,9 @@ NLS_MAKE_ARGS_OFF=	WITHOUT_GETTEXT=1
 NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 NLS_USES=		gettext
 
+post-patch:
+	@${RM} ${WKRSRC}/gnu/*.o
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
