@@ -57,6 +57,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a4e9f88-491c-11e4-ae2c-c80aa9043978">
+    <topic>bash -- out-of-bounds memory access in parser</topic>
+    <affects>
+      <package>
+	<name>bash</name>
+	<range><lt>4.3.27_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat security team reports:</p>
+	<blockquote cite="https://access.redhat.com/security/cve/CVE-2014-7186">
+	  <p>It was discovered that the fixed-sized redir_stack could be forced
+	    to overflow in the Bash parser, resulting in memory corruption, and
+	    possibly leading to arbitrary code execution when evaluating
+	    untrusted input that would not otherwise be run as code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://access.redhat.com/security/cve/CVE-2014-7186</url>
+      <cvename>CVE-2014-7186</cvename>
+    </references>
+    <dates>
+      <discovery>2014-09-25</discovery>
+      <entry>2014-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e0e86ff-48b5-11e4-ab80-000c29f6ae42">
     <topic>rsyslog -- remote syslog PRI vulnerability</topic>
     <affects>
