@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spreadsheet
-PORTVERSION=	0.9.8
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
