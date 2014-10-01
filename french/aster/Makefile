@@ -155,9 +155,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
 . elif exists(${LOCALBASE}/bin/emacs)
 WITH_ED=	emacs
 RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:${PORTSDIR}/editors/emacs
-. elif exists(${LOCALBASE}/bin/xemacs)
-WITH_ED=	xemacs
-RUN_DEPENDS+=	${LOCALBASE}/bin/xemacs:${PORTSDIR}/editors/xemacs
 . elif exists(${LOCALBASE}/bin/gedit)
 WITH_ED=	gedit
 RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:${PORTSDIR}/editors/gedit
