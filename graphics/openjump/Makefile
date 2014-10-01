@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	OpenJUMP
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.1
 CATEGORIES=	graphics java geography
 MASTER_SITES=	SF/jump-pilot/OpenJUMP/${PORTVERSION}
 DISTNAME=	${PORTNAME}-Portable-${PORTVERSION}-r${PLUS_REV}-PLUS
@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-Portable-${PORTVERSION}-r${PLUS_REV}-PLUS
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Open source GIS software written in Java
 
-LICENSE=	BSD CLEARTHOUGHT CPL ECW GPLv2 GPLv3 JAIDL JDOM JYTHON LGPL21 LGPL3
+LICENSE=	BSD3CLAUSE CLEARTHOUGHT CPL ECW GPLv2 GPLv3 JAIDL JDOM JYTHON LGPL21 LGPL3
 LICENSE_COMB=	multi
 
 LICENSE_NAME_CLEARTHOUGHT=	Clearthought Software License
@@ -37,6 +37,8 @@ LICENSE_NAME_JYTHON=	The Jython License
 LICENSE_FILE_JYTHON=	${WRKSRC}/licenses/jython_license.txt
 LICENSE_PERMS_JYTHON=	auto-accept
 
+### Desktop Entries ???
+
 TARGET_DIR=	${STAGEDIR}${PREFIX}/${PORTNAME}
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -44,7 +46,7 @@ USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-r${PLUS_REV}-PLUS
-PLUS_REV=	3576
+PLUS_REV=	4004
 
 do-install:
 	@${ECHO_CMD} "--->  Installing JAR files"
@@ -52,12 +54,17 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${TARGET_DIR}/lib
 	${MKDIR} ${TARGET_DIR}/lib/ext
 	@cd ${WRKSRC}/lib/ext && ${COPYTREE_SHARE} . ${TARGET_DIR}/lib/ext
+	${MKDIR} ${TARGET_DIR}/lib/native
+	${INSTALL_DATA}  ${WRKSRC}/lib/native/jecw-0.0.7.jar ${TARGET_DIR}/lib/native
+	${MKDIR} ${TARGET_DIR}/lib/icons
+	@cd ${WRKSRC}/lib/icons && ${COPYTREE_SHARE} . ${TARGET_DIR}/lib/icons
 	@${ECHO_MSG} "--->  Installing startup script"
 	${MKDIR} ${TARGET_DIR}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/oj_linux.sh ${TARGET_DIR}/bin/openjump
-	${LN} -sf ../${PORTNAME}/bin/openjump ${STAGEDIR}${PREFIX}/bin/openjump
+	${LN} -sf ${PREFIX}/${PORTNAME}/bin/openjump ${STAGEDIR}${PREFIX}/bin/openjump
 	${INSTALL_DATA} ${WRKSRC}/bin/default-plugins.xml ${TARGET_DIR}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/log4j.xml ${TARGET_DIR}/bin/
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${TARGET_DIR}/bin/
 
 OPTIONS_DEFINE=	DOCS
 
@@ -68,7 +75,6 @@ post-install:
 	@${ECHO_MSG} "--->  Installing documentation"
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Changes.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 .else
 	@${ECHO_MSG} "--->  Skipping documentation"
 .endif
