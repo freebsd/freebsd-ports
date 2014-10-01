@@ -4,6 +4,7 @@ bin/extract_vba
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Area.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Bar.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Column.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Chart/Doughnut.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Line.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Pie.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Chart/Radar.pm
@@ -35,6 +36,7 @@ bin/extract_vba
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Area.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Bar.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Column.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Doughnut.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Line.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Pie.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Radar.3.gz
@@ -61,11 +63,3 @@ bin/extract_vba
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Workbook.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Worksheet.3.gz
 man/man1/extract_vba.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Writer/XLSX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Writer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel
-@dirrm %%SITE_PERL%%/Excel/Writer/XLSX/Package
-@dirrm %%SITE_PERL%%/Excel/Writer/XLSX/Chart
-@dirrm %%SITE_PERL%%/Excel/Writer/XLSX
-@dirrmtry %%SITE_PERL%%/Excel/Writer
-@dirrmtry %%SITE_PERL%%/Excel
