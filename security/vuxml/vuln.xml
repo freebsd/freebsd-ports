@@ -62,6 +62,7 @@ Notes:
     <affects>
       <package>
 	<name>bash</name>
+	<name>bash-static</name>
 	<range><lt>4.3.25_2</lt></range>
       </package>
     </affects>
@@ -121,6 +122,7 @@ Notes:
     <affects>
       <package>
 	<name>bash</name>
+	<name>bash-static</name>
 	<range><lt>4.3.27_1</lt></range>
       </package>
     </affects>
