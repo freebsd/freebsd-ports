@@ -85,8 +85,12 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 # Keep this, else ruby will fail to load libraries dependent op libpthread.
 LIBS+=		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.if ${ARCH} == "powerpc"
+.if ${OPSYS} == "FreeBSD"
+.if (${ARCH} == "i386" && ${OSVERSION} > 1010000) || (${ARCH} == "amd64" && ${OSVERSION} > 903000)
+CONFIGURE_ARGS+=	--enable-dtrace
+.else
 CONFIGURE_ARGS+=	--disable-dtrace
+.endif
 .endif
 
 CONFIGURE_ENV=	debugflags=
