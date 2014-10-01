@@ -58,7 +58,6 @@ RUN_DEPENDS+=	${CORE_DEPS}       \
 		${HTML_DOC_DEPS}
 
 USES=		cpe perl5
-USE_AUTOTOOLS=	autoconf
 CPE_VENDOR=	bestpractical
 
 RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
@@ -173,8 +172,6 @@ CONFIGURE_ENV+=	PERL=${LOCALBASE}/bin/perl
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	RT_ETC_PATH=${RT_ETC_PATH}
-
-run-autotools:	run-autotools-autoconf
 
 pre-fetch:
 	@${ECHO} ""
