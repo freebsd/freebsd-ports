@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	1.11.0
-PORTREVISION=	7
+PORTVERSION=	1.11.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -38,7 +37,7 @@ LDFLAGS+=	-L${LOCALBASE} -pthread
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake tar:xz
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 PORTDATA=	*
@@ -143,15 +142,6 @@ XERCES_LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
-# patch for json-c 0.12
-	@${REINPLACE_CMD} -e 's|json_tokener_errors\[jstok->err\]|json_tokener_error_desc(jstok->err)|' \
-		${WRKSRC}/frmts/mbtiles/mbtilesdataset.cpp \
-		${WRKSRC}/ogr/ogrsf_frmts/cartodb/ogrcartodbdatasource.cpp \
-		${WRKSRC}/ogr/ogrsf_frmts/couchdb/ogrcouchdbdatasource.cpp \
-		${WRKSRC}/ogr/ogrsf_frmts/geojson/ogresrijsonreader.cpp \
-		${WRKSRC}/ogr/ogrsf_frmts/geojson/ogrgeojsonreader.cpp \
-		${WRKSRC}/ogr/ogrsf_frmts/geojson/ogrtopojsonreader.cpp \
-		${WRKSRC}/ogr/ogrsf_frmts/gme/ogrgmejson.cpp
 
 post-install:
 	${INSTALL_LIB} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/

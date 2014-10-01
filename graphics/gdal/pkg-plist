@@ -90,4 +90,3 @@ lib/libgdal.so
 lib/libgdal.so.1
 lib/libgdal.so.%%PORTVERSION%%
 libdata/pkgconfig/gdal.pc
-@dirrm lib/gdalplugins
