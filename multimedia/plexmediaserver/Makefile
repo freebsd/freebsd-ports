@@ -24,6 +24,7 @@ USERS=	plex
 GROUPS=	plex
 SUPPORT_PATH?=	${PREFIX}/plexdata
 SCRIPT_PATH?=	${DATADIR}
+BUNDLE_LIBS=	yes
 
 ONLY_FOR_ARCHS=	amd64
 
