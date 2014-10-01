@@ -2,7 +2,7 @@
 
 PORTNAME=	libevhtp
 PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	yan_jingfeng@yahoo.com
