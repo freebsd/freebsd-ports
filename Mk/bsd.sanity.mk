@@ -134,7 +134,7 @@ DEV_WARNING+=	"PYDISTUTILS_INSTALLNOSINGLE is deprecated, please do not use it a
 .endif
 
 .if defined(INSTALLS_EGGINFO)
-DEV_WARNING+=	"INSTALLS_EGGINFO is deprecated, please add the entry directly to the plist"
+DEV_ERROR+=	"INSTALLS_EGGINFO is no longer supported, please add the entry directly to the plist"
 .endif
 
 SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
