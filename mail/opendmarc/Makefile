@@ -3,6 +3,7 @@
 
 PORTNAME=	opendmarc
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
@@ -31,6 +32,18 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=		yes
 
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	SPF
+OPTIONS_DEFAULT=	SPF
+SPF_DESC=	Include direct SPF checking support
+
+SPF_BUILD_DEPENDS+=	libspf2>=1.2.5:${PORTSDIR}/mail/libspf2
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSPF}
+CONFIGURE_ARGS+=	--with-spf --with-spf2-include=${LOCALBASE}/include/spf2 --with-spf2-lib=${LOCALBASE}/lib
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
