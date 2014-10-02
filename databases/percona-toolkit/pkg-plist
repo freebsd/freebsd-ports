@@ -1,4 +1,3 @@
-bin/pt-agent
 bin/pt-align
 bin/pt-archiver
 bin/pt-config-diff
@@ -32,7 +31,6 @@ bin/pt-upgrade
 bin/pt-variable-advisor
 bin/pt-visual-explain
 man/man1/percona-toolkit.1.gz
-man/man1/pt-agent.1.gz
 man/man1/pt-align.1.gz
 man/man1/pt-archiver.1.gz
 man/man1/pt-config-diff.1.gz
@@ -66,4 +64,3 @@ man/man1/pt-upgrade.1.gz
 man/man1/pt-variable-advisor.1.gz
 man/man1/pt-visual-explain.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/percona-toolkit/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/percona-toolkit
