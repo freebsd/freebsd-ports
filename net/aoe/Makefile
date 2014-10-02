@@ -4,14 +4,12 @@
 PORTNAME=	aoe
 PORTVERSION=	1.2.0
 PORTREVISION=	2
-CATEGORIES=	net kld
+CATEGORIES=	net
 MASTER_SITES=	http://www.son.org/download/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FreeBSD driver for ATA over Ethernet (AoE)
-
-SSP_UNSAFE=	kernel module does not support ssp
 
 USES=	kmod
 
