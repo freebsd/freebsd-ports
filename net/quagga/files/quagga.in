@@ -43,44 +43,6 @@ quagga_flags=${quagga_flags:-"-d"}
 quagga_daemons=${quagga_daemons:-"zebra ripd ripngd ospfd ospf6d bgpd isisd"}
 quagga_vtysh_boot=${quagga_vtysh_boot:-"NO"}
 
-quagga_cmd=$1
-
-case "$1" in
-    force*)
-	quagga_cmd=${quagga_cmd#force}
-	;;
-    fast*)
-	quagga_cmd=${quagga_cmd#fast}
-	;;
-esac
-shift
-
-if [ $# -ge 1 ]; then
-	quagga_daemons="$*"
-fi
-
-case "${quagga_cmd}" in
-    start)
-	if [ ! -z ${quagga_extralibs_path} ]; then
-	    /sbin/ldconfig -m ${quagga_extralibs_path}
-	fi
-	do_cmd "start"
-	;;
-    stop)
-	quagga_daemons=$(reverse_list ${quagga_daemons})
-	do_cmd "stop"
-	;;
-    restart)
-	quagga_daemons=$(reverse_list ${quagga_daemons})
-    	do_cmd "stop"
-	quagga_daemons=$(reverse_list ${quagga_daemons})
-	do_cmd "start"
-	;;
-    *)
-	do_cmd "${quagga_cmd}"
-	;;
-esac
-
 check_config()
 {
     echo "Checking $daemon.conf"
@@ -137,3 +99,41 @@ do_cmd()
 	fi
 	return ${ret}
 }
+
+quagga_cmd=$1
+
+case "$1" in
+    force*)
+	quagga_cmd=${quagga_cmd#force}
+	;;
+    fast*)
+	quagga_cmd=${quagga_cmd#fast}
+	;;
+esac
+shift
+
+if [ $# -ge 1 ]; then
+	quagga_daemons="$*"
+fi
+
+case "${quagga_cmd}" in
+    start)
+	if [ ! -z ${quagga_extralibs_path} ]; then
+	    /sbin/ldconfig -m ${quagga_extralibs_path}
+	fi
+	do_cmd "start"
+	;;
+    stop)
+	quagga_daemons=$(reverse_list ${quagga_daemons})
+	do_cmd "stop"
+	;;
+    restart)
+	quagga_daemons=$(reverse_list ${quagga_daemons})
+    	do_cmd "stop"
+	quagga_daemons=$(reverse_list ${quagga_daemons})
+	do_cmd "start"
+	;;
+    *)
+	do_cmd "${quagga_cmd}"
+	;;
+esac
