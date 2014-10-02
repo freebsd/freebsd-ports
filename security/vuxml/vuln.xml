@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="81e2b308-4a6c-11e4-b711-6805ca0b3d42">
+    <topic>rt42 -- vulnerabilities related to shellshock</topic>
+    <affects>
+      <package>
+	<name>rt42</name>
+	<range><ge>4.2.0</ge><lt>4.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Best Practical reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2014/10/security-vulnerability-in-rt-42x-cve-2014-7227.html">
+	  <p>RT 4.2.0 and above may be vulnerable to arbitrary
+	    execution of code by way of CVE-2014-7169, CVE-2014-7186,
+	    CVE-2014-7187, CVE-2014-6277, or CVE-2014-6271 --
+	    collectively known as "Shellshock." This vulnerability
+	    requires a privileged user with access to an RT instance
+	    running with SMIME integration enabled; it applies to both
+	    mod_perl and fastcgi deployments. If you have already
+	    taken upgrades to bash to resolve "Shellshock," you are
+	    protected from this vulnerability in RT, and there is no
+	    need to apply this patch. This vulnerability has been
+	    assigned CVE-2014-7227.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.bestpractical.com/2014/10/security-vulnerability-in-rt-42x-cve-2014-7227.html</url>
+      <cvename>CVE-2014-7227</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-02</discovery>
+      <entry>2014-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="549a2771-49cc-11e4-ae2c-c80aa9043978">
     <topic>jenkins -- remote execution, privilege escalation, XSS, password exposure, ACL hole, DoS</topic>
     <affects>
