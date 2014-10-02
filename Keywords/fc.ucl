@@ -2,7 +2,7 @@
 #
 # MAINTAINER: x11@FreeBSD.org
 
-actions: [dirrmtry]
+actions: [dir]
 post-install: <<EOD
   fc-cache -s %D/%@ 2>/dev/null || true
 EOD
