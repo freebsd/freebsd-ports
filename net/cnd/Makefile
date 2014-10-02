@@ -3,6 +3,7 @@
 
 PORTNAME=	cnd
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
