@@ -335,6 +335,9 @@ Notes:
       <package>
 	<name>rsyslog</name>
 	<range><lt>7.6.7</lt></range>
+      </package>
+      <package>
+	<name>rsyslog8</name>
 	<range><lt>8.4.2</lt></range>
       </package>
     </affects>
