@@ -13,4 +13,6 @@ COMMENT=	Perl5 module for strip HTML tag
 USES=		perl5
 USE_PERL5=	configure
 
+WRKSRC=	${WRKDIR}/${PORTNAME}
+
 .include <bsd.port.mk>
