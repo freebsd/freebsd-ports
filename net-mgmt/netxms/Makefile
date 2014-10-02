@@ -24,13 +24,14 @@ SERVER_DESC=	Install NetXMS server & agent
 CLIENT_DESC=	Install NetXMS client
 AGENT_DESC=	Install NetXMS agent
 
-NO_PACKAGE=	yes
-
 USE_OPENSSL=	yes
 USES=		gmake iconv libtool perl5
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
+CONFIGURE_ARGS=	--disable-silent-rules \
+		--with-internal-libjansson \
+		--with-internal-libtre
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
