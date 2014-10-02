@@ -248,12 +248,4 @@ sbin/munin-sched
 %%DATADIR%%/plugins/varnish_
 %%DATADIR%%/plugins/vmstat
 %%DATADIR%%/plugins/zimbra_
-@dirrmtry %%ETCDIR%%/plugin-conf.d
-@dirrmtry %%ETCDIR%%/plugins
-@dirrmtry %%ETCDIR%%
-@dirrmtry %%SITE_PERL%%/Munin/Node/Configure
-@dirrmtry %%SITE_PERL%%/Munin/Node
-@dirrmtry %%SITE_PERL%%/Munin/Plugin
-@dirrmtry %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%
-@dirrmtry(%%USER%%,%%GROUP%%,) %%DBDIR%%/plugin-state
+@dir(%%USER%%,%%GROUP%%,) %%DBDIR%%/plugin-state

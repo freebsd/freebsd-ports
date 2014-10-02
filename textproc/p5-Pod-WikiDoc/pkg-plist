@@ -8,7 +8,3 @@ man/man1/wikidoc.1.gz
 %%SITE_PERL%%/Pod/WikiDoc/Parser.pm
 %%SITE_PERL%%/Pod/WikiDoc/Parser.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/WikiDoc/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/WikiDoc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
-@dirrm %%SITE_PERL%%/Pod/WikiDoc
-@dirrmtry %%SITE_PERL%%/Pod
