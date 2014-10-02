@@ -47,7 +47,7 @@ lib/libgnutls-xssl.so.0.0.0
 lib/libgnutls.a
 lib/libgnutls.so
 lib/libgnutls.so.28
-lib/libgnutls.so.28.30.7
+lib/libgnutls.so.28.30.9
 lib/libgnutlsxx.a
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
@@ -979,5 +979,3 @@ man/man3/xssl_write.3.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnutls.mo
-@dirrm include/gnutls
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
