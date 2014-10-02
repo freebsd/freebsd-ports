@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.22.4
-PORTREVISION=	4
+PORTVERSION=	0.99.23.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	SAVANNAH
-MASTER_SITE_SUBDIR=	quagga
-
-PATCH_SITES=	http://quagga.net/
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
@@ -22,7 +18,7 @@ CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-re-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-exampledir=${PREFIX}/share/examples/quagga
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool makeinfo perl5 readline
+USES=		gmake libtool makeinfo perl5 readline autoreconf
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
@@ -30,6 +26,8 @@ INFO=		quagga
 
 OPTIONS_DEFINE=	ISISD PAM OSPF_OPAQUE_LSA RTADV SNMP TCPSOCKETS DLMALLOC \
 		NO_BGP_ANNOUNCE OSPF_NEXTHOP
+WITHOUT=${OPTIONS_DEFINE}
+OPTIONS_SUB=	yes
 
 ISISD_DESC=		Enable experimental ISIS daemon
 PAM_DESC=		PAM authentication for vtysh
@@ -46,73 +44,30 @@ ENABLE_GROUP?=	quagga
 USERS=		${ENABLE_USER}
 GROUPS=		${ENABLE_GROUP}
 
-CONFIGURE_ARGS+=--enable-user=${ENABLE_USER}
-CONFIGURE_ARGS+=--enable-group=${ENABLE_GROUP}
-
 SYSCONF_DIR?=	${ETCDIR}
 LOCALSTATE_DIR?=/var/run/quagga
 
-CONFIGURE_ARGS+=--sysconfdir=${SYSCONF_DIR}
-CONFIGURE_ARGS+=--localstatedir=${LOCALSTATE_DIR}
+CONFIGURE_ARGS=	--enable-user=${ENABLE_USER} \
+		--enable-group=${ENABLE_GROUP} \
+		--sysconfdir=${SYSCONF_DIR} \
+		--localstatedir=${LOCALSTATE_DIR} \
+		--enable-vtysh
 
 .if defined(ENABLE_VTY_GROUP)
 CONFIGURE_ARGS+=--enable-vty-group=${ENABLE_VTY_GROUP}
 .endif
 
-CONFIGURE_ARGS+=--enable-vtysh
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MISISD}
-CONFIGURE_ARGS+=--enable-isisd
-MAN8+=		isisd.8
-PLIST_SUB+=	ISISD=""
-.else
-PLIST_SUB+=	ISISD="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPAM}
-CONFIGURE_ARGS+=--with-libpam
-.endif
-
-.if ${PORT_OPTIONS:MOSPF_OPAQUE_LSA}
-CONFIGURE_ARGS+=--enable-opaque-lsa
-MAN8+=		ospfclient.8
-PLIST_SUB+=	OSPFAPI=""
-.else
-CONFIGURE_ARGS+=--disable-opaque-lsa
-PLIST_SUB+=	OSPFAPI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MRTADV}
-CONFIGURE_ARGS+=--enable-rtadv
-.endif
-
-.if ${PORT_OPTIONS:MSNMP}
-CONFIGURE_ARGS+=--enable-snmp
-LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
-.endif
-
-.if ${PORT_OPTIONS:MTCPSOCKETS}
-CONFIGURE_ARGS+=--enable-tcp-zebra
-.endif
-
-.if ${PORT_OPTIONS:MDLMALLOC}
-LIB_DEPENDS+=	libdlmalloc.so:${PORTSDIR}/devel/libdlmalloc
-LIBS+=		-L${LOCALBASE}/lib -ldlmalloc
-SUB_LIST=	RCLDCONFIG=ldconfig
-.else
-SUB_LIST=	RCLDCONFIG=
-.endif
-
-.if ${PORT_OPTIONS:MNO_BGP_ANNOUNCE}
-CONFIGURE_ARGS+=--disable-bgp-announce
-.endif
-
-.if ${PORT_OPTIONS:MOSPF_NEXTHOP}
-post-patch:
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-ospf-nexthop
-.endif
+ISISD_CONFIGURE_ENABLE=	isisd
+PAM_CONFIGURE_WITH=	libpam
+OSPF_OPAQUE_LSA_CONFIGURE_ENABLE=	opaque-lsa
+RTADV_CONFIGURE_ENABLE=	rtadv
+SNMP_CONFIGURE_ENABLE=	snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+TCPSOCKETS_CONFIGURE_ENABLE=	tcp-zebra
+DLMALLOC_LIB_DEPENDS=	libdlmalloc.so:${PORTSDIR}/devel/libdlmalloc
+DLMALLOC_LIBS=		-L${LOCALBASE}/lib -ldlmalloc
+NO_BGP_ANNOUNCE_CONFIGURE_ARGS+=--disable-bgp-announce
+OSPF_NEXTHOP_EXTRA_PATCH=	${PATCHDIR}/extra-patch-ospf-nexthop
 
 USE_RC_SUBR=	quagga watchquagga
 
@@ -136,12 +91,8 @@ pre-everything::
 	@${ECHO} "LOCALSTATE_DIR    Specify directory for Quagga runtime files"
 
 post-install:
-	${MKDIR} ${STAGEDIR}${LOCALSTATE_DIR}
-	${MKDIR} ${STAGEDIR}${SYSCONF_DIR}
-
-.if !defined(BATCH)
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-.endif
+	${MKDIR} ${STAGEDIR}${LOCALSTATE_DIR} ${STAGEDIR}${SYSCONF_DIR} \
+		${STAGEDIR}${EXAMPLESDIR}
+	@${MV} ${STAGEDIR}${ETCDIR}/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
