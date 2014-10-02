@@ -61,12 +61,8 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11
 		${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf:${PORTSDIR}/x11-fonts/xorg-fonts-truetype
 .endif
 
-.include <bsd.port.pre.mk>
-
 # Inherited from Qt 4.
-.if ${ARCH} == powerpc64
-CFLAGS+=	-mminimal-toc
-.endif
+CFLAGS_powerpc64=	-mminimal-toc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl/$$$$QMAKE_LIBS_DYNLOAD/' \
@@ -92,4 +88,4 @@ post-install:
 		${MAKE_ARGS} ${INSTALL_TARGET}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -75,11 +75,7 @@ RUN_DEPENDS+=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc64
-CFLAGS+=	-mminimal-toc
-.endif
+CFLAGS_powerpc64=	-mminimal-toc
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
@@ -100,4 +96,4 @@ post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/dialogs/images/qtlogo-64.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/qtlogo.png
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
