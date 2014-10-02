@@ -31,6 +31,3 @@ share/pixmaps/sdlroids.png
 %%DATADIR%%/sounds/swarmsplit.wav
 %%DATADIR%%/sounds/thrust.wav
 %%DATADIR%%/sounds/title.wav
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/bmp
-@dirrm %%DATADIR%%

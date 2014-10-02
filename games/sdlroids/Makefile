@@ -3,7 +3,7 @@
 
 PORTNAME=	sdlroids
 PORTVERSION=	1.3.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -16,10 +16,11 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	Enhanced shoot-the-asteroids game
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${STAGEDIR}${PREFIX}/share
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 USE_GCC=	yes
 USE_CSTD=	gnu89
 USE_SDL=	mixer sdl
