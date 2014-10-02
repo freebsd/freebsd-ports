@@ -1,5 +1,5 @@
---- ./modules/freebsd/vmxnet/if_vxn.c.orig	2013-09-23 15:51:10.000000000 +0000
-+++ ./modules/freebsd/vmxnet/if_vxn.c	2014-04-23 15:36:44.347844739 +0000
+--- modules/freebsd/vmxnet/if_vxn.c.orig	2013-09-23 19:51:10.000000000 +0400
++++ modules/freebsd/vmxnet/if_vxn.c	2014-10-02 22:13:31.000000000 +0400
 @@ -76,6 +76,10 @@
  #include <pci/pcivar.h>
  #endif
@@ -28,7 +28,19 @@
           if (!(m_new->m_flags & M_EXT)) {
              m_freem(m_new);
              printf("vxn%d: no memory for tx list\n", VXN_IF_UNIT(ifp));
-@@ -1266,9 +1270,9 @@
+@@ -1067,7 +1071,11 @@
+       VMXNET_INC(dd->txDriverNext, dd->txRingLength);
+       dd->txNumDeferred++;
+       sc->vxn_tx_pending++;
++#if __FreeBSD_version >= 1100036
++      if_inc_counter(ifp, IFCOUNTER_OPACKETS, 1);
++#else
+       ifp->if_opackets++;
++#endif
+    }
+ 
+    /*
+@@ -1266,9 +1274,9 @@
           /*
  	  * Allocate a new mbuf cluster to replace the current one
            */
@@ -40,7 +52,20 @@
              if (m_new->m_flags & M_EXT) {
                 m_adj(m_new, ETHER_ALIGN);
              } else {
-@@ -1401,10 +1405,10 @@
+@@ -1286,8 +1294,11 @@
+ 
+             sc->vxn_rx_buffptr[dd->rxDriverNext] = m_new;
+             rre->paddr = (uint32)vtophys(mtod(m_new, caddr_t));
+-
++#if __FreeBSD_version >= 1100036
++	    if_inc_counter(ifp, IFCOUNTER_IPACKETS, 1);
++#else
+             ifp->if_ipackets++;
++#endif
+             m->m_pkthdr.rcvif = ifp;
+             m->m_pkthdr.len = m->m_len = pkt_len;
+ 
+@@ -1401,10 +1412,10 @@
         * Allocate an mbuf and initialize it to contain a packet header and
         * internal data.
         */
