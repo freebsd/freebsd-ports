@@ -26,7 +26,7 @@ PLIST_FILES=	include/tommath.h include/tommath_class.h \
 
 post-patch:
 	${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/makefile.shared
-	${REINPLACE_CMD} -e 's|DESTDIR=|DESTDIR?=|' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's|DESTDIR=|DESTDIR?=| ; s|-g $$(GROUP) -o $$(USER)||' ${WRKSRC}/${MAKEFILE}
 
 .if ${PORT_OPTIONS:MSHARED}
 USES+=		libtool:build
