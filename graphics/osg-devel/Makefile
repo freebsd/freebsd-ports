@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osg
-PORTVERSION=	3.3.0
-PORTREVISION=	3
+PORTVERSION=	3.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -30,9 +29,9 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=110 \
-		OPENTHREADS_VERSION=${PORTVERSION} \
-		OPENTHREADS_SHLIBVER=14
+		OSG_SHLIBVER=112 \
+		OPENTHREADS_VERSION=3.3.0 \
+		OPENTHREADS_SHLIBVER=20
 
 PORTSCOUT=	limitw:1,odd
 
@@ -73,7 +72,7 @@ XRANDR_CMAKE_OFF=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
 QT4_USE=		QT4=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
 QT4_CMAKE_ON=		-DOSG_USE_QT=ON
 QT4_CMAKE_OFF=		-DOSG_USE_QT=OFF
-LUA_USES=		lua:51
+LUA_USES=		lua:52
 V8_LIB_DEPENDS=		libv8.so:${PORTSDIR}/lang/v8
 PYTHON_USE=		PYTHON=2
 
