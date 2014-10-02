@@ -73,60 +73,105 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Jenkins Security Advisory:</p>
 	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-10-01">
-	  <p>SECURITY-87/CVE-2014-3661 (anonymous DoS attack through CLI
-	    handshake) This vulnerability allows unauthenticated users with
-	    access to Jenkins' HTTP/HTTPS port to mount a DoS attack on Jenkins
-	    through thread exhaustion.
+	  <h1>Description</h1>
+	  <h5>SECURITY-87/CVE-2014-3661 (anonymous DoS attack through CLI
+	    handshake)</h5>
+	  <p>This vulnerability allows unauthenticated users
+	    with access to Jenkins' HTTP/HTTPS port to mount a DoS attack on
+	    Jenkins through thread exhaustion.</p>
 
-	    SECURITY-110/CVE-2014-3662 (User name discovery) Anonymous users
-	    can test if the user of a specific name exists or not through login
-	    attempts.
+	  <h5>SECURITY-110/CVE-2014-3662 (User name discovery)</h5>
+	  <p>Anonymous users can test if the user of a specific name exists or
+	    not through login attempts.</p>
 
-	    SECURITY-127&amp;128/CVE-2014-3663 (privilege escalation in job
-	    configuration permission) An user with a permission limited to
-	    Job/CONFIGURE can exploit this vulnerability to effectively create
-	    a new job, which should have been only possible for users with
-	    Job/CREATE permission, or to destroy jobs that he/she does not have
-	    access otherwise.
+	  <h5>SECURITY-127&amp;128/CVE-2014-3663 (privilege escalation in job
+	    configuration permission)</h5>
+	  <p>An user with a permission limited
+	    to Job/CONFIGURE can exploit this vulnerability to effectively
+	    create a new job, which should have been only possible for users
+	    with Job/CREATE permission, or to destroy jobs that he/she does not
+	    have access otherwise.</p>
 
-	    SECURITY-131/CVE-2014-3664 (directory traversal attack) Users with
-	    Overall/READ permission can access arbitrary files in the file
-	    system readable by the Jenkins process, resulting in the exposure
-	    of sensitive information, such as encryption keys.
+	  <h5>SECURITY-131/CVE-2014-3664 (directory traversal attack)</h5>
+	  <p>Users with Overall/READ permission can access arbitrary files in
+	    the file system readable by the Jenkins process, resulting in the
+	    exposure of sensitive information, such as encryption keys.</p>
 
-	    SECURITY-138/CVE-2014-3680 (Password exposure in DOM) If a
-	    parameterized job has a default value in a password field, that
-	    default value gets exposed to users with Job/READ permission.
+	  <h5>SECURITY-138/CVE-2014-3680 (Password exposure in DOM)</h5>
+	  <p>If a parameterized job has a default value in a password field,
+	    that default value gets exposed to users with Job/READ permission.
+	  </p>
 
-	    SECURITY-143/CVE-2014-3681 (XSS vulnerability in Jenkins core)
-	    Reflected cross-site scripting vulnerability in Jenkins core. An
-	    attacker can navigate the user to a carefully crafted URL and have
-	    the user execute unintended actions.
+	  <h5>SECURITY-143/CVE-2014-3681 (XSS vulnerability in Jenkins
+	    core)</h5>
+	  <p>Reflected cross-site scripting vulnerability in Jenkins
+	    core. An attacker can navigate the user to a carefully crafted URL
+	    and have the user execute unintended actions.</p>
 
-	    SECURITY-150/CVE-2014-3666 (remote code execution from CLI)
-	    Unauthenticated user can execute arbitrary code on Jenkins master
-	    by sending carefully crafted packets over the CLI channel.
+	  <h5>SECURITY-150/CVE-2014-3666 (remote code execution from CLI)</h5>
+	  <p>Unauthenticated user can execute arbitrary code on Jenkins master
+	    by sending carefully crafted packets over the CLI channel.</p>
 
-	    SECURITY-155/CVE-2014-3667 (exposure of plugin code) Programs that
-	    constitute plugins can be downloaded by anyone with the
-	    Overall/READ permission, resulting in the exposure of otherwise
-	    sensitive information, such as hard-coded keys in plugins, if any.
+	  <h5>SECURITY-155/CVE-2014-3667 (exposure of plugin code)</h5>
+	  <p>Programs that constitute plugins can be downloaded by anyone with
+	    the Overall/READ permission, resulting in the exposure of otherwise
+	    sensitive information, such as hard-coded keys in plugins, if
+	    any.</p>
 
-	    SECURITY-159/CVE-2013-2186 (arbitrary file system write) Security
-	    vulnerability in commons fileupload allows unauthenticated attacker
-	    to upload arbitrary files to Jenkins master.
+	  <h5>SECURITY-159/CVE-2013-2186 (arbitrary file system write)</h5>
+	  <p>Security vulnerability in commons fileupload allows
+	    unauthenticated attacker to upload arbitrary files to Jenkins
+	    master.</p>
 
-	    SECURITY-149/CVE-2014-1869 (XSS vulnerabilities in ZeroClipboard)
-	    reflective XSS vulnerability in one of the library dependencies of
-	    Jenkins.
+	  <h5>SECURITY-149/CVE-2014-1869 (XSS vulnerabilities in
+	    ZeroClipboard)</h5>
+	  <p>reflective XSS vulnerability in one of the
+	    library dependencies of Jenkins.</p>
 
-	    SECURITY-113/CVE-2014-3678 (XSS vulnerabilities in monitoring
-	    plugin) Monitoring plugin allows an attacker to cause a victim into
-	    executing unwanted actions on Jenkins instance.
+	  <h5>SECURITY-113/CVE-2014-3678 (XSS vulnerabilities in monitoring
+	    plugin)</h5> <p>Monitoring plugin allows an attacker to cause a
+	    victim into executing unwanted actions on Jenkins instance.</p>
 
-	    SECURITY-113/CVE-2014-3679 (hole in access control) Certain pages
-	    in monitoring plugin are visible to anonymous users, allowing them
-	    to gain information that they are not supposed to.</p>
+	  <h5>SECURITY-113/CVE-2014-3679 (hole in access control)</h5>
+	  <p>Certain pages in monitoring plugin are visible to anonymous users,
+	    allowing them to gain information that they are not supposed to.
+	  </p>
+
+	  <h1>Severity</h1>
+	  <p>SECURITY-87 is rated <strong>medium</strong>, as it results in the
+	    loss of functionality.</p>
+
+	  <p>SECURITY-110 is rated <strong>medium</strong>, as it results in a
+	    limited amount of information exposure.</p>
+
+	  <p>SECURITY-127 and SECURITY-128 are rated <strong>high</strong>. The
+	    formed can be used to further escalate privileges, and the latter
+	    results inloss of data.</p>
+
+	  <p>SECURITY-131 and SECURITY-138 is rated <strong>critical</strong>.
+	    This vulnerabilities results in exposure of sensitie information
+	    and is easily exploitable.</p>
+
+	  <p>SECURITY-143 is rated <strong>high</strong>. It is a passive
+	    attack, but it can result in a compromise of Jenkins master or loss
+	    of data.</p>
+
+	  <p>SECURITY-150 is rated <strong>critical</strong>. This attack can
+	    be mounted by any unauthenticated anonymous user with HTTP
+	    reachability to Jenkins instance, and results in remote code
+	    execution on Jenkins.</p>
+
+	  <p>SECURITY-155 is rated <strong>medium</strong>. This only affects
+	    users who have installed proprietary plugins on publicly accessible
+	    instances, which is relatively uncommon.</p>
+
+	  <p>SECURITY-159 is rated <strong>critical</strong>. This attack can
+	    be mounted by any unauthenticated anonymous user with HTTP
+	    reachability to Jenkins instance.</p>
+
+	  <p>SECURITY-113 is rated <strong>high</strong>. It is a passive
+	    attack, but it can result in a compromise of Jenkins master or loss
+	    of data.</p>
 	</blockquote>
       </body>
     </description>
