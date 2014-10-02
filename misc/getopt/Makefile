@@ -27,7 +27,7 @@ NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 NLS_USES=		gettext
 
 post-patch:
-	@${RM} ${WKRSRC}/gnu/*.o
+	@${RM} ${WRKSRC}/gnu/*.o
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
