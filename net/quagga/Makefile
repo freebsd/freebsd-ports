@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	quagga
 
 PATCH_SITES=	http://quagga.net/
 
-MAINTAINER=	boris@tagnet.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 
 LICENSE=	GPLv2
