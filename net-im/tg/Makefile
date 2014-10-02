@@ -17,7 +17,6 @@ GH_COMMIT=	77bbb4c
 
 USES=		execinfo gmake lua:52 readline
 GNU_CONFIGURE=	yes
-CFLAGS+=	-g -O0
 
 PLIST_FILES=	bin/telegram-cli \
 		etc/tg-server.pub
