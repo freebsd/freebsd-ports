@@ -537,7 +537,7 @@ gtksharp20_USE_GNOME_IMPL=	gtk20
 gnomesharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-sharp-2.0.pc
 gnomesharp20_BUILD_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
 gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
-gnomesharp20_USE_GNOME_IMPL=	gnomepanel3 gtkhtml3 gtksharp20 librsvg2 vte
+gnomesharp20_USE_GNOME_IMPL=	gnomevfs2 gtkhtml3 gtksharp20 librsvg2 vte
 
 libgnomekbd_DETECT=		${LOCALBASE}/lib/libgnomekbd.so.4
 libgnomekbd_LIB_DEPENDS=	libgnomekbd.so.4:${PORTSDIR}/x11/libgnomekbd
