@@ -298,8 +298,8 @@ Notes:
     <affects>
       <package>
 	<name>rsyslog</name>
-	<range><lt>7.6.6</lt></range>
-	<range><lt>8.4.1</lt></range>
+	<range><lt>7.6.7</lt></range>
+	<range><lt>8.4.2</lt></range>
       </package>
     </affects>
     <description>
@@ -310,6 +310,7 @@ Notes:
 	    if the "pri-text" property was used in active templates,
 	    this could be abused to a remote denial of service from
 	    permitted senders</p>
+	  <p>The original fix for CVE-2014-3634 was not adequate.</p>
 	</blockquote>
       </body>
     </description>
@@ -320,6 +321,7 @@ Notes:
     <dates>
       <discovery>2014-09-30</discovery>
       <entry>2014-09-30</entry>
+      <modified>2014-10-02</modified>
     </dates>
   </vuln>
 
