@@ -1,10 +1,10 @@
---- ./lib/x509/rfc2818_hostname.c.orig	2014-07-24 14:38:24.963183389 -0500
-+++ ./lib/x509/rfc2818_hostname.c	2014-07-24 14:38:55.151183492 -0500
-@@ -25,6 +25,7 @@
- #include <common.h>
- #include <gnutls_errors.h>
- #include <arpa/inet.h>
-+#include <netinet/in.h>
+--- lib/x509/rfc2818_hostname.c.orig	2014-10-02 13:35:09.427374817 -0500
++++ lib/x509/rfc2818_hostname.c	2014-10-02 13:35:33.657427866 -0500
+@@ -19,6 +19,7 @@
+  *
+  */
  
- static int
- check_ip(gnutls_x509_crt_t cert, const void *ip, unsigned ip_size)
++#include <netinet/in.h>
+ #include <gnutls_int.h>
+ #include <gnutls_str.h>
+ #include <x509_int.h>
