@@ -5,7 +5,7 @@ PORTVERSION=	0.5.8
 CATEGORIES=	shells
 MASTER_SITES=	http://gondor.apana.org.au/~herbert/dash/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	POSIX-compliant implementation of /bin/sh
 
 GNU_CONFIGURE=	yes
