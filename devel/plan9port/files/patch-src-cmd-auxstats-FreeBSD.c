@@ -1,5 +1,5 @@
 --- src/cmd/auxstats/FreeBSD.c.orig	2010-03-18 01:25:34.000000000 +0300
-+++ src/cmd/auxstats/FreeBSD.c	2014-10-02 22:55:32.000000000 +0400
++++ src/cmd/auxstats/FreeBSD.c	2014-10-02 23:43:36.000000000 +0400
 @@ -8,20 +8,15 @@
  #include <sys/time.h>
  #include <sys/dkstat.h>
@@ -30,7 +30,7 @@
  	{ "_cp_time" },
  	{ "" }
  };
-@@ -86,44 +80,26 @@
+@@ -86,45 +80,28 @@
  void
  xnet(int first)
  {
@@ -85,5 +85,7 @@
 +		inb += IFA_STAT(ibytes);
 +		err += IFA_STAT(oerrors) + IFA_STAT(ierrors);
  	}
++	freeifaddrs(ifap);
  	Bprint(&bout, "etherin %lud 1000\n", in);
  	Bprint(&bout, "etherout %lud 1000\n", out);
+ 	Bprint(&bout, "etherinb %lud 1000000\n", inb);
