@@ -58,7 +58,7 @@ Notes:
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="549a2771-49cc-11e4-ae2c-c80aa9043978">
-    <topic>jenkins -- remote execution, privilege escalation, XSS, password exposure, ACL hole, Dos</topic>
+    <topic>jenkins -- remote execution, privilege escalation, XSS, password exposure, ACL hole, DoS</topic>
     <affects>
       <package>
 	<name>jenkins</name>
