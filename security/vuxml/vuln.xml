@@ -57,6 +57,100 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="549a2771-49cc-11e4-ae2c-c80aa9043978">
+    <topic>jenkins -- remote execution, privilege escalation, CXX, password exposure, ACL hole, Dos</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.583</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>1.565.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-10-01">
+	  <p>SECURITY-87/CVE-2014-3661 (anonymous DoS attack through CLI
+	    handshake) This vulnerability allows unauthenticated users with
+	    access to Jenkins' HTTP/HTTPS port to mount a DoS attack on Jenkins
+	    through thread exhaustion.
+
+	    SECURITY-110/CVE-2014-3662 (User name discovery) Anonymous users
+	    can test if the user of a specific name exists or not through login
+	    attempts.
+
+	    SECURITY-127&amp;128/CVE-2014-3663 (privilege escalation in job
+	    configuration permission) An user with a permission limited to
+	    Job/CONFIGURE can exploit this vulnerability to effectively create
+	    a new job, which should have been only possible for users with
+	    Job/CREATE permission, or to destroy jobs that he/she does not have
+	    access otherwise.
+
+	    SECURITY-131/CVE-2014-3664 (directory traversal attack) Users with
+	    Overall/READ permission can access arbitrary files in the file
+	    system readable by the Jenkins process, resulting in the exposure
+	    of sensitive information, such as encryption keys.
+
+	    SECURITY-138/CVE-2014-3680 (Password exposure in DOM) If a
+	    parameterized job has a default value in a password field, that
+	    default value gets exposed to users with Job/READ permission.
+
+	    SECURITY-143/CVE-2014-3681 (XSS vulnerability in Jenkins core)
+	    Reflected cross-site scripting vulnerability in Jenkins core. An
+	    attacker can navigate the user to a carefully crafted URL and have
+	    the user execute unintended actions.
+
+	    SECURITY-150/CVE-2014-3666 (remote code execution from CLI)
+	    Unauthenticated user can execute arbitrary code on Jenkins master
+	    by sending carefully crafted packets over the CLI channel.
+
+	    SECURITY-155/CVE-2014-3667 (exposure of plugin code) Programs that
+	    constitute plugins can be downloaded by anyone with the
+	    Overall/READ permission, resulting in the exposure of otherwise
+	    sensitive information, such as hard-coded keys in plugins, if any.
+
+	    SECURITY-159/CVE-2013-2186 (arbitrary file system write) Security
+	    vulnerability in commons fileupload allows unauthenticated attacker
+	    to upload arbitrary files to Jenkins master.
+
+	    SECURITY-149/CVE-2014-1869 (XSS vulnerabilities in ZeroClipboard)
+	    reflective XSS vulnerability in one of the library dependencies of
+	    Jenkins.
+
+	    SECURITY-113/CVE-2014-3678 (XSS vulnerabilities in monitoring
+	    plugin) Monitoring plugin allows an attacker to cause a victim into
+	    executing unwanted actions on Jenkins instance.
+
+	    SECURITY-113/CVE-2014-3679 (hole in access control) Certain pages
+	    in monitoring plugin are visible to anonymous users, allowing them
+	    to gain information that they are not supposed to.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-10-01</url>
+      <cvename>CVE-2014-3661</cvename>
+      <cvename>CVE-2014-3662</cvename>
+      <cvename>CVE-2014-3663</cvename>
+      <cvename>CVE-2014-3664</cvename>
+      <cvename>CVE-2014-3680</cvename>
+      <cvename>CVE-2014-3681</cvename>
+      <cvename>CVE-2014-3666</cvename>
+      <cvename>CVE-2014-3667</cvename>
+      <cvename>CVE-2013-2186</cvename>
+      <cvename>CVE-2014-1869</cvename>
+      <cvename>CVE-2014-3678</cvename>
+      <cvename>CVE-2014-3679</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-01</discovery>
+      <entry>2014-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="512d1301-49b9-11e4-ae2c-c80aa9043978">
     <topic>bash -- remote code execution</topic>
     <affects>
