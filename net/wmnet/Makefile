@@ -3,7 +3,7 @@
 
 PORTNAME=	wmnet
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net windowmaker
 MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/ \
 		${MASTER_SITE_LOCAL}
