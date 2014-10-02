@@ -1831,7 +1831,6 @@
     SUBDIR += rubygem-pagerduty
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-puma
-    SUBDIR += rubygem-puma16
     SUBDIR += rubygem-rabbirack
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rack-accept

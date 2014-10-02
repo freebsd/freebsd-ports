@@ -7150,3 +7150,4 @@ net-mgmt/scdp||2014-09-30|Has expired: Depends on expired net/libnet10
 net-mgmt/angst||2014-09-30|Has expired: Depends on expired net/libnet10
 security/py-otr||2014-09-30|Has expired: Abandoned upstream
 net-p2p/cdonkey||2014-09-30|Has expired: depends on deprecated db41 version
+www/rubygem-puma16||2014-10-02|Has expired: Old version no longer needed
