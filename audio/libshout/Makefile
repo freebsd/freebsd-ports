@@ -21,6 +21,7 @@ CONFLICTS=	libshout2-[0-9]*
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig
 
@@ -31,8 +32,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^Requires: |Requires.private: |' ${WRKSRC}/shout.pc.in
 	@${REINPLACE_CMD} -e '/^AM_CPPFLAGS = / s|^\(.*\) \(@XIPH_CPPFLAGS@\) \(.*\)$$|\1 \3 \2|' ${WRKSRC}/examples/Makefile.in
 	@${REINPLACE_CMD} -e 's|#ifdef IPV6_V6ONLY|#if defined(__BSD_VISIBLE) \&\& defined(IPV6_V6ONLY)|' ${WRKSRC}/src/net/sock.c
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libshout.so.3.2.0
 
 .include <bsd.port.mk>
