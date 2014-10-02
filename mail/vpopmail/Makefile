@@ -5,8 +5,7 @@ PORTNAME=	vpopmail
 PORTVERSION=	5.4.33
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
-		SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Easy virtual domain and authentication package for use with qmail
