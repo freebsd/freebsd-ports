@@ -64,7 +64,7 @@ CMAKE_BUILD_TYPE?=	Release
 
 PLIST_SUB+=		CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE:tl}"
 
-.if defined(STRIP) && ${STRIP} != ""
+.if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG)
 INSTALL_TARGET?=	install/strip
 .endif
 
