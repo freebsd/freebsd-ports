@@ -17,6 +17,7 @@ STAGEDIR=	${WRKDIR}/.stage
 NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
+PORTDATA=	*
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
