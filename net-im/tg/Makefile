@@ -3,19 +3,24 @@
 
 PORTNAME=	tg
 PORTVERSION=	1.0.5.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Command-line interface for Telegram
 
-LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
+    		libevent.so:${PORTSDIR}/devel/libevent2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vysheng
 GH_TAGNAME=	1.0.5.1
 GH_COMMIT=	77bbb4c
 
-USES=		execinfo gmake lua:52 readline
+USES=		execinfo gmake lua:52 ncurses pkgconfig readline
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/telegram-cli \
