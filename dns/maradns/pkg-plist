@@ -19,4 +19,3 @@ man/man8/zoneserver.8.gz
 sbin/Deadwood
 sbin/maradns
 sbin/zoneserver
-@dirrmtry %%ETCDIR%%

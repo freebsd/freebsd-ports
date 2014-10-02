@@ -4,4 +4,3 @@ etc/rc.d/bucardo
 %%SITE_PERL%%/Bucardo.pm
 man/man1/bucardo.1.gz
 share/bucardo/bucardo.schema
-@dirrm share/bucardo

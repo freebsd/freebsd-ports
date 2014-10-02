@@ -12,8 +12,6 @@ man/man3/Munin::Common::TLS.3.gz
 man/man3/Munin::Common::TLSClient.3.gz
 man/man3/Munin::Common::TLSServer.3.gz
 man/man3/Munin::Common::Timeout.3.gz
-@dirrmtry %%SITE_PERL%%/Munin/Common
-@dirrmtry %%SITE_PERL%%/Munin
-@dirrmtry(%%USER%%,%%GROUP%%,) %%LOGDIR%%
-@dirrmtry(%%USER%%,%%GROUP%%,) %%STATEDIR%%
-@dirrmtry(%%USER%%,%%GROUP%%,) %%SPOOLDIR%%
+@dir(%%USER%%,%%GROUP%%,) %%LOGDIR%%
+@dir(%%USER%%,%%GROUP%%,) %%STATEDIR%%
+@dir(%%USER%%,%%GROUP%%,) %%SPOOLDIR%%

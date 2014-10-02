@@ -185,12 +185,8 @@ sbin/yadifad
 /var/yadifa/masters/localhost.zone
 /var/yadifa/masters/localhost6.zone
 /var/yadifa/masters/somedomain.eu.zone
-@dirrmtry include/dnscore
-@dirrmtry include/dnsdb
-@dirrmtry include/dnszone
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry /var/yadifa/keys
-@dirrmtry /var/yadifa/masters
-@dirrmtry /var/yadifa/slaves
-@dirrmtry /var/yadifa/xfr
-@dirrmtry /var/yadifa
+@dir /var/yadifa/keys
+@dir /var/yadifa/masters
+@dir /var/yadifa/slaves
+@dir /var/yadifa/xfr
+@dir /var/yadifa
