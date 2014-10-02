@@ -109,7 +109,7 @@ BROKEN=		does not compile
 
 .if ${PORT_OPTIONS:MLINUX}
 CONFLICTS=	linux[-_]dri-[0-9]* linux-f10-dri-[0-9]*
-USE_LINUX=	f10
+USE_LINUX=	c6
 PLIST_SUB+=	LINUX=""
 .else
 PLIST_SUB+=	LINUX="@comment "
