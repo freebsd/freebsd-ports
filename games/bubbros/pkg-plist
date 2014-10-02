@@ -450,27 +450,3 @@ man/man1/bb.py.1.gz
 %%DATADIR%%/metaserver/pipelayer.py
 %%DATADIR%%/metaserver/socketoverudp.py
 share/pixmaps/bubbros.png
-@dirrm %%DATADIR%%/bubbob/doc/images
-@dirrm %%DATADIR%%/bubbob/doc
-@dirrm %%DATADIR%%/bubbob/ext1
-@dirrm %%DATADIR%%/bubbob/ext2
-@dirrm %%DATADIR%%/bubbob/ext3
-@dirrm %%DATADIR%%/bubbob/ext4
-@dirrm %%DATADIR%%/bubbob/ext5
-@dirrm %%DATADIR%%/bubbob/ext6
-@dirrm %%DATADIR%%/bubbob/ext7
-@dirrm %%DATADIR%%/bubbob/images
-@dirrm %%DATADIR%%/bubbob/levels
-@dirrm %%DATADIR%%/bubbob/music
-@dirrm %%DATADIR%%/bubbob/sounds
-@dirrm %%DATADIR%%/bubbob/tmp
-@dirrm %%DATADIR%%/bubbob
-@dirrm %%DATADIR%%/common
-@dirrm %%DATADIR%%/display/windows
-@dirrm %%DATADIR%%/display
-@dirrm %%DATADIR%%/http2/data
-@dirrm %%DATADIR%%/http2/sf
-@dirrm %%DATADIR%%/http2
-@dirrm %%DATADIR%%/java
-@dirrm %%DATADIR%%/metaserver
-@dirrm %%DATADIR%%
