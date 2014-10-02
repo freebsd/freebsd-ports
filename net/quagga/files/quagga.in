@@ -1,14 +1,14 @@
 #!/bin/sh
-
+#
 # $FreeBSD$
 #
+
 # PROVIDE: quagga
 # REQUIRE: netif routing 
-# KEYWORD: nojail
+# KEYWORD: nojail shutdown
 
-#
 # Add the following line to /etc/rc.conf to enable quagga:
-#quagga_enable="YES"
+# quagga_enable="YES"
 #
 # You may also wish to use the following variables to fine-tune startup:
 #  quagga_flags="-d"
@@ -28,83 +28,20 @@
 
 . /etc/rc.subr
 
-name="quagga"
+name=quagga
 rcvar=quagga_enable
 
 start_postcmd=start_postcmd
-stop_postcmd=stop_postcmd
+stop_postcmd="rm -f $pidfile"
 configtest_cmd=check_config
-extra_commands="configtest"
-
-check_config() {
-    echo "Checking $daemon.conf"
-    $command $daemon_flags -C
-    result=$?
-    if [ "$result" -eq "0" ]; then
-	echo "OK"
-    else
-	echo "FAILED"
-	exit
-    fi
-}
-
-start_postcmd()
-{
-	# Wait only when last daemon has started.
-	if [ "${quagga_daemons}" = "${quagga_daemons% ${name}}" ]; then
-		return;
-	fi
-        if [ ${quagga_wait_for} ]; then
-		echo Waiting for ${quagga_wait_for} route...
-		while true; do
-			/sbin/route -n get ${quagga_wait_for} >/dev/null 2>&1 && break;
-			sleep 1;
-		done
-	fi
-}
-
-stop_postcmd()
-{
-  rm -f $pidfile
-}
-
-do_cmd()
-{
-	local ret
-	ret=0
-	for daemon in ${quagga_daemons}; do
-	    command=%%PREFIX%%/sbin/${daemon}
-	    required_files=%%SYSCONF_DIR%%/${daemon}.conf
-	    pidfile=%%LOCALSTATE_DIR%%/${daemon}.pid
-	    if [ ${quagga_cmd} = "restart" -o ${quagga_cmd} = "start" ]; then
-		check_config
-	    fi
-	    if [ ${quagga_cmd} = "start" -a ! -f ${required_files} ]; then
-			continue
-	    fi
-	    if [ ${quagga_cmd} = "stop" -a -z $(check_process ${command}) ]; then
-			continue
-	    fi
-	    eval flags=\$\{${daemon}_flags:-\"${quagga_flags}\"\}
-	    name=${daemon}
-	    _rc_restart_done=false
-	    run_rc_command "$1" || ret=1
-	done
-	if checkyesno quagga_vtysh_boot; then
-	    echo "Booting for integrated-vtysh-config..."
-	    %%PREFIX%%/bin/vtysh -b
-	fi
-	return ${ret}
-}
-
-# set defaults
+extra_commands=configtest
 
 load_rc_config $name
 
-: ${quagga_enable="NO"}
-: ${quagga_flags="-d"}
-: ${quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"}
-: ${quagga_vtysh_boot="NO"}
+quagga_enable=${quagga_enable:-"NO"}
+quagga_flags=${quagga_flags:-"-d"}
+quagga_daemons=${quagga_daemons:-"zebra ripd ripngd ospfd ospf6d bgpd isisd"}
+quagga_vtysh_boot=${quagga_vtysh_boot:-"NO"}
 
 quagga_cmd=$1
 
@@ -143,3 +80,60 @@ case "${quagga_cmd}" in
 	do_cmd "${quagga_cmd}"
 	;;
 esac
+
+check_config()
+{
+    echo "Checking $daemon.conf"
+    $command $daemon_flags -C
+    result=$?
+    if [ "$result" -eq "0" ]; then
+	echo "OK"
+    else
+	echo "FAILED"
+	exit
+    fi
+}
+
+start_postcmd()
+{
+	# Wait only when last daemon has started.
+	if [ "${quagga_daemons}" = "${quagga_daemons% ${name}}" ]; then
+		return;
+	fi
+        if [ ${quagga_wait_for} ]; then
+		echo Waiting for ${quagga_wait_for} route...
+		while true; do
+			/sbin/route -n get ${quagga_wait_for} >/dev/null 2>&1 && break;
+			sleep 1;
+		done
+	fi
+}
+
+do_cmd()
+{
+	local ret
+	ret=0
+	for daemon in ${quagga_daemons}; do
+	    command=%%PREFIX%%/sbin/${daemon}
+	    required_files=%%SYSCONF_DIR%%/${daemon}.conf
+	    pidfile=%%LOCALSTATE_DIR%%/${daemon}.pid
+	    if [ ${quagga_cmd} = "restart" -o ${quagga_cmd} = "start" ]; then
+		check_config
+	    fi
+	    if [ ${quagga_cmd} = "start" -a ! -f ${required_files} ]; then
+			continue
+	    fi
+	    if [ ${quagga_cmd} = "stop" -a -z $(check_process ${command}) ]; then
+			continue
+	    fi
+	    eval flags=\$\{${daemon}_flags:-\"${quagga_flags}\"\}
+	    name=${daemon}
+	    _rc_restart_done=false
+	    run_rc_command "$1" || ret=1
+	done
+	if checkyesno quagga_vtysh_boot; then
+	    echo "Booting for integrated-vtysh-config..."
+	    %%PREFIX%%/bin/vtysh -b
+	fi
+	return ${ret}
+}
