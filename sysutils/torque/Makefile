@@ -3,6 +3,7 @@
 
 PORTNAME=	torque
 PORTVERSION=	2.5.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.adaptivecomputing.com/index.php?wpfb_dl=1643/
@@ -12,7 +13,6 @@ COMMENT=	Open source distributed computing resource manager based on PBS
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 USES=		gmake perl5 libtool
-USE_AUTOTOOLS=	libtoolize
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-syslog \
 		--disable-spool

@@ -43,6 +43,7 @@ include/tm_.h
 lib/libtorque.a
 lib/libtorque.so
 lib/libtorque.so.2
+lib/libtorque.so.2.0.0
 man/man1/basl2c.1.gz
 man/man1/nqs2pbs.1.gz
 man/man1/pbs.1.gz
