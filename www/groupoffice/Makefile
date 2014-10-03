@@ -30,6 +30,12 @@ WBXML_DESC=	Synchronization Support
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/go/base/Config.php
+	${REINPLACE_CMD} 's|/etc/groupoffice|${PREFIX}&|g' \
+		${WRKSRC}/go/base/Config.php \
+		${WRKSRC}/install/configFile.php \
+		${WRKSRC}/modules/serverclient/HttpClient.php \
+		${WRKSRC}/modules/serverclient/ServerclientModule.php \
+		${WRKSRC}/modules/site/index.php
 
 .include <bsd.port.options.mk>
 
