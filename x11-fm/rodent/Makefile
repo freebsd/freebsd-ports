@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rodent
-PORTVERSION=	4.8.0
-PORTREVISION=	3
+PORTVERSION=	5.2.9
 CATEGORIES=	x11-fm
-MASTER_SITES=	SF/xffm/${PORTVERSION}/
+MASTER_SITES=	SF/xffm/rodent/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Fast, small and powerful file manager
@@ -16,9 +15,10 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/japanese/gawk \
 		bash:${PORTSDIR}/shells/bash \
 		intltoolize:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libmagic.so:${PORTSDIR}/sysutils/file
+		libmagic.so:${PORTSDIR}/sysutils/file \
+		librfm.so:${PORTSDIR}/x11-fm/librfm
 
-USES=		desktop-file-utils gmake libtool:keepla pkgconfig
+USES=		desktop-file-utils gmake libtool:keepla pkgconfig tar:bzip2
 USE_GNOME=	glib20 gtk20 librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--docdir=${DOCSDIR}
@@ -34,9 +34,9 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-post-patch:
-	${REINPLACE_CMD} -e 's,^\(docdir = \).*,\1${DOCSDIR},' \
-		${WRKSRC}/Build/share/Makefile.in
+#post-patch:
+#	${REINPLACE_CMD} -e 's,^\(docdir = \).*,\1${DOCSDIR},' \
+#		${WRKSRC}/Build/share/Makefile.in
 
 .for a in ia64 powerpc sparc63
 BROKEN_${a}=		Does not compile on ia64, powerpc, or sparc64
