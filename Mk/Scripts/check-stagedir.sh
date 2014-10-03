@@ -189,30 +189,6 @@ parse_mtree() {
 	} >${WRKDIR}/.mtree
 }
 
-pkg_get_recursive_deps() {
-	echo "$@"
-	PKG_CHECKED="${PKG_CHECKED} $@"
-	for depends in $(${PKG_QUERY} '%do' $@ | sort -u); do
-		[ -z "${depends}" ] && return
-		case " ${PKG_CHECKED} " in
-		*\ ${depends}\ *) continue ;;
-		esac
-		pkg_get_recursive_deps "${depends}"
-	done
-}
-
-### GATHER DIRS OWNED BY RUN-DEPENDS. WHY ARE WE SCREAMING?
-lookup_dependency_dirs() {
-	: >${WRKDIR}/.run-depends-dirs
-	if [ -n "${PACKAGE_DEPENDS}" ]; then
-		echo "${PACKAGE_DEPENDS}" | while read pkg; do \
-		    PKG_CHECKED= pkg_get_recursive_deps "${pkg}"; \
-		    done | sort -u | xargs ${PKG_QUERY} "%D" | \
-		    sed -e 's,/$,,' | sort -u \
-		    >>${WRKDIR}/.run-depends-dirs
-	fi
-}
-
 # Sort a directory list by the order of the dfs-sorted file (from find -ds)
 sort_dfs() {
 	while read dir; do
@@ -268,7 +244,7 @@ generate_plist() {
 
 	### HANDLE DIRS
 	cat ${WRKDIR}/.plist-dirs-unsorted ${WRKDIR}/.mtree \
-	    ${WRKDIR}/.run-depends-dirs | sort -u >${WRKDIR}/.traced-dirs
+	    | sort -u >${WRKDIR}/.traced-dirs
 	find -sd ${STAGEDIR} -type d | sed -e "s,^${STAGEDIR},,;/^$/d" \
 	    >${WRKDIR}/.staged-dirs-dfs
 	sort ${WRKDIR}/.staged-dirs-dfs >${WRKDIR}/.staged-dirs-sorted
@@ -324,27 +300,6 @@ check_orphans_from_plist() {
 	return ${ret}
 }
 
-# Check for directories in plist that dependencies already handle.
-# XXX: This goes away when pkg learns auto dir tracking
-check_invalid_directories_from_dependencies() {
-	local ret=0
-	echo "===> Checking for directories handled by dependencies"
-	cat ${WRKDIR}/.run-depends-dirs | sort -u >${WRKDIR}/.restricted-dirs
-	: >${WRKDIR}/.invalid-plist-dependencies
-	comm -12 ${WRKDIR}/.plist-dirs-sorted-no-comments \
-	    ${WRKDIR}/.restricted-dirs \
-	    | sort_dfs | sed "${sed_dirs}" \
-	    >>${WRKDIR}/.invalid-plist-dependencies || :
-	if [ -s "${WRKDIR}/.invalid-plist-dependencies" ]; then
-	#	ret=1
-		while read line; do
-			echo "Warning: Possibly owned by dependency: ${line}" \
-			    >&2
-		done < ${WRKDIR}/.invalid-plist-dependencies
-	fi
-	return ${ret}
-}
-
 # Check for items in plist not in STAGEDIR (pkg lstat(2) errors)
 check_missing_plist_items() {
 	local ret=0
@@ -393,7 +348,7 @@ esac
 # validate environment
 envfault=
 for i in STAGEDIR PREFIX LOCALBASE WRKDIR WRKSRC MTREE_FILE GNOME_MTREE_FILE \
-    TMPPLIST PLIST_SUB_SED SCRIPTSDIR PACKAGE_DEPENDS PKG_QUERY \
+    TMPPLIST PLIST_SUB_SED SCRIPTSDIR \
     PORT_OPTIONS NO_PREFIX_RMDIR
 do
     if ! ( eval ": \${${i}?}" ) 2>/dev/null ; then
@@ -419,9 +374,6 @@ fi
 
 parse_mtree
 
-lookup_dependency_dirs
-unset PACKAGE_DEPENDS PKG_QUERY
-
 setup_plist_seds
 generate_plist
 
@@ -437,7 +389,6 @@ check_orphans_from_plist || ret=1
 sort -u ${WRKDIR}/.plist-dirs-unsorted-no-comments \
     >${WRKDIR}/.plist-dirs-sorted-no-comments
 
-check_invalid_directories_from_dependencies || ret=1
 check_missing_plist_items || ret=1
 
 if [ ${ret} -ne 0 ]; then
