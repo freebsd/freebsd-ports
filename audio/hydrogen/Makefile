@@ -2,77 +2,69 @@
 # $FreeBSD$
 
 PORTNAME=	hydrogen
-PORTVERSION=	0.9.5.1
-PORTREVISION=	1
+PORTVERSION=	0.9.6.1
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/Hydrogen/${MAJORVERSION}%20Sources
+MASTER_SITES=	GH
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	Advanced drum machine
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+
 CONFLICTS=	hydrogen-devel-0.*
 
-LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libtar.so:${PORTSDIR}/devel/libtar \
-		liblrdf.so:${PORTSDIR}/textproc/liblrdf
+USE_GITHUB=	yes
+GH_ACCOUNT=	hydrogen-music
+GH_PROJECT=	hydrogen
+GH_TAGNAME=	0.9.6.1
+GH_COMMIT=	71ec7c5
 
-MAJORVERSION=	0.9.5
-USE_QT4=	corelib gui linguist_build moc_build network qt3support rcc_build sql uic_build xml
-USES=		pkgconfig scons
+USE_QT4=	corelib gui qmake_build linguist_build moc_build network \
+		qt3support rcc_build sql uic_build xml
+USES=		cmake:outsource desktop-file-utils pkgconfig
+CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:BOOL=ON -DWANT_DEBUG:BOOL=OFF \
+		-DLIBSNDFILE_INCLUDE_DIR:STRING=${LOCALBASE}/include \
+		-DWANT_OSS:BOOL=ON
+USE_LDCONFIG=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	JACK ALSA PORTAUDIO LIBARCHIVE LASH
-OPTIONS_DEFAULT=	JACK
+OPTIONS_DEFINE=		ALSA JACK LADSPA LASH PORTAUDIO PULSEAUDIO RDF
+OPTIONS_DEFAULT=	JACK LADSPA RDF
 
-LIBARCHIVE_DESC=	LibArchive support
+ALSA_CMAKE_ON=		-DWANT_ALSA:BOOL=ON
+ALSA_CMAKE_OFF=		-DWANT_ALSA:BOOL=OFF
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_RUN_DEPENDS=	alsa-plugins>=0:${PORTSDIR}/audio/alsa-plugins
 
-post-patch:
-	${REINPLACE_CMD} -e "s|includes = \[\]|includes = \['-I${QT_INCDIR}/QtCore', '-I${QT_INCDIR}/QtXml', '-I${QT_INCDIR}/QtGui',  '-I${QT_INCDIR}', '-I${QT_INCDIR}/Qt', '-I${LOCALBASE}/include', '-I${LOCALBASE}/include/raptor2'\]|g; s|ldflags = \[\]|ldflags = \['-L${QT_LIBDIR}','-L${LOCALBASE}/lib'\,'-lQtCore', '-lQtGui', '-lQtXml', '-lQtNetwork']|g" ${WRKSRC}/Sconstruct
+JACK_CMAKE_ON=		-DWANT_JACK:BOOL=ON -DWANT_JACKSESSION:BOOL=ON
+JACK_CMAKE_OFF=		-DWANT_JACK:BOOL=OFF -DWANT_JACKSESSION:BOOL=OFF
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
-.include <bsd.port.options.mk>
+LADSPA_CMAKE_ON=	-DWANT_LADSPA:BOOL=ON \
+			-DLADSPA_LIBRARIES:STRING=${LOCALBASE}/lib/ladspa
+LADSPA_CMAKE_OFF=	-DWANT_LADSPA:BOOL=OFF
+LADSPA_BUILD_DEPENDS=	ladspa>=0:${PORTSDIR}/audio/ladspa
+LADSPA_RUN_DEPENDS=	analyseplugin:${PORTSDIR}/audio/ladspa
 
-MAKE_ARGS+=	oss=1
+LASH_CMAKE_ON=		-DWANT_LASH:BOOL=ON
+LASH_CMAKE_OFF=		-DWANT_LASH:BOOL=OFF
+LASH_LIB_DEPENDS=	liblash.so:${PORTSDIR}/audio/lash
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-MAKE_ARGS+=	jack=1
-.else
-MAKE_ARGS+=	jack=0
-.endif
+PORTAUDIO_CMAKE_ON=	-DWANT_PORTAUDIO:BOOL=ON \
+			-DPORTAUDIO_LIBRARIES:STRING=${LOCALBASE}/lib/portaudio2/libportaudio.so
+PORTAUDIO_CMAKE_OFF=	-DWANT_PORTAUDIO:BOOL=OFF
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
 
-.if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
-MAKE_ARGS+=	portaudio=1
-.else
-MAKE_ARGS+=	portaudio=0
-.endif
+PULSEAUDIO_CMAKE_ON=	-DWANT_PULSEAUDIO:BOOL=ON
+PULSEAUDIO_CMAKE_OFF=	-DWANT_PULSEAUDIO:BOOL=OFF
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
-.if ${PORT_OPTIONS:MLIBARCHIVE}
-LIB_DEPENDS+=	libarchive.so:${PORTSDIR}/archivers/libarchive
-MAKE_ARGS+=	libarchive=1
-.else
-MAKE_ARGS+=	libarchive=0
-.endif
-
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
-MAKE_ARGS+=	alsa=1
-.else
-MAKE_ARGS+=	alsa=0
-.endif
-
-.if ${PORT_OPTIONS:MLASH}
-LIB_DEPENDS+=	liblash.so:${PORTSDIR}/audio/lash
-MAKE_ARGS+=	lash=1
-.else
-MAKE_ARGS+=	lash=0
-.endif
-
-MAKE_ARGS+=	cppflags="${CXXFLAGS}" 	linkflags="${LINKFLAGS}" prefix="${PREFIX}" CC="${CC}" CXX="${CXX}"
-
-pre-install:
-	-@${RM} -rf ${WRKSRC}/data/doc/man
+RDF_DESC=		RDF File support
+RDF_CMAKE_ON=		-DWANT_LRDF:BOOL=ON \
+			-DLRDF_INCLUDE_DIR:STRING=${LOCALBASE}/include/raptor2
+RDF_CMAKE_OFF=		-DWANT_LRDF:BOOL=OFF
+RDF_LIB_DEPENDS=	liblrdf.so:${PORTSDIR}/textproc/liblrdf
 
 .include <bsd.port.mk>

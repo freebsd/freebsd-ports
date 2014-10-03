@@ -1,0 +1,52 @@
+--- CMakeLists.txt.orig	2014-09-09 20:39:33.000000000 +0200
++++ CMakeLists.txt	2014-09-18 10:21:00.739505710 +0200
+@@ -100,12 +100,12 @@
+ IF(APPLE)
+ 	SET(CMAKE_CXX_FLAGS "-O2")
+ ELSE()
+-	SET(CMAKE_CXX_FLAGS "-O2 -fno-implement-inlines")
++	SET(CMAKE_CXX_FLAGS "-O2 ${CMAKE_CXX_FLAGS}")
+ ENDIF()
+ 
+-SET(CMAKE_CXX_FLAGS_RELEASE "")
++SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
+ 
+-SET(CMAKE_CXX_FLAGS_DEBUG "-g ")#-Winline")
++SET(CMAKE_CXX_FLAGS_DEBUG "-g ${CMAKE_CXX_FLAGS_DEBUG}")#-Winline")
+ 
+ 
+ IF(APPLE)
+@@ -138,7 +138,6 @@
+     ENDIF(APPLE)
+ ENDIF(WIN32)
+ 
+-
+ #
+ # HEADER LIBRARY FUNCTIONS
+ #
+@@ -178,7 +177,11 @@
+ IF("${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD")
+ 	FIND_HELPER(OSS oss sys/soundcard.h ossaudio )
+ ELSE()
+-	FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
++    IF("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
++        FIND_HELPER(OSS oss sys/soundcard.h c )
++    ELSE()
++        FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
++    ENDIF()
+ ENDIF()
+ 
+ FIND_HELPER(JACK jack jack/jack.h jack)
+@@ -195,9 +198,9 @@
+ FIND_HELPER(LASH lash-1.0 lash/lash.h lash)
+ FIND_HELPER(LRDF lrdf lrdf.h lrdf)
+ 
+-IF(LRDF_FOUND)
+-	include_directories(${LRDF_INCLUDE_DIRS}) # see github issue 194
+-ENDIF(LRDF_FOUND)
++#IF(LRDF_FOUND)
++#	include_directories(${LRDF_INCLUDE_DIRS}) # see github issue 194
++#ENDIF(LRDF_FOUND)
+ 
+ FIND_HELPER(RUBBERBAND rubberband RubberBandStretcher.h rubberband)
+ FIND_HELPER(CPPUNIT cppunit cppunit/TestCase.h cppunit)
