@@ -15,6 +15,7 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	Interesting one-player puzzle game for X (SDL)
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		gmake
 USE_SDL=	image mixer sdl
