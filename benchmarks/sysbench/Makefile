@@ -17,8 +17,7 @@ COMMENT=	Modular, cross-platform, and multi-threaded benchmark tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool
-USE_AUTOTOOLS=	libtoolize aclocal autoconf
+USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sysbench
@@ -37,9 +36,5 @@ MYSQL_USE=		MYSQL=yes
 PGSQL_CONFIGURE_ON=	--with-pgsql
 PGSQL_CONFIGURE_OFF=	--with-pgsql=no
 PGSQL_USE=		PGSQL=yes
-
-post-configure:
-	@${REINPLACE_CMD} -e 's/^program_transform_name/#/' \
-		${WRKSRC}/Makefile ${WRKSRC}/sysbench/Makefile
 
 .include <bsd.port.mk>
