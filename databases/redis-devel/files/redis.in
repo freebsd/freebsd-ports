@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 name="redis"
-rcvar=`set_rcvar`
+rcvar="${name}_enable"
 
 extra_commands="reload"
 
