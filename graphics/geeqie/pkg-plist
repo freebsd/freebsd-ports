@@ -49,10 +49,3 @@ share/locale/vi/LC_MESSAGES/geeqie.mo
 share/locale/zh_CN/LC_MESSAGES/geeqie.mo
 share/locale/zh_TW/LC_MESSAGES/geeqie.mo
 share/pixmaps/geeqie.png
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrm %%DATADIR%%/applications
-@dirrm %%DATADIR%%
-@dirrm lib/geeqie
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
