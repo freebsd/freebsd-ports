@@ -2,14 +2,13 @@
 # $FreeBSD$
 #   $MCom: ports/devel/gnome2-hacker-tools/Makefile,v 1.47 2009/03/01 08:15:25 marcus Exp $
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-hacker-tools
 
 COMMENT=	GNOME 2 development tools
 
-RUN_DEPENDS=	mlview:${PORTSDIR}/editors/mlview \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
+RUN_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		glade-3:${PORTSDIR}/devel/glade3 \
 		ghex2:${PORTSDIR}/editors/ghex \
 		gob2:${PORTSDIR}/devel/gob2 \
