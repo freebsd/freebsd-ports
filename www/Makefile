@@ -1807,6 +1807,7 @@
     SUBDIR += rubygem-jruby-rack
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
+    SUBDIR += rubygem-kaminari-rails4
     SUBDIR += rubygem-kensa
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-less
