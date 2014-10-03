@@ -7156,3 +7156,4 @@ x11-toolkits/eel||2014-10-03|Removed, doesn't build with updated gnome-desktop
 deskutils/gnome-main-menu||2014-10-03|Removed, because x11-toolkits/eel was removed
 editors/mlview||2014-10-03|Removed, because x11-toolkits/eel was removed
 textproc/gnome-translate||2014-10-03|Removed, because x11-toolkits/eel was removed
+x11/avant-window-navigator-gnome||2014-10-03|Removed doesn't build with update gnome-desktop

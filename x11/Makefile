@@ -12,7 +12,6 @@
     SUBDIR += arandr
     SUBDIR += aterm
     SUBDIR += avant-window-navigator
-    SUBDIR += avant-window-navigator-gnome
     SUBDIR += babl
     SUBDIR += bbappconf
     SUBDIR += bbdock
