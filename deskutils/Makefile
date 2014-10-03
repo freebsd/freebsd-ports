@@ -64,7 +64,6 @@
     SUBDIR += global-menu
     SUBDIR += gnochm
     SUBDIR += gnome-blog
-    SUBDIR += gnome-main-menu
     SUBDIR += gnome-utils
     SUBDIR += gnote
     SUBDIR += gnotime

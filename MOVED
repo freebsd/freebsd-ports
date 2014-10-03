@@ -7152,3 +7152,7 @@ security/py-otr||2014-09-30|Has expired: Abandoned upstream
 net-p2p/cdonkey||2014-09-30|Has expired: depends on deprecated db41 version
 www/rubygem-puma16||2014-10-02|Has expired: Old version no longer needed
 x11-toolkits/gnome-desktop-sharp20||2014-10-02|Removed, no users and depends on gnome-panel which will be removed
+x11-toolkits/eel||2014-10-03|Removed, doesn't build with updated gnome-desktop
+deskutils/gnome-main-menu||2014-10-03|Removed, because x11-toolkits/eel was removed
+editors/mlview||2014-10-03|Removed, because x11-toolkits/eel was removed
+textproc/gnome-translate||2014-10-03|Removed, because x11-toolkits/eel was removed
