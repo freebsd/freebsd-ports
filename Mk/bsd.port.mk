@@ -1213,12 +1213,10 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 
 # Enable new xorg for FreeBSD versions after Radeon KMS was imported unless
 # WITHOUT_NEW_XORG is set.
-.if ${OSVERSION} >= 902510
-. if !defined(WITHOUT_NEW_XORG)
+.if !defined(WITHOUT_NEW_XORG)
 WITH_NEW_XORG?=	yes
-. else
+.else
 .undef WITH_NEW_XORG
-. endif
 .endif
 
 # Only define tools here (for transition period with between pkg tools)

@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141003:
+  AFFECTS: xorg users
+  AUTHOR: bapt@FreeBSD.org
+
+  The WITH_NEW_XORG setting has been activated by default on all versions
+  of FreeBSD, which allows us to have packages for xorg 1.12 and kde4.
+
+  Please be aware that on systems that only support syscons
+  switching virtual terminals or exiting X
+  results in a black screen or the last image of their desktop
+  (like a screenshot) being presented.  Commands can still be typed blindly.
+
+  Most, if not all, systems should be using vt(4) and this can be enabled
+  by setting kern.vty=vt in /boot/loader.conf and reboot to activate.
+
 20141001:
   AFFECTS: xorg users
   AUTHOR: bapt@FreeBSD.org
