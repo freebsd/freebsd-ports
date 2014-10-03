@@ -75,6 +75,10 @@ _INCLUDE_USES_AUTORECONF_POST_MK=	yes
 
 .if ! ${autoreconf_ARGS:Mbuild}
 do-autoreconf:
+.for f in AUTHORS ChangeLog INSTALL NEWS README
+# Don't modify time stamps if the files already exist
+	@test -e ${CONFIGURE_WRKSRC}/${f} || ${TOUCH} ${CONFIGURE_WRKSRC}/${f}
+.endfor
 	@(cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/autoreconf -f -i)
 .endif
 
