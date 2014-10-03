@@ -121,6 +121,3 @@ share/pixmaps/zephulor.png
 %%DATADIR%%/myimg.py
 %%DATADIR%%/scnloadtool.py
 %%DATADIR%%/zephulor.py
-@dirrm %%DATADIR%%/maptool
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
