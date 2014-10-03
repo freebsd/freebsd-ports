@@ -324,37 +324,6 @@ check_orphans_from_plist() {
 	return ${ret}
 }
 
-# Check for directories being removed that are handled by MTREE files.
-check_invalid_directories_mtree() {
-	local ret=0
-	# Anything listed in plist and in restricted-dirs is a failure. I.e.,
-	# it's owned by a run-time dependency or one of the MTREEs.
-	echo "===> Checking for directories owned by MTREEs"
-	cat ${WRKDIR}/.mtree | sort -u >${WRKDIR}/.restricted-dirs
-	: >${WRKDIR}/.invalid-plist-mtree
-	comm -12 ${WRKDIR}/.plist-dirs-sorted-no-comments \
-	    ${WRKDIR}/.restricted-dirs \
-	    | sort_dfs | sed "${sed_dirs}" \
-	    >>${WRKDIR}/.invalid-plist-mtree || :
-	if [ -s "${WRKDIR}/.invalid-plist-mtree" ]; then
-		while read line; do
-			# Skip removal of PREFIX and PREFIX/info from
-			# bsd.port.mk for now. The removal of info may
-			# be a bug; it's part of BSD.local.dist.
-			# See ports/74691
-			if [ "${PREFIX}" != "${LOCALBASE}" ]; then
-				case "${line}" in
-					"@dirrmtry info") continue ;;
-					"@dirrmtry ${PREFIX}") continue ;;
-				esac
-			fi
-			ret=1
-			echo "Error: Owned by MTREE: ${line}" >&2
-		done < ${WRKDIR}/.invalid-plist-mtree
-	fi
-	return ${ret}
-}
-
 # Check for directories in plist that dependencies already handle.
 # XXX: This goes away when pkg learns auto dir tracking
 check_invalid_directories_from_dependencies() {
