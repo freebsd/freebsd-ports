@@ -79,6 +79,13 @@ lib/icinga2/libremote.so
 %%PYTHON_SITELIBDIR%%/icinga2/utils/debug.pyc
 %%PYTHON_SITELIBDIR%%/icinga2/utils/netstring.py
 %%PYTHON_SITELIBDIR%%/icinga2/utils/netstring.pyc
+man/man8/icinga2-build-ca.8.gz
+man/man8/icinga2-build-key.8.gz
+man/man8/icinga2-disable-feature.8.gz
+man/man8/icinga2-enable-feature.8.gz
+man/man8/icinga2-prepare-dirs.8.gz
+man/man8/icinga2-sign-key.8.gz
+man/man8/icinga2.8.gz
 sbin/icinga2
 sbin/icinga2-disable-feature
 sbin/icinga2-enable-feature
@@ -116,13 +123,6 @@ sbin/icinga2-list-objects
 %%DATADIR%%/pki/openssl.cnf
 %%DATADIR%%/pki/pkifuncs
 %%DATADIR%%/pki/vars
-share/man/man8/icinga2-build-ca.8
-share/man/man8/icinga2-build-key.8
-share/man/man8/icinga2-disable-feature.8
-share/man/man8/icinga2-enable-feature.8
-share/man/man8/icinga2-prepare-dirs.8
-share/man/man8/icinga2-sign-key.8
-share/man/man8/icinga2.8
 @dir /var/cache/icinga2
 @dir /var/lib/icinga2/api/log
 @dir /var/lib/icinga2/api/repository
