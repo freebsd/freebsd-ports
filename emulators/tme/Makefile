@@ -15,9 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
-USES=		compiler gettext gmake iconv libtool perl5 pkgconfig
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
+USES=		autoreconf compiler gettext gmake iconv libtool perl5 pkgconfig
 USE_GNOME=	gdkpixbuf2 gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -37,6 +35,9 @@ CFLAGS+=	-fbracket-depth=1024
 .endif
 
 post-patch:
+	@${RM} -r ${WRKSRC}/libltdl
+	@${REINPLACE_CMD} 's/LTDL_SHLIBPATH_VAR/LT_MODULE_PATH_VAR/' \
+		${WRKSRC}/libtme/Makefile.am ${WRKSRC}/libtme/module.c
 	@${REINPLACE_CMD} -e '/^#ifdef/s|\*/||' \
 		${WRKSRC}/libtme/misc.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
