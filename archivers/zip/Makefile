@@ -3,6 +3,7 @@
 
 PORTNAME=	zip
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION} \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
