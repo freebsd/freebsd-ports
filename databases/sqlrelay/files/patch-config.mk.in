@@ -9,12 +9,3 @@
  libexecdir = @libexecdir@/sqlrelay
  bindir = @bindir@
  localstatedir = @localstatedir@
-@@ -89,7 +89,7 @@
- # rudiments library
- RUDIMENTSPATH = @RUDIMENTSPATH@
- RUDIMENTSINCLUDES = @RUDIMENTSINCLUDES@
--RUDIMENTSLIBS = @RUDIMENTSLIBS@
-+RUDIMENTSLIBS = @RUDIMENTSLIBS@ -lssl -lcrypto -lpthread
- RUDIMENTSLIBSPATH = @RUDIMENTSLIBSPATH@ 
- 
- #iconv
