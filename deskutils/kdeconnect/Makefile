@@ -6,7 +6,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://download.kde.org/unstable/kdeconnect/${PORTVERSION}/src/
 
 MAINTAINER=	yurkis@gmail.com
-COMMENT=	Cat chasing a mouse all over the screen
+COMMENT=	KDE Connect provides several features to integrate your phone and your computer
 
 EXTRACT_SUFX=	.tar.xz
 USES= cmake
