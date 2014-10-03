@@ -20,12 +20,10 @@ include/vamp-sdk/plugguard.h
 include/vamp-sdk/vamp-sdk.h
 include/vamp/vamp.h
 lib/libvamp-hostsdk.a
-lib/libvamp-hostsdk.la
 lib/libvamp-hostsdk.so
 lib/libvamp-hostsdk.so.3
 lib/libvamp-hostsdk.so.3.3.0
 lib/libvamp-sdk.a
-lib/libvamp-sdk.la
 lib/libvamp-sdk.so
 lib/libvamp-sdk.so.2
 lib/libvamp-sdk.so.2.3.0
