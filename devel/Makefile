@@ -4466,6 +4466,7 @@
     SUBDIR += rubygem-rb-fsevent
     SUBDIR += rubygem-rb-inotify
     SUBDIR += rubygem-rb-kqueue
+    SUBDIR += rubygem-rbtrace
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rdoc
     SUBDIR += rubygem-recaptcha
