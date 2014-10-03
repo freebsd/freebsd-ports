@@ -17,6 +17,7 @@ bin/rt-mailgate
 %%RT_ETC_DIR%%/schema.SQLite
 %%RT_ETC_DIR%%/schema.mysql
 @group wheel
+@mode
 %%SITE_PERL%%/RT.pm
 %%SITE_PERL%%/RT/ACE.pm
 %%SITE_PERL%%/RT/ACL.pm
