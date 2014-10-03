@@ -110,15 +110,6 @@ libdata/pkgconfig/libdecoration.pc
 %%DATADIR%%/water.xml
 %%DATADIR%%/wobbly.xml
 %%DATADIR%%/zoom.xml
-%%GNOME%%@cwd %%WINDOWSETTINGSDATADIR%%
-%%GNOME%%share/gnome/wm-properties/compiz-wm.desktop
-%%GNOME%%share/gnome-control-center/keybindings/50-compiz-desktop-key.xml
-%%GNOME%%share/gnome-control-center/keybindings/50-compiz-key.xml
-%%GNOME%%@cwd %%WINDOWSETTINGSLIBDIR%%
-%%GNOME%%window-manager-settings/libcompiz.a
-%%GNOME%%window-manager-settings/libcompiz.so
-%%GNOME%%@cwd %%RESETPREFIX%%
-%%GNOME%%share/applications/compiz.desktop
 share/locale/af/LC_MESSAGES/compiz.mo
 share/locale/ar/LC_MESSAGES/compiz.mo
 share/locale/bg/LC_MESSAGES/compiz.mo
@@ -175,10 +166,3 @@ share/locale/xh/LC_MESSAGES/compiz.mo
 share/locale/zh_CN/LC_MESSAGES/compiz.mo
 share/locale/zh_TW/LC_MESSAGES/compiz.mo
 share/locale/zu/LC_MESSAGES/compiz.mo
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
-@dirrmtry share/locale/lo/LC_MESSAGES
-@dirrmtry share/locale/lo
-@dirrm %%DATADIR%%
-@dirrm lib/compiz
-@dirrm include/compiz
