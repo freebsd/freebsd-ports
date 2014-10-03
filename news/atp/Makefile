@@ -3,7 +3,7 @@
 
 PORTNAME=	atp
 PORTVERSION=	1.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/bbs/mail
@@ -15,7 +15,8 @@ COMMENT=	QWK message packet reader and composer for FreeBSD
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USES=		gmake
+USES=		gmake perl5
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 

@@ -1,5 +1,5 @@
---- Makefile.in.old	Fri May 15 16:34:21 1998
-+++ Makefile.in	Fri May 15 16:35:02 1998
+--- Makefile.in.orig	1997-01-03 13:00:00 UTC
++++ Makefile.in
 @@ -20,7 +20,7 @@
  mandir = $(prefix)/man
  
@@ -27,16 +27,34 @@
  
  in_cfg:	
  	@echo " "
-@@ -136,12 +136,6 @@
- 	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./atp $(bindir)/atp
- 	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./utils/atpdiag $(bindir)/atpdiag
- 	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./utils/rot13 $(bindir)/rot13
+@@ -133,23 +133,17 @@
+ 	@echo " "
+ 	@echo "Installing binaries . . ."
+ 	@$(STRIP) atp ./utils/rot13
+-	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./atp $(bindir)/atp
+-	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./utils/atpdiag $(bindir)/atpdiag
+-	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./utils/rot13 $(bindir)/rot13
 -
 -in_wrap:
 -	@echo " "
 -	@echo "Now it's YOUR turn, please do this:"
 -	@echo "Set and export the environment variable: ATP=$(atphome)"
 -	@echo "Edit your $(atphome)/atprc and then read the docs!"
++	$(INSTALL) -m $(bin_prm) ./atp $(bindir)/atp
++	$(INSTALL) -m $(bin_prm) ./utils/atpdiag $(bindir)/atpdiag
++	$(INSTALL) -m $(bin_prm) ./utils/rot13 $(bindir)/rot13
  
  in_man:
  	@echo " "
+ 	@echo "Installing man pages . . ."
+-	$(INSTALL) -m $(man_prm) -o $(man_own) -g $(man_grp) $(srcdir)/docs/atp.1 $(mandir)/man1
+-	$(INSTALL) -m $(man_prm) -o $(man_own) -g $(man_grp) $(srcdir)/docs/editline.3 $(mandir)/man3
+-	$(INSTALL) -m $(man_prm) -o $(man_own) -g $(man_grp) $(srcdir)/docs/atpdiag.1 $(mandir)/man1
+-	$(INSTALL) -m $(man_prm) -o $(man_own) -g $(man_grp) $(srcdir)/docs/rot13.1 $(mandir)/man1
++	$(INSTALL) -m $(man_prm) $(srcdir)/docs/atp.1 $(mandir)/man1
++	$(INSTALL) -m $(man_prm) $(srcdir)/docs/editline.3 $(mandir)/man3
++	$(INSTALL) -m $(man_prm) $(srcdir)/docs/atpdiag.1 $(mandir)/man1
++	$(INSTALL) -m $(man_prm) $(srcdir)/docs/rot13.1 $(mandir)/man1
+ 
+ uninstall:
+ 	rm -f $(mandir)/man1/atp.1 $(mandir)/man1/atpdiag.1 $(mandir)/man1/rot13.1
