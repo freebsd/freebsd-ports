@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_rivet
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	www tcl
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tcl/rivet
@@ -15,12 +16,12 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libitcl.so:${PORTSDIR}/lang/itcl
 
+GNU_CONFIGURE=	yes
 USE_APACHE=	22+
-USE_AUTOTOOLS=	aclocal libtoolize autoheader automake autoconf
 USE_LDCONFIG=	${PREFIX}/lib/rivet
 USES+=		gmake libtool tcl:85+
 
-INSTALL_TARGET=	install
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=--with-apache-version=2 \
 		--prefix=${PREFIX} --with-apxs=${APXS} \
@@ -29,7 +30,7 @@ CONFIGURE_ARGS+=--with-apache-version=2 \
 
 post-patch:
 	${REINPLACE_CMD}  -e 's|`$${apxs_found} -q LIBEXECDIR`|${PREFIX}/${APACHEMODDIR}|g' \
-	   ${WRKSRC}/configure.ac ${WRKSRC}/configure
+		${WRKSRC}/configure
 
 post-install:
 	@${ECHO_MSG} ""
