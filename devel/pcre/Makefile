@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=	--with-posix-malloc-threshold=${WITH_POSIX_MALLOC_THRESHOLD}
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "/^\.rs/d" ${WRKSRC}/doc/*.3
+	@${REINPLACE_CMD} -e "/^\.rs/d" ${WRKSRC}/doc/*.3 ${WRKSRC}/doc/*.1
 	@${REINPLACE_CMD} -e "s/£//g" ${WRKSRC}/doc/pcre_compile2.3
 .if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -E -e '/^install-data-am/,/^$$/ s,install-(dist_doc|dist_html|html)DATA,,g' \
