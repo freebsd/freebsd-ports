@@ -29,9 +29,6 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 # Workaround configure.in lameness.
 CPPFLAGS+=	`net-snmp-config --cflags`
 
-post-patch:
-	@${TOUCH} ${WRKSRC}/ChangeLog
-
 do-install:
 	${MKDIR} ${STAGEDIR}${NAGIOS_PLUGIN_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/check_snmp_disk ${STAGEDIR}${NAGIOS_PLUGIN_DIR}
