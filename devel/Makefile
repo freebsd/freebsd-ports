@@ -4681,6 +4681,7 @@
     SUBDIR += tclap
     SUBDIR += tclcheck
     SUBDIR += tclgetopts
+    SUBDIR += tcllauncher
     SUBDIR += tcllib
     SUBDIR += tclmore
     SUBDIR += tcloo
