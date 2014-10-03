@@ -1804,6 +1804,7 @@
     SUBDIR += rubygem-jquery-rails4
     SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails
+    SUBDIR += rubygem-jquery-ui-rails-rails4
     SUBDIR += rubygem-jruby-rack
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
