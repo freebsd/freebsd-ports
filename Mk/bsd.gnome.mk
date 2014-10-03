@@ -76,7 +76,7 @@ _USE_GNOME_ALL= esound intlhack intltool introspection \
 _USE_GNOME_ALL+= gdkpixbuf glib12 gtk12 imlib
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 \
+_USE_GNOME_ALL+= atk atspi cairo desktopfileutils evolutiondataserver gal2 \
 		gdkpixbuf2 gconf2 glib20 gnomecontrolcenter2 gnomedesktop \
 		gnomedocutils gnomemenus gnomepanel gnomesharp20 \
 		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
@@ -382,10 +382,6 @@ libzvt_USE_GNOME_IMPL=	gtk20
 librsvg2_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc
 librsvg2_USE_GNOME_IMPL=libgsf gtk20
-
-eel2_LIB_DEPENDS=	libeel-2.so:${PORTSDIR}/x11-toolkits/eel
-eel2_DETECT=		${LOCALBASE}/libdata/pkgconfig/eel-2.0.pc
-eel2_USE_GNOME_IMPL=	gnomedesktop
 
 gnomepanel_LIB_DEPENDS=libpanel-applet-3.so:${PORTSDIR}/x11/gnome-panel
 gnomepanel_DETECT=	${LOCALBASE}/libdata/pkgconfig/libpanelapplet-3.0.pc

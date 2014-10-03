@@ -201,7 +201,6 @@
     SUBDIR += manedit
     SUBDIR += mg
     SUBDIR += mined
-    SUBDIR += mlview
     SUBDIR += morla
     SUBDIR += mousepad
     SUBDIR += mp

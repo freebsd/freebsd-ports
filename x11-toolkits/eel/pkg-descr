@@ -1,7 +1,0 @@
-The eel library contains a number of useful classes and functions which
-extend glib, gtk, gnome-libs, and other widely-used GNOME platform libraries.
-
-Almost all of the eel library was previously part of Nautilus, but is now
-a separate package so it can be used by other applications.
-
-WWW: http://www.gnome.org/
