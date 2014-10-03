@@ -27,6 +27,7 @@ shebangonefile() {
 	case "$interp" in
 	"") ;;
 	/usr/bin/env) ;;
+	${LINUXBASE}/*) ;;
 	${LOCALBASE}/*) ;;
 	${PREFIX}/*) ;;
 	/usr/bin/awk) ;;
