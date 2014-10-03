@@ -10,37 +10,6 @@
  	*)
  		;;
  esac
-@@ -17738,8 +17741,8 @@
- 
- 
- 	HAVE_PTHREAD=""
--	PTHREADINCLUDES=""
--	PTHREADLIB=""
-+	#PTHREADINCLUDES=""
-+	#PTHREADLIB=""
- 
- 	if ( test "$cross_compiling" = "yes" )
- 	then
-@@ -17795,9 +17798,6 @@
- STATIC=""
- HEADERSANDLIBSPATH=""
- 
--eval "PTHREADINCLUDES=\"\""
--eval "PTHREADLIB=\"\""
--eval "PTHREADLIBPATH=\"\""
- eval "PTHREADSTATIC=\"\""
- if ( test -n "" )
- then
-@@ -18012,9 +18012,6 @@
- LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib$||g" -e "s|-L/lib$||g" -e "s|-L/usr/lib ||g" -e "s|-L/lib ||g"`
- LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib64$||g" -e "s|-L/lib64$||g" -e "s|-L/usr/lib64 ||g" -e "s|-L/lib64 ||g"`
- 
--eval "PTHREADINCLUDES=\"$INCLUDESTRING\""
--eval "PTHREADLIB=\"$LIBSTRING\""
--eval "PTHREADLIBPATH=\"$LIBPATH\""
- eval "PTHREADSTATIC=\"$STATIC\""
- if ( test -n "" )
- then
 @@ -30750,47 +30747,47 @@
  # prepend DESTDIR where appropriate
  if ( test "`echo $ac_default_prefix | cut -c1`" = "/" )
