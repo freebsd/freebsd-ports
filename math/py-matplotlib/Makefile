@@ -3,6 +3,7 @@
 
 PORTNAME=	matplotlib
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +13,14 @@ COMMENT=	Plotting library uses a syntax familiar to MATLAB users
 
 LICENSE=	PSFL
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing
+BUILD_DEPENDS=	${PYNUMPY} 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpng15.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYNUMPY} \
+		{PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateut
+il \
+		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
+		${PYTHON_PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing
 
 USES=		pkgconfig shebangfix python
 USE_PYTHON=	distutils autoplist
