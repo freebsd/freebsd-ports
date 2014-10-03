@@ -142,9 +142,8 @@ man/man1/TransverseMercatorProj.1.gz
 sbin/geographiclib-get-geoids
 sbin/geographiclib-get-gravity
 sbin/geographiclib-get-magnetic
+share/cmake/GeographicLib/FindGeographicLib.cmake
 %%DATADIR%%/geoids/.keep
-%%DATADIR%%/gravity/.keep
-%%DATADIR%%/magnetic/.keep
 %%GEOID_EGM2008_1%%%%DATADIR%%/geoids/egm2008-1.pgm
 %%GEOID_EGM2008_1%%%%DATADIR%%/geoids/egm2008-1.pgm.aux.xml
 %%GEOID_EGM2008_1%%%%DATADIR%%/geoids/egm2008-1.wld
@@ -166,6 +165,7 @@ sbin/geographiclib-get-magnetic
 %%GEOID_EGM96_5%%%%DATADIR%%/geoids/egm96-5.pgm
 %%GEOID_EGM96_5%%%%DATADIR%%/geoids/egm96-5.pgm.aux.xml
 %%GEOID_EGM96_5%%%%DATADIR%%/geoids/egm96-5.wld
+%%DATADIR%%/gravity/.keep
 %%GRAVITY_EGM2008%%%%DATADIR%%/gravity/egm2008.egm
 %%GRAVITY_EGM2008%%%%DATADIR%%/gravity/egm2008.egm.cof
 %%GRAVITY_EGM84%%%%DATADIR%%/gravity/egm84.egm
@@ -174,21 +174,10 @@ sbin/geographiclib-get-magnetic
 %%GRAVITY_EGM96%%%%DATADIR%%/gravity/egm96.egm.cof
 %%GRAVITY_WGS84%%%%DATADIR%%/gravity/wgs84.egm
 %%GRAVITY_WGS84%%%%DATADIR%%/gravity/wgs84.egm.cof
+%%DATADIR%%/magnetic/.keep
 %%MAGNETIC_EMM2010%%%%DATADIR%%/magnetic/emm2010.wmm
 %%MAGNETIC_EMM2010%%%%DATADIR%%/magnetic/emm2010.wmm.cof
 %%MAGNETIC_IGRF11%%%%DATADIR%%/magnetic/igrf11.wmm
 %%MAGNETIC_IGRF11%%%%DATADIR%%/magnetic/igrf11.wmm.cof
 %%MAGNETIC_WMM2010%%%%DATADIR%%/magnetic/wmm2010.wmm
 %%MAGNETIC_WMM2010%%%%DATADIR%%/magnetic/wmm2010.wmm.cof
-share/cmake/GeographicLib/FindGeographicLib.cmake
-@dirrm include/GeographicLib
-@dirrm %%PYTHON_SITELIBDIR%%/geographiclib
-@dirrm libexec/GeographicLib/matlab/private
-@dirrm libexec/GeographicLib/matlab
-@dirrm libexec/GeographicLib
-@dirrm %%DATADIR%%/geoids
-@dirrm %%DATADIR%%/gravity
-@dirrm %%DATADIR%%/magnetic
-@dirrm %%DATADIR%%
-@dirrm share/cmake/GeographicLib
-@dirrmtry share/cmake
