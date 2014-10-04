@@ -1,0 +1,19 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is stk.
+
+----------------------------------------------------------------------------
+ The STK is a (not so) Small Toolbox for Kriging. Its primary focus in on
+ the interpolation/regression technique known as kriging, which is very
+ closely related to Splines and Radial Basis Functions, and can be
+ interpreted as a non-parametric Bayesian method using a Gaussian Process
+ (GP) prior. The STK also provides tools for the sequential and
+ non-sequential design of experiments. Even though it is, currently, mostly
+ geared towards the Design and Analysis of Computer Experiments (DACE), the
+ STK can be useful for other applications areas (such as Geostatistics,
+ Machine Learning, Non-parametric Regression, etc.). 
+
+WWW: http://octave.sourceforge.net/
