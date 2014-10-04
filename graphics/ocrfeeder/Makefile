@@ -3,7 +3,7 @@
 
 PORTNAME=	ocrfeeder
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -13,7 +13,7 @@ COMMENT=	Document layout analysis and optical character recognition
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	goocanvas2>0:${PORTSDIR}/graphics/goocanvas2 \
-		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}sane>0:${PORTSDIR}/graphics/py-sane \
 		${PYTHON_PKGNAMEPREFIX}reportlab2>0:${PORTSDIR}/print/py-reportlab2 \
 		${PYTHON_PKGNAMEPREFIX}enchant>0:${PORTSDIR}/textproc/py-enchant
