@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zim
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
@@ -10,6 +10,7 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Desktop wiki editor
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
@@ -17,11 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg \
 
 NO_ARCH=	yes
 
-USES=		desktop-file-utils gettext shared-mime-info
+USES=		desktop-file-utils gettext python:2 shared-mime-info
 USE_GNOME=	pygtk2
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	autoplist distutils
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		BZR DITAA GIT GNUPLOT GNUR GRAPHVIZ LATEX \
