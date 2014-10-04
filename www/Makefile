@@ -1802,6 +1802,7 @@
     SUBDIR += rubygem-jquery-atwho-rails-rails4
     SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-jquery-rails4
+    SUBDIR += rubygem-jquery-scrollto-rails
     SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails
     SUBDIR += rubygem-jquery-ui-rails-rails4
