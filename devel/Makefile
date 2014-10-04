@@ -3493,6 +3493,7 @@
     SUBDIR += projectcenter
     SUBDIR += protobuf
     SUBDIR += protobuf-c
+    SUBDIR += protobuf25
     SUBDIR += psptoolchain
     SUBDIR += psptoolchain-binutils
     SUBDIR += psptoolchain-gcc-stage1
