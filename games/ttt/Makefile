@@ -14,11 +14,12 @@ EXTRACT_ONLY=   ${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Simple one or two player Tic Tac Toe game
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf
 USE_SDL=	mixer sdl
-USE_AUTOTOOLS=	aclocal automake autoheader autoconf libtoolize
-AUTOMAKE_ARGS=	--add-missing --force
+GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
