@@ -4,7 +4,7 @@
 PORTNAME=	imgv
 PORTVERSION=	3.1.6
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
@@ -14,7 +14,7 @@ COMMENT=	Unique and feature rich Image Viewer
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game \
-		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
 NO_ARCH=	yes
 NO_BUILD=	yes
