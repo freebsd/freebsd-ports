@@ -342,9 +342,3 @@ bin/farblazer
 %%DATADIR%%/farblazer.pyc
 %%DATADIR%%/farblazer.pyo
 share/pixmaps/farblazer.png
-@dirrm %%DATADIR%%/data/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/code/utils
-@dirrm %%DATADIR%%/code/sprites
-@dirrm %%DATADIR%%/code
-@dirrm %%DATADIR%%
