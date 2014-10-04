@@ -7,18 +7,26 @@
 # Please view me with 4 column tabs!
 
 # =========================================================================
-# Parameter APACHE_PORT (user controlled):
+# User controlled parameters for usage in /etc/make.conf:
 #
-# The parameter APACHE_PORT can be used in /etc/make.conf to
-# overwrite the default apache port.
+#  DEFAULT_VERSIONS  - define the default apache version
+#                      valid args: apache=2.2, apache=2.4
 #
-# This parameter should never be used in the Makefile of a port!
+#  APACHE_PORT       - use www/apache22-(event|itk|peruser|worker)-mpm
+#                      instead www/apache22.  Use this parameter only in
+#                      combination with "DEFAULT_VERSIONS+= apache=2.2"
 #
 # Example entry in /etc/make.conf:
-#  APACHE_PORT=	www/apache22
+# - Set apache22 as default version
+#    DEFAULT_VERSIONS+= apache=2.2
 #
-# To get a list of "possible" valid values execute the command:
-#  $> egrep 'apache[12]' ports/www/Makefile | awk '{print "www/" $3}'
+# - Additional use a special www/apache22-$MPM port
+#    APACHE_PORT= www/apache22-event-mpm
+#
+# Note:
+#  - This parameters should never be used in the Makefile of a port!
+#  - To get a list of "possible" APACHE_PORT values execute the command:
+#    $> awk '/apache22-/ {print "www/" $3}' ports/www/Makefile
 #
 # =========================================================================
 #
@@ -354,7 +362,6 @@ IGNORE?=	PREFIX must be equal to APXS_PREFIX.
 .	endif
 .endif
 
-AP_BUILDEXT=	la
 APACHEMODDIR=	libexec/apache${APACHE_VERSION}
 APACHEINCLUDEDIR=include/apache${APACHE_VERSION}
 APACHEETCDIR=	etc/apache${APACHE_VERSION}
@@ -494,13 +501,13 @@ ap-gen-plist:
 
 .if !target(do-build)
 do-build: ap-gen-plist
-	@cd ${WRKSRC} && ${APXS} -c ${AP_EXTRAS} -o ${MODULENAME}.${AP_BUILDEXT} ${SRC_FILE}
+	(cd ${WRKSRC} && ${APXS} -c ${AP_EXTRAS} -o ${MODULENAME}.la ${SRC_FILE})
 .endif
 
 .if !target(do-install)
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
-	@${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} -i -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
+	${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} -i -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.la
 .	if !defined(DEBUG)
 		@${ECHO_MSG} "===> strip ${APACHEMODDIR}/${MODULENAME}.so"
 		@[ -e ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so ] && ${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
