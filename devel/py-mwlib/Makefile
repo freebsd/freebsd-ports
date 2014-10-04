@@ -3,7 +3,7 @@
 
 PORTNAME=	mwlib
 PORTVERSION=	0.15.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsing>0:${PORTSDIR}/devel/py-parsing \
 		${PYTHON_PKGNAMEPREFIX}pdf>=1.12:${PORTSDIR}/print/py-pdf \
 		${PYTHON_PKGNAMEPREFIX}simplejson>2.0.8:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}flup>=1.0:${PORTSDIR}/www/py-flup \
-		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}pylib>=1.4.0:${PORTSDIR}/devel/py-pylib \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}apipkg>=0:${PORTSDIR}/devel/py-apipkg \
@@ -30,10 +30,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsing>0:${PORTSDIR}/devel/py-parsing \
 		${PYTHON_PKGNAMEPREFIX}roman>=0:${PORTSDIR}/math/py-roman \
 		${PYTHON_PKGNAMEPREFIX}sqlite3dbm>=0:${PORTSDIR}/databases/py-sqlite3dbm
 
-USES=		zip
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2 zip
+USE_PYTHON=		autoplist distutils
 
 post-patch:
 	${REINPLACE_CMD} \
