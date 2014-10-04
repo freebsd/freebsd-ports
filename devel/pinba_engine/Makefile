@@ -3,7 +3,7 @@
 
 PORTNAME=	pinba_engine
 PORTVERSION=	2011.08.18
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/tony2001/pinba_engine/tarball/${GITVERSION}/
 DISTNAME=	tony2001-pinba_engine-${GITVERSION}
