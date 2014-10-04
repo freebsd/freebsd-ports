@@ -1773,6 +1773,7 @@
     SUBDIR += rubygem-feedjira
     SUBDIR += rubygem-flowdock
     SUBDIR += rubygem-geminabox
+    SUBDIR += rubygem-gitlab-flowdock-git-hook
     SUBDIR += rubygem-gitlab-gollum-lib
     SUBDIR += rubygem-gitlab-grack
     SUBDIR += rubygem-gollum-lib
