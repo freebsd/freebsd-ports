@@ -22,7 +22,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3 \
 		cmake:${PORTSDIR}/devel/cmake \
-		protoc:${PORTSDIR}/devel/protobuf25
+		${LOCALBASE}/protobuf25/bin/protoc:${PORTSDIR}/devel/protobuf25
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 CONFLICTS_INSTALL=	apache-hadoop-1*
