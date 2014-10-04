@@ -53,9 +53,3 @@ bin/duckmaze
 %%DATADIR%%/mopelib/mopelib.pyo
 %%DATADIR%%/version
 share/pixmaps/duckmaze.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/mopelib
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
