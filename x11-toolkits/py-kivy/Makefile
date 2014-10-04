@@ -20,14 +20,12 @@ MAKE_JOBS_UNSAFE=	yes  # does not (really) use make
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_COMMIT=	d602d4b
-USES=		shebangfix
+USES=		python:2.7+ shebangfix
 USE_GL=		gl
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS=	--inplace
 PYDISTUTILS_EGGINFO=	Kivy-${PORTVERSION}-py${PYTHON_VER}.egg-info
-USE_PYTHON=	2.7+
+USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	kivy/lib/osc/OSC.py
 
 OPTIONS_DEFINE=	DOCS PDF TEST
