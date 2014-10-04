@@ -11,9 +11,8 @@ COMMENT=	Statsd is a client for Etsy's node-js statsd server
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-extract:
 	${RM} -r ${WRKSRC}/tests
