@@ -380,55 +380,12 @@ lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
 lib/libgeos_c.so.1.8.2
-@dirrm include/geos/util
-@dirrm include/geos/triangulate/quadedge
-@dirrm include/geos/triangulate
-@dirrm include/geos/simplify
-@dirrm include/geos/precision
-@dirrm include/geos/planargraph/algorithm
-@dirrm include/geos/planargraph
-@dirrm include/geos/operation/valid
-@dirrm include/geos/operation/union
-@dirrm include/geos/operation/sharedpaths
-@dirrm include/geos/operation/relate
-@dirrm include/geos/operation/predicate
-@dirrm include/geos/operation/polygonize
-@dirrm include/geos/operation/overlay/snap
-@dirrm include/geos/operation/overlay
-@dirrm include/geos/operation/linemerge
-@dirrm include/geos/operation/distance
-@dirrm include/geos/operation/buffer
-@dirrm include/geos/operation
-@dirrm include/geos/noding/snapround
-@dirrm include/geos/noding
-@dirrm include/geos/linearref
-@dirrm include/geos/io
-@dirrm include/geos/index/sweepline
-@dirrm include/geos/index/strtree
-@dirrm include/geos/index/quadtree
-@dirrm include/geos/index/intervalrtree
-@dirrm include/geos/index/chain
-@dirrm include/geos/index/bintree
-@dirrm include/geos/index
-@dirrm include/geos/geomgraph/index
-@dirrm include/geos/geomgraph
-@dirrm include/geos/geom/util
-@dirrm include/geos/geom/prep
-@dirrm include/geos/geom
-@dirrm include/geos/algorithm/locate
-@dirrm include/geos/algorithm/distance
-@dirrm include/geos/algorithm
-@dirrm include/geos
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyo
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/geos
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
-%%RUBY%%@dirrmtry %%RUBY_SITEARCHLIBDIR%%/
-%%PHP%%lib/php/20100525/geos.so
-%%PHP%%@dirrmtry lib/php/20100525
+%%PHP%%lib/php/%%PHP_EXT_DIR%%/geos.so
