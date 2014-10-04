@@ -50,6 +50,3 @@ share/mpdBrowser/TRANSLATORS
 share/pixmaps/mpdBrowser.png
 share/pixmaps/mpdBrowser_case.png
 share/pixmaps/mpdBrowser_empty.png
-@dirrmtry %%PYTHON_SITELIBDIR%%/mpdBrowser
-@dirrmtry %%PYTHON_SITELIBDIR%%/mpdBrowser-0.9.16-py2.7.egg-info
-@dirrmtry share/mpdBrowser
