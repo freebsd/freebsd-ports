@@ -10,12 +10,14 @@ MASTER_SITES=	http://download.gna.org/tactics/
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Open source tactical and strategic RPG
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT.txt
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric \
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
-USE_PYTHON=	yes
-USES=		gettext twisted
+USES=		gettext python:run twisted
 NO_BUILD=	yes
 
 PORTDATA=	*
