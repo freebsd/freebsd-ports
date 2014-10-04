@@ -3,7 +3,7 @@
 
 PORTNAME=	griffith
 PORTVERSION=	0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/87859599/
 
@@ -15,12 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
-		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
 		${PYXML}
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USES=		gmake gettext tar:xz
+USES=		gmake gettext python tar:xz
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	CHARDET LXML PYGNOMEEXTRAS REPORTLAB2    
