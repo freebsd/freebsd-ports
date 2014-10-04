@@ -3,6 +3,7 @@
 
 PORTNAME=	reportlab
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.com/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ COMMENT=	Library to create PDF documents using the Python language
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
 OPTIONS_DEFINE=	DOCS
 
@@ -27,9 +28,8 @@ PORTSCOUT=	limit:^2\.
 
 PFBFER_VERSION=	20070710
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	reportlab-graphics-reference.pdf \
 		reportlab-reference.pdf \
