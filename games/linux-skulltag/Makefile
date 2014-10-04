@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libfmodexp-4.24.16.so:${PORTSDIR}/audio/linux-fmod
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USES=	tar:bzip2
 NO_BUILD=	yes
 
