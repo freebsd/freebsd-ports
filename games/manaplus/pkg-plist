@@ -352,6 +352,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/golden-delicious/shop.xml
 %%DATADIR%%/data/themes/golden-delicious/shoplistbox.xml
 %%DATADIR%%/data/themes/golden-delicious/skilllistbox.xml
+%%DATADIR%%/data/themes/golden-delicious/skillpopup.xml
 %%DATADIR%%/data/themes/golden-delicious/slider.xml
 %%DATADIR%%/data/themes/golden-delicious/slider_highlighted.xml
 %%DATADIR%%/data/themes/golden-delicious/social.xml
@@ -460,6 +461,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/jewelry/shop.xml
 %%DATADIR%%/data/themes/jewelry/shoplistbox.xml
 %%DATADIR%%/data/themes/jewelry/skilllistbox.xml
+%%DATADIR%%/data/themes/jewelry/skillpopup.xml
 %%DATADIR%%/data/themes/jewelry/slider.xml
 %%DATADIR%%/data/themes/jewelry/slider_highlighted.xml
 %%DATADIR%%/data/themes/jewelry/social.xml
