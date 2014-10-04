@@ -12,18 +12,13 @@ COMMENT=	Progressive Graphics Format (PGF) library
 
 LICENSE=	LGPL21
 
-USES=		dos2unix libtool
-USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
+USES=		autoreconf dos2unix libtool
 USE_LDCONFIG=	yes
 
 DOS2UNIX_FILES=	configure.ac
-AUTOMAKE_ARGS=	--add-missing --copy
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-pre-configure:
-	@cd ${WRKSRC}; ${TOUCH} NEWS AUTHORS
 
 .include <bsd.port.mk>
