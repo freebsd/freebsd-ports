@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/live
 HAS_CONFIGURE=	yes
 
 CONFIGURE_SCRIPT=	genMakefiles
-CONFIGURE_ARGS=		fixed-${OPSYS:tl}
+CONFIGURE_ARGS=		fixed-freebsd
 
 USES=		gmake
 USE_LDCONFIG=	yes
@@ -39,6 +39,6 @@ BROKEN=		Does not compile
 .endif
 
 post-extract:
-	${CP} ${FILESDIR}/config.fixed-${OPSYS:tl} ${WRKSRC}/
+	${CP} ${FILESDIR}/config.fixed-freebsd ${WRKSRC}
 
 .include <bsd.port.post.mk>
