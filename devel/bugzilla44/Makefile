@@ -2,6 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -152,10 +153,6 @@ RUN_DEPENDS+=	p5-Net-SMTP-SSL>=1.01:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 .if ${PORT_OPTIONS:MMIME_SNIFF}
 RUN_DEPENDS+=	p5-File-MimeInfo>=0.16:${PORTSDIR}/devel/p5-File-MimeInfo \
 		p5-IO-stringy>=2.110:${PORTSDIR}/devel/p5-IO-stringy
-.endif
-
-.if ${PORT_OPTIONS:MFREEBSD}
-EXTRA_PATCHES=	${FILESDIR}/freebsd-project-ldap.diff
 .endif
 
 post-extract:
