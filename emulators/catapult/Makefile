@@ -36,6 +36,8 @@ MAKE_ARGS=	INSTALL_BASE="${PREFIX}" \
 		SYMLINK_FOR_BINARY="false" \
 		PYTHON="${PYTHON_CMD}"
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
