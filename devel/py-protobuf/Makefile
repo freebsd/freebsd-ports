@@ -2,30 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf
-PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	https://protobuf.googlecode.com/svn/rc/ \
+		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google protobuf Python Client Library
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/../COPYING.txt
 
-BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-apputils>=0:${PORTSDIR}/devel/py-google-apputils \
+		protoc:${PORTSDIR}/devel/protobuf
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-apputils>=0:${PORTSDIR}/devel/py-google-apputils
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/python
-PROJECTHOST=	protobuf
-
-USES=		python:2 tar:bzip2
 USE_PYTHON=	autoplist distutils
+USES=		python tar:bzip2
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/python
 
-pre-build:
-	@${MKDIR} ${WRKSRC}/google/protobuf/compiler
+post-patch:
+	@${MKDIR} ${WRKSRC}/google/protobuf/compiler/
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+regression-test test: build
+	cd ${WRKSRC}/ && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
