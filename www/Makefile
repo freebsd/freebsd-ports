@@ -1848,6 +1848,7 @@
     SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails4
+    SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-railties
     SUBDIR += rubygem-railties4
     SUBDIR += rubygem-raindrops
