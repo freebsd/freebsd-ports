@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bsnmp-ucd
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://people.freebsd.org/~trociny/${PORTNAME}/
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	bsnmpd module that implements parts of UCD-SNMP-MIB
