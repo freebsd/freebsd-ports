@@ -3,7 +3,7 @@
 
 PORTNAME=	wspr
 DISTVERSION=	${VERSION}.r${SVN_REV}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
@@ -13,7 +13,7 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Weak signal for HF ham radio communication package
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
 
-USES=		fortran gmake libtool tar:bzip2
+USES=		fortran gmake libtool python tar:bzip2
 ALL_TARGET=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gfortran --prefix=${STAGEDIR}${LOCALBASE} \
@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--enable-gfortran --prefix=${STAGEDIR}${LOCALBASE} \
 		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_PYTHON=	yes
 MAKE_ENV+=	PYTHONUSERBASE=${STAGEDIR}${PYTHONBASE}
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		VERSION=${VERSION}
