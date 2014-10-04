@@ -19,6 +19,3 @@ share/pixmaps/ttt.png
 %%DATADIR%%/sounds/win.wav
 %%DATADIR%%/sounds/x.wav
 %%DATADIR%%/ttt
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
