@@ -9,7 +9,6 @@ bin/multimarkdown
 
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%EXTRAS%%%%DOCSDIR%%/README-extras.md
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 
 %%EXTRAS%%bin/mmd-xslt
 %%EXTRAS%%bin/mmd2LaTeX.pl
@@ -30,9 +29,6 @@ bin/multimarkdown
 %%EXTRAS%%%%DATADIR%%/XSLT/opml2mmd.xslt
 %%EXTRAS%%%%DATADIR%%/XSLT/xhtml-toc-h2.xslt
 %%EXTRAS%%%%DATADIR%%/XSLT/xhtml2latex.xslt
-%%EXTRAS%%@dirrmtry %%DATADIR%%/XSLT
-%%EXTRAS%%@dirrmtry %%DATADIR%%/utilities
-%%EXTRAS%%@dirrmtry %%DATADIR%%
 
 %%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/LICENCE
 %%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/MMD-Guide.html
@@ -53,16 +49,3 @@ bin/multimarkdown
 %%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/ru/index.html
 %%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/sv/index.html
 %%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/tr/index.html
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/tr
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/sv
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/ru
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/javascripts
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/it
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/images
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/fr
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/es
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/en
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/de
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/ca
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet
-%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%

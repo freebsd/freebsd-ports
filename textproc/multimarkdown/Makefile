@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multimarkdown
-PORTVERSION=	4.5.3
+PORTVERSION=	4.6
 CATEGORIES=	textproc
 MASTER_SITES=	https://codeload.github.com/fletcher/MultiMarkdown-4/legacy.tar.gz/${MM4_COMMIT}?dummy=/:MM4 \
 		https://codeload.github.com/fletcher/MMD-Support/legacy.tar.gz/${SUPPORT_COMMIT}?dummy=/:support \
@@ -17,7 +17,7 @@ COMMENT=	Extended Markdown processor with more features, written in C
 
 LICENSE=	MIT
 
-MM4_COMMIT=	b891584
+MM4_COMMIT=	ad9595b
 SUPPORT_COMMIT=	685c95c
 CHEAT_COMMIT=	199dae8
 GREG_COMMIT=	3f11f56
@@ -25,6 +25,7 @@ GREG_COMMIT=	3f11f56
 WRKSRC=		${WRKDIR}/fletcher-MultiMarkdown-4-${MM4_COMMIT}
 
 ALL_TARGET=	${PORTNAME}
+USES=		gmake
 
 OPTIONS_DEFINE=		CHEAT_SHEET EXTRAS HELPERS DOCS
 CHEAT_SHEET_DESC=	HTML-based cheat sheat
@@ -52,6 +53,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -E "s/^(CFLAGS).+=/\1 \+=/" ${WRKSRC}/Makefile ${WRKSRC}/greg/Makefile
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/scripts/*
+	@${REINPLACE_CMD} -E 's,(-include) (GLibFacade.h),\1 ${WRKSRC}/\2,' ${WRKSRC}/Makefile
 .if ${PORT_OPTIONS:MEXTRAS}
 	@${REINPLACE_CMD} -E "s,^(xslt_path)=.*,\1=${DATADIR},; s,(xslt_path)/../,\1/," \
 		${WRKSRC}/Support/bin/*
