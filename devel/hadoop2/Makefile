@@ -3,7 +3,7 @@
 
 PORTNAME=	hadoop
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
 		LOCAL/demon/:maven \
@@ -32,7 +32,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/sbin/httpfs.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/libexec/httpfs-config.sh
-MAKE_ENV+=	HADOOP_PROTOC_PATH=${LOCALBASE}/bin/protoc
+MAKE_ENV+=	HADOOP_PROTOC_PATH=${LOCALBASE}/protobuf25/bin/protoc
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 TOMCAT_VERSION=	6.0.36
@@ -69,7 +69,7 @@ post-patch:
 do-build:
 	${MKDIR} ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/downloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/apache-tomcat-${TOMCAT_VERSION}.tar.gz ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/downloads/
-	cd ${WRKSRC} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean package -Pdist,native -DskipTests
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean package -Pdist,native -DskipTests
 
 post-build:
 	${RM} ${HADOOP_DIST}/etc/hadoop/*.cmd
