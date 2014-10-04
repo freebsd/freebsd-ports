@@ -16,6 +16,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_PREFIX=	${PREFIX}/protobuf25
 USE_LDCONFIG=	yes
 USES=		gmake pathfix pkgconfig tar:bzip2 libtool
 ONLY_FOR_ARCHS=	i386 amd64
