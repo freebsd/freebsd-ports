@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	plv8js
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://api.pgxn.org/dist/plv8/${PORTVERSION}/
 PKGNAMEPREFIX=	postgresql-
 DISTNAME=	plv8-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	PL/v8js procedural language for PostgreSQL database
+
+LICENSE=	PostgreSQL
 
 LIB_DEPENDS+=	libv8.so:${PORTSDIR}/lang/v8
 
