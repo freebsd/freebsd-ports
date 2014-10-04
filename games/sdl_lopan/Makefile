@@ -15,13 +15,11 @@ EXTRACT_ONLY=	sdllopan-${DISTVERSION}.tgz
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Mahjong game remake
 
-LICENSE=	GPLv2
-
 WRKSRC=		${WRKDIR}/sdllopan-${PORTVERSION}
 
 USES=		gmake
 USE_SDL=	sdl image mixer
-ALL_TARGET=
+ALL_TARGET=	# empty
 
 PORTDOCS=	Changelog README
 OPTIONS_DEFINE=	DOCS
