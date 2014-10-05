@@ -8,23 +8,25 @@ CATEGORIES=	audio python
 MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The sound conversion application for the GNOME environment
+COMMENT=	Sound conversion application for the GNOME environment
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:${PORTSDIR}/multimedia/py-gstreamer
 
-USES=		gettext gmake desktop-file-utils
+USES=		gettext gmake desktop-file-utils python:2 shebangfix
+
+SHEBANG_FILES=	src/soundconverter.py
+python_OLD_CMD=	/usr/bin/python -tt
+
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
 USE_GNOME=	pygtk2 pygnome2
-MAKE_ENV=	MAKE=${LOCALBASE}/bin/gmake
+MAKE_ENV=	MAKE=${MAKE_CMD}
 INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@GMSGFMT@|${LOCALBASE}/bin/msgfmt|; \
 		s|itlocaledir = .*|itlocaledir = ${LOCALBASE}/share/locale|g' \
 			${WRKSRC}/po/Makefile.in.in
-	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!/usr/bin/env python|' ${WRKSRC}/src/soundconverter.py
 
 .include <bsd.port.mk>
