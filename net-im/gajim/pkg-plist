@@ -1,6 +1,9 @@
 bin/gajim
 bin/gajim-history-manager
 bin/gajim-remote
+man/man1/gajim-history-manager.1.gz
+man/man1/gajim-remote.1.gz
+man/man1/gajim.1.gz
 share/applications/gajim.desktop
 %%DATADIR%%/data/activities/default/doing_chores/buying_groceries.png
 %%DATADIR%%/data/activities/default/doing_chores/category.png
@@ -399,7 +402,7 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/iconsets/goojim/16x16/invisible.png
 %%DATADIR%%/data/iconsets/goojim/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/goojim/16x16/muc_inactive.png
-%%DATADIR%%/data/iconsets/goojim/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/goojim/16x16/not_in_roster.png
 %%DATADIR%%/data/iconsets/goojim/16x16/offline.png
 %%DATADIR%%/data/iconsets/goojim/16x16/online.png
 %%DATADIR%%/data/iconsets/goojim/16x16/opened.png
@@ -415,7 +418,7 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/iconsets/goojim/32x32/invisible.png
 %%DATADIR%%/data/iconsets/goojim/32x32/muc_active.png
 %%DATADIR%%/data/iconsets/goojim/32x32/muc_inactive.png
-%%DATADIR%%/data/iconsets/goojim/32x32/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/goojim/32x32/not_in_roster.png
 %%DATADIR%%/data/iconsets/goojim/32x32/offline.png
 %%DATADIR%%/data/iconsets/goojim/32x32/online.png
 %%DATADIR%%/data/iconsets/goojim/32x32/opened.png
@@ -810,9 +813,10 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/moods/default/unknown.png
 %%DATADIR%%/data/moods/default/weak.png
 %%DATADIR%%/data/moods/default/worried.png
-%%DATADIR%%/data/other/cacerts.pem
+%%DATADIR%%/data/other/dh4096.pem
 %%DATADIR%%/data/other/servers.xml
 %%DATADIR%%/data/pixmaps/gajim.ico
+%%DATADIR%%/data/sounds/attention.wav
 %%DATADIR%%/data/sounds/bounce.wav
 %%DATADIR%%/data/sounds/connected.wav
 %%DATADIR%%/data/sounds/disconnected.wav
@@ -821,29 +825,25 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/sounds/message1.wav
 %%DATADIR%%/data/sounds/message2.wav
 %%DATADIR%%/data/sounds/sent.wav
-%%DATADIR%%/icons/hicolor/128x128/apps/gajim-about.png
+%%DATADIR%%/icons/hicolor/128x128/apps/gajim.png
+%%DATADIR%%/icons/hicolor/16x16/actions/document-send.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-cam_active.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-cam_inactive.png
-%%DATADIR%%/icons/hicolor/16x16/actions/gajim-earth.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-kbd_input.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-mic_active.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-mic_inactive.png
-%%DATADIR%%/icons/hicolor/16x16/actions/gajim-muc_separator.png
-%%DATADIR%%/icons/hicolor/16x16/actions/gajim-receipt_missing.png
-%%DATADIR%%/icons/hicolor/16x16/actions/gajim-security_high.png
-%%DATADIR%%/icons/hicolor/16x16/actions/gajim-security_low.png
-%%DATADIR%%/icons/hicolor/16x16/actions/gajim-upload.png
+%%DATADIR%%/icons/hicolor/16x16/status/applications-internet.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-high.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-low.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-medium.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-muted.png
-%%DATADIR%%/icons/hicolor/32x32/actions/gajim-security_high.png
-%%DATADIR%%/icons/hicolor/32x32/actions/gajim-security_low.png
+%%DATADIR%%/icons/hicolor/16x16/status/gajim-plugins.png
+%%DATADIR%%/icons/hicolor/16x16/status/security-high.png
+%%DATADIR%%/icons/hicolor/16x16/status/security-low.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-aim.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-bytestreams.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-conference.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-disc.png
-%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-error.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-facebook.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-gadu-gadu.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-http-ws.png
@@ -859,21 +859,24 @@ share/applications/gajim.desktop
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-sip.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-sms.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-tv.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-twitter.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-weather.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-yahoo.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-chat_msg_recv.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-connection_lost.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-ft_done.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-ft_error.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-ft_request.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-ft_stopped.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-gc_invitation.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-new_email_recv.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-priv_msg_recv.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-single_msg_recv.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-subscription_request.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-unsubscribed.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-warning.png
+%%DATADIR%%/icons/hicolor/32x32/mimetypes/application-certificate.png
+%%DATADIR%%/icons/hicolor/32x32/status/security-high.png
+%%DATADIR%%/icons/hicolor/32x32/status/security-low.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-chat_msg_recv.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-connection_lost.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-ft_done.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-ft_error.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-ft_request.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-ft_stopped.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-gc_invitation.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-new_email_recv.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-priv_msg_recv.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-single_msg_recv.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-subscription_request.png
+%%DATADIR%%/icons/hicolor/48x48/status/gajim-unsubscribed.png
 %%DATADIR%%/icons/hicolor/64x64/apps/gajim.png
 %%DATADIR%%/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/plugins/plugin_installer/__init__.py
@@ -995,6 +998,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/exceptions.py
 %%DATADIR%%/src/common/exceptions.pyc
 %%DATADIR%%/src/common/exceptions.pyo
+%%DATADIR%%/src/common/file_props.py
+%%DATADIR%%/src/common/file_props.pyc
+%%DATADIR%%/src/common/file_props.pyo
 %%DATADIR%%/src/common/fuzzyclock.py
 %%DATADIR%%/src/common/fuzzyclock.pyc
 %%DATADIR%%/src/common/fuzzyclock.pyo
@@ -1025,6 +1031,12 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/jingle_content.py
 %%DATADIR%%/src/common/jingle_content.pyc
 %%DATADIR%%/src/common/jingle_content.pyo
+%%DATADIR%%/src/common/jingle_ft.py
+%%DATADIR%%/src/common/jingle_ft.pyc
+%%DATADIR%%/src/common/jingle_ft.pyo
+%%DATADIR%%/src/common/jingle_ftstates.py
+%%DATADIR%%/src/common/jingle_ftstates.pyc
+%%DATADIR%%/src/common/jingle_ftstates.pyo
 %%DATADIR%%/src/common/jingle_rtp.py
 %%DATADIR%%/src/common/jingle_rtp.pyc
 %%DATADIR%%/src/common/jingle_rtp.pyo
@@ -1034,12 +1046,12 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/jingle_transport.py
 %%DATADIR%%/src/common/jingle_transport.pyc
 %%DATADIR%%/src/common/jingle_transport.pyo
+%%DATADIR%%/src/common/jingle_xtls.py
+%%DATADIR%%/src/common/jingle_xtls.pyc
+%%DATADIR%%/src/common/jingle_xtls.pyo
 %%DATADIR%%/src/common/kwalletbinding.py
 %%DATADIR%%/src/common/kwalletbinding.pyc
 %%DATADIR%%/src/common/kwalletbinding.pyo
-%%DATADIR%%/src/common/latex.py
-%%DATADIR%%/src/common/latex.pyc
-%%DATADIR%%/src/common/latex.pyo
 %%DATADIR%%/src/common/location_listener.py
 %%DATADIR%%/src/common/location_listener.pyc
 %%DATADIR%%/src/common/location_listener.pyo
@@ -1097,57 +1109,6 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/stanza_session.py
 %%DATADIR%%/src/common/stanza_session.pyc
 %%DATADIR%%/src/common/stanza_session.pyo
-%%DATADIR%%/src/common/xmpp/__init__.py
-%%DATADIR%%/src/common/xmpp/__init__.pyc
-%%DATADIR%%/src/common/xmpp/__init__.pyo
-%%DATADIR%%/src/common/xmpp/auth_nb.py
-%%DATADIR%%/src/common/xmpp/auth_nb.pyc
-%%DATADIR%%/src/common/xmpp/auth_nb.pyo
-%%DATADIR%%/src/common/xmpp/bosh.py
-%%DATADIR%%/src/common/xmpp/bosh.pyc
-%%DATADIR%%/src/common/xmpp/bosh.pyo
-%%DATADIR%%/src/common/xmpp/c14n.py
-%%DATADIR%%/src/common/xmpp/c14n.pyc
-%%DATADIR%%/src/common/xmpp/c14n.pyo
-%%DATADIR%%/src/common/xmpp/client_nb.py
-%%DATADIR%%/src/common/xmpp/client_nb.pyc
-%%DATADIR%%/src/common/xmpp/client_nb.pyo
-%%DATADIR%%/src/common/xmpp/dispatcher_nb.py
-%%DATADIR%%/src/common/xmpp/dispatcher_nb.pyc
-%%DATADIR%%/src/common/xmpp/dispatcher_nb.pyo
-%%DATADIR%%/src/common/xmpp/features_nb.py
-%%DATADIR%%/src/common/xmpp/features_nb.pyc
-%%DATADIR%%/src/common/xmpp/features_nb.pyo
-%%DATADIR%%/src/common/xmpp/idlequeue.py
-%%DATADIR%%/src/common/xmpp/idlequeue.pyc
-%%DATADIR%%/src/common/xmpp/idlequeue.pyo
-%%DATADIR%%/src/common/xmpp/plugin.py
-%%DATADIR%%/src/common/xmpp/plugin.pyc
-%%DATADIR%%/src/common/xmpp/plugin.pyo
-%%DATADIR%%/src/common/xmpp/protocol.py
-%%DATADIR%%/src/common/xmpp/protocol.pyc
-%%DATADIR%%/src/common/xmpp/protocol.pyo
-%%DATADIR%%/src/common/xmpp/proxy_connectors.py
-%%DATADIR%%/src/common/xmpp/proxy_connectors.pyc
-%%DATADIR%%/src/common/xmpp/proxy_connectors.pyo
-%%DATADIR%%/src/common/xmpp/roster_nb.py
-%%DATADIR%%/src/common/xmpp/roster_nb.pyc
-%%DATADIR%%/src/common/xmpp/roster_nb.pyo
-%%DATADIR%%/src/common/xmpp/simplexml.py
-%%DATADIR%%/src/common/xmpp/simplexml.pyc
-%%DATADIR%%/src/common/xmpp/simplexml.pyo
-%%DATADIR%%/src/common/xmpp/smacks.py
-%%DATADIR%%/src/common/xmpp/smacks.pyc
-%%DATADIR%%/src/common/xmpp/smacks.pyo
-%%DATADIR%%/src/common/xmpp/stringprepare.py
-%%DATADIR%%/src/common/xmpp/stringprepare.pyc
-%%DATADIR%%/src/common/xmpp/stringprepare.pyo
-%%DATADIR%%/src/common/xmpp/tls_nb.py
-%%DATADIR%%/src/common/xmpp/tls_nb.pyc
-%%DATADIR%%/src/common/xmpp/tls_nb.pyo
-%%DATADIR%%/src/common/xmpp/transports_nb.py
-%%DATADIR%%/src/common/xmpp/transports_nb.pyc
-%%DATADIR%%/src/common/xmpp/transports_nb.pyo
 %%DATADIR%%/src/common/zeroconf/__init__.py
 %%DATADIR%%/src/common/zeroconf/__init__.pyc
 %%DATADIR%%/src/common/zeroconf/__init__.pyo
@@ -1232,6 +1193,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/htmltextview.py
 %%DATADIR%%/src/htmltextview.pyc
 %%DATADIR%%/src/htmltextview.pyo
+%%DATADIR%%/src/logind_listener.py
+%%DATADIR%%/src/logind_listener.pyc
+%%DATADIR%%/src/logind_listener.pyo
 %%DATADIR%%/src/message_control.py
 %%DATADIR%%/src/message_control.pyc
 %%DATADIR%%/src/message_control.pyo
@@ -1274,9 +1238,6 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/profile_window.py
 %%DATADIR%%/src/profile_window.pyc
 %%DATADIR%%/src/profile_window.pyo
-%%DATADIR%%/src/pycallgraph.py
-%%DATADIR%%/src/pycallgraph.pyc
-%%DATADIR%%/src/pycallgraph.pyo
 %%DATADIR%%/src/remote_control.py
 %%DATADIR%%/src/remote_control.pyc
 %%DATADIR%%/src/remote_control.pyo
@@ -1304,11 +1265,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/vcard.py
 %%DATADIR%%/src/vcard.pyc
 %%DATADIR%%/src/vcard.pyo
+share/icons/hicolor/128x128/apps/gajim.png
 share/icons/hicolor/64x64/apps/gajim.png
 share/icons/hicolor/scalable/apps/gajim.svg
-man/man1/gajim.1.gz
-man/man1/gajim-remote.1.gz
-man/man1/gajim-history-manager.1.gz
 %%NLS%%share/locale/be/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/be@latin/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gajim.mo
@@ -1345,131 +1304,3 @@ man/man1/gajim-history-manager.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gajim.mo
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/be@latin
-@dirrm %%DATADIR%%/src/plugins
-@dirrm %%DATADIR%%/src/common/zeroconf
-@dirrm %%DATADIR%%/src/common/xmpp
-@dirrm %%DATADIR%%/src/common/protocol
-@dirrm %%DATADIR%%/src/common
-@dirrm %%DATADIR%%/src/command_system/implementation
-@dirrm %%DATADIR%%/src/command_system
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/plugins/plugin_installer
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/64x64/apps
-@dirrm %%DATADIR%%/icons/hicolor/64x64
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/32x32/categories
-@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor/128x128/apps
-@dirrm %%DATADIR%%/icons/hicolor/128x128
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/data/sounds
-@dirrm %%DATADIR%%/data/pixmaps
-@dirrm %%DATADIR%%/data/other
-@dirrm %%DATADIR%%/data/moods/default
-@dirrm %%DATADIR%%/data/moods
-@dirrm %%DATADIR%%/data/iconsets/wroop/48x48
-@dirrm %%DATADIR%%/data/iconsets/wroop/32x32
-@dirrm %%DATADIR%%/data/iconsets/wroop/16x16
-@dirrm %%DATADIR%%/data/iconsets/wroop
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo
-@dirrm %%DATADIR%%/data/iconsets/transports/weather/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/weather/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/weather
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen
-@dirrm %%DATADIR%%/data/iconsets/transports/sms/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/sms/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/sms
-@dirrm %%DATADIR%%/data/iconsets/transports/msn/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/msn/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/msn/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/msn
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim
-@dirrm %%DATADIR%%/data/iconsets/transports/irc/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/irc/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/irc
-@dirrm %%DATADIR%%/data/iconsets/transports/icq/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/icq/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/icq/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/icq
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu
-@dirrm %%DATADIR%%/data/iconsets/transports/facebook/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/facebook/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/facebook/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/facebook
-@dirrm %%DATADIR%%/data/iconsets/transports/aim/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/aim/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/aim/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/aim
-@dirrm %%DATADIR%%/data/iconsets/transports
-@dirrm %%DATADIR%%/data/iconsets/sun/48x48
-@dirrm %%DATADIR%%/data/iconsets/sun/32x32
-@dirrm %%DATADIR%%/data/iconsets/sun/16x16
-@dirrm %%DATADIR%%/data/iconsets/sun
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb/48x48
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb/32x32
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb/16x16
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb
-@dirrm %%DATADIR%%/data/iconsets/gota/48x48
-@dirrm %%DATADIR%%/data/iconsets/gota/32x32
-@dirrm %%DATADIR%%/data/iconsets/gota/16x16
-@dirrm %%DATADIR%%/data/iconsets/gota
-@dirrm %%DATADIR%%/data/iconsets/goojim/48x48
-@dirrm %%DATADIR%%/data/iconsets/goojim/32x32
-@dirrm %%DATADIR%%/data/iconsets/goojim/16x16
-@dirrm %%DATADIR%%/data/iconsets/goojim
-@dirrm %%DATADIR%%/data/iconsets/gnome/48x48
-@dirrm %%DATADIR%%/data/iconsets/gnome/32x32
-@dirrm %%DATADIR%%/data/iconsets/gnome/16x16
-@dirrm %%DATADIR%%/data/iconsets/gnome
-@dirrm %%DATADIR%%/data/iconsets/dcraven/48x48
-@dirrm %%DATADIR%%/data/iconsets/dcraven/32x32
-@dirrm %%DATADIR%%/data/iconsets/dcraven/16x16
-@dirrm %%DATADIR%%/data/iconsets/dcraven
-@dirrm %%DATADIR%%/data/iconsets
-@dirrm %%DATADIR%%/data/gui
-@dirrm %%DATADIR%%/data/emoticons/tango
-@dirrm %%DATADIR%%/data/emoticons/static-big
-@dirrm %%DATADIR%%/data/emoticons/static
-@dirrm %%DATADIR%%/data/emoticons/animated
-@dirrm %%DATADIR%%/data/emoticons
-@dirrm %%DATADIR%%/data/activities/default/working
-@dirrm %%DATADIR%%/data/activities/default/unknown
-@dirrm %%DATADIR%%/data/activities/default/traveling
-@dirrm %%DATADIR%%/data/activities/default/talking
-@dirrm %%DATADIR%%/data/activities/default/relaxing
-@dirrm %%DATADIR%%/data/activities/default/inactive
-@dirrm %%DATADIR%%/data/activities/default/having_appointment
-@dirrm %%DATADIR%%/data/activities/default/grooming
-@dirrm %%DATADIR%%/data/activities/default/exercising
-@dirrm %%DATADIR%%/data/activities/default/eating
-@dirrm %%DATADIR%%/data/activities/default/drinking
-@dirrm %%DATADIR%%/data/activities/default/doing_chores
-@dirrm %%DATADIR%%/data/activities/default
-@dirrm %%DATADIR%%/data/activities
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
