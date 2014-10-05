@@ -2,7 +2,7 @@
 
 PORTNAME=	fcgiwrap
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	GH \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
@@ -31,9 +31,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	sbin/fcgiwrap man/man8/fcgiwrap.8.gz
 
 post-patch:
-	@${REINPLACE_CMD} 's/@prefix@@mandir@/@mandir@/' ${WRKSRC}/Makefile.in
-
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/fcgiwrap
+	@${REINPLACE_CMD} -e 's/@prefix@@mandir@/@mandir@/'\
+	-e 's|-m 755 fcgiwrap|-s -m 755 fcgiwrap|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
