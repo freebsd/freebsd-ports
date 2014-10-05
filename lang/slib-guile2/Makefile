@@ -6,14 +6,14 @@ PORTNAME=	slib
 PORTVERSION=	3b4 # Keep this in sync with lang/slib
 CATEGORIES=	lang scheme
 MASTER_SITES=	# empty
-PKGNAMESUFFIX=	-guile
+PKGNAMESUFFIX=	-guile2
 DISTFILES=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLIB installation for Guile
 
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
-		guile:${PORTSDIR}/lang/guile
+		guile:${PORTSDIR}/lang/guile2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_FILES+=	pkg-install pkg-deinstall

@@ -1,4 +1,0 @@
-@exec ln -shf %D/share/slib %D/share/guile/1.8/slib
-@exec env GUILE_IMPLEMENTATION_PATH=%%LOCALBASE%%/share/guile/1.8 %D/bin/guile -q -l %%LOCALBASE%%/share/slib/guile.init -c "(use-modules (ice-9 slib))(require 'new-catalog)"
-@unexec rm -f %D/share/guile/1.8/slib
-@unexec rm -f %D/share/guile/1.8/slibcat
