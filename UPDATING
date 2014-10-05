@@ -50,18 +50,6 @@ you update your ports collection, before attempting any port upgrades.
 
   Please check your configuration.
 
-20140930:
-  AFFECTS: users of finance/gnucash
-  AUTHOR: madpilot@FreeBSD.org
-
-  The new version of gnucsh requires guile 2.0. If the update fails
-  because the old guile 1.8 library is still present you will need
-  to manally remove gnucash, guile and, if installed, boehm-gc:
-
-  # pkg delete gnucash guile boehm-gc
-
-  and then install gnucash again the usual way.
-
 20140929:
   AFFECTS: users of comms/usbmuxd
   AUTHOR: avilla@FreeBSD.org
