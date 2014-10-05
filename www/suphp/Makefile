@@ -13,9 +13,7 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes
-USES=		libtool
-USE_AUTOTOOLS=	aclocal:env automake autoconf:env
-AUTOMAKE_ARGS+=	--add-missing
+USES=		autoreconf libtool
 SUB_FILES=	pkg-message
 
 USE_APACHE=	22
@@ -44,13 +42,6 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}
-
-AUTOTOOLSFILES=	aclocal.m4
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|2.68|%%AUTOCONF_VERSION%%|g' \
-			  -e 's|1.11.3|%%AUTOMAKE_VERSION%%|g' \
-			  ${WRKSRC}/aclocal.m4
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
