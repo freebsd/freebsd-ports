@@ -1,0 +1,24 @@
+vasm is a portable and retargetable assembler to create linkable
+objects in various formats or absolute code.
+Multiple CPU-, syntax and output-modules can be selected.
+
+Currently the following CPUs are officially supported by vasm:
+
+    M680x0 family (including M6888x, M68851 and CPU32)
+    ColdFire family (all models of V2, V3, V4, V4e)
+    80x86 family (IA32 8/16/32 bit, using MIT-syntax)
+    PowerPC family (POWER, 40x, 6xx, 7xx, 7xxx, 860, e300)
+    ARM (architecture ARMv1 to ARMv4, including THUMB mode)
+    Jaguar RISC (GPU and DSP instruction sets)
+    Z80 family (Z80, 8080, GBZ80, 64180, RCM2/3/4k)
+    C16x/ST10
+    6502 family
+    6800 family (6800, 68HC11)
+
+These syntax flavours are supported:
+
+    Standard MIT (GNU-as style) syntax
+    Motorola/Freescale 68k syntax (Devpac compatible)
+    Old 8-bit style syntax
+
+WWW: http://sun.hasenbraten.de/vasm/
