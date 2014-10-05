@@ -7,3 +7,4 @@ include/chm_lib.h
 include/lzx.h
 lib/libchm.so
 lib/libchm.so.0
+lib/libchm.so.0.0.0
