@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/dconf/Makefile 19891 2014-09-19 23:16:11Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/devel/dconf/Makefile 19891 2014-09-19 23:16:11Z gusi $
 
 PORTNAME?=	dconf
 PORTVERSION=	0.22.0

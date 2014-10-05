@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gnome-session/Makefile 19789 2014-08-05 07:43:54Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/x11/gnome-session/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	gnome-session
 PORTVERSION=	3.12.1

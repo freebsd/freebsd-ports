@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/california/Makefile 19821 2014-08-20 08:42:08Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/california/Makefile 19821 2014-08-20 08:42:08Z gusi $
 
 PORTNAME=	california
 PORTVERSION=	0.1.4

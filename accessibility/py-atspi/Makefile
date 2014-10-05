@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/py-atspi/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/accessibility/py-atspi/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	atspi
 PORTVERSION=	2.12.0

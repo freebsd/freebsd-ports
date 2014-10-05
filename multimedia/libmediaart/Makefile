@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/libmediaart/Makefile 19833 2014-08-26 15:43:46Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/multimedia/libmediaart/Makefile 19833 2014-08-26 15:43:46Z kwm $
 
 PORTNAME=	libmediaart
 PORTVERSION=	0.6.0

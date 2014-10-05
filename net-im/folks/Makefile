@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/folks/Makefile 19856 2014-09-13 06:52:43Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/net-im/folks/Makefile 19910 2014-09-25 21:36:39Z kwm $
 
 PORTNAME=	folks
 PORTVERSION=	0.10.0
@@ -25,7 +25,7 @@ USE_GNOME=	evolutiondataserver3 gnomehier intlhack \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-bluez-backend
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=deprecated-declarations
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml

@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gdl/Makefile 19868 2014-09-14 13:50:26Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/x11-toolkits/gdl/Makefile 19868 2014-09-14 13:50:26Z kwm $
 
 PORTNAME=	gdl
 PORTVERSION=	3.12.0

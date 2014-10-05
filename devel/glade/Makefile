@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glade/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/devel/glade/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	glade
 PORTVERSION=	3.18.3

@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gdm/Makefile 19859 2014-09-14 11:33:14Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/x11/gdm/Makefile 19935 2014-10-02 11:02:58Z gusi $
 
 PORTNAME=	gdm
 PORTVERSION=	3.12.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +14,7 @@ COMMENT=	GNOME 3 version of xdm display manager
 
 BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 		itstool:${PORTSDIR}/textproc/itstool \
-    		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+    		iso-codes>=0:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
@@ -28,8 +28,8 @@ RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 		gnome-session>=3.0.0:${PORTSDIR}/x11/gnome-session \
 		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
 		polkit-gnome>=0.105:${PORTSDIR}/sysutils/polkit-gnome \
-		${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at-spi2-core \
-		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+		at-spi2-core>=0:${PORTSDIR}/accessibility/at-spi2-core \
+		iso-codes>=0:${PORTSDIR}/misc/iso-codes
 # used in scripts
 RUN_DEPENDS+=	xrdb:${PORTSDIR}/x11/xrdb \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap \
@@ -39,13 +39,13 @@ RUN_DEPENDS+=	xrdb:${PORTSDIR}/x11/xrdb \
 USERS=		gdm
 GROUPS=		gdm
 
+USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	dconf gnomehier gnomeprefix intlhack introspection librsvg2
 USE_LDCONFIG=	yes
 USE_XORG=	dmx dmxproto
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
-USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	dconf gnomehier gnomeprefix intlhack introspection librsvg2
 GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	org.gnome.login-screen.gschema.xml
 CONFIGURE_ARGS=	--disable-static \
@@ -86,6 +86,8 @@ GNOME_LOCALSTATEDIR=	/var
 OPTIONS_DEFINE=	IPV6 KEYRING
 OPTIONS_DEFAULT=KEYRING
 KEYRING_DESC=	Gnomekeyring/PAM integration
+KEYRING_LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 .include <bsd.port.options.mk>
 
@@ -94,16 +96,9 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 .if ${PORT_OPTIONS:MKEYRING}
-LIB_DEPENDS+=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 SUB_LIST+=	PAM_KEYRING=
 .else
 SUB_LIST+=	PAM_KEYRING=\#
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-patch:
@@ -133,12 +128,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/gdm.conf-custom \
 		${STAGEDIR}${PREFIX}/etc/gdm/custom.conf.default
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
-	${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/gdm/Sessions
-	${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/dm/Sessions
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/gdm/Sessions
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/dm/Sessions
 
-	${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/gdm/home
-	${CHMOD} 1770 ${STAGEDIR}${PREFIX}/etc/gdm/home
-	${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/gdm/home/.pulse/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/gdm/home
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/gdm/home/.pulse/
 
 	${INSTALL_DATA} ${WRKDIR}/gdm-autologin ${STAGEDIR}${PREFIX}/etc/pam.d/gdm-autologin
 	${INSTALL_DATA} ${WRKDIR}/gdm-launch-environment ${STAGEDIR}${PREFIX}/etc/pam.d/gdm-launch-environment
@@ -150,7 +144,6 @@ post-install:
 
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
-#	@${RMDIR} ${STAGEDIR}/var/run/gdm
 
 # logwtmp lives here.
 .if ${OSVERSION} < 900000

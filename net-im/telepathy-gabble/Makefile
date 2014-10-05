@@ -1,6 +1,6 @@
 # Created by:  Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-gabble/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/net-im/telepathy-gabble/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	telepathy-gabble
 PORTVERSION=	0.18.3

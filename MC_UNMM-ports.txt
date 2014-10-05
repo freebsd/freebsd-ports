@@ -84,7 +84,6 @@ devel/json-glib
 devel/libgdata
 devel/libgee
 devel/libgit2-glib
-devel/libgsf
 devel/libgtop
 devel/libnotify
 devel/liboobs
@@ -149,9 +148,6 @@ misc/gnome-user-docs
 multimedia/cheese
 multimedia/clutter-gst
 multimedia/libmediaart
-multimedia/libquvi
-multimedia/libquvi-scripts
-multimedia/quvi
 multimedia/snappy
 multimedia/totem
 multimedia/totem-pl-parser
@@ -166,7 +162,6 @@ net/grilo-plugins
 net/gtk-vnc
 net/libdmapsharing
 net/libgweather
-net/libproxy
 net/libzapojit
 net/uhttpmock
 net/vinagre
@@ -214,7 +209,6 @@ sysutils/system-tools-backends
 sysutils/tracker
 sysutils/upower
 textproc/gtk-doc
-textproc/itstool
 textproc/yelp-tools
 textproc/yelp-xsl
 www/epiphany

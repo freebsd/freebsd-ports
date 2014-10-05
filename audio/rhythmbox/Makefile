@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/rhythmbox/Makefile 19885 2014-09-17 07:54:55Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/audio/rhythmbox/Makefile 19885 2014-09-17 07:54:55Z kwm $
 
 PORTNAME=	rhythmbox
 PORTVERSION=	3.0.3

@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-themes/gnome-backgrounds/Makefile 19628 2014-05-12 17:29:25Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/x11-themes/gnome-backgrounds/Makefile 19628 2014-05-12 17:29:25Z gusi $
 
 PORTNAME=	gnome-backgrounds
 PORTVERSION=	3.12.2

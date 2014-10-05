@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/yelp/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/x11/yelp/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	yelp
 PORTVERSION=	3.12.0

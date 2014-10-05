@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/anjuta-extras/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/devel/anjuta-extras/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	anjuta-extras
 PORTVERSION=	3.6.0

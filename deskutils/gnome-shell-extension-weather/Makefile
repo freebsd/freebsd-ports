@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extension-weather/Makefile 19807 2014-08-14 07:04:43Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-shell-extension-weather/Makefile 19807 2014-08-14 07:04:43Z gusi $
 
 PORTNAME=	gnome-shell-extension-weather
 PORTVERSION=	0.0.0.20140520

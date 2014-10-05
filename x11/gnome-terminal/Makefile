@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gnome-terminal/Makefile 19904 2014-09-20 17:53:10Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/x11/gnome-terminal/Makefile 19904 2014-09-20 17:53:10Z kwm $
 
 PORTNAME=	gnome-terminal
 PORTVERSION=	3.12.3

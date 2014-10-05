@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/lang/cjs/Makefile 19857 2014-09-13 09:46:37Z gusi $
+#    $MCom: ports/branches/GNOME_3_12/lang/cjs/Makefile 19857 2014-09-13 09:46:37Z gusi $
 
 PORTNAME=	cjs
 PORTVERSION=	2.2.2

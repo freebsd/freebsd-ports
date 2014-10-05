@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/appdata-tools/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/devel/appdata-tools/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	appdata-tools
 PORTVERSION=	0.1.7

@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/textproc/yelp-xsl/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/textproc/yelp-xsl/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	yelp-xsl
 PORTVERSION=	3.12.0

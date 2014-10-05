@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com> 
 # $FreeBSD$
-#   $MCom: ports/trunk/net/geocode-glib/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/net/geocode-glib/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	geocode-glib
 PORTVERSION=	3.12.2

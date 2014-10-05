@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/security/gcr/Makefile 19768 2014-07-08 06:29:22Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/security/gcr/Makefile 19768 2014-07-08 06:29:22Z kwm $
 
 PORTNAME=	gcr
 PORTVERSION=	3.12.2

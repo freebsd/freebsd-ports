@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/ports-mgmt/packagekit-qt4/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/ports-mgmt/packagekit-qt4/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	packagekit-qt4
 PORTVERSION=	0.8.8

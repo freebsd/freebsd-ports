@@ -1,6 +1,6 @@
 # Created by: Frank Steinborn <steinex@nognu.de>
 # $FreeBSD$
-#    $MCom: ports/trunk/devel/libgee/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#    $MCom: ports/branches/GNOME_3_12/devel/libgee/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libgee
 PORTVERSION=	0.14.0

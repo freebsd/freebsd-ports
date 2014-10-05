@@ -1,10 +1,10 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/loudmouth/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/net-im/loudmouth/Makefile 19914 2014-09-25 22:33:21Z kwm $
 
 PORTNAME=	loudmouth
 PORTVERSION=	1.4.3
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 

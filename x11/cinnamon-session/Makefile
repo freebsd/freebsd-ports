@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-session/Makefile 19789 2014-08-05 07:43:54Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/x11/cinnamon-session/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	cinnamon-session
 PORTVERSION=	2.2.2

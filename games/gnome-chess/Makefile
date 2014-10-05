@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-chess/Makefile 19759 2014-06-27 06:24:59Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/games/gnome-chess/Makefile 19910 2014-09-25 21:36:39Z kwm $
 
 PORTNAME=	gnome-chess
 PORTVERSION=	3.12.3
@@ -14,15 +14,14 @@ COMMENT=	Gnome chess
 BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
 		itstool:${PORTSDIR}/textproc/itstool
 
-USES=		desktop-file-utils gettext gmake pathfix \
-		pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack librsvg2 libxml2:build
 INSTALLS_ICONS=	yes
 USE_XORG=	x11
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.gnome-chess.gschema.xml
 

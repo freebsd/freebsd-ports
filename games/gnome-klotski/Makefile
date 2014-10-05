@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-klotski/Makefile 19634 2014-05-12 20:23:40Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/games/gnome-klotski/Makefile 19634 2014-05-12 20:23:40Z gusi $
 
 PORTNAME=	gnome-klotski
 PORTVERSION=	3.12.2

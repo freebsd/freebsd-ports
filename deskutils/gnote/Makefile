@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnote/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/gnote/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	gnote
 PORTVERSION=	3.12.0

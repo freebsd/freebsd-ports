@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/geary/Makefile 19890 2014-09-19 23:11:27Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/mail/geary/Makefile 19890 2014-09-19 23:11:27Z gusi $
 
 PORTNAME=	geary
 PORTVERSION=	0.8.0

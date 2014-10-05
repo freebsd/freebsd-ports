@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/accessibility/caribou/Makefile 19845 2014-09-04 05:31:44Z gusi $
+#    $MCom: ports/branches/GNOME_3_12/accessibility/caribou/Makefile 19845 2014-09-04 05:31:44Z gusi $
 
 PORTNAME=	caribou
 PORTVERSION=	0.4.14

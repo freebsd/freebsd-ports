@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/consolekit/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#    $MCom: ports/branches/GNOME_3_12/sysutils/consolekit/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	consolekit
 PORTVERSION=	0.4.5

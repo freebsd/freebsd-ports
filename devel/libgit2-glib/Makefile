@@ -1,33 +1,29 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libgit2-glib/Makefile 19812 2014-08-14 17:06:28Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/devel/libgit2-glib/Makefile 19911 2014-09-25 22:01:15Z kwm $
 
 PORTNAME=	libgit2-glib
 PORTVERSION=	0.0.20
+PORTREVISION=	1
 CATEGORIES=	devel gnome
-MASTER_SITES=	https://git.gnome.org/browse/libgit2-glib/snapshot/
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper library around the libgit2 git access library
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
 		gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
 LIB_DEPENDS=	libgit2.so:${PORTSDIR}/devel/libgit2
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix gtk30 intlhack introspection
-USE_AUTOTOOLS=	automake libtoolize
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-python
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-
-pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/at-spi2-core/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/accessibility/at-spi2-core/Makefile 19910 2014-09-25 21:36:39Z kwm $
 
 PORTNAME=	at-spi2-core
 PORTVERSION=	2.12.0

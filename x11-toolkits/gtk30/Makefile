@@ -1,6 +1,6 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 19867 2014-09-14 13:21:44Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/x11-toolkits/gtk30/Makefile 19923 2014-09-27 14:29:54Z kwm $
 # Please keep gtk30 and x11-themes/gnome-themes-standard minor version in sync
 
 PORTNAME=	gtk
@@ -61,7 +61,7 @@ CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 CUPS_CONFIGURE_ENABLE=	cups
 CLOUDPRINT_DESC=	Cloud printing support
 CLOUDPRINT_CONFIGURE_ENABLE=	cloudprint
-CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/www/librest \
+CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
 			libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 DEBUG_CONFIGURE_ENABLE=debug
 

@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/gnome-video-effects/Makefile 19900 2014-09-20 11:28:00Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/graphics/gnome-video-effects/Makefile 19900 2014-09-20 11:28:00Z kwm $
 
 PORTNAME=	gnome-video-effects
 PORTVERSION=	0.4.1

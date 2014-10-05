@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/baobab/Makefile 19585 2014-04-27 06:34:16Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/baobab/Makefile 19585 2014-04-27 06:34:16Z gusi $
 
 PORTNAME=	baobab
 PORTVERSION=	3.12.1

@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/colord/Makefile 19898 2014-09-20 11:04:55Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/graphics/colord/Makefile 19898 2014-09-20 11:04:55Z kwm $
 
 PORTNAME=	colord
 PORTVERSION=	1.1.7

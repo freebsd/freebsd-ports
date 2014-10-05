@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/pulseaudio/Makefile 19894 2014-09-20 07:55:02Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/audio/pulseaudio/Makefile 19894 2014-09-20 07:55:02Z kwm $
 #
 # !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
 # PORTREVISION bumps of depending ports.

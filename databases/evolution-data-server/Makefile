@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/evolution-data-server/Makefile 19851 2014-09-08 10:26:54Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/databases/evolution-data-server/Makefile 19851 2014-09-08 10:26:54Z gusi $
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	3.12.6

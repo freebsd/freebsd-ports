@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/evince/Makefile 19791 2014-08-08 13:19:56Z gusi $
+#    $MCom: ports/branches/GNOME_3_12/graphics/evince/Makefile 19791 2014-08-08 13:19:56Z gusi $
 
 PORTNAME=	evince
 PORTVERSION=	3.12.2

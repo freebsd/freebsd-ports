@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/devel/gnome-common/Makefile 19863 2014-09-14 12:16:51Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/devel/gnome-common/Makefile 19863 2014-09-14 12:16:51Z kwm $
 
 PORTNAME=	gnome-common
 PORTVERSION=	3.12.0

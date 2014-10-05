@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-robots/Makefile 19745 2014-06-22 21:02:19Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/games/gnome-robots/Makefile 19745 2014-06-22 21:02:19Z gusi $
 
 PORTNAME=	gnome-robots
 PORTVERSION=	3.12.3
