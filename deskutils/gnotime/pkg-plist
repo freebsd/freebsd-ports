@@ -102,11 +102,3 @@ share/locale/wa/LC_MESSAGES/gnotime-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnotime-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnotime-2.0.mo
 share/omf/gnotime/gnotime-C.omf
-@dirrm share/omf/gnotime
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/ghtml/C
-@dirrm %%DATADIR%%/ghtml
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/gnotime/C/figures
-@dirrm share/gnome/help/gnotime/C
-@dirrm share/gnome/help/gnotime
