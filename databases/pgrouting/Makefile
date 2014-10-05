@@ -3,7 +3,7 @@
 
 PORTNAME=	pgrouting
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases geography
 MASTER_SITES=	https://github.com/pgRouting/${PORTNAME}/archive/
 DISTFILES=	v${PORTVERSION}${EXTRACT_SUFX}
