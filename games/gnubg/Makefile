@@ -28,7 +28,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix shebangfix python pkgconfig compiler:c++11-lang
-USE_AUTOTOOLS=	aclocal automake libtoolize
 USE_GNOME=	glib20
 
 OPTIONS_DEFINE=	NLS DOCS
@@ -37,8 +36,5 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-#pre-configure:
-#	cd ${WRKSRC} && ./autogen.sh
 
 .include <bsd.port.mk>
