@@ -15,10 +15,9 @@ LIB_DEPENDS=	libspectre.so:${PORTSDIR}/print/libspectre \
 		libanalitza.so:${PORTSDIR}/math/analitza
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource pkgconfig tar:xz
+USES=		cmake:outsource pkgconfig python:2 tar:xz
 USE_QT4=	corelib qtestlib_build xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build
-USE_PYTHON=	2
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	MAXIMA OCTAVE R SAGE SCILAB

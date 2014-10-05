@@ -13,7 +13,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt 4 toolkit (meta port)
 
-USE_PYTHON=	yes
+USES=		python
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

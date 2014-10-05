@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 USE_GL=		gl
 USE_GNOME=	libxml2 libxslt
 USE_PERL5=	build
-USE_PYTHON_BUILD=	yes
 USE_QT5=	core gui network opengl printsupport qml quick sql \
 		testlib widgets buildtools_build
 QT_DIST=	${PORTNAME}
@@ -27,7 +26,7 @@ USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_SQLITE=	3
 USE_XORG=	x11 xcomposite xrender
-USES=		bison:build gmake perl5 pkgconfig qmake:outsource
+USES=		bison:build gmake perl5 pkgconfig python:build qmake:outsource
 # Keep make(1) from descending into obj/ subdirectories during tests.
 CONFIGURE_ENV=	MAKEOBJDIR=.
 # Use flex(1) from ports.
