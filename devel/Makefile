@@ -3635,6 +3635,7 @@
     SUBDIR += py-clint
     SUBDIR += py-clonedigger
     SUBDIR += py-cmdln
+    SUBDIR += py-codegen
     SUBDIR += py-cog
     SUBDIR += py-coil
     SUBDIR += py-collective.monkeypatcher
