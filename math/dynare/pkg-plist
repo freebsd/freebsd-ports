@@ -1,5 +1,4 @@
 bin/dynare++
-info/dir
 lib/dynare/contrib/ms-sbvar/TZcode/MatlabFiles/a0asfun.m
 lib/dynare/contrib/ms-sbvar/TZcode/MatlabFiles/a0asgrad.m
 lib/dynare/contrib/ms-sbvar/TZcode/MatlabFiles/a0freefun.m
@@ -1099,61 +1098,3 @@ lib/dynare/mex/octave/ordschur.oct
 lib/dynare/mex/octave/qmc_sequence.mex
 lib/dynare/mex/octave/qzcomplex.oct
 lib/dynare/mex/octave/sparse_hessian_times_B_kronecker_C.mex
-@dirrmtry lib/dynare/contrib/ms-sbvar/TZcode/MatlabFiles
-@dirrmtry lib/dynare/contrib/ms-sbvar/TZcode
-@dirrmtry lib/dynare/contrib/ms-sbvar
-@dirrmtry lib/dynare/contrib
-@dirrmtry lib/dynare/examples
-@dirrmtry lib/dynare/matlab/@dates
-@dirrmtry lib/dynare/matlab/@dseries/private
-@dirrmtry lib/dynare/matlab/@dseries
-@dirrmtry lib/dynare/matlab/@dynTimeIndex
-@dirrmtry lib/dynare/matlab/AIM
-@dirrmtry lib/dynare/matlab/distributions
-@dirrmtry lib/dynare/matlab/ep
-@dirrmtry lib/dynare/matlab/gensylv
-@dirrmtry lib/dynare/matlab/gsa
-@dirrmtry lib/dynare/matlab/kalman/likelihood
-@dirrmtry lib/dynare/matlab/kalman
-@dirrmtry lib/dynare/matlab/kronecker
-@dirrmtry lib/dynare/matlab/missing/bsxfun
-@dirrmtry lib/dynare/matlab/missing/ilu
-@dirrmtry lib/dynare/matlab/missing/issquare
-@dirrmtry lib/dynare/matlab/missing/nanmean
-@dirrmtry lib/dynare/matlab/missing/ordeig
-@dirrmtry lib/dynare/matlab/missing/rows_columns
-@dirrmtry lib/dynare/matlab/missing/stats
-@dirrmtry lib/dynare/matlab/missing/strjoin
-@dirrmtry lib/dynare/matlab/missing/vec
-@dirrmtry lib/dynare/matlab/missing
-@dirrmtry lib/dynare/matlab/ms-sbvar/identification
-@dirrmtry lib/dynare/matlab/ms-sbvar
-@dirrmtry lib/dynare/matlab/parallel
-@dirrmtry lib/dynare/matlab/partial_information
-@dirrmtry lib/dynare/matlab/particle/local_state_space_iteration
-@dirrmtry lib/dynare/matlab/particle
-@dirrmtry lib/dynare/matlab/qz
-@dirrmtry lib/dynare/matlab/reports/@elements
-@dirrmtry lib/dynare/matlab/reports/@graph
-@dirrmtry lib/dynare/matlab/reports/@objArray
-@dirrmtry lib/dynare/matlab/reports/@page
-@dirrmtry lib/dynare/matlab/reports/@pages
-@dirrmtry lib/dynare/matlab/reports/@report
-@dirrmtry lib/dynare/matlab/reports/@report_series
-@dirrmtry lib/dynare/matlab/reports/@report_table
-@dirrmtry lib/dynare/matlab/reports/@section
-@dirrmtry lib/dynare/matlab/reports/@sections
-@dirrmtry lib/dynare/matlab/reports/@seriesElements
-@dirrmtry lib/dynare/matlab/reports/@vspace
-@dirrmtry lib/dynare/matlab/reports
-@dirrmtry lib/dynare/matlab/utilities/dataset
-@dirrmtry lib/dynare/matlab/utilities/dates
-@dirrmtry lib/dynare/matlab/utilities/doc
-@dirrmtry lib/dynare/matlab/utilities/dseries
-@dirrmtry lib/dynare/matlab/utilities/general
-@dirrmtry lib/dynare/matlab/utilities/tests
-@dirrmtry lib/dynare/matlab/utilities
-@dirrmtry lib/dynare/matlab
-@dirrmtry lib/dynare/mex/octave
-@dirrmtry lib/dynare/mex
-@dirrmtry lib/dynare
