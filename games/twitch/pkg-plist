@@ -85,7 +85,3 @@ share/pixmaps/twitch.png
 %%DATADIR%%/twitch.py
 %%DATADIR%%/twitch.pyc
 %%DATADIR%%/twitch.pyo
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
