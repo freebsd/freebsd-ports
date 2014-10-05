@@ -3,7 +3,7 @@
 
 PORTNAME=	boodler
 PORTVERSION=	1.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eblong.com/zarf/boodler/
 DISTFILES=	boodler-153.tar.gz boodler-snd-021902.tar.gz
@@ -11,57 +11,60 @@ DISTFILES=	boodler-153.tar.gz boodler-snd-021902.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmable soundscape tool
 
+LICENSE=	LGPL20 # Main program only, sounds have various copyrights
+
 RESTRICTED=	Not for commercial use
 RESTRICTED_FILES=	boodler-snd-021902.tar.gz
 
-OPTIONS_DEFINE=	DOCS
+USES=		python:2 shebangfix
 
-USES=		gmake
-USE_PYTHON=	2
-DRIVER?=	oss
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	configure.py
+CONFIGURE_ARGS=	--include ${LOCALBASE}/include --lib ${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}
-BHOME=		${PREFIX}/share/boodler
 
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "The following build options are available for Boodler:"
-	@${ECHO} ""
-	@${ECHO} "      DRIVER=OSS	Configure to use /dev/dsp."
-	@${ECHO} "      DRIVER=ESD	Configure to use EsounD."
-	@${ECHO} "      DRIVER=FILE	Configure to write raw PCM data to a file."
-	@${ECHO} ""
-	@${ECHO} "Boodler can only be configured to use one of these"
-	@${ECHO} "interfaces. The default is to use OSS."
-	@${ECHO} ""
+SHEBANG_FILES=	${CONFIGURE_SCRIPT}
+SUB_FILES=	boodler-wrapper
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
-.if ${DRIVER:tl} == "esd"
-LIB_DEPENDS+=	libesd.so:${PORTSDIR}/audio/esound
-.endif
+OPTIONS_DEFINE=		DOCS
+OPTIONS_SINGLE=		AUDIO
+OPTIONS_SINGLE_AUDIO=	ESOUND FILE OSS
+OPTIONS_DEFAULT=	OSS
+
+AUDIO_DESC=		Audio backend
+
+ESOUND_LIB_DEPENDS=	libesd.so:${PORTSDIR}/audio/esound
+ESOUND_CONFIGURE_ON=	--driver esd
+
+FILE_DESC=		Write raw PCM data to a file
+FILE_CONFIGURE_ON=	--driver file
+
+OSS_CONFIGURE_ON=	--driver oss
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-PIC=	--PIC
+CONFIGURE_ARGS+=	--PIC
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s|python|${PYTHON_CMD}|" ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "s|^booroot=.*|booroot=${PREFIX}/share/boodler|" ${WRKSRC}/wrapper/boodler
-	@${RMDIR} ${WRKDIR}/boodler-snd/string
+	${REINPLACE_CMD} -e "s|python|${PYTHON_CMD}|" \
+		-e "s|make |${MAKE_CMD} |g" ${WRKSRC}/Makefile
+	${RMDIR} ${WRKDIR}/boodler-snd/string
 
-do-build:
-	(cd ${WRKSRC} && ${PYTHON_CMD} configure.py --driver ${DRIVER:tl} ${PIC} --include ${PREFIX}/include --lib ${PREFIX}/lib && make)
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/effects ${WRKSRC}/boodle/
+post-build:
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/effects ${WRKSRC}/boodle
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/effects ${WRKSRC}/boodle
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/wrapper/boodler ${STAGEDIR}${PREFIX}/bin/
-	@${MKDIR} ${STAGEDIR}${BHOME}
-	@${INSTALL_SCRIPT} ${WRKSRC}/boodler.py ${STAGEDIR}${BHOME}
-	@${MKDIR} ${STAGEDIR}${BHOME}/boodle/ ${STAGEDIR}${BHOME}/effects/ ${STAGEDIR}${BHOME}/boodler-snd/
-	@${CHMOD} -R u+w,a+r,og-w ${WRKDIR}/boodler-snd
-	@${FIND} ${WRKDIR}/boodler-snd -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@cd ${WRKDIR} && ${CP} -pPR boodler/boodle boodler/effects boodler-snd ${STAGEDIR}${BHOME}
+	(cd ${WRKDIR} && ${COPYTREE_SHARE} boodler-snd ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "boodle effects" ${STAGEDIR}${DATADIR})
+	${INSTALL_SCRIPT} ${WRKDIR}/boodler-wrapper ${STAGEDIR}${PREFIX}/bin/boodler
+	${INSTALL_SCRIPT} ${WRKSRC}/boodler.py ${STAGEDIR}${DATADIR}
+	${RM} ${STAGEDIR}${DATADIR}/boodle/cboodle.so
+	${INSTALL_PROGRAM} ${WRKSRC}/boodle/cboodle.so ${STAGEDIR}${DATADIR}/boodle/cboodle.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
