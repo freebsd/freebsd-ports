@@ -22,7 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 DESTDIRNAME=	INSTALL_ROOT
 DISTINFO_FILE=	${QSCI2_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
-USE_PYTHON=	yes
+USES=		python
 USE_QT4=	gui moc_build qmake_build
 QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 

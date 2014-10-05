@@ -12,8 +12,7 @@ DISTNAME=	${SIP_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
 
-USE_PYTHON=		yes
-PYTHON_PY3K_PLIST_HACK=	yes
+USE=		python:py3kplist
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

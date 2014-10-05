@@ -22,10 +22,9 @@ BUILD_DEPENDS=	rapper:${PORTSDIR}/textproc/raptor2 \
 		${PYTHON_SITELIBDIR}/rdflib/__init__.py:${PORTSDIR}/textproc/py-rdflib
 
 USE_KDE4=	automoc4
-USE_PYTHON_BUILD=	yes
 USE_QT4=	dbus declarative qtestlib \
 		moc_build qmake_build rcc_build uic_build
-USES=		tar:bzip2 cmake
+USES=		cmake python:build tar:bzip2
 USE_LDCONFIG=	yes
 
 # To be kept in sync with sysutils/zeitgeist.

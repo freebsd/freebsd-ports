@@ -11,8 +11,7 @@ COMMENT=	Qt QML and JavaScript language module
 
 USE_QT5=	core network buildtools_build
 QT_DIST=	declarative
-USES=		qmake
-USE_PYTHON_BUILD=	yes
+USES=		python:build qmake
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 WRKSRC_SUBDIR=	src/${PORTNAME}
