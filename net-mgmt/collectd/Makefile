@@ -14,10 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
-USES=		gmake libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf autoheader automake
-WANT_GNOME=	yes
+USES=		autoreconf gmake libtool
 
 OPTIONS_DEFINE=		CGI BIND DEBUG GCRYPT LIBVIRT
 OPTIONS_GROUP=		INPUT OUTPUT
@@ -433,17 +431,15 @@ CONFIGURE_ARGS+=--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
-AUTOTOOLSFILES=	aclocal.m4
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
-			  -e 's|2.65|%%AUTOCONF_VERSION%%|g' \
-			  ${WRKSRC}/aclocal.m4
+	@${RM} -r ${WRKSRC}/libltdl
 	@${REINPLACE_CMD} \
 		-e 's;@prefix@/var/;/var/;' \
 		-e 's;/var/lib/;/var/db/;' \
 		${WRKSRC}/src/collectd.conf.in
-	@${REINPLACE_CMD} -e '/\$$[(]mkinstalldirs)/d' ${WRKSRC}/Makefile.in \
+	@${REINPLACE_CMD} \
+		-e '/^ACLOCAL_AMFLAGS =/s;libltdl/m4;m4;' \
+		-e '/\$$[(]mkinstalldirs)/d' \
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} \
 		-e 's;/etc/collection\.conf;${WWWDIR}/collection.conf;' \
