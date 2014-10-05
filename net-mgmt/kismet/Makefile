@@ -80,6 +80,10 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name 'Makefile' -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -E \
 		'/C(XX)?FLAGS[[:blank:]]*\+=/s/ -g / /'
+	@${FIND} ${WRKSRC} -type f \( -name Makefile -o -name Makefile.in \) -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's,-o $$(INSTUSR) -g $$(INSTGRP),,' \
+		-e 's,-o $$(INSTUSR) -g $$(MANGRP),,' \
+		-e 's,-o $$(INSTUSR) -g $$(SUIDGROUP) -m 4550,,'
 
 post-build:
 	@cd ${WRKSRC}; ${STRIP_CMD} kismet_client kismet_drone kismet_server */*.so
