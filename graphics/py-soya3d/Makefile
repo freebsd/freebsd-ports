@@ -3,7 +3,7 @@
 
 PORTNAME=	soya3d
 PORTVERSION=	0.14
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,18 +15,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very high level 3D engine for Python
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
-		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-editobj \
 		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
 		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		gmake openal:al,alut tar:bzip2
+USES=		gmake openal:al,alut python tar:bzip2
 USE_GL=		glew glu
+USE_PYTHON=	autoplist distutils
 USE_SDL=	sdl
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lGLU
