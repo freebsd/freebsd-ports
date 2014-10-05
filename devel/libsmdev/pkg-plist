@@ -15,4 +15,3 @@ lib/libsmdev.so.1.0.0
 libdata/pkgconfig/libsmdev.pc
 man/man1/smdevinfo.1.gz
 man/man3/libsmdev.3.gz
-@dirrm include/libsmdev
