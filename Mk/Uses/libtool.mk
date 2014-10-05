@@ -40,7 +40,9 @@ patch-libtool:
 	@${FIND} ${WRKDIR} -type f -name ltmain.sh |			\
 		${XARGS} ${REINPLACE_CMD}				\
 		-e '/if.*linkmode.*prog.*mode.*!= relink/s/if.*;/if :;/'\
+		-e '/if.*prog.*linkmode.*relink !=.*mode/s/if.*;/if :;/'\
 		-e '/if.*linkmode.*prog.*mode.* = relink/s/||.*;/;/'	\
+		-e '/if.*prog.*linkmode.*relink = .*mode/s/||.*;/;/'	\
 		-e 's/|-p|-pg|/|-B*|-p|-pg|/'
 
 .if ! ${libtool_ARGS:Moldver}

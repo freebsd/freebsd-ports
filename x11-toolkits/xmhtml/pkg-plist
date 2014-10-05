@@ -14,6 +14,7 @@ include/XmHTML/toolkit.h
 lib/libXmHTML.a
 lib/libXmHTML.so
 lib/libXmHTML.so.1
+lib/libXmHTML.so.1.0.2
 %%PORTDOCS%%%%DOCSDIR%%/GPL.html
 %%PORTDOCS%%%%DOCSDIR%%/LGPL.html
 %%PORTDOCS%%%%DOCSDIR%%/XmHTML.html

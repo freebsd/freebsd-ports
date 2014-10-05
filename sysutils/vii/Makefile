@@ -3,7 +3,7 @@
 
 PORTNAME=	vii
 PORTVERSION=	4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vii.sourceforge.net/ \
 		CRITICAL
