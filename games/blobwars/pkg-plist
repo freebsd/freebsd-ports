@@ -13,4 +13,3 @@ share/icons/hicolor/64x64/apps/blobwars.png
 %%NLS%%share/locale/pl/LC_MESSAGES/blobwars.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/blobwars.mo
 share/pixmaps/blobwars.png
-@dirrm %%DATADIR%%
