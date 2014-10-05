@@ -137,6 +137,7 @@
     SUBDIR += fastforward
     SUBDIR += fdm
     SUBDIR += fetchmail
+    SUBDIR += filtermail
     SUBDIR += findmaildirs
     SUBDIR += gbuffy
     SUBDIR += gensig
