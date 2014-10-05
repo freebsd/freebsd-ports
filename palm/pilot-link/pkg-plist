@@ -137,7 +137,3 @@ man/man1/pilot-read-screenshot.1.gz
 man/man1/pilot-read-todos.1.gz
 man/man1/pilot-read-veo.1.gz
 man/man7/pilot-link.7.gz
-@dirrm %%DATADIR%%/udev
-@dirrm %%DATADIR%%/prc
-@dirrm %%DATADIR%%/pix
-@dirrm %%DATADIR%%
