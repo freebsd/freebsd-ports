@@ -356,11 +356,3 @@ libexec/mame/unidasm
 %%DATADIR%%/keymaps/km-fr-OSX.txt
 %%DATADIR%%/keymaps/km-fr.txt
 %%DATADIR%%/keymaps/km_it.txt
-@dirrm %%DATADIR%%/keymaps
-@dirrm %%DATADIR%%/hash
-@dirrm %%DATADIR%%/artwork
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/mame
