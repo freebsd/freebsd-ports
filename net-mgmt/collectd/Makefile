@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.9
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		CGI BIND DEBUG GCRYPT LIBVIRT
 OPTIONS_GROUP=		INPUT OUTPUT
