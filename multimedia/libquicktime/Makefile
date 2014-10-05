@@ -19,12 +19,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes
 USES=		gettext gmake libtool pathfix pkgconfig
-USE_AUTOTOOLS=	autoconf
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl
-
-CFLAGS+=	-fPIC
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 USE_XORG=	xaw xv
 CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen --without-lame
@@ -128,19 +126,8 @@ CONFIGURE_ARGS+=	--without-schroedinger
 
 .endif
 
-AUTOTOOLSFILES=	aclocal.m4
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.64|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
-		${WRKSRC}/plugins/audiocodec/* \
-		${WRKSRC}/plugins/videocodec/*
-	@${REINPLACE_CMD} -E -e 's|objformat=aout|objformat=elf|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-DG.*_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/configure*
-
-pre-configure:
-	@${CHMOD} +x ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/-DGTK_DISABLE_DEPRECATED//' ${WRKSRC}/configure
 
 .if ${PORT_OPTIONS:MDOCS} && !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 post-install:
