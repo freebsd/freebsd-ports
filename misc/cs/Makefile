@@ -3,6 +3,7 @@
 
 PORTNAME=	cs
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://njhurst.com/programming/cross-stitch/
 
@@ -11,13 +12,12 @@ COMMENT=	Cross Stitch software
 
 LICENSE=	GPLv2 # (or later)
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
 NO_BUILD=	yes
 
-USES=		shebangfix tar:tgz
+USES=		python:run shebangfix tar:tgz
 SHEBANG_FILES=	xs.py
-USE_PYTHON_RUN=	yes
 
 PLIST_FILES=	bin/xs
 
