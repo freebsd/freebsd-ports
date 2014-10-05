@@ -3,6 +3,7 @@
 
 PORTNAME=	phpmp
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
@@ -15,15 +16,11 @@ NO_BUILD=	yes
 USE_PHP=	pcre sockets
 
 PHPMP?=		${WWWDIR_REL}
-PLIST_SUB+=	PHPMP=${PHPMP}
+PLIST_SUB=	PHPMP="${PHPMP}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHPMP}
 	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${PHPMP}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${PHPMP}
 	@${CHMOD} -R 755 ${STAGEDIR}${PREFIX}/${PHPMP}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
