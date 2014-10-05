@@ -3,7 +3,7 @@
 
 PORTNAME=	email_reply_parser-discourse
 PORTVERSION=	0.6
-CATEGORIES=	devel rubygems
+CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
