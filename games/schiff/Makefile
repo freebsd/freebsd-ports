@@ -10,16 +10,16 @@ MASTER_SITES=	SF/pygamebook/${PORTNAME:S/s/S/}/${PORTNAME}${PORTVERSION}.py/ \
 DISTFILES=	${PORTNAME}${DISTVERSION}.py \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	python
-EXTRACT_ONLY=
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Steer your ship(s) with the keyboard
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2 # or later
 
 RUN_DEPENDS=	${PYGAME}
 
-USE_PYTHON=	2
+USES=		python:2,run
 NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}
@@ -27,7 +27,6 @@ SUB_FILES=	${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png \
 		%%DATADIR%%/${PORTNAME}.py
-PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="Schiff" "" ${PORTNAME} \
 		"${PORTNAME}" "Game;LogicGame;" ""
