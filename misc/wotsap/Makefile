@@ -3,6 +3,7 @@
 
 PORTNAME=	wotsap
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lysator.liu.se/~jc/wotsap/download/
 EXTRACT_SUFX=	.tgz
@@ -10,9 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Web of trust statistics and pathfinder
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
-USE_PYTHON_RUN=	2
+USES=		python:2,run
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pks2wot bin/wotsap
