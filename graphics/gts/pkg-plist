@@ -11,8 +11,9 @@ bin/stl2gts
 bin/transform
 include/gts.h
 include/gtsconfig.h
+lib/libgts-0.7.so.5
+lib/libgts-0.7.so.5.0.1
 lib/libgts.a
 lib/libgts.so
-lib/libgts.so.5
 libdata/pkgconfig/gts.pc
 share/aclocal/gts.m4
