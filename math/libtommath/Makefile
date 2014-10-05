@@ -2,7 +2,7 @@
 
 PORTNAME=	libtommath
 PORTVERSION=	0.42.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://libtom.org/files/
 DISTNAME=	ltm-${PORTVERSION}
@@ -31,7 +31,7 @@ post-patch:
 .if ${PORT_OPTIONS:MSHARED}
 USES+=		libtool:build
 USE_LDCONFIG=	yes
-PLIST_FILES+=	lib/libtommath.so.0 lib/libtommath.so
+PLIST_FILES+=	lib/libtommath.so lib/libtommath.so.0 lib/libtommath.so.0.0.41
 MAKEFILE=	makefile.shared
 .else
 MAKEFILE=	makefile

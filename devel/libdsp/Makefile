@@ -3,7 +3,7 @@
 
 PORTNAME=	libdsp
 PORTVERSION=	5.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable-src/${PORTVERSION} \
 		http://mirror.mcx2.org/

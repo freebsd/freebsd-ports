@@ -3,7 +3,7 @@
 
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://libtom.org/files/
 DISTNAME=	crypt-${PORTVERSION}

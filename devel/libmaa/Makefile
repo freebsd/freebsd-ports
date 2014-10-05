@@ -3,7 +3,7 @@
 
 PORTNAME=	libmaa
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -27,7 +27,8 @@ DOCS=		README doc/libmaa.600dpi.ps
 PLIST_FILES=	include/maa.h \
 		lib/libmaa.a \
 		lib/libmaa.so \
-		lib/libmaa.so.3
+		lib/libmaa.so.3 \
+		lib/libmaa.so.3.0.0
 PORTDOCS=	${DOCS:T}
 
 post-install:
