@@ -1,5 +1,5 @@
---- smbldap-config.pl.orig	2011-10-13 11:26:12.939953317 +0200
-+++ smbldap-config.pl	2011-10-13 11:27:09.173960781 +0200
+--- smbldap-config.pl.orig	2012-03-05 09:59:44.000000000 +0100
++++ smbldap-config.pl	2014-10-05 19:32:18.349166265 +0200
 @@ -48,7 +48,7 @@
  print "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n";
  
@@ -42,3 +42,14 @@
  
  # comment out the following line to get rid of the default banner
  # no_banner=\"1\"
+@@ -557,3 +557,10 @@
+ $mode=0600;
+ chmod $mode,"$smbldap_bind_conf","$smbldap_bind_conf.old";
+ 
++
++############################################################
++
++=head1 NAME
++
++=cut
++
