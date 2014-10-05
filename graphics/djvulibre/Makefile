@@ -3,7 +3,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.25.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION:R}
 
@@ -15,16 +15,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		pathfix iconv
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		TIFF_CFLAGS="-I${LOCALBASE}/include" \
-		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared
+		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+USES=		iconv libtool pathfix
 USE_LDCONFIG=	yes
 CONFLICTS=	djvulibre-nox11-3*
 WRKSRC=		${WRKDIR}/${DISTNAME:R}
