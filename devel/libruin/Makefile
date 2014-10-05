@@ -3,7 +3,7 @@
 
 PORTNAME=	libruin
 PORTVERSION=	0.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel scheme
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/guile/site/config/load.scm:${PORTSDIR}/devel/g
 RUN_DEPENDS=	${LOCALBASE}/share/guile/site/config/load.scm:${PORTSDIR}/devel/guile-lib
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
 
 INFO=	libruin
