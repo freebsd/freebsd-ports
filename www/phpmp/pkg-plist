@@ -1,11 +1,11 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%PHPMP%%/COPYING
 %%PHPMP%%/ChangeLog
 %%PHPMP%%/INSTALL
 %%PHPMP%%/README
 %%PHPMP%%/TODO
-@unexec if cmp -s %D/%%PHPMP%%/config.php.sample %D/%%PHPMP%%/config.php; then rm -f %D/%%PHPMP%%/config.php; fi
-%%PHPMP%%/config.php.sample
-@exec if [ ! -f %D/%%PHPMP%%/config.php ] ; then cp -p %D/%F %B/config.php; fi
+@sample %%PHPMP%%/config.php.sample
 %%PHPMP%%/features.php
 %%PHPMP%%/index.php
 %%PHPMP%%/info.php
@@ -18,4 +18,6 @@
 %%PHPMP%%/transparent.gif
 %%PHPMP%%/utils.php
 %%PHPMP%%/xml-parse.php
-@dirrmtry %%PHPMP%%
+@dir %%PHPMP%%
+@owner
+@group
