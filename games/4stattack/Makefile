@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYGAME}
 
-USE_PYTHON=	yes
+USES=		python
 
 PORTDOCS=	changelog.txt credits.txt
 OPTIONS_DEFINE=	DOCS
