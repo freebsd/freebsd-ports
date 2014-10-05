@@ -19,4 +19,3 @@ sbin/smbldap-usershow
 @sample %%ETCDIR%%/smbldap.conf.sample
 @sample %%ETCDIR%%/smbldap_bind.conf.sample
 %%SITE_PERL%%/smbldap_tools.pm
-@dirrmtry %%ETCDIR%%

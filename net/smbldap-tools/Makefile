@@ -3,6 +3,7 @@
 
 PORTNAME=	smbldap-tools
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.gna.org/smbldap-tools/sources/${PORTVERSION}/
 
@@ -23,6 +24,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/a//}
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
 ALL_TARGET=	build
+
+NO_ARCH=	yes
 
 PORTDOCS=	*
 
