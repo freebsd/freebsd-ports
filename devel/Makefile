@@ -4744,6 +4744,7 @@
     SUBDIR += valgrind
     SUBDIR += valgrind-devel
     SUBDIR += varconf
+    SUBDIR += vasm
     SUBDIR += vera++
     SUBDIR += viewvc
     SUBDIR += violet
