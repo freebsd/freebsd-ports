@@ -13,8 +13,6 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake
-AUTOMAKE_ARGS=	--add-missing
 OPTIONS_SUB=	yes
 USES=		pathfix shebangfix libtool
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
@@ -54,16 +52,10 @@ BROKEN=		Fails to compile when MX4200 is enabled.
  
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}4
 
-AUTOTOOLSFILES=	aclocal.m4
-
 # XXX Temporary hack. Remember to remove this next commit.
 post-extract:
 	@/usr/bin/touch ${WRKSRC}/scripts/build/checkHtmlFileDates
 	@${CHMOD} +x ${WRKSRC}/scripts/build/checkHtmlFileDates
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
-			  ${WRKSRC}/aclocal.m4
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
