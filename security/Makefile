@@ -795,6 +795,7 @@
     SUBDIR += py-pyptlib
     SUBDIR += py-pysha3
     SUBDIR += py-python-registry
+    SUBDIR += py-rekall
     SUBDIR += py-rsa
     SUBDIR += py-service_identity
     SUBDIR += py-slowaes
