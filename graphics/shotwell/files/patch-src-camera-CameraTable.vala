@@ -1,5 +1,5 @@
---- src/camera/CameraTable.vala.orig	2013-11-09 18:20:35.000000000 +0100
-+++ src/camera/CameraTable.vala	2013-11-09 18:24:57.000000000 +0100
+--- src/camera/CameraTable.vala.orig	2014-09-28 18:49:39.000000000 +0200
++++ src/camera/CameraTable.vala	2014-09-28 19:10:01.000000000 +0200
 @@ -26,7 +26,6 @@
      
      private static CameraTable instance = null;
