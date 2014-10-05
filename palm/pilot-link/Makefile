@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include
 CONFIGURE_ARGS+=${ICONV_CONFIGURE_BASE}  --with-included-popt --enable-conduits --enable-xsltproc
 INSTALL_TARGET=	install-strip
-USES=		iconv libtool pathfix pkgconfig tar:bzip2
+USES=		iconv libtool pathfix pkgconfig readline tar:bzip2
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	PNG THREADS USB
@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=	--disable-png
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} '/enable_werror="yes"/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|png_voidp_NULL|NULL|g' \
 		-e 's|png_error_ptr_NULL|NULL|g' \
 		${WRKSRC}/src/pilot-read-notepad.c \
