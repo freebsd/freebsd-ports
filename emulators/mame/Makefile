@@ -125,6 +125,6 @@ do-install:
 	(cd ${WRKSRC}/src/osd/sdl && \
 		${COPYTREE_SHARE} keymaps ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
-	(cd ${FILESDIR} && ${INSTALL_DATA} mame.ini ${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_DATA} ${FILESDIR}/mame.ini ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
