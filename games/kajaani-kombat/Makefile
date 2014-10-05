@@ -10,7 +10,8 @@ MASTER_SITES=	http://kombat.kajaani.net/dl/
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Funny multiplayer game... and much more
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
