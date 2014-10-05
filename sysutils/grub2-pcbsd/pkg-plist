@@ -55,7 +55,6 @@ bin/grub-glue-efi
 bin/grub-render-label
 bin/grub-syslinux2cfg
 sbin/grub-macbless
-info/dir
 lib/grub/i386-pc/archelp.mod
 lib/grub/i386-pc/archelp.module
 lib/grub/i386-pc/boot_hybrid.image
@@ -640,10 +639,3 @@ man/man8/grub-probe.8.gz
 man/man8/grub-reboot.8.gz
 man/man8/grub-set-default.8.gz
 man/man8/grub-sparc64-setup.8.gz
-%%MKFONT%%@dirrm share/grub/themes/starfield
-%%MKFONT%%@dirrm share/grub/themes
-@dirrm share/grub
-@dirrm lib/grub/i386-pc
-@dirrm lib/grub
-@dirrmtry etc/grub.d
-@dirrmtry etc/bash_completion.d
