@@ -34,5 +34,3 @@ bin/nuclearchess
 %%DATADIR%%/gfx/white.png
 %%DATADIR%%/gfx/wood.png
 share/pixmaps/nuclearchess.png
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%
