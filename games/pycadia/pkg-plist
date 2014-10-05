@@ -95,7 +95,3 @@ share/pixmaps/pycadia.png
 %%DATADIR%%/vektoroids.py
 %%DATADIR%%/vektoroids.pyc
 %%DATADIR%%/vektoroids.pyo
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%

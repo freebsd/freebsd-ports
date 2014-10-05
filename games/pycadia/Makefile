@@ -12,14 +12,15 @@ DIST_SUBDIR=	python
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Home to vector gaming, Python style
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		python:2
 USE_GNOME=	pygtk2 libgnomeui
-USE_PYTHON=	2
 
 PORTDOCS=	CHANGELOG README gravity.txt
 OPTIONS_DEFINE=	DOCS
