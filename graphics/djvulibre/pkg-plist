@@ -20,7 +20,8 @@ bin/djvuxmlparser
 include/libdjvu/ddjvuapi.h
 include/libdjvu/miniexp.h
 lib/libdjvulibre.so
-lib/libdjvulibre.so.25
+lib/libdjvulibre.so.21
+lib/libdjvulibre.so.21.4.0
 libdata/pkgconfig/ddjvuapi.pc
 %%ANY2DJVU%%man/man1/any2djvu.1.gz
 man/man1/bzz.1.gz
@@ -70,14 +71,3 @@ share/djvu/osi/zh/messages.xml
 share/djvu/pubtext/DjVuMessages.dtd
 share/djvu/pubtext/DjVuOCR.dtd
 share/djvu/pubtext/DjVuXML-s.dtd
-@dirrm share/djvu/pubtext
-@dirrm share/djvu/osi/zh
-@dirrm share/djvu/osi/ja
-@dirrm share/djvu/osi/fr
-@dirrm share/djvu/osi/en
-@dirrm share/djvu/osi/desktop
-@dirrm share/djvu/osi/de
-@dirrm share/djvu/osi/cs
-@dirrm share/djvu/osi
-@dirrmtry share/djvu
-@dirrm include/libdjvu
