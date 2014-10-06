@@ -51,9 +51,3 @@ bin/magicmaze
 %%DATADIR%%/mm.rb
 %%DATADIR%%/testmm.rb
 share/pixmaps/magicmaze.png
-@dirrm %%DATADIR%%/magicmaze
-@dirrm %%DATADIR%%/data/sound
-@dirrm %%DATADIR%%/data/maps
-@dirrm %%DATADIR%%/data/gfx
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
