@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.5
-PORTREVISION=	1
+PORTVERSION=	4.4.6
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -50,7 +49,7 @@ RUN_DEPENDS+=	p5-DBD-mysql>=4.0001:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 RUN_DEPENDS+=	p5-DBD-Pg>=2.19.3:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
