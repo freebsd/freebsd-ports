@@ -4434,6 +4434,7 @@
     SUBDIR += rubygem-multi_json
     SUBDIR += rubygem-multi_test
     SUBDIR += rubygem-murmurhash3
+    SUBDIR += rubygem-mustache
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-naught
     SUBDIR += rubygem-needle
