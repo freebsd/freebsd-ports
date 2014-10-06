@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwpd
-PORTVERSION=	0.9.9
-PORTREVISION=	2
+PORTVERSION=	0.10.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,6 +12,8 @@ COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
+LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
+
 USES=		pathfix libtool:keepla tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	libgsf
@@ -21,8 +22,5 @@ INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--without-docs
 PLIST_SUB=	MAJVER=${PORTVERSION:R}
-
-post-stage:
-	@${RM} ${STAGEDIR}${PREFIX}/bin/wpd*
 
 .include <bsd.port.mk>

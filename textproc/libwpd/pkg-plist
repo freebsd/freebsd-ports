@@ -1,6 +1,3 @@
-bin/wpd2html
-bin/wpd2raw
-bin/wpd2text
 include/libwpd-%%MAJVER%%/libwpd/WPDocument.h
 include/libwpd-%%MAJVER%%/libwpd/WPXBinaryData.h
 include/libwpd-%%MAJVER%%/libwpd/WPXDocumentInterface.h
@@ -22,6 +19,3 @@ lib/libwpd-stream-%%MAJVER%%.so.9
 lib/libwpd-stream-%%MAJVER%%.so.9.0.9
 libdata/pkgconfig/libwpd-%%MAJVER%%.pc
 libdata/pkgconfig/libwpd-stream-%%MAJVER%%.pc
-@dirrm include/libwpd-%%MAJVER%%/libwpd-stream
-@dirrm include/libwpd-%%MAJVER%%/libwpd
-@dirrm include/libwpd-%%MAJVER%%
