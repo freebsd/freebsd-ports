@@ -1,10 +1,6 @@
-@group games
-@mode 2550
-bin/mangband
-@mode
-@group
+@(,games,2550) bin/mangband
 bin/mangclient
-@sample %%ETCDIR%%/mangband.cfg
+@sample etc/mangband.cfg.sample
 %%DATADIR%%/data/scores.raw
 %%DATADIR%%/edit/artifact.txt
 %%DATADIR%%/edit/ego_item.txt
@@ -94,15 +90,3 @@ bin/mangclient
 %%DATADIR%%/xtra/graf/mask.bmp
 @mode
 @group
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/edit
-@dirrm %%DATADIR%%/file
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/save
-@dirrm %%DATADIR%%/text
-@dirrm %%DATADIR%%/user
-@dirrm %%DATADIR%%/xtra/Sound
-@dirrm %%DATADIR%%/xtra/font
-@dirrm %%DATADIR%%/xtra/graf
-@dirrm %%DATADIR%%/xtra
-@dirrm %%DATADIR%%
