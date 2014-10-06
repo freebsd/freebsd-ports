@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-settings-daemon
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -24,7 +24,7 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_MATE=	desktop libmatekbd
 USE_XORG=	xxf86misc
-USE_GNOME=	dconf gnomehier gtk20 intlhack
+USE_GNOME=	dconf gtk20 intlhack
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
