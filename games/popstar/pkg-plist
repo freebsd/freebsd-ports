@@ -19,7 +19,3 @@ share/pixmaps/popstar.png
 %%DATADIR%%/sounds/move.wav
 %%DATADIR%%/sounds/pop.wav
 %%DATADIR%%/sounds/select.wav
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
