@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libmspub
-PORTVERSION=	0.0.6
-PORTREVISION=	3
+PORTVERSION=	0.1.0
 CATEGORIES=	print graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
+PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Microsoft Publisher file format
@@ -14,8 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
-		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
-		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg
+		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -25,8 +24,5 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-werror --without-docs
 CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
-
-post-stage:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/pub*
 
 .include <bsd.port.mk>
