@@ -108,6 +108,8 @@ PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:rss,ssl,rbl2smtpd/}
 PATCH_SITE_SUBDIR+=	garga/ucspi-tcp/:rss,ssl,rbl2smtpd
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/^extern int errno;/#include <errno.h>/' \
+		${WRKSRC}/error.h
 .if ${PORT_OPTIONS:MSSL}
 	@${REINPLACE_CMD} -e 's|#INCS=-I/usr/local/include|INCS=-I${OPENSSLBASE}/include|g; \
 			      s|-lcrypto|-L${OPENSSLBASE}/lib |g' \
