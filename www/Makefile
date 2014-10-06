@@ -81,6 +81,7 @@
     SUBDIR += choqok
     SUBDIR += chpasswd
     SUBDIR += chromium
+    SUBDIR += chromium-pulse
     SUBDIR += chtml
     SUBDIR += ckeditor
     SUBDIR += cl-lml
@@ -184,6 +185,7 @@
     SUBDIR += ffproxy
     SUBDIR += fira-webfont
     SUBDIR += firefox
+    SUBDIR += firefox-pulse
     SUBDIR += firefox-esr
     SUBDIR += firefox-esr-i18n
     SUBDIR += firefox-i18n
