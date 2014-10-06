@@ -20,8 +20,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/"ice ice penguin"
 
-USES=		zip
-USE_PYTHON=	yes
+USES=		python:run zip
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGELOG.txt readme.txt
