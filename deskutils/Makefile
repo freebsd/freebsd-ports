@@ -121,6 +121,7 @@
     SUBDIR += hamster-applet
     SUBDIR += hebcal
     SUBDIR += helpviewer
+    SUBDIR += homerun
     SUBDIR += horde-groupware
     SUBDIR += horde-kronolith
     SUBDIR += horde-mnemo
@@ -133,6 +134,7 @@
     SUBDIR += jlj
     SUBDIR += kcharselect
     SUBDIR += kchmviewer-kde4
+    SUBDIR += kdeconnect
     SUBDIR += kdepim4
     SUBDIR += kdepim4-runtime
     SUBDIR += kdepimlibs4
