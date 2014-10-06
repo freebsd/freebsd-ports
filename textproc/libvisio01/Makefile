@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libvisio
-PORTVERSION=	0.0.31
-PORTREVISION=	3
+PORTVERSION=	0.1.0
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
+PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing the visio file format structure
@@ -14,8 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/include/classic_core.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
-		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
-		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg
+		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
 CONFIGURE_ARGS=	--disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -31,8 +30,5 @@ INSTALL_TARGET=	install-strip
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 CONFIGURE_ENV+=	GPERF=${LOCALBASE}/bin/gperf
 .endif
-
-post-stage:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/vs*
 
 .include <bsd.port.post.mk>
