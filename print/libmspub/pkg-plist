@@ -1,5 +1,3 @@
-bin/pub2raw
-bin/pub2xhtml
 include/libmspub-0.0/libmspub/MSPUBDocument.h
 include/libmspub-0.0/libmspub/MSPUBStringVector.h
 include/libmspub-0.0/libmspub/libmspub.h
@@ -7,5 +5,3 @@ lib/libmspub-0.0.so
 lib/libmspub-0.0.so.0
 lib/libmspub-0.0.so.0.0.6
 libdata/pkgconfig/libmspub-0.0.pc
-@dirrm include/libmspub-0.0/libmspub
-@dirrm include/libmspub-0.0
