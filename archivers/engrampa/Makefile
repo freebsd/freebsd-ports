@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	engrampa
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	archivers mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -20,7 +20,7 @@ USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		tar:xz
 USE_MATE=	caja
 USE_XORG=	sm
-USE_GNOME=	glib20 gnomehier gtk20 intlhack
+USE_GNOME=	glib20 gtk20 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-packagekit \
