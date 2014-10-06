@@ -33,11 +33,3 @@ share/icons/hicolor/64x64/apps/connectagram.png
 share/icons/hicolor/scalable/apps/connectagram.svg
 share/pixmaps/connectagram.png
 share/pixmaps/connectagram.xpm
-%%NLS%%@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/patterns
-@dirrm %%DATADIR%%/data/ru
-@dirrm %%DATADIR%%/data/hu
-@dirrm %%DATADIR%%/data/fr
-@dirrm %%DATADIR%%/data/en
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

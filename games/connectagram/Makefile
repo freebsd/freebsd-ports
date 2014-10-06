@@ -10,7 +10,8 @@ EXTRACT_SUFX=	-src.tar.bz2
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Word unscrambling game
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake tar:bzip2
 USE_QT4=	moc_build rcc_build gui network iconengines_run \
