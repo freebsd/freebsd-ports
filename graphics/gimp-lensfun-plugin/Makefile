@@ -26,18 +26,13 @@ GH_PROJECT=	GIMP-Lensfun
 GH_COMMIT=	d0a0bd2
 GH_TAGNAME=	${GH_COMMIT}
 
-PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins/
+PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLUGINS=	gimp-lensfun
 
 # installed files
 .for plugin in ${PLUGINS}
 PLIST_FILES+=	${PLUGIN_DIR}/${plugin}
 .endfor
-
-# installed dirs
-PLIST_DIRSTRY=	libexec/gimp/2.2/plug-ins \
-		libexec/gimp/2.2 \
-		libexec/gimp
 
 post-patch:
 	@${REINPLACE_CMD} \
