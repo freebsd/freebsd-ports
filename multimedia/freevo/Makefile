@@ -3,7 +3,7 @@
 
 PORTNAME=	freevo
 PORTVERSION=	1.9.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/Freevo%20releases/${PORTVERSION}
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${PYTHON_SITELIBDIR}/kaa/metadata/__init__.py:${PORTSDIR}/multimedia/py-kaa-metadata \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32 \
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:${PORTSDIR}/math/py-numeric
 
 FREEVO_USER=	freevo
@@ -38,11 +38,9 @@ SUB_LIST+=	PYTHON_VERSION=${PYTHON_DEFAULT_VERSION} \
 		FREEVO_HOME=${FREEVO_HOME}
 SUB_FILES=	pkg-message pkg-deinstall
 
-USES=		twisted:web
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python twisted:web
+USE_PYTHON=	distutils noegginfo
 PYDISTUTILS_INSTALLNOSINGLE=	yes
-PYDISTUTILS_NOEGGINFO=	yes
 PYDISTUTILS_SETUP=	${PYSETUP}
 
 PLIST_SUB=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
