@@ -2,7 +2,7 @@
 
 PORTNAME=	xbmc
 DISTVERSION=	13.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
@@ -49,7 +49,7 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libyajl.so:${PORTSDIR}/devel/yajl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
-		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 USES=		gmake iconv:wchar_t libtool:build pkgconfig python:2
