@@ -66,11 +66,11 @@ while read modtype path extra; do
 	ignore_path=0
 	sub_path=$(echo "$path" | sed -e "s|^${PREFIX}/||" -e "${plistsub_sed}")
 	orig_sub_path="${sub_path}"
-	# If this is a directory, use @dirrm in output
+	# If this is a directory, use @dir in output
 	is_dir=0
 	if [ -d "${path}" ]; then
 		is_dir=1
-		sub_path="@dirrm ${sub_path}"
+		sub_path="@dir ${sub_path}"
 	fi
 
 	# Handle PORTDOCS/PORTEXAMPLES/etc
@@ -153,7 +153,7 @@ while read modtype path extra; do
 			/etc/pwd.db|\
 			/etc/shells|\
 			/etc/spwd.db) ;;
-			*) echo "M ${sub_path#@dirrm } ${extra}" ;;
+			*) echo "M ${sub_path#@dir } ${extra}" ;;
 		esac
 		;;
 	esac
