@@ -3,14 +3,14 @@
 
 PORTNAME=	arpack-ng
 PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://forge.scilab.org/index.php/p/arpack-ng/downloads/get/ \
 		LOCAL/bf
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	Revised Argand library for solving large-scale eigenvalue problems
+COMMENT+=	Revised Argand library for solving large-scale eigenvalue problems
 
 LICENSE=	BSD
 
@@ -18,27 +18,27 @@ USES=		fortran libtool
 USE_LDCONFIG=	yes
 
 CONFLICTS=	arpack-[0-9]*
+SLAVEDIRS=	math/arpack-ng-mpich
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--disable-mpi --with-blas="${BLAS}" \
-			--with-lapack="${LAPACK}"
+CONFIGURE_ARGS=	--with-blas="${BLAS}" \
+		--with-lapack="${LAPACK}"
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-PLIST_FILES=	lib/libarpack.a \
-		lib/libarpack.so \
-		lib/libarpack.so.2 \
-		lib/libarpack.so.2.0.0 \
-		libdata/pkgconfig/arpack.pc
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS MPI
+OPTIONS_SUB=	yes
+MPI_CONFIGURE_ENABLE=	mpi
+MPI_LIB_DEPENDS=	libmpich.so.8:${PORTSDIR}/net/mpich2
+MPI_CONFLICTS_INSTALL+=		arpack-ng-3.*
+MPI_CONFLICTS_INSTALL_OFF+=	arpack-ng-mpich-3.*
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
+.if ${PORT_OPTIONS:MMPI}
+PKGNAMESUFFIX=	-mpich
 .endif
 
 WITH_BLAS?=	blas
