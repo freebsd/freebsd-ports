@@ -59,6 +59,7 @@
     SUBDIR += arpack
     SUBDIR += arpack++
     SUBDIR += arpack-ng
+    SUBDIR += arpack-ng-mpich
     SUBDIR += asir2000
     SUBDIR += aspcud
     SUBDIR += asymptote
