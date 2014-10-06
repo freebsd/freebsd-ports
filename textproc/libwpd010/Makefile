@@ -5,6 +5,7 @@ PORTNAME=	libwpd
 PORTVERSION=	0.10.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+PKGNAMESUFFIX=	010
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
