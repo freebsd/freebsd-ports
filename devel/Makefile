@@ -1316,6 +1316,7 @@
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
+    SUBDIR += newtonsoft-json
     SUBDIR += nglogc
     SUBDIR += nini
     SUBDIR += ninja
