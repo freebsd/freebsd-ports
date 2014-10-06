@@ -34,7 +34,7 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		fortran gettext gmake iconv perl5 pkgconfig readline \
+USES=		fortran gettext gmake iconv perl5 pkgconfig python:2 readline \
 		shebangfix tk
 SHEBANG_FILES=	scripts/i.spectral/i.spectral \
 		scripts/r.tileset/r.tileset
@@ -43,7 +43,6 @@ PATCH_TK_SCRIPTS=lib/init/init.sh
 USE_XORG=	sm ice x11 xext xi xmu xt
 USE_GL=		glu
 USE_GNOME=	cairo
-USE_PYTHON=	2
 USE_WX=		2.8
 WX_COMPS=	wx:build python:run
 USE_GCC=	yes
@@ -100,7 +99,7 @@ MYSQL_CONFIGURE_ON=	--with-mysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql
 ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 ODBC_CONFIGURE_ON=	--with-odbc
-PGSQL_USE=		PGSQL=yes
+PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgres
 SQLITE_USE=		SQLITE=yes
 SQLITE_CONFIGURE_ON=	--with-sqlite
