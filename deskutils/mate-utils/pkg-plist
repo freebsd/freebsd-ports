@@ -25,6 +25,7 @@ libdata/pkgconfig/mate-dict.pc
 libexec/mate-dictionary-applet
 man/man1/mate-dictionary.1.gz
 man/man1/mate-disk-usage-analyzer.1.gz
+man/man1/mate-panel-screenshot.1.gz
 man/man1/mate-screenshot.1.gz
 man/man1/mate-search-tool.1.gz
 man/man1/mate-system-log.1.gz
