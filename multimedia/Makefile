@@ -182,9 +182,9 @@
     SUBDIR += libquicktime
     SUBDIR += libquicktime-lame
     SUBDIR += libquvi
-    SUBDIR += libquvi09
     SUBDIR += libquvi-scripts
     SUBDIR += libquvi-scripts09
+    SUBDIR += libquvi09
     SUBDIR += librtmp
     SUBDIR += libsmacker
     SUBDIR += libtheora
