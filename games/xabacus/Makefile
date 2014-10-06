@@ -16,6 +16,7 @@ USES=		tar:bzip2
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-nas
+CONFIGURE_ENV=	ac_cv_x_app_defaults=${PREFIX}/lib/X11/app-defaults
 INSTALLS_ICONS=	yes
 
 DESKTOP_ENTRIES="XAbacus" "" "abacus" "${PORTNAME}" "" ""
