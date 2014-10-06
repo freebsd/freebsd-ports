@@ -3,7 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.98.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -59,9 +59,9 @@ PORTDOCS=	*
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
 RUNDIR=		/var/run/clamav
-PLIST_SUB+=	DBDIR=${DBDIR:S/^\///} \
-		LOGDIR=${LOGDIR:S/^\///} \
-		RUNDIR=${RUNDIR:S/^\///} \
+PLIST_SUB+=	DBDIR=${DBDIR} \
+		LOGDIR=${LOGDIR} \
+		RUNDIR=${RUNDIR} \
 		CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 PY_NO_THREAD=	${WRKDIR}/.python-has-no-threads
