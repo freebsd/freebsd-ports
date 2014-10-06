@@ -1,0 +1,11 @@
+--- fem/src/Makefile.in.orig	2014-09-09 15:04:27.000000000 -0500
++++ fem/src/Makefile.in	2014-09-09 15:28:20.000000000 -0500
+@@ -1119,7 +1119,7 @@
+ @USE_WINDOWS_COMPILER_TRUE@	      -L. -lelmersolver viewaxis/libviewaxis.a view3d/libview3d.a $(EXTRA_LIBS) $(BLAS_LIBS)
+ @USE_WINDOWS_COMPILER_FALSE@	$(FC) $(SH_LINKING_TO_FLAGS) $(RPATH_ELMER) $(B64FLAGS) $(LDFLAGS) \
+ @USE_WINDOWS_COMPILER_FALSE@	      -o ViewFactors$(EXE_EXT) ViewFactors$(OBJ_EXT) mpi_stubs$(OBJ_EXT) \
+-@USE_WINDOWS_COMPILER_FALSE@	      -L. -lelmersolver viewaxis/libviewaxis.a view3d/libview3d.a $(EXTRA_LIBS) $(BLAS_LIBS) $(STDCXX_LIBS)
++@USE_WINDOWS_COMPILER_FALSE@	      -L. -lelmersolver viewaxis/libviewaxis.a view3d/libview3d.a $(EXTRA_LIBS) $(BLAS_LIBS)
+ 
+ GebhardtFactors$(EXE_EXT): libelmersolver$(SHL_EXT) GebhardtFactors$(OBJ_EXT) mpi_stubs$(OBJ_EXT)
+ 	$(FC) $(SH_LINKING_TO_FLAGS) $(RPATH_ELMER) $(B64FLAGS) $(LDFLAGS) \
