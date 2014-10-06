@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/libgxps/Makefile 19811 2014-08-14 12:45:34Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/graphics/libgxps/Makefile 19811 2014-08-14 12:45:34Z gusi $
 
 PORTNAME=	libgxps
 PORTVERSION=	0.2.2

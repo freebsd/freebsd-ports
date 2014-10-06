@@ -1,6 +1,6 @@
 # Created by: gnome@freebsd.org
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/telepathy-glib/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/net-im/telepathy-glib/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	telepathy-glib
 PORTVERSION=	0.24.0

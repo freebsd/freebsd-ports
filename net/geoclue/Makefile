@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com> 
 # $FreeBSD$
-#   $MCom: ports/trunk/net/geoclue/Makefile 19754 2014-06-25 06:01:39Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/net/geoclue/Makefile 19754 2014-06-25 06:01:39Z gusi $
 
 PORTNAME=	geoclue
 PORTVERSION=	2.1.9

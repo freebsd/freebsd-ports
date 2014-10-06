@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/irc/polari/Makefile 19740 2014-06-17 05:49:01Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/irc/polari/Makefile 19740 2014-06-17 05:49:01Z gusi $
 
 PORTNAME=	polari
 PORTVERSION=	3.12.2

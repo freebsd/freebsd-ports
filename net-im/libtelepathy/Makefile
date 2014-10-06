@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/libtelepathy/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/net-im/libtelepathy/Makefile 19913 2014-09-25 22:29:26Z kwm $
 
 PORTNAME=	libtelepathy
 PORTVERSION=	0.3.3
@@ -11,12 +11,8 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Flexible Communications Framework
 
-LIB_PC_DEPENDS=	dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
-
-LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
-
-BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
-RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
+LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USES=		gmake libtool pathfix pkgconfig python:build
 USE_LDCONFIG=	yes

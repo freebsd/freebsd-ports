@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/security/libgnome-keyring/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/security/libgnome-keyring/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libgnome-keyring
 PORTVERSION=	3.12.0

@@ -1,6 +1,6 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/anjuta/Makefile 19875 2014-09-14 18:56:23Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/devel/anjuta/Makefile 19875 2014-09-14 18:56:23Z gusi $
 
 PORTNAME=	anjuta
 PORTVERSION=	3.6.2

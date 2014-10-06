@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/trunk/sysutils/drwright/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#  $MCom: ports/branches/GNOME_3_12/sysutils/drwright/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	drwright
 PORTVERSION=	3.5.0

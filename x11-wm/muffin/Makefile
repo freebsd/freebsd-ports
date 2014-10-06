@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11-wm/muffin/Makefile 19859 2014-09-14 11:33:14Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/x11-wm/muffin/Makefile 19859 2014-09-14 11:33:14Z kwm $
 
 PORTNAME=	muffin
 PORTVERSION=	2.2.6

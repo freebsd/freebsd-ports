@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/gnome-online-miners/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/net/gnome-online-miners/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	gnome-online-miners
 PORTVERSION=	3.12.0

@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/gnome-system-monitor/Makefile 19648 2014-05-13 07:17:28Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/sysutils/gnome-system-monitor/Makefile 19648 2014-05-13 07:17:28Z gusi $
 
 PORTNAME=	gnome-system-monitor
 PORTVERSION=	3.12.2

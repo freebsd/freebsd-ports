@@ -1,6 +1,3 @@
-
-
-
 include/telepathy-qt4/TelepathyQt/AbstractClient
 include/telepathy-qt4/TelepathyQt/AbstractClientApprover
 include/telepathy-qt4/TelepathyQt/AbstractClientHandler

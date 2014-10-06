@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/iagno/Makefile 19620 2014-05-12 08:22:17Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/games/iagno/Makefile 19620 2014-05-12 08:22:17Z gusi $
 
 PORTNAME=	iagno
 PORTVERSION=	3.12.2

@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/shared-color-profiles/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/graphics/shared-color-profiles/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	shared-color-profiles
 PORTVERSION=	0.1.5

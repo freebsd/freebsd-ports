@@ -1,6 +1,6 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/lang/gjs/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/lang/gjs/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	gjs
 PORTVERSION=	1.40.1

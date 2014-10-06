@@ -1,6 +1,6 @@
 # Created by: Dave McKay <dave@mu.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/security/seahorse/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/security/seahorse/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	seahorse
 PORTVERSION=	3.12.2

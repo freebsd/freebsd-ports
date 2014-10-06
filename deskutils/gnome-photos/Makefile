@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-photos/Makefile 19744 2014-06-17 08:06:24Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-photos/Makefile 19744 2014-06-17 08:06:24Z gusi $
 
 PORTNAME=	gnome-photos
 PORTVERSION=	3.12.1

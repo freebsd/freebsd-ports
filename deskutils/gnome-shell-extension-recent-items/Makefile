@@ -1,12 +1,12 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extension-recent-items/Makefile 19842 2014-09-03 08:48:11Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-shell-extension-recent-items/Makefile 19940 2014-10-04 22:25:17Z kwm $
 
 PORTNAME=	gnome-shell-extension-recent-items
-PORTVERSION=	0.0.0.20140903
+PORTVERSION=	0.0.0.20141001
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.bananenfisch.net/code/
-DISTFILES=	RecentItems-9.tar.gz
+DISTNAME=	RecentItems-11
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -14,7 +14,6 @@ COMMENT=	Recent items extensions for the GNOME3 shell
 
 WRKSRC=		${WRKDIR}/RecentItems@bananenfisch.net
 
-USES=		tar:xz
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

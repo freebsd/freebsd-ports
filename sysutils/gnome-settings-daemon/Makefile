@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/gnome-settings-daemon/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/sysutils/gnome-settings-daemon/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	gnome-settings-daemon
 PORTVERSION=	3.12.2

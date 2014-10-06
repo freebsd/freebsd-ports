@@ -1,9 +1,10 @@
 # Created by: Alberto Villa <avilla@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-qt4/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/net-im/telepathy-qt4/Makefile 19918 2014-09-25 22:50:43Z kwm $
 
 PORTNAME=	telepathy-qt4
 PORTVERSION=	0.9.3
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
 DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}

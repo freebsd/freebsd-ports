@@ -1,5 +1,5 @@
 bin/GtkLauncher-3
-bin/MiniBrowser
+bin/MiniBrowser-3
 bin/jsc-3
 include/webkitgtk-3.0/JavaScriptCore/JSBase.h
 include/webkitgtk-3.0/JavaScriptCore/JSContextRef.h
@@ -258,13 +258,13 @@ lib/girepository-1.0/WebKit2-3.0.typelib
 lib/girepository-1.0/WebKit2WebExtension-3.0.typelib
 lib/libjavascriptcoregtk-3.0.so
 lib/libjavascriptcoregtk-3.0.so.0
-lib/libjavascriptcoregtk-3.0.so.0.16.13
+lib/libjavascriptcoregtk-3.0.so.0.16.14
 lib/libwebkit2gtk-3.0.so
 lib/libwebkit2gtk-3.0.so.25
-lib/libwebkit2gtk-3.0.so.25.10.8
+lib/libwebkit2gtk-3.0.so.25.10.9
 lib/libwebkitgtk-3.0.so
 lib/libwebkitgtk-3.0.so.0
-lib/libwebkitgtk-3.0.so.0.22.11
+lib/libwebkitgtk-3.0.so.0.22.12
 lib/webkit2gtk-3.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-3.0.pc
 libdata/pkgconfig/webkit2gtk-3.0.pc
@@ -633,23 +633,3 @@ share/webkitgtk-3.0/images/textAreaResizeCorner.png
 share/webkitgtk-3.0/images/urlIcon.png
 share/webkitgtk-3.0/resources/audio/Composite.wav
 share/webkitgtk-3.0/resources/error.html
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrm share/webkitgtk-3.0/resources/audio
-@dirrm share/webkitgtk-3.0/resources
-@dirrm share/webkitgtk-3.0/images
-@dirrm share/webkitgtk-3.0
-@dirrm share/gtk-doc/html/webkitgtk
-@dirrm share/gtk-doc/html/webkitdomgtk
-@dirrm share/gtk-doc/html/webkit2gtk
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm lib/webkit2gtk-3.0/injected-bundle
-@dirrm lib/webkit2gtk-3.0
-@dirrm include/webkitgtk-3.0/webkitdom
-@dirrm include/webkitgtk-3.0/webkit2
-@dirrm include/webkitgtk-3.0/webkit
-@dirrm include/webkitgtk-3.0/JavaScriptCore
-@dirrm include/webkitgtk-3.0

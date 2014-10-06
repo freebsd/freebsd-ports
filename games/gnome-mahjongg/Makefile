@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-mahjongg/Makefile 19631 2014-05-12 20:02:07Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/games/gnome-mahjongg/Makefile 19631 2014-05-12 20:02:07Z gusi $
 
 PORTNAME=	gnome-mahjongg
 PORTVERSION=	3.12.2

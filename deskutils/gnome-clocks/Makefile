@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-clocks/Makefile 19742 2014-06-17 06:28:25Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-clocks/Makefile 19742 2014-06-17 06:28:25Z gusi $
 
 PORTNAME=	gnome-clocks
 PORTVERSION=	3.12.0

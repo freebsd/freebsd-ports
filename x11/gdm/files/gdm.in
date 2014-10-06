@@ -25,7 +25,7 @@ command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/sbin/gdm-binary"
 start_cmd="gdm_start"
-stop_postcmd="gdm_poststop"
+stop_cmd="gdm_stop"
 
 gdm_start()
 {
@@ -63,9 +63,13 @@ gdm_start()
     LANG=${gdm_lang} ${command} ${gdm_flags} ) &
 }
 
-gdm_poststop()
+gdm_stop()
 {
-	pkill gdm-session-worker
+	/bin/kill -9 $(/bin/cat "${pidfile}")
+	pkill -9 -u gdm
+	pkill -9 X
+	pkill -9 gdm-session-worker
+
 }
 
 load_rc_config ${name}

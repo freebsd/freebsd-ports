@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/grilo/Makefile 19829 2014-08-25 06:54:03Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/net/grilo/Makefile 19829 2014-08-25 06:54:03Z gusi $
 
 PORTNAME=	grilo
 PORTVERSION=	0.2.11

@@ -1,6 +1,6 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/goobox/Makefile 19823 2014-08-20 09:28:14Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/audio/goobox/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	goobox
 PORTVERSION=	3.3.2

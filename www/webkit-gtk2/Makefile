@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk2/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/www/webkit-gtk2/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	webkit
 PORTVERSION=	1.8.3

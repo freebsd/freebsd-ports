@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extension-hidetopbar/Makefile 19680 2014-05-23 14:40:39Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-shell-extension-hidetopbar/Makefile 19680 2014-05-23 14:40:39Z gusi $
 
 PORTNAME=	gnome-shell-extension-hidetopbar
 PORTVERSION=	0.0.0.20140520

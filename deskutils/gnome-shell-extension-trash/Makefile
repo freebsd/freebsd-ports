@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extension-trash/Makefile 19881 2014-09-16 11:15:10Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-shell-extension-trash/Makefile 19881 2014-09-16 11:15:10Z gusi $
 
 PORTNAME=	gnome-shell-extension-trash
 PORTVERSION=	0.0.0.20140916

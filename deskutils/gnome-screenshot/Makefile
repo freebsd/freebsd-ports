@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-screenshot/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-screenshot/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	gnome-screenshot
 PORTVERSION=	3.12.0

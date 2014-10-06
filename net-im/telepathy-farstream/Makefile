@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-farstream/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/net-im/telepathy-farstream/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	telepathy-farstream
 PORTVERSION=	0.6.1

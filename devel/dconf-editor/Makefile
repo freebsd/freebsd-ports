@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/dconf-editor/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/devel/dconf-editor/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	dconf
 PORTREVISION=	0

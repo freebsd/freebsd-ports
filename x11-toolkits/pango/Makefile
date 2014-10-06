@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 19844 2014-09-04 05:27:10Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/x11-toolkits/pango/Makefile 19844 2014-09-04 05:27:10Z gusi $
 
 PORTNAME=	pango
 PORTVERSION=	1.36.7

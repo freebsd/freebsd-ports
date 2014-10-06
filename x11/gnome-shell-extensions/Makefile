@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11/gnome-shell-extensions/Makefile 19666 2014-05-14 10:45:59Z gusi $
+#    $MCom: ports/branches/GNOME_3_12/x11/gnome-shell-extensions/Makefile 19666 2014-05-14 10:45:59Z gusi $
 
 PORTNAME=	gnome-shell-extensions
 PORTVERSION=	3.12.2

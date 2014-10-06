@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/accountsservice/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#    $MCom: ports/branches/GNOME_3_12/sysutils/accountsservice/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	accountsservice
 PORTVERSION=	0.6.37

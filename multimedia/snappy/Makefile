@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/snappy/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/multimedia/snappy/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	snappy
 PORTVERSION=	1.0

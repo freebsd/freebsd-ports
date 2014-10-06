@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-themes/gnome-themes/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/x11-themes/gnome-themes/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	gnome-themes
 PORTVERSION=	2.32.1

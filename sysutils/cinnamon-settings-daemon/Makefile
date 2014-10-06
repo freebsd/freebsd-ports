@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-settings-daemon/Makefile 19786 2014-07-31 10:24:00Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/sysutils/cinnamon-settings-daemon/Makefile 19786 2014-07-31 10:24:00Z gusi $
 
 PORTNAME=	cinnamon-settings-daemon
 PORTVERSION=	2.2.4

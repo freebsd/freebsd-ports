@@ -1,6 +1,6 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution/Makefile 19851 2014-09-08 10:26:54Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/mail/evolution/Makefile 19851 2014-09-08 10:26:54Z gusi $
 
 PORTNAME=	evolution
 PORTVERSION=	3.12.6

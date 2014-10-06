@@ -1,6 +1,6 @@
 # Created by: Edgardo Garcia Hoeffler <edybsd@yahoo.com.ar>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-fm/gnome-commander2/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/x11-fm/gnome-commander2/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.4.1

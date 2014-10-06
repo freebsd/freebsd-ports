@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gsettings-desktop-schemas/Makefile 19655 2014-05-13 18:08:51Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/devel/gsettings-desktop-schemas/Makefile 19910 2014-09-25 21:36:39Z kwm $
 
 PORTNAME=	gsettings-desktop-schemas
 PORTVERSION=	3.12.2

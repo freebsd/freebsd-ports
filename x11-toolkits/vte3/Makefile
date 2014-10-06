@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/vte3/Makefile 19879 2014-09-15 08:17:00Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/x11-toolkits/vte3/Makefile 19879 2014-09-15 08:17:00Z gusi $
 
 PORTNAME?=	vte
 PORTVERSION=	0.36.3

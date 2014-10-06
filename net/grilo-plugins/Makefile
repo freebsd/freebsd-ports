@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/grilo-plugins/Makefile 19830 2014-08-25 07:07:04Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/net/grilo-plugins/Makefile 19830 2014-08-25 07:07:04Z gusi $
 
 PORTNAME=	grilo-plugins
 PORTVERSION=	0.2.13

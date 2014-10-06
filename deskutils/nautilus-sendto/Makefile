@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/deskutils/nautilus-sendto/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/deskutils/nautilus-sendto/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	nautilus-sendto
 PORTVERSION=	3.8.0

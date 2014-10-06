@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD: head/deskutils/nautilus-actions/Makefile 335773 2013-12-06 16:32:34Z kwm $
-#   $MCom: ports/trunk/deskutils/nautilus-actions/Makefile 19794 2014-08-08 18:28:36Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/nautilus-actions/Makefile 19794 2014-08-08 18:28:36Z gusi $
 
 PORTNAME=	nautilus-actions
 PORTVERSION=	3.2.4

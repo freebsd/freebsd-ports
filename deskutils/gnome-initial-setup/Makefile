@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-initial-setup/Makefile 19744 2014-06-17 08:06:24Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-initial-setup/Makefile 19744 2014-06-17 08:06:24Z gusi $
 
 PORTNAME=	gnome-initial-setup
 PORTVERSION=	3.12.1

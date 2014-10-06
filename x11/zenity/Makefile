@@ -1,6 +1,6 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/zenity/Makefile 19874 2014-09-14 17:29:23Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/x11/zenity/Makefile 19874 2014-09-14 17:29:23Z kwm $
 
 PORTNAME=	zenity
 PORTVERSION=	3.12.1

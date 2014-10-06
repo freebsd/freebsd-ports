@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/libchamplain/Makefile 19896 2014-09-20 08:08:54Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/graphics/libchamplain/Makefile 19896 2014-09-20 08:08:54Z kwm $
 
 PORTNAME=	libchamplain
 PORTVERSION=	0.12.9

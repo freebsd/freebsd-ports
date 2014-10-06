@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/libdmapsharing/Makefile 19884 2014-09-17 07:41:30Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/net/libdmapsharing/Makefile 19884 2014-09-17 07:41:30Z kwm $
 
 PORTNAME=	libdmapsharing
 PORTVERSION=	2.9.24

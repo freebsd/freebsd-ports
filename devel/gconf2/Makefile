@@ -1,6 +1,6 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gconf2/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/devel/gconf2/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	gconf2
 PORTVERSION=	3.2.6

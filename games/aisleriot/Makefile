@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/aisleriot/Makefile 19848 2014-09-05 10:39:20Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/games/aisleriot/Makefile 19848 2014-09-05 10:39:20Z kwm $
 
 PORTNAME=	aisleriot
 PORTVERSION=	3.12.1

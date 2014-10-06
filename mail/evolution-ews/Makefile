@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution-ews/Makefile 19851 2014-09-08 10:26:54Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/mail/evolution-ews/Makefile 19851 2014-09-08 10:26:54Z gusi $
 
 PORTNAME=	evolution-ews
 PORTVERSION=	3.12.6

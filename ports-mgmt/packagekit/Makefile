@@ -1,6 +1,6 @@
 # Created by: Anders F Bjorklund <afb@users.sourceforge.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/ports-mgmt/packagekit/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	packagekit
 PORTVERSION=	0.8.9
