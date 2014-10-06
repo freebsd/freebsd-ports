@@ -23,8 +23,8 @@ RESTRICTED=	kye-data_nuke_levels is charityware
 RESTRICTED_FILES=	 kye-data_nuke_levels.20121101.tar.gz
 
 USE_GNOME=	pygtk2 librsvg2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 PORTDOCS=	NEWS README
 OPTIONS_DEFINE=	DOCS

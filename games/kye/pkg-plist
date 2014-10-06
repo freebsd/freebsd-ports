@@ -188,7 +188,3 @@ bin/Kye-edit
 %%DATADIR%%/wizard.kye
 share/pixmaps/Kye-edit.png
 share/pixmaps/Kye.png
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/kye
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
