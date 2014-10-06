@@ -40,6 +40,7 @@
     SUBDIR += mrbayes
     SUBDIR += mummer
     SUBDIR += muscle
+    SUBDIR += ncbi-blast
     SUBDIR += ncbi-toolkit
     SUBDIR += njplot
     SUBDIR += ortep3
