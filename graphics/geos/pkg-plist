@@ -375,7 +375,6 @@ include/geos_c.h
 lib/libgeos-%%PORTVERSION%%.so
 lib/libgeos.a
 lib/libgeos.so
-lib/libgeos.so.0
 lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
