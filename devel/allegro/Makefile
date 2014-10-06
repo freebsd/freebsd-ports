@@ -88,10 +88,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|jack_client = jack_client_new(jack_client_name);|jack_client = jack_client_open(jack_client_name, (jack_options_t)0, NULL);|' \
 		${WRKSRC}/src/unix/jack.c
 .endif
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's|add_subdirectory(docs)|#add_subdirectory(docs)|' \
-		${WRKSRC}/CMakeLists.txt
-.endif
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/docs/man/*.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
