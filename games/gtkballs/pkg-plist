@@ -533,9 +533,3 @@ man/man6/gtkballs.6x.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/gtkballs.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gtkballs.mo
 share/pixmaps/gtkballs.png
-@dirrm %%DATADIR%%/themes/mascots
-@dirrm %%DATADIR%%/themes/klines
-@dirrm %%DATADIR%%/themes/Default
-@dirrm %%DATADIR%%/themes/5balls-Big
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%
