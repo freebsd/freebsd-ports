@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	marco
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	x11-wm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -19,7 +19,7 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_MATE=	dialogs
 USE_XORG=	x11 xcomposite xcursor xdamage xrandr
-USE_GNOME=	gdkpixbuf2 glib20 gnomehier gtk20 intlhack pango
+USE_GNOME=	gdkpixbuf2 glib20 gtk20 intlhack pango
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk=2.0
