@@ -1,6 +1,3 @@
 %%SITE_PERL%%/List/AllUtils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/AllUtils/.packlist
 %%PERL5_MAN3%%/List::AllUtils.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/AllUtils
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
-@dirrmtry %%SITE_PERL%%/List
