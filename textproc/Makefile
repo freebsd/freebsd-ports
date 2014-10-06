@@ -1357,6 +1357,7 @@
     SUBDIR += rubygem-redcarpet
     SUBDIR += rubygem-ri_cal
     SUBDIR += rubygem-rich
+    SUBDIR += rubygem-rmmseg-cpp
     SUBDIR += rubygem-rouge
     SUBDIR += rubygem-rttool
     SUBDIR += rubygem-rubypants
