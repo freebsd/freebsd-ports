@@ -33,7 +33,7 @@ R_DESC=		Build R backend and install R
 R_BUILD_DEPENDS=	R:${PORTSDIR}/math/R
 R_RUN_DEPENDS=		R:${PORTSDIR}/math/R
 # Required to set CFLAGS for -lgfortran.
-R_USE=		FORTRAN=yes
+R_USES=		fortran
 R_CMAKE_OFF=	-DWITH_R:BOOL=FALSE
 
 SAGE_DESC=	Install Sage
