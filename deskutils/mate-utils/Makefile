@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-utils
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -19,7 +19,7 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_MATE=	panel
 USE_XORG=	x11 xext
-USE_GNOME=	gnomehier gtk20 intlhack
+USE_GNOME=	gtk20 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-maintainer-flags=no \
