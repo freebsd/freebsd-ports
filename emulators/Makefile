@@ -53,6 +53,7 @@
     SUBDIR += hercules
     SUBDIR += higan
     SUBDIR += hugo
+    SUBDIR += hyperv-is
     SUBDIR += i386-wine
     SUBDIR += i386-wine-compholio
     SUBDIR += i386-wine-devel
