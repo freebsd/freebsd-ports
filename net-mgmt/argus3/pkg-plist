@@ -13,9 +13,9 @@ man/man8/argus.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Startup/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/System/crontab
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/System/magic
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Archive
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Config
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Deployment
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Startup
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/System
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/Archive
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/Config
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/Deployment
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/Startup
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/System
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
