@@ -30,7 +30,7 @@ USE_GCC=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20
 USE_XORG=	x11 xcomposite xcursor xdamage xext xfixes xi xinerama xrandr xrender
 
-PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins/
+PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLUGINS=	beautify \
 		border \
 		simple-border \
@@ -40,11 +40,6 @@ PLUGINS=	beautify \
 .for plugin in ${PLUGINS}
 PLIST_FILES+=	${PLUGIN_DIR}/${plugin}
 .endfor
-
-# installed dirs
-PLIST_DIRSTRY=	libexec/gimp/2.2/plug-ins \
-		libexec/gimp/2.2 \
-		libexec/gimp
 
 post-patch:
 	@${REINPLACE_CMD} \
