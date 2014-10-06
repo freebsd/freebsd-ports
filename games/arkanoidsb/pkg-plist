@@ -5,5 +5,3 @@ bin/arkanoidsb
 %%DATADIR%%/res/module02.ogg
 %%DATADIR%%/res/module03.s3m
 share/pixmaps/arkanoidsb.png
-@dirrm %%DATADIR%%/res
-@dirrm %%DATADIR%%
