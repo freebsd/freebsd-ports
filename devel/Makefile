@@ -4460,6 +4460,7 @@
     SUBDIR += rubygem-power_assert
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
+    SUBDIR += rubygem-pry-rails
     SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-pygments.rb
