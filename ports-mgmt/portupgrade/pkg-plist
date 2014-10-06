@@ -1,6 +1,4 @@
-@exec /bin/mkdir -p %D/lib/compat/pkg
-@dirrmtry lib/compat/pkg
-@dirrmtry lib/compat
+@dir lib/compat/pkg
 man/man1/pkg_deinstall.1.gz
 man/man1/pkg_fetch.1.gz
 man/man1/pkg_glob.1.gz
@@ -32,7 +30,6 @@ sbin/portsclean
 sbin/portsdb
 sbin/portupgrade
 sbin/portversion
-@exec /bin/mkdir -p %D/%%RUBY_SITELIBDIR%%/pkgtools
 %%RUBY_SITELIBDIR%%/pkgtools/pkg.rb
 %%RUBY_SITELIBDIR%%/pkgtools/pkgdb.rb
 %%RUBY_SITELIBDIR%%/pkgtools/pkgdbtools.rb
@@ -46,17 +43,10 @@ sbin/portversion
 %%RUBY_SITELIBDIR%%/pkgtools/portsdb.rb
 %%RUBY_SITELIBDIR%%/pkgtools/revision.rb
 %%RUBY_SITELIBDIR%%/pkgtools.rb
-@dirrm %%RUBY_SITELIBDIR%%/pkgtools
 @sample etc/pkgtools.conf.sample
 etc/pkgtools.status-pkg.sh
 share/zsh/site-functions/_pkgtools
-@dirrmtry share/zsh/site-functions
-@dirrmtry share/zsh
 %%EXAMPLESDIR%%/bash/complete.sample
 %%EXAMPLESDIR%%/tcsh/complete.sample
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-@dirrm %%EXAMPLESDIR%%/bash
-@dirrm %%EXAMPLESDIR%%/tcsh
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
