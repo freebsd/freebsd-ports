@@ -381,6 +381,7 @@
     SUBDIR += libuninameslist
     SUBDIR += libvisio
     SUBDIR += libwpd
+    SUBDIR += libwpd010
     SUBDIR += libwps
     SUBDIR += libxdiff
     SUBDIR += libxml++26
