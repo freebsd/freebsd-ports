@@ -1060,11 +1060,3 @@ man/man3/xor_mode.3.gz
 man/man3/xwin_set_window_name.3.gz
 %%DEMOS%%%%EXAMPLES%%share/pixmaps/shooter.png
 %%DEMOS%%%%EXAMPLES%%share/pixmaps/skater.png
-@dirrm lib/allegro/%%SHLIB_VER%%
-@dirrm lib/allegro
-@dirrm include/allegrogl/GLext
-@dirrm include/allegrogl
-@dirrm include/allegro/platform
-@dirrm include/allegro/internal
-@dirrm include/allegro/inline
-@dirrm include/allegro
