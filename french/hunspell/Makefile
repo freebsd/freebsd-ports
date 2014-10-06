@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/ \
 		LOCAL/sunpoet/${PORTNAME}
@@ -19,7 +19,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/fr_FR.aff \
 		%%DATADIR%%/fr_FR.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 FRALIASES=	fr_BE fr_CA fr_CH fr_LU
 .for ALIAS in ${FRALIASES}
