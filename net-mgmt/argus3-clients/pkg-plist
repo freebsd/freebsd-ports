@@ -94,9 +94,3 @@ man/man8/radium.8.gz
 %%EXAMPLESDIR%%/Startup/radium.service
 %%EXAMPLESDIR%%/Startup/rasplit
 %%EXAMPLESDIR%%/System/magic
-@dir %%EXAMPLESDIR%%/System
-@dir %%EXAMPLESDIR%%/Startup
-@dir %%EXAMPLESDIR%%/Database
-@dir %%EXAMPLESDIR%%/Config
-@dir %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
