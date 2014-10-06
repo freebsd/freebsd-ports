@@ -1,7 +1,0 @@
---- doc/make.texi.orig	2010-07-19 02:10:54.000000000 -0500
-+++ doc/make.texi	2011-03-02 17:01:58.000000000 -0600
-@@ -54,3 +54,3 @@
- @direntry
--* Make: (make).            Remake files automatically.
-+* GNU Make: (make).            Remake files automatically.
- @end direntry
