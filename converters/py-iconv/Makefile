@@ -5,18 +5,15 @@ PORTNAME=	iconv
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	converters python
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	perky
+MASTER_SITES=	LOCAL/perky
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Iconv wrapper with Unicode codec for Python
 
-USES=		iconv
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		iconv python:2
+USE_PYTHON=	autoplist distutils
 
 .if empty(ICONV_LIB)
 SETUPINFO=	,library_dirs=["${LOCALBASE}/lib"],\
@@ -29,5 +26,8 @@ SETUPINFO=	,libraries=["iconv"],library_dirs=["${LOCALBASE}/lib"],\
 post-patch:
 	${REINPLACE_CMD} 's!^\(.*ext_mod.*\)\()]\)$$!\1${SETUPINFO}\2!g'\
 		${WRKSRC}/setup.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/iconv.so
 
 .include <bsd.port.mk>
