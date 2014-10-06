@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sarg
-PORTVERSION=	2.3.6
-PORTREVISION=	3
+PORTVERSION=	2.3.9
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -43,15 +42,8 @@ ICONV_USES=		iconv
 ICONV_CONFIGURE_WITH=	iconv
 ICONV_LDFLAGS=		${ICONV_LIB}
 
-post-extract:
-	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 {} \;
-	@${CHMOD} 0755 ${WRKSRC}/configure
-
 post-patch:
 	@${REINPLACE_CMD} -e '/test .*==/ s/==/=/' \
 		${WRKSRC}/configure.in
-
-pre-configure:
-	@(cd ${WRKSRC} && ${AUTORECONF})
 
 .include <bsd.port.mk>

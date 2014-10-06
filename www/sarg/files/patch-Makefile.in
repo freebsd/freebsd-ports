@@ -22,7 +22,7 @@
 -	$(INSTALL_PROGRAM) sarg.1 $(DESTDIR)$(man1dir)/sarg.1
 -	chmod 755 $(DESTDIR)$(man1dir)/sarg.1
 +	$(INSTALL) sarg.1 $(DESTDIR)$(man1dir)/sarg.1
-+	cp sarg.conf $(DESTDIR)$(sysconfdir)/sarg.conf.default
++	cp sarg.conf $(DESTDIR)$(sysconfdir)/sarg.conf.sample
  	@if test ! -f $(DESTDIR)$(sysconfdir)/sarg.conf; then \
  		echo "cp $(DESTDIR)$(sysconfdir)/sarg.conf"; \
  		cp sarg.conf $(DESTDIR)$(sysconfdir)/sarg.conf; \
