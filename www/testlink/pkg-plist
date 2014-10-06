@@ -73,6 +73,7 @@
 %%WWWDIR%%/gui/templates/execute/execNavigator.tpl
 %%WWWDIR%%/gui/templates/execute/execNotes.tpl
 %%WWWDIR%%/gui/templates/execute/execSetResults.tpl
+%%WWWDIR%%/gui/templates/execute/exec_tc_relations.inc.tpl
 %%WWWDIR%%/gui/templates/execute/getExecNotes.tpl
 %%WWWDIR%%/gui/templates/execute/inc_exec_controls.tpl
 %%WWWDIR%%/gui/templates/execute/inc_exec_show_tc_exec.tpl
@@ -225,6 +226,7 @@
 %%WWWDIR%%/gui/templates/testcases/inc_tcbody.tpl
 %%WWWDIR%%/gui/templates/testcases/inc_testsuite_viewer_ro.tpl
 %%WWWDIR%%/gui/templates/testcases/inc_testsuite_viewer_rw.tpl
+%%WWWDIR%%/gui/templates/testcases/relations.inc.tpl
 %%WWWDIR%%/gui/templates/testcases/tcAssign2Tplan.tpl
 %%WWWDIR%%/gui/templates/testcases/tcAssignedToUser.tpl
 %%WWWDIR%%/gui/templates/testcases/tcCompareVersions.tpl
@@ -268,12 +270,16 @@
 %%WWWDIR%%/gui/themes/default/images/answer.png
 %%WWWDIR%%/gui/themes/default/images/application_cascade.png
 %%WWWDIR%%/gui/themes/default/images/application_double.png
+%%WWWDIR%%/gui/themes/default/images/application_home.png
+%%WWWDIR%%/gui/themes/default/images/application_view_columns.png
 %%WWWDIR%%/gui/themes/default/images/apply_f2.png
 %%WWWDIR%%/gui/themes/default/images/apply_f2_16.png
 %%WWWDIR%%/gui/themes/default/images/arrow_org.gif
+%%WWWDIR%%/gui/themes/default/images/arrow_refresh.png
 %%WWWDIR%%/gui/themes/default/images/arrow_switch.png
 %%WWWDIR%%/gui/themes/default/images/attachment.gif
 %%WWWDIR%%/gui/themes/default/images/bar2.gif
+%%WWWDIR%%/gui/themes/default/images/bell.png
 %%WWWDIR%%/gui/themes/default/images/brick.png
 %%WWWDIR%%/gui/themes/default/images/brick_go.png
 %%WWWDIR%%/gui/themes/default/images/bricks.png
@@ -286,6 +292,7 @@
 %%WWWDIR%%/gui/themes/default/images/bug_delete_disabled_famfamfam.png
 %%WWWDIR%%/gui/themes/default/images/bug_delete_famfamfam.png
 %%WWWDIR%%/gui/themes/default/images/bug_disabled_famfamfam.png
+%%WWWDIR%%/gui/themes/default/images/bug_edit.png
 %%WWWDIR%%/gui/themes/default/images/bug_edit_disabled_famfamfam.png
 %%WWWDIR%%/gui/themes/default/images/bug_edit_famfamfam.png
 %%WWWDIR%%/gui/themes/default/images/bug_error_disabled_famfamfam.png
@@ -298,21 +305,27 @@
 %%WWWDIR%%/gui/themes/default/images/bullet_wrench.png
 %%WWWDIR%%/gui/themes/default/images/calendar.gif
 %%WWWDIR%%/gui/themes/default/images/cancel.png
+%%WWWDIR%%/gui/themes/default/images/cart.png
+%%WWWDIR%%/gui/themes/default/images/chart_organisation.png
 %%WWWDIR%%/gui/themes/default/images/checkmark-2.gif
 %%WWWDIR%%/gui/themes/default/images/checkmark.gif
 %%WWWDIR%%/gui/themes/default/images/close_win.gif
 %%WWWDIR%%/gui/themes/default/images/cog.png
 %%WWWDIR%%/gui/themes/default/images/company_logo.png
+%%WWWDIR%%/gui/themes/default/images/computer_go.png
 %%WWWDIR%%/gui/themes/default/images/connect.png
 %%WWWDIR%%/gui/themes/default/images/contact.gif
 %%WWWDIR%%/gui/themes/default/images/contact_16.png
 %%WWWDIR%%/gui/themes/default/images/control_equalizer.png
 %%WWWDIR%%/gui/themes/default/images/control_pause.png
+%%WWWDIR%%/gui/themes/default/images/controller.png
+%%WWWDIR%%/gui/themes/default/images/cross.png
 %%WWWDIR%%/gui/themes/default/images/data_copy_16.png
 %%WWWDIR%%/gui/themes/default/images/data_delete_16.png
 %%WWWDIR%%/gui/themes/default/images/data_edit_16.png
 %%WWWDIR%%/gui/themes/default/images/data_new_16.png
 %%WWWDIR%%/gui/themes/default/images/date.png
+%%WWWDIR%%/gui/themes/default/images/delete.png
 %%WWWDIR%%/gui/themes/default/images/disconnect.png
 %%WWWDIR%%/gui/themes/default/images/disconnect_small.png
 %%WWWDIR%%/gui/themes/default/images/door.png
@@ -320,9 +333,13 @@
 %%WWWDIR%%/gui/themes/default/images/door_open.png
 %%WWWDIR%%/gui/themes/default/images/edit-undo.png
 %%WWWDIR%%/gui/themes/default/images/edit_icon.png
+%%WWWDIR%%/gui/themes/default/images/emoticon_smile.png
+%%WWWDIR%%/gui/themes/default/images/emoticon_surprised.png
 %%WWWDIR%%/gui/themes/default/images/emoticon_tongue.png
+%%WWWDIR%%/gui/themes/default/images/emoticon_unhappy.png
 %%WWWDIR%%/gui/themes/default/images/error.gif
 %%WWWDIR%%/gui/themes/default/images/error_triangle.png
+%%WWWDIR%%/gui/themes/default/images/exclamation.png
 %%WWWDIR%%/gui/themes/default/images/exec_icon.png
 %%WWWDIR%%/gui/themes/default/images/export.png
 %%WWWDIR%%/gui/themes/default/images/export_import.png
@@ -354,6 +371,7 @@
 %%WWWDIR%%/gui/themes/default/images/lightbulb_off.png
 %%WWWDIR%%/gui/themes/default/images/lightbulb_on.gif
 %%WWWDIR%%/gui/themes/default/images/lightning.png
+%%WWWDIR%%/gui/themes/default/images/link.png
 %%WWWDIR%%/gui/themes/default/images/link_error.png
 %%WWWDIR%%/gui/themes/default/images/lock-mini.png
 %%WWWDIR%%/gui/themes/default/images/lock.png
@@ -369,17 +387,24 @@
 %%WWWDIR%%/gui/themes/default/images/note_edit_greyed.png
 %%WWWDIR%%/gui/themes/default/images/order_asc.gif
 %%WWWDIR%%/gui/themes/default/images/order_desc.gif
+%%WWWDIR%%/gui/themes/default/images/page.png
 %%WWWDIR%%/gui/themes/default/images/page_excel.png
+%%WWWDIR%%/gui/themes/default/images/page_paste.png
+%%WWWDIR%%/gui/themes/default/images/page_white_word.png
+%%WWWDIR%%/gui/themes/default/images/page_word.png
 %%WWWDIR%%/gui/themes/default/images/pencil.png
 %%WWWDIR%%/gui/themes/default/images/plus.gif
 %%WWWDIR%%/gui/themes/default/images/question.gif
 %%WWWDIR%%/gui/themes/default/images/question16_16.gif
+%%WWWDIR%%/gui/themes/default/images/report.png
 %%WWWDIR%%/gui/themes/default/images/reset_filter.png
+%%WWWDIR%%/gui/themes/default/images/script_lightning.png
 %%WWWDIR%%/gui/themes/default/images/slide_gripper.gif
 %%WWWDIR%%/gui/themes/default/images/sort_asc.gif
 %%WWWDIR%%/gui/themes/default/images/sort_desc.gif
 %%WWWDIR%%/gui/themes/default/images/sort_hint.png
 %%WWWDIR%%/gui/themes/default/images/stop.gif
+%%WWWDIR%%/gui/themes/default/images/style.png
 %%WWWDIR%%/gui/themes/default/images/sym_question.gif
 %%WWWDIR%%/gui/themes/default/images/thrash.png
 %%WWWDIR%%/gui/themes/default/images/timeline_marker.png
@@ -400,6 +425,8 @@
 %%WWWDIR%%/gui/themes/default/images/upload_16_greyed.png
 %%WWWDIR%%/gui/themes/default/images/upload_24.png
 %%WWWDIR%%/gui/themes/default/images/user.png
+%%WWWDIR%%/gui/themes/default/images/user_edit.png
+%%WWWDIR%%/gui/themes/default/images/wand.png
 %%WWWDIR%%/gui/themes/default/images/warning.gif
 %%WWWDIR%%/gui/themes/default/images/white-top-bottom.gif
 %%WWWDIR%%/gui/themes/default/images/world_link.png
@@ -464,6 +491,12 @@
 %%WWWDIR%%/install/sql/alter_tables/1.9.11/mysql/DB.1.9.11/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.12/mssql/DB.1.9.12/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.12/mssql/DB.1.9.12/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.12/mysql/DB.1.9.12/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.12/mysql/DB.1.9.12/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.12/postgres/DB.1.9.12/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.12/postgres/DB.1.9.12/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/step1/db_schema_update.sql
@@ -559,7 +592,9 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetProjectTestPlans.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetProjects.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCase.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseAssignedTester.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseAttachments.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseBugs.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseCustomFieldDesignValue.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseIDByName.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCasesForTestPlan.php
@@ -740,9 +775,11 @@
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/test.jiraOnDemand.jirasoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/soap/test.jirasoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test.mantissoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test.testlinkopensource.mantishub.com.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test2_int_mantissoap.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/redmine-issue01.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/redmine-issue02.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.add-note-redmine.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-fman.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-localhost.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-raw-api.01.php
@@ -5730,6 +5767,19 @@
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/postgres/DB.1.9.12/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/postgres/DB.1.9.12/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/postgres/DB.1.9.12
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/mysql/DB.1.9.12/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/mysql/DB.1.9.12/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/mysql/DB.1.9.12
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/mssql/DB.1.9.12/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/mssql/DB.1.9.12/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/mssql/DB.1.9.12
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.12
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11/stepZ
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11/step1
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11

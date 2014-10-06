@@ -45,5 +45,3 @@ bin/patapizza-tetris
 %%DATADIR%%/images/z.jpg
 %%DATADIR%%/patapizza-tetris
 share/pixmaps/patapizza-tetris.png
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

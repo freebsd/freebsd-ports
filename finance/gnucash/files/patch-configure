@@ -1,0 +1,10 @@
+--- configure.orig	2014-09-28 02:56:29.000000000 +0200
++++ configure	2014-10-05 01:43:56.028480737 +0200
+@@ -20513,6 +20513,7 @@
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+             succeeded=yes
++            GUILE_EFFECTIVE_VERSION=1.8
+ 
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking GUILE_CFLAGS" >&5
+ $as_echo_n "checking GUILE_CFLAGS... " >&6; }

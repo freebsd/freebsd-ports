@@ -3,7 +3,7 @@
 
 PORTNAME=	libuninum
 PORTVERSION=	2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -13,8 +13,10 @@ COMMENT=	Library for converting Unicode strings to numbers
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 GNU_CONFIGURE=	yes
-MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
 
 post-patch:

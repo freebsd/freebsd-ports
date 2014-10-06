@@ -2,6 +2,7 @@ include/dbh/dbh.h
 lib/libdbh.a
 lib/libdbh.so
 lib/libdbh.so.2
+lib/libdbh.so.2.0.1
 libdata/pkgconfig/dbh2.pc
 man/man3/dbh.3.gz
 man/man3/dbh.h.3.gz

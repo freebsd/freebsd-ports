@@ -16,7 +16,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYGAME}
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USE_PYTHON=	yes
+USES=		python
 
 PORTDOCS=	*.html
 OPTIONS_DEFINE=	DOCS
@@ -51,11 +51,13 @@ do-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/BubBob.py ${STAGEDIR}${DATADIR}
 	# build different colors
+	@${FIND} ${STAGEDIR}${DATADIR} -name "*.ppm" -exec chmod u+w {} \;
 	@${PYTHON_CMD} ${STAGEDIR}${DATADIR}/bubbob/images/buildcolors.py
 	${LN} -sf ${DATADIR}/http2/data/bob.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .for l in bubbob/statesaver.so display/xshm.so
+	${CHMOD} u+w ${STAGEDIR}${DATADIR}/${l}
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/${l}
 .endfor
 

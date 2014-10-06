@@ -3,7 +3,7 @@
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.8.11
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3991/
@@ -15,31 +15,26 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake perl5 pathfix pkgconfig shebangfix tar:bzip2
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
 SHEBANG_FILES=	${WRKSRC}/src/spy/pcsc-spy
 
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
+CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
+		LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 DISABLE_SIZE=	yes
 FETCH_CMD=	${LOCALBASE}/bin/wget -c -nc --no-check-certificate
-.endif
-
-.if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069
-CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb"
-CONFIGURE_ARGS+=--enable-libusb=/usr
-.else
-BROKEN=		FreeBSD 7.x does not ship with a supported libusb
 .endif
 
 post-patch:
@@ -53,14 +48,6 @@ post-patch:
 	${REINPLACE_CMD} -e '/^install-data-am: / s|install-docDATA||' ${WRKSRC}/doc/Makefile.in
 .endif
 
-pre-everything::
-.if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069
-	@${ECHO_MSG}
-	@${ECHO_MSG} "pcsc-lite has the following option(s):"
-	@${ECHO_MSG} "  WITHOUT_USB=yes            Disable USB support"
-	@${ECHO_MSG}
-.endif
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${STAGEDIR}${EXAMPLESDIR}
@@ -68,10 +55,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/example/pcsc_demo.c ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/services
-	${TOUCH} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers/.keep_me
-	${TOUCH} ${STAGEDIR}${PREFIX}/lib/pcsc/services/.keep_me
 	@${SED} 's,%%PREFIX%%,${PREFIX},g' < ${FILESDIR}/pkg-message.in > \
 		${WRKDIR}/pkg-message
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpcsclite.so.1 ${STAGEDIR}${PREFIX}/lib/libpcscspy.so.0
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

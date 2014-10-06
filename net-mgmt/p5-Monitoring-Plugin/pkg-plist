@@ -15,7 +15,3 @@
 %%PERL5_MAN3%%/Monitoring::Plugin::Performance.3.gz
 %%PERL5_MAN3%%/Monitoring::Plugin::Range.3.gz
 %%PERL5_MAN3%%/Monitoring::Plugin::Threshold.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Monitoring/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Monitoring
-@dirrm %%SITE_PERL%%/Monitoring/Plugin
-@dirrmtry %%SITE_PERL%%/Monitoring

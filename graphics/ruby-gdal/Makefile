@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTVERSION=	1.11.1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 MAKE_ARGS=	USER_DEFS=-fPIC
 MAKEFILE=	GNUmakefile
 USE_RUBY=	yes
-USES=		gmake
+USES=		gmake tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/ruby
 

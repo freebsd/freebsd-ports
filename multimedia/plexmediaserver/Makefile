@@ -3,6 +3,7 @@
 
 PORTNAME=	plexmediaserver
 PORTVERSION=	0.9.9.13.525
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.plexapp.com/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
 DISTNAME=	PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}-freebsd-amd64
@@ -24,6 +25,7 @@ USERS=	plex
 GROUPS=	plex
 SUPPORT_PATH?=	${PREFIX}/plexdata
 SCRIPT_PATH?=	${DATADIR}
+BUNDLE_LIBS=	yes
 
 ONLY_FOR_ARCHS=	amd64
 

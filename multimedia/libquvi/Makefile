@@ -20,13 +20,15 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS LUAJIT
+LUAJIT_DESC=	Use LuaJIT instead of Lua
 
 PORTSCOUT=	limit:0.4.[0-9]*
 
-USES=		iconv libtool lua pathfix pkgconfig tar:xz
-USE_GNOME=	glib20
+CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		iconv libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 INSTALL_TARGET=	install-strip
@@ -36,7 +38,16 @@ PLIST_SUB+=	VERSION=${QUVI_VER}
 
 PROJECTHOST=	quvi
 
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_USES_OFF=	lua
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} 's/lua-5.1/lua-${LUA_VER}/g' ${WRKSRC}/configure
+.if ${PORT_OPTIONS:MLUAJIT}
+	@${REINPLACE_CMD} 's|lua >= 5.1|luajit|g' ${WRKSRC}/configure
+.else
+	@${REINPLACE_CMD} 's|lua-5.1|lua-${LUA_VER}|g' ${WRKSRC}/configure
+.endif
 
 .include <bsd.port.mk>

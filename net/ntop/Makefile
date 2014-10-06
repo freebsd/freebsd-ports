@@ -22,8 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 DBDIR?=		/var/db
 
-USES=		gmake libtool python
-USE_AUTOTOOLS=	automake autoconf libtoolize
+USES=		autoreconf:build gmake libtool python
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -36,9 +35,8 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-zlib-root=/usr
 INSTALL_TARGET=	install-strip
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	DBDIR=${DBDIR}
@@ -91,7 +89,7 @@ CONFIGURE_ARGS+=	STRIP=${LOCALBASE}/bin/strip
 .endif
 
 pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ${SH} autogen.sh --noconfig
+	@(cd ${WRKSRC} && ./autogen.sh --noconfig)
 
 pre-install:
 	@cd ${WRKSRC} && ${MAKE_CMD} dnetter

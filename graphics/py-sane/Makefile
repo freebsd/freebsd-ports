@@ -3,6 +3,7 @@
 
 PORTNAME=	sane
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/media/downloads/ \
 		http://www.pythonware.net/storage/
@@ -13,7 +14,7 @@ MAINTAINER=	buganini@gmail.com
 COMMENT=	Python bindings for Sane
 
 LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=1.1.7:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes

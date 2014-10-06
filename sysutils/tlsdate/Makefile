@@ -18,17 +18,14 @@ GH_ACCOUNT=	ioerror
 GH_COMMIT=	44fa3b7
 GH_TAGNAME=	${GH_COMMIT}
 
-USE_AUTOTOOLS=	autoconf aclocal automake libtoolize
-USES=		libtool pkgconfig
+GNU_CONFIGURE=	yes
+USES=		autoreconf libtool pkgconfig
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 # Required for FreeBSD 8.4
 	@${REINPLACE_CMD} -e 's@AC_MSG_ERROR(\[M@AC_MSG_WARN([M@' ${WRKSRC}/configure.ac
-
-pre-configure:
-	@(cd ${WRKSRC} && ./autogen.sh)
 
 regression-test: build
 	@cd ${WRKSRC} && make test

@@ -1,0 +1,22 @@
+bin/tuboexec
+include/tubo.h
+lib/libtubo.a
+lib/libtubo.la
+lib/libtubo.so
+lib/libtubo.so.0
+lib/libtubo.so.0.1.0
+libdata/pkgconfig/tubo.pc
+man/man1/tuboexec.1.gz
+share/gtk-doc/html/libtubo/ch01.html
+share/gtk-doc/html/libtubo/home.png
+share/gtk-doc/html/libtubo/index.html
+share/gtk-doc/html/libtubo/index.sgml
+share/gtk-doc/html/libtubo/left.png
+share/gtk-doc/html/libtubo/libtubo-tubo.html
+share/gtk-doc/html/libtubo/libtubo.devhelp2
+share/gtk-doc/html/libtubo/right.png
+share/gtk-doc/html/libtubo/style.css
+share/gtk-doc/html/libtubo/up.png
+@dirrmtry share/gtk-doc/html/libtubo
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc

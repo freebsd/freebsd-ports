@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	nagios-plugins-*
 
-USES=		charsetfix gmake perl5 libtool autoreconf
-CHARSETFIX_MAKEFILEIN=Makefile.am
+USES=		charsetfix gmake perl5 libtool
 USE_SUBMAKE=	yes
 
 OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS DBI EXTRAOPTS
@@ -70,24 +69,26 @@ CONFIGURE_ARGS+=--with-cgiurl=${NAGIOSCGIURL} \
 CONFIGURE_ARGS+=--with-qmail-qstat-command=/var/qmail/bin/qmail-qstat
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 QSTAT_BUILD_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 QSTAT_RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
-QSTAT_CONFIGURE_ENABLE=	qstat
+QSTAT_CONFIGURE_OFF=	ac_cv_path_PATH_TO_QUAKESTAT= \
+			ac_cv_path_PATH_TO_QSTAT=
 
 IPV6_CONFIGURE_WITH=	ipv6
 
 FPING_BUILD_DEPENDS=	fping:${PORTSDIR}/net/fping
 FPING_RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
-FPING_CONFIGURE_ENABLE=	fping
+FPING_CONFIGURE_OFF=	ac_cv_path_PATH_TO_FPING= \
+			ac_cv_path_PATH_TO_FPING6=
 
 NETSNMP_BUILD_DEPENDS=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 NETSNMP_RUN_DEPENDS=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-NETSNMP_CONFIGURE_ENABLE=	snmp
+NETSNMP_CONFIGURE_OFF=	ac_cv_path_PATH_TO_SNMPGET= \
+			ac_cv_path_PATH_TO_SNMPGETNEXT=
 
 RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
 RADIUS_CONFIGURE_WITH=	radius
@@ -147,10 +148,10 @@ post-patch:
 	check_users.c
 	@${REINPLACE_CMD} -e 's|setlocale (LC_ALL, "");|setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");|g' ${WRKSRC}/plugins/${file}
 .endfor
-	@${REINPLACE_CMD} -e 's|chown root|${TRUE}|g' ${WRKSRC}/plugins-root/Makefile.am
+	@${REINPLACE_CMD} -e 's|chown root|${TRUE}|g' ${WRKSRC}/plugins-root/Makefile.in
 .if ${PORT_OPTIONS:MJAIL}
-	@${REINPLACE_CMD} -e 's# 127.0.0.1 # ${NAGIOSPOLLIP} #g' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's# ::1 # ${NAGIOSPOLLIP6} #g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's# 127\.0\.0\.1 # ${NAGIOSPOLLIP} #g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's# ::1 # ${NAGIOSPOLLIP6} #g' ${WRKSRC}/configure
 .endif
 
 .include <bsd.port.mk>

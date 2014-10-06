@@ -1747,6 +1747,7 @@
     SUBDIR += p5-Data-MessagePack-Stream
     SUBDIR += p5-Data-Miscellany
     SUBDIR += p5-Data-Model
+    SUBDIR += p5-Data-Munge
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
@@ -3493,6 +3494,7 @@
     SUBDIR += projectcenter
     SUBDIR += protobuf
     SUBDIR += protobuf-c
+    SUBDIR += protobuf25
     SUBDIR += psptoolchain
     SUBDIR += psptoolchain-binutils
     SUBDIR += psptoolchain-gcc-stage1
@@ -3634,6 +3636,7 @@
     SUBDIR += py-clint
     SUBDIR += py-clonedigger
     SUBDIR += py-cmdln
+    SUBDIR += py-codegen
     SUBDIR += py-cog
     SUBDIR += py-coil
     SUBDIR += py-collective.monkeypatcher
@@ -4220,6 +4223,7 @@
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
     SUBDIR += rubygem-abstract
+    SUBDIR += rubygem-actionpack-action_caching
     SUBDIR += rubygem-actionview
     SUBDIR += rubygem-active_scaffold
     SUBDIR += rubygem-activemessaging
@@ -4317,6 +4321,8 @@
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-fast-stemmer
     SUBDIR += rubygem-fast_gettext
+    SUBDIR += rubygem-fast_stack
+    SUBDIR += rubygem-fast_xor
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastri
     SUBDIR += rubygem-fastthread
@@ -4358,6 +4364,7 @@
     SUBDIR += rubygem-grape-entity
     SUBDIR += rubygem-grape-swagger
     SUBDIR += rubygem-grit
+    SUBDIR += rubygem-guess_html_encoding
     SUBDIR += rubygem-gyoku
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
@@ -4396,7 +4403,9 @@
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logging
+    SUBDIR += rubygem-logster
     SUBDIR += rubygem-loquacious
+    SUBDIR += rubygem-lru_redux
     SUBDIR += rubygem-lumberjack
     SUBDIR += rubygem-main
     SUBDIR += rubygem-map
@@ -4426,6 +4435,7 @@
     SUBDIR += rubygem-multi_json
     SUBDIR += rubygem-multi_test
     SUBDIR += rubygem-murmurhash3
+    SUBDIR += rubygem-mustache
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-naught
     SUBDIR += rubygem-needle
@@ -4466,6 +4476,7 @@
     SUBDIR += rubygem-rb-fsevent
     SUBDIR += rubygem-rb-inotify
     SUBDIR += rubygem-rb-kqueue
+    SUBDIR += rubygem-rbtrace
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rdoc
     SUBDIR += rubygem-recaptcha
@@ -4680,6 +4691,7 @@
     SUBDIR += tclap
     SUBDIR += tclcheck
     SUBDIR += tclgetopts
+    SUBDIR += tcllauncher
     SUBDIR += tcllib
     SUBDIR += tclmore
     SUBDIR += tcloo
@@ -4739,6 +4751,7 @@
     SUBDIR += valgrind
     SUBDIR += valgrind-devel
     SUBDIR += varconf
+    SUBDIR += vasm
     SUBDIR += vera++
     SUBDIR += viewvc
     SUBDIR += violet

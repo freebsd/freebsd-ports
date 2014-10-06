@@ -76,6 +76,7 @@ RUN_DEPENDS+=	linux-c6-libasyncns>0:${PORTSDIR}/dns/linux-c6-libasyncns \
 		linux-c6-curl>0:${PORTSDIR}/ftp/linux-c6-curl \
 		linux-c6-tcp_wrappers-libs>0:${PORTSDIR}/net/linux-c6-tcp_wrappers-libs \
 		linux-c6-openldap>0:${PORTSDIR}/net/linux-c6-openldap \
+		linux-c6-avahi-libs>0:${PORTSDIR}/net/linux-c6-avahi-libs \
 		linux-c6-expat>0:${PORTSDIR}/textproc/linux-c6-expat \
 		linux-c6-aspell>0:${PORTSDIR}/textproc/linux-c6-aspell \
 		linux-c6-libxml2>0:${PORTSDIR}/textproc/linux-c6-libxml2 \

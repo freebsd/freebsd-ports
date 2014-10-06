@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Mission and Objective based 2D Platform Game
 
-LICENSE=	GPLv2 CCbyNCSA3
+LICENSE=	GPLv2 CCbyNCSA3 # GPLv2 or later
 LICENSE_COMB=	dual
 LICENSE_NAME_CCbyNCSA3=Attribution-NonCommercial-ShareAlike 3.0 Unported
 LICENSE_FILE=	${WRKSRC}/doc/license
@@ -35,15 +35,15 @@ NLS_USES=	gettext
 
 post-patch:
 	@${REINPLACE_CMD} \
-	-e 's|mkdir -p $$(DESTDIR)$$(DOCDIR)|| ; \
-	s|cp -p $$(DOCS) $$(DESTDIR)$$(DOCDIR)|| ; \
-	s|USEPAK ?= 0|USEPAK ?= 1| ; \
-	s|/usr|${LOCALBASE}| ; \
-	s|$$(PREFIX)/games/|$$(PREFIX)/bin/| ; \
-	s|/share/games/blobwars/|/share/blobwars/| ; \
-	s| -Werror||' \
-	-e '/LIBS =/s/-lz/-lz -lintl/' \
-		${WRKSRC}/makefile
+		-e 's|mkdir -p $$(DESTDIR)$$(DOCDIR)|| ; \
+		s|cp -p $$(DOCS) $$(DESTDIR)$$(DOCDIR)|| ; \
+		s|USEPAK ?= 0|USEPAK ?= 1| ; \
+		s|/usr|${LOCALBASE}| ; \
+		s|$$(PREFIX)/games/|$$(PREFIX)/bin/| ; \
+		s|/share/games/blobwars/|/share/blobwars/| ; \
+		s| -Werror||' \
+		-e '/LIBS =/s/-lz/-lz -lintl/' \
+			${WRKSRC}/makefile
 
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -i '' -e '/LOCALE_MO =/d' \
@@ -53,6 +53,7 @@ post-patch:
 post-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}

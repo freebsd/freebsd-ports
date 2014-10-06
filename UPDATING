@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141003:
+  AFFECTS: xorg users
+  AUTHOR: bapt@FreeBSD.org
+
+  The WITH_NEW_XORG setting has been activated by default on all versions
+  of FreeBSD, which allows us to have packages for xorg 1.12 and kde4.
+
+  Please be aware that on systems that only support syscons
+  switching virtual terminals or exiting X
+  results in a black screen or the last image of their desktop
+  (like a screenshot) being presented.  Commands can still be typed blindly.
+
+  Most, if not all, systems should be using vt(4) and this can be enabled
+  by setting kern.vty=vt in /boot/loader.conf and reboot to activate.
+
 20141001:
   AFFECTS: xorg users
   AUTHOR: bapt@FreeBSD.org
@@ -34,18 +49,6 @@ you update your ports collection, before attempting any port upgrades.
   on the system.
 
   Please check your configuration.
-
-20140930:
-  AFFECTS: users of finance/gnucash
-  AUTHOR: madpilot@FreeBSD.org
-
-  The new version of gnucsh requires guile 2.0. If the update fails
-  because the old guile 1.8 library is still present you will need
-  to manally remove gnucash, guile and, if installed, boehm-gc:
-
-  # pkg delete gnucash guile boehm-gc
-
-  and then install gnucash again the usual way.
 
 20140929:
   AFFECTS: users of comms/usbmuxd

@@ -108,6 +108,7 @@
     SUBDIR += nagios-check_bacula5
     SUBDIR += nagios-check_clamav
     SUBDIR += nagios-check_cpu_usage
+    SUBDIR += nagios-check_dhcp.pl
     SUBDIR += nagios-check_email_delivery
     SUBDIR += nagios-check_hdd_health
     SUBDIR += nagios-check_hp_bladechassis

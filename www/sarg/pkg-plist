@@ -1,7 +1,5 @@
 bin/sarg
-@unexec if cmp -s %D/etc/sarg/sarg.conf %D/etc/sarg/sarg.conf.default; then rm -f %D/etc/sarg/sarg.conf; fi
-etc/sarg/sarg.conf.default
-@exec [ ! -f %B/sarg.conf ] || cp -p %B/%f %B/sarg.conf
+@sample etc/sarg/sarg.conf.sample
 etc/sarg/css.tpl
 etc/sarg/exclude_codes
 etc/sarg/fonts/DejaVuSans.ttf
@@ -66,6 +64,3 @@ etc/sarg/user_limit_block
 %%PHP%%@dirrm etc/sarg/sarg-php/locale/en_EN
 %%PHP%%@dirrm etc/sarg/sarg-php/locale
 %%PHP%%@dirrm etc/sarg/sarg-php
-@dirrm etc/sarg/images
-@dirrm etc/sarg/fonts
-@dirrmtry etc/sarg

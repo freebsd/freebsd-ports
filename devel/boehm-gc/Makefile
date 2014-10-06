@@ -23,7 +23,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:${PORTSDIR}/devel/libatomic_ops
 
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig
-USE_AUTOTOOLS=	aclocal autoconf libtoolize
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-cplusplus --disable-static
@@ -36,11 +35,11 @@ OPTIONS_DEFINE=	DEBUG
 .ifdef GC_VARIANT
 INSTLIBS=	cord gc gccpp
 PLIST=		${NONEXISTENT}
-PLIST_FILES=	${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so.${SOVER},g} \
-		${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so,g} \
+PLIST_FILES=	${INSTLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
+		${INSTLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
+		${INSTLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.0.3,} \
 		libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 RUN_DEPENDS+=	${LOCALBASE}/include/gc/gc.h:${PORTSDIR}/devel/boehm-gc
-SOVER=		1
 . if ${GC_VARIANT} == "redirect"
 CONFIGURE_ARGS+=--disable-threads --enable-redirect-malloc
 . endif
@@ -55,13 +54,9 @@ OPTIONS_DEFINE+=DOCS
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.pre.mk>
-
 NOT_FOR_ARCHS=	ia64
 
-# no rule to get .lo from .S in subdirectory
-pre-build:
-	${LN} -sf ${WRKSRC}/src/sparc_mach_dep.S ${WRKSRC}
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-gc-debug
@@ -83,15 +78,12 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's,-lgc,-lgc-${GC_VARIANT},' ${WRKSRC}/bdw-gc.pc.in
 
-do-install:
-.for LIB in ${INSTLIBS}
-	${INSTALL_DATA} ${WRKSRC}/.libs/lib${LIB}-${GC_VARIANT}.so.${SOVER} \
-		${STAGEDIR}${PREFIX}/lib/lib${LIB}-${GC_VARIANT}.so.${SOVER}
-	${LN} -sf lib${LIB}-${GC_VARIANT}.so.${SOVER} \
-		${STAGEDIR}${PREFIX}/lib/lib${LIB}-${GC_VARIANT}.so
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/bdw-gc.pc \
+post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/include
+	${RM} -r ${STAGEDIR}${PREFIX}/share
+	${MV} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/bdw-gc.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
+
 .else # ! GC_VARIANT
 
 post-patch:
@@ -107,13 +99,7 @@ post-install:
 
 .endif
 
-# Get rid of .la and static library files
-#
-post-configure:
-	@${REINPLACE_CMD} -E -e \
-	'/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
-
 regression-test: build
-	cd ${WRKSRC} && ${MAKE} check
+	(cd ${WRKSRC} && ${MAKE_CMD} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

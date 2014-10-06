@@ -93,7 +93,7 @@ DISTNAME=	${PYQT4_DISTNAME}
 
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
-USE_PYTHON=	yes
+USES+=		python
 
 QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 

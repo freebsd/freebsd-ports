@@ -3,6 +3,7 @@
 
 PORTNAME=	geographiclib
 PORTVERSION=	1.37
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/geographiclib/distrib \
 		SF/geographiclib:geoids,gravity,magnetic
@@ -18,13 +19,14 @@ LICENSE=	MIT
 USES=		gmake libtool python
 USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-NO_WRKSUBDIR=	yes
-INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${DISTNAME}
-MAKE_ARGS=	pythondir=${PYTHON_SITELIBDIR}/geographiclib
+NO_WRKSUBDIR=	yes
 PORTDOCS=	*
+GNU_CONFIGURE=	yes
+MAKE_ARGS+=	geographiclib_data=${DATADIR:Q}
+MAKE_ARGS+=	pythondir=${PYTHON_SITELIBDIR}/geographiclib
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=	GEOID_EGM96_5 GRAVITY_EGM96 GRAVITY_WGS84 \
@@ -68,24 +70,50 @@ post-patch:
 	${REINPLACE_CMD} -e '/wget/s/wget -O/fetch -o /' \
 		${WRKSRC}/tools/geographiclib-get-*.sh
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/geoids \
-		${STAGEDIR}${DATADIR}/gravity \
-		${STAGEDIR}${DATADIR}/magnetic
-	${TOUCH} ${STAGEDIR}${DATADIR}/geoids/.keep \
-		${STAGEDIR}${DATADIR}/gravity/.keep \
-		${STAGEDIR}${DATADIR}/magnetic/.keep
+install-datasets-mkdir: .NOTMAIN
+	for d in geoids gravity magnetic ;\
+	do ${MKDIR} ${STAGEDIR}${DATADIR}/$${d} &&\
+		${TOUCH} ${STAGEDIR}${DATADIR}/$${d}/.keep ;\
+	done
+.PHONY: install-datasets-mkdir
+
+.for n in geoids gravity magnetic
+install-datasets-${n}: install-datasets-mkdir .NOTMAIN
+	(cd ${WRKDIR}/${n} && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${n})
+.PHONY: install-datasets-${n}
+.endfor
+
+post-install: install-datasets-mkdir
 .if ${PORT_OPTIONS:MGEOID_*}
-	(cd ${WRKDIR}/geoids && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/geoids)
+post-install: install-datasets-geoids
 .endif
 .if ${PORT_OPTIONS:MGRAVITY_*}
-	(cd ${WRKDIR}/gravity && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/gravity)
+post-install: install-datasets-gravity
 .endif
 .if ${PORT_OPTIONS:MMAGNETIC_*}
-	(cd ${WRKDIR}/magnetic && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/magnetic)
+post-install: install-datasets-magnetic
 .endif
+
+.PHONY: x-tool-plist
+x-tool-plist: ${PLIST} .NOTMAIN
+	${REINPLACE_CMD}\
+		-e '/^%%PORTDOCS%%/d'\
+		-e '/^%%DATADIR%%\/geoids\/[^.]/{\
+		h;s|^%%DATADIR%%/geoids/\([^.]\{1,\}\).*|GEOID_\1|;\
+		s/[^0-9A-Za-z]/_/g;\
+		y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/;\
+		s/^/%%/;s/$$/%%/;G;s/\n//;}'\
+		-e '/^%%DATADIR%%\/gravity\/[^.]/{\
+		h;s|^%%DATADIR%%/gravity/\([^.]\{1,\}\).*|GRAVITY_\1|;\
+		s/[^0-9A-Za-z]/_/g;\
+		y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/;\
+		s/^/%%/;s/$$/%%/;G;s/\n//;}'\
+		-e '/^%%DATADIR%%\/magnetic\/[^.]/{\
+		h;s|^%%DATADIR%%/magnetic/\([^.]\{1,\}\).*|MAGNETIC_\1|;\
+		s/[^0-9A-Za-z]/_/g;\
+		y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/;\
+		s/^/%%/;s/$$/%%/;G;s/\n//;}'\
+		${PLIST}
 
 .include <bsd.port.mk>

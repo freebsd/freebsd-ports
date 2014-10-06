@@ -5,7 +5,7 @@ PORTNAME=	davical
 PORTVERSION=	1.1.2
 CATEGORIES?=	www
 
-MAINTAINER=	maurice@castro.aus.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple CalDAV server using a postgres backend
 
 LICENSE=	GPLv2 LGPL21

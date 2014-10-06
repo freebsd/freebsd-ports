@@ -3,20 +3,20 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	3.7.24
+DISTVERSION=	6.0.27
 CATEGORIES=	www
-MASTER_SITES=	SF/group-office/3.7
+MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular web application framework vor office
 
 RESTRICTED=	Free for personal use only
 NO_BUILD=	yes
-USE_PHP=	mysql session mbstring pcre xml
+USE_PHP=	mysqli session mbstring pcre xml
 WANT_PHP_WEB=	yes
 USE_MYSQL=	yes
 
-WWWDIR?=	${PREFIX}/www/${PORTNAME}3
+WWWDIR?=	${PREFIX}/www/${PORTNAME}${DISTVERSION:R:R}
 
 SUB_FILES=	pkg-message
 
@@ -26,6 +26,16 @@ CALENDAR_DESC=	Calendar holiday support
 IMAP_DESC=	IMAP support
 GD_DESC=	Gallery support (GD)
 WBXML_DESC=	Synchronization Support
+
+post-patch:
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/go/base/Config.php
+	${REINPLACE_CMD} 's|/etc/groupoffice|${PREFIX}&|g' \
+		${WRKSRC}/go/base/Config.php \
+		${WRKSRC}/install/configFile.php \
+		${WRKSRC}/modules/serverclient/HttpClient.php \
+		${WRKSRC}/modules/serverclient/ServerclientModule.php \
+		${WRKSRC}/modules/site/index.php
 
 .include <bsd.port.options.mk>
 

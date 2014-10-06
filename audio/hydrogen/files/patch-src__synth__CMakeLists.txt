@@ -1,0 +1,10 @@
+--- ./src/synth/CMakeLists.txt.orig	2014-06-19 06:38:04.000000000 +0930
++++ ./src/synth/CMakeLists.txt	2014-08-13 02:18:55.095462906 +0930
+@@ -4,6 +4,7 @@
+ INCLUDE_DIRECTORIES(
+     ${CMAKE_SOURCE_DIR}/src/core/include        # core headers
+     ${CMAKE_BINARY_DIR}/src/core/include        # generated config.h
++    ${LIBSNDFILE_INCLUDE_DIR}
+     ${QT_INCLUDES}
+ )
+ 

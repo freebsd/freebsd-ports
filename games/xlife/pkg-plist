@@ -27,10 +27,3 @@ man/man6/xlife.6.gz
 %%DATADIR%%/patterns/pd/lloyd.l
 %%DATADIR%%/patterns/pd/lloyd2.l
 %%DATADIR%%/patterns/pd/osc-3.l
-@dirrm %%DATADIR%%/patterns/pd
-@dirrm %%DATADIR%%/patterns/life-like
-@dirrm %%DATADIR%%/patterns/langton
-@dirrm %%DATADIR%%/patterns/formats
-@dirrm %%DATADIR%%/patterns/boundedgrid
-@dirrm %%DATADIR%%/patterns
-@dirrm %%DATADIR%%

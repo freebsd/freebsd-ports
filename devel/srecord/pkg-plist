@@ -143,6 +143,7 @@ include/srecord/string.h
 lib/libsrecord.a
 lib/libsrecord.so
 lib/libsrecord.so.0
+lib/libsrecord.so.0.0.0
 libdata/pkgconfig/srecord.pc
 man/man1/srec_cat.1.gz
 man/man1/srec_cmp.1.gz

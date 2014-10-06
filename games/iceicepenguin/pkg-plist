@@ -150,30 +150,3 @@ share/icons/hicolor/64x64/apps/iceicepenguin.png
 share/icons/hicolor/72x72/apps/iceicepenguin.png
 share/icons/hicolor/96x96/apps/iceicepenguin.png
 share/pixmaps/iceicepenguin.png
-@dirrm %%DATADIR%%/sfx/music
-@dirrm %%DATADIR%%/sfx
-@dirrm %%DATADIR%%/menu/fr
-@dirrm %%DATADIR%%/menu/en
-@dirrm %%DATADIR%%/menu/de
-@dirrm %%DATADIR%%/menu
-@dirrm %%DATADIR%%/lvls
-@dirrm %%DATADIR%%/gfx/1024x600/tux/3
-@dirrm %%DATADIR%%/gfx/1024x600/tux/2
-@dirrm %%DATADIR%%/gfx/1024x600/tux/1
-@dirrm %%DATADIR%%/gfx/1024x600/tux/0
-@dirrm %%DATADIR%%/gfx/1024x600/tux
-@dirrm %%DATADIR%%/gfx/1024x600/specialtux/3
-@dirrm %%DATADIR%%/gfx/1024x600/specialtux/2
-@dirrm %%DATADIR%%/gfx/1024x600/specialtux/1
-@dirrm %%DATADIR%%/gfx/1024x600/specialtux/0
-@dirrm %%DATADIR%%/gfx/1024x600/specialtux
-@dirrm %%DATADIR%%/gfx/1024x600/fields
-@dirrm %%DATADIR%%/gfx/1024x600/bear/3
-@dirrm %%DATADIR%%/gfx/1024x600/bear/2
-@dirrm %%DATADIR%%/gfx/1024x600/bear/1
-@dirrm %%DATADIR%%/gfx/1024x600/bear/0
-@dirrm %%DATADIR%%/gfx/1024x600/bear
-@dirrm %%DATADIR%%/gfx/1024x600
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%

@@ -18,8 +18,3 @@ share/gtk-doc/html/gupnp-ui/left.png
 share/gtk-doc/html/gupnp-ui/right.png
 share/gtk-doc/html/gupnp-ui/style.css
 share/gtk-doc/html/gupnp-ui/up.png
-@dirrm share/gtk-doc/html/gupnp-ui
-@dirrm share/gtk-doc/html
-@dirrm share/gtk-doc
-@dirrm include/gupnp-ui-1.0/libgupnp-ui
-@dirrm include/gupnp-ui-1.0

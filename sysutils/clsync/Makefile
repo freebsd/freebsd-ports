@@ -16,7 +16,7 @@ LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig
+USES=		autoreconf gmake libtool pkgconfig
 USE_GNOME=	glib20
 
 USE_RC_SUBR=	clsync
@@ -28,8 +28,6 @@ GH_ACCOUNT=	xaionaro
 GH_PROJECT=	clsync
 GH_COMMIT=	85e5475
 GH_TAGNAME=	${GH_COMMIT}
-
-USE_AUTOTOOLS=	autoconf aclocal automake libtoolize
 
 OPTIONS_DEFINE=	PARANOID VERYPARANOID SOCKET DEBUG LIBCLSYNC
 
@@ -64,15 +62,10 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-libclsync
 .endif
 
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	cd "${WRKSRC}" && ${AUTORECONF} -fi
-
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/clsync ${STAGEDIR}/${PREFIX}/sbin/clsync
+	${INSTALL_SCRIPT} ${WRKSRC}/clsync ${STAGEDIR}/${PREFIX}/sbin/clsync
 	${INSTALL_DATA} ${WRKSRC}/man/man1/clsync.1 ${STAGEDIR}/${PREFIX}/man/man1/clsync.1
 	${MKDIR} ${STAGEDIR}/${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/freebsd/usr/local/etc/clsync/${PORTNAME}.conf ${STAGEDIR}/${ETCDIR}/${PORTNAME}.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

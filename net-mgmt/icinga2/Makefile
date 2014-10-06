@@ -2,7 +2,7 @@
 
 PORTNAME=	icinga2
 DISTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://github.com/Icinga/${PORTNAME}/archive/v${DISTVERSION}.tar.gz?dummy=/
 
@@ -27,7 +27,7 @@ OPTIONS_MULTI_BACKEND=	MYSQL PGSQL
 OPTIONS_RADIO=		PLUGINS
 OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
 
-OPTIONS_DEFAULT=	MYSQL MONPLUGINS EXAMPLES
+OPTIONS_DEFAULT=	MYSQL PGSQL MONPLUGINS EXAMPLES
 
 MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
@@ -60,27 +60,16 @@ SUB_LIST=	ICINGA2LOGDIR=${ICINGA2LOGDIR} \
 # Config files with references to "Linux"
 LINUX_CONFIG=	groups.conf services.conf hosts/localhost.conf
 
-.include <bsd.port.pre.mk>
+MYSQL_USE=	mysql=yes
+PGSQL_USES=	pgsql
+
+OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	flex>=2.5.31:${PORTSDIR}/textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex
 CXXFLAGS+=	-I${LOCALBASE}/include/flex
-.endif
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-PLIST_SUB+=	PGSQL=""
-.else
-PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 post-patch:
@@ -104,4 +93,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

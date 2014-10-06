@@ -240,7 +240,8 @@ include/libexplain/write.h
 include/libexplain/writev.h
 lib/libexplain.a
 lib/libexplain.so
-lib/libexplain.so.55
+lib/libexplain.so.51
+lib/libexplain.so.51.4.0
 libdata/pkgconfig/libexplain.pc
 man/man1/explain.1.gz
 man/man1/explain_lca2010.1.gz

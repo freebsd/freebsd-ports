@@ -1,14 +1,5 @@
 --- tools/Makefile.in.orig	2009-07-07 17:04:26.000000000 +0200
 +++ tools/Makefile.in	2009-07-07 17:11:00.000000000 +0200
-@@ -53,7 +53,7 @@
- 
- INCS = -I${top_builddir} -I${top_srcdir} -I${top_srcdir}/libdjvu -I${srcdir}
- FLAGS = ${DEFS} ${INCS} ${OPTS} ${JPEG_CFLAGS} ${TIFF_CFLAGS} ${THREAD_CFLAGS}
--LIBS= @LDFLAGS@ @LIBS@
-+LIBS= @LDFLAGS@ @LIBS@ @THREAD_LIBS@
- MORELIBS= @LDFLAGS@ ${TIFF_LIBS} @LIBS@
- CFLAGS = ${FLAGS} @CPPFLAGS@ @CFLAGS@ 
- CXXFLAGS = ${FLAGS} ${CXXRPOFLAGS} @CPPFLAGS@ @CXXFLAGS@ 
 @@ -83,7 +83,7 @@
  install-scripts: FORCE
  	${INSTALL} -d ${DESTDIR}${bindir}
@@ -18,21 +9,3 @@
  	  || exit ; done
  
  install-man: FORCE
-@@ -127,7 +127,7 @@
- 
- cjb2: cjb2.o ${JB2OBJS}
- 	${LIBTOOL} --mode=link \
--	  ${CXX} -o $@ ${CXXFLAGS} cjb2.o ${JB2OBJS} ${LIBDJVU} ${MORELIBS}
-+	  ${CXX} -o $@ ${CXXFLAGS} cjb2.o ${JB2OBJS} ${LIBDJVU} ${MORELIBS} ${THREAD_LIBS}
- 
- cpaldjvu: cpaldjvu.o ${JB2OBJS}
- 	${LIBTOOL} --mode=link \
-@@ -139,7 +139,7 @@
- 
- ddjvu: ddjvu.o tiff2pdf.o
- 	${LIBTOOL} --mode=link \
--	  ${CXX} -o $@ ${CXXFLAGS} ddjvu.o tiff2pdf.o ${LIBDJVU} ${MORELIBS}
-+	  ${CXX} -o $@ ${CXXFLAGS} ddjvu.o tiff2pdf.o ${LIBDJVU} ${MORELIBS} ${THREAD_LIBS}
- 
- djvm: djvm.o
- 	${LIBTOOL} --mode=link \

@@ -3,6 +3,7 @@
 
 PORTNAME=	freevrrpd
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://opensource.kewego.com/freevrrpd/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:DEFAULT,freebsd

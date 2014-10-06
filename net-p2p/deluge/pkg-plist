@@ -48,6 +48,7 @@
 %%PYTHON_SITELIBDIR%%/deluge/i18n/mk/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ml/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ms/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/nap/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/nb/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/nds/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/nl/LC_MESSAGES/deluge.mo

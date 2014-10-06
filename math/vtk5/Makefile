@@ -146,7 +146,8 @@ IGNORE=		python wrapping requires shared libraries.\
 .endif
 USE_PYTHON=	yes
 PYDISTUTILS_PKGNAME=	VTK
-INSTALLS_EGGINFO=	yes
+# INSTALLS_EGGINFO support has been removed
+# INSTALLS_EGGINFO=	yes
 CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=ON \
     		-DVTK_PYTHON_SETUP_ARGS:STRING='--prefix="${PREFIX}"'
 PLIST_SUB+=	PYTHON=""

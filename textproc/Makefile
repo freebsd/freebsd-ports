@@ -190,7 +190,6 @@
     SUBDIR += gmetadom
     SUBDIR += gnome-doc-utils
     SUBDIR += gnome-spell
-    SUBDIR += gnome-translate
     SUBDIR += gnugrep
     SUBDIR += go-text
     SUBDIR += go.text

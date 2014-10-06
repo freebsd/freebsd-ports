@@ -11,6 +11,7 @@ include/radiusclient-ng.h
 lib/libradiusclient-ng.a
 lib/libradiusclient-ng.so
 lib/libradiusclient-ng.so.2
+lib/libradiusclient-ng.so.2.0.0
 sbin/login.radius
 sbin/radacct
 sbin/radexample

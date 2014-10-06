@@ -514,7 +514,6 @@
     SUBDIR += monast
     SUBDIR += mongoose
     SUBDIR += mongrel2
-    SUBDIR += moodle25
     SUBDIR += moodle26
     SUBDIR += moodle27
     SUBDIR += mozplugger
@@ -1529,6 +1528,7 @@
     SUBDIR += py-flask-admin
     SUBDIR += py-flask-cache
     SUBDIR += py-flask-flatpages
+    SUBDIR += py-flask-sockets
     SUBDIR += py-flask-uploads
     SUBDIR += py-flexget
     SUBDIR += py-flup
@@ -1536,6 +1536,7 @@
     SUBDIR += py-formencode
     SUBDIR += py-frozen-flask
     SUBDIR += py-funkload
+    SUBDIR += py-gevent-websocket
     SUBDIR += py-google-api-python-client
     SUBDIR += py-graphite-web
     SUBDIR += py-grequests
@@ -1773,6 +1774,7 @@
     SUBDIR += rubygem-feedjira
     SUBDIR += rubygem-flowdock
     SUBDIR += rubygem-geminabox
+    SUBDIR += rubygem-gitlab-flowdock-git-hook
     SUBDIR += rubygem-gitlab-gollum-lib
     SUBDIR += rubygem-gitlab-grack
     SUBDIR += rubygem-gollum-lib
@@ -1802,11 +1804,14 @@
     SUBDIR += rubygem-jquery-atwho-rails-rails4
     SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-jquery-rails4
+    SUBDIR += rubygem-jquery-scrollto-rails
     SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails
+    SUBDIR += rubygem-jquery-ui-rails-rails4
     SUBDIR += rubygem-jruby-rack
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
+    SUBDIR += rubygem-kaminari-rails4
     SUBDIR += rubygem-kensa
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-less
@@ -1831,7 +1836,6 @@
     SUBDIR += rubygem-pagerduty
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-puma
-    SUBDIR += rubygem-puma16
     SUBDIR += rubygem-rabbirack
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rack-accept
@@ -1847,6 +1851,7 @@
     SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails4
+    SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-railties
     SUBDIR += rubygem-railties4
     SUBDIR += rubygem-raindrops
@@ -1868,6 +1873,7 @@
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-select2-rails
     SUBDIR += rubygem-selenium-webdriver
+    SUBDIR += rubygem-semantic-ui-sass
     SUBDIR += rubygem-simple-rss
     SUBDIR += rubygem-sinatra
     SUBDIR += rubygem-sinatra-contrib

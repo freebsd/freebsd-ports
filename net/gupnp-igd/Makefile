@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gupnp-igd
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -30,7 +29,7 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig tar:xz
 
 PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USES=		python
+PYTHON_USES=		python:2
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ --define-variable=/d' ${WRKSRC}/configure

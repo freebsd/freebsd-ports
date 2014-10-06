@@ -144,9 +144,14 @@ openssh_check_same_ports(){
         base_sshd_port=22
     fi
 
-    if [ "${self_port}" -ne "${base_sshd_port}" ]; then 
-        return 1
-    fi
+    # self_port and base_sshd_port may have multiple values. Compare them all
+    for sport in ${self_port}; do
+	    for bport in ${base_sshd_port}; do
+		    [ ${sport} -eq ${bport} ] && return 0
+	    done
+    done
+
+    return 1
 }
 
 openssh_configtest()

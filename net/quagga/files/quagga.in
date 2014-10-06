@@ -1,14 +1,14 @@
 #!/bin/sh
-
+#
 # $FreeBSD$
 #
+
 # PROVIDE: quagga
 # REQUIRE: netif routing 
-# KEYWORD: nojail
+# KEYWORD: nojail shutdown
 
-#
 # Add the following line to /etc/rc.conf to enable quagga:
-#quagga_enable="YES"
+# quagga_enable="YES"
 #
 # You may also wish to use the following variables to fine-tune startup:
 #  quagga_flags="-d"
@@ -28,15 +28,23 @@
 
 . /etc/rc.subr
 
-name="quagga"
+name=quagga
 rcvar=quagga_enable
 
 start_postcmd=start_postcmd
-stop_postcmd=stop_postcmd
+stop_postcmd="rm -f $pidfile"
 configtest_cmd=check_config
-extra_commands="configtest"
+extra_commands=configtest
 
-check_config() {
+load_rc_config $name
+
+quagga_enable=${quagga_enable:-"NO"}
+quagga_flags=${quagga_flags:-"-d"}
+quagga_daemons=${quagga_daemons:-"zebra ripd ripngd ospfd ospf6d bgpd isisd"}
+quagga_vtysh_boot=${quagga_vtysh_boot:-"NO"}
+
+check_config()
+{
     echo "Checking $daemon.conf"
     $command $daemon_flags -C
     result=$?
@@ -61,11 +69,6 @@ start_postcmd()
 			sleep 1;
 		done
 	fi
-}
-
-stop_postcmd()
-{
-  rm -f $pidfile
 }
 
 do_cmd()
@@ -96,15 +99,6 @@ do_cmd()
 	fi
 	return ${ret}
 }
-
-# set defaults
-
-load_rc_config $name
-
-: ${quagga_enable="NO"}
-: ${quagga_flags="-d"}
-: ${quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"}
-: ${quagga_vtysh_boot="NO"}
 
 quagga_cmd=$1
 

@@ -14,9 +14,8 @@ COMMENT=	Open source Remote Desktop Protocol (RDP) server
 
 LICENSE=	GPLv2
 
-USES=		libtool pkgconfig
+USES=		autoreconf:build libtool pkgconfig
 USE_XORG=	x11 xfixes
-USE_AUTOTOOLS=	autoconf:env automake:env libtoolize
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
@@ -27,9 +26,8 @@ GH_COMMIT=	5d53758
 GH_TAGNAME=	${GH_COMMIT}
 
 CONFIGURE_ARGS=	--localstatedir=/var
-LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFLICTS_INSTALL=	xrdp-devel-[0-9]* x11rdp-devel-[0-9]*
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DEBUG
 OPTIONS_DEFAULT=	JP106 X11RDP

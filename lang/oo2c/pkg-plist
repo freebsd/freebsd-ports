@@ -10,6 +10,7 @@ man/man1/oowhereis.1.gz
 lib/liboo2c.a
 lib/liboo2c.so
 lib/liboo2c.so.3
+lib/liboo2c.so.3.0.0
 lib/oo2c/emacs/o2-default.el
 lib/oo2c/emacs/o2-indent.el
 lib/oo2c/emacs/o2-insert.el

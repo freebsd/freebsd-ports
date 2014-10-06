@@ -37,12 +37,6 @@ man/man8/clamd.8.gz
 @sample etc/clamd.conf.sample
 @sample etc/freshclam.conf.sample
 %%MILTER%%@sample etc/clamav-milter.conf.sample
-@cwd /
-@owner %%CLAMAVUSER%%
-@group %%CLAMAVGROUP%%
-@dirrmtry %%DBDIR%%
-@dirrmtry %%LOGDIR%%
-@dirrmtry %%RUNDIR%%
-@group
-@owner
-@cwd %%RESETPREFIX%%
+@dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%DBDIR%%
+@dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%LOGDIR%%
+@dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%RUNDIR%%

@@ -36,5 +36,3 @@ share/pixmaps/sdl_lopan.png
 %%DATADIR%%/data/bg9.pcx
 %%DATADIR%%/data/tiles0.pcx
 %%DATADIR%%/data/tiles1.pcx
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

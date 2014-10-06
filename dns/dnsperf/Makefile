@@ -3,7 +3,7 @@
 
 PORTNAME=	dnsperf
 PORTVERSION=	2.0.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns benchmarks net
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Accurate performance metrics of Domain Name Services
 
-BUILD_DEPENDS=	isc-config.sh:${PORTSDIR}/dns/bind98
+BUILD_DEPENDS=	isc-config.sh:${PORTSDIR}/dns/bind910
 
 USES=		iconv
 GNU_CONFIGURE=	yes

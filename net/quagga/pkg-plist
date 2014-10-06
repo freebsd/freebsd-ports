@@ -2,7 +2,7 @@ sbin/babeld
 sbin/bgpd
 %%ISISD%%sbin/isisd
 sbin/ospf6d
-%%OSPFAPI%%sbin/ospfclient
+%%OSPF_OPAQUE_LSA%%sbin/ospfclient
 sbin/ospfd
 sbin/ripd
 sbin/ripngd
@@ -13,10 +13,10 @@ lib/libospf.a
 lib/libospf.so
 lib/libospf.so.0
 lib/libospf.so.0.0.0
-%%OSPFAPI%%lib/libospfapiclient.a
-%%OSPFAPI%%lib/libospfapiclient.so
-%%OSPFAPI%%lib/libospfapiclient.so.0
-%%OSPFAPI%%lib/libospfapiclient.so.0.0.0
+%%OSPF_OPAQUE_LSA%%lib/libospfapiclient.a
+%%OSPF_OPAQUE_LSA%%lib/libospfapiclient.so
+%%OSPF_OPAQUE_LSA%%lib/libospfapiclient.so.0
+%%OSPF_OPAQUE_LSA%%lib/libospfapiclient.so.0.0.0
 lib/libzebra.a
 lib/libzebra.so
 lib/libzebra.so.0
@@ -32,13 +32,14 @@ include/quagga/if.h
 include/quagga/if_rmap.h
 include/quagga/jhash.h
 include/quagga/keychain.h
+include/quagga/libospf.h
 include/quagga/linklist.h
 include/quagga/log.h
 include/quagga/md5.h
 include/quagga/memory.h
 include/quagga/memtypes.h
 include/quagga/network.h
-%%OSPFAPI%%include/quagga/ospfapi/ospf_apiclient.h
+%%OSPF_OPAQUE_LSA%%include/quagga/ospfapi/ospf_apiclient.h
 include/quagga/ospfd/ospf_api.h
 include/quagga/ospfd/ospf_asbr.h
 include/quagga/ospfd/ospf_dump.h
@@ -81,20 +82,13 @@ include/quagga/zebra.h
 %%EXAMPLESDIR%%/zebra.conf.sample
 man/man1/vtysh.1.gz
 man/man8/bgpd.8.gz
+%%ISISD%%man/man8/isisd.8.gz
 man/man8/ospf6d.8.gz
 man/man8/ospfd.8.gz
-%%OSPFAPI%%man/man8/ospfclient.8.gz
+%%OSPF_OPAQUE_LSA%%man/man8/ospfclient.8.gz
 man/man8/ripd.8.gz
 man/man8/ripngd.8.gz
 man/man8/watchquagga.8.gz
 man/man8/zebra.8.gz
-@dirrm include/quagga/ospfd
-%%OSPFAPI%%@dirrm include/quagga/ospfapi
-@dirrm include/quagga
-@dirrm share/examples/quagga
-@owner %%ENABLE_USER%%
-@group %%ENABLE_GROUP%%
-@dirrmtry %%LOCALSTATE_DIR%%
-@dirrmtry %%ETCDIR%%
-@group wheel
-@owner root
+@dir(%%ENABLE_USER%%,%%ENABLE_GROUP%%,750) %%LOCALSTATE_DIR%%
+@dir(%%ENABLE_USER%%,%%ENABLE_GROUP%%,750) %%ETCDIR%%

@@ -64,6 +64,3 @@ bin/gemdropx
 %%DATADIR%%/sounds/wildcard.wav
 %%DATADIR%%/sounds/win.wav
 share/pixmaps/gemdropx.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

@@ -5,11 +5,17 @@ lib/shotwell/plugins/builtin/facebook_publishing_options_pane.glade
 lib/shotwell/plugins/builtin/flickr.png
 lib/shotwell/plugins/builtin/flickr_pin_entry_pane.glade
 lib/shotwell/plugins/builtin/flickr_publishing_options_pane.glade
+lib/shotwell/plugins/builtin/gallery3.png
+lib/shotwell/plugins/builtin/gallery3_authentication_pane.glade
+lib/shotwell/plugins/builtin/gallery3_publishing_options_pane.glade
 lib/shotwell/plugins/builtin/picasa.png
 lib/shotwell/plugins/builtin/picasa_publishing_options_pane.glade
 lib/shotwell/plugins/builtin/piwigo.png
 lib/shotwell/plugins/builtin/piwigo_authentication_pane.glade
 lib/shotwell/plugins/builtin/piwigo_publishing_options_pane.glade
+lib/shotwell/plugins/builtin/rajce.png
+lib/shotwell/plugins/builtin/rajce_authentication_pane.glade
+lib/shotwell/plugins/builtin/rajce_publishing_options_pane.glade
 lib/shotwell/plugins/builtin/shotwell-data-imports.so
 lib/shotwell/plugins/builtin/shotwell-publishing-extras.so
 lib/shotwell/plugins/builtin/shotwell-publishing.so
@@ -147,6 +153,44 @@ share/gnome/help/shotwell/es/share-upload.page
 share/gnome/help/shotwell/es/view-displaying.page
 share/gnome/help/shotwell/es/view-information.page
 share/gnome/help/shotwell/es/view-sidebar.page
+share/gnome/help/shotwell/hu/edit-adjustments.page
+share/gnome/help/shotwell/hu/edit-crop.page
+share/gnome/help/shotwell/hu/edit-enhance.page
+share/gnome/help/shotwell/hu/edit-external.page
+share/gnome/help/shotwell/hu/edit-nondestructive.page
+share/gnome/help/shotwell/hu/edit-redeye.page
+share/gnome/help/shotwell/hu/edit-rotate.page
+share/gnome/help/shotwell/hu/edit-straighten.page
+share/gnome/help/shotwell/hu/edit-time-date.page
+share/gnome/help/shotwell/hu/edit-undo.page
+share/gnome/help/shotwell/hu/formats.page
+share/gnome/help/shotwell/hu/import-camera.page
+share/gnome/help/shotwell/hu/import-f-spot.page
+share/gnome/help/shotwell/hu/import-file.page
+share/gnome/help/shotwell/hu/import-memorycard.page
+share/gnome/help/shotwell/hu/index.page
+share/gnome/help/shotwell/hu/organize-event.page
+share/gnome/help/shotwell/hu/organize-flag.page
+share/gnome/help/shotwell/hu/organize-rating.page
+share/gnome/help/shotwell/hu/organize-remove.page
+share/gnome/help/shotwell/hu/organize-search.page
+share/gnome/help/shotwell/hu/organize-tag.page
+share/gnome/help/shotwell/hu/organize-title.page
+share/gnome/help/shotwell/hu/other-files.page
+share/gnome/help/shotwell/hu/other-missing.page
+share/gnome/help/shotwell/hu/other-multiple.page
+share/gnome/help/shotwell/hu/other-plugins.page
+share/gnome/help/shotwell/hu/raw.page
+share/gnome/help/shotwell/hu/running.page
+share/gnome/help/shotwell/hu/share-background.page
+share/gnome/help/shotwell/hu/share-export.page
+share/gnome/help/shotwell/hu/share-print.page
+share/gnome/help/shotwell/hu/share-send.page
+share/gnome/help/shotwell/hu/share-slideshow.page
+share/gnome/help/shotwell/hu/share-upload.page
+share/gnome/help/shotwell/hu/view-displaying.page
+share/gnome/help/shotwell/hu/view-information.page
+share/gnome/help/shotwell/hu/view-sidebar.page
 share/icons/hicolor/16x16/apps/shotwell.svg
 share/icons/hicolor/24x24/apps/shotwell.svg
 share/icons/hicolor/scalable/apps/shotwell.svg
@@ -169,6 +213,7 @@ share/locale/et/LC_MESSAGES/shotwell.mo
 share/locale/eu/LC_MESSAGES/shotwell.mo
 share/locale/fi/LC_MESSAGES/shotwell.mo
 share/locale/fr/LC_MESSAGES/shotwell.mo
+share/locale/gd/LC_MESSAGES/shotwell.mo
 share/locale/gl/LC_MESSAGES/shotwell.mo
 share/locale/gu/LC_MESSAGES/shotwell.mo
 share/locale/he/LC_MESSAGES/shotwell.mo
@@ -202,6 +247,7 @@ share/locale/ru/LC_MESSAGES/shotwell.mo
 share/locale/sk/LC_MESSAGES/shotwell.mo
 share/locale/sl/LC_MESSAGES/shotwell.mo
 share/locale/sr/LC_MESSAGES/shotwell.mo
+share/locale/sr@latin/LC_MESSAGES/shotwell.mo
 share/locale/sv/LC_MESSAGES/shotwell.mo
 share/locale/ta/LC_MESSAGES/shotwell.mo
 share/locale/te/LC_MESSAGES/shotwell.mo
@@ -283,18 +329,3 @@ share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 %%DATADIR%%/ui/tags.ui
 %%DATADIR%%/ui/top.ui
 %%DATADIR%%/ui/trash.ui
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/shotwell/C/figures
-@dirrm share/gnome/help/shotwell/C
-@dirrm share/gnome/help/shotwell/es
-@dirrm share/gnome/help/shotwell/el
-@dirrm share/gnome/help/shotwell
-@dirrmtry share/appdata
-@dirrm libexec/shotwell
-@dirrm lib/shotwell/plugins/builtin
-@dirrm lib/shotwell/plugins
-@dirrm lib/shotwell
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

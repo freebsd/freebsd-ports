@@ -3,7 +3,7 @@
 
 PORTNAME=	lib3ds
 PORTVERSION=	1.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -12,12 +12,13 @@ COMMENT=	Library for handling 3DS (3D Studio) files
 
 LICENSE=	LGPL21 # (or later)
 
-USES=		zip
-USE_GL=		glut
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool zip
+USE_GL=		glut
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	protobuf-c
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${GITHUB_USER}/${GITHUB_REPO}/releases/download/v${PORTVERSION}/ \
 		http://github.com/${GITHUB_USER}/${GITHUB_REPO}/releases/download/v${PORTVERSION}/

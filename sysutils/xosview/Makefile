@@ -3,7 +3,7 @@
 
 PORTNAME=	xosview
 PORTVERSION=	1.16
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pogo.org.uk/~mark/xosview/releases/
 

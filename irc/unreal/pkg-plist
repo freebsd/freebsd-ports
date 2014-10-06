@@ -128,16 +128,13 @@ libexec/ircd
 %%EXAMPLESDIR%%/unrealircd.conf
 %%SQLMOD%%%%ETCDIR%%/m_sqlmod.conf
 %%SQLMOD%%lib/Unreal/m_sqlmod.so
-@dirrmtry lib/Unreal
-@dirrmtry %%EXAMPLESDIR%%/aliases
-@dirrmtry %%EXAMPLESDIR%%
 @owner ircd
 @group ircd
-@dirrmtry %%ETCDIR%%/aliases
-@dirrmtry %%ETCDIR%%
-@unexec rmdir "/var/log/ircd" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/ircd/tmp" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/ircd" >/dev/null 2>&1 || :
+@dir %%ETCDIR%%/aliases
+@dir %%ETCDIR%%
+@dir /var/log/ircd
+@dir /var/run/ircd/tmp
+@dir /var/run/ircd
 @unexec if cmp -s %D/etc/Unreal/aliases/aliases.conf %D/%%EXAMPLESDIR%%/aliases/aliases.conf; then rm -f %D/etc/Unreal/aliases/aliases.conf; fi
 @exec [ -f %D/etc/Unreal/aliases/aliases.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/aliases.conf %D/etc/Unreal/aliases/aliases.conf
 @unexec if cmp -s %D/etc/Unreal/aliases/atheme.conf %D/%%EXAMPLESDIR%%/aliases/atheme.conf; then rm -f %D/etc/Unreal/aliases/atheme.conf; fi

@@ -3,6 +3,7 @@
 
 PORTNAME=	plexmediaserver
 PORTVERSION=	0.9.10.1.585
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.plexapp.com/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
 PKGNAMESUFFIX=	-plexpass
@@ -15,6 +16,7 @@ USES=		tar:bzip2
 PLEX_BUILD=	f31034e
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}
+BUNDLE_LIBS=	yes
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 

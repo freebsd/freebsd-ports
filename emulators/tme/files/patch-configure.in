@@ -1,6 +1,6 @@
 --- configure.in.orig
 +++ configure.in
-@@ -599,7 +599,7 @@
+@@ -599,18 +599,16 @@
  esac
  changequote([, ])dnl
  AC_MSG_RESULT([${misc_hosts}])
@@ -9,7 +9,21 @@
      misc_hosts=
  fi
  
-@@ -683,11 +683,8 @@
+ dnl Configure for libtool.
+-AC_LIBLTDL_INSTALLABLE
++LT_CONFIG_LTDL_DIR([libltdl])
++LT_INIT([dlopen])
++LTDL_INIT([installable])
+ AC_SUBST(INCLTDL)
+ AC_SUBST(LIBLTDL)
+-AC_LIBTOOL_DLOPEN
+-AM_PROG_LIBTOOL
+-AC_SUBST(LTLIBOBJS)
+-AC_CONFIG_SUBDIRS(libltdl)
+ TME_PREOPEN=
+ if test $enable_shared = no; then
+   TME_PREOPEN='`sort -u $(top_builddir)/tme-preopen.txt`'
+@@ -683,11 +681,8 @@
  #define _TMECONFIG_H
  
  TMEEOF

@@ -680,6 +680,7 @@
     SUBDIR += postgresql93-plperl
     SUBDIR += postgresql93-plpython
     SUBDIR += postgresql93-pltcl
+    SUBDIR += postgresql93-plv8js
     SUBDIR += postgresql93-server
     SUBDIR += postgresql94-client
     SUBDIR += postgresql94-contrib
@@ -861,12 +862,14 @@
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-familia
+    SUBDIR += rubygem-hiredis
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-leo_manager_client
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-mysql
     SUBDIR += rubygem-mysql2
+    SUBDIR += rubygem-openid-redis-store
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis

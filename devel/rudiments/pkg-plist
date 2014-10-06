@@ -209,9 +209,6 @@ include/rudiments/xmlsax.h
 lib/librudiments-%%VERSION%%.so.1
 lib/librudiments-%%VERSION%%.so.1.0.0
 lib/librudiments.a
-lib/librudiments.la
 lib/librudiments.so
 libdata/pkgconfig/rudiments.pc
 man/man1/rudiments-config.1.gz
-@dirrm include/rudiments/private
-@dirrm include/rudiments

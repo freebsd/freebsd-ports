@@ -5,6 +5,7 @@ include/xmlrpc-c/abyss_unixsock.h
 include/xmlrpc-c/abyss_winsock.h
 include/xmlrpc-c/base.h
 include/xmlrpc-c/base.hpp
+include/xmlrpc-c/base64.hpp
 include/xmlrpc-c/c_util.h
 include/xmlrpc-c/client.h
 include/xmlrpc-c/client.hpp
@@ -104,4 +105,3 @@ lib/libxmlrpc_xmltok.a
 lib/libxmlrpc_xmltok.so
 lib/libxmlrpc_xmltok.so.3
 lib/libxmlrpc_xmltok.so.3.25
-@dirrm include/xmlrpc-c

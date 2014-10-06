@@ -11,19 +11,17 @@ COMMENT=	IRC chat program with GTK and Text Frontend
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
 USES=		gmake desktop-file-utils libtool pkgconfig tar:xz
 USE_GNOME=	gtk20 libxml2
-USE_AUTOTOOLS=	automake autoconf libtoolize
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-openssl --enable-gtkfe --disable-sysinfo \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
-MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
-LDFLAGS+=	-pthread
+CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
 
 SUB_FILES=	pkg-message
@@ -81,9 +79,6 @@ USES+=		perl5
 USE_GNOME+=	gconf2
 .endif
 
-pre-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^appdata_DATA/s|hexchat.appdata.xml||' \
 		${WRKSRC}/data/misc/Makefile.in
@@ -91,20 +86,11 @@ post-patch:
 		${WRKSRC}/src/common/server.c
 
 post-install:
-# Ugly CP and RM, only this works. Not works pathfix,
-# --localedir=${LOCALBASE}/share/locale and patching.
-# Upstream can't fix this and think that glib-gettextize (devel/glib20)
-# is broken in FreeBSD.
-	@${CP} -a ${STAGEDIR}/usr/local/lib/locale/* ${STAGEDIR}/usr/local/share/locale/
-	@${RM} -fr ${STAGEDIR}/usr/local/lib/locale/
-
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
 .endif
-#	@(cd ${PREFIX}/lib/hexchat/plugins/ && ${RM} -f *.a)
 
 .include <bsd.port.mk>

@@ -15,7 +15,3 @@ share/pixmaps/vectoroids.png
 %%DATADIR%%/sounds/extralife.wav
 %%DATADIR%%/sounds/gameover.wav
 %%DATADIR%%/sounds/thrust.wav
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

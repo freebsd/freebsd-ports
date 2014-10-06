@@ -74,7 +74,6 @@
     SUBDIR += gnome-epub-thumbnailer
     SUBDIR += gnome-font-viewer
     SUBDIR += gnome-initial-setup
-    SUBDIR += gnome-main-menu
     SUBDIR += gnome-maps
     SUBDIR += gnome-photos
     SUBDIR += gnome-screenshot

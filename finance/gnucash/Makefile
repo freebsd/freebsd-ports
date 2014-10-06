@@ -3,6 +3,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -12,22 +13,25 @@ COMMENT=	Quicken-like money and finance manager
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile2
 LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
 		libgoffice-0.8.so:${PORTSDIR}/devel/goffice
-RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile2 \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Finance-Quote>=0:${PORTSDIR}/finance/p5-Finance-Quote
 
 OPTIONS_DEFINE=	AQBANKING OFX DATABASE LOCALE_TAX PYTHON GTKMM DOCS
+OPTIONS_SINGLE=	GV
+OPTIONS_SINGLE_GV=	GUILE1 GUILE2
+OPTIONS_DEFAULT=	GUILE1
 
 AQBANKING_DESC=	AqBanking support (HBCI/OpenHBCI)
 OFX_DESC=	OFX support
 DATABASE_DESC=	Enable SQL database backends
 LOCALE_TAX_DESC=	Enable localized tax categories
 GTKMM_DESC=	Enable GTKMM based UI
+GUILE1_DESC=	Use lang/guile
+GUILE2_DESC=	Use lang/guile2
 
 OPTIONS_SUB=		yes
 AQBANKING_CONFIGURE_ENABLE=aqbanking
@@ -47,6 +51,12 @@ PYTHON_USE=		PYTHON=yes
 GTKMM_USE=		GNOME=gtkmm24
 GTKMM_CONFIGURE_ON=	--enable-gtkmm
 GTKMM_CONFIGURE_OFF=	--disable-gtkmm
+GUILE1_LIB_DEPENDS=     libguile.so:${PORTSDIR}/lang/guile
+GUILE1_BUILD_DEPENDS=	${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
+GUILE1_RUN_DEPENDS=	${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
+GUILE2_LIB_DEPENDS=     libguile-2.0.so:${PORTSDIR}/lang/guile2
+GUILE2_BUILD_DEPENDS=	${LOCALBASE}/share/guile/2.0/slibcat:${PORTSDIR}/lang/slib-guile2
+GUILE2_RUN_DEPENDS=	${LOCALBASE}/share/guile/2.0/slibcat:${PORTSDIR}/lang/slib-guile2
 
 USE_XORG=	x11
 USES=		desktop-file-utils gettext gmake libtool perl5 pkgconfig shebangfix tar:bzip2

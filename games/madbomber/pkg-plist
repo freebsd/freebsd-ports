@@ -126,16 +126,3 @@ bin/madbomber
 %%DATADIR%%/sounds/splash8.wav
 %%DATADIR%%/sounds/spray.wav
 share/pixmaps/madbomber.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/images/title
-@dirrm %%DATADIR%%/images/options
-@dirrm %%DATADIR%%/images/highscore
-@dirrm %%DATADIR%%/images/game/numbers
-@dirrm %%DATADIR%%/images/game/drop
-@dirrm %%DATADIR%%/images/game/bucket
-@dirrm %%DATADIR%%/images/game/bomber
-@dirrm %%DATADIR%%/images/game/bomb
-@dirrm %%DATADIR%%/images/game
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

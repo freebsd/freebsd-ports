@@ -4,7 +4,6 @@ sbin/collectdmon
 @sample etc/collectd.conf.sample
 %%CGI%%%%WWWDIR%%/collection.cgi
 %%CGI%%@sample %%WWWDIR%%/collection.conf.sample
-%%CGI%%@dirrmtry %%WWWDIR%%
 bin/collectd-nagios
 lib/libcollectdclient.so
 lib/libcollectdclient.so.0
@@ -76,6 +75,3 @@ man/man5/collectd.conf.5.gz
 man/man5/types.db.5.gz
 %%DATADIR%%/postgresql_default.conf
 %%DATADIR%%/types.db
-@dirrm lib/collectd
-@dirrm include/collectd
-@dirrm %%DATADIR%%

@@ -120,6 +120,7 @@
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
     SUBDIR += py-libturpial
+    SUBDIR += py-nbxmpp
     SUBDIR += py-punjab
     SUBDIR += py-pyxmpp
     SUBDIR += py-skype4py
@@ -155,6 +156,7 @@
     SUBDIR += telepathy-rakia
     SUBDIR += telepathy-salut
     SUBDIR += telepathy-sofiasip
+    SUBDIR += tg
     SUBDIR += tkabber
     SUBDIR += tkabber-plugins
     SUBDIR += tkabbur

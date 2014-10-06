@@ -29,9 +29,3 @@ share/gtk-doc/html/gssdp/right.png
 share/gtk-doc/html/gssdp/style.css
 share/gtk-doc/html/gssdp/up-insensitive.png
 share/gtk-doc/html/gssdp/up.png
-@dirrmtry share/gtk-doc/html/gssdp
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-%%GTK3%%@dirrm %%DATADIR%%
-@dirrmtry include/gssdp-1.0/libgssdp
-@dirrmtry include/gssdp-1.0

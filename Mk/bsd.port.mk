@@ -1080,6 +1080,7 @@ MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
 				HOME=${WRKDIR}
 QA_ENV+=	STAGEDIR=${STAGEDIR} \
 			PREFIX=${PREFIX} \
+			LINUXBASE=${LINUXBASE} \
 			LOCALBASE=${LOCALBASE} \
 			"STRIP=${STRIP}" \
 			TMPPLIST=${TMPPLIST}
@@ -1198,11 +1199,7 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/
 .elif exists(${SRC_BASE}/sys/sys/param.h)
 OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC_BASE}/sys/sys/param.h
 .else
-.if 0
 .error Unable to determine OS version.  Either define OSVERSION, install /usr/include/sys/param.h or define SRC_BASE.
-.else
-OSVERSION!=	${SYSCTL} -n kern.osreldate
-.endif
 .endif
 .endif
 
@@ -1217,12 +1214,10 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 
 # Enable new xorg for FreeBSD versions after Radeon KMS was imported unless
 # WITHOUT_NEW_XORG is set.
-.if ${OSVERSION} >= 902510
-. if !defined(WITHOUT_NEW_XORG)
+.if !defined(WITHOUT_NEW_XORG)
 WITH_NEW_XORG?=	yes
-. else
+.else
 .undef WITH_NEW_XORG
-. endif
 .endif
 
 # Only define tools here (for transition period with between pkg tools)
@@ -1546,6 +1541,11 @@ PKGNG_ORIGIN=	${PKG_ORIGIN}
 WITH_PKGNG?=	yes
 WITH_PKG?=	${WITH_PKGNG}
 
+.if defined(BUNDLE_LIBS)
+PKG_NOTES+=	no_provide_shlib
+PKG_NOTE_no_provide_shlib=	yes
+.endif
+
 .endif
 # End of pre-makefile section.
 
@@ -1805,9 +1805,6 @@ MAKE_ENV+=	${DESTDIRNAME}=${STAGEDIR}
 .else
 MAKE_ARGS+=	${DESTDIRNAME}=${STAGEDIR}
 .endif
-
-CO_ENV+=	PACKAGE_DEPENDS="${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,}" \
-		PKG_QUERY="${PKG_QUERY}"
 
 .if defined(NO_PREFIX_RMDIR)
 CO_ENV+=	NO_PREFIX_RMDIR=1

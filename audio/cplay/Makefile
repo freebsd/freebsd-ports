@@ -12,8 +12,7 @@ COMMENT=	Curses-based front-end for various audio players
 
 LICENSE=	GPLv2
 
-USES=		gettext gmake
-USE_PYTHON=	yes
+USES=		gettext gmake python:2
 
 MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
 

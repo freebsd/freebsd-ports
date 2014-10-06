@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	PHP PYTHON RUBY
 OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		gmake libtool tar:bzip2
 
@@ -32,9 +33,5 @@ RUBY_BUILD_DEPENDS=	${LOCALBASE}/bin/swig1.3:${PORTSDIR}/devel/swig13
 RUBY_CONFIGURE_ENABLE=	ruby
 RUBY_CONFIGURE_ENV=	RUBY="${RUBY}"
 RUBY_USE=		RUBY=yes
-
-post-install:
-	${LN} -s ${PREFIX}/lib/libgeos-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libgeos.so.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgeos-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libgeos_c.so.1.8.2
 
 .include <bsd.port.mk>

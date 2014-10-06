@@ -15,7 +15,8 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Chess variant designed to be short and fun for all players
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_SDL=	sdl image
 INSTALLS_ICONS=	yes

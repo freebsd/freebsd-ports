@@ -3,7 +3,7 @@
 
 PORTNAME=	taucs
 PORTVERSION=	2.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math
 MASTER_SITES=	http://www.tau.ac.il/~stoledo/taucs/${PORTVERSION}/ \
 		LOCAL/bf
@@ -17,12 +17,11 @@ LIB_DEPENDS=	libmetis.so:${PORTSDIR}/math/metis4
 HAS_CONFIGURE=	yes
 USES=		fortran tar:tgz
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIBMETIS?=	-lmetis
@@ -54,11 +53,6 @@ PICFLAG?=	-fPIC
 PICFLAG?=	-fpic
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKSRC}; cd ${WRKSRC}; ${EXTRACT_CMD} \
-	${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-	${EXTRACT_AFTER_ARGS}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/succedd/succeed/' \
 		${WRKSRC}/progs/taucs_blas_underscore_test.c
@@ -66,47 +60,51 @@ post-patch:
 		${WRKSRC}/progs/test_linsolve.c
 
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} ./configure
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} ./configure)
 
 post-configure:
 	@${CP} -r ${WRKSRC} ${WRKSRC}_SHARED
 
 archives: configure
 	@${PRINTF} "\n\n%s\n\n\n" "Building libtaucs archives:"
-	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} \
-	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} lib/FreeBSD/libtaucs.a
-	@cd ${WRKSRC}_SHARED ; ${SETENV} ${MAKE_ENV} \
-	PICFLAG="${PICFLAG}" \
-	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} lib/FreeBSD/libtaucs.a
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} lib/FreeBSD/libtaucs.a)
+	(cd ${WRKSRC}_SHARED && ${SETENV} ${MAKE_ENV} PICFLAG="${PICFLAG}" \
+		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} lib/FreeBSD/libtaucs.a)
 
 lib: archives
 	@${PRINTF} "\n\n%s\n\n\n" "Building shared library:"
-	cd ${WRKSRC}_SHARED/lib/FreeBSD ; ${FC} ${FFLAGS} ${PICFLAG} ${LDFLAGS} \
-	-shared -o libtaucs.so.1 -Wl,-x -Wl,-soname,libtaucs.so.1 -Wl,--whole-archive \
-	libtaucs.a -Wl,--no-whole-archive
-	@${LN} -sf libtaucs.so.1 ${WRKSRC}_SHARED/lib/FreeBSD/libtaucs.so
+	(cd ${WRKSRC}_SHARED/lib/FreeBSD && \
+		${FC} ${FFLAGS} ${PICFLAG} ${LDFLAGS} -shared \
+		-o libtaucs.so.1 -Wl,-x -Wl,-soname,libtaucs.so.1 \
+		-Wl,--whole-archive libtaucs.a -Wl,--no-whole-archive)
+	${STRIP_CMD} ${WRKSRC}_SHARED/lib/FreeBSD/libtaucs.so.1
 
 bins: lib
 	@${PRINTF} "\n\n%s\n\n\n" "Building (dynamically-linked) executables:"
 #for the second pass through WRKSRC_SHARED, use a nonexistent MAKEOBJDIR to
 #prevent make from entering the obj subdirectories and breaking the build (see,
 #for example, the description of .OBJDIR in make(1)):
-	@cd ${WRKSRC}_SHARED ; ${SETENV} ${MAKE_ENV} \
-	MAKEOBJDIR="${NONEXISTENT}" \
-	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ${BINS:S|^|bin/FreeBSD/|}
+	(cd ${WRKSRC}_SHARED && \
+		${SETENV} ${MAKE_ENV} MAKEOBJDIR="${NONEXISTENT}" \
+		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ${BINS:S|^|bin/FreeBSD/|})
 
 do-build: bins
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libtaucs.a ${STAGEDIR}${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}_SHARED/lib/FreeBSD/libtaucs.so.1 ${STAGEDIR}${PREFIX}/lib
-	@${LN} -sf libtaucs.so.1 ${STAGEDIR}${PREFIX}/lib/libtaucs.so
-	@${INSTALL_DATA} ${WRKSRC}/build/FreeBSD/*.h ${STAGEDIR}${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/src/*.h ${STAGEDIR}${PREFIX}/include
-	@cd ${WRKSRC}_SHARED/bin/FreeBSD; ${INSTALL_PROGRAM} ${BINS} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libtaucs.a \
+		${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}_SHARED/lib/FreeBSD/libtaucs.so.1 \
+		${STAGEDIR}${PREFIX}/lib
+	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s libtaucs.so.1 libtaucs.so)
+	${INSTALL_DATA} ${WRKSRC}/build/FreeBSD/*.h \
+		${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/src/*.h ${STAGEDIR}${PREFIX}/include
+	(cd ${WRKSRC}_SHARED/bin/FreeBSD && \
+		${INSTALL_PROGRAM} ${BINS} ${STAGEDIR}${PREFIX}/bin)
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 check test: build
@@ -129,4 +127,4 @@ check test: build
 regression-test: check
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

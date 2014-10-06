@@ -55,8 +55,6 @@ man/man8/dccifd.8.gz
 man/man8/dccm.8.gz
 man/man8/dccproc.8.gz
 man/man8/dccsight.8.gz
-@dirrm dcc/libexec
-@dirrm dcc/cgi-bin
 %%ALT_HOME%%@dirrmtry dcc
 %%ALT_HOME%%@cwd /var
 @owner %%DCCUSER%%

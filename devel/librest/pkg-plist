@@ -58,11 +58,3 @@ share/gtk-doc/html/rest-0.7/rest-RestParams.html
 share/gtk-doc/html/rest-0.7/right.png
 share/gtk-doc/html/rest-0.7/style.css
 share/gtk-doc/html/rest-0.7/up.png
-@dirrm share/gtk-doc/html/rest-0.7
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrmtry share/gir-1.0
-@dirrmtry lib/girepository-1.0
-@dirrm include/rest-0.7/rest-extras
-@dirrm include/rest-0.7/rest
-@dirrm include/rest-0.7

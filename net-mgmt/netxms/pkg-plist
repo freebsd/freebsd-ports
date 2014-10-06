@@ -1,18 +1,14 @@
 %%SERVER%%bin/nxap
-%%SERVER%%bin/nxappget
-%%SERVER%%bin/nxapush
-%%SERVER%%bin/nxencpasswd
-%%AGENT%%bin/nxappget
-%%AGENT%%bin/nxapush
+%%NXCP%%bin/nxappget
+%%NXCP%%bin/nxapush
 %%SERVER%%bin/nxaction
 %%SERVER%%bin/nxadm
 %%SERVER%%bin/netxmsd
-%%AGENT%%bin/nxagentd
-%%SERVER%%bin/nxagentd
+%%NXCP%%bin/nxagentd
 %%CLIENT%%bin/nxalarm
 %%CLIENT%%bin/nxdevcfg
 %%SERVER%%bin/nxdbmgr
-%%AGENT%%bin/nxencpasswd
+%%NXCP%%bin/nxencpasswd
 %%CLIENT%%bin/nxevent
 %%SERVER%%bin/nxget
 %%SERVER%%bin/nxmibc
@@ -23,67 +19,51 @@
 %%SERVER%%bin/nxsnmpset
 %%SERVER%%bin/nxsnmpwalk
 %%SERVER%%bin/nxupload
-%%SERVER%%etc/netxmsd.conf-dist
-%%SERVER%%etc/nxagentd.conf-dist
-%%AGENT%%etc/nxagentd.conf-dist
+%%SERVER%%@sample etc/netxmsd.conf.sample
+%%NXCP%%@sample etc/nxagentd.conf.sample
 lib/libnetxms.so
 lib/libnetxms.so.1
 lib/libnetxms.so.1.0.0
 %%CLIENT%%lib/libnxtre.so
 %%CLIENT%%lib/libnxtre.so.5
-%%AGENT%%lib/libnxsqlite.so
-%%AGENT%%lib/libnxsqlite.so.1
+%%NXCP%%lib/libnxsqlite.so
+%%NXCP%%lib/libnxsqlite.so.1
 %%AGENT%%lib/libnxsqlite.so.1.0.0
-%%AGENT%%lib/libnxdb.so
-%%AGENT%%lib/libnxdb.so.1
+%%NXCP%%lib/libnxdb.so
+%%NXCP%%lib/libnxdb.so.1
 %%AGENT%%lib/libnxdb.so.1.0.0
 %%AGENT%%lib/libnxtre.so.5.0.0
 %%AGENT%%lib/netxms/devemu.nsm
-%%AGENT%%lib/libappagent.so
-%%AGENT%%lib/libappagent.so.1
+%%NXCP%%lib/libappagent.so
+%%NXCP%%lib/libappagent.so.1
 %%AGENT%%lib/libappagent.so.1.0.0
 %%SERVER%%lib/libavaya-ers.so
 %%SERVER%%lib/libcisco.so
-%%AGENT%%lib/libnsm_dbquery.so
-%%SERVER%%lib/libnsm_ecs.so
-%%SERVER%%lib/libnsm_freebsd.so
-%%SERVER%%lib/libnsm_logwatch.so
-%%SERVER%%lib/libnsm_ping.so
-%%AGENT%%lib/libnsm_portcheck.so
+%%NXCP%%lib/libnsm_dbquery.so
+%%SERVER%%lib/libnsm_filemgr.so
+%%NXCP%%lib/libnsm_portcheck.so
 %%AGENT%%lib/libnsm_devemu.so
 %%AGENT%%lib/libnxjansson.so
 %%AGENT%%lib/libnxjansson.so.4
 %%AGENT%%lib/libnxjansson.so.4.6.0
-%%SERVER%%lib/libnsm_sms.so
-%%SERVER%%lib/libnsm_ups.so
-%%SERVER%%lib/libnxdb.so
-%%SERVER%%lib/libnxdb.so.1
-%%AGENT%%lib/libnxsd.so
-%%AGENT%%lib/libnxsd.so.1
+%%NXCP%%lib/libnxsd.so
+%%NXCP%%lib/libnxsd.so.1
 %%AGENT%%lib/libnxsd.so.1.0.0
-%%SERVER%%lib/libappagent.so
-%%SERVER%%lib/libappagent.so.1
-%%SERVER%%lib/libnsm_dbquery.so
-%%SERVER%%lib/libnsm_portcheck.so
-%%SERVER%%lib/libnxsd.so
-%%SERVER%%lib/libnxsd.so.1
 %%SERVER%%lib/libnxsms_dummy.so
 %%SERVER%%lib/libnxsms_dummy.so.1
 %%SERVER%%lib/libnxsms_dummy.so.1.0.0
 %%SERVER%%lib/libnxsms_portech.so
 %%SERVER%%lib/libnxsms_portech.so.1
 %%SERVER%%lib/libnxsms_portech.so.1.0.0
-%%SERVER%%lib/libnxsqlite.so
-%%SERVER%%lib/libnxsqlite.so.1
 %%SERVER%%lib/libstrophe.so
 %%SERVER%%lib/libstrophe.so.1
 %%SERVER%%lib/libstrophe.so.1.0.0
-%%AGENT%%lib/libnsm_ecs.so
-%%AGENT%%lib/libnsm_freebsd.so
-%%AGENT%%lib/libnsm_logwatch.so
-%%AGENT%%lib/libnsm_ping.so
-%%AGENT%%lib/libnsm_sms.so
-%%AGENT%%lib/libnsm_ups.so
+%%NXCP%%lib/libnsm_ecs.so
+%%NXCP%%lib/libnsm_freebsd.so
+%%NXCP%%lib/libnsm_logwatch.so
+%%NXCP%%lib/libnsm_ping.so
+%%NXCP%%lib/libnsm_sms.so
+%%NXCP%%lib/libnsm_ups.so
 %%CLIENT%%lib/libnxcl.so
 %%CLIENT%%lib/libnxcl.so.1
 %%CLIENT%%lib/libnxcl.so.1.0.0
@@ -94,10 +74,8 @@ lib/libnetxms.so.1.0.0
 %%ODBC%%lib/libnxddr_odbc.so
 %%PGSQL%%lib/libnxddr_pgsql.so
 %%SQLITE%%lib/libnxddr_sqlite.so
-%%SERVER%%lib/libnxlp.so
-%%SERVER%%lib/libnxlp.so.1
-%%AGENT%%lib/libnxlp.so
-%%AGENT%%lib/libnxlp.so.1
+%%NXCP%%lib/libnxlp.so
+%%NXCP%%lib/libnxlp.so.1
 %%AGENT%%lib/libnxlp.so.1.0.0
 %%NXMAP%%lib/libnxmap.so
 %%NXMAP%%lib/libnxmap.so.1
@@ -117,22 +95,15 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%lib/libnxsrv.so
 %%SERVER%%lib/libnxsrv.so.1
 %%SERVER%%lib/libnxsrv.so.1.0.0
-%%AGENT%%lib/netxms/dbquery.nsm
-%%AGENT%%lib/netxms/ecs.nsm
-%%AGENT%%lib/netxms/freebsd.nsm
-%%AGENT%%lib/netxms/logwatch.nsm
-%%AGENT%%lib/netxms/ping.nsm
-%%AGENT%%lib/netxms/portcheck.nsm
-%%AGENT%%lib/netxms/sms.nsm
-%%AGENT%%lib/netxms/ups.nsm
-%%SERVER%%lib/netxms/dbquery.nsm
-%%SERVER%%lib/netxms/ecs.nsm
-%%SERVER%%lib/netxms/freebsd.nsm
-%%SERVER%%lib/netxms/logwatch.nsm
-%%SERVER%%lib/netxms/ping.nsm
-%%SERVER%%lib/netxms/portcheck.nsm
-%%SERVER%%lib/netxms/sms.nsm
-%%SERVER%%lib/netxms/ups.nsm
+%%NXCP%%lib/netxms/dbquery.nsm
+%%NXCP%%lib/netxms/ecs.nsm
+%%NXCP%%lib/netxms/freebsd.nsm
+%%NXCP%%lib/netxms/logwatch.nsm
+%%NXCP%%lib/netxms/ping.nsm
+%%NXCP%%lib/netxms/portcheck.nsm
+%%NXCP%%lib/netxms/sms.nsm
+%%NXCP%%lib/netxms/ups.nsm
+%%SERVER%%lib/netxms/filemgr.nsm
 %%SERVER%%lib/netxms/ndd/airespace.ndd
 %%SERVER%%lib/netxms/ndd/at.ndd
 %%SERVER%%lib/netxms/ndd/baystack.ndd
@@ -154,6 +125,8 @@ lib/libnetxms.so.1.0.0
 %%PGSQL%%lib/netxms/dbdrv/pgsql.ddr
 %%SQLITE%%lib/netxms/dbdrv/sqlite.ddr
 %%ODBC%%lib/netxms/dbdrv/odbc.ddr
+@owner netxms
+@group netxms
 %%SERVER%%%%DATADIR%%/backgrounds/.keep
 %%SERVER%%%%DATADIR%%/images/092e4b35-4e7c-42df-b9b7-d5805bfac64e
 %%SERVER%%%%DATADIR%%/images/1ddb76a3-a05f-4a42-acda-22021768feaf
@@ -395,6 +368,7 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%%%DATADIR%%/mibs/NETSCREEN-VR-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NETSCREEN-VSYS-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NETSWITCH-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/NETUP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NetWare-Server-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NETWORK-APPLIANCE-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/NETWORK-SERVICES-MIB.txt
@@ -581,12 +555,13 @@ lib/libnetxms.so.1.0.0
 %%SERVER%%%%DATADIR%%/sql/dbschema_oracle.sql
 %%SERVER%%%%DATADIR%%/sql/dbschema_pgsql.sql
 %%SERVER%%%%DATADIR%%/sql/dbschema_sqlite.sql
-%%AGENT%%@dirrm lib/netxms
-%%SERVER%%@dirrm lib/netxms/ndd
-%%SERVER%%@dirrm lib/netxms/dbdrv
-%%SERVER%%@dirrm lib/netxms
 %%SERVER%%@dirrmtry %%DATADIR%%/sql
 %%SERVER%%@dirrmtry %%DATADIR%%/mibs
 %%SERVER%%@dirrmtry %%DATADIR%%/images
 %%SERVER%%@dirrmtry %%DATADIR%%/backgrounds
 %%SERVER%%@dirrmtry %%DATADIR%%
+@owner root
+@group wheel
+%%SERVER%%@dirrm lib/netxms/ndd
+%%SERVER%%@dirrm lib/netxms/dbdrv
+%%NXCP%%@dirrm lib/netxms

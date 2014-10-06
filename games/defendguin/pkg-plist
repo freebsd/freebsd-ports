@@ -169,27 +169,3 @@ man/man6/defendguin.6.gz
 %%DATADIR%%/sounds/title/impatience.wav
 %%DATADIR%%/sounds/title/select.wav
 share/pixmaps/defendguin.png
-@dirrm %%DATADIR%%/sounds/title
-@dirrm %%DATADIR%%/sounds/ship
-@dirrm %%DATADIR%%/sounds/peng
-@dirrm %%DATADIR%%/sounds/gameover
-@dirrm %%DATADIR%%/sounds/evilbill
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/images/ufo
-@dirrm %%DATADIR%%/images/tux
-@dirrm %%DATADIR%%/images/title
-@dirrm %%DATADIR%%/images/swarmer
-@dirrm %%DATADIR%%/images/status
-@dirrm %%DATADIR%%/images/ship
-@dirrm %%DATADIR%%/images/points
-@dirrm %%DATADIR%%/images/pod
-@dirrm %%DATADIR%%/images/mutant
-@dirrm %%DATADIR%%/images/loader
-@dirrm %%DATADIR%%/images/land
-@dirrm %%DATADIR%%/images/evilbill
-@dirrm %%DATADIR%%/images/bullet
-@dirrm %%DATADIR%%/images/bomber
-@dirrm %%DATADIR%%/images/baiter
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

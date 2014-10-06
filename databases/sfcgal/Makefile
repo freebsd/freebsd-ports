@@ -3,7 +3,7 @@
 
 PORTNAME=	sfcgal
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases math graphics
 MASTER_SITES=	http://github.com/Oslandia/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 

@@ -148,13 +148,3 @@ sbin/zoneserver
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_full_mararc.orig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_mararc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_recursive_mararc.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/text
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc/js-manpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/misc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry etc/maradns/logger
-@dirrmtry etc/maradns

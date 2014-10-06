@@ -84,4 +84,4 @@ include/xparam_extend.h
 lib/libxparam.a
 lib/libxparam.so
 lib/libxparam.so.1
-@dirrm include/xparam
+lib/libxparam.so.1.0.0

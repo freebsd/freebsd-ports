@@ -7551,3 +7551,11 @@ x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
 x11/gnome-screensaver||2014-08-26|not used in gnome3.
 x11/zenity3|x11/zenity|2014-09-14|merged
 devel/cluttermm|graphics/cluttermm|2014-09-20|moved to beter cat
+www/rubygem-puma16||2014-10-02|Has expired: Old version no longer needed
+x11-toolkits/gnome-desktop-sharp20||2014-10-02|Removed, no users and depends on gnome-panel which will be removed
+x11-toolkits/eel||2014-10-03|Removed, doesn't build with updated gnome-desktop
+deskutils/gnome-main-menu||2014-10-03|Removed, because x11-toolkits/eel was removed
+editors/mlview||2014-10-03|Removed, because x11-toolkits/eel was removed
+textproc/gnome-translate||2014-10-03|Removed, because x11-toolkits/eel was removed
+x11/avant-window-navigator-gnome||2014-10-03|Removed doesn't build with update gnome-desktop
+www/moodle25||2014-10-05|Has expired: Upstream support ended

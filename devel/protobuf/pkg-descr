@@ -1,5 +1,5 @@
 Protocol Buffers are a way of encoding structured data in an efficient yet
-extensible format. Google uses Protocol Buffers for almost all of its
-internal RPC protocols and file formats.
+extensible format. Google uses Protocol Buffers for almost all of its internal
+RPC protocols and file formats.
 
-WWW: http://code.google.com/p/protobuf/
+WWW: https://code.google.com/p/protobuf/

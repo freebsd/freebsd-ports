@@ -48,6 +48,7 @@
 %%DATADIR%%/elk.init
 %%DATADIR%%/eval.scm
 %%DATADIR%%/factor.scm
+%%DATADIR%%/fluid-let.scm
 %%DATADIR%%/fluidlet.scm
 %%DATADIR%%/format.scm
 %%DATADIR%%/formatst.scm
@@ -58,6 +59,7 @@
 %%DATADIR%%/glob.scm
 %%DATADIR%%/grapheps.ps
 %%DATADIR%%/grapheps.scm
+%%DATADIR%%/guile-2.init
 %%DATADIR%%/guile.init
 %%DATADIR%%/hash.scm
 %%DATADIR%%/hashtab.scm
@@ -179,7 +181,7 @@
 %%DATADIR%%/vet.scm
 %%DATADIR%%/vscm.init
 %%DATADIR%%/withfile.scm
-%%DATADIR%%/wttest.scm
+%%DATADIR%%/wttree-test.scm
 %%DATADIR%%/wttree.scm
 %%DATADIR%%/xml-parse.scm
 %%DATADIR%%/yasyn.scm
@@ -187,5 +189,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

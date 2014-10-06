@@ -15,6 +15,8 @@
     SUBDIR += gnome-commander2
     SUBDIR += gprename
     SUBDIR += krusader2
+    SUBDIR += librfm
+    SUBDIR += libtubo
     SUBDIR += mtoolsfm
     SUBDIR += mucommander
     SUBDIR += nautilus

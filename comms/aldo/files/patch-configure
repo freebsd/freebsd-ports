@@ -1,0 +1,12 @@
+--- configure.orig	2007-11-05 09:22:11 UTC
++++ configure
+@@ -2220,9 +2220,6 @@ am__tar='${AMTAR} chof - "$$tardir"'; am
+ 
+ 
+ 
+-CPPFLAGS="-I${includedir}"
+-LDFLAGS="-L${libdir}"
+-LIBS="-L${libdir} ${LIBS}"
+ 
+ # Checks for programs.
+ ac_ext=cpp

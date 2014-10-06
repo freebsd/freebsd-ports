@@ -3,6 +3,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -12,10 +13,9 @@ COMMENT=	Persistent DB connection pooling/proxying/load balancing system
 LIB_DEPENDS=	librudiments.so:${PORTSDIR}/devel/rudiments
 
 WANT_GNOME=	yes
-USES=		gmake autoreconf libtool
+USES=		gmake libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=		${SQLRELAY_CONFIGURE_ENV}
 CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 			--disable-tcl \
 			--disable-java \
@@ -43,16 +43,16 @@ TOSTRIP=	bin/sqlr-start \
 		bin/sqlr-pwdenc \
 		bin/sqlr-status \
 		bin/sqlrsh \
-		lib/libsqlrutil.so.0.0.0 \
-		lib/libsqlrclient.so.0.0.0 \
-		lib/libsqlrclientwrapper.so.0.0.0 \
-		lib/libpqsqlrelay.so.0.0.0 \
-		lib/libmysql3sqlrelay.so.0.0.0 \
-		lib/libmysql40sqlrelay.so.0.0.0 \
-		lib/libmysql41sqlrelay.so.0.0.0 \
-		lib/libmysql50sqlrelay.so.0.0.0 \
-		lib/libmysql51sqlrelay.so.0.0.0 \
-		lib/libsqlrserver.so.0.0.0 \
+		lib/libsqlrutil.so.1.0.0 \
+		lib/libsqlrclient.so.1.0.0 \
+		lib/libsqlrclientwrapper.so.1.0.0 \
+		lib/libpqsqlrelay.so.1.0.0 \
+		lib/libmysql3sqlrelay.so.1.0.0 \
+		lib/libmysql40sqlrelay.so.1.0.0 \
+		lib/libmysql41sqlrelay.so.1.0.0 \
+		lib/libmysql50sqlrelay.so.1.0.0 \
+		lib/libmysql51sqlrelay.so.1.0.0 \
+		lib/libsqlrserver.so.1.0.0 \
 		libexec/sqlrelay/sqlrquery_sqlrcmdgstat.so \
 		libexec/sqlrelay/sqlrquery_sqlrcmdcstat.so \
 		libexec/sqlrelay/sqlrlogger_debug.so \
@@ -126,10 +126,6 @@ post-patch:
 		-e 's,\$$\(initroot\),\$$\(initroot\)${PREFIX},g' \
 		-e 's,/etc/rc.conf,/etc/defaults/rc.conf,g' \
 			${WRKSRC}/init/Makefile
-	${REINPLACE_CMD} -E \
-		-e 's,/usr/local[[:>:]],${PREFIX},g;' \
-		-e 's,[[:<:]]gtk-config[[:>:]],${GTK_CONFIG:T},g;' \
-			${WRKSRC}/acsite.m4
 	@${REINPLACE_CMD} -e '/EXAMPLEDIR/d' ${WRKSRC}/etc/Makefile
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'

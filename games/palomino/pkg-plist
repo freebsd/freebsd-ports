@@ -440,32 +440,3 @@ bin/palomino
 %%DATADIR%%/scripts/views.lua
 %%DATADIR%%/scripts/weapons.lua
 share/pixmaps/palomino.png
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/data/textures
-@dirrm %%DATADIR%%/data/terrain
-@dirrm %%DATADIR%%/data/sounds
-@dirrm %%DATADIR%%/data/shaders/reference
-@dirrm %%DATADIR%%/data/shaders
-@dirrm %%DATADIR%%/data/replays
-@dirrm %%DATADIR%%/data/models/su37
-@dirrm %%DATADIR%%/data/models/sr71
-@dirrm %%DATADIR%%/data/models/spitfire
-@dirrm %%DATADIR%%/data/models/spaceShuttle
-@dirrm %%DATADIR%%/data/models/sikorsky76
-@dirrm %%DATADIR%%/data/models/scenery
-@dirrm %%DATADIR%%/data/models/p51
-@dirrm %%DATADIR%%/data/models/nimitz
-@dirrm %%DATADIR%%/data/models/misc
-@dirrm %%DATADIR%%/data/models/mirage2000
-@dirrm %%DATADIR%%/data/models/kc135
-@dirrm %%DATADIR%%/data/models/f86
-@dirrm %%DATADIR%%/data/models/f18
-@dirrm %%DATADIR%%/data/models/f16
-@dirrm %%DATADIR%%/data/models/f15
-@dirrm %%DATADIR%%/data/models/f14
-@dirrm %%DATADIR%%/data/models/corsair
-@dirrm %%DATADIR%%/data/models/a4
-@dirrm %%DATADIR%%/data/models
-@dirrm %%DATADIR%%/data/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

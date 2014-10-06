@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyphen
-PORTVERSION=	2.8.7
-PORTREVISION=	1
+PORTVERSION=	2.8.8
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/Hyphen/${PORTVERSION:R}/
 DIST_SUBDIR=	${PORTNAME}
@@ -29,7 +28,6 @@ PLIST_FILES=	bin/substrings.pl \
 		lib/libhyphen.so.0 \
 		lib/libhyphen.so.0.3.0 \
 		%%DATADIR%%/hyph_en_US.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 USALIASES=	en_AG en_AU en_BS en_BW en_BZ en_CA en_DK en_GB en_GH en_HK \
 		en_IE en_IN en_JM en_NA en_NZ en_PH en_SG en_TT en_ZA en_ZW

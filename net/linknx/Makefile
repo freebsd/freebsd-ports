@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linknx
-PORTVERSION=	0.0.1.30
-PORTREVISION=	2
+PORTVERSION=	0.0.1.32
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,15 +11,11 @@ COMMENT=	Rule-based event handling in a KNX installation
 
 LICENSE=	GPLv2
 
-BROKEN=		Fails to configure
-
 LIB_DEPENDS=	libpthsem.so:${PORTSDIR}/devel/pthsem
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 
-USES=	gmake
+USES=	gmake autoreconf pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf aclocal automake
-AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
 CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-I${LOCALBASE}/include -L/${LOCALBASE}/lib"
 
@@ -36,6 +31,8 @@ LIBESMTP_CONFIGURE_ENABLE=	smtp
 LIBESMTP_LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
 LIBCURL_CONFIGURE_WITH=	libcurl
 LIBCURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+# autoreconf needs that anyway.
+LIBCURL_BUILD_DEPENDS_OFF=	${LOCALBASE}/share/aclocal/libcurl.m4:${PORTSDIR}/ftp/curl
 LIBLUA_CONFIGURE_WITH=	lua
 LIBLUA_USES=	lua
 LIBLUA_CFLAGS=	-I${LUA_INCDIR}
@@ -52,5 +49,6 @@ USE_RC_SUBR=	${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} "s/LUAPC=lua/LUAPC=lua-${LUA_VER}/" ${WRKSRC}/configure.ac
+	cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS
 
 .include <bsd.port.mk>
