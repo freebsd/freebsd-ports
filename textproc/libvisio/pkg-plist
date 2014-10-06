@@ -1,9 +1,3 @@
-bin/vss2raw
-bin/vss2text
-bin/vss2xhtml
-bin/vsd2text
-bin/vsd2raw
-bin/vsd2xhtml
 include/libvisio-0.0/libvisio/VSDStringVector.h
 include/libvisio-0.0/libvisio/VisioDocument.h
 include/libvisio-0.0/libvisio/libvisio.h
@@ -11,5 +5,3 @@ lib/libvisio-0.0.so
 lib/libvisio-0.0.so.0
 lib/libvisio-0.0.so.0.0.31
 libdata/pkgconfig/libvisio-0.0.pc
-@dirrmtry include/libvisio-0.0/libvisio
-@dirrmtry include/libvisio-0.0
