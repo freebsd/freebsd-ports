@@ -27,16 +27,10 @@ USE_PYTHON_RUN=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}
-PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins/
+PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 
 # installed files
-PLIST_FILES=	%%PLUGIN_DIR%%/${DISTNAME}
-
-# installed dirs
-PLIST_DIRSTRY=	libexec/gimp/2.2/plug-ins \
-		libexec/gimp/2.2 \
-		libexec/gimp
+PLIST_FILES=	${PLUGIN_DIR}/${DISTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} \
