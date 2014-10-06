@@ -1,6 +1,3 @@
-bin/wpg2raw
-bin/wpg2svg
-bin/wpg2svgbatch.pl
 include/libwpg-0.2/libwpg/WPGPaintInterface.h
 include/libwpg-0.2/libwpg/WPGraphics.h
 include/libwpg-0.2/libwpg/libwpg.h
@@ -10,5 +7,3 @@ lib/libwpg-0.2.so
 lib/libwpg-0.2.so.2
 lib/libwpg-0.2.so.2.0.2
 libdata/pkgconfig/libwpg-0.2.pc
-@dirrm include/libwpg-0.2/libwpg
-@dirrm include/libwpg-0.2
