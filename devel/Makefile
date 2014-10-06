@@ -4402,6 +4402,7 @@
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logging
+    SUBDIR += rubygem-logster
     SUBDIR += rubygem-loquacious
     SUBDIR += rubygem-lumberjack
     SUBDIR += rubygem-main
