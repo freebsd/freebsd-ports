@@ -2,7 +2,7 @@
 
 PORTNAME=	pyicq
 PORTVERSION=	0.8.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -17,7 +17,7 @@ COMMENT=	Python ICQ-Transport for Jabber
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
 PROJECTHOST=	pyicqt
 OPTIONS_DEFINE=	DOCS EXAMPLES MYSQL TWISTED
@@ -31,7 +31,7 @@ DAEMON_DESC=	Use builtin daemon
 TWISTED_DESC=	Use py-twisted
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+USES=		python
 USE_RC_SUBR=	jabber-pyicq-transport
 LOCAL_PYTHON=	${PYTHON_CMD}
 
