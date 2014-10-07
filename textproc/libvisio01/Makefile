@@ -3,7 +3,7 @@
 PORTNAME=	libvisio
 PORTVERSION=	0.1.0
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://dev-www.libreoffice.org/src/
+MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
@@ -21,14 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USES=		gmake libtool pathfix perl5 pkgconfig tar:xz
+USES=		gmake gperf libtool pathfix perl5 pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 802516 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900502)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
-CONFIGURE_ENV+=	GPERF=${LOCALBASE}/bin/gperf
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
