@@ -10,7 +10,7 @@ MASTER_SITES=	http://gtkwave.sourceforge.net/
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Electronic Waveform Viewer
 
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info
+USES=		desktop-file-utils gmake gperf pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mime-update
 USE_GNOME=	gtk20
