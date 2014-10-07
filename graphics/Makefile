@@ -491,6 +491,7 @@
     SUBDIR += libecwj2
     SUBDIR += libemf
     SUBDIR += libetonyek
+    SUBDIR += libetonyek01
     SUBDIR += libexif
     SUBDIR += libexif-gtk
     SUBDIR += libfpx
