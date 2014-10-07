@@ -30,7 +30,8 @@ MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GNOME_PREFIX="${PREFIX}" \
 		ARCH_INSTALL="" \
 		OPTFLAGS="${CFLAGS} -DHAVE_STRCASESTR" \
-		SHARED_FLAGS="-shared -fPIC"
+		SHARED_FLAGS="-shared -fPIC" \
+		GPERF="${GPERF}"
 
 INSTALL_TARGET=	install-gettext install-im install-magic-plugins \
 		install-magic-plugin-dev install-default-config \
