@@ -57,11 +57,296 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b6587341-4d88-11e4-aef9-20cf30e32f6d">
+    <topic>Bugzilla multiple security issues</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bugzilla Security Advisory</p>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.14/">
+	  <h5>Unauthorized Account Creation</h5>
+	  <p>An attacker creating a new Bugzilla account can override certain
+	    parameters when finalizing the account creation that can lead to the
+	    user being created with a different email address than originally
+	    requested. The overridden login name could be automatically added
+	    to groups based on the group's regular expression setting.</p>
+	  <h5>Cross-Site Scripting</h5>
+	  <p>During an audit of the Bugzilla code base, several places
+	    were found where cross-site scripting exploits could occur which
+	    could allow an attacker to access sensitive information.</p>
+	  <h5>Information Leak</h5>
+	  <p>If a new comment was marked private to the insider group, and a flag
+	    was set in the same transaction, the comment would be visible to
+	    flag recipients even if they were not in the insider group.</p>
+	  <h5>Social Engineering</h5>
+	  <p>Search results can be exported as a CSV file which can then be
+	    imported into external spreadsheet programs. Specially formatted
+	    field values can be interpreted as formulas which can be executed
+	    and used to attack a user's computer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1572</cvename>
+      <cvename>CVE-2014-1573</cvename>
+      <cvename>CVE-2014-1571</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1074812</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1075578</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1064140</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1054702</url>
+    </references>
+    <dates>
+      <discovery>2014-10-06</discovery>
+      <entry>2014-10-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="81e2b308-4a6c-11e4-b711-6805ca0b3d42">
+    <topic>rt42 -- vulnerabilities related to shellshock</topic>
+    <affects>
+      <package>
+	<name>rt42</name>
+	<range><ge>4.2.0</ge><lt>4.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Best Practical reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2014/10/security-vulnerability-in-rt-42x-cve-2014-7227.html">
+	  <p>RT 4.2.0 and above may be vulnerable to arbitrary
+	    execution of code by way of CVE-2014-7169, CVE-2014-7186,
+	    CVE-2014-7187, CVE-2014-6277, or CVE-2014-6271 --
+	    collectively known as "Shellshock." This vulnerability
+	    requires a privileged user with access to an RT instance
+	    running with SMIME integration enabled; it applies to both
+	    mod_perl and fastcgi deployments. If you have already
+	    taken upgrades to bash to resolve "Shellshock," you are
+	    protected from this vulnerability in RT, and there is no
+	    need to apply this patch. This vulnerability has been
+	    assigned CVE-2014-7227.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.bestpractical.com/2014/10/security-vulnerability-in-rt-42x-cve-2014-7227.html</url>
+      <cvename>CVE-2014-7227</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-02</discovery>
+      <entry>2014-10-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="549a2771-49cc-11e4-ae2c-c80aa9043978">
+    <topic>jenkins -- remote execution, privilege escalation, XSS, password exposure, ACL hole, DoS</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.583</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>1.565.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-10-01">
+	  <h1>Description</h1>
+	  <h5>SECURITY-87/CVE-2014-3661 (anonymous DoS attack through CLI
+	    handshake)</h5>
+	  <p>This vulnerability allows unauthenticated users
+	    with access to Jenkins' HTTP/HTTPS port to mount a DoS attack on
+	    Jenkins through thread exhaustion.</p>
+
+	  <h5>SECURITY-110/CVE-2014-3662 (User name discovery)</h5>
+	  <p>Anonymous users can test if the user of a specific name exists or
+	    not through login attempts.</p>
+
+	  <h5>SECURITY-127&amp;128/CVE-2014-3663 (privilege escalation in job
+	    configuration permission)</h5>
+	  <p>An user with a permission limited
+	    to Job/CONFIGURE can exploit this vulnerability to effectively
+	    create a new job, which should have been only possible for users
+	    with Job/CREATE permission, or to destroy jobs that he/she does not
+	    have access otherwise.</p>
+
+	  <h5>SECURITY-131/CVE-2014-3664 (directory traversal attack)</h5>
+	  <p>Users with Overall/READ permission can access arbitrary files in
+	    the file system readable by the Jenkins process, resulting in the
+	    exposure of sensitive information, such as encryption keys.</p>
+
+	  <h5>SECURITY-138/CVE-2014-3680 (Password exposure in DOM)</h5>
+	  <p>If a parameterized job has a default value in a password field,
+	    that default value gets exposed to users with Job/READ permission.
+	  </p>
+
+	  <h5>SECURITY-143/CVE-2014-3681 (XSS vulnerability in Jenkins
+	    core)</h5>
+	  <p>Reflected cross-site scripting vulnerability in Jenkins
+	    core. An attacker can navigate the user to a carefully crafted URL
+	    and have the user execute unintended actions.</p>
+
+	  <h5>SECURITY-150/CVE-2014-3666 (remote code execution from CLI)</h5>
+	  <p>Unauthenticated user can execute arbitrary code on Jenkins master
+	    by sending carefully crafted packets over the CLI channel.</p>
+
+	  <h5>SECURITY-155/CVE-2014-3667 (exposure of plugin code)</h5>
+	  <p>Programs that constitute plugins can be downloaded by anyone with
+	    the Overall/READ permission, resulting in the exposure of otherwise
+	    sensitive information, such as hard-coded keys in plugins, if
+	    any.</p>
+
+	  <h5>SECURITY-159/CVE-2013-2186 (arbitrary file system write)</h5>
+	  <p>Security vulnerability in commons fileupload allows
+	    unauthenticated attacker to upload arbitrary files to Jenkins
+	    master.</p>
+
+	  <h5>SECURITY-149/CVE-2014-1869 (XSS vulnerabilities in
+	    ZeroClipboard)</h5>
+	  <p>reflective XSS vulnerability in one of the
+	    library dependencies of Jenkins.</p>
+
+	  <h5>SECURITY-113/CVE-2014-3678 (XSS vulnerabilities in monitoring
+	    plugin)</h5> <p>Monitoring plugin allows an attacker to cause a
+	    victim into executing unwanted actions on Jenkins instance.</p>
+
+	  <h5>SECURITY-113/CVE-2014-3679 (hole in access control)</h5>
+	  <p>Certain pages in monitoring plugin are visible to anonymous users,
+	    allowing them to gain information that they are not supposed to.
+	  </p>
+
+	  <h1>Severity</h1>
+	  <p>SECURITY-87 is rated <strong>medium</strong>, as it results in the
+	    loss of functionality.</p>
+
+	  <p>SECURITY-110 is rated <strong>medium</strong>, as it results in a
+	    limited amount of information exposure.</p>
+
+	  <p>SECURITY-127 and SECURITY-128 are rated <strong>high</strong>. The
+	    formed can be used to further escalate privileges, and the latter
+	    results inloss of data.</p>
+
+	  <p>SECURITY-131 and SECURITY-138 is rated <strong>critical</strong>.
+	    This vulnerabilities results in exposure of sensitie information
+	    and is easily exploitable.</p>
+
+	  <p>SECURITY-143 is rated <strong>high</strong>. It is a passive
+	    attack, but it can result in a compromise of Jenkins master or loss
+	    of data.</p>
+
+	  <p>SECURITY-150 is rated <strong>critical</strong>. This attack can
+	    be mounted by any unauthenticated anonymous user with HTTP
+	    reachability to Jenkins instance, and results in remote code
+	    execution on Jenkins.</p>
+
+	  <p>SECURITY-155 is rated <strong>medium</strong>. This only affects
+	    users who have installed proprietary plugins on publicly accessible
+	    instances, which is relatively uncommon.</p>
+
+	  <p>SECURITY-159 is rated <strong>critical</strong>. This attack can
+	    be mounted by any unauthenticated anonymous user with HTTP
+	    reachability to Jenkins instance.</p>
+
+	  <p>SECURITY-113 is rated <strong>high</strong>. It is a passive
+	    attack, but it can result in a compromise of Jenkins master or loss
+	    of data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-10-01</url>
+      <cvename>CVE-2014-3661</cvename>
+      <cvename>CVE-2014-3662</cvename>
+      <cvename>CVE-2014-3663</cvename>
+      <cvename>CVE-2014-3664</cvename>
+      <cvename>CVE-2014-3680</cvename>
+      <cvename>CVE-2014-3681</cvename>
+      <cvename>CVE-2014-3666</cvename>
+      <cvename>CVE-2014-3667</cvename>
+      <cvename>CVE-2013-2186</cvename>
+      <cvename>CVE-2014-1869</cvename>
+      <cvename>CVE-2014-3678</cvename>
+      <cvename>CVE-2014-3679</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-01</discovery>
+      <entry>2014-10-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="512d1301-49b9-11e4-ae2c-c80aa9043978">
+    <topic>bash -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>bash</name>
+	<name>bash-static</name>
+	<range><lt>4.3.25_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Note that this is different than the public "Shellshock"
+	  issue.</p>
+	<p>Specially crafted environment variables could lead to remote
+	  arbitrary code execution.  This was fixed in bash 4.3.27, however
+	  the port was patched with a mitigation in 4.3.25_2.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lcamtuf.blogspot.com/2014/09/bash-bug-apply-unofficial-patch-now.html</url>
+      <cvename>CVE-2014-6277</cvename>
+      <cvename>CVE-2014-6278</cvename>
+    </references>
+    <dates>
+      <discovery>2014-09-27</discovery>
+      <entry>2014-10-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3e8b7f8a-49b0-11e4-b711-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-11.php">
+	  <p>With a crafted ENUM value it is possible to trigger an
+	    XSS in table search and table structure pages. This
+	    vulnerability can be triggered only by someone who is
+	    logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    pages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-11.php</url>
+      <cvename>CVE-2014-7217</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-01</discovery>
+      <entry>2014-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a4e9f88-491c-11e4-ae2c-c80aa9043978">
     <topic>bash -- out-of-bounds memory access in parser</topic>
     <affects>
       <package>
 	<name>bash</name>
+	<name>bash-static</name>
 	<range><lt>4.3.27_1</lt></range>
       </package>
     </affects>
@@ -74,11 +359,18 @@ Notes:
 	    possibly leading to arbitrary code execution when evaluating
 	    untrusted input that would not otherwise be run as code.</p>
 	</blockquote>
+	<blockquote cite="https://access.redhat.com/security/cve/CVE-2014-7187">
+	  <p>An off-by-one error was discovered in the way Bash was handling
+	    deeply nested flow control constructs. Depending on the layout of
+	    the .bss segment, this could allow arbitrary execution of code that
+	    would not otherwise be executed by Bash.</p>
+	</blockquote>
       </body>
     </description>
     <references>
       <url>https://access.redhat.com/security/cve/CVE-2014-7186</url>
       <cvename>CVE-2014-7186</cvename>
+      <cvename>CVE-2014-7187</cvename>
     </references>
     <dates>
       <discovery>2014-09-25</discovery>
@@ -91,18 +383,22 @@ Notes:
     <affects>
       <package>
 	<name>rsyslog</name>
-	<range><lt>7.6.6</lt></range>
-	<range><lt>8.4.1</lt></range>
+	<range><lt>7.6.7</lt></range>
+      </package>
+      <package>
+	<name>rsyslog8</name>
+	<range><lt>8.4.2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The rsyslog project reports:</p>
 	<blockquote cite="http://www.rsyslog.com/remote-syslog-pri-vulnerability/">
-	  <p>potential abort when a message with PRI > 191 was processed
+	  <p>potential abort when a message with PRI &gt; 191 was processed
 	    if the "pri-text" property was used in active templates,
 	    this could be abused to a remote denial of service from
 	    permitted senders</p>
+	  <p>The original fix for CVE-2014-3634 was not adequate.</p>
 	</blockquote>
       </body>
     </description>
@@ -113,6 +409,7 @@ Notes:
     <dates>
       <discovery>2014-09-30</discovery>
       <entry>2014-09-30</entry>
+      <modified>2014-10-02</modified>
     </dates>
   </vuln>
 
