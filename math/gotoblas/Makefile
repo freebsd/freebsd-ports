@@ -30,7 +30,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/GotoBLAS2
 
 USES=		gmake perl5
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_PERL5=	build
 GOTOLIBS=	libgoto2 libgoto2p
 GOTOFILES=	${GOTOLIBS:S|$|.so|} ${GOTOLIBS:S|$|.so.1|} ${GOTOLIBS:S|$|.a|}
