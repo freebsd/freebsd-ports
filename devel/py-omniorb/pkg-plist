@@ -13,22 +13,27 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/PortableServer__POA.py
 %%PYTHON_SITELIBDIR%%/PortableServer__POA.pyc
 %%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so
-%%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so.3
-%%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so.3.%%SONUM%%
+%%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so.4
+%%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so.4.%%SONUM%%
+%%PYTHON_SITELIBDIR%%/_omniZIOPmodule.so
+%%PYTHON_SITELIBDIR%%/_omniZIOPmodule.so.4
+%%PYTHON_SITELIBDIR%%/_omniZIOPmodule.so.4.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so
-%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.3
-%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.3.%%SONUM%%
+%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.4
+%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.4.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/_omnipymodule.so
-%%PYTHON_SITELIBDIR%%/_omnipymodule.so.3
-%%PYTHON_SITELIBDIR%%/_omnipymodule.so.3.%%SONUM%%
+%%PYTHON_SITELIBDIR%%/_omnipymodule.so.4
+%%PYTHON_SITELIBDIR%%/_omnipymodule.so.4.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so
-%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.3
-%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.3.%%SONUM%%
+%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.4
+%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.4.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/omniORB.pth
 %%PYTHON_SITELIBDIR%%/omniORB/BiDirPolicy.py
 %%PYTHON_SITELIBDIR%%/omniORB/BiDirPolicy.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/CORBA.py
 %%PYTHON_SITELIBDIR%%/omniORB/CORBA.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/Compression.py
+%%PYTHON_SITELIBDIR%%/omniORB/Compression.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection/__init__.py
 %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection__POA/__init__.py
@@ -296,28 +301,44 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/omniORB/PortableServer__POA.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/URI.py
 %%PYTHON_SITELIBDIR%%/omniORB/URI.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/ZIOP.py
+%%PYTHON_SITELIBDIR%%/omniORB/ZIOP.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/__init__.py
 %%PYTHON_SITELIBDIR%%/omniORB/__init__.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/ami.py
+%%PYTHON_SITELIBDIR%%/omniORB/ami.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/any.py
 %%PYTHON_SITELIBDIR%%/omniORB/any.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/boxes_idl.py
 %%PYTHON_SITELIBDIR%%/omniORB/boxes_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/codesets.py
 %%PYTHON_SITELIBDIR%%/omniORB/codesets.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/compression_idl.py
+%%PYTHON_SITELIBDIR%%/omniORB/compression_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/corbaidl_idl.py
 %%PYTHON_SITELIBDIR%%/omniORB/corbaidl_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/interceptors.py
 %%PYTHON_SITELIBDIR%%/omniORB/interceptors.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/ir_idl.py
 %%PYTHON_SITELIBDIR%%/omniORB/ir_idl.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/messaging_idl.py
+%%PYTHON_SITELIBDIR%%/omniORB/messaging_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/minorCodes.py
 %%PYTHON_SITELIBDIR%%/omniORB/minorCodes.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/omniConnectionMgmt.py
 %%PYTHON_SITELIBDIR%%/omniORB/omniConnectionMgmt.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/omniPolicy.py
+%%PYTHON_SITELIBDIR%%/omniORB/omniPolicy.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/omniZIOP.py
+%%PYTHON_SITELIBDIR%%/omniORB/omniZIOP.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/pollable_idl.py
+%%PYTHON_SITELIBDIR%%/omniORB/pollable_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/sslTP.py
 %%PYTHON_SITELIBDIR%%/omniORB/sslTP.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/tcInternal.py
 %%PYTHON_SITELIBDIR%%/omniORB/tcInternal.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/ziop_idl.py
+%%PYTHON_SITELIBDIR%%/omniORB/ziop_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.pyc
 %%PORTDOCS%%%%DOCSDIR%%/html/contents_motif.gif
@@ -336,10 +357,15 @@ include/omniORBpy.h
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy009.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy010.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy011.html
+%%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy012.html
+%%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy013.html
 %%PORTDOCS%%%%DOCSDIR%%/html/previous_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/omniORBpy.pdf
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.bib
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ami/ami_callback.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ami/ami_poller.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ami/example_echo.idl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/echo.idl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/echo_clt.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/echo_srv.py
@@ -363,9 +389,6 @@ include/omniORBpy.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poa/servantactivator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poa/servantlocator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poa/singlethread.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/random/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/random/random.idl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/random/random_clt.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/PerfTest.idl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/TypeTest.idl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pclient.py
@@ -383,113 +406,5 @@ include/omniORBpy.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/tests/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/tests/value1.idl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/tests/value2.idl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/gauge.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/weather.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/weatherInfo.idl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weather/wserver.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/weather
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/valuetype/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/valuetype/simple
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/valuetype
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tictactoe
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/random
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/poa
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fortune
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/embed
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/TimeBase__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/TimeBase
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/RDITestTypes__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/RDITestTypes
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/LifeCycleService__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/LifeCycleService
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTypedNotifyComm__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTypedNotifyComm
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTypedNotifyChannelAdmin__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTypedNotifyChannelAdmin
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTypedEventComm__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTypedEventComm
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTypedEventChannelAdmin__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTypedEventChannelAdmin
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTrading__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTradingRepos__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTradingRepos
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTradingDynamic__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTradingDynamic
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTrading
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTimerEvent__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTimerEvent
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTime__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosTime
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosStream__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosStream
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosRelationships__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosRelationships
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosReference__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosReference
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosQuery__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosQueryCollection__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosQueryCollection
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosQuery
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPropertyService__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPropertyService
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePO__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePOM__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePOM
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePO
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePID__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePID
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePDS__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePDS_DA__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePDS_DA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistencePDS
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistenceDS_CLI__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistenceDS_CLI
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistenceDDO__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosPersistenceDDO
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosObjectIdentity__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosObjectIdentity
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNotifyFilter__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNotifyFilter
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNotifyComm__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNotifyComm
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNotifyChannelAdmin__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNotifyChannelAdmin
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNotification__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNotification
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNaming__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosNaming
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosLifeCycle__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosLifeCycleReference__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosLifeCycleReference
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosLifeCycleContainment__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosLifeCycleContainment
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosLifeCycle
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosGraphs__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosGraphs
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosExternalization__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosExternalizationReference__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosExternalizationReference
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosExternalizationContainment__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosExternalizationContainment
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosExternalization
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosEventComm__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosEventComm
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosEventChannelAdmin__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosEventChannelAdmin
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosContainment__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosContainment
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCompoundLifeCycle__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCompoundLifeCycle
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection__POA
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS
-@dirrm %%PYTHON_SITELIBDIR%%/omniORB
-@dirrm %%PYTHON_SITELIBDIR%%/CosNaming__POA
-@dirrm %%PYTHON_SITELIBDIR%%/CosNaming
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ziop/ziop_clt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ziop/ziop_srv.py
