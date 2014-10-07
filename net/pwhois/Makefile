@@ -3,6 +3,7 @@
 
 PORTNAME=	pwhois
 PORTVERSION=	2.2.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://pwhois.org/get/ \
 		http://mirrors.rit.edu/zi/
