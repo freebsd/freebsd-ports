@@ -888,6 +888,7 @@
     SUBDIR += soci
     SUBDIR += spatialite
     SUBDIR += spatialite_gui
+    SUBDIR += speedtables
     SUBDIR += sqlbuddy
     SUBDIR += sqlcached
     SUBDIR += sqlcipher
