@@ -366,6 +366,7 @@
     SUBDIR += libmwaw03
     SUBDIR += libnxml
     SUBDIR += libodfgen
+    SUBDIR += libodfgen01
     SUBDIR += libparsifal
     SUBDIR += librevenge
     SUBDIR += libroxml
