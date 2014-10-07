@@ -1,13 +1,13 @@
 # Created by: Johannes Meixner <xmj@chaot.net>
 # $FreeBSD$
 
-PORTNAME=	crispy-forms
+PORTNAME=	django-crispy-forms
 PORTVERSION=	1.4.0
 PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	django-${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	xmj@chaot.net
 COMMENT=	The best way to have Django DRY forms
