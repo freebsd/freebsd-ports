@@ -504,6 +504,7 @@
     SUBDIR += libglapi
     SUBDIR += libglesv2
     SUBDIR += libgltext
+    SUBDIR += libgltf
     SUBDIR += libgnomecanvas
     SUBDIR += libgnomecanvas-reference
     SUBDIR += libgnomecanvasmm26
