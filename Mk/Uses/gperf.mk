@@ -7,7 +7,7 @@
 #
 # Take no arguments
 
-.if !defined(_INCLUDE_USES_GPERG_MK)
+.if !defined(_INCLUDE_USES_GPERF_MK)
 _INCLUDE_USES_GPERF_MK=	yes
 
 .if !exists(/usr/bin/gperf)
