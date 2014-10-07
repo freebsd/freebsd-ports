@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.5
+PORTVERSION=	4.4.6
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -25,8 +25,10 @@ RUN_DEPENDS=	\
 		p5-TimeDate>=1.19:${PORTSDIR}/devel/p5-TimeDate \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI
 
-USES=		perl5
+USES=		perl5 cpe
 USE_PERL5=	patch build run
+
+CPE_VENDOR=	mozilla
 
 SUB_FILES=	pkg-message
 
@@ -49,7 +51,7 @@ RUN_DEPENDS+=	p5-DBD-mysql>=4.0001:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 RUN_DEPENDS+=	p5-DBD-Pg>=2.19.3:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
@@ -152,10 +154,6 @@ RUN_DEPENDS+=	p5-Net-SMTP-SSL>=1.01:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 .if ${PORT_OPTIONS:MMIME_SNIFF}
 RUN_DEPENDS+=	p5-File-MimeInfo>=0.16:${PORTSDIR}/devel/p5-File-MimeInfo \
 		p5-IO-stringy>=2.110:${PORTSDIR}/devel/p5-IO-stringy
-.endif
-
-.if ${PORT_OPTIONS:MFREEBSD}
-EXTRA_PATCHES=	${FILESDIR}/freebsd-project-ldap.diff
 .endif
 
 post-extract:
