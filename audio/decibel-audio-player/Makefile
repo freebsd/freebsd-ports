@@ -3,7 +3,7 @@
 
 PORTNAME=	decibel-audio-player
 PORTVERSION=	1.08
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio multimedia gnome python
 MASTER_SITES=	http://decibel.silent-blade.org/uploads/Main/
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	py*-dbus>=0.80:${PORTSDIR}/devel/py-dbus \
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	yes
+USES=		python
 USE_GNOME=	pygnome2 pygtk2
 USE_GSTREAMER=	python good bad
 USES=		gmake gettext desktop-file-utils
@@ -33,7 +33,7 @@ EXTRAS_DESC=	Extra dependencies for plugins
 AUDIOCD_RUN_DEPENDS=	cd-discid>=0.9:${PORTSDIR}/audio/cd-discid \
 		py*-cddb>=1.4:${PORTSDIR}/audio/py-cddb \
 		gstreamer-plugins-cdio>=0.10.16:${PORTSDIR}/sysutils/gstreamer-plugins-cdio
-EXTRAS_RUN_DEPENDS=	py*-imaging>=1.1.6:${PORTSDIR}/graphics/py-imaging \
+EXTRAS_RUN_DEPENDS=	py*-pillow>0:${PORTSDIR}/graphics/py-pillow \
 		py*-notify>=0.1.1:${PORTSDIR}/devel/py-notify
 FLAC_USE=	GSTREAMER=flac
 MP3_USE=	GSTREAMER=mp3
