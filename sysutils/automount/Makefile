@@ -17,24 +17,13 @@ PLIST_FILES=	sbin/automount etc/devd/automount_devd.conf etc/automount.conf.samp
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=		NTFS3G EXT4 EXFAT
-OPTIONS_DEFAULT=	NTFS3G EXT4 EXFAT
+OPTIONS_DEFAULT=	NTFS3G EXT4
 NTFS3G_DESC=		Enable NTFS write support with ntfs-3g over FUSE
+NTFS3G_RUN_DEPENDS=	fusefs-ntfs>=0:${PORTSDIR}/sysutils/fusefs-ntfs
 EXT4_DESC=		Support EXT4 filesystem
+EXT4_RUN_DEPENDS=	fusefs-ext4fuse>=0:${PORTSDIR}/sysutils/fusefs-ext4fuse
 EXFAT_DESC=		Support Microsoft exFAT filesystem
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNTFS3G}
-RUN_DEPENDS+=	fusefs-ntfs>=0:${PORTSDIR}/sysutils/fusefs-ntfs
-.endif
-
-.if ${PORT_OPTIONS:MEXT4}
-RUN_DEPENDS+=	fusefs-ext4fuse>=0:${PORTSDIR}/sysutils/fusefs-ext4fuse
-.endif
-
-.if ${PORT_OPTIONS:MEXFAT}
-RUN_DEPENDS+=	fusefs-exfat>=0:${PORTSDIR}/sysutils/fusefs-exfat
-.endif
+EXFAT_RUN_DEPENDS=	fusefs-exfat>=0:${PORTSDIR}/sysutils/fusefs-exfat
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/automount             ${STAGEDIR}${PREFIX}/sbin
