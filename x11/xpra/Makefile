@@ -3,6 +3,7 @@
 
 PORTNAME=	xpra
 PORTVERSION=	0.12.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
 		xauth:${PORTSDIR}/x11/xauth \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap \
@@ -25,12 +26,11 @@ LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264 \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libvpx.so:${PORTSDIR}/multimedia/libvpx
 
-USES=		pkgconfig tar:bzip2
-USE_PYTHON=	yes
+USES=		pkgconfig python tar:bzip2
+USE_PYTHON=	distutils
 USE_XORG=	x11 xtst xfixes xcomposite xdamage xrandr
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHON_VER=${PYTHON_VER}
 
-USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	xpra_all
 
 post-install:
