@@ -9,12 +9,9 @@ man/man5/noffle.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/noffle.lsm
 %%PORTDOCS%%%%DOCSDIR%%/testing.txt
 etc/noffle.conf.sample
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd /
-@exec mkdir -p %%SPOOL_DIR%%
-@exec mkdir -p %%SPOOL_DIR%%/data
-@exec mkdir -p %%SPOOL_DIR%%/lock
-@exec mkdir -p %%SPOOL_DIR%%/outgoing
-@exec mkdir -p %%SPOOL_DIR%%/overview
-@exec mkdir -p %%SPOOL_DIR%%/requested
-@unexec rm -rf %%SPOOL_DIR%%
+@dir %%SPOOL_DIR%%/data
+@dir %%SPOOL_DIR%%/lock
+@dir %%SPOOL_DIR%%/outgoing
+@dir %%SPOOL_DIR%%/overview
+@dir %%SPOOL_DIR%%/requested
+@dir %%SPOOL_DIR%%
