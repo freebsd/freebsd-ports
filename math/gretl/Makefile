@@ -3,7 +3,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.9.13
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -96,8 +96,10 @@ CONFIGURE_ARGS+=	--without-libR
 .if ${PORT_OPTIONS:MUNZIP}
 CONFIGURE_ARGS+=	--with-gsf
 USE_GNOME+=		libgsf
+PLIST_SUB+=		NO_UNZIP="@comment "
 .else
 CONFIGURE_ARGS+=	--without-gsf
+PLIST_SUB+=		NO_UNZIP=""
 .endif
 
 .if !empty(MACHINE_CPU:Msse2)
