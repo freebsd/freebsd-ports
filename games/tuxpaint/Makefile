@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm \
 		bash:${PORTSDIR}/shells/bash
 
-USES=		gettext gmake pkgconfig shebangfix
+USES=		gettext gmake gperf pkgconfig shebangfix
 SHEBANG_FILES=	src/tuxpaint-import.sh
 USE_GNOME=	librsvg2
 USE_SDL=	image mixer sdl ttf pango
