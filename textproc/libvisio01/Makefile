@@ -21,6 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
+USE_GNOME=	libxml2
 USES=		gmake gperf libtool pathfix perl5 pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
