@@ -3,7 +3,7 @@
 
 PORTNAME=	xist
 PORTVERSION=	3.25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://ftp.livinglogic.de/xist/
@@ -17,13 +17,11 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_PKGNAMEPREFIX}ll-core>=1.11.1:${PORTSDIR}/devel/py-ll-core \
-		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.7:${PORTSDIR}/www/py-cssutils
 
-USES=		tar:bzip2
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2 tar:bzip2
+USE_PYTHON=	autoplist distutils
 
 post-patch:
 .for conflictswithllcore in __init__ scripts/__init__ ansistyle astyle color \
