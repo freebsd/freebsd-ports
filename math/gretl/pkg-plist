@@ -96,8 +96,8 @@ lib/gretl-gtk2/garch.a
 lib/gretl-gtk2/garch.so
 %%GUI%%lib/gretl-gtk2/gnumeric_import.a
 %%GUI%%lib/gretl-gtk2/gnumeric_import.so
-lib/gretl-gtk2/gretlzip.a
-lib/gretl-gtk2/gretlzip.so
+%%NO_UNZIP%%lib/gretl-gtk2/gretlzip.a
+%%NO_UNZIP%%lib/gretl-gtk2/gretlzip.so
 lib/gretl-gtk2/heckit.a
 lib/gretl-gtk2/heckit.so
 lib/gretl-gtk2/interpolate.a
@@ -543,19 +543,3 @@ man/man1/gretl.1.gz
 %%NLS%%share/locale/tr/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gretl.mo
 %%GUI%%share/mime/packages/gretl.xml
-%%GUI%%@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/scripts/misc
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/helpfigs
-@dirrm %%DATADIR%%/functions
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/db
-@dirrm %%DATADIR%%/data/plotbars
-@dirrm %%DATADIR%%/data/nist
-@dirrm %%DATADIR%%/data/misc
-@dirrm %%DATADIR%%/data/greene
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm lib/gretl-gtk2/data
-@dirrm lib/gretl-gtk2
-@dirrm include/gretl
