@@ -7,5 +7,4 @@ bin/mbgshowsignal
 bin/mbggpscap
 bin/mbghrtime
 bin/mbgfasttstamp
-@cwd /
-%%KMODDIR%%/mbgclock.ko
+/%%KMODDIR%%/mbgclock.ko
