@@ -4,7 +4,7 @@ PORTNAME=	libcdr
 PORTVERSION=	0.1.0
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
-PKGNAMESUIFFIX=	01
+PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Corel Draw file format
