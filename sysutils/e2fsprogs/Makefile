@@ -53,10 +53,6 @@ USES+=		gettext iconv:build
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1100000
-BROKEN=		Segfaults and miscalculations observed on redports
-.endif
-
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB=	NLS=""
 . if empty(ICONV_LIB)
@@ -84,6 +80,16 @@ post-patch::
 .endfor
 
 .if ${MASTERDIR} == ${.CURDIR}
+# Regression that apparently causes use-after-free in 
+# http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?h=maint&id=47fee2ef6a23ae06f680336ffde57caa64604a4c
+# and can be reproduced under MALLOC_OPTIONS=J regime on 9.3-amd64, or
+# alternatively confirmed with valgrind, was reported upstream.
+#
+# Let's wait until 2014-10-15 whether upstream provides a fix,
+# else we'll bump PORTEPOCH and roll back to 1.42.10;
+# 1.42.11 is also faulty.
+BROKEN=		Use-after-free bug, see ${.CURDIR}/Makefile comments for details
+
 pre-build:
 # fix up Makefile ordering for parallel builds
 	cd ${WRKSRC}/lib/et && ${DO_MAKE_BUILD} compile_et
