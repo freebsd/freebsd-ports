@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.20.0
+PORTVERSION=	0.20.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
@@ -10,6 +10,7 @@ MAINTAINER=	cmt@burggraben.net
 COMMENT=	Open source photo manager for GNOME
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	vala>=0.18.0:${PORTSDIR}/lang/vala \
 		bash:${PORTSDIR}/shells/bash
