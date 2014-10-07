@@ -15,8 +15,9 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
 GNU_CONFIGURE=	yes
-USES=	libtool pathfix pkgconfig tar:xz
+USES=	gperf perl5 libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
+USE_PERL5=	build
 CONFIGURE_ARGS=	--disable-werror --without-docs
 INSTALL_TARGET=	install-strip
 
