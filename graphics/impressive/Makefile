@@ -3,7 +3,7 @@
 
 PORTNAME=	impressive
 PORTVERSION=	0.10.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Impressive/${PORTVERSION}/
 DISTNAME=	Impressive-${PORTVERSION}
@@ -14,14 +14,14 @@ COMMENT=	The stylish way of giving presentations
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl \
-		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		xpdf:${PORTSDIR}/graphics/xpdf \
 		pdftk:${PORTSDIR}/print/pdftk \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		${PYGAME}
 
-USE_PYTHON=	yes
+USES=		python
 USE_GHOSTSCRIPT_RUN=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} \
