@@ -20,7 +20,7 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libtasn1.so:${PORTSDIR}/security/libtasn1 \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
-USES=		bison gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		bison gettext gmake gperf libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gconf2 libxml2
 USE_OPENLDAP=	yes
 USE_SQLITE=	3
