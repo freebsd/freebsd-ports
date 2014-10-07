@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mbuffer
-PORTVERSION=	2013.02.20
-PORTREVISION=	1
+PORTVERSION=	2014.03.10
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -36,9 +35,18 @@ CONFIGURE_ARGS+=ac_cv_search_mhash_init=no
 USE_OPENSSL=	yes
 .endif
 
+# Prevent sendfile() from being detected by configure and rejected
+# by mbuffer.c due to being "unable to send from buffers".
+CONFIGURE_ARGS+=ac_cv_search_sendfile=no
+
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},' ${WRKSRC}/configure
+
+post-configure:
+	# Rename variables to make sure they aren't redefined through mhash.h
+	@${REINPLACE_CMD} -E -e 's@(PACKAGE|VERSION)@MBUFFER_\1@' \
+		${WRKSRC}/config.h ${WRKSRC}/mbuffer.c
 
 .include <bsd.port.post.mk>
