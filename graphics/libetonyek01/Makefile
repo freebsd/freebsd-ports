@@ -3,7 +3,7 @@
 PORTNAME=	libetonyek
 PORTVERSION=	0.1.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://dev-www.libreoffice.org/src/
+MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
