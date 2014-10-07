@@ -256,6 +256,7 @@ libglade2_DETECT=	${libglade2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libglade2_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libglade2
 
 libglu_f10_FILE=	${LINUXBASE}/usr/lib/libGLU.so.1
+libglu_c6_FILE=		${LINUXBASE}/usr/lib/libGLU.so.1
 libglu_DETECT=		${libglu${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libglu_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-libGLU
 
