@@ -59,6 +59,7 @@ sbin/tune2fs
 %%NLS%%share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/de/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/es/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/id/LC_MESSAGES/e2fsprogs.mo
@@ -67,5 +68,6 @@ sbin/tune2fs
 %%NLS%%share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo

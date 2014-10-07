@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.42.10
+PORTVERSION=	1.42.12
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -11,6 +11,8 @@ MAINTAINER?=	mandree@FreeBSD.org
 COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 
 LICENSE=	GPLv2
+
+PORTSCOUT=	ignore	# cannot handle the version in the directory
 
 PATCH_STRIP=	-p1
 USES=		gmake pkgconfig tar:xz
@@ -50,6 +52,10 @@ USES+=		gettext iconv:build
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1100000
+BROKEN=		Segfaults and miscalculations observed on redports
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB=	NLS=""
@@ -119,7 +125,9 @@ post-build:
 # There have been subtle failures induced by Linux-isms in the past.
 # -- Matthias Andree, package maintainer, 2007-09-18
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
-	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} check TMPDIR=${WRKDIR}/tmp \
+# do not add -j options to ${MAKE_CMD} below, this might break
+# due to excessive disk space use.
+	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} check TMPDIR=${WRKDIR}/tmp \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 
 post-install:
