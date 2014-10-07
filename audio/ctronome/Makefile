@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ctronome
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	audio
 MASTER_SITES=	http://ctronome.kign.org/source/
 
@@ -10,11 +10,11 @@ MAINTAINER=	luca.pizzamiglio@gmail.com
 COMMENT=	Programmable console-based metronome
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/ctronome \
 		%%DATADIR%%/metronome1.wav \
 		%%DATADIR%%/metronome2.wav
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|linux/soundcard.h|sys/soundcard.h|' ${WRKSRC}/ctronome.h ${WRKSRC}/dsp.c
