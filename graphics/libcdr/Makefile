@@ -2,7 +2,7 @@
 
 PORTNAME=	libcdr
 PORTVERSION=	0.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
@@ -26,5 +26,8 @@ INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wno-long-long
+
+post-stage:
+	${RM} -f ${STAGEDIR}${PREFIX}/bin/c*
 
 .include <bsd.port.mk>

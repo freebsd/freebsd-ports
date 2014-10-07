@@ -2,6 +2,7 @@
 
 PORTNAME=	djblets
 PORTVERSION=	0.7.28
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://downloads.reviewboard.org/releases/Djblets/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,12 +18,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.4.3:${PORTSDIR}/www/py-django1
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.4.3:${PORTSDIR}/www/py-django14 \
 		${PYTHON_PKGNAMEPREFIX}django-pipeline12>=1.2.24:${PORTSDIR}/www/py-django-pipeline12 \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.2:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 
-USES=		shebangfix
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2 shebangfix
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	Djblets
 
 python_OLD_CMD=	/usr/bin/env python

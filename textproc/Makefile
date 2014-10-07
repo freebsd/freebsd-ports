@@ -363,8 +363,10 @@
     SUBDIR += libmrss
     SUBDIR += libmrss-php
     SUBDIR += libmwaw
+    SUBDIR += libmwaw03
     SUBDIR += libnxml
     SUBDIR += libodfgen
+    SUBDIR += libodfgen01
     SUBDIR += libparsifal
     SUBDIR += librevenge
     SUBDIR += libroxml
@@ -380,8 +382,11 @@
     SUBDIR += libunibreak
     SUBDIR += libuninameslist
     SUBDIR += libvisio
+    SUBDIR += libvisio01
     SUBDIR += libwpd
+    SUBDIR += libwpd010
     SUBDIR += libwps
+    SUBDIR += libwps03
     SUBDIR += libxdiff
     SUBDIR += libxml++26
     SUBDIR += libxml++26-reference
@@ -1354,6 +1359,7 @@
     SUBDIR += rubygem-redcarpet
     SUBDIR += rubygem-ri_cal
     SUBDIR += rubygem-rich
+    SUBDIR += rubygem-rmmseg-cpp
     SUBDIR += rubygem-rouge
     SUBDIR += rubygem-rttool
     SUBDIR += rubygem-rubypants

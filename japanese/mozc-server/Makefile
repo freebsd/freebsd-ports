@@ -3,7 +3,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.15.1868.102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/hrs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -22,7 +22,8 @@ LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf \
 		libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		compiler:c++0x pkgconfig iconv gmake tar:bzip2 python:build
+USES=		compiler:c++11-lang pkgconfig iconv:wchar_t gmake \
+		tar:bzip2 python:build
 
 BUILD_MOZC_LIST?=	mozc_server
 
@@ -48,6 +49,14 @@ USE_GNOME=	glib20 gtk20
 USE_EMACS=	yes
 .endif
 
+# Use GCC only when the stock clang does not have libc++.so.
+.if exists(/usr/bin/clang) && exists(/usr/lib/libc++.so)
+_CCTYPE=	clang
+.else
+USE_GCC=	yes
+_CCTYPE=	gcc
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800107
@@ -61,6 +70,8 @@ BROKEN=		Does not compile: segfault
 GYP_DEFINES=	use_libprotobuf=1 \
 		channel_dev=0 \
 		enable_unittest=0 \
+		compiler_host="${_CCTYPE}" \
+		compiler_target="${_CCTYPE}" \
 		zinnia_model_file="${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model" \
 		ibus_mozc_icon_path="${LOCALBASE}/share/ibus-mozc/icons/product_icon.png" \
 		ibus_mozc_path="${PREFIX}/libexec/ibus-engine-mozc"
@@ -106,6 +117,8 @@ post-configure: ${WRKSRC}/mozcmake
 	    --server_dir="${PREFIX}/bin" \
 	    --localbase="${LOCALBASE}" \
 	    --ldflags="${LDFLAGS} -fstack-protector -L${LOCALBASE}/lib" \
+	    --cflags="${CFLAGS:Q}" \
+	    --cflags_cc="${CXXFLAGS:Q}" \
 	    --include_dirs="${LOCALBASE}/include" \
 	    ${GYP_OPTIONS}
 .endif

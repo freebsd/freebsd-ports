@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	argus
-PORTVERSION=	3.0.6.1
-PORTREVISION=	1
+PORTVERSION=	3.0.8
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/

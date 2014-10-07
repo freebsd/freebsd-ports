@@ -2,7 +2,7 @@
 
 PORTNAME=	libwpg
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -19,11 +19,9 @@ SHEBANG_FILES=	${WRKSRC}/src/conv/svg/wpg2svgbatch.pl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--disable-werror
+CONFIGURE_ARGS=	--disable-werror --without-docs
 
-OPTIONS_DEFINE=	DOCS
-
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-PORTDOCS=	*
+post-stage:
+	@${RM} ${STAGEDIR}${PREFIX}/bin/wp*
 
 .include <bsd.port.mk>

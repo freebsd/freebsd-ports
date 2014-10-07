@@ -2,6 +2,7 @@
 
 PORTNAME=	libetonyek
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
@@ -11,24 +12,20 @@ COMMENT=	Library to interpret and import Apple Keynote presentations
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	gperf:${PORTSDIR}/devel/gperf
 LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-OPTIONS_DEFINE=	DOCS TEST
+OPTIONS_DEFINE=	TEST
 
-CONFIGURE_ARGS=	--disable-werror
+CONFIGURE_ARGS=	--disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gmake gperf libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-PORTDOCS=	*
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-DOCS_CONFIGURE_OFF=	--without-docs
 TEST_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cppunit.pc:${PORTSDIR}/devel/cppunit
 TEST_CONFIGURE_OFF=	--disable-tests
 
@@ -38,5 +35,8 @@ TEST_CONFIGURE_OFF=	--disable-tests
 post-build:
 	@cd ${WRKSRC}/src/test && ${MAKE_CMD} check
 .endif
+
+post-stage:
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/key*
 
 .include <bsd.port.mk>

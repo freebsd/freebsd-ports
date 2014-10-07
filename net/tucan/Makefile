@@ -3,7 +3,7 @@
 
 PORTNAME=	tucan
 PORTVERSION=	0.3.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://forja.rediris.es/frs/download.php/2051/ \
 		http://build-tucan-doc.googlecode.com/files/
@@ -11,14 +11,13 @@ MASTER_SITES=	http://forja.rediris.es/frs/download.php/2051/ \
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Tucan Manager aids file-sharing with 1-click hosters
 
-RUN_DEPENDS=	${LOCALBASE}/bin/pilconvert.py:${PORTSDIR}/graphics/py-imaging \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${LOCALBASE}/bin/cntraining:${PORTSDIR}/graphics/tesseract
 
 NO_BUILD=	yes
 USE_GNOME=	pygtk2 librsvg2
-USE_PYTHON=	yes
 
-USES=		gettext
+USES=		gettext python
 
 post-patch:
 	${REINPLACE_CMD} -Ee 's|#! /usr/bin/env python|#! ${PYTHON_CMD}|' ${WRKSRC}/tucan.py

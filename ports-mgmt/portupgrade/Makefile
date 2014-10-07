@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.4.12
-PORTREVISION=	2
+PORTVERSION=	2.4.13
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/portupgrade/pkgtools/dist/ \

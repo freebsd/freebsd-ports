@@ -11,17 +11,18 @@ COMMENT=	Framework for hardware logic analyzers, protocol decoders library
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	3
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USES=		gmake pathfix libtool pkgconfig
+USES=		gmake libtool pathfix pkgconfig python:3
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+
+.include <bsd.port.pre.mk>
 
 # Workaround for libusb not knowing LIBUSB_CLASS_APPLICATION
+.if (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100029) || (${OSVERSION} < 1000715)
 CFLAGS+=	-DLIBUSB_CLASS_APPLICATION=0xfe
+.endif
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsigrokdecode.so
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

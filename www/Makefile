@@ -1866,10 +1866,12 @@
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
+    SUBDIR += rubygem-rinku
     SUBDIR += rubygem-rkelly-remix
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
     SUBDIR += rubygem-rqrcode
+    SUBDIR += rubygem-rtlit
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-sawyer
     SUBDIR += rubygem-scrapi

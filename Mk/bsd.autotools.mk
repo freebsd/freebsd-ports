@@ -39,10 +39,6 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 # LIBTOOLIZE_ARGS=...
 #	- Extra arguments passed to libtoolize during configure step
 #
-# AUTOTOOLSFILES=<list-of-files>
-#	- A list of files to further patch with derived information
-#	  post-patching to reduce churn during component updates
-#
 #---------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------
@@ -288,25 +284,6 @@ run-autotools-libtoolize:
 . if defined(_AUTOTOOL_rule_libtoolize)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} \
 		${LIBTOOLIZE_ARGS})
-. else
-	@${DO_NADA}
-. endif
-.endif
-
-#---------------------------------------------------------------------------
-# Reduce patch churn by auto-substituting data from AUTOTOOLS_VARS
-# into the correct places.  Code shamelessly stolen from PLIST_SUB.
-
-AUTOTOOLSFILES?=	# default to empty
-AUTOTOOLS_VARS?=	# empty if not already set
-
-.if !target(configure-autotools)
-configure-autotools::
-. if ${AUTOTOOLS_VARS}!="" && ${AUTOTOOLSFILES} != ""
-	@for file in ${AUTOTOOLSFILES}; do \
-		${REINPLACE_CMD} ${AUTOTOOLS_VARS:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-			${WRKSRC}/$${file} ; \
-	done
 . else
 	@${DO_NADA}
 . endif

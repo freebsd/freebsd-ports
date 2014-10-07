@@ -1188,9 +1188,9 @@ fbsd_find_lwp_name(long lwpid, struct private_thread_info *info)
                 }
             }
 
-          len = strlen(kipp->ki_ocomm);
+          len = strlen(kipp->ki_ocomm) + 1;
           lwpstr = xmalloc(len);
-          strcpy(lwpstr, kipp->ki_ocomm);
+          strncpy(lwpstr, kipp->ki_ocomm, len);
           info->lwp_name = lwpstr;
           break;
         }

@@ -4,4 +4,3 @@ bin/gbpdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/genTest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.big5
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.big5.pdf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

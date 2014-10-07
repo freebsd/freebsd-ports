@@ -6,4 +6,3 @@ lib/libsigrok.so
 lib/libsigrok.so.2
 lib/libsigrok.so.2.0.0
 libdata/pkgconfig/libsigrok.pc
-@dirrm include/libsigrok

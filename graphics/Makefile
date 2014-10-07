@@ -490,12 +490,14 @@
     SUBDIR += libboard
     SUBDIR += libcaca
     SUBDIR += libcdr
+    SUBDIR += libcdr01
     SUBDIR += libchamplain
     SUBDIR += libdmtx
     SUBDIR += libdrm
     SUBDIR += libecwj2
     SUBDIR += libemf
     SUBDIR += libetonyek
+    SUBDIR += libetonyek01
     SUBDIR += libexif
     SUBDIR += libexif-gtk
     SUBDIR += libfpx
@@ -507,6 +509,7 @@
     SUBDIR += libglapi
     SUBDIR += libglesv2
     SUBDIR += libgltext
+    SUBDIR += libgltf
     SUBDIR += libgnomecanvas
     SUBDIR += libgnomecanvas-reference
     SUBDIR += libgnomecanvasmm26
@@ -549,6 +552,7 @@
     SUBDIR += libwmf
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg
+    SUBDIR += libwpg03
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-adobesvg
@@ -556,6 +560,9 @@
     SUBDIR += linux-c6-dri
     SUBDIR += linux-c6-dri-compat
     SUBDIR += linux-c6-jpeg
+    SUBDIR += linux-c6-libGLU
+    SUBDIR += linux-c6-tiff
+    SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-png
     SUBDIR += linux-c6-sdl_image
     SUBDIR += linux-c6-sdl_ttf

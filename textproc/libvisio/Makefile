@@ -2,7 +2,7 @@
 
 PORTNAME=	libvisio
 PORTVERSION=	0.0.31
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
@@ -31,5 +31,8 @@ INSTALL_TARGET=	install-strip
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 CONFIGURE_ENV+=	GPERF=${LOCALBASE}/bin/gperf
 .endif
+
+post-stage:
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/vs*
 
 .include <bsd.port.post.mk>

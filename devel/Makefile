@@ -1317,6 +1317,7 @@
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
+    SUBDIR += newtonsoft-json
     SUBDIR += nglogc
     SUBDIR += nini
     SUBDIR += ninja
@@ -4413,6 +4414,7 @@
     SUBDIR += rubygem-memoizable
     SUBDIR += rubygem-memoize
     SUBDIR += rubygem-mercenary
+    SUBDIR += rubygem-message_bus
     SUBDIR += rubygem-metaclass
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-method_source
@@ -4461,11 +4463,13 @@
     SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
+    SUBDIR += rubygem-pry-rails
     SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-pygments.rb
     SUBDIR += rubygem-r18n-core
     SUBDIR += rubygem-racc
+    SUBDIR += rubygem-rack-mini-profiler
     SUBDIR += rubygem-rack-raw-upload
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
@@ -4689,6 +4693,7 @@
     SUBDIR += tcl-signal
     SUBDIR += tcl-trf
     SUBDIR += tclap
+    SUBDIR += tclbsd
     SUBDIR += tclcheck
     SUBDIR += tclgetopts
     SUBDIR += tcllauncher

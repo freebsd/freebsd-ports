@@ -750,6 +750,11 @@ MASTER_SITE_KDE+= \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_LIBREOFFICE_DEV)
+MASTER_SITE_LIBREOFFICE_DEV+= \
+	http://dev-www.libreoffice.org/src/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_LOGILAB)
 MASTER_SITE_LOGILAB+= \
 	http://download.logilab.org/pub/%SUBDIR%/ \
@@ -1501,6 +1506,7 @@ MASTER_SITE_KERNEL_ORG+= \
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			GH:GITHUB \
 			GHC:GITHUB_CLOUD \
+			LODEV:LIBREOFFICE_DEV \
 			NL:NETLIB \
 			SF:SOURCEFORGE \
 			SFJP:SOURCEFORGE_JP \
@@ -1520,6 +1526,7 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			GNU_ALPHA:${PORTNAME} \
 			HORDE:${PORTNAME} \
 			LOGILAB:${PORTNAME} \
+			LIBREOFFICE_DEV:${PORTNAME} \
 			MATE:${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			MOZDEV:${PORTNAME:tl} \
 			NETLIB:${PORTNAME} \

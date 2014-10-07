@@ -2,7 +2,7 @@
 
 PORTNAME=	libmspub
 PORTVERSION=	0.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
@@ -25,5 +25,8 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-werror --without-docs
 CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
+
+post-stage:
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/pub*
 
 .include <bsd.port.mk>

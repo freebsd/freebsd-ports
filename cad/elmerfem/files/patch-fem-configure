@@ -1,0 +1,11 @@
+--- fem/configure.orig	2014-09-06 21:42:30.000000000 -0500
++++ fem/configure	2014-09-06 21:43:51.000000000 -0500
+@@ -6325,7 +6325,7 @@
+ printf "int main(int argc, char **argv) { return(1); }" > test.cpp
+ 
+ acx_cxx_verbose_out=`$CXX $acx_cxx_verbose_flag test.cpp 2>&1 |grep -e ' -l'`
+-acx_cxx_verbose_out=${acx_cxx_verbose_out//\"/
++#acx_cxx_verbose_out=${acx_cxx_verbose_out//\"/
+ acx_cxx_libs=""
+ 
+ for acx_cxx_ldflag in $acx_cxx_verbose_out; do

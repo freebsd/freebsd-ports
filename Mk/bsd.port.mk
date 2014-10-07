@@ -5992,7 +5992,7 @@ _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-sheban
 				pre-patch-script do-patch charsetfix-post-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
-				configure-autotools pre-configure pre-configure-script \
+				pre-configure pre-configure-script \
 				run-autotools do-autoreconf patch-libtool do-configure \
 				post-configure post-configure-script
 _BUILD_DEP=		configure

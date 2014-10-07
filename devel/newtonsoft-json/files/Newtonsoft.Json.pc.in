@@ -1,0 +1,8 @@
+prefix=%%LOCALBASE%%
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+Name: Newtonsoft JSON
+Description: Popular high-performance JSON framework for .NET.
+Version: 6.0.5
+Libs: -r:${libdir}/mono/newtonsoft.json/Newtonsoft.Json.dll

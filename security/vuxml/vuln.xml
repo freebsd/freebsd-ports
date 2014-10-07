@@ -57,6 +57,55 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b6587341-4d88-11e4-aef9-20cf30e32f6d">
+    <topic>Bugzilla multiple security issues</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bugzilla Security Advisory</p>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.14/">
+	  <h5>Unauthorized Account Creation</h5>
+	  <p>An attacker creating a new Bugzilla account can override certain
+	    parameters when finalizing the account creation that can lead to the
+	    user being created with a different email address than originally
+	    requested. The overridden login name could be automatically added
+	    to groups based on the group's regular expression setting.</p>
+	  <h5>Cross-Site Scripting</h5>
+	  <p>During an audit of the Bugzilla code base, several places
+	    were found where cross-site scripting exploits could occur which
+	    could allow an attacker to access sensitive information.</p>
+	  <h5>Information Leak</h5>
+	  <p>If a new comment was marked private to the insider group, and a flag
+	    was set in the same transaction, the comment would be visible to
+	    flag recipients even if they were not in the insider group.</p>
+	  <h5>Social Engineering</h5>
+	  <p>Search results can be exported as a CSV file which can then be
+	    imported into external spreadsheet programs. Specially formatted
+	    field values can be interpreted as formulas which can be executed
+	    and used to attack a user's computer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1572</cvename>
+      <cvename>CVE-2014-1573</cvename>
+      <cvename>CVE-2014-1571</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1074812</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1075578</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1064140</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1054702</url>
+    </references>
+    <dates>
+      <discovery>2014-10-06</discovery>
+      <entry>2014-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="81e2b308-4a6c-11e4-b711-6805ca0b3d42">
     <topic>rt42 -- vulnerabilities related to shellshock</topic>
     <affects>

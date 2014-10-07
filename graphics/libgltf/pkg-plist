@@ -1,0 +1,6 @@
+include/libgltf-0.0/libgltf.h
+include/libgltf-0.0/types.h
+lib/libgltf-0.0.so
+lib/libgltf-0.0.so.0
+lib/libgltf-0.0.so.0.0.2
+libdata/pkgconfig/libgltf-0.0.pc

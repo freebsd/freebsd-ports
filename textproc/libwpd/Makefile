@@ -3,7 +3,7 @@
 
 PORTNAME=	libwpd
 PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,5 +21,8 @@ INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--without-docs
 PLIST_SUB=	MAJVER=${PORTVERSION:R}
+
+post-stage:
+	@${RM} ${STAGEDIR}${PREFIX}/bin/wpd*
 
 .include <bsd.port.mk>
