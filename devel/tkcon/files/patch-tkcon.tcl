@@ -1,5 +1,5 @@
 --- tkcon.tcl.orig	2009-02-27 01:17:21.000000000 +0100
-+++ tkcon.tcl	2013-09-26 16:10:14.000000000 +0200
++++ tkcon.tcl	2013-10-01 11:43:39.000000000 +0200
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # \
@@ -28,7 +28,30 @@
  	if {![catch {package require ActiveTcl} ver]} {
  	    set cmd ""
  	    if {$tcl_platform(platform) == "windows"} {
-@@ -5018,6 +5018,11 @@
+@@ -2497,13 +2497,19 @@
+     proc ::tkcon::Destroy {{slave {}}} {
+ 	variable PRIV
+ 
++	set confirmed 0
++	if {[tk_messageBox -parent $PRIV(root) -title "Close window?" \
++	    -message "Close the current window?" -default no \
++	    -icon question -type yesno] == "yes"} { set confirmed 1}
++
++	if {!$confirmed} {
++	    return
++	}
++
+ 	# Just close on the last one
+ 	if {[llength $PRIV(interps)] == 1} { exit }
+ 	if {"" == $slave} {
+ 	    ## Main interpreter close request
+-	    if {[tk_messageBox -parent $PRIV(root) -title "Quit tkcon?" \
+-		     -message "Close all windows and exit tkcon?" \
+-		     -icon question -type yesno] == "yes"} { exit }
+ 	    return
+ 	} elseif {$slave == $::tkcon::OPT(exec)} {
+ 	    set name  [tk appname]
+@@ -5018,6 +5024,11 @@
      ## We really didn't want the newline insertion
      bind TkConsole <Control-Key-o> {}
  
