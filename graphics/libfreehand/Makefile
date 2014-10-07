@@ -2,9 +2,9 @@
 
 PORTNAME=	libfreehand
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://dev-www.libreoffice.org/src/
+MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library providing ability to interpret and import Adobe/Macromedia drawings
@@ -17,14 +17,8 @@ LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 GNU_CONFIGURE=	yes
 USES=	libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-werror
+CONFIGURE_ARGS=	--disable-werror --without-docs
 INSTALL_TARGET=	install-strip
-
-OPTIONS_DEFINE=	DOCS
-
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-DOCS_CONFIGURE_OFF=	--without-docs
-PORTDOCS=	*
 
 .include <bsd.port.mk>
 
