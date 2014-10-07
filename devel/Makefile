@@ -1088,6 +1088,7 @@
     SUBDIR += libopensync022
     SUBDIR += libopkele
     SUBDIR += liborcus
+    SUBDIR += liborcus07
     SUBDIR += libosinfo
     SUBDIR += libosmo-abis
     SUBDIR += libosmo-sccp
