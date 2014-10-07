@@ -16,7 +16,9 @@ RUN_DEPENDS=	mongodb>0:${PORTSDIR}/databases/mongodb
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR}
 
-USES=		zip
+USES=		cpe zip
+CPE_VENDOR=	ubnt
+CPE_PRODUCT=	unifi_controller
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
