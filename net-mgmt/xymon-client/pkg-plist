@@ -22,26 +22,20 @@
 %%WWWDIR%%/client/bin/xymonlaunch
 %%WWWDIR%%/client/bin/logfetch
 %%WWWDIR%%/client/bin/msgcache
-@unexec if cmp -s %D/%%WWWDIR%%/client/etc/clientlaunch.cfg %D/%%WWWDIR%%/client/etc/clientlaunch.cfg.DIST; then rm -f %D/%%WWWDIR%%/client/etc/clientlaunch.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/client/etc/xymonclient.cfg %D/%%WWWDIR%%/client/etc/xymonclient.cfg.DIST; then rm -f %D/%%WWWDIR%%/client/etc/xymonclient.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/client/etc/localclient.cfg %D/%%WWWDIR%%/client/etc/localclient.cfg.DIST; then rm -f %D/%%WWWDIR%%/client/etc/localclient.cfg; fi
-%%WWWDIR%%/client/etc/clientlaunch.cfg.DIST
-@exec [ ! -f %B/clientlaunch.cfg ] && cp %B/%f %B/clientlaunch.cfg
-%%WWWDIR%%/client/etc/xymonclient.cfg.DIST
-@exec [ ! -f %B/xymonclient.cfg ] && cp %B/%f %B/xymonclient.cfg
-%%WWWDIR%%/client/etc/localclient.cfg.DIST
-@exec [ ! -f %B/localclient.cfg ] && cp %B/%f %B/localclient.cfg
+@sample %%WWWDIR%%/client/etc/clientlaunch.cfg.sample
+@sample %%WWWDIR%%/client/etc/xymonclient.cfg.sample
+@sample %%WWWDIR%%/client/etc/localclient.cfg.sample
 %%WWWDIR%%/client/local/README
 %%WWWDIR%%/client/runclient.sh
 @exec chown -R %%XYMONUSER%% %D/%%WWWDIR%%/client
 @exec mkdir -p %D/%%WWWDIR%%/client/ext
 @exec mkdir -p %D/%%WWWDIR%%/client/logs
 @exec mkdir -p %D/%%WWWDIR%%/client/tmp
-@dirrm %%WWWDIR%%/client/tmp
-@dirrm %%WWWDIR%%/client/logs
-@dirrm %%WWWDIR%%/client/local
-@dirrm %%WWWDIR%%/client/ext
-@dirrm %%WWWDIR%%/client/etc
-@dirrm %%WWWDIR%%/client/bin
-@dirrm %%WWWDIR%%/client
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/client/tmp
+@dir %%WWWDIR%%/client/logs
+@dir %%WWWDIR%%/client/local
+@dir %%WWWDIR%%/client/ext
+@dir %%WWWDIR%%/client/etc
+@dir %%WWWDIR%%/client/bin
+@dir %%WWWDIR%%/client
+@dir %%WWWDIR%%
