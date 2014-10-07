@@ -1,8 +1,10 @@
---- ./PackageSetup.py.orig	2014-03-22 14:57:27.290782685 +0200
-+++ ./PackageSetup.py	2014-03-22 14:57:40.220307481 +0200
-@@ -1,4 +1,4 @@
+--- PackageSetup.py.orig	2013-07-08 01:21:09 UTC
++++ PackageSetup.py
+@@ -1,6 +1,5 @@
 -#!python
 +#!/usr/bin/env python
  
- from __future__ import with_statement
+-from __future__ import with_statement
  import glob
+ import os.path
+ import shutil
