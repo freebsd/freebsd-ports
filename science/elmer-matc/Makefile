@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MatC language library used by ELMER FEM package
 
+DEPRECATED=	Obsoleted by cad/elmerfem
+EXPIRATION_DATE=2014-11-07
+
 CXXFLAGS+=	-Wno-deprecated
 
 GNU_CONFIGURE=	yes
