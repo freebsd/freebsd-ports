@@ -2,8 +2,8 @@ lib/%%TKPKG%%/libtkdnd.so.1
 lib/%%TKPKG%%/pkgIndex.tcl
 lib/%%TKPKG%%/tkdnd.tcl
 lib/%%TKPKG%%/tkdnd_compat.tcl
+lib/%%TKPKG%%/tkdnd_generic.tcl
 lib/%%TKPKG%%/tkdnd_macosx.tcl
 lib/%%TKPKG%%/tkdnd_unix.tcl
 lib/%%TKPKG%%/tkdnd_windows.tcl
 man/mann/tkDND.n.gz
-@dirrm lib/%%TKPKG%%
