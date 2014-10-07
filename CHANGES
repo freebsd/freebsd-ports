@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20141007:
+AUTHOR: mat@FreeBSD.org
+
+  The @cwd [path] construct in plist files is deprecated.  Instead of adding
+  those lines to the plist:
+
+  @cwd /
+  etc/rc.d/foo
+  var/db/bar
+
+  add this:
+
+  /etc/rc.d/foo
+  /var/db/bar
+
 20141002:
 AUTHOR: bapt@FreeBSD.org
 
