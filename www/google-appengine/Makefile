@@ -3,7 +3,7 @@
 
 PORTNAME=	google-appengine
 PORTVERSION=	1.9.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
@@ -15,7 +15,7 @@ LICENSE=	APACHE20 BSD3CLAUSE GPLv2 LGPL21 MIT MPL PSFL
 LICENSE_COMB=	multi
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6:${PORTSDIR}/security/py-pycrypto
 
 NO_BUILD=	yes
@@ -27,8 +27,7 @@ PORTDATA=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	${GAESCRIPTS:C,^| ,bin/&,g}
 
-USE_PYTHON=	2
-USES=		gettext shebangfix zip
+USES=		gettext python:2 shebangfix zip
 
 WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
 
