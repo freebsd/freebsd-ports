@@ -163,61 +163,25 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/server/bin/xymonping
 %%WWWDIR%%/server/bin/xymonproxy
 %%WWWDIR%%/server/bin/xymonreports.sh
-%%WWWDIR%%/server/etc/xymon-apache-open.DIST
-%%WWWDIR%%/server/etc/xymon-apache-secure.DIST
-%%WWWDIR%%/server/etc/xymon-apache.conf.DIST
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/alerts.cfg %D/%%WWWDIR%%/server/etc/alerts.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/alerts.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/analysis.cfg %D/%%WWWDIR%%/server/etc/analysis.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/analysis.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/cgioptions.cfg %D/%%WWWDIR%%/server/etc/cgioptions.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/cgioptions.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/client-local.cfg %D/%%WWWDIR%%/server/etc/client-local.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/client-local.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/columndoc.csv %D/%%WWWDIR%%/server/etc/columndoc.csv.DIST; then rm -f %D/%%WWWDIR%%/server/etc/columndoc.csv; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/combo.cfg %D/%%WWWDIR%%/server/etc/combo.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/combo.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/graphs.cfg %D/%%WWWDIR%%/server/etc/graphs.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/graphs.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/holidays.cfg %D/%%WWWDIR%%/server/etc/holidays.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/holidays.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/hosts.cfg %D/%%WWWDIR%%/server/etc/hosts.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/hosts.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/protocols.cfg %D/%%WWWDIR%%/server/etc/protocols.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/protocols.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/rrddefinitions.cfg %D/%%WWWDIR%%/server/etc/rrddefinitions.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/rrddefinitions.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/snmpmibs.cfg %D/%%WWWDIR%%/server/etc/snmpmibs.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/snmpmibs.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/tasks.cfg %D/%%WWWDIR%%/server/etc/tasks.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/tasks.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/xymonmenu.cfg %D/%%WWWDIR%%/server/etc/xymonmenu.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/xymonmenu.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/xymonserver-migration.cfg %D/%%WWWDIR%%/server/etc/xymonserver-migration.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/xymonserver-migration.cfg; fi
-@unexec if cmp -s %D/%%WWWDIR%%/server/etc/xymonserver.cfg %D/%%WWWDIR%%/server/etc/xymonserver.cfg.DIST; then rm -f %D/%%WWWDIR%%/server/etc/xymonserver.cfg; fi
-@unexec if test ! -s %D/%%WWWDIR%%/server/etc/critical.cfg; then rm -f %D/%%WWWDIR%%/server/etc/critical.cfg; fi
-@unexec if test ! -s %D/%%WWWDIR%%/server/etc/critical.cfg.bak; then rm -f %D/%%WWWDIR%%/server/etc/critical.cfg.bak; fi
-%%WWWDIR%%/server/etc/alerts.cfg.DIST
-@exec [ ! -f %B/alerts.cfg ] && cp %B/%f %B/alerts.cfg
-%%WWWDIR%%/server/etc/analysis.cfg.DIST
-@exec [ ! -f %B/analysis.cfg ] && cp %B/%f %B/analysis.cfg
-%%WWWDIR%%/server/etc/cgioptions.cfg.DIST
-@exec [ ! -f %B/cgioptions.cfg ] && cp %B/%f %B/cgioptions.cfg
-%%WWWDIR%%/server/etc/client-local.cfg.DIST
-@exec [ ! -f %B/client-local.cfg ] && cp %B/%f %B/client-local.cfg
-%%WWWDIR%%/server/etc/columndoc.csv.DIST
-@exec [ ! -f %B/columndoc.csv ] && cp %B/%f %B/columndoc.csv
-%%WWWDIR%%/server/etc/combo.cfg.DIST
-@exec [ ! -f %B/combo.cfg ] && cp %B/%f %B/combo.cfg
-%%WWWDIR%%/server/etc/graphs.cfg.DIST
-@exec [ ! -f %B/graphs.cfg ] && cp %B/%f %B/graphs.cfg
-%%WWWDIR%%/server/etc/holidays.cfg.DIST
-@exec [ ! -f %B/holidays.cfg ] && cp %B/%f %B/holidays.cfg
-%%WWWDIR%%/server/etc/hosts.cfg.DIST
-@exec [ ! -f %B/hosts.cfg ] && cp %B/%f %B/hosts.cfg
-%%WWWDIR%%/server/etc/protocols.cfg.DIST
-@exec [ ! -f %B/protocols.cfg ] && cp %B/%f %B/protocols.cfg
-%%WWWDIR%%/server/etc/rrddefinitions.cfg.DIST
-@exec [ ! -f %B/rrddefinitions.cfg ] && cp %B/%f %B/rrddefinitions.cfg
-%%WWWDIR%%/server/etc/snmpmibs.cfg.DIST
-@exec [ ! -f %B/snmpmibs.cfg ] && cp %B/%f %B/snmpmibs.cfg
-%%WWWDIR%%/server/etc/tasks.cfg.DIST
-@exec [ ! -f %B/tasks.cfg ] && cp %B/%f %B/tasks.cfg
-%%WWWDIR%%/server/etc/xymonmenu.cfg.DIST
-@exec [ ! -f %B/xymonmenu.cfg ] && cp %B/%f %B/xymonmenu.cfg
-%%WWWDIR%%/server/etc/xymonserver-migration.cfg.DIST
-@exec [ ! -f %B/xymonserver-migration.cfg ] && cp %B/%f %B/xymonserver-migration.cfg
-%%WWWDIR%%/server/etc/xymonserver.cfg.DIST
-@exec [ ! -f %B/xymonserver.cfg ] && cp %B/%f %B/xymonserver.cfg
-@exec touch %D/%%WWWDIR%%/server/etc/critical.cfg %D/%%WWWDIR%%/server/etc/critical.cfg.bak
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/etc/critical.cfg.bak %D/%%WWWDIR%%/server/etc/critical.cfg
+%%WWWDIR%%/server/etc/xymon-apache-open.sample
+%%WWWDIR%%/server/etc/xymon-apache-secure.sample
+%%WWWDIR%%/server/etc/xymon-apache.conf.sample
+@sample %%WWWDIR%%/server/etc/alerts.cfg.sample
+@sample %%WWWDIR%%/server/etc/analysis.cfg.sample
+@sample %%WWWDIR%%/server/etc/cgioptions.cfg.sample
+@sample %%WWWDIR%%/server/etc/client-local.cfg.sample
+@sample %%WWWDIR%%/server/etc/columndoc.csv.sample
+@sample %%WWWDIR%%/server/etc/combo.cfg.sample
+@sample %%WWWDIR%%/server/etc/graphs.cfg.sample
+@sample %%WWWDIR%%/server/etc/holidays.cfg.sample
+@sample %%WWWDIR%%/server/etc/hosts.cfg.sample
+@sample %%WWWDIR%%/server/etc/protocols.cfg.sample
+@sample %%WWWDIR%%/server/etc/rrddefinitions.cfg.sample
+@sample %%WWWDIR%%/server/etc/snmpmibs.cfg.sample
+@sample %%WWWDIR%%/server/etc/tasks.cfg.sample
+@sample %%WWWDIR%%/server/etc/xymonmenu.cfg.sample
+@sample %%WWWDIR%%/server/etc/xymonserver-migration.cfg.sample
+@sample %%WWWDIR%%/server/etc/xymonserver.cfg.sample
 %%WWWDIR%%/server/ext/xymonnet-again.sh
 %%WWWDIR%%/server/web/acknowledge_footer
 %%WWWDIR%%/server/web/acknowledge_form
@@ -468,37 +432,37 @@ man/man8/xymonproxy.8
 @exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/snap
 @exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/wml
 @exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/www
-@dirrm %%WWWDIR%%/server/www/wml
-@dirrm %%WWWDIR%%/server/www/snap
-@dirrm %%WWWDIR%%/server/www/rep
-@dirrm %%WWWDIR%%/server/www/notes
-@dirrm %%WWWDIR%%/server/www/menu
-@dirrm %%WWWDIR%%/server/www/html
-@dirrm %%WWWDIR%%/server/www/help/manpages/man8
-@dirrm %%WWWDIR%%/server/www/help/manpages/man7
-@dirrm %%WWWDIR%%/server/www/help/manpages/man5
-@dirrm %%WWWDIR%%/server/www/help/manpages/man1
-@dirrm %%WWWDIR%%/server/www/help/manpages
-@dirrm %%WWWDIR%%/server/www/help
-@dirrm %%WWWDIR%%/server/www/gifs
-@dirrm %%WWWDIR%%/server/www
-@dirrm %%WWWDIR%%/server/web
-@dirrm %%WWWDIR%%/server/tmp
-@dirrm %%WWWDIR%%/server/ext
-@dirrm %%WWWDIR%%/server/etc/tasks.d
-@dirrm %%WWWDIR%%/server/etc
-@dirrm %%WWWDIR%%/server/download
-@dirrm %%WWWDIR%%/server/bin
-@dirrm %%WWWDIR%%/server
-@dirrm %%WWWDIR%%/data/rrd
-@dirrm %%WWWDIR%%/data/logs
-@dirrm %%WWWDIR%%/data/hostdata
-@dirrm %%WWWDIR%%/data/histlogs
-@dirrm %%WWWDIR%%/data/hist
-@dirrm %%WWWDIR%%/data/disabled
-@dirrm %%WWWDIR%%/data/data
-@dirrm %%WWWDIR%%/data/acks
-@dirrm %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/cgi-secure
-@dirrm %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/server/www/wml
+@dir %%WWWDIR%%/server/www/snap
+@dir %%WWWDIR%%/server/www/rep
+@dir %%WWWDIR%%/server/www/notes
+@dir %%WWWDIR%%/server/www/menu
+@dir %%WWWDIR%%/server/www/html
+@dir %%WWWDIR%%/server/www/help/manpages/man8
+@dir %%WWWDIR%%/server/www/help/manpages/man7
+@dir %%WWWDIR%%/server/www/help/manpages/man5
+@dir %%WWWDIR%%/server/www/help/manpages/man1
+@dir %%WWWDIR%%/server/www/help/manpages
+@dir %%WWWDIR%%/server/www/help
+@dir %%WWWDIR%%/server/www/gifs
+@dir %%WWWDIR%%/server/www
+@dir %%WWWDIR%%/server/web
+@dir %%WWWDIR%%/server/tmp
+@dir %%WWWDIR%%/server/ext
+@dir %%WWWDIR%%/server/etc/tasks.d
+@dir %%WWWDIR%%/server/etc
+@dir %%WWWDIR%%/server/download
+@dir %%WWWDIR%%/server/bin
+@dir %%WWWDIR%%/server
+@dir %%WWWDIR%%/data/rrd
+@dir %%WWWDIR%%/data/logs
+@dir %%WWWDIR%%/data/hostdata
+@dir %%WWWDIR%%/data/histlogs
+@dir %%WWWDIR%%/data/hist
+@dir %%WWWDIR%%/data/disabled
+@dir %%WWWDIR%%/data/data
+@dir %%WWWDIR%%/data/acks
+@dir %%WWWDIR%%/data
+@dir %%WWWDIR%%/cgi-secure
+@dir %%WWWDIR%%/cgi-bin
+@dir %%WWWDIR%%

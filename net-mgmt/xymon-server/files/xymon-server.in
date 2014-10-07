@@ -27,6 +27,12 @@ xymon_prestart()
 	if [ ! -d /var/log/xymon ]; then
 		install -d -o xymon /var/log/xymon
 	fi
+
+	for i in critical.cfg critical.cfg.bak ; do
+		if [ ! -f ${i} ]; then
+			install -o xymon -g xymon /dev/null %%WWWDIR%%/server/etc/${i} ;
+		fi
+	done
 }
 
 run_rc_command "$1"
