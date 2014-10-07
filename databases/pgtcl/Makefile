@@ -3,6 +3,7 @@
 
 PORTNAME=	pgtcl
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	databases tcl
 MASTER_SITES=	SF/pgtclng/pgtclng/${PORTVERSION}:src
 MASTER_SITE_SUBDIR=	pgtclng
