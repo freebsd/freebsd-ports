@@ -353,6 +353,7 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 .else
 
 USE_BDB=		48+
+INVALID_BDB_VER=	6
 
 CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \
 			--enable-hdb=${BACKEND_ENABLE}
