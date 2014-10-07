@@ -5,9 +5,7 @@ PORTNAME=	biosfont-demos
 PORTVERSION=	1.1
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://rene-ladan.nl/pub/distfiles/
-MASTER_SITE_SUBDIR=rene
+MASTER_SITES=	LOCAL/rene
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Demos for the biosfont kernel module
