@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libodfgen
-PORTVERSION=	0.0.4
-PORTREVISION=	3
+PORTVERSION=	0.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/libwpd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for generating documents in Open Document Format (ODF)
@@ -12,15 +12,14 @@ COMMENT=	Library for generating documents in Open Document Format (ODF)
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libetonyek-0.0.so:${PORTSDIR}/graphics/libetonyek \
-		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
-		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
+LIB_DEPENDS=	libetonyek-0.1.so:${PORTSDIR}/graphics/libetonyek01 \
+		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
 CONFIGURE_ARGS=	--disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
-USES=		compiler:features libtool:keepla pathfix pkgconfig tar:xz
+USES=		compiler:features gperf libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
