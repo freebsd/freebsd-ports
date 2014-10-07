@@ -4693,6 +4693,7 @@
     SUBDIR += tcl-signal
     SUBDIR += tcl-trf
     SUBDIR += tclap
+    SUBDIR += tclbsd
     SUBDIR += tclcheck
     SUBDIR += tclgetopts
     SUBDIR += tcllauncher
