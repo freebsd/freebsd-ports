@@ -17,7 +17,7 @@ GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	85e13c1
 
 CONFLICTS=	irc/ninja-[0-9]*
-USE_PYTHON_BUILD=	yes
+USES=		python:build
 
 PLIST_FILES=	bin/ninja
 PORTDOCS=	COPYING HACKING.md README manual.asciidoc
