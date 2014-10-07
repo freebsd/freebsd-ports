@@ -2,6 +2,7 @@
 
 PORTNAME=	libcdr
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	LODEV
 PKGNAMESUFFIX=	01
@@ -25,5 +26,8 @@ INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wno-long-long
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,zlib,,g" ${WRKSRC}/libcdr.pc.in
 
 .include <bsd.port.mk>
