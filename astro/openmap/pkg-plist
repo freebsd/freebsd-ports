@@ -1,6 +1,0 @@
-bin/openmap
-%%JAVAJARDIR%%/milStd2525_png.jar
-%%JAVAJARDIR%%/omcorba.jar
-%%JAVAJARDIR%%/omj3d.jar
-%%JAVAJARDIR%%/omsvg.jar
-%%JAVAJARDIR%%/openmap.jar
