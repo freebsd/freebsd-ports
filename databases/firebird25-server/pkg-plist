@@ -23,19 +23,14 @@ libexec/firebird/intl/fbintl.conf
 @group
 @sample %%CONFDIR%%/aliases.conf.sample
 %%CONFDIR%%/fbtrace.conf
-@dirrmtry %%CONFDIR%%
-@dirrm libexec/firebird/intl
-@dirrm libexec/firebird/plugins
-@dirrm libexec/firebird/udf
-@dirrm libexec/firebird
-@cwd /
 @owner firebird
 @group firebird
-@sample %%LOCALSTATEDIR%%/security2.fdb.sample
-%%LOCALSTATEDIR%%/help/help.fdb
-@unexec [ -s %D/%%LOCALSTATEDIR%%/firebird.log ] || rm -f %D/%%LOCALSTATEDIR%%/firebird.log
-@rmtry %%LOCALSTATEDIR%%/isc_event1.`hostname`
-@rmtry %%LOCALSTATEDIR%%/isc_init1.`hostname`
-@rmtry %%LOCALSTATEDIR%%/isc_lock1.`hostname`
-@dirrm %%LOCALSTATEDIR%%/help
-@dirrmtry %%LOCALSTATEDIR%%
+@sample /%%LOCALSTATEDIR%%/security2.fdb.sample
+/%%LOCALSTATEDIR%%/help/help.fdb
+@unexec [ -s /%%LOCALSTATEDIR%%/firebird.log ] || rm -f /%%LOCALSTATEDIR%%/firebird.log
+@rmtry /%%LOCALSTATEDIR%%/isc_event1.`hostname`
+@rmtry /%%LOCALSTATEDIR%%/isc_init1.`hostname`
+@rmtry /%%LOCALSTATEDIR%%/isc_lock1.`hostname`
+@dir /%%LOCALSTATEDIR%%
+@owner
+@group
