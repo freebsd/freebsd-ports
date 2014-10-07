@@ -36,7 +36,7 @@ post-build:
 	@cd ${WRKSRC}/src/test && ${MAKE_CMD} check
 .endif
 
-port-stage:
+post-stage:
 	@${RM} -f ${STAGEDIR}${PREFIX}/bin/key*
 
 .include <bsd.port.mk>
