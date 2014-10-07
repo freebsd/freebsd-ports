@@ -34,8 +34,11 @@ SUB_LIST+=	PORTNAME=${PORTNAME} \
 		GROUPS=${GROUPS}
 
 # Configure script is written in perl
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	build
+
+CPE_VENDOR=	inspire_ircd
+CPE_PRODUCT=	inspircd
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${ETCDIR} \
