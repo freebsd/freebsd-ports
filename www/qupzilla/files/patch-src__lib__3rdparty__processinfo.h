@@ -1,11 +1,11 @@
---- ./src/lib/3rdparty/processinfo.h.orig	2014-01-26 19:04:16.000000000 +0330
-+++ ./src/lib/3rdparty/processinfo.h	2014-01-26 19:04:33.000000000 +0330
+--- src/lib/3rdparty/processinfo.h.orig	2014-09-26 12:35:35.000000000 +0400
++++ src/lib/3rdparty/processinfo.h	2014-09-26 23:04:10.000000000 +0400
 @@ -18,6 +18,8 @@
  #ifndef PROCESSINFO_H
  #define PROCESSINFO_H
  
-+#include <unistd.h>
++#include <QtGlobal>
 +
- #include <QString>
- 
- #include "qz_namespace.h"
+ #if defined(Q_OS_UNIX) && !defined(Q_OS_MAC)
+ #include <sys/types.h>
+ #endif
