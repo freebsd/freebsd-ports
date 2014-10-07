@@ -25,8 +25,10 @@ RUN_DEPENDS=	\
 		p5-TimeDate>=1.19:${PORTSDIR}/devel/p5-TimeDate \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI
 
-USES=		perl5
+USES=		perl5 cpe
 USE_PERL5=	patch build run
+
+CPE_VENDOR=	mozilla
 
 SUB_FILES=	pkg-message
 
