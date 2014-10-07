@@ -14,7 +14,8 @@
  import gtk.glade
 @@ -8,7 +12,7 @@
  import gladew
- import Image
+-import Image
++from PIL import Image
  
 -import os, new, types
 +import new, types

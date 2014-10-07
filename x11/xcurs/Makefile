@@ -3,7 +3,7 @@
 
 PORTNAME=	xcurs
 PORTVERSION=	0.5.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 python
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 		#http://varg.dyndns.org/psi/files/xcurs/
@@ -11,10 +11,10 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for new X.Org style full-color cursors properties
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow
 
+USES=		python
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
 NO_BUILD=	yes
 
 post-patch:
