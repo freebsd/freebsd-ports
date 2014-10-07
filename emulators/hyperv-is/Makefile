@@ -2,6 +2,7 @@
 
 PORTNAME=	hyperv-is
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	https://github.com/${MSLINK}/
 DISTNAME=	${DNAME}
@@ -15,7 +16,8 @@ USES+=		uidfix
 BIS=		${PORTVERSION}
 MSBASE=		FreeBSDonHyper-V/Hyperv-Ports/raw/hyperv-is-master
 MSLINK=		${MSBASE}/BIS-${BIS}/FreeBSD-${OSREL}/ports
-SUB_FILES=	${PMSG}
+MAKE_ARGS=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
+PKGMESSAGE=	${FILESDIR}/${PMSG}
 
 .include <bsd.port.pre.mk>
 
@@ -45,17 +47,18 @@ DNAME=		${FILE_${OSREL:S/.//}}
 IGNORE=		OSREL ${OSREL} not supported
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e "s,/usr/sbin/,${PREFIX}/sbin/,g" \
+		${WRKSRC}/etc/rc.d/hv_kvpd
+
 pre-install:
 	@${MKDIR} ${STAGEDIR}/boot/kernel \
 		${STAGEDIR}/etc/rc.d \
-		${STAGEDIR}/usr/share/man/man1 \
-		${STAGEDIR}/usr/share/man/man4 \
-		${STAGEDIR}/usr/share/man/man8 \
-		${STAGEDIR}/usr/local/hyperv/scripts \
-		${STAGEDIR}/usr/sbin
-	${MV} ${WRKDIR}/${PMSG} ${WRKDIR}/pkg-message
+		${STAGEDIR}/usr/local/hyperv/scripts
 
 post-install:
 	${RM} ${STAGEDIR}/boot/kernel/linker.hints
+	${MV} ${STAGEDIR}/etc/rc.d/* ${STAGEDIR}${PREFIX}/etc/rc.d
+
 
 .include <bsd.port.post.mk>
