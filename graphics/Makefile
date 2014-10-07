@@ -561,8 +561,6 @@
     SUBDIR += linux-c6-dri-compat
     SUBDIR += linux-c6-jpeg
     SUBDIR += linux-c6-libGLU
-    SUBDIR += linux-c6-tiff
-    SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-png
     SUBDIR += linux-c6-sdl_image
     SUBDIR += linux-c6-sdl_ttf
