@@ -3,7 +3,7 @@
 PORTNAME=	libcdr
 PORTVERSION=	0.1.0
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://dev-www.libreoffice.org/src/
+MASTER_SITES=	LODEV
 PKGNAMESUFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
