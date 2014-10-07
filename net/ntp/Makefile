@@ -3,7 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION?=	4.2.6p5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-FORBIDDEN=	CVE-2013-5211 / VU\#348126 - Please use net/ntp-devel, pending upstream stable branch update.
 LATEST_LINK=	${PORTNAME}
 
 USES=		libtool shebangfix
