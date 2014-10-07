@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mesh Generation Utility for use with the ELMER FEM package
 
+DEPRECATED=	Obsoleted by cad/elmerfem
+EXPIRATION_DATE=2014-11-07
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 

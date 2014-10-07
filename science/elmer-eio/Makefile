@@ -5,11 +5,14 @@ PORTNAME=	eio
 PORTVERSION=	5.4.0
 PORTREVISION=	6
 CATEGORIES=	science
-MASTER_SITES=   http://garr.dl.sourceforge.net/sourceforge/elmerfem/
+MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ELMER FEM Package Data base Interface
+
+DEPRECATED=	Obsoleted by cad/elmerfem
+EXPIRATION_DATE=2014-11-07
 
 USES=		fortran
 

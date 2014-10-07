@@ -10,6 +10,9 @@ MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mesh Manipulation Utility for use with the ELMER FEM package
 
+DEPRECATED=	Obsoleted by cad/elmerfem
+EXPIRATION_DATE=2014-11-07
+
 ALL_TARGET=
 GNU_CONFIGURE=	yes
 

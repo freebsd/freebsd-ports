@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UMFPACK library used by ELMER FEM package
 
+DEPRECATED=	Obsoleted by cad/elmerfem
+EXPIRATION_DATE=2014-11-07
+
 USES=		fortran
 GNU_CONFIGURE=	yes
 ALL_TARGET=
