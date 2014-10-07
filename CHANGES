@@ -19,11 +19,14 @@ AUTHOR: mat@FreeBSD.org
   @cwd /
   etc/rc.d/foo
   var/db/bar
+  @cwd /some
+  @exec mkdir -p %D/nested/dir
 
   add this:
 
   /etc/rc.d/foo
   /var/db/bar
+  @exec mkdir -p /some/nested/dir
 
 20141002:
 AUTHOR: bapt@FreeBSD.org
