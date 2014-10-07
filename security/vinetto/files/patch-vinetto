@@ -1,0 +1,11 @@
+--- vinetto.orig	2014-10-07 11:39:47 UTC
++++ vinetto
+@@ -149,7 +149,7 @@
+     outputdir += "/"
+     
+     try:
+-        from PIL import Image
++        import Image
+         PIL = "imported"
+     except ImportError, e:
+         print >> sys.stderr, ""

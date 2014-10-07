@@ -3,7 +3,7 @@
 
 PORTNAME=	vinetto
 PORTVERSION=	0.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-beta-${PORTVERSION}
 DISTNAME=	${PORTNAME}-beta-${PORTVERSION}
@@ -11,18 +11,18 @@ DISTNAME=	${PORTNAME}-beta-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Forensics tool to examine Thumbs.db files
 
-OPTIONS_DEFINE=	IMAGING
-OPTIONS_DEFAULT=	IMAGING
+OPTIONS_DEFINE=	THUMBNAILS
+OPTIONS_DEFAULT=THUMBNAILS
 IMAGING_DESC=	Build with ability to extract graphic thumbnails
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=	0.06alpha
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGING}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 .endif
 
 do-patch:
