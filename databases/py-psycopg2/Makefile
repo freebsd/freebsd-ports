@@ -3,6 +3,7 @@
 
 PORTNAME=	psycopg2
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-2-5/ \
 		CHEESESHOP
@@ -11,13 +12,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	High performance Python adapter for PostgreSQL
 
-USE_PGSQL=		yes
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-
-DOCSDIR=	${PREFIX}/share/doc/py-psycopg2
-EXAMPLESDIR=	${PREFIX}/share/examples/py-psycopg2
+USES=		pgsql python
+USE_PYTHON=	autoplist concurrent distutils
 
 PORTEXAMPLES=	binary.py copy_from.py copy_to.py cursor.py dialtone.py \
 		dict.py dt.py encoding.py fetch.py lastrowid.py lobject.py \
