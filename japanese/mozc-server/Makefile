@@ -49,19 +49,12 @@ USE_GNOME=	glib20 gtk20
 USE_EMACS=	yes
 .endif
 
-# Do not use Clang 3.3 or prior because of some C++11 library issues.
-.if exists(/usr/bin/clang)
-_CLANGVER!=	/usr/bin/clang --version 2>&1 || true
-.if !defined(_CLANGVER) || \
-    empty(_CLANGVER:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g:M[0-9]*) || \
-    ${_CLANGVER:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g} < 34
+# Use GCC only when the stock clang does not have libc++.so.
+.if exists(/usr/bin/clang) && exists(/usr/lib/libc++.so)
+_CCTYPE=	clang
+.else
 USE_GCC=	yes
 _CCTYPE=	gcc
-.else
-_CCTYPE=	clang
-.endif
-.else
-_CCTYPE=	${CHOSEN_COMPILER_TYPE}
 .endif
 
 .include <bsd.port.pre.mk>
