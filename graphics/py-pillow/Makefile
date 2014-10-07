@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pillow
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.0
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:C/p/P/}-${PORTVERSION}
@@ -29,15 +29,19 @@ TKINTER_USES=		tk:build
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
 USE_GITHUB=		yes
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=			python
+USE_PYTHON=		autoplist concurrent distutils
+PYDISTUTILS_SETUP=	${PYSETUP}
+PYDISTUTILS_BUILD_TARGET=	build build_py build_ext
 
-PYDISTUTILS_AUTOPLIST=		yes
-PYDISTUTILS_BUILD_TARGET=	build_ext
+# we have to build and install everything in a single run,
+# otherwise pillow's build_ext extension tries to be clever
+# and messes up standard distutils behaviour...
+NO_BUILD=		yes
 
 GH_ACCOUNT=	python-pillow
 GH_PROJECT=	${PORTNAME:C/p/P/}
-GH_COMMIT=	1ab78b8
+GH_COMMIT=	9634e43
 
 CONFLICTS_INSTALL=	py*-imaging-*
 
@@ -85,6 +89,11 @@ PYDISTUTILS_BUILDARGS+=	--enable-webp
 .else
 PYDISTUTILS_BUILDARGS+=	--disable-webp
 .endif
+
+do-install:
+	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
+		${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS} \
+		${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 
 regression-test: extract
 	@cd ${WRKSRC} && \
