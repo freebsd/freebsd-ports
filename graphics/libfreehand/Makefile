@@ -4,7 +4,7 @@ PORTNAME=	libfreehand
 PORTVERSION=	0.1.0
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
+MASTER_SITES=	LODEV
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library providing ability to interpret and import Adobe/Macromedia drawings
