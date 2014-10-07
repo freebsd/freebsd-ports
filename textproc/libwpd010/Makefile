@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
-USES=		pathfix libtool tar:bzip2
+USES=		libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	libgsf
 USE_LDCONFIG=	yes
