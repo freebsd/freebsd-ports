@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libcdr
-PORTVERSION=	0.0.16
-PORTREVISION=	2
+PORTVERSION=	0.1.0
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
+PKGNAMESUIFFIX=	01
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Corel Draw file format
@@ -14,8 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
-		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
-		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
+		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
 GNU_CONFIGURE=	yes
@@ -26,8 +25,5 @@ INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wno-long-long
-
-post-stage:
-	${RM} -f ${STAGEDIR}${PREFIX}/bin/c*
 
 .include <bsd.port.mk>
