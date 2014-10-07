@@ -3,7 +3,7 @@
 
 PORTNAME=	twms
 PORTVERSION=	0.02w
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www astro
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:${PORTSDIR}/graphics/py-pyproj \
 		${PYTHON_SITELIBDIR}/web/__init__.py:${PORTSDIR}/www/webpy \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
 USES=		python tar:bzip2
 NO_BUILD=	yes
