@@ -3,7 +3,7 @@
 
 PORTNAME=		sokoban
 PORTVERSION=		1.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
@@ -19,5 +19,9 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/sokoban ${STAGEDIR}${PREFIX}/bin/sokoban
 	@${MKDIR} ${STAGEDIR}${DATADIR}/screens
 	@${INSTALL_DATA} ${WRKSRC}/screens/* ${STAGEDIR}${DATADIR}/screens
+
+post-install:
+	@${MKDIR} ${STAGEDIR}/var/games/sokoban
+	@truncate -s 512 ${STAGEDIR}/var/games/sokoban/scores.sample
 
 .include <bsd.port.mk>

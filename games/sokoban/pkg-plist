@@ -1,11 +1,6 @@
-@group games
-@mode 2555
-bin/sokoban
-@group
-@mode
-@exec truncate -s 512B /var/games/sokoban
-@exec chgrp games /var/games/sokoban
-@exec chmod 0664 /var/games/sokoban
+@(root,games,2555) bin/sokoban
+@dir(root,games,0775) /var/games/sokoban
+@sample(root,games,0664) /var/games/sokoban/scores.sample
 %%DATADIR%%/screens/sokoban.help
 %%DATADIR%%/screens/screen.1
 %%DATADIR%%/screens/screen.2
@@ -57,6 +52,3 @@ bin/sokoban
 %%DATADIR%%/screens/screen.48
 %%DATADIR%%/screens/screen.49
 %%DATADIR%%/screens/screen.50
-@dirrm %%DATADIR%%/screens
-@dirrm %%DATADIR%%
-@unexec rm -f /var/games/sokoban
