@@ -30,6 +30,9 @@ BOOT_DESC=	Build ELF image loadable by boot2 and loader
 SERIAL_DESC=	Enable serial console at COM1/9600
 HISPEED_DESC=	Set COM1 serial console speed to 115200
 
+ISO_PLIST_FILES=	${DATADIR}/mt${PORTVERSION:C/\.//}.iso
+BOOT_PLIST_FILES=	${BOOT_DIR}/memtest86+
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBOOT}
@@ -61,21 +64,6 @@ pre-fetch:
 
 post-patch:
 	${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
-
-PLIST=		${WRKDIR}/pkg-plist
-
-pre-install:
-# Generate PLIST dynamically because install things outside normal ${PREFIX}
-	@${TEST} -f ${PLIST} && ${RM} ${PLIST} || ${TRUE}
-.if ${PORT_OPTIONS:MISO}
-	@${ECHO} "%%DATADIR%%/mt${PORTVERSION:C/\.//}.iso" >> ${PLIST}
-	@${ECHO} "@dirrm %%DATADIR%%" >> ${PLIST}
-.endif
-.if ${PORT_OPTIONS:MBOOT}
-	@${ECHO} "@cwd ${BOOT_DIR:H}" >> ${PLIST}
-	@${ECHO} "${BOOT_DIR:T}/memtest86+" >> ${PLIST}
-	@${ECHO} "@dirrm ${BOOT_DIR:T}" >> ${PLIST}
-.endif
 
 do-install:
 .if ${PORT_OPTIONS:MISO}
