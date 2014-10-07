@@ -13,7 +13,6 @@ COMMENT=	Library to interpret and import Apple Keynote presentations
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-USES=		gperf
 LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
@@ -24,7 +23,7 @@ CONFIGURE_ARGS=	--disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake gperf libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
