@@ -14,13 +14,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-LATEST_LINK=	${PORTNAME}
-
 USES=		libtool shebangfix
 SHEBANG_FILES=	${WRKSRC}/scripts/ntptrace.in ${WRKSRC}/scripts/ntp-wait.in
 perl_OLD_CMD=	@PATH_PERL@
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake
 OPTIONS_SUB=	yes
 
 .include "Makefile.inc"
@@ -49,12 +46,6 @@ CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 CONFIGURE_ARGS+=	--enable-${D}
 .endif
 .endfor
-
-AUTOTOOLSFILES=	aclocal.m4
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
-			  ${WRKSRC}/aclocal.m4
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
