@@ -1,6 +1,6 @@
---- gdb/configure.orig	2012-08-24 14:03:52.000000000 +0200
-+++ gdb/configure	2012-08-24 14:05:06.000000000 +0200
-@@ -10590,7 +10590,8 @@
+--- gdb/configure.orig	2014-07-29 14:37:42.000000000 +0200
++++ gdb/configure	2014-10-01 14:21:14.902231511 +0200
+@@ -11485,7 +11485,8 @@
  
  # See if <machine/reg.h> supports the %fs and %gs i386 segment registers.
  # Older i386 BSD's don't have the r_fs and r_gs members of `struct reg'.
@@ -10,7 +10,7 @@
  "
  if test "x$ac_cv_member_struct_reg_r_fs" = x""yes; then :
  
-@@ -10600,7 +10601,8 @@
+@@ -11495,7 +11496,8 @@
  
  
  fi
@@ -20,3 +20,16 @@
  "
  if test "x$ac_cv_member_struct_reg_r_gs" = x""yes; then :
  
+@@ -13007,10 +13009,9 @@
+ 
+ build_warnings="-Wall -Wdeclaration-after-statement -Wpointer-arith \
+ -Wpointer-sign \
+--Wno-unused -Wunused-value -Wunused-function \
++-Wno-unused -Wunused-value \
+ -Wno-switch -Wno-char-subscripts -Wmissing-prototypes \
+--Wdeclaration-after-statement -Wempty-body -Wmissing-parameter-type \
+--Wold-style-declaration -Wold-style-definition"
++-Wdeclaration-after-statement -Wempty-body -Wold-style-definition"
+ 
+ # Enable -Wno-format by default when using gcc on mingw since many
+ # GCC versions complain about %I64.
