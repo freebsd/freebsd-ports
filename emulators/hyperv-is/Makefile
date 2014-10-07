@@ -2,7 +2,7 @@
 
 PORTNAME=	hyperv-is
 PORTVERSION=	1.1
-CATEGORIES=	kld
+CATEGORIES=	emulators kld
 MASTER_SITES=	https://github.com/${MSLINK}/
 DISTNAME=	${DNAME}
 
