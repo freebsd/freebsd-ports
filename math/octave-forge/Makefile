@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge
-PORTVERSION=	20141004
+PORTVERSION=	20141008
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	ACTUARIAL AD AUDIO BENCHMARK BIM BIOINFO CGI \
 		FINANCIAL FL_CORE FPL FUZZY_LOGIC_TOOLKIT GA GEOMETRY GENERAL \
 		GENERATE_HTML GNUPLOT GSL IDENT IMAGE \
 		INFORMATIONTHEORY INTEGRATION IO IRSA LINEAR_ALGEBRA LSSA \
-		LTFAT MAPPING MECHANICS MISCELLANEOUS MISSING_FUNCTIONS MSH \
+		MAPPING MECHANICS MISCELLANEOUS MISSING_FUNCTIONS MSH \
 		MULTICORE MVN NAN NCARRAY NETCDF NLWING2 NNET NURBS OCS \
 		OCT2MAT OCTCDF OCTCLIP OCTGPR OCTPROJ ODEBVP ODEPKG OPTIM \
 		OPTIMINTERP OUTLIERS PARALLEL PDB PLOT PT_BR QUATERNION \
@@ -66,7 +66,8 @@ IO_DESC=		Install package: io
 IRSA_DESC=		Install package: irsa
 LINEAR_ALGEBRA_DESC=	Install package: linear-algebra
 LSSA_DESC=		Install package: lssa
-LTFAT_DESC=		Install package: ltfat
+# Do not reenable without testing first
+#LTFAT_DESC=		Install package: ltfat
 MAPPING_DESC=		Install package: mapping
 MECHANICS_DESC=		Install package: mechanics
 MISCELLANEOUS_DESC=	Install package: miscellaneous
@@ -234,9 +235,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/linear-algebra.tar.gz:${PORTSDIR}/math/octave-forg
 .if ${PORT_OPTIONS:MLSSA}
 RUN_DEPENDS+=	${TARBALLS_DIR}/lssa.tar.gz:${PORTSDIR}/math/octave-forge-lssa
 .endif
-.if ${PORT_OPTIONS:MLTFAT}
-RUN_DEPENDS+=	${TARBALLS_DIR}/ltfat.tar.gz:${PORTSDIR}/math/octave-forge-ltfat
-.endif
+#.if ${PORT_OPTIONS:MLTFAT}
+#RUN_DEPENDS+=	${TARBALLS_DIR}/ltfat.tar.gz:${PORTSDIR}/math/octave-forge-ltfat
+#.endif
 .if ${PORT_OPTIONS:MMAPPING}
 RUN_DEPENDS+=	${TARBALLS_DIR}/mapping.tar.gz:${PORTSDIR}/math/octave-forge-mapping
 .endif
