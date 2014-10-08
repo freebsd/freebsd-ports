@@ -57,6 +57,77 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d2bbcc01-4ec3-11e4-ab3f-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-pulse</name> <!-- pcbsd only -->
+	<range><lt>38.0.2125.101</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2014/10/stable-channel-update.html">
+	  <p>159 security fixes in this release, including 113 found using
+	    MemorySanitizer:</p>
+	  <ul>
+	    <li>[416449] Critical CVE-2014-3188: A special thanks to Jüri Aedla
+	      for a combination of V8 and IPC bugs that can lead to remote code
+	      execution outside of the sandbox.</li>
+	    <li>[398384] High CVE-2014-3189: Out-of-bounds read in PDFium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[400476] High CVE-2014-3190: Use-after-free in Events. Credit
+	      to cloudfuzzer.</li>
+	    <li>[402407] High CVE-2014-3191: Use-after-free in Rendering.
+	      Credit to cloudfuzzer.</li>
+	    <li>[403276] High CVE-2014-3192: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[399655] High CVE-2014-3193: Type confusion in Session Management.
+	      Credit to miaubiz.</li>
+	    <li>[401115] High CVE-2014-3194: Use-after-free in Web Workers.
+	      Credit to Collin Payne.</li>
+	    <li>[403409] Medium CVE-2014-3195: Information Leak in V8. Credit
+	      to Jüri Aedla.</li>
+	    <li>[338538] Medium CVE-2014-3196: Permissions bypass in Windows
+	      Sandbox. Credit to James Forshaw.</li>
+	    <li>[396544] Medium CVE-2014-3197: Information Leak in XSS Auditor.
+	      Credit to Takeshi Terada.</li>
+	    <li>[415307] Medium CVE-2014-3198: Out-of-bounds read in PDFium.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[395411] Low CVE-2014-3199: Release Assert in V8 bindings.
+	      Credit to Collin Payne.</li>
+	    <li>[420899] CVE-2014-3200: Various fixes from internal audits,
+	      fuzzing and other initiatives (Chrome 38).</li>
+	    <li>Multiple vulnerabilities in V8 fixed at the tip of the 3.28
+	      branch (currently 3.28.71.15).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3188</cvename>
+      <cvename>CVE-2014-3189</cvename>
+      <cvename>CVE-2014-3190</cvename>
+      <cvename>CVE-2014-3191</cvename>
+      <cvename>CVE-2014-3192</cvename>
+      <cvename>CVE-2014-3193</cvename>
+      <cvename>CVE-2014-3194</cvename>
+      <cvename>CVE-2014-3195</cvename>
+      <cvename>CVE-2014-3196</cvename>
+      <cvename>CVE-2014-3197</cvename>
+      <cvename>CVE-2014-3198</cvename>
+      <cvename>CVE-2014-3199</cvename>
+      <cvename>CVE-2014-3200</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2014/10/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-07</discovery>
+      <entry>2014-10-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6587341-4d88-11e4-aef9-20cf30e32f6d">
     <topic>Bugzilla multiple security issues</topic>
     <affects>
