@@ -7,14 +7,14 @@
 WARNING+=	"WITHOUT_NLS is deprecated use OPTIONS_UNSET=NLS instead"
 .endif
 
-.if defined(PKGORIGIN)
-.for _c in ${CATEGORIES}
-_CAT?=	${_c}
-.endfor
-.if ${.CURDIR:H:T} != ${_CAT}
-DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
-.endif
-.endif
+#.if defined(PKGORIGIN)
+#.for _c in ${CATEGORIES}
+#_CAT?=	${_c}
+#.endfor
+#.if ${.CURDIR:H:T} != ${_CAT}
+#DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
+#.endif
+#.endif
 
 #.if defined(WITHOUT_X11)
 #WARNING+=	"WITHOUT_X11 is deprecated use X11 option instead"
