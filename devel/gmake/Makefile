@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmake
-PORTVERSION=	3.82
-PORTREVISION=	2
+PORTVERSION=	4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
@@ -33,10 +32,5 @@ NLS_CONFIGURE_ENABLE=	nls
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 
 INFO=		make
-
-post-patch:
-	@${REINPLACE_CMD} -e '/no-print-dir/s/@itemx/@item/' \
-		${WRKSRC}/doc/make.texi
-	@${RM} ${WRKSRC}/doc/make.info*
 
 .include <bsd.port.mk>
