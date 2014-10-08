@@ -3733,9 +3733,6 @@ install-ldconfig-file:
 	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .endif
 .endif
-.if defined(INSTALLS_SHLIB)
-	@${ECHO_MSG} "INSTALLS_SHLIB is deprecated. Use USE_LDCONFIG instead."
-.endif
 .endif
 .endif
 
