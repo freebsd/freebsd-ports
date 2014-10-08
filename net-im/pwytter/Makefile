@@ -3,7 +3,7 @@
 
 PORTNAME=	pwytter
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im www python
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -14,15 +14,13 @@ COMMENT=	Free multi-platform Twitter client written in Python
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=1.7.1:${PORTSDIR}/devel/py-simplejson
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gettext zip dos2unix
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		dos2unix gettext python:2 zip
+USE_PYTHON=	autoplist distutils
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 DOS2UNIX_GLOB=	 *.py
