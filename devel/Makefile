@@ -3485,6 +3485,7 @@
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
+    SUBDIR += powerpc64-binutils
     SUBDIR += poxml
     SUBDIR += ppl
     SUBDIR += premake
