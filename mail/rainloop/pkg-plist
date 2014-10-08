@@ -788,6 +788,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/it.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/ja-jp.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/ko-kr.ini
+%%WWWDIR%%/rainloop/v/%%VER%%/langs/lt.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/lv.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/nl.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/no.ini
@@ -797,6 +798,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/ro.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/ru.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/sk.ini
+%%WWWDIR%%/rainloop/v/%%VER%%/langs/sv.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/tr.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/ua.ini
 %%WWWDIR%%/rainloop/v/%%VER%%/langs/zh-cn.ini
