@@ -1,5 +1,5 @@
---- ./chrome/app/resources/locale_settings.grd.orig	2014-08-20 21:01:26.000000000 +0200
-+++ ./chrome/app/resources/locale_settings.grd	2014-08-23 15:49:37.000000000 +0200
+--- chrome/app/resources/locale_settings.grd.orig	2014-10-02 17:39:45 UTC
++++ chrome/app/resources/locale_settings.grd
 @@ -264,7 +264,7 @@
          55
        </message>

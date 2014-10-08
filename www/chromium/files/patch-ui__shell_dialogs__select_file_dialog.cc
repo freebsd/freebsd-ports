@@ -1,6 +1,6 @@
---- ./ui/shell_dialogs/select_file_dialog.cc.orig	2014-08-20 21:02:18.000000000 +0200
-+++ ./ui/shell_dialogs/select_file_dialog.cc	2014-08-22 15:06:27.000000000 +0200
-@@ -20,7 +20,7 @@
+--- ui/shell_dialogs/select_file_dialog.cc.orig	2014-10-02 17:19:03 UTC
++++ ui/shell_dialogs/select_file_dialog.cc
+@@ -19,7 +19,7 @@
  #include "ui/shell_dialogs/select_file_dialog_mac.h"
  #elif defined(OS_ANDROID)
  #include "ui/shell_dialogs/select_file_dialog_android.h"
@@ -9,7 +9,7 @@
  #include "ui/shell_dialogs/linux_shell_dialog.h"
  #endif
  
-@@ -76,7 +76,7 @@
+@@ -75,7 +75,7 @@
        return dialog;
    }
  

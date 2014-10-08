@@ -1,5 +1,5 @@
---- ./base/posix/unix_domain_socket_linux.cc.orig	2014-08-20 21:02:41.000000000 +0200
-+++ ./base/posix/unix_domain_socket_linux.cc	2014-08-22 15:06:24.000000000 +0200
+--- base/posix/unix_domain_socket_linux.cc.orig	2014-10-02 17:18:52 UTC
++++ base/posix/unix_domain_socket_linux.cc
 @@ -18,6 +18,15 @@
  #include "base/posix/eintr_wrapper.h"
  #include "base/stl_util.h"

@@ -1,5 +1,5 @@
---- ./third_party/webrtc/base/httpcommon.cc.orig	2014-08-20 21:04:28.000000000 +0200
-+++ ./third_party/webrtc/base/httpcommon.cc	2014-08-22 18:44:03.000000000 +0200
+--- third_party/webrtc/base/httpcommon.cc.orig	2014-10-02 17:40:33 UTC
++++ third_party/webrtc/base/httpcommon.cc
 @@ -382,7 +382,7 @@
      gmt = non_gmt + kTimeZoneOffsets[zindex] * 60 * 60;
    }

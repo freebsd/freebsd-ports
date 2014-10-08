@@ -1,5 +1,5 @@
---- ./sync/util/get_session_name.cc.orig	2014-08-20 21:02:30.000000000 +0200
-+++ ./sync/util/get_session_name.cc	2014-08-22 15:06:26.000000000 +0200
+--- sync/util/get_session_name.cc.orig	2014-10-02 17:39:48 UTC
++++ sync/util/get_session_name.cc
 @@ -11,7 +11,7 @@
  #include "base/sys_info.h"
  #include "base/task_runner.h"
