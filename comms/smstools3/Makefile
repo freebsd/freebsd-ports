@@ -56,6 +56,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 			-e 's|%%STAGEDIR%%|${STAGEDIR}|g' \
 		${WRKSRC}/Makefile ${WRKSRC}/install.sh ${WRKSRC}/src/smsd_cfg.h
+	@${REINPLACE_CMD} -e 's,^override,\toverride,g' ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|/dev/ttyS0|${SMSTOOLS_DEFAULT_COMPORT}|g' \
 			-e 's|%%SMSD_USER%%|${SMSD_USER}|' \
 			-e 's|%%SMSD_GROUP%%|${SMSD_GROUP}|' \
