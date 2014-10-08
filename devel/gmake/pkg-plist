@@ -1,5 +1,7 @@
 bin/gmake
+include/gnumake.h
 %%NLS%%share/locale/be/LC_MESSAGES/make.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/make.mo
 %%NLS%%share/locale/da/LC_MESSAGES/make.mo
 %%NLS%%share/locale/de/LC_MESSAGES/make.mo
 %%NLS%%share/locale/es/LC_MESSAGES/make.mo
