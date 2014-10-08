@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpodder
-PORTVERSION=	3.6.1
+PORTVERSION=	3.8.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gpodder.org/src/
 
@@ -10,6 +10,7 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Media aggregator and podcast client
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		help2man:${PORTSDIR}/misc/help2man
@@ -21,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 
 
 OPTIONS_DEFINE=		GTK2 NOTIFY MUTAGEN OGG2MP3
 OPTIONS_DEFAULT=	GTK2
+OPTIONS_SUB=		yes
 MUTAGEN_DESC=		Allow metadata manipulation
 OGG2MP3_DESC=		Ogg Vorbis conversion to MP3 support
 OPTIONS_EXCLUDE=	NLS
@@ -32,8 +34,7 @@ OGG2MP3_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 ALL_TARGET=	messages
 MAKE_ENV=	GPODDER_MANPATH_NO_SHARE="yes"
 MAKEFILE=	makefile
-USES=		gettext gmake shebangfix
-USE_PYTHON=	2
+USES=		gettext gmake python:2 shebangfix
 SHEBANG_FILES=	src/gpodder/*.py share/gpodder/examples/*.py share/gpodder/extensions/*.py
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
@@ -43,13 +44,11 @@ PORTDOCS=	PKG-INFO README
 
 .if ${PORT_OPTIONS:MGTK2}
 MAKE_ENV+=	GPODDER_INSTALL_UIS="cli gtk"
-PLIST_SUB+=	GTK=""
 RUN_DEPENDS+=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 USE_GNOME=	pygtk2
 .else
 MAKE_ENV+=	GPODDER_INSTALL_UIS="cli"
-PLIST_SUB+=	GTK="@comment "
 .endif
 
 post-install:
