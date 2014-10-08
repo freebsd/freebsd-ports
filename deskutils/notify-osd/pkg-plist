@@ -20,8 +20,3 @@ share/dbus-1/services/org.freedesktop.Notifications.service
 %%DATADIR%%/icons/hicolor/scalable/status/notification-network-ethernet-diconnected.svg
 %%DATADIR%%/icons/hicolor/scalable/status/notification-network-wireless.svg
 %%DATADIR%%/icons/hicolor/scalable/status/notification-power.svg
-@dirrm %%DATADIR%%/icons/hicolor/scalable/status
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

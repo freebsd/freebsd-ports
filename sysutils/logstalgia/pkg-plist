@@ -6,5 +6,3 @@ man/man1/logstalgia.1.gz
 %%DATADIR%%/ball.tga
 %%DATADIR%%/example.log
 %%DATADIR%%/glow.tga
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%

@@ -2,7 +2,6 @@ include/libbinio/binfile.h
 include/libbinio/binio.h
 include/libbinio/binstr.h
 include/libbinio/binwrap.h
-@dirrm include/libbinio
 lib/libbinio.a
 lib/libbinio.so
 lib/libbinio.so.1

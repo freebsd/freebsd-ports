@@ -62,9 +62,3 @@
 %%PERL5_MAN3%%/JE::Object::Function.3.gz
 %%PERL5_MAN3%%/JE.3.gz
 %%PERL5_MAN3%%/JE::Destroyer.3.gz
-@dirrmtry %%SITE_PERL%%/JE/Object/Error
-@dirrmtry %%SITE_PERL%%/JE/Object/Number
-@dirrmtry %%SITE_PERL%%/JE/Object
-@dirrmtry %%SITE_PERL%%/JE
-@dirrmtry %%SITE_PERL%%/JavaScript
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JE

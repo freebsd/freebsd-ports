@@ -46,12 +46,3 @@ bin/asciio
 %%PERL5_MAN3%%/App::Asciio.3.gz
 %%PERL5_MAN3%%/App::Asciio::setup::hooks::canonize_connections.3.gz
 %%PERL5_MAN3%%/App::Asciio::Undo.3.gz
-@dirrm %%SITE_PERL%%/App/Asciio/stripes
-@dirrm %%SITE_PERL%%/App/Asciio/setup/stencils
-@dirrm %%SITE_PERL%%/App/Asciio/setup/import_export
-@dirrm %%SITE_PERL%%/App/Asciio/setup/hooks
-@dirrm %%SITE_PERL%%/App/Asciio/setup/asciio_object
-@dirrm %%SITE_PERL%%/App/Asciio/setup/actions
-@dirrm %%SITE_PERL%%/App/Asciio/setup
-@dirrm %%SITE_PERL%%/App/Asciio
-@dirrmtry %%SITE_PERL%%/App

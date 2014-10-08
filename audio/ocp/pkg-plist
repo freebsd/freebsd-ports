@@ -82,10 +82,6 @@ lib/ocp/playxm.so
 %%DESKTOP%%share/applications/cubic.org-opencubicplayer.desktop
 %%DATADIR%%/data/ocp.hlp
 %%DATADIR%%/etc/ocp.ini
-@dirrm share/ocp/ultradir
-@dirrm share/ocp/etc
-@dirrm share/ocp/data
-@dirrm share/ocp
 %%XORG%%@dirrmtry share/icons/hicolor/48x48/apps
 %%XORG%%@dirrmtry share/icons/hicolor/48x48
 %%XORG%%@dirrmtry share/icons/hicolor/16x16/apps
@@ -94,5 +90,3 @@ lib/ocp/playxm.so
 %%XORG%%@dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/ocp/autoload
-@dirrm lib/ocp

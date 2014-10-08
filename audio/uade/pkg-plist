@@ -177,8 +177,3 @@ libdata/pkgconfig/uade.pc
 %%DATADIR%%/score
 %%DATADIR%%/uade.conf
 %%DATADIR%%/uaerc
-@dirrm lib/uade2
-@dirrm %%DATADIR%%/players/ENV/EaglePlayer
-@dirrm %%DATADIR%%/players/ENV
-@dirrm %%DATADIR%%/players
-@dirrm %%DATADIR%%

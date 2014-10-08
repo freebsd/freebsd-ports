@@ -150,11 +150,3 @@
 %%PERL5_MAN3%%/HTML::DOM::Text.3.gz
 %%PERL5_MAN3%%/HTML::DOM::View.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/DOM/.packlist
-@dirrm %%SITE_PERL%%/HTML/DOM/NodeList
-@dirrm %%SITE_PERL%%/HTML/DOM/Event
-@dirrm %%SITE_PERL%%/HTML/DOM/Element
-@dirrm %%SITE_PERL%%/HTML/DOM/Collection
-@dirrm %%SITE_PERL%%/HTML/DOM
-@dirrmtry %%SITE_PERL%%/HTML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/DOM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML

@@ -93,5 +93,3 @@
 %%DATADIR%%/Skins/titanium.wsz
 %%DATADIR%%/Skins/xmmearth.wsz
 %%DATADIR%%/Skins/xmms-256.wsz
-@dirrmtry %%DATADIR%%/Skins
-@dirrmtry %%DATADIR%%
