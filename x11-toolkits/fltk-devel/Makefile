@@ -27,20 +27,21 @@ USE_LDCONFIG=	${PREFIX}/lib/fltk-devel
 USES+=		cmake:outsource
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DOPTION_BUILD_SHARED_LIBS:BOOL=ON \
-    		-DOPTION_PREFIX_BIN:PATH=${PREFIX}/bin/fltk-devel \
-		-DOPTION_PREFIX_DATA:PATH=${PREFIX}/share/fltk-devel \
-		-DOPTION_PREFIX_DOC:PATH=${PREFIX}/share/examples/fltk-devel \
-		-DOPTION_PREFIX_INCLUDE:PATH=${PREFIX}/include/fltk-devel \
-		-DOPTION_PREFIX_LIB:PATH=${PREFIX}/lib/fltk-devel
+    		-DPREFIX_BIN:PATH=${PREFIX}/bin/fltk-devel \
+		-DPREFIX_DATA:PATH=${PREFIX}/share/fltk-devel \
+		-DPREFIX_DOC:PATH=${PREFIX}/share/examples/fltk-devel \
+		-DPREFIX_INCLUDE:PATH=${PREFIX}/include/fltk-devel \
+		-DPREFIX_LIB:PATH=${PREFIX}/lib/fltk-devel
 
 
-SNAPSHOT_VERS=	10337
+SNAPSHOT_VERS=	10350
 PORTEXAMPLES=	*
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
 
 PORTSCOUT=	limit:1.3.*
 
 post-install:
+	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/fltk-config ${STAGEDIR}${PREFIX}/bin/fltk-devel
 	${LN} -sf fltk-devel/libfltk.so ${STAGEDIR}${PREFIX}/lib/libfltk-devel.so
 
 .include <bsd.port.mk>
