@@ -25,12 +25,10 @@ CONFLICTS_INSTALL=	i386-wine-[0-9]* i386-wine-devel-[0-9]* wine-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--verbose --disable-tests \
-		--without-alsa --without-capi --without-dbus \
+CONFIGURE_ARGS+= --verbose --mandir=${MANPREFIX}/man --without-alsa \
 		--without-gphoto --without-gsm --without-gstreamer \
-		--without-opencl --with-oss --without-sane --without-tiff \
-		--with-xcomposite --without-xinerama
+		--without-opencl --with-oss --without-sane \
+		--without-capi
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
@@ -103,6 +101,7 @@ PORTDATA=	l_intl.nls wine.inf
 MASTER_SITES+=	https://github.com/compholio/wine-compholio-daily/archive/:cho
 COMP_DIST=	v${DISTVERSION}.tar.gz
 DISTFILES+=	${COMP_DIST}:cho
+CONFIGURE_ARGS+= --with-xattr
 USE_AUTOTOOLS=	autoconf
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 		git:${PORTSDIR}/devel/git
@@ -114,6 +113,11 @@ pre-configure:
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
+
+do-configure:
+	cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS} \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}"
 
 post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
