@@ -1,5 +1,5 @@
---- ./chrome/test/chromedriver/chrome/chrome_finder.cc.orig	2014-08-20 21:01:27.000000000 +0200
-+++ ./chrome/test/chromedriver/chrome/chrome_finder.cc	2014-08-22 15:06:25.000000000 +0200
+--- chrome/test/chromedriver/chrome/chrome_finder.cc.orig	2014-10-02 17:39:46 UTC
++++ chrome/test/chromedriver/chrome/chrome_finder.cc
 @@ -42,7 +42,7 @@
          installation_locations[i].Append(L"Chromium\\Application"));
    }

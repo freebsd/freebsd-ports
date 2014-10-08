@@ -1,6 +1,6 @@
---- ./tools/gyp/pylib/gyp/generator/make.py.orig	2014-08-20 21:04:05.000000000 +0200
-+++ ./tools/gyp/pylib/gyp/generator/make.py	2014-08-22 15:06:27.000000000 +0200
-@@ -87,7 +87,7 @@
+--- tools/gyp/pylib/gyp/generator/make.py.orig	2014-10-02 17:40:30 UTC
++++ tools/gyp/pylib/gyp/generator/make.py
+@@ -88,7 +88,7 @@
    else:
      operating_system = flavor
      if flavor == 'android':
@@ -9,7 +9,7 @@
      default_variables.setdefault('OS', operating_system)
      default_variables.setdefault('SHARED_LIB_SUFFIX', '.so')
      default_variables.setdefault('SHARED_LIB_DIR','$(builddir)/lib.$(TOOLSET)')
-@@ -275,7 +275,7 @@
+@@ -276,7 +276,7 @@
  CFLAGS.target ?= $(CFLAGS)
  CXX.target ?= %(CXX.target)s
  CXXFLAGS.target ?= $(CXXFLAGS)
@@ -18,7 +18,7 @@
  LDFLAGS.target ?= $(LDFLAGS)
  AR.target ?= $(AR)
  
-@@ -292,13 +292,13 @@
+@@ -293,13 +293,13 @@
  
  # TODO(evan): move all cross-compilation logic to gyp-time so we don't need
  # to replicate this environment fallback in make as well.
@@ -39,7 +39,7 @@
  
  # Define a dir function that can handle spaces.
  # http://www.gnu.org/software/make/manual/make.html#Syntax-of-Functions
-@@ -1787,7 +1787,7 @@
+@@ -1824,7 +1824,7 @@
        return modules
  
      # Retrieve the default value of 'SHARED_LIB_SUFFIX'

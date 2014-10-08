@@ -1,5 +1,5 @@
---- ./chrome/browser/policy/policy_prefs_browsertest.cc.orig	2014-08-20 21:02:01.000000000 +0200
-+++ ./chrome/browser/policy/policy_prefs_browsertest.cc	2014-08-22 15:06:25.000000000 +0200
+--- chrome/browser/policy/policy_prefs_browsertest.cc.orig	2014-10-02 17:39:46 UTC
++++ chrome/browser/policy/policy_prefs_browsertest.cc
 @@ -169,6 +169,8 @@
      const std::string os("chromeos");
  #elif defined(OS_LINUX)

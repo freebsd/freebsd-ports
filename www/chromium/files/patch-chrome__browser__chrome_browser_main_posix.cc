@@ -1,5 +1,5 @@
---- ./chrome/browser/chrome_browser_main_posix.cc.orig	2014-08-20 21:02:13.000000000 +0200
-+++ ./chrome/browser/chrome_browser_main_posix.cc	2014-08-22 15:06:24.000000000 +0200
+--- chrome/browser/chrome_browser_main_posix.cc.orig	2014-10-02 17:18:53 UTC
++++ chrome/browser/chrome_browser_main_posix.cc
 @@ -270,6 +270,11 @@
      g_pipe_pid = getpid();
      g_shutdown_pipe_read_fd = pipefd[0];

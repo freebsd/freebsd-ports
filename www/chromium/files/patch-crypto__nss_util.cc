@@ -1,5 +1,5 @@
---- ./crypto/nss_util.cc.orig	2014-08-20 21:03:15.000000000 +0200
-+++ ./crypto/nss_util.cc	2014-08-22 15:06:26.000000000 +0200
+--- crypto/nss_util.cc.orig	2014-10-02 17:39:47 UTC
++++ crypto/nss_util.cc
 @@ -13,7 +13,7 @@
  #include <prtime.h>
  #include <secmod.h>
@@ -9,7 +9,7 @@
  #include <sys/mount.h>
  #include <sys/param.h>
  #endif
-@@ -141,7 +141,7 @@
+@@ -143,7 +143,7 @@
  // detection when database_dir is on NFS.  See http://crbug.com/48585.
  //
  // TODO(wtc): port this function to other USE_NSS platforms.  It is defined
@@ -18,7 +18,7 @@
  // is OS-specific.
  //
  // Because this function sets an environment variable it must be run before we
-@@ -152,10 +152,10 @@
+@@ -154,10 +154,10 @@
    base::FileSystemType fs_type = base::FILE_SYSTEM_UNKNOWN;
    if (base::GetFileSystemType(database_dir, &fs_type))
      db_on_nfs = (fs_type == base::FILE_SYSTEM_NFS);

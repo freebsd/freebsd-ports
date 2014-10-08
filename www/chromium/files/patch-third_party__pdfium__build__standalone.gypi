@@ -1,5 +1,5 @@
---- ./third_party/pdfium/build/standalone.gypi.orig	2014-08-20 21:03:59.000000000 +0200
-+++ ./third_party/pdfium/build/standalone.gypi	2014-08-22 17:00:23.000000000 +0200
+--- third_party/pdfium/build/standalone.gypi.orig	2014-10-02 17:40:24 UTC
++++ third_party/pdfium/build/standalone.gypi
 @@ -13,7 +13,7 @@
        'variables': {
          'variables': {
@@ -18,7 +18,7 @@
                'host_arch%': 'ia32',
              }],
            ],
-@@ -250,4 +250,4 @@
+@@ -259,4 +259,4 @@
      # See comment in Chromium's common.gypi for why this is needed.
      'SYMROOT': '<(DEPTH)/xcodebuild',
    }

@@ -1,6 +1,6 @@
---- ./content/browser/geolocation/location_arbitrator_impl.cc.orig	2014-08-20 21:02:48.000000000 +0200
-+++ ./content/browser/geolocation/location_arbitrator_impl.cc	2014-08-22 15:06:25.000000000 +0200
-@@ -160,7 +160,7 @@
+--- content/browser/geolocation/location_arbitrator_impl.cc.orig	2014-10-02 17:18:57 UTC
++++ content/browser/geolocation/location_arbitrator_impl.cc
+@@ -159,7 +159,7 @@
  }
  
  LocationProvider* LocationArbitratorImpl::NewSystemLocationProvider() {

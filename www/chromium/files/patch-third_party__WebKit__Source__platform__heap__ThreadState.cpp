@@ -1,6 +1,6 @@
---- ./third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig	2014-08-20 21:07:57.000000000 +0200
-+++ ./third_party/WebKit/Source/platform/heap/ThreadState.cpp	2014-08-22 15:06:26.000000000 +0200
-@@ -50,13 +50,22 @@
+--- third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig	2014-10-02 18:00:37 UTC
++++ third_party/WebKit/Source/platform/heap/ThreadState.cpp
+@@ -54,13 +54,22 @@
  #include <sanitizer/msan_interface.h>
  #endif
  
@@ -8,7 +8,7 @@
 +#include <pthread_np.h>
 +#endif
 +
- namespace WebCore {
+ namespace blink {
  
  static void* getStackStart()
  {
@@ -24,12 +24,12 @@
          void* base;
          size_t size;
          int error = pthread_attr_getstack(&attr, &base, &size);
-@@ -64,6 +73,9 @@
+@@ -68,6 +77,9 @@
          pthread_attr_destroy(&attr);
          return reinterpret_cast<Address>(base) + size;
      }
 +#if OS(FREEBSD)
-+    pthread_attr_destroy(&attr);
++	pthread_attr_destroy(&attr);
 +#endif
  #if defined(__GLIBC__)
      // pthread_getattr_np can fail for the main thread. In this case

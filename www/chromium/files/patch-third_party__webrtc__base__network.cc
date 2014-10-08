@@ -1,5 +1,5 @@
---- ./third_party/webrtc/base/network.cc.orig	2014-08-20 21:04:28.000000000 +0200
-+++ ./third_party/webrtc/base/network.cc	2014-08-22 18:51:07.000000000 +0200
+--- third_party/webrtc/base/network.cc.orig	2014-10-02 17:40:33 UTC
++++ third_party/webrtc/base/network.cc
 @@ -18,7 +18,7 @@
  // linux/if.h can't be included at the same time as the posix sys/if.h, and
  // it's transitively required by linux/route.h, so include that version on
