@@ -1,5 +1,5 @@
---- ./misc/tune2fs.c.orig	2013-12-29 05:18:02.000000000 +0100
-+++ ./misc/tune2fs.c	2014-01-06 23:43:47.000000000 +0100
+--- misc/tune2fs.c.orig	2014-08-02 20:26:22 UTC
++++ misc/tune2fs.c
 @@ -25,7 +25,6 @@
   * 94/03/06	- Added the checks interval from Uwe Ohse (uwe@tirka.gun.de)
   */

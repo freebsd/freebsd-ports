@@ -1,6 +1,6 @@
---- ./lib/ext2fs/ext2_fs.h.orig	2013-12-29 05:18:02.000000000 +0100
-+++ ./lib/ext2fs/ext2_fs.h	2014-01-06 23:26:48.000000000 +0100
-@@ -456,7 +456,7 @@
+--- lib/ext2fs/ext2_fs.h.orig	2014-08-02 20:26:22 UTC
++++ lib/ext2fs/ext2_fs.h
+@@ -461,7 +461,7 @@
  
  #define i_dir_acl	i_size_high
  
