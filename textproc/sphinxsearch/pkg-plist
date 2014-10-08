@@ -2,9 +2,7 @@ bin/indexer
 bin/indextool
 bin/spelldump
 sbin/searchd
-@unexec if cmp -s %D/etc/sphinx.conf.sample %D/etc/sphinx.conf; then rm -f %D/etc/sphinx.conf; fi
-etc/sphinx.conf.sample
-@exec if [ ! -f %D/etc/sphinx.conf ] ; then cp -p %D/%F %B/sphinx.conf; fi
+@sample etc/sphinx.conf.sample
 %%PORTDOCS%%man/man1/indexer.1.gz
 %%PORTDOCS%%man/man1/indextool.1.gz
 %%PORTDOCS%%man/man1/spelldump.1.gz
@@ -133,15 +131,3 @@ etc/sphinx.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/test2.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/test2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.sql
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/tasks
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/spec/sphinx
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/spec/fixtures
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/spec
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/lib/sphinx
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/lib
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/libsphinxclient
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/java
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
