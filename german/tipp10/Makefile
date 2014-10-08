@@ -3,7 +3,7 @@
 
 PORTNAME=	tipp10
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	german
 MASTER_SITES=	http://www.tipp10.com/en/download/
 DISTNAME=	tipp10_source_v2-1-0
@@ -28,10 +28,10 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tipp10 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} -d ${STAGEDIR}${DATADIR}/help/de/img
-	${INSTALL_DATA} -d ${STAGEDIR}${DATADIR}/help/de/content
-	${INSTALL_DATA} -d ${STAGEDIR}${DATADIR}/help/en/img
-	${INSTALL_DATA} -d ${STAGEDIR}${DATADIR}/help/en/content
+	${MKDIR} ${STAGEDIR}${DATADIR}/help/de/img
+	${MKDIR} ${STAGEDIR}${DATADIR}/help/de/content
+	${MKDIR} ${STAGEDIR}${DATADIR}/help/en/img
+	${MKDIR} ${STAGEDIR}${DATADIR}/help/en/content
 	${INSTALL_DATA} ${WRKSRC}/release/tipp10v2.template ${WRKSRC}/metronome.wav ${WRKSRC}/error.wav ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/release/help/de/index.html ${STAGEDIR}${DATADIR}/help/de
 	${INSTALL_DATA} ${WRKSRC}/release/help/de/content/* ${STAGEDIR}${DATADIR}/help/de/content
