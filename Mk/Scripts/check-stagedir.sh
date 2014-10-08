@@ -71,7 +71,10 @@ parse_plist() {
 		@info\ *|@shell\ *)
 			set -- $line
 			shift
-			echo "${comment}${cwd}/$@"
+			case "$@" in
+			/*) echo "${comment}$@" ;;
+			*) echo "${comment}${cwd}/$@" ;;
+			esac
 		;;
 		@sample\ *)
 			set -- $line
