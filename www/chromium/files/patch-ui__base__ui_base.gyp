@@ -1,6 +1,6 @@
---- ./ui/base/ui_base.gyp.orig	2014-08-20 21:02:15.000000000 +0200
-+++ ./ui/base/ui_base.gyp	2014-08-22 15:06:27.000000000 +0200
-@@ -366,7 +366,7 @@
+--- ui/base/ui_base.gyp.orig	2014-10-02 17:39:48 UTC
++++ ui/base/ui_base.gyp
+@@ -427,7 +427,7 @@
              'x/selection_utils.h',
            ]
          }],

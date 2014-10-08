@@ -1,8 +1,8 @@
---- ./ui/events/event_switches.cc.orig	2014-08-20 21:02:18.000000000 +0200
-+++ ./ui/events/event_switches.cc	2014-08-22 15:06:27.000000000 +0200
-@@ -32,7 +32,7 @@
- //   disabled: Use the aura gesture detector.
- const char kUnifiedGestureDetectorDisabled[] = "disabled";
+--- ui/events/event_switches.cc.orig	2014-10-02 17:39:48 UTC
++++ ui/events/event_switches.cc
+@@ -39,7 +39,7 @@
+ const char kCompensateForUnstablePinchZoom[] =
+     "compensate-for-unstable-pinch-zoom";
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)

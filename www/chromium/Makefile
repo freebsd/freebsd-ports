@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	37.0.2062.124
-PORTREVISION=	1
+PORTVERSION=	38.0.2125.101
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	chromium@FreeBSD.org
-COMMENT=	Mostly BSD-licensed web browser based on WebKit and Gtk+
+COMMENT=	Google web browser based on WebKit
 
 LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
@@ -41,7 +40,6 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libicuuc.so:${PORTSDIR}/devel/icu \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
-		libminizip.so:${PORTSDIR}/archivers/minizip \
 		libnspr4.so:${PORTSDIR}/devel/nspr \
 		libprotobuf.so:${PORTSDIR}/devel/protobuf \
 		libpng.so:${PORTSDIR}/graphics/png \
@@ -64,7 +62,6 @@ CPE_PRODUCT=	chrome
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
-USE_OPENSSL=	yes # must be from base to prevent a link failure against cups
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
@@ -77,6 +74,7 @@ GYP_DEFINES+=	\
 		linux_strip_binary=1 \
 		test_isolation_mode=noop \
 		disable_nacl=1 \
+		enable_extensions=1 \
 		enable_one_click_signin=1 \
 		enable_openmax=1 \
 		enable_webrtc=1 \
@@ -106,16 +104,13 @@ GYP_DEFINES+=	\
 		use_system_libwebp=1 \
 		use_system_libxml=1 \
 		use_system_libxslt=1 \
-		use_system_minizip=1 \
 		use_system_nspr=1 \
-		use_system_openssl=1 \
 		use_system_protobuf=1 \
 		use_system_re2=1 \
 		use_system_snappy=1 \
 		use_system_speex=1 \
 		use_system_xdg_utils=1 \
-		use_system_yasm=1 \
-		use_system_zlib=1
+		use_system_yasm=1
 # allow removal of third_party/adobe
 GYP_DEFINES+=	flapper_version_h_file='${WRKSRC}/flapper_version.h'
 
@@ -169,9 +164,6 @@ GYP_DEFINES+=	disable_sse2=1
 .if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libusb-pc
 .endif
-.if ${OSVERSION} >= 1000052 && !exists(${LOCALBASE}/include/execinfo.h)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fixup-execinfo
-.endif
 
 .if ${PORT_OPTIONS:MTEST}
 .include "Makefile.tests"
@@ -191,12 +183,9 @@ CONFIGURE_ENV+=	CC="${CC}" \
 		GYP_DEFINES="${GYP_DEFINES}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF="${LOCALBASE}/bin/gperf"
+MAKE_ARGS=	-C out/${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
-
-#XXX redefine MAKE_ARGS after bsd.port.pre.mk to avoid OPENSSL flags
-# leaking in which confuses ninja
-MAKE_ARGS=	-C out/${BUILDTYPE}
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
@@ -235,11 +224,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
 		${WRKSRC}/chrome/common/chrome_paths.cc \
 		${WRKSRC}/base/base.gyp
-	@${REINPLACE_CMD} -e "s|/usr/bin/gcc|${CC}|" \
-		${WRKSRC}/third_party/WebKit/Source/build/scripts/preprocessor.pm \
-		${WRKSRC}/third_party/WebKit/Source/build/scripts/scripts.gypi
-	@${REINPLACE_CMD} -e "s|g++|${CXX}|" \
-		${WRKSRC}/tools/compile_test/compile_test.py
 
 pre-configure:
 	# phajdan-jr: list of things *not* to remove, so maybe the script
@@ -256,6 +240,7 @@ pre-configure:
 		'base/third_party/xdg_mime' \
 		'base/third_party/xdg_user_dirs' \
 		'breakpad/src/third_party/curl' \
+		'chrome/third_party/mock4js' \
 		'chrome/third_party/mozilla_security_manager' \
 		'courgette/third_party' \
 		'crypto/third_party/nss' \
@@ -263,11 +248,15 @@ pre-configure:
 		'net/third_party/nss' \
 		'third_party/WebKit' \
 		'third_party/angle' \
+		'third_party/angle/src/third_party' \
+		'third_party/blanketjs' \
 		'third_party/brotli' \
+		'third_party/boringssl' \
 		'third_party/cacheinvalidation' \
 		'third_party/cld' \
 		'third_party/cros_system_api' \
 		'third_party/dom_distiller_js' \
+		'third_party/dom_distiller_js/package/proto_gen/third_party/dom_distiller_js' \
 		'third_party/ffmpeg' \
 		'third_party/fips181' \
 		'third_party/flot' \
@@ -283,6 +272,7 @@ pre-configure:
 		'third_party/libphonenumber' \
 		'third_party/libsrtp' \
 		'third_party/libvpx' \
+		'third_party/libvpx/source/libvpx/third_party/x86inc' \
 		'third_party/libwebm' \
 		'third_party/libxml/chromium' \
 		'third_party/libXNVCtrl' \
@@ -297,27 +287,34 @@ pre-configure:
 		'third_party/opus' \
 		'third_party/ots' \
 		'third_party/pdfium' \
+		'third_party/pdfium/third_party' \
 		'third_party/ply' \
 		'third_party/polymer' \
 		'third_party/pywebsocket' \
 		'third_party/qcms' \
+		'third_party/qunit' \
 		'third_party/readability' \
 		'third_party/sfntly' \
+		'third_party/sinonjs' \
 		'third_party/skia' \
 		'third_party/smhasher' \
 		'third_party/sqlite' \
 		'third_party/tcmalloc' \
 		'third_party/tlslite' \
 		'third_party/trace-viewer' \
+		'third_party/trace-viewer/third_party' \
+		'third_party/trace-viewer/third_party/tvcm/third_party' \
 		'third_party/undoview' \
 		'third_party/usrsctp' \
 		'third_party/webdriver' \
 		'third_party/webrtc' \
 		'third_party/widevine' \
 		'third_party/x86inc' \
-		'third_party/zlib/google' \
+		'third_party/yasm' \
+		'third_party/zlib' \
 		'url/third_party/mozilla' \
 		'v8/src/third_party/valgrind' \
+		'v8/third_party/fdlibm' \
 		--do-remove || ${FALSE}
 	cd ${WRKSRC} && ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gyp_files.py \

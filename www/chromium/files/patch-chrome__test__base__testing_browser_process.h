@@ -1,5 +1,5 @@
---- ./chrome/test/base/testing_browser_process.h.orig	2014-08-20 21:01:48.000000000 +0200
-+++ ./chrome/test/base/testing_browser_process.h	2014-08-22 15:06:25.000000000 +0200
+--- chrome/test/base/testing_browser_process.h.orig	2014-10-02 17:39:46 UTC
++++ chrome/test/base/testing_browser_process.h
 @@ -105,8 +105,8 @@
    virtual DownloadStatusUpdater* download_status_updater() OVERRIDE;
    virtual DownloadRequestLimiter* download_request_limiter() OVERRIDE;

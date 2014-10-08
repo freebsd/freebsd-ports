@@ -1,6 +1,6 @@
---- ./chrome/app/chromium_strings.grd.orig	2014-08-20 21:01:26.000000000 +0200
-+++ ./chrome/app/chromium_strings.grd	2014-08-22 15:06:24.000000000 +0200
-@@ -1102,7 +1102,7 @@
+--- chrome/app/chromium_strings.grd.orig	2014-10-02 17:39:45 UTC
++++ chrome/app/chromium_strings.grd
+@@ -1115,7 +1115,7 @@
        </message>
  
        <!-- ProcessSingleton -->

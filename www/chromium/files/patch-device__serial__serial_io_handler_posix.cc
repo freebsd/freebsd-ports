@@ -1,6 +1,6 @@
---- ./chrome/browser/extensions/api/serial/serial_connection_posix.cc.orig	2014-08-20 21:01:58.000000000 +0200
-+++ ./chrome/browser/extensions/api/serial/serial_connection_posix.cc	2014-08-22 15:06:24.000000000 +0200
-@@ -36,7 +36,7 @@
+--- device/serial/serial_io_handler_posix.cc.orig	2014-10-02 17:18:57 UTC
++++ device/serial/serial_io_handler_posix.cc
+@@ -39,7 +39,7 @@
      BITRATE_TO_SPEED_CASE(9600)
      BITRATE_TO_SPEED_CASE(19200)
      BITRATE_TO_SPEED_CASE(38400)
@@ -9,7 +9,7 @@
      BITRATE_TO_SPEED_CASE(57600)
      BITRATE_TO_SPEED_CASE(115200)
      BITRATE_TO_SPEED_CASE(230400)
-@@ -71,7 +71,7 @@
+@@ -77,7 +77,7 @@
      SPEED_TO_BITRATE_CASE(9600)
      SPEED_TO_BITRATE_CASE(19200)
      SPEED_TO_BITRATE_CASE(38400)

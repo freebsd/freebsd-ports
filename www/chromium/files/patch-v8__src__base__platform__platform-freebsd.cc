@@ -1,6 +1,6 @@
---- ./v8/src/platform-freebsd.cc.orig	2014-08-20 21:04:33.000000000 +0200
-+++ ./v8/src/platform-freebsd.cc	2014-08-22 18:16:57.000000000 +0200
-@@ -130,14 +130,14 @@
+--- v8/src/base/platform/platform-freebsd.cc.orig	2014-10-02 17:41:11 UTC
++++ v8/src/base/platform/platform-freebsd.cc
+@@ -131,14 +131,14 @@
      addr_buffer[0] = '0';
      addr_buffer[1] = 'x';
      addr_buffer[10] = 0;
@@ -21,7 +21,7 @@
      unsigned end = StringToLong(addr_buffer);
      char buffer[MAP_LENGTH];
      int bytes_read = -1;
-@@ -145,8 +145,8 @@
+@@ -146,8 +146,8 @@
        bytes_read++;
        if (bytes_read >= MAP_LENGTH - 1)
          break;

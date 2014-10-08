@@ -1,11 +1,11 @@
---- ./third_party/pdfium/pdfium.gyp.orig	2014-08-20 21:04:00.000000000 +0200
-+++ ./third_party/pdfium/pdfium.gyp	2014-08-22 16:59:52.000000000 +0200
-@@ -14,7 +14,7 @@
+--- third_party/pdfium/pdfium.gyp.orig	2014-10-02 17:40:24 UTC
++++ third_party/pdfium/pdfium.gyp
+@@ -13,7 +13,7 @@
        ['pdf_use_skia==1', {
          'defines': ['_SKIA_SUPPORT_'],
        }],
 -      ['OS=="linux"', {
 +      ['OS=="linux" or OS=="freebsd"', {
-         'cflags!': [
-           '-fno-exceptions',
-         ],
+         'conditions': [
+           ['target_arch=="x64"', {
+             'defines' : [ '_FX_CPU_=_FX_X64_', ],
