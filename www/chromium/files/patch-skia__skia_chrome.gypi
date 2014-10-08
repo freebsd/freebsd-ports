@@ -1,6 +1,6 @@
---- ./skia/skia_chrome.gypi.orig	2014-08-20 21:03:15.000000000 +0200
-+++ ./skia/skia_chrome.gypi	2014-08-22 15:06:26.000000000 +0200
-@@ -80,6 +80,11 @@
+--- skia/skia_chrome.gypi.orig	2014-10-02 17:39:48 UTC
++++ skia/skia_chrome.gypi
+@@ -87,6 +87,11 @@
      'ext/vector_platform_device_skia.h',
    ],
    'conditions': [

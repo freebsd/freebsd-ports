@@ -1,6 +1,6 @@
---- ./base/process/memory_unittest.cc.orig	2014-08-20 21:02:41.000000000 +0200
-+++ ./base/process/memory_unittest.cc	2014-08-22 15:06:24.000000000 +0200
-@@ -151,9 +151,9 @@
+--- base/process/memory_unittest.cc.orig	2014-10-02 17:18:52 UTC
++++ base/process/memory_unittest.cc
+@@ -160,9 +160,9 @@
  
  // Android doesn't implement set_new_handler, so we can't use the
  // OutOfMemoryTest cases.
@@ -12,7 +12,7 @@
      !defined(OS_WIN)
  
  #if defined(USE_TCMALLOC)
-@@ -425,4 +425,4 @@
+@@ -448,4 +448,4 @@
    EXPECT_TRUE(value_ == NULL);
  }
  #endif  // !defined(MEMORY_TOOL_REPLACES_ALLOCATOR)

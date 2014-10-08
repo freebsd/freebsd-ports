@@ -1,34 +1,43 @@
---- ./chrome/browser/chrome_content_browser_client.cc.orig	2014-08-20 21:02:13.000000000 +0200
-+++ ./chrome/browser/chrome_content_browser_client.cc	2014-08-22 15:06:24.000000000 +0200
-@@ -509,7 +509,7 @@
-   }
+--- chrome/browser/chrome_content_browser_client.cc.orig	2014-10-02 17:39:45 UTC
++++ chrome/browser/chrome_content_browser_client.cc
+@@ -430,7 +430,7 @@
+   return false;
  }
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+-#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -566,7 +566,7 @@
+@@ -487,7 +487,7 @@
  
    return -1;
  }
--#endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
-+#endif  // defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
- #endif  // !defined(OS_ANDROID)
+-#endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
++#endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
  
  #if !defined(OS_CHROMEOS)
-@@ -1533,7 +1533,7 @@
+ GURL GetEffectiveURLForSignin(const GURL& url) {
+@@ -1196,7 +1196,7 @@
  
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
      CommandLine* command_line, int child_process_id) {
 -#if defined(OS_POSIX)
 +#if defined(OS_POSIX) && !defined(OS_BSD)
    if (breakpad::IsCrashReporterEnabled()) {
-     std::string enable_crash_reporter;
-     GoogleUpdateSettings::GetMetricsId(&enable_crash_reporter);
-@@ -2683,7 +2683,7 @@
- #endif
+     scoped_ptr<metrics::ClientInfo> client_info =
+         GoogleUpdateSettings::LoadMetricsClientInfo();
+@@ -1204,7 +1204,7 @@
+                                     client_info ? client_info->client_id
+                                                 : std::string());
+   }
+-#endif  // defined(OS_POSIX)
++#endif  // defined(OS_POSIX) && !defined(OS_BSD)
+ 
+   if (logging::DialogsAreSuppressed())
+     command_line->AppendSwitch(switches::kNoErrorDialogs);
+@@ -2447,7 +2447,7 @@
+   }
  }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
@@ -36,7 +45,7 @@
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const CommandLine& command_line,
      int child_process_id,
-@@ -2749,7 +2749,7 @@
+@@ -2513,7 +2513,7 @@
    }
  #endif  // defined(OS_ANDROID)
  }

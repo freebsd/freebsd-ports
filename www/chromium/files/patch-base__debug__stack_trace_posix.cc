@@ -1,6 +1,6 @@
---- ./base/debug/stack_trace_posix.cc.orig	2014-08-20 21:02:42.000000000 +0200
-+++ ./base/debug/stack_trace_posix.cc	2014-08-22 15:06:24.000000000 +0200
-@@ -590,6 +590,10 @@
+--- base/debug/stack_trace_posix.cc.orig	2014-10-02 17:18:52 UTC
++++ base/debug/stack_trace_posix.cc
+@@ -588,6 +588,10 @@
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
@@ -11,7 +11,7 @@
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -605,6 +609,7 @@
+@@ -603,6 +607,7 @@
  
      is_initialized_ = true;
      return true;

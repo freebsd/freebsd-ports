@@ -1,5 +1,5 @@
---- ./chrome/browser/ui/webui/about_ui.cc.orig	2014-08-20 21:02:03.000000000 +0200
-+++ ./chrome/browser/ui/webui/about_ui.cc	2014-08-22 15:06:25.000000000 +0200
+--- chrome/browser/ui/webui/about_ui.cc.orig	2014-10-02 17:39:46 UTC
++++ chrome/browser/ui/webui/about_ui.cc
 @@ -761,7 +761,7 @@
    return data;
  }
@@ -25,7 +25,7 @@
  
  // AboutMemoryHandler ----------------------------------------------------------
  
-@@ -1017,7 +1019,7 @@
+@@ -1019,7 +1021,7 @@
    } else if (source_name_ == chrome::kChromeUIDNSHost) {
      AboutDnsHandler::Start(profile(), callback);
      return;
