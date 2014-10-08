@@ -52,6 +52,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--program-transform-name="" \
 		--localstatedir=${STATEDIR} \
 		--datadir=${PREFIX}/etc/nut \
+		--with-devd-dir=${PREFIX}/etc/devd \
 		--with-drvpath=${PREFIX}/libexec/nut \
 		--with-statepath=${STATEDIR} \
 		--with-altpidpath=${STATEDIR} \
