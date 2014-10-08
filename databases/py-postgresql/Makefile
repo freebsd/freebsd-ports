@@ -15,10 +15,7 @@ COMMENT=	Python 3 compatible PostgreSQL database driver and tools
 
 LICENSE=	BSD3CLAUSE
 
-USES=			zip
-USE_PGSQL=		yes
-USE_PYTHON=		3
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=			zip pgsql python:3
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
