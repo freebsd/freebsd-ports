@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.327 2014/07/28 13:15:56 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.338 2014/10/08 23:35:33 marcus Exp $
 #
 
 use strict;
@@ -51,7 +51,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 15;
-my $micro = 4;
+my $micro = 5;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -600,6 +600,10 @@ sub checkplist {
 		$_ =~ s/\s+$//;
 		$_ =~ s/\n$//;
 
+		if ($_ eq "") {
+			&perror("WARN", $file, $., "empty line found in plist.");
+		}
+
 		# store possible OPTIONS knobs for OPTIONS_SUB
 		if ($makevar{OPTIONS_SUB}) {
 			while (/\%\%([^%]+)\%\%/g) {
@@ -632,6 +636,12 @@ sub checkplist {
 		if (m'\@dirrm(try)?\s+libdata/pkgconfig') {
 			&perror("FATAL", $file, $., "libdata/pkgconfig should not be ".
 				"removed.  It is listed in BSD.local.dist.");
+		}
+
+		if (m'\@dirrm(try)?\s') {
+			&perror("WARN", $file, $., "\@dirrm[try] is deprecated.  If you ".
+				"require special directory handling, use \@dir instead and ".
+				"consult the porter's handbook.");
 		}
 
 		$seen_special++ if /[\%\@]/;
@@ -1387,8 +1397,19 @@ sub checkmakefile {
 	print "OK: checking for use of .elseif.\n" if ($verbose);
 	if ($whole =~ /^\.\s*else\s*if/m) {
 		my $lineno = &linenumber($`);
-		&perror("FATAL", $file, $lineno, "use of .elseif (or .else if) is not
-			supported in all versions of FreeBSD.  Use .elif instead.");
+		&perror("FATAL", $file, $lineno, "use of .elseif (or .else if) is not ".
+			"supported in all versions of FreeBSD.  Use .elif instead.");
+	}
+
+	#
+	# whole file: use of @${INSTALL_foo}
+	#
+	print "OK: checking for use of muted INSTALL_ commands.\n" if ($verbose);
+	if ($whole =~ /^\s+\@\$\{INSTALL_/m) {
+		my $lineno = &linenumber($`);
+		&perror("WARN", $file, $lineno, "do not use muted INSTALL_foo ".
+			"commands (i.e., those that start with '\@').  These should be ".
+			"printed.");
 	}
 
 	#
@@ -1580,7 +1601,7 @@ sub checkmakefile {
 	}
 	foreach my $i ((@opt, @aopt)) {
 		# skip global options
-		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11');
+		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11' or $i eq 'DEBUG');
 		if (!grep(/^$i$/, (@mopt, @popt))) {
 			if ($whole !~ /\n${i}_($m)(.)?=[^\n]+/) {
 				&perror("WARN", $file, -1, "$i is listed in ".
@@ -1606,25 +1627,6 @@ sub checkmakefile {
 	if ($desktop_entries =~ /\${TRUE}/ or $desktop_entries =~ /\${FALSE}/ or
 	    $desktop_entries =~ /\"true\"/ or $desktop_entries =~ /\"false\"/) {
 		&perror("FATAL", $file, -1, "Use true/false (without quotes) instead of \${TRUE}/\${FALSE} in DESKTOP_ENTRIES.");
-	}
-
-	my @dte_parts = split(/\s+/, $desktop_entries);
-	my $dtc = 0;
-	my $dte_quote = 0;
-	foreach my $dte_part (@dte_parts) {
-		if ($dtc % 5 == 0 && $dte_part eq '""') {
-			&perror("FATAL", $file, -1, "Use true/false (without quotes) instead of \${TRUE}/\${FALSE} in DESKTOP_ENTRIES.");
-		}
-		if ($dte_quote == 1 && $dte_part =~ /"$/) {
-			$dte_quote = 0;
-		}
-		if ($dte_part =~ /^"[^"]+$/) {
-			$dte_quote = 1;
-			next;
-		}
-		if (!$dte_quote) {
-			$dtc++;
-		}
 	}
 
 	#
@@ -1700,6 +1702,11 @@ sub checkmakefile {
 		}
 	}
 
+	if ($makevar{COMMENT} =~ /^An? / || $makevar{COMMENT} =~ /^The /) {
+		&perror("WARN", $file, -1, "COMMENT is not supposed to begin with ".
+			"'A ', 'An ', or 'The '.");
+	}
+
 	if ($whole =~ /\nIGNORE[+?]?=[ \t]+[^a-z \t]/ ||
 		$whole =~ /^IGNORE[+?]?=[ \t]+.*\.$/m) {
 		my $lineno = &linenumber($`);
@@ -1729,6 +1736,18 @@ sub checkmakefile {
 				"be used in combination with NO_BUILD.  You ".
 				"should remove MAKE_JOBS_UNSAFE from your Makefile.");
 	    	}
+	}
+
+	#
+	# whole file: Check if USES is sorted
+	#
+	print "OK: checking to see if USES is sorted.\n" if ($verbose);
+	if ($makevar{USES} ne '') {
+		my @suses = sort(split / /, $makevar{USES});
+		if (join(" ", @suses) ne $makevar{USES}) {
+			&perror("WARN", $file, -1, "the options to USES are not sorted. ".
+				"Please consider sorting them.");
+		}
 	}
 
 	#
@@ -1909,6 +1928,7 @@ ruby sed sdl-config sh sort sysctl touch tr which xargs xmkmf
 				&& $curline !~ /^WX_COMPS(.)?=[^\n]+$i/m
 				&& $curline !~ /^ONLY_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
 				&& $curline !~ /^NOT_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
+				&& $curline !~ /^SHEBANG_FILES(.)?=[^\n]+$i/m
 				&& $curline !~ /^[A-Z0-9_]+_DESC=[^\n]+$i/m
 				&& $curline !~ /^\s*#.+$/m
 				&& $curline !~ /\-\-$i/m
@@ -1936,6 +1956,8 @@ ruby sed sdl-config sh sort sysctl touch tr which xargs xmkmf
 				&& $lm !~ /^MAINTAINER(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^CATEGORIES(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^USES(.)?=[^\n]+$i/m
+				&& $lm !~ /^[A-Z0-9_]+_DESC=[^\n]+($i\d*)/m
+				&& $lm !~ /^SHEBANG_FILES(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^USE_AUTOTOOLS(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^\s*#.+$/m
 				&& $lm !~ /^COMMENT(.)?=[^\n]+($i\d*)/m) {
@@ -3227,7 +3249,26 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 				} elsif ($i eq '' && $mvar && $mvar ne '') {
 					&perror("WARN", $file, -1, "possible undefined make variable ".
 						"$mvar used as the value for USE_RC_SUBR.");
+				} elsif ($i ne '' && -f "files/$i.in") {
+					if (open(RCIN, "< files/$i.in")) {
+						my @rccontents = <RCIN>;
+						my $found_provide = 0;
+						foreach my $line (@rccontents) {
+							if ($line =~ /^# PROVIDE:/) {
+								$found_provide = 1;
+								last;
+							}
+						}
+						if (!$found_provide) {
+							&perror("FATAL", "files/$i.in", -1, "rc.d script ".
+								"$i.in must contain a '# PROVIDE:' line in ".
+								"order to be started at boot time.");
+						}
+
+						close(RCIN);
+					}
 				}
+
 			}
 		}
 	}
@@ -3435,7 +3476,21 @@ work		\${WRKDIR} instead
 EOF
 		foreach my $i (keys %cmdnames) {
 			# use (?![\w-]) instead of \b to exclude pkg-*
-			if ($s =~ /^[^#]*(\.\/|\$[\{\(]\.CURDIR[\}\)]\/|[ \t])(\b$i)(?![\w-])/) {
+			if ($s =~ /^[^#]*(\.\/|\$[\{\(]\.CURDIR[\}\)]\/|[ \t])(\b$i)(?![\w-])/
+			    && $s !~ /^COMMENT(.)?=[^\n]+$i/m
+				&& $s !~ /^IGNORE(.)?=[^\n]+$i/m
+				&& $s !~ /^BROKEN(.)?=[^\n]+$i/m
+				&& $s !~ /^RESTRICTED(.)?=[^\n]+$i/m
+				&& $s !~ /^NO_PACKAGE(.)?=[^\n]+$i/m
+				&& $s !~ /^NO_CDROM(.)?=[^\n]+$i/m
+				&& $s !~ /^MAINTAINER(.)?=[^\n]+$i/m
+				&& $s !~ /^CATEGORIES(.)?=[^\n]+$i/m
+				&& $s !~ /^USES(.)?=[^\n]+$i/m
+				&& $s !~ /^WX_COMPS(.)?=[^\n]+$i/m
+				&& $s !~ /^SHEBANG_FILES(.)?=[^\n]+$i/m
+				&& $s !~ /^[A-Z0-9_]+_DESC=[^\n]+$i/m
+				&& $s !~ /^ONLY_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
+				&& $s !~ /^NOT_FOR_ARCHS_REASON(.)?=[^\n]+$i/m) {
 				&perror("WARN", $file, -1, "possible direct use of \"$i\" \"$s\" ".
 					"found. if so, use $cmdnames{$i}.");
 			}
