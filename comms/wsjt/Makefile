@@ -2,7 +2,7 @@
 
 PORTNAME=	wsjt
 VERSION=	9.1
-PORTREVISION=	5
+PORTREVISION=	6
 DISTVERSION=	${VERSION}.r${SVN_REV}
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -13,7 +13,7 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
