@@ -5227,20 +5227,9 @@ add-plist-buildinfo:
 .if !target(add-plist-info)
 .if defined(INFO)
 add-plist-info:
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
-# Process GNU INFO files at package install/deinstall time
 .for i in ${INFO}
-	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
+	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}:@info\ :g >> ${TMPPLIST}
 .endfor
-.if (${PREFIX} != "/usr")
-	@${ECHO_CMD} "@unexec indexinfo %D/${INFO_PATH}" >> ${TMPPLIST}
-.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE})
-	@${ECHO_CMD} "@dir ${INFO_PATH}" >> ${TMPPLIST}
-.endif
-.endif
 .endif
 .endif
 
