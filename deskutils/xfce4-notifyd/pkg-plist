@@ -50,12 +50,6 @@ share/icons/hicolor/48x48/apps/xfce4-notifyd.png
 share/themes/Default/xfce-notify-4.0/gtkrc
 share/themes/Smoke/xfce-notify-4.0/gtkrc
 share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtkrc
-@dirrm share/themes/ZOMG-PONIES!/xfce-notify-4.0
-@dirrmtry share/themes/ZOMG-PONIES!
-@dirrm share/themes/Smoke/xfce-notify-4.0
-@dirrmtry share/themes/Smoke
-@dirrm share/themes/Default/xfce-notify-4.0
-@dirrmtry share/themes/Default
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
@@ -64,5 +58,3 @@ share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtkrc
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrm lib/xfce4/notifyd
-@dirrmtry lib/xfce4

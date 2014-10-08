@@ -7,4 +7,3 @@ man/man1/gbsinfo.1.gz
 man/man1/gbsplay.1.gz
 man/man5/gbsplayrc.5.gz
 %%EXAMPLESDIR%%/nightmode.gbs
-@dirrm %%EXAMPLESDIR%%

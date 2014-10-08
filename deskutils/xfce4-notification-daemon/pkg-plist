@@ -13,7 +13,3 @@ share/icons/hicolor/48x48/apps/notification-settings.png
 %%NLS%%share/locale/nl/LC_MESSAGES/notification-daemon-xfce.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/notification-daemon-xfce.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/notification-daemon-xfce.mo
-@dirrm lib/xfce4/notification-daemon-xfce/engines
-@dirrm lib/xfce4/notification-daemon-xfce
-@dirrmtry libexec/xfce4
-@dirrmtry lib/xfce4

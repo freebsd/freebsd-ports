@@ -11,8 +11,3 @@
 %%PERL5_MAN3%%/GPS::NMEA::Handler.3.gz
 %%PERL5_MAN3%%/GPS::Garmin.3.gz
 %%PERL5_MAN3%%/GPS::Garmin::Handler.3.gz
-@dirrm %%SITE_PERL%%/mach/auto/GPS/Garmin
-@dirrmtry %%SITE_PERL%%/mach/auto/GPS
-@dirrm %%SITE_PERL%%/GPS/NMEA
-@dirrm %%SITE_PERL%%/GPS/Garmin
-@dirrmtry %%SITE_PERL%%/GPS

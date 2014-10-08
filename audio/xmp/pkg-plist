@@ -2,4 +2,3 @@ bin/xmp
 man/man1/xmp.1.gz
 @sample %%ETCDIR%%/xmp.conf.sample
 @sample %%ETCDIR%%/modules.conf.sample
-@dirrmtry %%ETCDIR%%

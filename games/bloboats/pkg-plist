@@ -113,13 +113,3 @@ etc/bloboats.dirs
 %%DATADIR%%/defaults/private/ghost/ghost.txt
 %%DATADIR%%/defaults/private/records/records.txt
 %%DATADIR%%/defaults/private/levels.dat
-@dirrm %%DATADIR%%/defaults/private/records
-@dirrm %%DATADIR%%/defaults/private/ghost
-@dirrm %%DATADIR%%/defaults/private
-@dirrm %%DATADIR%%/defaults
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%

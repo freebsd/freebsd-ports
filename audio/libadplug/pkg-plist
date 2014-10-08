@@ -63,4 +63,3 @@ lib/libadplug.a
 lib/libadplug.so
 libdata/pkgconfig/adplug.pc
 man/man1/adplugdb.1.gz
-@dirrm include/adplug

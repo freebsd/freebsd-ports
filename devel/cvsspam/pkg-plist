@@ -2,4 +2,3 @@
 libexec/cvsspam/collect_diffs.rb
 libexec/cvsspam/cvsspam.rb
 libexec/cvsspam/record_lastdir.rb
-@dirrm libexec/cvsspam

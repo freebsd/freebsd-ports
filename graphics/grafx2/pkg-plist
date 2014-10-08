@@ -70,15 +70,3 @@ share/grafx2/skins/skin_modern.png
 share/grafx2/skins/skin_scenish.png
 share/icons/grafx2.svg
 share/icons/grafx2.xpm
-@dirrm share/icons
-@dirrm share/grafx2/skins
-@dirrm share/grafx2/scripts/samples_2.4/picture
-@dirrm share/grafx2/scripts/samples_2.4/palette
-@dirrm share/grafx2/scripts/samples_2.4/libs
-@dirrm share/grafx2/scripts/samples_2.4/demo/brush
-@dirrm share/grafx2/scripts/samples_2.4/demo
-@dirrm share/grafx2/scripts/samples_2.4/brush
-@dirrm share/grafx2/scripts/samples_2.4
-@dirrm share/grafx2/scripts
-@dirrm share/grafx2/fonts
-@dirrm share/grafx2

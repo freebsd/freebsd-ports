@@ -11,4 +11,3 @@ man/man1/htntlm.1.gz
 man/man1/htproxy.1.gz
 man/man1/htremote.1.gz
 man/man1/httest.1.gz
-@dirrm include/htt
