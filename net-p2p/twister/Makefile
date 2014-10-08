@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twister-core
-PORTVERSION=	0.140815
-PORTREVISION=	1
+PORTVERSION=	0.141008
 CATEGORIES=	net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -17,13 +16,13 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs	\
 		libleveldb.so:${PORTSDIR}/databases/leveldb	\
 		libicui18n.so:${PORTSDIR}/devel/icu
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=	DOCS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miguelfreitas
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	5acee89
+GH_COMMIT=	377870f
 
 USE_BDB=	yes
 WANT_BDB_VER=	48
