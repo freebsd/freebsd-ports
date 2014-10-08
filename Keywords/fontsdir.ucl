@@ -4,16 +4,24 @@
 
 actions: [dir]
 post-install: <<EOD
-  mkfontscale %D/%@ 2>/dev/null || true
-  mkfontdir %D/%@ 2>/dev/null || true
+  case "%@" in
+  /*) fontsdir="%@" ;;
+  *) fontsdir="%D/%@" ;;
+  esac
+  mkfontscale ${fontsdir} 2>/dev/null || true
+  mkfontdir ${fontsdir} 2>/dev/null || true
 EOD
 post-deinstall: <<EOD
-  mkfontscale %D/%@ 2>/dev/null || true
-  if [ -e %D/%@/fonts.scale -a "`stat -f '%%z' %D/%@/fonts.scale 2>/dev/null`" = '2' ]; then
-    rm %D/%@/fonts.scale
+  case "%@" in
+  /*) fontsdir="%@" ;;
+  *) fontsdir="%D/%@" ;;
+  esac
+  mkfontscale ${fontsdir} 2>/dev/null || true
+  if [ -e ${fontsdir}/fonts.scale -a "`stat -f '%%z' ${fontsdir}/fonts.scale 2>/dev/null`" = '2' ]; then
+    rm ${fontsdir}/fonts.scale
   fi
-  mkfontdir %D/%@ 2>/dev/null || true
-  if [ -e %D/%@/fonts.dir -a "`stat -f '%%z' %D/%@/fonts.dir 2>/dev/null`" = '2' ]; then
-    rm %D/%@/fonts.dir
+  mkfontdir ${fontsdir} 2>/dev/null || true
+  if [ -e ${fontsdir}/fonts.dir -a "`stat -f '%%z' ${fontsdir}/fonts.dir 2>/dev/null`" = '2' ]; then
+    rm ${fontsdir}/fonts.dir
   fi
 EOD
