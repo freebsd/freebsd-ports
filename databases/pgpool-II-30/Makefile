@@ -15,8 +15,7 @@ LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool
-USE_PGSQL=	yes
+USES=		gmake pgsql libtool
 USE_LDCONFIG=	yes
 
 CONFLICTS=	pgpool-3.* pgpool-II-3.* pgpool-II-22-* pgpool-II-23-* 
