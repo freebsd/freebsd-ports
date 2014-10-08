@@ -22,9 +22,8 @@ GROUPS=		gearmand
 
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USES=		pathfix gmake perl5 libtool execinfo
+USES=		pathfix gmake perl5 python:build libtool execinfo
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=yes
 USE_RC_SUBR=	gearmand
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}
 
@@ -87,7 +86,7 @@ CONFIGURE_ARGS+=	--with-mysql=no
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
+USES+=			pgsql
 CONFIGURE_ARGS+=	--enable-libpq
 .else
 CONFIGURE_ARGS+=	--disable-libpq
