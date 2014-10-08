@@ -13,10 +13,9 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake pkgconfig python:build tar:bzip2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LD="${CXX}" AR="${AR}"
@@ -29,7 +28,8 @@ PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e '1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
-		-e 's|make --version|g&|' -e '/DOXYGEN/d' ${WRKSRC}/configure
+		-e 's|make --version|g&|' -e '/DOXYGEN/d' \
+		-e '/GNU Make/d' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e \
 		's|CONF_LIBDIR)pkgconfig|CONF_LIBDIR)../libdata/pkgconfig|' \
 			${WRKSRC}/build/tibs/compiler/pkgconfig.mak
