@@ -3,7 +3,7 @@
 
 PORTNAME=	zebra
 PORTVERSION=	0.95a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
@@ -74,10 +74,10 @@ ZEBRAARGS?=	-d
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MIPV6} && ${PORT_OPTIONS:MOSPF6D}
-IGNORE=		OSPF6D requires IPV6 option.
+IGNORE=		OSPF6D requires IPV6 option
 .endif
 .if !${PORT_OPTIONS:MIPV6} && ${PORT_OPTIONS:MRIPNGD}
-IGNORE=		RIPNGD requires IPV6 option.
+IGNORE=		RIPNGD requires IPV6 option
 .endif
 
 post-install:
