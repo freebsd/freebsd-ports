@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.17.9
+PORTVERSION=	1.17.16
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
@@ -18,13 +18,13 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 		gmd5sum:${PORTSDIR}/sysutils/coreutils
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv perl5 pkgconfig tar:xz shebangfix
+USES=		gmake iconv libtool perl5 pkgconfig tar:xz shebangfix
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 SHEBANG_FILES=	dselect/methods/ftp/update dselect/methods/ftp/install \
 		dselect/methods/ftp/setup
 
 DPKGDIR?=	/var/db/dpkg
-PLIST_SUB+=	DPKGDIR=${DPKGDIR:C,^/,,}
+PLIST_SUB+=	DPKGDIR=${DPKGDIR}
 
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST+=	DPKGDIR=${DPKGDIR}
@@ -48,5 +48,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/cp -p $$(DEST/mv $$(DEST/g; s/rm $$(/rm -f $$(/g' \
 		${WRKSRC}/scripts/mk/Makefile.in \
 		${WRKSRC}/scripts/Makefile.in
+	@${REINPLACE_CMD} 's/{^MATCH}/\&/' ${WRKSRC}/dselect/mkcurkeys.pl
+
+post-install:
+	(cd ${STAGEDIR}${DPKGDIR} && ${MKDIR} available diversions \
+		statoverride status)
 
 .include <bsd.port.mk>
