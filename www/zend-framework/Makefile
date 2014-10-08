@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ZendFramework
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.3
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 
