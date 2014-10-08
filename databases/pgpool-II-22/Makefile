@@ -11,10 +11,10 @@ PKGNAMESUFFIX=	22
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
 
-USES=		gmake libtool
+USES=		gmake pgsql libtool
 GNU_CONFIGURE=	yes
-USE_PGSQL=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFLICTS=	pgpool-3.* pgpool-II-3.* pgpool-II-23-* pgpool-II-30-* 
 USE_RC_SUBR=	pgpool
