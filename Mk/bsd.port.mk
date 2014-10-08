@@ -2821,12 +2821,6 @@ PLIST_SUB+=	DOCSDIR="${DOCSDIR_REL}" \
 		ETCDIR="${ETCDIR_REL}"
 
 DESKTOPDIR?=		${PREFIX}/share/applications
-_DESKTOPDIR_REL=	${DESKTOPDIR:S,^${PREFIX}/,,}/
-
-.if ${_DESKTOPDIR_REL} == ${DESKTOPDIR}/
-# DESKTOPDIR is not beneath PREFIX
-_DESKTOPDIR_REL=
-.endif
 
 .MAIN: all
 
@@ -5857,9 +5851,6 @@ check-desktop-entries:
 .if defined(DESKTOP_ENTRIES)
 install-desktop-entries:
 	@set -- ${DESKTOP_ENTRIES} XXX; \
-	if [ -z "${_DESKTOPDIR_REL}" ]; then \
-		${ECHO_CMD} "@cwd ${DESKTOPDIR}" >> ${TMPPLIST}; \
-	fi; \
 	while [ $$# -gt 6 ]; do \
 		filename="`${ECHO_CMD} "$$4" | ${SED} -e 's,^/,,g;s,[/ ],_,g;s,[^_[:alnum:]],,g'`.desktop"; \
 		pathname="${STAGEDIR}${DESKTOPDIR}/$$filename"; \
@@ -5867,7 +5858,7 @@ install-desktop-entries:
 		if [ -z "$$categories" ]; then \
 			categories="`cd ${.CURDIR} && ${MAKE} desktop-categories`"; \
 		fi; \
-		${ECHO_CMD} "${_DESKTOPDIR_REL}$$filename" >> ${TMPPLIST}; \
+		${ECHO_CMD} "${DESKTOPDIR}/$$filename" >> ${TMPPLIST}; \
 		${ECHO_CMD} "[Desktop Entry]" > $$pathname; \
 		${ECHO_CMD} "Type=Application" >> $$pathname; \
 		${ECHO_CMD} "Version=1.0" >> $$pathname; \
@@ -5887,10 +5878,7 @@ install-desktop-entries:
 			${ECHO_CMD} "StartupNotify=$$6" >> $$pathname; \
 		fi; \
 		shift 6; \
-	done; \
-	if [ -z "${_DESKTOPDIR_REL}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
+	done
 .endif
 .endif
 
