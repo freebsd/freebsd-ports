@@ -13,10 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to PostgreSQL, both classic and DP-API 2.0
 
-USE_PGSQL=		yes
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=	python:2 pgsql
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	*
 
