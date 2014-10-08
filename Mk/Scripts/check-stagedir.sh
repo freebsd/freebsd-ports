@@ -95,7 +95,14 @@ parse_plist() {
 		@fc\ *|@fcfontsdir\ *|@fontsdir\ *)
 			set -- $line
 			shift
+			case "$@" in
+			/*)
+			echo >&3 "${comment}$@"
+			;;
+			*)
 			echo >&3 "${comment}${cwd}/$@"
+			;;
+			esac
 		;;
 
 		# order matters here - we must check @cwd first because

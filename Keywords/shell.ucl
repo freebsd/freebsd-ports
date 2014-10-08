@@ -13,12 +13,20 @@
 
 actions: [file]
 post-install: <<EOD
+  case "%@" in
+  /*) file="%@" ;;
+  *) file="%D/%@" ;;
+  esac
         cp /etc/shells /etc/shells.bak
-        (grep -v %D/%@ /etc/shells.bak; echo %D/%@) > /etc/shells
+        (grep -v ${file} /etc/shells.bak; echo ${file}) > /etc/shells
         rm -f /etc/shells.bak
 EOD
 pre-deinstall: <<EOD
+  case "%@" in
+  /*) file="%@" ;;
+  *) file="%D/%@" ;;
+  esac
         cp /etc/shells /etc/shells.bak
-        grep -v %D/%@ /etc/shells.bak > /etc/shells
+        grep -v ${file} /etc/shells.bak > /etc/shells
         rm -f /etc/shells.bak
 EOD
