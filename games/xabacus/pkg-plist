@@ -1,8 +1,4 @@
-@group games
-@owner games
-bin/xabacus
-@owner
-@group
+@(games,games,) bin/xabacus
 lib/X11/app-defaults/Abacus
 man/man6/xabacus.6.gz
 share/icons/hicolor/16x16/apps/abacus.png
@@ -38,4 +34,3 @@ share/icons/hicolor/48x48/apps/abacus.png
 %%DATADIR%%/bump.au
 %%DATADIR%%/drip.au
 %%DATADIR%%/move.au
-@dirrm %%DATADIR%%
