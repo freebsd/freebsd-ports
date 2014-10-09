@@ -45,18 +45,18 @@ include/primitives/opa_unsafe.h
 lib/libmpi.a
 lib/libmpi.so
 lib/libmpi.so.12
-lib/libmpi.so.12.0.2
+lib/libmpi.so.12.0.4
 lib/libmpich.so
 lib/libmpichcxx.so
 %%FORTRAN%%lib/libmpichf90.so
 lib/libmpicxx.a
 lib/libmpicxx.so
 lib/libmpicxx.so.12
-lib/libmpicxx.so.12.0.2
+lib/libmpicxx.so.12.0.4
 %%FORTRAN%%lib/libmpifort.a
 %%FORTRAN%%lib/libmpifort.so
 %%FORTRAN%%lib/libmpifort.so.12
-%%FORTRAN%%lib/libmpifort.so.12.0.2
+%%FORTRAN%%lib/libmpifort.so.12.0.4
 lib/libmpl.so
 lib/libopa.so
 libdata/pkgconfig/mpich.pc
@@ -69,9 +69,11 @@ man/man1/mpicxx.1.gz
 man/man1/mpiexec.1.gz
 man/man1/mpif77.1.gz
 man/man1/mpifort.1.gz
-man/man3/MPIX_Comm_group_failed.3.gz
-man/man3/MPIX_Comm_reenable_anysource.3.gz
-man/man3/MPIX_Comm_remote_group_failed.3.gz
+man/man3/MPIX_Comm_agree.3.gz
+man/man3/MPIX_Comm_failure_ack.3.gz
+man/man3/MPIX_Comm_failure_get_acked.3.gz
+man/man3/MPIX_Comm_revoke.3.gz
+man/man3/MPIX_Comm_shrink.3.gz
 man/man3/MPI_Abort.3.gz
 man/man3/MPI_Accumulate.3.gz
 man/man3/MPI_Add_error_class.3.gz
@@ -460,5 +462,3 @@ man/man3/MPI_Wtime.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/install.pdf
 %%PORTDOCS%%%%DOCSDIR%%/logging.pdf
 %%PORTDOCS%%%%DOCSDIR%%/user.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/primitives

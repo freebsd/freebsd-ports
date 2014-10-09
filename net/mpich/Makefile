@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpich
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mpich.org/static/downloads/${DISTVERSION}/
 
