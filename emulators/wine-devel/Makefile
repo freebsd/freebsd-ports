@@ -24,12 +24,12 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 CONFLICTS_INSTALL=	i386-wine-[0-9]* i386-wine-devel-[0-9]* wine-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+= --verbose --mandir=${MANPREFIX}/man --without-alsa \
 		--without-gphoto --without-gsm --without-gstreamer \
 		--without-opencl --with-oss --without-sane \
-		--without-capi
+		--without-capi --
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
@@ -89,8 +89,8 @@ V4L_LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
-X11_CONFIGURE_WITH=	x fontconfig glu opengl xinput2 xrandr freetype
-X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xpm,xrandr,xrender
+X11_CONFIGURE_WITH=	x fontconfig glu opengl xinput2 xrandr freetype xinerama xcomposite
+X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xpm,xrandr,xrender,xinerama
 X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 			libfreetype.so:${PORTSDIR}/print/freetype2 \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg \
@@ -118,10 +118,10 @@ pre-configure:
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
 
-#do-configure:
-#	cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS} \
-#		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
-#		CPPFLAGS="${CPPFLAGS}"
+do-configure:
+	cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS} \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}"
 
 post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
