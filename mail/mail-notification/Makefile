@@ -3,12 +3,12 @@
 
 PORTNAME=	mail-notification
 DISTVERSION=	5.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	mailnotify
+MASTER_SITE_SUBDIR=	mailnotify-orig
 
-MAINTAINER=	mwisnicki+freebsd@gmail.com
+MAINTAINER=	jonc@chen.org.nz
 COMMENT=	Mail notification for freedesktop.org-compliant system trays
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gconf2 gnomeprefix gnomevfs2 libglade2 libgnomeui libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-JB_CONF_ARGS=	cc="${CC}" cflags="${CFLAGS}" cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" prefix="${PREFIX}" destdir="${STAGEDIR}"
+JB_CONF_ARGS=	cc="${CC}" cflags="${CFLAGS}" cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" prefix="${PREFIX}" destdir="${STAGEDIR}" hotmail=no
 JB_CONF_ENV=	${MAKE_ENV} jb_cppflags="${CPPFLAGS}" jb_ldflags="${LDFLAGS}"
 GCONF_SCHEMAS=	mail-notification.schemas
 INSTALLS_OMF=	yes
@@ -92,7 +92,7 @@ JB_CONF_ARGS+=	sylpheed=no
 	|| ${PORT_OPTIONS:MIMAP} \
 	|| ${PORT_OPTIONS:MMOZILLA} \
 	|| ${PORT_OPTIONS:MSYLPHEED}
-LIB_DEPENDS+=	libgmime-2.0.so:${PORTSDIR}/mail/gmime2
+LIB_DEPENDS+=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26
 .endif
 .if ! ${PORT_OPTIONS:MSSL}
 JB_CONF_ARGS+=	ssl=no
@@ -114,6 +114,7 @@ do-configure:
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./jb build
+	${STRIP_CMD} ${WRKSRC}/build/src/mail-notification
 
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./jb install
