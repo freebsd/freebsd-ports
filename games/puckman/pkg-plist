@@ -190,5 +190,3 @@ share/pixmaps/puckman.png
 %%DATADIR%%/images/scared16.gif
 %%DATADIR%%/images/scared17.gif
 %%DATADIR%%/images/score.png
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

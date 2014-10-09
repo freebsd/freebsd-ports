@@ -13,11 +13,11 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Unofficial clone of the original Pac-Man game
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	patapizza
-GH_PROJECT=	puckman
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	f5b809c
 
