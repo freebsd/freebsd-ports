@@ -66,10 +66,3 @@ bin/entombed
 %%DATADIR%%/sounds/zombie_eat.wav
 %%DATADIR%%/sounds/zombie_mad.wav
 share/pixmaps/entombed.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/images_halfsize
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/embedded/images
-@dirrm %%DATADIR%%/embedded
-@dirrm %%DATADIR%%
