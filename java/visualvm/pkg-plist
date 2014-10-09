@@ -1,6 +1,5 @@
 bin/visualvm
 share/applications/visualvm.desktop
-%%DATADIR%%/visualvm.png
 %%DATADIR%%/platform/.lastModified
 %%DATADIR%%/platform/VERSION.txt
 %%DATADIR%%/platform/config/ModuleAutoDeps/org-netbeans-core.xml
@@ -33,6 +32,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/config/Modules/org-netbeans-core.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-lib-uihandler.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-libs-felix.xml
+%%DATADIR%%/platform/config/Modules/org-netbeans-libs-javafx.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-libs-jna-platform.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-libs-jna.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-libs-jsr223.xml
@@ -52,7 +52,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-keyring.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-linux.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-macosx.xml
-%%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-solaris.xml
+%%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-nio2.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs-windows.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-masterfs.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-netbinox.xml
@@ -65,6 +65,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-sendopts.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-settings.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-spi-actions.xml
+%%DATADIR%%/platform/config/Modules/org-netbeans-modules-templates.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-modules-uihandler.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-spi-quicksearch.xml
 %%DATADIR%%/platform/config/Modules/org-netbeans-swing-outline.xml
@@ -105,7 +106,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/lib/org-openide-modules.jar
 %%DATADIR%%/platform/lib/org-openide-util-lookup.jar
 %%DATADIR%%/platform/lib/org-openide-util.jar
-%%DATADIR%%/platform/modules/ext/felix-4.0.2.jar
+%%DATADIR%%/platform/modules/ext/felix-4.2.1.jar
 %%DATADIR%%/platform/modules/ext/jhall-2.0_05.jar
 %%DATADIR%%/platform/modules/ext/jna-3.4.0.jar
 %%DATADIR%%/platform/modules/ext/locale/updater_ja.jar
@@ -159,6 +160,8 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/modules/locale/org-netbeans-lib-uihandler_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-felix_ja.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-felix_zh_CN.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-libs-javafx_ja.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-libs-javafx_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-jna-platform_ja.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-jna-platform_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-libs-jna_ja.jar
@@ -197,8 +200,8 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-linux_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-macosx_ja.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-macosx_zh_CN.jar
-%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-solaris_ja.jar
-%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-solaris_zh_CN.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-nio2_ja.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-nio2_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-windows_ja.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs-windows_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-masterfs_ja.jar
@@ -223,6 +226,8 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-settings_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-spi-actions_ja.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-spi-actions_zh_CN.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-templates_ja.jar
+%%DATADIR%%/platform/modules/locale/org-netbeans-modules-templates_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-uihandler_ja.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-modules-uihandler_zh_CN.jar
 %%DATADIR%%/platform/modules/locale/org-netbeans-spi-quicksearch_ja.jar
@@ -278,6 +283,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/modules/org-netbeans-core.jar
 %%DATADIR%%/platform/modules/org-netbeans-lib-uihandler.jar
 %%DATADIR%%/platform/modules/org-netbeans-libs-felix.jar
+%%DATADIR%%/platform/modules/org-netbeans-libs-javafx.jar
 %%DATADIR%%/platform/modules/org-netbeans-libs-jna-platform.jar
 %%DATADIR%%/platform/modules/org-netbeans-libs-jna.jar
 %%DATADIR%%/platform/modules/org-netbeans-libs-jsr223.jar
@@ -297,7 +303,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/modules/org-netbeans-modules-keyring.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-linux.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-macosx.jar
-%%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-solaris.jar
+%%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-nio2.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-masterfs-windows.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-masterfs.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-netbinox.jar
@@ -310,6 +316,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/modules/org-netbeans-modules-sendopts.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-settings.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-spi-actions.jar
+%%DATADIR%%/platform/modules/org-netbeans-modules-templates.jar
 %%DATADIR%%/platform/modules/org-netbeans-modules-uihandler.jar
 %%DATADIR%%/platform/modules/org-netbeans-spi-quicksearch.jar
 %%DATADIR%%/platform/modules/org-netbeans-swing-outline.jar
@@ -349,6 +356,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/update_tracking/org-netbeans-core.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-lib-uihandler.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-libs-felix.xml
+%%DATADIR%%/platform/update_tracking/org-netbeans-libs-javafx.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-libs-jna-platform.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-libs-jna.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-libs-jsr223.xml
@@ -368,7 +376,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-keyring.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-linux.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-macosx.xml
-%%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-solaris.xml
+%%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-nio2.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs-windows.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-masterfs.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-netbinox.xml
@@ -381,6 +389,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-sendopts.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-settings.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-spi-actions.xml
+%%DATADIR%%/platform/update_tracking/org-netbeans-modules-templates.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-modules-uihandler.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-spi-quicksearch.xml
 %%DATADIR%%/platform/update_tracking/org-netbeans-swing-outline.xml
@@ -473,6 +482,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/profiler/update_tracking/org-netbeans-modules-profiler-snaptracer.xml
 %%DATADIR%%/profiler/update_tracking/org-netbeans-modules-profiler-utilities.xml
 %%DATADIR%%/profiler/update_tracking/org-netbeans-modules-profiler.xml
+%%DATADIR%%/visualvm.png
 %%DATADIR%%/visualvm/.lastModified
 %%DATADIR%%/visualvm/config/Modules/com-sun-tools-visualvm-api-caching.xml
 %%DATADIR%%/visualvm/config/Modules/com-sun-tools-visualvm-application-views.xml
@@ -514,6 +524,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/config/Modules/org-netbeans-modules-options-keymap.xml_hidden
 %%DATADIR%%/visualvm/config/Modules/org-netbeans-modules-print.xml_hidden
 %%DATADIR%%/visualvm/config/Modules/org-netbeans-modules-spi-actions.xml_hidden
+%%DATADIR%%/visualvm/config/Modules/org-netbeans-modules-templates.xml_hidden
 %%DATADIR%%/visualvm/config/Modules/org-netbeans-modules-uihandler.xml_hidden
 %%DATADIR%%/visualvm/config/Modules/org-openide-compat.xml_hidden
 %%DATADIR%%/visualvm/config/Modules/org-openide-execution.xml_hidden
@@ -615,15 +626,9 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/update_tracking/com-sun-tools-visualvm-threaddump.xml
 %%DATADIR%%/visualvm/update_tracking/com-sun-tools-visualvm-tools.xml
 %%DATADIR%%/visualvm/update_tracking/com-sun-tools-visualvm-uisupport.xml
-@unexec if cmp -s %D/etc/visualvm.conf %D/etc/visualvm.conf-dist ; then rm -f %D/etc/visualvm.conf ; fi
-etc/visualvm.conf-dist
-@exec if [ ! -f %D/etc/visualvm.conf ]; then cp -p %D/%F %B/visualvm.conf; fi
-@unexec if cmp -s %D/etc/visualvm.clusters %D/etc/visualvm.clusters-dist; then rm -f %D/etc/visualvm.clusters; fi
-etc/visualvm.clusters-dist
-@exec [ ! -f %B/visualvm.clusters ] && cp %B/visualvm.clusters-dist %B/visualvm.clusters
-@unexec if cmp -s %D/etc/visualvm.icns %D/etc/visualvm.icns-dist; then rm -f %D/etc/visualvm.icns; fi
-etc/visualvm.icns-dist
-@exec [ ! -f %B/visualvm.icns ] && cp %B/visualvm.icns-dist %B/visualvm.icns
+@sample etc/visualvm.conf.sample
+@sample etc/visualvm.clusters.sample
+@sample etc/visualvm.icns.sample
 @dirrm %%DATADIR%%/platform/config/ModuleAutoDeps
 @dirrm %%DATADIR%%/platform/config/Modules
 @dirrm %%DATADIR%%/platform/config
@@ -634,12 +639,12 @@ etc/visualvm.icns-dist
 @dirrm %%DATADIR%%/platform/lib
 @dirrm %%DATADIR%%/platform/modules/ext/locale
 @dirrm %%DATADIR%%/platform/modules/ext
-@dirrm %%DATADIR%%/platform/modules/lib
 @dirrm %%DATADIR%%/platform/modules/lib/amd64/linux
 @dirrm %%DATADIR%%/platform/modules/lib/amd64
 @dirrm %%DATADIR%%/platform/modules/lib/i386/linux
 @dirrm %%DATADIR%%/platform/modules/lib/i386
 @dirrm %%DATADIR%%/platform/modules/lib/x86
+@dirrm %%DATADIR%%/platform/modules/lib
 @dirrm %%DATADIR%%/platform/modules/locale
 @dirrm %%DATADIR%%/platform/modules
 @dirrm %%DATADIR%%/platform/update_tracking
