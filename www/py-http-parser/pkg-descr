@@ -1,0 +1,5 @@
+HTTP request/response parser for Python compatible with Python 2.x (>=2.6),
+Python 3 and Pypy. If possible a C parser based on http-parser
+from Ryan Dahl will be used.
+
+WWW: https://github.com/benoitc/http-parser/
