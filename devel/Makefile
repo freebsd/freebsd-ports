@@ -1281,6 +1281,7 @@
     SUBDIR += mingw32-zlib
     SUBDIR += mingw64-binutils
     SUBDIR += mips64-binutils
+    SUBDIR += mips-binutils
     SUBDIR += mk
     SUBDIR += mk-configure
     SUBDIR += mkcmd
@@ -4644,6 +4645,7 @@
     SUBDIR += smv
     SUBDIR += soapui
     SUBDIR += sourcenav
+    SUBDIR += sparc64-binutils
     SUBDIR += spatialindex
     SUBDIR += spdict
     SUBDIR += spin
