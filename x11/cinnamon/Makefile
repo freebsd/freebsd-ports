@@ -12,7 +12,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fork of GNOME Shell with layout similar to GNOME 2
 
 BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
+		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
+		libtoolize:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libcaribou.so:${PORTSDIR}/accessibility/caribou \
 		libmuffin.so:${PORTSDIR}/x11-wm/muffin \
@@ -43,7 +44,7 @@ USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 \
 		gnomeprefix gtk30 intlhack introspection:build
 # this happens before moving the file to ${PREFIX} (which then will be copied to ${STAGEDIR}${PREFIX})
 SHEBANG_FILES=	files/usr/bin/cinnamon2d
-USE_AUTOTOOLS=	libtoolize autoconf automake
+USE_AUTOTOOLS=	autoconf automake
 USE_XORG=	x11 xfixes sm
 USE_GSTREAMER=	theora vp8 ogg
 INSTALLS_ICONS=	yes

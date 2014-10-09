@@ -13,7 +13,8 @@ COMMENT=	Control center for Cinnamon
 
 BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		cinnamon-settings-daemon>=0:${PORTSDIR}/sysutils/cinnamon-settings-daemon \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
+		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
+		libtoolize:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libcheese.so:${PORTSDIR}/multimedia/cheese \
@@ -41,7 +42,7 @@ USE_GNOME=	evolutiondataserver3 gconf2 gnomeprefix \
 		gtk30 intlhack libgnomekbd
 USE_XORG=	x11 xfixes sm
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtoolize autoconf automake
+USE_AUTOTOOLS=	autoconf automake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compile-warnings=no
