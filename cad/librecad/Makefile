@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	librecad
-DISTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	2.0.5
 CATEGORIES=	cad
 MASTER_SITES=	GITHUB
 
@@ -19,7 +18,7 @@ USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	LibreCAD
 GH_PROJECT=	LibreCAD
-GH_COMMIT=	1555bd5
+GH_COMMIT=	f4f325e
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
