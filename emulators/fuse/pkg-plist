@@ -58,26 +58,3 @@ man/man1/fuse.1.gz
 %%ICONS%%share/icons/hicolor/64x64/apps/fuse.png
 %%ICONS%%share/icons/hicolor/64x64/mimetypes/application-x-spectrum.png
 %%ICONS%%share/mime/packages/fuse.xml
-%%ICONS%%@dirrmtry share/mime/packages
-%%ICONS%%@dirrmtry share/mime
-%%ICONS%%@dirrmtry share/icons/hicolor/64x64/mimetypes
-%%ICONS%%@dirrmtry share/icons/hicolor/64x64/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/64x64
-%%ICONS%%@dirrmtry share/icons/hicolor/48x48/mimetypes
-%%ICONS%%@dirrmtry share/icons/hicolor/48x48/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/48x48
-%%ICONS%%@dirrmtry share/icons/hicolor/32x32/mimetypes
-%%ICONS%%@dirrmtry share/icons/hicolor/32x32/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/32x32
-%%ICONS%%@dirrmtry share/icons/hicolor/256x256/mimetypes
-%%ICONS%%@dirrmtry share/icons/hicolor/256x256/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/256x256
-%%ICONS%%@dirrmtry share/icons/hicolor/16x16/mimetypes
-%%ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/16x16
-%%ICONS%%@dirrmtry share/icons/hicolor/128x128/mimetypes
-%%ICONS%%@dirrmtry share/icons/hicolor/128x128/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/128x128
-%%ICONS%%@dirrmtry share/icons/hicolor
-%%ICONS%%@dirrmtry share/icons
-@dirrmtry %%DATADIR%%

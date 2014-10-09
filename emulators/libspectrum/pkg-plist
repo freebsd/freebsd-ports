@@ -9,4 +9,3 @@ man/man3/libspectrum.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/libspectrum.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
