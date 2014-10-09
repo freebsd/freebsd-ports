@@ -29,7 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+= --verbose --mandir=${MANPREFIX}/man --without-alsa \
 		--without-gphoto --without-gsm --without-gstreamer \
 		--without-opencl --with-oss --without-sane \
-		--without-capi --
+		--without-capi
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
