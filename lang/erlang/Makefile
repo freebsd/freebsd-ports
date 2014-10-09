@@ -3,6 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	17.3
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -140,7 +141,6 @@ CONFIGURE_ARGS+=--without-odbc
 
 ERLANG_MAN=	otp_doc_man_${ERL_RELEASE}.tar.gz
 ERLANG_DOCS=	otp_doc_html_${ERL_RELEASE}.tar.gz
-ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
 .if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--enable-threads
@@ -188,7 +188,7 @@ post-install:
 			-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB} \
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
 	done
-	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
+	${RM} -rf ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
 
 .if ${PORT_OPTIONS:MDOCS}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
@@ -203,23 +203,11 @@ post-install:
 
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d -empty \
 		| ${SORT} \
-		| ${SED} -e 's#^#@exec ${MKDIR} %D/#g' \
-		> ${ERLANG_PLIST}
+		| ${SED} -e 's#^#@dir #g' \
+		>> ${TMPPLIST}
 
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type f -o -type l \
 		| ${SORT} \
-		>> ${ERLANG_PLIST}
-
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d \
-		| ${SORT} -r \
-		| ${SED} -e 's/^/@dirrm /g' \
-		>> ${ERLANG_PLIST}
-
-	@${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "/Insert PLIST here"	>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "d"			>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "r ${ERLANG_PLIST}"	>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
-	@cd ${WRKDIR}; ex < ex.script
+		>> ${TMPPLIST}
 
 .include <bsd.port.mk>
