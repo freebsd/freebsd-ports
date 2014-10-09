@@ -3815,6 +3815,7 @@
     SUBDIR += py-optik
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
+    SUBDIR += py-palm
     SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
     SUBDIR += py-path.py
