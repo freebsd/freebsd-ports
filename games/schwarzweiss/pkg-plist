@@ -29,5 +29,3 @@ share/pixmaps/schwarzweiss.png
 %%DATADIR%%/schwarzweiss_start.py
 %%DATADIR%%/schwarzweiss_start.pyc
 %%DATADIR%%/schwarzweiss_start.pyo
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
