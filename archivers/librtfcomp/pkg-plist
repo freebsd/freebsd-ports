@@ -7,4 +7,3 @@ lib/librtfcomp.a
 lib/librtfcomp.so
 lib/librtfcomp.so.0
 lib/librtfcomp.so.0.0.0
-@dirrm include/rtfcomp
