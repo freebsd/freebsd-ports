@@ -15,6 +15,7 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	One- or two-player maze game based on the Entombed
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 USES=		gmake
 USE_SDL=	image mixer sdl
