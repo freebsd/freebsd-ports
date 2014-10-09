@@ -164,6 +164,7 @@
     SUBDIR += ddrescue
     SUBDIR += debhelper
     SUBDIR += debootstrap
+    SUBDIR += deltarpm
     SUBDIR += deltup
     SUBDIR += desktop-installer
     SUBDIR += detach
