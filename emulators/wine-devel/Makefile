@@ -57,7 +57,7 @@ MONO_DESC=	Bundle Mono MSI package for Wine
 CUPS_CONFIGURE_WITH=	cups
 CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
-DBUS_CONFIGURE_WITH=	dbus
+#DBUS_CONFIGURE_WITH=	dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 DOSBOX_RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
