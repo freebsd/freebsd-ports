@@ -1,7 +1,11 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTNAME=	librtfcomp
+PORTVERSION=	1.3
+PORTREVISION=	3
+CATEGORIES=	archivers python
+MASTER_SITES=	SF/synce/SynCE/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,16 +16,22 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/bin/pyrexc:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	librtfcomp.so:${PORTSDIR}/archivers/librtfcomp
 
-USES=		python:2
+CONFIGURE_ARGS=	--enable-python-bindings
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USES=		libtool python:2
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
-PLIST=		${NONEXISTENT}
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pyrtfcomp.a \
 		%%PYTHON_SITELIBDIR%%/pyrtfcomp.so
 
-MASTERDIR=	${.CURDIR}/../librtfcomp
-SLAVEPORT=	py
+post-patch:
+	@${REINPLACE_CMD} -e '/VISIBILITY=/ s| -fvisibility=hidden||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|[^ ]*/src/librtfcomp\.la||' ${WRKSRC}/python/Makefile.in
 
-.include "${MASTERDIR}/Makefile"
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyrtfcomp.so
+
+.include <bsd.port.mk>
