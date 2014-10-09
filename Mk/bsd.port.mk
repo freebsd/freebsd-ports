@@ -2038,7 +2038,7 @@ MAKE_ENV+=		PREFIX=${PREFIX} \
 # a lot of ports.
 .if !defined(WITHOUT_NO_STRICT_ALIASING)
 .if ${CC} != "icc"
-.if !empty(CFLAGS:M-O[23s]) && empty(CFLAGS:M-fno-strict-aliasing)
+.if empty(CFLAGS:M-fno-strict-aliasing)
 CFLAGS+=       -fno-strict-aliasing
 .endif
 .endif
