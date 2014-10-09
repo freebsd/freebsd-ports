@@ -2,7 +2,7 @@
 
 PORTNAME=	gssapi
 PORTVERSION=	2.1.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/
@@ -88,6 +88,13 @@ CONFIGURE_ARGS+=--with-openssl=yes
 .else
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
+
+LIBTOOL=	${LOCALBASE}/bin/libtool
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "/^LIBTOOL=/s|\$$(top_builddir)/libtool|${LIBTOOL}|g" \
+		${WRKSRC}/configure
 
 do-build:
 	cd ${WRKSRC}/include && ${MAKE}
