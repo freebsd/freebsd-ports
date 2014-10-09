@@ -3,10 +3,7 @@
 PORTNAME=	gcc
 PORTVERSION=	4.9.1
 CATEGORIES=	devel
-MASTER_SITES=	GCC \
-		GNU/gmp:gmp \
-		http://www.mpfr.org/mpfr-current/:mpfr \
-		http://www.multiprecision.org/mpc/download/:mpc
+MASTER_SITES=	GCC
 MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	powerpc64-
 
@@ -19,8 +16,6 @@ LICENSE_COMB=	multi
 USES=	gmake iconv libtool tar:bzip2 makeinfo
 PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
 		OPSYS=${OPSYS:tl}
-
-DISTFILES+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
