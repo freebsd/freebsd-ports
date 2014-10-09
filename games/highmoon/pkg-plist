@@ -39,6 +39,3 @@ bin/highmoon
 %%DATADIR%%/snd/pluck.wav
 %%DATADIR%%/snd/strom.wav
 share/pixmaps/highmoon.png
-@dirrm %%DATADIR%%/snd
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%
