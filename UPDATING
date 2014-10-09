@@ -34,7 +34,7 @@ you update your ports collection, before attempting any port upgrades.
   If you use portupgrade, install new ruby, then rebuild all ports that depend
   on ruby:
 
-  # pkg delete -f ruby portupgrade
+  # pkg delete -f ruby ruby-iconv portupgrade
   # make -C /usr/ports/ports-mgmt/portupgrade install clean
   # portupgrade -x ruby-2.0.\* -fr lang/ruby20
 
