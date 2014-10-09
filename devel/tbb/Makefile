@@ -3,6 +3,7 @@
 
 PORTNAME=	tbb
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
@@ -12,6 +13,9 @@ MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
 
 LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	*
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
@@ -50,5 +54,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so; \
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tbb/; \
 	cd include/tbb/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/tbb/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

@@ -99,7 +99,3 @@ lib/libtbb.so
 lib/libtbb.so.4
 lib/libtbbmalloc.so
 lib/libtbbmalloc.so.4
-@dirrm include/tbb/internal
-@dirrm include/tbb/machine
-@dirrm include/tbb/compat
-@dirrm include/tbb
