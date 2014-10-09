@@ -1,11 +1,11 @@
---- Completion/Unix/Command/_sysctl.orig	2005-12-05 15:22:54.000000000 +0100
-+++ Completion/Unix/Command/_sysctl	2012-05-11 18:24:24.679714541 +0200
+--- Completion/Unix/Command/_sysctl.orig	2014-10-02 21:28:23.000000000 +0200
++++ Completion/Unix/Command/_sysctl	2014-10-09 07:57:47.570857223 +0200
 @@ -1,7 +1,7 @@
  #compdef sysctl
  
  case $OSTYPE in
--  *freebsd[5-9].*|freebsd4.[4-9]*)
-+  *freebsd[5-9].*|freebsd4.[4-9]*|*freebsd[0-9][0-9]*)
+-  *freebsd<5->.*|freebsd4.[4-9]*)
++  *freebsd<5->.*|freebsd4.[4-9]*|*freebsd[0-9][0-9].*)
      local -a sysctlvars
-     sysctlvars=( $(sysctl -aN) )
+     sysctlvars=( $(_call_program sysctl-variables sysctl -aN) )
      _arguments -s -A "-*" \

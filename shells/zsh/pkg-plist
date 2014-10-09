@@ -312,6 +312,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_arping
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_at
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_attr
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_augeas
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_awk
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_baz
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_bind_addresses
@@ -755,7 +756,6 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_typeset
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_ulimit
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_unhash
-%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_unsetopt
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_user_math_func
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_value
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_vared
