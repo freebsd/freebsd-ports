@@ -25,6 +25,7 @@ CONFLICTS_INSTALL=	i386-wine-[0-9]* i386-wine-devel-[0-9]* wine-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+= --verbose --mandir=${MANPREFIX}/man --without-alsa \
 		--without-gphoto --without-gsm --without-gstreamer \
 		--without-opencl --with-oss --without-sane \
@@ -35,7 +36,7 @@ WINELIBDIR?=	${PREFIX}/lib
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386
-USES=		bison compiler:c11 gmake shebangfix tar:bzip2
+USES=		bison compiler:c11 shebangfix tar:bzip2
 SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
 
 SUB_FILES=	pkg-message
@@ -117,10 +118,10 @@ pre-configure:
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
 
-do-configure:
-	cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS} \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}"
+#do-configure:
+#	cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS} \
+#		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
+#		CPPFLAGS="${CPPFLAGS}"
 
 post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
