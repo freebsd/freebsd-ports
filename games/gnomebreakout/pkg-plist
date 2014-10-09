@@ -71,6 +71,3 @@ share/pixmaps/gnome-breakout.png
 %%NLS%%share/locale/ru/LC_MESSAGES/gnome-breakout.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnome-breakout.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gnome-breakout.mo
-@dirrm share/gnome-breakout/pixmaps
-@dirrm share/gnome-breakout/levels
-@dirrm share/gnome-breakout
