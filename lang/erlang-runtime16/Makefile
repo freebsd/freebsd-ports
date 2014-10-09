@@ -38,13 +38,14 @@ SCTP_DESC=	Enable SCTP support
 SMP_DESC=	Enable SMP support
 WX_DESC=	Enable WX application
 GS_DESC=	Enable GS application (deprecated)
-DTRACE_DESC=	Enable DTrace support (experimental)
+DTRACE_DESC=	Enable DTrace support
 
 OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 
 ERL_RELEASE=	R${PORTVERSION:S/.//g:tu:S/1$/-1/}
 
 USES=		gmake perl5
+USE_AUTOTOOLS=	autoconf:env
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -62,8 +63,10 @@ DISTFILES+=	${ERLANG_DOCS}:erlangorg
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
+.if ${OSVERSION} < 1000000
 .if ${ARCH} == "amd64" && ${PORT_OPTIONS:MDTRACE} && ! ${PORT_OPTIONS:MGCC}
 IGNORE=		DTRACE support on amd64 requires GCC option
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MGCC}
@@ -165,12 +168,12 @@ post-install:
 			-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB} \
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
 	done
-	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
+	${RM} -rf ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
+	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
-	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
+	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 .endif
 
