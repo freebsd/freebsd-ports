@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c30c3a2e-4fb1-11e4-b275-14dae9d210b8">
+    <topic>foreman-proxy SSL verification issue</topic>
+    <affects>
+      <package>
+	<name>foreman-proxy</name>
+	<range><lt>1.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Foreman Security reports:</p>
+	<blockquote cite="http://projects.theforeman.org/issues/7822">
+	  <p>The smart proxy when running in an SSL-secured mode permits incoming
+	    API calls to any endpoint without requiring, or performing any
+	    verification of an SSL client certificate. This permits any client
+	    with access to the API to make requests and perform actions
+	    permitting control of Puppet CA, DHCP, DNS etc.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3691</cvename>
+      <url>https://groups.google.com/forum/#!topic/foreman-announce/LcjZx25Bl7U</url>
+    </references>
+    <dates>
+      <discovery>2014-05-09</discovery>
+      <entry>2014-10-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2bbcc01-4ec3-11e4-ab3f-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
