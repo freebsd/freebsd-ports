@@ -42,5 +42,3 @@ share/icons/oxygen/scalable/preferences-desktop-locale.svgz
 share/icons/oxygen/scalable/zoom-in.svgz
 share/icons/oxygen/scalable/zoom-out.svgz
 share/pixmaps/cutemaze.png
-%%NLS%%@dirrm %%DATADIR%%/translations
-%%NLS%%@dirrm %%DATADIR%%
