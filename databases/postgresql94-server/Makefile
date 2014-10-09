@@ -1,9 +1,8 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.4beta1
-PORTREVISION?=	1
-PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
+DISTVERSION?=	9.4beta3
+PKGNAMESUFFIX?=	${DISTVERSION:S/.//:S/beta/./:R}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
 

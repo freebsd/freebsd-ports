@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	1
 CATEGORIES=	databases
-PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
@@ -21,7 +19,7 @@ INSTALL_DIRS=	contrib
 
 SLAVE_ONLY=	yes
 COMPONENT=	-contrib
-CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl --disable-nls
+CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl --disable-nls --with-uuid=bsd
 LDFLAGS+=	${PTHREAD_LIBS} -L${PREFIX}/lib
 
 post-install:
