@@ -1,0 +1,38 @@
+# $FreeBSD$
+
+PORTNAME=	xtoolchain
+PORTVERSION=	0.1
+CATEGORIES=	devel
+MASTER_SITES=	# none
+DISTFILES=	# none
+PKGNAMEPREFIX?=	powerpc64-
+PKGNAMESUFFIX?=	-gcc
+
+MAINTAINER?=	bapt@FreeBSD.org
+COMMENT=	Pre seeded toolchain to cross build FreeBSD base
+
+NO_BUILD=	yes
+
+XCC?=		${PKGNAMEPREFIX}portbld-${OPSYS:tl}${OSREL}-gcc
+XCXX?=		${PKGNAMEPREFIX}portbld-${OPSYS:tl}${OSREL}-g++
+XCPP?=		${PKGNAMEPREFIX}portbld-${OPSYS:tl}${OSREL}-cpp
+X_COMPILER_TYPE?=	${PKGNAMESUFFIX:C/-//g}
+
+RUN_DEPENDS?=	${XCC}:${PORTSDIR}/devel/${PKGNAMEPREFIX}${X_COMPILER_TYPE}
+
+SUB_FILES=	xtoolchain.mk
+SUB_LIST=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
+		OPSYS=${OPSYS:tl} \
+		XCC=${XCC} \
+		XCXX=${XCXX} \
+		XCPP=${XCPP} \
+		X_COMPILER_TYPE=${X_COMPILER_TYPE}
+
+PLIST_FILES=	share/toolchains/${PKGNAMEPREFIX}${X_COMPILER_TYPE}.mk
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
+	@${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
+		${STAGEDIR}${PREFIX}/share/toolchains/${PKGNAMEPREFIX}${X_COMPILER_TYPE}.mk
+
+.include <bsd.port.mk>

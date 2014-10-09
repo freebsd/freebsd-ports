@@ -3488,6 +3488,7 @@
     SUBDIR += poslib
     SUBDIR += powerpc64-binutils
     SUBDIR += powerpc64-gcc
+    SUBDIR += powerpc64-xtoolchain-gcc
     SUBDIR += poxml
     SUBDIR += ppl
     SUBDIR += premake
@@ -4648,6 +4649,7 @@
     SUBDIR += sourcenav
     SUBDIR += sparc64-binutils
     SUBDIR += sparc64-gcc
+    SUBDIR += sparc64-xtoolchain-gcc
     SUBDIR += spatialindex
     SUBDIR += spdict
     SUBDIR += spin
