@@ -41,8 +41,8 @@ SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS_DEFINE=	COMPHOLIO CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFINE=	COMPHOLIO CUPS DBUS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
+OPTIONS_DEFAULT=DBUS X11
 OPTIONS_SUB=	yes
 
 COMPHOLIO_DESC=	Include the Compholio patchset, needed for Pipelight support
@@ -55,6 +55,9 @@ MONO_DESC=	Bundle Mono MSI package for Wine
 # USES needs to be before bsd.port.pre.mk
 CUPS_CONFIGURE_WITH=	cups
 CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+
+DBUS_CONFIGURE_WITH=	dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 DOSBOX_RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
 
