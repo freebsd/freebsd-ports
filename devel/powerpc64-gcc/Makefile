@@ -16,7 +16,9 @@ COMMENT=	Cross GNU Compiler Collection for ${PKGNAMEPREFIX:C/-//g}
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-USES=	gmake iconv libtool tar:bzip2
+USES=	gmake iconv libtool tar:bzip2 makeinfo
+PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
+		OPSYS=${OPSYS:tl}
 
 DISTFILES+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
