@@ -24,6 +24,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 CONFLICTS_INSTALL=	i386-wine-[0-9]* i386-wine-devel-[0-9]* wine-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dbus-1.0
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dbus-1.0
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+= --verbose --mandir=${MANPREFIX}/man --without-alsa \
 		--without-gphoto --without-gsm --without-gstreamer \
