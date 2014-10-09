@@ -3,7 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.7.27
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
