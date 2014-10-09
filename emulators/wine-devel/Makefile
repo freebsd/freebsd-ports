@@ -23,8 +23,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 CONFLICTS_INSTALL=	i386-wine-[0-9]* i386-wine-devel-[0-9]* wine-[0-9]*
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dbus-1.0
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dbus-1.0
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+= --verbose --mandir=${MANPREFIX}/man --without-alsa \
 		--without-gphoto --without-gsm --without-gstreamer \
@@ -36,7 +35,7 @@ WINELIBDIR?=	${PREFIX}/lib
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386
-USES=		bison compiler:c11 shebangfix tar:bzip2
+USES=		bison compiler:c11 gmake shebangfix tar:bzip2
 SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
 
 SUB_FILES=	pkg-message
