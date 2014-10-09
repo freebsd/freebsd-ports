@@ -13,7 +13,8 @@ COMMENT=	Additional UI API for cinnamon
 
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
-		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
+		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile \
+		libtoolize:${PORTSDIR}/devel/libtool
 RUN_DEPENDS=	xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
 		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 

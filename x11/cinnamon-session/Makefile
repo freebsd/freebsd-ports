@@ -11,7 +11,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the cinnamon desktop
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
+BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
+		libtoolize:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
