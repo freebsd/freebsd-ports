@@ -12,7 +12,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen saver and locker
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
+		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
+		libtoolize:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libcinnamon-desktop.so:${PORTSDIR}/x11/cinnamon-desktop \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
@@ -24,7 +25,7 @@ USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libgnomekbd libxml2
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtoolize autoconf automake
+USE_AUTOTOOLS=	autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

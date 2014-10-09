@@ -14,7 +14,8 @@ COMMENT=	GNOME 3 settings daemon
 BUILD_DEPENDS=	cinnamon-session:${PORTSDIR}/x11/cinnamon-session \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
+		libtoolize:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
@@ -33,7 +34,7 @@ USE_GNOME=	gnomehier gnomeprefix intlhack libgnomekbd \
 		libxslt:build
 USE_XORG=	xxf86misc
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtoolize autoconf automake
+USE_AUTOTOOLS=	autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
