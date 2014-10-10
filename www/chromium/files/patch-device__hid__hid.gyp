@@ -1,5 +1,5 @@
---- ./device/hid/hid.gyp.orig	2014-08-20 21:03:08.000000000 +0200
-+++ ./device/hid/hid.gyp	2014-08-22 15:06:26.000000000 +0200
+--- device/hid/hid.gyp.orig	2014-10-02 17:39:47 UTC
++++ device/hid/hid.gyp
 @@ -61,6 +61,18 @@
              'input_service_linux.h',
            ],

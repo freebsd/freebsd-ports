@@ -50,5 +50,3 @@ share/pixmaps/pythonchess.png
 %%DATADIR%%/images/whiteQueen.png
 %%DATADIR%%/images/whiteRook.png
 %%DATADIR%%/images/white_square.png
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

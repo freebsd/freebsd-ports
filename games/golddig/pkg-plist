@@ -1,9 +1,5 @@
 bin/gdedit
-@group games
-@mode 2555
-bin/golddig
-@mode
-@group
+@(root,games,2555) bin/golddig
 man/man6/gdedit.6.gz
 man/man6/golddig.6.gz
 %%DATADIR%%/default
@@ -33,4 +29,3 @@ man/man6/golddig.6.gz
 %%DATADIR%%/goldlev024
 %%DATADIR%%/goldlev025
 %%DATADIR%%/goldlev026
-@dirrm %%DATADIR%%

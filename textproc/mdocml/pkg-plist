@@ -3,6 +3,11 @@ bin/demandoc
 bin/mandoc
 @comment bin/preconv 
 bin/whatis
+@comment include/mandoc/man.h
+@comment include/mandoc/mandoc.h
+@comment include/mandoc/mandoc_aux.h
+@comment include/mandoc/mdoc.h
+@comment lib/mandoc/libmandoc.a
 man/man1/apropos.1.gz
 man/man1/demandoc.1.gz
 man/man1/mandoc.1.gz

@@ -5,9 +5,7 @@ PORTNAME=	boinc-client
 PORTVERSION=	7.2.33
 PORTREVISION=	6
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://rene-ladan.nl/pub/distfiles/
-MASTER_SITE_SUBDIR=rene
+MASTER_SITES=	LOCAL/rene
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client

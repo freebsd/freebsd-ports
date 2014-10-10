@@ -7,7 +7,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Search/.packlist
 %%PERL5_MAN3%%/Google::Search.3.gz
 %%PERL5_MAN3%%/Google::Search::Result.3.gz
-@dirrmtry %%SITE_PERL%%/Google/Search
-@dirrmtry %%SITE_PERL%%/Google
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Search
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google

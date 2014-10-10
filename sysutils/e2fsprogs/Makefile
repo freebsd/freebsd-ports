@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.42.10
-PORTREVISION?=	0
+PORTVERSION=	1.42.12
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -12,7 +12,8 @@ COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 
 LICENSE=	GPLv2
 
-PATCH_STRIP=	-p1
+PORTSCOUT=	ignore	# cannot handle the version in the directory
+
 USES=		gmake pkgconfig tar:xz
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
@@ -119,7 +120,9 @@ post-build:
 # There have been subtle failures induced by Linux-isms in the past.
 # -- Matthias Andree, package maintainer, 2007-09-18
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
-	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} check TMPDIR=${WRKDIR}/tmp \
+# do not add -j options to ${MAKE_CMD} below, this might break
+# due to excessive disk space use.
+	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} check TMPDIR=${WRKDIR}/tmp \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 
 post-install:

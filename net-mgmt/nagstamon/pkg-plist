@@ -127,7 +127,3 @@ bin/nagstamon.py
 %%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/zabbix_api.pyc
 %%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/zabbix_api.pyo
 man/man1/nagstamon.1.gz
-@dirrmtry %%PYTHON_SITELIBDIR%%/Nagstamon/Server
-@dirrmtry %%PYTHON_SITELIBDIR%%/Nagstamon/resources
-@dirrmtry %%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty
-@dirrmtry %%PYTHON_SITELIBDIR%%/Nagstamon

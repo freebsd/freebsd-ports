@@ -1,40 +1,12 @@
-**************************************************
-Daemon:
-  The user %%USERS%% has been added to your system.
+When you first run minecraft-server, it will create the file
+%%DATADIR%%/eula.txt
 
-  To run the server automativally with the system
-  add the following line to your /etc/rc.conf:
+You need to read the EULA, and then set:
+eula=true
 
-  minecraft_enable="YES"
-
-  Serverfiles will be in 
-  %%PREFIX%%/share/minecraft-server
-
-  Configuration can be done using the config-files
-  or as OP using the Client. Config files are in
-  %%PREFIX%%/etc/minecraft
-
-  If you have trouble starting or stopping the
-  server try to delete an unclean server.log.lck:
-
-  %%PREFIX%%/etc/rc.d/minecraft clean
-
-  If you don't like your generated world it can
-  be deleted (do generate a new one next time
-  the server starts) using:
-  
-  %%PREFIX%%/etc/rc.d/minecraft killworld
-
-  You can delete the server.log (so it's not
-  getting to fat) using:
-
-  %%PREFIX%%/etc/rc.d/minecraft clearlog
-
-Unprivileged users:
-  Running a server as unprivilieged user try
-  minecraft-server{-nogui}
-
-  The serverfiles will be in
-  ~/.minecraft-server
-
-**************************************************
+- To run the server, run %%PREFIX%%/bin/minecraft-server
+- Configuration files can be found at %%ETCDIR%%
+- Log files can be found at /var/log/minecraft-server/
+- World files can be found at /var/db/minecraft-server
+- Debug output files can be found at /var/log/minecraft-server/debug/
+- To edit java's parameters, edit %%PREFIX%%/bin/minecraft-server

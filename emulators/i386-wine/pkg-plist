@@ -2161,7 +2161,6 @@ share/wine/wine.inf
 @dirrmtry man/de.UTF-8/man1
 @dirrmtry man/de.UTF-8
 @dirrm share/wine/fonts
-@dirrm share/wine
 @dirrm share/doc/wine
 @dirrm lib32/wine/fakedlls
 @dirrm lib32/wine

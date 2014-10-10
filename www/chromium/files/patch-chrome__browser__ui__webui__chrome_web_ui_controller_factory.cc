@@ -1,6 +1,6 @@
---- ./chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2014-08-20 21:02:03.000000000 +0200
-+++ ./chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc	2014-08-22 15:06:25.000000000 +0200
-@@ -493,7 +493,7 @@
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2014-10-02 17:39:46 UTC
++++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
+@@ -512,7 +512,7 @@
        url.host() == chrome::kChromeUIMemoryRedirectHost ||
        url.host() == chrome::kChromeUIStatsHost ||
        url.host() == chrome::kChromeUITermsHost

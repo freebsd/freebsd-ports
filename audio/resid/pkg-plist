@@ -11,4 +11,3 @@ lib/libresid.a
 lib/libresid.so
 lib/libresid.so.5
 lib/libresid.so.5.0.0
-@dirrm include/resid

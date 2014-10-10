@@ -292,18 +292,3 @@ lib/libboinc_opencl.so.7.2.33
 %%MANAGER%%share/pixmaps/boincmgr.16x16.png
 %%MANAGER%%share/pixmaps/boincmgr.32x32.png
 %%MANAGER%%share/pixmaps/boincmgr.48x48.png
-@dirrm include/boinc
-%%SKINS%%@dirrm share/boinc/skins/Charity Engine
-%%MANAGER%%@dirrm share/boinc/skins/Default
-%%SKINS%%@dirrm share/boinc/skins/GridRepublic
-%%SKINS%%@dirrm share/boinc/skins/People for a Smarter Planet/graphic
-%%SKINS%%@dirrm share/boinc/skins/People for a Smarter Planet
-%%SKINS%%@dirrm share/boinc/skins/ProgressThruProcessors
-%%SKINS%%@dirrm share/boinc/skins/World Community Grid/Old/graphic
-%%SKINS%%@dirrm share/boinc/skins/World Community Grid/Old
-%%SKINS%%@dirrm share/boinc/skins/World Community Grid
-%%MANAGER%%@dirrm share/boinc/skins
-%%X11%%@dirrm share/boinc/ttf
-%%X11%%@dirrm share/boinc
-%%MANAGER%%%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
-%%MANAGER%%%%NLS%%@dirrmtry share/locale/sv_SE

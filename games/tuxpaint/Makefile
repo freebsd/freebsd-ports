@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm \
 		bash:${PORTSDIR}/shells/bash
 
-USES=		gettext gmake pkgconfig shebangfix
+USES=		gettext gmake gperf pkgconfig shebangfix
 SHEBANG_FILES=	src/tuxpaint-import.sh
 USE_GNOME=	librsvg2
 USE_SDL=	image mixer sdl ttf pango
@@ -30,7 +30,8 @@ MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GNOME_PREFIX="${PREFIX}" \
 		ARCH_INSTALL="" \
 		OPTFLAGS="${CFLAGS} -DHAVE_STRCASESTR" \
-		SHARED_FLAGS="-shared -fPIC"
+		SHARED_FLAGS="-shared -fPIC" \
+		GPERF="${GPERF}"
 
 INSTALL_TARGET=	install-gettext install-im install-magic-plugins \
 		install-magic-plugin-dev install-default-config \

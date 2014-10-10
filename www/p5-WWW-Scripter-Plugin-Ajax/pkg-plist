@@ -2,11 +2,3 @@
 %%SITE_PERL%%/WWW/Scripter/Plugin/Ajax.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin/Ajax/.packlist
 %%PERL5_MAN3%%/WWW::Scripter::Plugin::Ajax.3.gz
-@dirrmtry %%SITE_PERL%%/WWW/Scripter/Plugin/Ajax
-@dirrmtry %%SITE_PERL%%/WWW/Scripter/Plugin
-@dirrmtry %%SITE_PERL%%/WWW/Scripter
-@dirrmtry %%SITE_PERL%%/WWW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin/Ajax
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

@@ -24,7 +24,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lssl -lcrypto -L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
 		WARNFLAGS="" Q="" OPTCFLAGS="${CFLAGS}"
-USES=		bison gmake pkgconfig iconv
+USES=		bison gmake gperf pkgconfig iconv
 USE_GNOME=	gtk20 librsvg2
 
 NSFB_VERSION=	0.1.0
@@ -41,7 +41,6 @@ WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
 .if ${OPSYS} == DragonFly
 LIB_DEPENDS+=	libssl.so:${PORTSDIR}/security/openssl
-BUILD_DEPENDS+=	gperf:${PORTSDIR}/devel/gperf
 .endif
 
 .include <bsd.port.pre.mk>

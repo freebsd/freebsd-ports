@@ -57,13 +57,3 @@ share/pixmaps/tanglet.xpm
 %%NLS%%%%DATADIR%%/translations/tanglet_ro.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_tr.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_uk.qm
-%%NLS%%@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/data/nl
-@dirrm %%DATADIR%%/data/hu
-@dirrm %%DATADIR%%/data/he
-@dirrm %%DATADIR%%/data/fr
-@dirrm %%DATADIR%%/data/en
-@dirrm %%DATADIR%%/data/de
-@dirrm %%DATADIR%%/data/cs
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

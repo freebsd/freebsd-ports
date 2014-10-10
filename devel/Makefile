@@ -1089,6 +1089,7 @@
     SUBDIR += libopensync022
     SUBDIR += libopkele
     SUBDIR += liborcus
+    SUBDIR += liborcus07
     SUBDIR += libosinfo
     SUBDIR += libosmo-abis
     SUBDIR += libosmo-sccp
@@ -1281,6 +1282,7 @@
     SUBDIR += mingw32-zlib
     SUBDIR += mingw64-binutils
     SUBDIR += mips64-binutils
+    SUBDIR += mips-binutils
     SUBDIR += mk
     SUBDIR += mk-configure
     SUBDIR += mkcmd
@@ -3485,6 +3487,9 @@
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
+    SUBDIR += powerpc64-binutils
+    SUBDIR += powerpc64-gcc
+    SUBDIR += powerpc64-xtoolchain-gcc
     SUBDIR += poxml
     SUBDIR += ppl
     SUBDIR += premake
@@ -3811,6 +3816,7 @@
     SUBDIR += py-optik
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
+    SUBDIR += py-palm
     SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
     SUBDIR += py-path.py
@@ -4447,6 +4453,7 @@
     SUBDIR += rubygem-nori
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-nprogress-rails
+    SUBDIR += rubygem-oj
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-orm_adapter
@@ -4642,6 +4649,9 @@
     SUBDIR += smv
     SUBDIR += soapui
     SUBDIR += sourcenav
+    SUBDIR += sparc64-binutils
+    SUBDIR += sparc64-gcc
+    SUBDIR += sparc64-xtoolchain-gcc
     SUBDIR += spatialindex
     SUBDIR += spdict
     SUBDIR += spin

@@ -743,21 +743,3 @@ share/applications/anki.desktop
 share/mime/packages/anki.xml
 share/pixmaps/anki.png
 share/pixmaps/anki.xpm
-@dirrm %%DATADIR%%/anki/importing
-@dirrm %%DATADIR%%/anki/template
-@dirrm %%DATADIR%%/anki
-@dirrm %%DATADIR%%/aqt/forms
-@dirrm %%DATADIR%%/aqt
-@dirrm %%DATADIR%%/designer/icons
-@dirrm %%DATADIR%%/designer
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/oldanki/template
-@dirrm %%DATADIR%%/oldanki
-@dirrm %%DATADIR%%/tests/support
-@dirrm %%DATADIR%%/tests
-@dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/tlh/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tlh
-%%NLS%%@dirrmtry share/locale/wo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/wo

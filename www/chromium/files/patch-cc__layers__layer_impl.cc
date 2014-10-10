@@ -1,6 +1,6 @@
---- ./cc/layers/layer_impl.cc.orig	2014-08-20 21:02:36.000000000 +0200
-+++ ./cc/layers/layer_impl.cc	2014-08-22 15:06:24.000000000 +0200
-@@ -1190,21 +1190,23 @@
+--- cc/layers/layer_impl.cc.orig	2014-10-02 17:39:45 UTC
++++ cc/layers/layer_impl.cc
+@@ -1201,21 +1201,23 @@
                                 scale_factor * scaled_scroll_bounds.height());
    scaled_scroll_bounds = gfx::ToFlooredSize(scaled_scroll_bounds);
  

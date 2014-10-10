@@ -1,11 +1,11 @@
---- ./third_party/webrtc/base/stringutils.h.orig	2014-08-20 21:04:28.000000000 +0200
-+++ ./third_party/webrtc/base/stringutils.h	2014-08-22 18:44:28.000000000 +0200
+--- third_party/webrtc/base/stringutils.h.orig	2014-10-02 17:40:33 UTC
++++ third_party/webrtc/base/stringutils.h
 @@ -23,11 +23,11 @@
  #endif  // WEBRTC_WIN 
  
  #if defined(WEBRTC_POSIX)
 -#ifdef BSD
-+#ifdef WEBRTC_BSD
++#if defined(WEBRTC_BSD) || defined(BSD)
  #include <stdlib.h>
 -#else  // BSD
 +#else  // WEBRTC_BSD

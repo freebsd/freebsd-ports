@@ -1,5 +1,5 @@
---- ./ui/views/views_delegate.cc.orig	2014-08-20 21:02:18.000000000 +0200
-+++ ./ui/views/views_delegate.cc	2014-08-22 15:06:27.000000000 +0200
+--- ui/views/views_delegate.cc.orig	2014-10-02 17:19:03 UTC
++++ ui/views/views_delegate.cc
 @@ -50,7 +50,7 @@
  bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow window) const {
    return false;

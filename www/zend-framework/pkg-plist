@@ -29,6 +29,7 @@
 %%DATADIR%%/library/Zend/Authentication/Adapter/ValidatableAdapterInterface.php
 %%DATADIR%%/library/Zend/Authentication/AuthenticationService.php
 %%DATADIR%%/library/Zend/Authentication/AuthenticationServiceInterface.php
+%%DATADIR%%/library/Zend/Authentication/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Authentication/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Authentication/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Authentication/Exception/RuntimeException.php
@@ -42,6 +43,7 @@
 %%DATADIR%%/library/Zend/Authentication/Validator/Authentication.php
 %%DATADIR%%/library/Zend/Authentication/composer.json
 %%DATADIR%%/library/Zend/Barcode/Barcode.php
+%%DATADIR%%/library/Zend/Barcode/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Barcode/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Barcode/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Barcode/Exception/OutOfRangeException.php
@@ -88,6 +90,7 @@
 %%DATADIR%%/library/Zend/Barcode/Renderer/Svg.php
 %%DATADIR%%/library/Zend/Barcode/RendererPluginManager.php
 %%DATADIR%%/library/Zend/Barcode/composer.json
+%%DATADIR%%/library/Zend/Cache/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Cache/Exception/BadMethodCallException.php
 %%DATADIR%%/library/Zend/Cache/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Cache/Exception/ExtensionNotLoadedException.php
@@ -175,6 +178,7 @@
 %%DATADIR%%/library/Zend/Captcha/AbstractAdapter.php
 %%DATADIR%%/library/Zend/Captcha/AbstractWord.php
 %%DATADIR%%/library/Zend/Captcha/AdapterInterface.php
+%%DATADIR%%/library/Zend/Captcha/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Captcha/Dumb.php
 %%DATADIR%%/library/Zend/Captcha/Exception/DomainException.php
 %%DATADIR%%/library/Zend/Captcha/Exception/ExceptionInterface.php
@@ -195,6 +199,7 @@
 %%DATADIR%%/library/Zend/Code/Annotation/Parser/DoctrineAnnotationParser.php
 %%DATADIR%%/library/Zend/Code/Annotation/Parser/GenericAnnotationParser.php
 %%DATADIR%%/library/Zend/Code/Annotation/Parser/ParserInterface.php
+%%DATADIR%%/library/Zend/Code/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Code/Exception/BadMethodCallException.php
 %%DATADIR%%/library/Zend/Code/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Code/Exception/InvalidArgumentException.php
@@ -274,6 +279,7 @@
 %%DATADIR%%/library/Zend/Code/Scanner/ValueScanner.php
 %%DATADIR%%/library/Zend/Code/composer.json
 %%DATADIR%%/library/Zend/Config/AbstractConfigFactory.php
+%%DATADIR%%/library/Zend/Config/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Config/Config.php
 %%DATADIR%%/library/Zend/Config/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Config/Exception/InvalidArgumentException.php
@@ -308,6 +314,7 @@
 %%DATADIR%%/library/Zend/Console/Adapter/Virtual.php
 %%DATADIR%%/library/Zend/Console/Adapter/Windows.php
 %%DATADIR%%/library/Zend/Console/Adapter/WindowsAnsicon.php
+%%DATADIR%%/library/Zend/Console/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Console/Charset/Ascii.php
 %%DATADIR%%/library/Zend/Console/Charset/AsciiExtended.php
 %%DATADIR%%/library/Zend/Console/Charset/CharsetInterface.php
@@ -336,6 +343,7 @@
 %%DATADIR%%/library/Zend/Console/RouteMatcher/RouteMatcherInterface.php
 %%DATADIR%%/library/Zend/Console/composer.json
 %%DATADIR%%/library/Zend/Crypt/BlockCipher.php
+%%DATADIR%%/library/Zend/Crypt/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Crypt/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Crypt/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Crypt/Exception/RuntimeException.php
@@ -435,6 +443,7 @@
 %%DATADIR%%/library/Zend/Db/Adapter/Profiler/ProfilerInterface.php
 %%DATADIR%%/library/Zend/Db/Adapter/StatementContainer.php
 %%DATADIR%%/library/Zend/Db/Adapter/StatementContainerInterface.php
+%%DATADIR%%/library/Zend/Db/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Db/Exception/ErrorException.php
 %%DATADIR%%/library/Zend/Db/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Db/Exception/InvalidArgumentException.php
@@ -505,6 +514,8 @@
 %%DATADIR%%/library/Zend/Db/Sql/Insert.php
 %%DATADIR%%/library/Zend/Db/Sql/Literal.php
 %%DATADIR%%/library/Zend/Db/Sql/Platform/AbstractPlatform.php
+%%DATADIR%%/library/Zend/Db/Sql/Platform/IbmDb2/IbmDb2.php
+%%DATADIR%%/library/Zend/Db/Sql/Platform/IbmDb2/SelectDecorator.php
 %%DATADIR%%/library/Zend/Db/Sql/Platform/Mysql/Ddl/CreateTableDecorator.php
 %%DATADIR%%/library/Zend/Db/Sql/Platform/Mysql/Mysql.php
 %%DATADIR%%/library/Zend/Db/Sql/Platform/Mysql/SelectDecorator.php
@@ -551,9 +562,11 @@
 %%DATADIR%%/library/Zend/Db/TableGateway/TableGateway.php
 %%DATADIR%%/library/Zend/Db/TableGateway/TableGatewayInterface.php
 %%DATADIR%%/library/Zend/Db/composer.json
+%%DATADIR%%/library/Zend/Debug/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Debug/Debug.php
 %%DATADIR%%/library/Zend/Debug/README.md
 %%DATADIR%%/library/Zend/Debug/composer.json
+%%DATADIR%%/library/Zend/Di/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Di/Config.php
 %%DATADIR%%/library/Zend/Di/Definition/Annotation/Inject.php
 %%DATADIR%%/library/Zend/Di/Definition/Annotation/Instantiator.php
@@ -591,6 +604,7 @@
 %%DATADIR%%/library/Zend/Di/ServiceLocatorInterface.php
 %%DATADIR%%/library/Zend/Di/TODO
 %%DATADIR%%/library/Zend/Di/composer.json
+%%DATADIR%%/library/Zend/Dom/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Dom/Css2Xpath.php
 %%DATADIR%%/library/Zend/Dom/DOMXPath.php
 %%DATADIR%%/library/Zend/Dom/Document.php
@@ -603,6 +617,7 @@
 %%DATADIR%%/library/Zend/Dom/Query.php
 %%DATADIR%%/library/Zend/Dom/README.md
 %%DATADIR%%/library/Zend/Dom/composer.json
+%%DATADIR%%/library/Zend/Escaper/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Escaper/Escaper.php
 %%DATADIR%%/library/Zend/Escaper/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Escaper/Exception/InvalidArgumentException.php
@@ -610,6 +625,7 @@
 %%DATADIR%%/library/Zend/Escaper/README.md
 %%DATADIR%%/library/Zend/Escaper/composer.json
 %%DATADIR%%/library/Zend/EventManager/AbstractListenerAggregate.php
+%%DATADIR%%/library/Zend/EventManager/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/EventManager/Event.php
 %%DATADIR%%/library/Zend/EventManager/EventInterface.php
 %%DATADIR%%/library/Zend/EventManager/EventManager.php
@@ -637,6 +653,7 @@
 %%DATADIR%%/library/Zend/EventManager/SharedListenerAggregateInterface.php
 %%DATADIR%%/library/Zend/EventManager/StaticEventManager.php
 %%DATADIR%%/library/Zend/EventManager/composer.json
+%%DATADIR%%/library/Zend/Feed/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Feed/Exception/BadMethodCallException.php
 %%DATADIR%%/library/Zend/Feed/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Feed/Exception/InvalidArgumentException.php
@@ -740,6 +757,7 @@
 %%DATADIR%%/library/Zend/Feed/Writer/Version.php
 %%DATADIR%%/library/Zend/Feed/Writer/Writer.php
 %%DATADIR%%/library/Zend/Feed/composer.json
+%%DATADIR%%/library/Zend/File/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/File/ClassFileLocator.php
 %%DATADIR%%/library/Zend/File/Exception/BadMethodCallException.php
 %%DATADIR%%/library/Zend/File/Exception/ExceptionInterface.php
@@ -762,6 +780,7 @@
 %%DATADIR%%/library/Zend/Filter/AbstractUnicode.php
 %%DATADIR%%/library/Zend/Filter/BaseName.php
 %%DATADIR%%/library/Zend/Filter/Boolean.php
+%%DATADIR%%/library/Zend/Filter/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Filter/Callback.php
 %%DATADIR%%/library/Zend/Filter/Compress.php
 %%DATADIR%%/library/Zend/Filter/Compress/AbstractCompressionAlgorithm.php
@@ -849,6 +868,7 @@
 %%DATADIR%%/library/Zend/Form/Annotation/Type.php
 %%DATADIR%%/library/Zend/Form/Annotation/ValidationGroup.php
 %%DATADIR%%/library/Zend/Form/Annotation/Validator.php
+%%DATADIR%%/library/Zend/Form/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Form/Element.php
 %%DATADIR%%/library/Zend/Form/Element/Button.php
 %%DATADIR%%/library/Zend/Form/Element/Captcha.php
@@ -952,6 +972,7 @@
 %%DATADIR%%/library/Zend/Form/View/HelperConfig.php
 %%DATADIR%%/library/Zend/Form/composer.json
 %%DATADIR%%/library/Zend/Http/AbstractMessage.php
+%%DATADIR%%/library/Zend/Http/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Http/Client.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/AdapterInterface.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Curl.php
@@ -1057,6 +1078,7 @@
 %%DATADIR%%/library/Zend/Http/Response.php
 %%DATADIR%%/library/Zend/Http/Response/Stream.php
 %%DATADIR%%/library/Zend/Http/composer.json
+%%DATADIR%%/library/Zend/I18n/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/I18n/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/I18n/Exception/ExtensionNotLoadedException.php
 %%DATADIR%%/library/Zend/I18n/Exception/InvalidArgumentException.php
@@ -1348,6 +1370,7 @@
 %%DATADIR%%/library/Zend/I18n/composer.json
 %%DATADIR%%/library/Zend/InputFilter/ArrayInput.php
 %%DATADIR%%/library/Zend/InputFilter/BaseInputFilter.php
+%%DATADIR%%/library/Zend/InputFilter/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/InputFilter/CollectionInputFilter.php
 %%DATADIR%%/library/Zend/InputFilter/EmptyContextInterface.php
 %%DATADIR%%/library/Zend/InputFilter/Exception/ExceptionInterface.php
@@ -1368,6 +1391,7 @@
 %%DATADIR%%/library/Zend/InputFilter/ReplaceableInputInterface.php
 %%DATADIR%%/library/Zend/InputFilter/UnknownInputsCapableInterface.php
 %%DATADIR%%/library/Zend/InputFilter/composer.json
+%%DATADIR%%/library/Zend/Json/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Json/Decoder.php
 %%DATADIR%%/library/Zend/Json/Encoder.php
 %%DATADIR%%/library/Zend/Json/Exception/BadMethodCallException.php
@@ -1395,6 +1419,7 @@
 %%DATADIR%%/library/Zend/Json/Server/Smd/Service.php
 %%DATADIR%%/library/Zend/Json/composer.json
 %%DATADIR%%/library/Zend/Ldap/Attribute.php
+%%DATADIR%%/library/Zend/Ldap/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Ldap/Collection.php
 %%DATADIR%%/library/Zend/Ldap/Collection/DefaultIterator.php
 %%DATADIR%%/library/Zend/Ldap/Converter/Converter.php
@@ -1440,6 +1465,7 @@
 %%DATADIR%%/library/Zend/Ldap/README.md
 %%DATADIR%%/library/Zend/Ldap/composer.json
 %%DATADIR%%/library/Zend/Loader/AutoloaderFactory.php
+%%DATADIR%%/library/Zend/Loader/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Loader/ClassMapAutoloader.php
 %%DATADIR%%/library/Zend/Loader/Exception/BadMethodCallException.php
 %%DATADIR%%/library/Zend/Loader/Exception/DomainException.php
@@ -1458,6 +1484,7 @@
 %%DATADIR%%/library/Zend/Loader/SplAutoloader.php
 %%DATADIR%%/library/Zend/Loader/StandardAutoloader.php
 %%DATADIR%%/library/Zend/Loader/composer.json
+%%DATADIR%%/library/Zend/Log/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Log/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Log/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Log/Exception/RuntimeException.php
@@ -1512,6 +1539,7 @@
 %%DATADIR%%/library/Zend/Mail/Address.php
 %%DATADIR%%/library/Zend/Mail/Address/AddressInterface.php
 %%DATADIR%%/library/Zend/Mail/AddressList.php
+%%DATADIR%%/library/Zend/Mail/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Mail/Exception/BadMethodCallException.php
 %%DATADIR%%/library/Zend/Mail/Exception/DomainException.php
 %%DATADIR%%/library/Zend/Mail/Exception/ExceptionInterface.php
@@ -1605,6 +1633,7 @@
 %%DATADIR%%/library/Zend/Math/BigInteger/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Math/BigInteger/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Math/BigInteger/Exception/RuntimeException.php
+%%DATADIR%%/library/Zend/Math/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Math/Exception/DomainException.php
 %%DATADIR%%/library/Zend/Math/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Math/Exception/InvalidArgumentException.php
@@ -1613,6 +1642,7 @@
 %%DATADIR%%/library/Zend/Math/Rand.php
 %%DATADIR%%/library/Zend/Math/Source/HashTiming.php
 %%DATADIR%%/library/Zend/Math/composer.json
+%%DATADIR%%/library/Zend/Memory/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Memory/Container/AbstractContainer.php
 %%DATADIR%%/library/Zend/Memory/Container/AccessController.php
 %%DATADIR%%/library/Zend/Memory/Container/ContainerInterface.php
@@ -1625,6 +1655,7 @@
 %%DATADIR%%/library/Zend/Memory/README.md
 %%DATADIR%%/library/Zend/Memory/Value.php
 %%DATADIR%%/library/Zend/Memory/composer.json
+%%DATADIR%%/library/Zend/Mime/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Mime/Decode.php
 %%DATADIR%%/library/Zend/Mime/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Mime/Exception/RuntimeException.php
@@ -1633,6 +1664,7 @@
 %%DATADIR%%/library/Zend/Mime/Part.php
 %%DATADIR%%/library/Zend/Mime/README.md
 %%DATADIR%%/library/Zend/Mime/composer.json
+%%DATADIR%%/library/Zend/ModuleManager/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/ModuleManager/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/ModuleManager/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/ModuleManager/Exception/MissingDependencyModuleException.php
@@ -1682,6 +1714,7 @@
 %%DATADIR%%/library/Zend/ModuleManager/composer.json
 %%DATADIR%%/library/Zend/Mvc/Application.php
 %%DATADIR%%/library/Zend/Mvc/ApplicationInterface.php
+%%DATADIR%%/library/Zend/Mvc/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Mvc/Controller/AbstractActionController.php
 %%DATADIR%%/library/Zend/Mvc/Controller/AbstractConsoleController.php
 %%DATADIR%%/library/Zend/Mvc/Controller/AbstractController.php
@@ -1812,6 +1845,7 @@
 %%DATADIR%%/library/Zend/Mvc/View/SendResponseListener.php
 %%DATADIR%%/library/Zend/Mvc/composer.json
 %%DATADIR%%/library/Zend/Navigation/AbstractContainer.php
+%%DATADIR%%/library/Zend/Navigation/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Navigation/Exception/BadMethodCallException.php
 %%DATADIR%%/library/Zend/Navigation/Exception/DomainException.php
 %%DATADIR%%/library/Zend/Navigation/Exception/ExceptionInterface.php
@@ -1841,6 +1875,7 @@
 %%DATADIR%%/library/Zend/Paginator/Adapter/Service/DbSelectFactory.php
 %%DATADIR%%/library/Zend/Paginator/AdapterAggregateInterface.php
 %%DATADIR%%/library/Zend/Paginator/AdapterPluginManager.php
+%%DATADIR%%/library/Zend/Paginator/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Paginator/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Paginator/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Paginator/Exception/RuntimeException.php
@@ -1862,6 +1897,7 @@
 %%DATADIR%%/library/Zend/Permissions/Acl/Assertion/AssertionInterface.php
 %%DATADIR%%/library/Zend/Permissions/Acl/Assertion/AssertionManager.php
 %%DATADIR%%/library/Zend/Permissions/Acl/Assertion/Exception/InvalidAssertionException.php
+%%DATADIR%%/library/Zend/Permissions/Acl/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Permissions/Acl/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Permissions/Acl/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Permissions/Acl/Exception/RuntimeException.php
@@ -1875,6 +1911,7 @@
 %%DATADIR%%/library/Zend/Permissions/Rbac/AbstractIterator.php
 %%DATADIR%%/library/Zend/Permissions/Rbac/AbstractRole.php
 %%DATADIR%%/library/Zend/Permissions/Rbac/AssertionInterface.php
+%%DATADIR%%/library/Zend/Permissions/Rbac/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Permissions/Rbac/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Permissions/Rbac/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Permissions/Rbac/README.md
@@ -1889,6 +1926,7 @@
 %%DATADIR%%/library/Zend/ProgressBar/Adapter/Exception/RuntimeException.php
 %%DATADIR%%/library/Zend/ProgressBar/Adapter/JsPull.php
 %%DATADIR%%/library/Zend/ProgressBar/Adapter/JsPush.php
+%%DATADIR%%/library/Zend/ProgressBar/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/ProgressBar/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/ProgressBar/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/ProgressBar/Exception/OutOfRangeException.php
@@ -1916,6 +1954,7 @@
 %%DATADIR%%/library/Zend/Serializer/Adapter/Wddx.php
 %%DATADIR%%/library/Zend/Serializer/Adapter/WddxOptions.php
 %%DATADIR%%/library/Zend/Serializer/AdapterPluginManager.php
+%%DATADIR%%/library/Zend/Serializer/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Serializer/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Serializer/Exception/ExtensionNotLoadedException.php
 %%DATADIR%%/library/Zend/Serializer/Exception/InvalidArgumentException.php
@@ -1924,6 +1963,7 @@
 %%DATADIR%%/library/Zend/Serializer/Serializer.php
 %%DATADIR%%/library/Zend/Serializer/composer.json
 %%DATADIR%%/library/Zend/Server/AbstractServer.php
+%%DATADIR%%/library/Zend/Server/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Server/Cache.php
 %%DATADIR%%/library/Zend/Server/Client.php
 %%DATADIR%%/library/Zend/Server/Definition.php
@@ -1953,6 +1993,7 @@
 %%DATADIR%%/library/Zend/Server/composer.json
 %%DATADIR%%/library/Zend/ServiceManager/AbstractFactoryInterface.php
 %%DATADIR%%/library/Zend/ServiceManager/AbstractPluginManager.php
+%%DATADIR%%/library/Zend/ServiceManager/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/ServiceManager/Config.php
 %%DATADIR%%/library/Zend/ServiceManager/ConfigInterface.php
 %%DATADIR%%/library/Zend/ServiceManager/DelegatorFactoryInterface.php
@@ -1982,6 +2023,7 @@
 %%DATADIR%%/library/Zend/ServiceManager/composer.json
 %%DATADIR%%/library/Zend/Session/AbstractContainer.php
 %%DATADIR%%/library/Zend/Session/AbstractManager.php
+%%DATADIR%%/library/Zend/Session/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Session/Config/ConfigInterface.php
 %%DATADIR%%/library/Zend/Session/Config/SessionConfig.php
 %%DATADIR%%/library/Zend/Session/Config/StandardConfig.php
@@ -2019,6 +2061,7 @@
 %%DATADIR%%/library/Zend/Soap/AutoDiscover.php
 %%DATADIR%%/library/Zend/Soap/AutoDiscover/DiscoveryStrategy/DiscoveryStrategyInterface.php
 %%DATADIR%%/library/Zend/Soap/AutoDiscover/DiscoveryStrategy/ReflectionDiscovery.php
+%%DATADIR%%/library/Zend/Soap/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Soap/Client.php
 %%DATADIR%%/library/Zend/Soap/Client/Common.php
 %%DATADIR%%/library/Zend/Soap/Client/DotNet.php
@@ -2046,6 +2089,7 @@
 %%DATADIR%%/library/Zend/Stdlib/ArraySerializableInterface.php
 %%DATADIR%%/library/Zend/Stdlib/ArrayStack.php
 %%DATADIR%%/library/Zend/Stdlib/ArrayUtils.php
+%%DATADIR%%/library/Zend/Stdlib/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Stdlib/CallbackHandler.php
 %%DATADIR%%/library/Zend/Stdlib/DateTime.php
 %%DATADIR%%/library/Zend/Stdlib/DispatchableInterface.php
@@ -2125,6 +2169,7 @@
 %%DATADIR%%/library/Zend/Stdlib/StringWrapper/StringWrapperInterface.php
 %%DATADIR%%/library/Zend/Stdlib/compatibility/autoload.php
 %%DATADIR%%/library/Zend/Stdlib/composer.json
+%%DATADIR%%/library/Zend/Tag/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Tag/Cloud.php
 %%DATADIR%%/library/Zend/Tag/Cloud/Decorator/AbstractCloud.php
 %%DATADIR%%/library/Zend/Tag/Cloud/Decorator/AbstractDecorator.php
@@ -2145,12 +2190,14 @@
 %%DATADIR%%/library/Zend/Tag/README.md
 %%DATADIR%%/library/Zend/Tag/TaggableInterface.php
 %%DATADIR%%/library/Zend/Tag/composer.json
+%%DATADIR%%/library/Zend/Test/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Test/PHPUnit/Controller/AbstractConsoleControllerTestCase.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/Controller/AbstractControllerTestCase.php
 %%DATADIR%%/library/Zend/Test/PHPUnit/Controller/AbstractHttpControllerTestCase.php
 %%DATADIR%%/library/Zend/Test/README.md
 %%DATADIR%%/library/Zend/Test/Util/ModuleLoader.php
 %%DATADIR%%/library/Zend/Test/composer.json
+%%DATADIR%%/library/Zend/Text/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Text/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Text/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Text/Exception/OutOfBoundsException.php
@@ -2180,6 +2227,7 @@
 %%DATADIR%%/library/Zend/Text/Table/Row.php
 %%DATADIR%%/library/Zend/Text/Table/Table.php
 %%DATADIR%%/library/Zend/Text/composer.json
+%%DATADIR%%/library/Zend/Uri/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Uri/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/Uri/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Uri/Exception/InvalidUriException.php
@@ -2227,6 +2275,7 @@
 %%DATADIR%%/library/Zend/Validator/Barcode/Upce.php
 %%DATADIR%%/library/Zend/Validator/Between.php
 %%DATADIR%%/library/Zend/Validator/Bitwise.php
+%%DATADIR%%/library/Zend/Validator/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Validator/Callback.php
 %%DATADIR%%/library/Zend/Validator/CreditCard.php
 %%DATADIR%%/library/Zend/Validator/Csrf.php
@@ -2295,9 +2344,11 @@
 %%DATADIR%%/library/Zend/Validator/ValidatorPluginManager.php
 %%DATADIR%%/library/Zend/Validator/ValidatorPluginManagerAwareInterface.php
 %%DATADIR%%/library/Zend/Validator/composer.json
+%%DATADIR%%/library/Zend/Version/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/Version/README.md
 %%DATADIR%%/library/Zend/Version/Version.php
 %%DATADIR%%/library/Zend/Version/composer.json
+%%DATADIR%%/library/Zend/View/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/View/Exception/BadMethodCallException.php
 %%DATADIR%%/library/Zend/View/Exception/DomainException.php
 %%DATADIR%%/library/Zend/View/Exception/ExceptionInterface.php
@@ -2386,6 +2437,7 @@
 %%DATADIR%%/library/Zend/View/ViewEvent.php
 %%DATADIR%%/library/Zend/View/composer.json
 %%DATADIR%%/library/Zend/XmlRpc/AbstractValue.php
+%%DATADIR%%/library/Zend/XmlRpc/CONTRIBUTING.md
 %%DATADIR%%/library/Zend/XmlRpc/Client.php
 %%DATADIR%%/library/Zend/XmlRpc/Client/Exception/ExceptionInterface.php
 %%DATADIR%%/library/Zend/XmlRpc/Client/Exception/FaultException.php
@@ -2469,6 +2521,7 @@
 %%DATADIR%%/resources/languages/pl/Zend_Validate.php
 %%DATADIR%%/resources/languages/pt_BR/Zend_Captcha.php
 %%DATADIR%%/resources/languages/pt_BR/Zend_Validate.php
+%%DATADIR%%/resources/languages/ru/Zend_Captcha.php
 %%DATADIR%%/resources/languages/ru/Zend_Validate.php
 %%DATADIR%%/resources/languages/se/Zend_Captcha.php
 %%DATADIR%%/resources/languages/se/Zend_Validate.php
@@ -2578,6 +2631,7 @@
 @dirrmtry %%DATADIR%%/library/Zend/Db/Sql/Ddl/Constraint
 @dirrmtry %%DATADIR%%/library/Zend/Db/Sql/Ddl
 @dirrmtry %%DATADIR%%/library/Zend/Db/Sql/Exception
+@dirrmtry %%DATADIR%%/library/Zend/Db/Sql/Platform/IbmDb2
 @dirrmtry %%DATADIR%%/library/Zend/Db/Sql/Platform/Mysql/Ddl
 @dirrmtry %%DATADIR%%/library/Zend/Db/Sql/Platform/Mysql
 @dirrmtry %%DATADIR%%/library/Zend/Db/Sql/Platform/Oracle

@@ -1,6 +1,6 @@
---- ./net/net.gyp.orig	2014-08-20 21:02:28.000000000 +0200
-+++ ./net/net.gyp	2014-08-22 15:06:26.000000000 +0200
-@@ -317,9 +317,10 @@
+--- net/net.gyp.orig	2014-10-02 17:39:47 UTC
++++ net/net.gyp
+@@ -322,9 +322,10 @@
                }],
                ['os_bsd==1', {
                  'sources!': [
@@ -12,7 +12,7 @@
                  ],
                },{
                  'dependencies': [
-@@ -551,7 +552,7 @@
+@@ -556,7 +557,7 @@
          '<@(net_test_sources)',
        ],
        'conditions': [
@@ -21,9 +21,9 @@
            'dependencies': [
              'epoll_server',
              'flip_in_mem_edsm_server_base',
-@@ -1016,6 +1017,11 @@
-               'dns/mock_mdns_socket_factory.h'
-             ]
+@@ -1028,6 +1029,11 @@
+               'test/cert_test_util_nss.cc',
+             ],
          }],
 +        [ 'os_bsd == 1', {
 +          'sources!': [

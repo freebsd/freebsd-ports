@@ -92,7 +92,7 @@ _REQUIRE+=	mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=	pgsql
 CONFIGURE_ARGS+=--with-postgres
 _REQUIRE+=	postgresql
 .endif

@@ -12,10 +12,9 @@ LICENSE=	GPLv2
 
 DESCR=		${.CURDIR}/pkg-descr
 
-LATEST_LINK=	${PKGNAMEPREFIX}-${PORTNAME}
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
-USE_PGSQL=	yes
+USES=	pgsql
 
 INCLUDEDIRS=	${LOCALBASE}/include
 LIBDIRS=	${LOCALBASE}/lib

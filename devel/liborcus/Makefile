@@ -2,6 +2,7 @@
 
 PORTNAME=	liborcus
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	devel misc
 MASTER_SITES=	http://kohei.us/files/orcus/src/
 
@@ -25,5 +26,8 @@ CONFIGURE_ARGS=	--disable-spreadsheet-model --disable-werror \
 CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+post-stage:
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

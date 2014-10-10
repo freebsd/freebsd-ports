@@ -80,4 +80,3 @@ bin/locfg
 %%EXAMPLESDIR%%/delete_sso_rec.xml
 %%EXAMPLESDIR%%/hponcfg_reformat.xsl
 %%EXAMPLESDIR%%/hponcfgcap.xml
-@dirrm %%EXAMPLESDIR%%

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	php56
-PORTVERSION=	5.6.0
-PORTREVISION?=	1
+PORTVERSION=	5.6.1
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -145,6 +145,7 @@ CONFIGURE_ARGS+=--with-zend-vm=GOTO
 
 CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		ac_cv_pthreads_cflags="" \
+		ac_cv_decimal_fp_supported="no" \
 		pthreads_working="yes" \
 		lt_cv_path_SED="sed"
 

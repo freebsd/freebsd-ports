@@ -4,10 +4,16 @@
 
 actions: [file]
 post-install: <<EOD
-  file=%D/%@
+  case "%@" in
+  /*) file="%@" ;;
+   *) file="%D/%@" ;;
+  esac
   indexinfo ${file%/*}
 EOD
 post-deinstall: <<EOD
-  file=%D/%@
+  case "%@" in
+  /*) file="%@" ;;
+   *) file="%D/%@" ;;
+  esac
   indexinfo ${file%/*}
 EOD

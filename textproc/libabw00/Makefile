@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
 
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		gperf libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes

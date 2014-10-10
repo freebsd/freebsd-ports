@@ -15,7 +15,7 @@ RPMVERSION=	3.el6_2.1
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/lib/libtasn1.so.3 usr/lib/libtasn1.so.3.1.6
-DOCSDIR_REL=	usr/share/doc/${PORTNAME}-${PORTVERSION}
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING COPYING.LIB ChangeLog NEWS README THANKS TODO libtasn1.pdf
 DESCR=		${.CURDIR}/../libtasn1/pkg-descr
 

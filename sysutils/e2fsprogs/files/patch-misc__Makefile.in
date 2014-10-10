@@ -1,5 +1,5 @@
---- ./misc/Makefile.in.orig	2013-12-26 06:26:22.000000000 +0100
-+++ ./misc/Makefile.in	2014-01-06 23:26:48.000000000 +0100
+--- misc/Makefile.in.orig	2014-08-02 23:41:18 UTC
++++ misc/Makefile.in
 @@ -28,15 +28,15 @@
  
  SPROGS=		mke2fs badblocks tune2fs dumpe2fs $(BLKID_PROG) logsave \
@@ -21,7 +21,7 @@
  
  LPROGS=		@E2INITRD_PROG@
  
-@@ -125,14 +125,14 @@
+@@ -127,14 +127,14 @@
  
  mke2fs.conf: $(srcdir)/mke2fs.conf.in
  	if test -f $(srcdir)/mke2fs.conf.custom.in ; then \
@@ -39,7 +39,7 @@
  		>  default_profile.c
  profile.o:
  	$(E) "	CC $<"
-@@ -498,34 +498,9 @@
+@@ -515,34 +515,9 @@
  		(cd $(DESTDIR)$(man5dir); \
  			$(LN) $(LINK_INSTALL_FLAGS) ext4.5 $$i.5); \
  	done

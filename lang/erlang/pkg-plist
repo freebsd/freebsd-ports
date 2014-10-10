@@ -9,14 +9,9 @@ bin/run_erl
 bin/to_erl
 bin/typer
 etc/man.d/erlang.conf
-@comment Insert PLIST here
-@comment -=[ begin PLIST.lib-erlang ]=-
-@comment -=[ end PLIST.lib-erlang ]=-
-@dirrmtry lib/%%ERLANG_LIB%%
 %%PORTDOCS%%%%DOCSDIR%%/armstrong_thesis_2003.pdf
 %%PORTDOCS%%%%DOCSDIR%%/bjarnelic.pdf
 %%PORTDOCS%%%%DOCSDIR%%/erlang-book-part1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/master_thesis_patterns.pdf
 %%PORTDOCS%%%%DOCSDIR%%/mnesia_overview.pdf
 %%PORTDOCS%%%%DOCSDIR%%/programming_rules.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

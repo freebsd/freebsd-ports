@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -16,8 +16,7 @@ BUILD_DEPENDS=	libevent2>=2.0.8:${PORTSDIR}/devel/libevent2 \
 		spdylay>=1.3.0:${PORTSDIR}/www/spdylay
 LIB_DEPENDS=	libevent_openssl.so:${PORTSDIR}/devel/libevent2 \
 		libspdylay.so:${PORTSDIR}/www/spdylay
-RUN_DEPENDS=	libevent2>=2.0.8:${PORTSDIR}/devel/libevent2 \
-		spdylay>=1.3.0:${PORTSDIR}/www/spdylay
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	HPACK
 OPTIONS_SUB=	yes
@@ -40,7 +39,8 @@ USES=		compiler:c++11-lang libtool pathfix pkgconfig tar:xz
 
 PORTDOCS=	*
 
-HPACK_CONFIGURE_ARGS=	--enable-hpack-tools
+HPACK_CONFIGURE_OFF=	--disable-hpack-tools
+HPACK_CONFIGURE_ON=	--enable-hpack-tools
 HPACK_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 
 .include <bsd.port.pre.mk>

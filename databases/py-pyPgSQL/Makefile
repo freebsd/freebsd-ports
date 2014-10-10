@@ -13,9 +13,8 @@ COMMENT=	Python DB-API 2 compliant library for using PostgreSQL databases
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 
-USE_PGSQL=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=	pgsql python
+USE_PYTHON=	distutils
 
 DOCS=		Announce ChangeLog README README.html
 EXAMPLES=	examples/*.py

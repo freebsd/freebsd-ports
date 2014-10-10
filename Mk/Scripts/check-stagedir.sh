@@ -71,7 +71,10 @@ parse_plist() {
 		@info\ *|@shell\ *)
 			set -- $line
 			shift
-			echo "${comment}${cwd}/$@"
+			case "$@" in
+			/*) echo "${comment}$@" ;;
+			*) echo "${comment}${cwd}/$@" ;;
+			esac
 		;;
 		@sample\ *)
 			set -- $line
@@ -92,7 +95,14 @@ parse_plist() {
 		@fc\ *|@fcfontsdir\ *|@fontsdir\ *)
 			set -- $line
 			shift
+			case "$@" in
+			/*)
+			echo >&3 "${comment}$@"
+			;;
+			*)
 			echo >&3 "${comment}${cwd}/$@"
+			;;
+			esac
 		;;
 
 		# order matters here - we must check @cwd first because

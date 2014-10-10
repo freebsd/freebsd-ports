@@ -15,4 +15,3 @@ man/man1/netwalker.1.gz
 %%DATADIR%%/help_topic.asc
 %%DATADIR%%/help_who.asc
 %%DATADIR%%/helpindex.asc
-@dirrm %%DATADIR%%

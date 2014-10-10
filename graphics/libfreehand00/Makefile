@@ -16,7 +16,7 @@ LIB_DEPENDS=	libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
 		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg
 
 GNU_CONFIGURE=	yes
-USES=	libtool pathfix pkgconfig tar:xz
+USES=		gperf libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-docs --disable-werror
 INSTALL_TARGET=	install-strip

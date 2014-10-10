@@ -101,11 +101,3 @@ share/tipp10/help/en/index.html
 share/tipp10/tipp10v2.template
 share/tipp10/metronome.wav
 share/tipp10/error.wav
-@dirrm share/tipp10/help/de/img
-@dirrm share/tipp10/help/de/content
-@dirrm share/tipp10/help/de
-@dirrm share/tipp10/help/en/img
-@dirrm share/tipp10/help/en/content
-@dirrm share/tipp10/help/en
-@dirrm share/tipp10/help
-@dirrm share/tipp10

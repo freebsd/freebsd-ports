@@ -1,5 +1,5 @@
---- ./third_party/libvpx/unpack_lib_posix.sh.orig	2014-08-20 21:03:55.000000000 +0200
-+++ ./third_party/libvpx/unpack_lib_posix.sh	2014-08-22 15:06:27.000000000 +0200
+--- third_party/libvpx/unpack_lib_posix.sh.orig	2014-10-02 17:40:17 UTC
++++ third_party/libvpx/unpack_lib_posix.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/bin/env bash

@@ -15,9 +15,7 @@ COMMENT=	High performance Python adapter for PostgreSQL
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 
-USE_PGSQL=	yes
-USES=		gmake
-USE_PYTHON=	yes
+USES=		gmake pgsql python
 GNU_CONFIGURE=	yes
 
 ALL_TARGET=	sharedmods

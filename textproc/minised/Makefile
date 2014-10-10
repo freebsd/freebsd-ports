@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minised
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.exactcode.de/oss/minised/
 

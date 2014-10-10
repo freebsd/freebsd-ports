@@ -19,7 +19,9 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6 \
 		nfdump>=0:${PORTSDIR}/net-mgmt/nfdump
 
-USES=	iconv shebangfix perl5
+USES=	cpe iconv shebangfix perl5
+CPE_VENDOR=	nfsen
+CPE_PRODUCT=	nfsen
 USE_PHP=	session pcre sockets
 NO_BUILD=	yes
 PLIST_SUB+=	PORTNAME=${PORTNAME}

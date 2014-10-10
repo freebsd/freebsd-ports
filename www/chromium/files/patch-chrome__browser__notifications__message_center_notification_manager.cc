@@ -1,6 +1,6 @@
 --- chrome/browser/notifications/message_center_notification_manager.cc.orig	2014-09-10 01:47:12.000000000 +0200
 +++ chrome/browser/notifications/message_center_notification_manager.cc	2014-09-18 14:21:16.000000000 +0200
-@@ -78,7 +78,7 @@
+@@ -84,7 +84,7 @@
    blockers_.push_back(new FullscreenNotificationBlocker(message_center));
  
  #if defined(OS_WIN) || defined(OS_MACOSX) \

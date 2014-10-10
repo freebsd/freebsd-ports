@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RSQLite
-PORTVERSION=	0.11.2
-PORTREVISION=	7
+PORTVERSION=	0.11.4
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,7 +12,7 @@ COMMENT=	Database Interface R driver for SQLite
 LICENSE=	LGPL20
 
 BUILD_DEPENDS=	R-cran-DBI>=0.2.5:${PORTSDIR}/databases/R-cran-DBI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	R-cran-DBI>=0.2.5:${PORTSDIR}/databases/R-cran-DBI
 
 USES=	cran:auto-plist
 

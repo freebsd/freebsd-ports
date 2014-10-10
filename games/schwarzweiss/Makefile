@@ -14,7 +14,8 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Tank game for 2 players
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 RUN_DEPENDS=	${PYGAME}
 
@@ -24,11 +25,10 @@ GH_PROJECT=	schwarzweiss
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	d95263f
 
-USES=		shebangfix
+USES=		python:2 shebangfix
 SHEBANG_FILES=	schwarzweiss_start.py data/*.py
-python_OLD_CMD?=	/usr/bin/env python 
-python_CMD?=		${PYTHON_CMD}
-USE_PYTHON=	2
+python_OLD_CMD=	/usr/bin/env python
+python_CMD?=	${PYTHON_CMD}
 
 PORTDOCS=	readme.txt
 OPTIONS_DEFINE=	DOCS

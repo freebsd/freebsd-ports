@@ -1,5 +1,5 @@
---- ./sokoban.h.orig	1992-05-15 01:15:26.000000000 -0400
-+++ ./sokoban.h	2014-03-11 22:16:45.005739636 -0400
+--- sokoban.h.orig	1992-05-15 05:15:26 UTC
++++ sokoban.h
 @@ -1,6 +1,14 @@
  /***********************************************************************
     You may wish to alter the following directory paths
@@ -7,9 +7,9 @@
 +
 +#ifdef PREFIX
 +#define SCREENPATH	PREFIX	"/share/sokoban/screens"
-+#define SAVEPATH	PREFIX	"/share/sokoban"
++#define SAVEPATH		"/var/games/sokoban"
 +#define LOCKFILE		"/tmp/sok.tmp"
-+#define SCOREFILE		"/var/games/sokoban"
++#define SCOREFILE		"/var/games/sokoban/scores"
 +#else
 +
  /**/

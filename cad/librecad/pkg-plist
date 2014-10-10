@@ -97,6 +97,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/plugins/libasciifile.so
 %%DATADIR%%/plugins/libimportshp.so
 %%DATADIR%%/plugins/liblist.so
+%%DATADIR%%/plugins/libplotequation.so
 %%DATADIR%%/plugins/libsameprop.so
 %%DATADIR%%/plugins/libsample.so
 %%DATADIR%%/qm/librecad_ca.qm
@@ -134,6 +135,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/librecad_id_ID.qm
 %%DATADIR%%/qm/librecad_it.qm
 %%DATADIR%%/qm/librecad_ja.qm
+%%DATADIR%%/qm/librecad_ko.qm
 %%DATADIR%%/qm/librecad_lv.qm
 %%DATADIR%%/qm/librecad_nl.qm
 %%DATADIR%%/qm/librecad_no.qm
@@ -186,6 +188,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_id_ID.qm
 %%DATADIR%%/qm/plugins_it.qm
 %%DATADIR%%/qm/plugins_ja.qm
+%%DATADIR%%/qm/plugins_ko.qm
 %%DATADIR%%/qm/plugins_lv.qm
 %%DATADIR%%/qm/plugins_nl.qm
 %%DATADIR%%/qm/plugins_no.qm
@@ -204,12 +207,3 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_zh_cn.qm
 %%DATADIR%%/qm/plugins_zh_tw.qm
 share/pixmaps/librecad.png
-@dirrm %%DATADIR%%/qm
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/patterns
-@dirrm %%DATADIR%%/library/templates
-@dirrm %%DATADIR%%/library/misc
-@dirrm %%DATADIR%%/library
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%

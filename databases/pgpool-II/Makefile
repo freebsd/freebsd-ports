@@ -15,8 +15,7 @@ LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool
-USE_PGSQL=	yes
+USES=		gmake pgsql libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-openssl

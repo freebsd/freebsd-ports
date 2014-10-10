@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	event
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.10.3
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

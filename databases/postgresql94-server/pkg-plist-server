@@ -40,7 +40,7 @@ lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win.so
 lib/libpgcommon.a
 %%PORTDOCS%%%%DOCSDIR%%/README-server
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dir %%DOCSDIR%%
 %%DATADIR%%/conversion_create.sql
 %%DATADIR%%/information_schema.sql
 %%DATADIR%%/pg_hba.conf.sample
@@ -358,6 +358,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Antarctica/Rothera
 %%TZDATA%%%%DATADIR%%/timezone/Antarctica/South_Pole
 %%TZDATA%%%%DATADIR%%/timezone/Antarctica/Syowa
+%%TZDATA%%%%DATADIR%%/timezone/Antarctica/Troll
 %%TZDATA%%%%DATADIR%%/timezone/Antarctica/Vostok
 %%TZDATA%%%%DATADIR%%/timezone/Arctic/Longyearbyen
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Aden
@@ -376,6 +377,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Bishkek
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Brunei
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Calcutta
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Chita
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Choibalsan
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Chongqing
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Chungking
@@ -433,6 +435,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Seoul
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Shanghai
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Singapore
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Srednekolymsk
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Taipei
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Tashkent
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Tbilisi
@@ -723,27 +726,27 @@ lib/libpgcommon.a
 %%DATADIR%%/timezonesets/India
 %%DATADIR%%/timezonesets/Indian.txt
 %%DATADIR%%/timezonesets/Pacific.txt
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Africa
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/America/Argentina
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/America/Indiana
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/America/Kentucky
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/America/North_Dakota
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/America
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Antarctica
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Arctic
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Asia
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Atlantic
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Australia
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Brazil
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Canada
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Chile
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Etc
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Europe
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Indian
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Mexico
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/Pacific
-%%TZDATA%%@dirrm %%DATADIR%%/timezone/US
-%%TZDATA%%@dirrm %%DATADIR%%/timezone
+%%TZDATA%%@dir %%DATADIR%%/timezone/Africa
+%%TZDATA%%@dir %%DATADIR%%/timezone/America/Argentina
+%%TZDATA%%@dir %%DATADIR%%/timezone/America/Indiana
+%%TZDATA%%@dir %%DATADIR%%/timezone/America/Kentucky
+%%TZDATA%%@dir %%DATADIR%%/timezone/America/North_Dakota
+%%TZDATA%%@dir %%DATADIR%%/timezone/America
+%%TZDATA%%@dir %%DATADIR%%/timezone/Antarctica
+%%TZDATA%%@dir %%DATADIR%%/timezone/Arctic
+%%TZDATA%%@dir %%DATADIR%%/timezone/Asia
+%%TZDATA%%@dir %%DATADIR%%/timezone/Atlantic
+%%TZDATA%%@dir %%DATADIR%%/timezone/Australia
+%%TZDATA%%@dir %%DATADIR%%/timezone/Brazil
+%%TZDATA%%@dir %%DATADIR%%/timezone/Canada
+%%TZDATA%%@dir %%DATADIR%%/timezone/Chile
+%%TZDATA%%@dir %%DATADIR%%/timezone/Etc
+%%TZDATA%%@dir %%DATADIR%%/timezone/Europe
+%%TZDATA%%@dir %%DATADIR%%/timezone/Indian
+%%TZDATA%%@dir %%DATADIR%%/timezone/Mexico
+%%TZDATA%%@dir %%DATADIR%%/timezone/Pacific
+%%TZDATA%%@dir %%DATADIR%%/timezone/US
+%%TZDATA%%@dir %%DATADIR%%/timezone
 %%DATADIR%%/tsearch_data/danish.stop
 %%DATADIR%%/tsearch_data/dutch.stop
 %%DATADIR%%/tsearch_data/english.stop
@@ -763,13 +766,13 @@ lib/libpgcommon.a
 %%DATADIR%%/tsearch_data/ispell_sample.dict
 %%DATADIR%%/tsearch_data/synonym_sample.syn
 %%DATADIR%%/tsearch_data/thesaurus_sample.ths
-@dirrmtry %%DATADIR%%/extension
-@dirrm %%DATADIR%%/timezonesets
+@dir %%DATADIR%%/extension
+@dir %%DATADIR%%/timezonesets
 @exec /bin/mkdir -p %%PREFIX%%/%%PG_USER%% || /usr/bin/true
 @exec /usr/sbin/chown %%PG_USER%%:%%PG_GROUP%% %%PREFIX%%/%%PG_USER%% || /usr/bin/true
-@dirrmtry %%DATADIR%%/tsearch_data
-@dirrmtry %%DATADIR%%
-@dirrmtry etc/periodic/daily
-@dirrmtry etc/periodic
-@dirrmtry lib/postgresql
-@dirrmtry %%PG_USER%%
+@dir %%DATADIR%%/tsearch_data
+@dir %%DATADIR%%
+@dir etc/periodic/daily
+@dir etc/periodic
+@dir lib/postgresql
+@dir %%PG_USER%%

@@ -1544,6 +1544,7 @@
     SUBDIR += py-grequests
     SUBDIR += py-gunicorn
     SUBDIR += py-html5lib
+    SUBDIR += py-http-parser
     SUBDIR += py-httplib2
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy
@@ -1872,6 +1873,7 @@
     SUBDIR += rubygem-robots
     SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-rtlit
+    SUBDIR += rubygem-ruby-readability
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-sawyer
     SUBDIR += rubygem-scrapi

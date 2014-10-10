@@ -1,5 +1,5 @@
---- ./third_party/pdfium/fpdfsdk/src/jsapi/fxjs_v8.cpp.orig	2014-08-20 21:04:00.000000000 +0200
-+++ ./third_party/pdfium/fpdfsdk/src/jsapi/fxjs_v8.cpp	2014-08-22 19:48:05.000000000 +0200
+--- third_party/pdfium/fpdfsdk/src/jsapi/fxjs_v8.cpp.orig	2014-10-02 17:40:24 UTC
++++ third_party/pdfium/fpdfsdk/src/jsapi/fxjs_v8.cpp
 @@ -753,12 +753,17 @@
  
  double _getLocalTZA()

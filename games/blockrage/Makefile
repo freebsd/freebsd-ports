@@ -13,7 +13,8 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Falling blocks game with 2-player hotseat mode
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
@@ -32,12 +33,12 @@ DESKTOP_ENTRIES="Block Rage" "" "${PORTNAME}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-	's|prefix=/usr/local|prefix=${PREFIX}|; \
-	s|MYCC=gcc|MYCC?=${CC}|; \
-	s|-s -O2 -Wall||; \
-	s|sdl-config|$(SDL_CONFIG)|; \
-	s|MAKE=make|MAKE=${MAKE}|' \
-		${WRKSRC}/configure
+		's|prefix=/usr/local|prefix=${PREFIX}|; \
+		s|MYCC=gcc|MYCC?=${CC}|; \
+		s|-s -O2 -Wall||; \
+		s|sdl-config|$(SDL_CONFIG)|; \
+		s|MAKE=make|MAKE=${MAKE}|' \
+			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc -s|${CC}|' \
 		${WRKSRC}/src/Makefile.in
 
