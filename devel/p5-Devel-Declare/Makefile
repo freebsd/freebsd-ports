@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-Declare
-PORTVERSION=	0.006016
+PORTVERSION=	0.006017
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,5 +22,8 @@ TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/Devel/Declare/Declare.so
 
 .include <bsd.port.mk>
