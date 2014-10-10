@@ -15,11 +15,9 @@ LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c
 BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:${PORTSDIR}/textproc/ezxml \
 		libtuner>=1.1.2:${PORTSDIR}/multimedia/libtuner
 
-KMODDIR=	/boot/modules
-PLIST_SUB+=	KMODDIR=${KMODDIR}
 MAKE_ARGS+=	LIBTUNER_LIB=${LOCALBASE}/lib/libtuner LIBTUNER_HEADER=${LOCALBASE}/include/libtuner KMODDIR=${KMODDIR} PREFIX=${STAGEDIR}${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
-USES=		kmod pkgconfig readline
+USES=		kmod pkgconfig readline uidfix
 
 OPTIONS_DEFINE=	DEBUG LINUX_COMPAT HAL
 
@@ -47,10 +45,6 @@ MAKE_ARGS+=	-D WITH_HAL
 .endif
 
 MAKE_ARGS+=	DEFAULT_XML_CONFIG="${EXAMPLESDIR}/cx88.xml.sample"
-
-.if (${OSVERSION} < 802513) || ((${OSVERSION} >= 900000) && (${OSVERSION} < 900041))
-IGNORE=	requires kernel support for DRIVER_MODULE_ORDERED macro (FreeBSD 8.3+, FreeBSD 9.0+)
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|install cx88 |install -s cx88 |g' ${WRKSRC}/client/Makefile

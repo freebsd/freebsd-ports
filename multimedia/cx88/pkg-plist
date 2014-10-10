@@ -14,21 +14,15 @@ include/cx88/cx88_common_ioctl.h
 include/cx88/cx88_mpeg_ioctl.h
 include/cx88/cx88_video_ioctl.h
 include/cx88/cx88_audio_ioctl.h
-@dirrm include/iicdev
-@dirrm include/cx88
-@dirrm %%EXAMPLESDIR%%
-@cwd %%KMODDIR%%
-cx88.ko
-cx88i2c.ko
-iicdev.ko
-cx88ir.ko
-cx88mpegcore.ko
-cx88mpeg.ko
-cx88video.ko
-cx88audiocore.ko
-cx88audio.ko
-cx23885.ko
-cx23885av.ko
-cx23885avfw.ko
-@exec kldxref %D
-@unexec kldxref %D
+/%%KMODDIR%%/cx88.ko
+/%%KMODDIR%%/cx88i2c.ko
+/%%KMODDIR%%/iicdev.ko
+/%%KMODDIR%%/cx88ir.ko
+/%%KMODDIR%%/cx88mpegcore.ko
+/%%KMODDIR%%/cx88mpeg.ko
+/%%KMODDIR%%/cx88video.ko
+/%%KMODDIR%%/cx88audiocore.ko
+/%%KMODDIR%%/cx88audio.ko
+/%%KMODDIR%%/cx23885.ko
+/%%KMODDIR%%/cx23885av.ko
+/%%KMODDIR%%/cx23885avfw.ko
