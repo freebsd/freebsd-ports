@@ -266,6 +266,7 @@
     SUBDIR += qkismet
     SUBDIR += rackmonkey
     SUBDIR += rancid
+    SUBDIR += rancid3
     SUBDIR += rate
     SUBDIR += rcpd
     SUBDIR += remarp
