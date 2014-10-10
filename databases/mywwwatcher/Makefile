@@ -3,6 +3,7 @@
 
 PORTNAME=	mywwwatcher
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	http://www.the.cz/mywwwatcher/files/
 DISTNAME=	mywwwatcher-${PORTVERSION}
@@ -15,6 +16,7 @@ WRKSRC=		${WRKDIR}/mywwwatcher
 WANT_PHP_WEB=		yes
 DEFAULT_PHP_VER=	5
 USE_PHP=		pcre session mysql
+PLIST_SUB=		WWWGRP="${WWWGRP}"
 
 NO_BUILD=	yes
 
@@ -23,7 +25,6 @@ SUB_FILES=	pkg-message
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@${CP} -Rp ${WRKSRC}/* ${STAGEDIR}${WWWDIR}
-	@${CHGRP} -R ${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${CHMOD} 775 ${STAGEDIR}${WWWDIR}/ini
 	@${CHMOD} 775 ${STAGEDIR}${WWWDIR}/query_archive
 
