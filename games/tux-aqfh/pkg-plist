@@ -296,12 +296,3 @@ share/pixmaps/tux_aqfh.png
 %%DATADIR%%/wavs/whistle.wav
 %%DATADIR%%/wavs/who.wav
 %%DATADIR%%/wavs/who_else.wav
-@dirrm %%DATADIR%%/wavs
-@dirrm %%DATADIR%%/slamcode
-@dirrm %%DATADIR%%/penguin
-@dirrm %%DATADIR%%/mods
-@dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
