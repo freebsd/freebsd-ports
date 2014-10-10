@@ -30,6 +30,3 @@ bin/black-box
 %%DATADIR%%/gfx/won.png
 %%DATADIR%%/sound/ein1.mod
 share/pixmaps/black-box.png
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%
