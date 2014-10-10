@@ -9,4 +9,3 @@ share/pixmaps/xkoules.png
 %%DATADIR%%/destroy2.raw
 %%DATADIR%%/end.raw
 %%DATADIR%%/start.raw
-@dirrm %%DATADIR%%
