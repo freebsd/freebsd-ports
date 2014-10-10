@@ -19,20 +19,21 @@ COMMENT=	Busybox for FreeBSD
 
 LICENSE=	GPLv2
 
-PORTSCOUT=	skipv:1.23.0
-
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 CONFLICTS_INSTALL=	busybox-unstable-*
 
+PORTSCOUT=	skipv:1.23.0
+
 MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
-USE_BZIP2=	yes
 # findutils/find.c l. 752+, uses a GCC extension/invalid C code:
-USES=		compiler:nestedfct gmake
+USES=		compiler:nestedfct gmake tar:bz2
 
 PLIST_FILES=	bin/busybox
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS STATIC
+
+STATIC_LDFLAGS=	-static
 
 .include <bsd.port.options.mk>
 
