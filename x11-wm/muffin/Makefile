@@ -15,7 +15,7 @@ COMMENT=	Compositing window manager forked from Mutter for use with Cinnamon
 BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		libtoolize:${PORTSDIR}/dev/libtool
+		libtoolize:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
