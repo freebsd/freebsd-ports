@@ -1,3 +1,4 @@
+@group %%WWWGRP%%
 %%WWWDIR%%/README
 %%WWWDIR%%/README.cz
 %%WWWDIR%%/charset.php
@@ -32,9 +33,10 @@
 %%WWWDIR%%/stat.php
 %%WWWDIR%%/style.css
 %%WWWDIR%%/top.php
-@dirrm %%WWWDIR%%/query_archive
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/include
-@dirrm %%WWWDIR%%/ini
-@dirrm %%WWWDIR%%/graphics
-@dirrm %%WWWDIR%%
+@dir %%WWWDIR%%/query_archive
+@dir %%WWWDIR%%/lang
+@dir %%WWWDIR%%/include
+@dir %%WWWDIR%%/ini
+@dir %%WWWDIR%%/graphics
+@dir %%WWWDIR%%
+@group
