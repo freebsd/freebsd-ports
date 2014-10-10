@@ -1,7 +1,7 @@
---- src/Makefile.orig	2014-01-14 14:17:43.000000000 +0400
-+++ src/Makefile	2014-01-14 14:19:31.000000000 +0400
+--- src/Makefile.orig	2014-10-11 01:09:55.000000000 +0400
++++ src/Makefile	2014-10-11 01:12:53.000000000 +0400
 @@ -22,7 +22,7 @@
- WARN=-Wall
+ WARN=-Wall -W
  OPT=$(OPTIMIZATION)
  
 -PREFIX?=/usr/local
@@ -9,23 +9,31 @@
  INSTALL_BIN=$(PREFIX)/bin
  INSTALL=install
  
-@@ -52,7 +52,7 @@
+@@ -52,7 +52,6 @@
  FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
  FINAL_LDFLAGS=$(LDFLAGS) $(REDIS_LDFLAGS) $(DEBUG)
  FINAL_LIBS=-lm
 -DEBUG=-g -ggdb
-+#DEBUG=-g -ggdb
  
  ifeq ($(uname_S),SunOS)
  	# SunOS
-@@ -63,6 +63,7 @@
--ifeq ($(uname_S),Darwin)
--	# Darwin (nothing to do)
--else
+@@ -63,6 +62,11 @@
+ ifeq ($(uname_S),Darwin)
+ 	# Darwin (nothing to do)
+ else
 +ifeq ($(uname_S),FreeBSD)
-+	FINAL_CFLAGS?= $(CFLAGS) $(REDIS_CFLAGS) -I${PREFIX}/include
-+	FINAL_LDFLAGS= $(LDFLAGS)
++        # FreeBSD
++        FINAL_CFLAGS?= $(CFLAGS) $(REDIS_CFLAGS) -I${PREFIX}/include
++        FINAL_LDFLAGS= $(LDFLAGS)
 +else
- 	# All the other OSes (notably Linux)
- 	FINAL_LDFLAGS+= -rdynamic
- 	FINAL_LIBS+= -pthread
+ ifeq ($(uname_S),AIX)
+         # AIX
+         FINAL_LDFLAGS+= -Wl,-bexpall
+@@ -75,6 +79,7 @@
+ endif
+ endif
+ endif
++endif
+ # Include paths to dependencies
+ FINAL_CFLAGS+= -I../deps/hiredis -I../deps/linenoise -I../deps/lua/src
+ 
