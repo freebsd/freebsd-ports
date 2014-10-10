@@ -15,7 +15,8 @@ BUILD_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		gtkdocize:${PORTSDIR}/textproc/gtk-doc \
 		py*-polib>=0:${PORTSDIR}/devel/py-polib \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		libtoolize:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libcinnamon-desktop.so:${PORTSDIR}/x11/cinnamon-desktop \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
@@ -28,7 +29,7 @@ USES=		desktop-file-utils gettext gmake libtool pathfix \
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack introspection:build \
 		libxml2 pygobject3
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtoolize autoconf automake
+USE_AUTOTOOLS=	autoconf automake
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

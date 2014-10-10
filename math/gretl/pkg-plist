@@ -96,8 +96,6 @@ lib/gretl-gtk2/garch.a
 lib/gretl-gtk2/garch.so
 %%GUI%%lib/gretl-gtk2/gnumeric_import.a
 %%GUI%%lib/gretl-gtk2/gnumeric_import.so
-lib/gretl-gtk2/gretlzip.a
-lib/gretl-gtk2/gretlzip.so
 lib/gretl-gtk2/heckit.a
 lib/gretl-gtk2/heckit.so
 lib/gretl-gtk2/interpolate.a
