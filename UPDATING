@@ -36,6 +36,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # pkg delete -f ruby ruby-iconv portupgrade
   # make -C /usr/ports/ports-mgmt/portupgrade install clean
+  # pkg set -o lang/ruby19:lang/ruby20
   # portupgrade -x ruby-2.0.\* -fr lang/ruby20
 
 20141003:
