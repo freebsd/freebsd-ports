@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imageindex
-PORTVERSION=	1.1
-PORTREVISION=	6
+PORTVERSION=	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 		http://www.reynoldsnet.org/imageindex/release/
