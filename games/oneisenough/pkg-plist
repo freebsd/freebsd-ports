@@ -58,8 +58,3 @@ bin/oneisenough
 %%DATADIR%%/run_game.pyc
 %%DATADIR%%/run_game.pyo
 share/pixmaps/oneisenough.png
-@dirrm %%DATADIR%%/bin/sounds
-@dirrm %%DATADIR%%/bin/pictures
-@dirrm %%DATADIR%%/bin/data
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%

@@ -20,13 +20,12 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/"one is enough"
 
-USES=		dos2unix shebangfix zip
+USES=		dos2unix python:2 shebangfix zip
 DOS2UNIX_FILES=	*.txt bin/*.py
 DOS2UNIX_REGEX= .*.[^pt][^nt][^gf]
 SHEBANG_FILES=	run_game.py bin/mainmenu.py
 python_OLD_CMD?=	/usr/bin/env python
 python_CMD?=		${PYTHON_CMD}
-USE_PYTHON=	2
 
 PORTDOCS=	README.txt
 OPTIONS_DEFINE=	DOCS
