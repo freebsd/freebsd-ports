@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$(id -u)" != "0" ]; then
+	echo "$0 must be run as root" 1>&2
+	exit 1
+fi
+
+cd /usr/local/share/minecraft-server
+su -m mcserver -c "java -Xmx1024M -Xms1024M -jar minecraft_server.1.7.10.jar nogui"
