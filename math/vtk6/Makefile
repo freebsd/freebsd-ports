@@ -3,7 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	6.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
@@ -22,7 +22,6 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 
 #
 # TODO
-# * PYTHON wrap
 # * VTK Groups
 
 UNIQUENAME=	${PKGBASE}
@@ -39,21 +38,21 @@ PLIST_SUB+=	VER2=${VTK_SHORT_VER}
 DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
+# Options
+OPTIONS_DEFINE=	DESIGNER DOCS OSMESA EXAMPLES SHARED
+OPTIONS_DEFAULT=SHARED
+#OPTIONS_DEFAULT=MPI Qt JAVA PYTHON TCLTK DESIGNER
+OSMESA_DESC=	Use Mesa for off-screen rendering
+DESIGNER_DESC=	Build the Qt Designer plugin
+OPTIONS_SUB=	yes
+
+# Options groups
 #VTK_GROUPS=	Imaging MPI Qt Rendering StandAlone Views
 VTK_GROUPS=	MPI
-VTK_WRAPS=	JAVA TCLTK # PYTHON
+VTK_WRAPS=	JAVA TCLTK PYTHON
 OPTIONS_GROUP=	Groups Wrapping
 OPTIONS_GROUP_Groups=${VTK_GROUPS}
 OPTIONS_GROUP_Wrapping=${VTK_WRAPS}
-OPTIONS_DEFINE=	DESIGNER DOCS OSMESA EXAMPLES
-OPTIONS_RADIO=	Qt
-OPTIONS_RADIO_Qt=	QT4 QT5
-Qt_DESC=	Qt GUI support
-QT4_DESC=	Qt 4 toolkit support
-QT5_DESC=	Qt 5 toolkit support
-OSMESA_DESC=	Use Mesa for off-screen rendering
-#OPTIONS_DEFAULT=MPI Qt JAVA PYTHON TCLTK DESIGNER
-
 .for g in ${VTK_GROUPS}
 $g_DESC=	Build the $g group
 .endfor
@@ -61,7 +60,13 @@ $g_DESC=	Build the $g group
 $w_DESC=	$w wrapping
 .endfor
 
-DESIGNER_DESC=	Build the Qt Designer plugin
+# Qt radio
+OPTIONS_RADIO=	Qt
+OPTIONS_RADIO_Qt=	QT4 QT5
+Qt_DESC=	Qt GUI support
+QT4_DESC=	Qt 4 toolkit support
+QT5_DESC=	Qt 5 toolkit support
+
 
 CMAKE_ARGS+=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_ARCHIVE_DIR=lib/vtk-${VTK_SHORT_VER} \
@@ -76,6 +81,10 @@ CMAKE_ARGS+=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DSTAGEDIR=${STAGEDIR} \
 		-DModule_vtkTestingCore:BOOL=ON \
 		-DModule_vtkTestingRendering:BOOL=ON
+
+SHARED_CMAKE_ON=	-DBUILD_SHARED_LIBS:BOOL=ON
+SHARED_CMAKE_OFF=	-DBUILD_SHARED_LIBS:BOOL=OFF
+
 
 .include <bsd.port.options.mk>
 
@@ -167,8 +176,9 @@ PLIST_SUB+=	JAVA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
-CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=ON
+USES+=		python
+CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=ON \
+    		-DVTK_INSTALL_PYTHON_MODULE_DIR:STRING=${PYTHONPREFIX_SITELIBDIR}
 PLIST_SUB+=	PYTHON=""
 .else
 CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=OFF
