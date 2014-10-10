@@ -3,6 +3,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	4.0.53
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -113,9 +114,6 @@ post-build:
 .if ${PORT_OPTIONS:MNGINX}
 	(cd ${WRKSRC} && CC=${CC} CXX=${CXX} ${RAKE_BIN} nginx)
 .endif
-.if ${PORT_OPTIONS:MSYMLINK}
-	${LN} -s ${GEM_LIB_DIR} ${STAGE}${PREFIX}/${GEMS_DIR}/${PORTNAME}
-.endif
 
 	${FIND} ${WRKSRC} -name '*.o' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
@@ -124,5 +122,8 @@ post-install:
 	( cd ${WRKSRC} && \
 	${COPYTREE_SHARE} buildout ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION} )
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION}/buildout/agents/*
+.if ${PORT_OPTIONS:MSYMLINK}
+	${LN} -s ${PREFIX}${GEM_LIB_DIR} ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}
+.endif
 
 .include <bsd.port.mk>
