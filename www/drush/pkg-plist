@@ -215,6 +215,7 @@ bin/drush
 %%DATADIR%%/commands/core/docs.drush.inc
 %%DATADIR%%/commands/core/core.drush.inc
 %%DATADIR%%/commands/core/cache.drush.inc
+%%DATADIR%%/commands/core/browse.drush.inc
 %%DATADIR%%/commands/core/archive.drush.inc
 %%DATADIR%%/classes/DrushRole.php
 @dirrmtry %%DATADIR%%/tests/resources
