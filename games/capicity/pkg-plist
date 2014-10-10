@@ -84,12 +84,3 @@ share/icons/hicolor/32x32/apps/capicity.png
 share/icons/hicolor/48x48/apps/capicity.png
 share/icons/hicolor/64x64/apps/capicity.png
 share/pixmaps/capicity.png
-%%NLS%%@dirrm %%DATADIR%%/ts
-@dirrm %%DATADIR%%/images/tools
-@dirrm %%DATADIR%%/images/smilies
-@dirrm %%DATADIR%%/images/menu
-@dirrm %%DATADIR%%/images/field
-@dirrm %%DATADIR%%/images/avatars
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/games
-@dirrm %%DATADIR%%

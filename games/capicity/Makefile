@@ -11,7 +11,8 @@ DISTNAME=	CapiCity_${DISTVERSION}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Qt client for the Monopd server
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/copying.txt
 
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libpcre.so:${PORTSDIR}/devel/pcre \
