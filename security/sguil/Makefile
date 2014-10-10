@@ -3,6 +3,7 @@
 
 PORTNAME=	sguil
 PORTVERSION=	0.9.0
+REVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	5u623l20@gmail.com
@@ -113,7 +114,7 @@ USE_RC_SUBR+=	pads_agent
 
 post-patch:
 .if ${PORT_OPTIONS:MSERVER}
-	@${REINPLACE_CMD} 's|/bin/sh|/usr/local/bin/${TCLSH}|' \
+	@${REINPLACE_CMD} 's|/bin/sh|${TCLSH}|' \
 		${WRKSRC}/server/sguild
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${SERVER_SGUILDIR} \
 		${STAGEDIR}${PREFIX}/lib/${SERVER_SGUILDIR} \
