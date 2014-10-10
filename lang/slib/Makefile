@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slib
-PORTVERSION=	3b3
+PORTVERSION=	3b4
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/slib|${PREFIX}/share/slib|' ${WRKSRC}/guile.init
+	@${TOUCH} ${WRKSRC}/*.txi
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
