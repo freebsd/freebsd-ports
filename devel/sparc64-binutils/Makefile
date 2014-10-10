@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 COMMENT=	GNU binutils for sparc64 cross-development
 PKGNAMEPREFIX=	sparc64-
 PLIST=	${.CURDIR}/pkg-plist
