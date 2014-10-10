@@ -3,7 +3,7 @@
 
 PORTNAME=	speedtest-mini
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://c.speedtest.net/mini/
 DISTNAME=	mini
@@ -12,6 +12,7 @@ MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Mini bandwidth speed test on your own server
 
 NO_BUILD=	yes
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 USES=		zip
 
@@ -25,6 +26,5 @@ do-install:
 		${STAGEDIR}${WWWDIR}/speedtest
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/speedtest/upload.php \
 		${STAGEDIR}${WWWDIR}/speedtest
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

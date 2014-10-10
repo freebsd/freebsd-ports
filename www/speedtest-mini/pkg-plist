@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/index.html
 %%WWWDIR%%/speedtest.swf
 %%WWWDIR%%/speedtest/random1000x1000.jpg
@@ -12,5 +14,7 @@
 %%WWWDIR%%/speedtest/random750x750.jpg
 %%WWWDIR%%/speedtest/swfobject.js
 %%WWWDIR%%/speedtest/upload.php
-@dirrm %%WWWDIR%%/speedtest
-@dirrm %%WWWDIR%%
+@dir %%WWWDIR%%/speedtest
+@dir %%WWWDIR%%
+@owner
+@group
