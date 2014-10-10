@@ -1,30 +1,30 @@
-%%EMACS_LIBDIR%%/etc/ess/ESSR/LOADREMOTE
-%%EMACS_LIBDIR%%/etc/ess/ESSR/R/.basic.R
-%%EMACS_LIBDIR%%/etc/ess/ESSR/R/.load.R
-%%EMACS_LIBDIR%%/etc/ess/ESSR/R/completion.R
-%%EMACS_LIBDIR%%/etc/ess/ESSR/R/debug.R
-%%EMACS_LIBDIR%%/etc/ess/ESSR/R/developer.R
-%%EMACS_LIBDIR%%/etc/ess/ESSR/R/misc.R
-%%EMACS_LIBDIR%%/etc/ess/ESSR/VERSION
-%%EMACS_LIBDIR%%/etc/ess/SVN-REVISION
-%%EMACS_LIBDIR%%/etc/ess/ess-s4.S
-%%EMACS_LIBDIR%%/etc/ess/ess-sas-sh-command
-%%EMACS_LIBDIR%%/etc/ess/ess-sp3.S
-%%EMACS_LIBDIR%%/etc/ess/function-outline.S
-%%EMACS_LIBDIR%%/etc/ess/icons/rbuffer.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/rfunction.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/rline.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/rregion.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/splus_letter_small.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/splus_letters_large.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/spluslogo.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/startr.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/switch_ess.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/switchr.xpm
-%%EMACS_LIBDIR%%/etc/ess/icons/switchs.xpm
-%%EMACS_LIBDIR%%/etc/ess/sas-keys.doc
-%%EMACS_LIBDIR%%/etc/ess/sas-keys.ps
-%%EMACS_LIBDIR%%/etc/ess/sas-keys.rtf
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/LOADREMOTE
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/.basic.R
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/.load.R
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/completion.R
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/debug.R
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/developer.R
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R/misc.R
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/VERSION
+%%EMACS_LIBDIR%%/%%ETCDIR%%/SVN-REVISION
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ess-s4.S
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ess-sas-sh-command
+%%EMACS_LIBDIR%%/%%ETCDIR%%/ess-sp3.S
+%%EMACS_LIBDIR%%/%%ETCDIR%%/function-outline.S
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/rbuffer.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/rfunction.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/rline.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/rregion.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/splus_letter_small.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/splus_letters_large.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/spluslogo.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/startr.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/switch_ess.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/switchr.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/icons/switchs.xpm
+%%EMACS_LIBDIR%%/%%ETCDIR%%/sas-keys.doc
+%%EMACS_LIBDIR%%/%%ETCDIR%%/sas-keys.ps
+%%EMACS_LIBDIR%%/%%ETCDIR%%/sas-keys.rtf
 %%EMACS_SITE_LISPDIR%%/ChangeLog
 %%EMACS_SITE_LISPDIR%%/ess-arc-d.el
 %%EMACS_SITE_LISPDIR%%/ess-arc-d.elc
@@ -138,3 +138,8 @@
 %%EMACS_SITE_LISPDIR%%/mouseme.elc
 %%EMACS_SITE_LISPDIR%%/msdos.el
 %%EMACS_SITE_LISPDIR%%/msdos.elc
+@dirrmtry %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R
+@dirrmtry %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR
+@dirrmtry %%EMACS_LIBDIR%%/%%ETCDIR%%/icons
+@dirrmtry %%EMACS_LIBDIR%%/%%ETCDIR%%
+@dirrmtry %%EMACS_LIBDIR%%/etc
