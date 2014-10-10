@@ -63,6 +63,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/python.properties
 %%DATADIR%%/r.properties
 %%DATADIR%%/rebol.properties
+%%DATADIR%%/registry.properties
 %%DATADIR%%/ruby.properties
 %%DATADIR%%/rust.properties
 %%DATADIR%%/scriptol.properties
@@ -80,4 +81,3 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/verilog.properties
 %%DATADIR%%/vhdl.properties
 %%DATADIR%%/yaml.properties
-@dirrm %%DATADIR%%

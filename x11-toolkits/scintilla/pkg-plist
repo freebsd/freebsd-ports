@@ -7,4 +7,3 @@ lib/libscintilla.so
 lib/libscintilla.so.2
 lib/libscintilla_lexers.so
 lib/libscintilla_lexers.so.2
-@dirrm include/scintilla
