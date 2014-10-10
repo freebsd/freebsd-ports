@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bftpd
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 LICENSE=	GPLv2
