@@ -16,6 +16,7 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	Fast action arcade-style game for X Window
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/x//}${PORTVERSION}
 
