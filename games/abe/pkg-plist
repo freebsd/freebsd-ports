@@ -16,7 +16,3 @@ bin/abe
 %%DATADIR%%/sounds/pop.wav
 %%DATADIR%%/sounds/spring.wav
 share/pixmaps/abe.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
