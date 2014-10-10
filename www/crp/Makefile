@@ -3,6 +3,7 @@
 
 PORTNAME=	crp
 PORTVERSION=	20031012
+PORTREVISION=	1
 CATEGORIES=	www science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Oct-12-2003
 DISTNAME=	CRP
@@ -14,6 +15,7 @@ COMMENT=	Automates the process of being the program chair of a conference
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 SPOOLDIR?=	/var/spool/conference
 
@@ -28,6 +30,5 @@ do-install:
 	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
 	@${SED} -e 's#/var/www/html#${WWWDIR}#' \
 	  ${WRKSRC}/Code/confHeader.inc > ${STAGEDIR}${WWWDIR}/Code/confHeader.inc
-	@${CHOWN} -R ${WWWOWN}:${WWWGROUP} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${SPOOLDIR}
 
 .include <bsd.port.mk>

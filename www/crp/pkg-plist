@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/All/ImportantDates.php
 %%WWWDIR%%/All/Logout.php
@@ -218,23 +220,25 @@
 %%WWWDIR%%/themes/modular-with-arial-fonts/modvbtn.gif
 %%WWWDIR%%/themes/modular-with-arial-fonts/modvsel.gif
 %%WWWDIR%%/themes/modular-with-arial-fonts/theme.css
-@dirrm %%WWWDIR%%/themes/modular-with-arial-fonts
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/_vti_cnf
-@dirrm %%WWWDIR%%/Reviewer/_vti_cnf
-@dirrm %%WWWDIR%%/Reviewer
-@dirrm %%WWWDIR%%/PC/_vti_cnf
-@dirrm %%WWWDIR%%/PC/SkiDeal_files/_vti_cnf
-@dirrm %%WWWDIR%%/PC/SkiDeal_files
-@dirrm %%WWWDIR%%/PC
-@dirrm %%WWWDIR%%/Download
-@dirrm %%WWWDIR%%/Code/PEAR-DB
-@dirrm %%WWWDIR%%/Code
-@dirrm %%WWWDIR%%/Chair
-@dirrm %%WWWDIR%%/Author
-@dirrm %%WWWDIR%%/Assistant/_vti_cnf
-@dirrm %%WWWDIR%%/Assistant
-@dirrm %%WWWDIR%%/All
-@dirrm %%WWWDIR%%
-@dirrmtry /var/spool/conference
+@dir %%WWWDIR%%/themes/modular-with-arial-fonts
+@dir %%WWWDIR%%/themes
+@dir %%WWWDIR%%/images
+@dir %%WWWDIR%%/_vti_cnf
+@dir %%WWWDIR%%/Reviewer/_vti_cnf
+@dir %%WWWDIR%%/Reviewer
+@dir %%WWWDIR%%/PC/_vti_cnf
+@dir %%WWWDIR%%/PC/SkiDeal_files/_vti_cnf
+@dir %%WWWDIR%%/PC/SkiDeal_files
+@dir %%WWWDIR%%/PC
+@dir %%WWWDIR%%/Download
+@dir %%WWWDIR%%/Code/PEAR-DB
+@dir %%WWWDIR%%/Code
+@dir %%WWWDIR%%/Chair
+@dir %%WWWDIR%%/Author
+@dir %%WWWDIR%%/Assistant/_vti_cnf
+@dir %%WWWDIR%%/Assistant
+@dir %%WWWDIR%%/All
+@dir %%WWWDIR%%
+@dir /var/spool/conference
+@owner
+@group
