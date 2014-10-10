@@ -1,9 +1,9 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-# $FreeBSD: head/emulators/wine-devel/Makefile 366041 2014-08-25 08:11:48Z gerald $
+# $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.27
-PORTEPOCH=	2
+DISTVERSION=	1.7.28
+PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
@@ -24,26 +24,27 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 CONFLICTS_INSTALL=	i386-wine-[0-9]* i386-wine-devel-[0-9]* wine-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+= --verbose --mandir=${MANPREFIX}/man --without-alsa \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--verbose --disable-tests \
+		--without-alsa --without-capi --without-dbus \
 		--without-gphoto --without-gsm --without-gstreamer \
-		--without-opencl --with-oss --without-sane \
-		--without-capi
+		--without-opencl --with-oss --without-sane --without-tiff \
+		--with-xcomposite --without-xinerama
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386
-USES=		bison compiler:c11 shebangfix tar:bzip2
+USES=		bison compiler:c11 gmake shebangfix tar:bzip2
 SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS_DEFINE=	COMPHOLIO CUPS DBUS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
-OPTIONS_DEFAULT=DBUS X11
+OPTIONS_DEFINE=	COMPHOLIO CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
+OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
 COMPHOLIO_DESC=	Include the Compholio patchset, needed for Pipelight support
@@ -56,9 +57,6 @@ MONO_DESC=	Bundle Mono MSI package for Wine
 # USES needs to be before bsd.port.pre.mk
 CUPS_CONFIGURE_WITH=	cups
 CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
-
-#DBUS_CONFIGURE_WITH=	dbus
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 DOSBOX_RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
 
@@ -89,8 +87,8 @@ V4L_LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
-X11_CONFIGURE_WITH=	x fontconfig glu opengl xinput2 xrandr freetype xinerama xcomposite
-X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xpm,xrandr,xrender,xinerama
+X11_CONFIGURE_WITH=	x fontconfig glu opengl xinput2 xrandr freetype
+X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xpm,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 			libfreetype.so:${PORTSDIR}/print/freetype2 \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg \
@@ -105,7 +103,6 @@ PORTDATA=	l_intl.nls wine.inf
 MASTER_SITES+=	https://github.com/compholio/wine-compholio-daily/archive/:cho
 COMP_DIST=	v${DISTVERSION}.tar.gz
 DISTFILES+=	${COMP_DIST}:cho
-CONFIGURE_ARGS+= --with-xattr
 USE_AUTOTOOLS=	autoconf
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 		git:${PORTSDIR}/devel/git
@@ -117,11 +114,6 @@ pre-configure:
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
-
-do-configure:
-	cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS} \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}"
 
 post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
