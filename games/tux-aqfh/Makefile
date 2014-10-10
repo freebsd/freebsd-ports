@@ -15,6 +15,7 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	Tuxedo The Penguin: A Quest for Herring
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
@@ -27,13 +28,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid ${PTHREAD_LIBS}
 
 PORTDOCS=	*
-
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS CHANGES README
-
-DOCSRCDIR2=	${WRKSRC}/doc
-DOCSDIR2=	${DOCSDIR}/doc
-DOC_FILES2=	*.png *.html
 
 OPTIONS_DEFINE=	DOCS
 
@@ -55,9 +49,8 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		"AUTHORS CHANGES README doc/*.png doc/*.html" \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
