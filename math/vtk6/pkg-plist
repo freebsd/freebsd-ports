@@ -1,5 +1,12 @@
 %%DATADIR%%/vtkDomainsChemistry/COPYING
 %%DATADIR%%/vtkDomainsChemistry/elements.xml
+%%EXAMPLES%%%%NO_SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.a
+%%EXAMPLES%%%%SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.so
+%%EXAMPLES%%%%SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.so.1
+%%EXAMPLES%%%%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkLocalExampleHierarchy.txt
+%%EXAMPLES%%include/vtk-%%VER2%%/vtkLocalExample.h
+%%EXAMPLES%%include/vtk-%%VER2%%/vtkLocalExampleModule.h
+%%EXAMPLES%%lib/cmake/vtk-%%VER2%%/Modules/vtkLocalExample.cmake
 %%JAVA%%include/vtk-%%VER2%%/vtkJavaUtil.h
 %%JAVA%%include/vtk-%%VER2%%/vtkWrappingJavaModule.h
 %%JAVA%%lib/cmake/vtk-%%VER2%%/Modules/vtkWrappingJava.cmake
@@ -282,7 +289,6 @@
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkInteractionImage-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkInteractionStyle-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkInteractionWidgets-%%VER2%%.a
-%%NO_SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkParallelCore-%%VER2%%.a
@@ -1326,8 +1332,6 @@
 %%SHARED%%lib/vtk-%%VER2%%/libvtkInteractionStyle-%%VER2%%.so.1
 %%SHARED%%lib/vtk-%%VER2%%/libvtkInteractionWidgets-%%VER2%%.so
 %%SHARED%%lib/vtk-%%VER2%%/libvtkInteractionWidgets-%%VER2%%.so.1
-%%SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.so
-%%SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.so.1
 %%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF-%%VER2%%.so
 %%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF-%%VER2%%.so.1
 %%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx-%%VER2%%.so
@@ -1610,7 +1614,6 @@
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionImageHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionStyleHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionWidgetsHierarchy.txt
-%%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkLocalExampleHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkParallelCoreHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkRenderingAnnotationHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkRenderingContext2DHierarchy.txt
@@ -2752,8 +2755,6 @@ include/vtk-%%VER2%%/vtkLinearSubdivisionFilter.h
 include/vtk-%%VER2%%/vtkLinearTransform.h
 include/vtk-%%VER2%%/vtkLinesPainter.h
 include/vtk-%%VER2%%/vtkLinkEdgels.h
-include/vtk-%%VER2%%/vtkLocalExample.h
-include/vtk-%%VER2%%/vtkLocalExampleModule.h
 include/vtk-%%VER2%%/vtkLocator.h
 include/vtk-%%VER2%%/vtkLogLookupTable.h
 include/vtk-%%VER2%%/vtkLogoRepresentation.h
@@ -4140,7 +4141,6 @@ lib/cmake/vtk-%%VER2%%/Modules/vtkInfovisLayout.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionImage.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionStyle.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionWidgets.cmake
-lib/cmake/vtk-%%VER2%%/Modules/vtkLocalExample.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkMetaIO.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkParallelCore.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkParseOGLExt.cmake
