@@ -3,7 +3,7 @@
 
 PORTNAME=	mySAR
 PORTVERSION=	2.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-mysql-lib=${LOCALBASE}
 
 MYSARPREFIX=	mysar
 MYSARDIR?=	${PREFIX}/${MYSARPREFIX}
-PLIST_SUB=	MYSAR=${MYSARPREFIX}
+PLIST_SUB=	MYSAR=${MYSARPREFIX} WWWOWN="${WWWOWN}"
 
 SUB_FILES=	pkg-message
 SUB_LIST=	MYSARDIR=${MYSARDIR}
@@ -58,7 +58,5 @@ do-install:
 	${CP} -R `find ${WRKROOT} -mindepth 1 -maxdepth 1 ! -name mysar-binary-importer` ${STAGEDIR}${MYSARDIR}
 	${INSTALL_PROGRAM} ${WRKROOT}/mysar-binary-importer/src/mysar ${STAGEDIR}${MYSARDIR}/bin
 	${INSTALL_DATA} ${WRKROOT}/mysar-binary-importer/mysar.conf ${STAGEDIR}${MYSARDIR}/etc
-	${CHOWN} -R ${WWWOWN} ${STAGEDIR}${MYSARDIR}/www-templates
-	${CHOWN} -R ${WWWOWN} ${STAGEDIR}${MYSARDIR}/smarty-tmp
 
 .include <bsd.port.mk>
