@@ -3,7 +3,7 @@
 
 PORTNAME=	diablo
 PORTVERSION=	5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-REL
@@ -25,12 +25,12 @@ USES=	tar:tgz
 .include <bsd.port.options.mk>
 
 post-patch:
-	${CP} ${FILESDIR}/diablo.sh-sample ${WRKDIR}
+	${CP} ${FILESDIR}/diablo.in ${WRKDIR}/diablo
 	${REINPLACE_CMD} -E 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g ;\
 		s|-g -O.?|${CFLAGS}| ; s|g?cc|${CC}|' \
 		${WRKSRC}/XMakefile.inc
 	${REINPLACE_CMD} -E 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKDIR}/diablo.sh-sample ${WRKSRC}/XMakefile.inst
+		${WRKDIR}/diablo ${WRKSRC}/XMakefile.inst
 # Fix for GCC 4.2
 	${REINPLACE_CMD} -e 's|VServerConfig\[\]|*VServerConfig|' \
 		${WRKSRC}/dreaderd/main.c
@@ -52,7 +52,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/news/spool/postq
 	(cd ${WRKSRC} && xmake install)
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/news/dbin/*
-	${INSTALL_SCRIPT} ${WRKDIR}/diablo.sh-sample ${STAGEDIR}${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/diablo ${STAGEDIR}${PREFIX}/etc/rc.d
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

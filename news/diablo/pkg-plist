@@ -1,4 +1,4 @@
-etc/rc.d/diablo.sh-sample
+etc/rc.d/diablo
 man/man5/diablo-files.5.gz
 man/man5/diablo-kp.5.gz
 man/man8/dexpire.8.gz
@@ -124,21 +124,3 @@ news/samples/reader/dserver.hosts
 news/samples/reader/moderators
 @owner
 @group
-@dirrmtry news/dbin
-@dirrmtry news/dqueue
-@dirrmtry news/log
-@dirrmtry news/man/man5
-@dirrmtry news/man/man8
-@dirrmtry news/man
-@dirrmtry news/run
-@dirrmtry news/samples/adm
-@dirrmtry news/samples/feeder
-@dirrmtry news/samples/feeder+reader
-@dirrmtry news/samples/reader
-@dirrmtry news/samples
-@dirrmtry news/spool/cache
-@dirrmtry news/spool/group
-@dirrmtry news/spool/news
-@dirrmtry news/spool/postq
-@dirrmtry news/spool
-@dirrmtry news
