@@ -2,6 +2,7 @@
 
 PORTNAME=	opengrok
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://java.net/projects/opengrok/downloads/download/
 
@@ -20,7 +21,7 @@ SHAREGRP=	www
 NO_BUILD=	yes
 PORTDOCS=	${DOCS}
 SUB_FILES=	opengrok
-SUB_LIST+=	LIBFILES="${LIBFILES:S,^,${DATADIR}/,}" \
+SUB_LIST+=	LIBFILES="${LIBFILES:S,^,${DATADIR}/lib/,}" \
 		JARFILE="${JARFILE}"
 PLIST_SUB=	T=${WEBAPP_HOME:S|^${LOCALBASE}/||} \
 		OWNER=${SHAREOWN} GROUP=${SHAREGRP}
@@ -41,6 +42,7 @@ DOCS=		CHANGES.txt EXAMPLE.txt LICENSE.txt
 LIBFILES=	ant.jar \
 		bcel-5.2.jar \
 		jrcs.jar \
+		lucene-analyzers-common-4.7.1.jar \
 		lucene-core-4.7.1.jar \
 		lucene-queryparser-4.7.1.jar \
 		lucene-suggest-4.7.1.jar \
