@@ -48,6 +48,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Hardware.3.gz
 %%PERL5_MAN3%%/Rex::Helper::SSH2::Expect.3.gz
 %%PERL5_MAN3%%/Rex::Logger.3.gz
+%%PERL5_MAN3%%/Rex::Resource::Common.3.gz
 %%PERL5_MAN3%%/Rex::Task.3.gz
 %%PERL5_MAN3%%/Rex::Template.3.gz
 %%PERL5_MAN3%%/Rex::Test::Base.3.gz
@@ -88,6 +89,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Commands/Host.pm
 %%SITE_PERL%%/Rex/Commands/Inventory.pm
 %%SITE_PERL%%/Rex/Commands/Iptables.pm
+%%SITE_PERL%%/Rex/Commands/JobControl.pm
 %%SITE_PERL%%/Rex/Commands/Kernel.pm
 %%SITE_PERL%%/Rex/Commands/LVM.pm
 %%SITE_PERL%%/Rex/Commands/MD5.pm
@@ -150,7 +152,9 @@ bin/rexify
 %%SITE_PERL%%/Rex/Helper/SSH2.pm
 %%SITE_PERL%%/Rex/Helper/SSH2/Expect.pm
 %%SITE_PERL%%/Rex/Helper/System.pm
+%%SITE_PERL%%/Rex/Helper/Misc.pm
 %%SITE_PERL%%/Rex/Helper/UserAgent.pm
+%%SITE_PERL%%/Rex/Helper/URI.pm
 %%SITE_PERL%%/Rex/Hook.pm
 %%SITE_PERL%%/Rex/Require.pm
 %%SITE_PERL%%/Rex/Interface/Cache.pm
@@ -247,6 +251,8 @@ bin/rexify
 %%SITE_PERL%%/Rex/Pkg/Ubuntu.pm
 %%SITE_PERL%%/Rex/Profiler.pm
 %%SITE_PERL%%/Rex/Report.pm
+%%SITE_PERL%%/Rex/Resource.pm
+%%SITE_PERL%%/Rex/Resource/Common.pm
 %%SITE_PERL%%/Rex/Report/Base.pm
 %%SITE_PERL%%/Rex/Report/YAML.pm
 %%SITE_PERL%%/Rex/SCM/Git.pm
@@ -347,61 +353,3 @@ bin/rexify
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rex/.packlist
 man/man1/rex.1.gz
 man/man1/rexify.1.gz
-@dirrmtry %%SITE_PERL%%/Rex/Args
-@dirrmtry %%SITE_PERL%%/Rex/Box
-@dirrmtry %%SITE_PERL%%/Rex/CMDB
-@dirrmtry %%SITE_PERL%%/Rex/Cloud
-@dirrmtry %%SITE_PERL%%/Rex/Commands/templates
-@dirrmtry %%SITE_PERL%%/Rex/Commands
-@dirrmtry %%SITE_PERL%%/Rex/Cron
-@dirrmtry %%SITE_PERL%%/Rex/FS
-@dirrmtry %%SITE_PERL%%/Rex/File/Parser
-@dirrmtry %%SITE_PERL%%/Rex/File
-@dirrmtry %%SITE_PERL%%/Rex/Fork
-@dirrmtry %%SITE_PERL%%/Rex/Group/Entry
-@dirrmtry %%SITE_PERL%%/Rex/Group/Lookup
-@dirrmtry %%SITE_PERL%%/Rex/Group
-@dirrmtry %%SITE_PERL%%/Rex/Hardware/Network
-@dirrmtry %%SITE_PERL%%/Rex/Hardware
-@dirrmtry %%SITE_PERL%%/Rex/Helper/SSH2
-@dirrmtry %%SITE_PERL%%/Rex/Helper
-@dirrmtry %%SITE_PERL%%/Rex/Interface/Cache
-@dirrmtry %%SITE_PERL%%/Rex/Interface/Connection
-@dirrmtry %%SITE_PERL%%/Rex/Interface/Exec
-@dirrmtry %%SITE_PERL%%/Rex/Interface/Executor
-@dirrmtry %%SITE_PERL%%/Rex/Interface/File
-@dirrmtry %%SITE_PERL%%/Rex/Interface/Fs
-@dirrmtry %%SITE_PERL%%/Rex/Interface/Shell
-@dirrmtry %%SITE_PERL%%/Rex/Interface
-@dirrmtry %%SITE_PERL%%/Rex/Inventory/DMIDecode
-@dirrmtry %%SITE_PERL%%/Rex/Inventory/HP
-@dirrmtry %%SITE_PERL%%/Rex/Inventory/Hal/Object
-@dirrmtry %%SITE_PERL%%/Rex/Inventory/Hal
-@dirrmtry %%SITE_PERL%%/Rex/Inventory/Proc
-@dirrmtry %%SITE_PERL%%/Rex/Inventory/SMBios
-@dirrmtry %%SITE_PERL%%/Rex/Inventory
-@dirrmtry %%SITE_PERL%%/Rex/Output
-@dirrmtry %%SITE_PERL%%/Rex/Pkg/SunOS
-@dirrmtry %%SITE_PERL%%/Rex/Pkg
-@dirrmtry %%SITE_PERL%%/Rex/Report
-@dirrmtry %%SITE_PERL%%/Rex/SCM
-@dirrmtry %%SITE_PERL%%/Rex/Service/ALT
-@dirrmtry %%SITE_PERL%%/Rex/Service/Gentoo
-@dirrmtry %%SITE_PERL%%/Rex/Service/Mageia
-@dirrmtry %%SITE_PERL%%/Rex/Service/Redhat
-@dirrmtry %%SITE_PERL%%/Rex/Service/SuSE
-@dirrmtry %%SITE_PERL%%/Rex/Service/SunOS
-@dirrmtry %%SITE_PERL%%/Rex/Service
-@dirrmtry %%SITE_PERL%%/Rex/Shared/Var
-@dirrmtry %%SITE_PERL%%/Rex/Shared
-@dirrmtry %%SITE_PERL%%/Rex/Sudo
-@dirrmtry %%SITE_PERL%%/Rex/TaskList
-@dirrmtry %%SITE_PERL%%/Rex/Test/Base
-@dirrmtry %%SITE_PERL%%/Rex/Test
-@dirrmtry %%SITE_PERL%%/Rex/User
-@dirrmtry %%SITE_PERL%%/Rex/Virtualization/Docker
-@dirrmtry %%SITE_PERL%%/Rex/Virtualization/LibVirt
-@dirrmtry %%SITE_PERL%%/Rex/Virtualization/VBox
-@dirrmtry %%SITE_PERL%%/Rex/Virtualization
-@dirrmtry %%SITE_PERL%%/Rex
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rex
