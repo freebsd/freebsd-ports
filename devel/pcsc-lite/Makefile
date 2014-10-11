@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.8.11
-PORTREVISION=	2
+PORTVERSION=	1.8.12
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3991/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4115/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Smartcard development library
