@@ -48,5 +48,3 @@ libdata/pkgconfig/ecore.pc
 %%NLS%%share/locale/pt/LC_MESSAGES/ecore.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/ecore.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecore.mo
-@dirrmtry include/ecore-1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
