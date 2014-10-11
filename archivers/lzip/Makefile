@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	lzip
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Lossless data compressor based on the LZMA algorithm
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2
 
 PLIST_FILES=	bin/lzip \
 		man/man1/lzip.1.gz
