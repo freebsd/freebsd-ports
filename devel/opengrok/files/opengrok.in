@@ -12,4 +12,4 @@ else
 	set CLASSPATH = ""
 endif
 
-exec "${JAVA}" -cp "${CLASSPATH}" -jar %%JARFILE%% -c %%LOCALBASE%%/bin/exctags $*
+exec "${JAVA}" -cp "${CLASSPATH}" -jar %%JARFILE%% -c %%LOCALBASE%%/bin/exctags -w opengrok $*
