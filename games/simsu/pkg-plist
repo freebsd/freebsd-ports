@@ -23,5 +23,3 @@ share/pixmaps/simsu.xpm
 %%NLS%%%%DATADIR%%/translations/simsu_ro.qm
 %%NLS%%%%DATADIR%%/translations/simsu_ru.qm
 %%NLS%%%%DATADIR%%/translations/simsu_uk.qm
-%%NLS%%@dirrm %%DATADIR%%/translations
-%%NLS%%@dirrm %%DATADIR%%
