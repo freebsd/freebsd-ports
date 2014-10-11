@@ -11,14 +11,11 @@ DISTNAME=	llk_linux-${DISTVERSION}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Tile matching game
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2 # or later
 
-USES=		libtool pkgconfig
+USES=		autoreconf libtool pkgconfig
 USE_GNOME=	gtk20 esound
-USE_AUTOTOOLS=	aclocal automake autoconf autoheader libtoolize
 GNU_CONFIGURE=	yes
-
-AUTOMAKE_ARGS=	-a -c -f
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
