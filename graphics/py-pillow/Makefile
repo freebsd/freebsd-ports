@@ -24,7 +24,7 @@ TKINTER_DESC=		Tkinter (Tcl/Tk) BitmapImage & PhotoImage support
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 LCMS_LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2
-TIFF_LIB_DEPENDs=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 TKINTER_USES=		tk:build
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
