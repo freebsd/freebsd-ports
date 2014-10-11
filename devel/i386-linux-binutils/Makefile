@@ -6,6 +6,6 @@ PKGNAMEPREFIX=	i386-linux-
 BUTARGET=	i386-pc-linux-gnu
 PLIST=	${.CURDIR}/pkg-plist
 
-MASTERDIR=	${.CURDIR}/../binutils/
+MASTERDIR=	${.CURDIR}/../binutils
 
 .include "${MASTERDIR}/Makefile"
