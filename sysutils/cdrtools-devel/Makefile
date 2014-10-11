@@ -49,8 +49,7 @@ SICONVTABLES=	cp10000 cp10006 cp10007 cp10029 cp10079 cp10081 cp1250 \
 		iso8859-6 iso8859-7 iso8859-8 iso8859-9 koi8-r koi8-u
 
 NO_LATEST_LINK=	yes
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 #CFLAGS+=	-DSOURCE_MODIFIED
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
 SUB_FILES=	pkg-message
@@ -181,7 +180,6 @@ do-install:
 .if defined(WITH_RSCSI)
 	${INSTALL_PROGRAM} ${WRKSRC}/rscsi/OBJ/${CDRTLSTARGET}/rscsi \
 		${STAGEDIR}${PREFIX}/sbin
-	${CHMOD} u+s ${STAGEDIR}${PREFIX}/sbin/rscsi
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/scgcheck/OBJ/${CDRTLSTARGET}/scgcheck \
 		${STAGEDIR}${PREFIX}/bin
