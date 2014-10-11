@@ -5,8 +5,7 @@ PORTNAME=	pvpgn
 PORTVERSION=	1.8.5
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	pvpgn
+MASTER_SITES=	BERLIOS
 DISTFILES=	${EXTRACT_ONLY} pvpgn-support-1.2.tar.gz
 DIST_SUBDIR=	pvpgn
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -38,34 +37,21 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pvpgn \
 
 USE_RC_SUBR=	bnetd
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3 D2
-D2_DESC=	Diablo II server (D2CS/D2DBS)
-
+OPTIONS_DEFINE=		D2 MYSQL PGSQL SQLITE3
 OPTIONS_DEFAULT=	D2
+OPTIONS_SUB=		yes
 
-.include <bsd.port.options.mk>
+D2_DESC=		Diablo II server (D2CS/D2DBS)
+D2_CONFIGURE_ENABLE=	d2cs d2dbs
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql
-.endif
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_WITH=	mysql
 
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=--with-pgsql
-.endif
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_WITH=	pgsql
 
-.if ${PORT_OPTIONS:MSQLITE3}
-USE_SQLITE=	3
-CONFIGURE_ARGS+=--with-sqlite3
-.endif
-
-.if ${PORT_OPTIONS:MD2}
-PLIST_SUB+=	WITH_D2=""
-.else
-CONFIGURE_ARGS+=	--disable-d2cs --disable-d2dbs
-PLIST_SUB+=	WITH_D2="@comment "
-.endif
+SQLITE3_USE=		SQLITE=3
+SQLITE3_CONFIGURE_WITH=	sqlite3
 
 ## support files
 
@@ -91,11 +77,9 @@ post-install:
 
 ## Additional documentation
 
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in INSTALL.unix PORTS README.fdwatch README.storage bnmotd.txt
 	${INSTALL_DATA} ${WRKSRC}/../docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
