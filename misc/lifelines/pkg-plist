@@ -274,11 +274,3 @@ man/man1/llines.1.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/lifelines.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/lifelines.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lifelines.mo
-%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/el
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
