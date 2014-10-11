@@ -7,10 +7,12 @@ PORTREVISION=	10
 CATEGORIES?=	print mail
 MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	guru@unixarea.de
 COMMENT?=	Utility to print mail for most any mail client
 
 RUN_DEPENDS=	psnup:${PORTSDIR}/print/psutils \
+		latex:${PORTSDIR}/print/texlive-full \
+		dvips:${PORTSDIR}/print/tex-dvipsk \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
