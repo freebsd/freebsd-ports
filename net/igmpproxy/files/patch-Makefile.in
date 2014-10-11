@@ -1,5 +1,5 @@
---- Makefile.in.orig	2009-12-20 13:13:06.000000000 +0300
-+++ Makefile.in	2009-12-20 13:15:11.000000000 +0300
+--- Makefile.in.orig	2009-10-05 18:19:42 UTC
++++ Makefile.in
 @@ -284,7 +284,10 @@
  	done | $(am__base_list) | \
  	while read files; do \
