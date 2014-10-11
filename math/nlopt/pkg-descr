@@ -1,0 +1,18 @@
+NLopt is a free/open-source library for nonlinear optimization,
+providing a common interface for a number of different free optimization
+outines available online as well as original implementations of various
+other algorithms. Its features include:
+
+  - Callable from C, C++, Fortran, Matlab or GNU Octave, Python,
+    GNU Guile, Julia, GNU R, Lua, and OCaml. 
+  - A common interface for many different algorithms -- try a different
+    algorithm just by changing one parameter.
+  - Support for large-scale optimization (some algorithms scalable to
+    millions of parameters and thousands of constraints).
+  - Both global and local optimization algorithms.
+  - Algorithms using function values only (derivative-free) and also
+    algorithms exploiting user-supplied gradients.
+  - Algorithms for unconstrained optimization, bound-constrained
+    optimization, and general nonlinear inequality/equality constraints.
+                                             
+WWW: http://ab-initio.mit.edu/wiki/index.php/NLopt
