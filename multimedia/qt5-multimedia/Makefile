@@ -2,7 +2,7 @@
 
 PORTNAME=	multimedia
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt5-
 
@@ -28,7 +28,7 @@ ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 GSTREAMER_BUILD_DEPENDS=${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 GSTREAMER_USE=	GSTREAMER=yes,bad
 
-OPENAL_USE=	OPENAL=yes
+OPENAL_USES=	openal
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
