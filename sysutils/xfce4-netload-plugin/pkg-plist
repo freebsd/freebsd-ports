@@ -44,17 +44,3 @@ share/icons/hicolor/scalable/apps/xfce4-netload-plugin.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-netload-plugin.mo
 share/xfce4/panel-plugins/netload.desktop
-@dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
