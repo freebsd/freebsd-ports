@@ -1,5 +1,5 @@
---- Makefile.orig	2013-01-28 12:10:25.000000000 +0200
-+++ Makefile	2013-02-07 15:19:04.788319388 +0200
+--- Makefile.orig	2014-01-31 14:57:23.000000000 +0100
++++ Makefile	2014-10-07 23:26:17.000000000 +0200
 @@ -35,7 +35,7 @@
  CFLAGS += -fno-common
  CFLAGS += -DMINIUPNPC_SET_SOCKET_TIMEOUT
@@ -9,16 +9,7 @@
  CFLAGS += -ansi
  # -DNO_GETADDRINFO
  INSTALL = install
-@@ -80,7 +80,7 @@
-   SONAME = $(basename $(SHAREDLIBRARY)).$(APIVERSION).dylib
-   CFLAGS := -DMACOSX -D_DARWIN_C_SOURCE $(CFLAGS)
- else
--ifeq ($(OS), Linux)
-+ifeq ($(OS), FreeBSD)
-   SHAREDLIBRARY = libminiupnpc.so
-   SONAME = $(SHAREDLIBRARY).$(APIVERSION)
- endif
-@@ -110,13 +110,11 @@
+@@ -117,13 +117,11 @@
  TESTIGDDESCPARSE := $(TESTIGDDESCPARSE) minissdpc.o
  endif
  

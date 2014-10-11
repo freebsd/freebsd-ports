@@ -9,8 +9,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/miniupnpc:build
 
 MASTERDIR=	${.CURDIR}/../miniupnpc
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 WRKDIR=		${WRKDIRPREFIX}${MASTERDIR}/work
 PLIST=		${.CURDIR}/pkg-plist
@@ -20,7 +20,10 @@ PLIST=		${.CURDIR}/pkg-plist
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's/\(version\)="[^"]*"/\1="${PORTVERSION}"/' \
+	${REINPLACE_CMD} 's/\(version\)="[^"]*"/\1="${PORTVERSION}"/' \
 		${WRKSRC}/setup.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/miniupnpc.so
 
 .include "${MASTERDIR}/Makefile"

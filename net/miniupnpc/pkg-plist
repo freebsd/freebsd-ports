@@ -11,6 +11,5 @@ include/miniupnpc/upnpreplyparse.h
 include/miniupnpc/upnperrors.h
 lib/libminiupnpc.a
 lib/libminiupnpc.so
-lib/libminiupnpc.so.9
+lib/libminiupnpc.so.10
 man/man3/miniupnpc.3.gz
-@dirrm include/miniupnpc
