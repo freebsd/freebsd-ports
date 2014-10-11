@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	astah
-PORTVERSION=	6.8.0
+PORTVERSION=	6.9.0
 CATEGORIES=	devel java
 MASTER_SITES=	#
 PKGNAMESUFFIX=	-community
@@ -21,7 +21,7 @@ RESTRICTED=	License restrictions -- See http://astah.net/faq/community/enduser-l
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
-REVISION=	d254c5
+REVISION=	b4c6e9
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX:S!-!_!}
 
@@ -32,7 +32,7 @@ PORTDOCS=	API_sample_program_license_agreement.txt \
 		api
 PORTEXAMPLES=	astah-key.properties_org Sample.asta
 PORTDATA=	astah-community.jar astah-api.jar astah-gui_en.properties_org \
-		astah.ico astah-doc.ico Welcome.asta Welcome_ja.asta \
+		astah.ico astah-doc.ico \
 		lib template
 
 NO_BUILD=	yes
