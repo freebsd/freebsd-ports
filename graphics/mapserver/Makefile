@@ -39,7 +39,7 @@ WCS_DESC=               WCS Server support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		2
+USES+=			python:2
 BUILD_DEPENDS+=		swig2.0:${PORTSDIR}/devel/swig20
 CMAKE_ARGS+=		-DWITH_PYTHON=yes
 PLIST_SUB+=		PYTHON=""
@@ -115,7 +115,7 @@ CMAKE_ARGS+=		-DWITH_GEOS=0
 .endif
 
 .if ${PORT_OPTIONS:MPOSTGIS}
-USE_PGSQL=		yes
+USES+=			pgsql
 CMAKE_ARGS+=		-DWITH_POSTGIS=1
 .else
 CMAKE_ARGS+=		-DWITH_POSTGIS=0
@@ -169,13 +169,13 @@ PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
 .if ${PORT_OPTIONS:MCLIENT_WMS}
 LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
 LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
-CMAKE_ARGS+=		-DWITH_CURL=1 -DGDAL=1 -DCLIENT_WMS=1
+CMAKE_ARGS+=		-DWITH_CURL=1 -DWITH_GDAL=1 -DWITH_CLIENT_WMS=1
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT_WFS}
 LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
 LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
-CMAKE_ARGS+=		-DWITH_CURL=1 -DGDAL=1 -DCLIENT_WFS=1
+CMAKE_ARGS+=		-DWITH_CURL=1 -DWITH_GDAL=1 -DWITH_CLIENT_WFS=1
 .endif
 
 do-install:
