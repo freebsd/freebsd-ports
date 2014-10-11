@@ -84,7 +84,7 @@ post-install:
 	${REINPLACE_CMD} '/#include "ansidecl.h"/d' ${STAGEDIR}${PREFIX}/include/bfd.h
 .else
 	${RM} -rf ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}
-	${LN} -fs ../../bin/${PKGNAMEPREFIX}${OPSYS:tl}-size ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX}${OPSYS:tl}/bin/size
+	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
 .endif
 
 .include <bsd.port.mk>

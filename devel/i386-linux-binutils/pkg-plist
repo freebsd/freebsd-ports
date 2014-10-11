@@ -22,6 +22,7 @@ i386-pc-linux-gnu/bin/nm
 i386-pc-linux-gnu/bin/objcopy
 i386-pc-linux-gnu/bin/objdump
 i386-pc-linux-gnu/bin/ranlib
+i386-pc-linux-gnu/bin/size
 i386-pc-linux-gnu/bin/strip
 i386-pc-linux-gnu/lib/ldscripts/elf32_x86_64.x
 i386-pc-linux-gnu/lib/ldscripts/elf32_x86_64.xbn
