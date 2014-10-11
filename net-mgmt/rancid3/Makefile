@@ -3,6 +3,7 @@
 
 PORTNAME=	rancid
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	3
@@ -16,6 +17,9 @@ RUN_DEPENDS=	p5-LockFile-Simple>=0:${PORTSDIR}/devel/p5-LockFile-Simple
 USES=		gmake perl5 shebangfix
 perl_OLD_CMD=	@PERLV_PATH@
 SHEBANG_FILES=	bin/*
+
+USERS=		rancid
+GROUPS=		rancid
 
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
