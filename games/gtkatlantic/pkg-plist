@@ -30,6 +30,3 @@ share/icons/hicolor/64x64/apps/gtkatlantic.png
 share/icons/hicolor/72x72/apps/gtkatlantic.png
 share/icons/hicolor/96x96/apps/gtkatlantic.png
 share/pixmaps/gtkatlantic.png
-@dirrm %%DATADIR%%/themes/generic_gradient
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%
