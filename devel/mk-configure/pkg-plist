@@ -7,7 +7,9 @@ bin/mkc_check_header
 bin/mkc_check_prog
 bin/mkc_check_sizeof
 bin/mkc_check_version
+bin/mkc_get_deps
 bin/mkc_install
+bin/mkc_long_lines
 bin/mkc_test_helper
 bin/mkc_which
 bin/mkcmake
@@ -22,13 +24,15 @@ man/man7/mk-configure.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%DATADIR%%/custom/endianness
-%%DATADIR%%/custom/prog_bison
-%%DATADIR%%/custom/prog_flex
-%%DATADIR%%/custom/prog_gawk
-%%DATADIR%%/custom/prog_gm4
+%%DATADIR%%/builtins/endianness
+%%DATADIR%%/builtins/prog_bison
+%%DATADIR%%/builtins/prog_flex
+%%DATADIR%%/builtins/prog_gawk
+%%DATADIR%%/builtins/prog_gm4
+%%DATADIR%%/builtins/prog_gmake
 %%DATADIR%%/features/getline/getline.c
 %%DATADIR%%/features/mkc_CIRCLEQ.h
 %%DATADIR%%/features/mkc_LIST.h
@@ -47,7 +51,6 @@ man/man7/mk-configure.7.gz
 %%DATADIR%%/features/netbsd_sys_tree.h
 %%DATADIR%%/features/strlcat/strlcat.c
 %%DATADIR%%/features/strlcpy/strlcpy.c
-share/mkc-mk/configure.mk
 share/mkc-mk/mkc.configure.mk
 share/mkc-mk/mkc.files.mk
 share/mkc-mk/mkc.init.mk
@@ -62,8 +65,11 @@ share/mkc-mk/mkc.subprj.mk
 share/mkc-mk/mkc.subprjs.mk
 share/mkc-mk/mkc_imp.arch.mk
 share/mkc-mk/mkc_imp.checkprogs.mk
+share/mkc-mk/mkc_imp.conf-cleanup.mk
 share/mkc-mk/mkc_imp.conf-final.mk
+share/mkc-mk/mkc_imp.conf.mk
 share/mkc-mk/mkc_imp.dep.mk
+share/mkc-mk/mkc_imp.dpvars.mk
 share/mkc-mk/mkc_imp.f_CIRCLEQ.mk
 share/mkc-mk/mkc_imp.f_LIST.mk
 share/mkc-mk/mkc_imp.f_RB.mk
@@ -99,11 +105,11 @@ share/mkc-mk/mkc_imp.scripts.mk
 share/mkc-mk/mkc_imp.subprj.mk
 share/mkc-mk/mkc_imp.vars.mk
 share/mkc-mk/sys.mk
-@dirrmtry share/mkc-mk
-@dirrmtry %%DATADIR%%/features/strlcpy
-@dirrmtry %%DATADIR%%/features/strlcat
-@dirrmtry %%DATADIR%%/features/getline
-@dirrmtry %%DATADIR%%/features
-@dirrmtry %%DATADIR%%/custom
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dir %%DOCSDIR%%
+@dir %%DATADIR%%/builtins
+@dir %%DATADIR%%/features/getline
+@dir %%DATADIR%%/features/strlcat
+@dir %%DATADIR%%/features/strlcpy
+@dir %%DATADIR%%/features
+@dir %%DATADIR%%
+@dir share/mkc-mk
