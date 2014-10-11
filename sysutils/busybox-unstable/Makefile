@@ -26,9 +26,8 @@ IGNORE=		is older than stable version. Use sysutils/busybox
 PORTSCOUT=	skipv:1.22.1
 
 MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
-USE_BZIP2=	yes
 # findutils/find.c l. 752+, uses a GCC extension/invalid C code:
-USES=		compiler:nestedfct gmake
+USES=		compiler:nestedfct gmake tar:bzip2
 
 PLIST_FILES=	bin/busybox
 
