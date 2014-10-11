@@ -197,10 +197,3 @@ share/pixmaps/whichwayisup.png
 %%DATADIR%%/sounds/kling.ogg
 %%DATADIR%%/sounds/nextlevel.ogg
 %%DATADIR%%/sounds/woosh.ogg
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/pictures
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/whichwayisup

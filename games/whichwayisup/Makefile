@@ -21,9 +21,8 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		dos2unix zip
+USES=		dos2unix python zip
 DOS2UNIX_REGEX=	.*.[^pt][^nt][^gf]
-USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	README.txt changelog.txt
