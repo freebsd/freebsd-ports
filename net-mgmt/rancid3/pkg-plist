@@ -154,4 +154,4 @@ man/man5/router.db.5.gz
 %%DATADIR%%/rancid-cvspurge
 %%DATADIR%%/rancid.conf.sample
 %%DATADIR%%/rtrfilter
-@dir(,,755) var/rancid
+@dir(rancid,rancid,755) var/rancid
