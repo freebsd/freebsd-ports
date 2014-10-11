@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	easytag
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	audio
 MASTER_SITES=	GNOME
 
@@ -66,5 +66,9 @@ post-install:
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's,^DATADIRNAME = @DATADIRNAME@,DATADIRNAME = share,' \
+		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>
