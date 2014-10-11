@@ -9,9 +9,7 @@ man/man1/cue2toc.1.gz
 man/man1/toc2cddb.1.gz
 man/man1/toc2cue.1.gz
 %%DATADIR%%/drivers
-@dirrmtry %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.PlexDAE
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
