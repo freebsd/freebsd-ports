@@ -12,8 +12,7 @@ DISTNAME=	cdrdao-${PORTVERSION}
 MAINTAINER=	marius@FreeBSD.org
 COMMENT?=	Record CD-R[W]s in disk-at-once mode
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 MP3OGG_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
