@@ -1,4 +1,3 @@
-@unexec %D/etc/rc.d/bnetd.sh stop > /dev/null 2>&1 || true
 bin/bnbot
 bin/bncdb
 bin/bnchat
@@ -32,9 +31,9 @@ etc/pvpgn/bnxpcalc.conf-sample
 etc/pvpgn/bnxplevel.conf-sample
 etc/pvpgn/channel.conf-sample
 etc/pvpgn/command_groups.conf-sample
-%%WITH_D2%%etc/pvpgn/d2cs.conf-sample
-%%WITH_D2%%etc/pvpgn/d2dbs.conf-sample
-%%WITH_D2%%etc/pvpgn/d2server.ini-sample
+%%D2%%etc/pvpgn/d2cs.conf-sample
+%%D2%%etc/pvpgn/d2dbs.conf-sample
+%%D2%%etc/pvpgn/d2server.ini-sample
 etc/pvpgn/news.txt-sample
 etc/pvpgn/realm.conf-sample
 etc/pvpgn/sql_DB_layout.conf-sample
@@ -59,8 +58,8 @@ man/man5/bnetd.conf.5.gz
 man/man5/bntext.5.gz
 sbin/bnetd
 sbin/bntrackd
-%%WITH_D2%%sbin/d2cs
-%%WITH_D2%%sbin/d2dbs
+%%D2%%sbin/d2cs
+%%D2%%sbin/d2dbs
 %%DATADIR%%/files/IX86ver1.mpq
 %%DATADIR%%/files/PMACver1.mpq
 %%DATADIR%%/files/XMACver1.mpq
@@ -116,21 +115,3 @@ sbin/bntrackd
 %%DATADIR%%/files/tos_RUS.txt
 %%DATADIR%%/files/tos_SIN.txt
 %%DATADIR%%/files/tos_USA.txt
-@dirrm %%DATADIR%%/bak/charinfo
-@dirrm %%DATADIR%%/bak/charsave
-@dirrm %%DATADIR%%/bak
-@dirrm %%DATADIR%%/bnmail
-@dirrm %%DATADIR%%/chanlogs
-@dirrm %%DATADIR%%/charinfo
-@dirrm %%DATADIR%%/charsave
-@dirrm %%DATADIR%%/clans
-@dirrm %%DATADIR%%/files
-@dirrm %%DATADIR%%/ladders
-@dirrm %%DATADIR%%/reports
-@dirrm %%DATADIR%%/status
-@dirrm %%DATADIR%%/teams
-@dirrm %%DATADIR%%/users
-@dirrm %%DATADIR%%/userscdb
-@dirrmtry %%DATADIR%%
-@dirrm etc/pvpgn
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
