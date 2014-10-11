@@ -3,7 +3,7 @@
 
 PORTNAME=	curvedns
 PORTVERSION=	0.88.b
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	dns
 DISTNAME=	curvedns-0.88-unstable
 
