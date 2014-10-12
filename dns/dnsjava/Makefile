@@ -18,12 +18,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 SAMPLE_FILES=	examples.html USAGE dig.java jnamed.java lookup.java update.java
 OTHERDOCS=	README Changelog
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	docs
-.endif
+DOCS_ALL_TARGET=	docs
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +33,8 @@ PLIST_SUB+=	JDK8=""
 PLIST_SUB+=	JDK8="@comment "
 .endif
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
@@ -46,9 +43,7 @@ do-install:
 	${TAR} -C ${WRKSRC}/doc -cf - . | ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
 	${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${SAMPLE_FILES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.post.mk>
