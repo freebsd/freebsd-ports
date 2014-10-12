@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	16
+PORTREVISION=	18
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -14,20 +14,20 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
-FAKEDIR=	${WRKDIR}/fake
-PLIST=		${WRKDIR}/plist
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig tar:bzip2 libtool
+USES=		gmake libtool pkgconfig tar:bzip2
+USE_GCC=	any
 WANT_SDL=	yes
 WANT_GNOME=	yes
-USE_AUTOTOOLS=	libtoolize
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-oss
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--enable-oss
+INSTALL_TARGET=	install-strip
 
 NO_OPTIONS_SORT=	yes
-OPTIONS_DEFINE=		OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME XVID \
-			X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO A52 \
+OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME \
+			XVID X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO A52 \
 			FAAC LIBXML2 MJPEGTOOLS SDL IMAGEMAGICK JPEG ICONV V4L
 OPTIONS_DEFAULT=	LAME DVDREAD JPEG ICONV
 BKTR_DESC=		Bktr capture card support
@@ -139,8 +139,6 @@ post-patch:
 		s|-lMagick|-lMagickCore|g' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-pre-configure:
-	@${REINPLACE_CMD} -E -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|-ldl||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|WRKSRC|${WRKSRC}|g' ${WRKSRC}/export/Makefile.in
@@ -151,19 +149,8 @@ pre-configure:
 		${WRKSRC}/import/import_mov.c \
 		${WRKSRC}/import/probe_mov.c
 
-pre-install:
-	${RM} -rf ${PLIST} ${FAKEDIR}
-	${MKDIR} ${FAKEDIR}
-	${TOUCH} -f ${PLIST}
-	@(cd ${WRKSRC} && ${MAKE_CMD} install prefix=${FAKEDIR} mandir=${FAKEDIR}/man)
-.for dir in bin share/doc lib
-	@(cd ${FAKEDIR}/${dir} && ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's|^|${dir}/|' | grep -v \\.la$$ >> ${PLIST})
-	@(cd ${FAKEDIR}/${dir} && ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${dir}/|' >> ${PLIST})
-.endfor
-	@(cd ${FAKEDIR}/man && ${FIND} -s * -type f -o -type l | \
-		${SED}  -e 's|^|man/|' \
-			-e 's|$$|.gz|' >> ${PLIST})
+post-stage:
+	@(cd ${STAGEDIR}${PREFIX} && \
+		${FIND} -s lib/transcode -type f -or -type l >> ${TMPPLIST})
 
 .include <bsd.port.mk>
