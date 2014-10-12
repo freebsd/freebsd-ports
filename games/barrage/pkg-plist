@@ -27,6 +27,3 @@ share/icons/hicolor/16x16/apps/barrage.png
 share/icons/hicolor/32x32/apps/barrage.png
 share/icons/hicolor/48x48/apps/barrage.png
 share/pixmaps/barrage.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%
