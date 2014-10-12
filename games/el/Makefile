@@ -5,11 +5,12 @@ PORTNAME=	el
 PORTVERSION=	193
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	LOCAL/rene \
-		ftp://rene-ladan.nl/pub/distfiles/
+MASTER_SITES=	LOCAL/rene
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
+
+BROKEN=		Fails to build
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
