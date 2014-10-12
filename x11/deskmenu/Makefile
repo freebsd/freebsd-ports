@@ -16,7 +16,4 @@ USES=		gmake
 USE_GNOME=	gtk12
 USE_CSTD=	gnu89
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/deskmenu
-
 .include <bsd.port.mk>
