@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	apngdis
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 DISTVERSIONSUFFIX=-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Deconstructs APNG files into individual frames
 
 LICENSE=	ZLIB
