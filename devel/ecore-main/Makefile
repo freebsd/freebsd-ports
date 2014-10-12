@@ -13,7 +13,7 @@ MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (main library)
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WKRSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes
