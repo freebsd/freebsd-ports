@@ -2,7 +2,7 @@
 
 PORTNAME=	asclock-gtk
 PORTVERSION=	2.1.10
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -13,7 +13,7 @@ COMMENT=	New flavor of asclock (GTK version)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	asclock
-MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
+INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}
 
 USE_XORG=	x11 xt
 USE_GNOME=	gtk12
@@ -30,8 +30,5 @@ do-configure:
 	  ${RM} -rf default_theme; \
 	  ${LN} -s themes/classic default_theme)
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/asclock
 
 .include <bsd.port.mk>
