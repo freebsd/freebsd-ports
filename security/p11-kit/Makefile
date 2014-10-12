@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-debug=no \
 		--with-trust-paths=${LOCALBASE}/share/certs/ca-root-nss.crt
 MAKE_ENV=	exampledir=${STAGEDIR}${EXAMPLESDIR}
+INSTALL_TARGET=	install-strip
 
 USES=		gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
