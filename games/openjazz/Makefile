@@ -35,9 +35,6 @@ pre-extract:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/openjazz.000 ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/OpenJazz ${STAGEDIR}${PREFIX}/bin/openjazz
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openjazz
+	${INSTALL_PROGRAM} ${WRKSRC}/OpenJazz ${STAGEDIR}${PREFIX}/bin/openjazz
 
 .include <bsd.port.mk>

@@ -1,3 +1,2 @@
 bin/openjazz
 %%DATADIR%%/openjazz.000
-@dirrm %%DATADIR%%
