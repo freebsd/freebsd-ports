@@ -59,13 +59,3 @@ share/gtk-doc/html/p11-kit/up-insensitive.png
 share/gtk-doc/html/p11-kit/up.png
 %%DATADIR%%/modules/p11-kit-trust.module
 %%EXAMPLESDIR%%/pkcs11.conf.example
-@dirrm share/gtk-doc/html/p11-kit
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
-@dirrm include/p11-kit-1/p11-kit
-@dirrm include/p11-kit-1
-@dirrm lib/p11-kit
-@dirrm lib/pkcs11
