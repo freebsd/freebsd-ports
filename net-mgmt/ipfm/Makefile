@@ -13,7 +13,4 @@ COMMENT=	Bandwidth analysis tool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/ipfm
-
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-07-29 21:06:10.045210973 +0800
-+++ Makefile.in	2014-07-29 21:07:11.227205493 +0800
-@@ -15,17 +15,17 @@ docs: Makefile doc/Makefile
+--- Makefile.in.orig	2002-10-06 16:39:42 UTC
++++ Makefile.in
+@@ -15,17 +15,17 @@
  	@cd doc && $(MAKE) && cd ..
  
  install: all
@@ -16,7 +16,7 @@
 -	$(INSTALL) -d -m 755 $(LOGDIR)/ipfm
 -	$(INSTALL) -d -m 755 $(VARRUNDIR)
 +	$(INSTALL) -d -m 755 $(DESTDIR)$(SBINDIR)
-+	$(INSTALL) -m 555 source/ipfm $(DESTDIR)$(SBINDIR)/ipfm
++	$(BSD_INSTALL_PROGRAM) source/ipfm $(DESTDIR)$(SBINDIR)/ipfm
 +	$(INSTALL) -d -m 755 $(DESTDIR)$(ETCDIR)
 +	[ -f $(DESTDIR)$(CONFIGFILE) ] || \
 +	  $(INSTALL) -m 644 ipfm.conf.sample $(DESTDIR)$(CONFIGFILE)
