@@ -1,5 +1,5 @@
---- Makefile.old	Wed Jan 19 09:43:24 2005
-+++ Makefile	Wed Jan 19 09:43:41 2005
+--- Makefile.orig	2005-03-24 23:50:09 UTC
++++ Makefile
 @@ -79,10 +79,9 @@
  # Destinations for installation. $(PRESERVEDIR) is used for recovery files.
  # It will get mode 1777.
@@ -21,7 +21,7 @@
  
  #
  # Compiler and linker flags.
-@@ -161,9 +161,7 @@ FEATURES	= -DLISPCODE -DCHDIR -DFASTTAG 
+@@ -161,9 +160,7 @@
  # (wchar.h, wctype.h, btowc() etc.) which is not provided by older
  # compilation environments.
  #
@@ -32,7 +32,7 @@
  
  #
  # VMUNIX should be correct for any modern Unix.
-@@ -205,13 +204,13 @@ OSTYPE	= -DVMUNIX
+@@ -205,13 +202,13 @@
  #
  # You may also get terminfo access by using the ncurses library.
  #
@@ -48,7 +48,7 @@
  
  #
  # Since ex uses sbrk() internally, a conflict with the libc's version of
-@@ -240,7 +237,6 @@ RECOVER	= -DEXRECOVER=\"$(LIBEXECDIR)/ex
+@@ -240,7 +237,6 @@
  			-DEXPRESERVE=\"$(LIBEXECDIR)/expreserve\"
  CCFLAGS	= $(CFLAGS) $(WARN) $(CPPFLAGS) $(FEATURES) $(CHARSET) $(OSTYPE) \
  		$(LARGEF) $(RECOVER) $(LANGMSG) $(REINC) $(RPMCFLAGS)
@@ -56,7 +56,7 @@
  INCLUDE	= /usr/include
  OBJS	= ex.o ex_addr.o ex_cmds.o ex_cmds2.o ex_cmdsub.o \
  		ex_data.o ex_extern.o ex_get.o ex_io.o ex_put.o ex_re.o \
-@@ -292,13 +291,6 @@
+@@ -296,13 +292,6 @@
  # install in standard place
  
  install-man:
@@ -70,7 +70,7 @@
  	$(INSTALL) -c -m 644 ex.1 $(DESTDIR)$(MANDIR)/man1/ex.1
  	$(INSTALL) -c -m 644 vi.1 $(DESTDIR)$(MANDIR)/man1/vi.1
  	ln -s ex.1 $(DESTDIR)$(MANDIR)/man1/edit.1
-@@ -306,10 +298,6 @@
+@@ -310,10 +299,6 @@
  	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/view.1
  
  install: all install-man
@@ -81,11 +81,13 @@
  # special provisions for sticky install
  	if test -f $(DESTDIR)$(BINDIR)/ex; \
  	then	test -f $(DESTDIR)$(BINDIR)/ex.old.$$$$ && exit 1; \
-@@ -319,7 +307,6 @@
+@@ -322,8 +307,7 @@
+ 		mv $(DESTDIR)$(BINDIR)/ex $(DESTDIR)$(BINDIR)/ex.old.$$$$; \
  		rm -f $(DESTDIR)$(BINDIR)/ex.old.$$$$; \
  	fi
- 	$(INSTALL) -c $(STRIP) -m 1755 ex $(DESTDIR)$(BINDIR)/ex
+-	$(INSTALL) -c $(STRIP) -m 1755 ex $(DESTDIR)$(BINDIR)/ex
 -	test -d $(DESTDIR)$(LIBEXECDIR) || mkdir -p $(DESTDIR)$(LIBEXECDIR)
++	$(INSTALL) -c $(STRIP) -m 755 ex $(DESTDIR)$(BINDIR)/ex
  	$(INSTALL) -c $(STRIP) exrecover $(DESTDIR)$(LIBEXECDIR)/exrecover
  	$(INSTALL) -c $(STRIP) expreserve $(DESTDIR)$(LIBEXECDIR)/expreserve
  	ln -s ex $(DESTDIR)$(BINDIR)/edit
