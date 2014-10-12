@@ -518,6 +518,7 @@
     SUBDIR += libkipi-kde4
     SUBDIR += libkipiplugins
     SUBDIR += libksane
+    SUBDIR += libkscreen
     SUBDIR += liblqr-1
     SUBDIR += liblug
     SUBDIR += libmng
