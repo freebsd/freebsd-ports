@@ -70,30 +70,14 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime-tests.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime-tests.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/start-swank.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-abcl.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-allegro.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-backend.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-ccl.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-clisp.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-cmucl.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-corman.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-ecl.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-gray.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-lispworks.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-loader.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-match.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-rpc.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-sbcl.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-scl.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-source-file-cache.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-source-path-parser.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-loader.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/xref.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/cl-lib.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/ert-x.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/ert.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/hyperspec.el
-@dirrm %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib
-@dirrm %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib
-@dirrm %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib
+@dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib
+@dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime
+%%PORTDOCS%%@dir %%DOCSDIR%%
