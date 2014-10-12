@@ -21,10 +21,9 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/
 
-USES=		dos2unix zip
+USES=		dos2unix python zip
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
 DOS2UNIX_FILES=	*.pyw
-USE_PYTHON=	yes
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
