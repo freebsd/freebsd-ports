@@ -14,6 +14,8 @@ COMMENT=	Sybase/Microsoft TDS protocol library
 
 LICENSE=	LGPL20
 
+BROKEN=		Fails to build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-dev.${PORTVERSION}
 TDS_VER?=	7.2
 USES=		gmake iconv libtool:keepla pkgconfig tar:bzip2
