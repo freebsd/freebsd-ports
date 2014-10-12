@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	logstash-forwarder
-PORTVERSION=	0.3.1.20140725
+PORTVERSION=	0.3.1.20140829
 CATEGORIES=	sysutils
 
 MAINTAINER=	cheffo@freebsd-bg.org
@@ -15,16 +15,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elasticsearch
 GH_PROJECT=	logstash-forwarder
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	8bb4001
+GH_COMMIT=	fcf431c
 
 USE_RC_SUBR=	logstash-forwarder
 SUB_FILES=	pkg-message
 
-do-build:
-	 cd ${WRKSRC} && ${PREFIX}/bin/go build
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}  ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/logstash-forwarder.conf.example ${STAGEDIR}${PREFIX}/etc/logstash-forwarder.conf.example
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/go/files/bsd.go.mk"
+.include <bsd.port.post.mk>

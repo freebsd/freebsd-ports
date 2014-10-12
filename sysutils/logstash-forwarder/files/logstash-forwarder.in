@@ -20,6 +20,7 @@ name="logstash_forwarder"
 rcvar=logstash_forwarder_enable
 
 command="%%PREFIX%%/bin/logstash-forwarder"
+command_args='> /dev/null 2>&1 &'
 
 load_rc_config $name
 
