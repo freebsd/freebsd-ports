@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	showimage
-PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTVERSION=	1.8.2
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	143977-${PORTNAME}-${PORTVERSION}
