@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-weather-plugin
 PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc xfce geography
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-SSP_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
