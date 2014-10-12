@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pam_ocra
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security
 
 MAINTAINER=	sg2342@googlemail.com
@@ -13,9 +13,10 @@ LICENSE=	BSD2CLAUSE
 USES=		uidfix
 
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	sg2342
 GH_PROJECT=	pam_ocra
-GH_COMMIT=	abacd1d
+GH_COMMIT=	d8b4ad3
 
 PLIST_FILES=	lib/pam_ocra.so \
 		lib/pam_ocra.so.0 \
@@ -23,4 +24,18 @@ PLIST_FILES=	lib/pam_ocra.so \
 		man/man8/pam_ocra.8.gz \
 		man/man8/ocra_tool.8.gz
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000015
+WITH_OPENSSL_PORT=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+.endif
+
+# we need to .include bsd.openssl.mk manually here.because USE_OPENSSL only
+# works when it is defined before bsd.port{.pre}.mk is .included.
+# This makes it currently impossible to combine this macro with OSVERSION to
+# conditionally select WITH_OPENSSL_PORT for OSVERSIONS before 1000015.
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+
+.include <bsd.port.post.mk>
