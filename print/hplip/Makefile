@@ -3,7 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.14.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -23,9 +23,8 @@ RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 INSTALL_TARGET=	install-strip
-USES=		dos2unix libtool pkgconfig shebangfix
+USES=		dos2unix libtool pkgconfig python shebangfix
 USE_GHOSTSCRIPT_RUN=	yes
-USE_PYTHON=	yes
 USE_GNOME=	pygobject
 USE_LDCONFIG=	yes
 
@@ -98,7 +97,7 @@ SNMP_CONFIGURE_ENABLE=	network-build
 
 SCAN_DESC=	Scanning support
 SCAN_LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
-SCAN_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
+SCAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 SCAN_CONFIGURE_ENABLE=	scan-build
 
 XSANE_DESC=	Install XSane for scanning (requires SCAN)
