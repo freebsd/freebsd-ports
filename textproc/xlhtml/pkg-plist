@@ -8,9 +8,6 @@ man/man1/xlhtml.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/xlhtml/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/xlhtml/README
 %%PORTDOCS%%%%DOCSDIR%%/xlhtml/THANKS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xlhtml
 %%PORTDOCS%%%%DOCSDIR%%/ppthtml/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ppthtml/README
 %%PORTDOCS%%%%DOCSDIR%%/ppthtml/THANKS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ppthtml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

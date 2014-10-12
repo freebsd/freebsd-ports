@@ -25,7 +25,5 @@ post-install:
 		${INSTALL_DATA} ChangeLog README THANKS \
 		${STAGEDIR}${DOCSDIR}/${dir}
 .endfor
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xlhtml \
-		${STAGEDIR}${PREFIX}/bin/ppthtml
 
 .include <bsd.port.mk>
