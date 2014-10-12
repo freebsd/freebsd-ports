@@ -18,13 +18,8 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_CONFIGURE_ENABLE=	manual
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	latex:build
-BUILD_DEPENDS+=	fig2dev:${PORTSDIR}/print/transfig
-.endif
+DOCS_USE=		TEX=latex:build
+DOCS_BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 post-patch:
 	@${REINPLACE_CMD} 's/setiosflags/std::&/' \
