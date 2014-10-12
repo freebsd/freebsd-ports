@@ -19,7 +19,4 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/smssend
-
 .include <bsd.port.mk>

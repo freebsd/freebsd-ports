@@ -138,6 +138,3 @@ man/man1/smssend.scripting.1.gz
 %%DATADIR%%/vizzaviuk.sms
 %%DATADIR%%/vodacom.sms
 %%DATADIR%%/yab.sms
-@dirrm %%DATADIR%%
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
