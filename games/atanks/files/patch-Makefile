@@ -1,5 +1,5 @@
---- ./Makefile.orig	2014-03-29 16:11:25.000000000 +0100
-+++ ./Makefile	2014-04-09 17:29:31.394283912 +0200
+--- Makefile.orig	2014-03-29 15:11:25 UTC
++++ Makefile
 @@ -4,27 +4,27 @@
  BINPREFIX = $(PREFIX)
  
@@ -29,7 +29,7 @@
 -	$(INSTALL) -m 644 atanks.desktop $(DESTDIR)/usr/share/applications
 -	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/48x48/apps
 -	$(INSTALL) -m 644 atanks.png $(DESTDIR)/usr/share/icons/hicolor/48x48/apps
-+	$(INSTALL) -m 555 atanks $(DESTDIR)${BINDIR}
++	$(BSD_INSTALL_PROGRAM) atanks $(DESTDIR)${BINDIR}
 +	mkdir -p $(DESTDIR)/usr/local/share/applications
 +	$(INSTALL) -m 644 atanks.desktop $(DESTDIR)/usr/local/share/applications
 +	mkdir -p $(DESTDIR)/usr/local/share/icons/hicolor/48x48/apps
