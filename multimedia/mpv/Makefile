@@ -3,6 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -43,6 +44,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-mpg123 \
 		--disable-alsa \
 		--disable-portaudio \
+		--disable-pulse \
 		--disable-pdf
 
 OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LIRC LUAJIT ZSH
