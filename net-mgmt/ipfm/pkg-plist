@@ -2,5 +2,4 @@ etc/ipfm.conf
 man/man5/ipfm.conf.5.gz
 man/man8/ipfm.8.gz
 sbin/ipfm
-@exec mkdir -p /var/log/ipfm
-@unexec rmdir /var/log/ipfm 2>/dev/null || echo "The logs will be left in /var/log/ipfm after the port is deinstalled."
+@dir /var/log/ipfm
