@@ -1,16 +1,13 @@
 @group conquest
-bin/conquest
-@unexec if cmp -s %D/etc/conquest/conqrule.sample %D/etc/conquest/conqrule ; then rm -f %D/etc/conquest/conqrule; fi
-etc/conquest/conqrule.sample
-@exec if [ ! -f %D/etc/conquest/conqrule ] ; then cp -p %D/%F %B/conqrule; fi
-libexec/conqdriv
-sbin/conqai
-sbin/conqoper
+@(,,2551) bin/conquest
+@sample etc/conquest/conqrule.sample
+@(,,2551) libexec/conqdriv
+@(,,2550) sbin/conqai
+@(,,2551) sbin/conqoper
 sbin/conqstrat
-@unexec if cmp -s %D/%%DATADIR%%/conqnews.doc.sample %D/%%DATADIR%%/conqnews.doc ; then rm -f %D/%%DATADIR%%/conqnews.doc; fi
-%%DATADIR%%/conqnews.doc.sample
-@exec if [ ! -f %D/%%DATADIR%%/conqnews.doc ] ; then cp -p %D/%F %B/conqnews.doc; fi
+@sample %%DATADIR%%/conqnews.doc.sample
 %%DATADIR%%/conquest.doc
-@dirrmtry etc/conquest
-@dirrmtry %%DATADIR%%
-@exec install -d -o root -g conquest -m 770 /var/games/conquest || true
+@dir etc/conquest
+@dir %%DATADIR%%
+@dir(,,770) /var/games/conquest
+@group
