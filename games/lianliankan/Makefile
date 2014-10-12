@@ -30,6 +30,7 @@ NLS_USES=	gettext
 .include <bsd.port.options.mk>
 
 post-patch:
+	@${RM} ${WRKSRC}/INSTALL
 	@${REINPLACE_CMD} -e 's|po include src|po src|' \
 		-e '/llk_linuxdocdir/,/EXTRA_DIST =/ d' \
 		${WRKSRC}/Makefile.am
