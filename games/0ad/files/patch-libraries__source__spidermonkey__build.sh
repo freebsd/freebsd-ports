@@ -1,8 +1,8 @@
---- libraries/source/spidermonkey/build.sh.orig	2013-02-04 01:31:03.000000000 +0100
-+++ libraries/source/spidermonkey/build.sh	2013-04-03 00:34:16.221257333 +0200
-@@ -53,6 +53,14 @@
+--- libraries/source/spidermonkey/build.sh.orig	2014-09-24 08:29:20 UTC
++++ libraries/source/spidermonkey/build.sh
+@@ -66,6 +66,14 @@
  
- cd js-1.8.5/js/src
+ cd mozjs24/js/src
  
 +cp jsnativestack.cpp jsnativestack.cpp.orig
 +sed 's/#  include <pthread_np.h>/#pragma GCC visibility push(default)\

@@ -1,0 +1,11 @@
+--- libraries/source/fcollada/src/Makefile.orig	2014-09-27 14:41:22 UTC
++++ libraries/source/fcollada/src/Makefile
+@@ -227,7 +227,7 @@
+ all: output/libFColladaSD.a output/libFColladaSR.a install
+ 
+ output_dirs:
+-	bash -c 'mkdir -p output/{debug,release,test}/{FCollada/{FCDocument,FMath,FUtils,FColladaTest/{FCTestAssetManagement,FCTestExportImport,FCTestXRef}},FColladaPlugins/FArchiveXML}'
++	csh -c 'mkdir -p output/{debug,release,test}/{FCollada/{FCDocument,FMath,FUtils,FColladaTest/{FCTestAssetManagement,FCTestExportImport,FCTestXRef}},FColladaPlugins/FArchiveXML}'
+ 
+ test: FCollada/FColladaTest/ output/FColladaTest
+ 	( cd FCollada/FColladaTest/ ; ../../output/FColladaTest )
