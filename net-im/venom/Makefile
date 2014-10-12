@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Venom
-PORTVERSION=	0.2.0.140908
-PORTREVISION=	1
+PORTVERSION=	0.2.0.141012
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -20,9 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 USE_GITHUB=	yes
 GH_ACCOUNT=	naxuroqa
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	7fa007d
+GH_COMMIT=	a9bff73
 
-USES=		cmake desktop-file-utils pkgconfig gettext
+USES=		cmake desktop-file-utils gettext pkgconfig
 USE_GNOME=	glib20 gtk30
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
