@@ -19,7 +19,7 @@ COMMENT=	Nelly's Rooftop Garden, physics-based puzzle game
 RUN_DEPENDS=	${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
 
-USE_PYTHON=	2
+USES=		python:2
 
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
