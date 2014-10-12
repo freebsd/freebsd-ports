@@ -10,22 +10,16 @@ MASTER_SITES=	http://download.gna.org/pyawale/
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	African board game
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYGAME}
 
-USE_PYTHON=	yes
+USES=		python
 
 SUB_FILES=	${PORTNAME}
 
 PORTDOCS=	*
-
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS ChangeLog LISEZMOI NEWS README
-
-DOCSRCDIR2=	${WRKSRC}/docs
-DOCSDIR2=	${DOCSDIR}/docs
-DOC_FILES2=	*.rest *.html *.jpg
 
 OPTIONS_DEFINE=	DOCS
 
@@ -47,9 +41,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
-
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "AUTHORS ChangeLog LISEZMOI NEWS README \
+		docs/*.rest docs/*.html docs/*.jpg" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
