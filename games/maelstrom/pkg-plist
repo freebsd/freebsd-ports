@@ -43,5 +43,3 @@ bin/Maelstrom-netd
 %%DATADIR%%/icon.bmp
 %%DATADIR%%/icon.xpm
 share/pixmaps/maelstrom.png
-@dirrm %%DATADIR%%/Images
-@dirrm %%DATADIR%%
