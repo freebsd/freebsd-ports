@@ -32,11 +32,11 @@ post-patch:
 	${REINPLACE_CMD} "s/-O2 -fPIC//g" ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} -m 2550 ${WRKSRC}/conqai ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conqdriv ${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conqoper ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/conqai ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/conqdriv ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/conqoper ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/conqstrat ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conquest ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/conquest ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/conqrule ${STAGEDIR}${ETCDIR}/conqrule.sample
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -45,5 +45,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/conquest.doc ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/var/games/conquest
 
 .include <bsd.port.mk>
