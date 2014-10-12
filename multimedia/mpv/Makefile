@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	03bfc2b
+GH_COMMIT=	7d9f8f7
 
 WAF_VERSION=	1.7.16
 
@@ -45,11 +45,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-portaudio \
 		--disable-pdf
 
-OPTIONS_DEFINE=		BS2B ENCA LADSPA LCMS2 LIBGUESS LIRC LUAJIT ZSH
+OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LIRC LUAJIT ZSH
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L QUVI SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
-OPTIONS_GROUP_AO=	JACK PULSEAUDIO
+OPTIONS_GROUP_AO=	JACK #PULSEAUDIO
 OPTIONS_SUB=		yes
 
 BS2B_DESC=	Enable Bauer Stereophonic-to-Binaural DSP support
@@ -123,8 +123,8 @@ XINERAMA_CONFIGURE_ENABLE=	xinerama
 JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
 JACK_CONFIGURE_ENABLE=		jack
 
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
-PULSEAUDIO_CONFIGURE_ENABLE=	pulse
+#PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+#PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
 .include <bsd.port.options.mk>
 
@@ -136,8 +136,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
 		-e 's|/zsh/vendor-completions|/zsh/site-functions|' \
 		${WRKSRC}/wscript_build.py
-	@${REINPLACE_CMD} -e "s|'libpulse', '>= 1.0'|'libpulse', '>= 0.9'|" \
-		${WRKSRC}/wscript
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
 
@@ -152,11 +150,6 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		waf install --destdir=${STAGEDIR}
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mpv
-	${INSTALL_DATA} ${WRKSRC}/etc/example.conf ${STAGEDIR}${PREFIX}/etc/mpv/mpv.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/input.conf ${STAGEDIR}${PREFIX}/etc/mpv/input.conf.sample
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mpv
