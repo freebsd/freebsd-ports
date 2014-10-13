@@ -33,6 +33,4 @@
 %%FONTDIR%%/FiraSans-UltraItalic.otf
 %%FONTDIR%%/FiraSans-UltraLight.otf
 %%FONTDIR%%/FiraSans-UltraLightItalic.otf
-@exec fc-cache -s -v %D/%%FONTDIR%% 2>/dev/null || true
-@dirrm %%FONTDIR%%
-@unexec fc-cache -s -v %D/%%FONTDIR%% 2>/dev/null || true
+@fc %%FONTDIR%%
