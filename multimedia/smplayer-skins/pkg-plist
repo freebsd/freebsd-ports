@@ -8,10 +8,3 @@
 %%DATADIR%%/themes/Modern/main.css
 %%DATADIR%%/themes/Vista/Vista.rcc
 %%DATADIR%%/themes/Vista/main.css
-@dirrm %%DATADIR%%/themes/Vista
-@dirrm %%DATADIR%%/themes/Modern
-@dirrm %%DATADIR%%/themes/Mac
-@dirrm %%DATADIR%%/themes/Gonzo
-@dirrm %%DATADIR%%/themes/Black
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%

@@ -97,30 +97,3 @@ libexec/ioctld
 %%DATADIR%%/vars-pl.txt
 %%NLS%%share/locale/de/LC_MESSAGES/ekg2.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ekg2.mo
-@dirrm %%DATADIR%%/themes
-%%PERL%%@dirrmtry %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/plugins/autoresponder
-@dirrm %%DATADIR%%/plugins/gg
-%%GPG%%@dirrm %%DATADIR%%/plugins/gpg
-@dirrm %%DATADIR%%/plugins/httprc_xajax
-@dirrm %%DATADIR%%/plugins/ioctld
-@dirrm %%DATADIR%%/plugins/irc
-@dirrm %%DATADIR%%/plugins/jabber
-@dirrm %%DATADIR%%/plugins/logs
-%%SQLITE%%@dirrm %%DATADIR%%/plugins/logsqlite
-@dirrm %%DATADIR%%/plugins/mail
-@dirrm %%DATADIR%%/plugins/ncurses
-%%PYTHON%%@dirrm %%DATADIR%%/plugins/python
-@dirrm %%DATADIR%%/plugins/rc
-@dirrm %%DATADIR%%/plugins/readline
-@dirrm %%DATADIR%%/plugins/sim
-@dirrm %%DATADIR%%/plugins/sms
-@dirrm %%DATADIR%%/plugins/xmsg
-%%XOSD%%@dirrm %%DATADIR%%/plugins/xosd
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%
-%%PERL%%@dirrm %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc
-%%PERL%%@dirrm %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2
-%%PERL%%@dirrm %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Ekg2
-@dirrm lib/ekg2/plugins
-@dirrm lib/ekg2

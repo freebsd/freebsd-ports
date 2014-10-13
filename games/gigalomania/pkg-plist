@@ -130,7 +130,3 @@ share/applications/gigalomania.desktop
 %%DATADIR%%/sound/we_ve_won.wav
 %%DATADIR%%/sound/woodbrk.wav
 share/pixmaps/gigalomania64.png
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/islands
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%

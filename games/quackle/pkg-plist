@@ -63,20 +63,3 @@ bin/quackle
 %%DATADIR%%/strategy/twl06/vcplace
 %%DATADIR%%/strategy/twl06/worths
 %%DATADIR%%/strategy/twl98/worths
-@dirrm %%DATADIR%%/strategy/twl98
-@dirrm %%DATADIR%%/strategy/twl06
-@dirrm %%DATADIR%%/strategy/tuvan
-@dirrm %%DATADIR%%/strategy/sowpods
-@dirrm %%DATADIR%%/strategy/russian
-@dirrm %%DATADIR%%/strategy/ods4
-@dirrm %%DATADIR%%/strategy/mandarin
-@dirrm %%DATADIR%%/strategy/korean
-@dirrm %%DATADIR%%/strategy/greek
-@dirrm %%DATADIR%%/strategy/cswfeb07
-@dirrm %%DATADIR%%/strategy/cswapr07
-@dirrm %%DATADIR%%/strategy/chinese
-@dirrm %%DATADIR%%/strategy
-@dirrm %%DATADIR%%/raw_lexica
-@dirrm %%DATADIR%%/lexica
-@dirrm %%DATADIR%%/alphabets
-@dirrm %%DATADIR%%

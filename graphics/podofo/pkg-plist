@@ -144,7 +144,3 @@ man/man1/podofotxt2pdf.1.gz
 man/man1/podofotxtextract.1.gz
 man/man1/podofouncompress.1.gz
 man/man1/podofoxmp.1.gz
-@dirrm include/podofo/doc
-@dirrm include/podofo/base/util
-@dirrm include/podofo/base
-@dirrm include/podofo
