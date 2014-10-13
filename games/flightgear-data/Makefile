@@ -37,8 +37,8 @@ pre-install:
 		| ${SED} -e 's|^|@exec ${MKDIR} %D/share/flightgear/|' >> ${PLIST} && \
 	${FIND} * -type f | ${SORT} \
 		| ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-	${FIND} * -type d | ${SORT} -r \
-		| ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
+	${FIND} * -type d -empty | ${SORT} -r \
+		| ${SED} -e 's|^|@dir %%DATADIR%%/|' >> ${PLIST}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
