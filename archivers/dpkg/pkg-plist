@@ -93,6 +93,7 @@ include/dpkg/version.h
 %%SITE_PERL%%/Dpkg/ErrorHandling.pm
 %%SITE_PERL%%/Dpkg/Exit.pm
 %%SITE_PERL%%/Dpkg/File.pm
+%%SITE_PERL%%/Dpkg/Getopt.pm
 %%SITE_PERL%%/Dpkg/Gettext.pm
 %%SITE_PERL%%/Dpkg/IPC.pm
 %%SITE_PERL%%/Dpkg/Index.pm
@@ -356,6 +357,7 @@ man/man1/dpkg-trigger.1.gz
 man/man1/dpkg-vendor.1.gz
 man/man1/dpkg.1.gz
 man/man1/dselect.1.gz
+man/man3/Dpkg.3.gz
 man/man3/Dpkg::BuildEnv.3.gz
 man/man3/Dpkg::BuildFlags.3.gz
 man/man3/Dpkg::BuildOptions.3.gz
@@ -380,6 +382,7 @@ man/man3/Dpkg::Control::Info.3.gz
 man/man3/Dpkg::Control::Types.3.gz
 man/man3/Dpkg::Deps.3.gz
 man/man3/Dpkg::Exit.3.gz
+man/man3/Dpkg::Gettext.3.gz
 man/man3/Dpkg::IPC.3.gz
 man/man3/Dpkg::Index.3.gz
 man/man3/Dpkg::Interface::Storable.3.gz
@@ -573,18 +576,18 @@ sbin/start-stop-daemon
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dselect.mo
-@dir %%DPKGDIR%%/alternatives
-@dir %%DPKGDIR%%/available
-@dir %%DPKGDIR%%/diversions
-@dir %%DPKGDIR%%/info
-@dir %%DPKGDIR%%/methods/disk
-@dir %%DPKGDIR%%/methods/floppy
-@dir %%DPKGDIR%%/methods/ftp
-@dir %%DPKGDIR%%/methods/mnt
-@dir %%DPKGDIR%%/methods/multicd
-@dir %%DPKGDIR%%/methods
-@dir %%DPKGDIR%%/parts
-@dir %%DPKGDIR%%/statoverride
-@dir %%DPKGDIR%%/status
 @dir %%DPKGDIR%%/updates
+@dir %%DPKGDIR%%/status
+@dir %%DPKGDIR%%/statoverride
+@dir %%DPKGDIR%%/parts
+@dir %%DPKGDIR%%/methods/multicd
+@dir %%DPKGDIR%%/methods/mnt
+@dir %%DPKGDIR%%/methods/ftp
+@dir %%DPKGDIR%%/methods/floppy
+@dir %%DPKGDIR%%/methods/disk
+@dir %%DPKGDIR%%/methods
+@dir %%DPKGDIR%%/info
+@dir %%DPKGDIR%%/diversions
+@dir %%DPKGDIR%%/available
+@dir %%DPKGDIR%%/alternatives
 @dir %%DPKGDIR%%
