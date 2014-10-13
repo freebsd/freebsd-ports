@@ -38,10 +38,8 @@ do-install:
 	${LN} -sf start-here-gnome.png start-here.png
 .endfor
 .endif
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} share/icons/${theme} ! \
-		-type d >> ${TMPPLIST} && \
-		${FIND} share/icons/${theme} -type d | ${SORT} -r | \
-		${SED} 's|^|@dirrm |' >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX} && \
+		${FIND} share/icons/${theme} ! -type d >> ${TMPPLIST}
 .endfor
 
 .include <bsd.port.mk>
