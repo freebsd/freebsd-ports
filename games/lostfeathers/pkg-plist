@@ -495,29 +495,3 @@ bin/lostfeathers
 %%DATADIR%%/run_game.pyc
 %%DATADIR%%/run_game.pyo
 share/pixmaps/lostfeathers.png
-@dirrm %%DATADIR%%/pyglet/window/xlib
-@dirrm %%DATADIR%%/pyglet/window/win32
-@dirrm %%DATADIR%%/pyglet/window/carbon
-@dirrm %%DATADIR%%/pyglet/window
-@dirrm %%DATADIR%%/pyglet/text/formats
-@dirrm %%DATADIR%%/pyglet/text
-@dirrm %%DATADIR%%/pyglet/media/drivers/openal
-@dirrm %%DATADIR%%/pyglet/media/drivers/directsound
-@dirrm %%DATADIR%%/pyglet/media/drivers/alsa
-@dirrm %%DATADIR%%/pyglet/media/drivers
-@dirrm %%DATADIR%%/pyglet/media
-@dirrm %%DATADIR%%/pyglet/image/codecs
-@dirrm %%DATADIR%%/pyglet/image
-@dirrm %%DATADIR%%/pyglet/graphics
-@dirrm %%DATADIR%%/pyglet/gl
-@dirrm %%DATADIR%%/pyglet/font
-@dirrm %%DATADIR%%/pyglet/app
-@dirrm %%DATADIR%%/pyglet
-@dirrm %%DATADIR%%/gamelib
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/cocos/scenes
-@dirrm %%DATADIR%%/cocos/resources
-@dirrm %%DATADIR%%/cocos/layer
-@dirrm %%DATADIR%%/cocos/actions
-@dirrm %%DATADIR%%/cocos
-@dirrm %%DATADIR%%
