@@ -22,6 +22,3 @@ share/locale/zh_CN/LC_MESSAGES/mirage.mo
 %%DATADIR%%/stock_leave-fullscreen.png
 %%DATADIR%%/stock_shuffle.png
 share/pixmaps/mirage.png
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/ua/LC_MESSAGES
-@dirrmtry share/locale/ua

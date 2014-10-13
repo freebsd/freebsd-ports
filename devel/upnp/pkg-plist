@@ -28,4 +28,3 @@ lib/libupnp.so
 lib/libupnp.so.6
 lib/libupnp.so.6.3.3
 libdata/pkgconfig/libupnp.pc
-@dirrm include/upnp

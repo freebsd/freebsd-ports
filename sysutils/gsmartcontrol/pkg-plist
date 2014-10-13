@@ -33,10 +33,3 @@ share/icons/hicolor/48x48/apps/gsmartcontrol.png
 share/icons/hicolor/64x64/apps/gsmartcontrol.png
 share/pixmaps/gsmartcontrol.png
 share/pixmaps/gsmartcontrol.xpm
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/icons
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/cron-based_noadmin
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -7,7 +7,3 @@ share/icons/qnapi-128.png
 share/icons/qnapi-48.png
 share/icons/qnapi-512.png
 share/icons/qnapi.png
-@dirrmtry share/icons
-@dirrmtry share/apps/konqueror/servicemenus
-@dirrmtry share/apps/konqueror
-@dirrmtry share/apps
