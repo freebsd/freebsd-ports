@@ -255,20 +255,3 @@ share/mime/packages/meld.xml
 share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
 share/omf/meld/meld-fr.omf
-@dirrm share/omf/meld
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/HighContrast/scalable/apps
-@dirrmtry share/icons/HighContrast/scalable
-@dirrmtry share/icons/HighContrast
-@dirrm share/gnome/help/meld/fr
-@dirrm share/gnome/help/meld/es
-@dirrm share/gnome/help/meld/C
-@dirrm share/gnome/help/meld
-@dirrmtry share/appdata
-@dirrm lib/meld/meld/vc
-@dirrm lib/meld/meld/util
-@dirrm lib/meld/meld/ui
-@dirrm lib/meld/meld
-@dirrm lib/meld
