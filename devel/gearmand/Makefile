@@ -3,16 +3,16 @@
 
 PORTNAME=	gearmand
 PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
-BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=0:${PORTSDIR}/textproc/py-sphinx
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:${PORTSDIR}/textproc/py-sphinx
+LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \
+		libevent.so:${PORTSDIR}/devel/libevent2 \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.1.*
