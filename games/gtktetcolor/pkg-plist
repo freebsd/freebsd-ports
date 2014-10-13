@@ -12,4 +12,3 @@ share/sounds/gtktetcolor/linerem.wav
 @unexec if [ -s /var/games/gtktetcolor.scores ] ; then rm -f /var/games/gtktetcolor.scores ; fi
 /var/games/gtktetcolor.scores
 @exec if [ ! -f /var/games/gtktetcolor.scores ] ; then cp -p /var/games/gtktetcolor.scores ; fi
-@dirrm share/sounds/gtktetcolor
