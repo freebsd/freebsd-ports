@@ -11,6 +11,7 @@ MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Graphical designer for relational databases
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		Needs an unsupported version of wxWidgets
 
@@ -39,7 +40,7 @@ do-install:
 	${FIND} . -type d | cut -c3- | ${XARGS} ${CHMOD} ${BINMODE};\
 	${FIND} . -type f | cut -c3- | ${XARGS} ${CHMOD} ${LIBMODE};\
 	${RM} -f ${STAGEDIR}${PREFIX}/bin/${PORTNAME};\
-	${LN} -s ${STAGEDIR}${MY_SITELIBDIR}/main.py ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${LN} -s ${MY_SITELIBDIR}/main.py ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${CHMOD} ${BINMODE} ${STAGEDIR}${MY_SITELIBDIR}/main.py
 
 .include <bsd.port.mk>
