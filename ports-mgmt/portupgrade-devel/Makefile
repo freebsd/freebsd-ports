@@ -3,7 +3,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20141006
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
@@ -44,10 +44,8 @@ INSTALL_TARGET=		install
 INSTALL_TARGET+=	install-doc
 .endif
 
-# Reported that ruby-bdb is BROKEN with 2.0
-.if ${RUBY_VER} != 2.0 && ${RUBY_VER} != 2.1
+# For PKG_DBDRIVER={bdb_btree,bdb_hash}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
-.endif
 
 regression-test: patch
 	cd ${WRKSRC} && ${MAKE} test
