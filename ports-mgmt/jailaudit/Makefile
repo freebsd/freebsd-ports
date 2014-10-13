@@ -3,7 +3,7 @@
 
 PORTNAME=	jailaudit
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://outpost.h3q.com/software/jailaudit/
 
@@ -29,10 +29,6 @@ PLIST_SUB+=	PERIODICDIR="${PERIODICDIR:S,^${PREFIX}/,,}" \
 		XTMPDIR="${XTMPDIR:S,^${PREFIX}/,,}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-RUN_DEPENDS=	${LOCALBASE}/sbin/portaudit:${PORTSDIR}/ports-mgmt/portaudit
-.endif
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PERIODICDIR}/security

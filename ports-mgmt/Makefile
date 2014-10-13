@@ -16,7 +16,6 @@
     SUBDIR += hs-porte
     SUBDIR += jailaudit
     SUBDIR += kpackagekit
-    SUBDIR += kports-qt4
     SUBDIR += lsknobs
     SUBDIR += managepkg
     SUBDIR += mkreadmes
@@ -47,8 +46,6 @@
     SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools
-    SUBDIR += portaudit
-    SUBDIR += portaudit-db
     SUBDIR += portbuilder
     SUBDIR += portcheckout
     SUBDIR += portconf
