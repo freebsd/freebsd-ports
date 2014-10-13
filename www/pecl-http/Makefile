@@ -16,6 +16,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	56
 
 CONFIGURE_ARGS+=	--with-http-curl-requests \
 			--with-http-zlib-compression \

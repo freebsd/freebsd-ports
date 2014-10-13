@@ -15,5 +15,6 @@ COMMENT=	Query cache plugin for mysqlnd
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
+IGNORE_WITH_PHP=	56
 
 .include <bsd.port.mk>
