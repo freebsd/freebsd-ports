@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.338 2014/10/08 23:35:33 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.340 2014/10/13 05:52:02 marcus Exp $
 #
 
 use strict;
@@ -51,7 +51,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 15;
-my $micro = 5;
+my $micro = 6;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1742,11 +1742,13 @@ sub checkmakefile {
 	# whole file: Check if USES is sorted
 	#
 	print "OK: checking to see if USES is sorted.\n" if ($verbose);
-	if ($makevar{USES} ne '') {
-		my @suses = sort(split / /, $makevar{USES});
-		if (join(" ", @suses) ne $makevar{USES}) {
-			&perror("WARN", $file, -1, "the options to USES are not sorted. ".
-				"Please consider sorting them.");
+	while ($whole =~ /\nUSES.=\s*(.+)\n/g) {
+		my $lineno = &linenumber($`);
+		my $srex = $1;
+		my @suses = sort(split / /, $srex);
+		if (join(" ", @suses) ne $srex) {
+			&perror("WARN", $file, $lineno, "the options to USES are not ".
+				"sorted.  Please consider sorting them.");
 		}
 	}
 
