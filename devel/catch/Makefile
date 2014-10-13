@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	catch
-PORTVERSION=	1.0.51
+PORTVERSION=	1.0.53
 CATEGORIES=	devel
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	BSL
 USE_GITHUB=	yes
 GH_ACCOUNT=	gahr
 GH_PROJECT=	Catch
-GH_COMMIT=	ce56209
+GH_COMMIT=	d4e5f18
 
 NO_BUILD=	yes
 
@@ -22,5 +22,8 @@ PLIST_FILES=	include/catch.hpp
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/single_include/catch.hpp \
 	    ${STAGEDIR}${PREFIX}/include
+
+regression-test:
+	cd ${WRKSRC}/projects/CMake && cmake . && make && ./SelfTest
 
 .include <bsd.port.mk>
