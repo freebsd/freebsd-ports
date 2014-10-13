@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	SF/lifanov-ports-distfiles/sysutils/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	268e723
+GH_COMMIT=	d3c28fe
 
 USES=		cpe python:2 shebangfix
 USE_PYTHON=	autoplist distutils
