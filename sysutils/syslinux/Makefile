@@ -3,10 +3,11 @@
 
 PORTNAME=	syslinux
 PORTVERSION=	6.02
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/boot/syslinux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uffe@uffe.org
 COMMENT=	Boot loader for the Linux operating system
 
 LICENSE=	GPLv2
