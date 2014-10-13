@@ -1,3 +1,0 @@
-To check your installed ports for known vulnerabilities now, do:
-
-%%PREFIX%%/sbin/portaudit -Fda

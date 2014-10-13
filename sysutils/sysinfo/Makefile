@@ -3,7 +3,7 @@
 
 PORTNAME=	sysinfo
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/danger \
 		http://danger.rulez.sk/projects/sysinfo/
@@ -17,13 +17,10 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	DMIDECODE PORTAUDIT
+OPTIONS_DEFINE=	DMIDECODE
 
 DMIDECODE_DESC=		Include information from the dmidecode tool
 DMIDECODE_RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode
-
-PORTAUDIT_DESC=		Include information from the portaudit tool
-PORTAUDIT_RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|common.subr|${DATADIR}/common.subr|g' ${WRKSRC}/sysinfo
