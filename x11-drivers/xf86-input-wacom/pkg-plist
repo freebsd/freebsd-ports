@@ -11,9 +11,3 @@ lib/xorg/modules/input/wacom_drv.so
 libdata/pkgconfig/xorg-wacom.pc
 man/man1/xsetwacom.1.gz
 man/man4/wacom.4x.gz
-@dirrmtry lib/xorg/modules/input
-@dirrmtry lib/xorg/modules
-@dirrmtry lib/xorg
-@dirrmtry include/xorg
-@dirrmtry etc/X11/xorg.conf.d
-@dirrmtry etc/X11
