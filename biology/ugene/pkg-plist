@@ -1416,13 +1416,18 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/NGS/tuxedo.uwl
 %%DATADIR%%/workflow_samples/Scenarios/extract_consensus.uwl
 %%DATADIR%%/workflow_samples/Scenarios/filter_matched.uwl
+%%DATADIR%%/workflow_samples/Scenarios/find_inverted_repeats.uwl
 %%DATADIR%%/workflow_samples/Scenarios/find_sequences.uwl
 %%DATADIR%%/workflow_samples/Scenarios/gene_by_gene_report.uwl
 %%DATADIR%%/workflow_samples/Scenarios/merge_sequence_annotation.uwl
+%%DATADIR%%/workflow_samples/Scenarios/remote_blasting.uwl
+%%DATADIR%%/workflow_samples/Scenarios/translate_seq_and_compl.uwl
 %%DATADIR%%/workflow_samples/Transcriptomics/SearchTFBS.uwl
 %%DATADIR%%/workflow_samples/users/CASAVA FASTQ filter.usa
 %%DATADIR%%/workflow_samples/users/Dump sequence info.usa
 %%DATADIR%%/workflow_samples/users/FASTQ Trimmer.usa
+%%DATADIR%%/workflow_samples/users/Get the first half of sequence.usa
+%%DATADIR%%/workflow_samples/users/Get the second half of sequence.usa
 %%DATADIR%%/workflow_samples/users/LinkData Fetch.usa
 %%DATADIR%%/workflow_samples/users/QualityFilter.usa
 @dirrm %%DATADIR%%/workflow_samples/users
