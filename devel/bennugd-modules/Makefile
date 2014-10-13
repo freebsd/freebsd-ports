@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/bennugd"
 CONFIGURE_ENV=	ZLIB_CFLAGS=" " ZLIB_LIBS="-lz"
 DOS2UNIX_GLOB=	*.c
+INSTALL_TARGET=	install-strip
 
 WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
 
