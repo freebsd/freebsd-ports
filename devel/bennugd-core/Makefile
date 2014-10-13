@@ -18,6 +18,7 @@ CONFIGURE_ARGS= --bindir="${PREFIX}/libexec"
 SUB_FILES=	bgdc bgdi
 USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.c *.h
+INSTALL_TARGET=	install-strip
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Segfaults on !i386
