@@ -10,4 +10,3 @@ lib/libGeoIP.so.1.6.2
 libdata/pkgconfig/geoip.pc
 man/man1/geoiplookup.1.gz
 man/man1/geoiplookup6.1.gz
-@dirrmtry %%DATADIR%%
