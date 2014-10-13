@@ -21,14 +21,25 @@ HAS_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
-post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
+OPTIONS_SINGLE=		DEFTHEME
+OPTIONS_SINGLE_DEFTHEME=FREEAMP_THEME NEWSTONE_THEME ORB_THEME \
+			STONE_THEME ANALOG_THEME BEATS_THEME CLASSIC_THEME \
+			PENGUIN_THEME SHAPED_THEME
+OPTIONS_DEFAULT=	CLASSIC_THEME
 
-.if defined(BATCH)
+FREEAMP_THEME_DESC=	Freeamp theme
+NEWSTONE_THEME_DESC=	Newstone theme
+ORB_THEME_DESC=		Orb theme
+STONE_THEME_DESC=	Stone theme
+ANALOG_THEME_DESC=	Analog theme
+BEATS_THEME_DESC=	Beats theme
+CLASSIC_THEME_DESC=	Classic theme
+PENGUIN_THEME_DESC=	Penguin theme
+SHAPED_THEME_DESC=	Shaped theme
+
 do-configure:
 	@(cd ${WRKSRC}; \
 	  ${RM} -rf default_theme; \
-	  ${LN} -s themes/classic default_theme)
-.endif
+	  ${LN} -s themes/${PORT_OPTIONS:M*_THEME:S/_THEME//:tl} default_theme)
 
 .include <bsd.port.mk>
