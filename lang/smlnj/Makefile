@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smlnj
-PORTVERSION=	110.76
-PORTREVISION=	1
+PORTVERSION=	110.77
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
@@ -12,6 +11,12 @@ EXTRACT_ONLY=	config.tgz
 
 MAINTAINER=	joemann@beefree.free.de
 COMMENT=	Compiler and tools for Standard ML (SML '97)
+
+LICENSE=	SMLNJ
+LICENSE_NAME=	Standard ML of New Jersey License
+LICENSE_TEXT=	The text of the license can be obtained from the following URL:\
+		http://www.smlnj.org/license.html
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 NO_WRKSUBDIR=	yes
 
@@ -65,8 +70,8 @@ AS+=		--32
 MLARCH=		x86
 DISTFILES+=	boot.x86-unix.tgz
 .endif
-DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz heap2asm.tgz ml-burg.tgz \
-		ml-lpt.tgz ml-lex.tgz ml-yacc.tgz nlffi.tgz \
+DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz doc.tgz heap2asm.tgz \
+		ml-burg.tgz ml-lpt.tgz ml-lex.tgz ml-yacc.tgz nlffi.tgz \
 		smlnj-lib.tgz trace-debug-profile.tgz
 
 PLIST_SUB=	MLARCH=${MLARCH}
@@ -99,7 +104,7 @@ MLROOT=		${PREFIX}/${MLROOTRELATIVE}
 MLBINRELATIVE=	${MLROOTRELATIVE}/bin
 MLBIN=		${MLROOT}/bin
 MLLIB=		${MLROOT}/lib
-MLSTDSRCDIRS=	cml heap2asm ml-burg ml-lex ml-lpt ml-yacc nlffi smlnj-lib
+MLSTDSRCDIRS=	cml doc heap2asm ml-burg ml-lex ml-lpt ml-yacc nlffi smlnj-lib
 MLSRCDIRS=	base ${MLSTDSRCDIRS} \
 		ckit eXene pgraph smlnj-c
 MLSRCS=
@@ -239,6 +244,19 @@ do-build:
 	./config/install.sh
 .endif
 
+# If Mac OS X resource files make it into the distribution tarballs,
+# then we have to remove them at several points during the
+# installation process. This is no longer necessary with FreeBSD 10
+# as it uses libarchive 3.x (via bsdtar), but earlier versions
+# don't ignore such resource files and hence WRKDIR and STAGEDIR
+# are full of them. Once FreeBSD 9 will be out of service, all
+# lines in this Makefile can be removed which contain a pattern
+# for the prefix "._" of the resource files. Background information:
+# <https://github.com/libarchive/libarchive/wiki/TarExtendedAttributes#Apple_tar>
+
+post-build:
+	${FIND} ${WRKDIR} -type f -name '\._*' -delete
+
 # Nowadays PLIST has to be computed before installation. We do it in
 # "pre-install" because source extraction happens during "build".
 
@@ -261,9 +279,9 @@ pre-install:
 .if defined(ML_EVERYTHING)
 	@${ECHO} -n '(* Computing package list ...'
 	@${TAR} -tzf ${WRKDIR}/runtime.tgz | \
-	${SED} -E -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/base/\1%' \
-		-e 's%^(.*)/$$%@dirrm\ ${MLROOTRELATIVE}/base/\1%' \
-		> ${MLRUNTIMEPLIST}
+	${GREP} -E -v '(^|/)\._.*' | \
+	${SED} -E -n -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/base/\1%p' \
+	> ${MLRUNTIMEPLIST}
 	@${MLRUNTIMEPATCHES_CMD} | \
 	${SED} ${MLPATCHPATHREGEX} | \
 	${SED} -E -e 's%^(do|extra)-patch-(base/.*)%${MLROOTRELATIVE}/\2%' \
@@ -279,15 +297,12 @@ pre-install:
 	( ${FIND} -s -d ${MLSRCDIRS} \! -type d | \
 	${AWK} '{ print "${MLROOTRELATIVE}/" $$0 }' ) ; \
 	( ${FIND} -s -d ${MLSRCDIRS} -type d -empty | \
-	${AWK} '{ print "@exec mkdir${CALM} -p %D/${MLROOTRELATIVE}/" $$0 }' ) ; \
-	( ${FIND} -s -d ${MLSRCDIRS} -type d | \
-	${AWK} '{ print "@dirrm ${MLROOTRELATIVE}/" $$0 }' ) ) | \
+	${AWK} '{ print "@dir ${MLROOTRELATIVE}/" $$0 }' ) ) | \
 	${EGREP} -v ${MLSRCEXCLUDEREGEX} > ${MLSRCPLIST}
 	@${SED} -e 's/^%%EVERYTHING%%//' ${MLPLISTFILES} | \
-	${GREP} -h -v "^@dirrm" | ${SORT} -u > ${PLIST}
-	@${GREP} -h "^@exec mkdir${CALM}" ${MLPLISTFILES} | ${SORT} -u >> ${PLIST}
+	${GREP} -h -v "^@dir" | ${SORT} -u > ${PLIST}
 	@${SED} -e 's/^%%EVERYTHING%%//' ${MLPLISTFILES} | \
-	${GREP} -h "^@dirrm"  | ${SORT} -r -u >> ${PLIST}
+	${GREP} -h "^@dir" | ${SORT} -r -u >> ${PLIST}
 	@${ECHO} ' done. *)'
 .endif
 # ${PKGINSTALL} contains multiexec-wrapper, which is used to select
@@ -347,9 +362,20 @@ do-install:
 	CFLAGS='${CFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh
 .endif
+	[ ! -d ${STAGEDIR} ] || \
+	${FIND} ${STAGEDIR} -type f -name '\._*' -delete
+	@${ECHO} '(* Installing man pages. *)'
+.for mansect in 1 2 3 4 5 6 7 8 9
+	@[ ! -d ${WRKDIR}/doc/man/man${mansect} ] || \
+	{ cd ${WRKDIR}/doc/man/man${mansect} && ls *.${mansect} | \
+	  ${XARGS} -J % \
+	    ${INSTALL_MAN} % ${STAGEDIR}${MANPREFIX}/man/man${mansect} ; }
+.endfor
+	@${ECHO} '(* Stripping runtime executable: *)'
 	MLARCHOPSYS=`${STAGEDIR}${MLBIN}/.arch-n-opsys` && \
 	( eval $${MLARCHOPSYS} ; \
-	${STRIP_CMD} "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}" )
+	${STRIP_CMD} "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}" \
+	  "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}.so" )
 .if defined(ML_EVERYTHING)
 	@${ECHO} '(* Cleaning base/runtime: *)'
 	cd ${WRKDIR}/base/runtime/objs && ${MAKE_CMD} clean
@@ -368,7 +394,11 @@ post-install:
 .endif
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/smlnj/bin/.run/run.x86-freebsd.so
+	${FIND} ${STAGEDIR} -type f -name '\._*' -delete
+	MLARCHOPSYS=`${STAGEDIR}${MLBIN}/.arch-n-opsys` && \
+	( eval $${MLARCHOPSYS} ; \
+	${STRIP_CMD} "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}" \
+	  "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}.so" )
 
 .ifndef MULTIEXEC_WRAPPER_VERBOSE
 deinstall:

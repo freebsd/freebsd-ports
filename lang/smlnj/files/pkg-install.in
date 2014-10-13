@@ -188,6 +188,23 @@ install_self_to() {
 				say "$myself (version $VERSION) is not newer than $target (version $oldversion)."
 			fi
 		fi
+	elif [ ! -d `dirname $target` ]
+	then
+		if [ -e `dirname $target` ]
+		then
+			die "`dirname $target` is not a directory."
+		else
+			mkdir -p `dirname $target` || die "could not create `dirname $target`"
+		fi
+	fi
+	if [ ! -d `dirname $CONFIG` ]
+	then
+		if [ -e `dirname $CONFIG` ]
+		then
+			die "`dirname $CONFIG` is not a directory."
+		else
+			mkdir -p `dirname $CONFIG` || die "could not create `dirname $CONFIG`"
+		fi
 	fi
 	if sed -e '/^#%%PKG-INSTALL-START%%$/,/^#%%PKG-INSTALL-END%%$/d' \
 	       -e 's?%%SOURCEINFO-PACKAGE%%?'"$pkgname"'?g' \
@@ -217,6 +234,10 @@ deinstall_self_from() {
 	elif rm -f "$CONFIG"
 	then
 		say "$CONFIG removed."
+		if rmdir `dirname $CONFIG`
+		then
+			say "`dirname $CONFIG` removed"
+		fi
 	else
 		warn "failed to remove $CONFIG."
 	fi
@@ -228,6 +249,10 @@ deinstall_self_from() {
 		elif rm -f "$MYSELF_INSTALLED"
 		then
 			say "$MYSELF_INSTALLED removed."
+			if rmdir `dirname $MYSELF_INSTALLED`
+			then
+				say "`dirname $MYSELF_INSTALLED` removed"
+			fi
 		else
 			warn "failed to remove $MYSELF_INSTALLED."
 		fi

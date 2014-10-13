@@ -1,6 +1,6 @@
---- config/_arch-n-opsys.orig	2012-07-28 05:32:38.000000000 +0200
-+++ config/_arch-n-opsys	2013-06-12 21:46:19.925992679 +0200
-@@ -83,6 +83,8 @@
+--- config/_arch-n-opsys.orig	2014-08-22 15:20:03.000000000 +0200
++++ config/_arch-n-opsys	2014-08-23 14:19:47.056122710 +0200
+@@ -85,6 +85,8 @@
      HEAP_OPSYS=bsd
      case `uname -m` in
        *86) ARCH=x86;;

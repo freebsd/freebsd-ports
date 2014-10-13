@@ -1,6 +1,6 @@
---- config/install.sh.orig	2012-03-02 23:57:26.000000000 +0100
-+++ config/install.sh	2014-07-14 20:12:56.000000000 +0200
-@@ -18,6 +18,8 @@
+--- config/install.sh.orig	2014-08-22 15:20:03.000000000 +0200
++++ config/install.sh	2014-08-23 14:19:47.061124086 +0200
+@@ -17,6 +17,8 @@
      nolib=false
  fi
  
@@ -9,7 +9,7 @@
  if [ x${INSTALL_QUIETLY} = xtrue ] ; then
      export CM_VERBOSE
      CM_VERBOSE=false
-@@ -38,6 +40,28 @@
+@@ -37,6 +39,28 @@
      exit 1
  }
  
@@ -38,7 +38,7 @@
  this=$0
  
  
-@@ -97,7 +121,28 @@
+@@ -96,7 +120,28 @@
  # Especially important is CM_PATHCONFIG.
  #
  export CM_PATHCONFIG
@@ -68,7 +68,7 @@
  #
  # the release version that we are installing
  #
-@@ -327,7 +372,12 @@
+@@ -326,7 +371,12 @@
  # the name of the bin files directory
  #
  BOOT_ARCHIVE=boot.$ARCH-unix
@@ -82,7 +82,7 @@
  
  #
  # build the run-time system
-@@ -336,9 +386,15 @@
+@@ -335,9 +385,15 @@
      vsay $this: Run-time system already exists.
  else
      "$CONFIGDIR"/unpack "$ROOT" runtime
@@ -99,7 +99,7 @@
      if [ -x run.$ARCH-$OPSYS ]; then
  	mv run.$ARCH-$OPSYS "$RUNDIR"
  	if [ -f runx.$ARCH-$OPSYS ]; then
-@@ -350,7 +406,7 @@
+@@ -349,7 +405,7 @@
  	if [ -f run.$ARCH-$OPSYS.a ]; then
  	    mv run.$ARCH-$OPSYS.a "$RUNDIR"
  	fi
@@ -108,7 +108,7 @@
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -376,7 +432,7 @@
+@@ -375,7 +431,7 @@
  	complain "$this !!! Unable to re-create heap image (sml.$HEAP_SUFFIX)."
      fi
  else
@@ -117,7 +117,7 @@
  
      fish "$ROOT"/"$BOOT_FILES"/smlnj/basis
  
-@@ -411,7 +467,7 @@
+@@ -410,7 +466,7 @@
  	    cd "$ROOT"/"$BOOT_FILES"
  	    for anchor in * ; do
  		if [ -d $anchor ] ; then
@@ -126,7 +126,7 @@
  		    move $anchor "$LIBDIR"/$anchor
  		fi
  	    done
-@@ -434,6 +490,18 @@
+@@ -433,6 +489,18 @@
  
  cd "$ROOT"
  
@@ -143,8 +143,8 @@
 +done
 +
  #
- # Now do all the rest using the precompiled installer:
- #
+ # Now do all the rest using the precompiled installer
+ # (see base/system/smlnj/installer for details)
 @@ -442,6 +510,12 @@
      export ROOT INSTALLDIR CONFIGDIR BINDIR
      CM_TOLERATE_TOOL_FAILURES=true
