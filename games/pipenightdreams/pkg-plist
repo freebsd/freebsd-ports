@@ -360,22 +360,3 @@ share/pixmaps/pipenightdreams.png
 %%DATADIR%%/levels/7.level
 %%DATADIR%%/levels/8.level
 %%DATADIR%%/levels/9.level
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/images/pipes_wire
-@dirrm %%DATADIR%%/images/pipes_toys
-@dirrm %%DATADIR%%/images/pipes_space/back05
-@dirrm %%DATADIR%%/images/pipes_space/back04
-@dirrm %%DATADIR%%/images/pipes_space/back03
-@dirrm %%DATADIR%%/images/pipes_space/back02
-@dirrm %%DATADIR%%/images/pipes_space/back01
-@dirrm %%DATADIR%%/images/pipes_space
-@dirrm %%DATADIR%%/images/pipes_metal
-@dirrm %%DATADIR%%/images/pipes_cables
-@dirrm %%DATADIR%%/images/flow_light
-@dirrm %%DATADIR%%/images/flow_green
-@dirrm %%DATADIR%%/images/flow_blue
-@dirrm %%DATADIR%%/images/default
-@dirrm %%DATADIR%%/images/arrows_yellow
-@dirrm %%DATADIR%%/images/arrows_grey
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
