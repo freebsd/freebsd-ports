@@ -10,6 +10,3 @@ share/applications/asteroid.desktop
 %%DATADIR%%/sfx/spawn_powerup.wav
 %%DATADIR%%/sfx/spawn_shot.wav
 share/icons/hicolor/scalable/apps/asteroid.svg
-@dirrm %%DATADIR%%/sfx
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%

@@ -10,6 +10,7 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	Modern version of the arcade classic Asteroid
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chazomaticus
