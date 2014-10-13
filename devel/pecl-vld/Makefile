@@ -16,6 +16,7 @@ LICENSE=	BSD
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	56
 
 CONFIGURE_ARGS=	--enable-vld
 
