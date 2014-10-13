@@ -21,6 +21,5 @@ post-extract:
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}; ${PAX} -rw . ${STAGEDIR}${DATADIR})
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
