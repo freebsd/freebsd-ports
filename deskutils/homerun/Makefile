@@ -8,9 +8,8 @@ MASTER_SITES=	http://download.kde.org/unstable/homerun/src/
 MAINTAINER=	yurkis@gmail.com
 COMMENT=	Homerun is a fullscreen launcher with content organized in tabs. 
 
-EXTRACT_SUFX=	.tar.bz2
-USES= cmake
+USES= cmake qmake tar:bzip2
 USE_KDE4 = kdelibs automoc4
-USE_QT4= corelib gui moc_build
+USE_QT4= corelib gui moc_build rcc_build uic_build
 
 .include <bsd.port.mk>

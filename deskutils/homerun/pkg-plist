@@ -1,4 +1,4 @@
-share/config/homerunrc
+bin/homerunviewer
 lib/libhomerun.so.0.0.0
 lib/libhomerun.so.0
 lib/libhomerun.so
@@ -6,11 +6,13 @@ lib/cmake/Homerun/HomerunTargets.cmake
 lib/cmake/Homerun/HomerunTargets-release.cmake
 lib/cmake/Homerun/HomerunConfig.cmake
 lib/cmake/Homerun/HomerunConfigVersion.cmake
-share/kde4/servicetypes/homerun-source.desktop
 lib/kde4/plasma_applet_homerunlauncher.so
-share/kde4/services/plasma-applet-homerunlauncher.desktop
-bin/homerunviewer
-share/kde4/services/homerunviewer.desktop
+include/homerun/abstractsource.h
+include/homerun/actionlist.h
+include/homerun/homerun_export.h
+include/homerun/libhomerun_config.h
+include/homerun/pathmodel.h
+include/homerun/sourceconfigurationwidget.h
 lib/kde4/imports/org/kde/homerun/components/libcomponentsplugin.so
 lib/kde4/imports/org/kde/homerun/components/private/IconLoader.qml
 lib/kde4/imports/org/kde/homerun/components/private/TabGroup.js
@@ -23,6 +25,10 @@ lib/kde4/imports/org/kde/homerun/fixes/libfixesplugin.so
 lib/kde4/imports/org/kde/homerun/fixes/TextField.qml
 lib/kde4/imports/org/kde/homerun/fixes/qmldir
 lib/kde4/imports/org/kde/homerun/fixes/private/TextFieldFocus.qml
+share/config/homerunrc
+share/kde4/services/homerunviewer.desktop
+share/kde4/servicetypes/homerun-source.desktop
+share/kde4/services/plasma-applet-homerunlauncher.desktop
 share/icons/hicolor/22x22/apps/homerun.png
 share/icons/hicolor/128x128/apps/homerun.png
 share/icons/hicolor/32x32/apps/homerun.png
