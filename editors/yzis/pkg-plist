@@ -2,54 +2,20 @@ bin/qyzis
 %%NYZIS%%bin/nyzis
 %%KYZIS%%bin/kyzis
 %%KYZIS%%lib/kde4/yzispart.so
-%%KYZIS%%@dirrmtry lib/kde4
 lib/libyzis.so.0.0.0
 lib/libyzis.so.0
 lib/libyzis.so
 share/applnk/Editors/qyzis.desktop
-@dirrmtry share/applnk/Editors
-@dirrmtry share/applnk
 %%KYZIS%%share/apps/yzispart/yzispart.rc
-%%KYZIS%%@dirrm share/apps/yzispart
-%%KYZIS%%@dirrmtry share/apps
 %%KYZIS%%share/kde4/services/yzispart.desktop
-%%KYZIS%%@dirrmtry share/kde4/services
-%%KYZIS%%@dirrmtry share/kde4
 %%QYZIS%%share/icons/hicolor/128x128/apps/qyzis.png
 %%QYZIS%%share/icons/hicolor/32x32/apps/qyzis.png
 %%QYZIS%%share/icons/hicolor/64x64/apps/qyzis.png
 %%QYZIS%%share/icons/hicolor/16x16/apps/qyzis.png
-%%QYZIS%%@dirrmtry share/icons/hicolor/128x128/apps
-%%QYZIS%%@dirrmtry share/icons/hicolor/128x128
-%%QYZIS%%@dirrmtry share/icons/hicolor/32x32/apps
-%%QYZIS%%@dirrmtry share/icons/hicolor/32x32
-%%QYZIS%%@dirrmtry share/icons/hicolor/64x64/apps
-%%QYZIS%%@dirrmtry share/icons/hicolor/64x64
-%%QYZIS%%@dirrmtry share/icons/hicolor/16x16/apps
-%%QYZIS%%@dirrmtry share/icons/hicolor/16x16
-%%QYZIS%%@dirrmtry share/icons/hicolor
 %%KYZIS%%share/icons/crystalsvg/128x128/apps/l10n/hicolor/qyzis.png
 %%KYZIS%%share/icons/crystalsvg/32x32/apps/l10n/hicolor/qyzis.png
 %%KYZIS%%share/icons/crystalsvg/64x64/apps/l10n/hicolor/qyzis.png
 %%KYZIS%%share/icons/crystalsvg/16x16/apps/l10n/hicolor/qyzis.png
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps/l10n/hicolor
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps/l10n
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/128x128
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps/l10n/hicolor
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps/l10n
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/32x32
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps/l10n/hicolor
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps/l10n
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/64x64
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps/l10n/hicolor
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps/l10n
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps
-%%KYZIS%%@dirrmtry share/icons/crystalsvg/16x16
-%%KYZIS%%@dirrmtry share/icons/crystalsvg
-@dirrmtry share/icons
 share/yzis/syntax/language.dtd
 share/yzis/syntax/syntax.template
 share/yzis/syntax/cpp.xml
@@ -178,12 +144,8 @@ share/yzis/syntax/gap.xml
 share/yzis/syntax/javascript-php.xml
 share/yzis/syntax/css-php.xml
 share/yzis/syntax/html-php.xml
-@dirrm share/yzis/syntax
 share/yzis/scripts/2html.lua
 share/yzis/scripts/clevertab.lua
 share/yzis/scripts/switch.lua
 share/yzis/scripts/indent/cpp.lua
 share/yzis/scripts/indent/python.lua
-@dirrm share/yzis/scripts/indent
-@dirrm share/yzis/scripts
-@dirrm share/yzis

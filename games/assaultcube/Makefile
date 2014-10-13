@@ -11,20 +11,19 @@ DISTNAME=	AssaultCube_v${PORTVERSION}
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Total conversion of the FPS game called Cube
 
-LICENSE_COMB=	multi
 LICENSE=	ACUBE CUBE MIT OTHER
+LICENSE_COMB=	multi
 LICENSE_NAME_ACUBE=	AssaultCube ZLIB-like license with additions
-LICENSE_FILE_ACUBE=	${WRKSRC}/source/README.txt
-LICENSE_PERMS_ACUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_NAME_CUBE=	Cube game engine ZLIB-like license with additions
-LICENSE_FILE_CUBE=	${WRKSRC}/source/README_CUBEENGINE.txt
-LICENSE_PERMS_CUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_NAME_OTHER=	various package licences
+LICENSE_FILE_ACUBE=	${WRKSRC}/source/README.txt
+LICENSE_FILE_CUBE=	${WRKSRC}/source/README_CUBEENGINE.txt
 LICENSE_FILE_OTHER=	${WRKSRC}/docs/package_copyrights.txt
+LICENSE_PERMS_ACUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_CUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
-USE_BZIP2=	yes
-USES=		gmake openal:al
+USES=		gmake openal:al tar:bzip2
 GNU_CONFIGURE=	yes
 ALL_TARGET=	libenet
 WRKSRC=		${WRKDIR}/AssaultCube_v${PORTVERSION}
@@ -46,7 +45,7 @@ MASTER_DESC=	Build master server
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 USES+=		gettext
 USE_GL=		yes
 USE_SDL=	image mixer sdl

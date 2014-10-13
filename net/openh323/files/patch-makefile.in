@@ -1,5 +1,5 @@
---- Makefile.in.orig	2005-08-05 01:31:59.000000000 +0600
-+++ Makefile.in	2007-07-13 16:11:26.000000000 +0600
+--- Makefile.in.orig	2005-08-04 19:31:59 UTC
++++ Makefile.in
 @@ -337,22 +337,14 @@
  install:
  	mkdir -p $(DESTDIR)$(LIBDIR)
@@ -13,7 +13,7 @@
 -		rm -f  $(OH323_FILE).@MAJOR_VERSION@ ; \
 -		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE).@MAJOR_VERSION@ \
 -	)
-+	$(INSTALL) -m 444 lib/$(OH323_FILE).@MAJOR_VERSION@ $(DESTDIR)$(LIBDIR)
++	$(BSD_INSTALL_LIB) lib/$(OH323_FILE).@MAJOR_VERSION@ $(DESTDIR)$(LIBDIR)
  	(cd $(DESTDIR)$(LIBDIR) ; \
  		rm -f  $(OH323_FILE) ; \
 -		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE) \

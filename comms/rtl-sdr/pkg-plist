@@ -122,5 +122,3 @@ libdata/pkgconfig/librtlsdr.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/tuner__fc0013_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tuner__fc2580_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tuner__r82xx_8h_source.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

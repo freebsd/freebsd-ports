@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	byacc
-PORTVERSION=	20141005
+PORTVERSION=	20141006
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 

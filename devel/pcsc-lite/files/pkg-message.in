@@ -1,8 +1,7 @@
 ------------------------------------------------------------------------
 
 PC/SC-Lite has been installed.
-You can fetch drivers from http://www.linuxnet.com/sourcedrivers.html
-or install one of the following ports:
+You need to install a driver for your smartcard reader e.g.
 devel/libccid
 security/ifd-slb_rf60
 
@@ -15,11 +14,11 @@ hotplugging.
 
 attach 100 {
         device-name "ugen[0-9]+";
-        action "/usr/local/sbin/pcscd -H";
+        action "%%PREFIX%%/sbin/pcscd -H";
 };
 
 detach 100 {
         device-name "ugen[0-9]+";
-        action "/usr/local/sbin/pcscd -H";
+        action "%%PREFIX%%/sbin/pcscd -H";
 };
 ------------------------------------------------------------------------

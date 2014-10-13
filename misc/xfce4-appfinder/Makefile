@@ -14,22 +14,20 @@ COMMENT=	Application launcher and finder
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		pathfix pkgconfig gmake
+USES=		gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv garcon libmenu libutil xfconf
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=	gettext
 CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.mk>

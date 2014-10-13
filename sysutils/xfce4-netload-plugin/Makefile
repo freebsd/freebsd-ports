@@ -15,23 +15,21 @@ COMMENT=	Network Load plugin for Xfce4
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	intltool intlhack
 USE_XFCE=	configenv libmenu panel
-USES=		pkgconfig gmake
+USES=		gmake pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+= NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+= NLS="@comment "
 .endif
 
 do-patch:

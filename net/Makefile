@@ -1152,6 +1152,7 @@
     SUBDIR += tcpstat
     SUBDIR += tcptrace
     SUBDIR += tcptraceroute
+    SUBDIR += tcptraceroute-devel
     SUBDIR += tcpview
     SUBDIR += tcpwatch
     SUBDIR += tcpxd

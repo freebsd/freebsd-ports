@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	apngdis
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 DISTVERSIONSUFFIX=-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Deconstructs APNG files into individual frames
 
 LICENSE=	ZLIB
@@ -24,12 +24,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
 STATIC_MAKE_ENV=	STATIC=1
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MSTATIC}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
-.endif
+STATIC_LIB_DEPENDS_OFF=	libpng15.so:${PORTSDIR}/graphics/png
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \

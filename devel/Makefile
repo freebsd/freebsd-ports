@@ -394,6 +394,7 @@
     SUBDIR += elfrc
     SUBDIR += elfsh
     SUBDIR += elftoaout
+    SUBDIR += embb
     SUBDIR += epl.el
     SUBDIR += epm
     SUBDIR += epydoc

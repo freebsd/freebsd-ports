@@ -12,6 +12,7 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	Super Mario Bros 1 clone
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/licence.txt
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

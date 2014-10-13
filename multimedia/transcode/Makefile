@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -15,13 +15,15 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig tar:bzip2 libtool
+USES=		gmake libtool pkgconfig tar:bzip2
+USE_GCC=	any
 WANT_SDL=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oss
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME \
@@ -149,6 +151,6 @@ post-patch:
 
 post-stage:
 	@(cd ${STAGEDIR}${PREFIX} && \
-		${FIND} -s lib/transcode -type f >> ${TMPPLIST})
+		${FIND} -s lib/transcode -type f -or -type l >> ${TMPPLIST})
 
 .include <bsd.port.mk>

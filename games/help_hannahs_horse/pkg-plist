@@ -154,36 +154,3 @@ share/icons/hicolor/64x64/apps/help_hannahs_horse.png
 share/icons/hicolor/72x72/apps/help_hannahs_horse.png
 share/icons/hicolor/96x96/apps/help_hannahs_horse.png
 share/pixmaps/help_hannahs_horse.png
-@dirrm %%DATADIR%%/stop/default
-@dirrm %%DATADIR%%/stop
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/red/flash
-@dirrm %%DATADIR%%/red/default
-@dirrm %%DATADIR%%/red
-@dirrm %%DATADIR%%/pink/flash
-@dirrm %%DATADIR%%/pink/default
-@dirrm %%DATADIR%%/pink
-@dirrm %%DATADIR%%/newanim/pink/default
-@dirrm %%DATADIR%%/newanim/pink
-@dirrm %%DATADIR%%/newanim/blue/default
-@dirrm %%DATADIR%%/newanim/blue
-@dirrm %%DATADIR%%/newanim
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/invis/default
-@dirrm %%DATADIR%%/invis
-@dirrm %%DATADIR%%/invert/default
-@dirrm %%DATADIR%%/invert
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/hannah/invis
-@dirrm %%DATADIR%%/hannah/die
-@dirrm %%DATADIR%%/hannah/default
-@dirrm %%DATADIR%%/hannah
-@dirrm %%DATADIR%%/freeze/default
-@dirrm %%DATADIR%%/freeze
-@dirrm %%DATADIR%%/default
-@dirrm %%DATADIR%%/carrot/default
-@dirrm %%DATADIR%%/carrot
-@dirrm %%DATADIR%%/blue/flash
-@dirrm %%DATADIR%%/blue/default
-@dirrm %%DATADIR%%/blue
-@dirrm %%DATADIR%%

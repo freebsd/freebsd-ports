@@ -1,0 +1,14 @@
+--- src/CMakeLists.txt.orig	2014-10-12 13:00:51 UTC
++++ src/CMakeLists.txt
+@@ -47,10 +47,7 @@
+ 
+ target_link_libraries(kshutdown kdecore kdeui kio ${KDE4_KNOTIFYCONFIG_LIBS} ${KDE4_KUTILS_LIBS})
+ 
+-install(
+-	PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/kshutdown"
+-	DESTINATION bin
+-)
++install(TARGETS kshutdown RUNTIME DESTINATION bin)
+ install(FILES kshutdown.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+ install(FILES kshutdown.notifyrc DESTINATION ${DATA_INSTALL_DIR}/kshutdown)
+ 

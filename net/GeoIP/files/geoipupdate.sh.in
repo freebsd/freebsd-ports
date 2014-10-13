@@ -9,7 +9,7 @@ echo Fetching GeoIP.dat and GeoIPv6.dat...
 _fetch() {
     url="$1"
     out="$2"
-    TEMPDIR="$(mktemp -d /tmp/GeoIPupdate.XXXXXX)"
+    TEMPDIR="$(mktemp -d '%%DATADIR%%/GeoIPupdate.XXXXXX')"
     trap 'rc=$? ; set +e ; rm -rf "'"$TEMPDIR"'" ; exit $rc' 0
     if fetch -o "$TEMPDIR/$out.gz" "$url"; then
         gunzip "$TEMPDIR/$out.gz"

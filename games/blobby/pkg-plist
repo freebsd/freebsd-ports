@@ -11,4 +11,3 @@ bin/blobby-server
 %%DATADIR%%/scripts.zip
 %%DATADIR%%/server.xml
 %%DATADIR%%/sounds.zip
-@dirrm %%DATADIR%%

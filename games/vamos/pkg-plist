@@ -220,18 +220,3 @@ share/pixmaps/vamos.png
 %%DATADIR%%/worlds/default-world.xml
 %%DATADIR%%/worlds/earth.xml
 %%DATADIR%%/worlds/moon.xml
-@dirrm %%DATADIR%%/worlds
-@dirrm %%DATADIR%%/tracks
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/controls
-@dirrm %%DATADIR%%/cars/GT
-@dirrm %%DATADIR%%/cars/F1
-@dirrm %%DATADIR%%/cars
-@dirrm %%DATADIR%%
-@dirrm include/vamos/world
-@dirrm include/vamos/track
-@dirrm include/vamos/media
-@dirrm include/vamos/geometry
-@dirrm include/vamos/body
-@dirrm include/vamos

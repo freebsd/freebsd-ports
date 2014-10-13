@@ -24,7 +24,3 @@ share/pixmaps/xbattle.png
 %%DATADIR%%/xbos/tundra.xbo
 %%DATADIR%%/xbts/castle.xbt
 %%DATADIR%%/xbts/natural.xbt
-@dirrm %%DATADIR%%/xbts
-@dirrm %%DATADIR%%/xbos
-@dirrm %%DATADIR%%/xbas
-@dirrm %%DATADIR%%

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drush
-PORTVERSION=	6.2.0
+PORTVERSION=	6.4.0
 CATEGORIES=	www
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -17,7 +17,7 @@ NO_BUILD=	yes
 GH_ACCOUNT=	${PORTNAME}-ops
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	b1a8edb
+GH_COMMIT=	fd4baef
 USE_GITHUB=	yes
 
 # set php requirements same as drupal itself
@@ -25,12 +25,9 @@ USE_PHP=	gd pcre session mbstring ctype json hash simplexml dom pdo filter
 WANT_PHP_CLI=	yes
 
 PORTDOCS=	*
-
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 do-configure:
 	@${REINPLACE_CMD} -e 's|XXXDATADIRXXX|${STAGEDIR}${DATADIR}|g' ${WRKSRC}/drush
@@ -44,13 +41,9 @@ do-install:
 	${LN} -s ${DATADIR}/drush ${STAGEDIR}${PREFIX}/bin/drush
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-		${MKDIR} ${STAGEDIR}${DOCSDIR}
-		( cd ${WRKSRC} && ${INSTALL_MAN} *.md docs/* ${STAGEDIR}${DOCSDIR} )
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-		( cd ${WRKSRC} && ${INSTALL_MAN} examples/* ${STAGEDIR}${EXAMPLESDIR} )
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	( cd ${WRKSRC} && ${INSTALL_MAN} *.md docs/* ${STAGEDIR}${DOCSDIR} )
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	( cd ${WRKSRC} && ${INSTALL_MAN} examples/* ${STAGEDIR}${EXAMPLESDIR} )
 
 .include <bsd.port.mk>

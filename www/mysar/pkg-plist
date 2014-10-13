@@ -86,6 +86,7 @@
 %%MYSAR%%/inc/smarty/plugins/shared.escape_special_chars.php
 %%MYSAR%%/inc/smarty/plugins/shared.make_timestamp.php
 %%MYSAR%%/log/.keep
+@owner %%WWWOWN%%
 %%MYSAR%%/www-templates/IPSitesSummary.tpl
 %%MYSAR%%/www-templates/IPSummary.tpl
 %%MYSAR%%/www-templates/administration.tpl
@@ -95,6 +96,7 @@
 %%MYSAR%%/www-templates/header.tpl
 %%MYSAR%%/www-templates/index.tpl
 %%MYSAR%%/www-templates/siteusers.tpl
+@owner
 %%MYSAR%%/www-templates.fr_FR/header.tpl
 %%MYSAR%%/www-templates.fr_FR/IPSummary.tpl
 %%MYSAR%%/www-templates.fr_FR/details.tpl
@@ -128,19 +130,5 @@
 %%MYSAR%%/www/images/up-arrow.gif
 %%MYSAR%%/www/index.php
 %%MYSAR%%/www/install/index.php
-@dirrmtry %%MYSAR%%/bin
-@dirrmtry %%MYSAR%%/etc
-@dirrmtry %%MYSAR%%/inc/smarty/internals
-@dirrmtry %%MYSAR%%/inc/smarty/plugins
-@dirrmtry %%MYSAR%%/inc/smarty
-@dirrmtry %%MYSAR%%/inc
-@dirrmtry %%MYSAR%%/smarty-tmp
-@dirrmtry %%MYSAR%%/log
-@dirrmtry %%MYSAR%%/www-templates.ru_RU
-@dirrmtry %%MYSAR%%/www-templates.fr_FR
-@dirrmtry %%MYSAR%%/www-templates.pt_BR
-@dirrmtry %%MYSAR%%/www-templates
-@dirrmtry %%MYSAR%%/www/images
-@dirrmtry %%MYSAR%%/www/install
-@dirrmtry %%MYSAR%%/www
-@dirrmtry %%MYSAR%%
+@dir(%%WWWOWN%%,,) %%MYSAR%%/smarty-tmp
+@dir(%%WWWOWN%%,,) %%MYSAR%%/www-templates

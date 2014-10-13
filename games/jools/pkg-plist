@@ -264,21 +264,3 @@ bin/jools
 %%DATADIR%%/sounds/01/point5.wav
 %%DATADIR%%/sounds/01/point6.wav
 share/pixmaps/jools.png
-@dirrm %%DATADIR%%/sounds/01
-@dirrm %%DATADIR%%/sounds/00
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music/untimed
-@dirrm %%DATADIR%%/music/title
-@dirrm %%DATADIR%%/music/timed
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/images/sphere
-@dirrm %%DATADIR%%/images/sapphire
-@dirrm %%DATADIR%%/images/ruby
-@dirrm %%DATADIR%%/images/orange
-@dirrm %%DATADIR%%/images/emerald
-@dirrm %%DATADIR%%/images/diamond
-@dirrm %%DATADIR%%/images/amethyst
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/jools

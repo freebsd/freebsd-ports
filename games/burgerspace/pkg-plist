@@ -18,5 +18,3 @@ share/pixmaps/burgerspace.png
 %%DATADIR%%/sounds/new-game-starts.wav
 %%DATADIR%%/sounds/treat-appears.wav
 %%DATADIR%%/sounds/treat-disappears.wav
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%

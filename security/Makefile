@@ -1011,6 +1011,7 @@
     SUBDIR += webshag
     SUBDIR += whatweb
     SUBDIR += wipe
+    SUBDIR += wpa_supplicant
     SUBDIR += xca
     SUBDIR += xinetd
     SUBDIR += xml-security

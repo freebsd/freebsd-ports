@@ -1,6 +1,6 @@
---- libinstaller/syslinux.h.orig	2010-10-20 21:25:38.000000000 +0200
-+++ libinstaller/syslinux.h	2010-12-05 14:34:43.252716727 +0100
-@@ -13,17 +13,18 @@
+--- libinstaller/syslinux.h.orig	2013-10-13 19:59:03.000000000 +0200
++++ libinstaller/syslinux.h	2014-09-29 05:30:55.000000000 +0200
+@@ -13,20 +13,21 @@
  #ifndef SYSLINUX_H
  #define SYSLINUX_H
  
@@ -21,8 +21,12 @@
 +extern unsigned int syslinux_ldlinux_len;
  extern const int syslinux_ldlinux_mtime;
  
+-extern unsigned char syslinux_ldlinuxc32[];
++extern unsigned char *syslinux_ldlinuxc32;
+ extern const unsigned int syslinux_ldlinuxc32_len;
+
  #define boot_sector	syslinux_bootsect
-@@ -31,7 +32,7 @@
+@@ -34,7 +35,7 @@
  #define boot_image	syslinux_ldlinux
  #define boot_image_len	syslinux_ldlinux_len
  

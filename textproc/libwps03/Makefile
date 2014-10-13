@@ -15,10 +15,9 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
-CONFIGURE_ARGS=	--disable-werror
+CONFIGURE_ARGS=	--disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-docs
 USES=		compiler:features libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

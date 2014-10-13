@@ -50,7 +50,6 @@ post-patch:
 		${WRKSRC}/configure.ac
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libh323_r.so.1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pwlib/codecs/audio/*.so
 
 .include <bsd.port.post.mk>

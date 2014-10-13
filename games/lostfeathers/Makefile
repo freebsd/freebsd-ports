@@ -18,12 +18,11 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	avbin>=0:${PORTSDIR}/multimedia/avbin
 
-USES=		shebangfix zip
+USES=		python shebangfix zip
 SHEBANG_FILES=	run_game.py
-python_OLD_CMD?=	/usr/bin/env python 
-python_CMD?=		${PYTHON_CMD}
+python_OLD_CMD=	/usr/bin/env python
+python_CMD?=	${PYTHON_CMD}
 USE_GNOME=	pygtk2 librsvg2
-USE_PYTHON=	yes
 
 PORTDOCS=	README.txt
 OPTIONS_DEFINE=	DOCS

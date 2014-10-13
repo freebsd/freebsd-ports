@@ -11,20 +11,3 @@ man/man3/RT::Authen::ExternalAuth::DBI.3.gz
 man/man3/RT::Authen::ExternalAuth::DBI::Cookie.3.gz
 man/man3/RT::Authen::ExternalAuth::LDAP.3.gz
 man/auto/RT/Authen/ExternalAuth/.packlist.gz
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen/ExternalAuth/DBI
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen/ExternalAuth
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT/Authen
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib/RT
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/lib
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Elements
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks/ExternalAuth/autohandler
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks/ExternalAuth/Elements/Header
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks/ExternalAuth/Elements
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks/ExternalAuth
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth
-@dirrm man/auto/RT/Authen/ExternalAuth
-@dirrmtry man/auto/RT/Authen
-@dirrmtry man/auto/RT
-@dirrmtry man/auto

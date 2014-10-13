@@ -1,12 +1,10 @@
 bin/behead
+bin/browser
 bin/gcol
-bin/index
-bin/index.cgi
+bin/mm
 bin/mongoose
-bin/pbrowse
-bin/pbrowse.cgi
+bin/pdas
 bin/pseq
+bin/smp
 bin/tab2vcf
-lib/libplinkseq.so
-lib/libplinkseq.so.0
-lib/libplinkseq.so.0.0.0
+lib/libplinkseq.a

@@ -76,16 +76,11 @@ include/openh323/vblasterlid.h
 include/openh323/vpblid.h
 include/openh323/x224.h
 include/openh323/x880.h
-@dirrm include/openh323
 %%DATADIR%%/openh323u.mak
 %%DATADIR%%/version.h
-@dirrmtry %%DATADIR%%
 lib/pwlib/codecs/audio/g726_audio_pwplugin.so
 lib/pwlib/codecs/audio/gsm0610_audio_pwplugin.so
 lib/pwlib/codecs/audio/ilbc_audio_pwplugin.so
 lib/pwlib/codecs/audio/ima_adpcm_audio_pwplugin.so
 lib/pwlib/codecs/audio/lpc10_audio_pwplugin.so
 lib/pwlib/codecs/audio/speex_audio_pwplugin.so
-@dirrm lib/pwlib/codecs/audio
-@dirrm lib/pwlib/codecs
-@dirrmtry lib/pwlib

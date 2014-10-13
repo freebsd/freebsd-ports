@@ -21,9 +21,4 @@ CONFIGURE_ARGS=	--with-sidplay-includes=${LOCALBASE}/include \
 		--with-sidplay-library=${LOCALBASE}/lib
 PLIST_FILES=	bin/sid2wav bin/sidcon bin/sidplay
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sidplay \
-		${STAGEDIR}${PREFIX}/bin/sid2wav \
-		${STAGEDIR}${PREFIX}/bin/sidcon
-
 .include <bsd.port.mk>

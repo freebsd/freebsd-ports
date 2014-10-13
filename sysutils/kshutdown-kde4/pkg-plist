@@ -43,7 +43,3 @@ share/locale/sr@latin/LC_MESSAGES/kshutdown.mo
 share/locale/sv/LC_MESSAGES/kshutdown.mo
 share/locale/tr/LC_MESSAGES/kshutdown.mo
 share/locale/zh_CN/LC_MESSAGES/kshutdown.mo
-@dirrm share/apps/kshutdown/extras/system
-@dirrm share/apps/kshutdown/extras/multimedia
-@dirrm share/apps/kshutdown/extras
-@dirrm share/apps/kshutdown

@@ -10,18 +10,17 @@ MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	Advanced genealogical system
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		bison iconv
+USES=		bison iconv tar:bzip2
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:

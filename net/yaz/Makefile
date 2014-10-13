@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaz
-PORTVERSION=	5.4.2
+PORTVERSION=	5.4.3
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -41,7 +41,7 @@ REDIS_LDFLAGS=		-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} 's|tclsh |tclsh8.6 |' ${WRKSRC}/configure
-	
+
 post-configure:
 	@${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
 		${WRKSRC}/doc/Makefile

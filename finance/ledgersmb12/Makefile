@@ -3,6 +3,7 @@
 
 PORTNAME=	ledgersmb
 PORTVERSION=	1.2.17
+PORTREVISION=	1
 CATEGORIES=	finance perl5
 MASTER_SITES=	SF/ledger-smb/${PORTNAME}/${PORTVERSION}
 
@@ -20,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run build patch
-
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
@@ -35,7 +36,6 @@ post-patch:
 do-install:
 	@${CP} -R ${WRKSRC} ${STAGEDIR}${PREFIX}
 	@cd ${STAGEDIR}${PREFIX}/${PORTNAME} ; \
-		${CHOWN} -hR ${WWWOWN}:${WWWGRP} * ; \
 		${CHMOD} 711 templates css spool
 	@${INSTALL_DATA} ${WRKDIR}/ledger-smb-httpd.conf ${STAGEDIR}${PREFIX}/etc/
 

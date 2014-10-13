@@ -16,4 +16,3 @@ lib/libhinversi.so.0.0.0
 libdata/pkgconfig/libhinversi.pc
 %%NLS%%share/locale/de/LC_MESSAGES/hinversi.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/hinversi.mo
-@dirrm include/hinversi

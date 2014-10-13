@@ -1,5 +1,12 @@
 %%DATADIR%%/vtkDomainsChemistry/COPYING
 %%DATADIR%%/vtkDomainsChemistry/elements.xml
+%%EXAMPLES%%%%NO_SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.a
+%%EXAMPLES%%%%SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.so
+%%EXAMPLES%%%%SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.so.1
+%%EXAMPLES%%%%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkLocalExampleHierarchy.txt
+%%EXAMPLES%%include/vtk-%%VER2%%/vtkLocalExample.h
+%%EXAMPLES%%include/vtk-%%VER2%%/vtkLocalExampleModule.h
+%%EXAMPLES%%lib/cmake/vtk-%%VER2%%/Modules/vtkLocalExample.cmake
 %%JAVA%%include/vtk-%%VER2%%/vtkJavaUtil.h
 %%JAVA%%include/vtk-%%VER2%%/vtkWrappingJavaModule.h
 %%JAVA%%lib/cmake/vtk-%%VER2%%/Modules/vtkWrappingJava.cmake
@@ -33,6 +40,7 @@
 %%MPI%%lib/cmake/vtk-%%VER2%%/Modules/vtkIOMPIParallel.cmake
 %%MPI%%lib/cmake/vtk-%%VER2%%/Modules/vtkIOParallelNetCDF.cmake
 %%MPI%%lib/cmake/vtk-%%VER2%%/Modules/vtkParallelMPI.cmake
+%%NO_SHARED%%%%PYTHON%%%%QT%%lib/vtk-%%VER2%%/libvtkRenderingQtPython-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkChartsCorePython-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkChartsCorePython27D-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkCommonColorPython-%%VER2%%.a
@@ -169,6 +177,9 @@
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkInteractionWidgetsPython27D-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkParallelCorePython-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkParallelCorePython27D-%%VER2%%.a
+%%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkPythonInterpreter-%%VER2%%.a
+%%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkPythonInterpreterPython-%%VER2%%.a
+%%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkPythonInterpreterPython27D-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingAnnotationPython-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingAnnotationPython27D-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingContext2DPython-%%VER2%%.a
@@ -189,6 +200,9 @@
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingLODPython27D-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingLabelPython-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingLabelPython27D-%%VER2%%.a
+%%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingMatplotlib-%%VER2%%.a
+%%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingMatplotlibPython-%%VER2%%.a
+%%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingMatplotlibPython27D-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingOpenGLPython-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingOpenGLPython27D-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingVolumeAMRPython-%%VER2%%.a
@@ -208,6 +222,7 @@
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkViewsInfovisPython-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkViewsInfovisPython27D-%%VER2%%.a
 %%NO_SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkWrappingPython27Core-%%VER2%%.a
+%%NO_SHARED%%%%QT%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingQtPython27D-%%VER2%%.a
 %%NO_SHARED%%%%QT%%lib/vtk-%%VER2%%/libvtkGUISupportQt-%%VER2%%.a
 %%NO_SHARED%%%%QT%%lib/vtk-%%VER2%%/libvtkGUISupportQtOpenGL-%%VER2%%.a
 %%NO_SHARED%%%%QT%%lib/vtk-%%VER2%%/libvtkGUISupportQtSQL-%%VER2%%.a
@@ -282,7 +297,6 @@
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkInteractionImage-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkInteractionStyle-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkInteractionWidgets-%%VER2%%.a
-%%NO_SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx-%%VER2%%.a
 %%NO_SHARED%%lib/vtk-%%VER2%%/libvtkParallelCore-%%VER2%%.a
@@ -508,6 +522,8 @@
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkInteractionWidgets.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkParallelCore.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkParallelCore.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkPythonInterpreter.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkPythonInterpreter.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingAnnotation.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingAnnotation.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingContext2D.py
@@ -528,6 +544,8 @@
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingLOD.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingLabel.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingLabel.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingMatplotlib.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingMatplotlib.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingOpenGL.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingOpenGL.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingVolume.py
@@ -552,20 +570,33 @@
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/wx/wxVTKRenderWindow.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/wx/wxVTKRenderWindowInteractor.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/wx/wxVTKRenderWindowInteractor.pyc
+%%PYTHON%%%%QT%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingQt.py
+%%PYTHON%%%%QT%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingQt.pyc
 %%PYTHON%%bin/vtkpython
 %%PYTHON%%include/vtk-%%VER2%%/PyVTKClass.h
 %%PYTHON%%include/vtk-%%VER2%%/PyVTKMutableObject.h
 %%PYTHON%%include/vtk-%%VER2%%/PyVTKObject.h
 %%PYTHON%%include/vtk-%%VER2%%/PyVTKSpecialObject.h
 %%PYTHON%%include/vtk-%%VER2%%/PyVTKTemplate.h
+%%PYTHON%%include/vtk-%%VER2%%/vtkMatplotlibMathTextUtilities.h
 %%PYTHON%%include/vtk-%%VER2%%/vtkPython.h
 %%PYTHON%%include/vtk-%%VER2%%/vtkPythonArgs.h
 %%PYTHON%%include/vtk-%%VER2%%/vtkPythonCommand.h
 %%PYTHON%%include/vtk-%%VER2%%/vtkPythonConfigure.h
+%%PYTHON%%include/vtk-%%VER2%%/vtkPythonInteractiveInterpreter.h
+%%PYTHON%%include/vtk-%%VER2%%/vtkPythonInterpreter.h
+%%PYTHON%%include/vtk-%%VER2%%/vtkPythonInterpreterModule.h
 %%PYTHON%%include/vtk-%%VER2%%/vtkPythonOverload.h
+%%PYTHON%%include/vtk-%%VER2%%/vtkPythonStdStreamCaptureHelper.h
 %%PYTHON%%include/vtk-%%VER2%%/vtkPythonUtil.h
+%%PYTHON%%include/vtk-%%VER2%%/vtkRenderingMatplotlibModule.h
+%%PYTHON%%include/vtk-%%VER2%%/vtkRenderingMatplotlibObjectFactory.h
 %%PYTHON%%include/vtk-%%VER2%%/vtkWrappingPythonCoreModule.h
 %%PYTHON%%lib/cmake/vtk-%%VER2%%/Modules/vtkPython.cmake
+%%PYTHON%%lib/cmake/vtk-%%VER2%%/Modules/vtkPythonInterpreter.cmake
+%%PYTHON%%lib/cmake/vtk-%%VER2%%/Modules/vtkPythonInterpreterHierarchy.txt
+%%PYTHON%%lib/cmake/vtk-%%VER2%%/Modules/vtkRenderingMatplotlib.cmake
+%%PYTHON%%lib/cmake/vtk-%%VER2%%/Modules/vtkRenderingMatplotlibHierarchy.txt
 %%PYTHON%%lib/cmake/vtk-%%VER2%%/Modules/vtkWrappingPythonCore.cmake
 %%QT%%include/vtk-%%VER2%%/QFilterTreeProxyModel.h
 %%QT%%include/vtk-%%VER2%%/QVTKApplication.h
@@ -791,6 +822,7 @@
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkInteractionStylePython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkInteractionWidgetsPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkParallelCorePython.so
+%%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkPythonInterpreterPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingAnnotationPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingContext2DPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingCorePython.so
@@ -801,6 +833,7 @@
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingLICPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingLODPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingLabelPython.so
+%%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingMatplotlibPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingOpenGLPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingVolumeAMRPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingVolumeOpenGLPython.so
@@ -810,6 +843,7 @@
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkViewsCorePython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkViewsGeovisPython.so
 %%SHARED%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/vtkViewsInfovisPython.so
+%%SHARED%%%%PYTHON%%%%QT%%%%PYTHON_SITELIBDIR%%/vtk/vtkRenderingQtPython.so
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkChartsCorePython27D-%%VER2%%.so
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkChartsCorePython27D-%%VER2%%.so.1
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkCommonColorPython27D-%%VER2%%.so
@@ -946,6 +980,10 @@
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkInteractionWidgetsPython27D-%%VER2%%.so.1
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkParallelCorePython27D-%%VER2%%.so
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkParallelCorePython27D-%%VER2%%.so.1
+%%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkPythonInterpreter-%%VER2%%.so
+%%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkPythonInterpreter-%%VER2%%.so.1
+%%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkPythonInterpreterPython27D-%%VER2%%.so
+%%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkPythonInterpreterPython27D-%%VER2%%.so.1
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingAnnotationPython27D-%%VER2%%.so
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingAnnotationPython27D-%%VER2%%.so.1
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingContext2DPython27D-%%VER2%%.so
@@ -966,6 +1004,10 @@
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingLODPython27D-%%VER2%%.so.1
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingLabelPython27D-%%VER2%%.so
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingLabelPython27D-%%VER2%%.so.1
+%%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingMatplotlib-%%VER2%%.so
+%%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingMatplotlib-%%VER2%%.so.1
+%%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingMatplotlibPython27D-%%VER2%%.so
+%%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingMatplotlibPython27D-%%VER2%%.so.1
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingOpenGLPython27D-%%VER2%%.so
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingOpenGLPython27D-%%VER2%%.so.1
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingVolumeAMRPython27D-%%VER2%%.so
@@ -986,6 +1028,8 @@
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkViewsInfovisPython27D-%%VER2%%.so.1
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkWrappingPython27Core-%%VER2%%.so
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkWrappingPython27Core-%%VER2%%.so.1
+%%SHARED%%%%QT%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingQtPython27D-%%VER2%%.so
+%%SHARED%%%%QT%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingQtPython27D-%%VER2%%.so.1
 %%SHARED%%%%QT%%lib/vtk-%%VER2%%/libvtkGUISupportQt-%%VER2%%.so
 %%SHARED%%%%QT%%lib/vtk-%%VER2%%/libvtkGUISupportQt-%%VER2%%.so.1
 %%SHARED%%%%QT%%lib/vtk-%%VER2%%/libvtkGUISupportQtOpenGL-%%VER2%%.so
@@ -1326,8 +1370,6 @@
 %%SHARED%%lib/vtk-%%VER2%%/libvtkInteractionStyle-%%VER2%%.so.1
 %%SHARED%%lib/vtk-%%VER2%%/libvtkInteractionWidgets-%%VER2%%.so
 %%SHARED%%lib/vtk-%%VER2%%/libvtkInteractionWidgets-%%VER2%%.so.1
-%%SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.so
-%%SHARED%%lib/vtk-%%VER2%%/libvtkLocalExample-%%VER2%%.so.1
 %%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF-%%VER2%%.so
 %%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF-%%VER2%%.so.1
 %%SHARED%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx-%%VER2%%.so
@@ -1610,7 +1652,6 @@
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionImageHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionStyleHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionWidgetsHierarchy.txt
-%%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkLocalExampleHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkParallelCoreHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkRenderingAnnotationHierarchy.txt
 %%WRAP%%lib/cmake/vtk-%%VER2%%/Modules/vtkRenderingContext2DHierarchy.txt
@@ -2752,8 +2793,6 @@ include/vtk-%%VER2%%/vtkLinearSubdivisionFilter.h
 include/vtk-%%VER2%%/vtkLinearTransform.h
 include/vtk-%%VER2%%/vtkLinesPainter.h
 include/vtk-%%VER2%%/vtkLinkEdgels.h
-include/vtk-%%VER2%%/vtkLocalExample.h
-include/vtk-%%VER2%%/vtkLocalExampleModule.h
 include/vtk-%%VER2%%/vtkLocator.h
 include/vtk-%%VER2%%/vtkLogLookupTable.h
 include/vtk-%%VER2%%/vtkLogoRepresentation.h
@@ -4140,7 +4179,6 @@ lib/cmake/vtk-%%VER2%%/Modules/vtkInfovisLayout.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionImage.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionStyle.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkInteractionWidgets.cmake
-lib/cmake/vtk-%%VER2%%/Modules/vtkLocalExample.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkMetaIO.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkParallelCore.cmake
 lib/cmake/vtk-%%VER2%%/Modules/vtkParseOGLExt.cmake

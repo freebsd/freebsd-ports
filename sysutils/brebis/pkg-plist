@@ -88,12 +88,3 @@ man/man1/brebis.1.gz
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/top_level.txt
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
-@dirrmtry %%PYTHON_SITELIBDIR%%/brebis/generatelist/__pycache__
-@dirrmtry %%PYTHON_SITELIBDIR%%/brebis/generatelist
-@dirrmtry %%PYTHON_SITELIBDIR%%/brebis/checkbackups/__pycache__
-@dirrmtry %%PYTHON_SITELIBDIR%%/brebis/checkbackups
-@dirrmtry %%PYTHON_SITELIBDIR%%/brebis/__pycache__
-@dirrmtry %%PYTHON_SITELIBDIR%%/brebis
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

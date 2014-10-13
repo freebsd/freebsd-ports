@@ -29,4 +29,3 @@ share/applications/awale.desktop
 %%DATADIR%%/sp.gif
 %%DATADIR%%/uk.gif
 %%DATADIR%%/xawale.tcl
-@dirrm %%DATADIR%%

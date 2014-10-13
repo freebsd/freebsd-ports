@@ -11,4 +11,3 @@ lib/libdvdnavmini.so.4
 lib/libdvdnavmini.so.4.2.1
 libdata/pkgconfig/dvdnav.pc
 libdata/pkgconfig/dvdnavmini.pc
-@dirrm include/dvdnav

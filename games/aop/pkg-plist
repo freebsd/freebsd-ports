@@ -12,4 +12,3 @@ bin/aop
 %%DATADIR%%/aop-level-11.txt
 share/applications/aop.desktop
 share/pixmaps/aop.png
-@dirrm %%DATADIR%%

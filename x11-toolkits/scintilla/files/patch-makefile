@@ -1,11 +1,11 @@
---- ./makefile.orig	2014-07-25 06:59:40.000000000 -0400
-+++ ./makefile	2014-08-07 08:31:47.000000000 -0400
+--- makefile.orig	2014-08-09 23:52:02 UTC
++++ makefile
 @@ -7,14 +7,6 @@
  # Also works with ming32-make on Windows.
  
  .SUFFIXES: .cxx .c .o .h .a
 -ifdef CLANG
--CXX = clang++
+-CXX = clang++ -Wno-deprecated-register
 -CC = clang
 -# Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
 -# thread also need to create Position Independent Executable -> search online documentation
@@ -49,8 +49,8 @@
  
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
-@@ -93,9 +85,11 @@
- 	ScintillaBase.o ContractionState.o Editor.o ExternalLexer.o PropSetSimple.o PlatGTK.o \
+@@ -94,9 +86,11 @@
+ 	PropSetSimple.o PlatGTK.o \
  	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o CharacterCategory.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
 -	$(MARSHALLER) $(LEXOBJS)

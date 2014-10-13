@@ -304,36 +304,3 @@ include/simgear/version.h
 include/simgear/xml/easyxml.hxx
 lib/libSimGearCore.a
 lib/libSimGearScene.a
-@dirrm include/simgear/xml
-@dirrm include/simgear/timing
-@dirrm include/simgear/threads
-@dirrm include/simgear/structure
-@dirrm include/simgear/sound
-@dirrm include/simgear/serial
-@dirrm include/simgear/screen
-@dirrm include/simgear/scene/util
-@dirrm include/simgear/scene/tsync
-@dirrm include/simgear/scene/tgdb
-@dirrm include/simgear/scene/sky
-@dirrm include/simgear/scene/model
-@dirrm include/simgear/scene/material
-@dirrm include/simgear/scene
-@dirrm include/simgear/props
-@dirrm include/simgear/package
-@dirrm include/simgear/nasal/cppbind/detail
-@dirrm include/simgear/nasal/cppbind
-@dirrm include/simgear/nasal
-@dirrm include/simgear/misc
-@dirrm include/simgear/math
-@dirrm include/simgear/magvar
-@dirrm include/simgear/io
-@dirrm include/simgear/ephemeris
-@dirrm include/simgear/environment
-@dirrm include/simgear/debug
-@dirrm include/simgear/canvas/elements/detail
-@dirrm include/simgear/canvas/elements
-@dirrm include/simgear/canvas/ShivaVG
-@dirrm include/simgear/canvas
-@dirrm include/simgear/bvh
-@dirrm include/simgear/bucket
-@dirrm include/simgear

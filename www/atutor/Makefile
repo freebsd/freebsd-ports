@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	atutor
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/ATutor%202/
 DISTNAME=	ATutor-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source Web-based Learning Content Management System (LCMS)
+
+LICENSE=	GPLv2
 
 USE_PHP=	session mbstring zlib mysql
 WRKSRC=		${WRKDIR}/ATutor

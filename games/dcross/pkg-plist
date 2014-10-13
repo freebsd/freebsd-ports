@@ -76,10 +76,3 @@ share/icons/hicolor/64x64/apps/dcross.png
 share/icons/hicolor/72x72/apps/dcross.png
 share/icons/hicolor/96x96/apps/dcross.png
 share/pixmaps/dcross.png
-@dirrm %%DATADIR%%/sound/music
-@dirrm %%DATADIR%%/sound/effects
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	miniupnpc
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
@@ -16,7 +16,7 @@ HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_SCRIPT=	updateminiupnpcstrings.sh
-MAKE_ENV+=	INSTALLPREFIX=${STAGEDIR}${PREFIX}
+MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
@@ -26,6 +26,10 @@ CFLAGS+=	-DDEBUG
 
 .if ${SLAVE_PORT} == no
 USE_RC_SUBR=	miniupnpc
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/upnpc \
+		${STAGEDIR}${PREFIX}/lib/libminiupnpc.so.10
 .endif
 
 .include <bsd.port.post.mk>

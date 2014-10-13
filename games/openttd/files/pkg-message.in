@@ -20,7 +20,7 @@
     installed from corresponding `games/opengfx', `games/opensfx', and
    `games/openmsx' ports.
 
-    If you are using a non-latin language, you may see lots of `?'s on
+    If you are using a non-Latin language, you may see lots of `?'s on
     the screen.  Please open your configuration file and add desired
     fonts (file name with full path).  Bold fonts might look better:
 

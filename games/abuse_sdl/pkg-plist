@@ -548,36 +548,3 @@ man/man6/abuse.6.gz
 %%DATADIR%%/sfx/zap2.wav
 %%DATADIR%%/sfx/zap3.wav
 share/pixmaps/abuse.png
-@dirrm %%DATADIR%%/sfx/voice
-@dirrm %%DATADIR%%/sfx
-@dirrm %%DATADIR%%/netlevel
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/lisp
-@dirrm %%DATADIR%%/levels/mac
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/art/tints/guns
-@dirrm %%DATADIR%%/art/tints/cop
-@dirrm %%DATADIR%%/art/tints/ant
-@dirrm %%DATADIR%%/art/tints
-@dirrm %%DATADIR%%/art/fore
-@dirrm %%DATADIR%%/art/chars
-@dirrm %%DATADIR%%/art/back
-@dirrm %%DATADIR%%/art
-@dirrm %%DATADIR%%/addon/twist/sfx
-@dirrm %%DATADIR%%/addon/twist/lisp
-@dirrm %%DATADIR%%/addon/twist/levels
-@dirrm %%DATADIR%%/addon/twist/art
-@dirrm %%DATADIR%%/addon/twist
-@dirrm %%DATADIR%%/addon/pong/levels
-@dirrm %%DATADIR%%/addon/pong
-@dirrm %%DATADIR%%/addon/newart
-@dirrm %%DATADIR%%/addon/leon/sfx
-@dirrm %%DATADIR%%/addon/leon/lisp
-@dirrm %%DATADIR%%/addon/leon
-@dirrm %%DATADIR%%/addon/example
-@dirrm %%DATADIR%%/addon/deathmat
-@dirrm %%DATADIR%%/addon/claudio
-@dirrm %%DATADIR%%/addon/bong
-@dirrm %%DATADIR%%/addon/aliens
-@dirrm %%DATADIR%%/addon
-@dirrm %%DATADIR%%

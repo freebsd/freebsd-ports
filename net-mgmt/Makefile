@@ -32,7 +32,6 @@
     SUBDIR += check_logfiles
     SUBDIR += check_multi
     SUBDIR += check_mysql_health
-    SUBDIR += check_snmp_pkgvuln
     SUBDIR += chillispot
     SUBDIR += choparp
     SUBDIR += cidr
@@ -266,6 +265,7 @@
     SUBDIR += qkismet
     SUBDIR += rackmonkey
     SUBDIR += rancid
+    SUBDIR += rancid3
     SUBDIR += rate
     SUBDIR += rcpd
     SUBDIR += remarp

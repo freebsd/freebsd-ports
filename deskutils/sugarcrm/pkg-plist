@@ -1,5 +1,6 @@
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/HandleAjaxCall.php
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/LICENSE.txt
 %%WWWDIR%%/ModuleInstall/ModuleInstaller.php
 %%WWWDIR%%/ModuleInstall/ModuleScanner.php

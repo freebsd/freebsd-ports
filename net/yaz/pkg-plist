@@ -172,8 +172,3 @@ share/aclocal/yaz.m4
 %%DATADIR%%/z39.50/univres.asn
 %%DATADIR%%/z39.50/z.tcl
 %%DATADIR%%/z39.50/z3950v3.asn
-@dirrm %%DATADIR%%/z39.50
-@dirrm %%DATADIR%%/ill
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%
-@dirrm include/yaz

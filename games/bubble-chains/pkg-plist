@@ -69,14 +69,3 @@ bin/bubble-chains
 %%DATADIR%%/data/tools/twins.png
 share/pixmaps/bubble-chains.ico
 share/pixmaps/bubble-chains.png
-@dirrm %%DATADIR%%/data/tools
-@dirrm %%DATADIR%%/data/sounds
-@dirrm %%DATADIR%%/data/schemes/default
-@dirrm %%DATADIR%%/data/schemes
-@dirrm %%DATADIR%%/data/music
-@dirrm %%DATADIR%%/data/levels
-@dirrm %%DATADIR%%/data/lang
-@dirrm %%DATADIR%%/data/help
-@dirrm %%DATADIR%%/data/bonus
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

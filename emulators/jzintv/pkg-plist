@@ -2,8 +2,6 @@ bin/jzintv
 %%DATADIR%%/rom/emu_ver.rom
 %%DATADIR%%/rom/event_diag.rom
 %%DATADIR%%/rom/joy_diag.rom
-@dirrm %%DATADIR%%/rom
-@dirrm %%DATADIR%%
 %%TOOLS%%bin/jzintv-as1600
 %%TOOLS%%bin/jzintv-cgc_update
 %%TOOLS%%bin/jzintv-crc32
@@ -93,17 +91,6 @@ bin/jzintv
 %%PORTDOCS%%%%DOCSDIR%%/doc/utilities/test_hcif.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/utilities/tohex.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/utilities/dasm1600.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/voice
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/utilities
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/tech/thumb
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/tech/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/tech/fig
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/tech
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/rom_fmt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/programming
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/color
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/GOOD_ROM_NAMES.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/terminal/terminal.asm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/terminal/ansi.asm
@@ -313,40 +300,3 @@ bin/jzintv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/ivoice.asm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/ic_banksw.asm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/colorsq.asm
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/world
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/terminal
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/task
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tank
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tagalong2v
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tagalong2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tagalong
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/synth
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/syn_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sky
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mob_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mem_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mazedemo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macro
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/life
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/library/al2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/library
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kbd_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hello
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/handdemo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gram_scroll2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gram_scroll
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/geese
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fileio
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ecscable
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ecs_kbd
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csumexec
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/counttap
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cc3serial
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bncpix
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bankworld
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/banktest
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bankdemo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/balls2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/balls1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/4-tris
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

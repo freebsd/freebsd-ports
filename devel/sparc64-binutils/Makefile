@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 COMMENT=	GNU binutils for sparc64 cross-development
 PKGNAMEPREFIX=	sparc64-
 PLIST=	${.CURDIR}/pkg-plist
 
-MASTERDIR=	${.CURDIR}/../binutils/
+MASTERDIR=	${.CURDIR}/../binutils
 
 .include "${MASTERDIR}/Makefile"

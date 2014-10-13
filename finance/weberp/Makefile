@@ -2,32 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	weberp
-PORTVERSION=	4.08.4
+PORTVERSION=	4.11.4
 CATEGORIES=	finance www
 MASTER_SITES=	SF/web-erp/
-DISTNAME=	webERP${PORTVERSION}
+DISTNAME=	webERP_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-Source Web-Based ERP System
+
+LICENSE=	GPLv2
 
 PORTSCOUT=	skipv:3.12
 
 USES=		gettext zip
 USE_PHP=	mysql gettext
-WRKSRC=		${WRKDIR}/webERP${PORTVERSION}
+WRKSRC=		${WRKDIR}/webERP
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
+PLIST=		${WRKDIR}/plist
+ERPDIR=		www/weberp
+
+pre-install:
+	@${ECHO_CMD} -e '@owner ${WWWOWN}\n@group ${WWWGRP}' > ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${ERPDIR}?g" >> ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${ERPDIR}?g" >> ${PLIST}
+	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${PLIST}
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
-
-post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
-		>> ${TMPPLIST}
 
 .include <bsd.port.mk>

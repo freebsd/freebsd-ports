@@ -12,12 +12,12 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (main library)
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig iconv
+USES=		iconv pathfix pkgconfig tar:bzip2
 USE_EFL=	eina libtool_hack
 USE_LDCONFIG=	yes
 

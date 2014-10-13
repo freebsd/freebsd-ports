@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.20.3
-PORTREVISION=	1
+PORTVERSION=	0.22.1
 CATEGORIES=	security devel
 MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
 
@@ -17,9 +16,9 @@ LIB_DEPENDS=	libtasn1.so:${PORTSDIR}/security/libtasn1 \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-debug=no \
-		--with-trust-paths=${LOCALBASE}/share/certs/ca-root-nss.crt \
-		ac_cv_func_pthread_mutexattr_init=no
+		--with-trust-paths=${LOCALBASE}/share/certs/ca-root-nss.crt
 MAKE_ENV=	exampledir=${STAGEDIR}${EXAMPLESDIR}
+INSTALL_TARGET=	install-strip
 
 USES=		gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -27,6 +26,6 @@ USE_LDCONFIG=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e \
 	's|exampledir = $$(p11_system_config)|exampledir = ${EXAMPLESDIR}|' \
-	${WRKSRC}/${PORTNAME}/Makefile.in
+	${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

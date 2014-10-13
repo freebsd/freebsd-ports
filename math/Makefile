@@ -220,6 +220,7 @@
     SUBDIR += libneural
     SUBDIR += libocas
     SUBDIR += liborigin
+    SUBDIR += libproj4
     SUBDIR += libqalculate
     SUBDIR += libranlip
     SUBDIR += libtommath
@@ -260,6 +261,7 @@
     SUBDIR += ndiff
     SUBDIR += newmat
     SUBDIR += ngraph
+    SUBDIR += nlopt
     SUBDIR += ntl
     SUBDIR += numdiff
     SUBDIR += nyh-hoc

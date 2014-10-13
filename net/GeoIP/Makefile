@@ -3,7 +3,7 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net geography
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -15,9 +15,7 @@ GH_PROJECT=	geoip-api-c
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	2e9100a
 
-USES=		libtool pathfix
-USE_AUTOTOOLS=	aclocal automake libtoolize autoconf
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf libtool pathfix
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 USE_LDCONFIG=	yes

@@ -157,6 +157,7 @@ spread:*:282:282::0:0:Spread user:/nonexistent:/usr/sbin/nologin
 devmon:*:283:283::0:0:devmon monitor:/nonexistent:/usr/sbin/nologin
 vnstat:*:284:284::0:0:vnStat Network Monitor:/nonexistent:/usr/sbin/nologin
 exaddos:*:285:285::0:0:exaddos daemon user:/nonexistent:/usr/sbin/nologin
+rancid:*:286:286::0:0:RANCID daemon user:/usr/local/var/rancid:/bin/sh
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin

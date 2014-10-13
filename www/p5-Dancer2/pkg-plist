@@ -69,6 +69,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Logger/Note.pm
 %%SITE_PERL%%/Dancer2/Logger/Null.pm
 %%SITE_PERL%%/Dancer2/Manual.pod
+%%SITE_PERL%%/Dancer2/Manual/Migration.pod
 %%SITE_PERL%%/Dancer2/Plugin.pm
 %%SITE_PERL%%/Dancer2/Plugin/Ajax.pm
 %%SITE_PERL%%/Dancer2/Plugins.pod
@@ -132,6 +133,7 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Logger::Note.3.gz
 %%PERL5_MAN3%%/Dancer2::Logger::Null.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual.3.gz
+%%PERL5_MAN3%%/Dancer2::Manual::Migration.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugin.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugin::Ajax.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugins.3.gz
@@ -148,34 +150,35 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Test.3.gz
 %%PERL5_MAN3%%/Dancer2::Tutorial.3.gz
 man/man1/dancer2.1.gz
-@dirrm %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory
-@dirrm %%SITE_PERL%%/Dancer2/Core/Role
-@dirrm %%SITE_PERL%%/Dancer2/Core/Request
-@dirrm %%SITE_PERL%%/Dancer2/Core
-@dirrm %%SITE_PERL%%/Dancer2/CLI/Command
-@dirrm %%SITE_PERL%%/Dancer2/CLI
-@dirrm %%SITE_PERL%%/Dancer2/Handler
-@dirrm %%SITE_PERL%%/Dancer2/Logger/Capture
-@dirrm %%SITE_PERL%%/Dancer2/Logger
-@dirrm %%SITE_PERL%%/Dancer2/Plugin
-@dirrm %%SITE_PERL%%/Dancer2/Serializer
-@dirrm %%SITE_PERL%%/Dancer2/Session
-@dirrm %%SITE_PERL%%/Dancer2/Template/Implementation
-@dirrm %%SITE_PERL%%/Dancer2/Template
-@dirrm %%SITE_PERL%%/Dancer2
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/views/layouts
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/views
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/t
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/javascripts
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/images
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/css
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/lib
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/environments
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/bin
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel
-@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/auto/share
-@dirrmtry %%SITE_PERL%%/auto
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2
+@dir %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory
+@dir %%SITE_PERL%%/Dancer2/Core/Role
+@dir %%SITE_PERL%%/Dancer2/Core/Request
+@dir %%SITE_PERL%%/Dancer2/Core
+@dir %%SITE_PERL%%/Dancer2/CLI/Command
+@dir %%SITE_PERL%%/Dancer2/CLI
+@dir %%SITE_PERL%%/Dancer2/Handler
+@dir %%SITE_PERL%%/Dancer2/Logger/Capture
+@dir %%SITE_PERL%%/Dancer2/Logger
+@dir %%SITE_PERL%%/Dancer2/Manual
+@dir %%SITE_PERL%%/Dancer2/Plugin
+@dir %%SITE_PERL%%/Dancer2/Serializer
+@dir %%SITE_PERL%%/Dancer2/Session
+@dir %%SITE_PERL%%/Dancer2/Template/Implementation
+@dir %%SITE_PERL%%/Dancer2/Template
+@dir %%SITE_PERL%%/Dancer2
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/views/layouts
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/views
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/t
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/javascripts
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/images
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/css
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/lib
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/environments
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel/bin
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2/skel
+@dir %%SITE_PERL%%/auto/share/dist/Dancer2
+@dir %%SITE_PERL%%/auto/share/dist
+@dir %%SITE_PERL%%/auto/share
+@dir %%SITE_PERL%%/auto
+@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2

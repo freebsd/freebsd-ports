@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-input-wacom
-PORTVERSION=	0.24.99.1
-PORTREVISION=	1
+PORTVERSION=	0.26.1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	SF/linuxwacom/${PORTNAME}
 
 MAINTAINER=	jbeich@vfemail.net
 COMMENT=	X.Org Wacom tablet driver
+
+LICENSE=	GPLv2 # or any later version
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 RUN_DEPENDS=	webcamd>0:${PORTSDIR}/multimedia/webcamd
@@ -19,6 +20,14 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS=	--without-systemd-unit-dir \
 		--without-udev-rules-dir \
 		--without-doxygen
+INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	DEBUG TEST
+
+DEBUG_CONFIGURE_ENABLE=debug
+
+TEST_CONFIGURE_ENABLE=unit-tests
+TEST_ALL_TARGET=check
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/as_fn_error.*udev/${TRUE} &/' \
@@ -31,7 +40,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/input/wacom_drv.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d
 	${INSTALL_DATA} ${FILESDIR}/wacom.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d

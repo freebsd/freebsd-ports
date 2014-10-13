@@ -73,11 +73,11 @@ include/openssl/x509v3.h
 lib/libcrypto.a
 lib/libcrypto.so
 lib/libcrypto.so.30
-lib/libcrypto.so.30.0.0
+lib/libcrypto.so.30.0.1
 lib/libssl.a
 lib/libssl.so
 lib/libssl.so.27
-lib/libssl.so.27.0.0
+lib/libssl.so.27.0.2
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/openssl.pc

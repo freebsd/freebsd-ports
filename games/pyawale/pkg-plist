@@ -81,5 +81,3 @@ share/pixmaps/pyawale.png
 %%DATADIR%%/pyawale.py
 %%DATADIR%%/pyawale.pyc
 %%DATADIR%%/pyawale.pyo
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

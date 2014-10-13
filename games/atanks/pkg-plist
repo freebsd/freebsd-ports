@@ -279,17 +279,3 @@ share/applications/atanks.desktop
 %%DATADIR%%/unicode.dat
 share/icons/hicolor/48x48/apps/atanks.png
 share/pixmaps/atanks.png
-@dirrm %%DATADIR%%/title
-@dirrm %%DATADIR%%/text
-@dirrm %%DATADIR%%/tankgun
-@dirrm %%DATADIR%%/tank
-@dirrm %%DATADIR%%/stock
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/missile
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/button
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons

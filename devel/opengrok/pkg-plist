@@ -2,6 +2,7 @@ bin/opengrok
 %%DATADIR%%/lib/ant.jar
 %%DATADIR%%/lib/bcel-5.2.jar
 %%DATADIR%%/lib/jrcs.jar
+%%DATADIR%%/lib/lucene-analyzers-common-4.7.1.jar
 %%DATADIR%%/lib/lucene-core-4.7.1.jar
 %%DATADIR%%/lib/lucene-queryparser-4.7.1.jar
 %%DATADIR%%/lib/lucene-suggest-4.7.1.jar
@@ -115,15 +116,3 @@ bin/opengrok
 %%T%%/webapps/opengrok/utils.js
 @group
 @owner
-@dirrmtry %%T%%/webapps/opengrok/META-INF
-@dirrmtry %%T%%/webapps/opengrok/WEB-INF/lib
-@dirrmtry %%T%%/webapps/opengrok/WEB-INF
-@dirrmtry %%T%%/webapps/opengrok/default/img
-@dirrmtry %%T%%/webapps/opengrok/default
-@dirrmtry %%T%%/webapps/opengrok/offwhite/img
-@dirrmtry %%T%%/webapps/opengrok/offwhite
-@dirrmtry %%T%%/webapps/opengrok/polished/img
-@dirrmtry %%T%%/webapps/opengrok/polished
-@dirrmtry %%T%%/webapps/opengrok
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%

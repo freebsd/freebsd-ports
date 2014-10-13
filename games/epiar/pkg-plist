@@ -226,19 +226,3 @@ share/applications/epiar.desktop
 %%DATADIR%%/Resources/Skin/ui_wnd_up_left.png
 %%DATADIR%%/Resources/Skin/ui_wnd_up_right.png
 share/pixmaps/epiar.png
-@dirrm %%DATADIR%%/Resources/Skin
-@dirrm %%DATADIR%%/Resources/Simulation/default
-@dirrm %%DATADIR%%/Resources/Simulation
-@dirrm %%DATADIR%%/Resources/Scripts
-@dirrm %%DATADIR%%/Resources/Graphics
-@dirrm %%DATADIR%%/Resources/Fonts
-@dirrm %%DATADIR%%/Resources/Audio/Weapons
-@dirrm %%DATADIR%%/Resources/Audio/Music
-@dirrm %%DATADIR%%/Resources/Audio/Interface
-@dirrm %%DATADIR%%/Resources/Audio/Engines
-@dirrm %%DATADIR%%/Resources/Audio/Effects
-@dirrm %%DATADIR%%/Resources/Audio
-@dirrm %%DATADIR%%/Resources/Art
-@dirrm %%DATADIR%%/Resources/Animations
-@dirrm %%DATADIR%%/Resources
-@dirrm %%DATADIR%%

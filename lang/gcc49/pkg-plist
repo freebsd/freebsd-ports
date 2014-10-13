@@ -6,6 +6,7 @@ bin/%%GNU_HOST%%-gcc-ar%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-nm%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-ranlib%%SUFFIX%%
 bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
+@comment info/gcc%%SUFFIX%%/dir
 bin/c++%%SUFFIX%%
 bin/cpp%%SUFFIX%%
 bin/g++%%SUFFIX%%
