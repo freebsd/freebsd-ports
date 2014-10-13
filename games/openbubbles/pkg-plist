@@ -75,4 +75,3 @@ share/icons/hicolor/96x96/apps/openbubbles.png
 %%DATADIR%%/visit.png
 %%DATADIR%%/youwin.png
 share/pixmaps/openbubbles.png
-@dirrm %%DATADIR%%
