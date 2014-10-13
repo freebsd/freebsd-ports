@@ -1,11 +1,11 @@
---- src/utf.h.orig	2010-01-30 20:53:52.000000000 +0800
-+++ src/utf.h	2010-01-30 20:54:05.000000000 +0800
-@@ -8,6 +8,8 @@
- #ifndef UTF_H
- #define UTF_H
+--- src/utf.h.orig	2014-10-13 20:43:43.714736504 +0800
++++ src/utf.h	2014-10-13 20:43:55.760735241 +0800
+@@ -16,6 +16,8 @@
+ #include <stdint.h>
+ #endif
  
 +#include <sys/types.h>
 +
- int utf8_encode(int codepoint, char *buffer, int *size);
+ int utf8_encode(int32_t codepoint, char *buffer, size_t *size);
  
- int utf8_check_first(char byte);
+ size_t utf8_check_first(char byte);
