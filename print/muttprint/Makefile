@@ -11,15 +11,13 @@ MAINTAINER?=	guru@unixarea.de
 COMMENT?=	Utility to print mail for most any mail client
 
 RUN_DEPENDS=	psnup:${PORTSDIR}/print/psutils \
-		latex:${PORTSDIR}/print/texlive-full \
-		dvips:${PORTSDIR}/print/tex-dvipsk \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
 
 USES=		perl5 gmake
-USE_TEX=	texmf
+USE_TEX=	latex dvipsk
 
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
