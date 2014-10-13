@@ -3,7 +3,7 @@
 
 PORTNAME=	trojita
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/src/
 
@@ -33,7 +33,7 @@ USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build \
 CONFLICTS_INSTALL=	trojita-qt4-[0-9]*
 CMAKE_ARGS+=	-DWITH_QT5:STRING=ON
 USE_QT5=	buildtools_build linguisttools_build qmake_build \
-		qmldevtools_build core dbus gui network opengl printsupport \
+		core dbus gui network opengl printsupport \
 		qml quick sql sql-sqlite3 webkit widgets
 .endif
 
