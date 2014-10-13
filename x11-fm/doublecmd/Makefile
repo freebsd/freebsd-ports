@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.5.10
-PORTREVISION=	1
+PORTVERSION=	0.5.11
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/Double%20Commander%20Source
@@ -44,7 +43,7 @@ OPTIONS_SINGLE_LCL=	GTK2 QT4
 OPTIONS_GROUP=		WCX WDX WFX WLX DSX
 WCX_DESC=	Packer plugins
 WDX_DESC=	Content plugins
-WFX_DESC=	File sytem plugins
+WFX_DESC=	File system plugins
 WLX_DESC=	Lister plugins
 DSX_DESC=	Search plugins
 OPTIONS_GROUP_WCX=	WCX_CPIO \
@@ -203,77 +202,54 @@ pre-install:
 
 .if ${PORT_OPTIONS:MWCX_CPIO}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/cpio/cpio.wcx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wcx/cpio" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWCX_DEB}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/deb/deb.wcx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wcx/deb" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWCX_LZMA}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/lzma/lzma.wcx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wcx/lzma" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWCX_RPM}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/rpm/rpm.wcx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wcx/rpm" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWCX_UNRAR}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/unrar/unrar.wcx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wcx/unrar" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWCX_ZIP}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wcx/zip/zip.wcx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wcx/zip" >> ${PLIST}
 .endif
 
 .if ${PORT_OPTIONS:MWDX_RPM}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wdx/rpm_wdx/rpm_wdx.wdx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wdx/rpm_wdx" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWDX_DEB}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wdx/deb_wdx/deb_wdx.wdx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wdx/deb_wdx" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWDX_SVN}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wdx/svn_wdx/svn_wdx.wdx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wdx/svn_wdx" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWDX_XPI}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wdx/xpi_wdx/xpi_wdx.wdx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wdx/xpi_wdx" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWDX_SCRIPTS}
 	@cd ${WRKSRC}/plugins/wdx/scripts && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/plugins/wdx/scripts/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/plugins/wdx/scripts/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wdx/scripts" >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/plugins/wdx/scripts/|' >> ${PLIST}
 .endif
 
 .if ${PORT_OPTIONS:MWFX_FTP}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wfx/ftp/ftp.wfx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wfx/ftp" >> ${PLIST}
 .endif
 .if ${PORT_OPTIONS:MWFX_SAMBA}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wfx/samba/samba.wfx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wfx/samba" >> ${PLIST}
 .endif
 
 .if ${PORT_OPTIONS:MWLX_MPLAYER}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/wlx/wlxmplayer/wlxmplayer.wlx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wlx/wlxmplayer" >> ${PLIST}
 .endif
 
 .if ${PORT_OPTIONS:MDSX_LOCATE}
 	@${ECHO_CMD} "%%DATADIR%%/plugins/dsx/dsxlocate/dsxlocate.dsx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/dsx/dsxlocate" >> ${PLIST}
 .endif
-
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wcx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wdx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wfx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/wlx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins/dsx" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/plugins" >> ${PLIST}
 
 .for FILE in %%DATADIR%%/doublecmd.ext.example %%DATADIR%%/pixmaps.txt \
 	%%DATADIR%%/multiarc.ini bin/doublecmd share/applications/doublecmd.desktop \
@@ -283,20 +259,13 @@ pre-install:
 .endfor
 
 	@cd ${WRKSRC}/language && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/language/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/language/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/language" >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/language/|' >> ${PLIST}
 
 	@cd ${WRKSRC}/pixmaps && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/pixmaps/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/pixmaps/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/pixmaps" >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/pixmaps/|' >> ${PLIST}
 
 	@cd ${WRKSRC}/sdk && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/sdk/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/sdk/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/sdk" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/sdk/|' >> ${PLIST}
 
 	@${ECHO_CMD} "man/man1/doublecmd.1.gz" >> ${PLIST}
 
