@@ -1,4 +1,3 @@
-lib/libmodplug.la
 lib/libmodplug.so
 lib/libmodplug.so.1
 lib/libmodplug.so.1.0.0
