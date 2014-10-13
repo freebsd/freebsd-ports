@@ -33,12 +33,10 @@ share/pixmaps/belooted/simple/aceheart.svg
 share/pixmaps/belooted/simple/10diamond.svg
 share/pixmaps/belooted/simple/9heart.svg
 share/pixmaps/belooted/simple/7diamond.svg
-@dirrm share/pixmaps/belooted/simple
 share/pixmaps/belooted/icon-heart.xpm
 share/pixmaps/belooted/icon-club.xpm
 share/pixmaps/belooted/belooted.png
 share/pixmaps/belooted/icon-diamond.xpm
 share/pixmaps/belooted/icon-spade.xpm
 share/pixmaps/belooted/icon-none.xpm
-@dirrm share/pixmaps/belooted
 share/pixmaps/belooted.png

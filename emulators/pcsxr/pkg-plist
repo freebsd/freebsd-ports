@@ -7,10 +7,6 @@ man/man1/pcsxr.1.gz
 %%NLS%%share/locale/hu_HU/LC_MESSAGES/pcsxr.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcsxr.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcsxr.mo
-%%NLS%%@dirrmtry share/locale/hu_HU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hu_HU
-%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU
 share/pcsxr/peopsxgl.ui
 share/pcsxr/dfinput.ui
 share/pcsxr/dfnet.ui
@@ -30,7 +26,6 @@ share/pcsxr/play.png
 share/pcsxr/pad.png
 share/pcsxr/memcard.png
 share/pcsxr/pcsxr.png
-@dirrm share/pcsxr
 share/pixmaps/pcsxr-icon.png
 share/applications/pcsxr.desktop
 lib/pcsxr/cfgBladeSio1
@@ -47,4 +42,3 @@ lib/pcsxr/libDFInput.so
 lib/pcsxr/libDFSound.so
 lib/pcsxr/libDFCdrom.so
 lib/pcsxr/libDFNet.so
-@dirrm lib/pcsxr

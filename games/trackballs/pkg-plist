@@ -267,17 +267,3 @@ share/pixmaps/trackballs.png
 %%DATADIR%%/sfx/switch.wav
 %%DATADIR%%/sfx/time_warning.wav
 %%DATADIR%%/sfx/timeout.wav
-@dirrm %%DATADIR%%/sfx
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons

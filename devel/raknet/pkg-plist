@@ -164,7 +164,6 @@ include/raknet/RakNetCommandParser.h
 include/raknet/DirectoryDeltaTransfer.h
 include/raknet/HTTPConnection.h
 include/raknet/ClientContextStruct.h
-@dirrm include/raknet
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/Help/timestamping.html
 %%PORTDOCS%%%%DOCSDIR%%/Help/ReplicaManager2Video.html
@@ -1367,7 +1366,3 @@ include/raknet/ClientContextStruct.h
 %%PORTDOCS%%%%DOCSDIR%%/Help/PathVariableShot.jpg
 %%PORTDOCS%%%%DOCSDIR%%/Help/natpunchpanel6.html
 %%PORTDOCS%%%%DOCSDIR%%/Help/systemaddresses.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Doxygen/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/Doxygen
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

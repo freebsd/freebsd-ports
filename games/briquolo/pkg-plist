@@ -98,11 +98,6 @@ share/applications/briquolo.desktop
 %%DATADIR%%/tableau/new/description
 %%DATADIR%%/tableau/new/001.tab
 %%DATADIR%%/tableau/new/006.tab
-@dirrm %%DATADIR%%/tableau/old
-@dirrm %%DATADIR%%/tableau/new
-@dirrm %%DATADIR%%/tableau
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
 share/pixmaps/briquolo.svg
 %%NLS%%share/locale/fr/LC_MESSAGES/briquolo.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/briquolo.mo

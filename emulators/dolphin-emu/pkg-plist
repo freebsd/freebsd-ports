@@ -1722,23 +1722,3 @@ bin/dolphin-emu
 %%DATADIR%%/sys/OpenCL/TextureDecoder.cl
 %%DATADIR%%/sys/Maps/GFZE01.map
 %%DATADIR%%/sys/Maps/GMBE8P.map
-@dirrm %%DATADIR%%/sys/Wii/shared2/wc24/mbox
-@dirrm %%DATADIR%%/sys/Wii/shared2/wc24
-@dirrm %%DATADIR%%/sys/Wii/shared2/sys
-@dirrm %%DATADIR%%/sys/Wii/shared2/succession
-@dirrm %%DATADIR%%/sys/Wii/shared2/ec
-@dirrm %%DATADIR%%/sys/Wii/shared2
-@dirrm %%DATADIR%%/sys/Wii
-@dirrm %%DATADIR%%/sys/Shaders
-@dirrm %%DATADIR%%/sys/OpenCL
-@dirrm %%DATADIR%%/sys/Maps
-@dirrm %%DATADIR%%/sys/GameSettings
-@dirrm %%DATADIR%%/sys/Themes/Boomy
-@dirrm %%DATADIR%%/sys/Themes/Clean
-@dirrm %%DATADIR%%/sys/Themes/Clean Lite
-@dirrm %%DATADIR%%/sys/Themes/Clean Blue
-@dirrm %%DATADIR%%/sys/Themes/Clean Pink
-@dirrm %%DATADIR%%/sys/Themes
-@dirrm %%DATADIR%%/sys/GC
-@dirrm %%DATADIR%%/sys
-@dirrm %%DATADIR%%
