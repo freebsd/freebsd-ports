@@ -1,6 +1,6 @@
 %%WITH_BOT%%bin/botti
 bin/irssi
-etc/irssi.conf.sample
+@sample etc/irssi.conf.sample
 include/irssi/irssi-config.h
 include/irssi/irssi-version.h
 include/irssi/src/common.h
@@ -170,8 +170,6 @@ man/man1/irssi.1.gz
 %%DATADIR%%/help/ignore
 %%DATADIR%%/help/info
 %%DATADIR%%/help/invite
-%%DATADIR%%/help/invitelist
-%%DATADIR%%/help/ircnet
 %%DATADIR%%/help/ison
 %%DATADIR%%/help/join
 %%DATADIR%%/help/kick
@@ -198,7 +196,6 @@ man/man1/irssi.1.gz
 %%DATADIR%%/help/netsplit
 %%DATADIR%%/help/network
 %%DATADIR%%/help/nick
-%%DATADIR%%/help/note
 %%DATADIR%%/help/notice
 %%DATADIR%%/help/notify
 %%DATADIR%%/help/op
@@ -216,17 +213,13 @@ man/man1/irssi.1.gz
 %%DATADIR%%/help/restart
 %%DATADIR%%/help/rmreconns
 %%DATADIR%%/help/rmrejoins
-%%DATADIR%%/help/rping
 %%DATADIR%%/help/save
-%%DATADIR%%/help/say
 %%DATADIR%%/help/sconnect
 %%DATADIR%%/help/script
 %%DATADIR%%/help/scrollback
 %%DATADIR%%/help/server
-%%DATADIR%%/help/servlist
 %%DATADIR%%/help/set
 %%DATADIR%%/help/silence
-%%DATADIR%%/help/squery
 %%DATADIR%%/help/squit
 %%DATADIR%%/help/stats
 %%DATADIR%%/help/statusbar
@@ -243,7 +236,7 @@ man/man1/irssi.1.gz
 %%DATADIR%%/help/unquery
 %%DATADIR%%/help/unsilence
 %%DATADIR%%/help/upgrade
-%%DATADIR%%/help/uping
+%%DATADIR%%/help/uptime
 %%DATADIR%%/help/userhost
 %%DATADIR%%/help/ver
 %%DATADIR%%/help/version
@@ -251,13 +244,10 @@ man/man1/irssi.1.gz
 %%DATADIR%%/help/wait
 %%DATADIR%%/help/wall
 %%DATADIR%%/help/wallops
-%%DATADIR%%/help/watch
 %%DATADIR%%/help/who
 %%DATADIR%%/help/whois
 %%DATADIR%%/help/whowas
 %%DATADIR%%/help/window
-%%DATADIR%%/help/wjoin
-%%DATADIR%%/help/wquery
 %%DATADIR%%/scripts/autoop.pl
 %%DATADIR%%/scripts/autorejoin.pl
 %%DATADIR%%/scripts/buf.pl
