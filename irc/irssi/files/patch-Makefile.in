@@ -1,22 +1,22 @@
---- Makefile.in.orig	Sun Dec 11 15:57:00 2005
-+++ Makefile.in	Sun Dec 11 15:57:45 2005
-@@ -255,7 +255,7 @@
- @BUILD_PLUGINS_TRUE@PLUGINS = plugins
+--- Makefile.in.orig	2014-10-11 16:58:14.000000000 +0800
++++ Makefile.in	2014-10-13 11:47:58.867951923 +0800
+@@ -397,7 +397,7 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ BUILT_SOURCES = default-config.h default-theme.h irssi-version.h
  SUBDIRS = src docs scripts
  confdir = $(sysconfdir)
 -conf_DATA = irssi.conf
 +conf_DATA = irssi.conf.sample
  themedir = $(datadir)/irssi/themes
  theme_DATA = default.theme colorless.theme
- pkginclude_HEADERS = config.h irssi-version.h
-@@ -784,8 +784,8 @@
- # create default-config.h
- config.h: default-config.h default-theme.h
+ pkginclude_HEADERS = irssi-config.h irssi-version.h
+@@ -981,8 +981,8 @@ uninstall-am: uninstall-confDATA uninsta
+ 
+ @MAINTAINER_MODE_TRUE@.PHONY: irssi-version.h
  
 -default-config.h: $(srcdir)/irssi.conf
 -	$(srcdir)/file2header.sh $(srcdir)/irssi.conf default_config > default-config.h
 +default-config.h: $(srcdir)/irssi.conf.sample
 +	$(srcdir)/file2header.sh $(srcdir)/irssi.conf.sample default_config > default-config.h
+ 
  default-theme.h: $(srcdir)/default.theme
  	$(srcdir)/file2header.sh $(srcdir)/default.theme default_theme > default-theme.h
- 
