@@ -16,6 +16,7 @@ USES=		tar:bzip2 gmake pkgconfig
 USE_SDL=	sdl mixer image net
 USE_GL=		gl glu
 USE_GCC=	any
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
 PORTDATA=	*
