@@ -35,9 +35,3 @@ bin/dvdvideo-backup-image
 %%PYTHON_SITELIBDIR%%/dvdvideo/utils.py
 %%PYTHON_SITELIBDIR%%/dvdvideo/vob.py
 %%PYTHON_SITELIBDIR%%/dvdvideo/volume.py
-@dirrm %%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__
-@dirrm %%PYTHON_SITELIBDIR%%/dvdvideo/udf
-@dirrm %%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__
-@dirrm %%PYTHON_SITELIBDIR%%/dvdvideo
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

@@ -3,4 +3,3 @@ bin/gnaural
 share/applications/gnaural.desktop
 share/pixmaps/gnaural-icon.xpm
 share/pixmaps/gnaural-icon.png
-@dirrm %%DATADIR%%

@@ -12,4 +12,3 @@ lib/libdvdread.a
 lib/libdvdread.so
 lib/libdvdread.so.5
 libdata/pkgconfig/dvdread.pc
-@dirrm include/dvdread

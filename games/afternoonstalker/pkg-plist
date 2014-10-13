@@ -14,5 +14,3 @@ share/pixmaps/afternoonstalker.png
 %%DATADIR%%/sounds/robot-hit.wav
 %%DATADIR%%/sounds/shooting-blanks.wav
 %%DATADIR%%/sounds/spider-killed.wav
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%

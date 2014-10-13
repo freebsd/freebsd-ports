@@ -6,4 +6,3 @@ bin/openalchemist-config
 %%DATADIR%%/aqua.zip
 %%DATADIR%%/brushed.zip
 %%DATADIR%%/vectoriel.zip
-@dirrm %%DATADIR%%

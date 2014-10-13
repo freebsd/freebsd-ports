@@ -3,9 +3,7 @@
 %%ETCDIR%%/ldapaddgroup.template.sample
 %%ETCDIR%%/ldapadduser.template.sample
 %%ETCDIR%%/ldapaddmachine.template.sample
-@dirrmtry %%ETCDIR%%
 lib/ldapscripts/runtime
-@dirrmtry lib/ldapscripts
 sbin/ldapdeletemachine
 sbin/ldapinit
 sbin/lsldap
