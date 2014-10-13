@@ -2,6 +2,7 @@
 
 PORTNAME=	wpa_supplicant
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://w1.fi/releases/
 
@@ -18,7 +19,6 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	sbin/wpa_supplicant \
 		sbin/wpa_passphrase \
 		sbin/wpa_cli \
-		sbin/wpa_priv \
 		"@sample etc/wpa_supplicant.conf.sample"
 PORTDOCS=	README ChangeLog
 
@@ -35,7 +35,7 @@ OPTIONS_DEFINE=		WPS WPS_ER WPS_NOREG WPS_NFC PKCS12 SMARTCARD \
 			HS20 NO_ROAMING P2P TDLS
 OPTIONS_DEFAULT=	BSD WIRED NDIS \
 			TLS PEAP TTLS MD5 MSCHAPv2 GTC LEAP OTP PSK \
-			WPS PKCS12 SMARTCARD IEEE80211R DEBUG_SYSLOG PRIVSEP \
+			WPS PKCS12 SMARTCARD IEEE80211R DEBUG_SYSLOG \
 			INTERWORKING HS20
 
 WPS_DESC=		Wi-Fi Protected Setup
@@ -99,6 +99,10 @@ CFLAGS+=	-I${LOCALBASE}/include/PCSC
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
+.if ${PORT_OPTIONS:MPRIVSEP}
+PLIST_FILES+= sbin/wpa_priv
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/Packet32.[ch] ${FILESDIR}/ntddndis.h \
 		${WRKSRC}/src/utils
@@ -150,7 +154,10 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${BUILD_WRKSRC} && ${INSTALL_PROGRAM} wpa_supplicant wpa_cli \
-		wpa_passphrase wpa_priv ${STAGEDIR}${PREFIX}/sbin)
+		wpa_passphrase ${STAGEDIR}${PREFIX}/sbin)
+.if ${PORT_OPTIONS:MPRIVSEP}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/wpa_priv ${STAGEDIR}${PREFIX}/sbin
+.endif
 	${INSTALL_DATA} ${BUILD_WRKSRC}/wpa_supplicant.conf \
 		${STAGEDIR}${PREFIX}/etc/wpa_supplicant.conf.sample
 	(cd ${BUILD_WRKSRC} && \

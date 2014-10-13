@@ -1,11 +1,14 @@
 --- wpa_supplicant/Makefile.orig	2014-10-09 14:41:31 UTC
 +++ wpa_supplicant/Makefile
-@@ -97,6 +97,11 @@ OBJS += ../src/utils/os_$(CONFIG_OS).o
+@@ -97,6 +97,14 @@ OBJS += ../src/utils/os_$(CONFIG_OS).o
  OBJS_p += ../src/utils/os_$(CONFIG_OS).o
  OBJS_c += ../src/utils/os_$(CONFIG_OS).o
  
 +ifdef CONFIG_DRIVER_NDIS
-+OBJS += ../src/utils/Packet32.o ../src/drivers/driver_ndis.o
++OBJS += ../src/utils/Packet32.o
++ifdef CONFIG_PRIVSEP
++OBJS += ../src/drivers/driver_ndis.o
++endif
 +OBJS_priv += ../src/utils/Packet32.o
 +endif
 +
