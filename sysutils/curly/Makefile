@@ -33,6 +33,6 @@ do-install:
 	    ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
 	${INSTALL_MAN} ${WRKSRC}/bin/${PORTNAME}/${PORTNAME}.man \
 	    ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
-	${LN} -s ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/un${PORTNAME}.1
+	${LN} -s ${PREFIX}/man/man1/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/un${PORTNAME}.1
 
 .include <bsd.port.mk>
