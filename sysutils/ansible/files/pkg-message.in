@@ -19,7 +19,7 @@ that system. Example:
   host3
   host4
 
-  [centos:var]
+  [centos:vars]
   ansible_python_interpreter=/usr/bin/python
 
 ===============================================================================
