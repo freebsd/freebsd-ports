@@ -175,10 +175,3 @@ share/pixmaps/tuxkart.png
 %%DATADIR%%/wavs/shoomf.wav
 %%DATADIR%%/wavs/ugh.wav
 %%DATADIR%%/wavs/wee.wav
-@dirrm %%DATADIR%%/wavs
-@dirrm %%DATADIR%%/mods
-@dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
