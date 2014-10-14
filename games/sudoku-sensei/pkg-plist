@@ -119,18 +119,3 @@ share/pixmaps/sudoku-sensei.png
 %%DATADIR%%/system/savee.sdk
 %%DATADIR%%/system/savef.sdk
 %%DATADIR%%/system/saveg.sdk
-@dirrm %%DATADIR%%/system
-@dirrm %%DATADIR%%/saves/tutorial/level5
-@dirrm %%DATADIR%%/saves/tutorial/level4
-@dirrm %%DATADIR%%/saves/tutorial/level3
-@dirrm %%DATADIR%%/saves/tutorial/level2
-@dirrm %%DATADIR%%/saves/tutorial/level1
-@dirrm %%DATADIR%%/saves/tutorial
-@dirrm %%DATADIR%%/saves
-@dirrm %%DATADIR%%/language
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/doc/manual_es
-@dirrm %%DATADIR%%/doc/manual_en
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/board
-@dirrm %%DATADIR%%

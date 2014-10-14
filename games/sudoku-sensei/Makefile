@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}-src-${DISTVERSION:S/./-/}${EXTRACT_SUFX}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Enjoy playing with Sudoku boards designed by yourself
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 
 WRKSRC=		${WRKDIR}/SudokuSenseiSources
 
