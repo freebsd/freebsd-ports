@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.5
+PORTVERSION=	4.4.6
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/4.4/ \
 		LOCAL
@@ -28,8 +28,6 @@ do-install:
 # Maintainer
 plist: patch
 	@( cd ${WRKDIR}/ && ${FIND} default -type f | ${AWK} '{print "%%WWWDIR%%/template/ja/"$$1}' | ${SORT} > ${PLIST}.new )
-	@( cd ${WRKDIR}/ && ${FIND} default -type d | ${AWK} '{print "@dirrmtry %%WWWDIR%%/template/ja/"$$1}' | ${SORT} -r >> ${PLIST}.new )
-	@${ECHO} "@dirrmtry %%WWWDIR%%/template/ja" >> ${PLIST}.new
 	@if ${DIFF} -u ${PLIST} ${PLIST}.new ; then \
 		${ECHO_MSG} no pkg-plist changes; \
 		${RM} ${PLIST}.new ; \
