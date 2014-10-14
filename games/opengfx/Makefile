@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengfx
-PORTVERSION=	0.4.7
+PORTVERSION=	0.5.0
 CATEGORIES=	games
 MASTER_SITES=	http://hu.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
 		http://us.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
@@ -17,6 +17,10 @@ LICENSE=	GPLv2
 USES=		zip
 NO_BUILD=	yes
 LATEST_LINK=	openttd-${PORTNAME}
+
+# upstream zipped a tar file, unpack it.
+post-extract:
+	@cd ${WRKDIR} && tar -xf ${PORTNAME}-${PORTVERSION}.tar
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/openttd/baseset/opengfx
