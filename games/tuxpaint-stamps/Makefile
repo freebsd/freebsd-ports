@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TuxPaint Stamps
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 
@@ -20,5 +21,6 @@ MAKE_ARGS=	DATA_PREFIX="${STAGEDIR}${DATADIR}/"
 INSTALL_TARGET=	install-all
 
 DATADIR=	${PREFIX}/share/tuxpaint
+PORTDATA=	*
 
 .include <bsd.port.mk>
