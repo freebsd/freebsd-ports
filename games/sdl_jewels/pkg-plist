@@ -8,5 +8,3 @@ share/pixmaps/sdl_jewels.png
 %%DATADIR%%/data/illegal.raw
 %%DATADIR%%/data/row.raw
 %%DATADIR%%/data/swap.raw
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

@@ -15,13 +15,11 @@ EXTRACT_ONLY=	${PORTNAME:S/sdl/SDL/}-${DISTVERSION}.tgz
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Tile-matching 8x8 puzzle game
 
-LICENSE=	GPLv2
-
 WRKSRC=		${WRKDIR}/${PORTNAME:S/sdl/SDL/}-${PORTVERSION}
 
 USES=		gmake
 USE_SDL=	sdl image mixer
-ALL_TARGET=
+ALL_TARGET=	# empty
 
 PORTDOCS=	ChangeLog README
 OPTIONS_DEFINE=	DOCS
