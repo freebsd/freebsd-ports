@@ -3,7 +3,7 @@
 
 PORTNAME=	mediastreamer
 PORTVERSION=	2.10.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
 
@@ -25,7 +25,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomehier intlhack
+USE_GNOME=	intlhack
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		IPV6 NLS UPNP VIDEO
