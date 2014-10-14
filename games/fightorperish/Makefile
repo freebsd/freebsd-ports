@@ -16,12 +16,12 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	Dungeon-crawling game
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 WRKSRC=		${WRKDIR}/fop-${DISTVERSION}
 
 USES=		gmake
 USE_SDL=	image mixer sdl
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	CHANGES.txt README.txt
 OPTIONS_DEFINE=	DOCS
