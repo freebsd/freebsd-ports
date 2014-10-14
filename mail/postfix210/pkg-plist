@@ -35,7 +35,6 @@ libexec/postfix/trivial-rewrite
 libexec/postfix/verify
 libexec/postfix/virtual
 libexec/postfix/tlsmgr
-@dirrm libexec/postfix
 bin/mailq
 bin/newaliases
 bin/qshape
@@ -309,7 +308,6 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/virtual.8.html
 %%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/generic.5.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir "/var/db/postfix" >/dev/null 2>&1 || :
 @unexec rmdir "/var/spool/postfix/active" >/dev/null 2>&1 || :
 @unexec rmdir "/var/spool/postfix/bounce" >/dev/null 2>&1 || :
@@ -332,4 +330,3 @@ etc/postfix/TLS_LICENSE
 etc/postfix/bounce.cf.default
 etc/postfix/main.cf.default
 etc/postfix/makedefs.out
-@dirrmtry etc/postfix
