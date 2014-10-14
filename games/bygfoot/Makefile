@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Football (soccer) management game
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 # needed to save/load games
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
