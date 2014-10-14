@@ -4,8 +4,7 @@
 PORTNAME=	vtwm
 PORTVERSION=	5.4.99.20130906
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	ak-various-projects
+MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Twm with a virtual desktop and optional Motif-like features

@@ -5,7 +5,7 @@ PORTNAME=	kenny
 PORTVERSION=	1.7
 PORTREVISION=	1
 CATEGORIES=	misc perl5
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}\
+MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/ \
 				http://www.cgarbs.de/stuff/
 DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
 EXTRACT_SUFX=	.gz
@@ -14,8 +14,6 @@ MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Translate text both to and from KennySpeak
 
 LICENSE=	ART10
-
-PROJECTHOST=	ak-various-projects
 
 CONFLICTS=	filters-*
 
