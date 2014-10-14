@@ -26,8 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyggel>=0:${PORTSDIR}/graphics/py-pyggel
 
 WRKSRC=		${WRKDIR}/PYGGEL-V${DISTVERSION}${DISTVERSIONSUFFIX}/Robocalypto
 
-USES=		zip
-USE_PYTHON_RUN=	yes
+USES=		python:run zip
 NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}
