@@ -1,6 +1,7 @@
 # $FreeBSD$
 # Please keep this file sorted by GID!
-# Please pick an empty slot when available
+# Please pick an empty slot when available and also consider base values from
+# /usr/src/etc/group
 daemon:*:1:
 operator:*:5:amanda
 mail:*:6:postfix,clamav
