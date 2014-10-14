@@ -10,7 +10,8 @@ DIST_SUBDIR=	python
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Save princess Ericia in this 2D platform game
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYGAME}
 
@@ -20,9 +21,8 @@ GH_PROJECT=	TheSecretTower
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	ecf13e4
 
-USES=		shebangfix
+USES=		python:2 shebangfix
 SHEBANG_FILES= 	TheSecretTower.py server.py
-USE_PYTHON=	2
 
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
