@@ -17,26 +17,26 @@ lib/mono/2.0/Mono.WebServer2.dll
 lib/mono/2.0/fastcgi-mono-server2.exe
 lib/mono/2.0/mod-mono-server2.exe
 lib/mono/2.0/xsp2.exe
-lib/mono/4.0/Mono.WebServer2.dll
-lib/mono/4.0/fastcgi-mono-server4.exe
-lib/mono/4.0/mod-mono-server4.exe
-lib/mono/4.0/xsp4.exe
+lib/mono/4.5/Mono.WebServer2.dll
+lib/mono/4.5/fastcgi-mono-server4.exe
+lib/mono/4.5/mod-mono-server4.exe
+lib/mono/4.5/xsp4.exe
 lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756/Mono.WebServer2.dll
 lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756/Mono.WebServer2.dll.mdb
 lib/mono/gac/Mono.WebServer2/0.4.0.0__0738eb9f132ed756/Mono.WebServer2.dll
 lib/mono/gac/Mono.WebServer2/0.4.0.0__0738eb9f132ed756/Mono.WebServer2.dll.mdb
-lib/mono/gac/fastcgi-mono-server2/%%PORTVERSION%%.0__0738eb9f132ed756/fastcgi-mono-server2.exe
-lib/mono/gac/fastcgi-mono-server2/%%PORTVERSION%%.0__0738eb9f132ed756/fastcgi-mono-server2.exe.mdb
-lib/mono/gac/fastcgi-mono-server4/%%PORTVERSION%%.0__0738eb9f132ed756/fastcgi-mono-server4.exe
-lib/mono/gac/fastcgi-mono-server4/%%PORTVERSION%%.0__0738eb9f132ed756/fastcgi-mono-server4.exe.mdb
-lib/mono/gac/mod-mono-server2/%%PORTVERSION%%.0__0738eb9f132ed756/mod-mono-server2.exe
-lib/mono/gac/mod-mono-server2/%%PORTVERSION%%.0__0738eb9f132ed756/mod-mono-server2.exe.mdb
-lib/mono/gac/mod-mono-server4/%%PORTVERSION%%.0__0738eb9f132ed756/mod-mono-server4.exe
-lib/mono/gac/mod-mono-server4/%%PORTVERSION%%.0__0738eb9f132ed756/mod-mono-server4.exe.mdb
-lib/mono/gac/xsp2/%%PORTVERSION%%.0__0738eb9f132ed756/xsp2.exe
-lib/mono/gac/xsp2/%%PORTVERSION%%.0__0738eb9f132ed756/xsp2.exe.mdb
-lib/mono/gac/xsp4/%%PORTVERSION%%.0__0738eb9f132ed756/xsp4.exe
-lib/mono/gac/xsp4/%%PORTVERSION%%.0__0738eb9f132ed756/xsp4.exe.mdb
+lib/mono/gac/fastcgi-mono-server2/3.0.0.0__0738eb9f132ed756/fastcgi-mono-server2.exe
+lib/mono/gac/fastcgi-mono-server2/3.0.0.0__0738eb9f132ed756/fastcgi-mono-server2.exe.mdb
+lib/mono/gac/fastcgi-mono-server4/3.0.0.0__0738eb9f132ed756/fastcgi-mono-server4.exe
+lib/mono/gac/fastcgi-mono-server4/3.0.0.0__0738eb9f132ed756/fastcgi-mono-server4.exe.mdb
+lib/mono/gac/mod-mono-server2/3.0.0.0__0738eb9f132ed756/mod-mono-server2.exe
+lib/mono/gac/mod-mono-server2/3.0.0.0__0738eb9f132ed756/mod-mono-server2.exe.mdb
+lib/mono/gac/mod-mono-server4/3.0.0.0__0738eb9f132ed756/mod-mono-server4.exe
+lib/mono/gac/mod-mono-server4/3.0.0.0__0738eb9f132ed756/mod-mono-server4.exe.mdb
+lib/mono/gac/xsp2/3.0.0.0__0738eb9f132ed756/xsp2.exe
+lib/mono/gac/xsp2/3.0.0.0__0738eb9f132ed756/xsp2.exe.mdb
+lib/mono/gac/xsp4/3.0.0.0__0738eb9f132ed756/xsp4.exe
+lib/mono/gac/xsp4/3.0.0.0__0738eb9f132ed756/xsp4.exe.mdb
 lib/monodoc/sources/Mono.FastCGI.source
 lib/monodoc/sources/Mono.FastCGI.tree
 lib/monodoc/sources/Mono.FastCGI.zip
@@ -216,41 +216,4 @@ man/man1/dbsessmgr.1.gz
 man/man1/fastcgi-mono-server.1.gz
 man/man1/mod-mono-server.1.gz
 man/man1/xsp.1.gz
-@dirrm www/xsp
-@dirrm lib/xsp/test/controls
-@dirrm lib/xsp/test/bin
-@dirrm lib/xsp/test/App_Code
-@dirrm lib/xsp/test/2.0/treeview/TreeLineImages
-@dirrm lib/xsp/test/2.0/treeview
-@dirrm lib/xsp/test/2.0/menu
-@dirrm lib/xsp/test/2.0/masterpages
-@dirrm lib/xsp/test/2.0/gridview
-@dirrm lib/xsp/test/2.0
-@dirrm lib/xsp/test/1.1/webservice
-@dirrm lib/xsp/test/1.1/webcontrols
-@dirrm lib/xsp/test/1.1/html
-@dirrm lib/xsp/test/1.1/handlers
-@dirrm lib/xsp/test/1.1/databind
-@dirrm lib/xsp/test/1.1/customcontrol
-@dirrm lib/xsp/test/1.1/authtest
-@dirrm lib/xsp/test/1.1/asp.net
-@dirrm lib/xsp/test/1.1
-@dirrm lib/xsp/test
-@dirrm lib/xsp/4.0
-@dirrm lib/xsp/2.0
-@dirrm lib/xsp
-@dirrm lib/mono/gac/xsp4/%%PORTVERSION%%.0__0738eb9f132ed756
-@dirrm lib/mono/gac/xsp4
-@dirrm lib/mono/gac/xsp2/%%PORTVERSION%%.0__0738eb9f132ed756
-@dirrm lib/mono/gac/xsp2
-@dirrm lib/mono/gac/mod-mono-server4/%%PORTVERSION%%.0__0738eb9f132ed756
-@dirrm lib/mono/gac/mod-mono-server4
-@dirrm lib/mono/gac/mod-mono-server2/%%PORTVERSION%%.0__0738eb9f132ed756
-@dirrm lib/mono/gac/mod-mono-server2
-@dirrm lib/mono/gac/fastcgi-mono-server4/%%PORTVERSION%%.0__0738eb9f132ed756
-@dirrm lib/mono/gac/fastcgi-mono-server4
-@dirrm lib/mono/gac/fastcgi-mono-server2/%%PORTVERSION%%.0__0738eb9f132ed756
-@dirrm lib/mono/gac/fastcgi-mono-server2
-@dirrm lib/mono/gac/Mono.WebServer2/0.4.0.0__0738eb9f132ed756
-@dirrm lib/mono/gac/Mono.WebServer2/0.2.0.0__0738eb9f132ed756
-@dirrm lib/mono/gac/Mono.WebServer2
+@dir www/xsp
