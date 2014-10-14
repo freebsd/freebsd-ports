@@ -296,19 +296,3 @@ bin/krank
 %%DATADIR%%/src/k.pyc
 %%DATADIR%%/src/test.py
 share/pixmaps/krank.png
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/sounds/water
-@dirrm %%DATADIR%%/sounds/summer
-@dirrm %%DATADIR%%/sounds/space
-@dirrm %%DATADIR%%/sounds/menu
-@dirrm %%DATADIR%%/sounds/industry
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/levels/images
-@dirrm %%DATADIR%%/levels/icons
-@dirrm %%DATADIR%%/levels/backgrounds
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/html/gfx
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/art
-@dirrm %%DATADIR%%
