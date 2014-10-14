@@ -1,4 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -9,9 +10,3 @@ etc/xdg/dfc/fr/dfcrc
 man/fr/man1/dfc.1.gz
 man/man1/dfc.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/dfc.mo
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry etc/xdg/dfc/fr
-@dirrmtry etc/xdg/dfc
-@dirrmtry etc/xdg
