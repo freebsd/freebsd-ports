@@ -1,5 +1,5 @@
---- ./src/svn/Makefile.am.orig	2011-03-29 07:51:32.000000000 +0200
-+++ ./src/svn/Makefile.am	2013-06-22 22:54:04.000000000 +0200
+--- src/svn/Makefile.am.orig	2013-07-26 05:20:50 UTC
++++ src/svn/Makefile.am
 @@ -1,6 +1,6 @@
  lib_LTLIBRARIES = mod_authz_svn_crowd.la
  mod_authz_svn_crowd_la_SOURCES = mod_authz_svn_crowd.c
