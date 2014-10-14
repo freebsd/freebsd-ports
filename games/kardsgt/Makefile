@@ -10,6 +10,9 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Card game suite
 
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		qmake
 USE_QT4=	assistantclient corelib gui network \
 		moc_build rcc_build uic_build
