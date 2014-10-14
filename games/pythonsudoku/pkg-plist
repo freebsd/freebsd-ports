@@ -49,5 +49,3 @@ man/man6/pysdk.6.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/pythonsudoku.mo
 share/pixmaps/pythonsudoku.png
 %%DATADIR%%/FreeSans.ttf
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/pythonsudoku
