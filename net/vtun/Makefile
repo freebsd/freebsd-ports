@@ -46,6 +46,6 @@ post-install:
 .for doc in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${LN} -s ${STAGEDIR}${PREFIX}/man/man8/vtund.8 ${STAGEDIR}${PREFIX}/man/man1/vtun.1
+	@${LN} -s ${PREFIX}/man/man8/vtund.8 ${STAGEDIR}${PREFIX}/man/man1/vtun.1
 
 .include <bsd.port.post.mk>
