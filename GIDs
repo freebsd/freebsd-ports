@@ -65,7 +65,6 @@ fetchmail:*:124:
 postfix:*:125:
 maildrop:*:126:
 nav:*:127:
-vchat:*:128:
 vlock:*:129:
 _bgpd:*:130:
 _ospfd:*:131:
@@ -261,10 +260,8 @@ teamspeak:*:942:
 dnetfold:*:943:
 bbs:*:944:
 dbxml:*:945:
-sybase:*:946:
 gnokii:*:947:
 dnrd:*:948:
-zenoss:*:949:
 conquest:*:950:
 openerpd:*:951:
 bitten-slave:*:952:
