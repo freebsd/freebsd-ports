@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gputils
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	gplink-[0-9]*
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		bison gmake
 CONFIGURE_ARGS= --disable-dependency-tracking --disable-html-doc
 
 .include <bsd.port.options.mk>
