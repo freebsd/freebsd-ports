@@ -15,6 +15,7 @@ libdata/pkgconfig/gsoapck++.pc
 libdata/pkgconfig/gsoapck.pc
 libdata/pkgconfig/gsoapssl++.pc
 libdata/pkgconfig/gsoapssl.pc
+%%DATADIR%%/WS/LEGAL.txt
 %%DATADIR%%/WS/README.txt
 %%DATADIR%%/WS/WS-Addressing.xsd
 %%DATADIR%%/WS/WS-Addressing03.xsd
@@ -37,6 +38,11 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/WS/enumeration.xsd
 %%DATADIR%%/WS/reference-1.1.xsd
 %%DATADIR%%/WS/typemap.dat
+%%DATADIR%%/WS/ws-bpel_abstract_common_base.xsd
+%%DATADIR%%/WS/ws-bpel_executable.xsd
+%%DATADIR%%/WS/ws-bpel_plnktype.xsd
+%%DATADIR%%/WS/ws-bpel_serviceref.xsd
+%%DATADIR%%/WS/ws-bpel_varprop.xsd
 %%DATADIR%%/WS/ws-reliability-1.1.xsd
 %%DATADIR%%/WS/wsse.xsd
 %%DATADIR%%/WS/wsu.xsd
@@ -50,6 +56,9 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/custom/struct_timeval.h
 %%DATADIR%%/custom/struct_tm.c
 %%DATADIR%%/custom/struct_tm.h
+%%DATADIR%%/custom/wsrmdemo-duration.o
+%%DATADIR%%/custom/wsrmdemo_ssl-duration.o
+%%DATADIR%%/custom/wsrmdemo_udp-duration.o
 %%DATADIR%%/extras/README.txt
 %%DATADIR%%/extras/ckdb.c
 %%DATADIR%%/extras/ckdb.h
@@ -66,6 +75,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/import/dom.h
 %%DATADIR%%/import/ds.h
 %%DATADIR%%/import/ds2.h
+%%DATADIR%%/import/plnk.h
 %%DATADIR%%/import/ref.h
 %%DATADIR%%/import/ser.h
 %%DATADIR%%/import/soap12.h
@@ -75,6 +85,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/import/stllist.h
 %%DATADIR%%/import/stlset.h
 %%DATADIR%%/import/stlvector.h
+%%DATADIR%%/import/vprop.h
 %%DATADIR%%/import/wsa.h
 %%DATADIR%%/import/wsa3.h
 %%DATADIR%%/import/wsa4.h
@@ -119,6 +130,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/plugin/httpform.h
 %%DATADIR%%/plugin/httpget.c
 %%DATADIR%%/plugin/httpget.h
+%%DATADIR%%/plugin/httpget.o
 %%DATADIR%%/plugin/httpgettest.c
 %%DATADIR%%/plugin/httpgettest.h
 %%DATADIR%%/plugin/httpmd5.c
@@ -127,6 +139,7 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/plugin/httpmd5test.h
 %%DATADIR%%/plugin/httppost.c
 %%DATADIR%%/plugin/httppost.h
+%%DATADIR%%/plugin/httppost.o
 %%DATADIR%%/plugin/httpposttest.c
 %%DATADIR%%/plugin/httpposttest.h
 %%DATADIR%%/plugin/logging.c
@@ -141,23 +154,30 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/plugin/plugin.h
 %%DATADIR%%/plugin/smdevp.c
 %%DATADIR%%/plugin/smdevp.h
+%%DATADIR%%/plugin/sslserver-threads.o
 %%DATADIR%%/plugin/threads.c
 %%DATADIR%%/plugin/threads.h
 %%DATADIR%%/plugin/wsaapi.c
 %%DATADIR%%/plugin/wsaapi.h
+%%DATADIR%%/plugin/wsademo-wsaapi.o
 %%DATADIR%%/plugin/wsddapi.c
 %%DATADIR%%/plugin/wsddapi.h
 %%DATADIR%%/plugin/wsrmapi.c
 %%DATADIR%%/plugin/wsrmapi.h
+%%DATADIR%%/plugin/wsrmdemo-threads.o
+%%DATADIR%%/plugin/wsrmdemo-wsaapi.o
+%%DATADIR%%/plugin/wsrmdemo-wsrmapi.o
+%%DATADIR%%/plugin/wsrmdemo_ssl-threads.o
+%%DATADIR%%/plugin/wsrmdemo_ssl-wsaapi.o
+%%DATADIR%%/plugin/wsrmdemo_ssl-wsrmapi.o
+%%DATADIR%%/plugin/wsrmdemo_udp-threads.o
+%%DATADIR%%/plugin/wsrmdemo_udp-wsaapi.o
+%%DATADIR%%/plugin/wsrmdemo_udp-wsrmapi.o
 %%DATADIR%%/plugin/wsse2api.c
 %%DATADIR%%/plugin/wsse2api.h
 %%DATADIR%%/plugin/wsseapi.c
 %%DATADIR%%/plugin/wsseapi.cpp
 %%DATADIR%%/plugin/wsseapi.h
-@dirrm lib/gsoap
-@dirrm %%DATADIR%%/plugin
-@dirrm %%DATADIR%%/import
-@dirrm %%DATADIR%%/extras
-@dirrm %%DATADIR%%/custom
-@dirrm %%DATADIR%%/WS
-@dirrm %%DATADIR%%
+%%DATADIR%%/plugin/wssedemo-mecevp.o
+%%DATADIR%%/plugin/wssedemo-smdevp.o
+%%DATADIR%%/plugin/wssedemo-wsseapi.o
