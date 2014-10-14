@@ -71,7 +71,6 @@ _ntp:*:123:123::0:0:NTP Daemon:/var/empty:/usr/sbin/nologin
 fetchmail:*:124:124::0:0:Fetchmail mail-retrieval daemon:/nonexistent:/usr/sbin/nologin
 postfix:*:125:125::0:0:Postfix Mail System:/var/spool/postfix:/usr/sbin/nologin
 navcron:*:127:127::0:0:Network Administration Visualized:/usr/local/nav:/usr/sbin/nologin
-vchat:*:128:128::0:0:VChat Conferencing System:/nonexistent:/usr/sbin/nologin
 _bgpd:*:130:130::0:0:BGP Daemon:/var/empty:/usr/sbin/nologin
 _ospfd:*:131:131::0:0:OSPF Daemon:/var/empty:/usr/sbin/nologin
 _spamd:*:132:132::0:0:Spam Daemon:/var/empty:/usr/sbin/nologin
@@ -265,10 +264,8 @@ teamspeak:*:942:942::0:0:TeamSpeak user:/nonexistent:/usr/sbin/nologin
 dnetfold:*:943:943::0:0:& user:/nonexistent:/usr/sbin/nologin
 bbs:*:944:944::0:0:& user:/nonexistent:/usr/sbin/nologin
 dbxml:*:945:945::0:0:& user:/nonexistent:/usr/sbin/nologin
-sybase:*:946:946::0:0:& user:/usr/local/sybase-ase:/usr/sbin/nologin
 mapred:*:947:955::0:0:Hadoop MapReduce user:/nonexistent:/usr/sbin/nologin
 dnrd:*:948:948::0:0:& user:/nonexistent:/usr/sbin/nologin
-zenoss:*:949:949::0:0:& user:/usr/local/zenoss:/bin/sh
 openerpd:*:951:951::0:0:Openerpd user:/nonexistent:/usr/sbin/nologin
 bitten-slave:*:952:952:daemon:0:0:Bitten slave user:/var/lib/bitten-slave:/usr/sbin/nologin
 _neubot:*:953:953::0:0:neubot daemon:/nonexistent:/usr/sbin/nologin
