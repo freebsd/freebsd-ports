@@ -409,14 +409,3 @@ share/applications/djgame2.desktop
 %%DATADIR%%/modules/libShisensho.so
 %%DATADIR%%/modules/libSuoha.so
 %%DATADIR%%/modules/libUpgrade.so
-@dirrm %%DATADIR%%/wav/language/Chinese
-@dirrm %%DATADIR%%/wav/language
-@dirrm %%DATADIR%%/wav/Mahjong
-@dirrm %%DATADIR%%/wav/LandBattle
-@dirrm %%DATADIR%%/wav/Interlink
-@dirrm %%DATADIR%%/wav
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/images/member
-@dirrm %%DATADIR%%/images/avatars
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

@@ -11,9 +11,9 @@ DISTNAME=	source-${PORTVERSION}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	bluedj contains many popular online games
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
-NO_BUILD=	yes
 USE_QT4=	gui qt3support qmake_build uic_build rcc_build moc_build svg
 USES=		dos2unix zip
 DOS2UNIX_FILES=	Base/src/DJGraphicsChessTimerItem.cpp
@@ -38,7 +38,7 @@ post-patch:
 		>> ${WRKSRC}/Hall/Hall.pro
 	@${CHMOD} a+x ${WRKSRC}/make_linux_output
 
-do-configure:
+do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./make_linux_output
 
 do-install:
