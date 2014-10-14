@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stfl
-PORTVERSION=	0.22
-PORTREVISION=	1
+PORTVERSION=	0.23
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clifford.at/stfl/
 
@@ -16,7 +15,7 @@ USES=		gmake iconv:wchar_t ncurses
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/stfl.h lib/libstfl.a lib/libstfl.so lib/libstfl.so.0 \
-		lib/libstfl.so.0.22 libdata/pkgconfig/stfl.pc
+		lib/libstfl.so.${PORTVERSION} libdata/pkgconfig/stfl.pc
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_ENV=	LDLIBS="${LDFLAGS}"
@@ -37,6 +36,6 @@ pre-build:
 		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} Makefile.deps
 
 post-install:
-	${LN} -s libstfl.so.0.22 ${STAGEDIR}${PREFIX}/lib/libstfl.so.0
+	${LN} -s libstfl.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libstfl.so.0
 
 .include <bsd.port.mk>
