@@ -1,6 +1,7 @@
 # $FreeBSD$
 # Please keep this file sorted by UID!
-# Please pick an empty slot when available
+# Please pick an empty slot when available and also consider base values from
+# /usr/src/etc/master.passwd
 operator:*:2:5::0:0:System &:/:/usr/sbin/nologin
 ftp:*:14:14::0:0:Anonymous FTP:/var/ftp:/nonexistent
 smmsp:*:25:25::0:0:Sendmail Submission User:/var/spool/clientmqueue:/usr/sbin/nologin
