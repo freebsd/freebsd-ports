@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linsmith
-PORTVERSION=	0.99.26
-PORTREVISION=	1
+PORTVERSION=	0.99.28
 CATEGORIES=	science hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,17 +17,18 @@ GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^Icon/s|/usr/share|${PREFIX}/share|' \
+		'/^Categories/s|Application;|| ; \
+		 /^Icon/s|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/linsmith.desktop
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKSRC} \
-		&& ${INSTALL_DATA} linsmith.desktop ${STAGEDIR}${DESKTOPDIR})
-	(cd ${WRKSRC} \
-		&& ${INSTALL_DATA} linsmith_icon.xpm ${STAGEDIR}${PREFIX}/share/pixmaps)
+	(cd ${WRKSRC} && ${INSTALL_DATA} linsmith.desktop \
+		${STAGEDIR}${DESKTOPDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} linsmith_icon.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps/linsmith)
 
 .include <bsd.port.mk>
