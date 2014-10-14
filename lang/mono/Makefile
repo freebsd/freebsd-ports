@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	3.8.0
+PORTVERSION=	3.10.0
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
@@ -36,10 +36,6 @@ MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!/bin/sh|g' \
-		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj \
-		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj2k5 \
-		${WRKSRC}/mcs/class/Mono.WebBrowser/build-csproj2k5
 	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!/usr/bin/env bash|g' \
 		${WRKSRC}/scripts/mono-find-provides.in \
 		${WRKSRC}/scripts/mono-find-requires.in \
