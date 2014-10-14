@@ -30,6 +30,7 @@ include/dovecot/auth-worker-server.h
 include/dovecot/auth.h
 include/dovecot/backtrace-string.h
 include/dovecot/base64.h
+include/dovecot/bits.h
 include/dovecot/bsearch-insert-pos.h
 include/dovecot/buffer.h
 include/dovecot/charset-utf8.h
@@ -64,6 +65,7 @@ include/dovecot/dict-sql.h
 include/dovecot/dict-transaction-memory.h
 include/dovecot/dict.h
 include/dovecot/dns-lookup.h
+include/dovecot/doveadm-dsync.h
 include/dovecot/doveadm-dump.h
 include/dovecot/doveadm-mail-iter.h
 include/dovecot/doveadm-mail.h
@@ -76,6 +78,8 @@ include/dovecot/doveadm.h
 include/dovecot/dovecot-version.h
 include/dovecot/dsasl-client-private.h
 include/dovecot/dsasl-client.h
+include/dovecot/dsync-brain.h
+include/dovecot/dsync-ibc.h
 include/dovecot/duplicate.h
 include/dovecot/eacces-error.h
 include/dovecot/env-util.h
@@ -107,6 +111,7 @@ include/dovecot/hmac-cram-md5.h
 include/dovecot/hmac.h
 include/dovecot/home-expand.h
 include/dovecot/hostpid.h
+include/dovecot/http-auth.h
 include/dovecot/http-client-private.h
 include/dovecot/http-client.h
 include/dovecot/http-date.h
@@ -118,6 +123,8 @@ include/dovecot/http-request-parser.h
 include/dovecot/http-request.h
 include/dovecot/http-response-parser.h
 include/dovecot/http-response.h
+include/dovecot/http-server-private.h
+include/dovecot/http-server.h
 include/dovecot/http-transfer.h
 include/dovecot/http-url.h
 include/dovecot/imap-arg.h
@@ -196,6 +203,7 @@ include/dovecot/istream-attachment-connector.h
 include/dovecot/istream-attachment-extractor.h
 include/dovecot/istream-base64.h
 include/dovecot/istream-binary-converter.h
+include/dovecot/istream-callback.h
 include/dovecot/istream-chain.h
 include/dovecot/istream-concat.h
 include/dovecot/istream-crlf.h
@@ -371,6 +379,7 @@ include/dovecot/quota-plugin.h
 include/dovecot/quota-private.h
 include/dovecot/quota.h
 include/dovecot/quoted-printable.h
+include/dovecot/rand.h
 include/dovecot/randgen.h
 include/dovecot/raw-storage.h
 include/dovecot/raw-sync.h
@@ -444,6 +453,8 @@ lib/dovecot/lib05_pop3_migration_plugin.a
 lib/dovecot/lib05_pop3_migration_plugin.so
 lib/dovecot/lib05_snarf_plugin.a
 lib/dovecot/lib05_snarf_plugin.so
+lib/dovecot/lib10_last_login_plugin.a
+lib/dovecot/lib10_last_login_plugin.so
 lib/dovecot/lib10_mail_filter_plugin.a
 lib/dovecot/lib10_mail_filter_plugin.so
 lib/dovecot/lib10_quota_plugin.a
@@ -484,6 +495,10 @@ lib/dovecot/libdovecot-compression.a
 lib/dovecot/libdovecot-compression.so
 lib/dovecot/libdovecot-compression.so.0
 lib/dovecot/libdovecot-compression.so.0.0.0
+lib/dovecot/libdovecot-dsync.a
+lib/dovecot/libdovecot-dsync.so
+lib/dovecot/libdovecot-dsync.so.0
+lib/dovecot/libdovecot-dsync.so.0.0.0
 lib/dovecot/libdovecot-lda.a
 lib/dovecot/libdovecot-lda.so
 lib/dovecot/libdovecot-lda.so.0
@@ -539,8 +554,10 @@ libexec/dovecot/ssl-params
 libexec/dovecot/stats
 libexec/dovecot/xml2text
 man/man1/deliver.1.gz
+man/man1/doveadm-acl.1.gz
 man/man1/doveadm-altmove.1.gz
 man/man1/doveadm-auth.1.gz
+man/man1/doveadm-backup.1.gz
 man/man1/doveadm-batch.1.gz
 man/man1/doveadm-config.1.gz
 man/man1/doveadm-copy.1.gz
@@ -552,6 +569,7 @@ man/man1/doveadm-expunge.1.gz
 man/man1/doveadm-fetch.1.gz
 man/man1/doveadm-flags.1.gz
 man/man1/doveadm-force-resync.1.gz
+man/man1/doveadm-fts.1.gz
 man/man1/doveadm-help.1.gz
 man/man1/doveadm-import.1.gz
 man/man1/doveadm-index.1.gz
@@ -562,12 +580,15 @@ man/man1/doveadm-mailbox.1.gz
 man/man1/doveadm-mount.1.gz
 man/man1/doveadm-move.1.gz
 man/man1/doveadm-penalty.1.gz
+man/man1/doveadm-proxy.1.gz
 man/man1/doveadm-purge.1.gz
 man/man1/doveadm-pw.1.gz
 man/man1/doveadm-quota.1.gz
 man/man1/doveadm-reload.1.gz
+man/man1/doveadm-replicator.1.gz
 man/man1/doveadm-search.1.gz
 man/man1/doveadm-stop.1.gz
+man/man1/doveadm-sync.1.gz
 man/man1/doveadm-user.1.gz
 man/man1/doveadm-who.1.gz
 man/man1/doveadm.1.gz
@@ -578,13 +599,7 @@ man/man1/dsync.1.gz
 man/man7/doveadm-search-query.7.gz
 sbin/dovecot
 share/aclocal/dovecot.m4
-@dirrm include/dovecot
-@dirrmtry lib/dovecot/auth
-@dirrm lib/dovecot/doveadm
-@dirrm lib/dovecot
-@dirrm libexec/dovecot
 %%PORTDOCS%%%%ETCDIR%%/README
-%%PORTDOCS%%@dirrmtry %%ETCDIR%%
 %%LIBWRAP%%libexec/dovecot/tcpwrap
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.a
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.so

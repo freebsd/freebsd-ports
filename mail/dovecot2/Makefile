@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.13
-PORTREVISION=	3
+PORTVERSION=	2.2.14
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -27,7 +26,7 @@ CONFLICTS=	dovecot-1.[0-9]*
 # port before updating this one.                                     #
 ######################################################################
 
-USES=		iconv libtool cpe
+USES=		cpe iconv libtool
 USE_RC_SUBR=	dovecot
 
 GNU_CONFIGURE=	yes
