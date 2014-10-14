@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.10.3
-PORTREVISION=	5
+PORTVERSION=	2.10.4
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -188,7 +187,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
 
 .if ${PORT_OPTIONS:MOPENLDAP}
 USE_OPENLDAP=		yes
-.if ${PORT_OPTIONS:MOPENLDAP_VER}
+.if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
@@ -343,5 +342,12 @@ do-install:
 .for f in ${MANTEST}
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
+.if ${STRIP_CMD:M*/strip}
+	${FILE} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/sbin/* \
+		${STAGEDIR}${DAEMONDIR}/* \
+	| LC_ALL=C ${GREP} 'not stripped' \
+	| ${CUT} -f1 -d\: \
+	| ${XARGS} ${STRIP_CMD}
+.endif
 
 .include <bsd.port.mk>
