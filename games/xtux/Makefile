@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Humorous Arcade game for X
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	xpm
@@ -19,9 +22,13 @@ MAKE_ENV=	CPP="${CC} -E"
 
 CFLAGS+=	-DDATADIR=\\\"${DATADIR}\\\"
 
-OPTIONS_DEFINE=	DOCS
-
 MAKE_JOBS_UNSAFE=yes
+
+PLIST_FILES=	bin/tux_serv bin/xtux
+PORTDATA=	*
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${FIND} ${WRKSRC}/src -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
