@@ -11,6 +11,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME MP3/Ogg file tagger
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
