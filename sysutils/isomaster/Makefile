@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	isomaster
-PORTVERSION=	1.3.11
+PORTVERSION=	1.3.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://littlesvr.ca/isomaster/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	GTK2 (bootable) CD ISO Image editor
 
 LICENSE=	GPLv2
