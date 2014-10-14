@@ -308,22 +308,22 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/virtual.8.html
 %%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/generic.5.html
-@unexec rmdir "/var/db/postfix" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/active" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/bounce" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/corrupt" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/defer" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/deferred" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/flush" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/hold" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/incoming" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/maildrop" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/pid" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/private" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/public" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/saved" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/trace" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix" >/dev/null 2>&1 || :
+@dir /var/db/postfix
+@dir /var/spool/postfix/active
+@dir /var/spool/postfix/bounce
+@dir /var/spool/postfix/corrupt
+@dir /var/spool/postfix/defer
+@dir /var/spool/postfix/deferred
+@dir /var/spool/postfix/flush
+@dir /var/spool/postfix/hold
+@dir /var/spool/postfix/incoming
+@dir /var/spool/postfix/maildrop
+@dir /var/spool/postfix/pid
+@dir /var/spool/postfix/private
+@dir /var/spool/postfix/public
+@dir /var/spool/postfix/saved
+@dir /var/spool/postfix/trace
+@dir /var/spool/postfix
 %%BASE%%@cwd /
 etc/postfix/LICENSE
 etc/postfix/TLS_LICENSE
