@@ -146,5 +146,3 @@ man/man3/zzip_tell32.3.gz
 man/man3/zzip_telldir.3.gz
 man/man3/zzip_telldir32.3.gz
 share/aclocal/zziplib.m4
-%%SDL%%@dirrm include/SDL_rwops_zzip
-@dirrm include/zzip
