@@ -282,4 +282,4 @@ share/pixmaps/chirp.png
 @dirrm %%PYTHON_SITELIBDIR%%/chirpui
 @dirrm share/chirp/stock_configs
 @dirrm share/chirp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
