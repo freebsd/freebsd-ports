@@ -1,4 +1,6 @@
 bin/DHT_bootstrap
+%%DAEMON%%bin/tox-bootstrapd
+%%DAEMON%%@sample etc/tox-bootstrapd.conf.sample
 include/tox/tox.h
 include/tox/toxav.h
 include/tox/toxdns.h
@@ -21,3 +23,6 @@ lib/libtoxencryptsave.a
 %%SODIUM%%lib/libtoxencryptsave.so.0.0.0
 libdata/pkgconfig/libtoxav.pc
 libdata/pkgconfig/libtoxcore.pc
+%%DAEMON%%@dir(%%TOXDHT%%,nobody,755) /var/run/tox-bootstrapd
+%%DAEMON%%@dir(%%TOXDHT%%,nobody,700) /var/lib/tox-bootstrapd
+%%DAEMON%%@dir /var/lib

@@ -3,6 +3,7 @@
 
 PORTNAME=	toxcore
 PORTVERSION=	0.141012
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -31,6 +32,7 @@ USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=		install-strip
 
+OPTIONS_DEFINE=		DAEMON
 OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	SODIUM NACL
 OPTIONS_DEFAULT=	SODIUM
@@ -41,8 +43,13 @@ SODIUM_LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 
 NACL_DESC=		Prefer NaCl
 NACL_CONFIGURE_ENABLE=	nacl
+NACL_CONFIGURE_ON=	--with-nacl-libs=${LOCALBASE}/lib
 NACL_BUILD_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl
 NACL_RUN_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl
+
+DAEMON_DESC=		Bootstrap daemon
+DAEMON_CONFIGURE_ENABLE=daemon
+DAEMON_LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig
 
 .include <bsd.port.options.mk>
 
@@ -51,11 +58,25 @@ USE_GCC=	yes
 BROKEN_i386=	'__stack_chk_fail_local' isn't defined
 .endif
 
-.if ${PORT_OPTIONS:MNACL}
-CONFIGURE_ARGS+=	--with-nacl-libs=${LOCALBASE}/lib
+.if ${PORT_OPTIONS:MDAEMON}
+USERS=	toxdht
+USE_RC_SUBR=	tox-bootstrapd
+SUB_LIST=	TOXDHT=${USERS}
+PLIST_SUB+=	TOXDHT=${USERS}
+KEYS_DIR=	/var/lib/tox-bootstrapd
+PID_DIR=	/var/run/tox-bootstrapd
+PKGMESSAGE=	${PKGDIR}/pkg-message.daemon
 .endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure.ac
+
+post-install:
+.if ${PORT_OPTIONS:MDAEMON}
+	${INSTALL_DATA} ${WRKSRC}/other/bootstrap_daemon/tox-bootstrapd.conf	\
+		${STAGEDIR}${PREFIX}/etc/tox-bootstrapd.conf.sample
+	${MKDIR} ${STAGEDIR}${KEYS_DIR}
+	${MKDIR} ${STAGEDIR}${PID_DIR}
+.endif
 
 .include <bsd.port.mk>
