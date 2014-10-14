@@ -34,7 +34,3 @@ share/pixmaps/syobon.png
 %%DATADIR%%/res/player.PNG
 %%DATADIR%%/res/syobon3.PNG
 %%DATADIR%%/res/teki.PNG
-@dirrm %%DATADIR%%/res
-@dirrm %%DATADIR%%/SE
-@dirrm %%DATADIR%%/BGM
-@dirrm %%DATADIR%%
