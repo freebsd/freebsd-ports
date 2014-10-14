@@ -5,14 +5,12 @@ PORTNAME=	txtbdf2ps
 PORTVERSION=	0.7.1
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/ \
 		http://oldrus-ispell.sourceforge.net/
 EXTRACT_SUFX=	.txt
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Translator TXT + BDF to PS
-
-PROJECTHOST=	ak-various-projects
 
 PLIST_FILES=	bin/txtbdf2ps
 USES=		perl5 shebangfix
