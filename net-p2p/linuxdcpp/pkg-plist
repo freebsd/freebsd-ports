@@ -13,7 +13,6 @@ share/applications/linuxdcpp.desktop
 %%DATADIR%%/glade/settingsdialog.glade
 %%DATADIR%%/glade/sharebrowser.glade
 %%DATADIR%%/glade/transfers.glade
-@dirrm %%DATADIR%%/glade
 %%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-dc++-fw-op.png
 %%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-dc++-fw.png
 %%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-dc++-op.png
@@ -24,8 +23,6 @@ share/applications/linuxdcpp.desktop
 %%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-normal-op.png
 %%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-normal.png
 %%DATADIR%%/icons/hicolor/16x16/status/linuxdcpp-upload.png
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16
 %%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-favorite-hubs.png
 %%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-favorite-users.png
 %%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-finished-downloads.png
@@ -35,8 +32,6 @@ share/applications/linuxdcpp.desktop
 %%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-public-hubs.png
 %%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-queue.png
 %%DATADIR%%/icons/hicolor/22x22/categories/linuxdcpp-search.png
-@dirrm %%DATADIR%%/icons/hicolor/22x22/categories
-@dirrm %%DATADIR%%/icons/hicolor/22x22
 %%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-favorite-hubs.svg
 %%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-favorite-users.svg
 %%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-finished-downloads.svg
@@ -46,7 +41,6 @@ share/applications/linuxdcpp.desktop
 %%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-public-hubs.svg
 %%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-queue.svg
 %%DATADIR%%/icons/hicolor/scalable/categories/linuxdcpp-search.svg
-@dirrm %%DATADIR%%/icons/hicolor/scalable/categories
 %%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-dc++-fw-op.svg
 %%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-dc++-fw.svg
 %%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-dc++-op.svg
@@ -57,18 +51,11 @@ share/applications/linuxdcpp.desktop
 %%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-normal-op.svg
 %%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-normal.svg
 %%DATADIR%%/icons/hicolor/scalable/status/linuxdcpp-upload.svg
-@dirrm %%DATADIR%%/icons/hicolor/scalable/status
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
 share/icons/hicolor/16x16/apps/linuxdcpp.png
 share/icons/hicolor/20x20/apps/linuxdcpp.png
 share/icons/hicolor/24x24/apps/linuxdcpp.png
 share/icons/hicolor/48x48/apps/linuxdcpp.png
 share/icons/hicolor/96x96/apps/linuxdcpp.png
-@dirrmtry share/icons/hicolor/20x20/apps
-@dirrmtry share/icons/hicolor/20x20
 share/icons/hicolor/scalable/apps/linuxdcpp.svg
 share/locale/ar/LC_MESSAGES/libdcpp.mo
 share/locale/bg/LC_MESSAGES/libdcpp.mo
