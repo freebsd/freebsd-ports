@@ -3,6 +3,7 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	4.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/
@@ -15,9 +16,14 @@ LICENSE=	GPLv2
 CONFLICTS_INSTALL=	de-wordpress-3.* ja-wordpress-3.* ru-wordpress-3.*
 
 NO_BUILD=	yes
-USE_PHP=	curl gd mysql pcre tokenizer xml zip
+USES=		cpe
+USE_PHP=	curl gd hash mysql pcre tokenizer xml zip zlib
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+.if ${PORTVERSION:N*.*.*}
+CPE_VERSION=	${PORTVERSION}.0
+.endif
 
 SUB_FILES=	pkg-message
 PLIST=		${WRKDIR}/pkg-plist
