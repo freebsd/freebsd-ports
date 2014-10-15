@@ -20,7 +20,8 @@ share/xsessions/Lumina-DE.desktop
 share/Lumina-DE/desktop-background.jpg
 share/Lumina-DE/defaultapps.conf
 share/Lumina-DE/desktopsettings.conf
-share/Lumina-DE/stylesheet.qss
+share/Lumina-DE/fluxbox-init-rc
+share/Lumina-DE/fluxbox-keys
 share/Lumina-DE/Login.ogg
 share/Lumina-DE/Logout.ogg
 share/Lumina-DE/colors/SampleColors.qss.colors
