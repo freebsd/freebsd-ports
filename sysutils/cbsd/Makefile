@@ -2,6 +2,7 @@
 
 PORTNAME=	cbsd
 PORTVERSION=	10.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -39,8 +40,8 @@ IGNORE=	does not support FreeBSD versions < 10.0
 do-install:
 	@${ECHO} "Installing in ${CBSD_HOME}"
 	${MKDIR} ${STAGEDIR}${CBSD_HOME}
-	${CP} -R ${WRKSRC}/* ${STAGEDIR}${CBSD_HOME}
-	@${INSTALL_MAN} ${WRKSRC}/man/cbsd.8 ${STAGEDIR}${PREFIX}/man/man8/cbsd.8
+	${CP} -a ${WRKSRC}/ ${STAGEDIR}${CBSD_HOME}
+	${INSTALL_MAN} ${WRKSRC}/man/cbsd.8 ${STAGEDIR}${PREFIX}/man/man8/cbsd.8
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/cbsdsh/cbsd ${STAGEDIR}${PREFIX}/bin
 
 post-install:
