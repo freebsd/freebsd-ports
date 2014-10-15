@@ -1,6 +1,6 @@
 --- gcc/fortran/f95-lang.c.orig
 +++ gcc/fortran/f95-lang.c
-@@ -718,10 +718,17 @@
+@@ -742,10 +742,17 @@
  
    gfc_define_builtin ("__builtin_cabsl", func_clongdouble_longdouble, 
  		      BUILT_IN_CABSL, "cabsl", ATTR_CONST_NOTHROW_LEAF_LIST);

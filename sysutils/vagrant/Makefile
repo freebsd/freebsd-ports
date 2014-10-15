@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTVERSION=	1.6.5
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	LOCAL/swills https://codeload.github.com/mitchellh/vagrant/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
@@ -22,6 +21,7 @@ RUN_DEPENDS=	rubygem-main>=1.0:${PORTSDIR}/devel/rubygem-main \
 		rubygem-childprocess>=0.5.1:${PORTSDIR}/devel/rubygem-childprocess \
 		rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-gyoku>=0.4.6:${PORTSDIR}/devel/rubygem-gyoku \
+		rubygem-hashicorp-checkpoint>=0.1.4:${PORTSDIR}/www/rubygem-hashicorp-checkpoint \
 		rubygem-httpclient>=2.3.3:${PORTSDIR}/www/rubygem-httpclient \
 		rubygem-httpi>=0.9.0:${PORTSDIR}/www/rubygem-httpi \
 		rubygem-i18n>=0.6.9:${PORTSDIR}/devel/rubygem-i18n \
@@ -45,7 +45,7 @@ RUN_DEPENDS=	rubygem-main>=1.0:${PORTSDIR}/devel/rubygem-main \
 		rubygem-winrm>=1.1.3:${PORTSDIR}/sysutils/rubygem-winrm \
 		rubygem-wdm>=0.1.0:${PORTSDIR}/devel/rubygem-wdm
 
-WRKSRC=		${WRKDIR}/mitchellh-vagrant-85d63a9
+WRKSRC=		${WRKDIR}/mitchellh-vagrant-c38e17c
 USE_RUBY=	yes
 GEMFILES=	vagrant-${PORTVERSION}.gem
 RUBYGEMBIN=	gem${RUBY_SUFFIX}

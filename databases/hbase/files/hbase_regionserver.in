@@ -11,6 +11,7 @@
 
 . /etc/rc.subr
 
+export PATH=${PATH}:%%LOCALBASE%%/bin
 name=hbase_regionserver
 rcvar=hbase_regionserver_enable
 

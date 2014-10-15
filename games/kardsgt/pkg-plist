@@ -29,7 +29,3 @@ share/icons/kardsgt.png
 %%DATADIR%%/toc.html
 %%DATADIR%%/wally.html
 %%DATADIR%%/war.html
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

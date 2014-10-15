@@ -1,5 +1,5 @@
 bin/linsmith
-share/applications/linsmith.desktop
+%%DESKTOPDIR%%/linsmith.desktop
 %%DATADIR%%/6-1.circ
 %%DATADIR%%/6-4.circ
 %%DATADIR%%/6-4.load
@@ -21,7 +21,7 @@ share/locale/hu/LC_MESSAGES/linsmith.mo
 share/locale/it/LC_MESSAGES/linsmith.mo
 share/locale/sv/LC_MESSAGES/linsmith.mo
 share/locale/zh/LC_MESSAGES/linsmith.mo
-share/pixmaps/linsmith_icon.xpm
+share/pixmaps/linsmith/linsmith_icon.xpm
 share/pixmaps/linsmith/smith4.png
 share/pixmaps/linsmith/smithent.png
 @dirrm share/pixmaps/linsmith

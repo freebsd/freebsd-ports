@@ -57,6 +57,88 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9c1495ac-8d8c-4789-a0f3-8ca6b476619c">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.2.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.2.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-74 Miscellaneous memory safety hazards
+	    (rv:33.0 / rv:31.2)</p>
+	  <p>MFSA 2014-75 Buffer overflow during CSS manipulation</p>
+	  <p>MFSA 2014-76 Web Audio memory corruption issues with
+	    custom waveforms</p>
+	  <p>MFSA 2014-77 Out-of-bounds write with WebM video</p>
+	  <p>MFSA 2014-78 Further uninitialized memory use during GIF</p>
+	  <p>MFSA 2014-79 Use-after-free interacting with text
+	    directionality</p>
+	  <p>MFSA 2014-80 Key pinning bypasses</p>
+	  <p>MFSA 2014-81 Inconsistent video sharing within iframe</p>
+	  <p>MFSA 2014-82 Accessing cross-origin objects via the
+	    Alarms API</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1574</cvename>
+      <cvename>CVE-2014-1575</cvename>
+      <cvename>CVE-2014-1576</cvename>
+      <cvename>CVE-2014-1577</cvename>
+      <cvename>CVE-2014-1578</cvename>
+      <cvename>CVE-2014-1580</cvename>
+      <cvename>CVE-2014-1581</cvename>
+      <cvename>CVE-2014-1582</cvename>
+      <cvename>CVE-2014-1583</cvename>
+      <cvename>CVE-2014-1584</cvename>
+      <cvename>CVE-2014-1585</cvename>
+      <cvename>CVE-2014-1586</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-74.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-75.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-76.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-77.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-78.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-79.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-80.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-81.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-82.html</url>
+      <url>https://www.mozilla.org/security/announce/</url>
+    </references>
+    <dates>
+      <discovery>2014-10-14</discovery>
+      <entry>2014-10-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c30c3a2e-4fb1-11e4-b275-14dae9d210b8">
     <topic>foreman-proxy SSL verification issue</topic>
     <affects>

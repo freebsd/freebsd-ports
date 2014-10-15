@@ -150,7 +150,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-next-channel.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-part.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-previous-channel.xpm
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/riece
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -159,4 +158,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/HACKING.ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -84,9 +84,7 @@ do-build:
 .endif
 
 do-configure:
-	${MV} ${WRKSRC}/share/man ${WRKSRC}/man
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
-		-e 's|share/man|man|g' ${WRKSRC}/install
+	@${MV} ${WRKSRC}/share/man ${WRKSRC}/man
 	@${REINPLACE_CMD} -e 's|"$${0%/.}"|${PREFIX}|g' \
 		-e 's|/usr/local/profile|$$HOME/.opera|' \
 		${WRKSRC}/opera

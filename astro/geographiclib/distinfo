@@ -1,5 +1,5 @@
-SHA256 (GeographicLib/GeographicLib-1.37.tar.gz) = ebf2dec42d8b738024eb29ad36976ff8ea550eb4c005a07cb1b2abbc2e4d3de5
-SIZE (GeographicLib/GeographicLib-1.37.tar.gz) = 1963202
+SHA256 (GeographicLib/GeographicLib-1.38.tar.gz) = 13904610395efb0b2a94729a912688aca87b02cf7518633178c6a4a829aeff8c
+SIZE (GeographicLib/GeographicLib-1.38.tar.gz) = 1976874
 SHA256 (GeographicLib/geoids-distrib/egm2008-1.tar.bz2) = bdb382d0be7ece9142450eacc24b7b7f0889ee3e0ba4f535b04ec383f94c0fb5
 SIZE (GeographicLib/geoids-distrib/egm2008-1.tar.bz2) = 162388303
 SHA256 (GeographicLib/geoids-distrib/egm2008-2_5.tar.bz2) = d602e13446a4a4a23f39aecfe6a2a0760a1bc6c1b497482c2ebc9f7d513be699
@@ -20,6 +20,8 @@ SHA256 (GeographicLib/gravity-distrib/egm84.tar.bz2) = 7ebec3b2aa2e88581470cd776
 SIZE (GeographicLib/gravity-distrib/egm84.tar.bz2) = 258023
 SHA256 (GeographicLib/gravity-distrib/egm96.tar.bz2) = 6fea4c6bd56ff8ac53dbdad8d5dd505c855471d0354c4abc5c5fe048bf8350c1
 SIZE (GeographicLib/gravity-distrib/egm96.tar.bz2) = 2055724
+SHA256 (GeographicLib/gravity-distrib/grs80.tar.bz2) = 636c438460c9ccb90332bd6fd7d57dbfa62782ac6b64bd84989d559736579230
+SIZE (GeographicLib/gravity-distrib/grs80.tar.bz2) = 784
 SHA256 (GeographicLib/gravity-distrib/wgs84.tar.bz2) = 4cf4f7e533261986b25f9e3c929d846044e0fb2b9c35f301df545c335491f2e7
 SIZE (GeographicLib/gravity-distrib/wgs84.tar.bz2) = 807
 SHA256 (GeographicLib/magnetic-distrib/emm2010.tar.bz2) = aa8782fddb505d8dc24e3dd26784712c1b1848227e23cdcb4e4f2d3ed49d9e14

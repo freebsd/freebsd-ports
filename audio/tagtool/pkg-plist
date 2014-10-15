@@ -34,12 +34,3 @@ share/locale/ua/LC_MESSAGES/tagtool.mo
 %%DATADIR%%/tab_tag.png
 %%DATADIR%%/tagtool.glade
 %%DATADIR%%/warn.png
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/ua/LC_MESSAGES
-@dirrmtry share/locale/ua
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons

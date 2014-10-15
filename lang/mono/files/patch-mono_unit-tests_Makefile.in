@@ -1,0 +1,26 @@
+
+$FreeBSD$
+
+See comments on:
+https://github.com/mono/mono/commit/056cc3be24f933bc3638be4909ad1b7f1cd6e6d4
+	(What's wrong with the test)
+
+https://github.com/mono/mono/commit/120d194d10ad351dd95450749cc4a62331331d8a
+	(Only one program cause trouble)
+--- mono/unit-tests/Makefile.in.orig
++++ mono/unit-tests/Makefile.in
+@@ -81,12 +81,10 @@
+ target_triplet = @target@
+ @CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@noinst_PROGRAMS = test-sgen-qsort$(EXEEXT) \
+ @CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@	test-gc-memfuncs$(EXEEXT) \
+-@CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@	test-mono-linked-list-set$(EXEEXT) \
+-@CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@	test-conc-hashtable$(EXEEXT)
++@CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@	test-mono-linked-list-set$(EXEEXT)
+ @CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@TESTS = test-sgen-qsort$(EXEEXT) \
+ @CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@	test-gc-memfuncs$(EXEEXT) \
+-@CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@	test-mono-linked-list-set$(EXEEXT) \
+-@CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@	test-conc-hashtable$(EXEEXT)
++@CROSS_COMPILE_FALSE@@HOST_WIN32_FALSE@@PLATFORM_GNU_FALSE@@SUPPORT_BOEHM_TRUE@	test-mono-linked-list-set$(EXEEXT)
+ subdir = mono/unit-tests
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/mkinstalldirs $(top_srcdir)/depcomp \

@@ -10,13 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Little casual game
 
-LICENSE=	GPLv2
-
 RUN_DEPENDS=	${PYGAME} \
 		${PYNUMPY}
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
+USES=		python:run tar:bzip2
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGELOG.txt README

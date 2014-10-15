@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geographiclib
-PORTVERSION=	1.37
-PORTREVISION=	1
+PORTVERSION=	1.38
 CATEGORIES=	astro
 MASTER_SITES=	SF/geographiclib/distrib \
 		SF/geographiclib:geoids,gravity,magnetic
@@ -28,32 +27,33 @@ MAKE_ARGS+=	pythondir=${PYTHON_SITELIBDIR}/geographiclib
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=	GEOID_EGM96_5 GRAVITY_EGM96 GRAVITY_WGS84 \
 			MAGNETIC_WMM2010 MAGNETIC_IGRF11
+OPTIONS_GROUP=	DATASETS
+OPTIONS_SUB=	yes
 
 GEOID_NAMES:=		egm84-30 egm84-15 egm96-15 egm96-5 \
 			egm2008-5 egm2008-2_5 egm2008-1
-GRAVITY_NAMES:=		egm84 egm96 egm2008 wgs84
+GRAVITY_NAMES:=		egm84 egm96 egm2008 wgs84 grs80
 MAGNETIC_NAMES:=	wmm2010 igrf11 emm2010
 
 .for n in ${GEOID_NAMES}
-OPTIONS_DEFINE+=		GEOID_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 GEOID_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DESC=		Install ${n} geoid dataset
+OPTIONS_GROUP_DATASETS+=	GEOID_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 GEOID_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DISTFILES=	geoids-distrib/${n}.tar.bz2:geoids
 MAKESUM_DISTFILES+=		geoids-distrib/${n}.tar.bz2:geoids
 MAKESUM_OPTIONS_DEFAULT+=	GEOID_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 .endfor
 .for n in ${GRAVITY_NAMES}
-OPTIONS_DEFINE+=		GRAVITY_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 GRAVITY_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DESC=	Install ${n} gravity model
+OPTIONS_GROUP_DATASETS+=	GRAVITY_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 GRAVITY_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DISTFILES=	gravity-distrib/${n}.tar.bz2:gravity
 MAKESUM_DISTFILES+=		gravity-distrib/${n}.tar.bz2:gravity
 MAKESUM_OPTIONS_DEFAULT+=	GRAVITY_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 .endfor
 .for n in ${MAGNETIC_NAMES}
-OPTIONS_DEFINE+=		MAGNETIC_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 MAGNETIC_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DESC=	Install ${n} magnetic model
+OPTIONS_GROUP_DATASETS+=	MAGNETIC_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 MAGNETIC_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DISTFILES=	magnetic-distrib/${n}.tar.bz2:magnetic
 MAKESUM_DISTFILES+=		magnetic-distrib/${n}.tar.bz2:magnetic
 MAKESUM_OPTIONS_DEFAULT+=	MAGNETIC_${n:C/[^0-9A-Z_a-z]/_/g:tu}
@@ -70,21 +70,14 @@ post-patch:
 	${REINPLACE_CMD} -e '/wget/s/wget -O/fetch -o /' \
 		${WRKSRC}/tools/geographiclib-get-*.sh
 
-install-datasets-mkdir: .NOTMAIN
-	for d in geoids gravity magnetic ;\
-	do ${MKDIR} ${STAGEDIR}${DATADIR}/$${d} &&\
-		${TOUCH} ${STAGEDIR}${DATADIR}/$${d}/.keep ;\
-	done
-.PHONY: install-datasets-mkdir
-
 .for n in geoids gravity magnetic
-install-datasets-${n}: install-datasets-mkdir .NOTMAIN
+install-datasets-${n}: .NOTMAIN
+	${MKDIR} ${STAGEDIR}${DATADIR}/${n}
 	(cd ${WRKDIR}/${n} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${n})
 .PHONY: install-datasets-${n}
 .endfor
 
-post-install: install-datasets-mkdir
 .if ${PORT_OPTIONS:MGEOID_*}
 post-install: install-datasets-geoids
 .endif
@@ -98,7 +91,7 @@ post-install: install-datasets-magnetic
 .PHONY: x-tool-plist
 x-tool-plist: ${PLIST} .NOTMAIN
 	${REINPLACE_CMD}\
-		-e '/^%%PORTDOCS%%/d'\
+		-e '/^%%PORTDOCS%%/d' -e '/@dir /d'\
 		-e '/^%%DATADIR%%\/geoids\/[^.]/{\
 		h;s|^%%DATADIR%%/geoids/\([^.]\{1,\}\).*|GEOID_\1|;\
 		s/[^0-9A-Za-z]/_/g;\

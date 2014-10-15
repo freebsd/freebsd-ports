@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glances
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,8 +11,7 @@ COMMENT=	CLI curses based monitoring tool for GNU/Linux and BSD OS
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.0.0:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}psutil>=2.0.0:${PORTSDIR}/sysutils/py-psutil
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=2.1.1:${PORTSDIR}/sysutils/py-psutil
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -20,16 +19,14 @@ OPTIONS_SUB=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	nicolargo
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	2484bea
+GH_COMMIT=	5e2dadb
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 PLIST_FILES=	%%ETCDIR%%/glances.conf.sample \
 		man/man1/glances.1.gz \
 		%%NLS%%share/locale/de/LC_MESSAGES/glances.mo
-PLIST_DIRS=	etc/glances
 
 NLS_USES=		gettext
 

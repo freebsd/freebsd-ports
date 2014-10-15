@@ -283,19 +283,3 @@ share/locale/zh_TW/LC_MESSAGES/homebank.mo
 share/mime-info/homebank.keys
 share/mime-info/homebank.mime
 share/mime/packages/homebank.xml
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/icons/hicolor/48x48/status
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/22x22/status
-@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/help/images
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/datas
-@dirrm %%DATADIR%%

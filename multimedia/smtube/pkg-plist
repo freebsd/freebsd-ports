@@ -45,5 +45,3 @@ share/icons/hicolor/64x64/apps/smtube.png
 %%DATADIR%%/translations/smtube_vi.qm
 %%DATADIR%%/translations/smtube_zh_CN.qm
 %%DATADIR%%/translations/smtube_zh_TW.qm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%

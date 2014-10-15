@@ -272,29 +272,3 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/versions.md
 share/pixmaps/robocode.png
 share/pixmaps/roborumble.png
-@dirrm %%DATADIR%%/battles
-@dirrm %%DATADIR%%/compilers
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/javadoc/resources
-@dirrm %%DATADIR%%/javadoc/robocode/annotation
-@dirrm %%DATADIR%%/javadoc/robocode/control/events
-@dirrm %%DATADIR%%/javadoc/robocode/control/snapshot
-@dirrm %%DATADIR%%/javadoc/robocode/control
-@dirrm %%DATADIR%%/javadoc/robocode/robotinterfaces/peer
-@dirrm %%DATADIR%%/javadoc/robocode/robotinterfaces
-@dirrm %%DATADIR%%/javadoc/robocode/util
-@dirrm %%DATADIR%%/javadoc/robocode
-@dirrm %%DATADIR%%/javadoc
-@dirrm %%DATADIR%%/libs
-@dirrm %%DATADIR%%/license
-@dirrmtry %%DATADIR%%/roborumble
-@dirrm %%DATADIR%%/robots/META-INF
-@dirrmtry %%DATADIR%%/robots/sample
-@dirrm %%DATADIR%%/robots/sampleex
-@dirrm %%DATADIR%%/robots/samplesentry
-@dirrm %%DATADIR%%/robots/sampleteam
-@dirrmtry %%DATADIR%%/robots
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/theme/editor
-@dirrm %%DATADIR%%/theme
-@dirrmtry %%DATADIR%%

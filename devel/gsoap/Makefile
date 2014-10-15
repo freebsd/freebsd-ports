@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	gsoap
-PORTVERSION=	2.8.17
-PORTREVISION=	3
+PORTVERSION=	2.8.18
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2/gSOAP
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
 
 LICENSE=	GPLv2
@@ -22,20 +21,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-   		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error
-CONFIGURE_ARGS=	--enable-gnutls
-LDFLAGS+=	-L${LOCALBASE}/lib
-.elif ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS=	--enable-ssl
-.else
-CONFIGURE_ARGS=	--disable-ssl
-.endif
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+	   		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+			libgpg-error.so:${PORTSDIR}/security/libgpg-error
+GNUTLS_CONFIGURE_ON=	--enable-gnutls
+GNUTLS_LDFLAGS=		-L${LOCALBASE}/lib
+OPENSSL_CONFIGURE_ENABLE=	ssl
 
 post-patch:
 	${REINPLACE_CMD} -e 's| sys/timeb.h | |' \

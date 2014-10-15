@@ -12,11 +12,11 @@ COMMENT=	GNOME 2 visual diff and merge tool
 LICENSE=	GPLv2
 
 USE_GNOME=	pygnome2
-USES=		desktop-file-utils gmake shared-mime-info shebangfix tar:xz
+USES=		desktop-file-utils gmake python:2 shared-mime-info \
+		shebangfix tar:xz
 python_OLD_CMD=	${SETENV} python
 python_CMD=	${PYTHON_CMD}
 SHEBANG_FILES=	bin/meld
-USE_PYTHON=	2
 MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

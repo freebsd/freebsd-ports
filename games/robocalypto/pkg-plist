@@ -24,6 +24,3 @@ share/pixmaps/robocalypto.png
 %%DATADIR%%/gamelib/main.py
 %%DATADIR%%/gamelib/objects.py
 %%DATADIR%%/run_game.py
-@dirrm %%DATADIR%%/gamelib
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

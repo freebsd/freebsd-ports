@@ -5,15 +5,13 @@ PORTNAME=	ha
 PORTVERSION=	0.999b
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
 DISTNAME=	ha0999
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	File archiver based on HSC compression method
 
 LICENSE=	GPLv2
-
-PROJECTHOST=	ak-various-projects
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ha

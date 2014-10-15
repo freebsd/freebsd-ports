@@ -125,9 +125,3 @@ share/pixmaps/secrettower.png
 %%DATADIR%%/sound/zombie1.wav
 %%DATADIR%%/sound/zombie2.wav
 %%DATADIR%%/sound/zombie3.wav
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%/data/map/std
-@dirrm %%DATADIR%%/data/map
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
