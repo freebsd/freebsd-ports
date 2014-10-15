@@ -1,6 +1,17 @@
---- chrome/common/chrome_switches.cc.orig	2014-10-02 17:39:46 UTC
-+++ chrome/common/chrome_switches.cc
-@@ -1277,13 +1277,13 @@
+--- chrome/common/chrome_switches.cc.orig	2014-10-02 19:39:46.000000000 +0200
++++ chrome/common/chrome_switches.cc	2014-10-15 11:59:52.000000000 +0200
+@@ -1127,6 +1127,10 @@
+ // "tls1.2").
+ const char kSSLVersionMin[]                 = "ssl-version-min";
+ 
++// Specifies the minimum SSL/TLS version ("ssl3", "tls1", "tls1.1", or
++// "tls1.2") that TLS fallback will accept.
++const char kSSLVersionFallbackMin[]         = "ssl-version-fallback-min";
++
+ // Starts the browser maximized, regardless of any previous settings.
+ const char kStartMaximized[]                = "start-maximized";
+ 
+@@ -1277,13 +1281,13 @@
  const char kPasswordStore[]                 = "password-store";
  #endif
  
