@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdiff3
-PORTVERSION=	0.9.97
-PORTREVISION=	4
+PORTVERSION=	0.9.98
 CATEGORIES=	textproc kde
 MASTER_SITES=	SF
 
@@ -11,10 +10,11 @@ MAINTAINER=	luca.pizzamiglio@gmail.com
 COMMENT=	KDE4 graphical frontend for diff
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_KDE4=	kdelibs libkonq kdeprefix kdehier automoc4
+USE_KDE4=	kdelibs libkonq kdeprefix automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USES=		cmake
+USES=		cmake:outsource
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_DEFAULT=	NLS
