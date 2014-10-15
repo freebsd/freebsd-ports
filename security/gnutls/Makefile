@@ -55,6 +55,8 @@ INFO=		gnutls gnutls-guile
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/*.info*
+	${SED} -i '' -e 's|^+_NORETURN_H|_NORETURN_H|' \
+	  ${WRKSRC}/src/libopts/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
