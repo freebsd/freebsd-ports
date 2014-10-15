@@ -1,6 +1,7 @@
 bin/mudraw
 bin/mujstest
 bin/mupdf
+bin/mupdf-x11-curl
 bin/mutool
 include/mupdf/cbz.h
 include/mupdf/fitz.h
@@ -50,6 +51,7 @@ include/mupdf/fitz/xml.h
 include/mupdf/img.h
 include/mupdf/memento.h
 include/mupdf/pdf.h
+include/mupdf/pdf-tools.h
 include/mupdf/pdf/annot.h
 include/mupdf/pdf/appearance.h
 include/mupdf/pdf/cmap.h
@@ -81,7 +83,3 @@ man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/progressive.txt
 %%PORTDOCS%%%%DOCSDIR%%/refcount.txt
 %%PORTDOCS%%%%DOCSDIR%%/thirdparty.txt
-@dirrmtry include/mupdf/fitz
-@dirrmtry include/mupdf/pdf
-@dirrmtry include/mupdf
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
