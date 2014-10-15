@@ -4,7 +4,9 @@ bin/gpg-mailkeys
 bin/gpglist
 bin/gpgparticipants
 bin/gpgsigs
+bin/gpgwrap
 bin/keyanalyze
+bin/keyart
 bin/keylookup
 bin/pgp-clean
 bin/pgp-fixkey
@@ -17,7 +19,9 @@ man/man1/gpg-mailkeys.1.gz
 man/man1/gpglist.1.gz
 man/man1/gpgparticipants.1.gz
 man/man1/gpgsigs.1.gz
+man/man1/gpgwrap.1.gz
 man/man1/keyanalyze.1.gz
+man/man1/keyart.1.gz
 man/man1/keylookup.1.gz
 man/man1/pgp-clean.1.gz
 man/man1/pgp-fixkey.1.gz
