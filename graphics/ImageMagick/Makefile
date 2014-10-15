@@ -2,7 +2,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.8.9-8
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -34,7 +34,8 @@ COMMENT=	Image processing tools
 
 #LICENSE=	APACHE20
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		liblqr-1.so:${PORTSDIR}/graphics/liblqr-1
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		gmake libtool:keepla pathfix perl5 pkgconfig shebangfix tar:xz
