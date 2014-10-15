@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-GITVERSION=	1411413020
-PORTVERSION=	0.6.3.${GITVERSION}
+GITVERSION=	1413376519
+PORTVERSION=	0.7.0.${GITVERSION}
 PORTEPOCH=	1
 CATEGORIES=	x11
 DISTNAME=	${PORTNAME}-${GITVERSION}
@@ -28,7 +28,6 @@ LIB_DEPENDS=	libQtSolutions_SingleApplication-head.so:${PORTSDIR}/devel/qt4-qtso
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 MAKE_JOBS_UNSAFE=yes
-ONLY_FOR_ARCHS=	amd64
 USE_XORG=	x11 xcomposite xdamage xrender
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui network svg linguist phonon \
