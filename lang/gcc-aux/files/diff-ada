@@ -1892,7 +1892,7 @@
  # define Has_Sockaddr_Len 0
 --- gcc/ada/init.c.orig
 +++ gcc/ada/init.c
-@@ -1623,7 +1623,7 @@
+@@ -1628,7 +1628,7 @@
  /* FreeBSD Section */
  /*******************/
  
@@ -1901,7 +1901,7 @@
  
  #include <signal.h>
  #include <sys/ucontext.h>
-@@ -1668,7 +1668,7 @@
+@@ -1673,7 +1673,7 @@
  }
  
  void
@@ -1910,7 +1910,7 @@
  {
    struct sigaction act;
  
-@@ -2461,9 +2461,13 @@
+@@ -2466,9 +2466,13 @@
     initialization of the FP processor.  This version is used under INTERIX
     and WIN32.  */
  
