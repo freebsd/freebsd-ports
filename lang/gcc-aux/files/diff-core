@@ -1477,7 +1477,7 @@
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
  	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/x86-64.h i386/openbsdelf.h"
  	extra_options="${extra_options} openbsd.opt"
-@@ -2927,6 +2960,12 @@
+@@ -2926,6 +2959,12 @@
      arch_without_sse2=yes
      arch_without_64bit=yes
      ;;
@@ -1490,7 +1490,7 @@
    i386-*-*)
      arch=i386
      cpu=i386
-@@ -4109,6 +4148,8 @@
+@@ -4108,6 +4147,8 @@
  		;;
  	i[34567]86-*-mingw* | x86_64-*-mingw*)
  		;;
@@ -1501,7 +1501,7 @@
  	ia64*-*-linux*)
 --- gcc/configure.orig
 +++ gcc/configure
-@@ -27421,6 +27421,20 @@
+@@ -27449,6 +27449,20 @@
        gcc_cv_target_dl_iterate_phdr=no
      fi
      ;;
