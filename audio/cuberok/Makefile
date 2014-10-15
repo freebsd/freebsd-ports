@@ -17,7 +17,10 @@ LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
 		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0 \
 		libtag.so:${PORTSDIR}/audio/taglib
 
-USE_LDCONFIG=	yes
+DEPRECATED=	Upstream development has stalled
+EXPIRATION_DATE=	2014-11-15
+
+USE_GSTREAMER=	yes
 USE_QT4=	gui xml uic_build moc_build rcc_build \
 		network phonon-gst sql
 USES=		gettext iconv pkgconfig qmake
