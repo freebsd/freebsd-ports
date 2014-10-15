@@ -1,8 +1,15 @@
-diff --git mfbt/Util.h mfbt/Util.h
+diff --git mfbt/Alignment.h mfbt/Alignment.h
 index e0843ca..353ec36 100644
---- mfbt/Util.h
-+++ mfbt/Util.h
-@@ -19,6 +19,13 @@
+--- mfbt/Alignment.h
++++ mfbt/Alignment.h
+@@ -9,11 +9,20 @@
+ #ifndef mozilla_Alignment_h
+ #define mozilla_Alignment_h
+ 
++#include "mozilla/Attributes.h"
++
+ #include <stddef.h>
+ #include <stdint.h>
  
  namespace mozilla {
  
@@ -14,9 +21,9 @@ index e0843ca..353ec36 100644
 +#define MOZ_ALIGNOF(T) __alignof(T)
 +#else
  /*
-  * This class, and the corresponding macro MOZ_ALIGNOF, figure out how many 
+  * This class, and the corresponding macro MOZ_ALIGNOF, figures out how many
   * bytes of alignment a given type needs.
-@@ -37,6 +44,7 @@ class AlignmentFinder
+@@ -32,6 +41,7 @@ public:
  };
  
  #define MOZ_ALIGNOF(T) mozilla::AlignmentFinder<T>::alignment
@@ -24,7 +31,7 @@ index e0843ca..353ec36 100644
  
  /*
   * Declare the MOZ_ALIGNED_DECL macro for declaring aligned types.
-@@ -48,7 +56,10 @@ class AlignmentFinder
+@@ -43,7 +53,10 @@ public:
   * will declare a two-character array |arr| aligned to 8 bytes.
   */
  
@@ -40,7 +47,7 @@ diff --git mfbt/Attributes.h mfbt/Attributes.h
 index d317766..ddb13da 100644
 --- mfbt/Attributes.h
 +++ mfbt/Attributes.h
-@@ -67,6 +67,9 @@
+@@ -54,6 +54,9 @@
  #  ifndef __has_extension
  #    define __has_extension __has_feature /* compatibility, for older versions of clang */
  #  endif
@@ -50,7 +57,7 @@ index d317766..ddb13da 100644
  #  if __has_extension(cxx_constexpr)
  #    define MOZ_HAVE_CXX11_CONSTEXPR
  #  endif
-@@ -85,6 +88,9 @@
+@@ -75,6 +78,9 @@
  #  endif
  #elif defined(__GNUC__)
  #  if defined(__GXX_EXPERIMENTAL_CXX0X__) || __cplusplus >= 201103L
@@ -60,13 +67,11 @@ index d317766..ddb13da 100644
  #    if MOZ_GCC_VERSION_AT_LEAST(4, 7, 0)
  #      define MOZ_HAVE_CXX11_OVERRIDE
  #      define MOZ_HAVE_CXX11_FINAL       final
-@@ -102,6 +108,9 @@
- #  define MOZ_HAVE_NEVER_INLINE          __attribute__((noinline))
+@@ -96,6 +102,7 @@
  #  define MOZ_HAVE_NORETURN              __attribute__((noreturn))
  #elif defined(_MSC_VER)
-+#  if _MSC_VER >= 1800
+ #  if _MSC_VER >= 1800
 +#    define MOZ_HAVE_CXX11_ALIGNAS
-+#  endif
+ #    define MOZ_HAVE_CXX11_DELETE
+ #  endif
  #  if _MSC_VER >= 1700
- #    define MOZ_HAVE_CXX11_FINAL         final
- #  else

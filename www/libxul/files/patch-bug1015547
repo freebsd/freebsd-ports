@@ -2,11 +2,12 @@ diff --git configure.in configure.in
 index 7bed45f..053de17 100644
 --- configure.in
 +++ configure.in
-@@ -3166,6 +3166,7 @@ AC_CHECK_FUNCS(random strerror lchown fc
- AC_CHECK_FUNCS(statvfs64 statvfs statfs64 statfs)
- AC_CHECK_FUNCS(flockfile getpagesize)
- AC_CHECK_FUNCS(localtime_r strtok_r)
-+AC_CHECK_FUNCS(arc4random arc4random_buf)
+@@ -2950,7 +2950,7 @@ dnl Checks for library functions.
+ dnl ========================================================
+ AC_PROG_GCC_TRADITIONAL
+ AC_FUNC_MEMCMP
+-AC_CHECK_FUNCS(stat64 lstat64 truncate64 statvfs64 statvfs statfs64 statfs getpagesize localtime_r)
++AC_CHECK_FUNCS(stat64 lstat64 truncate64 statvfs64 statvfs statfs64 statfs getpagesize localtime_r arc4random arc4random_buf)
  
  dnl check for clock_gettime(), the CLOCK_MONOTONIC clock
  AC_CACHE_CHECK(for clock_gettime(CLOCK_MONOTONIC),

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	31.1.2
+DISTVERSION=	31.2.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
+		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source/
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.7.2
-L_VERSION=	3.3.1.2
+L_VERSION=	3.3.2
 
 SSP_UNSAFE=	yes
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
@@ -80,8 +80,8 @@ MOZSRC:=	${WRKSRC}/mozilla
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 
 # avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
-# http://svnweb.freebsd.org/changeset/base/255804
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${ARCH} == i386 && ${OSVERSION} < 1000056
+# To be removed when 9.2R goes EOL. http://llvm.org/PR15840
+.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION:M3[23]}
 . if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
 		a ${CHOSEN_COMPILER_TYPE} bug: unset the option or \

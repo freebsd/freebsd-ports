@@ -33,7 +33,7 @@ diff --git configure.in configure.in
 index ac38f40..87536b7 100644
 --- configure.in
 +++ configure.in
-@@ -8032,6 +8032,56 @@ if test "$USE_FC_FREETYPE"; then
+@@ -8032,6 +8032,52 @@ if test "$USE_FC_FREETYPE"; then
  fi
  
  dnl ========================================================
@@ -46,9 +46,7 @@ index ac38f40..87536b7 100644
 +MOZ_NATIVE_HARFBUZZ=)
 +
 +if test -n "$MOZ_NATIVE_HARFBUZZ"; then
-+    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 0.9.16)
-+else
-+    MOZ_HARFBUZZ_LIBS='$(DEPTH)/gfx/harfbuzz/src/$(LIB_PREFIX)mozharfbuzz.$(LIB_SUFFIX)'
++    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 0.9.25)
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_HARFBUZZ)
@@ -64,7 +62,7 @@ index ac38f40..87536b7 100644
 +MOZ_NATIVE_GRAPHITE2=)
 +
 +if test -n "$MOZ_NATIVE_GRAPHITE2"; then
-+    PKG_CHECK_MODULES(MOZ_GRAPHITE, graphite2)
++    PKG_CHECK_MODULES(MOZ_GRAPHITE2, graphite2)
 +
 +    dnl graphite2.pc has bogus version, check manually
 +    AC_TRY_COMPILE([ #include <graphite2/Font.h>
@@ -73,57 +71,35 @@ index ac38f40..87536b7 100644
 +                               * 100 + GR2_VERSION_BUGFIX >= \
 +                               (major) * 10000 + (minor) * 100 + (bugfix) )
 +                   ], [
-+                     #if !GR2_VERSION_REQUIRE(1,2,3)
++                     #if !GR2_VERSION_REQUIRE(1,2,4)
 +                     #error "Insufficient graphite2 version."
 +                     #endif
 +                   ], [],
 +                   [AC_MSG_ERROR([--with-system-graphite2 requested but no working libgraphite2 found])])
-++else
-++    MOZ_GRAPHITE_LIBS='$(DEPTH)/gfx/graphite2/src/$(LIB_PREFIX)mozgraphite2.$(LIB_SUFFIX)'
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_GRAPHITE2)
-+AC_SUBST(MOZ_GRAPHITE_CFLAGS)
-+AC_SUBST(MOZ_GRAPHITE_LIBS)
++AC_SUBST(MOZ_GRAPHITE2_CFLAGS)
++AC_SUBST(MOZ_GRAPHITE2_LIBS)
 +
 +dnl ========================================================
  dnl Check for pixman and cairo
  dnl ========================================================
  
-@@ -8379,18 +8412,6 @@ QCMS_LIBS='$(DEPTH)/gfx/qcms/$(LIB_PREFI
- AC_SUBST(QCMS_LIBS)
+diff --git content/base/src/moz.build content/base/src/moz.build
+index d4f6380..0ee55df 100644
+--- content/base/src/moz.build
++++ content/base/src/moz.build
+@@ -179,6 +179,9 @@ SOURCES += [
+     'nsObjectLoadingContent.cpp',
+ ]
  
- dnl ========================================================
--dnl HarfBuzz
--dnl ========================================================
--MOZ_HARFBUZZ_LIBS='$(DEPTH)/gfx/harfbuzz/src/$(LIB_PREFIX)mozharfbuzz.$(LIB_SUFFIX)'
--AC_SUBST(MOZ_HARFBUZZ_LIBS)
--
--dnl ========================================================
--dnl SIL Graphite
--dnl ========================================================
--MOZ_GRAPHITE_LIBS='$(DEPTH)/gfx/graphite2/src/$(LIB_PREFIX)mozgraphite2.$(LIB_SUFFIX)'
--AC_SUBST(MOZ_GRAPHITE_LIBS)
--
--dnl ========================================================
- dnl OTS
- dnl ========================================================
- MOZ_OTS_LIBS='$(DEPTH)/gfx/ots/src/$(LIB_PREFIX)mozots.$(LIB_SUFFIX)'
-diff --git content/base/src/Makefile.in content/base/src/Makefile.in
-index a618096..596901a 100644
---- content/base/src/Makefile.in
-+++ content/base/src/Makefile.in
-@@ -5,6 +5,10 @@
- 
- include $(topsrcdir)/config/rules.mk
- 
-+ifdef MOZ_NATIVE_HARFBUZZ
-+nsContentUtils.$(OBJ_SUFFIX): CXXFLAGS+=$(MOZ_HARFBUZZ_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++    SOURCES['nsContentUtils.cpp'].flags += [CONFIG['MOZ_HARFBUZZ_CFLAGS']]
 +
- # gcc requires -msse2 for this file since it uses SSE2 intrinsics.  (See bug
- # 585538 comment 12.)
- ifneq (,$(INTEL_ARCHITECTURE))
+ EXTRA_COMPONENTS += [
+     'contentAreaDropListener.js',
+     'contentAreaDropListener.manifest',
 diff --git gfx/moz.build gfx/moz.build
 index 519aa46..6929751 100644
 --- gfx/moz.build
@@ -174,7 +150,7 @@ index 45c36ae..79d32cf 100644
  CFLAGS += $(MOZ_CAIRO_CFLAGS) $(TK_CFLAGS)
  
 +ifdef MOZ_NATIVE_GRAPHITE2
-+CXXFLAGS += $(MOZ_GRAPHITE_CFLAGS)
++CXXFLAGS += $(MOZ_GRAPHITE2_CFLAGS)
 +endif
 +
 +ifdef MOZ_NATIVE_HARFBUZZ
@@ -196,29 +172,6 @@ index f6b9f7c..60863f4 100644
 +ifdef MOZ_NATIVE_HARFBUZZ
 +CXXFLAGS += $(MOZ_HARFBUZZ_CFLAGS)
 +endif
-diff --git layout/media/Makefile.in layout/media/Makefile.in
-index 1cacbd7..a8cd156 100644
---- layout/media/Makefile.in
-+++ layout/media/Makefile.in
-@@ -18,10 +18,16 @@ endif
- SHARED_LIBRARY_LIBS = \
-     $(MOZ_OTS_LIBS) \
-     $(QCMS_LIBS) \
--    $(MOZ_GRAPHITE_LIBS) \
--    $(MOZ_HARFBUZZ_LIBS) \
-     $(NULL)
- 
-+ifndef MOZ_NATIVE_GRAPHITE2
-+SHARED_LIBRARY_LIBS += $(MOZ_GRAPHITE_LIBS)
-+endif
-+
-+ifndef MOZ_NATIVE_HARFBUZZ
-+SHARED_LIBRARY_LIBS += $(MOZ_HARFBUZZ_LIBS)
-+endif
-+
- ifdef MOZ_TREE_CAIRO
- SHARED_LIBRARY_LIBS += $(MOZ_CAIRO_LIBS)
- endif
 diff --git netwerk/dns/Makefile.in netwerk/dns/Makefile.in
 index 1cacbd7..f5d72bb 100644
 --- netwerk/dns/Makefile.in
@@ -234,16 +187,16 @@ index 1cacbd7..f5d72bb 100644
  # Generate the include file containing compact, static definitions
  # for effective TLD data.
  etld_data.inc: $(srcdir)/prepare_tlds.py $(srcdir)/effective_tld_names.dat
-diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
+diff --git toolkit/library/libxul.mk toolkit/library/libxul.mk
 index 67f0db9..d42137a 100644
---- toolkit/library/Makefile.in
-+++ toolkit/library/Makefile.in
+--- toolkit/library/libxul.mk
++++ toolkit/library/libxul.mk
 @@ -89,6 +89,14 @@ ifndef MOZ_TREE_PIXMAN
  EXTRA_DSO_LDOPTS += $(MOZ_PIXMAN_LIBS)
  endif
  
 +ifdef MOZ_NATIVE_GRAPHITE2
-+EXTRA_DSO_LDOPTS += $(MOZ_GRAPHITE_LIBS)
++EXTRA_DSO_LDOPTS += $(MOZ_GRAPHITE2_LIBS)
 +endif
 +
 +ifdef MOZ_NATIVE_HARFBUZZ
