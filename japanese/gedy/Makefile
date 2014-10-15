@@ -3,7 +3,7 @@
 
 PORTNAME=	gedy
 PORTVERSION=	0.9.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
 DISTNAME=	${PORTNAME}
@@ -19,6 +19,9 @@ RUN_DEPENDS=	rubygem-gtk2>0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/pasori.so:${PORTSDIR}/devel/libpafe-ruby
 
 USE_RUBY=		yes
+USES=		shebangfix
+SHEBANG_FILES=	${PORTNAME}
+ruby_OLD_CMD=	/usr/bin/ruby1.9.3
 
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-p
@@ -28,18 +31,11 @@ NO_BUILD=		yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_DEFAULT_VER} != ${RUBY_VER}
-IGNORE=		requires RUBY_DEFAULT_VER=${RUBY_VER}
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's,#! /usr/bin/ruby1.9.3,#!${RUBY},g' \
-			  ${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e 's/Gdk::Atom.new(0)/Gdk::Selection::CLIPBOARD/g' \
+		${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
