@@ -13,4 +13,3 @@ bin/dotter
 %%PORTDOCS%%%%DOCSDIR%%/dotter_usage.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes.html
 %%PORTDOCS%%%%DOCSDIR%%/todo.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
