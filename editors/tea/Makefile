@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tea
-PORTVERSION=	37.2.1
-PORTREVISION=	1
+PORTVERSION=	38.0.0
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
