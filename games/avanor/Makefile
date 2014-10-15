@@ -10,9 +10,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like game with easy ADOM-like user interface
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake tar:bzip2
 MAKE_ARGS+=	VERSION=${PORTVERSION} DATA_DIR=${DATADIR}/
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|g++|${CXX}|; \
