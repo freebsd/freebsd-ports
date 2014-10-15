@@ -10,6 +10,6 @@ COMMENT=	KDE Connect provides several features to integrate your phone and your 
 
 USES= cmake tar:xz
 USE_KDE4 = kdelibs automoc4 workspace runtime
-USE_QT4= corelib gui moc_build qmake_build
+USE_QT4= corelib gui moc_build qmake_build uic_build rcc_build
 
 .include <bsd.port.mk>
