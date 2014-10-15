@@ -1,5 +1,5 @@
---- src/Makefile.am-dist	2013-09-25 02:41:53.000000000 -0400
-+++ src/Makefile.am	2014-01-14 11:20:54.178664699 -0500
+--- src/Makefile.am.orig	2013-09-25 06:41:53 UTC
++++ src/Makefile.am
 @@ -3,9 +3,9 @@
  lib_LTLIBRARIES = mod_authnz_crowd.la
  mod_authnz_crowd_la_SOURCES = mod_authnz_crowd.c mod_authnz_crowd.h crowd_client.c crowd_client.h cache.c cache.h util.c util.h
