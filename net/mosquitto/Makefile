@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mosquitto
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	net
 MASTER_SITES=	http://mosquitto.org/files/source/
 
@@ -20,8 +19,7 @@ OPTIONS_DEFINE=	PYTHON
 
 PYTHON_DESC=	Build python driver
 
-USES=		cmake
-USE_PYTHON=	2
+USES=		cmake python:2
 NOCONFIGURE=	yes
 USE_RC_SUBR=	mosquitto
 USE_LDCONFIG=	yes
@@ -31,9 +29,9 @@ USERS=		nobody
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER} NOPYTHON=""
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER} NOPYTHON="" PORTVERSION=${PORTVERSION}
 .else
-PLIST_SUB=	NOPYTHON="@comment "
+PLIST_SUB=	NOPYTHON="@comment " PORTVERSION=${PORTVERSION}
 .endif
 
 post-patch:
