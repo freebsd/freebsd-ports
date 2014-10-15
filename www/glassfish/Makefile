@@ -2,29 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	glassfish
-PORTVERSION=	3.1.2.2
+PORTVERSION=	4.1
 CATEGORIES=	www java
-MASTER_SITES=	http://download.java.net/glassfish/${PORTVERSION}/release/
+MASTER_SITES=	http://dlc.sun.com.edgesuite.net/glassfish/${PORTVERSION}/release/
 
 MAINTAINER=	cjr@cruwe.de
 COMMENT=	Reference implementation of the Java EE application server
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/glassfish3
+WRKSRC=		${WRKDIR}/glassfish4
 DATADIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 
-PLIST_SUB=	GLASSFISHVERSION=${PORTVERSION} \
-		PORTVERSION=${PORTVERSION}
-SUB_LIST=	GLASSFISHVERSION=${PORTVERSION}
+# Since we USE_JAVA, we propagate the received JAVA_HOME variable to the
+# template files, since it is used by the rc script.
+SUB_LIST=	GLASSFISHVERSION=${PORTVERSION} \
+		JAVA_HOME=${JAVA_HOME}
 
-DOWNLOAD_URL=	http://download.java.net/glassfish/${PORTVERSION}/release/
+DOWNLOAD_URL=	http://dlc.sun.com.edgesuite.net/glassfish/${PORTVERSION}/release/
 
 USE_RC_SUBR=	glassfish
-GLASSFISH_BIN_FILES=	appclient asadmin asupgrade capture-schema jspc package-appclient schemagen startserv stopserv wscompile wsdeploy wsgen wsimport xjc
+GLASSFISH_BIN_FILES=	appclient asadmin capture-schema jspc package-appclient schemagen startserv stopserv wscompile wsdeploy wsgen wsimport xjc
 
 .include <bsd.port.pre.mk>
 
