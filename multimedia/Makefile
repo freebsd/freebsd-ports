@@ -257,6 +257,7 @@
     SUBDIR += ogmrip
     SUBDIR += ogmtools
     SUBDIR += opencinematools
+    SUBDIR += openh264
     SUBDIR += openquicktime
     SUBDIR += openshot
     SUBDIR += oqtencoder
