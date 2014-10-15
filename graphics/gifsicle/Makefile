@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.84
+PORTVERSION=	1.86
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
@@ -19,7 +19,6 @@ PLIST_FILES=	bin/gifdiff bin/gifsicle \
 
 OPTIONS_DEFINE=		DOCS X11
 OPTIONS_DEFAULT=	X11
-OPTIONS_SUB=		yes
 
 X11_USE=		xorg=x11
 X11_CONFIGURE_ENABLE=	gifview
