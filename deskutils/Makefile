@@ -86,6 +86,7 @@
     SUBDIR += hamster-applet
     SUBDIR += hebcal
     SUBDIR += helpviewer
+    SUBDIR += homerun
     SUBDIR += horde-groupware
     SUBDIR += horde-kronolith
     SUBDIR += horde-mnemo
