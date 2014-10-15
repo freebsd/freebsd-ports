@@ -25,11 +25,12 @@ diff --git js/src/Makefile.in js/src/Makefile.in
 index e28160a..28ca5e8 100644
 --- js/src/Makefile.in
 +++ js/src/Makefile.in
-@@ -35,7 +35,6 @@ ifdef JS_SHARED_LIBRARY
- FORCE_SHARED_LIB = 1
- endif
- FORCE_STATIC_LIB = 1
--DIST_INSTALL = 1
+@@ -18,8 +18,6 @@ run_for_side_effects := $(shell echo 'MAKE: $(MAKE)')
+ STATIC_LIBRARY_NAME = js_static
+ LIBS		= $(NSPR_LIBS)
  
- ###############################################
- # BEGIN include sources for low-level code shared with mfbt
+-DIST_INSTALL = 1
+-
+ ifdef JS_STANDALONE
+ SHARED_LIBRARY_LIBS += $(call EXPAND_LIBNAME_PATH,mfbt,$(DEPTH)/mfbt)
+ ifndef MOZ_NATIVE_ZLIB

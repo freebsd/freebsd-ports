@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.17.1
+PORTVERSION=	3.17.2
+#DISTVERSIONSUFFIX=	.with.ckbi.1.93
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 

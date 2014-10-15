@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	31.1.2
+PORTVERSION=	31.2.0
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -12,7 +12,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
-USES=		gecko:thunderbird zip
+USES=		gecko:thunderbird,build zip
 USE_XPI=	thunderbird
 
 NO_BUILD=	yes
@@ -24,14 +24,10 @@ WDIR=	langpack-*@thunderbird.mozilla.org
 XPI_DISTNAMES=	${THUNDERBIRD_I18N_}
 
 PLIST?=		${WRKDIR}/plist
-PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.pre.mk>
-
-# make sure that thunderbird always gets upgraded before this port
-BUILD_DEPENDS=	thunderbird>=0:${PORTSDIR}/mail/thunderbird
 
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
@@ -55,12 +51,9 @@ do-extract:
 		fi; \
 		cd ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org/; \
 		${FIND} -H -s * ! -type d | \
-		${SED} -e "s|^|lib/xpi/langpack-$$lang@thunderbird.mozilla.org/|" >> ${PLISTF} && \
-		${FIND} -d * -type d | \
-		${SED} -e "s|^|@dirrm lib/xpi/langpack-$$lang@thunderbird.mozilla.org/|" >> ${PLISTD}; \
+		${SED} -e "s|^|lib/xpi/langpack-$$lang@thunderbird.mozilla.org/|" >> ${PLISTF}; \
 	done
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
-	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
 
 
 do-install:
