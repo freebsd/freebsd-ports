@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	signing-party
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
@@ -24,17 +24,19 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 
 CONFLICTS_INSTALL=sig2dot-[0-9]* springgraph-[0-9]*
 
-USES=		perl5 gmake shebangfix
+USES=		perl5 python gmake shebangfix
 SHEBANG_FILES=	${SCRIPTS}
 NO_WRKSUBDIR=	yes
 
-BINS=		keyanalyze/keyanalyze keyanalyze/process_keys
+BINS=		keyanalyze/keyanalyze keyanalyze/process_keys \
+		gpgwrap/bin/gpgwrap
 SCRIPTS=	caff/caff caff/pgp-clean caff/pgp-fixkey gpglist/gpglist \
-		gpgsigs/gpgsigs gpg-key2ps/gpg-key2ps \
-		gpg-mailkeys/gpg-mailkeys keylookup/keylookup \
+		gpgparticipants/gpgparticipants gpgsigs/gpgsigs \
+		gpg-key2ps/gpg-key2ps gpg-mailkeys/gpg-mailkeys \
+		keyart/keyart keylookup/keylookup \
 		sig2dot/sig2dot springgraph/springgraph \
 		gpgparticipants/gpgparticipants
-MANUALS1=	${SCRIPTS:S/$/.1/} ${BINS:S/$/.1/}
+MANUALS1=	${SCRIPTS:S/$/.1/:S/keyart/&\/doc/} ${BINS:S/$/.1/:S/bin/doc/}
 EXAMPLES=	caff/caffrc.sample gpg-mailkeys/example.gpg-mailkeysrc
 PORTEXAMPLES=	${EXAMPLES:T}
 
