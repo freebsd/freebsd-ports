@@ -99,6 +99,7 @@
     SUBDIR += jlj
     SUBDIR += kcharselect
     SUBDIR += kchmviewer-kde4
+    SUBDIR += kdeconnect
     SUBDIR += kdepim4
     SUBDIR += kdepim4-runtime
     SUBDIR += kdepimlibs4
