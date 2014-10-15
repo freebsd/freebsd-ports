@@ -13,13 +13,17 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monsters, explosions, destruction game for X Window System
 
-USES=	tar:bzip2
-USE_GL=		glu
+USES=		tar:bzip2
+USE_GL=		gl glu
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 
 CFLAGS+=	-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include \
 		-DLINUXVERSION -DLINUXAUDIO
 LIBS+=		-L${LOCALBASE}/lib -lX11 -lm
+
+PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz
+PORTDATA=	*
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
