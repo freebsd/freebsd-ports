@@ -1,0 +1,10 @@
+--- tools/metrics/histograms/histograms.xml.orig	2014-10-02 17:39:48 UTC
++++ tools/metrics/histograms/histograms.xml
+@@ -45253,6 +45253,7 @@
+   <int value="162" label="SOCKET_RECEIVE_BUFFER_SIZE_UNCHANGEABLE"/>
+   <int value="163" label="SOCKET_SEND_BUFFER_SIZE_UNCHANGEABLE"/>
+   <int value="164" label="SSL_CLIENT_AUTH_CERT_BAD_FORMAT"/>
++  <int value="165" label="SSL_FALLBACK_BEYOND_MINIMUM_VERSION"/>
+   <int value="200" label="CERT_COMMON_NAME_INVALID"/>
+   <int value="201" label="CERT_DATE_INVALID"/>
+   <int value="202" label="CERT_AUTHORITY_INVALID"/>

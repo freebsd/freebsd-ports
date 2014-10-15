@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.5.9
+PORTVERSION=	1.5.10
 CATEGORIES=	www python
 MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION:R}/ \
 		CHEESESHOP
@@ -17,7 +17,7 @@ COMMENT=	High-level Python Web framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe python:2
+USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py[23][0-9]-django-devel-[0-9]* py[23][0-9]-django-1.[0-46-9].*

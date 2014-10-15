@@ -94,7 +94,6 @@ USE_XORG=	xext xrender xt
 MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 WRKSRC?=	${WRKDIR}/mozilla
-PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
 MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
@@ -254,11 +253,7 @@ MOZ_TOOLKIT=	cairo-gtk3
 USE_MOZILLA+=	-cairo # ports/169343
 USE_DISPLAY=yes # install
 USE_GNOME+=	pango
-. if ${MOZILLA_VER:R:R} >= 30 || ${MOZILLA} == "seamonkey"
 USE_QT5+=	qmake_build buildtools_build gui network quick printsupport
-. else
-USE_QT4+=	qmake_build moc_build rcc_build gui network opengl
-. endif
 MOZ_EXPORT+=	HOST_QMAKE="${QMAKE}" HOST_MOC="${MOC}" HOST_RCC="${RCC}"
 .elif ${MOZ_TOOLKIT:Mcairo-gtk3}
 USE_GNOME+=	gtk30
@@ -287,13 +282,8 @@ MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
-. if ${MOZILLA_VER:R:R} >= 30 || ${MOZILLA} == "seamonkey"
 USE_GSTREAMER1?=good libav
 MOZ_OPTIONS+=	--enable-gstreamer=1.0
-. else
-USE_GSTREAMER?=	good ffmpeg
-MOZ_OPTIONS+=	--enable-gstreamer
-. endif
 .else
 MOZ_OPTIONS+=	--disable-gstreamer
 .endif
@@ -337,7 +327,7 @@ MOZ_OPTIONS+=	--disable-libproxy
 .endif
 
 .if ${PORT_OPTIONS:MPGO}
-USE_GCC?=	yes
+USES:=		compiler:gcc-c++11-lib ${USES:Ncompiler*c++11*}
 USE_DISPLAY=yes
 
 .undef GNU_CONFIGURE
@@ -449,7 +439,7 @@ LIBS+=		-lcxxrt
 .  endif
 . endif
 .elif ${ARCH:Mpowerpc*}
-USE_GCC?=	yes
+USES:=		compiler:gcc-c++11-lib ${USES:Ncompiler*c++11*}
 CFLAGS+=	-D__STDC_CONSTANT_MACROS
 . if ${ARCH} == "powerpc64"
 MOZ_EXPORT+=	UNAME_m="${ARCH}"
@@ -600,15 +590,12 @@ port-post-install:
 
 gecko-create-plist:
 # Create the plist
-	${RM} -f ${PLISTF} ${PLISTD}
+	${RM} -f ${PLISTF}
 .for dir in ${MOZILLA_PLIST_DIRS}
 	@cd ${STAGEDIR}${PREFIX}/${dir} && ${FIND} -H -s * ! -type d | \
-		${SED} -e 's|^|${dir}/|' >> ${PLISTF} && \
-		${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${dir}/|' >> ${PLISTD}
+		${SED} -e 's|^|${dir}/|' >> ${PLISTF}
 .endfor
 	${CAT} ${PLISTF} | ${SORT} >> ${TMPPLIST}
-	${CAT} ${PLISTD} | ${SORT} -r >> ${TMPPLIST}
 
 gecko-moz-pis-pre-install:
 .if defined(MOZ_PIS_SCRIPTS)

@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	32.0.3
+DISTVERSION=	33.0
 DISTVERSIONSUFFIX=.source
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
+		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source/
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -60,8 +60,8 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 WRKSRC:=	${WRKDIR}/mozilla-release
 
 # avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
-# http://svnweb.freebsd.org/changeset/base/255804
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${ARCH} == i386 && ${OSVERSION} < 1000056
+# To be removed when 9.2R goes EOL. http://llvm.org/PR15840
+.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION:M3[23]}
 . if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
 		a ${CHOSEN_COMPILER_TYPE} bug: unset the option or \

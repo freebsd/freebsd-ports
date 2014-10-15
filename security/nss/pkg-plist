@@ -136,6 +136,3 @@ lib/nss/libsoftokn3.so.1
 lib/nss/libssl3.so
 lib/nss/libssl3.so.1
 libdata/pkgconfig/nss.pc
-@dirrm lib/nss
-@dirrm include/nss/nss
-@dirrm include/nss

@@ -1,0 +1,12 @@
+diff --git config/rules.mk config/rules.mk
+index 1dee8c3..4d67eda 100644
+--- config/rules.mk
++++ config/rules.mk
+@@ -822,6 +822,7 @@ endif
+ ifdef DTRACE_PROBE_OBJ
+ EXTRA_DEPS += $(DTRACE_PROBE_OBJ)
+ OBJS += $(DTRACE_PROBE_OBJ)
++EXCLUDED_OBJS += $(DTRACE_PROBE_OBJ)
+ endif
+ 
+ $(filter %.$(LIB_SUFFIX),$(LIBRARY)): $(OBJS) $(EXTRA_DEPS) $(GLOBAL_DEPS)

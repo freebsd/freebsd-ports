@@ -1,0 +1,19 @@
+--- chrome/app/generated_resources.grd.orig	2014-10-02 17:39:45 UTC
++++ chrome/app/generated_resources.grd
+@@ -9024,6 +9024,16 @@
+         SSL protocol error.
+       </message>
+ 
++      <message name="IDS_ERRORPAGES_HEADING_SSL_FALLBACK_BEYOND_MINIMUM_VERSION" desc="Heading in the error page for SSL fallback errors.">
++        SSL server probably obsolete.
++      </message>
++      <message name="IDS_ERRORPAGES_SUMMARY_SSL_FALLBACK_BEYOND_MINIMUM_VERSION" desc="Summary in the error page for SSL fallback errors.">
++        Unable to connect securely to the server. This website may have worked previously, but connecting to such sites has now been shown to cause security risks to all users and thus has been disabled for your safety.
++      </message>
++      <message name="IDS_ERRORPAGES_DETAILS_SSL_FALLBACK_BEYOND_MINIMUM_VERSION" desc="The error message displayed for SSL fallback errors.">
++        An SSLv3 fallback was able to handshake with the server, but we no longer accept SSLv3 fallbacks due to new attacks against the protocol. The server needs to be updated to support a minimum of TLS 1.0 and preferably TLS 1.2.
++      </message>
++
+       <message name="IDS_ERRORPAGES_HEADING_PINNING_FAILURE" desc="Title of the error page for a certificate which doesn't match the built-in pins for that name">
+         Incorrect certificate for host.
+       </message>
