@@ -2,6 +2,7 @@
 
 PORTNAME=	minecraft-server
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	https://s3.amazonaws.com/Minecraft.Download/versions/${PORTVERSION}/
 DISTNAME=	minecraft_server.${PORTVERSION}.jar
@@ -36,7 +37,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}/var/log/minecraft-server
 	${INSTALL_SCRIPT} ${FILESDIR}/minecraft-server ${STAGEDIR}${PREFIX}/bin
 .for file in ${CONFIG_FILES}
-	${TOUCH} ${STAGEDIR}${ETCDIR}/${file}
 	${LN} -s ${ETCDIR}/${file} ${STAGEDIR}${DATADIR}/${file}
 .endfor
 	${LN} -sf /var/log/minecraft-server ${STAGEDIR}${DATADIR}/logs

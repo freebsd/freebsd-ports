@@ -28,7 +28,7 @@ TRACE_DESC=	Build with GNAT-specific symbolic tracing functionality
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-USE_PYTHON=	yes
+USES+=		python:build
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-adadomain>0:${PORTSDIR}/textproc/py-sphinxcontrib-adadomain
 ALL_TARGET+=	docs
@@ -39,7 +39,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-src_ahven-framework.adb
 .endif
 
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/ahven/html/_sources
-	@${RM} ${STAGEDIR}${PREFIX}/share/doc/ahven/html/.buildinfo
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/ahven/html/_sources
+	${RM} ${STAGEDIR}${PREFIX}/share/doc/ahven/html/.buildinfo
 
 .include <bsd.port.mk>

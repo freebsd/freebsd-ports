@@ -15,7 +15,3 @@ lib/excel_writer/ieee_754.ali
 lib/excel_writer/libexcelwriter.a
 lib/gnat/excel_writer.gpr
 %%DATADIR%%/Big.xls
-@dirrm %%DATADIR%%
-@dirrmtry lib/gnat
-@dirrm lib/excel_writer
-@dirrm include/excel_writer

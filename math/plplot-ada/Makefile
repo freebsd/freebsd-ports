@@ -24,7 +24,7 @@ INSTALL_WRKSRC=	${WRKSRC}/bindings
 post-extract:
 	${CP} ${FILESDIR}/build_plplot.gpr ${FILESDIR}/Makefile \
 		${BUILD_WRKSRC}
-	${CAT} ${FILESDIR}/plplot.gpr.in | ${SED} -e "s|@PREFIX@|${PREFIX}|g" > \
-		${BUILD_WRKSRC}/plplot.gpr
+	${CAT} ${FILESDIR}/plplot.gpr.in | \
+		${SED} -e "s|@PREFIX@|${PREFIX}|g" > ${BUILD_WRKSRC}/plplot.gpr
 
 .include <bsd.port.mk>

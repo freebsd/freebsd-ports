@@ -82,10 +82,3 @@ lib/gnat/ahven.gpr
 %%PORTDOCS%%%%DOCSDIR%%/html/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
-@dirrm include/ahven
-@dirrm lib/ahven
-@dirrmtry lib/gnat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrmtry share/doc

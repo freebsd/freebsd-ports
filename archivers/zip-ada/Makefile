@@ -22,7 +22,7 @@ DEMOS=		demo_zip demo_unzip ziptest demo_csv_into_zip test_extract \
 		zip_with_many_files
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -P zipada.gpr
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -P zipada.gpr)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin \
@@ -32,20 +32,20 @@ do-install:
 		  ${STAGEDIR}${PREFIX}/lib/gnat
 	@${MKDIR} ${WRKSRC}/obj_tools ${WRKSRC}/obj_demos
 .for F in ${ZTOOLS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${F} ${STAGEDIR}${PREFIX}/bin/
-	@${MV} ${WRKSRC}/obj_opt/${F}.* ${WRKSRC}/obj_tools/
+	${INSTALL_PROGRAM} ${WRKSRC}/${F} ${STAGEDIR}${PREFIX}/bin/
+	${MV} ${WRKSRC}/obj_opt/${F}.* ${WRKSRC}/obj_tools/
 .endfor
 .for F in ${DEMOS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${F} ${STAGEDIR}${EXAMPLESDIR}/
-	@${MV} ${WRKSRC}/obj_opt/${F}.* ${WRKSRC}/obj_demos/
+	${INSTALL_PROGRAM} ${WRKSRC}/${F} ${STAGEDIR}${EXAMPLESDIR}/
+	${MV} ${WRKSRC}/obj_opt/${F}.* ${WRKSRC}/obj_demos/
 .endfor
-	@cd ${WRKSRC}/obj_opt && ${AR} rcs libzip-ada.a *.o
-	@${MV} ${STAGEDIR}${PREFIX}/bin/bunzip ${STAGEDIR}${PREFIX}/bin/debzip2
-	@${INSTALL_DATA} ${WRKSRC}/zip_lib/*.ad[sb] \
+	(cd ${WRKSRC}/obj_opt && ${AR} rcs libzip-ada.a *.o)
+	${MV} ${STAGEDIR}${PREFIX}/bin/bunzip ${STAGEDIR}${PREFIX}/bin/debzip2
+	${INSTALL_DATA} ${WRKSRC}/zip_lib/*.ad[sb] \
 		${STAGEDIR}${PREFIX}/include/zip-ada/
-	@${INSTALL_DATA} ${WRKSRC}/obj_opt/*.ali \
+	${INSTALL_DATA} ${WRKSRC}/obj_opt/*.ali \
 		${STAGEDIR}${PREFIX}/lib/zip-ada/
-	@${INSTALL_LIB} ${WRKSRC}/obj_opt/*.a ${STAGEDIR}${PREFIX}/lib/zip-ada/
-	@${INSTALL_DATA} ${FILESDIR}/zip-ada.gpr ${STAGEDIR}${PREFIX}/lib/gnat/
+	${INSTALL_LIB} ${WRKSRC}/obj_opt/*.a ${STAGEDIR}${PREFIX}/lib/zip-ada/
+	${INSTALL_DATA} ${FILESDIR}/zip-ada.gpr ${STAGEDIR}${PREFIX}/lib/gnat/
 
 .include <bsd.port.mk>

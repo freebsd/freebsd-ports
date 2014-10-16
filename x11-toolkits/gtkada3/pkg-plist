@@ -1278,13 +1278,3 @@ lib/libgtkada_gl-3.8.so.3
 lib/libgtkada_gl.so
 libdata/pkgconfig/gtkada.pc
 share/gps/plug-ins/gtkada.xml
-@dirrm include/gtkada/opengl
-@dirrm include/gtkada
-@dirrmtry lib/gnat
-@dirrm lib/gtkada/relocatable/opengl
-@dirrm lib/gtkada/relocatable
-@dirrm lib/gtkada/static/opengl
-@dirrm lib/gtkada/static
-@dirrm lib/gtkada
-@dirrmtry share/gps/plug-ins
-@dirrmtry share/gps

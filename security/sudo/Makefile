@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.10p3
-PORTREVISION=	1
+DISTVERSION=	1.8.11p1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
 
@@ -15,6 +14,7 @@ LICENSE_NAME=	Sudo license
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lgcc
 LDFLAGS+=	-lssp_nonshared
@@ -92,9 +92,10 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/sudo.default
 	${TOUCH} ${STAGEDIR}${PREFIX}/etc/sudoers.d/.keep-me
+	${MV} ${STAGEDIR}${PREFIX}/etc/sudoers ${STAGEDIR}${PREFIX}/etc/sudoers.sample
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sudoreplay
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/visudo
-.for f in group_file.so sudoers.so system_group.so
+.for f in group_file.so libsudo_util.so sudoers.so system_group.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/sudo/${f}
 .endfor
 

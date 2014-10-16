@@ -149,6 +149,10 @@ Notes:
 	<name>thunderbird</name>
 	<range><lt>31.2.0</lt></range>
       </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.2.0</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -197,6 +201,7 @@ Notes:
     <dates>
       <discovery>2014-10-14</discovery>
       <entry>2014-10-14</entry>
+      <modified>2014-10-16</modified>
     </dates>
   </vuln>
 

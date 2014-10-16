@@ -2,7 +2,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -181,7 +181,8 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--disable-epoll \
 		--disable-linux-netfilter \
 		--disable-linux-tproxy \
-		--disable-translation
+		--disable-translation \
+		--disable-arch-native
 
 .include <bsd.port.options.mk>
 

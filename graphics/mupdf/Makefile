@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
-USES=		pkgconfig gmake
+USES=		compiler:c++11-lang pkgconfig gmake
 USE_XORG=	x11 xext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
@@ -62,7 +61,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdf.a \
 		${STAGEDIR}${PREFIX}/lib/libmupdf_pic.a
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 ${STAGEDIR}${PREFIX}/bin/mupdf
-.for binary in mudraw mutool mujstest mupdf
+.for binary in mudraw mutool mujstest mupdf mupdf-x11-curl
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${binary}
 .endfor
 

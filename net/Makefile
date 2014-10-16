@@ -98,6 +98,7 @@
     SUBDIR += dictd-database
     SUBDIR += dimes
     SUBDIR += dosdetector
+    SUBDIR += dpdk
     SUBDIR += drawterm
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader

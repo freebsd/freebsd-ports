@@ -209,10 +209,3 @@ lib/gnat/adacurses.gpr
 %%PORTDOCS%%share/doc/AdaCurses/ada/terminal_interface-curses__adb.htm
 %%PORTDOCS%%share/doc/AdaCurses/ada/terminal_interface-curses__ads.htm
 %%PORTDOCS%%share/doc/AdaCurses/ada/terminal_interface__ads.htm
-%%PORTDOCS%%@dirrmtry share/doc/AdaCurses/ada/funcs
-%%PORTDOCS%%@dirrmtry share/doc/AdaCurses/ada/files
-%%PORTDOCS%%@dirrmtry share/doc/AdaCurses/ada
-%%PORTDOCS%%@dirrmtry share/doc/AdaCurses
-@dirrmtry lib/adacurses
-@dirrmtry lib/gnat
-@dirrmtry include/adacurses

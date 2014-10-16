@@ -23,6 +23,5 @@ USE_GNUSTEP=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_CAIRO=	yes
 
 .include <bsd.port.mk>

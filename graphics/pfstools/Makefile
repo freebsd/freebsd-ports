@@ -83,4 +83,3 @@ octave_CMD?=	${LOCALBASE}/bin/octave
 .endif
 
 .include <bsd.port.mk>
-
