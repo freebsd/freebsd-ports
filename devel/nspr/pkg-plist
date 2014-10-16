@@ -90,7 +90,3 @@ lib/libplds4.a
 lib/libplds4.so
 lib/libplds4.so.1
 libdata/pkgconfig/nspr.pc
-@dirrm include/nspr/private
-@dirrm include/nspr/obsolete
-@dirrm include/nspr/md
-@dirrm include/nspr

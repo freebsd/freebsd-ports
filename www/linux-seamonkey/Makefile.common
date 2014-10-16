@@ -28,8 +28,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 APP_NAME=	${PKGBASE}
 BIN_NAME?=	${PORTNAME}
 USE_LINUX=	yes
-USE_LINUX_APPS+=	alsalib alsa-plugins-oss atk dbusglib dbuslibs \
-			fontconfig gtk2 hicontheme pango
+USE_LINUX_APPS+=alsalib alsa-plugins-oss atk dbusglib dbuslibs \
+		fontconfig gtk2 hicontheme pango
 
 WRKSRC?=	${WRKDIR}/${BIN_NAME}
 FDIR=		${STAGEDIR}${PREFIX}/lib/${APP_NAME}
@@ -58,7 +58,6 @@ _Q=	2>/dev/null || true
 .if !target(post-extract)
 post-extract:
 	@${RM} -rf ${WRKSRC}/updates
-	@${MKDIR} ${WRKSRC}/${APP_SUBDIR}extensions
 	@${LN} -sf ${LOCALBASE}/lib/browser_plugins/symlinks/${APP_NAME} \
 		${WRKSRC}/${APP_SUBDIR}plugins
 . if defined(WANT_GTK218)
@@ -76,8 +75,8 @@ post-extract:
 post-patch:
 	@${MKDIR} ${PREFS_FILE:H}
 
-	# empty port preferences
-	@${DO_NADA} >>${PREFS_FILE}
+	# disable SSL 3.0 per bug 1076983
+	${ECHO} 'pref("security.tls.version.min", 1);' >> ${PREFS_FILE}
 .endif
 
 .if !target(do-install)
@@ -122,8 +121,6 @@ create-plist: build
 		%D/lib/%%APP_NAME%%/${APP_SUBDIR}extensions/ ${_Q}' >> ${PLIST}
 	${ECHO_CMD} '@unexec ${FIND} %D/lib/%%APP_NAME%%/${APP_SUBDIR}extensions/ \
 		-depth 1 -type l -delete ${_Q}' >> ${PLIST}
-	cd ${WRKSRC} && ${FIND} -sd . -type d | \
-		${SED} -e "s#^\.#@dirrm lib/%%APP_NAME%%#" >> ${PLIST}
 .if defined(WANT_GTK218)
 . for f in ${GTK218_FILES}
 	${REINPLACE_CMD} -i '' '/${f:T}/s/^/%%GTK218%%/' ${PLIST}
