@@ -3,7 +3,7 @@
 
 PORTNAME=	mecab
 PORTVERSION=	0.996
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	GOOGLE_CODE
 
@@ -31,10 +31,10 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's/-O3/${CFLAGS}/' ${WRKSRC}/${CONFIGURE_SCRIPT}.in
-	${REINPLACE_CMD} -e 's/conf_DATA = mecabrc/conf_DATA = mecabrc.dist/' ${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e 's/conf_DATA = mecabrc/conf_DATA = mecabrc.sample/' ${WRKSRC}/Makefile.am
 
 post-configure:
-	${CP} ${WRKSRC}/mecabrc ${WRKSRC}/mecabrc.dist
+	${CP} ${WRKSRC}/mecabrc ${WRKSRC}/mecabrc.sample
 
 pre-install:
 	${CHMOD} a+x ${WRKSRC}/install-sh
