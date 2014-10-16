@@ -144,23 +144,6 @@ post-install:
 	   ${SORT} | ${SED} -e 's/^man\/man[1578]\/.*[1578]$$/&.gz/' \
 	   > ${TMPPLIST}
 	@echo ${PLIST_FILES} | awk '{print $$1}' RS=' ' >> ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${SORT} -r | \
-	   ${SED} -e '/^bin$$/d' -e '/^lib$$/d' -e '/^pkg$$/d' \
-	   -e '/^share\/examples$$/d' -e '/^share\/doc$$/d' -e '/^share$$/d' \
-	   -e '/^etc$$/d' -e '/^man\/man[1578]$$/d' -e '/^man$$/d' \
-	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/examples 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/bin 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/etc 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/lib 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/man/man8 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/man/man7 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/man/man5 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/man/man1 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/man 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/pkg 2>/dev/null || true" >> ${TMPPLIST}
 
 # to create a new bootstrap, invoke "make stage NEW_BOOTSTRAP=1"
 .if defined(NEW_BOOTSTRAP)
