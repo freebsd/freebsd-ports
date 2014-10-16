@@ -31,4 +31,3 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/make.1 ${STAGEDIR}${PREFIX}/man/man1/gmake-lite.1
 
 .include <bsd.port.mk>
-

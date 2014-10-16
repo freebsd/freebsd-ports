@@ -8,8 +8,6 @@ CATEGORIES=	net pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to execute traceroute
 
-
 USES=	pear
 
 .include <bsd.port.mk>
-

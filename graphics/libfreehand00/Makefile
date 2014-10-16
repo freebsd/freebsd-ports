@@ -25,4 +25,3 @@ post-install:
 	@${RM} -f ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>
-

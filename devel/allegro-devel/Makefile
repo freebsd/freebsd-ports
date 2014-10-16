@@ -28,7 +28,6 @@ USES=		gmake cmake openal:soft pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_GL=		glu
 USE_GNOME=	gtk20
-USE_FREETYPE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"

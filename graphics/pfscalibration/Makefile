@@ -27,4 +27,3 @@ bash_CMD=	${SH}
 LIB_DEPENDS=	libpfs-1.2.so:${PORTSDIR}/graphics/pfstools
 
 .include <bsd.port.mk>
-

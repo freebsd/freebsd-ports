@@ -22,4 +22,3 @@ CONFIGURE_ARGS=	--disable-werror --without-docs
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
-

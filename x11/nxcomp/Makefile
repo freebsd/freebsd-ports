@@ -26,4 +26,3 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libXcomp.so.3.5*
 
 .include <bsd.port.mk>
-

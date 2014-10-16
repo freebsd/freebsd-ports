@@ -3,6 +3,7 @@
 
 PORTNAME=	scalar_objects
 PORTVERSION=	0.0.20140124
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php-
 
@@ -20,6 +21,6 @@ GH_COMMIT=	baf4985
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
-USE_PHPBUILD=	yes
+USE_PHP_BUILD=	yes
 
 .include <bsd.port.mk>
