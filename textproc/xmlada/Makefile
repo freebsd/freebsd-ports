@@ -43,8 +43,8 @@ post-patch:
 do-build:
 	# Override build target to avoid -jX getting passed to makefile
 	# Parallel builds are handled with PROCESSORS setting
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-install:
 	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/xmlada/_sources

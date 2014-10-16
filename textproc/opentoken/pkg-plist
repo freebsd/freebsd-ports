@@ -166,6 +166,3 @@ lib/opentoken/opentoken-token-sequence.ali
 lib/opentoken/opentoken-token-sequence_mixin.ali
 lib/opentoken/opentoken-token.ali
 lib/opentoken/opentoken.ali
-@dirrm lib/opentoken
-@dirrmtry lib/gnat
-@dirrm include/opentoken

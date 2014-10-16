@@ -5,7 +5,7 @@ PORTNAME=	xml_ez_out
 PORTVERSION=	1.06
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mckae.com/xml_ezout/
-DISTFILES=	${PORTNAME}_${PORTVERSION}.tgz
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Library for emitting XML from Ada programs
@@ -13,8 +13,8 @@ COMMENT=	Library for emitting XML from Ada programs
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
-USES=		ada dos2unix
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		ada dos2unix tar:tgz
+WRKSRC=		${WRKDIR}/xml_ez_out
 BUILD_WRKSRC=	${WRKSRC}/mckae
 PORTDOCS=	README
 PORTEXAMPLES=	example.gpr tmeztf.adb runme.sh
