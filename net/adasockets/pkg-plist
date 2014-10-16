@@ -26,8 +26,3 @@ lib/adasockets/sockets.ali
 lib/gnat/adasockets.gpr
 libdata/pkgconfig/adasockets.pc
 share/man/man1/adasockets-config.1
-@dirrmtry share/man/man1
-@dirrmtry share/man
-@dirrmtry lib/gnat
-@dirrm lib/adasockets
-@dirrm include/adasockets

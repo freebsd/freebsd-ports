@@ -112,9 +112,3 @@ lib/libsparkcrypto/lsc.ali
 %%PORTDOCS%%%%DOCSDIR%%/lsc.html
 %%PORTDOCS%%%%DOCSDIR%%/lsc_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/subprograms.html
-@dirrm include/libsparkcrypto/sharedinclude
-@dirrm include/libsparkcrypto/adainclude
-@dirrm include/libsparkcrypto
-@dirrm lib/libsparkcrypto
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry lib/gnat
