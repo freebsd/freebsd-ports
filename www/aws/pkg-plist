@@ -788,11 +788,3 @@ share/gps/plug-ins/aws.py
 share/gps/plug-ins/aws.xml
 share/gps/plug-ins/aws_api.xml
 share/gps/plug-ins/wsdl2aws.xml
-@dirrm include/aws
-%%SHARED%%@dirrm include/aws.relocatable
-@dirrm lib/aws
-%%SHARED%%@dirrm lib/aws.relocatable
-@dirrmtry lib/gnat
-@dirrmtry share/gpr
-@dirrmtry share/gps/plug-ins
-@dirrmtry share/gps

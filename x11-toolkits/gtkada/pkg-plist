@@ -1152,10 +1152,3 @@ lib/libgtkada-2.24.so.4
 lib/libgtkada.so
 libdata/pkgconfig/gtkada.pc
 share/gps/plug-ins/gtkada.xml
-@dirrm include/gtkada
-@dirrmtry lib/gnat
-@dirrm lib/gtkada/relocatable
-@dirrm lib/gtkada/static
-@dirrm lib/gtkada
-@dirrmtry share/gps/plug-ins
-@dirrmtry share/gps

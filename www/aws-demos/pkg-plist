@@ -112,12 +112,3 @@
 %%EXAMPLESDIR%%/wsdl_demo_client
 %%EXAMPLESDIR%%/wsdl_demo_server
 %%EXAMPLESDIR%%/zdemo
-@dirrm %%EXAMPLESDIR%%/images
-@dirrm %%EXAMPLESDIR%%/templates
-@dirrm %%EXAMPLESDIR%%/web_elements/icons
-@dirrm %%EXAMPLESDIR%%/web_elements/javascripts
-@dirrm %%EXAMPLESDIR%%/web_elements/menu_css
-@dirrm %%EXAMPLESDIR%%/web_elements/notebook
-@dirrm %%EXAMPLESDIR%%/web_elements/rounded_boxes
-@dirrm %%EXAMPLESDIR%%/web_elements
-@dirrm %%EXAMPLESDIR%%
