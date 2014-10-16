@@ -57,8 +57,6 @@ do-install:
 
 post-install:
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} usr \( -type f -or -type l \) | \
-	   ${SORT} >> ${TMPPLIST})
-	@(cd ${STAGEDIR}${PREFIX}; ${FIND} usr -type d | ${SORT} -r | \
-	   ${SED} -e 's/^/@dirrm /g' >> ${TMPPLIST})
+		${SORT} >> ${TMPPLIST})
 
 .include <bsd.port.mk>
