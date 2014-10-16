@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libreoffice
-PORTVERSION=	4.2.5
+PORTVERSION=	4.3.2
 RCVER=		2
 #PRERELEASE=	yes
 LOVERSION=	${PORTVERSION}.${RCVER}
@@ -24,6 +24,7 @@ PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
 .if defined(LO_I18N)
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 RUN_DEPENDS=	libreoffice:${PORTSDIR}/editors/libreoffice
@@ -56,12 +57,10 @@ post-extract:
 	done ; \
 
 do-install:
-	@${RM} -f ${PLISTD} ${PLISTF}
-	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * -type d -exec ${ECHO_CMD} "@dirrmtry lib/${PORTNAME}/{}" \; >> ${PLISTD}
+	@${RM} -f ${PLISTF}
 	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * \( -type f -o -type l \) -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${PLISTF}
 
 	${SORT} ${PLISTF} >> ${TMPPLIST}
-	${SORT} -r ${PLISTD} >> ${TMPPLIST}
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; \
