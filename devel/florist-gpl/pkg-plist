@@ -194,6 +194,3 @@ lib/florist/posix_timers.ali
 lib/florist/posix_unsafe_process_primitives.ali
 lib/florist/posix_user_database.ali
 lib/gnat/florist.gpr
-@dirrm include/florist
-@dirrm lib/florist
-@dirrmtry lib/gnat

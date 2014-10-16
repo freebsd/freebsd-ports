@@ -583,9 +583,3 @@ lib/gnat/bc.gpr
 %%PORTDOCS%%share/doc/adabooch/overview.html
 %%PORTDOCS%%share/doc/adabooch/release.html
 %%PORTDOCS%%share/doc/adabooch/x.ada
-%%PORTDOCS%%@dirrm share/doc/adabooch
-@dirrmtry lib/gnat
-@dirrm lib/bc/lib-static
-@dirrm lib/bc/lib-relocatable
-@dirrm lib/bc
-@dirrm include/bc

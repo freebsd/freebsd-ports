@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 do-build:
 #	Recreate the do-build target without -j parameter
 #	It interferes with PROCESSORS make argument
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-patch:
@@ -49,7 +49,7 @@ post-install:
 .if !${PORT_OPTIONS:MEXAMPLES}
 	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}
 .endif
-	cd ${STAGEDIR}${PREFIX}; ${FIND} share/examples -type d -empty | \
-	  ${SORT} -dr | ${XARGS} ${RMDIR}
+	(cd ${STAGEDIR}${PREFIX} && ${FIND} share/examples -type d -empty | \
+	  ${SORT} -dr | ${XARGS} ${RMDIR})
 
 .include <bsd.port.mk>

@@ -34,10 +34,10 @@ post-install:
 	${SED} "s|@PREFIX@|${PREFIX}|g" ${FILESDIR}/adacurses.gpr.in > \
 		${STAGEDIR}${PREFIX}/lib/gnat/adacurses.gpr
 .if ${PORT_OPTIONS:MDOCS}
-	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} \
+	(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} install.html)
 .else
-	@${RM} ${STAGEDIR}${PREFIX}/man/man1/adacurses-config.1
+	${RM} ${STAGEDIR}${PREFIX}/man/man1/adacurses-config.1
 .endif
 
 .include <bsd.port.mk>
