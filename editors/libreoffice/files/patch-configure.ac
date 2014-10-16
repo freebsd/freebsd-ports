@@ -1,20 +1,10 @@
---- configure.ac.orig	2014-06-12 13:00:46.943316659 +0200
-+++ configure.ac	2014-06-12 13:00:39.783317665 +0200
-@@ -4024,7 +4024,7 @@
-         PLATFORMID=freebsd_x86
-         OUTPATH=unxfbsdi
-         ;;
--    x86_64)
-+    x86_64|amd64)
-         CPUNAME=X86_64
-         RTL_ARCH=X86_64
-         PLATFORMID=freebsd_x86_64
-@@ -7051,7 +7051,7 @@
-             JAVA_ARCH="i386"
-             JAVA_TOOLKIT="client"
-             ;;
--        x86_64)
-+        x86_64|amd64)
-             if test "`echo $JAVA_HOME | sed -e 's,.*/,,'`" = "linux"; then
-                 JAVA_ARCH="i386"
-                 JAVA_TOOLKIT="client"
+--- configure.ac.orig	2014-09-16 16:10:41.000000000 -0400
++++ configure.ac	2014-10-08 20:58:07.000000000 -0400
+@@ -73,6 +73,7 @@
+         cd "$rel" || AC_MSG_ERROR([absolute path resolution failed for "$rel".])
+         absolute_path="$(pwd)"
+         cd - &> /dev/null
++        cd "$BUILDDIR"
+     else
+         AC_MSG_ERROR([Failed to resolve absolute path.  "$rel" does not exist or is not a directory.])
+     fi
