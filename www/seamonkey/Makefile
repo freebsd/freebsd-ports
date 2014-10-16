@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.29.1
+DISTVERSION=	2.30
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.7.2
-L_VERSION=	3.4
+L_VERSION=	3.5
 
 SSP_UNSAFE=	yes
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
@@ -84,9 +84,8 @@ MOZSRC:=	${WRKSRC}/mozilla
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 
 # avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
-# http://svnweb.freebsd.org/changeset/base/255804
-.if ${OPSYS} == FreeBSD
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${ARCH} == i386 && ${OSVERSION} < 1000056
+# To be removed when 9.2R goes EOL. http://llvm.org/PR15840
+.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION:M3[23]}
 . if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
 		a ${CHOSEN_COMPILER_TYPE} bug: unset the option or \
@@ -99,7 +98,6 @@ CXXFLAGS+=	-msse2
 CXXFLAGS+=	-O1
 .  endif
 . endif
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
