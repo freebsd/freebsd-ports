@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FreeDB/FreeDB.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FreeDB/autosplit.ix
 %%PERL5_MAN3%%/Net::FreeDB.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FreeDB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
