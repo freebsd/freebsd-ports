@@ -26,17 +26,7 @@ NO_MTREE=	yes
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share
 	${MV} ${STAGEDIR}${PREFIX}/examples ${STAGEDIR}${PREFIX}/share/
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | \
-	   ${SORT} -r | ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' \
-	   -e '/share\/gps$$/d' -e '/share\/gps\/plug-ins$$/d' \
-	   -e '/share\/gprconfig$$/d' -e 's/^/@dirrm /g' \
-	   >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/gprconfig 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${TMPPLIST}
+	@(cd ${STAGEDIR}${PREFIX} ; \
+		${FIND} * \( -type f -or -type l \) | ${SORT} >> ${TMPPLIST})
 
 .include <bsd.port.mk>
