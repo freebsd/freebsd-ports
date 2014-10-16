@@ -10,3 +10,8 @@ eula=true
 - World files can be found at /var/db/minecraft-server
 - Debug output files can be found at /var/log/minecraft-server/debug/
 - To edit java's parameters, edit %%PREFIX%%/bin/minecraft-server
+
+NOTE:
+Users upgrading from version < 1.8 are advised to run the server to
+generate new config files, and then modify them based on their existing
+configuration, as most files are now JSON instead of txt. Also,
