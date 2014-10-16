@@ -17,6 +17,7 @@ BUILD_DEPENDS=	asis>=2011:${PORTSDIR}/lang/asis
 
 USES=		ada
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+PLIST_FILES=	bin/adabrowse
 PORTDOCS=	*.html *.css
 
 OPTIONS_DEFINE=	DOCS
