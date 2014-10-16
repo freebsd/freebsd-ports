@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.29.1
+PORTVERSION=	2.30
 CATEGORIES=	www mail news editors irc
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -14,7 +14,7 @@ COMMENT=	Localized interface for SeaMonkey
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		zip:infozip gecko:seamonkey
+USES=		zip:infozip gecko:seamonkey,build
 USE_XPI=	seamonkey linux-seamonkey
 
 NO_ARCH=	yes
@@ -25,7 +25,6 @@ WDIR=	langpack-*@seamonkey.mozilla.org
 XPI_DISTNAMES=	${SEAMONKEY_I18N_}
 
 PLIST?=		${WRKDIR}/plist
-PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
 .include "${.CURDIR}/Makefile.option"
@@ -57,12 +56,9 @@ do-extract:
 		fi; \
 		cd ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org/; \
 		${FIND} -H -s * ! -type d | \
-		${SED} -e "s|^|lib/xpi/langpack-$$lang@seamonkey.mozilla.org/|" >> ${PLISTF} && \
-		${FIND} -d * -type d | \
-		${SED} -e "s|^|@dirrm lib/xpi/langpack-$$lang@seamonkey.mozilla.org/|" >> ${PLISTD}; \
+		${SED} -e "s|^|lib/xpi/langpack-$$lang@seamonkey.mozilla.org/|" >> ${PLISTF}; \
 	done
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
-	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${STAGEDIR}${XPI_SLDIRS_ALL}
