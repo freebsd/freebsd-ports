@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duo
-PORTVERSION=	1.9.11
+PORTVERSION=	1.9.13
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
 		http://mirrors.rit.edu/zi/
