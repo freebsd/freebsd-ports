@@ -54,4 +54,3 @@ do-install:
 	cd ${WRKSRC}/hw/vfb; DESTDIR=${STAGEDIR} ${MAKE} install
 
 .include <bsd.port.mk>
-

@@ -3,6 +3,7 @@
 
 PORTNAME=	mantis
 PORTVERSION=	1.2.17
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}bt/${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	mantisbt-${PORTVERSION}
@@ -11,8 +12,8 @@ MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bug tracking system written in PHP
 
 NO_BUILD=	yes
-USE_PSQL=	yes
 USE_PHP=	hash pcre session
+USES=	pgsql
 
 SUB_FILES=	pkg-message
 

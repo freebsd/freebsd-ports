@@ -89,4 +89,3 @@ post-patch:
 .endif
 
 .include <bsd.port.post.mk>
-

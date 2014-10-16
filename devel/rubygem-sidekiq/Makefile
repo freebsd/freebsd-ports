@@ -28,4 +28,3 @@ BROKEN=		Infinite loop during install
 .endif
 
 .include <bsd.port.post.mk>
-

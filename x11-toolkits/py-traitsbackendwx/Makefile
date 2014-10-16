@@ -22,4 +22,3 @@ USE_WX=		3.0+
 WX_COMPS=	python
 
 .include <bsd.port.mk>
-

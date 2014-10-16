@@ -20,15 +20,6 @@ MAKE_ENV+=	INCDIR="-I${LUA_INCDIR} -I${WRKSRC}/src" LUAPATH=${LUA_MODSHAREDIR} \
 USES=		lua:51
 USE_OPENSSL=	yes
 
-.include <bsd.port.options.mk>
-
-# NOTE: OSVERSION is already defined here, and USE_OPENSSL_PORT
-# should be defined before pre.mk, that's why options.mk is used
-
-.if ${OSVERSION} < 700024
-USE_OPENSSL_PORT=yes
-.endif
-
 post-patch:	.SILENT
 	${REINPLACE_CMD} -Ee '/\(INSTALL\)/s/-D //' \
 		-e '/^LDFLAGS/s/\+=/=/' \
