@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hostapd
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/
 
@@ -24,9 +24,8 @@ BROKEN_sparc64=	does not compile
 post-patch:
 	@${REINPLACE_CMD} -e 's|@$$(E) "  CC " $$<|@$$(E) "  $$(CC) " $$<|' \
 		${BUILD_WRKSRC}/Makefile
-
-do-configure:
-	${CP} ${FILESDIR}/config ${WRKSRC}/hostapd/.config
+	@${SED} -e 's|@PREFIX@|${PREFIX}|g' ${FILESDIR}/config \
+		>> ${WRKSRC}/hostapd/.config
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hostapd/hostapd ${STAGEDIR}${PREFIX}/sbin
