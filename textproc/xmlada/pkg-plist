@@ -548,13 +548,3 @@ lib/xmlada/static/unicode.ali
 %%PORTDOCS%%%%DOCSDIR%%/unicode.html
 %%PORTDOCS%%%%DOCSDIR%%/using.html
 share/gps/plug-ins/xmlada_gps.py
-@dirrm include/xmlada
-@dirrm lib/gnat/xmlada
-@dirrmtry lib/gnat
-@dirrm lib/xmlada/relocatable
-@dirrm lib/xmlada/static
-@dirrm lib/xmlada
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/gps/plug-ins
-@dirrmtry share/gps
