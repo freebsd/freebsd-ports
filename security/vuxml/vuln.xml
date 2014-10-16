@@ -57,6 +57,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6f825fa4-5560-11e4-a4c3-00a0986f28c4">
+    <topic>drupal7 -- SQL injection</topic>
+    <affects>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.32</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Security Team reports:</p>
+	<blockquote cite="https://drupal.org/SA-CORE-2013-003">
+	  <p>Drupal 7 includes a database abstraction API to ensure that
+	    queries executed against the database are sanitized to prevent
+	    SQL injection attacks.
+	    A vulnerability in this API allows an attacker to send
+	    specially crafted requests resulting in arbitrary SQL execution.
+	    Depending on the content of the requests this can lead to
+	    privilege escalation, arbitrary PHP execution, or other attacks.
+	    This vulnerability can be exploited by anonymous users.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3704</cvename>
+      <url>https://www.drupal.org/SA-CORE-2014-005</url>
+      <url>https://www.sektioneins.de/en/blog/14-10-15-drupal-sql-injection-vulnerability.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-15</discovery>
+      <entry>2014-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="03175e62-5494-11e4-9cc1-bc5ff4fb5e7b">
     <topic>OpenSSL -- multiple vulnerabilities</topic>
     <affects>
