@@ -70,6 +70,3 @@ lib/gnat_sdl/stdlib_h.ali
 lib/gnat_sdl/umingw_h.ali
 lib/gnat_sdl/umingw_off_t_h.ali
 lib/gnat_sdl/vadefs_h.ali
-@dirrm lib/gnat_sdl
-@dirrmtry lib/gnat
-@dirrm include/gnat_sdl

@@ -22,7 +22,3 @@ man/man1/ayacc.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc/driver.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.l
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test95.l
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ada_parser
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

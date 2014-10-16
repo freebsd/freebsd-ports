@@ -6,10 +6,15 @@ PORTVERSION=	041111
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://thiberlog.free.fr/src/
-DISTNAME=	${PORTNAME}_thiberlog_${PORTVERSION}
+DISTNAME=	afay_thiberlog_${PORTVERSION}
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Improved aflex and ayacc Ada 95 scanner and parser generators
+
+LICENSE=	aflex
+LICENSE_NAME=	Arcadia-UC-Irvine
+LICENSE_FILE=	${WRKSRC}/afay/aflex/README
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
@@ -21,16 +26,18 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 do-build:
-	@cd ${WRKSRC}/afay/aflex/src/gnat_unix && \
-		${SETENV} ${MAKE_ENV} ${SH} ./README
-	@cd ${WRKSRC}/afay/ayacc/src/gnat_unix && \
-		${SETENV} ${MAKE_ENV} ${SH} ./README
+	@(cd ${WRKSRC}/afay/aflex/src/gnat_unix && \
+		${SETENV} ${MAKE_ENV} ${SH} ./README)
+	@(cd ${WRKSRC}/afay/ayacc/src/gnat_unix && \
+		${SETENV} ${MAKE_ENV} ${SH} ./README)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/afay/aflex/src/aflex ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/afay/ayacc/src/ayacc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex.man ${STAGEDIR}${PREFIX}/man/man1/aflex.1
-	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/old_docs/ayacc.manpage ${STAGEDIR}${PREFIX}/man/man1/ayacc.1
+	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/aflex.man \
+		${STAGEDIR}${PREFIX}/man/man1/aflex.1
+	${INSTALL_DATA} ${WRKSRC}/afay/ayacc/doc/old_docs/ayacc.manpage \
+		${STAGEDIR}${PREFIX}/man/man1/ayacc.1
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/afay/aflex/doc/READ_ME \

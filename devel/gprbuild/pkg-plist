@@ -19,6 +19,3 @@ share/gprconfig/linker.xml
 share/gprconfig/nocompiler.xml
 share/gprconfig/targetset.xml
 share/gprconfig/windres.xml
-@dirrm libexec/gprbuild
-@dirrmtry share/gpr
-@dirrmtry share/gprconfig

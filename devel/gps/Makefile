@@ -122,14 +122,9 @@ post-install:
 	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/gps/html/tutorial/_sources
 	echo "This is the GPS GPL Edition for the FreeBSD Ports Collection." \
 		> ${STAGEDIR}${PREFIX}/share/gps/about.txt
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d -empty -print | ${XARGS} ${RMDIR}
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
-	   ${SED} -e '/share\/doc$$/d' -e '/share\/gps$$/d' \
-	   -e '/share\/gps\/plug-ins$$/d' -e '/share\/examples$$/d' \
-	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${TMPPLIST}
+	@(cd ${STAGEDIR}${PREFIX} ; \
+		${FIND} * -type d -empty -print | ${XARGS} ${RMDIR})
+	@(cd ${STAGEDIR}${PREFIX} ; \
+		${FIND} * \( -type f -or -type l \) | ${SORT} >> ${TMPPLIST})
 
 .include <bsd.port.mk>

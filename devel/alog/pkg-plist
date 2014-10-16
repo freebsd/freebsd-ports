@@ -155,11 +155,3 @@ lib/gnat/alog.gpr
 %%PORTDOCS%%%%DOCSDIR%%/html/api/tree.html
 %%PORTDOCS%%%%DOCSDIR%%/html/asciidoc.css
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/api/support/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/api/support
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/api
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry lib/gnat
-@dirrm lib/alog
-@dirrm include/alog

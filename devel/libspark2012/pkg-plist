@@ -51,6 +51,3 @@ lib/spark2012/spark-crypto-hash.ali
 lib/spark2012/spark-crypto.ali
 lib/spark2012/spark-unsigned.ali
 lib/spark2012/spark.ali
-@dirrm lib/spark2012
-@dirrmtry lib/gnat
-@dirrm include/spark2012

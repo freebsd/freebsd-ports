@@ -300,8 +300,3 @@ lib/gnatcoll/static/libgnatcoll_python.a
 lib/gnatcoll/static/libgnatcoll_readline.a
 lib/gnatcoll/static/libgnatcoll_sqlite.a
 %%DATADIR%%/dborm.py
-@dirrm include/gnatcoll
-@dirrm lib/gnat/gnatcoll
-@dirrm lib/gnatcoll/static
-@dirrm lib/gnatcoll
-@dirrm %%DATADIR%%
