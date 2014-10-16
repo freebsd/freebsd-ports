@@ -32,6 +32,3 @@ lib/generic_image_decoder/gid-headers.ali
 lib/generic_image_decoder/gid.ali
 lib/generic_image_decoder/libgenimgdec.a
 lib/gnat/generic_image_decoder.gpr
-@dirrmtry lib/gnat
-@dirrm lib/generic_image_decoder
-@dirrm include/generic_image_decoder
