@@ -1,4 +1,5 @@
 @version:3.6
+@include "scl.conf"
 
 #
 # This sample configuration file is essentially equilivent to the stock
@@ -15,9 +16,8 @@ options { chain_hostnames(off); flush_lines(0); threaded(yes); };
 #
 # sources
 #
-source src { unix-dgram("/var/run/log");
-             unix-dgram("/var/run/logpriv" perm(0600));
-	     udp(); internal(); file("/dev/klog"); };
+source src { system();
+	     udp(); internal(); };
 
 #
 # destinations
