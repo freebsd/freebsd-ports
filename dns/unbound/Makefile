@@ -3,7 +3,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.4.22
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -86,6 +86,12 @@ CPPFLAGS+=	$$(pkg-config libevent --cflags-only-I)
 LDFLAGS+=	$$(pkg-config libevent --libs-only-L)
 .else
 CONFIGURE_ARGS+=--with-libevent=no
+.endif
+
+.if ${PORT_OPTIONS:MLIBEVENT14} || ${PORT_OPTIONS:MLIBEVENT20}
+.if ${OSVERSION} >= 1000015
+BROKEN=	Unbound with libevent crashes on FreeBSD 10+ due to Capsicum
+.endif
 .endif
 
 .if empty(PORT_OPTIONS:MTHREADS)
