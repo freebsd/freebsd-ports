@@ -14,6 +14,7 @@ COMMENT=	Universal Media Server
 LICENSE=	GPLv2
 
 BROKEN=		RC script broken, especially prestart target
+EXPIRATION_DATE=	2015-01-16
 
 USES=		tar:tgz
 USE_JAVA=	yes
