@@ -3,7 +3,7 @@
 
 PORTNAME=	matreshka
 PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://forge.ada-ru.org/matreshka/downloads/
 
@@ -30,6 +30,11 @@ MYSQL_CONFIGURE_ENABLE=		mysql
 ORACLE_CONFIGURE_ENABLE=	oracle
 AMF_CONFIGURE_ENABLE=		amf
 
+MYSQL_USE=			MYSQL=yes
+PGSQL_USES=			pgsql
+SQLITE3_USE=			SQLITE=yes
+FIREBIRD_USE=			FIREBIRD=yes
+
 MAKE_JOBS_UNSAFE=	yes
 
 MAKE_ENV+=	SMP_MFLAGS=-j${MAKE_JOBS_NUMBER}
@@ -38,29 +43,15 @@ MAKE_ENV+=	SMP_MFLAGS=-j${MAKE_JOBS_NUMBER}
 
 .if ${PORT_OPTIONS:MFIREBIRD}
 CONFIGURE_ARGS+= --with-firebird-libdir=${LOCALBASE}/lib
-USE_FIREBIRD= yes
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL= yes
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL= yes
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE3}
-USE_SQLITE= yes
 .endif
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE_CMD} config
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so \
+		${STAGEDIR}${PREFIX}/bin/wsdl2ada
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
 	   ${SORT} >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
-	   ${SED} -e '/lib\/gnat$$/d' -e 's/^/@dirrm /g' >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
