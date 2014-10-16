@@ -19,4 +19,3 @@ share/lsof/shared.perl5
 share/lsof/sort_res.perl5
 share/lsof/watch_a_file.perl
 share/lsof/xusers.awk
-@dirrm share/lsof
