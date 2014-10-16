@@ -3,7 +3,7 @@
 
 PORTNAME=	qtdemo
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 PKGNAMEPREFIX=	qt4-
 
@@ -11,9 +11,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 demonstration and example applications
 
 USES=		pkgconfig
+USE_GSTREAMER=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib designer \
 		gui network opengl sql svg qtestlib xml imageformats_run dbus \
-		script webkit phonon help assistant_run phonon-gst scripttools \
+		script webkit phonon help assistant_run phonon-gst_run scripttools \
 		xmlpatterns multimedia
 QT_DIST=	yes
 
