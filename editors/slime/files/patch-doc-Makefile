@@ -1,0 +1,18 @@
+--- doc/Makefile.orig	2014-10-07 19:28:38.000000000 -0700
++++ doc/Makefile	2014-10-07 19:29:45.000000000 -0700
+@@ -35,13 +35,13 @@
+ 	dvips -o $@ $<
+ 
+ slime.info: $(TEXI)
+-	makeinfo $<
++	/usr/local/bin/texi2any $<
+ 
+ slime.html: $(TEXI)
+ 	texi2html --css-include=slime.css $<
+ 
+ html/index.html: $(TEXI)
+-	makeinfo -o html --css-include=slime.css --html $<
++	/usr/local/bin/texi2any -o html --css-include=slime.css --html $<
+ 
+ html.tgz: html/index.html
+ 	tar -czf $@ html
