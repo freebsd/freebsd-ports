@@ -14,7 +14,3 @@ lib/apq-postgresql/static/apq-postgresql-decimal.ali
 lib/apq-postgresql/static/apq-postgresql.ali
 lib/apq-postgresql/static/libapq-postgresql.a
 lib/gnat/apq-postgresql.gpr
-@dirrmtry lib/gnat
-@dirrm lib/apq-postgresql/static
-@dirrm lib/apq-postgresql
-@dirrm include/apq-postgresql
