@@ -9,7 +9,7 @@ MASTER_SITES=	http://ironsides.martincarlisle.com/
 DISTNAME=	ironsides_authoritative-${SNAPSHOT}
 
 MAINTAINER=	marino@FreeBSD.org
-COMMENT=	Authoritative DNS server formally verified by SPARK/Ada	
+COMMENT=	Authoritative DNS server formally verified by SPARK/Ada
 
 LICENSE=	Ironsides
 LICENSE_NAME=	IRONSIDES - Free software, unlimited redistribution
@@ -22,6 +22,8 @@ USES=		ada dos2unix zip
 DOS2UNIX_FILES=	dfcs.usafa.edu.zonefile ironsides.1
 SNAPSHOT=	2014_02_20
 WRKSRC=		${WRKDIR}/${DISTFILES:S/.zip//}
+PLIST_FILES=	sbin/ironsides man/man1/ironsides.1.gz
+PORTEXAMPLES=	dfcs.usafa.edu.zonefile
 
 post-extract:
 	@${CP} ${FILESDIR}/ironsides.gpr ${FILESDIR}/Makefile ${WRKSRC}/
