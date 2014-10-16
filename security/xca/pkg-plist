@@ -17,7 +17,3 @@ man/man1/xca.1.gz
 share/applications/xca.desktop
 share/mime/packages/xca.xml
 share/pixmaps/xca-32x32.xpm
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
