@@ -3,14 +3,14 @@
 
 PORTNAME=	xca
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	freebsd@nagilum.org
 COMMENT=	Graphical certification authority
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
