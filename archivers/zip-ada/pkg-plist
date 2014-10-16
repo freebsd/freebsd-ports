@@ -75,7 +75,3 @@ lib/zip-ada/zip_streams.ali
 %%EXAMPLESDIR%%/za_gnat
 %%EXAMPLESDIR%%/zip_with_many_files
 %%EXAMPLESDIR%%/ziptest
-@dirrm lib/zip-ada
-@dirrm include/zip-ada
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry lib/gnat
