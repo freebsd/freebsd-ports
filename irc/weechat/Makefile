@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	0.4.3
-PORTREVISION=	5
+PORTVERSION=	1.0.1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/ \
 		http://perturb.me.uk/distfiles/weechat/:mandocs \
@@ -16,147 +15,89 @@ COMMENT=	Lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
-
-CONFLICTS=	weechat-devel-0.*
+CONFLICTS=	weechat-devel-[0-9]*
 
 USE_LDCONFIG=	yes
-USES=		cmake iconv ncurses
+USES=			cmake iconv ncurses
 CMAKE_ARGS+=	-DENABLE_GUILE=no
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
+				libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE ASPELL \
-		GNUTLS NLS ICON MANPAGES DOCS
+				GNUTLS NLS ICON MANPAGES DOCS
 OPTIONS_DEFAULT=RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE ASPELL \
-		GNUTLS ICON MANPAGES
+				GNUTLS ICON MANPAGES
+
+OPTIONS_SUB=	yes
 
 BACKTRACE_DESC=	Provide crash backtraces
 CHARSET_DESC=	Charset conversion support
-LUA_DESC=	Lua scripting support
-PERL_DESC=	Perl scripting support
+ICON_DESC=		Desktop icon
+LUA_DESC=		Lua scripting support
+PERL_DESC=		Perl scripting support
 PYTHON_DESC=	Python scripting support
-RUBY_DESC=	Ruby scripting support
-TCL_DESC=	Tcl scripting support
-ICON_DESC=	Desktop icon
+RUBY_DESC=		Ruby scripting support
+TCL_DESC=		Tcl scripting support
 
-.include <bsd.port.options.mk>
+ASPELL_CMAKE_OFF=	-DENABLE_ASPELL=no
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 
-.if ${PORT_OPTIONS:MCHARSET}
-PLIST_SUB+=	CHARSET=""
-.else
-CMAKE_ARGS+=	-DENABLE_CHARSET=no
-PLIST_SUB+=	CHARSET="@comment "
-.endif
+BACKTRACE_LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CMAKE_ARGS+=	-DENABLE_NLS=no
-PLIST_SUB+=	NLS="@comment "
-.endif
+CHARSET_CMAKE_OFF=	-DENABLE_CHARSET=no
 
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
-PLIST_SUB+=	ASPELL=""
-.else
-CMAKE_ARGS+=	-DENABLE_ASPELL=no
-PLIST_SUB+=	ASPELL="@comment "
-.endif
+GNUTLS_CMAKE_OFF=	-DENABLE_GNUTLS=no
+GNUTLS_USES=		pkgconfig
+GNUTLS_LIB_DEPENDS=	libgnutls.so.28:${PORTSDIR}/security/gnutls
 
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2
-CMAKE_ARGS+=	-DBSD_PYTHON_CMD=${PYTHON_CMD} \
-		-DBSD_PYTHON_VER=${PYTHON_VERSION}
-PLIST_SUB+=	PYTHON=""
-.else
-CMAKE_ARGS+=	-DENABLE_PYTHON=no
-PLIST_SUB+=	PYTHON="@comment "
-.endif
+LUA_CMAKE_OFF=		-DENABLE_LUA=no
+LUA_CMAKE_ON=		-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \
+					-DBSD_LUA_INCDIR=${LUA_INCDIR}
+LUA_USES=			lua:51
 
-.if ${PORT_OPTIONS:MRUBY}
-USE_RUBY=	yes
-CMAKE_ARGS+=	-DBSD_RUBY_CMD=${RUBY} \
-		-DBSD_RUBY_VER=${RUBY_NAME}
-PLIST_SUB+=	RUBY=""
-.else
-CMAKE_ARGS+=	-DENABLE_RUBY=no
-PLIST_SUB+=	RUBY="@comment "
-.endif
+NLS_CMAKE_OFF=		-DENABLE_NLS=no
+NLS_USES=			gettext
 
-.if ${PORT_OPTIONS:MGNUTLS}
-USES+=		pkgconfig
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
-.else
-CMAKE_ARGS+=	-DENABLE_GNUTLS=no
-.endif
+PERL_CMAKE_OFF=		-DENABLE_PERL=no
+PERL_USES=			perl5
 
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-PLIST_SUB+=	PERL=""
-.else
-CMAKE_ARGS+=	-DENABLE_PERL=no
-PLIST_SUB+=	PERL="@comment "
-.endif
+PYTHON_CMAKE_OFF=	-DENABLE_PYTHON=no
+PYTHON_CMAKE_ON=	-DBSD_PYTHON_CMD=${PYTHON_CMD} \
+					-DBSD_PYTHON_VER=${PYTHON_VERSION}
+PYTHON_USES=		python
 
-.if ${PORT_OPTIONS:MTCL}
-USES+=		tcl:85+
-CMAKE_ARGS+=	-DBSD_TCL_VER=${TCL_VER} \
-		-DBSD_TCL_LIBDIR=${LOCALBASE}/lib \
-		-DBSD_TCL_INCDIR=${TCL_INCLUDEDIR}
-PLIST_SUB+=	TCL=""
-.else
-CMAKE_ARGS+=	-DENABLE_TCL=no
-PLIST_SUB+=	TCL="@comment "
-.endif
+RUBY_CMAKE_OFF=		-DENABLE_RUBY=no
+RUBY_CMAKE_ON=		-DBSD_RUBY_CMD=${RUBY} \
+					-DBSD_RUBY_VER=${RUBY_NAME}
+RUBY_USE=			ruby=yes
 
-.if ${PORT_OPTIONS:MLUA}
-USES+=		lua:51
-CMAKE_ARGS+=	-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \
-		-DBSD_LUA_INCDIR=${LUA_INCDIR}
-PLIST_SUB+=	LUA=""
-.else
-CMAKE_ARGS+=	-DENABLE_LUA=no
-PLIST_SUB+=	LUA="@comment "
-.endif
+TCL_CMAKE_OFF=		-DENABLE_TCL=no
+TCL_CMAKE_ON=		-DBSD_TCL_VER=${TCL_VER} \
+					-DBSD_TCL_LIBDIR=${LOCALBASE}/lib \
+					-DBSD_TCL_INCDIR=${TCL_INCLUDEDIR}
+TCL_USES=			tcl:85+
 
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		asciidoc:${PORTSDIR}/textproc/asciidoc \
-		source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
+				docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
+				asciidoc:${PORTSDIR}/textproc/asciidoc \
+				source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
 CMAKE_ARGS+=	-DENABLE_MAN=yes -DMANDIR=${MANPREFIX}/man -DENABLE_DOC=yes
 .else
 CMAKE_ARGS+=	-DENABLE_MAN=no -DENABLE_DOC=no
+CFLAGS+=		-Qunused-arguments
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_SUB+=	DOCS=""
-.if !defined(MAINTAINER_MODE)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS} && !defined(MAINTAINER_MODE)
 DISTFILES+=	${DISTNAME}-docs.txz:mandocs
 .endif
-.else
-PLIST_SUB+=	DOCS="@comment "
-.endif
 
-.if ${PORT_OPTIONS:MMANPAGES}
-PLIST_SUB+=	MANPAGES=""
-.if !defined(MAINTAINER_MODE)
+.if ${PORT_OPTIONS:MMANPAGES} && !defined(MAINTAINER_MODE)
 DISTFILES+=	${DISTNAME}-manpages.txz:mandocs
-.endif
-.else
-PLIST_SUB+=	MANPAGES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MBACKTRACE}
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
-
-.if ${PORT_OPTIONS:MICON}
-PLIST_SUB+=	ICON=""
-.else
-PLIST_SUB+=	ICON="@comment "
 .endif
 
 post-patch:
@@ -174,10 +115,10 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MMANPAGES} && !defined(MAINTAINER_MODE)
-	${INSTALL_MAN} ${WRKDIR}/manpages/weechat.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/manpages/man1/weechat.1.gz ${STAGEDIR}${PREFIX}/man/man1
 .for f in de fr it ja pl
 	@${MKDIR} ${STAGEDIR}${PREFIX}/man/${f}/man1
-	${INSTALL_MAN} ${WRKDIR}/manpages/${f}/weechat.1 ${STAGEDIR}${PREFIX}/man/${f}/man1
+	${INSTALL_MAN} ${WRKDIR}/manpages/${f}/man1/weechat.1.gz ${STAGEDIR}${PREFIX}/man/${f}/man1
 .endfor
 .endif
 .if ${PORT_OPTIONS:MDOCS} && !defined(MAINTAINER_MODE)
