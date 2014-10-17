@@ -38,4 +38,3 @@ man/man1/img2txt.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%DATADIR%%/caca.txt
-%%PORTDOCS%%@dir %%DOCSDIR%%
