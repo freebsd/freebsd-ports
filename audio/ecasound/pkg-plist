@@ -172,7 +172,3 @@ man/man5/ecasoundrc.5.gz
 %%DATADIR%%/ecasoundrc
 %%DATADIR%%/effect_presets
 %%DATADIR%%/generic_oscillators
-@dirrm %%DATADIR%%
-@dirrm include/libecasoundc
-@dirrm include/libecasound
-@dirrm include/kvutils
