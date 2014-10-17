@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcaca
-DISTVERSION=	0.99.beta18
-PORTREVISION=	9
+DISTVERSION=	0.99.beta19
 CATEGORIES=	graphics
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 
@@ -21,6 +20,7 @@ CONFIGURE_ARGS=	--disable-doc \
 		--disable-python \
 		--disable-cppunit \
 		--disable-zzuf
+INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS COPYING COPYING.GPL COPYING.LGPL ChangeLog NEWS \
 		NOTES README THANKS
@@ -55,7 +55,5 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcaca++.so.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcaca.so.0
 
 .include <bsd.port.mk>
