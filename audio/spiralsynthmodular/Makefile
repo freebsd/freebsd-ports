@@ -25,7 +25,7 @@ LIBS+=		-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/spiralmodular-0.2.2
 
-ia64_BROKEN=	Does not compile on ia64
+BROKEN_ia64=	Does not compile on ia64
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 

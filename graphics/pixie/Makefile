@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Photorealistic renderer with Pixar's RenderMan-like interface
 
 LICENSE=	LGPL21 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
@@ -40,7 +41,7 @@ CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-sparc64_BROKEN=	Does not compile on sparc64
+BROKEN_sparc64=	Does not compile on sparc64
 
 OPTIONS_DEFINE=	DOCS
 

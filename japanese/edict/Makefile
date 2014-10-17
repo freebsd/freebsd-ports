@@ -14,7 +14,7 @@ MASTER_SITES=	\
 		ftp://ftp.funet.fi/pub/culture/japan/mirrors/monash/pub/nihongo/ \
 		ftp://ftp.uni-duisburg.de/Mirrors/ftp.monash.edu.au/pub/nihongo/ \
 		ftp://ftp.monash.edu.au/pub/nihongo/
-EXTRACT_SUFX=
+EXTRACT_SUFX=	# empty
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 EXTRACT_ONLY=	${SRCFILES}
 
@@ -47,7 +47,7 @@ DOCSDIR=	${PREFIX}/share/doc/xjdic
 
 NO_WRKSUBDIR=	yes
 
-sparc64_BROKEN=	Fails on sparc64 during installation with error 2
+BROKEN_sparc64=	Fails on sparc64 during installation with error 2
 
 OPTIONS_DEFINE=	DOCS
 

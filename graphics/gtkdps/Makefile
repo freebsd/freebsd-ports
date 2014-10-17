@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-dps-includes=${LOCALBASE}/include \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-alpha_BROKEN=	Does not compile on alpha
+BROKEN_alpha=	Does not compile on alpha
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
