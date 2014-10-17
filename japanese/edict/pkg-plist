@@ -45,7 +45,6 @@ man/man1/xjdic.1.gz
 %%DATADIR%%/romkana.cnv
 %%DATADIR%%/vconj
 %%DATADIR%%/.xjdicrc
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/4jword3_inf.txt
 %%PORTDOCS%%%%DOCSDIR%%/aviation.txt
 %%PORTDOCS%%%%DOCSDIR%%/concrete.doc
@@ -63,4 +62,3 @@ man/man1/xjdic.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/lingdic.txt
 %%PORTDOCS%%%%DOCSDIR%%/mktdic.doc
 %%PORTDOCS%%%%DOCSDIR%%/xjdic23.inf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

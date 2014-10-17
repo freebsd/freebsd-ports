@@ -47,4 +47,3 @@ lib/SpiralPlugins/TrigPlugin.so
 lib/SpiralPlugins/WaveShaperPlugin.so
 lib/SpiralPlugins/WaveTablePlugin.so
 lib/SpiralPlugins/XFadePlugin.so
-@dirrm lib/SpiralPlugins

@@ -82,9 +82,3 @@ man/man1/texmake.1.gz
 %%DATADIR%%/shaders/shadowspot.sl
 %%DATADIR%%/shaders/spotlight.sdr
 %%DATADIR%%/shaders/spotlight.sl
-@dirrm %%DATADIR%%/shaders
-@dirrm %%DATADIR%%
-@dirrm lib/pixie/modules
-@dirrm lib/pixie/displays
-@dirrm lib/pixie
-@dirrm include/pixie

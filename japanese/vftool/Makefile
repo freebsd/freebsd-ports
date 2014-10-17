@@ -6,8 +6,7 @@ PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kiri
+		LOCAL/kiri
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		plib13-euc.tar.gz \
 		jtex-1.52.tar.gz
@@ -27,7 +26,7 @@ FONTSDIR=	${PREFIX}/share/fonts
 JFMDIR=		${WRKDIR}/share/texmf/fonts/tfm/ptex
 TARGETDIRS=	vf-n2a vf-a2n vf-a2bk vf-p2pn
 
-ia64_BROKEN=	Coredump during build on ia64
+BROKEN_ia64=	Coredump during build on ia64
 
 OPTIONS_DEFINE=	DOCS
 
