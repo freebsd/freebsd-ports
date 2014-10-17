@@ -5,6 +5,7 @@ bin/zone2ldap
 bin/zone2sql
 sbin/pdns_server
 %%TOOLS%%bin/dnsbulktest
+%%TOOLS%%bin/dnsdist
 %%TOOLS%%bin/dnsreplay
 %%TOOLS%%bin/dnsscan
 %%TOOLS%%bin/dnsscope
@@ -12,17 +13,23 @@ sbin/pdns_server
 %%TOOLS%%bin/dnswasher
 %%TOOLS%%bin/nproxy
 %%TOOLS%%bin/nsec3dig
-%%PGSQL%%lib/libgpgsqlbackend.so
-%%MYSQL%%lib/libgmysqlbackend.so
-%%SQLITE3%%lib/libgsqlite3backend.so
-%%OPENLDAP%%lib/libldapbackend.so
-%%OPENDBX%%lib/libopendbxbackend.so
-%%GEO%%lib/libgeobackend.so
-%%TINYDNS%%lib/libtinydnsbackend.so
-%%REMOTE%%lib/libremotebackend.so
-%%MYDNS%%lib/libmydnsbackend.so
-%%LUA%%lib/libluabackend.so
-lib/libpipebackend.so
+%%TOOLS%%bin/saxfr
+%%PGSQL%%lib/pdns/libgpgsqlbackend.so
+%%MYSQL%%lib/pdns/libgmysqlbackend.so
+%%SQLITE3%%lib/pdns/libgsqlite3backend.so
+%%OPENLDAP%%lib/pdns/libldapbackend.so
+%%OPENDBX%%lib/pdns/libopendbxbackend.so
+%%GEO%%lib/pdns/libgeobackend.so
+%%GEOIP%%lib/pdns/libgeoipbackend.so
+%%TINYDNS%%lib/pdns/libtinydnsbackend.so
+%%REMOTE%%lib/pdns/libremotebackend.so
+%%MYDNS%%lib/pdns/libmydnsbackend.so
+%%LUA%%lib/pdns/libluabackend.so
+%%LMDB%%lib/pdns/liblmdbbackend.so
+%%LMDB%%bin/zone2lmdb
+lib/pdns/libbindbackend.so
+lib/pdns/libpipebackend.so
+%%TOOLS%%man/man1/dnsdist.1.gz
 %%TOOLS%%man/man1/dnstcpbench.1.gz
 %%TOOLS%%man/man8/dnsreplay.8.gz
 %%TOOLS%%man/man8/dnsscope.8.gz
@@ -36,5 +43,15 @@ man/man8/zone2sql.8.gz
 etc/pdns/pdns.conf-dist
 @exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdns.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry etc/pdns
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
+%%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.mysql.sql
+%%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.pgsql.sql
+%%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.sqlite3.sql
+%%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.mysql.sql
+%%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.pgsql.sql
+%%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.sqlite3.sql
+%%MYDNS%%%%PORTDOCS%%%%DOCSDIR%%/schema.mydns.sql
+%%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/schema.mysql.sql
+%%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/schema.pgsql.sql
+%%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/schema.sqlite3.sql
+@dir etc/pdns
