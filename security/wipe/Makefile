@@ -6,7 +6,7 @@ PORTVERSION=	2.3.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	pclin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File and block device wiping utility
 
 LICENSE=	GPLv2

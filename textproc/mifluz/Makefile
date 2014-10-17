@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	pclin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to build and query a full text inverted index
 
 LICENSE=	GPLv3

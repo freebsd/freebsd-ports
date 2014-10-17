@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SZABGAB
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pclin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility methods and base class for manipulating Perl via PPI
 
 LICENSE=	ART10 GPLv1
