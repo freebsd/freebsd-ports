@@ -9,7 +9,8 @@ MASTER_SITES=	http://download.gna.org/mhwaveedit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical program for editing sound files
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
