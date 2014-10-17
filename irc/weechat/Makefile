@@ -3,6 +3,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/ \
 		http://perturb.me.uk/distfiles/weechat/:mandocs \
@@ -26,25 +27,26 @@ LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
 				libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE ASPELL \
-				GNUTLS NLS ICON MANPAGES DOCS
+				GNUTLS CA_BUNDLE NLS ICON MANPAGES DOCS
 OPTIONS_DEFAULT=RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE ASPELL \
-				GNUTLS ICON MANPAGES
+				GNUTLS CA_BUNDLE ICON MANPAGES
 
 OPTIONS_SUB=	yes
 
 BACKTRACE_DESC=	Provide crash backtraces
+CA_BUNDLE_DESC=	Include CA bundle for certificate verification
 CHARSET_DESC=	Charset conversion support
 ICON_DESC=		Desktop icon
-LUA_DESC=		Lua scripting support
-PERL_DESC=		Perl scripting support
-PYTHON_DESC=	Python scripting support
-RUBY_DESC=		Ruby scripting support
-TCL_DESC=		Tcl scripting support
+PYTHON_DESC=	Python scripting language support
+RUBY_DESC=		Ruby scripting language support
 
 ASPELL_CMAKE_OFF=	-DENABLE_ASPELL=no
 ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 
 BACKTRACE_LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+
+CA_BUNDLE_CMAKE_ON=		-DCA_FILE=${LOCALBASE}/share/certs/ca-root-nss.crt
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 CHARSET_CMAKE_OFF=	-DENABLE_CHARSET=no
 
