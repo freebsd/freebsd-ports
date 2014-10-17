@@ -167,7 +167,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libusb-pc
 
 .if ${PORT_OPTIONS:MTEST}
 .include "Makefile.tests"
-#ALL_TARGET+=	${TEST_TARGETS}
+ALL_TARGET+=	${TEST_TARGETS}
 .endif
 
 DEBUG_MAKE_ENV=	V=1
