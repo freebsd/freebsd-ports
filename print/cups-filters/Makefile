@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.0.58
+PORTVERSION=	1.0.61
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 
 MAKE_JOBS_UNSAFE=YES
-USES=		compiler:c++11-lib pathfix pkgconfig shebangfix tar:xz libtool
+USES=		compiler:c++11-lib libtool pathfix pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	filter/textonly
 USE_GNOME=	glib20
 USE_GHOSTSCRIPT=	yes
