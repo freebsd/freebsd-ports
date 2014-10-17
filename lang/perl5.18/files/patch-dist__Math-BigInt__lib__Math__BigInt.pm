@@ -1,5 +1,5 @@
---- dist/Math-BigInt/lib/Math/BigInt.pm-orig	2014-06-09 16:22:23.000000000 +0200
-+++ dist/Math-BigInt/lib/Math/BigInt.pm	2014-06-09 16:22:54.000000000 +0200
+--- dist/Math-BigInt/lib/Math/BigInt.pm.orig	2014-10-01 01:33:00 UTC
++++ dist/Math-BigInt/lib/Math/BigInt.pm
 @@ -62,7 +62,7 @@
  '>>='	=>	sub { $_[0]->brsft($_[1]); },
  

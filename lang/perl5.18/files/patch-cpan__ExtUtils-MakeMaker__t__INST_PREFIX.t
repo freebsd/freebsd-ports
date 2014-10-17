@@ -1,6 +1,6 @@
---- cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t.orig	Wed Feb 15 12:46:31 2006
-+++ cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t	Wed Feb 15 12:46:52 2006
-@@ -16,7 +16,7 @@ BEGIN {
+--- cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t.orig	2014-10-01 01:32:59 UTC
++++ cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t
+@@ -10,7 +10,7 @@
  }
  
  use strict;
@@ -9,8 +9,8 @@
  use MakeMaker::Test::Utils;
  use MakeMaker::Test::Setup::BFD;
  use ExtUtils::MakeMaker;
-@@ -62,7 +62,7 @@ like( $stdout->read, qr{
-                         Writing\ $Makefile\ for\ Big::Dummy\n
+@@ -58,7 +58,7 @@
+                         (?:Writing\ MYMETA.yml\ and\ MYMETA.json\n)?
  }x );
  
 -is( $mm->{PREFIX}, '$(SITEPREFIX)', 'PREFIX set based on INSTALLDIRS' );

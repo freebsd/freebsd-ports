@@ -1616,6 +1616,8 @@ lib/perl5/%%PERL_VER%%/pod/perl5163delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5180delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5181delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5182delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5183delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5184delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl561delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl56delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl581delta.pod
@@ -2704,6 +2706,8 @@ man/man1/perl5163delta.1.gz
 man/man1/perl5180delta.1.gz
 man/man1/perl5181delta.1.gz
 man/man1/perl5182delta.1.gz
+man/man1/perl5183delta.1.gz
+man/man1/perl5184delta.1.gz
 man/man1/perl561delta.1.gz
 man/man1/perl56delta.1.gz
 man/man1/perl581delta.1.gz
