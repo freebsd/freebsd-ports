@@ -248,8 +248,9 @@
     SUBDIR += kpcli
     SUBDIR += kqoauth
     SUBDIR += krb5
+    SUBDIR += krb5-111
+    SUBDIR += krb5-112
     SUBDIR += krb5-appl
-    SUBDIR += krb5-maint
     SUBDIR += kripp
     SUBDIR += kwalletmanager
     SUBDIR += l0pht-watch

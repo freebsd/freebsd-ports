@@ -3,7 +3,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.4.22
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -32,7 +32,7 @@ PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT
 OPTIONS_DEFAULT=THREADS ECDSA
 
-LIBEVENT_DESC=	Build against libevent (devel/libevent2)
+LIBEVENT_DESC=	Build against libevent (devel/libevent2) (BROKEN on >=10)
 GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
 ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
 MUNIN_DESC=	Install Munin plugin
@@ -79,6 +79,9 @@ MUNIN=		"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBEVENT}
+.if ${OSVERSION} >= 1000015
+BROKEN=	Unbound with libevent crashes on FreeBSD 10+ due to Capsicum
+.endif
 LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
 USES+=		pkgconfig
 CONFIGURE_ARGS+=--with-libevent

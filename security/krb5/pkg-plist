@@ -78,12 +78,13 @@ lib/libkadm5srv.so
 lib/libkadm5srv_mit.so
 lib/libkadm5srv_mit.so.9
 lib/libkdb5.so
-lib/libkdb5.so.7
+lib/libkdb5.so.8
 lib/libkrb5.so
 lib/libkrb5.so.3
 lib/libkrb5support.so
 lib/libkrb5support.so.0
 lib/krb5/plugins/kdb/db2.so
+lib/krb5/plugins/tls/k5tls.so
 %%LDAP%%lib/krb5/plugins/kdb/kldap.so
 lib/krb5/plugins/preauth/otp.so
 lib/krb5/plugins/preauth/pkinit.so
@@ -104,7 +105,6 @@ lib/pkgconfig/mit-krb5.pc
 man/man1/k5srvutil.1.gz
 man/man1/kadmin.1.gz
 man/man1/krb5-config.1.gz
-man/man1/krb5-send-pr.1.gz
 man/man1/kpasswd.1.gz
 man/man1/klist.1.gz
 man/man1/kinit.1.gz
@@ -150,7 +150,6 @@ share/et/et_h.awk
 share/examples/krb5/kdc.conf
 share/examples/krb5/krb5.conf
 share/examples/krb5/services.append
-share/gnats/mit
 share/locale/en_US/LC_MESSAGES/mit-krb5.mo
 @exec mkdir -p %D/var/krb5kdc
 @dirrmtry var/krb5kdc
@@ -158,6 +157,7 @@ share/locale/en_US/LC_MESSAGES/mit-krb5.mo
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
 @dirrm lib/pkgconfig
+@dirrm lib/krb5/plugins/tls
 @dirrm lib/krb5/plugins/preauth
 @dirrm lib/krb5/plugins/libkrb5
 @dirrm lib/krb5/plugins/kdb
@@ -169,5 +169,4 @@ share/locale/en_US/LC_MESSAGES/mit-krb5.mo
 @dirrm include/krb5
 @dirrm include/kadm5
 @dirrm share/et
-@dirrmtry share/gnats
 @dirrm share/examples/krb5

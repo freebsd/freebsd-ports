@@ -4,37 +4,54 @@
 #
 # Remember to upgrade the following ports everytime you bump MESAVERSION:
 #
+#    - graphics/dri
+#    - graphics/gbm
 #    - graphics/libEGL
 #    - graphics/libGL
+#    - graphics/libglapi
 #    - grahpics/libglesv2
-#    - graphics/dri
 #
 # $FreeBSD$
+
+# hw context support in the i915kms driver
+.if ${OPSYS} == FreeBSD && \
+ (${OSVERSION} >= 1000717 && ${OSVERSION} < 1100000 || \
+  ${OSVERSION} >= 1100035)
+WITH_NEW_MESA=1
+.endif
 
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-.if defined(WITH_NEW_XORG)
-MESABASEVERSION=	9.1.7
-# if there is a subversion, include the '-' between 7.11-rc2 for example.
-MESASUBVERSION=		
+.if defined(WITH_NEW_MESA)
+MESABASEVERSION=	10.3.0
+# if there is a subversion, don't include the '-' between 7.11-rc2.
+MESASUBVERSION=	
+
+MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION:R}/
 PLIST_SUB+=	OLD="@comment " NEW=""
+
+# work around libarchive bug?
+EXTRACT_CMD=		${LOCALBASE}/bin/gtar
+EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+
 .else
-MESABASEVERSION=	7.6.1
+MESABASEVERSION=	9.1.7
 MESASUBVERSION=		
+MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/older-versions/${MESABASEVERSION:R:R}.x/${MESABASEVERSION}/
 PLIST_SUB+=	OLD="" NEW="@comment "
 .endif
 
-MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/older-versions/${MESABASEVERSION:R:R}.x/${MESABASEVERSION}/
 DISTFILES=	MesaLib-${MESADISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	x11@FreeBSD.org
 
 BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend \
-		python2:${PORTSDIR}/lang/python2 \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
-USES+=		bison gmake pathfix pkgconfig shebangfix tar:bzip2
-USE_PYTHON_BUILD=2
+LIB_DEPENDS+=	libdevq.so:${PORTSDIR}/devel/libdevq
+
+USES+=		bison gmake libtool pathfix pkgconfig python:2,build \
+		shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
@@ -43,39 +60,30 @@ LDFLAGS+=	-Wl,-Y${LOCALBASE}/lib
 
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-CONFIGURE_ENV+=ac_cv_prog_LEX=${LOCALBASE}/bin/flex
+CONFIGURE_ENV+=	ac_cv_prog_LEX=${LOCALBASE}/bin/flex
 .endif
-
-.if defined(WITH_NEW_XORG)
-INSTALL_TARGET=	install-strip
-USES+=		libtool:keepla
 
 python_OLD_CMD=	"/usr/bin/env[[:space:]]python"
 python_CMD=	${LOCALBASE}/bin/python2
 SHEBANG_FILES=	src/gallium/*/*/*.py src/gallium/tools/trace/*.py \
 		src/gallium/drivers/svga/svgadump/svga_dump.py \
-		src/glsl/tests/compare_ir src/mapi/glapi/gen/*.py \
-		src/mapi/mapi/mapi_abi.py
+		src/glsl/tests/compare_ir src/mapi/glapi/gen/*.py
 
-# i386 triggers clang bug 19778. This happens with clang 3.4.1 and older. 
-. if ${ARCH} == i386
-USE_GCC=yes
-. endif
-.else
-CONFIGURE_ARGS+=--disable-glut --disable-glw --disable-glu
-
-ALL_TARGET=		default
+.if defined(WITH_NEW_MESA)
+SHEBANG_FILES+=	src/mapi/mapi_abi.py
 .endif
 
 MASTERDIR=		${.CURDIR}/../../graphics/libGL
-.if defined(WITH_NEW_XORG)
+.if defined(WITH_NEW_MESA)
 PATCHDIR=		${MASTERDIR}/files
+CONFIGURE_ARGS+=	--disable-dri3
 .else
 PATCHDIR=		${MASTERDIR}/files-old
 .endif
 DESCR=			${.CURDIR}/pkg-descr
 PLIST=			${.CURDIR}/pkg-plist
 WRKSRC=			${WRKDIR}/Mesa-${MESADISTVERSION}
+INSTALL_TARGET=		install-strip
 
 COMPONENT=		${PORTNAME:tl:C/^lib//:C/mesa-//}
 
@@ -91,19 +99,26 @@ CONFIGURE_ARGS+=	--disable-egl
 CONFIGURE_ARGS+=	--enable-egl
 .endif
 
+.if ${COMPONENT:Mopencl} == ""
+CONFIGURE_ARGS+=	--disable-opencl
+.else
+CONFIGURE_ARGS+=	--enable-opencl
+.endif
+
 .if ${COMPONENT:Mdri} == ""
 CONFIGURE_ARGS+=--with-dri-drivers=no
 CONFIGURE_ARGS+=--enable-gallium-llvm=no --without-gallium-drivers
 .else
 # done in the dri port
+# need to enable this globaly because it also used in dri ..
+# the third possible option is wayland.
+CONFIGURE_ARGS+=	--enable-egl --with-egl-platforms=x11,drm
 .endif
 
-.if !defined(WITH_NEW_XORG)
-.if defined(WITHOUT_XCB)
-CONFIGURE_ARGS+=	--disable-xcb
+.if ${COMPONENT:Mvdpau} == ""
+CONFIGURE_ARGS+=--disable-vdpau
 .else
-CONFIGURE_ARGS+=	--enable-xcb
-.endif
+CONFIGURE_ARGS+=--enable-vdpau
 .endif
 
 post-patch:
@@ -111,19 +126,25 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/src/mesa/drivers/dri/common/xmlconfig.c
-.if !defined(WITH_NEW_XORG)
-	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' \
-		${WRKSRC}/src/gallium/auxiliary/util/Makefile
-	@${REINPLACE_CMD} -e 's|[$$](INSTALL_LIB_DIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/src/glu/Makefile \
-		${WRKSRC}/src/mesa/Makefile \
-		${WRKSRC}/src/mesa/drivers/dri/Makefile
-.else
+.if !defined(WITH_NEW_MESA)
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!${PYTHON_CMD}|g' \
 		${WRKSRC}/src/mesa/drivers/dri/common/xmlpool/gen_xmlpool.py \
 		${WRKSRC}/src/glsl/builtins/tools/*.py
-	@${REINPLACE_CMD} -e 's|!/usr/bin/python2|!${PYTHON_CMD}|g' \
+.else
+	@${REINPLACE_CMD} -e 's|#!/use/bin/python|#!${PYTHON_CMD}|g' \
+		${WRKSRC}/src/mesa/drivers/dri/common/xmlpool/gen_xmlpool.py
+.endif
+	@${REINPLACE_CMD} -e 's|!/use/bin/python2|!${PYTHON_CMD}|g' \
 		${WRKSRC}/src/mesa/main/get_hash_generator.py \
 		${WRKSRC}/src/mapi/glapi/gen/gl_enums.py \
 		${WRKSRC}/src/mapi/glapi/gen/gl_table.py
+
+pre-build: pre-mesa-build
+
+pre-mesa-build:
+.if defined(WITH_NEW_MESA)
+# do propper gmake target.
+	@cd ${WRKSRC}/src/mesa/drivers/dri/common/xmlpool && ${MAKE_CMD}
+	@cd ${WRKSRC}/src/loader && ${MAKE_CMD} libloader.la
 .endif
+

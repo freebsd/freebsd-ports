@@ -957,6 +957,7 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/templates/rh_ip/network.jinja
 %%PYTHON_SITELIBDIR%%/salt/templates/rh_ip/rh5_eth.jinja
 %%PYTHON_SITELIBDIR%%/salt/templates/rh_ip/rh6_eth.jinja
+%%PYTHON_SITELIBDIR%%/salt/templates/rh_ip/rh7_eth.jinja
 %%PYTHON_SITELIBDIR%%/salt/templates/rh_ip/route_eth.jinja
 %%PYTHON_SITELIBDIR%%/salt/templates/virt/libvirt_domain.jinja
 %%PYTHON_SITELIBDIR%%/salt/templates/virt/libvirt_volume.jinja

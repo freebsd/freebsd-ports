@@ -10,8 +10,3 @@ share/gps/plug-ins/adactl_ask.gif
 share/gps/plug-ins/pfni.py
 share/gps/plug-ins/pfni.xml
 share/gps/plug-ins/zadactl.xml
-@dirrmtry share/doc/gps/html
-@dirrmtry share/doc/gps
-@dirrmtry share/gprconfig
-@dirrmtry share/gps/plug-ins
-@dirrmtry share/gps

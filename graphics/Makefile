@@ -229,6 +229,7 @@
     SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += gauche-gl
+    SUBDIR += gbm
     SUBDIR += gcolor
     SUBDIR += gcolor2
     SUBDIR += gd
@@ -489,7 +490,6 @@
     SUBDIR += libaux
     SUBDIR += libboard
     SUBDIR += libcaca
-    SUBDIR += libcdr
     SUBDIR += libcdr01
     SUBDIR += libchamplain
     SUBDIR += libdmtx
@@ -502,7 +502,6 @@
     SUBDIR += libexif-gtk
     SUBDIR += libfpx
     SUBDIR += libfreehand
-    SUBDIR += libfreehand00
     SUBDIR += libgaiagraphics
     SUBDIR += libgeotiff
     SUBDIR += libgfx

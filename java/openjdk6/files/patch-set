@@ -682,10 +682,19 @@
 -#
 -
 -#
- # Copyright (c) 2002, 2011, Oracle and/or its affiliates. All rights reserved.
+ # Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
  # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  #
-@@ -221,6 +217,7 @@
+@@ -88,7 +84,7 @@
+                 JVM_EnableCompiler;
+                 JVM_Exit;
+                 JVM_FillInStackTrace;
+-                JVM_FindClassFromCaller
++                JVM_FindClassFromCaller;
+                 JVM_FindClassFromClass;
+                 JVM_FindClassFromClassLoader;
+                 JVM_FindClassFromBootLoader;
+@@ -222,6 +218,7 @@
                  JVM_SetArrayElement;
                  JVM_SetClassSigners;
                  JVM_SetLength;
@@ -693,7 +702,7 @@
                  JVM_SetPrimitiveArrayElement;
                  JVM_SetProtectionDomain;
                  JVM_SetSockOpt;
-@@ -244,24 +241,6 @@
+@@ -245,24 +242,6 @@
                  JVM_Yield;
                  JVM_handle_bsd_signal;
  
@@ -726,10 +735,19 @@
 -#
 -
 -#
- # Copyright (c) 2002, 2011, Oracle and/or its affiliates. All rights reserved.
+ # Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
  # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  #
-@@ -221,6 +217,7 @@
+@@ -88,7 +84,7 @@
+                 JVM_EnableCompiler;
+                 JVM_Exit;
+                 JVM_FillInStackTrace;
+-                JVM_FindClassFromCaller
++                JVM_FindClassFromCaller;
+                 JVM_FindClassFromClass;
+                 JVM_FindClassFromClassLoader;
+                 JVM_FindClassFromBootLoader;
+@@ -222,6 +218,7 @@
                  JVM_SetArrayElement;
                  JVM_SetClassSigners;
                  JVM_SetLength;
@@ -737,7 +755,7 @@
                  JVM_SetPrimitiveArrayElement;
                  JVM_SetProtectionDomain;
                  JVM_SetSockOpt;
-@@ -244,24 +241,6 @@
+@@ -245,24 +242,6 @@
                  JVM_Yield;
                  JVM_handle_bsd_signal;
  

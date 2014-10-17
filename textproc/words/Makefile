@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		ada zip
 NO_WRKSUBDIR=	yes
-GNATMAKE=	env ${MAKE_ENV} gnatmake
+GNATMAKE=	${SETENV} ${MAKE_ENV} gnatmake
 
 OPTIONS_DEFINE=	DOCS
 

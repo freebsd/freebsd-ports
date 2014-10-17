@@ -22,11 +22,16 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	manual.pdf
 EXTRACT_ONLY=	${PORTNAME}.${DISTVERSION}${EXTRACT_SUFX}
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000034
+LIB_DEPENDS+=	libmissing.so:${PORTSDIR}/math/libmissing
+LDFLAGS+=	-lmissing
 .endif
 
 pre-configure:
@@ -38,4 +43,4 @@ post-install:
 	${INSTALL_DATA} ${_DISTDIR}/manual.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

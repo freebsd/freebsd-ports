@@ -15,6 +15,3 @@ lib/xml_ez_out/mckae-xml-ez_out.ali
 lib/xml_ez_out/mckae-xml.ali
 lib/xml_ez_out/mckae.ali
 lib/xml_ez_out/tmeztf.ali
-@dirrm lib/xml_ez_out
-@dirrmtry lib/gnat
-@dirrm include/xml_ez_out

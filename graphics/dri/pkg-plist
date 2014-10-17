@@ -1,40 +1,57 @@
-%%NEW%%%%I965_DRIVER%%etc/drirc
+%%I965_DRIVER%%etc/drirc
+@comment include/EGL/egl.h
+@comment include/EGL/eglext.h
+@comment include/EGL/eglextchromium.h
+@comment include/EGL/eglmesaext.h
+@comment include/EGL/eglplatform.h
 include/GL/internal/dri_interface.h
-%%OLD%%%%I810_DRIVER%%lib/dri/i810_dri.so
-%%NEW%%%%I915_DRIVER%%lib/dri/i915_dri.la
+@comment include/GL/gl.h
+@comment include/GL/gl_mangle.h
+@comment include/GL/glcorearb.h
+@comment include/GL/glext.h
+@comment include/GL/glx.h
+@comment include/GL/glx_mangle.h
+@comment include/GL/glxext.h
+@comment include/GL/osmesa.h
+@comment include/GL/wglext.h
+@comment include/GL/wmesa.h
+@comment include/KHR/khrplatform.h
+@comment include/gbm.h
+%%GALLIUM%%lib/dri/kms_swrast_dri.so
 %%I915_DRIVER%%lib/dri/i915_dri.so
-%%NEW%%%%I965_DRIVER%%lib/dri/i965_dri.la
 %%I965_DRIVER%%lib/dri/i965_dri.so
-%%OLD%%%%MACH64_DRIVER%%lib/dri/mach64_dri.so
-%%OLD%%%%MGA_DRIVER%%lib/dri/mga_dri.so
-%%OLD%%%%R128_DRIVER%%lib/dri/r128_dri.so
-%%NEW%%%%R200_DRIVER%%lib/dri/r200_dri.la
 %%R200_DRIVER%%lib/dri/r200_dri.so
-%%OLD%%%%R300_DRIVER%%lib/dri/r300_dri.so
-%%NEW%%%%GALLIUM%%lib/dri/r300_dri.la
-%%NEW%%%%GALLIUM%%lib/dri/r300_dri.so
-%%OLD%%%%R600_DRIVER%%lib/dri/r600_dri.so
-%%NEW%%%%GALLIUM%%lib/dri/r600_dri.la
-%%NEW%%%%GALLIUM%%lib/dri/r600_dri.so
-%%NEW%%%%RADEON_DRIVER%%lib/dri/radeon_dri.la
+%%GALLIUM%%lib/dri/r300_dri.so
+%%GALLIUM%%lib/dri/r600_dri.so
 %%RADEON_DRIVER%%lib/dri/radeon_dri.so
-%%NEW%%%%GALLIUM%%lib/dri/radeonsi_dri.la
-%%NEW%%%%GALLIUM%%lib/dri/radeonsi_dri.so
-%%OLD%%%%SAVAGE_DRIVER%%lib/dri/savage_dri.so
-%%OLD%%%%SIS_DRIVER%%lib/dri/sis_dri.so
-%%NEW%%%%SWRAST_DRIVER%%lib/dri/swrast_dri.la
+%%GALLIUM%%lib/dri/radeonsi_dri.so
 %%SWRAST_DRIVER%%lib/dri/swrast_dri.so
-%%OLD%%%%TDFX_DRIVER%%lib/dri/tdfx_dri.so
-%%OLD%%%%UNICHROME_DRIVER%%lib/dri/unichrome_dri.so
-%%NEW%%%%GALLIUM%%lib/dri/vmwgfx_dri.la
-%%NEW%%%%GALLIUM%%lib/dri/vmwgfx_dri.so
-%%NEW%%lib/libdricore%%VERSION%%.la
-%%NEW%%lib/libdricore%%VERSION%%.so
-%%NEW%%lib/libdricore%%VERSION%%.so.1
-%%NEW%%lib/libdricore%%VERSION%%.so.1.0.0
-%%NEW%%%%GALLIUM%%lib/libllvmradeon%%VERSION%%.la
-%%NEW%%%%GALLIUM%%lib/libllvmradeon%%VERSION%%.so
+%%GALLIUM%%lib/dri/vmwgfx_dri.so
+%%GALLIUM%%lib/libXvMCr600.so
+%%GALLIUM%%lib/libXvMCr600.so.1
+%%GALLIUM%%lib/libXvMCr600.so.1.0
+%%GALLIUM%%lib/libXvMCr600.so.1.0.0
+@comment lib/libEGL.so
+@comment lib/libEGL.so.1
+@comment lib/libEGL.so.1.0.0
+@comment lib/libGL.so
+@comment lib/libGL.so.1
+@comment lib/libGL.so.1.2.0
+@comment lib/libgbm.so
+@comment lib/libgbm.so.1
+@comment lib/libgbm.so.1.0.0
+@comment lib/libglapi.so
+@comment lib/libglapi.so.0
+@comment lib/libglapi.so.0.0.0
+%%VDPAU%%lib/vdpau/libvdpau_r600.so
+%%VDPAU%%lib/vdpau/libvdpau_r600.so.1
+%%VDPAU%%lib/vdpau/libvdpau_r600.so.1.0
+%%VDPAU%%lib/vdpau/libvdpau_r600.so.1.0.0
+%%VDPAU%%lib/vdpau/libvdpau_radeonsi.so
+%%VDPAU%%lib/vdpau/libvdpau_radeonsi.so.1
+%%VDPAU%%lib/vdpau/libvdpau_radeonsi.so.1.0
+%%VDPAU%%lib/vdpau/libvdpau_radeonsi.so.1.0.0
+@comment libdata/pkgconfig/egl.pc
 libdata/pkgconfig/dri.pc
-@dirrm lib/dri
-@dirrmtry include/GL/internal
-@dirrmtry include/GL
+@comment libdata/pkgconfig/gbm.pc
+@comment libdata/pkgconfig/gl.pc

@@ -170,16 +170,3 @@ man/man1/eggdrop.1.gz
 %%DATADIR%%/scripts/weed
 %%DATADIR%%/text/banner
 %%DATADIR%%/text/motd
-@dirrm %%DATADIR%%/text
-@dirrm %%DATADIR%%/scripts/help/msg
-@dirrm %%DATADIR%%/scripts/help
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/language
-@dirrm %%DATADIR%%/help/set
-@dirrm %%DATADIR%%/help/msg
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/settings
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/eggdrop

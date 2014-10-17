@@ -1,4 +1,2 @@
-SHA256 (libgoogle-data-mono-1.4.0.2.tar.gz) = 761124feb67ad972e61a10a09bbde68536a2fa8cc67f9f17fcda907bbdb2fbe4
-SIZE (libgoogle-data-mono-1.4.0.2.tar.gz) = 2090937
-SHA256 (zlib-1.2.3.tar.gz) = 1795c7d067a43174113fdf03447532f373e1c6c57c08d61d9e4e9be5e244b05e
-SIZE (zlib-1.2.3.tar.gz) = 496597
+SHA256 (libgoogle-data-mono-2.2.0.0.tar.gz) = 08fa1b9ea5288d03370e3cf257f0549e9b34a1ed87f3ef7ca045c9992618435c
+SIZE (libgoogle-data-mono-2.2.0.0.tar.gz) = 55582011

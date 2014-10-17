@@ -9,7 +9,7 @@ MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	procmail-lib
 DISTNAME=	procmail-lib-2009.1202
 
-MAINTAINER=	pclin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of procmail plug-in modules
 
 LICENSE=	GPLv2

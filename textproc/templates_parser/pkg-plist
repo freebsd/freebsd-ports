@@ -62,8 +62,3 @@ lib/templates_parser/templates_parser-xml.ali
 lib/templates_parser/templates_parser.ali
 lib/templates_parser/templates_parser_tasking__standard_tasking.ali
 share/gpr/templates_parser.gpr
-@dirrm include/templates_parser
-@dirrm include/templates_parser.relocatable
-@dirrm lib/templates_parser
-@dirrm lib/templates_parser.relocatable
-@dirrmtry share/gpr

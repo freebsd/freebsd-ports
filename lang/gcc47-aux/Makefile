@@ -291,15 +291,15 @@ test-c:
 .endif
 
 do-install:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${MAKE_CMD} install-strip DESTDIR=${STAGEDIR}
+	(cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
+		${MAKE_CMD} install-strip DESTDIR=${STAGEDIR})
 
 post-stage:
 	${MV} ${STAGEDIR}${PKG_PREFIX}/share/man ${STAGEDIR}/${PKG_PREFIX}
-	cd ${STAGEDIR}${PKG_PREFIX}; ${FIND} * -type d -empty | \
-	   ${SORT} -dr | ${XARGS} ${RMDIR}
-	cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} \( -type f -or -type l \) | \
-	   ${AWK} ${AWKMANPAGE} | ${SORT} >> ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} -type d | ${SORT} -r | \
-	   ${SED} -E -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	(cd ${STAGEDIR}${PKG_PREFIX}; ${FIND} * -type d -empty | \
+		${SORT} -dr | ${XARGS} ${RMDIR})
+	(cd ${STAGEDIR}${PREFIX}; \
+		${FIND} ${PORTNAME} \( -type f -or -type l \) | \
+		${AWK} ${AWKMANPAGE} | ${SORT} >> ${TMPPLIST})
 
 .include <bsd.port.mk>

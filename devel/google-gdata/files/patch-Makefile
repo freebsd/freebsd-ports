@@ -1,13 +1,29 @@
---- Makefile.orig
-+++ Makefile
-@@ -120,8 +120,8 @@
+--- Makefile.orig	2014-10-03 03:48:04.991079598 +0600
++++ Makefile	2014-10-03 03:48:20.722118155 +0600
+@@ -5,7 +5,7 @@
  
+ VERSION=$(shell egrep AssemblyVersion version/AssemblyVersion.cs | egrep -o \([[:digit:]]\.\)+[[:digit:]]+)
+ PREFIX=/usr/local
+-PKGCONFIGDIR = $(PREFIX)/lib/pkgconfig
++PKGCONFIGDIR = $(PREFIX)/libdata/pkgconfig
+ 
+ CORELIBS= \
+   Google.GData.Client.dll \
+@@ -33,7 +33,7 @@
+ 
+ UNINSTALLLIBS = $(basename $(ALLLIBS))
+ 
+-FRAMEWORK_REFS = -r:System.dll -r:System.Xml.dll -r:System.Configuration.dll
++FRAMEWORK_REFS = -r:System.dll -r:System.Xml.dll -r:System.Configuration.dll -r:%%LOCALBASE%%/lib/mono/Newtonsoft.Json/Newtonsoft.Json.dll
+ 
+ PKGCONFIG_FILES = $(patsubst %.pc.in,%.pc,$(wildcard misc/*.pc.in))
+ 
+@@ -112,7 +112,7 @@
  install: all
  	for i in $(ALLLIBS); do gacutil -i $$i -package GData-Sharp -root "$(DESTDIR)$(PREFIX)/lib"; done
--	install -d "$(DESTDIR)$(PREFIX)/lib/pkgconfig"
--	install -m 644 -t "$(DESTDIR)$(PREFIX)/lib/pkgconfig" $(PKGCONFIG_FILES) 
-+	install -d "$(DESTDIR)$(PREFIX)/libdata/pkgconfig"
-+	install -m 644 $(PKGCONFIG_FILES) "$(DESTDIR)$(PREFIX)/libdata/pkgconfig"
+ 	install -d "$(DESTDIR)$(PKGCONFIGDIR)"
+-	install -m 644 -t "$(DESTDIR)$(PKGCONFIGDIR)" $(PKGCONFIG_FILES)
++	install -m 644 $(PKGCONFIG_FILES) $(DESTDIR)$(PKGCONFIGDIR)
  
  uninstall:
- 	for i in $(ALLLIBS); do gacutil -u $$i -package GData-Sharp -root "$(DESTDIR)$(PREFIX)/lib"; done
+ 	for i in $(UNINSTALLLIBS); do gacutil -u $$i -package GData-Sharp -root "$(DESTDIR)$(PREFIX)/lib"; done
