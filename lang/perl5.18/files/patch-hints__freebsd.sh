@@ -1,4 +1,4 @@
---- hints/freebsd.sh
+--- hints/freebsd.sh.orig	2014-01-31 21:55:51 UTC
 +++ hints/freebsd.sh
 @@ -88,6 +88,8 @@
  	esac
@@ -20,7 +20,7 @@
  	;;
  esac
  
-@@ -125,7 +131,7 @@
+@@ -126,7 +132,7 @@
          else
              libpth="/usr/lib /usr/local/lib"
              glibpth="/usr/lib /usr/local/lib"
@@ -29,7 +29,7 @@
              lddlflags="-shared "
          fi
          cccdlflags='-DPIC -fPIC'
-@@ -133,7 +139,7 @@
+@@ -134,7 +140,7 @@
  *)
         libpth="/usr/lib /usr/local/lib"
         glibpth="/usr/lib /usr/local/lib"
@@ -38,8 +38,8 @@
          lddlflags="-shared "
          cccdlflags='-DPIC -fPIC'
         ;;
-@@ -143,7 +149,7 @@
- 0*|1*|2*|3*) ;;
+@@ -144,7 +150,7 @@
+ 0.*|1.*|2.*|3.*) ;;
  
  *)
 -	ccflags="${ccflags} -DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H"
@@ -47,7 +47,7 @@
  	if /usr/bin/file -L /usr/lib/libc.so | /usr/bin/grep -vq "not stripped" ; then
  	    usenm=false
  	fi
-@@ -190,7 +196,9 @@
+@@ -191,7 +197,9 @@
  
  # This script UU/usethreads.cbu will get 'called-back' by Configure 
  # after it has prompted the user for whether to use threads.

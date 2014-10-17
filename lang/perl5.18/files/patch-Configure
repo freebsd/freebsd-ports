@@ -1,6 +1,6 @@
---- Configure.orig	2010-07-14 15:28:45.000000000 +0000
-+++ Configure	2010-07-14 15:29:23.000000000 +0000
-@@ -4798,7 +4798,7 @@
+--- Configure.orig	2014-10-01 01:32:59 UTC
++++ Configure
+@@ -4730,7 +4730,7 @@
  libpth=''
  for xxx in $dlist
  do
@@ -9,7 +9,7 @@
  		case " $libpth " in
  		*" $xxx "*) ;;
  		*) libpth="$libpth $xxx";;
-@@ -9125,8 +9125,7 @@
+@@ -9143,8 +9143,7 @@
  
  : determine where add-on public executable scripts go
  case "$sitescript" in
