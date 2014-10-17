@@ -4,7 +4,7 @@ libexec/nullmailer/qmqp
 libexec/nullmailer/sendmail
 bin/nullmailer-inject
 bin/nullmailer-smtpd
-@(%%NULLMAIL_USER%%,,2555) sbin/nullmailer-queue
+@(%%NULLMAIL_USER%%,,4555) sbin/nullmailer-queue
 sbin/nullmailer-send
 man/man1/nullmailer-inject.1.gz
 man/man1/sendmail.1.gz
@@ -16,3 +16,7 @@ man/man8/nullmailer-send.8.gz
 @dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/nullmailer/queue
 @dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/nullmailer/tmp
 @dir %%LOCALSTATEDIR%%/nullmailer
+@exec mkfifo %%LOCALSTATEDIR%%/nullmailer/trigger
+@exec chmod 600 %%LOCALSTATEDIR%%/nullmailer/trigger
+@exec chown %%NULLMAIL_USER%%:%%NULLMAIL_USER%% %%LOCALSTATEDIR%%/nullmailer/trigger
+@unexec rm -f %%LOCALSTATEDIR%%/nullmailer/trigger
