@@ -1,5 +1,5 @@
---- ./cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm.orig	2014-05-12 16:56:54.000000000 +0200
-+++ ./cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm	2014-05-23 01:02:51.000000000 +0200
+--- cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm.orig	2014-05-14 23:51:23 UTC
++++ cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm
 @@ -1744,13 +1744,14 @@
            ('$(PREFIX)') x 3;
      }
