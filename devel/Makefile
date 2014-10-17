@@ -3179,6 +3179,7 @@
     SUBDIR += pas2dox
     SUBDIR += pasm
     SUBDIR += patch
+    SUBDIR += pcbsd-toolchain
     SUBDIR += pccts
     SUBDIR += pcl
     SUBDIR += pcre
