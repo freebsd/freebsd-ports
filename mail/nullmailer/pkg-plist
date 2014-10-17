@@ -1,6 +1,6 @@
 libexec/nullmailer/smtp
 libexec/nullmailer/qmqp
-@(%%NULLMAIL_USER%%,,2555) libexec/nullmailer/mailq
+@(%%NULLMAIL_USER%%,,4555) libexec/nullmailer/mailq
 libexec/nullmailer/sendmail
 bin/nullmailer-inject
 bin/nullmailer-smtpd
