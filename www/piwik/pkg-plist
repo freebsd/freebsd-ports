@@ -45,6 +45,7 @@
 %%WWWDIR%%/core/AssetManager/UIAssetMerger/StylesheetUIAssetMerger.php
 %%WWWDIR%%/core/AssetManager/UIAssetMinifier.php
 %%WWWDIR%%/core/Auth.php
+%%WWWDIR%%/core/BaseFactory.php
 %%WWWDIR%%/core/Cache/CacheDecorator.php
 %%WWWDIR%%/core/Cache/CacheInterface.php
 %%WWWDIR%%/core/Cache/LanguageAwareStaticCache.php
@@ -71,6 +72,7 @@
 %%WWWDIR%%/core/DataAccess/ArchiveTableCreator.php
 %%WWWDIR%%/core/DataAccess/ArchiveWriter.php
 %%WWWDIR%%/core/DataAccess/LogAggregator.php
+%%WWWDIR%%/core/DataAccess/Model.php
 %%WWWDIR%%/core/DataArray.php
 %%WWWDIR%%/core/DataFiles/Countries.php
 %%WWWDIR%%/core/DataFiles/Currencies.php
@@ -103,6 +105,7 @@
 %%WWWDIR%%/core/DataTable/Filter/MetadataCallbackReplace.php
 %%WWWDIR%%/core/DataTable/Filter/Pattern.php
 %%WWWDIR%%/core/DataTable/Filter/PatternRecursive.php
+%%WWWDIR%%/core/DataTable/Filter/PivotByDimension.php
 %%WWWDIR%%/core/DataTable/Filter/RangeCheck.php
 %%WWWDIR%%/core/DataTable/Filter/ReplaceColumnNames.php
 %%WWWDIR%%/core/DataTable/Filter/ReplaceSummaryRowLabel.php
@@ -143,12 +146,12 @@
 %%WWWDIR%%/core/Error.php
 %%WWWDIR%%/core/EventDispatcher.php
 %%WWWDIR%%/core/ExceptionHandler.php
-%%WWWDIR%%/core/Factory.php
 %%WWWDIR%%/core/Filechecks.php
 %%WWWDIR%%/core/Filesystem.php
 %%WWWDIR%%/core/FrontController.php
 %%WWWDIR%%/core/Http.php
 %%WWWDIR%%/core/IP.php
+%%WWWDIR%%/core/Loader.php
 %%WWWDIR%%/core/Log.php
 %%WWWDIR%%/core/Mail.php
 %%WWWDIR%%/core/Menu/Group.php
@@ -178,6 +181,7 @@
 %%WWWDIR%%/core/Plugin.php
 %%WWWDIR%%/core/Plugin/API.php
 %%WWWDIR%%/core/Plugin/Archiver.php
+%%WWWDIR%%/core/Plugin/ComponentFactory.php
 %%WWWDIR%%/core/Plugin/ConsoleCommand.php
 %%WWWDIR%%/core/Plugin/Controller.php
 %%WWWDIR%%/core/Plugin/ControllerAdmin.php
@@ -241,6 +245,7 @@
 %%WWWDIR%%/core/Tracker/Db/Pdo/Pgsql.php
 %%WWWDIR%%/core/Tracker/GoalManager.php
 %%WWWDIR%%/core/Tracker/IgnoreCookie.php
+%%WWWDIR%%/core/Tracker/Model.php
 %%WWWDIR%%/core/Tracker/PageUrl.php
 %%WWWDIR%%/core/Tracker/Request.php
 %%WWWDIR%%/core/Tracker/Settings.php
@@ -263,11 +268,6 @@
 %%WWWDIR%%/core/Translate/Writer.php
 %%WWWDIR%%/core/Twig.php
 %%WWWDIR%%/core/Unzip.php
-%%WWWDIR%%/core/Unzip/Gzip.php
-%%WWWDIR%%/core/Unzip/PclZip.php
-%%WWWDIR%%/core/Unzip/Tar.php
-%%WWWDIR%%/core/Unzip/UncompressInterface.php
-%%WWWDIR%%/core/Unzip/ZipArchive.php
 %%WWWDIR%%/core/UpdateCheck.php
 %%WWWDIR%%/core/Updater.php
 %%WWWDIR%%/core/Updates.php
@@ -278,7 +278,6 @@
 %%WWWDIR%%/core/Updates/0.2.27.php
 %%WWWDIR%%/core/Updates/0.2.32.php
 %%WWWDIR%%/core/Updates/0.2.33.php
-%%WWWDIR%%/core/Updates/0.2.34.php
 %%WWWDIR%%/core/Updates/0.2.35.php
 %%WWWDIR%%/core/Updates/0.2.37.php
 %%WWWDIR%%/core/Updates/0.4.1.php
@@ -289,7 +288,6 @@
 %%WWWDIR%%/core/Updates/0.5.5.php
 %%WWWDIR%%/core/Updates/0.5.php
 %%WWWDIR%%/core/Updates/0.6-rc1.php
-%%WWWDIR%%/core/Updates/0.6.2.php
 %%WWWDIR%%/core/Updates/0.6.3.php
 %%WWWDIR%%/core/Updates/0.7.php
 %%WWWDIR%%/core/Updates/0.9.1.php
@@ -356,6 +354,8 @@
 %%WWWDIR%%/core/Updates/2.5.0-rc2.php
 %%WWWDIR%%/core/Updates/2.5.0-rc4.php
 %%WWWDIR%%/core/Updates/2.6.0-b1.php
+%%WWWDIR%%/core/Updates/2.7.0-b2.php
+%%WWWDIR%%/core/Updates/2.7.0-b4.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/UrlHelper.php
 %%WWWDIR%%/core/Version.php
@@ -434,7 +434,6 @@
 %%WWWDIR%%/lang/vi.json
 %%WWWDIR%%/lang/zh-cn.json
 %%WWWDIR%%/lang/zh-tw.json
-%%WWWDIR%%/libs/Archive_Tar/Tar.php
 %%WWWDIR%%/libs/HTML/Common2.php
 %%WWWDIR%%/libs/HTML/QuickForm2.php
 %%WWWDIR%%/libs/HTML/QuickForm2/Container.php
@@ -733,6 +732,27 @@
 %%WWWDIR%%/libs/angularjs/angular.js
 %%WWWDIR%%/libs/angularjs/angular.min.js
 %%WWWDIR%%/libs/angularjs/errors.json
+%%WWWDIR%%/libs/angularjs/ngDialog/.gitignore
+%%WWWDIR%%/libs/angularjs/ngDialog/.jshintrc
+%%WWWDIR%%/libs/angularjs/ngDialog/Gruntfile.js
+%%WWWDIR%%/libs/angularjs/ngDialog/README.md
+%%WWWDIR%%/libs/angularjs/ngDialog/bower.json
+%%WWWDIR%%/libs/angularjs/ngDialog/css/myth/ngDialog-theme-default.css
+%%WWWDIR%%/libs/angularjs/ngDialog/css/myth/ngDialog-theme-plain.css
+%%WWWDIR%%/libs/angularjs/ngDialog/css/myth/ngDialog.css
+%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog-theme-default.css
+%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog-theme-default.min.css
+%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog-theme-plain.css
+%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog-theme-plain.min.css
+%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog.css
+%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog.min.css
+%%WWWDIR%%/libs/angularjs/ngDialog/example/README.md
+%%WWWDIR%%/libs/angularjs/ngDialog/example/externalTemplate.html
+%%WWWDIR%%/libs/angularjs/ngDialog/example/index.html
+%%WWWDIR%%/libs/angularjs/ngDialog/example/server.js
+%%WWWDIR%%/libs/angularjs/ngDialog/js/ngDialog.js
+%%WWWDIR%%/libs/angularjs/ngDialog/js/ngDialog.min.js
+%%WWWDIR%%/libs/angularjs/ngDialog/package.json
 %%WWWDIR%%/libs/angularjs/version.json
 %%WWWDIR%%/libs/angularjs/version.txt
 %%WWWDIR%%/libs/html5shiv/html5shiv.js
@@ -892,12 +912,12 @@
 %%WWWDIR%%/misc/others/geoipUpdateRows.php
 %%WWWDIR%%/misc/others/iframeWidget.htm
 %%WWWDIR%%/misc/others/iframeWidget_localhost.php
-%%WWWDIR%%/misc/others/phpstorm-codestyles/Piwik_codestyle.xml
-%%WWWDIR%%/misc/others/phpstorm-codestyles/README.md
 %%WWWDIR%%/misc/others/stress.sh
 %%WWWDIR%%/misc/others/tracker_simpleImageTracker.php
 %%WWWDIR%%/misc/others/uninstall-delete-piwik-directory.php
 %%WWWDIR%%/misc/others/widget_example_lastvisits.html
+%%WWWDIR%%/misc/phpstorm-codestyles/Piwik_codestyle.xml
+%%WWWDIR%%/misc/phpstorm-codestyles/README.md
 %%WWWDIR%%/misc/proxy-hide-piwik-url/README.md
 %%WWWDIR%%/misc/proxy-hide-piwik-url/piwik.php
 %%WWWDIR%%/misc/user/.gitkeep
@@ -1098,6 +1118,7 @@
 %%WWWDIR%%/plugins/Annotations/lang/nl.json
 %%WWWDIR%%/plugins/Annotations/lang/pl.json
 %%WWWDIR%%/plugins/Annotations/lang/pt-br.json
+%%WWWDIR%%/plugins/Annotations/lang/pt.json
 %%WWWDIR%%/plugins/Annotations/lang/ro.json
 %%WWWDIR%%/plugins/Annotations/lang/ru.json
 %%WWWDIR%%/plugins/Annotations/lang/sl.json
@@ -1117,6 +1138,37 @@
 %%WWWDIR%%/plugins/Annotations/templates/getAnnotationManager.twig
 %%WWWDIR%%/plugins/Annotations/templates/getEvolutionIcons.twig
 %%WWWDIR%%/plugins/Annotations/templates/saveAnnotation.twig
+%%WWWDIR%%/plugins/Contents/.gitignore
+%%WWWDIR%%/plugins/Contents/API.php
+%%WWWDIR%%/plugins/Contents/Actions/ActionContent.php
+%%WWWDIR%%/plugins/Contents/Archiver.php
+%%WWWDIR%%/plugins/Contents/Columns/ContentInteraction.php
+%%WWWDIR%%/plugins/Contents/Columns/ContentName.php
+%%WWWDIR%%/plugins/Contents/Columns/ContentPiece.php
+%%WWWDIR%%/plugins/Contents/Columns/ContentTarget.php
+%%WWWDIR%%/plugins/Contents/Contents.php
+%%WWWDIR%%/plugins/Contents/Controller.php
+%%WWWDIR%%/plugins/Contents/DataArray.php
+%%WWWDIR%%/plugins/Contents/Dimensions.php
+%%WWWDIR%%/plugins/Contents/Menu.php
+%%WWWDIR%%/plugins/Contents/README.md
+%%WWWDIR%%/plugins/Contents/Reports/Base.php
+%%WWWDIR%%/plugins/Contents/Reports/GetContentNames.php
+%%WWWDIR%%/plugins/Contents/Reports/GetContentPieces.php
+%%WWWDIR%%/plugins/Contents/javascripts/contentsDataTable.js
+%%WWWDIR%%/plugins/Contents/lang/cs.json
+%%WWWDIR%%/plugins/Contents/lang/da.json
+%%WWWDIR%%/plugins/Contents/lang/de.json
+%%WWWDIR%%/plugins/Contents/lang/el.json
+%%WWWDIR%%/plugins/Contents/lang/en.json
+%%WWWDIR%%/plugins/Contents/lang/es.json
+%%WWWDIR%%/plugins/Contents/lang/et.json
+%%WWWDIR%%/plugins/Contents/lang/it.json
+%%WWWDIR%%/plugins/Contents/lang/pl.json
+%%WWWDIR%%/plugins/Contents/lang/pt.json
+%%WWWDIR%%/plugins/Contents/plugin.json
+%%WWWDIR%%/plugins/Contents/screenshots/.gitkeep
+%%WWWDIR%%/plugins/Contents/stylesheets/datatable.less
 %%WWWDIR%%/plugins/CoreAdminHome/API.php
 %%WWWDIR%%/plugins/CoreAdminHome/Commands/RunScheduledTasks.php
 %%WWWDIR%%/plugins/CoreAdminHome/Controller.php
@@ -1184,11 +1236,13 @@
 %%WWWDIR%%/plugins/CoreAdminHome/templates/optOut.twig
 %%WWWDIR%%/plugins/CoreAdminHome/templates/pluginSettings.twig
 %%WWWDIR%%/plugins/CoreAdminHome/templates/trackingCodeGenerator.twig
+%%WWWDIR%%/plugins/CoreConsole/Commands/ClearCaches.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/CodeCoverage.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/CoreArchiver.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/DevelopmentEnable.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/DevelopmentManageTestFiles.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/DevelopmentSyncUITestScreenshots.php
+%%WWWDIR%%/plugins/CoreConsole/Commands/GenerateAngularDirective.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/GenerateApi.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/GenerateCommand.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/GenerateController.php
@@ -1216,6 +1270,7 @@
 %%WWWDIR%%/plugins/CoreConsole/templates/travis.yml.twig
 %%WWWDIR%%/plugins/CoreHome/Columns/IdSite.php
 %%WWWDIR%%/plugins/CoreHome/Columns/ServerTime.php
+%%WWWDIR%%/plugins/CoreHome/Columns/UserId.php
 %%WWWDIR%%/plugins/CoreHome/Columns/VisitFirstActionTime.php
 %%WWWDIR%%/plugins/CoreHome/Columns/VisitGoalBuyer.php
 %%WWWDIR%%/plugins/CoreHome/Columns/VisitGoalConverted.php
@@ -1232,43 +1287,54 @@
 %%WWWDIR%%/plugins/CoreHome/Segment.php
 %%WWWDIR%%/plugins/CoreHome/Visitor.php
 %%WWWDIR%%/plugins/CoreHome/Widgets.php
+%%WWWDIR%%/plugins/CoreHome/angularjs/ajax-form/ajax-form.controller.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/ajax-form/ajax-form.directive.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/anchorLinkFix.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/autocomplete-matched.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/autocomplete-matched_spec.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/autocomplete-matched.spec.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/dialog.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/directive.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/directive.module.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/focus-anywhere-but-here.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/focusif.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/ignore-click.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/onenter.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/directives/translate.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/evolution.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/filter.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/filter.module.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/length.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/pretty-url.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/startfrom.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/startfrom_spec.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/startfrom.spec.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/translate.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters/trim.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-api.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-api_spec.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-api.spec.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik_spec.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/common/services/service.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline/enrichedheadline-directive.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline/enrichedheadline.html
-%%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline/enrichedheadline.less
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik.spec.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/services/service.module.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler/dialogtoggler-urllistener.service.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler/dialogtoggler.controller.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler/dialogtoggler.directive.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler/ngdialog.less
+%%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline/enrichedheadline.directive.html
+%%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline/enrichedheadline.directive.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline/enrichedheadline.directive.less
 %%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline/help.png
 %%WWWDIR%%/plugins/CoreHome/angularjs/http404check.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/menudropdown/menudropdown-directive.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/menudropdown/menudropdown.html
-%%WWWDIR%%/plugins/CoreHome/angularjs/menudropdown/menudropdown.less
+%%WWWDIR%%/plugins/CoreHome/angularjs/menudropdown/menudropdown.directive.html
+%%WWWDIR%%/plugins/CoreHome/angularjs/menudropdown/menudropdown.directive.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/menudropdown/menudropdown.directive.less
+%%WWWDIR%%/plugins/CoreHome/angularjs/notification/notification.controller.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/notification/notification.directive.html
+%%WWWDIR%%/plugins/CoreHome/angularjs/notification/notification.directive.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/notification/notification.directive.less
+%%WWWDIR%%/plugins/CoreHome/angularjs/piwikApp.config.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/piwikApp.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/piwikAppConfig.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector-controller.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector-directive.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector-model.js
-%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector.html
-%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector.less
+%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector-model.service.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector.controller.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector.directive.html
+%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector.directive.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/siteselector/siteselector.directive.less
 %%WWWDIR%%/plugins/CoreHome/images/bg_header.jpg
 %%WWWDIR%%/plugins/CoreHome/images/bullet1.gif
 %%WWWDIR%%/plugins/CoreHome/images/bullet2.gif
@@ -1579,6 +1645,7 @@
 %%WWWDIR%%/plugins/CoreVisualizations/templates/_dataTableViz_htmlTable.twig
 %%WWWDIR%%/plugins/CoreVisualizations/templates/_dataTableViz_jqplotGraph.twig
 %%WWWDIR%%/plugins/CoreVisualizations/templates/_dataTableViz_tagCloud.twig
+%%WWWDIR%%/plugins/CustomVariables/.gitignore
 %%WWWDIR%%/plugins/CustomVariables/API.php
 %%WWWDIR%%/plugins/CustomVariables/Archiver.php
 %%WWWDIR%%/plugins/CustomVariables/Columns/CustomVariableName.php
@@ -1704,6 +1771,7 @@
 %%WWWDIR%%/plugins/Dashboard/DashboardManagerControl.php
 %%WWWDIR%%/plugins/Dashboard/DashboardSettingsControlBase.php
 %%WWWDIR%%/plugins/Dashboard/Menu.php
+%%WWWDIR%%/plugins/Dashboard/Model.php
 %%WWWDIR%%/plugins/Dashboard/javascripts/dashboard.js
 %%WWWDIR%%/plugins/Dashboard/javascripts/dashboardObject.js
 %%WWWDIR%%/plugins/Dashboard/javascripts/dashboardWidget.js
@@ -1926,6 +1994,7 @@
 %%WWWDIR%%/plugins/DevicesDetection/lang/ja.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/nb.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/nl.json
+%%WWWDIR%%/plugins/DevicesDetection/lang/pl.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/pt-br.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/ro.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/ru.json
@@ -1947,8 +2016,14 @@
 %%WWWDIR%%/plugins/Events/Menu.php
 %%WWWDIR%%/plugins/Events/Reports/Base.php
 %%WWWDIR%%/plugins/Events/Reports/GetAction.php
+%%WWWDIR%%/plugins/Events/Reports/GetActionFromCategoryId.php
+%%WWWDIR%%/plugins/Events/Reports/GetActionFromNameId.php
 %%WWWDIR%%/plugins/Events/Reports/GetCategory.php
+%%WWWDIR%%/plugins/Events/Reports/GetCategoryFromActionId.php
+%%WWWDIR%%/plugins/Events/Reports/GetCategoryFromNameId.php
 %%WWWDIR%%/plugins/Events/Reports/GetName.php
+%%WWWDIR%%/plugins/Events/Reports/GetNameFromActionId.php
+%%WWWDIR%%/plugins/Events/Reports/GetNameFromCategoryId.php
 %%WWWDIR%%/plugins/Events/Segment.php
 %%WWWDIR%%/plugins/Events/lang/bg.json
 %%WWWDIR%%/plugins/Events/lang/cs.json
@@ -1965,6 +2040,7 @@
 %%WWWDIR%%/plugins/Events/lang/ja.json
 %%WWWDIR%%/plugins/Events/lang/nb.json
 %%WWWDIR%%/plugins/Events/lang/nl.json
+%%WWWDIR%%/plugins/Events/lang/pl.json
 %%WWWDIR%%/plugins/Events/lang/pt-br.json
 %%WWWDIR%%/plugins/Events/lang/ro.json
 %%WWWDIR%%/plugins/Events/lang/ru.json
@@ -1992,6 +2068,10 @@
 %%WWWDIR%%/plugins/ExamplePlugin/Tasks.php
 %%WWWDIR%%/plugins/ExamplePlugin/Updates/0.0.2.php
 %%WWWDIR%%/plugins/ExamplePlugin/Widgets.php
+%%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component/component.controller.js
+%%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component/component.directive.html
+%%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component/component.directive.js
+%%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component/component.directive.less
 %%WWWDIR%%/plugins/ExamplePlugin/javascripts/plugin.js
 %%WWWDIR%%/plugins/ExamplePlugin/plugin.json
 %%WWWDIR%%/plugins/ExamplePlugin/screenshots/.gitkeep
@@ -2049,11 +2129,11 @@
 %%WWWDIR%%/plugins/Feedback/Feedback.php
 %%WWWDIR%%/plugins/Feedback/Menu.php
 %%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/icon_license
-%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature-controller.js
-%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature-directive.js
-%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature-model.js
-%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature.html
-%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature.less
+%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature-model.service.js
+%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature.controller.js
+%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature.directive.html
+%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature.directive.js
+%%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/ratefeature.directive.less
 %%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/thumbs-down.png
 %%WWWDIR%%/plugins/Feedback/angularjs/ratefeature/thumbs-up.png
 %%WWWDIR%%/plugins/Feedback/images/facebook.png
@@ -2124,6 +2204,7 @@
 %%WWWDIR%%/plugins/Goals/Controller.php
 %%WWWDIR%%/plugins/Goals/Goals.php
 %%WWWDIR%%/plugins/Goals/Menu.php
+%%WWWDIR%%/plugins/Goals/Model.php
 %%WWWDIR%%/plugins/Goals/Reports/BaseEcommerce.php
 %%WWWDIR%%/plugins/Goals/Reports/BaseEcommerceItem.php
 %%WWWDIR%%/plugins/Goals/Reports/BaseGoal.php
@@ -2266,6 +2347,7 @@
 %%WWWDIR%%/plugins/Insights/lang/el.json
 %%WWWDIR%%/plugins/Insights/lang/en.json
 %%WWWDIR%%/plugins/Insights/lang/es.json
+%%WWWDIR%%/plugins/Insights/lang/et.json
 %%WWWDIR%%/plugins/Insights/lang/fa.json
 %%WWWDIR%%/plugins/Insights/lang/fi.json
 %%WWWDIR%%/plugins/Insights/lang/fr.json
@@ -2273,6 +2355,7 @@
 %%WWWDIR%%/plugins/Insights/lang/ja.json
 %%WWWDIR%%/plugins/Insights/lang/nb.json
 %%WWWDIR%%/plugins/Insights/lang/nl.json
+%%WWWDIR%%/plugins/Insights/lang/pl.json
 %%WWWDIR%%/plugins/Insights/lang/ro.json
 %%WWWDIR%%/plugins/Insights/lang/ru.json
 %%WWWDIR%%/plugins/Insights/lang/sr.json
@@ -2377,10 +2460,11 @@
 %%WWWDIR%%/plugins/LanguagesManager/Controller.php
 %%WWWDIR%%/plugins/LanguagesManager/LanguagesManager.php
 %%WWWDIR%%/plugins/LanguagesManager/Menu.php
-%%WWWDIR%%/plugins/LanguagesManager/angularjs/languageselector/languageselector-directive.js
-%%WWWDIR%%/plugins/LanguagesManager/angularjs/translationsearch/translationsearch-controller.js
-%%WWWDIR%%/plugins/LanguagesManager/angularjs/translationsearch/translationsearch-directive.js
-%%WWWDIR%%/plugins/LanguagesManager/angularjs/translationsearch/translationsearch.html
+%%WWWDIR%%/plugins/LanguagesManager/Model.php
+%%WWWDIR%%/plugins/LanguagesManager/angularjs/languageselector/languageselector.directive.js
+%%WWWDIR%%/plugins/LanguagesManager/angularjs/translationsearch/translationsearch.controller.js
+%%WWWDIR%%/plugins/LanguagesManager/angularjs/translationsearch/translationsearch.directive.html
+%%WWWDIR%%/plugins/LanguagesManager/angularjs/translationsearch/translationsearch.directive.js
 %%WWWDIR%%/plugins/LanguagesManager/lang/ar.json
 %%WWWDIR%%/plugins/LanguagesManager/lang/be.json
 %%WWWDIR%%/plugins/LanguagesManager/lang/bg.json
@@ -2435,9 +2519,11 @@
 %%WWWDIR%%/plugins/LeftMenu/lang/de.json
 %%WWWDIR%%/plugins/LeftMenu/lang/el.json
 %%WWWDIR%%/plugins/LeftMenu/lang/en.json
+%%WWWDIR%%/plugins/LeftMenu/lang/es.json
 %%WWWDIR%%/plugins/LeftMenu/lang/fr.json
 %%WWWDIR%%/plugins/LeftMenu/lang/it.json
 %%WWWDIR%%/plugins/LeftMenu/lang/nl.json
+%%WWWDIR%%/plugins/LeftMenu/lang/pl.json
 %%WWWDIR%%/plugins/LeftMenu/lang/ro.json
 %%WWWDIR%%/plugins/LeftMenu/lang/ru.json
 %%WWWDIR%%/plugins/LeftMenu/lang/sr.json
@@ -2545,6 +2631,8 @@
 %%WWWDIR%%/plugins/Login/FormLogin.php
 %%WWWDIR%%/plugins/Login/FormResetPassword.php
 %%WWWDIR%%/plugins/Login/Login.php
+%%WWWDIR%%/plugins/Login/PasswordResetter.php
+%%WWWDIR%%/plugins/Login/SessionInitializer.php
 %%WWWDIR%%/plugins/Login/javascripts/login.js
 %%WWWDIR%%/plugins/Login/lang/am.json
 %%WWWDIR%%/plugins/Login/lang/ar.json
@@ -2631,6 +2719,7 @@
 %%WWWDIR%%/plugins/MobileMessaging/lang/ko.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/nb.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/nl.json
+%%WWWDIR%%/plugins/MobileMessaging/lang/pl.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/pt-br.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/ro.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/ru.json
@@ -2792,14 +2881,15 @@
 %%WWWDIR%%/plugins/MultiSites/Reports/Base.php
 %%WWWDIR%%/plugins/MultiSites/Reports/GetAll.php
 %%WWWDIR%%/plugins/MultiSites/Reports/GetOne.php
-%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard-controller.js
-%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard-directive.js
-%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard-filter.js
-%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard-model.js
-%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard.html
-%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard.less
-%%WWWDIR%%/plugins/MultiSites/angularjs/site/site-directive.js
-%%WWWDIR%%/plugins/MultiSites/angularjs/site/site.html
+%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard-group.filter.js
+%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard-model.service.js
+%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard.controller.js
+%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard.directive.html
+%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard.directive.js
+%%WWWDIR%%/plugins/MultiSites/angularjs/dashboard/dashboard.directive.less
+%%WWWDIR%%/plugins/MultiSites/angularjs/site/site.controller.js
+%%WWWDIR%%/plugins/MultiSites/angularjs/site/site.directive.html
+%%WWWDIR%%/plugins/MultiSites/angularjs/site/site.directive.js
 %%WWWDIR%%/plugins/MultiSites/images/arrow_asc.gif
 %%WWWDIR%%/plugins/MultiSites/images/arrow_desc.gif
 %%WWWDIR%%/plugins/MultiSites/images/arrow_down.png
@@ -2890,6 +2980,7 @@
 %%WWWDIR%%/plugins/Overlay/lang/ko.json
 %%WWWDIR%%/plugins/Overlay/lang/nb.json
 %%WWWDIR%%/plugins/Overlay/lang/nl.json
+%%WWWDIR%%/plugins/Overlay/lang/pl.json
 %%WWWDIR%%/plugins/Overlay/lang/pt-br.json
 %%WWWDIR%%/plugins/Overlay/lang/ro.json
 %%WWWDIR%%/plugins/Overlay/lang/ru.json
@@ -3468,6 +3559,7 @@
 %%WWWDIR%%/plugins/ScheduledReports/API.php
 %%WWWDIR%%/plugins/ScheduledReports/Controller.php
 %%WWWDIR%%/plugins/ScheduledReports/Menu.php
+%%WWWDIR%%/plugins/ScheduledReports/Model.php
 %%WWWDIR%%/plugins/ScheduledReports/ScheduledReports.php
 %%WWWDIR%%/plugins/ScheduledReports/Tasks.php
 %%WWWDIR%%/plugins/ScheduledReports/config/tcpdf_config.php
@@ -3557,6 +3649,7 @@
 %%WWWDIR%%/plugins/SegmentEditor/lang/ja.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/nb.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/nl.json
+%%WWWDIR%%/plugins/SegmentEditor/lang/pl.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/pt-br.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/ro.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/ru.json
@@ -3571,11 +3664,18 @@
 %%WWWDIR%%/plugins/SitesManager/Controller.php
 %%WWWDIR%%/plugins/SitesManager/Menu.php
 %%WWWDIR%%/plugins/SitesManager/Model.php
+%%WWWDIR%%/plugins/SitesManager/SiteUrls.php
 %%WWWDIR%%/plugins/SitesManager/SitesManager.php
-%%WWWDIR%%/plugins/SitesManager/javascripts/sites-manager-controller.js
-%%WWWDIR%%/plugins/SitesManager/javascripts/sites-manager-directives.js
-%%WWWDIR%%/plugins/SitesManager/javascripts/sites-manager-recipes.js
-%%WWWDIR%%/plugins/SitesManager/javascripts/sites-manager-site-controller.js
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/api-core.service.js
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/api-coreadmin.service.js
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/api-helper.service.js
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/api-site.service.js
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/edit-trigger.directive.js
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/multiline-field.directive.html
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/multiline-field.directive.js
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/scroll.directive.js
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/sites-manager-site.controller.js
+%%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager/sites-manager.controller.js
 %%WWWDIR%%/plugins/SitesManager/lang/am.json
 %%WWWDIR%%/plugins/SitesManager/lang/ar.json
 %%WWWDIR%%/plugins/SitesManager/lang/be.json
@@ -3634,7 +3734,6 @@
 %%WWWDIR%%/plugins/SitesManager/templates/dialogs/dialogs.html
 %%WWWDIR%%/plugins/SitesManager/templates/dialogs/edit-dialog.html
 %%WWWDIR%%/plugins/SitesManager/templates/dialogs/remove-dialog.html
-%%WWWDIR%%/plugins/SitesManager/templates/directives/multiline-field.html
 %%WWWDIR%%/plugins/SitesManager/templates/displayJavascriptCode.twig
 %%WWWDIR%%/plugins/SitesManager/templates/global-settings.html
 %%WWWDIR%%/plugins/SitesManager/templates/help/excluded-ip-help.html
@@ -3675,6 +3774,7 @@
 %%WWWDIR%%/plugins/Transitions/lang/ko.json
 %%WWWDIR%%/plugins/Transitions/lang/nb.json
 %%WWWDIR%%/plugins/Transitions/lang/nl.json
+%%WWWDIR%%/plugins/Transitions/lang/pl.json
 %%WWWDIR%%/plugins/Transitions/lang/pt-br.json
 %%WWWDIR%%/plugins/Transitions/lang/ro.json
 %%WWWDIR%%/plugins/Transitions/lang/ru.json
@@ -4293,6 +4393,7 @@
 %%WWWDIR%%/plugins/UserCountryMap/svg/world.svg
 %%WWWDIR%%/plugins/UserCountryMap/templates/realtimeMap.twig
 %%WWWDIR%%/plugins/UserCountryMap/templates/visitorMap.twig
+%%WWWDIR%%/plugins/UserSettings/.gitignore
 %%WWWDIR%%/plugins/UserSettings/API.php
 %%WWWDIR%%/plugins/UserSettings/Archiver.php
 %%WWWDIR%%/plugins/UserSettings/Columns/Browser.php
@@ -4324,6 +4425,7 @@
 %%WWWDIR%%/plugins/UserSettings/Reports/GetBrowserVersion.php
 %%WWWDIR%%/plugins/UserSettings/Reports/GetConfiguration.php
 %%WWWDIR%%/plugins/UserSettings/Reports/GetLanguage.php
+%%WWWDIR%%/plugins/UserSettings/Reports/GetLanguageCode.php
 %%WWWDIR%%/plugins/UserSettings/Reports/GetMobileVsDesktop.php
 %%WWWDIR%%/plugins/UserSettings/Reports/GetOS.php
 %%WWWDIR%%/plugins/UserSettings/Reports/GetOSFamily.php
@@ -4494,6 +4596,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/W61.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W65.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W75.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/W81.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W95.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W98.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WCE.gif
@@ -4945,10 +5048,10 @@
 %%WWWDIR%%/plugins/Widgetize/templates/testJsInclude1.twig
 %%WWWDIR%%/plugins/Widgetize/templates/testJsInclude2.twig
 %%WWWDIR%%/plugins/ZenMode/ZenMode.php
-%%WWWDIR%%/plugins/ZenMode/angularjs/quick-access/quick-access-directive.js
-%%WWWDIR%%/plugins/ZenMode/angularjs/quick-access/quick-access.html
-%%WWWDIR%%/plugins/ZenMode/angularjs/quick-access/quick-access.less
-%%WWWDIR%%/plugins/ZenMode/angularjs/zen-mode/zen-mode-switcher-directive.js
+%%WWWDIR%%/plugins/ZenMode/angularjs/quick-access/quick-access.directive.html
+%%WWWDIR%%/plugins/ZenMode/angularjs/quick-access/quick-access.directive.js
+%%WWWDIR%%/plugins/ZenMode/angularjs/quick-access/quick-access.directive.less
+%%WWWDIR%%/plugins/ZenMode/angularjs/zen-mode/zen-mode-switcher.directive.js
 %%WWWDIR%%/plugins/ZenMode/angularjs/zen-mode/zen-mode.less
 %%WWWDIR%%/plugins/ZenMode/javascripts/zen-mode.js
 %%WWWDIR%%/plugins/ZenMode/lang/cs.json
@@ -4957,7 +5060,9 @@
 %%WWWDIR%%/plugins/ZenMode/lang/el.json
 %%WWWDIR%%/plugins/ZenMode/lang/en.json
 %%WWWDIR%%/plugins/ZenMode/lang/fa.json
+%%WWWDIR%%/plugins/ZenMode/lang/fr.json
 %%WWWDIR%%/plugins/ZenMode/lang/it.json
+%%WWWDIR%%/plugins/ZenMode/lang/pl.json
 %%WWWDIR%%/plugins/ZenMode/lang/ru.json
 %%WWWDIR%%/plugins/ZenMode/lang/sr.json
 %%WWWDIR%%/plugins/ZenMode/lang/sv.json
@@ -4993,6 +5098,23 @@
 %%WWWDIR%%/vendor/mustangostang/spyc/php4/spyc.php4
 %%WWWDIR%%/vendor/mustangostang/spyc/php4/test.php4
 %%WWWDIR%%/vendor/mustangostang/spyc/spyc.yaml
+%%WWWDIR%%/vendor/piwik/decompress/.gitignore
+%%WWWDIR%%/vendor/piwik/decompress/.travis.yml
+%%WWWDIR%%/vendor/piwik/decompress/README.md
+%%WWWDIR%%/vendor/piwik/decompress/composer.json
+%%WWWDIR%%/vendor/piwik/decompress/libs/Archive_Tar/Tar.php
+%%WWWDIR%%/vendor/piwik/decompress/libs/PEAR.php
+%%WWWDIR%%/vendor/piwik/decompress/libs/PEAR5.php
+%%WWWDIR%%/vendor/piwik/decompress/libs/PclZip/lgpl-2.1.txt
+%%WWWDIR%%/vendor/piwik/decompress/libs/PclZip/pclzip.lib.php
+%%WWWDIR%%/vendor/piwik/decompress/libs/README.md
+%%WWWDIR%%/vendor/piwik/decompress/phpunit.xml
+%%WWWDIR%%/vendor/piwik/decompress/src/DecompressInterface.php
+%%WWWDIR%%/vendor/piwik/decompress/src/Gzip.php
+%%WWWDIR%%/vendor/piwik/decompress/src/PclZip.php
+%%WWWDIR%%/vendor/piwik/decompress/src/Tar.php
+%%WWWDIR%%/vendor/piwik/decompress/src/ZipArchive.php
+%%WWWDIR%%/vendor/piwik/device-detector/.coveralls.yml
 %%WWWDIR%%/vendor/piwik/device-detector/.gitignore
 %%WWWDIR%%/vendor/piwik/device-detector/.travis.yml
 %%WWWDIR%%/vendor/piwik/device-detector/Cache/CacheFile.php
@@ -5329,6 +5451,11 @@
 @dirrm %%WWWDIR%%/vendor/piwik/device-detector/Parser
 @dirrm %%WWWDIR%%/vendor/piwik/device-detector/Cache
 @dirrm %%WWWDIR%%/vendor/piwik/device-detector
+@dirrm %%WWWDIR%%/vendor/piwik/decompress/src
+@dirrm %%WWWDIR%%/vendor/piwik/decompress/libs/PclZip
+@dirrm %%WWWDIR%%/vendor/piwik/decompress/libs/Archive_Tar
+@dirrm %%WWWDIR%%/vendor/piwik/decompress/libs
+@dirrm %%WWWDIR%%/vendor/piwik/decompress
 @dirrm %%WWWDIR%%/vendor/piwik
 @dirrm %%WWWDIR%%/vendor/mustangostang/spyc/php4
 @dirrm %%WWWDIR%%/vendor/mustangostang/spyc/examples
@@ -5414,12 +5541,12 @@
 @dirrm %%WWWDIR%%/plugins/Transitions
 @dirrm %%WWWDIR%%/plugins/SitesManager/templates/sites-list
 @dirrm %%WWWDIR%%/plugins/SitesManager/templates/help
-@dirrm %%WWWDIR%%/plugins/SitesManager/templates/directives
 @dirrm %%WWWDIR%%/plugins/SitesManager/templates/dialogs
 @dirrm %%WWWDIR%%/plugins/SitesManager/templates
 @dirrm %%WWWDIR%%/plugins/SitesManager/stylesheets
 @dirrm %%WWWDIR%%/plugins/SitesManager/lang
-@dirrm %%WWWDIR%%/plugins/SitesManager/javascripts
+@dirrm %%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager
+@dirrm %%WWWDIR%%/plugins/SitesManager/angularjs
 @dirrm %%WWWDIR%%/plugins/SitesManager
 @dirrm %%WWWDIR%%/plugins/SegmentEditor/templates
 @dirrm %%WWWDIR%%/plugins/SegmentEditor/stylesheets
@@ -5568,6 +5695,8 @@
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin/templates
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin/screenshots
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin/javascripts
+@dirrm %%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component
+@dirrm %%WWWDIR%%/plugins/ExamplePlugin/angularjs
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin/Updates
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin
 @dirrm %%WWWDIR%%/plugins/ExampleCommand/Commands
@@ -5635,12 +5764,15 @@
 @dirrm %%WWWDIR%%/plugins/CoreHome/javascripts
 @dirrm %%WWWDIR%%/plugins/CoreHome/images
 @dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/siteselector
+@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/notification
 @dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/menudropdown
 @dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline
+@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler
 @dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/common/services
 @dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters
 @dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/common/directives
 @dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/common
+@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/ajax-form
 @dirrm %%WWWDIR%%/plugins/CoreHome/angularjs
 @dirrm %%WWWDIR%%/plugins/CoreHome/DataTableRowAction
 @dirrm %%WWWDIR%%/plugins/CoreHome/Columns
@@ -5654,6 +5786,14 @@
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome/javascripts
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome/Commands
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome
+@dirrm %%WWWDIR%%/plugins/Contents/stylesheets
+@dirrm %%WWWDIR%%/plugins/Contents/screenshots
+@dirrm %%WWWDIR%%/plugins/Contents/lang
+@dirrm %%WWWDIR%%/plugins/Contents/javascripts
+@dirrm %%WWWDIR%%/plugins/Contents/Reports
+@dirrm %%WWWDIR%%/plugins/Contents/Columns
+@dirrm %%WWWDIR%%/plugins/Contents/Actions
+@dirrm %%WWWDIR%%/plugins/Contents
 @dirrm %%WWWDIR%%/plugins/Annotations/templates
 @dirrm %%WWWDIR%%/plugins/Annotations/stylesheets
 @dirrm %%WWWDIR%%/plugins/Annotations/lang
@@ -5675,7 +5815,7 @@
 @dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/misc/user
 @dirrm %%WWWDIR%%/misc/proxy-hide-piwik-url
-@dirrm %%WWWDIR%%/misc/others/phpstorm-codestyles
+@dirrm %%WWWDIR%%/misc/phpstorm-codestyles
 @dirrm %%WWWDIR%%/misc/others
 @dirrm %%WWWDIR%%/misc/log-analytics
 @dirrm %%WWWDIR%%/misc/internal-docs
@@ -5703,6 +5843,11 @@
 @dirrm %%WWWDIR%%/libs/jqplot
 @dirrm %%WWWDIR%%/libs/javascript
 @dirrm %%WWWDIR%%/libs/html5shiv
+@dirrm %%WWWDIR%%/libs/angularjs/ngDialog/js
+@dirrm %%WWWDIR%%/libs/angularjs/ngDialog/example
+@dirrm %%WWWDIR%%/libs/angularjs/ngDialog/css/myth
+@dirrm %%WWWDIR%%/libs/angularjs/ngDialog/css
+@dirrm %%WWWDIR%%/libs/angularjs/ngDialog
 @dirrm %%WWWDIR%%/libs/angularjs
 @dirrm %%WWWDIR%%/libs/Zend/Validate/Hostname
 @dirrm %%WWWDIR%%/libs/Zend/Validate/File
@@ -5762,7 +5907,6 @@
 @dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Container
 @dirrm %%WWWDIR%%/libs/HTML/QuickForm2
 @dirrm %%WWWDIR%%/libs/HTML
-@dirrm %%WWWDIR%%/libs/Archive_Tar
 @dirrm %%WWWDIR%%/libs
 @dirrm %%WWWDIR%%/lang
 @dirrm %%WWWDIR%%/js
@@ -5770,7 +5914,6 @@
 @dirrm %%WWWDIR%%/core/ViewDataTable
 @dirrm %%WWWDIR%%/core/View
 @dirrm %%WWWDIR%%/core/Updates
-@dirrm %%WWWDIR%%/core/Unzip
 @dirrm %%WWWDIR%%/core/Translate/Validate
 @dirrm %%WWWDIR%%/core/Translate/Filter
 @dirrm %%WWWDIR%%/core/Translate
