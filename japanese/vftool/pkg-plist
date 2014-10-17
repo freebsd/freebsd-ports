@@ -655,8 +655,3 @@ share/fonts/vf-p2pn/tmin6.vf
 share/fonts/vf-p2pn/tmin7.vf
 share/fonts/vf-p2pn/tmin8.vf
 share/fonts/vf-p2pn/tmin9.vf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/fonts/vf-a2bk
-@dirrm share/fonts/vf-a2n
-@dirrm share/fonts/vf-n2a
-@dirrm share/fonts/vf-p2pn

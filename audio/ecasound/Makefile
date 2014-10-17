@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	ALSA AUDIOFILE JACK LIBLO LIBOIL PYTHON SAMPLERATE SNDFILE
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
-USES=		gmake libtool readline:port
+USES=		gmake libtool pkgconfig readline:port
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-liblilv \
 		--disable-rubyecasound \

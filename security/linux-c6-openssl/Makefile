@@ -3,6 +3,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.1e
+PORTREVISION=	1
 CATEGORIES=	security linux
 MASTER_SITES=	CENTOS_LINUX_UPDATES
 
@@ -14,7 +15,7 @@ CONFLICTS=	linux-openssl-[0-9]* linux-f8-openssl-[0-9]* linux-f10-openssl-[0-9]*
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes
-RPMVERSION=	16.el6_5.7
+RPMVERSION=	30.el6_5.2
 BRANDELF_FILES=	usr/bin/openssl
 USE_LDCONFIG=	yes
 

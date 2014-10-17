@@ -88,21 +88,3 @@ share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
 share/ppd/cupsfilters/pxlcolor.ppd
 share/ppd/cupsfilters/pxlmono.ppd
 share/ppd/cupsfilters/textonly.ppd
-@dirrmtry share/ppd/cupsfilters
-@dirrmtry share/ppd
-@dirrm %%DOCSDIR%%
-@dirrmtry share/cups/ppdc
-@dirrmtry share/cups/mime
-@dirrmtry share/cups/drv
-@dirrmtry share/cups/data
-@dirrmtry share/cups/charsets
-@dirrmtry share/cups/banners
-@dirrmtry share/cups
-@dirrmtry libexec/cups/filter
-@dirrmtry libexec/cups/backend
-@dirrmtry libexec/cups
-@dirrmtry include/fontembed
-@dirrmtry include/cupsfilters
-@dirrmtry etc/fonts/conf.d
-@dirrmtry etc/fonts
-@dirrmtry etc/cups

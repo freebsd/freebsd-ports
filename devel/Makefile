@@ -3812,7 +3812,7 @@
     SUBDIR += py-ocempgui
     SUBDIR += py-ode
     SUBDIR += py-odfpy
-    SUBDIR += py-olefileio_pl
+    SUBDIR += py-olefile
     SUBDIR += py-oletools
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
