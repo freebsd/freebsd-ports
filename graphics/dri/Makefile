@@ -14,6 +14,7 @@ LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm \
 
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto \
 		presentproto xvmc xshmfence
+USES=		gettext:build
 
 OPTIONS_DEFINE=	TEXTURE
 
