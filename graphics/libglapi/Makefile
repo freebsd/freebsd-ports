@@ -3,29 +3,36 @@
 
 PORTNAME=	libglapi
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	${LIBGLAPI_REVISION}
 CATEGORIES=	graphics
 
 COMMENT=	Common GL api library used by Mesa based ports
 
-BUILD_DEPENDS=	expat>=0:${PORTSDIR}/textproc/expat2 \
-		libdrm>=0:${PORTSDIR}/graphics/libdrm \
-		libpthread-stubs>=0:${PORTSDIR}/devel/libpthread-stubs
+LIB_DEPENDS+=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 
 USE_XORG=	x11 xau xcb xdmcp
 
 # stuff not needed by libglapi but configure wants it
-USE_XORG+=	glproto dri2proto dri3proto xext xdamage xfixes presentproto \
+USE_XORG+=	glproto dri2proto xext xdamage xfixes presentproto \
 		xshmfence
-
-BUILD_WRKSRC=	${WRKSRC}/src/mapi/shared-glapi
-INSTALL_WRKSRC=	${WRKSRC}/src/mapi/shared-glapi
+LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libdrm.so:${PORTSDIR}/graphics/libdrm
 
 .include <bsd.port.options.mk>
+.include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 
-.if ! defined(WITH_NEW_XORG)
-IGNORE=	Please enable WITH_NEW_XORG, libglapi needs libdrm higher then 2.4.24
+.if defined (WITH_NEW_MESA)
+LIBGLAPI_REVISION=	0
+.else
+LIBGLAPI_REVISION=	2
 .endif
 
-.include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
+.if defined (WITH_NEW_MESA)
+BUILD_WRKSRC=	${WRKSRC}/src/mapi
+INSTALL_WRKSRC=	${WRKSRC}/src/mapi
+.else
+BUILD_WRKSRC=	${WRKSRC}/src/mapi/shared-glapi
+INSTALL_WRKSRC=	${WRKSRC}/src/mapi/shared-glapi
+.endif
+
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+The GALLIUM option enables gallium (llvm) backed drivers such as for example
+the r600 and radeonsi driver.
+
+The VDPAU option enables VDPAU drivers to decode video on the GPU via the
+VDPAU library.
+
+The TEXTURE option enables texture-float support. However Silicon Graphics
+owns the US Patent #6,650,327 [1]. Use at your own risk!
+
+See docs/patents.txt in the Mesa tarball or the follewing urls:
+
+[1] http://www.google.com/patents/about?id=mIIOAAAAEBAJ&dq=6650327
+[2] http://www.opengl.org/registry/specs/ARB/texture_float.txt

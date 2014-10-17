@@ -226,6 +226,7 @@
     SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += gauche-gl
+    SUBDIR += gbm
     SUBDIR += gcolor
     SUBDIR += gcolor2
     SUBDIR += gd
