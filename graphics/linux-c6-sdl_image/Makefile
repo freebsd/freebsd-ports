@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl_image
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.12
 CATEGORIES=	graphics linux
 MASTER_SITES=	EPEL
 DISTNAME=	SDL_image-${PORTVERSION}-${RPMVERSION}
@@ -18,7 +18,7 @@ USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	jpeg png sdl12 tiff
 LINUX_NAME=	SDL_image
 
-RPMVERSION=	1.el6
+RPMVERSION=	9.el6
 BRANDELF_FILES=	usr/bin/showimage
 USE_LDCONFIG=	yes
 
@@ -26,7 +26,7 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	CHANGES COPYING README
 
 PLIST_FILES=	usr/bin/showimage usr/lib/libSDL_image-1.2.so.0 \
-		usr/lib/libSDL_image-1.2.so.0.8.2
+		usr/lib/libSDL_image-1.2.so.0.8.4
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>
