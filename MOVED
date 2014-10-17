@@ -7163,3 +7163,4 @@ security/krb5-maint|krb5-111|2014-10-16|MIT now supports two maintenance release
 devel/rubygem-rspec-spies||2014-10-17|Has expired: Same syntax available in rspec 2.14 and later
 graphics/libfreehand00|graphics/libfreehand|2014-10-17|Replaced by newer version
 graphics/libcdr|graphics/libcdr01|2014-10-17|Replaced by newer version
+print/libmspub|print/libmspub01|2014-10-17|Replaced by newer version
