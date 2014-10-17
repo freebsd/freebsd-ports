@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b32
+PORTVERSION=	b33
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	java devel
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	15_jul_2014
+OPENJDK_BUILDDATE=	14_oct_2014
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE
@@ -326,11 +326,7 @@ do-install:
 	    ${SED} -e 's,^\./,openjdk6-jre/,' >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-jre && \
 	    ${FIND} -s . -type d -empty | \
-	    ${SED} 's,^\./,@exec ${MKDIR} %D/openjdk6-jre/,' >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}/openjdk6-jre && \
-	    ${FIND} . -type d -not -depth 0 | ${SORT} -r | \
-	    ${SED} 's,^\.,@dirrm openjdk6-jre/,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm openjdk6-jre" >> ${TMPPLIST}
+	    ${SED} 's,^\./,@dir openjdk6-jre/,' >> ${TMPPLIST}
 	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-jre/bin/java' >> ${PKGDEINSTALL}
 	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-jre/bin/java # OpenJDK6 JRE"' >> ${PKGINSTALL}
 .else
@@ -339,11 +335,7 @@ do-install:
 	    ${SED} -e 's,^\./,openjdk6/,' >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
 	    ${FIND} -s . -type d -empty | \
-	    ${SED} 's,^\./,@exec ${MKDIR} %D/openjdk6/,' >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
-	    ${FIND} . -type d -not -depth 0 | ${SORT} -r | \
-	    ${SED} 's,^\./,@dirrm openjdk6/,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm openjdk6" >> ${TMPPLIST}
+	    ${SED} 's,^\./,@dir openjdk6/,' >> ${TMPPLIST}
 	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6/bin/java' >> ${PKGDEINSTALL}
 	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6/bin/java # OpenJDK6"' >> ${PKGINSTALL}
 .if ${PORT_OPTIONS:MFASTDEBUG}
@@ -352,11 +344,7 @@ do-install:
 	    ${SED} -e 's,^\./,openjdk6-fastdebug/,' >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-fastdebug && \
 	    ${FIND} -s . -type d -empty | \
-	    ${SED} 's,^\./,@exec ${MKDIR} %D/openjdk6-fastdebug/,' >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}/openjdk6-fastdebug && \
-	    ${FIND} . -type d -not -depth 0 | ${SORT} -r | \
-	    ${SED} 's,^\./,@dirrm openjdk6-fastdebug/,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm openjdk6-fastdebug" >> ${TMPPLIST}
+	    ${SED} 's,^\./,@dir openjdk6-fastdebug/,' >> ${TMPPLIST}
 	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-fastdebug/bin/java' >> ${PKGDEINSTALL}
 	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"' >> ${PKGINSTALL}
 .endif
