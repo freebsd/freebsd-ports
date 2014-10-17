@@ -7159,7 +7159,7 @@ ports-mgmt/portaudit-db||2014-10-13|portaudit expired
 ports-mgmt/kports-qt4||2014-10-13|portaudit expired
 net-mgmt/check_snmp_pkgvuln||2014-10-13|portaudit expired
 mail/p5-Email-Stuff|mail/p5-Email-Stuffer|2014-10-15|Has expired: Deprecated in favour of mail/p5-Email-Stuffer
-security/krb5-maint|security/krb5-111|2014-10-16|MIT now supports two maintenance releases of which 1.11 is the older of the two.
+security/krb5-maint|security/krb5-111|2014-10-16|MIT now supports two maintenance releases of which 1.11 is the older of the two
 devel/rubygem-rspec-spies||2014-10-17|Has expired: Same syntax available in rspec 2.14 and later
 graphics/libfreehand00|graphics/libfreehand|2014-10-17|Replaced by newer version
 graphics/libcdr|graphics/libcdr01|2014-10-17|Replaced by newer version
