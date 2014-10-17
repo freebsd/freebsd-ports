@@ -380,6 +380,7 @@ share/xsessions/e16-gnome3-session.desktop
 %%NLS%%share/locale/ar/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/csb/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/da/LC_MESSAGES/e16.mo
@@ -389,6 +390,7 @@ share/xsessions/e16-gnome3-session.desktop
 %%NLS%%share/locale/es/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/fo/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/it/LC_MESSAGES/e16.mo
@@ -406,79 +408,5 @@ share/xsessions/e16-gnome3-session.desktop
 %%NLS%%share/locale/tr/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/e16.mo
-%%PORTDOCS%%%%DOCSDIR%%/e16.html
-%%PORTDOCS%%man/man1/e16.1.gz
-@dirrm %%DATADIR%%/themes/winter/tooltips/images
-@dirrm %%DATADIR%%/themes/winter/tooltips
-@dirrm %%DATADIR%%/themes/winter/sound
-@dirrm %%DATADIR%%/themes/winter/slideouts
-@dirrm %%DATADIR%%/themes/winter/pager/images
-@dirrm %%DATADIR%%/themes/winter/pager
-@dirrm %%DATADIR%%/themes/winter/menustyles/images
-@dirrm %%DATADIR%%/themes/winter/menustyles
-@dirrm %%DATADIR%%/themes/winter/init/images
-@dirrm %%DATADIR%%/themes/winter/init
-@dirrm %%DATADIR%%/themes/winter/iconbox/images
-@dirrm %%DATADIR%%/themes/winter/iconbox
-@dirrm %%DATADIR%%/themes/winter/focuslist/images
-@dirrm %%DATADIR%%/themes/winter/focuslist
-@dirrm %%DATADIR%%/themes/winter/eterm/images
-@dirrm %%DATADIR%%/themes/winter/eterm
-@dirrm %%DATADIR%%/themes/winter/epplets/images
-@dirrm %%DATADIR%%/themes/winter/epplets
-@dirrm %%DATADIR%%/themes/winter/dragbar/images
-@dirrm %%DATADIR%%/themes/winter/dragbar
-@dirrm %%DATADIR%%/themes/winter/dock
-@dirrm %%DATADIR%%/themes/winter/dialogs/images
-@dirrm %%DATADIR%%/themes/winter/dialogs
-@dirrm %%DATADIR%%/themes/winter/cursors
-@dirrm %%DATADIR%%/themes/winter/coords
-@dirrm %%DATADIR%%/themes/winter/common/images
-@dirrm %%DATADIR%%/themes/winter/common
-@dirrm %%DATADIR%%/themes/winter/buttons
-@dirrm %%DATADIR%%/themes/winter/borders/common/images
-@dirrm %%DATADIR%%/themes/winter/borders/common
-@dirrm %%DATADIR%%/themes/winter/borders/TRANSIENT
-@dirrm %%DATADIR%%/themes/winter/borders/SHAPED
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER_SHADE_LEFT
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER_SHADE_RIGHT
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER_AUTOSHADE
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER/images
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER
-@dirrm %%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY
-@dirrm %%DATADIR%%/themes/winter/borders/MENU
-@dirrm %%DATADIR%%/themes/winter/borders/ICONBOX
-@dirrm %%DATADIR%%/themes/winter/borders/FIXED_SIZE
-@dirrm %%DATADIR%%/themes/winter/borders/DIALOG
-@dirrm %%DATADIR%%/themes/winter/borders/DEFAULT
-@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY/images
-@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY
-@dirrm %%DATADIR%%/themes/winter/borders/BORDERLESS
-@dirrm %%DATADIR%%/themes/winter/borders/AUTOSHADE
-@dirrm %%DATADIR%%/themes/winter/borders
-@dirrm %%DATADIR%%/themes/winter/backgrounds/images
-@dirrm %%DATADIR%%/themes/winter/backgrounds
-@dirrm %%DATADIR%%/themes/winter/ABOUT
-@dirrm %%DATADIR%%/themes/winter
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/pix
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/menus
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/E-docs
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/xsessions
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
-%%NLS%%@dirrmtry share/locale/csb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/csb
-%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fo
-@dirrmtry share/gnome-session/sessions
-@dirrmtry share/gnome-session
+%%DOCS%%%%DOCSDIR%%/e16.html
+%%DOCS%%man/man1/e16.1.gz
