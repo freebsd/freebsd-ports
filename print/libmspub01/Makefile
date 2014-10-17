@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmspub
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.1.1
 CATEGORIES=	print graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01
