@@ -7,7 +7,7 @@ CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx-gtk2.googlecode.com/files/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
-MAINTAINER=	pclin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BBS client using GTK+ 2.x
 
 LICENSE=	GPLv2

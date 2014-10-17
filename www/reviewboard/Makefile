@@ -6,7 +6,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	http://downloads.reviewboard.org/releases/ReviewBoard/${PORTVERSION:R}/
 DISTNAME=	ReviewBoard-${PORTVERSION}
 
-MAINTAINER=	pclin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based code review tool
 
 LICENSE=	MIT

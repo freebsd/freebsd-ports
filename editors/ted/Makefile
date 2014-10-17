@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/ \
 		http://fossies.org/linux/misc/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	pclin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 based RTF editor
 
 LICENSE=	GPLv2

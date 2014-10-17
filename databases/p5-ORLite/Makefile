@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pclin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 extremely light weight SQLite-specific ORM
 
 BUILD_DEPENDS:=	p5-DBI>=1.60.7:${PORTSDIR}/databases/p5-DBI \
