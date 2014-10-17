@@ -79,14 +79,8 @@ DIST_EXT=	gtk-linux-ppc64
 DIST_EXT=	gtk-linux-x86
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-extract:
-.if ${OSVERSION} > 900044
-	@(cd ${WRKSRC} && /usr/bin/unzip -qo *.zip)
-.else
-	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo *.zip)
-.endif
+	@(cd ${WRKSRC} && ${UNZIP_NATIVE_CMD} -qo *.zip)
 	@${RM} -f ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
 
 post-patch:
@@ -99,4 +93,4 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/libswt-*.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/${OUTPUT_JAR} ${STAGEDIR}${JAVAJARDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
