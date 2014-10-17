@@ -1,49 +1,198 @@
---- configure.orig	2013-08-01 23:22:15.000000000 +0200
-+++ configure	2013-08-19 20:05:02.000000000 +0200
-@@ -21046,9 +21046,34 @@
-         DEFINES="$DEFINES -DHAVE_PTHREAD -DUSE_EXTERNAL_DXTN_LIB=1"
-         DEFINES="$DEFINES -DIN_DRI_DRIVER -DHAVE_ALIAS"
+--- configure.orig	2014-08-29 13:42:21.635540273 +0200
++++ configure	2014-08-29 13:42:55.401537200 +0200
+@@ -858,6 +858,8 @@
+ GLPROTO_CFLAGS
+ XLIBGL_LIBS
+ XLIBGL_CFLAGS
++LIBDEVQ_LIBS
++LIBDEVQ_CFLAGS
+ LIBUDEV_LIBS
+ LIBUDEV_CFLAGS
+ LIBDRM_LIBS
+@@ -1146,6 +1148,8 @@
+ LIBDRM_LIBS
+ LIBUDEV_CFLAGS
+ LIBUDEV_LIBS
++LIBDEVQ_CFLAGS
++LIBDEVQ_LIBS
+ XLIBGL_CFLAGS
+ XLIBGL_LIBS
+ GLPROTO_CFLAGS
+@@ -1945,6 +1949,10 @@
+               C compiler flags for LIBUDEV, overriding pkg-config
+   LIBUDEV_LIBS
+               linker flags for LIBUDEV, overriding pkg-config
++  LIBDEVQ_CFLAGS
++              C compiler flags for LIBDEVQ, overriding pkg-config
++  LIBDEVQ_LIBS
++              linker flags for LIBDEVQ, overriding pkg-config
+   XLIBGL_CFLAGS
+               C compiler flags for XLIBGL, overriding pkg-config
+   XLIBGL_LIBS linker flags for XLIBGL, overriding pkg-config
+@@ -5086,6 +5094,7 @@
+ DRI3PROTO_REQUIRED=1.0
+ PRESENTPROTO_REQUIRED=1.0
+ LIBUDEV_REQUIRED=151
++LIBDEVQ_REQUIRED=0.0.2
+ GLPROTO_REQUIRED=1.4.14
+ LIBOMXIL_BELLAGIO_REQUIRED=0.0
+ VDPAU_REQUIRED=0.4.1
+@@ -6519,7 +6528,7 @@
+   test -n "$MAKE" && break
+ done
  
--        if test "x$DRI_DIRS" = "xyes"; then
--            DRI_DIRS="i915 i965 nouveau r200 radeon swrast"
--        fi
+-for ac_prog in python2 python
++for ac_prog in python2.7 python2 python
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -17891,7 +17900,7 @@
+ DEFINES="-DUSE_EXTERNAL_DXTN_LIB=1"
+ 
+ case "$host_os" in
+-linux*|*-gnu*|gnu*)
++linux*|*-gnu*|gnu*|freebsd*)
+     DEFINES="$DEFINES -D_GNU_SOURCE -DHAVE_PTHREAD"
+     ;;
+ solaris*)
+@@ -19147,7 +19156,7 @@
+ 
+ 
+ case "$host_os" in
+-linux*)
++linux*|freebsd*)
+     dri3_default=yes
+     ;;
+ *)
+@@ -19669,6 +19678,78 @@
+ 	have_libudev=yes
+ fi
+ 
++
++pkg_failed=no
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for LIBDEVQ" >&5
++$as_echo_n "checking for LIBDEVQ... " >&6; }
++
++if test -n "$LIBDEVQ_CFLAGS"; then
++    pkg_cv_LIBDEVQ_CFLAGS="$LIBDEVQ_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libdevq-1.0 >= \$LIBDEVQ_REQUIRED\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libdevq-1.0 >= $LIBDEVQ_REQUIRED") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_LIBDEVQ_CFLAGS=`$PKG_CONFIG --cflags "libdevq-1.0 >= $LIBDEVQ_REQUIRED" 2>/dev/null`
++		      test "x$?" != "x0" && pkg_failed=yes
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$LIBDEVQ_LIBS"; then
++    pkg_cv_LIBDEVQ_LIBS="$LIBDEVQ_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libdevq-1.0 >= \$LIBDEVQ_REQUIRED\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libdevq-1.0 >= $LIBDEVQ_REQUIRED") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_LIBDEVQ_LIBS=`$PKG_CONFIG --libs "libdevq-1.0 >= $LIBDEVQ_REQUIRED" 2>/dev/null`
++		      test "x$?" != "x0" && pkg_failed=yes
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        LIBDEVQ_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libdevq-1.0 >= $LIBDEVQ_REQUIRED" 2>&1`
++        else
++	        LIBDEVQ_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libdevq-1.0 >= $LIBDEVQ_REQUIRED" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$LIBDEVQ_PKG_ERRORS" >&5
++
++	have_libdevq=no
++elif test $pkg_failed = untried; then
++     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++	have_libdevq=no
++else
++	LIBDEVQ_CFLAGS=$pkg_cv_LIBDEVQ_CFLAGS
++	LIBDEVQ_LIBS=$pkg_cv_LIBDEVQ_LIBS
++        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++	have_libdevq=yes
++fi
++
+ # Check whether --enable-sysfs was given.
+ if test "${enable_sysfs+set}" = set; then :
+   enableval=$enable_sysfs; have_sysfs="$enableval"
+@@ -20373,6 +20454,10 @@
+     DEFINES="$DEFINES -DHAVE_LIBUDEV"
+     have_pci_id=yes
+ fi
++if test "$have_libdevq" = yes; then
++    DEFINES="$DEFINES -DHAVE_LIBDEVQ"
++    have_pci_id=yes
++fi
+ 
+ if test "$have_sysfs" = yes; then
+     DEFINES="$DEFINES -DHAVE_SYSFS"
+@@ -20498,6 +20583,22 @@
+     *freebsd* | dragonfly* | *netbsd* | openbsd*)
+         DEFINES="$DEFINES -DHAVE_PTHREAD"
+         DEFINES="$DEFINES -DHAVE_ALIAS"
++        if test "x$enable_dri3" = xyes; then
++            DEFINES="$DEFINES -DHAVE_DRI3"
++        fi
++
++        if test "x$have_libdevq" != xyes; then
++            as_fn_error $? "libdevq required for building DRI" "$LINENO" 5
++        fi
++
 +        case "$host_cpu" in
-+        x86_64|ia64)
-+            # i810 is missing because there is no x86-64 system where it
-+            # could *ever* be used.
-+            if test "x$DRI_DIRS" = "xyes"; then
-+                DRI_DIRS="i915 i965 nouveau r200 radeon swrast"
-+            fi
-+            ;;
-+        i*86)
-+            if test "x$DRI_DIRS" = "xyes"; then
-+                DRI_DIRS="i915 i965 nouveau r200 radeon swrast"
-+            fi
-+            ;;
-+        powerpc*)
-+            # Build only the drivers for cards that exist on PowerPC.
-+            # At some point MGA will be added, but not yet.
-+            if test "x$DRI_DIRS" = "xyes"; then
-+                DRI_DIRS="r200 radeon swrast"
-+            fi
-+            ;;
-+        sparc*)
-+            # Build only the drivers for cards that exist on SPARC.
-+            if test "x$DRI_DIRS" = "xyes"; then
-+                DRI_DIRS="r200 radeon swrast"
++        powerpc* | sparc*)
++            # Build only the drivers for cards that exist on PowerPC/sparc
++            if test "x$with_dri_drivers" = "xyes"; then
++                with_dri_drivers="r200 radeon swrast"
 +            fi
 +            ;;
 +        esac
-+
          ;;
      gnu*)
-         DEFINES="$DEFINES -DUSE_EXTERNAL_DXTN_LIB=1 -DIN_DRI_DRIVER"
-@@ -23396,7 +23421,7 @@
- radeon_llvm_check() {
-     LLVM_REQUIRED_VERSION_MAJOR="3"
-     LLVM_REQUIRED_VERSION_MINOR="2"
--    if test "$LLVM_VERSION_INT" -ne "${LLVM_REQUIRED_VERSION_MAJOR}0${LLVM_REQUIRED_VERSION_MINOR}"; then
-+    if test "$LLVM_VERSION_INT" -lt "${LLVM_REQUIRED_VERSION_MAJOR}0${LLVM_REQUIRED_VERSION_MINOR}"; then
-         as_fn_error $? "LLVM $LLVM_REQUIRED_VERSION_MAJOR.$LLVM_REQUIRED_VERSION_MINOR with R600 target enabled is required.
-                      To use the r600/radeonsi LLVM backend, you need to fetch the LLVM source from:
-                      git://people.freedesktop.org/~tstellar/llvm master
+         DEFINES="$DEFINES -DHAVE_ALIAS"
+@@ -21226,6 +21327,8 @@
+ 
+ if test "x$need_pci_id$have_libudev" = xyesyes; then
+     GBM_PC_REQ_PRIV="libudev >= $LIBUDEV_REQUIRED"
++elif test "x$need_libdevq" = xyes; then
++    GBM_PC_REQ_PRIV="libdevq-1.0 >= $LIBDEVQ_REQUIRED"
+ else
+     GBM_PC_REQ_PRIV=""
+ fi
+@@ -22541,9 +22644,6 @@
+                 CLANG_LIBDIR=${LLVM_LIBDIR}
+             fi
+             CLANG_RESOURCE_DIR=$CLANG_LIBDIR/clang/${LLVM_VERSION}
+-            if test ! -f "$CLANG_RESOURCE_DIR/include/stddef.h"; then :
+-  as_fn_error $? "Could not find clang internal header stddef.h in $CLANG_RESOURCE_DIR Use --with-clang-libdir to specify the correct path to the clang libraries." "$LINENO" 5
+-fi
+         fi
+     else
+         MESA_LLVM=0

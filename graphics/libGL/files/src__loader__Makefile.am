@@ -1,0 +1,12 @@
+--- ./src/loader/Makefile.am.orig	2014-02-05 21:59:10.000000000 +0100
++++ ./src/loader/Makefile.am	2014-02-23 22:01:50.000000000 +0100
+@@ -27,7 +27,8 @@
+ 	$(DEFINES) \
+ 	-I$(top_srcdir)/include \
+ 	$(VISIBILITY_CFLAGS) \
+-	$(LIBUDEV_CFLAGS)
++	$(LIBUDEV_CFLAGS) \
++	$(LIBDEVQ_CFLAGS)
+ 
+ if !HAVE_LIBDRM
+ libloader_la_CPPFLAGS += \
