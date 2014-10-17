@@ -1,8 +1,0 @@
-include/libcdr-0.0/libcdr/CDRDocument.h
-include/libcdr-0.0/libcdr/CDRStringVector.h
-include/libcdr-0.0/libcdr/CMXDocument.h
-include/libcdr-0.0/libcdr/libcdr.h
-lib/libcdr-0.0.so
-lib/libcdr-0.0.so.0
-lib/libcdr-0.0.so.0.0.16
-libdata/pkgconfig/libcdr-0.0.pc

@@ -485,7 +485,6 @@
     SUBDIR += libaux
     SUBDIR += libboard
     SUBDIR += libcaca
-    SUBDIR += libcdr
     SUBDIR += libcdr01
     SUBDIR += libchamplain
     SUBDIR += libdmtx
@@ -498,7 +497,6 @@
     SUBDIR += libexif-gtk
     SUBDIR += libfpx
     SUBDIR += libfreehand
-    SUBDIR += libfreehand00
     SUBDIR += libgaiagraphics
     SUBDIR += libgeotiff
     SUBDIR += libgfx
