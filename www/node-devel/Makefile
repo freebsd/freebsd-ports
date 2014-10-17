@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.11.13
+PORTVERSION=	0.11.14
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -14,10 +14,9 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USES=		gmake
+USES=		gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON=	2
 
 CONFLICTS=	node-0.[0-9]*
 
