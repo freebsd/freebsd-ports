@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pam_google_authenticator
-PORTVERSION=	20120831
+PORTVERSION=	20140826
 CATEGORIES=	security
-MASTER_SITES=	LOCAL/dumbbell
+MASTER_SITES=	LOCAL/riggs/google-authenticator
 DISTNAME=	google-authenticator-${PORTVERSION}
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
