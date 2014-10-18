@@ -19,8 +19,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libnetpbm.so:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake pkgconfig tar:bzip2
-USE_PYTHON=	yes
+USES=		gmake pkgconfig python tar:bzip2
 ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}/${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes
