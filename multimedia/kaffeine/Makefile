@@ -3,7 +3,7 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	1.2.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF/kaffeine/current
 
