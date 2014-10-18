@@ -22,6 +22,7 @@ BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-[0-9]* krb5-maint-112-*
 
+LATEST_LINK=		${PORTNAME}-111
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USES=			gettext gmake perl5
 USE_PERL5=		build
