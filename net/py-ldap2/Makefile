@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.4.15
-PORTREVISION=	1
+PORTVERSION=	2.4.18
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,20 +11,19 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	LDAP module for python, for OpenLDAP2
 
 LICENSE=	PSFL
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1-modules>=0:${PORTSDIR}/devel/py-asn1-modules
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 USE_OPENLDAP=		yes
 WANT_OPENLDAP_VER=	24
 
-REPLACE_ARGS=	-e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,' \
-		-e 's,/opt/openldap-RE24/include,${LOCALBASE}/include,' \
+REPLACE_ARGS=	-e 's,/opt/openldap/lib64,${LOCALBASE}/lib,' \
+		-e 's,/opt/openldap/include,${LOCALBASE}/include,' \
 		-e 's,/usr/include/sasl,${LOCALBASE}/include/sasl,'
 
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	SASL
 
 .include <bsd.port.options.mk>
