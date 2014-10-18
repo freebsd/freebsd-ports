@@ -4542,8 +4542,8 @@
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-sprockets
-    SUBDIR += rubygem-sprockets211
     SUBDIR += rubygem-sprockets-rails
+    SUBDIR += rubygem-sprockets211
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
     SUBDIR += rubygem-statsd
