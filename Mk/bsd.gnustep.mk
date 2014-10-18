@@ -173,10 +173,10 @@ _CLANG=	0
 .endif
 
 .if ${_CLANG} < 33
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
-CPP=	${LOCALBASE}/bin/clang-cpp33
-CC=	${LOCALBASE}/bin/clang33
-CXX=	${LOCALBASE}/bin/clang++33
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
+CPP=	${LOCALBASE}/bin/clang-cpp34
+CC=	${LOCALBASE}/bin/clang34
+CXX=	${LOCALBASE}/bin/clang++34
 .else
 CPP=	/usr/bin/clang-cpp
 CC=	/usr/bin/clang

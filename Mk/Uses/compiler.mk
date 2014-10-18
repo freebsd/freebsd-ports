@@ -150,10 +150,10 @@ CC=	clang
 CXX=	clang++
 CHOSEN_COMPILER_TYPE=	clang
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
-CPP=	${LOCALBASE}/bin/clang-cpp33
-CC=	${LOCALBASE}/bin/clang33
-CXX=	${LOCALBASE}/bin/clang++33
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
+CPP=	${LOCALBASE}/bin/clang-cpp34
+CC=	${LOCALBASE}/bin/clang34
+CXX=	${LOCALBASE}/bin/clang++34
 CHOSEN_COMPILER_TYPE=	clang
 .if ${OSVERSION} < 900033
 USE_BINUTILS=	yes
@@ -176,11 +176,11 @@ CC=	clang
 CXX=	clang++
 CHOSEN_COMPILER_TYPE=	clang
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
 CHOSEN_COMPILER_TYPE=	clang
-CPP=	${LOCALBASE}/bin/clang-cpp33
-CC=	${LOCALBASE}/bin/clang33
-CXX=	${LOCALBASE}/bin/clang++33
+CPP=	${LOCALBASE}/bin/clang-cpp34
+CC=	${LOCALBASE}/bin/clang34
+CXX=	${LOCALBASE}/bin/clang++34
 .if ${OSVERSION} < 900033
 USE_BINUTILS=	yes
 LDFLAGS+=	-B${LOCALBASE}/bin
@@ -202,11 +202,11 @@ CC=	clang
 CXX=	clang++
 CHOSEN_COMPILER_TYPE=	clang
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
 CHOSEN_COMPILER_TYPE=	clang
-CPP=	${LOCALBASE}/bin/clang-cpp33
-CC=	${LOCALBASE}/bin/clang33
-CXX=	${LOCALBASE}/bin/clang++33
+CPP=	${LOCALBASE}/bin/clang-cpp34
+CC=	${LOCALBASE}/bin/clang34
+CXX=	${LOCALBASE}/bin/clang++34
 .if ${OSVERSION} < 900033
 USE_BINUTILS=	yes
 LDFLAGS+=	-B${LOCALBASE}/bin
