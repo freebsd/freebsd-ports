@@ -13,8 +13,7 @@ COMMENT=	Fast and simple WSGI-framework for small web-applications
 
 LICENSE=	MIT
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
