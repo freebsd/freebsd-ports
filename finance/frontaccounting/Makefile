@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	frontaccounting
-DISTVERSION=	2.3.21
+DISTVERSION=	2.3.22
 CATEGORIES=	finance www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/FrontAccounting-2.3/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ek@purplehat.org
 COMMENT=	Simple, powerful system for the entire ERP chain
 
 LICENSE=	GPLv3
@@ -23,13 +23,14 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-deinstall pkg-message
 
-OPTIONS_DEFINE=	APACHE LIGHTTPD MYSQL
+OPTIONS_DEFINE=	APACHE LIGHTTPD MYSQL NLS
 OPTIONS_DEFAULT=	APACHE MYSQL
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	24+
+USE_APACHE_RUN=	22+
+WANT_PHP_WEB=yes
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTTPD}
