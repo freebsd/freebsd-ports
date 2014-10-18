@@ -48,8 +48,8 @@ include/libxml2/libxml/xmlwriter.h
 include/libxml2/libxml/xpath.h
 include/libxml2/libxml/xpathInternals.h
 include/libxml2/libxml/xpointer.h
+lib/cmake/libxml2/libxml2-config.cmake
 lib/libxml2.a
-lib/libxml2.la
 lib/libxml2.so
 lib/libxml2.so.2
 lib/libxml2.so.%%LIBVERSION%%
@@ -60,5 +60,3 @@ man/man1/xml2-config.1.gz
 man/man1/xmlcatalog.1.gz
 man/man1/xmllint.1.gz
 man/man3/libxml.3.gz
-@dirrm include/libxml2/libxml
-@dirrm include/libxml2
