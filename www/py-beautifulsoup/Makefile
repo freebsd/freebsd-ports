@@ -11,8 +11,7 @@ DISTNAME=	beautifulsoup4-${PORTVERSION}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	HTML/XML Parser for Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
