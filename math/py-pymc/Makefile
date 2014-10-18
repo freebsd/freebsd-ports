@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymc
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	2.3.3
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
@@ -29,9 +28,10 @@ RUN_DEPENDS=	${PYNUMPY} \
 OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+LDFLAGS+=	-shared
+
+USES=			python
+USE_PYTHON=		distutils autoplist
 PORTDOCS=	*
 
 post-install:
@@ -43,6 +43,5 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/Container_values.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/LazyFunction.so
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.rst ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
