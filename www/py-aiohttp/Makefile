@@ -22,9 +22,8 @@ OPTIONS_DEFINE=		TESTS
 TESTS_DESC=		Install tools for test suite
 TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
 
-USE_PYTHON=		3.3+
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:3.3+
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
 
