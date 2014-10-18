@@ -10,7 +10,7 @@ DISTNAME=	pyWeather
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python script that downloads weather data and can be cronned
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 PLIST_FILES=	bin/pyWeather
 

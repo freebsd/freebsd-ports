@@ -20,8 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/pyatspi/__init__.py:${PORTSDIR}/accessibility/at-spi \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
-USES=		gmake gettext pkgconfig tar:bzip2
-USE_PYTHON=	2
+USES=		gmake gettext pkgconfig python:2 tar:bzip2
 USE_GNOME=	gnomeprefix libgnomeui gnomespeech pygnome2 \
 		pygnomedesktop
 INSTALLS_ICONS=	yes

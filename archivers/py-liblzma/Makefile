@@ -15,10 +15,8 @@ COMMENT=	Python binding for the LZMA compression library
 
 LICENSE=	LGPL3
 
-USES=			pkgconfig tar:bzip2
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		pkgconfig python tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/pc_cflags = .*/pc_cflags = ""/' \
