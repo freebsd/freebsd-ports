@@ -12,9 +12,8 @@ DISTNAME=	BeautifulSoup-${PORTVERSION}
 MAINTAINER=	mwm@mired.org
 COMMENT=	HTML/XML Parser for Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	BeautifulSoup
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py[0-9]*-beautifulsoup-3.0.*
 
