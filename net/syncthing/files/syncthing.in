@@ -30,7 +30,6 @@ load_rc_config $name
 : ${syncthing_group:="syncthing"}
 : ${syncthing_dir:="/var/tmp/syncthing"}
 
-export STNORESTART=true
 export HOME=${syncthing_dir} 
 
 pidfile=/var/run/syncthing.pid
