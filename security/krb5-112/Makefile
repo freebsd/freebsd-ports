@@ -1,10 +1,11 @@
 # Created by: nectar@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME=		krb5-112
+PORTNAME=		krb5
 PORTVERSION=		1.12.2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
+PKGNAMESUFFIX=		-112
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
 

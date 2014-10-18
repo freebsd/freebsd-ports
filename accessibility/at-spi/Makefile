@@ -18,10 +18,9 @@ USES+=		tar:bzip2
 
 RUN_DEPENDS=	at-spi2-atk>2.6.0:${PORTSDIR}/accessibility/at-spi2-atk
 
-USES+=		gmake gettext libtool:oldver pathfix pkgconfig
+USES+=		gmake gettext libtool:oldver pathfix pkgconfig python:2
 USE_GNOME=	gnomehier intlhack gtk20 gconf2 libbonobo
 USE_XORG=	x11 xtst
-USE_PYTHON=	2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static

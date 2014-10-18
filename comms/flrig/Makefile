@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	flrig
-PORTVERSION=	1.3.16
-PORTREVISION=	1
+PORTVERSION=	1.3.17
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/flrig/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	shurd
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ham Radio rig control program, cooperates with fldigi
 
 LICENSE=	GPLv2

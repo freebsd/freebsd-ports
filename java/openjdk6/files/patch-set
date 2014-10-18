@@ -1460,7 +1460,16 @@
  
          // Add the appropriate client or server subdir
          len = strlen(buf);
-@@ -2817,7 +2941,7 @@
+@@ -2752,7 +2876,7 @@
+       if (::write(fd, "", 1) == 1) {
+         mmap(base, size,
+              PROT_READ|PROT_WRITE|PROT_EXEC,
+-             MAP_PRIVATE|MAP_FIXED|MAP_NORESERVE, fd, 0);
++             MAP_PRIVATE|MAP_FIXED, fd, 0);
+       }
+     }
+     ::close(fd);
+@@ -2815,7 +2939,7 @@
  }
  
  void os::free_memory(char *addr, size_t bytes, size_t alignment_hint) {
@@ -1469,7 +1478,23 @@
  }
  
  void os::numa_make_global(char *addr, size_t bytes) {
-@@ -2997,9 +3121,10 @@
+@@ -2962,7 +3086,7 @@
+   return ::mprotect(addr, size, PROT_NONE) == 0;
+ #else
+   uintptr_t res = (uintptr_t) ::mmap(addr, size, PROT_NONE,
+-                MAP_PRIVATE|MAP_FIXED|MAP_NORESERVE|MAP_ANONYMOUS, -1, 0);
++                MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0);
+   return res  != (uintptr_t) MAP_FAILED;
+ #endif
+ }
+@@ -2989,15 +3113,16 @@
+   char * addr;
+   int flags;
+ 
+-  flags = MAP_PRIVATE | MAP_NORESERVE | MAP_ANONYMOUS;
++  flags = MAP_PRIVATE | MAP_ANONYMOUS;
+   if (fixed) {
+     assert((uintptr_t)requested_addr % os::Bsd::page_size() == 0, "unaligned address");
      flags |= MAP_FIXED;
    }
  

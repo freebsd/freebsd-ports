@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	irrlicht
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 CATEGORIES=	x11-toolkits graphics
-MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/${PORTVERSION:R}/${PORTVERSION}/
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance realtime 3D engine
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/readme.txt
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
@@ -30,68 +32,40 @@ EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserIn
 		11.PerPixelLighting 12.TerrainRendering 13.RenderToTexture 15.LoadIrrFile \
 		Demo
 
-OPTIONS_DEFINE=	DEBUG EXAMPLES JOYSTICK
-JOYSTICK_DESC=	Support for Linux Joystick
+OPTIONS_DEFINE=	DEBUG EXAMPLES
+
+DEBUG_MAKE_ENV=	NDEBUG=1
+
+BROKEN_sparc64=	Does not compile
 
 .include <bsd.port.options.mk>
 
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64")
+.if ${ARCH} == amd64 || ${ARCH} == ia64
 CFLAGS+=	-fPIC
 .endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_SUB+=	EXAMPLES=""
-.else
-PLIST_SUB+=	EXAMPLES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MJOYSTICK}
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
-HAVE_JOYSTICK=	true
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-MAKE_ENV+=	NDEBUG=1
-.endif
-
-post-extract:
-#	@${RM} ${WRKSRC}/media/Thumbs.db
 
 post-patch:
 	@${REINPLACE_CMD} -e '/#define.*_IRR_USE_NON_SYSTEM_JPEG_LIB_/ d' \
 		-e '/#define.*_IRR_USE_NON_SYSTEM_LIB_PNG_/ d' \
 		-e '/#define.*_IRR_USE_NON_SYSTEM_ZLIB_/ d' \
 		-e '/#define.*_IRR_USE_NON_SYSTEM_BZLIB_/ d' \
+		-e '/#define.*_IRR_COMPILE_WITH_JOYSTICK_EVENTS_/ d' \
 		${WRKSRC}/include/IrrCompileConfig.h
-.if !defined(HAVE_JOYSTICK)
-	@${REINPLACE_CMD} -e '/define.*_IRR_COMPILE_WITH_JOYSTICK_EVENTS_/ d' \
-		${WRKSRC}/include/IrrCompileConfig.h
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	cd ${WRKSRC}/include && \
 		${INSTALL_DATA} *.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libIrrlicht.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/FreeBSD/libIrrlicht.so.${SHARED_LIB_VER} \
+	${INSTALL_LIB} ${WRKSRC}/lib/FreeBSD/libIrrlicht.so.${SHARED_LIB_VER} \
 		${STAGEDIR}${PREFIX}/lib && ${LN} -s libIrrlicht.so.${SHARED_LIB_VER} \
 			${STAGEDIR}${PREFIX}/lib/libIrrlicht.so
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-.for DIRE in ${EXAMPLEDIRS}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${DIRE}
-	${INSTALL_DATA} ${WRKSRC}/examples/${DIRE}/Makefile \
-		${STAGEDIR}${EXAMPLESDIR}/${DIRE}
-	${FIND} ${WRKSRC}/examples/${DIRE} \( -name "*.cpp" -or -name "*.h" \) \
-		-exec ${INSTALL_DATA} "{}" ${STAGEDIR}${EXAMPLESDIR}/${DIRE} \;
-.endfor
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "${EXAMPLEDIRS}" ${STAGEDIR}${EXAMPLESDIR} "( -name Makefile -or -name *\.cpp -or -name *\.h )"
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/media
-	${FIND} ${WRKSRC}/media -type f \
-		-exec ${INSTALL_DATA} "{}" ${STAGEDIR}${EXAMPLESDIR}/media \;
+	cd ${WRKSRC}/media && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/media
 .endif
 
 .include <bsd.port.mk>

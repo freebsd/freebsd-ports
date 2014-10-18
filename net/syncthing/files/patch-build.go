@@ -10,14 +10,14 @@
 -		return s
 -	})
 -	return string(v)
-+	return string("v0.10.0")
++	return string("v0.10.1")
  }
  
  func buildStamp() int64 {
 -	bs := run("git", "show", "-s", "--format=%ct")
 -	s, _ := strconv.ParseInt(string(bs), 10, 64)
 -	return s
-+	return 1412769521
++	return 1413115780
  }
  
  func buildUser() string {

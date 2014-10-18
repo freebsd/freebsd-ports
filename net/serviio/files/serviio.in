@@ -32,11 +32,12 @@ stop_cmd="$command -stop"
 
 status_cmd=${name}_status
 serviio_status() {
-	serviio_pid=$(ps -aU ${serviio_user} | awk '/java/ {print $1}')
+	serviio_pid=$(ps -wwwaU ${serviio_user} | awk '/java.*org.serviio.MediaServer/ {print $1}')
 	if [ -n "${serviio_pid}" ]; then
 		echo "${name} is running as pid ${serviio_pid}"
 	else
 		echo "${name} is not running"
+		return 1
 	fi
 }
 

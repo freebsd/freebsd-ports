@@ -1,4 +1,4 @@
-etc/ebnetd.conf.sample
+@sample etc/ebnetd.conf.sample
 libexec/ebhtstat
 libexec/ebnstat
 libexec/ndtpstat
@@ -13,5 +13,4 @@ sbin/ebnupgrade
 sbin/ndtpcheck
 sbin/ndtpcontrol
 sbin/ndtpd
-@exec mkdir -m 0755 -p %%EBNETD_RUNDIR%%
-@dirrmtry %%EBNETD_RUNDIR%%
+@dir(,,0755) %%EBNETD_RUNDIR%%

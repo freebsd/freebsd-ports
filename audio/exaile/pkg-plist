@@ -22,6 +22,66 @@ lib/exaile/xl/dynamic.pyo
 lib/exaile/xl/event.py
 lib/exaile/xl/event.pyc
 lib/exaile/xl/event.pyo
+lib/exaile/xl/externals/__init__.py
+lib/exaile/xl/externals/__init__.pyc
+lib/exaile/xl/externals/__init__.pyo
+lib/exaile/xl/externals/_apev2.py
+lib/exaile/xl/externals/_apev2.pyc
+lib/exaile/xl/externals/_apev2.pyo
+lib/exaile/xl/externals/_base.py
+lib/exaile/xl/externals/_base.pyc
+lib/exaile/xl/externals/_base.pyo
+lib/exaile/xl/externals/_id3.py
+lib/exaile/xl/externals/_id3.pyc
+lib/exaile/xl/externals/_id3.pyo
+lib/exaile/xl/externals/_matroska.py
+lib/exaile/xl/externals/_matroska.pyc
+lib/exaile/xl/externals/_matroska.pyo
+lib/exaile/xl/externals/ape.py
+lib/exaile/xl/externals/ape.pyc
+lib/exaile/xl/externals/ape.pyo
+lib/exaile/xl/externals/asf.py
+lib/exaile/xl/externals/asf.pyc
+lib/exaile/xl/externals/asf.pyo
+lib/exaile/xl/externals/flac.py
+lib/exaile/xl/externals/flac.pyc
+lib/exaile/xl/externals/flac.pyo
+lib/exaile/xl/externals/mka.py
+lib/exaile/xl/externals/mka.pyc
+lib/exaile/xl/externals/mka.pyo
+lib/exaile/xl/externals/mod.py
+lib/exaile/xl/externals/mod.pyc
+lib/exaile/xl/externals/mod.pyo
+lib/exaile/xl/externals/mp3.py
+lib/exaile/xl/externals/mp3.pyc
+lib/exaile/xl/externals/mp3.pyo
+lib/exaile/xl/externals/mp4.py
+lib/exaile/xl/externals/mp4.pyc
+lib/exaile/xl/externals/mp4.pyo
+lib/exaile/xl/externals/mpc.py
+lib/exaile/xl/externals/mpc.pyc
+lib/exaile/xl/externals/mpc.pyo
+lib/exaile/xl/externals/ogg.py
+lib/exaile/xl/externals/ogg.pyc
+lib/exaile/xl/externals/ogg.pyo
+lib/exaile/xl/externals/sid.py
+lib/exaile/xl/externals/sid.pyc
+lib/exaile/xl/externals/sid.pyo
+lib/exaile/xl/externals/speex.py
+lib/exaile/xl/externals/speex.pyc
+lib/exaile/xl/externals/speex.pyo
+lib/exaile/xl/externals/tags.py
+lib/exaile/xl/externals/tags.pyc
+lib/exaile/xl/externals/tags.pyo
+lib/exaile/xl/externals/tta.py
+lib/exaile/xl/externals/tta.pyc
+lib/exaile/xl/externals/tta.pyo
+lib/exaile/xl/externals/wav.py
+lib/exaile/xl/externals/wav.pyc
+lib/exaile/xl/externals/wav.pyo
+lib/exaile/xl/externals/wv.py
+lib/exaile/xl/externals/wv.pyc
+lib/exaile/xl/externals/wv.pyo
 lib/exaile/xl/formatter.py
 lib/exaile/xl/formatter.pyc
 lib/exaile/xl/formatter.pyo
@@ -82,6 +142,9 @@ lib/exaile/xl/metadata/sid.pyo
 lib/exaile/xl/metadata/speex.py
 lib/exaile/xl/metadata/speex.pyc
 lib/exaile/xl/metadata/speex.pyo
+lib/exaile/xl/metadata/tags.py
+lib/exaile/xl/metadata/tags.pyc
+lib/exaile/xl/metadata/tags.pyo
 lib/exaile/xl/metadata/tta.py
 lib/exaile/xl/metadata/tta.pyc
 lib/exaile/xl/metadata/tta.pyo
@@ -133,6 +196,12 @@ lib/exaile/xl/player/pipe.pyo
 lib/exaile/xl/player/queue.py
 lib/exaile/xl/player/queue.pyc
 lib/exaile/xl/player/queue.pyo
+lib/exaile/xl/player/sink_osx.py
+lib/exaile/xl/player/sink_osx.pyc
+lib/exaile/xl/player/sink_osx.pyo
+lib/exaile/xl/player/sink_windows.py
+lib/exaile/xl/player/sink_windows.pyc
+lib/exaile/xl/player/sink_windows.pyo
 lib/exaile/xl/playlist.py
 lib/exaile/xl/playlist.pyc
 lib/exaile/xl/playlist.pyo
@@ -202,9 +271,6 @@ lib/exaile/xlgui/main.pyo
 lib/exaile/xlgui/menu.py
 lib/exaile/xlgui/menu.pyc
 lib/exaile/xlgui/menu.pyo
-lib/exaile/xlgui/oldmenu.py
-lib/exaile/xlgui/oldmenu.pyc
-lib/exaile/xlgui/oldmenu.pyo
 lib/exaile/xlgui/panel/__init__.py
 lib/exaile/xlgui/panel/__init__.pyc
 lib/exaile/xlgui/panel/__init__.pyo
@@ -220,15 +286,21 @@ lib/exaile/xlgui/panel/files.pyo
 lib/exaile/xlgui/panel/flatplaylist.py
 lib/exaile/xlgui/panel/flatplaylist.pyc
 lib/exaile/xlgui/panel/flatplaylist.pyo
+lib/exaile/xlgui/panel/menus.py
+lib/exaile/xlgui/panel/menus.pyc
+lib/exaile/xlgui/panel/menus.pyo
 lib/exaile/xlgui/panel/playlists.py
 lib/exaile/xlgui/panel/playlists.pyc
 lib/exaile/xlgui/panel/playlists.pyo
 lib/exaile/xlgui/panel/radio.py
 lib/exaile/xlgui/panel/radio.pyc
 lib/exaile/xlgui/panel/radio.pyo
-lib/exaile/xlgui/playlist.py
-lib/exaile/xlgui/playlist.pyc
-lib/exaile/xlgui/playlist.pyo
+lib/exaile/xlgui/panels.py
+lib/exaile/xlgui/panels.pyc
+lib/exaile/xlgui/panels.pyo
+lib/exaile/xlgui/playlist_container.py
+lib/exaile/xlgui/playlist_container.pyc
+lib/exaile/xlgui/playlist_container.pyo
 lib/exaile/xlgui/preferences/__init__.py
 lib/exaile/xlgui/preferences/__init__.pyc
 lib/exaile/xlgui/preferences/__init__.pyo
@@ -301,7 +373,7 @@ lib/exaile/xlgui/widgets/queue.pyo
 lib/exaile/xlgui/widgets/rating.py
 lib/exaile/xlgui/widgets/rating.pyc
 lib/exaile/xlgui/widgets/rating.pyo
-man/man1/exaile.1.gz
+share/appdata/exaile.appdata.xml
 share/applications/exaile.desktop
 share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/data/images/16x16/artist.png
@@ -463,7 +535,6 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/bpm/__init__.py
 %%DATADIR%%/plugins/bpm/__init__.pyc
 %%DATADIR%%/plugins/bpm/__init__.pyo
-%%DATADIR%%/plugins/bpm/bpm.glade
 %%DATADIR%%/plugins/cd/PLUGININFO
 %%DATADIR%%/plugins/cd/__init__.py
 %%DATADIR%%/plugins/cd/__init__.pyc
@@ -515,9 +586,6 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/contextinfo/inspector.pyc
 %%DATADIR%%/plugins/contextinfo/inspector.pyo
 %%DATADIR%%/plugins/contextinfo/loader.gif
-%%DATADIR%%/plugins/contextinfo/pylast.py
-%%DATADIR%%/plugins/contextinfo/pylast.pyc
-%%DATADIR%%/plugins/contextinfo/pylast.pyo
 %%DATADIR%%/plugins/currentsong/PLUGININFO
 %%DATADIR%%/plugins/currentsong/__init__.py
 %%DATADIR%%/plugins/currentsong/__init__.pyc
@@ -640,6 +708,14 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/grouptagger/gt_common.py
 %%DATADIR%%/plugins/grouptagger/gt_common.pyc
 %%DATADIR%%/plugins/grouptagger/gt_common.pyo
+%%DATADIR%%/plugins/grouptagger/gt_import.py
+%%DATADIR%%/plugins/grouptagger/gt_import.pyc
+%%DATADIR%%/plugins/grouptagger/gt_import.pyo
+%%DATADIR%%/plugins/grouptagger/gt_import.ui
+%%DATADIR%%/plugins/grouptagger/gt_mass.py
+%%DATADIR%%/plugins/grouptagger/gt_mass.pyc
+%%DATADIR%%/plugins/grouptagger/gt_mass.pyo
+%%DATADIR%%/plugins/grouptagger/gt_mass.ui
 %%DATADIR%%/plugins/grouptagger/gt_prefs.py
 %%DATADIR%%/plugins/grouptagger/gt_prefs.pyc
 %%DATADIR%%/plugins/grouptagger/gt_prefs.pyo
@@ -655,6 +731,10 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/history/history_preferences.pyc
 %%DATADIR%%/plugins/history/history_preferences.pyo
 %%DATADIR%%/plugins/history/history_preferences.ui
+%%DATADIR%%/plugins/icecast/PLUGININFO
+%%DATADIR%%/plugins/icecast/__init__.py
+%%DATADIR%%/plugins/icecast/__init__.pyc
+%%DATADIR%%/plugins/icecast/__init__.pyo
 %%DATADIR%%/plugins/inhibitsuspend/PLUGININFO
 %%DATADIR%%/plugins/inhibitsuspend/__init__.py
 %%DATADIR%%/plugins/inhibitsuspend/__init__.pyc
@@ -793,9 +873,6 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/lastfmlove/lastfmlove_preferences.pyc
 %%DATADIR%%/plugins/lastfmlove/lastfmlove_preferences.pyo
 %%DATADIR%%/plugins/lastfmlove/lastfmlove_preferences.ui
-%%DATADIR%%/plugins/lastfmlove/pylast.py
-%%DATADIR%%/plugins/lastfmlove/pylast.pyc
-%%DATADIR%%/plugins/lastfmlove/pylast.pyo
 %%DATADIR%%/plugins/librivox/PLUGININFO
 %%DATADIR%%/plugins/librivox/__init__.py
 %%DATADIR%%/plugins/librivox/__init__.pyc
@@ -809,10 +886,10 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/librivox/librivoxsearch.py
 %%DATADIR%%/plugins/librivox/librivoxsearch.pyc
 %%DATADIR%%/plugins/librivox/librivoxsearch.pyo
-%%DATADIR%%/plugins/lyricsfly/PLUGININFO
-%%DATADIR%%/plugins/lyricsfly/__init__.py
-%%DATADIR%%/plugins/lyricsfly/__init__.pyc
-%%DATADIR%%/plugins/lyricsfly/__init__.pyo
+%%DATADIR%%/plugins/lyricsmania/PLUGININFO
+%%DATADIR%%/plugins/lyricsmania/__init__.py
+%%DATADIR%%/plugins/lyricsmania/__init__.pyc
+%%DATADIR%%/plugins/lyricsmania/__init__.pyo
 %%DATADIR%%/plugins/lyricsviewer/PLUGININFO
 %%DATADIR%%/plugins/lyricsviewer/__init__.py
 %%DATADIR%%/plugins/lyricsviewer/__init__.pyc
@@ -850,6 +927,10 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/minimode/minimode_preferences.pyc
 %%DATADIR%%/plugins/minimode/minimode_preferences.pyo
 %%DATADIR%%/plugins/minimode/minimode_preferences.ui
+%%DATADIR%%/plugins/mono/PLUGININFO
+%%DATADIR%%/plugins/mono/__init__.py
+%%DATADIR%%/plugins/mono/__init__.pyc
+%%DATADIR%%/plugins/mono/__init__.pyo
 %%DATADIR%%/plugins/moodbar/PLUGININFO
 %%DATADIR%%/plugins/moodbar/__init__.py
 %%DATADIR%%/plugins/moodbar/__init__.pyc
@@ -941,6 +1022,23 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/osd/osd_preferences.pyc
 %%DATADIR%%/plugins/osd/osd_preferences.pyo
 %%DATADIR%%/plugins/osd/osd_preferences.ui
+%%DATADIR%%/plugins/playlistanalyzer/PLUGININFO
+%%DATADIR%%/plugins/playlistanalyzer/__init__.py
+%%DATADIR%%/plugins/playlistanalyzer/__init__.pyc
+%%DATADIR%%/plugins/playlistanalyzer/__init__.pyo
+%%DATADIR%%/plugins/playlistanalyzer/analyzer.ui
+%%DATADIR%%/plugins/playlistanalyzer/analyzer_dialog.py
+%%DATADIR%%/plugins/playlistanalyzer/analyzer_dialog.pyc
+%%DATADIR%%/plugins/playlistanalyzer/analyzer_dialog.pyo
+%%DATADIR%%/plugins/playlistanalyzer/ext/LICENSE
+%%DATADIR%%/plugins/playlistanalyzer/ext/d3.min.js
+%%DATADIR%%/plugins/playlistanalyzer/extending.txt
+%%DATADIR%%/plugins/playlistanalyzer/presets.py
+%%DATADIR%%/plugins/playlistanalyzer/presets.pyc
+%%DATADIR%%/plugins/playlistanalyzer/presets.pyo
+%%DATADIR%%/plugins/playlistanalyzer/templates/bar_chart.tmpl.html
+%%DATADIR%%/plugins/playlistanalyzer/templates/concept_map.tmpl.html
+%%DATADIR%%/plugins/playlistanalyzer/templates/force.tmpl.html
 %%DATADIR%%/plugins/podcasts/PLUGININFO
 %%DATADIR%%/plugins/podcasts/__init__.py
 %%DATADIR%%/plugins/podcasts/__init__.pyc
@@ -977,6 +1075,10 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/shutdown/__init__.py
 %%DATADIR%%/plugins/shutdown/__init__.pyc
 %%DATADIR%%/plugins/shutdown/__init__.pyo
+%%DATADIR%%/plugins/somafm/PLUGININFO
+%%DATADIR%%/plugins/somafm/__init__.py
+%%DATADIR%%/plugins/somafm/__init__.pyc
+%%DATADIR%%/plugins/somafm/__init__.pyo
 %%DATADIR%%/plugins/streamripper/PLUGININFO
 %%DATADIR%%/plugins/streamripper/__init__.py
 %%DATADIR%%/plugins/streamripper/__init__.pyc
@@ -994,15 +1096,9 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/wikipedia/config.pyo
 %%DATADIR%%/plugins/wikipedia/data/preferences.ui
 %%DATADIR%%/plugins/wikipedia/data/wikipanel.ui
-%%DATADIR%%/plugins/wikipedia/plugin.py
-%%DATADIR%%/plugins/wikipedia/plugin.pyc
-%%DATADIR%%/plugins/wikipedia/plugin.pyo
 %%DATADIR%%/plugins/wikipedia/preferences.py
 %%DATADIR%%/plugins/wikipedia/preferences.pyc
 %%DATADIR%%/plugins/wikipedia/preferences.pyo
-%%DATADIR%%/plugins/wikipedia/sentencesplitter.py
-%%DATADIR%%/plugins/wikipedia/sentencesplitter.pyc
-%%DATADIR%%/plugins/wikipedia/sentencesplitter.pyo
 %%DATADIR%%/plugins/winmmkeys/PLUGININFO
 %%DATADIR%%/plugins/winmmkeys/__init__.py
 %%DATADIR%%/plugins/winmmkeys/__init__.pyc
@@ -1025,8 +1121,6 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/da/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/de/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/el/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/en/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/en_AU/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/exaile.mo
@@ -1035,10 +1129,8 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/eu/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/fo/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/frp/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/fy/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/gu/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/he/LC_MESSAGES/exaile.mo
@@ -1059,13 +1151,11 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/nb/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/os/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/si/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/exaile.mo
@@ -1074,147 +1164,11 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/sw/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/te/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/th/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ts/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/ur/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/zh/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/exaile.mo
 share/pixmaps/exaile.png
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ts/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ts
-%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tl
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/sw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sw
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/os/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/os
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fy
-%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/frp
-%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fo
-%%NLS%%@dirrmtry share/locale/csb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/csb
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-@dirrm %%DATADIR%%/plugins/xkeys
-@dirrm %%DATADIR%%/plugins/winmmkeys
-@dirrm %%DATADIR%%/plugins/wikipedia/data
-@dirrm %%DATADIR%%/plugins/wikipedia
-@dirrm %%DATADIR%%/plugins/streamripper
-@dirrm %%DATADIR%%/plugins/shutdown
-@dirrm %%DATADIR%%/plugins/screensaverpause
-@dirrm %%DATADIR%%/plugins/replaygain
-@dirrm %%DATADIR%%/plugins/previewdevice
-@dirrm %%DATADIR%%/plugins/podcasts
-@dirrm %%DATADIR%%/plugins/osd
-@dirrm %%DATADIR%%/plugins/notifyosd
-@dirrm %%DATADIR%%/plugins/notify
-@dirrm %%DATADIR%%/plugins/musicbrainzcovers/musicbrainzngs
-@dirrm %%DATADIR%%/plugins/musicbrainzcovers
-@dirrm %%DATADIR%%/plugins/multialarmclock/icons
-@dirrm %%DATADIR%%/plugins/multialarmclock
-@dirrm %%DATADIR%%/plugins/mpris
-@dirrm %%DATADIR%%/plugins/moodbar
-@dirrm %%DATADIR%%/plugins/minimode/icons
-@dirrm %%DATADIR%%/plugins/minimode
-@dirrm %%DATADIR%%/plugins/massstorage
-@dirrm %%DATADIR%%/plugins/mainmenubutton
-@dirrm %%DATADIR%%/plugins/lyricwiki
-@dirrm %%DATADIR%%/plugins/lyricsviewer/images
-@dirrm %%DATADIR%%/plugins/lyricsviewer
-@dirrm %%DATADIR%%/plugins/lyricsfly
-@dirrm %%DATADIR%%/plugins/librivox
-@dirrm %%DATADIR%%/plugins/lastfmlove/icons/48x48
-@dirrm %%DATADIR%%/plugins/lastfmlove/icons/32x32
-@dirrm %%DATADIR%%/plugins/lastfmlove/icons/22x22
-@dirrm %%DATADIR%%/plugins/lastfmlove/icons/16x16
-@dirrm %%DATADIR%%/plugins/lastfmlove/icons
-@dirrm %%DATADIR%%/plugins/lastfmlove
-@dirrm %%DATADIR%%/plugins/lastfmdynamic
-@dirrm %%DATADIR%%/plugins/lastfmcovers
-@dirrm %%DATADIR%%/plugins/karaoke
-@dirrm %%DATADIR%%/plugins/jamendo/ui
-@dirrm %%DATADIR%%/plugins/jamendo/simplejson/tests
-@dirrm %%DATADIR%%/plugins/jamendo/simplejson
-@dirrm %%DATADIR%%/plugins/jamendo
-@dirrm %%DATADIR%%/plugins/ipod
-@dirrm %%DATADIR%%/plugins/ipconsole/ipython_view
-@dirrm %%DATADIR%%/plugins/ipconsole
-@dirrm %%DATADIR%%/plugins/inhibitsuspend
-@dirrm %%DATADIR%%/plugins/history
-@dirrm %%DATADIR%%/plugins/grouptagger
-@dirrm %%DATADIR%%/plugins/gnomemmkeys
-@dirrm %%DATADIR%%/plugins/exfalso
-@dirrm %%DATADIR%%/plugins/equalizer
-@dirrm %%DATADIR%%/plugins/droptrayicon
-@dirrm %%DATADIR%%/plugins/desktopcover
-@dirrm %%DATADIR%%/plugins/daapserver/spydaap/parser
-@dirrm %%DATADIR%%/plugins/daapserver/spydaap
-@dirrm %%DATADIR%%/plugins/daapserver
-@dirrm %%DATADIR%%/plugins/daapclient
-@dirrm %%DATADIR%%/plugins/currentsong
-@dirrm %%DATADIR%%/plugins/contextinfo/extended/js
-@dirrm %%DATADIR%%/plugins/contextinfo/extended/images
-@dirrm %%DATADIR%%/plugins/contextinfo/extended
-@dirrm %%DATADIR%%/plugins/contextinfo/classic/js
-@dirrm %%DATADIR%%/plugins/contextinfo/classic/images
-@dirrm %%DATADIR%%/plugins/contextinfo/classic
-@dirrm %%DATADIR%%/plugins/contextinfo
-@dirrm %%DATADIR%%/plugins/cd
-@dirrm %%DATADIR%%/plugins/bpm
-@dirrm %%DATADIR%%/plugins/bookmarks
-@dirrm %%DATADIR%%/plugins/awn
-@dirrm %%DATADIR%%/plugins/audioscrobbler/icons/22x22
-@dirrm %%DATADIR%%/plugins/audioscrobbler/icons/16x16
-@dirrm %%DATADIR%%/plugins/audioscrobbler/icons
-@dirrm %%DATADIR%%/plugins/audioscrobbler
-@dirrm %%DATADIR%%/plugins/amazoncovers
-@dirrm %%DATADIR%%/plugins/alarmclock
-@dirrm %%DATADIR%%/plugins/abrepeat
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/data/ui/widgets
-@dirrm %%DATADIR%%/data/ui/preferences
-@dirrm %%DATADIR%%/data/ui/panel
-@dirrm %%DATADIR%%/data/ui
-@dirrm %%DATADIR%%/data/migrations/migration_200907100931
-@dirrm %%DATADIR%%/data/migrations
-@dirrm %%DATADIR%%/data/images/scalable
-@dirrm %%DATADIR%%/data/images/48x48
-@dirrm %%DATADIR%%/data/images/32x32
-@dirrm %%DATADIR%%/data/images/24x24
-@dirrm %%DATADIR%%/data/images/22x22
-@dirrm %%DATADIR%%/data/images/16x16
-@dirrm %%DATADIR%%/data/images
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm lib/exaile/xlgui/widgets
-@dirrm lib/exaile/xlgui/preferences
-@dirrm lib/exaile/xlgui/panel
-@dirrm lib/exaile/xlgui
-@dirrm lib/exaile/xl/trax
-@dirrm lib/exaile/xl/player
-@dirrm lib/exaile/xl/migrations/settings
-@dirrm lib/exaile/xl/migrations/database
-@dirrm lib/exaile/xl/migrations
-@dirrm lib/exaile/xl/metadata
-@dirrm lib/exaile/xl
-@dirrm lib/exaile
-@dirrm etc/xdg/exaile
-@dirrmtry etc/xdg

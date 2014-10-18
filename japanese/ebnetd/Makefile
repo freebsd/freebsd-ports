@@ -3,7 +3,7 @@
 
 PORTNAME=	ebnetd
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}
+CONFIGURE_ENV=	PERL=${PREFIX}/bin/perl
 
 # Local variables
 LOGDIR=		/var/log
@@ -26,5 +27,8 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	EBNETD_RUNDIR=${RUNDIR}/${PORTNAME}
 
 INFO=		ebnetd ebnetd-ja
+
+post-stage:
+	${MKDIR} -m 0755 ${STAGEDIR}${RUNDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

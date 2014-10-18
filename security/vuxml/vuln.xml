@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0642b064-56c4-11e4-8b87-bcaec565249c">
+    <topic>libxml2 -- Denial of service</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat reports:</p>
+	<blockquote cite="https://rhn.redhat.com/errata/RHSA-2014-1655.html">
+	  <p>A denial of service flaw was found in libxml2, a library
+	    providing support to read, modify and write XML and HTML
+	    files. A remote attacker could provide a specially crafted
+	    XML file that, when processed by an application using
+	    libxml2, would lead to excessive CPU consumption (denial of
+	    service) based on excessive entity substitutions, even if
+	    entity substitution was disabled, which is the parser default
+	    behavior.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3660</cvename>
+      <url>https://rhn.redhat.com/errata/RHSA-2014-1655.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-16</discovery>
+      <entry>2014-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6f825fa4-5560-11e4-a4c3-00a0986f28c4">
     <topic>drupal7 -- SQL injection</topic>
     <affects>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -22,8 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/erlang16/bin/erlc:${PORTSDIR}/lang/erlang-runtim
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
 GH_PROJECT=	leofs
-GH_TAGNAME=	1ea7bd5
-GH_COMMIT=	1ea7bd5
+GH_TAGNAME=	707b21b
+GH_COMMIT=	707b21b
 
 LEOFS_USER=	leofs
 LEOFS_GROUP=	leofs
@@ -69,11 +69,11 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang16/bin:${PATH}
 
 LEOFS_DEPS=	\
-	leo-project/leo_gateway=${PORTVERSION}?0157254:leo_gateway \
-	leo-project/leo_manager=${PORTVERSION}?ca5c0aa:leo_manager \
-	leo-project/leo_storage=${PORTVERSION}?1e21729:leo_storage \
+	leo-project/leo_gateway=${PORTVERSION}?606217b:leo_gateway \
+	leo-project/leo_manager=${PORTVERSION}?4fd2d11:leo_manager \
+	leo-project/leo_storage=${PORTVERSION}?1cdf0f5:leo_storage \
 	DeadZen/goldrush=0.1.6?71e6321:goldrush \
-	basho/cuttlefish=origin/develop?6b23fc4:cuttlefish \
+	basho/cuttlefish=origin/develop?c2c7679:cuttlefish \
 	basho/eleveldb=1.4.10?a84b18c:eleveldb \
 	basho/lager=2.0.3?b6b6ceb:lager \
 	basho/leveldb=1.4.10?be8f1f4:leveldb \
@@ -92,13 +92,13 @@ LEOFS_DEPS=	\
 	leo-project/leo_cache=0.6.0?39c8210:leo_cache \
 	leo-project/leo_commons=1.1.0?c1e6825:leo_commons \
 	leo-project/leo_dcerl=0.2.11?929fd59:leo_dcerl \
-	leo-project/leo_logger=1.1.2?7e74e43:leo_logger \
+	leo-project/leo_logger=1.1.3?a05cce4:leo_logger \
 	leo-project/leo_mcerl=0.4.1?addcda0:leo_mcerl \
 	leo-project/leo_mq=1.0.10?1a84c33:leo_mq \
 	leo-project/leo_object_storage=1.1.5?924ae78:leo_object_storage \
 	leo-project/leo_ordning_reda=0.10.9?eb168f0:leo_ordning_reda \
 	leo-project/leo_pod=0.6.2?cfd8557:leo_pod \
-	leo-project/leo_redundant_manager=1.8.9?afbb4dd:leo_redundant_manager \
+	leo-project/leo_redundant_manager=1.9.0?ea3e5e9:leo_redundant_manager \
 	leo-project/leo_rpc=0.8.10?5f55064:leo_rpc \
 	leo-project/leo_s3_libs=1.1.3?9df4f33:leo_s3_libs \
 	leo-project/leo_statistics=1.0.7?4bdb570:leo_statistics \
