@@ -1,6 +1,6 @@
---- ./src/scrypt.cpp.orig	2014-01-10 01:38:53.000000000 +0000
-+++ ./src/scrypt.cpp	2014-02-09 05:45:03.131006405 +0000
-@@ -33,6 +33,7 @@
+--- src/scrypt.cpp.orig	2014-08-24 15:09:34 UTC
++++ src/scrypt.cpp
+@@ -35,6 +35,7 @@
  #include <stdint.h>
  #include <string.h>
  #include <openssl/sha.h>
@@ -8,7 +8,7 @@
  
  #if defined(USE_SSE2) && !defined(USE_SSE2_ALWAYS)
  #ifdef _MSC_VER
-@@ -44,22 +45,6 @@
+@@ -46,22 +47,6 @@
  #endif
  #endif
  
