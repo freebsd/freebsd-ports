@@ -11,6 +11,8 @@ COMMENT=	Infrastructure to measure the execution time of R expressions
 
 LICENSE=	BSD3CLAUSE
 
+RUN_DEPENDS=	R-cran-ggplot2>0:${PORTSDIR}/graphics/R-cran-ggplot2
+
 USES=	cran:auto-plist
 
 .include <bsd.port.mk>
