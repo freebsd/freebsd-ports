@@ -21,9 +21,9 @@ _CLANG!=	if [ -f /usr/bin/clang ] ; then  /usr/bin/clang --version | head -1 | \
 		${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/' ; else ${ECHO} 0 ; fi
 
 .if ${_CLANG} < 33
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
-CC=		${LOCALBASE}/bin/clang33
-CXX=	${LOCALBASE}/bin/clang++33
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
+CC=		${LOCALBASE}/bin/clang34
+CXX=	${LOCALBASE}/bin/clang++34
 .else
 CC=		/usr/bin/clang
 CXX=	/usr/bin/clang++

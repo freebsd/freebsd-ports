@@ -38,10 +38,15 @@ POLARSSL_LIB_DEPENDS=		libpolarssl.so:${PORTSDIR}/security/polarssl
 post-extract:
 	@${CP} ${DISTDIR}/antlr-3.4-complete.jar ${WRKDIR}/antlr-complete.jar
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%WRKDIR%%|${WRKDIR}|' -e 's|-lrt||' \
 		${WRKSRC}/configure
+.if ${CHOSEN_COMPILER_TYPE} == clang && (${OSVERSION} < 902512 || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1000707))
+	@${REINPLACE_CMD} 's, -fms-extensions,,' ${WRKSRC}/configure
+.endif
 	@${REINPLACE_CMD} -e 's|-timezone||' \
 		${WRKSRC}/src/belle_sip_headers_impl.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
