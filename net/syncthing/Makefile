@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
