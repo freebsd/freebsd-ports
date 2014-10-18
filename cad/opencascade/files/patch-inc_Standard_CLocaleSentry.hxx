@@ -5,7 +5,7 @@
  //! since POSIX didn't declared such identifier.
  //! We check _GNU_SOURCE for glibc extensions here and it is always defined by g++ compiler.
 -#if defined(__APPLE__) || defined(_GNU_SOURCE) || defined(HAVE_XLOCALE_H)
-+#if defined(__APPLE__) || defined(_GNU_SOURCE) || (defined(__FreeBSD__) && (__FreeBSD_version < 910000)) || defined(HAVE_XLOCALE_H)
++#if defined(__APPLE__) || defined(_GNU_SOURCE) || (defined(__FreeBSD__) && (__FreeBSD_version > 910000)) || defined(HAVE_XLOCALE_H)
    #include <xlocale.h>
    #ifndef HAVE_XLOCALE_H
      #define HAVE_XLOCALE_H
