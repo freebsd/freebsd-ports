@@ -32,3 +32,30 @@
      } while (buffer[bytes_read] != '\n');
      buffer[bytes_read] = 0;
      // Ignore mappings that are not executable.
+@@ -187,7 +187,7 @@
+   void* reservation = mmap(OS::GetRandomMmapAddr(),
+                            request_size,
+                            PROT_NONE,
+-                           MAP_PRIVATE | MAP_ANON | MAP_NORESERVE,
++                           MAP_PRIVATE | MAP_ANON,
+                            kMmapFd,
+                            kMmapFdOffset);
+   if (reservation == MAP_FAILED) return;
+@@ -259,7 +259,7 @@
+   void* result = mmap(OS::GetRandomMmapAddr(),
+                       size,
+                       PROT_NONE,
+-                      MAP_PRIVATE | MAP_ANON | MAP_NORESERVE,
++                      MAP_PRIVATE | MAP_ANON,
+                       kMmapFd,
+                       kMmapFdOffset);
+ 
+@@ -287,7 +287,7 @@
+   return mmap(base,
+               size,
+               PROT_NONE,
+-              MAP_PRIVATE | MAP_ANON | MAP_NORESERVE | MAP_FIXED,
++              MAP_PRIVATE | MAP_ANON | MAP_FIXED,
+               kMmapFd,
+               kMmapFdOffset) != MAP_FAILED;
+ }
