@@ -13,10 +13,7 @@ DISTNAME=	ClientForm-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Client-side HTTP Form for Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	ClientForm
-
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
