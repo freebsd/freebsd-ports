@@ -1,15 +1,15 @@
---- source/Irrlicht/Makefile	2013-10-01 14:38:36.000000000 -0500
-+++ source/Irrlicht/Makefile	2013-10-01 14:45:15.000000000 -0500
+--- source/Irrlicht/Makefile.orig	2014-10-18 07:47:20 UTC
++++ source/Irrlicht/Makefile
 @@ -2,7 +2,7 @@
  VERSION_MINOR = 8
- VERSION_RELEASE = 0
- # Irrlicht Engine 1.8.0
+ VERSION_RELEASE = 1
+ # Irrlicht Engine 1.8.1
 -# Makefile for Linux
 +# Makefile for Linux/FreeBSD
  #
  # To use, just run:
  #
-@@ -56,23 +56,22 @@
+@@ -56,23 +56,20 @@
  EXTRAOBJ =
  LINKOBJ = $(IRRMESHOBJ) $(IRROBJ) $(IRRPARTICLEOBJ) $(IRRANIMOBJ) \
  	$(IRRVIDEOOBJ) $(IRRSWRENDEROBJ) $(IRRIOOBJ) $(IRROTHEROBJ) \
@@ -25,9 +25,8 @@
  CXXFLAGS += -Wall -pipe -fno-exceptions -fno-rtti -fstrict-aliasing
  ifndef NDEBUG
  CXXFLAGS += -g -D_DEBUG
- else
+-else
 -CXXFLAGS += -fexpensive-optimizations -O3
-+CXXFLAGS += 
  endif
  ifdef PROFILE
  CXXFLAGS += -pg
@@ -36,7 +35,7 @@
  
  sharedlib sharedlib_osx: CXXFLAGS += -fPIC
  sharedlib sharedlib_osx: CFLAGS += -fPIC
-@@ -83,13 +82,13 @@
+@@ -83,13 +80,13 @@
  endif
  
  #Linux specific options
@@ -54,7 +53,7 @@
  
  #OSX specific options
  staticlib_osx sharedlib_osx install_osx: SYSTEM = MacOSX
-@@ -117,13 +116,13 @@
+@@ -117,13 +114,13 @@
  
  ####################
  # All target, builds Irrlicht as static lib (libIrrlicht.a) and copies it into lib/Linux
