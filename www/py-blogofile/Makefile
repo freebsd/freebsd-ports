@@ -5,8 +5,7 @@ PORTNAME=	blogofile
 PORTVERSION=	0.7.1
 PORTREVISION=	3
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
-MASTER_SITE_SUBDIR=	source/B/Blogofile
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -24,8 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mako>0:${PORTSDIR}/textproc/py-mako \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:${PORTSDIR}/textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}docutils>0:${PORTSDIR}/textproc/py-docutils
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
