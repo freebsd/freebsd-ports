@@ -47,22 +47,19 @@ TITLE?=		My CVS Repository
 
 # Specify these directories in relative paths to ${PREFIX}.
 .if exists(${PREFIX}/www/cgi-bin)
-CGIDIR?=	www/cgi-bin
-ICONSDIR?=	www/icons
-CSSDIR?=	www/data/css
+DIRPREFIX=	www
+.elif exists(${PREFIX}/www/apache24/cgi-bin)
+DIRPREFIX=      www/apache24
 .elif exists(${PREFIX}/www/apache22/cgi-bin)
-CGIDIR?=	www/apache22/cgi-bin
-ICONSDIR?=	www/apache22/icons
-CSSDIR?=	www/apache22/data/css
+DIRPREFIX=	www/apache22
 .elif exists(${PREFIX}/apache/cgi-bin)
-CGIDIR?=	apache/cgi-bin
-ICONSDIR?=	apache/icons
-CSSDIR?=	apache/data/css
+DIRPREFIX=	apache
 .else
-CGIDIR?=	share/apache/cgi-bin
-ICONSDIR?=	share/apache/icons
-CSSDIR?=	share/apache/data/css
+DIRPREFIX=	share/apache
 .endif
+CGIDIR?=        ${DIRPREFIX}/cgi-bin
+ICONSDIR?=      ${DIRPREFIX}/icons
+CSSDIR?=        ${DIRPREFIX}/data/css
 
 CONFFILES=	cvsweb.conf \
 		cvsweb.conf-freebsd \
@@ -70,7 +67,8 @@ CONFFILES=	cvsweb.conf \
 		cvsweb.conf-netbsd \
 		cvsweb.conf-ruby
 
-PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}" CSSDIR="${CSSDIR}"
+PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}" CSSDIR="${CSSDIR}" \
+		DIRPREFIX="${DIRPREFIX}"
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX="${PREFIX}" DOCSDIR="${DOCSDIR}"

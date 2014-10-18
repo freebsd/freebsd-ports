@@ -3,13 +3,11 @@ etc/cvsweb/cvsweb.conf-freebsd.dist
 etc/cvsweb/cvsweb.conf-openbsd.dist
 etc/cvsweb/cvsweb.conf-netbsd.dist
 etc/cvsweb/cvsweb.conf-ruby.dist
-@dirrm etc/cvsweb
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvsweb-httpd.conf
 %%CGIDIR%%/cvsweb.cgi
 %%ICONSDIR%%/cvsweb/back.gif
@@ -20,14 +18,8 @@ etc/cvsweb/cvsweb.conf-ruby.dist
 %%ICONSDIR%%/cvsweb/minigraph.png
 %%ICONSDIR%%/cvsweb/minitext.gif
 %%ICONSDIR%%/cvsweb/text.gif
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%ICONSDIR%%/cvsweb
 %%CSSDIR%%/cvsweb/cvsweb.css
-@dirrm %%CSSDIR%%/cvsweb
 share/enscript/hl/lang_cvsweb.st
 share/enscript/hl/lang_cvsweb_diff.st
-@dirrmtry %%CGIDIR%%
-@dirrmtry %%CSSDIR%%
-@dirrmtry share/apache/data
-@dirrmtry %%ICONSDIR%%
-@dirrmtry share/apache
+@dir %%DIRPREFIX%%/data
+@dir %%DIRPREFIX%%
