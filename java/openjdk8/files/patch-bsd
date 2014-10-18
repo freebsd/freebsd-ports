@@ -941,7 +941,34 @@
    SEM_INIT(_semaphore, 0);
  }
  
-@@ -2746,6 +2813,7 @@
+@@ -2128,7 +2195,7 @@
+       if (::write(fd, "", 1) == 1) {
+         mmap(base, size,
+              PROT_READ|PROT_WRITE|PROT_EXEC,
+-             MAP_PRIVATE|MAP_FIXED|MAP_NORESERVE, fd, 0);
++             MAP_PRIVATE|MAP_FIXED, fd, 0);
+       }
+     }
+     ::close(fd);
+@@ -2238,7 +2305,7 @@
+   return ::mprotect(addr, size, PROT_NONE) == 0;
+ #else
+   uintptr_t res = (uintptr_t) ::mmap(addr, size, PROT_NONE,
+-                MAP_PRIVATE|MAP_FIXED|MAP_NORESERVE|MAP_ANONYMOUS, -1, 0);
++                MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0);
+   return res  != (uintptr_t) MAP_FAILED;
+ #endif
+ }
+@@ -2265,7 +2332,7 @@
+   char * addr;
+   int flags;
+ 
+-  flags = MAP_PRIVATE | MAP_NORESERVE | MAP_ANONYMOUS;
++  flags = MAP_PRIVATE | MAP_ANONYMOUS;
+   if (fixed) {
+     assert((uintptr_t)requested_addr % os::Bsd::page_size() == 0, "unaligned address");
+     flags |= MAP_FIXED;
+@@ -2743,6 +2810,7 @@
    return OS_OK;
  #elif defined(__FreeBSD__)
    int ret = pthread_setprio(thread->osthread()->pthread_id(), newpri);
