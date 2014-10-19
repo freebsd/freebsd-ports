@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-solr
-PORTVERSION=	4.8.1
+PORTVERSION=	4.10.1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	lucene/solr/${PORTVERSION}
@@ -19,10 +19,12 @@ USES=	shebangfix tar:tgz
 SHEBANG_FILES=	example/etc/create-solrtest.keystore.sh
 JAVA_VERSION=	1.7+
 NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 USE_JAVA=	yes
 PORTEXAMPLES=	*
 LATEST_LINK=	apache-solr
+USE_RC_SUBR=	solr
 
 do-install:
 	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${JAVAJARDIR}
