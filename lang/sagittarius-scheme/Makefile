@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sagittarius
-PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTVERSION=	0.5.9
 CATEGORIES=	lang
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
 		${MASTER_SITE_LOCAL}
@@ -20,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libffi.pc:${PORTSDIR}/devel/libffi
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi \
 		libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
 
+USE_LDCONFIG=	yes
 USES=		cmake gmake
 ONLY_FOR_ARCHS=	amd64 i386
 MAKE_JOBS_UNSAFE=	yes
