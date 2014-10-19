@@ -1,8 +1,28 @@
---- CMakeLists.txt.orig	2011-02-15 21:05:40.000000000 +0100
-+++ CMakeLists.txt	2011-02-17 21:52:49.000000000 +0100
-@@ -270,10 +270,6 @@
+--- CMakeLists.txt.orig	2014-08-15 07:06:59 UTC
++++ CMakeLists.txt
+@@ -62,8 +62,8 @@
+     SET(LIBNAME openal)
  
-     CHECK_LIBRARY_EXISTS(pthread pthread_setschedparam "" HAVE_PTHREAD_SETSCHEDPARAM)
+     # These are needed on non-Windows systems for extra features
+-    ADD_DEFINITIONS(-D_GNU_SOURCE=1 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700)
+-    SET(CMAKE_REQUIRED_FLAGS "${CMAKE_REQUIRED_FLAGS} -D_GNU_SOURCE=1 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700")
++    ADD_DEFINITIONS(-D_GNU_SOURCE=1)
++    SET(CMAKE_REQUIRED_FLAGS "${CMAKE_REQUIRED_FLAGS} -D_GNU_SOURCE=1")
+ ENDIF()
+ 
+ # Set defines for large file support
+@@ -186,7 +186,7 @@
+ # Check if we have C11 _Atomic
+ CHECK_C_SOURCE_COMPILES(
+ "#include <stdatomic.h>
+- int _Atomic foo;
++ const int _Atomic foo = ATOMIC_VAR_INIT(~0);
+  int main()
+  {
+      return atomic_load(&foo);
+@@ -523,10 +523,6 @@
+ 
+     CHECK_SYMBOL_EXISTS(pthread_mutex_timedlock pthread.h HAVE_PTHREAD_MUTEX_TIMEDLOCK)
  
 -    CHECK_LIBRARY_EXISTS(rt clock_gettime "" HAVE_LIBRT)
 -    IF(HAVE_LIBRT)
@@ -11,7 +31,7 @@
  ENDIF()
  
  # Check for a 64-bit type
-@@ -502,7 +498,7 @@
+@@ -1108,7 +1104,7 @@
          DESTINATION include/AL
  )
  INSTALL(FILES "${OpenAL_BINARY_DIR}/openal.pc"

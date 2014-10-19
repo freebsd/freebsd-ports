@@ -1,15 +1,16 @@
 bin/makehrtf
+%%CONFIG%%bin/alsoft-config
 bin/openal-info
 %%ETCDIR%%/alsoftrc.sample
+%%ETCDIR%%/hrtf/default-44100.mhr
+%%ETCDIR%%/hrtf/default-48000.mhr
 include/AL/al.h
 include/AL/alc.h
 include/AL/alext.h
 include/AL/efx.h
 include/AL/efx-creative.h
 include/AL/efx-presets.h
-lib/libopenal.so.1.15.1
+lib/libopenal.so.1.16.0
 lib/libopenal.so.1
 lib/libopenal.so
 libdata/pkgconfig/openal.pc
-@dirrmtry include/AL
-@dirrmtry %%ETCDIR%%
