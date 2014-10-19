@@ -3,7 +3,7 @@
 
 PORTNAME=	asterisk-stat
 PORTVERSION=	2.0.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.iij.ad.jp/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
@@ -38,7 +38,8 @@ USE_PHP+=	${ASTERISKSTATDB}
 EXTRA_PATCHES+=	${FILESDIR}/${ASTERISKSTATDB}__patch-cdr.php \
 		${FILESDIR}/${ASTERISKSTATDB}__patch-defines.php
 PLIST_SUB+=	ASTERISKDIR=${ASTERISKDIR:S,^${PREFIX}/,,} \
-		ASTERISKSTATDB=${ASTERISKSTATDB}
+		ASTERISKSTATDB=${ASTERISKSTATDB} \
+		WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 post-patch:
 	@${MV} ${WRKSRC}/images/print.css ${WRKSRC}/css
@@ -55,6 +56,5 @@ do-install:
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${ASTERISKDIR})
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/asterisk
 	${INSTALL_DATA} ${FILESDIR}/cdr_${ASTERISKSTATDB}.tbl ${STAGEDIR}${PREFIX}/etc/asterisk
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${ASTERISKDIR}
 
 .include <bsd.port.mk>
