@@ -12,9 +12,8 @@ COMMENT=	Concurrent FreeBSD port builder
 
 LICENSE=	BSD2CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USES=		tar:xz
+USE_PYTHON=	distutils
+USES=		python tar:xz
 
 PORTDOCS=	BUGS ChangeLog COPYRIGHT README
 

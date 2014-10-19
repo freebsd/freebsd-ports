@@ -14,8 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:${PORTSDIR}/japanese/skk-jisyo
 LIB_DEPENDS=	libskk.so:${PORTSDIR}/japanese/libskk \
 		libibus-1.0.so:${PORTSDIR}/textproc/ibus
 
-USE_PYTHON=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig python
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share

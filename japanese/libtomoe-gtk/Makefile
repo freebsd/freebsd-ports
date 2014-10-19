@@ -31,7 +31,7 @@ PLIST_SUB+=	GUCHARMAP="@comment "
 #.endif
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/pytomoe.pc)
-USE_PYTHON=	yes
+USES+=		python
 CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
 		pyexecdir=${PYTHON_SITELIBDIR}
 PLIST_SUB+=	PYTHON=""

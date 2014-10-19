@@ -16,8 +16,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/zinnia.py:${PORTSDIR}/japanese/py-zinnia
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	${PORTNAME}_python
 
 .include <bsd.port.mk>
