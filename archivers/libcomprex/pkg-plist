@@ -196,7 +196,3 @@ man/man3/cxWrite.3.gz
 share/aclocal/libcomprex.m4
 %%NLS%%share/locale/it/LC_MESSAGES/libcomprex.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libcomprex.mo
-@comment @dirrm lib/comprex/scheme
-@dirrm lib/comprex/archive
-@dirrm lib/comprex
-@dirrm include/libcomprex

@@ -27,4 +27,3 @@ man/man1/bzless.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/bzip2.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

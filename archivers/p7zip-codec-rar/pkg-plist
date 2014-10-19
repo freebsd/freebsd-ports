@@ -1,3 +1,1 @@
 libexec/p7zip/Codecs/Rar29.so
-@dirrm libexec/p7zip/Codecs
-@dirrmtry libexec/p7zip

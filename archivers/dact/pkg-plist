@@ -5,6 +5,3 @@ man/man1/dact.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/dact.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dact.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

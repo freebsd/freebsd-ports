@@ -18,4 +18,3 @@ lib/libquazip.so
 lib/libquazip.so.1
 lib/libquazip.so.1.0
 lib/libquazip.so.1.0.0
-@dirrm include/quazip

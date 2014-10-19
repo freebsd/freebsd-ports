@@ -19,4 +19,3 @@ man/man1/mar.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mar__types__c_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/structmar__pair.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

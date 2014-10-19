@@ -15,4 +15,3 @@ include/cabinet/queue.hpp
 lib/libcabinet.a
 lib/libcabinet.so
 lib/libcabinet.so.1
-@dirrm include/cabinet

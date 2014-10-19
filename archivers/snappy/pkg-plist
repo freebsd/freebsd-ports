@@ -13,4 +13,3 @@ lib/libsnappy.so.1.2.0
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/format_description.txt
 %%PORTDOCS%%%%DOCSDIR%%/framing_format.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

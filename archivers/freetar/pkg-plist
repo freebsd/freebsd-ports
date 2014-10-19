@@ -12,11 +12,3 @@ GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm/o
 GNUstep/Local/Applications/FreeTar.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/FreeTar.app/stamp.make
 GNUstep/Local/Tools/FreeTar
-@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm
-@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj
-@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj/Preferences.gorm
-@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/FreeTar.app/Resources
-@dirrm GNUstep/Local/Applications/FreeTar.app

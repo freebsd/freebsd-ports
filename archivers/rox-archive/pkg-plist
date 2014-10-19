@@ -36,8 +36,3 @@ apps/Archive/support.pyo
 apps/Archive/tests/testall.py
 apps/Archive/tests/testall.pyc
 apps/Archive/tests/testall.pyo
-@dirrm apps/Archive/tests
-@dirrm apps/Archive/Messages
-@dirrm apps/Archive/Help
-@dirrm apps/Archive
-@dirrmtry apps
