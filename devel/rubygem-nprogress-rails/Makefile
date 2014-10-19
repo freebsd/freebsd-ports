@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nprogress-rails
-PORTVERSION=	0.1.6.2
+PORTVERSION=	0.1.6.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
