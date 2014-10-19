@@ -1,12 +1,12 @@
+bin/dfc
+etc/xdg/dfc/dfcrc
+%%NLS%%etc/xdg/dfc/fr/dfcrc
+%%NLS%%man/fr/man1/dfc.1.gz
+man/man1/dfc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
-bin/dfc
-etc/xdg/dfc/dfcrc
-etc/xdg/dfc/fr/dfcrc
-man/fr/man1/dfc.1.gz
-man/man1/dfc.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/dfc.mo

@@ -44,7 +44,7 @@ include/xine/xmlparser.h
 lib/libxine.la
 lib/libxine.so
 lib/libxine.so.2
-lib/libxine.so.2.3.1
+lib/libxine.so.2.5.0
 lib/libxine-interface.la
 share/xine-lib/fonts/cetus-16.xinefont.gz
 share/xine-lib/fonts/cetus-20.xinefont.gz
@@ -106,6 +106,7 @@ share/xine-lib/fonts/serif-64.xinefont.gz
 %%PLUGINSDIR%%/xineplug_decode_gsm610.so
 %%WITH_IMAGEMAGICK%%%%PLUGINSDIR%%/xineplug_decode_image.so
 %%PLUGINSDIR%%/xineplug_decode_libjpeg.so
+%%PLUGINSDIR%%/xineplug_decode_libvpx.so
 %%PLUGINSDIR%%/xineplug_decode_lpcm.so
 %%PLUGINSDIR%%/xineplug_decode_mad.so
 %%PLUGINSDIR%%/xineplug_decode_mpeg2.so
@@ -230,14 +231,3 @@ share/aclocal/xine.m4
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libxine2.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/libxine2.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/libxine2.mo
-@dirrm include/xine
-@dirrm %%PLUGINSDIR%%/post
-@dirrmtry %%PLUGINSDIR%%
-@dirrmtry lib/xine/plugins
-@dirrmtry lib/xine
-@dirrm %%DOCSDIR%%/hackersguide
-@dirrm %%DOCSDIR%%
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
-@dirrm share/xine-lib/fonts
-@dirrm share/xine-lib

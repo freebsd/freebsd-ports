@@ -7,7 +7,19 @@ bin/pmd
 %%DATADIR%%/jaxen-1.1.1.jar
 %%DATADIR%%/jcommander-1.27.jar
 %%DATADIR%%/jdom-1.0.jar
-%%DATADIR%%/pmd-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-core-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-cpp-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-cs-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-fortran-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-go-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-java-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-javascript-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-jsp-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-php-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-plsql-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-ruby-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-vm-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-xml-%%PORTVERSION%%.jar
 %%DATADIR%%/rhino-1.7R3.jar
 %%DATADIR%%/saxon-9.1.0.8-dom.jar
 %%DATADIR%%/saxon-9.1.0.8.jar
@@ -15,4 +27,4 @@ bin/pmd
 %%DATADIR%%/xml-apis-1.3.02.jar
 %%DATADIR%%/xmlParserAPIs-2.6.2.jar
 %%DATADIR%%/xom-1.0.jar
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%

@@ -5,4 +5,4 @@ number has been stolen, ...). One important characteristic they
 must provide is the ability to survive a redirect (ie: display the
 message in a page after being redirected from a form submission).
 
-WWW:	http://python-rum.org/wiki/WebFlash
+WWW: http://python-rum.org/wiki/WebFlash

@@ -956,6 +956,7 @@
     SUBDIR += ssl-admin
     SUBDIR += sslscan
     SUBDIR += sslsniffer
+    SUBDIR += sslsplit
     SUBDIR += sslwrap
     SUBDIR += sssd
     SUBDIR += ssss

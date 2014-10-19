@@ -1,0 +1,3 @@
+%%DATADIR%%/jenkins.war
+@dirrmtry(%%JENKINS_USER%%,%%JENKINS_GROUP%%,) jenkins
+@dirrm %%DATADIR%%

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmc2
-PORTVERSION=	0.44
-PORTREVISION=	1
+PORTVERSION=	0.45
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -23,6 +22,8 @@ USE_GL=		glu
 USE_QT4=	gui opengl phonon qtestlib webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_SDL=	sdl
+
+CXXFLAGS+=	-I/usr/local/include/SDL/
 MAKE_ARGS=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
 		SYSCONFDIR="${PREFIX}/etc" ARCH="${OPSYS}" \
 		CC_FLAGS="${CFLAGS} -DUSE_FILE32API" \
@@ -43,6 +44,8 @@ post-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	@(cd ${WRKSRC}/qmc2/inst; ${SED} -e 's|DATADIR|${PREFIX}/share|' \
 		< qmc2.ini.template > qmc2.ini)
+	@${REINPLACE_CMD} -e 's/bash/sh/' ${WRKDIR}/qmc2/scripts/sdl-libs.sh \
+		${WRKDIR}/qmc2-sdlmess/scripts/sdl-libs.sh
 
 do-install:
 	(cd ${WRKSRC}/qmc2 && ${INSTALL_PROGRAM} qmc2-sdlmame \
