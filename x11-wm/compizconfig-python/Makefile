@@ -17,8 +17,7 @@ BUILD_DEPENDS=	\
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USE_PYTHON=	2
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool pathfix pkgconfig python:2 tar:bzip2
 USE_GNOME=	glib20
 
 post-install:

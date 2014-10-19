@@ -18,11 +18,10 @@ USES=		tar:bzip2
 
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 
-USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
+USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig python:2
 USE_XORG=	xpm
 USE_GNOME=	gnomeprefix intlhack gnomedocutils gconf2 pygtk2 \
 		referencehack
-USE_PYTHON=	2
 INSTALLS_OMF=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

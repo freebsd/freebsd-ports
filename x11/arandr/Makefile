@@ -19,10 +19,8 @@ RUN_DEPENDS=	xrandr>0:${PORTSDIR}/x11/xrandr \
 
 OPTIONS_DEFINE=	DOCS
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-USES+=		gettext desktop-file-utils
+USE_PYTHON=	distutils
+USES+=		gettext desktop-file-utils python
 
 PORTDOCS=	ChangeLog NEWS README TODO
 

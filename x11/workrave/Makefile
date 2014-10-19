@@ -15,10 +15,9 @@ LICENSE=	GPLv3 # (or later)
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:${PORTSDIR}/devel/py-cheetah
 LIB_DEPENDS=	libgdome.so:${PORTSDIR}/textproc/gdome2
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig python
 USE_XORG=	recordproto x11 xext xmu xscrnsaver xtst
 USE_GNOME=	intlhack gconf2 gnomehier gtkmm24
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --enable-gconf --disable-gnome3 \
 		--disable-indicator

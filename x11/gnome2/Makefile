@@ -61,7 +61,7 @@ NO_MTREE=	yes
 NO_INSTALL=	yes
 
 .if !defined(GNOME_SLAVE)
-USE_PYTHON=	yes
+USES+=		python
 .endif
 
 .if !defined(GNOME_SLAVE) || ${.CURDIR:T}=="gnome2-lite"

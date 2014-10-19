@@ -13,8 +13,7 @@ COMMENT=	MIME type editor for the ROX desktop
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
+USES=		python tar:bzip2
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

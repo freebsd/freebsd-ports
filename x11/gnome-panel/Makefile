@@ -23,12 +23,11 @@ LIB_DEPENDS=	libgweather.so:${PORTSDIR}/net/libgweather \
 CONFLICTS=	gnome-panel-3.[0-9]*
 
 USE_XORG=	ice sm x11 xau xrandr
-USE_PYTHON=	2
 INSTALLS_OMF=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USES+=		gettext gmake libtool:keepla pathfix pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig python:2
 USE_GNOME=	gnomeprefix intlhack gnomedesktop libwnck gnomemenus \
 		gnomedocutils referencehack librsvg2
 GNU_CONFIGURE=	yes

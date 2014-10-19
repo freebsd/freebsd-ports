@@ -23,13 +23,12 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
-USES=		fam gettext iconv:translit pathfix pkgconfig \
+USES=		fam gettext iconv:translit pathfix pkgconfig python:2 \
 		shared-mime-info shebangfix
 SHEBANG_FILES=	doc/asciidoc/asciidoc.py
 python_OLD_CMD=	${SETENV} python
 python_CMD=	${PYTHON_CMD}
 USE_XORG=	xcomposite xft xinerama xpm xrandr
-USE_PYTHON=	2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PEKWM_CXXFLAGS="${CXXFLAGS}" \

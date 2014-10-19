@@ -63,7 +63,7 @@ WITH_GNOME=	yes
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 USE_GNOME+=	pygnomedesktop
 PLIST_SUB+=	PYTHON=""
 .else

@@ -14,8 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-USES=		gmake tar:xz
-USE_PYTHON_BUILD=	yes
+USES=		gmake python:build tar:xz
 
 PLIST_FILES=	%%DATADIR%%/ko_KR.aff \
 		%%DATADIR%%/ko_KR.dic

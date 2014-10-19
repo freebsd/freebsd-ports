@@ -10,8 +10,7 @@ MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Start gnome-terminal from a list of configured profiles (incl. Applet)
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
+USES=		python tar:bzip2
 USE_GNOME=	pygnome2 pygnomeextras gnomeprefix
 
 do-build:

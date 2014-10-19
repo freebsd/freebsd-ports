@@ -13,7 +13,7 @@ COMMENT=	Various clock displays for Gnome 2.x
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
-USE_PYTHON=	2
+USES=		python:2
 
 SUB_FILES=	pkg-message
 SUB_LIST=	NAME="${NAME}"

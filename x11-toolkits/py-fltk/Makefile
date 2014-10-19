@@ -15,9 +15,8 @@ COMMENT=	Python interface to FLTK window toolkit
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_XORG=	x11
 
 MAKE_ENV+=	FLTK_HOME=${LOCALBASE}/bin

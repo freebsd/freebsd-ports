@@ -13,9 +13,8 @@ COMMENT=	Easy, eye-candy, light, and powerful window manager for X11
 RUN_DEPENDS=	fvwm>=2.5:${PORTSDIR}/x11-wm/fvwm2 \
 		bash:${PORTSDIR}/shells/bash
 
-USES=		gettext gmake shebangfix
+USES=		gettext gmake python shebangfix
 SHEBANG_FILES=	addons/* bin/* fvwm/scripts/speed_value
-USE_PYTHON=	yes
 MAKE_ENV=	prefix="${PREFIX}" addondir="${DOCSDIR}/addons"
 PORTDOCS=	*
 

@@ -11,8 +11,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Python binding to the X server using xcb
 
 USE_XORG=	xcb
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
