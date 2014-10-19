@@ -108,19 +108,8 @@
 %%WWWDIR%%/rollover.js
 %%WWWDIR%%/search.php
 %%WWWDIR%%/tmp/.htaccess
-@exec if [ ! -f %D/%%WWWDIR%%/inc/config.php ]; then  install  -o root -g wheel -m 444 %D/%%WWWDIR%%/inc/config.php.sample %D/%%WWWDIR%%/inc/config.php;  /usr/sbin/chown www %D/%%WWWDIR%%/inc/config.php;  /bin/chmod u+w %D/%%WWWDIR%%/inc/config.php; fi
-@exec if [ ! -f %D/%%WWWDIR%%/inc/config_user.php ]; then  install  -o root -g wheel -m 444 %D/%%WWWDIR%%/inc/config_user.php.sample %D/%%WWWDIR%%/inc/config_user.php;  /usr/sbin/chown www %D/%%WWWDIR%%/inc/config_user.php;  /bin/chmod u+w %D/%%WWWDIR%%/inc/config_user.php; fi
-@unexec if cmp -s %D/%%WWWDIR%%/inc/config.php.sample %D/%%WWWDIR%%/inc/config.php;  then /bin/rm -f %D/%%WWWDIR%%/inc/config.php; fi
-%%WWWDIR%%/inc/config.php.sample
-@unexec if cmp -s %D/%%WWWDIR%%/inc/config_user.php.sample %D/%%WWWDIR%%/inc/config_user.php;  then /bin/rm -f %D/%%WWWDIR%%/inc/config_user.php; fi
-%%WWWDIR%%/inc/config_user.php.sample
-@unexec if [ $(ls %D/%%WWWDIR%%/img/feeds/|wc -w) -eq 0 ]; then /bin/rm -rf %D/%%WWWDIR%%/img/feeds;fi
-@dirrmtry %%WWWDIR%%/img/feeds
-@dirrm %%WWWDIR%%/img
-@dirrm %%WWWDIR%%/inc
-@dirrm %%WWWDIR%%/magpierss/cache
-@dirrm %%WWWDIR%%/magpierss/extlib
-@dirrm %%WWWDIR%%/magpierss
-@dirrm %%WWWDIR%%/opml
-@dirrm %%WWWDIR%%/tmp
-@dirrm %%WWWDIR%%
+@sample(www,,) %%WWWDIR%%/inc/config.php.sample
+@sample(www,,) %%WWWDIR%%/inc/config_user.php.sample
+@dir(www,,) %%WWWDIR%%/magpierss/cache
+@dir(www,,) %%WWWDIR%%/img/feeds
+@dir(www,,) %%WWWDIR%%/tmp
