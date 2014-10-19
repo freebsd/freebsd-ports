@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 MAINTAINER=	olivermahmoudi@gmail.com
 COMMENT=	Very fast and configurable open source SIP proxy
 
-LICENSE=	GPL2
+LICENSE=	GPLv2
 
 USES=		gmake shebangfix
 USE_LDCONFIG=	yes
