@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-the
 USES=		pkgconfig libtool
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/equinox-${PORTVERSION}
 
 DATADIR=	${PREFIX}/share/themes
@@ -50,9 +51,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in ${SUBDIRS}
 	${CP} -R ${WRKDIR}/${i} ${STAGEDIR}${DATADIR}
-	${FIND} ${STAGEDIR}${DATADIR}/${i} -type d -exec ${CHMOD} 755 {} +
-	${FIND} ${STAGEDIR}${DATADIR}/${i} -type f -exec ${CHMOD} ${SHAREMODE} {} +
 .endfor
+	${FIND} ${STAGEDIR}${DATADIR} -type d -exec ${CHMOD} 755 {} +
+	${FIND} ${STAGEDIR}${DATADIR} -type f -exec ${CHMOD} ${SHAREMODE} {} +
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${EXAMPLES}
