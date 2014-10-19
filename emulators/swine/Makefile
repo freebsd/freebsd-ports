@@ -25,8 +25,7 @@ GH_PROJECT=	Swine
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	1770c40
 
-USES=		gmake
-USE_PYTHON=	yes
+USES=		gmake python
 NO_BUILD=	yes
 USE_QT4=	linguist_build
 ONLY_FOR_ARCHS=	i386 amd64

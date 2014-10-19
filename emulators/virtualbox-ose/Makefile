@@ -35,7 +35,6 @@ WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		compiler cpe iconv pkgconfig tar:bzip2
 USE_GNOME=	libidl
-USE_PYTHON_BUILD=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-java --passive-mesa
@@ -133,11 +132,12 @@ USE_TEX=	dvipsk:build formats:build texlive
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES+=		python:2
+USE_PYTHON=	distutils noegginfo
 PYDISTUTILS_PKGNAME=	vboxapi
 PYDISTUTILS_PKGVERSION=	1.0
-PYDISTUTILS_NOEGGINFO=	yes
+.else
+USES+=		python:build
 .endif
 
 .if ${PORT_OPTIONS:MQT4}

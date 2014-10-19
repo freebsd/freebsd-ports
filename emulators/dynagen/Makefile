@@ -41,9 +41,8 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PORTDATA=	*
 
-USES=		dos2unix
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		dos2unix python
+USE_PYTHON=	distutils
 ALL_TARGET=	# empty
 
 post-install:

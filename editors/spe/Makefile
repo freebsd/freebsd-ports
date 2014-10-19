@@ -14,7 +14,7 @@ COMMENT=	Stani's Python Editor
 
 NO_BUILD=	yes
 
-USE_PYTHON=	yes
+USES=		python
 USE_WX=		3.0+
 WX_COMPS=	python
 

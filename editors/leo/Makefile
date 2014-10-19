@@ -26,9 +26,8 @@ PYENCHANT_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-
 
 WRKSRC=		${WRKDIR}/Leo-${PORTVERSION}-final
 
-USES=		shebangfix zip
+USES=		python shebangfix zip
 SHEBANG_FILES=	leo/doc/html/fixup.pl leo/scripts/LinixInstall.py
-USE_PYTHON=	yes
 
 DESKTOP_ENTRIES="Leo" "Literate Editor with Outlines" \
 		"${LEO_DIR}/Icons/leoapp32.png" "leo" "" ""

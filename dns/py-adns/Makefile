@@ -15,9 +15,8 @@ COMMENT=	Python Interface to adns, the asynchronous DNS library
 LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
 
 PROJECTHOST=	adns-python
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(include_dirs = \).*$$|\1\["${LOCALBASE}/include"\]|g' \
