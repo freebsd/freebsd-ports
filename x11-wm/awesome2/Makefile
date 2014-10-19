@@ -19,12 +19,11 @@ LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig python:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 USE_EFL=	imlib2
 USE_GNOME=	pango
-USE_PYTHON_BUILD=	yes
 USE_XORG=	x11 xft xext xinerama xt xrandr xproto
 LDFLAGS+=	-lX11 -lXext ${ICONV_LIB}
 

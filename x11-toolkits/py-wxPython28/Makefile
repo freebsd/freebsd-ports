@@ -18,10 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
 
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
-USES=		gettext gmake pkgconfig tar:bzip2
+USE_PYTHON=	distutils
+USES=		gettext gmake pkgconfig python tar:bzip2
 
 PYDISTUTILS_BUILDARGS=	\
 			WX_CONFIG="${WX_CONFIG}" \

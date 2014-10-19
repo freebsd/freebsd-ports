@@ -14,9 +14,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py
 LIB_DEPENDS=	libcroco-0.6.so:${PORTSDIR}/textproc/libcroco
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	cairo gtk20 glib20 librsvg2 pygtk2 pango
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --enable-python
 USE_LDCONFIG=	yes

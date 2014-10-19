@@ -13,7 +13,7 @@ COMMENT=	The X protocol C-language Binding (XCB) protocol
 BUILD_DEPENDS=	xmllint:${PORTSDIR}/textproc/libxml2
 
 XORG_CAT=	proto
-USE_PYTHON=	2
+USES=		python:2
 
 DATADIR=	${PREFIX}/share/xcb
 

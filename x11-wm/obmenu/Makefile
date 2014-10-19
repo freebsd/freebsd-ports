@@ -12,9 +12,9 @@ COMMENT=	Menu manager for Openbox supporting both static and pipe menus
 
 LICENSE=	GPLv2
 
+USES=			python
 USE_GNOME=		pygtk2
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
+USE_PYTHON=		distutils
 PYDISTUTILS_PKGNAME=	obMenu
 
 PORTDOCS=	README

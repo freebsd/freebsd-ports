@@ -22,8 +22,7 @@ OPTIONS_SUB=	yes
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_PYTHON=	2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig python:2 tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libgnomeui pygtk2
 GNU_CONFIGURE=	yes

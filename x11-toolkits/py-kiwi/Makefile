@@ -15,11 +15,9 @@ LICENSE=	LGPL21
 
 NO_ARCH=	yes
 
-USES=		gettext uniquefiles:dirs
+USES=		gettext python uniquefiles:dirs
 USE_GNOME=	libglade2 pygtk2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

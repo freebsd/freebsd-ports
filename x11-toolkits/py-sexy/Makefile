@@ -17,9 +17,8 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libsexy.so:${PORTSDIR}/x11-toolkits/libsexy
 
-USES=		pkgconfig libtool
+USES=		libtool pkgconfig python
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
 
 .include <bsd.port.mk>

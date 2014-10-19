@@ -28,8 +28,7 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 		libevdocument.so:${PORTSDIR}/graphics/evince
 RUN_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_PYTHON=	2
+USES=		gmake libtool:keepla pathfix pkgconfig python:2 tar:bzip2
 USE_GNOME=	libgnomeprintui gnomepanel gnomedesktop \
 		gtksourceview libwnck nautilus2 pygnome2 metacity \
 		evolutiondataserver

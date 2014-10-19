@@ -28,7 +28,7 @@ LUA_DESC=	Lua bindings
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2
+USES+=		python:2
 USE_GNOME+=	pygtk2
 .else
 CONFIGURE_ARGS+=	--disable-python

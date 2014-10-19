@@ -20,9 +20,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool pkgconfig python
 USE_GNOME=	intlhack pygobject3
-USE_PYTHON=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	NLS
