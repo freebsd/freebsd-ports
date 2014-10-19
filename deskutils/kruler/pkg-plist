@@ -22,6 +22,3 @@ share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/48x48/apps/kruler.png
 share/icons/hicolor/64x64/apps/kruler.png
 share/icons/hicolor/scalable/apps/kruler.svgz
-@dirrm share/doc/HTML/en/kruler
-@dirrm share/apps/kruler/sounds
-@dirrm share/apps/kruler

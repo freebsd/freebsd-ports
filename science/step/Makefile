@@ -2,7 +2,6 @@
 
 PORTNAME=	step
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	science kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -10,13 +9,12 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 interactive physics simulator
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 LIB_DEPENDS=	libqalculate.so:${PORTSDIR}/math/libqalculate \
 		libgsl.so:${PORTSDIR}/math/gsl
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
-
-USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource tar:xz
+USE_KDE4=	kdelibs kdeprefix automoc4
+USES=		cmake:outsource pkgconfig tar:xz
 USE_QT4=	opengl moc_build qmake_build rcc_build uic_build
 
 pre-configure:

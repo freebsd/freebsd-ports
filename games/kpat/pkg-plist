@@ -49,8 +49,3 @@ share/icons/hicolor/32x32/apps/kpat.png
 share/icons/hicolor/48x48/apps/kpat.png
 share/icons/hicolor/64x64/apps/kpat.png
 share/mime/packages/kpatience.xml
-@dirrm share/doc/HTML/en/kpat
-@dirrm share/apps/kpat/themes
-@dirrm share/apps/kpat/sounds
-@dirrm share/apps/kpat/previews
-@dirrm share/apps/kpat

@@ -38,6 +38,3 @@ share/icons/hicolor/48x48/apps/klickety.png
 share/icons/hicolor/48x48/apps/ksame.png
 share/icons/hicolor/64x64/apps/klickety.png
 share/icons/hicolor/64x64/apps/ksame.png
-@dirrm share/doc/HTML/en/klickety 
-@dirrm share/apps/klickety/themes
-@dirrm share/apps/klickety

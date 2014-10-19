@@ -2,7 +2,6 @@
 
 PORTNAME=	kremotecontrol
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	comms kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -12,7 +11,7 @@ COMMENT=	KDE frontend for your remote controls
 
 RUN_DEPENDS=	lircd:${PORTSDIR}/comms/lirc
 
-USE_KDE4=	kdeprefix kdehier automoc4 kdelibs
+USE_KDE4=	kdeprefix automoc4 kdelibs
 USES=		cmake:outsource tar:xz
 USE_QT4=	corelib script xmlpatterns \
 		qmake_build moc_build rcc_build uic_build

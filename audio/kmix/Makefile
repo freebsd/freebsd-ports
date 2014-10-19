@@ -3,7 +3,6 @@
 
 PORTNAME=	kmix
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -14,7 +13,7 @@ COMMENT=	Sound mixer for KDE
 LICENSE=	GPLv2
 
 USES=		cmake:outsource tar:xz
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	gui phonon xml \
 		moc_build qmake_build rcc_build uic_build
 

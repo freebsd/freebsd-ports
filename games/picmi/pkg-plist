@@ -45,8 +45,3 @@ share/icons/hicolor/32x32/apps/picmi.png
 share/icons/hicolor/48x48/apps/picmi.png
 share/icons/hicolor/64x64/apps/picmi.png
 share/icons/hicolor/scalable/apps/picmi.svgz
-@dirrm share/doc/HTML/en/picmi
-@dirrm share/apps/picmi/themes
-@dirrm share/apps/picmi/levels/default
-@dirrm share/apps/picmi/levels
-@dirrm share/apps/picmi

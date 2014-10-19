@@ -1,1 +1,2 @@
-This is a utility port that creates a hierarchy of common KDE4 directories.
+This is a helper port that only used by other KDE ports
+if KDE4_PREFIX != LOCALBASE.

@@ -43,10 +43,3 @@ share/kde4/services/vnc.protocol
 share/kde4/servicetypes/krdc_plugin.desktop
 share/telepathy/clients/krdc_rfb_approver.client
 share/telepathy/clients/krdc_rfb_handler.client
-@dirrmtry share/telepathy/clients
-@dirrmtry share/telepathy
-@dirrm share/doc/HTML/en/krdc
-@dirrm share/apps/krdc_rfb_approver
-@dirrm share/apps/krdc/pics
-@dirrm share/apps/krdc
-@dirrm include/krdc

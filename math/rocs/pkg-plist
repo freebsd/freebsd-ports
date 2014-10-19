@@ -31,6 +31,7 @@ lib/librocscore.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/librocsvisualeditor.so
 lib/librocsvisualeditor.so.4
 lib/librocsvisualeditor.so.%%KDE4_GENERIC_LIB_VERSION%%
+share/appdata/rocs.appdata.xml
 share/applications/kde4/rocs.desktop
 share/apps/rocs/engineapi/Console.xml
 share/apps/rocs/engineapi/Data.xml
@@ -173,27 +174,3 @@ share/kde4/services/rocs_transformedgesplugin.desktop
 share/kde4/servicetypes/RocsDataStructurePlugin.desktop
 share/kde4/servicetypes/RocsGraphFilePlugin.desktop
 share/kde4/servicetypes/RocsToolsPlugin.desktop
-@dirrm share/doc/HTML/en/rocs
-@dirrm share/apps/rocs_rootedtree
-@dirrm share/apps/rocs/schemes
-@dirrm share/apps/rocs/plugin/apidoc
-@dirrm share/apps/rocs/plugin
-@dirrm share/apps/rocs/icons/hicolor/scalable/actions
-@dirrm share/apps/rocs/icons/hicolor/scalable
-@dirrm share/apps/rocs/icons/hicolor/64x64/actions
-@dirrm share/apps/rocs/icons/hicolor/64x64
-@dirrm share/apps/rocs/icons/hicolor/48x48/actions
-@dirrm share/apps/rocs/icons/hicolor/48x48
-@dirrm share/apps/rocs/icons/hicolor/32x32/actions
-@dirrm share/apps/rocs/icons/hicolor/32x32
-@dirrm share/apps/rocs/icons/hicolor/22x22/actions
-@dirrm share/apps/rocs/icons/hicolor/22x22
-@dirrm share/apps/rocs/icons/hicolor/16x16/actions
-@dirrm share/apps/rocs/icons/hicolor/16x16
-@dirrm share/apps/rocs/icons/hicolor
-@dirrm share/apps/rocs/icons
-@dirrm share/apps/rocs/iconpacks
-@dirrm share/apps/rocs/examples
-@dirrm share/apps/rocs/engineapi
-@dirrm share/apps/rocs
-@dirrm include/rocs

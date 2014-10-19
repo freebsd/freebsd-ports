@@ -23,7 +23,7 @@ share/locale/nn/LC_MESSAGES/adblock.mo
 share/locale/nn/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/nn/LC_MESSAGES/akonadi_folderarchive_agent.mo
+share/locale/nn/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_invitations_agent.mo
@@ -38,8 +38,6 @@ share/locale/nn/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/nn/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_mbox_resource.mo
-share/locale/nn/LC_MESSAGES/akonadi_microblog_resource.mo
-share/locale/nn/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_next.mo
 share/locale/nn/LC_MESSAGES/akonadi_nntp_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_openxchange_resource.mo
@@ -140,6 +138,7 @@ share/locale/nn/LC_MESSAGES/kcal_akonadi.mo
 share/locale/nn/LC_MESSAGES/kcalc.mo
 share/locale/nn/LC_MESSAGES/kcertpart.mo
 share/locale/nn/LC_MESSAGES/kcharselect.mo
+share/locale/nn/LC_MESSAGES/kcm_activities.mo
 share/locale/nn/LC_MESSAGES/kcm_akonadi.mo
 share/locale/nn/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/nn/LC_MESSAGES/kcm_attica.mo
@@ -270,6 +269,7 @@ share/locale/nn/LC_MESSAGES/kio_akonadi.mo
 share/locale/nn/LC_MESSAGES/kio_applications.mo
 share/locale/nn/LC_MESSAGES/kio_archive.mo
 share/locale/nn/LC_MESSAGES/kio_audiocd.mo
+share/locale/nn/LC_MESSAGES/kio_baloosearch.mo
 share/locale/nn/LC_MESSAGES/kio_bookmarks.mo
 share/locale/nn/LC_MESSAGES/kio_finger.mo
 share/locale/nn/LC_MESSAGES/kio_fish.mo
@@ -283,6 +283,8 @@ share/locale/nn/LC_MESSAGES/kio_man.mo
 share/locale/nn/LC_MESSAGES/kio_mbox.mo
 share/locale/nn/LC_MESSAGES/kio_nepomuk.mo
 share/locale/nn/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/nn/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/nn/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/nn/LC_MESSAGES/kio_nfs.mo
 share/locale/nn/LC_MESSAGES/kio_nntp.mo
 share/locale/nn/LC_MESSAGES/kio_perldoc.mo
@@ -685,13 +687,3 @@ share/locale/nn/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/nn/LC_SCRIPTS/kdelibs4/skjermelement.pmap
 share/locale/nn/LC_SCRIPTS/step/step.js
 share/locale/nn/entry.desktop
-@dirrm share/locale/nn/LC_SCRIPTS/step
-@dirrm share/locale/nn/LC_SCRIPTS/kdelibs4
-@dirrm share/locale/nn/LC_SCRIPTS
-@dirrm share/doc/HTML/nn/kollision
-@dirrm share/doc/HTML/nn/kcontrol/bell
-@dirrm share/doc/HTML/nn/kcontrol
-@dirrm share/doc/HTML/nn/common
-@dirrm share/apps/kvtml/nn
-@dirrm share/apps/kvtml
-@dirrm share/apps/khangman

@@ -988,6 +988,7 @@ share/doc/HTML/ru/sonnet/common
 share/doc/HTML/ru/sonnet/index.cache.bz2
 share/doc/HTML/ru/sonnet/index.docbook
 share/locale/ru/LC_MESSAGES/accountwizard.mo
+share/locale/ru/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/ru/LC_MESSAGES/accountwizard_ical.mo
 share/locale/ru/LC_MESSAGES/accountwizard_imap.mo
 share/locale/ru/LC_MESSAGES/accountwizard_kolab.mo
@@ -995,14 +996,19 @@ share/locale/ru/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/ru/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/ru/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/ru/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/ru/LC_MESSAGES/accountwizard_vcard.mo
+share/locale/ru/LC_MESSAGES/accountwizard_vcarddir.mo
 share/locale/ru/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/ru/LC_MESSAGES/adblock.mo
 share/locale/ru/LC_MESSAGES/akonadi-filestore.mo
 share/locale/ru/LC_MESSAGES/akonadi_archivemail_agent.mo
+share/locale/ru/LC_MESSAGES/akonadi_baloo_indexer.mo
 share/locale/ru/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_followupreminder_agent.mo
+share/locale/ru/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_ical_resource.mo
@@ -1022,20 +1028,17 @@ share/locale/ru/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_mbox_resource.mo
-share/locale/ru/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/ru/LC_MESSAGES/akonadi_nepomuk_feeder.mo
-share/locale/ru/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_next.mo
 share/locale/ru/LC_MESSAGES/akonadi_nntp_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/ru/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ru/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/ru/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ru/LC_MESSAGES/akonadicontact.mo
@@ -1046,19 +1049,28 @@ share/locale/ru/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ru/LC_MESSAGES/amor.mo
 share/locale/ru/LC_MESSAGES/analitza.mo
 share/locale/ru/LC_MESSAGES/ark.mo
+share/locale/ru/LC_MESSAGES/artikulate.mo
 share/locale/ru/LC_MESSAGES/attica_kde.mo
 share/locale/ru/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/ru/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ru/LC_MESSAGES/audiorename_plugin.mo
 share/locale/ru/LC_MESSAGES/autorefresh.mo
 share/locale/ru/LC_MESSAGES/babelfish.mo
+share/locale/ru/LC_MESSAGES/baloo_file.mo
+share/locale/ru/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/ru/LC_MESSAGES/baloo_queryparser.mo
+share/locale/ru/LC_MESSAGES/baloosearch.mo
+share/locale/ru/LC_MESSAGES/balooshow.mo
+share/locale/ru/LC_MESSAGES/baloowidgets.mo
 share/locale/ru/LC_MESSAGES/blinken.mo
 share/locale/ru/LC_MESSAGES/blogilo.mo
 share/locale/ru/LC_MESSAGES/bomber.mo
 share/locale/ru/LC_MESSAGES/bovo.mo
+share/locale/ru/LC_MESSAGES/calendarjanitor.mo
 share/locale/ru/LC_MESSAGES/calendarsupport.mo
 share/locale/ru/LC_MESSAGES/cantor.mo
 share/locale/ru/LC_MESSAGES/cervisia.mo
+share/locale/ru/LC_MESSAGES/contactthemeeditor.mo
 share/locale/ru/LC_MESSAGES/cryptopageplugin.mo
 share/locale/ru/LC_MESSAGES/cvsservice.mo
 share/locale/ru/LC_MESSAGES/dirfilterplugin.mo
@@ -1105,7 +1117,6 @@ share/locale/ru/LC_MESSAGES/kajongg.mo
 share/locale/ru/LC_MESSAGES/kalarm.mo
 share/locale/ru/LC_MESSAGES/kalgebra.mo
 share/locale/ru/LC_MESSAGES/kalzium.mo
-share/locale/ru/LC_MESSAGES/kanagram-harmattan.mo
 share/locale/ru/LC_MESSAGES/kanagram.mo
 share/locale/ru/LC_MESSAGES/kapman.mo
 share/locale/ru/LC_MESSAGES/kapptemplate.mo
@@ -1152,6 +1163,7 @@ share/locale/ru/LC_MESSAGES/kcm_akonadi.mo
 share/locale/ru/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/ru/LC_MESSAGES/kcm_attica.mo
 share/locale/ru/LC_MESSAGES/kcm_autostart.mo
+share/locale/ru/LC_MESSAGES/kcm_baloofile.mo
 share/locale/ru/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ru/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/ru/LC_MESSAGES/kcm_device_automounter.mo
@@ -1164,7 +1176,6 @@ share/locale/ru/LC_MESSAGES/kcm_memory.mo
 share/locale/ru/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/ru/LC_MESSAGES/kcm_pci.mo
 share/locale/ru/LC_MESSAGES/kcm_phonon.mo
-share/locale/ru/LC_MESSAGES/kcm_pimactivity.mo
 share/locale/ru/LC_MESSAGES/kcm_platform.mo
 share/locale/ru/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ru/LC_MESSAGES/kcm_solid_actions.mo
@@ -1243,13 +1254,13 @@ share/locale/ru/LC_MESSAGES/kfile_dds.mo
 share/locale/ru/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ru/LC_MESSAGES/kfile_exr.mo
 share/locale/ru/LC_MESSAGES/kfile_kig.mo
-share/locale/ru/LC_MESSAGES/kfile_mail.mo
 share/locale/ru/LC_MESSAGES/kfile_pnm.mo
 share/locale/ru/LC_MESSAGES/kfile_raw.mo
 share/locale/ru/LC_MESSAGES/kfile_rgb.mo
 share/locale/ru/LC_MESSAGES/kfile_tiff.mo
 share/locale/ru/LC_MESSAGES/kfile_xps.mo
 share/locale/ru/LC_MESSAGES/kfileaudiopreview4.mo
+share/locale/ru/LC_MESSAGES/kfilemetadata.mo
 share/locale/ru/LC_MESSAGES/kfilereplace.mo
 share/locale/ru/LC_MESSAGES/kfileshare.mo
 share/locale/ru/LC_MESSAGES/kfindpart.mo
@@ -1284,6 +1295,7 @@ share/locale/ru/LC_MESSAGES/kio_akonadi.mo
 share/locale/ru/LC_MESSAGES/kio_applications.mo
 share/locale/ru/LC_MESSAGES/kio_archive.mo
 share/locale/ru/LC_MESSAGES/kio_audiocd.mo
+share/locale/ru/LC_MESSAGES/kio_baloosearch.mo
 share/locale/ru/LC_MESSAGES/kio_bookmarks.mo
 share/locale/ru/LC_MESSAGES/kio_finger.mo
 share/locale/ru/LC_MESSAGES/kio_fish.mo
@@ -1297,6 +1309,8 @@ share/locale/ru/LC_MESSAGES/kio_man.mo
 share/locale/ru/LC_MESSAGES/kio_mbox.mo
 share/locale/ru/LC_MESSAGES/kio_nepomuk.mo
 share/locale/ru/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/ru/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/ru/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/ru/LC_MESSAGES/kio_nfs.mo
 share/locale/ru/LC_MESSAGES/kio_nntp.mo
 share/locale/ru/LC_MESSAGES/kio_perldoc.mo
@@ -1345,6 +1359,7 @@ share/locale/ru/LC_MESSAGES/knavalbattle.mo
 share/locale/ru/LC_MESSAGES/knetattach.mo
 share/locale/ru/LC_MESSAGES/knetwalk.mo
 share/locale/ru/LC_MESSAGES/knode.mo
+share/locale/ru/LC_MESSAGES/knotes-migrator.mo
 share/locale/ru/LC_MESSAGES/knotes.mo
 share/locale/ru/LC_MESSAGES/knotify4.mo
 share/locale/ru/LC_MESSAGES/kolf.mo
@@ -1402,6 +1417,7 @@ share/locale/ru/LC_MESSAGES/ksnapshot.mo
 share/locale/ru/LC_MESSAGES/kspaceduel.mo
 share/locale/ru/LC_MESSAGES/ksplashthemes.mo
 share/locale/ru/LC_MESSAGES/ksquares.mo
+share/locale/ru/LC_MESSAGES/kstars.appdata.mo
 share/locale/ru/LC_MESSAGES/kstars.mo
 share/locale/ru/LC_MESSAGES/kstart.mo
 share/locale/ru/LC_MESSAGES/kstartperf.mo
@@ -1452,8 +1468,11 @@ share/locale/ru/LC_MESSAGES/libakonadi-xml.mo
 share/locale/ru/LC_MESSAGES/libakonadi.mo
 share/locale/ru/LC_MESSAGES/libcomposereditorng.mo
 share/locale/ru/LC_MESSAGES/libeventviews.mo
+share/locale/ru/LC_MESSAGES/libfolderarchivesettings.mo
 share/locale/ru/LC_MESSAGES/libgrantleetheme.mo
+share/locale/ru/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/ru/LC_MESSAGES/libincidenceeditors.mo
+share/locale/ru/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/ru/LC_MESSAGES/libkalarmcal.mo
 share/locale/ru/LC_MESSAGES/libkasten.mo
 share/locale/ru/LC_MESSAGES/libkblog.mo
@@ -1498,13 +1517,14 @@ share/locale/ru/LC_MESSAGES/libmessagecomposer.mo
 share/locale/ru/LC_MESSAGES/libmessagecore.mo
 share/locale/ru/LC_MESSAGES/libmessagelist.mo
 share/locale/ru/LC_MESSAGES/libmessageviewer.mo
+share/locale/ru/LC_MESSAGES/libnoteshared.mo
 share/locale/ru/LC_MESSAGES/liboktetacore.mo
 share/locale/ru/LC_MESSAGES/liboktetagui.mo
 share/locale/ru/LC_MESSAGES/liboktetakasten.mo
 share/locale/ru/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/ru/LC_MESSAGES/libphonon.mo
-share/locale/ru/LC_MESSAGES/libpimactivity.mo
 share/locale/ru/LC_MESSAGES/libpimcommon.mo
+share/locale/ru/LC_MESSAGES/libpimprint.mo
 share/locale/ru/LC_MESSAGES/libplasma.mo
 share/locale/ru/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/ru/LC_MESSAGES/libplasmaclock.mo
@@ -1532,7 +1552,6 @@ share/locale/ru/LC_MESSAGES/nepomukcleaner.mo
 share/locale/ru/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/ru/LC_MESSAGES/nepomukfilewatch.mo
 share/locale/ru/LC_MESSAGES/nepomukmigrator.mo
-share/locale/ru/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/ru/LC_MESSAGES/nepomukserver.mo
 share/locale/ru/LC_MESSAGES/nepomukservicestub.mo
 share/locale/ru/LC_MESSAGES/nepomukstorage.mo
@@ -1683,6 +1702,7 @@ share/locale/ru/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
+share/locale/ru/LC_MESSAGES/plasma_runner_baloosearchrunner.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_calculatorrunner.mo
@@ -1747,6 +1767,7 @@ share/locale/ru/LC_MESSAGES/solid_qt.mo
 share/locale/ru/LC_MESSAGES/soliduiserver.mo
 share/locale/ru/LC_MESSAGES/step.mo
 share/locale/ru/LC_MESSAGES/step_qt.mo
+share/locale/ru/LC_MESSAGES/storageservicemanager.mo
 share/locale/ru/LC_MESSAGES/strigila_diff.mo
 share/locale/ru/LC_MESSAGES/superkaramba.mo
 share/locale/ru/LC_MESSAGES/svgpart.mo
@@ -1762,163 +1783,3 @@ share/locale/ru/LC_MESSAGES/webarchiver.mo
 share/locale/ru/LC_MESSAGES/xml_mimetypes.mo
 share/locale/ru/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/ru/entry.desktop
-@dirrm share/locale/ru/LC_SCRIPTS/kdelibs4
-@dirrm share/locale/ru/LC_SCRIPTS
-@dirrm share/doc/HTML/ru/sonnet
-@dirrm share/doc/HTML/ru/rocs
-@dirrm share/doc/HTML/ru/palapeli
-@dirrm share/doc/HTML/ru/marble
-@dirrm share/doc/HTML/ru/lskat
-@dirrm share/doc/HTML/ru/lokalize
-@dirrm share/doc/HTML/ru/kwrite
-@dirrm share/doc/HTML/ru/kwordquiz
-@dirrm share/doc/HTML/ru/kwatchgnupg
-@dirrm share/doc/HTML/ru/kwalletmanager
-@dirrm share/doc/HTML/ru/kuser
-@dirrm share/doc/HTML/ru/kturtle
-@dirrm share/doc/HTML/ru/ktuberling
-@dirrm share/doc/HTML/ru/ktouch
-@dirrm share/doc/HTML/ru/ktimetracker
-@dirrm share/doc/HTML/ru/ktimer
-@dirrm share/doc/HTML/ru/kteatime
-@dirrm share/doc/HTML/ru/ksysguard
-@dirrm share/doc/HTML/ru/ksudoku
-@dirrm share/doc/HTML/ru/kstars
-@dirrm share/doc/HTML/ru/kspaceduel
-@dirrm share/doc/HTML/ru/ksnapshot
-@dirrm share/doc/HTML/ru/kshisen
-@dirrm share/doc/HTML/ru/kruler
-@dirrm share/doc/HTML/ru/krfb
-@dirrm share/doc/HTML/ru/kreversi
-@dirrm share/doc/HTML/ru/krdc
-@dirrm share/doc/HTML/ru/kppp
-@dirrm share/doc/HTML/ru/kpat
-@dirrm share/doc/HTML/ru/korganizer
-@dirrm share/doc/HTML/ru/kopete
-@dirrm share/doc/HTML/ru/kontact
-@dirrm share/doc/HTML/ru/konsolekalendar
-@dirrm share/doc/HTML/ru/konsole
-@dirrm share/doc/HTML/ru/konquest
-@dirrm share/doc/HTML/ru/konqueror
-@dirrm share/doc/HTML/ru/kompare
-@dirrm share/doc/HTML/ru/kolourpaint
-@dirrm share/doc/HTML/ru/kolf
-@dirrm share/doc/HTML/ru/knotes
-@dirrm share/doc/HTML/ru/knetattach
-@dirrm share/doc/HTML/ru/knavalbattle
-@dirrm share/doc/HTML/ru/kmplot
-@dirrm share/doc/HTML/ru/kmousetool
-@dirrm share/doc/HTML/ru/kmix
-@dirrm share/doc/HTML/ru/kmines
-@dirrm share/doc/HTML/ru/kmenuedit
-@dirrm share/doc/HTML/ru/kmail
-@dirrm share/doc/HTML/ru/kmahjongg
-@dirrm share/doc/HTML/ru/klipper
-@dirrm share/doc/HTML/ru/klinkstatus
-@dirrm share/doc/HTML/ru/klines
-@dirrm share/doc/HTML/ru/klettres
-@dirrm share/doc/HTML/ru/kleopatra
-@dirrm share/doc/HTML/ru/kjumpingcube
-@dirrm share/doc/HTML/ru/kjots
-@dirrm share/doc/HTML/ru/kioslave/webdav
-@dirrm share/doc/HTML/ru/kioslave/thumbnail
-@dirrm share/doc/HTML/ru/kioslave/telnet
-@dirrm share/doc/HTML/ru/kioslave/tar
-@dirrm share/doc/HTML/ru/kioslave/smtp
-@dirrm share/doc/HTML/ru/kioslave/sieve
-@dirrm share/doc/HTML/ru/kioslave/sftp
-@dirrm share/doc/HTML/ru/kioslave/rlogin
-@dirrm share/doc/HTML/ru/kioslave/pop3
-@dirrm share/doc/HTML/ru/kioslave/nntp
-@dirrm share/doc/HTML/ru/kioslave/nfs
-@dirrm share/doc/HTML/ru/kioslave/news
-@dirrm share/doc/HTML/ru/kioslave/mbox
-@dirrm share/doc/HTML/ru/kioslave/mailto
-@dirrm share/doc/HTML/ru/kioslave/ldap
-@dirrm share/doc/HTML/ru/kioslave/info
-@dirrm share/doc/HTML/ru/kioslave/imap
-@dirrm share/doc/HTML/ru/kioslave/help
-@dirrm share/doc/HTML/ru/kioslave/gzip
-@dirrm share/doc/HTML/ru/kioslave/ftp
-@dirrm share/doc/HTML/ru/kioslave/floppy
-@dirrm share/doc/HTML/ru/kioslave/finger
-@dirrm share/doc/HTML/ru/kioslave/file
-@dirrm share/doc/HTML/ru/kioslave/data
-@dirrm share/doc/HTML/ru/kioslave/audiocd
-@dirrm share/doc/HTML/ru/kioslave
-@dirrm share/doc/HTML/ru/kigo
-@dirrm share/doc/HTML/ru/kig
-@dirrm share/doc/HTML/ru/khelpcenter/glossary
-@dirrm share/doc/HTML/ru/khelpcenter/documentationnotfound
-@dirrm share/doc/HTML/ru/khelpcenter
-@dirrm share/doc/HTML/ru/kget
-@dirrm share/doc/HTML/ru/kgeography
-@dirrm share/doc/HTML/ru/kfloppy
-@dirrm share/doc/HTML/ru/kfind
-@dirrm share/doc/HTML/ru/kdm
-@dirrm share/doc/HTML/ru/kdf
-@dirrm share/doc/HTML/ru/kdesu
-@dirrm share/doc/HTML/ru/kdebugdialog
-@dirrm share/doc/HTML/ru/kcron
-@dirrm share/doc/HTML/ru/kcontrol/windowspecific
-@dirrm share/doc/HTML/ru/kcontrol/useragent
-@dirrm share/doc/HTML/ru/kcontrol/spellchecking
-@dirrm share/doc/HTML/ru/kcontrol/smb
-@dirrm share/doc/HTML/ru/kcontrol/screensaver
-@dirrm share/doc/HTML/ru/kcontrol/proxy
-@dirrm share/doc/HTML/ru/kcontrol/performance
-@dirrm share/doc/HTML/ru/kcontrol/netpref
-@dirrm share/doc/HTML/ru/kcontrol/language
-@dirrm share/doc/HTML/ru/kcontrol/kremotecontrol
-@dirrm share/doc/HTML/ru/kcontrol/keys
-@dirrm share/doc/HTML/ru/kcontrol/keyboard
-@dirrm share/doc/HTML/ru/kcontrol/kcmsmserver
-@dirrm share/doc/HTML/ru/kcontrol/kcmnotify
-@dirrm share/doc/HTML/ru/kcontrol/kcmlaunch
-@dirrm share/doc/HTML/ru/kcontrol/kcmcss
-@dirrm share/doc/HTML/ru/kcontrol/icons
-@dirrm share/doc/HTML/ru/kcontrol/fontinst
-@dirrm share/doc/HTML/ru/kcontrol/filetypes
-@dirrm share/doc/HTML/ru/kcontrol/filemanager
-@dirrm share/doc/HTML/ru/kcontrol/ebrowsing
-@dirrm share/doc/HTML/ru/kcontrol/cookies
-@dirrm share/doc/HTML/ru/kcontrol/colors
-@dirrm share/doc/HTML/ru/kcontrol/clock
-@dirrm share/doc/HTML/ru/kcontrol/cache
-@dirrm share/doc/HTML/ru/kcontrol/bell
-@dirrm share/doc/HTML/ru/kcontrol/autostart
-@dirrm share/doc/HTML/ru/kcontrol
-@dirrm share/doc/HTML/ru/kcharselect
-@dirrm share/doc/HTML/ru/kcalc
-@dirrm share/doc/HTML/ru/kcachegrind
-@dirrm share/doc/HTML/ru/kbruch
-@dirrm share/doc/HTML/ru/kbounce
-@dirrm share/doc/HTML/ru/kblackbox
-@dirrm share/doc/HTML/ru/katomic
-@dirrm share/doc/HTML/ru/kanagram
-@dirrm share/doc/HTML/ru/kalzium
-@dirrm share/doc/HTML/ru/kalgebra
-@dirrm share/doc/HTML/ru/juk
-@dirrm share/doc/HTML/ru/gwenview
-@dirrm share/doc/HTML/ru/dragonplayer
-@dirrm share/doc/HTML/ru/common
-@dirrm share/doc/HTML/ru/cervisia
-@dirrm share/doc/HTML/ru/cantor
-@dirrm share/doc/HTML/ru/blinken
-@dirrm share/doc/HTML/ru/ark
-@dirrm share/doc/HTML/ru/amor
-@dirrm share/doc/HTML/ru/akregator
-@dirrm share/apps/kvtml/ru
-@dirrm share/apps/kvtml
-@dirrm share/apps/ktuberling/sounds/ru
-@dirrm share/apps/ktuberling/sounds
-@dirrm share/apps/ktuberling
-@dirrm share/apps/klettres/ru/syllab
-@dirrm share/apps/klettres/ru/alpha
-@dirrm share/apps/klettres/ru
-@dirrm share/apps/klettres
-@dirrm share/apps/autocorrect
-@dirrmtry man/ru/man7
-@dirrmtry man/ru/man6
-@dirrmtry man/ru/man1
-@dirrmtry man/ru

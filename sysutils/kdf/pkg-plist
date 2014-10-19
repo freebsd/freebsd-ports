@@ -28,6 +28,3 @@ share/icons/oxygen/16x16/apps/kcmdf.png
 share/icons/oxygen/22x22/apps/kcmdf.png
 share/icons/oxygen/32x32/apps/kcmdf.png
 share/kde4/services/kcmdf.desktop
-@dirrm share/doc/HTML/en/kdf
-@dirrm share/doc/HTML/en/kcontrol/blockdevices
-@dirrm share/apps/kdf

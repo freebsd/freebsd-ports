@@ -23,6 +23,7 @@ lib/libscience.so
 lib/libscience.so.4
 lib/libscience.so.%%KDE4_GENERIC_LIB_VERSION%%
 man/man1/kalzium.1.gz
+share/appdata/kalzium.appdata.xml
 share/applications/kde4/kalzium.desktop
 share/applications/kde4/kalzium_cml.desktop
 share/apps/desktoptheme/default/widgets/chalkboard.svg
@@ -410,32 +411,3 @@ share/kde4/services/nuclearCalculator.desktop
 share/kde4/services/plasma-applet-Molmasscalculator.desktop
 share/kde4/services/plasma-dataengine-kalzium.desktop
 share/kde4/services/plasma_didyouknow.desktop
-@dirrm share/doc/HTML/en/kalzium
-@dirrm share/apps/libkdeedu/data
-@dirrmtry share/apps/libkdeedu
-@dirrm share/apps/kalzium/qml
-@dirrm share/apps/kalzium/icons/hicolor/scalable/actions
-@dirrm share/apps/kalzium/icons/hicolor/scalable
-@dirrm share/apps/kalzium/icons/hicolor/64x64/actions
-@dirrm share/apps/kalzium/icons/hicolor/64x64
-@dirrm share/apps/kalzium/icons/hicolor/48x48/actions
-@dirrm share/apps/kalzium/icons/hicolor/48x48
-@dirrm share/apps/kalzium/icons/hicolor/32x32/actions
-@dirrm share/apps/kalzium/icons/hicolor/32x32
-@dirrm share/apps/kalzium/icons/hicolor/22x22/actions
-@dirrm share/apps/kalzium/icons/hicolor/22x22
-@dirrm share/apps/kalzium/icons/hicolor/16x16/actions
-@dirrm share/apps/kalzium/icons/hicolor/16x16
-@dirrm share/apps/kalzium/icons/hicolor
-@dirrm share/apps/kalzium/icons
-@dirrm share/apps/kalzium/data/toolpics
-@dirrm share/apps/kalzium/data/molecules
-@dirrm share/apps/kalzium/data/maps
-@dirrm share/apps/kalzium/data/latticeicons
-@dirrm share/apps/kalzium/data/iconsets/school
-@dirrm share/apps/kalzium/data/iconsets
-@dirrm share/apps/kalzium/data/htmlview
-@dirrm share/apps/kalzium/data/hazardsymbols
-@dirrm share/apps/kalzium/data
-@dirrm share/apps/kalzium
-@dirrmtry include/libkdeedu

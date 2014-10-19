@@ -20,6 +20,3 @@ share/icons/hicolor/22x22/apps/lskat.png
 share/icons/hicolor/32x32/apps/lskat.png
 share/icons/hicolor/48x48/apps/lskat.png
 share/icons/hicolor/64x64/apps/lskat.png
-@dirrm share/doc/HTML/en/lskat
-@dirrm share/apps/lskat/grafix
-@dirrm share/apps/lskat

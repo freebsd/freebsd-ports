@@ -27,8 +27,3 @@ share/icons/hicolor/32x32/apps/knetwalk.png
 share/icons/hicolor/48x48/apps/knetwalk.png
 share/icons/hicolor/64x64/apps/knetwalk.png
 share/icons/hicolor/scalable/apps/knetwalk.svgz
-@dirrm share/doc/HTML/en/knetwalk
-@dirrm share/apps/knetwalk/themes
-@dirrm share/apps/knetwalk/sounds
-@dirrm share/apps/knetwalk/qml
-@dirrm share/apps/knetwalk

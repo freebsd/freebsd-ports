@@ -67,6 +67,3 @@ share/icons/hicolor/scalable/actions/vcs-status-cvs-cervisia.svgz
 share/icons/hicolor/scalable/actions/vcs-update-cvs-cervisia.svgz
 share/kde4/services/cervisiapart.desktop
 share/kde4/services/cvsservice.desktop
-@dirrm share/doc/HTML/en/cervisia
-@dirrm share/apps/cervisiapart
-@dirrm share/apps/cervisia

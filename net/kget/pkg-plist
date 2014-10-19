@@ -100,11 +100,3 @@ share/kde4/services/plasma-runner-kget.desktop
 share/kde4/servicetypes/kget_plugin.desktop
 share/ontology/kde/kget_history.ontology
 share/ontology/kde/kget_history.trig
-@dirrm share/doc/HTML/en/kget
-@dirrmtry share/apps/kwebkitpart/kpartplugins
-@dirrmtry share/apps/kwebkitpart
-@dirrm share/apps/kget/www
-@dirrm share/apps/kget/pics
-@dirrm share/apps/kget
-@dirrmtry share/apps/dolphinpart/kpartplugins
-@dirrmtry share/apps/dolphinpart

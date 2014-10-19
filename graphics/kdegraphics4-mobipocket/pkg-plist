@@ -8,6 +8,3 @@ lib/libqmobipocket.so.1
 lib/libqmobipocket.so.1.0.0
 lib/strigi/strigila_mobi.so
 share/kde4/services/mobithumbnail.desktop
-@dirrm lib/cmake/QMobipocket
-@dirrmtry lib/cmake
-@dirrm include/qmobipocket

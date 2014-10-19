@@ -127,26 +127,3 @@ share/apps/carddecks/svg-xskat-german/COPYRIGHT
 share/apps/carddecks/svg-xskat-german/german.svgz
 share/apps/carddecks/svg-xskat-german/index.desktop
 share/apps/kconf_update/kgthemeprovider-migration.upd
-@dirrm share/apps/carddecks/svg-xskat-german
-@dirrm share/apps/carddecks/svg-xskat-french
-@dirrm share/apps/carddecks/svg-tigullio-international
-@dirrm share/apps/carddecks/svg-standard
-@dirrm share/apps/carddecks/svg-penguins
-@dirrm share/apps/carddecks/svg-oxygen-white
-@dirrm share/apps/carddecks/svg-oxygen-air
-@dirrm share/apps/carddecks/svg-oxygen
-@dirrm share/apps/carddecks/svg-nicu-white
-@dirrm share/apps/carddecks/svg-nicu-ornamental
-@dirrm share/apps/carddecks/svg-konqi-modern
-@dirrm share/apps/carddecks/svg-jolly-royal
-@dirrm share/apps/carddecks/svg-gm-paris
-@dirrm share/apps/carddecks/svg-future
-@dirrm share/apps/carddecks/svg-dondorf
-@dirrm share/apps/carddecks/svg-ancient-egyptians
-@dirrm share/apps/carddecks
-@dirrm lib/kde4/imports/org/kde/games/core
-@dirrm lib/kde4/imports/org/kde/games
-@dirrm lib/cmake/KDEGames
-@dirrm include/libkdegamesprivate/kgame
-@dirrm include/libkdegamesprivate
-@dirrm include/highscore

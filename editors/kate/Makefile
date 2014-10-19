@@ -3,7 +3,6 @@
 
 PORTNAME=	kate
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -13,7 +12,7 @@ COMMENT=	Basic editor framework for the KDE system
 
 LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
 
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4 kactivities
+USE_KDE4=	kdelibs kdeprefix automoc4 kactivities
 USES=		cmake:outsource gettext perl5 tar:xz
 USE_PERL5=	build
 USE_QT4=	dbus gui script sql webkit xml \

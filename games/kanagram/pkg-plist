@@ -1,15 +1,27 @@
 bin/kanagram
-include/kanagram/kanagram_engine_export.h
-include/kanagram/kanagramgame.h
-include/kanagram/kanagramsettings.h
-lib/libkanagramengine.so
-lib/libkanagramengine.so.4
-lib/libkanagramengine.so.%%KDE4_GENERIC_LIB_VERSION%%
+share/appdata/kanagram.appdata.xml
 share/applications/kde4/kanagram.desktop
-share/apps/kanagram/images/kanagram.svg
 share/apps/kanagram/sounds/chalk.ogg
 share/apps/kanagram/sounds/right.ogg
 share/apps/kanagram/sounds/wrong.ogg
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/Blackboard.qml
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/about-kanagram.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/about-kde.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/arrow-light.svgz
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/hint.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/kanagram-handbook.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/left-arrow.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/on-off-light.svgz
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/question-light.svgz
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/reveal.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/right-arrow.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/spanner-light.svgz
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/icons/timer.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/images/background.jpg
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/images/chalkboard.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/images/header.png
+share/apps/plasma/packages/org.kde.kanagram/contents/ui/main.qml
+share/apps/plasma/packages/org.kde.kanagram/metadata.desktop
 share/config.kcfg/kanagram.kcfg
 share/config/kanagram.knsrc
 share/doc/HTML/en/kanagram/answer-highlight.png
@@ -33,10 +45,3 @@ share/icons/hicolor/48x48/apps/kanagram.png
 share/icons/hicolor/64x64/apps/kanagram.png
 share/icons/hicolor/80x80/apps/kanagram-harmattan.png
 share/icons/hicolor/scalable/apps/kanagram.svgz
-@dirrmtry share/icons/hicolor/80x80/apps
-@dirrmtry share/icons/hicolor/80x80
-@dirrm share/doc/HTML/en/kanagram
-@dirrm share/apps/kanagram/sounds
-@dirrm share/apps/kanagram/images
-@dirrm share/apps/kanagram
-@dirrm include/kanagram

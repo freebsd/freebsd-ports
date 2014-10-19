@@ -3,7 +3,6 @@
 
 PORTNAME=	libkdcraw
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -17,10 +16,10 @@ LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libraw.so:${PORTSDIR}/graphics/libraw
 
-CMAKE_ARGS+=    -DWITH_OpenMP:BOOL=False \
+CMAKE_ARGS+=	-DWITH_OpenMP:BOOL=False \
 		-DENABLE_RAWSPEED=True
 
-USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
+USE_KDE4=	automoc4 kdeprefix kdelibs
 USES=		cmake:outsource pkgconfig tar:xz
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

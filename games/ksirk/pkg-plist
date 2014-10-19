@@ -115,17 +115,3 @@ share/icons/hicolor/48x48/apps/ksirk.png
 share/icons/hicolor/64x64/apps/ksirk.png
 share/icons/locolor/16x16/apps/ksirk.png
 share/icons/locolor/32x32/apps/ksirk.png
-@dirrmtry share/icons/locolor/32x32/apps
-@dirrmtry share/icons/locolor/32x32
-@dirrmtry share/icons/locolor/16x16/apps
-@dirrmtry share/icons/locolor/16x16
-@dirrmtry share/icons/locolor
-@dirrm share/doc/HTML/en/ksirkskineditor
-@dirrm share/doc/HTML/en/ksirk
-@dirrm share/apps/ksirkskineditor
-@dirrm share/apps/ksirk/skins/default/Sounds
-@dirrm share/apps/ksirk/skins/default/Images
-@dirrm share/apps/ksirk/skins/default/Data
-@dirrm share/apps/ksirk/skins/default
-@dirrm share/apps/ksirk/skins
-@dirrm share/apps/ksirk

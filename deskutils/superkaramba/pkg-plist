@@ -17,4 +17,3 @@ share/icons/hicolor/64x64/apps/superkaramba.png
 share/icons/hicolor/scalable/apps/superkaramba.svgz
 share/kde4/services/plasma-package-superkaramba.desktop
 share/kde4/services/plasma-scriptengine-superkaramba.desktop
-@dirrm share/apps/superkaramba

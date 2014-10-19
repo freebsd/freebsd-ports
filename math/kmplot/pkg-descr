@@ -3,7 +3,7 @@ supports different systems of coordinates like the cartesian or the
 polar coordinate system. The graphs can be colorized and the view is
 scalable, so that you are able to zoom to the level you need.
 
-FEATURES
+Features:
 - Powerful mathematical parser.
 - Precise metric printing.
 - Different plot types: cartesian, parametric, polar, implicit,
@@ -18,8 +18,8 @@ FEATURES
 - Ability to draw the 1st and 2nd derivative and the integral of a
   plot function.
 - Supports user defined constants and parameter values.
-- Various tools for plot functions.
-- Find minimum/maximum point.
-- Get y-value and draw the area between the function and the y-axis.
+- Various tools for plot functions:
+   - Find minimum/maximum point.
+   - Get y-value and draw the area between the function and the y-axis.
 
 WWW: http://www.kde.org/applications/education/kmplot

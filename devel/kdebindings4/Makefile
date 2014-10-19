@@ -2,7 +2,6 @@
 
 PORTNAME=	kdebindings
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde
 DISTFILES=	# none
 

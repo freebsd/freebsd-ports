@@ -17,6 +17,7 @@ include/libkiten/libkitenexport.h
 lib/libkiten.so
 lib/libkiten.so.4
 lib/libkiten.so.%%KDE4_GENERIC_LIB_VERSION%%
+share/appdata/kiten.appdata.xml
 share/applications/kde4/kiten.desktop
 share/applications/kde4/kitenkanjibrowser.desktop
 share/applications/kde4/kitenradselect.desktop
@@ -54,12 +55,3 @@ share/icons/hicolor/32x32/apps/kiten.png
 share/icons/hicolor/48x48/apps/kiten.png
 share/icons/hicolor/64x64/apps/kiten.png
 share/icons/hicolor/scalable/apps/kiten.svgz
-@dirrm share/fonts/kanjistrokeorders
-@dirrm share/fonts
-@dirrm share/doc/HTML/en/kiten
-@dirrm share/apps/kitenradselect
-@dirrm share/apps/kitenkanjibrowser
-@dirrm share/apps/kiten
-@dirrm include/libkiten/DictKanjidic
-@dirrm include/libkiten/DictEdict
-@dirrm include/libkiten

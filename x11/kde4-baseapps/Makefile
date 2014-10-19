@@ -2,7 +2,6 @@
 
 PORTNAME=	kde-baseapps
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -13,9 +12,9 @@ COMMENT=	Basic applications for KDE
 LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib
 
 USE_GNOME=	glib20
-USE_KDE4=	kdehier kdelibs kdeprefix libkonq \
-		automoc4 soprano strigi nepomuk-core \
-		nepomuk-widgets kactivities
+USE_KDE4=	kdelibs kdeprefix baloo baloo-widgets libkonq \
+		automoc4 soprano strigi nepomuk-core nepomuk-widgets \
+		kactivities
 USES=		cmake:outsource gettext tar:xz
 USE_QT4=	corelib dbus gui script xml \
 		moc_build qmake_build rcc_build uic_build

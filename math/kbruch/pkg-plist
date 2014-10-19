@@ -1,5 +1,6 @@
 bin/kbruch
 man/man1/kbruch.1.gz
+share/appdata/kbruch.appdata.xml
 share/applications/kde4/kbruch.desktop
 share/apps/kbruch/AppMenuWidgetui.rc
 share/apps/kbruch/FractionRingWidgetui.rc
@@ -41,6 +42,3 @@ share/icons/hicolor/32x32/apps/kbruch.png
 share/icons/hicolor/48x48/apps/kbruch.png
 share/icons/hicolor/64x64/apps/kbruch.png
 share/icons/hicolor/scalable/apps/kbruch.svgz
-@dirrm share/doc/HTML/en/kbruch
-@dirrm share/apps/kbruch/pics
-@dirrm share/apps/kbruch

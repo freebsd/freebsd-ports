@@ -36,7 +36,3 @@ share/icons/hicolor/32x32/apps/killbots.png
 share/icons/hicolor/48x48/apps/killbots.png
 share/icons/hicolor/64x64/apps/killbots.png
 share/icons/hicolor/scalable/apps/killbots.svgz
-@dirrm share/doc/HTML/en/killbots
-@dirrm share/apps/killbots/themes
-@dirrm share/apps/killbots/rulesets
-@dirrm share/apps/killbots

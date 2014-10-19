@@ -23,6 +23,3 @@ share/icons/hicolor/22x22/apps/kfourinline.png
 share/icons/hicolor/32x32/apps/kfourinline.png
 share/icons/hicolor/48x48/apps/kfourinline.png
 share/icons/hicolor/64x64/apps/kfourinline.png
-@dirrm share/doc/HTML/en/kfourinline
-@dirrm share/apps/kfourinline/grafix
-@dirrm share/apps/kfourinline

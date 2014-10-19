@@ -18,7 +18,3 @@ share/icons/hicolor/32x32/apps/knavalbattle.png
 share/icons/hicolor/48x48/apps/knavalbattle.png
 share/icons/hicolor/64x64/apps/knavalbattle.png
 share/kde4/services/knavalbattle.protocol
-@dirrm share/doc/HTML/en/knavalbattle
-@dirrm share/apps/knavalbattle/sounds
-@dirrm share/apps/knavalbattle/pictures
-@dirrm share/apps/knavalbattle

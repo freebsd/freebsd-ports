@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141019:
+  AFFECTS: users of x11/kde4-runtime
+  AUTHOR: kde@FreeBSD.org
+  KDE SC ports have been updated to 4.14.1. Several files have been
+  moved between packages, therefore the following action is required
+  before running any pkg/port upgrade utility:
+
+  # pkg delete -f kde-runtime-4\*
+
 20141008:
   AFFECTS: users of lang/ruby19
   AUTHOR: swills@FreeBSD.org

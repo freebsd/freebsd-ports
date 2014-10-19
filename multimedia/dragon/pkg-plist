@@ -26,5 +26,3 @@ share/icons/oxygen/48x48/actions/player-volume-muted.png
 share/icons/oxygen/scalable/actions/player-volume-muted.svgz
 share/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
 share/kde4/services/dragonplayer_part.desktop
-@dirrm share/doc/HTML/en/dragonplayer
-@dirrm share/apps/dragonplayer

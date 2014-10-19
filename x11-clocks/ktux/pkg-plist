@@ -18,5 +18,3 @@ share/apps/ktux/sprites/star0002.png
 share/icons/hicolor/16x16/apps/ktux.png
 share/icons/hicolor/32x32/apps/ktux.png
 share/kde4/services/ScreenSavers/ktux.desktop
-@dirrm share/apps/ktux/sprites
-@dirrm share/apps/ktux

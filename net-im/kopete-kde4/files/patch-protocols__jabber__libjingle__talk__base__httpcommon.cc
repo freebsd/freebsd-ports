@@ -1,5 +1,5 @@
---- protocols/jabber/googletalk/libjingle/talk/base/httpcommon.cc.orig	2013-08-12 12:58:35.392328957 +0000
-+++ protocols/jabber/googletalk/libjingle/talk/base/httpcommon.cc	2013-08-12 13:01:23.000326301 +0000
+--- protocols/jabber/libjingle/talk/base/httpcommon.cc.orig	2013-08-12 12:58:35.392328957 +0000
++++ protocols/jabber/libjingle/talk/base/httpcommon.cc	2013-08-12 13:01:23.000326301 +0000
 @@ -25,6 +25,10 @@
   * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   */

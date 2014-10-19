@@ -39,7 +39,6 @@ share/locale/ga/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/ga/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/ga/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/ga/LC_MESSAGES/accountwizard_tine20.mo
-share/locale/ga/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/ga/LC_MESSAGES/adblock.mo
 share/locale/ga/LC_MESSAGES/akonadi-filestore.mo
 share/locale/ga/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -66,10 +65,7 @@ share/locale/ga/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/ga/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/ga/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_mbox_resource.mo
-share/locale/ga/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/ga/LC_MESSAGES/akonadi_nepomuk_feeder.mo
-share/locale/ga/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ga/LC_MESSAGES/akonadi_next.mo
 share/locale/ga/LC_MESSAGES/akonadi_nntp_resource.mo
@@ -77,7 +73,6 @@ share/locale/ga/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/ga/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ga/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/ga/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ga/LC_MESSAGES/akonadicontact.mo
@@ -94,6 +89,7 @@ share/locale/ga/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ga/LC_MESSAGES/audiorename_plugin.mo
 share/locale/ga/LC_MESSAGES/autorefresh.mo
 share/locale/ga/LC_MESSAGES/babelfish.mo
+share/locale/ga/LC_MESSAGES/baloowidgets.mo
 share/locale/ga/LC_MESSAGES/blinken.mo
 share/locale/ga/LC_MESSAGES/blogilo.mo
 share/locale/ga/LC_MESSAGES/bomber.mo
@@ -145,7 +141,6 @@ share/locale/ga/LC_MESSAGES/kajongg.mo
 share/locale/ga/LC_MESSAGES/kalarm.mo
 share/locale/ga/LC_MESSAGES/kalgebra.mo
 share/locale/ga/LC_MESSAGES/kalzium.mo
-share/locale/ga/LC_MESSAGES/kanagram-harmattan.mo
 share/locale/ga/LC_MESSAGES/kanagram.mo
 share/locale/ga/LC_MESSAGES/kapman.mo
 share/locale/ga/LC_MESSAGES/kapptemplate.mo
@@ -281,7 +276,6 @@ share/locale/ga/LC_MESSAGES/kfile_dds.mo
 share/locale/ga/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ga/LC_MESSAGES/kfile_exr.mo
 share/locale/ga/LC_MESSAGES/kfile_kig.mo
-share/locale/ga/LC_MESSAGES/kfile_mail.mo
 share/locale/ga/LC_MESSAGES/kfile_pnm.mo
 share/locale/ga/LC_MESSAGES/kfile_raw.mo
 share/locale/ga/LC_MESSAGES/kfile_rgb.mo
@@ -335,6 +329,8 @@ share/locale/ga/LC_MESSAGES/kio_man.mo
 share/locale/ga/LC_MESSAGES/kio_mbox.mo
 share/locale/ga/LC_MESSAGES/kio_nepomuk.mo
 share/locale/ga/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/ga/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/ga/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/ga/LC_MESSAGES/kio_nfs.mo
 share/locale/ga/LC_MESSAGES/kio_nntp.mo
 share/locale/ga/LC_MESSAGES/kio_perldoc.mo
@@ -346,9 +342,7 @@ share/locale/ga/LC_MESSAGES/kio_sieve.mo
 share/locale/ga/LC_MESSAGES/kio_smb.mo
 share/locale/ga/LC_MESSAGES/kio_smtp.mo
 share/locale/ga/LC_MESSAGES/kio_svn.mo
-share/locale/ga/LC_MESSAGES/kio_tags.mo
 share/locale/ga/LC_MESSAGES/kio_thumbnail.mo
-share/locale/ga/LC_MESSAGES/kio_timeline.mo
 share/locale/ga/LC_MESSAGES/kio_trash.mo
 share/locale/ga/LC_MESSAGES/kio_zeroconf.mo
 share/locale/ga/LC_MESSAGES/kioclient.mo
@@ -786,11 +780,3 @@ share/locale/ga/LC_MESSAGES/webarchiver.mo
 share/locale/ga/LC_MESSAGES/xml_mimetypes.mo
 share/locale/ga/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/ga/entry.desktop
-@dirrm share/locale/ga/LC_SCRIPTS/kdelibs4
-@dirrm share/locale/ga/LC_SCRIPTS
-@dirrm share/apps/kvtml/ga
-@dirrm share/apps/kvtml
-@dirrm share/apps/ktuberling/sounds/ga
-@dirrm share/apps/ktuberling/sounds
-@dirrm share/apps/ktuberling
-@dirrm share/apps/khangman

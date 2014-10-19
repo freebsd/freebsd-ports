@@ -38,7 +38,3 @@ share/icons/hicolor/22x22/apps/kbounce.png
 share/icons/hicolor/32x32/apps/kbounce.png
 share/icons/hicolor/48x48/apps/kbounce.png
 share/icons/hicolor/64x64/apps/kbounce.png
-@dirrm share/doc/HTML/en/kbounce
-@dirrm share/apps/kbounce/themes
-@dirrm share/apps/kbounce/sounds
-@dirrm share/apps/kbounce

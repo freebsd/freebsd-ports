@@ -6,4 +6,3 @@ share/doc/HTML/en/kcron/kcronstart.png
 share/doc/HTML/en/kcron/newtask.png
 share/doc/HTML/en/kcron/newvariable.png
 share/kde4/services/kcm_cron.desktop
-@dirrm share/doc/HTML/en/kcron

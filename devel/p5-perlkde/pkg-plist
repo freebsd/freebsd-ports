@@ -41,24 +41,3 @@ lib/kde4/kperlpluginfactory.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Soprano/Soprano.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SopranoClient/SopranoClient.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SopranoServer/SopranoServer.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SopranoServer
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SopranoClient
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Soprano
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Solid
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plasma4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Okular
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NepomukQuery
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nepomuk
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kate
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KUtils
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KTextEditor
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KParts
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KNewStuff3
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KNewStuff2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KIO4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KHTML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KFile
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KDEUi4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KDECore4
-%%ATTICA%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attica
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Akonadi

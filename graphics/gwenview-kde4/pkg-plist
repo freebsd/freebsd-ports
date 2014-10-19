@@ -20,6 +20,7 @@ share/doc/HTML/en/gwenview/importer.png
 share/doc/HTML/en/gwenview/importer-picking-root-folder.png
 share/doc/HTML/en/gwenview/index.cache.bz2
 share/doc/HTML/en/gwenview/index.docbook
+share/doc/HTML/en/gwenview/modified-bar.png
 share/doc/HTML/en/gwenview/start-page.png
 share/doc/HTML/en/gwenview/view_mode.png
 share/icons/hicolor/128x128/actions/document-share.png
@@ -38,9 +39,3 @@ share/icons/hicolor/scalable/actions/document-share.svgz
 share/icons/hicolor/scalable/apps/gwenview.svgz
 share/kde4/services/ServiceMenus/slideshow.desktop
 share/kde4/services/gvpart.desktop
-@dirrm share/doc/HTML/en/gwenview
-@dirrm share/apps/gwenview/images
-@dirrm share/apps/gwenview/cursors
-@dirrm share/apps/gwenview/color-schemes
-@dirrm share/apps/gwenview
-@dirrm share/apps/gvpart

@@ -19,10 +19,3 @@ share/icons/hicolor/32x32/apps/bovo.png
 share/icons/hicolor/48x48/apps/bovo.png
 share/icons/hicolor/64x64/apps/bovo.png
 share/icons/hicolor/scalable/apps/bovo.svgz
-@dirrm share/doc/HTML/en/bovo
-@dirrm share/apps/bovo/themes/spacy
-@dirrm share/apps/bovo/themes/scribble
-@dirrm share/apps/bovo/themes/highcontrast
-@dirrm share/apps/bovo/themes/gomoku
-@dirrm share/apps/bovo/themes
-@dirrm share/apps/bovo

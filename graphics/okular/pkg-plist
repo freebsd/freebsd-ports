@@ -50,8 +50,8 @@ lib/kde4/okularGenerator_txt.so
 lib/kde4/okularGenerator_xps.so
 lib/kde4/okularpart.so
 lib/libokularcore.so
-lib/libokularcore.so.3
-lib/libokularcore.so.3.0.0
+lib/libokularcore.so.5
+lib/libokularcore.so.5.0.0
 man/man1/okular.1.gz
 share/applications/kde4/active-documentviewer_chm.desktop
 share/applications/kde4/active-documentviewer_comicbook.desktop
@@ -86,8 +86,11 @@ share/applications/kde4/okularApplication_tiff.desktop
 share/applications/kde4/okularApplication_txt.desktop
 share/applications/kde4/okularApplication_xps.desktop
 share/apps/kconf_update/okular.upd
+share/apps/okular/icons/hicolor/16x16/apps/okular-fb2.png
 share/apps/okular/icons/hicolor/16x16/apps/okular-gv.png
+share/apps/okular/icons/hicolor/32x32/apps/okular-fb2.png
 share/apps/okular/icons/hicolor/32x32/apps/okular-gv.png
+share/apps/okular/icons/hicolor/48x48/apps/okular-fb2.png
 share/apps/okular/part-viewermode.rc
 share/apps/okular/part.rc
 share/apps/okular/pics/checkmark.png
@@ -194,18 +197,3 @@ share/kde4/services/okularTxt.desktop
 share/kde4/services/okularXps.desktop
 share/kde4/services/okular_part.desktop
 share/kde4/servicetypes/okularGenerator.desktop
-@dirrm share/doc/HTML/en/okular
-@dirrm share/apps/okular/pics
-@dirrm share/apps/okular/icons/hicolor/32x32/apps
-@dirrm share/apps/okular/icons/hicolor/32x32
-@dirrm share/apps/okular/icons/hicolor/16x16/apps
-@dirrm share/apps/okular/icons/hicolor/16x16
-@dirrm share/apps/okular/icons/hicolor
-@dirrm share/apps/okular/icons
-@dirrm share/apps/okular
-@dirrmtry lib/kde4/imports/org/kde/okular
-@dirrm lib/cmake/Okular
-@dirrmtry lib/cmake
-@dirrm include/okular/interfaces
-@dirrm include/okular/core
-@dirrm include/okular

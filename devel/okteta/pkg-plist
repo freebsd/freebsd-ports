@@ -418,6 +418,7 @@ lib/libokteta1core.so.1
 lib/libokteta1gui.so
 lib/libokteta1gui.so.0.8.1
 lib/libokteta1gui.so.1
+share/appdata/okteta.appdata.xml
 share/applications/kde4/okteta.desktop
 share/apps/okteta/oktetaui.rc
 share/apps/okteta/structures/elf/main.osd
@@ -440,14 +441,3 @@ share/icons/hicolor/48x48/apps/okteta.png
 share/kde4/services/kbytearrayedit.desktop
 share/kde4/services/oktetapart.desktop
 share/mime/packages/okteta.xml
-@dirrm share/doc/HTML/en/okteta
-@dirrm share/apps/oktetapart
-@dirrm share/apps/okteta/structures/png
-@dirrm share/apps/okteta/structures/elf
-@dirrm share/apps/okteta/structures
-@dirrm share/apps/okteta
-@dirrm include/okteta1
-@dirrm include/kasten2/okteta1
-@dirrm include/kasten2
-@dirrm include/KDE/Okteta1
-@dirrm include/KDE/Kasten2

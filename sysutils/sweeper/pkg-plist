@@ -6,5 +6,3 @@ share/doc/HTML/en/sweeper/common
 share/doc/HTML/en/sweeper/index.cache.bz2
 share/doc/HTML/en/sweeper/index.docbook
 share/doc/HTML/en/sweeper/sweeper.png
-@dirrm share/doc/HTML/en/sweeper
-@dirrm share/apps/sweeper

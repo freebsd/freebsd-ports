@@ -39,20 +39,3 @@ lib/libqtruby4shared.so.2.0.0
 %%RUBY_SITELIBDIR%%/qtuitools/qtuitools.rb
 %%RUBY_SITELIBDIR%%/qtwebkit/qtwebkit.rb
 %%RUBY_SITELIBDIR%%/qwt/qwt.rb
-@dirrm %%RUBY_SITELIBDIR%%/qwt
-@dirrm %%RUBY_SITELIBDIR%%/qtwebkit
-@dirrm %%RUBY_SITELIBDIR%%/qtuitools
-@dirrm %%RUBY_SITELIBDIR%%/qttest
-@dirrm %%RUBY_SITELIBDIR%%/qtscript
-@dirrm %%RUBY_SITELIBDIR%%/qtdeclarative
-@dirrm %%RUBY_SITELIBDIR%%/qscintilla
-@dirrm %%RUBY_SITELIBDIR%%/phonon
-@dirrmtry %%RUBY_SITEARCHLIBDIR%%
-@dirrm %%RUBY_SITELIBDIR%%/Qt
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby
-@dirrm lib/cmake/qtruby4
-@dirrmtry lib/cmake
-@dirrm include/qtruby
-@dirrmtry env

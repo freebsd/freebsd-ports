@@ -10,6 +10,7 @@
     SUBDIR += amanda-server
     SUBDIR += amfm
     SUBDIR += apparix
+    SUBDIR += artikulate
     SUBDIR += asbutton
     SUBDIR += asr-manpages
     SUBDIR += astrolog
@@ -202,6 +203,7 @@
     SUBDIR += kde4-l10n-hi
     SUBDIR += kde4-l10n-hr
     SUBDIR += kde4-l10n-ia
+    SUBDIR += kde4-l10n-id
     SUBDIR += kde4-l10n-is
     SUBDIR += kde4-l10n-it
     SUBDIR += kde4-l10n-kk

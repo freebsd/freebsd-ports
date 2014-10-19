@@ -2,7 +2,6 @@
 
 PORTNAME=	pykde4
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	4
 CATEGORIES=	devel kde python
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for KDE
 
 LIB_DEPENDS=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5
-
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtDesigner.so:${PORTSDIR}/devel/py-qt4-designer \
 		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network \
@@ -26,7 +24,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtDesigner.so:${PORTSDIR}/devel/py-qt4
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbussupport
 
-USE_KDE4=	kdehier kdelibs kdeprefix okular pimlibs \
+USE_KDE4=	kdelibs kdeprefix okular pimlibs \
 		akonadi automoc4 soprano
 USE_QT4=	corelib dbus designer_build gui network xml \
 		qmake_build moc_build uic_build rcc_build

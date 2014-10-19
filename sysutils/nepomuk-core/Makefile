@@ -3,7 +3,6 @@
 
 PORTNAME=	nepomuk-core
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	sysutils kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -18,7 +17,8 @@ LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
 		libepub.so:${PORTSDIR}/textproc/ebook-tools \
 		libqmobipocket.so:${PORTSDIR}/graphics/kdegraphics4-mobipocket
 
-USE_KDE4=	kdeprefix kdehier automoc4 kdelibs ontologies soprano
+USE_KDE4=	kdeprefix automoc4 baloo kdelibs kfilemetadata \
+		ontologies soprano
 USES=		cmake:outsource tar:xz
 USE_QT4=	corelib dbus gui qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes

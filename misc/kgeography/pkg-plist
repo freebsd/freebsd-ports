@@ -997,24 +997,3 @@ share/icons/hicolor/32x32/apps/kgeography.png
 share/icons/hicolor/48x48/apps/kgeography.png
 share/icons/hicolor/64x64/apps/kgeography.png
 share/icons/hicolor/scalable/apps/kgeography.svgz
-@dirrm share/doc/HTML/en/kgeography
-@dirrm share/apps/kgeography/flags/ukraine
-@dirrm share/apps/kgeography/flags/spain
-@dirrm share/apps/kgeography/flags/slovakia
-@dirrm share/apps/kgeography/flags/russia
-@dirrm share/apps/kgeography/flags/portugal
-@dirrm share/apps/kgeography/flags/peru
-@dirrm share/apps/kgeography/flags/japan
-@dirrm share/apps/kgeography/flags/italy
-@dirrm share/apps/kgeography/flags/ireland
-@dirrm share/apps/kgeography/flags/germany
-@dirrm share/apps/kgeography/flags/france
-@dirrm share/apps/kgeography/flags/estonia
-@dirrm share/apps/kgeography/flags/colombia
-@dirrm share/apps/kgeography/flags/canada
-@dirrm share/apps/kgeography/flags/brazil
-@dirrm share/apps/kgeography/flags/belgium
-@dirrm share/apps/kgeography/flags/belarus
-@dirrm share/apps/kgeography/flags/australia
-@dirrm share/apps/kgeography/flags
-@dirrm share/apps/kgeography

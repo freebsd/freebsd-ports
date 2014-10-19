@@ -3,4 +3,4 @@ pykdeuic4 is an enhanced version of pyuic4 which supports KDE4
 widgets and i18n. It compiles Designer Qt .ui files to Python
 classes.
 
-WWW:	http://www.kde.org/
+WWW: http://www.kde.org/

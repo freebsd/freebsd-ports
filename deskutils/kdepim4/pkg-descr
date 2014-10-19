@@ -1,8 +1,16 @@
-KDE4 is the K Desktop Environment for Unix, Windows, and Mac OS X.
+KDE Personal Information Management suite.
 
-These kde4 ports intend to provide early access to KDE4 for FreeBSD
-developers, porters and beta testers. Use at your own risk!
-
-This package provides PIM applications for KDE4.
+blogio - The KDE blogging client
+kaddressbook - Keeps your addresses on file
+akregator - Feed reader
+kalarm - A personal alarm message, command and email scheduler
+kjots - A note taker
+kleopatra - KDE Key Manager
+kmail - Fully featured Email client
+knode - KDE News (Usenet) reader
+knotes - Popup notes
+kontact - Brings together all the KDE PIM applications under one roof
+korganizer - KDE Calendar and scheduling
+ktimetracker - time tracker
 
 WWW: http://www.kde.org/

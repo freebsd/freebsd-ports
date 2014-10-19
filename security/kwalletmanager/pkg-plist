@@ -37,9 +37,3 @@ share/icons/hicolor/64x64/apps/kwalletmanager2.png
 share/kde4/services/kwalletconfig.desktop
 share/kde4/services/kwalletmanager_show.desktop
 share/polkit-1/actions/org.kde.kcontrol.kcmkwallet.policy
-@dirrm share/doc/HTML/en/kwallet
-@dirrm share/apps/kwalletmanager/icons/hicolor/22x22/actions
-@dirrm share/apps/kwalletmanager/icons/hicolor/22x22
-@dirrm share/apps/kwalletmanager/icons/hicolor
-@dirrm share/apps/kwalletmanager/icons
-@dirrm share/apps/kwalletmanager

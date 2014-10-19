@@ -2,7 +2,6 @@
 
 PORTNAME=	kalzium
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	science kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -12,11 +11,13 @@ COMMENT=	Periodic table of elements for KDE 4
 
 LIB_DEPENDS=	libopenbabel.so:${PORTSDIR}/science/openbabel \
 		libavogadro.so:${PORTSDIR}/science/avogadro
-
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2 \
-		${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile
+		${LOCALBASE}/libdata/pkgconfig/eigen3.pc:${PORTSDIR}/math/eigen3 \
+		${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile \
+		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 
-USE_KDE4=	kdehier kdelibs kdeprefix automoc4
+USE_KDE4=	kdelibs kdeprefix automoc4
 USES=		cmake:outsource pkgconfig tar:xz
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes

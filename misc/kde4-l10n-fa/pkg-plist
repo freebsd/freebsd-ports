@@ -1,3 +1,4 @@
+share/locale/fa/LC_MESSAGES/adblock.mo
 share/locale/fa/LC_MESSAGES/akregator.mo
 share/locale/fa/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/fa/LC_MESSAGES/amor.mo
@@ -9,6 +10,7 @@ share/locale/fa/LC_MESSAGES/audiorename_plugin.mo
 share/locale/fa/LC_MESSAGES/autorefresh.mo
 share/locale/fa/LC_MESSAGES/babelfish.mo
 share/locale/fa/LC_MESSAGES/blinken.mo
+share/locale/fa/LC_MESSAGES/calendarsupport.mo
 share/locale/fa/LC_MESSAGES/cervisia.mo
 share/locale/fa/LC_MESSAGES/cvsservice.mo
 share/locale/fa/LC_MESSAGES/dirfilterplugin.mo
@@ -35,9 +37,18 @@ share/locale/fa/LC_MESSAGES/kaddressbook.mo
 share/locale/fa/LC_MESSAGES/kalarm.mo
 share/locale/fa/LC_MESSAGES/kalzium.mo
 share/locale/fa/LC_MESSAGES/kanagram.mo
+share/locale/fa/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/fa/LC_MESSAGES/kate.mo
+share/locale/fa/LC_MESSAGES/kate_kttsd.mo
+share/locale/fa/LC_MESSAGES/katebacktracebrowserplugin.mo
+share/locale/fa/LC_MESSAGES/katebuild-plugin.mo
+share/locale/fa/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/fa/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/fa/LC_MESSAGES/katefiletemplates.mo
+share/locale/fa/LC_MESSAGES/kategdbplugin.mo
 share/locale/fa/LC_MESSAGES/katehelloworld.mo
+share/locale/fa/LC_MESSAGES/katekonsoleplugin.mo
+share/locale/fa/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/fa/LC_MESSAGES/kateopenheader.mo
 share/locale/fa/LC_MESSAGES/katepart4.mo
 share/locale/fa/LC_MESSAGES/katetabbarextension.mo
@@ -45,7 +56,6 @@ share/locale/fa/LC_MESSAGES/katetextfilter.mo
 share/locale/fa/LC_MESSAGES/katexmlcheck.mo
 share/locale/fa/LC_MESSAGES/katexmltools.mo
 share/locale/fa/LC_MESSAGES/katomic.mo
-share/locale/fa/LC_MESSAGES/knavalbattle.mo
 share/locale/fa/LC_MESSAGES/kblackbox.mo
 share/locale/fa/LC_MESSAGES/kblankscrn.mo
 share/locale/fa/LC_MESSAGES/kbounce.mo
@@ -185,6 +195,8 @@ share/locale/fa/LC_MESSAGES/kio_ldap.mo
 share/locale/fa/LC_MESSAGES/kio_man.mo
 share/locale/fa/LC_MESSAGES/kio_nepomuk.mo
 share/locale/fa/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/fa/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/fa/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/fa/LC_MESSAGES/kio_nfs.mo
 share/locale/fa/LC_MESSAGES/kio_nntp.mo
 share/locale/fa/LC_MESSAGES/kio_pop3.mo
@@ -195,9 +207,7 @@ share/locale/fa/LC_MESSAGES/kio_sieve.mo
 share/locale/fa/LC_MESSAGES/kio_smb.mo
 share/locale/fa/LC_MESSAGES/kio_smtp.mo
 share/locale/fa/LC_MESSAGES/kio_svn.mo
-share/locale/fa/LC_MESSAGES/kio_tags.mo
 share/locale/fa/LC_MESSAGES/kio_thumbnail.mo
-share/locale/fa/LC_MESSAGES/kio_timeline.mo
 share/locale/fa/LC_MESSAGES/kio_trash.mo
 share/locale/fa/LC_MESSAGES/kio_zeroconf.mo
 share/locale/fa/LC_MESSAGES/kioclient.mo
@@ -222,6 +232,7 @@ share/locale/fa/LC_MESSAGES/kmix.mo
 share/locale/fa/LC_MESSAGES/kmousetool.mo
 share/locale/fa/LC_MESSAGES/kmouth.mo
 share/locale/fa/LC_MESSAGES/kmplot.mo
+share/locale/fa/LC_MESSAGES/knavalbattle.mo
 share/locale/fa/LC_MESSAGES/knetattach.mo
 share/locale/fa/LC_MESSAGES/knetwalk.mo
 share/locale/fa/LC_MESSAGES/knode.mo
@@ -307,6 +318,7 @@ share/locale/fa/LC_MESSAGES/libkexiv2.mo
 share/locale/fa/LC_MESSAGES/libkholidays.mo
 share/locale/fa/LC_MESSAGES/libkleopatra.mo
 share/locale/fa/LC_MESSAGES/libkmime.mo
+share/locale/fa/LC_MESSAGES/libkomparediff2.mo
 share/locale/fa/LC_MESSAGES/libkonq.mo
 share/locale/fa/LC_MESSAGES/libkpgp.mo
 share/locale/fa/LC_MESSAGES/libkscreensaver.mo
@@ -346,6 +358,7 @@ share/locale/fa/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_notifier.mo
+share/locale/fa/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_trash.mo

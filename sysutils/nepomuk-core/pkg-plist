@@ -1,6 +1,7 @@
 bin/nepomuk-simpleresource-rcgen
 bin/nepomuk2-rcgen
 bin/nepomukbackup
+bin/nepomukbaloomigrator
 bin/nepomukcleaner
 bin/nepomukcmd
 bin/nepomukctl
@@ -144,6 +145,7 @@ share/applications/kde4/nepomukcleaner.desktop
 share/apps/fileindexerservice/nepomukfileindexer.notifyrc
 share/apps/nepomukfilewatch/nepomukfilewatch.notifyrc
 share/apps/nepomukstorage/nepomukstorage.notifyrc
+share/autostart/nepomukbaloomigrator.desktop
 share/autostart/nepomukserver.desktop
 share/dbus-1/interfaces/org.kde.NepomukServer.xml
 share/dbus-1/interfaces/org.kde.nepomuk.BackupManager.xml
@@ -187,16 +189,3 @@ share/ontology/kde/kuvo.ontology
 share/ontology/kde/kuvo.trig
 share/ontology/kde/nrio.ontology
 share/ontology/kde/nrio.trig
-@dirrmtry share/ontology/kde
-@dirrmtry share/ontology
-@dirrm share/apps/nepomukstorage
-@dirrm share/apps/nepomukfilewatch
-@dirrm share/apps/fileindexerservice
-@dirrm lib/cmake/NepomukCore
-@dirrmtry lib/cmake
-@dirrmtry include/nepomuk2
-@dirrm include/Nepomuk2/Vocabulary
-@dirrm include/Nepomuk2/Types
-@dirrm include/Nepomuk2/Query
-@dirrm include/Nepomuk2
-@dirrmtry env

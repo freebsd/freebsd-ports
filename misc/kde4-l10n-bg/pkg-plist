@@ -11,6 +11,7 @@ share/locale/bg/LC_MESSAGES/akonadi_next.mo
 share/locale/bg/LC_MESSAGES/akregator.mo
 share/locale/bg/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/bg/LC_MESSAGES/amor.mo
+share/locale/bg/LC_MESSAGES/ark.appdata.mo
 share/locale/bg/LC_MESSAGES/ark.mo
 share/locale/bg/LC_MESSAGES/attica_kde.mo
 share/locale/bg/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -18,10 +19,16 @@ share/locale/bg/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/bg/LC_MESSAGES/audiorename_plugin.mo
 share/locale/bg/LC_MESSAGES/autorefresh.mo
 share/locale/bg/LC_MESSAGES/babelfish.mo
+share/locale/bg/LC_MESSAGES/baloo_file.mo
+share/locale/bg/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/bg/LC_MESSAGES/baloosearch.mo
+share/locale/bg/LC_MESSAGES/balooshow.mo
+share/locale/bg/LC_MESSAGES/baloowidgets.mo
 share/locale/bg/LC_MESSAGES/blinken.mo
 share/locale/bg/LC_MESSAGES/blogilo.mo
 share/locale/bg/LC_MESSAGES/bomber.mo
 share/locale/bg/LC_MESSAGES/bovo.mo
+share/locale/bg/LC_MESSAGES/calendarsupport.mo
 share/locale/bg/LC_MESSAGES/cryptopageplugin.mo
 share/locale/bg/LC_MESSAGES/dirfilterplugin.mo
 share/locale/bg/LC_MESSAGES/display.mo
@@ -78,6 +85,7 @@ share/locale/bg/LC_MESSAGES/kcertpart.mo
 share/locale/bg/LC_MESSAGES/kcharselect.mo
 share/locale/bg/LC_MESSAGES/kcm_attica.mo
 share/locale/bg/LC_MESSAGES/kcm_autostart.mo
+share/locale/bg/LC_MESSAGES/kcm_baloofile.mo
 share/locale/bg/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/bg/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/bg/LC_MESSAGES/kcm_device_automounter.mo
@@ -90,7 +98,6 @@ share/locale/bg/LC_MESSAGES/kcm_memory.mo
 share/locale/bg/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/bg/LC_MESSAGES/kcm_pci.mo
 share/locale/bg/LC_MESSAGES/kcm_phonon.mo
-share/locale/bg/LC_MESSAGES/kcm_pimactivity.mo
 share/locale/bg/LC_MESSAGES/kcm_platform.mo
 share/locale/bg/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/bg/LC_MESSAGES/kcm_standard_actions.mo
@@ -167,13 +174,13 @@ share/locale/bg/LC_MESSAGES/kfile_dds.mo
 share/locale/bg/LC_MESSAGES/kfile_drgeo.mo
 share/locale/bg/LC_MESSAGES/kfile_exr.mo
 share/locale/bg/LC_MESSAGES/kfile_kig.mo
-share/locale/bg/LC_MESSAGES/kfile_mail.mo
 share/locale/bg/LC_MESSAGES/kfile_pnm.mo
 share/locale/bg/LC_MESSAGES/kfile_raw.mo
 share/locale/bg/LC_MESSAGES/kfile_rgb.mo
 share/locale/bg/LC_MESSAGES/kfile_tiff.mo
 share/locale/bg/LC_MESSAGES/kfile_xps.mo
 share/locale/bg/LC_MESSAGES/kfileaudiopreview4.mo
+share/locale/bg/LC_MESSAGES/kfilemetadata.mo
 share/locale/bg/LC_MESSAGES/kfilereplace.mo
 share/locale/bg/LC_MESSAGES/kfileshare.mo
 share/locale/bg/LC_MESSAGES/kfindpart.mo
@@ -217,6 +224,8 @@ share/locale/bg/LC_MESSAGES/kio_man.mo
 share/locale/bg/LC_MESSAGES/kio_mbox.mo
 share/locale/bg/LC_MESSAGES/kio_nepomuk.mo
 share/locale/bg/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/bg/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/bg/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/bg/LC_MESSAGES/kio_nfs.mo
 share/locale/bg/LC_MESSAGES/kio_nntp.mo
 share/locale/bg/LC_MESSAGES/kio_pop3.mo
@@ -227,9 +236,7 @@ share/locale/bg/LC_MESSAGES/kio_sieve.mo
 share/locale/bg/LC_MESSAGES/kio_smb.mo
 share/locale/bg/LC_MESSAGES/kio_smtp.mo
 share/locale/bg/LC_MESSAGES/kio_svn.mo
-share/locale/bg/LC_MESSAGES/kio_tags.mo
 share/locale/bg/LC_MESSAGES/kio_thumbnail.mo
-share/locale/bg/LC_MESSAGES/kio_timeline.mo
 share/locale/bg/LC_MESSAGES/kio_trash.mo
 share/locale/bg/LC_MESSAGES/kio_zeroconf.mo
 share/locale/bg/LC_MESSAGES/kioclient.mo
@@ -423,6 +430,7 @@ share/locale/bg/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_akonotes_note.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_binaryclock.mo
+share/locale/bg/LC_MESSAGES/plasma_applet_bookmarks.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_currentappcontrol.mo
@@ -436,9 +444,11 @@ share/locale/bg/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kpapplet.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_lockout.mo
+share/locale/bg/LC_MESSAGES/plasma_applet_luna.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_notifier.mo
+share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.printmanager.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.showActivityManager.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_panel.mo
@@ -483,6 +493,7 @@ share/locale/bg/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/bg/LC_MESSAGES/plasmagenericshell.mo
 share/locale/bg/LC_MESSAGES/plasmapkg.mo
 share/locale/bg/LC_MESSAGES/powerdevil.mo
+share/locale/bg/LC_MESSAGES/print-manager.mo
 share/locale/bg/LC_MESSAGES/processcore.mo
 share/locale/bg/LC_MESSAGES/processui.mo
 share/locale/bg/LC_MESSAGES/randrmonitor.mo
@@ -506,5 +517,3 @@ share/locale/bg/LC_MESSAGES/validatorsplugin.mo
 share/locale/bg/LC_MESSAGES/webarchiver.mo
 share/locale/bg/LC_MESSAGES/xml_mimetypes.mo
 share/locale/bg/entry.desktop
-@dirrm share/apps/kvtml/bg
-@dirrm share/apps/kvtml

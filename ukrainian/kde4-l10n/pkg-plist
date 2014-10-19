@@ -58,7 +58,7 @@ man/uk/man8/kdeinit4.8.gz
 man/uk/man8/meinproc4.8.gz
 man/uk/man8/nepomukserver.8.gz
 man/uk/man8/nepomukservicestub.8.gz
-share/apps/autocorrect/uk_UA.xml
+share/apps/autocorrect/uk.xml
 share/apps/klettres/uk/alpha/a.ogg
 share/apps/klettres/uk/alpha/be.ogg
 share/apps/klettres/uk/alpha/che.ogg
@@ -392,9 +392,12 @@ share/doc/HTML/uk/PolicyKit-kde/introduction.docbook
 share/doc/HTML/uk/akonadi_archivemail_agent/common
 share/doc/HTML/uk/akonadi_archivemail_agent/index.cache.bz2
 share/doc/HTML/uk/akonadi_archivemail_agent/index.docbook
-share/doc/HTML/uk/akonadi_folderarchive_agent/common
-share/doc/HTML/uk/akonadi_folderarchive_agent/index.cache.bz2
-share/doc/HTML/uk/akonadi_folderarchive_agent/index.docbook
+share/doc/HTML/uk/akonadi_followupreminder_agent/common
+share/doc/HTML/uk/akonadi_followupreminder_agent/index.cache.bz2
+share/doc/HTML/uk/akonadi_followupreminder_agent/index.docbook
+share/doc/HTML/uk/akonadi_notes_agent/common
+share/doc/HTML/uk/akonadi_notes_agent/index.cache.bz2
+share/doc/HTML/uk/akonadi_notes_agent/index.docbook
 share/doc/HTML/uk/akonadi_sendlater_agent/common
 share/doc/HTML/uk/akonadi_sendlater_agent/index.cache.bz2
 share/doc/HTML/uk/akonadi_sendlater_agent/index.docbook
@@ -425,6 +428,9 @@ share/doc/HTML/uk/ark/common
 share/doc/HTML/uk/ark/index.cache.bz2
 share/doc/HTML/uk/ark/index.docbook
 share/doc/HTML/uk/ark/man-ark.1.docbook
+share/doc/HTML/uk/artikulate/common
+share/doc/HTML/uk/artikulate/index.cache.bz2
+share/doc/HTML/uk/artikulate/index.docbook
 share/doc/HTML/uk/blinken/blinken1.png
 share/doc/HTML/uk/blinken/blinken2.png
 share/doc/HTML/uk/blinken/blinken_accesskeys.png
@@ -452,6 +458,9 @@ share/doc/HTML/uk/common/fdl-translated.html
 share/doc/HTML/uk/common/gpl-translated.html
 share/doc/HTML/uk/common/kde-localised.css
 share/doc/HTML/uk/common/lgpl-translated.html
+share/doc/HTML/uk/contactthemeeditor/common
+share/doc/HTML/uk/contactthemeeditor/index.cache.bz2
+share/doc/HTML/uk/contactthemeeditor/index.docbook
 share/doc/HTML/uk/dolphin/common
 share/doc/HTML/uk/dolphin/default-ui.png
 share/doc/HTML/uk/dolphin/index.cache.bz2
@@ -518,6 +527,7 @@ share/doc/HTML/uk/gwenview/common
 share/doc/HTML/uk/gwenview/fullscreen_mode.png
 share/doc/HTML/uk/gwenview/index.cache.bz2
 share/doc/HTML/uk/gwenview/index.docbook
+share/doc/HTML/uk/gwenview/modified-bar.png
 share/doc/HTML/uk/gwenview/view_mode.png
 share/doc/HTML/uk/headerthemeeditor/common
 share/doc/HTML/uk/headerthemeeditor/index.cache.bz2
@@ -591,6 +601,7 @@ share/doc/HTML/uk/kalzium/settings2.png
 share/doc/HTML/uk/kalzium/settings3.png
 share/doc/HTML/uk/kalzium/settings4.png
 share/doc/HTML/uk/kalzium/sidebar1.png
+share/doc/HTML/uk/kanagram/answer-highlight.png
 share/doc/HTML/uk/kanagram/common
 share/doc/HTML/uk/kanagram/general-settings.png
 share/doc/HTML/uk/kanagram/helpstates.png
@@ -892,9 +903,6 @@ share/doc/HTML/uk/kcontrol/solid-actions/index.docbook
 share/doc/HTML/uk/kcontrol/solid-device-automounter/common
 share/doc/HTML/uk/kcontrol/solid-device-automounter/index.cache.bz2
 share/doc/HTML/uk/kcontrol/solid-device-automounter/index.docbook
-share/doc/HTML/uk/kcontrol/solid-hardware/common
-share/doc/HTML/uk/kcontrol/solid-hardware/index.cache.bz2
-share/doc/HTML/uk/kcontrol/solid-hardware/index.docbook
 share/doc/HTML/uk/kcontrol/spellchecking/common
 share/doc/HTML/uk/kcontrol/spellchecking/index.cache.bz2
 share/doc/HTML/uk/kcontrol/spellchecking/index.docbook
@@ -1325,7 +1333,9 @@ share/doc/HTML/uk/kmines/index.docbook
 share/doc/HTML/uk/kmix/common
 share/doc/HTML/uk/kmix/index.cache.bz2
 share/doc/HTML/uk/kmix/index.docbook
-share/doc/HTML/uk/kmix/kmix-configure.png
+share/doc/HTML/uk/kmix/kmix-configure-general.png
+share/doc/HTML/uk/kmix/kmix-configure-sound-menu.png
+share/doc/HTML/uk/kmix/kmix-configure-start.png
 share/doc/HTML/uk/kmix/kmix-file.png
 share/doc/HTML/uk/kmix/kmix-master.png
 share/doc/HTML/uk/kmix/kmix-options.png
@@ -1899,6 +1909,7 @@ share/doc/HTML/uk/parley/Parley_practice_grey_flash.png
 share/doc/HTML/uk/parley/Parley_practice_grey_written.png
 share/doc/HTML/uk/parley/Parley_practice_grey_written_right.png
 share/doc/HTML/uk/parley/Parley_practice_grey_written_wrong.png
+share/doc/HTML/uk/parley/Parley_practice_summary.png
 share/doc/HTML/uk/parley/Parley_trainer_eng-deu_0-9-4_006b.png
 share/doc/HTML/uk/parley/Parley_welcome_screen.png
 share/doc/HTML/uk/parley/common
@@ -1929,6 +1940,9 @@ share/doc/HTML/uk/rocs/rocs-interfaces.png
 share/doc/HTML/uk/rocs/rocs-screenshot.png
 share/doc/HTML/uk/rocs/rocs-toolbar-alignment.png
 share/doc/HTML/uk/rocs/rocs-toolbar-main.png
+share/doc/HTML/uk/sieveeditor/common
+share/doc/HTML/uk/sieveeditor/index.cache.bz2
+share/doc/HTML/uk/sieveeditor/index.docbook
 share/doc/HTML/uk/sonnet/common
 share/doc/HTML/uk/sonnet/index.cache.bz2
 share/doc/HTML/uk/sonnet/index.docbook
@@ -1945,17 +1959,29 @@ share/doc/HTML/uk/sweeper/sweeper.png
 share/doc/HTML/uk/systemsettings/common
 share/doc/HTML/uk/systemsettings/index.cache.bz2
 share/doc/HTML/uk/systemsettings/index.docbook
+share/doc/HTML/uk/umbrello/activity-diagram.png
 share/doc/HTML/uk/umbrello/authors.docbook
+share/doc/HTML/uk/umbrello/class-diagram.png
+share/doc/HTML/uk/umbrello/code-import.png
 share/doc/HTML/uk/umbrello/code_import_and_generation.docbook
+share/doc/HTML/uk/umbrello/collaboration-diagram.png
 share/doc/HTML/uk/umbrello/common
 share/doc/HTML/uk/umbrello/credits.docbook
+share/doc/HTML/uk/umbrello/entity-relationship-diagram.png
+share/doc/HTML/uk/umbrello/folders.png
+share/doc/HTML/uk/umbrello/generation-options.png
 share/doc/HTML/uk/umbrello/index.cache.bz2
 share/doc/HTML/uk/umbrello/index.docbook
 share/doc/HTML/uk/umbrello/introduction.docbook
 share/doc/HTML/uk/umbrello/other_features.docbook
+share/doc/HTML/uk/umbrello/sequence-diagram.png
+share/doc/HTML/uk/umbrello/state-diagram.png
+share/doc/HTML/uk/umbrello/umbrello-ui.png
 share/doc/HTML/uk/umbrello/uml_basics.docbook
+share/doc/HTML/uk/umbrello/use-case-diagram.png
 share/doc/HTML/uk/umbrello/working_with_umbrello.docbook
 share/locale/uk/LC_MESSAGES/accountwizard.mo
+share/locale/uk/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/uk/LC_MESSAGES/accountwizard_ical.mo
 share/locale/uk/LC_MESSAGES/accountwizard_imap.mo
 share/locale/uk/LC_MESSAGES/accountwizard_kolab.mo
@@ -1963,16 +1989,19 @@ share/locale/uk/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/uk/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/uk/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/uk/LC_MESSAGES/accountwizard_tine20.mo
+share/locale/uk/LC_MESSAGES/accountwizard_vcard.mo
+share/locale/uk/LC_MESSAGES/accountwizard_vcarddir.mo
 share/locale/uk/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/uk/LC_MESSAGES/adblock.mo
 share/locale/uk/LC_MESSAGES/akonadi-filestore.mo
 share/locale/uk/LC_MESSAGES/akonadi_archivemail_agent.mo
+share/locale/uk/LC_MESSAGES/akonadi_baloo_indexer.mo
 share/locale/uk/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/uk/LC_MESSAGES/akonadi_folderarchive_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_followupreminder_agent.mo
+share/locale/uk/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_ical_resource.mo
@@ -1992,20 +2021,17 @@ share/locale/uk/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_mbox_resource.mo
-share/locale/uk/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/uk/LC_MESSAGES/akonadi_nepomuk_feeder.mo
-share/locale/uk/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_next.mo
 share/locale/uk/LC_MESSAGES/akonadi_nntp_resource.mo
+share/locale/uk/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/uk/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/uk/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/uk/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/uk/LC_MESSAGES/akonadicontact.mo
@@ -2015,19 +2041,30 @@ share/locale/uk/LC_MESSAGES/akregator.mo
 share/locale/uk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/uk/LC_MESSAGES/amor.mo
 share/locale/uk/LC_MESSAGES/analitza.mo
+share/locale/uk/LC_MESSAGES/ark.appdata.mo
 share/locale/uk/LC_MESSAGES/ark.mo
+share/locale/uk/LC_MESSAGES/artikulate.appdata.mo
+share/locale/uk/LC_MESSAGES/artikulate.mo
 share/locale/uk/LC_MESSAGES/attica_kde.mo
 share/locale/uk/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/uk/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/uk/LC_MESSAGES/audiorename_plugin.mo
 share/locale/uk/LC_MESSAGES/autorefresh.mo
 share/locale/uk/LC_MESSAGES/babelfish.mo
+share/locale/uk/LC_MESSAGES/baloo_file.mo
+share/locale/uk/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/uk/LC_MESSAGES/baloo_queryparser.mo
+share/locale/uk/LC_MESSAGES/baloosearch.mo
+share/locale/uk/LC_MESSAGES/balooshow.mo
+share/locale/uk/LC_MESSAGES/baloowidgets.mo
+share/locale/uk/LC_MESSAGES/blinken.appdata.mo
 share/locale/uk/LC_MESSAGES/blinken.mo
 share/locale/uk/LC_MESSAGES/blogilo.mo
 share/locale/uk/LC_MESSAGES/bomber.mo
 share/locale/uk/LC_MESSAGES/bovo.mo
 share/locale/uk/LC_MESSAGES/calendarjanitor.mo
 share/locale/uk/LC_MESSAGES/calendarsupport.mo
+share/locale/uk/LC_MESSAGES/cantor.appdata.mo
 share/locale/uk/LC_MESSAGES/cantor.mo
 share/locale/uk/LC_MESSAGES/cervisia.mo
 share/locale/uk/LC_MESSAGES/contactthemeeditor.mo
@@ -2035,6 +2072,7 @@ share/locale/uk/LC_MESSAGES/cryptopageplugin.mo
 share/locale/uk/LC_MESSAGES/cvsservice.mo
 share/locale/uk/LC_MESSAGES/dirfilterplugin.mo
 share/locale/uk/LC_MESSAGES/display.mo
+share/locale/uk/LC_MESSAGES/dolphin.appdata.mo
 share/locale/uk/LC_MESSAGES/dolphin.mo
 share/locale/uk/LC_MESSAGES/domtreeviewer.mo
 share/locale/uk/LC_MESSAGES/dragonplayer.mo
@@ -2057,6 +2095,7 @@ share/locale/uk/LC_MESSAGES/imgalleryplugin.mo
 share/locale/uk/LC_MESSAGES/importwizard.mo
 share/locale/uk/LC_MESSAGES/jovie.mo
 share/locale/uk/LC_MESSAGES/joystick.mo
+share/locale/uk/LC_MESSAGES/juk.appdata.mo
 share/locale/uk/LC_MESSAGES/juk.mo
 share/locale/uk/LC_MESSAGES/kabc.mo
 share/locale/uk/LC_MESSAGES/kabc_akonadi.mo
@@ -2075,11 +2114,11 @@ share/locale/uk/LC_MESSAGES/kaddressbook.mo
 share/locale/uk/LC_MESSAGES/kaddressbookmigrator.mo
 share/locale/uk/LC_MESSAGES/kajongg.mo
 share/locale/uk/LC_MESSAGES/kalarm.mo
+share/locale/uk/LC_MESSAGES/kalgebra.appdata.mo
 share/locale/uk/LC_MESSAGES/kalgebra.mo
+share/locale/uk/LC_MESSAGES/kalzium.appdata.mo
 share/locale/uk/LC_MESSAGES/kalzium.mo
-share/locale/uk/LC_MESSAGES/kanagram-active.mo
-share/locale/uk/LC_MESSAGES/kanagram-engine.mo
-share/locale/uk/LC_MESSAGES/kanagram-harmattan.mo
+share/locale/uk/LC_MESSAGES/kanagram.appdata.mo
 share/locale/uk/LC_MESSAGES/kanagram.mo
 share/locale/uk/LC_MESSAGES/kapman.mo
 share/locale/uk/LC_MESSAGES/kapptemplate.mo
@@ -2113,6 +2152,7 @@ share/locale/uk/LC_MESSAGES/kblankscrn.mo
 share/locale/uk/LC_MESSAGES/kblocks.mo
 share/locale/uk/LC_MESSAGES/kbounce.mo
 share/locale/uk/LC_MESSAGES/kbreakout.mo
+share/locale/uk/LC_MESSAGES/kbruch.appdata.mo
 share/locale/uk/LC_MESSAGES/kbruch.mo
 share/locale/uk/LC_MESSAGES/kcachegrind.mo
 share/locale/uk/LC_MESSAGES/kcachegrind_qt.mo
@@ -2126,6 +2166,7 @@ share/locale/uk/LC_MESSAGES/kcm_akonadi.mo
 share/locale/uk/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/uk/LC_MESSAGES/kcm_attica.mo
 share/locale/uk/LC_MESSAGES/kcm_autostart.mo
+share/locale/uk/LC_MESSAGES/kcm_baloofile.mo
 share/locale/uk/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/uk/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/uk/LC_MESSAGES/kcm_device_automounter.mo
@@ -2138,7 +2179,6 @@ share/locale/uk/LC_MESSAGES/kcm_memory.mo
 share/locale/uk/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/uk/LC_MESSAGES/kcm_pci.mo
 share/locale/uk/LC_MESSAGES/kcm_phonon.mo
-share/locale/uk/LC_MESSAGES/kcm_pimactivity.mo
 share/locale/uk/LC_MESSAGES/kcm_platform.mo
 share/locale/uk/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/uk/LC_MESSAGES/kcm_solid_actions.mo
@@ -2217,13 +2257,13 @@ share/locale/uk/LC_MESSAGES/kfile_dds.mo
 share/locale/uk/LC_MESSAGES/kfile_drgeo.mo
 share/locale/uk/LC_MESSAGES/kfile_exr.mo
 share/locale/uk/LC_MESSAGES/kfile_kig.mo
-share/locale/uk/LC_MESSAGES/kfile_mail.mo
 share/locale/uk/LC_MESSAGES/kfile_pnm.mo
 share/locale/uk/LC_MESSAGES/kfile_raw.mo
 share/locale/uk/LC_MESSAGES/kfile_rgb.mo
 share/locale/uk/LC_MESSAGES/kfile_tiff.mo
 share/locale/uk/LC_MESSAGES/kfile_xps.mo
 share/locale/uk/LC_MESSAGES/kfileaudiopreview4.mo
+share/locale/uk/LC_MESSAGES/kfilemetadata.mo
 share/locale/uk/LC_MESSAGES/kfilereplace.mo
 share/locale/uk/LC_MESSAGES/kfileshare.mo
 share/locale/uk/LC_MESSAGES/kfindpart.mo
@@ -2236,10 +2276,12 @@ share/locale/uk/LC_MESSAGES/kget.mo
 share/locale/uk/LC_MESSAGES/kgetplugin.mo
 share/locale/uk/LC_MESSAGES/kglobalaccel.mo
 share/locale/uk/LC_MESSAGES/kgoldrunner.mo
+share/locale/uk/LC_MESSAGES/kgpg.appdata.mo
 share/locale/uk/LC_MESSAGES/kgpg.mo
 share/locale/uk/LC_MESSAGES/kgreet_classic.mo
 share/locale/uk/LC_MESSAGES/kgreet_generic.mo
 share/locale/uk/LC_MESSAGES/kgreet_winbind.mo
+share/locale/uk/LC_MESSAGES/khangman.appdata.mo
 share/locale/uk/LC_MESSAGES/khangman.mo
 share/locale/uk/LC_MESSAGES/khelpcenter.mo
 share/locale/uk/LC_MESSAGES/khotkeys.mo
@@ -2247,6 +2289,7 @@ share/locale/uk/LC_MESSAGES/khotnewstuff.mo
 share/locale/uk/LC_MESSAGES/khtmlkttsd.mo
 share/locale/uk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/uk/LC_MESSAGES/kiconfinder.mo
+share/locale/uk/LC_MESSAGES/kig.appdata.mo
 share/locale/uk/LC_MESSAGES/kig.mo
 share/locale/uk/LC_MESSAGES/kigo.mo
 share/locale/uk/LC_MESSAGES/killbots.mo
@@ -2258,6 +2301,7 @@ share/locale/uk/LC_MESSAGES/kio_akonadi.mo
 share/locale/uk/LC_MESSAGES/kio_applications.mo
 share/locale/uk/LC_MESSAGES/kio_archive.mo
 share/locale/uk/LC_MESSAGES/kio_audiocd.mo
+share/locale/uk/LC_MESSAGES/kio_baloosearch.mo
 share/locale/uk/LC_MESSAGES/kio_bookmarks.mo
 share/locale/uk/LC_MESSAGES/kio_finger.mo
 share/locale/uk/LC_MESSAGES/kio_fish.mo
@@ -2271,6 +2315,8 @@ share/locale/uk/LC_MESSAGES/kio_man.mo
 share/locale/uk/LC_MESSAGES/kio_mbox.mo
 share/locale/uk/LC_MESSAGES/kio_nepomuk.mo
 share/locale/uk/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/uk/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/uk/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/uk/LC_MESSAGES/kio_nfs.mo
 share/locale/uk/LC_MESSAGES/kio_nntp.mo
 share/locale/uk/LC_MESSAGES/kio_perldoc.mo
@@ -2291,11 +2337,13 @@ share/locale/uk/LC_MESSAGES/kioclient.mo
 share/locale/uk/LC_MESSAGES/kioexec.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_kxmlhelloworld.mo
 share/locale/uk/LC_MESSAGES/kiriki.mo
+share/locale/uk/LC_MESSAGES/kiten.appdata.mo
 share/locale/uk/LC_MESSAGES/kiten.mo
 share/locale/uk/LC_MESSAGES/kjots.mo
 share/locale/uk/LC_MESSAGES/kjotsmigrator.mo
 share/locale/uk/LC_MESSAGES/kjumpingcube.mo
 share/locale/uk/LC_MESSAGES/kleopatra.mo
+share/locale/uk/LC_MESSAGES/klettres.appdata.mo
 share/locale/uk/LC_MESSAGES/klettres.mo
 share/locale/uk/LC_MESSAGES/klickety.mo
 share/locale/uk/LC_MESSAGES/klines.mo
@@ -2314,15 +2362,18 @@ share/locale/uk/LC_MESSAGES/kmines.mo
 share/locale/uk/LC_MESSAGES/kmix.mo
 share/locale/uk/LC_MESSAGES/kmousetool.mo
 share/locale/uk/LC_MESSAGES/kmouth.mo
+share/locale/uk/LC_MESSAGES/kmplot.appdata.mo
 share/locale/uk/LC_MESSAGES/kmplot.mo
 share/locale/uk/LC_MESSAGES/knavalbattle.mo
 share/locale/uk/LC_MESSAGES/knetattach.mo
 share/locale/uk/LC_MESSAGES/knetwalk.mo
 share/locale/uk/LC_MESSAGES/knode.mo
+share/locale/uk/LC_MESSAGES/knotes-migrator.mo
 share/locale/uk/LC_MESSAGES/knotes.mo
 share/locale/uk/LC_MESSAGES/knotify4.mo
 share/locale/uk/LC_MESSAGES/kolf.mo
 share/locale/uk/LC_MESSAGES/kollision.mo
+share/locale/uk/LC_MESSAGES/kolourpaint.appdata.mo
 share/locale/uk/LC_MESSAGES/kolourpaint.mo
 share/locale/uk/LC_MESSAGES/kommander.mo
 share/locale/uk/LC_MESSAGES/kompare.mo
@@ -2376,6 +2427,7 @@ share/locale/uk/LC_MESSAGES/ksnapshot.mo
 share/locale/uk/LC_MESSAGES/kspaceduel.mo
 share/locale/uk/LC_MESSAGES/ksplashthemes.mo
 share/locale/uk/LC_MESSAGES/ksquares.mo
+share/locale/uk/LC_MESSAGES/kstars.appdata.mo
 share/locale/uk/LC_MESSAGES/kstars.mo
 share/locale/uk/LC_MESSAGES/kstart.mo
 share/locale/uk/LC_MESSAGES/kstartperf.mo
@@ -2392,11 +2444,13 @@ share/locale/uk/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/uk/LC_MESSAGES/ktimer.mo
 share/locale/uk/LC_MESSAGES/ktimetracker.mo
 share/locale/uk/LC_MESSAGES/ktnef.mo
+share/locale/uk/LC_MESSAGES/ktouch.appdata.mo
 share/locale/uk/LC_MESSAGES/ktouch.mo
 share/locale/uk/LC_MESSAGES/ktouchpadenabler.mo
 share/locale/uk/LC_MESSAGES/ktraderclient.mo
 share/locale/uk/LC_MESSAGES/ktron.mo
 share/locale/uk/LC_MESSAGES/ktuberling.mo
+share/locale/uk/LC_MESSAGES/kturtle.appdata.mo
 share/locale/uk/LC_MESSAGES/kturtle.mo
 share/locale/uk/LC_MESSAGES/ktux.mo
 share/locale/uk/LC_MESSAGES/kubrick.mo
@@ -2414,6 +2468,7 @@ share/locale/uk/LC_MESSAGES/kwin_effects.mo
 share/locale/uk/LC_MESSAGES/kwin_scripting.mo
 share/locale/uk/LC_MESSAGES/kwinshutdown.mo
 share/locale/uk/LC_MESSAGES/kwinstartmenu.mo
+share/locale/uk/LC_MESSAGES/kwordquiz.appdata.mo
 share/locale/uk/LC_MESSAGES/kwordquiz.mo
 share/locale/uk/LC_MESSAGES/kwrite.mo
 share/locale/uk/LC_MESSAGES/kwriteconfig.mo
@@ -2426,6 +2481,7 @@ share/locale/uk/LC_MESSAGES/libakonadi-xml.mo
 share/locale/uk/LC_MESSAGES/libakonadi.mo
 share/locale/uk/LC_MESSAGES/libcomposereditorng.mo
 share/locale/uk/LC_MESSAGES/libeventviews.mo
+share/locale/uk/LC_MESSAGES/libfolderarchivesettings.mo
 share/locale/uk/LC_MESSAGES/libgrantleetheme.mo
 share/locale/uk/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/uk/LC_MESSAGES/libincidenceeditors.mo
@@ -2474,13 +2530,14 @@ share/locale/uk/LC_MESSAGES/libmessagecomposer.mo
 share/locale/uk/LC_MESSAGES/libmessagecore.mo
 share/locale/uk/LC_MESSAGES/libmessagelist.mo
 share/locale/uk/LC_MESSAGES/libmessageviewer.mo
+share/locale/uk/LC_MESSAGES/libnoteshared.mo
 share/locale/uk/LC_MESSAGES/liboktetacore.mo
 share/locale/uk/LC_MESSAGES/liboktetagui.mo
 share/locale/uk/LC_MESSAGES/liboktetakasten.mo
 share/locale/uk/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/uk/LC_MESSAGES/libphonon.mo
-share/locale/uk/LC_MESSAGES/libpimactivity.mo
 share/locale/uk/LC_MESSAGES/libpimcommon.mo
+share/locale/uk/LC_MESSAGES/libpimprint.mo
 share/locale/uk/LC_MESSAGES/libplasma.mo
 share/locale/uk/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/uk/LC_MESSAGES/libplasmaclock.mo
@@ -2491,6 +2548,7 @@ share/locale/uk/LC_MESSAGES/libtemplateparser.mo
 share/locale/uk/LC_MESSAGES/lokalize.mo
 share/locale/uk/LC_MESSAGES/lskat.mo
 share/locale/uk/LC_MESSAGES/mailreader.mo
+share/locale/uk/LC_MESSAGES/marble.appdata.mo
 share/locale/uk/LC_MESSAGES/marble.mo
 share/locale/uk/LC_MESSAGES/marble_qt.mo
 share/locale/uk/LC_MESSAGES/marble_xml_mimetypes.mo
@@ -2508,7 +2566,6 @@ share/locale/uk/LC_MESSAGES/nepomukcleaner.mo
 share/locale/uk/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/uk/LC_MESSAGES/nepomukfilewatch.mo
 share/locale/uk/LC_MESSAGES/nepomukmigrator.mo
-share/locale/uk/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/uk/LC_MESSAGES/nepomukserver.mo
 share/locale/uk/LC_MESSAGES/nepomukservicestub.mo
 share/locale/uk/LC_MESSAGES/nepomukstorage.mo
@@ -2536,9 +2593,11 @@ share/locale/uk/LC_MESSAGES/okular_tiff.mo
 share/locale/uk/LC_MESSAGES/okular_txt.mo
 share/locale/uk/LC_MESSAGES/okular_xps.mo
 share/locale/uk/LC_MESSAGES/org.kde.active.documentviewer.mo
+share/locale/uk/LC_MESSAGES/pairs.appdata.mo
 share/locale/uk/LC_MESSAGES/pairs.mo
 share/locale/uk/LC_MESSAGES/pairseditor.mo
 share/locale/uk/LC_MESSAGES/palapeli.mo
+share/locale/uk/LC_MESSAGES/parley.appdata.mo
 share/locale/uk/LC_MESSAGES/parley.mo
 share/locale/uk/LC_MESSAGES/pate.mo
 share/locale/uk/LC_MESSAGES/phonon_gstreamer.mo
@@ -2659,6 +2718,7 @@ share/locale/uk/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
+share/locale/uk/LC_MESSAGES/plasma_runner_baloosearchrunner.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_calculatorrunner.mo
@@ -2714,15 +2774,19 @@ share/locale/uk/LC_MESSAGES/processcore.mo
 share/locale/uk/LC_MESSAGES/processui.mo
 share/locale/uk/LC_MESSAGES/randrmonitor.mo
 share/locale/uk/LC_MESSAGES/rellinks.mo
+share/locale/uk/LC_MESSAGES/rocs.appdata.mo
 share/locale/uk/LC_MESSAGES/rocs.mo
 share/locale/uk/LC_MESSAGES/rocscore.mo
 share/locale/uk/LC_MESSAGES/rocsvisualeditor.mo
 share/locale/uk/LC_MESSAGES/searchbarplugin.mo
+share/locale/uk/LC_MESSAGES/sieveeditor.mo
 share/locale/uk/LC_MESSAGES/solid-hardware.mo
 share/locale/uk/LC_MESSAGES/solid_qt.mo
 share/locale/uk/LC_MESSAGES/soliduiserver.mo
+share/locale/uk/LC_MESSAGES/step.appdata.mo
 share/locale/uk/LC_MESSAGES/step.mo
 share/locale/uk/LC_MESSAGES/step_qt.mo
+share/locale/uk/LC_MESSAGES/storageservicemanager.mo
 share/locale/uk/LC_MESSAGES/strigila_diff.mo
 share/locale/uk/LC_MESSAGES/superkaramba.mo
 share/locale/uk/LC_MESSAGES/svgpart.mo
@@ -2740,284 +2804,3 @@ share/locale/uk/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/uk/LC_SCRIPTS/kgeography/general.pmap
 share/locale/uk/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/uk/entry.desktop
-@dirrm share/locale/uk/LC_SCRIPTS/kgeography
-@dirrm share/locale/uk/LC_SCRIPTS/kdelibs4
-@dirrm share/locale/uk/LC_SCRIPTS
-@dirrm share/doc/HTML/uk/umbrello
-@dirrm share/doc/HTML/uk/systemsettings
-@dirrm share/doc/HTML/uk/sweeper
-@dirrm share/doc/HTML/uk/step
-@dirrm share/doc/HTML/uk/sonnet
-@dirrm share/doc/HTML/uk/rocs
-@dirrm share/doc/HTML/uk/plasma-desktop
-@dirrm share/doc/HTML/uk/pimsettingexporter
-@dirrm share/doc/HTML/uk/picmi
-@dirrm share/doc/HTML/uk/parley
-@dirrm share/doc/HTML/uk/palapeli
-@dirrm share/doc/HTML/uk/pairseditor
-@dirrm share/doc/HTML/uk/onlinehelp
-@dirrm share/doc/HTML/uk/okular
-@dirrm share/doc/HTML/uk/okteta
-@dirrm share/doc/HTML/uk/marble
-@dirrm share/doc/HTML/uk/lskat
-@dirrm share/doc/HTML/uk/lokalize
-@dirrm share/doc/HTML/uk/kwrite
-@dirrm share/doc/HTML/uk/kwordquiz
-@dirrm share/doc/HTML/uk/kwatchgnupg
-@dirrm share/doc/HTML/uk/kwalletmanager
-@dirrm share/doc/HTML/uk/kuser
-@dirrm share/doc/HTML/uk/kubrick
-@dirrm share/doc/HTML/uk/kturtle
-@dirrm share/doc/HTML/uk/ktuberling
-@dirrm share/doc/HTML/uk/ktron
-@dirrm share/doc/HTML/uk/ktouch
-@dirrm share/doc/HTML/uk/ktnef
-@dirrm share/doc/HTML/uk/ktimetracker
-@dirrm share/doc/HTML/uk/ktimer
-@dirrm share/doc/HTML/uk/kteatime
-@dirrm share/doc/HTML/uk/ksystemlog
-@dirrm share/doc/HTML/uk/ksysguard
-@dirrm share/doc/HTML/uk/ksudoku
-@dirrm share/doc/HTML/uk/kstars
-@dirrm share/doc/HTML/uk/ksquares
-@dirrm share/doc/HTML/uk/kspaceduel
-@dirrm share/doc/HTML/uk/ksnapshot
-@dirrm share/doc/HTML/uk/ksirkskineditor
-@dirrm share/doc/HTML/uk/ksirk
-@dirrm share/doc/HTML/uk/kshisen
-@dirrm share/doc/HTML/uk/kruler
-@dirrm share/doc/HTML/uk/krfb
-@dirrm share/doc/HTML/uk/kreversi
-@dirrm share/doc/HTML/uk/krdc
-@dirrm share/doc/HTML/uk/kppp
-@dirrm share/doc/HTML/uk/kpat
-@dirrm share/doc/HTML/uk/korganizer
-@dirrm share/doc/HTML/uk/kopete
-@dirrm share/doc/HTML/uk/kontact-admin
-@dirrm share/doc/HTML/uk/kontact
-@dirrm share/doc/HTML/uk/konsolekalendar
-@dirrm share/doc/HTML/uk/konsole
-@dirrm share/doc/HTML/uk/konquest
-@dirrm share/doc/HTML/uk/konqueror
-@dirrm share/doc/HTML/uk/kompare
-@dirrm share/doc/HTML/uk/kommander
-@dirrm share/doc/HTML/uk/kolourpaint
-@dirrm share/doc/HTML/uk/kollision
-@dirrm share/doc/HTML/uk/kolf
-@dirrm share/doc/HTML/uk/knotes
-@dirrm share/doc/HTML/uk/knode
-@dirrm share/doc/HTML/uk/knetwalk
-@dirrm share/doc/HTML/uk/knetattach
-@dirrm share/doc/HTML/uk/knavalbattle
-@dirrm share/doc/HTML/uk/kmplot
-@dirrm share/doc/HTML/uk/kmouth
-@dirrm share/doc/HTML/uk/kmousetool
-@dirrm share/doc/HTML/uk/kmix
-@dirrm share/doc/HTML/uk/kmines
-@dirrm share/doc/HTML/uk/kmenuedit
-@dirrm share/doc/HTML/uk/kmailcvt
-@dirrm share/doc/HTML/uk/kmail
-@dirrm share/doc/HTML/uk/kmahjongg
-@dirrm share/doc/HTML/uk/kmag
-@dirrm share/doc/HTML/uk/klipper
-@dirrm share/doc/HTML/uk/klinkstatus
-@dirrm share/doc/HTML/uk/klines
-@dirrm share/doc/HTML/uk/klickety
-@dirrm share/doc/HTML/uk/klettres
-@dirrm share/doc/HTML/uk/kleopatra
-@dirrm share/doc/HTML/uk/kjumpingcube
-@dirrm share/doc/HTML/uk/kjots
-@dirrm share/doc/HTML/uk/kiten
-@dirrm share/doc/HTML/uk/kiriki
-@dirrm share/doc/HTML/uk/kioslave/xz
-@dirrm share/doc/HTML/uk/kioslave/webdav
-@dirrm share/doc/HTML/uk/kioslave/thumbnail
-@dirrm share/doc/HTML/uk/kioslave/telnet
-@dirrm share/doc/HTML/uk/kioslave/tar
-@dirrm share/doc/HTML/uk/kioslave/smtp
-@dirrm share/doc/HTML/uk/kioslave/smb
-@dirrm share/doc/HTML/uk/kioslave/sieve
-@dirrm share/doc/HTML/uk/kioslave/sftp
-@dirrm share/doc/HTML/uk/kioslave/rlogin
-@dirrm share/doc/HTML/uk/kioslave/pop3
-@dirrm share/doc/HTML/uk/kioslave/nntp
-@dirrm share/doc/HTML/uk/kioslave/nfs
-@dirrm share/doc/HTML/uk/kioslave/news
-@dirrm share/doc/HTML/uk/kioslave/network
-@dirrm share/doc/HTML/uk/kioslave/nepomuksearch
-@dirrm share/doc/HTML/uk/kioslave/mbox
-@dirrm share/doc/HTML/uk/kioslave/man
-@dirrm share/doc/HTML/uk/kioslave/mailto
-@dirrm share/doc/HTML/uk/kioslave/ldap
-@dirrm share/doc/HTML/uk/kioslave/info
-@dirrm share/doc/HTML/uk/kioslave/imap
-@dirrm share/doc/HTML/uk/kioslave/http
-@dirrm share/doc/HTML/uk/kioslave/help
-@dirrm share/doc/HTML/uk/kioslave/gzip
-@dirrm share/doc/HTML/uk/kioslave/ftp
-@dirrm share/doc/HTML/uk/kioslave/floppy
-@dirrm share/doc/HTML/uk/kioslave/fish
-@dirrm share/doc/HTML/uk/kioslave/finger
-@dirrm share/doc/HTML/uk/kioslave/file
-@dirrm share/doc/HTML/uk/kioslave/data
-@dirrm share/doc/HTML/uk/kioslave/cgi
-@dirrm share/doc/HTML/uk/kioslave/bzip2
-@dirrm share/doc/HTML/uk/kioslave/bookmarks
-@dirrm share/doc/HTML/uk/kioslave/audiocd
-@dirrm share/doc/HTML/uk/kioslave
-@dirrm share/doc/HTML/uk/kinfocenter
-@dirrm share/doc/HTML/uk/kimagemapeditor
-@dirrm share/doc/HTML/uk/killbots
-@dirrm share/doc/HTML/uk/kigo
-@dirrm share/doc/HTML/uk/kig
-@dirrm share/doc/HTML/uk/khelpcenter/glossary
-@dirrm share/doc/HTML/uk/khelpcenter/documentationnotfound
-@dirrm share/doc/HTML/uk/khelpcenter
-@dirrm share/doc/HTML/uk/khangman
-@dirrm share/doc/HTML/uk/kgpg
-@dirrm share/doc/HTML/uk/kgoldrunner
-@dirrm share/doc/HTML/uk/kget
-@dirrm share/doc/HTML/uk/kgeography
-@dirrm share/doc/HTML/uk/kfourinline
-@dirrm share/doc/HTML/uk/kfontview
-@dirrm share/doc/HTML/uk/kfloppy
-@dirrm share/doc/HTML/uk/kfind
-@dirrm share/doc/HTML/uk/kfilereplace
-@dirrm share/doc/HTML/uk/kdm
-@dirrm share/doc/HTML/uk/kdiamond
-@dirrm share/doc/HTML/uk/kdf
-@dirrm share/doc/HTML/uk/kdesu
-@dirrm share/doc/HTML/uk/kdepasswd
-@dirrm share/doc/HTML/uk/kdebugdialog
-@dirrm share/doc/HTML/uk/kcron
-@dirrm share/doc/HTML/uk/kcontrol/workspaceoptions
-@dirrm share/doc/HTML/uk/kcontrol/windowspecific
-@dirrm share/doc/HTML/uk/kcontrol/windowbehaviour
-@dirrm share/doc/HTML/uk/kcontrol/useragent
-@dirrm share/doc/HTML/uk/kcontrol/trash
-@dirrm share/doc/HTML/uk/kcontrol/splashscreen
-@dirrm share/doc/HTML/uk/kcontrol/spellchecking
-@dirrm share/doc/HTML/uk/kcontrol/solid-hardware
-@dirrm share/doc/HTML/uk/kcontrol/solid-device-automounter
-@dirrm share/doc/HTML/uk/kcontrol/solid-actions
-@dirrm share/doc/HTML/uk/kcontrol/smb
-@dirrm share/doc/HTML/uk/kcontrol/screensaver
-@dirrm share/doc/HTML/uk/kcontrol/proxy
-@dirrm share/doc/HTML/uk/kcontrol/powerdevil
-@dirrm share/doc/HTML/uk/kcontrol/phonon
-@dirrm share/doc/HTML/uk/kcontrol/performance
-@dirrm share/doc/HTML/uk/kcontrol/paths
-@dirrm share/doc/HTML/uk/kcontrol/netpref
-@dirrm share/doc/HTML/uk/kcontrol/nepomuk
-@dirrm share/doc/HTML/uk/kcontrol/mouse
-@dirrm share/doc/HTML/uk/kcontrol/language
-@dirrm share/doc/HTML/uk/kcontrol/kwintabbox
-@dirrm share/doc/HTML/uk/kcontrol/kwinscreenedges
-@dirrm share/doc/HTML/uk/kcontrol/kwindecoration
-@dirrm share/doc/HTML/uk/kcontrol/kwincompositing
-@dirrm share/doc/HTML/uk/kcontrol/kresources
-@dirrm share/doc/HTML/uk/kcontrol/kremotecontrol
-@dirrm share/doc/HTML/uk/kcontrol/khtml-plugins
-@dirrm share/doc/HTML/uk/kcontrol/khtml-java-js
-@dirrm share/doc/HTML/uk/kcontrol/khtml-general
-@dirrm share/doc/HTML/uk/kcontrol/khtml-behavior
-@dirrm share/doc/HTML/uk/kcontrol/khtml-adblock
-@dirrm share/doc/HTML/uk/kcontrol/khotkeys
-@dirrm share/doc/HTML/uk/kcontrol/kgamma
-@dirrm share/doc/HTML/uk/kcontrol/keys
-@dirrm share/doc/HTML/uk/kcontrol/keyboard
-@dirrm share/doc/HTML/uk/kcontrol/kded
-@dirrm share/doc/HTML/uk/kcontrol/kcmstyle
-@dirrm share/doc/HTML/uk/kcontrol/kcmsmserver
-@dirrm share/doc/HTML/uk/kcontrol/kcmnotify
-@dirrm share/doc/HTML/uk/kcontrol/kcmlaunch
-@dirrm share/doc/HTML/uk/kcontrol/kcmcss
-@dirrm share/doc/HTML/uk/kcontrol/kcmcgi
-@dirrm share/doc/HTML/uk/kcontrol/kcmaccess
-@dirrm share/doc/HTML/uk/kcontrol/kcm_ssl
-@dirrm share/doc/HTML/uk/kcontrol/kamera
-@dirrm share/doc/HTML/uk/kcontrol/joystick
-@dirrm share/doc/HTML/uk/kcontrol/icons
-@dirrm share/doc/HTML/uk/kcontrol/history
-@dirrm share/doc/HTML/uk/kcontrol/fonts
-@dirrm share/doc/HTML/uk/kcontrol/fontinst
-@dirrm share/doc/HTML/uk/kcontrol/filetypes
-@dirrm share/doc/HTML/uk/kcontrol/filemanager
-@dirrm share/doc/HTML/uk/kcontrol/emoticons
-@dirrm share/doc/HTML/uk/kcontrol/ebrowsing
-@dirrm share/doc/HTML/uk/kcontrol/desktopthemedetails
-@dirrm share/doc/HTML/uk/kcontrol/desktop
-@dirrm share/doc/HTML/uk/kcontrol/cursortheme
-@dirrm share/doc/HTML/uk/kcontrol/cookies
-@dirrm share/doc/HTML/uk/kcontrol/componentchooser
-@dirrm share/doc/HTML/uk/kcontrol/colors
-@dirrm share/doc/HTML/uk/kcontrol/clock
-@dirrm share/doc/HTML/uk/kcontrol/cddbretrieval
-@dirrm share/doc/HTML/uk/kcontrol/cache
-@dirrm share/doc/HTML/uk/kcontrol/bookmarks
-@dirrm share/doc/HTML/uk/kcontrol/blockdevices
-@dirrm share/doc/HTML/uk/kcontrol/bell
-@dirrm share/doc/HTML/uk/kcontrol/autostart
-@dirrm share/doc/HTML/uk/kcontrol/attica
-@dirrm share/doc/HTML/uk/kcontrol
-@dirrm share/doc/HTML/uk/kcharselect
-@dirrm share/doc/HTML/uk/kcalc
-@dirrm share/doc/HTML/uk/kcachegrind
-@dirrm share/doc/HTML/uk/kbruch
-@dirrm share/doc/HTML/uk/kbreakout
-@dirrm share/doc/HTML/uk/kbounce
-@dirrm share/doc/HTML/uk/kblocks
-@dirrm share/doc/HTML/uk/kblackbox
-@dirrm share/doc/HTML/uk/katomic
-@dirrm share/doc/HTML/uk/kate
-@dirrm share/doc/HTML/uk/kapptemplate
-@dirrm share/doc/HTML/uk/kapman
-@dirrm share/doc/HTML/uk/kanagram
-@dirrm share/doc/HTML/uk/kalzium
-@dirrm share/doc/HTML/uk/kalgebra
-@dirrm share/doc/HTML/uk/kalarm
-@dirrm share/doc/HTML/uk/kajongg
-@dirrm share/doc/HTML/uk/kabcclient
-@dirrm share/doc/HTML/uk/juk
-@dirrm share/doc/HTML/uk/jovie
-@dirrm share/doc/HTML/uk/importwizard
-@dirrm share/doc/HTML/uk/headerthemeeditor
-@dirrm share/doc/HTML/uk/gwenview
-@dirrm share/doc/HTML/uk/granatier
-@dirrm share/doc/HTML/uk/fundamentals
-@dirrm share/doc/HTML/uk/filelight
-@dirrm share/doc/HTML/uk/dragonplayer
-@dirrm share/doc/HTML/uk/dolphin
-@dirrm share/doc/HTML/uk/common
-@dirrm share/doc/HTML/uk/cervisia
-@dirrm share/doc/HTML/uk/cantor
-@dirrm share/doc/HTML/uk/bovo
-@dirrm share/doc/HTML/uk/bomber
-@dirrm share/doc/HTML/uk/blogilo
-@dirrm share/doc/HTML/uk/blinken
-@dirrm share/doc/HTML/uk/ark
-@dirrm share/doc/HTML/uk/amor
-@dirrm share/doc/HTML/uk/akregator
-@dirrm share/doc/HTML/uk/akonadi_sendlater_agent
-@dirrm share/doc/HTML/uk/akonadi_folderarchive_agent
-@dirrm share/doc/HTML/uk/akonadi_archivemail_agent
-@dirrm share/doc/HTML/uk/PolicyKit-kde
-@dirrm share/apps/step/objinfo/l10n/uk
-@dirrm share/apps/step/objinfo/l10n
-@dirrm share/apps/step/objinfo
-@dirrm share/apps/step
-@dirrm share/apps/kvtml/uk
-@dirrm share/apps/kvtml
-@dirrm share/apps/ktuberling/sounds/uk
-@dirrm share/apps/ktuberling/sounds
-@dirrm share/apps/ktuberling
-@dirrm share/apps/klettres/uk/syllab
-@dirrm share/apps/klettres/uk/alpha
-@dirrm share/apps/klettres/uk
-@dirrm share/apps/klettres
-@dirrm share/apps/autocorrect
-@dirrmtry man/uk/man8
-@dirrmtry man/uk/man7
-@dirrmtry man/uk/man6
-@dirrmtry man/uk/man1
-@dirrmtry man/uk

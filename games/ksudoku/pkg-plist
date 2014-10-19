@@ -119,20 +119,3 @@ share/doc/HTML/en/ksudoku/index.docbook
 share/icons/hicolor/128x128/apps/ksudoku.png
 share/icons/hicolor/16x16/apps/ksudoku.png
 share/icons/hicolor/32x32/apps/ksudoku.png
-@dirrm share/doc/HTML/en/ksudoku
-@dirrm share/apps/ksudoku/themes
-@dirrm share/apps/ksudoku/icons/hicolor/64x64/actions
-@dirrm share/apps/ksudoku/icons/hicolor/64x64
-@dirrm share/apps/ksudoku/icons/hicolor/48x48/actions
-@dirrm share/apps/ksudoku/icons/hicolor/48x48
-@dirrm share/apps/ksudoku/icons/hicolor/32x32/actions
-@dirrm share/apps/ksudoku/icons/hicolor/32x32
-@dirrm share/apps/ksudoku/icons/hicolor/22x22/actions
-@dirrm share/apps/ksudoku/icons/hicolor/22x22
-@dirrm share/apps/ksudoku/icons/hicolor/16x16/actions
-@dirrm share/apps/ksudoku/icons/hicolor/16x16
-@dirrm share/apps/ksudoku/icons/hicolor/128x128/actions
-@dirrm share/apps/ksudoku/icons/hicolor/128x128
-@dirrm share/apps/ksudoku/icons/hicolor
-@dirrm share/apps/ksudoku/icons
-@dirrm share/apps/ksudoku

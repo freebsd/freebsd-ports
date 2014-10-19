@@ -3,7 +3,6 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	multimedia kde
 DISTFILES=	# empty
 

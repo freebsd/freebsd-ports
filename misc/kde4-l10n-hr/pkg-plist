@@ -17,6 +17,7 @@ share/locale/hr/LC_MESSAGES/blinken.mo
 share/locale/hr/LC_MESSAGES/blogilo.mo
 share/locale/hr/LC_MESSAGES/bomber.mo
 share/locale/hr/LC_MESSAGES/bovo.mo
+share/locale/hr/LC_MESSAGES/calendarsupport.mo
 share/locale/hr/LC_MESSAGES/cantor.mo
 share/locale/hr/LC_MESSAGES/cervisia.mo
 share/locale/hr/LC_MESSAGES/cvsservice.mo
@@ -211,6 +212,7 @@ share/locale/hr/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/hr/LC_MESSAGES/kio_man.mo
 share/locale/hr/LC_MESSAGES/kio_nepomuk.mo
 share/locale/hr/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/hr/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/hr/LC_MESSAGES/kio_nfs.mo
 share/locale/hr/LC_MESSAGES/kio_nntp.mo
 share/locale/hr/LC_MESSAGES/kio_pop3.mo
@@ -220,7 +222,6 @@ share/locale/hr/LC_MESSAGES/kio_sieve.mo
 share/locale/hr/LC_MESSAGES/kio_smb.mo
 share/locale/hr/LC_MESSAGES/kio_smtp.mo
 share/locale/hr/LC_MESSAGES/kio_thumbnail.mo
-share/locale/hr/LC_MESSAGES/kio_timeline.mo
 share/locale/hr/LC_MESSAGES/kio_trash.mo
 share/locale/hr/LC_MESSAGES/kio_zeroconf.mo
 share/locale/hr/LC_MESSAGES/kioclient.mo
@@ -570,5 +571,3 @@ share/locale/hr/LC_SCRIPTS/kdelibs4/general.pmap
 share/locale/hr/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/hr/LC_SCRIPTS/kdelibs4/popmap.pcon
 share/locale/hr/entry.desktop
-@dirrm share/locale/hr/LC_SCRIPTS/kdelibs4
-@dirrm share/locale/hr/LC_SCRIPTS

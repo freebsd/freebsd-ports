@@ -143,9 +143,3 @@ share/icons/hicolor/32x32/apps/granatier.png
 share/icons/hicolor/48x48/apps/granatier.png
 share/icons/hicolor/64x64/apps/granatier.png
 share/icons/hicolor/scalable/apps/granatier.svgz
-@dirrm share/doc/HTML/en/granatier
-@dirrm share/apps/granatier/themes
-@dirrm share/apps/granatier/sounds
-@dirrm share/apps/granatier/players
-@dirrm share/apps/granatier/arenas
-@dirrm share/apps/granatier

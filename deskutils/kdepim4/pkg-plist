@@ -1,6 +1,7 @@
 bin/akonadi_archivemail_agent
-bin/akonadi_folderarchive_agent
+bin/akonadi_followupreminder_agent
 bin/akonadi_mailfilter_agent
+bin/akonadi_notes_agent
 bin/akonadi_sendlater_agent
 bin/akonadiconsole
 bin/akregator
@@ -39,6 +40,8 @@ bin/ktnef
 bin/kwatchgnupg
 bin/mboximporter
 bin/pimsettingexporter
+bin/sieveeditor
+bin/storageservicemanager
 etc/dbus-1/system.d/org.kde.kalarmrtcwake.conf
 lib/akonadi/contact/editorpageplugins/cryptopageplugin.so
 lib/kde4/akregator_config_advanced.so
@@ -50,7 +53,6 @@ lib/kde4/akregator_config_sharemicroblog.so
 lib/kde4/akregator_mk4storage_plugin.so
 lib/kde4/akregator_sharemicroblog_plugin.so
 lib/kde4/akregatorpart.so
-lib/kde4/grammar_link.so
 lib/kde4/kaddressbookpart.so
 lib/kde4/kcal_blog.so
 lib/kde4/kcal_remote.so
@@ -61,19 +63,18 @@ lib/kde4/kcm_kmail.so
 lib/kde4/kcm_kmailsummary.so
 lib/kde4/kcm_knode.so
 lib/kde4/kcm_knote.so
+lib/kde4/kcm_knotessummary.so
 lib/kde4/kcm_kontact.so
 lib/kde4/kcm_kontactsummary.so
 lib/kde4/kcm_korganizer.so
 lib/kde4/kcm_kpimidentities.so
 lib/kde4/kcm_ktimetracker.so
 lib/kde4/kcm_ldap.so
-lib/kde4/kcm_pimactivity.so
 lib/kde4/kcm_sdsummary.so
 lib/kde4/kcm_todosummary.so
 lib/kde4/kjotspart.so
 lib/kde4/kmailpart.so
 lib/kde4/knodepart.so
-lib/kde4/knotes_local.so
 lib/kde4/kontact_akregatorplugin.so
 lib/kde4/kontact_journalplugin.so
 lib/kde4/kontact_kaddressbookplugin.so
@@ -87,10 +88,8 @@ lib/kde4/kontact_summaryplugin.so
 lib/kde4/kontact_todoplugin.so
 lib/kde4/korg_datenums.so
 lib/kde4/korg_hebrew.so
-lib/kde4/korg_journalprint.so
 lib/kde4/korg_picoftheday.so
 lib/kde4/korg_thisdayinhistory.so
-lib/kde4/korg_yearprint.so
 lib/kde4/korganizerpart.so
 lib/kde4/ktexteditorkabcbridge.so
 lib/kde4/ktimetrackerpart.so
@@ -123,12 +122,9 @@ lib/libcomposereditorng.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libeventviews.so
 lib/libeventviews.so.4
 lib/libeventviews.so.%%KDE4_GENERIC_LIB_VERSION%%
-lib/libfolderarchive.so
-lib/libfolderarchive.so.4
-lib/libfolderarchive.so.%%KDE4_GENERIC_LIB_VERSION%%
-lib/libgrammar.so
-lib/libgrammar.so.4
-lib/libgrammar.so.%%KDE4_GENERIC_LIB_VERSION%%
+lib/libfollowupreminder.so
+lib/libfollowupreminder.so.4
+lib/libfollowupreminder.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libgrantleetheme.so
 lib/libgrantleetheme.so.4
 lib/libgrantleetheme.so.%%KDE4_GENERIC_LIB_VERSION%%
@@ -216,9 +212,9 @@ lib/libmessagelist.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libmessageviewer.so
 lib/libmessageviewer.so.4
 lib/libmessageviewer.so.%%KDE4_GENERIC_LIB_VERSION%%
-lib/libpimactivity.so
-lib/libpimactivity.so.4
-lib/libpimactivity.so.%%KDE4_GENERIC_LIB_VERSION%%
+lib/libnoteshared.so
+lib/libnoteshared.so.4
+lib/libnoteshared.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libpimcommon.so
 lib/libpimcommon.so.4
 lib/libpimcommon.so.%%KDE4_GENERIC_LIB_VERSION%%
@@ -231,7 +227,9 @@ lib/libtemplateparser.so.%%KDE4_GENERIC_LIB_VERSION%%
 man/man1/kabcclient.1.gz
 share/akonadi/agents/archivemailagent.desktop
 share/akonadi/agents/folderarchiveagent.desktop
+share/akonadi/agents/followupreminder.desktop
 share/akonadi/agents/mailfilteragent.desktop
+share/akonadi/agents/notesagent.desktop
 share/akonadi/agents/sendlateragent.desktop
 share/applications/kde4/KMail2.desktop
 share/applications/kde4/KNode.desktop
@@ -243,6 +241,7 @@ share/applications/kde4/blogilo.desktop
 share/applications/kde4/contactthemeeditor.desktop
 share/applications/kde4/headerthemeeditor.desktop
 share/applications/kde4/importwizard.desktop
+share/applications/kde4/kaddressbook-importer.desktop
 share/applications/kde4/kaddressbook.desktop
 share/applications/kde4/kalarm.desktop
 share/applications/kde4/kleopatra.desktop
@@ -256,9 +255,13 @@ share/applications/kde4/korganizer.desktop
 share/applications/kde4/ktimetracker.desktop
 share/applications/kde4/ktnef.desktop
 share/applications/kde4/mboximporter.desktop
+share/applications/kde4/pimsettingexporter.desktop
+share/applications/kde4/sieveeditor.desktop
+share/applications/kde4/storageservicemanager.desktop
 share/apps/akonadi_archivemail_agent/akonadi_archivemail_agent.notifyrc
-share/apps/akonadi_folderarchive_agent/akonadi_folderarchive_agent.notifyrc
+share/apps/akonadi_followupreminder_agent/akonadi_followupreminder_agent.notifyrc
 share/apps/akonadi_mailfilter_agent/akonadi_mailfilter_agent.notifyrc
+share/apps/akonadi_notes_agent/akonadi_notes_agent.notifyrc
 share/apps/akonadi_sendlater_agent/akonadi_sendlater_agent.notifyrc
 share/apps/akonadiconsole/akonadiconsoleui.rc
 share/apps/akregator/about/akregator.css
@@ -286,6 +289,8 @@ share/apps/kaddressbook/printing/themes/big-theme-example/theme.desktop
 share/apps/kaddressbook/printing/themes/big-theme-example/theme.html
 share/apps/kaddressbook/printing/themes/default/theme.desktop
 share/apps/kaddressbook/printing/themes/default/theme.html
+share/apps/kaddressbook/printing/themes/full/theme.desktop
+share/apps/kaddressbook/printing/themes/full/theme.html
 share/apps/kaddressbook/viewertemplates/default/contact.html
 share/apps/kaddressbook/viewertemplates/default/contact_embedded.html
 share/apps/kaddressbook/viewertemplates/default/contact_row.html
@@ -335,6 +340,7 @@ share/apps/kconf_update/kpgp-3.1-upgrade-address-data.pl
 share/apps/kconf_update/kpgp.upd
 share/apps/kconf_update/mailfilteragent.upd
 share/apps/kconf_update/migrate-kmail-filters.pl
+share/apps/kconf_update/noteglobalsettings.upd
 share/apps/kconf_update/upgrade-signature.pl
 share/apps/kconf_update/upgrade-transport.pl
 share/apps/kdepimwidgets/pics/addresseelineedit.png
@@ -412,7 +418,8 @@ share/apps/knode/pics/snderr.png
 share/apps/knotes/knotes_part.rc
 share/apps/knotes/knotesappui.rc
 share/apps/knotes/knotesui.rc
-share/apps/knotes/print/themes/TODO
+share/apps/knotes/print/themes/background-color/theme.desktop
+share/apps/knotes/print/themes/background-color/theme.html
 share/apps/knotes/print/themes/big-title/theme.desktop
 share/apps/knotes/print/themes/big-title/theme.html
 share/apps/knotes/print/themes/default/theme.desktop
@@ -539,6 +546,11 @@ share/apps/messageviewer/themes/example_fancy/header.desktop
 share/apps/messageviewer/themes/example_fancy/header.html
 share/apps/pimsettingexporter/backup-structure.txt
 share/apps/pimsettingexporter/pimsettingexporter.rc
+share/apps/sieve/scripts/copy/template.desktop
+share/apps/sieve/scripts/copy/template.txt
+share/apps/sieveeditor/sieveeditorui.rc
+share/apps/storageservicemanager/storageservicemanager.notifyrc
+share/apps/storageservicemanager/storageservicemanagerui.rc
 share/autostart/kalarm.autostart.desktop
 share/autostart/korgac.desktop
 share/config.kcfg/akregator.kcfg
@@ -547,7 +559,6 @@ share/config.kcfg/customtemplates_kfg.kcfg
 share/config.kcfg/kalarmconfig.kcfg
 share/config.kcfg/kjots.kcfg
 share/config.kcfg/kmail.kcfg
-share/config.kcfg/knoteconfig.kcfg
 share/config.kcfg/knotesglobalconfig.kcfg
 share/config.kcfg/kontact.kcfg
 share/config.kcfg/korganizer.kcfg
@@ -555,6 +566,7 @@ share/config.kcfg/templatesconfiguration_kfg.kcfg
 share/config/kaddressbook_themes.knsrc
 share/config/kmail.antispamrc
 share/config/kmail.antivirusrc
+share/config/knotes_printing_theme.knsrc
 share/config/korganizer.knsrc
 share/config/ksieve_script.knsrc
 share/config/libkleopatrarc
@@ -578,10 +590,12 @@ share/doc/HTML/en/akonadi_archivemail_agent/common
 share/doc/HTML/en/akonadi_archivemail_agent/configure-archive-mail-agent.png
 share/doc/HTML/en/akonadi_archivemail_agent/index.cache.bz2
 share/doc/HTML/en/akonadi_archivemail_agent/index.docbook
-share/doc/HTML/en/akonadi_folderarchive_agent/common
-share/doc/HTML/en/akonadi_folderarchive_agent/folderarchiveagent.png
-share/doc/HTML/en/akonadi_folderarchive_agent/index.cache.bz2
-share/doc/HTML/en/akonadi_folderarchive_agent/index.docbook
+share/doc/HTML/en/akonadi_followupreminder_agent/common
+share/doc/HTML/en/akonadi_followupreminder_agent/index.cache.bz2
+share/doc/HTML/en/akonadi_followupreminder_agent/index.docbook
+share/doc/HTML/en/akonadi_notes_agent/common
+share/doc/HTML/en/akonadi_notes_agent/index.cache.bz2
+share/doc/HTML/en/akonadi_notes_agent/index.docbook
 share/doc/HTML/en/akonadi_sendlater_agent/common
 share/doc/HTML/en/akonadi_sendlater_agent/index.cache.bz2
 share/doc/HTML/en/akonadi_sendlater_agent/index.docbook
@@ -620,6 +634,9 @@ share/doc/HTML/en/blogilo/toolbox-1.png
 share/doc/HTML/en/blogilo/toolbox-2.png
 share/doc/HTML/en/blogilo/toolbox-3.png
 share/doc/HTML/en/blogilo/toolbox-4.png
+share/doc/HTML/en/contactthemeeditor/common
+share/doc/HTML/en/contactthemeeditor/index.cache.bz2
+share/doc/HTML/en/contactthemeeditor/index.docbook
 share/doc/HTML/en/headerthemeeditor/common
 share/doc/HTML/en/headerthemeeditor/index.cache.bz2
 share/doc/HTML/en/headerthemeeditor/index.docbook
@@ -825,6 +842,9 @@ share/doc/HTML/en/pimsettingexporter/common
 share/doc/HTML/en/pimsettingexporter/index.cache.bz2
 share/doc/HTML/en/pimsettingexporter/index.docbook
 share/doc/HTML/en/pimsettingexporter/pimsettingexporter.png
+share/doc/HTML/en/sieveeditor/common
+share/doc/HTML/en/sieveeditor/index.cache.bz2
+share/doc/HTML/en/sieveeditor/index.docbook
 share/icons/hicolor/128x128/actions/upload-media.png
 share/icons/hicolor/128x128/apps/akonadiconsole.png
 share/icons/hicolor/128x128/apps/akregator.png
@@ -858,6 +878,8 @@ share/icons/hicolor/16x16/apps/akregator_empty.png
 share/icons/hicolor/16x16/apps/blogilo.png
 share/icons/hicolor/16x16/apps/kaddressbook.png
 share/icons/hicolor/16x16/apps/kalarm.png
+share/icons/hicolor/16x16/apps/kdepim-dropbox.png
+share/icons/hicolor/16x16/apps/kdepim-googledrive.png
 share/icons/hicolor/16x16/apps/kjots.png
 share/icons/hicolor/16x16/apps/kleopatra.png
 share/icons/hicolor/16x16/apps/kmail.png
@@ -882,6 +904,8 @@ share/icons/hicolor/22x22/apps/akregator.png
 share/icons/hicolor/22x22/apps/blogilo.png
 share/icons/hicolor/22x22/apps/kaddressbook.png
 share/icons/hicolor/22x22/apps/kalarm.png
+share/icons/hicolor/22x22/apps/kdepim-dropbox.png
+share/icons/hicolor/22x22/apps/kdepim-googledrive.png
 share/icons/hicolor/22x22/apps/kjots.png
 share/icons/hicolor/22x22/apps/kleopatra.png
 share/icons/hicolor/22x22/apps/kmail.png
@@ -903,6 +927,8 @@ share/icons/hicolor/32x32/apps/akregator.png
 share/icons/hicolor/32x32/apps/blogilo.png
 share/icons/hicolor/32x32/apps/kaddressbook.png
 share/icons/hicolor/32x32/apps/kalarm.png
+share/icons/hicolor/32x32/apps/kdepim-dropbox.png
+share/icons/hicolor/32x32/apps/kdepim-googledrive.png
 share/icons/hicolor/32x32/apps/kjots.png
 share/icons/hicolor/32x32/apps/kleopatra.png
 share/icons/hicolor/32x32/apps/kmail.png
@@ -921,6 +947,8 @@ share/icons/hicolor/48x48/apps/akregator.png
 share/icons/hicolor/48x48/apps/blogilo.png
 share/icons/hicolor/48x48/apps/kaddressbook.png
 share/icons/hicolor/48x48/apps/kalarm.png
+share/icons/hicolor/48x48/apps/kdepim-dropbox.png
+share/icons/hicolor/48x48/apps/kdepim-googledrive.png
 share/icons/hicolor/48x48/apps/kjots.png
 share/icons/hicolor/48x48/apps/kleopatra.png
 share/icons/hicolor/48x48/apps/kmail.png
@@ -997,14 +1025,13 @@ share/kde4/services/akregator_mk4storage_plugin.desktop
 share/kde4/services/akregator_part.desktop
 share/kde4/services/akregator_sharemicroblog_plugin.desktop
 share/kde4/services/feed.protocol
-share/kde4/services/grammar_link.desktop
 share/kde4/services/kaddressbookpart.desktop
 share/kde4/services/kcm_kpimidentities.desktop
 share/kde4/services/kcmapptsummary.desktop
 share/kde4/services/kcmkmailsummary.desktop
+share/kde4/services/kcmknotessummary.desktop
 share/kde4/services/kcmkontactsummary.desktop
 share/kde4/services/kcmldap.desktop
-share/kde4/services/kcmpimactivity.desktop
 share/kde4/services/kcmsdsummary.desktop
 share/kde4/services/kcmtodosummary.desktop
 share/kde4/services/kjots_config_misc.desktop
@@ -1032,8 +1059,10 @@ share/kde4/services/knode_config_post_news.desktop
 share/kde4/services/knode_config_privacy.desktop
 share/kde4/services/knode_config_read_news.desktop
 share/kde4/services/knote_config_action.desktop
+share/kde4/services/knote_config_collection.desktop
 share/kde4/services/knote_config_display.desktop
 share/kde4/services/knote_config_editor.desktop
+share/kde4/services/knote_config_misc.desktop
 share/kde4/services/knote_config_network.desktop
 share/kde4/services/knote_config_print.desktop
 share/kde4/services/kontact/akregatorplugin.desktop
@@ -1050,10 +1079,8 @@ share/kde4/services/kontact/todoplugin.desktop
 share/kde4/services/kontactconfig.desktop
 share/kde4/services/korganizer/datenums.desktop
 share/kde4/services/korganizer/hebrew.desktop
-share/kde4/services/korganizer/journalprint.desktop
 share/kde4/services/korganizer/picoftheday.desktop
 share/kde4/services/korganizer/thisdayinhistory.desktop
-share/kde4/services/korganizer/yearprint.desktop
 share/kde4/services/korganizer_configcolorsandfonts.desktop
 share/kde4/services/korganizer_configdesignerfields.desktop
 share/kde4/services/korganizer_configfreebusy.desktop
@@ -1065,8 +1092,6 @@ share/kde4/services/korganizer_configviews.desktop
 share/kde4/services/korganizer_part.desktop
 share/kde4/services/kresources/kcal/blog.desktop
 share/kde4/services/kresources/kcal/remote.desktop
-share/kde4/services/kresources/knotes/local.desktop
-share/kde4/services/kresources/knotes_manager.desktop
 share/kde4/services/ktimetracker_config_behavior.desktop
 share/kde4/services/ktimetracker_config_display.desktop
 share/kde4/services/ktimetracker_config_storage.desktop
@@ -1077,159 +1102,4 @@ share/kde4/servicetypes/calendardecoration.desktop
 share/kde4/servicetypes/calendarplugin.desktop
 share/kde4/servicetypes/dbuscalendar.desktop
 share/kde4/servicetypes/dbusmail.desktop
-share/kde4/servicetypes/korganizerpart.desktop
-share/kde4/servicetypes/korgprintplugin.desktop
-share/ontology/kde/messagetag.ontology
-share/ontology/kde/messagetag.trig
 share/polkit-1/actions/org.kde.kalarmrtcwake.policy
-@dirrmtry share/ontology/kde
-@dirrmtry share/ontology
-@dirrm share/kde4/services/kresources/knotes
-@dirrm share/kde4/services/korganizer
-@dirrm share/kde4/services/kontact
-@dirrmtry share/icons/oxygen/512x512/mimetypes
-@dirrmtry share/icons/oxygen/512x512
-@dirrmtry share/icons/locolor/32x32/apps
-@dirrmtry share/icons/locolor/32x32
-@dirrmtry share/icons/locolor/16x16/apps
-@dirrmtry share/icons/locolor/16x16/actions
-@dirrmtry share/icons/locolor/16x16
-@dirrmtry share/icons/locolor
-@dirrm share/doc/HTML/en/pimsettingexporter
-@dirrm share/doc/HTML/en/kwatchgnupg
-@dirrm share/doc/HTML/en/ktnef
-@dirrm share/doc/HTML/en/ktimetracker
-@dirrm share/doc/HTML/en/korganizer
-@dirrm share/doc/HTML/en/kontact-admin
-@dirrm share/doc/HTML/en/kontact
-@dirrm share/doc/HTML/en/konsolekalendar
-@dirrm share/doc/HTML/en/knotes
-@dirrm share/doc/HTML/en/knode
-@dirrm share/doc/HTML/en/kmailcvt
-@dirrm share/doc/HTML/en/kmail
-@dirrm share/doc/HTML/en/kleopatra
-@dirrm share/doc/HTML/en/kjots
-@dirrm share/doc/HTML/en/kioslave/news
-@dirrm share/doc/HTML/en/kalarm
-@dirrm share/doc/HTML/en/kabcclient
-@dirrm share/doc/HTML/en/importwizard
-@dirrm share/doc/HTML/en/headerthemeeditor
-@dirrm share/doc/HTML/en/blogilo
-@dirrm share/doc/HTML/en/akregator
-@dirrm share/doc/HTML/en/akonadi_sendlater_agent
-@dirrm share/doc/HTML/en/akonadi_folderarchive_agent
-@dirrm share/doc/HTML/en/akonadi_archivemail_agent
-@dirrm share/apps/pimsettingexporter
-@dirrm share/apps/messageviewer/themes/example_fancy
-@dirrm share/apps/messageviewer/themes/example
-@dirrm share/apps/messageviewer/themes
-@dirrm share/apps/messageviewer/plugins/bodypartformatter
-@dirrm share/apps/messageviewer/plugins
-@dirrm share/apps/messageviewer/about
-@dirrm share/apps/messageviewer
-@dirrm share/apps/messagelist/pics
-@dirrm share/apps/messagelist
-@dirrm share/apps/libmessageviewer/pics
-@dirrm share/apps/libmessageviewer
-@dirrm share/apps/libkleopatra/pics
-@dirrm share/apps/libkleopatra
-@dirrm share/apps/kwatchgnupg/pics
-@dirrm share/apps/kwatchgnupg
-@dirrm share/apps/ktnef
-@dirrm share/apps/ktimetracker/pics
-@dirrm share/apps/ktimetracker/icons/hicolor/scalable/actions
-@dirrm share/apps/ktimetracker/icons/hicolor/scalable
-@dirrm share/apps/ktimetracker/icons/hicolor/64x64/actions
-@dirrm share/apps/ktimetracker/icons/hicolor/64x64
-@dirrm share/apps/ktimetracker/icons/hicolor/48x48/actions
-@dirrm share/apps/ktimetracker/icons/hicolor/48x48
-@dirrm share/apps/ktimetracker/icons/hicolor/32x32/actions
-@dirrm share/apps/ktimetracker/icons/hicolor/32x32
-@dirrm share/apps/ktimetracker/icons/hicolor/22x22/actions
-@dirrm share/apps/ktimetracker/icons/hicolor/22x22
-@dirrm share/apps/ktimetracker/icons/hicolor/16x16/actions
-@dirrm share/apps/ktimetracker/icons/hicolor/16x16
-@dirrm share/apps/ktimetracker/icons/hicolor/128x128/actions
-@dirrm share/apps/ktimetracker/icons/hicolor/128x128
-@dirrm share/apps/ktimetracker/icons/hicolor
-@dirrm share/apps/ktimetracker/icons
-@dirrm share/apps/ktimetracker
-@dirrm share/apps/korganizer/sounds
-@dirrm share/apps/korganizer
-@dirrm share/apps/korgac/icons/hicolor/scalable/apps
-@dirrm share/apps/korgac/icons/hicolor/scalable
-@dirrm share/apps/korgac/icons/hicolor/64x64/apps
-@dirrm share/apps/korgac/icons/hicolor/64x64
-@dirrm share/apps/korgac/icons/hicolor/32x32/apps
-@dirrm share/apps/korgac/icons/hicolor/32x32
-@dirrm share/apps/korgac/icons/hicolor/256x256/apps
-@dirrm share/apps/korgac/icons/hicolor/256x256
-@dirrm share/apps/korgac/icons/hicolor/22x22/apps
-@dirrm share/apps/korgac/icons/hicolor/22x22
-@dirrm share/apps/korgac/icons/hicolor/16x16/apps
-@dirrm share/apps/korgac/icons/hicolor/16x16
-@dirrm share/apps/korgac/icons/hicolor/128x128/apps
-@dirrm share/apps/korgac/icons/hicolor/128x128
-@dirrm share/apps/korgac/icons/hicolor
-@dirrm share/apps/korgac/icons
-@dirrm share/apps/korgac
-@dirrm share/apps/kontactsummary
-@dirrm share/apps/kontact/ksettingsdialog
-@dirrm share/apps/kontact/about
-@dirrm share/apps/kontact
-@dirrm share/apps/knotes/print/themes/default
-@dirrm share/apps/knotes/print/themes/big-title
-@dirrm share/apps/knotes/print/themes
-@dirrm share/apps/knotes/print
-@dirrm share/apps/knotes
-@dirrm share/apps/knode/pics
-@dirrm share/apps/knode/filters
-@dirrm share/apps/knode
-@dirrm share/apps/kmailcvt/pics
-@dirrm share/apps/kmailcvt
-@dirrm share/apps/kmail2/pics
-@dirrm share/apps/kmail2/about
-@dirrm share/apps/kmail2
-@dirrm share/apps/kleopatra/pics
-@dirrm share/apps/kleopatra
-@dirrm share/apps/kjots/themes/xml_output
-@dirrm share/apps/kjots/themes/plain_text
-@dirrm share/apps/kjots/themes/other
-@dirrm share/apps/kjots/themes/default
-@dirrm share/apps/kjots/themes
-@dirrm share/apps/kjots
-@dirrm share/apps/kdepimwidgets/pics
-@dirrm share/apps/kdepimwidgets
-@dirrm share/apps/kalarm/icons/oxygen/22x22/actions
-@dirrm share/apps/kalarm/icons/oxygen/22x22
-@dirrm share/apps/kalarm/icons/oxygen/16x16/actions
-@dirrm share/apps/kalarm/icons/oxygen/16x16
-@dirrm share/apps/kalarm/icons/oxygen
-@dirrm share/apps/kalarm/icons
-@dirrm share/apps/kalarm
-@dirrm share/apps/kaddressbook/viewertemplates/default
-@dirrm share/apps/kaddressbook/viewertemplates
-@dirrm share/apps/kaddressbook/printing/themes/default
-@dirrm share/apps/kaddressbook/printing/themes/big-theme-example
-@dirrm share/apps/kaddressbook/printing/themes
-@dirrm share/apps/kaddressbook/printing
-@dirrm share/apps/kaddressbook
-@dirrm share/apps/headerthemeeditor
-@dirrm share/apps/contactthemeeditor
-@dirrm share/apps/composereditor
-@dirrm share/apps/blogilo
-@dirrm share/apps/akregator_sharemicroblog_plugin
-@dirrmtry share/apps/akregator/pics
-@dirrm share/apps/akregator/about
-@dirrmtry share/apps/akregator
-@dirrmtry share/apps/akonadiconsole
-@dirrm share/apps/akonadi_sendlater_agent
-@dirrm share/apps/akonadi_mailfilter_agent
-@dirrm share/apps/akonadi_folderarchive_agent
-@dirrm share/apps/akonadi_archivemail_agent
-@dirrmtry share/akonadi/agents
-@dirrmtry share/akonadi
-@dirrmtry lib/kde4/plugins/accessible
-@dirrmtry lib/akonadi/contact/editorpageplugins
-@dirrmtry lib/akonadi/contact
-@dirrmtry lib/akonadi

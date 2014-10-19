@@ -3,7 +3,6 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics kde
 DISTFILES=	# empty
 

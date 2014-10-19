@@ -55,4 +55,3 @@ share/kde4/services/svn+http.protocol
 share/kde4/services/svn+https.protocol
 share/kde4/services/svn+ssh.protocol
 share/kde4/services/svn.protocol
-@dirrm share/apps/kio_perldoc

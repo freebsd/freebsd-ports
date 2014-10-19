@@ -3,7 +3,6 @@
 
 PORTNAME=	libkcompactdisc
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -12,7 +11,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE library for interfacing with audio CDs
 
 USES=		cmake:outsource tar:xz
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	phonon moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

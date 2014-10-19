@@ -53,12 +53,3 @@ share/kde4/services/kded/kremotecontroldaemon.desktop
 share/kde4/services/kremotecontrolbackends/kremotecontrol_lirc.desktop
 share/kde4/services/plasma-engine-kremotecontrol.desktop
 share/kde4/servicetypes/kremotecontrolmanager.desktop
-@dirrm share/kde4/services/kremotecontrolbackends
-@dirrmtry share/icons/hicolor/8x8/devices
-@dirrmtry share/icons/hicolor/8x8
-@dirrmtry share/icons/hicolor/42x42/devices
-@dirrmtry share/icons/hicolor/42x42
-@dirrm share/doc/HTML/en/kcontrol/kremotecontrol
-@dirrm share/apps/kremotecontroldaemon
-@dirrm share/apps/kremotecontrol/profiles
-@dirrm share/apps/kremotecontrol

@@ -72,6 +72,7 @@ lib/libkonquerorprivate.so.4
 lib/libkonquerorprivate.so.%%KDE4_GENERIC_LIB_VERSION%%
 man/man1/kbookmarkmerger.1.gz
 man/man1/kfind.1.gz
+share/appdata/dolphin.appdata.xml
 share/applications/kde4/Home.desktop
 share/applications/kde4/dolphin.desktop
 share/applications/kde4/kdepasswd.desktop
@@ -337,7 +338,12 @@ share/kde4/services/smb.desktop
 share/kde4/services/useragent.desktop
 share/kde4/services/useragentstrings/android10.desktop
 share/kde4/services/useragentstrings/chrome10onwinnt51.desktop
+share/kde4/services/useragentstrings/chrome22oncurrent.desktop
+share/kde4/services/useragentstrings/chrome23oncurrent.desktop
+share/kde4/services/useragentstrings/chrome24oncurrent.desktop
 share/kde4/services/useragentstrings/chrome50oncurrent.desktop
+share/kde4/services/useragentstrings/firefox15oncurrent.desktop
+share/kde4/services/useragentstrings/firefox16oncurrent.desktop
 share/kde4/services/useragentstrings/firefox20oncurrent.desktop
 share/kde4/services/useragentstrings/firefox30oncurrent.desktop
 share/kde4/services/useragentstrings/firefox36oncurrent.desktop
@@ -348,12 +354,16 @@ share/kde4/services/useragentstrings/ie55onwinnt5.desktop
 share/kde4/services/useragentstrings/ie60oncurrent.desktop
 share/kde4/services/useragentstrings/ie60onwinnt51.desktop
 share/kde4/services/useragentstrings/ie70onwinnt51.desktop
+share/kde4/services/useragentstrings/ie80onwinnt60.desktop
+share/kde4/services/useragentstrings/ie90onwinnt71.desktop
 share/kde4/services/useragentstrings/lynxoncurrent.desktop
 share/kde4/services/useragentstrings/nn301oncurrent.desktop
 share/kde4/services/useragentstrings/nn475oncurrent.desktop
 share/kde4/services/useragentstrings/nn475onwin95.desktop
 share/kde4/services/useragentstrings/ns71oncurrent.desktop
 share/kde4/services/useragentstrings/ns71onwinnt51.desktop
+share/kde4/services/useragentstrings/op1162oncurrent.desktop
+share/kde4/services/useragentstrings/op1202oncurrent.desktop
 share/kde4/services/useragentstrings/op403onwinnt4.desktop
 share/kde4/services/useragentstrings/op85oncurrent.desktop
 share/kde4/services/useragentstrings/op90oncurrent.desktop
@@ -362,51 +372,11 @@ share/kde4/services/useragentstrings/safari20.desktop
 share/kde4/services/useragentstrings/safari30oniphone.desktop
 share/kde4/services/useragentstrings/safari32.desktop
 share/kde4/services/useragentstrings/safari40.desktop
+share/kde4/services/useragentstrings/safari517.desktop
+share/kde4/services/useragentstrings/safari60.desktop
 share/kde4/services/useragentstrings/w3moncurrent.desktop
 share/kde4/services/useragentstrings/wgetoncurrent.desktop
 share/kde4/services/webarchivethumbnail.desktop
 share/kde4/servicetypes/fileviewversioncontrolplugin.desktop
 share/kde4/servicetypes/konqaboutpage.desktop
 share/kde4/servicetypes/uasprovider.desktop
-@dirrm share/kde4/services/useragentstrings
-@dirrm share/doc/HTML/en/konqueror
-@dirrm share/doc/HTML/en/kfind
-@dirrm share/doc/HTML/en/kdepasswd
-@dirrm share/doc/HTML/en/dolphin
-@dirrm share/apps/nsplugin
-@dirrmtry share/apps/kwebkitpart/kpartplugins
-@dirrmtry share/apps/kwebkitpart
-@dirrm share/apps/konqueror/profiles
-@dirrmtry share/apps/konqueror/pics
-@dirrm share/apps/konqueror/opensearch
-@dirrm share/apps/konqueror/kpartplugins
-@dirrm share/apps/konqueror/icons/oxygen/scalable/actions
-@dirrm share/apps/konqueror/icons/oxygen/scalable
-@dirrm share/apps/konqueror/icons/oxygen/64x64/actions
-@dirrm share/apps/konqueror/icons/oxygen/64x64
-@dirrm share/apps/konqueror/icons/oxygen/48x48/actions
-@dirrm share/apps/konqueror/icons/oxygen/48x48
-@dirrm share/apps/konqueror/icons/oxygen/32x32/actions
-@dirrm share/apps/konqueror/icons/oxygen/32x32
-@dirrm share/apps/konqueror/icons/oxygen/22x22/actions
-@dirrm share/apps/konqueror/icons/oxygen/22x22
-@dirrm share/apps/konqueror/icons/oxygen/16x16/actions
-@dirrm share/apps/konqueror/icons/oxygen/16x16
-@dirrm share/apps/konqueror/icons/oxygen
-@dirrm share/apps/konqueror/icons
-@dirrm share/apps/konqueror/about
-@dirrm share/apps/konqsidebartng/virtual_folders/remote/web
-@dirrm share/apps/konqsidebartng/virtual_folders/remote/ftp
-@dirrm share/apps/konqsidebartng/virtual_folders/remote
-@dirrm share/apps/konqsidebartng/plugins
-@dirrm share/apps/konqsidebartng/entries
-@dirrm share/apps/konqsidebartng/dirtree
-@dirrm share/apps/keditbookmarks
-@dirrm share/apps/kcmcss
-@dirrm share/apps/fsview
-@dirrm share/apps/domtreeviewer
-@dirrmtry share/apps/dolphinpart/kpartplugins
-@dirrmtry share/apps/dolphinpart
-@dirrmtry share/apps/dolphin
-@dirrmtry share/apps/akregator/pics
-@dirrmtry share/apps/akregator
