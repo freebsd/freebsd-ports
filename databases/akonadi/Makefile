@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	akonadi
-PORTVERSION=	1.12.1
-PORTREVISION=	1
+PORTVERSION=	1.13.0
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=	KDE
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
-USE_KDE4=	kdehier kdeprefix automoc4 soprano
+USE_KDE4=	kdeprefix automoc4 soprano
 USES=		cmake:outsource execinfo shared-mime-info compiler:c++11-lang tar:bzip2
 USE_QT4=	corelib dbus gui network qtestlib_build sql xml \
 		moc_build qmake_build rcc_build uic_build

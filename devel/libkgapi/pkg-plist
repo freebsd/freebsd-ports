@@ -2,6 +2,25 @@ include/LibKGAPI2/Account
 include/LibKGAPI2/AccountInfo/AccountInfo
 include/LibKGAPI2/AccountInfo/AccountInfoFetchJob
 include/LibKGAPI2/AuthJob
+include/LibKGAPI2/Blogger/Blog
+include/LibKGAPI2/Blogger/BlogFetchJob
+include/LibKGAPI2/Blogger/Comment
+include/LibKGAPI2/Blogger/CommentApproveJob
+include/LibKGAPI2/Blogger/CommentDeleteContentJob
+include/LibKGAPI2/Blogger/CommentDeleteJob
+include/LibKGAPI2/Blogger/CommentFetchJob
+include/LibKGAPI2/Blogger/Page
+include/LibKGAPI2/Blogger/PageCreateJob
+include/LibKGAPI2/Blogger/PageDeleteJob
+include/LibKGAPI2/Blogger/PageFetchJob
+include/LibKGAPI2/Blogger/PageModifyJob
+include/LibKGAPI2/Blogger/Post
+include/LibKGAPI2/Blogger/PostCreateJob
+include/LibKGAPI2/Blogger/PostDeleteJob
+include/LibKGAPI2/Blogger/PostFetchJob
+include/LibKGAPI2/Blogger/PostModifyJob
+include/LibKGAPI2/Blogger/PostPublishJob
+include/LibKGAPI2/Blogger/PostSearchJob
 include/LibKGAPI2/Calendar/Calendar
 include/LibKGAPI2/Calendar/CalendarCreateJob
 include/LibKGAPI2/Calendar/CalendarDeleteJob
@@ -27,6 +46,43 @@ include/LibKGAPI2/Contacts/ContactsGroupFetchJob
 include/LibKGAPI2/Contacts/ContactsGroupModifyJob
 include/LibKGAPI2/CreateJob
 include/LibKGAPI2/DeleteJob
+include/LibKGAPI2/Drive/About
+include/LibKGAPI2/Drive/AboutFetchJob
+include/LibKGAPI2/Drive/App
+include/LibKGAPI2/Drive/Change
+include/LibKGAPI2/Drive/ChangeFetchJob
+include/LibKGAPI2/Drive/ChildReference
+include/LibKGAPI2/Drive/ChildReferenceCreateJob
+include/LibKGAPI2/Drive/ChildReferenceDeleteJob
+include/LibKGAPI2/Drive/ChildReferenceFetchJob
+include/LibKGAPI2/Drive/DriveService
+include/LibKGAPI2/Drive/File
+include/LibKGAPI2/Drive/FileAbstractDataJob
+include/LibKGAPI2/Drive/FileAbstractModifyJob
+include/LibKGAPI2/Drive/FileAbstractUploadJob
+include/LibKGAPI2/Drive/FileCopyJob
+include/LibKGAPI2/Drive/FileCreateJob
+include/LibKGAPI2/Drive/FileDeleteJob
+include/LibKGAPI2/Drive/FileFetchContentJob
+include/LibKGAPI2/Drive/FileFetchJob
+include/LibKGAPI2/Drive/FileModifyJob
+include/LibKGAPI2/Drive/FileTouchJob
+include/LibKGAPI2/Drive/FileTrashJob
+include/LibKGAPI2/Drive/FileUntrashJob
+include/LibKGAPI2/Drive/ParentReference
+include/LibKGAPI2/Drive/ParentReferenceCreateJob
+include/LibKGAPI2/Drive/ParentReferenceDeleteJob
+include/LibKGAPI2/Drive/ParentReferenceFetchJob
+include/LibKGAPI2/Drive/Permission
+include/LibKGAPI2/Drive/PermissionCreateJob
+include/LibKGAPI2/Drive/PermissionDeleteJob
+include/LibKGAPI2/Drive/PermissionFetchJob
+include/LibKGAPI2/Drive/PermissionModifyJob
+include/LibKGAPI2/Drive/Revision
+include/LibKGAPI2/Drive/RevisionDeleteJob
+include/LibKGAPI2/Drive/RevisionFetchJob
+include/LibKGAPI2/Drive/RevisionModifyJob
+include/LibKGAPI2/Drive/User
 include/LibKGAPI2/FetchJob
 include/LibKGAPI2/Job
 include/LibKGAPI2/Latitude/Location
@@ -53,40 +109,29 @@ include/LibKGAPI2/Tasks/TaskModifyJob
 include/LibKGAPI2/Tasks/TaskMoveJob
 include/LibKGAPI2/Types
 include/LibKGAPI2/Ui/AuthWidget
-include/libkgapi/accessmanager.h
-include/libkgapi/account.h
-include/libkgapi/auth.h
-include/libkgapi/common.h
-include/libkgapi/fetchlistjob.h
-include/libkgapi/libkgapi_export.h
-include/libkgapi/object.h
-include/libkgapi/objects/accountinfo.h
-include/libkgapi/objects/calendar.h
-include/libkgapi/objects/contact.h
-include/libkgapi/objects/contactsgroup.h
-include/libkgapi/objects/event.h
-include/libkgapi/objects/location.h
-include/libkgapi/objects/reminder.h
-include/libkgapi/objects/staticmapmarker.h
-include/libkgapi/objects/staticmappath.h
-include/libkgapi/objects/staticmapurl.h
-include/libkgapi/objects/task.h
-include/libkgapi/objects/tasklist.h
-include/libkgapi/reply.h
-include/libkgapi/request.h
-include/libkgapi/service.h
-include/libkgapi/services/accountinfo.h
-include/libkgapi/services/calendar.h
-include/libkgapi/services/contacts.h
-include/libkgapi/services/latitude.h
-include/libkgapi/services/staticmap.h
-include/libkgapi/services/tasks.h
-include/libkgapi/ui/accountscombo.h
-include/libkgapi/ui/authwidget.h
 include/libkgapi2/account.h
 include/libkgapi2/accountinfo/accountinfo.h
 include/libkgapi2/accountinfo/accountinfofetchjob.h
 include/libkgapi2/authjob.h
+include/libkgapi2/blogger/blog.h
+include/libkgapi2/blogger/blogfetchjob.h
+include/libkgapi2/blogger/comment.h
+include/libkgapi2/blogger/commentapprovejob.h
+include/libkgapi2/blogger/commentdeletecontentjob.h
+include/libkgapi2/blogger/commentdeletejob.h
+include/libkgapi2/blogger/commentfetchjob.h
+include/libkgapi2/blogger/page.h
+include/libkgapi2/blogger/pagecreatejob.h
+include/libkgapi2/blogger/pagedeletejob.h
+include/libkgapi2/blogger/pagefetchjob.h
+include/libkgapi2/blogger/pagemodifyjob.h
+include/libkgapi2/blogger/post.h
+include/libkgapi2/blogger/postcreatejob.h
+include/libkgapi2/blogger/postdeletejob.h
+include/libkgapi2/blogger/postfetchjob.h
+include/libkgapi2/blogger/postmodifyjob.h
+include/libkgapi2/blogger/postpublishjob.h
+include/libkgapi2/blogger/postsearchjob.h
 include/libkgapi2/calendar/calendar.h
 include/libkgapi2/calendar/calendarcreatejob.h
 include/libkgapi2/calendar/calendardeletejob.h
@@ -112,6 +157,43 @@ include/libkgapi2/contacts/contactsgroupfetchjob.h
 include/libkgapi2/contacts/contactsgroupmodifyjob.h
 include/libkgapi2/createjob.h
 include/libkgapi2/deletejob.h
+include/libkgapi2/drive/about.h
+include/libkgapi2/drive/aboutfetchjob.h
+include/libkgapi2/drive/app.h
+include/libkgapi2/drive/change.h
+include/libkgapi2/drive/changefetchjob.h
+include/libkgapi2/drive/childreference.h
+include/libkgapi2/drive/childreferencecreatejob.h
+include/libkgapi2/drive/childreferencedeletejob.h
+include/libkgapi2/drive/childreferencefetchjob.h
+include/libkgapi2/drive/driveservice.h
+include/libkgapi2/drive/file.h
+include/libkgapi2/drive/fileabstractdatajob.h
+include/libkgapi2/drive/fileabstractmodifyjob.h
+include/libkgapi2/drive/fileabstractuploadjob.h
+include/libkgapi2/drive/filecopyjob.h
+include/libkgapi2/drive/filecreatejob.h
+include/libkgapi2/drive/filedeletejob.h
+include/libkgapi2/drive/filefetchcontentjob.h
+include/libkgapi2/drive/filefetchjob.h
+include/libkgapi2/drive/filemodifyjob.h
+include/libkgapi2/drive/filetouchjob.h
+include/libkgapi2/drive/filetrashjob.h
+include/libkgapi2/drive/fileuntrashjob.h
+include/libkgapi2/drive/parentreference.h
+include/libkgapi2/drive/parentreferencecreatejob.h
+include/libkgapi2/drive/parentreferencedeletejob.h
+include/libkgapi2/drive/parentreferencefetchjob.h
+include/libkgapi2/drive/permission.h
+include/libkgapi2/drive/permissioncreatejob.h
+include/libkgapi2/drive/permissiondeletejob.h
+include/libkgapi2/drive/permissionfetchjob.h
+include/libkgapi2/drive/permissionmodifyjob.h
+include/libkgapi2/drive/revision.h
+include/libkgapi2/drive/revisiondeletejob.h
+include/libkgapi2/drive/revisionfetchjob.h
+include/libkgapi2/drive/revisionmodifyjob.h
+include/libkgapi2/drive/user.h
 include/libkgapi2/fetchjob.h
 include/libkgapi2/job.h
 include/libkgapi2/latitude/location.h
@@ -139,41 +221,10 @@ include/libkgapi2/tasks/taskmodifyjob.h
 include/libkgapi2/tasks/taskmovejob.h
 include/libkgapi2/types.h
 include/libkgapi2/ui/authwidget.h
-lib/cmake/LibKGAPI/LibKGAPIConfig.cmake
-lib/cmake/LibKGAPI/LibKGAPIConfigVersion.cmake
-lib/cmake/LibKGAPI/LibKGAPITargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/LibKGAPI/LibKGAPITargetsWithPrefix.cmake
 lib/cmake/LibKGAPI2/LibKGAPI2Config.cmake
 lib/cmake/LibKGAPI2/LibKGAPI2ConfigVersion.cmake
 lib/cmake/LibKGAPI2/LibKGAPI2TargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibKGAPI2/LibKGAPI2TargetsWithPrefix.cmake
-lib/libkgapi.so
-lib/libkgapi.so.1
-lib/libkgapi.so.2.0.1
 lib/libkgapi2.so
 lib/libkgapi2.so.2
-lib/libkgapi2.so.2.0.1
-libdata/pkgconfig/libkgapi.pc
-libdata/pkgconfig/libkgapi2.pc
-@dirrm lib/cmake/LibKGAPI2
-@dirrm lib/cmake/LibKGAPI
-@dirrm include/libkgapi2/ui
-@dirrm include/libkgapi2/tasks
-@dirrm include/libkgapi2/staticmaps
-@dirrm include/libkgapi2/latitude
-@dirrm include/libkgapi2/contacts
-@dirrm include/libkgapi2/calendar
-@dirrm include/libkgapi2/accountinfo
-@dirrm include/libkgapi2
-@dirrm include/libkgapi/ui
-@dirrm include/libkgapi/services
-@dirrm include/libkgapi/objects
-@dirrm include/libkgapi
-@dirrm include/LibKGAPI2/Ui
-@dirrm include/LibKGAPI2/Tasks
-@dirrm include/LibKGAPI2/StaticMaps
-@dirrm include/LibKGAPI2/Latitude
-@dirrm include/LibKGAPI2/Contacts
-@dirrm include/LibKGAPI2/Calendar
-@dirrm include/LibKGAPI2/AccountInfo
-@dirrm include/LibKGAPI2
+lib/libkgapi2.so.%%PORTVERSION%%
