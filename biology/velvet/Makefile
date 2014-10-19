@@ -43,7 +43,7 @@ PERLMOD_FILES=	contrib/VelvetOptimiser-2.2.4/VelvetOpt/Assembly.pm \
 		contrib/VelvetOptimiser-2.2.4/VelvetOpt/hwrap.pm
 
 .if !defined(WITHOUT_PYTHON)
-USE_PYTHON=	yes
+USES+=		python
 SHEBANG_FILES+=	contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py
 .endif
 
