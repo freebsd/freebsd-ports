@@ -67,9 +67,3 @@ share/pixmaps/griptray.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/grip-2.2.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/grip-2.2.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/grip-2.2.mo
-@dirrm share/gnome/help/grip/C
-@dirrm share/gnome/help/grip
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
