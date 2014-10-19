@@ -15,6 +15,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_darcs>=1.2.11:${PORTSDIR}/devel
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distuils autoplist
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
