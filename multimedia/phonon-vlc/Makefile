@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}
 PKGNAMESUFFIX=	-vlc
 DISTNAME=	${PORTNAME}-backend${PKGNAMESUFFIX}-${PORTVERSION}
 DIST_SUBDIR=	KDE
@@ -14,7 +13,7 @@ COMMENT=	VLC backend for Phonon
 
 LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc
 
-USE_KDE4=	kdehier kdeprefix automoc4
+USE_KDE4=	kdeprefix automoc4
 USE_QT4=	corelib gui phonon \
 		qmake_build moc_build rcc_build uic_build
 USES=		cmake pkgconfig tar:xz

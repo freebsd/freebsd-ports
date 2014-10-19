@@ -179,22 +179,10 @@ share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%DATADIR%%/buildsystem/MacroPushRequiredVars.cmake
 %%DATADIR%%/buildsystem/PhononMacros.cmake
 %%DATADIR%%/buildsystem/cmake_uninstall.cmake.in
-@dirrm %%DATADIR%%/buildsystem
-@dirrm %%DATADIR%%
-@dirrm lib/cmake/phonon
-@dirrmtry lib/cmake
-@dirrm include/phonon/experimental
-@dirrm include/phonon
-@dirrm include/KDE/Phonon/Experimental
-@dirrm include/KDE/Phonon
-@cwd %%QT_PREFIX%%
-%%QT_INCDIR%%/Phonon
-%%QT_INCDIR%%/phonon
-%%QT_LIBDIR%%/libphonon.so
-%%QT_LIBDIR%%/libphonon.so.4
-%%QT_LIBDIR%%/libphononexperimental.so
-%%QT_LIBDIR%%/libphononexperimental.so.4
-share/qt4/mkspecs/modules/qt_phonon.pri
-@dirrmtry share/qt4/mkspecs/modules
-@dirrmtry %%QT_LIBDIR%%
-@dirrmtry %%QT_INCDIR%%
+%%QT_PREFIX%%/%%QT_INCDIR%%/Phonon
+%%QT_PREFIX%%/%%QT_INCDIR%%/phonon
+%%QT_PREFIX%%/%%QT_LIBDIR%%/libphonon.so
+%%QT_PREFIX%%/%%QT_LIBDIR%%/libphonon.so.4
+%%QT_PREFIX%%/%%QT_LIBDIR%%/libphononexperimental.so
+%%QT_PREFIX%%/%%QT_LIBDIR%%/libphononexperimental.so.4
+%%QT_PREFIX%%/%%QT_MKSPECDIR%%/modules/qt_phonon.pri

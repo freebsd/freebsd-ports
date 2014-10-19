@@ -16,6 +16,3 @@ lib/cmake/Libkolab/LibkolabTargets.cmake
 lib/libkolab.so
 lib/libkolab.so.0
 lib/libkolab.so.%%SHLIB_VER%%
-@dirrm lib/cmake/Libkolab
-@dirrmtry lib/cmake
-@dirrm include/kolab
