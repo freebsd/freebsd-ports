@@ -3,7 +3,7 @@
 
 PORTNAME=	sleuthkit
 PORTVERSION=	4.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
@@ -26,8 +26,9 @@ CONFLICTS=	ja-ls-[0-9]* icat-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_PERL="${PERL}"
-USES=		libtool:keepla perl5
+USES=		libtool perl5
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 DATADIR=	${PREFIX}/share/tsk
 
 PORTDOCS=	NEWS.txt README.txt
