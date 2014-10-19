@@ -2,4 +2,3 @@ bin/sscalc
 man/man1/sscalc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/cities.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

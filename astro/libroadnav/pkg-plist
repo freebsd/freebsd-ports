@@ -47,4 +47,3 @@ include/libroadnav/UnitConversion.h
 include/libroadnav/Zip.h
 include/libroadnav/wxAntiAliasedDC.h
 lib/libroadnav.a
-@dirrm include/libroadnav

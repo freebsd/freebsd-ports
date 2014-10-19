@@ -38,4 +38,3 @@ lib/libnova-0.15.so.0
 lib/libnova-0.15.so.0.0.0
 lib/libnova.a
 lib/libnova.so
-@dirrm include/libnova/

@@ -339,7 +339,3 @@ bin/gpsman
 %%GPSMANDIR%%/util/shape2quadr.tcl
 %%GPSMANDIR%%/util/wpsinfull.tcl
 man/man1/gpsman.1.gz
-@dirrm %%GPSMANDIR%%/util
-@dirrm %%GPSMANDIR%%/gmsrc/gmicons
-@dirrm %%GPSMANDIR%%/gmsrc
-@dirrm %%GPSMANDIR%%

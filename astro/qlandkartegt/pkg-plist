@@ -14,5 +14,3 @@ share/pixmaps/qlandkartegt.png
 %%DATADIR%%/translations/qlandkartegt_it_IT.qm
 %%DATADIR%%/translations/qlandkartegt_nl.qm
 %%DATADIR%%/translations/qlandkartegt_ru.qm
-@dirrm %%DATADIR%%/translations
-@dirrmtry %%DATADIR%%

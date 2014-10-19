@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Weather/Underground.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Weather/Underground/.packlist
 %%PERL5_MAN3%%/Weather::Underground.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Weather/Underground
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Weather
-@dirrmtry %%SITE_PERL%%/Weather

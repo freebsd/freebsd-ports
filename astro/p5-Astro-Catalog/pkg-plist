@@ -76,11 +76,3 @@ etc/sss.cfg.sample
 %%SITE_PERL%%/Astro/Catalog/Transport/REST.pm
 %%SITE_PERL%%/Astro/Catalog/Transport/WebService.pm
 %%SITE_PERL%%/Tk/AstroCatalog.pm
-@dirrmtry %%SITE_PERL%%/Tk
-@dirrm %%SITE_PERL%%/Astro/Catalog/Transport
-@dirrm %%SITE_PERL%%/Astro/Catalog/Star
-@dirrm %%SITE_PERL%%/Astro/Catalog/Query
-@dirrm %%SITE_PERL%%/Astro/Catalog/Item
-@dirrm %%SITE_PERL%%/Astro/Catalog/IO
-@dirrm %%SITE_PERL%%/Astro/Catalog
-@dirrmtry %%SITE_PERL%%/Astro

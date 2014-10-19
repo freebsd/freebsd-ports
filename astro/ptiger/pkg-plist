@@ -67,10 +67,3 @@ bin/ptiger
 %%DATADIR%%/src/pkgIndex.tcl
 %%DATADIR%%/src/plus.bm
 %%DATADIR%%/src/us_census.tcl
-@dirrm %%DATADIR%%/lines/highways
-@dirrm %%DATADIR%%/lines/states
-@dirrm %%DATADIR%%/lines/world
-@dirrm %%DATADIR%%/lines
-@dirrm %%DATADIR%%/places
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%
