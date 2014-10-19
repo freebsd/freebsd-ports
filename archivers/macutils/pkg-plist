@@ -23,4 +23,3 @@ man/man1/tomac.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.unpit
 %%PORTDOCS%%%%DOCSDIR%%/README.unsit
 %%PORTDOCS%%%%DOCSDIR%%/README.zoom
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

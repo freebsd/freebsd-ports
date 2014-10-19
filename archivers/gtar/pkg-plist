@@ -40,5 +40,3 @@ man/man8/grmt.8.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/tar.mo
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky

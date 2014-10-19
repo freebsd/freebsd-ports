@@ -56,8 +56,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zinflate.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zinflate.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zuncompr.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zuncompr.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

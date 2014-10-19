@@ -45,7 +45,3 @@ libdata/pkgconfig/adflib.pc
 %%PORTDOCS%%%%DOCSDIR%%/api_salv.html
 %%PORTDOCS%%%%DOCSDIR%%/api_volume.html
 %%PORTDOCS%%%%DOCSDIR%%/version0.7.9d_gary.txt
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/FAQ/image
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/FAQ
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
-@dirrm include/adflib

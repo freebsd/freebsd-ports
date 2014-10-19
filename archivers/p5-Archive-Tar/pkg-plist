@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Tar/.packlist
 %%PERL5_MAN3%%/Archive::Tar.3.gz
 %%PERL5_MAN3%%/Archive::Tar::File.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Tar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive
-@dirrm %%SITE_PERL%%/Archive/Tar
-@dirrmtry %%SITE_PERL%%/Archive

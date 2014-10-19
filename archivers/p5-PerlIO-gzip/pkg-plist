@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/gzip.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/gzip/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/gzip/gzip.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/gzip
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO

@@ -17,8 +17,3 @@ GNUstep/Local/Applications/Zipper.app/Resources/zipper.tiff
 GNUstep/Local/Applications/Zipper.app/Zipper
 GNUstep/Local/Applications/Zipper.app/stamp.make
 GNUstep/Local/Tools/Zipper
-@dirrm GNUstep/Local/Applications/Zipper.app/Resources/ZipperDocument.gorm
-@dirrm GNUstep/Local/Applications/Zipper.app/Resources/Preferences.gorm
-@dirrm GNUstep/Local/Applications/Zipper.app/Resources/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/Zipper.app/Resources
-@dirrm GNUstep/Local/Applications/Zipper.app

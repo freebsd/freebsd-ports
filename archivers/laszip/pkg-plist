@@ -7,4 +7,3 @@ include/laszip/laszipper.hpp
 lib/liblaszip.so
 lib/liblaszip.so.5
 lib/liblaszip.so.5.0.0
-@dirrm include/laszip

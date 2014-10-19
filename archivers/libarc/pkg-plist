@@ -7,4 +7,3 @@ include/libarc/url.h
 include/libarc/zip.h
 lib/libarc.so
 lib/libarc.so.1
-@dirrm include/libarc
