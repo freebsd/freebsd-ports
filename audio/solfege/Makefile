@@ -16,9 +16,8 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
 		txt2man:${PORTSDIR}/textproc/txt2man
 
-USES=		display gettext gmake makeinfo pathfix pkgconfig
+USES=		display gettext gmake makeinfo pathfix pkgconfig python
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XML2PO=""
 CONFIGURE_ARGS=	--disable-oss-sound \

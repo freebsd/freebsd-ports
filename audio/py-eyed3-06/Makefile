@@ -15,11 +15,9 @@ COMMENT=	Python module for processing ID3 tags
 
 LICENSE=	GPLv2
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=			gmake
-GNU_CONFIGURE=		yes
+USES=		gmake python:2
+USE_PYTHON=	distutils autoplist
+GNU_CONFIGURE=	yes
 
 CONFLICTS=	py*-eyed3-0.7.[0-9]*
 

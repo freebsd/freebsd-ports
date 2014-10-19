@@ -12,9 +12,7 @@ DISTNAME=	py-ApeTag-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Library for APE Tag written in Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	py-ApeTag
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

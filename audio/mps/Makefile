@@ -14,17 +14,15 @@ COMMENT=	Terminal based MP3 search, playback and download
 LICENSE=	GPLv3
 
 OPTIONS_DEFAULT=	MPLAYER
-OPTIONS_RADIO=	PLAYER
+OPTIONS_RADIO=		PLAYER
 OPTIONS_RADIO_PLAYER=	MPLAYER MPV
 
 MPV_DESC=	Mpv media player support
 
 # This port installs the following files in shared dirs
 # PLIST_FILES=	bin/mps
-PYDISTUTILS_AUTOPLIST=	yes
-
-USE_PYDISTUTILS=	yes
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.options.mk>
 

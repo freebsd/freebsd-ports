@@ -16,8 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:${PORTSDIR}/audio/lv2core
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		librdf.so:${PORTSDIR}/textproc/redland
 
-USES=		pkgconfig tar:bzip2
-USE_PYTHON_BUILD=	yes
+USES=		pkgconfig python:build tar:bzip2
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

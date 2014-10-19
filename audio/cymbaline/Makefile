@@ -13,9 +13,8 @@ COMMENT=	Console frontend for py-mad
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/aomodule.so:${PORTSDIR}/audio/py-ao \
 		${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PLIST_FILES=	bin/cymbaline
 

@@ -15,12 +15,10 @@ COMMENT=	PyOpenAL is a binding of OpenAL for Python
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 DIST_SUBDIR=	python
-USES=		openal:al,alut
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		openal:al,alut python
+USE_PYTHON=	distutils autoplist
 WRKSRC=		${WRKDIR}/PyOpenAL-${PORTVERSION}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-openal
+EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}openal
 PORTEXAMPLES=	*
 
 post-patch:

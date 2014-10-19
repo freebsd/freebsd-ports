@@ -26,8 +26,7 @@ SHEBANG_FILES=	mma.py
 SUB_FILES=	mma_g.py
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
-USES=		shebangfix
-USE_PYTHON=	yes
+USES=		python shebangfix
 
 WRKDOC=	${WRKDIR}/${PORTNAME}-pdf-${DISTVERSION:S,a,,}
 WRKSRC=	${WRKDIR}/${PORTNAME}-bin-${DISTVERSION}

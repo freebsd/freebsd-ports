@@ -21,15 +21,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game \
 		dejavu>0:${PORTSDIR}/x11-fonts/dejavu \
 		${PYNUMPY}
 
-USES=		desktop-file-utils iconv zip
+USES=		desktop-file-utils iconv python:2 zip
 USE_SDL=	sdl
 USE_XORG=	x11 xau xcb xdmcp
 USE_WX=		3.0+
 WX_COMPS=	python:lib
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 DATADIR=	${PREFIX}/share/py${PORTNAME}
 

@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
    		${LOCALBASE}/include/pygtk-2.0/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		pkgconfig libtool
-USE_PYTHON=	yes
+USES=		libtool pkgconfig python
 USE_GNOME=	gconf2
 GCONF_SCHEMAS=	jack_mixer.schemas
 INSTALLS_ICONS=	yes

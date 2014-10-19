@@ -22,8 +22,7 @@ LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 		libflowcanvas.so:${PORTSDIR}/x11-toolkits/flowcanvas
 
-USES=		pkgconfig tar:bzip2
-USE_PYTHON_BUILD=yes
+USES=		pkgconfig python:build tar:bzip2
 INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
