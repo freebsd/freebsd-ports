@@ -25,8 +25,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw \
 
 WRKSRC=		${WRKDIR}/BrickUtils-${PORTVERSION}
 
+USES=		python
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
 
 PORTDOCS=	*
 
