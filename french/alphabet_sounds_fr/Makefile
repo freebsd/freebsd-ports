@@ -13,6 +13,6 @@ COMMENT=	Educative games for children. Alphabet sounds package (french)
 
 RUN_DEPENDS=	${LOCALBASE}/bin/childsplay:${PORTSDIR}/games/childsplay
 
-USE_PYTHON=	yes
+USES=		python
 
 .include <bsd.port.mk>
