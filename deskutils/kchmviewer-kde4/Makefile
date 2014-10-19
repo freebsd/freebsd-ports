@@ -2,19 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	kchmviewer
-PORTVERSION=	6.0
-PORTREVISION=	5
+PORTVERSION=	7.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Qt/KDE viewer for CHM files
+COMMENT=	KDE viewer for CHM files
 
-LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
+LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib \
+		libzip.so:${PORTSDIR}/archivers/libzip
 
-USES=		cmake
+USES=		cmake:outsource
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	webkit qmake_build moc_build rcc_build uic_build
+
+post-patch:
+	${REINPLACE_CMD} 's,/usr/bin/kate,${KDE4_PREFIX}/bin/kate,' \
+		${WRKSRC}/src/config.cpp
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
