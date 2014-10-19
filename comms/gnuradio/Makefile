@@ -38,7 +38,7 @@ LIB_DEPENDS=	libcppunit.so:${PORTSDIR}/devel/cppunit \
 		libgsl.so:${PORTSDIR}/math/gsl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		iconv cmake:outsource perl5 shebangfix
+USES=		iconv cmake:outsource perl5 python:2.7 shebangfix
 SHEBANG_FILES=	grc/freedesktop/grc_setup_freedesktop.in
 CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"
 CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
@@ -47,7 +47,6 @@ CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
-USE_PYTHON=	2.6-2.8
 USE_WX=		3.0+
 USE_QT4=	gui xml qmake moc rcc uic
 WX_COMPS=	wx wx:build wx:run python:build python:run

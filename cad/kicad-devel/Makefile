@@ -27,7 +27,6 @@ USE_GL=		glew glu
 USE_WX=		3.0
 WX_UNICODE=	yes
 USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
-USE_PYTHON=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,7 +36,9 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-USES=		desktop-file-utils shared-mime-info compiler:c++11-lang tar:bzip2 cmake gettext
+USES=		desktop-file-utils shared-mime-info compiler:c++11-lang tar:bzip2 cmake \
+		gettext python
+		
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_VERBOSE_MAKEFILE=ON \
 		-DCMAKE_BUILD_TYPE="Debug" \

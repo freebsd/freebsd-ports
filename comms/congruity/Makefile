@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libconcord>=0:${PORTSDIR}/comms/py-libconcord
 
 MAKE_ARGS=	MANDIR=${PREFIX}/man
-USES=		tar:bzip2 gmake desktop-file-utils
-USE_PYTHON=	2.7+
+USES=		desktop-file-utils gmake tar:bzip2 python:2.7+
 USE_WX=		2.8+
 WANT_UNICODE=	yes
 WX_COMPS=	python

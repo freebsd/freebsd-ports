@@ -19,11 +19,10 @@ LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio
 
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_WX=		3.0+
 WX_COMPS=	python
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
 
 post-extract:
 	${RM} ${WRKSRC}/_quisk.so ${WRKSRC}/sdriqpkg/sdriq.so

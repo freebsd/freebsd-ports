@@ -22,10 +22,9 @@ OPTIONS_DEFINE=	BASH
 
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
-USES=		cmake gettext pkgconfig shebangfix
+USES=		cmake gettext pkgconfig python shebangfix
 SHEBANG_FILES=	utils/jadmaker utils/gammu-config
 bash_CMD=	/bin/sh
-USE_PYTHON=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

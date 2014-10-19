@@ -14,7 +14,7 @@ COMMENT=	Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
 
 LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 
-USE_PYTHON=	yes
+USES=		python
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

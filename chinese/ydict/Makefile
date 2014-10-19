@@ -11,10 +11,15 @@ COMMENT=	Command line tool of Yahoo! Dict
 
 LICENSE=	GPLv3
 
+USES=		python:2,run shebangfix
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ydict
-USE_PYTHON_RUN=	yes
+
+SHEBANG_FILES=	${WRKSRC}/ydict
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	/usr/bin/env python2
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ydict ${STAGEDIR}${PREFIX}/bin/

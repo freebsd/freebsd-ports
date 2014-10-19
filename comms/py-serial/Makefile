@@ -11,13 +11,12 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Serial port encapsulation library for Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
+USES=			python
+USE_PYTHON=		distutils pythonprefix
 PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

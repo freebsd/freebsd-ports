@@ -19,9 +19,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pylircmodule.so
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
+USES=			python
+USE_PYTHON=		distutils pythonprefix
 PYDISTUTILS_PKGNAME=	pylirc
 
 .include <bsd.port.mk>

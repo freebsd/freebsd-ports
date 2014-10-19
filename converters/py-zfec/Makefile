@@ -18,9 +18,8 @@ BUILD_DEPENDS=	darcsver:${PORTSDIR}/devel/py-darcsver \
 		unsort:${PORTSDIR}/devel/py-pyutil
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
