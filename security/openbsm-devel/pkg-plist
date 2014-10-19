@@ -63,5 +63,5 @@ sbin/auditdistd
 sbin/auditfilterd
 sbin/auditreduce
 sbin/praudit
-%%NEEDVARDIRS%%@dir(%%USERS%%:%%GROUPS%%,770) /var/audit/dist
-%%NEEDVARDIRS%%@dir(%%USERS%%:%%GROUPS%%,700) /var/audit/remote
+%%NEEDVARDIRS%%@dir(%%USERS%%,%%GROUPS%%,770) /var/audit/dist
+%%NEEDVARDIRS%%@dir(%%USERS%%,%%GROUPS%%,700) /var/audit/remote
