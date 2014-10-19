@@ -12,8 +12,7 @@ COMMENT=	LV2 Core Package
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig tar:bzip2
-USE_PYTHON_BUILD=	yes
+USES=		pkgconfig python:build tar:bzip2
 
 .include <bsd.port.pre.mk>
 

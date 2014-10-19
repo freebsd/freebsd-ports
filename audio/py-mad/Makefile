@@ -17,11 +17,8 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/mad
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	pymad
+USES=		python:2
+USE_PYTHON=	distutils autoplist pythonprefix
 
 do-configure:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py \

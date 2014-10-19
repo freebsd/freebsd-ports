@@ -23,9 +23,8 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/fastaudio.so
 PLIST_DIRS=
 EXAMPLESDIR=	${LOCALBASE}/share/examples/py-${PORTNAME}
 
-USES=		zip:infozip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python zip:infozip
+USE_PYTHON=	distutils
 
 FASTA_SRCFILE=	fastaudio.tar.gz
 PORTA_SRCFILE=	portaudio_v18_1.zip

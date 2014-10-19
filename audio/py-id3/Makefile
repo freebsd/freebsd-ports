@@ -12,10 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for retrieving and setting ID3 tags on MP3 files
 
 WRKSRC=		${WRKDIR}/id3-py-${PORTVERSION}
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	ID3
+USES=		python:2
+USE_PYTHON=	distutils autoplist pythonprefix
 
 .include <bsd.port.mk>

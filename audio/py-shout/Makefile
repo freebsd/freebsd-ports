@@ -18,10 +18,8 @@ LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-USES=			pkgconfig
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		pkgconfig python:2
+USE_PYTHON=	distutils autoplist
 
 PORTEXAMPLES=	example.py
 
