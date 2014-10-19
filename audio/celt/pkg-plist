@@ -9,4 +9,3 @@ lib/libcelt0.so
 lib/libcelt0.la
 lib/libcelt0.a
 libdata/pkgconfig/celt.pc
-@dirrm include/celt
