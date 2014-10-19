@@ -10,8 +10,7 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generic nexus file format reader for python
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

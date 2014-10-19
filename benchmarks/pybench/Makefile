@@ -11,8 +11,7 @@ COMMENT=	Extensible benchmark suite for Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		zip
-USE_PYTHON=	yes
+USES=		python zip
 
 PORTDOCS=	README
 
