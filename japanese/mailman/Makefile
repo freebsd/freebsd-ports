@@ -23,8 +23,7 @@ CONFLICTS=	mailman-2.1.*
 PORTSCOUT=	limit:.*\.j\d+$$
 
 USE_AUTOTOOLS=	autoconf
-USES=		gettext tar:tgz
-USE_PYTHON=	2
+USES=		gettext python:2 tar:tgz
 USE_RC_SUBR=	mailman
 
 GNU_CONFIGURE_PREFIX=	${MAILMANDIR}

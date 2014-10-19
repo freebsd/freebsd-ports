@@ -21,8 +21,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 USE_GNOME=	gnomeprefix intlhack gconf2 gnomemenus gnomedocutils
 USES=		desktop-file-utils gettext iconv pathfix gmake pkgconfig \
-		tar:bzip2
-USE_PYTHON_BUILD=2
+		python:2,build tar:bzip2
 GCONF_SCHEMAS=	gnome-packagekit.schemas
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

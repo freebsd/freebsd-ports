@@ -20,9 +20,8 @@ NO_BUILD=	yes
 RM_FILES=	CHANGES.txt FAL.txt  GPL.txt
 RM_OPTS=	-f
 
-USES=		gettext
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		gettext python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	Kana-no-quiz
 
 WRKSRC=		"${WRKDIR}/Kana no quiz-${DISTVERSION}"

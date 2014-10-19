@@ -10,8 +10,7 @@ EXTRACT_SUFX=	# nada
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Sort MASTER_SITE_* based upon TCP handshake times
 
-USES=		shebangfix
-USE_PYTHON=	yes
+USES=		python shebangfix
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/fastest_sites
