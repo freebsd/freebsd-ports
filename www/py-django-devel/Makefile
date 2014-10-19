@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 SNAPSHOTDATE=	20140821
 
-USES=		cpe gettext python:2
+USES=		cpe gettext python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 

@@ -16,7 +16,7 @@ COMMENT=	High-level Python Web framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe python:2
+USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
 CPE_VENDOR=	djangoproject
