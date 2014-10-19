@@ -13,6 +13,7 @@ USES=		gmake readline
 USE_OPENSSL=	yes
 BUILD_WRKSRC=	${WRKSRC}/wpa_supplicant
 INSTALL_WRKSRC=	${WRKSRC}/src
+CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
 LDFLAGS=	-lutil
 
 SUB_FILES=	pkg-message
