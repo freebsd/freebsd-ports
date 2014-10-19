@@ -12,10 +12,8 @@ DISTNAME=	forgetSQL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for object-oriented access to SQL databases
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	forgetSQL
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 DOCS=	BUGS README TODO
 

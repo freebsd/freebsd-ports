@@ -15,7 +15,7 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 WRKSRC=		${WRKDIR}/${NAME}
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+USES=		python
 
 SUB_FILES=	pkg-message
 

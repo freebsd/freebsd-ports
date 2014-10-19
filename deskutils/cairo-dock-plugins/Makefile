@@ -21,9 +21,8 @@ ICONS_PACKAGE=	cairo-dock-plugins-png-icons
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 USE_XORG=	xrender
-USES=		cmake gettext pkgconfig
+USES=		cmake gettext pkgconfig python
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/thon//}"
 CMAKE_ARGS+=	-DROOT_PREFIX:PATH=${STAGEDIR}

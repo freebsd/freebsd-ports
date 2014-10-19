@@ -10,8 +10,7 @@ MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splash screen changer for GNOME
 
-USES=	tar:bzip2
-USE_PYTHON=	yes
+USES=		python tar:bzip2
 USE_GNOME=	pygnome2 gnomeprefix
 
 do-build:

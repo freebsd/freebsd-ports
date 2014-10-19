@@ -15,9 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.2:${PORTSDIR}/databases/py-psyco
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.09:${PORTSDIR}/devel/py-yaml
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	perseas

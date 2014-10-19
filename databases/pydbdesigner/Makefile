@@ -17,7 +17,7 @@ BROKEN=		Needs an unsupported version of wxWidgets
 
 EXTRACT_AFTER_ARGS=	--exclude CVS
 
-USE_PYTHON=	yes
+USES=		python
 USE_WX=		2.4
 WX_COMPS=	python
 REINPLACE_ARGS=	-i ""

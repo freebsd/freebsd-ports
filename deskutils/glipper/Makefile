@@ -10,9 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clipboard manager for the GNOME panel
 
-USES=		gettext gmake iconv libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake iconv libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	gnomeprefix intltool pygnomedesktop pygnomeextras
-USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec --disable-schemas-install

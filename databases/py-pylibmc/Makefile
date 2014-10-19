@@ -15,9 +15,8 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 MAKE_ENV+=	LIBMEMCACHED="${LOCALBASE}"
 

@@ -13,11 +13,9 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
 
-USES=		pkgconfig
+USES=		pkgconfig python
 USE_GNOME=	cairo glib20 libxml2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -15,8 +15,7 @@ LICENSE=		GPLv3
 
 CONFLICTS=		*samba3[0-4]-3.*
 
-USES=			compiler pkgconfig
-USE_PYTHON=		2
+USES=			compiler pkgconfig python:2
 USE_LDCONFIG=		yes
 WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_LOG=		bin/config.log

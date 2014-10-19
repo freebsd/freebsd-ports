@@ -12,10 +12,9 @@ COMMENT=	GTK frontend for VirtualBox
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtualbox-ose
 
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtk30 pygtk2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS

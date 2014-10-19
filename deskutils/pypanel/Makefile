@@ -15,12 +15,10 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_EFL=	imlib2
 USE_XORG=	xft
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	PyPanel
 
 PORTDOCS=	*
 

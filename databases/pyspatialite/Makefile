@@ -16,9 +16,8 @@ COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite 3.x
 
 LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite
 
-USES=		iconv
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		iconv python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pyspatialite
 
 AMALGAMATION_NAME=	libspatialite-amalgamation-${PORTVERSION}

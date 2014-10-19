@@ -29,10 +29,9 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		desktop-file-utils gettext gmake libtool pathfix \
-		pgsql pkgconfig shared-mime-info tar:bzip2
+		pgsql pkgconfig python shared-mime-info tar:bzip2
 USE_GNOME=	gnomedocutils gnomeprefix pygnomeextras
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

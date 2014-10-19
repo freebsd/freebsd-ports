@@ -11,7 +11,7 @@ MAINTAINER=	pea@raveland.org
 COMMENT=	Import CSV data and Large Object to PostgreSQL
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+USES=		python
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 

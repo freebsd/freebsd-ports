@@ -17,9 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}txamqp>=0.3:${PORTSDIR}/net/py-txamqp \
 		${PYTHON_PKGNAMEPREFIX}whisper>=0.9.10:${PORTSDIR}/databases/py-whisper \
 		${PYTHON_PKGNAMEPREFIX}django>=1.4:${PORTSDIR}/www/py-django
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-USES=		twisted:run
+USE_PYTHON=	distutils
+USES=		python:2 twisted:run
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 USE_RC_SUBR=	carbon
 

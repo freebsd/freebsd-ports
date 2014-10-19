@@ -13,8 +13,7 @@ DISTNAME=	DBUtils-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Providing solid, persistent, and pooled connections to a database
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

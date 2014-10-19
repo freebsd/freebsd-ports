@@ -9,8 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/MenuMaker/${PORTVERSION}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Menu generator for X Window Managers and desktop environments
 
-USE_PYTHON=	yes
-USES=	gmake
+USES=		gmake python
 GNU_CONFIGURE=	yes
 
 INFO=		mmaker

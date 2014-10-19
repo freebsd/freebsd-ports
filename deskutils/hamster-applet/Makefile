@@ -17,8 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus
 
-USES=		gettext gmake pkgconfig tar:bzip2
-USE_PYTHON=	yes
+USES=		gettext gmake pkgconfig python tar:bzip2
 USE_XORG=	xscrnsaver
 USE_GNOME=	gnomeprefix intlhack gnomehack pygnomedesktop \
 		gnomecontrolcenter2 gnomedocutils

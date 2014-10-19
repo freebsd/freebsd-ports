@@ -13,9 +13,8 @@ LICENSE=	GPLv2 # (or later)
 
 RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote
 
-USES=		gettext
+USES=		gettext python
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

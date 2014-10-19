@@ -12,15 +12,14 @@ DISTNAME=	MySQL-python-${DISTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USE_MYSQL=		yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
+USE_MYSQL=	yes
 
 CONFLICTS=	py*-MySQLdb-[0-9]* py*-MySQLdb5[0-9]-[0-9]*
 
 PORTDOCS=	*
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_DEFINE=		DOCS MYSQLCLIENT_R

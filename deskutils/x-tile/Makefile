@@ -13,8 +13,8 @@ COMMENT=	GNOME applet to tile the opened windows
 LICENSE=	GPLv2
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	X_Tile
 
 OPTIONS_DEFINE=	NLS

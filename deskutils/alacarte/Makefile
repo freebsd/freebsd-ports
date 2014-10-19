@@ -13,8 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Editor for the freedesktop.org menu specification
 
 USE_GNOME=	gnomehack gnomeprefix pygnomedesktop intlhack
-USES=		gettext gmake pkgconfig tar:bzip2
-USE_PYTHON=	yes
+USES=		gettext gmake pkgconfig python tar:bzip2
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
