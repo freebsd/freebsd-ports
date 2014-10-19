@@ -50,7 +50,6 @@ include/tsk/vs/tsk_mac.h
 include/tsk/vs/tsk_sun.h
 include/tsk/vs/tsk_vs.h
 lib/libtsk.a
-lib/libtsk.la
 lib/libtsk.so
 lib/libtsk.so.10
 lib/libtsk.so.10.2.0
@@ -87,12 +86,3 @@ man/man1/tsk_recover.1.gz
 %%DATADIR%%/sorter/openbsd.sort
 %%DATADIR%%/sorter/solaris.sort
 %%DATADIR%%/sorter/windows.sort
-@dirrm include/tsk/vs
-@dirrm include/tsk/img
-@dirrm include/tsk/hashdb
-@dirrm include/tsk/fs
-@dirrm include/tsk/base
-@dirrm include/tsk/auto
-@dirrm include/tsk
-@dirrm %%DATADIR%%/sorter
-@dirrm %%DATADIR%%
