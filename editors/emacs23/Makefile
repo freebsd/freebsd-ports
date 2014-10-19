@@ -19,6 +19,9 @@ COMMENT=	GNU editing macros
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained upstream, use editors/emacs
+EXPIRATION_DATE=	2014-11-19
+
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	emacs-19.* emacs21-* emacs22-* emacs24-* \
