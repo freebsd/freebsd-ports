@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	openyahtzee
-PORTVERSION=	1.9.1
-PORTREVISION=	5
+PORTVERSION=	1.9.2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Open%20Yahtzee/Open%20Yahtzee%20${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Full-featured classic dice game Yahtzee
 
 LICENSE=	GPLv2
@@ -21,11 +20,13 @@ WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include -std=c++11
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+DESKTOP_ENTRIES="Open Yahtzee" "${COMMENT}" "${LOCALBASE}/share/pixmaps/openyahtzee.png" \
+		"${PORTNAME}" "Game;" false
+
 PLIST_FILES=	bin/openyahtzee \
-		share/applications/openyahtzee.desktop \
 		share/pixmaps/openyahtzee.png \
 		man/man6/openyahtzee.6.gz
 
