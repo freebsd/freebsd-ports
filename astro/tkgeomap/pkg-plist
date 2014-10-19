@@ -9,5 +9,3 @@ man/mann/igeomap.n.gz
 man/mann/tkgeomap.n.gz
 man/mann/tkgeomap_procs.n.gz
 man/mann/wdgeomap.n.gz
-@dirrm include/tkgeomap
-@dirrm lib/tkgeomap

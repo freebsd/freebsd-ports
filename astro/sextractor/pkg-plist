@@ -1,4 +1,3 @@
 bin/sex
 man/man1/sex.1.gz
 man/manx/sex.x.gz
-@dirrmtry man/manx

@@ -10,6 +10,3 @@
 %%SITE_PERL%%/Astro/FITS/Header/GSD.pm
 %%SITE_PERL%%/Astro/FITS/Header/Item.pm
 %%SITE_PERL%%/Astro/FITS/Header/NDF.pm
-@dirrm %%SITE_PERL%%/Astro/FITS/Header
-@dirrmtry %%SITE_PERL%%/Astro/FITS
-@dirrmtry %%SITE_PERL%%/Astro

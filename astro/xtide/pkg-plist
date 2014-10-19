@@ -11,8 +11,6 @@ man/man8/xttpd.8.gz
 %%WVS%%%%DATADIR%%/wvs/wvs3.dat
 %%WVS%%%%DATADIR%%/wvs/wvs43.dat
 %%WVS%%%%DATADIR%%/wvs/wvsfull.dat
-%%WVS%%@dirrm %%DATADIR%%/wvs
-@dirrm %%DATADIR%%
 @unexec if cmp -s %D/etc/xtide.conf %D/etc/xtide.conf.example ; then rm -f %D/etc/xtide.conf ; fi
 etc/xtide.conf.example
 @exec if [ ! -f %D/etc/xtide.conf ]; then cp -p %D/%F %B/xtide.conf; fi

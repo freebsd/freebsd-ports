@@ -167,12 +167,3 @@ lib/X11/xephem/help/png/wcssolver.png
 lib/X11/xephem/help/xephem.html
 lib/X11/xephem/lo/lodb.xml
 man/man1/xephem.1.gz
-@dirrm lib/X11/xephem/lo
-@dirrm lib/X11/xephem/help/png
-@dirrm lib/X11/xephem/help
-@dirrm lib/X11/xephem/gallery
-@dirrm lib/X11/xephem/fits
-@dirrm lib/X11/xephem/fifos
-@dirrm lib/X11/xephem/catalogs
-@dirrm lib/X11/xephem/auxil
-@dirrm lib/X11/xephem

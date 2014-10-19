@@ -17,8 +17,3 @@ man/man1/sunclock.1.gz
 %%DATADIR%%/i18n/Sunclock.no
 %%DATADIR%%/i18n/Sunclock.pl
 %%DATADIR%%/i18n/Sunclock.sv
-@dirrm %%DATADIR%%/i18n
-@dirrm %%DATADIR%%/editkit
-@dirrm %%DATADIR%%/earthmaps/vmf
-@dirrm %%DATADIR%%/earthmaps
-@dirrm %%DATADIR%%

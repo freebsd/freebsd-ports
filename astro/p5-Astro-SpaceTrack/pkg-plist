@@ -5,7 +5,3 @@ bin/SpaceTrack
 %%PERL5_MAN3%%/Astro::SpaceTrack.3.gz
 %%PERL5_MAN3%%/Astro::SpaceTrack::BulkData.3.gz
 man/man1/SpaceTrack.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/SpaceTrack
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
-@dirrmtry %%SITE_PERL%%/Astro/SpaceTrack
-@dirrmtry %%SITE_PERL%%/Astro

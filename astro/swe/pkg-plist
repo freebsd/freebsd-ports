@@ -15,5 +15,3 @@ lib/libswe.a
 %%PORTDOCS%%%%DOCSDIR%%/swephprg.pdf
 %%PORTDOCS%%%%DOCSDIR%%/swisseph.htm
 %%PORTDOCS%%%%DOCSDIR%%/swisseph.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/swe

@@ -47,15 +47,3 @@ man/man1/xplanet.1.gz
 %%DATADIR%%/spice/voyager
 %%DATADIR%%/spice/voyager.krn
 %%DATADIR%%/stars/BSC
-@dirrmtry %%DATADIR%%/stars
-@dirrmtry %%DATADIR%%/spice
-@dirrmtry %%DATADIR%%/scattering
-@dirrmtry %%DATADIR%%/satellites
-@dirrmtry %%DATADIR%%/origin
-@dirrmtry %%DATADIR%%/markers
-@dirrmtry %%DATADIR%%/images
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%/ephemeris
-@dirrmtry %%DATADIR%%/config
-@dirrmtry %%DATADIR%%/arcs
-@dirrmtry %%DATADIR%%

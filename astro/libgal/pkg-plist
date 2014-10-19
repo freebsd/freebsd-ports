@@ -336,4 +336,3 @@ lib/libgal.so
 lib/libgal.so.0
 lib/libgal.so.0.0.4
 %%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%

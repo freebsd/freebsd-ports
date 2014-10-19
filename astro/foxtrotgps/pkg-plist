@@ -36,30 +36,3 @@ share/pixmaps/foxtrotgps-photo.png
 share/pixmaps/foxtrotgps-poi.png
 share/pixmaps/foxtrotgps-wp.png
 share/pixmaps/foxtrotgps.png
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/ru/LC_MESSAGES
-@dirrmtry share/locale/ru
-@dirrmtry share/locale/nl/LC_MESSAGES
-@dirrmtry share/locale/nl
-@dirrmtry share/locale/hu/LC_MESSAGES
-@dirrmtry share/locale/hu
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/es
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/bg/LC_MESSAGES
-@dirrmtry share/locale/bg
-@dirrmtry share/locale/ja/LC_MESSAGES
-@dirrmtry share/locale/ja
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale

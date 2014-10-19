@@ -28,5 +28,3 @@ lib/qlandkartegt/libQuest.so
 lib/qlandkartegt/libRino120.so
 lib/qlandkartegt/libgarmin.a
 lib/qlandkartegt/libwhatGarmin.so
-@dirrm lib/qlandkartegt
-@dirrm include/garmin

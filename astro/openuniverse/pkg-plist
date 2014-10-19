@@ -108,10 +108,3 @@ bin/openuniverse
 %%DATADIR%%/textures/uranus.jpg
 %%DATADIR%%/textures/venus.jpg
 %%DATADIR%%/textures/wingtop.jpg
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%/3dmodels
-@dirrm %%DATADIR%%
