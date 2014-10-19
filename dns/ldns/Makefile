@@ -41,7 +41,7 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if defined(BUILD_PYLDNS)
-USE_PYTHON=	yes
+USES+=		python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 ALL_TARGET=	pyldns
 INSTALL_TARGET=	install-pyldns

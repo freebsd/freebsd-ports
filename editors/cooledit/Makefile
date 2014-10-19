@@ -10,8 +10,7 @@ MASTER_SITES=	SUNSITE/apps/editors/X/cooledit
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of utilities, including a GUI editor
 
-USE_PYTHON=	yes
-USES=		gettext gmake libtool
+USES=		gettext gmake libtool python
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xt
 USE_LDCONFIG=	yes

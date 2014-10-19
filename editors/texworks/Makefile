@@ -56,7 +56,7 @@ PLIST_FILES+=	lib/texworks/libTWLuaPlugin.so
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	3
+USES+=		python:3
 PLIST_FILES+=	lib/texworks/libTWPythonPlugin.so
 .endif
 

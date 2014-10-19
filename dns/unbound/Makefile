@@ -46,7 +46,7 @@ STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 		unbound-control .libs/unbound-host .libs/unbound-anchor
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 CONFIGURE_ARGS+=--with-pyunbound=yes --with-pythonmodule=yes
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
 PYTHON=
