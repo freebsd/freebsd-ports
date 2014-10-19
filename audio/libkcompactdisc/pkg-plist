@@ -5,6 +5,3 @@ lib/cmake/libkcompactdisc/LibkcompactdiscTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/libkcompactdisc.so
 lib/libkcompactdisc.so.4
 lib/libkcompactdisc.so.%%KDE4_GENERIC_LIB_VERSION%%
-@dirrm lib/cmake/libkcompactdisc
-@dirrmtry lib/cmake
-@dirrm include/libkcompactdisc

@@ -7,5 +7,3 @@ share/doc/HTML/en/ksystemlog/first-opening.png
 share/doc/HTML/en/ksystemlog/index.cache.bz2
 share/doc/HTML/en/ksystemlog/index.docbook
 share/doc/HTML/en/ksystemlog/main-screen.png
-@dirrm share/doc/HTML/en/ksystemlog
-@dirrm share/apps/ksystemlog

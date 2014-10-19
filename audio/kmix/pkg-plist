@@ -1,5 +1,6 @@
 bin/kmix
 bin/kmixctrl
+bin/kmixremote
 lib/kde4/kded_kmixd.so
 lib/kde4/plasma_engine_mixer.so
 lib/libkdeinit4_kmix.so
@@ -38,7 +39,9 @@ share/dbus-1/interfaces/org.kde.kmix.mixset.xml
 share/doc/HTML/en/kmix/common
 share/doc/HTML/en/kmix/index.cache.bz2
 share/doc/HTML/en/kmix/index.docbook
-share/doc/HTML/en/kmix/kmix-configure.png
+share/doc/HTML/en/kmix/kmix-configure-general.png
+share/doc/HTML/en/kmix/kmix-configure-sound-menu.png
+share/doc/HTML/en/kmix/kmix-configure-start.png
 share/doc/HTML/en/kmix/kmix-file.png
 share/doc/HTML/en/kmix/kmix-master.png
 share/doc/HTML/en/kmix/kmix-options.png
@@ -51,7 +54,3 @@ share/icons/hicolor/64x64/apps/kmix.png
 share/kde4/services/kded/kmixd.desktop
 share/kde4/services/kmixctrl_restore.desktop
 share/kde4/services/plasma-engine-mixer.desktop
-@dirrm share/doc/HTML/en/kmix
-@dirrm share/apps/kmix/profiles
-@dirrm share/apps/kmix/pics
-@dirrm share/apps/kmix

@@ -895,6 +895,7 @@ lib/kde4/kpythonpluginfactory.so
 %%SIPDIR%%/PyKDE4/polkitqt/auth.sip
 %%SIPDIR%%/PyKDE4/polkitqt/context.sip
 %%SIPDIR%%/PyKDE4/polkitqt/polkitqtmod.sip
+%%SIPDIR%%/PyKDE4/pykde_config.sip
 %%SIPDIR%%/PyKDE4/solid/acadapter.sip
 %%SIPDIR%%/PyKDE4/solid/audiointerface.sip
 %%SIPDIR%%/PyKDE4/solid/battery.sip
@@ -985,36 +986,4 @@ lib/kde4/kpythonpluginfactory.so
 %%SIPDIR%%/PyKDE4/soprano/tcpclient.sip
 %%SIPDIR%%/PyKDE4/soprano/xesam.sip
 %%SIPDIR%%/PyKDE4/soprano/xsd.sip
-@dirrm %%SIPDIR%%/PyKDE4/soprano
-@dirrm %%SIPDIR%%/PyKDE4/solid
-@dirrm %%SIPDIR%%/PyKDE4/polkitqt
-@dirrm %%SIPDIR%%/PyKDE4/plasma
-@dirrm %%SIPDIR%%/PyKDE4/phonon
-@dirrm %%SIPDIR%%/PyKDE4/nepomuk
-@dirrm %%SIPDIR%%/PyKDE4/kutils
-@dirrm %%SIPDIR%%/PyKDE4/ktexteditor
-@dirrm %%SIPDIR%%/PyKDE4/kterminal
-@dirrm %%SIPDIR%%/PyKDE4/kparts
-@dirrm %%SIPDIR%%/PyKDE4/knewstuff
-@dirrm %%SIPDIR%%/PyKDE4/kio
-@dirrm %%SIPDIR%%/PyKDE4/khtml
-@dirrm %%SIPDIR%%/PyKDE4/kdeui
-@dirrm %%SIPDIR%%/PyKDE4/kdecore
-@dirrm %%SIPDIR%%/PyKDE4/dnssd
-@dirrm %%SIPDIR%%/PyKDE4/akonadi
-@dirrm %%SIPDIR%%/PyKDE4
-@dirrmtry %%SIPDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/solidExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/polkitqtExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kutilsExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kpartsExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kioExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/khtmlExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kdeuiExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kdecoreExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyKDE4
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
-@cwd %%LOCALBASE%%
-%%PYTHON_SITELIBDIR%%/kdebindings4.pth
+%%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/kdebindings4.pth

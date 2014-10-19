@@ -1,10 +1,11 @@
 bin/parley
 lib/kde4/plasma_applet_parley.so
 lib/kde4/plasma_engine_parley.so
+share/appdata/parley.appdata.xml
 share/applications/kde4/parley.desktop
 share/apps/desktoptheme/default/widgets/parley_plasma_card.svg
+share/apps/parley/dashboardui.rc
 share/apps/parley/editorui.rc
-share/apps/parley/icons/oxygen/16x16/actions/advanced-setup.png
 share/apps/parley/icons/oxygen/16x16/actions/cards-block.png
 share/apps/parley/icons/oxygen/16x16/actions/edit-clear.png
 share/apps/parley/icons/oxygen/16x16/actions/edit-entry.png
@@ -19,7 +20,7 @@ share/apps/parley/icons/oxygen/16x16/actions/practice-start.png
 share/apps/parley/icons/oxygen/16x16/actions/practice-stop.png
 share/apps/parley/icons/oxygen/16x16/actions/remove-duplicates.png
 share/apps/parley/icons/oxygen/16x16/actions/set-language.png
-share/apps/parley/icons/oxygen/22x22/actions/advanced-setup.png
+share/apps/parley/icons/oxygen/16x16/actions/specific-setup.png
 share/apps/parley/icons/oxygen/22x22/actions/cards-block.png
 share/apps/parley/icons/oxygen/22x22/actions/edit-clear.png
 share/apps/parley/icons/oxygen/22x22/actions/edit-entry.png
@@ -34,7 +35,7 @@ share/apps/parley/icons/oxygen/22x22/actions/practice-start.png
 share/apps/parley/icons/oxygen/22x22/actions/practice-stop.png
 share/apps/parley/icons/oxygen/22x22/actions/remove-duplicates.png
 share/apps/parley/icons/oxygen/22x22/actions/set-language.png
-share/apps/parley/icons/oxygen/32x32/actions/advanced-setup.png
+share/apps/parley/icons/oxygen/22x22/actions/specific-setup.png
 share/apps/parley/icons/oxygen/32x32/actions/cards-block.png
 share/apps/parley/icons/oxygen/32x32/actions/edit-clear.png
 share/apps/parley/icons/oxygen/32x32/actions/edit-entry.png
@@ -49,7 +50,7 @@ share/apps/parley/icons/oxygen/32x32/actions/practice-start.png
 share/apps/parley/icons/oxygen/32x32/actions/practice-stop.png
 share/apps/parley/icons/oxygen/32x32/actions/remove-duplicates.png
 share/apps/parley/icons/oxygen/32x32/actions/set-language.png
-share/apps/parley/icons/oxygen/48x48/actions/advanced-setup.png
+share/apps/parley/icons/oxygen/32x32/actions/specific-setup.png
 share/apps/parley/icons/oxygen/48x48/actions/cards-block.png
 share/apps/parley/icons/oxygen/48x48/actions/edit-clear.png
 share/apps/parley/icons/oxygen/48x48/actions/edit-entry.png
@@ -65,7 +66,7 @@ share/apps/parley/icons/oxygen/48x48/actions/practice-start.png
 share/apps/parley/icons/oxygen/48x48/actions/practice-stop.png
 share/apps/parley/icons/oxygen/48x48/actions/remove-duplicates.png
 share/apps/parley/icons/oxygen/48x48/actions/set-language.png
-share/apps/parley/icons/oxygen/scalable/actions/advanced-setup.svgz
+share/apps/parley/icons/oxygen/48x48/actions/specific-setup.png
 share/apps/parley/icons/oxygen/scalable/actions/cards-block.svgz
 share/apps/parley/icons/oxygen/scalable/actions/edit-clear.svgz
 share/apps/parley/icons/oxygen/scalable/actions/edit-entry.svgz
@@ -78,6 +79,7 @@ share/apps/parley/icons/oxygen/scalable/actions/practice-setup.svgz
 share/apps/parley/icons/oxygen/scalable/actions/practice-start.svgz
 share/apps/parley/icons/oxygen/scalable/actions/remove-duplicates.svgz
 share/apps/parley/icons/oxygen/scalable/actions/set-language.svgz
+share/apps/parley/icons/oxygen/scalable/actions/specific-setup.svgz
 share/apps/parley/parleyui.rc
 share/apps/parley/plugins/example.desktop
 share/apps/parley/plugins/example.py
@@ -118,7 +120,6 @@ share/apps/parley/themes/theme_reference.desktop
 share/apps/parley/themes/theme_reference.svgz
 share/apps/parley/themes/theme_reference_preview.jpg
 share/apps/parley/tips
-share/apps/parley/welcomescreenui.rc
 share/apps/parley/xslt/flashcards.xsl
 share/apps/parley/xslt/table.xsl
 share/config.kcfg/documentsettings.kcfg
@@ -210,22 +211,3 @@ share/icons/hicolor/scalable/apps/parley-simple.svgz
 share/icons/hicolor/scalable/apps/parley.svgz
 share/kde4/services/plasma-dataengine-parley.desktop
 share/kde4/services/plasma_parley.desktop
-@dirrm share/doc/HTML/en/parley
-@dirrm share/apps/parley/xslt
-@dirrm share/apps/parley/themes
-@dirrm share/apps/parley/plugins/mwclient/simplejson
-@dirrm share/apps/parley/plugins/mwclient
-@dirrm share/apps/parley/plugins
-@dirrm share/apps/parley/icons/oxygen/scalable/actions
-@dirrm share/apps/parley/icons/oxygen/scalable
-@dirrm share/apps/parley/icons/oxygen/48x48/actions
-@dirrm share/apps/parley/icons/oxygen/48x48
-@dirrm share/apps/parley/icons/oxygen/32x32/actions
-@dirrm share/apps/parley/icons/oxygen/32x32
-@dirrm share/apps/parley/icons/oxygen/22x22/actions
-@dirrm share/apps/parley/icons/oxygen/22x22
-@dirrm share/apps/parley/icons/oxygen/16x16/actions
-@dirrm share/apps/parley/icons/oxygen/16x16
-@dirrm share/apps/parley/icons/oxygen
-@dirrm share/apps/parley/icons
-@dirrm share/apps/parley

@@ -2,7 +2,6 @@
 
 PORTNAME=	kopete
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	6
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -31,7 +30,7 @@ RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
 
 USES=		cmake:outsource pkgconfig shebangfix tar:xz webplugin:native
 USE_GNOME=	libxml2 libxslt
-USE_KDE4=	kdehier kdelibs kdeprefix pimlibs \
+USE_KDE4=	kdelibs kdeprefix pimlibs \
 		automoc4 qimageblitz
 USE_OPENSSL=	yes
 USE_QT4=	corelib gui network qt3support sql xml \

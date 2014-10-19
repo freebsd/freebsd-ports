@@ -32,6 +32,3 @@ share/kde4/services/komparenavtreepart.desktop
 share/kde4/services/komparepart.desktop
 share/kde4/servicetypes/komparenavigationpart.desktop
 share/kde4/servicetypes/kompareviewpart.desktop
-@dirrm share/doc/HTML/en/kompare
-@dirrm share/apps/kompare
-@dirrm include/kompare

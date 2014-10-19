@@ -1,13 +1,19 @@
 bin/calgebra
+include/analitza/abstractexpressionvisitor.h
 include/analitza/abstractlexer.h
 include/analitza/analitzaexport.h
 include/analitza/analitzautils.h
 include/analitza/analyzer.h
+include/analitza/apply.h
 include/analitza/builtinmethods.h
+include/analitza/container.h
+include/analitza/customobject.h
 include/analitza/expression.h
 include/analitza/expressionstream.h
 include/analitza/expressiontype.h
 include/analitza/importqobjectmetatype.h
+include/analitza/list.h
+include/analitza/matrix.h
 include/analitza/object.h
 include/analitza/operations.h
 include/analitza/operator.h
@@ -50,10 +56,3 @@ share/apps/libanalitza/plots/3Ds.plots
 share/apps/libanalitza/plots/basic_curves.plots
 share/apps/libanalitza/plots/conics.plots
 share/apps/libanalitza/plots/polar.plots
-@dirrm share/apps/libanalitza/plots
-@dirrm share/apps/libanalitza
-@dirrm lib/cmake/analitza
-@dirrmtry lib/cmake
-@dirrm include/analitzaplot
-@dirrm include/analitzagui
-@dirrm include/analitza

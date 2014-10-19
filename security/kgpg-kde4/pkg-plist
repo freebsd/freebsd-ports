@@ -1,4 +1,5 @@
 bin/kgpg
+share/appdata/kgpg.appdata.xml
 share/applications/kde4/kgpg.desktop
 share/apps/kgpg/icons/hicolor/16x16/actions/document-export-key.png
 share/apps/kgpg/icons/hicolor/16x16/actions/document-import-key.png
@@ -59,22 +60,3 @@ share/icons/hicolor/48x48/apps/kgpg.png
 share/kde4/services/ServiceMenus/encryptfile.desktop
 share/kde4/services/ServiceMenus/encryptfolder.desktop
 share/kde4/services/ServiceMenus/viewdecrypted.desktop
-@dirrm share/doc/HTML/en/kgpg
-@dirrm share/apps/kgpg/icons/hicolor/scalable/status
-@dirrm share/apps/kgpg/icons/hicolor/scalable/actions
-@dirrm share/apps/kgpg/icons/hicolor/scalable
-@dirrm share/apps/kgpg/icons/hicolor/48x48/status
-@dirrm share/apps/kgpg/icons/hicolor/48x48/actions
-@dirrm share/apps/kgpg/icons/hicolor/48x48
-@dirrm share/apps/kgpg/icons/hicolor/32x32/status
-@dirrm share/apps/kgpg/icons/hicolor/32x32/actions
-@dirrm share/apps/kgpg/icons/hicolor/32x32
-@dirrm share/apps/kgpg/icons/hicolor/22x22/status
-@dirrm share/apps/kgpg/icons/hicolor/22x22/actions
-@dirrm share/apps/kgpg/icons/hicolor/22x22
-@dirrm share/apps/kgpg/icons/hicolor/16x16/status
-@dirrm share/apps/kgpg/icons/hicolor/16x16/actions
-@dirrm share/apps/kgpg/icons/hicolor/16x16
-@dirrm share/apps/kgpg/icons/hicolor
-@dirrm share/apps/kgpg/icons
-@dirrm share/apps/kgpg

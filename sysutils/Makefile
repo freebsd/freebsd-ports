@@ -59,6 +59,8 @@
     SUBDIR += bacula5-client-static
     SUBDIR += bacula5-docs
     SUBDIR += bacula5-server
+    SUBDIR += baloo
+    SUBDIR += baloo-widgets
     SUBDIR += bamf
     SUBDIR += bashburn
     SUBDIR += batmon
@@ -420,6 +422,7 @@
     SUBDIR += kdf
     SUBDIR += kdirstat
     SUBDIR += keyboard-daemon
+    SUBDIR += kfilemetadata
     SUBDIR += kfloppy
     SUBDIR += kiconvtool
     SUBDIR += kldfind

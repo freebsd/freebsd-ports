@@ -2,6 +2,7 @@ bin/kolourpaint
 lib/libkolourpaint_lgpl.so
 lib/libkolourpaint_lgpl.so.4
 lib/libkolourpaint_lgpl.so.%%KDE4_GENERIC_LIB_VERSION%%
+share/appdata/kolourpaint.appdata.xml
 share/applications/kde4/kolourpaint.desktop
 share/apps/kolourpaint/icons/hicolor/16x16/actions/tool_brush.png
 share/apps/kolourpaint/icons/hicolor/16x16/actions/tool_color_eraser.png
@@ -165,18 +166,3 @@ share/icons/hicolor/22x22/apps/kolourpaint.png
 share/icons/hicolor/32x32/apps/kolourpaint.png
 share/icons/hicolor/48x48/apps/kolourpaint.png
 share/icons/hicolor/scalable/apps/kolourpaint.svgz
-@dirrm share/doc/HTML/en/kolourpaint
-@dirrm share/apps/kolourpaint/pics
-@dirrm share/apps/kolourpaint/icons/hicolor/scalable/actions
-@dirrm share/apps/kolourpaint/icons/hicolor/scalable
-@dirrm share/apps/kolourpaint/icons/hicolor/48x48/actions
-@dirrm share/apps/kolourpaint/icons/hicolor/48x48
-@dirrm share/apps/kolourpaint/icons/hicolor/32x32/actions
-@dirrm share/apps/kolourpaint/icons/hicolor/32x32
-@dirrm share/apps/kolourpaint/icons/hicolor/22x22/actions
-@dirrm share/apps/kolourpaint/icons/hicolor/22x22
-@dirrm share/apps/kolourpaint/icons/hicolor/16x16/actions
-@dirrm share/apps/kolourpaint/icons/hicolor/16x16
-@dirrm share/apps/kolourpaint/icons/hicolor
-@dirrm share/apps/kolourpaint/icons
-@dirrm share/apps/kolourpaint

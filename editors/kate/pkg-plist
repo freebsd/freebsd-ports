@@ -21,6 +21,7 @@ lib/kde4/katemailfilesplugin.so
 lib/kde4/kateopenheaderplugin.so
 lib/kde4/katepart.so
 lib/kde4/kateprojectplugin.so
+lib/kde4/katereplicodeplugin.so
 lib/kde4/katesearchplugin.so
 lib/kde4/katesnippetsplugin.so
 lib/kde4/katesqlplugin.so
@@ -35,6 +36,7 @@ lib/kde4/ktexteditor_exporter.so
 lib/kde4/ktexteditor_hlselection.so
 lib/kde4/ktexteditor_iconinserter.so
 lib/kde4/ktexteditor_insertfile.so
+lib/kde4/ktexteditor_lumen.so
 lib/kde4/plasma_applet_katesession.so
 lib/libkateinterfaces.so
 lib/libkateinterfaces.so.4
@@ -71,6 +73,7 @@ share/apps/kate/plugins/kategdb/ui.rc
 share/apps/kate/plugins/katekonsole/ui.rc
 share/apps/kate/plugins/katemailfiles/ui.rc
 share/apps/kate/plugins/kateopenheader/ui.rc
+share/apps/kate/plugins/katereplicodeplugin/ui.rc
 share/apps/kate/plugins/katesearch/ui.rc
 share/apps/kate/plugins/katesql/ui.rc
 share/apps/kate/plugins/katesymbolviewer/ui.rc
@@ -79,6 +82,7 @@ share/apps/kate/plugins/katetabify/ui.rc
 share/apps/kate/plugins/katetextfilter/ui.rc
 share/apps/kate/plugins/katexmlcheck/ui.rc
 share/apps/kate/plugins/katexmltools/ui.rc
+share/apps/kate/plugins/project/kateproject.example
 share/apps/kate/plugins/project/ui.rc
 share/apps/kate/tips
 share/apps/katepart/katepartsimpleui.rc
@@ -89,9 +93,12 @@ share/apps/katepart/script/commands/quickcoding.js
 share/apps/katepart/script/commands/utils.js
 share/apps/katepart/script/files/quickcoding/cpp/a.template
 share/apps/katepart/script/files/quickcoding/cpp/c.template
+share/apps/katepart/script/indentation/ada.js
+share/apps/katepart/script/indentation/cmake.js
 share/apps/katepart/script/indentation/cppstyle.js
 share/apps/katepart/script/indentation/cstyle.js
 share/apps/katepart/script/indentation/haskell.js
+share/apps/katepart/script/indentation/latex.js
 share/apps/katepart/script/indentation/lilypond.js
 share/apps/katepart/script/indentation/lisp.js
 share/apps/katepart/script/indentation/lua.js
@@ -99,6 +106,7 @@ share/apps/katepart/script/indentation/pascal.js
 share/apps/katepart/script/indentation/python.js
 share/apps/katepart/script/indentation/ruby.js
 share/apps/katepart/script/indentation/xml.js
+share/apps/katepart/script/libraries/cmake_indenter_config.js
 share/apps/katepart/script/libraries/cursor.js
 share/apps/katepart/script/libraries/documentcursor.js
 share/apps/katepart/script/libraries/emmet/editor_interface.js
@@ -106,10 +114,12 @@ share/apps/katepart/script/libraries/emmet/lib.js
 share/apps/katepart/script/libraries/range.js
 share/apps/katepart/script/libraries/string.js
 share/apps/katepart/script/libraries/underscore.js
+share/apps/katepart/script/libraries/utils.js
 share/apps/katepart/syntax/abap.xml
 share/apps/katepart/syntax/abc.xml
 share/apps/katepart/syntax/actionscript.xml
 share/apps/katepart/syntax/ada.xml
+share/apps/katepart/syntax/agda.xml
 share/apps/katepart/syntax/ahdl.xml
 share/apps/katepart/syntax/ahk.xml
 share/apps/katepart/syntax/alert.xml
@@ -147,7 +157,6 @@ share/apps/katepart/syntax/commonlisp.xml
 share/apps/katepart/syntax/component-pascal.xml
 share/apps/katepart/syntax/context.xml
 share/apps/katepart/syntax/cpp.xml
-share/apps/katepart/syntax/cpp11.xml
 share/apps/katepart/syntax/crk.xml
 share/apps/katepart/syntax/cs.xml
 share/apps/katepart/syntax/css-php.xml
@@ -201,6 +210,7 @@ share/apps/katepart/syntax/idl.xml
 share/apps/katepart/syntax/ilerpg.xml
 share/apps/katepart/syntax/inform.xml
 share/apps/katepart/syntax/ini.xml
+share/apps/katepart/syntax/isocpp.xml
 share/apps/katepart/syntax/jam.xml
 share/apps/katepart/syntax/java.xml
 share/apps/katepart/syntax/javadoc.xml
@@ -213,6 +223,7 @@ share/apps/katepart/syntax/julia.xml
 share/apps/katepart/syntax/k.xml
 share/apps/katepart/syntax/katetemplate.xml
 share/apps/katepart/syntax/kbasic.xml
+share/apps/katepart/syntax/kconfig.xml
 share/apps/katepart/syntax/language.dtd
 share/apps/katepart/syntax/latex.xml
 share/apps/katepart/syntax/ld.xml
@@ -234,6 +245,7 @@ share/apps/katepart/syntax/mako.xml
 share/apps/katepart/syntax/mandoc.xml
 share/apps/katepart/syntax/markdown.xml
 share/apps/katepart/syntax/mason.xml
+share/apps/katepart/syntax/mathematica.xml
 share/apps/katepart/syntax/matlab.xml
 share/apps/katepart/syntax/maxima.xml
 share/apps/katepart/syntax/mediawiki.xml
@@ -272,18 +284,18 @@ share/apps/katepart/syntax/ppd.xml
 share/apps/katepart/syntax/progress.xml
 share/apps/katepart/syntax/prolog.xml
 share/apps/katepart/syntax/protobuf.xml
+share/apps/katepart/syntax/puppet.xml
 share/apps/katepart/syntax/purebasic.xml
 share/apps/katepart/syntax/python.xml
 share/apps/katepart/syntax/q.xml
 share/apps/katepart/syntax/qmake.xml
 share/apps/katepart/syntax/qml.xml
-share/apps/katepart/syntax/qt4.xml
 share/apps/katepart/syntax/r.xml
 share/apps/katepart/syntax/rapidq.xml
 share/apps/katepart/syntax/relaxng.xml
 share/apps/katepart/syntax/relaxngcompact.xml
+share/apps/katepart/syntax/replicode.xml
 share/apps/katepart/syntax/rest.xml
-share/apps/katepart/syntax/restructuredtext.xml
 share/apps/katepart/syntax/rexx.xml
 share/apps/katepart/syntax/rhtml.xml
 share/apps/katepart/syntax/rib.xml
@@ -423,6 +435,7 @@ share/kde4/services/katemailfilesplugin.desktop
 share/kde4/services/kateopenheader.desktop
 share/kde4/services/katepart.desktop
 share/kde4/services/kateprojectplugin.desktop
+share/kde4/services/katereplicodeplugin.desktop
 share/kde4/services/katesearch.desktop
 share/kde4/services/katesnippetsplugin.desktop
 share/kde4/services/katesql.desktop
@@ -438,47 +451,6 @@ share/kde4/services/ktexteditor_exporter.desktop
 share/kde4/services/ktexteditor_hlselection.desktop
 share/kde4/services/ktexteditor_iconinserter.desktop
 share/kde4/services/ktexteditor_insertfile.desktop
+share/kde4/services/ktexteditor_lumen.desktop
 share/kde4/services/plasma-applet-katesession.desktop
 share/kde4/servicetypes/kateplugin.desktop
-@dirrm share/doc/HTML/en/kwrite
-@dirrm share/doc/HTML/en/kate
-@dirrm share/apps/kwrite
-@dirrm share/apps/ktexteditor_insertfile
-@dirrm share/apps/ktexteditor_iconinserter
-@dirrm share/apps/ktexteditor_exporter
-@dirrmtry share/apps/katexmltools
-@dirrm share/apps/katepart/script/libraries/emmet
-@dirrm share/apps/katepart/script/libraries
-@dirrm share/apps/katepart/script/indentation
-@dirrm share/apps/katepart/script/files/quickcoding/cpp
-@dirrm share/apps/katepart/script/files/quickcoding
-@dirrm share/apps/katepart/script/files
-@dirrm share/apps/katepart/script/commands
-@dirrm share/apps/katepart/script
-@dirrm share/apps/kate/plugins/project
-@dirrm share/apps/kate/plugins/katexmltools
-@dirrm share/apps/kate/plugins/katexmlcheck
-@dirrm share/apps/kate/plugins/katetextfilter
-@dirrm share/apps/kate/plugins/katetabify
-@dirrm share/apps/kate/plugins/katetabbarextension
-@dirrm share/apps/kate/plugins/katesymbolviewer
-@dirrm share/apps/kate/plugins/katesql
-@dirrm share/apps/kate/plugins/katesearch
-@dirrm share/apps/kate/plugins/kateopenheader
-@dirrm share/apps/kate/plugins/katemailfiles
-@dirrm share/apps/kate/plugins/katekonsole
-@dirrm share/apps/kate/plugins/kategdb
-@dirrm share/apps/kate/plugins/katefiletemplates/templates
-@dirrm share/apps/kate/plugins/katefiletemplates
-@dirrm share/apps/kate/plugins/katectags
-@dirrm share/apps/kate/plugins/katecloseexceptplugin
-@dirrm share/apps/kate/plugins/katebuild
-@dirrm share/apps/kate/plugins/kate_kttsd
-@dirrm share/apps/kate/plugins/filetree
-@dirrmtry share/apps/kate/plugins
-@dirrm share/apps/kate/icons/hicolor/16x16/actions
-@dirrm share/apps/kate/icons/hicolor/16x16
-@dirrm share/apps/kate/icons/hicolor
-@dirrm share/apps/kate/icons
-@dirrmtry share/apps/kate
-@dirrmtry include/kate

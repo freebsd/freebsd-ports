@@ -4,6 +4,7 @@ share/apps/kdevappwizard/template_previews/akonadi-resources.png
 share/apps/kdevappwizard/template_previews/akonadi-serializer.png
 share/apps/kdevappwizard/template_previews/default.png
 share/apps/kdevappwizard/template_previews/kapp4.png
+share/apps/kdevappwizard/template_previews/kde-frameworks5-simple.png
 share/apps/kdevappwizard/template_previews/kde-simple.png
 share/apps/kdevappwizard/template_previews/kderubyapp.png
 share/apps/kdevappwizard/template_previews/konqplugin.png
@@ -20,6 +21,7 @@ share/apps/kdevappwizard/templates/akonadiserializer.tar.bz2
 share/apps/kdevappwizard/templates/flake.tar.bz2
 share/apps/kdevappwizard/templates/kapp4-qml.tar.bz2
 share/apps/kdevappwizard/templates/kapp4.tar.bz2
+share/apps/kdevappwizard/templates/kde-frameworks5-simple.tar.bz2
 share/apps/kdevappwizard/templates/kde-simple.tar.bz2
 share/apps/kdevappwizard/templates/kderubyapp.tar.bz2
 share/apps/kdevappwizard/templates/kofficetext.tar.bz2
@@ -54,7 +56,3 @@ share/icons/hicolor/22x22/apps/kapptemplate.png
 share/icons/hicolor/32x32/apps/kapptemplate.png
 share/icons/hicolor/48x48/apps/kapptemplate.png
 share/icons/hicolor/64x64/apps/kapptemplate.png
-@dirrm share/doc/HTML/en/kapptemplate
-@dirrm share/apps/kdevappwizard/templates
-@dirrm share/apps/kdevappwizard/template_previews
-@dirrm share/apps/kdevappwizard

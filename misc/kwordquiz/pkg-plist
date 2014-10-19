@@ -1,4 +1,5 @@
 bin/kwordquiz
+share/appdata/kwordquiz.appdata.xml
 share/applications/kde4/kwordquiz.desktop
 share/apps/kwordquiz/examples/example.kvtml
 share/apps/kwordquiz/examples/fill_in_the_blank.kvtml
@@ -191,22 +192,3 @@ share/icons/hicolor/32x32/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/48x48/apps/kwordquiz.png
 share/icons/hicolor/48x48/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/64x64/apps/kwordquiz.png
-@dirrm share/doc/HTML/en/kwordquiz
-@dirrm share/apps/kwordquiz/icons/hicolor/scalable/actions
-@dirrm share/apps/kwordquiz/icons/hicolor/scalable
-@dirrm share/apps/kwordquiz/icons/hicolor/64x64/actions
-@dirrm share/apps/kwordquiz/icons/hicolor/64x64
-@dirrm share/apps/kwordquiz/icons/hicolor/48x48/actions
-@dirrm share/apps/kwordquiz/icons/hicolor/48x48
-@dirrm share/apps/kwordquiz/icons/hicolor/32x32/actions
-@dirrm share/apps/kwordquiz/icons/hicolor/32x32
-@dirrm share/apps/kwordquiz/icons/hicolor/22x22/actions
-@dirrm share/apps/kwordquiz/icons/hicolor/22x22
-@dirrm share/apps/kwordquiz/icons/hicolor/16x16/actions
-@dirrm share/apps/kwordquiz/icons/hicolor/16x16
-@dirrm share/apps/kwordquiz/icons/hicolor/128x128/actions
-@dirrm share/apps/kwordquiz/icons/hicolor/128x128
-@dirrm share/apps/kwordquiz/icons/hicolor
-@dirrm share/apps/kwordquiz/icons
-@dirrm share/apps/kwordquiz/examples
-@dirrm share/apps/kwordquiz

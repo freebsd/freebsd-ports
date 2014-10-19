@@ -46,10 +46,10 @@ share/locale/zh_CN/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/zh_CN/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/zh_CN/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/zh_CN/LC_MESSAGES/accountwizard_tine20.mo
-share/locale/zh_CN/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/zh_CN/LC_MESSAGES/adblock.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi-filestore.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_archivemail_agent.mo
+share/locale/zh_CN/LC_MESSAGES/akonadi_baloo_indexer.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_davgroupware_resource.mo
@@ -73,10 +73,7 @@ share/locale/zh_CN/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_mbox_resource.mo
-share/locale/zh_CN/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/zh_CN/LC_MESSAGES/akonadi_nepomuk_feeder.mo
-share/locale/zh_CN/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_next.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_nntp_resource.mo
@@ -84,7 +81,6 @@ share/locale/zh_CN/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/zh_CN/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadicontact.mo
@@ -94,6 +90,7 @@ share/locale/zh_CN/LC_MESSAGES/akregator.mo
 share/locale/zh_CN/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/zh_CN/LC_MESSAGES/amor.mo
 share/locale/zh_CN/LC_MESSAGES/analitza.mo
+share/locale/zh_CN/LC_MESSAGES/ark.appdata.mo
 share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_CN/LC_MESSAGES/attica_kde.mo
 share/locale/zh_CN/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -101,6 +98,11 @@ share/locale/zh_CN/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/zh_CN/LC_MESSAGES/audiorename_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/autorefresh.mo
 share/locale/zh_CN/LC_MESSAGES/babelfish.mo
+share/locale/zh_CN/LC_MESSAGES/baloo_file.mo
+share/locale/zh_CN/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/zh_CN/LC_MESSAGES/baloosearch.mo
+share/locale/zh_CN/LC_MESSAGES/balooshow.mo
+share/locale/zh_CN/LC_MESSAGES/baloowidgets.mo
 share/locale/zh_CN/LC_MESSAGES/blinken.mo
 share/locale/zh_CN/LC_MESSAGES/blogilo.mo
 share/locale/zh_CN/LC_MESSAGES/bomber.mo
@@ -198,6 +200,7 @@ share/locale/zh_CN/LC_MESSAGES/kcm_akonadi.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_attica.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_autostart.mo
+share/locale/zh_CN/LC_MESSAGES/kcm_baloofile.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_device_automounter.mo
@@ -210,7 +213,6 @@ share/locale/zh_CN/LC_MESSAGES/kcm_memory.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_pci.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_phonon.mo
-share/locale/zh_CN/LC_MESSAGES/kcm_pimactivity.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_platform.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_solid_actions.mo
@@ -289,13 +291,13 @@ share/locale/zh_CN/LC_MESSAGES/kfile_dds.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_drgeo.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_exr.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_kig.mo
-share/locale/zh_CN/LC_MESSAGES/kfile_mail.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_pnm.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_raw.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_rgb.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_tiff.mo
 share/locale/zh_CN/LC_MESSAGES/kfile_xps.mo
 share/locale/zh_CN/LC_MESSAGES/kfileaudiopreview4.mo
+share/locale/zh_CN/LC_MESSAGES/kfilemetadata.mo
 share/locale/zh_CN/LC_MESSAGES/kfilereplace.mo
 share/locale/zh_CN/LC_MESSAGES/kfileshare.mo
 share/locale/zh_CN/LC_MESSAGES/kfindpart.mo
@@ -308,6 +310,7 @@ share/locale/zh_CN/LC_MESSAGES/kget.mo
 share/locale/zh_CN/LC_MESSAGES/kgetplugin.mo
 share/locale/zh_CN/LC_MESSAGES/kglobalaccel.mo
 share/locale/zh_CN/LC_MESSAGES/kgoldrunner.mo
+share/locale/zh_CN/LC_MESSAGES/kgpg.appdata.mo
 share/locale/zh_CN/LC_MESSAGES/kgpg.mo
 share/locale/zh_CN/LC_MESSAGES/kgreet_classic.mo
 share/locale/zh_CN/LC_MESSAGES/kgreet_generic.mo
@@ -330,6 +333,7 @@ share/locale/zh_CN/LC_MESSAGES/kio_akonadi.mo
 share/locale/zh_CN/LC_MESSAGES/kio_applications.mo
 share/locale/zh_CN/LC_MESSAGES/kio_archive.mo
 share/locale/zh_CN/LC_MESSAGES/kio_audiocd.mo
+share/locale/zh_CN/LC_MESSAGES/kio_baloosearch.mo
 share/locale/zh_CN/LC_MESSAGES/kio_bookmarks.mo
 share/locale/zh_CN/LC_MESSAGES/kio_finger.mo
 share/locale/zh_CN/LC_MESSAGES/kio_fish.mo
@@ -343,6 +347,8 @@ share/locale/zh_CN/LC_MESSAGES/kio_man.mo
 share/locale/zh_CN/LC_MESSAGES/kio_mbox.mo
 share/locale/zh_CN/LC_MESSAGES/kio_nepomuk.mo
 share/locale/zh_CN/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/zh_CN/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/zh_CN/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/zh_CN/LC_MESSAGES/kio_nfs.mo
 share/locale/zh_CN/LC_MESSAGES/kio_nntp.mo
 share/locale/zh_CN/LC_MESSAGES/kio_perldoc.mo
@@ -544,7 +550,6 @@ share/locale/zh_CN/LC_MESSAGES/liboktetagui.mo
 share/locale/zh_CN/LC_MESSAGES/liboktetakasten.mo
 share/locale/zh_CN/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/zh_CN/LC_MESSAGES/libphonon.mo
-share/locale/zh_CN/LC_MESSAGES/libpimactivity.mo
 share/locale/zh_CN/LC_MESSAGES/libpimcommon.mo
 share/locale/zh_CN/LC_MESSAGES/libplasma.mo
 share/locale/zh_CN/LC_MESSAGES/libplasma_groupingcontainment.mo
@@ -720,6 +725,7 @@ share/locale/zh_CN/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
+share/locale/zh_CN/LC_MESSAGES/plasma_runner_baloosearchrunner.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_calculatorrunner.mo
@@ -747,6 +753,7 @@ share/locale/zh_CN/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
+share/locale/zh_CN/LC_MESSAGES/plasma_runner_translator.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_windows.mo
@@ -800,13 +807,3 @@ share/locale/zh_CN/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/zh_CN/charset
 share/locale/zh_CN/entry.desktop
 share/locale/zh_CN/flag.png
-@dirrm share/locale/zh_CN/LC_SCRIPTS/kdelibs4
-@dirrm share/locale/zh_CN/LC_SCRIPTS
-@dirrm share/doc/HTML/zh_CN/gwenview
-@dirrm share/doc/HTML/zh_CN/common
-@dirrm share/apps/step/objinfo/l10n/zh_CN
-@dirrm share/apps/step/objinfo/l10n
-@dirrm share/apps/step/objinfo
-@dirrm share/apps/step
-@dirrm share/apps/kvtml/zh_CN
-@dirrm share/apps/kvtml

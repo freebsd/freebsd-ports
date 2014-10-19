@@ -14,6 +14,7 @@ lib/libkdcraw.so
 lib/libkdcraw.so.23
 lib/libkdcraw.so.23.0.0
 libdata/pkgconfig/libkdcraw-kde4.pc
+share/apps/libkdcraw/profiles/compatibleWithAdobeRGB1998.icc
 share/apps/libkdcraw/profiles/prophoto.icm
 share/apps/libkdcraw/profiles/srgb-d65.icm
 share/apps/libkdcraw/profiles/widegamut.icm
@@ -21,6 +22,3 @@ share/icons/hicolor/128x128/apps/kdcraw.png
 share/icons/hicolor/32x32/apps/kdcraw.png
 share/icons/hicolor/48x48/apps/kdcraw.png
 share/icons/hicolor/64x64/apps/kdcraw.png
-@dirrm share/apps/libkdcraw/profiles
-@dirrm share/apps/libkdcraw
-@dirrm include/libkdcraw

@@ -9,10 +9,10 @@ lib/libaudiocdplugins.so.4
 lib/libaudiocdplugins.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
 share/apps/solid/actions/solid_audiocd.desktop
+share/config.kcfg/audiocd_flac_encoder.kcfg
 share/config.kcfg/audiocd_lame_encoder.kcfg
 share/doc/HTML/en/kioslave/audiocd/common
 share/doc/HTML/en/kioslave/audiocd/index.cache.bz2
 share/doc/HTML/en/kioslave/audiocd/index.docbook
 share/kde4/services/audiocd.desktop
 share/kde4/services/audiocd.protocol
-@dirrm share/doc/HTML/en/kioslave/audiocd

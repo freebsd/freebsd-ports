@@ -2,8 +2,8 @@ share/doc/HTML/eu/common/fdl-translated.html
 share/doc/HTML/eu/common/gpl-translated.html
 share/doc/HTML/eu/common/kde-localised.css
 share/doc/HTML/eu/common/lgpl-translated.html
-share/locale/eu/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/eu/LC_MESSAGES/adblock.mo
+share/locale/eu/LC_MESSAGES/akonadi_baloo_indexer.mo
 share/locale/eu/LC_MESSAGES/akonadi_next.mo
 share/locale/eu/LC_MESSAGES/akregator.mo
 share/locale/eu/LC_MESSAGES/akregator_konqplugin.mo
@@ -15,9 +15,11 @@ share/locale/eu/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/eu/LC_MESSAGES/audiorename_plugin.mo
 share/locale/eu/LC_MESSAGES/autorefresh.mo
 share/locale/eu/LC_MESSAGES/babelfish.mo
+share/locale/eu/LC_MESSAGES/baloo_file.mo
 share/locale/eu/LC_MESSAGES/blinken.mo
 share/locale/eu/LC_MESSAGES/bomber.mo
 share/locale/eu/LC_MESSAGES/bovo.mo
+share/locale/eu/LC_MESSAGES/calendarsupport.mo
 share/locale/eu/LC_MESSAGES/cantor.mo
 share/locale/eu/LC_MESSAGES/cervisia.mo
 share/locale/eu/LC_MESSAGES/cvsservice.mo
@@ -225,6 +227,8 @@ share/locale/eu/LC_MESSAGES/kio_ldap.mo
 share/locale/eu/LC_MESSAGES/kio_man.mo
 share/locale/eu/LC_MESSAGES/kio_nepomuk.mo
 share/locale/eu/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/eu/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/eu/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/eu/LC_MESSAGES/kio_nfs.mo
 share/locale/eu/LC_MESSAGES/kio_nntp.mo
 share/locale/eu/LC_MESSAGES/kio_pop3.mo
@@ -235,9 +239,7 @@ share/locale/eu/LC_MESSAGES/kio_sieve.mo
 share/locale/eu/LC_MESSAGES/kio_smb.mo
 share/locale/eu/LC_MESSAGES/kio_smtp.mo
 share/locale/eu/LC_MESSAGES/kio_svn.mo
-share/locale/eu/LC_MESSAGES/kio_tags.mo
 share/locale/eu/LC_MESSAGES/kio_thumbnail.mo
-share/locale/eu/LC_MESSAGES/kio_timeline.mo
 share/locale/eu/LC_MESSAGES/kio_trash.mo
 share/locale/eu/LC_MESSAGES/kio_zeroconf.mo
 share/locale/eu/LC_MESSAGES/kioclient.mo
@@ -531,4 +533,3 @@ share/locale/eu/LC_MESSAGES/validatorsplugin.mo
 share/locale/eu/LC_MESSAGES/webarchiver.mo
 share/locale/eu/LC_MESSAGES/xml_mimetypes.mo
 share/locale/eu/entry.desktop
-@dirrm share/doc/HTML/eu/common

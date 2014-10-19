@@ -19,11 +19,3 @@ share/wallpapers/stripes-freebsd-red/contents/images/1920x1200.jpg
 share/wallpapers/stripes-freebsd-red/contents/images/800x600.jpg
 share/wallpapers/stripes-freebsd-red/contents/screenshot.jpg
 share/wallpapers/stripes-freebsd-red/metadata.desktop
-@dirrm share/wallpapers/stripes-freebsd-red/contents/images
-@dirrm share/wallpapers/stripes-freebsd-red/contents
-@dirrm share/wallpapers/stripes-freebsd-red
-@dirrm share/wallpapers/stripes-freebsd-blue/contents/images
-@dirrm share/wallpapers/stripes-freebsd-blue/contents
-@dirrm share/wallpapers/stripes-freebsd-blue
-@dirrmtry share/apps/plasma-desktop/init
-@dirrmtry share/apps/plasma-desktop

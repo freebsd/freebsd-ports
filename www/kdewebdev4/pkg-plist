@@ -121,21 +121,3 @@ share/kde4/services/kimagemapeditorpart.desktop
 share/kde4/services/klinkstatus_automation.desktop
 share/kde4/services/klinkstatus_part.desktop
 share/kde4/services/krossmoduleklinkstatus.desktop
-@dirrm share/doc/HTML/en/klinkstatus
-@dirrm share/doc/HTML/en/kimagemapeditor
-@dirrm share/doc/HTML/en/kfilereplace
-@dirrm share/apps/klinkstatuspart/pics
-@dirrm share/apps/klinkstatuspart/kpartplugins
-@dirrm share/apps/klinkstatuspart
-@dirrm share/apps/klinkstatus/styles
-@dirrm share/apps/klinkstatus/scripts
-@dirrm share/apps/klinkstatus
-@dirrm share/apps/kimagemapeditor
-@dirrm share/apps/kfilereplacepart/icons/hicolor/22x22/actions
-@dirrm share/apps/kfilereplacepart/icons/hicolor/22x22
-@dirrm share/apps/kfilereplacepart/icons/hicolor
-@dirrm share/apps/kfilereplacepart/icons
-@dirrm share/apps/kfilereplacepart
-@dirrm share/apps/kfilereplace
-@dirrm share/applnk/.hidden
-@dirrm share/applnk

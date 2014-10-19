@@ -20,6 +20,3 @@ share/icons/hicolor/22x22/apps/kblocks.png
 share/icons/hicolor/32x32/apps/kblocks.png
 share/icons/hicolor/48x48/apps/kblocks.png
 share/icons/hicolor/64x64/apps/kblocks.png
-@dirrm share/doc/HTML/en/kblocks
-@dirrm share/apps/kblocks/themes
-@dirrm share/apps/kblocks

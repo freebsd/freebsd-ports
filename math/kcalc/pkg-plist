@@ -9,5 +9,3 @@ share/doc/HTML/en/kcalc/commands.docbook
 share/doc/HTML/en/kcalc/common
 share/doc/HTML/en/kcalc/index.cache.bz2
 share/doc/HTML/en/kcalc/index.docbook
-@dirrm share/doc/HTML/en/kcalc
-@dirrm share/apps/kcalc

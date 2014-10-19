@@ -1,0 +1,14 @@
+--- ./CMakeLists.txt.orig	2014-07-15 19:22:46.000000000 +0200
++++ ./CMakeLists.txt	2014-07-15 19:23:01.000000000 +0200
+	
+	Do not enforce building of tests
+
+@@ -26,7 +26,7 @@
+ configure_file (config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+ 
+ # enforce build of tests
+-set (KDE4_BUILD_TESTS "ON" CACHE "BOOL" "Enable building of tests" FORCE)
++# set (KDE4_BUILD_TESTS "ON" CACHE "BOOL" "Enable building of tests" FORCE)
+ 
+ # KDE/QT definitions we want
+ add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})

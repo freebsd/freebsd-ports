@@ -2,7 +2,6 @@
 
 PORTNAME=	kde-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 RUN_DEPENDS=	cagibid:${PORTSDIR}/net/cagibi
 
-USE_KDE4=	kactivities kdehier kdelibs kdeprefix oxygen \
+USE_KDE4=	kactivities kdelibs kdeprefix oxygen \
 		attica automoc4 pimlibs strigi nepomuk-core
 USES=		cmake:outsource gettext gmake shared-mime-info shebangfix tar:xz
 USE_QT4=	corelib dbus declarative designer_build gui phonon \

@@ -1,4 +1,5 @@
 bin/akonadi2xml
+bin/akonaditest
 include/KDE/Akonadi/AgentBase
 include/KDE/Akonadi/AgentFactory
 include/KDE/Akonadi/AgentFilterProxyModel
@@ -12,6 +13,7 @@ include/KDE/Akonadi/AgentTypeDialog
 include/KDE/Akonadi/AgentTypeModel
 include/KDE/Akonadi/AgentTypeWidget
 include/KDE/Akonadi/Attribute
+include/KDE/Akonadi/AttributeEntity
 include/KDE/Akonadi/AttributeFactory
 include/KDE/Akonadi/CachePolicy
 include/KDE/Akonadi/Calendar/BlockAlarmsAttribute
@@ -78,6 +80,7 @@ include/KDE/Akonadi/Control
 include/KDE/Akonadi/DBusConnectionPool
 include/KDE/Akonadi/ETMViewStateSaver
 include/KDE/Akonadi/Entity
+include/KDE/Akonadi/EntityAnnotationsAttribute
 include/KDE/Akonadi/EntityDisplayAttribute
 include/KDE/Akonadi/EntityHiddenAttribute
 include/KDE/Akonadi/EntityListView
@@ -125,12 +128,24 @@ include/KDE/Akonadi/RecursiveCollectionFilterProxyModel
 include/KDE/Akonadi/RecursiveItemFetchJob
 include/KDE/Akonadi/ResourceBase
 include/KDE/Akonadi/SearchCreateJob
+include/KDE/Akonadi/SearchQuery
 include/KDE/Akonadi/ServerManager
 include/KDE/Akonadi/Session
 include/KDE/Akonadi/SocialUtils/ImageProvider
 include/KDE/Akonadi/SocialUtils/SocialFeedItem
 include/KDE/Akonadi/SocialUtils/SocialNetworkAttributes
 include/KDE/Akonadi/StandardActionManager
+include/KDE/Akonadi/Tag
+include/KDE/Akonadi/TagAttribute
+include/KDE/Akonadi/TagCreateJob
+include/KDE/Akonadi/TagDeleteJob
+include/KDE/Akonadi/TagFetchJob
+include/KDE/Akonadi/TagFetchScope
+include/KDE/Akonadi/TagManagementDialog
+include/KDE/Akonadi/TagModel
+include/KDE/Akonadi/TagModifyJob
+include/KDE/Akonadi/TagSelectionDialog
+include/KDE/Akonadi/TagWidget
 include/KDE/Akonadi/TransactionBeginJob
 include/KDE/Akonadi/TransactionCommitJob
 include/KDE/Akonadi/TransactionRollbackJob
@@ -457,6 +472,7 @@ include/akonadi/agenttypemodel.h
 include/akonadi/agenttypewidget.h
 include/akonadi/akonadi_export.h
 include/akonadi/attribute.h
+include/akonadi/attributeentity.h
 include/akonadi/attributefactory.h
 include/akonadi/cachepolicy.h
 include/akonadi/cachepolicypage.h
@@ -531,6 +547,7 @@ include/akonadi/control.h
 include/akonadi/dbusconnectionpool.h
 include/akonadi/differencesalgorithminterface.h
 include/akonadi/entity.h
+include/akonadi/entityannotationsattribute.h
 include/akonadi/entitydeletedattribute.h
 include/akonadi/entitydisplayattribute.h
 include/akonadi/entityhiddenattribute.h
@@ -598,6 +615,7 @@ include/akonadi/resourcebasesettings.h
 include/akonadi/resourcesettings.h
 include/akonadi/resourcesynchronizationjob.h
 include/akonadi/searchcreatejob.h
+include/akonadi/searchquery.h
 include/akonadi/selectionproxymodel.h
 include/akonadi/servermanager.h
 include/akonadi/session.h
@@ -610,6 +628,17 @@ include/akonadi/specialcollectionsdiscoveryjob.h
 include/akonadi/specialcollectionsrequestjob.h
 include/akonadi/standardactionmanager.h
 include/akonadi/statisticsproxymodel.h
+include/akonadi/tag.h
+include/akonadi/tagattribute.h
+include/akonadi/tagcreatejob.h
+include/akonadi/tagdeletejob.h
+include/akonadi/tagfetchjob.h
+include/akonadi/tagfetchscope.h
+include/akonadi/tagmanagementdialog.h
+include/akonadi/tagmodel.h
+include/akonadi/tagmodifyjob.h
+include/akonadi/tagselectiondialog.h
+include/akonadi/tagwidget.h
 include/akonadi/transactionjobs.h
 include/akonadi/transactionsequence.h
 include/akonadi/transportresourcebase.h
@@ -1054,6 +1083,7 @@ lib/cmake/KdepimLibs/KdepimLibsConfig.cmake
 lib/cmake/KdepimLibs/KdepimLibsConfigVersion.cmake
 lib/gpgmepp/GpgmeppConfig.cmake
 lib/gpgmepp/GpgmeppLibraryDepends.cmake
+lib/kde4/akonadi_knut_resource.so
 lib/kde4/akonadi_serializer_socialfeeditem.so
 lib/kde4/kabc_directory.so
 lib/kde4/kabc_file.so
@@ -1176,6 +1206,7 @@ lib/libqgpgme.so.1.0.1
 lib/libsyndication.so
 lib/libsyndication.so.4
 lib/libsyndication.so.%%KDE4_GENERIC_LIB_VERSION%%
+share/akonadi/agents/knutresource.desktop
 share/apps/akonadi-kde/kcfg2dbus.xsl
 share/apps/akonadi/akonadi-xml.xsd
 share/apps/akonadi/contact/data/zone.tab
@@ -1192,6 +1223,7 @@ share/apps/akonadi/contact/icons/oxygen/16x16/apps/sms_protocol.png
 share/apps/akonadi/contact/icons/oxygen/16x16/apps/yahoo_protocol.png
 share/apps/akonadi/contact/pics/world.jpg
 share/apps/akonadi/plugins/serializer/akonadi_serializer_socialfeeditem.desktop
+share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/cmake/modules/AkonadiMacros.cmake
 share/apps/cmake/modules/CheckTimezone.cmake
 share/apps/cmake/modules/FindGpgme.cmake
@@ -1218,6 +1250,7 @@ share/apps/libkholidays/plan2/holiday_ba-srp_sr
 share/apps/libkholidays/plan2/holiday_ba-srp_sr@ijekavian
 share/apps/libkholidays/plan2/holiday_ba-srp_sr@ijekavianlatin
 share/apps/libkholidays/plan2/holiday_ba-srp_sr@latin
+share/apps/libkholidays/plan2/holiday_bb_en-gb
 share/apps/libkholidays/plan2/holiday_be_fr
 share/apps/libkholidays/plan2/holiday_be_nl
 share/apps/libkholidays/plan2/holiday_be_wa
@@ -1252,6 +1285,7 @@ share/apps/libkholidays/plan2/holiday_gb-sct_en-gb
 share/apps/libkholidays/plan2/holiday_gf_fr
 share/apps/libkholidays/plan2/holiday_gp_fr
 share/apps/libkholidays/plan2/holiday_gr_el
+share/apps/libkholidays/plan2/holiday_gr_el_nameday
 share/apps/libkholidays/plan2/holiday_gt_es
 share/apps/libkholidays/plan2/holiday_hk_en-gb
 share/apps/libkholidays/plan2/holiday_hk_zh-cn
@@ -1387,91 +1421,3 @@ share/kde4/servicetypes/kresources_manager.desktop
 share/kde4/servicetypes/kresources_plugin.desktop
 share/mime/packages/kdepimlibs-mime.xml
 share/mime/packages/x-vnd.akonadi.socialfeeditem.xml
-@dirrm share/kde4/services/akonadi/contact
-@dirrmtry share/kde4/services/akonadi
-@dirrm share/doc/HTML/en/kioslave/smtp
-@dirrm share/doc/HTML/en/kioslave/sieve
-@dirrm share/doc/HTML/en/kioslave/pop3
-@dirrm share/doc/HTML/en/kioslave/nntp
-@dirrm share/doc/HTML/en/kioslave/mbox
-@dirrm share/doc/HTML/en/kioslave/ldap
-@dirrm share/doc/HTML/en/kioslave/imap
-@dirrm share/doc/HTML/en/kcontrol/kresources
-@dirrm share/apps/libkholidays/plan2
-@dirrm share/apps/libkholidays
-@dirrm share/apps/akonadi/plugins/serializer
-@dirrm share/apps/akonadi/plugins
-@dirrm share/apps/akonadi/contact/pics
-@dirrm share/apps/akonadi/contact/icons/oxygen/16x16/apps
-@dirrm share/apps/akonadi/contact/icons/oxygen/16x16
-@dirrm share/apps/akonadi/contact/icons/oxygen
-@dirrm share/apps/akonadi/contact/icons
-@dirrm share/apps/akonadi/contact/data
-@dirrm share/apps/akonadi/contact
-@dirrm share/apps/akonadi-kde
-@dirrmtry share/apps/akonadi
-@dirrm lib/gpgmepp
-@dirrm lib/cmake/KdepimLibs
-@dirrmtry lib/cmake
-@dirrm include/syndication/rss2
-@dirrm include/syndication/rdf
-@dirrm include/syndication/atom
-@dirrm include/syndication
-@dirrm include/qgpgme
-@dirrm include/microblog
-@dirrm include/mailtransport
-@dirrm include/kxmlrpcclient
-@dirrm include/ktnef
-@dirrm include/kresources
-@dirrm include/kpimutils
-@dirrm include/kpimtextedit
-@dirrm include/kpimidentities
-@dirrm include/kontactinterface
-@dirrm include/kmime
-@dirrm include/kmbox
-@dirrm include/kldap
-@dirrm include/kimap
-@dirrm include/kholidays
-@dirrm include/kcalutils
-@dirrm include/kcalcore
-@dirrm include/kcal
-@dirrm include/kblog
-@dirrm include/kalarmcal
-@dirrm include/kabc
-@dirrm include/gpgme++/interfaces
-@dirrm include/gpgme++
-@dirrm include/akonadi/xml
-@dirrmtry include/akonadi/socialutils
-@dirrmtry include/akonadi/private
-@dirrm include/akonadi/notes
-@dirrm include/akonadi/kmime
-@dirrm include/akonadi/kcal
-@dirrm include/akonadi/kabc
-@dirrm include/akonadi/contact
-@dirrm include/akonadi/calendar
-@dirrmtry include/akonadi
-@dirrm include/KDE/Syndication
-@dirrm include/KDE/Mailtransport
-@dirrm include/KDE/KontactInterface
-@dirrm include/KDE/KTNEF
-@dirrm include/KDE/KResources
-@dirrm include/KDE/KPIMUtils
-@dirrm include/KDE/KPIMTextEdit
-@dirrm include/KDE/KPIMIdentities
-@dirrm include/KDE/KMime
-@dirrm include/KDE/KLDAP
-@dirrm include/KDE/KIMAP
-@dirrm include/KDE/KHolidays
-@dirrm include/KDE/KCalUtils
-@dirrm include/KDE/KCalCore
-@dirrm include/KDE/KCal
-@dirrm include/KDE/KBlog
-@dirrm include/KDE/KAlarmCal
-@dirrm include/KDE/KABC
-@dirrm include/KDE/Akonadi/SocialUtils
-@dirrm include/KDE/Akonadi/Notes
-@dirrm include/KDE/Akonadi/KMime
-@dirrm include/KDE/Akonadi/KCal
-@dirrm include/KDE/Akonadi/Contact
-@dirrm include/KDE/Akonadi/Calendar
-@dirrm include/KDE/Akonadi

@@ -29,6 +29,3 @@ share/icons/hicolor/48x48/apps/kdesnake.png
 share/icons/hicolor/48x48/apps/ktron.png
 share/icons/hicolor/64x64/apps/kdesnake.png
 share/icons/hicolor/64x64/apps/ktron.png
-@dirrm share/doc/HTML/en/ktron
-@dirrm share/apps/ktron/themes
-@dirrm share/apps/ktron

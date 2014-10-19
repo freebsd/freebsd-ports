@@ -22,8 +22,12 @@ share/apps/kajongg/common.py
 share/apps/kajongg/common.pyc
 share/apps/kajongg/config.py
 share/apps/kajongg/config.pyc
+share/apps/kajongg/configdialog.py
+share/apps/kajongg/configdialog.pyc
 share/apps/kajongg/deferredutil.py
 share/apps/kajongg/deferredutil.pyc
+share/apps/kajongg/dialogs.py
+share/apps/kajongg/dialogs.pyc
 share/apps/kajongg/differ.py
 share/apps/kajongg/differ.pyc
 share/apps/kajongg/game.py
@@ -47,8 +51,14 @@ share/apps/kajongg/kajonggserver.py
 share/apps/kajongg/kajonggui.rc
 share/apps/kajongg/kde.py
 share/apps/kajongg/kde.pyc
+share/apps/kajongg/kdestub.py
+share/apps/kajongg/kdestub.pyc
+share/apps/kajongg/log.py
+share/apps/kajongg/log.pyc
 share/apps/kajongg/login.py
 share/apps/kajongg/login.pyc
+share/apps/kajongg/mainwindow.py
+share/apps/kajongg/mainwindow.pyc
 share/apps/kajongg/meld.py
 share/apps/kajongg/meld.pyc
 share/apps/kajongg/message.py
@@ -57,16 +67,24 @@ share/apps/kajongg/modeltest.py
 share/apps/kajongg/modeltest.pyc
 share/apps/kajongg/move.py
 share/apps/kajongg/move.pyc
+share/apps/kajongg/permutations.py
+share/apps/kajongg/permutations.pyc
 share/apps/kajongg/player.py
 share/apps/kajongg/player.pyc
 share/apps/kajongg/playerlist.py
 share/apps/kajongg/playerlist.pyc
-share/apps/kajongg/playfield.py
-share/apps/kajongg/playfield.pyc
 share/apps/kajongg/predefined.py
 share/apps/kajongg/predefined.pyc
+share/apps/kajongg/qstring.py
+share/apps/kajongg/qstring.pyc
+share/apps/kajongg/qt.py
+share/apps/kajongg/qt.pyc
+share/apps/kajongg/qt4.py
+share/apps/kajongg/qt4.pyc
 share/apps/kajongg/qt4reactor.py
 share/apps/kajongg/qt4reactor.pyc
+share/apps/kajongg/qt5.py
+share/apps/kajongg/qt5.pyc
 share/apps/kajongg/query.py
 share/apps/kajongg/query.pyc
 share/apps/kajongg/rule.py
@@ -75,8 +93,12 @@ share/apps/kajongg/rulecode.py
 share/apps/kajongg/rulecode.pyc
 share/apps/kajongg/rulesetselector.py
 share/apps/kajongg/rulesetselector.pyc
+share/apps/kajongg/scene.py
+share/apps/kajongg/scene.pyc
 share/apps/kajongg/scoring.py
 share/apps/kajongg/scoring.pyc
+share/apps/kajongg/scoringdialog.py
+share/apps/kajongg/scoringdialog.pyc
 share/apps/kajongg/server.py
 share/apps/kajongg/server.pyc
 share/apps/kajongg/sound.py
@@ -301,10 +323,3 @@ share/icons/hicolor/48x48/apps/kajongg.png
 share/icons/hicolor/64x64/apps/kajongg.png
 share/icons/hicolor/scalable/actions/games-kajongg-law.svgz
 share/icons/hicolor/scalable/apps/kajongg.svgz
-@dirrm share/doc/HTML/en/kajongg
-@dirrm share/apps/kajongg/voices/male2
-@dirrm share/apps/kajongg/voices/male1
-@dirrm share/apps/kajongg/voices/female2
-@dirrm share/apps/kajongg/voices/female1
-@dirrm share/apps/kajongg/voices
-@dirrm share/apps/kajongg

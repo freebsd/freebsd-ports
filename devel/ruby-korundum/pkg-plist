@@ -23,14 +23,3 @@ lib/kde4/krubypluginfactory.so
 %%RUBY_SITELIBDIR%%/okular/okular.rb
 %%RUBY_SITELIBDIR%%/solid/solid.rb
 %%RUBY_SITELIBDIR%%/soprano/soprano.rb
-@dirrm %%RUBY_SITELIBDIR%%/soprano
-@dirrm %%RUBY_SITELIBDIR%%/solid
-@dirrm %%RUBY_SITELIBDIR%%/okular
-@dirrm %%RUBY_SITELIBDIR%%/nepomuk
-@dirrm %%RUBY_SITELIBDIR%%/ktexteditor
-@dirrm %%RUBY_SITELIBDIR%%/kio
-@dirrm %%RUBY_SITELIBDIR%%/khtml
-@dirrmtry %%RUBY_SITEARCHLIBDIR%%
-@dirrm %%RUBY_SITELIBDIR%%/akonadi
-@dirrm %%RUBY_SITELIBDIR%%/KDE
-@dirrmtry %%RUBY_SITELIBDIR%%

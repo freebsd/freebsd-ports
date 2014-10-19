@@ -131,7 +131,6 @@ lib/kde4/kcm_kded.so
 lib/kde4/kcm_kdnssd.so
 lib/kde4/kcm_knotify.so
 lib/kde4/kcm_locale.so
-lib/kde4/kcm_nepomuk.so
 lib/kde4/kcm_phonon.so
 lib/kde4/kcm_trash.so
 lib/kde4/kcmspellchecking.so
@@ -139,7 +138,6 @@ lib/kde4/kded_desktopnotifier.so
 lib/kde4/kded_device_automounter.so
 lib/kde4/kded_kpasswdserver.so
 lib/kde4/kded_ktimezoned.so
-lib/kde4/kded_nepomuksearchmodule.so
 lib/kde4/kded_networkstatus.so
 lib/kde4/kded_networkwatcher.so
 lib/kde4/kded_phononserver.so
@@ -159,8 +157,6 @@ lib/kde4/kio_fish.so
 lib/kde4/kio_floppy.so
 lib/kde4/kio_info.so
 lib/kde4/kio_man.so
-lib/kde4/kio_nepomuk.so
-lib/kde4/kio_nepomuksearch.so
 lib/kde4/kio_network.so
 lib/kde4/kio_nfs.so
 lib/kde4/kio_recentdocuments.so
@@ -168,9 +164,7 @@ lib/kde4/kio_remote.so
 lib/kde4/kio_settings.so
 lib/kde4/kio_sftp.so
 lib/kde4/kio_smb.so
-lib/kde4/kio_tags.so
 lib/kde4/kio_thumbnail.so
-lib/kde4/kio_timeline.so
 lib/kde4/kio_trash.so
 lib/kde4/kshorturifilter.so
 lib/kde4/kuriikwsfilter.so
@@ -271,8 +265,6 @@ lib/libmolletnetwork.so.4
 lib/libmolletnetwork.so.%%KDE4_GENERIC_LIB_VERSION%%
 man/man1/kdesu.1.gz
 man/man1/plasmapkg.1.gz
-man/man8/nepomukserver.8.gz
-man/man8/nepomukservicestub.8.gz
 share/applications/kde4/Help.desktop
 share/applications/kde4/knetattach.desktop
 share/apps/cmake/modules/FindCLucene.cmake
@@ -432,6 +424,7 @@ share/apps/kcmlocale/pics/background.png
 share/apps/kconf_update/devicepreference.upd
 share/apps/kconf_update/drkonqi-rename-config-section.upd
 share/apps/kconf_update/kuriikwsfilter.upd
+share/apps/kconf_update/kwallet-4.13.upd
 share/apps/kde/kde.notifyrc
 share/apps/kglobalaccel/kglobalaccel.notifyrc
 share/apps/khelpcenter/glossary.html.in
@@ -450,12 +443,16 @@ share/apps/khelpcenter/plugins/Manpages/man7.desktop
 share/apps/khelpcenter/plugins/Manpages/man8.desktop
 share/apps/khelpcenter/plugins/Scrollkeeper/.directory
 share/apps/khelpcenter/plugins/Scrollkeeper/scrollkeeper.desktop
+share/apps/khelpcenter/plugins/browsercontrolmodules.desktop
+share/apps/khelpcenter/plugins/filemanagercontrolmodules.desktop
 share/apps/khelpcenter/plugins/fundamentals.desktop
 share/apps/khelpcenter/plugins/info.desktop
 share/apps/khelpcenter/plugins/kcontrolmodules.desktop
 share/apps/khelpcenter/plugins/kicmodules.desktop
 share/apps/khelpcenter/plugins/kioslaves.desktop
+share/apps/khelpcenter/plugins/konquerorcontrolmodules.desktop
 share/apps/khelpcenter/plugins/onlinehelp.desktop
+share/apps/khelpcenter/plugins/othercontrolmodules.desktop
 share/apps/khelpcenter/plugins/plasma.desktop
 share/apps/khelpcenter/searchhandlers/docbook.desktop
 share/apps/khelpcenter/searchhandlers/htdig.desktop
@@ -760,6 +757,9 @@ share/doc/HTML/en/kioslave/man/index.docbook
 share/doc/HTML/en/kioslave/nepomuksearch/common
 share/doc/HTML/en/kioslave/nepomuksearch/index.cache.bz2
 share/doc/HTML/en/kioslave/nepomuksearch/index.docbook
+share/doc/HTML/en/kioslave/network/common
+share/doc/HTML/en/kioslave/network/index.cache.bz2
+share/doc/HTML/en/kioslave/network/index.docbook
 share/doc/HTML/en/kioslave/nfs/common
 share/doc/HTML/en/kioslave/nfs/index.cache.bz2
 share/doc/HTML/en/kioslave/nfs/index.docbook
@@ -786,9 +786,6 @@ share/doc/HTML/en/knetattach/screenshot1.png
 share/doc/HTML/en/knetattach/screenshot2.png
 share/doc/HTML/en/knetattach/screenshot3.png
 share/doc/HTML/en/knetattach/screenshot4.png
-share/doc/HTML/en/network/common
-share/doc/HTML/en/network/index.cache.bz2
-share/doc/HTML/en/network/index.docbook
 share/doc/HTML/en/onlinehelp/common
 share/doc/HTML/en/onlinehelp/index.cache.bz2
 share/doc/HTML/en/onlinehelp/index.docbook
@@ -852,7 +849,6 @@ share/kde4/services/cgi.protocol
 share/kde4/services/comicbookthumbnail.desktop
 share/kde4/services/componentchooser.desktop
 share/kde4/services/cursorthumbnail.desktop
-share/kde4/services/desktop-search.desktop
 share/kde4/services/desktop.protocol
 share/kde4/services/desktopthumbnail.desktop
 share/kde4/services/device_automounter_kcm.desktop
@@ -873,7 +869,6 @@ share/kde4/services/info.protocol
 share/kde4/services/jpegthumbnail.desktop
 share/kde4/services/kcm_attica.desktop
 share/kde4/services/kcm_kdnssd.desktop
-share/kde4/services/kcm_nepomuk.desktop
 share/kde4/services/kcm_phonon.desktop
 share/kde4/services/kcmcgi.desktop
 share/kde4/services/kcmkded.desktop
@@ -883,7 +878,6 @@ share/kde4/services/kded/desktopnotifier.desktop
 share/kde4/services/kded/device_automounter.desktop
 share/kde4/services/kded/kpasswdserver.desktop
 share/kde4/services/kded/ktimezoned.desktop
-share/kde4/services/kded/nepomuksearchmodule.desktop
 share/kde4/services/kded/networkstatus.desktop
 share/kde4/services/kded/networkwatcher.desktop
 share/kde4/services/kded/phononserver.desktop
@@ -904,8 +898,6 @@ share/kde4/services/language.desktop
 share/kde4/services/localdomainurifilter.desktop
 share/kde4/services/lzma.protocol
 share/kde4/services/man.protocol
-share/kde4/services/nepomuk.protocol
-share/kde4/services/nepomuksearch.protocol
 share/kde4/services/network.protocol
 share/kde4/services/nfs.protocol
 share/kde4/services/plasma-containment-newspaper.desktop
@@ -1016,6 +1008,12 @@ share/kde4/services/searchproviders/php.desktop
 share/kde4/services/searchproviders/python.desktop
 share/kde4/services/searchproviders/qt.desktop
 share/kde4/services/searchproviders/qt4.desktop
+share/kde4/services/searchproviders/qwant.desktop
+share/kde4/services/searchproviders/qwant_images.desktop
+share/kde4/services/searchproviders/qwant_news.desktop
+share/kde4/services/searchproviders/qwant_shopping.desktop
+share/kde4/services/searchproviders/qwant_social.desktop
+share/kde4/services/searchproviders/qwant_videos.desktop
 share/kde4/services/searchproviders/rae.desktop
 share/kde4/services/searchproviders/rag.desktop
 share/kde4/services/searchproviders/rfc.desktop
@@ -1047,11 +1045,9 @@ share/kde4/services/sftp.protocol
 share/kde4/services/smb.protocol
 share/kde4/services/spellchecking.desktop
 share/kde4/services/svgthumbnail.desktop
-share/kde4/services/tags.protocol
 share/kde4/services/tar.protocol
 share/kde4/services/textthumbnail.desktop
 share/kde4/services/thumbnail.protocol
-share/kde4/services/timeline.protocol
 share/kde4/services/trash.protocol
 share/kde4/services/windowsexethumbnail.desktop
 share/kde4/services/windowsimagethumbnail.desktop
@@ -1822,377 +1818,3 @@ share/sounds/KDE-Window-Move-Stop.ogg
 share/sounds/KDE-Window-Move.ogg
 share/sounds/KDE-Window-Shade-Down.ogg
 share/sounds/KDE-Window-Shade-Up.ogg
-@dirrm share/locale/l10n/zw
-@dirrm share/locale/l10n/zm
-@dirrm share/locale/l10n/za
-@dirrm share/locale/l10n/yt
-@dirrm share/locale/l10n/ye
-@dirrm share/locale/l10n/ws
-@dirrm share/locale/l10n/wf
-@dirrm share/locale/l10n/vu
-@dirrm share/locale/l10n/vn
-@dirrm share/locale/l10n/vi
-@dirrm share/locale/l10n/vg
-@dirrm share/locale/l10n/ve
-@dirrm share/locale/l10n/vc
-@dirrm share/locale/l10n/va
-@dirrm share/locale/l10n/uz
-@dirrm share/locale/l10n/uy
-@dirrm share/locale/l10n/us
-@dirrm share/locale/l10n/ug
-@dirrm share/locale/l10n/ua
-@dirrm share/locale/l10n/tz
-@dirrm share/locale/l10n/tw
-@dirrm share/locale/l10n/tv
-@dirrm share/locale/l10n/tt
-@dirrm share/locale/l10n/tr
-@dirrm share/locale/l10n/tp
-@dirrm share/locale/l10n/to
-@dirrm share/locale/l10n/tn
-@dirrm share/locale/l10n/tm
-@dirrm share/locale/l10n/tl
-@dirrm share/locale/l10n/tk
-@dirrm share/locale/l10n/tj
-@dirrm share/locale/l10n/th
-@dirrm share/locale/l10n/tg
-@dirrm share/locale/l10n/td
-@dirrm share/locale/l10n/tc
-@dirrm share/locale/l10n/sz
-@dirrm share/locale/l10n/sy
-@dirrm share/locale/l10n/sv
-@dirrm share/locale/l10n/st
-@dirrm share/locale/l10n/ss
-@dirrm share/locale/l10n/sr
-@dirrm share/locale/l10n/so
-@dirrm share/locale/l10n/sn
-@dirrm share/locale/l10n/sm
-@dirrm share/locale/l10n/sl
-@dirrm share/locale/l10n/sk
-@dirrm share/locale/l10n/si
-@dirrm share/locale/l10n/sh
-@dirrm share/locale/l10n/sg
-@dirrm share/locale/l10n/se
-@dirrm share/locale/l10n/sd
-@dirrm share/locale/l10n/sc
-@dirrm share/locale/l10n/sb
-@dirrm share/locale/l10n/sa
-@dirrm share/locale/l10n/rw
-@dirrm share/locale/l10n/ru
-@dirrm share/locale/l10n/rs
-@dirrm share/locale/l10n/ro
-@dirrm share/locale/l10n/re
-@dirrm share/locale/l10n/qa
-@dirrm share/locale/l10n/py
-@dirrm share/locale/l10n/pw
-@dirrm share/locale/l10n/pt
-@dirrm share/locale/l10n/ps
-@dirrm share/locale/l10n/pr
-@dirrm share/locale/l10n/pn
-@dirrm share/locale/l10n/pm
-@dirrm share/locale/l10n/pl
-@dirrm share/locale/l10n/pk
-@dirrm share/locale/l10n/ph
-@dirrm share/locale/l10n/pg
-@dirrm share/locale/l10n/pf
-@dirrm share/locale/l10n/pe
-@dirrm share/locale/l10n/pa
-@dirrm share/locale/l10n/om
-@dirrm share/locale/l10n/nz
-@dirrm share/locale/l10n/nu
-@dirrm share/locale/l10n/nr
-@dirrm share/locale/l10n/np
-@dirrm share/locale/l10n/no
-@dirrm share/locale/l10n/nl
-@dirrm share/locale/l10n/ni
-@dirrm share/locale/l10n/ng
-@dirrm share/locale/l10n/nf
-@dirrm share/locale/l10n/ne
-@dirrm share/locale/l10n/nc
-@dirrm share/locale/l10n/na
-@dirrm share/locale/l10n/mz
-@dirrm share/locale/l10n/my
-@dirrm share/locale/l10n/mx
-@dirrm share/locale/l10n/mw
-@dirrm share/locale/l10n/mv
-@dirrm share/locale/l10n/mu
-@dirrm share/locale/l10n/mt
-@dirrm share/locale/l10n/ms
-@dirrm share/locale/l10n/mr
-@dirrm share/locale/l10n/mq
-@dirrm share/locale/l10n/mp
-@dirrm share/locale/l10n/mo
-@dirrm share/locale/l10n/mn
-@dirrm share/locale/l10n/mm
-@dirrm share/locale/l10n/ml
-@dirrm share/locale/l10n/mk
-@dirrm share/locale/l10n/mh
-@dirrm share/locale/l10n/mg
-@dirrm share/locale/l10n/mf
-@dirrm share/locale/l10n/me
-@dirrm share/locale/l10n/md
-@dirrm share/locale/l10n/mc
-@dirrm share/locale/l10n/ma
-@dirrm share/locale/l10n/ly
-@dirrm share/locale/l10n/lv
-@dirrm share/locale/l10n/lu
-@dirrm share/locale/l10n/lt
-@dirrm share/locale/l10n/ls
-@dirrm share/locale/l10n/lr
-@dirrm share/locale/l10n/lk
-@dirrm share/locale/l10n/li
-@dirrm share/locale/l10n/lc
-@dirrm share/locale/l10n/lb
-@dirrm share/locale/l10n/la
-@dirrm share/locale/l10n/kz
-@dirrm share/locale/l10n/ky
-@dirrm share/locale/l10n/kw
-@dirrm share/locale/l10n/kr
-@dirrm share/locale/l10n/kp
-@dirrm share/locale/l10n/kn
-@dirrm share/locale/l10n/km
-@dirrm share/locale/l10n/ki
-@dirrm share/locale/l10n/kh
-@dirrm share/locale/l10n/kg
-@dirrm share/locale/l10n/ke
-@dirrm share/locale/l10n/jp
-@dirrm share/locale/l10n/jo
-@dirrm share/locale/l10n/jm
-@dirrm share/locale/l10n/je
-@dirrm share/locale/l10n/it
-@dirrm share/locale/l10n/is
-@dirrm share/locale/l10n/ir
-@dirrm share/locale/l10n/iq
-@dirrm share/locale/l10n/in
-@dirrm share/locale/l10n/im
-@dirrm share/locale/l10n/il
-@dirrm share/locale/l10n/ie
-@dirrm share/locale/l10n/id
-@dirrm share/locale/l10n/hu
-@dirrm share/locale/l10n/ht
-@dirrm share/locale/l10n/hr
-@dirrm share/locale/l10n/hn
-@dirrm share/locale/l10n/hk
-@dirrm share/locale/l10n/gy
-@dirrm share/locale/l10n/gw
-@dirrm share/locale/l10n/gu
-@dirrm share/locale/l10n/gt
-@dirrm share/locale/l10n/gr
-@dirrm share/locale/l10n/gq
-@dirrm share/locale/l10n/gp
-@dirrm share/locale/l10n/gn
-@dirrm share/locale/l10n/gm
-@dirrm share/locale/l10n/gl
-@dirrm share/locale/l10n/gi
-@dirrm share/locale/l10n/gh
-@dirrm share/locale/l10n/gg
-@dirrm share/locale/l10n/gf
-@dirrm share/locale/l10n/ge
-@dirrm share/locale/l10n/gd
-@dirrm share/locale/l10n/gb
-@dirrm share/locale/l10n/ga
-@dirrm share/locale/l10n/fr
-@dirrm share/locale/l10n/fo
-@dirrm share/locale/l10n/fm
-@dirrm share/locale/l10n/fk
-@dirrm share/locale/l10n/fj
-@dirrm share/locale/l10n/fi
-@dirrm share/locale/l10n/et
-@dirrm share/locale/l10n/es
-@dirrm share/locale/l10n/er
-@dirrm share/locale/l10n/eh
-@dirrm share/locale/l10n/eg
-@dirrm share/locale/l10n/ee
-@dirrm share/locale/l10n/ec
-@dirrm share/locale/l10n/dz
-@dirrm share/locale/l10n/do
-@dirrm share/locale/l10n/dm
-@dirrm share/locale/l10n/dk
-@dirrm share/locale/l10n/dj
-@dirrm share/locale/l10n/de
-@dirrm share/locale/l10n/cz
-@dirrm share/locale/l10n/cy
-@dirrm share/locale/l10n/cx
-@dirrm share/locale/l10n/cv
-@dirrm share/locale/l10n/cu
-@dirrm share/locale/l10n/cr
-@dirrm share/locale/l10n/co
-@dirrm share/locale/l10n/cn
-@dirrm share/locale/l10n/cm
-@dirrm share/locale/l10n/cl
-@dirrm share/locale/l10n/ck
-@dirrm share/locale/l10n/ci
-@dirrm share/locale/l10n/ch
-@dirrm share/locale/l10n/cg
-@dirrm share/locale/l10n/cf
-@dirrm share/locale/l10n/cd
-@dirrm share/locale/l10n/cc
-@dirrm share/locale/l10n/ca
-@dirrm share/locale/l10n/bz
-@dirrm share/locale/l10n/by
-@dirrm share/locale/l10n/bw
-@dirrm share/locale/l10n/bt
-@dirrm share/locale/l10n/bs
-@dirrm share/locale/l10n/br
-@dirrm share/locale/l10n/bo
-@dirrm share/locale/l10n/bn
-@dirrm share/locale/l10n/bm
-@dirrm share/locale/l10n/bl
-@dirrm share/locale/l10n/bj
-@dirrm share/locale/l10n/bi
-@dirrm share/locale/l10n/bh
-@dirrm share/locale/l10n/bg
-@dirrm share/locale/l10n/bf
-@dirrm share/locale/l10n/be
-@dirrm share/locale/l10n/bd
-@dirrm share/locale/l10n/bb
-@dirrm share/locale/l10n/ba
-@dirrm share/locale/l10n/az
-@dirrm share/locale/l10n/ax
-@dirrm share/locale/l10n/aw
-@dirrm share/locale/l10n/au
-@dirrm share/locale/l10n/at
-@dirrm share/locale/l10n/as
-@dirrm share/locale/l10n/ar
-@dirrm share/locale/l10n/ao
-@dirrm share/locale/l10n/an
-@dirrm share/locale/l10n/am
-@dirrm share/locale/l10n/al
-@dirrm share/locale/l10n/ai
-@dirrm share/locale/l10n/ag
-@dirrm share/locale/l10n/af
-@dirrm share/locale/l10n/ae
-@dirrm share/locale/l10n/ad
-@dirrm share/locale/l10n/C
-@dirrm share/locale/l10n
-@dirrm share/locale/currency
-@dirrm share/kde4/services/searchproviders
-@dirrm share/emoticons/kde4
-@dirrm share/doc/HTML/en/onlinehelp
-@dirrm share/doc/HTML/en/network
-@dirrm share/doc/HTML/en/knetattach
-@dirrm share/doc/HTML/en/kioslave/xz
-@dirrm share/doc/HTML/en/kioslave/thumbnail
-@dirrm share/doc/HTML/en/kioslave/tar
-@dirrm share/doc/HTML/en/kioslave/smb
-@dirrm share/doc/HTML/en/kioslave/sftp
-@dirrm share/doc/HTML/en/kioslave/nfs
-@dirrm share/doc/HTML/en/kioslave/nepomuksearch
-@dirrm share/doc/HTML/en/kioslave/man
-@dirrm share/doc/HTML/en/kioslave/info
-@dirrm share/doc/HTML/en/kioslave/gzip
-@dirrm share/doc/HTML/en/kioslave/floppy
-@dirrm share/doc/HTML/en/kioslave/fish
-@dirrm share/doc/HTML/en/kioslave/finger
-@dirrm share/doc/HTML/en/kioslave/cgi
-@dirrm share/doc/HTML/en/kioslave/bzip2
-@dirrm share/doc/HTML/en/kioslave/bookmarks
-@dirrm share/doc/HTML/en/khelpcenter/glossary
-@dirrm share/doc/HTML/en/khelpcenter/documentationnotfound
-@dirrm share/doc/HTML/en/khelpcenter
-@dirrm share/doc/HTML/en/kdesu
-@dirrm share/doc/HTML/en/kdebugdialog
-@dirrm share/doc/HTML/en/kcontrol/useragent
-@dirrm share/doc/HTML/en/kcontrol/trash
-@dirrm share/doc/HTML/en/kcontrol/spellchecking
-@dirrm share/doc/HTML/en/kcontrol/solid-device-automounter
-@dirrm share/doc/HTML/en/kcontrol/smb
-@dirrm share/doc/HTML/en/kcontrol/proxy
-@dirrm share/doc/HTML/en/kcontrol/phonon
-@dirrm share/doc/HTML/en/kcontrol/performance
-@dirrm share/doc/HTML/en/kcontrol/netpref
-@dirrm share/doc/HTML/en/kcontrol/nepomuk
-@dirrm share/doc/HTML/en/kcontrol/language
-@dirrm share/doc/HTML/en/kcontrol/khtml-plugins
-@dirrm share/doc/HTML/en/kcontrol/khtml-java-js
-@dirrm share/doc/HTML/en/kcontrol/khtml-general
-@dirrm share/doc/HTML/en/kcontrol/khtml-behavior
-@dirrm share/doc/HTML/en/kcontrol/khtml-adblock
-@dirrm share/doc/HTML/en/kcontrol/kded
-@dirrm share/doc/HTML/en/kcontrol/kcmnotify
-@dirrm share/doc/HTML/en/kcontrol/kcmlaunch
-@dirrm share/doc/HTML/en/kcontrol/kcmcss
-@dirrm share/doc/HTML/en/kcontrol/kcmcgi
-@dirrm share/doc/HTML/en/kcontrol/kcm_ssl
-@dirrm share/doc/HTML/en/kcontrol/icons
-@dirrm share/doc/HTML/en/kcontrol/history
-@dirrm share/doc/HTML/en/kcontrol/filetypes
-@dirrm share/doc/HTML/en/kcontrol/filemanager
-@dirrm share/doc/HTML/en/kcontrol/emoticons
-@dirrm share/doc/HTML/en/kcontrol/ebrowsing
-@dirrm share/doc/HTML/en/kcontrol/cookies
-@dirrm share/doc/HTML/en/kcontrol/componentchooser
-@dirrm share/doc/HTML/en/kcontrol/cache
-@dirrm share/doc/HTML/en/kcontrol/bookmarks
-@dirrm share/doc/HTML/en/kcontrol/attica
-@dirrm share/doc/HTML/en/fundamentals
-@dirrmtry share/desktop-directories
-@dirrm share/apps/phonon
-@dirrm share/apps/libphonon
-@dirrm share/apps/kwalletd
-@dirrm share/apps/ksmserver/windowmanagers
-@dirrmtry share/apps/ksmserver
-@dirrm share/apps/konqueror/dirtree/remote
-@dirrm share/apps/konqueror/dirtree
-@dirrmtry share/apps/konqsidebartng/virtual_folders/remote
-@dirrm share/apps/kio_info
-@dirrm share/apps/kio_finger
-@dirrm share/apps/kio_docfilter
-@dirrm share/apps/kio_desktop/DesktopLinks
-@dirrm share/apps/kio_desktop
-@dirrm share/apps/kio_bookmarks
-@dirrm share/apps/khelpcenter/searchhandlers/htdig
-@dirrm share/apps/khelpcenter/searchhandlers
-@dirrm share/apps/khelpcenter/plugins/Scrollkeeper
-@dirrm share/apps/khelpcenter/plugins/Manpages
-@dirrm share/apps/khelpcenter/plugins/Applications
-@dirrm share/apps/kglobalaccel
-@dirrm share/apps/kde
-@dirrm share/apps/kcmlocale/pics
-@dirrm share/apps/kcmlocale
-@dirrm share/apps/kcm_phonon
-@dirrm share/apps/hardwarenotifications
-@dirrm share/apps/drkonqi/pics
-@dirrm share/apps/drkonqi/debuggers/internal
-@dirrm share/apps/drkonqi/debuggers/external
-@dirrm share/apps/drkonqi/debuggers
-@dirrm share/apps/drkonqi
-@dirrm share/apps/desktoptheme/oxygen/widgets
-@dirrm share/apps/desktoptheme/oxygen/opaque/widgets
-@dirrm share/apps/desktoptheme/oxygen/opaque/dialogs
-@dirrm share/apps/desktoptheme/oxygen/opaque
-@dirrm share/apps/desktoptheme/oxygen/dialogs
-@dirrmtry share/apps/desktoptheme/oxygen
-@dirrm share/apps/desktoptheme/default/translucent/widgets
-@dirrm share/apps/desktoptheme/default/translucent/dialogs
-@dirrm share/apps/desktoptheme/default/translucent
-@dirrm share/apps/desktoptheme/default/toolbar-icons
-@dirrm share/apps/desktoptheme/default/opaque/widgets
-@dirrm share/apps/desktoptheme/default/opaque/dialogs
-@dirrm share/apps/desktoptheme/default/opaque
-@dirrm share/apps/desktoptheme/default/icons
-@dirrm share/apps/desktoptheme/default/dialogs
-@dirrm share/apps/desktoptheme/appdashboard/widgets
-@dirrm share/apps/desktoptheme/appdashboard
-@dirrm lib/kde4/plugins/phonon_platform
-@dirrm lib/kde4/platformimports/touch/org/kde/plasma/components/private
-@dirrm lib/kde4/platformimports/touch/org/kde/plasma/components
-@dirrm lib/kde4/platformimports/touch/org/kde/plasma
-@dirrm lib/kde4/platformimports/touch/org/kde
-@dirrm lib/kde4/platformimports/touch/org
-@dirrm lib/kde4/platformimports/touch
-@dirrm lib/kde4/platformimports
-@dirrm lib/kde4/imports/org/kde/runnermodel
-@dirrm lib/kde4/imports/org/kde/qtextracomponents
-@dirrm lib/kde4/imports/org/kde/plasma/graphicswidgets
-@dirrm lib/kde4/imports/org/kde/plasma/graphicslayouts
-@dirrm lib/kde4/imports/org/kde/plasma/extras/animations
-@dirrm lib/kde4/imports/org/kde/plasma/extras
-@dirrm lib/kde4/imports/org/kde/plasma/core
-@dirrm lib/kde4/imports/org/kde/plasma/components/private
-@dirrm lib/kde4/imports/org/kde/plasma/components
-@dirrm lib/kde4/imports/org/kde/plasma
-@dirrm lib/kde4/imports/org/kde/locale
-@dirrm lib/kde4/imports/org/kde/draganddrop
-@dirrm lib/kde4/imports/org/kde/dirmodel
-@dirrmtry etc/xdg/menus
-@dirrmtry etc/xdg

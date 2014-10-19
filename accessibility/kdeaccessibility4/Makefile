@@ -3,7 +3,6 @@
 
 PORTNAME=	kdeaccessibility
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	accessibility kde
 DISTFILES=	# empty
 

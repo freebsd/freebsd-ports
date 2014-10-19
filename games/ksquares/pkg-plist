@@ -11,5 +11,3 @@ share/icons/hicolor/22x22/apps/ksquares.png
 share/icons/hicolor/32x32/apps/ksquares.png
 share/icons/hicolor/48x48/apps/ksquares.png
 share/icons/hicolor/64x64/apps/ksquares.png
-@dirrm share/doc/HTML/en/ksquares
-@dirrm share/apps/ksquares

@@ -14,6 +14,3 @@ lib/cmake/libkomparediff2/LibKompareDiff2Targets.cmake
 lib/libkomparediff2.so
 lib/libkomparediff2.so.4
 lib/libkomparediff2.so.%%KDE4_GENERIC_LIB_VERSION%%
-@dirrm lib/cmake/libkomparediff2
-@dirrmtry lib/cmake
-@dirrm include/libkomparediff2

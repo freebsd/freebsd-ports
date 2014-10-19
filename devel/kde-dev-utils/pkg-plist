@@ -12,6 +12,3 @@ share/icons/hicolor/32x32/apps/kuiviewer.png
 share/icons/hicolor/48x48/apps/kuiviewer.png
 share/kde4/services/designerthumbnail.desktop
 share/kde4/services/kuiviewer_part.desktop
-@dirrmtry share/apps/kuiviewerpart
-@dirrmtry share/apps/kuiviewer
-@dirrmtry share/apps/kpartloader

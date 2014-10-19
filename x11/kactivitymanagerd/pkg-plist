@@ -20,6 +20,3 @@ share/kde4/services/kactivitymanagerd.desktop
 share/kde4/services/kactivitymanagerd_fileitem_linking_plugin.desktop
 share/kde4/services/kcm_activities.desktop
 share/kde4/servicetypes/activitymanager-plugin.desktop
-@dirrm share/apps/activitymanager/workspace/settings
-@dirrm share/apps/activitymanager/workspace
-@dirrm share/apps/activitymanager

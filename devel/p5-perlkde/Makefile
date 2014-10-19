@@ -2,7 +2,6 @@
 
 PORTNAME=	perlkde
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde perl5
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	p5-
@@ -11,7 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Perl bindings for KDE
 
-USE_KDE4=	kdehier kdeprefix perlqt smokekde automoc4
+USE_KDE4=	kdeprefix perlqt smokekde automoc4
 USE_QT4=	network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USES=		cmake:outsource compiler:c++11-lib perl5 tar:xz

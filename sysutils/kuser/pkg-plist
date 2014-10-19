@@ -16,11 +16,3 @@ share/icons/hicolor/22x22/apps/kuser.png
 share/icons/hicolor/32x32/apps/kuser.png
 share/icons/hicolor/48x48/apps/kuser.png
 share/icons/hicolor/64x64/apps/kuser.png
-@dirrm share/doc/HTML/en/kuser
-@dirrm share/apps/kuser/pics
-@dirrm share/apps/kuser/icons/hicolor/22x22/actions
-@dirrm share/apps/kuser/icons/hicolor/22x22
-@dirrm share/apps/kuser/icons/hicolor
-@dirrm share/apps/kuser/icons
-@dirrm share/apps/kuser
-

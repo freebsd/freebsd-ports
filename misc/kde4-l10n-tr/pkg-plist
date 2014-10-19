@@ -120,14 +120,12 @@ share/locale/tr/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/tr/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/tr/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/tr/LC_MESSAGES/accountwizard_tine20.mo
-share/locale/tr/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/tr/LC_MESSAGES/adblock.mo
 share/locale/tr/LC_MESSAGES/akonadi-filestore.mo
 share/locale/tr/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/tr/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_ical_resource.mo
@@ -145,10 +143,7 @@ share/locale/tr/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/tr/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_mbox_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_nepomuk_feeder.mo
-share/locale/tr/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/tr/LC_MESSAGES/akonadi_next.mo
 share/locale/tr/LC_MESSAGES/akonadi_nntp_resource.mo
@@ -156,7 +151,6 @@ share/locale/tr/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/tr/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/tr/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/tr/LC_MESSAGES/akonadicontact.mo
@@ -165,13 +159,16 @@ share/locale/tr/LC_MESSAGES/akonaditray.mo
 share/locale/tr/LC_MESSAGES/akregator.mo
 share/locale/tr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/tr/LC_MESSAGES/amor.mo
+share/locale/tr/LC_MESSAGES/ark.appdata.mo
 share/locale/tr/LC_MESSAGES/ark.mo
+share/locale/tr/LC_MESSAGES/artikulate.mo
 share/locale/tr/LC_MESSAGES/attica_kde.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/tr/LC_MESSAGES/audiorename_plugin.mo
 share/locale/tr/LC_MESSAGES/autorefresh.mo
 share/locale/tr/LC_MESSAGES/babelfish.mo
+share/locale/tr/LC_MESSAGES/baloowidgets.mo
 share/locale/tr/LC_MESSAGES/blinken.mo
 share/locale/tr/LC_MESSAGES/blogilo.mo
 share/locale/tr/LC_MESSAGES/bomber.mo
@@ -280,7 +277,6 @@ share/locale/tr/LC_MESSAGES/kcm_memory.mo
 share/locale/tr/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/tr/LC_MESSAGES/kcm_pci.mo
 share/locale/tr/LC_MESSAGES/kcm_phonon.mo
-share/locale/tr/LC_MESSAGES/kcm_pimactivity.mo
 share/locale/tr/LC_MESSAGES/kcm_platform.mo
 share/locale/tr/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/tr/LC_MESSAGES/kcm_solid_actions.mo
@@ -359,7 +355,6 @@ share/locale/tr/LC_MESSAGES/kfile_dds.mo
 share/locale/tr/LC_MESSAGES/kfile_drgeo.mo
 share/locale/tr/LC_MESSAGES/kfile_exr.mo
 share/locale/tr/LC_MESSAGES/kfile_kig.mo
-share/locale/tr/LC_MESSAGES/kfile_mail.mo
 share/locale/tr/LC_MESSAGES/kfile_pnm.mo
 share/locale/tr/LC_MESSAGES/kfile_raw.mo
 share/locale/tr/LC_MESSAGES/kfile_rgb.mo
@@ -413,6 +408,8 @@ share/locale/tr/LC_MESSAGES/kio_man.mo
 share/locale/tr/LC_MESSAGES/kio_mbox.mo
 share/locale/tr/LC_MESSAGES/kio_nepomuk.mo
 share/locale/tr/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/tr/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/tr/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/tr/LC_MESSAGES/kio_nfs.mo
 share/locale/tr/LC_MESSAGES/kio_nntp.mo
 share/locale/tr/LC_MESSAGES/kio_perldoc.mo
@@ -424,9 +421,7 @@ share/locale/tr/LC_MESSAGES/kio_sieve.mo
 share/locale/tr/LC_MESSAGES/kio_smb.mo
 share/locale/tr/LC_MESSAGES/kio_smtp.mo
 share/locale/tr/LC_MESSAGES/kio_svn.mo
-share/locale/tr/LC_MESSAGES/kio_tags.mo
 share/locale/tr/LC_MESSAGES/kio_thumbnail.mo
-share/locale/tr/LC_MESSAGES/kio_timeline.mo
 share/locale/tr/LC_MESSAGES/kio_trash.mo
 share/locale/tr/LC_MESSAGES/kio_zeroconf.mo
 share/locale/tr/LC_MESSAGES/kioclient.mo
@@ -616,7 +611,6 @@ share/locale/tr/LC_MESSAGES/liboktetagui.mo
 share/locale/tr/LC_MESSAGES/liboktetakasten.mo
 share/locale/tr/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/tr/LC_MESSAGES/libphonon.mo
-share/locale/tr/LC_MESSAGES/libpimactivity.mo
 share/locale/tr/LC_MESSAGES/libpimcommon.mo
 share/locale/tr/LC_MESSAGES/libplasma.mo
 share/locale/tr/LC_MESSAGES/libplasma_groupingcontainment.mo
@@ -671,12 +665,16 @@ share/locale/tr/LC_MESSAGES/okular_poppler.mo
 share/locale/tr/LC_MESSAGES/okular_tiff.mo
 share/locale/tr/LC_MESSAGES/okular_txt.mo
 share/locale/tr/LC_MESSAGES/okular_xps.mo
+share/locale/tr/LC_MESSAGES/org.kde.active.documentviewer.mo
+share/locale/tr/LC_MESSAGES/pairs.mo
+share/locale/tr/LC_MESSAGES/pairseditor.mo
 share/locale/tr/LC_MESSAGES/palapeli.mo
 share/locale/tr/LC_MESSAGES/parley.mo
 share/locale/tr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/tr/LC_MESSAGES/phonon_kde.mo
 share/locale/tr/LC_MESSAGES/phonon_vlc.mo
 share/locale/tr/LC_MESSAGES/phononserver.mo
+share/locale/tr/LC_MESSAGES/picmi.mo
 share/locale/tr/LC_MESSAGES/pimsettingexporter.mo
 share/locale/tr/LC_MESSAGES/plasma-desktop.mo
 share/locale/tr/LC_MESSAGES/plasma-netbook.mo
@@ -867,37 +865,3 @@ share/locale/tr/LC_MESSAGES/validatorsplugin.mo
 share/locale/tr/LC_MESSAGES/webarchiver.mo
 share/locale/tr/LC_MESSAGES/xml_mimetypes.mo
 share/locale/tr/entry.desktop
-@dirrm share/doc/HTML/tr/sonnet
-@dirrm share/doc/HTML/tr/plasma-desktop
-@dirrm share/doc/HTML/tr/onlinehelp
-@dirrm share/doc/HTML/tr/kioslave/webdav
-@dirrm share/doc/HTML/tr/kioslave/telnet
-@dirrm share/doc/HTML/tr/kioslave/smtp
-@dirrm share/doc/HTML/tr/kioslave/sieve
-@dirrm share/doc/HTML/tr/kioslave/rlogin
-@dirrm share/doc/HTML/tr/kioslave/pop3
-@dirrm share/doc/HTML/tr/kioslave/nntp
-@dirrm share/doc/HTML/tr/kioslave/news
-@dirrm share/doc/HTML/tr/kioslave/mbox
-@dirrm share/doc/HTML/tr/kioslave/mailto
-@dirrm share/doc/HTML/tr/kioslave/ldap
-@dirrm share/doc/HTML/tr/kioslave/imap
-@dirrm share/doc/HTML/tr/kioslave/http
-@dirrm share/doc/HTML/tr/kioslave/help
-@dirrm share/doc/HTML/tr/kioslave/ftp
-@dirrm share/doc/HTML/tr/kioslave/file
-@dirrm share/doc/HTML/tr/kioslave/data
-@dirrm share/doc/HTML/tr/kioslave
-@dirrm share/doc/HTML/tr/khelpcenter/documentationnotfound
-@dirrm share/doc/HTML/tr/khelpcenter
-@dirrm share/doc/HTML/tr/kcontrol/kresources
-@dirrm share/doc/HTML/tr/kcontrol
-@dirrm share/doc/HTML/tr/fundamentals
-@dirrm share/doc/HTML/tr/dragonplayer
-@dirrm share/doc/HTML/tr/common
-@dirrm share/apps/kvtml/tr
-@dirrm share/apps/kvtml
-@dirrm share/apps/khangman
-@dirrmtry man/tr/man7
-@dirrmtry man/tr/man1
-@dirrmtry man/tr
