@@ -26,9 +26,8 @@ GH_PROJECT=	kupfer
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	0268e36
 
-USES=		desktop-file-utils shared-mime-info
+USES=		desktop-file-utils python shared-mime-info
 USE_GNOME=	gvfs intltool pygtk2 pygnomedesktop
-USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	*

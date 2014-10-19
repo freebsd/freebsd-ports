@@ -21,10 +21,8 @@ GH_ACCOUNT=	julmon
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	ba36bae
 
-USE_PYTHON=	yes
-PYDISTUTILS_NOEGGINFO=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist noegginfo
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\/usr\/share|${MAN1PREFIX}|g' \

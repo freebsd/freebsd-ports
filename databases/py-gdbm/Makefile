@@ -19,11 +19,9 @@ LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
 PORTSCOUT=	ignore:1
 
-USES=			tar:xz
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=		python tar:xz
+USE_PYTHON=	distutils autoplist
 
-PYDISTUTILS_AUTOPLIST=		yes
 PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHONPREFIX_LIBDIR}/lib-dynload
 
 DIST_SUBDIR=	python

@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

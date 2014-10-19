@@ -14,7 +14,7 @@ COMMENT=	Icon bar for GNOME 2.x where you can put starters into
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
-USE_PYTHON=	yes
+USES=		python
 
 SUB_FILES=	pkg-message
 SUB_LIST=	NAME="${NAME}"

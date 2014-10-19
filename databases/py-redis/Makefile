@@ -18,10 +18,8 @@ DOCGEN=		${LOCALBASE}/bin/sphinx-apidoc
 
 HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>0:${PORTSDIR}/databases/py-hiredis
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYTHON_CONCURRENT_INSTALL=yes
+USES=		python
+USE_PYTHON=	distutils autoplist concurrent
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	andymccurdy

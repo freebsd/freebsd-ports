@@ -14,10 +14,8 @@ COMMENT=	Flexible tool for DBF import into MySQL
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 RUN_DEPENDS+=	ydbf>=0.0.1:${PORTSDIR}/devel/py-ydbf
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=yes
-USES=	tar:bzip2
+USES=		python tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}/dist/${DISTNAME}/
 

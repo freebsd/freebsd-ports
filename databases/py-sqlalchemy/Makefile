@@ -18,11 +18,10 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
 
 # Python3 ready
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PY2TO3_CMD=		${LOCALBASE}/bin/2to3-${PYTHON_VER}
-PY2TO3_ARGS=		--no-diffs --nobackups --verbose --write
+USES=		python
+USE_PYTHON=	distutils autoplist
+PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
+PY2TO3_ARGS=	--no-diffs --nobackups --verbose --write
 
 OPTIONS_DEFINE=		DOCS EXAMPLES TESTS
 OPTIONS_MULTI=		BACKEND

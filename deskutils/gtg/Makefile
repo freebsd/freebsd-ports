@@ -16,13 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus \
 		xset:${PORTSDIR}/x11/xset
 
 USE_GNOME=	pygobject pygtk2
-USES=		gettext desktop-file-utils shebangfix
+USES=		gettext desktop-file-utils python:2 shebangfix
 INSTALLS_ICONS=	yes
 SHEBANG_FILES=	${WRKSRC}/gtcli_bash_completion
-
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=		CHEETAH
 CHEETAH_DESC=		Needed for export plugin to work

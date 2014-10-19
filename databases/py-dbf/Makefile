@@ -12,8 +12,7 @@ COMMENT=	Pure python package for reading/writing dbf files
 
 LICENSE=	BSD3CLAUSE
 
-USES=			zip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=		python zip
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

@@ -18,9 +18,8 @@ RUN_DEPENDS=	gnome-audio>0:${PORTSDIR}/audio/gnome-audio \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix python
 USE_GNOME=	gnomeprefix intlhack pygnomedesktop
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec --disable-schemas-install
 

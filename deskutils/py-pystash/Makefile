@@ -16,9 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}args>=0.1.0:${PORTSDIR}/devel/py-args \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}xerox>=0.3.1:${PORTSDIR}/devel/py-xerox
 
-PYDISTUTILS_AUTOPLIST=	yes
-
-USE_PYDISTUTILS=	yes
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

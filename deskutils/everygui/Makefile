@@ -10,9 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic GUI for an OS command
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_GNOME=	libglade2 pygnome2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
