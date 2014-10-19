@@ -39,13 +39,10 @@ do-install:
 .endfor
 	@${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for f in ${PORTDOCS}
 		@${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .	endfor
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .for d in filt httpfilt tracker tracker/lib tracker/storms/old/2007 tracker/storms/old/2008 tracker/storms/old/2009 tracker/storms/old/2010
 	@${CHMOD} ugo+rx ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${d}/*.t*
 .endfor
