@@ -3,7 +3,7 @@
 
 PORTNAME=	myitcrm
 PORTVERSION=	0.2.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/myitcrm/
 DISTNAME=	MyITCRM1-${PORTVERSION}
@@ -18,8 +18,8 @@ USE_PHP=	mysql session xml
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/MyITCRM-${PORTVERSION}
 
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
-PLIST_DIRSTRY=	%%WWWDIR%%
 PATCH_STRIP=	-p1
 WRITEABLE=	conf.php.sample log/access.log cache
 PORTEXAMPLES=	htaccess.txt
@@ -63,7 +63,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} '${WWW_IGNORE}')
 .for ent in ${WRITEABLE}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/${ent}
 	@${CHMOD} u+w ${STAGEDIR}${WWWDIR}/${ent}
 .endfor
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
