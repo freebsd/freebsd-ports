@@ -2,6 +2,7 @@ bin/mytool
 bin/uniconv
 bin/uniprint
 bin/yudit
+share/pixmaps/yudit.xpm
 man/man1/mytool.1.gz
 man/man1/uniconv.1.gz
 man/man1/uniprint.1.gz
