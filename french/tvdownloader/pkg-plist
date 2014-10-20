@@ -193,16 +193,3 @@ share/pixmaps/tvdownloader.png
 %%DATADIR%%/tests/__init__.pyc
 %%DATADIR%%/tests/tests.py
 %%DATADIR%%/tests/tests.pyc
-@dirrm %%DATADIR%%/tests
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%/ico
-@dirrm %%DATADIR%%/fonctions
-@dirrm %%DATADIR%%/GUI/Qt
-@dirrm %%DATADIR%%/GUI
-@dirrm %%DATADIR%%/CLIDialog
-@dirrm %%DATADIR%%/CLI
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/search
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
