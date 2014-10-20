@@ -1371,6 +1371,7 @@
     SUBDIR += omake
     SUBDIR += omniNotify
     SUBDIR += omniORB
+    SUBDIR += omniORB-4.1
     SUBDIR += oniguruma
     SUBDIR += oniguruma4
     SUBDIR += oniguruma5

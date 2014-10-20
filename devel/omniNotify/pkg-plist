@@ -216,12 +216,3 @@ lib/libCOSNotify4.so.0.1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/struct_push_consumer.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/struct_push_supplier.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ten_any_pull_consumers.cc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cosnotify_tests/idl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cosnotify_tests/Utils
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cosnotify_tests/Stubs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cosnotify_tests/Helpers
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cosnotify_tests/Config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cosnotify_tests/Clients
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cosnotify_tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/omniNotify
