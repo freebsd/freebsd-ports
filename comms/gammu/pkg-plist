@@ -148,10 +148,3 @@ share/locale/zh_TW/LC_MESSAGES/libgammu.mo
 %%PYTHON_SITELIBDIR%%/gammu/worker.py
 %%PYTHON_SITELIBDIR%%/gammu/worker.pyc
 %%PYTHON_SITELIBDIR%%/gammu/worker.pyo
-@dirrmtry share/locale/sw/LC_MESSAGES
-@dirrmtry share/locale/sw
-@dirrm share/gammu
-@dirrm include/gammu
-@dirrm %%PYTHON_SITELIBDIR%%/gammu
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

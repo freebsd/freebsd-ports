@@ -5,4 +5,3 @@ man/man1/gpsk31.1.gz
 %%DATADIR%%/README
 share/applications/gpsk31.desktop
 share/pixmaps/gpsk31.png
-@dirrm share/gpsk31

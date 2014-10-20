@@ -66,8 +66,3 @@ bin/esmska
 %%DATADIR%%/lib/trident-1.3.jar
 %%DATADIR%%/license/gnu-agpl.txt
 %%DATADIR%%/license/license.txt
-@dirrm %%DATADIR%%/license
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/gateways
-@dirrm %%DATADIR%%

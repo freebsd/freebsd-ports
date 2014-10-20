@@ -179,8 +179,3 @@ man/man8/rpc.rigd.8.gz
 man/man8/rpc.rotd.8.gz
 man/man8/rigctld.8.gz
 man/man8/rotctld.8.gz
-@dirrm lib/hamlib
-@dirrm lib/tcl%%TCL_VER%%/hamlib
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib
-@dirrm include/hamlib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

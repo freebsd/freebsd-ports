@@ -56,5 +56,3 @@ man/man1/hfterm.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/pactor.ps
 %%PORTDOCS%%%%DOCSDIR%%/pactor.txt
 %%PORTDOCS%%%%DOCSDIR%%/pactor_statediag.fig
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -30,6 +30,5 @@ man/man8/lircd.8.gz
 man/man8/lircmd.8.gz
 sbin/lircd
 sbin/lircmd
-@dirrm include/lirc
 @sample etc/lircd.conf.sample
-@dirrmtry /var/run/lirc
+@dir /var/run/lirc

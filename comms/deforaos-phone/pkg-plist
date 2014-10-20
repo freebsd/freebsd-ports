@@ -64,21 +64,3 @@ share/icons/hicolor/48x48/apps/phone-openmoko.png
 share/icons/hicolor/48x48/apps/phone-roaming.png
 share/icons/hicolor/48x48/apps/phone-sent.png
 share/locale/fr/LC_MESSAGES/Phone.mo
-@dirrm include/Desktop/Phone/modems
-@dirrm include/Desktop/Phone
-@dirrm lib/Phone/modem
-@dirrm lib/Phone/plugins
-@dirrm lib/Phone
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry include/Desktop

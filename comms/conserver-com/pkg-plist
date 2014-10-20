@@ -8,4 +8,3 @@ man/man1/console.1.gz
 man/man5/conserver.cf.5.gz
 man/man5/conserver.passwd.5.gz
 man/man8/conserver.8.gz
-@dirrm %%EXAMPLESDIR%%

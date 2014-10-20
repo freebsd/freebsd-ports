@@ -25,6 +25,3 @@ share/locale/pt/LC_MESSAGES/xdx.mo
 %%DATADIR%%/sounds/attention.wav
 %%DATADIR%%/wwv.gnuplot
 %%DATADIR%%/wwv.gnuplot~
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

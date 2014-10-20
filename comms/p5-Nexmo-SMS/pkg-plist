@@ -15,8 +15,3 @@
 %%PERL5_MAN3%%/Nexmo::SMS::Response::Message.3.gz
 %%PERL5_MAN3%%/Nexmo::SMS::TextMessage.3.gz
 %%PERL5_MAN3%%/Nexmo::SMS::WAPPushMessage.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nexmo/SMS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nexmo
-@dirrm %%SITE_PERL%%/Nexmo/SMS/Response
-@dirrm %%SITE_PERL%%/Nexmo/SMS
-@dirrmtry %%SITE_PERL%%/Nexmo

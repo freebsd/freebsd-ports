@@ -376,21 +376,6 @@ man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/Server-mode/parserTest.cfg
 %%DATADIR%%/cfg-data/Server-mode/pingTest.cfg
 %%DATADIR%%/cfg-data/Server-mode/exampleVibrate.cfg
-@dirrm %%DATADIR%%/cfg-data/AT-mode
-@dirrm %%DATADIR%%/cfg-data/Bemused-emulation
-@dirrm %%DATADIR%%/cfg-data/Icons/16
-@dirrm %%DATADIR%%/cfg-data/Icons/32
-@dirrm %%DATADIR%%/cfg-data/Icons/48
-@dirrm %%DATADIR%%/cfg-data/Icons/64
-@dirrm %%DATADIR%%/cfg-data/Icons/128
-@dirrm %%DATADIR%%/cfg-data/Icons/common
-@dirrm %%DATADIR%%/cfg-data/Icons
-@dirrm %%DATADIR%%/cfg-data/iViewer
-@dirrm %%DATADIR%%/cfg-data/Server-mode
-@dirrm %%DATADIR%%/cfg-data/Utils/iViewer
-@dirrm %%DATADIR%%/cfg-data/Utils
-@dirrm %%DATADIR%%/cfg-data
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/data/aac-cf2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/data/jc/themes/echo-player.png
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/data/jc/themes/human-player.png
@@ -588,10 +573,3 @@ man/man1/anyremote.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-html/data/jc/themes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-html/data/jc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-html/data/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-html/data/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-html/data
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc-html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

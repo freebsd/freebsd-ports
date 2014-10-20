@@ -17,7 +17,6 @@ include/gnokii/sms.h
 include/gnokii/statemachine.h
 include/gnokii/virtmodem.h
 include/gnokii/wappush.h
-@dirrm include/gnokii
 lib/libgnokii.a
 lib/libgnokii.so
 lib/libgnokii.so.7
@@ -52,6 +51,4 @@ share/locale/sv/LC_MESSAGES/gnokii.mo
 %%PGM%%share/smsd/sms.tables.pq.sql
 %%SQLT%%lib/smsd/libsmsd_sqlite.a
 %%SQLT%%lib/smsd/libsmsd_sqlite.so
-%%SMSD%%@dirrm lib/smsd
-%%SMSD%%@dirrm share/smsd
 %%X11%%share/applications/xgnokii.desktop

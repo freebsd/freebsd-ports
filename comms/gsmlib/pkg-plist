@@ -38,4 +38,3 @@ man/man1/gsmsmsstore.1.gz
 man/man7/gsminfo.7.gz
 man/man8/gsmsmsd.8.gz
 %%NLS%%share/locale/de/LC_MESSAGES/gsmlib.mo
-@dirrm include/gsmlib

@@ -141,18 +141,7 @@ man/man5/ModuleDtmfRepeater.conf.5.gz
 man/man5/ModulePropagationMonitor.conf.5.gz
 man/man5/ModuleSelCallEnc.conf.5.gz
 man/man5/remotetrx.conf.5.gz
-@dirrmtry etc/svxlink/svxlink.d
-@dirrmtry etc/svxlink
-@dirrm include/svxlink
-@dirrm lib/svxlink
-@dirrm %%DATADIR%%/events.d
-@dirrm %%DATADIR%%/modules.d
-@dirrm %%DATADIR%%
-%%QTEL%%@dirrm share/qtel/translations
-%%QTEL%%@dirrm share/qtel/sounds
-%%QTEL%%@dirrm share/qtel
-%%QTEL%%@dirrmtry share/icons
-@unexec rmdir >/dev/null 2>&1 /var/spool/svxlink/voice_mail || :
-@unexec rmdir >/dev/null 2>&1 /var/spool/svxlink/qso_recorder || :
-@unexec rmdir >/dev/null 2>&1 /var/spool/svxlink/propagation_monitor || :
-@unexec rmdir >/dev/null 2>&1 /var/spool/svxlink || :
+@dir /var/spool/svxlink/voice_mail
+@dir /var/spool/svxlink/qso_recorder
+@dir /var/spool/svxlink/propagation_monitor
+@dir /var/spool/svxlink

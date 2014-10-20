@@ -304,42 +304,5 @@ man/ru.KOI8-R/man8/atslogmaster.8.gz
 %%WWW%%%%WWWDIR%%/calls/index.php
 %%WWW%%%%WWWDIR%%/index.html
 %%WWW%%%%WWWDIR%%/index.php
-%%WWW%%@dirrmtry %%WWWDIR%%/users
-%%WWW%%@dirrmtry %%WWWDIR%%/settings
-%%WWW%%@dirrmtry %%WWWDIR%%/phonebook
-%%WWW%%@dirrmtry %%WWWDIR%%/lines
-%%WWW%%@dirrmtry %%WWWDIR%%/intern
-%%WWW%%@dirrmtry %%WWWDIR%%/include/set
-%%WWW%%@dirrmtry %%WWWDIR%%/include/phplot
-%%WWW%%@dirrmtry %%WWWDIR%%/include/lang
-%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/whitewood/arrows
-%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/whitewood
-%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/standart/arrows
-%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/standart
-%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/classic/arrows
-%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors/classic
-%%WWW%%@dirrmtry %%WWWDIR%%/include/img/colors
-%%WWW%%@dirrmtry %%WWWDIR%%/include/img
-%%WWW%%@dirrmtry %%WWWDIR%%/include/export
-%%WWW%%@dirrmtry %%WWWDIR%%/include/colors
-%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/xsl
-%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/session/old
-%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/session
-%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/perf
-%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/lang
-%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/drivers
-%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb/datadict
-%%WWW%%@dirrmtry %%WWWDIR%%/include/adodb
-%%WWW%%@dirrmtry %%WWWDIR%%/include
-%%WWW%%@dirrmtry %%WWWDIR%%/diagram
-%%WWW%%@dirrmtry %%WWWDIR%%/calls/query
-%%WWW%%@dirrmtry %%WWWDIR%%/calls
-%%WWW%%@dirrmtry %%WWWDIR%%
 %%WWW%%@owner root
 %%WWW%%@group wheel
-@dirrmtry libexec/atslog
-@dirrmtry %%DATADIR%%/lang
-@dirrmtry %%DATADIR%%/sql
-@dirrmtry %%DATADIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/textlogs
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

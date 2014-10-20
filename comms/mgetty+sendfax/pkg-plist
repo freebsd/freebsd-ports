@@ -129,7 +129,3 @@ sbin/faxrunqd
 sbin/mgetty
 sbin/sendfax
 sbin/vgetty
-@dirrmtry etc/mgetty+sendfax
-@dirrm lib/mgetty+sendfax/samples/new_fax.all
-@dirrm lib/mgetty+sendfax/samples
-@dirrm lib/mgetty+sendfax

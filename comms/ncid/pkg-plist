@@ -62,4 +62,3 @@ sbin/ncidd
 sbin/sip2ncid
 %%DATADIR%%
 share/pixmaps/ncid
-@dirrmtry %%ETCDIR%%

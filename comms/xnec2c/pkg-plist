@@ -7,5 +7,3 @@ bin/xnec2c
 %%DOCS%%%%DOCSDIR%%/images/nec2_edit.png
 %%DOCS%%%%DOCSDIR%%/images/radiation.png
 %%DOCS%%%%DOCSDIR%%/images/wire.png
-%%DOCS%%@dirrm %%DOCSDIR%%/images
-%%DOCS%%@dirrm %%DOCSDIR%%

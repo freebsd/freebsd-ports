@@ -15,5 +15,3 @@ bin/sms
 %%PYTHON_SITELIBDIR%%/BulkSMS/__init__.pyc
 %%PYTHON_SITELIBDIR%%/BulkSMS/__init__.pyo
 %%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/BulkSMS

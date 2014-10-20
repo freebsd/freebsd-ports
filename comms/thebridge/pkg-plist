@@ -4,4 +4,3 @@ etc/tbd.conf.sample
 libexec/tbd
 %%DATADIR%%/README
 %%DATADIR%%/usermgmt.cgi
-@dirrm %%DATADIR%%
