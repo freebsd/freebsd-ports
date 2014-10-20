@@ -16,10 +16,6 @@ lib/jspice3/scripts/merit
 lib/jspice3/scripts/optimize
 lib/jspice3/scripts/setplot
 lib/jspice3/scripts/spinit
-@dirrm lib/jspice3/helpdir
-@dirrm lib/jspice3/sced
-@dirrm lib/jspice3/scripts
-@dirrm lib/jspice3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjtnoise.cir
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bsim1tst.cir
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bsim2tst.cir
@@ -64,6 +60,3 @@ lib/jspice3/scripts/spinit
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/strange
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/thcntr
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/josephson/theta
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cryocmos
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/josephson
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -139,9 +139,3 @@ share/ngspice/include/ngspice/wstdio.h
 share/ngspice/scripts/setplot
 share/ngspice/scripts/spectrum
 share/ngspice/scripts/spinit
-@dirrmtry share/ngspice/scripts
-@dirrmtry share/ngspice/include/ngspice
-@dirrmtry share/ngspice/include
-@dirrmtry share/ngspice/helpdir
-@dirrmtry share/ngspice
-@dirrmtry lib/ngspice

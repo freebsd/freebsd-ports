@@ -891,24 +891,3 @@ lib/varkon/mdf/swedish/x11.MDF
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/section_5.htm
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/section_6.htm
 %%PORTDOCS%%%%DOCSDIR%%/varkonstyle.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sysadm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/relnotes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/appdev
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/MBS/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/MBS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/GUI
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/varkon/mdf/swedish
-@dirrm lib/varkon/mdf/english
-@dirrm lib/varkon/mdf
-@dirrm lib/varkon/lib
-@dirrm lib/varkon/erm
-@dirrm lib/varkon/cnf/tol
-@dirrm lib/varkon/cnf/plt
-@dirrm lib/varkon/cnf/ini
-@dirrm lib/varkon/cnf/icons
-@dirrm lib/varkon/cnf/fnt
-@dirrm lib/varkon/cnf
-@dirrm lib/varkon/bin
-@dirrm lib/varkon

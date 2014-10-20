@@ -56,4 +56,3 @@
 %%EXAMPLESDIR%%/spice-subcircuit-LL-1.sym
 %%EXAMPLESDIR%%/spice.netlist
 %%EXAMPLESDIR%%/transistor.sym
-@dirrmtry %%EXAMPLESDIR%%

@@ -90,7 +90,6 @@ bin/z88x
 %%DATADIR%%/b6_x.dxf
 %%DATADIR%%/b7_x.dxf
 %%DATADIR%%/z88x.dxf
-@dirrm %%DATADIR%%
 %%DOCSDIR%%/e88d.htm
 %%DOCSDIR%%/e88dy.htm
 %%DOCSDIR%%/e88dy1.jpg
@@ -418,4 +417,3 @@ bin/z88x
 %%DOCSDIR%%/g88s909.jpg
 %%DOCSDIR%%/pla1.gif
 %%PORTDOCS%%%%DOCSDIR%%/z88mane.pdf
-@dirrm %%DOCSDIR%%

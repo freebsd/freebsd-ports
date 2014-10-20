@@ -36,8 +36,3 @@ man/man5/pdnmesh_input.5.gz
 %%DATADIR%%/pixmaps/zoom_all.xpm
 %%DATADIR%%/pixmaps/zoom_back.xpm
 %%DATADIR%%/pixmaps/zoom_window.xpm
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

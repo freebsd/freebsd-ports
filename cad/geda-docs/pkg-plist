@@ -362,21 +362,3 @@
 %%DOCSDIR%%/wiki/libgeda3.html
 %%DOCSDIR%%/wiki/start_es.html
 %%DOCSDIR%%/wiki/start_fr.html
-@dirrm %%DOCSDIR%%/wiki/_detail
-@dirrm %%DOCSDIR%%/wiki/_media
-@dirrm %%DOCSDIR%%/wiki/lib/exe
-@dirrm %%DOCSDIR%%/wiki/lib/images/fileicons
-@dirrm %%DOCSDIR%%/wiki/lib/images/interwiki
-@dirrm %%DOCSDIR%%/wiki/lib/images/smileys
-@dirrm %%DOCSDIR%%/wiki/lib/images
-@dirrm %%DOCSDIR%%/wiki/lib/plugins/definitionlist
-@dirrm %%DOCSDIR%%/wiki/lib/plugins/images
-@dirrm %%DOCSDIR%%/wiki/lib/plugins/note/images
-@dirrm %%DOCSDIR%%/wiki/lib/plugins/note
-@dirrm %%DOCSDIR%%/wiki/lib/plugins
-@dirrm %%DOCSDIR%%/wiki/lib/tpl/geda/images
-@dirrm %%DOCSDIR%%/wiki/lib/tpl/geda
-@dirrm %%DOCSDIR%%/wiki/lib/tpl
-@dirrm %%DOCSDIR%%/wiki/lib
-@dirrm %%DOCSDIR%%/wiki
-@dirrmtry %%DOCSDIR%%

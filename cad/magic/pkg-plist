@@ -353,15 +353,3 @@ lib/magic/tutorial/tut9a.mag
 lib/magic/tutorial/tut9b.mag
 lib/magic/tutorial/tut9x.mag
 lib/magic/tutorial/tut9y.mag
-@dirrm lib/magic/tutorial
-@dirrm lib/magic/tcl/bitmaps
-@dirrm lib/magic/tcl
-@dirrm lib/magic/sys
-@dirrm lib/magic/doc/html/wizard
-@dirrm lib/magic/doc/html/wind3d
-@dirrm lib/magic/doc/html/netlist
-@dirrm lib/magic/doc/html/graphics
-@dirrm lib/magic/doc/html/color
-@dirrm lib/magic/doc/html
-@dirrm lib/magic/doc
-@dirrm lib/magic

@@ -193,8 +193,3 @@ man/man1/gmsh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view4.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view5.msh
 %%METIS%%%%DOCSDIR%%/metis/manual.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
-%%METIS%%@dirrm %%DOCSDIR%%/metis
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/demos
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/gmsh

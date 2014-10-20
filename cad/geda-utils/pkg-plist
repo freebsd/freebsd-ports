@@ -22,6 +22,3 @@ man/man1/grenum.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/readmes/README.olib
 %%PORTDOCS%%%%DOCSDIR%%/readmes/README.tragesym
 %%PORTDOCS%%%%DATADIR%%/system-gschlasrc
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/readmes
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
