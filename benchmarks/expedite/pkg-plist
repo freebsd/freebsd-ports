@@ -55,5 +55,3 @@ bin/expedite-cmp
 %%DATADIR%%/data/warning.png
 %%DATADIR%%/data/watch.png
 %%DATADIR%%/data/widgets.png
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

@@ -30,7 +30,3 @@ bin/scimark2-java
 %%SMDIR%%/jnt/scimark2/commandline.java
 %%SMDIR%%/jnt/scimark2/kernel.class
 %%SMDIR%%/jnt/scimark2/kernel.java
-@dirrm %%SMDIR%%/jnt/scimark2
-@dirrm %%SMDIR%%/jnt/Bench
-@dirrm %%SMDIR%%/jnt
-@dirrm %%SMDIR%%

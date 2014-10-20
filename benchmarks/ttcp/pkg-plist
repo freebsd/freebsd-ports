@@ -1,4 +1,3 @@
 bin/ttcp
 man/man1/ttcp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

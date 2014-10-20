@@ -145,8 +145,3 @@ man/man8/par_mem.8.gz
 man/man8/par_ops.8.gz
 man/man8/stream.8.gz
 man/man8/tlb.8.gz
-@dirrm lib/lmbench/results
-@dirrm lib/lmbench/scripts
-@dirrm lib/lmbench/bin/%%LMBENCH_OS%%
-@dirrm lib/lmbench/bin
-@dirrm lib/lmbench
