@@ -14,7 +14,7 @@ GH_ACCOUNT=	scunningham
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	e1a62ab
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-USES=		libtool
+USES=		alias libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

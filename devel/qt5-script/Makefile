@@ -11,7 +11,7 @@ COMMENT=	Qt 4-compatible scripting module
 
 USE_QT5=	core buildtools_build
 QT_DIST=	${PORTNAME}
-USES=		qmake
+USES=		alias qmake
 # Keep make(1) from descending into src/script/obj/ (qmake:outsource
 # doesn't work).
 MAKE_ENV=	MAKEOBJDIR=.
