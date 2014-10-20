@@ -25,27 +25,3 @@ share/pixmaps/ganyremote_flash.png
 share/pixmaps/ganyremote_light.png
 share/pixmaps/ganyremote_off.png
 share/pixmaps/ganyremote_small.png
-@dirrmtry share/locale/sv_SE/LC_MESSAGES
-@dirrmtry share/locale/sv_SE
-@dirrmtry share/locale/sk_SK/LC_MESSAGES
-@dirrmtry share/locale/sk_SK
-@dirrmtry share/locale/ru_RU/LC_MESSAGES
-@dirrmtry share/locale/ru_RU
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/nl_NL/LC_MESSAGES
-@dirrmtry share/locale/nl_NL
-@dirrmtry share/locale/it_IT/LC_MESSAGES
-@dirrmtry share/locale/it_IT
-@dirrmtry share/locale/hu_HU/LC_MESSAGES
-@dirrmtry share/locale/hu_HU
-@dirrmtry share/locale/fi_FI/LC_MESSAGES
-@dirrmtry share/locale/fi_FI
-@dirrmtry share/locale/el_GR/LC_MESSAGES
-@dirrmtry share/locale/el_GR
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrmtry share/locale/cs_CZ/LC_MESSAGES
-@dirrmtry share/locale/cs_CZ
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/appdata

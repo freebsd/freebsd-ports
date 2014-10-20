@@ -23,7 +23,3 @@
 %%DATADIR%%/openproj.jar
 %%DATADIR%%/readme.html
 bin/openproj
-@dirrm %%DATADIR%%/license/third-party
-@dirrm %%DATADIR%%/license
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%

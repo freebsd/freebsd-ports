@@ -84,10 +84,3 @@ share/locale/pt_PT/LC_MESSAGES/labyrinth.mo
 share/locale/ru/LC_MESSAGES/labyrinth.mo
 share/locale/sv/LC_MESSAGES/labyrinth.mo
 share/locale/zh_CN/LC_MESSAGES/labyrinth.mo
-@dirrm share/gnome/help/labyrinth/de/figures
-@dirrm share/gnome/help/labyrinth/de
-@dirrm share/gnome/help/labyrinth/C/figures
-@dirrm share/gnome/help/labyrinth/C
-@dirrm share/gnome/help/labyrinth
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/labyrinth

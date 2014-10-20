@@ -54,15 +54,3 @@ share/locale/zh_CN/LC_MESSAGES/notification-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/notification-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/notification-daemon.mo
 share/locale/zu/LC_MESSAGES/notification-daemon.mo
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an

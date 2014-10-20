@@ -71,39 +71,3 @@ GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/InternetModule.
 GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/data.classes
 GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/data.info
 GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/objects.gorm
-@dirrm GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm
-@dirrm GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources/English.lproj
-@dirrm GNUstep/System/Library/Bundles/InternetModule.prefPane/Resources
-@dirrm GNUstep/System/Library/Bundles/InternetModule.prefPane
-@dirrm GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/English.lproj/Volumes.gorm
-@dirrm GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/English.lproj
-@dirrm GNUstep/System/Library/Bundles/Volumes.prefPane/Resources
-@dirrm GNUstep/System/Library/Bundles/Volumes.prefPane
-@dirrm GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/English.lproj/TimeZone.gorm
-@dirrm GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/English.lproj
-@dirrm GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources
-@dirrm GNUstep/System/Library/Bundles/TimeZone.prefPane
-@dirrm GNUstep/System/Library/Bundles/Themes.prefPane/Resources/English.lproj/Themes.gorm
-@dirrm GNUstep/System/Library/Bundles/Themes.prefPane/Resources/English.lproj
-@dirrm GNUstep/System/Library/Bundles/Themes.prefPane/Resources
-@dirrm GNUstep/System/Library/Bundles/Themes.prefPane
-@dirrm GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/English.lproj/ModifierKeys.gorm
-@dirrm GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/English.lproj
-@dirrm GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources
-@dirrm GNUstep/System/Library/Bundles/ModifierKeys.prefPane
-@dirrm GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/English.lproj/FontModule.gorm
-@dirrm GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/English.lproj
-@dirrm GNUstep/System/Library/Bundles/FontModule.prefPane/Resources
-@dirrm GNUstep/System/Library/Bundles/FontModule.prefPane
-@dirrm GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/English.lproj/FileSystem.gorm
-@dirrm GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/English.lproj
-@dirrm GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources
-@dirrm GNUstep/System/Library/Bundles/FileSystem.prefPane
-@dirrm GNUstep/System/Library/Bundles/Defaults.prefPane/Resources/English.lproj/Defaults.gorm
-@dirrm GNUstep/System/Library/Bundles/Defaults.prefPane/Resources/English.lproj
-@dirrm GNUstep/System/Library/Bundles/Defaults.prefPane/Resources
-@dirrm GNUstep/System/Library/Bundles/Defaults.prefPane
-@dirrm GNUstep/System/Applications/SystemPreferences.app/Resources/English.lproj/SystemPreferences.gorm
-@dirrm GNUstep/System/Applications/SystemPreferences.app/Resources/English.lproj
-@dirrm GNUstep/System/Applications/SystemPreferences.app/Resources
-@dirrm GNUstep/System/Applications/SystemPreferences.app

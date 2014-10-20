@@ -97,10 +97,3 @@ share/locale/zh_CN/LC_MESSAGES/ontv.mo
 %%DATADIR%%/program_dialog.ui
 %%DATADIR%%/search_dialog.ui
 %%DATADIR%%/status_icon.ui
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrm %%PYTHON_SITELIBDIR%%/ontv

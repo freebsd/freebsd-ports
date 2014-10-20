@@ -178,25 +178,3 @@ share/icons/hicolor/64x64/apps/semantik.png
 %%NLS%%share/locale/fr/LC_MESSAGES/semantik.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/semantik.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/semantik.mo
-@dirrm share/apps/semantik/templates/s5/ui/default
-@dirrm share/apps/semantik/templates/s5/ui
-@dirrm share/apps/semantik/templates/s5
-@dirrm share/apps/semantik/templates/pdflatex
-@dirrm share/apps/semantik/templates/odt
-@dirrm share/apps/semantik/templates/odp
-@dirrm share/apps/semantik/templates/java
-@dirrm share/apps/semantik/templates/html
-@dirrm share/apps/semantik/templates/beamer/beamermindist/themes/theme
-@dirrm share/apps/semantik/templates/beamer/beamermindist/themes/outer
-@dirrm share/apps/semantik/templates/beamer/beamermindist/themes/inner
-@dirrm share/apps/semantik/templates/beamer/beamermindist/themes/font
-@dirrm share/apps/semantik/templates/beamer/beamermindist/themes/color
-@dirrm share/apps/semantik/templates/beamer/beamermindist/themes
-@dirrm share/apps/semantik/templates/beamer/beamermindist/art
-@dirrm share/apps/semantik/templates/beamer/beamermindist
-@dirrm share/apps/semantik/templates/beamer
-@dirrm share/apps/semantik/templates
-@dirrm share/apps/semantik/images
-@dirrm share/apps/semantik/flags
-@dirrm share/apps/semantik/filters
-@dirrm share/apps/semantik

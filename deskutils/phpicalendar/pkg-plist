@@ -376,24 +376,5 @@
 %%WWWDIR%%/templates/tan/year.tpl
 %%WWWDIR%%/week.php
 %%WWWDIR%%/year.php
-@dirrm %%WWWDIR%%/templates/tan/images
-@dirrm %%WWWDIR%%/templates/tan
-@dirrm %%WWWDIR%%/templates/red/images
-@dirrm %%WWWDIR%%/templates/red
-@dirrm %%WWWDIR%%/templates/grey/images
-@dirrm %%WWWDIR%%/templates/grey
-@dirrm %%WWWDIR%%/templates/green/images
-@dirrm %%WWWDIR%%/templates/green
-@dirrm %%WWWDIR%%/templates/default/images
-@dirrm %%WWWDIR%%/templates/default
-@dirrm %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%/rss
-@dirrm %%WWWDIR%%/languages
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/functions
-@dirrm %%WWWDIR%%/calendars
-@dirrm %%WWWDIR%%/admin
-@dirrmtry %%WWWDIR%%
 @owner root
 @group wheel

@@ -10,6 +10,3 @@ GNUstep/Local/Applications/DisplayCalibrator.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/DisplayCalibrator.app/Resources/gammascrew.png
 GNUstep/Local/Applications/DisplayCalibrator.app/stamp.make
 GNUstep/Local/Tools/DisplayCalibrator
-@dirrm GNUstep/Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm
-@dirrm GNUstep/Local/Applications/DisplayCalibrator.app/Resources
-@dirrm GNUstep/Local/Applications/DisplayCalibrator.app

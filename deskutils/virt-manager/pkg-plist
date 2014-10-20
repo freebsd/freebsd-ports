@@ -142,20 +142,3 @@ share/icons/hicolor/48x48/apps/virt-manager.png
 %%NLS%%share/locale/uk/LC_MESSAGES/virt-manager.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/virt-manager.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/virt-manager.mo
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrm %%DATADIR%%/icons/hicolor/22x22/devices
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
-@dirrm %%DATADIR%%/icons/hicolor/32x32/status
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/virtManager
-@dirrm %%DATADIR%%

@@ -108,14 +108,3 @@ bin/freemind
 %%DATADIR%%/plugins/svg/svg_plugin.jar
 %%DATADIR%%/plugins/svg/xerces_2_5_0.jar
 %%DATADIR%%/plugins/svg/xml-apis.jar
-@dirrm %%DATADIR%%/plugins/svg
-@dirrm %%DATADIR%%/plugins/script
-@dirrm %%DATADIR%%/plugins/help
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/lib/jibx
-@dirrm %%DATADIR%%/lib/SimplyHTML
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/browser
-@dirrm %%DATADIR%%/accessories
-@dirrm %%DATADIR%%

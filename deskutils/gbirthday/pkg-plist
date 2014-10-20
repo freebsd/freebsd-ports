@@ -31,6 +31,3 @@ share/applications/gbirthday.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gbirthday.mo
 share/pixmaps/gbirthday.png
-@dirrm %%PYTHON_SITELIBDIR%%/gbirthday/pics
-@dirrm %%PYTHON_SITELIBDIR%%/gbirthday/databases
-@dirrm %%PYTHON_SITELIBDIR%%/gbirthday

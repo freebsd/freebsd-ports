@@ -10,5 +10,3 @@ lib/libstrigihtmlgui.so.%%SHLIB_VER%%
 lib/libstrigiqtdbusclient.so
 lib/libstrigiqtdbusclient.so.0
 lib/libstrigiqtdbusclient.so.%%SHLIB_VER%%
-@dirrm include/strigi/qtdbus
-@dirrmtry include/strigi

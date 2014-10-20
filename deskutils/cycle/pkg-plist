@@ -27,10 +27,3 @@ share/locale/es/LC_MESSAGES/cycle.mo
 share/locale/gl/LC_MESSAGES/cycle.mo
 share/locale/ru/LC_MESSAGES/cycle.mo
 share/locale/sk/LC_MESSAGES/cycle.mo
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/icons/mini
-@dirrm %%DATADIR%%/icons/large
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%
-@dirrm lib/cycle

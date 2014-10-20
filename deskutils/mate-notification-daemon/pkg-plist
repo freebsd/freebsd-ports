@@ -70,24 +70,3 @@ share/locale/ur/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_CN/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/mate-notification-daemon.mo
 %%DATADIR%%/mate-notification-properties.ui
-@dirrmtry %%DATADIR%%
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sc/LC_MESSAGES
-@dirrmtry share/locale/sc
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/es_CL/LC_MESSAGES
-@dirrmtry share/locale/es_CL
-@dirrmtry share/locale/cmn/LC_MESSAGES
-@dirrmtry share/locale/cmn
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry lib/mate-notification-daemon/engines
-@dirrmtry lib/mate-notification-daemon

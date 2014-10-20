@@ -38,16 +38,3 @@ GNUstep/System/Library/Preferences/Keyboard.prefs/Resources/Info-gnustep.plist
 GNUstep/System/Library/Preferences/Keyboard.prefs/Resources/Keyboard.gorm
 GNUstep/System/Library/Preferences/Keyboard.prefs/stamp.make
 GNUstep/System/Tools/Preferences
-@dirrm GNUstep/System/Library/Preferences/Keyboard.prefs/Resources
-@dirrm GNUstep/System/Library/Preferences/Keyboard.prefs
-@dirrm GNUstep/System/Library/Preferences
-@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions
-@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework
-@dirrm GNUstep/System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources
-@dirrm GNUstep/System/Applications/Preferences.app/Resources/PrefsApp.prefs
-@dirrm GNUstep/System/Applications/Preferences.app/Resources/English.lproj
-@dirrm GNUstep/System/Applications/Preferences.app/Resources
-@dirrm GNUstep/System/Applications/Preferences.app

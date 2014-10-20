@@ -62,4 +62,3 @@ man/man1/xdprformat.1.gz
 man/man1/xdremind.1.gz
 man/man1/xdremove.1.gz
 man/man1/xdrestore.1.gz
-@dirrm lib/X11/xdiary

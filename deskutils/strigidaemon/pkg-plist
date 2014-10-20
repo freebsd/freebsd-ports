@@ -10,6 +10,3 @@ lib/libsearchclient.so.0
 lib/libsearchclient.so.%%SHLIB_VER%%
 share/dbus-1/services/org.freedesktop.xesam.searcher.service
 share/dbus-1/services/vandenoever.strigi.service
-@dirrm lib/cmake/LibSearchClient
-@dirrmtry lib/cmake
-@dirrmtry include/strigi

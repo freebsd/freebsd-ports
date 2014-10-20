@@ -18,4 +18,3 @@ share/control-center-2.0/capplets/gtweakui-menus.desktop
 share/control-center-2.0/capplets/gtweakui-session.desktop
 share/control-center-2.0/capplets/gtweakui-nautilus.desktop
 share/control-center-2.0/capplets/gtweakui-galeon.desktop
-@dirrm share/gTweakUI

@@ -16,8 +16,3 @@ GNUstep/System/Library/Libraries/libGSWrapper.so.%%MAJORLIBVERSION%%
 GNUstep/System/Library/Libraries/libGSWrapper.so.%%LIBVERSION%%
 GNUstep/System/Tools/GSWrapper_Launcher
 GNUstep/System/Tools/WrapperFactory
-@dirrm GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperFactory.gorm
-@dirrm GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperDocument.gorm
-@dirrm GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj
-@dirrm GNUstep/System/Applications/WrapperFactory.app/Resources
-@dirrm GNUstep/System/Applications/WrapperFactory.app

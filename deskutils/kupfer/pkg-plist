@@ -520,28 +520,3 @@ share/icons/hicolor/scalable/apps/kupfer.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/kupfer.mo
 share/mime/packages/kupfer-mimetypes.xml
 share/mime/text/x-kfcom.xml
-@dirrm %%DATADIR%%/searchplugins
-@dirrm %%DATADIR%%/kupfer/ui
-@dirrm %%DATADIR%%/kupfer/plugin/virtualbox
-@dirrm %%DATADIR%%/kupfer/plugin/vim
-@dirrm %%DATADIR%%/kupfer/plugin/qsicons
-@dirrm %%DATADIR%%/kupfer/plugin/google_picasa
-@dirrm %%DATADIR%%/kupfer/plugin/gmail
-@dirrm %%DATADIR%%/kupfer/plugin/core
-@dirrm %%DATADIR%%/kupfer/plugin
-@dirrm %%DATADIR%%/kupfer/obj
-@dirrm %%DATADIR%%/kupfer/core
-@dirrm %%DATADIR%%/kupfer
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/kupfer/sl
-@dirrm share/gnome/help/kupfer/ro
-@dirrm share/gnome/help/kupfer/pl
-@dirrm share/gnome/help/kupfer/it
-@dirrm share/gnome/help/kupfer/fr
-@dirrm share/gnome/help/kupfer/es
-@dirrm share/gnome/help/kupfer/de
-@dirrm share/gnome/help/kupfer/cs
-@dirrm share/gnome/help/kupfer/C
-@dirrm share/gnome/help/kupfer
-@dirrmtry share/Thunar/sendto
-@dirrmtry share/Thunar

@@ -105,8 +105,3 @@ bin/ob
 %%PYTHON_SITELIBDIR%%/ornamentbook/hyph_dicts/hyph_uk.dic
 %%PYTHON_SITELIBDIR%%/ornamentbook/hyph_dicts/langs.txt
 %%PYTHON_SITELIBDIR%%/ornamentbook/skins/golden.jpg
-@dirrm %%PYTHON_SITELIBDIR%%/pybookreader/dictclient
-@dirrm %%PYTHON_SITELIBDIR%%/pybookreader
-@dirrm %%PYTHON_SITELIBDIR%%/ornamentbook/hyph_dicts
-@dirrm %%PYTHON_SITELIBDIR%%/ornamentbook/skins
-@dirrm %%PYTHON_SITELIBDIR%%/ornamentbook

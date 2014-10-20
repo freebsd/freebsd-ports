@@ -112,26 +112,3 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/tumbler.mo
-%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_HK
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%APIDOCS%%@dirrm share/gtk-doc/html/tumbler
-%%APIDOCS%%@dirrmtry share/gtk-doc/html
-%%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrm lib/tumbler-1/plugins/cache
-@dirrm lib/tumbler-1/plugins
-@dirrm lib/tumbler-1
-@dirrm include/tumbler-1/tumbler
-@dirrm include/tumbler-1
-@dirrm etc/xdg/tumbler

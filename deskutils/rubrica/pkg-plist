@@ -103,19 +103,3 @@ share/pixmaps/rubrica2/scalable/query.svg
 %%DATADIR%%2/interface/Preferences.glade
 %%DATADIR%%2/interface/Search.glade
 %%DATADIR%%2/interface/logo.png
-@dirrm %%DATADIR%%2/interface
-@dirrm %%DATADIR%%2
-@dirrm share/pixmaps/rubrica2/scalable
-@dirrm share/pixmaps/rubrica2/48x48
-@dirrm share/pixmaps/rubrica2/24x24
-@dirrm share/pixmaps/rubrica2/22x22
-@dirrm share/pixmaps/rubrica2/16x16
-@dirrm share/pixmaps/rubrica2
-%%NLS%%@dirrmtry share/locale/pt-pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt-pt
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
-@dirrm lib/libral/plugins
-@dirrm lib/libral
-@dirrm include/libral-1.0/libral
-@dirrm include/libral-1.0
