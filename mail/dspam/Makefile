@@ -6,17 +6,17 @@
 # Thanks.
 
 PORTNAME=	dspam
-PORTVERSION=	3.9.0
-PORTREVISION=	8
+PORTVERSION=	3.10.2
 CATEGORIES=	mail
-MASTER_SITES=	SF \
-		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danny@dannywarren.com
 COMMENT=	Bayesian spam filter
 
-MIN_OPTIONS_VER=	${PORTNAME}-3.9.0
+LICENSE=	AGPLv3
+
+OPTIONS_SUB=	yes
 
 OPTIONS_DEFINE=	SYSLOG DEBUG VERBOSE_DEBUG BNR_DEBUG PREF_EXT DAEMON \
 		CLAMAV CLAMAV_LOCAL EXTERNAL_LOOKUP \
@@ -24,28 +24,31 @@ OPTIONS_DEFINE=	SYSLOG DEBUG VERBOSE_DEBUG BNR_DEBUG PREF_EXT DAEMON \
 		LARGE_SCALE DOMAIN_SCALE NICESENDMAIL POSTFIX_MBC \
 		QMAIL WEBUI LIGHTTPD DOCS EXAMPLES
 
-OPTIONS_MULTI=	DB
+OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	HASH MYSQL MYSQL_COMPRESS MYSQL_LOCAL \
 			PGSQL PGSQL_LOCAL SQLITE2 SQLITE3
 
-OPTIONS_RADIO=	LDA
+OPTIONS_RADIO=		LDA
 OPTIONS_RADIO_LDA=	CYRUS23 CYRUS24 DOVECOT1 \
-		DOVECOT2 EXIM MAILDROP PROCMAIL SAFECAT SENDMAIL
+			DOVECOT2 EXIM MAILDROP PROCMAIL SAFECAT SENDMAIL
+
+OPTIONS_DEFAULT=	SYSLOG DEBUG DAEMON CLAMAV CLAMAV_LOCAL \
+			HASH MYSQL MYSQL_COMPRESS PGSQL SQLITE3
 
 VERBOSE_DEBUG_DESC=	Debug in LOGDIR/dspam.debug
-BNR_DEBUG_DESC=	Debug for BNR
-PREF_EXT_DESC=	Preferences in database not in files
-DAEMON_DESC=	Daemonize dspam; speaks LMTP or DLMTP
-CLAMAV_DESC=	ClamAV support
-CLAMAV_LOCAL_DESC=	RUN_DEPEND on selected ClamAV
-MYSQL_DESC=	MySQL 5.X.x as back-end
+BNR_DEBUG_DESC=		Debug for Bayesian Noise Reduction
+PREF_EXT_DESC=		Preferences in database not in files
+DAEMON_DESC=		Daemonize dspam; speaks LMTP or DLMTP
+CLAMAV_DESC=		ClamAV support
+CLAMAV_LOCAL_DESC=	RUN_DEPEND on ClamAV
+MYSQL_DESC=		MySQL 5.X.x as back-end
 MYSQL_COMPRESS_DESC=	Compress dspam <--> MySQL
 MYSQL_LOCAL_DESC=	RUN_DEPEND on MySQL server
-PGSQL_DESC=	PostgreSQL as back-end
+PGSQL_DESC=		PostgreSQL as back-end
 PGSQL_LOCAL_DESC=	RUN_DEPEND on PostgreSQL server
-SQLITE2_DESC=	SQLite v2.x as back-end
-SQLITE3_DESC=	SQLite v3.x as back-end
-HASH_DESC=	Hash driver
+SQLITE2_DESC=		SQLite v2.x as back-end
+SQLITE3_DESC=		SQLite v3.x as back-end
+HASH_DESC=		Hash driver
 EXTERNAL_LOOKUP_DESC=	RCPT verification via extlookup
 USER_HOMEDIR_DESC=	Store user data in ~/.dspam
 TRUSTED_USERS_DESC=	Disable trusted user security
@@ -53,22 +56,20 @@ VIRT_USERS_DESC=	Virtual users (needs SQL back-end)
 LONG_USERNAMES_DESC=	Usernames longer that OS supports
 LARGE_SCALE_DESC=	File structure for large scale
 DOMAIN_SCALE_DESC=	File structure for multiple domains
-CYRUS23_DESC=	Cyrus's 2.3 deliver as LDA
-CYRUS24_DESC=	Cyrus's 2.4 deliver as LDA
-DOVECOT1_DESC=	Dovecot 1.2 deliver as LDA
-DOVECOT2_DESC=	Dovecot 2.2 dovecot-lda as LDA
-EXIM_DESC=	Exim as local delivery agent
-MAILDROP_DESC=	Maildrop as local delivery agent
-PROCMAIL_DESC=	Procmail as local delivery agent
-SAFECAT_DESC=	Safecat as local delivery agent
-SENDMAIL_DESC=	Sendmail as local delivery agent
+CYRUS23_DESC=		Cyrus's 2.3 deliver as LDA
+CYRUS24_DESC=		Cyrus's 2.4 deliver as LDA
+DOVECOT1_DESC=		Dovecot 1.2 deliver as LDA
+DOVECOT2_DESC=		Dovecot 2.2 dovecot-lda as LDA
+EXIM_DESC=		Exim as local delivery agent
+MAILDROP_DESC=		Maildrop as local delivery agent
+PROCMAIL_DESC=		Procmail as local delivery agent
+SAFECAT_DESC=		Safecat as local delivery agent
+SENDMAIL_DESC=		Sendmail as local delivery agent
 NICESENDMAIL_DESC=	Play nice with sendmail server
 POSTFIX_MBC_DESC=	Dspam as mailbox_command in Postfix
-QMAIL_DESC=	Play nice with Qmail mail server
-WEBUI_DESC=	Install WebUI, pulls in Apache or see below
-
-OPTIONS_DEFAULT=	SYSLOG DEBUG DAEMON CLAMAV CLAMAV_LOCAL \
-			HASH MYSQL MYSQL_COMPRESS PGSQL SQLITE3
+QMAIL_DESC=		Play nice with Qmail mail server
+WEBUI_DESC=		Install WebUI (RUN_DEPEND on Apache/Lighttpd)
+LIGHTTPD_DESC=		RUN_DEPEND on Lighttpd instead of Apache
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5 libtool shebangfix
@@ -78,14 +79,12 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SHEBANG_FILES=	src/tools/dspam_logrotate \
-		src/tools/dspam_notify.pl \
+		src/tools/dspam_notify.in \
 		src/tools/dspam_train.in \
-		webui/cgi-bin/templates/de/strings.pl \
+		webui/cgi-bin/templates/*/strings.pl \
 		webui/cgi-bin/templates/strings.pl \
-		webui/cgi-bin/templates/fr/strings.pl \
-		webui/cgi-bin/templates/es-es/strings.pl \
-		webui/cgi-bin/templates/pt-br/strings.pl \
-		webui/cgi-bin/*.cgi
+		webui/cgi-bin/*.cgi \
+		webui/cgi-bin/*.pl
 
 .ifdef(GDBS)
 CFLAGS+=	-g -DDEBUG
@@ -112,11 +111,13 @@ DSPAM_HOME_OWNER?=	${DSPAM_OWNER}
 DSPAM_HOME_GROUP?=	${DSPAM_GROUP}
 DSPAM_HOME_MODE?=	0770
 
-.for s in OWNER GROUP HOME_OWNER HOME_GROUP
-PLIST_SUB+=	DSPAM_$s=${DSPAM_$s}
-.endfor
-
-.include <bsd.port.pre.mk>
+PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME} \
+		DSPAM_OWNER=${DSPAM_OWNER} \
+		DSPAM_GROUP=${DSPAM_GROUP} \
+		DSPAM_MODE=${DSPAM_MODE} \
+		DSPAM_HOME_OWNER=${DSPAM_HOME_OWNER} \
+		DSPAM_HOME_GROUP=${DSPAM_HOME_GROUP} \
+		DSPAM_HOME_MODE=${DSPAM_HOME_MODE}
 
 CONFIGURE_ARGS+=	--sysconfdir=${DSPAM_ETC}
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
@@ -126,19 +127,26 @@ CONFIGURE_ARGS+=	--with-dspam-home=${DSPAM_HOME}
 CONFIGURE_ARGS+=	--with-dspam-home-owner=${DSPAM_HOME_OWNER}
 CONFIGURE_ARGS+=	--with-dspam-home-group=${DSPAM_HOME_GROUP}
 CONFIGURE_ARGS+=	--with-dspam-home-mode=${DSPAM_HOME_MODE}
-PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME}
+PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME} \
+		DSPAM_HOME_OWNER=${DSPAM_HOME_OWNER} \
+		DSPAM_HOME_GROUP=${DSPAM_HOME_GROUP} \
+		DSPAM_HOME_MODE=${DSPAM_HOME_MODE}
 
 CONFIGURE_ARGS+=	--with-dspam-owner=${DSPAM_OWNER}
 CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
 # we set DSPAM_MODE at the end as some LDAs want specific mode
+PLIST_SUB+=	DSPAM_OWNER=${DSPAM_OWNER} \
+		DSPAM_GROUP=${DSPAM_GROUP} \
+		DSPAM_MODE=${DSPAM_MODE}
 
 _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
 		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g' \
 		-e 's,%%PORTNAME%%,${PORTNAME},g' \
 		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g' \
-		-e '/^%%FreeBSD/D' \
-		-e '/^%%Tecnik%%/D'
+		-e '/^%%FreeBSD/D'
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--enable-syslog
@@ -182,12 +190,12 @@ SUB_LIST+=	CLAMD=
 .	endif
 .endif
 
-# we need to know if we are building statically or dynamicaly for the plist
+# we need to know if we are building statically or dynamically for the plist
 _DBDRV_COUNT=	# blank, but defined so we can check against it
 _DBDRV=		pgsql_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv,
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=	--with-pgsql-includes=${LOCALBASE}/include \
 			--with-pgsql-libraries=${LOCALBASE}/lib
 PLIST_SUB+=	PGSQL=""
@@ -267,9 +275,6 @@ PLIST_SUB+=	DYNAMIC="@comment "
 .if ${PORT_OPTIONS:MEXTERNAL_LOOKUP}
 CONFIGURE_ARGS+=	--enable-external-lookup
 USE_OPENLDAP=	YES
-#CPPFLAGS+=	-I${LOCALBASE}/include
-#LDFLAGS+=	-lldap -llber
-#CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 
 .if ${PORT_OPTIONS:MUSER_HOMEDIR}
@@ -395,9 +400,8 @@ pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Last ${FILESDIR}/UPDATING entry:"
 	@${ECHO_CMD} "###########################################################################"
-	@${SED} -n < ${FILESDIR}/UPDATING "/^# ${PKGNAME}/,/^#####/p"
+	@${SED} -n < ${FILESDIR}/UPDATING "/^# ${PORTNAME}-${PORTVERSION}/,/^#####/p"
 	@${ECHO_CMD} ""
-	@sleep 5
 .endif
 
 pre-extract:
@@ -424,7 +428,6 @@ pre-extract:
 		@${ECHO_CMD} "${WWWDIR}"
 .	endif
 	@${ECHO_CMD} ""
-	@sleep 5
 .endif
 
 post-patch:
@@ -438,7 +441,9 @@ post-patch:
 		${WRKSRC}/src/tools.sqlite_drv/purge-2.sql
 	@${REINPLACE_CMD} -e "s|where julianday('now')-julianday(created_on) > 14;|where julianday('now')-julianday(created_on) > ${SIGNATURE_LIFE};|" \
 		 ${WRKSRC}/src/tools.sqlite_drv/purge-3.sql
-	@${REINPLACE_CMD} -e "s|%%PERL%%|${PERL}|; s|%%DSPAM_PATH%%|${PREFIX}/bin|" ${WRKSRC}/scripts/train.pl
+	@${REINPLACE_CMD} -e "s^%%PERL%%^${PERL}^" \
+		${WRKSRC}/src/tools/dspam_train.in \
+		${WRKSRC}/src/tools/dspam_notify.in
 
 pre-configure:
 .if ${PORT_OPTIONS:MVIRT_USERS} && !( defined(USE_MYSQL) || \
@@ -478,9 +483,9 @@ post-install:
 ########
 # stupid hack until I figure out where/how to patch
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/dspam.pc \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig/dspam.pc
-	${RM} -R ${STAGEDIR}${PREFIX}/lib/pkgconfig || true
+	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/dspam.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/dspam.pc
+	${TEST} `ls -1 ${STAGEDIR}${PREFIX}/lib/pkgconfig | wc -l` -eq 0 && \
+		${RM} -R ${STAGEDIR}${PREFIX}/lib/pkgconfig || true
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 .ifdef(USE_MYSQL)
@@ -540,7 +545,7 @@ post-install:
 	@cd ${FILESDIR} && ${INSTALL_DATA} UPDATING ${STAGEDIR}${DOCSDIR}/UPDATING
 .endif
 
-	@${MKDIR} -m ${DSPAM_HOME_MODE} ${STAGEDIR}${DSPAM_HOME}
+	@${MKDIR} ${STAGEDIR}${DSPAM_HOME}
 .for _file in firstrun.txt firstspam.txt quarantinefull.txt
 	@if ! ${TEST} -e ${WRKSRC}/txt/${_file}.sample;\
 	then\
@@ -553,4 +558,6 @@ post-install:
 
 	@${MKDIR} -m ${DSPAM_HOME_MODE} ${STAGEDIR}${LOG_DIR}
 
-.include <bsd.port.post.mk>
+	@${CAT} ${WRKSRC}/README.FreeBSD
+
+.include <bsd.port.mk>
