@@ -65,7 +65,3 @@ apps/Memo/pretty_time.pyo
 apps/Memo/timer.py
 apps/Memo/timer.pyc
 apps/Memo/timer.pyo
-@dirrm apps/Memo/Messages
-@dirrm apps/Memo/Help
-@dirrm apps/Memo
-@dirrmtry apps

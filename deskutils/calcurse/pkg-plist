@@ -165,10 +165,3 @@ man/man1/calcurse.1.gz
 %%NLS%%share/locale/nl/LC_MESSAGES/calcurse.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/calcurse.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/calcurse.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/nl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pt_BR
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

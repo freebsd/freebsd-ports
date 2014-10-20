@@ -5,5 +5,3 @@ lib/libopensync1/formats/vevent.so
 lib/libopensync1/formats/vtodo.so
 lib/libopensync1/formats/vjournal.so
 lib/libopensync1/formats/vnote.so
-@dirrmtry lib/libopensync1/formats
-@dirrmtry lib/libopensync1

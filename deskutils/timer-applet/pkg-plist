@@ -111,9 +111,3 @@ share/locale/zh_CN/LC_MESSAGES/timer-applet.mo
 share/pixmaps/timer-applet.png
 %%DATADIR%%/TimerApplet.xml
 %%DATADIR%%/timer-applet.glade
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/timerapplet/ui
-@dirrm %%PYTHON_SITELIBDIR%%/timerapplet/core
-@dirrm %%PYTHON_SITELIBDIR%%/timerapplet/controllers
-@dirrm %%PYTHON_SITELIBDIR%%/timerapplet
-@dirrm libexec/timer-applet

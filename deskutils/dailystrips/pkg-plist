@@ -7,5 +7,3 @@ bin/dailystrips-update
 %%PORTDOCS%%%%DOCSDIR%%/README.LOCAL
 %%PORTDOCS%%%%DOCSDIR%%/README.dailystrips-clean
 %%PORTDOCS%%%%DOCSDIR%%/README.dailystrips-update
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%

@@ -190,25 +190,6 @@ share/pixmaps/glabels/ex-rect-size.png
 share/pixmaps/glabels/ex-round-size.png
 share/pixmaps/glabels/glabels-about-logo.png
 share/pixmaps/glabels/glabels-splash.png
-@dirrm share/pixmaps/glabels
-@dirrm share/omf/glabels
-@dirrm share/gnome/help/glabels/fr/figures
-@dirrm share/gnome/help/glabels/fr
-@dirrm share/gnome/help/glabels/es/figures
-@dirrm share/gnome/help/glabels/es
-@dirrm share/gnome/help/glabels/de/figures
-@dirrm share/gnome/help/glabels/de
-@dirrm share/gnome/help/glabels/cs/figures
-@dirrm share/gnome/help/glabels/cs
-@dirrm share/gnome/help/glabels/C/figures
-@dirrm share/gnome/help/glabels/C
-@dirrm share/gnome/help/glabels
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%
-@dirrm share/doc/libglabels
-@dirrm include/libglabels
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

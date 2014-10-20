@@ -10,6 +10,3 @@ bin/qlabels
 %%DATADIR%%/templates/misc-us-templates.xml
 %%DATADIR%%/templates/paper-sizes.xml
 %%DATADIR%%/templates/zweckform-iso-templates.xml
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

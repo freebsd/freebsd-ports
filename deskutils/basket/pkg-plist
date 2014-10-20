@@ -78,11 +78,3 @@ share/locale/zh_CN/LC_MESSAGES/basket.mo
 share/locale/zh_TW/LC_MESSAGES/basket.mo
 share/mimelnk/application/x-basket-archive.desktop
 share/mimelnk/application/x-basket-template.desktop
-@dirrmtry share/mimelnk/application
-@dirrmtry share/mimelnk
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/config/magic
-@dirrm share/apps/basket/welcome
-@dirrm share/apps/basket/backgrounds
-@dirrm share/apps/basket

@@ -7,5 +7,3 @@ man/man1/hot-babe.1.gz
 %%DATADIR%%/hb01/hb01_3.png
 %%DATADIR%%/hb01/hb01_4.png
 share/pixmaps/hot-babe.xpm
-@dirrm %%DATADIR%%/hb01
-@dirrm %%DATADIR%%

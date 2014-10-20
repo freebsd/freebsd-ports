@@ -16,4 +16,3 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-todo.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/etask/etask.el
 %%EMACS_VERSION_SITE_LISPDIR%%/etask/etask.elc
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/etask

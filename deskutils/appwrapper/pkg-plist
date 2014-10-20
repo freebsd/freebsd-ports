@@ -6,5 +6,3 @@ GNUstep/Local/Applications/AppWrapper.app/Resources/AppWrapperInfo.plist
 GNUstep/Local/Applications/AppWrapper.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/AppWrapper.app/stamp.make
 GNUstep/Local/Tools/AppWrapper
-@dirrm GNUstep/Local/Applications/AppWrapper.app/Resources
-@dirrm GNUstep/Local/Applications/AppWrapper.app

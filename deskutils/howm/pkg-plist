@@ -58,7 +58,3 @@
 %%DOCSDIR%%/s-search.png
 %%DOCSDIR%%/todo.png
 %%DOCSDIR%%/updown.png
-@dirrm %%EXAMPLESDIR%%/en
-@dirrm %%EXAMPLESDIR%%/ja
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%

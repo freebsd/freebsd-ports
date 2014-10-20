@@ -12,5 +12,3 @@ share/gdesklets/Sensors/RecentlyUsed/TestReader.py
 share/gdesklets/Sensors/RecentlyUsed/TestRecent.py
 share/gdesklets/Sensors/RecentlyUsed/TestRfileSet.py
 share/gdesklets/Sensors/RecentlyUsed/__init__.py
-@dirrm share/gdesklets/Sensors/RecentlyUsed
-@dirrm share/gdesklets/Displays/RecentlyUsed

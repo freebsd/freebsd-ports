@@ -45,8 +45,4 @@ man/man4/plan.4.gz
 %%PORTDOCS%%%%DOCSDIR%%/plan.lang.italian
 %%PORTDOCS%%%%DOCSDIR%%/plan.lang.polish
 %%PORTDOCS%%%%DOCSDIR%%/plan.lang.spanish
-@exec /bin/mkdir -p %D/%%DATADIR%%/netplan.dir
-@dirrmtry %%DATADIR%%/netplan.dir
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir %%DATADIR%%/netplan.dir

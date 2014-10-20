@@ -13,6 +13,3 @@ lib/libgcal.so.0
 lib/libgcal.so.0.9.6
 lib/LibGCal/cmake/LibGCalConfig.cmake
 libdata/pkgconfig/libgcal.pc
-@dirrm lib/LibGCal/cmake
-@dirrm lib/LibGCal
-@dirrm include/libgcal

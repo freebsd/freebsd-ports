@@ -18,10 +18,3 @@ GNUstep/Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/data.in
 GNUstep/Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/objects.gorm
 GNUstep/Local/Applications/Cartotheque.app/stamp.make
 GNUstep/Local/Tools/Cartotheque
-@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm
-@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm
-@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm
-@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/CardWindow.gorm
-@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/CardInspector.gorm
-@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources
-@dirrm GNUstep/Local/Applications/Cartotheque.app

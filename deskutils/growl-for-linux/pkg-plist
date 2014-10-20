@@ -28,8 +28,3 @@ lib/growl-for-linux/subscribe/libtweets.so.0.0.0
 %%DATADIR%%/data/icon.png
 %%DATADIR%%/data/icon_dnd.png
 %%DATADIR%%/data/mattn.png
-@dirrmtry %%DATADIR%%/data
-@dirrmtry %%DATADIR%%
-@dirrmtry lib/growl-for-linux/subscribe
-@dirrmtry lib/growl-for-linux/display
-@dirrmtry lib/growl-for-linux

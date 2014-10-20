@@ -23,5 +23,3 @@ share/applications/parcellite.desktop
 share/pixmaps/parcellite.png
 share/pixmaps/parcellite.svg
 share/pixmaps/parcellite.xpm
-%%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl_PL

@@ -218,26 +218,3 @@ share/locale/uk/LC_MESSAGES/griffith.mo
 share/locale/zh_CN/LC_MESSAGES/griffith.mo
 share/pixmaps/griffith.png
 share/pixmaps/griffith.xpm
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrm %%DATADIR%%/lib/plugins/movie
-@dirrm %%DATADIR%%/lib/plugins/imp
-@dirrm %%DATADIR%%/lib/plugins/extensions
-@dirrm %%DATADIR%%/lib/plugins/export
-@dirrm %%DATADIR%%/lib/plugins
-@dirrm %%DATADIR%%/lib/db
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/export_templates/xml
-@dirrm %%DATADIR%%/export_templates/latex
-@dirrm %%DATADIR%%/export_templates/html_tables
-@dirrm %%DATADIR%%/export_templates/html_table
-@dirrm %%DATADIR%%/export_templates/csv
-@dirrm %%DATADIR%%/export_templates
-@dirrm %%DATADIR%%
-@dirrmtry man/pt/man1
-@dirrmtry man/pt
-@dirrmtry man/pl/man1
-@dirrmtry man/pl
-@dirrmtry etc/bash_completion.d

@@ -12,4 +12,3 @@ man/man1/pal.1.gz
 %%DATADIR%%/pal.conf
 %%DATADIR%%/us.pal
 %%DATADIR%%/world.pal
-@dirrm %%DATADIR%%

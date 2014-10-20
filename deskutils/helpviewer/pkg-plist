@@ -33,7 +33,3 @@ GNUstep/Local/Applications/HelpViewer.app/Resources/notloaded.tiff
 GNUstep/Local/Applications/HelpViewer.app/Resources/part.tiff
 GNUstep/Local/Applications/HelpViewer.app/stamp.make
 GNUstep/Local/Tools/HelpViewer
-@dirrm GNUstep/Local/Applications/HelpViewer.app/Resources/Main.gorm
-@dirrm GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help
-@dirrm GNUstep/Local/Applications/HelpViewer.app/Resources
-@dirrm GNUstep/Local/Applications/HelpViewer.app

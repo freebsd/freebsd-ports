@@ -2,4 +2,3 @@ bin/cal
 @sample %%ETCDIR%%/calcol.sample
 @sample %%ETCDIR%%/caldat.sample
 man/man1/cal.1.gz
-@dirrm %%ETCDIR%%

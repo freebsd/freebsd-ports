@@ -438,18 +438,3 @@
 %%WWWDIR%%/us_english.pl
 %%WWWDIR%%/us_english_utf8.pl
 %%WWWDIR%%/zh_tw.pl
-@dirrm %%WWWDIR%%/theme/graphics
-@dirrm %%WWWDIR%%/theme/ical
-@dirrm %%WWWDIR%%/theme/icons
-@dirrm %%WWWDIR%%/theme/images
-@dirrm %%WWWDIR%%/theme/colorpicker/js
-@dirrm %%WWWDIR%%/theme/colorpicker/images
-@dirrm %%WWWDIR%%/theme/colorpicker/css
-@dirrm %%WWWDIR%%/theme/colorpicker
-@dirrm %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/sessions
-@dirrm %%WWWDIR%%/theme
-@dirrm %%WWWDIR%%/Time
-@dirrm %%WWWDIR%%/JSON/PP
-@dirrm %%WWWDIR%%/JSON
-@dirrm %%WWWDIR%%

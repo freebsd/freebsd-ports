@@ -8,6 +8,3 @@ GNUstep/Local/Applications/Charmap.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/Charmap.app/Resources/UnicodeData.txt
 GNUstep/Local/Applications/Charmap.app/stamp.make
 GNUstep/Local/Tools/Charmap
-@dirrm GNUstep/Local/Applications/Charmap.app/Resources/Charmap.gorm
-@dirrm GNUstep/Local/Applications/Charmap.app/Resources
-@dirrm GNUstep/Local/Applications/Charmap.app
