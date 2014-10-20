@@ -23,8 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig gettext
-USE_PYTHON=	2
+USES=		gettext gmake pkgconfig python:2
 GNU_CONFIGURE=	yes
 
 post-patch:

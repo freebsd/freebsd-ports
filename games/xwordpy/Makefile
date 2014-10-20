@@ -12,7 +12,7 @@ MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Application for solving crossword puzzles in the Across Lite format
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/xwordpy \

@@ -13,8 +13,7 @@ COMMENT=	Educational software made in python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
-USES=		zip
-USE_PYTHON=	yes
+USES=		python zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message

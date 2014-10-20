@@ -16,10 +16,9 @@ COMMENT=	You control an army of liquid and have to try and eat your opponents
 LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
 
 GNU_CONFIGURE=	yes
-USES=		gmake makeinfo
+USES=		gmake makeinfo python:build
 CONFIGURE_ARGS=	--disable-target-opt --disable-doc-ps --disable-doc-pdf
 CONFIGURE_ENV=	ac_cv_prog_PYTHON=yes
-USE_PYTHON_BUILD=yes
 
 INFO=		liquidwar
 

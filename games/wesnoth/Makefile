@@ -118,7 +118,7 @@ CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=off
 
 .if ${PORT_OPTIONS:MPYTHON}
 BROKEN=		cmake build doesn't support installing python tools
-USE_PYTHON=	yes
+USES+=		python
 CONFIGURE_ENV+=	PYTHON_PREFIX=${PREFIX} \
 		PYTHON_VERSION=${PYTHON_VERSION:S/python//}
 CONFIGURE_ARGS+=--enable-python-install

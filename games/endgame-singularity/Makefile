@@ -15,8 +15,8 @@ COMMENT=	Simulates the life of a true AI
 RUN_DEPENDS=	py*-game>=1.8:${PORTSDIR}/devel/py-game \
 		${PYNUMPY}
 
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils
 USE_SDL=	image mixer
 PORTDOCS=	AUTHORS Changelog README.txt TODO
 PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}

@@ -20,7 +20,7 @@ BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=		libespeak.so:${PORTSDIR}/audio/espeak \
 			libnspr4.so:${PORTSDIR}/devel/nspr
 
-USES=			gmake perl5 tar:bzip2
+USES=			gmake perl5 python:build tar:bzip2
 USE_GL=			yes
 USE_SDL=		mixer image gfx
 USE_GNUSTEP=		yes
@@ -29,7 +29,6 @@ USE_GNUSTEP_BUILD=	yes
 USE_MAKEFILE=		yes
 ALL_TARGET=		release-deployment
 USE_PERL5=		build
-USE_PYTHON_BUILD=	yes
 
 SUB_FILES=		pkg-message
 PKGMESSAGE=		${WRKDIR}/pkg-message

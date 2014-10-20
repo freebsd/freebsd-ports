@@ -21,7 +21,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${PYGAME}
 
-USE_PYTHON=	yes
+USES=		python
 MAKE_ENV=	prefix=${PREFIX}
 
 PORTDOCS=	AUTHORS README TODO
