@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libcurl.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libcurl.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libplibcurl.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

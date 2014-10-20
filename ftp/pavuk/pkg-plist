@@ -28,6 +28,3 @@ etc/pavukrc.sample
 %%DATADIR%%/icons/pavuk_64x64.xpm
 %%DATADIR%%/icons/pavuk_as_icon.xpm
 %%DATADIR%%/icons/pavuk_prg_icon.xpm
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

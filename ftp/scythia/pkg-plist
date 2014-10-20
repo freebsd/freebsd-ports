@@ -92,11 +92,3 @@ share/pixmaps/scythia.xpm
 %%DATADIR%%/lang/english.qm
 %%DATADIR%%/lang/polish.qm
 %%DATADIR%%/lang/russian.qm
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%
-@dirrm share/icons/hicolor/128x128/apps
-@dirrm share/icons/hicolor/128x128
-@dirrm share/icons/hicolor
-@dirrm share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

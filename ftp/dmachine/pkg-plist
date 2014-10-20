@@ -3,5 +3,3 @@ share/java/classes/dmachine.jar
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/dmachine.cnf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/dmachine

@@ -262,17 +262,3 @@ etc/ftpmirror.cf-sample
 %%SITE_PERL%%/%%PERL_ARCH%%/Fan/Scan.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Fan/TCP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Fan/Usage.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/Attrib
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/Cool
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/DIR
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/FTP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/Farm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/HTTP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/Loader
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/MD5
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/Param
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/Scan
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/TCP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan/Usage
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fan
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Fan

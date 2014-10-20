@@ -31,10 +31,8 @@
 %%PYTHON_SITELIBDIR%%/ftputil/lrucache.py
 %%PYTHON_SITELIBDIR%%/ftputil/lrucache.pyc
 %%PYTHON_SITELIBDIR%%/ftputil/lrucache.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/ftputil
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/ftputil.html
 %%PORTDOCS%%%%DOCSDIR%%/ftputil.txt
 %%PORTDOCS%%%%DOCSDIR%%/ftputil_ru_utf8.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -130,14 +130,3 @@ libdata/pkgconfig/wzdftpd.pc
 %%PORTDOCS%%%%DOCSDIR%%/wzd_tls.cnf
 sbin/wzdftpd
 share/aclocal/wzd.m4
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/wzdftpd/modules
-@dirrm lib/wzdftpd/backends
-@dirrm lib/wzdftpd
-%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd
-@dirrm include/wzdftpd/libwzd-core/arch
-@dirrm include/wzdftpd/libwzd-core
-@dirrm include/wzdftpd/libwzd-base
-@dirrm include/wzdftpd/libwzd-auth
-@dirrm include/wzdftpd
-@dirrmtry %%ETCDIR%%

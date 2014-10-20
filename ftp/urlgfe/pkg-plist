@@ -10,4 +10,3 @@ bin/urlgfe
 share/applications/urlgfe.desktop
 share/locale/zh_TW/LC_MESSAGES/urlgfe.mo
 share/pixmaps/urlgfe-icon.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
