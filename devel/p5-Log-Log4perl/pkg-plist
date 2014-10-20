@@ -103,14 +103,12 @@ bin/l4p-tmpl
 %%PERL5_MAN3%%/Log::Log4perl::Util::Semaphore.3.gz
 %%PERL5_MAN3%%/Log::Log4perl::Util::TimeTracker.3.gz
 man/man1/l4p-tmpl.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Log4perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
-@dirrm %%SITE_PERL%%/Log/Log4perl/Util
-@dirrm %%SITE_PERL%%/Log/Log4perl/Layout/PatternLayout
-@dirrm %%SITE_PERL%%/Log/Log4perl/Layout
-@dirrm %%SITE_PERL%%/Log/Log4perl/JavaMap
-@dirrm %%SITE_PERL%%/Log/Log4perl/Filter
-@dirrm %%SITE_PERL%%/Log/Log4perl/Config
-@dirrm %%SITE_PERL%%/Log/Log4perl/Appender
-@dirrm %%SITE_PERL%%/Log/Log4perl
+@dirrmtry %%SITE_PERL%%/Log/Log4perl/Util
+@dirrmtry %%SITE_PERL%%/Log/Log4perl/Layout/PatternLayout
+@dirrmtry %%SITE_PERL%%/Log/Log4perl/Layout
+@dirrmtry %%SITE_PERL%%/Log/Log4perl/JavaMap
+@dirrmtry %%SITE_PERL%%/Log/Log4perl/Filter
+@dirrmtry %%SITE_PERL%%/Log/Log4perl/Config
+@dirrmtry %%SITE_PERL%%/Log/Log4perl/Appender
+@dirrmtry %%SITE_PERL%%/Log/Log4perl
 @dirrmtry %%SITE_PERL%%/Log
