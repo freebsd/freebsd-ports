@@ -59,13 +59,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_sql.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_sql_private.pri
 libdata/pkgconfig/Qt5Sql.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrmtry %%QT_LIBDIR%%/cmake/Qt5Sql
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private
-@dirrm %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql
-@dirrm %%QT_INCDIR%%/QtSql/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtSql
-@dirrmtry %%QT_INCDIR%%

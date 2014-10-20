@@ -7,4 +7,3 @@
 %%PYTHON_SITELIBDIR%%/dbx/sqlite.py
 %%PYTHON_SITELIBDIR%%/dbx/sqlite.pyc
 %%PYTHON_SITELIBDIR%%/dbx/sqlite.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/dbx

@@ -127,8 +127,3 @@ man/man1/mysqlslap.1.gz
 man/man1/mysqltest.1.gz
 share/aclocal/mysql.m4
 %%DATADIR%%/mysql_fix_privilege_tables.sql
-@dirrmtry %%DATADIR%%
-@dirrmtry include/mysql/private/atomic
-@dirrmtry include/mysql/private
-@dirrmtry include/mysql
-@dirrmtry lib/mysql

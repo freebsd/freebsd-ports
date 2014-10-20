@@ -327,43 +327,5 @@
 %%WWWDIR%%/tpl/sqlbrowser/sql_record_insert_inputmask.tpl
 %%WWWDIR%%/tpl/sqlbrowser/sql_record_update_inputmask.tpl
 %%WWWDIR%%/tpl/sqlbrowser/sqlbox.tpl
-@dirrm %%WWWDIR%%/tpl/sqlbrowser
-@dirrm %%WWWDIR%%/tpl/menu
-@dirrm %%WWWDIR%%/tpl/home
-@dirrm %%WWWDIR%%/tpl
-@dirrm %%WWWDIR%%/msd_cron
-@dirrm %%WWWDIR%%/language/vn
-@dirrm %%WWWDIR%%/language/tr
-@dirrm %%WWWDIR%%/language/sw
-@dirrm %%WWWDIR%%/language/pt_br
-@dirrm %%WWWDIR%%/language/it
-@dirrm %%WWWDIR%%/language/fr
-@dirrm %%WWWDIR%%/language/flags
-@dirrm %%WWWDIR%%/language/es
-@dirrm %%WWWDIR%%/language/en
-@dirrm %%WWWDIR%%/language/el
-@dirrm %%WWWDIR%%/language/de_du
-@dirrm %%WWWDIR%%/language/de
-@dirrm %%WWWDIR%%/language/da
-@dirrm %%WWWDIR%%/language/ch
-@dirrm %%WWWDIR%%/language/ar
-@dirrm %%WWWDIR%%/language
-@dirrm %%WWWDIR%%/js/scriptaculous/lib
-@dirrm %%WWWDIR%%/js/scriptaculous
-@dirrm %%WWWDIR%%/js/prototype
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/inc/sqlbrowser
-@dirrm %%WWWDIR%%/inc/home
-@dirrm %%WWWDIR%%/inc
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/css/msd_green/pics
-@dirrm %%WWWDIR%%/css/msd_green/icons
-@dirrm %%WWWDIR%%/css/msd_green
-@dirrm %%WWWDIR%%/css/msd/pics
-@dirrm %%WWWDIR%%/css/msd/icons
-@dirrm %%WWWDIR%%/css/msd
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%/ReadMe
-@dirrmtry %%WWWDIR%%
 @group
 @owner

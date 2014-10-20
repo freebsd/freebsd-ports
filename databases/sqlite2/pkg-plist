@@ -11,5 +11,3 @@ lib/libsqlite.so.0.8.6
 %%WITH_TCLWRAPPER%%lib/sqlite/pkgIndex.tcl
 libdata/pkgconfig/sqlite.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.tcl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%WITH_TCLWRAPPER%%@dirrm lib/sqlite

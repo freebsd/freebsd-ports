@@ -156,31 +156,3 @@
 %%SITE_PERL%%/Tangram/Type/TimeAndDate.pod
 %%SITE_PERL%%/auto/Tangram/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram
-@dirrmtry %%SITE_PERL%%/auto/Tangram
-@dirrmtry %%SITE_PERL%%/Tangram/Type/Set
-@dirrmtry %%SITE_PERL%%/Tangram/Type/Ref
-@dirrmtry %%SITE_PERL%%/Tangram/Type/Hash
-@dirrmtry %%SITE_PERL%%/Tangram/Type/Dump
-@dirrmtry %%SITE_PERL%%/Tangram/Type/Date
-@dirrmtry %%SITE_PERL%%/Tangram/Type/Array
-@dirrmtry %%SITE_PERL%%/Tangram/Type/Abstract
-@dirrmtry %%SITE_PERL%%/Tangram/Type
-@dirrmtry %%SITE_PERL%%/Tangram/Storage
-@dirrmtry %%SITE_PERL%%/Tangram/Schema
-@dirrmtry %%SITE_PERL%%/Tangram/Relational/Engine
-@dirrmtry %%SITE_PERL%%/Tangram/Relational
-@dirrmtry %%SITE_PERL%%/Tangram/Lazy
-@dirrmtry %%SITE_PERL%%/Tangram/Expr/Coll
-@dirrmtry %%SITE_PERL%%/Tangram/Expr
-@dirrmtry %%SITE_PERL%%/Tangram/Driver/mysql/Expr
-@dirrmtry %%SITE_PERL%%/Tangram/Driver/mysql
-@dirrmtry %%SITE_PERL%%/Tangram/Driver/Sybase/Expr
-@dirrmtry %%SITE_PERL%%/Tangram/Driver/Sybase
-@dirrmtry %%SITE_PERL%%/Tangram/Driver/SQLite
-@dirrmtry %%SITE_PERL%%/Tangram/Driver/Pg
-@dirrmtry %%SITE_PERL%%/Tangram/Driver/Oracle
-@dirrmtry %%SITE_PERL%%/Tangram/Driver
-@dirrmtry %%SITE_PERL%%/Tangram/Cursor
-@dirrmtry %%SITE_PERL%%/Tangram/Compat
-@dirrmtry %%SITE_PERL%%/Tangram

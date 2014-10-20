@@ -37,8 +37,3 @@ share/applications/gtksql.desktop
 %%DATADIR%%/pixmaps/send.xpm
 %%DATADIR%%/pixmaps/warning.xpm
 share/locale/de_DE/LC_MESSAGES/gtksql.mo
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

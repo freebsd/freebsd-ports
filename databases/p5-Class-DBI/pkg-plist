@@ -28,12 +28,3 @@
 %%SITE_PERL%%/Class/DBI/Search/Basic.pm
 %%SITE_PERL%%/Class/DBI/Test/SQLite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/DBI/Test
-@dirrmtry %%SITE_PERL%%/Class/DBI/Search
-@dirrmtry %%SITE_PERL%%/Class/DBI/SQL
-@dirrmtry %%SITE_PERL%%/Class/DBI/Relationship
-@dirrmtry %%SITE_PERL%%/Class/DBI/Cascade
-@dirrmtry %%SITE_PERL%%/Class/DBI
-@dirrmtry %%SITE_PERL%%/Class

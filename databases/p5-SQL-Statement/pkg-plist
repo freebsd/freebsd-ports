@@ -39,8 +39,3 @@
 %%PERL5_MAN3%%/SQL::Statement::Term.3.gz
 %%PERL5_MAN3%%/SQL::Statement::TermFactory.3.gz
 %%PERL5_MAN3%%/SQL::Statement::Util.3.gz
-@dirrmtry %%SITE_PERL%%/SQL/Statement
-@dirrmtry %%SITE_PERL%%/SQL/Dialects
-@dirrmtry %%SITE_PERL%%/SQL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Statement
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL

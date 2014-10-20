@@ -188,31 +188,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/arrow_sm.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%JAVAJARDIR%%/c3p0.jar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/resourcepool
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/util
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/test/junit
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/test
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/subst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/stmt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/servlet
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/mbean
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/management
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/jboss
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/impl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/filter
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/codegen
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/cfg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs-oracle-thin/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs-oracle-thin/com/mchange/v2/c3p0/dbms
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs-oracle-thin/com/mchange/v2/c3p0
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs-oracle-thin/com/mchange/v2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs-oracle-thin/com/mchange
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs-oracle-thin/com
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs-oracle-thin
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

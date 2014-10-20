@@ -14,5 +14,3 @@ share/py-sip/QtSql/qsqlrelationaltablemodel.sip
 share/py-sip/QtSql/qsqlresult.sip
 share/py-sip/QtSql/qsqltablemodel.sip
 %%API%%share/qt4/qsci/api/python/QtSql.api
-@dirrmtry share/py-sip/QtSql
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

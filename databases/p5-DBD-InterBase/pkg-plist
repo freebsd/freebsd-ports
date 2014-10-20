@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/InterBase/TypeInfo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/InterBase/InterBase.so
 %%PERL5_MAN3%%/DBD::InterBase.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBD/InterBase
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/InterBase
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD

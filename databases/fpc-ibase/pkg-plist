@@ -8,8 +8,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/ibase60dyn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/libpibase40.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/libpibase60.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/libpibase60dyn.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

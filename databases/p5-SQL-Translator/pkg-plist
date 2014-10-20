@@ -176,32 +176,3 @@ man/man1/sqlt-diff.1.gz
 man/man1/sqlt-dumper.1.gz
 man/man1/sqlt-graph.1.gz
 man/man1/sqlt.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL
-@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL/SQLT
-@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL
-@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent
-@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse
-@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers
-@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml
-@dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/auto/share
-@dirrmtry %%SITE_PERL%%/Test/SQL
-@dirrmtry %%SITE_PERL%%/Test
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Schema/Role
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Schema
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Role
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/XML
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/TT
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Producer
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Parser/XML
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Parser/DBI
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Parser/DB2
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Parser
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Generator/Role
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Generator/DDL
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Generator
-@dirrmtry %%SITE_PERL%%/SQL/Translator/Filter
-@dirrmtry %%SITE_PERL%%/SQL/Translator
-@dirrmtry %%SITE_PERL%%/SQL

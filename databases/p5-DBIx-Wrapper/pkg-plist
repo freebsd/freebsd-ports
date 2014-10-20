@@ -10,7 +10,3 @@
 %%SITE_PERL%%/mach/auto/DBIx/Wrapper/.packlist
 %%PERL5_MAN3%%/DBIx::Wrapper.3.gz
 %%PERL5_MAN3%%/DBIx::Wrapper::Request.3.gz
-@dirrmtry %%SITE_PERL%%/mach/auto/DBIx/Wrapper
-@dirrmtry %%SITE_PERL%%/mach/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx/Wrapper
-@dirrmtry %%SITE_PERL%%/DBIx

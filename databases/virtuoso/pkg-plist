@@ -2362,28 +2362,4 @@ virtuoso/vad/rdf_mappers_dav.vad
 virtuoso/vad/sparql_demo_dav.vad
 virtuoso/vad/syncml_dav.vad
 virtuoso/vad/tutorial_dav.vad
-@dirrmtry lib/hibernate
-@dirrmtry lib/jdbc-2.0
-@dirrmtry lib/jdbc-3.0
-@dirrmtry lib/jdbc-4.0
-@dirrmtry lib/jena
-@dirrmtry lib/sesame
-@dirrmtry lib/virtuoso/db
-@dirrmtry lib/virtuoso/hosting
-@dirrmtry lib/virtuoso/vsp/admin
-@dirrmtry lib/virtuoso/vsp/images
-@dirrmtry lib/virtuoso/vsp/vsmx
-@dirrmtry lib/virtuoso/vsp
-@dirrmtry lib/virtuoso
-@dirrmtry virtuoso/doc/html
-@dirrmtry virtuoso/doc/images/inst
-@dirrmtry virtuoso/doc/images/mac
-@dirrmtry virtuoso/doc/images/misc
-@dirrmtry virtuoso/doc/images/rth
-@dirrmtry virtuoso/doc/images/tree
-@dirrmtry virtuoso/doc/images/ui
-@dirrmtry virtuoso/doc/images
-@dirrmtry virtuoso/doc
-@dirrmtry virtuoso/vad
-@dirrmtry virtuoso
 @sample lib/virtuoso/db/virtuoso.ini.sample

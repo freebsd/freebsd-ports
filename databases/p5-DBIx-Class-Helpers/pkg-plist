@@ -105,14 +105,3 @@
 %%PERL5_MAN3%%/DBIx::Class::Helper::VirtualView.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helpers.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helpers::Util.3.gz
-@dirrm %%SITE_PERL%%/DBIx/Class/Helpers
-@dirrm %%SITE_PERL%%/DBIx/Class/Helper/Schema
-@dirrm %%SITE_PERL%%/DBIx/Class/Helper/Row
-@dirrm %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut
-@dirrm %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/DateMethods1
-@dirrm %%SITE_PERL%%/DBIx/Class/Helper/ResultSet
-@dirrm %%SITE_PERL%%/DBIx/Class/Helper
-@dirrmtry %%SITE_PERL%%/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Helpers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx

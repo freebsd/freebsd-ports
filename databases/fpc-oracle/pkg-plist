@@ -11,8 +11,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oraoci.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oraoci.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oratypes.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oratypes.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

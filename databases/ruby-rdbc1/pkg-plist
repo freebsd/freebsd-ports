@@ -2,7 +2,6 @@
 %%RUBY_SITELIBDIR%%/pg_rdbc1.rb
 %%RUBY_SITELIBDIR%%/rdbc1.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/test1.rb
-%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Composite.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Connection.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ConnectionBridge.html
@@ -69,9 +68,3 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/pg/PG_ResultSetMetaDataBridge.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/pg/PG_StatementBridge.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rdbc1.txt
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ora
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/pg
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja/ora
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja/pg
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

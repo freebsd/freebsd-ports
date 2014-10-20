@@ -354,10 +354,3 @@ lib/libmysqlpp.so.4.0.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/updel.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/util.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/util.h
-@dirrm include/mysql++
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/userman/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/userman
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

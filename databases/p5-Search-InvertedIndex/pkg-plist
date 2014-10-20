@@ -15,9 +15,3 @@
 %%SITE_PERL%%/Search/InvertedIndex/Result.pm
 %%SITE_PERL%%/Search/InvertedIndex/Update.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/InvertedIndex/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/InvertedIndex
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
-@dirrmtry %%SITE_PERL%%/Search/InvertedIndex/Query
-@dirrmtry %%SITE_PERL%%/Search/InvertedIndex/DB
-@dirrmtry %%SITE_PERL%%/Search/InvertedIndex
-@dirrmtry %%SITE_PERL%%/Search

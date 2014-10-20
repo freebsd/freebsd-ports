@@ -41,8 +41,3 @@ libdata/pkgconfig/opendbxplus.pc
 %%SYBASE%%lib/opendbx/libsybasebackend.so
 %%SYBASE%%lib/opendbx/libsybasebackend.so.1
 %%SYBASE%%lib/opendbx/libsybasebackend.so.1.2.0
-@dirrm include/opendbx
-@dirrm lib/opendbx
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot

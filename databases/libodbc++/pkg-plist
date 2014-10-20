@@ -16,4 +16,3 @@ lib/libodbc++.so
 lib/libodbc++.so.4
 lib/libodbc++.so.4.0.0
 libdata/pkgconfig/libodbc++.pc
-@dirrm include/odbc++

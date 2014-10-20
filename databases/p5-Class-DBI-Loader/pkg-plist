@@ -9,9 +9,3 @@
 %%SITE_PERL%%/Class/DBI/Loader/SQLite.pm
 %%SITE_PERL%%/Class/DBI/Loader/mysql.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Loader/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Loader
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/DBI/Loader
-@dirrmtry %%SITE_PERL%%/Class/DBI
-@dirrmtry %%SITE_PERL%%/Class

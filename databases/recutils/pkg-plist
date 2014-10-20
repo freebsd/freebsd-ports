@@ -32,5 +32,3 @@ share/emacs/site-lisp/rec-mode.el
 %%NLS%%share/locale/uk/LC_MESSAGES/recutils.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/recutils.mo
 share/recutils/etc/FSD.rec
-@dirrm share/recutils/etc
-@dirrm share/recutils

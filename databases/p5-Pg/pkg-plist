@@ -3,4 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg/Pg.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg/autosplit.ix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg

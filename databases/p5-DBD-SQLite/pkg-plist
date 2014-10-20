@@ -7,10 +7,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/DBD-SQLite/sqlite3.c
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/DBD-SQLite/sqlite3.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/DBD-SQLite/sqlite3ext.h
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/DBD-SQLite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD

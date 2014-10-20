@@ -13,6 +13,3 @@ bin/rbvltest
 %%DATADIR%%/ruby/rbapidoc/villa.rb.html
 %%DATADIR%%/ruby/rbspex-ja.html
 %%DATADIR%%/ruby/rbspex.html
-@dirrm %%DATADIR%%/ruby/rbapidoc
-@dirrm %%DATADIR%%/ruby
-@dirrm %%DATADIR%%

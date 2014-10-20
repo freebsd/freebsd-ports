@@ -56,7 +56,3 @@
 %%PERL5_MAN3%%/Memcached::libmemcached::memcached_user_data.3.gz
 %%PERL5_MAN3%%/Memcached::libmemcached::memcached_verbosity.3.gz
 %%PERL5_MAN3%%/Memcached::libmemcached::memcached_version.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached/libmemcached
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Memcached

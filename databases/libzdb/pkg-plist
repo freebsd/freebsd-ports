@@ -11,4 +11,3 @@ lib/libzdb.so
 lib/libzdb.so.11
 lib/libzdb.so.11.0.0
 libdata/pkgconfig/zdb.pc
-@dirrm include/zdb

@@ -48,19 +48,3 @@ man/man1/pgloader.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udc/udc.data
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udc/udc.sql
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fixed
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/udc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/serial
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/reformat
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/partial
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/errors
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csv
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cluttered
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clob
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/allcols
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/pgloader/reformat
-@dirrm %%PYTHON_SITELIBDIR%%/pgloader

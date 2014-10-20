@@ -38,6 +38,3 @@ man/man3/tcrdb.3.gz
 man/man3/tculog.3.gz
 man/man3/ttutil.3.gz
 man/man8/ttservctl.8.gz
-@dirrmtry %%DATADIR%%/ext
-@dirrmtry %%DATADIR%%/doc
-@dirrmtry %%DATADIR%%

@@ -5,5 +5,3 @@
 %%SITE_PERL%%/Redis/Hash.pm
 %%SITE_PERL%%/Redis/List.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Redis/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Redis
-@dirrmtry %%SITE_PERL%%/Redis

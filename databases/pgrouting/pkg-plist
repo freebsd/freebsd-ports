@@ -17,4 +17,3 @@ share/postgresql/contrib/pgrouting-2.0/pgrouting_legacy.sql
 %%NEWPG%%share/postgresql/extension/pgrouting--2.0.0.sql.in
 %%NEWPG%%share/postgresql/extension/pgrouting.sql
 %%NEWPG%%share/postgresql/extension/pgrouting_legacy.sql
-@dirrmtry share/postgresql/contrib/pgrouting-2.0

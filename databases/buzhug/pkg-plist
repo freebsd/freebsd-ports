@@ -19,4 +19,3 @@
 %%PYTHON_SITELIBDIR%%/buzhug/conversion_float.py
 %%PYTHON_SITELIBDIR%%/buzhug/conversion_float.pyc
 %%PYTHON_SITELIBDIR%%/buzhug/conversion_float.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/buzhug

@@ -10,5 +10,3 @@ bin/sqlw_mail
 man/man1/sqlreport.1.gz
 man/man1/sqlw_import.1.gz
 man/man1/sqlw_mail.1.gz
-@dirrmtry %%SITE_PERL%%/SQLite/Work
-@dirrmtry %%SITE_PERL%%/SQLite

@@ -51,11 +51,3 @@
 %%SITE_PERL%%/DWH_File/Value/Undef.pm
 %%SITE_PERL%%/DWH_File/Work.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DWH_File/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DWH_File
-@dirrm %%SITE_PERL%%/DWH_File/Value
-@dirrm %%SITE_PERL%%/DWH_File/Tie/Hash
-@dirrm %%SITE_PERL%%/DWH_File/Tie/Array
-@dirrm %%SITE_PERL%%/DWH_File/Tie
-@dirrm %%SITE_PERL%%/DWH_File/Subscript
-@dirrm %%SITE_PERL%%/DWH_File/Registry
-@dirrm %%SITE_PERL%%/DWH_File

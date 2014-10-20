@@ -1,10 +1,3 @@
 %%PERL5_MAN3%%/Rose::DBx::Object::Renderer.3.gz
 %%SITE_PERL%%/Rose/DBx/Object/Renderer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DBx/Object/Renderer/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DBx/Object/Renderer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DBx/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DBx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
-@dirrmtry %%SITE_PERL%%/Rose/DBx/Object
-@dirrmtry %%SITE_PERL%%/Rose/DBx
-@dirrmtry %%SITE_PERL%%/Rose

@@ -3,4 +3,3 @@
 %%DATADIR%%/test_session.php
 %%DATADIR%%/test_sharedance.php
 sbin/sharedanced
-@dirrmtry %%DATADIR%%

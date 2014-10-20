@@ -44,4 +44,3 @@ include/mysql++/wnp_connection.h
 lib/libmysqlpp.so
 lib/libmysqlpp.so.3
 lib/libmysqlpp.so.%%VER%%
-@dirrm include/mysql++

@@ -87,7 +87,3 @@ man/man1/mysqlimport.1.gz
 man/man1/mysqlshow.1.gz
 man/man1/mysqlslap.1.gz
 share/aclocal/mysql.m4
-@dirrm include/mysql/mysql/psi
-@dirrm include/mysql/mysql
-@dirrm include/mysql
-@dirrmtry lib/mysql

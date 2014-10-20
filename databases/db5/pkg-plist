@@ -123,6 +123,3 @@ lib/libdb_stl-%%BDBMAJ%%.so
 lib/libdb_stl-%%BDBMAJ%%.so.0
 lib/libdb_stl-%%BDBVER%%.so
 lib/libdb_stl-%%BDBVER%%.so.0
-@dirrm lib/db5
-@dirrm include/db5
-@dirrm bin/db5

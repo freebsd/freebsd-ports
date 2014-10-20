@@ -31,4 +31,3 @@ lib/libgigabase_r.a
 lib/libgigabase_r.so
 lib/libgigabase_r.so.2
 lib/libgigabase_r.so.2.0.0
-@dirrm include/gigabase

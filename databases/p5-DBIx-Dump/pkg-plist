@@ -2,6 +2,3 @@
 %%SITE_PERL%%/DBIx/Dump.pm
 %%SITE_PERL%%/DBIx/sample.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Dump/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Dump
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx

@@ -88,8 +88,3 @@
 %%PERL5_MAN3%%/Search::Xapian::ValueIterator.3.gz
 %%PERL5_MAN3%%/Search::Xapian::Weight.3.gz
 %%PERL5_MAN3%%/Search::Xapian::WritableDatabase.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSet
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Search

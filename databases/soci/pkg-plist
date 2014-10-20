@@ -79,10 +79,3 @@ lib/libsoci_empty.so.3.2.2
 %%FIREBIRD%%lib/libsoci_firebird.so
 %%FIREBIRD%%lib/libsoci_firebird.so.3.2
 %%FIREBIRD%%lib/libsoci_firebird.so.3.2.2
-@dirrm include/soci/sqlite3
-@dirrm include/soci/firebird
-@dirrm include/soci/postgresql
-@dirrm include/soci/odbc
-@dirrm include/soci/mysql
-@dirrm include/soci/empty
-@dirrm include/soci

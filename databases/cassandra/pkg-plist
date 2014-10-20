@@ -153,15 +153,3 @@ bin/cassandra-shuffle
 %%DATADIR%%/tools/bin/cassandra-stress
 %%DATADIR%%/tools/bin/sstablemetadata
 %%DATADIR%%/tools/bin/token-generator
-@dirrm %%DATADIR%%/tools/lib
-@dirrm %%DATADIR%%/tools/bin
-@dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%/lib/licenses
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/interface
-%%CQL%%@dirrmtry %%DATADIR%%/pylib/cqlshlib/test
-%%CQL%%@dirrmtry %%DATADIR%%/pylib/cqlshlib
-%%CQL%%@dirrmtry %%DATADIR%%/pylib
-@dirrmtry %%DATADIR%%/conf
-@dirrm %%DATADIR%%/bin
-@dirrmtry %%DATADIR%%

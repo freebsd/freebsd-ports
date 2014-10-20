@@ -2,6 +2,3 @@
 %%SITE_PERL%%/DBD/LDAP.pm
 %%SITE_PERL%%/JLdap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/LDAP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/LDAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-@dirrmtry %%SITE_PERL%%/DBD

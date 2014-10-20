@@ -21,8 +21,3 @@ bin/ora_explain
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/proc.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabinfo.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Oracle
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD

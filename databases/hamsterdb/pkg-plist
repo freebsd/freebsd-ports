@@ -11,11 +11,9 @@ include/ham/hamsterdb.hpp
 bin/ham_info
 bin/ham_dump
 bin/ham_recover
-@dirrm include/ham
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

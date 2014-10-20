@@ -39,14 +39,3 @@
 %%PERL5_MAN3%%/DBM::Deep::Iterator::File::Index.3.gz
 %%PERL5_MAN3%%/DBM::Deep::Null.3.gz
 %%PERL5_MAN3%%/DBM::Deep::Engine::File.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM
-@dirrm %%SITE_PERL%%/DBM/Deep/Engine
-@dirrm %%SITE_PERL%%/DBM/Deep/Iterator/File
-@dirrm %%SITE_PERL%%/DBM/Deep/Iterator
-@dirrm %%SITE_PERL%%/DBM/Deep/Sector/DBI
-@dirrm %%SITE_PERL%%/DBM/Deep/Sector/File
-@dirrm %%SITE_PERL%%/DBM/Deep/Sector
-@dirrm %%SITE_PERL%%/DBM/Deep/Storage
-@dirrm %%SITE_PERL%%/DBM/Deep
-@dirrmtry %%SITE_PERL%%/DBM

@@ -19,5 +19,3 @@ bin/t2-write-js.pl
 %%SITE_PERL%%/T2/Schema.pm
 %%SITE_PERL%%/T2/Storage.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/T2/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/T2
-@dirrmtry %%SITE_PERL%%/T2

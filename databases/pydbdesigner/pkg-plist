@@ -82,10 +82,3 @@ bin/pydbdesigner
 %%PYTHON_SITELIBDIR%%/pydbdesigner/Workers/SaveModel.pyc
 %%PYTHON_SITELIBDIR%%/pydbdesigner/Workers/SaveSqlModel.pyc
 %%PYTHON_SITELIBDIR%%/pydbdesigner/Workers/SaveMySQLModel.pyc
-@dirrm %%PYTHON_SITELIBDIR%%/pydbdesigner/test
-@dirrm %%PYTHON_SITELIBDIR%%/pydbdesigner/Workers
-@dirrm %%PYTHON_SITELIBDIR%%/pydbdesigner/Utils
-@dirrm %%PYTHON_SITELIBDIR%%/pydbdesigner/Objects
-@dirrm %%PYTHON_SITELIBDIR%%/pydbdesigner/Gui/Dialogs
-@dirrm %%PYTHON_SITELIBDIR%%/pydbdesigner/Gui
-@dirrm %%PYTHON_SITELIBDIR%%/pydbdesigner

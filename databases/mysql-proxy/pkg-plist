@@ -116,10 +116,3 @@ libexec/pkgconfig/mysql-proxy.pc
 %%EXAMPLESDIR%%/tutorial-tokenize.lua
 %%EXAMPLESDIR%%/tutorial-union.lua
 %%EXAMPLESDIR%%/tutorial-warnings.lua
-@dirrmtry lib/mysql-proxy/plugins
-@dirrmtry lib/mysql-proxy/lua/proxy
-@dirrmtry lib/mysql-proxy/lua
-@dirrmtry lib/mysql-proxy
-@dirrmtry libexec/pkgconfig
-@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DATADIR%%

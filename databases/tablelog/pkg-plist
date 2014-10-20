@@ -2,7 +2,3 @@ lib/postgresql/table_log.so
 share/postgresql/contrib/table_log_init.sql
 %%PORTDOCS%%%%DOCSDIR%%/README.table_log
 %%PORTDOCS%%%%DOCSDIR%%/table_log.sql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/postgresql
-@dirrmtry share/postgresql/contrib
-@dirrmtry share/postgresql
