@@ -13,4 +13,3 @@ bin/lastfm-desktop
 %%DATADIR%%/libunicorn.so.1
 %%DATADIR%%/libunicorn.so.1.0
 %%DATADIR%%/libunicorn.so.1.0.0
-@dirrm %%DATADIR%%

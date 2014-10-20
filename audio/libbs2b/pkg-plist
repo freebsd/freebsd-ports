@@ -9,4 +9,3 @@ include/bs2b/bs2bclass.h
 include/bs2b/bs2btypes.h
 include/bs2b/bs2bversion.h
 libdata/pkgconfig/libbs2b.pc
-@dirrm include/bs2b

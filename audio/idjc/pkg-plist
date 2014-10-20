@@ -121,13 +121,3 @@ man/man1/idjc-rm.1.gz
 man/man1/idjc-run.1.gz
 man/man1/idjc.1.gz
 share/pixmaps/idjc.png
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry lib/python2.7/site-packages
-@dirrmtry lib/python2.7
-@dirrmtry lib/idjc/site-packages/idjc/prelims
-@dirrmtry lib/idjc/site-packages/idjc
-@dirrmtry lib/idjc/site-packages
-@dirrmtry lib/idjc

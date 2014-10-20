@@ -20,7 +20,3 @@ share/locale/pt_BR/LC_MESSAGES/lingot.mo
 share/locale/sv/LC_MESSAGES/lingot.mo
 share/locale/zh_CN/LC_MESSAGES/lingot.mo
 share/pixmaps/lingot/lingot-icon.svg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-@dirrm share/pixmaps/lingot

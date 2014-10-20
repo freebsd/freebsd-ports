@@ -18,7 +18,3 @@
 %%PERL5_MAN3%%/Audio::MPD::Common::Status.3.gz
 %%PERL5_MAN3%%/Audio::MPD::Common::Time.3.gz
 %%PERL5_MAN3%%/Audio::MPD::Common::Types.3.gz
-@dirrmtry %%SITE_PERL%%/Audio/MPD/Common/Item
-@dirrmtry %%SITE_PERL%%/Audio/MPD/Common
-@dirrmtry %%SITE_PERL%%/Audio/MPD
-@dirrmtry %%SITE_PERL%%/Audio

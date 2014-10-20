@@ -91,8 +91,3 @@ share/applications/gqradio.desktop
 %%DATADIR%%/skins/skyblue/slider-vert-24.png
 share/locale/fr/LC_MESSAGES/gqradio.mo
 share/pixmaps/gqradio.png
-@dirrm %%DATADIR%%/skins/skyblue
-@dirrm %%DATADIR%%/skins/default
-@dirrm %%DATADIR%%/skins
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -155,12 +155,3 @@ share/locale/ru/LC_MESSAGES/libardour2.mo
 share/locale/ru/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/sv/LC_MESSAGES/gtk2_ardour.mo
 share/locale/sv/LC_MESSAGES/libardour2.mo
-@dirrm share/ardour2/templates
-@dirrm share/ardour2/pixmaps
-@dirrm share/ardour2/icons
-@dirrm share/ardour2
-@dirrm lib/ardour2/vamp
-@dirrm lib/ardour2/surfaces
-@dirrm lib/ardour2/engines
-@dirrm lib/ardour2
-@dirrmtry etc/ardour2

@@ -5,4 +5,3 @@ lib/libalut.a
 lib/libalut.la
 lib/libalut.so
 lib/libalut.so.1
-@dirrmtry include/AL

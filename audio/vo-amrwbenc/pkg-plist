@@ -4,4 +4,3 @@ lib/libvo-amrwbenc.so
 lib/libvo-amrwbenc.so.0
 lib/libvo-amrwbenc.so.0.0.4
 libdata/pkgconfig/vo-amrwbenc.pc
-@dirrm include/vo-amrwbenc

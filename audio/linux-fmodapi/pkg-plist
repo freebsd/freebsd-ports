@@ -8,5 +8,3 @@ include/fmodex/fmod_errors.h
 include/fmodex/fmod_memoryinfo.h
 include/fmodex/fmod_output.h
 include/fmodex/fmodlinux.h
-@dirrm include/fmodex
-@dirrm include

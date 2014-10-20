@@ -68,13 +68,3 @@ lib/libMousCore.so
 %%WMA%%lib/mous/libWmaDecoder.so
 %%DATADIR%%/pinyin/unipy.map
 %%QT4%%share/mous/qt/mous-qt_zh_CN.qm
-@dirrm lib/mous
-@dirrm share/mous/pinyin
-%%QT4%%@dirrm share/mous/qt
-@dirrm share/mous/
-%%SDK%%@dirrm include/mous/charset
-%%SDK%%@dirrm include/mous/core
-%%SDK%%@dirrm include/mous/plugin
-%%SDK%%@dirrm include/mous/scx
-%%SDK%%@dirrm include/mous/util
-%%SDK%%@dirrm include/mous

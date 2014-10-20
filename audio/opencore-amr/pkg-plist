@@ -12,5 +12,3 @@ lib/libopencore-amrwb.so.0
 lib/libopencore-amrwb.so.0.0.3
 libdata/pkgconfig/opencore-amrnb.pc
 libdata/pkgconfig/opencore-amrwb.pc
-@dirrmtry include/opencore-amrwb
-@dirrmtry include/opencore-amrnb

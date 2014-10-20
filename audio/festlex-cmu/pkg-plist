@@ -9,7 +9,3 @@ share/festival/lib/dicts/cmu/cmudict-0.4.diff
 share/festival/lib/dicts/cmu/cmu2ft
 share/festival/lib/dicts/cmu/cmudict_extensions.scm
 share/festival/lib/dicts/cmu/COPYING
-@dirrmtry share/festival/lib/dicts/cmu
-@dirrmtry share/festival/lib/dicts
-@dirrmtry share/festival/lib
-@dirrmtry share/festival

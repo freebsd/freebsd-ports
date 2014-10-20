@@ -29,6 +29,3 @@ share/pixmaps/soundtracker.xpm
 %%DATADIR%%/sharp.xpm
 %%DATADIR%%/soundtracker_splash.png
 %%DATADIR%%/stop.xpm
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw

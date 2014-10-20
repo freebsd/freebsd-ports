@@ -1175,37 +1175,3 @@ share/kde4/servicetypes/amarok_plugin.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/amarokcollectionscanner_qt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/amarokpkg.mo
 share/mime/packages/amzdownloader.xml
-@dirrmtry share/mime/packages
-@dirrm share/doc/HTML/uk/amarok
-@dirrm share/doc/HTML/sv/amarok
-@dirrm share/doc/HTML/ru/amarok
-@dirrm share/doc/HTML/pt_BR/amarok
-@dirrm share/doc/HTML/pt/amarok
-@dirrm share/doc/HTML/nl/amarok
-@dirrm share/doc/HTML/et/amarok
-@dirrm share/doc/HTML/es/amarok
-@dirrm share/doc/HTML/en/amarok
-@dirrm share/doc/HTML/de/amarok
-@dirrm share/apps/amarok/scripts/script_console
-@dirrm share/apps/amarok/scripts/radio_station_service
-@dirrm share/apps/amarok/scripts/lyrics_lyricwiki
-@dirrm share/apps/amarok/scripts/librivox_service
-@dirrm share/apps/amarok/scripts/free_music_charts_service
-@dirrm share/apps/amarok/scripts
-@dirrm share/apps/amarok/images
-@dirrm share/apps/amarok/icons/hicolor/48x48/actions
-@dirrm share/apps/amarok/icons/hicolor/48x48
-@dirrm share/apps/amarok/icons/hicolor/32x32/actions
-@dirrm share/apps/amarok/icons/hicolor/32x32
-@dirrm share/apps/amarok/icons/hicolor/24x24/actions
-@dirrm share/apps/amarok/icons/hicolor/24x24
-@dirrm share/apps/amarok/icons/hicolor/22x22/actions
-@dirrm share/apps/amarok/icons/hicolor/22x22
-@dirrm share/apps/amarok/icons/hicolor/16x16/actions
-@dirrm share/apps/amarok/icons/hicolor/16x16
-@dirrm share/apps/amarok/icons/hicolor/128x128/status
-@dirrm share/apps/amarok/icons/hicolor/128x128
-@dirrm share/apps/amarok/icons/hicolor
-@dirrm share/apps/amarok/icons
-@dirrm share/apps/amarok/data
-@dirrm share/apps/amarok

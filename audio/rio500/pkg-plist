@@ -44,5 +44,3 @@ share/rio500/fonts/sin.fon
 share/rio500/fonts/star.fon
 share/rio500/fonts/trek.fon
 share/rio500/fonts/triangle.fon
-@dirrm share/rio500/fonts
-@dirrm share/rio500

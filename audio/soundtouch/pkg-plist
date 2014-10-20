@@ -11,5 +11,3 @@ lib/libSoundTouch.so.0.0.0
 libdata/pkgconfig/soundtouch.pc
 share/aclocal/soundtouch.m4
 %%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/soundtouch

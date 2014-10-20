@@ -25,5 +25,3 @@ share/locale/zh_HK/LC_MESSAGES/osdlyrics.mo
 share/locale/zh_TW/LC_MESSAGES/osdlyrics.mo
 %%DATADIR%%/dialogs.glade
 %%DATADIR%%/icons/osdlyrics.png
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

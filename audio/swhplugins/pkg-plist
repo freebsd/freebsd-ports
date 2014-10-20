@@ -97,6 +97,3 @@ share/ladspa/rdf/swh-aux.rdf
 share/ladspa/rdf/swh-plugins.rdf
 share/ladspa/rdf/swh-scales.rdf
 %%NLS%%share/locale/en_GB/LC_MESSAGES/swh-plugins.mo
-@dirrmtry share/ladspa/rdf
-@dirrmtry share/ladspa
-@dirrmtry lib/ladspa

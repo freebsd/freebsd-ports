@@ -19,8 +19,3 @@ share/locale/cs/LC_MESSAGES/kstreamripper.mo
 share/locale/de/LC_MESSAGES/kstreamripper.mo
 share/locale/fr/LC_MESSAGES/kstreamripper.mo
 share/locale/pt_BR/LC_MESSAGES/kstreamripper.mo
-@dirrmtry share/icons/hicolor/8x8/apps
-@dirrmtry share/icons/hicolor/8x8
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrm share/apps/kstreamripper

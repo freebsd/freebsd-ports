@@ -63,15 +63,6 @@ share/mt-daapd/admin-root/xiph-license.html
 share/mt-daapd/admin-root/xiph-license.txt
 share/mt-daapd/admin-root/zlib-license.html
 share/mt-daapd/admin-root/zlib-license.txt
-@dirrmtry share/mt-daapd/admin-root/lib-js/script.aculo.us
-@dirrmtry share/mt-daapd/admin-root/lib-js
-@dirrmtry share/mt-daapd/admin-root
-@dirrmtry share/mt-daapd
-@dirrm(%%DAAPD_USER%%,%%DAAPD_GROUP%%,) %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/mt-daapd/plugins
-@dirrmtry lib/mt-daapd
+@dir(%%DAAPD_USER%%,%%DAAPD_GROUP%%,) %%DATADIR%%
 @rmtry var/db/firefly/songs3.db
-@dirrmtry(%%DAAPD_USER%%,%%DAAPD_GROUP%%,) var/db/firefly
-@dirrmtry var/db
-@dirrmtry var
+@dir(%%DAAPD_USER%%,%%DAAPD_GROUP%%,) var/db/firefly

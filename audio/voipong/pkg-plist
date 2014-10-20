@@ -22,6 +22,3 @@ etc/voipong/voipong.conf
 %%PORTDOCS%%%%DOCSDIR%%/users-manual/usage.html
 lib/voipong/modvocoder_pcma.so
 lib/voipong/modvocoder_pcmu.so
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-manual
-@dirrm etc/voipong
-@dirrm lib/voipong

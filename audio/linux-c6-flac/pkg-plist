@@ -12,4 +12,3 @@ usr/lib/libFLAC.so.8.2.0
 %%PORTDOCS%%usr/%%DOCSDIR%%-1.2.1/README
 usr/share/man/man1/flac.1.gz
 usr/share/man/man1/metaflac.1.gz
-%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%-1.2.1

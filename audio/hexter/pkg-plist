@@ -5,6 +5,3 @@ lib/dssi/hexter/hexter_gtk
 %%DATADIR%%/fb01_roms_converted_34.dx7
 %%DATADIR%%/fb01_roms_converted_5.dx7
 %%DATADIR%%/tx7_roms.dx7
-@dirrm %%DATADIR%%
-@dirrm lib/dssi/hexter
-@dirrmtry lib/dssi

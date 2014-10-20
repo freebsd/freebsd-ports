@@ -6,6 +6,3 @@ bin/cddb.pl
 %%SITE_PERL%%/auto/CDDB_get/autosplit.ix
 %%SITE_PERL%%/cddb.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDDB_get/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDDB_get
-@dirrm %%SITE_PERL%%/auto/CDDB_get
-@dirrm %%SITE_PERL%%/auto/CDDB_cache

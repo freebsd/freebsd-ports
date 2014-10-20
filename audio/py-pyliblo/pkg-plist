@@ -5,4 +5,3 @@ man/man1/send_osc.1.gz
 %%PYTHON_SITELIBDIR%%/liblo.so
 %%PORTDOCS%%%%DOCSDIR%%/API.html
 %%PORTDOCS%%%%DOCSDIR%%/examples.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

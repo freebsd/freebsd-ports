@@ -8,4 +8,3 @@ lib/libfdk-aac.so
 lib/libfdk-aac.so.0
 lib/libfdk-aac.so.0.0.4
 libdata/pkgconfig/fdk-aac.pc
-@dirrm include/fdk-aac

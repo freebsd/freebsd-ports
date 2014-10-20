@@ -23,5 +23,3 @@ man/man1/yaps.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/programming/yaps.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/yapshelp.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/programming
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -8,4 +8,3 @@ man/man1/autozen.1.gz
 %%DATADIR%%/moderate-meditation.seq
 %%DATADIR%%/relax.seq
 %%DATADIR%%/wake-up.seq
-@dirrm %%DATADIR%%

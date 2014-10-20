@@ -5,4 +5,3 @@ man/man1/nap.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/napster.txt
 %%PORTDOCS%%%%DOCSDIR%%/userguide.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -134,11 +134,3 @@ share/sphinx2/model/lm/turtle/turtle.sent
 share/sphinx2/model/lm/turtle/turtle.sent.arpabo
 share/sphinx2/model/lm/turtle/turtle.token
 share/sphinx2/model/lm/turtle/turtle.vocab
-@dirrm share/sphinx2/model/lm/turtle
-@dirrm share/sphinx2/model/lm
-@dirrm share/sphinx2/model/hmm/6k
-@dirrm share/sphinx2/model/hmm
-@dirrm share/sphinx2/model
-@dirrm share/sphinx2/doc
-@dirrm share/sphinx2
-@dirrm include/sphinx2

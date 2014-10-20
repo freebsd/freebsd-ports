@@ -279,18 +279,3 @@ lib/libespeak.so.1.1.47
 %%DATADIR%%/espeak-data/voices/test/ur
 %%DATADIR%%/espeak-data/zh_dict
 %%DATADIR%%/espeak-data/zhy_dict
-@dirrm %%DATADIR%%/espeak-data/voices/test
-@dirrm %%DATADIR%%/espeak-data/voices/other
-@dirrm %%DATADIR%%/espeak-data/voices/mb
-@dirrm %%DATADIR%%/espeak-data/voices/europe
-@dirrm %%DATADIR%%/espeak-data/voices/asia
-@dirrm %%DATADIR%%/espeak-data/voices/!v
-@dirrm %%DATADIR%%/espeak-data/voices
-@dirrm %%DATADIR%%/espeak-data/soundicons
-@dirrm %%DATADIR%%/espeak-data/mbrola_ph
-@dirrm %%DATADIR%%/espeak-data/mbrola
-@dirrm %%DATADIR%%/espeak-data
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/espeak

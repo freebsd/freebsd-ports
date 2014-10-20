@@ -34,11 +34,3 @@ share/gnome/autostart/libcanberra-login-sound.desktop
 share/gnome/shutdown/libcanberra-logout-sound.sh
 share/vala/vapi/libcanberra-gtk.vapi
 share/vala/vapi/libcanberra.vapi
-@dirrmtry share/gnome/shutdown
-@dirrmtry share/gdm/autostart/LoginWindow
-@dirrmtry share/gdm/autostart
-@dirrmtry share/gdm
-@dirrm %%DOCSDIR%%
-@dirrm lib/gnome-settings-daemon-3.0/gtk-modules
-@dirrm lib/gnome-settings-daemon-3.0
-@dirrm lib/libcanberra-%%VERSION%%

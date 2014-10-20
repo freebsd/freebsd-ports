@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/CDDB.3.gz
 %%SITE_PERL%%/CDDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDDB/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDDB

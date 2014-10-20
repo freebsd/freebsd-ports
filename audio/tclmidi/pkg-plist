@@ -33,4 +33,3 @@ man/mann/miditrck.n.gz
 man/mann/midivers.n.gz
 man/mann/midiwait.n.gz
 man/mann/midiwrit.n.gz
-@dirrm lib/tclmidi

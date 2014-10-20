@@ -6,4 +6,3 @@ lib/libalure.so
 lib/libalure.so.1
 lib/libalure.so.1.2.0
 libdata/pkgconfig/alure.pc
-@dirrmtry include/AL

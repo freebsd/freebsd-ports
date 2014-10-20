@@ -3,6 +3,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/luadoc.css
 %%PORTDOCS%%%%DOCSDIR%%/modules/mpd.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

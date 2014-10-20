@@ -202,13 +202,3 @@ libdata/pkgconfig/sphinx3.pc
 %%DATADIR%%/model/lm/an4/pittsburgh.littleendian.raw
 %%DATADIR%%/model/lm/an4/pittsburgh.littleendian.slf
 %%DATADIR%%/model/lm/an4/pittsburgh.nbest
-@dirrm %%DATADIR%%/model/lm/an4
-@dirrm %%DATADIR%%/model/lm
-@dirrm %%DATADIR%%/model/hmm/hub4_cd_continuous_8gau_1s_c_d_dd
-@dirrm %%DATADIR%%/model/hmm/RM1_cd_semi
-@dirrm %%DATADIR%%/model/hmm
-@dirrm %%DATADIR%%/model/ep
-@dirrm %%DATADIR%%/model
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%
-@dirrm include/sphinx3

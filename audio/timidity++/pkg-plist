@@ -13,7 +13,3 @@ man/man5/timidity.cfg.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.m2m
 %%PORTDOCS%%%%DOCSDIR%%/README.mts
 %%PORTDOCS%%%%DOCSDIR%%/README.sf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm share/doc/ja/timidity++
-@dirrmtry %%TIMID_LIBDIR%%
-@dirrmtry share/timidity

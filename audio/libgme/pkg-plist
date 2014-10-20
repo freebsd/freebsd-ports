@@ -16,4 +16,3 @@ include/gme/gme_types.h
 lib/libgme.so
 lib/libgme.so.0
 lib/libgme.so.0.5.3
-@dirrm include/gme

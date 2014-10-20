@@ -9,4 +9,3 @@ lib/libopus.so.0
 lib/libopus.so.0.5.0
 libdata/pkgconfig/opus.pc
 share/aclocal/opus.m4
-@dirrm include/opus

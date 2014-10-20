@@ -14,4 +14,3 @@ include/workman/wm_struct.h
 include/workman/wm_version.h
 include/workman/workman.h
 include/workman/workman_defs.h
-@dirrm include/workman

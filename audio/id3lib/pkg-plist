@@ -20,4 +20,3 @@ lib/libid3-3.8.so.3
 lib/libid3-3.8.so.3.0.0
 lib/libid3.a
 lib/libid3.so
-@dirrm include/id3

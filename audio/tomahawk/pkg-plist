@@ -331,36 +331,3 @@ share/icons/hicolor/32x32/apps/tomahawk.png
 share/icons/hicolor/512x512/apps/tomahawk.png
 share/icons/hicolor/64x64/apps/tomahawk.png
 share/icons/hicolor/scalable/apps/tomahawk.svg
-@dirrmtry share/icons/hicolor/128x128-grayscale/apps
-@dirrmtry share/icons/hicolor/128x128-grayscale
-@dirrmtry share/icons/hicolor/512x512/apps
-@dirrmtry share/icons/hicolor/512x512
-@dirrm lib/cmake/Tomahawk
-@dirrm include/libtomahawk/widgets/searchlineedit
-@dirrm include/libtomahawk/widgets/infowidgets
-@dirrm include/libtomahawk/widgets
-@dirrm include/libtomahawk/utils
-@dirrm include/libtomahawk/thirdparty/kdsingleapplicationguard
-@dirrm include/libtomahawk/thirdparty/Qocoa
-@dirrm include/libtomahawk/thirdparty
-@dirrm include/libtomahawk/sip
-@dirrm include/libtomahawk/resolvers
-@dirrm include/libtomahawk/playlist/dynamic/widgets
-@dirrm include/libtomahawk/playlist/dynamic/echonest
-@dirrm include/libtomahawk/playlist/dynamic/database
-@dirrm include/libtomahawk/playlist/dynamic
-@dirrm include/libtomahawk/playlist
-@dirrm include/libtomahawk/network
-@dirrm include/libtomahawk/jobview
-@dirrm include/libtomahawk/infosystem
-@dirrm include/libtomahawk/infobar
-@dirrm include/libtomahawk/filemetadata/taghandlers
-@dirrm include/libtomahawk/filemetadata
-@dirrm include/libtomahawk/database
-@dirrm include/libtomahawk/context/pages
-@dirrm include/libtomahawk/context
-@dirrm include/libtomahawk/audio
-@dirrm include/libtomahawk/accounts/spotify
-@dirrm include/libtomahawk/accounts/lastfm
-@dirrm include/libtomahawk/accounts
-@dirrm include/libtomahawk

@@ -13,7 +13,3 @@ share/icons/gnormalize.png
 share/icons/large/gnormalize.png
 share/icons/mini/gnormalize.png
 share/pixmaps/gnormalize.png
-@dirrmtry %%DATADIR%%/animations
-@dirrmtry %%DATADIR%%
-@dirrmtry share/icons/large
-@dirrmtry share/icons/mini

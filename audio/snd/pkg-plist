@@ -348,10 +348,3 @@ man/man1/snd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/images/jpg/4_01-snd_pan_env.jpg
 %%PORTDOCS%%%%DOCSDIR%%/xen.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/DotEmacs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/images/jpg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/files
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pix
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

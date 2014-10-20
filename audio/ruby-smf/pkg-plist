@@ -64,14 +64,3 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/text2smf.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/velcomp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/virtual-samp.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xml2smf.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/en
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
-@dirrm %%RUBY_SITELIBDIR%%/smf/toy/macro/mml
-@dirrm %%RUBY_SITELIBDIR%%/smf/toy/macro
-@dirrm %%RUBY_SITELIBDIR%%/smf/toy
-@dirrm %%RUBY_SITELIBDIR%%/smf

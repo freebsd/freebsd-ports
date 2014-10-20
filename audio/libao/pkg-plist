@@ -48,7 +48,3 @@ share/aclocal/ao.m4
 %%PORTDOCS%%%%DOCSDIR%%/plugin-api.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-overview.html
 %%PORTDOCS%%%%DOCSDIR%%/style.css
-@dirrm include/ao
-@dirrm lib/ao/plugins-4
-@dirrm lib/ao
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

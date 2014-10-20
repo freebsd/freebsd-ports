@@ -40,5 +40,3 @@ lib/libMaaateP.a
 lib/libMaaateP.so
 lib/libMaaateP.so.1
 lib/libMaaateP.so.1.0.0
-@dirrm lib/Maaate
-@dirrm include/Maaate

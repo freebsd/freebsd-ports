@@ -35,5 +35,3 @@ man/man1/tunes2pod.pl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ipod.svg
 %%PORTDOCS%%%%DOCSDIR%%/mkspl.html
 %%PORTDOCS%%%%DOCSDIR%%/version.texi
-@dirrm lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -13,4 +13,3 @@
 %%PYTHON_SITELIBDIR%%/musicbrainzngs/util.py
 %%PYTHON_SITELIBDIR%%/musicbrainzngs/util.pyc
 %%PYTHON_SITELIBDIR%%/musicbrainzngs/util.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/musicbrainzngs

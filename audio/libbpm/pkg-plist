@@ -63,4 +63,3 @@ lib/libbpmwf-0.3.so.0.0.0
 lib/libbpmwf.a
 lib/libbpmwf.so
 libdata/pkgconfig/libbpm.pc
-@dirrm include/bpm

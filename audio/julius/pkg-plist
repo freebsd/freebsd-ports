@@ -97,5 +97,3 @@ man/man1/mkdfa.pl.1.gz
 man/man1/mkgshmm.1.gz
 man/man1/mkss.1.gz
 man/man1/nextword.1.gz
-@dirrm include/julius
-@dirrm include/sent

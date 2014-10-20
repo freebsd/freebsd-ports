@@ -41,4 +41,3 @@ lib/libraul.so
 lib/libraul.so.10
 lib/libraul.so.10.0.0
 libdata/pkgconfig/raul.pc
-@dirrm include/raul

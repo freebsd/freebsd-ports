@@ -164,8 +164,3 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOCSDIR%%/html/tag_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/version_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/version_8h_source.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
-@dirrmtry share/vala/vapi
-@dirrmtry share/vala
-@dirrm include/mpd

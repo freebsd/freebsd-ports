@@ -93,16 +93,3 @@ share/streamtuner/ui/tune-in.png
 %%PYTHON%%share/streamtuner/python/scripts/basic.ch.py
 %%PYTHON%%share/streamtuner/python/scripts/google-stations.py
 %%PYTHON%%share/streamtuner/python/scripts/punkcast.com.py
-@dirrm share/streamtuner/ui
-%%PYTHON%%@dirrm share/streamtuner/python/scripts
-%%PYTHON%%@dirrm share/streamtuner/python/icons
-%%PYTHON%%@dirrm share/streamtuner/python
-@dirrm share/streamtuner
-@dirrm share/omf/streamtuner
-@dirrm share/gnome/help/streamtuner/C/figures
-@dirrm share/gnome/help/streamtuner/C
-@dirrm share/gnome/help/streamtuner
-@dirrm share/doc/streamtuner
-@dirrm lib/streamtuner/plugins
-@dirrm lib/streamtuner
-@dirrm include/streamtuner

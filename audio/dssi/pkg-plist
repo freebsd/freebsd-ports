@@ -20,6 +20,3 @@ man/man1/dssi_list_plugins.1.gz
 man/man1/dssi_osc_send.1.gz
 man/man1/dssi_osc_update.1.gz
 man/man1/jack-dssi-host.1.gz
-%%QT4%%@dirrm lib/dssi/trivial_sampler
-%%QT4%%@dirrm lib/dssi/less_trivial_synth
-@dirrm lib/dssi

@@ -52,6 +52,3 @@ share/gspeakers/xml/vifa.xml
 share/gspeakers/xml/vifad27tg-05-06.frf
 share/gspeakers/xml/vifap21wo-20-08.frf
 share/pixmaps/gspeakers.png
-@dirrm share/gspeakers/xml
-@dirrm share/gspeakers/pixmaps
-@dirrm share/gspeakers

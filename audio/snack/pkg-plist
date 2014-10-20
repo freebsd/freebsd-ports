@@ -4,4 +4,3 @@ lib/snack%%SNACK_VER%%/libsound.so
 %%VORBIS%%lib/snack%%SNACK_VER%%/libsnackogg.so
 lib/snack%%SNACK_VER%%/pkgIndex.tcl
 lib/snack%%SNACK_VER%%/snack.tcl
-@dirrm lib/snack%%SNACK_VER%%

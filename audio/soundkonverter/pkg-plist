@@ -94,5 +94,3 @@ share/kde4/servicetypes/soundkonverter_codecplugin.desktop
 share/kde4/servicetypes/soundkonverter_filterplugin.desktop
 share/kde4/servicetypes/soundkonverter_replaygainplugin.desktop
 share/kde4/servicetypes/soundkonverter_ripperplugin.desktop
-@dirrm share/apps/soundkonverter/images
-@dirrm share/apps/soundkonverter

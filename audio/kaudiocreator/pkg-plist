@@ -76,4 +76,3 @@ share/kde4/services/ServiceMenus/audiocd_extract.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/kaudiocreator.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/kaudiocreator.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kaudiocreator.mo
-@dirrm share/apps/kaudiocreator
