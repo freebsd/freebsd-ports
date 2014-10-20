@@ -39,10 +39,8 @@ USE_RC_SUBR=	openerpd
 SUB_FILES=	openerp-server.conf pkg-message
 SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
-USE_PYTHON=			yes
-USE_PYDISTUTILS=		yes
-PYDISTUTILS_NOEGGINFO=		yes
-PYDISTUTILS_AUTOPLIST=		yes
+USES=		python
+USE_PYTHON=	distutils autoplist noegginfo
 
 USERS=		openerpd
 GROUPS=		openerpd

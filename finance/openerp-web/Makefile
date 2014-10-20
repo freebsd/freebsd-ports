@@ -22,11 +22,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>0:${PORTSDIR}/www/py-cherrypy \
 		${PYTHON_PKGNAMEPREFIX}xlwt>0:${PORTSDIR}/textproc/py-xlwt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gettext
-
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		gettext python
+USE_PYTHON=	distutils autoplist
 
 USE_RC_SUBR=	openerp-web
 
