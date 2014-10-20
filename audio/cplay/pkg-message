@@ -2,7 +2,7 @@
 * cplay is just a front-end; to use it, you need to install one or more *
 * of the following ports (audio players):                               *
 *                                                                       *
-*   audio/mad                                                           *
+*   audio/madplay                                                       *
 *   audio/mikmod                                                        *
 *   audio/mpg123                                                        *
 *   audio/mpg321                                                        *
