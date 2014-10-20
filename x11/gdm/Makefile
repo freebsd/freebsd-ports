@@ -34,7 +34,7 @@ USE_XORG=	dmx dmxproto
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
-USES=		execinfo gettext gmake pathfix pkgconfig tar:xz
+USES=		alias execinfo gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack gnomehier gconf2 librsvg2 \
 		gnomedocutils gnomeprefix gnomepanel
 GCONF_SCHEMAS=	gdm-simple-greeter.schemas

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
 DOS2UNIX_GLOB=	Makefile *.cpp *.h *.txt
-USES=		dos2unix gmake zip
+USES=		alias dos2unix gmake zip
 USE_GL=		yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
