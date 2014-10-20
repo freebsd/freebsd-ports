@@ -30,6 +30,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		iconv libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
+USE_GNOME=	glib20
 CPPFLAGS+=	-I${LOCALBASE}/include
 INSTALL_TARGET=	install-strip
 
