@@ -27,7 +27,6 @@ libexec/uconnect/uurnews
 %%SMAIL%%libexec/uconnect/zbatchsmtp
 %%CNEWS%%libexec/uconnect/viazconnect
 %%INN%%libexec/uconnect/send-zcon
-@dirrm libexec/uconnect
 etc/uconnect/alias
 etc/uconnect/approved
 etc/uconnect/autoeintrag.zconnect
@@ -36,25 +35,15 @@ etc/uconnect/myself.zconnect
 etc/uconnect/systems.sample
 etc/uconnect/xprogs
 etc/uconnect/zconnecthosts
-@exec mkdir %D/etc/uconnect/systems || true
-@dirrm etc/uconnect/systems
-@dirrm etc/uconnect
-@exec mkdir /var/spool/uconnect
-@exec mkdir /var/spool/uconnect/backin
-@exec mkdir /var/spool/uconnect/backout
-@exec mkdir /var/spool/uconnect/error
-@exec mkdir /var/spool/uconnect/locks
-@exec mkdir /var/spool/uconnect/logfiles
-@exec mkdir /var/spool/uconnect/netcall
-@exec mkdir /var/spool/uconnect/rsmtp
-@unexec rmdir /var/spool/uconnect/backin
-@unexec rmdir /var/spool/uconnect/backout
-@unexec rmdir /var/spool/uconnect/error
-@unexec rmdir /var/spool/uconnect/locks
-@unexec rmdir /var/spool/uconnect/logfiles
-@unexec rmdir /var/spool/uconnect/netcall
-@unexec rmdir /var/spool/uconnect/rsmtp
-@unexec rmdir /var/spool/uconnect
+@dir etc/uconnect/systems
+@dir /var/spool/uconnect/backin
+@dir /var/spool/uconnect/backout
+@dir /var/spool/uconnect/error
+@dir /var/spool/uconnect/locks
+@dir /var/spool/uconnect/logfiles
+@dir /var/spool/uconnect/netcall
+@dir /var/spool/uconnect/rsmtp
+@dir /var/spool/uconnect
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.configure
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -76,4 +65,3 @@ etc/uconnect/zconnecthosts
 %%PORTDOCS%%%%DOCSDIR%%/xpoint.dok
 %%PORTDOCS%%%%DOCSDIR%%/zcon31.changes
 %%PORTDOCS%%%%DOCSDIR%%/zconnect.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
