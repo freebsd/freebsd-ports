@@ -13,7 +13,7 @@ COMMENT=	Lightweight, NETWM compliant X11 desktop panel
 
 LICENSE=	MIT
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		alias gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 USE_XORG=	x11
 HAS_CONFIGURE=	yes

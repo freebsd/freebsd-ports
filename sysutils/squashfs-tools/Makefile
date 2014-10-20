@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/squashfs-tools
 
 USE_CSTD=	gnu89
 
-USES=		gmake
+USES=		alias gmake
 
 .include <bsd.port.options.mk>
 

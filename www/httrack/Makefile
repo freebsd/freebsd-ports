@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/httrack
-USES=		gmake iconv libtool shebangfix
+USES=		alias gmake iconv libtool shebangfix
 
 PORTDATA=	*
 PORTDOCS=	*
