@@ -566,35 +566,3 @@ share/themes/Moheli/xfwm4/top-right-active.xpm
 share/themes/Moheli/xfwm4/top-right-inactive.png
 share/themes/Moheli/xfwm4/top-right-inactive.xpm
 %%DATADIR%%/defaults
-@dirrm %%DATADIR%%
-@dirrm share/themes/Moheli/xfwm4
-@dirrm share/themes/Moheli
-@dirrm share/themes/Kokodi/xfwm4
-@dirrm share/themes/Kokodi
-@dirrm share/themes/Default/xfwm4
-@dirrmtry share/themes/Default
-@dirrm share/themes/Daloa/xfwm4
-@dirrm share/themes/Daloa
-@dirrmtry share/themes
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
-%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bn_IN
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-@dirrm lib/xfce4/xfwm4
-@dirrmtry lib/xfce4
