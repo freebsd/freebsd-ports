@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-CDDB-File>=0:${PORTSDIR}/audio/p5-CDDB-File
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		alias perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

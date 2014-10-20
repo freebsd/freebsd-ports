@@ -15,6 +15,7 @@ CONFLICTS=	php5-arcanist-*
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		alias
 PLIST_FILES=	bin/arc bin/marc man/man1/arc.1.gz
 PORTDOCS=	Arc521.doc
 
