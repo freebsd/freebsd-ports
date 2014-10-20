@@ -201,7 +201,7 @@ USE_PGSQL=	yes
 # Python
 #
 .if ${PORT_OPTIONS:MPython}
-USE_PYTHON=	yes
+USES+=		python
 .endif
 
 #

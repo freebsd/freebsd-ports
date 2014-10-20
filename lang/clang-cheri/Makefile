@@ -10,9 +10,8 @@ MASTER_SITE_SUBDIR=	brooks
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler with CHERI CPU support
 
-USES=		cmake:outsource compiler:c++11-lib ninja perl5 shebangfix \
-		tar:bzip2
-USE_PYTHON=	yes
+USES=		cmake:outsource compiler:c++11-lib ninja perl5 python \
+		shebangfix tar:bzip2
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 

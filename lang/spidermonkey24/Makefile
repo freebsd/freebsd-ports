@@ -18,10 +18,10 @@ LIB_DEPENDS=		libnspr4.so:${PORTSDIR}/devel/nspr
 CONFLICTS=		njs-[0-9]*
 
 GNU_CONFIGURE=		yes
-USES=			compiler:c11 gmake pathfix perl5 readline tar:bzip2
+USES=			compiler:c11 gmake pathfix perl5 python:2,build \
+			readline tar:bzip2
 USE_PERL5=		build
 USE_LDCONFIG=		yes
-USE_PYTHON_BUILD=	2
 
 WRKSRC=			${WRKDIR}/mozjs-${PORTVERSION}/js/src
 

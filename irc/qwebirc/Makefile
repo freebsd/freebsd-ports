@@ -12,10 +12,9 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	tabmow@freenode.net
 COMMENT=	Fast, easy to use, free, and open source web IRC client
 
-USES=		twisted:run,conch,mail,names,web,words
+USES=		python twisted:run,conch,mail,names,web,words
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-USE_PYTHON=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 do-install:

@@ -15,9 +15,8 @@ COMMENT=	Python extension embedding SWI-Prolog
 BUILD_DEPENDS=	swipl:${PORTSDIR}/lang/swi-pl
 RUN_DEPENDS=	swipl:${PORTSDIR}/lang/swi-pl
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 

@@ -38,7 +38,7 @@ PERL_CONFIGURE_ON=	--enable-swig
 PERL_USES=	perl5
 PYTHON_BUILD_DEPENDS=	swig>=2.0.11:${PORTSDIR}/devel/swig20
 PYTHON_CONFIGURE_ON=	--enable-python=python-${PYTHON_VER} --enable-swig
-PYTHON_USES=	perl5
+PYTHON_USES=	perl5 python:3
 OPENSSL_CONFIGURE_OFF=	--disable-openssl
 TCL_CONFIGURE_ENABLE=	tcl
 
@@ -59,7 +59,6 @@ CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		3
 USE_PERL5+=		build
 .endif
 

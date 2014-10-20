@@ -87,7 +87,7 @@ CMAKE_ARGS+=	-DWANT_GSM=no
 
 #scripting support
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 PLIST_SUB+=	PYTHON=""
 .else
 CMAKE_ARGS+=	-DWANT_PYTHON=no

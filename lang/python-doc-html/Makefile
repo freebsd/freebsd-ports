@@ -16,8 +16,7 @@ COMMENT=	Documentation for the Python programming language
 PORTSCOUT=	ignore:1
 
 NO_BUILD=	yes
-USES=			tar:bzip2
-USE_PYTHON_BUILD=	yes
+USES=		python:build tar:bzip2
 
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_VERSION}
 PLIST=		${WRKDIR}/pkg-plist.${DOCFORMAT}
