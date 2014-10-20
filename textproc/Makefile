@@ -465,6 +465,7 @@
     SUBDIR += ocaml-tyxml
     SUBDIR += odt2txt
     SUBDIR += openfts
+    SUBDIR += opengrm-ngram
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += opensp
