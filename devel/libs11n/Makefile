@@ -3,6 +3,7 @@
 
 PORTNAME=	libs11n
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/s11n/s11n/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-nobuildfiles
@@ -13,6 +14,10 @@ COMMENT=	C++ library for easily serializing a wide variety of objects
 USES=		uidfix zip
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_LDCONFIG=	yes
+
+.if defined(NO_PROFILE)
+PLIST_SUB+=	PROFILE="@comment "
+.endif
 
 post-extract:
 	@${CP} ${PATCHDIR}/Makefile.bsd ${WRKSRC}/Makefile
