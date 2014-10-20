@@ -21,11 +21,10 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/Bombz
 
-USES=		dos2unix zip
+USES=		dos2unix python zip
 DOS2UNIX_FILES=	*.txt
 USE_SDL=	sdl image mixer
 INSTALLS_ICONS=	yes
-USE_PYTHON=	yes
 
 PORTDOCS=	ChangeLog readme.txt
 OPTIONS_DEFINE=	DOCS

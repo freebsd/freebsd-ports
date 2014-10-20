@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
 NO_WRKSUBDIR=	yes
-USE_PYTHON=	yes
+USES=		python
 
 OPTIONS_DEFINE=	DOCS
 

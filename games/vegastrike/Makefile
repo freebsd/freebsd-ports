@@ -19,9 +19,8 @@ LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg
 
-USES=		dos2unix gmake openal:al pkgconfig tar:bzip2
+USES=		dos2unix gmake openal:al pkgconfig python tar:bzip2
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
 USE_SDL=	sdl
 USE_GL=		glut
 USE_XORG=	sm ice xi x11 xext xrender xinerama xi xrandr xcursor \

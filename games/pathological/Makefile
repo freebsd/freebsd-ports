@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYGAME}
 
 OPTIONS_DEFINE=	DOCS
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 DOC_FILES=	favicon.ico index.html

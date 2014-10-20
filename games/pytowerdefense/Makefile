@@ -16,8 +16,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYGAME}
 
-USES=		zip
-USE_PYTHON=	2
+USES=		python:2 zip
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	README modding.txt

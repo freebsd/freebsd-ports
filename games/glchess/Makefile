@@ -12,10 +12,9 @@ COMMENT=	3D OpenGL based chess game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
 
-USES=		desktop-file-utils shared-mime-info
+USES=		desktop-file-utils python shared-mime-info
 USE_GNOME=	gconf2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	distutils
 GCONF_SCHEMAS=	glchess.schemas
 OPTIONS_DEFINE=	DOCS NLS
 

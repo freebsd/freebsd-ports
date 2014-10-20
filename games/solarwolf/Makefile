@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
-USE_PYTHON=	2
+USES=		python:2
 
 DESKTOP_ENTRIES=	"SolarWolf" "${COMMENT}" "solarwolf" \
 	"solarwolf" "Game;ArcadeGame;" false

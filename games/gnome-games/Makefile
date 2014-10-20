@@ -20,11 +20,11 @@ RUN_DEPENDS=	seed:${PORTSDIR}/devel/seed
 
 CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]* gnome-games-3.[0-9]*
 
-USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GL=		gl
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		python tar:bzip2
 USE_GNOME=	gnomeprefix intlhack librsvg2 pygnomedesktop gnomedocutils
 USE_GSTREAMER=	vorbis ogg
 GNU_CONFIGURE=	yes
