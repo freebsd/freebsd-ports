@@ -112,17 +112,3 @@ bin/xyzviz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/water_648/water648.spce.par
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/water_648/water648.spce.psf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/water_648/water648.tip3.par
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/coulomb_309
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/alanine_dipeptide_water_184x
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/argon_400
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bpti_water_1101
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bpti_water_14281
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/butane_4
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/alanine_dipeptide_23
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/decalanine_66
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/electrons_22
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/methane_ethane_xxx
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testset
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/water_216
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/water_648
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -61,9 +61,3 @@ bin/nextool.pl
 man/man1/nex2text_tree.pl.1.gz
 man/man1/nexplot.pl.1.gz
 man/man1/nextool.pl.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/NEXUS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
-@dirrm %%SITE_PERL%%/Bio/NEXUS/Util
-@dirrm %%SITE_PERL%%/Bio/NEXUS/Tools
-@dirrm %%SITE_PERL%%/Bio/NEXUS
-@dirrmtry %%SITE_PERL%%/Bio

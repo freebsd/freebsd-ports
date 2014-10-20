@@ -14,4 +14,3 @@ bin/jalview
 %%DATADIR%%/castor-0.9.6-xml.jar
 %%DATADIR%%/axis.jar
 %%DATADIR%%/xml-apis.jar
-@dirrm %%DATADIR%%

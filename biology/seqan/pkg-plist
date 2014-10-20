@@ -2109,37 +2109,3 @@ include/seqan/version.h
 %%DATADIR%%/gapped_params/results_N73_H.dat
 %%DATADIR%%/gapped_params/results_N74_H.dat
 %%DATADIR%%/gapped_params/results_N75_H.dat
-@dirrm %%DATADIR%%/gapped_params
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%
-@dirrm include/seqan/system
-@dirrm include/seqan/store
-@dirrm include/seqan/statistics
-@dirrm include/seqan/sequence_journaled
-@dirrm include/seqan/sequence
-@dirrm include/seqan/seeds2
-@dirrm include/seqan/seeds
-@dirrm include/seqan/score
-@dirrm include/seqan/refinement
-@dirrm include/seqan/random
-@dirrm include/seqan/platform
-@dirrm include/seqan/pipe
-@dirrm include/seqan/parallel
-@dirrm include/seqan/modifier
-@dirrm include/seqan/misc
-@dirrm include/seqan/map
-@dirrm include/seqan/index
-@dirrm include/seqan/graph_types
-@dirrm include/seqan/graph_msa
-@dirrm include/seqan/graph_align
-@dirrm include/seqan/graph_algorithms
-@dirrm include/seqan/find_motif
-@dirrm include/seqan/find2
-@dirrm include/seqan/find
-@dirrm include/seqan/file
-@dirrm include/seqan/consensus
-@dirrm include/seqan/chaining
-@dirrm include/seqan/blast
-@dirrm include/seqan/basic
-@dirrm include/seqan/align
-@dirrm include/seqan

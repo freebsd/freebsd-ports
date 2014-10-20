@@ -6,4 +6,3 @@ lib/libmopac7.so.0
 lib/libmopac7.so.0.0.0
 libdata/pkgconfig/libmopac7.pc
 libexec/mopac7
-@dirrm include/mopac7

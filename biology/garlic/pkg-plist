@@ -1,7 +1,6 @@
 bin/garlic
 share/garlic/.garlicrc
 share/garlic/residues.pdb
-@dirrm share/garlic
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ascorbic_acid1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/ascorbic_acid2.jpg
@@ -258,30 +257,6 @@ share/garlic/residues.pdb
 %%PORTDOCS%%%%DOCSDIR%%/whatis/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/whatis/garlic.gif
 %%PORTDOCS%%%%DOCSDIR%%/whatis/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/whatis
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/techinfo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/support
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/refcard
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/precompiled_packages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/options
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mouse/.xvpics
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mouse
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/license
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/install
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/gallery
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/features
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/download
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/data
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cookbook
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/controls
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/config
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/competition
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/commands
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/changes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/bugfixes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/adrenaline.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/22porins.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/backup-hyd.script
@@ -325,4 +300,3 @@ share/garlic/residues.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/trp.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/two-positive.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/water.pdb
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

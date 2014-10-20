@@ -811,12 +811,3 @@ man/man1/vecscreen.1.gz
 %%DATADIR%%/sgmlbb.ent
 %%DATADIR%%/taxlist.txt
 %%DATADIR%%/validrules.prt
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/seq_install
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fa2htgs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/blast
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/ncbi
-@dirrm include/ncbi/connect
-@dirrm include/ncbi

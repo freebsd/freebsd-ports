@@ -118,6 +118,3 @@ man/man1/tfasty35.1.gz
 %%DATADIR%%/pam250.mat
 %%DATADIR%%/rna.mat
 %%DATADIR%%/vtml160.mat
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
