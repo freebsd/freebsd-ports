@@ -16,7 +16,7 @@ LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool
+USES=		alias gettext gmake libtool
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-Dbswap_32=bswap32 -Dbswap_16=bswap16 \
 		-I${LOCALBASE}/include

@@ -26,7 +26,7 @@ CONFLICTS=	${PORTNAME}-[0-9]*
 USERS=		fido
 GROUPS=		fido
 
-USES+=		gmake
+USES+=		alias gmake
 
 pre-build:
 	${LN} -sf ${HUSKY_ROOTDIR}/huskybse/huskymak.cfg ${HUSKY_ROOTDIR}

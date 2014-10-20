@@ -20,8 +20,8 @@ COMMENT?=	Powerful network analyzer/capture tool
 DATADIR_NAME=	wireshark
 
 USE_PERL5=	build
-USES=		iconv gettext pkgconfig gmake perl5 tar:bzip2 libtool \
-    		python:build
+USES=		alias gettext gmake iconv libtool perl5 pkgconfig \
+		python:build tar:bzip2
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--program-transform-name="" \
