@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		flex>=2.5.35_1:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	liburcu.so:${PORTSDIR}/sysutils/liburcu
 
-USES=		libtool
+USES=		alias libtool
 
 USE_LDCONFIG=	yes
 

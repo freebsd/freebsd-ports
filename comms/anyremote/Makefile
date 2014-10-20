@@ -11,7 +11,7 @@ COMMENT=	Remote control service over Bluetooth, infrared, or TCP/IP networking
 
 LICENSE=	GPLv2
 
-USES=		iconv pkgconfig
+USES=		alias iconv pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

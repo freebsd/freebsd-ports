@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
-USES=		gmake tar:bzip2
+USES=		alias gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gprof --disable-Werror
 WANT_GNOME=	yes
