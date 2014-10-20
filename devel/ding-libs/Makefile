@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ding-libs
-DISTVERSION=	0.1.3
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 
@@ -13,10 +12,11 @@ COMMENT=	Collection of useful libraries for developers
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 USES=		gettext libtool pkgconfig
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV+=	DOXYGEN=""
 
