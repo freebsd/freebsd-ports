@@ -161,6 +161,3 @@ lib/libmicro/bin/time
 lib/libmicro/bin/times
 lib/libmicro/bin/write
 lib/libmicro/bin/writev
-@dirrm lib/libmicro/bin-%%ARCH%%
-@dirrm lib/libmicro/bin
-@dirrm lib/libmicro

@@ -75,6 +75,3 @@ man/man1/polygraph-server.1.gz
 man/man1/polygraph-udp2tcpd.1.gz
 man/man1/polygraph-webaxe4-ips.1.gz
 man/man7/polygraph.7.gz
-@dirrm %%DATADIR%%/workloads/include
-@dirrm %%DATADIR%%/workloads
-@dirrm %%DATADIR%%

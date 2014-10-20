@@ -6,7 +6,6 @@ etc/hpl/HPL.dat
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/TUNING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 man/man3/HPL_abort.3.gz
 man/man3/HPL_all_reduce.3.gz
 man/man3/HPL_barrier.3.gz
@@ -131,4 +130,3 @@ man/man3/HPL_timer_cputime.3.gz
 man/man3/HPL_timer_walltime.3.gz
 man/man3/HPL_warn.3.gz
 man/man3/HPL_xjumpm.3.gz
-@dirrm etc/hpl

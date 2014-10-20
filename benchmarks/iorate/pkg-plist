@@ -21,4 +21,3 @@ man/man1/iorate.1.gz
 %%DATADIR%%/tests-fx.ior
 %%DATADIR%%/tests-var.ior
 %%DATADIR%%/tests.ior
-@dirrm %%DATADIR%%

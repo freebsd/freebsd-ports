@@ -44,5 +44,3 @@ bin/go_filebench
 %%DATADIR%%/workloads/videoserver.f
 %%DATADIR%%/workloads/webproxy.f
 %%DATADIR%%/workloads/webserver.f
-@dirrm %%DATADIR%%/workloads
-@dirrm %%DATADIR%%

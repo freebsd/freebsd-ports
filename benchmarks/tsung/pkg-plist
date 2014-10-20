@@ -340,29 +340,3 @@ man/man1/tsung.1.gz
 %%DATADIR%%/tsung_plotter/pgsql.plots.en.conf
 %%DATADIR%%/tsung_plotter/pgsql.plots.fr.conf
 %%DATADIR%%/tsung_plotter/stats.conf
-@dirrm %%DATADIR%%/tsung_plotter
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/tsung/tsung_plotter
-@dirrm lib/tsung/bin
-@dirrm lib/tsung
-@dirrm lib/erlang/lib/tsung_recorder-%%PORTVERSION%%/src
-@dirrm lib/erlang/lib/tsung_recorder-%%PORTVERSION%%/priv
-@dirrm lib/erlang/lib/tsung_recorder-%%PORTVERSION%%/include
-@dirrm lib/erlang/lib/tsung_recorder-%%PORTVERSION%%/ebin
-@dirrm lib/erlang/lib/tsung_recorder-%%PORTVERSION%%
-@dirrm lib/erlang/lib/tsung_controller-%%PORTVERSION%%/src
-@dirrm lib/erlang/lib/tsung_controller-%%PORTVERSION%%/priv
-@dirrm lib/erlang/lib/tsung_controller-%%PORTVERSION%%/include
-@dirrm lib/erlang/lib/tsung_controller-%%PORTVERSION%%/ebin
-@dirrm lib/erlang/lib/tsung_controller-%%PORTVERSION%%
-@dirrm lib/erlang/lib/tsung-%%PORTVERSION%%/src
-@dirrm lib/erlang/lib/tsung-%%PORTVERSION%%/priv
-@dirrm lib/erlang/lib/tsung-%%PORTVERSION%%/include
-@dirrm lib/erlang/lib/tsung-%%PORTVERSION%%/ebin
-@dirrm lib/erlang/lib/tsung-%%PORTVERSION%%
-@dirrmtry lib/erlang/lib
-@dirrmtry lib/erlang
