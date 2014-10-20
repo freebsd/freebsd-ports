@@ -17,6 +17,37 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.10.2
+#
+
+Upstream Changes:
+- Support for Postgresql 9.1 added
+- Support for Postgresql <8.1 dropped (EOL)
+- Support for MySQL 5.5 added
+- Support for MySQL <5.0 dropped
+- Updated license from GPLv2 to AGPLv3
+- Bug in RSET handling during LHLO phase
+- Location of configuration files in dspam home (/var/dspam) can be changed
+  through dspam.conf
+- Various fixes to the webui templates
+- Various small bugs and memleaks
+- Missing documentation added to tarball
+- Many bugfixes
+
+Port Changes:
+- Merge mail/dspam-devel and mail/dspam (PR #193693)
+- Update to OptionsNG
+- Fix pidfile location discrepancy introduced in 3.10.2
+- Port cleanup by various submitters, thanks! [1][2][3][4][5]
+
+[1] Patch from <yds@CoolRat.org> (PR #180695, #191610)
+[2] Patch from Radim Kolar <hsn@sendmail.cz> (PR #167289)
+[3] Patch from Olli Hauer <ohauer@FreeBSD.org> (PR #148485)
+[4] Patch from <mtomasek4@gmail.com> (PR #191610)
+[5] Patch from Rene Ladan <rene@FreeBSD.org> (PR #191797)
+
+
+###########################################################################
 # dspam-3.9.0
 #
 
