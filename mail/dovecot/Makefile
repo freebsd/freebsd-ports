@@ -3,7 +3,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	1.2.17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/ \
 		http://www.rename-it.nl/dovecot/${PORTVERSION:R}/
@@ -30,6 +30,7 @@ CONFLICTS=	dovecot2-2.[0-9].*
 
 USES=		iconv libtool:keepla
 USE_RC_SUBR=	dovecot
+USE_OPENSSL=	yes
 
 PORTSCOUT=	limit:^1\.2
 
