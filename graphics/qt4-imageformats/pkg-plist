@@ -12,5 +12,3 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqtga.so.debug
 %%QT_PLUGINDIR%%/imageformats/libqtiff.so
 %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqtiff.so.debug
-@dirrm %%QT_PLUGINDIR%%/imageformats
-@dirrmtry %%QT_PLUGINDIR%%

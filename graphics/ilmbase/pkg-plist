@@ -72,4 +72,3 @@ lib/libImath-%%MAJORVER%%.so
 lib/libImath-%%MAJORVER%%.so.%%VER%%
 lib/libImath.so
 libdata/pkgconfig/IlmBase.pc
-@dirrmtry include/OpenEXR

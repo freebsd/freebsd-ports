@@ -1,20 +1,9 @@
 bin/tgif
 lib/X11/tgif/hicolor/22x22/apps/tgificon.png
-@dirrm lib/X11/tgif/hicolor/22x22/apps
-@dirrm lib/X11/tgif/hicolor/22x22
 lib/X11/tgif/hicolor/32x32/apps/tgificon.png
-@dirrm lib/X11/tgif/hicolor/32x32/apps
-@dirrm lib/X11/tgif/hicolor/32x32
 lib/X11/tgif/hicolor/48x48/apps/tgificon.png
-@dirrm lib/X11/tgif/hicolor/48x48/apps
-@dirrm lib/X11/tgif/hicolor/48x48
 lib/X11/tgif/hicolor/64x64/apps/tgificon.png
-@dirrm lib/X11/tgif/hicolor/64x64/apps
-@dirrm lib/X11/tgif/hicolor/64x64
 lib/X11/tgif/hicolor/128x128/apps/tgificon.png
-@dirrm lib/X11/tgif/hicolor/128x128/apps
-@dirrm lib/X11/tgif/hicolor/128x128
-@dirrm lib/X11/tgif/hicolor
 lib/X11/tgif/tgif.Xdefaults
 lib/X11/tgif/tgificon.eps
 lib/X11/tgif/tgificon.obj
@@ -36,7 +25,6 @@ lib/X11/tgif/eq4jpg.sym
 lib/X11/tgif/keys.obj
 lib/X11/tgif/Copyright
 lib/X11/tgif/LICENSE.QPL
-@dirrm lib/X11/tgif
 man/man1/tgif.1.gz
 %%EXAMPLESDIR%%/demo/an-sr-flip-flop.obj
 %%EXAMPLESDIR%%/demo/example.tex
@@ -45,7 +33,6 @@ man/man1/tgif.1.gz
 %%EXAMPLESDIR%%/demo/launch-demo.obj
 %%EXAMPLESDIR%%/demo/keys.obj
 %%EXAMPLESDIR%%/demo/slide-demo.obj
-@dirrm %%EXAMPLESDIR%%/demo
 %%EXAMPLESDIR%%/spice/BZ.mod
 %%EXAMPLESDIR%%/spice/DN.mod
 %%EXAMPLESDIR%%/spice/DN.sym
@@ -71,8 +58,6 @@ man/man1/tgif.1.gz
 %%EXAMPLESDIR%%/spice/resistor.h.2tc.sym
 %%EXAMPLESDIR%%/spice/resistor.h.sym
 %%EXAMPLESDIR%%/spice/resistor.sym
-@dirrm %%EXAMPLESDIR%%/spice
 %%NLS%%share/locale/fr/LC_MESSAGES/tgif.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/tgif.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tgif.mo
-@dirrm %%EXAMPLESDIR%%

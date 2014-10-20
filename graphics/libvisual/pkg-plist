@@ -34,4 +34,3 @@ lib/libvisual.so
 lib/libvisual.so.0
 lib/libvisual.so.0.0.0
 libdata/pkgconfig/libvisual.pc
-@dirrm include/libvisual

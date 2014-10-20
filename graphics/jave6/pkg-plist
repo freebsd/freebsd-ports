@@ -301,10 +301,3 @@ bin/jave6
 %%DATADIR%%/javeplayer.jar
 %%DATADIR%%/pattern/pattern.jcf
 %%DATADIR%%/readme.txt
-@dirrm %%DATADIR%%/clipart
-@dirrm %%DATADIR%%/config/greyscaletables
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/pattern
-@dirrm %%DATADIR%%

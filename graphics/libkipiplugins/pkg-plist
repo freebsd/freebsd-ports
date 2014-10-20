@@ -3,4 +3,3 @@ lib/libkipiplugins.so.3
 lib/libkipiplugins.so.3.0.0
 share/applications/kde4/kipiplugins.desktop
 share/apps/kipi/tips
-@dirrm share/apps/kipi

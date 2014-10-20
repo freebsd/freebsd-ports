@@ -115,10 +115,3 @@ man/man1/povray37.1.gz
 %%DATADIR%%/scripts/render_scene.sh
 %%DATADIR%%/scripts/rerunpov.sh
 %%DATADIR%%/scripts/runpov.sh
-@dirrm %%ETCDIR%%
-@dirrm etc/povray
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/ini
-@dirrm %%DATADIR%%/include
-%%X11%%@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

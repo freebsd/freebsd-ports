@@ -52,4 +52,3 @@ share/locale/fr/LC_MESSAGES/exiv2.mo
 share/locale/pl/LC_MESSAGES/exiv2.mo
 share/locale/ru/LC_MESSAGES/exiv2.mo
 share/locale/sk/LC_MESSAGES/exiv2.mo
-@dirrm include/exiv2

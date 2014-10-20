@@ -656,5 +656,3 @@ man/man1/netpbm.1.gz
 %%DATADIR%%/pcxstd.ppm
 %%DATADIR%%/rgb.txt
 %%PORTDOCS%%%%DOCSDIR%%/USERDOC
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

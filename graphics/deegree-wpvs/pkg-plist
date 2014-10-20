@@ -2180,43 +2180,4 @@
 %%TOMCATDIR%%/webapps/deegree-wpvs/wpvs_basic.html
 %%TOMCATDIR%%/webapps/deegree-wpvs/wpvs_main.html
 %%TOMCATDIR%%/webapps/deegree-wpvs/wpvs_navi.jsp
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/images
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/css
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/client/jsp
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/client/js
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/client/images
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/client/css
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/client
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/lib
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/vector/buildings
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/vector
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dop/8.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dop/4.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dop/32.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dop/2.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dop/16.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dop/1.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dop
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dem/80.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dem/40.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dem/20.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dem/10.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster/dem
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah/raster
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data/utah
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/data
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/conf/wpvs/images/sky
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/conf/wpvs/images/copyright
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/conf/wpvs/images
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/conf/wpvs/featuretypes
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/conf/wpvs
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/conf/wms
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/conf
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/classes
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/META-INF
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
-@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs
-@group wheel
-@owner root
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%TOMCATDIR%%/webapps/deegree-wpvs

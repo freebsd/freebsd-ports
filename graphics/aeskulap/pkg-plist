@@ -39,7 +39,3 @@ share/locale/en/LC_MESSAGES/aeskulap.mo
 share/locale/es/LC_MESSAGES/aeskulap.mo
 share/locale/hu/LC_MESSAGES/aeskulap.mo
 share/locale/pt/LC_MESSAGES/aeskulap.mo
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-@dirrm lib/aeskulap

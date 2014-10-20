@@ -14,6 +14,3 @@ man/man1/gource.1.gz
 %%DATADIR%%/shaders/text.frag
 %%DATADIR%%/shaders/text.vert
 %%DATADIR%%/user.png
-@dirrm %%DATADIR%%/shaders
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%

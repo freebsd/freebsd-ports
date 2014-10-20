@@ -14,4 +14,3 @@ man/man3/libopenjpeg.3.gz
 %%DATADIR%%/OpenJPEGTargets.cmake
 libdata/pkgconfig/libopenjpeg.pc
 libdata/pkgconfig/libopenjpeg1.pc
-@dirrm %%DATADIR%%

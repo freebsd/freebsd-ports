@@ -42,7 +42,3 @@ include/dynamechs/dmu/glLoadModels.h
 lib/libdm.so
 lib/libdmGL.so
 lib/libdmu.so
-@dirrm include/dynamechs/dmu
-@dirrm include/dynamechs/dmGL
-@dirrm include/dynamechs/dm
-@dirrm include/dynamechs

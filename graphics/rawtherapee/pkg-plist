@@ -834,29 +834,3 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/themes/gray_textured/trough2.png
 %%DATADIR%%/themes/slim
 %%DATADIR%%/themes/system.iconset
-@dirrm %%DATADIR%%/themes/gray_textured
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/profiles/BW
-@dirrm %%DATADIR%%/profiles/Faded
-@dirrm %%DATADIR%%/profiles/Generic
-@dirrm %%DATADIR%%/profiles/Pop
-@dirrm %%DATADIR%%/profiles/Portrait
-@dirrm %%DATADIR%%/profiles/Skintones
-@dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%/languages
-@dirrm %%DATADIR%%/images/Light/places
-@dirrm %%DATADIR%%/images/Light/devices
-@dirrm %%DATADIR%%/images/Light/actions
-@dirrm %%DATADIR%%/images/Light
-@dirrm %%DATADIR%%/images/Dark/places
-@dirrm %%DATADIR%%/images/Dark/devices
-@dirrm %%DATADIR%%/images/Dark/actions
-@dirrm %%DATADIR%%/images/Dark
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/iccprofiles/output
-@dirrm %%DATADIR%%/iccprofiles/input
-@dirrm %%DATADIR%%/iccprofiles
-@dirrm %%DATADIR%%/dcpprofiles
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%

@@ -7,5 +7,3 @@ lib/%%LIBNAME%%.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/realtime
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sciplot
-@dirrm include/SciPlot
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

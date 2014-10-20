@@ -110,9 +110,3 @@ man/man1/laps.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/notes/VERSION
 %%PORTDOCS%%%%DOCSDIR%%/sample_src.tar.gz
 %%DATADIR%%/epix-lib.sh
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/notes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/config
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/epix
-@dirrm include/epix

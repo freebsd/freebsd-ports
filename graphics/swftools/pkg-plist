@@ -36,5 +36,3 @@ man/man1/wav2swf.1.gz
 %%DATADIR%%/swfs/swft_loader.swf
 %%DATADIR%%/swfs/rfxview.swf
 %%DATADIR%%/swfs/tessel_loader.swf
-@dirrm %%DATADIR%%/swfs
-@dirrm %%DATADIR%%

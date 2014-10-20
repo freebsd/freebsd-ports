@@ -9,5 +9,3 @@ man/man1/mscgen.1.gz
 %%DOCSDIR%%/examples/msg_types.msc
 %%DOCSDIR%%/examples/simple_prog_desc.msc
 %%DOCSDIR%%/mscgen.lang
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%

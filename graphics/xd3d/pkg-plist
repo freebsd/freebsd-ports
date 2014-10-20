@@ -70,6 +70,3 @@ bin/xgraphic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tower_007.mode
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tower_008.mode
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tower.facext
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Xgraphic
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

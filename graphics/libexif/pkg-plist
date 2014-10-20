@@ -43,4 +43,3 @@ libdata/pkgconfig/libexif.pc
 %%NLS%%share/locale/uk/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libexif-12.mo
-@dirrm include/libexif

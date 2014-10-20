@@ -21,4 +21,3 @@ lib/libgltt.a
 lib/libgltt.so
 lib/libgltt.so.0
 lib/libgltt.so.0.0.0
-@dirrm include/gltt

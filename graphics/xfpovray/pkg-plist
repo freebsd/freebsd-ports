@@ -14,5 +14,3 @@ lib/X11/xfpovray/help/Options
 lib/X11/xfpovray/help/Table_Of_Contents
 lib/X11/xfpovray/help/Templates
 lib/X11/xfpovray/help/help_topics
-@dirrm lib/X11/xfpovray/help
-@dirrm lib/X11/xfpovray

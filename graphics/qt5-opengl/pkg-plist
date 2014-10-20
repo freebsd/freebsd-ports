@@ -47,13 +47,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_opengl.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_opengl_private.pri
 libdata/pkgconfig/Qt5OpenGL.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5OpenGL
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private
-@dirrm %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL
-@dirrm %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtOpenGL
-@dirrmtry %%QT_INCDIR%%

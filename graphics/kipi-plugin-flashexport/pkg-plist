@@ -12,5 +12,3 @@ share/icons/hicolor/32x32/apps/kipi-flash.png
 share/icons/hicolor/48x48/apps/kipi-flash.png
 share/icons/hicolor/scalable/apps/kipi-flash.svgz
 share/kde4/services/kipiplugin_flashexport.desktop
-@dirrm share/apps/kipiplugin_flashexport/simpleviewer_html
-@dirrm share/apps/kipiplugin_flashexport

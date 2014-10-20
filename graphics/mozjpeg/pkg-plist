@@ -22,5 +22,3 @@ man/man1/djpeg.1.gz
 man/man1/jpegtran.1.gz
 man/man1/rdjpgcom.1.gz
 man/man1/wrjpgcom.1.gz
-@dirrm lib/%%PORTNAME%%
-@dirrm include/%%PORTNAME%%

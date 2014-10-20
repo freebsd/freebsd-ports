@@ -35,17 +35,3 @@
 %%QT_PLUGINDIR%%/imageformats/libqsvg.so
 %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqsvg.so.debug
 libdata/pkgconfig/Qt5Svg.pc
-@dirrmtry %%QT_PLUGINDIR%%/imageformats
-@dirrm %%QT_PLUGINDIR%%/iconengines
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Svg
-@dirrmtry %%QT_LIBDIR%%/cmake/Qt5Gui
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private
-@dirrm %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg
-@dirrm %%QT_INCDIR%%/QtSvg/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtSvg
-@dirrmtry %%QT_INCDIR%%

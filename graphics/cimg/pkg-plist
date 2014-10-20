@@ -493,9 +493,3 @@ include/CImg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_skeleton.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_tiff_stream.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wavelet_atrous.cpp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/img/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/img
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

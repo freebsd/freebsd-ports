@@ -30,5 +30,3 @@ lib/picviz/libpicvizrendebug.so
 lib/picviz/libpicvizrenheatline.so
 libdata/pkgconfig/picviz.pc
 man/man1/pcv.1.gz
-@dirrm lib/picviz
-@dirrm include/picviz

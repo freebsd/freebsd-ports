@@ -133,17 +133,3 @@ lib/ocaml/stublibs/dlltogl.so
 %%EXAMPLESDIR%%/togl/tennis.ml
 %%EXAMPLESDIR%%/togl/tesselate.ml
 %%EXAMPLESDIR%%/togl/texturesurf.ml
-@dirrm %%EXAMPLESDIR%%/togl
-@dirrm %%EXAMPLESDIR%%/lablglut/nehe
-@dirrm %%EXAMPLESDIR%%/lablglut/lablGL
-@dirrm %%EXAMPLESDIR%%/lablglut/etc/in-progress
-@dirrm %%EXAMPLESDIR%%/lablglut/etc
-@dirrm %%EXAMPLESDIR%%/lablglut/caml-images
-@dirrm %%EXAMPLESDIR%%/lablglut
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry share/examples/ocaml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrmtry share/doc/ocaml
-@dirrmtry lib/ocaml/stublibs
-@dirrm lib/ocaml/lablGL
-@dirrmtry lib/ocaml

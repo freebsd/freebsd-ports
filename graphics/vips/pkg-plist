@@ -192,12 +192,3 @@ share/locale/de/LC_MESSAGES/vips%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/vips%%VERSION%%.mo
 lib/girepository-1.0/Vips-8.0.typelib
 share/gir-1.0/Vips-8.0.gir
-%%PORTDOCS%%@dirrm share/gtk-doc/html/libvips
-%%PORTDOCS%%@dirrmtry share/gtk-doc/html
-%%PORTDOCS%%@dirrmtry share/gtk-doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/figs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vipsCC
-@dirrm include/vips

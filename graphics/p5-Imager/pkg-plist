@@ -147,26 +147,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2/FT2.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1/T1.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/DynTest
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/TIFF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/SGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/PNG
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/JPEG
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/ICO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/GIF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager

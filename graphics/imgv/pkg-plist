@@ -150,6 +150,3 @@ bin/imgv
 %%DATADIR%%/data/no-matches.jpg
 %%DATADIR%%/data/playlists
 %%DATADIR%%/data/unchecked-box.jpg
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/imgv

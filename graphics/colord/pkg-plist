@@ -165,35 +165,5 @@ share/locale/zh_CN/LC_MESSAGES/colord.mo
 share/locale/zh_HK/LC_MESSAGES/colord.mo
 share/locale/zh_TW/LC_MESSAGES/colord.mo
 share/polkit-1/actions/org.freedesktop.color.policy
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/it_IT/LC_MESSAGES
-@dirrmtry share/locale/it_IT
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/bg_BG/LC_MESSAGES
-@dirrmtry share/locale/bg_BG
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/colord/ti1
-@dirrm share/colord/icons
-@dirrm share/colord
-@dirrm share/color/icc/colord
-@dirrm share/color/icc
-@dirrm share/color
-@dirrm lib/colord-sensors
-@dirrm include/colord-1/colord-session
-@dirrm include/colord-1/colord
-@dirrm include/colord-1
-@dirrmtry /var/db/colord/icc
-@dirrmtry /var/db/colord
+@dir /var/db/colord/icc
+@dir /var/db/colord

@@ -127,6 +127,3 @@ man/man3/gleTwistExtrusion.3gle.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/twist3.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/twist3.orig.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/vrml.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

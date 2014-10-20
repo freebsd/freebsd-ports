@@ -148,23 +148,3 @@ share/gtk-doc/html/Entangle/object-tree.html
 share/gtk-doc/html/Entangle/right.png
 share/gtk-doc/html/Entangle/style.css
 share/gtk-doc/html/Entangle/up.png
-%%NLS%%@dirrmtry share/locale/ks/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ks
-%%NLS%%@dirrmtry share/locale/bo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bo
-@dirrm share/gtk-doc/html/Entangle
-@dirrm share/entangle/icons/hicolor/64x64/actions
-@dirrm share/entangle/icons/hicolor/64x64
-@dirrm share/entangle/icons/hicolor/48x48/actions
-@dirrm share/entangle/icons/hicolor/48x48
-@dirrm share/entangle/icons/hicolor/32x32/actions
-@dirrm share/entangle/icons/hicolor/32x32
-@dirrm share/entangle/icons/hicolor/22x22/actions
-@dirrm share/entangle/icons/hicolor/22x22
-@dirrm share/entangle/icons/hicolor/16x16/actions
-@dirrm share/entangle/icons/hicolor/16x16
-@dirrm share/entangle/icons/hicolor/128x128/actions
-@dirrm share/entangle/icons/hicolor/128x128
-@dirrm share/entangle/icons/hicolor
-@dirrm share/entangle/icons
-@dirrm share/entangle

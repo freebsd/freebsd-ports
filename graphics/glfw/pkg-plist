@@ -6,6 +6,3 @@ lib/cmake/glfw/glfwTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/glfw/glfwTargets.cmake
 lib/libglfw3.a
 libdata/pkgconfig/glfw3.pc
-@dirrm lib/cmake/glfw
-@dirrmtry lib/cmake
-@dirrm include/GLFW

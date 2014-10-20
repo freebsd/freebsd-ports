@@ -11,5 +11,3 @@ lib/libOSMesa.so
 lib/libOSMesa.so.9
 lib/libOSMesa.so.9.0.0
 libdata/pkgconfig/osmesa.pc
-@dirrm include/Mesa/GL
-@dirrm include/Mesa

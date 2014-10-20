@@ -63,5 +63,3 @@ man/man1/listgeo.1.gz
 %%DATADIR%%/epsg_csv/version_history.csv
 %%DATADIR%%/epsg_csv/vertcs.csv
 %%DATADIR%%/epsg_csv/vertcs.override.csv
-@dirrm %%DATADIR%%/epsg_csv
-@dirrm %%DATADIR%%

@@ -64,7 +64,3 @@ lib/libwmflite.so
 %%DATADIR%%/fonts/n022024l.pfb
 %%DATADIR%%/fonts/s050000l.afm
 %%DATADIR%%/fonts/s050000l.pfb
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
-@dirrm include/libwmf/gd
-@dirrm include/libwmf

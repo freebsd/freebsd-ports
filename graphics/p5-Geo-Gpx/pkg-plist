@@ -1,7 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Gpx/.packlist
 %%SITE_PERL%%/Geo/Gpx.pm
 %%PERL5_MAN3%%/Geo::Gpx.3.gz
-@dirrmtry %%SITE_PERL%%/Geo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Gpx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/mach

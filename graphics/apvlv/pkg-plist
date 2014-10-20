@@ -7,5 +7,3 @@ man/man1/apvlv.1.gz
 %%DOCSDIR%%/icons/dir.png
 %%DOCSDIR%%/icons/pdf.png
 %%DOCSDIR%%/icons/reg.png
-@dirrm %%DOCSDIR%%/icons
-@dirrm %%DOCSDIR%%

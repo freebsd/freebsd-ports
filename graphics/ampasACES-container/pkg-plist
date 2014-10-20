@@ -16,6 +16,3 @@ lib/cmake/AcesContainer/AcesContainerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/AcesContainer/AcesContainerTargets.cmake
 lib/libAcesContainer.so
 libdata/pkgconfig/AcesContainer.pc
-@dirrmtry lib/cmake/AcesContainer
-@dirrmtry lib/cmake
-@dirrm include/aces

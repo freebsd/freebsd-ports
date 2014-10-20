@@ -53,5 +53,3 @@ bin/AutoQ3D
 %%DATADIR%%/qref.htm
 %%DATADIR%%/qref_sp.htm
 share/pixmaps/AutoQ3D.png
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

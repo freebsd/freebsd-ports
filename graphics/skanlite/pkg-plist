@@ -99,10 +99,3 @@ share/locale/uk/LC_MESSAGES/skanlite.mo
 share/locale/wa/LC_MESSAGES/skanlite.mo
 share/locale/zh_CN/LC_MESSAGES/skanlite.mo
 share/locale/zh_TW/LC_MESSAGES/skanlite.mo
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrm share/doc/HTML/uk/skanlite
-@dirrm share/doc/HTML/nl/skanlite
-@dirrm share/doc/HTML/fr/skanlite
-@dirrm share/doc/HTML/en/skanlite
-@dirrm share/doc/HTML/de/skanlite

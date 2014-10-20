@@ -68,7 +68,3 @@ share/tek2plot/scale.tek
 share/tek2plot/skymap.tek
 share/tek2plot/skymap2.tek
 share/tek2plot/usmap.tek
-@dirrm share/tek2plot
-@dirrm share/pic2plot
-@dirrm share/ode
-@dirrm share/libplot

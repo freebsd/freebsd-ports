@@ -81,6 +81,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/text.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/textfield.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/video.cgi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SWF

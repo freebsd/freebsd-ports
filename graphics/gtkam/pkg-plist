@@ -66,13 +66,3 @@ share/locale/zh_CN/LC_MESSAGES/gtkam.mo
 %%GNOME%%share/omf/gtkam/gtkam-ru.omf
 share/pixmaps/gtkam.png
 share/pixmaps/gtkam-camera.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-%%GNOME%%@dirrm share/omf/gtkam
-%%GNOME%%@dirrm share/gnome/help/gtkam/ru/figures
-%%GNOME%%@dirrm share/gnome/help/gtkam/ru
-%%GNOME%%@dirrm share/gnome/help/gtkam/C/figures
-%%GNOME%%@dirrm share/gnome/help/gtkam/C
-%%GNOME%%@dirrm share/gnome/help/gtkam
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

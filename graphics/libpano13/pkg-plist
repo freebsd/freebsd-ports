@@ -36,4 +36,3 @@ man/man1/PTtiff2psd.1.gz
 man/man1/PTtiffdump.1.gz
 man/man1/PTuncrop.1.gz
 man/man1/panoinfo.1.gz
-@dirrm include/pano13

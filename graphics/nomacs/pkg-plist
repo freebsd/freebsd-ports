@@ -17,5 +17,3 @@ share/applications/nomacs.desktop
 %%DATADIR%%/translations/nomacs_sr.qm
 %%DATADIR%%/translations/nomacs_zh.qm
 share/pixmaps/nomacs.png
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%

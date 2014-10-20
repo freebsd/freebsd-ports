@@ -104,17 +104,3 @@ share/locale/xh/LC_MESSAGES/kcoloredit.mo
 share/locale/zh_CN/LC_MESSAGES/kcoloredit.mo
 share/locale/zh_HK/LC_MESSAGES/kcoloredit.mo
 share/locale/zh_TW/LC_MESSAGES/kcoloredit.mo
-@dirrm share/doc/HTML/uk/kcoloredit
-@dirrm share/doc/HTML/sv/kcoloredit
-@dirrm share/doc/HTML/ru/kcoloredit
-@dirrm share/doc/HTML/pt_BR/kcoloredit
-@dirrm share/doc/HTML/pt/kcoloredit
-@dirrm share/doc/HTML/it/kcoloredit
-@dirrm share/doc/HTML/fr/kcoloredit
-@dirrm share/doc/HTML/et/kcoloredit
-@dirrm share/doc/HTML/es/kcoloredit
-@dirrm share/doc/HTML/en/kcoloredit
-@dirrm share/doc/HTML/de/kcoloredit
-@dirrm share/doc/HTML/da/kcoloredit
-@dirrm share/apps/kcoloredit/pics
-@dirrm share/apps/kcoloredit

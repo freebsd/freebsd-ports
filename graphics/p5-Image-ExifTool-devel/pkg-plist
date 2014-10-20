@@ -354,10 +354,3 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/iWork.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool/.packlist
 man/man1/exiftool.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-@dirrm %%SITE_PERL%%/Image/ExifTool/Lang
-@dirrm %%SITE_PERL%%/Image/ExifTool/Charset
-@dirrm %%SITE_PERL%%/Image/ExifTool
-@dirrmtry %%SITE_PERL%%/Image
-@dirrmtry %%SITE_PERL%%/File

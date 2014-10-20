@@ -9,6 +9,3 @@ lib/morph/loaders/libmorph-a3ds.a
 lib/morph/loaders/libmorph-a3ds.so
 lib/morph/loaders/libmorph-lwob.a
 lib/morph/loaders/libmorph-lwob.so
-@dirrm lib/morph/loaders
-@dirrm lib/morph
-@dirrm include/morph

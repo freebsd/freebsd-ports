@@ -282,4 +282,3 @@ lib/libstd32.so.1.1.0
 %%DATADIR%%/rec9ukr.dat
 %%DATADIR%%/vital.dat
 %%DATADIR%%/viteng.dat
-@dirrmtry %%DATADIR%%

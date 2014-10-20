@@ -20,4 +20,3 @@ lib/yafray/libhdri.so
 lib/yafray/libshaderback.so
 lib/yafray/libsss.so
 lib/yafray/libsunsky.so
-@dirrm lib/yafray

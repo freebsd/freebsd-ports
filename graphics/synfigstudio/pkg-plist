@@ -287,7 +287,3 @@ share/pixmaps/synfigstudio/type_string_icon.png
 share/pixmaps/synfigstudio/type_time_icon.png
 share/pixmaps/synfigstudio/type_vector_icon.png
 share/pixmaps/synfigstudio/valuenode_icon.png
-@dirrm share/pixmaps/synfigstudio
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/synfigapp-0.0/synfigapp
-@dirrm include/synfigapp-0.0

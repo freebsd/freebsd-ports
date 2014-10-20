@@ -6,8 +6,3 @@ share/gdal/grass/etc/datumtransform.table
 share/gdal/grass/driver/db/dbf
 share/gdal/grass/driver/db/ogr
 share/gdal/grass/driver/db/pg
-@dirrmtry lib/gdalplugins
-@dirrm share/gdal/grass/etc
-@dirrm share/gdal/grass/driver/db
-@dirrm share/gdal/grass/driver
-@dirrm share/gdal/grass

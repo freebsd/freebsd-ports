@@ -10,8 +10,3 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqtiff.so.debug
 %%QT_PLUGINDIR%%/imageformats/libqwbmp.so
 %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqwbmp.so.debug
-@dirrmtry %%QT_PLUGINDIR%%/imageformats
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrmtry %%QT_LIBDIR%%/cmake/Qt5Gui
-@dirrmtry %%QT_LIBDIR%%/cmake

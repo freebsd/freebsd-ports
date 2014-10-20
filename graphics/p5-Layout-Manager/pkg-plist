@@ -13,7 +13,3 @@
 %%SITE_PERL%%/Layout/Manager/Grid.pm
 %%SITE_PERL%%/Layout/Manager/Single.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Layout/Manager/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Layout/Manager
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Layout
-@dirrmtry %%SITE_PERL%%/Layout/Manager
-@dirrmtry %%SITE_PERL%%/Layout

@@ -75,15 +75,3 @@
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedBar.pm
 %%SITE_PERL%%/Chart/Clicker/Tutorial.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Clicker/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Clicker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart
-@dirrmtry %%SITE_PERL%%/Chart/Clicker/Renderer
-@dirrmtry %%SITE_PERL%%/Chart/Clicker/Drawing
-@dirrmtry %%SITE_PERL%%/Chart/Clicker/Decoration/Legend
-@dirrmtry %%SITE_PERL%%/Chart/Clicker/Decoration
-@dirrmtry %%SITE_PERL%%/Chart/Clicker/Data/Series
-@dirrmtry %%SITE_PERL%%/Chart/Clicker/Data
-@dirrmtry %%SITE_PERL%%/Chart/Clicker/Axis/DivisionType
-@dirrmtry %%SITE_PERL%%/Chart/Clicker/Axis
-@dirrmtry %%SITE_PERL%%/Chart/Clicker
-@dirrmtry %%SITE_PERL%%/Chart

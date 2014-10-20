@@ -314,12 +314,3 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/zoomvac.gif
 %%PORTDOCS%%%%DOCSDIR%%/refcard.pdf
 %%PORTDOCS%%%%DOCSDIR%%/refcard.tcl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pics
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/ayam/tcl/BWidget-1.2.1/lang
-@dirrm lib/ayam/tcl/BWidget-1.2.1/images
-@dirrm lib/ayam/tcl/BWidget-1.2.1
-@dirrm lib/ayam/tcl
-@dirrm lib/ayam
-@dirrm %%DATADIR%%

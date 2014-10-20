@@ -249,21 +249,3 @@ share/locale/km/LC_MESSAGES/gnash.mo
 share/locale/ne/LC_MESSAGES/gnash.mo
 share/locale/ru/LC_MESSAGES/gnash.mo
 share/locale/zh_TW/LC_MESSAGES/gnash.mo
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-@dirrm lib/gnash
-%%CYGNAL%%@dirrmtry lib/cygnal/plugins
-%%CYGNAL%%@dirrmtry lib/cygnal
-@dirrm include/gnash/vm
-@dirrm include/gnash/parser
-@dirrm include/gnash/asobj
-@dirrm include/gnash
-%%KPARTS4%%@dirrm kde4/share/apps/klash
-%%NPAPI%%@dirrmtry %%WEBPLUGIN_DIR%%

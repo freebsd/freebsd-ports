@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Image::Pngslimmer.3.gz
 %%SITE_PERL%%/Image/Pngslimmer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Pngslimmer/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Pngslimmer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-@dirrmtry %%SITE_PERL%%/Image

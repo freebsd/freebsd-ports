@@ -45,8 +45,3 @@ usr/share/doc/freeglut-2.6.0/progress.html
 usr/share/doc/freeglut-2.6.0/structure.html
 usr/share/doc/libdrm-2.4.39/README
 %%ETCDIR%%rc
-@dirrmtry usr/share/doc/libdrm-2.4.39
-@dirrmtry usr/share/doc/freeglut-2.6.0
-@dirrmtry usr/lib/dri
-@dirrmtry lib/udev/rules.d
-@dirrmtry lib/udev

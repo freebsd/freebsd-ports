@@ -25,4 +25,3 @@ man/man1/jgraph.1.gz
 %%DATADIR%%/sin3.jgr
 %%DATADIR%%/sin3.pts
 %%DATADIR%%/wortman.jgr
-@dirrm %%DATADIR%%

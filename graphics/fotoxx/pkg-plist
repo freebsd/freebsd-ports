@@ -199,11 +199,3 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/locales/translate-ru.po
 %%DATADIR%%/locales/translate-sv.po
 man/man1/fotoxx.1.gz
-@dirrmtry %%DATADIR%%/locales
-@dirrmtry %%DATADIR%%/icons/edit-funcs
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%/data/images
-@dirrmtry %%DATADIR%%/data/favorites
-@dirrmtry %%DATADIR%%/data
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

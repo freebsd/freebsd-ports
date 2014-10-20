@@ -13,4 +13,3 @@
 %%PYTHON_SITELIBDIR%%/pyexiv2/utils.pyc
 %%PYTHON_SITELIBDIR%%/pyexiv2/xmp.py
 %%PYTHON_SITELIBDIR%%/pyexiv2/xmp.pyc
-@dirrm %%PYTHON_SITELIBDIR%%/pyexiv2

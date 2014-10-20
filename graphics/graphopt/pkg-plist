@@ -6,5 +6,3 @@ bin/graphopt
 %%DATADIR%%/pixmaps/quit.xpm
 %%DATADIR%%/pixmaps/save.xpm
 %%DATADIR%%/pixmaps/save_as.xpm
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

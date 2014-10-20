@@ -60,17 +60,3 @@ share/locale/zh_TW/LC_MESSAGES/agave.mo
 share/omf/agave/agave-C.omf
 share/omf/agave/agave-cs.omf
 share/omf/agave/agave-de.omf
-@dirrm share/omf/agave
-@dirrmtry share/locale/gl_ES/LC_MESSAGES
-@dirrmtry share/locale/gl_ES
-@dirrm share/gnome/help/agave/de/figures
-@dirrm share/gnome/help/agave/de
-@dirrm share/gnome/help/agave/cs/figures
-@dirrm share/gnome/help/agave/cs
-@dirrm share/gnome/help/agave/C/figures
-@dirrm share/gnome/help/agave/C
-@dirrm share/gnome/help/agave
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/palettes
-@dirrm %%DATADIR%%

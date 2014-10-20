@@ -24,8 +24,3 @@ man/man1/feh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%

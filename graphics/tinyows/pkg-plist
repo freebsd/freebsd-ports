@@ -58,24 +58,3 @@
 %%DATADIR%%/schema/wfs/1.1.0/wfs.xsd
 %%DATADIR%%/schema/xlink/1.0.0/xlinks.xsd
 %%WWWDIR%%/cgi-bin/tinyows
-@dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%
-@dirrm %%DATADIR%%/schema/xlink/1.0.0
-@dirrm %%DATADIR%%/schema/xlink
-@dirrm %%DATADIR%%/schema/wfs/1.1.0
-@dirrm %%DATADIR%%/schema/wfs/1.0.0
-@dirrm %%DATADIR%%/schema/wfs
-@dirrm %%DATADIR%%/schema/tows
-@dirrm %%DATADIR%%/schema/ows/1.0.0
-@dirrm %%DATADIR%%/schema/ows
-@dirrm %%DATADIR%%/schema/gml/3.1.1/xlink
-@dirrm %%DATADIR%%/schema/gml/3.1.1/smil
-@dirrm %%DATADIR%%/schema/gml/3.1.1/base
-@dirrm %%DATADIR%%/schema/gml/3.1.1
-@dirrm %%DATADIR%%/schema/gml/2.1.2
-@dirrm %%DATADIR%%/schema/gml
-@dirrm %%DATADIR%%/schema/filter/1.1.0
-@dirrm %%DATADIR%%/schema/filter/1.0.0
-@dirrm %%DATADIR%%/schema/filter
-@dirrm %%DATADIR%%/schema
-@dirrm %%DATADIR%%

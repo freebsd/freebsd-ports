@@ -13,13 +13,3 @@
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/ogckml22.xsd
 %%SITE_PERL%%/Geo/KML/xsd/xal-2.0/xAL.xsd
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/KML/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/KML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/xal-2.0
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.2-beta
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.1
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/atom-2005
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd
-@dirrmtry %%SITE_PERL%%/Geo/KML
-@dirrmtry %%SITE_PERL%%/Geo

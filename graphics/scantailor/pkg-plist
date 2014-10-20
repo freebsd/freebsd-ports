@@ -14,5 +14,3 @@ share/pixmaps/scantailor.png
 %%DATADIR%%/translations/scantailor_sk.qm
 %%DATADIR%%/translations/scantailor_uk.qm
 %%DATADIR%%/translations/scantailor_zh_TW.qm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%

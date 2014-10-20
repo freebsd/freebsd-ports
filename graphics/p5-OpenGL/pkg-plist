@@ -9,5 +9,3 @@
 %%PERL5_MAN3%%/Array.3.gz
 %%PERL5_MAN3%%/OpenGL.3.gz
 %%PERL5_MAN3%%/Tessellation.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenGL
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenGL

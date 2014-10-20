@@ -1,4 +1,3 @@
 bin/edje_viewer
 share/applications/edje_viewer.desktop
 %%DATADIR%%/edje_viewer.edj
-@dirrm %%DATADIR%%

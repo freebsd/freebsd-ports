@@ -5,5 +5,3 @@ share/py-sip/QtSvg/qsvggenerator.sip
 share/py-sip/QtSvg/qsvgrenderer.sip
 share/py-sip/QtSvg/qsvgwidget.sip
 %%API%%share/qt4/qsci/api/python/QtSvg.api
-@dirrm share/py-sip/QtSvg
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

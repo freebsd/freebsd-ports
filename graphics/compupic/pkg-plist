@@ -778,10 +778,3 @@ compupic/web/includes/tn_row.inc
 compupic/web/includes/tn_std.inc
 bin/compupic
 man/man1/compupic.1.gz
-@dirrm compupic/web/includes
-@dirrm compupic/web/basic
-@dirrm compupic/web
-@dirrm compupic/english/icons
-@dirrm compupic/english/images
-@dirrm compupic/english
-@dirrm compupic

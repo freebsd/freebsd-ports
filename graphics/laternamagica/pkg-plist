@@ -8,6 +8,3 @@ GNUstep/Local/Applications/LaternaMagica.app/Resources/laternamagica_48.tif
 GNUstep/Local/Applications/LaternaMagica.app/Resources/laternamagica_64.tif
 GNUstep/Local/Applications/LaternaMagica.app/stamp.make
 GNUstep/Local/Tools/LaternaMagica
-@dirrm GNUstep/Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm
-@dirrm GNUstep/Local/Applications/LaternaMagica.app/Resources
-@dirrm GNUstep/Local/Applications/LaternaMagica.app

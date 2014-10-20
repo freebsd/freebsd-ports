@@ -252,24 +252,3 @@ share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/sq/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/darktable.mo
-@dirrmtry lib/darktable/plugins/imageio/format
-@dirrmtry lib/darktable/plugins/imageio/storage
-@dirrmtry lib/darktable/plugins/imageio
-@dirrmtry lib/darktable/plugins/lighttable
-@dirrmtry lib/darktable/plugins
-@dirrmtry lib/darktable/views
-@dirrmtry lib/darktable
-@dirrmtry share/appdata
-@dirrmtry %%DATADIR%%/js
-@dirrmtry %%DATADIR%%/kernels
-@dirrmtry %%DATADIR%%/latex
-%%LUA%%@dirrmtry %%DATADIR%%/lua/darktable
-%%LUA%%@dirrmtry %%DATADIR%%/lua
-@dirrmtry %%DATADIR%%/pixmaps/plugins/darkroom
-@dirrmtry %%DATADIR%%/pixmaps/plugins
-@dirrmtry %%DATADIR%%/pixmaps
-%%RAWSPEED%%@dirrmtry %%DATADIR%%/rawspeed
-@dirrmtry %%DATADIR%%/style
-@dirrmtry %%DATADIR%%/watermarks
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

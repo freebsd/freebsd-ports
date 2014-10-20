@@ -360,12 +360,3 @@ share/locale/de/LC_MESSAGES/clutter-1.0.mo
 share/locale/it/LC_MESSAGES/clutter-1.0.mo
 share/locale/pl/LC_MESSAGES/clutter-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/clutter-1.0.mo
-@dirrm share/doc/cogl
-@dirrm share/doc/cally
-@dirrm %%DOCSDIR%%
-@dirrm include/clutter-1.0/clutter/x11
-@dirrm include/clutter-1.0/clutter/glx
-@dirrm include/clutter-1.0/clutter
-@dirrm include/clutter-1.0/cogl
-@dirrm include/clutter-1.0/cally
-@dirrm include/clutter-1.0

@@ -26,10 +26,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglx.a
 %%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/opengl/bounce.pp
 %%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/opengl/Makefile.fpc
 %%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/opengl/Makefile
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc
-%%PORTEXAMPLES%%@dirrm share/examples/fpc-%%PORTVERSION%%/opengl
-%%PORTEXAMPLES%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

@@ -12,4 +12,3 @@ man/man1/flam3-animate.1.gz
 man/man1/flam3-convert.1.gz
 man/man1/flam3-genome.1.gz
 man/man1/flam3-render.1.gz
-@dirrm share/flam3

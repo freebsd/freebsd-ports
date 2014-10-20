@@ -89,9 +89,3 @@ share/icons/hicolor/48x48/apps/luminance-hdr.png
 %%DATADIR%%/i18n/qt_ro.qm
 %%DATADIR%%/i18n/qt_tr.qm
 %%DATADIR%%/i18n/qt_zh.qm
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/help/en/images
-@dirrmtry %%DATADIR%%/help/en
-@dirrmtry %%DATADIR%%/help
-@dirrmtry %%DATADIR%%/i18n
-@dirrmtry %%DATADIR%%

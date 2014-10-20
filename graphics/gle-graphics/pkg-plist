@@ -141,9 +141,3 @@ man/man1/gle.1.gz
 %%DATADIR%%/4.2.4c/init.tex
 %%DATADIR%%/4.2.4c/inittex.ini
 %%DATADIR%%/4.2.4c/manip.hlp
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/4.2.4c/font
-@dirrmtry %%DATADIR%%/4.2.4c/gleinc/compat
-@dirrmtry %%DATADIR%%/4.2.4c/gleinc
-@dirrmtry %%DATADIR%%/4.2.4c
-@dirrmtry %%DATADIR%%

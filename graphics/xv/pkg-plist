@@ -22,4 +22,3 @@ man/man1/xvp2p.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/gif.aspect
 %%PORTDOCS%%%%DOCSDIR%%/gif87.doc
 %%PORTDOCS%%%%DOCSDIR%%/gif89.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

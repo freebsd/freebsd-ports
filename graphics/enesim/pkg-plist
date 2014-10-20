@@ -49,4 +49,3 @@ lib/libetex.so.0
 libdata/pkgconfig/emage.pc
 libdata/pkgconfig/enesim.pc
 libdata/pkgconfig/etex.pc
-@dirrm include/enesim

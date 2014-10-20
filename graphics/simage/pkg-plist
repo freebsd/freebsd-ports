@@ -6,5 +6,3 @@ lib/libsimage.so.20.7.0
 libdata/pkgconfig/simage.pc
 share/Coin/conf/simage-default.cfg
 share/aclocal/simage.m4
-@dirrm share/Coin/conf
-@dirrm share/Coin

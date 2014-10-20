@@ -60,8 +60,3 @@ share/gtk-doc/html/gst-plugins-gl-plugins-0.10/right.png
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/style.css
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/up.png
 share/locale/en/LC_MESSAGES/gst-plugins-gl-0.10.mo
-@dirrm share/gtk-doc/html/gst-plugins-gl-plugins-0.10
-@dirrm share/gtk-doc/html/gst-plugins-gl-libs-0.10
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc/
-@dirrm include/gstreamer-0.10/gst/gl

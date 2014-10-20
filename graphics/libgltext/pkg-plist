@@ -11,9 +11,3 @@ lib/libgltext.so.0
 %%EXAMPLES%%%%EXAMPLESDIR%%/simple/simple.cpp
 %%EXAMPLES%%%%EXAMPLESDIR%%/sizes/sizes
 %%EXAMPLES%%%%EXAMPLESDIR%%/sizes/sizes.cpp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/alpha
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/fps
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/sizes
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%

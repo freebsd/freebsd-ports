@@ -83,17 +83,3 @@ libdata/pkgconfig/OpenShiva.pc
 share/OpenGTL/common/libraries/stdlib.fragment
 share/OpenGTL/ctl/ctlstdlib.ctl
 share/OpenGTL/shiva/libraries/shivawrappers.shiva
-@dirrm share/OpenGTL/shiva/libraries
-@dirrmtry share/OpenGTL/shiva
-@dirrm share/OpenGTL/ctl
-@dirrm share/OpenGTL/common/libraries
-@dirrm share/OpenGTL/common
-@dirrmtry share/OpenGTL
-@dirrm lib/GTLImageIO/Extensions
-@dirrm lib/GTLImageIO
-@dirrm include/OpenShiva
-@dirrm include/OpenCTL
-@dirrm include/GTLImageIO
-@dirrm include/GTLFragment
-@dirrm include/GTLCore/Metadata
-@dirrm include/GTLCore

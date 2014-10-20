@@ -15,10 +15,3 @@ libdata/pkgconfig/ethumb.pc
 %%ETHUMBD%%libexec/ethumbd_slave
 %%DATADIR%%/data/frames/default.edj
 %%ETHUMBD%%share/dbus-1/services/org.enlightenment.Ethumb.service
-@dirrm include/ethumb-1 
-@dirrmtry lib/ethumb/plugins/data
-@dirrmtry lib/ethumb/plugins
-@dirrmtry lib/ethumb
-@dirrm %%DATADIR%%/data/frames
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

@@ -38,4 +38,3 @@ include/libAfterImage/xwrap.h
 lib/libAfterImage.so
 lib/libAfterImage.so.0
 man/man1/ascompose.1x.gz
-@dirrm include/libAfterImage

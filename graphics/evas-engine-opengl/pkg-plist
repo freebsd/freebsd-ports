@@ -1,9 +1,3 @@
 include/evas-1/Evas_Engine_GL_X11.h
 lib/evas/modules/engines/gl_x11/%%E17_ARCH%%/module.so
 libdata/pkgconfig/evas-opengl-x11.pc
-@dirrm lib/evas/modules/engines/gl_x11/%%E17_ARCH%%
-@dirrm lib/evas/modules/engines/gl_x11
-@dirrmtry lib/evas/modules/engines
-@dirrmtry lib/evas/modules
-@dirrmtry lib/evas
-@dirrmtry include/evas-1
