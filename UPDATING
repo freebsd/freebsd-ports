@@ -9,7 +9,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of x11/kde4-runtime
   AUTHOR: kde@FreeBSD.org
 
-  KDE SC ports have been updated to 4.14.1. Several files have been
+  KDE SC ports have been updated to 4.14.2. Several files have been
   moved between packages, therefore the following action is required
   before running any pkg/port upgrade utility:
 
