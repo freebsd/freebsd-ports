@@ -21,9 +21,9 @@ CONFLICTS_INSTALL=	freeze-[0-9]*
 
 USE_GNOME=	libxml2
 USE_SDL=	image
-USES=		gmake iconv pathfix pkgconfig
+USES=		alias gmake iconv pathfix pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gpl --enable-gpl3
+CONFIGURE_ARGS=	--enable-gpl --enable-gpl3 --target-os=FreeBSD
 USE_LDCONFIG=	yes
 
 .ifndef(WITH_DEBUG)
