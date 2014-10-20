@@ -15,9 +15,8 @@ COMMENT=	Python wrapper for osd, for displaying text on your X display
 LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
 RUN_DEPENDS=	${LOCALBASE}/bin/twistd:${PORTSDIR}/devel/py-twisted
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.old README README.daemon pyosd.html
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

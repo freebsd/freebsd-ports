@@ -10,8 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small tail workalike that performs output coloring
 
+USES=		python:run
 NO_BUILD=	yes
-USE_PYTHON_RUN=	yes
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGES LICENSE README
 PORTEXAMPLES=	mtailrc

@@ -19,8 +19,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
 		libsword.so:${PORTSDIR}/misc/sword
 
-USE_PYTHON_BUILD=	yes
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig python:build
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgsf

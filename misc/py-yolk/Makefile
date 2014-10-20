@@ -14,12 +14,10 @@ COMMENT=	Command-line tool for querying PyPI and Python packages installed
 
 LICENSE=	BSD3CLAUSE
 
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	EXAMPLES
-
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
 
 .include <bsd.port.options.mk>
 

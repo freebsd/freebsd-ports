@@ -10,7 +10,7 @@ DISTNAME=	rebuild_db-${DISTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	IPod shuffle database builder
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/rebuild_db
