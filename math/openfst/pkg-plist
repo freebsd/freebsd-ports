@@ -334,11 +334,3 @@ lib/libfst.so.3.0.0
 lib/libfstscript.so
 lib/libfstscript.so.1
 lib/libfstscript.so.1.0.0
-@dirrm lib/fst
-@dirrm include/fst/extensions/far
-@dirrm include/fst/extensions/linear
-@dirrm include/fst/extensions/ngram
-@dirrm include/fst/extensions/pdt
-@dirrm include/fst/extensions
-@dirrm include/fst/script
-@dirrm include/fst
