@@ -18,7 +18,7 @@ CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.*
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.1.11
+SAMBA4_VERSION=		4.1.13
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -64,8 +64,7 @@ DESTDIRNAME=		--destdir
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
-USE_PYTHON=		2
-USES=			shebangfix compiler perl5 pkgconfig iconv readline cpe
+USES=			shebangfix compiler perl5 python:2 pkgconfig iconv readline execinfo cpe
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 WAF_TOOL=		buildtools/bin/waf
@@ -76,9 +75,6 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 # XXX: Unconditional dependencies which can't be switched off(if present in the system)
 # popt
 LIB_DEPENDS+=		libpopt.so:${PORTSDIR}/devel/popt
-# XXX: We should try to switch to libunwind, libexecinfo is gcc specific(?)
-# backtrace
-LIB_DEPENDS+=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 # inotify
 LIB_DEPENDS+=		libinotify.so:${PORTSDIR}/devel/libinotify
 # SASL
@@ -115,19 +111,23 @@ SAMBA4_BUNDLED_LIBS+=	!ldb
 SAMBA4_BUNDLED_LIBS+=	com_err
 ##############################################################################
 # Options
-OPTIONS_DEFINE=		ACL_SUPPORT ADS AIO_SUPPORT CUPS DEBUG \
+OPTIONS_DEFINE=		ACL_SUPPORT AD_DC ADS AIO_SUPPORT CUPS DEBUG \
 			DNSUPDATE DOCS FAM_SUPPORT LDAP PAM_SMBPASS \
 			PTHREADPOOL QUOTAS SYSLOG UTMP
 
-OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT:=	ACL_SUPPORT AD_DC ADS AIO_SUPPORT DEBUG \
+			DNSUPDATE DOCS FAM_SUPPORT LDAP \
+			PTHREADPOOL QUOTAS SYSLOG UTMP
 
 ACL_SUPPORT_DESC=	File system ACL support
-ADS_DESC=		Active Directory support
+AD_DC_DESC=		Active Directory Domain Controller support
+ADS_DESC=		Active Directory client support
 AIO_SUPPORT_DESC=	Asyncronous IO support
 DNSUPDATE_DESC=		Dynamic DNS update(require ADS)
 EXP_MODULES_DESC=	Experimental modules
 FAM_SUPPORT_DESC=	File Alteration Monitor support
 DEBUG_DESC=		With debug information in the binaries
+LDAP_DESC=		LDAP client support
 PAM_SMBPASS_DESC=	PAM authentication via passdb backends
 PTHREADPOOL_DESC=	Pthread pool
 QUOTAS_DESC=		Disk quota support
@@ -138,17 +138,12 @@ OPTIONS_DEFINE+=	DEVELOPER MANPAGES EXP_MODULES
 DEVELOPER_DESC=		With development support
 MANPAGES_DESC=		Build manpages from DOCBOOK templates
 
-OPTIONS_SINGLE=		DNS
-OPTIONS_SINGLE_DNS=	NSUPDATE BIND98 BIND99
-
-BIND98_DESC=		Use bind98 as a DNS server frontend
-BIND99_DESC=		Use bind99 as a DNS server frontend
-NSUPDATE_DESC=		Use internal DNS with NSUPDATE utility
-OPTIONS_DEFAULT+=	NSUPDATE
-
-OPTIONS_RADIO=		ZEROCONF
+OPTIONS_RADIO=		DNS ZEROCONF
+OPTIONS_RADIO_DNS=	NSUPDATE BIND99
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
-OPTIONS_DEFAULT+=	AVAHI
+
+BIND99_DESC=		Use bind99 as AD DC DNS server frontend
+NSUPDATE_DESC=		Use samba NSUPDATE utility for AD DC
 
 .include <bsd.port.options.mk>
 
@@ -166,10 +161,7 @@ CONFIGURE_ARGS+=	\
 CFLAGS+=		-fno-omit-frame-pointer
 .endif
 
-.if ${PORT_OPTIONS:MBIND98}
-RUN_DEPENDS+=		bind98>=9.8.0.0:${PORTSDIR}/dns/bind98
-SUB_LIST+=		NSUPDATE="@comment "
-.elif ${PORT_OPTIONS:MBIND99}
+.if ${PORT_OPTIONS:MBIND99}
 RUN_DEPENDS+=		bind99>=9.9.0.0:${PORTSDIR}/dns/bind99
 SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MNSUPDATE}
@@ -186,7 +178,7 @@ CONFIGURE_ARGS+=	--enable-debug
 
 # https://bugzilla.samba.org/show_bug.cgi?id=8969
 .if ${PORT_OPTIONS:MDEVELOPER}
-GDB_CMD?=		gdb771
+GDB_CMD?=		gdb78
 BUILD_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
 RUN_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
 SAMBA4_MODULES+=	auth_skel perfcount_test pdb_test vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent vfs_fake_acls
@@ -234,6 +226,13 @@ SAMBA4_MODULES+=	vfs_zfsacl
 CONFIGURE_ARGS+=	--with-acl-support
 .else
 CONFIGURE_ARGS+=	--without-acl-support
+.endif
+
+.if ! ${PORT_OPTIONS:MAD_DC}
+CONFIGURE_ARGS+=	--without-ad-dc
+PLIST_SUB+=		AD_DC="@comment "
+.else
+PLIST_SUB+=		AD_DC=""
 .endif
 
 .if ${PORT_OPTIONS:MADS}
@@ -346,19 +345,27 @@ BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}
 			xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 
+.if defined(SAMBA4_BUNDLED_LIBS) && !empty(SAMBA4_BUNDLED_LIBS)
+CONFIGURE_ARGS+=	--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
+.endif
+
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
 SAMBA4_MODULES+=	${WANT_EXP_MODULES}
 CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C|(\\\\ )+|,|g:S|\\||g}"
 .endif
 
-.if defined(SAMBA4_BUNDLED_LIBS) && !empty(SAMBA4_BUNDLED_LIBS)
-CONFIGURE_ARGS+=	--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
-.endif
-
-# XXX
-.for m in ${SAMBA4_MODULES}
-PLIST_REINPLACE+=	${m}
-PLIST_REINPLACE_${m:tu}=	s|^@comment ${m} ||g
+# XXX: Dirty
+.for module in	auth_samba4 auth_skel auth_unix auth_wbc gpext_registry gpext_scripts \
+		gpext_security idmap_ad idmap_ldap idmap_nss idmap_passdb idmap_tdb \
+		nss_info_template pdb_ldap pdb_samba_dsdb pdb_smbpasswd pdb_tdbsam \
+		pdb_test pdb_wbc_sam perfcount_test vfs_aio_posix vfs_aio_pthread \
+		vfs_cacheprime vfs_dfs_samba4 vfs_fake_acls vfs_notify_fam \
+		vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent
+.	if !empty(${SAMBA4_MODULES}) && ${SAMBA4_MODULES:M${module}}
+PLIST_SUB+=		MODULE_${module:tu}=""
+.	else
+PLIST_SUB+=		MODULE_${module:tu}="@comment "
+.	endif
 .endfor
 ##############################################################################
 # !SAMBA4_SUBPORT
