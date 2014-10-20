@@ -19,8 +19,7 @@ RUN_DEPENDS=	trytond28_stock_supply>=2.8.1:${PORTSDIR}/finance/trytond28_stock_s
 
 CONFLICTS=	trytond_stock_supply_forecast-2.[46].*
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

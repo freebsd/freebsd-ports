@@ -21,8 +21,7 @@ RUN_DEPENDS=	trytond28_company>=2.8.0:${PORTSDIR}/finance/trytond28_company \
 
 CONFLICTS=	trytond_analytic_account-2.[46].*
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
