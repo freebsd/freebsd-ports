@@ -15,7 +15,7 @@ LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake iconv libtool pkgconfig
+USES=		alias gmake iconv libtool pkgconfig
 USE_OPENSSL=	YES
 USE_LDCONFIG=	YES
 USE_AUTOTOOLS= 	libtoolize aclocal autoconf automake

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		cmake:outsource pkgconfig compiler:c++11-lib
+USES=		alias cmake:outsource pkgconfig compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	FreeRDP
