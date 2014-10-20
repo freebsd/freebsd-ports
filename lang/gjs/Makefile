@@ -17,8 +17,8 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 CONFLICTS_BUILD=spidermonkey17-1.7.*
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig shebangfix tar:xz
-USE_PYTHON_BUILD=2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig python:2,build \
+		shebangfix tar:xz
 USE_GNOME=	cairo glib20 gnomeprefix introspection:build intlhack
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

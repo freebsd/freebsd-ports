@@ -17,8 +17,7 @@ GH_PROJECT=	py-fishcrypt
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT= 	c001c75
 
-USES=		dos2unix
-USE_PYTHON_RUN=	yes
+USES=		dos2unix python:run
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

@@ -27,14 +27,12 @@ RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
 RUST_BOOT_SIG=	2014-06-21-db9af1d-freebsd-x86_64-ef2bd0fc0b0efa2bd6f5c1eaa60a2ec8df533254
 
-USES=		gmake perl5
+USES=		gmake perl5 python:2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-valgrind --disable-docs \
 		--enable-clang --mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_PYTHON=	yes
-USE_PYTHON_BUILD=	2
 MAKE_ARGS=	ARCH=x86_64
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)

@@ -22,12 +22,11 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 ONLY_FOR_ARCHS=	i386
 
-USES=		pathfix pkgconfig tar:bzip2
+USES=		pathfix pkgconfig python tar:bzip2
 PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_MYSQL=	yes
-USE_PYTHON=	yes
 USE_SDL=	sdl sound
 USE_GNOME=	libxslt
 USE_AUTOTOOLS=	autoconf:env automake:env
