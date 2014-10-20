@@ -298,9 +298,3 @@ etc/pythoncad/prefs.py.sample
 %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/Globals.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/ImageDocument.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/__init__.pyc
-@dirrm %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Gtk
-@dirrm %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa
-@dirrm %%PYTHON_SITELIBDIR%%/PythonCAD/Interface
-@dirrm %%PYTHON_SITELIBDIR%%/PythonCAD/Generic
-@dirrm %%PYTHON_SITELIBDIR%%/PythonCAD
-@dirrmtry etc/pythoncad

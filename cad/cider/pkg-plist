@@ -94,20 +94,3 @@ share/cider/spice3/scripts/spinit
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/rtlinv.cir
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/schmitt.cir
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/simplepz.cir
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spice3
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bicmos
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bjt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/diode
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jfet
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mos
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/resistor
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/serial
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm share/cider/cider/helpdir
-@dirrm share/cider/cider/scripts
-@dirrm share/cider/cider
-@dirrm share/cider/spice3/helpdir
-@dirrm share/cider/spice3/scripts
-@dirrm share/cider/spice3
-@dirrm share/cider

@@ -2118,9 +2118,6 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node98.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node99.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx_2.7.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cgx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ccx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/README
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/airfoil/ISAAC/RAE2822.hdr
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/airfoil/ISAAC/README
@@ -2789,18 +2786,3 @@ bin/cgx
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/vortex3.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/wire.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/wire.inp
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbine
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/therm
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/test
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/pressfit
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/map
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/glue
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/dolfyn/mirror
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/dolfyn
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/cad
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/airfoil/ISAAC
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/airfoil/ccx
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/airfoil
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%

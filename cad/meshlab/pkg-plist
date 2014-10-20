@@ -185,14 +185,3 @@ lib/meshlab/shaders/toon.vert
 lib/meshlab/shaders/xray.frag
 lib/meshlab/shaders/xray.gdp
 lib/meshlab/shaders/xray.vert
-@dirrm lib/meshlab/shaders/splatpyramid
-@dirrm lib/meshlab/shaders/shadersrm/old
-@dirrm lib/meshlab/shaders/shadersrm
-@dirrm lib/meshlab/shaders/decorate_shadow/vsmb
-@dirrm lib/meshlab/shaders/decorate_shadow/vsm
-@dirrm lib/meshlab/shaders/decorate_shadow/ssao
-@dirrm lib/meshlab/shaders/decorate_shadow/sm
-@dirrm lib/meshlab/shaders/decorate_shadow
-@dirrm lib/meshlab/shaders
-@dirrm lib/meshlab/plugins
-@dirrm lib/meshlab

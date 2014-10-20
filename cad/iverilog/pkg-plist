@@ -34,6 +34,3 @@ lib/libvpi.a
 man/man1/iverilog.1.gz
 man/man1/iverilog-vpi.1.gz
 man/man1/vvp.1.gz
-@dirrm lib/ivl/include
-@dirrm lib/ivl
-@dirrm include/iverilog

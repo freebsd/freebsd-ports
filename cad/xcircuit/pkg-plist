@@ -136,7 +136,3 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/xcircuit.so
 %%DATADIR%%/xcircuit.tcl
 %%DATADIR%%/xcstartup.tcl
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

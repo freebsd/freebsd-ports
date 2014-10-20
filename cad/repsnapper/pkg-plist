@@ -6,7 +6,3 @@ share/applications/repsnapper.desktop
 %%DATADIR%%/repsnapper.ui
 %%DATADIR%%/repsnapper.svg
 share/icons/hicolor/scalable/apps/repsnapper.svg
-@dirrmtry etc/xdg/repsnapper
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
-@dirrm %%DATADIR%%

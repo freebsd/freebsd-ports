@@ -234,6 +234,3 @@ lib/libstlvis.so.0.0.0
 %%DATADIR%%/include/vssolution.hpp
 %%DATADIR%%/include/vsstl.hpp
 %%DATADIR%%/include/writeuser.hpp
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%

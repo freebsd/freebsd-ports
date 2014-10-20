@@ -107,9 +107,3 @@ man/man5/v2cc.libs.5.gz
 %%DATADIR%%/lib/ieee/math_real.vhdl
 %%DATADIR%%/lib/ieee/vital_timing.vhdl
 libdata/pkgconfig/freehdl.pc
-@dirrm include/freehdl
-@dirrm lib/freehdl
-@dirrm %%DATADIR%%/lib/std
-@dirrm %%DATADIR%%/lib/ieee
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%

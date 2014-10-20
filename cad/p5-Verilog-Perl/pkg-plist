@@ -52,9 +52,3 @@ man/man1/vhier.1.gz
 man/man1/vpassert.1.gz
 man/man1/vppreproc.1.gz
 man/man1/vrename.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Verilog
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Language
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Parser
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog
