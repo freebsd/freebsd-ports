@@ -7,5 +7,3 @@ libdata/pkgconfig/shout-idjc.pc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry include/shoutidjc

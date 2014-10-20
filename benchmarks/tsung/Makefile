@@ -15,10 +15,9 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 USE_PERL5=	run
-USE_PYTHON_RUN=	yes
 
 GNU_CONFIGURE=	yes
-USES=		gmake perl5 shebangfix
+USES=		gmake perl5 python:run shebangfix
 SHEBANG_FILES=	src/*.pl.in src/tsung-plotter/tsung/tsung.py
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

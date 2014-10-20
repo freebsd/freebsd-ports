@@ -24,8 +24,7 @@ NLS_USE=			GNOME=intltool
 NOTIFY_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}notify>0:${PORTSDIR}/devel/py-notify
 THUNDERBIRD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
-USES=		tar:xz
-USE_PYTHON_RUN=	2
+USES=		python:2,run tar:xz
 USE_GNOME=	pygtk2
 LANGUAGES=	de en es fr gl it pl pt ru sk
 

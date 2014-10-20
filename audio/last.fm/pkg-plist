@@ -107,9 +107,3 @@ lib/last.fm/services/libsrv_output_portaudio.so
 lib/last.fm/services/libsrv_rtaudioplayback.so
 share/applications/last.fm.desktop
 share/services/lastfm.protocol
-@dirrmtry share/services
-@dirrm lib/last.fm/services
-@dirrm lib/last.fm/data/icons
-@dirrm lib/last.fm/data/buttons
-@dirrm lib/last.fm/data
-@dirrm lib/last.fm

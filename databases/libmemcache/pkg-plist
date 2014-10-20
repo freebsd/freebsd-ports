@@ -5,4 +5,3 @@ lib/libmemcache.a
 lib/libmemcache.so
 lib/libmemcache.so.0
 lib/libmemcache.so.0.4.0
-@dirrm include/memcache

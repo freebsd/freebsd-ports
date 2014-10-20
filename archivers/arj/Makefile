@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 PORTSCOUT=	skipv:3.10g
 
-USES=		gmake
+USES=		alias gmake
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_WRKSRC=	${WRKSRC}/gnu
 MAKEFILE=	GNUmakefile

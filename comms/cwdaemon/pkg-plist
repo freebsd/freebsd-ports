@@ -9,4 +9,3 @@ man/man8/cwdaemon.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/parallelport_circuit.ps
 %%PORTDOCS%%%%DOCSDIR%%/serialport_circuit.jpg
 %%PORTDOCS%%%%DOCSDIR%%/serialport_circuit.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

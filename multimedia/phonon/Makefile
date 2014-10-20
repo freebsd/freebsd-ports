@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.7.2
+PORTVERSION=	4.8.1
 PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libqzeitgeist.so:${PORTSDIR}/sysutils/qzeitgeist
 
-USE_KDE4=	kdehier kdeprefix automoc4
+USE_KDE4=	kdeprefix automoc4
 USE_QT4=	corelib dbus gui \
 		qmake_build moc_build rcc_build uic_build
 USES=		cmake tar:xz

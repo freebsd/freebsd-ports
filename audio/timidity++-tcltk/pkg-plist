@@ -25,6 +25,3 @@ bin/tkmidi
 %%TIMID_LIBDIR%%/tkpanel.tcl
 %%PORTDOCS%%%%DOCSDIR%%/README.tk
 %%PORTDOCS%%share/doc/ja/timidity++/README.tk
-%%PORTDOCS%%@dirrmtry share/doc/ja/timidity++
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%TIMID_LIBDIR%%/bitmaps

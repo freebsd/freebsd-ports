@@ -3,7 +3,7 @@
 
 PORTNAME=	volatility
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	http://downloads.volatilityfoundation.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +32,11 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_INSTALLARGS+=--install-data ${DATADIR}
+
+post-patch:
+	@${REINPLACE_CMD} 's,openpyxl.style,openpyxl.styles,' \
+		${WRKSRC}/volatility/plugins/malware/psxview.py \
+		${WRKSRC}/volatility/plugins/timeliner.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

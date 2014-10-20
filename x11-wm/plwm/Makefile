@@ -17,9 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>0:${PORTSDIR}/x11-toolkits/py-xlib
 
 NO_ARCH=	yes
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

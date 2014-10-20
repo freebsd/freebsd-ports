@@ -105,9 +105,3 @@ share/icons/hicolor/scalable/actions/newfunction.svgz
 share/icons/hicolor/scalable/actions/newparametric.svgz
 share/icons/hicolor/scalable/actions/newpolar.svgz
 share/icons/hicolor/scalable/actions/resetview.svgz
-@dirrm share/apps/kvtml/en
-@dirrm share/apps/kvtml
-@dirrm lib/cmake/libkdeedu
-@dirrmtry lib/cmake
-@dirrm include/libkdeedu/qtmml
-@dirrmtry include/libkdeedu

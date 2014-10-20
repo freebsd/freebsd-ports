@@ -16,7 +16,6 @@ LICENSE=		GPLv3
 CONFLICTS=
 
 USES=			compiler pkgconfig
-USE_PYTHON_BUILD=	2
 USE_LDCONFIG=		yes
 WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_LOG=		bin/config.log
@@ -38,8 +37,9 @@ MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
 .if defined(NO_PYTHON)
 CONFIGURE_ARGS+=	--disable-python
+USES+=			python:2,build
 .else
-USE_PYTHON_RUN=		yes
+USES+=			python:2
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/ntdb.so
 .endif
 

@@ -19,5 +19,3 @@
 %%PERL5_MAN3%%/BSON::String.3.gz
 %%PERL5_MAN3%%/BSON::Time.3.gz
 %%PERL5_MAN3%%/BSON::Timestamp.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSON
-@dirrm %%SITE_PERL%%/BSON

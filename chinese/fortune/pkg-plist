@@ -34,5 +34,3 @@ bin/fortune-zh
 %%DATADIR%%/zh/zengguang
 %%DATADIR%%/zh/zengguang.dat
 %%DATADIR%%/zh/zengguang.u8
-@dirrm %%DATADIR%%/zh
-@dirrm %%DATADIR%%

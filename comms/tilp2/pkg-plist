@@ -123,10 +123,3 @@ share/mime/packages/tilp.xml
 %%DATADIR%%/pixmaps/tb_send.png
 %%DATADIR%%/pixmaps/tb_trash.png
 %%DATADIR%%/pixmaps/tilp.xpm
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/builder
-@dirrm %%DATADIR%%
-@dirrmtry share/mime/packages
-@dirrmtry share/mime

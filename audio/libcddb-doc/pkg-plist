@@ -67,6 +67,3 @@
 %%DOCSDIR%%/API/tabs.css
 %%DOCSDIR%%/API/visibility_8h.html
 %%DOCSDIR%%/API/visibility_8h-source.html
-@dirrm %%DOCSDIR%%/API
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%

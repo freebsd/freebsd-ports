@@ -188,18 +188,3 @@ share/applications/mscore.desktop
 %%DATADIR%%/wallpaper/paper5.png
 share/pixmaps/mscore.png
 share/pixmaps/mscore.xpm
-@dirrm %%DATADIR%%/wallpaper
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/plugins/musescore.com/ui
-@dirrm %%DATADIR%%/plugins/musescore.com/translations
-@dirrm %%DATADIR%%/plugins/musescore.com/icons
-@dirrm %%DATADIR%%/plugins/musescore.com
-@dirrm %%DATADIR%%/plugins/break
-@dirrm %%DATADIR%%/plugins/abc_import
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/man
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/demos
-@dirrm %%DATADIR%%

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Pack
-PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTVERSION=	1.0.4
 CATEGORIES=	archivers www pear
 PKGNAMEPREFIX=	pear-
 

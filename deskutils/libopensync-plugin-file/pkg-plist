@@ -1,5 +1,2 @@
 lib/opensync/plugins/file_sync.so
 share/opensync/defaults/file-sync
-@dirrmtry lib/opensync/plugins
-@dirrmtry share/opensync/defaults
-@dirrmtry share/opensync

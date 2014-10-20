@@ -34,13 +34,3 @@
 %%PERL5_MAN3%%/MR::SilverBox.3.gz
 %%PERL5_MAN3%%/MR::Tarantool::Box.3.gz
 %%PERL5_MAN3%%/MR::Tarantool::Box::Singleton.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MR/Tarantool
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MR
-@dirrm %%SITE_PERL%%/MR/Tarantool/Box
-@dirrm %%SITE_PERL%%/MR/Tarantool
-@dirrm %%SITE_PERL%%/MR/IProto/Server
-@dirrm %%SITE_PERL%%/MR/IProto/Role
-@dirrm %%SITE_PERL%%/MR/IProto/Connection
-@dirrm %%SITE_PERL%%/MR/IProto/Cluster
-@dirrm %%SITE_PERL%%/MR/IProto
-@dirrm %%SITE_PERL%%/MR

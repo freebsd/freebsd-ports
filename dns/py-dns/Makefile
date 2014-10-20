@@ -17,9 +17,8 @@ LICENSE_NAME=	CNRI LICENSE AGREEMENT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	README.txt README-guido.txt
 DOCSDIR=	${PREFIX}/share/doc/py-dns

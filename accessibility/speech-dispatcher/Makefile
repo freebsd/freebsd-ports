@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdotconf.so:${PORTSDIR}/devel/dotconf \
 
 # gnomehier is required because of share/sounds directory.
 USE_GNOME=	glib20 gnomehier intltool
-USES=		gettext gmake pathfix pkgconfig libtool
+USES=		alias gettext gmake pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

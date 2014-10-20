@@ -2,5 +2,3 @@ lib/dssi/nekobee/knob.png
 lib/dssi/nekobee/nekobee_gtk
 lib/dssi/nekobee/switch.png
 lib/dssi/nekobee.so
-@dirrm lib/dssi/nekobee
-@dirrmtry lib/dssi

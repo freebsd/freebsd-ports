@@ -35,7 +35,7 @@ DOCS=		AUTHORS ChangeLog README
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYCONF}
-USE_PYTHON=	yes
+USES+=		python
 USE_GNOME=	gtk20 pygtk2
 CMAKE_ARGS+=	-DENABLE_TINT2CONF:BOOL=ON
 PYCONF_SRC=	${WRKSRC}/src/tint2conf

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libNucleo.so:${PORTSDIR}/x11-toolkits/nucleo \
 		libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
-USES=		gettext libtool pathfix pkgconfig shebangfix tar:bzip2
+USES=		gettext libtool pathfix pkgconfig python shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.4.in \
 		${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.6.in \
 		${WRKSRC}/fvwm-insitu/bin/fvwm-menu-desktop.in \
@@ -36,7 +36,6 @@ perl_OLD_CMD=	@PERL@
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/lib/X11/fonts
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 USE_XORG=	xcursor xft xinerama xpm xrender xt xtst
 WANT_GNOME=	yes
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"

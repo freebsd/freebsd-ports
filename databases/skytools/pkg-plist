@@ -211,14 +211,3 @@ share/postgresql/extension/pgq_node.control
 %%DATADIR%%3/pgq_ext.upgrade.sql
 %%DATADIR%%3/pgq_node.sql
 %%DATADIR%%3/pgq_node.upgrade.sql
-@dirrmtry %%PYTHON_SITELIBDIR%%/londiste/handlers
-@dirrmtry %%PYTHON_SITELIBDIR%%/londiste
-@dirrmtry %%PYTHON_SITELIBDIR%%/pgq/cascade
-@dirrmtry %%PYTHON_SITELIBDIR%%/pgq
-@dirrmtry %%PYTHON_SITELIBDIR%%/skytools
-@dirrmtry share/doc/postgresql/extension
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%3/conf
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%3
-@dirrmtry share/postgresql/contrib
-@dirrmtry share/postgresql/extension
-@dirrmtry %%DATADIR%%3

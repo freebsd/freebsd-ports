@@ -14,7 +14,7 @@ Kde_Pre_Include=	bsd.kde4.mk
 #
 # KDE4 related ports can use this as follows:
 #
-# USE_KDE4=		kdehier kdelibs kdeprefix
+# USE_KDE4=		kdelibs kdeprefix
 # USE_QT4=		corelib # Set Qt 4 components here.
 #
 # .include <bsd.port.mk>
@@ -26,13 +26,15 @@ Kde_Pre_Include=	bsd.kde4.mk
 #
 # Available KDE4 components are:
 #
+# baloo			- Baloo core libraries
+# baloo-widgets		- Baloo widgets library
 # baseapps		- Basic applications for KDE Desktop
 # kactivities           - KDE activities library
 # kate			- KDE text editor framework
-# kdehier		- Hierarchy of common KDE directories
 # kdelibs		- KDE Developer Platform
 # kdeprefix		- If set, port will be installed into ${KDE4_PREFIX} instead of
 #			  ${LOCALBASE}
+# kfilemetadata		- KDE library for extracting file metadata
 # korundum		- KDE Ruby bindings
 # libkcddb		- KDE CDDB library
 # libkcompactdisc	- KDE library for interfacing with audio CDs
@@ -73,8 +75,9 @@ Kde_Pre_Include=	bsd.kde4.mk
 #			  ${LOCALBASE}/kde4, but this could change in the future.
 #
 
-KDE4_VERSION?=		4.12.5
-KDE4_WORKSPACE_VERSION=	4.11.9
+KDE4_VERSION?=		4.14.2
+KDE4_ACTIVITES_VERSION=	4.13.3
+KDE4_WORKSPACE_VERSION=	4.11.13
 KDE4_BRANCH?=		stable
 KTP_VERSION?=		0.6.1
 KTP_BRANCH?=		stable
@@ -128,7 +131,8 @@ Kde_Post_Include=	bsd.kde4.mk
 # for ${component}; otherwise, it will default to 'build run'.
 #
 
-_USE_KDE4_ALL=		baseapps kactivities kate kdehier kdelibs kdeprefix \
+_USE_KDE4_ALL=		baloo baloo-widgets \
+			baseapps kactivities kate kdelibs kfilemetadata \
 			korundum libkcddb libkcompactdisc libkdcraw libkdeedu \
 			libkexiv2 libkdegames libkipi libkonq libksane marble \
 			nepomuk-core nepomuk-widgets \
@@ -138,6 +142,16 @@ _USE_KDE4_ALL=		baseapps kactivities kate kdehier kdelibs kdeprefix \
 # These components are not part of the Software Compilation.
 _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 			strigi
+# Meta components
+_USE_KDE4_ALL+=		kdeprefix
+# Deprecated
+_USE_KDE4_ALL+=		kdehier
+
+baloo_PORT=		sysutils/baloo
+baloo_PATH=		${KDE4_PREFIX}/lib/libbaloocore.so
+
+baloo-widgets_PORT=	sysutils/baloo-widgets
+baloo-widgets_PATH=	${KDE4_PREFIX}/lib/libbaloowidgets.so
 
 baseapps_PORT=		x11/kde4-baseapps
 baseapps_PATH=		${KDE4_PREFIX}/bin/kfmclient
@@ -149,12 +163,17 @@ kactivities_PATH=	${KDE4_PREFIX}/lib/libkactivities.so
 kate_PORT=		editors/kate
 kate_PATH=		${KDE4_PREFIX}/lib/libkateinterfaces.so
 
-kdehier_PORT=		misc/kdehier4
-kdehier_PATH=		kdehier4>=0
-kdehier_TYPE=		run
-
 kdelibs_PORT=		x11/kdelibs4
 kdelibs_PATH=		${KDE4_PREFIX}/lib/libkdecore.so
+
+.if ${KDE4_PREFIX} != ${LOCALBASE}
+kdeprefix_PORT=		misc/kdehier4
+kdeprefix_PATH=		kdehier4>=1.3
+kdeprefix_TYPE=		run
+.endif
+
+kfilemetadata_PORT=	sysutils/kfilemetadata
+kfilemetadata_PATH=	${KDE4_PREFIX}/lib/libkfilemetadata.so
 
 korundum_PORT=		devel/ruby-korundum
 korundum_PATH=		${KDE4_PREFIX}/lib/kde4/krubypluginfactory.so
@@ -266,7 +285,7 @@ strigi_PATH=		${LOCALBASE}/lib/libstreamanalyzer.so.0
 .for component in ${USE_KDE4:O:u:C/_.+//}
   # Check that the component is valid.
 . if ${_USE_KDE4_ALL:M${component}} != ""
-   # Skip meta-components (e.g., kdeprefix).
+   # Skip meta-components (e.g. kdeprefix).
 .  if defined(${component}_PORT) && defined(${component}_PATH)
 ${component}_DEPENDS=	${${component}_PATH}:${PORTSDIR}/${${component}_PORT}
     # Check if a dependency type is explicitly requested.

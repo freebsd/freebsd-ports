@@ -12,8 +12,7 @@ COMMENT=	Calendar program for women
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2
-USE_PYTHON_RUN=	yes
+USES=		python:run tar:bzip2
 USE_WX=		3.0+
 WX_COMPS=	python
 NO_BUILD=	yes

@@ -18,6 +18,3 @@
 %%PERL5_MAN3%%/Astro::Coords::Interpolated.3.gz
 %%PERL5_MAN3%%/Astro::Coords::Offset.3.gz
 %%PERL5_MAN3%%/Astro::Coords::Planet.3.gz
-@dirrmtry %%SITE_PERL%%/Astro/Coords/Angle
-@dirrmtry %%SITE_PERL%%/Astro/Coords
-@dirrmtry %%SITE_PERL%%/Astro

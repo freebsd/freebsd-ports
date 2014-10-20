@@ -15,8 +15,8 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
+USES=		python
 USE_GNOME=	vte pygtk2
-USE_PYTHON=	yes
 CONFIGURE_ARGS=	--enable-python \
 		--disable-Bsymbolic \
 		--disable-freetypetest

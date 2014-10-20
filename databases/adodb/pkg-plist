@@ -193,18 +193,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/tips_portable_sql.htm
 %%PORTDOCS%%%%DOCSDIR%%/tute.htm
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%/datadict
-@dirrm %%DATADIR%%/drivers
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/pear/Auth/Container
-@dirrm %%DATADIR%%/pear/Auth
-@dirrm %%DATADIR%%/pear
-@dirrm %%DATADIR%%/perf
-@dirrm %%DATADIR%%/session/old
-@dirrm %%DATADIR%%/session
-%%TESTS%%@dirrm %%DATADIR%%/tests
-@dirrm %%DATADIR%%/xsl
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cute_icons_for_site
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

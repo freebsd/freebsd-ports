@@ -3,4 +3,4 @@ better known as VNC. Unlike most other Unix/Linux RFB servers, KRfb
 allows you to share your X11 session instead of creating a new X11
 session.
 
-WWW: www.kde.org
+WWW: http://www.kde.org

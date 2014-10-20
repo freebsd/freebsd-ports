@@ -33,8 +33,7 @@ INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	virt-manager.schemas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-tui
-USES=		gmake
-USE_PYTHON=	yes
+USES=		gmake python
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|itlocaledir = $$(prefix)/$$(DATADIRNAME)/locale|itlocaledir = $$(prefix)/share/locale|' \

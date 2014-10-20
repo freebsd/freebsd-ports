@@ -34,5 +34,3 @@ share/sounds/freedesktop/stereo/suspend-error.oga
 share/sounds/freedesktop/stereo/trash-empty.oga
 share/sounds/freedesktop/stereo/window-attention.oga
 share/sounds/freedesktop/stereo/window-question.oga
-@dirrm share/sounds/freedesktop/stereo
-@dirrm share/sounds/freedesktop

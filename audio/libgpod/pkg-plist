@@ -55,9 +55,3 @@ share/locale/ja/LC_MESSAGES/libgpod.mo
 share/locale/ro/LC_MESSAGES/libgpod.mo
 share/locale/sv/LC_MESSAGES/libgpod.mo
 share/locale/zh_CN/LC_MESSAGES/libgpod.mo
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/gpod
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-%%PYTHON%%@dirrmtry %%PYTHON_LIBDIR%%
-%%MONO%%@dirrm lib/libgpod
-@dirrm include/gpod-1.0/gpod
-@dirrm include/gpod-1.0

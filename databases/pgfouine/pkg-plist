@@ -193,35 +193,3 @@ bin/pgfouine_vacuum
 %%DATADIR%%/include/reporting/web/css/common.css
 %%DATADIR%%/include/reporting/web/js/sorttable.js
 %%DATADIR%%/version.php
-@dirrm %%DATADIR%%/include/reporting/web/js
-@dirrm %%DATADIR%%/include/reporting/web/css
-@dirrm %%DATADIR%%/include/reporting/web
-@dirrm %%DATADIR%%/include/reporting/reports
-@dirrm %%DATADIR%%/include/reporting/geshi/geshi
-@dirrm %%DATADIR%%/include/reporting/geshi/docs
-@dirrm %%DATADIR%%/include/reporting/geshi
-@dirrm %%DATADIR%%/include/reporting/artichow/php5/inc
-@dirrm %%DATADIR%%/include/reporting/artichow/php5
-@dirrm %%DATADIR%%/include/reporting/artichow/php4/inc
-@dirrm %%DATADIR%%/include/reporting/artichow/php4
-@dirrm %%DATADIR%%/include/reporting/artichow/patterns
-@dirrm %%DATADIR%%/include/reporting/artichow/font
-@dirrm %%DATADIR%%/include/reporting/artichow
-@dirrm %%DATADIR%%/include/reporting
-@dirrm %%DATADIR%%/include/postgresql/vacuum/reporting/reports
-@dirrm %%DATADIR%%/include/postgresql/vacuum/reporting
-@dirrm %%DATADIR%%/include/postgresql/vacuum/parsers
-@dirrm %%DATADIR%%/include/postgresql/vacuum/objects
-@dirrm %%DATADIR%%/include/postgresql/vacuum/listeners
-@dirrm %%DATADIR%%/include/postgresql/vacuum/lines
-@dirrm %%DATADIR%%/include/postgresql/vacuum
-@dirrm %%DATADIR%%/include/postgresql/parsers
-@dirrm %%DATADIR%%/include/postgresql/lines
-@dirrm %%DATADIR%%/include/postgresql
-@dirrm %%DATADIR%%/include/listeners/query
-@dirrm %%DATADIR%%/include/listeners/error
-@dirrm %%DATADIR%%/include/listeners
-@dirrm %%DATADIR%%/include/lib
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

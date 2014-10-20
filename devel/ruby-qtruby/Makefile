@@ -2,7 +2,6 @@
 
 PORTNAME=	qtruby
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde ruby
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ COMMENT=	Ruby bindings for Qt
 LIB_DEPENDS=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
 		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 
-USE_KDE4=	kdehier kdeprefix smokeqt
+USE_KDE4=	kdeprefix smokeqt
 USE_QT4=	corelib dbus declarative gui network phonon script webkit xml \
 		qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes

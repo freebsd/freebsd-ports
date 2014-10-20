@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo # for better debugging
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USES=		bison cmake python
+USES=		alias bison cmake python
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	${PORTNAME}

@@ -306,25 +306,3 @@
 %%PHPBBDIR%%/viewtopic.php
 @group
 @owner
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_english
-@dirrm %%PHPBBDIR%%/templates/subSilver/images
-@dirrm %%PHPBBDIR%%/templates/subSilver/admin
-@dirrm %%PHPBBDIR%%/templates/subSilver
-@dirrm %%PHPBBDIR%%/templates
-@dirrm %%PHPBBDIR%%/language/lang_english/email
-@dirrm %%PHPBBDIR%%/language/lang_english
-@dirrm %%PHPBBDIR%%/language
-@dirrm %%PHPBBDIR%%/install/schemas
-@dirrm %%PHPBBDIR%%/install
-@dirrm %%PHPBBDIR%%/includes
-@dirrm %%PHPBBDIR%%/images/smiles
-@dirrm %%PHPBBDIR%%/images/avatars/gallery
-@dirrm %%PHPBBDIR%%/images/avatars
-@dirrm %%PHPBBDIR%%/images
-@dirrm %%PHPBBDIR%%/db
-@dirrm %%PHPBBDIR%%/cache
-@dirrm %%PHPBBDIR%%/admin
-@dirrm %%PHPBBDIR%%
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%

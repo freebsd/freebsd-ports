@@ -1,14 +1,9 @@
 %%LUA%%%%LUA_MODLIBDIR%%/xapian.so
 %%PHP%%lib/php/%%PHP_EXT_DIR%%/xapian.so
 %%PHP%%%%DATADIR%%/php5/xapian.php
-%%PHP%%@dirrmtry %%DATADIR%%/php5
-%%PHP%%@dirrmtry %%DATADIR%%
-%%PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyo
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/_xapian.so
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/xapian
 %%RUBY%%%%RUBY_SITELIBDIR%%/xapian.rb
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/_xapian.so
-%%RUBY%%@dirrmtry %%RUBY_SITELIBDIR%%

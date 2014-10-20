@@ -87,6 +87,9 @@ do-install:
 	${INSTALL_PROGRAM} ${BIN_FILES:C!^!${WRKSRC}/src/!} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKDIR}/redis.conf ${STAGEDIR}${PREFIX}/etc/redis.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/sentinel.conf ${STAGEDIR}${PREFIX}/etc/sentinel.conf.sample
+	${MKDIR} ${STAGEDIR}${REDIS_LOGDIR} \
+		${STAGEDIR}${REDIS_DBDIR} \
+		${STAGEDIR}${REDIS_RUNDIR}
 
 regression-test: build
 	@cd ${WRKSRC} && ${TCLSH} tests/test_helper.tcl

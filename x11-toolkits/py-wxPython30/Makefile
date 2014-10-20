@@ -16,14 +16,13 @@ DIST_SUBDIR=	python
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
+USES=		python tar:bzip2
 
 .if defined(WITH_WXVERSION_ONLY)
 
 PKGNAMESUFFIX=	-common
 
-PYTHON_PY3K_PLIST_HACK=	yes
+USE_PYTHON=	py3kplist
 
 do-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PYTHON_SITELIBDIR} -f ${WRKSRC}/wxversion
@@ -44,8 +43,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wxPython-common>0:${PORTSDIR}/x11-toolkits/p
 USES+=		gettext pkgconfig
 USE_WX=	3.0
 WANT_UNICODE=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 PYDISTUTILS_BUILDARGS=	WX_CONFIG="${WX_CONFIG}" \
 			WXPORT="${WXPORT}" \
 			NO_HEADERS=1 \

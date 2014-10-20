@@ -18,8 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
 GH_COMMIT=	0a9ad34
 
+USES=		python
 USE_GNOME=	gtk30 introspection:run
-USE_PYTHON=	yes
 
 USE_LDCONFIG=	yes
 

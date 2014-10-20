@@ -18,9 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:${PORTSDIR}/databases/py-MySQ
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10.0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	philipsoutham

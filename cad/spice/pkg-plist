@@ -15,6 +15,3 @@ man/man5/mfbcap.5.gz
 %%DATADIR%%/scripts/spinit
 %%DATADIR%%/mfbcap
 %%DATADIR%%/news
-@dirrm %%DATADIR%%/helpdir
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%

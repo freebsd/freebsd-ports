@@ -13,11 +13,10 @@ COMMENT=	GNOME viewer for CHM files
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/chm/_chmlib.so:${PORTSDIR}/textproc/pychm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		desktop-file-utils gettext gmake pathfix shared-mime-info
+USES=		desktop-file-utils gettext gmake pathfix python shared-mime-info
 USE_GNOME=	gnomeprefix intlhack pygnome2 pygtk2 pygnomeextras
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mime-update
-USE_PYTHON=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

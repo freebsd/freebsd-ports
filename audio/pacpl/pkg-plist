@@ -25,9 +25,3 @@ man/man1/pacpl.1.gz
 %%DATADIR%%/locale/tr.po
 %%DATADIR%%/locale/zh_CN.po
 %%KDE4%%share/kde4/services/ServiceMenus/pacpl.desktop
-%%KDE4%%@dirrmtry share/kde4/services/ServiceMenus
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%ETCDIR%%/modules
-@dirrmtry %%ETCDIR%%

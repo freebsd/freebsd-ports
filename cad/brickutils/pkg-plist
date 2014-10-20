@@ -128,5 +128,3 @@ share/icons/hicolor/64x64/apps/brickutils.png
 share/icons/hicolor/72x72/apps/brickutils.png
 share/icons/hicolor/96x96/apps/brickutils.png
 share/pixmaps/brickutils.png
-@dirrm %%DATADIR%%/BrickUtils
-@dirrmtry %%DATADIR%%

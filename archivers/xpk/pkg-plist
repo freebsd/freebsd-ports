@@ -30,4 +30,3 @@ lib/libxpkmaster.so
 lib/libxpkmaster.so.0
 lib/libxpkmaster.so.0.5.2
 share/aclocal/xpk.m4
-@dirrm include/xpk

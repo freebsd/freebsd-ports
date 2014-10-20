@@ -12,9 +12,8 @@ COMMENT=	Small note taking program for the terminal
 
 LICENSE=	GPLv3
 
-USES=		shebangfix
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
+USES=		python:2 shebangfix
+USE_PYTHON=	distutils
 
 SHEBANG_FILES=	tnote
 python_OLD_CMD=	${SETENV} python

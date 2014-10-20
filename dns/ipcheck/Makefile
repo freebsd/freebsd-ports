@@ -16,7 +16,7 @@ COMMENT=	Fully compliant DynDNS.org client for UNIX (supports NIC v2.0)
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	yes
+USES=		python
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

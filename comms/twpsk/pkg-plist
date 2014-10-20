@@ -7,7 +7,3 @@ share/pixmaps/twpsk.png
 %%DATADIR%%/twpskDir/Brag
 %%DATADIR%%/twpskDir/LongCQ
 %%DATADIR%%/twpskDir/ShortCQ
-@dirrmtry share/X11/app-defaults
-@dirrmtry share/X11
-@dirrmtry %%DATADIR%%/twpskDir
-@dirrmtry %%DATADIR%%

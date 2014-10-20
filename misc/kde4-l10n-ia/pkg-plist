@@ -10,12 +10,11 @@ share/locale/ia/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/ia/LC_MESSAGES/adblock.mo
 share/locale/ia/LC_MESSAGES/akonadi-filestore.mo
 share/locale/ia/LC_MESSAGES/akonadi_archivemail_agent.mo
+share/locale/ia/LC_MESSAGES/akonadi_baloo_indexer.mo
 share/locale/ia/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/ia/LC_MESSAGES/akonadi_folderarchive_agent.mo
-share/locale/ia/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/ia/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_ical_resource.mo
@@ -35,20 +34,17 @@ share/locale/ia/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/ia/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/ia/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_mbox_resource.mo
-share/locale/ia/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/ia/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/ia/LC_MESSAGES/akonadi_nepomuk_feeder.mo
-share/locale/ia/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ia/LC_MESSAGES/akonadi_next.mo
 share/locale/ia/LC_MESSAGES/akonadi_nntp_resource.mo
+share/locale/ia/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/ia/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/ia/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/ia/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ia/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/ia/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ia/LC_MESSAGES/akonadicontact.mo
@@ -63,6 +59,12 @@ share/locale/ia/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ia/LC_MESSAGES/audiorename_plugin.mo
 share/locale/ia/LC_MESSAGES/autorefresh.mo
 share/locale/ia/LC_MESSAGES/babelfish.mo
+share/locale/ia/LC_MESSAGES/baloo_file.mo
+share/locale/ia/LC_MESSAGES/baloo_file_extractor.mo
+share/locale/ia/LC_MESSAGES/baloo_queryparser.mo
+share/locale/ia/LC_MESSAGES/baloosearch.mo
+share/locale/ia/LC_MESSAGES/balooshow.mo
+share/locale/ia/LC_MESSAGES/baloowidgets.mo
 share/locale/ia/LC_MESSAGES/blogilo.mo
 share/locale/ia/LC_MESSAGES/calendarjanitor.mo
 share/locale/ia/LC_MESSAGES/calendarsupport.mo
@@ -70,6 +72,7 @@ share/locale/ia/LC_MESSAGES/contactthemeeditor.mo
 share/locale/ia/LC_MESSAGES/cryptopageplugin.mo
 share/locale/ia/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ia/LC_MESSAGES/display.mo
+share/locale/ia/LC_MESSAGES/dolphin.appdata.mo
 share/locale/ia/LC_MESSAGES/dolphin.mo
 share/locale/ia/LC_MESSAGES/domtreeviewer.mo
 share/locale/ia/LC_MESSAGES/dragonplayer.mo
@@ -86,6 +89,7 @@ share/locale/ia/LC_MESSAGES/imagerename_plugin.mo
 share/locale/ia/LC_MESSAGES/imgalleryplugin.mo
 share/locale/ia/LC_MESSAGES/importwizard.mo
 share/locale/ia/LC_MESSAGES/joystick.mo
+share/locale/ia/LC_MESSAGES/juk.appdata.mo
 share/locale/ia/LC_MESSAGES/juk.mo
 share/locale/ia/LC_MESSAGES/kabc.mo
 share/locale/ia/LC_MESSAGES/kabc_akonadi.mo
@@ -137,6 +141,7 @@ share/locale/ia/LC_MESSAGES/kcm_akonadi.mo
 share/locale/ia/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/ia/LC_MESSAGES/kcm_attica.mo
 share/locale/ia/LC_MESSAGES/kcm_autostart.mo
+share/locale/ia/LC_MESSAGES/kcm_baloofile.mo
 share/locale/ia/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ia/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/ia/LC_MESSAGES/kcm_device_automounter.mo
@@ -149,7 +154,6 @@ share/locale/ia/LC_MESSAGES/kcm_memory.mo
 share/locale/ia/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/ia/LC_MESSAGES/kcm_pci.mo
 share/locale/ia/LC_MESSAGES/kcm_phonon.mo
-share/locale/ia/LC_MESSAGES/kcm_pimactivity.mo
 share/locale/ia/LC_MESSAGES/kcm_platform.mo
 share/locale/ia/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ia/LC_MESSAGES/kcm_solid_actions.mo
@@ -223,13 +227,13 @@ share/locale/ia/LC_MESSAGES/keditbookmarks.mo
 share/locale/ia/LC_MESSAGES/kfile.mo
 share/locale/ia/LC_MESSAGES/kfile_dds.mo
 share/locale/ia/LC_MESSAGES/kfile_exr.mo
-share/locale/ia/LC_MESSAGES/kfile_mail.mo
 share/locale/ia/LC_MESSAGES/kfile_pnm.mo
 share/locale/ia/LC_MESSAGES/kfile_raw.mo
 share/locale/ia/LC_MESSAGES/kfile_rgb.mo
 share/locale/ia/LC_MESSAGES/kfile_tiff.mo
 share/locale/ia/LC_MESSAGES/kfile_xps.mo
 share/locale/ia/LC_MESSAGES/kfileaudiopreview4.mo
+share/locale/ia/LC_MESSAGES/kfilemetadata.mo
 share/locale/ia/LC_MESSAGES/kfileshare.mo
 share/locale/ia/LC_MESSAGES/kfindpart.mo
 share/locale/ia/LC_MESSAGES/kfloppy.mo
@@ -255,6 +259,7 @@ share/locale/ia/LC_MESSAGES/kio_akonadi.mo
 share/locale/ia/LC_MESSAGES/kio_applications.mo
 share/locale/ia/LC_MESSAGES/kio_archive.mo
 share/locale/ia/LC_MESSAGES/kio_audiocd.mo
+share/locale/ia/LC_MESSAGES/kio_baloosearch.mo
 share/locale/ia/LC_MESSAGES/kio_bookmarks.mo
 share/locale/ia/LC_MESSAGES/kio_finger.mo
 share/locale/ia/LC_MESSAGES/kio_fish.mo
@@ -268,6 +273,8 @@ share/locale/ia/LC_MESSAGES/kio_man.mo
 share/locale/ia/LC_MESSAGES/kio_mbox.mo
 share/locale/ia/LC_MESSAGES/kio_nepomuk.mo
 share/locale/ia/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/ia/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/ia/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/ia/LC_MESSAGES/kio_nfs.mo
 share/locale/ia/LC_MESSAGES/kio_nntp.mo
 share/locale/ia/LC_MESSAGES/kio_pop3.mo
@@ -298,8 +305,10 @@ share/locale/ia/LC_MESSAGES/kmimetypefinder.mo
 share/locale/ia/LC_MESSAGES/kmix.mo
 share/locale/ia/LC_MESSAGES/knetattach.mo
 share/locale/ia/LC_MESSAGES/knode.mo
+share/locale/ia/LC_MESSAGES/knotes-migrator.mo
 share/locale/ia/LC_MESSAGES/knotes.mo
 share/locale/ia/LC_MESSAGES/knotify4.mo
+share/locale/ia/LC_MESSAGES/kolourpaint.appdata.mo
 share/locale/ia/LC_MESSAGES/kolourpaint.mo
 share/locale/ia/LC_MESSAGES/konqueror.mo
 share/locale/ia/LC_MESSAGES/konsole.mo
@@ -415,9 +424,10 @@ share/locale/ia/LC_MESSAGES/libmessagecomposer.mo
 share/locale/ia/LC_MESSAGES/libmessagecore.mo
 share/locale/ia/LC_MESSAGES/libmessagelist.mo
 share/locale/ia/LC_MESSAGES/libmessageviewer.mo
+share/locale/ia/LC_MESSAGES/libnoteshared.mo
 share/locale/ia/LC_MESSAGES/liboxygenstyleconfig.mo
-share/locale/ia/LC_MESSAGES/libpimactivity.mo
 share/locale/ia/LC_MESSAGES/libpimcommon.mo
+share/locale/ia/LC_MESSAGES/libpimprint.mo
 share/locale/ia/LC_MESSAGES/libplasma.mo
 share/locale/ia/LC_MESSAGES/libplasmaclock.mo
 share/locale/ia/LC_MESSAGES/libpowerdevilcommonconfig.mo
@@ -439,7 +449,6 @@ share/locale/ia/LC_MESSAGES/nepomukcleaner.mo
 share/locale/ia/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/ia/LC_MESSAGES/nepomukfilewatch.mo
 share/locale/ia/LC_MESSAGES/nepomukmigrator.mo
-share/locale/ia/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/ia/LC_MESSAGES/nepomukserver.mo
 share/locale/ia/LC_MESSAGES/nepomukservicestub.mo
 share/locale/ia/LC_MESSAGES/nepomukstorage.mo
@@ -524,6 +533,7 @@ share/locale/ia/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ia/LC_MESSAGES/plasma_package_org.kde.desktop.activitymanager.mo
 share/locale/ia/LC_MESSAGES/plasma_package_org.kde.desktop.widgetexplorer.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_activities.mo
+share/locale/ia/LC_MESSAGES/plasma_runner_baloosearchrunner.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_kget.mo
@@ -558,9 +568,11 @@ share/locale/ia/LC_MESSAGES/processui.mo
 share/locale/ia/LC_MESSAGES/randrmonitor.mo
 share/locale/ia/LC_MESSAGES/rellinks.mo
 share/locale/ia/LC_MESSAGES/searchbarplugin.mo
+share/locale/ia/LC_MESSAGES/sieveeditor.mo
 share/locale/ia/LC_MESSAGES/solid-hardware.mo
 share/locale/ia/LC_MESSAGES/solid_qt.mo
 share/locale/ia/LC_MESSAGES/soliduiserver.mo
+share/locale/ia/LC_MESSAGES/storageservicemanager.mo
 share/locale/ia/LC_MESSAGES/superkaramba.mo
 share/locale/ia/LC_MESSAGES/svgpart.mo
 share/locale/ia/LC_MESSAGES/sweeper.mo
@@ -573,5 +585,3 @@ share/locale/ia/LC_MESSAGES/validatorsplugin.mo
 share/locale/ia/LC_MESSAGES/webarchiver.mo
 share/locale/ia/LC_MESSAGES/xml_mimetypes.mo
 share/locale/ia/entry.desktop
-@dirrm share/locale/ia/LC_MESSAGES
-@dirrm share/locale/ia

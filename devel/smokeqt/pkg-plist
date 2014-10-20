@@ -126,6 +126,3 @@ share/smoke/qwt.argnames.txt
 share/smoke/qwt.typedefs.txt
 share/smokegen/qt-config.xml
 share/smokegen/qtdefines
-@dirrmtry share/smokegen
-@dirrmtry share/smoke
-@dirrmtry include/smoke

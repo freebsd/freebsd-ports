@@ -38,8 +38,3 @@ share/pixmaps/x-tile.svg
 %%DATADIR%%/modules/globs.py
 %%DATADIR%%/modules/support.py
 %%DATADIR%%/modules/tilings.py
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_AR

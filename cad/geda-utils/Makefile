@@ -20,12 +20,11 @@ LIB_DEPENDS=	libgeda.so:${PORTSDIR}/cad/libgeda
 DOCSDIR=	${PREFIX}/share/doc/geda
 DATADIR=	${PREFIX}/share/geda
 
-USES=		gmake perl5 pkgconfig shebangfix
+USES=		gmake perl5 pkgconfig python:run shebangfix
 SHEBANG_FILES=	scripts/gnet_hier_verilog.sh
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_PERL5=	run
-USE_PYTHON_RUN=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

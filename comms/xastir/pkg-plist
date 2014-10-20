@@ -213,16 +213,3 @@ man/man1/xastir_udp_client.1.gz
 %%DATADIR%%/symbols/wind.xbm
 %%DATADIR%%/symbols/winter_storm.xbm
 %%DATADIR%%/symbols/winter_weather.xbm
-@dirrm %%DATADIR%%/symbols
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/maps/Online
-@dirrm %%DATADIR%%/maps/GPS
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/fcc
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/GNIS
-@dirrm %%DATADIR%%/Counties
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%

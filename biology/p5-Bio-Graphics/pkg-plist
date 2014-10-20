@@ -216,7 +216,3 @@ man/man1/contig_draw.pl.1.gz
 man/man1/feature_draw.pl.1.gz
 man/man1/frend.pl.1.gz
 man/man1/search_overview.pl.1.gz
-@dirrmtry %%SITE_PERL%%/Bio/Graphics/FeatureFile
-@dirrmtry %%SITE_PERL%%/Bio/Graphics/Glyph
-@dirrmtry %%SITE_PERL%%/Bio/Graphics/Wiggle
-@dirrmtry %%SITE_PERL%%/Bio/Graphics

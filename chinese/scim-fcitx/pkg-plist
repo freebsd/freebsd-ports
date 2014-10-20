@@ -39,5 +39,3 @@ share/scim/icons/fcitx/quwei.png
 share/scim/icons/fcitx/shuangpin.png
 share/scim/icons/fcitx/wubi86.png
 share/scim/icons/fcitx/wubi98.png
-@dirrm share/scim/icons/fcitx
-@dirrm share/scim/fcitx

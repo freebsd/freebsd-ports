@@ -466,6 +466,7 @@
     SUBDIR += kolourpaint
     SUBDIR += kphotoalbum-kde4
     SUBDIR += kpovmodeler
+    SUBDIR += kqtquickcharts
     SUBDIR += ksaneplugin
     SUBDIR += ksnapshot
     SUBDIR += kudu

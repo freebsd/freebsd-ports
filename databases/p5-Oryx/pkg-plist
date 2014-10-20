@@ -90,14 +90,3 @@
 %%SITE_PERL%%/Oryx/Value/String.pm
 %%SITE_PERL%%/Oryx/Value/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Oryx/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Oryx
-@dirrmtry %%SITE_PERL%%/Oryx/Value
-@dirrmtry %%SITE_PERL%%/Oryx/Schema
-@dirrmtry %%SITE_PERL%%/Oryx/Manual
-@dirrmtry %%SITE_PERL%%/Oryx/DBM/Association
-@dirrmtry %%SITE_PERL%%/Oryx/DBM
-@dirrmtry %%SITE_PERL%%/Oryx/DBI/Util
-@dirrmtry %%SITE_PERL%%/Oryx/DBI/Association
-@dirrmtry %%SITE_PERL%%/Oryx/DBI
-@dirrmtry %%SITE_PERL%%/Oryx/Association
-@dirrmtry %%SITE_PERL%%/Oryx

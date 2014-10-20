@@ -60,9 +60,3 @@ share/locale/es/LC_MESSAGES/starplot.mo
 share/pixmaps/starplot32x32.xpm
 %%DATADIR%%/sample.stars
 %%DATADIR%%/test.stars
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/parfiles
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

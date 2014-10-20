@@ -15,4 +15,3 @@ man/man1/search-cmd.1.gz
 @sample %%ETCDIR%%/app.config.sample
 @sample %%ETCDIR%%/cert.pem.sample
 @sample %%ETCDIR%%/key.pem.sample
-@dirrmtry %%ETCDIR%%

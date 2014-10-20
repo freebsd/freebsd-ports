@@ -51,5 +51,3 @@ share/apps/libkgeomap/marker-ffff00-selected.png
 share/apps/libkgeomap/marker-ffff00-someselected.png
 share/apps/libkgeomap/marker-ffff00.png
 share/apps/libkgeomap/marker-icon-16x16.png
-@dirrm share/apps/libkgeomap
-@dirrm include/libkgeomap

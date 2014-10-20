@@ -43,5 +43,3 @@ man/man1/phmmer.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/globins4.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/minifam
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/minifam.h3m
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

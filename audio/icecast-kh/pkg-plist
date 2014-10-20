@@ -50,9 +50,3 @@ etc/icecast.xml.sample
 %%DATADIR%%/web/status2.xsl
 %%DATADIR%%/web/statusbar.html
 %%DATADIR%%/web/style.css
-@dirrmtry %%DATADIR%%/web/images
-@dirrmtry %%DATADIR%%/web
-@dirrmtry %%DATADIR%%/doc
-@dirrmtry %%DATADIR%%/admin
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

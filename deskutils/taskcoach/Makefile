@@ -13,9 +13,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 LICENSE=	GPLv3
 LICENSE_FILE=   ${WRKSRC}/LICENSE.txt
-USES=		twisted
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python twisted
+USE_PYTHON=	distutils
 PYDISTUTILS_EGGINFO=${DISTNAME}-py${PYTHON_VER}.egg-info
 USE_WX=		2.8
 WX_COMPS=	python:lib

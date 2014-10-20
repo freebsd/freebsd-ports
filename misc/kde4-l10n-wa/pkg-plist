@@ -84,6 +84,7 @@ share/locale/wa/LC_MESSAGES/attica_kde.mo
 share/locale/wa/LC_MESSAGES/audiorename_plugin.mo
 share/locale/wa/LC_MESSAGES/autorefresh.mo
 share/locale/wa/LC_MESSAGES/babelfish.mo
+share/locale/wa/LC_MESSAGES/calendarsupport.mo
 share/locale/wa/LC_MESSAGES/dirfilterplugin.mo
 share/locale/wa/LC_MESSAGES/display.mo
 share/locale/wa/LC_MESSAGES/dolphin.mo
@@ -217,12 +218,12 @@ share/locale/wa/LC_MESSAGES/kio_info.mo
 share/locale/wa/LC_MESSAGES/kio_man.mo
 share/locale/wa/LC_MESSAGES/kio_nepomuk.mo
 share/locale/wa/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/wa/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/wa/LC_MESSAGES/kio_nfs.mo
 share/locale/wa/LC_MESSAGES/kio_remote.mo
 share/locale/wa/LC_MESSAGES/kio_sftp.mo
 share/locale/wa/LC_MESSAGES/kio_smb.mo
 share/locale/wa/LC_MESSAGES/kio_thumbnail.mo
-share/locale/wa/LC_MESSAGES/kio_timeline.mo
 share/locale/wa/LC_MESSAGES/kio_trash.mo
 share/locale/wa/LC_MESSAGES/kioclient.mo
 share/locale/wa/LC_MESSAGES/kioexec.mo
@@ -441,7 +442,3 @@ share/locale/wa/LC_MESSAGES/timezones4.mo
 share/locale/wa/LC_MESSAGES/uachangerplugin.mo
 share/locale/wa/LC_MESSAGES/useraccount.mo
 share/locale/wa/entry.desktop
-@dirrm share/doc/HTML/wa/common
-@dirrm share/apps/ktuberling/sounds/wa
-@dirrm share/apps/ktuberling/sounds
-@dirrm share/apps/ktuberling

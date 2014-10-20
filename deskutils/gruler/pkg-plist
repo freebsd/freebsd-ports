@@ -3,6 +3,3 @@ share/applications/gruler.desktop
 share/gruler/glade/gruler-icon.png
 share/gruler/glade/gruler.glade
 share/pixmaps/gruler/gruler-icon.png
-@dirrm share/pixmaps/gruler
-@dirrm share/gruler/glade
-@dirrm share/gruler

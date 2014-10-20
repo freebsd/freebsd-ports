@@ -16,8 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_EGGINFO=	${PORTNAME}_python-${PKGVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 
 pre-patch:

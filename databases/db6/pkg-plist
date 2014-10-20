@@ -81,6 +81,3 @@ lib/libdb_cxx-%%BDBVER%%.so
 %%JAVA%%lib/libdb_java-%%BDBVER%%.so
 %%SQL%%lib/libdb_sql-%%BDBVER%%.so
 lib/libdb_stl-%%BDBVER%%.so
-@dirrm lib/db%%BDBMAJ%%
-@dirrm include/db%%BDBMAJ%%
-@dirrm bin/db%%BDBMAJ%%

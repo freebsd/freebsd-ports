@@ -12,10 +12,8 @@ COMMENT=	Python bindings for Internationalized Domain Name toolkit 2
 
 LIB_DEPENDS=	libidnkitlite.so:${PORTSDIR}/dns/idnkit2
 
-USES=		tar:bzip2
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2 tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

@@ -1,6 +1,7 @@
 bin/kmplot
 lib/kde4/libkmplotpart.so
 man/man1/kmplot.1.gz
+share/appdata/kmplot.appdata.xml
 share/applications/kde4/kmplot.desktop
 share/apps/kmplot/kmplot_part.rc
 share/apps/kmplot/kmplot_part_readonly.rc
@@ -46,5 +47,3 @@ share/icons/hicolor/48x48/apps/kmplot.png
 share/icons/hicolor/64x64/apps/kmplot.png
 share/icons/hicolor/scalable/apps/kmplot.svgz
 share/kde4/services/kmplot_part.desktop
-@dirrm share/doc/HTML/en/kmplot
-@dirrm share/apps/kmplot

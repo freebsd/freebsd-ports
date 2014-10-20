@@ -1,4 +1,5 @@
 bin/blinken
+share/appdata/blinken.appdata.xml
 share/applications/kde4/blinken.desktop
 share/apps/blinken/README.packagers
 share/apps/blinken/fonts/steve.ttf
@@ -26,8 +27,3 @@ share/icons/hicolor/32x32/apps/blinken.png
 share/icons/hicolor/48x48/apps/blinken.png
 share/icons/hicolor/64x64/apps/blinken.png
 share/icons/hicolor/scalable/apps/blinken.svgz
-@dirrm share/doc/HTML/en/blinken
-@dirrm share/apps/blinken/sounds
-@dirrm share/apps/blinken/images
-@dirrm share/apps/blinken/fonts
-@dirrm share/apps/blinken

@@ -80,8 +80,3 @@ bin/miniterm.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxSerialConfigDialog.wxg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxTerminal.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxTerminal.wxg
-@dirrmtry %%PYTHON_SITELIBDIR%%/serial/tools
-@dirrmtry %%PYTHON_SITELIBDIR%%/serial/urlhandler
-@dirrmtry %%PYTHON_SITELIBDIR%%/serial
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

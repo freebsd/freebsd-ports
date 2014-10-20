@@ -2,7 +2,6 @@
 
 PORTNAME=	kdenetwork-strigi-analyzers
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	net kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -12,7 +11,7 @@ COMMENT=	Strigi analyzers for network-related file formats
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USE_KDE4=	kdelibs kdeprefix kdehier strigi automoc4
+USE_KDE4=	kdelibs kdeprefix strigi automoc4
 USES=		cmake:outsource tar:xz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 

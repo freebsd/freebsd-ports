@@ -24,6 +24,3 @@ GNUstep/Local/Applications/PlopFolio.app/Resources/resize.tiff
 GNUstep/Local/Applications/PlopFolio.app/Resources/stop.tiff
 GNUstep/Local/Applications/PlopFolio.app/stamp.make
 GNUstep/Local/Tools/PlopFolio
-@dirrm GNUstep/Local/Applications/PlopFolio.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/PlopFolio.app/Resources
-@dirrm GNUstep/Local/Applications/PlopFolio.app

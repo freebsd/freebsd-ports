@@ -132,16 +132,6 @@ bin/txt2gcal
 %%DATADIR%%/wtt1.rc
 %%DATADIR%%/wtt2.rc
 %%DATADIR%%/wtt3.rc
-@dirrm %%DATADIR%%/misc/wloc
-@dirrm %%DATADIR%%/misc/srss
-@dirrm %%DATADIR%%/misc/mrms
-@dirrm %%DATADIR%%/misc/moon
-@dirrm %%DATADIR%%/misc/gcalltx
-@dirrm %%DATADIR%%/misc/dst
-@dirrm %%DATADIR%%/misc/ddiff
-@dirrm %%DATADIR%%/misc/daily
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%
 %%NLS%%share/locale/ca/LC_MESSAGES/gcal.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gcal.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gcal.mo
@@ -155,5 +145,3 @@ bin/txt2gcal
 %%NLS%%share/locale/rw/LC_MESSAGES/gcal.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gcal.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gcal.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw

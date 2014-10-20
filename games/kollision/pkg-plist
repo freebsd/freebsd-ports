@@ -22,7 +22,3 @@ share/icons/oxygen/32x32/apps/kollision.png
 share/icons/oxygen/48x48/apps/kollision.png
 share/icons/oxygen/64x64/apps/kollision.png
 share/icons/oxygen/scalable/apps/kollision.svgz
-@dirrm share/doc/HTML/en/kollision
-@dirrm share/apps/kollision/sounds
-@dirrm share/apps/kollision/pictures
-@dirrm share/apps/kollision

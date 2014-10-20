@@ -11,8 +11,3 @@ share/pixmaps/grig/digits_small.png
 share/pixmaps/grig/grig-logo.png
 share/pixmaps/grig/ic910.png
 share/pixmaps/grig/smeter.png
-@dirrm share/pixmaps/grig
-@dirrm %%DATADIR%%
-@dirrmtry lib/locale/fr/LC_MESSAGES
-@dirrmtry lib/locale/fr
-@dirrmtry lib/locale

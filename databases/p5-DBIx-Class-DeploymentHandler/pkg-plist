@@ -57,14 +57,3 @@
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Standard::VersionResultSet.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::WithApplicatorDumple.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::WithReasonableDefaults.3.gz
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Standard
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Deprecated
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionHandler
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Manual
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod/SQL/Translator
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod/SQL
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Cookbook
-@dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DeploymentHandler

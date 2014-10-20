@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 DOCS_CONFIGURE_OFF=	--without-docdir --without-exampledir
 DOCS_CONFIGURE_ON=	--with-docdir=${DOCSDIR}
 
-USES=		gmake
+USES=		alias gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-drivedb --enable-sample \

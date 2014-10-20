@@ -30,12 +30,11 @@ RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 OPTIONS_DEFINE=	DOCS
 
 USES=		compiler:nestedfct desktop-file-utils gettext gmake \
-		libtool pathfix pkgconfig
+		libtool pathfix pkgconfig python:2.7
 LDFLAGS=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
-USE_PYTHON=		2.7
-USE_PYTHON_PREFIX=	yes
+USE_PYTHON=		pythonprefix
 USE_GNOME=		glib20 pygtk2
 
 PLIST_SUB+=		PORTVERSION="${PORTVERSION}"

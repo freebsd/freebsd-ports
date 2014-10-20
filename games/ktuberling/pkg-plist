@@ -132,8 +132,3 @@ share/icons/hicolor/48x48/apps/ktuberling.png
 share/icons/hicolor/48x48/mimetypes/application-x-tuberling.png
 share/icons/hicolor/64x64/apps/ktuberling.png
 share/icons/hicolor/64x64/mimetypes/application-x-tuberling.png
-@dirrm share/doc/HTML/en/ktuberling
-@dirrm share/apps/ktuberling/sounds/en
-@dirrm share/apps/ktuberling/sounds
-@dirrm share/apps/ktuberling/pics
-@dirrm share/apps/ktuberling

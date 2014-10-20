@@ -184,14 +184,3 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/TokyoCabinet/FDB.src/M000077.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/TokyoCabinet/FDB.src/M000086.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/TokyoCabinet/TDB.html
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/TokyoCabinet/ADB.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/TokyoCabinet/BDB.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/TokyoCabinet/BDBCUR.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/TokyoCabinet/FDB.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/TokyoCabinet/HDB.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/TokyoCabinet/TDB.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/TokyoCabinet/TDBQRY.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/TokyoCabinet
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

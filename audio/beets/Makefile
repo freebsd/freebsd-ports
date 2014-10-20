@@ -17,9 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.22:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}enum34>=0:${PORTSDIR}/devel/py-enum34 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PLIST_FILES=	man/man1/beet.1.gz man/man5/beetsconfig.5.gz
 

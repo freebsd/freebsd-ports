@@ -257,20 +257,3 @@ astrometry/lib/python/astrometry/util/w3c_validator.py
 astrometry/lib/python/astrometry/util/yanny.py
 astrometry/ups/astrometry_net.cfg.template
 astrometry/ups/astrometry_net.table
-@dirrm astrometry/ups
-@dirrm astrometry/lib/python/astrometry/util
-@dirrm astrometry/lib/python/astrometry/sdss
-@dirrm astrometry/lib/python/astrometry/libkd
-@dirrm astrometry/lib/python/astrometry/catalogs
-@dirrm astrometry/lib/python/astrometry/blind
-@dirrm astrometry/lib/python/astrometry
-@dirrm astrometry/lib/python
-@dirrm astrometry/lib
-@dirrm astrometry/include/astrometry
-@dirrm astrometry/include
-@dirrm astrometry/examples
-@dirrm astrometry/etc
-@dirrm astrometry/doc
-@dirrm astrometry/data
-@dirrm astrometry/bin
-@dirrm astrometry

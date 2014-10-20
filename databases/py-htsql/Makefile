@@ -14,9 +14,8 @@ COMMENT=	Database Query Language (Core & SQLite Backend)
 
 LICENSE=	AGPLv3
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3

@@ -154,24 +154,3 @@
 %%DATADIR%%/src/DALMP/Queue/QueueInterface.php
 %%DATADIR%%/src/DALMP/Queue/SQLite.php
 %%DATADIR%%/src/DALMP/Queue/Gearman.php
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/tests
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/docs/database
-@dirrm %%DATADIR%%/docs/cache
-@dirrm %%DATADIR%%/docs/examples
-@dirrm %%DATADIR%%/docs/sessions
-@dirrm %%DATADIR%%/docs/queue
-@dirrm %%DATADIR%%/docs/_templates
-@dirrm %%DATADIR%%/examples/database
-@dirrm %%DATADIR%%/examples/cache
-@dirrm %%DATADIR%%/examples/sessions
-@dirrm %%DATADIR%%/examples/all_together
-@dirrm %%DATADIR%%/examples/queue
-@dirrm %%DATADIR%%/src/DALMP
-@dirrm %%DATADIR%%/src/DALMP/Sessions
-@dirrm %%DATADIR%%/src/DALMP/Cache
-@dirrm %%DATADIR%%/src/DALMP/Queue
-@dirrm %%DATADIR%%

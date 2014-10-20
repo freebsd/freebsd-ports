@@ -19,7 +19,7 @@ GH_PROJECT=	gcalcli
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	a0fc61a
 
-USE_PYTHON=	yes
+USES=		python
 
 NO_BUILD=	yes
 

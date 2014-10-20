@@ -58,8 +58,3 @@ man/man1/7zr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.unix
 %%PORTDOCS%%%%DOCSDIR%%/unRarLicense.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/MANUAL/commands
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/MANUAL/switches
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/MANUAL
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry libexec/p7zip

@@ -33,8 +33,3 @@ share/icons/hicolor/22x22/apps/kolf.png
 share/icons/hicolor/32x32/apps/kolf.png
 share/icons/hicolor/48x48/apps/kolf.png
 share/icons/hicolor/64x64/apps/kolf.png
-@dirrm share/doc/HTML/en/kolf
-@dirrm share/apps/kolf/sounds
-@dirrm share/apps/kolf/pics
-@dirrm share/apps/kolf/courses
-@dirrm share/apps/kolf

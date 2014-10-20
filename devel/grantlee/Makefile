@@ -7,11 +7,10 @@
 # deskutils/kdepim4
 # devel/kdevplatform
 # finance/skrooge
-# misk/kdehier4
 #
 
 PORTNAME=	grantlee
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.${PORTNAME}.org/ \
 		http://www.loegria.net/${PORTNAME}/

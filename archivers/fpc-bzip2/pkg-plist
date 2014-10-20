@@ -8,8 +8,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/bzip2stream.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/libpbzip2.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/libpbzip2comn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/libpbzip2stream.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

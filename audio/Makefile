@@ -438,7 +438,6 @@
     SUBDIR += lv2core
     SUBDIR += lxmusic
     SUBDIR += mac
-    SUBDIR += mad
     SUBDIR += madfufw
     SUBDIR += madplay
     SUBDIR += malint

@@ -4,7 +4,6 @@ bin/pcb
 %%PORTDOCS%%man/man1/pcb.1.gz
 share/applications/pcb.desktop
 share/appdata/pcb.appdata.xml
-@dirrmtry share/appdata
 share/icons/hicolor/16x16/mimetypes/application-x-excellon-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-gerber-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-pcb-footprint-16.png
@@ -42,18 +41,13 @@ share/mime/application/x-gerber.xml
 share/mime/application/x-pcb-footprint.xml
 share/mime/application/x-pcb-layout.xml
 share/mime/application/x-pcb-netlist.xml
-@dirrmtry share/mime/application
 share/mime/packages/pcb.xml
 share/mimelnk/application/x-excellon.desktop
 share/mimelnk/application/x-gerber.desktop
 share/mimelnk/application/x-pcb-footprint.desktop
 share/mimelnk/application/x-pcb-layout.desktop
 share/mimelnk/application/x-pcb-netlist.desktop
-@dirrmtry share/mimelnk/application
-@dirrmtry share/mimelnk
 share/gEDA/scheme/gnet-pcbfwd.scm
-@dirrmtry share/gEDA/scheme
-@dirrmtry share/gEDA
 %%DATADIR%%/default_font
 %%DATADIR%%/gpcb-menu.res
 %%DATADIR%%/pcb-menu.res
@@ -1168,34 +1162,3 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/tools/MergePCBPS
 %%DATADIR%%/tools/Merge_dimPCBPS
 %%DATADIR%%/tools/PCB2HPGL
-@dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%/pcblib-newlib/pci
-@dirrm %%DATADIR%%/pcblib-newlib/panasonic
-@dirrm %%DATADIR%%/pcblib-newlib/optical
-@dirrm %%DATADIR%%/pcblib-newlib/optek
-@dirrm %%DATADIR%%/pcblib-newlib/nichicon
-@dirrm %%DATADIR%%/pcblib-newlib/minicircuits
-@dirrm %%DATADIR%%/pcblib-newlib/johnstech
-@dirrm %%DATADIR%%/pcblib-newlib/gtag
-@dirrm %%DATADIR%%/pcblib-newlib/generic
-@dirrm %%DATADIR%%/pcblib-newlib/geda
-@dirrm %%DATADIR%%/pcblib-newlib/cts
-@dirrm %%DATADIR%%/pcblib-newlib/crystal
-@dirrm %%DATADIR%%/pcblib-newlib/connector
-@dirrm %%DATADIR%%/pcblib-newlib/candk
-@dirrm %%DATADIR%%/pcblib-newlib/bourns
-@dirrm %%DATADIR%%/pcblib-newlib/amphenol
-@dirrm %%DATADIR%%/pcblib-newlib/amp
-@dirrm %%DATADIR%%/pcblib-newlib
-@dirrm %%DATADIR%%/newlib/tests
-@dirrm %%DATADIR%%/newlib/not_vetted_ingo
-@dirrm %%DATADIR%%/newlib/msp430
-@dirrm %%DATADIR%%/newlib/keystone
-@dirrm %%DATADIR%%/newlib/headers
-@dirrm %%DATADIR%%/newlib/electro-optics
-@dirrm %%DATADIR%%/newlib/crystal
-@dirrm %%DATADIR%%/newlib/connectors
-@dirrm %%DATADIR%%/newlib/2_pin_thru-hole_packages
-@dirrm %%DATADIR%%/newlib
-@dirrm %%DATADIR%%/m4
-@dirrm %%DATADIR%%

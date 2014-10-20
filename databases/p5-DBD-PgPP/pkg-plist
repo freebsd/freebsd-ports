@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/DBD::PgPP.3.gz
 %%SITE_PERL%%/DBD/PgPP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/PgPP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/PgPP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-@dirrmtry %%SITE_PERL%%/DBD

@@ -1,5 +1,3 @@
 %%PERL5_MAN3%%/Dancer2::Plugin::DBIC.3.gz
 %%SITE_PERL%%/Dancer2/Plugin/DBIC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2/Plugin/DBIC/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2/Plugin/DBIC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2/Plugin

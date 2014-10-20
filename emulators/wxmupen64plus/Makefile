@@ -22,10 +22,10 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64p
 		mupen64plus:${PORTSDIR}/emulators/mupen64plus-ui-console
 
 PROJECTHOST=	bsdistfiles
+USES=		python
 USE_SDL=	yes
 USE_WX=		3.0
 WX_UNICODE=	yes
-USE_PYTHON=	yes
 WAF_SCRIPT=	waf
 
 post-patch:

@@ -523,23 +523,3 @@
 %%DATADIR%%/release.cfg
 %%DATADIR%%/sfx.cfg
 %%DATADIR%%/timidity.cfg
-@dirrmtry %%TIMIDITY_DATADIR%%
-@dirrm %%DATADIR%%/inst/wowpats
-@dirrm %%DATADIR%%/inst/wime
-@dirrm %%DATADIR%%/inst/roland
-@dirrm %%DATADIR%%/inst/release
-@dirrm %%DATADIR%%/inst/orchhit-patch
-@dirrm %%DATADIR%%/inst/mazpat/Wind
-@dirrm %%DATADIR%%/inst/mazpat/Stings
-@dirrm %%DATADIR%%/inst/mazpat/FX
-@dirrm %%DATADIR%%/inst/mazpat
-@dirrm %%DATADIR%%/inst/gusperc
-@dirrm %%DATADIR%%/inst/GUS/sfx
-@dirrm %%DATADIR%%/inst/GUS/power
-@dirrm %%DATADIR%%/inst/GUS/gsdrum40
-@dirrm %%DATADIR%%/inst/GUS/gsdrum25
-@dirrm %%DATADIR%%/inst/GUS/gsdrum08
-@dirrm %%DATADIR%%/inst/GUS/gsdrum00
-@dirrm %%DATADIR%%/inst/GUS
-@dirrm %%DATADIR%%/inst
-@dirrm %%DATADIR%%

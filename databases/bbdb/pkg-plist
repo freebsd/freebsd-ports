@@ -31,4 +31,3 @@
 %%BBDB_LISPDIR%%/bbdb-whois.elc
 %%BBDB_LISPDIR%%/bbdb-xemacs.el
 %%BBDB_LISPDIR%%/bbdb-xemacs.elc
-@dirrm %%BBDB_LISPDIR%%

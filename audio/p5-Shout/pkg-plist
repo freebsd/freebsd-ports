@@ -7,6 +7,3 @@
 %%PERL5_MAN3%%/Shout.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/example.pl
 %%PORTDOCS%%%%DOCSDIR%%/example2.pl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout
-@dirrmtry %%SITE_PERL%%/mach

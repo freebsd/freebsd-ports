@@ -31,4 +31,3 @@ share/locale/uk/LC_MESSAGES/osmo.mo
 share/locale/zh_CN/LC_MESSAGES/osmo.mo
 share/pixmaps/osmo.png
 share/sounds/osmo/alarm.wav
-@dirrm share/sounds/osmo

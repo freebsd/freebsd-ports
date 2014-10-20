@@ -1375,6 +1375,7 @@
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-termcolor
     SUBDIR += rubygem-terminal-table
+    SUBDIR += rubygem-text
     SUBDIR += rubygem-tidy
     SUBDIR += rubygem-unf
     SUBDIR += rubygem-unf_ext

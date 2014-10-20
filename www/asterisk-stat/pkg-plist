@@ -1,4 +1,6 @@
 etc/asterisk/cdr_%%ASTERISKSTATDB%%.tbl
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%ASTERISKDIR%%/CHANGELOG.txt
 %%ASTERISKDIR%%/call-comp.php
 %%ASTERISKDIR%%/call-daily-load.php
@@ -121,13 +123,14 @@ etc/asterisk/cdr_%%ASTERISKSTATDB%%.tbl
 %%ASTERISKDIR%%/lib/fpdf.php
 %%ASTERISKDIR%%/lib/iam_csvdump.php
 %%ASTERISKDIR%%/wiki.html
-@dirrmtry etc/asterisk
-@dirrm %%ASTERISKDIR%%/lib/font/makefont
-@dirrm %%ASTERISKDIR%%/lib/font
-@dirrm %%ASTERISKDIR%%/lib/DB-modules
-@dirrm %%ASTERISKDIR%%/lib
-@dirrm %%ASTERISKDIR%%/jpgraph_lib
-@dirrm %%ASTERISKDIR%%/images
-@dirrm %%ASTERISKDIR%%/css/images
-@dirrm %%ASTERISKDIR%%/css
-@dirrm %%ASTERISKDIR%%
+@dir %%ASTERISKDIR%%/lib/font/makefont
+@dir %%ASTERISKDIR%%/lib/font
+@dir %%ASTERISKDIR%%/lib/DB-modules
+@dir %%ASTERISKDIR%%/lib
+@dir %%ASTERISKDIR%%/jpgraph_lib
+@dir %%ASTERISKDIR%%/images
+@dir %%ASTERISKDIR%%/css/images
+@dir %%ASTERISKDIR%%/css
+@dir %%ASTERISKDIR%%
+@owner
+@group

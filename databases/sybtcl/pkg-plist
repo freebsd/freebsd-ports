@@ -5,4 +5,3 @@ lib/libSybtcl.so
 lib/Sybtcl/pkgIndex.tcl
 lib/Sybtcl/sign_on.tcl
 man/mann/sybtcl.n.gz
-@dirrm lib/Sybtcl

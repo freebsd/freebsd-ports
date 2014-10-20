@@ -12,7 +12,7 @@ COMMENT=	ALSA compatibility library
 
 LICENSE=	LGPL21 # or any later version
 
-USES=		tar:bzip2 libtool:keepla
+USES=		alias libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfdir="\$${prefix}/libdata/pkgconfig"

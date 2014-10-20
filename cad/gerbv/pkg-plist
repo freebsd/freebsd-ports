@@ -146,30 +146,3 @@ share/icons/hicolor/24x24/apps/gerbv.png
 share/icons/hicolor/32x32/apps/gerbv.png
 share/icons/hicolor/48x48/apps/gerbv.png
 share/icons/hicolor/scalable/apps/gerbv.svg
-@dirrm %%DATADIR%%/scheme
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/uwe
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trailing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/thermal
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/protel-pnp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/polarity
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pick-and-place
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/orcad
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/numpres
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nollezappare
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jj
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hellboard
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exposure
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ekf2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ekf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eaglecad1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dan
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cslk
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/amacro-ref
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/am-test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Mentor-BoardStation
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/eagle
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/PNG-print
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/gerbv-%%VERSION%%

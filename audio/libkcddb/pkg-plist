@@ -21,7 +21,3 @@ share/doc/HTML/en/kcontrol/cddbretrieval/kscd13.png
 share/doc/HTML/en/kcontrol/cddbretrieval/kscd14.png
 share/doc/HTML/en/kcontrol/cddbretrieval/kscd16.png
 share/kde4/services/libkcddb.desktop
-@dirrm share/doc/HTML/en/kcontrol/cddbretrieval
-@dirrm lib/cmake/libkcddb
-@dirrmtry lib/cmake
-@dirrm include/libkcddb

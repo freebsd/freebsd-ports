@@ -7,4 +7,3 @@ lib/libdbf.so.0.0.1
 libdata/pkgconfig/libdbf.pc
 %%NLS%%share/locale/de/LC_MESSAGES/dbf.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libdbf.mo
-@dirrm include/libdbf

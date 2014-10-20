@@ -108,6 +108,3 @@ share/TrustedQSL/help/tqslapp/update.htm
 share/TrustedQSL/help/tqslapp/update1.bmp
 share/TrustedQSL/help/tqslapp/update2.bmp
 share/pixmaps/TrustedQSL.png
-@dirrm share/TrustedQSL/help/tqslapp
-@dirrm share/TrustedQSL/help
-@dirrm share/TrustedQSL

@@ -22,8 +22,7 @@ LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
 		libgksu2.so:${PORTSDIR}/sysutils/libgksu \
 #		gdl-1.2:${PORTSDIR}/x11-toolkits/gdl
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
-USE_PYTHON=	yes
+USES=		gmake libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	libgtkhtml pygnome2 libgda4
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

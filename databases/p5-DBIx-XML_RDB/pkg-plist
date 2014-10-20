@@ -5,6 +5,3 @@ bin/xml2sql.pl
 %%SITE_PERL%%/DBIx/sql2xml.pl
 %%SITE_PERL%%/DBIx/xml2sql.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/XML_RDB/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/XML_RDB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx

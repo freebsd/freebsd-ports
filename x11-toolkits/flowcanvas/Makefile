@@ -18,8 +18,7 @@ LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USES=		tar:bzip2 pkgconfig
-USE_PYTHON_BUILD=yes
+USES=		tar:bzip2 pkgconfig python:build
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

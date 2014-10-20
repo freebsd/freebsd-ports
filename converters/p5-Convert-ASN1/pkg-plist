@@ -7,7 +7,3 @@
 %%SITE_PERL%%/Convert/ASN1/_encode.pm
 %%SITE_PERL%%/Convert/ASN1/parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASN1/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASN1
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
-@dirrmtry %%SITE_PERL%%/Convert/ASN1
-@dirrmtry %%SITE_PERL%%/Convert

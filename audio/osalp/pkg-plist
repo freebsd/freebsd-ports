@@ -51,5 +51,3 @@ lib/aflib/libaflibWavFile.so
 lib/libaflib-%%VERSION%%.so
 lib/libaflib.so
 share/aclocal/audiofile.m4
-@dirrm lib/aflib
-@dirrm include/aflib

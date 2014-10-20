@@ -18,6 +18,7 @@ COMMENT=	The portable version of OpenBSD's OpenSSH
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 
+USES=			alias
 USE_AUTOTOOLS=		autoconf autoheader
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes

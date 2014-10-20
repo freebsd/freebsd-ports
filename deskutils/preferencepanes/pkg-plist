@@ -14,8 +14,3 @@ GNUstep/System/Library/Headers/PreferencePanes
 GNUstep/System/Library/Libraries/libPreferencePanes.so
 GNUstep/System/Library/Libraries/libPreferencePanes.so.%%MAJORLIBVERSION%%
 GNUstep/System/Library/Libraries/libPreferencePanes.so.%%LIBVERSION%%
-@dirrm GNUstep/System/Library/Frameworks/PreferencePanes.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm GNUstep/System/Library/Frameworks/PreferencePanes.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm GNUstep/System/Library/Frameworks/PreferencePanes.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm GNUstep/System/Library/Frameworks/PreferencePanes.framework/Versions
-@dirrm GNUstep/System/Library/Frameworks/PreferencePanes.framework

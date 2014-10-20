@@ -13,8 +13,3 @@
 %%PERL5_MAN3%%/DBIx::DBHResolver::Strategy::Range.3.gz
 %%PERL5_MAN3%%/DBIx::DBHResolver::Strategy::Remainder.3.gz
 %%PERL5_MAN3%%/DBIx::DBHResolver::Strategy::RoundRobin.3.gz
-@dirrm %%SITE_PERL%%/DBIx/DBHResolver/Strategy
-@dirrm %%SITE_PERL%%/DBIx/DBHResolver
-@dirrmtry %%SITE_PERL%%/DBIx
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBHResolver
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx

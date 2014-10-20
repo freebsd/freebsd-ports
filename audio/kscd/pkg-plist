@@ -12,5 +12,3 @@ share/icons/hicolor/16x16/apps/kscd.png
 share/icons/hicolor/32x32/apps/kscd.png
 share/icons/hicolor/48x48/apps/kscd.png
 share/icons/hicolor/64x64/apps/kscd.png
-@dirrm share/apps/kscd/skin
-@dirrm share/apps/kscd

@@ -6,6 +6,7 @@ lib/libkhangmanengine.so
 lib/libkhangmanengine.so.4
 lib/libkhangmanengine.so.%%KDE4_GENERIC_LIB_VERSION%%
 man/man6/khangman.6.gz
+share/appdata/khangman.appdata.xml
 share/applications/kde4/khangman.desktop
 share/apps/khangman/fonts/Domestic_Manners.ttf
 share/apps/khangman/fonts/Dustismo_Roman.ttf
@@ -41,15 +42,3 @@ share/icons/hicolor/64x64/apps/khangman.png
 share/icons/hicolor/80x80/apps/khangman-harmattan.png
 share/icons/hicolor/scalable/apps/khangman-harmattan.svgz
 share/icons/hicolor/scalable/apps/khangman.svgz
-@dirrmtry share/icons/hicolor/80x80/apps
-@dirrmtry share/icons/hicolor/80x80
-@dirrm share/doc/HTML/en/khangman
-@dirrm share/apps/khangman/sounds
-@dirrm share/apps/khangman/pics/winter
-@dirrm share/apps/khangman/pics/sea
-@dirrm share/apps/khangman/pics/desert
-@dirrm share/apps/khangman/pics/bees
-@dirrm share/apps/khangman/pics
-@dirrm share/apps/khangman/fonts
-@dirrm share/apps/khangman
-@dirrm include/khangman

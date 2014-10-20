@@ -11,8 +11,8 @@ COMMENT=	Shell environment to limited sets of commands to users
 
 LICENSE=	GPLv3 # (or later)
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 post-patch:
 	@${REINPLACE_CMD} -e \

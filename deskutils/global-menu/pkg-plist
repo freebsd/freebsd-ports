@@ -47,6 +47,3 @@ share/locale/tr/LC_MESSAGES/gnome-globalmenu.mo
 share/locale/uk/LC_MESSAGES/gnome-globalmenu.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-globalmenu.mo
 share/pixmaps/globalmenu.png
-@dirrm include/gnome-globalmenu
-@dirrmtry lib/bonobo/servers
-@dirrm %%DOCSDIR%%

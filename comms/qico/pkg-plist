@@ -3,4 +3,3 @@ etc/qico.conf.sample
 libexec/qico
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.ru
 %%PORTDOCS%%%%DOCSDIR%%/README.ru
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,7 +1,17 @@
 bin/inkscape
 bin/inkview
+man/el/man1/inkscape.el.1.gz
+man/fr/man1/inkscape.fr.1.gz
+man/ja/man1/inkscape.ja.1.gz
 man/man1/inkscape.1.gz
+man/man1/inkscape.el.1.gz
+man/man1/inkscape.fr.1.gz
+man/man1/inkscape.ja.1.gz
+man/man1/inkscape.sk.1.gz
+man/man1/inkscape.zh_TW.1.gz
 man/man1/inkview.1.gz
+man/sk/man1/inkscape.ja.1.gz
+man/zh_TW/man1/inkscape.zh_TW.1.gz
 share/applications/inkscape.desktop
 share/icons/hicolor/16x16/apps/inkscape.png
 share/icons/hicolor/22x22/apps/inkscape.png
@@ -12,7 +22,6 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/clipart/README
 %%DATADIR%%/clipart/draw-freely.ru.svg
 %%DATADIR%%/clipart/draw-freely.svg
-%%DATADIR%%/clipart/inkscape.logo.svg
 %%DATADIR%%/clipart/orav.svg
 %%DATADIR%%/clipart/tux.svg
 %%DATADIR%%/examples/README

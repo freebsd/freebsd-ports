@@ -40,5 +40,3 @@ man/man3/biconv_open.3.gz
 %%DATADIR%%/koi8-u.cct
 %%DATADIR%%/ksx1001.cct
 %%DATADIR%%/shift_jis.cct
-@dirrmtry %%DATADIR%%
-@dirrmtry libexec/iconv

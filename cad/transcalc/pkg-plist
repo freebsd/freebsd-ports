@@ -12,6 +12,3 @@ share/transcalc/images/c_microstrip.jpg
 share/transcalc/images/coax.jpg
 share/transcalc/images/microstrip.jpg
 share/transcalc/images/rectwaveguide.jpg
-@dirrm share/transcalc/examples
-@dirrm share/transcalc/images
-@dirrm share/transcalc

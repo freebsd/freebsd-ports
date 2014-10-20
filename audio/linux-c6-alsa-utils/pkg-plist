@@ -57,10 +57,3 @@ usr/share/sounds/alsa/Rear_Left.wav
 usr/share/sounds/alsa/Rear_Right.wav
 usr/share/sounds/alsa/Side_Left.wav
 usr/share/sounds/alsa/Side_Right.wav
-@dirrmtry usr/share/locale/ja/LC_MESSAGES
-@dirrmtry usr/share/locale/ja
-@dirrmtry usr/share/locale/de/LC_MESSAGES
-@dirrmtry usr/share/locale/de
-@dirrmtry usr/share/locale
-@dirrmtry usr/share/doc/alsa-utils-1.0.22
-@dirrmtry usr/share/alsa/speaker-test

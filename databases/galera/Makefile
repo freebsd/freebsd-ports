@@ -18,12 +18,11 @@ BUILD_DEPENDS=	checkmk:${PORTSDIR}/devel/libcheck \
 		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>=0:${PORTSDIR}/textproc/py-cloud_sptheme
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
-USES=		execinfo scons shebangfix
+USES=		execinfo python:build scons shebangfix
 
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_PYTHON_BUILD=	yes
 
 MAKE_CMD=	${SCONS} -j${MAKE_JOBS_NUMBER} --config=force
 

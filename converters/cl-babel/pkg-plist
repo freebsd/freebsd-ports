@@ -19,7 +19,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/HEADER
 %%PORTDOCS%%%%DOCSDIR%%/NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii.txt-utf8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmarks.lisp
@@ -36,6 +35,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-32.txt-utf8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-8.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf-8.txt-utf8
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%LIB32DIR%%/common-lisp/babel/src
-@dirrm %%LIB32DIR%%/common-lisp/babel

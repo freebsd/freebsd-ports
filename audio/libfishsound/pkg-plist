@@ -9,4 +9,3 @@ lib/libfishsound.so
 lib/libfishsound.so.1
 lib/libfishsound.so.1.3.0
 libdata/pkgconfig/fishsound.pc
-@dirrm include/fishsound

@@ -210,34 +210,4 @@ lib/gtk-2.0/%%GTK2_VERSION%%/engines/libequinox.so
 %%DATADIR%%/Equinox Evolution Squared/metacity-1/close.png
 %%DATADIR%%/Equinox Evolution Squared/metacity-1/min.png
 %%DATADIR%%/Equinox Evolution Squared/ChangeLog
-@dirrm %%DATADIR%%/Equinox Evolution Squared/metacity-1
-@dirrm %%DATADIR%%/Equinox Evolution Squared
-@dirrm %%DATADIR%%/Equinox Evolution Rounded/metacity-1
-@dirrm %%DATADIR%%/Equinox Evolution Rounded
-@dirrm %%DATADIR%%/Equinox Evolution Midnight/metacity-1
-@dirrm %%DATADIR%%/Equinox Evolution Midnight/gtk-2.0/images
-@dirrm %%DATADIR%%/Equinox Evolution Midnight/gtk-2.0/fixes
-@dirrm %%DATADIR%%/Equinox Evolution Midnight/gtk-2.0/apps
-@dirrm %%DATADIR%%/Equinox Evolution Midnight/gtk-2.0
-@dirrm %%DATADIR%%/Equinox Evolution Midnight
-@dirrm %%DATADIR%%/Equinox Evolution Light/gtk-2.0/images
-@dirrm %%DATADIR%%/Equinox Evolution Light/gtk-2.0/apps
-@dirrm %%DATADIR%%/Equinox Evolution Light/gtk-2.0
-@dirrm %%DATADIR%%/Equinox Evolution Light
-@dirrm %%DATADIR%%/Equinox Evolution Dusk/metacity-1
-@dirrm %%DATADIR%%/Equinox Evolution Dusk/gtk-2.0/images
-@dirrm %%DATADIR%%/Equinox Evolution Dusk/gtk-2.0/apps
-@dirrm %%DATADIR%%/Equinox Evolution Dusk/gtk-2.0
-@dirrm %%DATADIR%%/Equinox Evolution Dusk
-@dirrm %%DATADIR%%/Equinox Evolution Dawn/metacity-1
-@dirrm %%DATADIR%%/Equinox Evolution Dawn/gtk-2.0/images
-@dirrm %%DATADIR%%/Equinox Evolution Dawn/gtk-2.0/apps
-@dirrm %%DATADIR%%/Equinox Evolution Dawn/gtk-2.0
-@dirrm %%DATADIR%%/Equinox Evolution Dawn
-@dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0/images
-@dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0/apps
-@dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0
-@dirrm %%DATADIR%%/Equinox Evolution
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

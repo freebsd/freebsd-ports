@@ -57,4 +57,3 @@ lib/libsphinxbase.so
 lib/libsphinxbase.so.1
 lib/libsphinxbase.so.1.1.1
 libdata/pkgconfig/sphinxbase.pc
-@dirrm include/sphinxbase

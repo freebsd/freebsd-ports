@@ -55,7 +55,6 @@ share/doc/HTML/he/common/fdl-translated.html
 share/doc/HTML/he/common/gpl-translated.html
 share/doc/HTML/he/common/kde-localised.css
 share/doc/HTML/he/common/lgpl-translated.html
-share/locale/he/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/he/LC_MESSAGES/adblock.mo
 share/locale/he/LC_MESSAGES/akonadicontact.mo
 share/locale/he/LC_MESSAGES/akonadinotes.mo
@@ -71,6 +70,7 @@ share/locale/he/LC_MESSAGES/autorefresh.mo
 share/locale/he/LC_MESSAGES/babelfish.mo
 share/locale/he/LC_MESSAGES/blinken.mo
 share/locale/he/LC_MESSAGES/bomber.mo
+share/locale/he/LC_MESSAGES/calendarsupport.mo
 share/locale/he/LC_MESSAGES/cervisia.mo
 share/locale/he/LC_MESSAGES/dirfilterplugin.mo
 share/locale/he/LC_MESSAGES/display.mo
@@ -102,7 +102,10 @@ share/locale/he/LC_MESSAGES/kanagram.mo
 share/locale/he/LC_MESSAGES/kate.mo
 share/locale/he/LC_MESSAGES/kate_kttsd.mo
 share/locale/he/LC_MESSAGES/katebuild-plugin.mo
+share/locale/he/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/he/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/he/LC_MESSAGES/katehelloworld.mo
+share/locale/he/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/he/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/he/LC_MESSAGES/kateopenheader.mo
 share/locale/he/LC_MESSAGES/katepart4.mo
@@ -254,6 +257,8 @@ share/locale/he/LC_MESSAGES/kio_man.mo
 share/locale/he/LC_MESSAGES/kio_mbox.mo
 share/locale/he/LC_MESSAGES/kio_nepomuk.mo
 share/locale/he/LC_MESSAGES/kio_nepomuksearch.mo
+share/locale/he/LC_MESSAGES/kio_nepomuktags.mo
+share/locale/he/LC_MESSAGES/kio_nepomuktimeline.mo
 share/locale/he/LC_MESSAGES/kio_nfs.mo
 share/locale/he/LC_MESSAGES/kio_nntp.mo
 share/locale/he/LC_MESSAGES/kio_pop3.mo
@@ -264,9 +269,7 @@ share/locale/he/LC_MESSAGES/kio_sieve.mo
 share/locale/he/LC_MESSAGES/kio_smb.mo
 share/locale/he/LC_MESSAGES/kio_smtp.mo
 share/locale/he/LC_MESSAGES/kio_svn.mo
-share/locale/he/LC_MESSAGES/kio_tags.mo
 share/locale/he/LC_MESSAGES/kio_thumbnail.mo
-share/locale/he/LC_MESSAGES/kio_timeline.mo
 share/locale/he/LC_MESSAGES/kio_trash.mo
 share/locale/he/LC_MESSAGES/kioexec.mo
 share/locale/he/LC_MESSAGES/kjots.mo
@@ -519,8 +522,3 @@ share/locale/he/LC_MESSAGES/useraccount.mo
 share/locale/he/LC_MESSAGES/validatorsplugin.mo
 share/locale/he/LC_MESSAGES/webarchiver.mo
 share/locale/he/entry.desktop
-@dirrm share/doc/HTML/he/common
-@dirrm share/apps/klettres/he/syllab
-@dirrm share/apps/klettres/he/alpha
-@dirrm share/apps/klettres/he
-@dirrm share/apps/klettres

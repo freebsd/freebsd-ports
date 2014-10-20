@@ -2,4 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/GDBM_File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File

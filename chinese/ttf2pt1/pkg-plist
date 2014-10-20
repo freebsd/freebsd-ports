@@ -5,5 +5,3 @@
 %%DATADIR%%/maps/ubig5.map
 %%DATADIR%%/maps/ugb.map
 %%DATADIR%%/maps/ugbk.map
-@dirrmtry %%DATADIR%%/maps
-@dirrmtry %%DATADIR%%

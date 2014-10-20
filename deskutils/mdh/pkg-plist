@@ -50,7 +50,3 @@ bin/mdh
 %%DATADIR%%/icons/weather/45.png
 %%DATADIR%%/icons/weather/46.png
 %%DATADIR%%/icons/weather/47.png
-@dirrm %%DATADIR%%/icons/weather
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

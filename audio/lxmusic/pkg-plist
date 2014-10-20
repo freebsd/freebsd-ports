@@ -52,10 +52,3 @@ share/applications/lxmusic.desktop
 %%DATADIR%%/pref-dlg.ui.glade
 %%DATADIR%%/track-info.ui.glade
 share/pixmaps/lxmusic.png
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/frp
-%%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_VE

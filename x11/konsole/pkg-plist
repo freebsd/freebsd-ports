@@ -34,7 +34,6 @@ share/doc/HTML/en/konsole/draganddrop-contextmenu.png
 share/doc/HTML/en/konsole/index.cache.bz2
 share/doc/HTML/en/konsole/index.docbook
 share/kde4/services/ServiceMenus/konsolehere.desktop
+share/kde4/services/ServiceMenus/konsolerun.desktop
 share/kde4/services/konsolepart.desktop
 share/kde4/servicetypes/terminalemulator.desktop
-@dirrm share/doc/HTML/en/konsole
-@dirrm share/apps/konsole

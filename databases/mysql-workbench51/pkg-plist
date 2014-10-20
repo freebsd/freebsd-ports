@@ -479,21 +479,3 @@ share/mysql-workbench/modules/data/wb_model_reporting/Text_Basic.tpl/preview_bas
 share/mysql-workbench/modules/data/wb_model_reporting/Text_Basic.tpl/report.txt.tpl
 share/mysql-workbench/wb.glade
 share/mysql-workbench/workbench.rc
-@dirrm lib/mysql-workbench/modules
-@dirrm lib/mysql-workbench/plugins
-@dirrm lib/mysql-workbench
-@dirrm share/mysql-workbench/modules/data/db_mysql_catalog_reporting/Basic_Text.tpl
-@dirrm share/mysql-workbench/modules/data/db_mysql_catalog_reporting
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/HTML_Basic_Frames.tpl
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/HTML_Basic_Single_Page.tpl
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/HTML_Detailed_Frames.tpl/images
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/HTML_Detailed_Frames.tpl
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/Text_Basic.tpl
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting
-@dirrm share/mysql-workbench/modules/data
-@dirrm share/mysql-workbench/modules
-@dirrm share/mysql-workbench/grt
-@dirrm share/mysql-workbench/data
-@dirrm share/mysql-workbench/libraries
-@dirrm share/mysql-workbench/images
-@dirrm share/mysql-workbench

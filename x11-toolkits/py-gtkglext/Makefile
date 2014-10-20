@@ -16,8 +16,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-o
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
-USE_PYTHON=	yes
+USES=		gmake libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	inkscape
-PORTVERSION=	0.48.4
-PORTREVISION=	8
+PORTVERSION=	0.48.5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION}
@@ -29,29 +28,22 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--without-gnome-vfs
 
 python_OLD_CMD?=/usr/bin/env python
 python_CMD?=	${LOCALBASE}/bin/python2
 SHEBANG_FILES=	cxxtest/cxxtestgen.pl share/extensions/*.p[lm] \
 		share/extensions/*.py
 
-OPTIONS_DEFINE=	GNOMEVFS POPPLER
+OPTIONS_DEFINE=	POPPLER
 OPTIONS_DEFAULT=POPPLER
 POPPLER_DESC=	PDF preview rendering
-GNOMEVFS_DESC=	Use gnomevfs for loading files
 
 .include <bsd.port.options.mk>
 
 _CCVERSION!=	${CC} --version
 .if ${_CCVERSION:Mclang}
 CPPFLAGS+=	-Wno-mismatched-tags
-.endif
-
-.if ${PORT_OPTIONS:MGNOMEVFS}
-USE_GNOME+=		gnomevfs2
-CONFIGURE_ARGS+=	--with-gnome-vfs
-.else
-CONFIGURE_ARGS+=	--without-gnome-vfs
 .endif
 
 .if ${PORT_OPTIONS:MPOPPLER}

@@ -21,5 +21,3 @@ lib/libgooglepinyin.so.0
 lib/libgooglepinyin.so.0.1.0
 libdata/pkgconfig/googlepinyin.pc
 share/googlepinyin/dict_pinyin.dat
-@dirrm share/googlepinyin
-@dirrm include/googlepinyin

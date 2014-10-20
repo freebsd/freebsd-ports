@@ -172,7 +172,7 @@ CATEGORIES+=	python
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON2}
-USE_PYTHON=	2
+USES+=		python:2
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 CONFIGURE_ARGS+=	--with-python2=${PYTHON_CMD} \
 			--without-python3
@@ -181,7 +181,7 @@ CONFIGURE_ARGS+=	--without-python2
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON3}
-USE_PYTHON=	3
+USES+=		python:3
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 CONFIGURE_ARGS+=	--with-python3=${PYTHON_CMD} \
 			--without-python2

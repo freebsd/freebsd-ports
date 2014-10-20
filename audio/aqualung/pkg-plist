@@ -158,13 +158,3 @@ share/locale/ja/LC_MESSAGES/aqualung.mo
 share/locale/ru/LC_MESSAGES/aqualung.mo
 share/locale/sv/LC_MESSAGES/aqualung.mo
 share/locale/uk/LC_MESSAGES/aqualung.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/skin/dark
-@dirrm %%DATADIR%%/skin/default
-@dirrm %%DATADIR%%/skin/metal
-@dirrm %%DATADIR%%/skin/no_skin
-@dirrm %%DATADIR%%/skin/ocean
-@dirrm %%DATADIR%%/skin/plain
-@dirrm %%DATADIR%%/skin/woody
-@dirrm %%DATADIR%%/skin
-@dirrm %%DATADIR%%

@@ -13,8 +13,8 @@ COMMENT=	Python-based audio metadata tag reader and writer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.pre.mk>
 

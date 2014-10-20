@@ -28,5 +28,3 @@ share/bsdconv/inter/OPENCC-ZHTW2ZHS.so
 share/bsdconv/inter/OPENCC-ZHTW2ZHT
 share/bsdconv/inter/OPENCC-ZHTW2ZHT.so
 share/bsdconv/inter/OPENCC.so
-@dirrmtry share/bsdconv/inter
-@dirrmtry share/bsdconv

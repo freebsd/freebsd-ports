@@ -19,7 +19,7 @@ COMMENT=	Hylafax client written in Python
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DATADIR=	${PREFIX}/lib/pyla
 
-USE_PYTHON=	yes
+USES=		python
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>

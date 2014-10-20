@@ -11,8 +11,7 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/2449/ \
 MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Postgresql.conf tuning tips based on hardware and load type
 
-USES=		shebangfix
-USE_PYTHON=	2+
+USES=		python shebangfix
 NO_BUILD=	yes
 
 SHEBANG_FILES=	${PORTNAME}

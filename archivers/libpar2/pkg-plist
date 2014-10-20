@@ -32,7 +32,3 @@ lib/libpar2.so.1
 lib/libpar2.so.1.0.0
 lib/libpar2/include/config.h
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry lib/libpar2/include
-@dirrmtry lib/libpar2
-@dirrmtry include/libpar2

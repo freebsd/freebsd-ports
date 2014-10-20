@@ -3,7 +3,6 @@
 
 PORTNAME=	ffmpegthumbs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	kdemultimedia-
@@ -17,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libswscale.so:${PORTSDIR}/multimedia/ffmpeg
 
 USES=		cmake:outsource pkgconfig tar:xz
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

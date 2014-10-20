@@ -67,11 +67,3 @@
 %%SITE_PERL%%/Jifty/DBI/Schema.pm
 %%SITE_PERL%%/Jifty/DBI/SchemaGenerator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty
-@dirrmtry %%SITE_PERL%%/Jifty/DBI/Record
-@dirrmtry %%SITE_PERL%%/Jifty/DBI/Handle
-@dirrmtry %%SITE_PERL%%/Jifty/DBI/Filter
-@dirrmtry %%SITE_PERL%%/Jifty/DBI/Collection
-@dirrmtry %%SITE_PERL%%/Jifty/DBI
-@dirrmtry %%SITE_PERL%%/Jifty

@@ -3,14 +3,14 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Libraries for KDE-PIM applications
+COMMENT=	KDE PIM Libraries
 
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
 		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
@@ -19,10 +19,8 @@ LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
 		libprison.so:${PORTSDIR}/graphics/prison \
 		libqjson.so:${PORTSDIR}/devel/qjson
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-
-USE_KDE4=	kdelibs akonadi kdeprefix kdehier \
-		automoc4 nepomuk-core ontologies soprano
+USE_KDE4=	kdelibs akonadi kdeprefix \
+		automoc4 ontologies soprano
 USES=		cmake:outsource shared-mime-info tar:xz
 USE_OPENLDAP=	yes
 USE_QT4=	corelib dbus declarative designer_build gui network sql xml \

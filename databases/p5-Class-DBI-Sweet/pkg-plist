@@ -2,6 +2,3 @@
 %%PERL5_MAN3%%/Class::DBI::Sweet::Topping.3.gz
 %%SITE_PERL%%/Class/DBI/Sweet.pm
 %%SITE_PERL%%/Class/DBI/Sweet/Topping.pm
-@dirrmtry %%SITE_PERL%%/Class/DBI/Sweet
-@dirrmtry %%SITE_PERL%%/Class/DBI
-@dirrmtry %%SITE_PERL%%/Class

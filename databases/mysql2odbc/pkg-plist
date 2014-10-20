@@ -2,4 +2,3 @@ mysql2odbc/libmysqlclient.a
 mysql2odbc/libmysqlclient.so
 mysql2odbc/libmysqlclient.so.10
 mysql2odbc/libmysqlclient.so.10.0.0
-@dirrm mysql2odbc

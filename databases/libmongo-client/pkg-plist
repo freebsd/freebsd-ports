@@ -14,4 +14,3 @@ lib/libmongo-client.so.0
 lib/libmongo-client.so
 lib/libmongo-client.a
 libdata/pkgconfig/libmongo-client.pc
-@dirrm include/mongo-client

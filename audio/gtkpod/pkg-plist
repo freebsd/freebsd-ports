@@ -74,26 +74,6 @@ man/man1/gtkpod.1.gz
 %%DATADIR%%/scripts/sync-thunderbird.sh
 %%DATADIR%%/scripts/sync-tomboy.sh
 %%DATADIR%%/scripts/sync-webcalendar.sh
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/icons/hicolor/scalable/places
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/48x48/places
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/32x32/places
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/24x24/places
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/22x22/places
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16/places
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/doc/figures
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
 share/icons/hicolor/16x16/apps/gtkpod.png
 share/icons/hicolor/22x22/apps/gtkpod.png
 share/icons/hicolor/24x24/apps/gtkpod.png

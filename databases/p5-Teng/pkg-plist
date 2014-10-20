@@ -34,7 +34,3 @@
 %%PERL5_MAN3%%/Teng::Schema::Dumper.3.gz
 %%PERL5_MAN3%%/Teng::Schema::Loader.3.gz
 %%PERL5_MAN3%%/Teng::Schema::Table.3.gz
-@dirrm %%SITE_PERL%%/Teng/Schema
-@dirrm %%SITE_PERL%%/Teng/Plugin/Pager
-@dirrm %%SITE_PERL%%/Teng/Plugin
-@dirrm %%SITE_PERL%%/Teng

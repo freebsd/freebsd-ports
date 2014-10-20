@@ -15,8 +15,7 @@ COMMENT=	Python bindings to access X Window System protocol via libxcb
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto \
 		xcb-proto>=1.7.1:${PORTSDIR}/x11/xcb-proto
 
-USES=		libtool pathfix pkgconfig tar:bzip2
-USE_PYTHON=	yes
+USES=		libtool pathfix pkgconfig python tar:bzip2
 USE_XORG=	xcb
 PORTDOCS=	README COPYING INSTALL NEWS XcbPythonBinding.txt
 

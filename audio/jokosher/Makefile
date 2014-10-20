@@ -13,9 +13,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
 
-USES= 		desktop-file-utils shared-mime-info
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
+USES= 		desktop-file-utils python:2 shared-mime-info
+USE_PYTHON=	distutils
 USE_GNOME=	gnomehier
 USE_GSTREAMER=	gnonlin good python
 INSTALLS_ICONS=	yes

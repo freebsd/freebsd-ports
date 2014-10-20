@@ -58,7 +58,3 @@ libdata/pkgconfig/dbi.pc
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/transactions-savepoints.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/version-at-runtime.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/versioning.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/programmers-guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/driver-guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/dbi

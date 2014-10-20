@@ -1,4 +1,3 @@
 bin/pgtop
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/pgtop/.packlist
 man/man1/pgtop.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/pgtop

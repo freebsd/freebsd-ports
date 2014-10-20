@@ -121,11 +121,8 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.py
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.pyc
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/carbon/aggregator
-@dirrm %%PYTHON_SITELIBDIR%%/carbon
-@dirrmtry %%ETCDIR%%
-@dirrmtry /var/db/carbon/whisper
-@dirrmtry /var/db/carbon/rrd
-@dirrmtry /var/db/carbon/log
-@dirrmtry /var/db/carbon/lists
-@dirrmtry /var/db/carbon
+@dir /var/db/carbon/whisper
+@dir /var/db/carbon/rrd
+@dir /var/db/carbon/log
+@dir /var/db/carbon/lists
+@dir /var/db/carbon

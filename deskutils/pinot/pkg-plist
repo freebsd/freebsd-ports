@@ -148,19 +148,3 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/pinot-enum-index.sh
 %%DATADIR%%/stopwords/.empty_file
 %%DATADIR%%/xapian-powered.png
-@dirrm %%DATADIR%%/stopwords
-@dirrm %%DATADIR%%/engines
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/pinot/filters
-@dirrm lib/pinot/backends
-@dirrm lib/pinot
-@dirrm include/pinot/xdgmime
-@dirrm include/pinot/filters
-@dirrm include/pinot/cjkv
-@dirrm include/pinot
-@dirrm etc/pinot

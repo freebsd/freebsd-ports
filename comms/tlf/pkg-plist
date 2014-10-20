@@ -26,6 +26,3 @@ man/man1/tlf.1.gz
 %%DATADIR%%/ssamults
 %%DATADIR%%/rules/template
 %%DATADIR%%/rules/wpx
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/rules
-@dirrm %%DATADIR%%

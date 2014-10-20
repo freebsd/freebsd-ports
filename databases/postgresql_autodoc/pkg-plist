@@ -6,4 +6,3 @@ man/man1/postgresql_autodoc.1.gz
 %%DATADIR%%/neato.tmpl
 %%DATADIR%%/xml.tmpl
 %%DATADIR%%/zigzag.dia.tmpl
-@dirrm %%DATADIR%%

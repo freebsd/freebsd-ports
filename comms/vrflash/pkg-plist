@@ -3,4 +3,3 @@ bin/vrflash
 %%PORTDOCS%%%%DOCSDIR%%/troubleshooting.txt
 %%PORTDOCS%%%%DOCSDIR%%/pmon-protect-unprotect.txt
 %%PORTDOCS%%%%DOCSDIR%%/usage.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

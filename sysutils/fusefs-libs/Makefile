@@ -29,4 +29,10 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/libs
 	${INSTALL_DATA} ${WRKSRC}/doc/how-fuse-works ${WRKSRC}/doc/kernel.txt ${STAGEDIR}${DOCSDIR}/libs
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == DragonFly
+IGNORE=	fusefs has not been implemented on DragonFly
+.endif
+
+.include <bsd.port.post.mk>

@@ -677,18 +677,3 @@ man/man1/eagle.1.gz
 %%DATADIR%%/ulp/update-packages.ulp
 %%DATADIR%%/ulp/useful-routines.ulp
 %%DATADIR%%/ulp/warning.bmp
-@dirrmtry %%DATADIR%%/bin
-@dirrm %%DATADIR%%/cam
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/dru
-@dirrm %%DATADIR%%/lbr/elektro
-@dirrm %%DATADIR%%/lbr
-@dirrm %%DATADIR%%/projects/examples/elektro
-@dirrm %%DATADIR%%/projects/examples/hexapod
-@dirrm %%DATADIR%%/projects/examples/singlesided
-@dirrm %%DATADIR%%/projects/examples/tutorial
-@dirrm %%DATADIR%%/projects/examples
-@dirrm %%DATADIR%%/projects
-@dirrm %%DATADIR%%/scr
-@dirrm %%DATADIR%%/ulp
-@dirrmtry %%DATADIR%%

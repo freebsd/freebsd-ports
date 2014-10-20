@@ -7,7 +7,3 @@ man/man1/g2b.pl.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert/Perl.pm-orig
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert/HanConvert.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode

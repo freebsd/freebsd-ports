@@ -10,5 +10,3 @@ lib/xarchive/wrappers/zip-wrap.sh
 man/man1/xarchive.1.gz
 share/applications/xarchive.desktop
 share/pixmaps/xarchive.xpm
-@dirrm lib/xarchive/wrappers
-@dirrm lib/xarchive

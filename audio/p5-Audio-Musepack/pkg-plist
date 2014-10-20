@@ -4,6 +4,3 @@
 %%SITE_PERL%%/Audio/APETags.pm
 %%SITE_PERL%%/Audio/Musepack.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Musepack/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Musepack
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
-@dirrmtry %%SITE_PERL%%/Audio

@@ -14,7 +14,3 @@
 %%PORTEXAMPLES%%share/examples/DBD-Excel/thidden.pl
 %%PORTEXAMPLES%%share/examples/DBD-Excel/thidden.xls
 %%PERL5_MAN3%%/DBD::Excel.3.gz
-@dirrmtry %%SITE_PERL%%/DBD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Excel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-%%PORTEXAMPLES%%@dirrmtry share/examples/DBD-Excel

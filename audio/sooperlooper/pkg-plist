@@ -7,5 +7,3 @@ bin/sooperlooper
 %%DATADIR%%/presets/midiwizard.slb
 %%DATADIR%%/presets/oxy8.slb
 %%WXGTK%%%%DATADIR%%/sl_logo.xpm
-@dirrm %%DATADIR%%/presets
-@dirrm %%DATADIR%%

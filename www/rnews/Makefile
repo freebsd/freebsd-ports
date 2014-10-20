@@ -3,7 +3,7 @@
 
 PORTNAME=	rnews
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -57,21 +57,15 @@ do-install:
 	${INSTALL_DATA} -v ${WRKSRC}/magpierss/*.inc ${STAGEDIR}${WWWDIR}/magpierss
 	${INSTALL_DATA} ${WRKSRC}/magpierss/extlib/Snoopy.class.inc ${STAGEDIR}${WWWDIR}/magpierss/extlib
 	${INSTALL_DATA} -v ${WRKSRC}/opml/*.opml ${STAGEDIR}${WWWDIR}/opml
-	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/magpierss/cache
-	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/img/feeds
-	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/tmp
 .for FILE in ${CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${WWWDIR}/${FILE}.sample
 .endfor
-
-post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for FILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 create-plist:
 	@${FIND} -s ${WRKSRC} \( -name "*.php" -o -name "*.inc" -o -name "*.js" -o -name "*.css" -o -name "*.jpg" \
@@ -79,18 +73,10 @@ create-plist:
 		-and -not -name config_user.php -and -not -name config.php \
 		| ${SED} -e 's,^${WRKSRC},%%WWWDIR%%,' > ${PLIST}
 .for FILE in ${CONFIGS}
-	@${ECHO_CMD} '@exec if [ ! -f %D/%%WWWDIR%%/${FILE} ]; then \
-		${INSTALL_DATA} %D/%%WWWDIR%%/${FILE}.sample %D/%%WWWDIR%%/${FILE}; \
-		${CHOWN} ${WWWOWN} %D/%%WWWDIR%%/${FILE}; \
-		${CHMOD} u+w %D/%%WWWDIR%%/${FILE}; fi' >> ${PLIST}
+	@${ECHO_CMD} '@sample(${WWWOWN},,) %%WWWDIR%%/${FILE}.sample' >> ${PLIST}
 .endfor
-.for FILE in ${CONFIGS}
-	@${ECHO_CMD} '@unexec if cmp -s %D/%%WWWDIR%%/${FILE}.sample %D/%%WWWDIR%%/${FILE}; \
-		then ${RM} -f %D/%%WWWDIR%%/${FILE}; fi' >> ${PLIST}
-	@${ECHO_CMD} '%%WWWDIR%%/${FILE}.sample' >> ${PLIST}
+.for DIR in magpierss/cache img/feeds tmp
+	@${ECHO_CMD} '@dir(${WWWOWN},,) %%WWWDIR%%/${DIR}' >> ${PLIST}
 .endfor
-	@${ECHO_CMD} '@unexec if [ $$(ls %D/%%WWWDIR%%/img/feeds/|wc -w) -eq 0 ]; then ${RM} -rf %D/%%WWWDIR%%/img/feeds;fi' >> ${PLIST}
-	@${FIND} -ds ${WRKSRC} -type d -a -not -name feeds \
-		| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
 .include <bsd.port.mk>

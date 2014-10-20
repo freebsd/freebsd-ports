@@ -330,6 +330,3 @@ man/man1/kcutiltest.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/doc/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/spex.html
 %%PORTDOCS%%%%DOCSDIR%%/kyotocabinet.idl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -445,18 +445,3 @@ share/icons/hicolor/16x16/apps/amor.png
 share/icons/hicolor/22x22/apps/amor.png
 share/icons/hicolor/32x32/apps/amor.png
 share/icons/hicolor/48x48/apps/amor.png
-@dirrm share/doc/HTML/en/amor
-@dirrm share/apps/amor/pics/static
-@dirrm share/apps/amor/pics/preview
-@dirrm share/apps/amor/pics/animated/worm
-@dirrm share/apps/amor/pics/animated/tao
-@dirrm share/apps/amor/pics/animated/pingu
-@dirrm share/apps/amor/pics/animated/neko-kuro
-@dirrm share/apps/amor/pics/animated/neko
-@dirrm share/apps/amor/pics/animated/ghost
-@dirrm share/apps/amor/pics/animated/eyes
-@dirrm share/apps/amor/pics/animated/bonhomme
-@dirrm share/apps/amor/pics/animated/blob
-@dirrm share/apps/amor/pics/animated
-@dirrm share/apps/amor/pics
-@dirrm share/apps/amor

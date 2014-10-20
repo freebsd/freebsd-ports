@@ -17,10 +17,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	pyao
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 do-configure:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py \

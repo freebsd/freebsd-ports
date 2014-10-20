@@ -13,8 +13,8 @@ COMMENT=	Library for working with BDF font files
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 
 post-patch:
 	@${REINPLACE_CMD} -e '/def/!s,guess_version(),"${PORTVERSION}",' \

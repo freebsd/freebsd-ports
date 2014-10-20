@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/editors/gedit-plugins/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/editors/gedit-plugins/Makefile 19954 2014-10-15 10:03:57Z kwm $
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	3.12.1
@@ -19,7 +19,7 @@ RUN_DEPENDS=	gedit>=0:${PORTSDIR}/editors/gedit
 
 USES=		gettext gmake libtool pathfix pkgconfig \
 		tar:xz
-USE_GNOME=	gnomeprefix gtk30 gtksourceview3
+USE_GNOME=	gnomeprefix gtk30 gtksourceview3 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

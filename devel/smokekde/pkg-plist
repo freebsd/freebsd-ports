@@ -83,5 +83,3 @@ lib/libsmokesopranoserver.so
 lib/libsmokesopranoserver.so.3
 lib/libsmokesopranoserver.so.3.0.0
 share/smokegen/kde-config.xml
-@dirrmtry share/smokegen
-@dirrmtry include/smoke

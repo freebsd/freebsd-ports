@@ -31,22 +31,3 @@ GNUstep/Local/Library/Headers/SQLClient/SQLClient.h
 GNUstep/Local/Library/Libraries/libSQLClient.so
 GNUstep/Local/Library/Libraries/libSQLClient.so.1.7
 GNUstep/Local/Library/Libraries/libSQLClient.so.1.7.0
-@dirrmtry GNUstep/Local/Library/Headers/SQLClient
-@dirrmtry GNUstep/Local/Library/Documentation/SQLClient
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle/Resources
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/SQLite.bundle/Resources
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/SQLite.bundle
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/Postgres_libs.bundle/Resources
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/Postgres_libs.bundle
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle/Resources
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/MySQL_libs.bundle/Resources
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/MySQL_libs.bundle
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/MySQL.bundle/Resources
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/MySQL.bundle
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle/Resources
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/ECPG.bundle/Resources
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient/ECPG.bundle
-@dirrmtry GNUstep/Local/Library/Bundles/SQLClient

@@ -56,23 +56,3 @@ share/pixmaps/chain.png
 share/icons/hicolor/16x16/status/audio-input-microphone-muted.png
 share/icons/hicolor/scalable/status/audio-input-microphone-muted.svg
 share/xfce4/panel/plugins/mixer.desktop
-@dirrmtry share/xfce4/panel/plugins
-@dirrmtry share/xfce4/panel
-%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_HK
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-@dirrmtry lib/xfce4/panel/plugins
-@dirrmtry lib/xfce4/panel

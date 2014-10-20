@@ -45,37 +45,3 @@
 %%DATADIR%%/Sensors/StarterBar/locale/sr/LC_MESSAGES/gdesklets.mo
 %%DATADIR%%/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
 %%DATADIR%%/Sensors/StarterBar/locale/sv/LC_MESSAGES/gdesklets.mo
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sv/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sv
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sr@Latn
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sr/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sr
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sq/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/sq
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/pt_BR/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/pt_BR
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/pt/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/pt
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/nl/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/nl
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/hr/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/hr
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/fr
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/es/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/es
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/en_GB/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/en_GB
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/en_CA/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/en_CA
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/de/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/de
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/cs/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/cs
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/ca/LC_MESSAGES
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale/ca
-@dirrm %%DATADIR%%/Sensors/StarterBar/locale
-@dirrm %%DATADIR%%/Sensors/StarterBar
-@dirrm %%DATADIR%%/Displays/StarterBar/gfx
-@dirrm %%DATADIR%%/Displays/StarterBar

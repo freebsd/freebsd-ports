@@ -8,4 +8,3 @@ bin/yn00
 %%PORTDOCS%%%%DOCSDIR%%/pamlDOC.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pamlFAQs.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pamlHistory.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

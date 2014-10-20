@@ -117,10 +117,3 @@ bin/unload_magetab_namespace.pl
 %%PERL5_MAN3%%/Bio::MAGETAB::Util::Writer::IDF.3.gz
 %%PERL5_MAN3%%/Bio::MAGETAB::Util::Writer::SDRF.3.gz
 %%PERL5_MAN3%%/Bio::MAGETAB::Util::Writer::Tabfile.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/MAGETAB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
-@dirrm %%SITE_PERL%%/Bio/MAGETAB/Util/Reader
-@dirrm %%SITE_PERL%%/Bio/MAGETAB/Util/Writer
-@dirrm %%SITE_PERL%%/Bio/MAGETAB/Util
-@dirrm %%SITE_PERL%%/Bio/MAGETAB
-@dirrmtry %%SITE_PERL%%/Bio

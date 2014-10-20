@@ -61,14 +61,3 @@ share/icons/hicolor/48x48/apps/glipper.png
 share/icons/hicolor/scalable/apps/glipper.svg
 share/locale/de/LC_MESSAGES/glipper.mo
 share/locale/it/LC_MESSAGES/glipper.mo
-@dirrm share/gnome/help/glipper/it
-@dirrm share/gnome/help/glipper/fr
-@dirrm share/gnome/help/glipper/de
-@dirrm share/gnome/help/glipper/C
-@dirrm share/gnome/help/glipper
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%
-@dirrm libexec/glipper
-@dirrm %%PYTHON_SITELIBDIR%%/glipper/osutils
-@dirrm %%PYTHON_SITELIBDIR%%/glipper/keybinder
-@dirrm %%PYTHON_SITELIBDIR%%/glipper

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libkolab
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	devel kde
 MASTER_SITES=	http://mirror.kolabsys.com/pub/releases/
 

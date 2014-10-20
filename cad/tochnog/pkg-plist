@@ -210,7 +210,3 @@ bin/gmsh2tn.awk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vonmis1.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vonmis2.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wave1.dat
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%GIDDIR%%/problemtypes/tochnog.gid
-@dirrm %%GIDDIR%%/problemtypes
-@dirrm %%GIDDIR%%

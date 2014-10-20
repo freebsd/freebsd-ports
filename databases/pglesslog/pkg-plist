@@ -1,4 +1,3 @@
 bin/pg_compresslog
 bin/pg_decompresslog
 share/doc/postgresql/contrib/README.lesslog
-@dirrmtry share/doc/postgresql/contrib

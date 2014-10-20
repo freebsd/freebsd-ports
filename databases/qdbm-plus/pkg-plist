@@ -144,7 +144,3 @@ lib/libxqdbm.so.3.0.0
 %%DATADIR%%/plus/xapidoc/tree.html
 %%DATADIR%%/plus/xspex-ja.html
 %%DATADIR%%/plus/xspex.html
-@dirrm %%DATADIR%%/plus/xapidoc/search
-@dirrm %%DATADIR%%/plus/xapidoc
-@dirrm %%DATADIR%%/plus
-@dirrmtry %%DATADIR%%

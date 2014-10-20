@@ -7,17 +7,3 @@ share/applications/geda-gattrib.desktop
 %%DATADIR%%/system-gattribrc
 share/icons/hicolor/48x48/apps/geda-gattrib-48.png
 share/icons/hicolor/scalable/apps/geda-gattrib.svg
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry %%DATADIR%%
-%%NLS%%@dirrmtry lib/locale/nl_NL/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/nl_NL
-%%NLS%%@dirrmtry lib/locale/es_ES/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/es_ES
-%%NLS%%@dirrmtry lib/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/de_DE
-%%NLS%%@dirrmtry lib/locale

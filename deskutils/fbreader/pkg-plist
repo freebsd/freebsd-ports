@@ -158,16 +158,3 @@ share/zlibrary/resources/vi.xml
 share/zlibrary/resources/zh.xml
 share/zlibrary/style.qss
 share/zlibrary/unicode.xml.gz
-@dirrm share/FBReader/default
-@dirrm share/FBReader/formats/fb2
-@dirrm share/FBReader/formats/html
-@dirrm share/FBReader/formats/xhtml
-@dirrm share/FBReader/formats
-@dirrm share/FBReader/help
-@dirrm share/FBReader/resources
-@dirrm share/FBReader
-@dirrm share/pixmaps/FBReader
-@dirrm share/zlibrary/default
-@dirrm share/zlibrary/encodings
-@dirrm share/zlibrary/resources
-@dirrm share/zlibrary

@@ -482,6 +482,7 @@ WMF_DESC?=		Windows Metafile image format support
 WXGTK_DESC?=		wxGTK GUI toolkit support
 X11_DESC?=		X11 (graphics) support
 X264_DESC?=		H.264 video codec support via x264
+X265_DESC?=		H.265 video codec support via x265
 XALAN_DESC?=		Xalan XSLT processor support
 XCURSOR_DESC?=		Cursor themes support
 XERCES_DESC?=		XML parser support via Xerces

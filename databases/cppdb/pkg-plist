@@ -32,4 +32,3 @@ lib/libcppdb.so.0.3.1
 %%SQLITE3%%lib/libcppdb_sqlite3.so
 %%SQLITE3%%lib/libcppdb_sqlite3.so.0
 %%SQLITE3%%lib/libcppdb_sqlite3.so.0.3.1
-@dirrm include/cppdb

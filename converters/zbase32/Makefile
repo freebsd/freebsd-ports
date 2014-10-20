@@ -14,8 +14,7 @@ COMMENT=	Base32 Encoder/Decoder
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_darcs>=1.2.11:${PORTSDIR}/devel/py-setuptools_darcs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

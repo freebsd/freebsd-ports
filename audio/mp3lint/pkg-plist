@@ -23,8 +23,3 @@ man/man1/mp3lint.1.gz
 man/man1/mp3lintskip.1.gz
 man/man1/mp3lintsum.1.gz
 man/man5/mp3lintrc.5.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3lint
-@dirrmtry %%SITE_PERL%%/MP3/Archive/Lint/Tools
-@dirrmtry %%SITE_PERL%%/MP3/Archive/Lint
-@dirrmtry %%SITE_PERL%%/MP3/Archive
-@dirrmtry %%SITE_PERL%%/MP3

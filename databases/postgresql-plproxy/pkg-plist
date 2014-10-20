@@ -5,7 +5,3 @@ lib/postgresql/plproxy.so
 %%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy--2.5.0.sql
 %%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy.control
 %%OLD_CONTRIB_DIR%%share/postgresql/contrib/plproxy.sql
-@dirrmtry lib/postgresql
-%%NEW_CONTRIB_DIR%%@dirrmtry share/postgresql/extension
-%%OLD_CONTRIB_DIR%%@dirrmtry share/postgresql/contrib
-@dirrmtry share/postgresql

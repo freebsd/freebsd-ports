@@ -27,10 +27,3 @@
 %%SITE_PERL%%/Data/ICal/Entry/Todo.pm
 %%SITE_PERL%%/Data/ICal/Property.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm %%SITE_PERL%%/Data/ICal/Entry/TimeZone
-@dirrm %%SITE_PERL%%/Data/ICal/Entry/Alarm
-@dirrm %%SITE_PERL%%/Data/ICal/Entry
-@dirrmtry %%SITE_PERL%%/Data/ICal
-@dirrmtry %%SITE_PERL%%/Data

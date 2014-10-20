@@ -89,4 +89,3 @@ man/man1/mutagen-pony.1.gz
 %%PYTHON_SITELIBDIR%%/mutagen/wavpack.py
 %%PYTHON_SITELIBDIR%%/mutagen/wavpack.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/wavpack.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/mutagen

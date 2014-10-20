@@ -16,9 +16,3 @@ bin/plvltest
 %%DATADIR%%/perl/plapidoc/index.html
 %%DATADIR%%/perl/plspex-ja.html
 %%DATADIR%%/perl/plspex.html
-@dirrm %%DATADIR%%/perl/plapidoc
-@dirrm %%DATADIR%%/perl
-@dirrm %%DATADIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Villa
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Depot
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curia

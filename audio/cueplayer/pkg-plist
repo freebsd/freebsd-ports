@@ -2,5 +2,3 @@ bin/cueplayer
 %%DATADIR%%/loc/cueplayer_pl.qm
 %%DATADIR%%/loc/cueplayer_en.qm
 %%DATADIR%%/cueplayer.png
-@dirrm %%DATADIR%%/loc
-@dirrm %%DATADIR%%

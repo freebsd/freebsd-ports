@@ -68,8 +68,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql55.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql55dyn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql56.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql56dyn.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -10,7 +10,6 @@ lib/libmk4.so.0
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/metakit.pyo
 %%WITH_TCL%%lib/tcl%%TCL_V%%/Mk4tcl/Mk4tcl.so
 %%WITH_TCL%%lib/tcl%%TCL_V%%/Mk4tcl/pkgIndex.tcl
-%%WITH_TCL%%@dirrm lib/tcl%%TCL_V%%/Mk4tcl
 %%PORTDOCS%%%%DOCSDIR%%/api/c4_Bytes.html
 %%PORTDOCS%%%%DOCSDIR%%/api/c4_BytesProp.html
 %%PORTDOCS%%%%DOCSDIR%%/api/c4_BytesProp_desc.html
@@ -120,5 +119,3 @@ lib/libmk4.so.0
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/Metakit.html
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -451,25 +451,3 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/SynthPiano/0069-Synth Piano 3 det.xiz
 %%DATADIR%%/banks/SynthPiano/0070-Synth Piano 4.xiz
 %%DATADIR%%/banks/SynthPiano/0071-Synth Piano 5.xiz
-@dirrm %%DATADIR%%/banks/SynthPiano
-@dirrm %%DATADIR%%/banks/Synth
-@dirrm %%DATADIR%%/banks/Strings
-@dirrm %%DATADIR%%/banks/Splited
-@dirrm %%DATADIR%%/banks/Rhodes
-@dirrm %%DATADIR%%/banks/Reed and Wind
-@dirrm %%DATADIR%%/banks/Plucked
-@dirrm %%DATADIR%%/banks/Pads
-@dirrm %%DATADIR%%/banks/Organ
-@dirrm %%DATADIR%%/banks/Noises
-@dirrm %%DATADIR%%/banks/Misc
-@dirrm %%DATADIR%%/banks/Guitar
-@dirrm %%DATADIR%%/banks/Fantasy
-@dirrm %%DATADIR%%/banks/Dual
-@dirrm %%DATADIR%%/banks/Drums
-@dirrm %%DATADIR%%/banks/Collection
-@dirrm %%DATADIR%%/banks/Choir and Voice
-@dirrm %%DATADIR%%/banks/Brass
-@dirrm %%DATADIR%%/banks/Bass
-@dirrm %%DATADIR%%/banks/Arpeggios
-@dirrm %%DATADIR%%/banks
-@dirrm %%DATADIR%%

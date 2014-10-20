@@ -26,7 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GCC=	yes
 USE_GNOME=	libxml2
-USES=		bison cpe gmake shebangfix
+USES=		alias bison cpe gmake shebangfix
 CPE_VENDOR=	digium
 SHEBANG_FILES=	agi/agi-test.agi \
 		agi/jukebox.agi

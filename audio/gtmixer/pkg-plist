@@ -7,6 +7,3 @@ man/man1/gtmixer.1.gz
 %%DATADIR%%/icons/tray/3.png
 %%DATADIR%%/icons/tray/430.png
 %%DATADIR%%/icons/tray/431.png
-@dirrmtry %%DATADIR%%/icons/tray
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%

@@ -14,6 +14,3 @@ share/pixmaps/splashsetter.svg
 share/pixmaps/splashsetter/splashsetter_icon.svg
 share/pixmaps/splashsetter/splashsetter_logo.svg
 share/pixmaps/splashsetter/splash/splashsetter_splash.png
-@dirrm share/pixmaps/splashsetter/splash
-@dirrm share/pixmaps/splashsetter
-@dirrm libexec/splashsetter

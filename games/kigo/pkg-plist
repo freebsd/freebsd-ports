@@ -28,7 +28,3 @@ share/icons/hicolor/22x22/apps/kigo.png
 share/icons/hicolor/32x32/apps/kigo.png
 share/icons/hicolor/48x48/apps/kigo.png
 share/icons/hicolor/64x64/apps/kigo.png
-@dirrm share/doc/HTML/en/kigo
-@dirrm share/apps/kigo/themes
-@dirrm share/apps/kigo/games
-@dirrm share/apps/kigo

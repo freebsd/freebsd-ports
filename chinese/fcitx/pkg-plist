@@ -101,8 +101,6 @@ share/gir-1.0/Fcitx-1.0.gir
 %%GTK3%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
 %%GTK3%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
 %%QT4%%lib/qt4/plugins/inputmethods/libqtim-fcitx.so
-%%QT4%%@dirrmtry lib/qt4/plugins/inputmethods
-%%QT4%%@dirrmtry lib/qt4/plugins
 libdata/pkgconfig/fcitx-config.pc
 libdata/pkgconfig/fcitx-gclient.pc
 libdata/pkgconfig/fcitx-utils.pc
@@ -365,37 +363,3 @@ share/locale/ja/LC_MESSAGES/fcitx.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx.mo
 share/mime/packages/x-fskin.xml
-@dirrmtry share/icons/gnome/scalable/status
-@dirrmtry share/icons/gnome/scalable
-@dirrmtry share/icons/gnome
-@dirrmtry %%DATADIR%%/table
-@dirrm %%DATADIR%%/skin/default
-@dirrm %%DATADIR%%/skin/dark
-@dirrm %%DATADIR%%/skin/classic
-@dirrmtry %%DATADIR%%/skin
-@dirrm %%DATADIR%%/pinyin
-@dirrm %%DATADIR%%/inputmethod
-@dirrm %%DATADIR%%/imicon
-@dirrm %%DATADIR%%/dbus
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/configdesc
-@dirrm %%DATADIR%%/addon
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/cmake/fcitx
-@dirrmtry share/cmake
-@dirrm lib/fcitx
-@dirrm include/fcitx/module/x11
-@dirrm include/fcitx/module/spell
-@dirrm include/fcitx/module/quickphrase
-@dirrm include/fcitx/module/punc
-@dirrm include/fcitx/module/pinyin
-@dirrm include/fcitx/module/ipc
-@dirrm include/fcitx/module/dbus
-@dirrm include/fcitx/module/classicui
-@dirrm include/fcitx/module/chttrans
-@dirrm include/fcitx/module
-@dirrm include/fcitx-utils
-@dirrm include/fcitx-gclient
-@dirrm include/fcitx-config
-@dirrm include/fcitx

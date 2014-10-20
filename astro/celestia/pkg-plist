@@ -555,30 +555,3 @@ share/locale/zh_CN/LC_MESSAGES/celestia_constellations.mo
 share/locale/zh_TW/LC_MESSAGES/celestia.mo
 share/locale/zh_TW/LC_MESSAGES/celestia_constellations.mo
 share/pixmaps/celestia.png
-@dirrm share/celestia/textures/medres
-@dirrm share/celestia/textures/lores
-@dirrm share/celestia/textures/hires
-@dirrm share/celestia/textures
-@dirrm share/celestia/splash
-@dirrm share/celestia/shaders
-@dirrm share/celestia/scripts
-@dirrm share/celestia/models
-@dirrm share/celestia/fonts
-@dirrm share/celestia/extras-standard/mir/models
-@dirrm share/celestia/extras-standard/mir
-@dirrm share/celestia/extras-standard/iss/textures/medres
-@dirrm share/celestia/extras-standard/iss/textures
-@dirrm share/celestia/extras-standard/iss/models
-@dirrm share/celestia/extras-standard/iss
-@dirrm share/celestia/extras-standard/hubble/models
-@dirrm share/celestia/extras-standard/hubble
-@dirrm share/celestia/extras-standard/galileo/models
-@dirrm share/celestia/extras-standard/galileo/data
-@dirrm share/celestia/extras-standard/galileo
-@dirrm share/celestia/extras-standard/cassini/models
-@dirrm share/celestia/extras-standard/cassini/data
-@dirrm share/celestia/extras-standard/cassini
-@dirrm share/celestia/extras-standard
-@dirrm share/celestia/extras
-@dirrm share/celestia/data
-@dirrm share/celestia

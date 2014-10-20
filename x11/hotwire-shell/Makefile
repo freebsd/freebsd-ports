@@ -20,9 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/p
 		${PYXML}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_GNOME=	pygnome2 pygtk2 pygtksourceview
 INSTALLS_ICONS=	yes
 

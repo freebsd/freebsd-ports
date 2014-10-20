@@ -38,9 +38,5 @@ man/man1/iodbctestw.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iodbctest.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/libiodbc
-@dirrmtry %%ETCDIR%%

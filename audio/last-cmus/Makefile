@@ -13,7 +13,7 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Cmus plugin for submitting songs into last.fm
 
-USE_PYTHON=	yes
+USES=		python
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 PLIST_FILES=	bin/${DISTNAME}

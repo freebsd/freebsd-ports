@@ -23,6 +23,7 @@
     SUBDIR += avidemux26-plugins
     SUBDIR += avidemux26-qt4
     SUBDIR += avinfo
+    SUBDIR += baka-mplayer
     SUBDIR += bangarang
     SUBDIR += banshee
     SUBDIR += bino

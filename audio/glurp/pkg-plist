@@ -18,5 +18,3 @@ bin/glurp
 %%DATADIR%%/pixmaps/playlist.png
 %%DATADIR%%/pixmaps/playlists.png
 %%DATADIR%%/pixmaps/remove.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

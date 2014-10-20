@@ -129,9 +129,3 @@ bin/sbagen
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/focus/wave-06.sbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/focus/wave-07.sbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/focus/wave-08.sbg
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/focus
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/jim
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/ghostlab
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basics
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

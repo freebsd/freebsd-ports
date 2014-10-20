@@ -35,7 +35,7 @@ RELP_DESC=	RELP input/output module for rsyslog
 RFC3195_DESC=	RFC3195 input support for rsyslog
 SNMP_DESC=	SNMP trap sender for rsyslog
 
-USES=		libtool pkgconfig
+USES=		alias libtool pkgconfig
 
 .include <bsd.port.options.mk>
 

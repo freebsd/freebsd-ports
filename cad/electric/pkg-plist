@@ -31,10 +31,3 @@ bin/electric
 %%DATADIR%%/lib/ui/shownode_ext.ui
 %%DATADIR%%/lib/ui/visiblelay.ui
 %%DATADIR%%/lib/umc18.txt
-@dirrm %%DATADIR%%/lib/ui
-@dirrm %%DATADIR%%/lib/java
-@dirrm %%DATADIR%%/lib/international/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/lib/international/fr
-@dirrm %%DATADIR%%/lib/international
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/

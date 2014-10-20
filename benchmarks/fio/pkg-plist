@@ -27,4 +27,3 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/surface-scan.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tiobench-example.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zipf.fio
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

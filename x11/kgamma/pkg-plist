@@ -11,6 +11,3 @@ share/doc/HTML/en/kcontrol/kgamma/common
 share/doc/HTML/en/kcontrol/kgamma/index.cache.bz2
 share/doc/HTML/en/kcontrol/kgamma/index.docbook
 share/kde4/services/kgamma.desktop
-@dirrm share/doc/HTML/en/kcontrol/kgamma
-@dirrm share/apps/kgamma/pics
-@dirrm share/apps/kgamma

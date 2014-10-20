@@ -21,10 +21,3 @@
 %%DATADIR%%/ui/SearchDialog.ui
 %%DATADIR%%/ui/StationsDialog.ui
 %%DATADIR%%/ui/app_menu.ui
-@dirrmtry %%DATADIR%%/icons/hicolor
-@dirrmtry %%DATADIR%%/icons/ubuntu-mono-dark
-@dirrmtry %%DATADIR%%/icons/ubuntu-mono-light
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%/media
-@dirrmtry %%DATADIR%%/ui
-@dirrmtry %%DATADIR%%

@@ -14,6 +14,3 @@ share/icons/hicolor/22x22/apps/kjumpingcube.png
 share/icons/hicolor/32x32/apps/kjumpingcube.png
 share/icons/hicolor/48x48/apps/kjumpingcube.png
 share/icons/hicolor/64x64/apps/kjumpingcube.png
-@dirrm share/doc/HTML/en/kjumpingcube
-@dirrm share/apps/kjumpingcube/pics
-@dirrm share/apps/kjumpingcube

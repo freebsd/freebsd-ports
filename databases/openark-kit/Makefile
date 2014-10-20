@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 
 PROJECTHOST=	openarkkit
-USE_PYDISTUTILS=	yes
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

@@ -15,9 +15,8 @@ COMMENT=	APSW stands for Another Python SQLite Wrapper
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}_r1
-USES=		zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python zip
+USE_PYTHON=	distutils
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

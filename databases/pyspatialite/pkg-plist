@@ -45,8 +45,3 @@
 %%PYTHON_SITELIBDIR%%/pyspatialite/test/userfunctions.pyc
 %%PYTHON_SITELIBDIR%%/pyspatialite/test/userfunctions.pyo
 %%DOCSDIR%%/install-source.txt
-@dirrm %%DOCSDIR%%/code
-@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/pyspatialite/test/py25
-@dirrm %%PYTHON_SITELIBDIR%%/pyspatialite/test
-@dirrm %%PYTHON_SITELIBDIR%%/pyspatialite

@@ -1,28 +1,12 @@
-@owner %%LEOFS_USER%%
-@group %%LEOFS_GROUP%%
-@dir %%LEOFS_RUNDIR%%
-@dir %%LEOFS_LOGDIR%%
-@dir %%LEOFS_DBDIR%%
-@owner root
-@group wheel
-@unexec if cmp -s %D/%%ETCDIR%%/leo_gateway.conf.sample %D/%%ETCDIR%%/leo_gateway.conf; then rm -f %D/%%ETCDIR%%/leo_gateway.conf; fi
-%%ETCDIR%%/leo_gateway.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/leo_gateway.conf ] ; then cp -p %D/%F %B/leo_gateway.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/leo_manager.conf.sample %D/%%ETCDIR%%/leo_manager.conf; then rm -f %D/%%ETCDIR%%/leo_manager.conf; fi
-%%ETCDIR%%/leo_manager.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/leo_manager.conf ] ; then cp -p %D/%F %B/leo_manager.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/leo_manager_slave.conf.sample %D/%%ETCDIR%%/leo_manager_slave.conf; then rm -f %D/%%ETCDIR%%/leo_manager_slave.conf; fi
-%%ETCDIR%%/leo_manager_slave.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/leo_manager_slave.conf ] ; then cp -p %D/%F %B/leo_manager_slave.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/leo_storage.conf.sample %D/%%ETCDIR%%/leo_storage.conf; then rm -f %D/%%ETCDIR%%/leo_storage.conf; fi
-%%ETCDIR%%/leo_storage.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/leo_storage.conf ] ; then cp -p %D/%F %B/leo_storage.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/server_cert.pem.sample %D/%%ETCDIR%%/server_cert.pem; then rm -f %D/%%ETCDIR%%/server_cert.pem; fi
-%%ETCDIR%%/server_cert.pem.sample
-@exec if [ ! -f %D/%%ETCDIR%%/server_cert.pem ] ; then cp -p %D/%F %B/server_cert.pem; fi
-@unexec if cmp -s %D/%%ETCDIR%%/server_key.pem.sample %D/%%ETCDIR%%/server_key.pem; then rm -f %D/%%ETCDIR%%/server_key.pem; fi
-%%ETCDIR%%/server_key.pem.sample
-@exec if [ ! -f %D/%%ETCDIR%%/server_key.pem ] ; then cp -p %D/%F %B/server_key.pem; fi
+@dir(%%LEOFS_USER%%,%%LEOFS_GROUP%%,) %%LEOFS_RUNDIR%%
+@dir(%%LEOFS_USER%%,%%LEOFS_GROUP%%,) %%LEOFS_LOGDIR%%
+@dir(%%LEOFS_USER%%,%%LEOFS_GROUP%%,) %%LEOFS_DBDIR%%
+@sample %%ETCDIR%%/leo_gateway.conf.sample
+@sample %%ETCDIR%%/leo_manager.conf.sample
+@sample %%ETCDIR%%/leo_manager_slave.conf.sample
+@sample %%ETCDIR%%/leo_storage.conf.sample
+@sample %%ETCDIR%%/server_cert.pem.sample
+@sample %%ETCDIR%%/server_key.pem.sample
 lib/leofs/bin/cuttlefish
 lib/leofs/erts-5.10.4/bin/beam
 lib/leofs/erts-5.10.4/bin/beam.smp

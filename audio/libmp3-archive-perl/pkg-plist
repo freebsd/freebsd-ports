@@ -6,7 +6,3 @@ etc/mp3archiverc
 %%PERL5_MAN3%%/MP3::Archive.3.gz
 %%PERL5_MAN3%%/MP3::Archive::Config.3.gz
 %%PERL5_MAN3%%/MP3::Archive::Format.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Archive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
-@dirrmtry %%SITE_PERL%%/MP3/Archive
-@dirrmtry %%SITE_PERL%%/MP3

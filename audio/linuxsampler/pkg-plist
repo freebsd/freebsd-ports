@@ -39,17 +39,6 @@ lib/linuxsampler/plugins/.keep_me
 %%LV2CORE%%lib/lv2/linuxsampler.lv2/manifest.ttl
 libdata/pkgconfig/linuxsampler.pc
 man/man1/linuxsampler.1.gz
-%%LV2CORE%%@dirrm lib/lv2/linuxsampler.lv2
-@dirrm lib/linuxsampler/plugins
-@dirrm lib/linuxsampler
-@dirrm include/linuxsampler/plugins
-@dirrm include/linuxsampler/engines
-@dirrm include/linuxsampler/effects
-@dirrm include/linuxsampler/drivers/midi
-@dirrm include/linuxsampler/drivers/audio
-@dirrm include/linuxsampler/drivers
-@dirrm include/linuxsampler/common
-@dirrm include/linuxsampler
 /var/lib/linuxsampler/instruments.db
-@dirrm /var/lib/linuxsampler
-@dirrmtry /var/lib
+@dir /var/lib/linuxsampler
+@dir /var/lib

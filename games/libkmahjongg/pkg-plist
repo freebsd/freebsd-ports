@@ -38,6 +38,3 @@ share/apps/kmahjongglib/tilesets/jade.svgz
 share/apps/kmahjongglib/tilesets/traditional.copyright
 share/apps/kmahjongglib/tilesets/traditional.desktop
 share/apps/kmahjongglib/tilesets/traditional.svgz
-@dirrm share/apps/kmahjongglib/tilesets
-@dirrm share/apps/kmahjongglib/backgrounds
-@dirrm share/apps/kmahjongglib

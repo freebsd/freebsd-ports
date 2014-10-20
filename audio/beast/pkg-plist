@@ -279,30 +279,5 @@ share/mime/audio/x-bsewave.xml
 share/mime/packages/beast.xml
 share/pixmaps/beast-audio-x-bse.png
 share/pixmaps/beast.png
-@dirrmtry share/mime/audio
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrm share/bse/v%%VERSION%%/scripts
-@dirrm share/bse/v%%VERSION%%/samples
-@dirrm share/bse/v%%VERSION%%/instruments
-@dirrm share/bse/v%%VERSION%%/effects
-@dirrm share/bse/v%%VERSION%%/demo
-@dirrm share/bse/v%%VERSION%%
-@dirrm share/bse
-@dirrm %%DATADIR%%/v%%VERSION%%/skins/images
-@dirrm %%DATADIR%%/v%%VERSION%%/skins
-@dirrm %%DATADIR%%/v%%VERSION%%/keys
-@dirrm %%DATADIR%%/v%%VERSION%%/images
-@dirrm %%DATADIR%%/v%%VERSION%%/docs/html
-@dirrm %%DATADIR%%/v%%VERSION%%/docs
-@dirrm %%DATADIR%%/v%%VERSION%%
-@dirrm %%DATADIR%%
-@dirrm lib/bse/v%%VERSION%%/plugins
-@dirrm lib/bse/v%%VERSION%%/drivers
-@dirrm lib/bse/v%%VERSION%%
-@dirrm lib/bse
-@dirrm include/sfi
-@dirrm include/bse
-@dirrm include/birnet
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

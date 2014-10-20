@@ -1,4 +1,3 @@
 bin/nb
 %%DOCSDIR%%/README
 %%DOCSDIR%%/LICENSE
-@dirrm %%DOCSDIR%%

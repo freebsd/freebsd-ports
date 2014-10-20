@@ -115,9 +115,3 @@ share/icons/hicolor/48x48/apps/gimmie.png
 share/icons/hicolor/scalable/apps/gimmie.svg
 share/gnome-2.0/ui/GNOME_GimmieApplet.xml
 share/pixmaps/gimmie.png
-@dirrm %%PYTHON_SITELIBDIR%%/gimmie/traymanager
-@dirrm %%PYTHON_SITELIBDIR%%/gimmie/sexy
-@dirrm %%PYTHON_SITELIBDIR%%/gimmie/iconentry
-@dirrm %%PYTHON_SITELIBDIR%%/gimmie/gnomecups
-@dirrm %%PYTHON_SITELIBDIR%%/gimmie/gdmclient
-@dirrm %%PYTHON_SITELIBDIR%%/gimmie

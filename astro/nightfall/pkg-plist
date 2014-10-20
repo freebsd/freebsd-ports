@@ -92,16 +92,3 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%DATADIR%%/pixmaps/stars_256.jpg
 %%GNOME%%share/omf/nightfall/nightfall-C.omf
 %%GNOME%%share/omf/nightfall/nightfall-de.omf
-%%GNOME%%@dirrm share/omf/nightfall
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/doc/de/edu
-@dirrm %%DATADIR%%/doc/de
-@dirrm %%DATADIR%%/doc/C/edu
-@dirrm %%DATADIR%%/doc/C
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/cfg
-@dirrm %%DATADIR%%
-%%GNOME%%@dirrm share/gnome/help/nightfall/de
-%%GNOME%%@dirrm share/gnome/help/nightfall/C
-%%GNOME%%@dirrm share/gnome/help/nightfall

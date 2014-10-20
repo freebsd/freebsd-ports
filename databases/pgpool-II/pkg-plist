@@ -43,6 +43,3 @@ share/postgresql/contrib/uninstall_pgpool-regclass.sql
 lib/postgresql/pgpool-recovery.so
 lib/postgresql/pgpool-regclass.so
 %%PGSQL9%%lib/postgresql/pgpool-walrecrunning.so
-@dirrmtry share/postgresql/contrib
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%

@@ -33,9 +33,3 @@
 %%PERL5_MAN3%%/DBIx::SearchBuilder::Union.3.gz
 %%PERL5_MAN3%%/DBIx::SearchBuilder::Unique.3.gz
 %%PERL5_MAN3%%/DBIx::SearchBuilder::Util.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder
-@dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Record
-@dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Handle
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx/SearchBuilder
-@dirrmtry %%SITE_PERL%%/DBIx

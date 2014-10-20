@@ -146,12 +146,3 @@ share/pixmaps/gpredict/maps/nasa-topo_1024.jpg
 share/pixmaps/gpredict/maps/nasa-topo_1600.jpg
 share/pixmaps/gpredict/maps/nasa-topo_2048.jpg
 share/pixmaps/gpredict/maps/nasa-topo_800.png
-@dirrm share/pixmaps/gpredict/maps
-@dirrm share/pixmaps/gpredict/icons
-@dirrm share/pixmaps/gpredict
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
-@dirrm %%DATADIR%%/data/trsp
-@dirrm %%DATADIR%%/data/satdata
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

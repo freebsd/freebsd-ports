@@ -12,8 +12,8 @@ COMMENT=	Lightweight, fast, and simple key-value store
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pickledb.py \
 		%%PYTHON_SITELIBDIR%%/pickledb.pyc \

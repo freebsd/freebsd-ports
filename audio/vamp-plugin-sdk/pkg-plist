@@ -33,7 +33,3 @@ lib/vamp/vamp-example-plugins.so
 libdata/pkgconfig/vamp-hostsdk.pc
 libdata/pkgconfig/vamp-sdk.pc
 libdata/pkgconfig/vamp.pc
-@dirrm lib/vamp
-@dirrm include/vamp-sdk
-@dirrm include/vamp-hostsdk
-@dirrm include/vamp

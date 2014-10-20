@@ -1,0 +1,14 @@
+bin/baka-mplayer
+man/man1/baka-mplayer.1.gz
+share/applications/baka-mplayer.desktop
+%%PORTDOCS%%%%DOCSDIR%%/baka-mplayer.md
+share/icons/hicolor/128x128/apps/baka-mplayer.png
+share/icons/hicolor/16x16/apps/baka-mplayer.png
+share/icons/hicolor/24x24/apps/baka-mplayer.png
+share/icons/hicolor/256x256/apps/baka-mplayer.png
+share/icons/hicolor/32x32/apps/baka-mplayer.png
+share/icons/hicolor/48x48/apps/baka-mplayer.png
+share/icons/hicolor/512x512/apps/baka-mplayer.png
+share/icons/hicolor/64x64/apps/baka-mplayer.png
+share/icons/hicolor/96x96/apps/baka-mplayer.png
+share/icons/scalable/apps/baka-mplayer.svg

@@ -21,9 +21,8 @@ GH_TAGNAME=	v0.6
 
 USE_GNOME=	pygobject pygtk2
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	CHANGELOG INSTALL.rst README.rst
 

@@ -84,17 +84,3 @@ share/launchy/skins/Spotlight_Wide/scrollUp.png
 share/launchy/skins/Spotlight_Wide/spinner.mng
 share/launchy/skins/Spotlight_Wide/style.qss
 share/pixmaps/launchy_icon.png
-@dirrm share/launchy/skins/Spotlight_Wide
-@dirrm share/launchy/skins/Simple
-@dirrm share/launchy/skins/QuickSilver2
-@dirrm share/launchy/skins/Note
-@dirrm share/launchy/skins/Mercury_Wide
-@dirrm share/launchy/skins/Mercury
-@dirrm share/launchy/skins/Default
-@dirrm share/launchy/skins/Black_Glass_Wide
-@dirrm share/launchy/skins/Black_Glass
-@dirrm share/launchy/skins
-@dirrm share/launchy
-@dirrm lib/launchy/plugins/icons
-@dirrm lib/launchy/plugins
-@dirrm lib/launchy

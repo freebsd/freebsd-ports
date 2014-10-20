@@ -26,4 +26,3 @@ share/applications/mhgui.desktop
 %%DATADIR%%/serialization.xsd
 %%DATADIR%%/throbber.gif
 %%DATADIR%%/user_feature.xsd
-@dirrmtry %%DATADIR%%

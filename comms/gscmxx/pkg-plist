@@ -1,8 +1,6 @@
 %%SITE_PERL%%/SCMxx.pm
 %%SITE_PERL%%/SCMxx/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscmxx/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscmxx
-@dirrm %%SITE_PERL%%/SCMxx
 bin/gscmxx
 share/pixmaps/gscmxx/phonebook_30.xpm
 share/pixmaps/gscmxx/preferences_30.xpm
@@ -34,9 +32,5 @@ share/gscmxx/i18n/magyar
 share/gscmxx/i18n/german
 share/gscmxx/i18n/english
 share/gscmxx/i18n/italian
-@dirrm share/gscmxx/i18n
-@dirrm share/gscmxx
-@dirrm share/pixmaps/gscmxx/groups
-@dirrm share/pixmaps/gscmxx
 %%PERL5_MAN3%%/SCMxx.3.gz
 man/man1/gscmxx.1.gz

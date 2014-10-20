@@ -1256,6 +1256,7 @@ lib/wine/fakedlls/jsproxy.dll
 lib/wine/fakedlls/kernel32.dll
 lib/wine/fakedlls/keyboard.drv16
 lib/wine/fakedlls/krnl386.exe16
+lib/wine/fakedlls/ksuser.dll
 lib/wine/fakedlls/ktmw32.dll
 lib/wine/fakedlls/loadperf.dll
 lib/wine/fakedlls/localspl.dll
@@ -1469,6 +1470,7 @@ lib/wine/fakedlls/svchost.exe
 lib/wine/fakedlls/svrapi.dll
 lib/wine/fakedlls/sxs.dll
 lib/wine/fakedlls/system.drv16
+lib/wine/fakedlls/systeminfo.exe
 lib/wine/fakedlls/t2embed.dll
 lib/wine/fakedlls/tapi32.dll
 lib/wine/fakedlls/taskkill.exe
@@ -1640,6 +1642,7 @@ lib/wine/jsproxy.dll.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv16.so
 lib/wine/krnl386.exe16.so
+lib/wine/ksuser.dll.so
 lib/wine/ktmw32.dll.so
 lib/wine/libaclui.def
 lib/wine/libactiveds.def
@@ -2031,6 +2034,7 @@ lib/wine/svchost.exe.so
 lib/wine/svrapi.dll.so
 lib/wine/sxs.dll.so
 lib/wine/system.drv16.so
+lib/wine/systeminfo.exe.so
 lib/wine/t2embed.dll.so
 lib/wine/tapi32.dll.so
 lib/wine/taskkill.exe.so
@@ -2244,19 +2248,3 @@ share/applications/wine.desktop
 %%X11%%%%DATADIR%%/fonts/vgasysr.fon
 %%X11%%%%DATADIR%%/fonts/vgasyst.fon
 %%X11%%%%DATADIR%%/fonts/wingding.ttf
-%%X11%%@dirrm %%DATADIR%%/fonts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%
-@dirrmtry man/pl.UTF-8/man1
-@dirrmtry man/pl.UTF-8
-@dirrmtry man/fr.UTF-8/man1
-@dirrmtry man/fr.UTF-8
-@dirrmtry man/de.UTF-8/man1
-@dirrmtry man/de.UTF-8
-@dirrm lib/wine/fakedlls
-@dirrm lib/wine
-@dirrm include/wine/windows/ddk
-@dirrm include/wine/windows
-@dirrm include/wine/msvcrt/sys
-@dirrm include/wine/msvcrt
-@dirrm include/wine

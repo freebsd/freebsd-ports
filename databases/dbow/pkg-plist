@@ -6,4 +6,3 @@ man/man1/dbow.1.gz
 %%DATADIR%%/mysql.m4
 %%DATADIR%%/perl.m4
 %%DATADIR%%/php.m4
-@dirrm %%DATADIR%%

@@ -34,6 +34,3 @@ share/icons/hicolor/22x22/apps/kubrick.png
 share/icons/hicolor/32x32/apps/kubrick.png
 share/icons/hicolor/48x48/apps/kubrick.png
 share/icons/hicolor/64x64/apps/kubrick.png
-@dirrm share/doc/HTML/en/kubrick
-@dirrm share/apps/kubrick/themes
-@dirrm share/apps/kubrick

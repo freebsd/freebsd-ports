@@ -6,4 +6,3 @@ man/man1/qrq.1.gz
 %%DATADIR%%/qrqrc
 %%DATADIR%%/qrq.png
 %%DATADIR%%/toplist
-@dirrm %%DATADIR%%

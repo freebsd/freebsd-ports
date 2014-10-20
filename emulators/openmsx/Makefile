@@ -23,11 +23,10 @@ MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
 		CXXFLAGS="${CXXFLAGS}"
 
 MAKEFILE=	GNUmakefile
-USES=		gmake tcl
+USES=		gmake python tcl
 USE_GCC=	yes
 USE_GL=		glew
 USE_SDL=	sdl ttf
-USE_PYTHON=	yes
 
 PLIST_FILES=	bin/openmsx
 PORTDATA=	*

@@ -26,6 +26,3 @@ share/icons/hicolor/scalable/apps/kdiamond.svgz
 share/sounds/KDiamond-Stone-Drop.ogg
 share/sounds/KDiamond-Stone-Swap.ogg
 share/sounds/KDiamond-Stone-Touch.ogg
-@dirrm share/doc/HTML/en/kdiamond
-@dirrm share/apps/kdiamond/themes
-@dirrm share/apps/kdiamond

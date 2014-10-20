@@ -114,10 +114,3 @@ sbin/savemixer
 sbin/soundoff
 sbin/soundon
 sbin/vmixctl
-@dirrm lib/oss/modules
-@dirrmtry lib/oss/logs
-@dirrm lib/oss/include/sys
-@dirrm lib/oss/include
-@dirrmtry lib/oss/etc
-@dirrmtry lib/oss/conf
-@dirrmtry lib/oss

@@ -12,6 +12,7 @@ COMMENT=	Network tool designed for high performance and accurate monitoring
 
 LICENSE=	GPLv2
 
+USES=		alias
 DOCS=		Changes.html binaries.html config.html docs.html index.html \
 		jclient.jpg net-example.png sysmon.conf.man.html sysmon.jpg \
 		sysmon.man.html reporting.xml-spec.txt

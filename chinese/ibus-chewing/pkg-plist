@@ -11,6 +11,3 @@ lib/ibus-engine-chewing
 share/ibus/component/chewing.xml
 share/locale/zh_CN/LC_MESSAGES/ibus-chewing.mo
 share/locale/zh_TW/LC_MESSAGES/ibus-chewing.mo
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%-%%PORTVERSION%%

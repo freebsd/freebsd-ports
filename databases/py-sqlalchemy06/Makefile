@@ -15,9 +15,8 @@ COMMENT=	Python SQL toolkit and Object Relational Mapper (series 0.6)
 LICENSE=	MIT
 
 # Python3 ready
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options

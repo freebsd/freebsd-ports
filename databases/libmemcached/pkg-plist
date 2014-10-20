@@ -227,11 +227,3 @@ man/man3/memcached_touch.3.gz
 man/man3/memcached_touch_by_key.3.gz
 man/man3/memcached_verbosity.3.gz
 man/man3/memcached_version.3.gz
-@dirrm include/libmemcachedutil-1.0
-@dirrm include/libmemcachedprotocol-0.0
-@dirrm include/libmemcached-1.0/types
-@dirrm include/libmemcached-1.0/struct
-@dirrm include/libmemcached-1.0
-@dirrm include/libmemcached
-@dirrm include/libhashkit-1.0
-@dirrm include/libhashkit

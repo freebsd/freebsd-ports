@@ -2,7 +2,6 @@
 
 PORTNAME=	kio-audiocd
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DISTNAME=	audiocd-kio-${PORTVERSION}
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USES=		cmake:outsource tar:xz
-USE_KDE4=	kdehier kdelibs kdeprefix libkcddb libkcompactdisc \
+USE_KDE4=	kdelibs kdeprefix libkcddb libkcompactdisc \
 		automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

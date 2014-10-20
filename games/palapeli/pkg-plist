@@ -64,10 +64,3 @@ share/kde4/services/palapeli_rectslicer.desktop
 share/kde4/services/palathumbcreator.desktop
 share/kde4/servicetypes/libpala-slicerplugin.desktop
 share/mime/packages/palapeli-mimetypes.xml
-@dirrm share/doc/HTML/en/palapeli
-@dirrm share/apps/palapeli/collection
-@dirrm share/apps/palapeli/backgrounds
-@dirrm share/apps/palapeli
-@dirrm lib/libpala
-@dirrm include/libpala
-@dirrm include/Pala

@@ -41,7 +41,7 @@ USE_GL=		yes
 USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
-USES=		cmake:outsource execinfo gmake python shebangfix
+USES=		alias cmake:outsource execinfo gmake python shebangfix
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \

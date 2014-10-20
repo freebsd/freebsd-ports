@@ -14,12 +14,11 @@ LICENSE=	ART10
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/paramiko/__init__.py:${PORTSDIR}/security/py-paramiko
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USE_WX=			2.6+
-WX_COMPS=		python
-WX_UNICODE=		yes
+USES=		python
+USE_PYTHON=	distutils autoplist
+USE_WX=		2.6+
+WX_COMPS=	python
+WX_UNICODE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' ${WRKSRC}/setup.cfg

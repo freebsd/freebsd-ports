@@ -7,8 +7,3 @@
 %%SITE_PERL%%/Audio/Wav/Write.pm
 %%SITE_PERL%%/Audio/Wav/Write/Header.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Wav/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Wav
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
-@dirrm %%SITE_PERL%%/Audio/Wav/Write
-@dirrm %%SITE_PERL%%/Audio/Wav
-@dirrmtry %%SITE_PERL%%/Audio

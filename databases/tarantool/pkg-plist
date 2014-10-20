@@ -65,12 +65,3 @@ man/man1/tarantool_box.1.gz
 %%DOCSDIR%%/LICENSE
 %%DATADIR%%/00000000000000000001.snap
 %%DATADIR%%/box/net/sql.lua
-@dirrmtry %%ETCDIR%%
-@dirrm include/tarantool
-%%PLUGINS%%@dirrm lib/tarantool/box/net
-@dirrm lib/tarantool/box
-@dirrm lib/tarantool
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/box/net
-@dirrm %%DATADIR%%/box
-@dirrm %%DATADIR%%

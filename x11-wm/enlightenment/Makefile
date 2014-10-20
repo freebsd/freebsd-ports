@@ -18,7 +18,7 @@ LIB_DEPENDS=	libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
 
 DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes
-USES=		execinfo pathfix iconv gmake pkgconfig tar:bzip2
+USES=		alias execinfo pathfix iconv gmake pkgconfig tar:bzip2
 USE_EFL=	eina eet evas ecore eio edbus efreet edje \
 		libtool_hack librt_hack modarch_hack
 USE_EFL_EVAS_LOADERS=	eet jpeg png

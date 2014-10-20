@@ -21,15 +21,13 @@ RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 
 NO_BUILD=	yes
 
-USE_PYTHON_RUN=	yes
-
 OPTIONS_DEFINE=	CDDA2WAV DAGRAB EJECT FLAC MPP NORMALIZE REPLAYGAIN SPEEX
 
 EJECT_DESC?=	Enable auto-eject support
 NORMALIZE_DESC?=	Enable normalize support
 REPLAYGAIN_DESC?=	Enable (vorbis|mp3)gain support
 
-USES=		shebangfix
+USES=		python:run shebangfix
 SHEBANG_FILES=	${PORTNAME} cddb-tool
 
 .include <bsd.port.options.mk>

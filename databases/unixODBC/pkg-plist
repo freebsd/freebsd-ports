@@ -35,7 +35,6 @@ man/man5/odbc.ini.5.gz
 man/man5/odbcinst.ini.5.gz
 @unexec test -s %D/etc/odbcinst.ini || rm -f %D/etc/odbcinst.ini
 @unexec test -s %D/etc/odbc.ini || rm -f %D/etc/odbc.ini
-@dirrmtry etc/ODBCDataSources
-@exec mkdir -p %D/etc/ODBCDataSources
+@dir etc/ODBCDataSources
 @exec test -e %D/etc/odbc.ini || touch %D/etc/odbc.ini
 @exec test -e %D/etc/odbcinst.ini || touch %D/etc/odbcinst.ini

@@ -3,4 +3,3 @@ bin/yasql
 man/man1/yasql.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/yasql.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -8,7 +8,3 @@
 %%PERL5_MAN3%%/Net::LibLO::Address.3.gz
 %%PERL5_MAN3%%/Net::LibLO::Bundle.3.gz
 %%PERL5_MAN3%%/Net::LibLO::Message.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/LibLO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LibLO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

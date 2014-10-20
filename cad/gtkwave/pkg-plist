@@ -92,11 +92,3 @@ share/icons/gtkwave_savefiles_256x256x32.png
 %%EXAMPLESDIR%%/transaction.gtkw
 %%EXAMPLESDIR%%/transaction.c
 %%EXAMPLESDIR%%/gtkwaverc
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry share/icons/gnome/16x16/mimetypes
-@dirrmtry share/icons/gnome/16x16
-@dirrmtry share/icons/gnome/32x32/mimetypes
-@dirrmtry share/icons/gnome/32x32
-@dirrmtry share/icons/gnome/48x48/mimetypes
-@dirrmtry share/icons/gnome/48x48
-@dirrmtry share/icons/gnome

@@ -5,5 +5,3 @@ bin/timemachine
 %%DATADIR%%/pixmaps/on-icon.png
 %%DATADIR%%/pixmaps/off-icon.png
 %%DATADIR%%/pixmaps/timemachine-icon.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

@@ -8,7 +8,3 @@
 %%SITE_PERL%%/MP3/Tag/ID3v1.pm
 %%SITE_PERL%%/MP3/Tag/ID3v2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
-@dirrmtry %%SITE_PERL%%/MP3/Tag
-@dirrmtry %%SITE_PERL%%/MP3

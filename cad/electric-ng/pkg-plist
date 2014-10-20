@@ -3,5 +3,3 @@ bin/electric-ng
 %%PORTDOCS%%%%DOCSDIR%%-ng/ElectricManual-%%VERSION%%.pdf
 share/java/classes/electricBinary-%%VERSION%%.jar
 share/pixmaps/electric-ng.png
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%-ng
-%%IRSIM%%@dirrmtry libexec/electric-ng

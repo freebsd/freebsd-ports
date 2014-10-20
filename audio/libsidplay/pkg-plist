@@ -12,4 +12,3 @@ lib/libsidplay.a
 lib/libsidplay.so
 lib/libsidplay.so.1
 lib/libsidplay.so.1.0.3
-@dirrm include/sidplay

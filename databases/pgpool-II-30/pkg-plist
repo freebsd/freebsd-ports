@@ -31,6 +31,3 @@ man/man8/pgpool.8.gz
 %%EXAMPLESDIR%%/pgpool_recovery_pitr
 %%EXAMPLESDIR%%/pgpool_remote_start
 share/postgresql/contrib/pgpool-recovery.sql
-@dirrmtry share/postgresql/contrib
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%

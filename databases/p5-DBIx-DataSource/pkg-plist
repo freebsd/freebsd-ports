@@ -7,7 +7,3 @@
 %%PERL5_MAN3%%/DBIx::DataSource::Driver.3.gz
 %%PERL5_MAN3%%/DBIx::DataSource::mysql.3.gz
 %%PERL5_MAN3%%/DBIx::DataSource::Pg.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DataSource
-@dirrm %%SITE_PERL%%/DBIx/DataSource
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx

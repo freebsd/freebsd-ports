@@ -69,29 +69,3 @@ share/perlqt/cmake/PerlQtConfig.cmake
 share/perlqt/cmake/PerlQtExport-%%CMAKE_BUILD_TYPE%%.cmake
 share/perlqt/cmake/PerlQtExport.cmake
 share/perlqt/doxsubpp.pl
-@dirrm share/perlqt/cmake
-@dirrm share/perlqt
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Qwt
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtXmlPatterns4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtXml4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtWebKit4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtUiTools4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtTest4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtSvg4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtSql4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtScript4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtOpenGL4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtNetwork4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtMultimedia4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtHelp4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtGui4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtDeclarative4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtDBus4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtCore4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Qt3Support4
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Qsci
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QImageBlitz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Phonon
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/QtCore4
-@dirrm include/perlqt
-@dirrmtry env

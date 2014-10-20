@@ -107,16 +107,3 @@ share/postgresql/contrib/postgis-2.0/postgis_restore.pl
 %%RASTER%%share/postgresql/extension/postgis_topology--2.0.2--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_topology--2.0.3--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_topology--unpackaged--%%PORTVERSION%%.sql
-@dirrm share/postgresql/contrib/postgis-2.0
-@dirrmtry share/postgresql/contrib
-@dirrm share/postgis/tiger_2010/legacy_import/tiger2008
-@dirrm share/postgis/tiger_2010/geocode
-@dirrm share/postgis/tiger_2010/legacy_import
-@dirrm share/postgis/tiger_2010/normalize
-@dirrm share/postgis/tiger_2010/regress
-@dirrm share/postgis/tiger_2010/tables
-@dirrm share/postgis/tiger_2010/topology
-@dirrm share/postgis/tiger_2010/utility
-@dirrm share/postgis/tiger_2010
-@dirrm share/postgis/utils
-@dirrm share/postgis

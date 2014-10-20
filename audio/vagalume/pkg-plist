@@ -30,8 +30,3 @@ share/pixmaps/vagalume.png
 %%DATADIR%%/icons/hicolor/scalable/apps/media-skip-forward.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/process-stop.svg
 %%DATADIR%%/servers.xml
-@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

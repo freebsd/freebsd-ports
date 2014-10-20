@@ -52,10 +52,3 @@ lib/menumaker/Prophet/Legacy/__init__.py
 lib/menumaker/Prophet/Legacy/__init__.pyc
 lib/menumaker/Prophet/__init__.py
 lib/menumaker/Prophet/__init__.pyc
-@dirrm lib/menumaker/Prophet/Legacy
-@dirrm lib/menumaker/Prophet/Desktop
-@dirrm lib/menumaker/Prophet/Debian/menu
-@dirrm lib/menumaker/Prophet/Debian
-@dirrm lib/menumaker/Prophet
-@dirrm lib/menumaker/MenuMaker
-@dirrm lib/menumaker

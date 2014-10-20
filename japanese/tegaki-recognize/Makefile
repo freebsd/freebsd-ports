@@ -18,8 +18,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tegakigtk/recognizer.py:${PORTSDIR}/japanese/p
 
 OPTIONS_DEFINE=	DOCS
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	${PORTNAME}_recognize
 
 post-install:

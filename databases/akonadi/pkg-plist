@@ -21,7 +21,7 @@ lib/cmake/Akonadi/AkonadiTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Akonadi/AkonadiTargetsWithPrefix.cmake
 lib/libakonadiprotocolinternals.so
 lib/libakonadiprotocolinternals.so.1
-lib/libakonadiprotocolinternals.so.1.12.1
+lib/libakonadiprotocolinternals.so.1.13.0
 libdata/pkgconfig/akonadi.pc
 share/config/akonadi/mysql-global-mobile.conf
 share/config/akonadi/mysql-global.conf
@@ -41,10 +41,4 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 share/dbus-1/services/org.freedesktop.Akonadi.Control.service
 share/mime/packages/akonadi-mime.xml
-@dirrm share/config/akonadi
-@dirrm lib/cmake/Akonadi
-@dirrmtry lib/cmake
-@dirrmtry include/akonadi/private
-@dirrmtry include/akonadi
-%%SQLITE%%@cwd %%QT_PREFIX%%
-%%SQLITE%%%%QT_PLUGINDIR%%/sqldrivers/libqsqlite3.so
+%%SQLITE%%%%QT_PREFIX%%/%%QT_PLUGINDIR%%/sqldrivers/libqsqlite3.so

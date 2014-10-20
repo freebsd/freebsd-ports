@@ -1,5 +1,3 @@
 bin/vsound
 lib/vsound/libvsound.so
-@dirrm lib/vsound
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

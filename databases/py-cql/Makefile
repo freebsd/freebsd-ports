@@ -15,8 +15,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/thrift/Thrift.py:${PORTSDIR}/devel/py-thrift
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	cql
 
 .include <bsd.port.mk>

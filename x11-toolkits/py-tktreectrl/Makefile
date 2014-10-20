@@ -15,9 +15,8 @@ LIB_DEPENDS=	libtreectrl.so.1:${PORTSDIR}/x11-toolkits/tktreectrl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw
 
-USES=		tk:run zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python tk:run zip
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	TkinterTreectrl
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
 

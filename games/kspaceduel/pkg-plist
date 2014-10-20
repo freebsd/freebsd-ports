@@ -34,15 +34,3 @@ share/icons/hicolor/22x22/apps/kspaceduel.png
 share/icons/hicolor/32x32/apps/kspaceduel.png
 share/icons/hicolor/48x48/apps/kspaceduel.png
 share/icons/hicolor/64x64/apps/kspaceduel.png
-@dirrm share/doc/HTML/en/kspaceduel
-@dirrm share/apps/kspaceduel/sprites/playerinfo
-@dirrm share/apps/kspaceduel/sprites
-@dirrm share/apps/kspaceduel/icons/hicolor/32x32/actions
-@dirrm share/apps/kspaceduel/icons/hicolor/32x32
-@dirrm share/apps/kspaceduel/icons/hicolor/22x22/actions
-@dirrm share/apps/kspaceduel/icons/hicolor/22x22
-@dirrm share/apps/kspaceduel/icons/hicolor/16x16/actions
-@dirrm share/apps/kspaceduel/icons/hicolor/16x16
-@dirrm share/apps/kspaceduel/icons/hicolor
-@dirrm share/apps/kspaceduel/icons
-@dirrm share/apps/kspaceduel

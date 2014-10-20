@@ -2,7 +2,6 @@
 
 PORTNAME=	perlqt
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde perl5
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	p5-
@@ -14,7 +13,7 @@ COMMENT=	Perl bindings for Qt
 LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2 \
 		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5
 
-USE_KDE4=	kdehier kdeprefix smokeqt qimageblitz
+USE_KDE4=	kdeprefix smokeqt qimageblitz
 USE_QT4=	corelib dbus gui network xml \
 		qmake_build moc_build uic_build rcc_build
 USES=		cmake:outsource perl5 tar:xz

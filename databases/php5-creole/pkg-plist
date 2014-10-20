@@ -79,21 +79,3 @@ lib/php/jargon/Query.php
 lib/php/jargon/QueryDataSet.php
 lib/php/jargon/Record.php
 lib/php/jargon/TableDataSet.php
-@dirrm lib/php/creole/util/sql
-@dirrm lib/php/creole/util
-@dirrm lib/php/creole/metadata
-@dirrm lib/php/creole/drivers/sqlite/metadata
-@dirrm lib/php/creole/drivers/sqlite
-@dirrm lib/php/creole/drivers/pgsql/metadata
-@dirrm lib/php/creole/drivers/pgsql
-@dirrm lib/php/creole/drivers/odbc/metadata
-@dirrm lib/php/creole/drivers/odbc/adapters
-@dirrm lib/php/creole/drivers/odbc
-@dirrm lib/php/creole/drivers/mysql/metadata
-@dirrm lib/php/creole/drivers/mysql
-@dirrm lib/php/creole/drivers/mssql/metadata
-@dirrm lib/php/creole/drivers/mssql
-@dirrm lib/php/creole/drivers
-@dirrm lib/php/creole/common
-@dirrm lib/php/creole
-@dirrm lib/php/jargon

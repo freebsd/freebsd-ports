@@ -71,14 +71,3 @@ man/man5/task-tutorial.5.gz
 %%DATADIR%%/scripts/vim/syntax/taskrc.vim
 %%DATADIR%%/scripts/zsh/_task
 %%DATADIR%%/task-ref.pdf
-@dirrm %%DATADIR%%/scripts/zsh
-@dirrm %%DATADIR%%/scripts/vim/syntax
-@dirrm %%DATADIR%%/scripts/vim/ftdetect
-@dirrm %%DATADIR%%/scripts/vim
-@dirrm %%DATADIR%%/scripts/fish
-@dirrm %%DATADIR%%/scripts/bash
-@dirrm %%DATADIR%%/scripts/add-ons
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/i18n
-@dirrm %%DATADIR%%/rc
-@dirrm %%DATADIR%%

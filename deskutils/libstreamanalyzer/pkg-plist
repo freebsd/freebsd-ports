@@ -61,9 +61,3 @@ share/strigi/fieldproperties/nid3_data.rdfs
 share/strigi/fieldproperties/nie_data.rdfs
 share/strigi/fieldproperties/nmo_data.rdfs
 share/strigi/fieldproperties/strigi.rdfs
-@dirrmtry share/strigi/fieldproperties
-@dirrmtry share/strigi
-@dirrmtry lib/strigi
-@dirrm lib/cmake/LibStreamAnalyzer
-@dirrmtry lib/cmake
-@dirrmtry include/strigi

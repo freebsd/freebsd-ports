@@ -202,18 +202,3 @@ bin/vym
 %%DATADIR%%/styles/vym.css
 %%DATADIR%%/styles/vym2kdebookmarks.xsl
 %%DATADIR%%/styles/vym2taskjuggler.xsl
-@dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/macros
-%%NLS%%@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/flags/freemind
-@dirrm %%DATADIR%%/flags
-@dirrm %%DATADIR%%/exports/template-orange-blue/Thumbnails
-@dirrm %%DATADIR%%/exports/template-orange-blue/Pictures
-@dirrm %%DATADIR%%/exports/template-orange-blue/META-INF
-@dirrm %%DATADIR%%/exports/template-orange-blue
-@dirrm %%DATADIR%%/exports
-@dirrm %%DATADIR%%/demos
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

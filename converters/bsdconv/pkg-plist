@@ -228,7 +228,3 @@ lib/libbsdconv.so.11
 %%EBCDIC%%%%DATADIR%%/to/IBM-937.so
 %%EBCDIC%%%%DATADIR%%/to/IBM-939
 %%EBCDIC%%%%DATADIR%%/to/IBM-939.so
-@dirrmtry %%DATADIR%%/to
-@dirrmtry %%DATADIR%%/inter
-@dirrmtry %%DATADIR%%/from
-@dirrmtry %%DATADIR%%

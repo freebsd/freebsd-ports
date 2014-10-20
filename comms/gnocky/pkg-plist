@@ -29,7 +29,6 @@ share/gnocky/glade/sms.png
 share/gnocky/glade/startup-logo.png
 share/gnocky/glade/tasks.png
 share/gnocky/glade/write-to-phone.png
-@dirrm share/gnocky/glade
 share/gnocky/pixmaps/phones/3210.png
 share/gnocky/pixmaps/phones/3310.png
 share/gnocky/pixmaps/phones/3510i.png
@@ -41,11 +40,8 @@ share/gnocky/pixmaps/phones/c55.png
 share/gnocky/pixmaps/phones/m55.png
 share/gnocky/pixmaps/phones/s55.png
 share/gnocky/pixmaps/phones/unknown.png
-@dirrm share/gnocky/pixmaps/phones
 share/gnocky/pixmaps/me.png
 share/gnocky/pixmaps/sm.png
-@dirrm share/gnocky/pixmaps
-@dirrm share/gnocky
 %%NLS%%share/locale/de/LC_MESSAGES/gnocky.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gnocky.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnocky.mo

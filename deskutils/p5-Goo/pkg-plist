@@ -286,22 +286,3 @@ bin/goo.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/.packlist
 man/man1/goo.1.gz
 man/man1/goo.pl.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo
-@dirrm %%SITE_PERL%%/Goo/Thing/tpm
-@dirrm %%SITE_PERL%%/Goo/Thing/task
-@dirrm %%SITE_PERL%%/Goo/Thing/pm
-@dirrm %%SITE_PERL%%/Goo/Thing/pl
-@dirrm %%SITE_PERL%%/Goo/Thing/log
-@dirrm %%SITE_PERL%%/Goo/Thing/js
-@dirrm %%SITE_PERL%%/Goo/Thing/goo
-@dirrm %%SITE_PERL%%/Goo/Thing/gml
-@dirrm %%SITE_PERL%%/Goo/Thing/conf
-@dirrm %%SITE_PERL%%/Goo/Thing/bug
-@dirrm %%SITE_PERL%%/Goo/Thing
-@dirrm %%SITE_PERL%%/Goo/FileThing
-@dirrm %%SITE_PERL%%/Goo/DatabaseThing
-@dirrm %%SITE_PERL%%/Goo
-@dirrm %%SITE_PERL%%/.gooskel/things/tpl
-@dirrm %%SITE_PERL%%/.gooskel/things/goo
-@dirrm %%SITE_PERL%%/.gooskel/things
-@dirrm %%SITE_PERL%%/.gooskel

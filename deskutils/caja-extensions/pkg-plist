@@ -70,14 +70,3 @@ share/locale/uk/LC_MESSAGES/caja-extensions.mo
 share/locale/vi/LC_MESSAGES/caja-extensions.mo
 share/locale/zh_CN/LC_MESSAGES/caja-extensions.mo
 share/locale/zh_TW/LC_MESSAGES/caja-extensions.mo
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/cmn/LC_MESSAGES
-@dirrmtry share/locale/cmn
-@dirrmtry share/gtk-doc/html/caja-sendto
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrmtry %%DATADIR%%
-@dirrm lib/caja-sendto/plugins
-@dirrm lib/caja-sendto
-@dirrm include/caja-sendto

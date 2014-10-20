@@ -159,6 +159,3 @@ man/man1/mmk_m2.1.gz
 man/man1/mmk_m3.1.gz
 man/man1/mord.1.gz
 man/man1/mtst.1.gz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tgt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

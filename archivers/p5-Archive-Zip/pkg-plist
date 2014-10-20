@@ -17,7 +17,3 @@ bin/crc32
 %%SITE_PERL%%/Archive/Zip/Tree.pm
 %%SITE_PERL%%/Archive/Zip/ZipFileMember.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Zip/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Zip
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive
-@dirrm %%SITE_PERL%%/Archive/Zip
-@dirrmtry %%SITE_PERL%%/Archive

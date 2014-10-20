@@ -36,7 +36,3 @@
 %%PERL5_MAN3%%/MongoDB::OID.3.gz
 %%PERL5_MAN3%%/MongoDB::Timestamp.3.gz
 %%PERL5_MAN3%%/MongoDB::Tutorial.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/BSON
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB

@@ -41,4 +41,3 @@ lib/libdrawtree.so
 %%DATADIR%%/font4
 %%DATADIR%%/font5
 %%DATADIR%%/font6
-@dirrm %%DATADIR%%

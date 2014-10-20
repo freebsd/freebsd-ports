@@ -37,7 +37,3 @@ share/sounds/kapman/ghost.ogg
 share/sounds/kapman/levelup.ogg
 share/sounds/kapman/life.ogg
 share/sounds/kapman/pill.ogg
-@dirrm share/sounds/kapman
-@dirrm share/doc/HTML/en/kapman
-@dirrm share/apps/kapman/themes
-@dirrm share/apps/kapman

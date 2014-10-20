@@ -148,18 +148,3 @@
 %%SITE_PERL%%/Rose/DB/Object/Tutorial.pod
 %%SITE_PERL%%/Rose/DB/Object/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB/Object/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Std
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Relationship
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Pg
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Epoch
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Column
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Auto
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/MakeMethods
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/ConventionManager
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object
-@dirrmtry %%SITE_PERL%%/Rose/DB
-@dirrmtry %%SITE_PERL%%/Rose

@@ -367,29 +367,3 @@ share/postgresql/pgaccess/pgaccess.tcl
 share/postgresql/pgaccess/pgmonitor
 share/postgresql/pgaccess/TODO
 share/postgresql/pgaccess/utils/mkkit.tcl
-@dirrm share/postgresql/pgaccess/utils
-@dirrm share/postgresql/pgaccess/osx/dylib
-@dirrm share/postgresql/pgaccess/osx
-@dirrm share/postgresql/pgaccess/lib/widgets/tkwizard-1.0a1
-@dirrm share/postgresql/pgaccess/lib/widgets/tablelist3.3/scripts
-@dirrm share/postgresql/pgaccess/lib/widgets/tablelist3.3
-@dirrm share/postgresql/pgaccess/lib/widgets/icons1.0
-@dirrm share/postgresql/pgaccess/lib/widgets/fileutil
-@dirrm share/postgresql/pgaccess/lib/widgets/csv
-@dirrm share/postgresql/pgaccess/lib/widgets/cmdline
-@dirrm share/postgresql/pgaccess/lib/widgets/base64
-@dirrm share/postgresql/pgaccess/lib/widgets/Barcode
-@dirrm share/postgresql/pgaccess/lib/widgets/BWidget-1.6.0/lang
-@dirrm share/postgresql/pgaccess/lib/widgets/BWidget-1.6.0/images
-@dirrm share/postgresql/pgaccess/lib/widgets/BWidget-1.6.0
-@dirrm share/postgresql/pgaccess/lib/widgets
-@dirrm share/postgresql/pgaccess/lib/plugins
-@dirrm share/postgresql/pgaccess/lib/languages
-@dirrm share/postgresql/pgaccess/lib/help
-@dirrm share/postgresql/pgaccess/lib
-@dirrm share/postgresql/pgaccess/images
-@dirrm share/postgresql/pgaccess/extra
-@dirrm share/postgresql/pgaccess/demo
-@dirrm share/postgresql/pgaccess
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

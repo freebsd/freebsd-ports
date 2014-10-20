@@ -40,7 +40,3 @@
 %%PERL5_MAN3%%/WWWdb::HTML.3.gz
 %%PERL5_MAN3%%/WWWdb::ConfigFile.3.gz
 %%PERL5_MAN3%%/WWWdb::ConfigPool.3.gz
-@dirrm %%SITE_PERL%%/Apache/
-@dirrm %%SITE_PERL%%/WWWdb/DbSession
-@dirrm %%SITE_PERL%%/WWWdb
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWWdb

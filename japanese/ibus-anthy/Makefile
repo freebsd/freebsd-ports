@@ -18,8 +18,7 @@ LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify
 
 GNU_CONFIGURE=	yes
-USES=		libtool gettext gmake pkgconfig
-USE_PYTHON=	yes
+USES=		libtool gettext gmake pkgconfig python
 USE_GNOME=	pygtk2
 
 LOCALBASE_REPLACE_FILES= \

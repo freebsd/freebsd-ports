@@ -19,13 +19,3 @@ share/apps/ksplash/Themes/Default/600x400/background.png
 share/apps/ksplash/Themes/Default/800x600/background.png
 share/apps/ksplash/Themes/Default/Preview.png
 share/apps/ksplash/Themes/Default/Theme.rc
-@dirrm share/apps/ksplash/Themes/Default/800x600
-@dirrm share/apps/ksplash/Themes/Default/600x400
-@dirrm share/apps/ksplash/Themes/Default/1920x1200
-@dirrm share/apps/ksplash/Themes/Default/1920x1080
-@dirrm share/apps/ksplash/Themes/Default/1600x1200
-@dirrm share/apps/ksplash/Themes/Default/1280x1024
-@dirrm share/apps/ksplash/Themes/Default/1024x768
-@dirrm share/apps/ksplash/Themes/Default
-@dirrmtry share/apps/ksplash/Themes
-@dirrmtry share/apps/ksplash

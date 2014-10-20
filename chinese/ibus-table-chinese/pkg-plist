@@ -42,4 +42,3 @@
 %%DATADIR%%/tables/wubi-haifeng86.db
 %%DATADIR%%/tables/wubi-jidian86.db
 %%DATADIR%%/tables/yong.db
-@dirrm %%DOCSDIR%%-%%PORTVERSION%%

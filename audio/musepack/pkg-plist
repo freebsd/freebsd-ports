@@ -14,4 +14,3 @@ lib/libmpcdec.a
 lib/libmpcdec.so
 lib/libmpcdec.so.6
 lib/libmpcdec.so.6.1.0
-@dirrm include/mpc

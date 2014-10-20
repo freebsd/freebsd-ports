@@ -13,10 +13,8 @@ COMMENT=	ODBC connections for python
 
 LICENSE=	MIT
 
-USES=		zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 BUILD_DEPENDS+=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC

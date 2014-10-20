@@ -52,8 +52,3 @@ man/man1/gnetlist.1.gz
 %%DATADIR%%/scheme/gnetlist.scm
 %%DATADIR%%/scheme/gnetlist-post.scm
 %%DATADIR%%/system-gnetlistrc
-@dirrmtry %%DATADIR%%/scheme
-@dirrmtry %%DATADIR%%
-@dirrmtry %%DOCSDIR%%/readmes
-@dirrmtry %%DOCSDIR%%/man
-@dirrmtry %%DOCSDIR%%

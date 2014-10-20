@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Convert::TNEF.3.gz
 %%SITE_PERL%%/Convert/TNEF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/TNEF/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/TNEF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
-@dirrmtry %%SITE_PERL%%/Convert

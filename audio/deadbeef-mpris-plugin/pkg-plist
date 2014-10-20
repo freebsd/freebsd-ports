@@ -2,4 +2,3 @@ lib/deadbeef/mpris.a
 lib/deadbeef/mpris.so
 lib/deadbeef/mpris.so.0
 lib/deadbeef/mpris.so.0.0.0
-@dirrmtry lib/deadbeef

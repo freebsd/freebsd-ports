@@ -35,5 +35,3 @@ man/man1/lrzip.1.gz
 man/man1/lrztar.1.gz
 man/man1/lrzuntar.1.gz
 man/man5/lrzip.conf.5.gz
-@dirrm %%DOCSDIR%%/lzma
-@dirrm %%DOCSDIR%%

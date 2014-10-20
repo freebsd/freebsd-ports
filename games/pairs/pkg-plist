@@ -1,5 +1,6 @@
 bin/pairs
 bin/pairseditor
+share/appdata/pairs.appdata.xml
 share/applications/kde4/pairs.desktop
 share/applications/kde4/pairseditor.desktop
 share/apps/pairs/gameicons/addUser.svg
@@ -79,9 +80,3 @@ share/doc/HTML/en/pairseditor/pairseditor3.png
 share/doc/HTML/en/pairseditor/pairseditor4.png
 share/doc/HTML/en/pairseditor/pairseditor5.png
 share/doc/HTML/en/pairseditor/pairseditor6.png
-@dirrm share/doc/HTML/en/pairseditor
-@dirrm share/apps/pairseditor
-@dirrm share/apps/pairs/themes
-@dirrm share/apps/pairs/players
-@dirrm share/apps/pairs/gameicons
-@dirrm share/apps/pairs

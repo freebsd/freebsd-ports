@@ -44,8 +44,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/WritableDatabase.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSet
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Search

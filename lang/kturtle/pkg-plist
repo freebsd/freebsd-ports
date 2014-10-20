@@ -1,4 +1,5 @@
 bin/kturtle
+share/appdata/kturtle.appdata.xml
 share/applications/kde4/kturtle.desktop
 share/apps/kturtle/kturtleui.rc
 share/config/kturtle.knsrc
@@ -19,5 +20,3 @@ share/icons/hicolor/32x32/apps/kturtle.png
 share/icons/hicolor/48x48/apps/kturtle.png
 share/icons/hicolor/64x64/apps/kturtle.png
 share/icons/hicolor/scalable/apps/kturtle.svgz
-@dirrm share/doc/HTML/en/kturtle
-@dirrm share/apps/kturtle

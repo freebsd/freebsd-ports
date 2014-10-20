@@ -49,9 +49,3 @@ share/kde4/services/jovie_xmltransformerplugin.desktop
 share/kde4/services/kcmkttsd.desktop
 share/kde4/services/kttsd.desktop
 share/kde4/servicetypes/jovie_filterplugin.desktop
-@dirrm share/doc/HTML/en/jovie
-@dirrm share/apps/jovie/xslt
-@dirrm share/apps/jovie/xmltransformer
-@dirrm share/apps/jovie/talkerchooser
-@dirrm share/apps/jovie/stringreplacer
-@dirrm share/apps/jovie

@@ -5,4 +5,3 @@ man/man1/rolo.1.gz
 %%PORTDOCS%%share/doc/rolo/NEWS
 %%PORTDOCS%%share/doc/rolo/README
 %%PORTDOCS%%share/doc/rolo/THANKS
-%%PORTDOCS%%@dirrm share/doc/rolo

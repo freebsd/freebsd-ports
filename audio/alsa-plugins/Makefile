@@ -15,7 +15,7 @@ LICENSE=	LGPL21 # or any later version
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2 pkgconfig libtool:keepla
+USES=		alias libtool:keepla pkgconfig tar:bzip2
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${.CURDIR}/../alsa-lib/files

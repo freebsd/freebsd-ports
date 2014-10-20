@@ -19,5 +19,3 @@ include/tclgeomap/tclgeomap.h
 include/tclgeomap/tclgeomapInt.h
 lib/tclgeomap/pkgIndex.tcl
 lib/tclgeomap/tclgeomap_procs.tcl
-@dirrm include/tclgeomap
-@dirrm lib/tclgeomap

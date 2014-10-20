@@ -3,7 +3,6 @@
 
 PORTNAME=	kscd
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -16,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmusicbrainz3.so:${PORTSDIR}/audio/libmusicbrainz3
 
 USES=		cmake:outsource tar:xz
-USE_KDE4=	kdehier kdelibs kdeprefix libkcddb libkcompactdisc \
+USE_KDE4=	kdelibs kdeprefix libkcddb libkcompactdisc \
 		automoc4
 USE_QT4=	phonon moc_build qmake_build rcc_build uic_build
 

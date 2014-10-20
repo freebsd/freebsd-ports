@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/DBIx::AnyDBD.3.gz
 %%SITE_PERL%%/DBIx/AnyDBD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/AnyDBD/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/AnyDBD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx

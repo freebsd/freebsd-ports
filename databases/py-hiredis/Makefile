@@ -14,9 +14,8 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/${PYSETUP}

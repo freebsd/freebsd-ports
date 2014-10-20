@@ -12,9 +12,9 @@ COMMENT=	Extendable MySQL managing assistant
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:${PORTSDIR}/databases/py-MySQLdb
 
+USES=		python
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	distutils
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|python2.4|env python|' ${WRKSRC}/emma

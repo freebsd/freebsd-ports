@@ -14,10 +14,8 @@ COMMENT=	Python interface to RRDTool, the graphing and logging utility
 
 LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	py-rrdtool
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 LIBDIR?=	${LOCALBASE}/lib # directory where librrd.so lives
 

@@ -11,4 +11,3 @@ lib/libhz.so.0.0
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/Thanks
 %%PORTDOCS%%%%DOCSDIR%%/Version
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -263,18 +263,3 @@ share/ascd/Themes/zinamp/stop.xpm
 share/ascd/Themes/zinamp/stop_on.xpm
 share/ascd/Themes/zinamp/volume.xpm
 share/ascd/Themes/zinamp/zob.gif
-@dirrm share/ascd/Default
-@dirrm share/ascd/Themes/big
-@dirrm share/ascd/Themes/classic
-@dirrm share/ascd/Themes/clean
-@dirrm share/ascd/Themes/default/quick
-@dirrm share/ascd/Themes/default
-@dirrm share/ascd/Themes/orb
-@dirrm share/ascd/Themes/sands
-@dirrm share/ascd/Themes/tortured
-@dirrm share/ascd/Themes/vintage/zob
-@dirrm share/ascd/Themes/vintage
-@dirrm share/ascd/Themes/wmcdplay
-@dirrm share/ascd/Themes/zinamp
-@dirrm share/ascd/Themes
-@dirrm share/ascd

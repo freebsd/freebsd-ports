@@ -2904,10 +2904,3 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/zkr.html
 %%PORTDOCS%%%%DOCSDIR%%/zkw.html
 %%PORTDOCS%%%%DOCSDIR%%/zkwm.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/callouts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/csound/plugins64
-@dirrm lib/csound
-@dirrm include/csound

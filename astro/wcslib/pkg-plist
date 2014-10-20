@@ -333,6 +333,3 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/wcsutil_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcsutil_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/wcslib.pdf
-@dirrmtry include/wcslib-%%VERSION%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

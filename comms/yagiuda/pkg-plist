@@ -24,4 +24,3 @@ man/man5/output.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/pattern.jpg
 %%PORTDOCS%%%%DOCSDIR%%/yagi.1.html
 %%PORTDOCS%%%%DOCSDIR%%/yagi.jpg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

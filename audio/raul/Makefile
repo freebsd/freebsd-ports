@@ -15,9 +15,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
-USES=		pkgconfig tar:bzip2
+USES=		pkgconfig python:build tar:bzip2
 USE_GNOME=	glib20
-USE_PYTHON_BUILD=yes
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

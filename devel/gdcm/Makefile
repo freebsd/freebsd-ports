@@ -38,7 +38,7 @@ GDCM_PATCH=	4
 VTK5_VERSION=	5.10
 VTK6_VERSION=	6.1
 
-USES=		cmake:outsource tar:bzip2
+USES=		alias cmake:outsource tar:bzip2
 USE_OPENSSL=	yes
 USE_LDCONFIG=	${PREFIX}/lib
 CFLAGS+=	-I${LOCALBASE}/include

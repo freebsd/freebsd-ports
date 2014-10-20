@@ -65,22 +65,3 @@ share/locale/ja_JP/LC_MESSAGES/geda-gschem.mo
 share/locale/nl_NL/LC_MESSAGES/geda-gschem.mo
 share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
 share/locale/ru/LC_MESSAGES/geda-gschem.mo
-@dirrmtry share/locale/nl_NL/LC_MESSAGES
-@dirrmtry share/locale/nl_NL
-@dirrmtry share/locale/ja_JP/LC_MESSAGES
-@dirrmtry share/locale/ja_JP
-@dirrmtry share/locale/it_IT/LC_MESSAGES
-@dirrmtry share/locale/it_IT
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrmtry share/locale/af_ZA/LC_MESSAGES
-@dirrmtry share/locale/af_ZA
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry %%DATADIR%%/scheme
-@dirrmtry %%DATADIR%%/bitmap
-@dirrmtry %%DATADIR%%

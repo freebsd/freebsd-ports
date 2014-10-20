@@ -29,8 +29,3 @@ share/locale/vi/LC_MESSAGES/gnochm.mo
 share/locale/zh_CN/LC_MESSAGES/gnochm.mo
 share/locale/zh_TW/LC_MESSAGES/gnochm.mo
 share/mime/packages/gnochm.xml
-@dirrm share/omf/gnochm
-@dirrm share/gnome/help/gnochm/C
-@dirrm share/gnome/help/gnochm
-@dirrm share/gnochm/glade
-@dirrm share/gnochm

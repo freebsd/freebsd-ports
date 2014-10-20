@@ -82,11 +82,3 @@ share/applications/openscad.desktop
 %%DATADIR%%/libraries/MCAD/unregular_shapes.scad
 %%DATADIR%%/libraries/MCAD/utilities.scad
 share/pixmaps/openscad.png
-@dirrmtry share/appdata
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/libraries/MCAD/SolidPython
-@dirrm %%DATADIR%%/libraries/MCAD/ThingDoc
-@dirrm %%DATADIR%%/libraries/MCAD/bitmap
-@dirrm %%DATADIR%%/libraries/MCAD
-@dirrm %%DATADIR%%/libraries
-@dirrm %%DATADIR%%

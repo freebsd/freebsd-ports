@@ -34,14 +34,3 @@ libdata/pkgconfig/libkactivities-models.pc
 libdata/pkgconfig/libkactivities.pc
 share/ontology/kde/kao.ontology
 share/ontology/kde/kao.trig
-@dirrmtry share/ontology/kde
-@dirrmtry share/ontology
-@dirrm lib/kde4/imports/org/kde/activities/models
-@dirrm lib/kde4/imports/org/kde/activities
-@dirrm lib/cmake/KActivities-Models
-@dirrm lib/cmake/KActivities
-@dirrmtry lib/cmake
-@dirrm include/kactivities-models
-@dirrm include/kactivities
-@dirrm include/KDE/KActivities/Models
-@dirrm include/KDE/KActivities
