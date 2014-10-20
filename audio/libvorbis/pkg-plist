@@ -159,8 +159,3 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisword2.png
 %%PORTDOCS%%%%DOCSDIR%%/wait.png
 %%PORTDOCS%%%%DOCSDIR%%/white-xifish.png
-@dirrm include/vorbis
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/vorbisfile
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/vorbisenc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/libvorbis
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

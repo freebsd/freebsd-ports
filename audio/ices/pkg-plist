@@ -10,4 +10,3 @@ bin/ices
 %%DATADIR%%/inputs.html
 %%DATADIR%%/intro.html
 %%DATADIR%%/style.css
-@dirrm %%DATADIR%%

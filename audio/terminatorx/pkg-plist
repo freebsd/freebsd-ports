@@ -8,7 +8,3 @@ share/mime-info/terminatorX.mime
 share/omf/terminatorX/terminatorX-C.omf
 share/pixmaps/terminatorX-app.png
 share/pixmaps/terminatorX-mime.png
-@dirrm share/omf/terminatorX
-@dirrm share/gnome/help/terminatorX/C/figures
-@dirrm share/gnome/help/terminatorX/C
-@dirrm share/gnome/help/terminatorX

@@ -43,4 +43,3 @@ include/re/re_tcp.h
 include/re/re_udp.h
 lib/libre.so
 lib/libre.a
-@dirrm include/re

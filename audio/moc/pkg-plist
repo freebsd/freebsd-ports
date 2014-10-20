@@ -13,8 +13,4 @@ share/moc/themes/nightly_theme
 share/moc/themes/red_theme
 share/moc/themes/transparent-background
 share/moc/themes/yellow_red_theme
-@dirrm share/moc/themes
-@dirrm share/moc
-@dirrm share/doc/moc
-@dirrm lib/moc/decoder_plugins
-@dirrm lib/moc
+@dir lib/moc/decoder_plugins

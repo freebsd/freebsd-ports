@@ -90,6 +90,3 @@ share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisword2.png
 %%PORTDOCS%%%%DOCSDIR%%/white-ogg.png
 %%PORTDOCS%%%%DOCSDIR%%/white-xifish.png
-@dirrm include/ogg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/libogg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

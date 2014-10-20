@@ -1,7 +1,5 @@
 lib/teamspeak/server/libts3db_mysql.so
 lib/teamspeak/server/libts3db_sqlite3.so
-@dirrm lib/teamspeak/server
-@dirrmtry lib/teamspeak
 libexec/teamspeak_server
 share/teamspeak/server/CHANGELOG
 share/teamspeak/server/LICENSE
@@ -136,7 +134,6 @@ share/teamspeak/server/serverquerydocs/tokenuse.txt
 share/teamspeak/server/serverquerydocs/use.txt
 share/teamspeak/server/serverquerydocs/version.txt
 share/teamspeak/server/serverquerydocs/whoami.txt
-@dirrm share/teamspeak/server/serverquerydocs
 share/teamspeak/server/sql/ban_delete.sql
 share/teamspeak/server/sql/ban_insert.sql
 share/teamspeak/server/sql/ban_list.sql
@@ -245,11 +242,5 @@ share/teamspeak/server/sql/update_20.sql
 share/teamspeak/server/sql/update_21.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_permissions_12.sql
-@dirrm share/teamspeak/server/sql
-@dirrm share/teamspeak/server/sql/create_mysql
-@dirrm share/teamspeak/server/sql/create_sqlite
-@dirrm share/teamspeak/server
-@dirrmtry share/teamspeak
-@dirrmtry %%ETCDIR%%
-@dirrmtry(teamspeak,teamspeak,) %%DBDIR%%
-@dirrmtry %%LOGDIR%%
+@dir(teamspeak,teamspeak,) %%DBDIR%%
+@dir %%LOGDIR%%

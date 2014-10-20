@@ -3,8 +3,3 @@ bin/musicmpdscrobble
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music/Audioscrobbler/MPD/.packlist
 %%PERL5_MAN3%%/Music::Audioscrobbler::MPD.3.gz
 man/man1/musicmpdscrobble.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music/Audioscrobbler/MPD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music/Audioscrobbler
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music
-@dirrm %%SITE_PERL%%/Music/Audioscrobbler
-@dirrm %%SITE_PERL%%/Music

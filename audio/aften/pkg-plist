@@ -11,4 +11,3 @@ include/aften/aften-types.h
 %%LIBS%%%%CXX%%lib/libaftenxx.so.%%PORTVERSION%%
 %%LIBS%%%%CXX%%lib/libaftenxx.so.0
 %%LIBS%%%%CXX%%lib/libaftenxx.so
-@dirrm include/aften

@@ -9,4 +9,3 @@ lib/liblscp.so
 lib/liblscp.so.6
 lib/liblscp.so.6.0.0
 libdata/pkgconfig/lscp.pc
-@dirrm include/lscp

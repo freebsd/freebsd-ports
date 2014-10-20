@@ -3,4 +3,3 @@
 %%RUBY_SITELIBDIR%%/xmmsclient/sync.rb
 %%RUBY_SITEARCHLIBDIR%%/xmmsclient_ext.so
 %%RUBY_SITEARCHLIBDIR%%/xmmsclient_glib.so
-@dirrm %%RUBY_SITELIBDIR%%/xmmsclient

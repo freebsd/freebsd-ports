@@ -4,8 +4,3 @@ bin/mp3tag
 %%SITE_PERL%%/MP3/Tag/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/Utils/.packlist
 %%PERL5_MAN3%%/MP3::Tag::Utils.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/Utils
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
-@dirrmtry %%SITE_PERL%%/MP3/Tag
-@dirrmtry %%SITE_PERL%%/MP3

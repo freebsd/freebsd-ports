@@ -1946,18 +1946,3 @@ share/festival/lib/voices/russian/msu_ru_nsh_clunits/wav/ru_0840.wav
 share/festival/lib/voices/russian/msu_ru_nsh_clunits/wav/ru_0841.wav
 share/festival/lib/voices/russian/msu_ru_nsh_clunits/wav/ru_0842.wav
 share/festival/lib/voices/russian/msu_ru_nsh_clunits/wav/ru_0844.wav
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/wav
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/mcep
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/lib
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/lab
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/festvox
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/festival/trees
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/festival/feats
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/festival/disttabs
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/festival/clunits
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/festival
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/etc
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits/dict
-@dirrm share/festival/lib/voices/russian/msu_ru_nsh_clunits
-@dirrmtry share/festival/lib/voices/russian
-@dirrmtry share/festival/lib/voices

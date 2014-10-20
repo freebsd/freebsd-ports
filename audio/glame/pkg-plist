@@ -73,7 +73,3 @@ share/glame/scripts/resample.scm
 share/glame/scripts/write_mp3.scm
 share/locale/de/LC_MESSAGES/glame.mo
 share/locale/fr/LC_MESSAGES/glame.mo
-@dirrm share/glame/scripts
-@dirrm share/glame/pixmaps
-@dirrm share/glame
-@dirrm lib/glame

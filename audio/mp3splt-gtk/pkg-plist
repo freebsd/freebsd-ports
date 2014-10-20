@@ -77,38 +77,3 @@ share/omf/mp3splt-gtk/mp3splt-gtk-fr.omf
 share/omf/mp3splt-gtk/mp3splt-gtk-ru_RU.omf
 share/pixmaps/mp3splt-gtk.png
 share/pixmaps/mp3splt-gtk_ico.svg
-@dirrmtry share/omf/mp3splt-gtk
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/mp3splt-gtk/ru_RU/figures
-@dirrm share/gnome/help/mp3splt-gtk/ru_RU
-@dirrm share/gnome/help/mp3splt-gtk/fr/figures
-@dirrm share/gnome/help/mp3splt-gtk/fr
-@dirrm share/gnome/help/mp3splt-gtk/es_CL/figures
-@dirrm share/gnome/help/mp3splt-gtk/es_CL
-@dirrm share/gnome/help/mp3splt-gtk/es/figures
-@dirrm share/gnome/help/mp3splt-gtk/es
-@dirrm share/gnome/help/mp3splt-gtk/en/figures
-@dirrm share/gnome/help/mp3splt-gtk/en
-@dirrm share/gnome/help/mp3splt-gtk/de/figures
-@dirrm share/gnome/help/mp3splt-gtk/de
-@dirrm share/gnome/help/mp3splt-gtk/cs/figures
-@dirrm share/gnome/help/mp3splt-gtk/cs
-@dirrm share/gnome/help/mp3splt-gtk/C/figures
-@dirrm share/gnome/help/mp3splt-gtk/C
-@dirrm share/gnome/help/mp3splt-gtk
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
-%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es
-%%NLS%%@dirrmtry share/locale/es_CL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_CL
-%%NLS%%@dirrmtry share/locale/fr_FR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr_FR
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU
-@dirrmtry share/gnome/help
-@dirrmtry share/gnome

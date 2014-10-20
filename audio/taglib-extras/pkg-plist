@@ -11,4 +11,3 @@ lib/libtag-extras.so
 lib/libtag-extras.so.1
 lib/libtag-extras.so.1.0.0
 libdata/pkgconfig/taglib-extras.pc
-@dirrm include/taglib-extras

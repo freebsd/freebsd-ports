@@ -21,4 +21,3 @@ lib/libslv2.so
 lib/libslv2.so.9
 lib/libslv2.so.9.2.0
 libdata/pkgconfig/slv2.pc
-@dirrm include/slv2

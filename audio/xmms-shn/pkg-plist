@@ -1,3 +1,2 @@
 lib/xmms/Input/libshn.so
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -46,6 +46,3 @@ lib/libnoise.a
 lib/libnoise.so
 lib/libnoise.so.0
 lib/libnoise.so.0.0.0
-@dirrm include/noise/model
-@dirrm include/noise/module
-@dirrm include/noise

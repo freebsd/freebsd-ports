@@ -10,5 +10,3 @@ bin/mpd-rate
 %%SITE_PERL%%/Audio/MPD/Types.pm
 man/man1/mpd-dynamic.1.gz
 man/man1/mpd-rate.1.gz
-@dirrmtry %%SITE_PERL%%/Audio/MPD
-@dirrmtry %%SITE_PERL%%/Audio

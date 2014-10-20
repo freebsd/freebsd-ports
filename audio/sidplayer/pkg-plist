@@ -19,4 +19,3 @@ bin/sidplayer
 %%PORTDOCS%%%%DOCSDIR%%/W.A.R
 %%PORTDOCS%%%%DOCSDIR%%/Yie_Ar_Kung_Fu
 %%PORTDOCS%%%%DOCSDIR%%/Zoids
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

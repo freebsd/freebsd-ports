@@ -29,5 +29,3 @@ lib/ladspa/tracker_2025.so
 lib/ladspa/triangle_1649.so
 %%NLS%%share/locale/de/LC_MESSAGES/blop.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/blop.mo
-@dirrmtry lib/ladspa
-@dirrm lib/ladspa/blop_files/

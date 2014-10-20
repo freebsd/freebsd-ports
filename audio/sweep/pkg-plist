@@ -29,6 +29,3 @@ share/locale/pl/LC_MESSAGES/sweep.mo
 share/locale/ru/LC_MESSAGES/sweep.mo
 share/pixmaps/sweep.svg
 %%DATADIR%%/sweep_splash.png
-@dirrm %%DATADIR%%
-@dirrm lib/sweep
-@dirrm include/sweep

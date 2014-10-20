@@ -64,10 +64,3 @@ share/pixmaps/smasher.png
 %%DATADIR%%/samples/John_Williams.wav
 %%DATADIR%%/samples/Sine_Wave.wav
 %%DATADIR%%/xpm/smashericon.xpm
-@dirrm %%DATADIR%%/xpm
-@dirrm %%DATADIR%%/samples
-@dirrm %%DATADIR%%/presets
-@dirrm %%DATADIR%%/png
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/csd
-@dirrm %%DATADIR%%

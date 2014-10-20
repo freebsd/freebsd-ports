@@ -117,10 +117,3 @@ share/aclocal/libFLAC.m4
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/links.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/news.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ru
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images/hw
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/FLAC++
-@dirrm include/FLAC

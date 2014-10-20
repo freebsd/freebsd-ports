@@ -7,4 +7,3 @@ lib/ladspa/delay.so
 lib/ladspa/filter.so
 lib/ladspa/noise.so
 lib/ladspa/sine.so
-@dirrm lib/ladspa

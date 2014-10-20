@@ -104,10 +104,3 @@ man/man3/AFsetSpeaker.3tsp.gz
 %%DOCSDIR%%/libtsp/AF/AFsetInfo.html
 %%DOCSDIR%%/libtsp/AF/AFsetNHpar.html
 %%DOCSDIR%%/libtsp/AF/AFsetSpeaker.html
-@dirrm include/libtsp
-@dirrm %%DOCSDIR%%/audio
-@dirrm %%DOCSDIR%%/libtsp/AF
-@dirrm %%DOCSDIR%%/libtsp
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/filters
-@dirrm %%DATADIR%%

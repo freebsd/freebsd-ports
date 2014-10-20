@@ -14,5 +14,3 @@ man/man1/splay.1.gz
 %%DATADIR%%/charmap/win2koi.tbl
 %%DATADIR%%/commands.txt
 %%DATADIR%%/sample.mp3blasterrc
-@dirrm %%DATADIR%%/charmap
-@dirrm %%DATADIR%%

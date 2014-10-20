@@ -12,7 +12,3 @@ bin/mp3find
 %%PERL5_MAN3%%/MP3::Find::Filesystem.3.gz
 man/man1/mp3db.1.gz
 man/man1/mp3find.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Find
-@dirrm %%SITE_PERL%%/MP3/Find
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
-@dirrmtry %%SITE_PERL%%/MP3

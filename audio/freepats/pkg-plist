@@ -146,6 +146,3 @@
 %%DATADIR%%/Tone_000/125_Helicopter.pat
 %%DATADIR%%/crude.cfg
 %%DATADIR%%/freepats.cfg
-@dirrm %%DATADIR%%/Drum_000
-@dirrm %%DATADIR%%/Tone_000
-@dirrm %%DATADIR%%

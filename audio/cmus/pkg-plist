@@ -28,8 +28,3 @@ lib/cmus/op/oss.so
 %%DATADIR%%/xterm-white.theme
 %%DATADIR%%/zenburn.theme
 %%EXAMPLESDIR%%/cmus-status-display
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
-@dirrm lib/cmus/op
-@dirrm lib/cmus/ip
-@dirrm lib/cmus

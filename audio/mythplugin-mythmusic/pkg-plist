@@ -121,5 +121,3 @@ lib/mythtv/plugins/libmythmusic.so
 %%MYTHSHARE%%/themes/default/stop_button_pushed.png
 %%MYTHSHARE%%/themes/default/stream-ui.xml
 %%MYTHSHARE%%/themes/default/track_info_background.png
-@dirrmtry lib/mythtv/plugins
-@dirrm %%MYTHSHARE%%/mythmusic

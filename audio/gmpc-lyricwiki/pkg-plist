@@ -16,5 +16,3 @@ share/locale/sl/LC_MESSAGES/gmpc-lyricwiki.mo
 share/locale/sq/LC_MESSAGES/gmpc-lyricwiki.mo
 share/locale/sv/LC_MESSAGES/gmpc-lyricwiki.mo
 share/locale/zh_CN/LC_MESSAGES/gmpc-lyricwiki.mo
-@dirrmtry lib/gmpc/plugins
-@dirrmtry lib/gmpc

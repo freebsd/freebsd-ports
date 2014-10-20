@@ -17,4 +17,3 @@ lib/xcd/rewind.xbm
 lib/xcd/rewind_s.xbm
 lib/xcd/stop.xbm
 lib/xcd/stop_s.xbm
-@dirrm lib/xcd

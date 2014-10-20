@@ -113,10 +113,3 @@ lib/libcsound64.so.6.0
 %%NLS%%share/locale/it/LC_MESSAGES/csound6.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/csound6.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/csound6.mo
-%%NLS%%@dirrmtry share/locale/es_CO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_CO
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
-@dirrm lib/csound/plugins-6.0
-@dirrm lib/csound
-@dirrm include/csound

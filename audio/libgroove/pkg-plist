@@ -20,7 +20,3 @@ lib/libgrooveplayer.a
 lib/libgrooveplayer.so
 lib/libgrooveplayer.so.%%VER1%%
 lib/libgrooveplayer.so.%%VER3%%
-@dirrm include/groove
-@dirrm include/groovefingerprinter
-@dirrm include/grooveloudness
-@dirrm include/grooveplayer

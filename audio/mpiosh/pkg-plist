@@ -7,5 +7,3 @@ lib/libmpio.a
 lib/libmpio.so
 lib/libmpio.so.1
 lib/libmpio.so.1.0.0
-@dirrm include/mpio
-@dirrm etc/mpio

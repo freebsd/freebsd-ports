@@ -219,27 +219,3 @@ bin/say-epos
 %%DATADIR%%/ttscp/help/intr
 %%DATADIR%%/ttscp/help/down
 %%DATADIR%%/version
-@dirrm %%DATADIR%%/cfg
-@dirrm %%DATADIR%%/lng/czech/prosody
-@dirrm %%DATADIR%%/lng/czech/nnet
-@dirrm %%DATADIR%%/lng/czech
-@dirrm %%DATADIR%%/lng/french
-@dirrm %%DATADIR%%/lng/german
-@dirrm %%DATADIR%%/lng/latin
-@dirrm %%DATADIR%%/lng/slovak.prev/txt
-@dirrm %%DATADIR%%/lng/slovak.prev
-@dirrm %%DATADIR%%/lng/slovak
-@dirrm %%DATADIR%%/lng/vogon
-@dirrm %%DATADIR%%/lng
-@dirrm %%DATADIR%%/voice/czech
-@dirrm %%DATADIR%%/voice/slovak
-@dirrm %%DATADIR%%/voice/german
-@dirrm %%DATADIR%%/voice/latin
-@dirrm %%DATADIR%%/voice/vogon
-@dirrm %%DATADIR%%/voice
-@dirrm %%DATADIR%%/inv/lpc
-@dirrm %%DATADIR%%/inv
-@dirrm %%DATADIR%%/mappings
-@dirrm %%DATADIR%%/ttscp/help
-@dirrm %%DATADIR%%/ttscp
-@dirrm %%DATADIR%%

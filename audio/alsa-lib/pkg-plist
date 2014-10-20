@@ -155,19 +155,3 @@ share/alsa/ucm/SDP4430/voice
 share/alsa/ucm/SDP4430/voiceCall
 share/alsa/ucm/tegraalc5632/tegraalc5632.conf
 @sample etc/asound.conf.sample
-@dirrm share/alsa/ucm/PandaBoardES
-@dirrm share/alsa/ucm/SDP4430
-@dirrm share/alsa/ucm/DAISY-I2S
-@dirrm share/alsa/ucm/tegraalc5632
-@dirrm share/alsa/ucm/PandaBoard
-@dirrm share/alsa/ucm
-@dirrm share/alsa/pcm
-@dirrm share/alsa/cards/SI7018
-@dirrm share/alsa/cards
-@dirrm share/alsa/alsa.conf.d
-@dirrm share/alsa
-@dirrm lib/alsa-lib/smixer
-@dirrm lib/alsa-lib
-@dirrmtry include/sys
-@dirrm include/alsa/sound
-@dirrm include/alsa

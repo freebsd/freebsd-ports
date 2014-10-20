@@ -20,5 +20,3 @@ share/icons/hicolor/22x22/apps/qmpdclient.png
 share/icons/hicolor/48x48/apps/qmpdclient.png
 share/icons/hicolor/64x64/apps/qmpdclient.png
 share/icons/hicolor/scalable/apps/qmpdclient.svg
-%%NLS%%@dirrmtry share/QMPDClient/translations
-%%NLS%%@dirrmtry share/QMPDClient

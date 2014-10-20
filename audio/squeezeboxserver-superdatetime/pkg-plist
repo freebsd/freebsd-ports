@@ -75,16 +75,3 @@
 %%SLIMDIR%%/Plugins/SuperDateTime/mlb.2.font.bmp
 %%SLIMDIR%%/Plugins/SuperDateTime/nfl.2.font.bmp
 %%SLIMDIR%%/Plugins/SuperDateTime/strings.txt
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib/Plugins/SuperDateTime
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib/Plugins
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML/Element
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML
-@dirrm %%SLIMDIR%%/Plugins/SuperDateTime

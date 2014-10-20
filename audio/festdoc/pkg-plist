@@ -21,7 +21,6 @@ share/doc/festival/speechtools/images_gen/docppimath_929959730_3.gif
 share/doc/festival/speechtools/images_gen/docppimath_929959730_4.gif
 share/doc/festival/speechtools/images_gen/docppimath_929959730_5.gif
 share/doc/festival/speechtools/images_gen/docppmath_929959728_1.gif
-@dirrm share/doc/festival/speechtools/images_gen
 share/doc/festival/speechtools/arch_doc/tilt_eq11.gif
 share/doc/festival/speechtools/arch_doc/figure02.gif
 share/doc/festival/speechtools/arch_doc/figure03.gif
@@ -58,7 +57,6 @@ share/doc/festival/speechtools/arch_doc/tilt_eq08.gif
 share/doc/festival/speechtools/arch_doc/tilt_eq09.gif
 share/doc/festival/speechtools/arch_doc/tilt_eq10.gif
 share/doc/festival/speechtools/arch_doc/figure01.gif
-@dirrm share/doc/festival/speechtools/arch_doc
 share/doc/festival/speechtools/a17354.htm
 share/doc/festival/speechtools/book1.htm
 share/doc/festival/speechtools/c10710.htm
@@ -139,7 +137,6 @@ share/doc/festival/speechtools/cstrdoc.css
 share/doc/festival/speechtools/index.html
 share/doc/festival/speechtools/HTML.index
 share/doc/festival/speechtools/TeX.formulae
-@dirrm share/doc/festival/speechtools
 share/doc/festival/festival/user-manual/festival_35.html
 share/doc/festival/festival/user-manual/festival_1.html
 share/doc/festival/festival/user-manual/festival_2.html
@@ -176,15 +173,11 @@ share/doc/festival/festival/user-manual/festival_32.html
 share/doc/festival/festival/user-manual/festival_33.html
 share/doc/festival/festival/user-manual/festival_34.html
 share/doc/festival/festival/user-manual/festival_toc.html
-@dirrm share/doc/festival/festival/user-manual
 share/doc/festival/festival/src-manual/c3750.htm
 share/doc/festival/festival/src-manual/x3792.htm
 share/doc/festival/festival/src-manual/unisyn02.gif
-@dirrm share/doc/festival/festival/src-manual
 share/doc/festival/festival/refcard.dvi
 share/doc/festival/festival/refcard.ps
 share/doc/festival/festival/festival.dvi
 share/doc/festival/festival/festival.ps
-@dirrm share/doc/festival/festival
 share/doc/festival/README
-@dirrm share/doc/festival

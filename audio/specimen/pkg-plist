@@ -5,5 +5,3 @@ bin/specimen
 %%DATADIR%%/pixmaps/panic.png
 %%DATADIR%%/pixmaps/specimen.png
 %%DATADIR%%/pixmaps/specimen_small.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

@@ -8,4 +8,3 @@ include/fplib/fp_helper_fun.h
 include/fplib/version.h
 lib/libfplib.a
 lib/libfplib.so
-@dirrm include/fplib

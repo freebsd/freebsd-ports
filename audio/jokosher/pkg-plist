@@ -303,20 +303,3 @@ share/locale/zh_CN/LC_MESSAGES/jokosher.mo
 share/mime/packages/jokosher.xml
 %%OMF%%share/omf/jokosher/jokosher-C.omf
 share/pixmaps/jokosher.png
-@dirrm %%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils
-@dirrm %%PYTHON_SITELIBDIR%%/Jokosher/elements
-@dirrm %%PYTHON_SITELIBDIR%%/Jokosher/ui
-@dirrm %%PYTHON_SITELIBDIR%%/Jokosher
-@dirrm %%DATADIR%%/Instruments/images
-@dirrm %%DATADIR%%/Instruments
-@dirrm %%DATADIR%%/extensions
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/jokosher/C/figures
-@dirrm share/gnome/help/jokosher/C
-@dirrm share/gnome/help/jokosher
-@dirrmtry share/locale/ace/LC_MESSAGES
-@dirrmtry share/locale/ace
-@dirrmtry share/locale/en_PH/LC_MESSAGES
-@dirrmtry share/locale/en_PH
-%%OMF%%@dirrm share/omf/jokosher

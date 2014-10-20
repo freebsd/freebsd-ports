@@ -516,19 +516,3 @@ lib/libtuxguitar-oss-jni.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/applications/tuxguitar.desktop
 share/pixmaps/tuxguitar.xpm
-@dirrm %%DATADIR%%/skins/ersplus
-@dirrm %%DATADIR%%/skins/blue_serious
-@dirrm %%DATADIR%%/skins/Lavender
-@dirrm %%DATADIR%%/skins
-@dirrm %%DATADIR%%/scales
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/help/js
-@dirrm %%DATADIR%%/help/images/tools
-@dirrm %%DATADIR%%/help/images/start
-@dirrm %%DATADIR%%/help/images/edit
-@dirrm %%DATADIR%%/help/images
-@dirrm %%DATADIR%%/help/css
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

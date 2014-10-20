@@ -2,4 +2,3 @@ bin/listener
 bin/setlistener
 @sample etc/listener.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

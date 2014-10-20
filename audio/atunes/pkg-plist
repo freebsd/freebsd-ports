@@ -78,7 +78,3 @@ bin/atunes
 %%DATADIR%%/settings/spring/webservices.xml
 %%DATADIR%%/splash.gif
 share/pixmaps/atunes.png
-@dirrmtry %%DATADIR%%/settings/spring
-@dirrmtry %%DATADIR%%/settings
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%

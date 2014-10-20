@@ -294,10 +294,3 @@ share/icons/hicolor/64x64/apps/calf.png
 share/icons/hicolor/64x64/apps/calf_plugin.png
 share/icons/hicolor/scalable/apps/calf.svg
 share/icons/hicolor/scalable/apps/calf_plugin.svg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-%%LV2%%@dirrm lib/lv2/calf.lv2
-%%LV2%%@dirrmtry lib/lv2
-@dirrm lib/calf

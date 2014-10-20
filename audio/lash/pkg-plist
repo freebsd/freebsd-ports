@@ -21,9 +21,3 @@ libdata/pkgconfig/lash-1.0.pc
 %%DATADIR%%/icons/lash_96px.png
 %%DATADIR%%/icons/lash.svg
 %%DATADIR%%/icons/lash.xcf
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/dtds
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/lash-1.0/lash
-@dirrm include/lash-1.0

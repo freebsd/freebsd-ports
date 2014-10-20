@@ -4,7 +4,6 @@ bin/rezound
 %%DATADIR%%/key_bindings.dat
 %%DATADIR%%/menu.dat
 %%DATADIR%%/presets.dat
-@dirrm %%DATADIR%%
 %%NLS%%share/locale/de/LC_MESSAGES/rezound.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rezound.mo
 %%NLS%%share/locale/es/LC_MESSAGES/rezound.mo
@@ -14,4 +13,3 @@ bin/rezound
 %%PORTDOCS%%%%DOCSDIR%%/FrontendFoxFeatures.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

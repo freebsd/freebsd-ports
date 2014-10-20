@@ -147,16 +147,3 @@ man/man3/tse3.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/trax.gif
 %%PORTDOCS%%%%DOCSDIR%%/tse3.gif
 %%PORTDOCS%%%%DOCSDIR%%/tse3logo.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/songs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/tse3/util
-@dirrm include/tse3/plt
-@dirrm include/tse3/listen/ins
-@dirrm include/tse3/listen/cmd
-@dirrm include/tse3/listen/app
-@dirrm include/tse3/listen
-@dirrm include/tse3/ins
-@dirrm include/tse3/file
-@dirrm include/tse3/cmd
-@dirrm include/tse3/app
-@dirrm include/tse3

@@ -120,35 +120,3 @@ share/locale/eo/LC_MESSAGES/ario.mo
 share/locale/en_CA/LC_MESSAGES/ario.mo
 share/locale/uk/LC_MESSAGES/ario.mo
 share/locale/en_AU/LC_MESSAGES/ario.mo
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/96x96/apps
-@dirrmtry share/icons/hicolor/96x96
-@dirrmtry share/icons/hicolor/72x72/apps
-@dirrmtry share/icons/hicolor/72x72
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/plugins/icons
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/art
-@dirrm %%DATADIR%%
-@dirrm lib/ario/plugins
-@dirrm lib/ario

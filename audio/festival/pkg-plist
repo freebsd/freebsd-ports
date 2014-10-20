@@ -147,14 +147,3 @@ man/man1/festival_client.1.gz
 %%DATADIR%%/lib/unilex_phones.scm
 %%DATADIR%%/lib/voices.scm
 %%DATADIR%%/lib/web.scm
-@dirrmtry %%DATADIR%%/lib/voices/spanish
-@dirrmtry %%DATADIR%%/lib/voices/english
-@dirrmtry %%DATADIR%%/lib/voices
-@dirrmtry %%DATADIR%%/lib/languages
-@dirrm %%DATADIR%%/lib/multisyn
-@dirrm %%DATADIR%%/lib/etc
-@dirrmtry %%DATADIR%%/lib/dicts
-@dirrmtry %%DATADIR%%/lib
-@dirrm %%DATADIR%%/examples/songs
-@dirrm %%DATADIR%%/examples
-@dirrmtry %%DATADIR%%

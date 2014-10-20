@@ -49,18 +49,3 @@ man/man1/pocketsphinx_mdef_convert.1.gz
 %%DATADIR%%/model/lm/zh_CN/mandarin_notone.dic
 %%DATADIR%%/model/lm/zh_TW/gigatdt.5000.DMP
 %%DATADIR%%/model/lm/zh_TW/mandarin_notone.dic
-@dirrm %%DATADIR%%/model/lm/zh_TW
-@dirrm %%DATADIR%%/model/lm/zh_CN
-@dirrm %%DATADIR%%/model/lm/en_US
-@dirrm %%DATADIR%%/model/lm/en
-@dirrm %%DATADIR%%/model/lm
-@dirrm %%DATADIR%%/model/hmm/zh/tdt_sc_8k
-@dirrm %%DATADIR%%/model/hmm/zh
-@dirrm %%DATADIR%%/model/hmm/en_US/hub4wsj_sc_8k
-@dirrm %%DATADIR%%/model/hmm/en_US
-@dirrm %%DATADIR%%/model/hmm/en/tidigits
-@dirrm %%DATADIR%%/model/hmm/en
-@dirrm %%DATADIR%%/model/hmm
-@dirrm %%DATADIR%%/model
-@dirrm %%DATADIR%%
-@dirrm include/pocketsphinx

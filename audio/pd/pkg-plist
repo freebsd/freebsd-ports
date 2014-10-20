@@ -531,31 +531,3 @@ man/man1/pdsend.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/sound/bell.aiff
 %%PORTDOCS%%%%DOCSDIR%%/sound/voice.wav
 %%PORTDOCS%%%%DOCSDIR%%/sound/voice2.wav
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sound
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/7.stuff/tools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/7.stuff/synth
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/7.stuff/soundfile-tools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/7.stuff
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/6.externs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/5.reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/4.data.structures
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/3.audio.examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/2.control.examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/1.manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/pd/tcl
-@dirrm lib/pd/po
-@dirrm lib/pd/extra/stdout
-@dirrm lib/pd/extra/sigmund~
-@dirrm lib/pd/extra/pique
-@dirrm lib/pd/extra/pd~
-@dirrm lib/pd/extra/lrshift~
-@dirrm lib/pd/extra/loop~
-@dirrm lib/pd/extra/fiddle~
-@dirrm lib/pd/extra/expr~
-@dirrm lib/pd/extra/choice
-@dirrm lib/pd/extra/bonk~
-@dirrm lib/pd/extra
-@dirrm lib/pd/bin
-@dirrm lib/pd
-@dirrm include/pd

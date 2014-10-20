@@ -31,10 +31,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/ReadMe-j.txt.gz
 %%PORTDOCS%%%%DOCSDIR%%/VupHistory-j.txt.gz
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt.gz
-@dirrmtry %%TIMIDITY_DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/inst/tamupat
-@dirrm %%DATADIR%%/inst/GUS/power
-@dirrm %%DATADIR%%/inst/GUS
-@dirrm %%DATADIR%%/inst
-@dirrm %%DATADIR%%

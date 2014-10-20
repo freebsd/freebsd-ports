@@ -15,4 +15,3 @@ include/rem/rem_autone.h
 include/rem/rem_vidconv.h
 lib/librem.so
 lib/librem.a
-@dirrm include/rem

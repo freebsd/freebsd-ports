@@ -5,6 +5,3 @@ share/applications/fmit.desktop
 %%DATADIR%%/tr/fmit_fr.qm
 %%DATADIR%%/tr/fmit_pt.qm
 share/icons/hicolor/scalable/apps/fmit.svg
-@dirrmtry share/appdata
-@dirrmtry %%DATADIR%%/tr
-@dirrmtry %%DATADIR%%

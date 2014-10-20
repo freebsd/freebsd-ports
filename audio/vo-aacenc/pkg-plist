@@ -10,4 +10,3 @@ lib/libvo-aacenc.so
 lib/libvo-aacenc.so.0
 lib/libvo-aacenc.so.0.0.4
 libdata/pkgconfig/vo-aacenc.pc
-@dirrm include/vo-aacenc

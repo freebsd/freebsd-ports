@@ -22,6 +22,3 @@ lib/libstilview.so.%%STILVIEW_SHLIB_MVER%%
 lib/libstilview.so.%%STILVIEW_SHLIB_VER%%
 libdata/pkgconfig/libsidplayfp.pc
 libdata/pkgconfig/libstilview.pc
-@dirrmtry include/sidplayfp/builders
-@dirrmtry include/sidplayfp
-@dirrmtry include/stilview

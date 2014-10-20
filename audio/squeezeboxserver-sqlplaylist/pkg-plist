@@ -142,39 +142,3 @@
 %%SLIMDIR%%/Plugins/SQLPlayList/lib/XMLRPC/Transport/POP3.pm
 %%SLIMDIR%%/Plugins/SQLPlayList/lib/XMLRPC/Transport/TCP.pm
 %%SLIMDIR%%/Plugins/SQLPlayList/strings.txt
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/XMLRPC/Transport
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/XMLRPC
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/XML/Parser
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/XML
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/UDDI
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/SOAP/Transport
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/SOAP
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/OldDocs/SOAP/Transport
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/OldDocs/SOAP
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/OldDocs
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/IO
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/Apache/XMLRPC
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib/Apache
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/Templates
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/Template
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/Playlists
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/Mixes
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Fishbone/html/images
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Fishbone/html
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Fishbone
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/settings
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/plugins/SQLPlayList
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/plugins
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/html/images
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/html
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Classic/html/images
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Classic/html
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Classic
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/ConfigManager
-@dirrm %%SLIMDIR%%/Plugins/SQLPlayList

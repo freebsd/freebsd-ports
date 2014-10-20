@@ -84,5 +84,3 @@ lib/libflite_usenglish.so
 lib/libflite_usenglish.so.1
 lib/libflite_usenglish.so.1.4
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/flite

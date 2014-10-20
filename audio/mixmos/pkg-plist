@@ -70,7 +70,3 @@ man/man1/mixmos.1.gz
 %%DATADIR%%/pixmaps/transparent/volume.png
 %%DATADIR%%/pixmaps/transparent/volume_mute.png
 %%DATADIR%%/pixmaps/transparent/volume_rec.png
-@dirrm %%DATADIR%%/pixmaps/transparent
-@dirrm %%DATADIR%%/pixmaps/classic
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

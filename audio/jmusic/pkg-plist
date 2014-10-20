@@ -70,5 +70,3 @@
 %%JAVAJARDIR%%/jmusic/inst/VibratoInst.java
 %%JAVAJARDIR%%/jmusic/inst/VibratoInstRT.java
 %%JAVAJARDIR%%/jmusic/jmusic.jar
-@dirrm %%JAVAJARDIR%%/jmusic/inst
-@dirrm %%JAVAJARDIR%%/jmusic

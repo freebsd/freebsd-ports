@@ -8,4 +8,3 @@ lib/libopenal.so
 lib/libopenal.so.0
 lib/libopenal.so.0.0.0
 libdata/pkgconfig/openal.pc
-@dirrmtry include/AL

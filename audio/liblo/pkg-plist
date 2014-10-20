@@ -24,4 +24,3 @@ libdata/pkgconfig/liblo.pc
 %%DOXYGEN%%man/man3/lo_timetag.3.gz
 %%DOXYGEN%%man/man3/lo_types.h.3.gz
 %%DOXYGEN%%man/man3/pp.3.gz
-@dirrm include/lo

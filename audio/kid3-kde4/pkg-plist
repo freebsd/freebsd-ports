@@ -60,12 +60,3 @@ man/man1/kid3.1.gz
 %%DATADIR%%/translations/kid3_sr@latin.qm
 %%DATADIR%%/translations/kid3_tr.qm
 %%DATADIR%%/translations/kid3_zh_TW.qm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%
-%%QT%%@dirrm share/doc/kid3-qt
-%%KDE%%@dirrm share/doc/HTML/en/kid3
-%%KDE%%@dirrm share/doc/HTML/de/kid3
-%%KDE%%@dirrm share/apps/kid3
-@dirrmtry man/de/man1
-@dirrmtry man/de
-@dirrm lib/kid3

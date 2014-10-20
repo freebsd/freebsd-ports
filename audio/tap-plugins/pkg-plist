@@ -18,6 +18,3 @@ lib/ladspa/tap_tremolo.so
 lib/ladspa/tap_tubewarmth.so
 lib/ladspa/tap_vibrato.so
 share/ladspa/rdf/tap-plugins.rdf
-@dirrmtry share/ladspa/rdf
-@dirrmtry share/ladspa
-@dirrmtry lib/ladspa

@@ -10,4 +10,3 @@ lib/libopusurl.so.0.3.0
 libdata/pkgconfig/opusfile.pc
 libdata/pkgconfig/opusurl.pc
 @comment Insert PLIST.doc here
-@dirrmtry include/opus

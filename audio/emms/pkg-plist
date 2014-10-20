@@ -89,4 +89,3 @@ man/man1/emms-print-metadata.1.gz
 %%EMACS_SITE_LISPDIR%%/emms/later-do.elc
 %%EMACS_SITE_LISPDIR%%/emms/tq.el
 %%EMACS_SITE_LISPDIR%%/emms/tq.elc
-@dirrm %%EMACS_SITE_LISPDIR%%/emms
