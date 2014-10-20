@@ -1,6 +1,6 @@
---- ./configure.orig	Wed Sep 27 18:27:36 2006
-+++ ./configure	Wed Sep 27 19:04:20 2006
-@@ -2337,52 +2337,8 @@
+--- configure.orig	2004-01-20 18:54:58 UTC
++++ configure
+@@ -2337,52 +2337,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  #
  
  filechk="yes"
@@ -55,12 +55,14 @@
  
  if test "$filechk" = "no"; then { { echo "$as_me:$LINENO: error:
  
-@@ -3046,7 +3002,7 @@
+@@ -3045,8 +3001,8 @@ fi
+ 
  	CFLAGS="-Wall -O2"
  	;;
- *bsd*)
+-*bsd*)
 -	CFLAGS="-Wall -O2 -pthread"
-+	CFLAGS="${CFLAGS} -Wall -pthread"
++*bsd*|dragonfly*)
++	CFLAGS="${CFLAGS} -Wall -lpthread"
  	;;
  esac
  
