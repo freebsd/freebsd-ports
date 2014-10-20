@@ -12,7 +12,7 @@ COMMENT=	Viewer for San Diego Zoo Pandacam written in Python
 
 RUN_DEPENDS=	${PYGAME}
 
-USE_PYTHON=	yes
+USES=		python
 
 OPTIONS_DEFINE=	DOCS
 

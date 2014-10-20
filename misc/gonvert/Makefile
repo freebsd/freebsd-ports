@@ -12,7 +12,7 @@ COMMENT=	Conversion utility that allows conversion between many units
 LICENSE=	GPLv2
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGELOG FAQ README THANKS

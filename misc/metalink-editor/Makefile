@@ -17,11 +17,10 @@ LICENSE_FILE=	${WRKDIR}/license.txt
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		dos2unix zip
+USES=		dos2unix python zip
 DOS2UNIX_REGEX=	.*\.txt
 NO_WRKSUBDIR=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	distutils
 PYDISTUTILS_EGGINFO=	metalink_editor-${PORTVERSION}-py${PYTHON_VER}.egg-info
 USE_WX=		3.0+
 WX_COMPS=	python
