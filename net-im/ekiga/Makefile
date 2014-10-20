@@ -1,6 +1,6 @@
 # Created by: Charlie & <root@ws.ipfw.ru>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/net-im/ekiga/Makefile 19912 2014-09-25 22:06:33Z kwm $
+#    $MCom: ports/branches/GNOME_3_12/net-im/ekiga/Makefile 19954 2014-10-15 10:03:57Z kwm $
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix perl5 pkgconfig \
 		tar:xz
 USE_XORG=	xv
-USE_GNOME=	gtk20 intltool libxml2
+USE_GNOME=	gtk20 intlhack libxml2
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-I${LOCALBASE}/lib

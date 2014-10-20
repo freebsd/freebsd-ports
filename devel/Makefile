@@ -1283,8 +1283,8 @@
     SUBDIR += mingw32-pthreads
     SUBDIR += mingw32-zlib
     SUBDIR += mingw64-binutils
-    SUBDIR += mips64-binutils
     SUBDIR += mips-binutils
+    SUBDIR += mips64-binutils
     SUBDIR += mk
     SUBDIR += mk-configure
     SUBDIR += mkcmd

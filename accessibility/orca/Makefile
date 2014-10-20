@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/accessibility/orca/Makefile 19933 2014-10-02 06:48:47Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/accessibility/orca/Makefile 19954 2014-10-15 10:03:57Z kwm $
 
 PORTNAME=	orca
 PORTVERSION=	3.12.3
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py3-dbus \
 CONFLICTS=	py*-json-py-[0-9]*
 
 USES=		gettext gmake pathfix pkgconfig python:3 tar:xz
-USE_GNOME=	gnomeprefix gtk30 py3gobject3
+USE_GNOME=	gnomeprefix gtk30 py3gobject3 intlhack
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

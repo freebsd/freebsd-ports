@@ -1,9 +1,9 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/graphics/librsvg2/Makefile 19876 2014-09-14 19:11:43Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/graphics/librsvg2/Makefile 19942 2014-10-14 06:25:01Z gusi $
 
 PORTNAME=	librsvg
-PORTVERSION=	2.40.4
+PORTVERSION=	2.40.5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2

@@ -234,79 +234,79 @@ share/doc/gdata/style.css
 share/doc/gdata/up-insensitive.png
 share/doc/gdata/up.png
 share/gir-1.0/GData-0.0.gir
-lib/locale/ar/LC_MESSAGES/gdata.mo
-lib/locale/as/LC_MESSAGES/gdata.mo
-lib/locale/be/LC_MESSAGES/gdata.mo
-lib/locale/bg/LC_MESSAGES/gdata.mo
-lib/locale/bn_IN/LC_MESSAGES/gdata.mo
-lib/locale/ca/LC_MESSAGES/gdata.mo
-lib/locale/ca@valencia/LC_MESSAGES/gdata.mo
-lib/locale/cs/LC_MESSAGES/gdata.mo
-lib/locale/da/LC_MESSAGES/gdata.mo
-lib/locale/de/LC_MESSAGES/gdata.mo
-lib/locale/el/LC_MESSAGES/gdata.mo
-lib/locale/en_GB/LC_MESSAGES/gdata.mo
-lib/locale/eo/LC_MESSAGES/gdata.mo
-lib/locale/es/LC_MESSAGES/gdata.mo
-lib/locale/eu/LC_MESSAGES/gdata.mo
-lib/locale/et/LC_MESSAGES/gdata.mo
-lib/locale/fi/LC_MESSAGES/gdata.mo
-lib/locale/fr/LC_MESSAGES/gdata.mo
-lib/locale/gl/LC_MESSAGES/gdata.mo
-lib/locale/gu/LC_MESSAGES/gdata.mo
-lib/locale/he/LC_MESSAGES/gdata.mo
-lib/locale/hi/LC_MESSAGES/gdata.mo
-lib/locale/hu/LC_MESSAGES/gdata.mo
-lib/locale/id/LC_MESSAGES/gdata.mo
-lib/locale/it/LC_MESSAGES/gdata.mo
-lib/locale/ja/LC_MESSAGES/gdata.mo
-lib/locale/kn/LC_MESSAGES/gdata.mo
-lib/locale/ko/LC_MESSAGES/gdata.mo
-lib/locale/lt/LC_MESSAGES/gdata.mo
-lib/locale/lv/LC_MESSAGES/gdata.mo
-lib/locale/ml/LC_MESSAGES/gdata.mo
-lib/locale/mr/LC_MESSAGES/gdata.mo
-lib/locale/nb/LC_MESSAGES/gdata.mo
-lib/locale/nl/LC_MESSAGES/gdata.mo
-lib/locale/or/LC_MESSAGES/gdata.mo
-lib/locale/pa/LC_MESSAGES/gdata.mo
-lib/locale/pl/LC_MESSAGES/gdata.mo
-lib/locale/pt/LC_MESSAGES/gdata.mo
-lib/locale/pt_BR/LC_MESSAGES/gdata.mo
-lib/locale/ro/LC_MESSAGES/gdata.mo
-lib/locale/ru/LC_MESSAGES/gdata.mo
-lib/locale/sk/LC_MESSAGES/gdata.mo
-lib/locale/sl/LC_MESSAGES/gdata.mo
-lib/locale/sr/LC_MESSAGES/gdata.mo
-lib/locale/sr@latin/LC_MESSAGES/gdata.mo
-lib/locale/sv/LC_MESSAGES/gdata.mo
-lib/locale/ta/LC_MESSAGES/gdata.mo
-lib/locale/te/LC_MESSAGES/gdata.mo
-lib/locale/tg/LC_MESSAGES/gdata.mo
-lib/locale/th/LC_MESSAGES/gdata.mo
-lib/locale/tr/LC_MESSAGES/gdata.mo
-lib/locale/ug/LC_MESSAGES/gdata.mo
-lib/locale/uk/LC_MESSAGES/gdata.mo
-lib/locale/vi/LC_MESSAGES/gdata.mo
-lib/locale/zh_CN/LC_MESSAGES/gdata.mo
-lib/locale/zh_HK/LC_MESSAGES/gdata.mo
-lib/locale/zh_TW/LC_MESSAGES/gdata.mo
+share/locale/ar/LC_MESSAGES/gdata.mo
+share/locale/as/LC_MESSAGES/gdata.mo
+share/locale/be/LC_MESSAGES/gdata.mo
+share/locale/bg/LC_MESSAGES/gdata.mo
+share/locale/bn_IN/LC_MESSAGES/gdata.mo
+share/locale/ca/LC_MESSAGES/gdata.mo
+share/locale/ca@valencia/LC_MESSAGES/gdata.mo
+share/locale/cs/LC_MESSAGES/gdata.mo
+share/locale/da/LC_MESSAGES/gdata.mo
+share/locale/de/LC_MESSAGES/gdata.mo
+share/locale/el/LC_MESSAGES/gdata.mo
+share/locale/en_GB/LC_MESSAGES/gdata.mo
+share/locale/eo/LC_MESSAGES/gdata.mo
+share/locale/es/LC_MESSAGES/gdata.mo
+share/locale/eu/LC_MESSAGES/gdata.mo
+share/locale/et/LC_MESSAGES/gdata.mo
+share/locale/fi/LC_MESSAGES/gdata.mo
+share/locale/fr/LC_MESSAGES/gdata.mo
+share/locale/gl/LC_MESSAGES/gdata.mo
+share/locale/gu/LC_MESSAGES/gdata.mo
+share/locale/he/LC_MESSAGES/gdata.mo
+share/locale/hi/LC_MESSAGES/gdata.mo
+share/locale/hu/LC_MESSAGES/gdata.mo
+share/locale/id/LC_MESSAGES/gdata.mo
+share/locale/it/LC_MESSAGES/gdata.mo
+share/locale/ja/LC_MESSAGES/gdata.mo
+share/locale/kn/LC_MESSAGES/gdata.mo
+share/locale/ko/LC_MESSAGES/gdata.mo
+share/locale/lt/LC_MESSAGES/gdata.mo
+share/locale/lv/LC_MESSAGES/gdata.mo
+share/locale/ml/LC_MESSAGES/gdata.mo
+share/locale/mr/LC_MESSAGES/gdata.mo
+share/locale/nb/LC_MESSAGES/gdata.mo
+share/locale/nl/LC_MESSAGES/gdata.mo
+share/locale/or/LC_MESSAGES/gdata.mo
+share/locale/pa/LC_MESSAGES/gdata.mo
+share/locale/pl/LC_MESSAGES/gdata.mo
+share/locale/pt/LC_MESSAGES/gdata.mo
+share/locale/pt_BR/LC_MESSAGES/gdata.mo
+share/locale/ro/LC_MESSAGES/gdata.mo
+share/locale/ru/LC_MESSAGES/gdata.mo
+share/locale/sk/LC_MESSAGES/gdata.mo
+share/locale/sl/LC_MESSAGES/gdata.mo
+share/locale/sr/LC_MESSAGES/gdata.mo
+share/locale/sr@latin/LC_MESSAGES/gdata.mo
+share/locale/sv/LC_MESSAGES/gdata.mo
+share/locale/ta/LC_MESSAGES/gdata.mo
+share/locale/te/LC_MESSAGES/gdata.mo
+share/locale/tg/LC_MESSAGES/gdata.mo
+share/locale/th/LC_MESSAGES/gdata.mo
+share/locale/tr/LC_MESSAGES/gdata.mo
+share/locale/ug/LC_MESSAGES/gdata.mo
+share/locale/uk/LC_MESSAGES/gdata.mo
+share/locale/vi/LC_MESSAGES/gdata.mo
+share/locale/zh_CN/LC_MESSAGES/gdata.mo
+share/locale/zh_HK/LC_MESSAGES/gdata.mo
+share/locale/zh_TW/LC_MESSAGES/gdata.mo
 share/vala/vapi/libgdata.deps
 share/vala/vapi/libgdata.vapi
-@dirrmtry lib/locale/zh_HK/LC_MESSAGES
-@dirrmtry lib/locale/zh_HK
-@dirrmtry lib/locale/ug/LC_MESSAGES
-@dirrmtry lib/locale/ug
-@dirrmtry lib/locale/te/LC_MESSAGES
-@dirrmtry lib/locale/te
-@dirrmtry lib/locale/sr@latin/LC_MESSAGES
-@dirrmtry lib/locale/sr@latin
-@dirrmtry lib/locale/mr/LC_MESSAGES
-@dirrmtry lib/locale/mr
-@dirrmtry lib/locale/ca@valencia/LC_MESSAGES
-@dirrmtry lib/locale/ca@valencia
-@dirrmtry lib/locale/as/LC_MESSAGES
-@dirrmtry lib/locale/as
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
 @dirrm share/doc/gdata
 @dirrm include/libgdata/gdata/services/youtube
 @dirrm include/libgdata/gdata/services/picasaweb

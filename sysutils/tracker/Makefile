@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/sysutils/tracker/Makefile 19849 2014-09-05 20:44:31Z gusi $
+#    $MCom: ports/branches/GNOME_3_12/sysutils/tracker/Makefile 19954 2014-10-15 10:03:57Z kwm $
 
 PORTNAME=	tracker
 PORTVERSION=	1.1.4
@@ -26,7 +26,7 @@ RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 PLIST_SUB=	TRACKER_VER="1.0"
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix gtk30 intltool introspection:build
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 USE_LDCONFIG=	yes
 USE_SQLITE=	3
 USE_GSTREAMER1=	yes

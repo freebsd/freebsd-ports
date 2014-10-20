@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/mail/evolution-mapi/Makefile 19797 2014-08-11 14:09:34Z gusi $
+#   $MCom: ports/branches/GNOME_3_12/mail/evolution-mapi/Makefile 19941 2014-10-13 14:34:39Z gusi $
 
 PORTNAME=	evolution-mapi
-PORTVERSION=	3.12.5
+PORTVERSION=	3.12.7
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

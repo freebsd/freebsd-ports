@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/devel/libgdata/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#    $MCom: ports/branches/GNOME_3_12/devel/libgdata/Makefile 19954 2014-10-15 10:03:57Z kwm $
 
 PORTNAME=	libgdata
 PORTVERSION=	0.14.3
@@ -22,7 +22,7 @@ RUN_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
 CONFLICTS=	libgdata-0.6.*
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomehier gnomeprefix intltool \
+USE_GNOME=	glib20 gnomehier gnomeprefix intlhack \
 			introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

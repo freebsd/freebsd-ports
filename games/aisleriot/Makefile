@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/games/aisleriot/Makefile 19848 2014-09-05 10:39:20Z kwm $
+#   $MCom: ports/branches/GNOME_3_12/games/aisleriot/Makefile 19954 2014-10-15 10:03:57Z kwm $
 
 PORTNAME=	aisleriot
 PORTVERSION=	3.12.1
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2 \
 CONFLICTS=	sol-*
 
 USES=		desktop-file-utils gmake pathfix pkgconfig tar:xz
-USE_GNOME=	gconf2 gtk30 librsvg2 libxml2:build
+USE_GNOME=	gconf2 gtk30 intlhack librsvg2 libxml2:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-card-theme-formats=svg \
 		--with-guile=2.0
