@@ -3,4 +3,3 @@ bin/muni
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/kang.gif
 %%PORTDOCS%%%%DOCSDIR%%/yung.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

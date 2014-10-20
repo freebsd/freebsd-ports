@@ -1,4 +1,2 @@
 %%QT_PLUGINDIR%%/codecs/libqtwcodecs.so
 %%DEBUG%%%%QT_PLUGINDIR%%/codecs/libqtwcodecs.so.debug
-@dirrmtry %%QT_PLUGINDIR%%/codecs
-@dirrmtry %%QT_PLUGINDIR%%

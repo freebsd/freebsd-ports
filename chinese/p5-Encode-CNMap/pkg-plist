@@ -9,7 +9,3 @@ bin/cnmapwx
 man/man1/cnmap.1.gz
 man/man1/cnmapdir.1.gz
 man/man1/cnmapwx.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode

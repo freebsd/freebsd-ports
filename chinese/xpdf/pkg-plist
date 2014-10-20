@@ -55,8 +55,6 @@
 %%DATADIR%%/chinese-traditional/CMap/UniCNS-UTF32-V
 %%DATADIR%%/chinese-traditional/CMap/UniCNS-UTF8-H
 %%DATADIR%%/chinese-traditional/CMap/UniCNS-UTF8-V
-@dirrm %%DATADIR%%/chinese-traditional/CMap
-@dirrm %%DATADIR%%/chinese-traditional
 %%DATADIR%%/chinese-simplified/CMap/Adobe-GB1-0
 %%DATADIR%%/chinese-simplified/CMap/Adobe-GB1-1
 %%DATADIR%%/chinese-simplified/CMap/Adobe-GB1-2
@@ -93,6 +91,3 @@
 %%DATADIR%%/chinese-simplified/CMap/UniGB-UTF32-V
 %%DATADIR%%/chinese-simplified/CMap/UniGB-UTF8-H
 %%DATADIR%%/chinese-simplified/CMap/UniGB-UTF8-V
-@dirrm %%DATADIR%%/chinese-simplified/CMap
-@dirrm %%DATADIR%%/chinese-simplified
-@dirrmtry %%DATADIR%%

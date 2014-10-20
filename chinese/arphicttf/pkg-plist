@@ -6,8 +6,3 @@
 %%DATADIR%%/license/GB/ARPHICPL.TXT
 %%DATADIR%%/logo.gif
 %%DATADIR%%/release.txt
-@dirrm %%DATADIR%%/license/BIG5
-@dirrm %%DATADIR%%/license/ENGLISH
-@dirrm %%DATADIR%%/license/GB
-@dirrm %%DATADIR%%/license
-@dirrm %%DATADIR%%

@@ -12,6 +12,3 @@ share/applications/pcmanx.desktop
 %%DATADIR%%/nancy_bot/example_usages.data
 %%DATADIR%%/sitelist
 share/pixmaps/pcmanx.svg
-@dirrmtry %%DATADIR%%/script
-@dirrmtry %%DATADIR%%/nancy_bot
-@dirrmtry %%DATADIR%%

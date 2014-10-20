@@ -115,14 +115,3 @@ share/FQTerm/userconf/README.txt
 share/FQTerm/userconf/address.cfg.orig
 share/FQTerm/userconf/fqterm.cfg.orig
 share/FQTerm/userconf/language.cfg.orig
-@dirrm share/FQTerm/userconf
-@dirrm share/FQTerm/skin/dpstyle/image
-@dirrm share/FQTerm/skin/dpstyle
-@dirrm share/FQTerm/skin
-@dirrm share/FQTerm/schema
-@dirrm share/FQTerm/pic/ViewerButtons
-@dirrm share/FQTerm/pic
-@dirrm share/FQTerm/dict
-@dirrm share/FQTerm/cursor/mac_16x16
-@dirrm share/FQTerm/cursor
-@dirrm share/FQTerm

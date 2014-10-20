@@ -3,4 +3,3 @@ bin/ttfm.sh
 man/man1/ttfm.sh.1.gz
 %%DATADIR%%/gscjk.ttfm
 %%DATADIR%%/xttfm.ttfm
-@dirrm %%DATADIR%%

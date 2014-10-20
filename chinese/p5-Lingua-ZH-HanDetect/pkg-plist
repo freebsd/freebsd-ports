@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Lingua/ZH/HanDetect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/HanDetect/.packlist
 %%PERL5_MAN3%%/Lingua::ZH::HanDetect.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/HanDetect
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrmtry %%SITE_PERL%%/Lingua/ZH
-@dirrmtry %%SITE_PERL%%/Lingua

@@ -27,9 +27,3 @@ share/ibus/component/pinyin.xml
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-pinyin.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/ibus-pinyin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus-pinyin.mo
-@dirrmtry share/ibus/component
-@dirrmtry share/ibus
-@dirrm %%DATADIR%%/setup
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/db
-@dirrm %%DATADIR%%

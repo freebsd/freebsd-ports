@@ -50,14 +50,3 @@ lib/libsunpinyin.so.3.0
 libdata/pkgconfig/sunpinyin-2.0.pc
 share/sunpinyin/data/lm_sc.t3g
 share/sunpinyin/data/pydict_sc.bin
-@dirrm include/sunpinyin-2.0/slm/tslmpack
-@dirrm include/sunpinyin-2.0/slm/tslmendian
-@dirrm include/sunpinyin-2.0/slm/thread
-@dirrm include/sunpinyin-2.0/slm/ids2ngram
-@dirrm include/sunpinyin-2.0/slm
-@dirrm include/sunpinyin-2.0/pinyin
-@dirrm include/sunpinyin-2.0/lexicon
-@dirrm include/sunpinyin-2.0/ime-core
-@dirrm include/sunpinyin-2.0
-@dirrmtry share/sunpinyin/data
-@dirrmtry share/sunpinyin

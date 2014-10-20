@@ -10,4 +10,3 @@ share/scim/Array/array-shortcode.cin
 share/scim/Array/array-special.cin
 share/scim/Array/array30.cin
 share/scim/icons/scim-array.png
-@dirrm share/scim/Array

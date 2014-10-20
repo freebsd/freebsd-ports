@@ -20,6 +20,3 @@ man/man1/libpinyin.1.gz
 %%DATADIR%%/data/gbk_char.bin
 %%DATADIR%%/data/phrase_index.bin
 %%DATADIR%%/data/pinyin_index.bin
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm include/libpinyin-%%VER%%

@@ -10,7 +10,6 @@ bin/cWnn4/cwdreg
 bin/cWnn4/cwnnkill
 bin/cWnn4/cwnnstat
 bin/cWnn4/cwnntouch
-@dirrm bin/cWnn4
 lib/wnn/zh_CN/dic/sys/QianMa.dic
 lib/wnn/zh_CN/dic/sys/WuBi.dic
 lib/wnn/zh_CN/dic/sys/basic.dic
@@ -24,10 +23,6 @@ lib/wnn/zh_TW/dic/sys/cns_ch.dic
 lib/wnn/zh_TW/dic/sys/cns_wd.dic
 lib/wnn/zh_TW/dic/sys/full.con
 lib/wnn/zh_TW/dic/sys/full.conR
-@dirrm lib/wnn/zh_CN/dic/sys
-@dirrm lib/wnn/zh_CN/dic
-@dirrm lib/wnn/zh_TW/dic/sys
-@dirrm lib/wnn/zh_TW/dic
 man/ja/man1/catod.1.gz
 man/ja/man1/catof.1.gz
 man/ja/man1/cdicsort.1.gz
