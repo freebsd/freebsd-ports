@@ -80,12 +80,4 @@ include/s11n.net/s11n/variant.hpp
 lib/libs11n.a
 lib/libs11n.so
 lib/libs11n.so.1
-lib/libs11n_p.a
-@dirrm include/s11n.net/s11n/proxy/std
-@dirrm include/s11n.net/s11n/proxy/pod
-@dirrm include/s11n.net/s11n/proxy
-@dirrm include/s11n.net/s11n/plugin
-@dirrm include/s11n.net/s11n/nodeutil
-@dirrm include/s11n.net/s11n/io
-@dirrm include/s11n.net/s11n
-@dirrm include/s11n.net
+%%PROFILE%%lib/libs11n_p.a
