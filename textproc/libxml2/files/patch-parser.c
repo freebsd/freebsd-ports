@@ -1,38 +1,31 @@
-CVE-2014-0191
+From 0e6659ec960734b0b01aad196d4bdb4a3800b493 Mon Sep 17 00:00:00 2001
+From: Lubomir Rintel <lkundrak@v3.sk>
+Date: Thu, 16 Oct 2014 19:10:59 +0200
+Subject: [PATCH] Revert "Missing initialization for the catalog module"
 
-From 9cd1c3cfbd32655d60572c0a413e017260c854df Mon Sep 17 00:00:00 2001
-From: Daniel Veillard <veillard@redhat.com>
-Date: Tue, 22 Apr 2014 15:30:56 +0800
-Subject: Do not fetch external parameter entities
+It's not correct to always load the default catalog.
+https://bugzilla.redhat.com/show_bug.cgi?id=1153753
 
-Unless explicitely asked for when validating or replacing entities
-with their value. Problem pointed out by Daniel Berrange <berrange@redhat.com>
+This reverts commit 054c716ea1bf001544127a4ab4f4346d1b9947e7.
+
+---
+ parser.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
 diff --git a/parser.c b/parser.c
-index 9347ac9..c0dea05 100644
+index 1d93967..67c9dfd 100644
 --- parser.c
 +++ parser.c
-@@ -2598,6 +2598,20 @@ xmlParserHandlePEReference(xmlParserCtxtPtr ctxt) {
- 		    xmlCharEncoding enc;
- 
- 		    /*
-+		     * Note: external parsed entities will not be loaded, it is
-+		     * not required for a non-validating parser, unless the
-+		     * option of validating, or substituting entities were
-+		     * given. Doing so is far more secure as the parser will
-+		     * only process data coming from the document entity by
-+		     * default.
-+		     */
-+                    if ((entity->etype == XML_EXTERNAL_PARAMETER_ENTITY) &&
-+		        ((ctxt->options & XML_PARSE_NOENT) == 0) &&
-+			((ctxt->options & XML_PARSE_DTDVALID) == 0) &&
-+			(ctxt->validate == 0))
-+			return;
-+
-+		    /*
- 		     * handle the extra spaces added before and after
- 		     * c.f. http://www.w3.org/TR/REC-xml#as-PE
- 		     * this is done independently.
+@@ -14830,9 +14830,6 @@ xmlInitParser(void) {
+ #ifdef LIBXML_XPATH_ENABLED
+ 	xmlXPathInit();
+ #endif
+-#ifdef LIBXML_CATALOG_ENABLED
+-        xmlInitializeCatalog();
+-#endif
+ 	xmlParserInitialized = 1;
+ #ifdef LIBXML_THREAD_ENABLED
+     }
 -- 
-cgit v0.10.1
+1.9.3
 
