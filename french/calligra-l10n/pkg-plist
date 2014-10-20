@@ -111,6 +111,3 @@ share/locale/fr/LC_MESSAGES/sheetssolver.mo
 share/locale/fr/LC_MESSAGES/stage.mo
 share/locale/fr/LC_MESSAGES/thesaurus_tool.mo
 share/locale/fr/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/fr/stage
-@dirrm share/doc/HTML/fr/sheets
-@dirrm share/doc/HTML/fr/calligra
