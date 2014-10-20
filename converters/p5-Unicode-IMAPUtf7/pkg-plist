@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Unicode::IMAPUtf7.3.gz
 %%SITE_PERL%%/Unicode/IMAPUtf7.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/IMAPUtf7/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/IMAPUtf7
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
-@dirrmtry %%SITE_PERL%%/Unicode

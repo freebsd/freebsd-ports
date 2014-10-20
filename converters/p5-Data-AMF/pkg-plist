@@ -29,10 +29,3 @@
 %%PERL5_MAN3%%/Data::AMF::Type::Boolean.3.gz
 %%PERL5_MAN3%%/Data::AMF::Type::ByteArray.3.gz
 %%PERL5_MAN3%%/Data::AMF::Type::Null.3.gz
-@dirrm %%SITE_PERL%%/Data/AMF/Type
-@dirrm %%SITE_PERL%%/Data/AMF/Parser
-@dirrm %%SITE_PERL%%/Data/AMF/Formatter
-@dirrm %%SITE_PERL%%/Data/AMF
-@dirrmtry %%SITE_PERL%%/Data
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/AMF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

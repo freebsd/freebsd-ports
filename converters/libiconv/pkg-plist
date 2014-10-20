@@ -21,4 +21,3 @@ man/man3/iconvctl.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/iconv_open.3.html
 %%PORTDOCS%%%%DOCSDIR%%/iconv_open_into.3.html
 %%PORTDOCS%%%%DOCSDIR%%/iconvctl.3.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

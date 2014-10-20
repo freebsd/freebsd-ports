@@ -21,7 +21,3 @@ man/man1/enconv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-Charsets-and-Surfaces.html
 %%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-Typedefs-and-Constants.html
 %%PORTDOCS%%%%DOCSDIR%%/libenca/libenca.devhelp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/libenca
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/enca/extconv
-@dirrm libexec/enca

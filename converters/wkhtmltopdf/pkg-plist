@@ -10,4 +10,3 @@ lib/libwkhtmltox.so.0.12
 lib/libwkhtmltox.so.0.12.1
 man/man1/wkhtmltoimage.1.gz
 man/man1/wkhtmltopdf.1.gz
-@dirrm include/wkhtmltox

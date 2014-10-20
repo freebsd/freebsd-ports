@@ -3,4 +3,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.rst
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/changelog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

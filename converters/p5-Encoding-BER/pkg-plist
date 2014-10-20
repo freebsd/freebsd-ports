@@ -9,7 +9,3 @@
 %%SITE_PERL%%/Encoding/BER/Dumper.pm
 %%SITE_PERL%%/Encoding/BER/SNMP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding/BER/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding/BER
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding
-@dirrm %%SITE_PERL%%/Encoding/BER
-@dirrmtry %%SITE_PERL%%/Encoding

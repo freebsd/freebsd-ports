@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Convert/UUlib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/UUlib/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/UUlib/UUlib.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/UUlib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Convert

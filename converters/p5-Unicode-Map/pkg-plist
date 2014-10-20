@@ -101,18 +101,3 @@ bin/mkmapfile
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/Map.so
 man/man1/map.1.gz
 man/man1/mkmapfile.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/NEXT
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ISO
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/IBM
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/APPLE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ADOBE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode

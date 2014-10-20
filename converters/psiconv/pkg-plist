@@ -120,8 +120,3 @@ man/man1/psiconv.1.gz
 %%DATADIR%%/xhtml/Word_Status_Section.html
 %%DATADIR%%/xhtml/Word_Styles_Section.html
 %%DATADIR%%/xhtml/World_Data_File.html
-@dirrm %%DATADIR%%/xhtml
-@dirrm %%DATADIR%%/psion
-@dirrm %%DATADIR%%
-@dirrm include/psiconv
-@dirrm etc/psiconv

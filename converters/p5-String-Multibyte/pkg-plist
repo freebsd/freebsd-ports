@@ -37,7 +37,3 @@
 %%SITE_PERL%%/String/Multibyte/UTF8.pm
 %%SITE_PERL%%/String/Multibyte/Unicode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Multibyte/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Multibyte
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrm %%SITE_PERL%%/String/Multibyte
-@dirrmtry %%SITE_PERL%%/String
