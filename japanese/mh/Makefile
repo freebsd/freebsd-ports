@@ -3,7 +3,7 @@
 
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese mail
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/
@@ -21,7 +21,8 @@ JP_VERSION=	3.05
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-batchmode \
-		--enable-apop=${PREFIX}/etc/pop.auth --enable-rpop
+		--enable-apop=${PREFIX}/etc/pop.auth \
+		--enable-jmandir=${MANPREFIX}/man/ja
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-Wno-return-type
 

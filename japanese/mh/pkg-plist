@@ -70,7 +70,6 @@ lib/mh/tmac.h
 lib/mh/viamail
 lib/libmh.so
 lib/libmh.so.3
-@dirrm lib/mh
 man/ja/man1/ali.1.gz
 man/ja/man1/anno.1.gz
 man/ja/man1/bbc.1.gz
