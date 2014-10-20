@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 
-USES=		cmake
+USES=		alias cmake
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include/libpng15
