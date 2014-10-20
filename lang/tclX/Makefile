@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}${PORTVERSION:R}
 
-USES=		tcl tar:bzip2
+USES=		alias tcl tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/tclx${PORTVERSION:R}
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \

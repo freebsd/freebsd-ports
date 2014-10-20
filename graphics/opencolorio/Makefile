@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
-USES=		cmake:outsource pkgconfig
+USES=		alias cmake:outsource pkgconfig
 CMAKE_ARGS=	-DOCIO_BUILD_JNIGLUE:BOOL=OFF \
 		-DOCIO_BUILD_NUKE:BOOL=OFF \
 		-DOCIO_BUILD_STATIC:BOOL=OFF \
