@@ -1,6 +1,6 @@
---- Makefile.in.orig	2013-11-24 09:26:25.000000000 +0100
-+++ Makefile.in	2013-11-24 09:26:37.000000000 +0100
-@@ -1130,7 +1130,7 @@
+--- Makefile.in.orig	2014-10-17 20:26:52.547793054 +0200
++++ Makefile.in	2014-10-17 20:27:34.868791352 +0200
+@@ -1234,7 +1234,7 @@
  @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c `$(CYGPATH_W) '$<'`
  
  .c.lo:
@@ -9,7 +9,7 @@
  @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -1635,7 +1635,7 @@
+@@ -1712,7 +1712,7 @@
  check-am: all-am
  check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-recursive
@@ -18,12 +18,12 @@
  		config.h
  install-binPROGRAMS: install-libLTLIBRARIES
  
-@@ -1703,7 +1703,7 @@
+@@ -1780,7 +1780,7 @@
  
  info-am:
  
--install-data-am: install-data-local install-m4dataDATA install-man \
-+install-data-am: install-m4dataDATA install-man \
- 	install-pkgconfigDATA
+-install-data-am: install-cmakeDATA install-data-local \
++install-data-am: install-cmakeDATA \
+ 	install-m4dataDATA install-man install-pkgconfigDATA
  
  install-dvi: install-dvi-recursive

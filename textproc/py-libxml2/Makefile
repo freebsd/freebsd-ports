@@ -16,7 +16,7 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME+=	libxml2
-USE_PYTHON=	2
+USES+=		python:2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_EGGINFO=	libxml2_python-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
