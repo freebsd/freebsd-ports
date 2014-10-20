@@ -66,6 +66,3 @@ man/man1/mafft.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/samplerna
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/samplerna.qinsi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/samplerna.xinsi
-@dirrmtry libexec/mafft
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

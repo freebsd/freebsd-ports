@@ -63,8 +63,3 @@ GNUstep/Local/Library/Headers/BioCocoa
 GNUstep/Local/Library/Libraries/libBioCocoa.so
 GNUstep/Local/Library/Libraries/libBioCocoa.so.2
 GNUstep/Local/Library/Libraries/libBioCocoa.so.2.2.2
-@dirrmtry GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/2/Resources
-@dirrmtry GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/2/Headers
-@dirrmtry GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/2
-@dirrmtry GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions
-@dirrmtry GNUstep/Local/Library/Frameworks/BioCocoa.framework

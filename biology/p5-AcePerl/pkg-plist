@@ -144,16 +144,3 @@ bin/ace.pl
 %%PERL5_MAN3%%/Ace::Sequence::Multi.3.gz
 %%PERL5_MAN3%%/Ace::Sequence::Transcript.3.gz
 man/man1/ace.pl.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence/Feature
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/RPC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Freesubs
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GFF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Object
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Browser
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace

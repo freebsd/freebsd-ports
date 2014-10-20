@@ -492,37 +492,3 @@ lib/libsbml.so.5.10.2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/twoalgebraicrules.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/twodimensional.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xslt/layout/layout2svg.xsl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xslt/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xslt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec/level-3
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec/level-2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ruby/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ruby
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/r
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/python/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/python
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csharp/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csharp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/libsbml
-@dirrm include/sbml/xml
-@dirrm include/sbml/validator
-@dirrm include/sbml/util
-@dirrm include/sbml/units
-@dirrm include/sbml/math
-@dirrm include/sbml/extension
-@dirrm include/sbml/conversion
-@dirrm include/sbml/compress
-@dirrm include/sbml/common
-@dirrm include/sbml/annotation
-@dirrm include/sbml

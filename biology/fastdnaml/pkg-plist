@@ -32,4 +32,3 @@ bin/fastdnaml/usertree
 bin/fastdnaml/usertrees
 bin/fastdnaml/weights
 bin/fastdnaml/weights_categories
-@dirrm bin/fastdnaml

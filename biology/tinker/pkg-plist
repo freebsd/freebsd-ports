@@ -607,9 +607,3 @@ bin/xyzsybyl
 %%DATADIR%%/test/water.run
 %%DATADIR%%/test/water.xyz
 %%DATADIR%%/tinker.txt
-@dirrm %%DATADIR%%/test
-@dirrm %%DATADIR%%/params
-@dirrm %%DATADIR%%/bench
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

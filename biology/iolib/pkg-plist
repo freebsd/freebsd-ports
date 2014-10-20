@@ -110,4 +110,3 @@ man/man3/write_reading.3.gz
 man/man3/write_scf.3.gz
 man/man3/write_scf_header.3.gz
 man/man4/Read.4.gz
-@dirrmtry include/io_lib

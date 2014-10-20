@@ -1778,34 +1778,3 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/util/WorkingGZIPInputStream.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/util/WorkingGZIPInputStream.java
 bin/act
 bin/art
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/ibatis
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/util
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/j2ssh
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/genebuilder/gff
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/genebuilder/cv
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/genebuilder
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/filetree
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/database
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/chado
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/artemis
-@dirrm artemis-%%PORTVERSION%%/uk/ac/sanger
-@dirrm artemis-%%PORTVERSION%%/uk/ac
-@dirrm artemis-%%PORTVERSION%%/uk
-@dirrm artemis-%%PORTVERSION%%/type
-@dirrm artemis-%%PORTVERSION%%/seqdb
-@dirrm artemis-%%PORTVERSION%%/nsdb/NucFeaturePackage
-@dirrm artemis-%%PORTVERSION%%/nsdb/LocationPackage
-@dirrm artemis-%%PORTVERSION%%/nsdb/EmblPackage
-@dirrm artemis-%%PORTVERSION%%/nsdb
-@dirrm artemis-%%PORTVERSION%%/lib/j2ssh
-@dirrm artemis-%%PORTVERSION%%/lib/ibatis
-@dirrm artemis-%%PORTVERSION%%/lib
-@dirrm artemis-%%PORTVERSION%%/images
-@dirrm artemis-%%PORTVERSION%%/etc
-@dirrm artemis-%%PORTVERSION%%/artemis_sqlmap
-@dirrm artemis-%%PORTVERSION%%

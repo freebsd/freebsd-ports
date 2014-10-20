@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/SCF/SCF.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/SCF/.packlist
 %%PERL5_MAN3%%/Bio::SCF.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/SCF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bio/SCF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bio

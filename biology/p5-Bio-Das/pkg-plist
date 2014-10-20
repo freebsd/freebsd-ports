@@ -51,10 +51,3 @@
 %%PERL5_MAN3%%/Bio::Das::Type.3.gz
 %%PERL5_MAN3%%/Bio::Das::TypeHandler.3.gz
 %%PERL5_MAN3%%/Bio::Das::Util.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das
-@dirrmtry %%SITE_PERL%%/Bio/Das/Request
-@dirrmtry %%SITE_PERL%%/Bio/Das/HTTP
-@dirrmtry %%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage/MySQL
-@dirrmtry %%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage/CSV
-@dirrmtry %%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage
-@dirrmtry %%SITE_PERL%%/Bio/Das/AGPServer

@@ -261,25 +261,3 @@ bin/bp_run_protdist
 %%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.PROGRAMS
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrmtry %%SITE_PERL%%/Bio/DB/ESoap
-@dirrmtry %%SITE_PERL%%/Bio/DB/SoapEUtilities/FetchAdaptor
-@dirrmtry %%SITE_PERL%%/Bio/DB/SoapEUtilities
-@dirrmtry %%SITE_PERL%%/Bio/Installer
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Alignment
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Analysis
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/AnalysisFactory
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/BEDTools
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/BWA
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/BlastPlus
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Bowtie
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Maq
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Phylo/Hyphy
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Phylo/Molphy
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Phylo/Njtree
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Phylo/PAML
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Phylo/Phast
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Phylo
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/Samtools
-@dirrmtry %%SITE_PERL%%/Bio/Tools/Run/StandAloneBlastPlus
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
