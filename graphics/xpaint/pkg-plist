@@ -116,20 +116,3 @@ man/man1/xpaint.1.gz
 %%DATADIR%%/messages/Messages
 %%DATADIR%%/messages/Messages_es
 %%DATADIR%%/messages/Messages_fr
-@dirrm %%DATADIR%%/messages
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/c_scripts/templates
-@dirrm %%DATADIR%%/c_scripts/procedures
-@dirrm %%DATADIR%%/c_scripts/layers
-@dirrm %%DATADIR%%/c_scripts/images
-@dirrm %%DATADIR%%/c_scripts/filters
-@dirrm %%DATADIR%%/c_scripts/batch
-@dirrm %%DATADIR%%/c_scripts/3d_surfaces
-@dirrm %%DATADIR%%/c_scripts/3d_curves
-@dirrm %%DATADIR%%/c_scripts
-@dirrm %%DATADIR%%/bitmaps/elec
-@dirrm %%DATADIR%%/bitmaps/brushes
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%

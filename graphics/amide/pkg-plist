@@ -14,9 +14,3 @@ share/omf/amide/amide-C.omf
 share/omf/amide/amide-es.omf
 share/pixmaps/amide_logo.png
 share/pixmaps/amide_file_logo.png
-@dirrm share/gnome/help/amide/es/figures
-@dirrm share/gnome/help/amide/es
-@dirrm share/gnome/help/amide/C/figures
-@dirrm share/gnome/help/amide/C
-@dirrm share/gnome/help/amide
-@dirrm share/omf/amide

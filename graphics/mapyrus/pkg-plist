@@ -125,6 +125,3 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vegetation.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/version.txt
 %%DATADIR%%/mapyrus.jar
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

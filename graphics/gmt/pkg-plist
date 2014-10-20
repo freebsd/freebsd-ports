@@ -492,15 +492,3 @@ man/man5/gmtcolors.5.gz
 %%DATADIR%%/x2sys/mgd77.def
 %%DATADIR%%/x2sys/xy.def
 %%DATADIR%%/x2sys/xyz.def
-@dirrm %%DATADIR%%/x2sys
-@dirrm %%DATADIR%%/time
-@dirrm %%DATADIR%%/pslib
-@dirrm %%DATADIR%%/pattern
-@dirrm %%DATADIR%%/mgg
-@dirrm %%DATADIR%%/mgd77
-@dirrm %%DATADIR%%/dbase
-@dirrm %%DATADIR%%/custom
-@dirrm %%DATADIR%%/cpt
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%/coast
-@dirrm %%DATADIR%%

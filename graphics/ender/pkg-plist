@@ -6,4 +6,3 @@ lib/libender.so.0
 libdata/pkgconfig/ender.pc
 %%DATADIR%%/enesim.ender
 %%DATADIR%%/etex.ender
-@dirrmtry %%DATADIR%%

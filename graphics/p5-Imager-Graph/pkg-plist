@@ -19,7 +19,3 @@
 %%PERL5_MAN3%%/Imager::Graph::StackedColumn.3.gz
 %%PERL5_MAN3%%/Imager::Graph::Util.3.gz
 %%PERL5_MAN3%%/Imager::Graph::Vertical.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Graph
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
-@dirrm %%SITE_PERL%%/Imager/Graph
-@dirrmtry %%SITE_PERL%%/Imager

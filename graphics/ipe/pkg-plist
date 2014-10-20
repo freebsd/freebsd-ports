@@ -123,12 +123,3 @@ man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/styles/beamer.isy
 %%DATADIR%%/%%VERSION%%/styles/colors.isy
 %%DATADIR%%/%%VERSION%%/styles/presentation.isy
-@dirrm %%DATADIR%%/%%VERSION%%/styles
-@dirrm %%DATADIR%%/%%VERSION%%/scripts
-@dirrm %%DATADIR%%/%%VERSION%%/lua
-@dirrm %%DATADIR%%/%%VERSION%%/icons
-@dirrm %%DATADIR%%/%%VERSION%%
-@dirrm %%DATADIR%%
-@dirrm lib/ipe/%%VERSION%%/ipelets
-@dirrm lib/ipe/%%VERSION%%
-@dirrm lib/ipe

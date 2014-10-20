@@ -287,20 +287,3 @@ man/man5/quantize.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/www/wand/magick_wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/wand/pixel_wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/wand/wand.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/www/wand
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/www/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/www/Magick++
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/www
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%
-@dirrm lib/GraphicsMagick/modules-Q%%Q%%/filters
-@dirrm lib/GraphicsMagick/modules-Q%%Q%%/coders
-@dirrm lib/GraphicsMagick/modules-Q%%Q%%
-@dirrm lib/GraphicsMagick/config
-@dirrm lib/GraphicsMagick
-@dirrm include/GraphicsMagick/wand
-@dirrm include/GraphicsMagick/magick
-@dirrm include/GraphicsMagick/Magick++
-@dirrm include/GraphicsMagick

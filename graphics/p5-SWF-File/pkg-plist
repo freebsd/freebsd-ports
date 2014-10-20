@@ -15,8 +15,3 @@ bin/dumpswf.plx
 %%SITE_PERL%%/SWF/File.pm
 %%SITE_PERL%%/SWF/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/File/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF
-@dirrmtry %%SITE_PERL%%/SWF/BinStream/Codec
-@dirrmtry %%SITE_PERL%%/SWF/BinStream
-@dirrmtry %%SITE_PERL%%/SWF

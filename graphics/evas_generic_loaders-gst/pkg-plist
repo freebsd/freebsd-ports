@@ -49,5 +49,3 @@ lib/evas/utils/evas_image_loader.ts
 lib/evas/utils/evas_image_loader.webm
 lib/evas/utils/evas_image_loader.weba
 lib/evas/utils/evas_image_loader.wmv
-@dirrmtry lib/evas/utils
-@dirrmtry lib/evas

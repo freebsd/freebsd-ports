@@ -300,6 +300,3 @@ man/man3/libtiff.3tiff.gz
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.0.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.1.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.2.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/man
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

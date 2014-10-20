@@ -45,5 +45,3 @@ lib/libboard.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruler.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scale_ellipse
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scale_ellipse.cpp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/board

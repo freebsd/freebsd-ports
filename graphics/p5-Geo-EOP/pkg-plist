@@ -26,12 +26,3 @@
 %%SITE_PERL%%/Geo/EOP/xsd/hma1.0/ohr.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/hma1.0/sar.xsd
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/EOP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/EOP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/hma1.0
-@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/eop1.2b
-@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1
-@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/eop1.1
-@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd
-@dirrmtry %%SITE_PERL%%/Geo/EOP
-@dirrmtry %%SITE_PERL%%/Geo

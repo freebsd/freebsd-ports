@@ -23,6 +23,3 @@ lib/libopenraw.so.1.6.0
 %%GNOME%%lib/libopenrawgnome.so.1.6.0
 libdata/pkgconfig/libopenraw-1.0.pc
 %%GNOME%%libdata/pkgconfig/libopenraw-gnome-1.0.pc
-%%GNOME%%@dirrm include/libopenraw-1.0/libopenraw-gnome
-@dirrm include/libopenraw-1.0/libopenraw
-@dirrm include/libopenraw-1.0

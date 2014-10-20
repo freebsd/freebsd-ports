@@ -2322,27 +2322,3 @@ dx/ui/testssheet.net
 dx/ui/ui.mdf
 dx/ui/viewer.net
 man/manl/dx.l.gz
-@dirrm dx/ui
-@dirrm dx/lib_%%ARCH%%
-@dirrm dx/lib
-%%JAVA%%@dirrm dx/java/user
-%%JAVA%%@dirrm dx/java/server/nets
-%%JAVA%%@dirrm dx/java/server/lib_%%ARCH%%
-%%JAVA%%@dirrm dx/java/server/dxmacros
-%%JAVA%%@dirrm dx/java/server/class
-%%JAVA%%@dirrm dx/java/server/bin
-%%JAVA%%@dirrm dx/java/server
-%%JAVA%%@dirrm dx/java/output
-%%JAVA%%@dirrm dx/java/htmlpages
-%%JAVA%%@dirrm dx/java
-@dirrm dx/include/dx
-@dirrm dx/include
-@dirrm dx/html/pages
-@dirrm dx/html/images
-@dirrm dx/html
-@dirrm dx/help
-@dirrm dx/fonts
-@dirrm dx/doc
-@dirrm dx/bin_%%ARCH%%
-@dirrm dx/bin
-@dirrm dx

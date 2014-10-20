@@ -8,4 +8,3 @@
 %%PYTHON_SITELIBDIR%%/gts/pygts.py
 %%PYTHON_SITELIBDIR%%/gts/pygts.pyc
 %%PYTHON_SITELIBDIR%%/gts/pygts.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/gts

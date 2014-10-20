@@ -74,15 +74,3 @@ share/apps/kipiplugin_htmlexport/themes/snow/snow.desktop
 share/apps/kipiplugin_htmlexport/themes/snow/style.css
 share/apps/kipiplugin_htmlexport/themes/snow/template.xsl
 share/kde4/services/kipiplugin_htmlexport.desktop
-@dirrm share/apps/kipiplugin_htmlexport/themes/snow
-@dirrm share/apps/kipiplugin_htmlexport/themes/simple
-@dirrm share/apps/kipiplugin_htmlexport/themes/s0
-@dirrm share/apps/kipiplugin_htmlexport/themes/matrix
-@dirrm share/apps/kipiplugin_htmlexport/themes/frames
-@dirrm share/apps/kipiplugin_htmlexport/themes/floating_cards
-@dirrm share/apps/kipiplugin_htmlexport/themes/details
-@dirrm share/apps/kipiplugin_htmlexport/themes/dateframes
-@dirrm share/apps/kipiplugin_htmlexport/themes/cleanframes
-@dirrm share/apps/kipiplugin_htmlexport/themes/classic
-@dirrm share/apps/kipiplugin_htmlexport/themes
-@dirrm share/apps/kipiplugin_htmlexport

@@ -246,13 +246,3 @@ share/poppler/unicodeMap/Latin2
 share/poppler/unicodeMap/Shift-JIS
 share/poppler/unicodeMap/TIS-620
 share/poppler/unicodeMap/Windows-1255
-@dirrm share/poppler/unicodeMap
-@dirrm share/poppler/nameToUnicode
-@dirrm share/poppler/cidToUnicode
-@dirrm share/poppler/cMap/Adobe-Korea1
-@dirrm share/poppler/cMap/Adobe-Japan2
-@dirrm share/poppler/cMap/Adobe-Japan1
-@dirrm share/poppler/cMap/Adobe-GB1
-@dirrm share/poppler/cMap/Adobe-CNS1
-@dirrm share/poppler/cMap
-@dirrmtry share/poppler

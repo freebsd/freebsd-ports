@@ -49,10 +49,3 @@ libdata/pkgconfig/imlib2.pc
 %%DATADIR%%/data/images/sh3.png
 %%DATADIR%%/data/images/stop.png
 %%DATADIR%%/data/images/tnt.png
-@dirrm %%DATADIR%%/data/images
-@dirrm %%DATADIR%%/data/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm lib/imlib2/loaders
-@dirrm lib/imlib2/filters
-@dirrm lib/imlib2

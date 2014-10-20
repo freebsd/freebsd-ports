@@ -6,5 +6,3 @@
 %%SITE_PERL%%/Graphics/ColorNames/IE.pm
 %%SITE_PERL%%/Graphics/ColorNames/SVG.pm
 %%SITE_PERL%%/Graphics/ColorNames/WWW.pm
-@dirrmtry %%SITE_PERL%%/Graphics/ColorNames
-@dirrmtry %%SITE_PERL%%/Graphics

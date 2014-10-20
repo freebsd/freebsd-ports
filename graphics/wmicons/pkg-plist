@@ -465,11 +465,3 @@ share/WindowMaker/Themes/Night.themed/SeaNight.jpeg
 share/WindowMaker/Themes/Night.themed/style
 share/WindowMaker/Themes/STEP2000.themed/BlueImage2.jpeg
 share/WindowMaker/Themes/STEP2000.themed/style
-@dirrm share/WindowMaker/Themes/STEP2000.themed
-@dirrm share/WindowMaker/Themes/Night.themed
-@dirrm share/WindowMaker/Themes/LeetWM.themed
-@dirrm share/WindowMaker/Themes/Checker.themed
-@dirrmtry share/WindowMaker/Themes
-@dirrmtry share/WindowMaker/Pixmaps
-@dirrmtry share/WindowMaker/Icons
-@dirrmtry share/WindowMaker

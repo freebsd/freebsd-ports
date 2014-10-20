@@ -153,7 +153,3 @@ lib/libaggplatformsdl.so.2
 lib/libaggplatformsdl.so.2.0.4
 libdata/pkgconfig/libagg.pc
 share/aclocal/libagg.m4
-@dirrm include/agg2/util
-@dirrm include/agg2/platform
-@dirrm include/agg2/ctrl
-@dirrm include/agg2

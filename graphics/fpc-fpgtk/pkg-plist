@@ -8,8 +8,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/fpgtkext.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/libpfpglib.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/libpfpgtk.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/libpfpgtkext.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

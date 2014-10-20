@@ -632,20 +632,3 @@ share/locale/zh_TW/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/cinepaint.mo
 share/pixmaps/cinepaint.png
-@dirrm %%DATADIR%%/%%VER%%/scripts
-@dirrm %%DATADIR%%/%%VER%%/patterns
-@dirrm %%DATADIR%%/%%VER%%/palettes
-@dirrm %%DATADIR%%/%%VER%%/iol
-@dirrm %%DATADIR%%/%%VER%%/gradients
-@dirrm %%DATADIR%%/%%VER%%/curves
-@dirrm %%DATADIR%%/%%VER%%/brushes
-@dirrm %%DATADIR%%/%%VER%%
-@dirrm %%DATADIR%%
-@dirrm lib/cinepaint/%%VER%%/plug-ins
-@dirrm lib/cinepaint/%%VER%%/extra
-@dirrm lib/cinepaint/%%VER%%
-@dirrm lib/cinepaint
-@dirrm include/cinepaint/wire
-@dirrm include/cinepaint/libgimp
-@dirrm include/cinepaint/app
-@dirrm include/cinepaint

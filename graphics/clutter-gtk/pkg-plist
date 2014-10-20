@@ -36,5 +36,3 @@ libdata/pkgconfig/clutter-gtk-0.10.pc
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 share/gir-1.0/GtkClutter-0.10.gir
-@dirrm %%DOCSDIR%%
-@dirrm include/clutter-1.0/clutter-gtk

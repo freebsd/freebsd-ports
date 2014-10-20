@@ -108,28 +108,3 @@ man/man1/pfstag.1.gz
 %%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_image_templ_slider-above.html
 %%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_image_templ.html
 %%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_page_templ_short.html
-@dirrm include/pfs-1.2
-%%IMAGEMAGICK%%@dirrm %%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets
-%%IMAGEMAGICK%%@dirrm %%DATADIR%%/hdrhtml_hdrlabs_templ
-%%IMAGEMAGICK%%@dirrm %%DATADIR%%/hdrhtml_default_templ
-%%IMAGEMAGICK%%@dirrm %%DATADIR%%
-%%OCTAVE%%@cwd %%OCTAVE_BASE%%
-%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsclose.oct
-%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsget.oct
-%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsopen.oct
-%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsput.oct
-%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsread.oct
-%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfstransform_colorspace.oct
-%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfswrite.oct
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_close_frames.m
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_open_frames.m
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_read_luminance.m
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_read_rgb.m
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_read_xyz.m
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_write_rgb.m
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfssize.m
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfsview.m
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfsview_list.m
-%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfsview_rgb.m
-%%OCTAVE%%@dirrm %%OCTAVE_SITE_OCT%%/pfstools
-%%OCTAVE%%@dirrm %%OCTAVE_SITE_M%%/pfstools

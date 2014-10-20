@@ -50,7 +50,3 @@ lib/libvisual%%VER%%.so.0.0.0
 libdata/pkgconfig/libvisual%%VER%%.pc
 share/locale/es_AR/LC_MESSAGES/libvisual%%VER%%.mo
 share/locale/es_ES/LC_MESSAGES/libvisual%%VER%%.mo
-@dirrmtry share/locale/es_AR/LC_MESSAGES
-@dirrmtry share/locale/es_AR
-@dirrm include/libvisual%%VER%%/libvisual
-@dirrm include/libvisual%%VER%%

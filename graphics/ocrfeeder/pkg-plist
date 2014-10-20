@@ -353,31 +353,3 @@ share/locale/zh_TW/LC_MESSAGES/ocrfeeder.mo
 %%DATADIR%%/icons/window_icon.png
 %%DATADIR%%/menubar.ui
 %%DATADIR%%/spell-checker.ui
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/ocrfeeder/uk/figures
-@dirrm share/gnome/help/ocrfeeder/uk
-@dirrm share/gnome/help/ocrfeeder/sl/figures
-@dirrm share/gnome/help/ocrfeeder/sl
-@dirrm share/gnome/help/ocrfeeder/ru/figures
-@dirrm share/gnome/help/ocrfeeder/ru
-@dirrm share/gnome/help/ocrfeeder/gl/figures
-@dirrm share/gnome/help/ocrfeeder/gl
-@dirrm share/gnome/help/ocrfeeder/fr/figures
-@dirrm share/gnome/help/ocrfeeder/fr
-@dirrm share/gnome/help/ocrfeeder/es/figures
-@dirrm share/gnome/help/ocrfeeder/es
-@dirrm share/gnome/help/ocrfeeder/el/figures
-@dirrm share/gnome/help/ocrfeeder/el
-@dirrm share/gnome/help/ocrfeeder/de/figures
-@dirrm share/gnome/help/ocrfeeder/de
-@dirrm share/gnome/help/ocrfeeder/cs/figures
-@dirrm share/gnome/help/ocrfeeder/cs
-@dirrm share/gnome/help/ocrfeeder/C/figures
-@dirrm share/gnome/help/ocrfeeder/C
-@dirrm share/gnome/help/ocrfeeder
-@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/util
-@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/studio
-@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/odf
-@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/feeder
-@dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder

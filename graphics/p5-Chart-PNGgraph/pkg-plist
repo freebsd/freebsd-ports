@@ -10,7 +10,3 @@
 %%SITE_PERL%%/Chart/PNGgraph/pie.pm
 %%SITE_PERL%%/Chart/PNGgraph/points.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/PNGgraph/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/PNGgraph
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart
-@dirrmtry %%SITE_PERL%%/Chart/PNGgraph
-@dirrmtry %%SITE_PERL%%/Chart

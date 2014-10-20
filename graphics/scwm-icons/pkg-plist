@@ -550,5 +550,3 @@ share/scwm/pixmaps/xv.color.xpm
 share/scwm/pixmaps/xv.xpm
 share/scwm/pixmaps/xv2.xpm
 share/scwm/pixmaps/xview.xpm
-@dirrm share/scwm/pixmaps
-@dirrm share/scwm

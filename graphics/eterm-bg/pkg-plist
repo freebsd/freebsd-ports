@@ -52,7 +52,3 @@ share/Eterm/pix/tile/violetta.png
 share/Eterm/pix/tile/water_into_wine.png
 share/Eterm/pix/tile/wormhole.png
 share/Eterm/pix/tile/woven_memories.png
-@dirrmtry share/Eterm/pix/scale
-@dirrmtry share/Eterm/pix/tile
-@dirrmtry share/Eterm/pix
-@dirrmtry share/Eterm

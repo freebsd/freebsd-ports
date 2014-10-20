@@ -64,14 +64,4 @@
 %%PERL5_MAN3%%/Google::Chart::Type::XY.3.gz
 %%PERL5_MAN3%%/Google::Chart::Margin.3.gz
 %%PERL5_MAN3%%/Google::Chart::Types.3.gz
-@dirrm %%SITE_PERL%%/Google/Chart/Type
-@dirrm %%SITE_PERL%%/Google/Chart/Fill
-@dirrm %%SITE_PERL%%/Google/Chart/QueryComponent
-@dirrm %%SITE_PERL%%/Google/Chart/Data
-@dirrm %%SITE_PERL%%/Google/Chart/Axis
-@dirrm %%SITE_PERL%%/Google/Chart
-@dirrmtry %%SITE_PERL%%/Google
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Chart/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Chart
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google
-@dirrmtry %%SITE_PERL%%/mach

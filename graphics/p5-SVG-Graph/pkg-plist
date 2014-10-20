@@ -36,7 +36,3 @@
 %%SITE_PERL%%/SVG/Graph/Glyph/scatter.pm
 %%SITE_PERL%%/SVG/Graph/Glyph/tree.pm
 %%SITE_PERL%%/SVG/Graph/Glyph/wedge.pm
-@dirrmtry %%SITE_PERL%%/SVG/Graph/Glyph
-@dirrmtry %%SITE_PERL%%/SVG/Graph/Data
-@dirrmtry %%SITE_PERL%%/SVG/Graph
-@dirrmtry %%SITE_PERL%%/SVG

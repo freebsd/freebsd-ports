@@ -345,15 +345,3 @@ share/cmake/Modules/OpenCOLLADAConfig.cmake
 share/cmake/Modules/OpenCOLLADAConfigVersion.cmake
 share/cmake/Modules/OpenCOLLADATargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Modules/OpenCOLLADATargets.cmake
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake
-@dirrm lib/opencollada
-@dirrm include/opencollada/GeneratedSaxParser
-@dirrm include/opencollada/COLLADAStreamWriter
-@dirrm include/opencollada/COLLADASaxFrameworkLoader/generated15
-@dirrm include/opencollada/COLLADASaxFrameworkLoader/generated14
-@dirrm include/opencollada/COLLADASaxFrameworkLoader
-@dirrm include/opencollada/COLLADAFramework
-@dirrm include/opencollada/COLLADABaseUtils/Math
-@dirrm include/opencollada/COLLADABaseUtils
-@dirrm include/opencollada

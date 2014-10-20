@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ObjectDetect/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ObjectDetect/ObjectDetect.so
 %%PERL5_MAN3%%/Image::ObjectDetect.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ObjectDetect
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Image

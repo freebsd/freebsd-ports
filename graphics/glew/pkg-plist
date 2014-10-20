@@ -25,4 +25,3 @@ libdata/pkgconfig/glewmx.pc
 %%PORTDOCS%%%%DOCSDIR%%/new.png
 %%PORTDOCS%%%%DOCSDIR%%/ogl_sm.jpg
 %%PORTDOCS%%%%DOCSDIR%%/wglew.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

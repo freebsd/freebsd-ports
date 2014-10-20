@@ -316,4 +316,3 @@ bin/xrotfontdemo
 %%DATADIR%%/tree2.rgba
 %%DATADIR%%/tree3.rgb
 %%DATADIR%%/wrs_logo.rgb
-@dirrm %%DATADIR%%

@@ -32,14 +32,3 @@ share/dbus-1/interfaces/org.pwmt.zathura.xml
 %%NLS%%share/locale/ta_IN/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/zathura.mo
-@dirrm include/zathura
-%%NLS%%@dirrmtry share/locale/es_CL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_CL
-%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/id_ID
-%%NLS%%@dirrmtry share/locale/ta_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ta_IN
-%%NLS%%@dirrmtry share/locale/uk_UA/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk_UA
-@dirrmtry share/dbus-1/interfaces
-@dirrmtry share/dbus-1

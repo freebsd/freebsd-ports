@@ -32,7 +32,3 @@
 %%QT_QMLDIR%%/QtGraphicalEffects/private/GaussianMaskedBlur.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/private/SourceProxy.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/qmldir
-@dirrm %%QT_QMLDIR%%/QtGraphicalEffects/private
-@dirrm %%QT_QMLDIR%%/QtGraphicalEffects
-@dirrmtry %%QT_QMLDIR%%
-@dirrmtry %%QT_ARCHDIR%%

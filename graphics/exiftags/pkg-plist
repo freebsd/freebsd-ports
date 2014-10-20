@@ -6,4 +6,3 @@ man/man1/exiftags.1.gz
 man/man1/exiftime.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -7,8 +7,6 @@
 %%EXAMPLESDIR%%/msgs/fr.msg
 %%EXAMPLESDIR%%/msgs/ja.msg
 %%EXAMPLESDIR%%/msgs/nl.msg
-@dirrm %%EXAMPLESDIR%%/msgs
-@dirrm %%EXAMPLESDIR%%
 man/mann/img-bmp.n.gz
 man/mann/img-dted.n.gz
 man/mann/img-gif.n.gz
@@ -50,4 +48,3 @@ lib/Img/libtkimgwindow142.so.1
 lib/Img/libtkimgxpm142.so.1
 lib/Img/pkgIndex.tcl
 lib/Img/tkimgConfig.sh
-@dirrm lib/Img

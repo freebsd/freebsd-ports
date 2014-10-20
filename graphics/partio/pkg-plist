@@ -116,4 +116,3 @@ lib/libpartio.a
 %%PORTDOCS%%%%DOCSDIR%%/tab_s.png
 %%PORTDOCS%%%%DOCSDIR%%/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_8txt.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

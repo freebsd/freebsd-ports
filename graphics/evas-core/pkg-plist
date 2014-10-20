@@ -27,11 +27,3 @@ libdata/pkgconfig/evas.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-text.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/im1.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/red.png
-@dirrm include/evas-1
-@dirrm lib/evas/modules/engines/software_generic/%%E17_ARCH%%
-@dirrm lib/evas/modules/engines/software_generic
-@dirrmtry lib/evas/modules/engines
-@dirrmtry lib/evas/modules
-@dirrmtry lib/evas
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

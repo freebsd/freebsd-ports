@@ -491,11 +491,3 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodLatinW/arbol-w0030.dcw
 %%DATADIR%%/decsWoodLatinW/arbol-w0031.dcw
 %%DATADIR%%/decsWoodLatinW/arbol-w0043.dcw
-@dirrm %%DATADIR%%/decsWoodLatinW
-@dirrm %%DATADIR%%/decsWoodLatin
-@dirrm %%DATADIR%%/decsWoodCyrillic
-@dirrm %%DATADIR%%/decsWoodCur
-@dirrm %%DATADIR%%/conv
-@dirrm %%DATADIR%%
-@dirrmtry man/es/man1
-@dirrmtry man/es

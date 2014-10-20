@@ -3382,39 +3382,3 @@ include/X11/pixmaps/z/zug1.xpm
 include/X11/pixmaps/z/zug2.xpm
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/readem.shar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/X11/pixmaps/0
-@dirrm include/X11/pixmaps/1
-@dirrm include/X11/pixmaps/2
-@dirrm include/X11/pixmaps/3
-@dirrm include/X11/pixmaps/4
-@dirrm include/X11/pixmaps/5
-@dirrm include/X11/pixmaps/6
-@dirrm include/X11/pixmaps/8
-@dirrm include/X11/pixmaps/a
-@dirrm include/X11/pixmaps/b
-@dirrm include/X11/pixmaps/c
-@dirrm include/X11/pixmaps/d
-@dirrm include/X11/pixmaps/e
-@dirrm include/X11/pixmaps/f
-@dirrm include/X11/pixmaps/g
-@dirrm include/X11/pixmaps/h
-@dirrm include/X11/pixmaps/i
-@dirrm include/X11/pixmaps/j
-@dirrm include/X11/pixmaps/k
-@dirrm include/X11/pixmaps/l
-@dirrm include/X11/pixmaps/m
-@dirrm include/X11/pixmaps/n
-@dirrm include/X11/pixmaps/o
-@dirrm include/X11/pixmaps/p
-@dirrm include/X11/pixmaps/q
-@dirrm include/X11/pixmaps/r
-@dirrm include/X11/pixmaps/s
-@dirrm include/X11/pixmaps/t
-@dirrm include/X11/pixmaps/u
-@dirrm include/X11/pixmaps/v
-@dirrm include/X11/pixmaps/w
-@dirrm include/X11/pixmaps/x
-@dirrm include/X11/pixmaps/y
-@dirrm include/X11/pixmaps/z
-@dirrmtry include/X11/pixmaps

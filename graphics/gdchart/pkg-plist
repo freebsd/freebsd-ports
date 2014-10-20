@@ -6,9 +6,7 @@ lib/libgdc.so
 lib/libgdc.so.1
 %%PROFILE%%lib/libgdc_p.a
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ft_samp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdc_samp1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdc_samp2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdc_pie_samp.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

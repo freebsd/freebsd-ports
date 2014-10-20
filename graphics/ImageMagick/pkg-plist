@@ -1465,28 +1465,3 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/t-shirt.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/wand.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-6/www/source
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-6/www/api/MagickCore
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-6/www/api/MagickWand
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-6/www/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-6/www/Magick++
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-6/www
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-6/images/patterns
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-6/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-6
-@dirrm %%DATADIR%%-6
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Image
-%%MODULES%%@dirrmtry lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/filters
-%%MODULES%%@dirrmtry lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders
-%%MODULES%%@dirrmtry lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%
-@dirrmtry lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%
-@dirrmtry lib/ImageMagick-%%PORTVERSION%%
-@dirrm include/ImageMagick-6/wand
-@dirrm include/ImageMagick-6/magick
-@dirrm include/ImageMagick-6/Magick++
-@dirrm include/ImageMagick-6
-@dirrmtry etc/ImageMagick-6

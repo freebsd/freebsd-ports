@@ -18,4 +18,3 @@ lib/libGUI.a
 lib/libGUI.so
 lib/libGUI.so.0
 lib/libGUI.so.0.0.0
-@dirrm include/GUI

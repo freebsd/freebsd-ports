@@ -5,7 +5,3 @@
 %%SITE_PERL%%/GD/Text/Align.pm
 %%SITE_PERL%%/GD/Text/Wrap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Text/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Text
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
-@dirrmtry %%SITE_PERL%%/GD/Text
-@dirrmtry %%SITE_PERL%%/GD

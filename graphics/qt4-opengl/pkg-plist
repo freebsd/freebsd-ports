@@ -41,7 +41,3 @@
 %%QT_LIBDIR%%/libQtOpenGL.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtOpenGL.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtOpenGL.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtOpenGL
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

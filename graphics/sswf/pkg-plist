@@ -228,32 +228,3 @@ libdata/pkgconfig/libsswf_c.pc
 %%DATADIR%%/scripts/system/capabilities.asc
 %%DATADIR%%/scripts/system/security.asc
 %%DATADIR%%/scripts/system/system.asc
-@dirrm %%DATADIR%%/scripts/system
-@dirrm %%DATADIR%%/scripts/native
-@dirrm %%DATADIR%%/scripts/global
-@dirrm %%DATADIR%%/scripts/fonts
-@dirrm %%DATADIR%%/scripts/extensions
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/samples/web-site-anim
-@dirrm %%DATADIR%%/samples/sun-flower
-@dirrm %%DATADIR%%/samples/showfont
-@dirrm %%DATADIR%%/samples/scroller
-@dirrm %%DATADIR%%/samples/news-samples
-@dirrm %%DATADIR%%/samples/new-anim
-@dirrm %%DATADIR%%/samples/morph
-@dirrm %%DATADIR%%/samples/logo
-@dirrm %%DATADIR%%/samples/line-styles
-@dirrm %%DATADIR%%/samples/libya
-@dirrm %%DATADIR%%/samples/lanuit-mp3
-@dirrm %%DATADIR%%/samples/grid-button
-@dirrm %%DATADIR%%/samples/gradients
-@dirrm %%DATADIR%%/samples/functions
-@dirrm %%DATADIR%%/samples/dyn-button
-@dirrm %%DATADIR%%/samples/clock
-@dirrm %%DATADIR%%/samples/check_version
-@dirrm %%DATADIR%%/samples/c-samples
-@dirrm %%DATADIR%%/samples/asc_logo
-@dirrm %%DATADIR%%/samples
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%
-@dirrm include/sswf

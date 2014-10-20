@@ -22,6 +22,3 @@ lib/libglut.so.3.9.0
 %%PORTDOCS%%%%DOCSDIR%%/ogl_sm.png
 %%PORTDOCS%%%%DOCSDIR%%/progress.html
 %%PORTDOCS%%%%DOCSDIR%%/structure.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry include/GL

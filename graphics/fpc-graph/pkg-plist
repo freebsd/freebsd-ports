@@ -8,8 +8,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/libpgraph.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/libpggigraph.a
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/libpsdlgraph.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -44,6 +44,3 @@ lib/libtestshade.so.1
 %%DATADIR%%/shaders/stdosl.h
 %%DATADIR%%/shaders/ubersurface.osl
 %%DATADIR%%/shaders/ubersurface.oso
-@dirrm include/OSL
-@dirrm %%DATADIR%%/shaders
-@dirrm %%DATADIR%%

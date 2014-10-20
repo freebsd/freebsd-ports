@@ -20,7 +20,3 @@
 %%SITE_PERL%%/GD/Graph/points.pm
 %%SITE_PERL%%/GD/Graph/utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
-@dirrmtry %%SITE_PERL%%/GD/Graph
-@dirrmtry %%SITE_PERL%%/GD

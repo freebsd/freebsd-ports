@@ -46,4 +46,3 @@ libdata/pkgconfig/lensfun.pc
 %%DATADIR%%/slr-tamron.xml
 %%DATADIR%%/slr-tokina.xml
 %%DATADIR%%/slr-ussr.xml
-@dirrm %%DATADIR%%

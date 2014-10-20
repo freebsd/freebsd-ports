@@ -8,5 +8,3 @@
 %%SITE_PERL%%/Graphics/ColorNames/Netscape.pm
 %%SITE_PERL%%/Graphics/ColorNames/Windows.pm
 %%SITE_PERL%%/Graphics/ColorNames/X.pm
-@dirrmtry %%SITE_PERL%%/Graphics/ColorNames
-@dirrmtry %%SITE_PERL%%/Graphics

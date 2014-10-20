@@ -12,7 +12,3 @@ share/locale/pt_BR/LC_MESSAGES/gimp20-save-for-web.mo
 share/locale/ru/LC_MESSAGES/gimp20-save-for-web.mo
 share/locale/sk/LC_MESSAGES/gimp20-save-for-web.mo
 share/locale/sv/LC_MESSAGES/gimp20-save-for-web.mo
-@dirrm %%DATADIR%%/help/images
-@dirrm %%DATADIR%%/help/en
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%

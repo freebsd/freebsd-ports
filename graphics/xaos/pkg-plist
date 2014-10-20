@@ -252,9 +252,3 @@ man/man6/xaos.6.gz
 %%NLS%%share/locale/pt/LC_MESSAGES/xaos.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/xaos.mo
 share/pixmaps/xaos.png
-@dirrm %%XAOSDIR%%/tutorial
-@dirrm %%XAOSDIR%%/help
-@dirrm %%XAOSDIR%%/examples
-@dirrm %%XAOSDIR%%/doc
-@dirrm %%XAOSDIR%%/catalogs
-@dirrm %%XAOSDIR%%

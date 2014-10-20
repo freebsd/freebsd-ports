@@ -54,23 +54,3 @@ GNUstep/Local/Applications/PRICE.app/Resources/TraceEdges.gorm/objects.gorm
 GNUstep/Local/Applications/PRICE.app/Resources/price-icon-os.tiff
 GNUstep/Local/Applications/PRICE.app/stamp.make
 GNUstep/Local/Tools/PRICE
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/TraceEdges.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Scale.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/ProgressPanel.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Preview.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/PRWindow.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Median.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Histogram.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Grayscale.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Equalize.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/DFTLowPass.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/DFTHighPass.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/CustTraceEdges.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Curves.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/CumulHistogram.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Crop.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Convolve55.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources/BriCon.gorm
-@dirrm GNUstep/Local/Applications/PRICE.app/Resources
-@dirrm GNUstep/Local/Applications/PRICE.app

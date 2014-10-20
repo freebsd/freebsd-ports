@@ -17,6 +17,3 @@
 %%SITE_PERL%%/Geo/Surface.pm
 %%SITE_PERL%%/Geo/Surface.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Point/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Point
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/Geo

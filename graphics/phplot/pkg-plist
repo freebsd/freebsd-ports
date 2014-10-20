@@ -1,6 +1,5 @@
 include/php/phplot/phplot.php
 include/php/phplot/rgb.inc.php
-@dirrm include/php/phplot
 %%PORTDOCS%%%%DOCSDIR%%/ref-axes.html
 %%PORTDOCS%%%%DOCSDIR%%/TuneYAutoTicks.html
 %%PORTDOCS%%%%DOCSDIR%%/ex-boxplot1.html
@@ -369,6 +368,3 @@ include/php/phplot/rgb.inc.php
 %%PORTDOCS%%%%DOCSDIR%%/ref-textfonts.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-iocontrol.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/SpringGraph.3.gz
 %%SITE_PERL%%/SpringGraph.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SpringGraph/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SpringGraph

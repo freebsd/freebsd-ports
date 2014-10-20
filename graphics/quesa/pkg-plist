@@ -26,4 +26,3 @@ lib/libquesa.a
 lib/libquesa.so
 lib/libquesa.so.0
 lib/libquesa.so.0.0.0
-@dirrm include/quesa

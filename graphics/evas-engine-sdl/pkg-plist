@@ -1,9 +1,3 @@
 include/evas-1/Evas_Engine_SDL_16.h
 lib/evas/modules/engines/software_16_sdl/%%E17_ARCH%%/module.so
 libdata/pkgconfig/evas-software-sdl.pc
-@dirrm lib/evas/modules/engines/software_16_sdl/%%E17_ARCH%%
-@dirrm lib/evas/modules/engines/software_16_sdl
-@dirrmtry lib/evas/modules/engines
-@dirrmtry lib/evas/modules
-@dirrmtry lib/evas
-@dirrmtry include/evas-1

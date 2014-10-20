@@ -42,5 +42,3 @@ share/icons/hicolor/scalable/apps/viewnior.svg
 %%DATADIR%%/pixmaps/object-rotate-right.png
 %%DATADIR%%/vnr-crop-dialog.ui
 %%DATADIR%%/vnr-preferences-dialog.ui
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

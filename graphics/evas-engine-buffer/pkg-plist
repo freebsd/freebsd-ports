@@ -1,9 +1,3 @@
 include/evas-1/Evas_Engine_Buffer.h
 lib/evas/modules/engines/buffer/%%E17_ARCH%%/module.so
 libdata/pkgconfig/evas-software-buffer.pc
-@dirrm lib/evas/modules/engines/buffer/%%E17_ARCH%%
-@dirrm lib/evas/modules/engines/buffer
-@dirrmtry lib/evas/modules/engines
-@dirrmtry lib/evas/modules
-@dirrmtry lib/evas
-@dirrmtry include/evas-1

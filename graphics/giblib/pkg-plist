@@ -15,4 +15,3 @@ lib/libgiblib.so
 lib/libgiblib.so.1
 lib/libgiblib.so.1.0.6
 libdata/pkgconfig/giblib.pc
-@dirrm include/giblib

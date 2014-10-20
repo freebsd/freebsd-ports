@@ -64,28 +64,3 @@
 %%TOMCATDIR%%/webapps/barbecue/WEB-INF/lib/jdom.jar
 %%TOMCATDIR%%/webapps/barbecue/WEB-INF/web.xml
 share/java/classes/barbecue.jar
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/lib
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/twod/pdf417
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/twod
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/postnet
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/output
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/linear/upc
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/linear/twoOfFive
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/linear/postnet
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/linear/ean
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/linear/code39
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/linear/code128
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/linear/codabar
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/linear
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/formatter
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue/env
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge/barbecue
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net/sourceforge
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/net
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes/META-INF
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF/classes
-@dirrm %%TOMCATDIR%%/webapps/barbecue/WEB-INF
-@dirrm %%TOMCATDIR%%/webapps/barbecue/META-INF
-@dirrm %%TOMCATDIR%%/webapps/barbecue
-@dirrmtry %%TOMCATDIR%%/webapps
-@dirrmtry %%TOMCATDIR%%

@@ -49,9 +49,3 @@
 %%SITE_PERL%%/Color/Library/Dictionary/Windows.pm
 %%SITE_PERL%%/Color/Library/Dictionary/X11.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Library/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Library
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color
-@dirrmtry %%SITE_PERL%%/Color/Library/Dictionary/NBS_ISCC
-@dirrmtry %%SITE_PERL%%/Color/Library/Dictionary
-@dirrmtry %%SITE_PERL%%/Color/Library
-@dirrmtry %%SITE_PERL%%/Color

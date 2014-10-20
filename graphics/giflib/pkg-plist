@@ -88,4 +88,3 @@ man/man1/text2gif.1.gz
 %%DOCBOOK%%%%DOCSDIR%%/raw2gif.html
 %%DOCBOOK%%%%DOCSDIR%%/rgb2gif.html
 %%DOCBOOK%%%%DOCSDIR%%/text2gif.html
-%%DOCBOOK%%@dirrm %%DOCSDIR%%

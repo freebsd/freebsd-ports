@@ -45,10 +45,3 @@ share/pixmaps/klatexformula-128.png
 share/pixmaps/klatexformula-16.png
 share/pixmaps/klatexformula-32.png
 share/pixmaps/klatexformula-64.png
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
-@dirrm share/klatexformula/rccresources
-@dirrm share/klatexformula
-@dirrm include/klftools
-@dirrm include/klfbackend
-@dirrm include/klfapp

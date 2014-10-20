@@ -119,20 +119,3 @@ share/gimageview/pixmaps/default/zoom_out.xpm
 %%NLS%%share/locale/fr/LC_MESSAGES/gimageview.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gimageview.mo
 share/pixmaps/gimv.png
-@dirrm lib/gimageview/archiver
-@dirrm lib/gimageview/image_loader
-@dirrm lib/gimageview/image_saver
-@dirrmtry lib/gimageview/image_view
-@dirrm lib/gimageview/io_stream
-@dirrm lib/gimageview/thumbnail
-@dirrm lib/gimageview/thumbnail_view
-@dirrm lib/gimageview
-@dirrm share/doc/gimageview/html/ja
-@dirrm share/doc/gimageview/html
-@dirrm share/doc/gimageview/text/C
-@dirrm share/doc/gimageview/text/ja
-@dirrm share/doc/gimageview/text
-@dirrm share/doc/gimageview
-@dirrm share/gimageview/pixmaps/default
-@dirrm share/gimageview/pixmaps
-@dirrm share/gimageview

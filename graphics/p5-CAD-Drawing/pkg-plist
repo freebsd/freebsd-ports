@@ -22,8 +22,3 @@
 %%SITE_PERL%%/CAD/Drawing/Manipulate.pm
 %%SITE_PERL%%/CAD/Drawing/Manipulate/Graphics.pm
 %%SITE_PERL%%/CAD/Drawing/Manipulate/Transform.pm
-@dirrmtry %%SITE_PERL%%/CAD/Drawing/Manipulate
-@dirrmtry %%SITE_PERL%%/CAD/Drawing/IO
-@dirrmtry %%SITE_PERL%%/CAD/Drawing/Calculate
-@dirrmtry %%SITE_PERL%%/CAD/Drawing
-@dirrmtry %%SITE_PERL%%/CAD

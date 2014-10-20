@@ -14,8 +14,3 @@ GNUstep/Local/Library/Headers/CameraKit
 GNUstep/Local/Library/Libraries/libCameraKit.so
 GNUstep/Local/Library/Libraries/libCameraKit.so.%%MAJORVERSION%%
 GNUstep/Local/Library/Libraries/libCameraKit.so.%%VERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm GNUstep/Local/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm GNUstep/Local/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/CameraKit.framework/Versions
-@dirrm GNUstep/Local/Library/Frameworks/CameraKit.framework

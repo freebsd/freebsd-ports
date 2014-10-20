@@ -34,13 +34,3 @@ man/man1/iterm.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Region.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/IPA.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Point
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Morphology
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Misc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Local
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Global
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Geometry
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA

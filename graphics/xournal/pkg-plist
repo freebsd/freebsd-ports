@@ -8,7 +8,6 @@ share/mimelnk/application/x-xoj.desktop
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/pixmaps
 %%PORTDOCS%%%%DOCSDIR%%/screenshot.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/xournal/pixmaps/black.png
 share/xournal/pixmaps/blue.png
 share/xournal/pixmaps/default-pen.png
@@ -39,18 +38,7 @@ share/xournal/pixmaps/xoj.svg
 share/xournal/pixmaps/xournal.png
 share/xournal/pixmaps/xournal.svg
 share/xournal/pixmaps/yellow.png
-@dirrm share/xournal/pixmaps
-@dirrm share/xournal
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/mimelnk/application
-@dirrmtry share/mimelnk
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
-@dirrmtry share/icons/hicolor/scalable/mimetypes
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons

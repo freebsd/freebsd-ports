@@ -80,18 +80,3 @@ share/gauche-0.9/site/lib/gl/math3d.scm
 share/gauche-0.9/site/lib/gl/simple-image.scm
 share/gauche-0.9/site/lib/gl/simple/image.scm
 share/gauche-0.9/site/lib/gl/simple/viewer.scm
-@dirrm share/gauche-0.9/site/lib/gl/simple
-@dirrm share/gauche-0.9/site/lib/gl
-@dirrmtry share/gauche-0.9/site/lib
-@dirrmtry share/gauche-0.9/site
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slbook/ogl2particle
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slbook/ogl2brick
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slbook
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/glbook
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cg
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/gauche-0.9/site/include/gauche
-@dirrmtry lib/gauche-0.9/site/include
