@@ -15,7 +15,7 @@ LICENSE=	GPLv2 # or any later version
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 
-USES=		gmake tar:bzip2 shebangfix
+USES=		alias gmake shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-udev-rules-dir="\$${prefix}/lib/udev"
 SHEBANG_FILES=	alsaconf/alsaconf.in

@@ -17,7 +17,7 @@ OPTIONS_DEFINE_i386=	MMX
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=	gmake tar:bzip2
+USES=		alias gmake tar:bzip2
 MAKE_ARGS=	CC="${CC}" USE_CSS=0 OBJDIR="obj" \
 		CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LIBS}"
 

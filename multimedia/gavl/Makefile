@@ -13,7 +13,7 @@ COMMENT=	Library for handling uncompressed video and audio data
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix pkgconfig libtool
+USES=		alias libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

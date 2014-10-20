@@ -13,6 +13,7 @@ COMMENT=	MIDI to PCM software synthesizer
 
 CONFLICTS=	timidity++-2.*
 
+USES=		alias
 TIINS=		goemon.tgz
 INSTALL_TARGET=	install.all
 
