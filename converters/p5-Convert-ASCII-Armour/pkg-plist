@@ -3,8 +3,3 @@
 %%SITE_PERL%%/Convert/ASCII/Armor.pm
 %%SITE_PERL%%/Convert/ASCII/Armour.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII/Armour/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII/Armour
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
-@dirrm %%SITE_PERL%%/Convert/ASCII
-@dirrmtry %%SITE_PERL%%/Convert

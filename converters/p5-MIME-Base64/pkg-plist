@@ -4,6 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/MIME/QuotedPrint.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MIME

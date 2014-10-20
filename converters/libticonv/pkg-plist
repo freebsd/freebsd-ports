@@ -6,4 +6,3 @@ lib/libticonv.so
 lib/libticonv.so.7
 lib/libticonv.so.7.0.4
 libdata/pkgconfig/ticonv.pc
-@dirrmtry include/tilp2

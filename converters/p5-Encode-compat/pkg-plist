@@ -5,7 +5,3 @@
 %%SITE_PERL%%/Encode/compat/Alias.pm
 %%PERL5_MAN3%%/Encode::compat.3.gz
 %%PERL5_MAN3%%/Encode::compat::Alias.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/compat
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
-@dirrm %%SITE_PERL%%/Encode/compat
-@dirrmtry %%SITE_PERL%%/Encode

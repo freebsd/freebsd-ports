@@ -185,8 +185,3 @@ bin/umap
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8/Map8.so
 man/man1/umap.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8/maps
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode

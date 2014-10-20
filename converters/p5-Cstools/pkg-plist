@@ -29,7 +29,3 @@ bin/dbfcstocs
 man/man1/cssort.1.gz
 man/man1/cstocs.1.gz
 man/man1/dbfcstocs.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz
-@dirrm %%SITE_PERL%%/Cz/Cstocs/enc
-@dirrm %%SITE_PERL%%/Cz/Cstocs
-@dirrm %%SITE_PERL%%/Cz

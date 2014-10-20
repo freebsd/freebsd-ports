@@ -3,5 +3,3 @@ bin/cocot
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ja/ChangeLog.ja
 %%PORTDOCS%%%%DOCSDIR%%/ja/README.ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

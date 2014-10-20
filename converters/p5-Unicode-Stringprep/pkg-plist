@@ -11,7 +11,3 @@
 %%SITE_PERL%%/Unicode/Stringprep/Unassigned.pm
 %%SITE_PERL%%/Unicode/Stringprep/_Common.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Stringprep/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Stringprep
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
-@dirrm %%SITE_PERL%%/Unicode/Stringprep
-@dirrmtry %%SITE_PERL%%/Unicode

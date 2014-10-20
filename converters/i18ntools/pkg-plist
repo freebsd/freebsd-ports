@@ -176,8 +176,3 @@ man/man1/utrans.1.gz
 %%DATADIR%%/charmaps/binary/T.61-7BIT
 %%DATADIR%%/charmaps/binary/T.61-8BIT
 %%DATADIR%%/charmaps/binary/VIDEOTEX-SUPPL
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/charmaps/binary
-@dirrm %%DATADIR%%/charmaps
-@dirrm %%DATADIR%%
