@@ -18,12 +18,13 @@ RUN_DEPENDS=	${DATADIR}/basewsw/data1_15.pk3:${PORTSDIR}/games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake compiler:c++11-lang
+USES=		alias gmake compiler:c++11-lang
 
 WRKSRC=		${WRKDIR}/source/source
 ALL_TARGET=	game angelwrap
 RELEASEDIR=	${WRKSRC}/release
 AS_SDK_DIR=	${WRKSRC}/../libsrcs/angelscript/sdk
+LDFLAGS=	-L${LOCALBASE}/lib
 
 PORTDATA=	*
 PORTDOCS=	*.rtf *.doc sourcecode_quickstart.txt
@@ -111,6 +112,10 @@ ALL_TARGET+=	tv_server
 PLIST_FILES+=	bin/wswtv_server
 .endif
 
+.if ${OPSYS} == FreeBSD
+SWAPARCH=	s/x86_64/amd64/
+.endif
+
 post-patch: .SILENT
 # Unmute build and link commands, respect CFLAGS
 	${REINPLACE_CMD} -e 's|@$$(DO_CC|$$(DO_CC| ; /> Linking $$@/d ; \
@@ -118,7 +123,7 @@ post-patch: .SILENT
 		s| -msse2||' \
 		${WRKSRC}/Makefile
 # Adjust architecture names, get rid of ``freebsd_'' prefix
-	${REINPLACE_CMD} -e 's/x86_64/amd64/ ; s/freebsd_//' \
+	${REINPLACE_CMD} -e 's/freebsd_//; ${SWAPARCH}' \
 		${WRKSRC}/gameshared/q_arch.h
 # Search directory provided by warsow-data port instead of current (doing
 # so allows us not to install any wrapper scripts)
