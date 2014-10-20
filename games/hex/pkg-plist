@@ -12,7 +12,3 @@ bin/hex
 %%DATADIR%%/graphics/ball7.png
 %%DATADIR%%/graphics/ball8.png
 %%DATADIR%%/levels/Level1
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
