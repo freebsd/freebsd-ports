@@ -18,5 +18,3 @@ bin/steak
 %%DATADIR%%/pinguin_steak_icon.xpm
 %%DATADIR%%/.Steakconfig
 %%DATADIR%%/steak.xpm
-@dirrm %%DATADIR%%/Datensatz
-@dirrm %%DATADIR%%
