@@ -38,5 +38,3 @@ share/scim/tables/Wubi.bin
 share/scim/tables/ZhuYin-Big.bin
 share/scim/tables/ZhuYin.bin
 share/scim/tables/Ziranma.bin
-@dirrmtry share/scim/tables
-@dirrmtry share/scim/icons

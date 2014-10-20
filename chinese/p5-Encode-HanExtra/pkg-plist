@@ -6,8 +6,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW/Unisys/SOSI2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanExtra/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanExtra/HanExtra.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanExtra
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW/Unisys
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode

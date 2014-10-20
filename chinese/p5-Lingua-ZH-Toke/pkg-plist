@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Lingua::ZH::Toke.3.gz
 %%SITE_PERL%%/Lingua/ZH/Toke.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/Toke/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/Toke
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrmtry %%SITE_PERL%%/Lingua/ZH
-@dirrmtry %%SITE_PERL%%/Lingua

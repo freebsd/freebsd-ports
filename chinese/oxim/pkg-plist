@@ -22,14 +22,5 @@ man/man1/oxim.1.gz
 share/locale/zh_CN/LC_MESSAGES/oxim.mo
 share/locale/zh_HK/LC_MESSAGES/oxim.mo
 share/locale/zh_TW/LC_MESSAGES/oxim.mo
-@dirrm etc/oxim
-@dirrm lib/oxim/immodules
-@dirrm lib/oxim/modules
-@dirrm lib/oxim/panels
-@dirrm lib/oxim/tables
-@dirrm lib/oxim
-@dirrmtry share/locale/zh_HK
-%%GTK2%%@dirrmtry lib/gtk-2.0/immodules
-%%GTK2%%@dirrmtry lib/gtk-2.0
 %%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
 %%GTK2%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache

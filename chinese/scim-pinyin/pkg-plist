@@ -18,4 +18,3 @@ share/scim/pinyin/pinyin_phrase_index
 share/scim/pinyin/pinyin_phrase_lib
 share/scim/pinyin/pinyin_table
 share/scim/pinyin/special_table
-@dirrm share/scim/pinyin

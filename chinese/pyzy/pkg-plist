@@ -9,7 +9,3 @@ libdata/pkgconfig/pyzy-1.0.pc
 %%OPENPHRASE_DB%%%%DATADIR%%/db/open-phrase.db
 %%DATADIR%%/db/create_index.sql
 %%DATADIR%%/phrases.txt
-@dirrm include/pyzy-1.0/PyZy
-@dirrm include/pyzy-1.0
-@dirrm %%DATADIR%%/db
-@dirrm %%DATADIR%%

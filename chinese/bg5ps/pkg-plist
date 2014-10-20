@@ -19,6 +19,3 @@ bin/bg5ps
 bin/ttf2psm
 etc/bg5ps.conf.sample
 etc/gb2312-bg5ps.conf.sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

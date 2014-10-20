@@ -12,5 +12,3 @@ share/games/fortune/xiaoxing
 share/games/fortune/xiaoxing.dat
 share/games/fortune/yijing
 share/games/fortune/yijing.dat
-@dirrm share/games/fortune
-@dirrmtry share/games

@@ -6,4 +6,3 @@ share/cless.bg5
 share/cless.gb
 share/cless.hlp
 %%PORTDOCS%%%%DOCSDIR%%/README.CLESS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

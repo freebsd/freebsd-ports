@@ -25,6 +25,3 @@ lib/tabe/yin.db
 %%PORTDOCS%%%%DOCSDIR%%/ZuYinCode.txt
 %%PORTDOCS%%%%DOCSDIR%%/et26.txt
 %%PORTDOCS%%%%DOCSDIR%%/libtabe.sgml
-@dirrm include/tabe
-@dirrm lib/tabe
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

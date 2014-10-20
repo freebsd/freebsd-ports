@@ -12,5 +12,3 @@ share/fcitx/libpinyin/zhuyin_data/pinyin_index.bin
 share/icons/hicolor/48x48/status/fcitx-bopomofo.png
 share/locale/zh_CN/LC_MESSAGES/fcitx-libpinyin.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-libpinyin.mo
-@dirrm share/fcitx/libpinyin/zhuyin_data
-@dirrm share/fcitx/libpinyin

@@ -1,6 +1,4 @@
-@mode 4555
-bin/cce
-@mode
+@(,,4555) bin/cce
 bin/cceb5
 bin/cceconv
 bin/ccegbk
@@ -41,10 +39,3 @@ share/cce/ksc/hanglm16.bin
 share/cce/ksc/ksc.lx
 man/man1/cce.1.gz
 man/man1/cceconv.1.gz
-@dirrm share/cce/all
-@dirrm share/cce/big5
-@dirrm share/cce/gb
-@dirrm share/cce/gbk
-@dirrm share/cce/jis
-@dirrm share/cce/ksc
-@dirrm share/cce

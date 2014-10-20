@@ -5,7 +5,6 @@ include/cwnn/jslib.h
 include/cwnn/msg.h
 include/cwnn/rk_spclval.h
 include/cwnn/wnnerror.h
-@dirrm include/cwnn
 lib/wnn/zh_CN/cixing.data
 lib/wnn/zh_CN/cserverrc
 lib/wnn/zh_CN/libwnn.msg
@@ -100,11 +99,3 @@ lib/libcwnn.la
 lib/libcwnn.so
 lib/libcwnn.so.0
 lib/libcwnn.so.0.0.0
-@dirrm lib/wnn/zh_TW/rk_z
-@dirrm lib/wnn/zh_TW/rk_p
-@dirrm lib/wnn/zh_TW/rk
-@dirrm lib/wnn/zh_TW
-@dirrm lib/wnn/zh_CN/rk_z
-@dirrm lib/wnn/zh_CN/rk_p
-@dirrm lib/wnn/zh_CN/rk
-@dirrm lib/wnn/zh_CN
