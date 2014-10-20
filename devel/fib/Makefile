@@ -19,7 +19,7 @@ MANPAGES=	fh_extractmin.3 fh_makeheap.3 fh_makekeyheap.3
 
 .include <bsd.port.pre.mk>
 
-.if defined(NO_PROFILE) || ${OPSYS} == DragonFly
+.if defined(NO_PROFILE)
 PLIST_SUB+=	PROFILE="@comment "
 .else
 ALL_TARGET+=	libfib_p.a
