@@ -18,14 +18,6 @@ share/locale/ru/LC_MESSAGES/scmxx.mo
 %%PORTDOCS%%%%DOCSDIR%%/gsm0338.txt
 %%PORTDOCS%%%%DOCSDIR%%/gsmcharset.txt
 %%PORTDOCS%%%%DOCSDIR%%/smi.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/sms.txt
 %%EXAMPLESDIR%%/vCalendar.vcs
 %%EXAMPLESDIR%%/vCard.vcf
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry man/de/man1
-@dirrmtry man/de/
-@dirrmtry man/ru/man1
-@dirrmtry man/ru/
-@dirrmtry man/it/man1
-@dirrmtry man/it

@@ -26,10 +26,9 @@ bin/unicode2sms
 %%DATADIR%%/sql_demo
 %%DATADIR%%/unicode2sms
 @sample etc/smsd.conf.sample
-@dirrm %%DATADIR%%
-@dirrmtry(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%/incoming
-@dirrmtry(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%/outgoing
-@dirrmtry(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%/checked
-@dirrmtry(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%LOGDIR%%
-@dirrmtry(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%PIDDIR%%
-@dirrmtry(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%/incoming
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%/outgoing
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%/checked
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%LOGDIR%%
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%PIDDIR%%
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%

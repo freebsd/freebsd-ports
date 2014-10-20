@@ -25,8 +25,3 @@ share/pixmaps/yfklog.png
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASENOTES
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clubs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/onlinelog
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%

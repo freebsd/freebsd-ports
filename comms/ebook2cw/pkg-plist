@@ -4,5 +4,3 @@ man/man1/ebook2cw.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/isomap.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8map.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

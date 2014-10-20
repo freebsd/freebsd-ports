@@ -298,13 +298,3 @@ share/applications/cqrlog.desktop
 share/icons/cqrlog.png
 man/man1/cqrlog.1.gz
 share/pixmaps/cqrlog/cqrlog.png
-@dirrmtry share/pixmaps/cqrlog
-@dirrmtry %%DATADIR%%/ctyfiles
-@dirrmtry %%DATADIR%%/help/img
-@dirrmtry %%DATADIR%%/help
-@dirrmtry %%DATADIR%%/images
-@dirrmtry %%DATADIR%%/members
-@dirrmtry %%DATADIR%%/voice_keyer
-@dirrmtry %%DATADIR%%/xplanet
-@dirrmtry %%DATADIR%%/zipcodes
-@dirrmtry %%DATADIR%%

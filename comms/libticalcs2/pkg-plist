@@ -19,4 +19,3 @@ lib/libticalcs2.so.11
 lib/libticalcs2.so.11.0.3
 libdata/pkgconfig/ticalcs2.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libticalcs2.mo
-@dirrmtry include/tilp2

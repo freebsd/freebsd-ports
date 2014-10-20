@@ -1,3 +1,2 @@
 libexec/sredird
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

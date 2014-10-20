@@ -92,14 +92,3 @@ bin/tkscan
 %%TKSCANFAXDIR%%/tkscan
 %%TKSCANFAXDIR%%/tkscan.desktop
 %%TKSCANFAXDIR%%/tkscanfax.spec
-@dirrm %%TKSCANFAXDIR%%/tex
-@dirrm %%TKSCANFAXDIR%%/scan-drivers
-@dirrm %%TKSCANFAXDIR%%/images
-@dirrm %%TKSCANFAXDIR%%/doc/zh_TW
-@dirrm %%TKSCANFAXDIR%%/doc/ja_JP.UTF-8
-@dirrm %%TKSCANFAXDIR%%/doc/ja
-@dirrm %%TKSCANFAXDIR%%/doc/images
-@dirrm %%TKSCANFAXDIR%%/doc/en_US
-@dirrm %%TKSCANFAXDIR%%/doc/C
-@dirrm %%TKSCANFAXDIR%%/doc
-@dirrm %%TKSCANFAXDIR%%

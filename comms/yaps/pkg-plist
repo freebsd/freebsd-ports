@@ -3,4 +3,3 @@ etc/yaps.rc.sample
 man/man1/yaps.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/yaps.doc
 %%PORTDOCS%%%%DOCSDIR%%/yaps.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

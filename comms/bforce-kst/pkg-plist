@@ -32,11 +32,3 @@ etc/fido/bforce/freq.dirs.sample
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.kst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/u-srif/lib
-@dirrm %%DATADIR%%/u-srif/conf
-@dirrm %%DATADIR%%/u-srif
-@dirrm %%DATADIR%%/bfha
-@dirrm %%DATADIR%%
-@dirrm etc/fido/bforce
-@dirrm etc/fido

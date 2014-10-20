@@ -30,9 +30,7 @@ man/man1/xminicom.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/minicom.mo
-@owner uucp
-@dirrmtry etc/minicom
-@owner
+@dir(uucp,,) etc/minicom
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -78,12 +76,3 @@ man/man1/xminicom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/extras/terminfo/README
 %%PORTDOCS%%%%DOCSDIR%%/extras/terminfo/minicom
 %%PORTDOCS%%%%DOCSDIR%%/extras/unixlogin
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/linux
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/tables
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/termcap
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/terminfo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw

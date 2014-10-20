@@ -4,4 +4,3 @@ share/applications/hamfax.desktop
 %%DATADIR%%/hamfax_de.qm
 %%DATADIR%%/hamfax_fr.qm
 man/man1/hamfax.1.gz
-@dirrm %%DATADIR%%

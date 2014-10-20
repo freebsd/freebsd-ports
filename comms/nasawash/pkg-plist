@@ -1,4 +1,3 @@
 bin/nasawash
 %%PORTDOCS%%%%DOCSDIR%%/nasawash.txt
 %%PORTDOCS%%%%DOCSDIR%%/nasawash.upd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

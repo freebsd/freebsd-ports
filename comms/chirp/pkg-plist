@@ -278,8 +278,3 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirpui/shiftdialog.py
 %%PYTHON_SITELIBDIR%%/chirpui/shiftdialog.pyc
 %%PYTHON_SITELIBDIR%%/chirpui/shiftdialog.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/chirp
-@dirrm %%PYTHON_SITELIBDIR%%/chirpui
-@dirrm share/chirp/stock_configs
-@dirrm share/chirp
-@dirrm %%DOCSDIR%%

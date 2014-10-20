@@ -20,6 +20,3 @@ share/pixmaps/kb/icons/kb-icon.png
 %%PORTDOCS%%%%DOCSDIR%%/README_SRC
 %%PORTDOCS%%%%DOCSDIR%%/README_TIPS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/pixmaps/kb/icons
-@dirrm share/pixmaps/kb
-@dirrm %%DATADIR%%

@@ -26,7 +26,3 @@ man/man1/meteorsms.1.gz
 man/man1/o2sms.1.gz
 man/man1/threesms.1.gz
 man/man1/vodasms.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/o2sms
-@dirrm %%SITE_PERL%%/WWW/SMS/IE
-@dirrmtry %%SITE_PERL%%/WWW/SMS
-@dirrmtry %%SITE_PERL%%/WWW

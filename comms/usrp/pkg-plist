@@ -886,24 +886,3 @@ share/uhd/utils/usrp_n2xx_net_burner_gui.py
 %%PUSRP2%%share/uhd/images/usrp_n210_fw.bin
 %%PUSRP1%%share/uhd/images/usrp1_fpga_4rx.rbf
 %%PUSRP1%%share/uhd/images/usrp_b100_fw.ihx
-@dirrm share/uhd/images
-%%PUSRP1%%@dirrm share/uhd/fpga/usrp1/rev2
-%%PUSRP1%%@dirrm share/uhd/fpga/usrp1/rev4
-%%PUSRP1%%@dirrm share/uhd/fpga/usrp1
-%%PUSRP1%%@dirrm share/uhd/fpga
-@dirrm share/uhd/examples
-@dirrm share/uhd/tests
-@dirrm share/uhd/utils
-@dirrm share/uhd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doxygen/html/search
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doxygen/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doxygen
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/rst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/uhd/transport
-@dirrm include/uhd/types
-@dirrm include/uhd/usrp
-@dirrm include/uhd/utils
-@dirrm include/uhd

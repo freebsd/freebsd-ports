@@ -43,6 +43,3 @@ man/man1/predict.1.gz
 %%DATADIR%%/vocalizer/two.wav
 %%DATADIR%%/vocalizer/visible.wav
 %%DATADIR%%/vocalizer/zero.wav
-@dirrm %%DATADIR%%/default
-@dirrm %%DATADIR%%/vocalizer
-@dirrm %%DATADIR%%

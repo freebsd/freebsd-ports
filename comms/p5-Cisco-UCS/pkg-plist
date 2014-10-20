@@ -25,8 +25,3 @@
 %%PERL5_MAN3%%/Cisco::UCS::Interconnect.3.gz
 %%PERL5_MAN3%%/Cisco::UCS::MgmtEntity.3.gz
 %%PERL5_MAN3%%/Cisco::UCS::ServiceProfile.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/UCS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco
-@dirrmtry %%SITE_PERL%%/Cisco/UCS/Common
-@dirrmtry %%SITE_PERL%%/Cisco/UCS
-@dirrmtry %%SITE_PERL%%/Cisco

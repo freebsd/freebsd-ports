@@ -1,4 +1,3 @@
 bin/geoid
 share/pixmaps/geoid.png
 %%DATADIR%%/country.pos
-@dirrm %%DATADIR%%
