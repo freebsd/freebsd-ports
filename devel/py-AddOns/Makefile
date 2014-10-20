@@ -15,9 +15,7 @@ COMMENT=	Dynamically extend other objects with AddOns
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:${PORTSDIR}/devel/py-decoratortools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

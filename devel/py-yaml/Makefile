@@ -16,9 +16,8 @@ LICENSE=	MIT
 OPTIONS_DEFINE=	LIBYAML EXAMPLES
 LIBYAML_DESC=	Use textproc/libyaml for faster parsing
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 

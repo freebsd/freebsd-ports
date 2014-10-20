@@ -11,9 +11,8 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Basic functions for handling mime-types in Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 PYDISTUTILS_EGGINFO=	python_mimeparse-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
 .include <bsd.port.mk>

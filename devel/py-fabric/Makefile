@@ -26,9 +26,8 @@ TESTS_DESC=	Install nose for test suite
 
 TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
 
-USE_PYTHON=		-2.7
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2.7
+USE_PYTHON=	distutils autoplist
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

@@ -13,9 +13,7 @@ COMMENT=	Simple copy and paste in Python
 
 LICENSE=	MIT
 
-PYDISTUTILS_AUTOPLIST=	yes
-
-USE_PYDISTUTILS=	yes
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

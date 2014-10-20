@@ -19,11 +19,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:${PORTSDIR}/devel/py-extremes \
 		${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:${PORTSDIR}/devel/py-protocols-devel
 
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGVERSION=	0.5a1.dev_r2717
-
-USE_PYDISTUTILS=	yes
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 # to have a platform/release indipendent directory (necessary for strip cmd)
 pre-build:

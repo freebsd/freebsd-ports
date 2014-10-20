@@ -16,8 +16,7 @@ LICENSE=	LGPL20
 
 NO_WRKSUBDIR=	yes
 
-USES=		zip
-USE_PYTHON=	yes
+USES=		python zip
 
 do-build:
 	# compile python files

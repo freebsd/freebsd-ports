@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic time period checking library
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS

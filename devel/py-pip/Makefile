@@ -19,11 +19,9 @@ GH_COMMIT=	437fb31
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 # This port installs the following file in shared dirs
 # PLIST_FILES= bin/pip

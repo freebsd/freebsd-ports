@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-01jun01
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional programming, lazy expressions, and thread pools for Python
 
-USE_PYTHON=	2
+USES=		python:2
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS

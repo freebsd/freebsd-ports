@@ -13,8 +13,7 @@ COMMENT=	Python ORM-like layer on top of pymongo
 
 RUN_DEPENDS=	pymongo>=2.0.1:${PORTSDIR}/databases/pymongo
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

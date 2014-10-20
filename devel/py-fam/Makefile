@@ -12,10 +12,8 @@ DISTNAME=	python-fam-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to the File Alteration Monitor
 
-USES=		fam
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python fam
+USE_PYTHON=	distutils autoplist
 
 pre-patch:
 	${INSTALL_DATA} ${FILESDIR}/setup.py ${WRKSRC}

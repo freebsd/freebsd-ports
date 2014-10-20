@@ -22,9 +22,8 @@ AUTOMAKE_ARGS=	-a
 CONFIGURE_ARGS=	PY_PREFIX="${PREFIX}"
 USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake
 
-USES=		gmake perl5 compiler
+USES=		compiler gmake perl5 python
 USE_PERL5=	run
-USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"

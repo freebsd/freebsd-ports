@@ -14,9 +14,8 @@ COMMENT=	Python bindings for Shapelib
 
 LICENSE=	LGPL20
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-
+USES=		python
+USE_PYTHON=	distutils
 SHAPELIB=	shapelib-1.2.10
 USE_LDCONFIG=	yes
 

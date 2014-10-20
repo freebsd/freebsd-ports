@@ -12,9 +12,8 @@ DISTNAME=	pyncurses-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses binding for Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 

@@ -41,7 +41,7 @@ post-patch:
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=		${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 CONFIGURE_ENV+=		PYTHON="${PYTHON_CMD}" YASM="${LOCALBASE}/bin/yasm"
-USE_PYTHON_BUILD=	yes
+USES+=			python:build
 
 check regression-test test: build
 	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check

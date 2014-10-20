@@ -18,8 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=3.8:${PORTSDIR}/devel/py-zop
 		${PYTHON_PKGNAMEPREFIX}zope.proxy>3.3:${PORTSDIR}/net/py-zope.proxy \
 		${PYTHON_PKGNAMEPREFIX}zope.schema>=3.6:${PORTSDIR}/devel/py-zope.schema
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

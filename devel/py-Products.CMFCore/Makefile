@@ -19,8 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.localsitemanager>=0:${PORTSDIR}/devel/p
 		${PYTHON_PKGNAMEPREFIX}Products.ZSQLMethods>0:${PORTSDIR}/devel/py-Products.ZSQLMethods \
 		${PYTHON_PKGNAMEPREFIX}zope.app.publication>0:${PORTSDIR}/devel/py-zope.app.publication
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-#USES=			zope # cyclic dependency
+#USES=		zope # cyclic dependency
+USES=		python:2
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

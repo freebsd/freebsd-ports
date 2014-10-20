@@ -12,9 +12,8 @@ COMMENT=	Phabricator API Bindings
 
 LICENSE=	APACHE20
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	PYTEST
 PYTEST_DESC=	Install Python test dependency

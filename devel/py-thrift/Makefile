@@ -13,9 +13,8 @@ COMMENT=	Python interface to Thrift
 
 DISTINFO_FILE=	${PORTSDIR}/devel/thrift/distinfo
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib/py
 

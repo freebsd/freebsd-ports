@@ -11,9 +11,8 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tconfpy@tundraware.com
 COMMENT=	Python Configuration File Parser
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS
 

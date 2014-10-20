@@ -16,8 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>0:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:${PORTSDIR}/www/py-webkitgtk
 LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 PORTDOCS=	COPYING ChangeLog README UPGRADE
 

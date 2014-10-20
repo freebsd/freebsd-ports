@@ -33,7 +33,7 @@ PLIST_SUB=	ARCH=${ARCH} UNAME_R=${UNAME_R} VERSION=${PORTVERSION} \
 
 .if ${SLAVE_PORT} == no
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
-USE_PYTHON_BUILD=	2
+USES+=		python:2,build
 USE_GNOME=	glib20:build introspection:build
 NO_BUILD=	yes
 
@@ -49,13 +49,13 @@ LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 RUN_DEPENDS+=	pygobject3-common>=0:${PORTSDIR}/devel/pygobject3-common
 
 .if ${SLAVE_PORT} == python2
-USE_PYTHON=	2
+USES+=		python:2
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 .endif
 
 .if ${SLAVE_PORT} == python3
-USE_PYTHON=	3
+USES+=		python:3
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/py3cairo.pc:${PORTSDIR}/graphics/py3-cairo
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/py3cairo.pc:${PORTSDIR}/graphics/py3-cairo
 PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//}

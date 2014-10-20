@@ -15,8 +15,7 @@ COMMENT=	Python bindings for libevent
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 PROJECTHOST=	pyevent
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

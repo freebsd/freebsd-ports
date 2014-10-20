@@ -15,9 +15,7 @@ LICENSE=	ISCL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}args>=0.1.0:${PORTSDIR}/devel/py-args
 
-PYDISTUTILS_AUTOPLIST=	yes
-
-USE_PYDISTUTILS=	yes
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -18,9 +18,8 @@ RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
 		${PYTHON_PKGNAMEPREFIX}dulwich>=0.8.0:${PORTSDIR}/devel/dulwich \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

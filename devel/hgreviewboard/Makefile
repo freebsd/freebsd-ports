@@ -18,7 +18,7 @@ RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 		rbt:${PORTSDIR}/devel/rbtools
 
 WRKSRC=		${WRKDIR}/ccaughie-hgreviewboard-e461a0baf62d
-USE_PYTHON=	yes
+USES=		python
 
 NO_BUILD=	yes
 

@@ -12,8 +12,7 @@ MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Google open source IPv4/IPv6 manipulation library in Python
 
 PROJECTHOST=	ipaddr-py
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

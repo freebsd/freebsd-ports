@@ -13,8 +13,8 @@ COMMENT=	Pytemplate gives python developers a starting framework
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-pytemplate
 

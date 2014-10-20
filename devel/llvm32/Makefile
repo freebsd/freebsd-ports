@@ -120,10 +120,10 @@ CONFIGURE_ARGS+=	--disable-docs
 
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=		lit.1
-USE_PYTHON=		2
+USES+=			python:2
 LIT_COMMANDS=		lit llvm-lit FileCheck
 .else
-USE_PYTHON_BUILD=	2
+USES+=			python:2,build
 .endif
 
 .if ${PORT_OPTIONS:MLTOPLUGIN}

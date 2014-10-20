@@ -12,9 +12,8 @@ COMMENT=	Python style guide checker
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 regression-test: extract
 	@(cd ${WRKSRC}; ${PYTHON_CMD} ${PORTNAME}.py \

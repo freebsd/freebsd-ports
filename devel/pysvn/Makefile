@@ -15,9 +15,8 @@ LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion \
 		libneon.so:${PORTSDIR}/www/neon29
 
 # Python3 ready
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_NOEGGINFO=	yes
+USES=		python
+USE_PYTHON=	distutils noegginfo
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--apr-inc-dir=${LOCALBASE}/include/apr-1 \
 				--svn-root-dir=${LOCALBASE}

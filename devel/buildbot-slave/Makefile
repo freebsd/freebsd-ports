@@ -21,10 +21,8 @@ TESTS_DESC=	Install py-mock for test suite
 
 TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
 
-USES=			twisted:run,runner
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python twisted:run,runner
+USE_PYTHON=	distutils autoplist
 
 MAKE_ENV+=		NO_INSTALL_REQS=1
 

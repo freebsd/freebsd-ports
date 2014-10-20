@@ -13,9 +13,8 @@ COMMENT=	Python module for easily building good multi-command scripts
 
 LICENSE=	MIT
 
-USES=		zip
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2 zip
+USE_PYTHON=	distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

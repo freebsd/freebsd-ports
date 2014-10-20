@@ -16,9 +16,8 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libcld.so:${PORTSDIR}/devel/cld
 
-USES=		pkgconfig
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		pkgconfig python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	chromium_compact_language_detector
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cld.so

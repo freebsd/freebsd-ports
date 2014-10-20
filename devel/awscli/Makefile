@@ -19,9 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcdoc>=0.12.0:${PORTSDIR}/devel/py-bcdoc \
 		${PYTHON_PKGNAMEPREFIX}rsa>=3.1.2:${PORTSDIR}/security/py-rsa \
 		${PYTHON_PKGNAMEPREFIX}six>=1.1.0:${PORTSDIR}/devel/py-six
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 

@@ -10,8 +10,7 @@ MASTER_SITES=	SF/largefiles/largefiles/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstract Large File
 
-USES=		libtool
-USE_PYTHON=	yes
+USES=		libtool python
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

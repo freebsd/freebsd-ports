@@ -22,8 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.memoize>=0:${PORTSDIR}/www/py-plone.me
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}DateTime>=0:${PORTSDIR}/devel/py-DateTime
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-USES=			zope zip
+USE_PYTHON=	distutils
+USES=		python zope zip
 
 .include <bsd.port.mk>

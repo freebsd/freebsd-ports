@@ -21,9 +21,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 USE_QT4=	corelib qmake_build qtestlib moc_build network \
 		uic_build rcc_build xml xmlpatterns
 
-USES=		cmake tar:bzip2
+USES=		cmake python tar:bzip2
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 
 ALL_TARGET=	all
 

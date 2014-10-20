@@ -14,8 +14,7 @@ COMMENT=	Cross platform RAD GUI Building IDE for wxPython
 
 WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}
 
-USES=		dos2unix gettext zip
-USE_PYTHON=	yes
+USES=		dos2unix gettext python zip
 USE_WX=		3.0+
 WX_COMPS=	python
 DATADIR=	${PREFIX}/share/Boa

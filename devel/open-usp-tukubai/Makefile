@@ -9,8 +9,7 @@ MASTER_SITES=	https://uec.usp-lab.com/TUKUBAI/DOWNLOAD/
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Open usp Tukubai is OSS version of Tukubai commands set
 
-USES=		gmake tar:bzip2
-USE_PYTHON=	yes
+USES=		gmake python tar:bzip2
 
 NO_BUILD=	yes
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}
