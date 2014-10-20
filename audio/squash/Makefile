@@ -3,7 +3,7 @@
 
 PORTNAME=		squash
 PORTVERSION=		1.0
-PORTREVISION=	12
+PORTREVISION=		13
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ COMMENT=	Learning console-based MP3/OGG player
 LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libfftw.so:${PORTSDIR}/math/fftw \
 		libid3.so:${PORTSDIR}/audio/id3lib \
-		libmad.so:${PORTSDIR}/audio/mad \
+		libmad.so:${PORTSDIR}/audio/libmad \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libao.so:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
