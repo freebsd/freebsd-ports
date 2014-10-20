@@ -44,7 +44,7 @@ PLIST_SUB+=	GNOME:="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 USE_GNOME+=	pygtk2
 PLIST_SUB+=	PYTHON:=""
 CONFIGURE_ARGS+=--enable-python

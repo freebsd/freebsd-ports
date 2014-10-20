@@ -12,8 +12,7 @@ COMMENT=	Python library for deferring decorator actions
 
 LICENSE=	BSD4CLAUSE
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

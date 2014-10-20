@@ -29,9 +29,8 @@ SUB_LIST=	PORTNAME=${PORTNAME} \
 		HGUSER=${HGUSER}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 HGSVCONF_FILES=	access.conf \
 		remote-hgrc.d/access.rc \

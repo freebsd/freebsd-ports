@@ -23,11 +23,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.4:${PORTSDIR}/devel/py-nose
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:${PORTSDIR}/devel/py-decorator \
 		${PYTHON_PKGNAMEPREFIX}zope.component>3.4.0:${PORTSDIR}/devel/py-zope.component
 
-USE_GNOME=		pygtk2
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-INSTALLS_ICONS=		yes
+USE_GNOME=	pygtk2
+USES=		python
+USE_PYTHON=	distutils autoplist
+INSTALLS_ICONS=	yes
 
 PLIST_SUB=	DOCKING_EGG="${DOCKING_EGG}" GAPHAS_EGG="${GAPHAS_EGG}"
 

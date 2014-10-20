@@ -13,7 +13,7 @@ COMMENT=	World Timezone Definitions for Python
 
 LICENSE=	MIT
 
-USES=		tar:bzip2
+USES=		python tar:bzip2
 USE_PYTHON=	autoplist distutils
 
 post-patch:

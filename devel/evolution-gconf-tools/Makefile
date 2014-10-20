@@ -14,7 +14,7 @@ COMMENT=	Scripts to make it easier to work with Evolution's configuration
 RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
+USES=		python
 USE_GNOME=	gnomeprefix
 
 post-patch:

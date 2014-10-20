@@ -38,7 +38,7 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 PORTDOCS+=	python-runtime.html
 ANTLR_PYTHON=	${WRKSRC}/lib/python
 .endif

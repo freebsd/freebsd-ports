@@ -15,10 +15,8 @@ COMMENT=	Python extension computing string distances and similarities
 LICENSE=	GPLv2
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/Levenshtein.so
-USES=		tar:bzip2
-USE_PYTHON=	yes
-USE_PYTHON_PREFIX=	yes
-USE_PYDISTUTILS=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils pythonprefix
 PYDISTUTILS_PKGNAME=	python-Levenshtein
 PROJECTHOST=	py${PORTNAME}
 

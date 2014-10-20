@@ -4,7 +4,7 @@
 PORTNAME=	boost-python-libs
 COMMENT=	Framework for interfacing Python and C++
 
-USE_PYTHON=	yes
+USES+=		python
 
 OPTIONS_DEFINE=	VERBOSE_BUILD DEBUG OPTIMIZED_CFLAGS
 VERBOSE_BUILD_DESC=	Show compiler messages

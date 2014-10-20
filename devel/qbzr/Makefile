@@ -21,11 +21,9 @@ RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 USE_QT4=	# empty
-USES=		gettext
+USES=		gettext python
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

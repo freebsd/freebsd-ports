@@ -14,9 +14,8 @@ COMMENT=	Fast and easy to use stand-alone template engine
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	*

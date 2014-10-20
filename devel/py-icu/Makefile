@@ -12,9 +12,8 @@ DISTNAME=	PyICU-${PORTVERSION}
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Python extension wrapping IBM's ICU C++ API
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 MAKE_ENV+= \
 	PYICU_INCLUDES="${PREFIX}/include" \

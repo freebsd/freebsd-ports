@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
 
-USES=		gettext:run shebangfix
+USES=		gettext:run python:run shebangfix
 SHEBANG_FILES=	src/POFileEquiv.in src/POFileGlossary.in
-USE_PYTHON_RUN=	yes
 
 post-patch:
 .for i in POFileChecker POFileClean POFileConsistency POFileEquiv POFileFill \

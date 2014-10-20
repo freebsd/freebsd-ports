@@ -45,8 +45,8 @@ post-install:
 .endif
 
 .if ${PORT_OPTIONS:MMATCHCOMPILER}
-MAKE_ENV+=		SRCDIR=build
-USE_PYTHON_BUILD=	2
+MAKE_ENV+=	SRCDIR=build
+USES+=		python:2,build
 .endif
 
 .if ${PORT_OPTIONS:MRULES}

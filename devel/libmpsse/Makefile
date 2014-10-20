@@ -13,10 +13,9 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
 LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig python:2
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
-USE_PYTHON=	2
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -lftdi

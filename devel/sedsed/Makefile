@@ -18,7 +18,7 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USE_PYTHON=	yes
+USES=		python
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/sedsed

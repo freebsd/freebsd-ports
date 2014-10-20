@@ -16,8 +16,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 

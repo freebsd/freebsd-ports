@@ -12,8 +12,8 @@ COMMENT=	Module for python that adds cpan-like functionality
 
 LICENSE=	BSD2CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 post-install:
 	@${MV} -f ${STAGEDIR}${PREFIX}/bin/ciphon.py ${STAGEDIR}${PREFIX}/bin/ciphon

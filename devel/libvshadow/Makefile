@@ -14,8 +14,7 @@ COMMENT=	Library to support the Volume Service Snapshot (VSS) format
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fuse gettext iconv libtool pathfix pkgconfig
-USE_PYTHON=	2
+USES=		fuse gettext iconv libtool pathfix pkgconfig python:2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

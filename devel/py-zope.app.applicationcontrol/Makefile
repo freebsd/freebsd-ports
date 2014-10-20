@@ -22,8 +22,7 @@ RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3 \
 		${PYTHON_PKGNAMEPREFIX}zope.size>=0:${PORTSDIR}/devel/py-zope.size \
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=3.7.0:${PORTSDIR}/devel/py-zope.traversing
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

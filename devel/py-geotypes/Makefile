@@ -14,9 +14,8 @@ COMMENT=	Python Interface to Support PostGIS
 
 LICENSE=	LGPL21
 
-USES=			zip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=			python zip
+USE_PYTHON=		distutils
 PYTHON_PKGNAMEPREFIX=	yes
 PYDISTUTILS_EGGINFO=	GeoTypes-0.7.0-py${PYTHON_VER}.egg-info
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/git-review \

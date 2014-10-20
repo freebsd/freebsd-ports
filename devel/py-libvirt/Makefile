@@ -17,12 +17,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
 
-USES=	pkgconfig shebangfix
+USES=	pkgconfig python shebangfix
 SHEBANG_FILES=	generator.py sanitytest.py setup.py
-
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"python"|"${PYTHON_CMD}"|g' \

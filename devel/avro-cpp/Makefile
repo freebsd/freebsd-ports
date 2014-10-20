@@ -16,9 +16,8 @@ COMMENT=	Data serialization system for C++
 
 LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
-USES=		cmake
+USES=		cmake python:build
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lang/c++
 

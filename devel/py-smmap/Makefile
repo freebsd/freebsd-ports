@@ -12,8 +12,7 @@ COMMENT=	Pure python sliding memory map manager
 
 LICENSE=	BSD
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

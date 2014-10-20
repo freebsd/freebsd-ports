@@ -20,9 +20,8 @@ OPTIONS_DEFINE=		POSIXGROUP_PATCH
 POSIXGROUP_PATCH_DESC=	Use posixGroup for group membership
 OPTIONS_DEFAULT=	POSIXGROUP_PATCH
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-#USES=			zope
+USE_PYTHON=	distutils
+USES=		python:2
 
 .include <bsd.port.options.mk>
 

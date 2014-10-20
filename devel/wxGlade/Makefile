@@ -14,7 +14,7 @@ COMMENT=	GUI builder for wxPython/wxWidgets written in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USE_PYTHON=	yes
+USES=		python
 USE_WX=		3.0+
 WX_COMPS=	python
 

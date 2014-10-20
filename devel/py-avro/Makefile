@@ -14,9 +14,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Data serialization system for python
 
-USE_PYDISTUTILS=	yes
-USE_PYTHON=		yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lang/py
 

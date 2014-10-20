@@ -16,9 +16,7 @@ LICENSE=	ZPL21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-#USES=			zope
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

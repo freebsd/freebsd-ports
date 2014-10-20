@@ -20,9 +20,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2:${PORTSDIR}/devel/py-unittest2
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Include tools for unit tests
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
 

@@ -12,8 +12,7 @@ DISTNAME=	python-ctags-${PORTVERSION}
 MAINTAINER=	ahkdiep@gmail.com
 COMMENT=	Python bindings for ctags index file
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

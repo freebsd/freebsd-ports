@@ -21,9 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py
 LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig python:2 tar:xz
 USE_GNOME=	glib20 introspection:build,run
-USE_PYTHON=	2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-docs --disable-introspection --with-ffi

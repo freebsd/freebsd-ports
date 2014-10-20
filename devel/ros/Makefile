@@ -30,9 +30,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 		gmake:${PORTSDIR}/devel/gmake \
 		sudo:${PORTSDIR}/security/sudo \
 		wget:${PORTSDIR}/ftp/wget
-USE_PYTHON=	2
 USE_LDCONFIG=	yes
-USES=		pkgconfig shebangfix tar:bzip2
+USES=		pkgconfig python:2 shebangfix tar:bzip2
 SHEBANG_FILES=	core/mk/make_pydev_project.py
 
 # rosmake does its own threading

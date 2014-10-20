@@ -12,9 +12,7 @@ COMMENT=	Classes and setuptools plugin for Mercurial repositories
 
 LICENSE=	GPLv2
 
-USES=		zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

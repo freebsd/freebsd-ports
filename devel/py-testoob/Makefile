@@ -15,10 +15,8 @@ COMMENT=	Testoob is an advanced unit testing framework for PyUnit
 OPTIONS_DEFINE=	TWISTED
 TWISTED_DESC=	enable running in threads
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 

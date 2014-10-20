@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Hachoir core parser
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

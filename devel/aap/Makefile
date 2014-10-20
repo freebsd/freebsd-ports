@@ -16,8 +16,7 @@ OPTIONS_DEFINE=	DOCS
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USES=		zip
-USE_PYTHON=	yes
+USES=		python zip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.options.mk>

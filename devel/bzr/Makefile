@@ -18,10 +18,9 @@ SFTP_DESC=	Paramiko for SFTP support
 CA_BUNDLE_DESC=	Include CA bundle for SSL cert validation
 OPTIONS_DEFAULT=	SFTP CA_BUNDLE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	bzr
-USES=		gettext
+USES=		gettext python
 MAKE_ENV=	BZR_LOG=/dev/null
 
 .include <bsd.port.options.mk>

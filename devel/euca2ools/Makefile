@@ -22,8 +22,7 @@ GH_ACCOUNT=	eucalyptus
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	79c7d3f
 
-USE_PYTHON=		-2.7
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2.7
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

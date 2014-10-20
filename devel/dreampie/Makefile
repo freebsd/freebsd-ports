@@ -12,9 +12,8 @@ COMMENT=	Python shell which is designed to be reliable and fun
 LICENSE=	GPLv3
 
 USE_GNOME=	pygtk2 pygtksourceview
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 pre-patch:
 	@${REINPLACE_CMD} -e "s|share/man/man1|man/man1|" ${WRKSRC}/setup.py

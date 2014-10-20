@@ -13,8 +13,8 @@ COMMENT=	Python implementation of an Erlang node
 
 LICENSE=	GPLv2
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=			python
+USE_PYTHON=		distutilss
 PYDISTUTILS_PKGNAME=	py_${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py_${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py_${PORTNAME}

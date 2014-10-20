@@ -56,6 +56,7 @@ EXPAT_CONFIGURE_OFF=	--without-expat
 EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python
+PYTHON_USES=		python:2
 PORT_READLINE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-gdb-tui-tui-io.c
 PORT_READLINE_USES=	readline:port
 TUI_CONFIGURE_ENABLE=	tui
@@ -64,10 +65,6 @@ TUI_CONFIGURE_ENABLE=	tui
 
 .if ! ${PORT_OPTIONS:MBUNDLED_READLINE}
 EXCLUDE+=	readline
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}

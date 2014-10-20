@@ -22,9 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 #   Twisted, but the user should feel free to install x11-toolits/py-gnome
 #   separately if desired.
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		tar:bzip2
+USES=		python:2 tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

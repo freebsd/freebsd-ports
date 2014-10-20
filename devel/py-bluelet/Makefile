@@ -12,8 +12,8 @@ COMMENT=	Pure-Python asynchronous I/O using coroutines
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/bluelet.py \
 		%%PYTHON_SITELIBDIR%%/bluelet.pyc \

@@ -31,11 +31,10 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 CONFLICTS=	anjuta-3.[0-9]*
 
 USES=		desktop-file-utils gmake gettext libtool pathfix \
-		perl5 pkgconfig shared-mime-info shebangfix tar:bzip2
+		perl5 pkgconfig python shared-mime-info shebangfix tar:bzip2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix vte gtksourceview2 libgda4
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes

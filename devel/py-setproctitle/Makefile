@@ -12,9 +12,8 @@ COMMENT=	Allow customization of the process title
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	COPYRIGHT HISTORY.rst README.rst
 

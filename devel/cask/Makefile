@@ -18,7 +18,7 @@ GH_COMMIT=	3c0ca37
 GH_PROJECT=	cask
 
 USE_EMACS=	yes
-USE_PYTHON=	yes
+USES=		python
 
 NO_BUILD=	yes
 

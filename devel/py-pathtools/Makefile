@@ -14,10 +14,8 @@ LICENSE=	MIT
 
 OPTIONS_DEFINE=	DOCS
 
-PYDISTUTILS_AUTOPLIST=	yes
-
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.options.mk>
 

@@ -17,9 +17,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}nose>=1.1.2:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}unittest2:${PORTSDIR}/devel/py-unittest2
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 PORTDOCS=	README.rst
 
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}

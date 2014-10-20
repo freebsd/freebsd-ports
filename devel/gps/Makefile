@@ -21,10 +21,9 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libgtkada.so:${PORTSDIR}/x11-toolkits/gtkada3
 
 GNU_CONFIGURE=		yes
-USES=			ada gmake perl5 pkgconfig tar:bzip2
+USES=			ada gmake perl5 pkgconfig python tar:bzip2
 USE_PERL5=		build
 USE_GNOME=		glib20
-USE_PYTHON=		yes
 USE_GNOME=		pygobject3
 PYCOMPILE=		${PREFIX}/lib/${PYTHON_VERSION}/compileall.py
 AWKREVDATE=		'/Last Changed Date/ {print "\"s|unknown date|" $$4 "|\""}'

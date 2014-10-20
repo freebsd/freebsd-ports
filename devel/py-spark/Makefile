@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scanning, Parsing, and Rewriting Kit
 
-USE_PYTHON=	2
+USES=		python:2
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS

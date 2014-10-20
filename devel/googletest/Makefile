@@ -13,10 +13,9 @@ COMMENT=	Framework for writing C++ tests on a variety of platforms
 
 LICENSE=	BSD3CLAUSE
 
-USES=		shebangfix libtool
+USES=		libtool python:2,build shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	2
 
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	/usr/bin/env python2

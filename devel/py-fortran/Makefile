@@ -14,8 +14,7 @@ COMMENT=	Creating extensions to the Python language with Fortran routines
 
 RUN_DEPENDS=	${PYNUMERIC}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

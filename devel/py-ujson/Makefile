@@ -12,9 +12,7 @@ COMMENT=	Ultra fast JSON encoder and decoder for Python
 
 LICENSE=	BSD
 
-USES=		zip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

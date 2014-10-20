@@ -29,9 +29,8 @@ USE_QT4=	declarative designer gui help qmake_build \
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		PYTHON_VERSION=${PYTHON_VERSION}
 
-USES=		cmake tar:bzip2
+USES=		cmake python:2 tar:bzip2
 USE_LDCONFIG=	yes
-USE_PYTHON=	2
 
 .include <bsd.port.pre.mk>
 

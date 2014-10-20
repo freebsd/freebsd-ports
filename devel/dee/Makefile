@@ -15,10 +15,9 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	libicutu.so:${PORTSDIR}/devel/icu
 
-USES=	gmake pkgconfig pathfix libtool
+USES=		gmake libtool pkgconfig pathfix python
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 introspection:build
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-gtk-doc-html \

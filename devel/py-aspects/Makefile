@@ -14,9 +14,8 @@ COMMENT=	Lightweight aspect oriented programming library for Python
 
 LICENSE=	LGPL21
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 SUB_FILES=	pkg-message
 

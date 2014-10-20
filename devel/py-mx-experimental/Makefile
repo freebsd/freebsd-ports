@@ -15,8 +15,8 @@ COMMENT=	The eGenix mx Extensions - EXPERIMENTAL Package
 BUILD_DEPENDS=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/gmp
 #RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:${PORTSDIR}/lang/py-mx-base
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	egenix-mx-experimental
 
 post-patch:

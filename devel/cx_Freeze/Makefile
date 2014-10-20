@@ -10,7 +10,7 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	The cx_Freeze is a set of utilities for freezing Python scripts
 
 USE_GCC=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

@@ -12,8 +12,8 @@ COMMENT=	Python logging module
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS
 

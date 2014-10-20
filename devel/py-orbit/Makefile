@@ -17,9 +17,8 @@ COMMENT=	Python bindings for ORBit2
 
 CONFLICTS=	py*-omniorb-[0-9]*
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	orbit2
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

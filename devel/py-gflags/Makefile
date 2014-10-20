@@ -14,8 +14,8 @@ COMMENT=	Commandline flags module for Python
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
+USES=		python:2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	python_gflags
 
 PROJECTHOST=	python-gflags

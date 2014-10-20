@@ -50,8 +50,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3 \
 		${PYTHON_PKGNAMEPREFIX}Products.ZSQLMethods>0:${PORTSDIR}/devel/py-Products.ZSQLMethods
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-USES=			zope zip
+USE_PYTHON=	distutils
+USES=		python:2 zope zip
 
 .include <bsd.port.mk>
