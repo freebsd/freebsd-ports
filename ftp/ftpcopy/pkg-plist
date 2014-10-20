@@ -10,4 +10,3 @@ man/man1/ftpls.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/ftpcopy.html
 %%PORTDOCS%%%%DOCSDIR%%/ftpls.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

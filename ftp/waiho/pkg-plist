@@ -10,5 +10,3 @@ GNUstep/Local/Applications/Waiho.app/Resources/Waiho.tiff
 GNUstep/Local/Applications/Waiho.app/Waiho
 GNUstep/Local/Applications/Waiho.app/stamp.make
 GNUstep/Local/Tools/Waiho
-@dirrm GNUstep/Local/Applications/Waiho.app/Resources
-@dirrm GNUstep/Local/Applications/Waiho.app

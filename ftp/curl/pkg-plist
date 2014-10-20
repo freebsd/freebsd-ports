@@ -281,4 +281,3 @@ man/man3/libcurl-share.3.gz
 man/man3/libcurl-tutorial.3.gz
 man/man3/libcurl.3.gz
 share/aclocal/libcurl.m4
-@dirrm include/curl

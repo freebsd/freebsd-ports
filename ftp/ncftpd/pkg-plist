@@ -5,4 +5,3 @@ bin/ncftpd_repquota
 bin/ncftpd_spy
 etc/ncftpd/general.cf-dist
 etc/ncftpd/domain.cf-dist
-@dirrmtry etc/ncftpd

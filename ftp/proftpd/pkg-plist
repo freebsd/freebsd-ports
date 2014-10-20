@@ -7,16 +7,9 @@ bin/ftptop
 bin/ftpwho
 bin/prxs
 etc/PROFTPD-MIB.txt
-@unexec if cmp -s %D/etc/proftpd.conf %D/etc/proftpd.conf.sample; then rm -f %D/etc/proftpd.conf; fi
-etc/proftpd.conf.sample
-@exec cp -n %D/%F %B/proftpd.conf
-@unexec if cmp -s %D/etc/proftpd/dhparams.pem %D/etc/proftpd/dhparams.pem.sample; then rm -f %D/etc/proftpd/dhparams.pem; fi
-etc/proftpd/dhparams.pem.sample
-@exec cp -n %D/%F %B/dhparams.pem
-@unexec if cmp -s %D/etc/proftpd/blacklist.dat %D/etc/proftpd/blacklist.dat.sample; then rm -f %D/etc/proftpd/blacklist.dat; fi
-etc/proftpd/blacklist.dat.sample
-@exec cp -n %D/%F %B/blacklist.dat
-@exec mkdir -p %%LOCALSTATEDIR%%/proftpd
+@sample etc/proftpd.conf.sample
+@sample etc/proftpd/dhparams.pem.sample
+@sample etc/proftpd/blacklist.dat.sample
 include/proftpd/ascii.h
 include/proftpd/auth.h
 include/proftpd/bindings.h
@@ -180,20 +173,4 @@ sbin/proftpd
 %%NLS%%share/locale/bg_BG/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/ko_KR/LC_MESSAGES/proftpd.mo
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bg_BG/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ko_KR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
-%%NLS%%@dirrmtry share/locale/ja_JP
-%%NLS%%@dirrmtry share/locale/it_IT
-%%NLS%%@dirrmtry share/locale/ru_RU
-%%NLS%%@dirrmtry share/locale/bg_BG
-%%NLS%%@dirrmtry share/locale/ko_KR
-@dirrmtry etc/proftpd
-@dirrm include/proftpd
-@dirrmtry lib/proftpd
-@dirrmtry libexec/proftpd
-@unexec rmdir %%LOCALSTATEDIR%%/proftpd 2>/dev/null || true
+@dir %%LOCALSTATEDIR%%/proftpd

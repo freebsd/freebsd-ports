@@ -65,9 +65,3 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/style/cm.css
 %%WWWDIR%%/style/index.html
-@dirrmtry %%WWWDIR%%/img
-@dirrmtry %%WWWDIR%%/include/language
-@dirrmtry %%WWWDIR%%/include
-@dirrmtry %%WWWDIR%%/style
-@dirrmtry %%WWWDIR%%/tmp
-@dirrmtry %%WWWDIR%%

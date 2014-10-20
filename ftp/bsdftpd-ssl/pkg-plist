@@ -26,6 +26,3 @@ man/man1/ftps.1.gz
 %%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpchroot
 %%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpusers
 %%SERVER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc_conf_d.bsdftpd_ssl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cert
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
