@@ -1,0 +1,11 @@
+--- idl/GNUmakefile.in.orig	Sun Aug 18 17:38:33 2002
++++ idl/GNUmakefile.in	Fri Oct 18 17:32:26 2002
+@@ -4,7 +4,7 @@
+ VPATH=@srcdir@
+ INSTALL=@INSTALL@
+ 
+-INSTALLDIR = $(INSTALLIDLDIR)/omniORB
++INSTALLDIR = $(INSTALLIDLDIR)
+ 
+ FILES = Naming.idl bootstrap.idl corbaidl.idl echo.idl ir.idl orb.idl \
+         poa.idl poa_include.idl
