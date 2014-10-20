@@ -1,9 +1,2 @@
-@stopdaemon memcachedb
 bin/memcachedb
-@owner nobody
-@group nobody
-@mode 770
-@dirrmtry /var/db/memcachedb
-@mode
-@group
-@owner
+@dir(nobody,nobody, 770) /var/db/memcachedb

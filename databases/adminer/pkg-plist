@@ -199,38 +199,6 @@
 %%FULL%%%%WWWDIR%%/tests/logout.html
 %%FULL%%%%WWWDIR%%/tests/selenium.html
 %%FULL%%%%WWWDIR%%/todo.txt
-%%FULL%%@dirrm %%WWWDIR%%/adminer/drivers
-%%FULL%%@dirrm %%WWWDIR%%/adminer/include
-%%FULL%%@dirrm %%WWWDIR%%/adminer/lang
-%%FULL%%@dirrm %%WWWDIR%%/adminer/static
-@dirrm %%WWWDIR%%/adminer
-%%FULL%%@dirrm %%WWWDIR%%/designs/brade
-%%FULL%%@dirrm %%WWWDIR%%/designs/bueltge
-%%FULL%%@dirrm %%WWWDIR%%/designs/cvicebni-ubor
-%%FULL%%@dirrm %%WWWDIR%%/designs/haeckel
-%%FULL%%@dirrm %%WWWDIR%%/designs/hever
-%%FULL%%@dirrm %%WWWDIR%%/designs/jukin
-%%FULL%%@dirrm %%WWWDIR%%/designs/kahi
-%%FULL%%@dirrm %%WWWDIR%%/designs/konya
-%%FULL%%@dirrm %%WWWDIR%%/designs/nette
-%%FULL%%@dirrm %%WWWDIR%%/designs/ng9
-%%FULL%%@dirrm %%WWWDIR%%/designs/pappu687
-%%FULL%%@dirrm %%WWWDIR%%/designs/paranoiq
-%%FULL%%@dirrm %%WWWDIR%%/designs/pepa-linha
-%%FULL%%@dirrm %%WWWDIR%%/designs/price
-%%FULL%%@dirrm %%WWWDIR%%/designs/pilot
-%%FULL%%@dirrm %%WWWDIR%%/designs/pokorny
-%%FULL%%@dirrm %%WWWDIR%%/designs
-%%FULL%%@dirrm %%WWWDIR%%/editor/include
-%%FULL%%@dirrm %%WWWDIR%%/editor/static
-%%FULL%%@dirrm %%WWWDIR%%/editor
-%%FULL%%@dirrm %%WWWDIR%%/externals/JsShrink
-%%FULL%%@dirrm %%WWWDIR%%/externals/jush/modules
-%%FULL%%@dirrm %%WWWDIR%%/externals/jush
-%%FULL%%@dirrm %%WWWDIR%%/externals
-%%FULL%%@dirrm %%WWWDIR%%/plugins
-%%FULL%%@dirrm %%WWWDIR%%/tests
-@dirrm %%WWWDIR%%
 @owner root
 @group wheel
 @mode

@@ -11,5 +11,3 @@ lib/libvsqlitepp.a
 lib/libvsqlitepp.so
 lib/libvsqlitepp.so.3
 lib/libvsqlitepp.so.3.0.0
-@dirrmtry include/sqlite/ext
-@dirrmtry include/sqlite

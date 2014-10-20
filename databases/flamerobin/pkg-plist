@@ -38,7 +38,3 @@ man/man1/flamerobin.1.gz
 %%DATADIR%%/html-templates/view.png
 share/applications/flamerobin.desktop
 share/pixmaps/flamerobin.png
-@dirrm %%DATADIR%%/html-templates
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/conf-defs
-@dirrm %%DATADIR%%

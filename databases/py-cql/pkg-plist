@@ -46,5 +46,3 @@
 %%PYTHON_SITELIBDIR%%/cql/apivalues.pyc
 %%PYTHON_SITELIBDIR%%/cql/cqltypes.py
 %%PYTHON_SITELIBDIR%%/cql/native.py
-@dirrm %%PYTHON_SITELIBDIR%%/cql/cassandra
-@dirrm %%PYTHON_SITELIBDIR%%/cql

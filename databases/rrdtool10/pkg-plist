@@ -110,9 +110,3 @@ man/man1/rrdxport.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stripes.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trytime/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trytime/trytime.c
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trytime
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

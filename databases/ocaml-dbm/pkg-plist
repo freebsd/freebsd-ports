@@ -7,5 +7,3 @@ lib/ocaml/dbm.mli
 lib/ocaml/libcamldbm.a
 lib/ocaml/site-lib/dbm/META
 lib/ocaml/stublibs/dllcamldbm.so
-@dirrm lib/ocaml/site-lib/dbm
-@dirrmtry lib/ocaml/site-lib

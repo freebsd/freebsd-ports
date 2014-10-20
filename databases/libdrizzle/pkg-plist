@@ -406,10 +406,3 @@ libdata/pkgconfig/libdrizzle.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_multi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sqlite_server
-@dirrm include/libdrizzle
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/dev/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/dev
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -1,3 +1,1 @@
 %%QT_PLUGINDIR%%/sqldrivers/libq%%DB%%.so
-@dirrmtry %%QT_PLUGINDIR%%/sqldrivers
-@dirrmtry %%QT_PLUGINDIR%%

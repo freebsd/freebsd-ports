@@ -56,6 +56,3 @@ man/man1/xapian-replicate.1.gz
 man/man1/xapian-replicate-server.1.gz
 man/man1/xapian-tcpsrv.1.gz
 share/aclocal/xapian.m4
-@dirrmtry lib/cmake/xapian
-@dirrmtry lib/cmake
-@dirrm include/xapian

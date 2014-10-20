@@ -39,5 +39,3 @@ lib/libcgwrap.so.1.0.0
 %%DATADIR%%/cgrecover
 %%DATADIR%%/startdb
 %%DATADIR%%/stopdb
-@dirrmtry %%DATADIR%%
-@dirrmtry include/cego

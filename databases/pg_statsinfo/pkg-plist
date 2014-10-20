@@ -8,4 +8,3 @@ share/postgresql/contrib/pg_statsrepo_alert.sql
 share/postgresql/contrib/uninstall_pg_statsrepo.sql
 share/postgresql/contrib/uninstall_pg_statsinfo.sql
 share/postgresql/contrib/pg_statsinfo.sql
-@dirrmtry share/postgresql/contrib

@@ -83,5 +83,3 @@ share/postgresql/slony1_funcs.v84.2.2.3.sql
 %%PERLTOOLS%%sbin/slonik_unsubscribe_set
 %%PERLTOOLS%%sbin/slonik_update_nodes
 %%PERLTOOLS%%sbin/slony_show_configuration
-@dirrmtry share/postgresql
-@dirrmtry lib/postgresql

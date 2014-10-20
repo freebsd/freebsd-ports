@@ -199,30 +199,3 @@ bin/prophet
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js/supersubs.js
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/yui/css/reset.css
 man/man1/prophet.1.gz
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/yui/css
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/yui
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/images
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web
-@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/auto/share
-@dirrmtry %%SITE_PERL%%/Prophet/Web
-@dirrmtry %%SITE_PERL%%/Prophet/Test
-@dirrmtry %%SITE_PERL%%/Prophet/Server/ViewHelpers
-@dirrmtry %%SITE_PERL%%/Prophet/Server
-@dirrmtry %%SITE_PERL%%/Prophet/Resolver/Fixup
-@dirrmtry %%SITE_PERL%%/Prophet/Resolver
-@dirrmtry %%SITE_PERL%%/Prophet/Replica/FS/Backend
-@dirrmtry %%SITE_PERL%%/Prophet/Replica/FS
-@dirrmtry %%SITE_PERL%%/Prophet/Replica
-@dirrmtry %%SITE_PERL%%/Prophet/Meta
-@dirrmtry %%SITE_PERL%%/Prophet/CLI/Dispatcher/Rule
-@dirrmtry %%SITE_PERL%%/Prophet/CLI/Dispatcher
-@dirrmtry %%SITE_PERL%%/Prophet/CLI/Command
-@dirrmtry %%SITE_PERL%%/Prophet/CLI
-@dirrmtry %%SITE_PERL%%/Prophet

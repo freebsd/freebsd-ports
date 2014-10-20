@@ -202,18 +202,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/tute.htm
 %%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb.gif
 %%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb2.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cute_icons_for_site
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%/datadict
-@dirrm %%DATADIR%%/drivers
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/pear/Auth/Container
-@dirrm %%DATADIR%%/pear/Auth
-@dirrm %%DATADIR%%/pear
-@dirrm %%DATADIR%%/perf
-@dirrm %%DATADIR%%/session/old
-@dirrm %%DATADIR%%/session
-@dirrm %%DATADIR%%/xsl
-%%TESTS%%@dirrm %%DATADIR%%/tests
-@dirrm %%DATADIR%%

@@ -81,22 +81,3 @@ bin/dbicdump
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader/.packlist
 man/man1/dbicdump.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Table
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Optional
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Manual
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBObject
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Component
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ADO
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
-@dirrmtry %%SITE_PERL%%/DBIx/Class
-@dirrmtry %%SITE_PERL%%/DBIx

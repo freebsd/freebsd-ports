@@ -26,8 +26,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpindexer/memindexdb.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpindexer/memindexdb.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpindexer/sqldbindexdb.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpindexer/sqldbindexdb.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpindexer
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

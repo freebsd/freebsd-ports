@@ -68,6 +68,3 @@ bin/couchpy
 %%PYTHON_SITELIBDIR%%/couchdb/view.py
 %%PYTHON_SITELIBDIR%%/couchdb/view.pyc
 %%PYTHON_SITELIBDIR%%/couchdb/view.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/couchdb/tools
-@dirrm %%PYTHON_SITELIBDIR%%/couchdb/tests
-@dirrm %%PYTHON_SITELIBDIR%%/couchdb

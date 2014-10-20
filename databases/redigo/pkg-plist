@@ -17,14 +17,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/script_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/zpop_example_test.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/github.com/garyburd/redigo
-@dirrmtry %%GO_SRCDIR%%/github.com/garyburd
-@dirrmtry %%GO_SRCDIR%%/github.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry %%GO_LIBDIR%%/github.com/garyburd/redigo
-@dirrmtry %%GO_LIBDIR%%/github.com/garyburd
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

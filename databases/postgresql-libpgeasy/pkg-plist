@@ -9,7 +9,3 @@ lib/libpgeasy.so.3.0.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/pgnulltest.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/pgwordcount.c
 %%PORTDOCS%%%%DOCSDIR%%/libpgeasy.html
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/examples/postgresql
-@dirrmtry share/doc/postgresql

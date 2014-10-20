@@ -3,4 +3,3 @@
 %%SITE_PERL%%/DBIx/Class/BitField.pm
 %%SITE_PERL%%/DBIx/Class/ResultSet/BitField.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/BitField/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/BitField

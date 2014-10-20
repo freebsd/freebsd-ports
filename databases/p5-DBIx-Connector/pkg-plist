@@ -12,6 +12,3 @@
 %%PERL5_MAN3%%/DBIx::Connector::Driver::Pg.3.gz
 %%PERL5_MAN3%%/DBIx::Connector::Driver::SQLite.3.gz
 %%PERL5_MAN3%%/DBIx::Connector::Driver::mysql.3.gz
-@dirrm %%SITE_PERL%%/DBIx/Connector/Driver
-@dirrm %%SITE_PERL%%/DBIx/Connector
-@dirrmtry %%SITE_PERL%%/DBIx

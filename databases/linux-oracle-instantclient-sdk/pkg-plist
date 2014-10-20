@@ -34,9 +34,3 @@ usr/share/oracle/10.2.0.3/client/occidemod.sql
 usr/share/oracle/10.2.0.3/client/occidml.cpp
 usr/share/oracle/10.2.0.3/client/occiobj.cpp
 usr/share/oracle/10.2.0.3/client/occiobj.typ
-@dirrmtry usr/include/oracle/10.2.0.3/client
-@dirrmtry usr/include/oracle/10.2.0.3
-@dirrmtry usr/include/oracle
-@dirrmtry usr/share/oracle/10.2.0.3/client
-@dirrmtry usr/share/oracle/10.2.0.3
-@dirrmtry usr/share/oracle

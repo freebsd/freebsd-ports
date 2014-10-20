@@ -104,14 +104,11 @@ man/man8/sqlr-start.8.gz
 man/man8/sqlr-stop.8.gz
 share/examples/sample-mssqlserver-mysql-errors.map
 share/examples/sample-oracle-mysql-errors.map
-@dirrm libexec/sqlrelay
-@dirrm include/sqlrelay/private
-@dirrm include/sqlrelay
-@dirrmtry /var/sqlrelay/tmp/sockets
-@dirrmtry /var/sqlrelay/tmp/pids
-@dirrmtry /var/sqlrelay/tmp/ipc
-@dirrmtry /var/sqlrelay/tmp
-@dirrmtry /var/sqlrelay/log
-@dirrmtry /var/sqlrelay/debug
-@dirrmtry /var/sqlrelay/cache
-@dirrmtry /var/sqlrelay
+@dir /var/sqlrelay/tmp/sockets
+@dir /var/sqlrelay/tmp/pids
+@dir /var/sqlrelay/tmp/ipc
+@dir /var/sqlrelay/tmp
+@dir /var/sqlrelay/log
+@dir /var/sqlrelay/debug
+@dir /var/sqlrelay/cache
+@dir /var/sqlrelay

@@ -159,16 +159,3 @@ bin/sstablescrub
 %%DATADIR%%/tools/bin/sstablemetadata
 %%DATADIR%%/tools/bin/token-generator
 %%DATADIR%%/tools/lib/stress.jar
-@dirrmtry %%DATADIR%%/bin
-@dirrmtry %%DATADIR%%/conf/triggers
-@dirrmtry %%DATADIR%%/conf
-@dirrmtry %%DATADIR%%/interface
-@dirrmtry %%DATADIR%%/lib/licenses
-@dirrmtry %%DATADIR%%/lib
-%%CQL%%@dirrmtry %%DATADIR%%/pylib/cqlshlib/test
-%%CQL%%@dirrmtry %%DATADIR%%/pylib/cqlshlib
-%%CQL%%@dirrmtry %%DATADIR%%/pylib
-@dirrmtry %%DATADIR%%/tools/bin
-@dirrmtry %%DATADIR%%/tools/lib
-@dirrmtry %%DATADIR%%/tools
-@dirrmtry %%DATADIR%%

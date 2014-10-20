@@ -18,6 +18,3 @@ bin/indexdump
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XBase/.packlist
 man/man1/dbfdump.1.gz
 man/man1/indexdump.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XBase
-@dirrmtry %%SITE_PERL%%/XBase
-@dirrmtry %%SITE_PERL%%/DBD

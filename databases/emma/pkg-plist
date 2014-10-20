@@ -13,11 +13,6 @@ share/emma/icons/offline_host.png
 share/emma/icons/table.png
 share/emma/theme/README.html
 share/emma/theme/gtk-2.0/gtkrc
-@dirrm share/emma/theme/gtk-2.0
-@dirrm share/emma/theme
-@dirrm share/emma/icons
-@dirrm share/emma/glade
-@dirrm share/emma
 %%PYTHON_SITELIBDIR%%/emmalib/__init__.py
 %%PYTHON_SITELIBDIR%%/emmalib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/emmalib/__init__.pyo
@@ -39,7 +34,3 @@ share/emma/theme/gtk-2.0/gtkrc
 %%PYTHON_SITELIBDIR%%/emmalib/plugins/table_editor/__init__.py
 %%PYTHON_SITELIBDIR%%/emmalib/plugins/table_editor/__init__.pyc
 %%PYTHON_SITELIBDIR%%/emmalib/plugins/table_editor/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/emmalib/plugins/table_editor
-@dirrm %%PYTHON_SITELIBDIR%%/emmalib/plugins/pretty_format
-@dirrm %%PYTHON_SITELIBDIR%%/emmalib/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/emmalib

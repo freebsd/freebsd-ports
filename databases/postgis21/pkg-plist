@@ -150,17 +150,3 @@ share/postgresql/contrib/postgis-2.1/uninstall_sfcgal.sql
 %%RASTER%%share/postgresql/extension/postgis_topology--2.1.0rc3--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_topology--unpackaged--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_topology.control
-@dirrm %%DATADIR%%/utils
-@dirrm %%DATADIR%%/tiger_2011/utility
-@dirrm %%DATADIR%%/tiger_2011/topology
-@dirrm %%DATADIR%%/tiger_2011/tables
-@dirrm %%DATADIR%%/tiger_2011/regress
-@dirrm %%DATADIR%%/tiger_2011/pagc_normalize
-@dirrm %%DATADIR%%/tiger_2011/normalize
-@dirrm %%DATADIR%%/tiger_2011/legacy_import/tiger2008
-@dirrm %%DATADIR%%/tiger_2011/legacy_import
-@dirrm %%DATADIR%%/tiger_2011/geocode
-@dirrm %%DATADIR%%/tiger_2011
-@dirrm %%DATADIR%%
-@dirrm share/postgresql/contrib/postgis-2.1
-@dirrmtry share/postgresql/contrib

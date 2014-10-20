@@ -48,4 +48,3 @@ lib/jdb/DbTDistr.pm
 lib/jdb/README
 lib/jdb/dblib.pl
 lib/jdb/release
-@dirrm lib/jdb

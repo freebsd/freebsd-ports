@@ -22,8 +22,3 @@
 %%SITE_PERL%%/DBIx/DBSchema/Table.pm
 %%SITE_PERL%%/DBIx/DBSchema/_util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBSchema/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBSchema
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx/DBSchema/DBD
-@dirrmtry %%SITE_PERL%%/DBIx/DBSchema
-@dirrmtry %%SITE_PERL%%/DBIx

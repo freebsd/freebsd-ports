@@ -1210,34 +1210,3 @@ share/mysql-workbench/snippets/SQL_DML_Statements.txt
 share/mysql-workbench/sshtunnel.py
 share/mysql-workbench/wb.glade
 share/mysql-workbench/workbench.rc
-@dirrm share/mysql-workbench/snippets
-@dirrm share/mysql-workbench/script_templates
-%%PYTHON_UTILS%%@dirrm share/mysql-workbench/python/mysql/utilities/common
-%%PYTHON_UTILS%%@dirrm share/mysql-workbench/python/mysql/utilities/command
-%%PYTHON_UTILS%%@dirrm share/mysql-workbench/python/mysql/utilities
-%%PYTHON_UTILS%%@dirrm share/mysql-workbench/python/mysql/connector
-%%PYTHON_UTILS%%@dirrm share/mysql-workbench/python/mysql
-%%PYTHON_UTILS%%@dirrm share/mysql-workbench/python
-@dirrm share/mysql-workbench/mysql.profiles
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/Text_Basic.tpl
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/HTML_Detailed_Frames.tpl/images
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/HTML_Detailed_Frames.tpl
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/HTML_Basic_Single_Page.tpl
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting/HTML_Basic_Frames.tpl
-@dirrm share/mysql-workbench/modules/data/wb_model_reporting
-@dirrm share/mysql-workbench/modules/data/sqlide
-@dirrm share/mysql-workbench/modules/data/DocLibrary
-@dirrm share/mysql-workbench/modules/data
-@dirrm share/mysql-workbench/modules
-@dirrm share/mysql-workbench/libraries/workbench
-@dirrm share/mysql-workbench/libraries
-@dirrm share/mysql-workbench/images
-@dirrm share/mysql-workbench/grt
-@dirrm share/mysql-workbench/extras
-@dirrm share/mysql-workbench/db_mysql_catalog_reporting/Basic_Text.tpl
-@dirrm share/mysql-workbench/db_mysql_catalog_reporting
-@dirrm share/mysql-workbench/data
-@dirrm share/mysql-workbench
-@dirrm lib/mysql-workbench/plugins
-@dirrm lib/mysql-workbench/modules
-@dirrm lib/mysql-workbench

@@ -3,6 +3,3 @@ bin/dbicdeploy
 man/man1/dbicdeploy.1.gz
 %%SITE_PERL%%/DBICx/Deploy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/Deploy/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/Deploy
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx
-@dirrm %%SITE_PERL%%/DBICx

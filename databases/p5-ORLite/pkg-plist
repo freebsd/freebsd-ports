@@ -1,4 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ORLite/.packlist
 %%SITE_PERL%%/ORLite.pm
 %%PERL5_MAN3%%/ORLite.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ORLite

@@ -49,6 +49,3 @@ man/man1/xapian-progsrv.1.gz
 man/man1/xapian-tcpsrv.1.gz
 man/man1/xapian-inspect.1.gz
 share/aclocal/xapian.m4
-@dirrm include/xapian
-@dirrmtry lib/cmake/xapian
-@dirrmtry lib/cmake

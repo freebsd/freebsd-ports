@@ -4,6 +4,4 @@
 %%RUBY_SITEARCHLIBDIR%%/plruby/plruby_datetime.so
 %%RUBY_SITEARCHLIBDIR%%/plruby/plruby_geometry.so
 %%RUBY_SITEARCHLIBDIR%%/plruby/plruby_network.so
-@dirrm %%RUBY_SITEARCHLIBDIR%%/plruby
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/createlang.sql
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

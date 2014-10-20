@@ -10,7 +10,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/Parser/PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/Parser/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/README.pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RedisDB/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RedisDB
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RedisDB/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RedisDB

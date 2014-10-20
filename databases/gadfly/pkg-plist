@@ -19,6 +19,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kjParsing/pygram.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kjParsing/pylint.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kjParsing/relalg.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kjParsing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

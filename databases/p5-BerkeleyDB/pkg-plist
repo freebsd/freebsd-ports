@@ -7,5 +7,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB/BerkeleyDB.so
 %%SITE_PERL%%/%%PERL_ARCH%%/mkconsts.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/scan.pl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB

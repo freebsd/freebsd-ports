@@ -3,6 +3,3 @@
 %%SITE_PERL%%/Tie/DBI.pm
 %%SITE_PERL%%/Tie/RDBM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DBI/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrmtry %%SITE_PERL%%/Tie

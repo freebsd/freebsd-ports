@@ -7,5 +7,3 @@ man/man1/memcached.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/threads.txt
-@dirrmtry include/memcached
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

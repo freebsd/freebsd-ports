@@ -11,16 +11,3 @@
 %%SITE_PERL%%/DBI/Test/Case/DBD/CSV/t85_error.pm
 %%SITE_PERL%%/DBI/Test/DBD/CSV/Conf.pm
 %%SITE_PERL%%/DBI/Test/DBD/CSV/List.pm
-@dirrmtry %%SITE_PERL%%/DBI/Test/DBD/CSV
-@dirrmtry %%SITE_PERL%%/DBI/Test/DBD
-@dirrmtry %%SITE_PERL%%/DBI/Test/Case/DBD/CSV
-@dirrmtry %%SITE_PERL%%/DBI/Test/Case/DBD
-@dirrmtry %%SITE_PERL%%/DBI/Test/Case
-@dirrmtry %%SITE_PERL%%/DBI/Test
-@dirrmtry %%SITE_PERL%%/DBI
-@dirrmtry %%SITE_PERL%%/DBD/CSV
-@dirrmtry %%SITE_PERL%%/DBD
-@dirrmtry %%SITE_PERL%%/Bundle/DBD
-@dirrmtry %%SITE_PERL%%/Bundle
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD

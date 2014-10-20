@@ -25,5 +25,3 @@ share/icons/hicolor/48x48/apps/kbibtex.png
 share/icons/hicolor/64x64/apps/kbibtex.png
 share/kde4/services/kbibtexpart.desktop
 share/mime/packages/bibliography.xml
-@dirrm share/apps/kbibtexpart
-@dirrm share/apps/kbibtex

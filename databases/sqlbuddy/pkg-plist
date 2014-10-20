@@ -126,20 +126,5 @@
 %%WWWDIR%%/themes/classic/images/header.png
 %%WWWDIR%%/themes/classic/images/shading.png
 %%WWWDIR%%/users.php
-@dirrm %%WWWDIR%%/themes/classic/images
-@dirrm %%WWWDIR%%/themes/classic/css
-@dirrm %%WWWDIR%%/themes/classic
-@dirrm %%WWWDIR%%/themes/bittersweet/images
-@dirrm %%WWWDIR%%/themes/bittersweet/css
-@dirrm %%WWWDIR%%/themes/bittersweet
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/locale
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/includes/class
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/exports
-@dirrm %%WWWDIR%%/css
-@dirrmtry %%WWWDIR%%
 @owner root
 @group wheel

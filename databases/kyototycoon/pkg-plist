@@ -215,8 +215,3 @@ man/man1/ktutiltest.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/doc/luadoc/modules/kyototycoon.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/spex.html
 %%PORTDOCS%%%%DOCSDIR%%/kyototycoon.idl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/luadoc/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/luadoc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

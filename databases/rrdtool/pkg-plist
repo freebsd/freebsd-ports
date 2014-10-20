@@ -146,11 +146,3 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdupdate.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdxport.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdxport.txt
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm share/rrdtool/examples/rrdcached
-%%PORTEXAMPLES%%@dirrm share/rrdtool/examples
-%%PORTEXAMPLES%%@dirrm share/rrdtool

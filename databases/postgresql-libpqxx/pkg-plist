@@ -95,6 +95,3 @@ lib/libpqxx-%%PORTVERSION%%.so
 lib/libpqxx.a
 lib/libpqxx.so
 libdata/pkgconfig/libpqxx.pc
-@dirrm include/pqxx/internal/gates
-@dirrm include/pqxx/internal
-@dirrm include/pqxx

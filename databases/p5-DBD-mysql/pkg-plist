@@ -9,9 +9,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/mysql/INSTALL.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/mysql/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/mysql/mysql.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/mysql
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD/mysql
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle

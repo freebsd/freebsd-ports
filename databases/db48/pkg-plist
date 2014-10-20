@@ -47,6 +47,3 @@ lib/libdb-4.8.so
 lib/libdb-4.8.so.0
 lib/libdb_cxx-4.8.so
 lib/libdb_cxx-4.8.so.0
-@dirrmtry lib/db48
-@dirrmtry include/db48
-@dirrmtry bin/db48

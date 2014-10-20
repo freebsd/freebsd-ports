@@ -30,11 +30,6 @@ GNUstep/Local/Library/Headers/BDB
 GNUstep/Local/Library/Libraries/libBDB.so
 GNUstep/Local/Library/Libraries/libBDB.so.%%MAJORLIBVERSION%%
 GNUstep/Local/Library/Libraries/libBDB.so.%%LIBVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/BDB.framework/Versions
-@dirrm GNUstep/Local/Library/Frameworks/BDB.framework
 %%PORTDOCS%%%%DOCSDIR%%/BDB/BDB.html
 %%PORTDOCS%%%%DOCSDIR%%/BDB/CompositePage.html
 %%PORTDOCS%%%%DOCSDIR%%/BDB/index.html
@@ -128,38 +123,3 @@ GNUstep/Local/Library/Libraries/libBDB.so.%%LIBVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/BDBOperationStatus/index.html
 %%PORTDOCS%%%%DOCSDIR%%/BDBOperationStatus/toc.html
 %%PORTDOCS%%%%DOCSDIR%%/MasterTOC.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBOperationStatus/DataTypes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBOperationStatus
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes/BDBNotImplementedException
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes/BDBNoValueForKeyException
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes/BDBLockNotGrantedException
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes/BDBInvalidDatabaseHandle
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes/BDBIllegalIndexReference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes/BDBException/Methods
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes/BDBException
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes/BDBDeadLockException
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes/BDBBtreeMaximumDepthReachedException
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions/Classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBExceptions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseRecordNumber/Classes/BDBDatabaseRecordNumber/Methods
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseRecordNumber/Classes/BDBDatabaseRecordNumber
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseRecordNumber/Classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseRecordNumber
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseEntryData/Functions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseEntryData
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseEntry/Classes/BDBDatabaseEntry/Methods
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseEntry/Classes/BDBDatabaseEntry
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseEntry/Classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseEntry
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseConfig/Classes/BDBDatabaseConfig/Methods
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseConfig/Classes/BDBDatabaseConfig
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseConfig/Classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabaseConfig
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabase/Classes/BDBDatabase/Methods
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabase/Classes/BDBDatabase
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabase/Classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBDatabase
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBConstants/DataTypes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDBConstants
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/BDB
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

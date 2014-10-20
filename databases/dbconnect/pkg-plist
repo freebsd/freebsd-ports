@@ -18,4 +18,3 @@ include/dbconn/smartPointer.h
 %%PGSQL%%lib/dbconndrv-postgresql.so
 lib/libdbconnect-%%PORTVERSION%%.so
 lib/libdbconnect.so
-@dirrm include/dbconn

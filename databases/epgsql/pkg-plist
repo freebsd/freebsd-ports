@@ -20,7 +20,3 @@ lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_idatetime.erl
 lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_sock.erl
 lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_types.erl
 lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_wire.erl
-@dirrm %%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src
-@dirrm %%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/include
-@dirrm %%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin
-@dirrm %%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%

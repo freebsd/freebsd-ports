@@ -35,16 +35,3 @@
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet/Person.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Visitor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/PopulateMore/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/PopulateMore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
-@dirrmtry %%SITE_PERL%%/DBIx/Class
-@dirrmtry %%SITE_PERL%%/DBIx

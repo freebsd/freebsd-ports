@@ -1770,28 +1770,3 @@
 %%ORACLE_PREFIX%%/rdbms/lib.old/config.o
 %%ORACLE_PREFIX%%/rdbms/lib.old/sysliblist
 %%ORACLE_PREFIX%%/lib
-@dirrm %%ORACLE_PREFIX%%/network/admin
-@dirrm %%ORACLE_PREFIX%%/network
-@dirrm %%ORACLE_PREFIX%%/ocommon/install
-@dirrm %%ORACLE_PREFIX%%/ocommon/nls/admin/data
-@dirrm %%ORACLE_PREFIX%%/ocommon/nls/admin/resource
-@dirrm %%ORACLE_PREFIX%%/ocommon/nls/admin
-@dirrm %%ORACLE_PREFIX%%/ocommon/nls/mesg
-@dirrm %%ORACLE_PREFIX%%/ocommon/nls
-@dirrm %%ORACLE_PREFIX%%/ocommon
-@dirrm %%ORACLE_PREFIX%%/rdbms/admin
-@dirrm %%ORACLE_PREFIX%%/rdbms/audit
-@dirrm %%ORACLE_PREFIX%%/rdbms/demo
-@dirrm %%ORACLE_PREFIX%%/rdbms/doc
-@dirrm %%ORACLE_PREFIX%%/rdbms/install/dbup
-@dirrm %%ORACLE_PREFIX%%/rdbms/install/ddbo
-@dirrm %%ORACLE_PREFIX%%/rdbms/install/rdbms
-@dirrm %%ORACLE_PREFIX%%/rdbms/install/xa
-@dirrm %%ORACLE_PREFIX%%/rdbms/install
-@dirrm %%ORACLE_PREFIX%%/rdbms/lib.old
-@dirrm %%ORACLE_PREFIX%%/rdbms/lib
-@dirrm %%ORACLE_PREFIX%%/rdbms/log
-@dirrm %%ORACLE_PREFIX%%/rdbms/mesg
-@dirrm %%ORACLE_PREFIX%%/rdbms/public
-@dirrm %%ORACLE_PREFIX%%/rdbms
-@dirrm %%ORACLE_PREFIX%%

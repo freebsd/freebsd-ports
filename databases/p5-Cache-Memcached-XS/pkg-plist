@@ -2,8 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Cache/Memcached/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/XS/XS.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Cache/Memcached
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Cache

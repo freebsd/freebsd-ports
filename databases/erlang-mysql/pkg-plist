@@ -7,7 +7,3 @@
 %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mysql_conn.beam
 %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mysql_recv.beam
 %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/mysql.hrl
-@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/src
-@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin
-@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include
-@dirrm %%ERLANGDIR%%/%%PORTNAME%%-%%PORTVERSION%%

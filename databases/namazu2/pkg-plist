@@ -156,18 +156,3 @@ share/locale/pl/LC_MESSAGES/namazu.mo
 %%DATADIR%%/template/NMZ.tips.fr
 %%DATADIR%%/template/NMZ.tips.ja
 %%DATADIR%%/template/NMZ.tips.pl
-@dirrmtry var/namazu/index
-@dirrmtry var/namazu
-@dirrmtry var
-@dirrmtry share/locale/ja_JP.SJIS/LC_MESSAGES
-@dirrmtry share/locale/ja_JP.SJIS
-@dirrm %%DATADIR%%/template
-@dirrm %%DATADIR%%/pl
-@dirrm %%DATADIR%%/filter
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/namazu
-@dirrm etc/namazu

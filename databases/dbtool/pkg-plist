@@ -7,7 +7,3 @@ man/man1/dbtool.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/locate/updatedb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uback/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/account-db
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/locate
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/uback
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

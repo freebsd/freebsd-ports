@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Class::DBI::AutoLoader.3.gz
 %%SITE_PERL%%/Class/DBI/AutoLoader.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/AutoLoader/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/AutoLoader
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/DBI
-@dirrmtry %%SITE_PERL%%/Class

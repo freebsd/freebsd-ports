@@ -15,11 +15,3 @@
 %%SITE_PERL%%/ResourcePool/Resource/DBI.pm
 %%SITE_PERL%%/ResourcePool/Resource/DBI.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool
-@dirrmtry %%SITE_PERL%%/ResourcePool/Resource
-@dirrmtry %%SITE_PERL%%/ResourcePool/Factory
-@dirrmtry %%SITE_PERL%%/ResourcePool/Command/DBI
-@dirrmtry %%SITE_PERL%%/ResourcePool/Command
-@dirrmtry %%SITE_PERL%%/ResourcePool

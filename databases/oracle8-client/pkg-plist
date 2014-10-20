@@ -775,21 +775,3 @@ oracle8-client/rdbms/public/nzerror.h
 oracle8-client/rdbms/public/nzt.h
 oracle8-client/rdbms/public/ociextp.h
 oracle8-client/rdbms/public/tnsapi.h
-@dirrm oracle8-client/rdbms/public
-@dirrm oracle8-client/rdbms/mesg
-@dirrm oracle8-client/rdbms/lib
-@dirrm oracle8-client/rdbms/demo
-@dirrm oracle8-client/rdbms
-@dirrm oracle8-client/ocommon/nls/mesg
-@dirrm oracle8-client/ocommon/nls/admin/data
-@dirrm oracle8-client/ocommon/nls/admin
-@dirrm oracle8-client/ocommon/nls
-@dirrm oracle8-client/ocommon
-@dirrm oracle8-client/network/admin/samples
-@dirrm oracle8-client/network/admin
-@dirrm oracle8-client/network
-@dirrm oracle8-client/lib
-@dirrm oracle8-client/freebsd/old
-@dirrm oracle8-client/freebsd/demo
-@dirrm oracle8-client/freebsd
-@dirrm oracle8-client

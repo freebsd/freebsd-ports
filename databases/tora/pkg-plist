@@ -111,6 +111,3 @@ lib/tora_toad.qm
 %%PORTDOCS%%%%DOCSDIR%%/help/window.html
 %%PORTDOCS%%%%DOCSDIR%%/help/worksheet.html
 %%PORTDOCS%%%%DOCSDIR%%/help/workspace.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/help/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

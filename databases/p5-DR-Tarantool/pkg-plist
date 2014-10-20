@@ -20,7 +20,3 @@
 %%PERL5_MAN3%%/DR::Tarantool::StartTest.3.gz
 %%PERL5_MAN3%%/DR::Tarantool::SyncClient.3.gz
 %%PERL5_MAN3%%/DR::Tarantool::Tuple.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DR/Tarantool
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DR
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DR/Tarantool
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DR

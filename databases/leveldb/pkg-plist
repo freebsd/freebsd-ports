@@ -22,6 +22,3 @@ lib/libmemenv.so
 lib/libmemenv.so.%%SHLIB_MAJOR%%
 lib/libmemenv.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%DATADIR%%/build_config.mk
-@dirrm %%DATADIR%%
-@dirrm include/memenv
-@dirrm include/leveldb

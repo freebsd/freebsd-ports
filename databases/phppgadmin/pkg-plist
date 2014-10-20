@@ -360,33 +360,3 @@
 %%PGADMDIR%%/views.php
 %%PGADMDIR%%/xloadtree/xloadtree2.js
 %%PGADMDIR%%/xloadtree/xtree2.js
-@dirrm %%PGADMDIR%%/xloadtree
-@dirrm %%PGADMDIR%%/themes/default
-@dirrm %%PGADMDIR%%/themes/cappuccino
-@dirrm %%PGADMDIR%%/themes/gotar
-@dirrm %%PGADMDIR%%/themes
-@dirrm %%PGADMDIR%%/plugins/Report/sql
-@dirrm %%PGADMDIR%%/plugins/Report/lang
-@dirrm %%PGADMDIR%%/plugins/Report/images
-@dirrm %%PGADMDIR%%/plugins/Report/conf
-@dirrm %%PGADMDIR%%/plugins/Report/classes
-@dirrm %%PGADMDIR%%/plugins/Report
-@dirrm %%PGADMDIR%%/plugins/GuiControl/conf
-@dirrm %%PGADMDIR%%/plugins/GuiControl
-@dirrm %%PGADMDIR%%/plugins
-@dirrm %%PGADMDIR%%/libraries/adodb/lang
-@dirrm %%PGADMDIR%%/libraries/adodb/drivers
-@dirrm %%PGADMDIR%%/libraries/adodb
-@dirrm %%PGADMDIR%%/libraries/js
-@dirrm %%PGADMDIR%%/libraries
-@dirrm %%PGADMDIR%%/lang
-@dirrm %%PGADMDIR%%/js
-@dirrm %%PGADMDIR%%/images/themes/cappuccino
-@dirrm %%PGADMDIR%%/images/themes/default
-@dirrm %%PGADMDIR%%/images/themes
-@dirrm %%PGADMDIR%%/images
-@dirrm %%PGADMDIR%%/help
-@dirrm %%PGADMDIR%%/conf
-@dirrm %%PGADMDIR%%/classes/database
-@dirrm %%PGADMDIR%%/classes
-@dirrm %%PGADMDIR%%

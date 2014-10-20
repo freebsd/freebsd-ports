@@ -54,7 +54,3 @@ share/postgresql/contrib/pgpool-recovery.sql
 share/postgresql/contrib/pgpool-regclass.sql
 share/postgresql/contrib/uninstall_pgpool-recovery.sql
 share/postgresql/contrib/uninstall_pgpool-regclass.sql
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DATADIR%%
-@dirrmtry share/postgresql/contrib

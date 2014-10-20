@@ -16,10 +16,3 @@
 %%PERL5_MAN3%%/DBIx::Inspector::ForeignKey.3.gz
 %%PERL5_MAN3%%/DBIx::Inspector::Iterator.3.gz
 %%PERL5_MAN3%%/DBIx::Inspector::Table.3.gz
-@dirrm %%SITE_PERL%%/DBIx/Inspector/Table
-@dirrm %%SITE_PERL%%/DBIx/Inspector/Iterator
-@dirrm %%SITE_PERL%%/DBIx/Inspector/ForeignKey
-@dirrm %%SITE_PERL%%/DBIx/Inspector/Driver
-@dirrm %%SITE_PERL%%/DBIx/Inspector/Column
-@dirrm %%SITE_PERL%%/DBIx/Inspector
-@dirrmtry %%SITE_PERL%%/DBIx

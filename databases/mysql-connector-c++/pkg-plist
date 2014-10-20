@@ -19,4 +19,3 @@ lib/libmysqlcppconn-static.a
 lib/libmysqlcppconn.so
 lib/libmysqlcppconn.so.7.%%PORTVERSION%%
 lib/libmysqlcppconn.so.7
-@dirrm include/cppconn

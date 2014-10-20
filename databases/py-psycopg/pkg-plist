@@ -29,8 +29,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/usercast.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/whereareyou.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/work.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%ZOPE%%%%ZOPEPRODUCTDIR%%/ZPsycopgDA/DA.py
 %%ZOPE%%%%ZOPEPRODUCTDIR%%/ZPsycopgDA/DA.pyc
 %%ZOPE%%%%ZOPEPRODUCTDIR%%/ZPsycopgDA/DABase.py
@@ -55,5 +53,3 @@
 %%ZOPE%%%%ZOPEPRODUCTDIR%%/ZPsycopgDA/icons/view.gif
 %%ZOPE%%%%ZOPEPRODUCTDIR%%/ZPsycopgDA/icons/what.gif
 %%ZOPE%%%%ZOPEPRODUCTDIR%%/ZPsycopgDA/table_info.dtml
-%%ZOPE%%@dirrm %%ZOPEPRODUCTDIR%%/ZPsycopgDA/icons
-%%ZOPE%%@dirrm %%ZOPEPRODUCTDIR%%/ZPsycopgDA
