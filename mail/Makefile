@@ -104,7 +104,6 @@
     SUBDIR += dracmail
     SUBDIR += dsbl-testers
     SUBDIR += dspam
-    SUBDIR += dspam-devel
     SUBDIR += ecartis
     SUBDIR += elmo
     SUBDIR += elmo-devel

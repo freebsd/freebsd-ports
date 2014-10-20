@@ -7165,3 +7165,4 @@ graphics/libcdr|graphics/libcdr01|2014-10-17|Replaced by newer version
 print/libmspub|print/libmspub01|2014-10-17|Replaced by newer version
 devel/py-olefileio_pl|devel/py-olefile|2014-10-17|Upstream name change
 audio/mad||2014-10-20|Directly use audio/libmad or audio/madplay
+mail/dspam-devel|mail/dspam|2014-10-20|Merged into mail/dspam
