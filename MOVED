@@ -7164,3 +7164,4 @@ graphics/libfreehand00|graphics/libfreehand|2014-10-17|Replaced by newer version
 graphics/libcdr|graphics/libcdr01|2014-10-17|Replaced by newer version
 print/libmspub|print/libmspub01|2014-10-17|Replaced by newer version
 devel/py-olefileio_pl|devel/py-olefile|2014-10-17|Upstream name change
+audio/mad||2014-10-20|Directly use audio/libmad or audio/madplay
