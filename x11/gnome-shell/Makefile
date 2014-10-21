@@ -60,5 +60,8 @@ post-patch:
 		${WRKSRC}/browser-plugin/Makefile.in
 	@${REINPLACE_CMD} -e 's|libnm-glib libnm-util ||g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|file://${PREFIX}/share/xsl/docbook/manpages/docbook.xsl|g' \
+		${WRKSRC}/man/Makefile.in
+
 
 .include <bsd.port.mk>
