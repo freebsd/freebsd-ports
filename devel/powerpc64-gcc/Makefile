@@ -2,6 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.9.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
@@ -37,7 +38,7 @@ BU_PREFIX=	${GCC_TARGET}
 .endif
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
-		--without-headers --disable-shared \
+		--without-headers \
 		--with-gmp=${LOCALBASE} \
 		--with-pkgversion="FreeBSD Ports Collection for ${PKGNAMEPREFIX:C/-//g}" \
 		--with-system-zlib \
