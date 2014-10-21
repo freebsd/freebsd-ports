@@ -3,11 +3,11 @@
 
 PORTNAME=	grub2-efi
 PORTVERSION=	2.02
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
-DISTNAME=	grub-${PORTVERSION}_2
+DISTNAME=	grub-${PORTVERSION}_3
 WRKSRC=		${WRKDIR}/grub-${PORTVERSION}
 
 MAINTAINER=	kmoore@FreeBSD.org
