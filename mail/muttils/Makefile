@@ -15,10 +15,8 @@ CONFLICTS=	zh-wenju-[0-9]* talkfilters-[0-9]* reed-[0-9]*
 
 CHANGESET=	8bb26094df06
 WRKSRC=		${WRKDIR}/blacktrash-${PORTNAME}-${CHANGESET}
-USE_PYTHON_BUILD=	yes
-USE_PYTHON_RUN=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTEXAMPLES=	*
 

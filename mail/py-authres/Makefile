@@ -12,8 +12,8 @@ COMMENT=	Python module for RFC 5451 Authentication-Results headers
 
 LICENSE=	APACHE20
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 

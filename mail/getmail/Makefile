@@ -12,8 +12,8 @@ COMMENT=	POP3/IMAP4 mail retriever with Maildir and command delivery
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
+USES=		python:2
+USE_PYTHON=	distutils
 
 PORTDOCS=	README BUGS CHANGELOG THANKS TODO *.txt *.html *.css
 

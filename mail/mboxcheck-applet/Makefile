@@ -10,7 +10,7 @@ MASTER_SITES=	http://perso.orange.fr/seb128/fichiers/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailbox checking applet for GNOME 2
 
-USE_PYTHON=	yes
+USES=		python
 USE_GNOME=	pygnome2:run
 NO_BUILD=	yes
 

@@ -17,8 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>0:${PORTSDIR}/devel/py-ipaddr \
 		${PYTHON_PKGNAMEPREFIX}spf>0:${PORTSDIR}/mail/py-spf \
 		${PYTHON_PKGNAMEPREFIX}authres>0:${PORTSDIR}/mail/py-authres
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pypolicyd-spf
 
 PORTDOCS=	CHANGES \

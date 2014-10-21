@@ -10,9 +10,8 @@ MASTER_SITES=	http://pyropus.ca/software/pymsgauth/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically process qsecretary confirmation requests
 
-USES=		shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	pymsgauth-clean pymsgauth-confirm pymsgauth-mail
-USE_PYTHON=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

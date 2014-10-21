@@ -16,7 +16,7 @@ COMMENT=	Python-based SPAM reduction system
 OPTIONS_DEFINE=	CDB DOCS EXAMPLES
 CDB_RUN_DEPENDS=${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 
-USE_PYTHON=	yes
+USES=		python
 
 SUB_FILES=	pkg-message
 

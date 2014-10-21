@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.tundraware.com/Software/nohtml/
 MAINTAINER=	nohtml@tundraware.com
 COMMENT=	Strip HTML attachments from email
 
-USE_PYTHON=	yes
+USES=		python
 
 OPTIONS_DEFINE=	DOCS
 

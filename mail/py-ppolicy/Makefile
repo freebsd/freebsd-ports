@@ -13,10 +13,8 @@ COMMENT=	PPolicy is tool for extending Postfix checking capabilities
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
 
-USES=		twisted
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python twisted
+USE_PYTHON=	distutils autoplist
 NO_BUILD=	yes
 USE_RC_SUBR=	ppolicyd
 DOCSDIR?=	${PREFIX}/share/doc/py-${PORTNAME}
