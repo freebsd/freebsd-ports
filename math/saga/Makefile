@@ -32,10 +32,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_contrib
 # Python no option any more, because it can't be turned off completely
-USE_PYTHON=	2
 USE_LDCONFIG=	yes
 USE_WX=		3.0+
-USES=		compiler:gcc-c++11-lib iconv:wchar_t dos2unix libtool
+USES=		compiler:gcc-c++11-lib iconv:wchar_t dos2unix libtool python:2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WX_UNICODE=	yes
 

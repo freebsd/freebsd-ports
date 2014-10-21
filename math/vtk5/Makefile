@@ -144,7 +144,8 @@ IGNORE=		python wrapping does not stage properly
 IGNORE=		python wrapping requires shared libraries.\
 		Run make config again and enable the SHARED option
 .endif
-USE_PYTHON=	yes
+USES+=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	VTK
 # INSTALLS_EGGINFO support has been removed
 # INSTALLS_EGGINFO=	yes

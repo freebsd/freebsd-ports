@@ -52,7 +52,7 @@ SVERSION=		4
 TEST_TARGET=		lapack_testing
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 S=			${PYTHON_CMD}
-USE_PYTHON_BUILD=	yes
+USES+=			python:build
 .else
 S=			\#
 .endif

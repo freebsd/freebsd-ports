@@ -12,8 +12,8 @@ COMMENT=	C++ code generator for multilinear forms
 
 LICENSE=	LGPL3
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	FFC
 
 MMVERSION=	1.2

@@ -11,9 +11,7 @@ DISTNAME=	SVGMath-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MathML to SVG Converter in Python
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	SVGMath
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

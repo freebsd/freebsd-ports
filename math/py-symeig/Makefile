@@ -19,10 +19,8 @@ RUN_DEPENDS+=	${PYNUMPY}
 LATEST_LINK=	py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
 
-USES=		fortran
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		fortran python:2
+USE_PYTHON=	distutils autoplist
 
 LDFLAGS+=	-shared
 

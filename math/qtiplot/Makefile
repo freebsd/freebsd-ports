@@ -39,7 +39,7 @@ STRIP_FILES=	bin/qtiplot share/qtiplot/fitPlugins/*.so.1.0.0
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 PLIST_SUB+=	PYTHON=""

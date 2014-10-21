@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 
 WRKSRC=		${WRKDIR}/Gato
 
-USE_PYTHON=	yes
+USES=		python
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 

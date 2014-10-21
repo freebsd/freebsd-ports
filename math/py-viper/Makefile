@@ -12,9 +12,8 @@ COMMENT=	Minimalistic scientific plotter and visualization module
 
 LICENSE=	LGPL3
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|data_files=\[(join("share", "man", "man1"),|data_files=\[(join("man", "man1"),|' \
