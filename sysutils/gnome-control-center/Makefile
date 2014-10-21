@@ -80,5 +80,7 @@ CONFIGURE_ARGS+=--without-cheese
 post-patch:
 	@${REINPLACE_CMD} -e 's|datetime wacom|datetime|g' \
 		${WRKSRC}/panels/Makefile.in
+	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|file://${PREFIX}/share/xsl/docbook/manpages/docbook.xsl|g' \
+		${WRKSRC}/man/Makefile.in
 
 .include <bsd.port.mk>
