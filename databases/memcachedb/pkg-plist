@@ -1,2 +1,2 @@
 bin/memcachedb
-@dir(nobody,nobody, 770) /var/db/memcachedb
+@dir(nobody,nobody,770) /var/db/memcachedb
