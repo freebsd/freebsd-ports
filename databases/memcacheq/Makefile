@@ -33,5 +33,6 @@ PLIST_SUB=	MCQDIR=${MCQDIR}
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${MCQDIR}
 
 .include <bsd.port.mk>
