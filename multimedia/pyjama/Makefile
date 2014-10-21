@@ -17,10 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:${PORTSDIR}/multimedia/py-gstreamer
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
 USE_GSTREAMER=	core good bad gnomevfs
 USE_GNOME=	pygtk2
-USES=		gettext
+USES=		gettext python
 
 LOCALES=	bg ca da de en_GB es fr it pl
 INSTDIR=	${PYTHON_SITELIBDIR}/${PORTNAME}

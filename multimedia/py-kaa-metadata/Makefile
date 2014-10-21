@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kaa-base>0:${PORTSDIR}/multimedia/py-kaa-b
 		${PYTHON_PKGNAMEPREFIX}exiv2>0:${PORTSDIR}/graphics/py-exiv2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib

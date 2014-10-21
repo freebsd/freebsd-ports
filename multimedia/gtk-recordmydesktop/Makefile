@@ -14,10 +14,9 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake pkgconfig python:2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_PYTHON=	2
 USE_GNOME=	gtk20 pygtk2
 INSTALL_ICONS=	yes
 

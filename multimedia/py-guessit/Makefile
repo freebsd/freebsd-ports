@@ -17,8 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfish>=0.5.3:${PORTSDIR}/devel/py-babelf
 		${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}enzyme>=0:${PORTSDIR}/multimedia/py-enzyme
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
