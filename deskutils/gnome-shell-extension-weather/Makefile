@@ -10,7 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Weather extension for the GNOME3 shell
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
+BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
+		libtoolize:${PORTSDIR}/devel/libtool
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell
 
 WRKSRC=		${WRKDIR}/Neroth-gnome-shell-extension-weather-489aaa0
@@ -18,7 +19,7 @@ WRKSRC=		${WRKDIR}/Neroth-gnome-shell-extension-weather-489aaa0
 USES=		gettext gmake libtool pkgconfig tar:xz
 USE_GNOME=	intltool
 USE_GITHUB=	yes
-USE_AUTOTOOLS=	libtoolize autoconf automake
+USE_AUTOTOOLS=	autoconf automake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
