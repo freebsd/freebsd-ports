@@ -26,9 +26,8 @@ LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack			\
 		libportaudio.so:${PORTSDIR}/audio/portaudio		\
 		libumfpack.so:${PORTSDIR}/math/suitesparse
 
-USES=		cmake:outsource dos2unix fortran pkgconfig
+USES=		cmake:outsource dos2unix fortran pkgconfig python:build
 USE_GL=		yes
-USE_PYTHON_BUILD=	yes
 USE_QT4=	gui network opengl svg webkit xml			\
 		moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS=	-DCMAKE_LIBRARY_PATH:STRING="${LOCALBASE}/llvm33/lib"	\

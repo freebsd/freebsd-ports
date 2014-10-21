@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${PYNUMPY}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	*
 

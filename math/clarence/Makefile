@@ -11,9 +11,8 @@ MASTER_SITES=	http://www.sourcefiles.org/Productivity_Tools/Calculators/ \
 MAINTAINER=	psh@iki.fi
 COMMENT=	Programmer's calculator
 
-USES=		shebangfix
+USES=		python shebangfix
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/clarence man/man1/clarence.1.gz

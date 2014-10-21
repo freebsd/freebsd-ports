@@ -13,17 +13,14 @@ COMMENT=	Tools for complex networks
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python shebangfix
+USE_PYTHON=	distutils autoplist
 
 PLIST_SUB+=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER}
 
 OPTIONS_DEFINE=	EXAMPLES
 EXAMPLESDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 PORTEXAMPLES=	*
-
-USES=	shebangfix
 
 .include <bsd.port.options.mk>
 

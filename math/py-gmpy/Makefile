@@ -13,10 +13,8 @@ COMMENT=	Python Extension that Wraps the GMP Library
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
-USES=		zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 post-extract:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \

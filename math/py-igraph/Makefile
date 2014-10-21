@@ -14,9 +14,8 @@ COMMENT=	High performance graph data structures and algorithms
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libigraph.so:${PORTSDIR}/math/igraph
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_GNOME=	libxml2
 
 .include <bsd.port.mk>

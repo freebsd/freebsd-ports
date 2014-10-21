@@ -18,9 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USES=			gmake makeinfo perl5 tk:84+
+USES=			gmake makeinfo perl5 python:build tk:84+
 USE_PERL5=		build
-USE_PYTHON_BUILD=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \

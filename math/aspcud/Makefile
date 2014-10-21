@@ -19,8 +19,7 @@ RUN_DEPENDS=	gringo:${PORTSDIR}/math/gringo \
 				clasp:${PORTSDIR}/math/clasp \
 				bash:${PORTSDIR}/shells/bash
 
-USE_PYTHON_RUN=	yes
-USES=	compiler:c++11-lang cmake:outsource
+USES=	compiler:c++11-lang cmake:outsource python:run
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man
 
