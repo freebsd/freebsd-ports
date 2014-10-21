@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="76c7a0f5-5928-11e4-adc7-001999f8d30b">
+    <topic>asterisk -- Asterisk Susceptibility to POODLE Vulnerability</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.8.31.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.13.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>The POODLE vulnerability is described under CVE-2014-3566.
+	  This advisory describes the Asterisk's project susceptibility
+	  to this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-011.html</url>
+      <cvename>CVE-2014-3566</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-20</discovery>
+      <entry>2014-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0642b064-56c4-11e4-8b87-bcaec565249c">
     <topic>libxml2 -- Denial of service</topic>
     <affects>
