@@ -17,7 +17,7 @@ man/man8/stunnel.pl.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.init
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.service
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.spec
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -31,7 +31,7 @@ man/man8/stunnel.pl.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/PORTS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/stunnel
-@dirrmtry etc/stunnel
+%%PORTDOCS%%@dir %%DOCSDIR%%
+@dir lib/stunnel
+@dir etc/stunnel
 @unexec if [ -d %D/etc/stunnel ]; then echo "If you are permanently removing this port, you should run ``rm -rf %D/etc/stunnel`` to remove any configuration files left."; fi
