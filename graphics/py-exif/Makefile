@@ -12,7 +12,7 @@ DISTNAME=	pyexif-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library to extract EXIF metadata from JPEG and TIFF image files
 
-USE_PYTHON=	yes
+USES=		python
 WRKSRC=		${WRKDIR}/pyexif
 DATADIR=	${PREFIX}/share/py-exif
 DOCSDIR=	${PREFIX}/share/doc/py-exif

@@ -15,9 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup \
 
 LICENSE=	BSD
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 FILES_ETC=	TileCache/Service.py setup.py tilecache_install_config.py
 

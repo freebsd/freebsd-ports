@@ -20,9 +20,8 @@ RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		${PYTHON_PKGNAMEPREFIX}mechanize>=0.2:${PORTSDIR}/www/py-mechanize \
 		exiv2:${PORTSDIR}/graphics/exiv2
 
-USES=		perl5
+USES=		perl5 python
 USE_PERL5=	run
-USE_PYTHON=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/commons-csv-creator bin/commons-upload

@@ -14,11 +14,9 @@ COMMENT=	Python interface to the GD library
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist pythonprefix
 PYSETUP=	Setup.py
-USE_PYTHON_PREFIX=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

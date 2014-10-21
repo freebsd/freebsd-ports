@@ -50,8 +50,7 @@ CMAKE_ARGS+=	-DWITH_OPENEXR=0
 # Should ignore Python3 since commit f51b0b5
 #CONFLICTS_BUILD=	python3*
 CMAKE_ARGS+=	-DWITH_VIGRANUMPY=1
-USES+=		compiler:gcc-c++11-lib
-USE_PYTHON=	2
+USES+=		compiler:gcc-c++11-lib python:2
 BUILD_DEPENDS+=	nosetests:${PORTSDIR}/devel/py-nose
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
 #BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx

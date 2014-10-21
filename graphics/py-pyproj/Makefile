@@ -11,9 +11,8 @@ MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Pyrex wrapper to provide python interfaces to PROJ.4
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	Changelog README LICENSE_proj4
 PORTEXAMPLES=	datum_shift.py geodtest.py sample.out \

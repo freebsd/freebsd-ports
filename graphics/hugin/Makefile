@@ -26,14 +26,13 @@ RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		gmake:${PORTSDIR}/devel/gmake
 
-USE_PYTHON=	yes
-
 OPTIONS_DEFINE=	PANOMATIC AUTOPANOSIFTC
 OPTIONS_DEFAULT=	PANOMATIC AUTOPANOSIFTC
 PANOMATIC_DESC=	Install graphics/panomatic
 AUTOPANOSIFTC_DESC=	Install graphics/autopano-sift-c
 
-USES=		cmake gettext pkgconfig tar:bzip2 desktop-file-utils shared-mime-info
+USES=		cmake gettext pkgconfig tar:bzip2 desktop-file-utils python \
+		shared-mime-info
 
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
 

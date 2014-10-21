@@ -13,9 +13,8 @@ COMMENT=	General drawing canvas from dia dialog editor
 
 LICENSE=	GPLv2
 
-USES=		gmake pathfix pkgconfig libtool
+USES=		gmake libtool pathfix pkgconfig python
 USE_GNOME=	pygnome2
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

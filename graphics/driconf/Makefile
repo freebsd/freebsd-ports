@@ -15,10 +15,9 @@ COMMENT=	Configuration program for DRI drivers
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USE_GL=		glut
-USE_PYTHON=	yes
+USE_PYTHON=	distutils
 NO_BUILD=	yes
-USES=		gettext
-USE_PYDISTUTILS=	yes
+USES=		gettext python
 PYDISTUTILS_EGGINFODIR=	${STAGEDIR}${PREFIX}/lib/driconf
 
 pre-patch:

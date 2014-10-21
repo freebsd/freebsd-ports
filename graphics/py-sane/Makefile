@@ -17,8 +17,8 @@ LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Sane
 

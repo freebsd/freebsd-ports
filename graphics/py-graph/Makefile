@@ -15,8 +15,7 @@ COMMENT=	Library for working with graphs in Python
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:${PORTSDIR}/graphics/py-graph-core \
 		${PYTHON_PKGNAMEPREFIX}graph-dot>=${PORTVERSION}:${PORTSDIR}/graphics/py-graph-dot
 
-USE_PYTHON=	yes
-
+USES=		python
 NO_BUILD=	yes
 
 do-install:

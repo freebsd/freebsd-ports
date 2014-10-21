@@ -28,8 +28,7 @@ GH_ACCOUNT=	qgis
 GH_COMMIT=	00ab94f
 GH_TAGNAME=	${GH_COMMIT}
 
-USES=		bison cmake gmake
-USE_PYTHON=	yes
+USES=		bison cmake gmake python
 USE_SQLITE=	yes
 USE_QT4=	gui svg xml network sql designer testlib linguist_build \
 		qmake_build moc_build rcc_build uic_build

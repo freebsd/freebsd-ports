@@ -15,9 +15,8 @@ COMMENT=	Simple and flexible painting adaptor to libart for Python
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libttf.so:${PORTSDIR}/print/freetype
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_GNOME=	libartlgpl2
 NO_WRKSUBDIR=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libart-2.0 \

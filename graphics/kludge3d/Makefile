@@ -13,8 +13,7 @@ COMMENT=	Simple 3D editor
 LIB_DEPENDS=	lib3ds-1.so:${PORTSDIR}/graphics/lib3ds \
 		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
-USE_PYTHON=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig python
 USE_GL=		gl
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

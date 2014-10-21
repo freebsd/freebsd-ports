@@ -11,10 +11,9 @@ COMMENT=	Application to view PDF files
 
 LICENSE=	GPLv2
 
-USES=		pkgconfig desktop-file-utils
+USES=		pkgconfig desktop-file-utils python:2
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack
-USE_PYTHON=	2
 
 CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
 

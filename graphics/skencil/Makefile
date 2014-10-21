@@ -22,11 +22,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}alpha
 
-USES=		tk desktop-file-utils
+USES=		tk desktop-file-utils python
 USE_XORG=	x11 xext
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION:R}alpha-py${PYTHON_VER}.egg-info
 
 CFLAGS+=	-I${TK_INCLUDEDIR} -I${LOCALBASE}/include \

@@ -12,7 +12,7 @@ COMMENT=	Converts GIF images to a PNG format
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USE_PYTHON_RUN=	yes
+USES=		python:run
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} bin/web2png \
