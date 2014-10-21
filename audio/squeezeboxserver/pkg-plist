@@ -2080,4 +2080,3 @@ bin/softsqueeze
 %%SLIMDIR%%/slimservice.pl
 %%SLIMDIR%%/strings.txt
 @sample %%SLIMDIR%%/types.conf.sample
-@dir /var/db/squeezeboxserver
