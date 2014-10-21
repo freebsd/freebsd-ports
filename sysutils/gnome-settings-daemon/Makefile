@@ -34,7 +34,7 @@ RUN_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_XORG=	xxf86misc
-USE_GNOME=	gnomehier gnomedesktop3 gnomeprefix intlhack libxslt
+USE_GNOME=	gnomehier gnomedesktop3 gnomeprefix intlhack libxml2 libxslt
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -89,6 +89,8 @@ PLIST_SUB+=	SMARTCARD="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/gnome|${PREFIX}/etc/gnome|g' \
 		${WRKSRC}/data/org.gnome.settings-daemon.plugins.xrandr.gschema.xml.in.in
+	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|file://${PREFIX}/share/xsl/docbook/manpages/docbook.xsl|g' \
+		${WRKSRC}/man/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/cursor-plugin.gschema.override \

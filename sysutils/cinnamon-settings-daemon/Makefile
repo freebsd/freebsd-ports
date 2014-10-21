@@ -73,6 +73,8 @@ post-patch:
 		${WRKSRC}/data/org.cinnamon.settings-daemon.plugins.xrandr.gschema.xml.in.in
 	@${REINPLACE_CMD} -e '/wacom/d' \
 		${WRKSRC}/data/Makefile.am
+	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|file://${PREFIX}/share/xsl/docbook/manpages/docbook.xsl|g' \
+		${WRKSRC}/man/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
