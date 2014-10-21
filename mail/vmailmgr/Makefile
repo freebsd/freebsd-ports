@@ -13,9 +13,8 @@ COMMENT=	Virtual domain manager for qmail
 
 
 # get python paths (PYTHON_SITELIBDIR) in case we install the python API
-USES=			gmake perl5
+USES=			gmake perl5 python
 USE_AUTOTOOLS=		autoconf autoheader automake aclocal
-USE_PYTHON=		yes
 USE_PERL5=		build
 AUTOMAKE_ARGS+=		--add-missing -Wno-portability
 

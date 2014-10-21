@@ -12,10 +12,8 @@ COMMENT=	Collaborative, networked system to detect and block spam
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>=0:${PORTSDIR}/databases/py-gdbm
 
-USES=	tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 PLIST_FILES=	man/man1/pyzor.1.gz \
 		man/man1/pyzord.1.gz

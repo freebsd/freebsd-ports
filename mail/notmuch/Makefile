@@ -17,11 +17,10 @@ LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libtalloc.so:${PORTSDIR}/devel/talloc
 
 HAS_CONFIGURE=	yes
-USES=		pkgconfig gmake
+USES=		pkgconfig python:build gmake
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
-USE_PYTHON_BUILD=	yes
 MAKE_ENV+=		PYTHONCMD=${PYTHON_CMD}
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ MASTER_SITES=	http://catb.org/~esr/lookout/
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Convert Outlook97 addressbook export files to KDE KAB/GNOME gnomecard
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/lookout man/man1/lookout.1.gz

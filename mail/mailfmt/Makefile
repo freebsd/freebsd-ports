@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tundraware.com/Software/mailfmt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remove leading quotations from mail/news and wrap lines to fixed width
 
-USE_PYTHON=	yes
+USES=		python
 OPTIONS_DEFINE= DOCS
 
 post-install:

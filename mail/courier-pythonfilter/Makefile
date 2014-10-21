@@ -11,8 +11,8 @@ COMMENT=	Framework for courier filter development in python
 
 BUILD_DEPENDS=	courier-config:${PORTSDIR}/mail/courier
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 MAILOWN=	courier
 MAILGRP=	courier
