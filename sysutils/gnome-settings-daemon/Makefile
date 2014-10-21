@@ -15,7 +15,9 @@ COMMENT=	GNOME 3 settings daemon
 BUILD_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
 		geoclue>=0:${PORTSDIR}/net/geoclue \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		itstool:${PORTSDIR}/textproc/itstool \
+		xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
@@ -32,7 +34,7 @@ RUN_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_XORG=	xxf86misc
-USE_GNOME=	gnomehier gnomedesktop3 gnomeprefix intlhack
+USE_GNOME=	gnomehier gnomedesktop3 gnomeprefix intlhack libxslt
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
