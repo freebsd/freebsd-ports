@@ -12,12 +12,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Thumbnailer for EPub and MOBI books
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
+BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
+		libtoolize:${PORTSDIR}/devel/libtool
 
 USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gdkpixbuf2 gnomedesktop3 gnomeprefix gtk30 \
 		intlhack libxml2
-USE_AUTOTOOLS=	libtoolize autoconf automake
+USE_AUTOTOOLS=	autoconf automake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
