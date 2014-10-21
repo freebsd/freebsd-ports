@@ -10,7 +10,6 @@
     SUBDIR += bind-tools
     SUBDIR += bind10
     SUBDIR += bind910
-    SUBDIR += bind98
     SUBDIR += bind99
     SUBDIR += bindgraph
     SUBDIR += bundy
