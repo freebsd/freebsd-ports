@@ -15,7 +15,8 @@ LICENSE_COMB=	multi
 
 USES=	gmake iconv libtool tar:bzip2 makeinfo
 PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
-		OPSYS=${OPSYS:tl}
+		OPSYS=${OPSYS:tl} \
+		GCC_TARGET=${GCC_TARGET}
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr \

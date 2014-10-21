@@ -72,6 +72,7 @@
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-gnueabi-binutils
     SUBDIR += arm-none-eabi-binutils
+    SUBDIR += arm-none-eabi-gcc
     SUBDIR += armv6-freebsd10.0-xdev
     SUBDIR += aros-sdk
     SUBDIR += art
