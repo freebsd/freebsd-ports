@@ -34,7 +34,7 @@ PNG_CFLAGS=		-I${LOCALBASE}/include/libpng15
 .if ${PORT_OPTIONS:MTESTS}
 MASTER_SITES+=	http://jbig2dec.sourceforge.net/ubc/:tests
 DISTFILES+=	jb2streams.zip:tests
-USE_PYTHON_BUILD=yes
+USES+=		python:build
 KNOWN_BAD_JB2S=	042_11 042_13 042_14 042_24 042_25 amb_1 amb_2
 
 post-extract:

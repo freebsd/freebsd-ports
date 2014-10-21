@@ -13,8 +13,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Create and display a Tkinter dialog box for editing any Python object
 
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES+=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	EditObj
 WRKSRC=		${WRKDIR}/EditObj-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-editobj

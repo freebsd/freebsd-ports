@@ -17,7 +17,7 @@ LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
 
-USE_PYTHON=	2
+USES=		python:2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-python
 CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}"

@@ -22,8 +22,7 @@ LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app \
 		${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:${PORTSDIR}/graphics/py-gimp
 
-USES=		zip
-USE_PYTHON_RUN=	yes
+USES=		python:run zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

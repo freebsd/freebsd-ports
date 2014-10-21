@@ -15,8 +15,7 @@ LICENSE=	LGPL3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.3.4:${PORTSDIR}/devel/py-lxml
 
 # Python3 ready
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

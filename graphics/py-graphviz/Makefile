@@ -16,8 +16,8 @@ COMMENT=	Python interface to GraphViz agraph
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pygraphviz
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
