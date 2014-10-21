@@ -392,6 +392,7 @@
     SUBDIR += netwib
     SUBDIR += neubot
     SUBDIR += nfsshell
+    SUBDIR += ng_mikrotik_eoip
     SUBDIR += ngrep
     SUBDIR += nifmon
     SUBDIR += nload
