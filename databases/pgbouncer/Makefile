@@ -56,5 +56,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/pgbouncer.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/etc/userlist.txt \
 		${STAGEDIR}${PREFIX}/etc/pgbouncer.users.sample
+	@${MKDIR} ${STAGEDIR}${PGBOUNCER_RUNDIR} \
+		${STAGEDIR}${PGBOUNCER_LOGDIR}
 
 .include <bsd.port.mk>
