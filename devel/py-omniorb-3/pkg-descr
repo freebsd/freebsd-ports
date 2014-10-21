@@ -1,0 +1,8 @@
+omniORBpy is an object request broker (ORB) for Python which implements
+specification 2.6 of the Common Object Request Broker Architecture (CORBA).
+omniORBpy is implemented as a Python extension module (written in C++) to
+provide bindings for omniORB4, a high performance C++ ORB.
+
+This is the legacy version, based upon omniORB-4.1.
+
+WWW: http://omniorb.sourceforge.net

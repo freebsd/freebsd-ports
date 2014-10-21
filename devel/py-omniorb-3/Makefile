@@ -2,39 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	omniorb
-PORTVERSION=	4.2.0
+PORTVERSION=	3.7
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	3
 DISTNAME=	omniORBpy-${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for omniORB4, a CORBA 2.6 ORB
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libomniORB4.so:${PORTSDIR}/devel/omniORB
-RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
+LIB_DEPENDS=	libomniORB4.so.1:${PORTSDIR}/devel/omniORB-4.1
 # parts of omniORB4 source tree is required to build omniORBpy;
 # see also the "post-extract" target below.
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:patch
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB-4.1:patch
 
-CONFLICTS=	py*-orbit-2* py${PYTHON_SUFFIX}-omniorb3-3*
+CONFLICTS=	py${PYTHON_SUFFIX}-orbit-2* py${PYTHON_SUFFIX}-omniorb-4.2*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-PLIST_SUB=	SONUM=2
+PLIST_SUB=	SONUM=${PORTVERSION:C/.*\.//}
 
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
-OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
+OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB-4.1 && ${MAKE} -V WRKSRC
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
-USES=		gmake tar:bzip2 python
+USES=		gmake python tar:bzip2
 
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
@@ -43,20 +43,14 @@ CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} --with-omniorb=${LOCALBASE}
 .include <bsd.port.options.mk>
 
 pre-configure:
-	@${MKDIR} ${CONFIGURE_WRKSRC}
-	@cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
+	${MKDIR} ${CONFIGURE_WRKSRC}
+	cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
 
 post-install:
+	${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl_be/__init__.py
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming/__init__.py',None,'CosNaming/__init__.pyc',True)"
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming__POA/__init__.py',None,'CosNaming__POA/__init__.pyc',True)"
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('omniidl_be/python.py',None,'omniidl_be/python.pyc',True)"
-#	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('omniidl_be/python.py',None,'omniidl_be/python.pyc',True)"
-	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl_be/__init__.py
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omnipymodule.so.4.2
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omniZIOPmodule.so.4.2
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omniConnMgmtmodule.so.4.2
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omnicodesetsmodule.so.4.2
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omnisslTPmodule.so.4.2
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tex

@@ -3818,6 +3818,7 @@
     SUBDIR += py-oletools
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
+    SUBDIR += py-omniorb-3
     SUBDIR += py-optik
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
