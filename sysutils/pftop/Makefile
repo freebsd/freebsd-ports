@@ -3,7 +3,7 @@
 
 PORTNAME=	pftop
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
@@ -11,10 +11,6 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1100000
-BROKEN=		Does not compile on HEAD
-.endif
 
 .if ${OSVERSION} < 900039
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=41
