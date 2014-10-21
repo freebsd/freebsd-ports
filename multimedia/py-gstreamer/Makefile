@@ -19,8 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
-USE_PYTHON=	2
+USES=		gmake libtool pathfix pkgconfig python:2 tar:bzip2
 USE_GNOME=	pygobject
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes

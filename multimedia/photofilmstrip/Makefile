@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 
 PORTSCOUT=	skipv:1.9.90,1.9.91	# Unstable Versions
 
-USE_PYTHON=	yes
+USES=		python
 USE_WX=		3.0+
 WX_COMPS=	python:lib
 ALL_TARGET=	compile

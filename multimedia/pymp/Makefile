@@ -20,11 +20,10 @@ GH_PROJECT=	pymp
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	bea99d9
 
-USES=		shebangfix tar:bzip2
+USES=		shebangfix python tar:bzip2
 SHEBANG_FILES=	*.py
 python_OLD_CMD?=	/usr/bin/env python
 python_CMD?=	${PYTHON_CMD}
-USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 
 PORTDOCS=	CHANGELOG README.md

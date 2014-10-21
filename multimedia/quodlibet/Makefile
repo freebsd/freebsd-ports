@@ -15,12 +15,10 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
-USE_PYTHON=	yes
+USE_PYTHON=	distutils autoplist
 USE_GNOME=	pygtk2
-USES=		display gettext
-USE_PYDISTUTILS=	yes
+USES=		display gettext python
 PYDISTUTILS_INSTALLNOSINGLE=	yes
-PYDISTUTILS_AUTOPLIST=	yes
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-pydistutils
 

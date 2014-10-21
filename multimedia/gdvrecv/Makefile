@@ -10,10 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DV tools for FreeBSD
 
-USES=		tar:bzip2
+USES=		python tar:bzip2
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	distutils
 DESKTOP_ENTRIES="Capture Video" \
 		"Capture from FireWire Camera" \
 		"${PREFIX}/share/pixmaps/gdvrecv/camcorder.png" \

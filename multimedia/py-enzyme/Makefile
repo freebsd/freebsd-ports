@@ -12,8 +12,7 @@ COMMENT=	Python module to parse metadata in video files
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

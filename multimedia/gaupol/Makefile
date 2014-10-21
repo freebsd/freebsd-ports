@@ -18,9 +18,8 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		py*-enchant>=1.5.1:${PORTSDIR}/textproc/py-enchant
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USES=		desktop-file-utils
+USE_PYTHON=	distutils
+USES=		desktop-file-utils python
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS

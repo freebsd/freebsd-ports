@@ -23,9 +23,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 CONFLICTS=	totem-3.[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
 USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
-		pkgconfig shebangfix tar:bzip2
+		pkgconfig python shebangfix tar:bzip2
 SHEBANG_FILES=	data/totem-bugreport.py
 USE_GNOME=	gnomehier gnomeprefix intlhack nautilus2 pygtk2
 USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio

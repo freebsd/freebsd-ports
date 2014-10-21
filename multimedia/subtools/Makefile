@@ -11,8 +11,7 @@ COMMENT=	Command-line tools for movie subtitles in SubRipper format
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
+USES=		python tar:bzip2
 
 PLIST_FILES=	bin/srtshift bin/srtrate bin/udvd2srt.py bin/udvdshift.py
 

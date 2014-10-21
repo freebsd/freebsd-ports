@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 
 WRKSRC=		${WRKDIR}/VideoThumbnail
 
-USE_PYTHON=	yes
+USES=		python
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
