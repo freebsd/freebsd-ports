@@ -5,7 +5,7 @@
  #define MAX_SUPPORTED_FEATURE_STRLEN 50
  static const char *spa_feature_names[] = {
 -  "org.illumos:lz4_compress",NULL
-+  "org.illumos:lz4_compress","com.delphix:hole_birth",NULL
++  "org.illumos:lz4_compress","com.delphix:hole_birth","com.delphix:extensible_dataset","com.delphix:embedded_data",NULL
  };
  
  static int
