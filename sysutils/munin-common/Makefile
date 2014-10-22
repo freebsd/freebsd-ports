@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 ALL_TARGET=	build-common-prime
 INSTALL_TARGET=	install-common
+NO_ARCH=	yes
 
 post-install:
 	${MKDIR} ${STAGEDIR}${LOGDIR} ${STAGEDIR}${STATEDIR} ${STAGEDIR}${SPOOLDIR}

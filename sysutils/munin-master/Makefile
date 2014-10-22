@@ -51,6 +51,7 @@ EXTRA_PATCHES=	${MUNIN_PATCHES}
 DISTINFO_FILE=	${MUNIN_DISTINFO}
 ALL_TARGET=	infiles build-master build-man
 INSTALL_TARGET=	install-master-prime
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
