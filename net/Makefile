@@ -340,6 +340,7 @@
     SUBDIR += luasocket
     SUBDIR += lvwimax
     SUBDIR += mDNSResponder
+    SUBDIR += macchanger
     SUBDIR += mad_fcl
     SUBDIR += mcast-tools
     SUBDIR += mediastreamer
