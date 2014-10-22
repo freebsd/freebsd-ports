@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-static \
 		--with-modules="" \
 		--with-dynmodules="pipe bind ${MODULES}" \
+		--docdir="${PREFIX}/share/doc/powerdns" \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}"
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
@@ -32,7 +33,6 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		DISTNAME="${DISTNAME}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
-# DOCSDIR=	${PREFIX}/share/doc/pdns
 
 SUB_FILES=	pkg-message
 
@@ -60,7 +60,7 @@ REMOTE_DESC=		Remote backend
 TINYDNS_DESC=		TinyDNS backend
 TOOLS_DESC=		Build extra tools
 
-OPTIONS_DEFAULT=	PGSQLDB DNSSEC BOTAN110 POLARSSL
+OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
 
 OPTIONS_SUB=	yes
 
