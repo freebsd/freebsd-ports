@@ -90,6 +90,9 @@ display_loaderopts()
      rm /tmp/.sObjs.$$
   done
 
+  # Using GELI encryption?
+  haveGELI="false"
+
   # Now lets echo out the modules to load
   if [ "$haveObjs" = "1" ] ; then
     while read line
@@ -108,6 +111,10 @@ display_loaderopts()
         echo "$line" >> /tmp/.lSysCtls.$$
         continue
       fi
+
+      # Are we loading GELI module?
+      if [ "$module" = "geom_eli" ] ; then haveGELI="true" ; fi
+
       echo "    kfreebsd_module_elf ${loadPrefix}/@/boot/${mPath}/${module}.ko"
     done < /tmp/.lRObjs.$$
   fi
@@ -130,6 +137,14 @@ display_loaderopts()
   if [ -n "$1" ] ; then
      umount /mnt.$$ >/dev/null
      rmdir /mnt.$$ >/dev/null
+  fi
+
+  # Set the grub.platform kenv variable
+  echo "    set kFreeBSD.grub.platform=\$grub_platform"
+
+  # See if we need to do GELI passphrase passthrough
+  if [ "$haveGELI" = "true" ] ; then
+    echo "    set kFreeBSD.kern.geom.eli.passphrase=\$pass"
   fi
 }
 
