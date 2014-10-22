@@ -2,40 +2,45 @@
 # $FreeBSD$
 
 PORTNAME=	quassel
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt 4 based distributed IRC client
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-
-USES=		cmake:outsource tar:bzip2
+USES=		cmake:outsource compiler:c++11-lib execinfo tar:bzip2
 USE_QT4=	corelib network script sql \
 		qmake_build moc_build rcc_build uic_build
+CMAKE_ARGS=	-DWITH_LIBINDICATE=off \
+		-DEMBED_DATA=on
 
 OPTIONS_DEFINE=	KDE NLS
 OPTIONS_MULTI=	MODULE
+MODULE_DESC=	Quassel components
 OPTIONS_MULTI_MODULE=	MONO CORE CLIENT
 OPTIONS_DEFAULT=	${OPTIONS_MULTI_MODULE}
+OPTIONS_SUB=	yes
 
 MONO_DESC=	Quassel standalone client
+MONO_CMAKE_ON=	-DWANT_MONO=on
+MONO_CMAKE_OFF=	-DWANT_MONO=off
+
 CORE_DESC=	Quassel core (for use with client)
+CORE_LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
+CORE_USE=	QT4=sql-sqlite3_run
+CORE_CMAKE_ON=	-DWANT_CORE=on
+CORE_CMAKE_OFF=	-DWANT_CORE=off
+
 CLIENT_DESC=	Quassel client (for use with core)
+CLIENT_CMAKE_ON=	-DWANT_QTCLIENT=on
+CLIENT_CMAKE_OFF=	-DWANT_QTCLIENT=off
+
 KDE_DESC=	KDE 4 integration (for clients only)
 
-CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
-		-DWANT_CORE=${QUASSEL_CORE} \
-		-DWANT_QTCLIENT=${QUASSEL_CLIENT} \
-		-DWITH_LIBINDICATE=OFF
+NLS_USE=	QT4=linguist_build
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USE_QT4+=	linguist_build
-.endif
 
 .if ${PORT_OPTIONS:MMONO} || ${PORT_OPTIONS:MCLIENT}
 . if ${PORT_OPTIONS:MKDE}
@@ -52,40 +57,16 @@ PLIST_SUB+=	MONO_OR_CLIENT=""
 PLIST_SUB+=	MONO_OR_CLIENT="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MMONO}
-QUASSEL_MONO=	ON
-PLIST_SUB+=	MONO=""
-.else
-QUASSEL_MONO=	OFF
-PLIST_SUB+=	MONO="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MCORE}
-LIB_DEPENDS+=	libqca.so:${PORTSDIR}/devel/qca
-USE_QT4+=	sql-sqlite3_run
-QUASSEL_CORE=	ON
-PLIST_SUB+=	CORE=""
-
 USE_RC_SUBR=	quasselcore
 USERS=		quasselcore
 GROUPS=		${USERS}
 SUB_FILES=	pkg-message
-.else
-QUASSEL_CORE=	OFF
-PLIST_SUB+=	CORE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCLIENT}
-QUASSEL_CLIENT=	ON
-PLIST_SUB+=	CLIENT=""
-.else
-QUASSEL_CLIENT=	OFF
-PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 pre-configure:
 .if !${PORT_OPTIONS:MNLS}
-	${REINPLACE_CMD} -e '/add_subdirectory(i18n)/d' \
+	${REINPLACE_CMD} -e '/add_subdirectory(po)/d' \
 		${WRKSRC}/CMakeLists.txt
 .endif
 

@@ -6,10 +6,3 @@
 %%MONO_OR_CLIENT%%share/apps/quassel/scripts/inxi
 %%MONO_OR_CLIENT%%share/apps/quassel/scripts/mpris
 %%MONO_OR_CLIENT%%share/icons/hicolor/48x48/apps/quassel.png
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/48x48/apps
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/48x48
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor
-%%MONO_OR_CLIENT%%@dirrmtry share/icons
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/scripts
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel
-%%MONO_OR_CLIENT%%@dirrmtry share/apps
