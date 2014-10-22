@@ -169,8 +169,10 @@ CONFIGURE_ARGS+=	--disable-threads
 PKGINSTALL=	${NONEXISTENT}
 PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
+.if !defined(BIND_TOOLS_SLAVE)
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
+.endif # !defined(BIND_TOOLS_SLAVE)
 .if ${PORT_OPTIONS:MGOST}
 WITH_OPENSSL_PORT=yes
 .endif
