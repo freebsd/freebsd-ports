@@ -118,6 +118,7 @@
     SUBDIR += cfengine36-rc
     SUBDIR += chgrep
     SUBDIR += ciso
+    SUBDIR += ciso-maker
     SUBDIR += ck4up
     SUBDIR += clean
     SUBDIR += clockspeed

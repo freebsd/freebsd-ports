@@ -1,0 +1,17 @@
+--- Makefile.orig	2014-09-13 15:12:12.000000000 +0000
++++ Makefile	2014-09-13 15:12:41.000000000 +0000
+@@ -1,13 +1,9 @@
+ DESTDIR= 
+ PREFIX=	/usr/local/
+-CC=	gcc
++CC?=	llvm
+ 
+ INSTALL = install
+ 
+-#.if ${CC} == "clang"
+-#CFLAGS+=	-Wno-format -Wno-tautological-compare
+-#.endif
+-
+ all : ciso-maker
+ ciso-maker : ciso.o
+ 	${CC} -o ciso-maker ciso.o -lz
