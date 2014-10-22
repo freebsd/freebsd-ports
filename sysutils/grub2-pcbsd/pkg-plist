@@ -155,7 +155,7 @@ man/man1/grub-syslinux2cfg.1.gz
 man/man8/grub-macbless.8.gz
 etc/grub.d/00_header
 etc/grub.d/30_os-prober
-etc/grub.d/40_custom
+etc/grub.d/40_custom.dist
 etc/grub.d/41_custom
 etc/grub.d/10_kfreebsd
 etc/grub.d/10_ktrueos

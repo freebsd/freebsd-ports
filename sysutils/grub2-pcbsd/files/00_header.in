@@ -104,6 +104,11 @@ fi
 
 export menuentry_id_option
 
+if [ x"\${gelipassphrase}" != x ]; then
+  set pass=\$gelipassphrase
+  export pass
+fi
+
 if [ "\${prev_saved_entry}" ]; then
   set saved_entry="\${prev_saved_entry}"
   save_env saved_entry
@@ -206,9 +211,20 @@ EOF
 	fi
 
     cat << EOF
-  set gfxmode=${GRUB_GFXMODE}
-  load_video
-  insmod gfxterm
+  if [ x"\${grub_platform}" = xpc ] ; then
+    set gfxmode=${GRUB_GFXMODE}
+    load_video
+    insmod gfxterm
+  else
+    # EFI
+    insmod efi_gop
+    insmod gfxterm
+    insmod font
+    insmod videotest
+    insmod videoinfo
+    set gfxmode=${GRUB_GFXMODE}
+    set gfxpayload=vga=normal
+  fi
 EOF
 
 # Gettext variables and module
