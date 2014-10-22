@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.3.5
+PORTVERSION=	3.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -24,8 +24,7 @@ OPTIONS_SUB=	yes
 
 ADMIN_DESC=	Install rabbitmqadmin script
 
-USES=		gmake shebangfix
-USE_PYTHON_BUILD=yes
+USES=		gmake python:build shebangfix
 USE_RC_SUBR=	rabbitmq
 SHEBANG_FILES=	calculate-relative plugins-src/rabbitmq-amqp1.0/codegen.py
 python_OLD_CMD=	.*python
@@ -46,11 +45,11 @@ MAKE_ENV+=	TARGET_DIR="${STAGEDIR}${PREFIX}/lib/erlang/lib/rabbitmq_server-${POR
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MADMIN}
-USE_PYTHON_RUN=	yes
+USES+=		python:run
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/rabbitmq|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${LOCALBASE}/bin/erl|g' \
+	@${REINPLACE_CMD} -e 's|/etc/rabbitmq|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|$${ERL_DIR}erl|${PREFIX}/bin/erl|g' \
 		${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl \
 		${SCRIPTS_DIR}/rabbitmq-env ${SCRIPTS_DIR}/rabbitmq-plugins \
 		${SCRIPTS_DIR}/rabbitmq-defaults \
