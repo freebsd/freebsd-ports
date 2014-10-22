@@ -249,3 +249,4 @@ sbin/munin-sched
 %%DATADIR%%/plugins/vmstat
 %%DATADIR%%/plugins/zimbra_
 @dir(%%USER%%,%%GROUP%%,) %%DBDIR%%/plugin-state
+@dir %%ETCDIR%%/plugins
