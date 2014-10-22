@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	38.0.2125.101
-PORTREVISION=	2
+PORTVERSION=	38.0.2125.104
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -168,7 +167,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libusb-pc
 
 .if ${PORT_OPTIONS:MTEST}
 .include "Makefile.tests"
-ALL_TARGET+=	${TEST_TARGETS}
+#ALL_TARGET+=	${TEST_TARGETS}
 .endif
 
 DEBUG_MAKE_ENV=	V=1
