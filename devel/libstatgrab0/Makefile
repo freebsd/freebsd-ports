@@ -4,7 +4,7 @@
 PORTNAME=	libstatgrab
 PORTVERSION=	0.17
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.uk.i-scream.org/pub/i-scream/libstatgrab/ \
+MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/libstatgrab/ \
 		http://dl.ambiweb.de/mirrors/ftp.i-scream.org/libstatgrab/ \
 		http://ftp.i-scream.org/pub/i-scream/libstatgrab/
 PKGNAMESUFFIX=	0
