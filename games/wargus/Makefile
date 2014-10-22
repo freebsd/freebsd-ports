@@ -12,7 +12,8 @@ EXTRACT_SUFX=	.orig.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
