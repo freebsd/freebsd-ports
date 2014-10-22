@@ -306,18 +306,3 @@ bin/wargus
 %%DATADIR%%/scripts/wc2.lua
 %%DATADIR%%/scripts/widgets.lua
 %%DATADIR%%/wartool
-@dirrm %%DATADIR%%/scripts/tilesets
-@dirrm %%DATADIR%%/scripts/orc
-@dirrm %%DATADIR%%/scripts/menus
-@dirrm %%DATADIR%%/scripts/human
-@dirrm %%DATADIR%%/scripts/ai
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/maps/multi
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%/campaigns/orc-exp
-@dirrm %%DATADIR%%/campaigns/orc
-@dirrm %%DATADIR%%/campaigns/human-exp
-@dirrm %%DATADIR%%/campaigns/human
-@dirrm %%DATADIR%%/campaigns
-@dirrmtry %%DATADIR%%
