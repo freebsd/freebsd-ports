@@ -423,7 +423,6 @@
 %%DRUPAL_BASE%%/modules/forum/forums.tpl.php
 %%DRUPAL_BASE%%/modules/help/help-rtl.css
 %%DRUPAL_BASE%%/modules/help/help.admin.inc
-%%DRUPAL_BASE%%/modules/help/help.api.php
 %%DRUPAL_BASE%%/modules/help/help.css
 %%DRUPAL_BASE%%/modules/help/help.info
 %%DRUPAL_BASE%%/modules/help/help.module
