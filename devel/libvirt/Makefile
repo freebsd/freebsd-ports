@@ -3,7 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	1.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -23,6 +23,9 @@ RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
 
 OPTIONS_DEFINE=	DOCS NLS QEMU
 OPTIONS_DEFINE_amd64=	BHYVE
+.if exists(/usr/sbin/bhyve)
+OPTIONS_DEFAULT_amd64=	BHYVE
+.endif
 QEMU_DESC=	QEMU driver
 BHYVE_DESC=	bhyve driver
 
@@ -72,10 +75,6 @@ PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 1000000
-OPTIONS_DEFAULT_amd64=	BHYVE
-.endif
 
 #work around an options bug (thanks mat@)
 .if ${ARCH} != amd64
