@@ -12,6 +12,7 @@ COMMENT=	PC-BSD Development Utilities
 
 RUN_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		uic-qt4:${PORTSDIR}/devel/qt4-uic \
+		rcc:${PORTSDIR}/devel/qt4-rcc \
 		linguist-qt4:${PORTSDIR}/devel/qt4-linguist \
 		designer-qt4:${PORTSDIR}/devel/qt4-designer \
 		qmake-qt4:${PORTSDIR}/devel/qmake4
