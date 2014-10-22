@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- scripts/rabbitmq-plugins.orig
++++ scripts/rabbitmq-plugins
+@@ -19,6 +19,7 @@
+ # Non-empty defaults should be set in rabbitmq-env
+ . `dirname $0`/rabbitmq-env
+ 
++HOME=/var/db/rabbitmq \
+ exec ${ERL_DIR}erl \
+     -pa "${RABBITMQ_HOME}/ebin" \
+     -noinput \
