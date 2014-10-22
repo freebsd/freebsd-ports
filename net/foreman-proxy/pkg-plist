@@ -44,6 +44,7 @@ sbin/smart-proxy
 %%DATADIR%%/lib/proxy/virsh.rb
 %%DATADIR%%/lib/proxy.rb
 %%DATADIR%%/lib/rack-patch.rb
+%%DATADIR%%/lib/sinatra/ssl_client_verification.rb
 %%DATADIR%%/lib/sinatra/trusted_hosts.rb
 %%DATADIR%%/lib/sinatra-patch.rb
 %%DATADIR%%/lib/smart_proxy.rb
@@ -129,33 +130,5 @@ sbin/smart-proxy
 %%DATADIR%%/views/dhcp/show.erb
 %%DATADIR%%/views/features/index.erb
 %%DATADIR%%/views/layout.erb
-@dirrm %%DATADIR%%/views/features
-@dirrm %%DATADIR%%/views/dhcp
-@dirrm %%DATADIR%%/views
-@dirrm %%DATADIR%%/public/css
-@dirrm %%DATADIR%%/public
-@dirrm %%DATADIR%%/modules/tftp
-@dirrm %%DATADIR%%/modules/root
-@dirrm %%DATADIR%%/modules/realm
-@dirrm %%DATADIR%%/modules/puppetca
-@dirrm %%DATADIR%%/modules/puppet_proxy
-@dirrm %%DATADIR%%/modules/facts
-@dirrm %%DATADIR%%/modules/dns/providers
-@dirrm %%DATADIR%%/modules/dhcp/dhcp/record
-@dirrm %%DATADIR%%/modules/dhcp/dhcp/providers
-@dirrm %%DATADIR%%/modules/dhcp/dhcp
-@dirrm %%DATADIR%%/modules/dhcp
-@dirrm %%DATADIR%%/modules/dns
-@dirrm %%DATADIR%%/modules/bmc
-@dirrm %%DATADIR%%/modules/chef_proxy
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/lib/proxy
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/extra
-@dirrm %%DATADIR%%/bundler.d
-@dirrmtry %%DATADIR%%
-@dirrmtry etc/foreman-proxy
-@cwd /
-@exec %%MKDIR%% -m 0700 %%FOREMAN_PROXY_LOGDIR%% %%FOREMAN_PROXY_RUNDIR%%
-@unexec rmdir %%FOREMAN_PROXY_LOGDIR%% >/dev/null 2>&1 || :
-@unexec rmdir %%FOREMAN_PROXY_RUNDIR%% >/dev/null 2>&1 || :
+@dir(%%FOREMAN_PROXY_USER%%,%%FOREMAN_PROXY_GROUP%%,0700) %%FOREMAN_PROXY_LOGDIR%%
+@dir(%%FOREMAN_PROXY_USER%%,%%FOREMAN_PROXY_GROUP%%,0700) %%FOREMAN_PROXY_RUNDIR%%
