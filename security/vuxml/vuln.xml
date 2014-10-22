@@ -57,6 +57,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="25b78f04-59c8-11e4-b711-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS vulnerabilities in SQL debug output and server monitor page.</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.10.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-12.php">
+	  <p>With a crafted database or table name it is possible to
+	    trigger an XSS in SQL debug output when enabled and in
+	    server monitor page when viewing and analysing executed
+	    queries.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	    is logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    pages. Moreover, debugging SQL is a developer option which
+	    is disabled by default and expected to be disabled in
+	    production environments.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-12.php</url>
+      <cvename>CVE-2014-8326</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-21</discovery>
+      <entry>2014-10-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76c7a0f5-5928-11e4-adc7-001999f8d30b">
     <topic>asterisk -- Asterisk Susceptibility to POODLE Vulnerability</topic>
     <affects>
