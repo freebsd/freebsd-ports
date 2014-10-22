@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-GITVERSION=	1413399783
+GITVERSION=	1413916751
 PORTVERSION=	0.7.0.${GITVERSION}
 PORTEPOCH=	1
 CATEGORIES=	x11
@@ -15,7 +15,8 @@ COMMENT=	Lumina Desktop Environment
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox \
+RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
+		fluxbox:${PORTSDIR}/x11-wm/fluxbox \
 		fluxbox-tenr-styles-pack>=0:${PORTSDIR}/x11-themes/fluxbox-tenr-styles-pack \
 		kde4-icons-oxygen>=0:${PORTSDIR}/x11-themes/kde4-icons-oxygen \
 		xscreensaver:${PORTSDIR}/x11/xscreensaver \
@@ -30,8 +31,8 @@ LIB_DEPENDS=	libQtSolutions_SingleApplication-head.so:${PORTSDIR}/devel/qt4-qtso
 MAKE_JOBS_UNSAFE=yes
 USE_XORG=	x11 xcomposite xdamage xrender
 USE_LDCONFIG=	yes
-USE_QT4=	corelib gui network svg linguist phonon \
-		moc_build rcc_build uic_build
+USE_QT4=	corelib gui network svg linguist phonon imageformats \
+		moc_build rcc_build uic_build 
 USES=		qmake tar:bzip2
 
 WRKSRC=		${WRKDIR}/lumina
