@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 CATEGORIES=	net
 MASTER_SITES=	GH
 
@@ -17,19 +17,19 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:${PORTSDIR}/sysutils/rubygem-bundler_ext \
 		rubygem-sinatra>=1.4.3:${PORTSDIR}/www/rubygem-sinatra \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-OPTIONS_DEFINE= BMC PUPPET
+OPTIONS_DEFINE=	BMC PUPPET
 BMC_DESC=	Depend on rubyipmi for BMC support
 PUPPET_DESC=	Depend on Puppet
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	theforeman
 GH_PROJECT=	smart-proxy
-GH_COMMIT= 	0330140
+GH_COMMIT=	b53b4d0
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RC_SUBR=	foreman-proxy
 NO_BUILD=	yes
-PKGINSTALL=	${WRKDIR}/pkg-install
+NO_ARCH=	yes
 
 FOREMAN_PROXY_USER?=	foreman_proxy
 FOREMAN_PROXY_GROUP?=	foreman_proxy
@@ -39,28 +39,17 @@ FOREMAN_PROXY_RUNDIR?=	/var/run/foreman-proxy
 USERS=		${FOREMAN_PROXY_USER}
 GROUPS=		${FOREMAN_PROXY_GROUP}
 
-SUB_FILES+=	pkg-install
-SUB_LIST+=	RUBY="${RUBY}" \
+SUB_LIST=	RUBY="${RUBY}" \
 		FOREMAN_PROXY_USER="${FOREMAN_PROXY_USER}" \
 		FOREMAN_PROXY_GROUP="${FOREMAN_PROXY_GROUP}" \
 		FOREMAN_PROXY_RUNDIR="${FOREMAN_PROXY_RUNDIR}" \
 		FOREMAN_PROXY_LOGDIR="${FOREMAN_PROXY_LOGDIR}"
 
-PLIST_SUB+=	${SUB_LIST} \
-		MKDIR="${MKDIR}"
+PLIST_SUB=	${SUB_LIST} MKDIR="${MKDIR}"
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBMC}
-RUN_DEPENDS+=	rubygem-rubyipmi>=0.7:${PORTSDIR}/sysutils/rubygem-rubyipmi
-.endif
-
-.if ${PORT_OPTIONS:MPUPPET}
-RUN_DEPENDS+=	puppet:${PORTSDIR}/sysutils/puppet \
-		rubygem-ruby-augeas>=0.5:${PORTSDIR}/textproc/rubygem-augeas
-.endif
-
-.include <bsd.port.pre.mk>
+BMC_RUN_DEPENDS=	rubygem-rubyipmi>=0.7:${PORTSDIR}/sysutils/rubygem-rubyipmi
+PUPPET_RUN_DEPENDS=	puppet:${PORTSDIR}/sysutils/puppet \
+			rubygem-ruby-augeas>=0.5:${PORTSDIR}/textproc/rubygem-augeas
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -77,30 +66,27 @@ post-patch:
 		${WRKSRC}/lib/proxy/http_downloads.rb
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d
-	@${MKDIR} ${STAGEDIR}${DATADIR}/extra
-	@${LN} -s ${PREFIX}/etc/foreman-proxy ${STAGEDIR}${DATADIR}/config
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/smart-proxy \
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d
+	${MKDIR} ${STAGEDIR}${DATADIR}/extra
+	${LN} -s ${PREFIX}/etc/foreman-proxy ${STAGEDIR}${DATADIR}/config
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/smart-proxy \
 		${STAGEDIR}${PREFIX}/sbin/smart-proxy
 .for file in CHANGELOG Contributors Gemfile LICENSE README Rakefile \
 	VERSION bundler.d config.ru lib modules public views
-	@${CP} -r ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
+	${CP} -r ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
 .endfor
-	@${LN} -s Gemfile ${STAGEDIR}${DATADIR}/Gemfile.in
+	${LN} -s Gemfile ${STAGEDIR}${DATADIR}/Gemfile.in
 .for script in migrate_settings.rb query.rb
 	${INSTALL_SCRIPT} ${WRKSRC}/extra/${script} \
 		${STAGEDIR}${DATADIR}/extra/${script}
 .endfor
-	${INSTALL} ${COPY} -m 644 ${WRKSRC}/config/settings.yml.example \
+	${INSTALL_DATA} ${WRKSRC}/config/settings.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml.sample
 .for cfg in bmc chef dhcp dns puppet puppetca realm tftp
-	${INSTALL} ${COPY} -m 644 ${WRKSRC}/config/settings.d/${cfg}.yml.example \
+	${INSTALL_DATA} ${WRKSRC}/config/settings.d/${cfg}.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/${cfg}.yml.sample
 .endfor
-
-post-install:
-	@${MKDIR} -m 0700 ${STAGEDIR}${FOREMAN_PROXY_LOGDIR} \
+	${MKDIR} -m 0700 ${STAGEDIR}${FOREMAN_PROXY_LOGDIR} \
 		${STAGEDIR}${FOREMAN_PROXY_RUNDIR}
-	@${SH} ${PKGINSTALL} STAGEDIR=${STAGEDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
