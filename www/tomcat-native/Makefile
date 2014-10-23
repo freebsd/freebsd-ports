@@ -28,7 +28,7 @@ JAVA_VERSION=	1.6+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-java-home=${JAVA_HOME} \
-		--with-ssl=${SSLBASE}
+		--with-ssl=${OPENSSLBASE}
 
 PLIST_FILES=	lib/libtcnative-1.a \
 		lib/libtcnative-1.so \
