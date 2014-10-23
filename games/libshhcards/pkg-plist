@@ -4,4 +4,3 @@ lib/libshhcards.so
 lib/libshhcards.so.1
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
