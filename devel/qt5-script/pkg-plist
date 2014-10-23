@@ -67,13 +67,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_script.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_script_private.pri
 libdata/pkgconfig/Qt5Script.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Script
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtScript/%%FULLVER%%/QtScript/private
-@dirrm %%QT_INCDIR%%/QtScript/%%FULLVER%%/QtScript
-@dirrm %%QT_INCDIR%%/QtScript/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtScript
-@dirrmtry %%QT_INCDIR%%

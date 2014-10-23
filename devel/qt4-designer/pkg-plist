@@ -106,9 +106,3 @@ libdata/pkgconfig/QtDesigner.pc
 libdata/pkgconfig/QtDesignerComponents.pc
 libdata/pkgconfig/QtUiTools.pc
 share/pixmaps/designer-qt4.png
-@dirrmtry %%QT_PLUGINDIR%%/designer
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtUiTools
-@dirrm %%QT_INCDIR%%/QtDesigner
-@dirrmtry %%QT_INCDIR%%

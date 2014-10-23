@@ -1153,7 +1153,3 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQtGui.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtGui.pc
 share/pixmaps/qtlogo.png
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtGui
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

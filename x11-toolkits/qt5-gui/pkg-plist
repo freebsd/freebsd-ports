@@ -586,22 +586,3 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqxcb.so.debug
 libdata/pkgconfig/Qt5Gui.pc
 libdata/pkgconfig/Qt5PlatformSupport.pc
-@dirrm %%QT_PLUGINDIR%%/platforms
-@dirrm %%QT_PLUGINDIR%%/platforminputcontexts
-@dirrmtry %%QT_PLUGINDIR%%/imageformats
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrmtry %%QT_LIBDIR%%/cmake/Qt5Gui
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private
-@dirrm %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport
-@dirrm %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtPlatformSupport
-@dirrm %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa
-@dirrm %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private
-@dirrm %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui
-@dirrm %%QT_INCDIR%%/QtGui/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtGui
-@dirrmtry %%QT_INCDIR%%

@@ -12,13 +12,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_uitools.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_uitools_private.pri
 libdata/pkgconfig/Qt5UiTools.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5UiTools
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtUiTools/%%FULLVER%%/QtUiTools/private
-@dirrm %%QT_INCDIR%%/QtUiTools/%%FULLVER%%/QtUiTools
-@dirrm %%QT_INCDIR%%/QtUiTools/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtUiTools
-@dirrmtry %%QT_INCDIR%%

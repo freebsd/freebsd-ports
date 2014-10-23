@@ -5,7 +5,3 @@
 %%QT_BINDIR%%/syncqt.pl
 %%QT_MKSPECDIR%%/modules/qt_lib_bootstrap_private.pri
 libdata/pkgconfig/Qt5Bootstrap.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%

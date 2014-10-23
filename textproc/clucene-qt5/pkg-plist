@@ -28,11 +28,3 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5CLucene.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_clucene_private.pri
 libdata/pkgconfig/Qt5CLucene.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_INCDIR%%/QtCLucene/%%FULLVER%%/QtCLucene/private
-@dirrm %%QT_INCDIR%%/QtCLucene/%%FULLVER%%/QtCLucene
-@dirrm %%QT_INCDIR%%/QtCLucene/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtCLucene
-@dirrmtry %%QT_INCDIR%%

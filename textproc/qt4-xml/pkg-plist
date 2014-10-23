@@ -55,7 +55,3 @@
 %%QT_LIBDIR%%/libQtXml.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtXml.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtXml.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtXml
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

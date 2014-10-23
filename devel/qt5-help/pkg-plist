@@ -49,14 +49,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_help.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_help_private.pri
 libdata/pkgconfig/Qt5Help.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Help
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private
-@dirrm %%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp
-@dirrm %%QT_INCDIR%%/QtHelp/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtHelp
-@dirrmtry %%QT_INCDIR%%

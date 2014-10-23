@@ -5,4 +5,3 @@
 %%QT_LIBDIR%%/libQtCLucene.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtCLucene.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtCLucene.pc
-@dirrmtry %%QT_LIBDIR%%

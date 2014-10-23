@@ -43,7 +43,3 @@
 %%QT_LIBDIR%%/libQtMultimedia.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtMultimedia.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtMultimedia.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtMultimedia
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

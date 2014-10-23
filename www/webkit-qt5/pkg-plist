@@ -109,24 +109,3 @@ libdata/pkgconfig/Qt5WebKit.pc
 libdata/pkgconfig/Qt5WebKitWidgets.pc
 %%QT_LIBEXECDIR%%/QtWebPluginProcess
 %%QT_LIBEXECDIR%%/QtWebProcess
-@dirrmtry %%QT_LIBEXECDIR%%
-@dirrm %%QT_QMLDIR%%/QtWebKit/experimental
-@dirrm %%QT_QMLDIR%%/QtWebKit
-@dirrmtry %%QT_QMLDIR%%
-@dirrm %%QT_PLUGINDIR%%/webkit
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5WebKitWidgets
-@dirrm %%QT_LIBDIR%%/cmake/Qt5WebKit
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtWebKitWidgets/%%FULLVER%%/QtWebKitWidgets/private
-@dirrm %%QT_INCDIR%%/QtWebKitWidgets/%%FULLVER%%/QtWebKitWidgets
-@dirrm %%QT_INCDIR%%/QtWebKitWidgets/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtWebKitWidgets
-@dirrm %%QT_INCDIR%%/QtWebKit/%%FULLVER%%/QtWebKit/private
-@dirrm %%QT_INCDIR%%/QtWebKit/%%FULLVER%%/QtWebKit
-@dirrm %%QT_INCDIR%%/QtWebKit/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtWebKit
-@dirrmtry %%QT_INCDIR%%

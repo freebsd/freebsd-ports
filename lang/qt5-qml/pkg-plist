@@ -259,13 +259,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_qml.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_qml_private.pri
 libdata/pkgconfig/Qt5Qml.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Qml
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private
-@dirrm %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml
-@dirrm %%QT_INCDIR%%/QtQml/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtQml
-@dirrmtry %%QT_INCDIR%%

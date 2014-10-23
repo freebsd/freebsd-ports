@@ -676,17 +676,6 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_core.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_core_private.pri
 libdata/pkgconfig/Qt5Core.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Core
-@dirrm %%QT_LIBDIR%%/cmake/Qt5
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private
-@dirrm %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore
-@dirrm %%QT_INCDIR%%/QtCore/%%FULLVER%%
-@dirrmtry %%QT_INCDIR%%/QtCore
-@dirrmtry %%QT_INCDIR%%
 @cwd %%QT_PREFIX%%
 @comment Ensure that a (even empty) qconfig-modules.h exists.
 @exec touch %D/%%QT_INCDIR%%/QtCore/qconfig-modules.h

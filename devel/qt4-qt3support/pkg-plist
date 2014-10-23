@@ -408,7 +408,3 @@
 %%QT_LIBDIR%%/libQt3Support.so.%%FULLVER%%
 @comment %%DEBUG%%%%QT_LIBDIR%%/libQt3Support.so.%%FULLVER%%.debug
 libdata/pkgconfig/Qt3Support.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/Qt3Support
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

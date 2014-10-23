@@ -9,9 +9,3 @@
 %%QT_LIBDIR%%/libQtAssistantClient.so.4.6.3
 libdata/pkgconfig/QtAssistantClient.pc
 %%QT_MKSPECDIR%%/features/assistant.prf
-@dirrmtry %%QT_MKSPECDIR%%/features
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_DATADIR%%
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtAssistant
-@dirrmtry %%QT_INCDIR%%

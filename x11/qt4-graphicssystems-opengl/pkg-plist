@@ -1,4 +1,2 @@
 %%QT_PLUGINDIR%%/graphicssystems/libqglgraphicssystem.so
 %%DEBUG%%%%QT_PLUGINDIR%%/graphicssystems/libqglgraphicssystem.so.debug
-@dirrmtry %%QT_PLUGINDIR%%/graphicssystems
-@dirrmtry %%QT_PLUGINDIR%%
