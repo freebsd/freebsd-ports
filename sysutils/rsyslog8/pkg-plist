@@ -15,6 +15,7 @@ lib/rsyslog/lmstrmsrv.so
 lib/rsyslog/lmtcpclt.so
 lib/rsyslog/lmtcpsrv.so
 lib/rsyslog/lmzlibw.so
+lib/rsyslog/mmexternal.so
 lib/rsyslog/ommail.so
 lib/rsyslog/omstdout.so
 lib/rsyslog/omtesting.so
