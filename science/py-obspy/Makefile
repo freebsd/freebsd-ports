@@ -26,6 +26,8 @@ USE_LDCONFIG=		yes
 LDFLAGS+=		-shared
 USE_PYTHON=		distutils autoplist
 
+LDFLAGS+=	-shared
+
 post-patch:
 	${REINPLACE_CMD} -e "s#FC#${FC}#g" ${WRKSRC}/setup.py
 
