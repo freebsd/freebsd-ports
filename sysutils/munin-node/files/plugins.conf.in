@@ -35,6 +35,10 @@ env.leasefile /var/db/dhcpd.leases
 group mail
 env.exim %%LOCALBASE%%/sbin/exim
 
+[smart_*]
+group operator
+env.smartctl %%LOCALBASE%%/sbin/smartctl
+
 [hddtemp_smartctl]
 group operator
 env.smartctl %%LOCALBASE%%/sbin/smartctl
@@ -43,12 +47,13 @@ env.smartctl %%LOCALBASE%%/sbin/smartctl
 env.mbmon %%LOCALBASE%%/bin/mbmon
 
 [mysql*]
+env.mysql %%LOCALBASE%%/bin/mysql
 env.mysqladmin %%LOCALBASE%%/bin/mysqladmin
 env.mysqlshow %%LOCALBASE%%/bin/mysqlshow
 
 [postfix*]
 user root
-env.logfile maillog
+env.logfile /var/log/maillog
 
 [sendmail*]
 env.mspqueue /var/spool/clientmqueue
