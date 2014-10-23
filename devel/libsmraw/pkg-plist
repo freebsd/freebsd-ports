@@ -16,4 +16,3 @@ lib/libsmraw.so.1.0.0
 libdata/pkgconfig/libsmraw.pc
 man/man1/smrawmount.1.gz
 man/man3/libsmraw.3.gz
-@dirrm include/libsmraw
