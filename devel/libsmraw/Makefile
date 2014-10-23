@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsmraw
-DISTVERSION=	alpha-20140817
+DISTVERSION=	alpha-20141022
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSRml2cndCelp2R3M/ \
 		LOCAL/antoine
