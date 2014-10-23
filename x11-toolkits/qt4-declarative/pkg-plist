@@ -75,7 +75,3 @@
 %%QT_LIBDIR%%/libQtDeclarative.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtDeclarative.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtDeclarative.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtDeclarative
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

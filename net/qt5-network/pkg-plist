@@ -150,15 +150,3 @@
 %%QT_PLUGINDIR%%/bearer/libqgenericbearer.so
 %%DEBUG%%%%QT_PLUGINDIR%%/bearer/libqgenericbearer.so.debug
 libdata/pkgconfig/Qt5Network.pc
-@dirrm %%QT_PLUGINDIR%%/bearer
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Network
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private
-@dirrm %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork
-@dirrm %%QT_INCDIR%%/QtNetwork/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtNetwork
-@dirrmtry %%QT_INCDIR%%

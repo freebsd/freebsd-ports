@@ -1,3 +1,1 @@
 %%QT_BINDIR%%/qdbus
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%

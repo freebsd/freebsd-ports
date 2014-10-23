@@ -74,7 +74,3 @@
 %%QT_LIBDIR%%/libQtDBus.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtDBus.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtDBus.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtDBus
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

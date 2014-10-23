@@ -69,13 +69,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_testlib.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_testlib_private.pri
 libdata/pkgconfig/Qt5Test.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Test
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private
-@dirrm %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest
-@dirrm %%QT_INCDIR%%/QtTest/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtTest
-@dirrmtry %%QT_INCDIR%%

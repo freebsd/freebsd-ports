@@ -51,7 +51,3 @@
 %%QT_LIBDIR%%/libQtXmlPatterns.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtXmlPatterns.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtXmlPatterns.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtXmlPatterns
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

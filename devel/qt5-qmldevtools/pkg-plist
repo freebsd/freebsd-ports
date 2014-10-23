@@ -16,11 +16,3 @@
 %%QT_LIBDIR%%/libQt5QmlDevTools.prl
 %%QT_MKSPECDIR%%/modules/qt_lib_qmldevtools_private.pri
 libdata/pkgconfig/Qt5QmlDevTools.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private
-@dirrm %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools
-@dirrm %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtQmlDevTools
-@dirrmtry %%QT_INCDIR%%

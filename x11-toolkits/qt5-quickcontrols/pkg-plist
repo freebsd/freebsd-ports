@@ -126,10 +126,3 @@
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Layouts/libqquicklayoutsplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Layouts/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Layouts/qmldir
-@dirrmtry %%QT_QMLDIR%%/QtQuick/Controls/Private
-@dirrmtry %%QT_QMLDIR%%/QtQuick/Controls/Styles/Base/images
-@dirrmtry %%QT_QMLDIR%%/QtQuick/Controls/Styles/Base
-@dirrmtry %%QT_QMLDIR%%/QtQuick/Controls/Styles/Desktop
-@dirrmtry %%QT_QMLDIR%%/QtQuick/Controls/Styles
-@dirrmtry %%QT_QMLDIR%%/QtQuick/Controls
-@dirrmtry %%QT_QMLDIR%%/QtQuick/Layouts

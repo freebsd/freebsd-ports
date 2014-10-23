@@ -1,4 +1,2 @@
 %%QT_BINDIR%%/qdbusviewer
 share/pixmaps/qdbusviewer-qt5.png
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%

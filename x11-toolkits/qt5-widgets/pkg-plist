@@ -494,16 +494,3 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/accessible/libqtaccessiblewidgets.so.debug
 libdata/pkgconfig/Qt5Widgets.pc
 share/pixmaps/qt5logo.png
-@dirrmtry %%QT_PLUGINDIR%%/accessible
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrmtry %%QT_LIBDIR%%/cmake/Qt5Widgets
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private
-@dirrm %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets
-@dirrm %%QT_INCDIR%%/QtWidgets/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtWidgets
-@dirrmtry %%QT_INCDIR%%

@@ -413,14 +413,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_xmlpatterns.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_xmlpatterns_private.pri
 libdata/pkgconfig/Qt5XmlPatterns.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5XmlPatterns
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private
-@dirrm %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns
-@dirrm %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtXmlPatterns
-@dirrmtry %%QT_INCDIR%%

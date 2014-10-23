@@ -45,16 +45,3 @@
 %%CUPS%%%%QT_PLUGINDIR%%/printsupport/libcupsprintersupport.so
 %%CUPS%%%%DEBUG%%%%QT_PLUGINDIR%%/printsupport/libcupsprintersupport.so.debug
 libdata/pkgconfig/Qt5PrintSupport.pc
-%%CUPS%%@dirrm %%QT_PLUGINDIR%%/printsupport
-%%CUPS%%@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5PrintSupport
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/qpa
-@dirrm %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private
-@dirrm %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport
-@dirrm %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtPrintSupport
-@dirrmtry %%QT_INCDIR%%

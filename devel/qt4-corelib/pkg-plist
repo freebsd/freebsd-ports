@@ -633,10 +633,3 @@
 %%QT_PLUGINDIR%%/.keep_me
 libdata/pkgconfig/QtCore.pc
 %%QT_MKSPECDIR%%/qconfig.pri
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_DATADIR%%
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtCore
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

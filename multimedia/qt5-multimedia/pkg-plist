@@ -297,26 +297,3 @@
 libdata/pkgconfig/Qt5Multimedia.pc
 libdata/pkgconfig/Qt5MultimediaQuick_p.pc
 libdata/pkgconfig/Qt5MultimediaWidgets.pc
-@dirrm %%QT_QMLDIR%%/QtMultimedia
-%%OPENAL%%@dirrm %%QT_QMLDIR%%/QtAudioEngine
-@dirrmtry %%QT_QMLDIR%%
-@dirrm %%QT_PLUGINDIR%%/playlistformats
-@dirrm %%QT_PLUGINDIR%%/mediaservice
-%%PULSEAUDIO%%@dirrm %%QT_PLUGINDIR%%/audio
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5MultimediaWidgets
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Multimedia
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtMultimediaWidgets/%%FULLVER%%/QtMultimediaWidgets/private
-@dirrm %%QT_INCDIR%%/QtMultimediaWidgets/%%FULLVER%%/QtMultimediaWidgets
-@dirrm %%QT_INCDIR%%/QtMultimediaWidgets/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtMultimediaWidgets
-@dirrm %%QT_INCDIR%%/QtMultimediaQuick_p
-@dirrm %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private
-@dirrm %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia
-@dirrm %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtMultimedia
-@dirrmtry %%QT_INCDIR%%

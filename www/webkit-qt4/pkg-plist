@@ -66,12 +66,3 @@
 %%QT_LIBDIR%%/libQtWebKit.so.4.9.4
 libdata/pkgconfig/QtWebKit.pc
 %%QT_MKSPECDIR%%/modules/qt_webkit_version.pri
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_DATADIR%%
-@dirrm %%QT_IMPORTDIR%%/QtWebKit
-@dirrmtry %%QT_IMPORTDIR%%
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtWebKit
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%
