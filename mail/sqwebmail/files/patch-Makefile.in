@@ -1,18 +1,18 @@
---- Makefile.in	2014-10-23 18:58:08.635738996 +0200
-+++ Makefile.in.orig	2013-12-24 00:50:01.000000000 +0100
+--- Makefile.in.orig	2013-12-24 00:50:01.000000000 +0100
++++ Makefile.in	2014-10-23 22:36:30.826836195 +0200
 @@ -384,13 +384,13 @@
  
  scriptbindir = $(sbindir)
  scriptbin_SCRIPTS = \
--	sharedindexinstall.sqwebmail sharedindexsplit.sqwebmail
-+	sharedindexinstall sharedindexsplit
+-	sharedindexinstall sharedindexsplit
++	sharedindexinstall.sqwebmail sharedindexsplit.sqwebmail
  
  pkglibPROGRAMS = maildirmake deliverquota reformime makemime pcpd
  pkglibexec_PROGRAMS = @pkglibPROGRAMS_exec@
  libexec_SCRIPTS = sqwebmaild.rc
  CLEANFILES = $(pkgman1_DATA) $(pkgman8_DATA) $(sysconf_DATA) \
--	sharedindexinstall.sqwebmail sharedindexsplit.sqwebmail
-+	sharedindexinstall sharedindexsplit
+-	sharedindexinstall sharedindexsplit
++	sharedindexinstall.sqwebmail sharedindexsplit.sqwebmail
  
  pkgman8dir = @mandir@/man8
  pkgman8_DATA = deliverquota.8
@@ -20,15 +20,15 @@
  makemime: libs/rfc2045/makemime
  	cp libs/rfc2045/makemime .
  
--sharedindexinstall.sqwebmail: libs/maildir/sharedindexinstall
--	cp -f libs/maildir/sharedindexinstall ./sharedindexinstall.sqwebmail
-+sharedindexinstall: libs/maildir/sharedindexinstall
-+	cp -f libs/maildir/sharedindexinstall .
+-sharedindexinstall: libs/maildir/sharedindexinstall
+-	cp -f libs/maildir/sharedindexinstall .
++sharedindexinstall.sqwebmail: libs/maildir/sharedindexinstall
++	cp -f libs/maildir/sharedindexinstall ./sharedindexinstall.sqwebmail
  
--sharedindexsplit.sqwebmail: libs/maildir/sharedindexsplit
--	cp -f libs/maildir/sharedindexsplit ./sharedindexsplit.sqwebmail
-+sharedindexsplit: libs/maildir/sharedindexsplit
-+	cp -f libs/maildir/sharedindexsplit .
+-sharedindexsplit: libs/maildir/sharedindexsplit
+-	cp -f libs/maildir/sharedindexsplit .
++sharedindexsplit.sqwebmail: libs/maildir/sharedindexsplit
++	cp -f libs/maildir/sharedindexsplit ./sharedindexsplit.sqwebmail
  
  #
  # Install SqWebMail setuid to root, if we're running as root
