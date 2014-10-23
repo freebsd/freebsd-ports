@@ -4,7 +4,7 @@ PORTNAME=	ruby-build
 PORTVERSION=	20140926
 CATEGORIES=	devel ruby
 
-MAINTAINER=	fmb@onibox.net
+MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Compile and install different ruby versions
 
 LICENSE=	MIT
