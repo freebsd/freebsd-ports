@@ -1,0 +1,7 @@
+pyfst provides a Python interface to the excellent OpenFst library.
+Most of the essential functionality of the library is exposed through a
+simplified API, allowing quick prototyping of algorithms using finite-state
+methods and easy visual debugging of the results obtained by applying
+FST operations.
+
+WWW: http://pyfst.github.io

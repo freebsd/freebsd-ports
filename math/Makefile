@@ -570,6 +570,7 @@
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
     SUBDIR += py-pycosat
+    SUBDIR += py-pyfst
     SUBDIR += py-pymc
     SUBDIR += py-roman
     SUBDIR += py-scientific
