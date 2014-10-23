@@ -55,7 +55,7 @@ PYTHON=		"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGOST}
-. if ${OSVERSION} < 1000015
+. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
 . endif
 DEPENDS_ARGS+=	WITH_GOST=yes
@@ -79,7 +79,7 @@ MUNIN=		"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBEVENT}
-.if ${OSVERSION} >= 1000015
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000015
 BROKEN=	Unbound with libevent crashes on FreeBSD 10+ due to Capsicum
 .endif
 LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
