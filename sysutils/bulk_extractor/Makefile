@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bulk_extractor
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://digitalcorpora.org/downloads/bulk_extractor/
 
