@@ -158,30 +158,3 @@ share/pixmaps/auto-multiple-choice.xpm
 %%TEXMFLOCALDIR%%/doc/latex/AMC/sample-separate.pdf
 %%TEXMFLOCALDIR%%/doc/latex/AMC/sample-separate.tex
 %%TEXMFLOCALDIR%%/tex/latex/AMC/automultiplechoice.sty
-@dirrm lib/AMC/exec
-@dirrm lib/AMC/perl
-@dirrm lib/AMC
-@dirrm %%SITE_PERL%%/AMC/DataModule
-@dirrm %%SITE_PERL%%/AMC/Export/register
-@dirrm %%SITE_PERL%%/AMC/Export
-@dirrm %%SITE_PERL%%/AMC/Filter/register
-@dirrm %%SITE_PERL%%/AMC/Filter
-@dirrm %%SITE_PERL%%/AMC/Gui
-@dirrm %%SITE_PERL%%/AMC
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/models/ar
-@dirrm %%DATADIR%%/models/en
-@dirrm %%DATADIR%%/models/fr
-@dirrm %%DATADIR%%/models/ja
-@dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%
-@dirrmtry share/gtksourceview-2.0/language-specs
-@dirrmtry share/gtksourceview-2.0
-@dirrm %%TEXMFLOCALDIR%%/doc/latex/AMC
-@dirrmtry %%TEXMFLOCALDIR%%/doc/latex
-@dirrmtry %%TEXMFLOCALDIR%%/doc
-@dirrm %%TEXMFLOCALDIR%%/tex/latex/AMC
-@dirrmtry %%TEXMFLOCALDIR%%/tex/latex
-@dirrmtry %%TEXMFLOCALDIR%%/tex
