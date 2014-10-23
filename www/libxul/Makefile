@@ -46,7 +46,6 @@ LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
 
 MOZ_OPTIONS?=	--enable-application=xulrunner
-MOZ_EXTENSIONS=	default,cookie,permissions
 USE_GECKO=	gecko
 CPE_PRODUCT=	firefox_esr
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
@@ -55,8 +54,6 @@ USE_MOZILLA=	# empty
 MOZILLA_PLIST_DIRS=	bin include lib share/idl libdata
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 			mozilla-plugin
-
-BROKEN=		build error on js/xpconnect/src/libxpconnect_s.a.desc
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
@@ -88,6 +85,10 @@ RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
 
 .if ${PORT_OPTIONS:MGSTREAMER}
 RUN_DEPENDS+=	gstreamer1-libav>=1.2.4_1:${PORTSDIR}/multimedia/gstreamer1-libav
+.endif
+
+.if ${PORT_OPTIONS:MTEST}
+BROKEN=		stage-package fails with ValueError: no path specified
 .endif
 
 post-patch:
