@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
 		http://wickedmachine.net/mirror/
 
-MAINTAINER=	jsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Ogg API
 
 OPTIONS_DEFINE=	DOCS

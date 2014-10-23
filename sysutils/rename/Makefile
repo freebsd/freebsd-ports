@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	jsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename multiple files using regular expressions
 
 GNU_CONFIGURE=	yes

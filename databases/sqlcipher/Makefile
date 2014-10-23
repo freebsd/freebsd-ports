@@ -5,7 +5,7 @@ PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	databases
 
-MAINTAINER=	jsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encrypted sqlite database
 
 LICENSE=	BSD3CLAUSE
