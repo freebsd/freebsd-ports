@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
 		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		VERSION=${VERSION}
 
