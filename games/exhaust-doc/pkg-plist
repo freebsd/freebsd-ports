@@ -29,6 +29,3 @@
 %%DOCSDIR%%/warriors/ptest6.red
 %%DOCSDIR%%/warriors/validate.rc
 %%DOCSDIR%%/warriors/validate.red
-@dirrm %%DOCSDIR%%/src
-@dirrm %%DOCSDIR%%/warriors
-@dirrm %%DOCSDIR%%
