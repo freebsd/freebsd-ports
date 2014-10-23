@@ -1,16 +1,25 @@
---- src/httpd/Makefile.orig	Sat Sep 16 08:17:17 2006
-+++ src/httpd/Makefile	Tue Dec  5 15:10:18 2006
-@@ -18,11 +18,11 @@
+--- src/httpd/Makefile.orig	2006-09-16 12:17:17 UTC
++++ src/httpd/Makefile
+@@ -18,12 +18,10 @@
  	$(CC) $(LDFLAGS) $(OBJS) $(COMMON) built.o -o $@
  
  convert-ranges: $(COMMON) Makefile ../Rules.make convert-ranges.c
 -	$(CC) $(CFLAGS) $(LDFLAGS) $@.c $(COMMON) -o $@
+-	chmod +s $@
 +	$(CC) $(CFLAGS) -I.. $(LDFLAGS) $@.c $(COMMON) -o $@
- 	chmod +s $@
  
  convert-geoip: $(COMMON) Makefile ../Rules.make convert-geoip.c
 -	$(CC) $(CFLAGS) $(LDFLAGS) $@.c $(COMMON) -o $@
+-	chmod +s $@
 +	$(CC) $(CFLAGS) -I.. $(LDFLAGS) $@.c $(COMMON) -o $@
- 	chmod +s $@
  
  $(COMMON):
+ 	cd ../common &&$(MAKE)
+@@ -31,7 +29,6 @@
+ install: 0W-httpd
+ 	mv ../../bin/0W-httpd ../../bin/0W-httpd~
+ 	cp 0W-httpd ../../bin/0W-httpd
+-	chmod +s ../../bin/0W-httpd
+ 
+ clean:
+ 	rm -f $(BIN) *.o *~
