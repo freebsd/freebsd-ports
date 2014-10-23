@@ -49,6 +49,7 @@
     SUBDIR += autopsy
     SUBDIR += b43-fwcutter
     SUBDIR += backuppc
+    SUBDIR += backuppc-devel
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-static
