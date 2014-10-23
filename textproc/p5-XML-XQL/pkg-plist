@@ -15,7 +15,3 @@ bin/xql.pl
 %%SITE_PERL%%/XML/XQL/Strict.pm
 %%SITE_PERL%%/XML/XQL/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XQL/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XQL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/XQL
-@dirrmtry %%SITE_PERL%%/XML
