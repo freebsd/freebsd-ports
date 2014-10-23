@@ -34,6 +34,10 @@ FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == DragonFly
+IGNORE=		not supported on DragonFly yet
+.endif
+
 .if ${ARCH} == "i386"
 PPNAME=		ppc386
 FPC_ARCH=	i386
