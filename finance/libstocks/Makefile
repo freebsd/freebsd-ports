@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
 			-e 's/__UNIX__/__unix__/' \
-		$$(${GREP} --mmap -El '<malloc.h>|__UNIX__' \
+		$$(${GREP} -El '<malloc.h>|__UNIX__' \
 			${WRKSRC}/lib/*.c); \
 
 do-build do-install:
