@@ -54,6 +54,10 @@ PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == DragonFly
+IGNORE=		will not work due to lack of driver support
+.endif
+
 .if ${ARCH} == "i386"
 USE_GCC=	any
 .endif
