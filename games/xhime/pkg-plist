@@ -4,6 +4,4 @@ man/man6/xhime.6.gz
 %%PORTDOCS%%share/doc/ja/xhime/xhime-doc.euc
 %%PORTDOCS%%share/doc/ja/xhime/xhime.doc
 %%PORTDOCS%%share/doc/ja/xhime/rh110-doc.euc
-%%PORTDOCS%%@dirrm share/doc/ja/xhime
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rh110.xhm
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
