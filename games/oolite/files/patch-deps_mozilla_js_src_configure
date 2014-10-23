@@ -1,0 +1,12 @@
+--- deps/mozilla/js/src/configure.orig	2014-06-30 12:54:39.000000000 +0400
++++ deps/mozilla/js/src/configure	2014-09-24 04:01:12.000000000 +0400
+@@ -9547,7 +9547,8 @@
+ 
+ echo "$ac_t""$ac_cv_have_visibility_builtin_bug" 1>&6
+         if test "$ac_cv_have_visibility_builtin_bug" = "no" -a \
+-                "$ac_cv_have_visibility_class_bug" = "no"; then
++                "$ac_cv_have_visibility_class_bug" = "no" -a \
++		"$OS_ARCH" != "FreeBSD" ; then
+           VISIBILITY_FLAGS='-I$(DIST)/system_wrappers_js -include $(topsrcdir)/config/gcc_hidden.h'
+           WRAP_SYSTEM_INCLUDES=1
+           STL_FLAGS='-I$(DIST)/stl_wrappers'

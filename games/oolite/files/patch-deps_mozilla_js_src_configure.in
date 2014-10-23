@@ -1,0 +1,12 @@
+--- deps/mozilla/js/src/configure.in.orig	2014-06-30 12:54:39.000000000 +0400
++++ deps/mozilla/js/src/configure.in	2014-09-23 08:13:19.000000000 +0400
+@@ -3378,7 +3378,8 @@
+                        rm -f conftest.{c,S}
+                        ])
+         if test "$ac_cv_have_visibility_builtin_bug" = "no" -a \
+-                "$ac_cv_have_visibility_class_bug" = "no"; then
++                "$ac_cv_have_visibility_class_bug" = "no" -a \
++		"$OS_ARCH" != "FreeBSD" ; then
+           VISIBILITY_FLAGS='-I$(DIST)/system_wrappers_js -include $(topsrcdir)/config/gcc_hidden.h'
+           WRAP_SYSTEM_INCLUDES=1
+           STL_FLAGS='-I$(DIST)/stl_wrappers'
