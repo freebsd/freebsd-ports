@@ -226,6 +226,7 @@ basic_auth+=	NIS
 negotiate_auth=	kerberos wrapper
 . if ${OPSYS} == DragonFly
 LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
+CFLAGS+=	-I${LOCALBASE}/include
 . endif
 # the kerberos_ldap_group external helper also depends on LDAP and SASL:
 . if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
