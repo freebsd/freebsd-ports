@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvhdi
-PORTVERSION=	20140803
+PORTVERSION=	20141021
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSY250RjRzRXQ0bDg/ \

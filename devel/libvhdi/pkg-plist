@@ -16,4 +16,3 @@ lib/libvhdi.so.1.0.0
 libdata/pkgconfig/libvhdi.pc
 man/man1/vhdiinfo.1.gz
 man/man3/libvhdi.3.gz
-@dirrm include/libvhdi
