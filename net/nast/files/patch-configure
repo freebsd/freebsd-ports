@@ -61,7 +61,7 @@
  	;;
 -*bsd*)
 -	CFLAGS="-Wall -O2 -pthread"
-+*bsd*|dragonfly*)
++*bsd*|*dragonfly*)
 +	CFLAGS="${CFLAGS} -Wall -lpthread"
  	;;
  esac
