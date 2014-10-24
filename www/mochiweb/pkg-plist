@@ -25,12 +25,12 @@ lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_io.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_mime.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_multipart.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_request.beam
-lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_request_tests.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_response.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_session.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_socket.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_socket_server.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_util.beam
+lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_websocket.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/reloader.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/include/internal.hrl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochifmt.erl
@@ -60,12 +60,12 @@ lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_io.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_mime.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_multipart.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_request.erl
-lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_request_tests.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_response.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_session.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_socket.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_socket_server.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_util.erl
+lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_websocket.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/reloader.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hmac_api/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hmac_api/hmac_api.hrl
@@ -75,11 +75,5 @@ lib/erlang/lib/mochiweb-%%VERSION%%/src/reloader.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/https/server_cert.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/https/server_key.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keepalive/keepalive.erl
-@dirrm lib/erlang/lib/mochiweb-%%VERSION%%/src
-@dirrm lib/erlang/lib/mochiweb-%%VERSION%%/include
-@dirrm lib/erlang/lib/mochiweb-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/mochiweb-%%VERSION%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/keepalive
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/https
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hmac_api
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/websocket/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/websocket/websocket.erl
