@@ -5,8 +5,8 @@ PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Encrypted sqlite database
+MAINTAINER=	jharris@widomaker.com
+COMMENT=	Encrypted SQLite database
 
 LICENSE=	BSD3CLAUSE
 
