@@ -155,6 +155,7 @@ libexec/dpkg/methods/multicd/update
 libexec/dpkg/parsechangelog/debian
 libexec/libdpkg.a
 libexec/pkgconfig/libdpkg.pc
+%%NLS%%man/de/man1/dpkg-architecture.1.gz
 %%NLS%%man/de/man1/dpkg-buildflags.1.gz
 %%NLS%%man/de/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/de/man1/dpkg-checkbuilddeps.1.gz
