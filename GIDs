@@ -67,6 +67,7 @@ fetchmail:*:124:
 postfix:*:125:
 maildrop:*:126:
 nav:*:127:
+sd-agent:*:128:
 vlock:*:129:
 _bgpd:*:130:
 _ospfd:*:131:
