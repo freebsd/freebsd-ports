@@ -15,8 +15,8 @@ BUILD_WRKSRC=	${WRKSRC}/bindings/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 SLAVE_PORT=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	python_libtorrent
 
 PLIST=		${NONEXISTENT}

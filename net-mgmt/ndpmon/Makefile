@@ -23,7 +23,7 @@ MACRESOLV_DESC=		Enable MAC Manufacturer Resolution (use p5-libwww)
 
 .if ${PORT_OPTIONS:MPY4SUITE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/Domlette.py:${PORTSDIR}/textproc/py-4suite-xml
-USE_PYTHON=	yes
+USES+=		python
 PLIST_SUB+=	PY=""
 .else
 PLIST_SUB+=	PY="@comment "

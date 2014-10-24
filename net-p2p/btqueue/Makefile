@@ -14,8 +14,8 @@ COMMENT=	Alternative BitTorrent client with queuing functionality
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 
 CONFLICTS=	py??-*[Bb]it[Tt]ornado* py??-*[Bb]it[Tt]orrent*
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	BTQueue
 
 DATADIR=	${PREFIX}/share/BTQueue

@@ -14,10 +14,9 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig python:build
 USE_OPENSSL=	yes
 USE_GNOME=	glib20 libxslt:build
-USE_PYTHON_BUILD=yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

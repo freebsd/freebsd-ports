@@ -15,9 +15,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/xmlrpclib.py:${PORTSDIR}/net/py-xmlrpclib
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 PYSETUP=	${PORTNAME}_setup.py
 
 PORTSCOUT=	skipv:0.941 # Older version than the current one

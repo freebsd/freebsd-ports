@@ -21,7 +21,7 @@ RUN_DEPENDS=	py*-openssl>0:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/farsight.so:${PORTSDIR}/net-im/farsight2
 
 USE_GNOME=	pygobject
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

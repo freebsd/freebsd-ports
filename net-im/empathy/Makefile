@@ -30,14 +30,13 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 CONFLICTS=	empathy-3.[0-9]*
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig python tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	evolutiondataserver gnomeprefix pygtk2
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_PYTHON=	yes
 MAKE_JOBS_UNSAFE=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

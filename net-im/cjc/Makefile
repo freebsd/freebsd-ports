@@ -18,9 +18,8 @@ GH_ACCOUNT=	Jajcus
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		shebangfix
+USES=		python:2 shebangfix
 SHEBANG_FILES=	cjc.in cjc.py cjc/main.py
-USE_PYTHON=	2
 
 PORTDOCS=	*
 

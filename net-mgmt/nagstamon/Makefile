@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
+USES=		python:2
+USE_PYTHON=	distutils
 USE_GNOME=	pygtk2 librsvg2
 
 WRKSRC=		${WRKDIR}/Nagstamon

@@ -17,10 +17,9 @@ LIB_DEPENDS=	libtelepathy-farsight.so:${PORTSDIR}/net-im/telepathy-farsight \
 
 USE_GNOME=	libxslt:build
 USE_GSTREAMER=	yes
-USE_PYTHON_BUILD=	yes
 USE_QT4=	corelib dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig python:build
 CMAKE_ARGS=	-DENABLE_FARSIGHT:BOOL=True \
 		-DENABLE_TESTS:BOOL=False
 USE_LDCONFIG=	yes

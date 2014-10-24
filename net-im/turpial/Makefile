@@ -18,9 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:${PORTSDIR}/devel/py-notify \
 	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.1:${PORTSDIR}/devel/py-Jinja2 \
 	${PYTHON_PKGNAMEPREFIX}libturpial>=1.7.0:${PORTSDIR}/net-im/py-libturpial
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 INSTALLS_ICONS=	yes
 
 PYQT4_PORTS=	core gui network phonon webkit

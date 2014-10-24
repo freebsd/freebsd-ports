@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PROJECTHOST=	bsdistfiles
-USE_PYTHON=	yes
-USES=		gettext desktop-file-utils
+USES=		gettext desktop-file-utils python
 USE_GNOME=	pygtk2
 USE_GSTREAMER=	python
 INSTALLS_ICONS=	yes
