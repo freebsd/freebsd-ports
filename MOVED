@@ -7167,3 +7167,4 @@ devel/py-olefileio_pl|devel/py-olefile|2014-10-17|Upstream name change
 audio/mad||2014-10-20|Directly use audio/libmad or audio/madplay
 mail/dspam-devel|mail/dspam|2014-10-20|Merged into mail/dspam
 dns/bind98|dns/bind99|2014-10-21|BIND 9.8 EOL
+dns/powerdns-devel|dns/powerdns|2014-10-24|Older than dns/powerdns and no longer needed
