@@ -16,8 +16,6 @@ LIB_DEPENDS=	libboost_math_c99.so:${PORTSDIR}/devel/boost-libs
 # LICENSE=	public domain
 
 USES=		cmake python:2
-USE_PYTHON=	distutils
-PYDISTUTILS_PKGNAME=	ufc
 
 CMAKE_ARGS+=	-DUFC_PKGCONFIG_DIR=${PREFIX}/libdata/pkgconfig
 

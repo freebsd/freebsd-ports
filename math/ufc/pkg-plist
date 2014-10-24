@@ -15,7 +15,3 @@ libdata/pkgconfig/ufc-1.pc
 %%DATADIR%%/UFCConfig.cmake
 %%DATADIR%%/UFCConfigVersion.cmake
 %%DATADIR%%/UseUFC.cmake
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/ufc_utils
-@dirrm %%PYTHON_SITELIBDIR%%/ufc
-@dirrmtry include/swig
