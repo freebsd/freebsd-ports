@@ -14,9 +14,8 @@ COMMENT=	Python interface to GPGME library
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 
-USES=		gmake
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
+USES=		gmake python:2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=pygpgme
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}

@@ -32,7 +32,7 @@ CAIRO_USES=	pkgconfig
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 CMAKE_ARGS+=	-DPYTHON_BINDINGS=on
 .endif
 

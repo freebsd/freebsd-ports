@@ -13,8 +13,7 @@ COMMENT=	easily cross several machines with ssh
 
 RUN_DEPENDS=	expect>=5.42.1:${PORTSDIR}/lang/expect
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

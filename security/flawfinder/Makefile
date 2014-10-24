@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	UNIX/security
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Examines source code looking for security weaknesses
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/flawfinder man/man1/flawfinder.1.gz

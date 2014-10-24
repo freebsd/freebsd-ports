@@ -14,9 +14,8 @@ COMMENT=	Comprehensive Python interface to the mcrypt library
 
 LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib
 PYDISTUTILS_BUILD_TARGET=	build_ext
 CFLAGS+=	-I${LOCALBASE}/include

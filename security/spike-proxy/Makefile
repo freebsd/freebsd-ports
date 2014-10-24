@@ -12,9 +12,8 @@ COMMENT=	Tool looking for vulnerabilities in web applications
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
 
-USES=		shebangfix tar:tgz
+USES=		python shebangfix tar:tgz
 SHEBANG_FILES=	*.py
-USE_PYTHON=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/spkproxy

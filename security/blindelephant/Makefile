@@ -15,9 +15,8 @@ COMMENT=	Fingerprint the web applications used by a web site
 
 LICENSE=	LGPL3
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	YES
+USES=		python tar:bzip2
+USE_PYTHON=	distutils
 
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \

@@ -13,9 +13,8 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Python bcrypt module
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

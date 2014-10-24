@@ -18,10 +18,9 @@ LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --with-python \
 				--prefix=${STAGEDIR}/${PREFIX}
-USE_PYTHON=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes
-USES=		gmake perl5 pkgconfig libtool
+USES=		gmake perl5 pkgconfig python libtool
 USE_PERL5=	build
 
 OPTIONS_DEFINE=	LOCALTIME

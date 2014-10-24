@@ -23,9 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.openid>=0:${PORTSDIR}/security/py-plon
 		${PYTHON_PKGNAMEPREFIX}Products.PlonePAS>=2.0.10:${PORTSDIR}/security/py-Products.PlonePAS \
 		${PYTHON_PKGNAMEPREFIX}Products.PluggableAuthService>=0:${PORTSDIR}/security/py-Products.PluggableAuthService
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-#USES=			zope
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

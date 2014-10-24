@@ -12,8 +12,8 @@ COMMENT=	Test the integrity of communications over networks and firewalls
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 PORTDOCS=	*
 

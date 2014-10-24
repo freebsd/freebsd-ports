@@ -16,10 +16,8 @@ LICENSE_NAME=	Creative Commons Attribution-ShareAlike 3.0 \
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell dist-sell
 
-USES=	dos2unix
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		dos2unix python:2
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	changelog.txt \
 		todo.txt

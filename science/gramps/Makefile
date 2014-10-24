@@ -18,8 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
 		${PYXML}
 
 USE_BDB=	5+
-USE_PYTHON=	yes
-USES=		desktop-file-utils gettext shared-mime-info gmake
+USES=		desktop-file-utils gettext shared-mime-info gmake python
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mime-install

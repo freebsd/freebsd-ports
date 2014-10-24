@@ -15,9 +15,8 @@ GH_COMMIT=	6530e73
 
 LIB_DEPENDS=	libyara.so:${PORTSDIR}/security/yara
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 BUILD_WRKSRC=	${WRKSRC}/yara-python
 INSTALL_WRKSRC=	${WRKSRC}/yara-python

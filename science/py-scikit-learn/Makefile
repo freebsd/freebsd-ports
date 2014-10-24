@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0.8.0:${PORTSDIR}/science/py-scipy
 
-USES=		fortran
+USES=		fortran python
 
 OPTIONS_SINGLE=		BLAS
 OPTIONS_SINGLE_BLAS=	CBLAS ATLAS
@@ -29,8 +29,6 @@ ATLAS_LIB_DEPENDS=	libcblas.so:${PORTSDIR}/math/atlas
 
 LATEST_LINK=	py-${PORTNAME}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

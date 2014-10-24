@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lysator.liu.se/fsh/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast remote command execution
 
-USE_PYTHON=	yes
+USES=		python
 GNU_CONFIGURE=	yes
 
 INFO=	fsh

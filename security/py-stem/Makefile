@@ -13,8 +13,7 @@ COMMENT=	Python controller library for Tor
 
 LICENSE=	LGPL3
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>
