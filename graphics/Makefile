@@ -492,6 +492,7 @@
     SUBDIR += libdrm
     SUBDIR += libecwj2
     SUBDIR += libemf
+    SUBDIR += libepoxy
     SUBDIR += libetonyek
     SUBDIR += libetonyek01
     SUBDIR += libexif
