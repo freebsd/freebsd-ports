@@ -16,7 +16,7 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PYTHON=	yes
+USES=		python
 USE_GNOME=	pygtk2 pygnome2 libglade2
 
 SUB_FILES=	flyback.sh

@@ -25,8 +25,7 @@ OPTIONS_DEFINE=	GMETAD
 OPTIONS_DEFAULT=	GMETAD
 GMETAD_DESC=	include gmetad
 
-USES=		libtool pkgconfig
-USE_PYTHON=	yes
+USES=		libtool pkgconfig python
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \

@@ -19,9 +19,8 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
 USE_GNOME=	intlhack pygobject
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake gettext pathfix
+USES=		gmake gettext pathfix python
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

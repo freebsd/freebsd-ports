@@ -12,9 +12,8 @@ COMMENT=	Provides a Python API for interacting with ZFS without using libzfs
 
 LICENSE=	BSD
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USES=		tar:xz
+USE_PYTHON=	distutils
+USES=		python tar:xz
 
 WRKSRC=	${WRKDIR}/danzfs
 

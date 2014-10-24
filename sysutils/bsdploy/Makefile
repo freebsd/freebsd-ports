@@ -22,9 +22,7 @@ OPTIONS_DEFAULT=	EC2
 EC2_DESC=		Support Amazon Web Services EC2 hosts
 EC2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy_ec2>0:${PORTSDIR}/sysutils/py-ploy_ec2
 
-USES=			zip
-USE_PYTHON=		-2.7
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=			python:-2.7 zip
+USE_PYTHON=		distutils autoplist
 
 .include <bsd.port.mk>

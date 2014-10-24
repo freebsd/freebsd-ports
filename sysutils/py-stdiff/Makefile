@@ -1,15 +1,15 @@
 # $FreeBSD$
 
-PORTNAME=		stdiff
-PORTVERSION=		0.2.1
-CATEGORIES=		sysutils python
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
+PORTNAME=	stdiff
+PORTVERSION=	0.2.1
+CATEGORIES=	sysutils python
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=		araujo@FreeBSD.org
-COMMENT=		Spot The Difference is a file integrity checker
+MAINTAINER=	araujo@FreeBSD.org
+COMMENT=	Spot The Difference is a file integrity checker
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS
 

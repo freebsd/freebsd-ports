@@ -12,9 +12,9 @@ COMMENT=	Hachoir GUI
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser
 
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils
 USE_WX=		3.0+
 WX_COMPS=	python
-USE_PYDISTUTILS=yes
 
 .include <bsd.port.mk>

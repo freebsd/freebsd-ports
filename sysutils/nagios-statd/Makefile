@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.twoevils.org/files/netsaint_statd/
 MAINTAINER=	jims@bluenotch.com
 COMMENT=	Daemon/client to check remote host information for Nagios
 
-USE_PYTHON=	yes
+USES=		python
 USE_RC_SUBR=	nagiosstatd
 
 do-build:

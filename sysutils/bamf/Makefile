@@ -19,10 +19,9 @@ BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=	pkgconfig gmake pathfix libtool
+USES=		pkgconfig gmake pathfix libtool python:2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk30 glib20 introspection:build libwnck3
-USE_PYTHON=	2
 USE_XORG=	x11
 
 CONFIGURE_ARGS+=--disable-webapps \

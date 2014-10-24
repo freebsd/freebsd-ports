@@ -16,9 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:${PORTSDIR}/sysutils/py-ploy \
 		${PYTHON_PKGNAMEPREFIX}lazy>0:${PORTSDIR}/devel/py-lazy
 
-USES=			zip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

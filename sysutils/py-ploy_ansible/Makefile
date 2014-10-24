@@ -16,9 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:${PORTSDIR}/sysutils/py-ploy \
 		${PYTHON_PKGNAMEPREFIX}execnet>0:${PORTSDIR}/sysutils/py-execnet \
 		ansible>0:${PORTSDIR}/sysutils/ansible
 
-USES=			zip
-USE_PYTHON=		-2.7
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:-2.7 zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

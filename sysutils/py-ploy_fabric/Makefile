@@ -16,9 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:${PORTSDIR}/sysutils/py-ploy \
 		${PYTHON_PKGNAMEPREFIX}fabric>=1.3.0:${PORTSDIR}/devel/py-fabric
 
-USES=			zip
-USE_PYTHON=		-2.7
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:-2.7 zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

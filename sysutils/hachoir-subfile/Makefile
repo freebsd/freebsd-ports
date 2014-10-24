@@ -12,7 +12,7 @@ COMMENT=	Find subfiles in any binary stream
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser \
 		${PYTHON_SITELIBDIR}/hachoir_regex/__init__.py:${PORTSDIR}/devel/hachoir-regex
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

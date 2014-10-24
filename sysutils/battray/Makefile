@@ -12,7 +12,7 @@ COMMENT=	Display notebook battery status in tray
 LICENSE=	BSD
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

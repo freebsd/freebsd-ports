@@ -17,8 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 SUB_FILES=	pkg-message
 
-USES=		shebangfix
-USE_PYTHON=	yes
+USES=		python shebangfix
 NO_BUILD=	yes
 
 SHEBANG_FILES=	pydf
