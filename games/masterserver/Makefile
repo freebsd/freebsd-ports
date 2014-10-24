@@ -9,6 +9,9 @@ MASTER_SITES=	SF/lasange-system/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Masterserver for IdSoftware games (D3, EF, H2, Q2, Q3, QW)
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake tar:bzip2
 
 post-patch:
