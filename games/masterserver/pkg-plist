@@ -5,4 +5,3 @@ lib/masterserver/libh2.so
 lib/masterserver/libq2.so
 lib/masterserver/libq3.so
 lib/masterserver/libqw.so
-@dirrm lib/masterserver
