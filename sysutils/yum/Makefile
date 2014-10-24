@@ -20,8 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/rpm:${PORTSDIR}/archivers/rpm4 \
 		${PYTHON_SITELIBDIR}/iniparse:${PORTSDIR}/devel/py-iniparse \
 		${PYTHON_SITELIBDIR}/urlgrabber:${PORTSDIR}/www/py-urlgrabber
 
-USE_PYTHON=	yes
-USES=		gettext gmake
+USES=		gettext gmake python
 
 MAKE_ARGS=	MAKE=${MAKE_CMD} PYTHON=${PYTHON_CMD} \
 		prefix=${PREFIX} mandir=${MANPREFIX}/man sysconfdir=${PREFIX}/etc

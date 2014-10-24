@@ -13,9 +13,8 @@ COMMENT=	Class library for writing Nagios (Icinga) plugins
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

@@ -18,7 +18,7 @@ WRKSRC=			${WRKDIR}/mfs-1.6.27
 USERS=			mfs
 GROUPS=			mfs
 GNU_CONFIGURE=		yes
-USE_PYTHON=		yes
+USES=			python
 
 USE_RC_SUBR=		mfsmaster mfsmetalogger mfscgiserv
 SUB_FILES=		pkg-message

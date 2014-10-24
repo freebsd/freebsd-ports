@@ -11,7 +11,7 @@ COMMENT=	Interactive real-time monitoring tool for the HAProxy unix socket
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:${PORTSDIR}/net/haproxy
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 LICENSE=	GPLv3

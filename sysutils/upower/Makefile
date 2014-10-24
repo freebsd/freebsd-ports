@@ -27,11 +27,10 @@ MANPAGES_BUILD_DEPENDS= \
     	xsltproc:${PORTSDIR}/textproc/libxslt \
 	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig python tar:bzip2
 USE_GNOME=	intlhack glib20 introspection:build,run
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-backend=freebsd \
 		--localstatedir=/var

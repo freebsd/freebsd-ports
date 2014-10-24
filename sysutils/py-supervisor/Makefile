@@ -28,9 +28,8 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
 PORTDOCS=	*.txt *.rst
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 PIDDIR?=	/var/run/supervisor
 
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \

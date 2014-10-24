@@ -15,7 +15,7 @@ RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen \
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal automake
-USE_PYTHON=	yes
+USES=		python
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS

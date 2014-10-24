@@ -13,8 +13,8 @@ COMMENT=	Extract metadata from files
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.pre.mk>
 

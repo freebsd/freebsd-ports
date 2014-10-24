@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	linpct@gmail.com
 COMMENT=	Ranger is a file manager with VI key bindings
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|; s|share/man/man|man/man|;s|share/doc|doc|' ${WRKSRC}/${PYSETUP}

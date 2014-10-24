@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jessekempf@gmail.com
 COMMENT=	Syslog message filter
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 SUB_FILES=	pkg-message
 

@@ -14,9 +14,8 @@ COMMENT=	Lockdown editor for GNOME
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gettext gmake tar:bzip2
+USES=		gettext gmake python tar:bzip2
 USE_GNOME=	gnomeprefix intlhack pygnome2 pygnomedesktop
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

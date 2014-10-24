@@ -16,8 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 PORTSCOUT=	limit:^1\.2\.
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

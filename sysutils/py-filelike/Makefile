@@ -10,8 +10,7 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Python module for building and manipulating file-like object
 
-USE_PYTHON=		yes	
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

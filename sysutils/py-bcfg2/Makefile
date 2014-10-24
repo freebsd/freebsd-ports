@@ -23,9 +23,8 @@ GENSHI_DESC=	Support Genshi Templates
 
 .include <bsd.port.options.mk>
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 USE_RC_SUBR=	bcfg2
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}

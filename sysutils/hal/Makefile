@@ -19,11 +19,10 @@ LIB_DEPENDS=	libpolkit.so.2:${PORTSDIR}/sysutils/policykit \
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids \
 		bash:${PORTSDIR}/shells/bash
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig shebangfix
+USES=		gettext gmake libtool:keepla pathfix pkgconfig python shebangfix
 USE_GNOME=	intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-backend=freebsd \
 		--disable-docbook-docs \
