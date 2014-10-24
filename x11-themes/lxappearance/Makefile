@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxappearance
-PORTVERSION=	0.5.6
+PORTVERSION=	0.6.1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lxde/LXAppearance
 
