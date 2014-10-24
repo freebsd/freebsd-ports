@@ -6,15 +6,16 @@ include/sfbpf.h
 include/sfbpf_dlt.h
 lib/daq/daq_dump.so
 lib/daq/daq_ipfw.so
+lib/daq/daq_netmap.so
 lib/daq/daq_pcap.so
 lib/libdaq.a
 lib/libdaq.so
 lib/libdaq.so.2
-lib/libdaq.so.2.0.2
+lib/libdaq.so.%%PORTVERSION%%
 lib/libdaq_static.a
 lib/libdaq_static_modules.a
 lib/libsfbpf.a
 lib/libsfbpf.so
 lib/libsfbpf.so.0
 lib/libsfbpf.so.0.0.1
-@dirrm lib/daq
+@dir lib/daq
