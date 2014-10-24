@@ -18,11 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.2.1:${PORTSDIR}/security/py-
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=	cpe
-USE_PYTHON=	yes
-USE_PYTHON_PREFIX=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		cpe python
+USE_PYTHON=	distutils autoplist pythonprefix
 
 CPE_VENDOR=	jean-paul_calderone
 CPE_PRODUCT=	py${PORTNAME}

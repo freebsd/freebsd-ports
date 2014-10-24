@@ -12,8 +12,7 @@ COMMENT=	Python password hashing framework supporting over 30 schemes
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

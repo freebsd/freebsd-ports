@@ -21,7 +21,6 @@ USES=		pkgconfig
 USE_GNOME=	gnomehack glib20 libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_PYTHON_BUILD=	yes
 
 OPTIONS_DEFINE=	PERL PHP PYTHON DOCS
 
@@ -52,8 +51,10 @@ PLIST_SUB+=	WITH_PHP5="@comment "
 .if !empty(PORT_OPTIONS:MPYTHON)
 CONFIGURE_ARGS+=	--enable-python
 PLIST_SUB+=	WITH_PYTHON=""
+USES+=		python
 USE_PYTHON=	yes
 .else
+USES+=		python:build
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif

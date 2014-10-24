@@ -28,8 +28,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		gettext tar:bzip2
-USE_PYTHON=	yes
+USES=		gettext python tar:bzip2
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_SUB=	yes

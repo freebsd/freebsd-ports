@@ -14,8 +14,7 @@ COMMENT=	Web server fingerprinting utility
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
-USES=		dos2unix
-USE_PYTHON=	yes
+USES=		dos2unix python
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

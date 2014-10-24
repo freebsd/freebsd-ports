@@ -21,9 +21,8 @@ OPTIONS_DEFINE=	TESTS
 TESTS_DESC=		Install tools for unit tests
 TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} run_tests.py

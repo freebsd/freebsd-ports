@@ -16,10 +16,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 
-USE_GITHUB=		yes
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_GITHUB=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 GH_ACCOUNT=	idan
 GH_COMMIT=	58abd88

@@ -14,8 +14,8 @@ COMMENT=	Python module to find the checksum of files
 LICENSE=	GPLv2
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/fchksum.so
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	python-fchksum
 
 .include <bsd.port.mk>

@@ -135,7 +135,7 @@ GROUPS=	clamav mail
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
 . if ${PORT_OPTIONS:MTESTS}
-USE_PYTHON_BUILD=	yes
+USES+=		python:build
 . endif
 .else
 CONFIGURE_ARGS+=--disable-llvm

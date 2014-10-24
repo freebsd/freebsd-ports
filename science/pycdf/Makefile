@@ -17,9 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>

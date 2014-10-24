@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--without-liboath --without-openssl-version-check \
 		--without-stoken
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool pkgconfig python:build
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 PORTDOCS=	*

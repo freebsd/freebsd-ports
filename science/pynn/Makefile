@@ -15,8 +15,8 @@ COMMENT=	Simulator-independent language for building neuronal network models
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	PyNN
 
 .include <bsd.port.mk>

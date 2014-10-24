@@ -14,8 +14,8 @@ COMMENT=	Python wrapper for the GNUTLS library
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	python_gnutls
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

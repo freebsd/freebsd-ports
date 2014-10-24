@@ -9,7 +9,7 @@ MASTER_SITES=	SUNSITE/system/network/telnet
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to add multiple ssh keys to the authentication agent
 
-USE_PYTHON_RUN=	yes
+USES=		python:run
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/ssh-multiadd man/man1/ssh-multiadd.1.gz

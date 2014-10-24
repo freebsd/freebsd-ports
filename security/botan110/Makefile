@@ -21,8 +21,7 @@ OPTIONS_DEFINE=		SSL GMP ECC DOCS
 OPTIONS_DEFAULT=	SSL GMP ECC
 ECC_DESC=	ECC support
 
-USES=		compiler gmake tar:bzip2
-USE_PYTHON_BUILD=	yes
+USES=		compiler gmake python:build tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-bzip2 --with-zlib

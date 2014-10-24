@@ -12,7 +12,7 @@ DISTNAME=	twofishmodule-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twofish cryptographic module for Python
 
-USE_PYTHON=	2
+USES=		python:2
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
 

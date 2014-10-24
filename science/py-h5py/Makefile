@@ -22,10 +22,8 @@ GH_ACCOUNT=		h5py
 GH_COMMIT=		c8c63eb
 GH_TAGNAME=		${GH_COMMIT}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	README.rst
 PORTEXAMPLES=	multiprocessing_example.py \

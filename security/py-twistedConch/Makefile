@@ -16,9 +16,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.0.9a:${PORTSDIR}/devel/py-asn1
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		tar:bzip2 twisted
+USE_PYTHON=	distutils autoplist
+USES=		python:2 tar:bzip2 twisted
 
 .include <bsd.port.mk>

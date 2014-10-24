@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	matthew@reztek.cz
 COMMENT=	Utility to both test and create .sfv, .csv, and md5sum files
 
-USE_PYTHON=	2
+USES=		python:2
 ALL_TARGET=	cfv.wrapper
 INSTALL_TARGET=	install-wrapper
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}

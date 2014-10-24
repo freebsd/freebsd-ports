@@ -16,9 +16,8 @@ LICENSE=		APACHE20
 BUILD_DEPENDS=		libkrb5-config.so:${PORTSDIR}/security/krb5
 LIB_DEPENDS=		libkrb5support.so:${PORTSDIR}/security/krb5
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|krb5|${PREFIX}/bin/krb5|g' ${WRKSRC}/setup.py

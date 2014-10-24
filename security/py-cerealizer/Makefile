@@ -13,9 +13,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Secure pickle-like module
 
-USES=	tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

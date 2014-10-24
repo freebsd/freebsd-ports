@@ -25,8 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
 
 USE_GNOME=	pygtk2 gnomedocutils libxslt glib20
-USES=		gettext tar:bzip2
-USE_PYTHON=	yes
+USES=		gettext python tar:bzip2
 INSTALLS_ICONS=	yes
 
 B64DECODE?=	/usr/bin/b64decode
