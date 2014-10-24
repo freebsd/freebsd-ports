@@ -1,10 +1,9 @@
 # Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net-im/libpurple/Makefile,v 1.32 2010/05/10 04:21:19 marcus Exp $
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.10.9
-PORTREVISION?=	7
+PORTVERSION=	2.10.10
+PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -12,7 +11,7 @@ DISTNAME=	pidgin-${PORTVERSION}
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		cpe gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME?=	gnomeprefix intlhack glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
@@ -27,10 +26,9 @@ INSTALL_TARGET=	install-strip
 .if !defined(PIDGIN_SLAVE)
 # Pidgin slave ports that require the following functionality, must explicitly
 # set these macros themselves.
-USES+=		gettext iconv
+USES+=		gettext iconv python
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
-USE_PYTHON=	yes
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME
@@ -40,6 +38,8 @@ WITH_GNOME=	yes
 .endif
 
 PRPL_MODULES=
+
+CPE_VENDOR=	pidgin
 
 OPTIONS_DEFINE=	BONJOUR DBUS GNUTLS NSS SASL GSTREAMER VV IDN PERL TCLTK \
 		SAMETIME SILC GG IRC JABBER MSN MYSPACE NOVELL OSCAR QQ \

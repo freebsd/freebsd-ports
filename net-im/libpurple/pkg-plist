@@ -153,11 +153,11 @@ lib/purple-2/statenotify.so
 %%DBUS%%lib/libpurple-client.a
 %%DBUS%%lib/libpurple-client.so
 %%DBUS%%lib/libpurple-client.so.0
-%%DBUS%%lib/libpurple-client.so.0.10.9
+%%DBUS%%lib/libpurple-client.so.0.10.10
 lib/libpurple.a
 lib/libpurple.so
 lib/libpurple.so.0
-lib/libpurple.so.0.10.9
+lib/libpurple.so.0.10.10
 libdata/pkgconfig/purple.pc
 %%CONSOLEUI%%man/man1/finch.1.gz
 %%GTKUI%%man/man1/pidgin.1.gz
@@ -197,23 +197,22 @@ share/locale/he/LC_MESSAGES/pidgin.mo
 share/locale/hi/LC_MESSAGES/pidgin.mo
 share/locale/hr/LC_MESSAGES/pidgin.mo
 share/locale/hu/LC_MESSAGES/pidgin.mo
-share/locale/hy/LC_MESSAGES/pidgin.mo
 share/locale/id/LC_MESSAGES/pidgin.mo
 share/locale/it/LC_MESSAGES/pidgin.mo
 share/locale/ja/LC_MESSAGES/pidgin.mo
 share/locale/ka/LC_MESSAGES/pidgin.mo
+share/locale/kk/LC_MESSAGES/pidgin.mo
 share/locale/ko/LC_MESSAGES/pidgin.mo
 share/locale/km/LC_MESSAGES/pidgin.mo
 share/locale/kn/LC_MESSAGES/pidgin.mo
 share/locale/ku/LC_MESSAGES/pidgin.mo
-share/locale/lo/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
+share/locale/lv/LC_MESSAGES/pidgin.mo
 share/locale/mai/LC_MESSAGES/pidgin.mo
 share/locale/mhr/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
 share/locale/mn/LC_MESSAGES/pidgin.mo
 share/locale/mr/LC_MESSAGES/pidgin.mo
-share/locale/ms_MY/LC_MESSAGES/pidgin.mo
 share/locale/my_MM/LC_MESSAGES/pidgin.mo
 share/locale/nb/LC_MESSAGES/pidgin.mo
 share/locale/ne/LC_MESSAGES/pidgin.mo
@@ -240,6 +239,7 @@ share/locale/ta/LC_MESSAGES/pidgin.mo
 share/locale/te/LC_MESSAGES/pidgin.mo
 share/locale/th/LC_MESSAGES/pidgin.mo
 share/locale/tr/LC_MESSAGES/pidgin.mo
+share/locale/tt/LC_MESSAGES/pidgin.mo
 share/locale/uk/LC_MESSAGES/pidgin.mo
 share/locale/ur/LC_MESSAGES/pidgin.mo
 share/locale/vi/LC_MESSAGES/pidgin.mo
@@ -269,66 +269,60 @@ share/purple/ca-certs/Thawte_Premium_Server_CA.pem
 share/purple/ca-certs/Thawte_Primary_Root_CA.pem
 share/purple/ca-certs/ValiCert_Class_2_VA.pem
 share/purple/ca-certs/VeriSign_Class3_Extended_Validation_CA.pem
-share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G2.pem
-share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
-share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5_2.pem
 share/purple/ca-certs/VeriSign_International_Server_Class_3_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
+share/purple/ca-certs/VeriSign_Class_3_Primary_CA-G2.pem
+share/purple/ca-certs/VeriSign_Class_3_Primary_CA-G5-2.pem
+share/purple/ca-certs/VeriSign_Class_3_Primary_CA-G5.pem
 share/sounds/purple/alert.wav
 share/sounds/purple/login.wav
 share/sounds/purple/logout.wav
 share/sounds/purple/receive.wav
 share/sounds/purple/send.wav
-@dirrm share/sounds/purple
-@dirrm share/purple/ca-certs
-@dirrm share/purple
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sw/LC_MESSAGES
-@dirrmtry share/locale/sw
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/my_MM/LC_MESSAGES
-@dirrmtry share/locale/my_MM
-@dirrmtry share/locale/ms_MY/LC_MESSAGES
-@dirrmtry share/locale/ms_MY
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mhr/LC_MESSAGES
-@dirrmtry share/locale/mhr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/lo/LC_MESSAGES
-@dirrmtry share/locale/lo
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-%%PERL:%%@dirrm lib/purple-2/perl/auto/Purple
-%%PERL:%%@dirrm lib/purple-2/perl/auto
-%%PERL:%%@dirrm lib/purple-2/perl
-@dirrm lib/purple-2
-@dirrm include/libpurple/media
-@dirrm include/libpurple
+@dir share/sounds/purple
+@dir share/purple/ca-certs
+@dir share/purple
+@dir share/locale/zh_HK/LC_MESSAGES
+@dir share/locale/zh_HK
+@dir share/locale/xh/LC_MESSAGES
+@dir share/locale/xh
+@dir share/locale/ur/LC_MESSAGES
+@dir share/locale/ur
+@dir share/locale/te/LC_MESSAGES
+@dir share/locale/te
+@dir share/locale/sw/LC_MESSAGES
+@dir share/locale/sw
+@dir share/locale/sr@latin/LC_MESSAGES
+@dir share/locale/sr@latin
+@dir share/locale/si/LC_MESSAGES
+@dir share/locale/si
+@dir share/locale/ps/LC_MESSAGES
+@dir share/locale/ps
+@dir share/locale/oc/LC_MESSAGES
+@dir share/locale/oc
+@dir share/locale/my_MM/LC_MESSAGES
+@dir share/locale/my_MM
+@dir share/locale/mr/LC_MESSAGES
+@dir share/locale/mr
+@dir share/locale/mhr/LC_MESSAGES
+@dir share/locale/mhr
+@dir share/locale/mai/LC_MESSAGES
+@dir share/locale/mai
+@dir share/locale/ku/LC_MESSAGES
+@dir share/locale/ku
+@dir share/locale/km/LC_MESSAGES
+@dir share/locale/km
+@dir share/locale/dz/LC_MESSAGES
+@dir share/locale/dz
+@dir share/locale/ca@valencia/LC_MESSAGES
+@dir share/locale/ca@valencia
+@dir share/locale/bn_IN/LC_MESSAGES
+@dir share/locale/bn_IN
+@dir share/locale/be@latin/LC_MESSAGES
+@dir share/locale/be@latin
+%%PERL:%%@dir lib/purple-2/perl/auto/Purple
+%%PERL:%%@dir lib/purple-2/perl/auto
+%%PERL:%%@dir lib/purple-2/perl
+@dir lib/purple-2
+@dir include/libpurple/media
+@dir include/libpurple
