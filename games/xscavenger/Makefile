@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.xdr.com/dash/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lode Runner clone for X11
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../copyright
+
 WRKSRC_SUBDIR=	src
 
 USES=		imake tar:tgz
