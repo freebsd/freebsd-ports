@@ -14,9 +14,7 @@ COMMENT=	NNTP protocol implementation with client and server
 
 LICENSE=	MIT
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		tar:bzip2 twisted
+USE_PYTHON=	distutils autoplist
+USES=		python:2 tar:bzip2 twisted
 
 .include <bsd.port.mk>

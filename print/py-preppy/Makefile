@@ -12,8 +12,7 @@ COMMENT=	ReportLab's templating system
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	2.7-3.3
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2.7-3.3
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

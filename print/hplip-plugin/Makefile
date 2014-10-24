@@ -16,7 +16,7 @@ RUN_DEPENDS=	hp-plugin:${PORTSDIR}/print/hplip
 
 RESTRICTED=	License agreement is required
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/plugin_tmp
 HPLIP_FAKEDIR=	${WRKDIR}/hplip_fakedir

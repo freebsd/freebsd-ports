@@ -21,9 +21,8 @@ GH_COMMIT=	d7ce53b
 GH_TAGNAME=	${GH_COMMIT}
 
 HAS_CONFIGURE=	yes
-USE_PYTHON=	yes
 
-USES=	gmake shebangfix
+USES=	gmake python shebangfix
 SHEBANG_FILES=	full-test.sh
 
 #CONFIGURE_ARGS=	--cupsgroup=cups

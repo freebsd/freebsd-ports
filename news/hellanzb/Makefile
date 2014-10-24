@@ -18,9 +18,8 @@ RUN_DEPENDS=	par2:${PORTSDIR}/archivers/par2cmdline \
 		${PYTHON_PKGNAMEPREFIX}yenc>=0:${PORTSDIR}/news/py-yenc \
 		mac:${PORTSDIR}/audio/mac
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-USES=		twisted:run,web
+USE_PYTHON=	distutils
+USES=		python:2 twisted:run,web
 PORTDOCS=	CHANGELOG CREDITS README
 
 OPTIONS_DEFINE=	DOCS

@@ -11,7 +11,7 @@ COMMENT=	Papercut is a news server written in Python, using a MySQL backend
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 do-configure:
