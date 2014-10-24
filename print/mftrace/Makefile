@@ -23,10 +23,9 @@ RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
 .endif
 
 # Python3 ready
-USE_PYTHON=	yes
 USE_TEX=	base texmf
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake python
 MAKEFILE=	GNUmakefile
 
 

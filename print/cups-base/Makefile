@@ -163,7 +163,7 @@ WANT_PHP_CGI=		yes
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
-USE_PYTHON=		yes
+USES+=			python
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBPAPER}

@@ -15,15 +15,13 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 
 NO_BUILD=	yes
 
-USE_PYTHON=	yes
-
 FIND_DIRS=	-type d
 FIND_DATA=	-type f -mindepth 2 -not -name "*~"
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} XPN=${XPN}
 
-USES=		gettext
+USES=		gettext python
 
 XPN=	${PORTNAME}.py
 

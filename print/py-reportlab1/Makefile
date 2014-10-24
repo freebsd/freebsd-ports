@@ -22,10 +22,8 @@ CONFLICTS=	py*-reportlab[^1]-[^1].* \
 
 PORTSCOUT=	ignore:1	# Last version of 1.X branch
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	Reportlab
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/reportlab_${PORTVERSION:S/./_/g}/reportlab
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"

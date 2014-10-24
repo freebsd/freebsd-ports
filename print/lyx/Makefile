@@ -22,8 +22,7 @@ LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 MAJOR_VERSION=	2.1
 MINOR_VERSION=	2
 
-USES=		desktop-file-utils gmake iconv pkgconfig perl5 tar:xz
-USE_PYTHON=	2
+USES=		desktop-file-utils gmake iconv pkgconfig perl5 python:2 tar:xz
 USE_QT4=	corelib gui moc_build uic_build rcc_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-boost \

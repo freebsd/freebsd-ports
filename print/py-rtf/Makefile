@@ -11,9 +11,8 @@ DISTNAME=	PyRTF-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to create RTF documents using the Python language
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rtf
 PORTEXAMPLES=	*

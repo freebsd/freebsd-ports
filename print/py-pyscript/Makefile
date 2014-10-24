@@ -17,8 +17,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PYSCRIPT_MANUAL=doc/manual/pyscript.pdf
 
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils
 USE_TEX=	latex dvipsk
 
 .include <bsd.port.options.mk>
