@@ -114,5 +114,3 @@ bin/54321
 %%DATADIR%%/data/wn8.hlp
 %%DATADIR%%/data/wn9.hlp
 %%DATADIR%%/data/z2.png
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
