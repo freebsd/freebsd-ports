@@ -21,7 +21,7 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-AFS_DISTVERSION=	1.6.9
+AFS_DISTVERSION=	1.6.10
 DBVERSION=	2013-01-28
 
 USES=		kmod tar:bzip2
@@ -87,10 +87,6 @@ _KERNCONF?=$K
 IGNORE=	requires kernel configuration file ${_KERNCONF} to build
 .endif
 
-.if ${OSVERSION} < 800000
-IGNORE=	supports FreeBSD 8.0 and later
-.endif
-
 # Do not show users the reminder about cleandepend and depend
 post-extract:
 	${MKDIR} ${WRKDIR}/conf
@@ -100,18 +96,18 @@ post-extract:
 create-sample-files:
 	@${ECHO_CMD} openafs.org > ${WRKDIR}/ThisCell
 	@${ECHO_CMD} "${AFSMNTDIR}:${AFSCACHEDIR}:150000" > ${WRKDIR}/cacheinfo
-	@${INSTALL_DATA} ${DISTDIR}/CellServDB.${DBVERSION} ${WRKDIR}/CellServDB
+	${INSTALL_DATA} ${DISTDIR}/CellServDB.${DBVERSION} ${WRKDIR}/CellServDB
 
 post-install: create-sample-files
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for F in CellServDB ThisCell cacheinfo
-	@${INSTALL_DATA} ${WRKDIR}/${F} ${STAGEDIR}${ETCDIR}/${F}.sample
+	${INSTALL_DATA} ${WRKDIR}/${F} ${STAGEDIR}${ETCDIR}/${F}.sample
 .endfor
-	@${INSTALL_KLD} ${STAGEDIR}${PREFIX}/lib/openafs/libafs.ko \
+	${INSTALL_KLD} ${STAGEDIR}${PREFIX}/lib/openafs/libafs.ko \
 	    ${STAGEDIR}${KMODDIR}
 	@${RM} ${STAGEDIR}${PREFIX}/lib/openafs/libafs.ko
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/openafs
-	${MKDIR} ${STAGEDIR}${AFSMNTDIR} \
+	@${MKDIR} ${STAGEDIR}${AFSMNTDIR} \
 	    ${STAGEDIR}${AFSSTATEDIR} ${STAGEDIR}${AFSCACHEDIR}
 
 .include <bsd.port.post.mk>

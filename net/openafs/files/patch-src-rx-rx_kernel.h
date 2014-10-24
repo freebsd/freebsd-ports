@@ -1,6 +1,14 @@
---- src/rx/rx_kernel.h.orig	2014-09-11 17:20:18.000000000 +0900
-+++ src/rx/rx_kernel.h	2014-09-11 17:23:52.000000000 +0900
-@@ -59,7 +59,13 @@
+--- src/rx/rx_kernel.h.orig	2014-09-24 10:17:09.000000000 -0400
++++ src/rx/rx_kernel.h	2014-09-28 20:37:20.000000000 -0400
+@@ -54,12 +54,20 @@
+ #endif
+ #define rx_ifnet_mtu(x) (x)->if_mtu
+ #define rx_ifnet_flags(x) (x?(x)->if_flags:0)
+-#if defined(AFS_OBSD46_ENV) || defined(AFS_FBSD81_ENV)
++#if __FreeBSD_version >= 1100032
++#define rx_ifaddr_withnet(x) ifa_ifwithnet(x, 0, RT_ALL_FIBS)
++#elif defined(AFS_OBSD46_ENV) || defined(AFS_FBSD81_ENV)
+ #define rx_ifaddr_withnet(x) ifa_ifwithnet(x, 0)
  #else
  #define rx_ifaddr_withnet(x) ifa_ifwithnet(x)
  #endif
