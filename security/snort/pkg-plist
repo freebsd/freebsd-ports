@@ -45,16 +45,21 @@ include/snort/dynamic_output/sfrt_dir.h
 include/snort/dynamic_output/sfrt_trie.h
 include/snort/dynamic_output/snort_debug.h
 include/snort/dynamic_output/stream_api.h
+include/snort/dynamic_preproc/appId.h
 include/snort/dynamic_preproc/bitop.h
 include/snort/dynamic_preproc/cpuclock.h
 include/snort/dynamic_preproc/file_api.h
+include/snort/dynamic_preproc/file_mail_common.h
 include/snort/dynamic_preproc/idle_processing.h
 include/snort/dynamic_preproc/ipv6_port.h
 include/snort/dynamic_preproc/mempool.h
+include/snort/dynamic_preproc/mpse_methods.h
 include/snort/dynamic_preproc/obfuscation.h
+include/snort/dynamic_preproc/packet_time.h
 include/snort/dynamic_preproc/preprocids.h
 include/snort/dynamic_preproc/profiler.h
 include/snort/dynamic_preproc/segment_mem.h
+include/snort/dynamic_preproc/session_api.h
 include/snort/dynamic_preproc/sfPolicy.h
 include/snort/dynamic_preproc/sfPolicyUserData.h
 include/snort/dynamic_preproc/sf_decompression.h
@@ -73,78 +78,86 @@ include/snort/dynamic_preproc/sf_snort_packet.h
 include/snort/dynamic_preproc/sf_snort_plugin_api.h
 include/snort/dynamic_preproc/sfcommon.h
 include/snort/dynamic_preproc/sfcontrol.h
+include/snort/dynamic_preproc/sfdebug.h
 include/snort/dynamic_preproc/sfrt.h
 include/snort/dynamic_preproc/sfrt_dir.h
 include/snort/dynamic_preproc/sfrt_flat.h
 include/snort/dynamic_preproc/sfrt_flat_dir.h
 include/snort/dynamic_preproc/sfrt_trie.h
+include/snort/dynamic_preproc/sidechannel_define.h
+include/snort/dynamic_preproc/sip_common.h
 include/snort/dynamic_preproc/snort_bounds.h
 include/snort/dynamic_preproc/snort_debug.h
 include/snort/dynamic_preproc/ssl.h
+include/snort/dynamic_preproc/ssl_config.h
+include/snort/dynamic_preproc/ssl_ha.h
+include/snort/dynamic_preproc/ssl_include.h
+include/snort/dynamic_preproc/ssl_inspect.h
+include/snort/dynamic_preproc/ssl_session.h
 include/snort/dynamic_preproc/str_search.h
 include/snort/dynamic_preproc/stream_api.h
 lib/snort/dynamic_output/libsf_dynamic_output.a
 lib/snort/dynamic_preproc/libsf_dynamic_preproc.a
-lib/snort/dynamicengine/libsf_engine.a
-lib/snort/dynamicengine/libsf_engine.so
-lib/snort/dynamicengine/libsf_engine.so.0
-lib/snort/dynamicengine/libsf_engine.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_dce2_preproc.a
-lib/snort/dynamicpreprocessor/libsf_dce2_preproc.so
-lib/snort/dynamicpreprocessor/libsf_dce2_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_dce2_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_dnp3_preproc.a
-lib/snort/dynamicpreprocessor/libsf_dnp3_preproc.so
-lib/snort/dynamicpreprocessor/libsf_dnp3_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_dnp3_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_dns_preproc.a
-lib/snort/dynamicpreprocessor/libsf_dns_preproc.so
-lib/snort/dynamicpreprocessor/libsf_dns_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_dns_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.a
-lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so
-lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_gtp_preproc.a
-lib/snort/dynamicpreprocessor/libsf_gtp_preproc.so
-lib/snort/dynamicpreprocessor/libsf_gtp_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_gtp_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_imap_preproc.a
-lib/snort/dynamicpreprocessor/libsf_imap_preproc.so
-lib/snort/dynamicpreprocessor/libsf_imap_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_imap_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_modbus_preproc.a
-lib/snort/dynamicpreprocessor/libsf_modbus_preproc.so
-lib/snort/dynamicpreprocessor/libsf_modbus_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_modbus_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_pop_preproc.a
-lib/snort/dynamicpreprocessor/libsf_pop_preproc.so
-lib/snort/dynamicpreprocessor/libsf_pop_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_pop_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_reputation_preproc.a
-lib/snort/dynamicpreprocessor/libsf_reputation_preproc.so
-lib/snort/dynamicpreprocessor/libsf_reputation_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_reputation_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_sdf_preproc.a
-lib/snort/dynamicpreprocessor/libsf_sdf_preproc.so
-lib/snort/dynamicpreprocessor/libsf_sdf_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_sdf_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_sip_preproc.a
-lib/snort/dynamicpreprocessor/libsf_sip_preproc.so
-lib/snort/dynamicpreprocessor/libsf_sip_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_sip_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_smtp_preproc.a
-lib/snort/dynamicpreprocessor/libsf_smtp_preproc.so
-lib/snort/dynamicpreprocessor/libsf_smtp_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_smtp_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_ssh_preproc.a
-lib/snort/dynamicpreprocessor/libsf_ssh_preproc.so
-lib/snort/dynamicpreprocessor/libsf_ssh_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_ssh_preproc.so.0.0.0
-lib/snort/dynamicpreprocessor/libsf_ssl_preproc.a
-lib/snort/dynamicpreprocessor/libsf_ssl_preproc.so
-lib/snort/dynamicpreprocessor/libsf_ssl_preproc.so.0
-lib/snort/dynamicpreprocessor/libsf_ssl_preproc.so.0.0.0
+lib/snort_dynamicengine/libsf_engine.a
+lib/snort_dynamicengine/libsf_engine.so
+lib/snort_dynamicengine/libsf_engine.so.0
+lib/snort_dynamicengine/libsf_engine.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_dce2_preproc.a
+lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so
+lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_dnp3_preproc.a
+lib/snort_dynamicpreprocessor/libsf_dnp3_preproc.so
+lib/snort_dynamicpreprocessor/libsf_dnp3_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_dnp3_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_dns_preproc.a
+lib/snort_dynamicpreprocessor/libsf_dns_preproc.so
+lib/snort_dynamicpreprocessor/libsf_dns_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_dns_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.a
+lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.so
+lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_gtp_preproc.a
+lib/snort_dynamicpreprocessor/libsf_gtp_preproc.so
+lib/snort_dynamicpreprocessor/libsf_gtp_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_gtp_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_imap_preproc.a
+lib/snort_dynamicpreprocessor/libsf_imap_preproc.so
+lib/snort_dynamicpreprocessor/libsf_imap_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_imap_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_modbus_preproc.a
+lib/snort_dynamicpreprocessor/libsf_modbus_preproc.so
+lib/snort_dynamicpreprocessor/libsf_modbus_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_modbus_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_pop_preproc.a
+lib/snort_dynamicpreprocessor/libsf_pop_preproc.so
+lib/snort_dynamicpreprocessor/libsf_pop_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_pop_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_reputation_preproc.a
+lib/snort_dynamicpreprocessor/libsf_reputation_preproc.so
+lib/snort_dynamicpreprocessor/libsf_reputation_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_reputation_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_sdf_preproc.a
+lib/snort_dynamicpreprocessor/libsf_sdf_preproc.so
+lib/snort_dynamicpreprocessor/libsf_sdf_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_sdf_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_sip_preproc.a
+lib/snort_dynamicpreprocessor/libsf_sip_preproc.so
+lib/snort_dynamicpreprocessor/libsf_sip_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_sip_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_smtp_preproc.a
+lib/snort_dynamicpreprocessor/libsf_smtp_preproc.so
+lib/snort_dynamicpreprocessor/libsf_smtp_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_smtp_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_ssh_preproc.a
+lib/snort_dynamicpreprocessor/libsf_ssh_preproc.so
+lib/snort_dynamicpreprocessor/libsf_ssh_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_ssh_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_ssl_preproc.a
+lib/snort_dynamicpreprocessor/libsf_ssl_preproc.so
+lib/snort_dynamicpreprocessor/libsf_ssl_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_ssl_preproc.so.0.0.0
 libdata/pkgconfig/snort.pc
 libdata/pkgconfig/snort_output.pc
 libdata/pkgconfig/snort_preproc.pc
@@ -154,6 +167,7 @@ man/man8/snort.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/OpenDetectorDeveloperGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.GTP
@@ -164,6 +178,7 @@ man/man8/snort.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.WIN32
 %%PORTDOCS%%%%DOCSDIR%%/README.active
 %%PORTDOCS%%%%DOCSDIR%%/README.alert_order
+%%PORTDOCS%%%%DOCSDIR%%/README.appid
 %%PORTDOCS%%%%DOCSDIR%%/README.asn1
 %%PORTDOCS%%%%DOCSDIR%%/README.counts
 %%PORTDOCS%%%%DOCSDIR%%/README.csv
@@ -194,7 +209,6 @@ man/man8/snort.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.ppm
 %%PORTDOCS%%%%DOCSDIR%%/README.reload
 %%PORTDOCS%%%%DOCSDIR%%/README.reputation
-%%PORTDOCS%%%%DOCSDIR%%/README.rzb_saac
 %%PORTDOCS%%%%DOCSDIR%%/README.sensitive_data
 %%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
 %%PORTDOCS%%%%DOCSDIR%%/README.sip
@@ -213,16 +227,20 @@ man/man8/snort.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/generators
 %%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
 src/snort_dynamicsrc/Unified2_common.h
+src/snort_dynamicsrc/appId.h
 src/snort_dynamicsrc/bitop.h
 src/snort_dynamicsrc/event.h
 src/snort_dynamicsrc/file_api.h
+src/snort_dynamicsrc/file_mail_common.h
 src/snort_dynamicsrc/idle_processing.h
+src/snort_dynamicsrc/mpse_methods.h
 src/snort_dynamicsrc/obfuscation.h
 src/snort_dynamicsrc/pcap_pkthdr32.h
 src/snort_dynamicsrc/plugin_enum.h
 src/snort_dynamicsrc/preprocids.h
 src/snort_dynamicsrc/profiler.h
 src/snort_dynamicsrc/rule_option_types.h
+src/snort_dynamicsrc/session_api.h
 src/snort_dynamicsrc/sfPolicyUserData.c
 src/snort_dynamicsrc/sfPolicyUserData.h
 src/snort_dynamicsrc/sf_base64decode.c
@@ -244,29 +262,41 @@ src/snort_dynamicsrc/sf_snort_packet.h
 src/snort_dynamicsrc/sf_snort_plugin_api.h
 src/snort_dynamicsrc/sf_types.h
 src/snort_dynamicsrc/sfcontrol.h
+src/snort_dynamicsrc/sfdebug.h
 src/snort_dynamicsrc/sfghash.h
 src/snort_dynamicsrc/sfhashfcn.h
+src/snort_dynamicsrc/sfparser.c
 src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.c
 src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.h
+src/snort_dynamicsrc/sidechannel_define.h
 src/snort_dynamicsrc/signature.h
+src/snort_dynamicsrc/sip_common.h
 src/snort_dynamicsrc/snort_debug.h
+src/snort_dynamicsrc/ssl.c
+src/snort_dynamicsrc/ssl.h
+src/snort_dynamicsrc/ssl_config.c
+src/snort_dynamicsrc/ssl_config.h
+src/snort_dynamicsrc/ssl_ha.c
+src/snort_dynamicsrc/ssl_ha.h
+src/snort_dynamicsrc/ssl_include.h
+src/snort_dynamicsrc/ssl_inspect.c
+src/snort_dynamicsrc/ssl_inspect.h
+src/snort_dynamicsrc/ssl_session.h
 src/snort_dynamicsrc/str_search.h
 src/snort_dynamicsrc/stream_api.h
 src/snort_dynamicsrc/treenodes.h
 src/snort_dynamicsrc/util_unfold.c
 src/snort_dynamicsrc/util_unfold.h
 @unexec rmdir "/var/log/snort" >/dev/null 2>&1 || :
-@dirrmtry src/snort_dynamicsrc
-@dirrmtry src
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/snort/dynamicpreprocessor
-@dirrmtry lib/snort/dynamicengine
-@dirrmtry lib/snort/dynamic_preproc
-@dirrmtry lib/snort/dynamic_output
-@dirrmtry lib/snort
-@dirrmtry include/snort/dynamic_preproc
-@dirrmtry include/snort/dynamic_output
-@dirrmtry include/snort
-@dirrmtry etc/snort/rules
-@dirrmtry etc/snort/preproc_rules
-@dirrmtry etc/snort
+@dir src/snort_dynamicsrc
+@dir src
+%%PORTDOCS%%@dir %%DOCSDIR%%
+@dir lib/snort/dynamic_preproc
+@dir lib/snort/dynamic_output
+@dir lib/snort
+@dir include/snort/dynamic_preproc
+@dir include/snort/dynamic_output
+@dir include/snort
+@dir etc/snort/rules
+@dir etc/snort/preproc_rules
+@dir etc/snort
