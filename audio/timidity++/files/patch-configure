@@ -1,0 +1,31 @@
+--- configure.orig	2012-06-28 14:14:25.000000000 +0000
++++ configure
+@@ -3930,6 +3930,10 @@ case "$target" in
+         test -n "$SHLD" || SHLD="ld -Bshareable"
+     so="so"
+     ;;
++  *-*-dragonfly*)
++    [ -n "$SHLD" ] || SHLD="ld -Bshareable"
++    so="so"
++    ;;
+   *-*-freebsd*)
+     if test "$ELFFORMAT" = yes; then
+ 	test -n "$SHLD" || SHLD="ld -Bshareable"
+@@ -12561,7 +12565,7 @@ fi;
+ 
+ if test "x$au_enable_default" = xyes; then
+   case "$target" in
+-  *-*-linux*|*-*-freebsd*)
++  *-*-linux*|*-*-freebsd*|*-*-dragonfly*)
+     au_enable_oss=yes
+     ;;
+   *-*-bsdi2.0)
+@@ -12619,7 +12623,7 @@ if test "x$au_enable_oss" = xyes; then
+ echo "${ECHO_T}yes - <sys/soundcard.h>" >&6
+   else
+     case "$target" in
+-      *linux*|*freebsd*)
++      *linux*|*freebsd*|*dragonfly*)
+                 echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+         ;;
