@@ -26,9 +26,8 @@ OPENSSL_USE=		OPENSSL=yes
 
 CONFLICTS=	flow-tools-[0-9]*
 
-USES=		gmake libtool tar:bzip2
+USES=		gmake libtool python:run tar:bzip2
 USE_LDCONFIG=	yes
-USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

@@ -13,8 +13,7 @@ COMMENT=	Flexible Communications Framework
 LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USE_PYTHON_BUILD=	yes
-USES=		gmake libtool:keepla pkgconfig
+USES=		gmake libtool:keepla pkgconfig python:build
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 libxslt:build
 GNU_CONFIGURE=	yes

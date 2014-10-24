@@ -13,7 +13,7 @@ COMMENT=	Nagios plug-in to get status from smartmontools
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/smartctl:${PORTSDIR}/sysutils/smartmontools
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 do-install:

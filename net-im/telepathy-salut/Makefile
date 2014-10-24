@@ -15,10 +15,9 @@ LIB_DEPENDS=	libavahi-glib.so:${PORTSDIR}/net/avahi-app \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig python:build
 USE_GNOME=	glib20 libxslt:build
 USE_OPENSSL=	yes
-USE_PYTHON_BUILD=	yes
 USE_SQLITE=	3
 CONFIGURE_ARGS=	--disable-Werror --enable-avahi-tests=no
 CPPFLAGS+=	${PTHREAD_CFLAGS}

@@ -15,8 +15,8 @@ COMMENT=	Peer-to-peer network game engine
 LICENSE=	GPLv2
 
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	Py2Play
 EXAMPLESDIR=	${PREFIX}/share/examples/py-py2play
 

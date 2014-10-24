@@ -22,8 +22,8 @@ GH_PROJECT=	PyBitmessage
 GH_COMMIT=	ab49373
 GH_TAGNAME=	v${PORTVERSION}
 
+USES=		python
 USE_OPENSSL=	yes
-USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 
 post-patch:

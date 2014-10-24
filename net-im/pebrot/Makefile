@@ -10,8 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Text-based MSN messenger client
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

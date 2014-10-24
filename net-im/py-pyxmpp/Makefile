@@ -23,11 +23,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jajcus
 
-USES=		shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	auxtools/*.py examples/*.py tests/*.py utils/*.py
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e \

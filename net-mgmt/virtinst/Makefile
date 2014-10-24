@@ -14,9 +14,8 @@ COMMENT=	Module to help in starting installations inside of virtual machines
 LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.9.1:${PORTSDIR}/www/py-urlgrabber
 
-USES=		gettext
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		gettext python
+USE_PYTHON=	distutils
 
 post-patch:
 	${REINPLACE_CMD} 's|share/man|man|g' \
