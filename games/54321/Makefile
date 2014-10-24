@@ -5,9 +5,8 @@ PORTNAME=	54321
 PORTVERSION=	1.0.2001.11.16
 PORTREVISION=	13
 CATEGORIES=	games
-MASTER_SITES=	http://old.nklein.com/products/54321/%SUBDIR%/ \
+MASTER_SITES=	http://old.nklein.com/products/54321/${PORTVERSION}/ \
 		http://www.sourcefiles.org/Games/Puzzle/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
