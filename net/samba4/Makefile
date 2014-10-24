@@ -64,8 +64,7 @@ DESTDIRNAME=		--destdir
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
-USE_PYTHON=		2
-USES=			shebangfix compiler perl5 pkgconfig iconv readline cpe
+USES=			shebangfix compiler perl5 pkgconfig python:2 iconv readline cpe
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 WAF_TOOL=		buildtools/bin/waf

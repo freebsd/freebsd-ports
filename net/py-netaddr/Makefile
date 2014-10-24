@@ -17,9 +17,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	drkjam
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

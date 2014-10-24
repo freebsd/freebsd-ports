@@ -12,8 +12,7 @@ COMMENT=	Packet Debugger
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pcs/__init__.py:${PORTSDIR}/net/py-pcs
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
+USES=		python
+USE_PYTHON=	distutils pythonprefix
 
 .include <bsd.port.mk>

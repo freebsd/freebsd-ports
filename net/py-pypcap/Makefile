@@ -13,10 +13,8 @@ COMMENT=	Simplified object-oriented Python extension module for libpcap
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	pcap
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pcap.c

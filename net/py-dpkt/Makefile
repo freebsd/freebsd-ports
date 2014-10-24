@@ -12,10 +12,8 @@ COMMENT=	Python fast, simple packet creation / parsing module
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist pythonprefix
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -14,9 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGVERSION=	1.2.1
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

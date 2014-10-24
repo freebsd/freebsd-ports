@@ -11,9 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	steve@energistic.com
 COMMENT=	Python implementation of RADIUS client
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTEXAMPLES=	*
 

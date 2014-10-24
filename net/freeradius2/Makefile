@@ -200,7 +200,7 @@ PLIST_SUB+=	RLMPERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 CONFIGURE_ARGS+=--with-rlm_python \
 		--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
 		--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR}

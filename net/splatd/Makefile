@@ -18,12 +18,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	splat
 USE_RC_SUBR=	splatd
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
-USES=		twisted
+USES=		python twisted
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/splat.conf ${STAGEDIR}${PREFIX}/etc/splat.conf.sample

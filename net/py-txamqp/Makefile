@@ -15,10 +15,8 @@ COMMENT=	Twisted Python library for the AMQP messaging protocol
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}thrift>0:${PORTSDIR}/devel/py-thrift
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		twisted
+USES=		python:2 twisted
+USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/python-${PORTNAME}-${PORTVERSION}
 

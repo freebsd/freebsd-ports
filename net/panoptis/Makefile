@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libccgnu2.so:${PORTSDIR}/devel/commoncpp
 
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
+USES=		python
 PLIST_FILES=	bin/panoptis \
 		bin/mail.py \
 		bin/pview.py \

@@ -19,9 +19,8 @@ CONFLICTS_INSTALL=	xorp-devel-*
 
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions -s /^xorp/${DISTNAME}/
 GROUPS=		xorp
-USES=		tar:bzip2 ncurses scons shebangfix compiler:env
+USES=		tar:bzip2 ncurses scons shebangfix compiler:env python:2,build
 USE_OPENSSL=	yes
-USE_PYTHON_BUILD=	2
 USE_RC_SUBR=	xorp
 SHEBANG_FILES=	xrl/scripts/clnt-gen xrl/scripts/tgt-gen
 python_OLD_CMD=	.*python

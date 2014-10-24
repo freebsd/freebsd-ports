@@ -14,9 +14,8 @@ COMMENT=	Implementation of the PGM reliable multicast protocol
 LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
-USES=		pathfix perl5 tar:bzip2 libtool
+USES=		pathfix perl5 tar:bzip2 libtool python
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/openpgm/pgm
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

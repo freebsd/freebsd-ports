@@ -14,9 +14,7 @@ COMMENT=	Python support for the Yadis service discovery protocol
 
 BROKEN=		fails checksum
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	python-yadis
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -14,13 +14,11 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	xmlada>=3.2:${PORTSDIR}/textproc/xmlada
 
-USES=		ada gmake
+USES=		ada gmake python:build
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
 YEAR=		2014
 WRKSRC=		${WRKDIR}/polyorb-${YEAR}-src
-
-USE_PYTHON_BUILD= yes
 
 MAKE_ENV=	PROCESSORS=${MAKE_JOBS_NUMBER}
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD} \

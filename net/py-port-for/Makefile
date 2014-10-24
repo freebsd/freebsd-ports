@@ -14,9 +14,8 @@ COMMENT=	Python utility and library that helps with TCP ports management
 LICENSE=	MIT
 
 # Python3 Ready
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} '/DEFAULT_CONFIG_PATH/ s|/etc|${PREFIX}&|' ${WRKSRC}/port_for/store.py

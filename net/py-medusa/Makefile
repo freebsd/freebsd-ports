@@ -14,9 +14,8 @@ COMMENT=	Asynchronous socket-based server framework for Python
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

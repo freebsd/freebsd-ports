@@ -18,9 +18,8 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 CONFLICTS=	gtk-vnc-0.4.[0-9]*
 
 USE_GNOME=	pygtk2
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

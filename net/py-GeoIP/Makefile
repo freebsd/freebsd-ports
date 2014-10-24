@@ -21,8 +21,8 @@ GH_PROJECT=	geoip-api-python
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	993f63c
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	GeoIP-Python
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
