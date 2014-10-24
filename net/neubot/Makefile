@@ -13,8 +13,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
-USE_PYTHON=	2
-
+USES=		python:2
 NO_BUILD=	yes
 
 USERS=		_neubot

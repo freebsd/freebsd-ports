@@ -16,10 +16,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
 
 GITVERSION=	aad8ded658b36337a08aeb7402b6b67eb8771bea
 
-USES=		gettext twisted
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		gettext python twisted
+USE_PYTHON=	distutils autoplist
 PYDISTUTILS_INSTALL_TARGET=	install_locale install
 PYDISTUTILS_BUILD_TARGET=	build_locale build
 

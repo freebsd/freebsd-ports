@@ -12,7 +12,7 @@ COMMENT=	Stomp messaging broker written in Python
 LICENSE=	GPLv3
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+USES=		python
 WRKSRC=		${WRKDIR}/sprinkle-dist
 
 OPTIONS_DEFINE=	DOCS

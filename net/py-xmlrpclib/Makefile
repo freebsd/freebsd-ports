@@ -10,8 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python implementation of the XML-RPC protocol
 
-USE_PYTHON=	yes
-USES=		zip
+USES=		python zip
 
 DOCSDIR=	${PREFIX}/share/doc/py-xmlrpclib
 EXAMPLESDIR=	${PREFIX}/share/examples/py-xmlrpclib

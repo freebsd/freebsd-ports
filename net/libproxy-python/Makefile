@@ -14,7 +14,7 @@ LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-USE_PYTHON=	yes
+USES+=		python
 
 LIBPROXY_SLAVE=	python
 

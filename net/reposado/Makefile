@@ -18,8 +18,8 @@ GH_TAGNAME=	1bcf4f0
 
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 SUB_FILES=	pkg-message
 

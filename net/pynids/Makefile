@@ -15,11 +15,9 @@ COMMENT=	Python interface to libnids
 PATCH_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
-USES=		pkgconfig
+USES=		pkgconfig python
 USE_GNOME=	glib20
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
+USE_PYTHON=	distutils autoplist pythonprefix
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/nidsmodule.so
 

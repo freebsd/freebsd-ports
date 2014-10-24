@@ -12,11 +12,9 @@ COMMENT=	Python API and command-line toolset for Twitter
 
 LICENSE=	MIT
 
-USE_GITHUB=		yes
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-
+USES=		python
+USE_PYTHON=	distutils autoplist
+USE_GITHUB=	yes
 GH_ACCOUNT=	sixohsix
 GH_PROJECT=	twitter
 GH_TAGNAME=	${DISTNAME}

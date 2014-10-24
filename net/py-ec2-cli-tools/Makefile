@@ -16,10 +16,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=1.0:${PORTSDIR}/devel/py-boto \
 		bash>=0:${PORTSDIR}/shells/bash
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=			shebangfix
-SHEBANG_FILES=		bin/ec2getsnaps bin/ec2hostcache bin/ec2ssh
+USE_PYTHON=	distutils autoplist
+USES=		python shebangfix
+SHEBANG_FILES=	bin/ec2getsnaps bin/ec2hostcache bin/ec2ssh
 
 .include <bsd.port.mk>

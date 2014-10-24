@@ -17,9 +17,8 @@ PORTEXAMPLES=	*
 
 BUILD_DEPENDS=	cython>=0.11.2:${PORTSDIR}/lang/cython
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
+USES=		python
+USE_PYTHON=	distutils pythonprefix
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

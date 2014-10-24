@@ -26,10 +26,9 @@ CONFLICTS=	tridiavnc-[0-9]* \
 		tightvnc-[0-9]* \
 		vnc-[0-9]*
 
-USES=		cmake gmake libtool pkgconfig
+USES=		cmake gmake libtool pkgconfig python
 USE_GL=		gl
 USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 

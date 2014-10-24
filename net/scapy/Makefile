@@ -13,9 +13,8 @@ COMMENT=	Powerful interactive packet manipulation program in python
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dnet.so:${PORTSDIR}/net/py-libdnet \
 		${PYTHON_SITELIBDIR}/pcap.py:${PORTSDIR}/net/py-pcap
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	PYX PYCRYPTO PYGNUPLOT GRAPH P0F_BASE QUESO_BASE NMAP MANUF
 PYX_DESC=	PostScript and PDF graphs drawing

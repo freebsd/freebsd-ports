@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 EXTRA_PATCHES=	${FILESDIR}/honeyd-1.5c-libevent2.patch:-p1
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=	yes
+USES+=			python
 CONFIGURE_ARGS+=	--with-python
 .else
 CONFIGURE_ARGS+=	--without-python

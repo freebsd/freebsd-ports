@@ -31,9 +31,8 @@ CONFIGURE_ARGS=	--with-boost-filesystem=boost_filesystem \
 		--with-boost-system=boost_system \
 		PY_PREFIX="${PREFIX}"
 USE_AUTOTOOLS=	aclocal automake autoconf
-USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}
-USES=		gmake perl5
+USES=		gmake perl5 python
 
 post-patch:
 	${REINPLACE_CMD} -e 's/^AM_INIT_AUTOMAKE/#/' ${WRKSRC}/configure.ac

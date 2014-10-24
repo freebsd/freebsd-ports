@@ -20,9 +20,9 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dnet.so \
 
 LIBDNET_SLAVE=	yes
 
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}
-PYDISTUTILS_PKGNAME=	dnet
 
 .if defined(MAINTAINER_MODE)
 regression-test: install

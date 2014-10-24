@@ -14,8 +14,7 @@ COMMENT=	GNOME applet that shows available network services using mDNS
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi
 
-USES=		gettext gmake pathfix
-USE_PYTHON=	yes
+USES=		gettext gmake pathfix python
 USE_GNOME=	gnomeprefix intlhack pygnomedesktop
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

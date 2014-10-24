@@ -15,7 +15,7 @@ COMMENT=	NOS teletekst browser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:${PORTSDIR}/x11-toolkits/py-gtk2
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+USES=		python
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/ttb

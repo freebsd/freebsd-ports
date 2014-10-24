@@ -14,9 +14,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
-USE_PYTHON=	yes
-USE_PYTHON_PREFIX=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils pythonprefix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	allfro
