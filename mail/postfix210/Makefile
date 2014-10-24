@@ -21,6 +21,8 @@ LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+PORTSCOUT=	limit:^2\.10\.
+
 VDAVERSION=	2.10.0
 CONFLICTS=	courier-0.* postfix-1.* postfix2[789]-* \
 		postfix-2.11.* postfix-base-2.11.* postfix-current-2.* \
