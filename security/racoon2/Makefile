@@ -3,7 +3,7 @@
 
 PORTNAME=	racoon2
 PORTVERSION=	20100526a
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 
@@ -67,6 +67,7 @@ post-configure:
 	@${REINPLACE_CMD} -e '/^prefix=/s|/usr/local|${STAGEDIR}${PREFIX}|;/\/var\/run\/racoon2/d' ${WRKSRC}/samples/Makefile
 
 post-install:
+	${MKDIR} ${STAGEDIR}/var/run/racoon2
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${STAGEDIR}${DOCSDIR}
