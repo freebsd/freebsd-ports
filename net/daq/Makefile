@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	daq
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	net
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
@@ -22,9 +21,13 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		bison gmake libtool
 USE_LDCONFIG=	yes
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.* ${STAGEDIR}${PREFIX}/lib/daq/*.so
 
 .include <bsd.port.mk>
