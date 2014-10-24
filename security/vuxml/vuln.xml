@@ -57,6 +57,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d057c5e6-5b20-11e4-bebd-000c2980a9f3">
+    <topic>libpurple/pidgin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libpurple</name>
+	<range><lt>2.10.10</lt></range>
+      </package>
+      <package>
+	<name>pidgin</name>
+	<range><lt>2.10.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The pidgin development team reports:</p>
+	<blockquote cite="https://developer.pidgin.im/wiki/ChangeLog">
+	  <p>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3694</cvename>
+      <cvename>CVE-2014-3697</cvename>
+      <cvename>CVE-2014-3696</cvename>
+      <cvename>CVE-2014-3695</cvename>
+      <cvename>CVE-2014-3698</cvename>
+      <url>https://developer.pidgin.im/wiki/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2014-10-22</discovery>
+      <entry>2014-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="25b78f04-59c8-11e4-b711-6805ca0b3d42">
     <topic>phpMyAdmin -- XSS vulnerabilities in SQL debug output and server monitor page.</topic>
     <affects>
