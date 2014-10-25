@@ -1,0 +1,11 @@
+--- regress/Makefile.in.orig	2014-10-25 13:43:05.000000000 +0200
++++ regress/Makefile.in	2014-10-25 13:43:08.000000000 +0200
+@@ -25,7 +25,7 @@
+ 
+ PROGS_SYSDEP=	@PROGS_HAVE_TSEARCH@
+ 
+-CLIENTS=	adnstest adnshost adnslogres $(PROGS_SYSDEP)
++CLIENTS=	adnstest adnslogres $(PROGS_SYSDEP)
+ AUTOCHDRS=	harness.h hsyscalls.h hredirect.h
+ AUTOCSRCS=	hrecord.c hplayback.c hcommon.c
+ include		../settings.make

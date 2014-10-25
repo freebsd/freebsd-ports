@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	adns
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~ian/adns/ftp/
+EXTRACT_SUFX=	.0~rc0.tar.gz
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Easy to use asynchronous-capable DNS client library and utilities
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.0~rc0
 
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -21,11 +23,11 @@ BUILD_DEPENDS+=		gm4:${PORTSDIR}/devel/m4
 CFLAGS+=		-Ds6_addr16=__u6_addr.__u6_addr16
 CFLAGS+=		-Ds6_addr32=__u6_addr.__u6_addr32
 MAKE_FLAGS+=		M4=gm4
-PATCH_SITES+=		https://people.debian.org/~lucab/deb/adns/:ipv6patch
-PATCHFILES+=		adns-ipv6.patch:ipv6patch
-PATCH_DIST_STRIP+=	-p1
+#PATCH_SITES+=		https://people.debian.org/~lucab/deb/adns/:ipv6patch
+#PATCHFILES+=		adns-ipv6.patch:ipv6patch
+#PATCH_DIST_STRIP+=	-p1
 
-DOCS=		COPYING GPL-vs-LGPL INSTALL LICENCE.WAIVERS README \
+DOCS=		COPYING GPL-vs-LGPL INSTALL README \
 		README.html TODO changelog
 
 TOSTRIP=	bin/adnsheloex \
