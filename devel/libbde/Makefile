@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbde
-DISTVERSION=	alpha-20140728
+DISTVERSION=	alpha-20141023
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSX2VCRk16TnpDd0U/ \
 		LOCAL/antoine
