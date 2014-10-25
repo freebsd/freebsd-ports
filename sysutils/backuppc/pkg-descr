@@ -1,5 +1,19 @@
-BackupPC is a high-performance, enterprise-grade system for backing up Linux,
-WinXX and MacOSX PCs and laptops to a server's disk.
-BackupPC is highly configurable and easy to install and maintain.
+BackupPC is a fast, enterprise-grade backup system. It provides
+a web-based user interface. It supports several platforms (Unix-like,
+Windows, MacOSX) to backup to a disk-based storage.
+
+No client-side software is necessary, as the BackupPC server uses
+several protocols (smb, rsync, tar and ftp) native to the client OS.
+
+File-level deduplication combined with optional compression minimizes
+the disk space needed to store the backups and disk I/O and enables
+synthetic backups to reduce network traffic.
+
+BackupPC is not a block-level backup system but performs file-based
+backup and restore. Thus it is not suitable for backup of disk
+images or raw disk partitions.
+
+BackupPC supports laptop environments with clients on dynamic
+IP addresses (DHCP) not always connected to the network.
 
 WWW: http://backuppc.sourceforge.net
