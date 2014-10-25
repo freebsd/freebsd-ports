@@ -17,4 +17,3 @@ libdata/pkgconfig/libvshadow.pc
 man/man1/vshadowinfo.1.gz
 man/man1/vshadowmount.1.gz
 man/man3/libvshadow.3.gz
-@dirrm include/libvshadow

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvshadow
-PORTVERSION=	20140731
+PORTVERSION=	20141023
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSZDZXRFVMdnZCeHc/ \
 		LOCAL/antoine
