@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	BackupPC-${DISTVERSION}
 
 MAINTAINER=	moiseev@mezonplus.ru
-COMMENT=	System for backing PCs and laptops to a server
+COMMENT=	Multi-platform backup to disk-based storage
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
