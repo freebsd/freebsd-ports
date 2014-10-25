@@ -11,11 +11,10 @@ MASTER_SITES=	http://ekg.chmurka.net/
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu client
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libgadu.so:${PORTSDIR}/polish/libgadu
+LIB_DEPENDS=	libgadu.so:${PORTSDIR}/polish/libgadu
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig
+USES=		execinfo gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS= --without-libungif \
