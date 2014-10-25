@@ -17,6 +17,9 @@ LICENSE_NAME=	MULTIRAW BSD LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Depends on broken and deprecated graphics/dcraw-m
+EXPIRATION_DATE=	2014-11-26
+
 RUN_DEPENDS=	${LOCALBASE}/bin/dcraw:${PORTSDIR}/graphics/dcraw \
 		${LOCALBASE}/bin/dcraw-m:${PORTSDIR}/graphics/dcraw-m
 

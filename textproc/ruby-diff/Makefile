@@ -13,6 +13,8 @@ MAINTAINER=		ruby@FreeBSD.org
 COMMENT=		Ruby implementation of Perl's Algorithm::Diff
 
 BROKEN=	Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 USE_RUBY=		YES
 USE_RUBY_SETUP=		YES

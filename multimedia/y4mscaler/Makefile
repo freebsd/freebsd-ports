@@ -12,6 +12,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Y4mscaler scales, crops, and shifts Y'CbCr video
 
 BROKEN=		Conflicts with mjpegtools on /usr/local/bin/y4mscaler
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 LIB_DEPENDS=	liblavjpeg.so:${PORTSDIR}/multimedia/mjpegtools
 

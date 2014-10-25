@@ -15,6 +15,8 @@ COMMENT=	Common interface to HTTP fetchers for PycURL or urllib2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/curl:${PORTSDIR}/ftp/py-curl
 
 BROKEN=		fails checksum
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
