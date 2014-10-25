@@ -12,6 +12,8 @@ MAINTAINER=	waitman@waitman.net
 COMMENT=	Modified Decoder for RAW files from digital cameras
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \

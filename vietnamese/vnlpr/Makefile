@@ -12,6 +12,8 @@ MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Shell script and set of fonts to print Vietnamese text on PostScript printer
 
 BROKEN=		Conflicts with dependency vnpstext on share/vn-fonts/initcour.ps
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 RUN_DEPENDS=	vn7to8:${PORTSDIR}/vietnamese/vn7to8 \
 		vnpstext:${PORTSDIR}/vietnamese/vnpstext

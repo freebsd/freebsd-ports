@@ -13,6 +13,8 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Python support for the Yadis service discovery protocol
 
 BROKEN=		fails checksum
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 USES=		python
 USE_PYTHON=	distutils autoplist

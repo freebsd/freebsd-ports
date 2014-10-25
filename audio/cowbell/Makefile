@@ -13,6 +13,8 @@ COMMENT=	Elegant music organizer
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
 BROKEN=		No more public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 USES=		gmake mono pathfix gettext iconv pkgconfig
 USE_GNOME=	gnomeprefix intltool gtksharp20

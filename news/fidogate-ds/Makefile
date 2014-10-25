@@ -13,6 +13,8 @@ MAINTAINER=		5u623l20@gmail.com
 COMMENT=		Fido-Internet Gateway and Tosser
 
 BROKEN=			Fails to configure
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 PORTSCOUT=		limit:^5\.[^2] # 5.2.X is development branch
 

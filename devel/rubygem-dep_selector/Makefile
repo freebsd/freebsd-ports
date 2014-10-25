@@ -13,6 +13,8 @@ COMMENT=	Find a valid assignment of package versions
 RUN_DEPENDS=	gecode>=3.5.0:${PORTSDIR}/devel/gecode
 
 BROKEN=		Does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -22,6 +22,8 @@ GH_COMMIT=	568c234
 SUB_FILES=	ipy ipy64
 
 BROKEN=		does not build with mono 3.4.0
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/xbuild /t:Stage \
