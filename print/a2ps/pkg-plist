@@ -290,15 +290,3 @@ man/man1/texi2dvi4a2ps.1.gz
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/a2ps.elc
 %%EMACS%%lib/xemacs/site-lisp/a2ps-print.el
 %%EMACS%%lib/xemacs/site-lisp/a2ps.el
-@dirrm %%DATADIR%%/ogonkify/fonts
-@dirrm %%DATADIR%%/ogonkify/afm
-@dirrm %%DATADIR%%/ogonkify
-@dirrm %%DATADIR%%/ps
-@dirrm %%DATADIR%%/ppd
-@dirrm %%DATADIR%%/sheets
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/encoding
-@dirrm %%DATADIR%%/afm
-@dirrm %%DATADIR%%
-%%EMACS%%@dirrm lib/xemacs/site-lisp
-%%EMACS%%@dirrm lib/xemacs
