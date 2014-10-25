@@ -13,8 +13,11 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 PKGNAMESUFFIX=	210
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail
+
+DEPRECATED=	Use mail/postfix instead.
+EXPIRATION_DATE=2015-01-31
 
 LICENSE=	IPL10
 LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
