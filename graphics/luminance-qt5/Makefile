@@ -3,7 +3,7 @@
 
 PORTNAME=	luminance-hdr
 DISTVERSION=	2.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
 PKGNAMESUFFIX=	-qt5
@@ -23,9 +23,10 @@ LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libraw_r.so:${PORTSDIR}/graphics/libraw \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs
 
-USES=		cmake:outsource tar:bzip2
-USE_QT5=	buildtools_build gui sql webkit xml linguist_build \
-		imageformats_run concurrent qmake_build
+USES=		cmake:outsource pkgconfig tar:bzip2
+USE_QT5=	concurrent declarative gui printsupport sql webkit xml \
+		buildtools_build linguist_build qmake_build \
+		imageformats_run
 INSTALLS_ICONS=	yes
 
 MAKE_JOBS_UNSAFE=yes
