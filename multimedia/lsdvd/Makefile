@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lsdvd
-PORTVERSION=	0.16
-PORTREVISION=	8
+PORTVERSION=	0.17
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20I%20hate%20James%20Blunt
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print information about the contents and structure of a DVD
@@ -14,7 +13,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

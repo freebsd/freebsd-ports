@@ -29,39 +29,3 @@
  
  	fclose (filehandle);
  
-@@ -193,6 +200,7 @@
- 	int has_title = 0, ret = 0;
- 	int max_length = 0, max_track = 0;
- 	struct stat dvd_stat;
-+	struct dvd_info dvd_info;
- 
- 	program_name = argv[0];
- 
-@@ -263,8 +271,6 @@
- 
- 	vmgi_mat = ifo_zero->vmgi_mat;
- 
--	struct dvd_info dvd_info;
--		
- 	dvd_info.discinfo.device = dvd_device;
- 	dvd_info.discinfo.disc_title = has_title ? "unknown" : title;
- 	dvd_info.discinfo.vmg_id =  vmgi_mat->vmg_identifier;
-@@ -363,14 +369,16 @@
- 
- 		cell = 0;
- 		if (opt_c) {
-+			int ms;
-+
- 			dvd_info.titles[j].chapter_count = pgc->nr_of_programs;
- 			dvd_info.titles[j].chapters = calloc(dvd_info.titles[j].chapter_count, sizeof(*dvd_info.titles[j].chapters));
- 
--						int ms;
- 			for (i=0; i<pgc->nr_of_programs; i++)
- 			{	   
-+				int next;
- 				ms=0;
--				int next = pgc->program_map[i+1];   
-+				next = pgc->program_map[i+1];   
- 				if (i == pgc->nr_of_programs - 1) next = pgc->nr_of_cells + 1;
- 
- 				while (cell < next - 1)
