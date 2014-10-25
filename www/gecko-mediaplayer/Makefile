@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gecko-mediaplayer
-DISTVERSION=	1.0.9a
-PORTREVISION=	3
+PORTVERSION=	1.0.9
 CATEGORIES=	www multimedia gnome
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE:S,/files/,/svn/packages/,}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia browser plugin for Gecko based browsers
@@ -18,53 +17,38 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libgmlib.so:${PORTSDIR}/multimedia/gmtk
 RUN_DEPENDS=	gnome-mplayer:${PORTSDIR}/multimedia/gnome-mplayer
 
-OPTIONS_DEFINE=	CACHE DOCS NLS
-OPTIONS_DEFAULT=CACHE
-CACHE_DESC=	Enable caching of remote media to local storage
-
-GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang pkgconfig gecko webplugin:native
+USES=		compiler:c++11-lang gecko gettext pkgconfig webplugin:native
 USE_GNOME=	glib20
+USE_CXXSTD=	c++11
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-silent-rules \
+		--disable-schemas-install \
+		--with-plugin_dir="${WEBPLUGIN_DIR}"
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=		CACHE DOCS
+OPTIONS_DEFAULT=	CACHE
+
+CACHE_DESC=		Enable caching of remote media to local storage
+CACHE_CONFIGURE_ENABLE=	caching
 
 WEBPLUGIN_FILES=	${PORTNAME}.so
 .for p in dvx rm qt wmp
 WEBPLUGIN_FILES+=	${PORTNAME}-${p}.so
 .endfor
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--with-plugin_dir="${WEBPLUGIN_DIR}"
-
-PORTDOCS=	README COPYING AUTHORS ChangeLog INSTALL NEWS javascript.txt
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCACHE}
-CONFIGURE_ARGS+=	--enable-caching
-.else
-CONFIGURE_ARGS+=	--disable-caching
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB=	NLS=""
-.else
-USES+=		gettext:build
-PLIST_SUB=	NLS="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl||' \
-		${WRKSRC}/configure \
-		${WRKSRC}/src/Makefile.in
-.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e \
-		's|install-gecko_mediaplayerdocDATA install-schemaDATA|install-schemaDATA|' \
-	    ${WRKSRC}/Makefile.in
-.endif
-.if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e 's/^ALL_LINGUAS=".*"/ALL_LINGUAS=""/' \
-	    ${WRKSRC}/configure
-.endif
+		's|-std=c++11|| ; \
+		 s|-ldl||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/COPYING\\/d ; \
+		 /INSTALL\\/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-ldl||' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		"s|= (char) NULL;|= '\0';|" ${WRKSRC}/src/plugin_list.cpp
 
 .include <bsd.port.mk>
