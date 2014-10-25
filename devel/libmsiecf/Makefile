@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmsiecf
-DISTVERSION=	alpha-20140731
+DISTVERSION=	alpha-20141024
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSVm1MNkw5cU1mUG8/ \
 		LOCAL/antoine
