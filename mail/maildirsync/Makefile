@@ -31,4 +31,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/mailbalance-0.2.0/* \
 		${STAGEDIR}${EXAMPLESDIR}/mailbalance
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_VER} >= 5.18
+BROKEN=		Does not build with Perl 5.18 or above
+.endif
+
+.include <bsd.port.post.mk>

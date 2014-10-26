@@ -34,6 +34,10 @@ LATIN2_DESC=	ISO-8859-2 fonts support
 
 LATIN2_CONFIGURE_ENABLE=	latin2
 
-BROKEN_ia64=	Does not build on ia64
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_VER} >= 5.18
+BROKEN=		Does not build with Perl 5.18 or above
+.endif
+
+.include <bsd.port.post.mk>

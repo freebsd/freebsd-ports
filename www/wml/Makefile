@@ -32,6 +32,10 @@ CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man \
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_VER} >= 5.18
+BROKEN=		Does not build with Perl 5.18 or above
+.endif
+
 post-patch:
 	@${PERL5} -pi -e 's!^(\s+have_\S+)=\S+!\1=1!' \
 		${WRKSRC}/wml_common/Makefile.in

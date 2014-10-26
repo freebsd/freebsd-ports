@@ -19,4 +19,10 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ENV=	PREFIX="${PREFIX}" CCFLAGS="${CCFLAGS} ${PTHREAD_CFLAGS}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_VER} >= 5.18
+BROKEN=		Does not build with Perl 5.18 or above
+.endif
+
+.include <bsd.port.post.mk>
