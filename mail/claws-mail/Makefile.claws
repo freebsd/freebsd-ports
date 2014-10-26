@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTVERSION=	3.10.1
+PORTVERSION=	3.11.0
 CATEGORIES?=	mail
 MASTER_SITES=	SF/claws-mail/Claws%20Mail/${PORTVERSION}
 
@@ -59,19 +59,24 @@ FILESDIR=	${.CURDIR}/files
 PLIST=		${NONEXISTENT}
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
+CONFIGURE_ARGS+=	--disable-nls
+
 .  for p in ${CLAWS_PLUGINS_BUILD}
 CONFIGURE_ARGS:=	${CONFIGURE_ARGS:S|--disable-${p}-plugin||}
-PLIST_FILES+=	lib/claws-mail/plugins/${p}.so
+PLIST_FILES+=	lib/claws-mail/plugins/${p:S|spam_|spam|}.so
 .  endfor
 
 do-build:
 .  for p in ${CLAWS_PLUGINS_BUILD}
-	cd ${WRKSRC}/src/plugins/${p} && ${MAKE_CMD}
+	(cd ${WRKSRC}/src/plugins/${p} && ${MAKE_CMD})
 .  endfor
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/claws-mail/plugins
 .  for p in ${CLAWS_PLUGINS_BUILD}
-	cd ${WRKSRC}/src/plugins/${p} && ${MAKE_CMD} install DESTDIR="${STAGEDIR}"
+	(cd ${WRKSRC}/src/plugins/${p} && \
+		${INSTALL_LIB} .libs/${p:S|spam_|spam|}.so \
+		${STAGEDIR}${PREFIX}/lib/claws-mail/plugins)
 .  endfor
 
 .endif

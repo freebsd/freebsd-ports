@@ -247,7 +247,6 @@ lib/claws-mail/plugins/pgpmime.deps
 lib/claws-mail/plugins/smime.deps
 libdata/pkgconfig/claws-mail.pc
 man/man1/claws-mail.1.gz
-share/appdata/claws-mail.appdata.xml
 share/applications/claws-mail.desktop
 %%DATADIR%%/OOo2claws-mail.pl
 %%DATADIR%%/acroread2claws-mail.pl
