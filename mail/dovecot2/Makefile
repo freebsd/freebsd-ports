@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.14
-PORTREVISION=	1
+PORTVERSION=	2.2.15
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -36,16 +35,13 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
 		--without-shadow
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 INSTALL_TARGET=	install-strip
 
 USERS=		dovecot dovenull
 GROUPS=		${USERS}
 
-OPTIONS_DEFINE=	KQUEUE SSL VPOPMAIL LDAP LUCENE PGSQL MYSQL SQLITE \
+OPTIONS_DEFINE=	KQUEUE SSL VPOPMAIL LDAP LUCENE LZ4 PGSQL MYSQL SQLITE \
 		SOLR DOCS EXAMPLES LIBWRAP
 OPTIONS_SINGLE=	GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
@@ -53,9 +49,10 @@ OPTIONS_DEFAULT=KQUEUE SSL GSSAPI_NONE
 OPTIONS_SUB=	yes
 
 KQUEUE_DESC=	kqueue(2) support
-VPOPMAIL_DESC=	vpopmail support
 LUCENE_DESC=	CLucene FTS support
+LZ4_DESC=	LZ4 compression support
 SOLR_DESC=	Solr FTS support
+VPOPMAIL_DESC=	vpopmail support
 
 GSSAPI_NONE_DESC=	Build without GSSAPI support
 GSSAPI_BASE_DESC=	Use GSSAPI from base
@@ -83,6 +80,8 @@ LIBWRAP_CONFIGURE_WITH=	libwrap
 
 LUCENE_CONFIGURE_WITH=	lucene
 LUCENE_LIB_DEPENDS=	libclucene-core.so:${PORTSDIR}/textproc/clucene
+
+LZ4_LIB_DEPENDS=	liblz4.so:${PORTSDIR}/archivers/liblz4
 
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_WITH=	mysql
@@ -113,6 +112,9 @@ PORTEXAMPLES=	*
 .if ${ARCH} == "arm"
 BROKEN=		Does not build on arm
 .endif
+
+CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
+LDFLAGS+=	-L${LOCALBASE}/lib -I${OPENSSLLIB}
 
 # Default requirement for dovecot rc script
 _REQUIRE=	LOGIN
