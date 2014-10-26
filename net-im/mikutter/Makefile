@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -17,12 +17,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-gtk2>=2.2.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		rubygem-cairo>=1.12.9:${PORTSDIR}/graphics/rubygem-cairo \
-		rubygem-addressable>=2.3.5:${PORTSDIR}/www/rubygem-addressable \
+		rubygem-addressable>=2.3.6:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-hmac>=0.4.0:${PORTSDIR}/security/rubygem-hmac \
-		rubygem-json>=1.8.1:${PORTSDIR}/devel/rubygem-json \
-		rubygem-memoize>=0:${PORTSDIR}/devel/rubygem-memoize \
+		rubygem-json_pure>=1.8.1:${PORTSDIR}/devel/rubygem-json_pure \
+		rubygem-memoize>=1.3.1:${PORTSDIR}/devel/rubygem-memoize \
 		rubygem-oauth>=0.4.7:${PORTSDIR}/net/rubygem-oauth \
-		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch \
+		${RUBY_PKGNAMEPREFIX}bsearch>=1.5:${PORTSDIR}/devel/ruby-bsearch \
 		rubygem-typed-array>=0.1.2:${PORTSDIR}/devel/rubygem-typed-array \
 		rubygem-delayer>=0.0.2:${PORTSDIR}/devel/rubygem-delayer \
 		rubygem-gettext>=2.3.1:${PORTSDIR}/devel/rubygem-gettext
@@ -49,15 +49,8 @@ NOTIFY_DESC=		notify-send support
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MHTTPCLIENT}
-RUN_DEPENDS+=	rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
-.endif
-
-.if ${PORT_OPTIONS:MNOTIFY}
-RUN_DEPENDS+=	notify-send:${PORTSDIR}/devel/libnotify
-.endif
+HTTPCLIENT_RUN_DEPENDS=	rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
+NOTIFY_RUN_DEPENDS=	notify-send:${PORTSDIR}/devel/libnotify
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%RUBY_SITELIBDIR%%|${RUBY_SITELIBDIR}|" \
@@ -77,7 +70,5 @@ x-generate-plist: stage
 	${ECHO} bin/mikutter > pkg-plist.new
 	${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/mikutter -type f | ${SORT} | ${SED} -e 's,${STAGEDIR}${RUBY_SITELIBDIR},%%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${ECHO} share/applications/mikutter.desktop >> pkg-plist.new
-	${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/mikutter -type d -depth | ${SORT} -r | ${SED} -e 's,${STAGEDIR}${RUBY_SITELIBDIR},@dirrm %%RUBY_SITELIBDIR%%,' >> pkg-plist.new
-	${REINPLACE_CMD} -E 's|@dirrm (%%RUBY_SITELIBDIR%%/mikutter/plugin)|@dirrmtry \1|' pkg-plist.new
 
 .include <bsd.port.mk>
