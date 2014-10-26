@@ -223,6 +223,7 @@
     SUBDIR += toolboxkit
     SUBDIR += tpb
     SUBDIR += treeline
+    SUBDIR += treesheets
     SUBDIR += tuxcards
     SUBDIR += vboxgtk
     SUBDIR += virt-manager
