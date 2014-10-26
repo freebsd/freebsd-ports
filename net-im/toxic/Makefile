@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxic
-PORTVERSION=	0.5.2.141012
+PORTVERSION=	0.5.2.141025
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 USE_GITHUB=	yes
 GH_ACCOUNT=	tox
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	f7d46f1
+GH_COMMIT=	e22b7a3
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -34,7 +34,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKE_ENV=	USER_CFLAGS="${CFLAGS}" USER_LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
-USES=		ncurses openal:al,alut gmake pkgconfig
+USES=		desktop-file-utils ncurses openal:al,alut gmake pkgconfig
 
 .include <bsd.port.pre.mk>
 
@@ -44,10 +44,11 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|PREFIX =|PREFIX?=|;s|$$(shell git rev-list HEAD --count)|${GH_COMMIT}|'	\
+	${REINPLACE_CMD} -e 's|PREFIX =|PREFIX?=|;s|$$(shell git rev-list HEAD.*$$|${GH_COMMIT}|'	\
 		${WRKSRC}/cfg/global_vars.mk
 
 post-install:
+	${RM} ${STAGEDIR}${MANPREFIX}/man/man1/toxic.1-e ${STAGEDIR}${MANPREFIX}/man/man5/toxic.conf.5-e
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/toxic
 
 .include <bsd.port.post.mk>
