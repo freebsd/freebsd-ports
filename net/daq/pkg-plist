@@ -6,7 +6,7 @@ include/sfbpf.h
 include/sfbpf_dlt.h
 lib/daq/daq_dump.so
 lib/daq/daq_ipfw.so
-lib/daq/daq_netmap.so
+%%NETMAP%%lib/daq/daq_netmap.so
 lib/daq/daq_pcap.so
 lib/libdaq.a
 lib/libdaq.so
