@@ -2,6 +2,9 @@
 
 case $2 in
 POST-DEINSTALL)
+	if [ -n "${PACKAGE_BUILDING}" ]; then
+		return 0
+	fi
 	if [ -d %%TWCFG%% -o -d %%TWDB%% ]; then
 		unset ANS
 		echo
