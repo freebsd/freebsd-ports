@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libmsiecf
-DISTVERSION=	alpha-20141024
+DISTVERSION=	alpha-20141025
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSVm1MNkw5cU1mUG8/ \
+		https://github.com/libyal/libmsiecf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
