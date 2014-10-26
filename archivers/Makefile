@@ -58,6 +58,7 @@
     SUBDIR += libcabinet
     SUBDIR += libcomprex
     SUBDIR += libdynamite
+    SUBDIR += liblz4
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
     SUBDIR += liborange
