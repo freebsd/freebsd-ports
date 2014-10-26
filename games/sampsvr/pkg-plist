@@ -99,13 +99,3 @@
 %%DATADIR%%/scriptfiles/vehicles/tierra.txt
 %%DATADIR%%/scriptfiles/vehicles/trains.txt
 %%DATADIR%%/scriptfiles/vehicles/whetstone.txt
-@dirrmtry %%DATADIR%%/filterscripts
-@dirrmtry %%DATADIR%%/gamemodes
-@dirrmtry %%DATADIR%%/include
-@dirrmtry %%DATADIR%%/npcmodes/recordings
-@dirrmtry %%DATADIR%%/npcmodes
-@dirrmtry %%DATADIR%%/scriptfiles/properties
-@dirrmtry %%DATADIR%%/scriptfiles/vehicles
-@dirrmtry %%DATADIR%%/scriptfiles
-@dirrmtry %%DATADIR%%
-@dirrmtry %%SAMPDIR%%
