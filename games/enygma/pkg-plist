@@ -1,8 +1,4 @@
-@mode 2755
-@group games
-bin/enygma
-@group
-@mode
+@(,games,2755) bin/enygma
 %%DATADIR%%/original.set
 %%DATADIR%%/original01.level
 %%DATADIR%%/original02.level
@@ -16,11 +12,4 @@ bin/enygma
 %%DATADIR%%/original10.level
 %%DATADIR%%/original11.level
 %%DATADIR%%/original12.level
-@dirrm %%DATADIR%%
-@mode 2770
-@group games
-@exec install -d -g games -m 2770 %D/var/enygma
-@dirrm var/enygma
-@group
-@mode
-@dirrmtry var
+@dir(,games,775) /var/games/enygma
