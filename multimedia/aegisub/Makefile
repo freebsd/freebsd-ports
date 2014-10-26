@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aegisub
-PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTVERSION=	3.2.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
@@ -25,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FFMS
 GH_PROJECT=	ffms2
 GH_TAGNAME=	${FFMS_VERSION}
-GH_COMMIT=	6b0e4a2
+GH_COMMIT=	f673b48
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -38,7 +37,8 @@ WX_CONF_ARGS=	absolute
 USE_GL=		glu
 USE_CSTD=	c99
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	agi_cv_with_iconv=yes
+CONFIGURE_ENV=	ICONV_LIBS="${ICONV_LIB}" PTHREAD_LIBS="-pthread" \
+		agi_cv_with_iconv=yes
 CONFIGURE_ARGS=	--disable-compiler-flags \
 		--disable-gcc-prec \
 		--disable-sanity-checks \
@@ -50,7 +50,7 @@ INSTALLS_ICONS=	yes
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB} -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		ALSA DOCS FFMPEG FFTW HUNSPELL OPENAL PORTAUDIO \
 			PULSEAUDIO
@@ -81,7 +81,7 @@ PULSEAUDIO_CONFIGURE_OFF=\
 			--without-libpulse
 
 FFMS_NAME=	ffms2
-FFMS_VERSION=	2.19.1
+FFMS_VERSION=	2.20
 FFMS_DISTNAME=	${FFMS_NAME}-${FFMS_VERSION}
 FFMS_DISTFILE=	${FFMS_DISTNAME}.tar.gz
 FFMS_WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
