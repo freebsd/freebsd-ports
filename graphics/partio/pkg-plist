@@ -21,7 +21,6 @@ lib/libpartio.a
 %%PORTDOCS%%%%DOCSDIR%%/classPartio_1_1ParticleAttribute-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classPartio_1_1ParticleAttribute.html
 %%PORTDOCS%%%%DOCSDIR%%/classPartio_1_1ParticleIterator-members.html
-%%PORTDOCS%%%%DOCSDIR%%/classPartio_1_1ParticleIterator.html
 %%PORTDOCS%%%%DOCSDIR%%/classPartio_1_1ParticlesData-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classPartio_1_1ParticlesData.html
 %%PORTDOCS%%%%DOCSDIR%%/classPartio_1_1ParticlesData.png
@@ -84,6 +83,7 @@ lib/libpartio.a
 %%PORTDOCS%%%%DOCSDIR%%/open.png
 %%PORTDOCS%%%%DOCSDIR%%/pages.html
 %%PORTDOCS%%%%DOCSDIR%%/pytut.html
+%%PORTDOCS%%%%DOCSDIR%%/singletonPartio_1_1ParticleIterator.html
 %%PORTDOCS%%%%DOCSDIR%%/structPartio_1_1Data-members.html
 %%PORTDOCS%%%%DOCSDIR%%/structPartio_1_1Data.html
 %%PORTDOCS%%%%DOCSDIR%%/structPartio_1_1ETYPE__TO__TYPE-members.html

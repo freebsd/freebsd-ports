@@ -1,9 +1,9 @@
---- doc/Makefile.in.orig	Mon Jul  8 15:59:59 2002
-+++ doc/Makefile.in	Tue Oct 22 23:02:24 2002
+--- doc/Makefile.in.orig	2014-07-13 13:04:37 UTC
++++ doc/Makefile.in
 @@ -18,12 +18,14 @@
          VERSION=$(VERSION) ; \
  	export VERSION; \
- 	$(DOXYGEN)/bin/doxygen
+ 	"$(DOXYGEN)/bin/doxygen"
 -	@rm -f ../latex/refman.tex
  	@cp doxygen_logo*.gif ../html
 +ifdef HAVE_LATEX
@@ -15,4 +15,4 @@
 +endif # HAVE_LATEX
  
  clean: 
- 	rm -rf ../html ../latex *.bak translator_report.txt
+ 	rm -rf ../html ../latex *.bak 

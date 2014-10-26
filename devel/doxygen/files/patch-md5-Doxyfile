@@ -1,10 +1,11 @@
---- Doxyfile.orig	2014-06-14 08:11:43.000000000 +0200
-+++ Doxyfile	2014-06-14 08:11:47.000000000 +0200
-@@ -257,7 +257,7 @@
+--- Doxyfile.orig	2014-08-14 17:46:42 UTC
++++ Doxyfile
+@@ -261,8 +261,7 @@
  MACRO_EXPANSION        = YES
  EXPAND_ONLY_PREDEF     = YES
  SEARCH_INCLUDES        = YES
--INCLUDE_PATH           = qtools libmd5
+-INCLUDE_PATH           = qtools \
+-                         libmd5
 +INCLUDE_PATH           = qtools
  INCLUDE_FILE_PATTERNS  =
  PREDEFINED             =

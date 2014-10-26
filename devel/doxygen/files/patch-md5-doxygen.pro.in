@@ -1,20 +1,20 @@
---- src/doxygen.pro.in-orig	2014-06-11 20:16:21.000000000 +0200
-+++ src/doxygen.pro.in	2014-06-11 20:16:59.000000000 +0200
+--- src/doxygen.pro.in.orig	2014-08-14 17:46:42 UTC
++++ src/doxygen.pro.in
 @@ -18,7 +18,7 @@
  CONFIG       =	console warn_on $extraopts
  HEADERS      =	doxygen.h 
  SOURCES      =	main.cpp 
--unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 -lpthread %%SQLITE3_LIBS%% %%LIBCLANG_LIBS%%
-+unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd -lpthread %%SQLITE3_LIBS%% %%LIBCLANG_LIBS%%
+-unix:LIBS                  += -L../lib -ldoxygen -lvhdlparser -ldoxycfg -lqtools -lmd5 -lpthread %%SQLITE3_LIBS%% %%LIBCLANG_LIBS%%
++unix:LIBS                  += -L../lib -ldoxygen -lvhdlparser -ldoxycfg -lqtools -lmd -lpthread %%SQLITE3_LIBS%% %%LIBCLANG_LIBS%%
  win32:INCLUDEPATH          += .
- win32-mingw:LIBS           += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 -lpthread -llibiconv -lole32 %%SQLITE3_LIBS%% %%LIBCLANG_LIBS%%
- win32-msvc:LIBS            += qtools.lib md5.lib doxygen.lib doxycfg.lib shell32.lib iconv.lib
+ win32-mingw:LIBS           += -L../lib -ldoxygen -ldoxycfg -lvhdlparser -lqtools -lmd5 -lpthread -llibiconv -lole32 %%SQLITE3_LIBS%% %%LIBCLANG_LIBS%%
+ win32-msvc:LIBS            += qtools.lib md5.lib doxygen.lib doxycfg.lib vhdlparser.lib shell32.lib iconv.lib
 @@ -29,7 +29,7 @@
- win32-g++:LIBS             = -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 -liconv -lpthread %%SQLITE3_LIBS%% %%LIBCLANG_LIBS%% -Wl,--as-needed -lole32
+ win32-g++:LIBS             = -L../lib -ldoxygen -ldoxycfg -lvhdlparser -lqtools -lmd5 -liconv -lpthread %%SQLITE3_LIBS%% %%LIBCLANG_LIBS%% -Wl,--as-needed -lole32
  win32-g++:TMAKE_CXXFLAGS   += -fno-exceptions -fno-rtti
  DEPENDPATH                 += ../generated_src/doxygen
--INCLUDEPATH                += ../qtools ../libmd5 .
-+INCLUDEPATH                += ../qtools .
+-INCLUDEPATH                += ../qtools ../libmd5 . ../vhdlparser
++INCLUDEPATH                += ../qtools . ../vhdlparser
  DESTDIR                    =  ../bin
  TARGET                     =  doxygen
  unix:TARGETDEPS            =  ../lib/libdoxygen.a ../lib/libdoxycfg.a
