@@ -63,19 +63,7 @@ share/locale/pt_PT/LC_MESSAGES/aegisub-32.mo
 share/locale/ru/LC_MESSAGES/aegisub-32.mo
 share/locale/sr_RS/LC_MESSAGES/aegisub-32.mo
 share/locale/sr_RS@latin/LC_MESSAGES/aegisub-32.mo
+share/locale/uk_UA/LC_MESSAGES/aegisub-32.mo
 share/locale/vi/LC_MESSAGES/aegisub-32.mo
 share/locale/zh_CN/LC_MESSAGES/aegisub-32.mo
 share/locale/zh_TW/LC_MESSAGES/aegisub-32.mo
-@dirrmtry share/locale/sr_RS@latin/LC_MESSAGES
-@dirrmtry share/locale/sr_RS@latin
-@dirrmtry share/locale/sr_RS/LC_MESSAGES
-@dirrmtry share/locale/sr_RS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/automation/v4-docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/automation
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/automation/include/aegisub
-@dirrm %%DATADIR%%/automation/include
-@dirrm %%DATADIR%%/automation/demos
-@dirrm %%DATADIR%%/automation/autoload
-@dirrm %%DATADIR%%/automation
-@dirrm %%DATADIR%%
