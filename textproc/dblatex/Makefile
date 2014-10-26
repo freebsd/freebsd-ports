@@ -3,7 +3,7 @@
 
 PORTNAME=	dblatex
 PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -14,11 +14,9 @@ BUILD_DEPENDS=	${LOCALBASE}/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty:${P
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xml/docbook/4.2:${PORTSDIR}/textproc/docbook-xml
 
-USES=	tar:bzip2
+USES=		tar:bzip2 python:2
+USE_PYTHON=	distutils autoplist
 USE_TEX=	tex
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=yes
 
 OPTIONS_DEFINE=	DOCS
 
