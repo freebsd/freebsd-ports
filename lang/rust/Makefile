@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.12.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
@@ -25,7 +24,7 @@ ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
 RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2014-06-21-db9af1d-freebsd-x86_64-ef2bd0fc0b0efa2bd6f5c1eaa60a2ec8df533254
+RUST_BOOT_SIG=	2014-10-04-749ff5e-freebsd-x86_64-f39d94487d29b3d48217b1295ad2cda8c941e694
 
 USES=		gmake perl5 python:2
 HAS_CONFIGURE=	yes
@@ -56,9 +55,9 @@ post-extract:
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/manifest
-	@${STRIP_CMD} `${GREP} -v -e '^@dirrm' -e '^man' -e 'rlib$$' \
+	@${STRIP_CMD} `${GREP} -v -e '^@dir' -e '^man' -e 'rlib$$' \
 		${PLIST} | ${SED} 's:^:${STAGEDIR}${PREFIX}/:'`
-	@${STRIP_CMD} `${GREP} -v -e '^@dirrm' -e '^man' -e 'rlib$$' \
+	@${STRIP_CMD} `${GREP} -v -e '^@dir' -e '^man' -e 'rlib$$' \
 		-e '\.a$$' ${PLIST} | ${SED} 's:^:${STAGEDIR}${PREFIX}/:g'`
 
 .include <bsd.port.post.mk>
