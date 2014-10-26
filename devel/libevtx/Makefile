@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libevtx
-DISTVERSION=	alpha-20140901
+DISTVERSION=	alpha-20141026
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSRnQ0SExzX3JjdFE/ \
+		https://github.com/libyal/libevtx/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
