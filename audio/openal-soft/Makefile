@@ -2,6 +2,7 @@
 
 PORTNAME=	openal-soft
 PORTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
@@ -12,7 +13,7 @@ LICENSE=	LGPL20
 
 CONFLICTS=	openal-200[0-9]*
 
-USES=		tar:bzip2 cmake
+USES=		tar:bzip2 cmake compiler:c11
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DALSOFT_REQUIRE_OSS:BOOL=ON \
 		-DALSOFT_REQUIRE_SOLARIS:BOOL=OFF \
