@@ -1,11 +1,11 @@
---- ./Modules/_ctypes/libffi/configure.orig	2013-05-15 20:32:57.000000000 +0400
-+++ ./Modules/_ctypes/libffi/configure	2013-05-18 10:56:03.000000000 +0400
-@@ -6889,7 +6889,7 @@
+--- Modules/_ctypes/libffi/configure.orig	2014-10-08 12:18:14.000000000 +0400
++++ Modules/_ctypes/libffi/configure	2014-10-19 12:39:11.000000000 +0400
+@@ -7526,7 +7526,7 @@
    rm -rf conftest*
    ;;
  
--x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
-+amd64-*-freebsd*|x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
+-x86_64-*kfreebsd*-gnu|x86_64-*linux*|powerpc*-*linux*| \
++amd64-*-freebsd*|x86_64-*kfreebsd*-gnu|x86_64-*linux*|powerpc*-*linux*| \
  s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
-   # Find out which ABI we are using.
-   echo 'int i;' > conftest.$ac_ext
+   # Find out what ABI is being produced by ac_compile, and set linker
+   # options accordingly.  Note that the listed cases only cover the
