@@ -16,7 +16,9 @@ USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsxml*.so.[0-9]*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsxml*.so
 
 .include <bsd.port.mk>
