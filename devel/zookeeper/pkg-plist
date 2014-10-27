@@ -18,11 +18,3 @@ bin/zkCli.sh
 %%PORTNAME%%/lib/slf4j-api-1.6.1.jar
 %%PORTNAME%%/lib/slf4j-log4j12-1.6.1.jar
 %%PORTNAME%%/%%PORTNAME%%-%%PORTVERSION%%.jar
-@dirrm %%PORTNAME%%/lib/jdiff
-@dirrm %%PORTNAME%%/lib/cobertura
-@dirrm %%PORTNAME%%/lib
-@dirrm %%PORTNAME%%/bin
-@dirrmtry %%PORTNAME%%/conf
-@dirrmtry %%PORTNAME%%
-@dirrmtry /var/log/%%PORTNAME%%
-@dirrmtry /var/run/%%PORTNAME%%

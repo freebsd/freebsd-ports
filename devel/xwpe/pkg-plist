@@ -9,4 +9,3 @@ man/man1/xwpe.1.gz
 %%DATADIR%%/help.key
 %%DATADIR%%/help.xwpe
 %%DATADIR%%/syntax_def
-@dirrm %%DATADIR%%

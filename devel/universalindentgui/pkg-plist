@@ -53,7 +53,3 @@ share/universalindentgui/translations/universalindent_ja.qm
 share/universalindentgui/translations/universalindent_ru.qm
 share/universalindentgui/translations/universalindent_uk.qm
 share/universalindentgui/translations/universalindent_zh_TW.qm
-@dirrm share/universalindentgui/translations
-@dirrm share/universalindentgui/indenters
-@dirrm share/universalindentgui/config
-@dirrm share/universalindentgui

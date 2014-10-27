@@ -42,8 +42,3 @@ lib/vera++/use_vera++.cmake
 lib/vera++/vera++-config-version.cmake
 lib/vera++/vera++-config.cmake
 man/man1/vera++.1.gz
-@dirrm lib/vera++/scripts/transformations
-@dirrm lib/vera++/scripts/rules
-@dirrm lib/vera++/scripts
-@dirrm lib/vera++/profiles
-@dirrm lib/vera++

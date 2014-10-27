@@ -17,4 +17,3 @@ include/uclmmbase/version.h
 lib/libuclmmbase.a
 lib/libuclmmbase.so
 lib/libuclmmbase.so.12
-@dirrm include/uclmmbase

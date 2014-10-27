@@ -85,6 +85,3 @@ man/man1/sockaddr.1.gz
 man/man1/ucommon-config.1.gz
 man/man1/zerofill.1.gz
 man/man1/keywait.1.gz
-@dirrm include/ucommon
-@dirrm include/commoncpp
-@dirrm bin/ucommon

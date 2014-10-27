@@ -14,8 +14,3 @@ GNUstep/Local/Library/Headers/WizardKit
 GNUstep/Local/Library/Libraries/libWizardKit.so
 GNUstep/Local/Library/Libraries/libWizardKit.so.%%MAJORLIBVERSION%%
 GNUstep/Local/Library/Libraries/libWizardKit.so.%%LIBVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions
-@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework

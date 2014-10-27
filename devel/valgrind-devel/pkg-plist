@@ -258,6 +258,3 @@ man/man1/ms_print.1.gz
 man/man1/valgrind-listener.1.gz
 man/man1/valgrind.1.gz
 man/man1/vgdb.1.gz
-@dirrm lib/valgrind
-@dirrm include/valgrind/vki
-@dirrm include/valgrind

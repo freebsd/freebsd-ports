@@ -10,4 +10,3 @@ lib/libyajl.so.2
 lib/libyajl.so.%%VERSION%%
 lib/libyajl_s.a
 libdata/pkgconfig/yajl.pc
-@dirrm include/yajl
