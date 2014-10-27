@@ -1,5 +1,5 @@
 --- build/unix/build_functions.orig	2011-05-20 23:25:22.000000000 +0400
-+++ build/unix/build_functions	2013-01-08 19:54:57.000000000 +0400
++++ build/unix/build_functions	2014-09-11 17:04:15.000000000 +0400
 @@ -56,7 +56,7 @@
  	eval "${TARGET}_requirements"
  	eval "${TARGET}_prepare_config"
@@ -9,3 +9,49 @@
  	eval "${TARGET}_save_config"
  }
  
+@@ -264,39 +264,39 @@
+ 	echo "Installing system-dependent data..." >&2
+ 	eval LIBS="\${${BUILD_PROJECT}_INSTALL_LIBS}"
+ 	eval LIBDIR="\${${BUILD_PROJECT}_INSTALL_LIBDIR%/}/"
+-	mkdirhier "$LIBDIR" 0755
++	mkdirhier "${STAGEDIR}$LIBDIR" 0755
+ 	for LIB in $LIBS; do
+ 		eval SRC="\${${BUILD_PROJECT}_INSTALL_LIB_${LIB}_SRC%/}"
+ 		eval DEST="\$LIBDIR\${${BUILD_PROJECT}_INSTALL_LIB_${LIB}_DEST}"
+ 		eval MODE="\${${BUILD_PROJECT}_INSTALL_LIB_${LIB}_MODE}"
+ 		eval OWNER="\${${BUILD_PROJECT}_INSTALL_LIB_${LIB}_OWNER}"
+-		installsome "$SRC" "$DEST" "$MODE" "$OWNER"
++		installsome "$SRC" "${STAGEDIR}$DEST" "$MODE" "$OWNER"
+ 	done
+ 
+ 	local SHARE SHARED SHAREDIR
+ 	echo "Installing system-independent data..." >&2
+ 	eval SHARED="\${${BUILD_PROJECT}_INSTALL_SHARED}"
+ 	eval SHAREDIR="\${${BUILD_PROJECT}_INSTALL_SHAREDIR%/}/"
+-	mkdirhier "$SHAREDIR" 0755
++	mkdirhier "${STAGEDIR}$SHAREDIR" 0755
+ 	for SHARE in $SHARED; do
+ 		eval SRC="\${${BUILD_PROJECT}_INSTALL_SHARED_${SHARE}_SRC%/}"
+ 		eval DEST="\$SHAREDIR\${${BUILD_PROJECT}_INSTALL_SHARED_${SHARE}_DEST}"
+ 		eval MODE="\${${BUILD_PROJECT}_INSTALL_SHARED_${SHARE}_MODE}"
+ 		eval OWNER="\${${BUILD_PROJECT}_INSTALL_SHARED_${SHARE}_OWNER}"
+-		installsome "$SRC" "$DEST" "$MODE" "$OWNER"
++		installsome "$SRC" "${STAGEDIR}$DEST" "$MODE" "$OWNER"
+ 	done
+ 
+ 	local BINS BINDIR
+ 	echo "Installing binaries..." >&2
+ 	eval BINS="\${${BUILD_PROJECT}_INSTALL_BINS}"
+ 	eval BINDIR="\${${BUILD_PROJECT}_INSTALL_BINDIR%/}/"
+-	mkdirhier "$BINDIR" 0755
++	mkdirhier "${STAGEDIR}$BINDIR" 0755
+ 	for BIN in $BINS; do
+ 		eval SRC="\${${BUILD_PROJECT}_INSTALL_BIN_${BIN}_SRC%/}"
+ 		eval DEST="\$BINDIR\${${BUILD_PROJECT}_INSTALL_BIN_${BIN}_DEST}"
+ 		eval MODE="\${${BUILD_PROJECT}_INSTALL_BIN_${BIN}_MODE}"
+ 		eval OWNER="\${${BUILD_PROJECT}_INSTALL_BIN_${BIN}_OWNER}"
+-		installsome "$SRC" "$DEST" "$MODE" "$OWNER"
++		installsome "$SRC" "${STAGEDIR}$DEST" "$MODE" "$OWNER"
+ 	done
+ 
+ 	eval "${TARGET}_post_install"
