@@ -28,5 +28,10 @@ post-install:
 .for f in NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/magicrescue
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dupemap
+.for f in safecat inputseek textextract
+	@${STRIP_CMD} ${STAGEDIR}${DATADIR}/tools/${f}
+.endfor
 
 .include <bsd.port.mk>
