@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.27
+PORTVERSION=	1.7.28
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -49,8 +49,17 @@ MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.2.msi:${PORTSDIR}/emulators/wine
 .for osrel in 8 9 10 11
 .if ${OSREL:C/\..*//} == ${osrel}
 PLIST_SUB+=	OSREL${osrel}=""
+.if ${PKGNAMESUFFIX} == -devel
+PLIST_SUB+=	OSREL${osrel}-DEVEL=""
+PLIST_SUB+=	OSREL${osrel}-COMPHOLIO="@comment "
+.else
+PLIST_SUB+=	OSREL${osrel}-DEVEL="@comment "
+PLIST_SUB+=	OSREL${osrel}-COMPHOLIO=""
+.endif
 .else
 PLIST_SUB+=	OSREL${osrel}="@comment "
+PLIST_SUB+=	OSREL${osrel}-DEVEL="@comment "
+PLIST_SUB+=	OSREL${osrel}-COMPHOLIO="@comment "
 .endif
 .endfor
 
@@ -69,7 +78,6 @@ do-install:
 
 ${PLIST}: fetch
 	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} -v '/$$' | ${SED} 's|/usr/local/||g' | sort > ${PLIST}
-	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} '/$$' | ${SED} -e 's|/usr/local/\(.*\)/$$|@dirrm \1|g' -e 's|/$$||g' -e 's|@dirrm man|@dirrmtry man|g' | sort -r >> ${PLIST}
 
 port-update:
 	${RM} -f ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
@@ -79,7 +87,7 @@ port-update:
 	${MAKE} makesum OSREL=${osrel} PKGNAMESUFFIX=${suffix}
 	${CAT} ${SLAVEDIR}/distinfo >> ${SLAVEDIR}/distinfo~
 	${RM} ${SLAVEDIR}/distinfo
-	[ "${suffix}" != "-devel" ] || ${MAKE} pkg-plist.${osrel} PLIST=pkg-plist.${osrel} OSREL=${osrel}
+	${MAKE} pkg-plist.${osrel}${suffix:U} PLIST=pkg-plist.${osrel}${suffix:U} OSREL=${osrel} PKGNAMESUFFIX=${suffix}
 .endfor
 .endfor
 	${MV} ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/distinfo
