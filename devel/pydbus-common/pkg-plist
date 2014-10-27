@@ -18,7 +18,3 @@ libdata/pkgconfig/dbus-python.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-signal-emitter.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-signal-recipient.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/list-system-services.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry include/dbus-1.0/dbus
-@dirrmtry include/dbus-1.0

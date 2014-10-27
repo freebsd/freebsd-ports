@@ -868,20 +868,3 @@ lib/libPocoPDFd.so.23
 lib/libPocoPDFd.so
 lib/libPocoPDF.so.23
 lib/libPocoPDF.so
-@dirrmtry include/Poco/DOM
-@dirrmtry include/Poco/SAX
-@dirrmtry include/Poco/XML
-@dirrmtry include/Poco/Util
-@dirrmtry include/Poco/Net
-@dirrmtry include/Poco/Zip
-@dirrmtry include/Poco/PDF
-@dirrmtry include/Poco/MongoDB
-@dirrmtry include/Poco/JSON
-@dirrmtry include/Poco/Dynamic
-@dirrmtry include/Poco/Data/SQLite
-@dirrmtry include/Poco/Data/ODBC
-@dirrmtry include/Poco/Data/MySQL
-@dirrmtry include/Poco/Data
-@dirrmtry include/Poco/Crypto
-@dirrmtry include/Poco/CppParser
-@dirrmtry include/Poco

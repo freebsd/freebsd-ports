@@ -86,25 +86,3 @@ share/PySide/typesystems/typesystem_webkit.xml
 share/PySide/typesystems/typesystem_webkit_simulator.xml
 share/PySide/typesystems/typesystem_xml.xml
 share/PySide/typesystems/typesystem_xmlpatterns.xml
-@dirrm share/PySide/typesystems
-@dirrm share/PySide
-@dirrm %%PYTHON_SITELIBDIR%%/PySide
-@dirrm lib/cmake/PySide-%%PORTVERSION%%
-@dirrm include/PySide/phonon
-@dirrm include/PySide/QtXmlPatterns
-@dirrm include/PySide/QtXml
-@dirrm include/PySide/QtWebKit
-@dirrm include/PySide/QtUiTools
-@dirrm include/PySide/QtTest
-@dirrm include/PySide/QtSvg
-@dirrm include/PySide/QtSql
-@dirrm include/PySide/QtScriptTools
-@dirrm include/PySide/QtScript
-@dirrm include/PySide/QtOpenGL
-@dirrm include/PySide/QtNetwork
-@dirrm include/PySide/QtMultimedia
-@dirrm include/PySide/QtHelp
-@dirrm include/PySide/QtGui
-@dirrm include/PySide/QtDeclarative
-@dirrm include/PySide/QtCore
-@dirrm include/PySide

@@ -4,4 +4,3 @@ lib/pure/orddict.pure
 lib/pure/orddict.so
 lib/pure/stldict.pure
 lib/pure/stldictbase.pure
-@dirrmtry lib/pure

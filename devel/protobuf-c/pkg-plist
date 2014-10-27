@@ -85,7 +85,3 @@ libdata/pkgconfig/libprotobuf-c.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_h.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
-@dirrm include/google/protobuf-c
-@dirrm include/protobuf-c
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

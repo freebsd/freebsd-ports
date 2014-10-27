@@ -43,7 +43,3 @@ lib/perforce/libsupp.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Version
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clientuser.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/p4api.cc
-@dirrm include/perforce
-@dirrm lib/perforce
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

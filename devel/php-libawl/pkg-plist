@@ -28,6 +28,3 @@
 %%LIBAWLDIR%%/inc/iCalendar.php
 %%LIBAWLDIR%%/inc/vCalendar.php
 %%LIBAWLDIR%%/inc/vComponent.php
-@dirrm %%LIBAWLDIR%%/inc
-@dirrm %%LIBAWLDIR%%/dba
-@dirrm %%LIBAWLDIR%%

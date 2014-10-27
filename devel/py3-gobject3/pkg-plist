@@ -78,9 +78,3 @@ lib/libpyglib-gi-2.0-%%PYTHON_VERSION%%.so.0.0.0
 %%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.py
 %%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.pyc
 %%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pygtkcompat
-@dirrm %%PYTHON_SITELIBDIR%%/gi/repository
-@dirrm %%PYTHON_SITELIBDIR%%/gi/overrides
-@dirrm %%PYTHON_SITELIBDIR%%/gi/_gobject
-@dirrm %%PYTHON_SITELIBDIR%%/gi/_glib
-@dirrm %%PYTHON_SITELIBDIR%%/gi

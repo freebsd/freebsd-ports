@@ -149,59 +149,10 @@ etc/pear.conf.sample
 %%DATADIR%%/peclcmd.php
 %%DATADIR%%/tests/Structures_Graph/tests/AllTests.php
 %%DATADIR%%/tests/Structures_Graph/tests/testCase/BasicGraph.php
-@dirrm %%DOCSDIR%%/Archive_Tar/docs
-@dirrm %%DOCSDIR%%/Archive_Tar
-@dirrm %%DOCSDIR%%/PEAR
-@dirrm %%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph
-@dirrm %%DOCSDIR%%/Structures_Graph/docs/html/media
-@dirrm %%DOCSDIR%%/Structures_Graph/docs/html
-@dirrm %%DOCSDIR%%/Structures_Graph/docs/tutorials/Structures_Graph
-@dirrm %%DOCSDIR%%/Structures_Graph/docs/tutorials
-@dirrm %%DOCSDIR%%/Structures_Graph/docs
-@dirrm %%DOCSDIR%%/Structures_Graph
-@dirrmtry share/doc/pear
 @rmtry share/pear/.depdb
 @rmtry share/pear/.depdblock
 @rmtry share/pear/.filemap
 @rmtry share/pear/.lock
-@dirrmtry share/pear/.channels/.alias
-@dirrmtry share/pear/.channels
 @exec mkdir -p %D/share/pear/.registry/.channel.__uri
 @exec mkdir -p %D/share/pear/.registry/.channel.doc.php.net
 @exec mkdir -p %D/share/pear/.registry/.channel.pecl.php.net
-@dirrmtry share/pear/.registry/.channel.__uri
-@dirrmtry share/pear/.registry/.channel.doc.php.net
-@dirrmtry share/pear/.registry/.channel.pecl.php.net
-@dirrmtry share/pear/.registry
-@dirrm %%DATADIR%%/Archive
-@dirrm %%DATADIR%%/Console
-@dirrm %%DATADIR%%/OS
-@dirrm %%DATADIR%%/PEAR/ChannelFile
-@dirrm %%DATADIR%%/PEAR/Command
-@dirrm %%DATADIR%%/PEAR/Downloader
-@dirrm %%DATADIR%%/PEAR/Frontend
-@dirrm %%DATADIR%%/PEAR/Installer/Role
-@dirrm %%DATADIR%%/PEAR/Installer
-@dirrm %%DATADIR%%/PEAR/PackageFile/Generator
-@dirrm %%DATADIR%%/PEAR/PackageFile/Parser
-@dirrm %%DATADIR%%/PEAR/PackageFile/v2
-@dirrm %%DATADIR%%/PEAR/PackageFile
-@dirrm %%DATADIR%%/PEAR/REST
-@dirrm %%DATADIR%%/PEAR/Task/Postinstallscript
-@dirrm %%DATADIR%%/PEAR/Task/Replace
-@dirrm %%DATADIR%%/PEAR/Task/Unixeol
-@dirrm %%DATADIR%%/PEAR/Task/Windowseol
-@dirrm %%DATADIR%%/PEAR/Task
-@dirrm %%DATADIR%%/PEAR/Validator
-@dirrm %%DATADIR%%/PEAR
-@dirrm %%DATADIR%%/Structures/Graph/Manipulator
-@dirrm %%DATADIR%%/Structures/Graph
-@dirrmtry share/pear/Structures
-@dirrm %%DATADIR%%/data/PEAR
-@dirrm %%DATADIR%%/data/Structures_Graph
-@dirrmtry share/pear/data
-@dirrm %%DATADIR%%/tests/Structures_Graph/tests/testCase
-@dirrm %%DATADIR%%/tests/Structures_Graph/tests
-@dirrm %%DATADIR%%/tests/Structures_Graph
-@dirrmtry share/pear/tests
-@dirrmtry share/pear

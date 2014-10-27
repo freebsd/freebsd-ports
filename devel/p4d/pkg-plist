@@ -1,2 +1,1 @@
-@stopdaemon p4d
 sbin/p4d

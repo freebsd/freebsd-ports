@@ -519,9 +519,3 @@ lib/libPocoUtild.so.12
 lib/libPocoUtil.so.12
 lib/libPocoNetd.so.12
 lib/libPocoNet.so.12
-@dirrmtry include/Poco/DOM
-@dirrmtry include/Poco/SAX
-@dirrmtry include/Poco/XML
-@dirrmtry include/Poco/Util
-@dirrmtry include/Poco/Net
-@dirrmtry include/Poco

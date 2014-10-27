@@ -32,6 +32,3 @@ share/locale/fr/LC_MESSAGES/piklab.mo
 share/locale/hu/LC_MESSAGES/piklab.mo
 share/locale/it/LC_MESSAGES/piklab.mo
 %%KDE4%%share/mime/packages/piklab.xml
-%%KDE4%%@dirrm share/doc/HTML/en/piklab
-%%KDE4%%@dirrm share/apps/piklab/pics
-%%KDE4%%@dirrm share/apps/piklab

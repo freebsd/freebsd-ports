@@ -67,11 +67,3 @@ psp/lib/ldscripts/elf_mipsallegrexel_psp.xu
 %%CONFIGURE_TARGET%%/psp/include/symcat.h
 %%CONFIGURE_TARGET%%/psp/lib/libbfd.a
 %%CONFIGURE_TARGET%%/psp/lib/libopcodes.a
-@dirrmtry psp/bin
-@dirrmtry psp/lib/ldscripts
-@dirrmtry psp/lib
-@dirrmtry psp
-@dirrmtry %%CONFIGURE_TARGET%%/psp/include
-@dirrmtry %%CONFIGURE_TARGET%%/psp/lib
-@dirrmtry %%CONFIGURE_TARGET%%/psp
-@dirrmtry %%CONFIGURE_TARGET%%

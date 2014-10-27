@@ -45,4 +45,3 @@ man/man3/priv_respawn_as.3.gz
 man/man3/priv_wait4.3.gz
 man/man5/privman_conf.5.gz
 man/man7/privman.7.gz
-@dirrm etc/privman
