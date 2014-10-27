@@ -2,4 +2,3 @@ include/quickcheck/Property.hh
 include/quickcheck/generate.hh
 include/quickcheck/ostream.hh
 include/quickcheck/quickcheck.hh
-@dirrm include/quickcheck

@@ -13,5 +13,3 @@ share/locale/pt_BR/LC_MESSAGES/rapidsvn.mo
 share/locale/ru/LC_MESSAGES/rapidsvn.mo
 share/locale/uk/LC_MESSAGES/rapidsvn.mo
 share/locale/zh_CN/LC_MESSAGES/rapidsvn.mo
-@dirrmtry share/locale/it_IT/LC_MESSAGES
-@dirrmtry share/locale/it_IT

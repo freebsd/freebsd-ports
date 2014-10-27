@@ -20,6 +20,3 @@
 %%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/styles.css
 %%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/svn-book.html
 %%PDF%%%%DOCSDIR%%/svn-book.pdf
-%%HTML_SINGLE%%@dirrmtry %%DOCSDIR%%/svn-book-html/images
-%%HTML_SINGLE%%@dirrmtry %%DOCSDIR%%/svn-book-html
-@dirrmtry %%DOCSDIR%%

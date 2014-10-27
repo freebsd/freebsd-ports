@@ -8,6 +8,3 @@ lib/profiled/libschily.a
 man/man1/smake.1.gz
 man/man5/makefiles.5.gz
 man/man5/makerules.5.gz
-@dirrm include/schily/%%RULESUSED%%
-@dirrm include/schily
-@dirrmtry lib/profiled

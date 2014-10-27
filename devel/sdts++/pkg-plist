@@ -67,9 +67,3 @@ lib/libsdts++.so
 lib/libsdts++.so.0
 lib/libsdts++.so.0.0.0
 lib/libsysutils.a
-@dirrm include/sysutils
-@dirrm include/sdts++/logical
-@dirrm include/sdts++/io
-@dirrm include/sdts++/container
-@dirrm include/sdts++/builder
-@dirrm include/sdts++

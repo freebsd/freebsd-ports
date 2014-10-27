@@ -359,31 +359,3 @@ man/man1/rax2.1.gz
 %%DATADIR%%/%%PORTVERSION%%/www/old/style.css
 %%DATADIR%%/%%PORTVERSION%%/www/rlogo.png
 %%DATADIR%%/%%PORTVERSION%%/www/upload.html
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/old
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/graph/img
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/graph
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/enyo/lib/onyx/images
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/enyo/lib/onyx
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/enyo/lib
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/enyo/js
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/enyo/build
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/enyo
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www/d3
-@dirrm %%DATADIR%%/%%PORTVERSION%%/www
-@dirrm %%DATADIR%%/%%PORTVERSION%%/cons
-@dirrm %%DATADIR%%/%%PORTVERSION%%
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/radare2/%%PORTVERSION%%/syscall
-@dirrm lib/radare2/%%PORTVERSION%%/opcodes
-@dirrm lib/radare2/%%PORTVERSION%%/magic
-@dirrm lib/radare2/%%PORTVERSION%%/hud
-@dirrm lib/radare2/%%PORTVERSION%%
-@dirrm lib/radare2
-@dirrm include/libr/sflib/linux-x86-64
-@dirrm include/libr/sflib/linux-x86-32
-@dirrm include/libr/sflib/darwin-x86-32
-@dirrm include/libr/sflib/common
-@dirrm include/libr/sflib
-@dirrm include/libr/sdb
-@dirrm include/libr

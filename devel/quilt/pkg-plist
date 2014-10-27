@@ -55,8 +55,3 @@ share/emacs/site-lisp/quilt.el
 %%DATADIR%%/compat/sed
 %%SENDMAIL%%%%DATADIR%%/compat/sendmail
 %%RPMBUILD%%%%DATADIR%%/compat/rpmbuild
-@dirrmtry etc/bash_completion.d
-@dirrm %%DATADIR%%/compat
-@dirrm %%DATADIR%%/wrapper
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%

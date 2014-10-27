@@ -17,8 +17,3 @@ man/man1/robohdrs.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/Source/SmartLoader.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/Source/TruckPacker.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/robodoc.rc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/PerlExample/Source/Box
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/PerlExample/Source
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/PerlExample
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

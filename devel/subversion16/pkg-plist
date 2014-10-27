@@ -287,27 +287,3 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
-@dirrm %%DATADIR%%/xslt
-@dirrm %%DATADIR%%/server-side
-@dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/hook-scripts/mailer/tests
-@dirrm %%DATADIR%%/hook-scripts/mailer
-@dirrm %%DATADIR%%/hook-scripts
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/dist
-@dirrm %%DATADIR%%/diff
-@dirrm %%DATADIR%%/dev/iz
-@dirrm %%DATADIR%%/dev
-@dirrm %%DATADIR%%/client-side/svnmucc
-@dirrm %%DATADIR%%/client-side
-@dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
-@dirrm %%DATADIR%%/buildbot/slaves/win32-xp-VS2005
-@dirrm %%DATADIR%%/buildbot/slaves/ubuntu-x64
-@dirrm %%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32
-@dirrm %%DATADIR%%/buildbot/slaves/i686-debian-sarge1
-@dirrm %%DATADIR%%/buildbot/slaves
-@dirrm %%DATADIR%%/buildbot
-@dirrm %%DATADIR%%/bdb
-@dirrm %%DATADIR%%/backup
-@dirrm %%DATADIR%%
-@dirrm include/subversion-1

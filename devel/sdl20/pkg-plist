@@ -71,4 +71,3 @@ lib/libSDL2_test.a
 lib/libSDL2main.a
 libdata/pkgconfig/sdl2.pc
 share/aclocal/sdl2.m4
-@dirrm include/SDL2

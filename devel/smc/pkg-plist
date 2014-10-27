@@ -1,6 +1,5 @@
 include/statemap.h
 include/statemap1.0/pkgIndex.tcl
 include/statemap1.0/statemap.tcl
-@dirrm include/statemap1.0
 %%JAVAJARDIR%%/Smc.jar
 %%JAVAJARDIR%%/statemap.jar

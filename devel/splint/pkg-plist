@@ -51,6 +51,3 @@ man/man1/splint.1.gz
 %%DATADIR%%/lib/unix.h
 %%DATADIR%%/lib/unix.lcd
 %%DATADIR%%/lib/unixstrict.lcd
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/imports
-@dirrm %%DATADIR%%

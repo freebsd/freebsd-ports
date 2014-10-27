@@ -197,17 +197,3 @@ man/man5/srec_wilson.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.pdf
 %%PORTDOCS%%%%DOCSDIR%%/change_log.pdf
 %%PORTDOCS%%%%DOCSDIR%%/reference.pdf
-@dirrmtry include/srecord/input/file
-@dirrmtry include/srecord/input/filter/checksum
-@dirrmtry include/srecord/input/filter/interval
-@dirrmtry include/srecord/input/filter/message
-@dirrmtry include/srecord/input/filter
-@dirrmtry include/srecord/input/generator
-@dirrmtry include/srecord/input
-@dirrmtry include/srecord/memory/walker
-@dirrmtry include/srecord/memory
-@dirrmtry include/srecord/output/file
-@dirrmtry include/srecord/output
-@dirrmtry include/srecord/quit
-@dirrmtry include/srecord
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

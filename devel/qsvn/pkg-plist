@@ -40,5 +40,3 @@ lib/libsvnqt4.so
 lib/libsvnqt4.so.5
 lib/libsvnqt4.so.5.0.1
 share/pixmaps/qsvn.png
-@dirrm %%SVNQT_INCLUDE_DIR%%/cache
-@dirrm %%SVNQT_INCLUDE_DIR%%

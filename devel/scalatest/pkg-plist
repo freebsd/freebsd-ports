@@ -47,24 +47,3 @@
 %%EXAMPLESDIR%%/scala/org/scalatestexamples/testng/ErrorTestNGSuite.scala
 share/scala/lib/scalatest-tests.jar
 share/scala/lib/scalatest.jar
-@dirrmtry %%EXAMPLESDIR%%/java/org/scalatestexamples/easymock
-@dirrmtry %%EXAMPLESDIR%%/java/org/scalatestexamples
-@dirrmtry %%EXAMPLESDIR%%/java/org
-@dirrmtry %%EXAMPLESDIR%%/java
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/concurrent
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/easymock
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/featurespec
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/funsuite
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/suite
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/funsuite
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/helpers
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/jmock
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/junit
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/matchers
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/scalaarchetypesimple
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/testng
-@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples
-@dirrmtry %%EXAMPLESDIR%%/scala/org
-@dirrmtry %%EXAMPLESDIR%%/scala
-@dirrmtry %%EXAMPLESDIR%%

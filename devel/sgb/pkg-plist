@@ -31,5 +31,3 @@ lib/sgb/lisa.dat
 lib/sgb/miles.dat
 lib/sgb/roget.dat
 lib/sgb/words.dat
-@dirrm lib/cweb
-@dirrm lib/sgb

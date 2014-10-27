@@ -157,8 +157,3 @@ lib/libtvfintl.a
 %%NLS%%share/locale/es/LC_MESSAGES/tvision%%VERSION%%.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/tvision%%VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tvision%%VERSION%%.mo
-%%X11%%@dirrm include/rhtvision/tv/x11
-@dirrm include/rhtvision/tv/linux
-@dirrm include/rhtvision/tv
-@dirrm include/rhtvision/cl
-@dirrm include/rhtvision

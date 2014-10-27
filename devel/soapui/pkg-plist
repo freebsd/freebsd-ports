@@ -147,14 +147,3 @@ bin/soapui.sh
 %%DATADIR%%/lib/xmlunit-1.2.jar
 %%DATADIR%%/lib/xom-1.1.jar
 %%DATADIR%%/lib/xstream-1.3.1.jar
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%/bin/listeners
-@dirrmtry %%DATADIR%%/bin/ext
-@dirrmtry %%DATADIR%%/bin/actions
-@dirrmtry %%DATADIR%%/bin
-@dirrmtry %%DATADIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Tutorials/WSDL-WADL
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Tutorials
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/licenses
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

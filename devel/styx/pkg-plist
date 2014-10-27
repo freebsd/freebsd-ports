@@ -309,14 +309,3 @@ lib/libxstyx.so.2.0.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xmllit.sty
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xsty
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xxml
-@dirrm include/styx
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example01
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example02
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example03
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example04
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example05
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example06
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/pat
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/spe
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

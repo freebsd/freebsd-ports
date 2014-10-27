@@ -32,4 +32,3 @@ lib/libshp.so.1
 %%PORTDOCS%%%%DOCSDIR%%/release.html
 %%PORTDOCS%%%%DOCSDIR%%/shapelib-tools.html
 %%PORTDOCS%%%%DOCSDIR%%/shp_api.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

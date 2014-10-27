@@ -116,9 +116,3 @@ man/man1/spin.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Examples/welfare.pml
 %%PORTDOCS%%%%DOCSDIR%%/Examples/werkplaats.pml
 %%PORTDOCS%%%%DOCSDIR%%/Examples/wordcount.pml
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Doc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Examples/Book_1991
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Examples/Exercises
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Examples/LTL
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Examples
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

@@ -462,9 +462,3 @@ share/aclocal/sdl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testwm.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threadwin.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/torturethread.c
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/SDL
