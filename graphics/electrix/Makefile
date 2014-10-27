@@ -2,7 +2,7 @@
 
 PORTNAME=	electrix
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTVERSION}
 
@@ -11,54 +11,38 @@ COMMENT=	Application to view PDF files
 
 LICENSE=	GPLv2
 
-USES=		pkgconfig desktop-file-utils python:2
-USE_BZIP2=	yes
+USES=		desktop-file-utils pkgconfig python:2 tar:bzip2
 USE_GNOME=	gtk20 glib20 intltool intlhack
 
-CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
+MAKE_ENV=	DESTDIR="${STAGEDIR}" \
+		JOBS="${MAKE_JOBS_NUMBER}" \
+		LINKFLAGS="${LDFLAGS}"
 
-OPTIONS_DEFINE=	DBUS NLS PDF PS
+OPTIONS_DEFINE=		DBUS NLS PDF PS
 OPTIONS_DEFAULT=	DBUS PDF
+OPTIONS_SUB=		yes
 
-PDF_DESC=	Portable Document Format Support
-PS_DESC=	PostScript Support
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+DBUS_CONFIGURE_OFF=	--disable-dbus
 
-.include <bsd.port.options.mk>
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-.else
-CONFIGURE_ARGS+=	--disable-dbus
-.endif
+PDF_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+PDF_CONFIGURE_OFF=	--disable-pdf
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB=	NLS=""
-USES+=		gettext
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
-.else
-CONFIGURE_ARGS+=	--disable-pdf
-.endif
-
-.if ${PORT_OPTIONS:MPS}
-LIB_DEPENDS+=	libspectre.so:${PORTSDIR}/print/libspectre
-.else
-CONFIGURE_ARGS+=	--disable-ps
-.endif
+PS_LIB_DEPENDS=		libspectre.so:${PORTSDIR}/print/libspectre
+PS_CONFIGURE_OFF=	--disable-ps
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${PYTHON_CMD} waf configure \
-		${CONFIGURE_ARGS} && ${TRUE}
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf configure \
+		${CONFIGURE_ARGS} && ${TRUE})
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${PYTHON_CMD} waf build && ${TRUE}
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf build && ${TRUE})
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} ${PYTHON_CMD} waf install && ${TRUE}
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf install && ${TRUE})
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/electrix
 
 .include <bsd.port.mk>
