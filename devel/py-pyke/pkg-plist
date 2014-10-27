@@ -106,9 +106,5 @@
 %%PYTHON_SITELIBDIR%%/pyke/user_question.py
 %%PYTHON_SITELIBDIR%%/pyke/user_question.pyc
 %%PYTHON_SITELIBDIR%%/pyke/user_question.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pyke/krb_compiler/ply
-@dirrm %%PYTHON_SITELIBDIR%%/pyke/krb_compiler
-@dirrm %%PYTHON_SITELIBDIR%%/pyke
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

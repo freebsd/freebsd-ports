@@ -33,5 +33,3 @@ man/man1/instant-showcache.1.gz
 %%PYTHON_SITELIBDIR%%/instant/signatures.pyc
 %%PYTHON_SITELIBDIR%%/instant/signatures.pyo
 %%PYTHON_SITELIBDIR%%/instant/swig/numpy.i
-@dirrm %%PYTHON_SITELIBDIR%%/instant/swig
-@dirrm %%PYTHON_SITELIBDIR%%/instant

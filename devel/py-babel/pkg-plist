@@ -37,10 +37,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/numbers.rst
 %%PORTDOCS%%%%DOCSDIR%%/setup.rst
 %%PORTDOCS%%%%DOCSDIR%%/support.rst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_themes/babel/static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_themes/babel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_themes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_templates
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/messages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api

@@ -60,8 +60,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/user_guide.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_sources/reference
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_sources
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/reference
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

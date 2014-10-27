@@ -29,8 +29,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/py-modindex.html
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules/pathtools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

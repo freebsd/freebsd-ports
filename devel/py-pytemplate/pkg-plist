@@ -4,4 +4,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/daemonexample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threadexample.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

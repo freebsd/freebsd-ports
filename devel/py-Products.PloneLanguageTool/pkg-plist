@@ -37,11 +37,3 @@
 %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool/tool.gif
 %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool/version.txt
 %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool/www/config.zpt
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool/www
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool/skins/LanguageTool
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool/skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool/profiles/default
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PloneLanguageTool
-@dirrmtry %%PYTHON_SITELIBDIR%%/Products

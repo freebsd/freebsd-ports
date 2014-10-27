@@ -632,30 +632,3 @@
 %%PYTHON_SITELIBDIR%%/Products/Archetypes/www/zmi/base_edit.pt
 %%PYTHON_SITELIBDIR%%/Products/Archetypes/www/zmi/icons/document_icon.gif
 %%PYTHON_SITELIBDIR%%/Products/Archetypes/www/zmi/icons/folder_icon.gif
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/www/zmi/icons
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/www/zmi
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/www
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/tests/output
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/tests/input
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/skins/archetypes/widgets/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/skins/archetypes/widgets/js
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/skins/archetypes/widgets
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/skins/archetypes/archebuilder
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/skins/archetypes
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/profiles/sample_types/types
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/profiles/sample_types
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/profiles/default
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/interfaces
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/generator
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/exportimport
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/examples
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/docs
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/browser
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/Storage
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/Schema
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes/Extensions
-@dirrm %%PYTHON_SITELIBDIR%%/Products/Archetypes
-@dirrmtry %%PYTHON_SITELIBDIR%%/Products

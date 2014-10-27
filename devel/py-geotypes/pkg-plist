@@ -90,4 +90,3 @@
 %%PYTHON_SITELIBDIR%%/GeoTypes/__init__.py
 %%PYTHON_SITELIBDIR%%/GeoTypes/__init__.pyc
 %%PYTHON_SITELIBDIR%%/GeoTypes/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/GeoTypes

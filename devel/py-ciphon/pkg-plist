@@ -23,4 +23,3 @@ bin/ciphon
 %%PYTHON_SITELIBDIR%%/Ciphon/xmlparsers.py
 %%PYTHON_SITELIBDIR%%/Ciphon/xmlparsers.pyc
 %%PYTHON_SITELIBDIR%%/Ciphon/xmlparsers.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/Ciphon

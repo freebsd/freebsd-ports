@@ -51,12 +51,3 @@
 %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/tests/test_doctests.pyo
 %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/tests/view.txt
 %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/tool.gif
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/skins/PasswordReset
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/profiles/default
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/interfaces
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool/dtml
-@dirrm %%PYTHON_SITELIBDIR%%/Products/PasswordResetTool
-@dirrmtry %%PYTHON_SITELIBDIR%%/Products

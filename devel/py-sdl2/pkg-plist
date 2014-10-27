@@ -99,12 +99,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial/pong.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial/pygamers.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

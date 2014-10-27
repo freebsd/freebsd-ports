@@ -3,8 +3,3 @@ etc/mercurialserver/remote-hgrc.d/access.rc
 etc/mercurialserver/remote-hgrc.d/logging.rc
 @exec /bin/mkdir -p %D/etc/mercurialserver/keys/users
 @exec /bin/mkdir -p %D/etc/mercurialserver/keys/root
-@dirrmtry etc/mercurialserver/remote-hgrc.d
-@dirrmtry etc/mercurialserver/keys/users
-@dirrmtry etc/mercurialserver/keys/root
-@dirrmtry etc/mercurialserver/keys
-@dirrmtry etc/mercurialserver

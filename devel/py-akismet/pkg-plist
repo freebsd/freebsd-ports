@@ -110,31 +110,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/stylesheets/pep.css
 %%PORTDOCS%%%%DOCSDIR%%/stylesheets/pysrc.css
 %%PORTDOCS%%%%DOCSDIR%%/stylesheets/voidspace_docutils.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/prop-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/props
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/text-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/prop-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/props
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/text-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies/.svn/prop-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies/.svn/props
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies/.svn/text-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies/.svn/tmp/prop-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies/.svn/tmp/props
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies/.svn/tmp/text-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies/.svn/tmp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies/.svn
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets/.svn/prop-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets/.svn/props
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets/.svn/text-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets/.svn/tmp/prop-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets/.svn/tmp/props
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets/.svn/tmp/text-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets/.svn/tmp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets/.svn
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

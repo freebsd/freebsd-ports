@@ -169,10 +169,3 @@
 %%PYTHON_SITELIBDIR%%/testtools/utils.py
 %%PYTHON_SITELIBDIR%%/testtools/utils.pyc
 %%PYTHON_SITELIBDIR%%/testtools/utils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/testtools/tests/matchers
-@dirrm %%PYTHON_SITELIBDIR%%/testtools/tests
-@dirrm %%PYTHON_SITELIBDIR%%/testtools/testresult
-@dirrm %%PYTHON_SITELIBDIR%%/testtools/matchers
-@dirrm %%PYTHON_SITELIBDIR%%/testtools
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

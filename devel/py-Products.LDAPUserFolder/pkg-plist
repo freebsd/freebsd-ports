@@ -129,14 +129,3 @@
 %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/www/cmfldap_memberProperties.pt
 %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/www/ldapuserfolder.gif
 %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/www/ldapusersatellite.gif
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/www
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/tests/base
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/skins/cmfldap
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/profiles/cmfldap
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/help
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder/dtml
-@dirrm %%PYTHON_SITELIBDIR%%/Products/LDAPUserFolder
-@dirrmtry %%PYTHON_SITELIBDIR%%/Products

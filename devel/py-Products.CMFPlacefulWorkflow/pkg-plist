@@ -123,21 +123,3 @@
 %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/www/define_local_workflow_policy.zpt
 %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/www/manage_workflow_policy_config.zpt
 %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/www/select_workflows.dtml
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/www
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/tests/profiles/exportimport/portal_placeful_workflow
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/tests/profiles/exportimport
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/tests/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/skins/CMFPlacefulWorkflow
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/profiles/default/portal_placeful_workflow
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/profiles/default
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/profiles/base
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/interfaces
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/images
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/exportimport
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/doc
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow/Extensions
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFPlacefulWorkflow
-@dirrmtry %%PYTHON_SITELIBDIR%%/Products

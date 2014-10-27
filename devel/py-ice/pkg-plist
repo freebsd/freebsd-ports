@@ -347,17 +347,3 @@
 %%PYTHON_SITELIBDIR%%/Ice/Ice_StatsF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Stats_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Version_ice.py
-%%PYTHON32%%@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceBox/__pycache__
-@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceBox
-%%PYTHON32%%@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceGrid/__pycache__
-@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceGrid
-%%PYTHON32%%@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceMX/__pycache__
-@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceMX
-%%PYTHON32%%@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IcePatch2/__pycache__
-@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IcePatch2
-%%PYTHON32%%@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceStorm/__pycache__
-@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceStorm
-%%PYTHON32%%@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/__pycache__
-@dirrmtry %%PYTHON_SITELIBDIR%%/Ice
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

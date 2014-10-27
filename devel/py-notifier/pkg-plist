@@ -31,7 +31,6 @@
 %%PYTHON_SITELIBDIR%%/notifier/version.py
 %%PYTHON_SITELIBDIR%%/notifier/version.pyc
 %%PYTHON_SITELIBDIR%%/notifier/version.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/notifier
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/callbacks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logger.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/process.py
@@ -45,4 +44,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threads.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-gobject.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/process3.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

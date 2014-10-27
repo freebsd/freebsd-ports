@@ -28,7 +28,6 @@ bin/uncompyle2
 %%PYTHON_SITELIBDIR%%/uncompyle2/opcode/opcode_25.pyo
 %%PYTHON_SITELIBDIR%%/uncompyle2/opcode/opcode_26.pyo
 %%PYTHON_SITELIBDIR%%/uncompyle2/opcode/opcode_27.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/uncompyle2/opcode
 %%PYTHON_SITELIBDIR%%/uncompyle2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/uncompyle2/disas.pyc
 %%PYTHON_SITELIBDIR%%/uncompyle2/magics.pyc
@@ -51,4 +50,3 @@ bin/uncompyle2
 %%PYTHON_SITELIBDIR%%/uncompyle2/spark.pyo
 %%PYTHON_SITELIBDIR%%/uncompyle2/verify.pyo
 %%PYTHON_SITELIBDIR%%/uncompyle2/walker.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/uncompyle2

@@ -5,5 +5,3 @@ bin/gflags2man.py
 %%PYTHON_SITELIBDIR%%/gflags_validators.py
 %%PYTHON_SITELIBDIR%%/gflags_validators.pyc
 %%PYTHON_SITELIBDIR%%/gflags_validators.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

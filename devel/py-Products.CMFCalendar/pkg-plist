@@ -94,18 +94,3 @@
 %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/version.txt
 %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/www/configureCalendarTool.zpt
 %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/www/explainCalendarTool.zpt
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/www
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/skins/zpt_calendar
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/profiles/skins_support/types
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/profiles/skins_support
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/profiles/default/types
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/profiles/default
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/locales
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/interfaces
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/browser/templates
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar/browser
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCalendar
-@dirrmtry %%PYTHON_SITELIBDIR%%/Products

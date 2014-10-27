@@ -188,14 +188,3 @@ share/pygobject/xsl/html.xsl
 share/pygobject/xsl/pdf-style.xsl
 share/pygobject/xsl/pdf.xsl
 share/pygobject/xsl/ref-html-style.xsl
-@dirrm share/pygobject/xsl
-@dirrm share/pygobject/2.0/defs
-@dirrm share/pygobject/2.0/codegen
-@dirrm share/pygobject/2.0
-@dirrm share/pygobject
-@dirrm share/doc/pygobject
-@dirrmtry %%PYTHON_SITELIBDIR%%/gtk-2.0/gio
-@dirrmtry %%PYTHON_SITELIBDIR%%/gtk-2.0
-@dirrmtry %%PYTHON_SITELIBDIR%%/gobject
-@dirrmtry %%PYTHON_SITELIBDIR%%/glib
-@dirrm include/pygtk-2.0

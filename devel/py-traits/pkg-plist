@@ -139,18 +139,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/traits_ui.ppt
 %%PORTDOCS%%%%DOCSDIR%%/traits_ui_slides.pdf
 %%PORTDOCS%%%%DOCSDIR%%/traitsdocreadme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/.static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/.templates
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/_templates
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/TUIUG/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/TUIUG
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/traits_user_manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/tutorials/code_snippets
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/tutorials/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/tutorials
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Adapted_tree_editor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Apply_Revert_handler_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Advanced/Auto_editable_readonly_table_cells.py
@@ -370,30 +358,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/tutorial.desc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/traits_3.0/tutorial.desc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorials/tutor.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Advanced
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Applications/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Applications
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Dynamic_Forms
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Extras/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Extras/windows
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Extras
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Standard_Editors/File_Dialog
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Standard_Editors/Popup_versions
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Standard_Editors
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo/Useful
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/doc_examples/examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/doc_examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/decorators
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/delegation
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/extended_trait_change
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/getstate_setstate
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/interfaces
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/trait_types
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors/tabular_editor
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui/editors
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0/traits_ui
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -10,5 +10,3 @@ share/py-sip/QtScript/qscriptstring.sip
 share/py-sip/QtScript/qscriptvalue.sip
 share/py-sip/QtScript/qscriptvalueiterator.sip
 %%API%%share/qt4/qsci/api/python/QtScript.api
-@dirrm share/py-sip/QtScript
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4
