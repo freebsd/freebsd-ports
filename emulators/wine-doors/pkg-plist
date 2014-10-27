@@ -129,9 +129,3 @@ share/pixmaps/wine-doors.svg
 %%DATADIR%%/src/winedoors.pyc
 %%DATADIR%%/src/wtparser.py
 %%DATADIR%%/src/wtparser.pyc
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/registry
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%
-@dirrm %%ETCDIR%%

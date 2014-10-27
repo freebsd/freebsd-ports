@@ -6,5 +6,3 @@ share/doscmd/emsdriv.sys
 %%X11%%share/doscmd/fonts/cp437-8x8.pcf.gz
 %%X11%%share/doscmd/fonts/fonts.dir
 share/doscmd/redir.com
-%%X11%%@dirrm share/doscmd/fonts
-@dirrm share/doscmd

@@ -2,9 +2,3 @@
 bin/advmess
 man/man1/advmess.1.gz
 %%DATADIR%%/sysinfo.dat
-@dirrm %%DATADIR%%/sample
-@dirrm %%DATADIR%%/rom
-@dirrm %%DATADIR%%/image
-@dirrm %%DATADIR%%/crc
-@dirrm %%DATADIR%%/artwork
-@dirrm %%DATADIR%%

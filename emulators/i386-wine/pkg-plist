@@ -2154,22 +2154,3 @@ share/wine/generic.ppd
 share/wine/l_intl.nls
 share/wine/patch-nvidia.sh
 share/wine/wine.inf
-@dirrmtry man/pl.UTF-8/man1
-@dirrmtry man/pl.UTF-8
-@dirrmtry man/fr.UTF-8/man1
-@dirrmtry man/fr.UTF-8
-@dirrmtry man/de.UTF-8/man1
-@dirrmtry man/de.UTF-8
-@dirrm share/wine/fonts
-@dirrm share/doc/wine
-@dirrm lib32/wine/fakedlls
-@dirrm lib32/wine
-@dirrm lib32/.libGL/dri
-@dirrm lib32/.libGL
-@dirrm lib32
-@dirrm include/wine/windows/ddk
-@dirrm include/wine/windows
-@dirrm include/wine/msvcrt/sys
-@dirrm include/wine/msvcrt
-@dirrm include/wine
-@dirrm bin32

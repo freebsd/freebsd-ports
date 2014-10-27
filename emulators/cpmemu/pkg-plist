@@ -4,4 +4,3 @@ share/cpm/cpm.sys
 share/cpm/cd.com
 share/cpm/link.com
 share/cpm/xccp.com
-@dirrm share/cpm

@@ -18,8 +18,6 @@ libexec/frodo/64prgs/sprsync
 libexec/frodo/64prgs/stretch
 libexec/frodo/64prgs/tech-tech
 libexec/frodo/64prgs/text26
-@dirrm libexec/frodo/64prgs
-@dirrm libexec/frodo
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/Main.html
 %%PORTDOCS%%%%DOCSDIR%%/author.html
@@ -41,4 +39,3 @@ libexec/frodo/64prgs/text26
 %%PORTDOCS%%%%DOCSDIR%%/technicalinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/thanks.html
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

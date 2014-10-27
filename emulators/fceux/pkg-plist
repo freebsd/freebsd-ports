@@ -97,13 +97,3 @@ share/applications/fceux.desktop
 %%DATADIR%%/palettes/nestopia_yuv.pal
 %%DATADIR%%/tools/taseditor_patterns.txt
 share/pixmaps/fceux.png
-@dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%/palettes
-@dirrm %%DATADIR%%/luaScripts/taseditor
-@dirrm %%DATADIR%%/luaScripts
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech/ppu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech/exp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech/cpu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

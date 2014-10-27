@@ -21,4 +21,3 @@ bin/tapeconv
 %%DATADIR%%/SpeelPalijs.cas
 %%DATADIR%%/StarTrek.cas
 %%DATADIR%%/VluchtSimulator.cas
-@dirrm %%DATADIR%%

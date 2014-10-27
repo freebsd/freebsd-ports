@@ -16,5 +16,3 @@ man/man1/atari800.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

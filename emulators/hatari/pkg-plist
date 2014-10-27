@@ -62,11 +62,3 @@ share/applications/hatariui.desktop
 %%DATADIR%%/hconsole/release-notes.txt
 %%DATADIR%%/tos.img
 share/pixmaps/hatari-icon.png
-@dirrm %%DATADIR%%/hconsole
-@dirrm %%DATADIR%%/hatariui
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry man/fr/man1
-@dirrmtry man/fr

@@ -1,3 +1,2 @@
 bin/darcnes
 %%PORTDOCS%%%%DOCSDIR%%/readme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

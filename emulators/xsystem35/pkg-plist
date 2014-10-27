@@ -85,6 +85,3 @@ lib/xsystem35/tDemo.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xsys35rc.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zero_new.inf
 share/locale/ja/LC_MESSAGES/xsystem35.mo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/xsystem35

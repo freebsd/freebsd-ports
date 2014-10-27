@@ -23,6 +23,3 @@ bin/hugo
 %%DATADIR%%/pixmaps/joystick.png
 %%DATADIR%%/pixmaps/keyboard.png
 %%DATADIR%%/pixmaps/rom.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

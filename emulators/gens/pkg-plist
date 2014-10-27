@@ -34,5 +34,3 @@ bin/gens
 %%DATADIR%%/viewmag.png
 %%DATADIR%%/viewmag1.png
 %%DATADIR%%/xpaint.png
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
