@@ -10,4 +10,3 @@ lib/libXCurses.so
 lib/libXCurses.so.2
 lib/libXpanel.a
 lib/libXpanel.so
-@dirrm include/xcurses

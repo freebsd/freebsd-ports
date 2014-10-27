@@ -37,8 +37,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_primes.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_spam.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spam.pyx
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/embed
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/callback
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

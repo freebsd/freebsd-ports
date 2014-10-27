@@ -65,13 +65,3 @@ share/pear/IcePatch2/FileServer.php
 share/pear/IceStorm.php
 share/pear/IceStorm/IceStorm.php
 share/pear/IceStorm/Metrics.php
-@dirrmtry share/pear/Glacier2
-@dirrmtry share/pear/Ice
-@dirrmtry share/pear/IceBox
-@dirrmtry share/pear/IceGrid
-@dirrmtry share/pear/IcePatch2
-@dirrmtry share/pear/IceStorm
-@dirrmtry share/pear
-@dirrmtry lib/php/%%PHP_EXT_DIR%%
-@dirrmtry lib/php
-@dirrmtry etc/php

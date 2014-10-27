@@ -83,4 +83,3 @@ man/man3/strvars.3.gz
 man/man3/strzap.3.gz
 man/man3/tbuf.3.gz
 man/man3/xmalloc.3.gz
-@dirrm include/publib

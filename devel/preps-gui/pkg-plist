@@ -24,8 +24,3 @@ share/gnome/help/preps/C/preps.xml
 share/omf/preps/preps-C.omf
 share/pixmaps/preps.png
 share/preps/preps_logo.xpm
-@dirrm share/preps
-@dirrm share/omf/preps
-@dirrm share/gnome/help/preps/C/figures
-@dirrm share/gnome/help/preps/C
-@dirrm share/gnome/help/preps

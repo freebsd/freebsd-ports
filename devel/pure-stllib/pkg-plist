@@ -17,4 +17,3 @@ lib/pure/stlvec/modifying.pure
 lib/pure/stlvec/nonmodifying.pure
 lib/pure/stlvec/numeric.pure
 lib/pure/stlvec/sort.pure
-@dirrm lib/pure/stlvec

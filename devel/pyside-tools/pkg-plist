@@ -30,7 +30,3 @@ bin/pyside-uic
 man/man1/pyside-lupdate.1.gz
 man/man1/pyside-rcc.1.gz
 man/man1/pyside-uic.1.gz
-@dirrm %%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins
-@dirrm %%PYTHON_SITELIBDIR%%/pysideuic/port_v2
-@dirrm %%PYTHON_SITELIBDIR%%/pysideuic/Compiler
-@dirrm %%PYTHON_SITELIBDIR%%/pysideuic

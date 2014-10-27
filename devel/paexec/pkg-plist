@@ -35,12 +35,3 @@ man/man1/pareorder.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/tasks_cycle
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/cmd_toupper
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/run_toupper
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/toupper
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/make_package
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/divide
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/dirtest
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cc_wrapper2
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cc_wrapper
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/all_substr
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

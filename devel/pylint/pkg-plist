@@ -638,18 +638,3 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/utils.py
 %%PYTHON_SITELIBDIR%%/pylint/utils.pyc
 %%PYTHON_SITELIBDIR%%/pylint/utils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/checkers
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/pyreverse
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/reporters
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/data
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/functional
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/input/func_w0401_package
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/input
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/messages
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/absimp
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/package/subpackage
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/package
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/package_all
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data
-@dirrm %%PYTHON_SITELIBDIR%%/pylint/test
-@dirrm %%PYTHON_SITELIBDIR%%/pylint

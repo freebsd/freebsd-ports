@@ -54,5 +54,3 @@
 %%PYTHON_SITELIBDIR%%/dbus/mainloop/glib.py
 %%PYTHON_SITELIBDIR%%/dbus/mainloop/glib.pyc
 %%PYTHON_SITELIBDIR%%/dbus/mainloop/glib.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/dbus/mainloop
-@dirrm %%PYTHON_SITELIBDIR%%/dbus

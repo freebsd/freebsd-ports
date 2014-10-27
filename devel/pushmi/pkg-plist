@@ -21,8 +21,3 @@ bin/pushmi
 %%PERL5_MAN3%%/Pushmi::Command::Runhook.3.gz
 %%PERL5_MAN3%%/Pushmi::Command::Sync.3.gz
 %%PERL5_MAN3%%/Pushmi::Command::Verify.3.gz
-@dirrm %%SITE_PERL%%/Pushmi/Editor
-@dirrm %%SITE_PERL%%/Pushmi/Command
-@dirrm %%SITE_PERL%%/Pushmi/Apache
-@dirrm %%SITE_PERL%%/Pushmi
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pushmi
