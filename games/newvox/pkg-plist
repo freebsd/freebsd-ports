@@ -1,3 +1,2 @@
 bin/newvox
 %%PORTDOCS%%share/doc/newvox/README
-%%PORTDOCS%%@dirrm share/doc/newvox
