@@ -18,6 +18,3 @@ man/man1/sepl.1.gz
 %%EMACS_SITE_LISPDIR%%/sepia/sepia-ido.elc
 %%EMACS_SITE_LISPDIR%%/sepia/sepia-tree.elc
 %%EMACS_SITE_LISPDIR%%/sepia/sepia.elc
-@dirrm %%SITE_PERL%%/Sepia
-@dirrm %%SITE_PERL%%/mach/auto/Sepia
-@dirrm %%EMACS_SITE_LISPDIR%%/sepia

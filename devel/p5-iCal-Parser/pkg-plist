@@ -1,6 +1,3 @@
 %%SITE_PERL%%/iCal/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/iCal/Parser/.packlist
 %%PERL5_MAN3%%/iCal::Parser.3.gz
-@dirrmtry %%SITE_PERL%%/iCal
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/iCal/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/iCal

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/File::SafeDO.3.gz
 %%SITE_PERL%%/File/SafeDO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/SafeDO/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/SafeDO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

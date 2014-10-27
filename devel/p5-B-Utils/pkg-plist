@@ -7,8 +7,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/OP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils/Utils.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

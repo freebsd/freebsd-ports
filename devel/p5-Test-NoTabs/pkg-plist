@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/NoTabs.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/NoTabs/.packlist
 %%PERL5_MAN3%%/Test::NoTabs.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/NoTabs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size/Size.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size/autosplit.ix
 %%PERL5_MAN3%%/Term::Size.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Term

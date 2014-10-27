@@ -1,4 +1,3 @@
 %%SITE_PERL%%/constant.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/.packlist
 %%PERL5_MAN3%%/constant.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant

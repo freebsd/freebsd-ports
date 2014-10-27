@@ -5,10 +5,3 @@
 %%PERL5_MAN3%%/Devel::Events::Generator::Objects.3.gz
 %%PERL5_MAN3%%/Devel::Events::Handler::ObjectTracker.3.gz
 %%PERL5_MAN3%%/Devel::Events::Objects.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Events/Objects
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Events
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel/Events/Handler
-@dirrmtry %%SITE_PERL%%/Devel/Events/Generator
-@dirrmtry %%SITE_PERL%%/Devel/Events
-@dirrmtry %%SITE_PERL%%/Devel

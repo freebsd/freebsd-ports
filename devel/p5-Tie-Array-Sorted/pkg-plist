@@ -3,9 +3,3 @@
 %%SITE_PERL%%/Tie/Array/Sorted.pm
 %%SITE_PERL%%/Tie/Array/Sorted/Lazy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Array/Sorted/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Array/Sorted
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Array
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrm %%SITE_PERL%%/Tie/Array/Sorted
-@dirrmtry %%SITE_PERL%%/Tie/Array
-@dirrmtry %%SITE_PERL%%/Tie

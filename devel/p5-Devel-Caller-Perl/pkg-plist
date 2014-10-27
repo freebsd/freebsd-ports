@@ -1,4 +1,2 @@
 %%SITE_PERL%%/Devel/Caller/Perl.pm
 %%PERL5_MAN3%%/Devel::Caller::Perl.3.gz
-@dirrmtry %%SITE_PERL%%/Devel/Caller
-@dirrmtry %%SITE_PERL%%/Devel

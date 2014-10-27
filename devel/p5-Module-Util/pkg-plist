@@ -2,4 +2,3 @@ bin/pm_which
 %%SITE_PERL%%/Module/Util.pm
 %%PERL5_MAN3%%/Module::Util.3.gz
 man/man1/pm_which.1.gz
-@dirrmtry %%SITE_PERL%%/Module

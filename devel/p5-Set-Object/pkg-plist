@@ -7,7 +7,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object/Object.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object/autosplit.ix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Set/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Set

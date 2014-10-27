@@ -15,6 +15,3 @@
 %%PERL5_MAN3%%/Jonk::Cookbook::ErrorHandling.3.gz
 %%PERL5_MAN3%%/Jonk::Cookbook::ForkModel.3.gz
 %%PERL5_MAN3%%/Jonk::Worker.3.gz
-@dirrm %%SITE_PERL%%/Jonk/Cookbook
-@dirrm %%SITE_PERL%%/Jonk
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jonk

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/utf8.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/utf8/.packlist
 %%PERL5_MAN3%%/Test::utf8.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/utf8
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

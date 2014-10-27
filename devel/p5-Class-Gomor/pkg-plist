@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Class::Gomor.3.gz
 %%PERL5_MAN3%%/Class::Gomor::Hash.3.gz
 %%PERL5_MAN3%%/Class::Gomor::Array.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Gomor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Gomor
-@dirrmtry %%SITE_PERL%%/Class

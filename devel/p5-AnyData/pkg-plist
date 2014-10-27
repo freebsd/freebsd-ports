@@ -33,7 +33,3 @@
 %%SITE_PERL%%/AnyData/Storage/RAM.pm
 %%SITE_PERL%%/AnyData/Storage/TiedHash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyData/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyData
-@dirrm %%SITE_PERL%%/AnyData/Storage
-@dirrm %%SITE_PERL%%/AnyData/Format
-@dirrm %%SITE_PERL%%/AnyData

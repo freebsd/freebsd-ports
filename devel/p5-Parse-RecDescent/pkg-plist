@@ -6,8 +6,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/TPJ_maze.gif
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/TPJ_tree.gif
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/tutorial.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/RecDescent
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
-@dirrmtry %%SITE_PERL%%/Parse

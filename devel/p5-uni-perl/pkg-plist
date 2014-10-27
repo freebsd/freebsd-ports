@@ -6,7 +6,3 @@
 %%SITE_PERL%%/uni/perl/utf.pm
 %%SITE_PERL%%/uni/perl/xd.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/uni/perl/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/uni/perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/uni
-@dirrmtry %%SITE_PERL%%/uni/perl
-@dirrmtry %%SITE_PERL%%/uni

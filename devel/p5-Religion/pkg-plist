@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Religion.3.gz
 %%SITE_PERL%%/Religion.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Religion/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Religion

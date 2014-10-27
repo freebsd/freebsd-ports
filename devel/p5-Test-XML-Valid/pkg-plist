@@ -1,4 +1,2 @@
 %%SITE_PERL%%/Test/XML/Valid.pm
 %%PERL5_MAN3%%/Test::XML::Valid.3.gz
-@dirrmtry %%SITE_PERL%%/Test/XML
-@dirrmtry %%SITE_PERL%%/Test

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Data/HashArray.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/HashArray/.packlist
 %%PERL5_MAN3%%/Data::HashArray.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/HashArray
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data

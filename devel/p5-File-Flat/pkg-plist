@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/File::Flat.3.gz
 %%SITE_PERL%%/File/Flat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Flat/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Flat
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

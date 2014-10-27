@@ -2,8 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction/XS/XS.so
 %%PERL5_MAN3%%/Devel::GlobalDestruction::XS.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel/GlobalDestruction
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel

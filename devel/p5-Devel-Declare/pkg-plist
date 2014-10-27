@@ -4,9 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Declare/MethodInstaller/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Declare.pm
 %%PERL5_MAN3%%/Devel::Declare.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Declare/Context
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Declare/MethodInstaller
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Declare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Declare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel

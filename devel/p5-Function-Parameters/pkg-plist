@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Function/Parameters/Parameters.so
 %%PERL5_MAN3%%/Function::Parameters.3.gz
 %%PERL5_MAN3%%/Function::Parameters::Info.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Function/Parameters
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Function
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Function/Parameters
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Function

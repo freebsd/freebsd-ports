@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Olson::Abbreviations.3.gz
 %%SITE_PERL%%/Olson/Abbreviations.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Olson/Abbreviations/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Olson/Abbreviations
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Olson
-@dirrm %%SITE_PERL%%/Olson

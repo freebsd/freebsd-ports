@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Hash/MultiKey.pm
 %%PERL5_MAN3%%/Hash::MultiKey.3.gz
-@dirrmtry %%SITE_PERL%%/Hash
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/MultiKey/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/MultiKey
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash

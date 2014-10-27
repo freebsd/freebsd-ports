@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Module::Inspector.3.gz
 %%SITE_PERL%%/Module/Inspector.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Inspector/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Inspector
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module

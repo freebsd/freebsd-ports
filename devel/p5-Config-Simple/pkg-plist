@@ -21,8 +21,3 @@
 %%SITE_PERL%%/auto/Config/Simple/verbose.al
 %%SITE_PERL%%/auto/Config/Simple/write_string.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Simple/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrm %%SITE_PERL%%/auto/Config/Simple
-@dirrmtry %%SITE_PERL%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config

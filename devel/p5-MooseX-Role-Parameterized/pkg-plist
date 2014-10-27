@@ -13,12 +13,3 @@
 %%SITE_PERL%%/MooseX/Role/Parameterized/Parameters.pm
 %%SITE_PERL%%/MooseX/Role/Parameterized/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/Parameterized/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/Parameterized
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Trait
-@dirrm %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Role
-@dirrm %%SITE_PERL%%/MooseX/Role/Parameterized/Meta
-@dirrm %%SITE_PERL%%/MooseX/Role/Parameterized
-@dirrmtry %%SITE_PERL%%/MooseX/Role
-@dirrmtry %%SITE_PERL%%/MooseX

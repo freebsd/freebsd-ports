@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/gettext/gettext.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Locale/gettext.pm
 %%PERL5_MAN3%%/Locale::gettext.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/gettext
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Locale
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale

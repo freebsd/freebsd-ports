@@ -2,4 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Curses.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Curses.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses

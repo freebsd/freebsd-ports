@@ -2,4 +2,3 @@ bin/cpan-listchanges
 %%PERL5_MAN3%%/App::cpanlistchanges.3.gz
 man/man1/cpan-listchanges.1.gz
 %%SITE_PERL%%/App/cpanlistchanges.pm
-@dirrmtry %%SITE_PERL%%/App

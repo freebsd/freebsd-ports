@@ -3,5 +3,3 @@ bin/sdl-config.pl
 %%PERL5_MAN3%%/Alien::SDL::ConfigData.3.gz
 %%SITE_PERL%%/Alien/SDL.pm
 %%SITE_PERL%%/Alien/SDL/ConfigData.pm
-@dirrmtry %%SITE_PERL%%/Alien/SDL
-@dirrmtry %%SITE_PERL%%/Alien

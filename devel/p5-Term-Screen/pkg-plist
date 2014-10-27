@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Term::Screen.3.gz
 %%SITE_PERL%%/Term/Screen.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Screen/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Screen
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term

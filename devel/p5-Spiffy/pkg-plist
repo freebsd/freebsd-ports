@@ -3,5 +3,3 @@
 %%SITE_PERL%%/Spiffy.pod
 %%SITE_PERL%%/Spiffy/mixin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spiffy/.packlist
-@dirrmtry %%SITE_PERL%%/Spiffy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spiffy

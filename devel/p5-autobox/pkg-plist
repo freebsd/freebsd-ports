@@ -4,5 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/autobox.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/autobox/universal.pm
 %%PERL5_MAN3%%/autobox.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/autobox
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/autobox

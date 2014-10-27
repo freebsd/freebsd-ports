@@ -2,8 +2,3 @@
 %%SITE_PERL%%/File/Slurp/benchmark.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Slurp/Tiny/.packlist
 %%PERL5_MAN3%%/File::Slurp::Tiny.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Slurp/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Slurp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Slurp
-@dirrmtry %%SITE_PERL%%/File

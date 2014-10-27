@@ -5,7 +5,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/SVM/.packlist
 %%PERL5_MAN3%%/Algorithm::SVM.3.gz
 %%PERL5_MAN3%%/Algorithm::SVM::DataSet.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/SVM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm/SVM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm

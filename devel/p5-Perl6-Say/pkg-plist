@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Perl6::Say.3.gz
 %%SITE_PERL%%/Perl6/Say.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Say/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Say
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6
-@dirrmtry %%SITE_PERL%%/Perl6

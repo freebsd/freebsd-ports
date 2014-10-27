@@ -75,9 +75,3 @@
 %%SITE_PERL%%/Curses/UI/Widget.pm
 %%SITE_PERL%%/Curses/UI/Window.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/UI/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/UI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses
-@dirrm %%SITE_PERL%%/Curses/UI/Language
-@dirrm %%SITE_PERL%%/Curses/UI/Dialog
-@dirrm %%SITE_PERL%%/Curses/UI
-@dirrmtry %%SITE_PERL%%/Curses

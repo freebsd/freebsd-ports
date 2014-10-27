@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Return/MultiLevel.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Return/MultiLevel/.packlist
 %%PERL5_MAN3%%/Return::MultiLevel.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Return/MultiLevel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Return
-@dirrmtry %%SITE_PERL%%/Return

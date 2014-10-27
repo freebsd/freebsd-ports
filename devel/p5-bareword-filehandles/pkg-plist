@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/bareword/filehandles/filehandles.so
 %%SITE_PERL%%/%%PERL_ARCH%%/bareword/filehandles.pm
 %%PERL5_MAN3%%/bareword::filehandles.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/bareword
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/bareword/filehandles
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/bareword

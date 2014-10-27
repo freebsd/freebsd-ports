@@ -12,10 +12,3 @@
 %%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Recipe_DateTime.3.gz
 %%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Recipe_a_to_z.3.gz
 %%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Recipe_subclass_a_to_z.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Range/Compare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Range
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm %%SITE_PERL%%/Data/Range/Compare/Cookbook
-@dirrm %%SITE_PERL%%/Data/Range/Compare
-@dirrmtry %%SITE_PERL%%/Data/Range
-@dirrmtry %%SITE_PERL%%/Data

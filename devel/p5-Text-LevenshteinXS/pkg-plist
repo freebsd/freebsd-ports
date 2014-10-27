@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/LevenshteinXS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/LevenshteinXS.pm
 %%PERL5_MAN3%%/Text::LevenshteinXS.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/LevenshteinXS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text

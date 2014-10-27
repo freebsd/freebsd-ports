@@ -15,10 +15,3 @@
 %%PERL5_MAN3%%/Log::Any::Adapter::File.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Stderr.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Stdout.3.gz
-@dirrm %%SITE_PERL%%/Log/Any/Adapter/Test
-@dirrmtry %%SITE_PERL%%/Log/Any/Adapter
-@dirrmtry %%SITE_PERL%%/Log/Any
-@dirrmtry %%SITE_PERL%%/Log
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Any/Adapter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Any
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log

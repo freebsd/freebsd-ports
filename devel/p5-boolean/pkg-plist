@@ -1,4 +1,3 @@
 %%SITE_PERL%%/boolean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/boolean/.packlist
 %%PERL5_MAN3%%/boolean.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/boolean

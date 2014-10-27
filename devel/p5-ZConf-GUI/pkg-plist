@@ -8,6 +8,3 @@ bin/zcgui-gux
 %%SITE_PERL%%/ZConf/GUI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/GUI/.packlist
 %%PERL5_MAN3%%/ZConf::GUI.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/GUI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
-@dirrmtry %%SITE_PERL%%/ZConf/

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Test::Time.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Time/.packlist
 %%SITE_PERL%%/Test/Time.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Time
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

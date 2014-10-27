@@ -6,7 +6,3 @@ bin/plstrace
 %%SITE_PERL%%/Devel/STrace/Monitor.pm
 %%SITE_PERL%%/Devel/STrace/Monitor.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/STrace/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/STrace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrm %%SITE_PERL%%/Devel/STrace
-@dirrmtry %%SITE_PERL%%/Devel

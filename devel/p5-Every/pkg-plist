@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Every.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Every/.packlist
 %%PERL5_MAN3%%/Every.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Every

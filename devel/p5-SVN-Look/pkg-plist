@@ -1,6 +1,3 @@
 %%SITE_PERL%%/SVN/Look.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Look/.packlist
 %%PERL5_MAN3%%/SVN::Look.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Look
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
-@dirrmtry %%SITE_PERL%%/SVN

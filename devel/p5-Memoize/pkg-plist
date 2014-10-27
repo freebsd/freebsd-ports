@@ -15,5 +15,3 @@
 %%PERL5_MAN3%%/Memoize::NDBM_File.3.gz
 %%PERL5_MAN3%%/Memoize::SDBM_File.3.gz
 %%PERL5_MAN3%%/Memoize::Storable.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize
-@dirrmtry %%SITE_PERL%%/Memoize

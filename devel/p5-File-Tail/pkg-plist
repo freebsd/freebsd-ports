@@ -1,6 +1,3 @@
 %%SITE_PERL%%/File/Tail.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Tail/.packlist
 %%PERL5_MAN3%%/File::Tail.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Tail
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

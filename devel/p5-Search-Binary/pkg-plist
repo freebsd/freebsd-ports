@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Binary/.packlist
 %%SITE_PERL%%/Search/Binary.pm
 %%PERL5_MAN3%%/Search::Binary.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Binary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
-@dirrmtry %%SITE_PERL%%/Search

@@ -8,6 +8,3 @@ bin/pip-perl
 %%PERL5_MAN3%%/Module::Plan::Base.3.gz
 %%PERL5_MAN3%%/Module::Plan::Lite.3.gz
 %%PERL5_MAN3%%/pip.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/pip
-@dirrmtry %%SITE_PERL%%/Module/Plan
-@dirrmtry %%SITE_PERL%%/Module

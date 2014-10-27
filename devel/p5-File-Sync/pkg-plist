@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Sync/Sync.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Sync/.packlist
 %%PERL5_MAN3%%/File::Sync.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Sync
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

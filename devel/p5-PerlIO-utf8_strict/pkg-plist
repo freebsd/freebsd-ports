@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/utf8_strict.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/utf8_strict/utf8_strict.so
 %%PERL5_MAN3%%/PerlIO::utf8_strict.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/utf8_strict
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO

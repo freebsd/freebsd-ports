@@ -35,14 +35,3 @@ lib/perl5/site_perl/Penguin/doc/MODULE_NOTES
 lib/perl5/site_perl/Penguin/doc/README
 lib/perl5/site_perl/Penguin/doc/SECURITY
 lib/perl5/site_perl/Penguin/doc/TODO
-@dirrm %%SITE_PERL%%/Penguin/Channel/TCP
-@dirrm %%SITE_PERL%%/Penguin/Channel
-@dirrm %%SITE_PERL%%/Penguin/Frame
-@dirrm %%SITE_PERL%%/Penguin/Trivial
-@dirrm %%SITE_PERL%%/Penguin/Wrapper
-@dirrmtry %%SITE_PERL%%/Penguin
-@dirrm lib/perl5/site_perl/Penguin/bin
-@dirrm lib/perl5/site_perl/Penguin/misc
-@dirrm lib/perl5/site_perl/Penguin/doc
-@dirrmtry lib/perl5/site_perl/Penguin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Penguin

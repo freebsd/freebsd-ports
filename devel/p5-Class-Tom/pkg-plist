@@ -4,8 +4,3 @@
 %%SITE_PERL%%/Class/Tom.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Tom/.packlist
 %%PERL5_MAN3%%/Class::Tom.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Tom
-@dirrm %%SITE_PERL%%/Class/Tom/Encode
-@dirrm %%SITE_PERL%%/Class/Tom
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

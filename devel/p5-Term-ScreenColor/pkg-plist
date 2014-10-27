@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Term::ScreenColor.3.gz
 %%SITE_PERL%%/Term/ScreenColor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ScreenColor/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ScreenColor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term

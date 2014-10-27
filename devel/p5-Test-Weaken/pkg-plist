@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/Weaken.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Weaken/.packlist
 %%PERL5_MAN3%%/Test::Weaken.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Weaken
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

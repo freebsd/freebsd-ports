@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Capture/Tiny.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Capture/Tiny/.packlist
 %%PERL5_MAN3%%/Capture::Tiny.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Capture/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Capture
-@dirrmtry %%SITE_PERL%%/Capture

@@ -4,6 +4,3 @@
 %%SITE_PERL%%/LV/Backend/Tie.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LV/.packlist
 %%PERL5_MAN3%%/LV.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LV
-@dirrm %%SITE_PERL%%/LV/Backend
-@dirrmtry %%SITE_PERL%%/LV

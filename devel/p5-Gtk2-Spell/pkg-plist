@@ -5,8 +5,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Spell/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Spell/Spell.so
 %%PERL5_MAN3%%/Gtk2::Spell.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Spell
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Spell/Install
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Spell
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2

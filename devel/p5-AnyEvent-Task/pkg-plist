@@ -7,8 +7,3 @@
 %%SITE_PERL%%/AnyEvent/Task/Server/Worker.pm
 %%SITE_PERL%%/AnyEvent/Task/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Task/.packlist
-@dirrmtry %%SITE_PERL%%/AnyEvent/Task/Client
-@dirrmtry %%SITE_PERL%%/AnyEvent/Task/Server
-@dirrmtry %%SITE_PERL%%/AnyEvent/Task
-@dirrmtry %%SITE_PERL%%/AnyEvent
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Task

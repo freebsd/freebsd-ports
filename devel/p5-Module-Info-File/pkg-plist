@@ -2,5 +2,3 @@ bin/version.pl
 man/man1/version.pl.1.gz
 %%PERL5_MAN3%%/Module::Info::File.3.gz
 %%SITE_PERL%%/Module/Info/File.pm
-@dirrmtry %%SITE_PERL%%/Module/Info
-@dirrmtry %%SITE_PERL%%/Module

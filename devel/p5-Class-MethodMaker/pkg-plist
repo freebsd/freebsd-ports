@@ -888,11 +888,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar/scal01f5.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar/scal01f8.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar/scal01f9.al
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/hash
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/array
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MethodMaker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class

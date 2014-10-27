@@ -1,5 +1,3 @@
 %%PERL5_MAN3%%/DateTime::Format::Bork.3.gz
 %%SITE_PERL%%/DateTime/Format/Bork.pm
 %%SITE_PERL%%/DateTime/Format/Bork.pod
-@dirrmtry %%SITE_PERL%%/DateTime/Format
-@dirrmtry %%SITE_PERL%%/DateTime

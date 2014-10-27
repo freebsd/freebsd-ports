@@ -9,8 +9,3 @@
 %%PERL5_MAN3%%/IO::Handle::Prototype.3.gz
 %%PERL5_MAN3%%/IO::Handle::Prototype::Fallback.3.gz
 %%PERL5_MAN3%%/IO::Handle::Util.3.gz
-@dirrm %%SITE_PERL%%/IO/Handle/Util
-@dirrmtry %%SITE_PERL%%/IO/Handle/Prototype
-@dirrmtry %%SITE_PERL%%/IO/Handle
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Handle/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Handle

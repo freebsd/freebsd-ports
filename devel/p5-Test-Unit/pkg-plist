@@ -58,9 +58,3 @@
 %%SITE_PERL%%/Test/Unit/UnitHarness.pm
 %%SITE_PERL%%/Test/Unit/Warning.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Unit/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Unit
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Unit/Runner
-@dirrm %%SITE_PERL%%/Test/Unit/Assertion
-@dirrm %%SITE_PERL%%/Test/Unit
-@dirrmtry %%SITE_PERL%%/Test

@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/AtExit.3.gz
 %%SITE_PERL%%/AtExit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AtExit/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AtExit

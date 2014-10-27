@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Devel/Timer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Timer/.packlist
 %%PERL5_MAN3%%/Devel::Timer.3.gz
-@dirrmtry %%SITE_PERL%%/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Timer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel

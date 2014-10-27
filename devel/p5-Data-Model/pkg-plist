@@ -57,17 +57,3 @@
 %%PERL5_MAN3%%/Data::Model::Schema::SQL.3.gz
 %%PERL5_MAN3%%/Data::Model::Transaction.3.gz
 %%PERL5_MAN3%%/Data::Model::Tutorial::JA.3.gz
-@dirrm %%SITE_PERL%%/Data/Model/Tutorial
-@dirrm %%SITE_PERL%%/Data/Model/Schema/Inflate
-@dirrm %%SITE_PERL%%/Data/Model/Schema
-@dirrm %%SITE_PERL%%/Data/Model/Mixin/Queue
-@dirrm %%SITE_PERL%%/Data/Model/Mixin
-@dirrm %%SITE_PERL%%/Data/Model/Driver/Queue
-@dirrm %%SITE_PERL%%/Data/Model/Driver/DBI/DBD
-@dirrm %%SITE_PERL%%/Data/Model/Driver/DBI
-@dirrm %%SITE_PERL%%/Data/Model/Driver/Cache
-@dirrm %%SITE_PERL%%/Data/Model/Driver
-@dirrm %%SITE_PERL%%/Data/Model
-@dirrmtry %%SITE_PERL%%/Data
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Model
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

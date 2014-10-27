@@ -7,7 +7,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/MessagePack/Boolean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/MessagePack/PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/MessagePack/Unpacker.pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data/MessagePack
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/MessagePack
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

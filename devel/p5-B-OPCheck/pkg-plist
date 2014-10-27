@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/B/OPCheck.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/OPCheck/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/OPCheck/OPCheck.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/OPCheck
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

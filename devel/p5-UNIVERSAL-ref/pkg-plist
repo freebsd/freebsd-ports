@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/ref/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/ref/ref.so
 %%PERL5_MAN3%%/UNIVERSAL::ref.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/ref
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/UNIVERSAL

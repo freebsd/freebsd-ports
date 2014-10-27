@@ -37,9 +37,3 @@ bin/shipit
 %%SITE_PERL%%/ShipIt/VC/SVN.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/.packlist
 man/man1/shipit.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt
-@dirrm %%SITE_PERL%%/ShipIt/VC
-@dirrm %%SITE_PERL%%/ShipIt/Step
-@dirrm %%SITE_PERL%%/ShipIt/ProjectType/Perl
-@dirrm %%SITE_PERL%%/ShipIt/ProjectType
-@dirrm %%SITE_PERL%%/ShipIt

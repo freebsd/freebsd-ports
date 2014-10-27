@@ -8,5 +8,3 @@
 %%PERL5_MAN3%%/EV.3.gz
 %%PERL5_MAN3%%/EV::MakeMaker.3.gz
 %%PERL5_MAN3%%/EV::libev.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/EV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/EV

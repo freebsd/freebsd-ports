@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Callback::Frame.3.gz
 %%SITE_PERL%%/Callback/Frame.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Callback/Frame/.packlist
-@dirrmtry %%SITE_PERL%%/Callback
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Callback/Frame
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Callback

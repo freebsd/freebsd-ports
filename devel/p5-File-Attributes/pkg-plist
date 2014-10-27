@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/File::Attributes.3.gz
 %%PERL5_MAN3%%/File::Attributes::Base.3.gz
 %%PERL5_MAN3%%/File::Attributes::Simple.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Attributes
-@dirrmtry %%SITE_PERL%%/File/Attributes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

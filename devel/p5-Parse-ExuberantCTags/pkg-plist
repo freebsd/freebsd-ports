@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Parse/ExuberantCTags.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ExuberantCTags/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ExuberantCTags/ExuberantCTags.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ExuberantCTags
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Parse

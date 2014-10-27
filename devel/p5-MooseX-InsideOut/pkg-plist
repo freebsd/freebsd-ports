@@ -3,9 +3,3 @@
 %%SITE_PERL%%/MooseX/InsideOut.pm
 %%SITE_PERL%%/MooseX/InsideOut/Role/Meta/Instance.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/InsideOut/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/InsideOut
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/InsideOut/Role/Meta
-@dirrm %%SITE_PERL%%/MooseX/InsideOut/Role
-@dirrm %%SITE_PERL%%/MooseX/InsideOut
-@dirrmtry %%SITE_PERL%%/MooseX

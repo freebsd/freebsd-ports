@@ -9,7 +9,3 @@
 %%PERL5_MAN3%%/Date::DayOfWeek::Nails.3.gz
 %%PERL5_MAN3%%/Date::DayOfWeek::Sneeze.3.gz
 %%PERL5_MAN3%%/Date::Doomsday.3.gz
-@dirrm %%SITE_PERL%%/Date/DayOfWeek
-@dirrmtry %%SITE_PERL%%/Date
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/DayOfWeek
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date

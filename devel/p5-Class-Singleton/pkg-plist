@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Class::Singleton.3.gz
 %%SITE_PERL%%/Class/Singleton.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Singleton/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Singleton
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

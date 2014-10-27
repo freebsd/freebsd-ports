@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Test/Inter.pm
 %%SITE_PERL%%/Test/Inter.pod
 %%PERL5_MAN3%%/Test::Inter.3.gz
-@dirrmtry %%SITE_PERL%%/Test

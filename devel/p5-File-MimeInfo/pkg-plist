@@ -13,7 +13,3 @@ man/man1/mimetype.1.gz
 %%PERL5_MAN3%%/File::MimeInfo::Cookbook.3.gz
 %%PERL5_MAN3%%/File::MimeInfo::Magic.3.gz
 %%PERL5_MAN3%%/File::MimeInfo::Rox.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/MimeInfo
-@dirrm %%SITE_PERL%%/File/MimeInfo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/IO/SessionData.pm
 %%SITE_PERL%%/IO/SessionSet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/SessionData/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/SessionData
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO

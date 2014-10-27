@@ -9,8 +9,3 @@
 %%PERL5_MAN3%%/MooseX::MetaDescription::Meta::Attribute.3.gz
 %%PERL5_MAN3%%/MooseX::MetaDescription::Meta::Class.3.gz
 %%PERL5_MAN3%%/MooseX::MetaDescription::Meta::Trait.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MetaDescription
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/MetaDescription/Meta
-@dirrm %%SITE_PERL%%/MooseX/MetaDescription
-@dirrmtry %%SITE_PERL%%/MooseX

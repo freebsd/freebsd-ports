@@ -6,8 +6,3 @@
 %%PERL5_MAN3%%/Devel::KYTProf.3.gz
 %%PERL5_MAN3%%/Devel::KYTProf::Logger::LTSV.3.gz
 %%PERL5_MAN3%%/Devel::README.3.gz
-@dirrm %%SITE_PERL%%/Devel/KYTProf/Logger
-@dirrm %%SITE_PERL%%/Devel/KYTProf
-@dirrmtry %%SITE_PERL%%/Devel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/KYTProf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel

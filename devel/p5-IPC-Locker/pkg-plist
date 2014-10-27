@@ -19,8 +19,3 @@ man/man1/pidstat.1.gz
 man/man1/pidstatd.1.gz
 man/man1/pidwatch.1.gz
 man/man1/uriexec.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Locker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrm %%SITE_PERL%%/IPC/PidStat
-@dirrm %%SITE_PERL%%/IPC/Locker
-@dirrmtry %%SITE_PERL%%/IPC

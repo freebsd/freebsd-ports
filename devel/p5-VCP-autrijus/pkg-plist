@@ -145,13 +145,3 @@ bin/vcp
 %%SITE_PERL%%/VCP/Utils/vss.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/.packlist
 man/man1/vcp.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP
-@dirrm %%SITE_PERL%%/VCP/Utils
-@dirrm %%SITE_PERL%%/VCP/UI
-@dirrm %%SITE_PERL%%/VCP/Source
-@dirrm %%SITE_PERL%%/VCP/Filter
-@dirrm %%SITE_PERL%%/VCP/Dest
-@dirrm %%SITE_PERL%%/VCP/DB_File
-@dirrmtry %%SITE_PERL%%/VCP
-@dirrm %%SITE_PERL%%/RevML/Doctype
-@dirrm %%SITE_PERL%%/RevML

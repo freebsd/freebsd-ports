@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/JSON.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/JSON/.packlist
 %%PERL5_MAN3%%/Test::JSON.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/JSON
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

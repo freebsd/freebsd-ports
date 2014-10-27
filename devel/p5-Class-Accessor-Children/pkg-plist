@@ -3,9 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Children/.packlist
 %%PERL5_MAN3%%/Class::Accessor::Children.3.gz
 %%PERL5_MAN3%%/Class::Accessor::Children::Fast.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Children
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrm %%SITE_PERL%%/Class/Accessor/Children
-@dirrmtry %%SITE_PERL%%/Class/Accessor
-@dirrmtry %%SITE_PERL%%/Class

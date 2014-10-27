@@ -27,8 +27,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/version.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/GConf/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/GConf/GConf.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/GConf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Install
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2

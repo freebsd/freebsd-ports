@@ -30,8 +30,3 @@ bin/ebug_server
 man/man1/ebug.1.gz
 man/man1/ebug_client.1.gz
 man/man1/ebug_server.1.gz
-@dirrm %%SITE_PERL%%/Devel/ebug/Plugin
-@dirrm %%SITE_PERL%%/Devel/ebug/Backend/Plugin
-@dirrm %%SITE_PERL%%/Devel/ebug/Backend
-@dirrm %%SITE_PERL%%/Devel/ebug
-@dirrmtry %%SITE_PERL%%/Devel

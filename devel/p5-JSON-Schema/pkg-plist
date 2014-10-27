@@ -11,7 +11,3 @@
 %%SITE_PERL%%/JSON/Schema/Null.pm
 %%SITE_PERL%%/JSON/Schema/Result.pm
 %%SITE_PERL%%/mach/auto/JSON/Schema/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/JSON/Schema
-@dirrmtry %%SITE_PERL%%/mach/auto/JSON
-@dirrm %%SITE_PERL%%/JSON/Schema
-@dirrmtry %%SITE_PERL%%/JSON

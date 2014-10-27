@@ -7,6 +7,3 @@
 %%SITE_PERL%%/Agent/Transport.pm
 %%SITE_PERL%%/Agent/Transport/TCP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Agent/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Agent
-@dirrm %%SITE_PERL%%/Agent/Transport
-@dirrm %%SITE_PERL%%/Agent

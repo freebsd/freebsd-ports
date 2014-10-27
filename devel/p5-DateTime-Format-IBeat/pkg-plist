@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/DateTime::Format::IBeat.3.gz
 %%SITE_PERL%%/DateTime/Format/IBeat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/IBeat/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/IBeat
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime/Format
-@dirrmtry %%SITE_PERL%%/DateTime

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Class::Throwable.3.gz
 %%SITE_PERL%%/Class/Throwable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Throwable/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Throwable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

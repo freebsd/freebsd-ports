@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long/.packlist
 %%SITE_PERL%%/newgetopt.pl
 %%SITE_PERL%%/Getopt/Long.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
-@dirrmtry %%SITE_PERL%%/Getopt

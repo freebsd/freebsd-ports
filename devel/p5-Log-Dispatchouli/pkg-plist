@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Log::Dispatchouli.3.gz
 %%PERL5_MAN3%%/Log::Dispatchouli::Global.3.gz
 %%PERL5_MAN3%%/Log::Dispatchouli::Proxy.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatchouli
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
-@dirrmtry %%SITE_PERL%%/Log/Dispatchouli
-@dirrmtry %%SITE_PERL%%/Log

@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/Easy/.packlist
 %%PERL5_MAN3%%/Exporter::Easy.3.gz
 %%PERL5_MAN3%%/Exporter::Easiest.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/Easy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter
-@dirrmtry %%SITE_PERL%%/Exporter

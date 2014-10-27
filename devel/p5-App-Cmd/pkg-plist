@@ -27,10 +27,3 @@
 %%PERL5_MAN3%%/App::Cmd::Tester.3.gz
 %%PERL5_MAN3%%/App::Cmd::Tester::CaptureExternal.3.gz
 %%PERL5_MAN3%%/App::Cmd::Tutorial.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cmd
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrm %%SITE_PERL%%/App/Cmd/Tester
-@dirrm %%SITE_PERL%%/App/Cmd/Subdispatch
-@dirrm %%SITE_PERL%%/App/Cmd/Command
-@dirrm %%SITE_PERL%%/App/Cmd
-@dirrmtry %%SITE_PERL%%/App

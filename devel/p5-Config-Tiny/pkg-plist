@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Config::Tiny.3.gz
 %%SITE_PERL%%/Config/Tiny.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Tiny/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config

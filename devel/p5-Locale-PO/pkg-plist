@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Locale/PO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/PO/.packlist
 %%PERL5_MAN3%%/Locale::PO.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/PO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
-@dirrmtry %%SITE_PERL%%/Locale

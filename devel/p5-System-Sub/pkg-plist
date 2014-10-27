@@ -3,7 +3,3 @@
 %%SITE_PERL%%/System/Sub.pm
 %%SITE_PERL%%/System/Sub/AutoLoad.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/System/Sub/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/System/Sub
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/System
-@dirrmtry %%SITE_PERL%%/System/Sub
-@dirrmtry %%SITE_PERL%%/System

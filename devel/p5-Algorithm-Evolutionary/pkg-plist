@@ -159,11 +159,3 @@ man/man1/canonical-genetic-algorithm.pl.1.gz
 man/man1/rectangle-coverage.pl.1.gz
 man/man1/tide_bitstring.pl.1.gz
 man/man1/tide_float.pl.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Op/Eval
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Op
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Individual
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Fitness
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary
-@dirrmtry %%SITE_PERL%%/Algorithm

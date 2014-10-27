@@ -6,7 +6,3 @@
 %%SITE_PERL%%/Data/Dump/Filtered.pm
 %%SITE_PERL%%/Data/Dump/Trace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/Dump
-@dirrmtry %%SITE_PERL%%/Data

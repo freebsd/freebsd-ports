@@ -4,5 +4,3 @@
 %%PERL5_MAN3%%/Devel::Ditto.3.gz
 %%PERL5_MAN3%%/Devel::Ditto::Color.3.gz
 %%PERL5_MAN3%%/Devel::Ditto::Colour.3.gz
-@dirrmtry %%SITE_PERL%%/Devel/Ditto
-@dirrmtry %%SITE_PERL%%/Devel

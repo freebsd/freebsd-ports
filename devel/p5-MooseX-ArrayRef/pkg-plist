@@ -3,8 +3,3 @@
 %%SITE_PERL%%/MooseX/ArrayRef/Meta/Class.pm
 %%SITE_PERL%%/MooseX/ArrayRef/Meta/Instance.pm
 %%SITE_PERL%%/mach/auto/MooseX/ArrayRef/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/MooseX/ArrayRef
-@dirrmtry %%SITE_PERL%%/mach/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/ArrayRef/Meta
-@dirrm %%SITE_PERL%%/MooseX/ArrayRef
-@dirrmtry %%SITE_PERL%%/MooseX

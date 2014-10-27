@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Test/.packlist
 %%PERL5_MAN3%%/Moose::Test.3.gz
 %%PERL5_MAN3%%/Moose::Test::Case.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Test
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
-@dirrmtry %%SITE_PERL%%/Moose/Test
-@dirrmtry %%SITE_PERL%%/Moose

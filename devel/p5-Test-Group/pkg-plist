@@ -8,5 +8,3 @@
 %%PERL5_MAN3%%/Test::Group::NoWarnings.3.gz
 %%PERL5_MAN3%%/Test::Group::Plan.3.gz
 %%PERL5_MAN3%%/Test::Group::Tester.3.gz
-@dirrmtry %%SITE_PERL%%/Test/Group
-@dirrmtry %%SITE_PERL%%/Test

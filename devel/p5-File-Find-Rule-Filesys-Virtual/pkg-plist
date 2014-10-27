@@ -1,12 +1,3 @@
 %%SITE_PERL%%/File/Find/Rule/Filesys/Virtual.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule/Filesys/Virtual/.packlist
 %%PERL5_MAN3%%/File::Find::Rule::Filesys::Virtual.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule/Filesys/Virtual
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule/Filesys
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Find/Rule/Filesys
-@dirrmtry %%SITE_PERL%%/File/Find/Rule
-@dirrmtry %%SITE_PERL%%/File/Find
-@dirrmtry %%SITE_PERL%%/File

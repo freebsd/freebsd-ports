@@ -59,15 +59,3 @@
 %%PERL5_MAN3%%/Bread::Board::SetterInjection.3.gz
 %%PERL5_MAN3%%/Bread::Board::Traversable.3.gz
 %%PERL5_MAN3%%/Bread::Board::Types.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread
-@dirrm %%SITE_PERL%%/Bread/Board/Service/Deferred
-@dirrm %%SITE_PERL%%/Bread/Board/Service
-@dirrm %%SITE_PERL%%/Bread/Board/Manual/Example
-@dirrm %%SITE_PERL%%/Bread/Board/Manual/Concepts
-@dirrm %%SITE_PERL%%/Bread/Board/Manual
-@dirrm %%SITE_PERL%%/Bread/Board/LifeCycle/Singleton
-@dirrm %%SITE_PERL%%/Bread/Board/LifeCycle
-@dirrm %%SITE_PERL%%/Bread/Board/Container
-@dirrm %%SITE_PERL%%/Bread/Board
-@dirrmtry %%SITE_PERL%%/Bread

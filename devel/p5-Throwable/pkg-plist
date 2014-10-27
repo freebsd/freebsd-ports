@@ -5,6 +5,3 @@
 %%PERL5_MAN3%%/StackTrace::Auto.3.gz
 %%PERL5_MAN3%%/Throwable.3.gz
 %%PERL5_MAN3%%/Throwable::Error.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Throwable
-@dirrmtry %%SITE_PERL%%/Throwable
-@dirrmtry %%SITE_PERL%%/StackTrace

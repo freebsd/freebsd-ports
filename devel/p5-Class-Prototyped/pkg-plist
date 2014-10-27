@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Prototyped/.packlist
 %%PERL5_MAN3%%/Class::Prototyped.3.gz
 %%PERL5_MAN3%%/Class::Prototyped::why.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Prototyped
-@dirrmtry %%SITE_PERL%%/Class/Prototyped
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

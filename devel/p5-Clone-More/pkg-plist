@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/More/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/More/More.so
 %%PERL5_MAN3%%/Clone::More.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/More
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Clone

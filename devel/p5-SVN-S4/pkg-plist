@@ -29,7 +29,3 @@ man/man1/s4.1.gz
 %%SITE_PERL%%/SVN/S4/ViewSpec.pm
 %%SITE_PERL%%/SVN/S4/WorkProp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/S4/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/S4
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
-@dirrm %%SITE_PERL%%/SVN/S4
-@dirrmtry %%SITE_PERL%%/SVN

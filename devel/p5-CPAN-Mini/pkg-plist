@@ -5,7 +5,3 @@ bin/minicpan
 %%PERL5_MAN3%%/CPAN::Mini.3.gz
 %%PERL5_MAN3%%/CPAN::Mini::App.3.gz
 man/man1/minicpan.1.gz
-@dirrmtry %%SITE_PERL%%/CPAN/Mini
-@dirrmtry %%SITE_PERL%%/CPAN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Mini
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN

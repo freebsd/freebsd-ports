@@ -109,15 +109,3 @@ bin/config-edit
 %%PERL5_MAN3%%/Config::Model::models::PopCon.3.gz
 man/man1/cme.1.gz
 man/man1/config-edit.1.gz
-@dirrmtry %%SITE_PERL%%/Config/Model/system.d
-@dirrmtry %%SITE_PERL%%/Config/Model/models/Multistrap
-@dirrmtry %%SITE_PERL%%/Config/Model/models/Fstab
-@dirrmtry %%SITE_PERL%%/Config/Model/models
-@dirrmtry %%SITE_PERL%%/Config/Model/extensions
-@dirrmtry %%SITE_PERL%%/Config/Model/application.d
-@dirrmtry %%SITE_PERL%%/Config/Model/Value
-@dirrmtry %%SITE_PERL%%/Config/Model/Manual
-@dirrmtry %%SITE_PERL%%/Config/Model/Cookbook
-@dirrmtry %%SITE_PERL%%/Config/Model/Backend
-@dirrmtry %%SITE_PERL%%/Config/Model
-@dirrmtry %%SITE_PERL%%/Config

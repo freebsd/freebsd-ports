@@ -11,6 +11,3 @@
 %%SITE_PERL%%/PatchReader/Raw.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PatchReader/.packlist
 %%PERL5_MAN3%%/PatchReader.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PatchReader
-@dirrm %%SITE_PERL%%/PatchReader/DiffPrinter
-@dirrmtry %%SITE_PERL%%/PatchReader

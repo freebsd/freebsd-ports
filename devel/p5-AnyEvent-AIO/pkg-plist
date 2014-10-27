@@ -1,6 +1,3 @@
 %%SITE_PERL%%/AnyEvent/AIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/AIO/.packlist
 %%PERL5_MAN3%%/AnyEvent::AIO.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/AIO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrmtry %%SITE_PERL%%/AnyEvent

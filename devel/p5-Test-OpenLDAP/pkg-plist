@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Test::OpenLDAP.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/OpenLDAP/.packlist
 %%SITE_PERL%%/Test/OpenLDAP.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/OpenLDAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

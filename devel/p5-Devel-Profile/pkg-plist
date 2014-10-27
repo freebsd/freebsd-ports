@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Devel::Profile.3.gz
 %%SITE_PERL%%/Devel/Profile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Profile/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Profile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

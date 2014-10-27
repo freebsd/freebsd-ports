@@ -9,5 +9,3 @@
 %%PERL5_MAN3%%/Luka::Conf.3.gz
 %%PERL5_MAN3%%/Luka::Exceptions.3.gz
 %%PERL5_MAN3%%/Luka::Mailer.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Luka
-@dirrm %%SITE_PERL%%/Luka

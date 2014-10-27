@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Config::INI.3.gz
 %%PERL5_MAN3%%/Config::INI::Reader.3.gz
 %%PERL5_MAN3%%/Config::INI::Writer.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config/INI
-@dirrmtry %%SITE_PERL%%/Config

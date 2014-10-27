@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Class/Inspector.pm
 %%SITE_PERL%%/Class/Inspector/Functions.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Inspector/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Inspector
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Inspector
-@dirrmtry %%SITE_PERL%%/Class

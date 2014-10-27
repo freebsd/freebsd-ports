@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope/Guard/.packlist
 %%SITE_PERL%%/Scope/Guard.pm
 %%PERL5_MAN3%%/Scope::Guard.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope/Guard
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope
-@dirrmtry %%SITE_PERL%%/Scope

@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Pid/File/Flock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pid/File/Flock/.packlist
 %%PERL5_MAN3%%/Pid::File::Flock.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pid/File/Flock
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pid/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pid
-@dirrmtry %%SITE_PERL%%/Pid/File
-@dirrmtry %%SITE_PERL%%/Pid

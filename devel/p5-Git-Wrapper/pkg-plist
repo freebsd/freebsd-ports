@@ -11,8 +11,3 @@
 %%SITE_PERL%%/Git/Wrapper/Status.pm
 %%SITE_PERL%%/Git/Wrapper/Statuses.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Wrapper/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Wrapper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
-@dirrm %%SITE_PERL%%/Git/Wrapper/File
-@dirrm %%SITE_PERL%%/Git/Wrapper
-@dirrmtry %%SITE_PERL%%/Git

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Devel/SimpleTrace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/SimpleTrace/.packlist
 %%PERL5_MAN3%%/Devel::SimpleTrace.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/SimpleTrace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

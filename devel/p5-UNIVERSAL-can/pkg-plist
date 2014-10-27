@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/UNIVERSAL::can.3.gz
 %%SITE_PERL%%/UNIVERSAL/can.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/can/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/can
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL
-@dirrmtry %%SITE_PERL%%/UNIVERSAL

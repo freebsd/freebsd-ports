@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Algorithm/IncludeExclude.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/IncludeExclude/.packlist
 %%PERL5_MAN3%%/Algorithm::IncludeExclude.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/IncludeExclude
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm

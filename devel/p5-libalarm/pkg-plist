@@ -5,5 +5,3 @@
 %%PERL5_MAN3%%/Alarm::_TieSIG.3.gz
 %%PERL5_MAN3%%/Alarm::Concurrent.3.gz
 %%PERL5_MAN3%%/Alarm::Queued.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/libalarm
-@dirrmtry %%SITE_PERL%%/Alarm

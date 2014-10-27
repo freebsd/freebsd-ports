@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/DateTime::TimeZone::LMT.3.gz
 %%SITE_PERL%%/DateTime/TimeZone/LMT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone/LMT/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone/LMT
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime/TimeZone
-@dirrmtry %%SITE_PERL%%/DateTime

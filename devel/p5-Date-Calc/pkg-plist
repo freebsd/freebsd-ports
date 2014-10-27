@@ -17,8 +17,3 @@
 %%SITE_PERL%%/Date/Calendar/Year.pm
 %%SITE_PERL%%/Date/Calendar/Year.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrm %%SITE_PERL%%/Date/Calendar
-@dirrm %%SITE_PERL%%/Date/Calc
-@dirrmtry %%SITE_PERL%%/Date

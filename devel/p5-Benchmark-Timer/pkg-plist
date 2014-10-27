@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Timer/.packlist
 %%PERL5_MAN3%%/Benchmark::Timer.3.gz
 %%PERL5_MAN3%%/Benchmark::delta.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Timer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark
-@dirrmtry %%SITE_PERL%%/Benchmark

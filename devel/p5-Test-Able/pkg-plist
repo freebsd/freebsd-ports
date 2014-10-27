@@ -19,10 +19,3 @@
 %%PERL5_MAN3%%/Test::Able::Role.3.gz
 %%PERL5_MAN3%%/Test::Able::Role::Meta::Class.3.gz
 %%PERL5_MAN3%%/Test::Able::Role::Meta::Method.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Able
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Able/Role/Meta
-@dirrmtry %%SITE_PERL%%/Test/Able/Role
-@dirrmtry %%SITE_PERL%%/Test/Able/Method
-@dirrmtry %%SITE_PERL%%/Test/Able
-@dirrmtry %%SITE_PERL%%/Test

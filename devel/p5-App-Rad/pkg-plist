@@ -10,7 +10,3 @@
 %%PERL5_MAN3%%/App::Rad::Help.3.gz
 %%PERL5_MAN3%%/App::Rad::Include.3.gz
 %%PERL5_MAN3%%/App::Rad::Plugin.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Rad
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrm %%SITE_PERL%%/App/Rad
-@dirrmtry %%SITE_PERL%%/App

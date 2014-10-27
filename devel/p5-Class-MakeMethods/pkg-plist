@@ -117,15 +117,3 @@
 %%SITE_PERL%%/Class/MakeMethods/Utility/Ref.pm
 %%SITE_PERL%%/Class/MakeMethods/Utility/TextBuilder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MakeMethods/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MakeMethods
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrm %%SITE_PERL%%/Class/MakeMethods/Utility
-@dirrm %%SITE_PERL%%/Class/MakeMethods/Template
-@dirrm %%SITE_PERL%%/Class/MakeMethods/Standard
-@dirrm %%SITE_PERL%%/Class/MakeMethods/Evaled
-@dirrm %%SITE_PERL%%/Class/MakeMethods/Emulator
-@dirrm %%SITE_PERL%%/Class/MakeMethods/Docs
-@dirrm %%SITE_PERL%%/Class/MakeMethods/Composite
-@dirrm %%SITE_PERL%%/Class/MakeMethods/Basic
-@dirrmtry %%SITE_PERL%%/Class/MakeMethods
-@dirrmtry %%SITE_PERL%%/Class

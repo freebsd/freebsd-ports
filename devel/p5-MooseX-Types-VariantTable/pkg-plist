@@ -4,12 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/VariantTable/.packlist
 %%PERL5_MAN3%%/MooseX::Types::VariantTable::Declare.3.gz
 %%PERL5_MAN3%%/MooseX::Types::VariantTable.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/VariantTable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Types/VariantTable
-@dirrmtry %%SITE_PERL%%/MooseX/Types
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrmtry %%SITE_PERL%%/Moose/Meta/Method
-@dirrmtry %%SITE_PERL%%/Moose/Meta
-@dirrmtry %%SITE_PERL%%/Moose

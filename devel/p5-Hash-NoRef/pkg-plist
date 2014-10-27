@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/NoRef/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/NoRef/NoRef.so
 %%PERL5_MAN3%%/Hash::NoRef.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/NoRef
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Hash

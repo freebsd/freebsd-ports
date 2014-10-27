@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Eval::Closure.3.gz
 %%SITE_PERL%%/Eval/Closure.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval/Closure/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval/Closure
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval
-@dirrmtry %%SITE_PERL%%/Eval

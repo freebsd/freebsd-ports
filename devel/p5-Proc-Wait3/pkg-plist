@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Wait3/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Wait3/Wait3.so
 %%PERL5_MAN3%%/Proc::Wait3.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Wait3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Proc

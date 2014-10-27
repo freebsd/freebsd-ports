@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Date/Leapyear.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Leapyear/.packlist
 %%PERL5_MAN3%%/Date::Leapyear.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Leapyear
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrmtry %%SITE_PERL%%/Date

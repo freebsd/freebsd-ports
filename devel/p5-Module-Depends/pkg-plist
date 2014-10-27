@@ -2,5 +2,3 @@
 %%SITE_PERL%%/Module/Depends/Intrusive.pm
 %%PERL5_MAN3%%/Module::Depends.3.gz
 %%PERL5_MAN3%%/Module::Depends::Intrusive.3.gz
-@dirrmtry %%SITE_PERL%%/Module/Depends
-@dirrmtry %%SITE_PERL%%/Module

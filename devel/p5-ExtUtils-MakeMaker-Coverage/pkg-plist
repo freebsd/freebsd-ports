@@ -2,8 +2,3 @@ bin/testcover
 %%PERL5_MAN3%%/ExtUtils::MakeMaker::Coverage.3.gz
 %%SITE_PERL%%/ExtUtils/MakeMaker/Coverage.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker/Coverage/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker/Coverage
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrmtry %%SITE_PERL%%/ExtUtils/MakeMaker
-@dirrmtry %%SITE_PERL%%/ExtUtils

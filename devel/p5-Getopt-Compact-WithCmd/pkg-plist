@@ -1,4 +1,2 @@
 %%PERL5_MAN3%%/Getopt::Compact::WithCmd.3.gz
 %%SITE_PERL%%/Getopt/Compact/WithCmd.pm
-@dirrmtry %%SITE_PERL%%/Getopt/Compact
-@dirrmtry %%SITE_PERL%%/Getopt

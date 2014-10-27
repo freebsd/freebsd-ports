@@ -1,5 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Assemble/Compressed/.packlist
 %%SITE_PERL%%/Regexp/Assemble/Compressed.pm
 %%PERL5_MAN3%%/Regexp::Assemble::Compressed.3.gz
-@dirrmtry %%SITE_PERL%%/Regexp/Assemble
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Assemble/Compressed

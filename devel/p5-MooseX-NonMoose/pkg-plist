@@ -7,9 +7,3 @@
 %%SITE_PERL%%/MooseX/NonMoose/Meta/Role/Class.pm
 %%SITE_PERL%%/MooseX/NonMoose/Meta/Role/Constructor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/NonMoose/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/NonMoose
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/NonMoose/Meta/Role
-@dirrm %%SITE_PERL%%/MooseX/NonMoose/Meta
-@dirrm %%SITE_PERL%%/MooseX/NonMoose
-@dirrmtry %%SITE_PERL%%/MooseX

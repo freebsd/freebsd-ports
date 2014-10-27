@@ -25,13 +25,3 @@
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application/Summation.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MethodAttributes/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MethodAttributes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application
-@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role
-@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method
-@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta
-@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer
-@dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role
-@dirrm %%SITE_PERL%%/MooseX/MethodAttributes
-@dirrmtry %%SITE_PERL%%/MooseX

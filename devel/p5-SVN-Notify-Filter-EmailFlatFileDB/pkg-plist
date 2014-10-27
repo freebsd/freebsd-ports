@@ -1,10 +1,3 @@
 %%SITE_PERL%%/SVN/Notify/Filter/EmailFlatFileDB.pm
 %%PERL5_MAN3%%/SVN::Notify::Filter::EmailFlatFileDB.3.gz
-@dirrmtry %%SITE_PERL%%/SVN/Notify/Filter
-@dirrmtry %%SITE_PERL%%/SVN/Notify
-@dirrmtry %%SITE_PERL%%/SVN
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Notify/Filter/EmailFlatFileDB/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Notify/Filter/EmailFlatFileDB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Notify/Filter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Notify
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN

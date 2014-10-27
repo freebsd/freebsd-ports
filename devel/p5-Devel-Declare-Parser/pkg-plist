@@ -10,6 +10,3 @@
 %%PERL5_MAN3%%/Devel::Declare::Parser::Emulate.3.gz
 %%PERL5_MAN3%%/Devel::Declare::Parser::Method.3.gz
 %%PERL5_MAN3%%/Devel::Declare::Parser::Sublike.3.gz
-@dirrm %%SITE_PERL%%/Devel/Declare/Parser
-@dirrmtry %%SITE_PERL%%/Devel/Declare
-@dirrmtry %%SITE_PERL%%/Devel

@@ -8,5 +8,3 @@
 %%SITE_PERL%%/Config/Setting/FileProvider.pm
 %%SITE_PERL%%/Config/Setting/IniParser.pm
 %%SITE_PERL%%/Config/Setting/XMLParser.pm
-@dirrm %%SITE_PERL%%/Config/Setting
-@dirrmtry %%SITE_PERL%%/Config

@@ -3,9 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/Types/MooseLike/.packlist
 %%PERL5_MAN3%%/MooX::Types::MooseLike.3.gz
 %%PERL5_MAN3%%/MooX::Types::MooseLike::Base.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/Types/MooseLike
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/Types
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX
-@dirrm %%SITE_PERL%%/MooX/Types/MooseLike
-@dirrmtry %%SITE_PERL%%/MooX/Types
-@dirrmtry %%SITE_PERL%%/MooX

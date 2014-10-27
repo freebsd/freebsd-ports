@@ -13,9 +13,3 @@
 %%PERL5_MAN3%%/Sys::Info::Driver.3.gz
 %%PERL5_MAN3%%/Sys::Info::Helper.3.gz
 %%PERL5_MAN3%%/Sys::Info::OS.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Base
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrm %%SITE_PERL%%/Sys/Info/Device
-@dirrmtry %%SITE_PERL%%/Sys/Info
-@dirrmtry %%SITE_PERL%%/Sys

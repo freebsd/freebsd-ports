@@ -11,11 +11,3 @@
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/NoClone.pm
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/StorableClone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Clone/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Clone
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone
-@dirrm %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait
-@dirrm %%SITE_PERL%%/MooseX/Clone/Meta/Attribute
-@dirrm %%SITE_PERL%%/MooseX/Clone/Meta
-@dirrm %%SITE_PERL%%/MooseX/Clone
-@dirrmtry %%SITE_PERL%%/MooseX

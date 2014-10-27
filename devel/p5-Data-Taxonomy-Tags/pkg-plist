@@ -2,6 +2,3 @@
 %%PERL5_MAN3%%/Data::Taxonomy::Tags::Tag.3.gz
 %%SITE_PERL%%/Data/Taxonomy/Tags.pm
 %%SITE_PERL%%/Data/Taxonomy/Tags/Tag.pm
-@dirrm %%SITE_PERL%%/Data/Taxonomy/Tags
-@dirrm %%SITE_PERL%%/Data/Taxonomy
-@dirrmtry %%SITE_PERL%%/Data

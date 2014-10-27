@@ -67,17 +67,3 @@
 %%PERL5_MAN3%%/CHI::Driver::Null.3.gz
 %%PERL5_MAN3%%/CHI::Driver::RawMemory.3.gz
 %%PERL5_MAN3%%/CHI::Stats.3.gz
-@dirrmtry %%SITE_PERL%%/CHI/t/Driver/Subcache
-@dirrmtry %%SITE_PERL%%/CHI/t/Driver/File
-@dirrmtry %%SITE_PERL%%/CHI/t/Driver
-@dirrmtry %%SITE_PERL%%/CHI/t
-@dirrmtry %%SITE_PERL%%/CHI/Test/Driver/Role
-@dirrmtry %%SITE_PERL%%/CHI/Test/Driver
-@dirrmtry %%SITE_PERL%%/CHI/Test
-@dirrmtry %%SITE_PERL%%/CHI/Serializer
-@dirrmtry %%SITE_PERL%%/CHI/Driver/Role
-@dirrmtry %%SITE_PERL%%/CHI/Driver/Base
-@dirrmtry %%SITE_PERL%%/CHI/Driver
-@dirrmtry %%SITE_PERL%%/CHI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CHI
-@dirrmtry %%SITE_PERL%%

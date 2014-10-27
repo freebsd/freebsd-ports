@@ -41,11 +41,3 @@
 %%SITE_PERL%%/Data/ObjectDriver/SQL.pm
 %%SITE_PERL%%/Data/ObjectDriver/SQL/Oracle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/ObjectDriver/SQL
-@dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD
-@dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver/Cache
-@dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver
-@dirrmtry %%SITE_PERL%%/Data/ObjectDriver
-@dirrmtry %%SITE_PERL%%/Data

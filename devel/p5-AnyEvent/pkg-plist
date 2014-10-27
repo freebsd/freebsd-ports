@@ -58,8 +58,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Util/uts46data.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/constants.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Impl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/IO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent

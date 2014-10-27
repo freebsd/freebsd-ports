@@ -67,9 +67,3 @@ man/man1/perltetris.pl.1.gz
 %%PERL5_MAN3%%/Goo::Canvas::TextModel.3.gz
 %%PERL5_MAN3%%/Goo::Canvas::Widget.3.gz
 %%PERL5_MAN3%%/Goo::Canvas::index.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Cairo
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo

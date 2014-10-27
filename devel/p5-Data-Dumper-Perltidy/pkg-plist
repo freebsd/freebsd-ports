@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Data/Dumper/Perltidy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Perltidy/.packlist
 %%PERL5_MAN3%%/Data::Dumper::Perltidy.3.gz
-@dirrmtry %%SITE_PERL%%/Data/Dumper
-@dirrmtry %%SITE_PERL%%/Data
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Perltidy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

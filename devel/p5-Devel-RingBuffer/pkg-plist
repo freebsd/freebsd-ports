@@ -7,7 +7,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/RingBuffer/ThreadFacade.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/RingBuffer/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/RingBuffer/RingBuffer.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/RingBuffer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/RingBuffer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

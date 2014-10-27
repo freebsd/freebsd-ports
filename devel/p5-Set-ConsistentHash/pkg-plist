@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Set::ConsistentHash.3.gz
 %%SITE_PERL%%/Set/ConsistentHash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/ConsistentHash/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/ConsistentHash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
-@dirrmtry %%SITE_PERL%%/Set

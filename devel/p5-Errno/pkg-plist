@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Errno.3.gz
 %%SITE_PERL%%/Errno.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Errno/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Errno

@@ -121,9 +121,3 @@
 %%SITE_PERL%%/Validation/Class/Simple/Streamer.pm
 %%SITE_PERL%%/Validation/Class/Util.pm
 %%SITE_PERL%%/Validation/Class/Whitepaper.pod
-@dirrm %%SITE_PERL%%/Validation/Class/Simple
-@dirrm %%SITE_PERL%%/Validation/Class/Directive
-@dirrm %%SITE_PERL%%/Validation/Class
-@dirrmtry %%SITE_PERL%%/Validation
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validation/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validation

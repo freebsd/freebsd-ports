@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Sub/Identify.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Identify/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Identify/Identify.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Identify
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sub

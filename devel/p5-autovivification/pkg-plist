@@ -2,4 +2,3 @@
 %%SITE_PERL%%/mach/autovivification.pm
 %%SITE_PERL%%/mach/auto/autovivification/.packlist
 %%SITE_PERL%%/mach/auto/autovivification/autovivification.so
-@dirrm %%SITE_PERL%%/mach/auto/autovivification

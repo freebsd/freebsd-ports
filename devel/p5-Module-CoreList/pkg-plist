@@ -5,7 +5,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList/.packlist
 %%PERL5_MAN3%%/Module::CoreList.3.gz
 %%PERL5_MAN3%%/Module::CoreList::Utils.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrm %%SITE_PERL%%/Module/CoreList
-@dirrmtry %%SITE_PERL%%/Module

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/JIRA/Client.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JIRA/Client/.packlist
 %%PERL5_MAN3%%/JIRA::Client.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JIRA/Client
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JIRA
-@dirrm %%SITE_PERL%%/JIRA

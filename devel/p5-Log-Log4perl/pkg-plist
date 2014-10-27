@@ -103,12 +103,3 @@ bin/l4p-tmpl
 %%PERL5_MAN3%%/Log::Log4perl::Util::Semaphore.3.gz
 %%PERL5_MAN3%%/Log::Log4perl::Util::TimeTracker.3.gz
 man/man1/l4p-tmpl.1.gz
-@dirrmtry %%SITE_PERL%%/Log/Log4perl/Util
-@dirrmtry %%SITE_PERL%%/Log/Log4perl/Layout/PatternLayout
-@dirrmtry %%SITE_PERL%%/Log/Log4perl/Layout
-@dirrmtry %%SITE_PERL%%/Log/Log4perl/JavaMap
-@dirrmtry %%SITE_PERL%%/Log/Log4perl/Filter
-@dirrmtry %%SITE_PERL%%/Log/Log4perl/Config
-@dirrmtry %%SITE_PERL%%/Log/Log4perl/Appender
-@dirrmtry %%SITE_PERL%%/Log/Log4perl
-@dirrmtry %%SITE_PERL%%/Log

@@ -39,9 +39,3 @@ man/man1/poe-gen-tests.1.gz
 %%SITE_PERL%%/POE/Test/Loops/z_rt53302_fh_watchers.pm
 %%SITE_PERL%%/POE/Test/Loops/z_rt54319_bazerka_followtail.pm
 %%SITE_PERL%%/POE/Test/Loops/z_steinert_signal_integrity.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test/Loops
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test
-@dirrm %%SITE_PERL%%/POE/Test/Loops
-@dirrmtry %%SITE_PERL%%/POE/Test
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/POE

@@ -10,5 +10,3 @@ bin/remoos
 %%PERL5_MAN3%%/Moos::Role.3.gz
 %%PERL5_MAN3%%/oos.3.gz
 man/man1/remoos.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moos
-@dirrm %%SITE_PERL%%/Moos

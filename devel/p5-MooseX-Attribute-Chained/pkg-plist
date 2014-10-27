@@ -10,13 +10,3 @@
 %%PERL5_MAN3%%/MooseX::ChainedAccessors.3.gz
 %%PERL5_MAN3%%/MooseX::ChainedAccessors::Accessor.3.gz
 %%PERL5_MAN3%%/MooseX::Traits::Attribute::Chained.3.gz
-@dirrmtry %%SITE_PERL%%/MooseX/Traits/Attribute
-@dirrmtry %%SITE_PERL%%/MooseX/Traits
-@dirrmtry %%SITE_PERL%%/MooseX/ChainedAccessors
-@dirrmtry %%SITE_PERL%%/MooseX/Attribute
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrmtry %%SITE_PERL%%/Moose/Meta/Attribute/Custom/Trait
-@dirrmtry %%SITE_PERL%%/Moose/Meta/Attribute/Custom
-@dirrmtry %%SITE_PERL%%/Moose/Meta/Attribute
-@dirrmtry %%SITE_PERL%%/Moose/Meta
-@dirrmtry %%SITE_PERL%%/Moose

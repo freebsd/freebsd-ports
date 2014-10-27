@@ -2,7 +2,3 @@
 %%SITE_PERL%%/Class/Load.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Load/.packlist
 %%PERL5_MAN3%%/Class::Load.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Load
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Load
-@dirrmtry %%SITE_PERL%%/Class

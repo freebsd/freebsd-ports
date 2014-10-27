@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Directory/Scratch.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Directory/Scratch/.packlist
 %%PERL5_MAN3%%/Directory::Scratch.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Directory/Scratch
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Directory
-@dirrmtry %%SITE_PERL%%/Directory

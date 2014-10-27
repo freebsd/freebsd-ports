@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Lexical/Persistence.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Persistence/.packlist
 %%PERL5_MAN3%%/Lexical::Persistence.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Persistence
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical
-@dirrmtry %%SITE_PERL%%/Lexical

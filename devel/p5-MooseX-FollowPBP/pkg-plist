@@ -3,8 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/FollowPBP/.packlist
 %%PERL5_MAN3%%/MooseX::FollowPBP.3.gz
 %%PERL5_MAN3%%/MooseX::FollowPBP::Role::Attribute.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/FollowPBP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/FollowPBP/Role
-@dirrmtry %%SITE_PERL%%/MooseX/FollowPBP
-@dirrmtry %%SITE_PERL%%/MooseX

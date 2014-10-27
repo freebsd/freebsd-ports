@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Class::ObjectTemplate::DB.3.gz
 %%SITE_PERL%%/Class/ObjectTemplate/DB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ObjectTemplate/DB/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ObjectTemplate/DB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ObjectTemplate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/ObjectTemplate
-@dirrmtry %%SITE_PERL%%/Class

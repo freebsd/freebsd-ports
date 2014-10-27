@@ -37,11 +37,3 @@
 %%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Url.pm
 %%SITE_PERL%%/Iodef/Pb/t1.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iodef/Pb/Simple/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iodef/Pb/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iodef/Pb
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iodef
-@dirrmtry %%SITE_PERL%%/Iodef/Pb/Simple/Plugin
-@dirrmtry %%SITE_PERL%%/Iodef/Pb/Simple
-@dirrmtry %%SITE_PERL%%/Iodef/Pb/Format
-@dirrmtry %%SITE_PERL%%/Iodef/Pb
-@dirrmtry %%SITE_PERL%%/Iodef

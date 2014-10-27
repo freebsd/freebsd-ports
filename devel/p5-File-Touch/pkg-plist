@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/File::Touch.3.gz
 %%SITE_PERL%%/File/Touch.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Touch/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Touch
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

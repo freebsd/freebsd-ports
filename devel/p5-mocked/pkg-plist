@@ -3,4 +3,3 @@
 %%SITE_PERL%%/unmocked.pm
 %%PERL5_MAN3%%/mocked.3.gz
 %%PERL5_MAN3%%/unmocked.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mocked

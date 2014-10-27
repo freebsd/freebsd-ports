@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Config::Std.3.gz
 %%SITE_PERL%%/Config/Std.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Std/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Std
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config

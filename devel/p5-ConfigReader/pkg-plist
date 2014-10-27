@@ -2,4 +2,3 @@
 %%SITE_PERL%%/ConfigReader/DirectiveStyle.pm
 %%SITE_PERL%%/ConfigReader/Spec.pm
 %%SITE_PERL%%/ConfigReader/Values.pm
-@dirrm %%SITE_PERL%%/ConfigReader

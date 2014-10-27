@@ -12,7 +12,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key/Types.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key/Key.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sort

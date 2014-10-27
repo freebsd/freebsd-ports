@@ -14,7 +14,3 @@
 %%PERL5_MAN3%%/File::FcntlLock::Inline.3.gz
 %%PERL5_MAN3%%/File::FcntlLock::Pure.3.gz
 %%PERL5_MAN3%%/File::FcntlLock::XS.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/File/FcntlLock
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/FcntlLock
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

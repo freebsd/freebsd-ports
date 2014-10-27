@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Control/.packlist
 %%SITE_PERL%%/App/Control.pm
 %%PERL5_MAN3%%/App::Control.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Control
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrmtry %%SITE_PERL%%/App

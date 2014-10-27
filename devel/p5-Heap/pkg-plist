@@ -21,6 +21,3 @@
 %%SITE_PERL%%/Heap/Elem/StrRev.pm
 %%SITE_PERL%%/Heap/Fibonacci.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/.packlist
-@dirrm %%SITE_PERL%%/Heap/Elem
-@dirrmtry %%SITE_PERL%%/Heap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap

@@ -26,12 +26,3 @@
 %%SITE_PERL%%/Git/PurePerl/Protocol/Git.pm
 %%SITE_PERL%%/Git/PurePerl/Protocol/SSH.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
-@dirrm %%SITE_PERL%%/Git/PurePerl/Protocol
-@dirrm %%SITE_PERL%%/Git/PurePerl/PackIndex
-@dirrm %%SITE_PERL%%/Git/PurePerl/Pack
-@dirrm %%SITE_PERL%%/Git/PurePerl/Object
-@dirrm %%SITE_PERL%%/Git/PurePerl/NewObject
-@dirrm %%SITE_PERL%%/Git/PurePerl
-@dirrmtry %%SITE_PERL%%/Git

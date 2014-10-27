@@ -1,4 +1,2 @@
 %%PERL5_MAN3%%/Data::Dumper::Simple.3.gz
 %%SITE_PERL%%/Data/Dumper/Simple.pm
-@dirrmtry %%SITE_PERL%%/Data/Dumper
-@dirrmtry %%SITE_PERL%%/Data

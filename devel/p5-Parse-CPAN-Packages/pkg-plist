@@ -5,9 +5,3 @@
 %%PERL5_MAN3%%/Parse::CPAN::Packages.3.gz
 %%PERL5_MAN3%%/Parse::CPAN::Packages::Distribution.3.gz
 %%PERL5_MAN3%%/Parse::CPAN::Packages::Package.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/CPAN/Packages
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/CPAN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
-@dirrm %%SITE_PERL%%/Parse/CPAN/Packages
-@dirrmtry %%SITE_PERL%%/Parse/CPAN
-@dirrmtry %%SITE_PERL%%/Parse

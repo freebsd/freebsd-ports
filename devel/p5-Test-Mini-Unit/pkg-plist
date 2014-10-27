@@ -10,10 +10,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini/Unit/.packlist
 %%PERL5_MAN3%%/Test::Mini::README.3.gz
 %%PERL5_MAN3%%/Test::Mini::Unit.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini/Unit
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Mini/Unit/Sugar
-@dirrmtry %%SITE_PERL%%/Test/Mini/Unit
-@dirrmtry %%SITE_PERL%%/Test/Mini
-@dirrmtry %%SITE_PERL%%/Test

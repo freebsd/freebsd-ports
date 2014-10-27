@@ -21,8 +21,3 @@
 %%SITE_PERL%%/BZ/Client/XMLRPC/Struct.pm
 %%SITE_PERL%%/BZ/Client/XMLRPC/Value.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ/Client/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ
-@dirrm %%SITE_PERL%%/BZ/Client/XMLRPC
-@dirrm %%SITE_PERL%%/BZ/Client
-@dirrmtry %%SITE_PERL%%/BZ

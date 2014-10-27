@@ -54,9 +54,3 @@
 %%PERL5_MAN3%%/ExtUtils::Mkbootstrap.3.gz
 %%PERL5_MAN3%%/ExtUtils::Mksymlists.3.gz
 %%PERL5_MAN3%%/ExtUtils::testlib.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrmtry %%SITE_PERL%%/ExtUtils/MakeMaker
-@dirrmtry %%SITE_PERL%%/ExtUtils/Liblist
-@dirrmtry %%SITE_PERL%%/ExtUtils/Command
-@dirrmtry %%SITE_PERL%%/ExtUtils

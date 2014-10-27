@@ -6,7 +6,3 @@
 %%PERL5_MAN3%%/Test::LeakTrace.3.gz
 %%PERL5_MAN3%%/Test::LeakTrace::JA.3.gz
 %%PERL5_MAN3%%/Test::LeakTrace::Script.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/LeakTrace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Test/LeakTrace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Test

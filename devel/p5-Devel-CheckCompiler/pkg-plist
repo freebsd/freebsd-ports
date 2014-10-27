@@ -2,4 +2,3 @@
 %%SITE_PERL%%/Devel/CheckCompiler.pm
 %%PERL5_MAN3%%/Devel::AssertC99.3.gz
 %%PERL5_MAN3%%/Devel::CheckCompiler.3.gz
-@dirrmtry %%SITE_PERL%%/Devel

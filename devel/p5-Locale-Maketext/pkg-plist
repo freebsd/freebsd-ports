@@ -10,6 +10,3 @@
 %%SITE_PERL%%/Locale/Maketext/GutsLoader.pm
 %%SITE_PERL%%/Locale/Maketext/TPJ13.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Maketext/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Maketext
-@dirrmtry %%SITE_PERL%%/Locale/Maketext
-@dirrmtry %%SITE_PERL%%/Locale

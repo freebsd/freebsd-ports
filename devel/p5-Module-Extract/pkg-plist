@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Module::Extract.3.gz
 %%SITE_PERL%%/Module/Extract.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Extract/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Extract
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module

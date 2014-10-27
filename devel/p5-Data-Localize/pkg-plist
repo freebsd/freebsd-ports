@@ -32,10 +32,3 @@
 %%PERL5_MAN3%%/Data::Localize::Storage::Hash.3.gz
 %%PERL5_MAN3%%/Data::Localize::Trait::WithStorage.3.gz
 %%PERL5_MAN3%%/Data::Localize::Util.3.gz
-@dirrm %%SITE_PERL%%/Data/Localize/Trait
-@dirrm %%SITE_PERL%%/Data/Localize/Storage
-@dirrm %%SITE_PERL%%/Data/Localize/Gettext
-@dirrm %%SITE_PERL%%/Data/Localize/Format
-@dirrm %%SITE_PERL%%/Data/Localize
-@dirrmtry %%SITE_PERL%%/Data
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Localize

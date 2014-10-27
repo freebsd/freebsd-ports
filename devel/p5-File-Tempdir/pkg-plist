@@ -1,6 +1,3 @@
 %%SITE_PERL%%/File/Tempdir.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Tempdir/.packlist
 %%PERL5_MAN3%%/File::Tempdir.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Tempdir
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

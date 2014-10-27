@@ -3,6 +3,3 @@
 %%SITE_PERL%%/JSON/Hyper.pm
 %%SITE_PERL%%/JSON/Hyper/Link.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/Hyper/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/Hyper
-@dirrm %%SITE_PERL%%/JSON/Hyper
-@dirrmtry %%SITE_PERL%%/JSON

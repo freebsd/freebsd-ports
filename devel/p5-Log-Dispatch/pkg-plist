@@ -33,9 +33,3 @@
 %%SITE_PERL%%/Log/Dispatch/Screen.pm
 %%SITE_PERL%%/Log/Dispatch/Syslog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
-@dirrm %%SITE_PERL%%/Log/Dispatch/File
-@dirrm %%SITE_PERL%%/Log/Dispatch/Email
-@dirrm %%SITE_PERL%%/Log/Dispatch
-@dirrmtry %%SITE_PERL%%/Log

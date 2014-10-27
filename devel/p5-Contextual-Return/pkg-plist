@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Contextual/Return.pm
 %%SITE_PERL%%/Contextual/Return/Failure.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Contextual/Return/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Contextual/Return
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Contextual
-@dirrm %%SITE_PERL%%/Contextual/Return
-@dirrmtry %%SITE_PERL%%/Contextual

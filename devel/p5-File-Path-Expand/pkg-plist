@@ -1,8 +1,3 @@
 %%SITE_PERL%%/File/Path/Expand.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Path/Expand/.packlist
 %%PERL5_MAN3%%/File::Path::Expand.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Path/Expand
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Path
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Path
-@dirrmtry %%SITE_PERL%%/File

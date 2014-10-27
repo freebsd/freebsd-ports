@@ -9,10 +9,3 @@
 %%SITE_PERL%%/MooseX/Singleton/Role/Meta/Method/Constructor.pm
 %%SITE_PERL%%/MooseX/Singleton/Role/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Singleton/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Singleton
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Singleton/Role/Meta/Method
-@dirrm %%SITE_PERL%%/MooseX/Singleton/Role/Meta
-@dirrm %%SITE_PERL%%/MooseX/Singleton/Role
-@dirrm %%SITE_PERL%%/MooseX/Singleton
-@dirrmtry %%SITE_PERL%%/MooseX

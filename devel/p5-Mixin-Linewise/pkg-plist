@@ -5,7 +5,3 @@
 %%SITE_PERL%%/Mixin/Linewise/Readers.pm
 %%SITE_PERL%%/Mixin/Linewise/Writers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin/Linewise/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin/Linewise
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin
-@dirrm %%SITE_PERL%%/Mixin/Linewise
-@dirrmtry %%SITE_PERL%%/Mixin

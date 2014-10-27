@@ -19,10 +19,3 @@
 %%SITE_PERL%%/MouseX/Getopt/OptionTypeMap.pm
 %%SITE_PERL%%/MouseX/Getopt/Strict.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Getopt/.packlist
-@dirrm %%SITE_PERL%%/MouseX/Getopt/Meta/Attribute/Trait
-@dirrm %%SITE_PERL%%/MouseX/Getopt/Meta/Attribute
-@dirrm %%SITE_PERL%%/MouseX/Getopt/Meta
-@dirrm %%SITE_PERL%%/MouseX/Getopt
-@dirrmtry %%SITE_PERL%%/MouseX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Getopt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX

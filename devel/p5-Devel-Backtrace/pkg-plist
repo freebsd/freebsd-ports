@@ -5,7 +5,3 @@
 %%SITE_PERL%%/Devel/Backtrace/Point.pm
 %%SITE_PERL%%/Devel/DollarAt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Backtrace/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Backtrace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrm %%SITE_PERL%%/Devel/Backtrace
-@dirrmtry %%SITE_PERL%%/Devel

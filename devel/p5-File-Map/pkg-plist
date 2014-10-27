@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/File::Map.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/File/Map.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Map/Map.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Map
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File

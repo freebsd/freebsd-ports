@@ -9,7 +9,3 @@
 %%SITE_PERL%%/Thread/Apartment.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Apartment/.packlist
 %%PERL5_MAN3%%/Thread::Apartment.3.gz
-@dirrmtry %%SITE_PERL%%/Thread/Apartment
-@dirrmtry %%SITE_PERL%%/Thread
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Apartment
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread

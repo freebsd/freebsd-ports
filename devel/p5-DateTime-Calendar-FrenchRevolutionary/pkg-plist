@@ -4,7 +4,3 @@
 %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale.pm
 %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale/en.pm
 %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale/fr.pm
-@dirrm %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale
-@dirrm %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary
-@dirrmtry %%SITE_PERL%%/DateTime/Calendar
-@dirrmtry %%SITE_PERL%%/DateTime

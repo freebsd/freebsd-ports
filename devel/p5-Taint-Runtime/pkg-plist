@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Taint/is_taint_bench.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime/Runtime.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Taint

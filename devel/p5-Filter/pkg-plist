@@ -20,11 +20,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Exec/Exec.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/decrypt/decrypt.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/tee/tee.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/tee
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/decrypt
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Exec
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Call
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Filter

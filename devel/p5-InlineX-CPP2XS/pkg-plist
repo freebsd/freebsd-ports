@@ -4,6 +4,3 @@ bin/cpp2xs
 %%SITE_PERL%%/InlineX/CPP2XS-Cookbook.pod
 %%SITE_PERL%%/InlineX/CPP2XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/InlineX/CPP2XS/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/InlineX/CPP2XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/InlineX
-@dirrmtry %%SITE_PERL%%/InlineX

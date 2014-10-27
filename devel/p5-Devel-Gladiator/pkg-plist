@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Gladiator/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Gladiator/Gladiator.so
 %%PERL5_MAN3%%/Devel::Gladiator.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Gladiator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

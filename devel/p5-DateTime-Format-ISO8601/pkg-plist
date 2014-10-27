@@ -1,5 +1,3 @@
 %%PERL5_MAN3%%/DateTime::Format::ISO8601.3.gz
 %%SITE_PERL%%/DateTime/Format/ISO8601.pm
 %%SITE_PERL%%/DateTime/Format/ISO8601.pod
-@dirrmtry %%SITE_PERL%%/DateTime/Format
-@dirrmtry %%SITE_PERL%%/DateTime

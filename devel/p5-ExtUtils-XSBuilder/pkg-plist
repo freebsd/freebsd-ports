@@ -17,8 +17,3 @@
 %%SITE_PERL%%/ExtUtils/XSBuilder/WrapXS.pm
 %%SITE_PERL%%/ExtUtils/xsbuilder.osc2002.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/XSBuilder/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/XSBuilder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrm %%SITE_PERL%%/ExtUtils/XSBuilder/C
-@dirrm %%SITE_PERL%%/ExtUtils/XSBuilder
-@dirrmtry %%SITE_PERL%%/ExtUtils

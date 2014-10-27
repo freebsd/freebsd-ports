@@ -5,7 +5,3 @@
 %%SITE_PERL%%/MooseX/MultiInitArg/Attribute.pm
 %%SITE_PERL%%/MooseX/MultiInitArg/Trait.pm
 %%SITE_PERL%%/mach/auto/MooseX/MultiInitArg/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/MooseX/MultiInitArg
-@dirrmtry %%SITE_PERL%%/mach/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/MultiInitArg
-@dirrmtry %%SITE_PERL%%/MooseX

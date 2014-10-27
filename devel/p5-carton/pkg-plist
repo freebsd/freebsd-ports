@@ -41,7 +41,3 @@ bin/carton
 %%SITE_PERL%%/Carton/Snapshot/Parser.pm
 %%SITE_PERL%%/Carton/Tree.pm
 %%SITE_PERL%%/Carton/Util.pm
-@dirrm %%SITE_PERL%%/Carton/Snapshot
-@dirrm %%SITE_PERL%%/Carton/Doc
-@dirrm %%SITE_PERL%%/Carton/Dist
-@dirrm %%SITE_PERL%%/Carton

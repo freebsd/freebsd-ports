@@ -4,6 +4,3 @@
 %%SITE_PERL%%/DateTime/Event/NameDay/greece.pm
 %%SITE_PERL%%/DateTime/Event/NameDay/slovakia.pm
 %%SITE_PERL%%/DateTime/Event/NameDay/sweden.pm
-@dirrm %%SITE_PERL%%/DateTime/Event/NameDay
-@dirrmtry %%SITE_PERL%%/DateTime/Event
-@dirrmtry %%SITE_PERL%%/DateTime

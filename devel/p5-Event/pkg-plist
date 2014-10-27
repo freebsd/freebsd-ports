@@ -18,5 +18,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/var.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Event.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Event
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event

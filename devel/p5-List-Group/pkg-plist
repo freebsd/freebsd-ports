@@ -1,6 +1,3 @@
 %%SITE_PERL%%/List/Group.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Group/.packlist
 %%PERL5_MAN3%%/List::Group.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Group
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
-@dirrm %%SITE_PERL%%/List

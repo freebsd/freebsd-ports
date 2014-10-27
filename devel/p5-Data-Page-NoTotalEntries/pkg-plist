@@ -3,8 +3,3 @@
 %%SITE_PERL%%/Data/Page/README.pod
 %%PERL5_MAN3%%/Data::Page::NoTotalEntries.3.gz
 %%PERL5_MAN3%%/Data::Page::README.3.gz
-@dirrmtry %%SITE_PERL%%/Data/Page
-@dirrmtry %%SITE_PERL%%/Data
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Page/NoTotalEntries
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Page
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

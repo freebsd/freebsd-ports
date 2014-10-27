@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CBOR/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CBOR/XS/XS.so
 %%PERL5_MAN3%%/CBOR::XS.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CBOR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CBOR/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CBOR

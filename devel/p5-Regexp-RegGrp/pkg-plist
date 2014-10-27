@@ -2,7 +2,3 @@
 %%SITE_PERL%%/Regexp/RegGrp/Data.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/RegGrp/.packlist
 %%PERL5_MAN3%%/Regexp::RegGrp.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/RegGrp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
-@dirrm %%SITE_PERL%%/Regexp/RegGrp
-@dirrmtry %%SITE_PERL%%/Regexp

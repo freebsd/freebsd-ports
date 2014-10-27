@@ -64,11 +64,3 @@
 %%PERL5_MAN3%%/Net::DBus::Error.3.gz
 %%PERL5_MAN3%%/Net::DBus::Test::MockIterator.3.gz
 %%PERL5_MAN3%%/Net::DBus::Test::MockMessage.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DBus
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Test
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

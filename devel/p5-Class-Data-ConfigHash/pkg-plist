@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data/ConfigHash/.packlist
 %%SITE_PERL%%/Class/Data/ConfigHash.pm
 %%PERL5_MAN3%%/Class::Data::ConfigHash.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data/ConfigHash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Data
-@dirrmtry %%SITE_PERL%%/Class

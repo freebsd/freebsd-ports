@@ -53,13 +53,3 @@ bin/module-setup
 %%PERL5_MAN3%%/Module::Setup::Test::Flavor.3.gz
 %%PERL5_MAN3%%/Module::Setup::Test::Utils.3.gz
 man/man1/module-setup.1.gz
-@dirrm %%SITE_PERL%%/Module/Setup/Test
-@dirrm %%SITE_PERL%%/Module/Setup/Plugin/VC
-@dirrm %%SITE_PERL%%/Module/Setup/Plugin/Test
-@dirrm %%SITE_PERL%%/Module/Setup/Plugin/Site
-@dirrm %%SITE_PERL%%/Module/Setup/Plugin/Config
-@dirrm %%SITE_PERL%%/Module/Setup/Plugin
-@dirrm %%SITE_PERL%%/Module/Setup/Path
-@dirrm %%SITE_PERL%%/Module/Setup/Flavor
-@dirrm %%SITE_PERL%%/Module/Setup
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Setup

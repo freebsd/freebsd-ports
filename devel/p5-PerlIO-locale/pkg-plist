@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/locale.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/locale/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/locale/locale.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/locale
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO

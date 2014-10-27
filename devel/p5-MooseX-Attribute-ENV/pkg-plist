@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Attribute/ENV/.packlist
 %%SITE_PERL%%/MooseX/Attribute/ENV.pm
 %%PERL5_MAN3%%/MooseX::Attribute::ENV.3.gz
-@dirrmtry %%SITE_PERL%%/MooseX/Attribute
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Attribute/ENV
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Attribute
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

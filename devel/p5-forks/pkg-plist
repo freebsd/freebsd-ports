@@ -18,9 +18,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/threads/shared/handle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/threads/shared/hash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/threads/shared/scalar.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/threads/shared
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/threads
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/forks/shared
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/forks/Devel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/forks
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/forks

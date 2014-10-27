@@ -1,5 +1,3 @@
 %%SITE_PERL%%/Params/Coerce.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Coerce/.packlist
 %%PERL5_MAN3%%/Params::Coerce.3.gz
-@dirrmtry %%SITE_PERL%%/Params
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Coerce

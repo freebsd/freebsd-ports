@@ -9,10 +9,3 @@
 %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/Memcached.pm
 %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/Memcached/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/FloodControl/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/FloodControl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrm %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/Memcached
-@dirrm %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache
-@dirrm %%SITE_PERL%%/Algorithm/FloodControl/Backend
-@dirrm %%SITE_PERL%%/Algorithm/FloodControl
-@dirrmtry %%SITE_PERL%%/Algorithm

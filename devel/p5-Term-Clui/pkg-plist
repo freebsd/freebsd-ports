@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Clui/.packlist
 %%PERL5_MAN3%%/Term::Clui.3.gz
 %%PERL5_MAN3%%/Term::Clui::FileSelect.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Clui
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrm %%SITE_PERL%%/Term/Clui
-@dirrmtry %%SITE_PERL%%/Term

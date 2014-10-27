@@ -32,9 +32,3 @@ man/man1/tkpp.1.gz
 %%PERL5_MAN3%%/PAR::StrippedPARL::Base.3.gz
 %%PERL5_MAN3%%/Static.3.gz
 %%PERL5_MAN3%%/pp.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/Packer
-@dirrmtry %%SITE_PERL%%/App/Packer
-@dirrmtry %%SITE_PERL%%/App
-@dirrmtry %%SITE_PERL%%/PAR/StrippedPARL
-@dirrmtry %%SITE_PERL%%/PAR/Filter
-@dirrmtry %%SITE_PERL%%/PAR

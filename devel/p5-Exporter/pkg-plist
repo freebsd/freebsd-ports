@@ -3,5 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/.packlist
 %%PERL5_MAN3%%/Exporter.3.gz
 %%PERL5_MAN3%%/Exporter::Heavy.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter
-@dirrmtry %%SITE_PERL%%/Exporter

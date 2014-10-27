@@ -1,4 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/AppConfig/.packlist
 %%SITE_PERL%%/YAML/AppConfig.pm
 %%PERL5_MAN3%%/YAML::AppConfig.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/AppConfig

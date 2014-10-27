@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Append/TempFile/.packlist
 %%SITE_PERL%%/File/Append/TempFile.pm
 %%PERL5_MAN3%%/File::Append::TempFile.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Append/TempFile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Append
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Append
-@dirrmtry %%SITE_PERL%%/File

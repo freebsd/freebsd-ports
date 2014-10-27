@@ -5,8 +5,3 @@
 %%PERL5_MAN3%%/Object::Array.3.gz
 %%PERL5_MAN3%%/Object::Array::Plugin::Builtins.3.gz
 %%PERL5_MAN3%%/Object::Array::Plugin::ListMoreUtils.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Array
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
-@dirrm %%SITE_PERL%%/Object/Array/Plugin
-@dirrm %%SITE_PERL%%/Object/Array
-@dirrmtry %%SITE_PERL%%/Object

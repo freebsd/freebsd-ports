@@ -39,6 +39,3 @@
 %%SITE_PERL%%/Cache/SizeAwareMemoryCache.pm
 %%SITE_PERL%%/Cache/SizeAwareSharedMemoryCache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Cache/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Cache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
-@dirrmtry %%SITE_PERL%%/Cache

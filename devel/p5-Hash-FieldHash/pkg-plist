@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Hash/FieldHash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/FieldHash/FieldHash.so
 %%PERL5_MAN3%%/Hash::FieldHash.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/FieldHash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Hash

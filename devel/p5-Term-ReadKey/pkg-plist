@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadKey/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadKey/ReadKey.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadKey/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Term
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadKey
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term

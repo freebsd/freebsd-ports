@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/common/sense/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/common/sense.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/common/sense.pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/common/sense
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/common
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/common

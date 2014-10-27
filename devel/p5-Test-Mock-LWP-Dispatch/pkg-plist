@@ -1,10 +1,3 @@
 %%SITE_PERL%%/Test/Mock/LWP/Dispatch.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock/LWP/Dispatch/.packlist
 %%PERL5_MAN3%%/Test::Mock::LWP::Dispatch.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock/LWP/Dispatch
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock/LWP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Mock/LWP
-@dirrmtry %%SITE_PERL%%/Test/Mock
-@dirrmtry %%SITE_PERL%%/Test

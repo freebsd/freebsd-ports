@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Test/Number/Delta.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Number/Delta/.packlist
 %%PERL5_MAN3%%/Test::Number::Delta.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Number/Delta
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Number
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Number
-@dirrmtry %%SITE_PERL%%/Test

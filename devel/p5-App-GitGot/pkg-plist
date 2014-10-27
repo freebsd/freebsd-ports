@@ -51,10 +51,3 @@ bin/got-complete
 %%PERL5_MAN3%%/App::GitGot::Repo::Git.3.gz
 man/man1/got-complete.1.gz
 man/man1/got.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrm %%SITE_PERL%%/App/GitGot/Repo
-@dirrm %%SITE_PERL%%/App/GitGot/Outputter
-@dirrm %%SITE_PERL%%/App/GitGot/Command
-@dirrm %%SITE_PERL%%/App/GitGot
-@dirrmtry %%SITE_PERL%%/App

@@ -14,11 +14,6 @@
 %%SITE_PERL%%/App/Info/Handler.pm
 %%SITE_PERL%%/App/Info/Util.pm
 %%SITE_PERL%%/App/Info.pm
-@dirrm %%SITE_PERL%%/App/Info/Lib
-@dirrm %%SITE_PERL%%/App/Info/Handler
-@dirrm %%SITE_PERL%%/App/Info/RDBMS
-@dirrm %%SITE_PERL%%/App/Info/HTTPD
-@dirrm %%SITE_PERL%%/App/Info
 %%PERL5_MAN3%%/App::Info.3.gz
 %%PERL5_MAN3%%/App::Info::HTTPD.3.gz
 %%PERL5_MAN3%%/App::Info::HTTPD::Apache.3.gz
@@ -35,4 +30,3 @@
 %%PERL5_MAN3%%/App::Info::RDBMS::SQLite.3.gz
 %%PERL5_MAN3%%/App::Info::Request.3.gz
 %%PERL5_MAN3%%/App::Info::Util.3.gz
-@dirrmtry %%SITE_PERL%%/App

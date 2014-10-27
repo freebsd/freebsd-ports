@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Class::Multimethods::Pure.3.gz
 %%SITE_PERL%%/Class/Multimethods/Pure.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Multimethods/Pure/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Multimethods/Pure
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Multimethods
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Multimethods
-@dirrmtry %%SITE_PERL%%/Class

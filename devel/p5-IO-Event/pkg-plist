@@ -7,7 +7,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Event/.packlist
 %%PERL5_MAN3%%/IO::Event.3.gz
 %%PERL5_MAN3%%/IO::Event::Callback.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Event
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO/Event
-@dirrmtry %%SITE_PERL%%/IO

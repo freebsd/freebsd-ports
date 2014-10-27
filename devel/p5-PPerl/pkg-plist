@@ -4,4 +4,3 @@ man/man1/pperl.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPerl/PPerl.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPerl/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/PPerl.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPerl

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Struct/Dumb.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Struct/Dumb/.packlist
 %%PERL5_MAN3%%/Struct::Dumb.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Struct/Dumb
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Struct
-@dirrmtry %%SITE_PERL%%/Struct

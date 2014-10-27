@@ -7,7 +7,3 @@
 %%PERL5_MAN3%%/ExtUtils::Helpers::Unix.3.gz
 %%PERL5_MAN3%%/ExtUtils::Helpers::VMS.3.gz
 %%PERL5_MAN3%%/ExtUtils::Helpers::Windows.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Helpers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrmtry %%SITE_PERL%%/ExtUtils/Helpers
-@dirrmtry %%SITE_PERL%%/ExtUtils

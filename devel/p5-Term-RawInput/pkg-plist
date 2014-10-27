@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/RawInput/.packlist
 %%SITE_PERL%%/Term/RawInput.pm
 %%PERL5_MAN3%%/Term::RawInput.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/RawInput
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term

@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/LexAlias/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/LexAlias/LexAlias.so
 %%PERL5_MAN3%%/Devel::LexAlias.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/LexAlias
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

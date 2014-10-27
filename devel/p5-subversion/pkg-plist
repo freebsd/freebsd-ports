@@ -26,12 +26,3 @@ lib/libsvn_swig_perl-1.so.0.0.0
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Ra/_Ra.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Repos/_Repos.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Wc/_Wc.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Wc
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Repos
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Ra
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Fs
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Delta
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Client
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SVN

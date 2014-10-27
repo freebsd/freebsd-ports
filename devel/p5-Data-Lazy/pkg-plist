@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Data::Lazy.3.gz
 %%SITE_PERL%%/Data/Lazy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Lazy/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Lazy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data

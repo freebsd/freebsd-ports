@@ -239,39 +239,3 @@ bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/SimpleType.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/WhiteSpace.pm
 man/man1/wsdl2perl.pl.1.gz
-@dirrm %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin
-@dirrm %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib
-@dirrm %%SITE_PERL%%/SOAP/WSDL/XSD/Schema
-@dirrm %%SITE_PERL%%/SOAP/WSDL/XSD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Transport
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Server
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Serializer
-@dirrm %%SITE_PERL%%/SOAP/WSDL/SOAP/Typelib
-@dirrm %%SITE_PERL%%/SOAP/WSDL/SOAP
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Manual
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Visitor
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/simpleContent
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/Plugin
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Iterator
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Factory
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Expat
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Deserializer
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Client
-@dirrm %%SITE_PERL%%/SOAP/WSDL
-@dirrmtry %%SITE_PERL%%/SOAP

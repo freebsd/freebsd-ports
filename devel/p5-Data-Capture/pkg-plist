@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Data::Capture.3.gz
 %%SITE_PERL%%/Data/Capture.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Capture/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Capture
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data

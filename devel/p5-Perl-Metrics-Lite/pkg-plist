@@ -21,15 +21,3 @@ man/man1/measureperl.1.gz
 %%PERL5_MAN3%%/Perl::Metrics::Lite::Analysis.3.gz
 %%PERL5_MAN3%%/Perl::Metrics::Lite::Analysis::Util.3.gz
 %%PERL5_MAN3%%/Perl::Metrics::Lite::FileFinder.3.gz
-@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Report
-@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis/Sub/Plugin
-@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis/Sub
-@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis/File/Plugin
-@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis/File
-@dirrm %%SITE_PERL%%/Perl/Metrics/Lite/Analysis
-@dirrm %%SITE_PERL%%/Perl/Metrics/Lite
-@dirrmtry %%SITE_PERL%%/Perl/Metrics
-@dirrmtry %%SITE_PERL%%/Perl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Metrics/Lite
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Metrics
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl

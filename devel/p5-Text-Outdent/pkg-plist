@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Text/Outdent.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Outdent/.packlist
 %%PERL5_MAN3%%/Text::Outdent.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Outdent
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text

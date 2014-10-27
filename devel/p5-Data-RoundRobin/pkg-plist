@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/RoundRobin/.packlist
 %%SITE_PERL%%/Data/RoundRobin.pm
 %%PERL5_MAN3%%/Data::RoundRobin.3.gz
-@dirrmtry %%SITE_PERL%%/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/RoundRobin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

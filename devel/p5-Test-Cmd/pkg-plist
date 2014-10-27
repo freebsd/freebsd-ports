@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Test/Cmd.pm
 %%SITE_PERL%%/Test/Cmd/Common.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Cmd/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Cmd
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Cmd
-@dirrmtry %%SITE_PERL%%/Test

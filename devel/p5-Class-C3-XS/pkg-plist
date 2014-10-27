@@ -2,8 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/C3/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/XS/XS.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/C3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class

@@ -11,7 +11,3 @@
 %%PERL5_MAN3%%/CPAN::Reporter::PrereqCheck.3.gz
 %%PERL5_MAN3%%/CPAN::Reporter.3.gz
 %%PERL5_MAN3%%/CPAN::Reporter::FAQ.3.gz
-@dirrmtry %%SITE_PERL%%/CPAN/Reporter
-@dirrmtry %%SITE_PERL%%/CPAN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Reporter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN

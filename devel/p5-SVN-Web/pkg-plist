@@ -80,14 +80,3 @@ man/man1/svnweb-install.1.gz
 %%WWWDIR%%/template/trac/rss
 %%WWWDIR%%/template/trac/view
 %%WWWDIR%%/template/trac/x
-@dirrm %%WWWDIR%%/template/trac
-@dirrm %%WWWDIR%%/template/plain
-@dirrm %%WWWDIR%%/template
-@dirrm %%WWWDIR%%/css/trac
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
-@dirrm %%SITE_PERL%%/SVN/Web/I18N
-@dirrm %%SITE_PERL%%/SVN/Web
-@dirrmtry %%SITE_PERL%%/SVN

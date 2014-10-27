@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Class::Container.3.gz
 %%SITE_PERL%%/Class/Container.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Container/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Container
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Cache/FastMmap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/FastMmap/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/FastMmap/FastMmap.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/FastMmap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Cache

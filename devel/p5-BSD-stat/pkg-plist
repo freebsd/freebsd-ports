@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/stat/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/stat/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/stat/stat.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/stat
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/BSD

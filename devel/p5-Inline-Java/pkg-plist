@@ -38,13 +38,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl/inline/java/InlineJavaUtils.java
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/JNI/JNI.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/JNI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl/inline/java
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl/inline
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Inline

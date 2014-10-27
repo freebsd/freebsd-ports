@@ -6,7 +6,3 @@
 %%SITE_PERL%%/Tie/Simple/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Simple/.packlist
 %%PERL5_MAN3%%/Tie::Simple.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrm %%SITE_PERL%%/Tie/Simple
-@dirrmtry %%SITE_PERL%%/Tie

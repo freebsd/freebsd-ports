@@ -1,6 +1,3 @@
 %%SITE_PERL%%/IPC/Signal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Signal/.packlist
 %%PERL5_MAN3%%/IPC::Signal.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Signal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrmtry %%SITE_PERL%%/IPC

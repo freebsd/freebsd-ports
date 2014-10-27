@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/Refcount.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Refcount/.packlist
 %%PERL5_MAN3%%/Test::Refcount.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Refcount
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

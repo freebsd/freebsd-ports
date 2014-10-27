@@ -1,6 +1,3 @@
 %%SITE_PERL%%/SVN/Statistics.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Statistics/.packlist
 %%PERL5_MAN3%%/SVN::Statistics.3.gz
-@dirrmtry %%SITE_PERL%%/SVN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Statistics
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN

@@ -7,11 +7,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/TransactionalMethods/.packlist
 %%PERL5_MAN3%%/MooseX::Meta::Method::Transactional.3.gz
 %%PERL5_MAN3%%/MooseX::TransactionalMethods.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/TransactionalMethods
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Transactional/Meta
-@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Transactional/Application
-@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Transactional
-@dirrmtry %%SITE_PERL%%/MooseX/Meta/Method
-@dirrmtry %%SITE_PERL%%/MooseX/Meta
-@dirrmtry %%SITE_PERL%%/MooseX

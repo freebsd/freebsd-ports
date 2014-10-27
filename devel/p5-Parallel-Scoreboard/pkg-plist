@@ -5,9 +5,3 @@
 %%SITE_PERL%%/Parallel/Scoreboard.pm
 %%SITE_PERL%%/Parallel/Scoreboard/PSGI/App.pm
 %%SITE_PERL%%/Parallel/Scoreboard/PSGI/App/JSON.pm
-@dirrm %%SITE_PERL%%/Parallel/Scoreboard/PSGI/App
-@dirrm %%SITE_PERL%%/Parallel/Scoreboard/PSGI
-@dirrm %%SITE_PERL%%/Parallel/Scoreboard
-@dirrmtry %%SITE_PERL%%/Parallel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Scoreboard
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel

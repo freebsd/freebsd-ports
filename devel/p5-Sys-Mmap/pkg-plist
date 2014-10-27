@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Mmap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Mmap/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Mmap/Mmap.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Mmap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys

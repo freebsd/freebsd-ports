@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/Module/Used.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Module/Used/.packlist
 %%PERL5_MAN3%%/Test::Module::Used.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Module/Used
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Module
-@dirrmtry %%SITE_PERL%%/Test/Module

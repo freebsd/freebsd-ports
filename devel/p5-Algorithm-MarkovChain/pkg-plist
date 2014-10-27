@@ -1,5 +1,3 @@
 %%PERL5_MAN3%%/Algorithm::MarkovChain.3.gz
 %%SITE_PERL%%/Algorithm/MarkovChain.pm
 %%SITE_PERL%%/Algorithm/MarkovChain/Base.pm
-@dirrm %%SITE_PERL%%/Algorithm/MarkovChain
-@dirrmtry %%SITE_PERL%%/Algorithm

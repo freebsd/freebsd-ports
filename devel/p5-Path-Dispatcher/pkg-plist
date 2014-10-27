@@ -40,9 +40,3 @@
 %%SITE_PERL%%/Path/Dispatcher/Rule/Tokens.pm
 %%SITE_PERL%%/Path/Dispatcher/Rule/Under.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path
-@dirrm %%SITE_PERL%%/Path/Dispatcher/Rule
-@dirrm %%SITE_PERL%%/Path/Dispatcher/Role
-@dirrm %%SITE_PERL%%/Path/Dispatcher
-@dirrmtry %%SITE_PERL%%/Path

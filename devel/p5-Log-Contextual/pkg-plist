@@ -16,10 +16,3 @@
 %%SITE_PERL%%/Log/Contextual/SimpleLogger.pm
 %%SITE_PERL%%/Log/Contextual/TeeLogger.pm
 %%SITE_PERL%%/Log/Contextual/WarnLogger.pm
-@dirrm %%SITE_PERL%%/Log/Contextual/Role/Router
-@dirrm %%SITE_PERL%%/Log/Contextual/Role
-@dirrm %%SITE_PERL%%/Log/Contextual/Easy
-@dirrm %%SITE_PERL%%/Log/Contextual
-@dirrmtry %%SITE_PERL%%/Log
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Contextual
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log

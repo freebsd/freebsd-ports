@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Stream/Reader.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stream/Reader/.packlist
 %%PERL5_MAN3%%/Stream::Reader.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stream/Reader
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stream
-@dirrmtry %%SITE_PERL%%/Stream

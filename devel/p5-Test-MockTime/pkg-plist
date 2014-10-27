@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Test/MockTime.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/MockTime/.packlist
 %%PERL5_MAN3%%/Test::MockTime.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/MockTime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

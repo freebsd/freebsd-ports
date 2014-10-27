@@ -21,9 +21,3 @@
 %%SITE_PERL%%/Sub/Defer.pm
 %%SITE_PERL%%/Sub/Quote.pm
 %%SITE_PERL%%/oo.pm
-@dirrmtry %%SITE_PERL%%/Sub
-@dirrmtry %%SITE_PERL%%/Moo/HandleMoose
-@dirrmtry %%SITE_PERL%%/Moo
-@dirrmtry %%SITE_PERL%%/Method/Generate
-@dirrmtry %%SITE_PERL%%/Method
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moo

@@ -15,7 +15,3 @@
 %%PERL5_MAN3%%/Set::Scalar::Valued.3.gz
 %%PERL5_MAN3%%/Set::Scalar::ValuedUniverse.3.gz
 %%PERL5_MAN3%%/Set::Scalar::Universe.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Scalar
-@dirrm %%SITE_PERL%%/Set/Scalar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
-@dirrmtry %%SITE_PERL%%/Set

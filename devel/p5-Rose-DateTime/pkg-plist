@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Rose::DateTime.3.gz
 %%PERL5_MAN3%%/Rose::DateTime::Parser.3.gz
 %%PERL5_MAN3%%/Rose::DateTime::Util.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DateTime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
-@dirrmtry %%SITE_PERL%%/Rose/DateTime
-@dirrmtry %%SITE_PERL%%/Rose

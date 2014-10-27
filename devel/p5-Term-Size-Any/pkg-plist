@@ -2,8 +2,3 @@
 %%SITE_PERL%%/Term/Size/Any.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size/Any/.packlist
 %%PERL5_MAN3%%/Term::Size::Any.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size/Any
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term/Size
-@dirrmtry %%SITE_PERL%%/Term

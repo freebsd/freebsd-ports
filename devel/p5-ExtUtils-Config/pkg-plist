@@ -1,6 +1,3 @@
 %%SITE_PERL%%/ExtUtils/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Config/.packlist
 %%PERL5_MAN3%%/ExtUtils::Config.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Config
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrmtry %%SITE_PERL%%/ExtUtils

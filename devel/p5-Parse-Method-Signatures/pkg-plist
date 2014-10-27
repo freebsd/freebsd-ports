@@ -16,11 +16,3 @@
 %%PERL5_MAN3%%/Parse::Method::Signatures::Param.3.gz
 %%PERL5_MAN3%%/Parse::Method::Signatures::Sig.3.gz
 %%PERL5_MAN3%%/Parse::Method::Signatures::TypeConstraint.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Method/Signatures
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Method
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
-@dirrm %%SITE_PERL%%/Parse/Method/Signatures/Param/Unpacked
-@dirrm %%SITE_PERL%%/Parse/Method/Signatures/Param
-@dirrm %%SITE_PERL%%/Parse/Method/Signatures
-@dirrmtry %%SITE_PERL%%/Parse/Method
-@dirrmtry %%SITE_PERL%%/Parse

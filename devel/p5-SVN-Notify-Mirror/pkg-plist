@@ -6,6 +6,3 @@
 %%PERL5_MAN3%%/SVN::Notify::Mirror::ConfigData.3.gz
 %%PERL5_MAN3%%/SVN::Notify::Mirror::Rsync.3.gz
 %%PERL5_MAN3%%/SVN::Notify::Mirror::SSH.3.gz
-@dirrm %%SITE_PERL%%/SVN/Notify/Mirror
-@dirrmtry %%SITE_PERL%%/SVN/Notify
-@dirrmtry %%SITE_PERL%%/SVN

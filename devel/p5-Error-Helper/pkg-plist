@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Error/Helper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Error/Helper/.packlist
 %%PERL5_MAN3%%/Error::Helper.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Error/Helper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Error
-@dirrmtry %%SITE_PERL%%/Error

@@ -1,5 +1,2 @@
 %%PERL5_MAN3%%/Log::Dispatch::Email::EmailSend.3.gz
 %%SITE_PERL%%/Log/Dispatch/Email/EmailSend.pm
-@dirrmtry %%SITE_PERL%%/Log/Dispatch/Email
-@dirrmtry %%SITE_PERL%%/Log/Dispatch
-@dirrmtry %%SITE_PERL%%/Log

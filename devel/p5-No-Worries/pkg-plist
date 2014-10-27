@@ -27,7 +27,3 @@
 %%PERL5_MAN3%%/No::Worries::String.3.gz
 %%PERL5_MAN3%%/No::Worries::Syslog.3.gz
 %%PERL5_MAN3%%/No::Worries::Warn.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/No/Worries
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/No
-@dirrmtry %%SITE_PERL%%/No/Worries
-@dirrmtry %%SITE_PERL%%/No

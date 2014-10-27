@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Algorithm/Interval2Prefix.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Interval2Prefix/.packlist
 %%PERL5_MAN3%%/Algorithm::Interval2Prefix.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Interval2Prefix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm

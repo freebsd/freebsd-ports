@@ -2,6 +2,3 @@ bin/perl5i.pl
 %%PERL5_MAN3%%/Devel::EvalContext.3.gz
 %%SITE_PERL%%/Devel/EvalContext.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/EvalContext/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/EvalContext
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

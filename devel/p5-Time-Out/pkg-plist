@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Time/Out.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Out/.packlist
 %%PERL5_MAN3%%/Time::Out.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Out
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
-@dirrmtry %%SITE_PERL%%/Time

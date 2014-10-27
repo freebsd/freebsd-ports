@@ -19,10 +19,3 @@ bin/execflow
 %%SITE_PERL%%/Event/ExecFlow/Scheduler.pm
 %%SITE_PERL%%/Event/ExecFlow/Scheduler/SimpleMax.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/ExecFlow/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/ExecFlow
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event
-@dirrm %%SITE_PERL%%/Event/ExecFlow/Scheduler
-@dirrm %%SITE_PERL%%/Event/ExecFlow/Job
-@dirrm %%SITE_PERL%%/Event/ExecFlow/Frontend
-@dirrm %%SITE_PERL%%/Event/ExecFlow
-@dirrmtry %%SITE_PERL%%/Event

@@ -27,7 +27,3 @@
 %%PERL5_MAN3%%/Moose::Autobox::String.3.gz
 %%PERL5_MAN3%%/Moose::Autobox::Undef.3.gz
 %%PERL5_MAN3%%/Moose::Autobox::Value.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Autobox
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
-@dirrmtry %%SITE_PERL%%/Moose/Autobox
-@dirrmtry %%SITE_PERL%%/Moose

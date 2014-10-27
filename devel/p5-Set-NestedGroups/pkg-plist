@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Set/NestedGroups/Member.pm
 %%PERL5_MAN3%%/Set::NestedGroups.3.gz
 %%PERL5_MAN3%%/Set::NestedGroups::Member.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/NestedGroups
-@dirrm %%SITE_PERL%%/Set/NestedGroups
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
-@dirrmtry %%SITE_PERL%%/Set

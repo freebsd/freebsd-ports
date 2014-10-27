@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Variable/Magic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Variable/Magic/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Variable/Magic/Magic.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Variable/Magic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Variable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Variable

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Any::Moose.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Any/Moose/.packlist
 %%SITE_PERL%%/Any/Moose.pm
-@dirrmtry %%SITE_PERL%%/Any
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Any/Moose
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Any

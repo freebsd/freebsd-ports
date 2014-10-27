@@ -8,7 +8,3 @@
 %%PERL5_MAN3%%/IO::Pager::Page.3.gz
 %%PERL5_MAN3%%/IO::Pager::Unbuffered.3.gz
 %%PERL5_MAN3%%/IO::Pager.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Pager/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO/Pager
-@dirrmtry %%SITE_PERL%%/IO

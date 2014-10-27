@@ -15,9 +15,3 @@
 %%PERL5_MAN3%%/Test::More.3.gz
 %%PERL5_MAN3%%/Test::Simple.3.gz
 %%PERL5_MAN3%%/Test::Tutorial.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Builder/Tester
-@dirrmtry %%SITE_PERL%%/Test/Builder/IO
-@dirrmtry %%SITE_PERL%%/Test/Builder
-@dirrmtry %%SITE_PERL%%/Test

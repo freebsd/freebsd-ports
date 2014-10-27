@@ -6,11 +6,3 @@
 %%PERL5_MAN3%%/Data::Domain::Dependencies.3.gz
 %%PERL5_MAN3%%/Params::Validate::Dependencies.3.gz
 %%PERL5_MAN3%%/Params::Validate::Dependencies::Extending.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/Dependencies
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params
-@dirrm %%SITE_PERL%%/Params/Validate/Dependencies
-@dirrmtry %%SITE_PERL%%/Params/Validate
-@dirrmtry %%SITE_PERL%%/Params
-@dirrmtry %%SITE_PERL%%/Data/Domain
-@dirrmtry %%SITE_PERL%%/Data

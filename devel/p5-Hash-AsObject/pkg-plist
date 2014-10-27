@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Hash::AsObject.3.gz
 %%SITE_PERL%%/Hash/AsObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/AsObject/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/AsObject
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
-@dirrmtry %%SITE_PERL%%/Hash

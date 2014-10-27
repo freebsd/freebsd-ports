@@ -16,7 +16,3 @@
 %%PERL5_MAN3%%/PerlIO::flock.3.gz
 %%PERL5_MAN3%%/PerlIO::reverse.3.gz
 %%PERL5_MAN3%%/PerlIO::tee.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO

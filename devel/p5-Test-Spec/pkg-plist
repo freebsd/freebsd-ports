@@ -5,7 +5,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Spec/.packlist
 %%PERL5_MAN3%%/Test::Spec.3.gz
 %%PERL5_MAN3%%/Test::Spec::Mocks.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Spec
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Spec
-@dirrmtry %%SITE_PERL%%/Test

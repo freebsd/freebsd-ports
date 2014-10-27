@@ -2,8 +2,3 @@
 %%SITE_PERL%%/File/Path/Tiny.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Path/Tiny/.packlist
 %%PERL5_MAN3%%/File::Path::Tiny.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Path/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Path
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Path
-@dirrmtry %%SITE_PERL%%/File

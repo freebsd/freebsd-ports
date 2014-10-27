@@ -17,8 +17,3 @@ bin/release
 %%PERL5_MAN3%%/Module::Release::SVN.3.gz
 %%PERL5_MAN3%%/Module::Release::WebUpload::Mojo.3.gz
 man/man1/release.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Release
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module/Release/WebUpload
-@dirrmtry %%SITE_PERL%%/Module/Release
-@dirrmtry %%SITE_PERL%%/Module
