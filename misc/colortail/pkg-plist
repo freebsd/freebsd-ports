@@ -4,4 +4,3 @@ bin/colortail
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf.messages
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf.secure
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf.xferlog
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
