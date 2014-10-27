@@ -4,6 +4,7 @@
 PORTNAME=	logstash-contrib
 DISTVERSION=	1.4.2
 CATEGORIES=	sysutils
+PORTREVISION=	1
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Standard plugins contributed to the Logstash project
@@ -24,6 +25,7 @@ LOGSTASH_LIB=		${LOCALBASE}/logstash/${LOGSTASH_LIB_SUBDIR}
 do-install::
 	@${MKDIR} ${STAGEDIR}${LOGSTASH_LIB}/
 	cd ${WRKSRC}/${LOGSTASH_LIB_SUBDIR} && \
-	    ${COPYTREE_BIN} . ${STAGEDIR}${LOGSTASH_LIB} "! -name version.rb"
+	    ${COPYTREE_BIN} . ${STAGEDIR}${LOGSTASH_LIB} \
+		"! -name version.rb ! -name zeromq.rb"
 
 .include <bsd.port.mk>
