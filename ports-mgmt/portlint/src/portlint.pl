@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.342 2014/10/26 18:08:18 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.344 2014/10/27 16:00:59 marcus Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 16;
-my $micro = 0;
+my $micro = 1;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -2466,6 +2466,10 @@ DIST_SUBDIR EXTRACT_ONLY
 			&perror("WARN", $file, -1, "no need to define EXTRACT_SUFX if ".
 				"DISTFILES is defined.");
 		}
+		if ($extractsufx eq '.tar.gz') {
+			&perror("WARN", $file, -1, "EXTRACT_SUFX is \".tar.gz.\" ".
+				"by default. you don't need to specify it.");
+		}
 		if ($extractsufx =~ /^\.tar\.(bz2|lzma|xz|Z)$/) {
 			my $ext = $1;
 			$ext = 'bzip2' if ($ext eq 'bz2');
@@ -2475,10 +2479,6 @@ DIST_SUBDIR EXTRACT_ONLY
 		if ($extractsufx =~ /^\.(tgz|tbz|txz)$/) {
 			&perror("WARN", $file, -1, "EXTRACT_SUFX is \".$1\". ".
 				"Please use USES=tar:$1 instead.");
-		}
-		if ($extractsufx eq '.tar.bz2') {
-			&perror("WARN", $file, -1, "EXTRACT_SUFX is \".tar.bz2.\" ".
-				"You should use USE_BZIP2 instead.");
 		}
 		if ($extractsufx eq '.zip') {
 			 &perror("WARN", $file, -1, "EXTRACT_SUFX is \".zip\" ".
