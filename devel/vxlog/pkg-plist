@@ -13,4 +13,3 @@ include/vxlog/type-to-string.h
 lib/libvxlog.so
 lib/libvxlog.so.1
 lib/libvxlog.so.1.0
-@dirrm include/vxlog

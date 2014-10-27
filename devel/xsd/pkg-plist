@@ -390,46 +390,6 @@ man/man1/xsdcxx.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/driver.cxx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/people.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/xpath/people.xsd
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/xpath
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/wildcard
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/streaming
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/polymorphism
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/performance
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/multiroot
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/mixed
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/messaging
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/library
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/hello
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/embedded
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/dbxml
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/wildcard
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/taxonomy
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/mixed
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/double
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/contacts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/comments
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom/calendar
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/custom
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/compression
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/caching
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/binary/xdr
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/binary/cdr
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/binary/boost
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree/binary
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/tree
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/wildcard
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/polyroot
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/polymorphism
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/performance
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/multiroot
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/mixin
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/mixed
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/library
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/hello
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser/generated
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx/parser
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cxx
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/FLOSSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -455,32 +415,3 @@ man/man1/xsdcxx.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/future.xhtml
 %%PORTDOCS%%%%DOCSDIR%%/schema-authoring-guide.xhtml
 %%PORTDOCS%%%%DOCSDIR%%/xsd.xhtml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree/guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree/dbxml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/tree
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/parser/guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/parser
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/xsd/cxx/xml/sax/bits
-@dirrm include/xsd/cxx/xml/sax
-@dirrm include/xsd/cxx/xml/dom/bits
-@dirrm include/xsd/cxx/xml/dom
-@dirrm include/xsd/cxx/xml/bits
-@dirrm include/xsd/cxx/xml
-@dirrm include/xsd/cxx/tree/serialization
-@dirrm include/xsd/cxx/tree/parsing
-@dirrm include/xsd/cxx/tree/bits
-@dirrm include/xsd/cxx/tree
-@dirrm include/xsd/cxx/parser/xerces
-@dirrm include/xsd/cxx/parser/validating
-@dirrm include/xsd/cxx/parser/non-validating
-@dirrm include/xsd/cxx/parser/expat
-@dirrm include/xsd/cxx/parser
-@dirrm include/xsd/cxx/compilers/vc-8
-@dirrm include/xsd/cxx/compilers/vc-7
-@dirrm include/xsd/cxx/compilers
-@dirrm include/xsd/cxx
-@dirrm include/xsd

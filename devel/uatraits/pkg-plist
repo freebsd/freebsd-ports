@@ -43,6 +43,3 @@ share/uatraits/browser.xsd
 share/uatraits/cover.xml
 share/uatraits/profiles.xml
 share/uatraits/tests.xml
-@dirrm share/uatraits
-@dirrm include/uatraits/details
-@dirrm include/uatraits

@@ -11,4 +11,3 @@ lib/libumem_malloc.so.0.0.0
 man/man3/umem_alloc.3.gz
 man/man3/umem_cache_create.3.gz
 man/man3/umem_debug.3.gz
-@dirrmtry include/sys

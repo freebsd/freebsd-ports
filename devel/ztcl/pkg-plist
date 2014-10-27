@@ -8,4 +8,3 @@ lib/libztclstub1.0.a
 lib/libztclstub1.a
 lib/ztcl/pkgIndex.tcl
 share/aclocal/ztcl.m4
-@dirrm lib/ztcl

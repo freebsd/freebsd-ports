@@ -434,24 +434,3 @@
 %%WEBSVNDIR%%/templates/calm/revision.tmpl
 %%WEBSVNDIR%%/templates/calm/styles.css
 %%WEBSVNDIR%%/wsvn.php
-@dirrm %%WEBSVNDIR%%/cache
-@dirrm %%WEBSVNDIR%%/doc
-@dirrm %%WEBSVNDIR%%/include
-@dirrm %%WEBSVNDIR%%/javascript
-@dirrm %%WEBSVNDIR%%/languages
-@dirrm %%WEBSVNDIR%%/lib/geshi
-@dirrm %%WEBSVNDIR%%/lib/pear/Text/Diff/Engine
-@dirrm %%WEBSVNDIR%%/lib/pear/Text/Diff/Renderer
-@dirrm %%WEBSVNDIR%%/lib/pear/Text/Diff
-@dirrm %%WEBSVNDIR%%/lib/pear/Text
-@dirrm %%WEBSVNDIR%%/lib/pear/Archive
-@dirrm %%WEBSVNDIR%%/lib/pear
-@dirrm %%WEBSVNDIR%%/lib
-@dirrm %%WEBSVNDIR%%/templates/calm/images
-@dirrm %%WEBSVNDIR%%/templates/calm
-@dirrm %%WEBSVNDIR%%/templates/BlueGrey/images
-@dirrm %%WEBSVNDIR%%/templates/BlueGrey
-@dirrm %%WEBSVNDIR%%/templates/Elegant/images
-@dirrm %%WEBSVNDIR%%/templates/Elegant
-@dirrm %%WEBSVNDIR%%/templates
-@dirrm %%WEBSVNDIR%%

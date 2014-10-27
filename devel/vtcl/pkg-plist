@@ -368,23 +368,3 @@ lib/vtcl/lib/var.tcl
 lib/vtcl/lib/vtclib.tcl
 lib/vtcl/lib/widget.tcl
 lib/vtcl/vtcl.tcl
-@dirrm lib/vtcl/lib/ttd
-@dirrm lib/vtcl/lib/bwidget/lang
-@dirrm lib/vtcl/lib/bwidget/images
-@dirrm lib/vtcl/lib/bwidget
-@dirrm lib/vtcl/lib/kpwidgets
-@dirrm lib/vtcl/lib/Widgets/vtcl
-@dirrm lib/vtcl/lib/Widgets/user
-@dirrm lib/vtcl/lib/Widgets/tix
-@dirrm lib/vtcl/lib/Widgets/tablelist
-@dirrm lib/vtcl/lib/Widgets/table
-@dirrm lib/vtcl/lib/Widgets/itcl
-@dirrm lib/vtcl/lib/Widgets/core
-@dirrm lib/vtcl/lib/Widgets/bwidget
-@dirrm lib/vtcl/lib/Widgets/blt
-@dirrm lib/vtcl/lib/Widgets
-@dirrm lib/vtcl/lib/Help
-@dirrm lib/vtcl/lib
-@dirrm lib/vtcl/images/edit
-@dirrm lib/vtcl/images
-@dirrm lib/vtcl

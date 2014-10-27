@@ -8,4 +8,3 @@ man/man1/z80asm.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/msx2-subrom.asm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/msxturbor-bios.asm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seek.asm
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -38,7 +38,3 @@ lib/libyaml-cpp.so
 lib/libyaml-cpp.so.0
 lib/libyaml-cpp.so.0.5.1
 libdata/pkgconfig/yaml-cpp.pc
-@dirrm include/yaml-cpp/contrib
-@dirrm include/yaml-cpp/node/detail
-@dirrm include/yaml-cpp/node
-@dirrm include/yaml-cpp

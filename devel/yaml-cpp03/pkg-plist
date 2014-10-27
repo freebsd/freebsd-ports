@@ -29,5 +29,3 @@ lib/libyaml-cpp03.so
 lib/libyaml-cpp03.so.0
 lib/libyaml-cpp03.so.0.3.0
 libdata/pkgconfig/yaml-cpp03.pc
-@dirrm include/yaml-cpp03/contrib
-@dirrm include/yaml-cpp03
