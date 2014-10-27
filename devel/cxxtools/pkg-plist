@@ -237,13 +237,3 @@ libdata/pkgconfig/cxxtools-json.pc
 libdata/pkgconfig/cxxtools-unit.pc
 libdata/pkgconfig/cxxtools-xmlrpc.pc
 libdata/pkgconfig/cxxtools.pc
-@dirrm include/cxxtools/xmlrpc
-@dirrm include/cxxtools/xml
-@dirrm include/cxxtools/unit
-@dirrm include/cxxtools/posix
-@dirrm include/cxxtools/net
-@dirrm include/cxxtools/log
-@dirrm include/cxxtools/json
-@dirrm include/cxxtools/http
-@dirrm include/cxxtools/bin
-@dirrm include/cxxtools

@@ -88,10 +88,3 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bison.mo
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky
-@dirrm %%DATADIR%%/m4sugar
-@dirrm %%DATADIR%%/xslt
-@dirrm %%DATADIR%%

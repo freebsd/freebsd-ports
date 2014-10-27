@@ -21,9 +21,3 @@ man/man1/diffuse.1.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/diffuse.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/diffuse.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/diffuse.mo
-%%NLS%%@dirrmtry man/cs/man1
-%%NLS%%@dirrmtry man/cs
-%%NLS%%@dirrmtry man/it/man1
-%%NLS%%@dirrmtry man/it
-%%NLS%%@dirrmtry man/ru/man1
-%%NLS%%@dirrmtry man/ru

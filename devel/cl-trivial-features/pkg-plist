@@ -13,11 +13,7 @@
 %%LIB32DIR%%/common-lisp/trivial-features/trivial-features.asd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/SPEC
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/package.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sysinfo.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/utsname.lisp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%LIB32DIR%%/common-lisp/trivial-features/src
-@dirrm %%LIB32DIR%%/common-lisp/trivial-features

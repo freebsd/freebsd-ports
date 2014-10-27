@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/pthreads.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/pthreads.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/libppthreads.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

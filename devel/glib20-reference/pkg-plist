@@ -430,6 +430,3 @@ share/doc/gobject/tools-gtkdoc.html
 share/doc/gobject/tools-refdb.html
 share/doc/gobject/tools-vala.html
 share/doc/gobject/up.png
-@dirrm share/doc/gobject
-@dirrm share/doc/glib
-@dirrm share/doc/gio

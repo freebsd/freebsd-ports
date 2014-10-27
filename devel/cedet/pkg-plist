@@ -571,16 +571,3 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/srecode/templates/srecode-test.srt
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/srecode/templates/srecode-texi.srt
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/srecode/templates/srecode-wisent.srt
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/srecode/templates
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/srecode
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/bovine
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/contrib
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/icons
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/cogre
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet

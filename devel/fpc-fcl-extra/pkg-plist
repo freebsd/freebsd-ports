@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/daemonapp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/daemonapp.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/libpdaemonapp.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

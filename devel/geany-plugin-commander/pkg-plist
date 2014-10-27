@@ -4,5 +4,3 @@ lib/geany/commander.so
 %%DOCSDIR%%/commander/ChangeLog
 %%DOCSDIR%%/commander/NEWS
 %%DOCSDIR%%/commander/README
-@dirrm %%DOCSDIR%%/commander
-@dirrmtry %%DOCSDIR%%

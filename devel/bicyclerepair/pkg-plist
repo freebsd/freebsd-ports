@@ -232,9 +232,3 @@
 %%PYTHON_SITELIBDIR%%/bikeemacs.py
 %%PYTHON_SITELIBDIR%%/bikeemacs.pyc
 %%PYTHON_SITELIBDIR%%/bikeemacs.pyo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/bike/parsing
-@dirrm %%PYTHON_SITELIBDIR%%/bike/query
-@dirrm %%PYTHON_SITELIBDIR%%/bike/refactor
-@dirrm %%PYTHON_SITELIBDIR%%/bike/transformer
-@dirrm %%PYTHON_SITELIBDIR%%/bike

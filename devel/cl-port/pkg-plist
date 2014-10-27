@@ -9,5 +9,3 @@ lib/common-lisp/port/proc.lisp
 lib/common-lisp/port/shell.lisp
 lib/common-lisp/port/sys.lisp
 %%PORTDOCS%%share/doc/cl-port/port.html
-@dirrm lib/common-lisp/port
-%%PORTDOCS%%@dirrm share/doc/cl-port

@@ -345,26 +345,3 @@ share/locale/zh_CN/LC_MESSAGES/gettext-tools.mo
 share/locale/zh_HK/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
-@dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%/projects/TP
-@dirrm %%DATADIR%%/projects/KDE
-@dirrm %%DATADIR%%/projects/GNOME
-@dirrm %%DATADIR%%/projects
-@dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/intl
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm share/doc/libasprintf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc2/gnu/gettext
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc2/gnu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/build-aux
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/csharpdoc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/gettext
-@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-@dirrmtry share/locale/en@quot/LC_MESSAGES
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/en@boldquot
-@dirrmtry share/locale/en@quot
-@dirrmtry share/locale/zh_HK

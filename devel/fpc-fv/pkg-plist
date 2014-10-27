@@ -72,9 +72,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libptimeddlg.a
 %%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/fv/testapp.pas
 %%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/fv/Makefile.fpc
 %%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/fv/Makefile
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc
-%%PORTEXAMPLES%%@dirrm share/examples/fpc-%%PORTVERSION%%/fv
-%%PORTEXAMPLES%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

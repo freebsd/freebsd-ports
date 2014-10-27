@@ -38,8 +38,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

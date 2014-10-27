@@ -19,5 +19,3 @@ lib/geany/geanylatex.so
 %%DOCSDIR%%/geanylatex/latexwizard.png
 %%DOCSDIR%%/geanylatex/plugin_manager.png
 %%DOCSDIR%%/geanylatex/toolbar.png
-@dirrm %%DOCSDIR%%/geanylatex
-@dirrmtry %%DOCSDIR%%

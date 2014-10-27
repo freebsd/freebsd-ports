@@ -58,8 +58,3 @@ share/cook/usr
 share/cook/usr.local
 share/cook/yacc
 share/cook/yacc_many
-@dirrm lib/cook/en/LC_MESSAGES
-@dirrm lib/cook/en
-@dirrm lib/cook
-@dirrm share/cook/en
-@dirrm share/cook

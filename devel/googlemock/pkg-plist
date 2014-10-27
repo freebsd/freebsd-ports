@@ -22,5 +22,3 @@ lib/libgmock_main.a
 lib/libgmock_main.so
 lib/libgmock_main.so.0
 lib/libgmock_main.so.0.0.0
-@dirrm include/gmock/internal
-@dirrm include/gmock

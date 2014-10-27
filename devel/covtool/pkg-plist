@@ -15,5 +15,3 @@ man/man1/gen_html.1.gz
 %%DATADIR%%/README
 %%DATADIR%%/COPYRIGHT
 %%DATADIR%%/covtool_version
-@dirrmtry %%DATADIR%%
-@dirrmtry libexec/covtool

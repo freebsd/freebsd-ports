@@ -124,7 +124,3 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/zap.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/zap.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/zap.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools
-@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib

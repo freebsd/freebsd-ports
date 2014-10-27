@@ -336,20 +336,3 @@ share/locale/pt_BR/LC_MESSAGES/gazpacho.mo
 share/locale/ru/LC_MESSAGES/gazpacho.mo
 share/locale/sv/LC_MESSAGES/gazpacho.mo
 share/locale/zh_CN/LC_MESSAGES/gazpacho.mo
-@dirrm %%DATADIR%%/resources/base
-@dirrmtry %%DATADIR%%/resources
-@dirrm %%DATADIR%%/plugins/hello
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/glade
-@dirrmtry %%DATADIR%%/catalogs
-@dirrmtry %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor
-@dirrm %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base
-@dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho/widgets
-@dirrm %%PYTHON_SITELIBDIR%%/gazpacho/loader
-@dirrm %%PYTHON_SITELIBDIR%%/gazpacho/app
-@dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho
-@dirrmtry %%PYTHON_SITELIBDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

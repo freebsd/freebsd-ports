@@ -125,8 +125,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpextinterpolation.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpfreetype.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpftfont.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpxwdfile.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

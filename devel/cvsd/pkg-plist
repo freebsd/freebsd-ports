@@ -8,4 +8,3 @@ sbin/cvsd
 sbin/cvsd-buginfo
 sbin/cvsd-buildroot
 sbin/cvsd-passwd
-@dirrmtry etc/cvsd

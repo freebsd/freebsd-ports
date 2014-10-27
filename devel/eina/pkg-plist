@@ -102,6 +102,3 @@ lib/libeina.so.8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_value_02.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eina_value_03.c
 libdata/pkgconfig/eina.pc
-@dirrm include/eina-1/eina
-@dirrm include/eina-1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

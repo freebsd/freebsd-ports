@@ -26,10 +26,3 @@ man/man3/CUnit.3.gz
 %%EXA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/README
 %%EXA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Console/ConsoleTest
 %%EXA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Console/README
-@dirrmtry include/CUnit
-%%ITE%%@dirrmtry %%DATADIR%%/Test
-@dirrmtry %%DATADIR%%
-%%EXA%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Automated
-%%EXA%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Basic
-%%EXA%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Console
-%%EXA%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

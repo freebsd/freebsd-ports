@@ -69,7 +69,3 @@ man/mann/clig_String.n.gz
 man/mann/clig_Usage.n.gz
 man/mann/clig_Version.n.gz
 man/mann/clig_parseCmdline.n.gz
-@dirrm lib/clig/c
-@dirrm lib/clig/tcl
-@dirrm lib/clig/tcllib
-@dirrm lib/clig

@@ -62,6 +62,3 @@ share/locale/zh_CN/LC_MESSAGES/guikachu.mo
 share/mime/guikachu.keys
 share/mime/guikachu.mime
 share/mime/packages/guikachu.mime.xml
-@dirrm share/gnome/help/guikachu/C/pictures
-@dirrm share/gnome/help/guikachu/C
-@dirrm share/gnome/help/guikachu

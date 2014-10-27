@@ -47,11 +47,3 @@ lib/erlang/lib/distel-%%VERSION%%/src/otp_doc.erl
 %%EMACS_SITE_LISPDIR%%/distel/erlext.el
 %%EMACS_SITE_LISPDIR%%/distel/net-fsm.el
 %%EMACS_SITE_LISPDIR%%/distel/patmatch.el
-@dirrm %%EMACS_SITE_LISPDIR%%/distel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/erlang/lib/distel-%%VERSION%%/src
-@dirrm lib/erlang/lib/distel-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/distel-%%VERSION%%
-@dirrmtry lib/erlang/lib
-@dirrmtry lib/erlang

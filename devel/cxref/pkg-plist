@@ -17,4 +17,3 @@ man/man1/cxref.1.gz
 %%DATADIR%%/tree.pl
 %%DATADIR%%/xrefgraph.py
 %%DATADIR%%/xrgr.pl
-@dirrm %%DATADIR%%

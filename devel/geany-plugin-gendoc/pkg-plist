@@ -8,9 +8,3 @@ lib/geany/geanygendoc.so
 %%DOCSDIR%%/geanygendoc/manual.rst
 %%DATADIR%%/geanygendoc/filetypes/c.conf
 %%DATADIR%%/geanygendoc/filetypes/vala.conf
-@dirrm %%DATADIR%%/geanygendoc/filetypes
-@dirrm %%DATADIR%%/geanygendoc
-@dirrmtry %%DATADIR%%
-@dirrm %%DOCSDIR%%/geanygendoc/html
-@dirrm %%DOCSDIR%%/geanygendoc
-@dirrmtry %%DOCSDIR%%

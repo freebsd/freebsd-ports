@@ -8,12 +8,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/formatter_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pretty.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/zero.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/github.com/kr
-@dirrmtry %%GO_SRCDIR%%/github.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry %%GO_LIBDIR%%/github.com/kr
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

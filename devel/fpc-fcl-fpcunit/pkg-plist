@@ -38,8 +38,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/libpxmltestreport.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/libpplaintestreport.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/libpfpcunit.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/libptestutils.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

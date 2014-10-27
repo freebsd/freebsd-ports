@@ -101,23 +101,3 @@ lib/stubs/writer.tcl
 lib/util84/dict.tcl
 lib/util84/lassign.tcl
 lib/util84/pkgIndex.tcl
-@dirrm lib/util84
-@dirrm lib/stubs
-@dirrm lib/critcl%%VER%%/critcl_c/tcl8.6/X11
-@dirrm lib/critcl%%VER%%/critcl_c/tcl8.6
-@dirrm lib/critcl%%VER%%/critcl_c/tcl8.5/X11
-@dirrm lib/critcl%%VER%%/critcl_c/tcl8.5
-@dirrm lib/critcl%%VER%%/critcl_c/tcl8.4/X11
-@dirrm lib/critcl%%VER%%/critcl_c/tcl8.4
-@dirrm lib/critcl%%VER%%/critcl_c
-@dirrm lib/critcl%%VER%%
-@dirrm lib/critcl-util1
-@dirrm lib/critcl-platform
-@dirrm lib/critcl-literals1.1
-@dirrm lib/critcl-iassoc1.0.1
-@dirrm lib/critcl-enum1
-@dirrm lib/critcl-class1.0.6
-@dirrm lib/critcl-bitmap1.0.1
-@dirrm lib/critcl-app%%VER%%/tea/tclconfig
-@dirrm lib/critcl-app%%VER%%/tea
-@dirrm lib/critcl-app%%VER%%

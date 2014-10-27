@@ -12,4 +12,3 @@ include/flatzebra/Sprite.h
 include/flatzebra/RSprite.h
 include/flatzebra/SoundMixer.h
 include/flatzebra/KeyState.h
-@dirrm include/flatzebra

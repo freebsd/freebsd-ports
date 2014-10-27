@@ -10,5 +10,3 @@ libdata/pkgconfig/eet.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eet-file.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eet-data-nested.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eet-data-simple.c
-@dirrm include/eet-1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

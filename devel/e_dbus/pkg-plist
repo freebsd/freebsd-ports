@@ -24,5 +24,3 @@ libdata/pkgconfig/ehal.pc
 libdata/pkgconfig/enotify.pc
 libdata/pkgconfig/eukit.pc
 %%DATADIR%%/logo.png
-@dirrm include/e_dbus-1
-@dirrm %%DATADIR%%

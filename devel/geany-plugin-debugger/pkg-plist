@@ -13,7 +13,3 @@ lib/geany/debugger.so
 %%DATADIR%%/debugger/step_over.gif
 %%DATADIR%%/debugger/stop.gif
 %%DATADIR%%/debugger/tabs.gif
-@dirrm %%DATADIR%%/debugger
-@dirrmtry %%DATADIR%%
-@dirrm %%DOCSDIR%%/debugger
-@dirrmtry %%DOCSDIR%%

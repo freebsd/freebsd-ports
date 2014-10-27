@@ -1164,10 +1164,3 @@ man/man3/validCDKObject.3.gz
 man/man3/viewFile.3.gz
 man/man3/viewInfo.3.gz
 man/man3/waitCDKLabel.3.gz
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/examples
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cli/utils
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cli/samples
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cli
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry include/cdk

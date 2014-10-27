@@ -56,8 +56,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/xmlwrite.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/xmlwrite.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/xpath.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/xpath.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

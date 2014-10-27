@@ -412,14 +412,3 @@ man/man1/epydocgui.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/uml.thumbnail.png
 %%PORTDOCS%%%%DOCSDIR%%/using.html
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/listed
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/included
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/grouped
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doctest
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/epydoc/markup
-@dirrm %%PYTHON_SITELIBDIR%%/epydoc/test
-@dirrm %%PYTHON_SITELIBDIR%%/epydoc/docwriter
-@dirrm %%PYTHON_SITELIBDIR%%/epydoc

@@ -5,8 +5,7 @@ bin/tde
 bin/tdl
 bin/tdr
 bin/todo
-etc/todorc.sample
-@unexec if cmp -s %D/etc/todorc %D/etc/todorc.sample; then rm -f %D/etc/todorc; fi
+@sample etc/todorc.sample
 man/man1/devtodo.1.gz
 man/man1/tda.1.gz
 man/man1/tdd.1.gz
@@ -17,4 +16,3 @@ man/man1/todo.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts.tcsh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/todorc.example
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

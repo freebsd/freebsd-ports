@@ -21,7 +21,3 @@ lib/erlang/lib/cowlib-%%VERSION%%/src/cow_qs.erl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cow_spdy.erl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cow_spdy.hrl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cowlib.app.src
-@dirrmtry lib/erlang/lib/cowlib-%%VERSION%%/src
-@dirrmtry lib/erlang/lib/cowlib-%%VERSION%%/include
-@dirrmtry lib/erlang/lib/cowlib-%%VERSION%%/ebin
-@dirrmtry lib/erlang/lib/cowlib-%%VERSION%%

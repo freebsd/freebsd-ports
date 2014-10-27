@@ -45,8 +45,3 @@ man/man1/i586-pc-msdosdjgpp-size.1.gz
 man/man1/i586-pc-msdosdjgpp-strings.1.gz
 man/man1/i586-pc-msdosdjgpp-strip.1.gz
 man/man1/i586-pc-msdosdjgpp-windres.1.gz
-@dirrmtry i586-pc-msdosdjgpp/lib/ldscripts
-@dirrmtry i586-pc-msdosdjgpp/lib
-@dirrmtry i586-pc-msdosdjgpp/info
-@dirrmtry i586-pc-msdosdjgpp/bin
-@dirrmtry i586-pc-msdosdjgpp

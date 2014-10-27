@@ -10,4 +10,3 @@ man/man5/setup.types.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/epm-book.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

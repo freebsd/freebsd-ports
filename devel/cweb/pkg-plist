@@ -5,9 +5,3 @@ man/man1/cweb.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/cwebman.tex
 share/emacs/site-lisp/cweb.el
 share/texmf/tex/generic/misc/cwebmac.tex
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/texmf/tex/generic/misc
-@dirrmtry share/texmf/tex/generic
-@dirrmtry share/texmf/tex
-@dirrmtry share/texmf

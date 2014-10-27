@@ -17,8 +17,3 @@ lib/%%PORTNAME%%/filters/syntax-highlighting.sh
 %%WWWDIR%%/%%PORTNAME%%.png
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/robots.txt
-@dirrmtry lib/%%PORTNAME%%/filters/html-converters/resources
-@dirrmtry lib/%%PORTNAME%%/filters/html-converters
-@dirrmtry lib/%%PORTNAME%%/filters
-@dirrmtry lib/%%PORTNAME%%
-@dirrmtry %%WWWDIR%%

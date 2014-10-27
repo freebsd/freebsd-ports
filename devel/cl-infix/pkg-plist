@@ -4,5 +4,3 @@ lib/common-lisp/infix/infix.lisp
 lib/common-lisp/infix/infix.system
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/infix.3lisp
-@dirrm lib/common-lisp/infix
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

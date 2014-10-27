@@ -14,8 +14,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/resolve.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/resolve.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/ssockets.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/ssockets.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

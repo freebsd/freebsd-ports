@@ -3,4 +3,3 @@ include/fastcrc.h
 lib/libfcrc.so
 lib/libfcrc.so.1
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

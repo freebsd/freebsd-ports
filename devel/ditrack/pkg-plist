@@ -122,13 +122,3 @@ bin/dt-createdb
 %%PYTHON_SITELIBDIR%%/DITrack/dt/globals.pyo
 %%DATADIR%%/upgrade-0.7-db.py
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/dt
-@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/Python
-@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/ThirdParty
-@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Util
-@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/DB
-@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Command
-@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Backend
-@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack

@@ -334,26 +334,3 @@ bin/fnping
 %%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestInterop.idl
 %%PORTDOCS%%%%DOCSDIR%%/tests/interop/Utils.cpp
 %%PORTDOCS%%%%DOCSDIR%%/tests/interop/Utils.h
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/script
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/parser
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/orb
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/cos/naming/CosNaming_skel
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/cos/naming/CosNaming
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/cos/naming
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/cos/interface_repository/IntRep_skel
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/cos/interface_repository/IntRep
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/cos/interface_repository
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/cos
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb/compiler
-@dirrm %%PYTHON_SITELIBDIR%%/Fnorb
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tests/interop
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tests/datatransfer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tests
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/unions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/tkinter
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/threaded
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/naming
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/misc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/hello-world
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

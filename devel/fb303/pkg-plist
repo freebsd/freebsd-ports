@@ -23,10 +23,3 @@ lib/libfb303.a
 %%PYTHON_SITELIBDIR%%/fb303_scripts/fb303_simple_mgmt.pyc
 %%PYTHON_SITELIBDIR%%/thrift_fb303-1.0.0_dev-py%%PYTHON_VER%%.egg-info
 %%DATADIR%%/if/fb303.thrift
-@dirrm %%DATADIR%%/if
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/fb303_scripts
-@dirrm %%PYTHON_SITELIBDIR%%/fb303
-@dirrm %%SITE_PERL%%/Facebook/FB303
-@dirrm %%SITE_PERL%%/Facebook
-@dirrm include/thrift/fb303

@@ -46,4 +46,3 @@ lib/bennugd/libsdlhandler.so
 lib/bennugd/libtext.so
 lib/bennugd/libvideo.so
 lib/bennugd/libwm.so
-@dirrm lib/bennugd

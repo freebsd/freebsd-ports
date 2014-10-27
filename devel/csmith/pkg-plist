@@ -27,6 +27,3 @@ lib/libcsmith.so
 lib/libcsmith.so.0
 lib/libcsmith.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/probabilities.txt
-@dirrm %%DOCSDIR%%
-@dirrm include/csmith-2.1.0/windows
-@dirrm include/csmith-2.1.0

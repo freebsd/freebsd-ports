@@ -20,4 +20,3 @@ libdata/pkgconfig/gmodule.pc
 libdata/pkgconfig/gthread.pc
 share/aclocal/glib.m4
 man/man1/glib-config.1.gz
-@dirrm include/glib-1.2

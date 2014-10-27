@@ -161,7 +161,3 @@ man/man5/build.lib.mk.5.gz
 man/man5/build.prog.mk.5.gz
 man/man5/build.proj.mk.5.gz
 man/man5/build.www.mk.5.gz
-@dirrmtry %%DATADIR%%/libtool
-@dirrmtry %%DATADIR%%/ManReader
-@dirrmtry %%DATADIR%%/BSDBuild
-@dirrmtry %%DATADIR%%

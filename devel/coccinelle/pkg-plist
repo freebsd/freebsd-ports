@@ -24,8 +24,3 @@ man/man3/Coccilib.3cocci.gz
 %%DATADIR%%/spatch
 %%DATADIR%%/standard.h
 %%DATADIR%%/standard.iso
-@dirrm %%DATADIR%%/python/coccilib/coccigui
-@dirrm %%DATADIR%%/python/coccilib
-@dirrm %%DATADIR%%/python
-@dirrm %%DATADIR%%/ocaml
-@dirrm %%DATADIR%%

@@ -86,8 +86,3 @@ libdata/pkgconfig/guichan-0.8.pc
 %%SDL%%lib/libguichan_sdl.so.1
 %%SDL%%lib/libguichan_sdl.so.1.1.0
 %%SDL%%libdata/pkgconfig/guichan_sdl-0.8.pc
-%%ALLEGRO%%@dirrm include/guichan/allegro
-%%GL%%@dirrm include/guichan/opengl
-%%SDL%%@dirrm include/guichan/sdl
-@dirrm include/guichan/widgets
-@dirrm include/guichan

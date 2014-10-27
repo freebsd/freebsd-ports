@@ -10,4 +10,3 @@ include/eventxx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-weof.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trivial.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wrapped-functor-way.cpp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

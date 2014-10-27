@@ -117,8 +117,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/websession.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/websession.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/webutil.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/webutil.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

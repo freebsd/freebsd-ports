@@ -25,9 +25,3 @@ libexec/gitolite/sshkeys-lint
 %%DATADIR%%/hooks/common/post-receive.mirrorpush
 %%DATADIR%%/hooks/common/update
 %%DATADIR%%/hooks/gitolite-admin/post-update
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%/hooks/gitolite-admin
-@dirrm %%DATADIR%%/hooks/common
-@dirrm %%DATADIR%%/hooks
-@dirrm %%DATADIR%%
-@dirrm libexec/gitolite

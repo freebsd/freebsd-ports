@@ -4,5 +4,3 @@ lib/geany/geanyminiscript.so
 %%DOCSDIR%%/geanyminiscript/ChangeLog
 %%DOCSDIR%%/geanyminiscript/NEWS
 %%DOCSDIR%%/geanyminiscript/README
-@dirrm %%DOCSDIR%%/geanyminiscript
-@dirrmtry %%DOCSDIR%%

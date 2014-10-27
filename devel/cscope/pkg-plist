@@ -4,5 +4,3 @@ man/man1/cscope.1.gz
 %%XCSCOPE%%bin/cscope-indexer
 %%XCSCOPE%%share/emacs/site-lisp/xcscope.el
 %%XCSCOPE%%lib/xemacs/site-lisp/xcscope.el
-%%XCSCOPE%%@dirrmtry lib/xemacs/site-lisp
-%%XCSCOPE%%@dirrmtry lib/xemacs

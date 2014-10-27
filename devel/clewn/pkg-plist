@@ -5,7 +5,3 @@ share/vim/vimfiles/doc/clewn.txt
 share/vim/vimfiles/doc/tags
 share/vim/vimfiles/macros/clewn_mappings.vim
 share/vim/vimfiles/syntax/gdbvar.vim
-@dirrm share/vim/vimfiles/macros
-@dirrm share/vim/vimfiles/doc
-@dirrm share/vim/vimfiles/syntax
-@dirrm share/vim/vimfiles

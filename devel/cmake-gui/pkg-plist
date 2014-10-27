@@ -3,5 +3,3 @@ man/man1/cmake-gui.1.gz
 share/applications/CMake.desktop
 share/mime/packages/cmakecache.xml
 share/pixmaps/CMakeSetup32.png
-@dirrmtry share/mime/packages
-@dirrmtry share/mime

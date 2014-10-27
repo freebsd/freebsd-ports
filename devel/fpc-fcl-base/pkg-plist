@@ -95,8 +95,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/whtml.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/whtml.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/wtex.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/wtex.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

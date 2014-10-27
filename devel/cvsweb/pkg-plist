@@ -3,14 +3,12 @@ etc/cvsweb/cvsweb.conf-freebsd.dist
 etc/cvsweb/cvsweb.conf-openbsd.dist
 etc/cvsweb/cvsweb.conf-netbsd.dist
 etc/cvsweb/cvsweb.conf-ruby.dist
-@dirrm etc/cvsweb
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/TODO.FreeBSD
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CGIDIR%%/cvsweb.cgi
 %%ICONSDIR%%/cvsweb/back.gif
 %%ICONSDIR%%/cvsweb/dir.gif
@@ -18,6 +16,3 @@ etc/cvsweb/cvsweb.conf-ruby.dist
 %%ICONSDIR%%/cvsweb/minidir.gif
 %%ICONSDIR%%/cvsweb/minitext.gif
 %%ICONSDIR%%/cvsweb/text.gif
-@dirrm %%ICONSDIR%%/cvsweb
-@dirrmtry %%CGIDIR%%
-@dirrmtry %%ICONSDIR%%

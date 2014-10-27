@@ -42,14 +42,3 @@ share/locale/vi/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_CN/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_HK/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_TW/LC_MESSAGES/gsettings-desktop-schemas.mo
-@dirrmtry include/gsettings-desktop-schemas
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug 
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

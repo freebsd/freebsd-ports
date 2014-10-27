@@ -6,4 +6,3 @@ lib/libcityhash.so.0.0.0
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%

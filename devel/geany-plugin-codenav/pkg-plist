@@ -4,5 +4,3 @@ lib/geany/codenav.so
 %%DOCSDIR%%/codenav/ChangeLog
 %%DOCSDIR%%/codenav/NEWS
 %%DOCSDIR%%/codenav/README
-@dirrm %%DOCSDIR%%/codenav
-@dirrmtry %%DOCSDIR%%

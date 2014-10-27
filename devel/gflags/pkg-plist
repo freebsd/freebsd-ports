@@ -14,5 +14,3 @@ lib/libgflags_nothreads.so.2
 lib/libgflags_nothreads.so.2.1.0
 libdata/pkgconfig/libgflags.pc
 libdata/pkgconfig/libgflags_nothreads.pc
-@dirrmtry include/google
-@dirrmtry include/gflags

@@ -5,4 +5,3 @@ lib/libcxx_dprog.a
 %%EMACS%%%%DATADIR%%/dprog-font-lock.el
 %%EMACS%%%%DATADIR%%/dprog-indent.el
 %%EMACS%%%%DATADIR%%/dprog.el
-%%EMACS%%@dirrmtry %%DATADIR%%

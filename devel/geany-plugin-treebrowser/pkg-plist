@@ -4,5 +4,3 @@ lib/geany/treebrowser.so
 %%DOCSDIR%%/treebrowser/ChangeLog
 %%DOCSDIR%%/treebrowser/NEWS
 %%DOCSDIR%%/treebrowser/README
-@dirrm %%DOCSDIR%%/treebrowser
-@dirrmtry %%DOCSDIR%%

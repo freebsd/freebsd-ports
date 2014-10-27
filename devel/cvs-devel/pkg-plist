@@ -24,5 +24,3 @@ share/cvs/contrib/rcslock
 share/cvs/contrib/sandbox_status
 share/cvs/contrib/sccs2rcs
 share/cvs/contrib/validate_repo
-@dirrm share/cvs/contrib
-@dirrm share/cvs
