@@ -1,7 +1,6 @@
 bin/nvidia-bug-report.sh
 lib/.nvidia/libGL.so
 lib/.nvidia/libGL.so.1
-@dirrm lib/.nvidia
 lib/libEGL.so
 lib/libEGL.so.1
 lib/libGLESv1_CM.so
@@ -24,40 +23,34 @@ lib/libnvidia-tls.so
 lib/libnvidia-tls.so.1
 lib/libvdpau_nvidia.so
 lib/vdpau/libvdpau_nvidia.so.1
-@dirrmtry lib/vdpau
 %%MODULESDIR%%/drivers/nvidia_drv.so
 %%MODULESDIR%%/extensions/.nvidia/libglx.so
 %%MODULESDIR%%/extensions/.nvidia/libglx.so.1
 %%MODULESDIR%%/libnvidia-wfb.so.1
-@dirrm %%MODULESDIR%%/extensions/.nvidia
-@dirrmtry %%MODULESDIR%%/drivers
-@cwd /%%KMODDIR%%
-nvidia.ko
-%%LINUX%%@cwd %%LINUXBASE%%
-%%LINUX%%usr/lib/libEGL.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libEGL.so.1
-%%LINUX%%usr/lib/libGL.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libGL.so.1
-%%LINUX%%usr/lib/libGLESv1_CM.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libGLESv1_CM.so.1
-%%LINUX%%usr/lib/libGLESv2.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libGLESv2.so.2
-%%LINUX%%usr/lib/libGLcore.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libGLcore.so.1
-%%LINUX%%usr/lib/libcuda.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libcuda.so.1
-%%LINUX%%usr/lib/libnvidia-eglcore.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libnvidia-glsi.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libnvidia-tls.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libnvidia-tls.so.1
-%%LINUX%%usr/lib/libvdpau.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/libvdpau.so.1
-%%LINUX%%usr/lib/libvdpau_nvidia.so
-%%LINUX%%usr/lib/libvdpau_trace.so
-%%LINUX%%usr/lib/vdpau/libvdpau_nvidia.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/vdpau/libvdpau_nvidia.so.1
-%%LINUX%%usr/lib/vdpau/libvdpau_trace.so.%%SHLIB_VERSION%%
-%%LINUX%%usr/lib/vdpau/libvdpau_trace.so.1
-%%LINUX%%@dirrm usr/lib/vdpau
-%%LINUX%%@exec %D/sbin/ldconfig -r %D
-%%LINUX%%@unexec %D/sbin/ldconfig -r %D
+/%%KMODDIR%%/nvidia.ko
+%%LINUX%%%%LINUXBASE%%/usr/lib/libEGL.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libEGL.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGL.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGL.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv2.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLESv2.so.2
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLcore.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libGLcore.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libcuda.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libcuda.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-eglcore.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-glsi.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-tls.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libnvidia-tls.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libvdpau.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/libvdpau.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/libvdpau_nvidia.so
+%%LINUX%%%%LINUXBASE%%/usr/lib/libvdpau_trace.so
+%%LINUX%%%%LINUXBASE%%/usr/lib/vdpau/libvdpau_nvidia.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/vdpau/libvdpau_nvidia.so.1
+%%LINUX%%%%LINUXBASE%%/usr/lib/vdpau/libvdpau_trace.so.%%SHLIB_VERSION%%
+%%LINUX%%%%LINUXBASE%%/usr/lib/vdpau/libvdpau_trace.so.1
+%%LINUX%%@exec %%LINUXBASE%%/sbin/ldconfig -r %%LINUXBASE%%
+%%LINUX%%@unexec %%LINUXBASE%%/sbin/ldconfig -r %%LINUXBASE%%
