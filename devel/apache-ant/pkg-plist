@@ -64,8 +64,3 @@ man/man5/build.xml.5.gz
 %%DATADIR%%/lib/ant.jar
 %%DATADIR%%/lib/ant.pom
 %%DATADIR%%/lib/libraries.properties
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/etc/checkstyle
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%

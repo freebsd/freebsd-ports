@@ -9,4 +9,3 @@ bin/astyle
 %%PORTDOCS%%%%DOCSDIR%%/scripts.html
 %%PORTDOCS%%%%DOCSDIR%%/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%/vsinstall.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

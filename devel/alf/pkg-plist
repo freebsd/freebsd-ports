@@ -6,4 +6,3 @@ lib/libalf.so.0
 lib/libalf.so.0.0.0
 %%PYTHON_SITELIBDIR%%/alfmodule.a
 %%PYTHON_SITELIBDIR%%/alfmodule.so
-@dirrm include/alf

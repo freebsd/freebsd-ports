@@ -62,9 +62,3 @@ share/autoconf-%%BUILD_VERSION%%/m4sugar/m4sugar.m4f
 share/autoconf-%%BUILD_VERSION%%/m4sugar/version.m4
 share/autoconf-%%BUILD_VERSION%%/mdate-sh
 share/autoconf-%%BUILD_VERSION%%/missing
-@dirrm share/autoconf-%%BUILD_VERSION%%/m4sugar
-@dirrm share/autoconf-%%BUILD_VERSION%%/autotest
-@dirrm share/autoconf-%%BUILD_VERSION%%/autoscan
-@dirrm share/autoconf-%%BUILD_VERSION%%/autoconf
-@dirrm share/autoconf-%%BUILD_VERSION%%/Autom4te
-@dirrm share/autoconf-%%BUILD_VERSION%%

@@ -16,6 +16,3 @@ lib/libapiextractor.so
 lib/libapiextractor.so.0
 lib/libapiextractor.so.%%PORTVERSION%%
 libdata/pkgconfig/apiextractor.pc
-@dirrm lib/cmake/ApiExtractor-%%PORTVERSION%%
-@dirrmtry lib/cmake
-@dirrm include/apiextractor

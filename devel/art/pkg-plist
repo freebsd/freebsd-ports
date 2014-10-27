@@ -3,4 +3,3 @@ bin/artrepgen
 %%PORTDOCS%%%%DOCSDIR%%/posix-gcc-mt-file-special.xml
 %%PORTDOCS%%%%DOCSDIR%%/posix-gcc-mt-file-lint.xml
 %%PORTDOCS%%%%DOCSDIR%%/posix-gcc-mt-netw-lint.xml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

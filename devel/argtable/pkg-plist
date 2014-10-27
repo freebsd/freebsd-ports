@@ -29,5 +29,3 @@ man/man3/argtable2.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/myprog_C89.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rm.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uname.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

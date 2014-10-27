@@ -55,5 +55,3 @@ lib/libantlr.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/antlr.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/antlr.pyc
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/antlr
-@dirrm include/antlr

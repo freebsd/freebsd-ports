@@ -923,9 +923,3 @@ man/man3/al_wait_for_event_until.3.gz
 man/man3/al_wait_for_vsync.3.gz
 %%DEMOS%%%%EXAMPLES%%share/pixmaps/cosmic_protector.png
 %%DEMOS%%%%EXAMPLES%%share/pixmaps/speed.png
-@dirrm include/allegro5/platform
-@dirrm include/allegro5/opengl/GLext
-@dirrm include/allegro5/opengl
-@dirrm include/allegro5/internal
-@dirrm include/allegro5/inline
-@dirrm include/allegro5

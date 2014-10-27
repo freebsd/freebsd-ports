@@ -184,10 +184,5 @@ etc/profile.d/aegis.zsh
 %%NLS%%share/locale/ro/LC_MESSAGES/aegis.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/aegis.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/aegis.mo
-@owner bin
-@group sys
-@dirrmtry com/aegis
-@dirrmtry com
-@owner root
-@group wheel
-@dirrmtry etc/profile.d
+@dir(bin,sys,) com/aegis
+@dir(bin,sys,) com

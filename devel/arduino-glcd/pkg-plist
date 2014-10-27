@@ -199,27 +199,3 @@ arduino/libraries/glcd/include/glcd_Device.h
 arduino/libraries/glcd/include/glcd_errno.h
 arduino/libraries/glcd/include/glcd_io.h
 arduino/libraries/glcd/readme.txt
-@dirrm arduino/libraries/glcd/include
-@dirrm arduino/libraries/glcd/fonts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/life
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/ks0108example
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/clockFace
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/Serial2GLCD
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/Rocket
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/HelloWorld
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/GLCDdiags
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/GLCDdemo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/GLCD_BigDemo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/BigNums
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%
-@dirrm arduino/libraries/glcd/doc/html/search
-@dirrm arduino/libraries/glcd/doc/html
-@dirrm arduino/libraries/glcd/doc
-@dirrm arduino/libraries/glcd/device
-@dirrm arduino/libraries/glcd/config
-@dirrm arduino/libraries/glcd/bitmaps/utils/glcdMakeBitmap
-@dirrm arduino/libraries/glcd/bitmaps/utils/data
-@dirrm arduino/libraries/glcd/bitmaps/utils/Java
-@dirrm arduino/libraries/glcd/bitmaps/utils
-@dirrm arduino/libraries/glcd/bitmaps
-@dirrm arduino/libraries/glcd

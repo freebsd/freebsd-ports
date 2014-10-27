@@ -50,4 +50,3 @@ man/man3/adime_va_start.3.gz
 man/man3/adime_vdialogf.3.gz
 man/man3/adime_window_visible.3.gz
 man/man3/adime_yield.3.gz
-@dirrm include/adime

@@ -110,14 +110,3 @@ share/aclocal/atf-sh.m4
 %%TEST%%tests/atf/test-programs/meta_data_test
 %%TEST%%tests/atf/test-programs/result_test
 %%TEST%%tests/atf/test-programs/srcdir_test
-%%TEST%%@dirrm tests/atf/test-programs
-%%TEST%%@dirrm tests/atf/atf-sh
-%%TEST%%@dirrm tests/atf/atf-c/detail
-%%TEST%%@dirrm tests/atf/atf-c++/detail
-%%TEST%%@dirrm tests/atf/atf-c++
-%%TEST%%@dirrm tests/atf/atf-c
-%%TEST%%@dirrm tests/atf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-@dirrm include/atf-c++
-@dirrm include/atf-c
