@@ -66,4 +66,3 @@ lib/X11/fonts/culmus/YehudaCLM-Light.pfa
 lib/X11/fonts/culmus/YehudaCLM-Light.afm
 lib/X11/fonts/culmus/fonts.scale-ttf
 lib/X11/fonts/culmus/fonts.scale-type1
-@dirrm lib/X11/fonts/culmus
