@@ -259,7 +259,3 @@ share/doc/tclap/html/ZshCompletionOutput_8h_source.html
 share/doc/tclap/index.html
 share/doc/tclap/manual.html
 share/doc/tclap/style.css
-@dirrm include/tclap
-@dirrm share/doc/tclap/html/CVS
-@dirrm share/doc/tclap/html
-@dirrm share/doc/tclap

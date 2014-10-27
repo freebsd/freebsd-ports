@@ -112,10 +112,3 @@ bin/tailor
 %%PYTHON_SITELIBDIR%%/vcpx/workdir.pyo
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/README.rst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/p4
-@dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/git
-@dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/darcs
-@dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/aegis
-@dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository
-@dirrm %%PYTHON_SITELIBDIR%%/vcpx

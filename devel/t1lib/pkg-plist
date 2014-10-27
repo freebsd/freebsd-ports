@@ -12,5 +12,3 @@ lib/libt1.so.5.1.2
 %%X11%%lib/libt1x.so.5.1.2
 %%PORTDOCS%%%%DOCSDIR%%/t1lib_doc.pdf
 %%DATADIR%%/t1lib.config
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

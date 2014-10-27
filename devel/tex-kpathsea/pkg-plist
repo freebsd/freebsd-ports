@@ -62,11 +62,8 @@ man/man1/mktexmf.1.gz
 man/man1/mktexpk.1.gz
 man/man1/mktextfm.1.gz
 man/man1/texhash.1.gz
-@dirrm include/kpathsea
 lib/libkpathsea.a
 lib/libkpathsea.so
 lib/libkpathsea.so.6
 lib/libkpathsea.so.6.2.0
 %%TEXMFDISTDIR%%/web2c/texmf.cnf
-@dirrmtry %%TEXMFDISTDIR%%/web2c
-@dirrmtry %%TEXMFDISTDIR%%

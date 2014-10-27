@@ -3269,17 +3269,3 @@ tigcc/lib/tigcc.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Window 5.tpr
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Windows.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Windows.tpr
-@dirrm tigcc/lib
-@dirrm tigcc/include/s
-@dirrm tigcc/include/c
-@dirrm tigcc/include/asm
-@dirrm tigcc/include
-@dirrm tigcc/bin
-@dirrm tigcc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tprbuilder
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tigcc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/patcher
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/a68k
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -25,8 +25,3 @@ share/icons/hicolor/48x48/apps/subversion.png
 %%NLS%%share/locale/ur/LC_MESSAGES/thunar-vcs-plugin.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/thunar-vcs-plugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/thunar-vcs-plugin.mo
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-@dirrmtry lib/thunarx-2

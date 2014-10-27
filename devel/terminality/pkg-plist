@@ -29,6 +29,3 @@ lib/libtn.a
 %%PORTDOCS%%%%DOCSDIR%%/screenshot/keyb1.png
 %%PORTDOCS%%%%DOCSDIR%%/tutor-extra.html
 %%PORTDOCS%%%%DOCSDIR%%/tutor-tn.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/screenshot
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry include/tn

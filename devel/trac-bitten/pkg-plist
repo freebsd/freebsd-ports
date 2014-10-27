@@ -1,4 +1,3 @@
 @unexec if cmp -s %D/%%ETCDIR%%/bitten-slave.sample %D/%%ETCDIR%%/bitten-slave.conf; then rm -f %D/%%ETCDIR%%/bitten-slave.conf; fi
 %%ETCDIR%%/bitten-slave.sample
 @exec if [ ! -f %D/%%ETCDIR%%/bitten-slave.conf ] ; then cp -p %D/%F %B/bitten-slave.conf; fi
-@dirrmtry %%ETCDIR%%

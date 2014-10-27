@@ -8,4 +8,3 @@ lib/libta_lib.a
 lib/libta_lib.so
 lib/libta_lib.so.0
 lib/libta_lib.so.0.0.0
-@dirrm include/ta-lib

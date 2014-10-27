@@ -16,7 +16,3 @@ share/aclocal/tclmore.m4
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/README
 %%DOCSDIR%%/license.terms
-@dirrm lib/tclmore
-@dirrm libexec/tclmore
-@dirrm %%DOCSDIR%%/HTML
-@dirrm %%DOCSDIR%%

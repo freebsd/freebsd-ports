@@ -22,9 +22,3 @@ lib/libthrift_c_glib.so
 lib/libthrift_c_glib.so.0
 lib/libthrift_c_glib.so.0.0.0
 libdata/pkgconfig/thrift_c_glib.pc
-@dirrm include/thrift/c_glib/transport
-@dirrm include/thrift/c_glib/server
-@dirrm include/thrift/c_glib/protocol
-@dirrm include/thrift/c_glib/processor
-@dirrm include/thrift/c_glib
-@dirrm include/thrift
