@@ -28,6 +28,3 @@ lib/csv%%CHEZ_VERSION%%/lib/setof.ss
 lib/csv%%CHEZ_VERSION%%/lib/socket.ss
 lib/csv%%CHEZ_VERSION%%/lib/unify.ss
 man/man1/petite.1.gz
-@dirrmtry lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%
-@dirrmtry lib/csv%%CHEZ_VERSION%%/lib
-@dirrmtry lib/csv%%CHEZ_VERSION%%

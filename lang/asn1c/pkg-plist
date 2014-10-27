@@ -124,6 +124,3 @@ man/man1/unber.1.gz
 %%DOCSDIR%%/README
 %%DOCSDIR%%/asn1c-quick.pdf
 %%DOCSDIR%%/asn1c-usage.pdf
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/standard-modules
-@dirrm %%DATADIR%%

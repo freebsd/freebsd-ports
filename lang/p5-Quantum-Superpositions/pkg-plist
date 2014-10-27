@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Quantum::Superpositions.3.gz
 %%SITE_PERL%%/Quantum/Superpositions.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Quantum/Superpositions/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Quantum/Superpositions
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Quantum
-@dirrmtry %%SITE_PERL%%/Quantum

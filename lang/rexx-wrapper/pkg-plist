@@ -58,11 +58,3 @@ share/doc/RexxWrapper-2.4/common/images/valid-html401.png
 share/doc/RexxWrapper-2.4/common/images/vcss.png
 share/doc/RexxWrapper-2.4/images/rxwrap64.png
 share/doc/RexxWrapper-2.4/index.html
-@dirrm %%DATADIR%%/common
-@dirrm %%DATADIR%%/des
-@dirrm %%DATADIR%%/zlib
-@dirrm %%DATADIR%%
-@dirrm share/doc/RexxWrapper-2.4/common/images
-@dirrm share/doc/RexxWrapper-2.4/common
-@dirrm share/doc/RexxWrapper-2.4/images
-@dirrm share/doc/RexxWrapper-2.4

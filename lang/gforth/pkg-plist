@@ -235,26 +235,3 @@ man/man1/gforth.1.gz
 %%DATADIR%%/%%PORTVERSION%%/wordsets.fs
 %%DATADIR%%/%%PORTVERSION%%/xwords.fs
 @exec mkdir -p %D/%%DATADIR%%/site-forth
-@dirrm %%DATADIR%%/site-forth
-@dirrmtry %%DATADIR%%/%%PORTVERSION%%/vmgen-ex
-@dirrm %%DATADIR%%/%%PORTVERSION%%/unix
-@dirrm %%DATADIR%%/%%PORTVERSION%%/test
-@dirrm %%DATADIR%%/%%PORTVERSION%%/kernel
-@dirrm %%DATADIR%%/%%PORTVERSION%%/ec
-@dirrm %%DATADIR%%/%%PORTVERSION%%/doc
-@dirrm %%DATADIR%%/%%PORTVERSION%%/compat
-@dirrm %%DATADIR%%/%%PORTVERSION%%/asm
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/386
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/alpha
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/amd64
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/mips
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/power
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch
-@dirrm %%DATADIR%%/%%PORTVERSION%%
-@dirrm %%DATADIR%%
-@dirrm include/gforth/%%PORTVERSION%%
-@dirrm include/gforth
-@dirrm lib/gforth/site-forth
-@dirrm lib/gforth/%%PORTVERSION%%/libcc-named
-@dirrm lib/gforth/%%PORTVERSION%%
-@dirrm lib/gforth

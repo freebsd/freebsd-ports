@@ -2,4 +2,3 @@ bin/rhinoc
 bin/rhinodbg
 bin/rhinosh
 %%DATADIR%%/rhino.jar
-@dirrm %%DATADIR%%

@@ -28,5 +28,3 @@ man/mann/itcl.itcl.gz
 man/mann/itclvars.itcl.gz
 man/mann/local.itcl.gz
 man/mann/scope.itcl.gz
-@dirrm lib/itcl%%VERSION%%
-@dirrm include/itcl%%VERSION%%

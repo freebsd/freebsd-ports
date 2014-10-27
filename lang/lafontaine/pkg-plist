@@ -14,5 +14,3 @@ share/pixmaps/lafontaine/quit.xpm
 share/pixmaps/lafontaine/save.xpm
 share/pixmaps/lafontaine/turtle2.png
 share/pixmaps/lafontaine/turtle3.png
-@dirrm share/pixmaps/lafontaine
-@dirrm %%DATADIR%%

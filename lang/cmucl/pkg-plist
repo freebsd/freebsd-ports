@@ -31,8 +31,3 @@ man/man1/cmucl.1.gz
 man/man1/lisp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/release-19f.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/cmucl/lib/ext-formats
-@dirrm lib/cmucl/lib/subsystems
-@dirrm lib/cmucl/lib
-@dirrm lib/cmucl

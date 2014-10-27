@@ -5,7 +5,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ePerl/.packlist
 %%PERL5_MAN3%%/Parse::ePerl.3.gz
 %%PERL5_MAN3%%/Apache::ePerl.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ePerl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Parse
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache

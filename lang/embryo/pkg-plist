@@ -4,6 +4,3 @@ lib/libembryo.so
 lib/libembryo.so.8
 libdata/pkgconfig/embryo.pc
 %%DATADIR%%/include/default.inc
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%
-@dirrm include/embryo-1

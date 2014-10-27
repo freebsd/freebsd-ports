@@ -923,24 +923,3 @@ usr/%%DATADIR%%8/8.4/platform-1.0.4.tm
 usr/%%DATADIR%%8/8.4/platform/shell-1.1.4.tm
 usr/%%DATADIR%%8/8.5/msgcat-1.4.2.tm
 usr/%%DATADIR%%8/8.5/tcltest-2.3.1.tm
-@dirrmtry usr/%%DATADIR%%8/8.5
-@dirrmtry usr/%%DATADIR%%8/8.4/platform
-@dirrmtry usr/%%DATADIR%%8/8.4
-@dirrmtry usr/%%DATADIR%%8/8.3
-@dirrmtry usr/%%DATADIR%%8.5/opt0.4
-@dirrmtry usr/%%DATADIR%%8.5/msgs
-@dirrmtry usr/%%DATADIR%%8.5/http1.0
-@dirrmtry usr/%%DATADIR%%8.5/encoding
-@dirrmtry usr/%%DATADIR%%8.5
-@dirrmtry usr/%%DATADIR%%8
-@dirrmtry usr/share/man/mann
-@dirrmtry usr/share/man/man3
-@dirrmtry usr/share/man/man1
-@dirrmtry usr/share/man
-@dirrmtry usr/share/doc/tcl-8.5.7
-@dirrmtry usr/share/doc
-@dirrmtry usr/share
-@dirrmtry usr/lib/tcl8.5
-@dirrmtry usr/lib
-@dirrmtry usr/bin
-@dirrmtry usr

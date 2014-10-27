@@ -7,4 +7,3 @@ bin/maude
 %%DATADIR%%/prelude.maude
 %%DATADIR%%/socket.maude
 %%DATADIR%%/term-order.maude
-@dirrm %%DATADIR%%

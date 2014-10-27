@@ -268,9 +268,3 @@ man/man1/unitdiff.1.gz
 man/man5/fpc.cfg.5.gz
 man/man5/fpcmake.5.gz
 man/man5/ptop.cfg.5.gz
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%/msg
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

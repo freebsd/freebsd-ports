@@ -230,12 +230,3 @@ man/man1/onyx_config.1.gz
 %%DATADIR%%/nx/modclopt/modclopt.nx
 %%DATADIR%%/nx/modclopt/modclopt_defs.nx
 %%DATADIR%%/nx/modprompt/modprompt.nx
-@dirrm %%DATADIR%%/nx/modprompt
-@dirrm %%DATADIR%%/nx/modclopt
-@dirrm %%DATADIR%%/nx
-@dirrm %%DATADIR%%/libonyx
-@dirrm %%DATADIR%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/pdf
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/libonyx

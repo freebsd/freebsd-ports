@@ -44,4 +44,3 @@ man/man3/Tclxcmd_Init.3.gz
 man/man3/TkX_Main.3.gz
 man/man3/Tkx_Init.3.gz
 man/mann/TclX.n.gz
-@dirrm lib/tclx%%TCLX_VER%%

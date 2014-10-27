@@ -231,9 +231,3 @@ man/man1/pfe.1.gz
 %%DATADIR%%/test/wordsets.fs
 %%DATADIR%%/testmodule1.fs
 %%DATADIR%%/testmodule2.fs
-@dirrm %%DATADIR%%/test
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%
-@dirrm lib/pfe-forth/renamed
-@dirrm lib/pfe-forth
-@dirrm include/pfe

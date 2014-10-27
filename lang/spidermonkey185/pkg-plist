@@ -104,4 +104,3 @@ lib/libmozjs185.so.1.0.0
 lib/libmozjs185.so.1.0
 lib/libmozjs185.so.1
 libdata/pkgconfig/mozjs185.pc
-@dirrm include/js

@@ -21,9 +21,6 @@ include/phc/process_ast/Process_includes.h
 include/phc/process_ast/Remove_concat_null.h
 include/phc/process_ast/Visit_everything.h
 include/phc/process_ast/XML_unparser.h
-@dirrm include/phc/lib
-@dirrm include/phc/process_ast
-@dirrm include/phc
 %%DATADIR%%/phc-1.0.xsd
 %%DATADIR%%/plugins/tests/cloning.so
 %%DATADIR%%/plugins/tests/linear.so
@@ -40,8 +37,3 @@ include/phc/process_ast/XML_unparser.h
 %%DATADIR%%/plugins/tutorials/count_function_calls_easy.so
 %%DATADIR%%/plugins/tutorials/count_statements.so
 %%DATADIR%%/plugins/tutorials/show_traversal_order.so
-@dirrm %%DATADIR%%/plugins/tests
-@dirrm %%DATADIR%%/plugins/tools
-@dirrm %%DATADIR%%/plugins/tutorials
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%

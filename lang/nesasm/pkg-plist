@@ -5,4 +5,3 @@ bin/nesasm
 %%PORTDOCS%%%%DOCSDIR%%/neshdr20.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/usage.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

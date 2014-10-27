@@ -10,12 +10,9 @@ lib/tcc/include/varargs.h
 lib/tcc/bcheck.o
 lib/tcc/libtcc1.a
 man/man1/tcc.1.gz
-@dirrm lib/tcc/include
-@dirrm lib/tcc
 %%PORTDOCS%%%%DOCSDIR%%/tcc-doc.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex3.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex4.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex5.c
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

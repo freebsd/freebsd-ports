@@ -327,15 +327,3 @@ man/man1/makecint.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/makecint.txt
 %%PORTDOCS%%%%DOCSDIR%%/message.txt
 %%PORTDOCS%%%%DOCSDIR%%/ref.txt
-@dirrmtry lib/cint/inc
-@dirrmtry lib/cint/include/GL
-@dirrmtry lib/cint/include/X11
-@dirrmtry lib/cint/include/sys
-@dirrmtry lib/cint/include
-@dirrmtry lib/cint/lib/longlong
-@dirrmtry lib/cint/lib/prec_stl
-@dirrmtry lib/cint/lib
-@dirrmtry lib/cint/main
-@dirrmtry lib/cint/stl
-@dirrmtry lib/cint
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

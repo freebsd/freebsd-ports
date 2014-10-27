@@ -65,8 +65,3 @@ man/man1/nickle.1.gz
 %%DATADIR%%/sort.5c
 %%DATADIR%%/string.5c
 %%DATADIR%%/svg.5c
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turtle
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/smlng
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/nickle

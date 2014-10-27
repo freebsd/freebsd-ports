@@ -26,5 +26,3 @@ man/man1/rxstack.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rexxtest.rexx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rxmathfn.rexx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shell.rexx
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -31,5 +31,3 @@ man/man1/convickt.1.gz
 %%DATADIR%%/syslib6.6i
 %%DATADIR%%/syslib7.7i
 %%DATADIR%%/syslibc.c
-@dirrm %%DATADIR%%
-@dirrm include/ick

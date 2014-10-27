@@ -241,22 +241,3 @@ man/man1/phpize.1.gz
 %%APACHE%%@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %f
 %%APACHE%%@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %f
 %%FPM%%share/php/fpm/status.html
-@dirrm include/php/TSRM
-@dirrm include/php/Zend
-@dirrm include/php/ext/date/lib
-@dirrm include/php/ext/date
-@dirrm include/php/ext/ereg/regex
-@dirrm include/php/ext/ereg
-@dirrm include/php/ext/libxml
-@dirrm include/php/ext/mysqlnd
-@dirrm include/php/ext/pcre
-@dirrm include/php/ext/spl
-@dirrm include/php/ext/standard
-@dirrmtry include/php/ext
-@dirrm include/php/main/streams
-@dirrm include/php/main
-@dirrmtry include/php
-@dirrm lib/php/build
-@dirrmtry lib/php
-%%FPM%%@dirrm share/php/fpm
-%%FPM%%@dirrm share/php

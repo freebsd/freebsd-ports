@@ -152,11 +152,3 @@ man/man1/cocor.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pimmod2.atg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/umbriel1.atg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/umbriel2.atg
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/cplus2
-@dirrm %%DATADIR%%
-@dirrm lib/cocor/taste_cp
-@dirrm lib/cocor/taste
-@dirrm lib/cocor/cplus2
-@dirrm lib/cocor

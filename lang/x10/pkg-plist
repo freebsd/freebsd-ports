@@ -496,25 +496,4 @@ stdlib/lib/libgc.so.1
 stdlib/lib/libx10.so
 stdlib/libx10.properties
 stdlib/x10.jar
-@dirrm stdlib/lib
-@dirrm stdlib/include/x10aux/io
-@dirrm stdlib/include/x10aux
-@dirrm stdlib/include/x10/util/concurrent
-@dirrm stdlib/include/x10/util
-@dirrm stdlib/include/x10/lang/annotations
-@dirrm stdlib/include/x10/lang
-@dirrm stdlib/include/x10/io
-@dirrm stdlib/include/x10/compiler/ws
-@dirrm stdlib/include/x10/compiler/tests
-@dirrm stdlib/include/x10/compiler
-@dirrm stdlib/include/x10/array
-@dirrm stdlib/include/x10
-@dirrm stdlib/include/gc
-@dirrm stdlib/include
-@dirrm stdlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/work-stealing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/guide
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CUDA
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/guide

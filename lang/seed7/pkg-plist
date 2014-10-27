@@ -189,7 +189,3 @@ lib/seed7/lib/xmldom.s7i
 lib/seed7/lib/zip.s7i
 man/man1/s7.1.gz
 man/man1/s7c.1.gz
-@dirrm lib/seed7/bin
-@dirrm lib/seed7/lib/comp
-@dirrm lib/seed7/lib
-@dirrm lib/seed7

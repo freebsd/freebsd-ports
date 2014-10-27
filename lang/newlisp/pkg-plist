@@ -97,10 +97,3 @@ man/man1/newlispdoc.1.gz
 %%DATADIR%%/util/newlisp.vim
 %%DATADIR%%/util/standard.lsp
 %%DATADIR%%/util/syntax.cgi
-@dirrm %%DATADIR%%/util
-@dirrm %%DATADIR%%/modules
-%%GUISERV%%@dirrm %%DATADIR%%/guiserver
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%GUISERV%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/guiserver
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

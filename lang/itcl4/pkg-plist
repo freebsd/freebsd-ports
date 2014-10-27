@@ -29,5 +29,3 @@ man/mann/itclvars.i4.gz
 man/mann/itclwidget.i4.gz
 man/mann/local.i4.gz
 man/mann/scope.i4.gz
-@dirrmtry lib/itcl%%PKGVER%%
-@dirrmtry include/itcl4.0

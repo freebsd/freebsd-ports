@@ -1190,17 +1190,3 @@ man/mann/Unix.LargeFile.3o.gz
 man/mann/Weak.3o.gz
 man/mann/Weak.Make.3o.gz
 man/mann/Weak.S.3o.gz
-@dirrmtry lib/ocaml/vmthreads
-@dirrmtry lib/ocaml/threads
-@dirrmtry lib/ocaml/stublibs
-@dirrmtry lib/ocaml/ocamldoc
-@dirrmtry lib/ocaml/ocamlbuild
-%%TK%%@dirrmtry lib/ocaml/labltk
-@dirrmtry lib/ocaml/compiler-libs
-@dirrmtry lib/ocaml/camlp4/Camlp4Top
-@dirrmtry lib/ocaml/camlp4/Camlp4Printers
-@dirrmtry lib/ocaml/camlp4/Camlp4Parsers
-@dirrmtry lib/ocaml/camlp4/Camlp4Filters
-@dirrmtry lib/ocaml/camlp4
-@dirrmtry lib/ocaml/caml
-@dirrmtry lib/ocaml

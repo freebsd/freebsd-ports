@@ -76,6 +76,3 @@ include/mozjs-24/mozilla/WeakPtr.h
 lib/libmozjs-24.so
 lib/libmozjs-24.so.1
 libdata/pkgconfig/mozjs-24.pc
-@dirrm include/mozjs-24/mozilla
-@dirrm include/mozjs-24/js
-@dirrm include/mozjs-24

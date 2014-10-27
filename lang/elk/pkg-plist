@@ -151,16 +151,4 @@ lib/libelk.so.0.0.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/track.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/useful.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xlib/wm-delete.scm
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xaw
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/unix
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scheme
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regexp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/motif
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 man/man1/elk.1.gz
-@dirrm %%DATADIR%%
-@dirrm lib/elk
-@dirrm include/elk/extensions
-@dirrm include/elk

@@ -370,24 +370,3 @@
 %%PYTHON_SITELIBDIR%%/mx/__init__.py
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase
-@dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase
-@dirrm %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime
-@dirrm %%PYTHON_SITELIBDIR%%/mx/DateTime
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Misc
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Proxy/mxProxy
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Proxy
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Queue/mxQueue
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Queue
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Stack/mxStack
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Stack
-@dirrm %%PYTHON_SITELIBDIR%%/mx/TextTools/Constants
-@dirrm %%PYTHON_SITELIBDIR%%/mx/TextTools/mxTextTools
-@dirrm %%PYTHON_SITELIBDIR%%/mx/TextTools
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Tools/mxTools
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Tools
-@dirrm %%PYTHON_SITELIBDIR%%/mx/UID/mxUID
-@dirrm %%PYTHON_SITELIBDIR%%/mx/UID
-@dirrm %%PYTHON_SITELIBDIR%%/mx/URL/mxURL
-@dirrm %%PYTHON_SITELIBDIR%%/mx/URL
-@dirrm %%PYTHON_SITELIBDIR%%/mx

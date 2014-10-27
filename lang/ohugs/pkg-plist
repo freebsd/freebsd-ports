@@ -28,6 +28,3 @@ lib/ohugs/libhugs/StdLibs.hs
 lib/ohugs/libhugs/Trace.hs
 lib/ohugs/rohugs
 lib/ohugs/ohugs
-@dirrm lib/ohugs/libhugs
-@dirrm lib/ohugs/lib
-@dirrm lib/ohugs

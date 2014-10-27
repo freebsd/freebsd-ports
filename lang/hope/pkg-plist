@@ -83,10 +83,3 @@ share/hope/lib/y.hop
 %%PORTDOCS%%share/doc/hope/hope_tut/node7.html
 %%PORTDOCS%%share/doc/hope/hope_tut/node8.html
 %%PORTDOCS%%share/doc/hope/hope_tut/node9.html
-%%PORTDOCS%%@dirrm share/doc/hope/ref_man
-%%PORTDOCS%%@dirrm share/doc/hope/examples
-%%PORTDOCS%%@dirrm share/doc/hope/hope_tut
-%%PORTDOCS%%@dirrm share/doc/hope
-@dirrm share/hope/lib.new
-@dirrm share/hope/lib
-@dirrm share/hope
