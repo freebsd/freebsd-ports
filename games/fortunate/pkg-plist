@@ -8,7 +8,3 @@ GNUstep/Local/Applications/Fortunate.app/Resources/FortunateInfo.plist
 GNUstep/Local/Applications/Fortunate.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/Fortunate.app/stamp.make
 GNUstep/Local/Tools/Fortunate
-@dirrm GNUstep/Local/Applications/Fortunate.app/Resources/English.lproj/Fortunate.gorm
-@dirrm GNUstep/Local/Applications/Fortunate.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Fortunate.app/Resources
-@dirrm GNUstep/Local/Applications/Fortunate.app
