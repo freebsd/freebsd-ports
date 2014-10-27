@@ -97,6 +97,3 @@ libdata/pkgconfig/dbusmenu-qt.pc
 %%GENDOCS%%%%DOCSDIR%%/tab_h.png
 %%GENDOCS%%%%DOCSDIR%%/tab_s.png
 %%GENDOCS%%%%DOCSDIR%%/tabs.css
-%%GENDOCS%%@dirrm %%DOCSDIR%%/search
-%%GENDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/dbusmenu-qt

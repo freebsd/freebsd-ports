@@ -62,7 +62,3 @@ lib/libloki.so.0.1.7
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/flex_string.html
 %%PORTDOCS%%%%DOCSDIR%%/yasli.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/loki/yasli
-@dirrm include/loki/flex
-@dirrm include/loki

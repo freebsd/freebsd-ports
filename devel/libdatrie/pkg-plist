@@ -9,4 +9,3 @@ lib/libdatrie.so
 lib/libdatrie.so.1
 lib/libdatrie.so.1.3.1
 libdata/pkgconfig/datrie-0.2.pc
-@dirrm include/datrie

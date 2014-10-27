@@ -6,4 +6,3 @@ lib/girepository-1.0/Gee-1.0.typelib
 libdata/pkgconfig/gee-1.0.pc
 share/gir-1.0/Gee-1.0.gir
 share/vala/vapi/gee-1.0.vapi
-@dirrm include/gee-1.0

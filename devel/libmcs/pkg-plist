@@ -10,5 +10,3 @@ lib/libmcs.so.1.0.0
 lib/mcs/keyfile.so
 %%GCONF%%lib/mcs/gconf.so
 libdata/pkgconfig/libmcs.pc
-@dirrm include/libmcs
-@dirrm lib/mcs

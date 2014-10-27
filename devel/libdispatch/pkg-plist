@@ -9,4 +9,3 @@ include/dispatch/source.h
 include/dispatch/time.h
 lib/libdispatch.so
 lib/libdispatch.so.0
-@dirrm include/dispatch

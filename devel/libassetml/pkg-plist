@@ -10,9 +10,4 @@ share/gnome/help/libassetml/C/topic.dat
 share/locale/fr/LC_MESSAGES/libassetml.mo
 share/locale/it/LC_MESSAGES/libassetml.mo
 share/locale/ja/LC_MESSAGES/libassetml.mo
-@exec /bin/mkdir -p %D/share/assetml
-@dirrm share/gnome/help/libassetml/C
-@dirrm share/gnome/help/libassetml
-@unexec rmdir %D/share/assetml 2>/dev/null || /usr/bin/true
-@dirrm include/libassetml-1.0/libassetml
-@dirrm include/libassetml-1.0
+@dir share/assetml

@@ -10,4 +10,3 @@ lib/libzrtpcpp.so.2.3.4
 lib/libzrtpcpp.so.2
 lib/libzrtpcpp.so
 libdata/pkgconfig/libzrtpcpp.pc
-@dirrm include/libzrtpcpp

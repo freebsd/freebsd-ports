@@ -7,4 +7,3 @@ lib/libgee-0.8.so.2.3.0
 libdata/pkgconfig/gee-0.8.pc
 share/gir-1.0/Gee-0.8.gir
 share/vala/vapi/gee-0.8.vapi
-@dirrm include/gee-0.8

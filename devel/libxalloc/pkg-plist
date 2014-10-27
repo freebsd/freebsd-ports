@@ -4,4 +4,3 @@ lib/libxalloc.so
 lib/libxalloc.so.1
 %%PORTDOCS%%share/doc/libxalloc/CREDITS
 %%PORTDOCS%%share/doc/libxalloc/README
-%%PORTDOCS%%@dirrm share/doc/libxalloc

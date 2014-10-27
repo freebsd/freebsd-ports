@@ -36,4 +36,3 @@ man/man3/Qstl.3.gz
 man/man3/nana.3.gz
 %%DATADIR%%/nana-run-init.gdb
 %%DATADIR%%/nana-run.gdb
-@dirrm %%DATADIR%%

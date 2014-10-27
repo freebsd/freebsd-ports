@@ -207,4 +207,3 @@ man/man1/camlp5sch.1.gz
 man/man1/mkcamlp5.1.gz
 man/man1/mkcamlp5.opt.1.gz
 man/man1/ocpp5.1.gz
-@dirrm lib/ocaml/camlp5

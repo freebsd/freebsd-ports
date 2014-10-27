@@ -13,5 +13,4 @@ include/lion/timers.h
 include/lion/tls.h
 include/lion/udp.h
 include/lion/zlib.h
-@dirrm include/lion
 lib/liblion.a

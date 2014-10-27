@@ -11,5 +11,3 @@ lib/libmpc8xx.so
 lib/libmpc8xx.so.0
 lib/libmpc8xx.so.0.0.3
 %%DATADIR%%/Flash.dev
-@dirrm %%DATADIR%%
-@dirrm include/mpc8xx

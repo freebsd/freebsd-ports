@@ -44,4 +44,3 @@ man/man1/gm4.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wrapfifo.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wraplifo.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wraplifo2.m4
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

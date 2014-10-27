@@ -70,6 +70,3 @@ man/man3/libmpalloc.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/refcard.tex
 %%PORTDOCS%%%%DOCSDIR%%/source.tex
 %%PORTDOCS%%%%DOCSDIR%%/texinfo.tex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/mpatrol

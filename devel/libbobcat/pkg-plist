@@ -211,4 +211,3 @@ man/man3/user.3bobcat.gz
 man/man3/x2a.3bobcat.gz
 man/man3/xpointer.3bobcat.gz
 man/man7/bobcat.7.gz
-@dirrm include/bobcat

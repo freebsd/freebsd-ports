@@ -116,30 +116,3 @@ bin/NaturalDocs
 %%DATADIR%%/Styles/Default.css
 %%DATADIR%%/Styles/Roman.css
 %%DATADIR%%/Styles/Small.css
-@dirrm %%DATADIR%%/Styles
-@dirrm %%DATADIR%%/JavaScript
-@dirrm %%DATADIR%%/Info/images
-@dirrm %%DATADIR%%/Info
-@dirrm %%DATADIR%%/Config
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javascript
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/menu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/header
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/example
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/documenting
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/NaturalDocs/Topics
-@dirrm %%SITE_PERL%%/NaturalDocs/SymbolTable
-@dirrm %%SITE_PERL%%/NaturalDocs/SourceDB
-@dirrm %%SITE_PERL%%/NaturalDocs/Settings
-@dirrm %%SITE_PERL%%/NaturalDocs/Project
-@dirrm %%SITE_PERL%%/NaturalDocs/Parser
-@dirrm %%SITE_PERL%%/NaturalDocs/Menu
-@dirrm %%SITE_PERL%%/NaturalDocs/Languages/Prototype
-@dirrm %%SITE_PERL%%/NaturalDocs/Languages/Advanced
-@dirrm %%SITE_PERL%%/NaturalDocs/Languages
-@dirrm %%SITE_PERL%%/NaturalDocs/ImageReferenceTable
-@dirrm %%SITE_PERL%%/NaturalDocs/ClassHierarchy
-@dirrm %%SITE_PERL%%/NaturalDocs/Builder
-@dirrm %%SITE_PERL%%/NaturalDocs

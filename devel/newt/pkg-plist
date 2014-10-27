@@ -81,36 +81,3 @@ man/man1/whiptail.1.gz
 %%NLS%%share/locale/xh/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/newt.mo
-%%NLS%%@dirrmtry share/locale/xh/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/xh
-%%NLS%%@dirrmtry share/locale/wo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/wo
-%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tl
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@latin
-%%NLS%%@dirrmtry share/locale/nds/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nds
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/mg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mg
-%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ku
-%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/km
-%%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ia
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
-%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bn_IN
-%%NLS%%@dirrmtry share/locale/bal/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bal
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/as
-%%TCL%%@dirrm lib/whip%%VERSION%%

@@ -3,4 +3,3 @@ mingw32/include/ddraw.h
 mingw32/include/dinput.h
 mingw32/include/directx.h
 mingw32/include/dsound.h
-@dirrmtry mingw32/include

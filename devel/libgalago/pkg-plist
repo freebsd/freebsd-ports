@@ -48,11 +48,3 @@ share/locale/da/LC_MESSAGES/libgalago.mo
 share/locale/de/LC_MESSAGES/libgalago.mo
 share/locale/fr/LC_MESSAGES/libgalago.mo
 share/locale/pt_BR/LC_MESSAGES/libgalago.mo
-@dirrm share/gtk-doc/html/libgalago
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm share/autopackage/skeletons/@galago.info/libgalago
-@dirrmtry share/autopackage/skeletons/@galago.info
-@dirrmtry share/autopackage/skeletons
-@dirrmtry share/autopackage
-@dirrm include/libgalago

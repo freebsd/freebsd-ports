@@ -196,26 +196,3 @@ man/man1/%%GCC_TARG%%-cpp.1.gz
 man/man1/%%GCC_TARG%%-g++.1.gz
 man/man1/%%GCC_TARG%%-gcc.1.gz
 man/man1/%%GCC_TARG%%-gcov.1.gz
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include-fixed
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/include
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/mcpu-430x/mmpy-16
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/mcpu-430x
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/mmpy-16
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/c-family
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/config/%%GCC_TARG%%
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/config
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/cp
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin
-@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%
-@dirrmtry lib/gcc/%%GCC_TARG%%
-@dirrmtry lib/gcc
-@dirrm libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools
-@dirrm libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%
-@dirrmtry libexec/gcc/%%GCC_TARG%%
-@dirrmtry libexec/gcc
-@dirrmtry %%GCC_TARG%%/lib/mcpu-430x/mmpy-16
-@dirrmtry %%GCC_TARG%%/lib/mcpu-430x
-@dirrmtry %%GCC_TARG%%/lib/mmpy-16

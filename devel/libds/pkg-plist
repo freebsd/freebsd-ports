@@ -11,4 +11,3 @@ man/man3/libds.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/queue.html
 %%PORTDOCS%%%%DOCSDIR%%/set.html
 %%PORTDOCS%%%%DOCSDIR%%/stack.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

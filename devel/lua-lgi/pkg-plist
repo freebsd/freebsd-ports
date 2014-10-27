@@ -26,6 +26,3 @@
 %%LUA_MODSHAREDIR%%/lgi/package.lua
 %%LUA_MODSHAREDIR%%/lgi/record.lua
 %%LUA_MODSHAREDIR%%/lgi/version.lua
-@dirrm %%LUA_MODSHAREDIR%%/lgi/override
-@dirrm %%LUA_MODSHAREDIR%%/lgi
-@dirrm %%LUA_MODLIBDIR%%/lgi

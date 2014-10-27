@@ -38,11 +38,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/us/luajava_128.png
 %%PORTDOCS%%%%DOCSDIR%%/us/manual.html
 %%JAVAJARDIR%%/luajava-1.1.jar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/br
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/org/keplerproject/luajava
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/org/keplerproject
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/org
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/us
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

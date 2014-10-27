@@ -25,4 +25,3 @@ lib/libee.so.0
 lib/libee.so.0.0.0
 libdata/pkgconfig/libee.pc
 sbin/libee-convert
-@dirrm include/libee

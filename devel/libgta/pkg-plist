@@ -14,5 +14,3 @@ libdata/pkgconfig/gta.pc
 %%PORTDOCS%%%%DOCSDIR%%/example-stream-io.cpp
 %%PORTDOCS%%%%DOCSDIR%%/example-tags.c
 %%PORTDOCS%%%%DOCSDIR%%/example-tags.cpp
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry include/gta

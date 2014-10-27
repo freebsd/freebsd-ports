@@ -20,6 +20,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/index_values.html
 %%PORTDOCS%%%%DOCSDIR%%/html/style.css
 %%PORTDOCS%%%%DOCSDIR%%/html/type_Sem.html
-@dirrmtry %%OCAML_SITELIBDIR%%/sem
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

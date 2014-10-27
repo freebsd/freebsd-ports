@@ -579,10 +579,3 @@ mingw32/lib/libwsock32.a
 mingw32/lib/libwst.a
 mingw32/lib/libwtsapi32.a
 mingw32/lib/txtmode.o
-@dirrm mingw32/include/GL
-@dirrm mingw32/include/ddk
-@dirrm mingw32/include/gdiplus
-@dirrm mingw32/include/sys
-@dirrm mingw32/include
-@dirrmtry mingw32/lib
-@dirrmtry mingw32

@@ -15,11 +15,8 @@ libdata/pkgconfig/libftdi1.pc
 libdata/pkgconfig/libftdipp1.pc
 lib/cmake/libftdi1/LibFTDI1Config.cmake
 lib/cmake/libftdi1/UseLibFTDI1.cmake
-@dirrmtry lib/cmake/libftdi1
-@dirrmtry lib/cmake
 include/libftdi1/ftdi.h
 %%BOOST%%include/libftdi1/ftdi.hpp
-@dirrmtry include/libftdi1
 lib/libftdi1.a
 lib/libftdi1.so
 lib/libftdi1.so.2
@@ -32,5 +29,3 @@ lib/libftdi1.so.2.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ftdi1.py
 %%PYTHON%%share/libftdi/examples/complete.py
 %%PYTHON%%share/libftdi/examples/simple.py
-%%PYTHON%%@dirrmtry share/libftdi/examples
-%%PYTHON%%@dirrmtry share/libftdi

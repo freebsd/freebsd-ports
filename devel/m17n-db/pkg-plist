@@ -573,5 +573,3 @@ share/m17n/zh-zhuyin.mim
 share/m17n/zh.lnm
 share/m17n/zh_Hans.lnm
 share/m17n/zh_Hant.lnm
-@dirrm share/m17n/icons
-@dirrm share/m17n

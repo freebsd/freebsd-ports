@@ -49,18 +49,3 @@ libdata/pkgconfig/libglademm-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/tabs.css
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/variablesmap_8h.html
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/xml_8h.html
-%%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html
-%%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference
-%%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs
-%%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%
-%%PORTDOCS%%@dirrmtry share/doc/gnomemm-2.6
-%%PORTDOCS%%@dirrm share/devhelp/books/libglademm-%%API_VERSION%%
-%%PORTDOCS%%@dirrmtry share/devhelp/books
-%%PORTDOCS%%@dirrmtry share/devhelp
-@dirrm lib/libglademm-%%API_VERSION%%/proc/m4
-@dirrm lib/libglademm-%%API_VERSION%%/proc
-@dirrm lib/libglademm-%%API_VERSION%%/include
-@dirrm lib/libglademm-%%API_VERSION%%
-@dirrm include/libglademm-%%API_VERSION%%/libglademm/private
-@dirrm include/libglademm-%%API_VERSION%%/libglademm
-@dirrm include/libglademm-%%API_VERSION%%

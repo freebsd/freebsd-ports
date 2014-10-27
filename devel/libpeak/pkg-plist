@@ -15,7 +15,6 @@ include/peak/time.h
 include/peak/timer.h
 include/peak/tz.h
 include/peak/version.h
-@dirrm include/peak
 lib/libpeak.a
 lib/libpeak.so
 lib/libpeak.so.0

@@ -741,31 +741,3 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/mime/packages/kdevelop.xml
-@dirrm share/doc/HTML/en/kdevelop
-@dirrm share/apps/plasma/plasmoids/kdevelopsessions/contents/ui
-@dirrm share/apps/plasma/plasmoids/kdevelopsessions/contents
-@dirrm share/apps/plasma/plasmoids/kdevelopsessions
-%%OKTETA%%@dirrm share/apps/kdevokteta
-@dirrm share/apps/kdevgdb/printers
-@dirrm share/apps/kdevgdb
-@dirrm share/apps/kdevfiletemplates/templates
-@dirrm share/apps/kdevfiletemplates
-@dirrm share/apps/kdevelop/pics
-@dirrm share/apps/kdevelop/icons/hicolor/32x32/mimetypes
-@dirrm share/apps/kdevelop/icons/hicolor/32x32/actions
-@dirrm share/apps/kdevelop/icons/hicolor/32x32
-@dirrm share/apps/kdevelop/icons/hicolor/22x22/actions
-@dirrm share/apps/kdevelop/icons/hicolor/22x22
-@dirrm share/apps/kdevelop/icons/hicolor/16x16/actions
-@dirrm share/apps/kdevelop/icons/hicolor/16x16
-@dirrm share/apps/kdevelop/icons/hicolor
-@dirrm share/apps/kdevelop/icons
-@dirrm share/apps/kdevelop
-@dirrm share/apps/kdevcustommakemanager
-@dirrm share/apps/kdevcppsupport
-@dirrm share/apps/kdevcodegen/templates
-@dirrm share/apps/kdevcodegen
-@dirrm share/apps/kdevappwizard/templates
-@dirrmtry share/apps/kdevappwizard
-@dirrm include/kdevelop/make
-@dirrm include/kdevelop

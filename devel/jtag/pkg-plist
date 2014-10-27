@@ -42,29 +42,3 @@ bin/jtag
 %%DATADIR%%/xilinx/xcr3256xl-ft256/STEPPINGS
 %%DATADIR%%/xilinx/xcr3256xl-ft256/xcr3256xl-ft256
 %%NLS%%share/locale/sk/LC_MESSAGES/jtag.mo
-@dirrm %%DATADIR%%/xilinx/xcr3256xl-ft256
-@dirrm %%DATADIR%%/xilinx/xcr3128xl-cs144
-@dirrm %%DATADIR%%/xilinx/xc2c256-tq144
-@dirrm %%DATADIR%%/xilinx
-@dirrm %%DATADIR%%/samsung/s3c4510b
-@dirrm %%DATADIR%%/samsung
-@dirrm %%DATADIR%%/philips/xcr3128xl-cs144
-@dirrm %%DATADIR%%/philips
-@dirrm %%DATADIR%%/intel/sa1110
-@dirrm %%DATADIR%%/intel/pxa250
-@dirrm %%DATADIR%%/intel/ixp425
-@dirrm %%DATADIR%%/intel
-@dirrm %%DATADIR%%/hitachi/sh7727
-@dirrm %%DATADIR%%/hitachi
-@dirrm %%DATADIR%%/dec/sa1100
-@dirrm %%DATADIR%%/dec
-@dirrm %%DATADIR%%/broadcom/bcm5421s
-@dirrm %%DATADIR%%/broadcom/bcm3310
-@dirrm %%DATADIR%%/broadcom/bcm1250
-@dirrm %%DATADIR%%/broadcom
-@dirrm %%DATADIR%%/atmel/atmega128
-@dirrm %%DATADIR%%/atmel
-@dirrm %%DATADIR%%/altera/epm7128aetc100
-@dirrm %%DATADIR%%/altera/ep1c20f400
-@dirrm %%DATADIR%%/altera
-@dirrm %%DATADIR%%

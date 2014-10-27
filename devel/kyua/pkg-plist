@@ -40,10 +40,8 @@ man/man7/kyua-test-filters.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Kyuafile.top
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kyua.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%TEST%%tests/Kyuafile
 %%TEST%%tests/kyua/Kyuafile
 %%TEST%%tests/kyua/bootstrap/Kyuafile
@@ -203,27 +201,3 @@ man/man7/kyua-test-filters.7.gz
 %%TEST%%tests/kyua/utils/text/table_test
 %%TEST%%tests/kyua/utils/text/templates_test
 %%TEST%%tests/kyua/utils/units_test
-%%TEST%%@dirrm tests/kyua/utils/text
-%%TEST%%@dirrm tests/kyua/utils/sqlite
-%%TEST%%@dirrm tests/kyua/utils/signals
-%%TEST%%@dirrm tests/kyua/utils/process
-%%TEST%%@dirrm tests/kyua/utils/logging
-%%TEST%%@dirrm tests/kyua/utils/fs
-%%TEST%%@dirrm tests/kyua/utils/format
-%%TEST%%@dirrm tests/kyua/utils/config
-%%TEST%%@dirrm tests/kyua/utils/cmdline
-%%TEST%%@dirrm tests/kyua/utils
-%%TEST%%@dirrm tests/kyua/store
-%%TEST%%@dirrm tests/kyua/testers
-%%TEST%%@dirrm tests/kyua/integration/helpers
-%%TEST%%@dirrm tests/kyua/integration
-%%TEST%%@dirrm tests/kyua/examples
-%%TEST%%@dirrm tests/kyua/engine/drivers
-%%TEST%%@dirrm tests/kyua/engine
-%%TEST%%@dirrm tests/kyua/cli
-%%TEST%%@dirrm tests/kyua/bootstrap
-%%TEST%%@dirrm tests/kyua
-@dirrm %%DATADIR%%/store
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%
-@dirrm etc/kyua

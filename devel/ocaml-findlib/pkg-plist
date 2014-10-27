@@ -47,19 +47,3 @@ man/man1/ocamlfind.1.gz
 man/man5/META.5.gz
 man/man5/findlib.conf.5.gz
 man/man5/site-lib.5.gz
-@dirrm %%OCAML_SITELIBDIR%%/bigarray
-@dirrm %%OCAML_SITELIBDIR%%/bytes
-@dirrm %%OCAML_SITELIBDIR%%/camlp4
-@dirrm %%OCAML_SITELIBDIR%%/compiler-libs
-@dirrm %%OCAML_SITELIBDIR%%/dynlink
-@dirrm %%OCAML_SITELIBDIR%%/findlib
-@dirrm %%OCAML_SITELIBDIR%%/graphics
-%%TOOLBOX%%@dirrmtry %%OCAML_SITELIBDIR%%/labltk
-@dirrm %%OCAML_SITELIBDIR%%/num
-@dirrm %%OCAML_SITELIBDIR%%/num-top
-@dirrm %%OCAML_SITELIBDIR%%/ocamlbuild
-@dirrm %%OCAML_SITELIBDIR%%/stdlib
-@dirrm %%OCAML_SITELIBDIR%%/str
-@dirrm %%OCAML_SITELIBDIR%%/threads
-@dirrm %%OCAML_SITELIBDIR%%/unix
-@dirrmtry %%OCAML_SITELIBDIR%%

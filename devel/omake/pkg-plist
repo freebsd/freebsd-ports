@@ -52,11 +52,3 @@ lib/omake/web/simple-xml.om
 %%PORTDOCS%%%%DOCSDIR%%/omake-var-index.html
 %%PORTDOCS%%%%DOCSDIR%%/omake.html
 %%PORTDOCS%%%%DOCSDIR%%/osh.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/omake/web
-@dirrm lib/omake/parse/LaTeX
-@dirrm lib/omake/parse/C
-@dirrm lib/omake/parse
-@dirrm lib/omake/configure
-@dirrm lib/omake/build
-@dirrm lib/omake

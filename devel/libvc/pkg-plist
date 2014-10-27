@@ -10,4 +10,3 @@ man/man3/vc.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/rfc2426.txt
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

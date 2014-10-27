@@ -15,4 +15,3 @@ include/inilib/registry.h
 include/inilib/section.h
 include/inilib/string_attribute.h
 lib/libini.a
-@dirrm include/inilib

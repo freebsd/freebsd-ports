@@ -54,8 +54,3 @@ man/man1/%%BINUTILS_TARG%%-windres.1.gz
 %%BINUTILS_TARG%%/lib/ldscripts/msp430.xn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430.xr
 %%BINUTILS_TARG%%/lib/ldscripts/msp430.xu
-@dirrm %%BINUTILS_TARG%%/bin
-@dirrm %%BINUTILS_TARG%%/lib/ldscripts
-@dirrm %%BINUTILS_TARG%%/lib
-@dirrmtry %%BINUTILS_TARG%%/info
-@dirrmtry %%BINUTILS_TARG%%

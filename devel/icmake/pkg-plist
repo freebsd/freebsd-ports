@@ -21,8 +21,3 @@ share/icmake-%%PORTVERSION%%/main.cc
 share/icmake-%%PORTVERSION%%/main.ih
 share/icmake-%%PORTVERSION%%/usage.cc
 share/icmake-%%PORTVERSION%%/version.cc
-@dirrm etc/icmake
-@dirrm lib/icmake-%%PORTVERSION%%
-@dirrm share/icmake-%%PORTVERSION%%/parser
-@dirrm share/icmake-%%PORTVERSION%%/scanner
-@dirrm share/icmake-%%PORTVERSION%%

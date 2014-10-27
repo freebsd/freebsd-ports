@@ -9,6 +9,3 @@ lib/libmtp.a
 lib/libm2ua.a
 libdata/pkgconfig/libosmo-sccp.pc
 libdata/pkgconfig/libosmo-mtp.pc
-@dirrm include/osmocom/sccp
-@dirrm include/osmocom/mtp
-@dirrm include/osmocom/m2ua

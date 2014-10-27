@@ -7,7 +7,3 @@
 %%HIPHOP_DIR%%/ext/lib/libevent_core.a
 %%HIPHOP_DIR%%/ext/lib/libevent_extra.a
 %%HIPHOP_DIR%%/ext/lib/libevent.a
-@dirrmtry %%HIPHOP_DIR%%/ext/lib
-@dirrmtry %%HIPHOP_DIR%%/ext/include
-@dirrmtry %%HIPHOP_DIR%%/ext
-@dirrmtry %%HIPHOP_DIR%%

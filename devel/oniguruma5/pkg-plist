@@ -23,5 +23,3 @@ libdata/pkgconfig/oniguruma.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/syntax.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

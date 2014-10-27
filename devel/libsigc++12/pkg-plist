@@ -32,8 +32,3 @@ lib/libsigc-1.2.so.5
 lib/libsigc-1.2.so.5.0.7
 lib/sigc++-1.2/include/sigcconfig.h
 libdata/pkgconfig/sigc++-1.2.pc
-@dirrm lib/sigc++-1.2/include
-@dirrm lib/sigc++-1.2
-@dirrm include/sigc++-1.2/sigc++/macros
-@dirrm include/sigc++-1.2/sigc++
-@dirrm include/sigc++-1.2

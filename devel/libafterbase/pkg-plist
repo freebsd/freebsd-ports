@@ -21,4 +21,3 @@ include/libAfterBase/xwrap.h
 %%STATIC%%lib/libAfterBase.a
 lib/libAfterBase.so
 lib/libAfterBase.so.0
-@dirrm include/libAfterBase

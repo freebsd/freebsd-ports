@@ -29,6 +29,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/file.ml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/file.o
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.ml
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%OCAML_SITELIBDIR%%/magic

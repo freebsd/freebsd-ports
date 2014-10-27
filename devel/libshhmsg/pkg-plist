@@ -5,4 +5,3 @@ lib/libshhmsg.so.1
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/shhmsg.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

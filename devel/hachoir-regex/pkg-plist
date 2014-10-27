@@ -19,4 +19,3 @@
 %%PYTHON_SITELIBDIR%%/hachoir_regex/version.py
 %%PYTHON_SITELIBDIR%%/hachoir_regex/version.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_regex/version.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_regex

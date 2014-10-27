@@ -168,16 +168,3 @@ share/locale/vi/LC_MESSAGES/libsoup.mo
 share/locale/zh_CN/LC_MESSAGES/libsoup.mo
 share/locale/zh_HK/LC_MESSAGES/libsoup.mo
 share/locale/zh_TW/LC_MESSAGES/libsoup.mo
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrm share/gtk-doc/html/libsoup-%%VERSION%%
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc/
-@dirrm include/libsoup-%%VERSION%%/libsoup
-@dirrm include/libsoup-%%VERSION%%

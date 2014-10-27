@@ -12,4 +12,3 @@ lib/libjson++.a
 lib/libjson++.so
 lib/libjson++.so.0.5
 lib/libjson++.so.0.5.0
-@dirrm include/json

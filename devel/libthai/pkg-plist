@@ -98,7 +98,3 @@ libdata/pkgconfig/libthai.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/tis_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/html/wtt_8h.html
 %%DATADIR%%/thbrk.tri
-@dirrmtry %%DATADIR%%
-%%DOXYGEN%%@dirrmtry %%DOCSDIR%%/html
-%%DOXYGEN%%@dirrmtry %%DOCSDIR%%
-@dirrmtry include/thai

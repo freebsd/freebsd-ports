@@ -69,5 +69,3 @@ lib/libgit2.so
 lib/libgit2.so.0.%%SHLIB_VER%%.0
 lib/libgit2.so.%%SHLIB_VER%%
 libdata/pkgconfig/libgit2.pc
-@dirrm include/git2/sys
-@dirrm include/git2

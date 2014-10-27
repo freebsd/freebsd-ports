@@ -18,4 +18,3 @@ libdata/pkgconfig/libpff.pc
 man/man1/pffexport.1.gz
 man/man1/pffinfo.1.gz
 man/man3/libpff.3.gz
-@dirrm include/libpff

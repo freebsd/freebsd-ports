@@ -759,8 +759,3 @@ man/man5/mdbTutorialIM.5.gz
 %%JAPANESE%%%%DOCSDIR%%/ja/html/tabs.css
 %%JAPANESE%%%%DOCSDIR%%/ja/html/textprop_8c.html
 %%JAPANESE%%%%DOCSDIR%%/ja/m17n-lib.pdf
-@dirrm %%DOCSDIR%%/en/html
-@dirrm %%DOCSDIR%%/en
-%%JAPANESE%%@dirrm %%DOCSDIR%%/ja/html
-%%JAPANESE%%@dirrm %%DOCSDIR%%/ja
-@dirrm %%DOCSDIR%%

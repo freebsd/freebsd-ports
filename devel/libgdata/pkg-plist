@@ -186,27 +186,3 @@ share/locale/uk/LC_MESSAGES/gdata.mo
 share/locale/zh_CN/LC_MESSAGES/gdata.mo
 share/locale/zh_HK/LC_MESSAGES/gdata.mo
 share/locale/zh_TW/LC_MESSAGES/gdata.mo
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrm share/doc/gdata
-@dirrm include/libgdata/gdata/services/youtube
-@dirrm include/libgdata/gdata/services/picasaweb
-@dirrm include/libgdata/gdata/services/documents
-@dirrm include/libgdata/gdata/services/contacts
-@dirrm include/libgdata/gdata/services/calendar
-@dirrm include/libgdata/gdata/services
-@dirrm include/libgdata/gdata/media
-@dirrm include/libgdata/gdata/gd
-@dirrm include/libgdata/gdata/atom
-@dirrm include/libgdata/gdata
-@dirrm include/libgdata

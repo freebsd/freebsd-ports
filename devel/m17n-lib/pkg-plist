@@ -42,5 +42,3 @@ libdata/pkgconfig/m17n-core.pc
 libdata/pkgconfig/m17n-flt.pc
 libdata/pkgconfig/m17n-gui.pc
 libdata/pkgconfig/m17n-shell.pc
-@dirrm lib/m17n/1.0
-@dirrm lib/m17n

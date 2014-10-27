@@ -37,4 +37,3 @@ lib/libmowgli.so
 lib/libmowgli.so.2
 lib/libmowgli.so.2.0.0
 libdata/pkgconfig/libmowgli.pc
-@dirrm include/libmowgli

@@ -14,4 +14,3 @@ lib/libncnf.so.2
 lib/libncnf.so.2.1.0
 %%PORTDOCS%%%%DOCSDIR%%/ncnf-validator-syntax.txt
 %%PORTDOCS%%%%DOCSDIR%%/ncnf-whitepaper.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -340,15 +340,3 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/video/mpeg_video.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/video/mpeg_video.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/video/mpeg_video.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/archive
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/audio
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/common
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/container
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/file_system
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/game
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/image
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/misc
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/network
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/program
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/video
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser

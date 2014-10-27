@@ -142,6 +142,3 @@
 %%PYTHON_SITELIBDIR%%/hachoir_core/version.py
 %%PYTHON_SITELIBDIR%%/hachoir_core/version.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_core/version.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_core/field
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_core/stream
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_core

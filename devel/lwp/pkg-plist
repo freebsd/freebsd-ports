@@ -6,4 +6,3 @@ lib/liblwp.so
 lib/liblwp.so.2
 lib/liblwp.so.2.0.9
 libdata/pkgconfig/lwp.pc
-@dirrm include/lwp

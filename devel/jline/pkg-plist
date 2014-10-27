@@ -108,13 +108,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/examples/jline/example/english.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/JLineCompleter.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/jython.sh
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/jline/example
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/jline
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/src-html/jline
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/src-html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/jline/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/jline
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -71,5 +71,3 @@ lib/libfirm.a
 lib/libfirm.so
 lib/libfirm.so.1.0.0
 libdata/pkgconfig/libfirm.pc
-@dirrm include/libfirm/adt
-@dirrm include/libfirm

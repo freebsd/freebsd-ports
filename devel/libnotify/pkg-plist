@@ -25,7 +25,3 @@ share/gtk-doc/html/libnotify/libnotify.devhelp2
 share/gtk-doc/html/libnotify/right.png
 share/gtk-doc/html/libnotify/style.css
 share/gtk-doc/html/libnotify/up.png
-@dirrm share/gtk-doc/html/libnotify
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/libnotify

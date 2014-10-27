@@ -30,4 +30,3 @@ man/man1/ewfmount.1.gz
 man/man1/ewfrecover.1.gz
 man/man1/ewfverify.1.gz
 man/man3/libewf.3.gz
-@dirrm include/libewf

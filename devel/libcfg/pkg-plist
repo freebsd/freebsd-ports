@@ -12,7 +12,3 @@ man/man3/cfg_parse.3.gz
 man/man3/cfg_print_error.3.gz
 man/man3/cfg_set_context_flag.3.gz
 man/man3/libcfg+.3.gz
-@dirrm include/platon
-%%EXAMPLES%%%%EXAMPLESDIR%%/example.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/example.cfg
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%

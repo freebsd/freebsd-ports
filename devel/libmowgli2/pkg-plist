@@ -50,17 +50,3 @@ lib/libmowgli-2.so
 lib/libmowgli-2.so.0
 lib/libmowgli-2.so.0.0.0
 libdata/pkgconfig/libmowgli-2.pc
-@dirrmtry include/libmowgli-2/vio
-@dirrmtry include/libmowgli-2/thread
-@dirrmtry include/libmowgli-2/platform/win32
-@dirrmtry include/libmowgli-2/platform
-@dirrmtry include/libmowgli-2/object
-@dirrmtry include/libmowgli-2/module
-@dirrmtry include/libmowgli-2/linebuf
-@dirrmtry include/libmowgli-2/ext
-@dirrmtry include/libmowgli-2/eventloop
-@dirrmtry include/libmowgli-2/dns
-@dirrmtry include/libmowgli-2/core
-@dirrmtry include/libmowgli-2/container
-@dirrmtry include/libmowgli-2/base
-@dirrmtry include/libmowgli-2

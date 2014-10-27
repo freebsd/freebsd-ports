@@ -19,7 +19,3 @@ libdata/pkgconfig/jclass.pc
 man/man1/jclassinfo.1.gz
 share/xml/jclassinfo/jclassinfo.dtd
 share/xml/jclassinfo/jclassinfo2xhtml.xsl
-@dirrm include/jclass
-@dirrm lib/jclass/include
-@dirrm lib/jclass
-@dirrm share/xml/jclassinfo

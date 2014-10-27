@@ -249,7 +249,6 @@
 %%DATADIR%%/tables/zh-tw.ctb
 %%PORTDOCS%%%%DOCSDIR%%/liblouis.html
 %%PORTDOCS%%%%DOCSDIR%%/liblouis.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 bin/lou_allround
 bin/lou_checkhyphens
 bin/lou_checktable
@@ -265,6 +264,3 @@ lib/liblouis.so
 lib/liblouis.so.2
 lib/liblouis.so.2.4.0
 libdata/pkgconfig/liblouis.pc
-@dirrm %%DATADIR%%/tables
-@dirrm %%DATADIR%%
-@dirrm include/liblouis

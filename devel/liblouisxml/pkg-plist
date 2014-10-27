@@ -36,7 +36,3 @@ libdata/pkgconfig/liblouisxml.pc
 %%DATADIR%%/lbx_files/w_wordDocument.sem
 %%PORTDOCS%%%%DOCSDIR%%/liblouisxml.html
 %%PORTDOCS%%%%DOCSDIR%%/liblouisxml.txt
-@dirrm include/liblouisxml
-@dirrm %%DATADIR%%/lbx_files
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

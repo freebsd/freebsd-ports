@@ -19,6 +19,3 @@ bin/kickassembler
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/picture.prg
 share/java/kickassembler/KickAss.cfg
 share/java/kickassembler/KickAss.jar
-@dirrm share/java/kickassembler
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

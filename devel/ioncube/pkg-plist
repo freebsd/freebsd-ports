@@ -1,4 +1,2 @@
 lib/php/%%PHP_EXT_DIR%%/ioncube/ioncube_loader.so
 lib/php/%%PHP_EXT_DIR%%/ioncube/ioncube_loader_ts.so
-@dirrm lib/php/%%PHP_EXT_DIR%%/ioncube
-@dirrmtry lib/php/%%PHP_EXT_DIR%%

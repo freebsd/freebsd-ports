@@ -74,11 +74,3 @@ lib/liblog4cplus.a
 lib/liblog4cplus.la
 lib/liblog4cplus.so
 libdata/pkgconfig/log4cplus.pc
-@dirrm include/log4cplus/thread/impl
-@dirrm include/log4cplus/thread
-@dirrm include/log4cplus/spi
-@dirrm include/log4cplus/internal
-@dirrm include/log4cplus/helpers
-@dirrm include/log4cplus/config
-@dirrm include/log4cplus/boost
-@dirrm include/log4cplus

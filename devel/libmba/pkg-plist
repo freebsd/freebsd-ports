@@ -45,4 +45,3 @@ man/man3/svsem.3m.gz
 man/man3/text.3m.gz
 man/man3/time.3m.gz
 man/man3/varray.3m.gz
-@dirrm include/mba

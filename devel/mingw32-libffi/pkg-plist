@@ -6,10 +6,3 @@ mingw32/lib/libffi-%%PORTVERSION%%/include/ffitarget.h
 mingw32/lib/libffi.a
 mingw32/lib/libffi.dll.a
 mingw32/lib/pkgconfig/libffi.pc
-@dirrm mingw32/lib/libffi-%%PORTVERSION%%/include
-@dirrm mingw32/lib/libffi-%%PORTVERSION%%
-@dirrmtry mingw32/lib/pkgconfig
-@dirrmtry mingw32/lib
-@dirrmtry mingw32/include
-@dirrmtry mingw32/bin
-@dirrmtry mingw32

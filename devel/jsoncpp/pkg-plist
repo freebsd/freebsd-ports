@@ -9,5 +9,3 @@ include/jsoncpp/json/value.h
 include/jsoncpp/json/reader.h
 include/jsoncpp/json/features.h
 include/jsoncpp/json/autolink.h
-@dirrm include/jsoncpp/json
-@dirrm include/jsoncpp
