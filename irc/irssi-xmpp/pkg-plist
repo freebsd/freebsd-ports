@@ -9,7 +9,3 @@
 lib/irssi/modules/libfe_xmpp.so
 lib/irssi/modules/libtext_xmpp.so
 lib/irssi/modules/libxmpp_core.so
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/irssi-xmpp
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/help
-@dirrmtry %%DATADIR%%

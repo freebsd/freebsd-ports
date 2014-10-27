@@ -31,7 +31,6 @@ man/man7/xdcc.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/iroffer.1.html
 %%PORTDOCS%%%%DOCSDIR%%/iroffer.1.ps
 %%PORTDOCS%%%%DOCSDIR%%/iroffer.1.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beispiel.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exemple.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/footer.html
@@ -45,5 +44,3 @@ man/man7/xdcc.7.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/md5.txt.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/robots.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/sfv.txt.rb
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/htdocs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

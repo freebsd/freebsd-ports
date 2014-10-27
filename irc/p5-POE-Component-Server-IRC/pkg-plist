@@ -13,12 +13,3 @@ man/man1/pmkpasswd.1.gz
 %%PERL5_MAN3%%/POE::Component::Server::IRC::Plugin.3.gz
 %%PERL5_MAN3%%/POE::Component::Server::IRC::Plugin::Auth.3.gz
 %%PERL5_MAN3%%/POE::Component::Server::IRC::Plugin::OperServ.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/IRC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/POE/Component/Server/IRC/Plugin
-@dirrmtry %%SITE_PERL%%/POE/Component/Server/IRC
-@dirrmtry %%SITE_PERL%%/POE/Component/Server
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE

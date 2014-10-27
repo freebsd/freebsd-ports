@@ -275,31 +275,4 @@ man/man1/irssi.1.gz
 %%DATADIR%%/scripts/usercount.pl
 %%DATADIR%%/themes/colorless.theme
 %%DATADIR%%/themes/default.theme
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Irssi
-@exec mkdir -p %D/lib/irssi/modules
-@dirrmtry lib/irssi/modules
-@dirrmtry lib/irssi
-@dirrm include/irssi/src/lib-config
-@dirrm include/irssi/src/irc/notifylist
-@dirrm include/irssi/src/irc/flood
-@dirrm include/irssi/src/irc/dcc
-@dirrm include/irssi/src/irc/core
-@dirrm include/irssi/src/irc
-@dirrm include/irssi/src/fe-text
-@dirrm include/irssi/src/fe-common/irc/notifylist
-@dirrm include/irssi/src/fe-common/irc/dcc
-@dirrm include/irssi/src/fe-common/irc
-@dirrm include/irssi/src/fe-common/core
-@dirrm include/irssi/src/fe-common
-@dirrm include/irssi/src/core
-@dirrm include/irssi/src
-@dirrm include/irssi
+@dir lib/irssi/modules

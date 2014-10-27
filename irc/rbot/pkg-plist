@@ -146,18 +146,3 @@ bin/rbot-remote
 %%DATADIR%%/templates/salut/salut-french
 %%DATADIR%%/templates/salut/salut-italian
 %%DATADIR%%/templates/salut/salut-japanese
-@dirrm %%DATADIR%%/templates/salut
-@dirrm %%DATADIR%%/templates/quiz
-@dirrm %%DATADIR%%/templates/lart
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/plugins/games
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/languages
-@dirrm %%DATADIR%%/filters
-@dirrm %%DATADIR%%/contrib/plugins
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%
-@dirrm %%RUBY_SITELIBDIR%%/rbot/registry
-@dirrm %%RUBY_SITELIBDIR%%/rbot/core/utils
-@dirrm %%RUBY_SITELIBDIR%%/rbot/core
-@dirrm %%RUBY_SITELIBDIR%%/rbot

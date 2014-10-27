@@ -339,5 +339,3 @@ share/irssi/scripts/xmms.pl
 share/irssi/scripts/xmms2.pl
 share/irssi/scripts/xmmsinfo.pl
 share/irssi/scripts/xqf.pl
-@dirrmtry share/irssi/scripts
-@dirrmtry share/irssi

@@ -33,5 +33,3 @@ bin/ninjawserv
 %%DATADIR%%/translation/SWISS
 %%DATADIR%%/translation/UNITED_KINGDOM
 %%DATADIR%%/translation/UNITED_KINGDOM_COM
-@dirrm %%DATADIR%%/translation
-@dirrm %%DATADIR%%

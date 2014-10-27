@@ -24,5 +24,3 @@ share/gruftistats/pipe3v.png
 share/gruftistats/pipe4h.png
 share/gruftistats/pipe4v.png
 share/gruftistats/xchat.lrx
-@dirrm share/gruftistats
-%%PORTDOCS%%@dirrm share/doc/gruftistats

@@ -6,8 +6,3 @@ lib/xchat/plugins/cwirc.so
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/schematics/cw_oscillator.jpg
 %%PORTDOCS%%%%DOCSDIR%%/schematics/rs232_key_connection.jpg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schematics
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/cwirc/extensions
-@dirrm share/cwirc
-@dirrmtry lib/xchat/plugins

@@ -1,12 +1,3 @@
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Karma.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin/Karma/.packlist
 %%PERL5_MAN3%%/POE::Component::IRC::Plugin::Karma.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin/Karma
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/POE/Component/IRC/Plugin
-@dirrmtry %%SITE_PERL%%/POE/Component/IRC
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE

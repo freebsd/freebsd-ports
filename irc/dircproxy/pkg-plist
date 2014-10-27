@@ -6,4 +6,3 @@ man/man1/dircproxy-crypt.1.gz
 %%DATADIR%%/dircproxyrc.sample
 %%DATADIR%%/log.pl
 %%DATADIR%%/privmsg-log.pl
-@dirrm %%DATADIR%%

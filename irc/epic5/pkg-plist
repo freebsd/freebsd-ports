@@ -90,8 +90,4 @@ man/man1/epic5.1.gz
 %%DATADIR%%/script/url.irc
 %%DATADIR%%/script/utime
 %%DATADIR%%/script/xmsglog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%DATADIR%%/help
-@dirrmtry %%DATADIR%%/help
-@dirrm %%DATADIR%%/script
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/help

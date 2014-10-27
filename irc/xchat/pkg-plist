@@ -34,6 +34,4 @@ share/locale/vi/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW/LC_MESSAGES/xchat.mo
 share/pixmaps/xchat.png
-@exec mkdir -p %D/lib/xchat/plugins
-@dirrm lib/xchat/plugins
-@dirrm lib/xchat
+@dir lib/xchat/plugins

@@ -12,4 +12,3 @@ sbin/ircd
 sbin/iauth
 sbin/ircd-mkpasswd
 sbin/ircdwatch
-@dirrmtry etc/ircd

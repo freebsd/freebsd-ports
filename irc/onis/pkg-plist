@@ -84,20 +84,3 @@
 %%DATADIR%%/themes/light.theme
 %%DATADIR%%/themes/liner.theme
 %%DATADIR%%/users.conf
-@dirrm %%DATADIR%%/var
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/reports/liner-theme
-@dirrm %%DATADIR%%/reports/light-theme
-@dirrm %%DATADIR%%/reports/dark-theme
-@dirrm %%DATADIR%%/reports
-@dirrm %%DATADIR%%/lib/Onis/Plugins
-@dirrm %%DATADIR%%/lib/Onis/Parser
-@dirrm %%DATADIR%%/lib/Onis/Data/Persistent
-@dirrm %%DATADIR%%/lib/Onis/Data
-@dirrm %%DATADIR%%/lib/Onis
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/debian
-@dirrm %%DATADIR%%/contrib/systemwide-patch
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%

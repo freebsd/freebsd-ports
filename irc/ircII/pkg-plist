@@ -599,16 +599,3 @@ man/man1/ircII.1.gz
 %%DATADIR%%/script/wallopstat
 %%DATADIR%%/script/whowas
 %%DATADIR%%/script/window
-@dirrm %%DATADIR%%/script
-@dirrm %%DATADIR%%/help/alias
-@dirrm %%DATADIR%%/help/bind
-@dirrm %%DATADIR%%/help/ctcp
-@dirrm %%DATADIR%%/help/dcc
-@dirrm %%DATADIR%%/help/on
-@dirrm %%DATADIR%%/help/load
-@dirrm %%DATADIR%%/help/note
-@dirrm %%DATADIR%%/help/set
-@dirrm %%DATADIR%%/help/window
-@dirrm %%DATADIR%%/help/ircii
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%

@@ -54,8 +54,3 @@ sbin/ircservices-chk
 %%PORTDOCS%%%%DOCSDIR%%/tech/index.html
 %%PORTDOCS%%%%DOCSDIR%%/tech/style.css
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%ETCDIR%%/languages
-@dirrm %%ETCDIR%%/helpfiles
-@dirrm %%ETCDIR%%

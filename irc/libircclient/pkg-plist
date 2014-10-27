@@ -11,4 +11,3 @@ lib/libircclient.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircftp.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/irctest.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spammer.c
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

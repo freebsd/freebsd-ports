@@ -1,14 +1,4 @@
 %%SITE_PERL%%/POE/Component/IRC/Plugin/CoreList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin/CoreList/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/synopsis.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PERL5_MAN3%%/POE::Component::IRC::Plugin::CoreList.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin/CoreList
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/POE/Component/IRC/Plugin
-@dirrmtry %%SITE_PERL%%/POE/Component/IRC
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE
