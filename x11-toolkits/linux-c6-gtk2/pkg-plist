@@ -231,40 +231,19 @@ usr/share/themes/Industrial/gtk-2.0/gtkrc
 usr/share/themes/Mist/gtk-2.0/gtkrc
 usr/share/themes/Raleigh/gtk-2.0/gtkrc
 usr/share/themes/ThinIce/gtk-2.0/gtkrc
-@comment deal with empty directories created by the port
+%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/AUTHORS
+%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/COPYING
+%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/NEWS
+%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/README
 @exec /bin/mkdir -p %D/etc/gtk-2.0/i386-redhat-linux-gnu
 @exec /bin/mkdir -p %D/usr/lib/gtk-2.0/2.10.0/filesystems
 @exec /bin/mkdir -p %D/usr/lib/gtk-2.0/modules
-@dirrmtry etc/gtk-2.0/i386-redhat-linux-gnu
-@dirrmtry usr/lib/gtk-2.0/2.10.0/engines
-@dirrmtry usr/lib/gtk-2.0/2.10.0/filesystems
-@dirrmtry usr/lib/gtk-2.0/modules
-@dirrmtry usr/share/gtk-engines
-@comment non-empty directory listing in revers order
-@dirrm usr/share/themes/Default/gtk-2.0-key
-@dirrm usr/share/themes/Default
-@dirrm usr/share/themes/Raleigh/gtk-2.0
-@dirrm usr/share/themes/Raleigh
-@dirrm usr/share/themes/Clearlooks/gtk-2.0
-@dirrm usr/share/themes/Clearlooks
-@dirrm usr/share/themes/Crux/gtk-2.0
-@dirrm usr/share/themes/Crux
-@dirrm usr/share/themes/Emacs/gtk-2.0-key
-@dirrm usr/share/themes/Emacs
-@dirrm usr/share/themes/Industrial/gtk-2.0
-@dirrm usr/share/themes/Industrial
-@dirrm usr/share/themes/Mist/gtk-2.0
-@dirrm usr/share/themes/Mist
-@dirrm usr/share/themes/ThinIce/gtk-2.0
-@dirrm usr/share/themes/ThinIce
-@dirrm usr/share/doc/gtk2-2.20.1
-@dirrm usr/lib/gtk-2.0/immodules
-@dirrm usr/lib/gtk-2.0/2.10.0/printbackends
-@dirrm usr/lib/gtk-2.0/2.10.0/loaders
-@dirrm usr/lib/gtk-2.0/2.10.0/immodules
-@dirrm usr/lib/gtk-2.0/2.10.0/engines
-@dirrm usr/lib/gtk-2.0/2.10.0
-@dirrm usr/lib/gtk-2.0
-@dirrm etc/gtk-2.0
+@unexec rm -f %D/etc/gtk-2.0/i386-redhat-linux-gnu/gdk-pixbuf.loaders
+@unexec rm -f %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
+@dir etc/gtk-2.0
+@dir etc/gtk-2.0/i386-redhat-linux-gnu
+@dir usr/lib/gtk-2.0
+@dir usr/lib/gtk-2.0/2.10.0
+@dir usr/lib/gtk-2.0/2.10.0/filesystems
 @exec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
 @exec chroot %D /usr/bin/gdk-pixbuf-query-loaders-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gdk-pixbuf.loaders
