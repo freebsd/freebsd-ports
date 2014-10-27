@@ -2845,12 +2845,3 @@ man/man6/xblast.6.gz
 %%SOUND%%%%DATADIR%%/sounds/xbtele.raw
 %%SOUND%%%%DATADIR%%/sounds/xbtele1.raw
 %%SOUND%%%%DATADIR%%/sounds/xbtele2.raw
-%%SOUND%%@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/level
-@dirrm %%DATADIR%%/image/sprite
-@dirrm %%DATADIR%%/image/score
-@dirrm %%DATADIR%%/image/misc
-@dirrm %%DATADIR%%/image/explosion
-@dirrm %%DATADIR%%/image/block
-@dirrm %%DATADIR%%/image
-@dirrm %%DATADIR%%
