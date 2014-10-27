@@ -1,0 +1,9 @@
+Logstash Contrib Repository
+
+This is a collection of companion plugins (and hopefully tests, too!)
+to be used in conjunction with Logstash.
+
+The plugins here are maintained by the core Logstash team, and
+supported by the community.
+
+WWW: http://logstash.net/docs/1.4.2/contrib-plugins
