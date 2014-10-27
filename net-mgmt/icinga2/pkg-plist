@@ -26,8 +26,6 @@ bin/icinga2-sign-key
 %%ETCDIR%%/features-available/debuglog.conf
 %%ETCDIR%%/features-available/graphite.conf
 %%ETCDIR%%/features-available/icingastatus.conf
-%%ETCDIR%%/features-available/ido-mysql.conf
-%%ETCDIR%%/features-available/ido-pgsql.conf
 %%ETCDIR%%/features-available/livestatus.conf
 %%ETCDIR%%/features-available/mainlog.conf
 %%ETCDIR%%/features-available/notification.conf
@@ -37,6 +35,8 @@ bin/icinga2-sign-key
 %%ETCDIR%%/features-enabled/checker.conf
 %%ETCDIR%%/features-enabled/mainlog.conf
 %%ETCDIR%%/features-enabled/notification.conf
+@(icinga,icinga,0640) %%ETCDIR%%/features-available/ido-mysql.conf
+@(icinga,icinga,0640) %%ETCDIR%%/features-available/ido-pgsql.conf
 %%ETCDIR%%/icinga2.conf
 %%ETCDIR%%/scripts/mail-host-notification.sh
 %%ETCDIR%%/scripts/mail-service-notification.sh
