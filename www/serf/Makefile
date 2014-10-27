@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serf
-PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTVERSION=	1.3.8
 CATEGORIES=	www
 MASTER_SITES=	http://serf.googlecode.com/svn/src_releases/
 
@@ -14,7 +13,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
 
-USES=		scons tar:bzip2
+USES=		scons tar:bzip2 cpe
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
