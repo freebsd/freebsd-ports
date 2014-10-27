@@ -2,4 +2,3 @@ bin/corkscrew
 %%PORTDOCS%%share/doc/corkscrew/NEWS
 %%PORTDOCS%%share/doc/corkscrew/README
 %%PORTDOCS%%share/doc/corkscrew/TODO
-%%PORTDOCS%%@dirrm share/doc/corkscrew
