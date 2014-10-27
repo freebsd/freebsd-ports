@@ -102,6 +102,7 @@ sbin/munin-sched
 %%DATADIR%%/plugins/http_loadtime
 %%DATADIR%%/plugins/if_
 %%DATADIR%%/plugins/if_errcoll_
+%%DATADIR%%/plugins/if_packets_
 %%DATADIR%%/plugins/ifx_concurrent_sessions_
 %%DATADIR%%/plugins/iostat
 %%DATADIR%%/plugins/ipac-ng

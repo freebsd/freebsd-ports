@@ -5,4 +5,8 @@ has been placed in %%ETCDIR%%/munin.conf.
 Please edit it according to your needs.
 
 The Munin server will be run from cron under the user 'munin'.
+
+If you need to customize the munin crontab, remove the lines
+containing #BEGIN_MUNIN_MAIN and #END_MUNIN_MAIN, and add a line
+with #MANUAL_MUNIN_CRONTAB.
 ********************************************************************
