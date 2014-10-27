@@ -4,7 +4,7 @@
 PORTNAME=	logstash-contrib
 DISTVERSION=	1.4.2
 CATEGORIES=	sysutils
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Standard plugins contributed to the Logstash project

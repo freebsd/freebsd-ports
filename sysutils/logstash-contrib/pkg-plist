@@ -64,4 +64,4 @@ logstash/lib/logstash/outputs/websocket/pubsub.rb
 logstash/lib/logstash/outputs/zabbix.rb
 logstash/lib/logstash/util/relp.rb
 logstash/lib/logstash/util/zenoss.rb
-logstash/lib/logstash/util/zeromq.rb
+
