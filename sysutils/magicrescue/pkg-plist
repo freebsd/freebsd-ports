@@ -39,4 +39,3 @@ man/man1/magicsort.1.gz
 %%DATADIR%%/tools/textextract
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
