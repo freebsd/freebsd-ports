@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gogglesmm
-PORTVERSION=	0.13.3
+PORTVERSION=	0.14.0
 CATEGORIES=	audio
 MASTER_SITES=	GH
 
@@ -12,13 +12,14 @@ COMMENT=	Music collection manager and player
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libFOX-1.7.so:${PORTSDIR}/x11-toolkits/fox17
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	259f253
+GH_COMMIT=	8ccdb53
 
 USES=		compiler:c++0x desktop-file-utils gmake pkgconfig
 USE_SQLITE=	yes
@@ -31,13 +32,17 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --fox-prefix=${LOCALBASE} \
 		--without-rsound --without-mpcdec
 INSTALLS_ICONS=	yes
 
+USE_LDCONFIG=	${PREFIX}/lib/gogglesmm
+
+PORTDOCS=	AUTHORS ChangeLog README
+
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-OPTIONS_DEFINE=		ALSA CDIO DBUS DOCS FAAD FFMPEG FLAC GCRYPT JACK \
+OPTIONS_DEFINE=		ALSA CDIO DOCS FAAD FFMPEG FLAC GCRYPT JACK \
 			MAD MMS NLS OPUS PULSEAUDIO SAMPLERATE SMB TREMOR \
 			VORBIS WAVPACK
-OPTIONS_DEFAULT=	CDIO DBUS FAAD FLAC MAD OPUS SAMPLERATE SMB \
+OPTIONS_DEFAULT=	CDIO FAAD FLAC MAD OPUS SAMPLERATE SMB \
 			VORBIS WAVPACK
 OPTIONS_SUB=		yes
 
@@ -45,8 +50,8 @@ ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--without-alsa
 CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
 CDIO_CONFIGURE_OFF=	--without-cdda
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
-DBUS_CONFIGURE_OFF=	--without-dbus
+#DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+#DBUS_CONFIGURE_OFF=	--without-dbus
 FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
 FAAD_CONFIGURE_ON=	--faad-prefix=${LOCALBASE}
 FAAD_CONFIGURE_OFF=	--without-faad
@@ -103,6 +108,7 @@ post-patch:
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gogglesmm
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata
 	@${MKDIR} ${STAGEDIR}${DATADIR}/utils
 .for i in 16 22 24 32 48
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps
@@ -111,8 +117,8 @@ pre-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS ChangeLog README
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gogglesmm/libgap_*.so
