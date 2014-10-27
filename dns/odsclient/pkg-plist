@@ -1,3 +1,2 @@
 bin/odsclient
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

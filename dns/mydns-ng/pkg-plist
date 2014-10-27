@@ -28,5 +28,3 @@ sbin/mydns
 %%NLS%%share/locale/es/LC_MESSAGES/mydns.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mydns.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mydns.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

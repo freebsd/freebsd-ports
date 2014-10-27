@@ -15,7 +15,6 @@ bin/zone2hostdbhelper
 %%PORTDOCS%%%%DOCSDIR%%/hostdb-options.txt
 %%PORTDOCS%%%%DOCSDIR%%/lisa2005-paper.pdf
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/zoneconf.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/dhcpd.conf-tail
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/hostdb-ranges2.txt
@@ -79,11 +78,3 @@ bin/zone2hostdbhelper
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiddenmaster/EXTERNAL.named.root
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiddenmaster/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiddenmaster/hostdb.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example1/out
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/goodstart
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hiddenmaster
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mailserverexample/out
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mailserverexample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

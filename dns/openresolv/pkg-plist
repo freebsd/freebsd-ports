@@ -6,7 +6,3 @@ etc/resolvconf/update.d/libc
 etc/resolvconf/update.d/dnsmasq
 etc/resolvconf/update.d/named
 man/man8/resolvconf.8.gz
-@dirrm etc/resolvconf/update.d
-@dirrm etc/resolvconf/update-libc.d
-@dirrm etc/resolvconf/resolv.conf.d
-@dirrm etc/resolvconf

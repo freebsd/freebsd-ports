@@ -90,12 +90,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/sec2time.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/strip.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/ttlAlpha2Num.al
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Debug
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

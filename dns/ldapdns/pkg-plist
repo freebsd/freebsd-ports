@@ -22,5 +22,3 @@ bin/domainname.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/unset_ip_pointer
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axfr
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ldapdns.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/admin
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

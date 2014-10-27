@@ -10,4 +10,3 @@ etc/ez-ipupdate.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-ods.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-pgpow.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-tzo.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

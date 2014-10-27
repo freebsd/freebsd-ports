@@ -39,7 +39,6 @@ lib/updatedd/libtzo.a
 lib/updatedd/libtzo.so
 lib/updatedd/libtzo.so.0
 lib/updatedd/libtzo.so.0.0.0
-@dirrm lib/updatedd
 include/libchangeip.h
 include/libdyndns.h
 include/libeurodyndns.h
@@ -54,8 +53,6 @@ include/libtzo.h
 man/man1/updatedd-wrapper.1.gz
 man/man1/updatedd.1.gz
 man/man5/updatedd-wrapper.conf.5.gz
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/updatedd-2.4-english.pdf
 %%PORTDOCS%%%%DOCSDIR%%/updatedd-2.4-german.pdf
 %%PORTDOCS%%%%DOCSDIR%%/updatedd-pppd-rc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -20,9 +20,6 @@ lib/libidnkitlite.so.2
 lib/libidnkitlite.so.2.0.3
 share/idnkit/map/ja.map
 share/idnkit/map/tr.map
-@dirrm share/idnkit/map
-@dirrm share/idnkit
-@dirrm include/idn
 man/man1/idncheck.1.gz
 man/man1/idncmp.1.gz
 man/man1/idnconv2.1.gz

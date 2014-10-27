@@ -5,21 +5,18 @@ etc/dns_balance/addrdb.rb.dist
 @unexec if cmp -s %%ETCDIR%%/namespace.rb %%ETCDIR%%/namespace.rb.dist; then rm -f %%ETCDIR%%/namespace.rb; fi
 etc/dns_balance/namespace.rb.dist
 @exec [ ! -f %B/namespace.rb ] && cp %B/%f %B/namespace.rb
-@dirrm etc/dns_balance
 lib/dns_balance/as_search.rb
 lib/dns_balance/cache.rb
 lib/dns_balance/datatype.rb
 lib/dns_balance/log_writer.rb
 lib/dns_balance/multilog.rb
 lib/dns_balance/util.rb
-@dirrm lib/dns_balance
 %%PORTDOCS%%%%DOCSDIR%%/Q_and_A.dns_balance
 %%PORTDOCS%%%%DOCSDIR%%/Q_and_A.dns_balance.eng
 %%PORTDOCS%%%%DOCSDIR%%/README.dns_balance
 %%PORTDOCS%%%%DOCSDIR%%/README.dns_balance.eng
 %%PORTDOCS%%%%DOCSDIR%%/README.dnsbalance+daemontools
 %%PORTDOCS%%%%DOCSDIR%%/README.dnsbalance+daemontools.eng
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/addr
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/addr.ring
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/addr.ring.txt
@@ -29,4 +26,3 @@ lib/dns_balance/util.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/namespace.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/namespace.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ringupdate.sh
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

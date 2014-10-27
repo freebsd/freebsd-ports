@@ -99,8 +99,6 @@ man/man3/libgetdns.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/spec/getdns-0.508.tgz
 %%PORTDOCS%%%%DOCSDIR%%/spec/index.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/spec
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-all-functions.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-reverse.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-simple-answers.c
@@ -113,5 +111,3 @@ man/man3/libgetdns.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/make-examples-linux.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/make-examples-mac.sh
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrm include/getdns

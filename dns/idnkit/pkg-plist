@@ -32,7 +32,6 @@ include/idn/unormalize.h
 include/idn/utf8.h
 include/idn/util.h
 include/idn/version.h
-@dirrm include/idn
 lib/libidnkit.a
 lib/libidnkit.so
 lib/libidnkit.so.1
@@ -53,10 +52,7 @@ man/man5/idn.conf.5.gz
 man/man5/idnalias.conf.5.gz
 man/man5/idnrc.5.gz
 share/idnkit/jp.map
-@dirrm share/idnkit
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ja/README.ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -35,7 +35,3 @@ man/man3/tsig.3.gz
 man/man5/irs.conf.5.gz
 man/man5/resolver.5.gz
 man/man7/hostname.7.gz
-@dirrm include/bind/arpa
-@dirrm include/bind/isc
-@dirrm include/bind/sys
-@dirrm include/bind
