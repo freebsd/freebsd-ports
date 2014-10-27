@@ -1,29 +1,54 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
-# PROVIDE: logstash
-# REQUIRE: LOGIN
-# KEYWORD: shutdown
-#
-#
 # Configuration settings for logstash in /etc/rc.conf:
 #
 # logstash_enable (bool):
-#   Set to "NO" by default.
-#   Set it to "YES" to enable logstash
+#   Default value: "NO"
+#   Flag that determines whether Logstash is enabled.
 #
-# logstash_mode :
-#   Set to "standalone" by default.
+# logstash_home (string):
+#   Default value: "/opt/logstash-1.4.2"
+#   Logstash installation directory.
+#
+# logstash_config (string):
+#   Default value: /usr/local/etc/${name}/${name}.conf
+#   Logstash configuration file path.
+#
+# logstash_mode (string):
+#   Default value: "standalone"
 #   Valid options:
 #     "standalone": agent, web & elasticsearch
 #     "web": Starts logstash as a web ui
 #     "agent": Justs works as a log shipper 
 #
+# logstash_port (int):
+#   Default value: 9292
+#   Port of the Kibana web interface.
+# 
 # logstash_log (bool):
 #   Set to "NO" by default.
 #   Set it to "YES" to enable logstash logging to file
 #   Default output to /var/log/logstash.log
+#
+# logstash_log_file (string):
+#   Default value: "${logdir}/${name}.log"
+#   Log file path.
+#
+# logstash_java_home (string):
+#   Default value: "/usr/local/openjdk6"
+#   Root directory of the desired Java SDK.
+#   The JAVA_HOME environment variable is set with the contents of this
+#   variable.
+#
+# logstash_java_opts (string):
+#   Default value: ""
+#   Options to pass to the Java Virtual Machine.
+#   The JAVA_OPTS environment variable is set with the contents of this
+#   variable.
+#
+# logstash_elastic_datadir (string):
+#   Default value: "/var/db/logstash".
+#   Data directory of the embedded ElasticSearch instance.
 #
 
 . /etc/rc.subr
@@ -37,46 +62,50 @@ logdir="/var/log"
 
 : ${logstash_enable="NO"}
 : ${logstash_home="%%LOGSTASH_HOME%%"}
-: ${logstash_config="%%PREFIX%%/etc/${name}/${name}.conf"}
-: ${logstash_jar="%%LOGSTASH_HOME%%/%%LOGSTASH_JAR%%"}
-: ${logstash_java_home="%%JAVA_HOME%%"}
+: ${logstash_config="%%ETCDIR%%/${name}.conf"}
 : ${logstash_log="NO"}
 : ${logstash_mode="standalone"}
 : ${logstash_port="9292"}
-: ${logstash_elastic_backend=""}
 : ${logstash_log_file="${logdir}/${name}.log"}
 : ${logstash_elastic_datadir="%%LOGSTASH_DATA_DIR%%"}
+: ${logstash_java_home="%%JAVA_HOME%%"}
+: ${logstash_java_opts=""}
+: ${logstash_ffi_java_opts="-Djnr.ffi.asm.enabled=false"}
 
 piddir=/var/run/${name}
 pidfile=${piddir}/${name}.pid
 
 if [ -d $piddir ]; then
-	mkdir -p $piddir
+  mkdir -p $piddir
 fi
 
-command="/usr/sbin/daemon"
-
-java_cmd="${logstash_java_home}/bin/java"
-procname="${java_cmd}"
+logstash_cmd="${logstash_home}/bin/logstash"
+procname="${logstash_java_home}/bin/java"
 
 logstash_chdir=${logstash_home}
 logstash_log_options=""
 logstash_elastic_options=""
 
 if checkyesno logstash_log; then
-	logstash_log_options=" --log ${logstash_log_file}" 
+  logstash_log_options=" --log ${logstash_log_file}" 
 fi
 
 if [ ${logstash_mode} = "standalone" ]; then
-	logstash_args="agent -f ${logstash_config} ${logstash_log_options} -- web --port ${logstash_port}"
-	logstash_elastic_options="-Des.path.data=${logstash_elastic_datadir}"
+  logstash_args="agent -f ${logstash_config} ${logstash_log_options} -- web --port ${logstash_port}"
+  logstash_elastic_options="-Des.path.data=${logstash_elastic_datadir}"
 elif [ ${logstash_mode} = "agent" ]; then
-	logstash_args="agent -f ${logstash_config} ${logstash_log_options}"
+  logstash_args="agent -f ${logstash_config} ${logstash_log_options}"
 elif [ ${logstash_mode} = "web" ]; then
-	logstash_args="web --port ${logstash_port} ${logstash_log_options}"
+  logstash_args="web --port ${logstash_port} ${logstash_log_options}"
 fi
 
-command_args="-f -p ${pidfile} ${java_cmd} ${logstash_elastic_options} -jar ${logstash_jar} ${logstash_args}"
-required_files="${java_cmd} ${logstash_config}"
+JAVA_OPTS="${logstash_ffi_java_opts} ${logstash_java_opts} ${logstash_elastic_options}"
+JAVA_HOME="${logstash_java_home}"
+export JAVA_OPTS
+export JAVA_HOME
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${logstash_cmd} ${logstash_args}"
+required_files="${logstash_home} ${logstash_java_home} ${logstash_cmd} ${logstash_config}"
 
 run_rc_command "$1"
