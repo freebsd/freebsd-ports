@@ -45,10 +45,3 @@ libexec/klh10-ks-its/dptm03
 %%DATADIR%%/itsbin.647kn-u
 %%DATADIR%%/klh10-kn.ini
 @exec mkdir -p %D/%%DATADIR%%/flushed
-@dirrmtry %%DATADIR%%/flushed
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pubits/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pubits/adm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pubits
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/klh10-ks-its

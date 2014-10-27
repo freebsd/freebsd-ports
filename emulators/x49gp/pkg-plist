@@ -11,4 +11,3 @@ bin/x49gp-bin
 %%DATADIR%%/s3c2410-sram
 %%DATADIR%%/sdcard64.tar.gz
 %%DATADIR%%/sram
-@dirrm %%DATADIR%%

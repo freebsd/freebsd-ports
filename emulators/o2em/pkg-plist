@@ -167,8 +167,3 @@ o2em/voice/EAA4.WAV
 o2em/voice/EAA5.WAV
 o2em/voice/EAA6.WAV
 o2em/voice/EAA7.WAV
-@dirrm o2em/voice
-@dirrm o2em/bios
-@dirrm o2em/roms
-@dirrm o2em
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

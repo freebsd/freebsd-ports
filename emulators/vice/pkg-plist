@@ -274,15 +274,3 @@ man/man1/xvic.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/vice_9.html
 %%PORTDOCS%%%%DOCSDIR%%/vice_toc.html
 %%PORTDOCS%%%%DOCSDIR%%/vice-logo.jpg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/vice/fonts
-@dirrm lib/vice/VIC20
-@dirrm lib/vice/PRINTER
-@dirrm lib/vice/PLUS4
-@dirrm lib/vice/PET
-@dirrm lib/vice/DRIVES
-@dirrm lib/vice/CBM-II
-@dirrm lib/vice/C64DTV
-@dirrm lib/vice/C64
-@dirrm lib/vice/C128
-@dirrm lib/vice

@@ -67,7 +67,3 @@ share/doc/aqemu/README.bz2
 share/doc/aqemu/TODO.bz2
 share/pixmaps/aqemu_48x48.png
 share/pixmaps/aqemu_64x64.png
-@dirrm share/doc/aqemu
-@dirrm share/aqemu/os_templates
-@dirrm share/aqemu/os_icons
-@dirrm share/aqemu

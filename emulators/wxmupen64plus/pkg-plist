@@ -23,4 +23,3 @@ bin/wxmupen64plus
 %%DATADIR%%/warning.png
 %%DATADIR%%/wxMupen64Plus.icns
 %%DATADIR%%/wxmupen64plus.ico
-@dirrm %%DATADIR%%

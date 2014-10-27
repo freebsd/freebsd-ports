@@ -42,10 +42,3 @@ share/applications/openMSX-Catapult.desktop
 %%PORTDOCS%%%%DOCSDIR%%/manual/video.png
 %%PORTDOCS%%%%DOCSDIR%%/release-history.txt
 %%PORTDOCS%%%%DOCSDIR%%/release-notes.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/resources/icons
-@dirrm %%DATADIR%%/resources/dialogs
-@dirrm %%DATADIR%%/resources/bitmaps
-@dirrm %%DATADIR%%/resources
-@dirrm %%DATADIR%%

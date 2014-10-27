@@ -32,9 +32,3 @@ etc/vbam.cfg-example
 %%GVBAM%%share/vbam/ui/sound.ui
 %%GVBAM%%share/vbam/ui/vbam.ui
 %%GVBAM%%share/vbam/vba-over.ini
-%%GVBAM%%%%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
-%%GVBAM%%%%NLS%%@dirrmtry share/locale/ca_ES
-%%GVBAM%%%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
-%%GVBAM%%%%NLS%%@dirrmtry share/locale/it_IT
-%%GVBAM%%@dirrmtry share/vbam/ui
-@dirrmtry share/vbam

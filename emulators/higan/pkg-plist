@@ -17,13 +17,3 @@ share/applications/higan.desktop
 %%DATADIR%%/shaders/Scanline.shader/manifest.bml
 %%DATADIR%%/shaders/Scanline.shader/scanline.fs
 share/pixmaps/higan.png
-@dirrm %%DATADIR%%/shaders/Scanline.shader
-@dirrm %%DATADIR%%/shaders/Edge Detection.shader
-@dirrm %%DATADIR%%/shaders/Curvature.shader
-@dirrm %%DATADIR%%/shaders
-@dirrm %%DATADIR%%/Super Famicom.sys
-@dirrm %%DATADIR%%/Game Boy.sys
-@dirrm %%DATADIR%%/Game Boy Color.sys
-@dirrm %%DATADIR%%/Game Boy Advance.sys
-@dirrm %%DATADIR%%/Famicom.sys
-@dirrm %%DATADIR%%

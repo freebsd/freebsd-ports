@@ -32,13 +32,3 @@ share/tilem2/symbols/ti83.sym
 share/tilem2/symbols/ti83p.sym
 share/tilem2/symbols/ti85.sym
 share/tilem2/symbols/ti86.sym
-@dirrm share/tilem2/symbols
-@dirrm share/tilem2/skins
-@dirrm share/tilem2/icons/hicolor/24x24/actions
-@dirrm share/tilem2/icons/hicolor/24x24
-@dirrm share/tilem2/icons/hicolor/16x16/status
-@dirrm share/tilem2/icons/hicolor/16x16/actions
-@dirrm share/tilem2/icons/hicolor/16x16
-@dirrm share/tilem2/icons/hicolor
-@dirrm share/tilem2/icons
-@dirrm share/tilem2

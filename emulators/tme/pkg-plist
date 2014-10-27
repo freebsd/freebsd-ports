@@ -163,12 +163,3 @@ lib/tme/tmeconfig.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/my-sun-macros.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sun-keyboards.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sun3-carrera-eeprom.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/tme
-@dirrm include/tme/scsi
-@dirrm include/tme/machine
-@dirrm include/tme/ic
-@dirrm include/tme/host
-@dirrm include/tme/generic
-@dirrm include/tme/bus
-@dirrm include/tme

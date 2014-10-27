@@ -42,9 +42,3 @@ man/man1/pipelight-plugin.1.gz
 %%DATADIR%%/sig-install-dependency.gpg
 %%DATADIR%%/wine
 %%DATADIR%%/winecheck.exe
-@dirrmtry lib/browser_plugins
-@dirrmtry lib/pipelight
-@dirrmtry %%DATADIR%%/configs
-@dirrmtry %%DATADIR%%/licenses
-@dirrmtry %%DATADIR%%/scripts
-@dirrmtry %%DATADIR%%

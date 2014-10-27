@@ -4,4 +4,3 @@ bin/mkcard
 bin/x48
 %%DATADIR%%/gxrom-r
 %%DATADIR%%/sxrom-j
-@dirrm %%DATADIR%%

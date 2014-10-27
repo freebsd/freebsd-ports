@@ -2,9 +2,7 @@ bin/vmips
 bin/vmipstool
 etc/vmipsrc
 include/vmips/asm_regnames.h
-@dirrm include/vmips
 %%DATADIR%%/ld.script
 %%DATADIR%%/setup.S
 man/man1/vmips.1.gz
 man/man1/vmipstool.1.gz
-@dirrm %%DATADIR%%

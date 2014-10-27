@@ -61,11 +61,3 @@ share/icons/hicolor/scalable/apps/q4wine.svg
 %%DATADIR%%/theme/nuvola/data/up.png
 %%DATADIR%%/theme/nuvola/data/wine.png
 %%DATADIR%%/theme/nuvola/data/wizard.png
-@dirrm %%DATADIR%%/theme/nuvola/data
-@dirrm %%DATADIR%%/theme/nuvola
-@dirrm %%DATADIR%%/theme
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/icons
-%%NLS%%@dirrm %%DATADIR%%/i18n
-@dirrm %%DATADIR%%
-@dirrm lib/q4wine

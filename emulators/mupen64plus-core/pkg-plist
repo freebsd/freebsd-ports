@@ -12,6 +12,3 @@ lib/libmupen64plus.so.2.0.0
 %%DATADIR%%/mupen64plus.ini
 %%DATADIR%%/mupencheat.txt
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE
-@dirrmtry %%DATADIR%%
-@dirrm include/mupen64plus
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

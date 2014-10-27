@@ -17,9 +17,3 @@ bin/readdisk
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.PROGRAMMERS
 %%PORTDOCS%%%%DOCSDIR%%/README.unix
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/amiga/devs/AudioModes
-@dirrm %%DATADIR%%/amiga/devs/AHI
-@dirrm %%DATADIR%%/amiga/devs
-@dirrm %%DATADIR%%/amiga
-@dirrm %%DATADIR%%

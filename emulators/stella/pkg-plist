@@ -53,6 +53,3 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/circuit.png
 %%PORTDOCS%%%%DOCSDIR%%/debugger.html
 %%DATADIR%%/stella.pro
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/graphics
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

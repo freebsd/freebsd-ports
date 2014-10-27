@@ -14,6 +14,3 @@ bin/joytran
 %%PORTDOCS%%%%DOCSDIR%%/0203121918-diagram.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual.tex
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
-@dirrmtry %%DATADIR%%/profiles
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

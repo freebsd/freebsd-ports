@@ -542,24 +542,7 @@ man/man1/gns3.1.gz
 %%PYTHON_SITELIBDIR%%/GNS3/__init__.py
 %%PYTHON_SITELIBDIR%%/GNS3/__init__.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/__init__.pyo
-@dirrm libexec/gns3
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Ui
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Node
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Link
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Langs
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Globals
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/External
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Export
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Dynagen
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Defaults
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Config
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Awp
-@dirrm %%PYTHON_SITELIBDIR%%/GNS3
 %%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info/PKG-INFO
 %%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info/top_level.txt
-@dirrmtry %%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

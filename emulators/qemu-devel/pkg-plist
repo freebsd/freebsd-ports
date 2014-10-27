@@ -44,7 +44,6 @@
 %%SOFTMMU%%@sample etc/qemu-ifup.sample
 %%SOFTMMU%%@sample etc/qemu-ifdown.sample
 %%SOFTMMU%%@sample etc/qemu/target-x86_64.conf.sample
-%%SOFTMMU%%@dirrmtry etc/qemu
 %%SOFTMMU%%%%DATADIR%%/QEMU,tcx.bin
 %%SOFTMMU%%%%DATADIR%%/QEMU,cgthree.bin
 %%SOFTMMU%%%%DATADIR%%/acpi-dsdt.aml
@@ -128,10 +127,4 @@
 %%GTK2%%share/locale/it/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/hu/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/tr/LC_MESSAGES/qemu.mo
-%%SOFTMMU%%@dirrm %%DATADIR%%/keymaps
-%%GTK2%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%GTK2%%@dirrmtry share/locale/de_DE
-%%SOFTMMU%%@dirrmtry %%DATADIR%%
 %%SOFTMMU%%@exec mkdir -p %D/var/run
-%%SOFTMMU%%@dirrmtry var/run
-%%SOFTMMU%%@dirrmtry var

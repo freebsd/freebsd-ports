@@ -18,10 +18,3 @@ man/man1/advs.1.gz
 %%DATADIR%%/rom/.keep_me
 %%DATADIR%%/sample/.keep_me
 %%DATADIR%%/snap/.keep_me
-@dirrm %%DATADIR%%/snap
-@dirrm %%DATADIR%%/sample
-@dirrm %%DATADIR%%/rom
-@dirrm %%DATADIR%%/image
-@dirrm %%DATADIR%%/diff
-@dirrm %%DATADIR%%/artwork
-@dirrm %%DATADIR%%

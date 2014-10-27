@@ -107,10 +107,3 @@ share/tiemu/skins/ti92.map
 share/tiemu/skins/ti92.skn
 share/tiemu/skins/ti92_fr.map
 share/tiemu/skins/v200plt.skn
-@dirrm share/tiemu/skins
-@dirrm share/tiemu/pixmaps
-@dirrm share/tiemu/pedrom
-@dirrm share/tiemu/misc
-@dirrm share/tiemu/help
-@dirrm share/tiemu/glade
-@dirrm share/tiemu

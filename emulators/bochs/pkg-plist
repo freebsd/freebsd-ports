@@ -42,7 +42,3 @@ man/man5/bochsrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/bxdebugger.html
 %%PORTDOCS%%%%DOCSDIR%%/memory.txt
 %%PORTDOCS%%%%DOCSDIR%%/random.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/keymaps
-@dirrm %%DATADIR%%

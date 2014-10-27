@@ -26,7 +26,6 @@ etc/qemu-ifdown.sample
 @exec if [ ! -f %D/etc/qemu-ifdown ] ; then cp -p %D/%F %B/qemu-ifdown; fi
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/bios.bin
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-cirrus.bin
@@ -77,5 +76,3 @@ etc/qemu-ifdown.sample
 %%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
 %%DATADIR%%/keymaps/tr
-@dirrm %%DATADIR%%/keymaps
-@dirrm %%DATADIR%%
