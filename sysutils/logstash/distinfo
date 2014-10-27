@@ -1,2 +1,4 @@
-SHA256 (logstash-1.2.1-flatjar.jar) = d0b8a56fb1aa71d54c2bab71709d900b359fdf8c6d7d6ff15578423a0d86ee23
-SIZE (logstash-1.2.1-flatjar.jar) = 81648562
+SHA256 (logstash-1.4.2.tar.gz) = d5be171af8d4ca966a0c731fc34f5deeee9d7631319e3660d1df99e43c5f8069
+SIZE (logstash-1.4.2.tar.gz) = 85619205
+SHA256 (jnr-ffi-2.0.0.jar) = bfe10bf5492667146a23fec12abab7ec96164f84d819f8785a8f44540f84f4d8
+SIZE (jnr-ffi-2.0.0.jar) = 648330
