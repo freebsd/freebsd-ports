@@ -10,4 +10,3 @@
 %%PYTHON_SITELIBDIR%%/threadpool.py
 %%PYTHON_SITELIBDIR%%/threadpool.pyc
 %%PYTHON_SITELIBDIR%%/threadpool.pyo
-%%PORTDOCS%%@dirrm share/doc/xoltar-toolkit

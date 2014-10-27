@@ -373,22 +373,3 @@
 %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/utils.pyo
 %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/www/imageScales.zpt
 %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/www/overview.zpt
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/www
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/tool
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/thirdparty
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/tests/input
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/skins/ATContentTypes
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/migration/v1_2
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/migration
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/lib
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/interfaces
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/exportimport
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/etc
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/criteria
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/content
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/configuration
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes/browser
-@dirrm %%PYTHON_SITELIBDIR%%/Products/ATContentTypes
-@dirrmtry %%PYTHON_SITELIBDIR%%/Products

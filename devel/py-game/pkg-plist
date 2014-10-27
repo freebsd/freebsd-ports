@@ -156,17 +156,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stars.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsprite.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vgrade.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macosx
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/tom
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/surfarray
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/intro
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/chimp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/camera
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tut
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ref
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

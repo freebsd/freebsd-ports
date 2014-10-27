@@ -12,4 +12,3 @@ man/man1/pycallgraph.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/large.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/recursive.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/regexp.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

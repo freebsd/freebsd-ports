@@ -54,5 +54,3 @@ share/py-sip/Qsci/qsciscintillabase4.sip
 share/py-sip/Qsci/qscistyle.sip
 share/py-sip/Qsci/qscistyledtext.sip
 share/qt4/qsci/api/python/QScintilla2.api
-@dirrm share/py-sip/Qsci
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

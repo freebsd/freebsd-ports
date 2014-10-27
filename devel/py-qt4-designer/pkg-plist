@@ -25,5 +25,3 @@ share/py-sip/QtDesigner/qpydesignerpropertysheetextension.sip
 share/py-sip/QtDesigner/qpydesignertaskmenuextension.sip
 share/py-sip/QtDesigner/taskmenu.sip
 %%API%%share/qt4/qsci/api/python/QtDesigner.api
-@dirrm share/py-sip/QtDesigner
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

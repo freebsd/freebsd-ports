@@ -32,6 +32,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_conn.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_erl_node_tk_1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_remote_exec.py
-@dirrm %%PYTHON_SITELIBDIR%%/py_interface
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

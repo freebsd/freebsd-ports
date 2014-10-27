@@ -15,5 +15,3 @@ share/py-sip/QtDBus/qdbusunixfiledescriptor.sip
 share/py-sip/QtDBus/qpydbuspendingreply.sip
 share/py-sip/QtDBus/qpydbusreply.sip
 %%API%%share/qt4/qsci/api/python/QtDBus.api
-@dirrm share/py-sip/QtDBus
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

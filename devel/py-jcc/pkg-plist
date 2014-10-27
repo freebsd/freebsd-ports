@@ -32,6 +32,3 @@
 %%PYTHON_SITELIBDIR%%/jcc/windows.py
 %%PYTHON_SITELIBDIR%%/jcc/windows.pyc
 %%PYTHON_SITELIBDIR%%/jcc/windows.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/jcc/sources
-@dirrm %%PYTHON_SITELIBDIR%%/jcc/patches
-@dirrm %%PYTHON_SITELIBDIR%%/jcc

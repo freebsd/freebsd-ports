@@ -8,4 +8,3 @@ bin/sip
 %%PYTHON_SITELIBDIR%%/sipdistutils.pyc
 %%PYTHON_SITELIBDIR%%/sipdistutils.pyo
 @exec mkdir -p %D/%%DATADIR%%
-@dirrmtry %%DATADIR%%

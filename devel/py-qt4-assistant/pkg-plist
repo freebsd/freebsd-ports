@@ -2,5 +2,3 @@
 share/py-sip/QtAssistant/QtAssistantmod.sip
 share/py-sip/QtAssistant/qassistantclient.sip
 %%API%%share/qt4/qsci/api/python/QtAssistant.api
-@dirrmtry share/py-sip/QtAssistant
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

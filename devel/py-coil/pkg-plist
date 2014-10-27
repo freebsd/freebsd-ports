@@ -38,5 +38,3 @@ bin/coildump
 %%PYTHON_SITELIBDIR%%/coil/tokenizer.py
 %%PYTHON_SITELIBDIR%%/coil/tokenizer.pyc
 %%PYTHON_SITELIBDIR%%/coil/tokenizer.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/coil/test
-@dirrm %%PYTHON_SITELIBDIR%%/coil

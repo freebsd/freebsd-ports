@@ -219,18 +219,3 @@
 %%PYTHON_SITELIBDIR%%/astroid/utils.py
 %%PYTHON_SITELIBDIR%%/astroid/utils.pyc
 %%PYTHON_SITELIBDIR%%/astroid/utils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/brain
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/SSL1
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/appl
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/find_test
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/lmfp
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/module1abs
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data2
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/sidepackage
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/package/subpackage
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/package
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test
-@dirrm %%PYTHON_SITELIBDIR%%/astroid

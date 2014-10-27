@@ -39,7 +39,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/todos.html
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -513,22 +513,3 @@
 %%PYTHON_SITELIBDIR%%/Products/CMFCore/zcml.py
 %%PYTHON_SITELIBDIR%%/Products/CMFCore/zcml.pyc
 %%PYTHON_SITELIBDIR%%/Products/CMFCore/zcml.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/www
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/tests/fake_skins/fake_skin
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/tests/fake_skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/tests/base
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/interfaces
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/images
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/help
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/exportimport/tests/two
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/exportimport/tests/three
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/exportimport/tests/one
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/exportimport/tests/four
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/exportimport/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/exportimport
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/dtml
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/browser
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore/Extensions
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFCore
-@dirrmtry %%PYTHON_SITELIBDIR%%/Products
