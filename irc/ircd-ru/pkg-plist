@@ -8,14 +8,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/opers.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/README
-@dirrmtry %%DATADIR%%
-@dirrmtry %%DATADIR%%/codepages
-@dirrmtry %%DATADIR%%/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru_RU.KOI8-R
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry etc/ircd-ru
-@dirrmtry etc/ircd-ru/ru_RU.CP1251
-@dirrmtry etc/ircd-ru/ru_RU.KOI8-R
 bin/ircdpasswd
 etc/ircd-ru/ircd.conf-dist
 etc/ircd-ru/ircd.motd-dist

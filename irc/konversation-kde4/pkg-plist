@@ -219,29 +219,3 @@ share/locale/tr/LC_MESSAGES/konversation.mo
 share/locale/uk/LC_MESSAGES/konversation.mo
 share/locale/zh_CN/LC_MESSAGES/konversation.mo
 share/locale/zh_TW/LC_MESSAGES/konversation.mo
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrm share/doc/HTML/uk/konversation
-@dirrm share/doc/HTML/sv/konversation
-@dirrm share/doc/HTML/pt_BR/konversation
-@dirrm share/doc/HTML/nl/konversation
-@dirrm share/doc/HTML/it/konversation
-@dirrm share/doc/HTML/fr/konversation
-@dirrm share/doc/HTML/et/konversation
-@dirrm share/doc/HTML/es/konversation
-@dirrm share/doc/HTML/en/konversation
-@dirrm share/doc/HTML/de/konversation
-@dirrm share/doc/HTML/ca/konversation
-@dirrm share/apps/konversation/themes/square
-@dirrm share/apps/konversation/themes/smiling
-@dirrm share/apps/konversation/themes/simplistic
-@dirrm share/apps/konversation/themes/default
-@dirrm share/apps/konversation/themes/classic
-@dirrm share/apps/konversation/themes/christmas
-@dirrm share/apps/konversation/themes/alternative
-@dirrm share/apps/konversation/themes
-@dirrm share/apps/konversation/scripts
-@dirrm share/apps/konversation/scripting_support/python/konversation
-@dirrm share/apps/konversation/scripting_support/python
-@dirrm share/apps/konversation/scripting_support
-@dirrm share/apps/konversation

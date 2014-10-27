@@ -250,7 +250,3 @@ etc/psybnc.conf.sample
 %%PSYBASE%%/help/DCCSENDME.ITA
 %%PSYBASE%%/help/DCCSENDME.DEU
 %%PSYBASE%%/key/ssl.cnf
-@dirrm %%PSYBASE%%/lang
-@dirrm %%PSYBASE%%/help
-@dirrmtry %%PSYBASE%%/key
-@dirrmtry %%PSYBASE%%

@@ -217,23 +217,6 @@ hybserv/servchk
 hybserv/settings.conf
 hybserv/showchans
 hybserv/shownicks
-@exec mkdir %D/hybserv/logs
-@dirrmtry hybserv/logs
-@dirrm hybserv/help/statserv
-@dirrm hybserv/help/seenserv
-@dirrm hybserv/help/operserv/dcc
-@dirrm hybserv/help/operserv
-@dirrm hybserv/help/nickserv/set
-@dirrm hybserv/help/nickserv/access
-@dirrm hybserv/help/nickserv
-@dirrm hybserv/help/memoserv
-@dirrm hybserv/help/helpserv
-@dirrm hybserv/help/global
-@dirrm hybserv/help/chanserv/set
-@dirrm hybserv/help/chanserv/level
-@dirrm hybserv/help/chanserv/akick
-@dirrm hybserv/help/chanserv/access
-@dirrm hybserv/help/chanserv
-@dirrm hybserv/help
-@dirrm hybserv/doc
-@dirrmtry hybserv
+@dir hybserv/logs
+@owner
+@group

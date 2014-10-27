@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Bot/BasicBot.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/BasicBot/.packlist
 %%PERL5_MAN3%%/Bot::BasicBot.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/BasicBot
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot
-@dirrmtry %%SITE_PERL%%/Bot

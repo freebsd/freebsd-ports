@@ -532,12 +532,3 @@ bin/gozerbot-merc
 %%DATADIR%%/postgres_db
 %%DATADIR%%/sqlite_db
 %%DATADIR%%/toudp.py
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/gozerplugs/web
-@dirrm %%PYTHON_SITELIBDIR%%/gozerplugs/plugs
-@dirrm %%PYTHON_SITELIBDIR%%/gozerplugs/dbplugs
-@dirrm %%PYTHON_SITELIBDIR%%/gozerplugs
-@dirrm %%PYTHON_SITELIBDIR%%/gozerbot/contrib
-@dirrm %%PYTHON_SITELIBDIR%%/gozerbot

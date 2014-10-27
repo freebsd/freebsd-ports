@@ -1105,21 +1105,3 @@ share/epic/script/window
 %%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/BUG_FORM
-@dirrm share/epic/script
-@dirrm share/epic/help/8_Scripts
-@dirrm share/epic/help/7_Docs
-@dirrm share/epic/help/6_Functions
-@dirrm share/epic/help/5_Programming/on
-@dirrm share/epic/help/5_Programming
-@dirrm share/epic/help/4_Misc/window
-@dirrm share/epic/help/4_Misc/set
-@dirrm share/epic/help/4_Misc/bind
-@dirrm share/epic/help/4_Misc
-@dirrm share/epic/help/3_Operators
-@dirrm share/epic/help/2_Queries
-@dirrm share/epic/help/1_General/dcc
-@dirrm share/epic/help/1_General/ctcp
-@dirrm share/epic/help/1_General
-@dirrm share/epic/help
-@dirrm share/epic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

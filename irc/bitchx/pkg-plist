@@ -76,7 +76,3 @@ man/man1/BitchX.1.gz
 %%DATADIR%%/translation/UNITED_KINGDOM
 %%DATADIR%%/translation/UNITED_KINGDOM_COM
 %%DATADIR%%/wserv
-@dirrm %%DATADIR%%/translation
-@dirrm %%DATADIR%%/script
-@dirrm %%DATADIR%%/plugins
-@comment @dirrm %%DATADIR%% must be appended after PORTDOCS stuff, see Makefile

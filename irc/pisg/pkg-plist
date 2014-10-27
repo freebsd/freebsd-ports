@@ -68,11 +68,3 @@ etc/pisg/pisg.cfg.sample
 %%DATADIR%%/gfx/yellow-v.png
 %%DATADIR%%/lang.txt
 %%PORTDOCS%%%%DOCSDIR%%/pisg-doc.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/layout
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%
-@dirrm %%SITE_PERL%%/Pisg/Parser/Format
-@dirrm %%SITE_PERL%%/Pisg/Parser
-@dirrm %%SITE_PERL%%/Pisg
-@dirrm etc/pisg

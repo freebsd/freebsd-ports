@@ -718,17 +718,3 @@ man/man1/scrollz.1.gz
 %%DATADIR%%/help/xecho
 %%DATADIR%%/help/xtype
 @exec mkdir -p %D/%%DATADIR%%/script
-@dirrmtry %%DATADIR%%/script
-@dirrm %%DATADIR%%/help/window
-@dirrm %%DATADIR%%/help/set
-@dirrm %%DATADIR%%/help/scrollz
-@dirrm %%DATADIR%%/help/on
-@dirrm %%DATADIR%%/help/note
-@dirrm %%DATADIR%%/help/dcc
-@dirrm %%DATADIR%%/help/ctcp
-@dirrm %%DATADIR%%/help/cdcc
-@dirrm %%DATADIR%%/help/bind
-@dirrm %%DATADIR%%/help/alias
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/doc
-@dirrmtry %%DATADIR%%

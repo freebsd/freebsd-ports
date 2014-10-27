@@ -1,16 +1,4 @@
 %%SITE_PERL%%/POE/Component/IRC/Plugin/RSS/Headlines.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin/RSS/Headlines/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/synopsis.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PERL5_MAN3%%/POE::Component::IRC::Plugin::RSS::Headlines.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin/RSS/Headlines
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin/RSS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrm %%SITE_PERL%%/POE/Component/IRC/Plugin/RSS
-@dirrm %%SITE_PERL%%/POE/Component/IRC/Plugin
-@dirrm %%SITE_PERL%%/POE/Component/IRC
-@dirrm %%SITE_PERL%%/POE/Component
-@dirrm %%SITE_PERL%%/POE

@@ -9,9 +9,7 @@ bin/ssld
 bin/viconf
 bin/vimotd
 etc/charybdis/example.conf
-@unexec cmp -s %D/etc/charybdis/ircd.motd.sample %D/etc/charybdis/ircd.motd && rm -f %D/etc/charybdis/ircd.motd || true
-etc/charybdis/ircd.motd.sample
-@exec [ -f %D/ircd.motd ] || cp -p %D/%F %B/ircd.motd
+@sample etc/charybdis/ircd.motd.sample
 %%ETCDIR%%/reference.conf
 lib/libratbox.so
 libdata/pkgconfig/libratbox.pc
@@ -277,13 +275,5 @@ man/man8/ircd.8.gz
 %%DATADIR%%/modules/m_quit.so
 %%DATADIR%%/modules/m_server.so
 %%DATADIR%%/modules/m_squit.so
-@dirrm %%DATADIR%%/modules/extensions
-@dirrm %%DATADIR%%/modules/autoload
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/help/users
-@dirrm %%DATADIR%%/help/opers
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
-@dirrm %%ETCDIR%%
-@unexec rmdir "/var/log/charybdis" >/dev/null 2>&1 || :
-@unexec rmdir "/var/db/charybdis" >/dev/null 2>&1 || :
+@dir /var/log/charybdis
+@dir /var/db/charybdis

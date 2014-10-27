@@ -23,4 +23,3 @@ libexec/sirc/sirc.help.gz
 man/man1/sirc.1.gz
 man/man1/ssfe.1.gz
 %%SOCKS%%%%PORTDOCS%%%%DOCSDIR%%/README.socks
-@dirrm libexec/sirc

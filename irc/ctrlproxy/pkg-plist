@@ -13,7 +13,3 @@ man/man5/ctrlproxy_config.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/user-guide.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-@dirrm etc/ctrlproxy
-@dirrm lib/ctrlproxy

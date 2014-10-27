@@ -7,4 +7,3 @@ man/man1/ezbounce.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/worklog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

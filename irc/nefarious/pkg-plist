@@ -118,9 +118,3 @@ man/man8/ircd.8.gz
 %%PORTDOCS%%%%INSTALL_PREFIX%%/lib/help/opers/wallvoices
 %%PORTDOCS%%%%INSTALL_PREFIX%%/lib/help/opers/whois
 %%PORTDOCS%%%%INSTALL_PREFIX%%/lib/help/opers/zline
-@dirrm %%INSTALL_PREFIX%%/bin
-%%PORTDOCS%%@dirrm %%INSTALL_PREFIX%%/lib/help/opers
-%%PORTDOCS%%@dirrm %%INSTALL_PREFIX%%/lib/help/users
-%%PORTDOCS%%@dirrm %%INSTALL_PREFIX%%/lib/help
-@dirrm %%INSTALL_PREFIX%%/lib
-@dirrm %%INSTALL_PREFIX%%

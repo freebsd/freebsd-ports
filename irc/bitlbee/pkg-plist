@@ -2,6 +2,4 @@ man/man5/bitlbee.conf.5.gz
 man/man8/bitlbee.8.gz
 sbin/bitlbee
 %%DATADIR%%/help.txt
-@dirrm %%DATADIR%%
-@dirrmtry etc/bitlbee
 @exec mkdir -p %D/etc/bitlbee

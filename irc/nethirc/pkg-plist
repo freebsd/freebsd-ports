@@ -21,5 +21,3 @@ bin/nethirc.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetHirc/.packlist
 %%PERL5_MAN3%%/NetHirc.3.gz
 man/man1/nethirc.pl.1.gz
-@dirrm %%SITE_PERL%%/NetHirc
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetHirc

@@ -1,14 +1,4 @@
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Bollocks.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin/Bollocks/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/synopsis.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PERL5_MAN3%%/POE::Component::IRC::Plugin::Bollocks.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin/Bollocks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/POE/Component/IRC/Plugin
-@dirrmtry %%SITE_PERL%%/POE/Component/IRC
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE

@@ -43,6 +43,3 @@ man/man1/irssistats.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.configfile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.nickfile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.photofile
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -78,7 +78,4 @@ bin/insub
 %%COWS%%%%DATADIR%%/wtf.cow
 %%COWS%%%%DATADIR%%/wtf2.cow
 %%COWS%%%%DATADIR%%/zig.cow
-%%COWS%%@dirrmtry %%DATADIR%%
 share/irssi/scripts/insub.pl
-@dirrmtry share/irssi/scripts
-@dirrmtry share/irssi

@@ -21,8 +21,6 @@ lib/slirc/scripts/registry.sl
 lib/slirc/scripts/slftp.sl
 lib/slirc/scripts/standard.sl
 lib/slirc/scripts/tab-ex.sl
-@dirrm lib/slirc/scripts
-@dirrm lib/slirc
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -36,4 +34,3 @@ lib/slirc/scripts/tab-ex.sl
 %%PORTDOCS%%%%DOCSDIR%%/VFile.txt
 %%PORTDOCS%%%%DOCSDIR%%/slirc.hlp
 %%PORTDOCS%%%%DOCSDIR%%/utilsfun.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

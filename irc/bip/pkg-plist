@@ -5,4 +5,3 @@ man/man1/bipmkpw.1.gz
 man/man5/bip.conf.5.gz
 %%EXAMPLESDIR%%/bip.conf
 %%EXAMPLESDIR%%/bip.vim
-@dirrmtry %%EXAMPLESDIR%%

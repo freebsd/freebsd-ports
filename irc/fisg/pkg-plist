@@ -20,5 +20,3 @@ man/man1/fisg.1.gz
 %%DATADIR%%/simple.css
 %%DATADIR%%/yellow-h.png
 %%DATADIR%%/yellow-v.png
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%

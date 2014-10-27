@@ -67,8 +67,3 @@ share/icons/hicolor/scalable/apps/hexchat.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/hexchat.mo
 share/pixmaps/hexchat.png
-@dirrm lib/hexchat/plugins
-@dirrm lib/hexchat
-@dirrmtry share/appdata
-%%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ja_JP

@@ -21,9 +21,3 @@ bin/hangman.pl
 %%SITE_PERL%%/IRC/Bot/Hangman/WordList.pm
 %%SITE_PERL%%/IRC/Bot/Hangman/WordList/Default.pm
 %%SITE_PERL%%/IRC/Bot/Hangman/WordList/TooEasy.pm
-@dirrmtry %%SITE_PERL%%/IRC/Bot/Hangman/WordList
-@dirrmtry %%SITE_PERL%%/IRC/Bot/Hangman/Response
-@dirrmtry %%SITE_PERL%%/IRC/Bot/Hangman/Command
-@dirrmtry %%SITE_PERL%%/IRC/Bot/Hangman
-@dirrmtry %%SITE_PERL%%/IRC/Bot
-@dirrmtry %%SITE_PERL%%/IRC

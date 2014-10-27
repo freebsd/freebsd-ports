@@ -161,29 +161,3 @@
 %%WWWDIR%%/twisted/plugins/webirc.py
 @group
 @owner
-@dirrm %%WWWDIR%%/twisted/plugins
-@dirrm %%WWWDIR%%/twisted
-@dirrm %%WWWDIR%%/static/sound
-@dirrm %%WWWDIR%%/static/panes
-@dirrm %%WWWDIR%%/static/js/mochaui
-@dirrm %%WWWDIR%%/static/js
-@dirrm %%WWWDIR%%/static/images/mochaui/icons/tree
-@dirrm %%WWWDIR%%/static/images/mochaui/icons/48x48
-@dirrm %%WWWDIR%%/static/images/mochaui/icons
-@dirrm %%WWWDIR%%/static/images/mochaui
-@dirrm %%WWWDIR%%/static/images
-@dirrm %%WWWDIR%%/static
-@dirrm %%WWWDIR%%/simplejson
-@dirrm %%WWWDIR%%/qwebirc/util
-@dirrm %%WWWDIR%%/qwebirc/engines
-@dirrm %%WWWDIR%%/qwebirc
-@dirrm %%WWWDIR%%/js/ui/panes
-@dirrm %%WWWDIR%%/js/ui/frontends
-@dirrm %%WWWDIR%%/js/ui
-@dirrm %%WWWDIR%%/js/irc
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/dummyauthgate
-@dirrm %%WWWDIR%%/css/mochaui
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%/bin
-@dirrm %%WWWDIR%%
