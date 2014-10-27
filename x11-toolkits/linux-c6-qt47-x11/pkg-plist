@@ -1,3 +1,4 @@
+etc/rpm/macros.qt47
 usr/bin/qdbusviewer
 usr/bin/qmlviewer
 usr/lib/qt47/bin/qdbusviewer
@@ -97,37 +98,3 @@ usr/share/qt47/translations/qtconfig_sl.qm
 usr/share/qt47/translations/qtconfig_uk.qm
 usr/share/qt47/translations/qtconfig_zh_CN.qm
 usr/share/qt47/translations/qtconfig_zh_TW.qm
-@dirrmtry usr/lib/qt47/bin
-@dirrmtry usr/lib/qt47/imports
-@dirrmtry usr/lib/qt47/imports/Qt/labs/folderlistmodel
-@dirrmtry usr/lib/qt47/imports/Qt/labs/gestures
-@dirrmtry usr/lib/qt47/imports/Qt/labs/particles
-@dirrmtry usr/lib/qt47/imports/Qt/labs
-@dirrmtry usr/lib/qt47/imports/Qt
-@dirrmtry usr/lib/qt47/plugins/accessible
-@dirrmtry usr/lib/qt47/plugins/bearer
-@dirrmtry usr/lib/qt47/plugins/codecs
-@dirrmtry usr/lib/qt47/plugins/designer
-@dirrmtry usr/lib/qt47/plugins/graphicssystems
-@dirrmtry usr/lib/qt47/plugins/gui_platform
-@dirrmtry usr/lib/qt47/plugins/iconengines
-@dirrmtry usr/lib/qt47/plugins/imageformats
-@dirrmtry usr/lib/qt47/plugins/inputmethods
-@dirrmtry usr/lib/qt47/plugins/phonon_backend
-@dirrmtry usr/lib/qt47/plugins/qmltooling
-@dirrmtry usr/lib/qt47/plugins/script
-@dirrmtry usr/lib/qt47/plugins/styles
-@dirrmtry usr/lib/qt47/plugins
-@dirrmtry usr/lib/qt47
-@dirrmtry usr/share/icons/hicolor/128x128/apps
-@dirrmtry usr/share/icons/hicolor/128x128
-@dirrmtry usr/share/icons/hicolor/48x48/apps
-@dirrmtry usr/share/icons/hicolor/48x48
-@dirrmtry usr/share/icons/hicolor
-@dirrmtry usr/share/dbus-1/interfaces
-@dirrmtry usr/share/dbus-1
-@dirrmtry usr/share/kde4/services/phononbackends
-@dirrmtry usr/share/kde4/services
-@dirrmtry usr/share/kde4
-@dirrmtry usr/share/qt47/translations
-@dirrmtry usr/share/qt47
