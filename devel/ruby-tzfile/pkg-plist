@@ -1,3 +1,2 @@
 %%RUBY_SITELIBDIR%%/tzfile.rb
 %%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/tzfile.html
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

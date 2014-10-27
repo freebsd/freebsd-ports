@@ -2,5 +2,3 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rbprof/TODO
 %%RUBY_SITELIBDIR%%/rbprof.rb
 %%RUBY_SITELIBDIR%%/rbprof/trap_method_definitions.rb
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rbprof
-@dirrm %%RUBY_SITELIBDIR%%/rbprof

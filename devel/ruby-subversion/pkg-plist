@@ -22,6 +22,3 @@ lib/libsvn_swig_ruby-1.so.0.0.0
 %%RUBY_SITELIBDIR%%/svn/synchronizer.rb
 %%RUBY_SITELIBDIR%%/svn/util.rb
 %%RUBY_SITELIBDIR%%/svn/wc.rb
-@dirrm %%RUBY_SITELIBDIR%%/svn
-@dirrm %%RUBY_SITEARCHLIBDIR%%/svn/ext
-@dirrm %%RUBY_SITEARCHLIBDIR%%/svn

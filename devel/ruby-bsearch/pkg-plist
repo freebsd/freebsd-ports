@@ -4,5 +4,3 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/bsearch.en.rd
 %%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/bsearch.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/bsearch.ja.rd
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

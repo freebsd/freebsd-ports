@@ -44,23 +44,3 @@
 %%RUBY_SITELIBDIR%%/langscan/scheme.rb
 %%RUBY_SITELIBDIR%%/langscan/sh.rb
 %%RUBY_SITELIBDIR%%/langscan/text.rb
-%%RIPPER%%@dirrm %%RUBY_SITELIBDIR%%/langscan/ruby/compat/ripper
-%%RIPPER%%@dirrm %%RUBY_SITELIBDIR%%/langscan/ruby/compat
-%%RIPPER%%@dirrm %%RUBY_SITELIBDIR%%/langscan/ruby
-@dirrm %%RUBY_SITELIBDIR%%/langscan/perl
-@dirrm %%RUBY_SITELIBDIR%%/langscan
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/sh
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/scheme
-%%RIPPER%%@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/ruby/compat
-%%RIPPER%%@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/ruby
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/python
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/php
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/pairmatcher
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/ocaml
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/javascript
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/java
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/elisp
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/d
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/csharp
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/c
-@dirrm %%RUBY_SITEARCHLIBDIR%%/langscan

@@ -26,10 +26,6 @@ bin/rbbr
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/stockbrowser.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/undo.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/windowutils.rb
-@dirrm %%RUBY_SITELIBDIR%%/rbbr/ui/gtk
-@dirrm %%RUBY_SITELIBDIR%%/rbbr/ui
-@dirrm %%RUBY_SITELIBDIR%%/rbbr/doc
-@dirrm %%RUBY_SITELIBDIR%%/rbbr
 share/locale/fr/LC_MESSAGES/rbbr.mo
 share/locale/ja/LC_MESSAGES/rbbr.mo
 share/locale/be/LC_MESSAGES/rbbr.mo
@@ -40,13 +36,9 @@ share/locale/ko/LC_MESSAGES/rbbr.mo
 share/locale/pt_BR/LC_MESSAGES/rbbr.mo
 %%DATADIR%%/icon.png
 %%DATADIR%%/rd/README
-@dirrm %%DATADIR%%/rd
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/COPYING.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
