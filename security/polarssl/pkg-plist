@@ -65,8 +65,6 @@ include/polarssl/x509write.h
 include/polarssl/xtea.h
 lib/libpolarssl.a
 lib/libpolarssl.so
-lib/libpolarssl.so.0
+lib/libpolarssl.so.5
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry include/polarssl
