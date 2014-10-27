@@ -1,9 +1,3 @@
 %%SITE_PERL%%/Getopt/GUI/Long.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/GUI/Long/.packlist
 %%PERL5_MAN3%%/Getopt::GUI::Long.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/GUI/Long
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/GUI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry %%SITE_PERL%%/Getopt/GUI
-@dirrmtry %%SITE_PERL%%/Getopt

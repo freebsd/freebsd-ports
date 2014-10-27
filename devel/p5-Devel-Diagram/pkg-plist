@@ -11,10 +11,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-HTML.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-IO.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-LWP.html
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Diagram
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrm %%SITE_PERL%%/Devel/Diagram/xsl
-@dirrm %%SITE_PERL%%/Devel/Diagram/Render
-@dirrm %%SITE_PERL%%/Devel/Diagram
-@dirrmtry %%SITE_PERL%%/Devel

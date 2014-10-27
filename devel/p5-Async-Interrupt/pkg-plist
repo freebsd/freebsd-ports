@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Async/Interrupt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Async/Interrupt/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Async/Interrupt/Interrupt.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Async/Interrupt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Async
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Async

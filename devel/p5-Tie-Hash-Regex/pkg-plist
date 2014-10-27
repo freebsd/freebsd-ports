@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Tie/Hash/Regex.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Regex/.packlist
 %%PERL5_MAN3%%/Tie::Hash::Regex.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Regex
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrmtry %%SITE_PERL%%/Tie/Hash
-@dirrmtry %%SITE_PERL%%/Tie

@@ -1,8 +1,3 @@
 %%SITE_PERL%%/IPC/Mmap/Share.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Share/.packlist
 %%PERL5_MAN3%%/IPC::Mmap::Share.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Share
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrmtry %%SITE_PERL%%/IPC/Mmap
-@dirrmtry %%SITE_PERL%%/IPC

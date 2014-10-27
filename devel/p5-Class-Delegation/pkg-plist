@@ -7,7 +7,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_handle.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_inheritance.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_pseudo.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Delegation
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

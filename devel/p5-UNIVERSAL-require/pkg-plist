@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/UNIVERSAL::require.3.gz
 %%SITE_PERL%%/UNIVERSAL/require.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/require/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/require
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL
-@dirrmtry %%SITE_PERL%%/UNIVERSAL

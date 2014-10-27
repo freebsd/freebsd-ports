@@ -19,8 +19,3 @@
 %%PERL5_MAN3%%/Test::Mini::Runner.3.gz
 %%PERL5_MAN3%%/Test::Mini::TestCase.3.gz
 %%PERL5_MAN3%%/Test::README.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Mini/Logger
-@dirrmtry %%SITE_PERL%%/Test/Mini
-@dirrmtry %%SITE_PERL%%/Test

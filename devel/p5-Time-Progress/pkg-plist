@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Time::Progress.3.gz
 %%SITE_PERL%%/Time/Progress.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Progress/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Progress
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
-@dirrmtry %%SITE_PERL%%/Time

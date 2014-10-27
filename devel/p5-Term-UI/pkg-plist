@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/UI/.packlist
 %%PERL5_MAN3%%/Term::UI.3.gz
 %%PERL5_MAN3%%/Term::UI::History.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/UI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrm %%SITE_PERL%%/Term/UI
-@dirrmtry %%SITE_PERL%%/Term

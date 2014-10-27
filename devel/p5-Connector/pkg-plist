@@ -37,14 +37,3 @@
 %%SITE_PERL%%/Connector/Types.pm
 %%SITE_PERL%%/Connector/Wrapper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Connector/.packlist
-@dirrmtry %%SITE_PERL%%/Connector/Builtin/Authentication
-@dirrmtry %%SITE_PERL%%/Connector/Builtin/File
-@dirrmtry %%SITE_PERL%%/Connector/Builtin
-@dirrmtry %%SITE_PERL%%/Connector/Proxy/Config
-@dirrmtry %%SITE_PERL%%/Connector/Proxy/Net/LDAP
-@dirrmtry %%SITE_PERL%%/Connector/Proxy/Net
-@dirrmtry %%SITE_PERL%%/Connector/Proxy/Proc
-@dirrmtry %%SITE_PERL%%/Connector/Proxy/SOAP
-@dirrmtry %%SITE_PERL%%/Connector/Proxy
-@dirrmtry %%SITE_PERL%%/Connector
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Connector

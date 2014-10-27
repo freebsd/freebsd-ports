@@ -16,6 +16,3 @@
 %%PERL5_MAN3%%/Data::Validator::Role::Sequenced.3.gz
 %%PERL5_MAN3%%/Data::Validator::Role::SmartSequenced.3.gz
 %%PERL5_MAN3%%/Data::Validator::Role::StrictSequenced.3.gz
-@dirrm %%SITE_PERL%%/Data/Validator/Role
-@dirrm %%SITE_PERL%%/Data/Validator
-@dirrmtry %%SITE_PERL%%/Data

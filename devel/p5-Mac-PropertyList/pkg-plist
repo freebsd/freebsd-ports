@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Mac::PropertyList.3.gz
 %%PERL5_MAN3%%/Mac::PropertyList::ReadBinary.3.gz
 %%PERL5_MAN3%%/Mac::PropertyList::WriteBinary.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/PropertyList
-@dirrm %%SITE_PERL%%/Mac/PropertyList
-@dirrmtry %%SITE_PERL%%/Mac
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac

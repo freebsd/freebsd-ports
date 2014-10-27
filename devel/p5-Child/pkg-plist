@@ -18,8 +18,3 @@
 %%PERL5_MAN3%%/Child::Link::Parent.3.gz
 %%PERL5_MAN3%%/Child::Link::Proc.3.gz
 %%PERL5_MAN3%%/Child::Util.3.gz
-@dirrm %%SITE_PERL%%/Child/Link/IPC/Pipe
-@dirrm %%SITE_PERL%%/Child/Link/IPC
-@dirrm %%SITE_PERL%%/Child/Link
-@dirrm %%SITE_PERL%%/Child/IPC
-@dirrmtry %%SITE_PERL%%/Child

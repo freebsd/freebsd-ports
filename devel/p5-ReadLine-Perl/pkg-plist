@@ -1,6 +1,2 @@
 %%SITE_PERL%%/Term/ReadLine/Perl.pm
 %%SITE_PERL%%/Term/ReadLine/readline.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term/ReadLine
-@dirrmtry %%SITE_PERL%%/Term

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Object::Enum.3.gz
 %%SITE_PERL%%/Object/Enum.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Enum/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Enum
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
-@dirrmtry %%SITE_PERL%%/Object

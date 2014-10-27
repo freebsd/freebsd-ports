@@ -12,6 +12,3 @@
 %%PERL5_MAN3%%/File::ChangeNotify::Watcher::Default.3.gz
 %%PERL5_MAN3%%/File::ChangeNotify::Watcher::Inotify.3.gz
 %%PERL5_MAN3%%/File::ChangeNotify::Watcher::KQueue.3.gz
-@dirrmtry %%SITE_PERL%%/File/ChangeNotify/Watcher
-@dirrmtry %%SITE_PERL%%/File/ChangeNotify
-@dirrmtry %%SITE_PERL%%/File

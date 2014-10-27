@@ -51,12 +51,3 @@ man/man1/nytprofcg.1.gz
 man/man1/nytprofcsv.1.gz
 man/man1/nytprofhtml.1.gz
 man/man1/nytprofmerge.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel/NYTProf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

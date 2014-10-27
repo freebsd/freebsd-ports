@@ -2,4 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/multidimensional/multidimensional.so
 %%SITE_PERL%%/%%PERL_ARCH%%/multidimensional.pm
 %%PERL5_MAN3%%/multidimensional.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/multidimensional

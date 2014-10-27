@@ -3,10 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Media/Type/Simple/.packlist
 %%PERL5_MAN3%%/MIME::Type::Simple.3.gz
 %%PERL5_MAN3%%/Media::Type::Simple.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Media/Type/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Media/Type
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Media
-@dirrmtry %%SITE_PERL%%/Media/Type
-@dirrmtry %%SITE_PERL%%/Media
-@dirrmtry %%SITE_PERL%%/MIME/Type
-@dirrmtry %%SITE_PERL%%/MIME

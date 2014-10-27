@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Params/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Util/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Util/Util.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Params

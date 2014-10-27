@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/CPU/CPU.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/CPU/.packlist
 %%PERL5_MAN3%%/Sys::CPU.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/CPU
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys

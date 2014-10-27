@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Class::ReturnValue.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ReturnValue/.packlist
 %%SITE_PERL%%/Class/ReturnValue.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ReturnValue
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

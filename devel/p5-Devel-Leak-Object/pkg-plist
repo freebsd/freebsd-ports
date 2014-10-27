@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Devel::Leak::Object.3.gz
 %%SITE_PERL%%/Devel/Leak/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak/Object/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel/Leak
-@dirrmtry %%SITE_PERL%%/Devel

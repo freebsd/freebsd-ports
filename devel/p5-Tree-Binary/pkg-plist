@@ -17,9 +17,3 @@
 %%PERL5_MAN3%%/Tree::Binary::Visitor::PostOrderTraversal.3.gz
 %%PERL5_MAN3%%/Tree::Binary::Visitor::PreOrderTraversal.3.gz
 %%PERL5_MAN3%%/Tree::Binary::VisitorFactory.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Binary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree
-@dirrm %%SITE_PERL%%/Tree/Binary/Visitor
-@dirrm %%SITE_PERL%%/Tree/Binary/Search
-@dirrm %%SITE_PERL%%/Tree/Binary
-@dirrmtry %%SITE_PERL%%/Tree

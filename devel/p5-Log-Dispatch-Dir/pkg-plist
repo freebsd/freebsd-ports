@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Log/Dispatch/Dir.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/Dir/.packlist
 %%PERL5_MAN3%%/Log::Dispatch::Dir.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/Dir
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
-@dirrmtry %%SITE_PERL%%/Log/Dispatch
-@dirrmtry %%SITE_PERL%%/Log

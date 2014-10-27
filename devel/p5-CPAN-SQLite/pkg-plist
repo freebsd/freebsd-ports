@@ -23,8 +23,3 @@ bin/cpandb
 %%PERL5_MAN3%%/CPAN::SQLite::State.3.gz
 %%PERL5_MAN3%%/CPAN::SQLite::Util.3.gz
 man/man1/cpandb.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/SQLite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
-@dirrm %%SITE_PERL%%/CPAN/SQLite/DBI
-@dirrm %%SITE_PERL%%/CPAN/SQLite
-@dirrmtry %%SITE_PERL%%/CPAN

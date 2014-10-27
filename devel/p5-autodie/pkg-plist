@@ -17,7 +17,3 @@
 %%SITE_PERL%%/autodie/hints.pm
 %%SITE_PERL%%/autodie/skip.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/autodie/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/autodie
-@dirrm %%SITE_PERL%%/autodie/Scope
-@dirrm %%SITE_PERL%%/autodie/exception
-@dirrmtry %%SITE_PERL%%/autodie

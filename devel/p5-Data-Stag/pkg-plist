@@ -96,6 +96,3 @@ man/man1/stag-xml2itext.pl.1.gz
 %%PERL5_MAN3%%/Data::Stag::XSLTHandler.3.gz
 %%PERL5_MAN3%%/Data::Stag::null.3.gz
 %%PERL5_MAN3%%/Data::Stag.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm %%SITE_PERL%%/Data/Stag
-@dirrmtry %%SITE_PERL%%/Data

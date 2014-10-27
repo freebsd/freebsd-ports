@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unix/Statgrab/ConfigData.pm
 %%PERL5_MAN3%%/Unix::Statgrab.3.gz
 %%PERL5_MAN3%%/Unix::Statgrab::ConfigData.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Statgrab
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unix/Statgrab
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unix

@@ -17,8 +17,3 @@
 %%PERL5_MAN3%%/List::Gen::Lazy::Ops.3.gz
 %%PERL5_MAN3%%/List::Gen::Perl6.3.gz
 %%PERL5_MAN3%%/List::Generator.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Gen
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
-@dirrm %%SITE_PERL%%/List/Gen/Lazy
-@dirrm %%SITE_PERL%%/List/Gen
-@dirrmtry %%SITE_PERL%%/List

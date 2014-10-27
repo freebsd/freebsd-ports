@@ -114,21 +114,3 @@
 %%DATADIR%%/struct/workflow_other.sql
 %%DATADIR%%/struct/workflow_pg.sql
 %%DATADIR%%/struct/workflow_sqlite.sql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ticket/App/Action
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ticket/App/Condition
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ticket/App
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ticket/web_templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ticket
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/Workflow/Action
-@dirrm %%SITE_PERL%%/Workflow/Condition
-@dirrm %%SITE_PERL%%/Workflow/Config
-@dirrm %%SITE_PERL%%/Workflow/Persister/DBI
-@dirrm %%SITE_PERL%%/Workflow/Persister
-@dirrm %%SITE_PERL%%/Workflow/Validator
-@dirrm %%SITE_PERL%%/Workflow
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Workflow
-@dirrm %%DATADIR%%/struct
-@dirrm %%DATADIR%%

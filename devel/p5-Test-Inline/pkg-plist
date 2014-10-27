@@ -20,9 +20,3 @@ bin/inline2test
 %%SITE_PERL%%/Test/Inline/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Inline/.packlist
 man/man1/inline2test.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Inline
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Inline/IO
-@dirrm %%SITE_PERL%%/Test/Inline/Content
-@dirrm %%SITE_PERL%%/Test/Inline
-@dirrmtry %%SITE_PERL%%/Test

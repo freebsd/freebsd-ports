@@ -124,12 +124,3 @@ man/man1/use-devel-assertos.1.gz
 %%SITE_PERL%%/Devel/CheckOS.pm
 %%SITE_PERL%%/Devel/CheckOS/Families.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrm %%SITE_PERL%%/Devel/CheckOS
-@dirrm %%SITE_PERL%%/Devel/AssertOS/QNX
-@dirrm %%SITE_PERL%%/Devel/AssertOS/OSFeatures
-@dirrm %%SITE_PERL%%/Devel/AssertOS/MacOSX
-@dirrm %%SITE_PERL%%/Devel/AssertOS/Linux
-@dirrm %%SITE_PERL%%/Devel/AssertOS
-@dirrmtry %%SITE_PERL%%/Devel

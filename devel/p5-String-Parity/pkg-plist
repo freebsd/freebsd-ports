@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/String::Parity.3.gz
 %%SITE_PERL%%/String/Parity.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Parity/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Parity
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/String

@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Abstract/.packlist
 %%PERL5_MAN3%%/Path::Abstract.3.gz
 %%PERL5_MAN3%%/Path::Abstract::Underload.3.gz
-@dirrmtry %%SITE_PERL%%/Path/Abstract
-@dirrmtry %%SITE_PERL%%/Path
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Abstract
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path

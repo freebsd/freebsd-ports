@@ -7,9 +7,3 @@ bin/findrule
 %%SITE_PERL%%/File/Find/Rule/Procedural.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule/.packlist
 man/man1/findrule.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrm %%SITE_PERL%%/File/Find/Rule
-@dirrmtry %%SITE_PERL%%/File/Find
-@dirrmtry %%SITE_PERL%%/File

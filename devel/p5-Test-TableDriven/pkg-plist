@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/TableDriven.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TableDriven/.packlist
 %%PERL5_MAN3%%/Test::TableDriven.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TableDriven
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

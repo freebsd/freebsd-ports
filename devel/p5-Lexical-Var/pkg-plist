@@ -4,6 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Lexical/Var.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Var/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Var/Var.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Var
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Lexical

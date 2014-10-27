@@ -6,8 +6,3 @@
 %%SITE_PERL%%/B/Deobfuscate/Dict/Flowers.pm
 %%SITE_PERL%%/B/Deobfuscate/Dict/PGPHashWords.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Deobfuscate/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Deobfuscate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrm %%SITE_PERL%%/B/Deobfuscate/Dict
-@dirrm %%SITE_PERL%%/B/Deobfuscate
-@dirrmtry %%SITE_PERL%%/B

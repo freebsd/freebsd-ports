@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Devel::PartialDump.3.gz
 %%SITE_PERL%%/Devel/PartialDump.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/PartialDump/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/PartialDump
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

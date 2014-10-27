@@ -9,8 +9,3 @@
 %%SITE_PERL%%/Sys/Trace/Impl/Truss.pm
 %%SITE_PERL%%/Sys/Trace/Results.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Trace/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Trace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrm %%SITE_PERL%%/Sys/Trace/Impl
-@dirrm %%SITE_PERL%%/Sys/Trace
-@dirrmtry %%SITE_PERL%%/Sys

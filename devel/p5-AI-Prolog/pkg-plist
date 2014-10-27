@@ -39,12 +39,3 @@ bin/aiprolog
 %%SITE_PERL%%/AI/Prolog/TermList/Step.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Prolog/.packlist
 man/man1/aiprolog.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Prolog
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI
-@dirrm %%SITE_PERL%%/AI/Prolog/TermList
-@dirrm %%SITE_PERL%%/AI/Prolog/Term
-@dirrm %%SITE_PERL%%/AI/Prolog/Parser/PreProcessor
-@dirrm %%SITE_PERL%%/AI/Prolog/Parser
-@dirrm %%SITE_PERL%%/AI/Prolog/Engine
-@dirrm %%SITE_PERL%%/AI/Prolog
-@dirrmtry %%SITE_PERL%%/AI

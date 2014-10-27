@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Types/.packlist
 %%SITE_PERL%%/POEx/Types.pm
 %%PERL5_MAN3%%/POEx::Types.3.gz
-@dirrmtry %%SITE_PERL%%/POEx
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Types
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx

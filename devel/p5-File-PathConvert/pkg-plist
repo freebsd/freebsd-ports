@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/File::PathConvert.3.gz
 %%SITE_PERL%%/File/PathConvert.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/PathConvert/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/PathConvert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

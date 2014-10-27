@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Class/Accessor/Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Lite/.packlist
 %%PERL5_MAN3%%/Class::Accessor::Lite.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Lite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Accessor
-@dirrmtry %%SITE_PERL%%/Class

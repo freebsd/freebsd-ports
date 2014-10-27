@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Module::Collect.3.gz
 %%PERL5_MAN3%%/Module::README.3.gz
 %%PERL5_MAN3%%/Module::Collect::Package.3.gz
-@dirrm %%SITE_PERL%%/Module/Collect
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Collect
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module

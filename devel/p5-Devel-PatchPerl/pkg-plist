@@ -7,7 +7,3 @@ bin/patchperl
 %%PERL5_MAN3%%/Devel::PatchPerl::Hints.3.gz
 %%PERL5_MAN3%%/Devel::PatchPerl::Plugin.3.gz
 man/man1/patchperl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/PatchPerl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel/PatchPerl
-@dirrmtry %%SITE_PERL%%/Devel

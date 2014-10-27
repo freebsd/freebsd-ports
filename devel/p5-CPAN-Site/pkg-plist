@@ -3,7 +3,3 @@ man/man1/cpansite.1.gz
 %%SITE_PERL%%/CPAN/Site.pm
 %%SITE_PERL%%/CPAN/Site/Index.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Site/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Site
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
-@dirrm %%SITE_PERL%%/CPAN/Site
-@dirrmtry %%SITE_PERL%%/CPAN

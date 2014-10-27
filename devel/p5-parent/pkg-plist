@@ -1,4 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/parent/.packlist
 %%SITE_PERL%%/parent.pm
 %%PERL5_MAN3%%/parent.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/parent

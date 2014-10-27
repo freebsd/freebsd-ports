@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Class::Declare::Dump.3.gz
 %%PERL5_MAN3%%/Class::Declare.3.gz
 %%PERL5_MAN3%%/Class::Declare::Hash.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Declare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrm %%SITE_PERL%%/Class/Declare
-@dirrmtry %%SITE_PERL%%/Class

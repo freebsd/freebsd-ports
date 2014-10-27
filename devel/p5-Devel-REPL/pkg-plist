@@ -70,13 +70,3 @@ bin/re.pl
 %%PERL5_MAN3%%/Devel::REPL::Plugin::Timing.3.gz
 %%PERL5_MAN3%%/Devel::REPL::Plugin::Turtles.3.gz
 %%PERL5_MAN3%%/Devel::REPL::Profile.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/REPL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel/REPL/Profile
-@dirrmtry %%SITE_PERL%%/Devel/REPL/Plugin/MultiLine
-@dirrmtry %%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver
-@dirrmtry %%SITE_PERL%%/Devel/REPL/Plugin/B
-@dirrmtry %%SITE_PERL%%/Devel/REPL/Plugin
-@dirrmtry %%SITE_PERL%%/Devel/REPL/Meta
-@dirrmtry %%SITE_PERL%%/Devel/REPL
-@dirrmtry %%SITE_PERL%%/Devel

@@ -8,10 +8,3 @@
 %%SITE_PERL%%/Test/Net/LDAP/Mock/Data.pm
 %%SITE_PERL%%/Test/Net/LDAP/Mock/Node.pm
 %%SITE_PERL%%/Test/Net/LDAP/Util.pm
-@dirrm %%SITE_PERL%%/Test/Net/LDAP/Mock
-@dirrm %%SITE_PERL%%/Test/Net/LDAP
-@dirrm %%SITE_PERL%%/Test/Net
-@dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net/LDAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test

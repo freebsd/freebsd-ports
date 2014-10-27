@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Tree::DAG_Node.3.gz
 %%SITE_PERL%%/Tree/DAG_Node.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/DAG_Node/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/DAG_Node
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree
-@dirrmtry %%SITE_PERL%%/Tree

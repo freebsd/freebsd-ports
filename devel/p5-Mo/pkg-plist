@@ -56,5 +56,3 @@ bin/mo-inline
 %%PERL5_MAN3%%/Mo::option.3.gz
 %%PERL5_MAN3%%/Mo::required.3.gz
 %%PERL5_MAN3%%/Mo::xs.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mo
-@dirrm %%SITE_PERL%%/Mo

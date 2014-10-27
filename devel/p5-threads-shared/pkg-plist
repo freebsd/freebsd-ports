@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/threads/shared/shared.so
 %%SITE_PERL%%/%%PERL_ARCH%%/threads/shared.pm
 %%PERL5_MAN3%%/threads::shared.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/threads/shared
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/threads
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/threads

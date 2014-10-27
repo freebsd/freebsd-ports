@@ -2,5 +2,3 @@
 %%PERL5_MAN3%%/Module::ExtractUse::Grammar.3.gz
 %%SITE_PERL%%/Module/ExtractUse.pm
 %%SITE_PERL%%/Module/ExtractUse/Grammar.pm
-@dirrm %%SITE_PERL%%/Module/ExtractUse
-@dirrmtry %%SITE_PERL%%/Module

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/SSN::Validate.3.gz
 %%SITE_PERL%%/SSN/Validate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SSN/Validate/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SSN/Validate
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SSN
-@dirrm %%SITE_PERL%%/SSN

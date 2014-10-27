@@ -21,10 +21,3 @@
 %%SITE_PERL%%/MooseX/POE/Role.pm
 %%SITE_PERL%%/MooseX/POE/SweetArgs.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/POE/Meta/Trait
-@dirrm %%SITE_PERL%%/MooseX/POE/Meta/Method
-@dirrm %%SITE_PERL%%/MooseX/POE/Meta
-@dirrm %%SITE_PERL%%/MooseX/POE
-@dirrmtry %%SITE_PERL%%/MooseX

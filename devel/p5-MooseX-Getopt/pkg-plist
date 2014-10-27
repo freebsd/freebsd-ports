@@ -21,10 +21,3 @@
 %%PERL5_MAN3%%/MooseX::Getopt::OptionTypeMap.3.gz
 %%PERL5_MAN3%%/MooseX::Getopt::ProcessedArgv.3.gz
 %%PERL5_MAN3%%/MooseX::Getopt::Strict.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Getopt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Getopt/Meta/Attribute/Trait
-@dirrmtry %%SITE_PERL%%/MooseX/Getopt/Meta/Attribute
-@dirrmtry %%SITE_PERL%%/MooseX/Getopt/Meta
-@dirrmtry %%SITE_PERL%%/MooseX/Getopt
-@dirrmtry %%SITE_PERL%%/MooseX

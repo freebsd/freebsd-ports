@@ -47,13 +47,3 @@
 %%PERL5_MAN3%%/MouseX::NativeTraits::MethodProvider::Str.3.gz
 %%PERL5_MAN3%%/MouseX::NativeTraits::Num.3.gz
 %%PERL5_MAN3%%/MouseX::NativeTraits::Str.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/NativeTraits
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
-@dirrm %%SITE_PERL%%/MouseX/NativeTraits/MethodProvider
-@dirrm %%SITE_PERL%%/MouseX/NativeTraits
-@dirrmtry %%SITE_PERL%%/MouseX
-@dirrm %%SITE_PERL%%/Mouse/Meta/Attribute/Custom/Trait
-@dirrm %%SITE_PERL%%/Mouse/Meta/Attribute/Custom
-@dirrm %%SITE_PERL%%/Mouse/Meta/Attribute
-@dirrmtry %%SITE_PERL%%/Mouse/Meta
-@dirrmtry %%SITE_PERL%%/Mouse

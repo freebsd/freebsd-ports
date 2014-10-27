@@ -36,12 +36,3 @@
 %%SITE_PERL%%/auto/Heap/Simple/Perl/user_data.al
 %%SITE_PERL%%/auto/Heap/Simple/Perl/values.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple/Perl/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple/Perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap
-@dirrm %%SITE_PERL%%/auto/Heap/Simple/Perl
-@dirrmtry %%SITE_PERL%%/auto/Heap/Simple
-@dirrmtry %%SITE_PERL%%/auto/Heap
-@dirrm %%SITE_PERL%%/Heap/Simple/Perl
-@dirrmtry %%SITE_PERL%%/Heap/Simple
-@dirrmtry %%SITE_PERL%%/Heap

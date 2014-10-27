@@ -1,6 +1,3 @@
 %%SITE_PERL%%/File/Grep.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Grep/.packlist
 %%PERL5_MAN3%%/File::Grep.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Grep
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

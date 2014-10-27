@@ -1,8 +1,3 @@
 %%SITE_PERL%%/AnyEvent/DBI/Abstract.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/DBI/Abstract/.packlist
 %%PERL5_MAN3%%/AnyEvent::DBI::Abstract.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/DBI/Abstract
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrmtry %%SITE_PERL%%/AnyEvent/DBI
-@dirrmtry %%SITE_PERL%%/AnyEvent

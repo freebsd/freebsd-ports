@@ -7,7 +7,3 @@
 %%SITE_PERL%%/Proc/BackOff/Linear.pm
 %%SITE_PERL%%/Proc/BackOff/Random.pm
 %%SITE_PERL%%/mach/auto/Proc/BackOff/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/Proc/BackOff
-@dirrm %%SITE_PERL%%/mach/auto/Proc
-@dirrm %%SITE_PERL%%/Proc/BackOff
-@dirrm %%SITE_PERL%%/Proc

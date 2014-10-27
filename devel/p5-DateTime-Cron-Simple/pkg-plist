@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/DateTime::Cron::Simple.3.gz
 %%SITE_PERL%%/DateTime/Cron/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Cron/Simple/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Cron/Simple
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Cron
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrm %%SITE_PERL%%/DateTime/Cron
-@dirrmtry %%SITE_PERL%%/DateTime

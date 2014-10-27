@@ -3,6 +3,3 @@
 %%SITE_PERL%%/Class/Accessor/Constructor/Base.pm
 %%PERL5_MAN3%%/Class::Accessor::Constructor.3.gz
 %%PERL5_MAN3%%/Class::Accessor::Constructor::Base.3.gz
-@dirrm %%SITE_PERL%%/Class/Accessor/Constructor
-@comment @dirrmtry %%SITE_PERL%%/Class/Accessor
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Constructor

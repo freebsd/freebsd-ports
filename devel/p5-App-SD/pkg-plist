@@ -115,35 +115,3 @@ bin/sd
 %%SITE_PERL%%/auto/share/dist/App-SD/web/static/images/sd.png
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SD/.packlist
 man/man1/sd.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrm %%SITE_PERL%%/auto/share/dist/App-SD/web/static/images
-@dirrm %%SITE_PERL%%/auto/share/dist/App-SD/web/static/css
-@dirrm %%SITE_PERL%%/auto/share/dist/App-SD/web/static
-@dirrm %%SITE_PERL%%/auto/share/dist/App-SD/web
-@dirrm %%SITE_PERL%%/auto/share/dist/App-SD
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/auto/share
-@dirrm %%SITE_PERL%%/App/SD/Server
-@dirrm %%SITE_PERL%%/App/SD/Replica/trac
-@dirrm %%SITE_PERL%%/App/SD/Replica/rt
-@dirrm %%SITE_PERL%%/App/SD/Replica/redmine
-@dirrm %%SITE_PERL%%/App/SD/Replica/lighthouse
-@dirrm %%SITE_PERL%%/App/SD/Replica/hm
-@dirrm %%SITE_PERL%%/App/SD/Replica/github
-@dirrm %%SITE_PERL%%/App/SD/Replica/gcode
-@dirrm %%SITE_PERL%%/App/SD/Replica/debbugs
-@dirrm %%SITE_PERL%%/App/SD/Replica
-@dirrm %%SITE_PERL%%/App/SD/Model
-@dirrm %%SITE_PERL%%/App/SD/ForeignReplica
-@dirrm %%SITE_PERL%%/App/SD/Collection
-@dirrm %%SITE_PERL%%/App/SD/CLI/Model
-@dirrm %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Comment
-@dirrm %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Attachment
-@dirrm %%SITE_PERL%%/App/SD/CLI/Command/Ticket
-@dirrm %%SITE_PERL%%/App/SD/CLI/Command/Help
-@dirrm %%SITE_PERL%%/App/SD/CLI/Command/Attachment
-@dirrm %%SITE_PERL%%/App/SD/CLI/Command
-@dirrm %%SITE_PERL%%/App/SD/CLI
-@dirrm %%SITE_PERL%%/App/SD
-@dirrmtry %%SITE_PERL%%/App

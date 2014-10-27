@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/devstat/devstat.so
 %%SITE_PERL%%/%%PERL_ARCH%%/BSD/devstat.pm
 %%PERL5_MAN3%%/BSD::devstat.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/devstat
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/BSD

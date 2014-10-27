@@ -3,6 +3,3 @@ bin/mpath
 %%SITE_PERL%%/mach/auto/Module/Path/.packlist
 man/man1/mpath.1.gz
 %%PERL5_MAN3%%/Module::Path.3.gz
-@dirrmtry %%SITE_PERL%%/mach/auto/Module/Path
-@dirrmtry %%SITE_PERL%%/mach/auto/Module
-@dirrmtry %%SITE_PERL%%/Module

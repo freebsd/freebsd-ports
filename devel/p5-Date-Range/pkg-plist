@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Date::Range.3.gz
 %%SITE_PERL%%/Date/Range.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Range/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Range
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrmtry %%SITE_PERL%%/Date

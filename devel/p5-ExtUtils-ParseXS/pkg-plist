@@ -20,8 +20,3 @@
 %%SITE_PERL%%/ExtUtils/Typemaps/OutputMap.pm
 %%SITE_PERL%%/ExtUtils/Typemaps/Type.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/ParseXS/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/ParseXS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrm %%SITE_PERL%%/ExtUtils/Typemaps
-@dirrm %%SITE_PERL%%/ExtUtils/ParseXS
-@dirrmtry %%SITE_PERL%%/ExtUtils

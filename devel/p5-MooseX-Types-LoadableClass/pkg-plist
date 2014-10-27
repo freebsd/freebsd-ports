@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/LoadableClass/.packlist
 %%SITE_PERL%%/MooseX/Types/LoadableClass.pm
 %%PERL5_MAN3%%/MooseX::Types::LoadableClass.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/LoadableClass
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Types
-@dirrmtry %%SITE_PERL%%/MooseX

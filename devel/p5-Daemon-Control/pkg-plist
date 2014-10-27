@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Daemon/Control.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Daemon/Control/.packlist
 %%PERL5_MAN3%%/Daemon::Control.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Daemon/Control
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Daemon
-@dirrmtry %%SITE_PERL%%/Daemon

@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/MemInfo/MemInfo.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/MemInfo/.packlist
 %%PERL5_MAN3%%/Sys::MemInfo.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/MemInfo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Config/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Fast/.packlist
 %%PERL5_MAN3%%/Config::Fast.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Fast
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config

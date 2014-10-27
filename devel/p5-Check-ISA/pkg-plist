@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Check::ISA.3.gz
 %%SITE_PERL%%/Check/ISA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Check/ISA/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Check/ISA
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Check
-@dirrmtry %%SITE_PERL%%/Check

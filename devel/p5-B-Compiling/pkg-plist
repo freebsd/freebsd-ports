@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Compiling/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Compiling/Compiling.so
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Compiling.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Compiling
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

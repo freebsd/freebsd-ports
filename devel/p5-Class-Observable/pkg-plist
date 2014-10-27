@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Class/Observable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Observable/.packlist
 %%PERL5_MAN3%%/Class::Observable.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Observable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

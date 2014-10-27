@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Sort/Versions.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Versions/.packlist
 %%PERL5_MAN3%%/Sort::Versions.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Versions
-@dirrmtry %%SITE_PERL%%/Sort
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort

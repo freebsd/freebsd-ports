@@ -1,8 +1,3 @@
 %%SITE_PERL%%/VCP/Dest/svk.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Dest/svk/.packlist
 %%PERL5_MAN3%%/VCP::Dest::svk.3.gz
-@dirrmtry %%SITE_PERL%%/VCP/Dest
-@dirrmtry %%SITE_PERL%%/VCP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Dest/svk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Dest
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP

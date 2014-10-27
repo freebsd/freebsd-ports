@@ -9,8 +9,3 @@
 %%PERL5_MAN3%%/Algorithm::Accounting::Report::Imager.3.gz
 %%PERL5_MAN3%%/Algorithm::Accounting::Report::GDGraph.3.gz
 %%PERL5_MAN3%%/Algorithm::Accounting::Report::Text.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Accounting
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrm %%SITE_PERL%%/Algorithm/Accounting/Report
-@dirrmtry %%SITE_PERL%%/Algorithm/Accounting
-@dirrmtry %%SITE_PERL%%/Algorithm

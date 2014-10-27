@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/MockRandom/.packlist
 %%SITE_PERL%%/Test/MockRandom.pm
 %%PERL5_MAN3%%/Test::MockRandom.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/MockRandom
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

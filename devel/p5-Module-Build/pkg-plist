@@ -50,8 +50,3 @@
 %%PERL5_MAN3%%/Module::Build::Version.3.gz
 %%PERL5_MAN3%%/Module::Build::YAML.3.gz
 %%PERL5_MAN3%%/inc::latest.3.gz
-@dirrm %%SITE_PERL%%/inc/latest
-@dirrm %%SITE_PERL%%/inc
-@dirrm %%SITE_PERL%%/Module/Build/Platform
-@dirrm %%SITE_PERL%%/Module/Build
-@dirrmtry %%SITE_PERL%%/Module

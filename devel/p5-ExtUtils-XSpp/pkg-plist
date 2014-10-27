@@ -59,8 +59,3 @@ bin/xspp
 %%PERL5_MAN3%%/ExtUtils::XSpp::Plugin.3.gz
 %%PERL5_MAN3%%/ExtUtils::XSpp::Typemap.3.gz
 man/man1/xspp.1.gz
-@dirrmtry %%SITE_PERL%%/ExtUtils/XSpp/Exception
-@dirrmtry %%SITE_PERL%%/ExtUtils/XSpp/Node
-@dirrmtry %%SITE_PERL%%/ExtUtils/XSpp/Typemap
-@dirrmtry %%SITE_PERL%%/ExtUtils/XSpp
-@dirrmtry %%SITE_PERL%%/ExtUtils

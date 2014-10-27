@@ -11,7 +11,3 @@
 %%SITE_PERL%%/IPC/Run3/ProfPP.pm
 %%SITE_PERL%%/IPC/Run3/ProfReporter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Run3/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Run3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrm %%SITE_PERL%%/IPC/Run3
-@dirrmtry %%SITE_PERL%%/IPC

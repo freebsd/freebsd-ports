@@ -8,8 +8,3 @@
 %%PERL5_MAN3%%/IO::All::HTTP.3.gz
 %%PERL5_MAN3%%/IO::All::HTTPS.3.gz
 %%PERL5_MAN3%%/IO::All::LWP.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/LWP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO/All
-@dirrmtry %%SITE_PERL%%/IO

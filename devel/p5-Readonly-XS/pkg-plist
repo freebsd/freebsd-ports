@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Readonly/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Readonly/XS/XS.so
 %%PERL5_MAN3%%/Readonly::XS.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Readonly/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Readonly
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Readonly

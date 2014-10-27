@@ -8,4 +8,3 @@
 %%PERL5_MAN3%%/accessors::classic.3.gz
 %%PERL5_MAN3%%/accessors::ro.3.gz
 %%PERL5_MAN3%%/accessors::rw.3.gz
-@dirrmtry %%SITE_PERL%%/accessors

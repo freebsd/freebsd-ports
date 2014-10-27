@@ -1,6 +1,3 @@
 %%SITE_PERL%%/MooseX/MarkAsMethods.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MarkAsMethods/.packlist
 %%PERL5_MAN3%%/MooseX::MarkAsMethods.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MarkAsMethods
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX

@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Text/vFile/asData.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile/asData/.packlist
 %%PERL5_MAN3%%/Text::vFile::asData.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile/asData
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text/vFile
-@dirrmtry %%SITE_PERL%%/Text

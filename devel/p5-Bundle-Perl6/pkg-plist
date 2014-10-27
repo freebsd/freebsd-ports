@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Bundle/Perl6.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Perl6/.packlist
 %%PERL5_MAN3%%/Bundle::Perl6.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Perl6
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle
-@dirrmtry %%SITE_PERL%%/Bundle

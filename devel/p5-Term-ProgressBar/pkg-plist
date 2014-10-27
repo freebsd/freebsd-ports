@@ -10,8 +10,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/powers5
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_use.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smooth_bar.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ProgressBar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrm %%SITE_PERL%%/Term/ProgressBar
-@dirrmtry %%SITE_PERL%%/Term

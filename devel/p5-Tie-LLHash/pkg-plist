@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Tie/LLHash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/LLHash/.packlist
 %%PERL5_MAN3%%/Tie::LLHash.3.gz
-@dirrmtry %%SITE_PERL%%/Tie
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/LLHash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie

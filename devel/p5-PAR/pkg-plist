@@ -13,4 +13,3 @@
 %%PERL5_MAN3%%/PAR::SetupProgname.3.gz
 %%PERL5_MAN3%%/PAR::SetupTemp.3.gz
 %%PERL5_MAN3%%/PAR::Tutorial.3.gz
-@dirrmtry %%SITE_PERL%%/PAR

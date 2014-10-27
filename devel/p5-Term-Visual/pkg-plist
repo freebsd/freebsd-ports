@@ -2,7 +2,3 @@
 %%SITE_PERL%%/Term/Visual.pm
 %%SITE_PERL%%/Term/Visual/StatusBar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Visual/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Visual
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrm %%SITE_PERL%%/Term/Visual
-@dirrmtry %%SITE_PERL%%/Term

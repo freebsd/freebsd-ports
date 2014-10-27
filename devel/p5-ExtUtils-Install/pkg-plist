@@ -5,6 +5,3 @@
 %%PERL5_MAN3%%/ExtUtils::Install.3.gz
 %%PERL5_MAN3%%/ExtUtils::Installed.3.gz
 %%PERL5_MAN3%%/ExtUtils::Packlist.3.gz
-@dirrmtry %%SITE_PERL%%/ExtUtils
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils

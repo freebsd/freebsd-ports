@@ -1,6 +1,3 @@
 %%SITE_PERL%%/MooseX/AttributeShortcuts.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeShortcuts/.packlist
 %%PERL5_MAN3%%/MooseX::AttributeShortcuts.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeShortcuts
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX

@@ -1,4 +1,2 @@
 %%PERL5_MAN3%%/Test::File::Contents.3.gz
 %%SITE_PERL%%/Test/File/Contents.pm
-@dirrmtry %%SITE_PERL%%/Test/File
-@dirrmtry %%SITE_PERL%%/Test

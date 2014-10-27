@@ -1,8 +1,3 @@
 %%SITE_PERL%%/ExtUtils/MakeMaker/CPANfile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker/CPANfile/.packlist
 %%PERL5_MAN3%%/ExtUtils::MakeMaker::CPANfile.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker/CPANfile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrmtry %%SITE_PERL%%/ExtUtils/MakeMaker
-@dirrmtry %%SITE_PERL%%/ExtUtils

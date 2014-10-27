@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Class/Mixin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Mixin/.packlist
 %%PERL5_MAN3%%/Class::Mixin.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Mixin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

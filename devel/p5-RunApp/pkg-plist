@@ -19,8 +19,3 @@
 %%PERL5_MAN3%%/RunApp::Cron.3.gz
 %%PERL5_MAN3%%/RunApp::Template.3.gz
 %%PERL5_MAN3%%/RunApp::Template::Apache.3.gz
-@dirrmtry %%SITE_PERL%%/App/Control
-@dirrmtry %%SITE_PERL%%/RunApp/Template
-@dirrmtry %%SITE_PERL%%/RunApp/Control
-@dirrmtry %%SITE_PERL%%/RunApp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RunApp

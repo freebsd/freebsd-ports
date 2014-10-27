@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Time/Crontab.pm
 %%PERL5_MAN3%%/Time::Crontab.3.gz
-@dirrmtry %%SITE_PERL%%/Time

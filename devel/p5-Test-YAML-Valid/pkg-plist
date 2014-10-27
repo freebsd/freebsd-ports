@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Test/YAML/Valid.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/YAML/Valid/.packlist
 %%PERL5_MAN3%%/Test::YAML::Valid.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/YAML/Valid
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/YAML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/YAML
-@dirrmtry %%SITE_PERL%%/Test

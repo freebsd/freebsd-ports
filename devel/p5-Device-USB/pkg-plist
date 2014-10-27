@@ -16,7 +16,3 @@
 %%PERL5_MAN3%%/Device::USB::Device.3.gz
 %%PERL5_MAN3%%/Device::USB::FAQ.3.gz
 %%PERL5_MAN3%%/Device::dump_usb.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/USB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Device/USB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Device

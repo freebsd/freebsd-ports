@@ -4,7 +4,3 @@
 %%SITE_PERL%%/Stream/Buffered/File.pm
 %%SITE_PERL%%/Stream/Buffered/PerlIO.pm
 %%PERL5_MAN3%%/Stream::Buffered.3.gz
-@dirrm %%SITE_PERL%%/Stream/Buffered
-@dirrmtry %%SITE_PERL%%/Stream
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stream/Buffered
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stream

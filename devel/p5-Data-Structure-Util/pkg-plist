@@ -3,8 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Structure/Util/Util.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Structure/Util.pm
 %%PERL5_MAN3%%/Data::Structure::Util.3.gz
-@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Structure/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Structure
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/Data/Structure
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data

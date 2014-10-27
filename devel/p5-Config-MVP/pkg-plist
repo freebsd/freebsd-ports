@@ -21,10 +21,3 @@
 %%SITE_PERL%%/Config/MVP/Section.pm
 %%SITE_PERL%%/Config/MVP/Sequence.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MVP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MVP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrm %%SITE_PERL%%/Config/MVP/Reader/Findable
-@dirrm %%SITE_PERL%%/Config/MVP/Reader
-@dirrm %%SITE_PERL%%/Config/MVP/Assembler
-@dirrm %%SITE_PERL%%/Config/MVP
-@dirrmtry %%SITE_PERL%%/Config

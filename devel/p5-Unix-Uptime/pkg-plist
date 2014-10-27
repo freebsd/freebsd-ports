@@ -6,10 +6,3 @@
 %%PERL5_MAN3%%/Unix::Uptime.3.gz
 %%PERL5_MAN3%%/Unix::Uptime::BSD.3.gz
 %%PERL5_MAN3%%/Unix::Uptime::Linux.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime/BSD/XS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime/BSD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime/BSD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unix

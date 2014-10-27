@@ -61,7 +61,3 @@
 %%SITE_PERL%%/Cvs/Result/Tag.pm
 %%SITE_PERL%%/Cvs/Result/Update.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cvs/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cvs
-@dirrm %%SITE_PERL%%/Cvs/Result
-@dirrm %%SITE_PERL%%/Cvs/Command
-@dirrm %%SITE_PERL%%/Cvs

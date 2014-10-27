@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/B::Keywords.3.gz
 %%SITE_PERL%%/B/Keywords.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Keywords/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Keywords
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrmtry %%SITE_PERL%%/B

@@ -21,8 +21,3 @@
 %%PERL5_MAN3%%/MetaCPAN::Client::Request.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::ResultSet.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Role::Entity.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MetaCPAN/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MetaCPAN
-@dirrm %%SITE_PERL%%/MetaCPAN/Client/Role
-@dirrm %%SITE_PERL%%/MetaCPAN/Client
-@dirrmtry %%SITE_PERL%%/MetaCPAN

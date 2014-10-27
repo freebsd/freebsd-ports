@@ -1,4 +1,3 @@
 %%SITE_PERL%%/UDCode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UDCode/.packlist
 %%PERL5_MAN3%%/UDCode.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UDCode

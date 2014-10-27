@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Tcl.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Tcl/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Tcl/Tcl.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Tcl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Inline

@@ -13,7 +13,3 @@
 %%PERL5_MAN3%%/Dist::Metadata::Struct.3.gz
 %%PERL5_MAN3%%/Dist::Metadata::Tar.3.gz
 %%PERL5_MAN3%%/Dist::Metadata::Zip.3.gz
-@dirrm %%SITE_PERL%%/Dist/Metadata
-@dirrmtry %%SITE_PERL%%/Dist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Metadata
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist

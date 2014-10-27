@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Exception/Class.pm
 %%SITE_PERL%%/Exception/Class/Base.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception
-@dirrm %%SITE_PERL%%/Exception/Class
-@dirrmtry %%SITE_PERL%%/Exception

@@ -11,5 +11,3 @@
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Dancer::Session.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Dancer::Settings.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Dancer::Version.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Debug
-@dirrm %%SITE_PERL%%/Plack/Middleware/Debug/Dancer

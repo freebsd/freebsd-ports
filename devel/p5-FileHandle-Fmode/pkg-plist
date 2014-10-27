@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle/Fmode/Fmode.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle/Fmode/.packlist
 %%PERL5_MAN3%%/FileHandle::Fmode.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle/Fmode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/FileHandle

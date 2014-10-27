@@ -2,5 +2,3 @@
 %%SITE_PERL%%/Carp/Heavy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/.packlist
 %%PERL5_MAN3%%/Carp.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp
-@dirrmtry %%SITE_PERL%%/Carp

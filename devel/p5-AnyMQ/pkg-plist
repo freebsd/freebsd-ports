@@ -7,7 +7,3 @@
 %%PERL5_MAN3%%/AnyMQ::Queue.3.gz
 %%PERL5_MAN3%%/AnyMQ::Topic.3.gz
 %%PERL5_MAN3%%/AnyMQ::Topic::Trait::WithBacklog.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyMQ
-@dirrm %%SITE_PERL%%/AnyMQ/Topic/Trait
-@dirrm %%SITE_PERL%%/AnyMQ/Topic
-@dirrm %%SITE_PERL%%/AnyMQ

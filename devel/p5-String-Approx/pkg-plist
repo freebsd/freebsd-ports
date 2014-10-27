@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/String/Approx.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Approx/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Approx/Approx.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Approx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/String

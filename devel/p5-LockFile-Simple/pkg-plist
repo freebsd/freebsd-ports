@@ -4,7 +4,3 @@
 %%SITE_PERL%%/LockFile/Manager.pm
 %%SITE_PERL%%/LockFile/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LockFile/Simple/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LockFile/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LockFile
-@dirrm %%SITE_PERL%%/LockFile/Lock
-@dirrmtry %%SITE_PERL%%/LockFile

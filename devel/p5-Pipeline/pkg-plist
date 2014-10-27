@@ -35,9 +35,3 @@
 %%PERL5_MAN3%%/Pipeline::Error::AsyncResults.3.gz
 %%PERL5_MAN3%%/Pipeline::Segment::Tester.3.gz
 %%PERL5_MAN3%%/Pipeline::Segment::Async::IThreads.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pipeline
-@dirrm %%SITE_PERL%%/Pipeline/Store
-@dirrm %%SITE_PERL%%/Pipeline/Segment/Async
-@dirrm %%SITE_PERL%%/Pipeline/Segment
-@dirrm %%SITE_PERL%%/Pipeline/Error
-@dirrm %%SITE_PERL%%/Pipeline

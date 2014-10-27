@@ -43,14 +43,3 @@
 %%SITE_PERL%%/IOC/Visitor/ServiceLocator.pm
 %%SITE_PERL%%/Test/IOC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IOC/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IOC
-@dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/IOC/Visitor
-@dirrm %%SITE_PERL%%/IOC/Service/Prototype
-@dirrm %%SITE_PERL%%/IOC/Service
-@dirrm %%SITE_PERL%%/IOC/Proxy
-@dirrm %%SITE_PERL%%/IOC/Container
-@dirrm %%SITE_PERL%%/IOC/Config/XML/SAX
-@dirrm %%SITE_PERL%%/IOC/Config/XML
-@dirrm %%SITE_PERL%%/IOC/Config
-@dirrm %%SITE_PERL%%/IOC

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/ConfigFromFile/.packlist
 %%SITE_PERL%%/MouseX/ConfigFromFile.pm
 %%PERL5_MAN3%%/MouseX::ConfigFromFile.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/ConfigFromFile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
-@dirrmtry %%SITE_PERL%%/MouseX

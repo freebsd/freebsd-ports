@@ -5,10 +5,3 @@
 %%SITE_PERL%%/Data/Dumper/Concise/Sugar.pm
 %%SITE_PERL%%/Devel/Dwarn.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Concise/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Concise
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Devel
-@dirrm %%SITE_PERL%%/Data/Dumper/Concise
-@dirrmtry %%SITE_PERL%%/Data/Dumper
-@dirrmtry %%SITE_PERL%%/Data

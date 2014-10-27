@@ -1,5 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/Streaming/.packlist
 %%SITE_PERL%%/POEx/Role/Streaming.pm
 %%PERL5_MAN3%%/POEx::Role::Streaming.3.gz
-@comment @dirrmtry %%SITE_PERL%%/POEx/Role
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/Streaming

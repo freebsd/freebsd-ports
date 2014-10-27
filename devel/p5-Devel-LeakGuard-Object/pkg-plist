@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Devel/LeakGuard/Object.pm
 %%PERL5_MAN3%%/Devel::LeakGuard::Object.3.gz
 %%PERL5_MAN3%%/Devel::LeakGuard::Object::State.3.gz
-@dirrmtry %%SITE_PERL%%/Devel/LeakGuard/Object
-@dirrmtry %%SITE_PERL%%/Devel/LeakGuard
-@dirrmtry %%SITE_PERL%%/Devel

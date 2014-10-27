@@ -9,11 +9,3 @@
 %%PERL5_MAN3%%/MooseX::AuthorizedMethods.3.gz
 %%PERL5_MAN3%%/MooseX::Meta::Method::Authorized.3.gz
 %%PERL5_MAN3%%/MooseX::Meta::Method::Authorized::CheckRoles.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AuthorizedMethods
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Authorized/Meta
-@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Authorized/Application
-@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Authorized
-@dirrmtry %%SITE_PERL%%/MooseX/Meta/Method
-@dirrmtry %%SITE_PERL%%/MooseX/Meta
-@dirrmtry %%SITE_PERL%%/MooseX

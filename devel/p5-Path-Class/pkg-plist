@@ -6,5 +6,3 @@
 %%SITE_PERL%%/Path/Class/Dir.pm
 %%SITE_PERL%%/Path/Class/Entity.pm
 %%SITE_PERL%%/Path/Class/File.pm
-@dirrmtry %%SITE_PERL%%/Path/Class
-@dirrmtry %%SITE_PERL%%/Path

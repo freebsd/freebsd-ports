@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Carp::Assert::More.3.gz
 %%SITE_PERL%%/Carp/Assert/More.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Assert/More/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Assert/More
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Assert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp
-@dirrmtry %%SITE_PERL%%/Carp/Assert
-@dirrmtry %%SITE_PERL%%/Carp

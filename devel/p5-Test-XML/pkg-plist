@@ -7,7 +7,3 @@
 %%PERL5_MAN3%%/Test::XML::SAX.3.gz
 %%PERL5_MAN3%%/Test::XML::Twig.3.gz
 %%PERL5_MAN3%%/Test::XML::XPath.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/XML
-@dirrmtry %%SITE_PERL%%/Test

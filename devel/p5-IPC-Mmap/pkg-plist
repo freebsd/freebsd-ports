@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap/Win32.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Mmap.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPC

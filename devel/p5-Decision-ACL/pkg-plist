@@ -4,7 +4,3 @@
 %%SITE_PERL%%/Decision/ACL/Constants.pm
 %%SITE_PERL%%/Decision/ACL/Rule.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Decision/ACL/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Decision/ACL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Decision
-@dirrm %%SITE_PERL%%/Decision/ACL
-@dirrmtry %%SITE_PERL%%/Decision

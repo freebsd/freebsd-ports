@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Multiplex/CMD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Multiplex/CMD/.packlist
 %%PERL5_MAN3%%/Multiplex::CMD.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Multiplex/CMD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Multiplex
-@dirrmtry %%SITE_PERL%%/Multiplex

@@ -29,10 +29,3 @@
 %%SITE_PERL%%/Data/Perl/Role/String.pm
 %%SITE_PERL%%/Data/Perl/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Perl/.packlist
-@dirrmtry %%SITE_PERL%%/Data/Perl/Collection
-@dirrmtry %%SITE_PERL%%/Data/Perl/Role/Collection
-@dirrmtry %%SITE_PERL%%/Data/Perl/Role
-@dirrmtry %%SITE_PERL%%/Data/Perl
-@dirrmtry %%SITE_PERL%%/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

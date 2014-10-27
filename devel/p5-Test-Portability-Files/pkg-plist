@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Portability/Files/.packlist
 %%SITE_PERL%%/Test/Portability/Files.pm
 %%PERL5_MAN3%%/Test::Portability::Files.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Portability/Files
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Portability
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Portability
-@dirrmtry %%SITE_PERL%%/Test

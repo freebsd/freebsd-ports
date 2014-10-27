@@ -3,6 +3,3 @@ man/man1/dirsync.1.gz
 %%PERL5_MAN3%%/File::DirSync.3.gz
 %%SITE_PERL%%/File/DirSync.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DirSync/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DirSync
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

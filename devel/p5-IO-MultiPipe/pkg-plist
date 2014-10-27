@@ -1,6 +1,3 @@
 %%SITE_PERL%%/IO/MultiPipe.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/MultiPipe/.packlist
 %%PERL5_MAN3%%/IO::MultiPipe.3.gz
-@dirrmtry %%SITE_PERL%%/IO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/MultiPipe
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO

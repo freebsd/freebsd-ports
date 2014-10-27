@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/Identifiable/.packlist
 %%PERL5_MAN3%%/Role::Identifiable::HasIdent.3.gz
 %%PERL5_MAN3%%/Role::Identifiable::HasTags.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/Identifiable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role
-@dirrmtry %%SITE_PERL%%/Role/Identifiable
-@dirrmtry %%SITE_PERL%%/Role

@@ -77,19 +77,3 @@
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Remote.pm
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Source.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS
-@dirrm %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins
-@dirrm %%SITE_PERL%%/CPANPLUS/Shell/Default
-@dirrm %%SITE_PERL%%/CPANPLUS/Shell
-@dirrm %%SITE_PERL%%/CPANPLUS/Module/Author
-@dirrm %%SITE_PERL%%/CPANPLUS/Module
-@dirrm %%SITE_PERL%%/CPANPLUS/Internals/Utils
-@dirrm %%SITE_PERL%%/CPANPLUS/Internals/Source/SQLite
-@dirrm %%SITE_PERL%%/CPANPLUS/Internals/Source
-@dirrm %%SITE_PERL%%/CPANPLUS/Internals/Constants
-@dirrm %%SITE_PERL%%/CPANPLUS/Internals
-@dirrm %%SITE_PERL%%/CPANPLUS/Dist
-@dirrm %%SITE_PERL%%/CPANPLUS/Configure
-@dirrm %%SITE_PERL%%/CPANPLUS/Config
-@dirrm %%SITE_PERL%%/CPANPLUS/Backend
-@dirrmtry %%SITE_PERL%%/CPANPLUS

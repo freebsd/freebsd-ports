@@ -3,4 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Clone.pm
 %%PERL5_MAN3%%/Clone.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone

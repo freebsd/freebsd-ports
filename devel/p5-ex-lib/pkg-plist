@@ -1,6 +1,3 @@
 %%SITE_PERL%%/ex/lib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ex/lib/.packlist
 %%PERL5_MAN3%%/ex::lib.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ex/lib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ex
-@dirrmtry %%SITE_PERL%%/ex

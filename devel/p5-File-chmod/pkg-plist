@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/chmod/.packlist
 %%SITE_PERL%%/File/chmod.pm
 %%PERL5_MAN3%%/File::chmod.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/chmod
-@dirrmtry %%SITE_PERL%%/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

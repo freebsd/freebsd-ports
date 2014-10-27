@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Swap/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Swap/Swap.so
 %%PERL5_MAN3%%/Data::Swap.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Swap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data

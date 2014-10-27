@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Class/Multimethods.pm
 %%SITE_PERL%%/Class/Multimethods.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Multimethods/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Multimethods
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

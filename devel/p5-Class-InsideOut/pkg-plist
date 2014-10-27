@@ -5,8 +5,3 @@
 %%SITE_PERL%%/Class/InsideOut/Manual/About.pod
 %%SITE_PERL%%/Class/InsideOut/Manual/Advanced.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/InsideOut/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/InsideOut
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrm %%SITE_PERL%%/Class/InsideOut/Manual
-@dirrm %%SITE_PERL%%/Class/InsideOut
-@dirrmtry %%SITE_PERL%%/Class

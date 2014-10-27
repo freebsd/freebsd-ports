@@ -3,10 +3,3 @@
 %%SITE_PERL%%/Carp/REPL.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/Carp/REPL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/REPL/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/REPL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp
-@dirrm %%SITE_PERL%%/Devel/REPL/Plugin/Carp
-@dirrmtry %%SITE_PERL%%/Devel/REPL/Plugin
-@dirrmtry %%SITE_PERL%%/Devel/REPL
-@dirrmtry %%SITE_PERL%%/Devel
-@dirrmtry %%SITE_PERL%%/Carp

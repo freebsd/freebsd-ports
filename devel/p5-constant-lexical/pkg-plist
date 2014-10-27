@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/constant::lexical.3.gz
 %%SITE_PERL%%/constant/lexical.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/lexical/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/lexical
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant
-@dirrmtry %%SITE_PERL%%/constant

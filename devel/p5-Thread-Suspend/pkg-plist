@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Thread/Suspend.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Suspend/.packlist
 %%PERL5_MAN3%%/Thread::Suspend.3.gz
-@dirrmtry %%SITE_PERL%%/Thread
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Suspend
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread

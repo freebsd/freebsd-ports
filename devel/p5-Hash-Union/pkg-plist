@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Hash/Union.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Union/.packlist
 %%PERL5_MAN3%%/Hash::Union.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Union
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
-@dirrmtry %%SITE_PERL%%/Hash

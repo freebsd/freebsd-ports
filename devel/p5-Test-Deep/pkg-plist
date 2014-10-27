@@ -43,8 +43,3 @@
 %%SITE_PERL%%/Test/Deep/Stack.pm
 %%SITE_PERL%%/Test/Deep/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Deep/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Deep
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Deep/Cache
-@dirrm %%SITE_PERL%%/Test/Deep
-@dirrmtry %%SITE_PERL%%/Test

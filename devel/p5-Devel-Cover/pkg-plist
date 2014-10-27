@@ -93,11 +93,3 @@ bin/gcov2perl
 man/man1/cover.1.gz
 man/man1/cpancover.1.gz
 man/man1/gcov2perl.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/IO
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

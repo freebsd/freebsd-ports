@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Devel::Refactor.3.gz
 %%SITE_PERL%%/Devel/Refactor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Refactor/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Refactor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

@@ -6,7 +6,3 @@ man/man1/svm.1.gz
 %%SITE_PERL%%/SVN/Mirror/Git.pm
 %%SITE_PERL%%/SVN/Mirror/VCP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Mirror/.packlist
-@dirrmtry %%SITE_PERL%%/SVN/Mirror
-@dirrmtry %%SITE_PERL%%/SVN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Mirror
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN

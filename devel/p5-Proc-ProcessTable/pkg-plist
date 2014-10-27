@@ -10,8 +10,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/Process/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/ProcessTable.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/Process
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/ProcessTable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Proc/ProcessTable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Proc

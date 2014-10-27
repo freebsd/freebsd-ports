@@ -3,8 +3,3 @@
 %%SITE_PERL%%/MooseX/SemiAffordanceAccessor.pm
 %%SITE_PERL%%/MooseX/SemiAffordanceAccessor/Role/Attribute.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/SemiAffordanceAccessor/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/SemiAffordanceAccessor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/SemiAffordanceAccessor/Role
-@dirrm %%SITE_PERL%%/MooseX/SemiAffordanceAccessor
-@dirrmtry %%SITE_PERL%%/MooseX

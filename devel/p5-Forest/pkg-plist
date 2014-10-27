@@ -41,12 +41,3 @@
 %%SITE_PERL%%/Forest/Tree/Writer/SimpleASCII.pm
 %%SITE_PERL%%/Forest/Tree/Writer/SimpleHTML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Forest/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Forest
-@dirrm %%SITE_PERL%%/Forest/Tree/Writer
-@dirrm %%SITE_PERL%%/Forest/Tree/Roles
-@dirrm %%SITE_PERL%%/Forest/Tree/Reader
-@dirrm %%SITE_PERL%%/Forest/Tree/Loader
-@dirrm %%SITE_PERL%%/Forest/Tree/Indexer
-@dirrm %%SITE_PERL%%/Forest/Tree/Builder
-@dirrm %%SITE_PERL%%/Forest/Tree
-@dirrm %%SITE_PERL%%/Forest

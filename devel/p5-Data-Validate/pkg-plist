@@ -16,8 +16,3 @@
 %%SITE_PERL%%/auto/Data/Validate/new.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/.packlist
 %%PERL5_MAN3%%/Data::Validate.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/auto/Data/Validate
-@dirrmtry %%SITE_PERL%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data

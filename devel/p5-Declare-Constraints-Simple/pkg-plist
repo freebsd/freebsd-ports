@@ -25,10 +25,3 @@
 %%SITE_PERL%%/Declare/Constraints/Simple/Library/Scalar.pm
 %%SITE_PERL%%/Declare/Constraints/Simple/Result.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints/Simple/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints/Simple
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare
-@dirrm %%SITE_PERL%%/Declare/Constraints/Simple/Library
-@dirrm %%SITE_PERL%%/Declare/Constraints/Simple
-@dirrm %%SITE_PERL%%/Declare/Constraints
-@dirrmtry %%SITE_PERL%%/Declare

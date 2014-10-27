@@ -5,5 +5,3 @@
 %%PERL5_MAN3%%/Config::MySQL.3.gz
 %%PERL5_MAN3%%/Config::MySQL::Reader.3.gz
 %%PERL5_MAN3%%/Config::MySQL::Writer.3.gz
-@dirrm %%SITE_PERL%%/Config/MySQL
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MySQL

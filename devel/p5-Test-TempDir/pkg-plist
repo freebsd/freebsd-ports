@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Test::TempDir.3.gz
 %%PERL5_MAN3%%/Test::TempDir::Factory.3.gz
 %%PERL5_MAN3%%/Test::TempDir::Handle.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TempDir
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/TempDir
-@dirrmtry %%SITE_PERL%%/Test

@@ -7,13 +7,3 @@
 %%SITE_PERL%%/local/lib.pm
 %%SITE_PERL%%/POD2/DE/local/lib.pod
 %%SITE_PERL%%/POD2/PT_BR/local/lib.pod
-@dirrmtry %%SITE_PERL%%/local
-@dirrmtry %%SITE_PERL%%/lib/core
-@dirrmtry %%SITE_PERL%%/lib
-@dirrmtry %%SITE_PERL%%/POD2/PT_BR/local
-@dirrmtry %%SITE_PERL%%/POD2/PT_BR
-@dirrmtry %%SITE_PERL%%/POD2/DE/local
-@dirrmtry %%SITE_PERL%%/POD2/DE
-@dirrmtry %%SITE_PERL%%/POD2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/local/lib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/local

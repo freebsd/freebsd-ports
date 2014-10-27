@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Slurp.3.gz
 %%SITE_PERL%%/Slurp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slurp/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Slurp

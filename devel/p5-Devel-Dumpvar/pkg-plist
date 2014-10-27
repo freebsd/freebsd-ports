@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Devel::Dumpvar.3.gz
 %%SITE_PERL%%/Devel/Dumpvar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Dumpvar/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Dumpvar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

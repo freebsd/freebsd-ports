@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Test/Synopsis.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Synopsis/.packlist
 %%PERL5_MAN3%%/Test::Synopsis.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Synopsis

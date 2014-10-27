@@ -10,7 +10,3 @@
 %%PERL5_MAN3%%/Gearman::XS::Job.3.gz
 %%PERL5_MAN3%%/Gearman::XS::Task.3.gz
 %%PERL5_MAN3%%/Gearman::XS::Worker.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gearman/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gearman

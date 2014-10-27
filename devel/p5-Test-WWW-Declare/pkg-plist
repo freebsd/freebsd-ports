@@ -2,9 +2,3 @@
 %%SITE_PERL%%/Test/WWW/Declare.pm
 %%SITE_PERL%%/Test/WWW/Declare/Tester.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/WWW/Declare/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/WWW/Declare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/WWW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/WWW/Declare
-@dirrmtry %%SITE_PERL%%/Test/WWW
-@dirrmtry %%SITE_PERL%%/Test

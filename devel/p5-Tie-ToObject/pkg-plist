@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/ToObject/.packlist
 %%SITE_PERL%%/Tie/ToObject.pm
 %%PERL5_MAN3%%/Tie::ToObject.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/ToObject
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrmtry %%SITE_PERL%%/Tie

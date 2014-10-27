@@ -4,12 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Annotation/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Annotation/Annotation.so
 %%PERL5_MAN3%%/B::Hooks::OP::Annotation.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Annotation
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Annotation/Install
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Annotation
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

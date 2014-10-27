@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/File::BasicFlock.3.gz
 %%SITE_PERL%%/File/BasicFlock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/BasicFlock/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/BasicFlock
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

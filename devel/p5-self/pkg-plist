@@ -3,5 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/self/.packlist
 %%SITE_PERL%%/self.pm
 %%SITE_PERL%%/self/implicit.pm
-@dirrmtry %%SITE_PERL%%/self
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/self

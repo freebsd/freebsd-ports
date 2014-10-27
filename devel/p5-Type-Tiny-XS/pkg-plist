@@ -4,9 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny/XS/XS.so
 %%PERL5_MAN3%%/Type::Tiny::XS.3.gz
 %%PERL5_MAN3%%/Type::Tiny::XS::Util.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Type/Tiny/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Type/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Type

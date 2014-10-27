@@ -6,7 +6,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Date/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Date/Date.so
 %%PERL5_MAN3%%/Class::Date.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Date
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Class/Date
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class

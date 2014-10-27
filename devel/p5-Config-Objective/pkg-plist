@@ -16,7 +16,3 @@
 %%PERL5_MAN3%%/Config::Objective::Integer.3.gz
 %%PERL5_MAN3%%/Config::Objective::String.3.gz
 %%PERL5_MAN3%%/Config::Objective::DataType.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Objective
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config/Objective
-@dirrmtry %%SITE_PERL%%/Config

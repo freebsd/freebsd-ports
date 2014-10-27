@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Algorithm::Merge.3.gz
 %%SITE_PERL%%/Algorithm/Merge.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Merge/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Merge
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm

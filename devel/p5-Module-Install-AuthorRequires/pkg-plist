@@ -2,9 +2,3 @@
 %%SITE_PERL%%/Module/Install/Admin/AuthorRequires.pm
 %%SITE_PERL%%/Module/Install/AuthorRequires.pm
 %%PERL5_MAN3%%/Module::Install::AuthorRequires.3.gz
-@dirrmtry %%SITE_PERL%%/Module/Install/Admin
-@dirrmtry %%SITE_PERL%%/Module/Install
-@dirrmtry %%SITE_PERL%%/Module
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/AuthorRequires
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module

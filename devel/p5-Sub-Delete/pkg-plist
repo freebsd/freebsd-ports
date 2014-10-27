@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Sub::Delete.3.gz
 %%SITE_PERL%%/Sub/Delete.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Delete/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Delete
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
-@dirrmtry %%SITE_PERL%%/Sub

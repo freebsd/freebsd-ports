@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Date::Convert.3.gz
 %%SITE_PERL%%/Date/Convert.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Convert/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Convert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrmtry %%SITE_PERL%%/Date

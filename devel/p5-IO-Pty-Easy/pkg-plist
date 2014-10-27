@@ -1,8 +1,3 @@
 %%SITE_PERL%%/IO/Pty/Easy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Pty/Easy/.packlist
 %%PERL5_MAN3%%/IO::Pty::Easy.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Pty/Easy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Pty
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO/Pty
-@dirrmtry %%SITE_PERL%%/IO

@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Leak.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak/Leak.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Name/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Name/Name.so
 %%PERL5_MAN3%%/Sub::Name.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Name
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sub

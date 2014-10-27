@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Proc/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Simple/.packlist
 %%PERL5_MAN3%%/Proc::Simple.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Simple
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
-@dirrm %%SITE_PERL%%/Proc

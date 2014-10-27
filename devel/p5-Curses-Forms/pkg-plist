@@ -7,8 +7,3 @@
 %%SITE_PERL%%/Curses/Forms/Dialog/Input.pm
 %%SITE_PERL%%/Curses/Forms/Dialog/Logon.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Forms/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Forms
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses
-@dirrm %%SITE_PERL%%/Curses/Forms/Dialog
-@dirrm %%SITE_PERL%%/Curses/Forms
-@dirrmtry %%SITE_PERL%%/Curses

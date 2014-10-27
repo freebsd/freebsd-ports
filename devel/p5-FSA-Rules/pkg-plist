@@ -1,6 +1,3 @@
 %%SITE_PERL%%/FSA/Rules.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FSA/Rules/.packlist
 %%PERL5_MAN3%%/FSA::Rules.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FSA/Rules
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FSA
-@dirrmtry %%SITE_PERL%%/FSA

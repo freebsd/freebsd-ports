@@ -12,12 +12,3 @@
 %%SITE_PERL%%/Test/TAP/Model/Subtest/Visual.pm
 %%SITE_PERL%%/Test/TAP/Model/Visual.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/HTMLMatrix/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/HTMLMatrix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/TAP/Model/Subtest
-@dirrmtry %%SITE_PERL%%/Test/TAP/Model/File
-@dirrmtry %%SITE_PERL%%/Test/TAP/Model
-@dirrm %%SITE_PERL%%/Test/TAP/HTMLMatrix
-@dirrmtry %%SITE_PERL%%/Test/TAP
-@dirrmtry %%SITE_PERL%%/Test

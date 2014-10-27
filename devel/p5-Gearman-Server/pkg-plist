@@ -7,7 +7,3 @@ man/man1/gearmand.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Server/.packlist
 %%PERL5_MAN3%%/Gearman::Server.3.gz
 %%PERL5_MAN3%%/Gearman::Server::Client.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman
-@dirrmtry %%SITE_PERL%%/Gearman/Server
-@dirrmtry %%SITE_PERL%%/Gearman

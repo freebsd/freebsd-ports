@@ -2,6 +2,3 @@
 %%SITE_PERL%%/ExtUtils/MANIFEST.SKIP
 %%SITE_PERL%%/ExtUtils/Manifest.pm
 %%PERL5_MAN3%%/ExtUtils::Manifest.3.gz
-@dirrmtry %%SITE_PERL%%/ExtUtils
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Manifest
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils

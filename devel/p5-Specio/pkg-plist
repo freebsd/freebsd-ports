@@ -53,9 +53,3 @@
 %%PERL5_MAN3%%/Specio::Role::Inlinable.3.gz
 %%PERL5_MAN3%%/Specio::TypeChecks.3.gz
 %%PERL5_MAN3%%/TODO.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Specio
-@dirrm %%SITE_PERL%%/Specio/Role
-@dirrm %%SITE_PERL%%/Specio/Library
-@dirrm %%SITE_PERL%%/Specio/Constraint/Role
-@dirrm %%SITE_PERL%%/Specio/Constraint
-@dirrm %%SITE_PERL%%/Specio

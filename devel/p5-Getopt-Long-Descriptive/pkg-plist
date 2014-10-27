@@ -5,9 +5,3 @@
 %%PERL5_MAN3%%/Getopt::Long::Descriptive.3.gz
 %%PERL5_MAN3%%/Getopt::Long::Descriptive::Opts.3.gz
 %%PERL5_MAN3%%/Getopt::Long::Descriptive::Usage.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long/Descriptive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
-@dirrmtry %%SITE_PERL%%/Getopt/Long/Descriptive
-@dirrmtry %%SITE_PERL%%/Getopt/Long
-@dirrmtry %%SITE_PERL%%/Getopt

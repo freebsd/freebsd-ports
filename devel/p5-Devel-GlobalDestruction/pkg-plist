@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Devel::GlobalDestruction.3.gz
 %%SITE_PERL%%/Devel/GlobalDestruction.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

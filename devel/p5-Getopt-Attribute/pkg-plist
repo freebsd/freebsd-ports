@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Getopt/Attribute.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Attribute/.packlist
 %%PERL5_MAN3%%/Getopt::Attribute.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Attribute
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
-@dirrmtry %%SITE_PERL%%/Getopt

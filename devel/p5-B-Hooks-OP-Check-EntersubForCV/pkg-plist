@@ -4,6 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Check/EntersubForCV/Install/hook_op_check_entersubforcv.h
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Check/EntersubForCV/Install/Files.pm
 %%PERL5_MAN3%%/B::Hooks::OP::Check::EntersubForCV.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Check/EntersubForCV/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Check/EntersubForCV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Check/EntersubForCV

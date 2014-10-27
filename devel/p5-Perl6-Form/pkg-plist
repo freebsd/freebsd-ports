@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Perl6/Form.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Form/.packlist
 %%PERL5_MAN3%%/Perl6::Form.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Form
-@dirrmtry %%SITE_PERL%%/Perl6
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6

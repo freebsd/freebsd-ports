@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Class/benchmark.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Closure/.packlist
 %%PERL5_MAN3%%/Class::Closure.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Closure
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

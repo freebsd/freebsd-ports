@@ -19,8 +19,3 @@
 %%SITE_PERL%%/File/HomeDir/Unix.pm
 %%SITE_PERL%%/File/HomeDir/Windows.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrm %%SITE_PERL%%/File/HomeDir/Darwin
-@dirrm %%SITE_PERL%%/File/HomeDir
-@dirrmtry %%SITE_PERL%%/File

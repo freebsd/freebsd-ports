@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTML/Tidy/.packlist
 %%SITE_PERL%%/Test/HTML/Tidy.pm
 %%PERL5_MAN3%%/Test::HTML::Tidy.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTML/Tidy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/HTML
-@dirrmtry %%SITE_PERL%%/Test

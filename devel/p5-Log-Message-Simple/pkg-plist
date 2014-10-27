@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Log::Message::Simple.3.gz
 %%SITE_PERL%%/Log/Message/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Message/Simple/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Message/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Message
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
-@dirrmtry %%SITE_PERL%%/Log/Message
-@dirrmtry %%SITE_PERL%%/Log

@@ -2,4 +2,3 @@
 %%PERL5_MAN3%%/mixin::with.3.gz
 %%SITE_PERL%%/mixin.pm
 %%SITE_PERL%%/mixin/with.pm
-@dirrm %%SITE_PERL%%/mixin

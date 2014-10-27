@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/System/Command/.packlist
 %%PERL5_MAN3%%/System::Command.3.gz
 %%PERL5_MAN3%%/System::Command::Reaper.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/System/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/System
-@dirrm %%SITE_PERL%%/System/Command
-@dirrmtry %%SITE_PERL%%/System

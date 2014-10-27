@@ -3,4 +3,3 @@
 %%SITE_PERL%%/Reaper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reaper/.packlist
 %%SITE_PERL%%/reaper.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reaper

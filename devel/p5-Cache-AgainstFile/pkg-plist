@@ -11,7 +11,3 @@
 %%SITE_PERL%%/Cache/AgainstFile/Null.pm
 %%SITE_PERL%%/Cache/AgainstFile/Storable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/AgainstFile/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/AgainstFile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
-@dirrm %%SITE_PERL%%/Cache/AgainstFile
-@dirrmtry %%SITE_PERL%%/Cache

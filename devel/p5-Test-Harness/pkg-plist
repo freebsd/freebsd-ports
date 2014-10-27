@@ -101,21 +101,3 @@ bin/p5prove
 %%PERL5_MAN3%%/Test::HACKING.3.gz
 %%PERL5_MAN3%%/Test::Harness.3.gz
 man/man1/p5prove.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Harness
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test
-@dirrmtry %%SITE_PERL%%/TAP/Parser/YAMLish
-@dirrmtry %%SITE_PERL%%/TAP/Parser/SourceHandler
-@dirrmtry %%SITE_PERL%%/TAP/Parser/Scheduler
-@dirrmtry %%SITE_PERL%%/TAP/Parser/Result
-@dirrmtry %%SITE_PERL%%/TAP/Parser/Iterator
-@dirrmtry %%SITE_PERL%%/TAP/Parser
-@dirrmtry %%SITE_PERL%%/TAP/Harness
-@dirrmtry %%SITE_PERL%%/TAP/Formatter/File
-@dirrmtry %%SITE_PERL%%/TAP/Formatter/Console
-@dirrmtry %%SITE_PERL%%/TAP/Formatter
-@dirrmtry %%SITE_PERL%%/TAP
-@dirrmtry %%SITE_PERL%%/App/Prove/State/Result
-@dirrmtry %%SITE_PERL%%/App/Prove/State
-@dirrmtry %%SITE_PERL%%/App/Prove
-@dirrmtry %%SITE_PERL%%/App

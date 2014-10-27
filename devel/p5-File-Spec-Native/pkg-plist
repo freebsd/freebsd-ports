@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Spec/Native/.packlist
 %%SITE_PERL%%/File/Spec/Native.pm
 %%PERL5_MAN3%%/File::Spec::Native.3.gz
-@dirrmtry %%SITE_PERL%%/File/Spec
-@dirrmtry %%SITE_PERL%%/File
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Spec/Native
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Spec
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

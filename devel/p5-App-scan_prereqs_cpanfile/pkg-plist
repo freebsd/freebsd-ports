@@ -2,4 +2,3 @@ bin/scan-prereqs-cpanfile
 %%SITE_PERL%%/App/scan_prereqs_cpanfile.pm
 man/man1/scan-prereqs-cpanfile.1.gz
 %%PERL5_MAN3%%/App::scan_prereqs_cpanfile.3.gz
-@dirrmtry %%SITE_PERL%%/App

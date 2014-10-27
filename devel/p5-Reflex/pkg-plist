@@ -255,29 +255,3 @@
 %%PERL5_MAN3%%/Reflex::Trait::Watched.3.gz
 %%PERL5_MAN3%%/Reflex::UdpPeer.3.gz
 %%PERL5_MAN3%%/Reflex::Wakeup.3.gz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl/Ttl/Latch
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl/Ttl/FlipFlop
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl/Ttl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto/role-injection
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/intro
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reflex
-@dirrmtry %%SITE_PERL%%/MooseX/Role
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrm %%SITE_PERL%%/Reflex/Trait
-@dirrm %%SITE_PERL%%/Reflex/Role/Decoding
-@dirrm %%SITE_PERL%%/Reflex/Role
-@dirrm %%SITE_PERL%%/Reflex/POE/Wheel
-@dirrm %%SITE_PERL%%/Reflex/POE
-@dirrm %%SITE_PERL%%/Reflex/Event
-@dirrm %%SITE_PERL%%/Reflex/Encoder
-@dirrm %%SITE_PERL%%/Reflex/Eg/Inheritance
-@dirrm %%SITE_PERL%%/Reflex/Eg
-@dirrm %%SITE_PERL%%/Reflex/Decoder
-@dirrm %%SITE_PERL%%/Reflex/Codec/Message
-@dirrm %%SITE_PERL%%/Reflex/Codec
-@dirrm %%SITE_PERL%%/Reflex/Callback
-@dirrmtry %%SITE_PERL%%/Reflex

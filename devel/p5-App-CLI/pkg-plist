@@ -7,8 +7,3 @@
 %%PERL5_MAN3%%/App::CLI::Command.3.gz
 %%PERL5_MAN3%%/App::CLI::Command::Help.3.gz
 %%PERL5_MAN3%%/App::CLI::Helper.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/CLI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrmtry %%SITE_PERL%%/App/CLI/Command
-@dirrmtry %%SITE_PERL%%/App/CLI
-@dirrmtry %%SITE_PERL%%/App

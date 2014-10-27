@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/IO::String.3.gz
 %%SITE_PERL%%/IO/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/String/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/String
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO

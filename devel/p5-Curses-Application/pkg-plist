@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Curses::Application.3.gz
 %%SITE_PERL%%/Curses/Application.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Application/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Application
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses
-@dirrmtry %%SITE_PERL%%/Curses

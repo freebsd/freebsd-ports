@@ -3,7 +3,3 @@
 %%PERL5_MAN3%%/Path::FindDev.3.gz
 %%PERL5_MAN3%%/Path::FindDev::Object.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/FindDev/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/FindDev
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path
-@dirrm %%SITE_PERL%%/Path/FindDev
-@dirrmtry %%SITE_PERL%%/Path

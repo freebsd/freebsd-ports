@@ -11,11 +11,3 @@
 %%SITE_PERL%%/Data/Perl/String/MooseLike.pm
 %%SITE_PERL%%/MooX/HandlesVia.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/HandlesVia/.packlist
-@dirrmtry %%SITE_PERL%%/Data/Perl/Bool
-@dirrmtry %%SITE_PERL%%/Data/Perl/Collection/Array
-@dirrmtry %%SITE_PERL%%/Data/Perl/Collection/Hash
-@dirrmtry %%SITE_PERL%%/Data/Perl/Number
-@dirrmtry %%SITE_PERL%%/Data/Perl/String
-@dirrmtry %%SITE_PERL%%/MooX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/HandlesVia
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX

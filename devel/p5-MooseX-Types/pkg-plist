@@ -17,7 +17,3 @@
 %%PERL5_MAN3%%/MooseX::Types::UndefinedType.3.gz
 %%PERL5_MAN3%%/MooseX::Types::Util.3.gz
 %%PERL5_MAN3%%/MooseX::Types::Wrapper.3.gz
-@dirrmtry %%SITE_PERL%%/MooseX/Types
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

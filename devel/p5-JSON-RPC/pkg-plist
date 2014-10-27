@@ -24,6 +24,3 @@
 %%SITE_PERL%%/JSON/RPC/Parser.pm
 %%SITE_PERL%%/JSON/RPC/Procedure.pm
 %%SITE_PERL%%/JSON/RPC/Test.pm
-@dirrmtry %%SITE_PERL%%/JSON/RPC/Legacy/Server
-@dirrmtry %%SITE_PERL%%/JSON/RPC/Legacy
-@dirrmtry %%SITE_PERL%%/JSON/RPC

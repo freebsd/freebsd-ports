@@ -1,4 +1,2 @@
 %%PERL5_MAN3%%/DateTime::Format::DateManip.3.gz
 %%SITE_PERL%%/DateTime/Format/DateManip.pm
-@dirrmtry %%SITE_PERL%%/DateTime/Format
-@dirrmtry %%SITE_PERL%%/DateTime

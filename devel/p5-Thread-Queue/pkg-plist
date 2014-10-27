@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Thread/Queue.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Queue/.packlist
 %%PERL5_MAN3%%/Thread::Queue.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Queue
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread
-@dirrmtry %%SITE_PERL%%/Thread

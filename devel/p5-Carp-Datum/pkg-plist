@@ -16,7 +16,3 @@ bin/datum_strip
 %%PERL5_MAN3%%/Carp::Datum::MakeMaker.3.gz
 %%PERL5_MAN3%%/Carp::Datum::Strip.3.gz
 man/man1/datum_strip.1.gz
-@dirrm %%SITE_PERL%%/Carp/Datum
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Datum
-@dirrmtry %%SITE_PERL%%/Carp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp

@@ -1,4 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/asa/.packlist
 %%SITE_PERL%%/asa.pm
 %%PERL5_MAN3%%/asa.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/asa

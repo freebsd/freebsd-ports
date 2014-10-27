@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Devel/Hide.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Hide/.packlist
 %%PERL5_MAN3%%/Devel::Hide.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Hide
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

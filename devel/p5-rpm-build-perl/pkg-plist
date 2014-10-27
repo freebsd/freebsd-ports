@@ -17,8 +17,3 @@ bin/perl.req.files
 %%SITE_PERL%%/%%PERL_ARCH%%/fake.pm
 man/man1/perl.prov.1.gz
 man/man1/perl.req.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/rpm-build-perl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/ConstOptree
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PerlReq
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

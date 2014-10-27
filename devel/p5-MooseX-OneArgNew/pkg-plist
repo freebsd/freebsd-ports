@@ -1,6 +1,3 @@
 %%SITE_PERL%%/MooseX/OneArgNew.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/OneArgNew/.packlist
 %%PERL5_MAN3%%/MooseX::OneArgNew.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/OneArgNew
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX

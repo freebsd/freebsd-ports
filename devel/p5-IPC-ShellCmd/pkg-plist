@@ -9,7 +9,3 @@
 %%PERL5_MAN3%%/IPC::ShellCmd::SSH.3.gz
 %%PERL5_MAN3%%/IPC::ShellCmd::ShBase.3.gz
 %%PERL5_MAN3%%/IPC::ShellCmd::Sudo.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/ShellCmd
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrm %%SITE_PERL%%/IPC/ShellCmd
-@dirrmtry %%SITE_PERL%%/IPC

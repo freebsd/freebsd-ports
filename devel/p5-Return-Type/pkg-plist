@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Return/Type.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Return/Type/.packlist
 %%PERL5_MAN3%%/Return::Type.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Return/Type
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Return
-@dirrmtry %%SITE_PERL%%/Return

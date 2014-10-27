@@ -6,7 +6,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty/Constant.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/Tty.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO

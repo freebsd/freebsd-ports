@@ -3,8 +3,3 @@
 %%SITE_PERL%%/Config/JFDI/Carp.pm
 %%SITE_PERL%%/Config/JFDI/Source/Loader.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/JFDI/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/JFDI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrm %%SITE_PERL%%/Config/JFDI/Source
-@dirrm %%SITE_PERL%%/Config/JFDI
-@dirrmtry %%SITE_PERL%%/Config

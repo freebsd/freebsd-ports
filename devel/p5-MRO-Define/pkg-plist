@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/MRO/Define.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO/Define/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO/Define/Define.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO/Define
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MRO

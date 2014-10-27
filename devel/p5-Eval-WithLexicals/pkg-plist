@@ -4,7 +4,3 @@ bin/tinyrepl
 %%SITE_PERL%%/Eval/WithLexicals/WithHintPersistence.pm
 %%PERL5_MAN3%%/Eval::WithLexicals.3.gz
 %%PERL5_MAN3%%/Eval::WithLexicals::WithHintPersistence.3.gz
-@dirrm %%SITE_PERL%%/Eval/WithLexicals
-@dirrmtry %%SITE_PERL%%/Eval
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval/WithLexicals
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval

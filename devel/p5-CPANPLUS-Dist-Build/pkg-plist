@@ -3,9 +3,3 @@
 %%SITE_PERL%%/CPANPLUS/Dist/Build.pm
 %%SITE_PERL%%/CPANPLUS/Dist/Build/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/Dist/Build/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/Dist/Build
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/Dist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS
-@dirrm %%SITE_PERL%%/CPANPLUS/Dist/Build
-@dirrm %%SITE_PERL%%/CPANPLUS/Dist
-@dirrmtry %%SITE_PERL%%/CPANPLUS

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Config::ApacheFormat.3.gz
 %%SITE_PERL%%/Config/ApacheFormat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/ApacheFormat/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/ApacheFormat
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config

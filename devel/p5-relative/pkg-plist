@@ -1,4 +1,3 @@
 %%SITE_PERL%%/relative.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/relative/.packlist
 %%PERL5_MAN3%%/relative.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/relative

@@ -31,12 +31,3 @@ bin/pidl
 %%PERL5_MAN3%%/Parse::Pidl::Wireshark::Conformance.3.gz
 %%PERL5_MAN3%%/Parse::Pidl::Wireshark::NDR.3.gz
 man/man1/pidl.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Pidl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
-@dirrm %%SITE_PERL%%/Parse/Pidl/Wireshark
-@dirrm %%SITE_PERL%%/Parse/Pidl/Samba4/NDR
-@dirrm %%SITE_PERL%%/Parse/Pidl/Samba4/COM
-@dirrm %%SITE_PERL%%/Parse/Pidl/Samba4
-@dirrm %%SITE_PERL%%/Parse/Pidl/Samba3
-@dirrm %%SITE_PERL%%/Parse/Pidl
-@dirrmtry %%SITE_PERL%%/Parse

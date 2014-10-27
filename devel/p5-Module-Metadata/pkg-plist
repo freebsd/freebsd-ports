@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Module::Metadata.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Metadata/.packlist
 %%SITE_PERL%%/Module/Metadata.pm
-@dirrmtry %%SITE_PERL%%/Module
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Metadata
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module

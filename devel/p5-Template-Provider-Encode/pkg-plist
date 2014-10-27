@@ -3,9 +3,3 @@
 %%SITE_PERL%%/Template/Provider/Encode/Guess.pm
 %%PERL5_MAN3%%/Template::Provider::Encode.3.gz
 %%PERL5_MAN3%%/Template::Provider::Encode::Guess.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider/Encode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
-@dirrm %%SITE_PERL%%/Template/Provider/Encode
-@dirrmtry %%SITE_PERL%%/Template/Provider
-@dirrmtry %%SITE_PERL%%/Template

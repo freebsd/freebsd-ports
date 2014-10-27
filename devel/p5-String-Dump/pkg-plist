@@ -4,5 +4,3 @@ man/man1/dumpstr.1.gz
 %%PERL5_MAN3%%/String::Dump::Debugging.3.gz
 %%SITE_PERL%%/String/Dump.pm
 %%SITE_PERL%%/String/Dump/Debugging.pod
-@dirrm %%SITE_PERL%%/String/Dump
-@dirrmtry %%SITE_PERL%%/String

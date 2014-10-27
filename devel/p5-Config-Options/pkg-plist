@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Options/.packlist
 %%PERL5_MAN3%%/Config::Options.3.gz
 %%PERL5_MAN3%%/Config::Options::Threaded.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Options
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config/Options
-@dirrmtry %%SITE_PERL%%/Config

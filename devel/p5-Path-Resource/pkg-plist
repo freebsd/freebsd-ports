@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Resource/.packlist
 %%PERL5_MAN3%%/Path::Resource.3.gz
 %%PERL5_MAN3%%/Path::Resource::Base.3.gz
-@dirrmtry %%SITE_PERL%%/Path/Resource
-@dirrmtry %%SITE_PERL%%/Path
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Resource
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path

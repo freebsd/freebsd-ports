@@ -39,12 +39,3 @@
 %%SITE_PERL%%/Class/Workflow/YAML.pm
 %%SITE_PERL%%/Class/Workflow/YAML.pmc
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Workflow/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Workflow
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrm %%SITE_PERL%%/Class/Workflow/Util
-@dirrm %%SITE_PERL%%/Class/Workflow/Transition/Validate
-@dirrm %%SITE_PERL%%/Class/Workflow/Transition
-@dirrm %%SITE_PERL%%/Class/Workflow/State
-@dirrm %%SITE_PERL%%/Class/Workflow/Instance
-@dirrm %%SITE_PERL%%/Class/Workflow
-@dirrmtry %%SITE_PERL%%/Class

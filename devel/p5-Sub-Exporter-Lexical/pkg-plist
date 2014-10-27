@@ -2,8 +2,3 @@
 %%SITE_PERL%%/Sub/Exporter/snippet.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/Lexical/.packlist
 %%PERL5_MAN3%%/Sub::Exporter::Lexical.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/Lexical
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
-@dirrmtry %%SITE_PERL%%/Sub/Exporter
-@dirrmtry %%SITE_PERL%%/Sub

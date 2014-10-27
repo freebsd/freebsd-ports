@@ -5,9 +5,3 @@
 %%SITE_PERL%%/POE/Component/Pluggable/Constants.pm
 %%SITE_PERL%%/POE/Component/Pluggable/Pipeline.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Pluggable/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Pluggable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrm %%SITE_PERL%%/POE/Component/Pluggable
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE

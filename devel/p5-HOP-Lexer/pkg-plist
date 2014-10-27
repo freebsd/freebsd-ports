@@ -2,5 +2,3 @@
 %%SITE_PERL%%/HOP/Lexer.pm
 %%PERL5_MAN3%%/HOP::Lexer.3.gz
 %%PERL5_MAN3%%/HOP::Lexer::Article.3.gz
-@dirrmtry %%SITE_PERL%%/HOP/Lexer
-@dirrmtry %%SITE_PERL%%/HOP

@@ -4,6 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Time/Seconds.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Object/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Object/Object.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Time

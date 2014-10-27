@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Filesys/Virtual.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Virtual/.packlist
 %%PERL5_MAN3%%/Filesys::Virtual.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Virtual
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
-@dirrmtry %%SITE_PERL%%/Filesys

@@ -9,10 +9,3 @@
 %%SITE_PERL%%/Test/TAP/Model/File/Consolidated.pm
 %%SITE_PERL%%/Test/TAP/Model/Subtest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/Model/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/Model
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/TAP/Model/File
-@dirrm %%SITE_PERL%%/Test/TAP/Model
-@dirrmtry %%SITE_PERL%%/Test/TAP
-@dirrmtry %%SITE_PERL%%/Test

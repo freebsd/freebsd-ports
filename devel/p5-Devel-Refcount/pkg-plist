@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Refcount/Refcount.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Refcount.pm
 %%PERL5_MAN3%%/Devel::Refcount.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Refcount
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

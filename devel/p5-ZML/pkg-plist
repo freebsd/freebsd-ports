@@ -1,4 +1,3 @@
 %%SITE_PERL%%/ZML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZML/.packlist
 %%PERL5_MAN3%%/ZML.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZML

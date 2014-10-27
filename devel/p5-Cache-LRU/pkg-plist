@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Cache::LRU.3.gz
 %%SITE_PERL%%/Cache/LRU.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/LRU/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/LRU
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
-@dirrmtry %%SITE_PERL%%/Cache

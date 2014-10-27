@@ -8,7 +8,3 @@ bin/protoc-perl
 %%SITE_PERL%%/Google/ProtocolBuffers/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/ProtocolBuffers/.packlist
 %%PERL5_MAN3%%/Google::ProtocolBuffers.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/ProtocolBuffers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google
-@dirrm %%SITE_PERL%%/Google/ProtocolBuffers
-@dirrmtry %%SITE_PERL%%/Google

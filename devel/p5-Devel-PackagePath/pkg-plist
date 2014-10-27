@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Devel/PackagePath.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/PackagePath/.packlist
 %%PERL5_MAN3%%/Devel::PackagePath.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/PackagePath
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

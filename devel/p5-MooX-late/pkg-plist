@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/MooX::late.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/late/.packlist
 %%SITE_PERL%%/MooX/late.pm
-@dirrmtry %%SITE_PERL%%/MooX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/late
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX

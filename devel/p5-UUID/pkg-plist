@@ -2,4 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UUID/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UUID/UUID.so
 %%PERL5_MAN3%%/UUID.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UUID

@@ -47,11 +47,3 @@
 %%SITE_PERL%%/Data/Rx/TypeBundle/Core.pm
 %%SITE_PERL%%/Data/Rx/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rx/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm %%SITE_PERL%%/Data/Rx/TypeBundle
-@dirrm %%SITE_PERL%%/Data/Rx/CoreType
-@dirrm %%SITE_PERL%%/Data/Rx/CommonType
-@dirrm %%SITE_PERL%%/Data/Rx
-@dirrm %%SITE_PERL%%/Data/Rx/Manual
-@dirrmtry %%SITE_PERL%%/Data

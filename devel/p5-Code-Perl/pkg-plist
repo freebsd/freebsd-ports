@@ -22,9 +22,3 @@
 %%SITE_PERL%%/Code/Perl/Expr/SubName.pm
 %%SITE_PERL%%/Code/Perl/Test/Expr.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Code/Perl/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Code/Perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Code
-@dirrm %%SITE_PERL%%/Code/Perl/Test
-@dirrm %%SITE_PERL%%/Code/Perl/Expr
-@dirrm %%SITE_PERL%%/Code/Perl
-@dirrmtry %%SITE_PERL%%/Code

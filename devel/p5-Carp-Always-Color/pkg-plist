@@ -5,9 +5,3 @@
 %%PERL5_MAN3%%/Carp::Always::Color.3.gz
 %%PERL5_MAN3%%/Carp::Always::Color::HTML.3.gz
 %%PERL5_MAN3%%/Carp::Always::Color::Term.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Always/Color
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Always
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp
-@dirrm %%SITE_PERL%%/Carp/Always/Color
-@dirrmtry %%SITE_PERL%%/Carp/Always
-@dirrmtry %%SITE_PERL%%/Carp

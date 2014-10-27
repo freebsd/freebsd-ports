@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Class::Inner.3.gz
 %%SITE_PERL%%/Class/Inner.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Inner/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Inner
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

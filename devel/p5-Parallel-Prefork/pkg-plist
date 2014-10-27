@@ -4,8 +4,3 @@
 %%SITE_PERL%%/Parallel/Prefork/SpareWorkers/Scoreboard.pm
 %%PERL5_MAN3%%/Parallel::Prefork.3.gz
 %%PERL5_MAN3%%/Parallel::Prefork::SpareWorkers.3.gz
-@dirrmtry %%SITE_PERL%%/Parallel/Prefork/SpareWorkers
-@dirrmtry %%SITE_PERL%%/Parallel/Prefork
-@dirrmtry %%SITE_PERL%%/Parallel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Prefork
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel

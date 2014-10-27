@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Devel::Profiler.3.gz
 %%PERL5_MAN3%%/Devel::Profiler::Apache.3.gz
 %%PERL5_MAN3%%/Devel::Profiler::Test.3.gz
-@dirrm %%SITE_PERL%%/Devel/Profiler
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Profiler
-@dirrmtry %%SITE_PERL%%/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel

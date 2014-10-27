@@ -31,9 +31,3 @@
 %%SITE_PERL%%/auto/File/Util/use_flock.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Util/.packlist
 %%PERL5_MAN3%%/File::Util.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Util
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrm %%SITE_PERL%%/auto/File/Util
-@dirrm %%SITE_PERL%%/auto/File
-@dirrm %%SITE_PERL%%/File

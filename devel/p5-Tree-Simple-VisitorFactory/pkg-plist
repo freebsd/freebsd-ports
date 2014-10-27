@@ -35,9 +35,3 @@
 %%SITE_PERL%%/Tree/Simple/Visitor/VariableDepthClone.pm
 %%SITE_PERL%%/Tree/Simple/VisitorFactory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple/VisitorFactory/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple/VisitorFactory
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree
-@dirrm %%SITE_PERL%%/Tree/Simple/Visitor
-@dirrmtry %%SITE_PERL%%/Tree/Simple
-@dirrmtry %%SITE_PERL%%/Tree

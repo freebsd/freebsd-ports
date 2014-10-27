@@ -6,10 +6,3 @@ man/man1/perlsh.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu/Gnu.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu/XS/autosplit.ix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu/XS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Term/ReadLine/Gnu
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Term/ReadLine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Term

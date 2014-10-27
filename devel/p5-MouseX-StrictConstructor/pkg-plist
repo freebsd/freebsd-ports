@@ -1,6 +1,3 @@
 %%SITE_PERL%%/MouseX/StrictConstructor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/StrictConstructor/.packlist
 %%PERL5_MAN3%%/MouseX::StrictConstructor.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/StrictConstructor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
-@dirrmtry %%SITE_PERL%%/MouseX

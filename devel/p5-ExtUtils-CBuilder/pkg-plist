@@ -14,9 +14,3 @@
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/dec_osf.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/os2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/CBuilder/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/CBuilder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrm %%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows
-@dirrm %%SITE_PERL%%/ExtUtils/CBuilder/Platform
-@dirrm %%SITE_PERL%%/ExtUtils/CBuilder
-@dirrmtry %%SITE_PERL%%/ExtUtils

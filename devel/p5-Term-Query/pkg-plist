@@ -3,6 +3,3 @@
 %%SITE_PERL%%/Term/Query_Test.pl
 %%SITE_PERL%%/Term/Tester.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Query/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Query
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term

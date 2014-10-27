@@ -12,7 +12,3 @@
 %%SITE_PERL%%/Mock/Quick/Object/Control.pm
 %%SITE_PERL%%/Mock/Quick/Util.pm
 %%SITE_PERL%%/Object/Quick.pm
-@dirrmtry %%SITE_PERL%%/Object
-@dirrm %%SITE_PERL%%/Mock/Quick/Object
-@dirrm %%SITE_PERL%%/Mock/Quick
-@dirrmtry %%SITE_PERL%%/Mock

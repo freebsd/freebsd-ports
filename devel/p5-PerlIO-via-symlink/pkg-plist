@@ -1,8 +1,3 @@
 %%SITE_PERL%%/PerlIO/via/symlink.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/via/symlink/.packlist
 %%PERL5_MAN3%%/PerlIO::via::symlink.3.gz
-@dirrmtry %%SITE_PERL%%/PerlIO/via
-@dirrmtry %%SITE_PERL%%/PerlIO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/via/symlink
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/via
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO

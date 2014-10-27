@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Config/Identity/PAUSE.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Identity/.packlist
 %%PERL5_MAN3%%/Config::Identity.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Identity
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrm %%SITE_PERL%%/Config/Identity
-@dirrmtry %%SITE_PERL%%/Config

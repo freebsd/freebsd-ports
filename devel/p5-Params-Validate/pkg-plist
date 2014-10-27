@@ -8,10 +8,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Params/ValidatePP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Params/ValidateXS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/XS/XS.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Params/Validate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Params
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Attribute/Params
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Attribute

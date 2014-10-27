@@ -938,5 +938,3 @@
 %%SITE_PERL%%/DateTime/Locale/zu.pm
 %%SITE_PERL%%/DateTime/Locale/zu_ZA.pm
 %%SITE_PERL%%/DateTime/LocaleCatalog.pm
-@dirrm %%SITE_PERL%%/DateTime/Locale
-@dirrmtry %%SITE_PERL%%/DateTime

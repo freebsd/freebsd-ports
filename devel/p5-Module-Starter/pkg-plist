@@ -13,8 +13,3 @@ bin/module-starter
 %%SITE_PERL%%/Module/Starter/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/.packlist
 man/man1/module-starter.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrm %%SITE_PERL%%/Module/Starter/Plugin
-@dirrm %%SITE_PERL%%/Module/Starter
-@dirrmtry %%SITE_PERL%%/Module

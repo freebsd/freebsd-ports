@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Metabase/Client/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metabase/Client/Simple/.packlist
 %%PERL5_MAN3%%/Metabase::Client::Simple.3.gz
-@dirrmtry %%SITE_PERL%%/Metabase/Client
-@dirrmtry %%SITE_PERL%%/Metabase
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metabase/Client/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metabase/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metabase

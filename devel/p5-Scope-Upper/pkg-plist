@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Scope/Upper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope/Upper/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope/Upper/Upper.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope/Upper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scope
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Scope

@@ -3,8 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Calc/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Calc/XS.pod
 %%PERL5_MAN3%%/Date::Calc::XS.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date/Calc/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc/XS/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date

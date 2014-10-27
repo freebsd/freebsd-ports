@@ -47,9 +47,3 @@
 %%SITE_PERL%%/UI/Dialog/Screen/Menu.pm
 %%SITE_PERL%%/UI/Dialog/Screen/Menu.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UI/Dialog/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UI/Dialog
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UI
-@dirrm %%SITE_PERL%%/UI/Dialog/Screen
-@dirrm %%SITE_PERL%%/UI/Dialog/Backend
-@dirrm %%SITE_PERL%%/UI/Dialog
-@dirrmtry %%SITE_PERL%%/UI

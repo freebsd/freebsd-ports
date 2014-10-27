@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Data::Munge.3.gz
 %%SITE_PERL%%/Data/Munge.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Munge/.packlist
-@dirrmtry %%SITE_PERL%%/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Munge
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

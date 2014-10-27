@@ -10,5 +10,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTimePP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTimePPExtra.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/DateTime.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DateTime

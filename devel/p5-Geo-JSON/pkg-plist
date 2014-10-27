@@ -31,8 +31,3 @@
 %%PERL5_MAN3%%/Geo::JSON::Role::ToJson.3.gz
 %%PERL5_MAN3%%/Geo::JSON::Types.3.gz
 %%PERL5_MAN3%%/Geo::JSON::Utils.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/JSON
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrm %%SITE_PERL%%/Geo/JSON/Role
-@dirrm %%SITE_PERL%%/Geo/JSON
-@dirrmtry %%SITE_PERL%%/Geo

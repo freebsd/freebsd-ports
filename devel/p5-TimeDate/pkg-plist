@@ -42,8 +42,3 @@
 %%PERL5_MAN3%%/Date::Language::Hungarian.3.gz
 %%PERL5_MAN3%%/Date::Parse.3.gz
 %%PERL5_MAN3%%/Time::Zone.3.gz
-@dirrm %%SITE_PERL%%/Date/Language
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Parse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrmtry %%SITE_PERL%%/Time
-@dirrmtry %%SITE_PERL%%/Date

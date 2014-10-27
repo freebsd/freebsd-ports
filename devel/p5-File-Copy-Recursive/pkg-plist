@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/File::Copy::Recursive.3.gz
 %%SITE_PERL%%/File/Copy/Recursive.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Copy/Recursive/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Copy/Recursive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Copy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Copy
-@dirrmtry %%SITE_PERL%%/File

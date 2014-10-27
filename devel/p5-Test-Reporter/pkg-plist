@@ -7,8 +7,3 @@
 %%PERL5_MAN3%%/Test::Reporter::Transport.3.gz
 %%PERL5_MAN3%%/Test::Reporter::Transport::File.3.gz
 %%PERL5_MAN3%%/Test::Reporter::Transport::Null.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Reporter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Reporter/Transport
-@dirrmtry %%SITE_PERL%%/Test/Reporter
-@dirrmtry %%SITE_PERL%%/Test

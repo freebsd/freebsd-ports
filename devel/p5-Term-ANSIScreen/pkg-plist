@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Term/ANSIScreen.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ANSIScreen/.packlist
 %%PERL5_MAN3%%/Term::ANSIScreen.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ANSIScreen
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term

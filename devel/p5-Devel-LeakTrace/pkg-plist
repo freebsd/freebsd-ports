@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Devel::LeakTrace.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/LeakTrace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/LeakTrace/LeakTrace.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/LeakTrace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

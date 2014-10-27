@@ -1,5 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Prompt/.packlist
 %%SITE_PERL%%/Term/Prompt.pm
 %%PERL5_MAN3%%/Term::Prompt.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Prompt
-@dirrmtry %%SITE_PERL%%/Term

@@ -1,4 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/interface/.packlist
 %%SITE_PERL%%/interface.pm
 %%PERL5_MAN3%%/interface.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/interface

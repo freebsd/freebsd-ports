@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/FDPass/FDPass.so
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/FDPass.pm
 %%PERL5_MAN3%%/IO::FDPass.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/FDPass
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO

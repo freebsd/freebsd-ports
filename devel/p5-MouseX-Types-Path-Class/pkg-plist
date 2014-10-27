@@ -1,10 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Types/Path/Class/.packlist
 %%SITE_PERL%%/MouseX/Types/Path/Class.pm
 %%PERL5_MAN3%%/MouseX::Types::Path::Class.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Types/Path/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Types/Path
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Types
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
-@dirrmtry %%SITE_PERL%%/MouseX/Types/Path
-@dirrmtry %%SITE_PERL%%/MouseX/Types
-@dirrmtry %%SITE_PERL%%/MouseX

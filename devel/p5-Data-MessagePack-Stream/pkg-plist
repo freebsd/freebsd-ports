@@ -2,8 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/MessagePack/Stream/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/MessagePack/Stream/Stream.so
 %%PERL5_MAN3%%/Data::MessagePack::Stream.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/MessagePack/Stream
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/MessagePack
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data/MessagePack
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data

@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Types/Serialiser/.packlist
 %%PERL5_MAN3%%/Types::Serialiser.3.gz
 %%PERL5_MAN3%%/Types::Serialiser::Error.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Types/Serialiser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Types
-@dirrmtry %%SITE_PERL%%/Types/Serialiser
-@dirrmtry %%SITE_PERL%%/Types

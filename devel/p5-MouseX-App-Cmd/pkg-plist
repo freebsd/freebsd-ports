@@ -3,9 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/App/Cmd/.packlist
 %%PERL5_MAN3%%/MouseX::App::Cmd.3.gz
 %%PERL5_MAN3%%/MouseX::App::Cmd::Command.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/App/Cmd
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/App
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
-@dirrm %%SITE_PERL%%/MouseX/App/Cmd
-@dirrmtry %%SITE_PERL%%/MouseX/App
-@dirrmtry %%SITE_PERL%%/MouseX

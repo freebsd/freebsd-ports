@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Algorithm::C3.3.gz
 %%SITE_PERL%%/Algorithm/C3.pm
 %%SITE_PERL%%/mach/auto/Algorithm/C3/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/Algorithm/C3/
-@dirrmtry %%SITE_PERL%%/mach/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm

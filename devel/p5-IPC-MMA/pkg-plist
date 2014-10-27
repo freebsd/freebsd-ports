@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/MMA/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/MMA/MMA.so
 %%PERL5_MAN3%%/IPC::MMA.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/MMA
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC

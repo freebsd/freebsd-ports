@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/POE::Component::RSSAggregator.3.gz
 %%SITE_PERL%%/POE/Component/RSSAggregator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/RSSAggregator/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/RSSAggregator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE

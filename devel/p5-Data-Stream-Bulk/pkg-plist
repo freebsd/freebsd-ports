@@ -25,10 +25,3 @@
 %%SITE_PERL%%/Data/Stream/Bulk/Path/Class.pm
 %%SITE_PERL%%/Data/Stream/Bulk/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream/Bulk/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream/Bulk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm %%SITE_PERL%%/Data/Stream/Bulk/Path
-@dirrm %%SITE_PERL%%/Data/Stream/Bulk
-@dirrmtry %%SITE_PERL%%/Data/Stream
-@dirrmtry %%SITE_PERL%%/Data

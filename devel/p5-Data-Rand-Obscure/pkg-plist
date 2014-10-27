@@ -3,9 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rand/Obscure/.packlist
 %%PERL5_MAN3%%/Data::Rand::Obscure.3.gz
 %%PERL5_MAN3%%/Data::Rand::Obscure::Generator.3.gz
-@dirrm %%SITE_PERL%%/Data/Rand/Obscure
-@dirrmtry %%SITE_PERL%%/Data/Rand
-@dirrmtry %%SITE_PERL%%/Data
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rand/Obscure
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rand
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

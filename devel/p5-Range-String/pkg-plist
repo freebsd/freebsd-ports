@@ -15,9 +15,3 @@
 %%PERL5_MAN3%%/Range::String::Object.3.gz
 %%PERL5_MAN3%%/Range::Integer::Parse.3.gz
 %%PERL5_MAN3%%/Range::Integer::Object.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Range/String
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Range
-@dirrmtry %%SITE_PERL%%/Range/Interface
-@dirrmtry %%SITE_PERL%%/Range/String
-@dirrmtry %%SITE_PERL%%/Range/Integer
-@dirrmtry %%SITE_PERL%%/Range

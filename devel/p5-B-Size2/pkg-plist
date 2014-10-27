@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Size2/Terse.pm
 %%PERL5_MAN3%%/B::Size2.3.gz
 %%PERL5_MAN3%%/B::Size2::Terse.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Size2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Size2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B

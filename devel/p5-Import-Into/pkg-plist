@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Import::Into.3.gz
 %%SITE_PERL%%/Import/Into.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Import/Into/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Import/Into
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Import
-@dirrmtry %%SITE_PERL%%/Import

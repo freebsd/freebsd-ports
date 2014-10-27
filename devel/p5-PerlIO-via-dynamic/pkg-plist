@@ -1,8 +1,3 @@
 %%SITE_PERL%%/PerlIO/via/dynamic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/via/dynamic/.packlist
 %%PERL5_MAN3%%/PerlIO::via::dynamic.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/via/dynamic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/via
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO
-@dirrmtry %%SITE_PERL%%/PerlIO/via
-@dirrmtry %%SITE_PERL%%/PerlIO

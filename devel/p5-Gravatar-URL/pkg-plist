@@ -4,6 +4,3 @@
 %%SITE_PERL%%/Gravatar/URL.pm
 %%SITE_PERL%%/Libravatar/URL.pm
 %%SITE_PERL%%/Unicornify/URL.pm
-@dirrmtry %%SITE_PERL%%/Unicornify
-@dirrmtry %%SITE_PERL%%/Libravatar
-@dirrmtry %%SITE_PERL%%/Gravatar

@@ -12,7 +12,3 @@ man/man1/dir-dump.1.gz
 %%PERL5_MAN3%%/File::Dir::Dumper::Scanner.3.gz
 %%PERL5_MAN3%%/File::Dir::Dumper::Stream::JSON::Reader.3.gz
 %%PERL5_MAN3%%/File::Dir::Dumper::Stream::JSON::Writer.3.gz
-@dirrm %%SITE_PERL%%/File/Dir/Dumper/Stream/JSON
-@dirrm %%SITE_PERL%%/File/Dir/Dumper/Stream
-@dirrm %%SITE_PERL%%/File/Dir/Dumper
-@dirrm %%SITE_PERL%%/File/Dir

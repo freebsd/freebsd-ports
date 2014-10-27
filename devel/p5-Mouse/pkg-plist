@@ -58,11 +58,3 @@
 %%PERL5_MAN3%%/Squirrel::Role.3.gz
 %%PERL5_MAN3%%/Test::Mouse.3.gz
 %%PERL5_MAN3%%/ouse.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Test
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Squirrel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Role
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Method
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mouse

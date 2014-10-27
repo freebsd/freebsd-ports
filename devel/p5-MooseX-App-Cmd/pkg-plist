@@ -3,9 +3,3 @@
 %%SITE_PERL%%/MooseX/App/Cmd.pm
 %%SITE_PERL%%/MooseX/App/Cmd/Command.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App/Cmd/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App/Cmd
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/App/Cmd
-@dirrmtry %%SITE_PERL%%/MooseX/App
-@dirrmtry %%SITE_PERL%%/MooseX

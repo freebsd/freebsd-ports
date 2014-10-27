@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Class/OOorNO.pm
 %%SITE_PERL%%/Class/OOorNO.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/OOorNO/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/OOorNO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

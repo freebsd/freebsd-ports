@@ -2,4 +2,3 @@ bin/chooser
 %%SITE_PERL%%/Chooser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chooser/.packlist
 %%PERL5_MAN3%%/Chooser.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chooser

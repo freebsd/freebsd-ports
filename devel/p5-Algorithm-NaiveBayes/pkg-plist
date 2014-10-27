@@ -4,6 +4,3 @@
 %%SITE_PERL%%/Algorithm/NaiveBayes/Model/Frequency.pm
 %%SITE_PERL%%/Algorithm/NaiveBayes/Model/Gaussian.pm
 %%SITE_PERL%%/Algorithm/NaiveBayes/Util.pm
-@dirrm %%SITE_PERL%%/Algorithm/NaiveBayes/Model
-@dirrm %%SITE_PERL%%/Algorithm/NaiveBayes
-@dirrmtry %%SITE_PERL%%/Algorithm

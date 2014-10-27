@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Algorithm::Numerical::Shuffle.3.gz
 %%SITE_PERL%%/Algorithm/Numerical/Shuffle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Numerical/Shuffle/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Numerical/Shuffle
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Numerical
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm/Numerical
-@dirrmtry %%SITE_PERL%%/Algorithm

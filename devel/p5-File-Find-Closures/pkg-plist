@@ -1,8 +1,3 @@
 %%SITE_PERL%%/File/Find/Closures.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Closures/.packlist
 %%PERL5_MAN3%%/File::Find::Closures.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Closures
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Find
-@dirrmtry %%SITE_PERL%%/File

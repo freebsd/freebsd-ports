@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Module::Recursive::Require.3.gz
 %%SITE_PERL%%/Module/Recursive/Require.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Recursive/Require/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Recursive/Require
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Recursive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrm %%SITE_PERL%%/Module/Recursive
-@dirrmtry %%SITE_PERL%%/Module

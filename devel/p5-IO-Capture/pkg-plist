@@ -9,7 +9,3 @@
 %%PERL5_MAN3%%/IO::Capture::Stderr.3.gz
 %%PERL5_MAN3%%/IO::Capture::Stdout.3.gz
 %%PERL5_MAN3%%/IO::Capture::Tie_STDx.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Capture
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO/Capture
-@dirrmtry %%SITE_PERL%%/IO

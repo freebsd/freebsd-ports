@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Params::Check.3.gz
 %%SITE_PERL%%/Params/Check.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Check/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Check
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params
-@dirrmtry %%SITE_PERL%%/Params

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Object/Event.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Event/.packlist
 %%PERL5_MAN3%%/Object::Event.3.gz
-@dirrmtry %%SITE_PERL%%/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Event
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object

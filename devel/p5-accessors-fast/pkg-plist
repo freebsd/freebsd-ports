@@ -3,7 +3,3 @@
 %%SITE_PERL%%/accessors/fast/tie.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/accessors/fast/.packlist
 %%PERL5_MAN3%%/accessors::fast.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/accessors/fast
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/accessors
-@dirrmtry %%SITE_PERL%%/accessors/fast
-@dirrmtry %%SITE_PERL%%/accessors

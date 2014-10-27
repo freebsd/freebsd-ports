@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Date/ICal.pm
 %%SITE_PERL%%/Date/ICal/Duration.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/ICal/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/ICal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrm %%SITE_PERL%%/Date/ICal
-@dirrmtry %%SITE_PERL%%/Date

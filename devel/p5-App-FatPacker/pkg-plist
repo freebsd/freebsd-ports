@@ -5,7 +5,3 @@ man/man1/fatpack.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/FatPacker/.packlist
 %%SITE_PERL%%/App/FatPacker.pm
 %%SITE_PERL%%/App/FatPacker/Trace.pm
-@dirrm %%SITE_PERL%%/App/FatPacker
-@dirrmtry %%SITE_PERL%%/App
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/FatPacker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App

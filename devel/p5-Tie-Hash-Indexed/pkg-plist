@@ -2,8 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Tie/Hash/Indexed.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Indexed/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Indexed/Indexed.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Indexed
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tie/Hash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tie

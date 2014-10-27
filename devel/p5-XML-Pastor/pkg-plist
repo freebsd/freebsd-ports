@@ -73,9 +73,3 @@ man/man1/pastorize.1.gz
 %%SITE_PERL%%/XML/Pastor/Type.pm
 %%SITE_PERL%%/XML/Pastor/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Pastor/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Pastor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/Pastor/Schema
-@dirrm %%SITE_PERL%%/XML/Pastor/Builtin
-@dirrm %%SITE_PERL%%/XML/Pastor
-@dirrmtry %%SITE_PERL%%/XML

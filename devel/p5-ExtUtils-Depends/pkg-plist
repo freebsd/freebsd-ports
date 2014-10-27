@@ -1,6 +1,3 @@
 %%SITE_PERL%%/ExtUtils/Depends.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Depends/.packlist
 %%PERL5_MAN3%%/ExtUtils::Depends.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Depends
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrmtry %%SITE_PERL%%/ExtUtils
