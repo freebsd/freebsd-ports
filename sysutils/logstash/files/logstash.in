@@ -2,9 +2,9 @@
 
 # Configuration settings for logstash in /etc/rc.conf:
 #
-# logstash_enable (bool):
-#   Default value: "NO"
-#   Flag that determines whether Logstash is enabled.
+# PROVIDE: logstash
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 #
 # logstash_enable (bool):
 #   Default value: "NO"
