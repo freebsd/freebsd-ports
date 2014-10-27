@@ -39,5 +39,10 @@ libdata/pkgconfig/dbus-1.pc
 %%MANPAGES%%man/man1/dbus-run-session.1.gz
 %%MANPAGES%%man/man1/dbus-send.1.gz
 %%MANPAGES%%man/man1/dbus-uuidgen.1.gz
+@dir share/dbus-1/system-services
+@dir share/dbus-1/interfaces
+@dir share/dbus-1/services
+@dir etc/dbus-1/session.d
+@dir etc/dbus-1/system.d
 @dir /var/db/dbus
 @dir /var/run/dbus
