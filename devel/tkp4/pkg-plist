@@ -3,8 +3,6 @@ bin/tkp4
 %%DATADIR%%/mclistbox.tcl
 %%DATADIR%%/tkp4.tcl
 %%DATADIR%%/tree.tcl
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/P4WINdifferences
 %%PORTDOCS%%%%DOCSDIR%%/UsingTkP4
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

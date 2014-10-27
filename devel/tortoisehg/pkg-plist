@@ -585,28 +585,3 @@ share/pixmaps/tortoisehg/icons/svg/thg_logo.svg
 share/pixmaps/tortoisehg/icons/thg_logo.ico
 share/pixmaps/tortoisehg/icons/thg_logo_92x50.png
 share/tortoisehg/mergetools.rc
-@dirrm share/tortoisehg
-@dirrm share/pixmaps/tortoisehg/icons/16x16/mimetypes
-@dirrm share/pixmaps/tortoisehg/icons/16x16/apps
-@dirrm share/pixmaps/tortoisehg/icons/16x16
-@dirrm share/pixmaps/tortoisehg/icons/22x22/actions
-@dirrm share/pixmaps/tortoisehg/icons/22x22
-@dirrm share/pixmaps/tortoisehg/icons/24x24/actions
-@dirrm share/pixmaps/tortoisehg/icons/24x24
-@dirrm share/pixmaps/tortoisehg/icons/32x32/actions
-@dirrm share/pixmaps/tortoisehg/icons/32x32
-@dirrm share/pixmaps/tortoisehg/icons/scalable/apps
-@dirrm share/pixmaps/tortoisehg/icons/scalable/actions
-@dirrm share/pixmaps/tortoisehg/icons/scalable/status
-@dirrm share/pixmaps/tortoisehg/icons/scalable
-@dirrm share/pixmaps/tortoisehg/icons/svg
-@dirrm share/pixmaps/tortoisehg/icons
-@dirrm share/pixmaps/tortoisehg
-%%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/jv
-@dirrm %%PYTHON_SITELIBDIR%%/tortoisehg/util
-@dirrm %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt
-@dirrm %%PYTHON_SITELIBDIR%%/tortoisehg
-%%NAUTILUS%%@dirrmtry lib/nautilus/extensions-2.0/python
-%%NAUTILUS%%@dirrmtry lib/nautilus/extensions-2.0
-%%NAUTILUS%%@dirrmtry lib/nautilus

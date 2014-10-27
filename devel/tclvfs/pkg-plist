@@ -26,5 +26,3 @@ lib/vfs1.3/zipvfs.tcl
 lib/vfs1.3/zipvfscompat.tcl
 man/mann/vfs.n.gz
 man/mann/vfslib.n.gz
-@dirrm lib/vfs1.3/template
-@dirrm lib/vfs1.3

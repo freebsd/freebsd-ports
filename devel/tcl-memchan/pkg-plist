@@ -13,4 +13,3 @@ man/mann/memchanapi.n.gz
 man/mann/null.n.gz
 man/mann/random.n.gz
 man/mann/zero.n.gz
-@dirrm lib/Memchan%%PORTVERSION%%

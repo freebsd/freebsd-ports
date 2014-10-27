@@ -24,5 +24,3 @@ lib/Tclxml%%VER%%/xmlswitch.tcl
 lib/Tclxml%%VER%%/xpath.tcl
 lib/Tclxml%%VER%%/xsltcache.tcl
 lib/TclxmlConfig.sh
-@dirrm lib/Tclxml%%VER%%
-@dirrm include/tclxml

@@ -125,6 +125,3 @@ man/man1/tkcvs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/tkcvs/bitmaps
-@dirrm lib/tkcvs

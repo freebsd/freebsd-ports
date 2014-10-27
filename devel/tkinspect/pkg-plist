@@ -42,5 +42,3 @@ lib/tkinspect/stl-lite/object.tcl
 lib/tkinspect/stl-lite/simpleentry.tcl
 lib/tkinspect/stl-lite/tk_util.tcl
 lib/tkinspect/stl-lite/tkhtml.tcl
-@dirrm lib/tkinspect/stl-lite
-@dirrm lib/tkinspect
