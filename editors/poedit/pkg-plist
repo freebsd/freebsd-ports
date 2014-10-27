@@ -140,18 +140,3 @@ share/pixmaps/poedit.png
 %%DATADIR%%/icons/poedit-status-nothing.png
 %%DATADIR%%/icons/poedit-update.png
 %%DATADIR%%/icons/view-fullscreen.png
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/help/hr
-@dirrm %%DATADIR%%/help/en/gettext
-@dirrm %%DATADIR%%/help/en
-@dirrm %%DATADIR%%/help/common
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/af_ZA/LC_MESSAGES
-@dirrmtry share/locale/af_ZA
-@dirrmtry share/locale/es_PR/LC_MESSAGES
-@dirrmtry share/locale/es_PR
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/sq_AL/LC_MESSAGES
-@dirrmtry share/locale/sq_AL

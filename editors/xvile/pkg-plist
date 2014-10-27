@@ -253,9 +253,3 @@ share/pixmaps/vile.xpm
 %%DATADIR%%/xsl.keywords
 %%DATADIR%%/yacc.keywords
 %%DATADIR%%/zsh.keywords
-%%PERL%%@dirrm %%DATADIR%%/perl/Vile
-%%PERL%%@dirrm %%DATADIR%%/perl
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/vile

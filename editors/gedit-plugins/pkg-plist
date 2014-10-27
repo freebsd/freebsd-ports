@@ -260,35 +260,3 @@ share/locale/wa/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
-%%PYTHON%%@dirrm lib/gedit-2/plugins/textsize
-%%PYTHON%%@dirrm lib/gedit-2/plugins/multiedit
-%%PYTHON%%@dirrm lib/gedit-2/plugins/synctex
-%%PYTHON%%@dirrm lib/gedit-2/plugins/sessionsaver
-%%PYTHON%%@dirrm lib/gedit-2/plugins/commander/commands
-%%PYTHON%%@dirrm lib/gedit-2/plugins/commander
-%%PYTHON%%@dirrm share/gedit-2/plugins/sessionsaver
-@dirrm share/gedit-2/plugins/drawspaces
-%%PYTHON%%@dirrm share/gedit-2/plugins/commander/modules/find
-%%PYTHON%%@dirrm share/gedit-2/plugins/commander/modules
-%%PYTHON%%@dirrm share/gedit-2/plugins/commander
-@dirrm share/gedit-2/plugins/bookmarks
-@dirrmtry share/gedit-2/plugins
-@dirrmtry share/gedit-2
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

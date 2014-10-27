@@ -60,5 +60,3 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/sublime_plugin.py
 %%DATADIR%%/sublime_text
 %%DATADIR%%/sublime_text.desktop
-@dirrmtry %%DATADIR%%/Packages
-@dirrmtry %%DATADIR%%

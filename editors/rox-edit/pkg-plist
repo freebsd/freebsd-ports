@@ -50,9 +50,3 @@ apps/Edit/setup.pyo
 apps/Edit/tests/testreplace.py
 apps/Edit/tests/testreplace.pyc
 apps/Edit/tests/testreplace.pyo
-@dirrm apps/Edit/tests
-@dirrm apps/Edit/images
-@dirrm apps/Edit/Messages
-@dirrm apps/Edit/Help
-@dirrm apps/Edit
-@dirrmtry apps

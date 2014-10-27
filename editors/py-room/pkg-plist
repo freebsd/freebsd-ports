@@ -75,11 +75,3 @@ share/locale/tr/LC_MESSAGES/pyroom.mo
 share/locale/zh_CN/LC_MESSAGES/pyroom.mo
 share/locale/ku/LC_MESSAGES/pyroom.mo
 share/locale/sco/LC_MESSAGES/pyroom.mo
-@dirrmtry share/locale/sco/LC_MESSAGES
-@dirrmtry share/locale/sco
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrm %%PYTHON_SITELIBDIR%%/PyRoom
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrm share/pyroom/themes
-@dirrm share/pyroom

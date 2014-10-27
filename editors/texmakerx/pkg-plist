@@ -74,4 +74,3 @@ share/applications/texmakerx.desktop
 %%DATADIR%%/qt_cs.qm
 %%DATADIR%%/en_US.aff
 %%DATADIR%%/en_US.dic
-@dirrm %%DATADIR%%

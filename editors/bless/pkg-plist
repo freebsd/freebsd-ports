@@ -68,9 +68,3 @@ share/applications/bless.desktop
 %%PORTDOCS%%%%DOCSDIR%%/user/legal.xml
 %%PORTDOCS%%share/omf/bless/bless-manual.omf
 share/pixmaps/bless-48x48.png
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm share/omf/bless
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/user/figures
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/user
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/bless

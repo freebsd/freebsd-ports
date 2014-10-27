@@ -67,5 +67,3 @@ share/locale/es/LC_MESSAGES/sheetssolver.mo
 share/locale/es/LC_MESSAGES/stage.mo
 share/locale/es/LC_MESSAGES/thesaurus_tool.mo
 share/locale/es/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/es/stage
-@dirrm share/doc/HTML/es/calligra

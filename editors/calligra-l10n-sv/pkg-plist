@@ -189,7 +189,3 @@ share/locale/sv/LC_MESSAGES/sheetssolver.mo
 share/locale/sv/LC_MESSAGES/stage.mo
 share/locale/sv/LC_MESSAGES/thesaurus_tool.mo
 share/locale/sv/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/sv/stage
-@dirrm share/doc/HTML/sv/sheets
-@dirrm share/doc/HTML/sv/kexi
-@dirrm share/doc/HTML/sv/calligra

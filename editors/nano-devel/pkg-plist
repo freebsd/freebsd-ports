@@ -80,13 +80,6 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/tex.nanorc
 %%DATADIR%%/texinfo.nanorc
 %%DATADIR%%/xml.nanorc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%NLS%%%%DOCSDIR%%/fr/nano.1.html
 %%NLS%%%%DOCSDIR%%/fr/nanorc.5.html
 %%NLS%%%%DOCSDIR%%/fr/rnano.1.html
-%%NLS%%@dirrm %%DOCSDIR%%/fr
-@dirrmtry man/fr/man1
-@dirrmtry man/fr/man5
-@dirrmtry man/fr
-@dirrmtry %%DATADIR%%

@@ -39,7 +39,3 @@ man/man1/biew.1.gz
 %%DATADIR%%/xlt/mac2alt.xlt
 %%DATADIR%%/xlt/mik2alt.xlt
 %%DATADIR%%/xlt/win2alt.xlt
-@dirrm %%DATADIR%%/xlt
-@dirrm %%DATADIR%%/syntax
-@dirrm %%DATADIR%%/skn
-@dirrm %%DATADIR%%

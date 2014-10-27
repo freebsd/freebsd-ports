@@ -55,17 +55,3 @@ share/icons/hicolor/48x48/apps/sublime_text.png
 %%DATADIR%%/Pristine Packages/YAML.sublime-package
 %%DATADIR%%/sublime_plugin.py
 %%DATADIR%%/sublime_text
-@dirrmtry %%DATADIR%%/Pristine Packages
-@dirrmtry %%DATADIR%%
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons

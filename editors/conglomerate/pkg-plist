@@ -292,17 +292,3 @@ share/pixmaps/conglomerate/cong-warning-48.png
 share/pixmaps/conglomerate/cong-wrapper-16.png
 share/pixmaps/conglomerate/conglomerate-icon-32.png
 share/pixmaps/conglomerate/conglomerate-logo.png
-@dirrm share/omf/conglomerate
-@dirrm share/pixmaps/conglomerate
-@dirrm share/gnome/help/conglomerate/C/figures
-@dirrm share/gnome/help/conglomerate/C
-@dirrm share/gnome/help/conglomerate
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/stylesheets
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%/dispspecs
-@dirrm %%DATADIR%%/css
-@dirrm %%DATADIR%%

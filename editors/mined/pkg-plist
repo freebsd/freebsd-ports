@@ -48,13 +48,3 @@ share/applications/mined.desktop
 %%DATADIR%%/setup_install/win/install.sh
 %%DATADIR%%/setup_install/win/uninstall.sh
 share/pixmaps/mined.xpm
-@dirrm %%DATADIR%%/setup_install/win
-@dirrm %%DATADIR%%/setup_install/bin
-@dirrm %%DATADIR%%/setup_install
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/conf_user/terminator
-@dirrm %%DATADIR%%/conf_user/mlterm
-@dirrm %%DATADIR%%/conf_user/konsole
-@dirrm %%DATADIR%%/conf_user
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%

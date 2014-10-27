@@ -179,8 +179,3 @@ lib/jed/lib/xformreg.sl
 lib/jed/lib/yankpop.sl
 man/man1/jed.1.gz
 man/man1/rgrep.1.gz
-@dirrm lib/jed/bin
-@dirrm lib/jed/lib/colors/Xjed
-@dirrm lib/jed/lib/colors
-@dirrm lib/jed/lib
-@dirrm lib/jed

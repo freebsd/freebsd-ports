@@ -10,8 +10,3 @@ lib/fpc/%%PORTVERSION%%/ide/cvsup.tdf
 lib/fpc/%%PORTVERSION%%/ide/grep.tdf
 lib/fpc/%%PORTVERSION%%/ide/tpgrep.tdf
 share/doc/fpc-%%PORTVERSION%%/ide/readme.ide
-@dirrm share/doc/fpc-%%PORTVERSION%%/ide
-@dirrmtry share/doc/fpc-%%PORTVERSION%%
-@dirrm lib/fpc/%%PORTVERSION%%/ide
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -62,6 +62,3 @@ man/man1/mp-5.1.gz
 %%DATADIR%%/mp_tui.mpsl
 %%DATADIR%%/mp_vcs.mpsl
 %%DATADIR%%/mp_writing.mpsl
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/lang
-@dirrmtry %%DATADIR%%

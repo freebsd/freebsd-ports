@@ -184,23 +184,3 @@ man/man1/xxd.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimdiff.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimtutor.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/xxd.1.gz
-%%NON_LITE%%%%NLS%%@dirrmtry man/ru.UTF-8/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/ru.UTF-8
-%%NON_LITE%%%%NLS%%@dirrmtry man/pl.UTF-8/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/pl.UTF-8
-%%NON_LITE%%%%NLS%%@dirrmtry man/pl.ISO8859-2/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/pl.ISO8859-2
-%%NON_LITE%%%%NLS%%@dirrmtry man/pl/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/pl
-%%NON_LITE%%%%NLS%%@dirrmtry man/it.UTF-8/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/it.UTF-8
-%%NON_LITE%%%%NLS%%@dirrmtry man/it.ISO8859-1/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/it.ISO8859-1
-%%NON_LITE%%%%NLS%%@dirrmtry man/it/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/it
-%%NON_LITE%%%%NLS%%@dirrmtry man/fr.UTF-8/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/fr.UTF-8
-%%NON_LITE%%%%NLS%%@dirrmtry man/fr.ISO8859-1/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/fr.ISO8859-1
-%%NON_LITE%%%%NLS%%@dirrmtry man/fr/man1
-%%NON_LITE%%%%NLS%%@dirrmtry man/fr

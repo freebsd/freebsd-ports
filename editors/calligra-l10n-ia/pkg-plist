@@ -56,5 +56,3 @@ share/locale/ia/LC_MESSAGES/sheetssolver.mo
 share/locale/ia/LC_MESSAGES/stage.mo
 share/locale/ia/LC_MESSAGES/thesaurus_tool.mo
 share/locale/ia/LC_MESSAGES/words.mo
-@dirrm share/locale/ia/LC_MESSAGES
-@dirrm share/locale/ia
