@@ -3,12 +3,12 @@
 
 PORTNAME=		c6
 PORTVERSION=		6.5
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		emulators linux
 MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/ \
 		http://mirror.centos.org/centos/6/updates/i386/Packages/
 PKGNAMEPREFIX=		linux_base-
-DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
+DISTFILES=		${PRE_BIN_DISTFILES} ${BIN_DISTFILES} ${SRC_DISTFILES}
 EXTRACT_ONLY=		${BIN_DISTFILES}
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -17,6 +17,11 @@ COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux CentOS 
 LINUX_DIST=	centos
 LINUX_DIST_VER=6.5
 DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
+
+# these get extracted from pre-extract, then some directory permissions
+# get fixed up
+PRE_BIN_DISTFILES=	filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm  \
+			setup-2.8.14-20.el6_4.1.noarch.rpm
 
 BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		bash-4.1.2-15.el6_5.2.${LINUX_RPM_ARCH}.rpm \
@@ -31,7 +36,6 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		e2fsprogs-libs-1.41.12-18.el6.${LINUX_RPM_ARCH}.rpm \
 		elfutils-0.152-1.el6.${LINUX_RPM_ARCH}.rpm \
 		centos-release-6-5.el6.centos.11.1.${LINUX_RPM_ARCH}.rpm \
-		filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm \
 		findutils-4.4.2-6.el6.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.3.11-14.el6_3.1.${LINUX_RPM_ARCH}.rpm \
 		gamin-0.1.10-9.el6.${LINUX_RPM_ARCH}.rpm \
@@ -63,7 +67,6 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		redhat-lsb-core-4.0-7.el6.centos.${LINUX_RPM_ARCH}.rpm \
 		sed-4.2.1-10.el6.${LINUX_RPM_ARCH}.rpm \
 		setserial-2.17-25.el6.${LINUX_RPM_ARCH}.rpm \
-		setup-2.8.14-20.el6_4.1.noarch.rpm \
 		slang-2.2.1-1.el6.${LINUX_RPM_ARCH}.rpm \
 		util-linux-ng-2.17.2-12.14.el6.${LINUX_RPM_ARCH}.rpm \
 		which-2.19-6.el6.${LINUX_RPM_ARCH}.rpm \
@@ -173,6 +176,17 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LATEST_LINK:=		${PKGBASE:C/linux/linux32/}
 ARCH=			i386
 .endif
+
+pre-extract:
+	@for file in ${PRE_BIN_DISTFILES}; do \
+	    if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+	    then \
+	        exit 1; \
+	    fi; \
+	done
+	# now fix up broken permissions
+	@${CHMOD} -R u+rwX ${WRKDIR}/bin ${WRKDIR}/lib ${WRKDIR}/sbin ${WRKDIR}/usr/bin ${WRKDIR}/usr/lib ${WRKDIR}/usr/sbin
+	@${CHMOD} 400 ${WRKDIR}/etc/*shadow
 
 do-build:
 	@for D in ${REMOVE_DIRS}; do \
