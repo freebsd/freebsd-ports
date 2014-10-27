@@ -199,20 +199,3 @@ share/locale/uk/LC_MESSAGES/libvirt-glib.mo
 share/locale/vi/LC_MESSAGES/libvirt-glib.mo
 share/locale/zh_CN/LC_MESSAGES/libvirt-glib.mo
 share/locale/zh_TW/LC_MESSAGES/libvirt-glib.mo
-@dirrmtry include/libvirt-gconfig-1.0/libvirt-gconfig
-@dirrmtry include/libvirt-gconfig-1.0
-@dirrmtry include/libvirt-glib-1.0/libvirt-glib
-@dirrmtry include/libvirt-glib-1.0
-@dirrmtry include/libvirt-gobject-1.0/libvirt-gobject
-@dirrmtry include/libvirt-gobject-1.0
-@dirrmtry %%LIB32DIR%%/girepository-1.0
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/bo/LC_MESSAGES
-@dirrmtry share/locale/bo
-@dirrmtry share/gtk-doc/html/Libvirt-glib
-@dirrmtry share/gtk-doc/html/Libvirt-gobject
-@dirrmtry share/gtk-doc/html/Libvirt-gconfig
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrmtry share/gir-1.0

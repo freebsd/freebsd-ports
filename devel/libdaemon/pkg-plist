@@ -13,5 +13,3 @@ lib/libdaemon.so.0.5.0
 libdata/pkgconfig/libdaemon.pc
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/style.css
-@dirrm %%DOCSDIR%%
-@dirrm include/libdaemon

@@ -60,6 +60,3 @@ share/aclocal/log4cpp.m4
 @comment %%PORTDOCS%%%%DOCSDIR%%/index.html
 @comment %%PORTDOCS%%%%DOCSDIR%%/default.css
 @comment %%PORTDOCS%%%%DOCSDIR%%/sflogo.png
-@dirrm include/log4cpp/threading
-@dirrm include/log4cpp
-@comment %%PORTDOCS%%@dirrm %%DOCSDIR%%

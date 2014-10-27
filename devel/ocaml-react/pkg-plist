@@ -6,6 +6,3 @@ lib/ocaml/site-lib/react/react.cmx
 lib/ocaml/site-lib/react/react.cmxa
 lib/ocaml/site-lib/react/react.cmxs
 lib/ocaml/site-lib/react/react.mli
-@dirrm lib/ocaml/site-lib/react
-@dirrmtry lib/ocaml/site-lib
-@dirrmtry lib/ocaml

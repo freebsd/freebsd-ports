@@ -472,21 +472,3 @@ man/man1/omniidl.1.gz
 %%DATADIR%%/idl/poa_include.idl
 %%DATADIR%%/idl/pollable.idl
 %%DATADIR%%/idl/ziop.idl
-@dirrm %%DATADIR%%/idl/COS
-@dirrm %%DATADIR%%/idl
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/omniORB
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel
-@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl
-@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header
-@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel
-@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx
-@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be
-@dirrm %%PYTHON_SITELIBDIR%%/omniidl
-@dirrm include/omnithread
-@dirrm include/omniORB4/internal
-@dirrm include/omniORB4
-@dirrm include/COS

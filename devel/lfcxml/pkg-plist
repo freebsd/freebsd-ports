@@ -10,4 +10,3 @@ lib/liblfcxml.a
 lib/liblfcxml.so
 lib/liblfcxml.so.1
 lib/liblfcxml.so.1.0.0
-@dirrm include/lfcxml

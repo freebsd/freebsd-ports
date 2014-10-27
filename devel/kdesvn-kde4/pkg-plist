@@ -389,11 +389,3 @@ share/kde4/services/ksvn.protocol
 %%NLS%%share/locale/ru/LC_MESSAGES/kdesvn.mo
 share/svnqt/i18n/svnqt_de.qm
 share/svnqt/i18n/svnqt_en_GB.qm
-@dirrm share/svnqt/i18n
-@dirrm share/svnqt
-%%PORTDOCS%%@dirrm share/doc/HTML/en/kdesvn
-%%PORTDOCS%%@dirrm share/doc/HTML/nl/kdesvn
-@dirrm share/apps/kdesvnpart
-@dirrm share/apps/kdesvn
-@dirrm include/svnqt/cache
-@dirrm include/svnqt

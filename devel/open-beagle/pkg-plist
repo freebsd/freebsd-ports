@@ -314,13 +314,3 @@ lib/libpacc-util.so
 lib/libpacc-xml-%%PACCVERSION%%.so
 lib/libpacc-xml.a
 lib/libpacc-xml.so
-@dirrm include/beagle/GP
-@dirrm include/beagle/GA
-@dirrm include/beagle/Coev
-@dirrm include/beagle
-@dirrm include/XML
-@dirrm include/Util
-@dirrm include/Threading
-@dirrm include/Socket
-@dirrm include/SVG
-@dirrm include/Math

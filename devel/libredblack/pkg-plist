@@ -17,4 +17,3 @@ man/man3/rbsearch.3.gz
 man/man3/rbwalk.3.gz
 %%DATADIR%%/redblack.c
 %%DATADIR%%/redblack.h
-@dirrm %%DATADIR%%

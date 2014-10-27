@@ -876,32 +876,3 @@ llvm32/lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/websupport.js
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.html
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.txt
-@dirrm llvm32/lib
-@dirrm llvm32/include/llvm/Transforms/Utils
-@dirrm llvm32/include/llvm/Transforms/IPO
-@dirrm llvm32/include/llvm/Transforms
-@dirrm llvm32/include/llvm/Target
-@dirrm llvm32/include/llvm/TableGen
-@dirrm llvm32/include/llvm/Support
-@dirrm llvm32/include/llvm/Object
-@dirrm llvm32/include/llvm/MC/MCParser
-@dirrm llvm32/include/llvm/MC
-@dirrm llvm32/include/llvm/ExecutionEngine
-@dirrm llvm32/include/llvm/DebugInfo
-@dirrm llvm32/include/llvm/Config
-@dirrm llvm32/include/llvm/CodeGen/PBQP/Heuristics
-@dirrm llvm32/include/llvm/CodeGen/PBQP
-@dirrm llvm32/include/llvm/CodeGen
-@dirrm llvm32/include/llvm/Bitcode
-@dirrm llvm32/include/llvm/Assembly
-@dirrm llvm32/include/llvm/Analysis
-@dirrm llvm32/include/llvm/ADT
-@dirrm llvm32/include/llvm-c/Transforms
-@dirrm llvm32/include/llvm-c
-@dirrm llvm32/include/llvm
-@dirrm llvm32/include
-@dirrm llvm32/bin
-@dirrm llvm32
-%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit32
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

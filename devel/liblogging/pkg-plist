@@ -7,4 +7,3 @@ lib/liblogging-stdlog.so.0.0.0
 libdata/pkgconfig/liblogging-stdlog.pc
 man/man1/stdlogctl.1.gz
 man/man3/stdlog.3.gz
-@dirrm include/liblogging

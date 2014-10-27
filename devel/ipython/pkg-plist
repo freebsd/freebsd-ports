@@ -113,23 +113,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/ipython_logo.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/utils/list_pyfiles.ipy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/utils/list_subdirs.ipy
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/utils
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/workflow
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/wave2D
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/rmt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/pi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/interengine
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/daVinci Word Count
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Notebook/nbpackage/nbs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Notebook/nbpackage
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Notebook/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Notebook
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Interactive Widgets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/IPython Kernel/gui
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/IPython Kernel
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Embedding
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Customization
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Builtin Extensions
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -19,8 +19,3 @@ share/mm-common/doctool/doc-postprocess.pl
 share/mm-common/doctool/doxygen.css
 share/mm-common/doctool/tagfile-to-devhelp2.xsl
 libdata/pkgconfig/mm-common-libstdc++.pc
-@dirrm share/mm-common/doctool
-@dirrm share/mm-common/doctags
-@dirrm share/mm-common/build
-@dirrm share/mm-common
-@dirrm share/doc/mm-common

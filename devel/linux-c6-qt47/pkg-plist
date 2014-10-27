@@ -75,15 +75,3 @@ usr/share/qt47/translations/qt_sv.qm
 usr/share/qt47/translations/qt_uk.qm
 usr/share/qt47/translations/qt_zh_CN.qm
 usr/share/qt47/translations/qt_zh_TW.qm
-@dirrmtry usr/lib/qt47/bin
-@dirrmtry usr/lib/qt47/etc
-@dirrmtry usr/lib/qt47/phrasebooks
-@dirrmtry usr/lib/qt47/plugins/crypto
-@dirrmtry usr/lib/qt47/plugins/sqldrivers
-@dirrmtry usr/lib/qt47/plugins
-@dirrmtry usr/lib/qt47
-@dirrmtry usr/share/doc/qt47/qch
-@dirrmtry usr/share/doc/qt47-4.7.2
-@dirrmtry usr/share/doc/qt47
-@dirrmtry usr/share/qt47/translations
-@dirrmtry usr/share/qt47

@@ -11,19 +11,14 @@ lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/libgcc.slo
 lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/libgraph.slo
 lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/libm.slo
 lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/specs
-@dirrm lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%
-@dirrm lib/gcc-lib/saturn-local-hp48
-@dirrmtry lib/gcc-lib
 saturn-local-hp48/doc/hp48xgcc.htm
 saturn-local-hp48/doc/old-hp48xgcc.doc
-@dirrm saturn-local-hp48/doc
 saturn-local-hp48/download/GCCLDD
 saturn-local-hp48/download/libc.sl
 saturn-local-hp48/download/libcore.sl
 saturn-local-hp48/download/libgcc.sl
 saturn-local-hp48/download/libgraph.sl
 saturn-local-hp48/download/libm.sl
-@dirrm saturn-local-hp48/download
 saturn-local-hp48/include/hp48/core.h
 saturn-local-hp48/include/hp48/fb.h
 saturn-local-hp48/include/hp48/lcd.h
@@ -45,9 +40,6 @@ saturn-local-hp48/include/stdio.h
 saturn-local-hp48/include/stdlib.h
 saturn-local-hp48/include/string.h
 saturn-local-hp48/include/values.h
-@dirrm saturn-local-hp48/include/sys
-@dirrm saturn-local-hp48/include/hp48
-@dirrm saturn-local-hp48/include
 saturn-local-hp48/lib-source/Makefile
 saturn-local-hp48/lib-source/dos-make.bat
 saturn-local-hp48/lib-source/gccldd/GCCLDD.s
@@ -100,16 +92,6 @@ saturn-local-hp48/lib-source/libmalloc/malloc.c
 saturn-local-hp48/lib-source/make.def
 saturn-local-hp48/lib-source/stub/Makefile
 saturn-local-hp48/lib-source/stub/crt0.S
-@dirrm saturn-local-hp48/lib-source/stub
-@dirrm saturn-local-hp48/lib-source/libmalloc
-@dirrm saturn-local-hp48/lib-source/libm
-@dirrm saturn-local-hp48/lib-source/libgraph
-@dirrm saturn-local-hp48/lib-source/libgcc
-@dirrm saturn-local-hp48/lib-source/libcore
-@dirrm saturn-local-hp48/lib-source/libc
-@dirrm saturn-local-hp48/lib-source/include
-@dirrm saturn-local-hp48/lib-source/gccldd
-@dirrm saturn-local-hp48/lib-source
 saturn-local-hp48/samples/Makefile
 saturn-local-hp48/samples/asm-test/Makefile
 saturn-local-hp48/samples/asm-test/len1.S

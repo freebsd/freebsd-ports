@@ -950,35 +950,3 @@ llvm33/lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/websupport.js
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.html
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.txt
-@dirrm llvm33/lib
-@dirrm llvm33/include/llvm/Transforms/Utils
-@dirrm llvm33/include/llvm/Transforms/IPO
-@dirrm llvm33/include/llvm/Transforms
-@dirrm llvm33/include/llvm/Target
-@dirrm llvm33/include/llvm/TableGen
-@dirrm llvm33/include/llvm/Support
-@dirrm llvm33/include/llvm/Option
-@dirrm llvm33/include/llvm/Object
-@dirrm llvm33/include/llvm/MC/MCParser
-@dirrm llvm33/include/llvm/MC
-@dirrm llvm33/include/llvm/IRReader
-@dirrm llvm33/include/llvm/IR
-@dirrm llvm33/include/llvm/ExecutionEngine
-@dirrm llvm33/include/llvm/DebugInfo
-@dirrm llvm33/include/llvm/Config
-@dirrm llvm33/include/llvm/CodeGen/PBQP/Heuristics
-@dirrm llvm33/include/llvm/CodeGen/PBQP
-@dirrm llvm33/include/llvm/CodeGen
-@dirrm llvm33/include/llvm/Bitcode
-@dirrm llvm33/include/llvm/Assembly
-@dirrm llvm33/include/llvm/Analysis
-@dirrm llvm33/include/llvm/ADT
-@dirrm llvm33/include/llvm-c/Transforms
-@dirrm llvm33/include/llvm-c
-@dirrm llvm33/include/llvm
-@dirrm llvm33/include
-@dirrm llvm33/bin
-@dirrm llvm33
-%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit33
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

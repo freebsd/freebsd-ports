@@ -29,5 +29,3 @@ lib/rcc/engines/western_engine.a
 lib/rcc/engines/western_engine.so
 %%WITH_GLIB2%%lib/rcc/rccexternal
 libdata/pkgconfig/librcc.pc
-@dirrm lib/rcc/engines
-@dirrm lib/rcc

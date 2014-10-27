@@ -350,17 +350,3 @@ lib/qxt/libQxtZeroconf.so.%%SHVER_2%%
 lib/qxt/libQxtZeroconf.so.%%SHVER_3%%
 %%QT_MKSPECDIR%%/features/qxt.prf
 %%QT_MKSPECDIR%%/features/qxtvars.prf
-@dirrm include/QxtBerkeley
-@dirrm include/QxtCore
-@dirrm include/QxtGui
-@dirrm include/QxtNetwork
-@dirrm include/QxtSql
-@dirrm include/QxtZeroconf
-@dirrm include/QxtWeb
-@dirrm lib/qxt
-@dirrmtry %%QT_PLUGINDIR%%/designer
-@dirrmtry %%QT_MKSPECDIR%%/features
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry share/qt4
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_LIBDIR%%

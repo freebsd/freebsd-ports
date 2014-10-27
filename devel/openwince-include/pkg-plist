@@ -81,20 +81,3 @@ include/openwince/openwince.h
 include/openwince/sh/sh7709s/intc.h
 include/openwince/sh/sh7750/ccn.h
 include/openwince/std/mic.h
-@dirrm include/openwince/arm/pxa2x0
-@dirrm include/openwince/arm/sa11x0
-@dirrm include/openwince/arm
-@dirrm include/openwince/brux
-@dirrm include/openwince/device/codec
-@dirrm include/openwince/device/flash
-@dirrm include/openwince/device/other/hd64461
-@dirrm include/openwince/device/other
-@dirrm include/openwince/device
-@dirrm include/openwince/h8/h83048
-@dirrm include/openwince/h8/h8s2357
-@dirrm include/openwince/h8
-@dirrm include/openwince/sh/sh7709s
-@dirrm include/openwince/sh/sh7750
-@dirrm include/openwince/sh
-@dirrm include/openwince/std
-@dirrm include/openwince

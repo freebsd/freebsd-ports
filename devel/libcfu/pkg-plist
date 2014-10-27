@@ -11,4 +11,3 @@ lib/libcfu.so
 lib/libcfu.so.0
 lib/libcfu.so.0.0.0
 libdata/pkgconfig/libcfu.pc
-@dirrm include/cfu

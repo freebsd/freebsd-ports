@@ -568,39 +568,3 @@ libdata/pkgconfig/nini-%%NINI_VERSION%%.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/VbExamples/BasicApp/MainForm.resx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/VbExamples/BasicApp/MainForm.vb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/VbExamples/VbExamples.sln
-@dirrmtry lib/mono/gac/Nini/%%NINI_VERSION%%.0.0__691faec150a7fa7b
-@dirrmtry lib/mono/gac/Nini
-@dirrmtry lib/mono/nini-%%NINI_VERSION%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference/chm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference/xml/en/Config
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference/xml/en/Ini
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference/xml/en/Util
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference/xml/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference/xml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CsExamples/BasicApp/bin/Debug
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CsExamples/BasicApp/bin
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CsExamples/BasicApp/obj/Debug/TempPE
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CsExamples/BasicApp/obj/Debug/temp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CsExamples/BasicApp/obj/Debug
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CsExamples/BasicApp/obj
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CsExamples/BasicApp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CsExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NiniEdit/Bin/DotNet/Debug
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NiniEdit/Bin/DotNet/Release
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NiniEdit/Bin/DotNet
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NiniEdit/Bin
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NiniEdit/Source
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NiniEdit/Tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NiniEdit
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/VbExamples/BasicApp/bin
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/VbExamples/BasicApp/obj/Debug/TempPE
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/VbExamples/BasicApp/obj/Debug/temp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/VbExamples/BasicApp/obj/Debug
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/VbExamples/BasicApp/obj
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/VbExamples/BasicApp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/VbExamples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -6,5 +6,3 @@ lib/libbnr.so
 lib/libbnr.so.2
 lib/libbnr.so.2.0.0
 %%EXAMPLESDIR%%/example.c
-@dirrm share/examples/libbnr
-@dirrm include/libbnr

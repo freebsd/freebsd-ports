@@ -134,13 +134,3 @@ man/man1/perl_performance.1.gz
 %%DATADIR%%/makepp_builtin_rules.mk
 %%DATADIR%%/makepp_default_makefile.mk
 %%DATADIR%%/recursive_makepp
-@dirrm %%DATADIR%%/Mpp/Signature
-@dirrm %%DATADIR%%/Mpp/Scanner
-@dirrm %%DATADIR%%/Mpp/Fixer
-@dirrm %%DATADIR%%/Mpp/CommandParser
-@dirrm %%DATADIR%%/Mpp/BuildCheck
-@dirrm %%DATADIR%%/Mpp/ActionParser
-@dirrm %%DATADIR%%/Mpp
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

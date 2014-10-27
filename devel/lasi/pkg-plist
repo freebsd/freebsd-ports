@@ -133,11 +133,3 @@ libdata/pkgconfig/lasi.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/MissingGlyphExample.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleLASiExample.cpp
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/libLASi-1.1.1/html/user/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/libLASi-1.1.1/html/user
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/libLASi-1.1.1/html/developer/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/libLASi-1.1.1/html/developer
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/libLASi-1.1.1/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/libLASi-1.1.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

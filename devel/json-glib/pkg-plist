@@ -56,6 +56,3 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/up.png
 share/gir-1.0/Json-1.0.gir
 share/locale/pl/LC_MESSAGES/json-glib-1.0.mo
-@dirrm %%DOCSDIR%%
-@dirrm include/json-glib-1.0/json-glib
-@dirrm include/json-glib-1.0

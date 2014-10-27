@@ -7,5 +7,3 @@ share/aclocal/mate-common.m4
 share/aclocal/mate-compiler-flags.m4
 %%DATADIR%%/data/omf.make
 %%DATADIR%%/data/xmldocs.make
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

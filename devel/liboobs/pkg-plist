@@ -80,6 +80,3 @@ libdata/pkgconfig/liboobs-1.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-@dirrm %%DOCSDIR%%
-@dirrm include/liboobs-1.0/oobs
-@dirrm include/liboobs-1.0

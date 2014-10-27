@@ -96,30 +96,3 @@ libdata/pkgconfig/libopensync.pc
 %%DATADIR%%1/schemas/plugin_config.xsd
 %%DATADIR%%1/schemas/syncgroup.xsd
 %%DATADIR%%1/schemas/syncmember.xsd
-@dirrmtry %%DATADIR%%1/schemas
-@dirrmtry %%DATADIR%%1/descriptions
-@dirrmtry %%DATADIR%%1/cmake/modules
-@dirrmtry %%DATADIR%%1/cmake
-@dirrmtry %%DATADIR%%1/capabilities
-@dirrmtry %%DATADIR%%1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry lib/libopensync1
-@dirrmtry include/libopensync1/opensync/xmlformat
-@dirrmtry include/libopensync1/opensync/version
-@dirrmtry include/libopensync1/opensync/plugin
-@dirrmtry include/libopensync1/opensync/module
-@dirrmtry include/libopensync1/opensync/mapping
-@dirrmtry include/libopensync1/opensync/ipc
-@dirrmtry include/libopensync1/opensync/helper
-@dirrmtry include/libopensync1/opensync/group
-@dirrmtry include/libopensync1/opensync/format
-@dirrmtry include/libopensync1/opensync/engine
-@dirrmtry include/libopensync1/opensync/debug
-@dirrmtry include/libopensync1/opensync/db
-@dirrmtry include/libopensync1/opensync/data
-@dirrmtry include/libopensync1/opensync/common
-@dirrmtry include/libopensync1/opensync/client
-@dirrmtry include/libopensync1/opensync/capabilities
-@dirrmtry include/libopensync1/opensync/archive
-@dirrmtry include/libopensync1/opensync
-@dirrmtry include/libopensync1

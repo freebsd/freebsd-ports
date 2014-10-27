@@ -17,10 +17,3 @@ lib/node_modules/thrift/lib/thrift/thrift.js
 lib/node_modules/thrift/lib/thrift/transport.js
 lib/node_modules/thrift/package.json
 lib/node_modules/thrift/test/binary.test.js
-@dirrm lib/node_modules/thrift/test
-@dirrm lib/node_modules/thrift/lib/thrift
-@dirrm lib/node_modules/thrift/lib
-@dirrm lib/node_modules/thrift/examples
-@dirrm lib/node_modules/thrift
-@dirrm lib/node_modules
-@dirrm lib/node

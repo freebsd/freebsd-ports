@@ -655,36 +655,3 @@ man/man1/transformdb.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/reference/images/warning.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/index.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/symboltree.js
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceStorm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceSSL
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IcePatch2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceMX
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceGrid
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceBox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/Ice
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/Glacier2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/Freeze
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/IceStorm
-@dirrm %%DATADIR%%/IceSSL
-@dirrm %%DATADIR%%/IcePatch2
-@dirrm %%DATADIR%%/IceGrid
-@dirrm %%DATADIR%%/IceBox
-@dirrm %%DATADIR%%/Ice
-@dirrm %%DATADIR%%/Glacier2
-@dirrm %%DATADIR%%/Freeze
-@dirrm %%DATADIR%%
-@dirrm include/Slice
-@dirrm include/IceXML
-@dirrm include/IceUtil
-@dirrm include/IceStorm
-@dirrm include/IceSSL
-@dirrm include/IcePatch2
-@dirrm include/IceGrid
-@dirrm include/IceBox
-@dirrm include/Ice
-@dirrm include/Glacier2
-@dirrm include/Freeze

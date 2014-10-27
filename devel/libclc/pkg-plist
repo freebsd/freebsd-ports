@@ -159,16 +159,3 @@ lib/clc/tahiti-r600--.bc
 lib/clc/turks-r600--.bc
 lib/clc/verde-r600--.bc
 libdata/pkgconfig/libclc.pc
-@dirrmtry lib/clc
-@dirrmtry include/clc/workitem
-@dirrmtry include/clc/synchronization
-@dirrmtry include/clc/shared
-@dirrmtry include/clc/relational
-@dirrmtry include/clc/math
-@dirrmtry include/clc/integer
-@dirrmtry include/clc/geometric
-@dirrmtry include/clc/float
-@dirrmtry include/clc/common
-@dirrmtry include/clc/cl_khr_global_int32_base_atomics
-@dirrmtry include/clc/atomic
-@dirrmtry include/clc

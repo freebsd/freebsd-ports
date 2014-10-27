@@ -468,25 +468,3 @@ share/openocd/scripts/target/u8500.cfg
 share/openocd/scripts/test/selftest.cfg
 share/openocd/scripts/test/syntax1.cfg
 man/man1/openocd.1.gz
-@dirrm share/openocd/scripts/test
-@dirrm share/openocd/scripts/target
-@dirrm share/openocd/scripts/interface/ftdi
-@dirrm share/openocd/scripts/interface
-@dirrm share/openocd/scripts/cpu/arm
-@dirrm share/openocd/scripts/cpu
-@dirrm share/openocd/scripts/cpld
-@dirrm share/openocd/scripts/chip/ti/lm3s
-@dirrm share/openocd/scripts/chip/ti
-@dirrm share/openocd/scripts/chip/st/stm32
-@dirrm share/openocd/scripts/chip/st/spear
-@dirrm share/openocd/scripts/chip/st
-@dirrm share/openocd/scripts/chip/atmel/at91
-@dirrm share/openocd/scripts/chip/atmel
-@dirrm share/openocd/scripts/chip
-@dirrm share/openocd/scripts/board
-@dirrm share/openocd/scripts
-@dirrm share/openocd/contrib/libdcc
-@dirrm share/openocd/contrib
-@dirrm share/openocd
-@dirrm lib/openocd/OpenULINK
-@dirrm lib/openocd

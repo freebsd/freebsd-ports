@@ -22,7 +22,4 @@ man/man3/tai_pack.3.gz
 man/man3/taia.3.gz
 man/man3/taia_now.3.gz
 man/man3/taia_pack.3.gz
-@mode 0644
-etc/leapsecs.dat
-@mode
-@dirrm include/libtai
+@(,,0644) etc/leapsecs.dat

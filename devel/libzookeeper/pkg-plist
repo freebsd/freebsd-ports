@@ -15,4 +15,3 @@ include/zookeeper/zookeeper.h
 include/zookeeper/zookeeper.jute.h
 include/zookeeper/zookeeper_log.h
 include/zookeeper/zookeeper_version.h
-@dirrm include/zookeeper

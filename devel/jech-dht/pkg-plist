@@ -3,4 +3,3 @@ lib/libdht.so
 lib/libdht.a
 bin/dht-example
 include/dht/dht.h
-@dirrm include/dht

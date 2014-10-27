@@ -9,4 +9,3 @@ lib/libozzi.a
 lib/libozzi.so
 lib/libozzi.so.0
 lib/libozzi.so.0.1.4
-@dirrm include/ozz

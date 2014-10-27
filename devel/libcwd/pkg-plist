@@ -71,5 +71,3 @@ lib/libcwd.so.1.1.1
 libdata/pkgconfig/libcwd.pc
 libdata/pkgconfig/libcwd_r.pc
 %%DATADIR%%/libcwdrc
-@dirrm %%DATADIR%%
-@dirrm include/libcwd

@@ -58,7 +58,3 @@ libdata/pkgconfig/obby-0.4.pc
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/obby.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/obby.mo
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-@dirrm include/obby/serialise
-@dirrm include/obby

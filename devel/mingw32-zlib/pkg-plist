@@ -2,4 +2,3 @@ mingw32/include/zconf.h
 mingw32/include/zlib.h
 mingw32/lib/libz.a
 mingw32/lib/pkgconfig/zlib.pc
-@dirrmtry mingw32/lib/pkgconfig

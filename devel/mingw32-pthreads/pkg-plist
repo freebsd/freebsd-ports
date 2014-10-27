@@ -4,4 +4,3 @@ mingw32/include/semaphore.h
 mingw32/lib/libpthread.a
 mingw32/lib/libpthreadGC2.a
 mingw32/lib/pthreadGC2.dll
-@dirrmtry mingw32/include

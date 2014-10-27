@@ -47,5 +47,3 @@ man/man1/pn53x-diagnose.1.gz
 man/man1/pn53x-sam.1.gz
 man/man1/pn53x-tamashell.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pn53x.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/nfc

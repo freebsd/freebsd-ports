@@ -13,7 +13,3 @@ include/po6/threads/rwlock.h
 include/po6/threads/spinlock.h
 include/po6/threads/thread.h
 libdata/pkgconfig/libpo6.pc
-@dirrm include/po6/io
-@dirrm include/po6/net
-@dirrm include/po6/threads
-@dirrm include/po6

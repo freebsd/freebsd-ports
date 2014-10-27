@@ -60,10 +60,3 @@ etc/maven-wrapper/instances.d/030101-maven31-3.1.1
 %%DATADIR%%/lib/wagon-file-2.4.jar
 %%DATADIR%%/lib/wagon-http-2.4-shaded.jar
 %%DATADIR%%/lib/wagon-provider-api-2.4.jar
-@dirrmtry %%DATADIR%%/lib/ext
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%/conf/logging
-@dirrmtry %%DATADIR%%/conf
-@dirrmtry %%DATADIR%%/boot
-@dirrmtry %%DATADIR%%/bin
-@dirrmtry %%DATADIR%%

@@ -52,4 +52,3 @@ lib/libevent_extra.so
 libdata/pkgconfig/libevent.pc
 %%OPENSSL%%libdata/pkgconfig/libevent_openssl.pc
 %%THREADS%%libdata/pkgconfig/libevent_pthreads.pc
-@dirrm include/event2

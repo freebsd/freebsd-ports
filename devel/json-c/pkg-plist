@@ -18,4 +18,3 @@ include/json-c/linkhash.h
 include/json-c/printbuf.h
 include/json-c/random_seed.h
 libdata/pkgconfig/json-c.pc
-@dirrm include/json-c

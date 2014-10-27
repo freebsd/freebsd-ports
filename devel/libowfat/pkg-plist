@@ -377,4 +377,3 @@ man/man3/libowfat_uint64_unpack_big.3.gz
 man/man3/libowfat_umult16.3.gz
 man/man3/libowfat_umult32.3.gz
 man/man3/libowfat_umult64.3.gz
-@dirrmtry include/libowfat

@@ -29,4 +29,3 @@ lib/libdsp.a
 lib/libdsp.so
 lib/libdsp.so.2
 lib/libdsp.so.2.8.1
-@dirrm include/dsp

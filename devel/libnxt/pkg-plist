@@ -7,4 +7,3 @@ include/libnxt/flash_routine.h
 include/libnxt/lowlevel.h
 include/libnxt/samba.h
 lib/libnxt.a
-@dirrm include/libnxt

@@ -612,19 +612,3 @@ libdata/pkgconfig/sigc++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/ch04s02.html
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/ch05.html
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/index.html
-%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/tutorial/html
-%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/tutorial
-%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/reference/html
-%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/reference
-%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%/images
-%%PORTDOCS%%@dirrm share/doc/libsigc++-%%API_VERSION%%
-%%PORTDOCS%%@dirrm share/devhelp/books/libsigc++-%%API_VERSION%%
-%%PORTDOCS%%@dirrmtry share/devhelp/books
-%%PORTDOCS%%@dirrmtry share/devhelp
-@dirrm lib/sigc++-%%API_VERSION%%/include
-@dirrm lib/sigc++-%%API_VERSION%%
-@dirrm include/sigc++-%%API_VERSION%%/sigc++/functors
-@dirrm include/sigc++-%%API_VERSION%%/sigc++/adaptors/lambda
-@dirrm include/sigc++-%%API_VERSION%%/sigc++/adaptors
-@dirrm include/sigc++-%%API_VERSION%%/sigc++
-@dirrm include/sigc++-%%API_VERSION%%

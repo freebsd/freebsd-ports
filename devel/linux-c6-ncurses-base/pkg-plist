@@ -124,31 +124,3 @@ usr/share/terminfo/x/xterm-xf86-v44
 usr/share/terminfo/x/xterm-xfree86
 usr/share/terminfo/x/xterm-xi
 usr/share/terminfo/x/xterms
-@dirrmtry usr/share/terminfo/x
-@dirrmtry usr/share/terminfo/w
-@dirrmtry usr/share/terminfo/v
-@dirrmtry usr/share/terminfo/t
-@dirrmtry usr/share/terminfo/s
-@dirrmtry usr/share/terminfo/r
-@dirrmtry usr/share/terminfo/p
-@dirrmtry usr/share/terminfo/n
-@dirrmtry usr/share/terminfo/m
-@dirrmtry usr/share/terminfo/l
-@dirrmtry usr/share/terminfo/k
-@dirrmtry usr/share/terminfo/j
-@dirrmtry usr/share/terminfo/h
-@dirrmtry usr/share/terminfo/g
-@dirrmtry usr/share/terminfo/e
-@dirrmtry usr/share/terminfo/d
-@dirrmtry usr/share/terminfo/c
-@dirrmtry usr/share/terminfo/a
-@dirrmtry usr/share/terminfo/E
-@dirrmtry usr/share/terminfo/A
-@dirrmtry usr/share/terminfo
-@dirrmtry usr/share/tabset
-@dirrmtry lib/terminfo/v
-@dirrmtry lib/terminfo/l
-@dirrmtry lib/terminfo/d
-@dirrmtry lib/terminfo/a
-@dirrmtry lib/terminfo
-@dirrmtry etc/terminfo

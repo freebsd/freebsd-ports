@@ -15,7 +15,6 @@ man/man1/newfile.1.gz
 %%DATADIR%%/licenses/minimal@README
 %%DATADIR%%/licenses/minimal@license.inc
 %%DATADIR%%/licenses/no@license.inc
-@dirrm %%DATADIR%%/licenses
 %%DATADIR%%/newfile.rb
 %%DATADIR%%/projects/auto@Makefile.am
 %%DATADIR%%/projects/auto@Makefile.cvs
@@ -29,7 +28,6 @@ man/man1/newfile.1.gz
 %%DATADIR%%/projects/port@Makefile
 %%DATADIR%%/projects/port@pkg-descr
 %%DATADIR%%/projects/port@pkg-plist
-@dirrm %%DATADIR%%/projects
 %%DATADIR%%/sytab.rb
 %%DATADIR%%/templates/body.inc@sh
 %%DATADIR%%/templates/tmpl@c
@@ -45,5 +43,3 @@ man/man1/newfile.1.gz
 %%DATADIR%%/templates/tmpl@rb
 %%DATADIR%%/templates/tmpl@rd
 %%DATADIR%%/templates/tmpl@sh
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%

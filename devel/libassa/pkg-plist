@@ -63,5 +63,3 @@ lib/libassa-%%ASSA_VERSION%%.so.0
 lib/libassa-%%ASSA_VERSION%%.so.0.4.2
 libdata/pkgconfig/assa-%%ASSA_VERSION%%.pc
 man/man1/assa-genesis.1.gz
-@dirrm include/assa-%%ASSA_VERSION%%/assa
-@dirrm include/assa-%%ASSA_VERSION%%

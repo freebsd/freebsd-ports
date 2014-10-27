@@ -86,10 +86,3 @@ share/aclocal/orc.m4
 %%PORTDOCS%%share/gtk-doc/html/orc/style.css
 %%PORTDOCS%%share/gtk-doc/html/orc/up-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/orc/up.png
-@dirrm include/orc-0.4/orc
-@dirrm include/orc-0.4/orc-test
-@dirrm include/orc-0.4
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm share/gtk-doc/html/orc
-%%PORTDOCS%%@dirrmtry share/gtk-doc/html
-%%PORTDOCS%%@dirrmtry share/gtk-doc

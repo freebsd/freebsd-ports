@@ -44,4 +44,3 @@ libdata/pkgconfig/libxs.pc
 %%PORTDOCS%%man/man7/xs_pgm.7.gz
 %%PORTDOCS%%man/man7/xs_tcp.7.gz
 %%PORTDOCS%%man/man7/xs_zmq.7.gz
-@dirrm include/xs

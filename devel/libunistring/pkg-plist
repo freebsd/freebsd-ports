@@ -44,5 +44,3 @@ lib/libunistring.a
 lib/libunistring.so
 lib/libunistring.so.2
 lib/libunistring.so.2.0.0
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/unistring

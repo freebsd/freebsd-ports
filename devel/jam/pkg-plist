@@ -2,4 +2,3 @@ bin/jam
 %%PORTDOCS%%%%DOCSDIR%%/Jam.html
 %%PORTDOCS%%%%DOCSDIR%%/Jambase.html
 %%PORTDOCS%%%%DOCSDIR%%/Jamfile.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -22,4 +22,3 @@ lib/libtifiles2.so.9
 lib/libtifiles2.so.9.0.2
 libdata/pkgconfig/tifiles2.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libtifiles2.mo
-@dirrmtry include/tilp2

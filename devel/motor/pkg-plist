@@ -48,15 +48,5 @@ man/man1/motor.1.gz
 %%DATADIR%%/templates/terminal program/perl/[value name].spec.tmpl
 %%DATADIR%%/templates/terminal program/perl/configure.in.tmpl
 %%DATADIR%%/themes
-@dirrm %%DATADIR%%/templates/terminal program/perl
-@dirrm %%DATADIR%%/templates/terminal program/java
-@dirrm %%DATADIR%%/templates/terminal program/C++
-@dirrm %%DATADIR%%/templates/terminal program/C
-@dirrm %%DATADIR%%/templates/terminal program
-@dirrm %%DATADIR%%/templates/library/static
-@dirrm %%DATADIR%%/templates/library
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/

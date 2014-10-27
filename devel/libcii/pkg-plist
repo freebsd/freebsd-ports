@@ -41,10 +41,6 @@ lib/cii/%%CIIMAJOR%%/include/text.h
 lib/cii/%%CIIMAJOR%%/include/thread.h
 lib/cii/%%CIIMAJOR%%/include/xp.h
 lib/cii/%%CIIMAJOR%%/libcii.a
-@dirrm lib/cii/%%CIIMAJOR%%/include
-@dirrm lib/cii/%%CIIMAJOR%%/examples
-@dirrm lib/cii/%%CIIMAJOR%%
-@dirrm lib/cii
 %%PORTDOCS%%share/doc/cii/CPYRIGHT
 %%PORTDOCS%%share/doc/cii/README
 %%PORTDOCS%%share/doc/cii/examples/basename.c
@@ -102,6 +98,3 @@ lib/cii/%%CIIMAJOR%%/libcii.a
 %%PORTDOCS%%share/doc/cii/src/thread.c
 %%PORTDOCS%%share/doc/cii/src/thread.c.orig
 %%PORTDOCS%%share/doc/cii/src/xp.c
-%%PORTDOCS%%@dirrm share/doc/cii/src
-%%PORTDOCS%%@dirrm share/doc/cii/examples
-%%PORTDOCS%%@dirrm share/doc/cii

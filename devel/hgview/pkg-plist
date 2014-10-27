@@ -135,7 +135,3 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgviewlib/util.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/util.pyo
 man/man1/hgview.1.gz
-@dirrm %%PYTHON_SITELIBDIR%%/hgviewlib/qt4
-@dirrm %%PYTHON_SITELIBDIR%%/hgviewlib/hgpatches
-@dirrm %%PYTHON_SITELIBDIR%%/hgviewlib/curses
-@dirrm %%PYTHON_SITELIBDIR%%/hgviewlib

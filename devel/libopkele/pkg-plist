@@ -21,4 +21,3 @@ lib/libopkele.so
 lib/libopkele.so.3
 lib/libopkele.so.3.0.0
 libdata/pkgconfig/libopkele.pc
-@dirrm include/opkele

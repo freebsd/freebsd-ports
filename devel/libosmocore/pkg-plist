@@ -113,21 +113,3 @@ libdata/pkgconfig/libosmocore.pc
 libdata/pkgconfig/libosmogb.pc
 libdata/pkgconfig/libosmogsm.pc
 libdata/pkgconfig/libosmovty.pc
-@dirrmtry include/osmocom/codec
-@dirrmtry include/osmocom/core
-@dirrmtry include/osmocom/crypt
-@dirrmtry include/osmocom/gprs/protocol
-@dirrmtry include/osmocom/gprs
-@dirrmtry include/osmocom/gsm/protocol
-@dirrmtry include/osmocom/gsm
-@dirrmtry include/osmocom/vty
-@dirrmtry include/osmocom
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/codec/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/codec
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/core/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/core
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/gsm/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/gsm
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/vty/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/vty
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

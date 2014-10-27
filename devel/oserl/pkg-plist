@@ -59,9 +59,3 @@ man/man3/smpp_ref_num.3.gz
 man/man3/smpp_req_tab.3.gz
 man/man3/smpp_sm.3.gz
 man/man3/smpp_tty_log_hlr.3.gz
-@dirrmtry lib/erlang/lib
-@dirrmtry lib/erlang
-@dirrm lib/erlang/lib/oserl-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/oserl-%%VERSION%%/include
-@dirrm lib/erlang/lib/oserl-%%VERSION%%/src
-@dirrm lib/erlang/lib/oserl-%%VERSION%%

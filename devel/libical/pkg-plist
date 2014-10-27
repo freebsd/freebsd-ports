@@ -57,4 +57,3 @@ lib/libicalvcal.so
 lib/libicalvcal.so.1
 lib/libicalvcal.so.1.0.0
 libdata/pkgconfig/libical.pc
-@dirrm include/libical

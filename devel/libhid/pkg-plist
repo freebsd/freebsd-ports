@@ -21,4 +21,3 @@ man/man1/libhid-detach-device.1.gz
 %%PYTHON_SITELIBDIR%%/libhid/hidwrap.py
 %%PYTHON_SITELIBDIR%%/libhid/hidwrap.pyc
 %%PYTHON_SITELIBDIR%%/libhid/hidwrap.pyo
-@dirrm  %%PYTHON_SITELIBDIR%%/libhid/

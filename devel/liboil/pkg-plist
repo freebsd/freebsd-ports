@@ -53,8 +53,3 @@ share/gtk-doc/html/liboil/liboil.devhelp2
 share/gtk-doc/html/liboil/right.png
 share/gtk-doc/html/liboil/style.css
 share/gtk-doc/html/liboil/up.png
-@dirrm share/gtk-doc/html/liboil
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/liboil-0.3/liboil
-@dirrm include/liboil-0.3

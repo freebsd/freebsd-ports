@@ -28,9 +28,3 @@
 %%EXAMPLESDIR%%/usort/get_enc.c
 %%EXAMPLESDIR%%/usort/get_enc.mli
 %%EXAMPLESDIR%%/usort/usort.ml
-@dirrm %%EXAMPLESDIR%%/usort
-@dirrm %%EXAMPLESDIR%%/unescape
-@dirrm %%EXAMPLESDIR%%/recode
-@dirrm %%EXAMPLESDIR%%/escape
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry share/examples/ocaml

@@ -194,13 +194,3 @@ bin/zen
 %%DATADIR%%/devel/man/ysum.txt
 %%DATADIR%%/devel/man/zen.txt
 %%DATADIR%%/devel/pdf/all.pdf
-@dirrmtry %%DATADIR%%/devel/doc
-@dirrmtry %%DATADIR%%/devel/html/COMMON/CSS
-@dirrmtry %%DATADIR%%/devel/html/COMMON/IMG
-@dirrmtry %%DATADIR%%/devel/html/COMMON/JS
-@dirrmtry %%DATADIR%%/devel/html/COMMON
-@dirrmtry %%DATADIR%%/devel/html
-@dirrmtry %%DATADIR%%/devel/man
-@dirrmtry %%DATADIR%%/devel/pdf
-@dirrmtry %%DATADIR%%/devel
-@dirrmtry %%DATADIR%%

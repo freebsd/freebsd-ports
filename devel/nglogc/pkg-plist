@@ -47,5 +47,3 @@ man/man3/logc_setLogFile.3.gz
 man/man3/logc_setLogFormat.3.gz
 man/man3/logc_setRingbuffer.3.gz
 %%DOCSDIR%%/nglogc_manual.pdf
-@dirrm %%DOCSDIR%%
-@dirrm include/nglogc

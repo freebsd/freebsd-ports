@@ -138,35 +138,3 @@ share/apps/kdbg/types/X11.kdbgtt
 %%NLS%%share/locale/sv/LC_MESSAGES/kdbg.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/kdbg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/kdbg.mo
-@dirrm share/doc/HTML/ru/kdbg
-@dirrm share/doc/HTML/en/kdbg
-@dirrmtry share/doc/HTML/en
-@dirrm share/doc/HTML/de/kdbg
-@dirrmtry share/config
-@dirrm share/apps/kdbg/types
-@dirrm share/apps/kdbg/pics
-@dirrm share/apps/kdbg/icons/hicolor/48x48/apps
-@dirrm share/apps/kdbg/icons/hicolor/48x48
-@dirrm share/apps/kdbg/icons/hicolor/32x32/apps
-@dirrm share/apps/kdbg/icons/hicolor/32x32
-@dirrm share/apps/kdbg/icons/hicolor/22x22/actions
-@dirrm share/apps/kdbg/icons/hicolor/22x22
-@dirrm share/apps/kdbg/icons/hicolor/16x16/apps
-@dirrm share/apps/kdbg/icons/hicolor/16x16
-@dirrm share/apps/kdbg/icons/hicolor
-@dirrm share/apps/kdbg/icons/locolor/32x32/apps
-@dirrm share/apps/kdbg/icons/locolor/32x32
-@dirrm share/apps/kdbg/icons/locolor/16x16/apps
-@dirrm share/apps/kdbg/icons/locolor/16x16
-@dirrm share/apps/kdbg/icons/locolor
-@dirrm share/apps/kdbg/icons/oxygen/16x16/actions
-@dirrm share/apps/kdbg/icons/oxygen/16x16
-@dirrm share/apps/kdbg/icons/oxygen/22x22/actions
-@dirrm share/apps/kdbg/icons/oxygen/22x22
-@dirrm share/apps/kdbg/icons/oxygen/32x32/actions
-@dirrm share/apps/kdbg/icons/oxygen/32x32
-@dirrm share/apps/kdbg/icons/oxygen/48x48/actions
-@dirrm share/apps/kdbg/icons/oxygen/48x48
-@dirrm share/apps/kdbg/icons/oxygen
-@dirrm share/apps/kdbg/icons
-@dirrm share/apps/kdbg

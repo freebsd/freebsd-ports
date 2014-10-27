@@ -70,14 +70,3 @@ libdata/pkgconfig/atomic_ops.pc
 %%PORTDOCS%%%%DOCSDIR%%/README_malloc.txt
 %%PORTDOCS%%%%DOCSDIR%%/README_stack.txt
 %%PORTDOCS%%%%DOCSDIR%%/README_win32.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/atomic_ops/sysdeps/sunc
-@dirrm include/atomic_ops/sysdeps/msftc
-@dirrm include/atomic_ops/sysdeps/icc
-@dirrm include/atomic_ops/sysdeps/ibmc
-@dirrm include/atomic_ops/sysdeps/hpc
-@dirrm include/atomic_ops/sysdeps/gcc
-@dirrm include/atomic_ops/sysdeps/armcc
-@dirrm include/atomic_ops/sysdeps/loadstore
-@dirrm include/atomic_ops/sysdeps
-@dirrm include/atomic_ops

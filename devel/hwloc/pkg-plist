@@ -414,6 +414,3 @@ man/man3/hwlocality_xmlexport.3.gz
 man/man7/hwloc.7.gz
 share/hwloc/hwloc-valgrind.supp
 share/hwloc/hwloc.dtd
-@dirrmtry share/hwloc
-@dirrmtry include/hwloc/autogen
-@dirrmtry include/hwloc

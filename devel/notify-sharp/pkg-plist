@@ -5,6 +5,3 @@ lib/monodoc/sources/notify-sharp-docs.source
 lib/monodoc/sources/notify-sharp-docs.tree
 lib/monodoc/sources/notify-sharp-docs.zip
 libdata/pkgconfig/notify-sharp.pc
-@dirrm lib/mono/notify-sharp
-@dirrm lib/mono/gac/notify-sharp/0.4.0.0__2df29c54e245917a
-@dirrm lib/mono/gac/notify-sharp
