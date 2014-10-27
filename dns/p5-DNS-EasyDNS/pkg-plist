@@ -4,7 +4,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/easydns-by-interface
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/easydns-from-router
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/easydns-simple
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/EasyDNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS
-@dirrmtry %%SITE_PERL%%/DNS

@@ -38,7 +38,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/LDNS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/LDNS/LDNS.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/LDNS/autosplit.ix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DNS/LDNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/LDNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS

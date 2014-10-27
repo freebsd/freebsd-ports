@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Tie::DNS.3.gz
 %%SITE_PERL%%/Tie/DNS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DNS/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrmtry %%SITE_PERL%%/Tie

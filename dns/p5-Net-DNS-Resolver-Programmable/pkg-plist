@@ -1,5 +1,2 @@
 %%SITE_PERL%%/Net/DNS/Resolver/Programmable.pm
 %%PERL5_MAN3%%/Net::DNS::Resolver::Programmable.3.gz
-@dirrm %%SITE_PERL%%/Net/DNS/Resolver
-@dirrm %%SITE_PERL%%/Net/DNS
-@dirrmtry %%SITE_PERL%%/Net

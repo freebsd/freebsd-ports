@@ -12,6 +12,3 @@ sbin/credns-notify
 sbin/credns-patch
 sbin/credns-xfer
 sbin/crednsc
-@dirrmtry %%ETCDIR%%
-@dirrmtry %%CREDNSDBDIR%%
-@dirrmtry %%CREDNSRUNDIR%%

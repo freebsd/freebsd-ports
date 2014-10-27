@@ -3,9 +3,3 @@
 %%SITE_PERL%%/POE/Component/Resolver.pm
 %%PERL5_MAN3%%/POE::Component::Resolver.3.gz
 %%PERL5_MAN3%%/POE::Component::Resolver::Sidecar.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Resolver
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrm %%SITE_PERL%%/POE/Component/Resolver
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE

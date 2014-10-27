@@ -179,11 +179,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lookup.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/update.java
 share/java/classes/dnsjava.jar
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill/DNS/utils
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill/DNS/spi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill/DNS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/org
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

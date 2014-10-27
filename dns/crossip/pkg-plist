@@ -2,4 +2,3 @@ bin/crossip
 %%DATADIR%%/CrossIP.jar
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/README.txt
-@dirrm %%DATADIR%%

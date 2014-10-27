@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/DNS::ZoneParse.3.gz
 %%SITE_PERL%%/DNS/ZoneParse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/ZoneParse/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS/ZoneParse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS
-@dirrmtry %%SITE_PERL%%/DNS

@@ -23,10 +23,3 @@
 %%SITE_PERL%%/Net/DNS/SEC.pm
 %%SITE_PERL%%/Net/DNS/SEC/Private.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/SEC/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/SEC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/DNS/SEC
-@dirrmtry %%SITE_PERL%%/Net/DNS/RR
-@dirrmtry %%SITE_PERL%%/Net/DNS
-@dirrmtry %%SITE_PERL%%/Net

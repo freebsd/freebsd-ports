@@ -1,10 +1,3 @@
 %%PERL5_MAN3%%/Net::DNS::ZoneFile::Fast.3.gz
 %%SITE_PERL%%/Net/DNS/ZoneFile/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ZoneFile/Fast/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ZoneFile/Fast
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ZoneFile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/DNS/ZoneFile
-@dirrmtry %%SITE_PERL%%/Net/DNS
-@dirrmtry %%SITE_PERL%%/Net

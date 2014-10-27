@@ -4,5 +4,3 @@ etc/checkdns.conf-dist
 %%DATADIR%%/lang/english
 %%DATADIR%%/lang/spanish
 %%DATADIR%%/lang/turkish
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%
