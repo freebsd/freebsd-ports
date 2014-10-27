@@ -10,4 +10,3 @@ man/man3/hspell.3.gz
 %%DATADIR%%/hebrew.wgz.hints
 %%DATADIR%%/hebrew.wgz.prefixes
 %%DATADIR%%/hebrew.wgz.sizes
-@dirrm %%DATADIR%%
