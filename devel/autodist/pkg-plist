@@ -4,4 +4,3 @@ man/man1/autodist.1.gz
 %%DATADIR%%/autodist.conf
 %%DATADIR%%/default
 %%DATADIR%%/COPYING
-@dirrm %%DATADIR%%

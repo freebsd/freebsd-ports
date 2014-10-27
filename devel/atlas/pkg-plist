@@ -88,13 +88,3 @@ libdata/pkgconfig/atlascpp-0.5.pc
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/ROADMAP
-@dirrm include/Atlas-C++-0.5/Atlas/Codecs
-@dirrm include/Atlas-C++-0.5/Atlas/Funky
-@dirrm include/Atlas-C++-0.5/Atlas/Message
-@dirrm include/Atlas-C++-0.5/Atlas/Net
-@dirrm include/Atlas-C++-0.5/Atlas/Objects/Entity
-@dirrm include/Atlas-C++-0.5/Atlas/Objects/Operation
-@dirrm include/Atlas-C++-0.5/Atlas/Objects
-@dirrm include/Atlas-C++-0.5/Atlas
-@dirrm include/Atlas-C++-0.5
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -12,5 +12,3 @@ bin/aifad
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/large.ads
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.add
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.ads
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

@@ -101,7 +101,3 @@ libdata/pkgconfig/apr-2.pc
 %%DATADIR%%/build-2/make_exports.awk
 %%DATADIR%%/build-2/make_var_export.awk
 %%DATADIR%%/build-2/mkdir.sh
-@dirrm include/apr-2
-@dirrm lib/apr-2
-@dirrm %%DATADIR%%/build-2
-@dirrm %%DATADIR%%

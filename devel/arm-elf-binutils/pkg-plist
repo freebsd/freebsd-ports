@@ -60,7 +60,3 @@ man/man1/arm-elf-strings.1.gz
 man/man1/arm-elf-strip.1.gz
 man/man1/arm-elf-windmc.1.gz
 man/man1/arm-elf-windres.1.gz
-@dirrmtry arm-elf/lib/ldscripts
-@dirrmtry arm-elf/lib
-@dirrmtry arm-elf/bin
-@dirrmtry arm-elf
