@@ -5,6 +5,3 @@ lib/libfov.so
 lib/libfov.so.1
 lib/libfov.so.1.0.2
 libdata/pkgconfig/libfov.pc
-@dirrm lib/fov/include
-@dirrm lib/fov
-@dirrm include/fov
