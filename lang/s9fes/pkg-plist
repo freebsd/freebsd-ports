@@ -916,5 +916,3 @@ man/man1/s9.1.gz
 %%DATADIR%%/while.scm
 %%DATADIR%%/write-to-string.scm
 %%DATADIR%%/zebra.scm
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%

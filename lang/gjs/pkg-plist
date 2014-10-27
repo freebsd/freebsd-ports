@@ -72,13 +72,3 @@ share/gjs-1.0/signals.js
 share/gjs-1.0/tweener/equations.js
 share/gjs-1.0/tweener/tweenList.js
 share/gjs-1.0/tweener/tweener.js
-@dirrm share/gjs-1.0/tweener
-@dirrm share/gjs-1.0/overrides
-@dirrm share/gjs-1.0
-@dirrm lib/gjs/girepository-1.0
-@dirrm lib/gjs-1.0
-@dirrm lib/gjs
-@dirrm include/gjs-1.0/gjs
-@dirrm include/gjs-1.0/gjs-dbus
-@dirrm include/gjs-1.0/gi
-@dirrm include/gjs-1.0

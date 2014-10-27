@@ -116,16 +116,3 @@ man/man1/ypsilon.1.gz
 %%DATADIR%%/stdlib/rnrs/sorting.scm
 %%DATADIR%%/stdlib/rnrs/syntax-case.scm
 %%DATADIR%%/stdlib/rnrs/unicode.scm
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/stdlib/rnrs/arithmetic
-@dirrm %%DATADIR%%/stdlib/rnrs/io
-@dirrm %%DATADIR%%/stdlib/rnrs/records
-@dirrm %%DATADIR%%/stdlib/rnrs
-@dirrm %%DATADIR%%/stdlib/core
-@dirrm %%DATADIR%%/stdlib
-@dirrm %%DATADIR%%/sitelib/slib
-@dirrm %%DATADIR%%/sitelib/srfi
-@dirrm %%DATADIR%%/sitelib/tidbits
-@dirrm %%DATADIR%%/sitelib/ypsilon
-@dirrm %%DATADIR%%/sitelib
-@dirrm %%DATADIR%%

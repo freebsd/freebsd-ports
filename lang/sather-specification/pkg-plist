@@ -80,6 +80,3 @@
 %%DOCSDIR%%/specification.html/void-test.html
 %%DOCSDIR%%/specification.html/voidexpressions.html
 %%DOCSDIR%%/specification.html/withnearstatement.html
-@dirrm %%DOCSDIR%%/specification.html
-@dirrm %%DOCSDIR%%
-@dirrmtry share/doc/sather

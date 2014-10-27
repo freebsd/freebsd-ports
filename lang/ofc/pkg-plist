@@ -106,4 +106,3 @@ lib/libofc-0.8.so.1
 lib/libofc-0.8.so.1.0.0
 lib/libofc.a
 lib/libofc.so
-@dirrm include/ofc

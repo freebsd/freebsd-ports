@@ -37,6 +37,3 @@ man/man1/dtd2cduce.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_patterns.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_queries.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_references.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/img
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%OCAML_SITELIBDIR%%/cduce

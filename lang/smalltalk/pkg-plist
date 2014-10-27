@@ -75,9 +75,3 @@ share/aclocal/gst.m4
 share/aclocal/gst-package.m4
 share/emacs/site-lisp/gst-mode.el
 share/emacs/site-lisp/smalltalk-mode.el
-@dirrm lib/smalltalk
-@dirrm libexec/smalltalk/vfs
-@dirrm libexec/smalltalk
-@dirrm var/lib/smalltalk
-@dirrmtry var/lib
-@dirrmtry var

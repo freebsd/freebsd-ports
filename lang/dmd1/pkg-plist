@@ -166,23 +166,3 @@ include/d/phobos/std/zlib.d
 include/d/phobos/unittest.d
 man/man1/dmd1.1.gz
 man/man5/dmd1.conf.5.gz
-@dirrm %%EXAMPLESDIR%%/samples/d/mydll
-@dirrm %%EXAMPLESDIR%%/samples/d
-@dirrm %%EXAMPLESDIR%%/samples
-@dirrm %%EXAMPLESDIR%%
-@dirrm include/d/phobos/std/windows
-@dirrm include/d/phobos/std/typeinfo
-@dirrm include/d/phobos/std/c/windows
-@dirrm include/d/phobos/std/c/solaris
-@dirrm include/d/phobos/std/c/posix
-@dirrm include/d/phobos/std/c/osx/mach
-@dirrm include/d/phobos/std/c/osx
-@dirrm include/d/phobos/std/c/openbsd
-@dirrm include/d/phobos/std/c/linux
-@dirrm include/d/phobos/std/c/freebsd
-@dirrm include/d/phobos/std/c
-@dirrm include/d/phobos/std
-@dirrm include/d/phobos/etc/c
-@dirrm include/d/phobos/etc
-@dirrm include/d/phobos
-@dirrmtry include/d

@@ -100,11 +100,5 @@ man/man1/csi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %D/bin/chicken-install -update-db
 @unexec rm -f %D/lib/chicken/7/modules.db
-@dirrm %%DATADIR%%
-@dirrm lib/chicken/7
-@dirrm lib/chicken
-@dirrm include/chicken

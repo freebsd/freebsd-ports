@@ -47,14 +47,3 @@
 %%PERL5_MAN3%%/Marpa::Semantics.3.gz
 %%PERL5_MAN3%%/Marpa::Support.3.gz
 %%PERL5_MAN3%%/Marpa::Tracing.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa
-@dirrm %%SITE_PERL%%/Marpa/Test
-@dirrm %%SITE_PERL%%/Marpa/MDLex/Internal
-@dirrm %%SITE_PERL%%/Marpa/MDLex
-@dirrm %%SITE_PERL%%/Marpa/MDL/example
-@dirrm %%SITE_PERL%%/Marpa/MDL/Internal
-@dirrm %%SITE_PERL%%/Marpa/MDL
-@dirrm %%SITE_PERL%%/Marpa/Internal
-@dirrm %%SITE_PERL%%/Marpa/Deprecated
-@dirrm %%SITE_PERL%%/Marpa/Advanced
-@dirrmtry %%SITE_PERL%%/Marpa

@@ -29,7 +29,3 @@ man/man1/rxstack.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/regutil.rexx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rexxcps.rexx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeconv.rexx
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
-@dirrm lib/Regina-REXX/addons
-@dirrm lib/Regina-REXX

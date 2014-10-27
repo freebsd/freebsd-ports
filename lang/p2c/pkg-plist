@@ -8,5 +8,3 @@ lib/p2c/system.imp
 lib/p2c/system.m2
 lib/p2c/turbo.imp
 lib/p2c/string.pas
-@dirrm lib/p2c
-@dirrm include/p2c

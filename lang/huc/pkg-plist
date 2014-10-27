@@ -58,9 +58,3 @@ include/huc/overlay.h
 %%PORTDOCS%%%%DOCSDIR%%/pce/usage.txt
 %%PORTDOCS%%%%DOCSDIR%%/pce/vce.txt
 %%PORTDOCS%%%%DOCSDIR%%/pce/concepts.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pce
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/nes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/huc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/huc/pce
-@dirrm include/huc

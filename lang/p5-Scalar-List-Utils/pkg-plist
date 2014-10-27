@@ -6,8 +6,3 @@
 %%PERL5_MAN3%%/List::Util.3.gz
 %%PERL5_MAN3%%/List::Util::XS.3.gz
 %%PERL5_MAN3%%/Scalar::Util.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/List/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/List
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Scalar

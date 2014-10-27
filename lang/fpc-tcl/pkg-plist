@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tcl/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tcl/tcl80.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tcl/tcl80.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tcl/libptcl80.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tcl
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

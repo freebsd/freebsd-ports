@@ -464,26 +464,3 @@ libexec/mosml/mosmldep
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webserver/minimalserver.sml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webserver/mosmlserver.sml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webserver/useit.sml
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/webserver
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/weak
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/units
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/small
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/pretty
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/paulson
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/parsercomb
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/modules
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/mls
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/manual
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/lexyacc/cl
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/lexyacc
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/ffi/interface
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/ffi/crypt
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/ffi
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cgi
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/calc
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/mosmllib
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry libexec/mosml
-@dirrmtry lib/mosml
-@dirrmtry include/mosml

@@ -554,26 +554,3 @@ man/man7/afnix::reference.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/wax.xht
 %%PORTDOCS%%%%DOCSDIR%%/xml.xht
 %%PORTDOCS%%%%DOCSDIR%%/xpe.xht
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/afnix
-@dirrm include/afnix/xpe
-@dirrm include/afnix/xml
-@dirrm include/afnix/wax
-@dirrm include/afnix/txt
-@dirrm include/afnix/tls
-@dirrm include/afnix/sys
-@dirrm include/afnix/svg
-@dirrm include/afnix/std
-@dirrm include/afnix/sps
-@dirrm include/afnix/sio
-@dirrm include/afnix/sec
-@dirrm include/afnix/plt
-@dirrm include/afnix/phy
-@dirrm include/afnix/nwg
-@dirrm include/afnix/net
-@dirrm include/afnix/mth
-@dirrm include/afnix/itu
-@dirrm include/afnix/gfx
-@dirrm include/afnix/eng
-@dirrm include/afnix/csm
-@dirrm include/afnix

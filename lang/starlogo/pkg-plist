@@ -740,32 +740,3 @@ bin/starlogo
 %%DATADIR%%/starlogo.jar
 %%DATADIR%%/templates/chili.slogt
 %%DATADIR%%/templates/ecology.slogt
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/sample-projects/social-systems
-@dirrm %%DATADIR%%/sample-projects/physics
-@dirrm %%DATADIR%%/sample-projects/math
-@dirrm %%DATADIR%%/sample-projects/graphics
-@dirrm %%DATADIR%%/sample-projects/biology
-@dirrm %%DATADIR%%/sample-projects
-@dirrm %%DATADIR%%/documentation/html/tutorial/images
-@dirrm %%DATADIR%%/documentation/html/tutorial
-@dirrm %%DATADIR%%/documentation/html/tur
-@dirrm %%DATADIR%%/documentation/html/trial images/cutuplocal
-@dirrm %%DATADIR%%/documentation/html/trial images
-@dirrm %%DATADIR%%/documentation/html/templates/images
-@dirrm %%DATADIR%%/documentation/html/templates
-@dirrm %%DATADIR%%/documentation/html/samples/images
-@dirrm %%DATADIR%%/documentation/html/samples
-@dirrm %%DATADIR%%/documentation/html/printable
-@dirrm %%DATADIR%%/documentation/html/obs
-@dirrm %%DATADIR%%/documentation/html/images
-@dirrm %%DATADIR%%/documentation/html/graphing/images
-@dirrm %%DATADIR%%/documentation/html/graphing
-@dirrm %%DATADIR%%/documentation/html/gettingstarted/images
-@dirrm %%DATADIR%%/documentation/html/gettingstarted
-@dirrm %%DATADIR%%/documentation/html/community
-@dirrm %%DATADIR%%/documentation/html/both
-@dirrm %%DATADIR%%/documentation/html
-@dirrm %%DATADIR%%/documentation
-@dirrm %%DATADIR%%/adventure-projects
-@dirrm %%DATADIR%%

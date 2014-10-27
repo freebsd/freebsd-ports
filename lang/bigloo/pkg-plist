@@ -776,12 +776,3 @@ man/man1/bigloo.1.gz
 %%EMACS_SITE_LISPDIR%%/bigloo/ude-version.el
 %%EMACS_SITE_LISPDIR%%/bigloo/ude-version.elc
 %%EMACS_SITE_LISPDIR%%/bigloo/xemacs-etags.el
-@dirrm %%EMACS_SITE_LISPDIR%%/bigloo/images
-@dirrm %%EMACS_SITE_LISPDIR%%/bigloo/etc
-@dirrm %%EMACS_SITE_LISPDIR%%/bigloo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/bigloo/%%BIGLOO_VERSION%%/text/data
-@dirrm lib/bigloo/%%BIGLOO_VERSION%%/text
-@dirrm lib/bigloo/%%BIGLOO_VERSION%%/bmem
-@dirrm lib/bigloo/%%BIGLOO_VERSION%%
-@dirrm lib/bigloo

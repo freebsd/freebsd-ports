@@ -100,8 +100,3 @@ bin/intel2gas
 %%DATADIR%%/m2g/size.08.list
 %%DATADIR%%/m2g/size.10.list
 %%DATADIR%%/m2g/textlist.syntax
-@dirrm %%DATADIR%%/m2g
-@dirrm %%DATADIR%%/i2g
-@dirrm %%DATADIR%%/g2i
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

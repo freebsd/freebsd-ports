@@ -370,24 +370,3 @@ lib/nimrod/wrappers/zmq.nim
 %%PORTDOCS%%%%DOCSDIR%%/xmltree.html
 %%PORTDOCS%%%%DOCSDIR%%/zipfiles.html
 %%PORTDOCS%%%%DOCSDIR%%/zmq.html
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
-@dirrm lib/nimrod/wrappers/zip
-@dirrm lib/nimrod/wrappers/x11
-@dirrm lib/nimrod/wrappers/sdl
-@dirrm lib/nimrod/wrappers/readline
-@dirrm lib/nimrod/wrappers/opengl
-@dirrm lib/nimrod/wrappers/lua
-@dirrm lib/nimrod/wrappers/gtk
-@dirrm lib/nimrod/wrappers/cairo
-@dirrm lib/nimrod/wrappers
-@dirrm lib/nimrod/windows
-@dirrm lib/nimrod/system
-@dirrm lib/nimrod/pure/collections
-@dirrm lib/nimrod/pure
-@dirrm lib/nimrod/posix
-@dirrm lib/nimrod/packages/docutils
-@dirrm lib/nimrod/packages
-@dirrm lib/nimrod/js
-@dirrm lib/nimrod/impure
-@dirrm lib/nimrod/core
-@dirrm lib/nimrod

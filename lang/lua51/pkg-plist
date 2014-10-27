@@ -10,8 +10,3 @@ lib/liblua-5.1.so
 libdata/pkgconfig/lua-5.1.pc
 man/man1/lua51.1.gz
 man/man1/luac51.1.gz
-@dirrmtry %%DATADIR%%/5.1
-@dirrmtry %%DATADIR%%
-@dirrmtry lib/lua/5.1
-@dirrmtry lib/lua
-@dirrmtry include/lua51

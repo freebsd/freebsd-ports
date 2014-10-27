@@ -41,5 +41,3 @@ lib/expect%%EXPECT_VER%%/pkgIndex.tcl
 lib/expect%%EXPECT_VER%%/libexpect%%LIBEXPECT_VER%%.so
 lib/libexpect.so.1
 lib/libexpect.so
-@dirrm lib/expect%%EXPECT_VER%%
-@dirrm %%DATADIR%%

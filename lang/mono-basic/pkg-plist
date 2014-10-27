@@ -19,12 +19,3 @@ lib/mono/gac/Mono.Cecil.VB.Pdb/0.9.3.0__0738eb9f132ed756/Mono.Cecil.VB.Pdb.dll.m
 lib/mono/gac/Mono.Cecil.VB/0.9.3.0__0738eb9f132ed756/Mono.Cecil.VB.dll
 lib/mono/gac/Mono.Cecil.VB/0.9.3.0__0738eb9f132ed756/Mono.Cecil.VB.dll.mdb
 man/man1/vbnc.1.gz
-@dirrm lib/mono/gac/Mono.Cecil.VB/0.9.3.0__0738eb9f132ed756
-@dirrm lib/mono/gac/Mono.Cecil.VB.Pdb/0.9.3.0__0738eb9f132ed756
-@dirrm lib/mono/gac/Mono.Cecil.VB.Pdb
-@dirrm lib/mono/gac/Mono.Cecil.VB.Mdb/0.9.3.0__0738eb9f132ed756
-@dirrm lib/mono/gac/Mono.Cecil.VB.Mdb
-@dirrm lib/mono/gac/Mono.Cecil.VB
-@dirrm lib/mono/gac/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a
-@dirrm lib/mono/gac/Microsoft.VisualBasic/10.0.0.0__b03f5f7f11d50a3a
-@dirrm lib/mono/gac/Microsoft.VisualBasic

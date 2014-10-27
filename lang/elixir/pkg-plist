@@ -321,18 +321,3 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.TasksServer.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Utils.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.beam
 lib/elixir/lib/mix/ebin/mix.app
-@dirrm lib/elixir/lib/mix/ebin
-@dirrm lib/elixir/lib/mix
-@dirrm lib/elixir/lib/logger/ebin
-@dirrm lib/elixir/lib/logger
-@dirrm lib/elixir/lib/iex/ebin
-@dirrm lib/elixir/lib/iex
-@dirrm lib/elixir/lib/ex_unit/ebin
-@dirrm lib/elixir/lib/ex_unit
-@dirrm lib/elixir/lib/elixir/ebin
-@dirrm lib/elixir/lib/elixir
-@dirrm lib/elixir/lib/eex/ebin
-@dirrm lib/elixir/lib/eex
-@dirrm lib/elixir/lib
-@dirrm lib/elixir/bin
-@dirrm lib/elixir

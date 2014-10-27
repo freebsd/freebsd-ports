@@ -927,15 +927,3 @@ usr/share/tcl8/8.5/tcltest-2.3.0.tm
 @exec /bin/mkdir -p %D/usr/lib/tcl8.5
 @exec /bin/mkdir -p %D/usr/share/tcl8/8.3
 @comment non-empty directory listing in revers order
-@dirrm usr/share/tcl8/8.5
-@dirrm usr/share/tcl8/8.4/platform
-@dirrm usr/share/tcl8/8.4
-@dirrm usr/share/tcl8/8.3
-@dirrm usr/share/tcl8.5/opt0.4
-@dirrm usr/share/tcl8.5/msgs
-@dirrm usr/share/tcl8.5/http1.0
-@dirrm usr/share/tcl8.5/encoding
-@dirrm usr/share/tcl8.5
-@dirrm usr/share/tcl8
-@dirrm usr/share/doc/tcl-8.5.3
-@dirrm usr/lib/tcl8.5

@@ -35,6 +35,3 @@ libdata/pkgconfig/see.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/see
-@dirrm lib/see

@@ -6,5 +6,3 @@ share/emacs/site-lisp/doctest-mode.el
 share/emacs/site-lisp/python-mode.el
 share/emacs/site-lisp/pycomplete.el
 share/emacs/site-lisp/pycomplete.py
-@dirrmtry lib/xemacs/site-lisp
-@dirrmtry lib/xemacs

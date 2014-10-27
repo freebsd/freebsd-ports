@@ -14,5 +14,3 @@ man/man1/icire.1.gz
 man/man1/icistmt.1.gz
 man/man1/icitypes.1.gz
 %%PORTDOCS%%%%DOCSDIR%%4/ici.pdf
-@dirrm %%DOCSDIR%%4
-@dirrm lib/ici4

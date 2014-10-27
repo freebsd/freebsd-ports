@@ -30,10 +30,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/libplexlib.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/libpyacclib.a
 lib/fpc/lexyacc/yyparse.cod
 lib/fpc/lexyacc/yylex.cod
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrm lib/fpc/lexyacc
-@dirrmtry lib/fpc

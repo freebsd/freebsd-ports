@@ -22,8 +22,3 @@ lib/libcob.so.1.0.0
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/gnu-cobol.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/gnu-cobol.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gnu-cobol.mo
-@dirrm include/libcob
-@dirrm lib/gnu-cobol
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/copy
-@dirrm %%DATADIR%%

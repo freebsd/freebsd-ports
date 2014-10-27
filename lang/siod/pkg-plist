@@ -51,4 +51,3 @@ man/man1/proxy-server.1.gz
 man/man1/siod.1.gz
 man/man1/snapshot-compare.1.gz
 man/man1/snapshot-dir.1.gz
-@dirrm lib/siod

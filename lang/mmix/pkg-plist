@@ -79,4 +79,3 @@ bin/mmotype
 %%DATADIR%%/traffic.mms
 %%DATADIR%%/valid.mms
 %%DATADIR%%/zero.mms
-@dirrm %%DATADIR%%

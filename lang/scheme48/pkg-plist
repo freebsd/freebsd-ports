@@ -281,18 +281,3 @@ man/man1/scheme48.1.gz
 %%DATADIR%%-%%VER%%/srfi/srfi-95-check.scm
 %%DATADIR%%-%%VER%%/srfi/srfi-95.scm
 %%DATADIR%%-%%VER%%/srfi/test-packages.scm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%-%%VER%%/srfi
-@dirrm %%DATADIR%%-%%VER%%/sort
-@dirrm %%DATADIR%%-%%VER%%/rts
-@dirrm %%DATADIR%%-%%VER%%/r6rs
-@dirrm %%DATADIR%%-%%VER%%/posix
-@dirrm %%DATADIR%%-%%VER%%/opt
-@dirrm %%DATADIR%%-%%VER%%/net
-@dirrm %%DATADIR%%-%%VER%%/misc
-@dirrm %%DATADIR%%-%%VER%%/link
-@dirrm %%DATADIR%%-%%VER%%/env
-@dirrm %%DATADIR%%-%%VER%%/cml
-@dirrm %%DATADIR%%-%%VER%%/big
-@dirrm %%DATADIR%%-%%VER%%
-@dirrm lib/scheme48-%%VER%%

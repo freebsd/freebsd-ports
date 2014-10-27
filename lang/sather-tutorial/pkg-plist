@@ -77,6 +77,3 @@
 %%DOCSDIR%%/tutorial.html/type-conformance.html
 %%DOCSDIR%%/tutorial.html/type-inference.html
 %%DOCSDIR%%/tutorial.html/typecase.html
-@dirrm %%DOCSDIR%%/tutorial.html
-@dirrm %%DOCSDIR%%
-@dirrmtry share/doc/sather

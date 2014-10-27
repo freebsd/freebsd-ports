@@ -35,9 +35,3 @@
 %%PERL5_MAN3%%/Marpa::XS::Support.3.gz
 %%PERL5_MAN3%%/Marpa::XS::Tracing.3.gz
 %%PERL5_MAN3%%/Marpa::XS::Vocabulary.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Semantics
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Advanced
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Marpa

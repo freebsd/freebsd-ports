@@ -306,9 +306,3 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/xtst.deps
 %%DATADIR%%-%%VERSION%%/vapi/xtst.vapi
 %%DATADIR%%-%%VERSION%%/vapi/zlib.vapi
-@dirrm %%DATADIR%%-%%VERSION%%/vapi
-@dirrm %%DATADIR%%-%%VERSION%%
-@dirrm share/devhelp/books/vala-%%VERSION%%
-@dirrmtry share/devhelp/books
-@dirrmtry share/devhelp
-@dirrm include/vala-%%VERSION%%

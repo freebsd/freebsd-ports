@@ -6,5 +6,3 @@ GNUstep/Local/Applications/GScheme.app/Resources/lambda1.tiff
 GNUstep/Local/Applications/GScheme.app/Resources/library.scm
 GNUstep/Local/Applications/GScheme.app/stamp.make
 GNUstep/Local/Tools/GScheme
-@dirrm GNUstep/Local/Applications/GScheme.app/Resources
-@dirrm GNUstep/Local/Applications/GScheme.app

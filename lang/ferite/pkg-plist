@@ -189,28 +189,3 @@ share/aclocal/ferite.m4
 %%DATADIR%%/test-suite/thread.fe
 %%DATADIR%%/test-suite/unix.fe
 %%DATADIR%%/test-suite/xml.fe
-@dirrm %%DATADIR%%/test-suite
-@dirrm %%DATADIR%%/manual-builder/ManualBuilder/Support/Images
-@dirrm %%DATADIR%%/manual-builder/ManualBuilder/Support/CSS
-@dirrm %%DATADIR%%/manual-builder/ManualBuilder/Support
-@dirrm %%DATADIR%%/manual-builder/ManualBuilder/Filters
-@dirrm %%DATADIR%%/manual-builder/ManualBuilder
-@dirrm %%DATADIR%%/manual-builder
-@dirrm %%DATADIR%%/generate-module/skel
-@dirrm %%DATADIR%%/generate-module
-@dirrm %%DATADIR%%/farm/rulesets
-@dirrm %%DATADIR%%/farm
-%%PORTDOCS%%@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%
-@dirrm lib/ferite/module-source/rmi/transport
-@dirrm lib/ferite/module-source/rmi/translation
-@dirrm lib/ferite/module-source/rmi/protocol
-@dirrm lib/ferite/module-source/rmi
-@dirrm lib/ferite/module-source/cgi
-@dirrm lib/ferite/module-source
-@dirrm lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%
-@dirrm lib/ferite/module-native
-@dirrm lib/ferite/module-descriptions
-@dirrm lib/ferite
-@dirrm include/ferite/stream
-@dirrm include/ferite

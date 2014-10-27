@@ -1531,28 +1531,6 @@ libdata/pkgconfig/tcl85.pc
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Pacific
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Pacific-New
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Samoa
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/US
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/SystemV
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Pacific
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Mexico
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Indian
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Europe
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Etc
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Chile
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Canada
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Brazil
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Australia
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Atlantic
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Asia
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Arctic
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Antarctica
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/America/North_Dakota
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/America/Kentucky
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/America/Indiana
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/America/Argentina
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/America
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Africa
-%%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata
 %%MODULES%%lib/tcl%%TCL_VER%%/http-2.7.13.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/http.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
@@ -1562,12 +1540,3 @@ libdata/pkgconfig/tcl85.pc
 %%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.13.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.8.tm
-%%MODULES%%@dirrm lib/tcl%%TCL_VER%%/platform
-%%MODULES%%@dirrm lib/tcl%%TCL_VER%%/opt0.4
-%%MODULES%%@dirrm lib/tcl%%TCL_VER%%/http1.0
-@dirrm lib/tcl%%TCL_VER%%/msgs
-@dirrm lib/tcl%%TCL_VER%%/encoding
-@dirrmtry lib/tcl%%TCL_VER%%
-@dirrm include/tcl%%TCL_VER%%/unix
-@dirrm include/tcl%%TCL_VER%%/generic
-@dirrm include/tcl%%TCL_VER%%

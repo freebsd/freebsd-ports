@@ -914,38 +914,3 @@ man/man1/icc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/training/templ_im/show_toc.gif
 %%PORTDOCS%%%%DOCSDIR%%/training/templ_im/spacer.gif
 %%PORTDOCS%%%%DOCSDIR%%/training/templ_im/use_nav.gif
-@dirrmtry %%COMPILERDIR%%/bin/ldwrapper
-@dirrmtry %%COMPILERDIR%%/bin
-@dirrmtry %%COMPILERDIR%%/include/c++
-@dirrmtry %%COMPILERDIR%%/include
-@dirrmtry %%COMPILERDIR%%/lib
-@dirrmtry %%COMPILERDIR%%/licenses
-@dirrmtry %%COMPILERDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/c_ug/whdata
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/c_ug/whgdata
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/c_ug/whxdata
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/c_ug
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch0
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch1/ec
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch1/vc6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch3
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch35
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch4
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch5
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/ch6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/feedback
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/final
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/images/ec
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/images/vs6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/optimize
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/scripts
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/templ/nav
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/templ
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/templ_im/buttons
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/templ_im/icons
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training/templ_im
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/training
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

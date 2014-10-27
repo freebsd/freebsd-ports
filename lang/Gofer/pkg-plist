@@ -45,5 +45,3 @@ man/man1/gofer.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/release.221
 %%PORTDOCS%%%%DOCSDIR%%/release.228
 %%PORTDOCS%%%%DOCSDIR%%/release.230
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/Gofer

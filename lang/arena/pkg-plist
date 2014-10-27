@@ -2,4 +2,3 @@ bin/arena
 %%DOCSDIR%%/manual.asc
 %%DOCSDIR%%/transform
 man/man1/arena.1.gz
-@dirrm %%DOCSDIR%%
