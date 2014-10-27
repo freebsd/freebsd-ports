@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/Spelling.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Spelling/.packlist
 %%PERL5_MAN3%%/Test::Spelling.3.gz
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Spelling
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dir %%SITE_PERL%%/Test
