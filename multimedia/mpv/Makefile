@@ -39,6 +39,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man \
 		--disable-debug-build \
+		--disable-optimize \
 		--enable-libmpv-shared \
 		--disable-mpg123 \
 		--disable-alsa \
