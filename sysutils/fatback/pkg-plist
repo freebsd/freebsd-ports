@@ -4,4 +4,3 @@ man/man1/fatback.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/fatback-manual.texi
 %%PORTDOCS%%%%DOCSDIR%%/texinfo.tex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
