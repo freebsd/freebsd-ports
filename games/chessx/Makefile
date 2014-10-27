@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chessx
-DISTVERSION=	1-1-0
+PORTVERSION=	1.2.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -14,8 +14,6 @@ USES=		desktop-file-utils shared-mime-info qmake tar:tgz
 USE_QT4=	corelib gui svg xml network linguist_build \
 		moc_build qmake_build rcc_build uic_build
 QMAKE_ARGS+=	QMAKE_LRELEASE=${LRELEASE}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	STOCKFISH CRAFTY
 
