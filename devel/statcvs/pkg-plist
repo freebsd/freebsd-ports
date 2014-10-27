@@ -381,36 +381,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
 %%DATADIR%%/statcvs.jar
-@dirrm %%DATADIR%%
-%%JDK6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/weblinks/bugs/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/weblinks/bugs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/weblinks
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/util/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/util
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/reports/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/reports
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/reportmodel/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/reportmodel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/renderer/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/renderer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/pages/xml/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/pages/xml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/pages/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/pages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/output/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/output
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/model/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/model
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/input/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/input
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/charts/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/charts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/ant/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs/ant
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statcvs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/index-files
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

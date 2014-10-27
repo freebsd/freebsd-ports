@@ -40,4 +40,3 @@ man/man3/SDLmm_VideoInfo.3.gz
 man/man3/SDLmm_todo.3.gz
 man/man3/sdlmm.h.3.gz
 share/aclocal/sdlmm.m4
-@dirrm include/SDLmm

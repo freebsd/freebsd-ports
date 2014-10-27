@@ -9,6 +9,3 @@ man/man1/svndelta.1.gz
 %%DATADIR%%/diff/lcs/hunk.rb
 %%DATADIR%%/diff/lcs/ldiff.rb
 %%DATADIR%%/diff/lcs/string.rb
-@dirrm share/svndelta/diff/lcs
-@dirrm share/svndelta/diff
-@dirrm share/svndelta

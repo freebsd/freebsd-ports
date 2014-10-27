@@ -20,6 +20,3 @@ bin/rlwrap
 %%DATADIR%%/filters/unbackspace
 man/man1/rlwrap.1.gz
 man/man3/RlwrapFilter.3pm.gz
-@dirrm %%DATADIR%%/filters
-@dirrm %%DATADIR%%/completions
-@dirrm %%DATADIR%%

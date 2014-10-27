@@ -15,4 +15,3 @@ lib/libSGE.a
 lib/libSGE.so
 lib/libSGE.so.0
 lib/libSGE.so.0.030809
-@dirrmtry include/SDL

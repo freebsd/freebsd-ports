@@ -5,4 +5,3 @@ lib/libSDL_console-2.1.so.0
 lib/libSDL_console-2.1.so.0.0.0
 lib/libSDL_console.a
 lib/libSDL_console.so
-@dirrmtry include/SDL_console

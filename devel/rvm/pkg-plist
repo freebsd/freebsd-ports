@@ -19,4 +19,3 @@ man/man1/rdsinit.1.gz
 man/man1/rvmutl.1.gz
 sbin/rdsinit
 sbin/rvmutl
-@dirrm include/rvm

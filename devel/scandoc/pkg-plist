@@ -16,8 +16,3 @@ bin/scandoc
 %%DATADIR%%/templates/default.pl
 %%DATADIR%%/test/Makefile
 %%DATADIR%%/test/example.h
-@dirrmtry %%DATADIR%%/test
-@dirrmtry %%DATADIR%%/templates
-@dirrmtry %%DATADIR%%/images
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

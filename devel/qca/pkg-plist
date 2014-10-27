@@ -26,9 +26,3 @@ man/man1/qcatool2.1.gz
 share/qca/certs/README
 share/qca/certs/rootcerts.pem
 share/qt4/mkspecs/features/crypto.prf
-@dirrmtry share/qt4/mkspecs/features
-@dirrmtry share/qt4/mkspecs
-@dirrmtry share/qt4
-@dirrm share/qca/certs
-@dirrm share/qca
-@dirrm include/QtCrypto

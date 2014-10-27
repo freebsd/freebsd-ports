@@ -16,5 +16,3 @@ lib/libse.so
 lib/libse.so.5
 lib/libse.so.5.4.5
 libdata/pkgconfig/rpc2.pc
-@dirrm share/rpc2
-@dirrm include/rpc2

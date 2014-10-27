@@ -11,4 +11,3 @@ include/smack/smack.hpp
 include/smack/snappy.hpp
 lib/libsmack.so
 lib/libsmack.so.0.5
-@dirrm include/smack

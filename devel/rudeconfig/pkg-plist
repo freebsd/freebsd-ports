@@ -4,4 +4,3 @@ lib/librudeconfig.so
 lib/librudeconfig.so.3
 lib/librudeconfig.so.3.2.1
 man/man3/rudeconfig.3.gz
-@dirrm include/rude

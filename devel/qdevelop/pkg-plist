@@ -17,6 +17,3 @@ share/pixmaps/qdevelop.png
 %%NLS%%%%DATADIR%%/translations/QDevelop_Turkish.qm
 %%NLS%%%%DATADIR%%/translations/QDevelop_Ukrainian.qm
 %%NLS%%%%DATADIR%%/translations/QDevelop_Vietnamese.qm
-%%NLS%%@dirrm %%DATADIR%%/translations
-%%NLS%%@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

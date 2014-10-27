@@ -115,6 +115,3 @@ bin/submerge
 %%DATADIR%%/icons/default/Whitespace-NormalOn.png
 %%DATADIR%%/icons/default/WorkingCopy-Overlay.png
 %%DATADIR%%/icons/default/WorkingCopy-Overlay2.png
-@dirrm %%DATADIR%%/icons/default
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

@@ -42,5 +42,3 @@
 %%QT_PLUGINDIR%%/script/libqtscript_xmlpatterns.so.1
 %%QT_PLUGINDIR%%/script/libqtscript_xmlpatterns.so.1.0
 %%QT_PLUGINDIR%%/script/libqtscript_xmlpatterns.so.1.0.0
-@dirrm %%QT_PLUGINDIR%%/script
-@dirrmtry %%QT_PLUGINDIR%%

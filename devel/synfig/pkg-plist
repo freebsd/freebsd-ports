@@ -173,8 +173,3 @@ share/locale/ro/LC_MESSAGES/synfig.mo
 share/locale/ru/LC_MESSAGES/synfig.mo
 share/locale/sk/LC_MESSAGES/synfig.mo
 share/locale/zh_CN/LC_MESSAGES/synfig.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/synfig/modules
-@dirrm lib/synfig
-@dirrm include/synfig-0.0/synfig
-@dirrm include/synfig-0.0

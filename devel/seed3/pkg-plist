@@ -94,19 +94,3 @@ man/man1/seed.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/packing.png
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/packing.svg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/tutorial.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mapping
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/gtkbuilder/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/gtkbuilder
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/readline/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/readline
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/sandbox/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/sandbox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/sqlite/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/sqlite
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/seed-gtk3
-@dirrm lib/seed-gtk3
-@dirrm %%DATADIR%%/extensions
-@dirrm %%DATADIR%%

@@ -27,6 +27,3 @@ share/shtk/version.subr
 %%TEST%%tests/shtk/process_test
 %%TEST%%tests/shtk/shtk_test
 %%TEST%%tests/shtk/version_test
-%%TEST%%@dirrm tests/shtk
-@dirrm share/shtk
-@dirrm share/doc/shtk

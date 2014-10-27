@@ -116,12 +116,3 @@
 %%DATADIR%%/user_agent.php
 %%DATADIR%%/web_tester.php
 %%DATADIR%%/xml.php
-@dirrmtry %%DATADIR%%/test/support/collector
-@dirrmtry %%DATADIR%%/test/support
-@dirrmtry %%DATADIR%%/test/site
-@dirrmtry %%DATADIR%%/test
-@dirrmtry %%DATADIR%%/extensions/testdox
-@dirrmtry %%DATADIR%%/extensions
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
