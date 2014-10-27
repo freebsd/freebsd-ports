@@ -95,8 +95,3 @@ share/BomberInstinct/Sprites/troll.spr
 share/BomberInstinct/Sprites/trollb.spr
 share/BomberInstinct/Sprites/tunnel.spr
 share/BomberInstinct/bi.cfg
-@dirrm share/BomberInstinct/Sprites
-@dirrm share/BomberInstinct/Niveaux
-@dirrm share/BomberInstinct/Decors
-@dirrm share/BomberInstinct/Bruitages
-@dirrm share/BomberInstinct
