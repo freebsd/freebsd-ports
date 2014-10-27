@@ -4,5 +4,3 @@ lib/geany/addons.so
 %%DOCSDIR%%/addons/ChangeLog
 %%DOCSDIR%%/addons/NEWS
 %%DOCSDIR%%/addons/README
-@dirrm %%DOCSDIR%%/addons
-@dirrmtry %%DOCSDIR%%

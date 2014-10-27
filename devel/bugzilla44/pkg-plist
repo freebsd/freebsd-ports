@@ -887,14 +887,3 @@
 %%WWWDIR%%/whine.pl
 %%WWWDIR%%/whineatnews.pl
 %%WWWDIR%%/xmlrpc.cgi
-@dir %%WWWDIR%%/Bugzilla
-@dir %%WWWDIR%%/contrib
-@dir %%WWWDIR%%/data
-@dir %%WWWDIR%%/graphs
-@dir %%WWWDIR%%/images
-@dir %%WWWDIR%%/lib
-@dir %%WWWDIR%%/skins
-@dir %%WWWDIR%%/t
-@dir %%WWWDIR%%/template
-@dir %%WWWDIR%%/xt
-@dir %%WWWDIR%%

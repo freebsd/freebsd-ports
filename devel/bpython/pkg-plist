@@ -5,7 +5,3 @@ share/applications/bpython.desktop
 %%NLS%%share/locale/es_ES/LC_MESSAGES/bpython.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/bpython.mo
 %%NLS%%share/locale/nl_NL/LC_MESSAGES/bpython.mo
-%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl_NL
-%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_IT

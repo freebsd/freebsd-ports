@@ -85,17 +85,5 @@ libexec/gitolite/triggers/renice
 libexec/gitolite/triggers/repo-specific-hooks
 libexec/gitolite/triggers/set-default-roles
 libexec/gitolite/triggers/upstream
-@dirrm libexec/gitolite/triggers/post-compile
-@dirrm libexec/gitolite/triggers
-@dirrm libexec/gitolite/syntactic-sugar
-@dirrm libexec/gitolite/commands
-@dirrm libexec/gitolite/VREF
-@dirrm libexec/gitolite
-@dirrm %%SITE_PERL%%/Gitolite/Triggers
-@dirrm %%SITE_PERL%%/Gitolite/Test
-@dirrm %%SITE_PERL%%/Gitolite/Hooks
-@dirrm %%SITE_PERL%%/Gitolite/Conf
-@dirrm %%SITE_PERL%%/Gitolite
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

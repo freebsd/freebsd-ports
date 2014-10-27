@@ -205,11 +205,3 @@ man/man3/ck_sequence.3.gz
 man/man3/ck_spinlock.3.gz
 man/man3/ck_swlock.3.gz
 man/man3/ck_tflock.3.gz
-@dirrmtry include/gcc/arm
-@dirrmtry include/gcc/ppc
-@dirrmtry include/gcc/ppc64
-@dirrmtry include/gcc/sparcv9
-@dirrmtry include/gcc/x86
-@dirrmtry include/gcc/x86_64
-@dirrmtry include/gcc
-@dirrmtry include/spinlock

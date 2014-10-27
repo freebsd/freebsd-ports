@@ -34,5 +34,3 @@ lib/libeggdbus-1.so.0
 lib/libeggdbus-1.so.0.0.0
 libdata/pkgconfig/eggdbus-1.pc
 man/man1/eggdbus-binding-tool.1.gz
-@dirrm include/eggdbus-1/eggdbus
-@dirrm include/eggdbus-1

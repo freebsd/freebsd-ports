@@ -9,4 +9,3 @@ man/man1/cons.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/cons.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -5,5 +5,3 @@ lib/geany/webhelper.so
 %%DOCSDIR%%/webhelper/NEWS
 %%DOCSDIR%%/webhelper/README
 %%DOCSDIR%%/webhelper/TODO
-@dirrm %%DOCSDIR%%/webhelper
-@dirrmtry %%DOCSDIR%%

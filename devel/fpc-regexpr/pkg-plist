@@ -8,8 +8,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regexpr.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/libpoldregexpr.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/libpregex.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/libpregexpr.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -105,16 +105,3 @@ bin/cxfreeze-quickstart
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/Tkinter
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/bases
-@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze

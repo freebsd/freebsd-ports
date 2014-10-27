@@ -9,7 +9,3 @@ lib/geany/devhelp.so
 %%DATADIR%%/devhelp/devhelp.conf
 %%DATADIR%%/devhelp/geany-devhelp-plugin.png
 %%DATADIR%%/devhelp/home.html
-@dirrm %%DATADIR%%/devhelp
-@dirrmtry %%DATADIR%%
-@dirrm %%DOCSDIR%%/devhelp
-@dirrmtry %%DOCSDIR%%

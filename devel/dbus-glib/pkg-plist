@@ -33,5 +33,3 @@ man/man1/dbus-binding-tool.1.gz
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-@dirrm %%DOCSDIR%%
-@dirrmtry etc/bash_completion.d

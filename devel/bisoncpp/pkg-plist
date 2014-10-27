@@ -17,4 +17,3 @@ share/bisonc++/ltype.in
 share/bisonc++/ltypedata.in
 share/bisonc++/print.in
 share/bisonc++/threading.in
-@dirrm share/bisonc++

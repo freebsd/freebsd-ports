@@ -17,8 +17,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/libppparser.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/libppassrcutil.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/libppastounittest.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/libppaswrite.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

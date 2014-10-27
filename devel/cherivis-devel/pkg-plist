@@ -7,6 +7,3 @@ GNUstep/Local/Applications/CheriVis.app/Resources/CheriVis.tiff
 GNUstep/Local/Applications/CheriVis.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/CheriVis.app/stamp.make
 GNUstep/Local/Tools/CheriVis
-@dirrmtry GNUstep/Local/Applications/CheriVis.app/Resources/CheriVis.gorm
-@dirrmtry GNUstep/Local/Applications/CheriVis.app/Resources
-@dirrmtry GNUstep/Local/Applications/CheriVis.app

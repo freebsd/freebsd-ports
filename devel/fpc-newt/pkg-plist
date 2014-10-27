@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/newt.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/newt.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/libpnewt.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

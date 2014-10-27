@@ -35,4 +35,3 @@ libdata/pkgconfig/dee-icu-1.0.pc
 share/gir-1.0/Dee-1.0.gir
 share/vala/vapi/dee-1.0.deps
 share/vala/vapi/dee-1.0.vapi
-@dirrm include/dee-1.0

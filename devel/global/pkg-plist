@@ -89,13 +89,3 @@ share/gtags/script/gtags-client
 share/gtags/script/htags-client
 share/gtags/script/less-global
 share/gtags/style.css.tmpl
-@dirrmtry var/gtags/sitekeys
-@dirrmtry var/gtags
-@dirrmtry var
-@dirrm share/gtags/script
-@dirrm share/gtags/jquery/images
-@dirrm share/gtags/jquery
-@dirrm share/gtags/icons
-@dirrm share/gtags
-@dirrm lib/gtags
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

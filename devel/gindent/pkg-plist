@@ -22,4 +22,3 @@ man/man1/gindent.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/indent.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/indent.mo
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/indent.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

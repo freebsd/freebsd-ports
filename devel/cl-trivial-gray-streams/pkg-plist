@@ -3,5 +3,3 @@
 %%LIB32DIR%%/common-lisp/trivial-gray-streams/package.lisp
 %%LIB32DIR%%/common-lisp/trivial-gray-streams/trivial-gray-streams.asd
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LIB32DIR%%/common-lisp/trivial-gray-streams

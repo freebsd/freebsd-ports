@@ -5,8 +5,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libasync.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libasync.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libpfpasync.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libplibasync.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

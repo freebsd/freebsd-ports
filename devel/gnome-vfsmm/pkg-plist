@@ -53,10 +53,3 @@ lib/libgnomevfsmm-%%VERSION%%.so
 lib/libgnomevfsmm-%%VERSION%%.so.1
 lib/libgnomevfsmm-%%VERSION%%.so.1.0.9
 libdata/pkgconfig/gnome-vfsmm-%%API_VERSION%%.pc
-@dirrm lib/gnome-vfsmm-%%API_VERSION%%/proc/m4
-@dirrm lib/gnome-vfsmm-%%API_VERSION%%/proc
-@dirrm lib/gnome-vfsmm-%%API_VERSION%%/include
-@dirrm lib/gnome-vfsmm-%%API_VERSION%%
-@dirrm include/gnome-vfsmm-%%API_VERSION%%/libgnomevfsmm/private
-@dirrm include/gnome-vfsmm-%%API_VERSION%%/libgnomevfsmm
-@dirrm include/gnome-vfsmm-%%API_VERSION%%

@@ -4,5 +4,3 @@ lib/geany/tableconvert.so
 %%DOCSDIR%%/tableconvert/ChangeLog
 %%DOCSDIR%%/tableconvert/NEWS
 %%DOCSDIR%%/tableconvert/README
-@dirrm %%DOCSDIR%%/tableconvert
-@dirrmtry %%DOCSDIR%%

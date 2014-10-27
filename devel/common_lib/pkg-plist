@@ -55,6 +55,3 @@ man/man3/cl_queue_tab.3.gz
 man/man3/cl_stats.3.gz
 man/man3/cl_string.3.gz
 man/man3/cl_timer.3.gz
-@dirrm lib/erlang/lib/common_lib-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/common_lib-%%VERSION%%/src
-@dirrm lib/erlang/lib/common_lib-%%VERSION%%

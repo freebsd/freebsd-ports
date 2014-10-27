@@ -22,15 +22,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/timer.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/trie/impl.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/trie/impl_test.go
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/test
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/trie
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/github.com/ant0ine
-@dirrmtry %%GO_SRCDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_LIBDIR%%/github.com/ant0ine
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

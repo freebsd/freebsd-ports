@@ -4,5 +4,3 @@ lib/geany/updatechecker.so
 %%DOCSDIR%%/updatechecker/ChangeLog
 %%DOCSDIR%%/updatechecker/NEWS
 %%DOCSDIR%%/updatechecker/README
-@dirrm %%DOCSDIR%%/updatechecker
-@dirrmtry %%DOCSDIR%%

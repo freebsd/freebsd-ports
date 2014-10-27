@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/symbolic.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/symbolic.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/libpsymbolic.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -146,36 +146,3 @@ share/locale/ca/LC_MESSAGES/giggle.mo
 share/locale/ro/LC_MESSAGES/giggle.mo
 share/locale/zh_CN/LC_MESSAGES/giggle.mo
 share/locale/sl/LC_MESSAGES/giggle.mo
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-@dirrm lib/giggle/plugins/%%GIGGLE_VER%%
-@dirrm lib/giggle/plugins
-@dirrm lib/giggle
-@dirrm include/giggle/libgiggle-git
-@dirrm include/giggle/libgiggle
-@dirrm include/giggle
-@dirrm share/help/sl/giggle/figures
-@dirrm share/help/sl/giggle
-@dirrmtry share/help/sl
-@dirrm share/help/ro/giggle/figures
-@dirrm share/help/ro/giggle
-@dirrmtry share/help/ro
-@dirrm share/help/pl/giggle/figures
-@dirrm share/help/pl/giggle
-@dirrmtry share/help/pl
-@dirrm share/help/fr/giggle/figures
-@dirrm share/help/fr/giggle
-@dirrmtry share/help/fr
-@dirrm share/help/es/giggle/figures
-@dirrm share/help/es/giggle
-@dirrmtry share/help/es
-@dirrm share/help/de/giggle/figures
-@dirrm share/help/de/giggle
-@dirrmtry share/help/de
-@dirrm share/help/cs/giggle/figures
-@dirrm share/help/cs/giggle
-@dirrmtry share/help/cs
-@dirrm share/help/C/giggle/figures
-@dirrm share/help/C/giggle
-@dirrmtry share/help/C
-@dirrmtry share/help

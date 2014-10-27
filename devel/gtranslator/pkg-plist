@@ -94,12 +94,3 @@ share/pixmaps/gtranslator/fuzzy.png
 share/pixmaps/gtranslator/fuzzy_small.png
 share/pixmaps/gtranslator/untranslated.png
 share/pixmaps/gtranslator/untranslated_small.png
-@dirrm share/pixmaps/gtranslator
-@dirrm share/omf/gtranslator
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%/colorschemes
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/gtranslator/C/figures
-@dirrm share/gnome/help/gtranslator/C
-@dirrm share/gnome/help/gtranslator

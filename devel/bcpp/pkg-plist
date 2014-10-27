@@ -4,4 +4,3 @@ etc/bcpp.cfg.sample
 @exec if [ ! -f %D/etc/bcpp.cfg ] ; then cp -p %D/etc/bcpp.cfg.sample %D/etc/bcpp.cfg; fi
 %%PORTDOCS%%%%DOCSDIR%%/hirachy.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

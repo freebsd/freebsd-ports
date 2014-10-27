@@ -243,38 +243,4 @@ lib/bglibs/vmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/structsurfrand.html
 %%PORTDOCS%%%%DOCSDIR%%/surf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/surfrand_8h-source.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 man/man1/cli-generate.1.gz
-@dirrm include/bglibs/adt
-@dirrm include/bglibs/base64
-@dirrm include/bglibs/cdb
-@dirrm include/bglibs/cli
-@dirrm include/bglibs/crc
-@dirrm include/bglibs/crypto
-@dirrm include/bglibs/dict
-@dirrm include/bglibs/fmt
-@dirrm include/bglibs/iobuf
-@dirrm include/bglibs/misc
-@dirrm include/bglibs/msg
-@dirrm include/bglibs/net
-@dirrm include/bglibs/path
-@dirrm include/bglibs/pwcmp
-@dirrm include/bglibs/str
-@dirrm include/bglibs/unix
-@dirrm include/bglibs/vmailmgr
-@dirrm include/bglibs
-@dirrm lib/bglibs/base64
-@dirrm lib/bglibs/cdb
-@dirrm lib/bglibs/cli
-@dirrm lib/bglibs/crypto
-@dirrm lib/bglibs/dict
-@dirrm lib/bglibs/iobuf
-@dirrm lib/bglibs/misc
-@dirrm lib/bglibs/msg
-@dirrm lib/bglibs/net
-@dirrm lib/bglibs/path
-@dirrm lib/bglibs/pwcmp
-@dirrm lib/bglibs/str
-@dirrm lib/bglibs/unix
-@dirrm lib/bglibs/vmailmgr
-@dirrm lib/bglibs

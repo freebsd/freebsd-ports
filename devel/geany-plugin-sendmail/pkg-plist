@@ -4,5 +4,3 @@ lib/geany/geanysendmail.so
 %%DOCSDIR%%/geanysendmail/ChangeLog
 %%DOCSDIR%%/geanysendmail/NEWS
 %%DOCSDIR%%/geanysendmail/README
-@dirrm %%DOCSDIR%%/geanysendmail
-@dirrmtry %%DOCSDIR%%

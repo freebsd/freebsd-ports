@@ -96,6 +96,3 @@ man/man1/pprof.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tcmalloc.html
 %%PORTDOCS%%%%DOCSDIR%%/threadheap.dot
 %%PORTDOCS%%%%DOCSDIR%%/threadheap.gif
-@dirrmtry include/google
-@dirrmtry include/gperftools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

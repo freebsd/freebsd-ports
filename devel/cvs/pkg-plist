@@ -21,5 +21,3 @@ man/man8/cvsbug.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/cvscheck.man
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/cvshelp.man
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/descend.man
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

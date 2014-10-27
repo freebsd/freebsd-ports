@@ -2,5 +2,3 @@ lib/bonobo/monikers/libmoniker_gnome_vfs_std.a
 lib/bonobo/monikers/libmoniker_gnome_vfs_std.la
 lib/bonobo/monikers/libmoniker_gnome_vfs_std.so
 lib/bonobo/servers/GNOME_VFS_Moniker_std.server
-@dirrm lib/bonobo/monikers
-@dirrmtry lib/bonobo/servers

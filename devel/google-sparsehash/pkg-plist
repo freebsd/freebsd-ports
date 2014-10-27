@@ -39,8 +39,3 @@ libdata/pkgconfig/libsparsehash.pc
 %%PORTDOCS%%%%DOCSDIR%%/sparse_hash_map.html
 %%PORTDOCS%%%%DOCSDIR%%/sparse_hash_set.html
 %%PORTDOCS%%%%DOCSDIR%%/sparsetable.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/sparsehash/internal
-@dirrm include/sparsehash
-@dirrm include/google/sparsehash
-@dirrm include/google

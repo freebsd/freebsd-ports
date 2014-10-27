@@ -4,5 +4,3 @@ lib/geany/geanylipsum.so
 %%DOCSDIR%%/geanylipsum/ChangeLog
 %%DOCSDIR%%/geanylipsum/NEWS
 %%DOCSDIR%%/geanylipsum/README
-@dirrm %%DOCSDIR%%/geanylipsum
-@dirrmtry %%DOCSDIR%%

@@ -234,27 +234,3 @@
 %%ICONS%%%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/methods/height-14_to_21/ecb-variable-public.xpm
 %%ICONS%%%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/methods/height-14_to_21/ecb-variable-unknown-static.xpm
 %%ICONS%%%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/methods/height-14_to_21/ecb-variable-unknown.xpm
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default/height-10
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default/height-14
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default/height-15
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default/height-16
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default/height-17
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default/height-18
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default/height-19
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default/height-20
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default/height-21
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories/height-10
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories/height-14
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories/height-15
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories/height-16
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories/height-17
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories/height-18
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories/height-19
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories/height-20
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories/height-21
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/methods/height-14_to_21
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/default
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/directories
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/methods
-%%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb

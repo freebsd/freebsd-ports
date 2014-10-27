@@ -14,8 +14,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/libpfpjsonrtti.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/libpjsonscanner.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/libpjsonparser.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/libpjsonconf.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

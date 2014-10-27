@@ -11,6 +11,3 @@ lib/libgenrunner.so.%%PORTVERSION%%
 libdata/pkgconfig/generatorrunner.pc
 man/man1/docgenerator.1.gz
 man/man1/generatorrunner.1.gz
-@dirrm lib/generatorrunner
-@dirrm lib/cmake/GeneratorRunner-%%PORTVERSION%%
-@dirrm include/generatorrunner

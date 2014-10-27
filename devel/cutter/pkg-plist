@@ -428,29 +428,3 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/writing-assertion.html
 %%DOCSDIR%%/writing-test.html
 %%NLS%%share/locale/ja/LC_MESSAGES/cutter.mo
-@dirrm %%DOCSDIR%%/ja
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/stack/test
-@dirrm %%DATADIR%%/stack/src
-@dirrm %%DATADIR%%/stack/config
-@dirrm %%DATADIR%%/stack
-@dirrm %%DATADIR%%/license
-@dirrm %%DATADIR%%/icons/kinotan
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm lib/cutter/module/ui
-@dirrm lib/cutter/module/stream
-@dirrm lib/cutter/module/report
-@dirrm lib/cutter/module/factory/ui
-@dirrm lib/cutter/module/factory/stream
-@dirrm lib/cutter/module/factory/report
-@dirrm lib/cutter/module/factory
-@dirrm lib/cutter/module
-@dirrm lib/cutter
-%%SOUP%%@dirrm include/cutter/soupcutter
-@dirrm include/cutter/gdkcutter-pixbuf
-@dirrm include/cutter/gcutter
-@dirrm include/cutter/cutter
-@dirrm include/cutter/cppcutter
-@dirrm include/cutter

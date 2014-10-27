@@ -4,5 +4,3 @@ lib/geany/xmlsnippets.so
 %%DOCSDIR%%/xmlsnippets/ChangeLog
 %%DOCSDIR%%/xmlsnippets/NEWS
 %%DOCSDIR%%/xmlsnippets/README
-@dirrm %%DOCSDIR%%/xmlsnippets
-@dirrmtry %%DOCSDIR%%

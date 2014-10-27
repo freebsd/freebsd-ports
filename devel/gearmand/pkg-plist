@@ -199,6 +199,3 @@ man/man3/gearman_worker_work.3.gz
 man/man3/libgearman.3.gz
 man/man8/gearmand.8.gz
 sbin/gearmand
-@dirrm include/libgearman-1.0/interface
-@dirrm include/libgearman-1.0
-@dirrm include/libgearman

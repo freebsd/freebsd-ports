@@ -18,4 +18,3 @@ include/bncsutil/buffer.h
 include/bncsutil/bsha1.h
 include/bncsutil/stack.h
 lib/libbncsutil.so
-@dirrmtry include/bncsutil

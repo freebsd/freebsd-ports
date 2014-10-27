@@ -7,4 +7,3 @@ include/fga.hpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxbit.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsp.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsp_bf.cpp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

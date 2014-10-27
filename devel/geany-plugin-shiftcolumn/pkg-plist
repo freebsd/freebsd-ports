@@ -4,5 +4,3 @@ lib/geany/shiftcolumn.so
 %%DOCSDIR%%/shiftcolumn/ChangeLog
 %%DOCSDIR%%/shiftcolumn/NEWS
 %%DOCSDIR%%/shiftcolumn/README
-@dirrm %%DOCSDIR%%/shiftcolumn
-@dirrmtry %%DOCSDIR%%

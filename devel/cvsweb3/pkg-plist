@@ -21,5 +21,3 @@ etc/cvsweb/cvsweb.conf-ruby.dist
 %%CSSDIR%%/cvsweb/cvsweb.css
 share/enscript/hl/lang_cvsweb.st
 share/enscript/hl/lang_cvsweb_diff.st
-@dir %%DIRPREFIX%%/data
-@dir %%DIRPREFIX%%

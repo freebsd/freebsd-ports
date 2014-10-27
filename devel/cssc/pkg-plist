@@ -12,4 +12,3 @@ libexec/cssc/unget
 libexec/cssc/val
 libexec/cssc/what
 man/man1/sccs.1.gz
-@dirrm libexec/cssc

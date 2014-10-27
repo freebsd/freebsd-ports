@@ -89,12 +89,5 @@ share/locale/zh_HK/LC_MESSAGES/dconf.mo
 share/locale/zh_TW/LC_MESSAGES/dconf.mo
 share/vala/vapi/dconf.deps
 share/vala/vapi/dconf.vapi
-@dirrm share/gtk-doc/html/dconf
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/dconf-dbus-1
-@dirrm include/dconf/common
-@dirrm include/dconf/client
-@dirrm include/dconf
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true

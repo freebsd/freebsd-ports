@@ -30,7 +30,3 @@ include/libcsoap-1.1/libcsoap/soap-ctx.h
 include/libcsoap-1.1/libcsoap/soap-admin.h
 share/aclocal/libcsoap.m4
 libdata/pkgconfig/libcsoap.pc
-@dirrm include/nanohttp-1.1/nanohttp
-@dirrm include/nanohttp-1.1
-@dirrm include/libcsoap-1.1/libcsoap
-@dirrm include/libcsoap-1.1

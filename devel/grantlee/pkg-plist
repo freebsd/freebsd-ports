@@ -47,8 +47,3 @@ lib/libgrantlee_core.so.%%SHLIB_VER%%
 lib/libgrantlee_gui.so
 lib/libgrantlee_gui.so.0
 lib/libgrantlee_gui.so.%%SHLIB_VER%%
-@dirrmtry lib/grantlee/%%GRANTLEE_VER%%
-@dirrmtry lib/grantlee
-@dirrm lib/cmake/grantlee
-@dirrmtry lib/cmake
-@dirrm include/grantlee

@@ -2342,10 +2342,3 @@
 %%DOCSDIR%%/HyperSpec/Issues/iss364_w.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss365.htm
 %%DOCSDIR%%/HyperSpec/Issues/iss365_w.htm
-@dirrm %%DOCSDIR%%/HyperSpec/Issues
-@dirrm %%DOCSDIR%%/HyperSpec/Graphics
-@dirrm %%DOCSDIR%%/HyperSpec/Front
-@dirrm %%DOCSDIR%%/HyperSpec/Data
-@dirrm %%DOCSDIR%%/HyperSpec/Body
-@dirrm %%DOCSDIR%%/HyperSpec
-@dirrm %%DOCSDIR%%

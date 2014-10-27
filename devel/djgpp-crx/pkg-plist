@@ -129,14 +129,3 @@ i586-pc-msdosdjgpp/lib/libemu.a
 i586-pc-msdosdjgpp/lib/libg.a
 i586-pc-msdosdjgpp/lib/libm.a
 i586-pc-msdosdjgpp/lib/libpc.a
-@dirrmtry i586-pc-msdosdjgpp/lib
-@dirrm i586-pc-msdosdjgpp/include/sys
-@dirrm i586-pc-msdosdjgpp/include/netinet
-@dirrm i586-pc-msdosdjgpp/include/machine
-@dirrm i586-pc-msdosdjgpp/include/libm
-@dirrm i586-pc-msdosdjgpp/include/libc
-@dirrm i586-pc-msdosdjgpp/include/inlines
-@dirrm i586-pc-msdosdjgpp/include/debug
-@dirrm i586-pc-msdosdjgpp/include
-@dirrmtry i586-pc-msdosdjgpp/bin
-@dirrmtry i586-pc-msdosdjgpp

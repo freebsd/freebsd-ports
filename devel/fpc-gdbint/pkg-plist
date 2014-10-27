@@ -4,8 +4,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbcon.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbint.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbcon.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/libpgdbcon.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -53,15 +53,3 @@ libdata/pkgconfig/dotconf.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/output
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/noinline
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/modules
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/libpool
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fallback
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/errorhandler
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/duplicates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/context
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/caseinsensitive
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/argdouble
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -21,6 +21,3 @@ man/man8/cvsbug.8.gz
 %%EXAMPLESDIR%%/contrib/cvscheck.man
 %%EXAMPLESDIR%%/contrib/cvshelp.man
 %%EXAMPLESDIR%%/contrib/descend.man
-@exec mkdir -p %%EXAMPLESDIR%%/contrib
-@dirrm %%EXAMPLESDIR%%/contrib
-@dirrm %%EXAMPLESDIR%%

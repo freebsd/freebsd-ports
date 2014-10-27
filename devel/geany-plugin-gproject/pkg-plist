@@ -11,5 +11,3 @@ share/icons/hicolor/16x16/apps/gproject-follow.png
 share/icons/hicolor/16x16/apps/gproject-header.png
 share/icons/hicolor/16x16/apps/gproject-refresh.png
 share/icons/hicolor/16x16/apps/gproject-source.png
-@dirrm %%DOCSDIR%%/gproject
-@dirrmtry %%DOCSDIR%%

@@ -8,4 +8,3 @@ lib/libcapstone.a
 lib/libcapstone.so
 lib/libcapstone.so.2
 libdata/pkgconfig/capstone.pc
-@dirrmtry include/capstone

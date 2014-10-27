@@ -25,5 +25,3 @@ man/man1/bcc.1.gz
 man/man1/elks.1.gz
 man/man1/elksemu.1.gz
 man/man1/ld86.1.gz
-@dirrm lib/bcc/i386
-@dirrm lib/bcc

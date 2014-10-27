@@ -21,5 +21,3 @@ share/cmake/Modules/ManageVariable.cmake
 share/cmake/Modules/ManageVersion.cmake
 share/cmake/Modules/cmake_install.cmake
 share/cmake/Modules/cmake_uninstall.cmake.in
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake

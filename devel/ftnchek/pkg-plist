@@ -4,4 +4,3 @@ man/man1/dcl2inc.1.gz
 man/man1/ftnchek.1.gz
 share/emacs/site-lisp/ftnchek.el
 %%DATADIR%%/dcl2inc.awk
-@dirrm %%DATADIR%%

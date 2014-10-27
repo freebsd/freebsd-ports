@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd/bfd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd/bfd.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd/libpbfd.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

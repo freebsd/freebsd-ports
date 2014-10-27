@@ -35,11 +35,3 @@ cvs2p4/test/runtest
 cvs2p4/test/space file,v
 cvs2p4/test/star*file,v
 cvs2p4/src/rcs-5.7/src/rlog.c.patch
-@dirrm cvs2p4/bin
-@dirrm cvs2p4/lib
-@dirrm cvs2p4/src/rcs-5.7/src
-@dirrm cvs2p4/src/rcs-5.7
-@dirrm cvs2p4/src
-@dirrm cvs2p4/test/Attic
-@dirrm cvs2p4/test
-@dirrm cvs2p4

@@ -229,39 +229,3 @@ man/man1/dfbg.1.gz
 man/man1/directfb-csource.1.gz
 man/man5/directfbrc.5.gz
 %%DATADIR%%-%%DIRECTFB_VERSION%%/cursor.dat
-@dirrm %%DATADIR%%-%%DIRECTFB_VERSION%%
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/wm
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBWindow
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBVideoProvider
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBSurface
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBScreen
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBPalette
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBInputDevice
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDisplayLayer
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDataBuffer
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFB
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces
-%%SDL%%@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/inputdrivers
-%%SDL%%@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/gfxdrivers
-@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%
-@dirrm include/directfb/voodoo
-%%UNIQUE%%@dirrm include/directfb/unique
-@dirrm include/directfb/fusion/shm
-@dirrm include/directfb/fusion
-@dirrm include/directfb/direct
-@dirrm include/directfb-internal/windows
-@dirrm include/directfb-internal/misc
-@dirrm include/directfb-internal/media
-@dirrm include/directfb-internal/input
-@dirrm include/directfb-internal/gfx/generic
-@dirrm include/directfb-internal/gfx
-@dirrm include/directfb-internal/dummy
-@dirrm include/directfb-internal/display
-@dirrm include/directfb-internal/devmem
-@dirrm include/directfb-internal/core
-@dirrm include/directfb-internal
-@dirrm include/directfb

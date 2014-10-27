@@ -6,4 +6,3 @@ include/glr/glrParser.h
 include/glr/glrStack.h
 include/glr/glrState.h
 include/glr/glrSymbolTable.h
-@dirrm include/glr

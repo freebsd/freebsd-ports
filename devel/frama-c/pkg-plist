@@ -1013,24 +1013,3 @@ share/emacs/site-lisp/acsl.el
 %%PLUGINS%%%%DATADIR%%/wp/why3/coq.drv
 %%PLUGINS%%%%DATADIR%%/wp/why3/why3.conf
 %%PLUGINS%%%%DATADIR%%/wp/wp.driver
-@dirrmtry lib/frama-c/plugins/gui
-@dirrmtry lib/frama-c/plugins
-@dirrmtry lib/frama-c
-@dirrm %%DATADIR%%/doc/code
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/feedback
-@dirrm %%DATADIR%%/libc/arpa
-@dirrm %%DATADIR%%/libc/linux
-@dirrm %%DATADIR%%/libc/net
-@dirrm %%DATADIR%%/libc/netinet
-@dirrm %%DATADIR%%/libc/sys
-@dirrm %%DATADIR%%/libc
-%%PLUGINS%%@dirrm %%DATADIR%%/wp/coqwp/bool
-%%PLUGINS%%@dirrm %%DATADIR%%/wp/coqwp/int
-%%PLUGINS%%@dirrm %%DATADIR%%/wp/coqwp/map
-%%PLUGINS%%@dirrm %%DATADIR%%/wp/coqwp/real
-%%PLUGINS%%@dirrm %%DATADIR%%/wp/coqwp
-%%PLUGINS%%@dirrm %%DATADIR%%/wp/ergo
-%%PLUGINS%%@dirrm %%DATADIR%%/wp/why3
-%%PLUGINS%%@dirrm %%DATADIR%%/wp
-@dirrm %%DATADIR%%

@@ -4,4 +4,3 @@ lib/libecgi.so
 include/ecgi/ecgi.h
 include/ecgi/ecgitk.h
 include/ecgi/memfile.h
-@dirrm include/ecgi

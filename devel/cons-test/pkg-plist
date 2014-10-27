@@ -132,9 +132,3 @@ lib/%%CONS_TEST%%/t/t0147.t
 lib/%%CONS_TEST%%/Test/Cmd.pm
 lib/%%CONS_TEST%%/Test/Cmd/Cons.pm
 man/man1/cons-test.1.gz
-%%PORTDOCS%%@dirrmtry share/doc/cons-%%CONS_VER%%
-@dirrm lib/%%CONS_TEST%%/Test/Cmd
-@dirrm lib/%%CONS_TEST%%/Test
-@dirrm lib/%%CONS_TEST%%/t
-@dirrm lib/%%CONS_TEST%%
-@dirrm lib/cons-%%CONS_VER%%

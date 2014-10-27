@@ -5,5 +5,3 @@ lib/geany/multiterm.so
 %%DOCSDIR%%/multiterm/NEWS
 %%DOCSDIR%%/multiterm/README
 %%DOCSDIR%%/multiterm/TODO
-@dirrm %%DOCSDIR%%/multiterm
-@dirrmtry %%DOCSDIR%%

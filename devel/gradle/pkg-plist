@@ -148,6 +148,3 @@ bin/gradle
 %%DATADIR%%/lib/reflectasm-1.07-shaded.jar
 %%DATADIR%%/lib/slf4j-api-1.7.5.jar
 %%DATADIR%%/lib/xml-resolver-1.2.jar
-@dirrmtry %%DATADIR%%/lib/plugins
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%

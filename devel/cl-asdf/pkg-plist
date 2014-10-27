@@ -7,7 +7,3 @@ etc/asdf-init.lisp.default
 %%LIB32DIR%%/common-lisp/asdf/wild-modules.lisp
 %%LIB32DIR%%/common-lisp/system-registry/asdf.asd
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%LIB32DIR%%/common-lisp/system-registry
-@dirrmtry %%LIB32DIR%%/common-lisp/asdf
-@dirrmtry %%LIB32DIR%%/common-lisp

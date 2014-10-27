@@ -842,44 +842,5 @@ www/CDash/xml_handlers/stack.php
 www/CDash/xml_handlers/testing_handler.php
 www/CDash/xml_handlers/update_handler.php
 www/CDash/xml_handlers/upload_handler.php
-@dirrm www/CDash/xml_handlers
-@dirrm www/CDash/upload
-@dirrm www/CDash/tests/selenium
-@dirrm www/CDash/tests/kwtest/simpletest
-@dirrm www/CDash/tests/kwtest
-@dirrm www/CDash/tests/data/SubProjectExample
-@dirrm www/CDash/tests/data/SortingExample
-@dirrm www/CDash/tests/data/Sites/VOGON.kitware/Win32-nmake71/2005-07-19-0514-Experimental/XML
-@dirrm www/CDash/tests/data/Sites/VOGON.kitware/Win32-nmake71/2005-07-19-0514-Experimental
-@dirrm www/CDash/tests/data/Sites/VOGON.kitware/Win32-nmake71
-@dirrm www/CDash/tests/data/Sites/VOGON.kitware
-@dirrm www/CDash/tests/data/Sites
-@dirrm www/CDash/tests/data/ProjectXmlSequence
-@dirrm www/CDash/tests/data/InsightExperimentalExample
-@dirrm www/CDash/tests/data/EmailProjectExample
-@dirrm www/CDash/tests/data/BatchmakeNightlyExample
-@dirrm www/CDash/tests/data/ActualTrilinosSubmission
-@dirrm www/CDash/tests/data
-@dirrm www/CDash/tests/ctest/simple2
-@dirrm www/CDash/tests/ctest/simple
-@dirrm www/CDash/tests/ctest/sameImage
-@dirrm www/CDash/tests/ctest/CTestSubmitLargeOutput
-@dirrm www/CDash/tests/ctest
-@dirrm www/CDash/tests/autoremovebuilds
-@dirrm www/CDash/tests
-@dirrm www/CDash/sql/pgsql
-@dirrm www/CDash/sql/mysql
-@dirrm www/CDash/sql
-@dirrm www/CDash/scripts
-@dirrm(%%WWWOWN%%,,) www/CDash/rss
-@dirrm www/CDash/models
-@dirrm www/CDash/local
-@dirrm www/CDash/javascript/images
-@dirrm www/CDash/javascript
-@dirrm www/CDash/iphone
-@dirrm www/CDash/images
-@dirrm www/CDash/cdash
-@dirrm(%%WWWOWN%%,,) www/CDash/backup
-@dirrm www/CDash/api
-@dirrm www/CDash/ajax
-@dirrm www/CDash
+@dir(%%WWWOWN%%,,) www/CDash/rss
+@dir(%%WWWOWN%%,,) www/CDash/backup

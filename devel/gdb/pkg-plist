@@ -20,8 +20,3 @@ man/man1/gdb%%VER%%.1.gz
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/command/xmethods.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/function/__init__.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/function/strfns.py
-%%PYTHON%%@dirrmtry %%DATADIR%%%%VER%%/python/gdb/function
-%%PYTHON%%@dirrmtry %%DATADIR%%%%VER%%/python/gdb/command
-%%PYTHON%%@dirrmtry %%DATADIR%%%%VER%%/python/gdb
-%%PYTHON%%@dirrmtry %%DATADIR%%%%VER%%/python
-%%PYTHON%%@dirrmtry %%DATADIR%%%%VER%%

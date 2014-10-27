@@ -4,5 +4,3 @@ lib/geany/geanymacro.so
 %%DOCSDIR%%/geanymacro/ChangeLog
 %%DOCSDIR%%/geanymacro/NEWS
 %%DOCSDIR%%/geanymacro/README
-@dirrm %%DOCSDIR%%/geanymacro
-@dirrmtry %%DOCSDIR%%

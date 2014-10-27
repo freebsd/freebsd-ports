@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbus.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbus.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/libpdbus.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

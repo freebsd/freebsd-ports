@@ -16,13 +16,3 @@ lib/libcld.so
 lib/libcld.so.0
 lib/libcld.so.0.0.0
 libdata/pkgconfig/cld.pc
-@dirrm include/cld/languages/public
-@dirrm include/cld/languages/proto
-@dirrm include/cld/languages
-@dirrm include/cld/encodings/public
-@dirrm include/cld/encodings/proto
-@dirrm include/cld/encodings/compact_lang_det/win
-@dirrm include/cld/encodings/compact_lang_det
-@dirrm include/cld/encodings
-@dirrm include/cld/base
-@dirrm include/cld

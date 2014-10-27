@@ -17,5 +17,3 @@ libdata/pkgconfig/libglog.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.windows
 %%PORTDOCS%%%%DOCSDIR%%/designstyle.css
 %%PORTDOCS%%%%DOCSDIR%%/glog.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry include/glog
