@@ -18,7 +18,7 @@ USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 DESCR=	${.CURDIR}/../openldap24-server/pkg-descr
 
-PLIST_FILES=	lib/liblber-2.4.so.2 lib/liblber-2.4.so.2.5.6 lib/libldap-2.4.so.2 lib/libldap-2.4.so.2.5.6 lib/libldap_r-2.4.so.2 lib/libldap_r-2.4.so.2.5.6 lib/libldif-2.4.so.2 lib/libldif-2.4.so.2.5.6 etc/openldap usr/share/man/man5/ldap.conf.5.gz usr/share/man/man5/ldif.5.gz
+PLIST_FILES=	lib/liblber-2.4.so.2 lib/liblber-2.4.so.2.5.6 lib/libldap-2.4.so.2 lib/libldap-2.4.so.2.5.6 lib/libldap_r-2.4.so.2 lib/libldap_r-2.4.so.2.5.6 lib/libldif-2.4.so.2 lib/libldif-2.4.so.2.5.6 etc/openldap usr/share/man/man5/ldap.conf.5.gz usr/share/man/man5/ldif.5.gz usr/libexec/openldap/create-certdb.sh
 DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	ANNOUNCEMENT CHANGES COPYRIGHT LICENSE README
 
