@@ -3,5 +3,3 @@
 %%RUBY_SITELIBDIR%%/rubysdl_compatible_ver1.rb
 %%RUBY_SITELIBDIR%%/sdl.rb
 %%RUBY_SITELIBDIR%%/sdl1_compatible.rb
-%%DOCS%%@dirrmtry %%RUBY_DOCDIR%%
-%%EXAMPLES%%@dirrmtry %%RUBY_EXAMPLESDIR%%
