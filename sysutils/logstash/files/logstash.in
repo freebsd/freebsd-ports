@@ -6,6 +6,10 @@
 #   Default value: "NO"
 #   Flag that determines whether Logstash is enabled.
 #
+# logstash_enable (bool):
+#   Default value: "NO"
+#   Flag that determines whether Logstash is enabled.
+#
 # logstash_home (string):
 #   Default value: "/opt/logstash-1.4.2"
 #   Logstash installation directory.
