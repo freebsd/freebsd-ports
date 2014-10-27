@@ -3,11 +3,3 @@
 %%SITE_PERL%%/Business/OnlinePayment/iAuthorizer.pm
 %%SITE_PERL%%/auto/Business/OnlinePayment/iAuthorizer/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/iAuthorizer/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/iAuthorizer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment/iAuthorizer
-@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/Business

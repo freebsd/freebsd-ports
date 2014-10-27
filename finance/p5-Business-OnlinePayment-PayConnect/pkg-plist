@@ -2,9 +2,3 @@
 %%SITE_PERL%%/auto/Business/OnlinePayment/PayConnect/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PayConnect/.packlist
 %%PERL5_MAN3%%/Business::OnlinePayment::PayConnect.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PayConnect
-@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/PayConnect
-@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/Business

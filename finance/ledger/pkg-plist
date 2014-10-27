@@ -50,6 +50,3 @@ lib/libledger.so
 %%EXAMPLESDIR%%/scripts/to
 %%EXAMPLESDIR%%/scripts/trend
 %%EXAMPLESDIR%%/setup.py
-@dirrm %%EXAMPLESDIR%%/scripts
-@dirrm %%EXAMPLESDIR%%
-@dirrm include/ledger

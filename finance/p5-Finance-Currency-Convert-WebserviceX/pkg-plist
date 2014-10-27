@@ -1,10 +1,3 @@
 %%SITE_PERL%%/Finance/Currency/Convert/WebserviceX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert/WebserviceX/.packlist
 %%PERL5_MAN3%%/Finance::Currency::Convert::WebserviceX.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert/WebserviceX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
-@dirrmtry %%SITE_PERL%%/Finance/Currency/Convert
-@dirrmtry %%SITE_PERL%%/Finance/Currency
-@dirrmtry %%SITE_PERL%%/Finance

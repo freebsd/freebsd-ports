@@ -2,11 +2,3 @@
 %%SITE_PERL%%/Business/OnlinePayment/2CheckOut.pm
 %%SITE_PERL%%/auto/Business/OnlinePayment/2CheckOut/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/2CheckOut/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/2CheckOut
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment/2CheckOut
-@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/Business

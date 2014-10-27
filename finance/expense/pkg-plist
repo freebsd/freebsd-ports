@@ -19,10 +19,3 @@ GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj/Localizable.strings~
 GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj/temp.txt
 GNUstep/Local/Applications/Expense.app/stamp.make
 GNUstep/Local/Tools/Expense
-@dirrm GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj/Expense.gorm
-@dirrm GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj
-@dirrm GNUstep/Local/Applications/Expense.app/Resources/English.lproj/Expense.gorm
-@dirrm GNUstep/Local/Applications/Expense.app/Resources/English.lproj/ExpDocument.gorm
-@dirrm GNUstep/Local/Applications/Expense.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Expense.app/Resources
-@dirrm GNUstep/Local/Applications/Expense.app

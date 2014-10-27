@@ -452,26 +452,3 @@
 %%INSTALLDIR%%/sql/myportfolio.sql
 @group
 @owner
-@dirrm %%INSTALLDIR%%/sql
-@dirrm %%INSTALLDIR%%/public_html/templates
-@dirrm %%INSTALLDIR%%/public_html/tables
-@dirrm %%INSTALLDIR%%/public_html/style
-@dirrm %%INSTALLDIR%%/public_html/lang/beta
-@dirrm %%INSTALLDIR%%/public_html/lang
-@dirrm %%INSTALLDIR%%/public_html/inc
-@dirrm %%INSTALLDIR%%/public_html/images/screenshot
-@dirrm %%INSTALLDIR%%/public_html/images/country
-@dirrm %%INSTALLDIR%%/public_html/images
-@dirrm %%INSTALLDIR%%/public_html/graph
-@dirrm %%INSTALLDIR%%/public_html/fonts
-@dirrm %%INSTALLDIR%%/public_html/export
-@dirrm %%INSTALLDIR%%/public_html/dump
-@dirrm %%INSTALLDIR%%/public_html/doc
-@dirrm %%INSTALLDIR%%/public_html/config
-@dirrm %%INSTALLDIR%%/public_html/class
-@dirrm %%INSTALLDIR%%/public_html
-@dirrm %%INSTALLDIR%%/phplib
-@dirrm %%INSTALLDIR%%/FAQ
-@dirrm %%INSTALLDIR%%/CHANGES
-@dirrm %%INSTALLDIR%%
-@dirrmtry www/data

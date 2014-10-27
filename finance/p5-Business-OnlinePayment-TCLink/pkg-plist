@@ -2,9 +2,3 @@
 %%SITE_PERL%%/auto/Business/OnlinePayment/TCLink/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/TCLink/.packlist
 %%PERL5_MAN3%%/Business::OnlinePayment::TCLink.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/TCLink
-@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/TCLink
-@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/Business

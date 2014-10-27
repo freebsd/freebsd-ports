@@ -91,14 +91,3 @@ share/mmex/po/vietnamese.mo
 share/mmex/res/currency_seed.db3
 share/mmex/res/kaching.wav
 share/mmex/res/mmex.ico
-@dirrm share/mmex/res
-@dirrm share/mmex/po
-@dirrm share/mmex
-@dirrm share/doc/mmex/help/spanish
-@dirrm share/doc/mmex/help/russian
-@dirrm share/doc/mmex/help/polish
-@dirrm share/doc/mmex/help/italian
-@dirrm share/doc/mmex/help/german
-@dirrm share/doc/mmex/help/french
-@dirrm share/doc/mmex/help
-@dirrm share/doc/mmex

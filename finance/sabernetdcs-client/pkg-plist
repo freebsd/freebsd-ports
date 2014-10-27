@@ -102,13 +102,3 @@ share/pixmaps/sndcs.png
 %%PYTHON_SITELIBDIR%%/sndcs_common/__init__.py
 %%PYTHON_SITELIBDIR%%/sndcs_common/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sndcs_common/__init__.pyo
-@dirrm etc/sndcs
-@dirrm %%PYTHON_SITELIBDIR%%/sndcs_common
-@dirrm %%PYTHON_SITELIBDIR%%/sndcs_client/gtk
-@dirrm %%PYTHON_SITELIBDIR%%/sndcs_client/curses
-@dirrm %%PYTHON_SITELIBDIR%%/sndcs_client
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

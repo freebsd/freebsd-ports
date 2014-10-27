@@ -9,8 +9,3 @@
 %%PERL5_MAN3%%/Finance::Bitcoin::Address.3.gz
 %%PERL5_MAN3%%/Finance::Bitcoin::Wallet.3.gz
 %%PERL5_MAN3%%/Finance::Bitcoin::Role::HasAPI.3.gz
-@dirrm %%SITE_PERL%%/Finance/Bitcoin/Role
-@dirrm %%SITE_PERL%%/Finance/Bitcoin
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Bitcoin
-@dirrmtry %%SITE_PERL%%/Finance
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance

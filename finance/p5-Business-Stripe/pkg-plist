@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/Stripe/.packlist
 %%PERL5_MAN3%%/Business::Stripe.3.gz
 %%PERL5_MAN3%%/Business::README.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/Stripe
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business

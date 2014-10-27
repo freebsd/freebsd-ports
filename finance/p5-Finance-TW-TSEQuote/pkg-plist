@@ -5,8 +5,3 @@ bin/twse-eod-update
 %%SITE_PERL%%/Finance/TW/TSEQuote.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW/TSEQuote/.packlist
 man/man1/pfq.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW/TSEQuote
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
-@dirrmtry %%SITE_PERL%%/Finance/TW
-@dirrmtry %%SITE_PERL%%/Finance
