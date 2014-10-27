@@ -5,5 +5,3 @@ bin/pengpong
 %%DATADIR%%/logo.jpg
 %%DATADIR%%/paddle.tga
 %%DATADIR%%/red.png
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
