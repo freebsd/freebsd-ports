@@ -10,5 +10,3 @@ lib/libengine.so.1.0.0
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%DATADIR%%/qhacc.es.qm
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

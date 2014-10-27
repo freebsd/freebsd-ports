@@ -15,7 +15,3 @@
 %%PERL5_MAN3%%/Finance::QuoteHist::StockNod.3.gz
 %%PERL5_MAN3%%/Finance::QuoteHist::Yahoo.3.gz
 %%PERL5_MAN3%%/Finance::QuoteHist::Yahoo::Australia.3.gz
-@dirrmtry %%SITE_PERL%%/Finance/QuoteHist/Yahoo
-@dirrmtry %%SITE_PERL%%/Finance/QuoteHist
-@dirrmtry %%SITE_PERL%%/Finance
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance-QuoteHist

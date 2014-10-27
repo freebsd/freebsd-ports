@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Business/PayPal/IPN.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal/IPN/.packlist
 %%PERL5_MAN3%%/Business::PayPal::IPN.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal/IPN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business/PayPal
-@dirrmtry %%SITE_PERL%%/Business

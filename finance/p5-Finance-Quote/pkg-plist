@@ -113,8 +113,3 @@
 %%PERL5_MAN3%%/Finance::Quote::YahooJSON.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ZA.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ZA_UnitTrusts.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
-@dirrm %%SITE_PERL%%/Finance/Quote/Yahoo
-@dirrm %%SITE_PERL%%/Finance/Quote
-@dirrmtry %%SITE_PERL%%/Finance

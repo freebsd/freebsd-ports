@@ -3,6 +3,3 @@ bin/yahooquote
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/YahooQuote/.packlist
 %%PERL5_MAN3%%/Finance::YahooQuote.3.gz
 man/man1/yahooquote.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/YahooQuote
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
-@dirrmtry %%SITE_PERL%%/Finance

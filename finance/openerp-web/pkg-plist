@@ -1,3 +1,2 @@
 etc/openerp-web.conf.sample
 openerp-web/openerp-web.py
-@dirrmtry openerp-web

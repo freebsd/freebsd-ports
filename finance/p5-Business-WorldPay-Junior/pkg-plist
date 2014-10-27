@@ -11,11 +11,3 @@
 %%SITE_PERL%%/auto/Business/WorldPay/Junior/register.al
 %%SITE_PERL%%/auto/Business/WorldPay/Junior/valid_callback_host.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay/Junior/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay/Junior
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-@dirrmtry %%SITE_PERL%%/auto/Business/WorldPay/Junior
-@dirrmtry %%SITE_PERL%%/auto/Business/WorldPay
-@dirrmtry %%SITE_PERL%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business/WorldPay
-@dirrmtry %%SITE_PERL%%/Business

@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Locale/Currency/Format.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Currency/Format/.packlist
 %%PERL5_MAN3%%/Locale::Currency::Format.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Currency/Format
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Currency
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
-@dirrmtry %%SITE_PERL%%/Locale/Currency
-@dirrmtry %%SITE_PERL%%/Locale

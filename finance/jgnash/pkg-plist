@@ -65,5 +65,3 @@
 %%DATADIR%%/lib/xstream-1.4.7.jar
 %%DATADIR%%/lib/xstream-hibernate-1.4.7.jar
 %%DESKTOPDIR%%/jgnash.desktop
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%

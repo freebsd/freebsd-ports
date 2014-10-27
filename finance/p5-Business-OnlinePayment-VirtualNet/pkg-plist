@@ -2,9 +2,3 @@
 %%SITE_PERL%%/auto/Business/OnlinePayment/VirtualNet/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/VirtualNet/.packlist
 %%PERL5_MAN3%%/Business::OnlinePayment::VirtualNet.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/VirtualNet
-@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/VirtualNet
-@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/Business

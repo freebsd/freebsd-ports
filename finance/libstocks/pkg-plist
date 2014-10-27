@@ -4,4 +4,3 @@ lib/libstocks.a
 lib/libstocks.so
 lib/libstocks.so.0
 %%PORTDOCS%%share/doc/libstocks/README
-%%PORTDOCS%%@dirrm share/doc/libstocks

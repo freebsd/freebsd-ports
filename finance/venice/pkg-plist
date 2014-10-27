@@ -7,4 +7,3 @@ share/icons/hicolor/72x72/apps/venice.png
 share/icons/hicolor/96x96/apps/venice.png
 %%DATADIR%%/venice.jar
 share/pixmaps/venice.png
-@dirrm %%DATADIR%%
