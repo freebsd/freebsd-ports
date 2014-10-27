@@ -1,14 +1,17 @@
 #! /bin/sh
+# ex:sw=4 sts=4
 
 ask() {
     local question default answer
 
     question=$1
     default=$2
-    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]
+    then
         read -p "${question} [${default}]? " answer
     fi
-    if [ x${answer} = x ]; then
+    if [ x${answer} = x ]
+    then
         answer=${default}
     fi
     echo ${answer}
@@ -34,32 +37,33 @@ create_crontab_entries() {
     b=$1
     e=$2
 
-    if crontab -u munin -l > /dev/null 2>&1; then
-	TMPFILE=`mktemp -t munin` || exit 1
-	cat > $TMPFILE
-	crontab -u munin -l | sed -e "/^$b$/,/^$e$/d" | \
-	cat - $TMPFILE | crontab -u munin -
-	rm $TMPFILE
+    if crontab -u munin -l > /dev/null 2>&1
+    then
+	if ! crontab -u munin -l | grep -q MANUAL_MUNIN_CRONTAB
+	then
+	    TMPFILE=`mktemp -t munin` || exit 1
+	    cat > $TMPFILE
+	    crontab -u munin -l | sed -e "/^$b$/,/^$e$/d" | \
+		cat - $TMPFILE | crontab -u munin -
+	    rm $TMPFILE
+	fi
     else
 	crontab -u munin -
     fi
 }
 
-mklogdir() {
-}
-
 newsyslog() {
-    if fgrep -q '/var/log/munin/*' /etc/newsyslog.conf; then
-        :
-    else
+    if ! fgrep -q '/var/log/munin/*' /etc/newsyslog.conf
+    then
         cat >> /etc/newsyslog.conf <<EOT
 /var/log/munin/*.log munin:munin	644  7	   *	@T00  GNWZ
 EOT
-    fi  
+    fi
 }
 
 move_www_dir() {
-    if [ -d ${PKG_PREFIX}/www/data/munin -a ! -d ${PKG_PREFIX}/www/munin ]; then
+    if [ -d ${PKG_PREFIX}/www/data/munin -a ! -d ${PKG_PREFIX}/www/munin ]
+    then
 	echo Migrating ${PKG_PREFIX}/www/data/munin to ${PKG_PREFIX}/www/munin
 	mv ${PKG_PREFIX}/www/data/munin ${PKG_PREFIX}/www/munin
     fi
@@ -71,11 +75,12 @@ move_www_dir() {
 case $2 in
     PRE-INSTALL)
 	move_www_dir # at some point in the installation, the www dir is created
-	;;      
+	;;
     POST-INSTALL)
-	if [ -z "${PACKAGE_BUILDING}" ]; then
-		newsyslog
-		create_crontab_entries '#BEGIN_MUNIN_MAIN' '#END_MUNIN_MAIN' <<EOT
+	if [ -z "${PACKAGE_BUILDING}" ]
+	then
+	    newsyslog
+	    create_crontab_entries '#BEGIN_MUNIN_MAIN' '#END_MUNIN_MAIN' <<EOT
 #BEGIN_MUNIN_MAIN
 MAILTO=root
 
@@ -83,5 +88,5 @@ MAILTO=root
 #END_MUNIN_MAIN
 EOT
 	fi
-	;;      
+	;;
 esac
