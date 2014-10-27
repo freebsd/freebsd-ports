@@ -55,5 +55,3 @@ share/locale/nb/LC_MESSAGES/sheetssolver.mo
 share/locale/nb/LC_MESSAGES/stage.mo
 share/locale/nb/LC_MESSAGES/thesaurus_tool.mo
 share/locale/nb/LC_MESSAGES/words.mo
-@dirrmtry share/apps/calligra/autocorrect
-@dirrmtry share/apps/calligra

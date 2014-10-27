@@ -103,33 +103,3 @@ share/locale/vi/LC_MESSAGES/ghex-2.0.mo
 share/locale/wa/LC_MESSAGES/ghex-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/ghex-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/ghex-2.0.mo
-@dirrm share/gnome/help/ghex2/zh_TW/figures
-@dirrm share/gnome/help/ghex2/zh_TW
-@dirrm share/gnome/help/ghex2/zh_CN/figures
-@dirrm share/gnome/help/ghex2/zh_CN
-@dirrm share/gnome/help/ghex2/sv/figures
-@dirrm share/gnome/help/ghex2/sv
-@dirrm share/gnome/help/ghex2/oc/figures
-@dirrm share/gnome/help/ghex2/oc
-@dirrm share/gnome/help/ghex2/ko/figures
-@dirrm share/gnome/help/ghex2/ko
-@dirrm share/gnome/help/ghex2/ja/figures
-@dirrm share/gnome/help/ghex2/ja
-@dirrm share/gnome/help/ghex2/it/figures
-@dirrm share/gnome/help/ghex2/it
-@dirrm share/gnome/help/ghex2/fr/figures
-@dirrm share/gnome/help/ghex2/fr
-@dirrm share/gnome/help/ghex2/es/figures
-@dirrm share/gnome/help/ghex2/es
-@dirrm share/gnome/help/ghex2/de/figures
-@dirrm share/gnome/help/ghex2/de
-@dirrm share/gnome/help/ghex2/C/figures
-@dirrm share/gnome/help/ghex2/C
-@dirrm share/gnome/help/ghex2
-@dirrm include/gtkhex
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz

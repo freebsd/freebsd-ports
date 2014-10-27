@@ -37,6 +37,3 @@ man/man1/jpico.1.gz
 man/man1/jstar.1.gz
 man/man1/jupp.1.gz
 man/man1/rjoe.1.gz
-@dirrm etc/joe/syntax
-@dirrm etc/joe/charmaps
-@dirrm etc/joe

@@ -47,7 +47,3 @@ man/man1/rtf2ps.1.gz
 %%DATADIR%%/gslibpath.ps
 %%DATADIR%%/gslsfonts.ps
 %%PORTDOCS%%%%DOCSDIR%%/TedDocument-en_US.rtf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/dfa
-@dirrm %%DATADIR%%/afm
-@dirrm %%DATADIR%%

@@ -24,5 +24,3 @@ share/locale/ug/LC_MESSAGES/mousepad.mo
 share/locale/uk/LC_MESSAGES/mousepad.mo
 share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 share/locale/zh_TW/LC_MESSAGES/mousepad.mo
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug

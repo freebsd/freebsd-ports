@@ -71,12 +71,3 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/tcl.nanorc
 %%DATADIR%%/tex.nanorc
 %%DATADIR%%/xml.nanorc
-@dirrm share/nano
-@dirrm %%EXAMPLESDIR%%
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
-%%NLS%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%NLS%%@dirrmtry man/fr/man5
-%%NLS%%@dirrmtry man/fr/man1
-%%NLS%%@dirrmtry man/fr

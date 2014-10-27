@@ -13,6 +13,3 @@ share/locale/it/LC_MESSAGES/morla.mo
 %%DATADIR%%/icons/64_BN.png
 %%DATADIR%%/icons/64_color.png
 %%DATADIR%%/icons/700_color.png
-@dirrm lib/morla
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

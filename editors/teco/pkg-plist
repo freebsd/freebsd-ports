@@ -32,5 +32,3 @@ bin/tecoc
 %%PORTDOCS%%%%DOCSDIR%%/video.txt
 %%PORTDOCS%%%%DOCSDIR%%/teco.doc
 %%PORTDOCS%%%%DOCSDIR%%/wchart.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

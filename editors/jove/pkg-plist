@@ -23,5 +23,3 @@ man/man1/teachjove.1.gz
 %%DATADIR%%/keychart.xterm
 %%DATADIR%%/keychart.z29
 %%DATADIR%%/teach-jove
-@dirrm %%DATADIR%%
-@dirrm libexec/jove

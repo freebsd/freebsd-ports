@@ -115,10 +115,3 @@ lib/fte/localconfig/systemmain.fte
 %%PORTDOCS%%%%DOCSDIR%%/perftips.html
 %%PORTDOCS%%%%DOCSDIR%%/regexp.html
 %%PORTDOCS%%%%DOCSDIR%%/status.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/fte/localconfig
-@dirrm lib/fte/config/slang
-@dirrm lib/fte/config/menu
-@dirrm lib/fte/config/kbd
-@dirrm lib/fte/config
-@dirrm lib/fte

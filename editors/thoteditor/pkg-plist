@@ -316,13 +316,4 @@ share/thot/schemas/Paragraphe.en
 share/thot/schemas/Rapport.en
 share/thot/schemas/RefBib.en
 share/thot/schemas/Table.en
-@dirrm share/thot/schemas
-@dirrm share/thot/fonts
-@dirrm share/thot/doc
-@exec mkdir -p %D/share/thot/doc
-@dirrm share/thot/dicopar
-@dirrm share/thot/batch
-@dirrm share/thot/applis/bin
-@dirrm share/thot/applis
-@dirrm share/thot/config
-@dirrm share/thot
+@dir share/thot/doc

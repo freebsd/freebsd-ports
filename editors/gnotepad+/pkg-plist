@@ -149,7 +149,3 @@ share/gnome/help/gnotepad+/C/topic.dat
 share/locale/da/LC_MESSAGES/gnotepad+.mo
 share/locale/fr/LC_MESSAGES/gnotepad+.mo
 share/locale/ja/LC_MESSAGES/gnotepad+.mo
-@dirrm %%DATADIR%%/xpm
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/gnotepad+/C
-@dirrm share/gnome/help/gnotepad+

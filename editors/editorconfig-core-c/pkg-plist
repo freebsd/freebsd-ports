@@ -2,7 +2,6 @@ bin/editorconfig
 bin/editorconfig-%%PORTVERSION%%
 include/editorconfig/editorconfig.h
 include/editorconfig/editorconfig_handle.h
-@dirrm include/editorconfig
 lib/libeditorconfig.so
 lib/libeditorconfig.so.%%SHLIB_MAJOR%%
 lib/libeditorconfig.so.%%SHLIB_VER%%

@@ -152,7 +152,3 @@ share/locale/nl/LC_MESSAGES/sheetssolver.mo
 share/locale/nl/LC_MESSAGES/stage.mo
 share/locale/nl/LC_MESSAGES/thesaurus_tool.mo
 share/locale/nl/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/nl/stage
-@dirrm share/doc/HTML/nl/sheets
-@dirrm share/doc/HTML/nl/kexi
-@dirrm share/doc/HTML/nl/calligra

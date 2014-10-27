@@ -62,5 +62,3 @@ share/locale/sv/LC_MESSAGES/cooledit.mo
 man/man1/cooledit.1.gz
 man/man1/coolman.1.gz
 man/man1/smalledit.1.gz
-@dirrm %%DATADIR%%/syntax
-@dirrm %%DATADIR%%

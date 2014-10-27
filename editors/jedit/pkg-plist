@@ -331,20 +331,3 @@ share/java/jedit/properties/README.txt
 share/java/jedit/startup/README.txt
 share/java/jedit/startup/startup.bsh
 share/pixmaps/jedit.png
-@dirrmtry share/java/jedit/startup
-@dirrmtry share/java/jedit/properties
-@dirrmtry share/java/jedit/modes
-@dirrmtry share/java/jedit/macros/Text
-@dirrmtry share/java/jedit/macros/Properties
-@dirrmtry share/java/jedit/macros/Misc
-@dirrmtry share/java/jedit/macros/Java
-@dirrmtry share/java/jedit/macros/Interface
-@dirrmtry share/java/jedit/macros/Files
-@dirrmtry share/java/jedit/macros/Emacs
-@dirrmtry share/java/jedit/macros/Editing
-@dirrmtry share/java/jedit/macros/Clipboard
-@dirrmtry share/java/jedit/macros/C
-@dirrmtry share/java/jedit/macros
-@dirrmtry share/java/jedit/keymaps
-@dirrmtry share/java/jedit/jars
-@dirrmtry share/java/jedit

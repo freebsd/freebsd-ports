@@ -534,5 +534,3 @@ share/icons/hicolor/16x16/apps/klat4.png
 share/icons/hicolor/32x32/apps/klat4.png
 share/icons/hicolor/48x48/apps/klat4.png
 share/locale/ru/LC_MESSAGES/klat4.mo
-@dirrm share/apps/klat4/math_symbols
-@dirrm share/apps/klat4

@@ -27,5 +27,3 @@ share/mime/packages/winefish.xml
 %%DATADIR%%/icon_xml.png
 %%DATADIR%%/winefish_splash.png
 %%DATADIR%%/words.default
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

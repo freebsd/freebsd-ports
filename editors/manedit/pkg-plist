@@ -12,7 +12,3 @@ man/man1/manedit.1.gz
 %%DATADIR%%/templates/config.mpt
 %%DATADIR%%/templates/intro.mpt
 %%DATADIR%%/templates/program.mpt
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%

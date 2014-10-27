@@ -164,6 +164,3 @@ bin/treeform
 %%DATADIR%%/image/zoomplus24_d.gif
 %%DATADIR%%/image/zoomplus24_h.gif
 %%DATADIR%%/about.htm
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/image
-@dirrm %%DATADIR%%
