@@ -89,7 +89,6 @@ BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 CMAKE_ARGS+=	-DENABLE_MAN=yes -DMANDIR=${MANPREFIX}/man -DENABLE_DOC=yes
 .else
 CMAKE_ARGS+=	-DENABLE_MAN=no -DENABLE_DOC=no
-CFLAGS+=		-Qunused-arguments
 .endif
 
 .include <bsd.port.options.mk>
