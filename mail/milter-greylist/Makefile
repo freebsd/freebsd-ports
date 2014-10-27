@@ -37,9 +37,9 @@ P0F_DESC=		P0F support
 POSTFIX_DESC=		Use Postfix instead of Sendmail
 
 P0F_RUN_DEPENDS+=	p0f:${PORTSDIR}/net-mgmt/p0f
-SPF_BUILD_DEPENDS+=	libspf2>=1.2.5:${PORTSDIR}/mail/libspf2
-CURL_BUILD_DEPENDS+=	curl>=7.18:${PORTSDIR}/ftp/curl
-GEOIP_BUILD_DEPENDS+=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
+SPF_LIB_DEPENDS+=	libspf2.so:${PORTSDIR}/mail/libspf2
+CURL_LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+GEOIP_LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 POSTFIX_CONFIGURE_ENABLE=	postfix
 P0F_CONFIGURE_ENABLE=		p0f306
@@ -104,6 +104,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/greylist.conf ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
-.include "${.CURDIR}/../sendmail/bsd.milter.mk"
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 .include <bsd.port.mk>
