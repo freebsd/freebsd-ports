@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/alsa/pcm/pcm-oss.conf-dist %D/etc/alsa/pcm/pcm-oss.conf; then rm -f %D/etc/alsa/pcm/pcm-oss.conf; fi
-etc/alsa/pcm/pcm-oss.conf-dist
-@exec if [ ! -f %D/etc/alsa/pcm/pcm-oss.conf ] ; then cp -p %D/%F %B/pcm-oss.conf; fi
+@sample etc/alsa/pcm/pcm-oss.conf
 usr/lib/alsa-lib/libasound_module_ctl_oss.so
 usr/lib/alsa-lib/libasound_module_pcm_oss.so
 usr/share/doc/alsa-plugins-oss-1.0.21/COPYING

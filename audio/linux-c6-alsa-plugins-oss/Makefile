@@ -29,11 +29,5 @@ CONF_FILE=	etc/alsa/pcm/pcm-oss.conf
 
 post-patch:
 	@${RM} ${WRKSRC}/${CONF_FILE}.orig
-	@${MV} ${WRKSRC}/${CONF_FILE} ${WRKSRC}/${CONF_FILE}-dist
-
-post-install:
-	@if [ ! -f ${PREFIX}/${CONF_FILE} ]; then \
-		${CP} -p ${STAGEDIR}${PREFIX}/${CONF_FILE}-dist ${STAGEDIR}${PREFIX}/${CONF_FILE} ; \
-	fi
 
 .include <bsd.port.mk>
