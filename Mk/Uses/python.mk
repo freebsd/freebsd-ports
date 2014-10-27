@@ -448,6 +448,16 @@ IGNORE=		needs an unsupported version of Python
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
 DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
 
+# NOTE:
+#
+#  PYTHON_VERSION will hold whatever is passed down the dependency chain.
+#  If a user runs `make PYTHON_VERSION=python3.3, PYTHON_VERSION will be
+#  set to 'python3.3'. A port however may require a different version,
+#  which is stored (above) in _PYTHON_VERSION.
+#  Every python bit below hence should use python${_PYTHON_VERSION}, since
+#  this is the value, the _port_ requires
+#
+
 # Got the correct python version, set some publicly accessible variables
 PYTHON_VER=		${_PYTHON_VERSION}
 PYTHON_SUFFIX=		${_PYTHON_VERSION:S/.//g}
@@ -467,8 +477,8 @@ PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
 PYTHONBASE!=	(${PYTHON_CMD} -c 'import sys; print(sys.prefix)' \
 			2> /dev/null || ${ECHO_CMD} ${LOCALBASE}) | ${TAIL} -1
 
-PYTHON_INCLUDEDIR=	${PYTHONBASE}/include/${PYTHON_VERSION}${PYTHON_ABIVER}
-PYTHON_LIBDIR=		${PYTHONBASE}/lib/${PYTHON_VERSION}
+PYTHON_INCLUDEDIR=	${PYTHONBASE}/include/python${_PYTHON_VERSION}${PYTHON_ABIVER}
+PYTHON_LIBDIR=		${PYTHONBASE}/lib/python${_PYTHON_VERSION}
 PYTHON_PLATFORM=	${OPSYS:tl}${OSREL:C/\.[0-9.]*//}
 PYTHON_SITELIBDIR=	${PYTHON_LIBDIR}/site-packages
 PYTHON_PKGNAMEPREFIX=	py${PYTHON_SUFFIX}-
@@ -626,7 +636,7 @@ PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;} \
 		PYTHON_PLATFORM=${PYTHON_PLATFORM} \
 		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
-		PYTHON_VERSION=${PYTHON_VERSION} \
+		PYTHON_VERSION=python${_PYTHON_VERSION} \
 		PYTHON_VER=${PYTHON_VER}
 
 _USES_POST+=	python
