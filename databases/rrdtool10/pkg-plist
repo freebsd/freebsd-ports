@@ -34,7 +34,6 @@ man/man1/rrdrestore.1.gz
 man/man1/rrdtool.1.gz
 man/man1/rrdtune.1.gz
 man/man1/rrdtutorial.1.gz
-man/man1/rrdtutorial.es.1.gz
 man/man1/rrdupdate.1.gz
 man/man1/rrdxport.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/RRDp.txt
@@ -61,7 +60,6 @@ man/man1/rrdxport.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdrestore.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdtool.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdtune.html
-%%PORTDOCS%%%%DOCSDIR%%/html/rrdtutorial.es.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdtutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdupdate.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdxport.html
@@ -93,8 +91,6 @@ man/man1/rrdxport.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/rrdtool.txt
 %%PORTDOCS%%%%DOCSDIR%%/rrdtune.pod
 %%PORTDOCS%%%%DOCSDIR%%/rrdtune.txt
-%%PORTDOCS%%%%DOCSDIR%%/rrdtutorial.es.pod
-%%PORTDOCS%%%%DOCSDIR%%/rrdtutorial.es.txt
 %%PORTDOCS%%%%DOCSDIR%%/rrdtutorial.pod
 %%PORTDOCS%%%%DOCSDIR%%/rrdtutorial.txt
 %%PORTDOCS%%%%DOCSDIR%%/rrdupdate.pod
