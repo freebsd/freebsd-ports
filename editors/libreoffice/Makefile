@@ -239,7 +239,6 @@ JAVA_CONFIGURE_OFF=	--without-java
 # LibreOffice works only with Java 6 -- which may not be the default
 # if you specify the JAVA_VENDOR variable
 JAVA_BUILD=	yes
-JAVA_VERSION=	1.6
 JAVA_USE=	JAVA=yes
 
 KDE4_USE=	KDE4=kdelibs QT4=moc_build QT4=qmake_build
