@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	3.0.99.20140926
+PORTVERSION=	3.0.99.20141010
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=	poudriere-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_COMMIT=	caf0bb9
+GH_COMMIT=	d2f5c83
 GH_TAGNAME=	${GH_COMMIT}
 
 GNU_CONFIGURE=	yes
