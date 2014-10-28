@@ -59,14 +59,10 @@ THEMES_RUN_DEPENDS=	claws-mail-themes>0:${PORTSDIR}/x11-themes/claws-mail-themes
 .include "Makefile.claws"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lresolv||g; s|-lpisock\"|${ICONV_LIB} &|g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g ; s|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/src/procmime.c
 	@${REINPLACE_CMD} -e "/(GPGME_LIBS)/d" \
 		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} '/^itlocaledir/ s|prefix)/$$(DATADIRNAME|datarootdir|' \
-		${WRKSRC}/po/Makefile.in.in
 
 post-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS README TODO ${STAGEDIR}${DOCSDIR})
@@ -83,5 +79,6 @@ post-install:
 		tbird2claws.py textviewer.pl textviewer.sh \
 		thunderbird-filters-convertor.pl uudec uuooffice vcard2xml.py \
 		${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/claws-mail.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
