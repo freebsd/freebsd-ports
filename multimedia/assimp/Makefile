@@ -12,7 +12,8 @@ DISTNAME=	${PORTNAME}--${PORTVERSION}.1270-source-only
 MAINTAINER=	yuri@tsoft.com
 COMMENT=	Library to import various 3D model formats in a uniform manner
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
