@@ -3,7 +3,7 @@
 
 PORTNAME=	mythtv-frontend
 PORTVERSION=	0.27.0.20140121
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 DISTNAME=	mythtv-${PORTVERSION}
