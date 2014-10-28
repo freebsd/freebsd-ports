@@ -3,7 +3,7 @@
 
 PORTNAME=	uqm
 PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/sc2/UQM/${PORTVERSION:R}
 DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tgz ${PORTNAME}-${DATAVERSION}-content.uqm
@@ -86,7 +86,7 @@ do-configure:
 	@${ECHO_CMD} CHOICE_accel_VALUE=\'plainc\' >> ${WRKSRC}/config.state
 .endif
 	@${ECHO_CMD} CHOICE_threadlib_VALUE=\'sdl\' >> ${WRKSRC}/config.state
-	@${ECHO_CMD} INPUT_install_prefix_VALUE=\'${STAGEDIR}${PREFIX}\' >> ${WRKSRC}/config.state
+	@${ECHO_CMD} INPUT_install_prefix_VALUE=\'${PREFIX}\' >> ${WRKSRC}/config.state
 	@${ECHO_CMD} INPUT_install_bindir_VALUE=\''$$prefix/bin'\' >> ${WRKSRC}/config.state
 	@${ECHO_CMD} INPUT_install_libdir_VALUE=\''$$prefix/lib'\' >> ${WRKSRC}/config.state
 	@${ECHO_CMD} INPUT_install_sharedir_VALUE=\''$$prefix/share'\' >> ${WRKSRC}/config.state
@@ -96,7 +96,7 @@ do-build:
 	@(cd ${WRKSRC} && ./build.sh uqm)
 
 do-install:
-	@(cd ${WRKSRC} && ./build.sh uqm install)
+	@(cd ${WRKSRC} && ${SETENV} STAGEDIR="${STAGEDIR}" ./build.sh uqm install)
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/uqm/uqm
