@@ -41,6 +41,13 @@ CMAKE_ARGS+=	-DBUILD_CRASHREPORTER=OFF
 PLIST_SUB+=	CRASHREPORTER="@comment "
 .endif
 
+.if ${OSVERSION} >= 1000705
+# Workaround for clang 3.4 bug: it crashes when debug info is enabled
+# See http://llvm.org/bugs/show_bug.cgi?id=19031, http://llvm.org/bugs/show_bug.cgi?id=20893
+post-patch:
+	@${REINPLACE_CMD} -e '/add_cxxflag.*-g2/ d' ${WRKSRC}/CMakeLists.txt
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
