@@ -1,6 +1,0 @@
-SLiRP is a (C)SLIP/PPP emulator which allows users with normal shell
-accounts act as if they had a (C)SLIP/PPP account.  This allows users to use
-Netscape/Mosaic, ftp, telnet, etc. from their home machine, as if they had a
-real (C)SLIP/PPP connection (with limitations).
-
-WWW: http://slirp.sourceforge.net/
