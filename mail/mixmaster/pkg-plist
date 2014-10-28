@@ -27,4 +27,3 @@ bin/remailer
 @sample %%ETCDIR%%/usage.txt.in.sample
 man/man1/mixmaster.1.gz
 man/man1/mpgp.1.gz
-@dirrmtry %%ETCDIR%%
