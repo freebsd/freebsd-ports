@@ -1,0 +1,312 @@
+From a9c20c1640cdea0ba902095cb18760f5ebe98875 Mon Sep 17 00:00:00 2001
+From: Kris Moore <kris@pcbsd.org>
+Date: Tue, 28 Oct 2014 15:59:59 -0400
+Subject: [PATCH 1/2] Add support for passing EFI framebuffer information to
+ FreeBSD kernel on FreeBSD 10.1 and later.
+
+---
+ grub-core/loader/i386/bsd.c          | 75 ++++++++++++++++++++++++++++++++++++
+ grub-core/video/efi_gop.c            | 14 +++++++
+ include/grub/i386/bsd.h              |  1 +
+ include/grub/i386/freebsd_bootinfo.h | 33 ++++++++++++++++
+ include/grub/video.h                 | 18 +++++++++
+ 5 files changed, 141 insertions(+)
+ create mode 100644 include/grub/i386/freebsd_bootinfo.h
+
+diff --git grub-core/loader/i386/bsd.c grub-core/loader/i386/bsd.c
+index 8f691e0..c685552 100644
+--- grub-core/loader/i386/bsd.c
++++ grub-core/loader/i386/bsd.c
+@@ -48,6 +48,7 @@ GRUB_MOD_LICENSE ("GPLv3+");
+ #ifdef GRUB_MACHINE_EFI
+ #include <grub/efi/efi.h>
+ #define NETBSD_DEFAULT_VIDEO_MODE "800x600"
++#define FREEBSD_DEFAULT_VIDEO_MODE "800x600"
+ #else
+ #define NETBSD_DEFAULT_VIDEO_MODE "text"
+ #include <grub/i386/pc/vbe.h>
+@@ -584,6 +585,63 @@ freebsd_get_zfs (void)
+   grub_free (uuid);
+ }
+ 
++#ifdef GRUB_MACHINE_EFI
++
++static grub_err_t
++grub_freebsd_setup_video (void)
++{
++  struct grub_video_mode_info mode_info;
++  void *framebuffer;
++  const char *modevar;
++  struct grub_freebsd_btinfo_framebuf efifb;
++  grub_err_t err;
++  grub_video_driver_id_t driv_id;
++
++  modevar = grub_env_get ("gfxpayload");
++
++  /* Now all graphical modes are acceptable.
++     May change in future if we have modes without framebuffer.  */
++  if (modevar && *modevar != 0)
++    {
++      char *tmp;
++      tmp = grub_xasprintf ("%s;" FREEBSD_DEFAULT_VIDEO_MODE, modevar);
++      if (! tmp)
++	return grub_errno;
++      err = grub_video_set_mode (tmp, 0, 0);
++      grub_free (tmp);
++    }
++  else
++    err = grub_video_set_mode (FREEBSD_DEFAULT_VIDEO_MODE, 0, 0);
++
++  if (err)
++    return err;
++
++  driv_id = grub_video_get_driver_id ();
++  if (driv_id == GRUB_VIDEO_DRIVER_NONE)
++    return GRUB_ERR_NONE;
++
++  err = grub_video_get_info_and_fini (&mode_info, &framebuffer);
++
++  if (err)
++    return err;
++
++  efifb.fb_width = mode_info.width;
++  efifb.fb_height = mode_info.height;
++  efifb.fb_stride = mode_info.stride;
++
++  efifb.fb_addr = (grub_addr_t) framebuffer;
++  efifb.fb_size = ALIGN_UP (mode_info.pitch * efifb.fb_height, 65536);
++
++  efifb.fb_mask_red = mode_info.red_mask;
++  efifb.fb_mask_green = mode_info.green_mask;
++  efifb.fb_mask_blue = mode_info.blue_mask;
++  efifb.fb_mask_reserved = mode_info.reserved_mask;
++
++  err = grub_bsd_add_meta ( FREEBSD_MODINFO_METADATA | FREEBSD_BTINFO_FRAMEBUF, &efifb, sizeof (efifb));
++  return err;
++}
++#endif
++
+ static grub_err_t
+ grub_freebsd_boot (void)
+ {
+@@ -687,6 +745,10 @@ grub_freebsd_boot (void)
+ 		*(grub_uint32_t *) p_tag = bootflags;
+ 	      break;
+ 
++	    case FREEBSD_MODINFO_METADATA | FREEBSD_BTINFO_FRAMEBUF:
++	      grub_memcpy (p_tag, tag->data, tag->len);
++	      break;
++
+ 	    case FREEBSD_MODINFO_METADATA | FREEBSD_MODINFOMD_ENVP:
+ 	      if (is_64bit)
+ 		*(grub_uint64_t *) p_tag = bi.environment;
+@@ -716,7 +778,10 @@ grub_freebsd_boot (void)
+ 
+   bi.kern_end = kern_end;
+ 
++#ifndef GRUB_MACHINE_EFI
++  /* Don't set text mode on EFI boot */
+   grub_video_set_mode ("text", 0, 0);
++#endif
+ 
+   if (is_64bit)
+     {
+@@ -1560,6 +1625,16 @@ grub_cmd_freebsd (grub_extcmd_context_t ctxt, int argc, char *argv[])
+ 				   FREEBSD_MODINFOMD_KERNEND, &data, len);
+ 	  if (err)
+ 	    return err;
++
++#ifdef GRUB_MACHINE_EFI
++	  err = grub_freebsd_setup_video ();
++	  if (err)
++	  {
++	    grub_print_error ();
++	    grub_puts_ (N_("Booting in EFI blind mode"));
++	    grub_errno = GRUB_ERR_NONE;
++	  }
++#endif
+ 	}
+       grub_bsd_get_device (&freebsd_biosdev, &unit, &slice, &part);
+       freebsd_zfsguid = 0;
+diff --git grub-core/video/efi_gop.c grub-core/video/efi_gop.c
+index 7f9d1c2..cfe0119 100644
+--- grub-core/video/efi_gop.c
++++ grub-core/video/efi_gop.c
+@@ -180,6 +180,8 @@ grub_video_gop_fill_real_mode_info (unsigned mode,
+   out->mode_type = GRUB_VIDEO_MODE_TYPE_RGB;
+   out->bpp = grub_video_gop_get_bpp (in);
+   out->bytes_per_pixel = out->bpp >> 3;
++  out->stride = in->pixels_per_scanline;
++  out->pixel_format = in->pixel_format;
+   if (!out->bpp)
+     return grub_error (GRUB_ERR_IO, "unsupported video mode");
+   out->pitch = in->pixels_per_scanline * out->bytes_per_pixel;
+@@ -195,6 +197,10 @@ grub_video_gop_fill_real_mode_info (unsigned mode,
+       out->blue_field_pos = 16;
+       out->reserved_mask_size = 8;
+       out->reserved_field_pos = 24;
++      out->red_mask = 0x000000ff;
++      out->green_mask = 0x0000ff00;
++      out->blue_mask = 0x00ff0000;
++      out->reserved_mask = 0xff000000;
+       break;
+ 
+     case GRUB_EFI_GOT_BGRA8:
+@@ -206,6 +212,10 @@ grub_video_gop_fill_real_mode_info (unsigned mode,
+       out->blue_field_pos = 0;
+       out->reserved_mask_size = 8;
+       out->reserved_field_pos = 24;
++      out->red_mask = 0x00ff0000;
++      out->green_mask = 0x0000ff00;
++      out->blue_mask = 0x000000ff;
++      out->reserved_mask = 0xff000000;
+       break;
+ 
+     case GRUB_EFI_GOT_BITMASK:
+@@ -217,6 +227,10 @@ grub_video_gop_fill_real_mode_info (unsigned mode,
+ 				  &out->blue_field_pos);
+       grub_video_gop_get_bitmask (in->pixel_bitmask.a, &out->reserved_mask_size,
+ 				  &out->reserved_field_pos);
++      out->red_mask = in->pixel_bitmask.r;
++      out->green_mask = in->pixel_bitmask.g;
++      out->blue_mask = in->pixel_bitmask.b;
++      out->reserved_mask = in->pixel_bitmask.a;
+       break;
+ 
+     default:
+diff --git include/grub/i386/bsd.h include/grub/i386/bsd.h
+index 524d47a..b7bb545 100644
+--- include/grub/i386/bsd.h
++++ include/grub/i386/bsd.h
+@@ -26,6 +26,7 @@
+ #include <grub/i386/netbsd_reboot.h>
+ #include <grub/i386/openbsd_reboot.h>
+ #include <grub/i386/freebsd_linker.h>
++#include <grub/i386/freebsd_bootinfo.h>
+ #include <grub/i386/netbsd_bootinfo.h>
+ #include <grub/i386/openbsd_bootarg.h>
+ 
+diff --git include/grub/i386/freebsd_bootinfo.h include/grub/i386/freebsd_bootinfo.h
+new file mode 100644
+index 0000000..17e5997
+--- /dev/null
++++ include/grub/i386/freebsd_bootinfo.h
+@@ -0,0 +1,33 @@
++/*
++ *  GRUB  --  GRand Unified Bootloader
++ *  Copyright (C) 2008,2009  Free Software Foundation, Inc.
++ *
++ *  GRUB is free software: you can redistribute it and/or modify
++ *  it under the terms of the GNU General Public License as published by
++ *  the Free Software Foundation, either version 3 of the License, or
++ *  (at your option) any later version.
++ *
++ *  GRUB is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *  GNU General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public License
++ *  along with GRUB.  If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#include <grub/types.h>
++
++#define FREEBSD_BTINFO_FRAMEBUF  0x1005
++
++struct grub_freebsd_btinfo_framebuf {
++  grub_uint64_t        fb_addr;
++  grub_uint64_t        fb_size;
++  grub_int32_t         fb_height;
++  grub_int32_t         fb_width;
++  grub_int32_t         fb_stride;
++  grub_uint32_t        fb_mask_red;
++  grub_uint32_t        fb_mask_green;
++  grub_uint32_t        fb_mask_blue;
++  grub_uint32_t        fb_mask_reserved;
++};
+diff --git include/grub/video.h include/grub/video.h
+index 52c3fd7..e980fb1 100644
+--- include/grub/video.h
++++ include/grub/video.h
+@@ -141,6 +141,12 @@ struct grub_video_mode_info
+   /* Pitch of one scanline.  How many bytes there are for scanline.  */
+   unsigned int pitch;
+ 
++  /* Pixels per scanline */
++  unsigned int stride;
++
++  /* Native pixel format */
++  unsigned int pixel_format;
++
+   /* In index color mode, number of colors.  In RGB mode this is 256.  */
+   unsigned int number_of_colors;
+ 
+@@ -156,21 +162,33 @@ struct grub_video_mode_info
+   /* What is location of red color bits.  In Index Color mode, this is 0.  */
+   unsigned int red_field_pos;
+ 
++  /* Native red mask */
++  unsigned int red_mask;
++
+   /* How many bits are reserved for green color.  */
+   unsigned int green_mask_size;
+ 
+   /* What is location of green color bits.  In Index Color mode, this is 0.  */
+   unsigned int green_field_pos;
+ 
++  /* Native green mask */
++  unsigned int green_mask;
++
+   /* How many bits are reserved for blue color.  */
+   unsigned int blue_mask_size;
+ 
+   /* What is location of blue color bits.  In Index Color mode, this is 0.  */
+   unsigned int blue_field_pos;
+ 
++  /* Native blue mask */
++  unsigned int blue_mask;
++
+   /* How many bits are reserved in color.  */
+   unsigned int reserved_mask_size;
+ 
++  /* Native reserved mask */
++  unsigned int reserved_mask;
++
+   /* What is location of reserved color bits.  In Index Color mode,
+      this is 0.  */
+   unsigned int reserved_field_pos;
+-- 
+2.1.2
+
+
+From 68a48b4a3597b67110ad3c7fcc05f6f0e1e40b05 Mon Sep 17 00:00:00 2001
+From: Kris Moore <kris@pcbsd.org>
+Date: Tue, 28 Oct 2014 16:21:51 -0400
+Subject: [PATCH 2/2] Update changelog with details about the FreeBSD EFI
+ framebuffer passthrough
+
+---
+ ChangeLog | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git ChangeLog ChangeLog
+index 190d19d..0988971 100644
+--- ChangeLog
++++ ChangeLog
+@@ -1,3 +1,12 @@
++2014-10-28  Kris Moore  <kris@pcbsd.org>
++	* grub-core/loader/i386/bsd.c: Add default FreeBSD EFI video mode, and
++	structure to pass information into EFI booted kernel
++	* grub-core/video/efi_gop.c: Expose some additional GOP mode information
++	* include/grub/i386/bsd.h: Include new freebsd_bootinfo.h
++	* include/grub/i386/freebsd_bootinfo.h: Add grub_freebsd_btinfo_framebuf
++	structure for FreeBSD EFI framebuffer passthrough
++	* include/grub/video.h: Add the additional exposed GOP values
++
+ 2014-10-14  Andrei Borzenkov  <arvidjaar@gmail.com>
+ 
+ 	* grub-core/loader/arm/linux.c: Use full initializer for initrd_ctx to
+-- 
+2.1.2
+
