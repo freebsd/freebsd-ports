@@ -1085,7 +1085,6 @@
     SUBDIR += sixxs-aiccu
     SUBDIR += skstream
     SUBDIR += sl2tps
-    SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smb4k-kde4
     SUBDIR += smbldap-tools

@@ -7169,3 +7169,5 @@ mail/dspam-devel|mail/dspam|2014-10-20|Merged into mail/dspam
 dns/bind98|dns/bind99|2014-10-21|BIND 9.8 EOL
 dns/powerdns-devel|dns/powerdns|2014-10-24|Older than dns/powerdns and no longer needed
 www/mod_authz_unixgroup|www/mod_authz_unixgroup22|2014-10-26|Reflect Apache version in portsdir
+lang/kroc||2014-10-28|Has expired: Broken for more than 6 months
+net/slirp||2014-10-28|Has expired: Broken for more than 6 months
