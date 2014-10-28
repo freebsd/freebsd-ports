@@ -2,6 +2,7 @@ libexec/vsftpd
 man/man5/vsftpd.conf.5.gz
 man/man8/vsftpd.8.gz
 @sample etc/vsftpd.conf.sample
+@dir share/vsftpd/empty
 @dir /var/ftp
 %%PORTDOCS%%%%DOCSDIR%%/AUDIT
 %%PORTDOCS%%%%DOCSDIR%%/BENCHMARKS
