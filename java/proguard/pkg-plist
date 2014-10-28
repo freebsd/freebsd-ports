@@ -4,4 +4,3 @@ bin/retrace
 %%DATADIR%%/proguard.jar
 %%DATADIR%%/proguardgui.jar
 %%DATADIR%%/retrace.jar
-@dirrm %%DATADIR%%
