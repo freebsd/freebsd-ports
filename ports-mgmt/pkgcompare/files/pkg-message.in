@@ -1,0 +1,14 @@
+************************************************************************
+
+NOTICE
+
+man page is installed in %%LOCALBASE%%/man/man8, if you do not yet
+have the configuration in /etc/manpath.config, add
+
+OPTIONAL_MANPATH        %%LOCALBASE%%/man
+
+to view all man pages which are installed in /usr/local/man/manX/
+
+
+************************************************************************
+
