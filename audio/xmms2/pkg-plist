@@ -136,6 +136,7 @@ libdata/pkgconfig/xmms2-client.pc
 libdata/pkgconfig/xmms2-plugin.pc
 %%ET%%man/man1/xmms2-et.1.gz
 man/man1/xmms2-launcher.1.gz
+%%MDNS_AVAHI%%man/man1/xmms2-mdns-avahi.1.gz
 man/man1/xmms2.1.gz
 man/man1/xmms2d.1.gz
 share/pixmaps/xmms2-128.png
