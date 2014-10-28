@@ -30,6 +30,7 @@
     SUBDIR += pchecker
     SUBDIR += pib
     SUBDIR += pkg
+    SUBDIR += pkgcompare
     SUBDIR += pkg-devel
     SUBDIR += pkg-orphan
     SUBDIR += pkg-plist
