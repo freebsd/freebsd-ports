@@ -153,6 +153,6 @@ etc/pear.conf.sample
 @rmtry share/pear/.depdblock
 @rmtry share/pear/.filemap
 @rmtry share/pear/.lock
-@exec mkdir -p %D/share/pear/.registry/.channel.__uri
-@exec mkdir -p %D/share/pear/.registry/.channel.doc.php.net
-@exec mkdir -p %D/share/pear/.registry/.channel.pecl.php.net
+@dir %%DATADIR%%/.registry/.channel.__uri
+@dir %%DATADIR%%/.registry/.channel.doc.php.net
+@dir %%DATADIR%%/.registry/.channel.pecl.php.net
