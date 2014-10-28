@@ -20,8 +20,13 @@ NEED_ROOT=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
+.if !defined(INSTALL_AS_USER)
 CONFIGURE_ARGS+=--with-user=news
 CONFIGURE_ARGS+=--with-group=dialer
+.else
+CONFIGURE_ARGS+=--with-user=`id -u -n`
+CONFIGURE_ARGS+=--with-group=`id -g -n`
+.endif
 CONFIGURE_ARGS+=--with-execdir=${PREFIX}/libexec/uconnect
 CONFIGURE_ARGS+=--with-confdir=${PREFIX}/etc/uconnect
 CONFIGURE_ARGS+=--with-spooldir=/var/spool/uconnect

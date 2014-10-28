@@ -35,15 +35,20 @@ etc/uconnect/myself.zconnect
 etc/uconnect/systems.sample
 etc/uconnect/xprogs
 etc/uconnect/zconnecthosts
+@owner news
+@group dialer
+@dir etc/uconnect
 @dir etc/uconnect/systems
 @dir /var/spool/uconnect/backin
 @dir /var/spool/uconnect/backout
 @dir /var/spool/uconnect/error
 @dir /var/spool/uconnect/locks
 @dir /var/spool/uconnect/logfiles
-@dir /var/spool/uconnect/netcall
 @dir /var/spool/uconnect/rsmtp
 @dir /var/spool/uconnect
+@group
+@dir /var/spool/uconnect/netcall
+@owner
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.configure
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
