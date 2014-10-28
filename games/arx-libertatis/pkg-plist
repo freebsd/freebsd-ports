@@ -1,4 +1,5 @@
 bin/arx
+bin/arx-install-data
 bin/arxsavetool
 bin/arxunpak
 %%CRASHREPORTER%%libexec/arxcrashreporter
