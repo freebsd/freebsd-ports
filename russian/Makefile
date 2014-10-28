@@ -9,6 +9,7 @@
     SUBDIR += bugzilla44
     SUBDIR += calligra-l10n
     SUBDIR += d1489
+    SUBDIR += emkatic
     SUBDIR += eric4
     SUBDIR += fortune-bashorgru
     SUBDIR += fortuneru
