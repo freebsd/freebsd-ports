@@ -1,6 +1,6 @@
---- Process.h.orig	2013-04-21 03:34:39.000000000 +0800
-+++ Process.h	2013-04-21 03:34:49.000000000 +0800
-@@ -179,11 +179,11 @@
+--- Process.h.orig	2014-10-19 02:06:35.000000000 +0800
++++ Process.h	2014-10-19 02:06:49.000000000 +0800
+@@ -201,11 +201,11 @@
  bool Process_setPriority(Process* this, int priority);
  
  bool Process_changePriorityBy(Process* this, size_t delta);

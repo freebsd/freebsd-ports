@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	htop
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	http://hisham.hm/htop/releases/${PORTVERSION}/
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Better top(1) - interactive process viewer
+
+LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	LSOF
 OPTIONS_DEFAULT=LSOF
