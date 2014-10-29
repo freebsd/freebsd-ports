@@ -3,7 +3,7 @@
 
 PORTNAME=	monitoring-plugins
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ LOCAL/mat/${PORTNAME}
 
@@ -17,8 +17,8 @@ CONFLICTS_INSTALL=	nagios-plugins-*
 
 USES=		charsetfix gmake perl5 libtool
 USE_SUBMAKE=	yes
-
-OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS DBI EXTRAOPTS
+WITH=SSH_PORTABLE
+OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS DBI EXTRAOPTS SSH_PORTABLE
 OPTIONS_SINGLE=	DNS
 OPTIONS_SINGLE_DNS=	DNS_BASE DNS_BINDTOOLS DNS_BIND99 DNS_BIND910
 OPTIONS_DEFAULT=IPV6 EXTRAOPTS DNS_BASE
@@ -34,6 +34,7 @@ LDAP_DESC=	OpenLDAP support (check_ldap)
 JAIL_DESC=	Compilation within jail(8) (see help)
 DBI_DESC=	Check database using DBI
 EXTRAOPTS_DESC=	Parsing of plugins ini config files for extra options
+SSH_PORTABLE_DESC=	Build check_ssh with ports openssh (instead of base)
 
 DNS_DESC=	Configuration of check_dig and check_dns (see help)
 
@@ -121,6 +122,10 @@ DNS_BIND910_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:${PORTSDIR}/dns/bind910
 DNS_BIND910_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
 				--with-nslookup-command=${LOCALBASE}/bin/nslookup
 
+SSH_PORTABLE_BUILD_DEPENDS=	${LOCALBASE}/bin/ssh:${PORTSDIR}/security/openssh-portable
+SSH_PORTABLE_RUN_DEPENDS:=	${SSH_PORTABLE_BUILD_DEPENDS}
+SSH_PORTABLE_CONFIGURE_ON=	--with-ssh-command=${LOCALBASE}/bin/ssh
+
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 1000055 && ${PORT_OPTIONS:MDNS_BASE}
@@ -135,7 +140,7 @@ CONFIGURE_ARGS+=	--with-dig-command=/usr/bin/dig \
 PLIST_SUB+=	CHECK_DNS=""
 .endif
 
-.if !exists(/usr/bin/ssh)
+.if !exists(/usr/bin/ssh) && empty(PORT_OPTIONS:MSSH_PORTABLE)
 PLIST_SUB+=	SSH="@comment "
 .else
 PLIST_SUB+=	SSH=""
