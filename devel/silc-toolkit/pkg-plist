@@ -690,7 +690,7 @@ libdata/pkgconfig/silcclient.pc
 %%PORTDOCS%%%%DOCSDIR%%/toolkit/silcfsm-silc_fsm_finish.html
 %%PORTDOCS%%%%DOCSDIR%%/toolkit/silcfsm-silc_fsm_free.html
 %%PORTDOCS%%%%DOCSDIR%%/toolkit/silcfsm-silc_fsm_get_context.html
-%%PORTDOCS%%%%DOCSDIR%%/toolkit/silcfsm-silc_fsm_get_%%PERL_ARCH%%ine.html
+%%PORTDOCS%%%%DOCSDIR%%/toolkit/silcfsm-silc_fsm_get_machine.html
 %%PORTDOCS%%%%DOCSDIR%%/toolkit/silcfsm-silc_fsm_get_schedule.html
 %%PORTDOCS%%%%DOCSDIR%%/toolkit/silcfsm-silc_fsm_get_state_context.html
 %%PORTDOCS%%%%DOCSDIR%%/toolkit/silcfsm-silc_fsm_init.html
