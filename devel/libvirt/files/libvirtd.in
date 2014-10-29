@@ -20,7 +20,7 @@ rcvar=libvirtd_enable
 load_rc_config $name
 
 command=%%PREFIX%%/sbin/libvirtd
-pidfile=%%LOCALBASE%%/var/run/${name}.pid
+pidfile=/var/run/${name}.pid
 
 command_args="--daemon --pid-file=${pidfile}"
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.2.6
-PORTREVISION=	4
+PORTVERSION=	1.2.9
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -43,6 +42,8 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
+VARDIR=		/var
+
 USE_RC_SUBR=	libvirtd
 
 GNU_CONFIGURE=	yes
@@ -55,7 +56,8 @@ CONFIGURE_ARGS=	--without-sasl \
 		--without-sysctl \
 		--without-lxc \
 		--without-uml \
-		--with-ssh2
+		--with-ssh2 \
+		--localstatedir=${VARDIR}
 
 # random_data fix can be removed when 8.x is eol
 CONFIGURE_ENV=	ac_cv_type_struct_random_data=""
@@ -65,11 +67,12 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix gmake libtool pathfix pkgconfig perl5
+USES=		charsetfix gmake libtool pathfix pkgconfig perl5 cpe
+CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-SHLIB_VER=	0.1002.6
+SHLIB_VER=	0.1002.9
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
@@ -79,6 +82,10 @@ PORTDOCS=	*
 #work around an options bug (thanks mat@)
 .if ${ARCH} != amd64
 PLIST_SUB+=	BHYVE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MBHYVE}
+STRIP_FILES+=	libvirt/connection-driver/libvirt_driver_bhyve.so
 .endif
 
 post-patch:
@@ -107,6 +114,23 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+.endfor
+
+.for dir in run/libvirt/network \
+	run/libvirt/qemu \
+	run/libvirt/lockd \
+	log/libvirt/uml \
+	log/libvirt/qemu \
+	log/libvirt/lxc \
+	lib/libvirt/boot \
+	lib/libvirt/lockd/files \
+	lib/libvirt/images \
+	lib/libvirt/dnsmasq \
+	lib/libvirt/filesystems \
+	lib/libvirt/network \
+	lib/libvirt/qemu/channel/target \
+	cache/libvirt/qemu
+	@${MKDIR} "${STAGEDIR}/${VARDIR}/${dir}"
 .endfor
 
 regression-test: build

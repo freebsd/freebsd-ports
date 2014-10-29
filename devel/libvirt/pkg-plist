@@ -102,6 +102,7 @@ share/augeas/lenses/tests/test_virtlockd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/formatsecret.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatsnapshot.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatstorage.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatdomaincaps.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatstorageencryption.html
 %%DOCSDIR%%%%PORTVERSION%%/html/generic.css
 %%DOCSDIR%%%%PORTVERSION%%/html/goals.html
@@ -180,6 +181,7 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/schemas/basictypes.rng
 %%DATADIR%%/schemas/capability.rng
 %%DATADIR%%/schemas/domain.rng
+%%DATADIR%%/schemas/domaincaps.rng
 %%DATADIR%%/schemas/domaincommon.rng
 %%DATADIR%%/schemas/domainsnapshot.rng
 %%DATADIR%%/schemas/interface.rng
@@ -272,3 +274,30 @@ lib/libvirt/connection-driver/libvirt_driver_network.so
 lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_storage.so
 lib/libvirt/connection-driver/libvirt_driver_vbox.so
+lib/libvirt/connection-driver/libvirt_driver_vbox_network.so
+lib/libvirt/connection-driver/libvirt_driver_vbox_storage.so
+%%QEMU%%@unexec rmdir /var/run/libvirt/qemu
+%%QEMU%%@unexec rmdir /var/lib/libvirt/qemu/channel/target
+%%QEMU%%@unexec rmdir /var/lib/libvirt/qemu/channel
+%%QEMU%%@unexec rmdir /var/lib/libvirt/qemu
+%%QEMU%%@unexec rmdir /var/cache/libvirt/qemu
+@unexec rmdir /var/cache/libvirt
+@unexec rmdir /var/cache
+@unexec rmdir /var/lib/libvirt/boot
+@unexec rmdir /var/lib/libvirt/dnsmasq
+@unexec rmdir /var/lib/libvirt/filesystems
+@unexec rmdir /var/lib/libvirt/images
+@unexec rmdir /var/lib/libvirt/lockd/files
+@unexec rmdir /var/lib/libvirt/lockd
+@unexec rmdir /var/lib/libvirt/network
+@unexec rmdir /var/lib/libvirt
+@unexec rmdir /var/lib
+@unexec rmdir /var/log/libvirt/lxc
+@unexec rmdir /var/log/libvirt/qemu
+@unexec rmdir /var/log/libvirt/uml
+@unexec rmdir /var/log/libvirt
+@unexec rmdir /var/log
+@unexec rmdir /var/run/libvirt/lockd
+@unexec rmdir /var/run/libvirt/network
+@unexec rmdir /var/run/libvirt
+@unexec rmdir /var/run

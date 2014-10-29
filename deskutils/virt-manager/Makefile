@@ -3,7 +3,7 @@
 
 PORTNAME=	virt-manager
 PORTVERSION=	0.9.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.et.redhat.com/download/sources/${PORTNAME}/ \
 		LOCAL/jgh/deskutils/${PORTNAME}/

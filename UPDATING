@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141029:
+  AFFECTS: users of devel/libvirt
+  AUTHOR: jgh@FreeBSD.org
+
+  Application state and resource information has been changed from older
+  path of /usr/local/var to /var. Users are advised to copy over contents
+  of old var directory to new location if they wish to preserve resources
+  from the old setup.
+
 20141019:
   AFFECTS: users of x11/kde4-runtime
   AUTHOR: kde@FreeBSD.org
