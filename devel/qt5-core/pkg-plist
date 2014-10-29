@@ -676,6 +676,5 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_core.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_core_private.pri
 libdata/pkgconfig/Qt5Core.pc
-@cwd %%QT_PREFIX%%
 @comment Ensure that a (even empty) qconfig-modules.h exists.
-@exec touch %D/%%QT_INCDIR%%/QtCore/qconfig-modules.h
+@exec touch %%QT_PREFIX%%/%%QT_INCDIR%%/QtCore/qconfig-modules.h
