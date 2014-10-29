@@ -7,5 +7,3 @@ lib/libclunk.so
 lib/libmrt.so
 lib/libsdlx.so
 %%DATADIR%%/resources.dat
-@dirrm %%DATADIR%%
-@dirrm lib/btanks
