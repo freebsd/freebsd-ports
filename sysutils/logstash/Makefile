@@ -3,6 +3,7 @@
 
 PORTNAME=	logstash
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://download.elasticsearch.org/logstash/logstash/:0 \
 		https://github.com/emcrisostomo/jnr-ffi/releases/download/2.0.0/:1
@@ -56,8 +57,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${LOGSTASH_DATA_DIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${LOGSTASH_DIR})
 	${INSTALL_DATA} ${FILESDIR}/logstash.conf.sample ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${FILESDIR}/logstash.conf ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${FILESDIR}/elasticsearch.yml ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/elasticsearch.yml.sample ${STAGEDIR}${ETCDIR}
 .for x in ${LOGSTASH_BIN_FILES}
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_DIR}/bin/${x}
 .endfor

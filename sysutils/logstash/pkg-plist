@@ -1,6 +1,5 @@
-%%ETCDIR%%/elasticsearch.yml
-%%ETCDIR%%/logstash.conf
-%%ETCDIR%%/logstash.conf.sample
+@sample %%ETCDIR%%/elasticsearch.yml.sample
+@sample %%ETCDIR%%/logstash.conf.sample
 logstash/LICENSE
 logstash/README.md
 logstash/bin/logstash
