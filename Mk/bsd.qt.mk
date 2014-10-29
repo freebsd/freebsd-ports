@@ -613,17 +613,16 @@ qt-post-install:
 	@${ECHO_CMD} \
 		>> ${STAGEDIR}${QT_INCDIR}/QtCore/modules/qconfig-${QT_MODNAME}.h
 .  endfor
-	@${ECHO_CMD} "@cwd ${QT_PREFIX}" >> ${TMPPLIST}
-	@${ECHO_CMD} "${QT_INCDIR_REL}/QtCore/modules/qconfig-${QT_MODNAME}.h" \
+	@${ECHO_CMD} "${QT_PREFIX}/${QT_INCDIR_REL}/QtCore/modules/qconfig-${QT_MODNAME}.h" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@exec echo '#include <QtCore/modules/qconfig-${QT_MODNAME}.h>' >> %D/${QT_INCDIR_REL}/QtCore/qconfig-modules.h" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec echo '#include <QtCore/modules/qconfig-${QT_MODNAME}.h>' >> ${QT_PREFIX}/${QT_INCDIR_REL}/QtCore/qconfig-modules.h" \
+		>> ${TMPPLIST}
 . endif # ${QT_DEFINES:N-*}
 . if ${QT_CONFIG:N-*}
 	@${MKDIR} ${STAGEDIR}${QT_MKSPECDIR}/modules
 	${ECHO_CMD} "QT_CONFIG += ${QT_CONFIG:N-*:O:u}" \
 		> ${STAGEDIR}${QT_MKSPECDIR}/modules/qt_config_${QT_MODNAME}.pri
-	@${ECHO_CMD} "@cwd ${QT_PREFIX}" >> ${TMPPLIST}
-	@${ECHO_CMD} "${QT_MKSPECDIR_REL}/modules/qt_config_${QT_MODNAME}.pri" \
+	@${ECHO_CMD} "${QT_PREFIX}/${QT_MKSPECDIR_REL}/modules/qt_config_${QT_MODNAME}.pri" \
 		>> ${TMPPLIST}
 . endif # ${QT_CONFIG:N-*}
 .endif # defined(QT_DIST) && ! ${_QT_VERSION:M4*}
