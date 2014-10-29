@@ -6,7 +6,7 @@ include/GeoIPCity.h
 lib/libGeoIP.a
 lib/libGeoIP.so
 lib/libGeoIP.so.1
-lib/libGeoIP.so.1.6.2
+lib/libGeoIP.so.%%PORTVERSION%%
 libdata/pkgconfig/geoip.pc
 man/man1/geoiplookup.1.gz
 man/man1/geoiplookup6.1.gz
