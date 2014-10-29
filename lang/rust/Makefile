@@ -3,6 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
