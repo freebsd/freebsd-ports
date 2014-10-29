@@ -216,29 +216,3 @@ share/applications/lgeneral.desktop
 %%NLS%%share/locale/en/LC_MESSAGES/lgeneral.mo
 %%NLS%%share/locale/en/LC_MESSAGES/pg.mo
 share/pixmaps/lgeneral48.png
-@dirrm %%DATADIR%%/units
-@dirrm %%DATADIR%%/themes/default
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/terrain
-@dirrm %%DATADIR%%/sounds/pg
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/scenarios/pg
-@dirrm %%DATADIR%%/scenarios
-@dirrm %%DATADIR%%/nations
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/maps/pg
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/gfx/units
-@dirrm %%DATADIR%%/gfx/terrain/pg
-@dirrm %%DATADIR%%/gfx/terrain
-@dirrm %%DATADIR%%/gfx/flags
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%/convdata
-@dirrm %%DATADIR%%/campaigns
-@dirrm %%DATADIR%%/ai_modules
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/share/lgeneral/gfx/terrain/pg
-@exec mkdir -p %D/share/lgeneral/maps/pg
-@exec mkdir -p %D/share/lgeneral/scenarios/pg
-@exec mkdir -p %D/share/lgeneral/sounds/pg
