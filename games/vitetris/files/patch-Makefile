@@ -11,7 +11,7 @@
 +HISCORE_FILENAME = /var/games/vitetris-hiscores
  
 -INSTALL = install -oroot -groot
-+INSTALL = install -oroot -gwheel
++INSTALL = install
  
  default: build
  	@echo Done.
