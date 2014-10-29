@@ -102,13 +102,13 @@ include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject.h
 %%LIB32DIR%%/girepository-1.0/LibvirtGObject-1.0.typelib
 %%LIB32DIR%%/libvirt-gconfig-1.0.so
 %%LIB32DIR%%/libvirt-gconfig-1.0.so.0
-%%LIB32DIR%%/libvirt-gconfig-1.0.so.0.1.8
+%%LIB32DIR%%/libvirt-gconfig-1.0.so.0.1.9
 %%LIB32DIR%%/libvirt-glib-1.0.so
 %%LIB32DIR%%/libvirt-glib-1.0.so.0
-%%LIB32DIR%%/libvirt-glib-1.0.so.0.1.8
+%%LIB32DIR%%/libvirt-glib-1.0.so.0.1.9
 %%LIB32DIR%%/libvirt-gobject-1.0.so
 %%LIB32DIR%%/libvirt-gobject-1.0.so.0
-%%LIB32DIR%%/libvirt-gobject-1.0.so.0.1.8
+%%LIB32DIR%%/libvirt-gobject-1.0.so.0.1.9
 %%LIB32DIR%%/python2.7/site-packages/libvirtglib.py
 %%LIB32DIR%%/python2.7/site-packages/libvirtglibmod.so
 libdata/pkgconfig/libvirt-gconfig-1.0.pc
@@ -127,7 +127,6 @@ share/gtk-doc/html/Libvirt-gconfig/GVirConfigObject.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigSecret.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigStoragePool.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigStorageVol.html
-share/gtk-doc/html/Libvirt-gconfig/Libvirt-gconfig-GVirConfig.html
 share/gtk-doc/html/Libvirt-gconfig/Libvirt-gconfig.devhelp2
 share/gtk-doc/html/Libvirt-gconfig/annotation-glossary.html
 share/gtk-doc/html/Libvirt-gconfig/api-index-full.html
@@ -166,7 +165,6 @@ share/gtk-doc/html/Libvirt-gobject/GVirSecret.html
 share/gtk-doc/html/Libvirt-gobject/GVirStoragePool.html
 share/gtk-doc/html/Libvirt-gobject/GVirStorageVol.html
 share/gtk-doc/html/Libvirt-gobject/GVirStream.html
-share/gtk-doc/html/Libvirt-gobject/Libvirt-gobject-GVir.html
 share/gtk-doc/html/Libvirt-gobject/Libvirt-gobject.devhelp2
 share/gtk-doc/html/Libvirt-gobject/annotation-glossary.html
 share/gtk-doc/html/Libvirt-gobject/api-index-full.html
