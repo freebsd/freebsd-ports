@@ -10,10 +10,10 @@ lib/cmake/libssh/libssh-config-version.cmake
 %%STATIC%%lib/libssh.a
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.4.0
+lib/libssh.so.4.4.1
 %%STATIC%%lib/libssh_threads.a
 lib/libssh_threads.so
 lib/libssh_threads.so.4
-lib/libssh_threads.so.4.4.0
+lib/libssh_threads.so.4.4.1
 libdata/pkgconfig/libssh.pc
 libdata/pkgconfig/libssh_threads.pc
