@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Thread-Queue
-PORTVERSION=	3.02
+PORTVERSION=	3.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Perl5 thread-safe queues
 
 LICENSE=	ART10 GPLv1
