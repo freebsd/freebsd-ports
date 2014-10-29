@@ -1,10 +1,6 @@
-@group games
-@mode 2555
-bin/lexter
-@group
-@mode
+@(,games,2555) bin/lexter
 man/man6/lexter.6.gz
 share/lexter/dict.en
 share/lexter/dict.fr
 @dirrm share/lexter
-@unexec [ -s /var/games/lexter.scores ] || rm -f /var/games/lexter.scores
+@sample(,games,664) /var/games/lexter.scores.sample
