@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	osm2pgsql
-PORTVERSION=	0.84.0
-PORTREVISION=	5
+PORTVERSION=	0.86.0
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OSM XML data to PostgreSQL database
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 		libgeos.so:${PORTSDIR}/graphics/geos \
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
-GH_COMMIT=	237b125
+GH_COMMIT=	b7705f1
 
 USES=		autoreconf gmake libtool lua pgsql tar:bzip2
 GNU_CONFIGURE=	yes
@@ -34,8 +34,11 @@ PLIST_FILES=	bin/nodecachefilereader \
 PORTDOCS=	ChangeLog README AUTHORS TODO
 PORTDATA=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/m4/*.m4
+	@${REINPLACE_CMD} -e 's|AC_MSG_WARN|AC_MSG_ERROR|' ${WRKSRC}/configure.ac
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
