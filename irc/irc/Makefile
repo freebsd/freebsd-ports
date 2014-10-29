@@ -19,11 +19,17 @@ CONFLICTS_INSTALL=	charybdis-[0-9]* ircd-hybrid-[0-9]* Nefarious-[0-9]* \
 USE_RC_SUBR=	ircd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd
-BUILD_WRKSRC=	${WRKSRC}/${MACHINE_ARCH}-unknown-${OPSYS:tl}${OSREL}
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
+BUILD_WRKSRC=		${WRKSRC}/build
+INSTALL_WRKSRC=		${BUILD_WRKSRC}
+CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
 
 OPTIONS_DEFINE=	IPV6
 OPTIONS_DEFAULT=IPV6
 IPV6_CONFIGURE_ENABLE=	ipv6
+
+pre-configure:
+	@${MKDIR} ${BUILD_WRKSRC}
+	${CP} -p ${WRKSRC}/support/configure ${BUILD_WRKSRC}
+	${CP} -p ${WRKSRC}/support/config.h.dist ${BUILD_WRKSRC}/config.h
 
 .include <bsd.port.mk>
