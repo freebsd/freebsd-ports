@@ -715,6 +715,7 @@
     SUBDIR += pinball
     SUBDIR += pingus
     SUBDIR += pink-pony
+    SUBDIR += pioneer
     SUBDIR += pioneers
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
