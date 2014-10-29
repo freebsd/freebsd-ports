@@ -14,20 +14,6 @@ PRE-INSTALL)
   ;;
 
 POST-INSTALL)
-  echo "---> Starting post-install script:"
-
-  # Create home directory if required
-  if [ -d "%%POSTGREYDIR%%" ]; then
-    echo "---> Using existing Postgrey database directory (%%POSTGREYDIR%%)"
-    echo "     (There may be existing active postgrey databases - this installation"
-    echo "     will attempt to preserve them.)"
-  else
-    echo "---> Creating Postgrey database directory (%%POSTGREYDIR%%)"
-    (umask 002 && /bin/mkdir -p "%%POSTGREYDIR%%") || exit 1
-    /usr/sbin/chown -R "%%USER%%:%%GROUP%%" "%%POSTGREYDIR%%" || exit 1
-    /bin/chmod g+s "%%POSTGREYDIR%%" || exit 1
-  fi
-
   for i in %%ETCFILES%%; do
     if [ ! -f "%%PREFIX%%/etc/postfix/postgrey_${i}" ]; then
 	echo "---> Installing new config file %%PREFIX%%/etc/postfix/postgrey_${i}"
