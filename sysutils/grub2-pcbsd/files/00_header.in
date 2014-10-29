@@ -223,7 +223,6 @@ EOF
     insmod videotest
     insmod videoinfo
     set gfxmode=${GRUB_GFXMODE}
-    set gfxpayload=vga=normal
   fi
 EOF
 
