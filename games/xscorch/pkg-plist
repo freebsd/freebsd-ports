@@ -10,6 +10,3 @@ man/man6/xscorch.6.gz
 %%DATADIR%%/sounds/README
 %%DATADIR%%/weapons.def
 %%DATADIR%%/xscorch.txt
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
