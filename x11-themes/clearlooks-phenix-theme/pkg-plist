@@ -132,9 +132,3 @@ share/themes/Clearlooks-Phenix/xfwm4/top-left-inactive.xpm
 share/themes/Clearlooks-Phenix/xfwm4/top-right-active.png
 share/themes/Clearlooks-Phenix/xfwm4/top-right-active.xpm
 share/themes/Clearlooks-Phenix/xfwm4/top-right-inactive.xpm
-@dirrm share/themes/Clearlooks-Phenix/xfwm4/png
-@dirrm share/themes/Clearlooks-Phenix/xfwm4
-@dirrm share/themes/Clearlooks-Phenix/gtk-3.0/img
-@dirrm share/themes/Clearlooks-Phenix/gtk-3.0
-@dirrm share/themes/Clearlooks-Phenix/gtk-2.0
-@dirrm share/themes/Clearlooks-Phenix

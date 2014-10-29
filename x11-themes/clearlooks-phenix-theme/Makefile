@@ -2,22 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	clearlooks-phenix
-PORTVERSION=	3.0.16
+PORTVERSION=	4.0
 CATEGORIES=	x11-themes xfce
-MASTER_SITES=	GENTOO
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	GH GHC
 PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Gtk3 port of Clearlooks theme for the Xfce Desktop
 
+LICENSE=	GPLv3
+
 RUN_DEPENDS=	gtk-engines2>=2.20.2:${PORTSDIR}/x11-themes/gtk-engines2
 
-WRKSRC=	${WRKDIR}/projets-divers-${PORTNAME}
+USE_GITHUB=	yes
 NO_BUILD=	yes
 
-post-patch:
-	@${RM} ${WRKSRC}/gtk-?.0/*.orig
+GH_ACCOUNT=	jpfleury
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	${PORTVERSION}
+GH_COMMIT=	fcf15e9
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/Clearlooks-Phenix
