@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.xscorch.org/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer tank shoot-em-up
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	MIKMOD
