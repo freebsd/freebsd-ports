@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	imap-${PORTVERSION}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mark Crispin's C-client mail access routines
 
 LICENSE=	APACHE20
