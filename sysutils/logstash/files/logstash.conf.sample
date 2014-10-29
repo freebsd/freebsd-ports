@@ -2,52 +2,54 @@ input {
 
 	file {
 		type => "syslog"
-	    #  # Wildcards work, here :)
-	    #  path => [ "/var/log/*.log", "/var/log/messages", "/var/log/syslog" ]
-	    path => "/var/log/messages"
-	    start_position => "beginning"
+		# path => [ "/var/log/*.log", "/var/log/messages", "/var/log/syslog" ]
+		path => "/var/log/messages"
+		start_position => "beginning"
 	}
 }
 
 filter {
-  if [type] == "syslog" {
-	grok {
-	  match => { "message" => "%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} (%{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\])?: %{GREEDYDATA:syslog_message}|%{GREEDYDATA:syslog_message})" }
-	  add_field => [ "received_at", "%{@timestamp}" ]
-	  add_field => [ "received_from", "%{@source_host}" ]
-	}
-    
-    if !("_grokparsefailure" in [tags]) {
-      mutate {
-        replace => [ "@source_host", "%{syslog_hostname}" ]
-        replace => [ "@message", "%{syslog_message}" ]
-      }
-    }
-    mutate {
-      remove_field => [ "syslog_hostname", "syslog_message" ]
-    }
-    date {
-      match => [ "syslog_timestamp","MMM  d HH:mm:ss", "MMM dd HH:mm:ss", "ISO8601" ] 
-    }
-	syslog_pri { }
-  }
+# An filter may change the regular expression used to match a record or a field,
+# alter the value of parsed fields, add or remove fields, etc.
+#
+#	if [type] == "syslog" {
+#		grok {
+#			match => { "message" => "%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} (%{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\])?: %{GREEDYDATA:syslog_message}|%{GREEDYDATA:syslog_message})" }
+#			add_field => [ "received_at", "%{@timestamp}" ]
+#			add_field => [ "received_from", "%{@source_host}" ]
+#		}
+#    
+#		if !("_grokparsefailure" in [tags]) {
+#			mutate {
+#				replace => [ "@source_host", "%{syslog_hostname}" ]
+#				replace => [ "@message", "%{syslog_message}" ]
+#			}
+#		}
+#		mutate {
+#			remove_field => [ "syslog_hostname", "syslog_message" ]
+#		}
+#		date {
+#			match => [ "syslog_timestamp","MMM  d HH:mm:ss", "MMM dd HH:mm:ss", "ISO8601" ] 
+#		}
+#		syslog_pri { }
+#	}
 }
 
 output {
-  # Emit events to stdout for easy debugging of what is going through
-  # logstash.
-  #stdout { debug => "true" }
+	# Emit events to stdout for easy debugging of what is going through
+	# logstash.
+	# stdout { debug => "true" }
 
-  # This will use elasticsearch to store your logs.
-  # The 'embedded' option will cause logstash to run the elasticsearch
-  # server in the same process, so you don't have to worry about
-  # how to download, configure, or run elasticsearch!
-  elasticsearch { 
-     embedded => true
-     #embedded_http_port => 9200
-     #cluster => elasticsearch
-     #host => host
-     #port => port
-      
-  }
+	# This will use elasticsearch to store your logs.
+	# The 'embedded' option will cause logstash to run the elasticsearch
+	# server in the same process, so you don't have to worry about
+	# how to download, configure, or run elasticsearch!
+	elasticsearch { 
+		embedded => true
+		host => "127.0.0.1"
+		# embedded_http_port => 9200
+		# cluster => elasticsearch
+		# host => host
+		# port => port
+	}
 }
