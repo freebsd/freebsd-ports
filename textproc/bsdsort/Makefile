@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	bsd-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD-licensed version of sort
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -20,6 +20,7 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		CATDIR="${MANPREFIX}/man/man" \
 		NLSDIR="${PREFIX}/share/nls" \
 		MK_GNU_SORT="no"
+USES=		uidfix
 
 CFLAGS+=	-std=c99
 
