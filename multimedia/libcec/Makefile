@@ -28,4 +28,10 @@ INSTALL_TARGET=	install-strip
 post-patch:
 	${REINPLACE_CMD} 's;-Wno-psabi;;' ${WRKSRC}/configure.ac
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == armv6
+CONFIGURE_ARGS=	--disable-rpi
+.endif
+
 .include <bsd.port.mk>
