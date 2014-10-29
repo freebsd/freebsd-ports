@@ -57,6 +57,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f8c88d50-5fb3-11e4-81bd-5453ed2e2b49">
+    <topic>libssh -- PRNG state reuse on forking servers</topic>
+    <affects>
+      <package>
+	<name>libssh</name>
+	<range><lt>0.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aris Adamantiadis reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/03/05/1">
+	  <p>When accepting a new connection, the server forks and the
+	    child process handles the request. The RAND_bytes() function
+	    of openssl doesn't reset its state after the fork, but
+	    simply adds the current process id (getpid) to the PRNG
+	    state, which is not guaranteed to be unique.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0017</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2014/03/05/1</mlist>
+      <url>http://secunia.com/advisories/57407</url>
+    </references>
+    <dates>
+      <discovery>2014-03-05</discovery>
+      <entry>2014-10-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d057c5e6-5b20-11e4-bebd-000c2980a9f3">
     <topic>libpurple/pidgin -- multiple vulnerabilities</topic>
     <affects>
