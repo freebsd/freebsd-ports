@@ -3,6 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
