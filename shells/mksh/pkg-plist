@@ -1,4 +1,3 @@
 @shell bin/mksh
 man/man1/mksh.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.mkshrc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
