@@ -8,7 +8,5 @@ include/xglk/xg_win_textbuf.h
 include/xglk/xg_win_textgrid.h
 include/xglk/xglk.h
 include/xglk/xglk_option.h
-@dirrm include/xglk
 lib/libxglk.a
 %%DATADIR%%/Make.xglk
-@dirrm %%DATADIR%%
