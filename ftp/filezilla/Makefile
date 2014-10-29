@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.9.0.5
+PORTVERSION=	3.9.0.6
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	matthew@reztek.cz
 COMMENT=	Fast and reliable cross-platform FTP, FTPS, and SFTP client
 
 LICENSE=	GPLv2
