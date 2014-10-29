@@ -3,7 +3,7 @@
 
 PORTNAME=	postgrey
 PORTVERSION=	1.34
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
@@ -23,6 +23,8 @@ NO_BUILD=	yes
 POD2MAN?=	pod2man
 PORTDOCS=	README Changes README.exim
 SUB_FILES=	pkg-install
+PLIST_SUB=	USER=${PGY_USERNAME} \
+		GROUP=${PGY_GROUPNAME}
 SUB_LIST=	USER=${PGY_USERNAME} \
 		GROUP=${PGY_GROUPNAME} \
 		ETCFILES="${ETCFILES}" \

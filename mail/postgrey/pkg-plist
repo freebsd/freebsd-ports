@@ -8,5 +8,4 @@ man/man1/postgreyreport.1.gz
 sbin/postgrey
 sbin/policy-test
 sbin/postgreyreport
-@dirrmtry etc/postfix
-@unexec rmdir /var/db/postgrey 2>/dev/null || true
+@dir(%%USER%%,%%GROUP%%,2775) /var/db/postgrey
