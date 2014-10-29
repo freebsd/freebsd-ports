@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	${ORIGNAME:tl}
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION:R}/
 DISTNAME=	${ORIGNAME}-${DISTVERSION}
 
 MAINTAINER=	rakuco@FreeBSD.org
-COMMENT=	ReviewBoard Toolset
+COMMENT=	Set of client tools to use with Review Board
 
 LICENSE=	MIT
 
