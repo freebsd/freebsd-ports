@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	varnish-
 #DISTNAME=	KristianLyng-${PORTNAME}-${VMOD_HEADER_HASH}
 #DISTFILES=	KristianLyng-${PORTNAME}-${DISTVERSION}-g${VMOD_HEADER_HASH}.tar.gz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for manipulation of duplicated headers
 
 LICENSE=	BSD

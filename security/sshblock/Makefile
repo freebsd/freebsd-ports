@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.bsdconsulting.no/tools/
 EXTRACT_SUFX=	.pl
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Block abusive SSH login attempts
 
 RUN_DEPENDS=	p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail

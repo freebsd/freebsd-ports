@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bsdconsulting.no/tools/
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Near-realtime log monitoring tool, sends alerts on hits and misses
 
 LICENSE=	BSD3CLAUSE

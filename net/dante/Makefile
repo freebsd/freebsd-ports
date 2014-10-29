@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		http://atreides.freenix.no/~anders/ \
 		ftp://ftp.inet.no/pub/socks/old/
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Circuit-level firewall/proxy
 
 LICENSE=	BSD

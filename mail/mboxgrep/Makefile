@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to scan mailboxes for messages matching a regular expression
 
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre

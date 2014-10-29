@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for dumping DMI (SMBIOS) contents in human-readable format
 
 LICENSE=	GPLv2
