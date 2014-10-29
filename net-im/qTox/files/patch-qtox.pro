@@ -1,9 +1,9 @@
---- qtox.pro.orig	2014-10-18 16:44:41 UTC
-+++ qtox.pro
-@@ -186,3 +186,15 @@
-     src/cameraworker.cpp \
-     src/widget/videosurface.cpp \
-     src/netvideosource.cpp
+--- qtox.pro.orig	2014-10-28 21:27:51.000000000 +0100
++++ qtox.pro	2014-10-29 19:21:51.000000000 +0100
+@@ -213,3 +213,15 @@
+     src/video/netvideosource.cpp \
+     src/widget/form/tabcompleter.cpp \
+     src/video/videoframe.cpp
 +
 +unix {
 +    target.path  = $$PREFIX/bin

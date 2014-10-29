@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qTox
-PORTVERSION=	0.141018
+PORTVERSION=	0.141028
 CATEGORIES=	net-im
 
 MAINTAINER=	yuri@rawbw.com
@@ -16,15 +16,19 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tux3
+GH_COMMIT=	8ff3d1d
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	bf35c5e
 
-USE_QT5=	core gui network opengl xml widgets buildtools_build
-USES=		compiler:c++11-lib openal:soft qmake
+USE_QT5=	core gui network xml opengl sql widgets buildtools_build
+USES=		compiler:c++11-lib desktop-file-utils openal:soft qmake
 
 PLIST_FILES=	bin/qtox \
 		share/applications/qTox.desktop \
 		share/pixmaps/qtox.png
+
+post-patch:
+	${REINPLACE_CMD} -e 's|$$$$system(git rev-parse HEAD)|"${GH_COMMIT}"|' \
+		${WRKSRC}/qtox.pro
 
 pre-configure:
 	${CP} ${WRKSRC}/img/icon.png ${WRKSRC}/img/qtox.png
