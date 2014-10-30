@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-build
-PORTVERSION=	20140926
+PORTVERSION=	20141028
 CATEGORIES=	devel ruby
 
 MAINTAINER=	meta+ports@vmeta.jp
@@ -20,7 +20,7 @@ RBENV_RUN_DEPENDS=	rbenv:${PORTSDIR}/devel/rbenv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sstephenson
-GH_COMMIT=	e1811b9
+GH_COMMIT=	81807c6
 GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
