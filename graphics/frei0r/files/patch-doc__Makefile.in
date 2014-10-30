@@ -1,0 +1,27 @@
+--- doc/Makefile.in.orig	2014-10-30 13:59:09 UTC
++++ doc/Makefile.in
+@@ -211,7 +211,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ htmldocs_DATA = html
+-htmldocsdir = ${prefix}/share/doc/${PACKAGE}
++htmldocsdir = /usr/local/share/doc/frei0r
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -418,12 +418,12 @@
+ 	-cp -ra html $(distdir)/doc/
+ 
+ install-data:
+-	install -c -m 644 -d $(htmldocs_DATA) $(htmldocsdir)
++	install -c -m 644 -d $(htmldocs_DATA) $(DESTDIR)$(htmldocsdir)
+ 
+ # Modify the install hook, so we can install directories
+ install-htmldocsDATA:
+-	mkdir -p $(htmldocsdir)
+-	cp -r ./html $(htmldocsdir)/
++	mkdir -p $(DESTDIR)$(htmldocsdir)
++	cp -r ./html $(DESTDIR)$(htmldocsdir)/
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
