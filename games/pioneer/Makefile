@@ -35,7 +35,7 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 
 GH_ACCOUNT=	pioneerspacesim
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	20141021
+GH_TAGNAME=	20141029
 
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
@@ -47,7 +47,7 @@ USE_SDL=	image2 sdl2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PIONEER_DATA_DIR="${DATADIR}/data"
-CONFIGURE_ARGS=	--with-version=${GH_TAGNAME}
+CONFIGURE_ARGS=	--with-version="${GH_TAGNAME}"
 EXTRACT_AFTER_ARGS=	--exclude .gitignore
 
 PORTDATA=	data
@@ -57,7 +57,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 DESKTOP_ENTRIES="Pioneer" "${COMMENT}" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
+		"${PORTNAME}" "${PORTNAME}" \
 		"Game;Simulation;" false
 
 SUB_FILES=	pkg-message
@@ -96,7 +96,8 @@ post-patch: .SILENT
 
 post-install:
 .if ${PORT_OPTIONS:MMODELCOMPILER}
-	@${MV} ${STAGEDIR}${PREFIX}/bin/modelcompiler ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-modelcompiler
+	@${MV} ${STAGEDIR}${PREFIX}/bin/modelcompiler \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-modelcompiler
 .endif
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/application-icon/pngs/pioneer-256x256.png \
