@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/alepulver
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake II engine modification compatible with R1Q2
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/gnu.txt
+
 USES=		dos2unix gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	#
