@@ -30,6 +30,3 @@ bin/openscen
 %%DATADIR%%/sound/twang.wav
 %%DATADIR%%/sound/yo.wav
 %%DATADIR%%/start.tex
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
