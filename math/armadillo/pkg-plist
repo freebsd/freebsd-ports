@@ -223,6 +223,7 @@ include/armadillo_bits/gmm_misc_meat.hpp
 include/armadillo_bits/hdf5_bones.hpp
 include/armadillo_bits/hdf5_misc.hpp
 include/armadillo_bits/include_atlas.hpp
+include/armadillo_bits/include_hdf5.hpp
 include/armadillo_bits/injector_bones.hpp
 include/armadillo_bits/injector_meat.hpp
 include/armadillo_bits/lapack_bones.hpp
@@ -403,7 +404,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.4
-lib/libarmadillo.so.4.450.4
+lib/libarmadillo.so.4.500.0
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
