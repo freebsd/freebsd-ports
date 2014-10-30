@@ -21,7 +21,3 @@ man/man6/pmars.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/warriors/pspace.red
 %%PORTDOCS%%%%DOCSDIR%%/warriors/rave.red
 %%PORTDOCS%%%%DOCSDIR%%/warriors/validate.red
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/warriors
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/config
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
