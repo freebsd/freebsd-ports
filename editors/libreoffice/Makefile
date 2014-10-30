@@ -236,8 +236,6 @@ JAVA_CONFIGURE_ON=	--enable-ext-wiki-publisher \
 			--with-jdk-home="${JAVA_HOME}" \
 			--with-junit=${JAVAJARDIR}/junit.jar
 JAVA_CONFIGURE_OFF=	--without-java
-# LibreOffice works only with Java 6 -- which may not be the default
-# if you specify the JAVA_VENDOR variable
 JAVA_BUILD=	yes
 JAVA_USE=	JAVA=yes
 
