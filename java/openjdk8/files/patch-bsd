@@ -85,6 +85,29 @@
        VAR_CPU=x86_64
        VAR_CPU_ARCH=x86
        VAR_CPU_BITS=64
+@@ -291,8 +291,8 @@
+ 
+   # Setup OPENJDK_TARGET_CPU_OSARCH, which is used to set the os.arch Java system property
+   OPENJDK_TARGET_CPU_OSARCH="$OPENJDK_TARGET_CPU"
+-  if test "x$OPENJDK_TARGET_OS" = xlinux && test "x$OPENJDK_TARGET_CPU" = xx86; then
+-    # On linux only, we replace x86 with i386.
++  if test "x$OPENJDK_TARGET_OS" = xbsd -o "x$OPENJDK_TARGET_OS" = xlinux && test "x$OPENJDK_TARGET_CPU" = xx86; then
++    # On bsd and linux only, we replace x86 with i386.
+     OPENJDK_TARGET_CPU_OSARCH="i386"
+   elif test "x$OPENJDK_TARGET_OS" != xmacosx && test "x$OPENJDK_TARGET_CPU" = xx86_64; then
+     # On all platforms except macosx, we replace x86_64 with amd64.
+@@ -336,9 +336,9 @@
+ 
+   if test "x$OPENJDK_TARGET_CPU_BITS" = x64; then
+     A_LP64="LP64:="
+-    # -D_LP64=1 is only set on linux and mac. Setting on windows causes diff in
++    # -D_LP64=1 is only set on bsd, linux and mac. Setting on windows causes diff in
+     # unpack200.exe
+-    if test "x$OPENJDK_TARGET_OS" = xlinux || test "x$OPENJDK_TARGET_OS" = xmacosx; then
++    if test "x$OPENJDK_TARGET_OS" = xbsd -o "x$OPENJDK_TARGET_OS" = xlinux -o "x$OPENJDK_TARGET_OS" = xmacosx; then
+       ADD_LP64="-D_LP64=1"
+     fi
+   fi
 --- common/autoconf/toolchain.m4
 +++ common/autoconf/toolchain.m4
 @@ -63,7 +63,7 @@
