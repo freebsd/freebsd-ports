@@ -2086,7 +2086,6 @@
     SUBDIR += typo3
     SUBDIR += typo3-lts
     SUBDIR += typo345
-    SUBDIR += typo347
     SUBDIR += typolight
     SUBDIR += udmsearch
     SUBDIR += uglifyjs

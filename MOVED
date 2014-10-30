@@ -7171,3 +7171,4 @@ dns/powerdns-devel|dns/powerdns|2014-10-24|Older than dns/powerdns and no longer
 www/mod_authz_unixgroup|www/mod_authz_unixgroup22|2014-10-26|Reflect Apache version in portsdir
 lang/kroc||2014-10-28|Has expired: Broken for more than 6 months
 net/slirp||2014-10-28|Has expired: Broken for more than 6 months
+www/typo347||2014-10-30|Has expired: Upgrade to www/typo3 or www/typo3-lts
