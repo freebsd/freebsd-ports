@@ -20,7 +20,7 @@ USE_XORG+=	glproto dri2proto xext xdamage xfixes presentproto \
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 
 .if defined(WITH_NEW_MESA)
-LIBGLES_REVISION=	0
+LIBGLES_REVISION=	3
 .else
 LIBGLES_REVISION=	3
 .endif

@@ -22,7 +22,7 @@ LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 
 .if defined (WITH_NEW_MESA)
-LIBGLAPI_REVISION=	0
+LIBGLAPI_REVISION=	2
 .else
 LIBGLAPI_REVISION=	2
 .endif
