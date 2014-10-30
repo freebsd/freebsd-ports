@@ -1,23 +1,51 @@
-From a9c20c1640cdea0ba902095cb18760f5ebe98875 Mon Sep 17 00:00:00 2001
+From a64f6361dc16a94b62104c615cd74c70bf26cf4f Mon Sep 17 00:00:00 2001
 From: Kris Moore <kris@pcbsd.org>
-Date: Tue, 28 Oct 2014 15:59:59 -0400
-Subject: [PATCH 1/2] Add support for passing EFI framebuffer information to
- FreeBSD kernel on FreeBSD 10.1 and later.
+Date: Thu, 30 Oct 2014 13:17:15 -0400
+Subject: [PATCH] Add support for Grub booting FreeBSD UEFI FrameBuffer and
+ ACPI hints
 
 ---
- grub-core/loader/i386/bsd.c          | 75 ++++++++++++++++++++++++++++++++++++
- grub-core/video/efi_gop.c            | 14 +++++++
- include/grub/i386/bsd.h              |  1 +
- include/grub/i386/freebsd_bootinfo.h | 33 ++++++++++++++++
- include/grub/video.h                 | 18 +++++++++
- 5 files changed, 141 insertions(+)
+ ChangeLog                            |  12 ++++
+ grub-core/loader/i386/bsd.c          | 125 +++++++++++++++++++++++++++++++++++
+ grub-core/video/efi_gop.c            |  14 ++++
+ include/grub/i386/bsd.h              |   1 +
+ include/grub/i386/freebsd_bootinfo.h |  33 +++++++++
+ include/grub/video.h                 |  18 +++++
+ 6 files changed, 203 insertions(+)
  create mode 100644 include/grub/i386/freebsd_bootinfo.h
 
+diff --git ChangeLog ChangeLog
+index 190d19d..4ae90de 100644
+--- ChangeLog
++++ ChangeLog
+@@ -1,3 +1,15 @@
++2014-10-30  Kris Moore  <kris@pcbsd.org>
++	* grub-core/loader/i386/bsd.c: Set FreeBSD specific ACPI hints when booting
++	in EFI mode
++2014-10-28  Kris Moore  <kris@pcbsd.org>
++	* grub-core/loader/i386/bsd.c: Add default FreeBSD EFI video mode, and
++	structure to pass information into EFI booted kernel
++	* grub-core/video/efi_gop.c: Expose some additional GOP mode information
++	* include/grub/i386/bsd.h: Include new freebsd_bootinfo.h
++	* include/grub/i386/freebsd_bootinfo.h: Add grub_freebsd_btinfo_framebuf
++	structure for FreeBSD EFI framebuffer passthrough
++	* include/grub/video.h: Add the additional exposed GOP values
++
+ 2014-10-14  Andrei Borzenkov  <arvidjaar@gmail.com>
+ 
+ 	* grub-core/loader/arm/linux.c: Use full initializer for initrd_ctx to
 diff --git grub-core/loader/i386/bsd.c grub-core/loader/i386/bsd.c
-index 8f691e0..c685552 100644
+index 8f691e0..6016367 100644
 --- grub-core/loader/i386/bsd.c
 +++ grub-core/loader/i386/bsd.c
-@@ -48,6 +48,7 @@ GRUB_MOD_LICENSE ("GPLv3+");
+@@ -42,12 +42,14 @@
+ GRUB_MOD_LICENSE ("GPLv3+");
+ 
+ #include <grub/video.h>
++#include <grub/acpi.h>
+ #ifdef GRUB_MACHINE_PCBIOS
+ #include <grub/machine/biosnum.h>
+ #endif
  #ifdef GRUB_MACHINE_EFI
  #include <grub/efi/efi.h>
  #define NETBSD_DEFAULT_VIDEO_MODE "800x600"
@@ -25,7 +53,7 @@ index 8f691e0..c685552 100644
  #else
  #define NETBSD_DEFAULT_VIDEO_MODE "text"
  #include <grub/i386/pc/vbe.h>
-@@ -584,6 +585,63 @@ freebsd_get_zfs (void)
+@@ -584,6 +586,63 @@ freebsd_get_zfs (void)
    grub_free (uuid);
  }
  
@@ -89,7 +117,63 @@ index 8f691e0..c685552 100644
  static grub_err_t
  grub_freebsd_boot (void)
  {
-@@ -687,6 +745,10 @@ grub_freebsd_boot (void)
+@@ -602,6 +661,55 @@ grub_freebsd_boot (void)
+ 
+   bi.boot_device = freebsd_biosdev;
+ 
++#ifdef GRUB_MACHINE_EFI
++  /* When booting in EFI mode, we need to export some additional kernel ACPI hints */
++  struct grub_acpi_rsdp_v10 *v1;
++  struct grub_acpi_rsdp_v20 *v2;
++  v1 = grub_acpi_get_rsdpv1 ();
++  v2 = grub_acpi_get_rsdpv2 ();
++  if (v2 && v2->length > 40)
++    v2 = 0;
++
++  int revision;
++  char acpiBuf[24];
++
++  if (v1)
++  {
++     revision = v1->revision;
++     if ( revision == 0 )
++        revision = 1;
++     grub_snprintf (acpiBuf, sizeof (acpiBuf), "%d", revision);
++     grub_env_set("kFreeBSD.hint.acpi.0.revision", acpiBuf);
++
++     grub_snprintf (acpiBuf, sizeof (acpiBuf), "%s", v1->oemid);
++     grub_env_set("kFreeBSD.hint.acpi.0.oem", acpiBuf);
++
++     grub_snprintf (acpiBuf, sizeof (acpiBuf), "0x%016x", v1->rsdt_addr);
++     grub_env_set("kFreeBSD.hint.acpi.0.rsdt", acpiBuf);
++
++     grub_snprintf (acpiBuf, sizeof (acpiBuf), "0x%016llx", (unsigned long long)v1);
++     grub_env_set("kFreeBSD.hint.acpi.0.rsdp", acpiBuf);
++  }
++
++  if (v2)
++  {
++     revision = v2->rsdpv1.revision;
++     if ( revision == 0 )
++        revision = 1;
++
++     grub_snprintf (acpiBuf, sizeof (acpiBuf), "%d", revision);
++     grub_env_set("kFreeBSD.hint.acpi.0.revision", acpiBuf);
++
++     grub_snprintf (acpiBuf, sizeof (acpiBuf), "0x%016llx", (unsigned long long)v2->xsdt_addr);
++     grub_env_set("kFreeBSD.hint.acpi.0.xsdt", acpiBuf);
++
++     grub_snprintf (acpiBuf, sizeof (acpiBuf), "%d", v2->length);
++     grub_env_set("kFreeBSD.hint.acpi.0.xsdt_length", acpiBuf);
++  }
++
++
++#endif
++
+   p_size = 0;
+   FOR_SORTED_ENV (var)
+     if ((grub_memcmp (var->name, "kFreeBSD.", sizeof("kFreeBSD.") - 1) == 0) && (var->name[sizeof("kFreeBSD.") - 1]))
+@@ -687,6 +795,10 @@ grub_freebsd_boot (void)
  		*(grub_uint32_t *) p_tag = bootflags;
  	      break;
  
@@ -100,7 +184,7 @@ index 8f691e0..c685552 100644
  	    case FREEBSD_MODINFO_METADATA | FREEBSD_MODINFOMD_ENVP:
  	      if (is_64bit)
  		*(grub_uint64_t *) p_tag = bi.environment;
-@@ -716,7 +778,10 @@ grub_freebsd_boot (void)
+@@ -716,7 +828,10 @@ grub_freebsd_boot (void)
  
    bi.kern_end = kern_end;
  
@@ -111,7 +195,7 @@ index 8f691e0..c685552 100644
  
    if (is_64bit)
      {
-@@ -1560,6 +1625,16 @@ grub_cmd_freebsd (grub_extcmd_context_t ctxt, int argc, char *argv[])
+@@ -1560,6 +1675,16 @@ grub_cmd_freebsd (grub_extcmd_context_t ctxt, int argc, char *argv[])
  				   FREEBSD_MODINFOMD_KERNEND, &data, len);
  	  if (err)
  	    return err;
@@ -276,37 +360,6 @@ index 52c3fd7..e980fb1 100644
    /* What is location of reserved color bits.  In Index Color mode,
       this is 0.  */
    unsigned int reserved_field_pos;
--- 
-2.1.2
-
-
-From 68a48b4a3597b67110ad3c7fcc05f6f0e1e40b05 Mon Sep 17 00:00:00 2001
-From: Kris Moore <kris@pcbsd.org>
-Date: Tue, 28 Oct 2014 16:21:51 -0400
-Subject: [PATCH 2/2] Update changelog with details about the FreeBSD EFI
- framebuffer passthrough
-
----
- ChangeLog | 9 +++++++++
- 1 file changed, 9 insertions(+)
-
-diff --git ChangeLog ChangeLog
-index 190d19d..0988971 100644
---- ChangeLog
-+++ ChangeLog
-@@ -1,3 +1,12 @@
-+2014-10-28  Kris Moore  <kris@pcbsd.org>
-+	* grub-core/loader/i386/bsd.c: Add default FreeBSD EFI video mode, and
-+	structure to pass information into EFI booted kernel
-+	* grub-core/video/efi_gop.c: Expose some additional GOP mode information
-+	* include/grub/i386/bsd.h: Include new freebsd_bootinfo.h
-+	* include/grub/i386/freebsd_bootinfo.h: Add grub_freebsd_btinfo_framebuf
-+	structure for FreeBSD EFI framebuffer passthrough
-+	* include/grub/video.h: Add the additional exposed GOP values
-+
- 2014-10-14  Andrei Borzenkov  <arvidjaar@gmail.com>
- 
- 	* grub-core/loader/arm/linux.c: Use full initializer for initrd_ctx to
 -- 
 2.1.2
 
