@@ -6,7 +6,6 @@ bin/%%GNU_HOST%%-gcc-ar%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-nm%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc-ranlib%%SUFFIX%%
 bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
-@comment info/gcc%%SUFFIX%%/dir
 bin/c++%%SUFFIX%%
 bin/cpp%%SUFFIX%%
 bin/g++%%SUFFIX%%
@@ -16,6 +15,7 @@ bin/gcc-nm%%SUFFIX%%
 bin/gcc-ranlib%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
+@comment info/gcc%%SUFFIX%%/dir
 man/man1/cpp%%SUFFIX%%.1.gz
 man/man1/g++%%SUFFIX%%.1.gz
 man/man1/gcc%%SUFFIX%%.1.gz
