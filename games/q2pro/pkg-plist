@@ -1,9 +1,7 @@
-@exec mkdir -p %D/%%LIBDIR%%/baseq2
 %%CLIENT%%bin/q2pro
 %%DEDICATED%%bin/q2proded
 %%GAME%%%%LIBDIR%%/baseq2/game.so
 %%GL%%%%LIBDIR%%/ref_newgl.so
 %%SOFT%%%%LIBDIR%%/ref_soft.so
 %%UI%%%%LIBDIR%%/ui.so
-@dirrm %%LIBDIR%%/baseq2
-@dirrm %%LIBDIR%%
+@dir %%LIBDIR%%/baseq2
