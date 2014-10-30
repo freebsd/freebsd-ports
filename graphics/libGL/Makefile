@@ -21,7 +21,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 .include "${.CURDIR}/bsd.mesalib.mk"
 
 .if defined(WITH_NEW_MESA)
-LIBGLREVISION=	0
+LIBGLREVISION=	3
 .else
 LIBGLREVISION=	3
 .endif
