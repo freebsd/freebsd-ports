@@ -1,28 +1,49 @@
---- Makefile.orig	2009-01-29 16:39:11.000000000 -0600
-+++ Makefile	2009-02-05 21:25:57.000000000 -0600
-@@ -12,6 +12,10 @@
-     DARWIN := 1
+--- Makefile
++++ Makefile
+@@ -17,6 +17,10 @@ ifeq ($(shell uname), Darwin)
+ 	PLATFORM := darwin
  endif
  
 +ifeq ($(shell uname), FreeBSD)
-+    FREEBSD := 1
++	PLATFORM := freebsd
 +endif
 +
  #------------------------------------------------------------------------------
+ # Paths (packagers might want to set DATADIR and LOCALEDIR)
+ 
+@@ -36,13 +40,13 @@ endif
  # Optional flags (CFLAGS, CPPFLAGS, ...)
  
-@@ -105,6 +109,14 @@
-     BASE_LIBS += -L/opt/local/lib
+ ifeq ($(DEBUG),1)
+-	CFLAGS   := -g
+-	CXXFLAGS := -g
+-	CPPFLAGS :=
++	CFLAGS   ?= -g
++	CXXFLAGS ?= -g
++	CPPFLAGS +=
+ else
+-	CFLAGS   := -O2
+-	CXXFLAGS := -O2
+-	CPPFLAGS := -DNDEBUG
++	CFLAGS   ?= -O2
++	CXXFLAGS ?= -O2
++	CPPFLAGS += -DNDEBUG
  endif
  
-+ifdef FREEBSD
-+    BASE_LIBS += -L%%LOCALBASE%%/lib -lX11 -lm
+ #------------------------------------------------------------------------------
+@@ -179,6 +183,15 @@ ifeq ($(PLATFORM),darwin)
+ 	                                           /usr/local/lib))
+ endif
+ 
++ifeq ($(PLATFORM),freebsd)
++	LOCALBASE ?= /usr/local
++	BASE_LIBS += -L${LOCALBASE}/lib
 +
-+    ifneq ($(ENABLE_NLS),0)
-+        INTL_LIBS := -lintl %%ICONV_LIB%%
-+    endif
++	ifneq ($(ENABLE_NLS),0)
++		INTL_LIBS := -lintl
++	endif
 +endif
 +
- ALL_LIBS := $(SDL_LIBS) $(BASE_LIBS) $(TILT_LIBS) $(INTL_LIBS) -lSDL_ttf \
-     -lvorbisfile $(OGL_LIBS)
+ OGG_LIBS := -lvorbisfile
+ TTF_LIBS := -lSDL2_ttf
  
