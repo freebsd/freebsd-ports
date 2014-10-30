@@ -397,18 +397,6 @@ man/man7/gromacs.7.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/README.tutor
 %%DATADIR%%/README_FreeEnergyModifications.txt
-%%DATADIR%%/html/images/1ctf-0.2.jpg
-%%DATADIR%%/html/images/1ctf-0.5.jpg
-%%DATADIR%%/html/images/1ctf-0.jpg
-%%DATADIR%%/html/images/1ctf-1.jpg
-%%DATADIR%%/html/images/1ctf-10.jpg
-%%DATADIR%%/html/images/1ctf-4.jpg
-%%DATADIR%%/html/images/articles.gif
-%%DATADIR%%/html/images/bench.gif
-%%DATADIR%%/html/images/charts_down.gif
-%%DATADIR%%/html/images/charts_up.gif
-%%DATADIR%%/html/images/faq.gif
-%%DATADIR%%/html/images/features.gif
 %%DATADIR%%/html/images/flow_down.gif
 %%DATADIR%%/html/images/flow_downleft.gif
 %%DATADIR%%/html/images/flow_hline.gif
@@ -424,13 +412,7 @@ man/man7/gromacs.7.gz
 %%DATADIR%%/html/images/flow_vline.gif
 %%DATADIR%%/html/images/flow_vrule.gif
 %%DATADIR%%/html/images/gmxlogo_small.jpg
-%%DATADIR%%/html/images/links.gif
-%%DATADIR%%/html/images/mail.gif
-%%DATADIR%%/html/images/manual.gif
 %%DATADIR%%/html/images/plotje.gif
-%%DATADIR%%/html/images/rainbow.gif
-%%DATADIR%%/html/images/software.gif
-%%DATADIR%%/html/images/topologies.gif
 %%DATADIR%%/html/images/xvgr.gif
 %%DATADIR%%/html/online.html
 %%DATADIR%%/html/online/cpt.html
@@ -446,6 +428,7 @@ man/man7/gromacs.7.gz
 %%DATADIR%%/html/online/g96.html
 %%DATADIR%%/html/online/getting_started.html
 %%DATADIR%%/html/online/gro.html
+%%DATADIR%%/html/online/hdb.html
 %%DATADIR%%/html/online/itp.html
 %%DATADIR%%/html/online/log.html
 %%DATADIR%%/html/online/m2p.html
@@ -1012,44 +995,3 @@ man/man7/gromacs.7.gz
 %%DATADIR%%/top/vdw-msms.dat
 %%DATADIR%%/top/vdwradii.dat
 %%DATADIR%%/top/xlateat.dat
-@dirrm %%DATADIR%%/top/oplsaa.ff
-@dirrm %%DATADIR%%/top/gromos54a7.ff
-@dirrm %%DATADIR%%/top/gromos53a6.ff
-@dirrm %%DATADIR%%/top/gromos53a5.ff
-@dirrm %%DATADIR%%/top/gromos45a3.ff
-@dirrm %%DATADIR%%/top/gromos43a2.ff
-@dirrm %%DATADIR%%/top/gromos43a1.ff
-@dirrm %%DATADIR%%/top/charmm27.ff
-@dirrm %%DATADIR%%/top/amberGS.ff
-@dirrm %%DATADIR%%/top/amber99sb.ff
-@dirrm %%DATADIR%%/top/amber99sb-ildn.ff
-@dirrm %%DATADIR%%/top/amber99.ff
-@dirrm %%DATADIR%%/top/amber96.ff
-@dirrm %%DATADIR%%/top/amber94.ff
-@dirrm %%DATADIR%%/top/amber03.ff
-@dirrm %%DATADIR%%/top
-@dirrm %%DATADIR%%/template/cmake
-@dirrm %%DATADIR%%/template
-@dirrm %%DATADIR%%/html/programs
-@dirrm %%DATADIR%%/html/online
-@dirrm %%DATADIR%%/html/images
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%
-@dirrm include/gromacs/utility
-@dirrm include/gromacs/trajectoryanalysis
-@dirrm include/gromacs/timing
-@dirrm include/gromacs/swap
-@dirrm include/gromacs/selection
-@dirrm include/gromacs/options
-@dirrm include/gromacs/onlinehelp
-@dirrm include/gromacs/math
-@dirrm include/gromacs/linearalgebra
-@dirrm include/gromacs/legacyheaders/types
-@dirrm include/gromacs/legacyheaders
-@dirrm include/gromacs/gmxana
-@dirrm include/gromacs/fileio
-@dirrm include/gromacs/fft
-@dirrm include/gromacs/commandline
-@dirrm include/gromacs/analysisdata/modules
-@dirrm include/gromacs/analysisdata
-@dirrm include/gromacs
