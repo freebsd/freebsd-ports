@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20140928
+PORTVERSION=	20141028
 CATEGORIES=	security devel python
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSZTI3MWV6di1fRDg/ \
+		https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +13,7 @@ MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Digital Forensics Virtual File System
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	libbde>=a:${PORTSDIR}/devel/libbde \
 		libewf>=0:${PORTSDIR}/devel/libewf \
@@ -36,5 +37,7 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+# Note: for regression tests set LANG to en_US.UTF-8
 
 .include <bsd.port.mk>
