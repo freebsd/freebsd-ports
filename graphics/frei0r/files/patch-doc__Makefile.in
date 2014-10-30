@@ -1,14 +1,5 @@
 --- doc/Makefile.in.orig	2014-10-30 13:59:09 UTC
 +++ doc/Makefile.in
-@@ -211,7 +211,7 @@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- htmldocs_DATA = html
--htmldocsdir = ${prefix}/share/doc/${PACKAGE}
-+htmldocsdir = /usr/local/share/doc/frei0r
- all: all-am
- 
- .SUFFIXES:
 @@ -418,12 +418,12 @@
  	-cp -ra html $(distdir)/doc/
  
