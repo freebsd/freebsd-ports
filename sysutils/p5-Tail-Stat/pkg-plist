@@ -17,10 +17,3 @@ man/man1/tstatd.1.gz
 %%SITE_PERL%%/Tail/Stat/Plugin/nginx.pm
 %%SITE_PERL%%/Tail/Stat/Plugin/spamd.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tail/Stat/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tail/Stat
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tail
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry %%SITE_PERL%%/Tail/Stat/Plugin
-@dirrmtry %%SITE_PERL%%/Tail/Stat
-@dirrmtry %%SITE_PERL%%/Tail
