@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	freeguide
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.11.1
 CATEGORIES=	misc java
 MASTER_SITES=	SF/${PORTNAME}-tv/${PORTNAME}-source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive TV guide which will create personalized TV listings
 
-RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
-
 LICENSE=	GPLv2
+
+RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
