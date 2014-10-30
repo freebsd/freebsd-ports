@@ -38,8 +38,3 @@ bin/exmars
 %%DATADIR%%/warriors/pspace/rotpendragon2.red
 %%DATADIR%%/warriors/pspace/sunset.red
 %%DATADIR%%/warriors/pspace/unheardof.red
-@dirrm %%DATADIR%%/warriors/pspace
-@dirrm %%DATADIR%%/warriors/error
-@dirrm %%DATADIR%%/warriors/94nop
-@dirrm %%DATADIR%%/warriors
-@dirrm %%DATADIR%%
