@@ -22,11 +22,8 @@ MAKEFILE=	makefile.ptools
 ALL_TARGET=	mopt mts pname
 NO_WRKSUBDIR=	yes
 
-MAN6=		ptools-mopt.6 ptools-mts.6
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
 post-build:
 	(${ECHO_CMD} "#!${PERL}"; ${CAT} ${DISTDIR}/p3-2.pl) \
 		> ${WRKSRC}/p3-2.pl
@@ -40,11 +37,9 @@ do-install:
 .for f in mopt.6 mts.6
 	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MAN6PREFIX}/man/man6/${PORTNAME}-${f}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for f in mopt.doc mts.doc pname.doc readme.ptools
+.for f in mopt.doc mts.doc pname.doc readme.ptools
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-. endfor
-.endif
+.endfor
 
 .include <bsd.port.mk>

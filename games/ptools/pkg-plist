@@ -9,4 +9,3 @@ man/man6/ptools-mts.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/mts.doc
 %%PORTDOCS%%%%DOCSDIR%%/pname.doc
 %%PORTDOCS%%%%DOCSDIR%%/readme.ptools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
