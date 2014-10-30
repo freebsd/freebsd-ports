@@ -12,6 +12,7 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	Action adventure in Space
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 USES=		dos2unix zip:infozip
 DOS2UNIX_GLOB=	*.txt *.htm *.css *.ini *.xml
