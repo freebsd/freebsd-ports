@@ -1,12 +1,6 @@
-@cwd /
-@exec mkdir -p %%CACHEDIR%%/pop3proxy-spam-cache
-@exec mkdir -p %%CACHEDIR%%/pop3proxy-ham-cache
-@exec mkdir -p %%CACHEDIR%%/pop3proxy-unknown-cache
-@exec mkdir -p %%DBDIR%%
-@dirrmtry %%CACHEDIR%%/pop3proxy-spam-cache
-@dirrmtry %%CACHEDIR%%/pop3proxy-ham-cache
-@dirrmtry %%CACHEDIR%%/pop3proxy-unknown-cache
-@dirrmtry %%CACHEDIR%%
-@dirrmtry %%DBDIR%%
-@dirrmtry %%LOCALSTATDIR%%
-@cwd %%RESETPREFIX%%
+@dir %%CACHEDIR%%/pop3proxy-spam-cache
+@dir %%CACHEDIR%%/pop3proxy-ham-cache
+@dir %%CACHEDIR%%/pop3proxy-unknown-cache
+@dir %%CACHEDIR%%
+@dir %%DBDIR%%
+@dir %%LOCALSTATDIR%%
