@@ -1,0 +1,35 @@
+# Without zenity(1) fallback to either WinForms or no crash dialog
+
+--- Makefile~
++++ Makefile
+@@ -357,10 +357,28 @@ install-linux-desktop:
+ install-linux-scripts:
+ 	@echo "#!/bin/sh" > openra
+ 	@echo 'cd "$(gameinstalldir)"' >> openra
+-	@echo 'mono OpenRA.Game.exe "$$@"' >> openra
++	@echo 'ZENITY=`which zenity`' >> openra
++	@echo 'if [ -z "$$ZENITY" ] && (' >> openra
++	@echo '  # from mono/io-layer/processes.c' >> openra
++	@echo '  hash xdg-open 2>/dev/null ||' >> openra
++	@echo '  hash gnome-open 2>/dev/null ||' >> openra
++	@echo '  hash kfmclient 2>/dev/null)' >> openra
++	@echo 'then' >> openra
++	@echo '  mono OpenRA.exe "$$@"' >> openra
++	@echo 'else' >> openra
++	@echo '  mono OpenRA.Game.exe "$$@"' >> openra
++	@echo 'fi' >> openra
+ 	@echo 'if [ $$? != 0 ]' >> openra
+ 	@echo 'then' >> openra
+-	@echo 'ZENITY=`which zenity` || echo "OpenRA needs zenity installed to display a graphical error dialog. See ~/.openra. for log files."' >> openra
++	@echo '  if [ -z "$$ZENITY" ]' >> openra
++	@echo '  then' >> openra
++	@echo '    echo' >> openra
++	@echo '    echo "OpenRA has encountered a fatal error."' >> openra
++	@echo '    echo "Log Files are available in ~/.openra."' >> openra
++	@echo '    echo' >> openra
++	@echo '    echo "See https://github.com/OpenRA/OpenRA/wiki/FAQ"' >> openra
++	@echo '    exit 1' >> openra
++	@echo '  fi' >> openra
+ 	@echo '$$ZENITY --question --title "OpenRA" --text "OpenRA has encountered a fatal error.\nLog Files are available in ~/.openra." --ok-label "Quit" --cancel-label "View FAQ" || xdg-open https://github.com/OpenRA/OpenRA/wiki/FAQ' >> openra
+ 	@echo 'exit 1' >> openra
+ 	@echo 'fi' >> openra

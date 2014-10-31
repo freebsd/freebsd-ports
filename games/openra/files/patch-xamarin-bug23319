@@ -1,0 +1,25 @@
+# https://bugzilla.xamarin.com/show_bug.cgi?id=23319
+# https://github.com/mono/mono/commit/1d94d17
+
+--- OpenRA.Game/Exts.cs~
++++ OpenRA.Game/Exts.cs
+@@ -375,7 +375,7 @@ namespace OpenRA
+ 			for (var i = 0; i < width; i++)
+ 				for (var j = 0; j < height; j++)
+ 					result[i, j] = i <= ts.GetUpperBound(0) && j <= ts.GetUpperBound(1)
+-						? ts[i, j] : t;
++						? (ts[i, j]) : t;
+ 			return result;
+ 		}
+ 
+--- OpenRA.Mods.RA/Render/WithMuzzleFlash.cs~
++++ OpenRA.Mods.RA/Render/WithMuzzleFlash.cs
+@@ -50,7 +50,7 @@ namespace OpenRA.Mods.RA.Render
+ 					var turreted = self.TraitsImplementing<Turreted>()
+ 						.FirstOrDefault(t => t.Name ==  arm.Info.Turret);
+ 
+-					getFacing = turreted != null ? () => turreted.TurretFacing :
++					getFacing = turreted != null ? (() => turreted.TurretFacing) :
+ 						facing != null ? (Func<int>)(() => facing.Facing) : () => 0;
+ 
+ 					var muzzleFlash = new Animation(self.World, render.GetImage(self), getFacing);

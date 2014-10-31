@@ -1,0 +1,7 @@
+A reimplementation of the Command & Conquer: Red Alert game engine
+using .NET/Mono, OpenGL, OpenAL and SDL. It includes reimagninations
+of Command & Conquer: Red Alert, Command & Conquer: Tiberian Dawn as
+well as Dune 2000. These combine the classic gameplay of the originals
+with modern improvements such as unit veterancy and the fog of war.
+
+WWW: http://www.openra.net
