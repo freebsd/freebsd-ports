@@ -234,4 +234,4 @@ man/man1/gforth.1.gz
 %%DATADIR%%/%%PORTVERSION%%/wordinfo.fs
 %%DATADIR%%/%%PORTVERSION%%/wordsets.fs
 %%DATADIR%%/%%PORTVERSION%%/xwords.fs
-@exec mkdir -p %D/%%DATADIR%%/site-forth
+@dir %%DATADIR%%/site-forth
