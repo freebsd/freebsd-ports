@@ -4,11 +4,7 @@ bin/udlconv
 bin/vdkfmt
 bin/wfconv
 bin/wxtest
-@group network
-@mode 4554
-libexec/klh10-ks-its/dpimp
-@mode
-@group
+@(,network,4554) libexec/klh10-ks-its/dpimp
 libexec/klh10-ks-its/dprpxx
 libexec/klh10-ks-its/dptm03
 %%PORTDOCS%%%%DOCSDIR%%/Intro.txt
@@ -44,4 +40,4 @@ libexec/klh10-ks-its/dptm03
 %%DATADIR%%/@.nsalv-260-u
 %%DATADIR%%/itsbin.647kn-u
 %%DATADIR%%/klh10-kn.ini
-@exec mkdir -p %D/%%DATADIR%%/flushed
+@dir %%DATADIR%%/flushed
