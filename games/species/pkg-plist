@@ -114,7 +114,3 @@ bin/species
 %%DATADIR%%/wilfiz/vanquisher2.red
 %%DATADIR%%/wilfiz/willow.rc
 %%DATADIR%%/wilfiz/willow.red
-@dirrm %%DATADIR%%/wilfiz
-@dirrm %%DATADIR%%/evolver_hill
-@dirrm %%DATADIR%%/bench
-@dirrm %%DATADIR%%

@@ -11,13 +11,13 @@ DISTNAME=	redcoder
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Corewars evolver - generates warriors using genetic algorithms
 
-LICENSE=	GPLv1 # (or later)
+LICENSE=	GPLv1 # (or later) # COPYING files mention LGPL21 and GPLv2 instead
 
 USES=		gmake dos2unix tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	VISITOOL
-VISITOOL_DESC=	Buil GUI tool for displaying evolution
+VISITOOL_DESC=	Build GUI tool for displaying evolution
 
 OPTIONS_SUB=	yes
 
