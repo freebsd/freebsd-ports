@@ -89,14 +89,4 @@ share/applications/xmms.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xmms.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xmms.mo
 %%DATADIR%%/wmxmms.xpm
-@dirrmtry %%DATADIR%%/Skins
-@dirrm %%DATADIR%%
-@dirrmtry lib/xmms/Visualization
-@dirrmtry lib/xmms/Output
-@dirrmtry lib/xmms/Input
-@dirrmtry lib/xmms/General
-@dirrmtry lib/xmms/Effect
-@dirrmtry lib/xmms
-@dirrm include/xmms
-@exec mkdir -p %D/share/xmms/Skins
-@unexec echo "If you are permanently removing xmms, do not forget to remove skin files left under %D/share/xmms/Skins. Use \`\`rm -Rf %D/share/xmms/Skins; rmdir %D/share/xmms''" | fmt
+@dir share/xmms/Skins
