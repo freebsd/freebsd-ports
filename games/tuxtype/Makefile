@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxtype
 PORTVERSION=	1.8.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3270/ \
 		http://alioth.debian.org/frs/download.php/3540/:t4k_common
@@ -79,7 +79,6 @@ pre-build:
 		${MAKEFILE} -j${MAKE_JOBS_NUMBER} ${ALL_TARGET})
 
 post-install:
-	@${ECHO_CMD} -n > ${STAGEDIR}${ETCDIR}/.keep_me
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog OFL README TODO
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
