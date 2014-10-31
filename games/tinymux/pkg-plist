@@ -1,20 +1,10 @@
 bin/dbconvert
 bin/tinymux
-@unexec if cmp -s %D/etc/tinymux/alias.conf %D/etc/tinymux/alias.conf.sample; then rm -f %D/etc/tinymux/alias.conf; fi
-etc/tinymux/alias.conf.sample
-@exec if [ ! -f %D/etc/tinymux/alias.conf ] ; then cp -p %D/%F %B/alias.conf; fi
-@unexec if cmp -s %D/etc/tinymux/compat.conf %D/etc/tinymux/compat.conf.sample; then rm -f %D/etc/tinymux/compat.conf; fi
-etc/tinymux/compat.conf.sample
-@exec if [ ! -f %D/etc/tinymux/compat.conf ] ; then cp -p %D/%F %B/compat.conf; fi
-@unexec if cmp -s %D/etc/tinymux/mux.config %D/etc/tinymux/mux.config.sample; then rm -f %D/etc/tinymux/mux.config; fi
-etc/tinymux/mux.config.sample
-@exec if [ ! -f %D/etc/tinymux/mux.config ] ; then cp -p %D/%F %B/mux.config; fi
-%%SSL%%@unexec if cmp -s %D/etc/tinymux/muxssl.conf %D/etc/tinymux/muxssl.conf.sample; then rm -f %D/etc/tinymux/muxssl.conf; fi
-%%SSL%%etc/tinymux/muxssl.conf.sample
-%%SSL%%@exec if [ ! -f %D/etc/tinymux/muxssl.conf ] ; then cp -p %D/%F %B/muxssl.conf; fi
-@unexec if cmp -s %D/etc/tinymux/netmux.conf %D/etc/tinymux/netmux.conf.sample; then rm -f %D/etc/tinymux/netmux.conf; fi
-etc/tinymux/netmux.conf.sample
-@exec if [ ! -f %D/etc/tinymux/netmux.conf ] ; then cp -p %D/%F %B/netmux.conf; fi
+@sample etc/tinymux/alias.conf.sample
+@sample etc/tinymux/compat.conf.sample
+@sample etc/tinymux/mux.config.sample
+%%SSL%%@sample etc/tinymux/muxssl.conf.sample
+@sample etc/tinymux/netmux.conf.sample
 lib/libmux.so
 sbin/netmux
 sbin/slave
@@ -42,7 +32,3 @@ sbin/slave
 %%DATADIR%%/text/wizhelp.txt
 %%DATADIR%%/text/wizmotd.txt
 %%DATADIR%%/text/wiznews.txt
-@dirrm %%DATADIR%%/text
-@dirrmtry %%DATADIR%%/data
-@dirrmtry %%DATADIR%%
-@dirrmtry etc/tinymux
