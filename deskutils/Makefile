@@ -9,7 +9,6 @@
     SUBDIR += appwrapper
     SUBDIR += aspostit
     SUBDIR += autocutsel
-    SUBDIR += babytrans
     SUBDIR += basket
     SUBDIR += bigyear
     SUBDIR += bitcollider
