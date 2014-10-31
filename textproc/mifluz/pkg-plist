@@ -118,8 +118,4 @@ man/man3/WordRecordInfo.3.gz
 man/man3/WordReference.3.gz
 man/man3/WordType.3.gz
 man/man3/mifluz.3.gz
-@dirrm include/mifluz
-@exec mkdir -p %D/var/cache/mifluz
-@dirrm var/cache/mifluz
-@dirrm var/cache
-@dirrmtry var
+@dir var/cache/mifluz
