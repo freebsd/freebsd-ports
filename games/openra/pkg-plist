@@ -1,0 +1,12 @@
+bin/openra
+bin/openra-editor
+share/applications/openra-editor.desktop
+share/applications/openra.desktop
+share/icons/128x128/apps/openra.png
+share/icons/16x16/apps/openra.png
+share/icons/32x32/apps/openra-editor.png
+share/icons/32x32/apps/openra.png
+share/icons/48x48/apps/openra-editor.png
+share/icons/48x48/apps/openra.png
+share/icons/64x64/apps/openra.png
+share/icons/scalable/apps/openra.svg
