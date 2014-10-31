@@ -51,7 +51,3 @@ bin/mindfocus
 %%PORTDOCS%%%%DOCSDIR%%/README.euc
 %%PORTDOCS%%%%DOCSDIR%%/SCRIPT.euc
 %%PORTDOCS%%%%DOCSDIR%%/TODO.euc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pixmaps
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
