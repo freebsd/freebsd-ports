@@ -2,7 +2,4 @@ libexec/milter-greylist
 man/man5/greylist.conf.5.gz
 man/man8/milter-greylist.8.gz
 etc/mail/greylist.conf.sample
-@exec /bin/mkdir -p /var/milter-greylist
-@exec /usr/sbin/chown -R mailnull:mailnull /var/milter-greylist
-@dirrmtry etc/mail
-@unexec [ -f /var/milter-greylist/greylist.db ] || rmdir /var/milter-greylist || true
+@dir(mailnull,mailnull,) /var/milter-greylist
