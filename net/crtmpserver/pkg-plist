@@ -1,9 +1,5 @@
-@unexec if cmp -s %D/etc/crtmpserver.lua.sample %D/etc/crtmpserver.lua; then rm -f %D/etc/crtmpserver.lua; fi
-etc/crtmpserver.lua.sample
-@exec if [ ! -f %D/etc/crtmpserver.lua ] ; then cp -p %D/%F %B/crtmpserver.lua; fi
-@unexec if cmp -s %D/etc/crtmpserver.all.lua.sample %D/etc/crtmpserver.all.lua; then rm -f %D/etc/crtmpserver.all.lua; fi
-etc/crtmpserver.all.lua.sample
-@exec if [ ! -f %D/etc/crtmpserver.all.lua ] ; then cp -p %D/%F %B/crtmpserver.all.lua; fi
+@sample etc/crtmpserver.lua.sample
+@sample etc/crtmpserver.all.lua.sample
 lib/crtmpserver/libtinyxml.so
 lib/crtmpserver/libcommon.so
 lib/crtmpserver/libthelib.so
@@ -16,19 +12,5 @@ lib/crtmpserver/applications/proxypublish/libproxypublish.so
 lib/crtmpserver/applications/stresstest/libstresstest.so
 man/man1/crtmpserver.1.gz
 sbin/crtmpserver
-@dirrmtry lib/crtmpserver/applications/flvplayback
-@dirrmtry lib/crtmpserver/applications/appselector
-@dirrmtry lib/crtmpserver/applications/samplefactory
-@dirrmtry lib/crtmpserver/applications/vptests
-@dirrmtry lib/crtmpserver/applications/admin
-@dirrmtry lib/crtmpserver/applications/proxypublish
-@dirrmtry lib/crtmpserver/applications/stresstest
-@dirrmtry lib/crtmpserver/applications
-@dirrmtry lib/crtmpserver
-@exec /bin/mkdir -p %D/var/log/crtmpserver
-@exec /bin/mkdir -p %D/var/crtmpserver/media
-@dirrmtry var/log/crtmpserver
-@dirrmtry var/log
-@dirrmtry var/crtmpserver/media
-@dirrmtry var/crtmpserver
-@dirrmtry var
+@dir var/log/crtmpserver
+@dir var/crtmpserver/media
