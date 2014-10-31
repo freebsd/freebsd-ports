@@ -1744,13 +1744,3 @@ share/icons/hicolor/32x32/apps/glob2.png
 share/icons/hicolor/48x48/apps/glob2.png
 share/icons/hicolor/64x64/apps/glob2.png
 share/pixmaps/glob2.png
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/data/zik
-@dirrm %%DATADIR%%/data/gui
-@dirrm %%DATADIR%%/data/gfx/cursor
-@dirrm %%DATADIR%%/data/gfx
-@dirrm %%DATADIR%%/data/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/campaigns
-@dirrm %%DATADIR%%
