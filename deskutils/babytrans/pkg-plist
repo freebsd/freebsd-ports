@@ -1,9 +1,0 @@
-bin/babytrans
-etc/CORBA/servers/babytrans.gnorba
-share/applets/Utility/babytrans.desktop
-share/locale/es/LC_MESSAGES/babytrans.mo
-share/locale/de/LC_MESSAGES/babytrans.mo
-share/locale/fr/LC_MESSAGES/babytrans.mo
-share/locale/it/LC_MESSAGES/babytrans.mo
-share/locale/pt_BR/LC_MESSAGES/babytrans.mo
-%%DATADIR%%/dictionary
