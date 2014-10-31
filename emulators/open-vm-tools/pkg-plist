@@ -36,7 +36,7 @@ include/vmGuestLib/includeCheck.h
 include/vmGuestLib/vmGuestLib.h
 include/vmGuestLib/vmSessionId.h
 include/vmGuestLib/vm_basic_types.h
-@exec mkdir -p %D/lib/vmware-tools/modules/input
+@dir lib/vmware-tools/modules/input
 sbin/mount_vmhgfs
 sbin/mount_vmblock
 %%X11%%bin/vmware-user-suid-wrapper
@@ -54,6 +54,6 @@ share/vmware-tools/scripts/vmware/network
 %%DATADIR%%/messages/ko/toolboxcmd.vmsg
 %%DATADIR%%/messages/ko/vmtoolsd.vmsg
 %%DATADIR%%/messages/zh_CN/toolboxcmd.vmsg
-@unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
-@unexec if test -h %D/etc/vmware-tools/plugins; then rm -f %D/etc/vmware-tools/plugins; fi
+@rmtry share/vmware-tools/tools.conf
+@rmtry etc/vmware-tools/plugins
 etc/pam.d/vmtoolsd
