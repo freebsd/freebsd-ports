@@ -7,9 +7,7 @@ bin/varnishsizes
 bin/varnishstat
 bin/varnishtest
 bin/varnishtop
-@unexec if cmp -s %D/etc/varnish/default.vcl.sample %D/etc/varnish/default.vcl; then rm -f %D/etc/varnish/default.vcl; fi
-etc/varnish/default.vcl.sample
-@exec if [ ! -f %D/etc/varnish/default.vcl ] ; then cp -p %D/%F %B/default.vcl; fi
+@sample etc/varnish/default.vcl.sample
 include/varnish/acct_fields.h
 include/varnish/body_status.h
 include/varnish/cache.h
@@ -62,10 +60,4 @@ man/man7/varnish-counters.7.gz
 man/man7/vcl.7.gz
 sbin/varnishd
 share/varnish/vmod.py
-@exec [ -d %D/varnish ] || mkdir %D/varnish
-@dirrmtry lib/varnish/vmods
-@dirrmtry lib/varnish
-@dirrmtry varnish
-@dirrm include/varnish
-@dirrm share/varnish
-@dirrmtry etc/varnish
+@dir varnish
