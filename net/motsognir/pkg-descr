@@ -1,0 +1,13 @@
+Motsognir is a robust, reliable and easy to install open-source gopher server 
+for Unix-like systems (Linux, BSD, and anything else POSIX-compliant).
+
+The Motsognir gopher server is meant to be used for small projects (like home 
+servers), but should scale well on bigger architectures as well. All the 
+configuration is done via a single configuration file, which has very 
+reasonable defaults. That makes Motsognir easily maintainable, and allows the 
+administrator to have a full knowledge of what features are allowed/enabled on 
+the server. Motsognir supports server-side CGI applications and PHP scripts, is 
+plainly compatible with UTF-8 filesystems, and is entirely written in ANSI C 
+without external dependencies.
+
+WWW: http://sourceforge.net/projects/motsognir
