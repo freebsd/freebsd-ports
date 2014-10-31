@@ -22,6 +22,10 @@ NO_BUILD=	yes
 
 USE_RC_SUBR=	jenkins
 
+USES+=		cpe
+CPE_VENDOR=	cloudbees
+CPE_EDITION=	lts
+
 JENKINS_HOME?=	${PREFIX}/jenkins
 JENKINS_USER?=	jenkins
 JENKINS_GROUP?=	jenkins
