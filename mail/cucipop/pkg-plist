@@ -1,9 +1,4 @@
-@mode 2555
-@group mail
-libexec/cucipop
-@mode
-@group
+@(,mail,2555) libexec/cucipop
 man/man8/cucipop.8.gz
-@exec mkdir -p "/var/spool/cucipop/bulletins"
-@unexec rmdir "/var/spool/cucipop/bulletins" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/cucipop" >/dev/null 2>&1 || :
+@dir /var/spool/cucipop/bulletins
+@dir /var/spool/cucipop
