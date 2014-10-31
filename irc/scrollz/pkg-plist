@@ -717,4 +717,4 @@ man/man1/scrollz.1.gz
 %%DATADIR%%/help/ww
 %%DATADIR%%/help/xecho
 %%DATADIR%%/help/xtype
-@exec mkdir -p %D/%%DATADIR%%/script
+@dir %%DATADIR%%/script
