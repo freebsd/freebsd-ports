@@ -1,5 +1,5 @@
 etc/mercurialserver/access.conf
 etc/mercurialserver/remote-hgrc.d/access.rc
 etc/mercurialserver/remote-hgrc.d/logging.rc
-@exec /bin/mkdir -p %D/etc/mercurialserver/keys/users
-@exec /bin/mkdir -p %D/etc/mercurialserver/keys/root
+@dir etc/mercurialserver/keys/users
+@dir etc/mercurialserver/keys/root
