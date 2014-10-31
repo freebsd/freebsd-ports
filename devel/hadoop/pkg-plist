@@ -299,5 +299,5 @@ lib/libhdfs.so.0
 lib/libhdfs.so.0.0.0
 @dir %%DATADIR%%/webapps/secondary/WEB-INF
 @dir %%DATADIR%%/contrib/hdfsproxy/logs
-@@dir(root,%%HADOOP_GROUP%%,0775) %%HADOOP_LOGDIR%%
-@@dir(root,%%HADOOP_GROUP%%,0775) %%HADOOP_RUNDIR%%
+@dir(root,%%HADOOP_GROUP%%,0775) %%HADOOP_LOGDIR%%
+@dir(root,%%HADOOP_GROUP%%,0775) %%HADOOP_RUNDIR%%
