@@ -34,7 +34,7 @@ GROUPS=	unifi
 WRKSRC=	${WRKDIR}/UniFi
 
 RESTRICTED=	Redistribution of bundled firmware images is not permitted
-CONFLICTS=	unifi2-*
+CONFLICTS=	unifi2-* unifi4-*
 
 post-extract:
 	${MKDIR} ${WRKSRC}/webapps/ROOT
