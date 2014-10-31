@@ -1,22 +1,14 @@
-@mode 555
-bin/slashem
-@mode
+@(,,555) bin/slashem
 @owner games
 @group games
 %%DATADIR%%/license
-@mode 664
-%%DATADIR%%/logfile
-@mode
+@(games,games,664) %%DATADIR%%/logfile
 %%DATADIR%%/nhshare
 %%DATADIR%%/nhushare
 %%DATADIR%%/perm
-@mode 664
-%%DATADIR%%/record
-@mode 02755
-%%DATADIR%%/recover
-%%DATADIR%%/slashem
-@mode
-@mode
+@(games,games,664) %%DATADIR%%/record
+@(games,games,2755) %%DATADIR%%/recover
+@(games,games,2755) %%DATADIR%%/slashem
 @owner
 @group
 man/man6/dgn_comp.6.gz
@@ -27,9 +19,4 @@ man/man6/slashem.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample.slashemrc
 %%PORTDOCS%%%%DOCSDIR%%/slamfaq.txt
-@exec mkdir %D/%%DATADIR%%/save
-@exec chown games:games %D/%%DATADIR%%/save
-@exec chmod 0775 %D/%%DATADIR%%/save
-@unexec rmdir %D/%%DATADIR%%/save
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir(games,games,775) %%DATADIR%%/save
