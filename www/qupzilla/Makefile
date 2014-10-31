@@ -6,7 +6,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://github.com/QupZilla/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	QupZilla-${PORTVERSION}
 
-MAINTAINER=	javad.kouhi@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern web browser based on WebKit core and Qt Framework
 
 LICENSE=	GPLv3
