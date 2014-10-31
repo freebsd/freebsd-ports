@@ -1,8 +1,4 @@
-@owner gnats
-@mode 4555
-bin/edit-pr
-@owner
-@mode
+@(gnats,,4555) bin/edit-pr
 bin/getclose
 bin/install-sid
 bin/query-pr
@@ -23,12 +19,8 @@ etc/gnats/send-pr.conf
 %%SERVER%%libexec/gnats/delete-pr
 libexec/gnats/diff-prs
 libexec/gnats/file-pr
-@owner gnats
-@mode 4555
-%%SERVER%%libexec/gnats/gen-index
-%%SERVER%%libexec/gnats/gnatsd
-@owner
-@mode
+@(gnats,,4555) %%SERVER%%libexec/gnats/gen-index
+@(gnats,,4555) %%SERVER%%libexec/gnats/gnatsd
 %%SERVER%%libexec/gnats/gnats-pwconv
 libexec/gnats/mail-agent
 %%SERVER%%libexec/gnats/mail-query
@@ -41,7 +33,7 @@ libexec/gnats/pr-edit
 man/man1/edit-pr.1.gz
 man/man1/query-pr.1.gz
 man/man1/send-pr.1.gz
-man/man5/databases.5.gz 
+man/man5/databases.5.gz
 man/man5/dbconfig.5.gz
 man/man7/gnats.7.gz
 man/man8/delete-pr.8.gz
@@ -56,9 +48,4 @@ man/man8/pr-edit.8.gz
 man/man8/queue-pr.8.gz
 man/man8/rmcat.8.gz
 %%EMACS_SITE_LISPDIR%%/gnats.el
-@exec mkdir -p %%GNATSDBDIR%%/gnats && chown -R gnats %%GNATSDBDIR%%
-@dirrm etc/gnats/defaults
-@dirrmtry etc/gnats
-@dirrm libexec/gnats
-@dirrmtry %%GNATSDBDIR%%/gnats
-@dirrmtry %%GNATSDBDIR%%
+@dir(gnats) %%GNATSDBDIR%%/gnats
