@@ -16,17 +16,13 @@ USES=		desktop-file-utils python shared-mime-info
 USE_GNOME=	gconf2
 USE_PYTHON=	distutils
 GCONF_SCHEMAS=	glchess.schemas
+
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-USES+=		gettext
-.else
-PLIST_SUB+=	NLS="@comment"
-CONFIGURE_ARGS+=	--disable-nls
-.endif
 
 post-patch:
 	@${GREP} -lR "/usr/share/games/glchess" ${WRKSRC} | ${XARGS} \
@@ -35,17 +31,21 @@ post-patch:
 		 s|share/gconf/schemas|etc/gconf/schemas|g' ${WRKSRC}/setup.py
 
 post-build:
+.if ${PORT_OPTIONS:MNLS}
 	@(for lang in `${MAKE} -f ${WRKSRC}/Makefile -V LANGUAGES` ; do \
 		cd ${WRKSRC}/po ; \
 		${LOCALBASE}/bin/msgfmt $$lang.po -o $$lang.mo ; \
 	done)
+.endif
 
 post-install:
+.if ${PORT_OPTIONS:MNLS}
 	@(for lang in `${MAKE} -f ${WRKSRC}/Makefile -V LANGUAGES` ; do \
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/$$lang/LC_MESSAGES ; \
 		${INSTALL_DATA} ${WRKSRC}/po/$$lang.mo \
 		${STAGEDIR}${PREFIX}/share/locale/$$lang/LC_MESSAGES/glchess.mo ; \
 	done)
+.endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ChangeLog README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

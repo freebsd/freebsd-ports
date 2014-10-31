@@ -214,18 +214,3 @@ share/applications/glchess.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/glchess.mo
 share/mime/packages/glchess.xml
 share/pixmaps/glchess.svg
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/gui
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/opengl
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/cairo
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/gtkui
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/chess/fics
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/ggz
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/chess
-@dirrm %%PYTHON_SITELIBDIR%%/glchess
-@exec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
