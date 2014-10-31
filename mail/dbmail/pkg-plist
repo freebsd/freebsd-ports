@@ -98,16 +98,4 @@ sbin/dbmail-util
 %%PORTDOCS%%%%DOCSDIR%%/README.usermap
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
-@dirrm %%DATADIR%%/sqlite/upgrades
-@dirrm %%DATADIR%%/sqlite
-@dirrm %%DATADIR%%/postgresql/upgrades
-@dirrm %%DATADIR%%/postgresql
-@dirrm %%DATADIR%%/oracle
-@dirrm %%DATADIR%%/mysql/upgrades
-@dirrm %%DATADIR%%/mysql
-@dirrm %%DATADIR%%
-@dirrm lib/dbmail
-@exec mkdir -p %%PIDDIR%%
-@exec chown %%DBMAIL_USER%%:%%DBMAIL_GROUP%% %%PIDDIR%%
-@dirrmtry %%PIDDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dir(%%DBMAIL_USER%%,%%DBMAIL_GROUP%%,) %%PIDDIR%%
