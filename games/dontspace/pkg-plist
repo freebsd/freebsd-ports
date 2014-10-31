@@ -65,9 +65,4 @@ share/games/dontspace/CARDS/c_td.xbm
 share/games/dontspace/CARDS/c_th.xbm
 share/games/dontspace/CARDS/c_ts.xbm
 share/games/dontspace/CARDS/c_warnspace.xbm
-@exec mkdir -p %D/share/games/dontspace/SCORES
-@exec chmod 333 %D/share/games/dontspace/SCORES
-@dirrm share/games/dontspace/CARDS
-@dirrm share/games/dontspace/SCORES
-@dirrm share/games/dontspace
-@dirrmtry share/games
+@dir(,,333) share/games/dontspace/SCORES
