@@ -1638,20 +1638,20 @@
 %%T%%/lib/missioncontrol/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
 %%T%%/lib/missioncontrol/configuration/org.eclipse.update/platform.xml
 %%T%%/lib/missioncontrol/dropins/README.TXT
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.console_5.3.0.159881/feature.properties
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.console_5.3.0.159881/feature.xml
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.core_5.3.0.159881/feature.properties
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.core_5.3.0.159881/feature.xml
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.flightrecorder_5.3.0.159881/feature.properties
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.flightrecorder_5.3.0.159881/feature.xml
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.ja_5.3.0.159881/feature.properties
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.ja_5.3.0.159881/feature.xml
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.zh_CN_5.3.0.159881/feature.properties
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.zh_CN_5.3.0.159881/feature.xml
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp_5.3.0.159881/feature.properties
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp_5.3.0.159881/feature.xml
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.rcp.product_5.3.0.159881/feature.properties
-%%T%%/lib/missioncontrol/features/com.jrockit.mc.rcp.product_5.3.0.159881/feature.xml
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.console_5.4.0.162463/feature.properties
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.console_5.4.0.162463/feature.xml
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.core_5.4.0.162463/feature.properties
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.core_5.4.0.162463/feature.xml
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.flightrecorder_5.4.0.162463/feature.properties
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.flightrecorder_5.4.0.162463/feature.xml
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.ja_5.4.0.162463/feature.properties
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.ja_5.4.0.162463/feature.xml
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.zh_CN_5.4.0.162463/feature.properties
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.zh_CN_5.4.0.162463/feature.xml
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp_5.4.0.162463/feature.properties
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp_5.4.0.162463/feature.xml
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.rcp.product_5.4.0.162463/feature.properties
+%%T%%/lib/missioncontrol/features/com.jrockit.mc.rcp.product_5.4.0.162463/feature.xml
 %%T%%/lib/missioncontrol/features/org.eclipse.babel.nls_eclipse_ja_4.2.0.v20130724060447/about.html
 %%T%%/lib/missioncontrol/features/org.eclipse.babel.nls_eclipse_ja_4.2.0.v20130724060447/eclipse_update_120.jpg
 %%T%%/lib/missioncontrol/features/org.eclipse.babel.nls_eclipse_ja_4.2.0.v20130724060447/epl-v10.html
@@ -1716,149 +1716,150 @@
 %%T%%/lib/missioncontrol/libcairo-swt.so
 %%T%%/lib/missioncontrol/mc.jar
 %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.core/cache/artifacts.xml
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.core/cache/binary/com.jrockit.mc.rcp.product_root_5.3.0.159881
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.core/cache/binary/com.oracle.jmc.executable.gtk.linux.x86_5.3.0
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.core/cache/binary/org.eclipse.rcp_root_3.8.2.v20130118-180157-96BuGOZFxwOAeG8Ofmqicz0tPK
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.core/cache/binary/com.jrockit.mc.rcp.product_root_5.4.0.162463
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.core/cache/binary/com.oracle.jmc.executable.gtk.linux.x86_5.4.0
 %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/.settings/org.eclipse.equinox.p2.artifact.repository.prefs
 %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/.settings/org.eclipse.equinox.p2.metadata.repository.prefs
 @exec mkdir -p %D/%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/.data
 %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/.lock
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1389819297902.profile.gz
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1389819298489.profile.gz
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1389819314910.profile.gz
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1389819317970.profile.gz
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1404825662298.profile.gz
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1404825663150.profile.gz
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1404825678426.profile.gz
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1404825681769.profile.gz
 %%T%%/lib/missioncontrol/plugins/com.ibm.icu_4.4.2.v20110823.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.alert.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.alert.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.alert_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.attach_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.attach.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.attach.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.attach_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.jdp.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.jdp.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.jdp_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.commands_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.common_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.components.ui.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.components.ui.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.components.ui_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.historicaldata.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.historicaldata.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.historicaldata_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.diagnostic.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.diagnostic.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.diagnostic_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.mbeanbrowser.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.mbeanbrowser.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.mbeanbrowser_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/META-INF/MANIFEST.MF
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/com.jrockit.mc.console.ui.notification.tab_contexts.xml
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/com.jrockit.mc.console.ui.notification_contexts.xml
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/css/blafdoc.css
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/bookbig.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/bookicon.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/booklist.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/contbig.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/conticon.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/doclib.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/feedback.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/feedbck2.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/help.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/index.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/indxicon.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/larrow.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/leftnav.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/masterix.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/mix.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/oracle.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/prodbig.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/prodicon.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/rarrow.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/rightnav.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/toc.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/topnav.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs/uarrow.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/html/copyrt.htm
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/notfy.htm
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/using.htm
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/icons/alert_obj.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/icons/file_obj.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/icons/flight_recorder.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/icons/new-trigger-wiz.gif
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/notification_plugin.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/plugin.properties
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/plugin.xml
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/toc.xml
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.core_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.docs.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.docs.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.docs_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.configuration_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.controlpanel.ui.configuration_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.controlpanel.ui.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.controlpanel.ui.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.controlpanel.ui_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.ui.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.ui.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.ui_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.greychart.ui.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.greychart.ui.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.greychart.ui_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.greychartplugin_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.jdp_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.application.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.application.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.application_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.intro.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.intro.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.intro_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ext_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ui.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ui.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ui_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/META-INF/MANIFEST.MF
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/icons/console_view.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/icons/date-span-16.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/icons/day-of-week-16.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/icons/diagnostic-command-16.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/icons/hprof-16.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/icons/send-email-16.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/icons/start-jra-recording-16.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/icons/time-span-16.png
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/lib/dsn.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/lib/gimap.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/lib/imap.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/lib/mailapi.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/lib/pop3.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/lib/smtp.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/plugin.properties
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/plugin.xml
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/rjmx.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/com.jrockit.mc.rjmx.actionProvider.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/com.jrockit.mc.rjmx.descriptorProvider.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/com.jrockit.mc.rjmx.metadataprovider.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/com.jrockit.mc.rjmx.service.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/com.jrockit.mc.rjmx.syntheticattribute.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/com.jrockit.mc.rjmx.syntheticnotification.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/triggerActionExceptionHandlers.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/triggerActions.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/triggerConstraints.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema/triggerEvaluators.exsd
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.ui.ja_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.ui.zh_CN_5.3.0.159881.jar
-%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.ui_5.3.0.159881.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.alert.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.alert.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.alert_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.attach_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.attach.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.attach.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.attach_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.jdp.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.jdp.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.jdp_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.browser_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.commands_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.common_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.components.ui.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.components.ui.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.components.ui_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.historicaldata.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.historicaldata.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.historicaldata_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.diagnostic.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.diagnostic.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.diagnostic_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.mbeanbrowser.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.mbeanbrowser.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.mbeanbrowser_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/META-INF/MANIFEST.MF
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/com.jrockit.mc.console.ui.notification.tab_contexts.xml
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/com.jrockit.mc.console.ui.notification_contexts.xml
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/css/blafdoc.css
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/bookbig.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/bookicon.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/booklist.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/contbig.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/conticon.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/doclib.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/feedback.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/feedbck2.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/help.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/index.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/indxicon.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/larrow.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/leftnav.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/masterix.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/mix.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/oracle.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/prodbig.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/prodicon.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/rarrow.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/rightnav.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/toc.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/topnav.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs/uarrow.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/html/copyrt.htm
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/olh.htm
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/olh001.htm
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/preface.htm
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/title.htm
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/icons/alert_obj.png
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/icons/file_obj.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/icons/flight_recorder.png
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/icons/new-trigger-wiz.gif
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/notification_plugin.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/plugin.properties
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/plugin.xml
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/toc.xml
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.core_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.docs.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.docs.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.docs_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.configuration_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.controlpanel.ui.configuration_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.controlpanel.ui.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.controlpanel.ui.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.controlpanel.ui_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.ui.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.ui.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder.ui_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.flightrecorder_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.greychart.ui.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.greychart.ui.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.greychart.ui_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.greychartplugin_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.jdp_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.application.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.application.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.application_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.intro.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.intro.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rcp.intro_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ext_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ui.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ui.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.ui_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/META-INF/MANIFEST.MF
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/icons/console_view.png
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/icons/date-span-16.png
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/icons/day-of-week-16.png
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/icons/diagnostic-command-16.png
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/icons/hprof-16.png
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/icons/send-email-16.png
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/icons/time-span-16.png
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/lib/dsn.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/lib/gimap.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/lib/imap.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/lib/mailapi.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/lib/pop3.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/lib/smtp.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/plugin.properties
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/plugin.xml
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/rjmx.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/com.jrockit.mc.rjmx.actionProvider.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/com.jrockit.mc.rjmx.attributeTransformation.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/com.jrockit.mc.rjmx.descriptorProvider.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/com.jrockit.mc.rjmx.metadataprovider.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/com.jrockit.mc.rjmx.service.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/com.jrockit.mc.rjmx.syntheticattribute.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/com.jrockit.mc.rjmx.syntheticnotification.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/triggerActionExceptionHandlers.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/triggerActions.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/triggerConstraints.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema/triggerEvaluators.exsd
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.ui.ja_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.ui.zh_CN_5.4.0.162463.jar
+%%T%%/lib/missioncontrol/plugins/com.jrockit.mc.ui_5.4.0.162463.jar
 %%T%%/lib/missioncontrol/plugins/com.sun.el_2.2.0.v201108011116.jar
 %%T%%/lib/missioncontrol/plugins/javax.el_2.2.0.v201108011116.jar
 %%T%%/lib/missioncontrol/plugins/javax.servlet.jsp_2.2.0.v201112011158.jar
@@ -3208,19 +3209,19 @@
 @dirrm %%T%%/lib/missioncontrol/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_1.1.200.v20120913-144807
 @dirrm %%T%%/lib/missioncontrol/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.100.v20120521-2346/META-INF
 @dirrm %%T%%/lib/missioncontrol/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.100.v20120521-2346
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/schema
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/lib
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/icons
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881/META-INF
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.3.0.159881
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/icons
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/html
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/gifs
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon/css
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html/dcommon
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/html
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881/META-INF
-@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.3.0.159881
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/schema
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/lib
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/icons
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463/META-INF
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.rjmx_5.4.0.162463
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/icons
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/html
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/gifs
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon/css
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html/dcommon
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/html
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463/META-INF
+@dirrm %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.console.ui.notification_5.4.0.162463
 @dirrm %%T%%/lib/missioncontrol/plugins
 @dirrm %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/.data
 @dirrm %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile
@@ -3243,13 +3244,13 @@
 @dirrm %%T%%/lib/missioncontrol/features/org.eclipse.babel.nls_rt.equinox_ja_4.2.0.v20130724060447
 @dirrm %%T%%/lib/missioncontrol/features/org.eclipse.babel.nls_eclipse_zh_4.2.0.v20130724060447
 @dirrm %%T%%/lib/missioncontrol/features/org.eclipse.babel.nls_eclipse_ja_4.2.0.v20130724060447
-@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.rcp.product_5.3.0.159881
-@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp_5.3.0.159881
-@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.zh_CN_5.3.0.159881
-@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.ja_5.3.0.159881
-@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.flightrecorder_5.3.0.159881
-@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.core_5.3.0.159881
-@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.console_5.3.0.159881
+@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.rcp.product_5.4.0.162463
+@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp_5.4.0.162463
+@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.zh_CN_5.4.0.162463
+@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.rcp.ja_5.4.0.162463
+@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.flightrecorder_5.4.0.162463
+@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.core_5.4.0.162463
+@dirrm %%T%%/lib/missioncontrol/features/com.jrockit.mc.feature.console_5.4.0.162463
 @dirrm %%T%%/lib/missioncontrol/features
 @dirrm %%T%%/lib/missioncontrol/dropins
 @dirrm %%T%%/lib/missioncontrol/configuration/org.eclipse.update
