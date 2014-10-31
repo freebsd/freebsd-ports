@@ -37,8 +37,5 @@ share/locale/pl/LC_MESSAGES/upower.mo
 share/locale/sv/LC_MESSAGES/upower.mo
 share/polkit-1/actions/org.freedesktop.upower.policy
 share/polkit-1/actions/org.freedesktop.upower.qos.policy
-@exec mkdir -p /var/lib/upower
-@dirrm include/libupower-glib
-@dirrm etc/UPower
-@unexec rmdir /var/lib/upower 2>/dev/null || true
-@unexec rmdir /var/lib 2>/dev/null || true
+@dir /var/lib/upower
+@dir /var/lib/
