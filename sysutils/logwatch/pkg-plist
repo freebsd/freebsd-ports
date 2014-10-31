@@ -273,29 +273,7 @@ libexec/logwatch/defaults/shared/removeheaders
 libexec/logwatch/defaults/shared/removeservice
 man/man8/logwatch.8.gz
 sbin/logwatch.pl
-@exec mkdir -p %D/var/logwatch
-@dirrm var/logwatch
-@dirrmtry var
-@dirrm libexec/logwatch/defaults/shared
-@dirrm libexec/logwatch/defaults/services
-@dirrm libexec/logwatch/defaults/logfiles/yum
-@dirrm libexec/logwatch/defaults/logfiles/xferlog
-@dirrm libexec/logwatch/defaults/logfiles/up2date
-@dirrm libexec/logwatch/defaults/logfiles/samba
-@dirrm libexec/logwatch/defaults/logfiles/emerge
-@dirrm libexec/logwatch/defaults/logfiles/cron
-@dirrm libexec/logwatch/defaults/logfiles/autorpm
-@dirrm libexec/logwatch/defaults/logfiles
-@dirrm libexec/logwatch/defaults
-@dirrm libexec/logwatch
-@dirrm etc/logwatch/defaults/services
-@dirrm etc/logwatch/defaults/logfiles
-@dirrm etc/logwatch/defaults/html
-@dirrm etc/logwatch/defaults
-@exec mkdir -p %D/etc/logwatch/services
-@exec mkdir -p %D/etc/logwatch/logfiles
-@exec mkdir -p %D/etc/logwatch/html
-@dirrmtry etc/logwatch/services
-@dirrmtry etc/logwatch/logfiles
-@dirrmtry etc/logwatch/html
-@dirrmtry etc/logwatch
+@dir var/logwatch
+@dir etc/logwatch/services
+@dir etc/logwatch/logfiles
+@dir etc/logwatch/html
