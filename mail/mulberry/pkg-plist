@@ -1,6 +1,5 @@
 bin/%%PORTNAME%%
 lib/%%PORTNAME%%/Plug-ins/Timezones/vtimezones.ics
-@dirrm lib/%%PORTNAME%%/Plug-ins/Timezones
 lib/%%PORTNAME%%/Plug-ins/CRAMMD5Plugin.so
 lib/%%PORTNAME%%/Plug-ins/CommunicatorAdbkIOPlugin.so
 lib/%%PORTNAME%%/Plug-ins/DIGESTMD5Plugin.so
@@ -27,9 +26,6 @@ lib/%%PORTNAME%%/Resources/Status.xml
 lib/%%PORTNAME%%/Resources/Strings.xml
 lib/%%PORTNAME%%/Resources/Toolbars.xml
 lib/%%PORTNAME%%/Resources/UI.xml
-@dirrm lib/%%PORTNAME%%/Plug-ins
-@dirrm lib/%%PORTNAME%%/Resources
-@dirrm lib/%%PORTNAME%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-DEV
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-DEV-v3
@@ -38,13 +34,11 @@ lib/%%PORTNAME%%/Resources/UI.xml
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-v4
 %%PORTDOCS%%%%DOCSDIR%%/Mulberry_License
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%EXAMPLESDIR%% 2> /dev/null || true
 @unexec if cmp -s %D/etc/mailcap %D/%%EXAMPLESDIR%%/mailcap; then rm -f %D/etc/mailcap; fi
 %%EXAMPLESDIR%%/mailcap
 @exec [ -f %D/etc/mailcap ] || cp %D/%%EXAMPLESDIR%%/mailcap %D/etc/mailcap
 @unexec if cmp -s %D/lib/url.helpers %D/%%EXAMPLESDIR%%/url.helpers; then rm -f %D/lib/url.helpers; fi
 %%EXAMPLESDIR%%/url.helpers
 @exec [ -f %D/lib/url.helpers ] || cp %D/%%EXAMPLESDIR%%/url.helpers %D/lib/url.helpers
-@dirrm %%EXAMPLESDIR%%
 share/pixmaps/%%PORTNAME%%.png
 share/pixmaps/%%PORTNAME%%.xpm
