@@ -174,41 +174,6 @@ man/man8/refdb.sh.8.gz
 %%DATADIR%%/xsl/tei-refdb-xsl/tei-html/tei-refdb-html.xsl
 %%DATADIR%%/xsl/tei-refdb-xsl/tei-lib/tei-refdblib-ns.xsl
 %%DATADIR%%/xsl/tei-refdb-xsl/tei-lib/tei-refdblib.xsl
-@exec mkdir -p %D/var/lib/refdb/db
-@exec mkdir -p %D/var/log
-@exec mkdir -p %D/var/run
-@dirrm %%ETCDIR%%
-@dirrm %%DATADIR%%/db
-@dirrm %%DATADIR%%/declarations
-@dirrm %%DATADIR%%/dsssl/html
-@dirrm %%DATADIR%%/dsssl/lib
-@dirrm %%DATADIR%%/dsssl/print
-@dirrm %%DATADIR%%/dsssl
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/sql
-@dirrm %%DATADIR%%/sru
-@dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%/www/css
-@dirrm %%DATADIR%%/www/images
-@dirrm %%DATADIR%%/www/includes
-@dirrm %%DATADIR%%/www/xsl
-@dirrm %%DATADIR%%/www
-@dirrm %%DATADIR%%/xsl/common-refdb
-@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-fo
-@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-html
-@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-lib
-@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-xhtml
-@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl
-@dirrm %%DATADIR%%/xsl/tei-refdb-xsl/tei-fo
-@dirrm %%DATADIR%%/xsl/tei-refdb-xsl/tei-html
-@dirrm %%DATADIR%%/xsl/tei-refdb-xsl/tei-lib
-@dirrm %%DATADIR%%/xsl/tei-refdb-xsl
-@dirrm %%DATADIR%%/xsl
-@dirrm %%DATADIR%%
-@dirrm var/lib/refdb/db
-@dirrm var/lib/refdb
-@dirrmtry var/lib
-@dirrmtry var/log
-@dirrmtry var/run
-@dirrmtry var
+@dir var/lib/refdb/db
+@dir var/log
+@dir var/run
