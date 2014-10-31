@@ -1,20 +1,9 @@
-@owner %%USERS%%
-@mode 04555
-%%QPOPAUTH%%bin/qapopauth
-%%QPOPAUTH%%bin/qpopauth
-@group %%GROUPS%%
-@mode 0444
-@unexec if cmp -s %D/%%ETCDIR%%/popusers %D/%%ETCDIR%%/popusers.sample ; then rm -f %D/%%ETCDIR%%/popusers ; fi
-%%ETCDIR%%/popusers.sample
-@exec if [ ! -f %D/%%ETCDIR%%/popusers ] ; then cp -p %D/%F %B/popusers ; fi
-@mode
-@group wheel
-@owner root
+@(%%USERS%%,%%GROUPS%%,4555) %%QPOPAUTH%%bin/qapopauth
+@(%%USERS%%,%%GROUPS%%,4555) %%QPOPAUTH%%bin/qpopauth
+@sample(%%USERS%%,%%GROUPS%%,0444) %%ETCDIR%%/popusers.sample
 libexec/qpopper
 man/man8/qpopper.8.gz
 %%QPOPAUTH%%man/man8/qpopauth.8.gz
 %%EPOPPASSD%%libexec/qpoppassd
-@exec mkdir -p %%ETCDIR%% && chown %%USERS%%:%%GROUPS%% %%ETCDIR%% && chmod %%POP_MODE_DIR%% %%ETCDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/GUIDE.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%ETCDIR%%
+@dir(%%USERS%%,%%GROUPS%%,) %%ETCDIR%%
