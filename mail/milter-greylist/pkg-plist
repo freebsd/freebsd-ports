@@ -2,8 +2,4 @@ libexec/milter-greylist
 man/man5/greylist.conf.5.gz
 man/man8/milter-greylist.8.gz
 etc/mail/greylist.conf.sample
-@exec /bin/mkdir -p /var/milter-greylist
-@exec /usr/sbin/chown -R mailnull:mailnull /var/milter-greylist
-@exec [ -f /var/db/milter-greylist/greylist.db ] && printf '\n\n************************************************************\n************************************************************\n**                                                        **\n**                        WARNING                         **\n**                                                        **\n** The default dump file location has changed.            **\n** Please move greylist.db from /var/db/milter-greylist/  **\n** to /var/milter-greylist/ and update your greylist.conf **\n** accordingly.                                           **\n**                                                        **\n************************************************************\n************************************************************\n' ||true
-@dirrmtry etc/mail
-@unexec [ -f /var/milter-greylist/greylist.db ] || rmdir /var/milter-greylist || true
+@dir(mailnull,mailnull,) /var/milter-greylist
