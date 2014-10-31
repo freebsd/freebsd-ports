@@ -5,11 +5,13 @@ PORTNAME=	editss
 PORTVERSION=	2.2
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jylefort
+MASTER_SITES=	LOCAL/jylefort
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for XPilot shipshapes
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		imake
 USE_XORG=	x11 xaw xmu xt
