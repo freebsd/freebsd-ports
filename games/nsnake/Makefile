@@ -3,7 +3,7 @@
 
 PORTNAME=	nsnake
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://releases.malikania.fr/nsnake/
 EXTRACT_SUFX=	.tgz

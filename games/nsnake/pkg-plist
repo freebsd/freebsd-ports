@@ -1,10 +1,4 @@
-@owner games
-@group games
-@mode 4555
-bin/nsnake
+@(games,games,4555) bin/nsnake
 man/man6/nsnake.6.gz
 %%DOCS%%%%DOCSDIR%%/CHANGELOG
-%%DOCS%%@dirrm %%DOCSDIR%%
-@mode
-@exec mkdir -p /var/db/nsnake
-@exec chown games:games /var/db/nsnake
+@dir(games,games,) /var/db/nsnake
