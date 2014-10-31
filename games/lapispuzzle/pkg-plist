@@ -7,6 +7,3 @@ GNUstep/Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.tiff
 GNUstep/Local/Applications/LapisPuzzle.app/Resources/LapisPuzzleInfo.plist
 GNUstep/Local/Applications/LapisPuzzle.app/stamp.make
 GNUstep/Local/Tools/LapisPuzzle
-@dirrm GNUstep/Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.gorm
-@dirrm GNUstep/Local/Applications/LapisPuzzle.app/Resources
-@dirrm GNUstep/Local/Applications/LapisPuzzle.app
