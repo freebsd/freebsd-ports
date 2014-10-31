@@ -11,7 +11,10 @@ MASTER_SITES=	http://www.teaser.fr/~amajorel/deutex/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAD file manipulator for Doom, Heretic, Hexen, and Strife
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 LGPL20 MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
