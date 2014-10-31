@@ -33,13 +33,10 @@ lib/libxslt.la
 lib/libxslt.so
 lib/libxslt.so.2
 lib/xsltConf.sh
-@exec mkdir -p %D/lib/libxslt-plugins
 libdata/pkgconfig/libexslt.pc
 libdata/pkgconfig/libxslt.pc
 share/aclocal/libxslt.m4
 man/man1/xsltproc.1.gz
 man/man3/libexslt.3.gz
 man/man3/libxslt.3.gz
-@dirrmtry lib/libxslt-plugins
-@dirrm include/libxslt
-@dirrm include/libexslt
+@dir lib/libxslt-plugins
