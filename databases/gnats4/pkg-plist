@@ -48,4 +48,4 @@ man/man8/pr-edit.8.gz
 man/man8/queue-pr.8.gz
 man/man8/rmcat.8.gz
 %%EMACS_SITE_LISPDIR%%/gnats.el
-@dir(gnats) %%GNATSDBDIR%%/gnats
+@dir(gnats,,) %%GNATSDBDIR%%/gnats
