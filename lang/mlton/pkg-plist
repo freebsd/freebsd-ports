@@ -3036,12 +3036,12 @@ man/man1/mlnlffigen.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/README
 %%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/README.mlton
 %%PORTDOCS%%%%DOCSDIR%%/smlnj-lib/README.mlton.orig
-%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/mlyacc-lib
-%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/cml
-@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/util
-@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/extensions
-@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/ra
-@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/mltree
-@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/instructions
-@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/emit
-@exec mkdir -p %D/lib/mlton/sml/mlrisc-lib/alpha32/backpatch
+%%PORTDOCS%%@dir %%DOCSDIR%%/mlyacc-lib
+%%PORTDOCS%%@dir %%DOCSDIR%%/cml
+@dir lib/mlton/sml/mlrisc-lib/util
+@dir lib/mlton/sml/mlrisc-lib/extensions
+@dir lib/mlton/sml/mlrisc-lib/alpha32/ra
+@dir lib/mlton/sml/mlrisc-lib/alpha32/mltree
+@dir lib/mlton/sml/mlrisc-lib/alpha32/instructions
+@dir lib/mlton/sml/mlrisc-lib/alpha32/emit
+@dir lib/mlton/sml/mlrisc-lib/alpha32/backpatch
