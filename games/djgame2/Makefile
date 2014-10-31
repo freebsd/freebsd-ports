@@ -14,6 +14,10 @@ COMMENT=	bluedj contains many popular online games
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
+BROKEN=		Online servers gone, game is not playable
+DEPRECATED=	Online servers gone, game is not playable
+EXPIRATION_DATE=2014-11-31
+
 USE_QT4=	gui qt3support qmake_build uic_build rcc_build moc_build svg
 USES=		dos2unix zip
 DOS2UNIX_FILES=	Base/src/DJGraphicsChessTimerItem.cpp
