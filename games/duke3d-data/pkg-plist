@@ -1,3 +1,1 @@
-@exec mkdir -p %D/%%DATADIR%%
 %%SHAREWARE%%%%DATADIR%%/duke3d.grp
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || echo "If you are permanently removing this port, you should remove any configuration files and data files left in %D/%%DATADIR%%." | fmt
