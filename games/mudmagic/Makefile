@@ -10,7 +10,8 @@ MASTER_SITES=	http://www.mudmagic.com/mud-client/downloads/
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	GTK+ based MUD client
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpcre.so:${PORTSDIR}/devel/pcre \
