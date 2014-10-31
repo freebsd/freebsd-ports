@@ -10,7 +10,8 @@ MASTER_SITES=	SAVANNAH/${PORTNAME}/${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Globulation 2, free and innovative strategy game
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libspeex.so:${PORTSDIR}/audio/speex \
