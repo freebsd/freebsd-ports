@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="21ce1840-6107-11e4-9e84-0022156e8794">
+    <topic>twiki -- remote Perl code execution</topic>
+    <affects>
+      <package>
+	<name>twiki</name>
+	<range><lt>5.1.4_1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TWiki developers report:</p>
+	<blockquote cite="http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2014-7236">
+	  <p>The debugenableplugins request parameter allows arbitrary
+	  Perl code execution.</p>
+	  <p>Using an HTTP GET request towards a TWiki server,
+	  add a specially crafted debugenableplugins request parameter
+	  to TWiki's view script (typically port 80/TCP).
+	  Prior authentication may or may not be necessary.</p>
+	  <p>A remote attacker can execute arbitrary Perl code
+	  to view and modify any file the webserver user has access to.</p>
+	  <p>Example: http://www.example.com/do/view/Main/WebHome?debugenableplugins=BackupRestorePlugin%3bprint("Content-Type:text/html\r\n\r\nVulnerable!")%3bexit</p>
+	  <p>The TWiki site is vulnerable if you see a page with text
+	  "Vulnerable!".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-7236</cvename>
+      <url>http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2014-7236</url>
+    </references>
+    <dates>
+      <discovery>2014-10-09</discovery>
+      <entry>2014-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0dad9114-60cc-11e4-9e84-0022156e8794">
     <topic>jenkins -- slave-originated arbitrary code execution on master servers</topic>
     <affects>
