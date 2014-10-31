@@ -2,7 +2,7 @@ To complete the installation of DAViCal:
 
 1. Create DAViCal's database
 
-       su pgsql %%DOCSDIR%%/dba/create-database.sh
+       su pgsql %%DATADIR%%/dba/create-database.sh
 
 2. Edit pg_hba.conf file to add the davical_app user close to the
 top of the accounts
@@ -13,6 +13,8 @@ top of the accounts
 
        %%WWWDIR%%/config/config.php
 
-4. Enable in apache by copying the httpd-davical.conf from the
-documentation directory to the Apache Include directory and restart
-Apache.
+4. Enable in apache by copying
+
+	%%DATADIR%%/httpd-davical.conf
+
+to the Apache Include directory and restart Apache.
