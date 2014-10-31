@@ -10,7 +10,7 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POV-Ray oriented modeller
 
-LIB_DEPENDS=	lib3ds-1.so:${PORTSDIR}/graphics/lib3ds
+LIB_DEPENDS=	lib3ds.so:${PORTSDIR}/graphics/lib3ds
 BUILD_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
