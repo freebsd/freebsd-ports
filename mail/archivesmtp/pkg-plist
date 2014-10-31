@@ -1,7 +1,4 @@
 sbin/archivesmtp
 etc/archivesmtp.conf.sample
 man/man8/archivesmtp.8.gz
-@owner nobody
-@mode 755
-@exec mkdir -p %%SOCKETBASE%%/%%SOCKETDIR%%
-@dirrmtry %%SOCKETBASE%%/%%SOCKETDIR%%
+@dir(nobody,,755) %%SOCKETBASE%%/%%SOCKETDIR%%
