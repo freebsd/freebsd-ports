@@ -4,4 +4,4 @@ lib/libtddl.a
 lib/libtddl.so
 lib/libtddl.so.1
 lib/libtddl.so.1.2.0.7
-@exec mkdir -p %D/var
+@dir var
