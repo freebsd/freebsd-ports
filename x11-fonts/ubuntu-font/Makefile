@@ -3,7 +3,7 @@
 
 PORTNAME=	ubuntu-font
 PORTVERSION=	0.80
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://font.ubuntu.com/download/
 
