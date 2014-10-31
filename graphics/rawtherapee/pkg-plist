@@ -1,5 +1,6 @@
 bin/rawtherapee
 man/man1/rawtherapee.1.gz
+share/appdata/rawtherapee.appdata.xml
 share/applications/rawtherapee.desktop
 %%DOCSDIR%%/AUTHORS.txt
 %%DOCSDIR%%/AboutThisBuild.txt
@@ -109,6 +110,7 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Chanmixer-BB.png
 %%DATADIR%%/images/Chanmixer-BG.png
 %%DATADIR%%/images/Chanmixer-BR.png
+%%DATADIR%%/images/Chanmixer-BY.png
 %%DATADIR%%/images/Chanmixer-C.png
 %%DATADIR%%/images/Chanmixer-G.png
 %%DATADIR%%/images/Chanmixer-GB.png
