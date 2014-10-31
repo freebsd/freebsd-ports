@@ -10,6 +10,8 @@ DISTFILES=	syslog-ng-incubator-${PORTVERSION}.tar.xz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The syslog-ng module incubator
 
+BROKEN=		Fails to build with syslog-ng36
+
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(PORTVERSION)
 
 MAKE_JOBS_UNSAFE=	yes
