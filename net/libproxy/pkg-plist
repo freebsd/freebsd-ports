@@ -7,11 +7,4 @@ lib/libproxy.so.1
 libdata/pkgconfig/libproxy-1.0.pc
 share/cmake/Modules/Findlibproxy.cmake
 share/vala/vapi/libproxy-1.0.vapi
-@dirrmtry share/vala/vapi
-@dirrmtry share/vala
-@dirrm share/cmake/Modules
-@dirrm share/cmake
-@exec mkdir -p %D/lib/libproxy/%%VERSION%%/modules
-@dirrm lib/libproxy/%%VERSION%%/modules
-@dirrm lib/libproxy/%%VERSION%%
-@dirrm lib/libproxy
+@dir lib/libproxy/%%VERSION%%/modules
