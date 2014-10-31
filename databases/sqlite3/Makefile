@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.6
+PORTVERSION=	3.8.7
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2014/ http://www2.sqlite.org/2014/ http://www3.sqlite.org/2014/
-DISTNAME=	sqlite-autoconf-3080600
+DISTNAME=	sqlite-autoconf-3080700
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -66,7 +66,7 @@ RTREEG_DESC=		Index type for range queries
 RTREE_DESC=		Enable R*Tree module
 RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 
-OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION TS1 RTREE
+OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION TS1 UNICODE61 RTREE
 # SECURE_DELETE, UNLOCK_NOTIFY used by www/firefox, www/libxul
 # RTREE used by graphics/mapnik, databases/spatialite
 
@@ -120,7 +120,7 @@ ICU_LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu
 ICU_CPPFLAGS=	`${LOCALBASE}/bin/icu-config --cppflags` -DSQLITE_ENABLE_ICU=1
 ICU_LDFLAGS=	`${LOCALBASE}/bin/icu-config --ldflags`
 
-UNICODE61_CPPFLAGS=	-DSQLITE_ENABLE_FTS4_UNICODE61=1
+UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
 
 .include <bsd.port.options.mk>
 
