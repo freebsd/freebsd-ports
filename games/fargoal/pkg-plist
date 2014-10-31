@@ -48,7 +48,3 @@ libexec/fargoal
 %%DATADIR%%/sfx/ugh.wav
 %%DATADIR%%/sfx/up.wav
 %%DATADIR%%/sfx/victory.wav
-@dirrm %%DATADIR%%/sfx
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
