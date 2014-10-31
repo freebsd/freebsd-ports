@@ -301,6 +301,7 @@
     SUBDIR += torrus
     SUBDIR += unifi2
     SUBDIR += unifi3
+    SUBDIR += unifi4
     SUBDIR += victorops-nagios
     SUBDIR += vidalia
     SUBDIR += virt-viewer
