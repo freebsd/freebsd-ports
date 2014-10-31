@@ -1,0 +1,15 @@
+BSD Owl Scripts
+
+This collection of BSD Make directives aims at providing a highly
+portable build system targetting modern UNIX systems and supporting
+common or less command languages.
+
+It can already be used to:
+
+* Preparation and publication of TeX documents;
+* Development of TeX macros with NOWEB;
+* Development of OCaml software;
+* Maintainance of a FreeBSD workstation configuration files;
+* Preparation of a static website with ONSGMLS.
+
+WWW: https://github.com/michipili/bsdowl
