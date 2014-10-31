@@ -2,7 +2,7 @@
 
 PORTNAME=	libzmq4
 PORTVERSION=	4.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -14,8 +14,10 @@ LICENSE=	LGPL3
 
 USES=		libtool pathfix
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CURVE DEBUG PGM
+OPTIONS_DEFAULT=	CURVE PGM
 CURVE_DESC=	CURVE security mechanism via libsodium
 PGM_DESC=	Reliable multicast transport using PGM via OpenPGM
 
