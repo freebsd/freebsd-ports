@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rinse
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires linuxulator to register rpms
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OPSYS} == DragonFly
 IGNORE=		requires linuxulator to register rpms
@@ -58,4 +58,4 @@ post-patch:
 		 s/dev/sys/; N; /(.*)\n\1/!P; g; }' \
 		${WRKSRC}/scripts/*/post-install.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
