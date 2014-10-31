@@ -1,9 +1,6 @@
 sbin/sentinel
 etc/sentinel.cf.dist
 etc/rc.d/sentinel.sh-dist
-@exec mkdir /var/spool/sentinel
-@exec chown smmsp:smmsp /var/spool/sentinel
-@unexec rm -rf /var/spool/sentinel
+@dir(smmsp,smmsp,) /var/spool/sentinel
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
