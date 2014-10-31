@@ -1,4 +1,3 @@
-@unexec %D/etc/rc.d/zhm stop > /dev/null 2>&1 || true
 bin/zaway
 bin/zctl
 bin/zleave
@@ -32,8 +31,4 @@ man/man8/zephyrd.8.gz
 man/man8/zhm.8.gz
 man/man8/zshutdown_notify.8.gz
 man/man8/zstat.8.gz
-@exec mkdir -p %D/etc/zephyr/acl
-@dirrm etc/zephyr/acl
-@dirrm etc/zephyr
-@dirrm include/zephyr
-@dirrm %%DATADIR%%
+@dir etc/zephyr/acl
