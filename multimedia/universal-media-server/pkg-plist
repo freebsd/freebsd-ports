@@ -139,19 +139,6 @@
 %%DATADIR%%/web/web-narrow.css
 %%DATADIR%%/web/web-wide.css
 %%DATADIR%%/web/web.css
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/css
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/linux
-@dirrmtry %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%/renderers
-@dirrmtry %%DATADIR%%/web/img
-@dirrmtry %%DATADIR%%/web
-@dirrmtry %%DATADIR%%
-@dirrmtry etc/universal-media-server
-@exec mkdir -p /var/db/universal-media-server
-@exec mkdir -p /var/log/universal-media-server
-@exec mkdir -p /var/run/universal-media-server
-@unexec rmdir /var/db/universal-media-server >/dev/null 2>&1 || :
-@unexec rmdir /var/log/universal-media-server >/dev/null 2>&1 || :
-@unexec rmdir /var/run/universal-media-server >/dev/null 2>&1 || :
+@dir /var/db/universal-media-server
+@dir /var/log/universal-media-server
+@dir /var/run/universal-media-server
