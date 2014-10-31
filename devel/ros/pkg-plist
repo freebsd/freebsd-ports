@@ -601,18 +601,18 @@ ros/ros/tools/rosunit/src/rosunit/rosunit_main.pyo
 ros/ros/tools/rosunit/src/rosunit/xmlrunner.py
 ros/ros/tools/rosunit/src/rosunit/xmlrunner.pyc
 ros/ros/tools/rosunit/src/rosunit/xmlrunner.pyo
-@exec mkdir -p %D/ros/stacks
-@exec mkdir -p %D/ros/ros/tools/rospack/bin
-@exec mkdir -p %D/ros/ros/tools/rosmake/bin
-@exec mkdir -p %D/ros/ros/tools/rosdep/bin
-@exec mkdir -p %D/ros/ros/tools/roscreate/bin
-@exec mkdir -p %D/ros/ros/tools/rosclean/bin
-@exec mkdir -p %D/ros/ros/test/test_rospack/test_empty
-@exec mkdir -p %D/ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/package4/not_a_package1
-@exec mkdir -p %D/ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/not_a_package_1_1
-@exec mkdir -p %D/ros/ros/test/test_rospack/bin
-@exec mkdir -p %D/ros/ros/test/test_rosmake/bin
-@exec mkdir -p %D/ros/ros/test/test_roslib/bin
-@exec mkdir -p %D/ros/ros/test/test_rosdep/bin
-@exec mkdir -p %D/ros/ros/test/test_roscreate/bin
-@exec mkdir -p %D/ros/ros/core/roslib/bin
+@dir ros/stacks
+@dir ros/ros/tools/rospack/bin
+@dir ros/ros/tools/rosmake/bin
+@dir ros/ros/tools/rosdep/bin
+@dir ros/ros/tools/roscreate/bin
+@dir ros/ros/tools/rosclean/bin
+@dir ros/ros/test/test_rospack/test_empty
+@dir ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/package4/not_a_package1
+@dir ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/not_a_package_1_1
+@dir ros/ros/test/test_rospack/bin
+@dir ros/ros/test/test_rosmake/bin
+@dir ros/ros/test/test_roslib/bin
+@dir ros/ros/test/test_rosdep/bin
+@dir ros/ros/test/test_roscreate/bin
+@dir ros/ros/core/roslib/bin
