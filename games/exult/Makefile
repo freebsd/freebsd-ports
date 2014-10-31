@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.math.leidenuniv.nl/~wpalenst/cvs/
 DISTNAME=	exult-20130315-0400
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultima VII engine
 
 LICENSE=	GPLv2

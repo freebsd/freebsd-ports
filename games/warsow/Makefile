@@ -8,7 +8,7 @@ MASTER_SITES=	SF/warsow.mirror/Warsow%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_sdk
 EXTRACT_SUFX=	.tar.gz.1
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Futuristic, fast-paced first person shooter
 
 LICENSE=	GPLv2

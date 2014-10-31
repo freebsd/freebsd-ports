@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
 DISTNAME=	source-${PORTVERSION}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	bluedj contains many popular online games
 
 LICENSE=	GPLv2 # or later

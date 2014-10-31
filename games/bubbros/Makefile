@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/bub-n-bros/bub-n-bros/${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer clone of the famous Bubble Bobble game
 
 LICENSE=	MIT

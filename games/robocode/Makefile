@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${DISTVERSION}-setup.jar
 DIST_SUBDIR=	java
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
 
 LICENSE=	EPL

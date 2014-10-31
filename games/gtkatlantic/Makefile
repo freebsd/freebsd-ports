@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.tuxfamily.org/gtkatlantic/downloads/v${PORTVERSION
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game like Monopoly(tm)
 
 LICENSE=	GPLv2 # or later

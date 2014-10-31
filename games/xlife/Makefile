@@ -6,7 +6,7 @@ PORTVERSION=	6.7.6
 CATEGORIES=	games
 MASTER_SITES=	http://litwr2.atspace.eu/xlife/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	John Horton Conway's Game of Life
 
 LICENSE=	MIT GPLv2

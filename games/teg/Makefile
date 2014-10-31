@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	games gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn-based strategy game for GNOME
 
 USES=		pathfix gmake libtool iconv pkgconfig

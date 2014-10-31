@@ -8,7 +8,7 @@ CATEGORIES=	archivers games
 MASTER_SITES=	http://www.teaser.fr/~amajorel/deutex/ \
 		http://freebsd.nsu.ru/distfiles/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAD file manipulator for Doom, Heretic, Hexen, and Strife
 
 LICENSE=	GPLv2

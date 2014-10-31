@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.NetBSD.org/~chuck/gz/
 DISTNAME=	${PORTNAME}C${PORTVERSION}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Getting the Gold and Avoiding Death
 
 USE_XORG=	x11

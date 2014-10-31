@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.seul.org/pub/gtkpool/ \
 		http://www.sourcefiles.org/Games/Sports/Pool/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	2D pool game using the GTK+ toolkit
 
 USES=		autoreconf gmake perl5 pkgconfig

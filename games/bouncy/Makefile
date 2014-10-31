@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-post-${DISTVERSION}.tgz \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}-post-${DISTVERSION}.tgz
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	You are a hungry rabbit. Eat food to complete the level
 
 LICENSE=	GPLv2

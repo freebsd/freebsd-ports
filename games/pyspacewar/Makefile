@@ -9,7 +9,7 @@ MASTER_SITES=	http://mg.pov.lt/${PORTNAME}/\
 		LOCAL/beech
 DIST_SUBDIR=	python
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Two ships duel in a gravity field
 
 LICENSE=	GPLv2
