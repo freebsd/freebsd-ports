@@ -5,6 +5,4 @@ man/man5/portshaker.d.5.gz
 man/man8/portshaker.8.gz
 %%DATADIR%%/merge-updating.awk
 %%DATADIR%%/portshaker.subr
-@exec mkdir -p %D/etc/portshaker.d
-@dirrmtry etc/portshaker.d
-@dirrm %%DATADIR%%
+@dir etc/portshaker.d
