@@ -395,11 +395,11 @@ lib/ipsec/libstrongswan.so.0.0.0
 lib/ipsec/libtls.so.0.0.0
 @dir %%DATADIR%%/templates/config/plugins
 @dir lib/ipsec/plugins
-@dir %D/etc/ipsec.d/reqs
-@dir %D/etc/ipsec.d/private
-@dir %D/etc/ipsec.d/ocspcerts
-@dir %D/etc/ipsec.d/crls
-@dir %D/etc/ipsec.d/certs
-@dir %D/etc/ipsec.d/cacerts
-@dir %D/etc/ipsec.d/acerts
-@dir %D/etc/ipsec.d/aacerts
+@dir etc/ipsec.d/reqs
+@dir etc/ipsec.d/private
+@dir etc/ipsec.d/ocspcerts
+@dir etc/ipsec.d/crls
+@dir etc/ipsec.d/certs
+@dir etc/ipsec.d/cacerts
+@dir etc/ipsec.d/acerts
+@dir etc/ipsec.d/aacerts
