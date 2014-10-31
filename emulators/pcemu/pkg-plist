@@ -1,5 +1,4 @@
 bin/pcemu
-@exec mkdir -p %D/lib/pcemu/doc %D/lib/pcemu/font %D/lib/pcemu/C
 lib/pcemu/doc/BUGS
 lib/pcemu/doc/CHANGES
 lib/pcemu/doc/README
