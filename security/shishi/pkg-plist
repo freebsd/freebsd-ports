@@ -709,7 +709,4 @@ man/man3/shishi_x509key_default_file_set.3.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/shishi.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/shishi.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/shishi.mo
-@dirrmtry etc/shishi
-@dirrmtry lib/security
-@exec mkdir -m 0700 -p /var/shishi
-@unexec rmdir /var/shishi 2>/dev/null || true
+@dir(,,700) /var/shishi
