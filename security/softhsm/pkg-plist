@@ -7,7 +7,5 @@ lib/softhsm/libsofthsm.so
 man/man1/softhsm-keyconv.1.gz
 man/man1/softhsm.1.gz
 man/man5/softhsm.conf.5.gz
-@exec mkdir -p /var/lib
-@exec install -d -o root -g wheel -m 700 /var/lib/softhsm
-@unexec rmdir /var/lib/softhsm 2>/dev/null || true
-@unexec rmdir /var/lib 2>/dev/null || true
+@dir(,,700) /var/lib/softhsm
+@dir /var/lib
