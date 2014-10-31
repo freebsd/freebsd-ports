@@ -27,33 +27,28 @@ lib/libpgm.so
 libdata/pkgconfig/openpgm-5.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-rmt-bb-pgmcc-03.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc3208.txt
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/SConscript
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/SConscript89
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/async.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/async.h
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/blocksyncrecv.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/daytime.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/enonblocksyncrecv.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/enonblocksyncrecvmsg.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/enonblocksyncrecvmsgv.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/getopt.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/getopt.h
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/heatmap.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmdump.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmping.cc
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmrecv.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmsend.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pgmtop.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/ping.proto
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/pnonblocksyncrecv.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/purinrecv.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/purinrecvcc.cc
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/purinsend.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/purinsendcc.cc
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/shortcakerecv.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/snonblocksyncrecv.c
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/pgm-5.2/pgm
-@dirrm include/pgm-5.2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/SConscript
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/SConscript89
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/async.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/async.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/blocksyncrecv.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/daytime.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/enonblocksyncrecv.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/enonblocksyncrecvmsg.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/enonblocksyncrecvmsgv.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/getopt.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/getopt.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/heatmap.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/pgmdump.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/pgmping.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/pgmrecv.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/pgmsend.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/pgmtop.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/ping.proto
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/pnonblocksyncrecv.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/purinrecv.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/purinrecvcc.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/purinsend.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/purinsendcc.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/shortcakerecv.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/snonblocksyncrecv.c
