@@ -1,11 +1,9 @@
 bin/nb
-@unexec if cmp -s %D/etc/nb.conf.sample %D/etc/nb.conf; then rm -f %D/etc/nb.conf; fi
-etc/nb.conf.sample
-@exec if [ ! -f %D/etc/nb.conf ] ; then cp -p %D/%F %B/nb.conf; fi
-@exec mkdir -p %D/share/nanoblogger/default/cache
-@exec mkdir -p %D/share/nanoblogger/default/plugins
-@exec mkdir -p %D/share/nanoblogger/plugins/entry/mod
-@exec mkdir -p %D/share/nanoblogger/plugins/page/mod
+@sample etc/nb.conf.sample
+@dir share/nanoblogger/default/cache
+@dir share/nanoblogger/default/plugins
+@dir share/nanoblogger/plugins/entry/mod
+@dir share/nanoblogger/plugins/page/mod
 %%DATADIR%%/default/articles/example.txt
 %%DATADIR%%/default/blog.conf
 %%DATADIR%%/default/data/cat_1.db
@@ -89,34 +87,3 @@ etc/nb.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/copyright
 %%PORTDOCS%%%%DOCSDIR%%/html/nanoblogger.html
-@dirrm %%DATADIR%%/default/articles
-@dirrm %%DATADIR%%/default/cache
-@dirrm %%DATADIR%%/default/data
-@dirrm %%DATADIR%%/default/images
-@dirrm %%DATADIR%%/default/plugins
-@dirrmtry %%DATADIR%%/default/styles
-@dirrmtry %%DATADIR%%/default/templates
-@dirrmtry %%DATADIR%%/default
-@dirrm %%DATADIR%%/lang/en
-@dirrmtry %%DATADIR%%/lang
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/moods/smilies
-@dirrm %%DATADIR%%/moods
-@dirrmtry %%DATADIR%%/plugins/archive/category
-@dirrm %%DATADIR%%/plugins/archive/day
-@dirrm %%DATADIR%%/plugins/archive/month
-@dirrm %%DATADIR%%/plugins/archive/year
-@dirrmtry %%DATADIR%%/plugins/archive
-@dirrmtry %%DATADIR%%/plugins/entry/format
-@dirrm %%DATADIR%%/plugins/entry/mod
-@dirrmtry %%DATADIR%%/plugins/entry
-@dirrm %%DATADIR%%/plugins/makepage
-@dirrmtry %%DATADIR%%/plugins/page/format
-@dirrm %%DATADIR%%/plugins/page/mod
-@dirrmtry %%DATADIR%%/plugins/page
-@dirrm %%DATADIR%%/plugins/post
-@dirrmtry %%DATADIR%%/plugins/shortcode
-@dirrmtry %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%/
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/
