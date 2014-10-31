@@ -7,4 +7,4 @@ bin/sip
 %%PYTHON_SITELIBDIR%%/sipdistutils.py
 %%PYTHON_SITELIBDIR%%/sipdistutils.pyc
 %%PYTHON_SITELIBDIR%%/sipdistutils.pyo
-@exec mkdir -p %D/%%DATADIR%%
+@dir %%DATADIR%%
