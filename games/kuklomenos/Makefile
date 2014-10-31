@@ -10,7 +10,8 @@ MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but challenging abstract shoot-em-up game
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
