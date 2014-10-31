@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Created by: Mark Felder <feld@feld.me>
+# Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD: head/net-mgmt/unifi/files/unifi.in 334865 2013-11-25 16:52:21Z feld $
 #
 
