@@ -8,8 +8,7 @@
 %%OSIRISMD%%@group
 %%OSIRISD%%etc/rc.d/osirisd.sh
 %%OSIRISMD%%etc/rc.d/osirismd.sh
-@exec mkdir -p %D/osiris
-@exec chown osiris:osiris %D/osiris
+@dir(osiris,osiris,) osiris
 %%OSIRISMD%%@owner osiris
 %%OSIRISMD%%@group osiris
 %%OSIRISMD%%osiris/configs/default.aix
@@ -30,4 +29,3 @@
 %%OSIRISMD%%@owner
 %%OSIRISMD%%@group
 %%OSIRISMD%%@dirrm osiris/configs
-@dirrm osiris
