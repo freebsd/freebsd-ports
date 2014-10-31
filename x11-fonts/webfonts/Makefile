@@ -3,7 +3,7 @@
 
 PORTNAME=	webfonts
 PORTVERSION=	0.30
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/corefonts/the%20fonts/final:group1 \
 		ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
