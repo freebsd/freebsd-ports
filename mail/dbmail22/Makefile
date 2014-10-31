@@ -35,6 +35,7 @@ SIEVE_CONFIGURE_WITH=	sieve
 SIEVE_LIB_DEPENDS=	libsieve.so:${PORTSDIR}/mail/libsieve
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
+INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig

@@ -44,22 +44,14 @@ sbin/dbmail-smtp
 %%SIEVE%%sbin/dbmail-timsieved
 sbin/dbmail-users
 sbin/dbmail-util
-@exec mkdir -p %D/share/%%PORTNAME%%
-%%MYSQL%%@exec mkdir -p %D/share/%%PORTNAME%%/mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/2_1_7-2_2_0.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/create_tables.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/migrate_from_1.x_to_2.0_innodb.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/migrate_from_2.0_to_2.2.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/update_headervalue_01.mysql
-%%MYSQL%%@dirrm share/%%PORTNAME%%/mysql
-%%PGSQL%%@exec mkdir -p %D/share/%%PORTNAME%%/postgresql
 %%PGSQL%%share/%%PORTNAME%%/postgresql/2_1_7-2_2_0.pgsql
 %%PGSQL%%share/%%PORTNAME%%/postgresql/create_tables.pgsql
 %%PGSQL%%share/%%PORTNAME%%/postgresql/migrate_from_1.x_to_2.0.pgsql
 %%PGSQL%%share/%%PORTNAME%%/postgresql/migrate_from_2.0_to_2.2.pgsql
-%%PGSQL%%@dirrm share/%%PORTNAME%%/postgresql
-%%SQLITE%%@exec mkdir -p %D/share/%%PORTNAME%%/sqlite
 %%SQLITE%%share/%%PORTNAME%%/sqlite/2_1_7-2_2_0.sqlite
 %%SQLITE%%share/%%PORTNAME%%/sqlite/create_tables.sqlite
-%%SQLITE%%@dirrm share/%%PORTNAME%%/sqlite
-@dirrm share/%%PORTNAME%%
