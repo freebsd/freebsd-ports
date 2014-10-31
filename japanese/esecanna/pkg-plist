@@ -1,12 +1,8 @@
-@unexec if [ -x %D/etc/rc.d/esecanna ]; then %D/etc/rc.d/esecanna stop || true; fi
 etc/esecannarc
-@exec mkdir -p %D/lib/esecanna
-@dirrm lib/esecanna
+@dir lib/esecanna
 sbin/esecannaserver
-@exec /bin/mkdir -p /var/run/esecanna
-@unexec /bin/rm -rf /var/run/esecanna
+@mkdir /var/run/esecanna
 %%PORTDOCS%%share/doc/esecanna/CREDITS
 %%PORTDOCS%%share/doc/esecanna/CHANGES.jp
 %%PORTDOCS%%share/doc/esecanna/README.First.jp
 %%PORTDOCS%%share/doc/esecanna/README.jp
-%%PORTDOCS%%@dirrm share/doc/esecanna
