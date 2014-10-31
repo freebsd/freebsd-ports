@@ -16,6 +16,7 @@ MAINTAINER=	games@FreeBSD.org
 COMMENT=	Simple 2D puzzle game with bombs
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.TXT
 
 RUN_DEPENDS=	${PYGAME}
 
