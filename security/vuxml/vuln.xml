@@ -57,6 +57,59 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0dad9114-60cc-11e4-9e84-0022156e8794">
+    <topic>jenkins -- slave-originated arbitrary code execution on master servers</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.587</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>1.580.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kohsuke Kawaguchi from Jenkins team reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-10-30">
+	  <p>Historically, Jenkins master and slaves behaved as if
+	  they altogether form a single distributed process.  This
+	  means a slave can ask a master to do just about anything
+	  within the confinement of the operating system, such as
+	  accessing files on the master or trigger other jobs on
+	  Jenkins.</p>
+	  <p>This has increasingly become problematic, as larger
+	  enterprise deployments have developed more sophisticated
+	  trust separation model, where the administators of a master
+	  might take slaves owned by other teams.  In such an
+	  environment, slaves are less trusted than the master.
+	  Yet the "single distributed process" assumption was not
+	  communicated well to the users, resulting in vulnerabilities
+	  in some deployments.</p>
+	  <p>SECURITY-144 (CVE-2014-3665) introduces a new subsystem
+	  to address this problem.  This feature is off by default for
+	  compatibility reasons.  See Wiki for more details, who should
+	  turn this on, and implications.</p>
+	  <p>CVE-2014-3566 is rated high.  It only affects
+	  installations that accept slaves from less trusted
+	  computers, but this will allow an owner of of such slave to
+	  mount a remote code execution attack on Jenkins.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3665</cvename>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-10-30</url>
+      <url>https://wiki.jenkins-ci.org/display/JENKINS/Slave+To+Master+Access+Control</url>
+      <url>http://www.cloudbees.com/jenkins-security-advisory-2014-10-30</url>
+    </references>
+    <dates>
+      <discovery>2014-10-30</discovery>
+      <entry>2014-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f8c88d50-5fb3-11e4-81bd-5453ed2e2b49">
     <topic>libssh -- PRNG state reuse on forking servers</topic>
     <affects>
