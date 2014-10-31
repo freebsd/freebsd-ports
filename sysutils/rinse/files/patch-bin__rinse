@@ -1,0 +1,29 @@
+--- bin/rinse~
++++ bin/rinse
+@@ -334,7 +334,7 @@ exit;
+ 
+ sub testSetup {
+ 
+-  my @required = qw/ rpm rpm2cpio wget /;
++  my @required = qw/ bsdtar fetch /;
+ 
+   foreach my $file (@required) {
+     if ( ( !-x "/bin/$file" ) && ( !-x "/usr/bin/$file" ) ) {
+@@ -840,7 +840,7 @@ sub downloadPackagesToDirectory {
+         print $msg;
+ 
+         # download - unless already present.
+-        system("wget --quiet -O $dir/$key $links{ $key }") unless -e "$dir/$key";
++        system("fetch -w10 -qo $dir/$key $links{ $key }") unless -e "$dir/$key";
+         next PACKAGE;
+       }
+       print "[Harmless] Failed to find download link for $package\n";
+@@ -1147,7 +1147,7 @@ sub unpackPackages {
+       #  Run the unpacking command.
+       #
+       my $cmd =
+-        "rpm2cpio $file | (cd $CONFIG{'directory'} ; cpio --extract --make-directories --no-absolute-filenames --preserve-modification-time) 2>/dev/null >/dev/null";
++        "bsdtar xPf $file --chroot -C $CONFIG{'directory'}";
+       if ( $file =~ /(fedora|centos|redhat|mandriva)-release-/ ) {
+         my $rpmname = basename($file);
+         $postcmd =

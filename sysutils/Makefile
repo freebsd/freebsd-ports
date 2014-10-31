@@ -776,6 +776,7 @@
     SUBDIR += respond
     SUBDIR += retail
     SUBDIR += rfstool
+    SUBDIR += rinse
     SUBDIR += rmonitor
     SUBDIR += roottail
     SUBDIR += rsnapshot
