@@ -1,5 +1,3 @@
 bin/xminehunter
 share/pixmaps/xminehunter.xpm
-@exec mkdir -p %D/lib/X11/xminehunter
-@exec chmod 333 %D/lib/X11/xminehunter
-@dirrmtry lib/X11/xminehunter
+@dir(,,333) lib/X11/xminehunter
