@@ -1,5 +1,5 @@
-@exec mkdir -p %D/etc/resolvconf/update-libc.d
-@exec mkdir -p %D/etc/resolvconf/resolv.conf.d
+@dir etc/resolvconf/update-libc.d
+@dir etc/resolvconf/resolv.conf.d
 sbin/resolvconf
 etc/resolvconf/run
 etc/resolvconf/update.d/libc
