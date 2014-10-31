@@ -1,6 +1,3 @@
 sbin/fbsdmon
 etc/periodic/weekly/600.fbsdmon
-@exec mkdir -p /var/db/fbsdmon || true
-@unexec rmdir /var/db/fbsdmon 2>/dev/null || true
-@dirrmtry etc/periodic/weekly
-@dirrmtry etc/periodic
+@dir /var/db/fbsdmon
