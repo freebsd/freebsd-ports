@@ -28,9 +28,3 @@ man/man1/lm-solve.1.gz
 %%PERL5_MAN3%%/Games::LMSolve::Tilt::Multi.3.gz
 %%PERL5_MAN3%%/Games::LMSolve::Tilt::RedBlue.3.gz
 %%PERL5_MAN3%%/Games::LMSolve::Tilt::Single.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/LMSolve
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games
-@dirrm %%SITE_PERL%%/Games/LMSolve/Tilt
-@dirrm %%SITE_PERL%%/Games/LMSolve/Plank
-@dirrm %%SITE_PERL%%/Games/LMSolve
-@dirrmtry %%SITE_PERL%%/Games
