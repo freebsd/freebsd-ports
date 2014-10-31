@@ -189,8 +189,7 @@
 %%WWWDIR%%/rrdicons/zoomout.gif
 @owner
 @group
-@dirrm %%WWWDIR%%/graphs
-@dirrm %%WWWDIR%%/rrdicons
-@dirrm %%WWWDIR%%
-@exec mkdir -p /var/db/rrdtool; chown %%WWWOWN%%:%%WWWGRP%% /var/db/rrdtool
-@unexec rmdir /var/db/rrdtool >/dev/null 2>&1 || :
+@dir(%%WWWOWN%%:%%WWWGRP%%,) %%WWWDIR%%/graphs
+@dir(%%WWWOWN%%:%%WWWGRP%%,) %%WWWDIR%%/rrdicons
+@dir(%%WWWOWN%%:%%WWWGRP%%,) %%WWWDIR%%
+@dir(%%WWWOWN%%:%%WWWGRP%%,) /var/db/rrdtool
