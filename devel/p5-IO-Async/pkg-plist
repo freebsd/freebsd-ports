@@ -18,6 +18,7 @@
 %%SITE_PERL%%/IO/Async/OS.pm
 %%SITE_PERL%%/IO/Async/OS/MSWin32.pm
 %%SITE_PERL%%/IO/Async/OS/cygwin.pm
+%%SITE_PERL%%/IO/Async/OS/linux.pm
 %%SITE_PERL%%/IO/Async/PID.pm
 %%SITE_PERL%%/IO/Async/Process.pm
 %%SITE_PERL%%/IO/Async/Protocol.pm
@@ -52,6 +53,7 @@
 %%PERL5_MAN3%%/IO::Async::OS.3.gz
 %%PERL5_MAN3%%/IO::Async::OS::MSWin32.3.gz
 %%PERL5_MAN3%%/IO::Async::OS::cygwin.3.gz
+%%PERL5_MAN3%%/IO::Async::OS::linux.3.gz
 %%PERL5_MAN3%%/IO::Async::PID.3.gz
 %%PERL5_MAN3%%/IO::Async::Process.3.gz
 %%PERL5_MAN3%%/IO::Async::Protocol.3.gz
