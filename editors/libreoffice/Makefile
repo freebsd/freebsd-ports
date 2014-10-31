@@ -32,6 +32,7 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libcdr-0.1.so:${PORTSDIR}/graphics/libcdr01 \
 		libetonyek-0.1.so:${PORTSDIR}/graphics/libetonyek01 \
 		libfreehand-0.1.so:${PORTSDIR}/graphics/libfreehand \
+		libgltf-0.0.so:${PORTSDIR}/graphics/libgltf \
 		libwpg-0.3.so:${PORTSDIR}/graphics/libwpg03 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
@@ -83,7 +84,9 @@ DISTFILES+=	${PORTNAME}-help-${LOVERSION}${EXTRACT_SUFX}
 
 EXTRACT_ONLY:=	${DISTFILES}
 
-DISTFILES+=	1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:src
+DISTFILES+=	1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:src \
+		4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
+		OpenCOLLADA-master-6509aa13af.tar.bz2:src
 
 DIST_SUBDIR=	libreoffice
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
@@ -146,6 +149,7 @@ CONFIGURE_ARGS+=	--disable-coinmp \
 			--with-system-libetonyek \
 			--with-system-libexttextcat \
 			--with-system-libfreehand \
+			--with-system-libgltf \
 			--with-system-liblangtag \
 			--with-system-libmspub \
 			--with-system-libmwaw \
@@ -183,7 +187,7 @@ OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK \
 		SYSTRAY TEST VERBOSE WEBDAV
 OPTIONS_DEFAULT=CUPS GTK2
 
-JAVA_DESC=	Add java support (XML Filters, macros)
+JAVA_DESC=	Add Java support (XML filters, macros)
 MMEDIA_DESC=	Enable multimedia backend for impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 SDK_DESC=	Build with SDK
@@ -301,19 +305,11 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-libc++.i386:-p0
 
 .if ${COMPILER_FEATURES:Mlibstdc++} && ${CHOSEN_COMPILER_TYPE} == clang
 DISTFILES+=	bae83fa5dc7f081768daace6e199adc3-glm-0.9.4.6-libreoffice.zip:src
-# XXX fdo#84008 (fixed in 4.3.3)
-CONFIGURE_ARGS+=	--disable-collada \
-			--disable-gltf
+EXTRA_PATCHES+=	${FILESDIR}/extra-collada2gltf \
+		${FILESDIR}/extra-configure.ac
 .else
-DISTFILES+=	4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
-		OpenCOLLADA-master-6509aa13af.tar.bz2:src
 BUILD_DEPENDS+=		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
-LIB_DEPENDS+=	libgltf-0.0.so:${PORTSDIR}/graphics/libgltf
-EXTRA_PATCHES+=	${FILESDIR}/extra-collada
-CONFIGURE_ARGS+=	--enable-collada \
-			--enable-gltf \
-			--with-system-glm \
-			--with-system-libgltf
+CONFIGURE_ARGS+=	--with-system-glm
 .endif
 
 .if ${OSVERSION} < 900506
