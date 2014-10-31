@@ -1,4 +1,3 @@
-@exec mkdir -p /var/spool/uptimed
 bin/uprecords
 etc/uptimed.conf-dist
 lib/libuptimed.a
@@ -13,4 +12,4 @@ www/cgi-bin/uprecords.conf.sample
 www/cgi-bin/uprecords.footer.sample
 www/cgi-bin/uprecords.header.sample
 @dirrmtry www/cgi-bin
-@unexec rmdir /var/spool/uptimed 2>/dev/null || true
+@dir /var/spool/uptimed
