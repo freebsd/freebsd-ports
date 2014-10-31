@@ -3,7 +3,7 @@ bin/dis48
 %%PORTDOCS%%%%DOCSDIR%%/O2EM.txt
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
-@exec mkdir -p %D/o2em/roms
+@dir o2em/roms
 o2em/bios/o2rom.bin
 o2em/voice/E480.WAV
 o2em/voice/E481.WAV
