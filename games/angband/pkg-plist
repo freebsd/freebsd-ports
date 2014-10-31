@@ -1,8 +1,4 @@
-@group games
-@mode 2555
-bin/angband
-@mode
-@group
+@(,games,2555) bin/angband
 %%ETCDIR%%/edit/artifact.txt
 %%ETCDIR%%/edit/ego_item.txt
 %%ETCDIR%%/edit/flavor.txt
@@ -64,9 +60,9 @@ bin/angband
 %%DATADIR%%/help/readme.txt
 %%DATADIR%%/help/version.txt
 %%DATADIR%%/info/readme.txt
-@exec mkdir -p %D/%%DATADIR%%/save
-@exec mkdir -p %D/%%DATADIR%%/user
-@exec mkdir -p %D/%%DATADIR%%/apex
+@dir(,games,775) %%DATADIR%%/save
+@dir(,games,775) %%DATADIR%%/user
+@dir(,games,775) %%DATADIR%%/apex
 %%DATADIR%%/xtra/angband.glade
 %%DATADIR%%/xtra/font/10x14x.fon
 %%DATADIR%%/xtra/font/10x14xb.fon
@@ -320,23 +316,3 @@ bin/angband
 %%DATADIR%%/xtra/sound/sum_piano_scrape.mp3
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/xtra/sound
-@dirrm %%DATADIR%%/xtra/icon
-@dirrm %%DATADIR%%/xtra/graf
-@dirrm %%DATADIR%%/xtra/font
-@dirrm %%DATADIR%%/xtra
-@group games
-@mode 0775
-@dirrmtry %%DATADIR%%/user
-@dirrmtry %%DATADIR%%/save
-@dirrmtry %%DATADIR%%/apex
-@mode
-@group
-@dirrm %%DATADIR%%/info
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/file
-@dirrmtry %%DATADIR%%
-@dirrm %%ETCDIR%%/pref
-@dirrm %%ETCDIR%%/edit
-@dirrm %%ETCDIR%%
