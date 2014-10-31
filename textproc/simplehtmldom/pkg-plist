@@ -45,17 +45,4 @@
 %%DATADIR%%/testcase/slickspeed.htm
 %%DATADIR%%/testcase/std_testcase.php
 %%DATADIR%%/testcase/strip_testcase.php
-@dirrm %%DATADIR%%/testcase/reader
-@dirrm %%DATADIR%%/testcase/html
-@dirrm %%DATADIR%%/testcase
-@dirrm %%DATADIR%%/app/js/images
-@dirrm %%DATADIR%%/app/js
-@dirrm %%DATADIR%%/app
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scraping
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/js
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%DATADIR%%/testcase/html
+@dir %%DATADIR%%/testcase/html
