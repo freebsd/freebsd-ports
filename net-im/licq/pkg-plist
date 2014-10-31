@@ -143,20 +143,4 @@ share/licq/utilities/xtraceroute.utility
 %%NLS%%share/locale/be/LC_MESSAGES/licq.mo
 %%NLS%%share/locale/de/LC_MESSAGES/licq.mo
 %%NLS%%share/locale/es/LC_MESSAGES/licq.mo
-@exec mkdir -p %D/lib/licq
-@dirrm lib/licq
-@dirrm share/licq/utilities
-@dirrm share/licq/translations
-@dirrm share/licq/sounds/icq
-@dirrm share/licq/sounds/fun
-@dirrm share/licq/sounds
-@dirrm share/licq/cmake/Modules
-@dirrm share/licq/cmake
-@dirrm share/licq
-@dirrm include/licq/thread
-@dirrm include/licq/plugin
-@dirrm include/licq/logging
-@dirrm include/licq/icq
-@dirrm include/licq/exceptions
-@dirrm include/licq/contactlist
-@dirrm include/licq
+@dir lib/licq
