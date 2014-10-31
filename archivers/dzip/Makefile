@@ -7,7 +7,7 @@ CATEGORIES=	archivers games
 MASTER_SITES=	http://speeddemosarchive.com/dzip/
 DISTNAME=	dz${PORTVERSION:S/.//g}src
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File compression utility specializing in Quake demo compression
 
 LICENSE=	ZLIB

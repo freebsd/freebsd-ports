@@ -7,7 +7,7 @@ PORTREVISION=	19
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Turing machine simulator for GNOME 2
 
 LICENSE=	GPLv2

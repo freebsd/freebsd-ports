@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}${DISTVERSION}.py \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steer your ship(s) with the keyboard
 
 LICENSE=	GPLv2 # or later

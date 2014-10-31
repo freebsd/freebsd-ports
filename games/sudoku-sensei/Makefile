@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-src-${DISTVERSION:S/./-/}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-src-${DISTVERSION:S/./-/}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enjoy playing with Sudoku boards designed by yourself
 
 LICENSE=	GPLv2 # or later

@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/bugsquish/src/ \
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_music${EXTRACT_SUFX}:music
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Action game not unlike light gun arcade games
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logic game similar to Sudoku
 
 LICENSE=	GPLv3 CCbyNCSA3

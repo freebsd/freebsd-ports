@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games python
 DIST_SUBDIR=	python
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Save princess Ericia in this 2D platform game
 
 LICENSE=	GPLv3 # or later

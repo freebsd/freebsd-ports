@@ -7,7 +7,7 @@ PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	http://www.mudmagic.com/mud-client/downloads/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ based MUD client
 
 LICENSE=	GPLv2 # or later

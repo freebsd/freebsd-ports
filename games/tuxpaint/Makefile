@@ -6,7 +6,7 @@ PORTVERSION=	0.9.22
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing program designed for young children
 
 LICENSE=	GPLv2 # (or later)

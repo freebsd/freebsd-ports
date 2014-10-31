@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/PyTowerDefense0.5/Source%20%28Python%202.5%20or%202
 DISTNAME=	${PORTNAME}${DISTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tower Defense Game
 
 LICENSE=	GPLv3

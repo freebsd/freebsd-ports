@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}-bin.zip \
 DIST_SUBDIR=	java
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-bin.zip
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pilot a small space ship
 
 LICENSE=	GPLv2

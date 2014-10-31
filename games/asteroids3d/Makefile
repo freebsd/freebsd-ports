@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/3d/3D/}-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	First-person shooter blowing up asteroids in 3D space
 
 LICENSE=	GPLv2 # or later

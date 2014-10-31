@@ -6,7 +6,7 @@ PORTVERSION=	0.0.6
 PORTREVISION=	2
 CATEGORIES=	archivers games
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for manipulating of Quake packed data files
 
 LICENSE=	GPLv2

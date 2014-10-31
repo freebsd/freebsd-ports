@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/beta-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	8-bit style platform battle game
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/battle/Battle

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}_source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}_${DISTVERSION}_common.zip
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved and extended version of Doom
 
 LICENSE=	GPLv2

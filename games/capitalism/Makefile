@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Capitalism/0.5/
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt client for the Monopd server
 
 LICENSE=	GPLv2 # or later

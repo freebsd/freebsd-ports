@@ -9,7 +9,7 @@ MASTER_SITES=	http://pessimization.com/software/jools/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-musicpack-1.0${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addictive jewel-swapping puzzle game
 
 LICENSE=	GPLv2 # or later

@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		kye-data_extra_levels.20120818.tar.gz:levels
 DIST_SUBDIR=	kye
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle game with arcade game elements
 
 RESTRICTED=	kye-data_nuke_levels is charityware

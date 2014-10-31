@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/Data_Files/
 PKGNAMESUFFIX=	-data
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The data files for SearchAndRescue flight simulator
 
 NO_BUILD=	yes
