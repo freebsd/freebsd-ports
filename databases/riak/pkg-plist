@@ -6,11 +6,11 @@ man/man1/riak-admin.1.gz
 man/man1/riak-debug.1.gz
 man/man1/riak.1.gz
 man/man1/search-cmd.1.gz
-@exec mkdir -p %%RIAK_CONFDIR%%
-@exec mkdir -p %%RIAK_LOGDIR%%
-@exec mkdir -p %%RIAK_DBDIR%%
-@exec mkdir -p %%RIAK_HOMEDIR%%
-@exec mkdir -p %%RIAK_LIBDIR%%
+@dir %%RIAK_CONFDIR%%
+@dir %%RIAK_LOGDIR%%
+@dir %%RIAK_DBDIR%%
+@dir %%RIAK_HOMEDIR%%
+@dir %%RIAK_LIBDIR%%
 @sample %%ETCDIR%%/vm.args.sample
 @sample %%ETCDIR%%/app.config.sample
 @sample %%ETCDIR%%/cert.pem.sample
