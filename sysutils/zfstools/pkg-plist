@@ -2,12 +2,6 @@
 %%RUBY_SITELIBDIR%%/zfstools.rb
 %%RUBY_SITELIBDIR%%/zfstools/dataset.rb
 %%RUBY_SITELIBDIR%%/zfstools/snapshot.rb
-@dirrm %%RUBY_SITELIBDIR%%/zfstools
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec /bin/mkdir -p %D/%%RUBY_SITELIBDIR%%/zfstools
 sbin/zfs-auto-snapshot
 sbin/zfs-cleanup-snapshots
 sbin/zfs-snapshot-mysql
