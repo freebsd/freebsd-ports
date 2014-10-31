@@ -297,67 +297,7 @@ lib/libhdfs.a
 lib/libhdfs.so
 lib/libhdfs.so.0
 lib/libhdfs.so.0.0.0
-@exec mkdir -p %D/%%DATADIR%%/webapps/secondary/WEB-INF
-@exec mkdir -p %D/%%DATADIR%%/contrib/hdfsproxy/logs
-@exec install -d -o root -g %%HADOOP_GROUP%% -m 0775 %%HADOOP_LOGDIR%%
-@exec install -d -o root -g %%HADOOP_GROUP%% -m 0775 %%HADOOP_RUNDIR%%
-@unexec rm -d %%HADOOP_RUNDIR%% 2>/dev/null || true
-@unexec rm -d %%HADOOP_LOGDIR%% 2>/dev/null || true
-@dirrm %%EXAMPLESDIR%%/conf
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/lib/native/Linux-i386-32
-@dirrm %%DATADIR%%/lib/native/Linux-amd64-64
-@dirrm %%DATADIR%%/lib/native/%%HADOOP_ARCH%%
-@dirrm %%DATADIR%%/lib/native
-@dirrm %%DATADIR%%/lib/jsp-2.1
-@dirrm %%DATADIR%%/lib/jdiff
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/webapps/task/WEB-INF
-@dirrm %%DATADIR%%/webapps/task
-@dirrm %%DATADIR%%/webapps/static
-@dirrm %%DATADIR%%/webapps/secondary/WEB-INF
-@dirrm %%DATADIR%%/webapps/secondary
-@dirrm %%DATADIR%%/webapps/job/WEB-INF
-@dirrm %%DATADIR%%/webapps/job
-@dirrm %%DATADIR%%/webapps/history/WEB-INF
-@dirrm %%DATADIR%%/webapps/history
-@dirrm %%DATADIR%%/webapps/hdfs/WEB-INF
-@dirrm %%DATADIR%%/webapps/hdfs
-@dirrm %%DATADIR%%/webapps/datanode/WEB-INF
-@dirrm %%DATADIR%%/webapps/datanode
-@dirrm %%DATADIR%%/webapps
-@dirrm %%DATADIR%%/contrib/vaidya/conf
-@dirrm %%DATADIR%%/contrib/vaidya/bin
-@dirrm %%DATADIR%%/contrib/vaidya
-@dirrm %%DATADIR%%/contrib/streaming
-@dirrm %%DATADIR%%/contrib/index
-@dirrm %%DATADIR%%/contrib/hod/testing
-@dirrm %%DATADIR%%/contrib/hod/support
-@dirrm %%DATADIR%%/contrib/hod/ivy
-@dirrm %%DATADIR%%/contrib/hod/hodlib/ServiceRegistry
-@dirrm %%DATADIR%%/contrib/hod/hodlib/ServiceProxy
-@dirrm %%DATADIR%%/contrib/hod/hodlib/Schedulers
-@dirrm %%DATADIR%%/contrib/hod/hodlib/RingMaster
-@dirrm %%DATADIR%%/contrib/hod/hodlib/NodePools
-@dirrm %%DATADIR%%/contrib/hod/hodlib/HodRing
-@dirrm %%DATADIR%%/contrib/hod/hodlib/Hod
-@dirrm %%DATADIR%%/contrib/hod/hodlib/GridServices
-@dirrm %%DATADIR%%/contrib/hod/hodlib/Common
-@dirrm %%DATADIR%%/contrib/hod/hodlib/AllocationManagers
-@dirrm %%DATADIR%%/contrib/hod/hodlib
-@dirrm %%DATADIR%%/contrib/hod/conf
-@dirrm %%DATADIR%%/contrib/hod/bin
-@dirrm %%DATADIR%%/contrib/hod
-@dirrm %%DATADIR%%/contrib/hdfsproxy/logs
-@dirrm %%DATADIR%%/contrib/hdfsproxy/conf
-@dirrm %%DATADIR%%/contrib/hdfsproxy/bin
-@dirrm %%DATADIR%%/contrib/hdfsproxy
-@dirrm %%DATADIR%%/contrib/gridmix
-@dirrm %%DATADIR%%/contrib/failmon
-@dirrm %%DATADIR%%/contrib/datajoin
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%
-@dirrm include/hadoop
-@dirrmtry %%ETCDIR%%/envvars.d
-@dirrmtry %%ETCDIR%%
+@dir %%DATADIR%%/webapps/secondary/WEB-INF
+@dir %%DATADIR%%/contrib/hdfsproxy/logs
+@@dir(root,%%HADOOP_GROUP%%,0775) %%HADOOP_LOGDIR%%
+@@dir(root,%%HADOOP_GROUP%%,0775) %%HADOOP_RUNDIR%%
