@@ -20,30 +20,15 @@ sbin/openvas-adduser
 sbin/openvas-mkcert
 sbin/openvas-rmuser
 sbin/openvasd
-@exec mkdir -p %D/etc/openvas
-@exec install -d -m 700 %D/etc/openvas/gnupg
-@dirrmtry etc/openvas/gnupg
-@dirrmtry etc/openvas
-@cwd /var
-@exec mkdir -p %D/cache/openvas
-lib/openvas/openvas-services
-@exec mkdir -p %D/lib/openvas/CA
-@exec mkdir -p %D/lib/openvas/jobs
-@exec mkdir -p %D/lib/openvas/logs
-@exec install -d -m 700 %D/lib/openvas/private
-@exec install -d -m 700 %D/lib/openvas/private/CA
-@exec mkdir -p %D/lib/openvas/tmp
-@exec mkdir -p %D/lib/openvas/users
-@exec mkdir -p %D/log/openvas
-@dirrmtry log/openvas
-@dirrmtry lib/openvas/users
-@dirrmtry lib/openvas/tmp
-@dirrmtry lib/openvas/private/CA
-@dirrmtry lib/openvas/private
-@dirrmtry lib/openvas/logs
-@dirrmtry lib/openvas/jobs
-@dirrmtry lib/openvas/CA
-@dirrmtry lib/openvas
-@dirrmtry lib
-@dirrmtry cache/openvas
-@cwd %%RESETPREFIX%%
+@dir(,,700) etc/openvas/gnupg
+/var/lib/openvas/openvas-services
+@dir(,,700) /var/lib/openvas/private/CA
+@dir(,,700) /var/lib/openvas/private
+@dir /var/log/openvas
+@dir /var/lib/openvas/users
+@dir /var/lib/openvas/tmp
+@dir /var/lib/openvas/logs
+@dir /var/lib/openvas/jobs
+@dir /var/lib/openvas/CA
+@dir /var/lib
+@dir /var/cache/openvas
