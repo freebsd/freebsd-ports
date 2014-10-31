@@ -16,8 +16,4 @@ lib/libfaupl.so.1
 %%DATADIR%%/mozilla.tlds
 %%DATADIR%%/modules_available/emulation_ie.lua
 %%DATADIR%%/modules_available/uppercase.lua
-@exec mkdir -p %D/%%DATADIR%%/modules_enabled
-@dirrm %%DATADIR%%/modules_available
-@dirrm %%DATADIR%%/modules_enabled
-@dirrm %%DATADIR%%
-@dirrm include/faup
+@dir %%DATADIR%%/modules_enabled
