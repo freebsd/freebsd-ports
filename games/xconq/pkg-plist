@@ -2,9 +2,7 @@
 %%NOSDL%%bin/imf2x
 %%NOSDL%%bin/imfapp
 %%NOSDL%%bin/x2imf
-@mode 2755
-bin/xconq
-@mode
+@(,games,2755) bin/xconq
 man/man6/xconq.6.gz
 %%DATADIR%%/images/3rd-age.gif
 %%DATADIR%%/images/advances.gif
@@ -468,13 +466,5 @@ man/man6/xconq.6.gz
 %%NOSDL%%%%DATADIR%%/tcltk/BWidget/xpm2image.tcl
 %%NOSDL%%%%DATADIR%%/tcltk/imfapp.tcl
 %%NOSDL%%%%DATADIR%%/tcltk/tkconq.tcl
-%%NOSDL%%@dirrm %%DATADIR%%/tcltk/BWidget/lang
-%%NOSDL%%@dirrm %%DATADIR%%/tcltk/BWidget/images
-%%NOSDL%%@dirrm %%DATADIR%%/tcltk/BWidget
-%%NOSDL%%@dirrm %%DATADIR%%/tcltk
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/images
+@dir(,games,775) %%SCOREDIR%%)
 @group
-@dirrm %%DATADIR%%
-@exec if [ ! -e %%SCOREDIR%% ] ; then mkdir -p -m 775 %%SCOREDIR%% ; fi
-@unexec if [ -e %%SCOREDIR%% ] ; then rm -rf %%SCOREDIR%% ; fi
