@@ -1,5 +1,6 @@
 libexec/antivirus
 etc/antivirus.conf-dist
 etc/antivirus.conf-clamav
-@exec mkdir -p %%ANTIVIRUS%%/spool %%ANTIVIRUS%%/run %%ANTIVIRUS%%/run/quarantine
-@exec chown -R nobody:nobody %%ANTIVIRUS%%/
+@dir(nobody,nobody) %%ANTIVIRUS%%/spool
+@dir(nobody,nobody) %%ANTIVIRUS%%/quarantine
+@dir(nobody,nobody) %%ANTIVIRUS%%/run

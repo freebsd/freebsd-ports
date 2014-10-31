@@ -2,7 +2,7 @@
 
 PORTNAME=	antivirus
 PORTVERSION=	3.30
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
@@ -49,7 +49,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/clamav.conf \
 		${STAGEDIR}${PREFIX}/etc/antivirus.conf-clamav
 	${MKDIR} ${STAGEDIR}${ANTIVIRUS_DIR}/spool ${STAGEDIR}${ANTIVIRUS_DIR}/run ${STAGEDIR}${ANTIVIRUS_DIR}/quarantine
-	${CHOWN} -R nobody:nobody ${STAGEDIR}${ANTIVIRUS_DIR}/
 	@${ECHO_MSG} "Add to your *.mc configfile:"
 	@${ECHO_MSG} "INPUT_MAIL_FILTER(\`antivirus', \`S=local:${ANTIVIRUS_DIR}/antivirus.sock, F=')"
 
