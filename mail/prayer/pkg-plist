@@ -107,14 +107,6 @@ sbin/prayer-ssl-prune
 sbin/prayer-sem-prune
 sbin/prayer-cyclog
 sbin/prayer-chroot
-@dirrm prayer/static
-@dirrm prayer/icons
-@dirrm prayer/etc
-@exec mkdir -p %D/prayer/certs
-@dirrm prayer/certs
-@dirrm prayer
-@exec mkdir -p %D/etc/prayer
-@dirrmtry etc/prayer
-@exec mkdir -p /var/spool/prayer
-@exec chown -R _prayer:prayer /var/spool/prayer
-@dirrmtry /var/spool/prayer
+@dir prayer/certs
+@dir etc/prayer
+@dir(_prayer,prayer,) /var/spool/prayer
