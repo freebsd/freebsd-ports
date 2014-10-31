@@ -30,6 +30,8 @@ DOCS_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 			source-highlight:${PORTSDIR}/textproc/source-highlight
 TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/ahven.gpr:${PORTSDIR}/devel/ahven
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTEST}
