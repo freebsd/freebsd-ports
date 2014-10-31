@@ -1,14 +1,8 @@
-@stopdaemon collectd
 sbin/collectd
 sbin/collectdmon
-@unexec if cmp -s %D/etc/collectd.conf.sample %D/etc/collectd.conf; then rm -f %D/etc/collectd.conf; fi
-etc/collectd.conf.sample
-@exec if [ ! -f %B/collectd.conf ] ; then cp -p %B/%f %B/collectd.conf; fi
+@sample etc/collectd.conf.sample
 %%CGI%%%%WWWDIR%%/collection.cgi
-%%CGI%%@unexec if cmp -s %B/collection.conf.sample %B/collection.conf; then rm -f %B/collection.conf; fi
-%%CGI%%%%WWWDIR%%/collection.conf.sample
-%%CGI%%@exec if [ ! -f %B/collection.conf ] ; then cp -p %B/%f %B/collection.conf; fi
-%%CGI%%@dirrmtry %%WWWDIR%%
+@sample %%CGI%%%%WWWDIR%%/collection.conf.sample
 bin/collectd-nagios
 bin/collectd-tg
 bin/collectdctl
@@ -119,15 +113,6 @@ man/man5/collectd-threshold.5.gz
 man/man5/collectd-unixsock.5.gz
 man/man5/collectd.conf.5.gz
 man/man5/types.db.5.gz
-@dirrm lib/collectd
-@dirrm include/collectd
-@dirrm %%DATADIR%%
-%%PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Collectd
-%%PERL%%@dirrmtry %%SITE_PERL%%/Collectd/Plugins
-%%PERL%%@dirrmtry %%SITE_PERL%%/Collectd
-@exec mkdir -p /var/db/collectd
-@cwd /
-@dirrmtry var/db/collectd
-@dirrmtry var/lib/collectd
-@dirrmtry var/lib
-@cwd %%RESETPREFIX%%
+@dir /var/db/collectd
+@dir /var/lib/collectd
+@dir /var/lib
