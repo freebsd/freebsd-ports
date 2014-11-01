@@ -10,6 +10,9 @@ MASTER_SITES=	http://plib.sourceforge.net/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable library for joystick/sound/OpenGL GUI/3D math
 
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake
 USE_XORG=	xt xi xmu xext x11
 USE_GL=		glu
