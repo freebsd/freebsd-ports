@@ -1,6 +1,6 @@
---- Makefile.orig	1996-07-27 20:05:03.000000000 +0200
-+++ Makefile	2013-09-12 11:55:14.000000000 +0200
-@@ -10,15 +10,15 @@
+--- Makefile.orig	1996-07-27 18:05:03 UTC
++++ Makefile
+@@ -10,15 +10,15 @@ PROGS= xtrojka
  #					xtrojka version (do not change!)
  VERSION=123
  #					where to put the binary
@@ -20,7 +20,7 @@
  #					used X libraries
  XLIBS= -lXaw -lXmu -lXt -lX11 -lXext
  #					some more X libraries
-@@ -48,7 +48,7 @@
+@@ -48,7 +48,7 @@ HSF=-DSCOREFILE='"$(HSFILE)"'
  #	comment out your favorite system (the one you use, that is...)
  #
  #					search the libaries here
@@ -29,7 +29,7 @@
  #					doesn't work too well on all systems
  #LCK=-DLOCKING
  #					add debug info
-@@ -75,7 +75,13 @@
+@@ -75,7 +75,13 @@ XPMLIB=-lXpm
  #
  # Linux
  #
@@ -44,7 +44,7 @@
  
  #
  #
-@@ -105,11 +111,17 @@
+@@ -105,11 +111,14 @@ tar:
  	rm -rf xtrojka$(VERSION);
  
  install:
@@ -57,17 +57,14 @@
 +	echo $(HSFILE)|sed -e 's/\//\\\//g'>hsn
 +	sed -e "s/__SCOREDIR__/`cat hsn`/g" xtrojka.man > xtrojka.6
 +	gzip -c xtrojka.6 >$(MANDIR)/xtrojka.6.gz
-+	cp xtrojka $(TARGET_DIR)
-+	chmod 2755 $(TARGET_DIR)/xtrojka
-+	chgrp games $(TARGET_DIR)/xtrojka
++	$(BSD_INSTALL_PROGRAM) xtrojka $(TARGET_DIR)
 +	touch $(HSFILE)
 +	chmod 664 $(HSFILE)
-+	chgrp games $(HSFILE)
 +	@rm -f hsn
  	
  clean:
  	rm -rf tags *.o core xtrojka xtrojka.6 
-@@ -119,7 +131,7 @@
+@@ -119,7 +128,7 @@ clean:
  #	DEPENDENCIES
  #
  
