@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick
 BUILD_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick
 
-USES=		tar:xz
+USES=		tar:xz uidfix
 
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	MAKEFLAGS=-r
