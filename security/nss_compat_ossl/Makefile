@@ -7,6 +7,8 @@ CATEGORIES=	security devel
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Source-level compatibility library for OpenSSL to NSS porting
 
+LICENSE=	MIT
+
 GNU_CONFIGURE=	yes
 USES=		pkgconfig libtool
 INSTALL_TARGET=	install-strip
