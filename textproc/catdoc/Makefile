@@ -3,7 +3,7 @@
 
 PORTNAME=	catdoc
 PORTVERSION=	0.94.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		LOCAL/amdmi3 \
