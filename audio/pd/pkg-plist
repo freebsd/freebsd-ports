@@ -400,7 +400,7 @@ man/man1/pdsend.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/makenote-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/math-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/message-help.pd
-%%PORTDOCS%%%%DOCSDIR%%/5.reference/metro.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/metro-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/midi-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/moses-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/my_canvas-help.pd
