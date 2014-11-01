@@ -466,5 +466,5 @@ man/man6/xconq.6.gz
 %%NOSDL%%%%DATADIR%%/tcltk/BWidget/xpm2image.tcl
 %%NOSDL%%%%DATADIR%%/tcltk/imfapp.tcl
 %%NOSDL%%%%DATADIR%%/tcltk/tkconq.tcl
-@dir(,games,775) %%SCOREDIR%%)
+@dir(,games,775) %%SCOREDIR%%
 @group
