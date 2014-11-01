@@ -86,10 +86,7 @@ sbin/cnid_dbd
 sbin/cnid_metad
 sbin/netatalk
 share/aclocal/netatalk.m4
-@dirrm include/atalk
-@dirrm libexec/netatalk-uams
-@cwd /var
-netatalk/CNID/README
-netatalk/README
-@dirrmtry netatalk/CNID
-@dirrmtry netatalk
+/var/netatalk/CNID/README
+/var/netatalk/README
+@dir /var/netatalk/CNID
+@dir /var/netatalk
