@@ -5,4 +5,3 @@ lib/X11/xscrabble/OSPD3.gz
 lib/X11/xscrabble/duplicate
 lib/X11/xscrabble/scrabble_rules
 lib/X11/xscrabble/scrabble_scores
-@dirrm lib/X11/xscrabble
