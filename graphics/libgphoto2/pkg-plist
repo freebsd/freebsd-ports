@@ -194,14 +194,3 @@ share/libgphoto2/%%VERSION%%/konica/spanish
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgphoto2_port-10.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libgphoto2_port-10.mo
-@dirrm share/libgphoto2/%%VERSION%%/konica
-@dirrm share/libgphoto2/%%VERSION%%
-@dirrm share/libgphoto2
-%%PORTDOCS%%@dirrm share/doc/libgphoto2_port
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/camlibs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/libgphoto2_port/%%VERSION_PORT%%
-@dirrm lib/libgphoto2_port
-@dirrm lib/libgphoto2/%%VERSION%%
-@dirrm lib/libgphoto2
-@dirrm include/gphoto2
