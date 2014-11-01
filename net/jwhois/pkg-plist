@@ -17,16 +17,6 @@ man/sv/man1/jwhois.1.gz
 %%NLS%%share/locale/tr/LC_MESSAGES/jwhois.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/jwhois.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/jwhois.mo
-@exec mkdir -p %D/var 2>/dev/null || true
-@group nogroup
-@mode 775
-@exec mkdir -p %D/var/jwhois 2>/dev/null || true
-@unexec rm -f %D/var/jwhois/jwhois.db 2>/dev/null || true
-@dirrmtry var/jwhois
-@group
-@mode
-@dirrmtry var
-@dirrmtry man/sv/man1
-@dirrmtry man/sv
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/rw 2>/dev/null || true
+@rmtry var/jwhois/jwhois.db
+@dir(,nogroup,775) var/jwhois
+@dir var
