@@ -2,7 +2,7 @@ sbin/collectd
 sbin/collectdmon
 @sample etc/collectd.conf.sample
 %%CGI%%%%WWWDIR%%/collection.cgi
-@sample %%CGI%%%%WWWDIR%%/collection.conf.sample
+%%CGI%%@sample %%WWWDIR%%/collection.conf.sample
 bin/collectd-nagios
 bin/collectd-tg
 bin/collectdctl
