@@ -3,7 +3,7 @@
 
 PORTNAME=	gexiv2
 PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://yorba.org/download/${PORTNAME}/${PORTVERSION:R}/
 DISTNAME=	lib${PORTNAME}_${PORTVERSION}
@@ -18,9 +18,9 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 
 USES=		gmake libtool:build pkgconfig tar:xz
-USE_GNOME=	glib20
+USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-MAKE_ARGS=	REQUIRED_CFLAGS=""
+MAKE_ARGS=	REQUIRED_CFLAGS="" ENABLE_INTROSPECTION=1
 
 post-patch:
 	@${REINPLACE_CMD} -E \
