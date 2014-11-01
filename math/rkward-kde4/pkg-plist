@@ -1,9 +1,49 @@
-bin/rkward
+%%QT_BINDIR%%/rkward
+lib/R/library/rkward/CITATION
+lib/R/library/rkward/DESCRIPTION
+lib/R/library/rkward/INDEX
+lib/R/library/rkward/Meta/Rd.rds
+lib/R/library/rkward/Meta/hsearch.rds
+lib/R/library/rkward/Meta/links.rds
+lib/R/library/rkward/Meta/nsInfo.rds
+lib/R/library/rkward/Meta/package.rds
+lib/R/library/rkward/NAMESPACE
+lib/R/library/rkward/R/rkward
+lib/R/library/rkward/R/rkward.rdb
+lib/R/library/rkward/R/rkward.rdx
+lib/R/library/rkward/help/AnIndex
+lib/R/library/rkward/help/aliases.rds
+lib/R/library/rkward/help/paths.rds
+lib/R/library/rkward/help/rkward.rdb
+lib/R/library/rkward/help/rkward.rdx
+lib/R/library/rkward/html/00Index.html
+lib/R/library/rkward/html/R.css
+lib/R/library/rkwardtests/CITATION
+lib/R/library/rkwardtests/DESCRIPTION
+lib/R/library/rkwardtests/INDEX
+lib/R/library/rkwardtests/Meta/Rd.rds
+lib/R/library/rkwardtests/Meta/hsearch.rds
+lib/R/library/rkwardtests/Meta/links.rds
+lib/R/library/rkwardtests/Meta/nsInfo.rds
+lib/R/library/rkwardtests/Meta/package.rds
+lib/R/library/rkwardtests/NAMESPACE
+lib/R/library/rkwardtests/R/rkwardtests
+lib/R/library/rkwardtests/R/rkwardtests.rdb
+lib/R/library/rkwardtests/R/rkwardtests.rdx
+lib/R/library/rkwardtests/help/AnIndex
+lib/R/library/rkwardtests/help/aliases.rds
+lib/R/library/rkwardtests/help/paths.rds
+lib/R/library/rkwardtests/help/rkwardtests.rdb
+lib/R/library/rkwardtests/help/rkwardtests.rdx
+lib/R/library/rkwardtests/html/00Index.html
+lib/R/library/rkwardtests/html/R.css
 lib/kde4/libexec/rkward.frontend
 lib/kde4/libexec/rkward.rbackend
 man/man1/rkward.1.gz
 share/applications/kde4/rkward.desktop
 share/apps/katepart/syntax/rkward.xml
+share/apps/rkward/00saveload/import/convert_encoding.js
+share/apps/rkward/00saveload/import/convert_encoding.xml
 share/apps/rkward/00saveload/import/import_csv.js
 share/apps/rkward/00saveload/import/import_csv.rkh
 share/apps/rkward/00saveload/import/import_csv.xml
@@ -159,12 +199,19 @@ share/apps/rkward/analysis/wilcoxon/wilcoxon_tests.xml
 share/apps/rkward/data.pluginmap
 share/apps/rkward/data/generate_random.js
 share/apps/rkward/data/generate_random.xml
+share/apps/rkward/data/level_select.js
+share/apps/rkward/data/level_select.xml
 share/apps/rkward/data/limit_vector_length.js
 share/apps/rkward/data/limit_vector_length.rkh
 share/apps/rkward/data/limit_vector_length.xml
+share/apps/rkward/data/multi_input.js
+share/apps/rkward/data/multi_input.xml
 share/apps/rkward/data/one_var_tabulation.js
 share/apps/rkward/data/one_var_tabulation.rkh
 share/apps/rkward/data/one_var_tabulation.xml
+share/apps/rkward/data/recode_categorical.js
+share/apps/rkward/data/recode_categorical.rkh
+share/apps/rkward/data/recode_categorical.xml
 share/apps/rkward/data/sort.js
 share/apps/rkward/data/sort.rkh
 share/apps/rkward/data/sort.xml
@@ -520,6 +567,8 @@ share/apps/rkward/testing/test1.js
 share/apps/rkward/testing/test1.xml
 share/apps/rkward/testing/test2.js
 share/apps/rkward/testing/test2.xml
+share/apps/rkward/testing/valueselect1.js
+share/apps/rkward/testing/valueselect1.xml
 share/apps/rkward/under_development.pluginmap
 share/apps/rkward/uni1.2/code.js
 share/apps/rkward/uni1.2/description.xml
@@ -534,11 +583,11 @@ share/apps/rkward/x11device/grid.xml
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/index.docbook
 %%PORTDOCS%%%%DOCSDIR%%/man-rkward.1.docbook
-%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/common
-%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/index.cache.bz2
-%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/index.docbook
-%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/menu_hierarchy_example.png
-%%PORTDOCS%%share/doc/HTML/en/rkwardplugins/t_test_plugin_example.png
+%%PORTDOCS%%%%DOCSDIR%%plugins/common
+%%PORTDOCS%%%%DOCSDIR%%plugins/index.cache.bz2
+%%PORTDOCS%%%%DOCSDIR%%plugins/index.docbook
+%%PORTDOCS%%%%DOCSDIR%%plugins/menu_hierarchy_example.png
+%%PORTDOCS%%%%DOCSDIR%%plugins/t_test_plugin_example.png
 share/icons/hicolor/128x128/apps/rkward.png
 share/icons/hicolor/16x16/apps/rkward.png
 share/icons/hicolor/22x22/apps/rkward.png
@@ -550,97 +599,5 @@ share/icons/hicolor/scalable/apps/rkward.svgz
 %%NLS%%share/locale/de/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/es/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/rkward.mo
-%%PORTDOCS%%@dirrm share/doc/HTML/en/rkwardplugins
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrmtry share/doc/HTML/en
-%%PORTDOCS%%@dirrmtry share/doc/HTML
-@dirrm share/apps/rkward/x11device
-@dirrm share/apps/rkward/uni1.2
-@dirrm share/apps/rkward/testing
-@dirrm share/apps/rkward/simple_anova
-@dirrm share/apps/rkward/rkwarddev_scripts
-@dirrm share/apps/rkward/pages
-@dirrm share/apps/rkward/plots/irt/tests
-@dirrm share/apps/rkward/plots/irt/polytomous
-@dirrm share/apps/rkward/plots/irt/dichotomous
-@dirrm share/apps/rkward/plots/irt
-@dirrm share/apps/rkward/plots
-@dirrm share/apps/rkward/phpfiles
-@dirrm share/apps/rkward/icons
-@dirrm share/apps/rkward/descriptive
-@dirrm share/apps/rkward/distributions/tests
-@dirrm share/apps/rkward/distributions/clt
-@dirrm share/apps/rkward/distributions
-@dirrm share/apps/rkward/data
-@dirrm share/apps/rkward/analysis/wilcoxon
-@dirrm share/apps/rkward/analysis/variances
-@dirrm share/apps/rkward/analysis/time_series
-@dirrm share/apps/rkward/analysis/regression
-@dirrm share/apps/rkward/analysis/outliers
-@dirrm share/apps/rkward/analysis/moments
-@dirrm share/apps/rkward/analysis/irt/tests
-@dirrm share/apps/rkward/analysis/irt/polytomous
-@dirrm share/apps/rkward/analysis/irt/dichotomous
-@dirrm share/apps/rkward/analysis/irt
-@dirrm share/apps/rkward/analysis/ansari_bradley
-@dirrm share/apps/rkward/analysis/TESTS
-@dirrm share/apps/rkward/analysis
-@dirrm share/apps/rkward/00saveload/save/skeleton
-@dirrm share/apps/rkward/00saveload/save
-@dirrm share/apps/rkward/00saveload/import
-@dirrm share/apps/rkward/00saveload
-@dirrm share/apps/rkward
-@dirrmtry share/apps/katepart/syntax
-@dirrmtry share/apps/katepart
-@dirrmtry share/apps
-@cwd %%LOCALBASE%%
-lib/R/library/rkward/CITATION
-lib/R/library/rkward/DESCRIPTION
-lib/R/library/rkward/INDEX
-lib/R/library/rkward/Meta/Rd.rds
-lib/R/library/rkward/Meta/hsearch.rds
-lib/R/library/rkward/Meta/links.rds
-lib/R/library/rkward/Meta/nsInfo.rds
-lib/R/library/rkward/Meta/package.rds
-lib/R/library/rkward/NAMESPACE
-lib/R/library/rkward/R/rkward
-lib/R/library/rkward/R/rkward.rdb
-lib/R/library/rkward/R/rkward.rdx
-lib/R/library/rkward/help/AnIndex
-lib/R/library/rkward/help/aliases.rds
-lib/R/library/rkward/help/paths.rds
-lib/R/library/rkward/help/rkward.rdb
-lib/R/library/rkward/help/rkward.rdx
-lib/R/library/rkward/html/00Index.html
-lib/R/library/rkward/html/R.css
-lib/R/library/rkwardtests/CITATION
-lib/R/library/rkwardtests/DESCRIPTION
-lib/R/library/rkwardtests/INDEX
-lib/R/library/rkwardtests/LICENSE
-lib/R/library/rkwardtests/Meta/Rd.rds
-lib/R/library/rkwardtests/Meta/hsearch.rds
-lib/R/library/rkwardtests/Meta/links.rds
-lib/R/library/rkwardtests/Meta/nsInfo.rds
-lib/R/library/rkwardtests/Meta/package.rds
-lib/R/library/rkwardtests/NAMESPACE
-lib/R/library/rkwardtests/R/rkwardtests
-lib/R/library/rkwardtests/R/rkwardtests.rdb
-lib/R/library/rkwardtests/R/rkwardtests.rdx
-lib/R/library/rkwardtests/help/AnIndex
-lib/R/library/rkwardtests/help/aliases.rds
-lib/R/library/rkwardtests/help/paths.rds
-lib/R/library/rkwardtests/help/rkwardtests.rdb
-lib/R/library/rkwardtests/help/rkwardtests.rdx
-lib/R/library/rkwardtests/html/00Index.html
-lib/R/library/rkwardtests/html/R.css
-@dirrm lib/R/library/rkwardtests/html
-@dirrm lib/R/library/rkwardtests/help
-@dirrm lib/R/library/rkwardtests/R
-@dirrm lib/R/library/rkwardtests/Meta
-@dirrm lib/R/library/rkwardtests
-@dirrm lib/R/library/rkward/html
-@dirrm lib/R/library/rkward/help
-@dirrm lib/R/library/rkward/R
-@dirrm lib/R/library/rkward/Meta
-@dirrm lib/R/library/rkward
