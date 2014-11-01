@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rundeck
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.3
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://dl.bintray.com/rundeck/rundeck-maven/
 DISTNAME=	rundeck-launcher-${PORTVERSION}
@@ -18,10 +18,6 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 PLIST_FILES=	rundeck/server/lib/.keep \
 		share/rundeck/rundeck-launcher.jar
-PLIST_DIRS=	share/rundeck
-PLIST_DIRSTRY=	rundeck/server/lib \
-		rundeck/server \
-		rundeck
 
 USE_RC_SUBR=	rundeck
 
