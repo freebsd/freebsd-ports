@@ -3,6 +3,7 @@
 %%T%%/README.html
 %%T%%/THIRDPARTYLICENSEREADME-JAVAFX.txt
 %%T%%/THIRDPARTYLICENSEREADME.txt
+%%T%%/bin/ControlPanel
 %%T%%/bin/appletviewer
 %%T%%/bin/extcheck
 %%T%%/bin/idlj
@@ -1799,6 +1800,7 @@
 %%T%%/jre/THIRDPARTYLICENSEREADME-JAVAFX.txt
 %%T%%/jre/THIRDPARTYLICENSEREADME.txt
 %%T%%/jre/Welcome.html
+%%T%%/jre/bin/ControlPanel
 %%T%%/jre/bin/java
 %%T%%/jre/bin/javaws
 %%T%%/jre/bin/jcontrol
@@ -1929,6 +1931,7 @@
 %%T%%/jre/lib/fonts/fonts.dir
 %%T%%/jre/lib/hijrah-config-umalqura.properties
 %%T%%/jre/lib/i386/client/Xusage.txt
+%%T%%/jre/lib/i386/client/libjsig.so
 %%T%%/jre/lib/i386/client/libjvm.so
 %%T%%/jre/lib/i386/jli/libjli.so
 %%T%%/jre/lib/i386/jvm.cfg
@@ -1988,6 +1991,7 @@
 %%T%%/jre/lib/i386/libverify.so
 %%T%%/jre/lib/i386/libzip.so
 %%T%%/jre/lib/i386/server/Xusage.txt
+%%T%%/jre/lib/i386/server/libjsig.so
 %%T%%/jre/lib/i386/server/libjvm.so
 %%T%%/jre/lib/images/cursors/cursors.properties
 %%T%%/jre/lib/images/cursors/invalid32x32.gif
