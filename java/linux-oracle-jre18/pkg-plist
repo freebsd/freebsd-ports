@@ -4,6 +4,7 @@
 %%T%%/THIRDPARTYLICENSEREADME-JAVAFX.txt
 %%T%%/THIRDPARTYLICENSEREADME.txt
 %%T%%/Welcome.html
+%%T%%/bin/ControlPanel
 %%T%%/bin/java
 %%T%%/bin/javaws
 %%T%%/bin/jcontrol
@@ -134,6 +135,7 @@
 %%T%%/lib/fonts/fonts.dir
 %%T%%/lib/hijrah-config-umalqura.properties
 %%T%%/lib/i386/client/Xusage.txt
+%%T%%/lib/i386/client/libjsig.so
 %%T%%/lib/i386/client/libjvm.so
 %%T%%/lib/i386/jli/libjli.so
 %%T%%/lib/i386/jvm.cfg
@@ -191,6 +193,7 @@
 %%T%%/lib/i386/libverify.so
 %%T%%/lib/i386/libzip.so
 %%T%%/lib/i386/server/Xusage.txt
+%%T%%/lib/i386/server/libjsig.so
 %%T%%/lib/i386/server/libjvm.so
 %%T%%/lib/images/cursors/cursors.properties
 %%T%%/lib/images/cursors/invalid32x32.gif
