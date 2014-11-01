@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chrony
-PORTVERSION=	1.29.1
+PORTVERSION=	1.31
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
@@ -15,13 +15,13 @@ LICENSE=	GPLv2
 # with ``Could not open any NTP socket'' message on startup :(
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake
+USES=		gmake makeinfo readline
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --mandir=${MANPREFIX}/man \
 		--datarootdir=${DATADIR} --docdir=${DOCSDIR}
 USE_RC_SUBR=	chronyd
 
-PORTDOCS=	README chrony.txt
+PORTDOCS=	COPYING README chrony.txt
 
 # XXX: there are also other potentially useful options worth looking into:
 #  --without-nss        Don't use NSS even if it is available
