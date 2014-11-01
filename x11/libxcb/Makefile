@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxcb
-PORTVERSION=	1.10
-PORTREVISION=	2
+PORTVERSION=	1.11
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -24,6 +23,7 @@ XORG_CAT=	lib
 USES=		gmake python:2,build
 USE_GNOME=	libxslt:build
 USE_XORG=	xau xdmcp
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
@@ -40,10 +40,5 @@ XDMCP_LIBS=	-L${LOCALBASE}/lib -lXdmcp
 
 XPROTO_CFLAGS=	-I${LOCALBASE}/include
 XPROTO_LIBS=	-L${LOCALBASE}/lib
-
-.include <bsd.port.options.mk>
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxcb*.so.*
 
 .include <bsd.port.mk>

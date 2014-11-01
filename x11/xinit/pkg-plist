@@ -3,5 +3,3 @@ bin/xinit
 man/man1/startx.1.gz
 man/man1/xinit.1.gz
 etc/X11/xinit/xinitrc
-@dirrm etc/X11/xinit
-@dirrmtry etc/X11
