@@ -3,6 +3,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.3drealms.com/share/ \
 		ftp://ftp.kiarchive.ru/pub/.1/msdos/games/play/3d/ \
