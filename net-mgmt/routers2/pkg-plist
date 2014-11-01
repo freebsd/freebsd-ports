@@ -189,7 +189,7 @@
 %%WWWDIR%%/rrdicons/zoomout.gif
 @owner
 @group
-@dir(%%WWWOWN%%:%%WWWGRP%%,) %%WWWDIR%%/graphs
-@dir(%%WWWOWN%%:%%WWWGRP%%,) %%WWWDIR%%/rrdicons
-@dir(%%WWWOWN%%:%%WWWGRP%%,) %%WWWDIR%%
-@dir(%%WWWOWN%%:%%WWWGRP%%,) /var/db/rrdtool
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/graphs
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/rrdicons
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%
+@dir(%%WWWOWN%%,%%WWWGRP%%,) /var/db/rrdtool
