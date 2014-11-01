@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.8.7
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2014/ http://www2.sqlite.org/2014/ http://www3.sqlite.org/2014/
 DISTNAME=	sqlite-autoconf-3080700
@@ -17,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	sqlite34-[0-9]* sqlcipher-[0-9]*
 
-USES=		pathfix libtool
+USES=		pathfix libtool ncurses
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -26,7 +27,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
 OPTIONS_DEFINE=	FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
-		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION
+		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
+		EXTENSION READLINE
 OPTIONS_SINGLE=	RAMT
 OPTIONS_RADIO=	STAT
 OPTIONS_GROUP=	UNICODE RTREEG
@@ -66,7 +68,8 @@ RTREEG_DESC=		Index type for range queries
 RTREE_DESC=		Enable R*Tree module
 RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 
-OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION TS1 UNICODE61 RTREE
+OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS \
+			EXTENSION TS1 UNICODE61 RTREE READLINE
 # SECURE_DELETE, UNLOCK_NOTIFY used by www/firefox, www/libxul
 # RTREE used by graphics/mapnik, databases/spatialite
 
@@ -121,6 +124,9 @@ ICU_CPPFLAGS=	`${LOCALBASE}/bin/icu-config --cppflags` -DSQLITE_ENABLE_ICU=1
 ICU_LDFLAGS=	`${LOCALBASE}/bin/icu-config --ldflags`
 
 UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
+
+READLINE_CONFIGURE_ENABLE=	readline
+READLINE_USES=	readline
 
 .include <bsd.port.options.mk>
 
