@@ -1,3 +1,2 @@
-@cwd /
-%%KMODDIR%%/if_stf.ko
-%%KMODDIR%%/if_stf.ko.symbols
+/%%KMODDIR%%/if_stf.ko
+/%%KMODDIR%%/if_stf.ko.symbols
