@@ -2,7 +2,7 @@ bin/qupzilla
 lib/libQupZilla.so
 lib/libQupZilla.so.1
 lib/libQupZilla.so.1.8
-lib/libQupZilla.so.1.8.0
+lib/libQupZilla.so.%%VERSION%%
 lib/qupzilla/libAccessKeysNavigation.so
 lib/qupzilla/libAutoScroll.so
 %%GNOMEKEYRING%%lib/qupzilla/libGnomeKeyringPasswords.so
@@ -11,6 +11,7 @@ lib/qupzilla/libGreaseMonkey.so
 lib/qupzilla/libMouseGestures.so
 lib/qupzilla/libPIM.so
 lib/qupzilla/libStatusBarIcons.so
+%%DEBUG%%lib/qupzilla/libTestPlugin.so
 share/appdata/qupzilla.appdata.xml
 share/applications/qupzilla.desktop
 share/bash-completion/completions/qupzilla
