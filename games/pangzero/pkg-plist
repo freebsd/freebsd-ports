@@ -98,6 +98,3 @@ bin/pangzero
 %%DATADIR%%/data/xmas-dawn.jpg
 %%DATADIR%%/data/xmas-night.jpg
 share/pixmaps/pangzero.png
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%
