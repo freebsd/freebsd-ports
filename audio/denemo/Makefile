@@ -67,8 +67,6 @@ post-install:
 .for i in actions templates
 	@(cd ${WRKSRC} && ${TAR} --exclude "*Makefile*" -cf - ${i}) | \
 		(cd ${STAGEDIR}${DATADIR} && ${TAR} --unlink -xf -)
-	@${FIND} ${STAGEDIR}${DATADIR}/${i} -print0 | \
-		${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@${FIND} ${STAGEDIR}${DATADIR}/${i} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} a+rx
 	@${FIND} ${STAGEDIR}${DATADIR}/${i} -type f -print0 | \
