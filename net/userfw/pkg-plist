@@ -18,9 +18,6 @@ include/userfw/modules/ipv4.h
 include/userfw/modules/log.h
 include/userfw/modules/multiruleset.h
 include/userfw/modules/ng_userfw_connector.h
-@dirrmtry include/userfw/modules
-@dirrmtry include/userfw
-@cwd /
 %%KMODDIR%%/ng_userfw_connector.ko
 %%KMODDIR%%/userfw.ko
 %%KMODDIR%%/userfw_bpf.ko
