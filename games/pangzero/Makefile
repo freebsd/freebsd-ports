@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Super Pang
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Carp>=0:${PORTSDIR}/devel/p5-Carp \
 		p5-SDL>=0:${PORTSDIR}/devel/p5-SDL
