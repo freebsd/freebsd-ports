@@ -81,4 +81,3 @@ man/man3/XShmPixmapFormat.3.gz
 man/man3/XShmPutImage.3.gz
 man/man3/XShmQueryExtension.3.gz
 man/man3/XShmQueryVersion.3.gz
-@dirrmtry include/X11/extensions

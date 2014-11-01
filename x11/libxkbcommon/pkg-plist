@@ -1,5 +1,6 @@
 include/xkbcommon/xkbcommon.h
 include/xkbcommon/xkbcommon-compat.h
+include/xkbcommon/xkbcommon-compose.h
 include/xkbcommon/xkbcommon-keysyms.h
 include/xkbcommon/xkbcommon-names.h
 include/xkbcommon/xkbcommon-x11.h
@@ -15,4 +16,3 @@ lib/libxkbcommon-x11.la
 lib/libxkbcommon-x11.so
 lib/libxkbcommon-x11.so.0
 lib/libxkbcommon-x11.so.0.0.0
-@dirrm include/xkbcommon

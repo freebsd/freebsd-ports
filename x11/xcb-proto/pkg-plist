@@ -49,5 +49,3 @@ libdata/pkgconfig/xcb-proto.pc
 %%PYTHON_SITELIBDIR%%/xcbgen/matcher.pyo
 %%PYTHON_SITELIBDIR%%/xcbgen/state.pyo
 %%PYTHON_SITELIBDIR%%/xcbgen/xtypes.pyo
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/xcbgen
