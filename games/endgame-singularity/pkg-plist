@@ -166,14 +166,3 @@ bin/singularity
 %%DATADIR%%/techs_fr_FR.dat
 %%DATADIR%%/techs_it_IT.dat
 %%DATADIR%%/techs_sv_SE.dat
-@dirrm %%PYTHON_SITELIBDIR%%/singularity/graphics
-@dirrm %%PYTHON_SITELIBDIR%%/singularity/screens
-@dirrm %%PYTHON_SITELIBDIR%%/singularity
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/music-src/lose
-@dirrm %%DATADIR%%/music-src/win
-@dirrm %%DATADIR%%/music-src
-@dirrm %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%/music
-@dirrmtry %%DATADIR%%
