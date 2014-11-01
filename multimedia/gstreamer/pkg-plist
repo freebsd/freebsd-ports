@@ -191,14 +191,3 @@ share/gir-1.0/GstNet-%%VERSION%%.gir
 %%NLS%%share/locale/vi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gstreamer-%%VERSION%%.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
-@dirrm libexec/gstreamer-%%VERSION%%
-@dirrm lib/gstreamer-%%VERSION%%
-@dirrm include/gstreamer-%%VERSION%%/gst/net
-@dirrm include/gstreamer-%%VERSION%%/gst/dataprotocol
-@dirrm include/gstreamer-%%VERSION%%/gst/controller
-%%CHECK%%@dirrm include/gstreamer-%%VERSION%%/gst/check
-@dirrm include/gstreamer-%%VERSION%%/gst/base
-@dirrm include/gstreamer-%%VERSION%%/gst
-@dirrm include/gstreamer-%%VERSION%%
