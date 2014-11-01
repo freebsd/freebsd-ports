@@ -21,8 +21,6 @@ MAKE_ENV+=	DATADIR="${DATADIR}"
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e \
 		"s@%%DATADIR%%@${DATADIR}@g" ${WRKSRC}/include/config.h
@@ -34,12 +32,10 @@ post-install:
 	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
 	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} manpages)
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/slamfaq.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/sample.slashemrc ${STAGEDIR}${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DATADIR}/save
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
