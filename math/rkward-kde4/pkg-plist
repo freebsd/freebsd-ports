@@ -1,4 +1,4 @@
-%%QT_BINDIR%%/rkward
+bin/rkward
 lib/R/library/rkward/CITATION
 lib/R/library/rkward/DESCRIPTION
 lib/R/library/rkward/INDEX
