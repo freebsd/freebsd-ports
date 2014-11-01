@@ -347,6 +347,7 @@
     SUBDIR += nmap
     SUBDIR += nmapsi4
     SUBDIR += nss
+    SUBDIR += nss_compat_ossl
     SUBDIR += oath-toolkit
     SUBDIR += obfsclient
     SUBDIR += obfsproxy
