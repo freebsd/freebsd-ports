@@ -1,0 +1,4 @@
+Library providing a source-level compatibility layer to aid porting
+programs that use OpenSSL to use the NSS instead.
+
+WWW: http://rcritten.fedorapeople.org/nss_compat_ossl.html
