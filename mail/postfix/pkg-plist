@@ -137,208 +137,22 @@ sbin/postmulti
 sbin/postqueue
 sbin/postsuper
 sbin/sendmail
-%%PORTDOCS%%%%DOCSDIR%%/AAAREADME
-%%PORTDOCS%%%%DOCSDIR%%/ADDRESS_CLASS_README
-%%PORTDOCS%%%%DOCSDIR%%/ADDRESS_CLASS_README.html
-%%PORTDOCS%%%%DOCSDIR%%/ADDRESS_REWRITING_README
-%%PORTDOCS%%%%DOCSDIR%%/ADDRESS_REWRITING_README.html
-%%PORTDOCS%%%%DOCSDIR%%/ADDRESS_VERIFICATION_README
-%%PORTDOCS%%%%DOCSDIR%%/ADDRESS_VERIFICATION_README.html
-%%PORTDOCS%%%%DOCSDIR%%/BACKSCATTER_README
-%%PORTDOCS%%%%DOCSDIR%%/BACKSCATTER_README.html
-%%PORTDOCS%%%%DOCSDIR%%/BASIC_CONFIGURATION_README
-%%PORTDOCS%%%%DOCSDIR%%/BASIC_CONFIGURATION_README.html
-%%PORTDOCS%%%%DOCSDIR%%/BUILTIN_FILTER_README
-%%PORTDOCS%%%%DOCSDIR%%/BUILTIN_FILTER_README.html
-%%PORTDOCS%%%%DOCSDIR%%/CDB_README
-%%PORTDOCS%%%%DOCSDIR%%/CDB_README.html
-%%PORTDOCS%%%%DOCSDIR%%/CONNECTION_CACHE_README
-%%PORTDOCS%%%%DOCSDIR%%/CONNECTION_CACHE_README.html
-%%PORTDOCS%%%%DOCSDIR%%/CONTENT_INSPECTION_README
-%%PORTDOCS%%%%DOCSDIR%%/CONTENT_INSPECTION_README.html
-%%PORTDOCS%%%%DOCSDIR%%/DATABASE_README
-%%PORTDOCS%%%%DOCSDIR%%/DATABASE_README.html
-%%PORTDOCS%%%%DOCSDIR%%/DB_README
-%%PORTDOCS%%%%DOCSDIR%%/DB_README.html
-%%PORTDOCS%%%%DOCSDIR%%/DEBUG_README
-%%PORTDOCS%%%%DOCSDIR%%/DEBUG_README.html
-%%PORTDOCS%%%%DOCSDIR%%/DSN_README
-%%PORTDOCS%%%%DOCSDIR%%/DSN_README.html
-%%PORTDOCS%%%%DOCSDIR%%/ETRN_README
-%%PORTDOCS%%%%DOCSDIR%%/ETRN_README.html
-%%PORTDOCS%%%%DOCSDIR%%/FILTER_README
-%%PORTDOCS%%%%DOCSDIR%%/FILTER_README.html
-%%PORTDOCS%%%%DOCSDIR%%/FORWARD_SECRECY_README
-%%PORTDOCS%%%%DOCSDIR%%/FORWARD_SECRECY_README.html
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
-%%PORTDOCS%%%%DOCSDIR%%/IPV6_README
-%%PORTDOCS%%%%DOCSDIR%%/IPV6_README.html
-%%PORTDOCS%%%%DOCSDIR%%/LDAP_README
-%%PORTDOCS%%%%DOCSDIR%%/LDAP_README.html
-%%PORTDOCS%%%%DOCSDIR%%/LINUX_README
-%%PORTDOCS%%%%DOCSDIR%%/LINUX_README.html
-%%PORTDOCS%%%%DOCSDIR%%/LMDB_README
-%%PORTDOCS%%%%DOCSDIR%%/LMDB_README.html
-%%PORTDOCS%%%%DOCSDIR%%/LOCAL_RECIPIENT_README
-%%PORTDOCS%%%%DOCSDIR%%/LOCAL_RECIPIENT_README.html
-%%PORTDOCS%%%%DOCSDIR%%/MAILDROP_README
-%%PORTDOCS%%%%DOCSDIR%%/MAILDROP_README.html
-%%PORTDOCS%%%%DOCSDIR%%/MEMCACHE_README
-%%PORTDOCS%%%%DOCSDIR%%/MILTER_README
-%%PORTDOCS%%%%DOCSDIR%%/MILTER_README.html
-%%PORTDOCS%%%%DOCSDIR%%/MULTI_INSTANCE_README
-%%PORTDOCS%%%%DOCSDIR%%/MULTI_INSTANCE_README.html
-%%PORTDOCS%%%%DOCSDIR%%/MYSQL_README
-%%PORTDOCS%%%%DOCSDIR%%/MYSQL_README.html
-%%PORTDOCS%%%%DOCSDIR%%/NFS_README
-%%PORTDOCS%%%%DOCSDIR%%/NFS_README.html
-%%PORTDOCS%%%%DOCSDIR%%/OVERVIEW
-%%PORTDOCS%%%%DOCSDIR%%/OVERVIEW.html
-%%PORTDOCS%%%%DOCSDIR%%/PACKAGE_README
-%%PORTDOCS%%%%DOCSDIR%%/PACKAGE_README.html
-%%PORTDOCS%%%%DOCSDIR%%/PCRE_README
-%%PORTDOCS%%%%DOCSDIR%%/PCRE_README.html
-%%PORTDOCS%%%%DOCSDIR%%/PGSQL_README
-%%PORTDOCS%%%%DOCSDIR%%/PGSQL_README.html
-%%PORTDOCS%%%%DOCSDIR%%/POSTSCREEN_README
-%%PORTDOCS%%%%DOCSDIR%%/POSTSCREEN_README.html
-%%PORTDOCS%%%%DOCSDIR%%/QSHAPE_README
-%%PORTDOCS%%%%DOCSDIR%%/QSHAPE_README.html
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/RESTRICTION_CLASS_README
-%%PORTDOCS%%%%DOCSDIR%%/RESTRICTION_CLASS_README.html
-%%PORTDOCS%%%%DOCSDIR%%/SASL_README
-%%PORTDOCS%%%%DOCSDIR%%/SASL_README.html
-%%PORTDOCS%%%%DOCSDIR%%/SCHEDULER_README
-%%PORTDOCS%%%%DOCSDIR%%/SCHEDULER_README.html
-%%PORTDOCS%%%%DOCSDIR%%/SMTPD_ACCESS_README
-%%PORTDOCS%%%%DOCSDIR%%/SMTPD_ACCESS_README.html
-%%PORTDOCS%%%%DOCSDIR%%/SMTPD_POLICY_README
-%%PORTDOCS%%%%DOCSDIR%%/SMTPD_POLICY_README.html
-%%PORTDOCS%%%%DOCSDIR%%/SMTPD_PROXY_README
-%%PORTDOCS%%%%DOCSDIR%%/SMTPD_PROXY_README.html
-%%PORTDOCS%%%%DOCSDIR%%/SOHO_README
-%%PORTDOCS%%%%DOCSDIR%%/SOHO_README.html
-%%SPF%%%%PORTDOCS%%%%DOCSDIR%%/SPF_README
-%%PORTDOCS%%%%DOCSDIR%%/SQLITE_README
-%%PORTDOCS%%%%DOCSDIR%%/SQLITE_README.html
-%%PORTDOCS%%%%DOCSDIR%%/STANDARD_CONFIGURATION_README
-%%PORTDOCS%%%%DOCSDIR%%/STANDARD_CONFIGURATION_README.html
-%%PORTDOCS%%%%DOCSDIR%%/STRESS_README
-%%PORTDOCS%%%%DOCSDIR%%/STRESS_README.html
-%%PORTDOCS%%%%DOCSDIR%%/TLS_LEGACY_README
-%%PORTDOCS%%%%DOCSDIR%%/TLS_LEGACY_README.html
-%%PORTDOCS%%%%DOCSDIR%%/TLS_README
-%%PORTDOCS%%%%DOCSDIR%%/TLS_README.html
-%%PORTDOCS%%%%DOCSDIR%%/TUNING_README
-%%PORTDOCS%%%%DOCSDIR%%/TUNING_README.html
-%%PORTDOCS%%%%DOCSDIR%%/ULTRIX_README
-%%PORTDOCS%%%%DOCSDIR%%/UUCP_README
-%%PORTDOCS%%%%DOCSDIR%%/UUCP_README.html
-%%VDA%%%%PORTDOCS%%%%DOCSDIR%%/VDA_README
-%%PORTDOCS%%%%DOCSDIR%%/VERP_README
-%%PORTDOCS%%%%DOCSDIR%%/VERP_README.html
-%%PORTDOCS%%%%DOCSDIR%%/VIRTUAL_README
-%%PORTDOCS%%%%DOCSDIR%%/VIRTUAL_README.html
-%%PORTDOCS%%%%DOCSDIR%%/XCLIENT_README
-%%PORTDOCS%%%%DOCSDIR%%/XCLIENT_README.html
-%%PORTDOCS%%%%DOCSDIR%%/XFORWARD_README
-%%PORTDOCS%%%%DOCSDIR%%/XFORWARD_README.html
-%%PORTDOCS%%%%DOCSDIR%%/access.5.html
-%%PORTDOCS%%%%DOCSDIR%%/aliases.5.html
-%%PORTDOCS%%%%DOCSDIR%%/anvil.8.html
-%%PORTDOCS%%%%DOCSDIR%%/body_checks.5.html
-%%PORTDOCS%%%%DOCSDIR%%/bounce.5.html
-%%PORTDOCS%%%%DOCSDIR%%/bounce.8.html
-%%PORTDOCS%%%%DOCSDIR%%/canonical.5.html
-%%PORTDOCS%%%%DOCSDIR%%/cidr_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/cleanup.8.html
-%%PORTDOCS%%%%DOCSDIR%%/defer.8.html
-%%PORTDOCS%%%%DOCSDIR%%/discard.8.html
-%%PORTDOCS%%%%DOCSDIR%%/dnsblog.8.html
-%%PORTDOCS%%%%DOCSDIR%%/error.8.html
-%%PORTDOCS%%%%DOCSDIR%%/flush.8.html
-%%PORTDOCS%%%%DOCSDIR%%/generic.5.html
-%%PORTDOCS%%%%DOCSDIR%%/header_checks.5.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/ldap_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/lmtp.8.html
-%%PORTDOCS%%%%DOCSDIR%%/local.8.html
-%%PORTDOCS%%%%DOCSDIR%%/mailq.1.html
-%%PORTDOCS%%%%DOCSDIR%%/master.5.html
-%%PORTDOCS%%%%DOCSDIR%%/master.8.html
-%%PORTDOCS%%%%DOCSDIR%%/memcache_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/mysql_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/newaliases.1.html
-%%PORTDOCS%%%%DOCSDIR%%/nisplus_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/oqmgr.8.html
-%%PORTDOCS%%%%DOCSDIR%%/pcre_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/pgsql_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/pickup.8.html
-%%PORTDOCS%%%%DOCSDIR%%/pipe.8.html
-%%PORTDOCS%%%%DOCSDIR%%/postalias.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postcat.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postconf.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postconf.5.html
-%%PORTDOCS%%%%DOCSDIR%%/postdrop.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postfix-logo.jpg
-%%PORTDOCS%%%%DOCSDIR%%/postfix-manuals.html
-%%PORTDOCS%%%%DOCSDIR%%/postfix-power.png
-%%PORTDOCS%%%%DOCSDIR%%/postfix-wrapper.5.html
-%%PORTDOCS%%%%DOCSDIR%%/postfix.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postkick.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postlock.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postlog.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postmap.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postmulti.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postqueue.1.html
-%%PORTDOCS%%%%DOCSDIR%%/postscreen.8.html
-%%PORTDOCS%%%%DOCSDIR%%/postsuper.1.html
-%%PORTDOCS%%%%DOCSDIR%%/proxymap.8.html
-%%PORTDOCS%%%%DOCSDIR%%/qmgr.8.html
-%%PORTDOCS%%%%DOCSDIR%%/qmqp-sink.1.html
-%%PORTDOCS%%%%DOCSDIR%%/qmqp-source.1.html
-%%PORTDOCS%%%%DOCSDIR%%/qmqpd.8.html
-%%PORTDOCS%%%%DOCSDIR%%/qshape.1.html
-%%PORTDOCS%%%%DOCSDIR%%/regexp_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/relocated.5.html
-%%PORTDOCS%%%%DOCSDIR%%/scache.8.html
-%%PORTDOCS%%%%DOCSDIR%%/sendmail.1.html
-%%PORTDOCS%%%%DOCSDIR%%/showq.8.html
-%%PORTDOCS%%%%DOCSDIR%%/smtp-sink.1.html
-%%PORTDOCS%%%%DOCSDIR%%/smtp-source.1.html
-%%PORTDOCS%%%%DOCSDIR%%/smtp.8.html
-%%PORTDOCS%%%%DOCSDIR%%/smtpd.8.html
-%%PORTDOCS%%%%DOCSDIR%%/spawn.8.html
-%%PORTDOCS%%%%DOCSDIR%%/sqlite_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/tcp_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
-%%PORTDOCS%%%%DOCSDIR%%/tlsproxy.8.html
-%%PORTDOCS%%%%DOCSDIR%%/trace.8.html
-%%PORTDOCS%%%%DOCSDIR%%/transport.5.html
-%%PORTDOCS%%%%DOCSDIR%%/trivial-rewrite.8.html
-%%PORTDOCS%%%%DOCSDIR%%/verify.8.html
-%%PORTDOCS%%%%DOCSDIR%%/virtual.5.html
-%%PORTDOCS%%%%DOCSDIR%%/virtual.8.html
-@dirrm libexec/postfix
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir "/var/db/postfix" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/active" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/bounce" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/corrupt" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/defer" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/deferred" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/flush" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/hold" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/incoming" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/maildrop" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/pid" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/private" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/public" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/saved" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix/trace" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/postfix" >/dev/null 2>&1 || :
+@dir /var/db/postfix
+@dir /var/spool/postfix/active
+@dir /var/spool/postfix/bounce
+@dir /var/spool/postfix/corrupt
+@dir /var/spool/postfix/defer
+@dir /var/spool/postfix/deferred
+@dir /var/spool/postfix/flush
+@dir /var/spool/postfix/hold
+@dir /var/spool/postfix/incoming
+@dir /var/spool/postfix/maildrop
+@dir /var/spool/postfix/pid
+@dir /var/spool/postfix/private
+@dir /var/spool/postfix/public
+@dir /var/spool/postfix/saved
+@dir /var/spool/postfix/trace
+@dir /var/spool/postfix
 %%BASE%%@cwd /
-@dirrmtry etc/postfix
+@dir etc/postfix
 @cwd %%RESETPREFIX%%
