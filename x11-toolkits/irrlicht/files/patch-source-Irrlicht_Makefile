@@ -48,7 +48,7 @@
  sharedlib install: SHARED_LIB = libIrrlicht.so
 -sharedlib: LDFLAGS += -L/usr/X11R6/lib$(LIBSELECT) -lGL -lXxf86vm
 -staticlib sharedlib: CXXINCS += -I/usr/X11R6/include
-+sharedlib: LDFLAGS += -L${LOCALBASE}/lib -lGL -lXxf86vm -lpng -ljpeg -lbz2
++sharedlib: LDFLAGS += -L${LOCALBASE}/lib -lGL -lXxf86vm -lX11 -lpng -ljpeg -lbz2 -lz
 +staticlib sharedlib: CXXINCS += -I${LOCALBASE}/include
  
  #OSX specific options

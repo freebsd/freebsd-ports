@@ -3,6 +3,7 @@
 
 PORTNAME=	irrlicht
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/${PORTVERSION:R}/${PORTVERSION}/
 
@@ -17,7 +18,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 DOS2UNIX_GLOB=	Makefile *.cpp *.h *.txt
 USES=		alias dos2unix gmake zip
-USE_GL=		yes
+USE_GL=		gl
+USE_XORG=	x11 xxf86vm
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ENV+=	SHLIB_VER=${SHARED_LIB_VER}
@@ -34,7 +36,7 @@ EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserIn
 
 OPTIONS_DEFINE=	DEBUG EXAMPLES
 
-DEBUG_MAKE_ENV=	NDEBUG=1
+DEBUG_MAKE_ENV_OFF=	NDEBUG=1
 
 BROKEN_sparc64=	Does not compile
 
