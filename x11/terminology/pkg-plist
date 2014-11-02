@@ -5,8 +5,21 @@ bin/tycat
 bin/tyls
 bin/typop
 bin/tyq
+man/man1/terminology.1.gz
 share/applications/terminology.desktop
 share/icons/terminology.png
+%%NLS%%share/locale/ca/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/de/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/el/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/it/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/terminology.mo
+%%DATADIR%%/backgrounds/mystic.png
+%%DATADIR%%/backgrounds/texture_background.png
 %%DATADIR%%/fonts/10x20.pcf
 %%DATADIR%%/fonts/4x6.pcf
 %%DATADIR%%/fonts/5x7.pcf
@@ -31,13 +44,12 @@ share/icons/terminology.png
 %%DATADIR%%/fonts/terminus-20-bold.pcf
 %%DATADIR%%/fonts/terminus-20.pcf
 %%DATADIR%%/images/terminology.png
+%%DATADIR%%/themes/base16_ocean_dark.edj
 %%DATADIR%%/themes/black.edj
 %%DATADIR%%/themes/default.edj
 %%DATADIR%%/themes/mild.edj
 %%DATADIR%%/themes/mustang.edj
+%%DATADIR%%/themes/nyanology.edj
+%%DATADIR%%/themes/smyck.edj
 %%DATADIR%%/themes/solarized.edj
 %%DATADIR%%/themes/solarized_light.edj
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
