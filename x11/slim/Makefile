@@ -3,7 +3,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
@@ -23,8 +23,9 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 
 USES=		cmake pkgconfig
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xorg-server xrandr \
-	xrender xt
+		xrender xt
 USE_RC_SUBR=	slim
+USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 
 CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes \
@@ -57,7 +58,7 @@ post-patch:
 	@${CP} ${WRKSRC}/slim.conf ${WRKSRC}/slim.conf.sample
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/slim.conf.sample
-	@${REINPLACE_CMD} -e 's,/etc/slim.conf,${PREFIX}&,' \
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/slim.1
 
 post-install:
