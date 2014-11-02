@@ -1,0 +1,15 @@
+--- Makefile.am.orig	2014-08-14 11:48:58.000000000 -0400
++++ Makefile.am	2014-09-06 03:15:27.906790580 -0400
+@@ -19,11 +19,7 @@
+ SUBDIRS = lib pysearpc ${MAKE_DEMO} tests
+ 
+ install-data-local:
+-if MACOS
+-	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+-else
+-	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+-endif
++	${SED} -i '' "s|(DESTDIR)||g" $(pcfiles)
+ 
+ dist-hook:
+ 	git log -1 > $(distdir)/latest_commit
