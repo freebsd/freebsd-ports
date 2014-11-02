@@ -2,42 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	osmo
-PORTVERSION=	0.2.10
-PORTREVISION=	7
+PORTVERSION=	0.2.12
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/${PORTNAME}-pim/${PORTNAME}-pim/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}-pim/${PORTNAME}-pim/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal organizer
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libical.so:${PORTSDIR}/devel/libical \
-		libtar.so:${PORTSDIR}/devel/libtar \
-		libgringotts.so:${PORTSDIR}/security/libgringotts \
-		libgtkhtml-2.so:${PORTSDIR}/www/libgtkhtml
+LICENSE=	GPLv2 # (or later)
 
-USE_GNOME=	gtk20
+LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libgringotts.so:${PORTSDIR}/security/libgringotts \
+		libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
+		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+
 USES=		gettext gmake pkgconfig
+USE_GNOME=	gtk20 libxml2
+USE_SQLITE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBARCHIVE_CFLAGS=" " LIBARCHIVE_LIBS="-larchive"
 INSTALLS_ICONS=	yes
 
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-CFLAGS+=	-I${LOCALBASE}/include/libical
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-POFILES=	bg ca cs da de el en_GB es fi fr hu it ja lt nl pl pt \
-		ru sv tr uk zh_CN
+POFILES=	bg ca cs da de el en_GB es fi fr gl gl_ES hu it ja lt nl \
+		pl pt pt_BR ro ru sv te tr uk ur ur_PK zh_CN
 
-MSGFMT=		${LOCALBASE}/bin/msgfmt
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/src/Makefile.in
-
-pre-install:
-# workaround to problem in po makefile
+post-build:
 .for p in ${POFILES}
-	${MSGFMT} -c ${WRKSRC}/po/$p.po -o ${WRKSRC}/po/$p.mo
+	(cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt -c ${p}.po -o ${p}.mo)
 .endfor
 
 .include <bsd.port.mk>
