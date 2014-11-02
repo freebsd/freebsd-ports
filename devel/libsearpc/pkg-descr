@@ -1,0 +1,10 @@
+Searpc is a simple C language RPC framework based on GObject system.
+Searpc handles the serialization/deserialization part of RPC, the
+transport part is left to users.
+
+The serialization/deserialization uses JSON format via json-glib
+library. A serialized json object is returned from server to client
+after executing the RPC function. Each RPC function defined in the
+server side should take an extra GError argument to report error.
+
+WWW: https://github.com/haiwen/libsearpc
