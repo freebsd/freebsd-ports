@@ -317,8 +317,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # WITH_DEBUG_PORTS		- A list of origins for which WITH_DEBUG will be set
 #
-# WITH_SSP_PORTS
-# 				- If set, SSP_FLAGS (defaults to -fstack-protector)
+# WITHOUT_SSP	- Disable SSP.
+#
+# SSP_CFLAGS	- Defaults to -fstack-protector. This value
 #				  is added to CFLAGS and the necessary flags
 #				  are added to LDFLAGS. Note that SSP_UNSAFE
 #				  can be used in Makefiles by port maintainers
@@ -1636,7 +1637,7 @@ INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .endif
 .endif
 
-.if defined(WITH_SSP) || defined(WITH_SSP_PORTS)
+.if !defined(WITHOUT_SSP)
 .include "${PORTSDIR}/Mk/bsd.ssp.mk"
 .endif
 
