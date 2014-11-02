@@ -72,6 +72,7 @@ man/man1/pspp-dump-sav.1.gz
 %%NLS%%share/locale/nl/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/pspp.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pspp.mo
 %%GUI%%%%DATADIR%%/actions/16x16/analyze-bivariate-correlation.png
 %%GUI%%%%DATADIR%%/actions/16x16/analyze-compare-means.png
@@ -235,7 +236,7 @@ man/man1/pspp-dump-sav.1.gz
 %%GUI%%%%DATADIR%%/means.ui
 %%GUI%%%%DATADIR%%/missing-val-dialog.ui
 %%GUI%%%%DATADIR%%/oneway.ui
-%%GUI%%%%DATADIR%%/output-viewer.ui
+%%GUI%%%%DATADIR%%/output-window.ui
 %%GUI%%%%DATADIR%%/paired-samples.ui
 %%GUI%%%%DATADIR%%/pspp.lang
 %%GUI%%%%DATADIR%%/psppire.gtkrc
@@ -258,16 +259,3 @@ man/man1/pspp-dump-sav.1.gz
 %%GUI%%%%DATADIR%%/var-sheet.ui
 %%GUI%%%%DATADIR%%/var-type-dialog.ui
 %%GUI%%%%DATADIR%%/variable-info.ui
-%%GUI%%@dirrm %%DATADIR%%/examples
-%%GUI%%@dirrm %%DATADIR%%/categories/16x16
-%%GUI%%@dirrm %%DATADIR%%/categories
-%%GUI%%@dirrm %%DATADIR%%/actions/32x32
-%%GUI%%@dirrm %%DATADIR%%/actions/24x24
-%%GUI%%@dirrm %%DATADIR%%/actions/16x16
-%%GUI%%@dirrm %%DATADIR%%/actions
-%%GUI%%@dirrm %%DATADIR%%
-%%GUI%%@dirrm share/glade3/pixmaps/22x22
-%%GUI%%@dirrm share/glade3/pixmaps/16x16
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%GUI%%@dirrmtry share/appdata
-@dirrm lib/pspp

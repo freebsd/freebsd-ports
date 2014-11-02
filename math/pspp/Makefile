@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pspp
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -16,7 +15,7 @@ BUILD_DEPENDS=	texinfo>0:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils \
 		libgslcblas.so:${PORTSDIR}/math/gsl
 
-USES=		charsetfix gmake iconv libtool perl5 pkgconfig
+USES=		charsetfix gmake iconv libtool perl5 pkgconfig readline
 USE_GNOME=	libxml2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
@@ -32,7 +31,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 INFO=		pspp pspp-dev
 
 OPTIONS_DEFINE=		DOCS GUI NLS PGSQL
-OPTIONS_DEFAULT=	NLS
 OPTIONS_SUB=		yes
 
 GUI_LIB_DEPENDS=	libgladeui-1.so:${PORTSDIR}/devel/glade3
