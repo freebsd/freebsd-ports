@@ -16,7 +16,7 @@ SSP_UNSAFE=		yes
 SSP_NEED_NONSHARED=	yes
 .endif
 
-.if !defined(WITHOUT_SSP) && !defined(SSP_UNSAFE) && \
+.if !defined(SSP_UNSAFE) && \
     (${ARCH} == i386 || ${ARCH} == amd64)
 # Overridable as a user may want to use -fstack-protector-all
 SSP_CFLAGS?=	-fstack-protector

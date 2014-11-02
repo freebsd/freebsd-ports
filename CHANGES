@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20141102:
+AUTHOR: bdrewery@FreeBSD.org
+
+  SSP is now default. This can be disabled with WITHOUT_SSP.
+  SSP_CFLAGS defaults to -fstack-protector.
+  SSP will be used on all amd64 releases. It will only be used on i386
+  releases over 10.0.
+
 20141007:
 AUTHOR: mat@FreeBSD.org
 
