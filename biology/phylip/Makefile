@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phylip
-PORTVERSION=	3.695
-PORTREVISION=	3
+PORTVERSION=	3.696
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/phylip/download/
@@ -11,13 +10,16 @@ MASTER_SITES=	http://evolution.gs.washington.edu/phylip/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phylogeny Inference Package
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILES=	${WRKSRC}/COPYRIGHT
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
 
-USE_XORG=	x11 xaw xt
 USES=		gmake
+USE_XORG=	x11 xaw xt
 MAKEFILE=	Makefile.unx
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUNX" \
 		DFLAGS="${CFLAGS} -DX -I${LOCALBASE}/include" \
@@ -25,28 +27,23 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUNX" \
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-pre-install:
-	@(cd ${WRKSRC}/src && ${STRIP_CMD} libdrawtree.so libdrawgram.so)
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@cd ${WRKSRC}/exe && \
 		${FIND} . -maxdepth 1 -not -type d -not -name '*.jar' \
 		-not -name '*.unx' -not -name 'font*' -not -name '*.so' \
-		-exec ${INSTALL_PROGRAM} "{}" "${STAGEDIR}${PREFIX}/bin/{}" \;
+		| ${XARGS} -J % ${INSTALL_PROGRAM} % ${STAGEDIR}${PREFIX}/bin
 	@cd ${WRKSRC}/exe && \
 		${FIND} . -maxdepth 1 -not -type d -name "*.so" \
-		-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/lib/{}" \;
+		| ${XARGS} -J % ${INSTALL_LIB} % ${STAGEDIR}${PREFIX}/lib
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/exe && \
 		${FIND} . -maxdepth 1 -not -type d -name 'font*' \
-		-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+		| ${XARGS} -J % ${INSTALL_DATA} % ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/exe && ${COPYTREE_SHARE} testdata ${STAGEDIR}${EXAMPLESDIR})
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
