@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stunnel
-PORTVERSION=	5.06
+PORTVERSION=	5.07
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -30,7 +30,7 @@ USE_RC_SUBR=	stunnel
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/tmp --enable-static
+CONFIGURE_ARGS=	--localstatedir=/var/tmp --enable-static --disable-systemd
 SHEBANG_FILES=	src/stunnel3.in
 
 OPTIONS_DEFINE=			IPV6 LIBWRAP SSL_PORT FIPS DOCS EXAMPLES
