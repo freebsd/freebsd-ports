@@ -1,5 +1,14 @@
 # Created by: Stijn Hoop <stijn@win.tue.nl>
 # $FreeBSD$
+#
+# For those wondering why this port is not under `x11-drivers' category,
+# have a look at https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=121930.
+#
+# Starting with version 1.0-7667, NVidia has dropped support for numerous
+# "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
+# you need to use legacy driver version and install one of corresponding
+# `x11/nvidia-driver-71', `x11/nvidia-driver-96', `x11/nvidia-driver-173',
+# or `x11/nvidia-driver-304' slave ports.
 
 PORTNAME=	nvidia-driver
 DISTVERSION?=	331.67
@@ -36,13 +45,14 @@ DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
 PORTDOCS=	*
 
+# NVVERSION is float since r372065
 .if ${DISTVERSION:C/[0-9]+//g} == ".."		# major.minor.update
-NVVERSION=	${DISTVERSION:S/.//g}
+NVVERSION=	${DISTVERSION:R}${DISTVERSION:E}
 .else						# major.minor
-NVVERSION=	${DISTVERSION:S/.//g}00
+NVVERSION=	${DISTVERSION}
 .endif
 
-.if ${NVVERSION} >= 1952200
+.if ${NVVERSION} >= 195.22
 MASTER_SITE_SUBDIR=	XFree86/FreeBSD-x86${ARCH_SUFX}/${DISTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
 .else
@@ -50,27 +60,27 @@ MASTER_SITE_SUBDIR=	freebsd/${DISTVERSION}
 ONLY_FOR_ARCHS=	i386
 .endif
 
-.if ${NVVERSION} <= 1904200
+.if ${NVVERSION} <= 190.42
 EXTRA_PATCHES=	${FILESDIR}/legacy-patch-mk-nvidia.lib.mk
 .else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-mk-nvidia.lib.mk
 .endif
 
-.if ${NVVERSION} >= 3048800
+.if ${NVVERSION} >= 304.88
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-Makefile \
 		${FILESDIR}/extra-patch-src-nv-freebsd.h \
 		${FILESDIR}/extra-patch-src-nv-misc.h
 .endif
 
-.if ${NVVERSION} >= 3312000
+.if ${NVVERSION} >= 331.20
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x11-driver-Makefile
 .else
 EXTRA_PATCHES+=	${FILESDIR}/legacy-patch-x11-driver-Makefile
 .endif
 
 # Fix recent arbitrary memory access vulnerability in legacy drivers
-.if ${NVVERSION} <= 1905300
-.  if ${NVVERSION} != 1731435
+.if ${NVVERSION} <= 190.53
+.  if ${NVVERSION} != 173.1435
 EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-0946
 .  endif
 EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-4225
@@ -82,17 +92,17 @@ OPTIONS_DEFAULT=	LINUX
 ACPI_PM_DESC=		ACPI Power Management support
 LINUX_DESC=		Linux compatibility support
 
-.if ${NVVERSION} < 3101400
+.if ${NVVERSION} < 310.14
 OPTIONS_DEFINE+=	FREEBSD_AGP
 FREEBSD_AGP_DESC=	Use FreeBSD AGP GART driver
 .endif
 
-.if ${NVVERSION} >= 1952200
+.if ${NVVERSION} >= 195.22
 OPTIONS_DEFINE+=	WBINVD
 WBINVD_DESC=		Flush CPU caches directly with WBINVD
 .endif
 
-.if ${NVVERSION} >= 3048800
+.if ${NVVERSION} >= 304.88
 OPTIONS_DEFINE_i386=	PAE
 PAE_DESC=		Physical Address Extensions Kernel
 .endif
@@ -103,7 +113,7 @@ PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 .include <bsd.port.options.mk>
 
 # FreeBSD src SVN r254138 had broken 71.86.xx legacy series :(
-.if ${OSVERSION} > 1000041 && ${NVVERSION} <= 718615
+.if ${OSVERSION} > 1000041 && ${NVVERSION} <= 71.8615
 BROKEN=		does not compile
 .endif
 
@@ -117,7 +127,7 @@ PLIST_SUB+=	LINUX="@comment "
 MAKE_ENV+=	WITHOUT_LINUX=yes
 .endif
 
-.if ${NVVERSION} < 1952200
+.if ${NVVERSION} < 195.22
 # ABI version is hardcoded inside the binary, so specify it explicitly here
 LIB_DEPENDS=	libm.so.3:${PORTSDIR}/misc/compat5x
 .endif
@@ -126,7 +136,7 @@ post-patch: .SILENT
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} -e '24,26d' ${WRKSRC}/src/nv-freebsd.h
 # Adjust legacy drivers for updated d_mmap() since FreeBSD src SVN r201223
-.if ${OSVERSION} > 900005 && ${NVVERSION} < 1952200
+.if ${OSVERSION} > 900005 && ${NVVERSION} < 195.22
 	${REINPLACE_CMD} -e 's/vm_offset_t offset/vm_ooffset_t offset/ ; \
 		s/vm_offset_t \*address/vm_paddr_t *address/ ; \
 		s/int nprot/&, vm_memattr_t *memattr/' \
@@ -136,18 +146,18 @@ post-patch: .SILENT
 # around vm_page_(un)wire() after FreeBSD src SVN r207410, r207617, and
 # r207644; also remove page queue locking around vm_page_wakeup() after
 # FreeBSD src SVN r163622
-.if ${OSVERSION} > 900011 && ${NVVERSION} < 3046400
+.if ${OSVERSION} > 900011 && ${NVVERSION} < 304.64
 	${REINPLACE_CMD} -E '/vm_page_(un)?lock_queues\(\);/d ; \
 		s/(vm_page_(un)?wire\()([^,]+)(, 0)?(\);)/vm_page_lock(\3); & vm_page_unlock(\3);/' \
 			${WRKSRC}/src/nvidia_subr.c
 .endif
 # Catch up legacy drivers with FreeBSD src SVN r225617
-.if ${OSVERSION} > 900043 && ${NVVERSION} < 1952200
+.if ${OSVERSION} > 900043 && ${NVVERSION} < 195.22
 	${REINPLACE_CMD} -e '/return/s/ioctl/sys_&/' \
 		${WRKSRC}/src/nvidia_linux.c
 .endif
 # Adjust Linux headers #include's after FreeBSD src SVN r246085
-.if ${OSVERSION} > 1000027 && ${NVVERSION} >= 964323
+.if ${OSVERSION} > 1000027 && ${NVVERSION} >= 96.4323
 	${REINPLACE_CMD} -E '/#include "machine\/\.\.\/linux(32)?\/linux.h"/ \
 		{ x ; s/.*/#include "machine\/..\/..\/compat\/linux\/linux_ioctl.h"/ ; H ; x ; }' \
 			${WRKSRC}/src/nvidia_linux.c
@@ -161,30 +171,30 @@ post-patch: .SILENT
 		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Adjust kmem(9) calls after FreeBSD src SVN r254025
-.if ${OSVERSION} > 1000040 && ${NVVERSION} < 3316700
+.if ${OSVERSION} > 1000040 && ${NVVERSION} < 331.67
 	${REINPLACE_CMD} -e '/kmem_/s/kernel_map/kernel_arena/' \
 		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Adopt to cap_rights_t type change in FreeBSD src SVN r255219
-.if ${OSVERSION} > 1000052 && ${NVVERSION} < 3316700
+.if ${OSVERSION} > 1000052 && ${NVVERSION} < 331.67
 	${REINPLACE_CMD} -e 's/u_long cmd;/& cap_rights_t rights;/ ; \
 		s/CAP_IOCTL/cap_rights_init(\&rights, &)/' \
 			${WRKSRC}/src/nvidia_linux.c
 .endif
 # Argument count of vm_map_find() changed in FreeBSD src SVN r255426
-.if ${OSVERSION} > 1000054 && ${NVVERSION} < 3316700
+.if ${OSVERSION} > 1000054 && ${NVVERSION} < 331.67
 	${REINPLACE_CMD} -e 's/virtual_address, size,/& 0,/' \
 		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Fix stack buffer overflow in nvidia_sysctl_bus_type()
-.if ${NVVERSION} < 3192300
+.if ${NVVERSION} < 319.23
 	${REINPLACE_CMD} -E '/bus_type\[4\]/d ; \
 		s/sprintf\(bus_type, (".+")/return SYSCTL_OUT(req, \1, sizeof(\1)/ ; \
 		/return SYSCTL_OUT\(req, bus_type/d' \
 			${WRKSRC}/src/nvidia_sysctl.c
 .endif
 # Unbreak the build of 173.14.xx legacy series on recent -CURRENT
-.if ${NVVERSION} < 1952200 && ${NVVERSION} >= 1690400
+.if ${NVVERSION} < 195.22 && ${NVVERSION} >= 169.04
 	${REINPLACE_CMD} -E 's/os_(alloc|free)_contig_pages/NV_API_CALL &/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
@@ -213,13 +223,13 @@ post-patch: .SILENT
 		${WRKSRC}/lib/Makefile
 # Do not install VDPAU libraries which are provided by `multimedia/libvdpau'
 # port for a while now
-.if ${NVVERSION} >= 1802900
+.if ${NVVERSION} >= 180.29
 	${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
 		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
 .endif
 # Do not build any binaries (native nvidia-settings and nvidia-xconfig are
 # provided by corresponding ports) and manual pages
-.if ${NVVERSION} < 974600 || ${NVVERSION} >= 1952200
+.if ${NVVERSION} < 97.46 || ${NVVERSION} >= 195.22
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
 .else
 	${REINPLACE_CMD} -E 's/(lib).*/\1/' ${WRKSRC}/x11/Makefile
@@ -249,33 +259,33 @@ post-install: .SILENT
 	${INSTALL_SCRIPT} ${WRKSRC}/obj/nvidia-bug-report.sh \
 		${STAGEDIR}${PREFIX}/bin
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
-.if ${NVVERSION} < 817400
+.if ${NVVERSION} < 81.74
 	${REINPLACE_CMD} -e '/libnvidia-cfg/d' ${TMPPLIST}
 .endif
-.if ${NVVERSION} < 974600 || ${NVVERSION} >= 1952200
+.if ${NVVERSION} < 97.46 || ${NVVERSION} >= 195.22
 	${REINPLACE_CMD} -e '/wfb/d' ${TMPPLIST}
 .endif
-.if ${NVVERSION} < 1802900
+.if ${NVVERSION} < 180.29
 	${REINPLACE_CMD} -e '/vdpau/d' ${TMPPLIST}
 .endif
-.if ${NVVERSION} < 1851829
+.if ${NVVERSION} < 185.1829
 	${REINPLACE_CMD} -e '/libcuda/d' ${TMPPLIST}
 .endif
-.if ${NVVERSION} >= 2565300
+.if ${NVVERSION} >= 256.53
 	${REINPLACE_CMD} -E 's/libGLcore/libnvidia-glcore/ ; \
 		/usr.*(glcore|tls).*so\.1$$/d' ${TMPPLIST}
 .endif
-.if ${NVVERSION} >= 3101900
+.if ${NVVERSION} >= 310.19
 	${REINPLACE_CMD} -e '/libXvMCNVIDIA/d' ${TMPPLIST}
 .else	# some applications need this symlink (see PR ports/72877)
 	${LN} -sf libXvMCNVIDIA.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 .endif
-.if ${NVVERSION} < 3311300 || ${ARCH} == amd64
+.if ${NVVERSION} < 331.13 || ${ARCH} == amd64
 	${REINPLACE_CMD} -E '/lib(nvidia-)?(EGL|eglcore|GLESv|glsi)/d' \
 		${TMPPLIST}
 .endif
-.if ${NVVERSION} >= 1952200
+.if ${NVVERSION} >= 195.22
 	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
 .endif
 
@@ -287,7 +297,7 @@ JOIN?=		/usr/bin/join
 .endif
 
 update-distinfo: makesum .SILENT
-	${REINPLACE_CMD} -i '' -e '/${DISTNAME:R:R}/s/^/~/' \
+	${REINPLACE_CMD} -i '' -e '/${NVVERSION:R}/s/^/~/' \
 		${MASTERDIR}/distinfo ${DISTINFO_FILE}
 	${SED} -e '/^~/s/(.*//' ${MASTERDIR}/distinfo | ${JOIN} -a 1 \
 		- ${DISTINFO_FILE} | ${SED} -e 's/^~//' \
