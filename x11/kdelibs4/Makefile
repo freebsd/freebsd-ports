@@ -3,6 +3,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -63,12 +64,6 @@ SHEBANG_FILES=	kdecore/kconfig_compiler/checkkcfg.pl \
 		kio/useragent.pl \
 		kio/proxytype.pl \
 		kioslave/http/kcookiejar/kcookiescfg.pl
-
-OPTIONS_DEFAULT=	MDNSRESPONDER
-OPTIONS_SINGLE=		ZEROCONF
-OPTIONS_SINGLE_ZEROCONF=	AVAHI MDNSRESPONDER
-AVAHI_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/avahi-libdns
-MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 
 .include <bsd.port.pre.mk>
 
