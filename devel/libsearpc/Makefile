@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MAINTAINER=	yan_jingfeng@yahoo.com
 COMMENT=	Simple RPC framework based on GObject System in C
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
