@@ -1,8 +1,12 @@
-$FreeBSD$
-
---- slim.1.orig	2014-03-10 21:18:36.740597788 +0000
-+++ slim.1	2014-03-10 21:22:07.373025770 +0000
-@@ -42,6 +42,9 @@
+--- slim.1.orig	2013-10-01 22:38:05 UTC
++++ slim.1
+@@ -37,13 +37,16 @@ display version information
+ run \fBslim\fP in daemon mode
+ .TP
+ .B
+-\fBslim\fP \fB-p\fP /usr/share/\fBslim\fP/themes/default
++\fBslim\fP \fB-p\fP %%PREFIX%%/share/\fBslim\fP/themes/default
+ preview of the default theme
  .SH STARTING SLIM AT BOOT
  Please refer to documentation of your Operating System to make \fBslim\fP
  automatically startup after the system boots.
@@ -10,5 +14,8 @@ $FreeBSD$
 +For \fBFreeBSD\fP, you should add the line slim_enable=yes to /etc/rc.conf
 +to make \fBslim\fP start on boot.
  .SH CONFIGURATION
- Global configuration is stored in the /etc/slim.conf file. See the comments
+-Global configuration is stored in the /etc/slim.conf file. See the comments
++Global configuration is stored in the %%PREFIX%%/etc/slim.conf file. See the comments
  inside the file for a detailed explanation of the \fIoptions\fP.
+ .SH USAGE AND SPECIAL USERNAMES
+ When started, \fBslim\fP will show a login panel; enter the username and
