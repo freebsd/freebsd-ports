@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	2.12-20140709
-PORTREVISION=	2
+DISTVERSION=	2.12-20141020
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -32,9 +31,6 @@ GROUPS=		mail maildrop postfix
 USES=		perl5 shebangfix cpe
 SHEBANG_LANG=	perl
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
-
-CPE_VENDOR=	postfix
-CPE_PRODUCT=	postfix
 
 USE_SUBMAKE=	yes
 USE_PERL5=	build
@@ -107,6 +103,7 @@ PLIST_SUB+=	BASE="@comment " BMAN=""
 PLIST_SUB+=	PFETC=${ETCDIR}
 
 .if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
 READMEDIR=	${DOCSDIR}
 .else
 READMEDIR=	no
@@ -134,7 +131,7 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-Wmissing-prototypes -Wformat -Wno-comment
 
 # Default requirement for postfix rc script
-_REQUIRE=	LOGIN cleanvar
+_REQUIRE=		LOGIN cleanvar
 
 .if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
@@ -161,10 +158,7 @@ _REQUIRE+=		dovecot
 .endif
 
 .if ${PORT_OPTIONS:MSASLKRB5}
-.if ${OSVERSION} >= 800037
-KRB5_EXTR=		-lhx509
-.endif
-POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
+POSTFIX_AUXLIBS+=	-lkrb5 -lhx509 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if ${PORT_OPTIONS:MSASLKMIT}
@@ -220,7 +214,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
 
 .if ${PORT_OPTIONS:MOPENLDAP}
 USE_OPENLDAP=		yes
-.if ${PORT_OPTIONS:MOPENLDAP_VER}
+.if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
