@@ -3,7 +3,7 @@
 
 PORTNAME=	ccons
 PORTVERSION=	r251
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -22,11 +22,10 @@ ONLY_FOR_ARCHS=	i386 amd64
 USES=		cmake
 CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config33
 CXXFLAGS+=	-fno-rtti
-LDFLAGS+=	-lclang
-CXX=	clang++33
-CC=		clang33
 
-PLIST_FILES=	bin/ccons man/man1/ccons.1.gz
+SUB_FILES=	ccons.sh
+PLIST_FILES=	bin/ccons man/man1/ccons.1.gz \
+		bin/ccons-bin
 
 WRKSRC=	${WRKDIR}/ccons
 
@@ -41,7 +40,8 @@ BROKEN=	ccons does not work on FreeBSD < 9.0-RELEASE
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ccons ${STAGEDIR}${PREFIX}/bin/ccons
+	@${INSTALL_PROGRAM} ${WRKSRC}/ccons ${STAGEDIR}${PREFIX}/bin/ccons-bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/ccons.sh ${STAGEDIR}${PREFIX}/bin/ccons
 	@${INSTALL_MAN} ${WRKSRC}/man/ccons.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/ccons.1
 
 .include <bsd.port.post.mk>
