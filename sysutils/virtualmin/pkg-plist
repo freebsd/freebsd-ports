@@ -36,6 +36,7 @@ lib/webmin/virtual-server/clam-wrapper.pl
 lib/webmin/virtual-server/clone-domain.pl
 lib/webmin/virtual-server/clone.cgi
 lib/webmin/virtual-server/clone_form.cgi
+lib/webmin/virtual-server/cloud-lib.pl
 lib/webmin/virtual-server/collect-lib.pl
 lib/webmin/virtual-server/collectinfo.pl
 lib/webmin/virtual-server/commands-lib.pl
@@ -125,6 +126,7 @@ lib/webmin/virtual-server/edit_admin.cgi
 lib/webmin/virtual-server/edit_afile.cgi
 lib/webmin/virtual-server/edit_alias.cgi
 lib/webmin/virtual-server/edit_bucket.cgi
+lib/webmin/virtual-server/edit_cloud.cgi
 lib/webmin/virtual-server/edit_database.cgi
 lib/webmin/virtual-server/edit_domain.cgi
 lib/webmin/virtual-server/edit_domdkim.cgi
@@ -693,15 +695,6 @@ lib/webmin/virtual-server/help/config_reseller_pre_command.html
 lib/webmin/virtual-server/help/config_reseller_theme.html
 lib/webmin/virtual-server/help/config_reseller_theme.nl.html
 lib/webmin/virtual-server/help/config_reseller_unix.html
-lib/webmin/virtual-server/help/config_rs_chunk.html
-lib/webmin/virtual-server/help/config_rs_endpoint.html
-lib/webmin/virtual-server/help/config_rs_key.html
-lib/webmin/virtual-server/help/config_rs_snet.html
-lib/webmin/virtual-server/help/config_rs_user.html
-lib/webmin/virtual-server/help/config_s3_akey.html
-lib/webmin/virtual-server/help/config_s3_endpoint.html
-lib/webmin/virtual-server/help/config_s3_endpoint.nl.html
-lib/webmin/virtual-server/help/config_s3_skey.html
 lib/webmin/virtual-server/help/config_scriptdir.html
 lib/webmin/virtual-server/help/config_scriptdir.nl.html
 lib/webmin/virtual-server/help/config_scriptwarn_url.html
@@ -1628,6 +1621,8 @@ lib/webmin/virtual-server/list-custom.pl
 lib/webmin/virtual-server/list-databases.pl
 lib/webmin/virtual-server/list-domains.pl
 lib/webmin/virtual-server/list-features.pl
+lib/webmin/virtual-server/list-gcs-buckets.pl
+lib/webmin/virtual-server/list-gcs-files.pl
 lib/webmin/virtual-server/list-mailbox.pl
 lib/webmin/virtual-server/list-php-directories.pl
 lib/webmin/virtual-server/list-php-ini.pl
@@ -1647,6 +1642,7 @@ lib/webmin/virtual-server/list-users.pl
 lib/webmin/virtual-server/list_admins.cgi
 lib/webmin/virtual-server/list_aliases.cgi
 lib/webmin/virtual-server/list_buckets.cgi
+lib/webmin/virtual-server/list_clouds.cgi
 lib/webmin/virtual-server/list_databases.cgi
 lib/webmin/virtual-server/list_records.cgi
 lib/webmin/virtual-server/list_redirects.cgi
@@ -1804,6 +1800,7 @@ lib/webmin/virtual-server/newfeatures-all/4.07/1-aliasmove
 lib/webmin/virtual-server/newfeatures-all/4.08/1-domdkim
 lib/webmin/virtual-server/newfeatures-all/4.11/1-dovecotssl
 lib/webmin/virtual-server/newfeatures-all/4.11/3-dovecotssl
+lib/webmin/virtual-server/newfeatures-all/4.12/2-backupconfig
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1838,6 +1835,7 @@ lib/webmin/virtual-server/newfeatures-gpl/4.08/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.09/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.10/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.11/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.12/0-scripts
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
@@ -1876,6 +1874,7 @@ lib/webmin/virtual-server/save_admin.cgi
 lib/webmin/virtual-server/save_afile.cgi
 lib/webmin/virtual-server/save_alias.cgi
 lib/webmin/virtual-server/save_bucket.cgi
+lib/webmin/virtual-server/save_cloud.cgi
 lib/webmin/virtual-server/save_database.cgi
 lib/webmin/virtual-server/save_dbhosts.cgi
 lib/webmin/virtual-server/save_dbpass.cgi
@@ -1990,4 +1989,3 @@ lib/webmin/virtual-server/webmincron-fixed.pl
 lib/webmin/virtual-server/wizard-lib.pl
 lib/webmin/virtual-server/wizard.cgi
 lib/webmin/virtual-server/writelogs.pl
-@dir etc/webmin/virtual-server
