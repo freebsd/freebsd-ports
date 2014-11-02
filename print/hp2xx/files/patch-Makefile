@@ -86,15 +86,15 @@
 -		-$(STRIP) $(PROGRAM)
 -		-$(CP) $(PROGRAM) $(bindir)
 -		-$(CHMOD) 755 $(bindir)/$(PROGRAM)
-+		${BSD_INSTALL_PROGRAM} $(PROGRAM) $(bindir)
++		${BSD_INSTALL_PROGRAM} $(PROGRAM) $(DESTDIR)$(bindir)
  
  install-info:	hp2xx.info
 -		-$(CP) hp2xx.info $(infodir)
 -		-$(CHMOD) 644 $(infodir)/hp2xx.info
-+		${BSD_INSTALL_DATA} hp2xx.info $(infodir)
++		${BSD_INSTALL_DATA} hp2xx.info $(DESTDIR)$(infodir)
  
  install-man:	../doc/hp2xx.1
 -		-$(CP) ../doc/hp2xx.1 $(man1dir)
 -		-$(CHMOD) 644 $(man1dir)/hp2xx.1
-+		${BSD_INSTALL_MAN} ../doc/hp2xx.1 $(man1dir)
++		${BSD_INSTALL_MAN} ../doc/hp2xx.1 $(DESTDIR)$(man1dir)
  
