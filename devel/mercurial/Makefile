@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=	python:2
 USE_PYTHON=	distutils
 
-OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS EXAMPLES NLS FREEBSD
+OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS NLS FREEBSD
 OPTIONS_DEFAULT=DATA
 OPTIONS_SUB=	yes
 
@@ -29,7 +29,6 @@ NLS_USES=		gettext
 CONTRIB_FILES=	bash_completion \
 		casesmash.py \
 		check-code.py \
-		convert-repo \
 		debugcmdserver.py \
 		debugshell.py \
 		dumprevlog \
@@ -87,11 +86,6 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/contrib/sample.hgrc \
-		${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

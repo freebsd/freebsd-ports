@@ -250,9 +250,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.py
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyo
-%%PYTHON_SITELIBDIR%%/mercurial/dicthelpers.py
-%%PYTHON_SITELIBDIR%%/mercurial/dicthelpers.pyc
-%%PYTHON_SITELIBDIR%%/mercurial/dicthelpers.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/diffhelpers.so
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.py
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.pyc
@@ -263,6 +260,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/dispatch.py
 %%PYTHON_SITELIBDIR%%/mercurial/dispatch.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/dispatch.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/dummycert.pem
 %%PYTHON_SITELIBDIR%%/mercurial/encoding.py
 %%PYTHON_SITELIBDIR%%/mercurial/encoding.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/encoding.pyo
@@ -716,11 +714,9 @@ man/man5/hgignore.5.gz
 man/man5/hgrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.hgrc
 %%DATA%%%%DATADIR%%/contrib/bash_completion
 %%DATA%%%%DATADIR%%/contrib/casesmash.py
 %%DATA%%%%DATADIR%%/contrib/check-code.py
-%%DATA%%%%DATADIR%%/contrib/convert-repo
 %%DATA%%%%DATADIR%%/contrib/debugcmdserver.py
 %%DATA%%%%DATADIR%%/contrib/debugshell.py
 %%DATA%%%%DATADIR%%/contrib/dumprevlog
