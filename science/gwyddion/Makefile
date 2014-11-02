@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.37
-PORTREVISION=	3
+PORTVERSION=	2.38
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -37,13 +36,14 @@ OPTIONS_DEFAULT=	PERL PYTHON UNIQUE
 OPTIONS_SUB=		yes
 
 PERL_USES=		perl5
-PERL_CONFIGURE_WITH=	${PERL}
-PYTHON_USE=		GNOME=pygtksourceview PYTHON=yes
+PERL_CONFIGURE_WITH=	perl
+PYTHON_USES=		python
+PYTHON_USE=		gnome=pygtksourceview
 PYTHON_CONFIGURE_ENABLE=	pygwy
-PYTHON_CONFIGURE_WITH=	gtksourceview ${PYTHON_CMD}
-RUBY_USE=		RUBY=yes
-RUBY_CONFIGURE_WITH=	${RUBY}
-UNIQUE_DESC=		Remote controle backend support
+PYTHON_CONFIGURE_WITH=	gtksourceview python
+RUBY_USE=		ruby=yes
+RUBY_CONFIGURE_WITH=	ruby
+UNIQUE_DESC=		Remote control backend support
 UNIQUE_LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 UNIQUE_CONFIGURE_WITH=	unique
 
