@@ -1,5 +1,5 @@
 #!/bin/sh
 # $FreeBSD$
 
-LD_LIBRARY_PATH="%%LOCALBASE%%/llvm33/lib/" %%LOCALBASE%%/bin/ccons-bin
+LD_LIBRARY_PATH="%%LOCALBASE%%/llvm33/lib/" %%LOCALBASE%%/bin/ccons-bin $@
 
