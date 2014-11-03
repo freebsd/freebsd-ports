@@ -5,7 +5,7 @@
  endif()
  
 -if(CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
-+if(CMAKE_SYSTEM_NAME MATCHES "^(FreeBSD|OpenBSD)$")
++if(CMAKE_SYSTEM_NAME MATCHES "^(DragonFly|FreeBSD|OpenBSD)$")
    if(NOT CMAKE_INSTALL_INFODIR)
      set(CMAKE_INSTALL_INFODIR "" CACHE PATH "info documentation (info)")
      set(CMAKE_INSTALL_INFODIR "info")
