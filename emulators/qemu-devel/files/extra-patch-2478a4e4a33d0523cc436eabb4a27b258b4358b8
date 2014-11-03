@@ -1,0 +1,80 @@
+From 2478a4e4a33d0523cc436eabb4a27b258b4358b8 Mon Sep 17 00:00:00 2001
+From: Sean Bruno <sbruno@freebsd.org>
+Date: Sun, 2 Nov 2014 15:05:40 -0800
+Subject: [PATCH] Deal with new sem_wait2 and sem_wake2 syscalls in head.
+
+---
+ bsd-user/freebsd/os-thread.c | 19 +++++++++++++++++++
+ bsd-user/freebsd/os-thread.h |  6 ++++++
+ bsd-user/syscall_defs.h      |  4 +++-
+ 3 files changed, 28 insertions(+), 1 deletion(-)
+
+diff --git a/bsd-user/freebsd/os-thread.c b/bsd-user/freebsd/os-thread.c
+index 91a42ac..cca46cf 100644
+--- a/bsd-user/freebsd/os-thread.c
++++ b/bsd-user/freebsd/os-thread.c
+@@ -225,6 +225,25 @@ abi_long freebsd_umtx_mutex_wake2(abi_ulong target_addr,
+ }
+ #endif /* UMTX_OP_MUTEX_WAKE2 */
+ 
++#if defined(__FreeBSD_version) && __FreeBSD_version > 1100000
++abi_long freebsd_umtx_sem_wait(abi_ulong obj, struct timespec *timeout)
++{
++
++    /* XXX Assumes struct _usem is opauque to the user */
++    if (!access_ok(VERIFY_WRITE, obj, sizeof(struct target__usem))) {
++        return -TARGET_EFAULT;
++    }
++    return get_errno(_umtx_op(g2h(obj), UMTX_OP_SEM2_WAIT, 0, NULL, timeout));
++}
++
++abi_long freebsd_umtx_sem_wake(abi_ulong obj, uint32_t val)
++{
++
++    return get_errno(_umtx_op(g2h(obj), UMTX_OP_SEM2_WAKE, val, NULL, NULL));
++}
++#endif
++
++#else
+ abi_long freebsd_umtx_sem_wait(abi_ulong obj, struct timespec *timeout)
+ {
+ 
+diff --git a/bsd-user/freebsd/os-thread.h b/bsd-user/freebsd/os-thread.h
+index 28f737f..8157e85 100644
+--- a/bsd-user/freebsd/os-thread.h
++++ b/bsd-user/freebsd/os-thread.h
+@@ -486,6 +486,9 @@ static inline abi_long do_freebsd__umtx_op(abi_ulong obj, int op, abi_ulong val,
+         break;
+ #endif /* UMTX_OP_NWAKE_PRIVATE */
+ 
++#if defined(__FreeBSD_version) && __FreeBSD_version > 1100000
++    case TARGET_UMTX_OP_SEM2_WAIT:
++#endif
+     case TARGET_UMTX_OP_SEM_WAIT:
+         if (target_ts != 0) {
+             if (t2h_freebsd_timespec(&ts, target_ts)) {
+@@ -497,6 +500,9 @@ static inline abi_long do_freebsd__umtx_op(abi_ulong obj, int op, abi_ulong val,
+         }
+         break;
+ 
++#if defined(__FreeBSD_version) && __FreeBSD_version > 1100000
++    case TARGET_UMTX_OP_SEM2_WAKE: 
++#endif
+     case TARGET_UMTX_OP_SEM_WAKE:
+         /* Don't need to do access_ok(). */
+         ret = freebsd_umtx_sem_wake(obj, val);
+diff --git a/bsd-user/syscall_defs.h b/bsd-user/syscall_defs.h
+index 13678d4..d02476c 100644
+--- a/bsd-user/syscall_defs.h
++++ b/bsd-user/syscall_defs.h
+@@ -633,7 +633,9 @@ typedef struct {
+ #define TARGET_UMTX_OP_SEM_WAKE             20
+ #define TARGET_UMTX_OP_NWAKE_PRIVATE        21
+ #define TARGET_UMTX_OP_MUTEX_WAKE2          22
+-#define TARGET_UMTX_OP_MAX                  23
++#define TARGET_UMTX_OP_SEM2_WAIT            23
++#define TARGET_UMTX_OP_SEM2_WAKE            24
++#define TARGET_UMTX_OP_MAX                  25
+ 
+ /* flags for UMTX_OP_CV_WAIT */
+ #define TARGET_CVWAIT_CHECK_UNPARKING       0x01
