@@ -3,7 +3,7 @@
 
 PORTNAME=	sshguard
 PORTVERSION=	1.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/sshguard-${PORTVERSION}
 
