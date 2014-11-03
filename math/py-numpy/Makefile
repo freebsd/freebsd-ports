@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numpy
-PORTVERSION=	1.8.1
-PORTREVISION=	4
+PORTVERSION=	1.9.1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}/:doc \
@@ -48,10 +47,6 @@ PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 PLIST_FILES+=	man/man1/f2py.1.gz
 .endif
 
-post-extract:
-	${CP} ${DISTDIR}/numpy-ref-${PORTVERSION}.pdf ${WRKDIR}
-	${CP} ${DISTDIR}/numpy-user-${PORTVERSION}.pdf ${WRKDIR}
-
 post-patch:
 	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
 	${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
@@ -73,12 +68,12 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" ${WRKSRC}/numpy/distutils/system_info.py
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/numpy/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1
+	${INSTALL_MAN} ${WRKSRC}/doc/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
 	${LN} -sf ${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py.1
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/numpy-ref-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/numpy-user-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/numpy-ref-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/numpy-user-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
