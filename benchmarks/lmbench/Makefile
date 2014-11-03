@@ -34,6 +34,8 @@ post-extract:
 	${MKDIR} ${WRKSRC}/SCCS
 	${TOUCH} -t 199901010000 ${WRKSRC}/SCCS/s.ChangeSet
 	cd ${WRKSRC}/scripts; ./version > ${WRKSRC}/src/bk.ver
+	${ECHO} "#!${SH}" > ${WRKSRC}/scripts/os
+	${ECHO} "echo ${ARCH}-${OPSYS:tl}${OSREL}" >> ${WRKSRC}/scripts/os
 
 # Clean up turds from building the library.  Some systems just have
 # .o, some also end up with .s, so clean up both.
