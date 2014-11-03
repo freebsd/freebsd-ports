@@ -1,6 +1,6 @@
 --- doc/Makefile.in.orig	2014-10-30 04:21:17.000000000 +0900
-+++ doc/Makefile.in	2014-11-03 23:20:17.000000000 +0900
-@@ -38,18 +38,18 @@
++++ doc/Makefile.in	2014-11-04 07:02:49.000000000 +0900
+@@ -38,18 +38,19 @@
  # If `texi2html' is not available, use `makeinfo' when possible.  Set the ToC
  # file accordingly.  Actually, makeinfo >= 5 is needed, but we don't check the
  # version.
@@ -16,11 +16,12 @@
 -		TEXI2HTML_TOC=auctex_toc.html
 -	endif
 -endif
-+.if "@TEXI2HTML@" == ":"
++COLON=:
++.if ${COLON} != "@TEXI2HTML@"
 +TEXI2HTML=@TEXI2HTML@
 +TEXI2HTML_TOC=auctex_toc.html
 +.else
-+.	if "@MAKEINFO@" == ":"
++.	if ${COLON} != "@MAKEINFO@"
 +TEXI2HTML=@MAKEINFO@ --html
 +TEXI2HTML_TOC=index.html
 +.	else
@@ -31,7 +32,7 @@
  TEXI2DVI=@TEXI2DVI@
  TEXI2PDF=@TEXI2PDF@
  MKINSTALLDIRS = ../mkinstalldirs
-@@ -85,7 +85,11 @@
+@@ -85,7 +86,11 @@
  	done ; \
  	}
  
@@ -43,7 +44,7 @@
  
  extradist: html/$(TEXI2HTML_TOC) auctex.ps auctex.pdf tex-ref.ps tex-ref.pdf
  
-@@ -125,6 +129,18 @@
+@@ -125,6 +130,18 @@
  auctex.info: $(AUCTEXTEXIFILES)
  	$(MAKEINFO) auctex.texi
  
@@ -62,7 +63,7 @@
  install-auctex: auctex.info tex-ref.pdf
  	-$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
  	rm -f $(DESTDIR)$(infodir)/auctex $(DESTDIR)$(infodir)/auctex-*
-@@ -140,6 +156,7 @@
+@@ -140,6 +157,7 @@
  	  rm -f $(DESTDIR)$(docdir)/tex-ref.pdf; \
  	  $(INSTALL_DATA) tex-ref.pdf $(DESTDIR)$(docdir); \
  	}
