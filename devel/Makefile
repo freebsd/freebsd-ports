@@ -2572,6 +2572,7 @@
     SUBDIR += p5-Package-Stash-XS
     SUBDIR += p5-Package-Variant
     SUBDIR += p5-PadWalker
+    SUBDIR += p5-Parallel-Async
     SUBDIR += p5-Parallel-ForkManager
     SUBDIR += p5-Parallel-Iterator
     SUBDIR += p5-Parallel-Prefork
