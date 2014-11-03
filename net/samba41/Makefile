@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}41
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba/stable samba/rc
@@ -361,7 +361,7 @@ CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C|(\\\\ )+|,|g:S|\\
 		pdb_test pdb_wbc_sam perfcount_test vfs_aio_posix vfs_aio_pthread \
 		vfs_cacheprime vfs_dfs_samba4 vfs_fake_acls vfs_notify_fam \
 		vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent
-.	if !empty(${SAMBA4_MODULES}) && ${SAMBA4_MODULES:M${module}}
+.	if !empty(SAMBA4_MODULES) && ${SAMBA4_MODULES:M${module}}
 PLIST_SUB+=		MODULE_${module:tu}=""
 .	else
 PLIST_SUB+=		MODULE_${module:tu}="@comment "
