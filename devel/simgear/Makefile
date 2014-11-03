@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simgear
-PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTVERSION=	3.2.0
 CATEGORIES=	devel games
 MASTER_SITES=	http://mirrors.ibiblio.org/simgear/ftp/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/ \
@@ -22,7 +21,13 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
-USES=		tar:bzip2 cmake openal:al,alut
-CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON
+USES=		tar:bzip2 cmake compiler openal:al,alut
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# When building with Gcc, needs Gcc 4.6+
+.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
+USE_GCC=	4.6+
+.endif
+
+.include <bsd.port.post.mk>

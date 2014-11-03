@@ -1,44 +1,17 @@
---- CMakeLists.txt.orig	2014-02-15 01:04:11.000000000 +0100
-+++ CMakeLists.txt	2014-03-10 18:06:13.000000000 +0100
-@@ -259,18 +259,20 @@
- endif(HAVE_CLOCK_GETTIME)
+--- CMakeLists.txt.orig	2014-10-21 07:26:42.608036396 +0200
++++ CMakeLists.txt	2014-10-21 07:27:18.571673862 +0200
+@@ -276,12 +276,12 @@
+ # isnan might not be real symbol, so can't check using function_exists
+ check_cxx_source_compiles(
+     "#include <cmath> 
+-    void f() { isnan(0.0);} "
++    int main() { return isnan(0.0);} "
+     HAVE_ISNAN)
  
- set(DL_LIBRARY "")
--check_cxx_source_compiles(
--    "#include <dlfcn.h>
--    int main(void) {
--        return 0;
--    }
--    "
--    HAVE_DLFCN_H)
--
--if(HAVE_DLFCN_H)
--    check_library_exists(dl dlerror "" HAVE_DL)
--    set(DL_LIBRARY "dl")
--endif()
-+if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-+    check_cxx_source_compiles(
-+        "#include <dlfcn.h>
-+        int main(void) {
-+            return 0;
-+        }
-+        "
-+        HAVE_DLFCN_H)
-+
-+    if(HAVE_DLFCN_H)
-+        check_library_exists(dl dlerror "" HAVE_DL)
-+        set(DL_LIBRARY "dl")
-+    endif()
-+endif (NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+ check_cxx_source_compiles(
+     "#include <cmath> 
+-    void f() { std::isnan(0.0);} "
++    int main() { return std::isnan(0.0);} "
+     HAVE_STD_ISNAN)
  
- SET(CMAKE_DEBUG_POSTFIX "d" CACHE STRING "add a postfix, usually 'd' on windows")
- SET(CMAKE_RELEASE_POSTFIX "" CACHE STRING "add a postfix, usually empty on windows")
-@@ -342,7 +344,7 @@
- set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${WARNING_FLAGS_CXX} ${MSVC_FLAGS} ${BOOST_CXX_FLAGS}")
- set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${MSVC_LD_FLAGS}")
- 
--include_directories(${PROJECT_SOURCE_DIR})
-+include_directories(BEFORE ${PROJECT_SOURCE_DIR})
- include_directories(${PROJECT_SOURCE_DIR}/simgear/canvas/ShivaVG/include)
- include_directories(${PROJECT_BINARY_DIR}/simgear)
- 
+ if(CMAKE_COMPILER_IS_GNUCXX)

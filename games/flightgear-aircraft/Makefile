@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-aircraft
-PORTVERSION=	20140319
+PORTVERSION=	20141022
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
-MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-3.0/ \
-		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft-3.0/ \
-		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft-3.0/ \
-		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft-3.0/ \
-		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Aircraft-3.0/
+MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-3.2/ \
+		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft-3.2/ \
+		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft-3.2/ \
+		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft-3.2/ \
+		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Aircraft-3.2/
 # Selection of production-ready/well-known planes
 # (planes already included in flightgear-data are excluded)
 # Please contact the MAINTAINER if a plane is missing
@@ -25,8 +25,8 @@ DISTFILES=	737-200_20120506.zip \
 		Caudron-G3_20120506.zip \
 		F80C_20120717.zip \
 		Hurricane_20130823.zip \
-		IL-2_20110311.zip \
-		Lightning_20140116.zip \
+		IL-2_20140508.zip \
+		Lightning_20140613.zip \
 		Lockheed1049h_1.0.zip \
 		Messerschmitt-P1101_20130315.zip \
 		MirageIII_20131008.zip \
@@ -38,12 +38,12 @@ DISTFILES=	737-200_20120506.zip \
 		Super-Etendard_20131008.zip \
 		Supermarine-S.6B_20130312.zip \
 		Superwal_20100330.zip \
-		airwaveXtreme150_July-2013.zip \
-		asw20_July-2013.zip \
+		airwaveXtreme150_June-2014.zip \
+		asw20_June-2014.zip \
 		bf109_20130615.zip \
 		c310_20130209.zip \
 		dhc3_20120506.zip \
-		f16_20120812.zip \
+		f16_20140612.zip \
 		harrier_20130823.zip \
 		pa24-250_20121128.zip \
 		tu154_20081221.zip \

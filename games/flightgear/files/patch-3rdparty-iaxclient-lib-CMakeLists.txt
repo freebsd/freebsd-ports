@@ -1,11 +1,28 @@
---- 3rdparty/iaxclient/lib/CMakeLists.txt.orig	2014-03-12 18:13:58.000000000 +0100
-+++ 3rdparty/iaxclient/lib/CMakeLists.txt	2014-03-12 18:14:39.000000000 +0100
-@@ -88,7 +88,7 @@
-         libspeex/vq.c
-         )
+--- 3rdparty/iaxclient/lib/CMakeLists.txt.orig	2014-10-21 18:27:37.041376820 +0200
++++ 3rdparty/iaxclient/lib/CMakeLists.txt	2014-10-21 18:27:53.883368567 +0200
+@@ -1,6 +1,6 @@
+ # CMakeLists.txt, for utils/iaxclient/lib - 20130925
+ # even if we don't select the codec, speex is used for pre-processing audio
+-set(ENABLE_SPEXX 1)
++set(ENABLE_SPEEX 1)
+ 
+ set(IAXCLIENT_BASE_SOURCES
+     audio_encode.c
+@@ -57,7 +57,7 @@
+     list(APPEND IAXCLIENT_BASE_SOURCES unixfuncs.c)
+ endif(WIN32)
+ 
+-if (ENABLE_SPEXX)
++if (ENABLE_SPEEX)
+     list(APPEND IAXCLIENT_BASE_SOURCES codec_speex.c)
+ 
+     if (SYSTEM_SPEEX)
+@@ -115,7 +115,7 @@
      
--    include_directories(${PROJECT_SOURCE_DIR}/3rdparty/iaxclient/lib/libspeex/include)
-+    include_directories(BEFORE ${PROJECT_SOURCE_DIR}/3rdparty/iaxclient/lib/libspeex/include)
- endif(ENABLE_SPEXX)
+         include_directories(${PROJECT_SOURCE_DIR}/3rdparty/iaxclient/lib/libspeex/include)
+     endif(SPEEX_FOUND AND SPEEXDSP_FOUND)
+-endif(ENABLE_SPEXX)
++endif(ENABLE_SPEEX)
  
  if (ENABLE_ALSA)
+     list(APPEND IAXCLIENT_BASE_SOURCES audio_alsa.c)
