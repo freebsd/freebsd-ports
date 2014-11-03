@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Parallel::Async.3.gz
+%%PERL5_MAN3%%/Parallel::Async::Chain.3.gz
+%%PERL5_MAN3%%/Parallel::Async::Task.3.gz
+%%SITE_PERL%%/Parallel/Async.pm
+%%SITE_PERL%%/Parallel/Async/Chain.pm
+%%SITE_PERL%%/Parallel/Async/Task.pm
