@@ -1,6 +1,37 @@
---- doc/Makefile.in.orig	2008-04-29 05:43:13.000000000 +0900
-+++ doc/Makefile.in	2011-01-19 11:06:19.000000000 +0900
-@@ -70,7 +70,11 @@
+--- doc/Makefile.in.orig	2014-10-30 04:21:17.000000000 +0900
++++ doc/Makefile.in	2014-11-03 23:20:17.000000000 +0900
+@@ -38,18 +38,18 @@
+ # If `texi2html' is not available, use `makeinfo' when possible.  Set the ToC
+ # file accordingly.  Actually, makeinfo >= 5 is needed, but we don't check the
+ # version.
+-ifneq (@TEXI2HTML@,:)
+-	TEXI2HTML=@TEXI2HTML@
+-	TEXI2HTML_TOC=auctex_toc.html
+-else
+-	ifneq (@MAKEINFO@,:)
+-		TEXI2HTML=@MAKEINFO@ --html
+-		TEXI2HTML_TOC=index.html
+-	else
+-		TEXI2HTML=@TEXI2HTML@
+-		TEXI2HTML_TOC=auctex_toc.html
+-	endif
+-endif
++.if "@TEXI2HTML@" == ":"
++TEXI2HTML=@TEXI2HTML@
++TEXI2HTML_TOC=auctex_toc.html
++.else
++.	if "@MAKEINFO@" == ":"
++TEXI2HTML=@MAKEINFO@ --html
++TEXI2HTML_TOC=index.html
++.	else
++TEXI2HTML=@TEXI2HTML@
++TEXI2HTML_TOC=auctex_toc.html
++.	endif
++.endif
+ TEXI2DVI=@TEXI2DVI@
+ TEXI2PDF=@TEXI2PDF@
+ MKINSTALLDIRS = ../mkinstalldirs
+@@ -85,7 +85,11 @@
  	done ; \
  	}
  
@@ -10,9 +41,9 @@
  dist: $(DISTTEXTS) preview-latex.info auctex.info tex-ref.pdf
 +.endif
  
- extradist: html/auctex_toc.html auctex.ps auctex.pdf tex-ref.ps tex-ref.pdf
+ extradist: html/$(TEXI2HTML_TOC) auctex.ps auctex.pdf tex-ref.ps tex-ref.pdf
  
-@@ -110,6 +114,18 @@
+@@ -125,6 +129,18 @@
  auctex.info: $(AUCTEXTEXIFILES)
  	$(MAKEINFO) auctex.texi
  
@@ -31,7 +62,7 @@
  install-auctex: auctex.info tex-ref.pdf
  	-$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
  	rm -f $(DESTDIR)$(infodir)/auctex $(DESTDIR)$(infodir)/auctex-*
-@@ -125,6 +141,7 @@
+@@ -140,6 +156,7 @@
  	  rm -f $(DESTDIR)$(docdir)/tex-ref.pdf; \
  	  $(INSTALL_DATA) tex-ref.pdf $(DESTDIR)$(docdir); \
  	}
