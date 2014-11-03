@@ -1,0 +1,11 @@
+--- configure.ac.orig   2014-06-10 04:41:45.000000000 -0400
++++ configure.ac    2014-08-26 18:17:12.161128916 -0400
+@@ -218,7 +218,7 @@
+   LIB_GDI32=
+   LIB_RT=
+   LIB_INTL=
+-  LIB_RESOLV=-lresolv
++  LIB_RESOLV=
+   LIB_UUID=-luuid
+   LIB_IPHLPAPI=
+   LIB_SHELL32=

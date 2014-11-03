@@ -26,6 +26,7 @@
     SUBDIR += bwm-ng
     SUBDIR += cacti
     SUBDIR += cacti-spine
+    SUBDIR += ccnet
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += centreon-clib
