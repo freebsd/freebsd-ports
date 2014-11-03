@@ -155,7 +155,7 @@ libamrwb/26204-*.zip	audio/libamrwb		unclear legal status, probably need license
 libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
 linux-nwnclient/*	games/linux-nwnclient	Distribution not allowed
 linux-unrealgold*	games/linux-unrealgold	Redistribution limited
-linux-ut/*		games/linux-ut		Redistribution limited
+linux-ut/*		games/linux-ut		Redistribution is limited, see license
 linuxq3ademo-*		games/linux-quake3	Restrictive license by Loki Software
 linuxq3ademo-*		games/linux-quake3-demo	Restrictive license by Loki Software
 linuxsampler-*		audio/linuxsampler	Commercial use is prohibited
