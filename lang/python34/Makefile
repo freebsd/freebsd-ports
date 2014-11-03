@@ -85,6 +85,7 @@ CONFIGURE_ARGS+=	--with-system-ffi
 LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 .else
 .if ${ARCH} == i386
+# http://bugs.python.org/issue22521
 BROKEN=		You must use libffi from ports on i386
 .endif
 .endif
