@@ -1453,6 +1453,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/bin/MakeProjectCreator/templates/gnudll.mpt
 %%DATADIR%%/bin/MakeProjectCreator/templates/gnuexe.mpt
 %%DATADIR%%/bin/MakeProjectCreator/templates/vxtest.mpd
+%%DATADIR%%/bin/ace_install_pkgconfig.pl
 %%DATADIR%%/bin/add_rel_link.sh
 %%DATADIR%%/bin/depgen.pl
 %%DATADIR%%/bin/mpc.pl
