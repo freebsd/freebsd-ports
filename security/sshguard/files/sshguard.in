@@ -80,13 +80,18 @@ command=/usr/sbin/daemon
 actual_command="%%PREFIX%%/sbin/sshguard"
 procname="${actual_command}"
 start_precmd=sshguard_prestart
-command_args="-c ${actual_command} -b ${sshguard_blacklist} \${sshguard_watch_params} -a ${sshguard_safety_thresh} -p ${sshguard_pardon_min_interval} -s ${sshguard_prescribe_interval} -w ${sshguard_whitelistfile} -i ${pidfile}"
+command_args="-c ${actual_command} \${sshguard_blacklist_params} \${sshguard_watch_params} -a ${sshguard_safety_thresh} -p ${sshguard_pardon_min_interval} -s ${sshguard_prescribe_interval} -w ${sshguard_whitelistfile} -i ${pidfile}"
 
 sshguard_prestart()
 {
-	mkdir -p `dirname ${sshguard_blacklist##*:}`
+	if [ ! -z ${sshguard_blacklist} ]; then
+	    mkdir -p $(dirname ${sshguard_blacklist##*:})
+	    sshguard_blacklist_params="-b ${sshguard_blacklist}"
+	fi
+
 	[ -e ${sshguard_whitelistfile} ] || touch ${sshguard_whitelistfile}
-	sshguard_watch_params=`echo ${sshguard_watch_logs} | tr : \\\n | sed -e s/^/-l\ /g | tr \\\n \ `
+
+	sshguard_watch_params=$(echo ${sshguard_watch_logs} | tr : \\\n | sed -e s/^/-l\ /g | tr \\\n \ )
 }
 
 run_rc_command "$1"
