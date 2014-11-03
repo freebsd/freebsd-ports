@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pianobar
-PORTVERSION=	2014.06.08
+PORTVERSION=	2014.09.28
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/projects/${PORTNAME}/
 
