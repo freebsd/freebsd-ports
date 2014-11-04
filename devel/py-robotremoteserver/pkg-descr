@@ -1,0 +1,8 @@
+Robot Framework remote servers allow hosting test libraries on different
+processes or machines than Robot Framework itself is running on. This
+version is implemented in Python and supports also Jython (JVM) and
+IronPython (.NET). See remote library interface documentation for more
+information about the remote interface in general as well as for a list
+of remote server implementations in other programming languages.
+
+WWW: http://github.com/robotframework/PythonRemoteServer
