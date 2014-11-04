@@ -3,7 +3,7 @@
 
 PORTNAME=		Ice
 PORTVERSION=		3.5.1
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		devel
 MASTER_SITES=		http://download.zeroc.com/Ice/3.5/
 
