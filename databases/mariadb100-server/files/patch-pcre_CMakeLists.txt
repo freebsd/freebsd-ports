@@ -1,0 +1,11 @@
+--- pcre/CMakeLists.txt.orig	2014-08-09 00:13:36.000000000 +0200
++++ pcre/CMakeLists.txt	2014-09-05 20:08:49.090972949 +0200
+@@ -513,6 +513,8 @@
+   MESSAGE(STATUS "")
+ ENDIF(PCRE_SHOW_REPORT)
+ 
++IF(FALSE)
+ INSTALL(FILES ${CMAKE_BINARY_DIR}/pcre/pcre.h DESTINATION ${INSTALL_INCLUDEDIR}/private COMPONENT Development)
++ENDIF()
+ 
+ # end CMakeLists.txt
