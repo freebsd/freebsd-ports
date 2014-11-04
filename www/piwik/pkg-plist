@@ -1,8 +1,10 @@
+%%WWWDIR%%/.bowerrc
 %%WWWDIR%%/.coveralls.yml
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/LEGALNOTICE
 %%WWWDIR%%/README.md
+%%WWWDIR%%/bower.json
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/composer.lock
 %%WWWDIR%%/config/global.ini.php
@@ -61,6 +63,7 @@
 %%WWWDIR%%/core/Columns/Dimension.php
 %%WWWDIR%%/core/Columns/Updater.php
 %%WWWDIR%%/core/Common.php
+%%WWWDIR%%/core/Composer/ScriptHandler.php
 %%WWWDIR%%/core/Config.php
 %%WWWDIR%%/core/Console.php
 %%WWWDIR%%/core/Cookie.php
@@ -150,6 +153,7 @@
 %%WWWDIR%%/core/Filesystem.php
 %%WWWDIR%%/core/FrontController.php
 %%WWWDIR%%/core/Http.php
+%%WWWDIR%%/core/Http/Router.php
 %%WWWDIR%%/core/IP.php
 %%WWWDIR%%/core/Loader.php
 %%WWWDIR%%/core/Log.php
@@ -250,6 +254,7 @@
 %%WWWDIR%%/core/Tracker/Request.php
 %%WWWDIR%%/core/Tracker/Settings.php
 %%WWWDIR%%/core/Tracker/TableLogAction.php
+%%WWWDIR%%/core/Tracker/TrackerCodeGenerator.php
 %%WWWDIR%%/core/Tracker/Visit.php
 %%WWWDIR%%/core/Tracker/VisitExcluded.php
 %%WWWDIR%%/core/Tracker/VisitInterface.php
@@ -505,8 +510,6 @@
 %%WWWDIR%%/libs/PEAR/FixPHP5PEARWarnings.php
 %%WWWDIR%%/libs/PEAR/LICENSE
 %%WWWDIR%%/libs/PEAR5.php
-%%WWWDIR%%/libs/PclZip/lgpl-2.1.txt
-%%WWWDIR%%/libs/PclZip/pclzip.lib.php
 %%WWWDIR%%/libs/PiwikTracker/LICENSE.txt
 %%WWWDIR%%/libs/PiwikTracker/PiwikTracker.php
 %%WWWDIR%%/libs/README.md
@@ -711,53 +714,1025 @@
 %%WWWDIR%%/libs/Zend/Validate/Regex.php
 %%WWWDIR%%/libs/Zend/Validate/StringLength.php
 %%WWWDIR%%/libs/Zend/Version.php
-%%WWWDIR%%/libs/angularjs/LICENSE
-%%WWWDIR%%/libs/angularjs/angular-animate.js
-%%WWWDIR%%/libs/angularjs/angular-animate.min.js
-%%WWWDIR%%/libs/angularjs/angular-cookies.js
-%%WWWDIR%%/libs/angularjs/angular-cookies.min.js
-%%WWWDIR%%/libs/angularjs/angular-csp.css
-%%WWWDIR%%/libs/angularjs/angular-loader.js
-%%WWWDIR%%/libs/angularjs/angular-loader.min.js
-%%WWWDIR%%/libs/angularjs/angular-mocks.js
-%%WWWDIR%%/libs/angularjs/angular-resource.js
-%%WWWDIR%%/libs/angularjs/angular-resource.min.js
-%%WWWDIR%%/libs/angularjs/angular-route.js
-%%WWWDIR%%/libs/angularjs/angular-route.min.js
-%%WWWDIR%%/libs/angularjs/angular-sanitize.js
-%%WWWDIR%%/libs/angularjs/angular-sanitize.min.js
-%%WWWDIR%%/libs/angularjs/angular-scenario.js
-%%WWWDIR%%/libs/angularjs/angular-touch.js
-%%WWWDIR%%/libs/angularjs/angular-touch.min.js
-%%WWWDIR%%/libs/angularjs/angular.js
-%%WWWDIR%%/libs/angularjs/angular.min.js
-%%WWWDIR%%/libs/angularjs/errors.json
-%%WWWDIR%%/libs/angularjs/ngDialog/.gitignore
-%%WWWDIR%%/libs/angularjs/ngDialog/.jshintrc
-%%WWWDIR%%/libs/angularjs/ngDialog/Gruntfile.js
-%%WWWDIR%%/libs/angularjs/ngDialog/README.md
-%%WWWDIR%%/libs/angularjs/ngDialog/bower.json
-%%WWWDIR%%/libs/angularjs/ngDialog/css/myth/ngDialog-theme-default.css
-%%WWWDIR%%/libs/angularjs/ngDialog/css/myth/ngDialog-theme-plain.css
-%%WWWDIR%%/libs/angularjs/ngDialog/css/myth/ngDialog.css
-%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog-theme-default.css
-%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog-theme-default.min.css
-%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog-theme-plain.css
-%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog-theme-plain.min.css
-%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog.css
-%%WWWDIR%%/libs/angularjs/ngDialog/css/ngDialog.min.css
-%%WWWDIR%%/libs/angularjs/ngDialog/example/README.md
-%%WWWDIR%%/libs/angularjs/ngDialog/example/externalTemplate.html
-%%WWWDIR%%/libs/angularjs/ngDialog/example/index.html
-%%WWWDIR%%/libs/angularjs/ngDialog/example/server.js
-%%WWWDIR%%/libs/angularjs/ngDialog/js/ngDialog.js
-%%WWWDIR%%/libs/angularjs/ngDialog/js/ngDialog.min.js
-%%WWWDIR%%/libs/angularjs/ngDialog/package.json
-%%WWWDIR%%/libs/angularjs/version.json
-%%WWWDIR%%/libs/angularjs/version.txt
-%%WWWDIR%%/libs/html5shiv/html5shiv.js
+%%WWWDIR%%/libs/bower_components/angular-animate/.bower.json
+%%WWWDIR%%/libs/bower_components/angular-animate/README.md
+%%WWWDIR%%/libs/bower_components/angular-animate/angular-animate.js
+%%WWWDIR%%/libs/bower_components/angular-animate/angular-animate.min.js
+%%WWWDIR%%/libs/bower_components/angular-animate/angular-animate.min.js.map
+%%WWWDIR%%/libs/bower_components/angular-animate/bower.json
+%%WWWDIR%%/libs/bower_components/angular-animate/package.json
+%%WWWDIR%%/libs/bower_components/angular-cookies/.bower.json
+%%WWWDIR%%/libs/bower_components/angular-cookies/README.md
+%%WWWDIR%%/libs/bower_components/angular-cookies/angular-cookies.js
+%%WWWDIR%%/libs/bower_components/angular-cookies/angular-cookies.min.js
+%%WWWDIR%%/libs/bower_components/angular-cookies/angular-cookies.min.js.map
+%%WWWDIR%%/libs/bower_components/angular-cookies/bower.json
+%%WWWDIR%%/libs/bower_components/angular-cookies/package.json
+%%WWWDIR%%/libs/bower_components/angular-mocks/.bower.json
+%%WWWDIR%%/libs/bower_components/angular-mocks/README.md
+%%WWWDIR%%/libs/bower_components/angular-mocks/angular-mocks.js
+%%WWWDIR%%/libs/bower_components/angular-mocks/bower.json
+%%WWWDIR%%/libs/bower_components/angular-mocks/package.json
+%%WWWDIR%%/libs/bower_components/angular-sanitize/.bower.json
+%%WWWDIR%%/libs/bower_components/angular-sanitize/README.md
+%%WWWDIR%%/libs/bower_components/angular-sanitize/angular-sanitize.js
+%%WWWDIR%%/libs/bower_components/angular-sanitize/angular-sanitize.min.js
+%%WWWDIR%%/libs/bower_components/angular-sanitize/angular-sanitize.min.js.map
+%%WWWDIR%%/libs/bower_components/angular-sanitize/bower.json
+%%WWWDIR%%/libs/bower_components/angular/.bower.json
+%%WWWDIR%%/libs/bower_components/angular/README.md
+%%WWWDIR%%/libs/bower_components/angular/angular-csp.css
+%%WWWDIR%%/libs/bower_components/angular/angular.js
+%%WWWDIR%%/libs/bower_components/angular/angular.min.js
+%%WWWDIR%%/libs/bower_components/angular/angular.min.js.gzip
+%%WWWDIR%%/libs/bower_components/angular/angular.min.js.map
+%%WWWDIR%%/libs/bower_components/angular/bower.json
+%%WWWDIR%%/libs/bower_components/angular/package.json
+%%WWWDIR%%/libs/bower_components/chroma-js/.bower.json
+%%WWWDIR%%/libs/bower_components/chroma-js/LICENSE
+%%WWWDIR%%/libs/bower_components/chroma-js/LICENSE-colors
+%%WWWDIR%%/libs/bower_components/chroma-js/Makefile
+%%WWWDIR%%/libs/bower_components/chroma-js/bower.json
+%%WWWDIR%%/libs/bower_components/chroma-js/chroma.js
+%%WWWDIR%%/libs/bower_components/chroma-js/chroma.min.js
+%%WWWDIR%%/libs/bower_components/chroma-js/package.json
+%%WWWDIR%%/libs/bower_components/chroma-js/readme.md
+%%WWWDIR%%/libs/bower_components/html5shiv/.bower.json
+%%WWWDIR%%/libs/bower_components/html5shiv/Gruntfile.js
+%%WWWDIR%%/libs/bower_components/html5shiv/bower.json
+%%WWWDIR%%/libs/bower_components/html5shiv/dist/html5shiv-printshiv.js
+%%WWWDIR%%/libs/bower_components/html5shiv/dist/html5shiv-printshiv.min.js
+%%WWWDIR%%/libs/bower_components/html5shiv/dist/html5shiv.js
+%%WWWDIR%%/libs/bower_components/html5shiv/dist/html5shiv.min.js
+%%WWWDIR%%/libs/bower_components/html5shiv/package.json
+%%WWWDIR%%/libs/bower_components/html5shiv/readme.md
+%%WWWDIR%%/libs/bower_components/jScrollPane/.bower.json
+%%WWWDIR%%/libs/bower_components/jScrollPane/GPL-LICENSE.txt
+%%WWWDIR%%/libs/bower_components/jScrollPane/MIT-LICENSE.txt
+%%WWWDIR%%/libs/bower_components/jScrollPane/README.md
+%%WWWDIR%%/libs/bower_components/jScrollPane/ajax.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/ajax_content.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/anchors.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/api.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/arrow_hover.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/arrow_positions.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/arrows.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/auto_reinitialise.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/basic.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/caps.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/changelog.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/destroy.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/drag_size.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/dynamic_content.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/dynamic_height.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/dynamic_width.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/events.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/faqs.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/fixed_width.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/focus.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/fullpage_scroll.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/iframe.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/iframe2.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/iframe_content1.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/iframe_content2.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/iframe_content3.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/iframe_content4.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/image.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/image/logo.png
+%%WWWDIR%%/libs/bower_components/jScrollPane/image2.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/index.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/invisibles.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/11/after.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/11/before.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/11/brs_main.css
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/11/index.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/11/jquery.mousewheel.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/11/jscrollpane-2b3.css
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/11/jscrollpane-2b3.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/11/native.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/after.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/after_reinit.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/before.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/before_reinit.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/brs_main.css
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/index.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/jquery.mousewheel.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/jscrollpane-2b3.css
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/jscrollpane-2b3.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/native.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/12/wrapped.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/7/after.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/7/before.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/7/index.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/7/jscrollpane-2b1.css
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/7/jscrollpane-2b2.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/issues/7/native.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/known_issues.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/less_basic.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/mwheel_intent.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/override_animate.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/runeimp.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/runeimp2.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/script/demo.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/script/jquery.jscrollpane.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/script/jquery.jscrollpane.min.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/script/jquery.mousewheel.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/script/mwheelIntent.js
+%%WWWDIR%%/libs/bower_components/jScrollPane/scroll_on_left.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/scroll_to.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/scroll_to_animate.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/settings.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/short.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/style/demo.css
+%%WWWDIR%%/libs/bower_components/jScrollPane/style/jquery.jscrollpane.css
+%%WWWDIR%%/libs/bower_components/jScrollPane/themes/lozenge/image/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jScrollPane/themes/lozenge/image/ui-icons_888888_256x240.png
+%%WWWDIR%%/libs/bower_components/jScrollPane/themes/lozenge/image/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/bower_components/jScrollPane/themes/lozenge/index.html
+%%WWWDIR%%/libs/bower_components/jScrollPane/themes/lozenge/style/jquery.jscrollpane.lozenge.css
+%%WWWDIR%%/libs/bower_components/jScrollPane/v1.html
+%%WWWDIR%%/libs/bower_components/jquery-mousewheel/.bower.json
+%%WWWDIR%%/libs/bower_components/jquery-mousewheel/ChangeLog.md
+%%WWWDIR%%/libs/bower_components/jquery-mousewheel/LICENSE.txt
+%%WWWDIR%%/libs/bower_components/jquery-mousewheel/README.md
+%%WWWDIR%%/libs/bower_components/jquery-mousewheel/bower.json
+%%WWWDIR%%/libs/bower_components/jquery-mousewheel/jquery.mousewheel.js
+%%WWWDIR%%/libs/bower_components/jquery-mousewheel/jquery.mousewheel.min.js
+%%WWWDIR%%/libs/bower_components/jquery-placeholder/.bower.json
+%%WWWDIR%%/libs/bower_components/jquery-placeholder/LICENSE-MIT.txt
+%%WWWDIR%%/libs/bower_components/jquery-placeholder/README.md
+%%WWWDIR%%/libs/bower_components/jquery-placeholder/bower.json
+%%WWWDIR%%/libs/bower_components/jquery-placeholder/demo.html
+%%WWWDIR%%/libs/bower_components/jquery-placeholder/jquery.placeholder.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/.bower.json
+%%WWWDIR%%/libs/bower_components/jquery-ui/AUTHORS.txt
+%%WWWDIR%%/libs/bower_components/jquery-ui/MIT-LICENSE.txt
+%%WWWDIR%%/libs/bower_components/jquery-ui/README.md
+%%WWWDIR%%/libs/bower_components/jquery-ui/bower.json
+%%WWWDIR%%/libs/bower_components/jquery-ui/component.json
+%%WWWDIR%%/libs/bower_components/jquery-ui/composer.json
+%%WWWDIR%%/libs/bower_components/jquery-ui/package.json
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.accordion.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.all.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.autocomplete.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.base.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.button.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.core.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.datepicker.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.dialog.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.menu.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.progressbar.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.resizable.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.selectable.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.slider.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.spinner.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.tabs.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/jquery.ui.tooltip.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.accordion.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.autocomplete.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.button.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.core.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.datepicker.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.dialog.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.menu.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.progressbar.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.resizable.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.selectable.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.slider.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.spinner.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.tabs.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.theme.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/base/minified/jquery.ui.tooltip.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-bg_diagonals-thick_8_333333_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-bg_flat_65_ffffff_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-bg_glass_40_111111_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-bg_glass_55_1c1c1c_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-bg_highlight-hard_100_f9f9f9_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-bg_highlight-hard_40_aaaaaa_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-bg_highlight-soft_50_aaaaaa_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-bg_inset-hard_45_cd0a0a_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-bg_inset-hard_55_ffeb80_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-icons_4ca300_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-icons_bbbbbb_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-icons_ededed_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-icons_ffcf29_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/black-tie/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-bg_diagonals-thick_75_f3d8d8_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-bg_dots-small_65_a6a6a6_2x2.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-bg_flat_0_333333_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-bg_flat_65_ffffff_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-bg_glass_55_fbf8ee_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-bg_highlight-hard_100_eeeeee_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-bg_highlight-hard_100_f6f6f6_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-bg_highlight-soft_15_cc0000_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-icons_004276_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-icons_cc0000_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/blitzer/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-bg_glass_50_3baae3_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-icons_2694e8_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-icons_3d80b3_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-icons_72a7cf_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/cupertino/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-bg_flat_30_cccccc_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-bg_flat_50_5c5c5c_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-bg_glass_40_ffc73d_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-bg_highlight-hard_20_0972a5_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-bg_highlight-soft_33_003147_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-bg_highlight-soft_35_222222_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-bg_highlight-soft_44_444444_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-bg_highlight-soft_80_eeeeee_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-bg_loop_25_000000_21x21.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-icons_4b8e0b_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-icons_a83300_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-icons_cccccc_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dark-hive/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-bg_diagonals-thick_15_0b3e6f_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-bg_dots-medium_30_0b58a2_4x4.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-bg_dots-small_20_333333_2x2.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-bg_dots-small_30_a32d00_2x2.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-bg_dots-small_40_00498f_2x2.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-bg_flat_40_292929_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-bg_gloss-wave_20_111111_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-icons_00498f_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-icons_98d2fb_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-icons_9ccdfc_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/dot-luv/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-bg_flat_0_eeeeee_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-bg_flat_55_994d53_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-bg_flat_55_fafafa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-bg_gloss-wave_30_3d3644_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-bg_highlight-soft_100_dcd9de_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-bg_highlight-soft_100_eae6ea_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-bg_highlight-soft_25_30273a_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-bg_highlight-soft_45_5f5964_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-icons_734d99_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-icons_8d78a5_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-icons_a8a3ae_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-icons_ebccce_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/eggplant/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-bg_diagonals-small_25_c5ddfc_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-bg_diagonals-thick_20_e69700_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-bg_diagonals-thick_22_1484e6_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-bg_diagonals-thick_26_2293f7_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-bg_flat_0_e69700_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-bg_flat_0_e6b900_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-bg_highlight-soft_100_f9f9f9_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-bg_inset-hard_100_eeeeee_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-icons_0a82eb_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-icons_0b54d5_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-icons_5fa5e3_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-icons_fcdd4a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/excite-bike/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-bg_flat_0_eeeeee_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-bg_flat_55_ffffff_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-bg_highlight-soft_25_0073ea_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-bg_highlight-soft_50_dddddd_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-icons_0073ea_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-icons_666666_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-icons_ff0084_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/flick/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-bg_diagonals-small_40_db4865_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-bg_diagonals-small_50_93c3cd_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-bg_diagonals-small_50_ff3853_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-bg_diagonals-small_75_ccd232_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-bg_dots-medium_80_ffff38_4x4.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-bg_dots-small_35_35414f_2x2.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-bg_flat_75_ba9217_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-bg_white-lines_85_f7f7ba_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-icons_88a206_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-icons_c02669_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-icons_e1e463_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-icons_ffeb33_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/hot-sneaks/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-bg_flat_75_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-bg_glass_100_f5f0e5_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-bg_glass_25_cb842e_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-bg_glass_70_ede4d4_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-bg_highlight-hard_100_f4f0ec_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-bg_highlight-hard_65_fee4bd_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-bg_highlight-hard_75_f5f5b5_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-bg_inset-soft_100_f4f0ec_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-icons_c47a23_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-icons_cb672b_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-icons_f08000_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-icons_f35f07_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-icons_ff7519_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/humanity/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-bg_diagonals-small_0_aaaaaa_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-bg_diagonals-thick_15_444444_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-bg_diagonals-thick_95_ffdc2e_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-bg_glass_55_fbf5d0_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-bg_highlight-hard_30_285c00_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-bg_highlight-soft_33_3a8104_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-bg_highlight-soft_50_4eb305_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-bg_highlight-soft_60_4ca20b_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-bg_inset-soft_10_285c00_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-icons_4eb305_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-icons_72b42d_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/le-frog/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-bg_glass_15_5f391b_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-bg_gloss-wave_20_1c160d_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-bg_gloss-wave_25_453326_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-bg_gloss-wave_30_44372c_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-bg_highlight-soft_20_201913_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-bg_highlight-soft_20_619226_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-bg_inset-soft_10_201913_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-icons_9bcc60_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-icons_add978_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-icons_e3ddc9_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-icons_f1fd86_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/mint-choc/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-bg_flat_0_eeeeee_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-bg_flat_55_c0402a_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-bg_flat_55_eeeeee_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-bg_glass_100_f8f8f8_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-bg_glass_35_dddddd_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-bg_glass_60_eeeeee_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-bg_inset-hard_75_999999_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-bg_inset-soft_50_c9c9c9_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-icons_3383bb_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-icons_70b2e1_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-icons_999999_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/images/ui-icons_fbc856_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/overcast/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-bg_diagonal-maze_20_6e4f1c_10x10.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-bg_diagonal-maze_40_000000_10x10.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_10_eceadf_60x60.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_10_f8f7f6_60x60.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_15_eceadf_60x60.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_15_f7f3de_60x60.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_15_ffffff_60x60.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_65_654b24_60x60.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-bg_fine-grain_68_b83400_60x60.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-icons_3572ac_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-icons_8c291d_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-icons_b83400_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-icons_fbdb93_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/pepper-grinder/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-bg_flat_55_fbec88_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-bg_glass_85_dfeffc_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-icons_217bc0_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-icons_469bdd_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-icons_6da8d5_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-icons_d8e7f3_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/images/ui-icons_f9bd01_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/redmond/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/smoothness/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-bg_glass_55_fcf0ba_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-bg_gloss-wave_100_ece8da_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-bg_highlight-hard_100_fafaf4_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-bg_highlight-hard_15_459e00_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-bg_highlight-hard_95_cccccc_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-bg_highlight-soft_25_67b021_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-bg_highlight-soft_95_ffedad_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-bg_inset-soft_15_2b2922_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-icons_808080_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-icons_847e71_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-icons_8DC262_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-icons_eeeeee_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/south-street/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-bg_flat_55_999999_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-bg_flat_75_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-bg_glass_45_0078ae_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-bg_glass_55_f8da4e_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-bg_glass_75_79c9ec_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-icons_0078ae_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-icons_056b93_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-icons_d8e7f3_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-icons_e0fdff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-icons_f5e175_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-icons_f7a50d_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/images/ui-icons_fcd113_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/start/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-bg_diagonals-medium_20_d34d17_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-bg_flat_30_cccccc_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-bg_flat_50_5c5c5c_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-bg_gloss-wave_45_817865_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-bg_gloss-wave_60_fece2f_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-bg_gloss-wave_70_ffdd57_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-bg_gloss-wave_90_fff9e5_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-bg_highlight-soft_100_feeebd_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-bg_inset-soft_30_ffffff_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-icons_3d3d3d_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-icons_bd7b00_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-icons_d19405_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-icons_eb990f_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-icons_ed9f26_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-icons_fadc7a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/images/ui-icons_ffe180_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/sunny/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_10_4f4221_10x8.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_20_372806_10x8.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_25_675423_10x8.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_25_d5ac5d_10x8.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_8_261803_10x8.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-bg_diamond_8_443113_10x8.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-bg_flat_75_ddd4b0_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-bg_highlight-hard_65_fee4bd_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-icons_070603_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-icons_e8e2b5_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-icons_e9cd86_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-icons_efec9f_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-icons_f2ec64_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-icons_f9f2bd_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/images/ui-icons_ff7519_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/swanky-purse/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-bg_diagonals-small_50_262626_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-bg_flat_0_303030_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-bg_flat_0_4c4c4c_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-bg_glass_40_0a0a0a_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-bg_glass_55_f1fbe5_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-bg_glass_60_000000_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-bg_gloss-wave_55_000000_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-bg_gloss-wave_85_9fda58_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-bg_gloss-wave_95_f6ecd5_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-icons_1f1f1f_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-icons_9fda58_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-icons_b8ec79_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/trontastic/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-bg_flat_30_cccccc_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-bg_flat_50_5c5c5c_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-bg_glass_20_555555_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-bg_glass_40_0078a3_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-bg_glass_40_ffc73d_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-bg_gloss-wave_25_333333_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-bg_highlight-soft_80_eeeeee_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-bg_inset-soft_25_000000_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-bg_inset-soft_30_f58400_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-icons_4b8e0b_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-icons_a83300_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-icons_cccccc_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-darkness/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-icons_228ef1_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-icons_ef8c08_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-icons_ffd27a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/ui-lightness/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/animated-overlay.gif
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-bg_gloss-wave_16_121212_500x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-bg_highlight-hard_15_888888_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-bg_highlight-hard_55_555555_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-bg_highlight-soft_35_adadad_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-bg_highlight-soft_60_dddddd_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-bg_inset-soft_15_121212_1x100.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-icons_666666_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-icons_aaaaaa_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-icons_bbbbbb_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-icons_c98000_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-icons_cccccc_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/images/ui-icons_f29a00_256x240.png
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/jquery-ui.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/jquery-ui.min.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/themes/vader/jquery.ui.theme.css
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/.jshintrc
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery-ui-i18n.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-af.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ar-DZ.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ar.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-az.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-be.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-bg.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-bs.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ca.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-cs.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-cy-GB.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-da.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-de.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-el.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-en-AU.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-en-GB.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-en-NZ.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-eo.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-es.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-et.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-eu.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-fa.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-fi.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-fo.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-fr-CA.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-fr-CH.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-fr.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-gl.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-he.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-hi.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-hr.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-hu.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-hy.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-id.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-is.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-it.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ja.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ka.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-kk.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-km.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ko.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ky.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-lb.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-lt.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-lv.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-mk.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ml.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ms.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-nb.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-nl-BE.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-nl.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-nn.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-no.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-pl.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-pt-BR.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-pt.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-rm.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ro.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ru.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-sk.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-sl.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-sq.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-sr-SR.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-sr.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-sv.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-ta.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-th.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-tj.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-tr.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-uk.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-vi.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-zh-CN.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-zh-HK.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/i18n/jquery.ui.datepicker-zh-TW.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery-ui.custom.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery-ui.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.accordion.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.autocomplete.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.button.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.core.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.datepicker.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.dialog.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.draggable.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.droppable.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-blind.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-bounce.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-clip.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-drop.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-explode.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-fade.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-fold.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-highlight.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-pulsate.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-scale.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-shake.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-slide.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect-transfer.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.effect.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.menu.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.mouse.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.position.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.progressbar.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.resizable.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.selectable.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.slider.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.sortable.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.spinner.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.tabs.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.tooltip.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/jquery.ui.widget.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery-ui-i18n.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-af.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ar-DZ.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ar.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-az.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-be.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-bg.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-bs.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ca.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-cs.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-cy-GB.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-da.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-de.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-el.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-en-AU.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-en-GB.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-en-NZ.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-eo.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-es.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-et.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-eu.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-fa.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-fi.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-fo.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-fr-CA.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-fr-CH.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-fr.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-gl.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-he.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-hi.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-hr.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-hu.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-hy.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-id.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-is.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-it.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ja.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ka.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-kk.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-km.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ko.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ky.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-lb.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-lt.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-lv.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-mk.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ml.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ms.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-nb.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-nl-BE.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-nl.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-nn.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-no.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-pl.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-pt-BR.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-pt.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-rm.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ro.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ru.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-sk.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-sl.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-sq.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-sr-SR.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-sr.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-sv.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-ta.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-th.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-tj.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-tr.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-uk.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-vi.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-zh-CN.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-zh-HK.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-zh-TW.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery-ui.custom.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery-ui.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.accordion.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.autocomplete.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.button.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.core.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.datepicker.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.dialog.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.draggable.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.droppable.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-blind.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-bounce.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-clip.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-drop.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-explode.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-fade.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-fold.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-highlight.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-pulsate.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-scale.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-shake.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-slide.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect-transfer.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.effect.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.menu.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.mouse.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.position.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.progressbar.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.resizable.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.selectable.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.slider.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.sortable.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.spinner.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.tabs.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.tooltip.min.js
+%%WWWDIR%%/libs/bower_components/jquery-ui/ui/minified/jquery.ui.widget.min.js
+%%WWWDIR%%/libs/bower_components/jquery.scrollTo/.bower.json
+%%WWWDIR%%/libs/bower_components/jquery.scrollTo/LICENSE
+%%WWWDIR%%/libs/bower_components/jquery.scrollTo/README.md
+%%WWWDIR%%/libs/bower_components/jquery.scrollTo/bower.json
+%%WWWDIR%%/libs/bower_components/jquery.scrollTo/jquery.scrollTo.js
+%%WWWDIR%%/libs/bower_components/jquery.scrollTo/jquery.scrollTo.min.js
+%%WWWDIR%%/libs/bower_components/jquery.scrollTo/package.json
+%%WWWDIR%%/libs/bower_components/jquery.scrollTo/scrollTo.jquery.json
+%%WWWDIR%%/libs/bower_components/jquery/.bower.json
+%%WWWDIR%%/libs/bower_components/jquery/MIT-LICENSE.txt
+%%WWWDIR%%/libs/bower_components/jquery/bower.json
+%%WWWDIR%%/libs/bower_components/jquery/dist/jquery.js
+%%WWWDIR%%/libs/bower_components/jquery/dist/jquery.min.js
+%%WWWDIR%%/libs/bower_components/jquery/dist/jquery.min.map
+%%WWWDIR%%/libs/bower_components/jquery/src/ajax.js
+%%WWWDIR%%/libs/bower_components/jquery/src/ajax/jsonp.js
+%%WWWDIR%%/libs/bower_components/jquery/src/ajax/load.js
+%%WWWDIR%%/libs/bower_components/jquery/src/ajax/parseJSON.js
+%%WWWDIR%%/libs/bower_components/jquery/src/ajax/parseXML.js
+%%WWWDIR%%/libs/bower_components/jquery/src/ajax/script.js
+%%WWWDIR%%/libs/bower_components/jquery/src/ajax/var/nonce.js
+%%WWWDIR%%/libs/bower_components/jquery/src/ajax/var/rquery.js
+%%WWWDIR%%/libs/bower_components/jquery/src/ajax/xhr.js
+%%WWWDIR%%/libs/bower_components/jquery/src/attributes.js
+%%WWWDIR%%/libs/bower_components/jquery/src/attributes/attr.js
+%%WWWDIR%%/libs/bower_components/jquery/src/attributes/classes.js
+%%WWWDIR%%/libs/bower_components/jquery/src/attributes/prop.js
+%%WWWDIR%%/libs/bower_components/jquery/src/attributes/support.js
+%%WWWDIR%%/libs/bower_components/jquery/src/attributes/val.js
+%%WWWDIR%%/libs/bower_components/jquery/src/callbacks.js
+%%WWWDIR%%/libs/bower_components/jquery/src/core.js
+%%WWWDIR%%/libs/bower_components/jquery/src/core/access.js
+%%WWWDIR%%/libs/bower_components/jquery/src/core/init.js
+%%WWWDIR%%/libs/bower_components/jquery/src/core/parseHTML.js
+%%WWWDIR%%/libs/bower_components/jquery/src/core/ready.js
+%%WWWDIR%%/libs/bower_components/jquery/src/core/var/rsingleTag.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/addGetHookIf.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/curCSS.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/defaultDisplay.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/hiddenVisibleSelectors.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/support.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/swap.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/var/cssExpand.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/var/isHidden.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/var/rmargin.js
+%%WWWDIR%%/libs/bower_components/jquery/src/css/var/rnumnonpx.js
+%%WWWDIR%%/libs/bower_components/jquery/src/data.js
+%%WWWDIR%%/libs/bower_components/jquery/src/data/accepts.js
+%%WWWDIR%%/libs/bower_components/jquery/src/data/support.js
+%%WWWDIR%%/libs/bower_components/jquery/src/deferred.js
+%%WWWDIR%%/libs/bower_components/jquery/src/deprecated.js
+%%WWWDIR%%/libs/bower_components/jquery/src/dimensions.js
+%%WWWDIR%%/libs/bower_components/jquery/src/effects.js
+%%WWWDIR%%/libs/bower_components/jquery/src/effects/Tween.js
+%%WWWDIR%%/libs/bower_components/jquery/src/effects/animatedSelector.js
+%%WWWDIR%%/libs/bower_components/jquery/src/effects/support.js
+%%WWWDIR%%/libs/bower_components/jquery/src/event.js
+%%WWWDIR%%/libs/bower_components/jquery/src/event/alias.js
+%%WWWDIR%%/libs/bower_components/jquery/src/event/support.js
+%%WWWDIR%%/libs/bower_components/jquery/src/exports/amd.js
+%%WWWDIR%%/libs/bower_components/jquery/src/exports/global.js
+%%WWWDIR%%/libs/bower_components/jquery/src/intro.js
+%%WWWDIR%%/libs/bower_components/jquery/src/jquery.js
+%%WWWDIR%%/libs/bower_components/jquery/src/manipulation.js
+%%WWWDIR%%/libs/bower_components/jquery/src/manipulation/_evalUrl.js
+%%WWWDIR%%/libs/bower_components/jquery/src/manipulation/support.js
+%%WWWDIR%%/libs/bower_components/jquery/src/manipulation/var/rcheckableType.js
+%%WWWDIR%%/libs/bower_components/jquery/src/offset.js
+%%WWWDIR%%/libs/bower_components/jquery/src/outro.js
+%%WWWDIR%%/libs/bower_components/jquery/src/queue.js
+%%WWWDIR%%/libs/bower_components/jquery/src/queue/delay.js
+%%WWWDIR%%/libs/bower_components/jquery/src/selector-sizzle.js
+%%WWWDIR%%/libs/bower_components/jquery/src/selector.js
+%%WWWDIR%%/libs/bower_components/jquery/src/serialize.js
+%%WWWDIR%%/libs/bower_components/jquery/src/sizzle/dist/sizzle.js
+%%WWWDIR%%/libs/bower_components/jquery/src/sizzle/dist/sizzle.min.js
+%%WWWDIR%%/libs/bower_components/jquery/src/sizzle/dist/sizzle.min.map
+%%WWWDIR%%/libs/bower_components/jquery/src/support.js
+%%WWWDIR%%/libs/bower_components/jquery/src/traversing.js
+%%WWWDIR%%/libs/bower_components/jquery/src/traversing/findFilter.js
+%%WWWDIR%%/libs/bower_components/jquery/src/traversing/var/rneedsContext.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/class2type.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/concat.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/deletedIds.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/hasOwn.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/indexOf.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/pnum.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/push.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/rnotwhite.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/slice.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/strundefined.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/support.js
+%%WWWDIR%%/libs/bower_components/jquery/src/var/toString.js
+%%WWWDIR%%/libs/bower_components/jquery/src/wrap.js
+%%WWWDIR%%/libs/bower_components/mousetrap/.bower.json
+%%WWWDIR%%/libs/bower_components/mousetrap/Gruntfile.js
+%%WWWDIR%%/libs/bower_components/mousetrap/README.md
+%%WWWDIR%%/libs/bower_components/mousetrap/mousetrap.js
+%%WWWDIR%%/libs/bower_components/mousetrap/mousetrap.min.js
+%%WWWDIR%%/libs/bower_components/mousetrap/package.json
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/README.md
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/bind-dictionary/README.md
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/bind-dictionary/mousetrap-bind-dictionary.js
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/bind-dictionary/mousetrap-bind-dictionary.min.js
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/global-bind/README.md
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/global-bind/mousetrap-global-bind.js
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/global-bind/mousetrap-global-bind.min.js
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/pause/README.md
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/pause/mousetrap-pause.js
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/pause/mousetrap-pause.min.js
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/record/README.md
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/record/mousetrap-record.js
+%%WWWDIR%%/libs/bower_components/mousetrap/plugins/record/mousetrap-record.min.js
+%%WWWDIR%%/libs/bower_components/ngDialog/.bower.json
+%%WWWDIR%%/libs/bower_components/ngDialog/README.md
+%%WWWDIR%%/libs/bower_components/ngDialog/bower.json
+%%WWWDIR%%/libs/bower_components/ngDialog/css/ngDialog-theme-default.css
+%%WWWDIR%%/libs/bower_components/ngDialog/css/ngDialog-theme-default.min.css
+%%WWWDIR%%/libs/bower_components/ngDialog/css/ngDialog-theme-plain.css
+%%WWWDIR%%/libs/bower_components/ngDialog/css/ngDialog-theme-plain.min.css
+%%WWWDIR%%/libs/bower_components/ngDialog/css/ngDialog.css
+%%WWWDIR%%/libs/bower_components/ngDialog/css/ngDialog.min.css
+%%WWWDIR%%/libs/bower_components/ngDialog/js/ngDialog.js
+%%WWWDIR%%/libs/bower_components/ngDialog/js/ngDialog.min.js
+%%WWWDIR%%/libs/bower_components/ngDialog/package.json
+%%WWWDIR%%/libs/bower_components/sprintf/.bower.json
+%%WWWDIR%%/libs/bower_components/sprintf/LICENSE
+%%WWWDIR%%/libs/bower_components/sprintf/README.md
+%%WWWDIR%%/libs/bower_components/sprintf/bower.json
+%%WWWDIR%%/libs/bower_components/sprintf/demo/angular.html
+%%WWWDIR%%/libs/bower_components/sprintf/dist/angular-sprintf.min.js
+%%WWWDIR%%/libs/bower_components/sprintf/dist/angular-sprintf.min.map
+%%WWWDIR%%/libs/bower_components/sprintf/dist/sprintf.min.js
+%%WWWDIR%%/libs/bower_components/sprintf/dist/sprintf.min.map
+%%WWWDIR%%/libs/bower_components/sprintf/gruntfile.js
+%%WWWDIR%%/libs/bower_components/sprintf/package.json
+%%WWWDIR%%/libs/bower_components/sprintf/src/angular-sprintf.js
+%%WWWDIR%%/libs/bower_components/sprintf/src/sprintf.js
+%%WWWDIR%%/libs/bower_components/sprintf/test/test.js
 %%WWWDIR%%/libs/javascript/json2.js
-%%WWWDIR%%/libs/javascript/sprintf.js
 %%WWWDIR%%/libs/jqplot/MIT-LICENSE.txt
 %%WWWDIR%%/libs/jqplot/build_minified_script.sh
 %%WWWDIR%%/libs/jqplot/excanvas.min.js
@@ -784,10 +1759,6 @@
 %%WWWDIR%%/libs/jqplot/plugins/jqplot.pieRenderer.js
 %%WWWDIR%%/libs/jquery/LICENSE-sizzle.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-history.txt
-%%WWWDIR%%/libs/jquery/MIT-LICENSE-jquery.txt
-%%WWWDIR%%/libs/jquery/MIT-LICENSE-jqueryui.txt
-%%WWWDIR%%/libs/jquery/MIT-LICENSE-placeholder.txt
-%%WWWDIR%%/libs/jquery/MIT-LICENSE-scrollto.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-smartbanner.txt
 %%WWWDIR%%/libs/jquery/gpl-2.0.txt
 %%WWWDIR%%/libs/jquery/gpl-3.0.txt
@@ -795,14 +1766,9 @@
 %%WWWDIR%%/libs/jquery/images/scroller.png
 %%WWWDIR%%/libs/jquery/images/slide.png
 %%WWWDIR%%/libs/jquery/images/up_arrow.png
-%%WWWDIR%%/libs/jquery/jquery-ui.js
+%%WWWDIR%%/libs/jquery/themes/base/jquery-ui.min.css
 %%WWWDIR%%/libs/jquery/jquery.browser.js
 %%WWWDIR%%/libs/jquery/jquery.history.js
-%%WWWDIR%%/libs/jquery/jquery.js
-%%WWWDIR%%/libs/jquery/jquery.jscrollpane.js
-%%WWWDIR%%/libs/jquery/jquery.mousewheel.js
-%%WWWDIR%%/libs/jquery/jquery.placeholder.js
-%%WWWDIR%%/libs/jquery/jquery.scrollTo.js
 %%WWWDIR%%/libs/jquery/jquery.smartbanner.js
 %%WWWDIR%%/libs/jquery/jquery.truncate.js
 %%WWWDIR%%/libs/jquery/mwheelIntent.js
@@ -823,9 +1789,6 @@
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_454545_256x240.png
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_888888_256x240.png
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_cd0a0a_256x240.png
-%%WWWDIR%%/libs/jquery/themes/base/jquery-ui.css
-%%WWWDIR%%/libs/mousetrap/README.md
-%%WWWDIR%%/libs/mousetrap/mousetrap.min.js
 %%WWWDIR%%/libs/pChart2.1.3/GPLv3.txt
 %%WWWDIR%%/libs/pChart2.1.3/change.log
 %%WWWDIR%%/libs/pChart2.1.3/class/pData.class.php
@@ -1164,8 +2127,10 @@
 %%WWWDIR%%/plugins/Contents/lang/es.json
 %%WWWDIR%%/plugins/Contents/lang/et.json
 %%WWWDIR%%/plugins/Contents/lang/it.json
+%%WWWDIR%%/plugins/Contents/lang/ja.json
 %%WWWDIR%%/plugins/Contents/lang/pl.json
 %%WWWDIR%%/plugins/Contents/lang/pt.json
+%%WWWDIR%%/plugins/Contents/lang/tr.json
 %%WWWDIR%%/plugins/Contents/plugin.json
 %%WWWDIR%%/plugins/Contents/screenshots/.gitkeep
 %%WWWDIR%%/plugins/Contents/stylesheets/datatable.less
@@ -2360,6 +3325,7 @@
 %%WWWDIR%%/plugins/Insights/lang/ru.json
 %%WWWDIR%%/plugins/Insights/lang/sr.json
 %%WWWDIR%%/plugins/Insights/lang/sv.json
+%%WWWDIR%%/plugins/Insights/lang/tr.json
 %%WWWDIR%%/plugins/Insights/plugin.json
 %%WWWDIR%%/plugins/Insights/stylesheets/insightVisualization.less
 %%WWWDIR%%/plugins/Insights/templates/cannotDisplayReport.twig
@@ -2522,6 +3488,7 @@
 %%WWWDIR%%/plugins/LeftMenu/lang/es.json
 %%WWWDIR%%/plugins/LeftMenu/lang/fr.json
 %%WWWDIR%%/plugins/LeftMenu/lang/it.json
+%%WWWDIR%%/plugins/LeftMenu/lang/ja.json
 %%WWWDIR%%/plugins/LeftMenu/lang/nl.json
 %%WWWDIR%%/plugins/LeftMenu/lang/pl.json
 %%WWWDIR%%/plugins/LeftMenu/lang/ro.json
@@ -2716,6 +3683,7 @@
 %%WWWDIR%%/plugins/MobileMessaging/lang/hi.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/id.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/it.json
+%%WWWDIR%%/plugins/MobileMessaging/lang/ja.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/ko.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/nb.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/nl.json
@@ -2977,6 +3945,7 @@
 %%WWWDIR%%/plugins/Overlay/lang/hi.json
 %%WWWDIR%%/plugins/Overlay/lang/id.json
 %%WWWDIR%%/plugins/Overlay/lang/it.json
+%%WWWDIR%%/plugins/Overlay/lang/ja.json
 %%WWWDIR%%/plugins/Overlay/lang/ko.json
 %%WWWDIR%%/plugins/Overlay/lang/nb.json
 %%WWWDIR%%/plugins/Overlay/lang/nl.json
@@ -3233,6 +4202,7 @@
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.excite.it.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.free.fr.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.freecause.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/search.genieo.com.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.goo.ne.jp.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.imesh.com.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.ke.voila.fr.png
@@ -3250,7 +4220,7 @@
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.softonic.com.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.tiscali.it.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.winamp.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/search.%%WWWOWN%%.ee.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/search.www.ee.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.yahoo.co.jp.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.yahoo.com.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/search.yam.com.png
@@ -3281,105 +4251,106 @@
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/web.volny.cz.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/websearch.cs.com.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/websearch.rakuten.co.jp.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.123people.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.1881.no.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.abacho.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.acoon.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.allesklar.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.alltheweb.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.altavista.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.arcor.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.baidu.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.blogdigger.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.blogpulse.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.charter.net.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.crawler.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.cuil.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.dasoertliche.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.eniro.se.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.eurip.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.euroseek.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.everyclick.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.exalead.fr.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.facebook.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.fastbrowsersearch.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.fireball.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.firstsfind.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.fixsuche.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.flix.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.gigablast.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.gnadenmeer.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.gomeo.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.google.interia.pl.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.goyellow.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.gulesider.no.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.highbeam.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.hooseek.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.hotbot.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.icq.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.ilse.nl.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.jungle-spider.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.kataweb.it.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.kvasir.no.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.latne.lv.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.lookany.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.looksmart.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.maailm.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.mamma.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.meinestadt.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.mister-wong.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.monstercrawler.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.mozbot.fr.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.mysearch.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.najdi.si.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.neti.ee.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.paperball.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.picsearch.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.plazoo.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.qualigo.at.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.search.ch.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.search.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.searchcanvas.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.searchy.co.uk.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.sharelook.fr.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.skynet.be.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.so-net.ne.jp.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.sogou.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.soso.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.sputnik.ru.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.startsiden.no.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.suchmaschine.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.suchnase.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.talimba.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.talktalk.co.uk.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.teoma.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.tixuma.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.toile.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.toolbarhome.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.trouvez.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.trovarapido.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.trusted-search.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.twingly.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.url.org.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.vinden.nl.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.vindex.nl.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.walhello.info.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.web.nl.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.weborama.fr.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.websearch.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.witch.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.woopie.jp.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.x-recherche.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.yasni.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.yatedo.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.yougoo.fr.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.zapmeta.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.zoeken.nl.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%.zoznam.sk.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%1.dastelefonbuch.de.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%2.austronaut.at.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%2.inbox.com.png
-%%WWWDIR%%/plugins/Referrers/images/searchEngines/%%WWWOWN%%3.zoek.nl.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.123people.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.1881.no.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.abacho.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.acoon.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.allesklar.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.alltheweb.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.altavista.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.arcor.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.baidu.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.blogdigger.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.blogpulse.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.charter.net.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.crawler.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.cuil.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.dasoertliche.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.eniro.se.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.eurip.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.euroseek.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.everyclick.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.exalead.fr.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.facebook.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.fastbrowsersearch.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.findhurtig.dk.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.fireball.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.firstsfind.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.fixsuche.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.flix.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.gigablast.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.gnadenmeer.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.gomeo.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.google.interia.pl.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.goyellow.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.gulesider.no.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.highbeam.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.hooseek.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.hotbot.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.icq.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.ilse.nl.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.jungle-spider.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.kataweb.it.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.kvasir.no.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.latne.lv.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.lookany.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.looksmart.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.maailm.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.mamma.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.meinestadt.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.mister-wong.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.monstercrawler.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.mozbot.fr.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.mysearch.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.najdi.si.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.neti.ee.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.paperball.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.picsearch.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.plazoo.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.qualigo.at.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.search.ch.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.search.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.searchcanvas.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.searchy.co.uk.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.sharelook.fr.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.skynet.be.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.so-net.ne.jp.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.sogou.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.soso.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.sputnik.ru.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.startsiden.no.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.suchmaschine.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.suchnase.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.talimba.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.talktalk.co.uk.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.teoma.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.tixuma.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.toile.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.toolbarhome.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.trouvez.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.trovarapido.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.trusted-search.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.twingly.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.url.org.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.vinden.nl.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.vindex.nl.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.walhello.info.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.web.nl.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.weborama.fr.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.websearch.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.witch.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.woopie.jp.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.x-recherche.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.yasni.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.yatedo.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.yougoo.fr.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.zapmeta.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.zoeken.nl.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www.zoznam.sk.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www1.dastelefonbuch.de.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www2.austronaut.at.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www2.inbox.com.png
+%%WWWDIR%%/plugins/Referrers/images/searchEngines/www3.zoek.nl.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/xx.gif
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/xx.png
 %%WWWDIR%%/plugins/Referrers/images/searchEngines/yandex.ru.png
@@ -4159,7 +5130,6 @@
 %%WWWDIR%%/plugins/UserCountryMap/images/regions.png
 %%WWWDIR%%/plugins/UserCountryMap/images/zoom-out-disabled.png
 %%WWWDIR%%/plugins/UserCountryMap/javascripts/realtime-map.js
-%%WWWDIR%%/plugins/UserCountryMap/javascripts/vendor/chroma.min.js
 %%WWWDIR%%/plugins/UserCountryMap/javascripts/vendor/jquery.qtip.min.js
 %%WWWDIR%%/plugins/UserCountryMap/javascripts/vendor/kartograph.min.js
 %%WWWDIR%%/plugins/UserCountryMap/javascripts/vendor/raphael.min.js
@@ -5124,8 +6094,10 @@
 %%WWWDIR%%/vendor/piwik/device-detector/DeviceDetector.php
 %%WWWDIR%%/vendor/piwik/device-detector/Parser/Bot.php
 %%WWWDIR%%/vendor/piwik/device-detector/Parser/Client/Browser.php
+%%WWWDIR%%/vendor/piwik/device-detector/Parser/Client/Browser/Engine.php
 %%WWWDIR%%/vendor/piwik/device-detector/Parser/Client/ClientParserAbstract.php
 %%WWWDIR%%/vendor/piwik/device-detector/Parser/Client/FeedReader.php
+%%WWWDIR%%/vendor/piwik/device-detector/Parser/Client/Library.php
 %%WWWDIR%%/vendor/piwik/device-detector/Parser/Client/MediaPlayer.php
 %%WWWDIR%%/vendor/piwik/device-detector/Parser/Client/MobileApp.php
 %%WWWDIR%%/vendor/piwik/device-detector/Parser/Client/PIM.php
@@ -5141,8 +6113,10 @@
 %%WWWDIR%%/vendor/piwik/device-detector/composer.json
 %%WWWDIR%%/vendor/piwik/device-detector/phpunit.xml.dist
 %%WWWDIR%%/vendor/piwik/device-detector/regexes/bots.yml
+%%WWWDIR%%/vendor/piwik/device-detector/regexes/client/browser_engine.yml
 %%WWWDIR%%/vendor/piwik/device-detector/regexes/client/browsers.yml
 %%WWWDIR%%/vendor/piwik/device-detector/regexes/client/feed_readers.yml
+%%WWWDIR%%/vendor/piwik/device-detector/regexes/client/libraries.yml
 %%WWWDIR%%/vendor/piwik/device-detector/regexes/client/mediaplayers.yml
 %%WWWDIR%%/vendor/piwik/device-detector/regexes/client/mobile_apps.yml
 %%WWWDIR%%/vendor/piwik/device-detector/regexes/client/pim.yml
@@ -5222,6 +6196,8 @@
 %%WWWDIR%%/vendor/tedivm/jshrink/LICENSE
 %%WWWDIR%%/vendor/tedivm/jshrink/README.md
 %%WWWDIR%%/vendor/tedivm/jshrink/composer.json
+%%WWWDIR%%/vendor/tedivm/jshrink/package.xml
+%%WWWDIR%%/vendor/tedivm/jshrink/phpunit.xml.dist
 %%WWWDIR%%/vendor/tedivm/jshrink/src/JShrink/Minifier.php
 %%WWWDIR%%/vendor/twig/twig/.editorconfig
 %%WWWDIR%%/vendor/twig/twig/.gitignore
@@ -5363,6 +6339,9 @@
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/Parser.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/ParserInterface.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityError.php
+%%WWWDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedFilterError.php
+%%WWWDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedFunctionError.php
+%%WWWDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedTagError.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityPolicy.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityPolicyInterface.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/SimpleFilter.php
@@ -5402,559 +6381,552 @@
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/TokenParserInterface.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/TokenStream.php
 %%WWWDIR%%/vendor/twig/twig/phpunit.xml.dist
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/TokenParser
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Test
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Sandbox
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/NodeVisitor
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Unary
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Test
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Filter
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Loader
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Function
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Filter
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Extension
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig/Error
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib/Twig
-@dirrm %%WWWDIR%%/vendor/twig/twig/lib
-@dirrm %%WWWDIR%%/vendor/twig/twig/ext/twig
-@dirrm %%WWWDIR%%/vendor/twig/twig/ext
-@dirrm %%WWWDIR%%/vendor/twig/twig
-@dirrm %%WWWDIR%%/vendor/twig
-@dirrm %%WWWDIR%%/vendor/tedivm/jshrink/src/JShrink
-@dirrm %%WWWDIR%%/vendor/tedivm/jshrink/src
-@dirrm %%WWWDIR%%/vendor/tedivm/jshrink
-@dirrm %%WWWDIR%%/vendor/tedivm
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Tester
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Resources
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Question
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Output
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Logger
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Input
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Helper
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Formatter
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Event
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Descriptor
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Command
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component
-@dirrm %%WWWDIR%%/vendor/symfony/console/Symfony
-@dirrm %%WWWDIR%%/vendor/symfony/console
-@dirrm %%WWWDIR%%/vendor/symfony
-@dirrm %%WWWDIR%%/vendor/piwik/device-detector/regexes/device
-@dirrm %%WWWDIR%%/vendor/piwik/device-detector/regexes/client
-@dirrm %%WWWDIR%%/vendor/piwik/device-detector/regexes
-@dirrm %%WWWDIR%%/vendor/piwik/device-detector/Parser/Device
-@dirrm %%WWWDIR%%/vendor/piwik/device-detector/Parser/Client
-@dirrm %%WWWDIR%%/vendor/piwik/device-detector/Parser
-@dirrm %%WWWDIR%%/vendor/piwik/device-detector/Cache
-@dirrm %%WWWDIR%%/vendor/piwik/device-detector
-@dirrm %%WWWDIR%%/vendor/piwik/decompress/src
-@dirrm %%WWWDIR%%/vendor/piwik/decompress/libs/PclZip
-@dirrm %%WWWDIR%%/vendor/piwik/decompress/libs/Archive_Tar
-@dirrm %%WWWDIR%%/vendor/piwik/decompress/libs
-@dirrm %%WWWDIR%%/vendor/piwik/decompress
-@dirrm %%WWWDIR%%/vendor/piwik
-@dirrm %%WWWDIR%%/vendor/mustangostang/spyc/php4
-@dirrm %%WWWDIR%%/vendor/mustangostang/spyc/examples
-@dirrm %%WWWDIR%%/vendor/mustangostang/spyc
-@dirrm %%WWWDIR%%/vendor/mustangostang
-@dirrm %%WWWDIR%%/vendor/leafo/lessphp/docs
-@dirrm %%WWWDIR%%/vendor/leafo/lessphp
-@dirrm %%WWWDIR%%/vendor/leafo
-@dirrm %%WWWDIR%%/vendor/composer
-@dirrm %%WWWDIR%%/vendor
-@dirrm %%WWWDIR%%/tmp
-@dirrm %%WWWDIR%%/tests
-@dirrm %%WWWDIR%%/plugins/ZenMode/lang
-@dirrm %%WWWDIR%%/plugins/ZenMode/javascripts
-@dirrm %%WWWDIR%%/plugins/ZenMode/angularjs/zen-mode
-@dirrm %%WWWDIR%%/plugins/ZenMode/angularjs/quick-access
-@dirrm %%WWWDIR%%/plugins/ZenMode/angularjs
-@dirrm %%WWWDIR%%/plugins/ZenMode
-@dirrm %%WWWDIR%%/plugins/Widgetize/templates
-@dirrm %%WWWDIR%%/plugins/Widgetize/stylesheets
-@dirrm %%WWWDIR%%/plugins/Widgetize/lang
-@dirrm %%WWWDIR%%/plugins/Widgetize/javascripts
-@dirrm %%WWWDIR%%/plugins/Widgetize
-@dirrm %%WWWDIR%%/plugins/VisitsSummary/templates
-@dirrm %%WWWDIR%%/plugins/VisitsSummary/stylesheets
-@dirrm %%WWWDIR%%/plugins/VisitsSummary/lang
-@dirrm %%WWWDIR%%/plugins/VisitsSummary/Reports
-@dirrm %%WWWDIR%%/plugins/VisitsSummary
-@dirrm %%WWWDIR%%/plugins/VisitorInterest/templates
-@dirrm %%WWWDIR%%/plugins/VisitorInterest/lang
-@dirrm %%WWWDIR%%/plugins/VisitorInterest/Reports
-@dirrm %%WWWDIR%%/plugins/VisitorInterest/Columns
-@dirrm %%WWWDIR%%/plugins/VisitorInterest
-@dirrm %%WWWDIR%%/plugins/VisitTime/templates
-@dirrm %%WWWDIR%%/plugins/VisitTime/lang
-@dirrm %%WWWDIR%%/plugins/VisitTime/Reports
-@dirrm %%WWWDIR%%/plugins/VisitTime/Columns
-@dirrm %%WWWDIR%%/plugins/VisitTime
-@dirrm %%WWWDIR%%/plugins/VisitFrequency/templates
-@dirrm %%WWWDIR%%/plugins/VisitFrequency/lang
-@dirrm %%WWWDIR%%/plugins/VisitFrequency/Reports
-@dirrm %%WWWDIR%%/plugins/VisitFrequency
-@dirrm %%WWWDIR%%/plugins/UsersManager/templates
-@dirrm %%WWWDIR%%/plugins/UsersManager/stylesheets
-@dirrm %%WWWDIR%%/plugins/UsersManager/lang
-@dirrm %%WWWDIR%%/plugins/UsersManager/javascripts
-@dirrm %%WWWDIR%%/plugins/UsersManager/images
-@dirrm %%WWWDIR%%/plugins/UsersManager
-@dirrm %%WWWDIR%%/plugins/UserSettings/templates
-@dirrm %%WWWDIR%%/plugins/UserSettings/lang
-@dirrm %%WWWDIR%%/plugins/UserSettings/images/screens
-@dirrm %%WWWDIR%%/plugins/UserSettings/images/plugins
-@dirrm %%WWWDIR%%/plugins/UserSettings/images/os
-@dirrm %%WWWDIR%%/plugins/UserSettings/images/browsers
-@dirrm %%WWWDIR%%/plugins/UserSettings/images
-@dirrm %%WWWDIR%%/plugins/UserSettings/Reports
-@dirrm %%WWWDIR%%/plugins/UserSettings/Columns
-@dirrm %%WWWDIR%%/plugins/UserSettings
-@dirrm %%WWWDIR%%/plugins/UserCountryMap/templates
-@dirrm %%WWWDIR%%/plugins/UserCountryMap/svg
-@dirrm %%WWWDIR%%/plugins/UserCountryMap/stylesheets
-@dirrm %%WWWDIR%%/plugins/UserCountryMap/lang
-@dirrm %%WWWDIR%%/plugins/UserCountryMap/javascripts/vendor
-@dirrm %%WWWDIR%%/plugins/UserCountryMap/javascripts
-@dirrm %%WWWDIR%%/plugins/UserCountryMap/images
-@dirrm %%WWWDIR%%/plugins/UserCountryMap
-@dirrm %%WWWDIR%%/plugins/UserCountry/templates
-@dirrm %%WWWDIR%%/plugins/UserCountry/stylesheets
-@dirrm %%WWWDIR%%/plugins/UserCountry/lang
-@dirrm %%WWWDIR%%/plugins/UserCountry/javascripts
-@dirrm %%WWWDIR%%/plugins/UserCountry/images/flags
-@dirrm %%WWWDIR%%/plugins/UserCountry/images
-@dirrm %%WWWDIR%%/plugins/UserCountry/Reports
-@dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp
-@dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider
-@dirrm %%WWWDIR%%/plugins/UserCountry/Columns
-@dirrm %%WWWDIR%%/plugins/UserCountry
-@dirrm %%WWWDIR%%/plugins/Transitions/templates
-@dirrm %%WWWDIR%%/plugins/Transitions/stylesheets
-@dirrm %%WWWDIR%%/plugins/Transitions/lang
-@dirrm %%WWWDIR%%/plugins/Transitions/javascripts
-@dirrm %%WWWDIR%%/plugins/Transitions/images
-@dirrm %%WWWDIR%%/plugins/Transitions
-@dirrm %%WWWDIR%%/plugins/SitesManager/templates/sites-list
-@dirrm %%WWWDIR%%/plugins/SitesManager/templates/help
-@dirrm %%WWWDIR%%/plugins/SitesManager/templates/dialogs
-@dirrm %%WWWDIR%%/plugins/SitesManager/templates
-@dirrm %%WWWDIR%%/plugins/SitesManager/stylesheets
-@dirrm %%WWWDIR%%/plugins/SitesManager/lang
-@dirrm %%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager
-@dirrm %%WWWDIR%%/plugins/SitesManager/angularjs
-@dirrm %%WWWDIR%%/plugins/SitesManager
-@dirrm %%WWWDIR%%/plugins/SegmentEditor/templates
-@dirrm %%WWWDIR%%/plugins/SegmentEditor/stylesheets
-@dirrm %%WWWDIR%%/plugins/SegmentEditor/lang
-@dirrm %%WWWDIR%%/plugins/SegmentEditor/javascripts
-@dirrm %%WWWDIR%%/plugins/SegmentEditor/images
-@dirrm %%WWWDIR%%/plugins/SegmentEditor
-@dirrm %%WWWDIR%%/plugins/ScheduledReports/templates
-@dirrm %%WWWDIR%%/plugins/ScheduledReports/lang
-@dirrm %%WWWDIR%%/plugins/ScheduledReports/javascripts
-@dirrm %%WWWDIR%%/plugins/ScheduledReports/config
-@dirrm %%WWWDIR%%/plugins/ScheduledReports
-@dirrm %%WWWDIR%%/plugins/SEO/templates
-@dirrm %%WWWDIR%%/plugins/SEO/lang
-@dirrm %%WWWDIR%%/plugins/SEO/javascripts
-@dirrm %%WWWDIR%%/plugins/SEO/images
-@dirrm %%WWWDIR%%/plugins/SEO
-@dirrm %%WWWDIR%%/plugins/Referrers/templates
-@dirrm %%WWWDIR%%/plugins/Referrers/lang
-@dirrm %%WWWDIR%%/plugins/Referrers/images/socials
-@dirrm %%WWWDIR%%/plugins/Referrers/images/searchEngines
-@dirrm %%WWWDIR%%/plugins/Referrers/images
-@dirrm %%WWWDIR%%/plugins/Referrers/Reports
-@dirrm %%WWWDIR%%/plugins/Referrers/Columns
-@dirrm %%WWWDIR%%/plugins/Referrers
-@dirrm %%WWWDIR%%/plugins/Proxy
-@dirrm %%WWWDIR%%/plugins/Provider/lang
-@dirrm %%WWWDIR%%/plugins/Provider/Reports
-@dirrm %%WWWDIR%%/plugins/Provider/Columns
-@dirrm %%WWWDIR%%/plugins/Provider
-@dirrm %%WWWDIR%%/plugins/PrivacyManager/templates
-@dirrm %%WWWDIR%%/plugins/PrivacyManager/lang
-@dirrm %%WWWDIR%%/plugins/PrivacyManager/javascripts
-@dirrm %%WWWDIR%%/plugins/PrivacyManager
-@dirrm %%WWWDIR%%/plugins/Overlay/templates
-@dirrm %%WWWDIR%%/plugins/Overlay/stylesheets
-@dirrm %%WWWDIR%%/plugins/Overlay/lang
-@dirrm %%WWWDIR%%/plugins/Overlay/javascripts
-@dirrm %%WWWDIR%%/plugins/Overlay/images
-@dirrm %%WWWDIR%%/plugins/Overlay/client
-@dirrm %%WWWDIR%%/plugins/Overlay
-@dirrm %%WWWDIR%%/plugins/MultiSites/templates
-@dirrm %%WWWDIR%%/plugins/MultiSites/lang
-@dirrm %%WWWDIR%%/plugins/MultiSites/images
-@dirrm %%WWWDIR%%/plugins/MultiSites/angularjs/site
-@dirrm %%WWWDIR%%/plugins/MultiSites/angularjs/dashboard
-@dirrm %%WWWDIR%%/plugins/MultiSites/angularjs
-@dirrm %%WWWDIR%%/plugins/MultiSites/Reports
-@dirrm %%WWWDIR%%/plugins/MultiSites/Columns
-@dirrm %%WWWDIR%%/plugins/MultiSites
-@dirrm %%WWWDIR%%/plugins/Morpheus/templates
-@dirrm %%WWWDIR%%/plugins/Morpheus/stylesheets/uibase
-@dirrm %%WWWDIR%%/plugins/Morpheus/stylesheets/ui
-@dirrm %%WWWDIR%%/plugins/Morpheus/stylesheets/less
-@dirrm %%WWWDIR%%/plugins/Morpheus/stylesheets/general
-@dirrm %%WWWDIR%%/plugins/Morpheus/stylesheets
-@dirrm %%WWWDIR%%/plugins/Morpheus/javascripts
-@dirrm %%WWWDIR%%/plugins/Morpheus/images
-@dirrm %%WWWDIR%%/plugins/Morpheus
-@dirrm %%WWWDIR%%/plugins/MobileMessaging/templates
-@dirrm %%WWWDIR%%/plugins/MobileMessaging/stylesheets
-@dirrm %%WWWDIR%%/plugins/MobileMessaging/lang
-@dirrm %%WWWDIR%%/plugins/MobileMessaging/javascripts
-@dirrm %%WWWDIR%%/plugins/MobileMessaging/images
-@dirrm %%WWWDIR%%/plugins/MobileMessaging/SMSProvider
-@dirrm %%WWWDIR%%/plugins/MobileMessaging/ReportRenderer
-@dirrm %%WWWDIR%%/plugins/MobileMessaging
-@dirrm %%WWWDIR%%/plugins/Login/templates
-@dirrm %%WWWDIR%%/plugins/Login/stylesheets
-@dirrm %%WWWDIR%%/plugins/Login/lang
-@dirrm %%WWWDIR%%/plugins/Login/javascripts
-@dirrm %%WWWDIR%%/plugins/Login
-@dirrm %%WWWDIR%%/plugins/Live/templates
-@dirrm %%WWWDIR%%/plugins/Live/stylesheets
-@dirrm %%WWWDIR%%/plugins/Live/lang
-@dirrm %%WWWDIR%%/plugins/Live/javascripts
-@dirrm %%WWWDIR%%/plugins/Live/images
-@dirrm %%WWWDIR%%/plugins/Live/VisitorLog
-@dirrm %%WWWDIR%%/plugins/Live/Reports
-@dirrm %%WWWDIR%%/plugins/Live
-@dirrm %%WWWDIR%%/plugins/LeftMenu/stylesheets
-@dirrm %%WWWDIR%%/plugins/LeftMenu/lang
-@dirrm %%WWWDIR%%/plugins/LeftMenu
-@dirrm %%WWWDIR%%/plugins/LanguagesManager/templates
-@dirrm %%WWWDIR%%/plugins/LanguagesManager/lang
-@dirrm %%WWWDIR%%/plugins/LanguagesManager/angularjs/translationsearch
-@dirrm %%WWWDIR%%/plugins/LanguagesManager/angularjs/languageselector
-@dirrm %%WWWDIR%%/plugins/LanguagesManager/angularjs
-@dirrm %%WWWDIR%%/plugins/LanguagesManager/Commands
-@dirrm %%WWWDIR%%/plugins/LanguagesManager
-@dirrm %%WWWDIR%%/plugins/Installation/templates
-@dirrm %%WWWDIR%%/plugins/Installation/stylesheets
-@dirrm %%WWWDIR%%/plugins/Installation/lang
-@dirrm %%WWWDIR%%/plugins/Installation/javascripts
-@dirrm %%WWWDIR%%/plugins/Installation
-@dirrm %%WWWDIR%%/plugins/Insights/templates
-@dirrm %%WWWDIR%%/plugins/Insights/stylesheets
-@dirrm %%WWWDIR%%/plugins/Insights/lang
-@dirrm %%WWWDIR%%/plugins/Insights/javascripts
-@dirrm %%WWWDIR%%/plugins/Insights/images
-@dirrm %%WWWDIR%%/plugins/Insights/Visualizations/Insight
-@dirrm %%WWWDIR%%/plugins/Insights/Visualizations
-@dirrm %%WWWDIR%%/plugins/Insights/DataTable/Filter
-@dirrm %%WWWDIR%%/plugins/Insights/DataTable
-@dirrm %%WWWDIR%%/plugins/Insights
-@dirrm %%WWWDIR%%/plugins/ImageGraph/templates
-@dirrm %%WWWDIR%%/plugins/ImageGraph/lang
-@dirrm %%WWWDIR%%/plugins/ImageGraph/fonts
-@dirrm %%WWWDIR%%/plugins/ImageGraph/StaticGraph
-@dirrm %%WWWDIR%%/plugins/ImageGraph
-@dirrm %%WWWDIR%%/plugins/Goals/templates
-@dirrm %%WWWDIR%%/plugins/Goals/stylesheets
-@dirrm %%WWWDIR%%/plugins/Goals/lang
-@dirrm %%WWWDIR%%/plugins/Goals/javascripts
-@dirrm %%WWWDIR%%/plugins/Goals/Visualizations
-@dirrm %%WWWDIR%%/plugins/Goals/Reports
-@dirrm %%WWWDIR%%/plugins/Goals/Columns
-@dirrm %%WWWDIR%%/plugins/Goals
-@dirrm %%WWWDIR%%/plugins/Feedback/templates
-@dirrm %%WWWDIR%%/plugins/Feedback/stylesheets
-@dirrm %%WWWDIR%%/plugins/Feedback/lang
-@dirrm %%WWWDIR%%/plugins/Feedback/images
-@dirrm %%WWWDIR%%/plugins/Feedback/angularjs/ratefeature
-@dirrm %%WWWDIR%%/plugins/Feedback/angularjs
-@dirrm %%WWWDIR%%/plugins/Feedback
-@dirrm %%WWWDIR%%/plugins/ExampleVisualization/templates
-@dirrm %%WWWDIR%%/plugins/ExampleVisualization/images
-@dirrm %%WWWDIR%%/plugins/ExampleVisualization/Visualizations
-@dirrm %%WWWDIR%%/plugins/ExampleVisualization
-@dirrm %%WWWDIR%%/plugins/ExampleUI/templates
-@dirrm %%WWWDIR%%/plugins/ExampleUI/images/icons-planet
-@dirrm %%WWWDIR%%/plugins/ExampleUI/images
-@dirrm %%WWWDIR%%/plugins/ExampleUI
-@dirrm %%WWWDIR%%/plugins/ExampleTracker/lang
-@dirrm %%WWWDIR%%/plugins/ExampleTracker/Columns
-@dirrm %%WWWDIR%%/plugins/ExampleTracker
-@dirrm %%WWWDIR%%/plugins/ExampleTheme/stylesheets
-@dirrm %%WWWDIR%%/plugins/ExampleTheme/screenshots
-@dirrm %%WWWDIR%%/plugins/ExampleTheme/images
-@dirrm %%WWWDIR%%/plugins/ExampleTheme
-@dirrm %%WWWDIR%%/plugins/ExampleSettingsPlugin
-@dirrm %%WWWDIR%%/plugins/ExampleRssWidget/stylesheets
-@dirrm %%WWWDIR%%/plugins/ExampleRssWidget
-@dirrm %%WWWDIR%%/plugins/ExampleReport/Reports
-@dirrm %%WWWDIR%%/plugins/ExampleReport
-@dirrm %%WWWDIR%%/plugins/ExamplePlugin/templates
-@dirrm %%WWWDIR%%/plugins/ExamplePlugin/screenshots
-@dirrm %%WWWDIR%%/plugins/ExamplePlugin/javascripts
-@dirrm %%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component
-@dirrm %%WWWDIR%%/plugins/ExamplePlugin/angularjs
-@dirrm %%WWWDIR%%/plugins/ExamplePlugin/Updates
-@dirrm %%WWWDIR%%/plugins/ExamplePlugin
-@dirrm %%WWWDIR%%/plugins/ExampleCommand/Commands
-@dirrm %%WWWDIR%%/plugins/ExampleCommand
-@dirrm %%WWWDIR%%/plugins/ExampleAPI
-@dirrm %%WWWDIR%%/plugins/Events/templates
-@dirrm %%WWWDIR%%/plugins/Events/lang
-@dirrm %%WWWDIR%%/plugins/Events/Reports
-@dirrm %%WWWDIR%%/plugins/Events/Columns
-@dirrm %%WWWDIR%%/plugins/Events/Actions
-@dirrm %%WWWDIR%%/plugins/Events
-@dirrm %%WWWDIR%%/plugins/DevicesDetection/templates
-@dirrm %%WWWDIR%%/plugins/DevicesDetection/lang
-@dirrm %%WWWDIR%%/plugins/DevicesDetection/images/screens
-@dirrm %%WWWDIR%%/plugins/DevicesDetection/images/brand
-@dirrm %%WWWDIR%%/plugins/DevicesDetection/images
-@dirrm %%WWWDIR%%/plugins/DevicesDetection/Updates
-@dirrm %%WWWDIR%%/plugins/DevicesDetection/Reports
-@dirrm %%WWWDIR%%/plugins/DevicesDetection/Columns
-@dirrm %%WWWDIR%%/plugins/DevicesDetection
-@dirrm %%WWWDIR%%/plugins/Dashboard/templates
-@dirrm %%WWWDIR%%/plugins/Dashboard/stylesheets
-@dirrm %%WWWDIR%%/plugins/Dashboard/lang
-@dirrm %%WWWDIR%%/plugins/Dashboard/javascripts
-@dirrm %%WWWDIR%%/plugins/Dashboard
-@dirrm %%WWWDIR%%/plugins/DBStats/templates
-@dirrm %%WWWDIR%%/plugins/DBStats/stylesheets
-@dirrm %%WWWDIR%%/plugins/DBStats/lang
-@dirrm %%WWWDIR%%/plugins/DBStats/Reports
-@dirrm %%WWWDIR%%/plugins/DBStats
-@dirrm %%WWWDIR%%/plugins/CustomVariables/lang
-@dirrm %%WWWDIR%%/plugins/CustomVariables/Reports
-@dirrm %%WWWDIR%%/plugins/CustomVariables/Commands
-@dirrm %%WWWDIR%%/plugins/CustomVariables/Columns
-@dirrm %%WWWDIR%%/plugins/CustomVariables
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/templates
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/stylesheets
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/javascripts
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/JqplotGraph
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/HtmlTable
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/Graph
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/Cloud
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/Visualizations
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations/JqplotDataGenerator
-@dirrm %%WWWDIR%%/plugins/CoreVisualizations
-@dirrm %%WWWDIR%%/plugins/CoreUpdater/templates
-@dirrm %%WWWDIR%%/plugins/CoreUpdater/stylesheets
-@dirrm %%WWWDIR%%/plugins/CoreUpdater/lang
-@dirrm %%WWWDIR%%/plugins/CoreUpdater/javascripts
-@dirrm %%WWWDIR%%/plugins/CoreUpdater/Commands
-@dirrm %%WWWDIR%%/plugins/CoreUpdater
-@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/templates
-@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/stylesheets
-@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/lang
-@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/javascripts
-@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/images
-@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin
-@dirrm %%WWWDIR%%/plugins/CoreHome/templates/ReportsByDimension
-@dirrm %%WWWDIR%%/plugins/CoreHome/templates/ReportRenderer
-@dirrm %%WWWDIR%%/plugins/CoreHome/templates
-@dirrm %%WWWDIR%%/plugins/CoreHome/stylesheets/dataTable
-@dirrm %%WWWDIR%%/plugins/CoreHome/stylesheets
-@dirrm %%WWWDIR%%/plugins/CoreHome/lang
-@dirrm %%WWWDIR%%/plugins/CoreHome/javascripts
-@dirrm %%WWWDIR%%/plugins/CoreHome/images
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/siteselector
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/notification
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/menudropdown
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/common/services
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/common/directives
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/common
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs/ajax-form
-@dirrm %%WWWDIR%%/plugins/CoreHome/angularjs
-@dirrm %%WWWDIR%%/plugins/CoreHome/DataTableRowAction
-@dirrm %%WWWDIR%%/plugins/CoreHome/Columns
-@dirrm %%WWWDIR%%/plugins/CoreHome
-@dirrm %%WWWDIR%%/plugins/CoreConsole/templates
-@dirrm %%WWWDIR%%/plugins/CoreConsole/Commands
-@dirrm %%WWWDIR%%/plugins/CoreConsole
-@dirrm %%WWWDIR%%/plugins/CoreAdminHome/templates
-@dirrm %%WWWDIR%%/plugins/CoreAdminHome/stylesheets
-@dirrm %%WWWDIR%%/plugins/CoreAdminHome/lang
-@dirrm %%WWWDIR%%/plugins/CoreAdminHome/javascripts
-@dirrm %%WWWDIR%%/plugins/CoreAdminHome/Commands
-@dirrm %%WWWDIR%%/plugins/CoreAdminHome
-@dirrm %%WWWDIR%%/plugins/Contents/stylesheets
-@dirrm %%WWWDIR%%/plugins/Contents/screenshots
-@dirrm %%WWWDIR%%/plugins/Contents/lang
-@dirrm %%WWWDIR%%/plugins/Contents/javascripts
-@dirrm %%WWWDIR%%/plugins/Contents/Reports
-@dirrm %%WWWDIR%%/plugins/Contents/Columns
-@dirrm %%WWWDIR%%/plugins/Contents/Actions
-@dirrm %%WWWDIR%%/plugins/Contents
-@dirrm %%WWWDIR%%/plugins/Annotations/templates
-@dirrm %%WWWDIR%%/plugins/Annotations/stylesheets
-@dirrm %%WWWDIR%%/plugins/Annotations/lang
-@dirrm %%WWWDIR%%/plugins/Annotations/javascripts
-@dirrm %%WWWDIR%%/plugins/Annotations
-@dirrm %%WWWDIR%%/plugins/Actions/templates
-@dirrm %%WWWDIR%%/plugins/Actions/stylesheets
-@dirrm %%WWWDIR%%/plugins/Actions/lang
-@dirrm %%WWWDIR%%/plugins/Actions/javascripts
-@dirrm %%WWWDIR%%/plugins/Actions/Reports
-@dirrm %%WWWDIR%%/plugins/Actions/Columns
-@dirrm %%WWWDIR%%/plugins/Actions/Actions
-@dirrm %%WWWDIR%%/plugins/Actions
-@dirrm %%WWWDIR%%/plugins/API/templates
-@dirrm %%WWWDIR%%/plugins/API/stylesheets
-@dirrm %%WWWDIR%%/plugins/API/lang
-@dirrm %%WWWDIR%%/plugins/API/Renderer
-@dirrm %%WWWDIR%%/plugins/API
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/misc/user
-@dirrm %%WWWDIR%%/misc/proxy-hide-piwik-url
-@dirrm %%WWWDIR%%/misc/phpstorm-codestyles
-@dirrm %%WWWDIR%%/misc/others
-@dirrm %%WWWDIR%%/misc/log-analytics
-@dirrm %%WWWDIR%%/misc/internal-docs
-@dirrm %%WWWDIR%%/misc/cron
-@dirrm %%WWWDIR%%/misc/composer
-@dirrm %%WWWDIR%%/misc
-@dirrm %%WWWDIR%%/libs/upgradephp
-@dirrm %%WWWDIR%%/libs/tcpdf/include
-@dirrm %%WWWDIR%%/libs/tcpdf/fonts
-@dirrm %%WWWDIR%%/libs/tcpdf/config/lang
-@dirrm %%WWWDIR%%/libs/tcpdf/config
-@dirrm %%WWWDIR%%/libs/tcpdf
-@dirrm %%WWWDIR%%/libs/sparkline/lib
-@dirrm %%WWWDIR%%/libs/sparkline
-@dirrm %%WWWDIR%%/libs/pChart2.1.3/class
-@dirrm %%WWWDIR%%/libs/pChart2.1.3
-@dirrm %%WWWDIR%%/libs/mousetrap
-@dirrm %%WWWDIR%%/libs/jquery/themes/base/images
-@dirrm %%WWWDIR%%/libs/jquery/themes/base
-@dirrm %%WWWDIR%%/libs/jquery/themes
-@dirrm %%WWWDIR%%/libs/jquery/stylesheets
-@dirrm %%WWWDIR%%/libs/jquery/images
-@dirrm %%WWWDIR%%/libs/jquery
-@dirrm %%WWWDIR%%/libs/jqplot/plugins
-@dirrm %%WWWDIR%%/libs/jqplot
-@dirrm %%WWWDIR%%/libs/javascript
-@dirrm %%WWWDIR%%/libs/html5shiv
-@dirrm %%WWWDIR%%/libs/angularjs/ngDialog/js
-@dirrm %%WWWDIR%%/libs/angularjs/ngDialog/example
-@dirrm %%WWWDIR%%/libs/angularjs/ngDialog/css/myth
-@dirrm %%WWWDIR%%/libs/angularjs/ngDialog/css
-@dirrm %%WWWDIR%%/libs/angularjs/ngDialog
-@dirrm %%WWWDIR%%/libs/angularjs
-@dirrm %%WWWDIR%%/libs/Zend/Validate/Hostname
-@dirrm %%WWWDIR%%/libs/Zend/Validate/File
-@dirrm %%WWWDIR%%/libs/Zend/Validate
-@dirrm %%WWWDIR%%/libs/Zend/Session/Validator
-@dirrm %%WWWDIR%%/libs/Zend/Session/SaveHandler
-@dirrm %%WWWDIR%%/libs/Zend/Session
-@dirrm %%WWWDIR%%/libs/Zend/Mime
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Transport
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Storage/Writable
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Storage/Folder
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Storage
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp/Auth
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Part
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Message
-@dirrm %%WWWDIR%%/libs/Zend/Mail
-@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Select
-@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Rowset
-@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Row
-@dirrm %%WWWDIR%%/libs/Zend/Db/Table
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Sqlsrv
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Pdo
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Oracle
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Mysqli
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Db2
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement
-@dirrm %%WWWDIR%%/libs/Zend/Db/Select
-@dirrm %%WWWDIR%%/libs/Zend/Db/Profiler
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Sqlsrv
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Ibm
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Oracle
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Mysqli
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Db2
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter
-@dirrm %%WWWDIR%%/libs/Zend/Db
-@dirrm %%WWWDIR%%/libs/Zend/Config/Writer
-@dirrm %%WWWDIR%%/libs/Zend/Config
-@dirrm %%WWWDIR%%/libs/Zend/Cache/Frontend
-@dirrm %%WWWDIR%%/libs/Zend/Cache/Backend/ZendServer
-@dirrm %%WWWDIR%%/libs/Zend/Cache/Backend
-@dirrm %%WWWDIR%%/libs/Zend/Cache
-@dirrm %%WWWDIR%%/libs/Zend
-@dirrm %%WWWDIR%%/libs/UserAgentParser
-@dirrm %%WWWDIR%%/libs/PiwikTracker
-@dirrm %%WWWDIR%%/libs/PclZip
-@dirrm %%WWWDIR%%/libs/PEAR
-@dirrm %%WWWDIR%%/libs/MaxMindGeoIP
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Rule
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Renderer
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Element
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/DataSource
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Controller/Action
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Controller
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Container
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2
-@dirrm %%WWWDIR%%/libs/HTML
-@dirrm %%WWWDIR%%/libs
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/core/Visualization
-@dirrm %%WWWDIR%%/core/ViewDataTable
-@dirrm %%WWWDIR%%/core/View
-@dirrm %%WWWDIR%%/core/Updates
-@dirrm %%WWWDIR%%/core/Translate/Validate
-@dirrm %%WWWDIR%%/core/Translate/Filter
-@dirrm %%WWWDIR%%/core/Translate
-@dirrm %%WWWDIR%%/core/Tracker/Db/Pdo
-@dirrm %%WWWDIR%%/core/Tracker/Db
-@dirrm %%WWWDIR%%/core/Tracker
-@dirrm %%WWWDIR%%/core/Settings
-@dirrm %%WWWDIR%%/core/Session/SaveHandler
-@dirrm %%WWWDIR%%/core/Session
-@dirrm %%WWWDIR%%/core/ScheduledTime
-@dirrm %%WWWDIR%%/core/ReportRenderer
-@dirrm %%WWWDIR%%/core/Plugin/Dimension
-@dirrm %%WWWDIR%%/core/Plugin
-@dirrm %%WWWDIR%%/core/Period
-@dirrm %%WWWDIR%%/core/Notification
-@dirrm %%WWWDIR%%/core/Metrics
-@dirrm %%WWWDIR%%/core/Menu
-@dirrm %%WWWDIR%%/core/Db/Schema
-@dirrm %%WWWDIR%%/core/Db/Adapter/Pdo
-@dirrm %%WWWDIR%%/core/Db/Adapter
-@dirrm %%WWWDIR%%/core/Db
-@dirrm %%WWWDIR%%/core/DataTable/Row
-@dirrm %%WWWDIR%%/core/DataTable/Renderer
-@dirrm %%WWWDIR%%/core/DataTable/Filter
-@dirrm %%WWWDIR%%/core/DataTable
-@dirrm %%WWWDIR%%/core/DataFiles
-@dirrm %%WWWDIR%%/core/DataAccess
-@dirrm %%WWWDIR%%/core/CronArchive
-@dirrm %%WWWDIR%%/core/Columns
-@dirrm %%WWWDIR%%/core/CliMulti
-@dirrm %%WWWDIR%%/core/Cache
-@dirrm %%WWWDIR%%/core/AssetManager/UIAssetMerger
-@dirrm %%WWWDIR%%/core/AssetManager/UIAssetFetcher
-@dirrm %%WWWDIR%%/core/AssetManager/UIAsset
-@dirrm %%WWWDIR%%/core/AssetManager
-@dirrm %%WWWDIR%%/core/ArchiveProcessor
-@dirrm %%WWWDIR%%/core/Archive
-@dirrm %%WWWDIR%%/core/API/DataTableManipulator
-@dirrm %%WWWDIR%%/core/API
-@dirrm %%WWWDIR%%/core
-@dirrm %%WWWDIR%%/config
-@dirrm %%WWWDIR%%
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/TokenParser
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Test
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Sandbox
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/NodeVisitor
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Unary
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Test
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Filter
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node/Expression
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Node
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Loader
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Function
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Filter
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Extension
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig/Error
+@dir %%WWWDIR%%/vendor/twig/twig/lib/Twig
+@dir %%WWWDIR%%/vendor/twig/twig/lib
+@dir %%WWWDIR%%/vendor/twig/twig/ext/twig
+@dir %%WWWDIR%%/vendor/twig/twig/ext
+@dir %%WWWDIR%%/vendor/twig/twig
+@dir %%WWWDIR%%/vendor/twig
+@dir %%WWWDIR%%/vendor/tedivm/jshrink/src/JShrink
+@dir %%WWWDIR%%/vendor/tedivm/jshrink/src
+@dir %%WWWDIR%%/vendor/tedivm/jshrink
+@dir %%WWWDIR%%/vendor/tedivm
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Tester
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Resources
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Question
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Output
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Logger
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Input
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Helper
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Formatter
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Event
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Descriptor
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Command
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component
+@dir %%WWWDIR%%/vendor/symfony/console/Symfony
+@dir %%WWWDIR%%/vendor/symfony/console
+@dir %%WWWDIR%%/vendor/symfony
+@dir %%WWWDIR%%/vendor/piwik/device-detector/regexes/device
+@dir %%WWWDIR%%/vendor/piwik/device-detector/regexes/client
+@dir %%WWWDIR%%/vendor/piwik/device-detector/regexes
+@dir %%WWWDIR%%/vendor/piwik/device-detector/Parser/Device
+@dir %%WWWDIR%%/vendor/piwik/device-detector/Parser/Client/Browser
+@dir %%WWWDIR%%/vendor/piwik/device-detector/Parser/Client
+@dir %%WWWDIR%%/vendor/piwik/device-detector/Parser
+@dir %%WWWDIR%%/vendor/piwik/device-detector/Cache
+@dir %%WWWDIR%%/vendor/piwik/device-detector
+@dir %%WWWDIR%%/vendor/piwik/decompress/src
+@dir %%WWWDIR%%/vendor/piwik/decompress/libs/PclZip
+@dir %%WWWDIR%%/vendor/piwik/decompress/libs/Archive_Tar
+@dir %%WWWDIR%%/vendor/piwik/decompress/libs
+@dir %%WWWDIR%%/vendor/piwik/decompress
+@dir %%WWWDIR%%/vendor/piwik
+@dir %%WWWDIR%%/vendor/mustangostang/spyc/php4
+@dir %%WWWDIR%%/vendor/mustangostang/spyc/examples
+@dir %%WWWDIR%%/vendor/mustangostang/spyc
+@dir %%WWWDIR%%/vendor/mustangostang
+@dir %%WWWDIR%%/vendor/leafo/lessphp/docs
+@dir %%WWWDIR%%/vendor/leafo/lessphp
+@dir %%WWWDIR%%/vendor/leafo
+@dir %%WWWDIR%%/vendor/composer
+@dir %%WWWDIR%%/vendor
+@dir %%WWWDIR%%/tmp
+@dir %%WWWDIR%%/tests
+@dir %%WWWDIR%%/plugins/ZenMode/lang
+@dir %%WWWDIR%%/plugins/ZenMode/javascripts
+@dir %%WWWDIR%%/plugins/ZenMode/angularjs/zen-mode
+@dir %%WWWDIR%%/plugins/ZenMode/angularjs/quick-access
+@dir %%WWWDIR%%/plugins/ZenMode/angularjs
+@dir %%WWWDIR%%/plugins/ZenMode
+@dir %%WWWDIR%%/plugins/Widgetize/templates
+@dir %%WWWDIR%%/plugins/Widgetize/stylesheets
+@dir %%WWWDIR%%/plugins/Widgetize/lang
+@dir %%WWWDIR%%/plugins/Widgetize/javascripts
+@dir %%WWWDIR%%/plugins/Widgetize
+@dir %%WWWDIR%%/plugins/VisitsSummary/templates
+@dir %%WWWDIR%%/plugins/VisitsSummary/stylesheets
+@dir %%WWWDIR%%/plugins/VisitsSummary/lang
+@dir %%WWWDIR%%/plugins/VisitsSummary/Reports
+@dir %%WWWDIR%%/plugins/VisitsSummary
+@dir %%WWWDIR%%/plugins/VisitorInterest/templates
+@dir %%WWWDIR%%/plugins/VisitorInterest/lang
+@dir %%WWWDIR%%/plugins/VisitorInterest/Reports
+@dir %%WWWDIR%%/plugins/VisitorInterest/Columns
+@dir %%WWWDIR%%/plugins/VisitorInterest
+@dir %%WWWDIR%%/plugins/VisitTime/templates
+@dir %%WWWDIR%%/plugins/VisitTime/lang
+@dir %%WWWDIR%%/plugins/VisitTime/Reports
+@dir %%WWWDIR%%/plugins/VisitTime/Columns
+@dir %%WWWDIR%%/plugins/VisitTime
+@dir %%WWWDIR%%/plugins/VisitFrequency/templates
+@dir %%WWWDIR%%/plugins/VisitFrequency/lang
+@dir %%WWWDIR%%/plugins/VisitFrequency/Reports
+@dir %%WWWDIR%%/plugins/VisitFrequency
+@dir %%WWWDIR%%/plugins/UsersManager/templates
+@dir %%WWWDIR%%/plugins/UsersManager/stylesheets
+@dir %%WWWDIR%%/plugins/UsersManager/lang
+@dir %%WWWDIR%%/plugins/UsersManager/javascripts
+@dir %%WWWDIR%%/plugins/UsersManager/images
+@dir %%WWWDIR%%/plugins/UsersManager
+@dir %%WWWDIR%%/plugins/UserSettings/templates
+@dir %%WWWDIR%%/plugins/UserSettings/lang
+@dir %%WWWDIR%%/plugins/UserSettings/images/screens
+@dir %%WWWDIR%%/plugins/UserSettings/images/plugins
+@dir %%WWWDIR%%/plugins/UserSettings/images/os
+@dir %%WWWDIR%%/plugins/UserSettings/images/browsers
+@dir %%WWWDIR%%/plugins/UserSettings/images
+@dir %%WWWDIR%%/plugins/UserSettings/Reports
+@dir %%WWWDIR%%/plugins/UserSettings/Columns
+@dir %%WWWDIR%%/plugins/UserSettings
+@dir %%WWWDIR%%/plugins/UserCountryMap/templates
+@dir %%WWWDIR%%/plugins/UserCountryMap/svg
+@dir %%WWWDIR%%/plugins/UserCountryMap/stylesheets
+@dir %%WWWDIR%%/plugins/UserCountryMap/lang
+@dir %%WWWDIR%%/plugins/UserCountryMap/javascripts/vendor
+@dir %%WWWDIR%%/plugins/UserCountryMap/javascripts
+@dir %%WWWDIR%%/plugins/UserCountryMap/images
+@dir %%WWWDIR%%/plugins/UserCountryMap
+@dir %%WWWDIR%%/plugins/UserCountry/templates
+@dir %%WWWDIR%%/plugins/UserCountry/stylesheets
+@dir %%WWWDIR%%/plugins/UserCountry/lang
+@dir %%WWWDIR%%/plugins/UserCountry/javascripts
+@dir %%WWWDIR%%/plugins/UserCountry/images/flags
+@dir %%WWWDIR%%/plugins/UserCountry/images
+@dir %%WWWDIR%%/plugins/UserCountry/Reports
+@dir %%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp
+@dir %%WWWDIR%%/plugins/UserCountry/LocationProvider
+@dir %%WWWDIR%%/plugins/UserCountry/Columns
+@dir %%WWWDIR%%/plugins/UserCountry
+@dir %%WWWDIR%%/plugins/Transitions/templates
+@dir %%WWWDIR%%/plugins/Transitions/stylesheets
+@dir %%WWWDIR%%/plugins/Transitions/lang
+@dir %%WWWDIR%%/plugins/Transitions/javascripts
+@dir %%WWWDIR%%/plugins/Transitions/images
+@dir %%WWWDIR%%/plugins/Transitions
+@dir %%WWWDIR%%/plugins/SitesManager/templates/sites-list
+@dir %%WWWDIR%%/plugins/SitesManager/templates/help
+@dir %%WWWDIR%%/plugins/SitesManager/templates/dialogs
+@dir %%WWWDIR%%/plugins/SitesManager/templates
+@dir %%WWWDIR%%/plugins/SitesManager/stylesheets
+@dir %%WWWDIR%%/plugins/SitesManager/lang
+@dir %%WWWDIR%%/plugins/SitesManager/angularjs/sites-manager
+@dir %%WWWDIR%%/plugins/SitesManager/angularjs
+@dir %%WWWDIR%%/plugins/SitesManager
+@dir %%WWWDIR%%/plugins/SegmentEditor/templates
+@dir %%WWWDIR%%/plugins/SegmentEditor/stylesheets
+@dir %%WWWDIR%%/plugins/SegmentEditor/lang
+@dir %%WWWDIR%%/plugins/SegmentEditor/javascripts
+@dir %%WWWDIR%%/plugins/SegmentEditor/images
+@dir %%WWWDIR%%/plugins/SegmentEditor
+@dir %%WWWDIR%%/plugins/ScheduledReports/templates
+@dir %%WWWDIR%%/plugins/ScheduledReports/lang
+@dir %%WWWDIR%%/plugins/ScheduledReports/javascripts
+@dir %%WWWDIR%%/plugins/ScheduledReports/config
+@dir %%WWWDIR%%/plugins/ScheduledReports
+@dir %%WWWDIR%%/plugins/SEO/templates
+@dir %%WWWDIR%%/plugins/SEO/lang
+@dir %%WWWDIR%%/plugins/SEO/javascripts
+@dir %%WWWDIR%%/plugins/SEO/images
+@dir %%WWWDIR%%/plugins/SEO
+@dir %%WWWDIR%%/plugins/Referrers/templates
+@dir %%WWWDIR%%/plugins/Referrers/lang
+@dir %%WWWDIR%%/plugins/Referrers/images/socials
+@dir %%WWWDIR%%/plugins/Referrers/images/searchEngines
+@dir %%WWWDIR%%/plugins/Referrers/images
+@dir %%WWWDIR%%/plugins/Referrers/Reports
+@dir %%WWWDIR%%/plugins/Referrers/Columns
+@dir %%WWWDIR%%/plugins/Referrers
+@dir %%WWWDIR%%/plugins/Proxy
+@dir %%WWWDIR%%/plugins/Provider/lang
+@dir %%WWWDIR%%/plugins/Provider/Reports
+@dir %%WWWDIR%%/plugins/Provider/Columns
+@dir %%WWWDIR%%/plugins/Provider
+@dir %%WWWDIR%%/plugins/PrivacyManager/templates
+@dir %%WWWDIR%%/plugins/PrivacyManager/lang
+@dir %%WWWDIR%%/plugins/PrivacyManager/javascripts
+@dir %%WWWDIR%%/plugins/PrivacyManager
+@dir %%WWWDIR%%/plugins/Overlay/templates
+@dir %%WWWDIR%%/plugins/Overlay/stylesheets
+@dir %%WWWDIR%%/plugins/Overlay/lang
+@dir %%WWWDIR%%/plugins/Overlay/javascripts
+@dir %%WWWDIR%%/plugins/Overlay/images
+@dir %%WWWDIR%%/plugins/Overlay/client
+@dir %%WWWDIR%%/plugins/Overlay
+@dir %%WWWDIR%%/plugins/MultiSites/templates
+@dir %%WWWDIR%%/plugins/MultiSites/lang
+@dir %%WWWDIR%%/plugins/MultiSites/images
+@dir %%WWWDIR%%/plugins/MultiSites/angularjs/site
+@dir %%WWWDIR%%/plugins/MultiSites/angularjs/dashboard
+@dir %%WWWDIR%%/plugins/MultiSites/angularjs
+@dir %%WWWDIR%%/plugins/MultiSites/Reports
+@dir %%WWWDIR%%/plugins/MultiSites/Columns
+@dir %%WWWDIR%%/plugins/MultiSites
+@dir %%WWWDIR%%/plugins/Morpheus/templates
+@dir %%WWWDIR%%/plugins/Morpheus/stylesheets/uibase
+@dir %%WWWDIR%%/plugins/Morpheus/stylesheets/ui
+@dir %%WWWDIR%%/plugins/Morpheus/stylesheets/less
+@dir %%WWWDIR%%/plugins/Morpheus/stylesheets/general
+@dir %%WWWDIR%%/plugins/Morpheus/stylesheets
+@dir %%WWWDIR%%/plugins/Morpheus/javascripts
+@dir %%WWWDIR%%/plugins/Morpheus/images
+@dir %%WWWDIR%%/plugins/Morpheus
+@dir %%WWWDIR%%/plugins/MobileMessaging/templates
+@dir %%WWWDIR%%/plugins/MobileMessaging/stylesheets
+@dir %%WWWDIR%%/plugins/MobileMessaging/lang
+@dir %%WWWDIR%%/plugins/MobileMessaging/javascripts
+@dir %%WWWDIR%%/plugins/MobileMessaging/images
+@dir %%WWWDIR%%/plugins/MobileMessaging/SMSProvider
+@dir %%WWWDIR%%/plugins/MobileMessaging/ReportRenderer
+@dir %%WWWDIR%%/plugins/MobileMessaging
+@dir %%WWWDIR%%/plugins/Login/templates
+@dir %%WWWDIR%%/plugins/Login/stylesheets
+@dir %%WWWDIR%%/plugins/Login/lang
+@dir %%WWWDIR%%/plugins/Login/javascripts
+@dir %%WWWDIR%%/plugins/Login
+@dir %%WWWDIR%%/plugins/Live/templates
+@dir %%WWWDIR%%/plugins/Live/stylesheets
+@dir %%WWWDIR%%/plugins/Live/lang
+@dir %%WWWDIR%%/plugins/Live/javascripts
+@dir %%WWWDIR%%/plugins/Live/images
+@dir %%WWWDIR%%/plugins/Live/VisitorLog
+@dir %%WWWDIR%%/plugins/Live/Reports
+@dir %%WWWDIR%%/plugins/Live
+@dir %%WWWDIR%%/plugins/LeftMenu/stylesheets
+@dir %%WWWDIR%%/plugins/LeftMenu/lang
+@dir %%WWWDIR%%/plugins/LeftMenu
+@dir %%WWWDIR%%/plugins/LanguagesManager/templates
+@dir %%WWWDIR%%/plugins/LanguagesManager/lang
+@dir %%WWWDIR%%/plugins/LanguagesManager/angularjs/translationsearch
+@dir %%WWWDIR%%/plugins/LanguagesManager/angularjs/languageselector
+@dir %%WWWDIR%%/plugins/LanguagesManager/angularjs
+@dir %%WWWDIR%%/plugins/LanguagesManager/Commands
+@dir %%WWWDIR%%/plugins/LanguagesManager
+@dir %%WWWDIR%%/plugins/Installation/templates
+@dir %%WWWDIR%%/plugins/Installation/stylesheets
+@dir %%WWWDIR%%/plugins/Installation/lang
+@dir %%WWWDIR%%/plugins/Installation/javascripts
+@dir %%WWWDIR%%/plugins/Installation
+@dir %%WWWDIR%%/plugins/Insights/templates
+@dir %%WWWDIR%%/plugins/Insights/stylesheets
+@dir %%WWWDIR%%/plugins/Insights/lang
+@dir %%WWWDIR%%/plugins/Insights/javascripts
+@dir %%WWWDIR%%/plugins/Insights/images
+@dir %%WWWDIR%%/plugins/Insights/Visualizations/Insight
+@dir %%WWWDIR%%/plugins/Insights/Visualizations
+@dir %%WWWDIR%%/plugins/Insights/DataTable/Filter
+@dir %%WWWDIR%%/plugins/Insights/DataTable
+@dir %%WWWDIR%%/plugins/Insights
+@dir %%WWWDIR%%/plugins/ImageGraph/templates
+@dir %%WWWDIR%%/plugins/ImageGraph/lang
+@dir %%WWWDIR%%/plugins/ImageGraph/fonts
+@dir %%WWWDIR%%/plugins/ImageGraph/StaticGraph
+@dir %%WWWDIR%%/plugins/ImageGraph
+@dir %%WWWDIR%%/plugins/Goals/templates
+@dir %%WWWDIR%%/plugins/Goals/stylesheets
+@dir %%WWWDIR%%/plugins/Goals/lang
+@dir %%WWWDIR%%/plugins/Goals/javascripts
+@dir %%WWWDIR%%/plugins/Goals/Visualizations
+@dir %%WWWDIR%%/plugins/Goals/Reports
+@dir %%WWWDIR%%/plugins/Goals/Columns
+@dir %%WWWDIR%%/plugins/Goals
+@dir %%WWWDIR%%/plugins/Feedback/templates
+@dir %%WWWDIR%%/plugins/Feedback/stylesheets
+@dir %%WWWDIR%%/plugins/Feedback/lang
+@dir %%WWWDIR%%/plugins/Feedback/images
+@dir %%WWWDIR%%/plugins/Feedback/angularjs/ratefeature
+@dir %%WWWDIR%%/plugins/Feedback/angularjs
+@dir %%WWWDIR%%/plugins/Feedback
+@dir %%WWWDIR%%/plugins/ExampleVisualization/templates
+@dir %%WWWDIR%%/plugins/ExampleVisualization/images
+@dir %%WWWDIR%%/plugins/ExampleVisualization/Visualizations
+@dir %%WWWDIR%%/plugins/ExampleVisualization
+@dir %%WWWDIR%%/plugins/ExampleUI/templates
+@dir %%WWWDIR%%/plugins/ExampleUI/images/icons-planet
+@dir %%WWWDIR%%/plugins/ExampleUI/images
+@dir %%WWWDIR%%/plugins/ExampleUI
+@dir %%WWWDIR%%/plugins/ExampleTracker/lang
+@dir %%WWWDIR%%/plugins/ExampleTracker/Columns
+@dir %%WWWDIR%%/plugins/ExampleTracker
+@dir %%WWWDIR%%/plugins/ExampleTheme/stylesheets
+@dir %%WWWDIR%%/plugins/ExampleTheme/screenshots
+@dir %%WWWDIR%%/plugins/ExampleTheme/images
+@dir %%WWWDIR%%/plugins/ExampleTheme
+@dir %%WWWDIR%%/plugins/ExampleSettingsPlugin
+@dir %%WWWDIR%%/plugins/ExampleRssWidget/stylesheets
+@dir %%WWWDIR%%/plugins/ExampleRssWidget
+@dir %%WWWDIR%%/plugins/ExampleReport/Reports
+@dir %%WWWDIR%%/plugins/ExampleReport
+@dir %%WWWDIR%%/plugins/ExamplePlugin/templates
+@dir %%WWWDIR%%/plugins/ExamplePlugin/screenshots
+@dir %%WWWDIR%%/plugins/ExamplePlugin/javascripts
+@dir %%WWWDIR%%/plugins/ExamplePlugin/angularjs/directive-component
+@dir %%WWWDIR%%/plugins/ExamplePlugin/angularjs
+@dir %%WWWDIR%%/plugins/ExamplePlugin/Updates
+@dir %%WWWDIR%%/plugins/ExamplePlugin
+@dir %%WWWDIR%%/plugins/ExampleCommand/Commands
+@dir %%WWWDIR%%/plugins/ExampleCommand
+@dir %%WWWDIR%%/plugins/ExampleAPI
+@dir %%WWWDIR%%/plugins/Events/templates
+@dir %%WWWDIR%%/plugins/Events/lang
+@dir %%WWWDIR%%/plugins/Events/Reports
+@dir %%WWWDIR%%/plugins/Events/Columns
+@dir %%WWWDIR%%/plugins/Events/Actions
+@dir %%WWWDIR%%/plugins/Events
+@dir %%WWWDIR%%/plugins/DevicesDetection/templates
+@dir %%WWWDIR%%/plugins/DevicesDetection/lang
+@dir %%WWWDIR%%/plugins/DevicesDetection/images/screens
+@dir %%WWWDIR%%/plugins/DevicesDetection/images/brand
+@dir %%WWWDIR%%/plugins/DevicesDetection/images
+@dir %%WWWDIR%%/plugins/DevicesDetection/Updates
+@dir %%WWWDIR%%/plugins/DevicesDetection/Reports
+@dir %%WWWDIR%%/plugins/DevicesDetection/Columns
+@dir %%WWWDIR%%/plugins/DevicesDetection
+@dir %%WWWDIR%%/plugins/Dashboard/templates
+@dir %%WWWDIR%%/plugins/Dashboard/stylesheets
+@dir %%WWWDIR%%/plugins/Dashboard/lang
+@dir %%WWWDIR%%/plugins/Dashboard/javascripts
+@dir %%WWWDIR%%/plugins/Dashboard
+@dir %%WWWDIR%%/plugins/DBStats/templates
+@dir %%WWWDIR%%/plugins/DBStats/stylesheets
+@dir %%WWWDIR%%/plugins/DBStats/lang
+@dir %%WWWDIR%%/plugins/DBStats/Reports
+@dir %%WWWDIR%%/plugins/DBStats
+@dir %%WWWDIR%%/plugins/CustomVariables/lang
+@dir %%WWWDIR%%/plugins/CustomVariables/Reports
+@dir %%WWWDIR%%/plugins/CustomVariables/Commands
+@dir %%WWWDIR%%/plugins/CustomVariables/Columns
+@dir %%WWWDIR%%/plugins/CustomVariables
+@dir %%WWWDIR%%/plugins/CoreVisualizations/templates
+@dir %%WWWDIR%%/plugins/CoreVisualizations/stylesheets
+@dir %%WWWDIR%%/plugins/CoreVisualizations/javascripts
+@dir %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/JqplotGraph/Evolution
+@dir %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/JqplotGraph
+@dir %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/HtmlTable
+@dir %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/Graph
+@dir %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/Cloud
+@dir %%WWWDIR%%/plugins/CoreVisualizations/Visualizations
+@dir %%WWWDIR%%/plugins/CoreVisualizations/JqplotDataGenerator
+@dir %%WWWDIR%%/plugins/CoreVisualizations
+@dir %%WWWDIR%%/plugins/CoreUpdater/templates
+@dir %%WWWDIR%%/plugins/CoreUpdater/stylesheets
+@dir %%WWWDIR%%/plugins/CoreUpdater/lang
+@dir %%WWWDIR%%/plugins/CoreUpdater/javascripts
+@dir %%WWWDIR%%/plugins/CoreUpdater/Commands
+@dir %%WWWDIR%%/plugins/CoreUpdater
+@dir %%WWWDIR%%/plugins/CorePluginsAdmin/templates
+@dir %%WWWDIR%%/plugins/CorePluginsAdmin/stylesheets
+@dir %%WWWDIR%%/plugins/CorePluginsAdmin/lang
+@dir %%WWWDIR%%/plugins/CorePluginsAdmin/javascripts
+@dir %%WWWDIR%%/plugins/CorePluginsAdmin/images
+@dir %%WWWDIR%%/plugins/CorePluginsAdmin
+@dir %%WWWDIR%%/plugins/CoreHome/templates/ReportsByDimension
+@dir %%WWWDIR%%/plugins/CoreHome/templates/ReportRenderer
+@dir %%WWWDIR%%/plugins/CoreHome/templates
+@dir %%WWWDIR%%/plugins/CoreHome/stylesheets/dataTable
+@dir %%WWWDIR%%/plugins/CoreHome/stylesheets
+@dir %%WWWDIR%%/plugins/CoreHome/lang
+@dir %%WWWDIR%%/plugins/CoreHome/javascripts
+@dir %%WWWDIR%%/plugins/CoreHome/images
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/siteselector
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/notification
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/menudropdown
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/enrichedheadline
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/dialogtoggler
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/common/services
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/common/filters
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/common/directives
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/common
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs/ajax-form
+@dir %%WWWDIR%%/plugins/CoreHome/angularjs
+@dir %%WWWDIR%%/plugins/CoreHome/DataTableRowAction
+@dir %%WWWDIR%%/plugins/CoreHome/Columns
+@dir %%WWWDIR%%/plugins/CoreHome
+@dir %%WWWDIR%%/plugins/CoreConsole/templates
+@dir %%WWWDIR%%/plugins/CoreConsole/Commands
+@dir %%WWWDIR%%/plugins/CoreConsole
+@dir %%WWWDIR%%/plugins/CoreAdminHome/templates
+@dir %%WWWDIR%%/plugins/CoreAdminHome/stylesheets
+@dir %%WWWDIR%%/plugins/CoreAdminHome/lang
+@dir %%WWWDIR%%/plugins/CoreAdminHome/javascripts
+@dir %%WWWDIR%%/plugins/CoreAdminHome/Commands
+@dir %%WWWDIR%%/plugins/CoreAdminHome
+@dir %%WWWDIR%%/plugins/Contents/stylesheets
+@dir %%WWWDIR%%/plugins/Contents/screenshots
+@dir %%WWWDIR%%/plugins/Contents/lang
+@dir %%WWWDIR%%/plugins/Contents/javascripts
+@dir %%WWWDIR%%/plugins/Contents/Reports
+@dir %%WWWDIR%%/plugins/Contents/Columns
+@dir %%WWWDIR%%/plugins/Contents/Actions
+@dir %%WWWDIR%%/plugins/Contents
+@dir %%WWWDIR%%/plugins/Annotations/templates
+@dir %%WWWDIR%%/plugins/Annotations/stylesheets
+@dir %%WWWDIR%%/plugins/Annotations/lang
+@dir %%WWWDIR%%/plugins/Annotations/javascripts
+@dir %%WWWDIR%%/plugins/Annotations
+@dir %%WWWDIR%%/plugins/Actions/templates
+@dir %%WWWDIR%%/plugins/Actions/stylesheets
+@dir %%WWWDIR%%/plugins/Actions/lang
+@dir %%WWWDIR%%/plugins/Actions/javascripts
+@dir %%WWWDIR%%/plugins/Actions/Reports
+@dir %%WWWDIR%%/plugins/Actions/Columns
+@dir %%WWWDIR%%/plugins/Actions/Actions
+@dir %%WWWDIR%%/plugins/Actions
+@dir %%WWWDIR%%/plugins/API/templates
+@dir %%WWWDIR%%/plugins/API/stylesheets
+@dir %%WWWDIR%%/plugins/API/lang
+@dir %%WWWDIR%%/plugins/API/Renderer
+@dir %%WWWDIR%%/plugins/API
+@dir %%WWWDIR%%/plugins
+@dir %%WWWDIR%%/misc/user
+@dir %%WWWDIR%%/misc/proxy-hide-piwik-url
+@dir %%WWWDIR%%/misc/phpstorm-codestyles
+@dir %%WWWDIR%%/misc/others
+@dir %%WWWDIR%%/misc/log-analytics
+@dir %%WWWDIR%%/misc/internal-docs
+@dir %%WWWDIR%%/misc/cron
+@dir %%WWWDIR%%/misc/composer
+@dir %%WWWDIR%%/misc
+@dir %%WWWDIR%%/libs/upgradephp
+@dir %%WWWDIR%%/libs/tcpdf/include
+@dir %%WWWDIR%%/libs/tcpdf/fonts
+@dir %%WWWDIR%%/libs/tcpdf/config/lang
+@dir %%WWWDIR%%/libs/tcpdf/config
+@dir %%WWWDIR%%/libs/tcpdf
+@dir %%WWWDIR%%/libs/sparkline/lib
+@dir %%WWWDIR%%/libs/sparkline
+@dir %%WWWDIR%%/libs/pChart2.1.3/class
+@dir %%WWWDIR%%/libs/pChart2.1.3
+@dir %%WWWDIR%%/libs/jquery/themes/base/images
+@dir %%WWWDIR%%/libs/jquery/themes/base
+@dir %%WWWDIR%%/libs/jquery/themes
+@dir %%WWWDIR%%/libs/jquery/stylesheets
+@dir %%WWWDIR%%/libs/jquery/images
+@dir %%WWWDIR%%/libs/jquery
+@dir %%WWWDIR%%/libs/jqplot/plugins
+@dir %%WWWDIR%%/libs/jqplot
+@dir %%WWWDIR%%/libs/javascript
+@dir %%WWWDIR%%/libs/Zend/Validate/Hostname
+@dir %%WWWDIR%%/libs/Zend/Validate/File
+@dir %%WWWDIR%%/libs/Zend/Validate
+@dir %%WWWDIR%%/libs/Zend/Session/Validator
+@dir %%WWWDIR%%/libs/Zend/Session/SaveHandler
+@dir %%WWWDIR%%/libs/Zend/Session
+@dir %%WWWDIR%%/libs/Zend/Mime
+@dir %%WWWDIR%%/libs/Zend/Mail/Transport
+@dir %%WWWDIR%%/libs/Zend/Mail/Storage/Writable
+@dir %%WWWDIR%%/libs/Zend/Mail/Storage/Folder
+@dir %%WWWDIR%%/libs/Zend/Mail/Storage
+@dir %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp/Auth
+@dir %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp
+@dir %%WWWDIR%%/libs/Zend/Mail/Protocol
+@dir %%WWWDIR%%/libs/Zend/Mail/Part
+@dir %%WWWDIR%%/libs/Zend/Mail/Message
+@dir %%WWWDIR%%/libs/Zend/Mail
+@dir %%WWWDIR%%/libs/Zend/Db/Table/Select
+@dir %%WWWDIR%%/libs/Zend/Db/Table/Rowset
+@dir %%WWWDIR%%/libs/Zend/Db/Table/Row
+@dir %%WWWDIR%%/libs/Zend/Db/Table
+@dir %%WWWDIR%%/libs/Zend/Db/Statement/Sqlsrv
+@dir %%WWWDIR%%/libs/Zend/Db/Statement/Pdo
+@dir %%WWWDIR%%/libs/Zend/Db/Statement/Oracle
+@dir %%WWWDIR%%/libs/Zend/Db/Statement/Mysqli
+@dir %%WWWDIR%%/libs/Zend/Db/Statement/Db2
+@dir %%WWWDIR%%/libs/Zend/Db/Statement
+@dir %%WWWDIR%%/libs/Zend/Db/Select
+@dir %%WWWDIR%%/libs/Zend/Db/Profiler
+@dir %%WWWDIR%%/libs/Zend/Db/Adapter/Sqlsrv
+@dir %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Ibm
+@dir %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo
+@dir %%WWWDIR%%/libs/Zend/Db/Adapter/Oracle
+@dir %%WWWDIR%%/libs/Zend/Db/Adapter/Mysqli
+@dir %%WWWDIR%%/libs/Zend/Db/Adapter/Db2
+@dir %%WWWDIR%%/libs/Zend/Db/Adapter
+@dir %%WWWDIR%%/libs/Zend/Db
+@dir %%WWWDIR%%/libs/Zend/Config/Writer
+@dir %%WWWDIR%%/libs/Zend/Config
+@dir %%WWWDIR%%/libs/Zend/Cache/Frontend
+@dir %%WWWDIR%%/libs/Zend/Cache/Backend/ZendServer
+@dir %%WWWDIR%%/libs/Zend/Cache/Backend
+@dir %%WWWDIR%%/libs/Zend/Cache
+@dir %%WWWDIR%%/libs/Zend
+@dir %%WWWDIR%%/libs/UserAgentParser
+@dir %%WWWDIR%%/libs/PiwikTracker
+@dir %%WWWDIR%%/libs/PEAR
+@dir %%WWWDIR%%/libs/MaxMindGeoIP
+@dir %%WWWDIR%%/libs/HTML/QuickForm2/Rule
+@dir %%WWWDIR%%/libs/HTML/QuickForm2/Renderer
+@dir %%WWWDIR%%/libs/HTML/QuickForm2/Element
+@dir %%WWWDIR%%/libs/HTML/QuickForm2/DataSource
+@dir %%WWWDIR%%/libs/HTML/QuickForm2/Controller/Action
+@dir %%WWWDIR%%/libs/HTML/QuickForm2/Controller
+@dir %%WWWDIR%%/libs/HTML/QuickForm2/Container
+@dir %%WWWDIR%%/libs/HTML/QuickForm2
+@dir %%WWWDIR%%/libs/HTML
+@dir %%WWWDIR%%/libs
+@dir %%WWWDIR%%/lang
+@dir %%WWWDIR%%/js
+@dir %%WWWDIR%%/core/Visualization
+@dir %%WWWDIR%%/core/ViewDataTable
+@dir %%WWWDIR%%/core/View
+@dir %%WWWDIR%%/core/Updates
+@dir %%WWWDIR%%/core/Translate/Validate
+@dir %%WWWDIR%%/core/Translate/Filter
+@dir %%WWWDIR%%/core/Translate
+@dir %%WWWDIR%%/core/Tracker/Db/Pdo
+@dir %%WWWDIR%%/core/Tracker/Db
+@dir %%WWWDIR%%/core/Tracker
+@dir %%WWWDIR%%/core/Settings
+@dir %%WWWDIR%%/core/Session/SaveHandler
+@dir %%WWWDIR%%/core/Session
+@dir %%WWWDIR%%/core/ScheduledTime
+@dir %%WWWDIR%%/core/ReportRenderer
+@dir %%WWWDIR%%/core/Plugin/Dimension
+@dir %%WWWDIR%%/core/Plugin
+@dir %%WWWDIR%%/core/Period
+@dir %%WWWDIR%%/core/Notification
+@dir %%WWWDIR%%/core/Metrics
+@dir %%WWWDIR%%/core/Menu
+@dir %%WWWDIR%%/core/Http
+@dir %%WWWDIR%%/core/Db/Schema
+@dir %%WWWDIR%%/core/Db/Adapter/Pdo
+@dir %%WWWDIR%%/core/Db/Adapter
+@dir %%WWWDIR%%/core/Db
+@dir %%WWWDIR%%/core/DataTable/Row
+@dir %%WWWDIR%%/core/DataTable/Renderer
+@dir %%WWWDIR%%/core/DataTable/Filter
+@dir %%WWWDIR%%/core/DataTable
+@dir %%WWWDIR%%/core/DataFiles
+@dir %%WWWDIR%%/core/DataAccess
+@dir %%WWWDIR%%/core/CronArchive
+@dir %%WWWDIR%%/core/Columns
+@dir %%WWWDIR%%/core/CliMulti
+@dir %%WWWDIR%%/core/Cache
+@dir %%WWWDIR%%/core/AssetManager/UIAssetMerger
+@dir %%WWWDIR%%/core/AssetManager/UIAssetFetcher
+@dir %%WWWDIR%%/core/AssetManager/UIAsset
+@dir %%WWWDIR%%/core/AssetManager
+@dir %%WWWDIR%%/core/ArchiveProcessor
+@dir %%WWWDIR%%/core/Archive
+@dir %%WWWDIR%%/core/API/DataTableManipulator
+@dir %%WWWDIR%%/core/API
+@dir %%WWWDIR%%/core
+@dir %%WWWDIR%%/config
+@dir %%WWWDIR%%
 @exec install -m 755 -o %%WWWOWN%% -g %%WWWGRP%% -d %D/%%WWWDIR%%/tmp
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/config
