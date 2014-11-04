@@ -7175,3 +7175,4 @@ www/typo347||2014-10-30|Has expired: Upgrade to www/typo3 or www/typo3-lts
 deskutils/babytrans||2014-10-31|Has expired: Abandonware, dictionaries unavailable
 www/rt38||2014-10-31|Has expired: Has expired: End of Life March 2014
 textproc/libmwaw|textproc/libmwaw03|2014-10-31|Replaced by newer version
+databases/pecl-yac|devel/pecl-yac|2014-11-04|Duplicate port
