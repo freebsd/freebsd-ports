@@ -1,0 +1,9 @@
+Yac is a shared memory user data cache for PHP.  It can be used instead of
+APC or local memcached.
+
+Yac is lockless, which it is very fast, but there could be a chance the
+wrong data will be retrieved (it depends on how many key slots are
+allocated and how many keys are stored), so a product using Yac should not
+be very sensitive to data loss.
+
+WWW: http://pecl.php.net/package/yac

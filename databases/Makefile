@@ -522,6 +522,7 @@
     SUBDIR += pecl-pdo_user
     SUBDIR += pecl-rrd
     SUBDIR += pecl-tokyo_tyrant
+    SUBDIR += pecl-yac
     SUBDIR += percona-toolkit
     SUBDIR += percona55-client
     SUBDIR += percona55-server
