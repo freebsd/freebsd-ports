@@ -1,8 +1,7 @@
-# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
 # $FreeBSD$
 
 PORTNAME=	seqtools
-PORTVERSION=	4.29
+PORTVERSION=	4.30
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/seqtools/PRODUCTION/
 
