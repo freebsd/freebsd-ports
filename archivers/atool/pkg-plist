@@ -1,0 +1,14 @@
+bin/acat
+bin/adiff
+bin/als
+bin/apack
+bin/arepack
+bin/atool
+bin/aunpack
+man/man1/acat.1.gz
+man/man1/adiff.1.gz
+man/man1/als.1.gz
+man/man1/apack.1.gz
+man/man1/arepack.1.gz
+man/man1/atool.1.gz
+man/man1/aunpack.1.gz
