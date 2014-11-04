@@ -1,0 +1,11 @@
+--- extra/CMakeLists.txt.orig	2014-08-09 00:13:40.000000000 +0200
++++ extra/CMakeLists.txt	2014-09-05 18:32:20.555373233 +0200
+@@ -80,6 +80,8 @@
+   MYSQL_ADD_EXECUTABLE(resolve_stack_dump resolve_stack_dump.c)
+   TARGET_LINK_LIBRARIES(resolve_stack_dump mysys)
+ 
++IF(FALSE)
+   MYSQL_ADD_EXECUTABLE(mysql_waitpid mysql_waitpid.c COMPONENT Client)
+   TARGET_LINK_LIBRARIES(mysql_waitpid mysys)
+ ENDIF()
++ENDIF()

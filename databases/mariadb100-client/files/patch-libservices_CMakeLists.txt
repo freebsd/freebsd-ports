@@ -1,0 +1,9 @@
+--- libservices/CMakeLists.txt.orig	2014-08-09 00:13:47.000000000 +0200
++++ libservices/CMakeLists.txt	2014-09-05 22:29:05.110415834 +0200
+@@ -29,4 +29,6 @@
+   logger_service.c)
+ 
+ ADD_CONVENIENCE_LIBRARY(mysqlservices ${MYSQLSERVICES_SOURCES})
++IF(FALSE)
+ INSTALL(TARGETS mysqlservices DESTINATION ${INSTALL_LIBDIR} COMPONENT Development)
++ENDIF()

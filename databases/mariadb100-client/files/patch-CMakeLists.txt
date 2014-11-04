@@ -1,0 +1,55 @@
+--- CMakeLists.txt.orig	2014-09-25 00:29:47.000000000 +0200
++++ CMakeLists.txt	2014-09-27 09:57:32.000000000 +0200
+@@ -430,28 +430,8 @@
+ ADD_SUBDIRECTORY(extra)
+ ADD_SUBDIRECTORY(libservices)
+ ADD_SUBDIRECTORY(scripts)
+-ADD_SUBDIRECTORY(sql/share)
+ ADD_SUBDIRECTORY(support-files)
+ 
+-IF(NOT WITHOUT_SERVER)
+-  ADD_SUBDIRECTORY(tests)
+-  ADD_SUBDIRECTORY(sql)
+-  OPTION (WITH_EMBEDDED_SERVER "Compile MySQL with embedded server" OFF)
+-  IF(WITH_EMBEDDED_SERVER) 
+-   ADD_SUBDIRECTORY(libmysqld)
+-   ADD_SUBDIRECTORY(libmysqld/examples)
+-  ENDIF(WITH_EMBEDDED_SERVER)
+-
+-  ADD_SUBDIRECTORY(mysql-test)
+-  ADD_SUBDIRECTORY(mysql-test/lib/My/SafeProcess)
+-  ADD_SUBDIRECTORY(sql-bench)
+-
+-  IF(EXISTS ${CMAKE_SOURCE_DIR}/internal/CMakeLists.txt)
+-    ADD_SUBDIRECTORY(internal)
+-  ENDIF()
+-  ADD_SUBDIRECTORY(packaging/rpm-oel)
+-ENDIF()
+-
+ IF(UNIX)
+   ADD_SUBDIRECTORY(man)
+ ENDIF()
+@@ -463,7 +443,6 @@
+   ADD_SUBDIRECTORY(win/upgrade_wizard)
+   ADD_SUBDIRECTORY(win/packaging)
+ ENDIF()
+-ADD_SUBDIRECTORY(packaging/solaris)
+ 
+ IF(NOT CMAKE_CROSSCOMPILING)
+   SET(EXPORTED comp_err comp_sql factorial)
+@@ -506,6 +485,7 @@
+   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+ )
+ 
++IF(FALSE)
+ INSTALL_DOCUMENTATION(README CREDITS COPYING COPYING.LESSER EXCEPTIONS-CLIENT
+                       COMPONENT Readme)
+ 
+@@ -516,6 +496,7 @@
+ IF(UNIX)
+   INSTALL_DOCUMENTATION(Docs/INSTALL-BINARY COMPONENT Readme)
+ ENDIF()
++ENDIF()
+ 
+ INCLUDE(CPack)
+ 

@@ -1,0 +1,14 @@
+--- sql/CMakeLists.txt.orig	2014-09-05 22:49:59.808332000 +0200
++++ sql/CMakeLists.txt	2014-09-05 22:50:18.768326206 +0200
+@@ -226,9 +226,9 @@
+ )
+ 
+ # Gen_lex_hash
+-IF(NOT CMAKE_CROSSCOMPILING)
++
+   ADD_EXECUTABLE(gen_lex_hash gen_lex_hash.cc)
+-ENDIF()
++
+ 
+ ADD_CUSTOM_COMMAND(
+   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/lex_hash.h

@@ -1,0 +1,48 @@
+--- support-files/CMakeLists.txt.orig	2014-06-13 13:36:52.080474738 +0300
++++ support-files/CMakeLists.txt	2014-06-13 13:50:59.537282325 +0300
+@@ -41,15 +41,18 @@
+   SET(inst_location ${INSTALL_SUPPORTFILESDIR})
+ ENDIF()
+ 
++IF(FALSE)
+ FOREACH(inifile my-huge my-innodb-heavy-4G my-large my-medium my-small)
+   CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${inifile}.cnf.sh 
+                  ${CMAKE_CURRENT_BINARY_DIR}/${inifile}.${ini_file_extension} @ONLY)
+   INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${inifile}.${ini_file_extension}
+           DESTINATION ${inst_location} COMPONENT IniFiles)
+ ENDFOREACH()
++ENDIF()
+ 
+ IF(UNIX)
+   SET(prefix ${CMAKE_INSTALL_PREFIX})
++  IF(FALSE)
+   FOREACH(script  mysqld_multi.server mysql-log-rotate binary-configure)
+     CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${script}.sh 
+                    ${CMAKE_CURRENT_BINARY_DIR}/${script} @ONLY )
+@@ -67,8 +70,10 @@
+     INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
+     INSTALL(DIRECTORY RHEL4-SElinux/ DESTINATION ${inst_location}/SELinux/RHEL4 COMPONENT SupportFiles)
+   ENDIF()
++  ENDIF()
+ 
+   INSTALL(FILES mysql.m4 DESTINATION ${INSTALL_SHAREDIR}/aclocal COMPONENT Development)
++  IF(FALSE)
+   CONFIGURE_FILE(MySQL-shared-compat.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/MySQL-shared-compat.spec @ONLY)
+   CONFIGURE_FILE(mysql.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/mysql.spec @ONLY)
+   
+@@ -92,6 +97,7 @@
+     DESTINATION ${inst_location} COMPONENT SupportFiles
+     PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ 
+     GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
++  
+ 
+   IF (INSTALL_SYSCONFDIR)
+     INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/mysql-log-rotate DESTINATION ${INSTALL_SYSCONFDIR}/logrotate.d
+@@ -101,6 +107,7 @@
+             RENAME mysql COMPONENT SupportFiles
+             PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ 
+             GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
++ ENDIF()
+ 
+     INSTALL(FILES rpm/my.cnf DESTINATION ${INSTALL_SYSCONFDIR}
+             COMPONENT Common)
