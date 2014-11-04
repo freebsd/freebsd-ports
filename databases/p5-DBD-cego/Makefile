@@ -6,7 +6,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Cego DBI driver for Perl 5
 
 LICENSE=	GPLv3
@@ -22,9 +22,6 @@ USES=		gmake
 USES+=		perl5
 USE_PERL5=	configure
 CC:=		${CXX}
-
-#post-configure:
-#	@${REINPLACE_CMD} -e 's|fno-strict-aliasing|& -fpermissive|g' ${WRKSRC}/Makefile
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/DBD/Cego/Cego.so
