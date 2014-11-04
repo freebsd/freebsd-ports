@@ -49,8 +49,6 @@ EMBEDDED_PERL_USE=	perl5=run,build
 EXIMON_USE=	xorg=x11,xaw,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 ICONV_USES=	iconv:lib,build
-KAS_BUILD_DEPENDS=	libspamtest>=0:${PORTSDIR}/mail/libspamtest
-KAS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-kas
 MYSQL_USE=	mysql=yes
 OPENLDAP_USE=	openldap=yes
 PGSQL_USE=	pgsql=yes

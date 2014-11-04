@@ -50,7 +50,7 @@ OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
 
 OPTIONS_RADIO_TLS=	TLS GNUTLS
 TLS_DESC=	TLS support
-OPTIONS_RADIO_LS=	SA_EXIM KAS
+OPTIONS_RADIO_LS=	SA_EXIM
 LS_DESC=	Local scan patch
 OPTIONS_RADIO_SRSR=	SRS SRS_ALT
 SRSR_DESC=	Sender Rewriting Scheme
@@ -89,7 +89,6 @@ DSEARCH_DESC=		Enable directory-list lookups
 EMBEDDED_PERL_DESC=	Enable embedded Perl interpreter
 EXIMON_DESC=		Build eximon monitor (requires X libraries)
 ICONV_DESC=		Enable header charset conversion
-KAS_DESC=		Build with Kaspersky AntiSpam local scan
 LISTMATCH_RHS_DESC=	Enable pre-4.77 behaviour for match_*
 LMTP_DESC=		RFC2033 SMTP over command pipe transport
 LSEARCH_DESC=		Enable wildcarded-file lookups
