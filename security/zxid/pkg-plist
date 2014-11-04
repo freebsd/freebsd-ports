@@ -129,6 +129,3 @@ lib/libzxid.so.0.0
 %%PORTDOCS%%%%DOCSDIR%%/zxid-simple.pd
 %%PORTDOCS%%%%DOCSDIR%%/zxid-tas3.pd
 %%PORTDOCS%%%%DOCSDIR%%/zxid-wsf.pd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/zxid
-@dirrm include/zx

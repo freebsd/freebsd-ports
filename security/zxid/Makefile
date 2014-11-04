@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zxid
-PORTVERSION=	1.18
+PORTVERSION=	1.22
 CATEGORIES=	security www
 MASTER_SITES=	http://zxid.org/
 
@@ -19,7 +19,8 @@ USE_CSTD=	gnu89
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		LD="${CC}" LDFLAGS="${LDFLAGS}" \
 		PREFIX="${PREFIX}" OPENSSL_ROOT="${OPENSSLBASE}" \
-		POSTLIBS="${LDFLAGS}" TARGET="${OPSYS:tl}"
+		POSTLIBS="${LDFLAGS}" TARGET="${OPSYS:tl}" \
+		V=1
 ALL_TARGET=	default smime libzxid.so.0.0
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
