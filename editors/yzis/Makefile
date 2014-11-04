@@ -32,7 +32,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	KYZIS NYZIS DOCS
 OPTIONS_SUB=	yes
 KYZIS_DESC=	Build kyzis and Yzis kpart
-KYZIS_USE=	KDE4=kdehier,kdeprefix,kdelibs,automoc4 QT4=phonon
+KYZIS_USE=	KDE4=kdeprefix,kdelibs,automoc4 QT4=phonon
 KYZIS_CMAKE_ON=	-DENABLE_KYZIS:BOOL=ON -DENABLE_KPART_YZIS:BOOL=ON
 KYZIS_CMAKE_OFF=	-DENABLE_KYZIS:BOOL=OFF -DENABLE_KPART_YZIS:BOOL=OFF
 NYZIS_DESC=	Build nyzis (ncurses frontend)
