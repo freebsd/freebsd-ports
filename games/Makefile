@@ -662,6 +662,7 @@
     SUBDIR += openastromenace
     SUBDIR += openbubbles
     SUBDIR += opencity
+    SUBDIR += openclonk
     SUBDIR += opengfx
     SUBDIR += openglad
     SUBDIR += openjazz
