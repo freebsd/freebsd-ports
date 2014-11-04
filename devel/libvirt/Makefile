@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
