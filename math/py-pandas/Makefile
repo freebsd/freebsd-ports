@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandas
-PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTVERSION=	0.15.0
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 TEST_DEPENDS:=	${RUN_DEPENDS} \
@@ -22,12 +21,12 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 		cython:${PORTSDIR}/lang/cython \
 		${PYTHON_PKGNAMEPREFIX}boto>0:${PORTSDIR}/devel/py-boto \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}tables>0:${PORTSDIR}/devel/py-tables \
+		${PYTHON_PKGNAMEPREFIX}tables>=3.0.0:${PORTSDIR}/devel/py-tables \
 		${PYTHON_PKGNAMEPREFIX}bottleneck>0:${PORTSDIR}/math/py-bottleneck \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}numexpr>0:${PORTSDIR}/math/py-numexpr \
+		${PYTHON_PKGNAMEPREFIX}numexpr>=2.1.0:${PORTSDIR}/math/py-numexpr \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:${PORTSDIR}/science/py-scipy \
-		${PYTHON_PKGNAMEPREFIX}openpyxl1<2.0.0:${PORTSDIR}/textproc/py-openpyxl1 \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>=2.0.0:${PORTSDIR}/textproc/py-openpyxl \
 		${PYTHON_PKGNAMEPREFIX}xlrd>0:${PORTSDIR}/textproc/py-xlrd \
 		${PYTHON_PKGNAMEPREFIX}xlwt>0:${PORTSDIR}/textproc/py-xlwt \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:${PORTSDIR}/www/py-beautifulsoup \
@@ -40,7 +39,9 @@ OPTIONS_GROUP=		ACCEL STORAGE HTML EXCEL
 OPTIONS_GROUP_ACCEL=	BTLNCK NUMEXPR
 OPTIONS_GROUP_STORAGE=	BOTO TABLES
 OPTIONS_GROUP_HTML=	LXML HTML5LIB
-OPTIONS_GROUP_EXCEL=	OPENPYXL XLRD XLWT
+OPTIONS_GROUP_EXCEL=	XLRD XLWT
+OPTIONS_RADIO=		OPYXL
+OPTIONS_RADIO_OPYXL=	OPENPYXL1 OPENPYXL2
 
 MPL_DESC=	Support graphical plotting output via math/py-matplotlib
 SCIPY_DESC=	Support various statistical functions via science/py-scipy
@@ -50,23 +51,26 @@ BOTO_DESC=	Support Amazon S3 storage via devel/py-boto
 TABLES_DESC=	Support HDF5-based storage via devel/py-tables
 LXML_DESC=	Parse HTML with devel/py-lxml and www/py-beautifulsoup
 HTML5LIB_DESC=	Parse HTML with www/py-html5lib and www/py-beautifulsoup
-OPENPYXL_DESC=	Read/write MS Excel 2007+ with textproc/py-openpyxl1
+OPENPYXL1_DESC=	Read/write MS Excel 2007+ with textproc/py-openpyxl1
+OPENPYXL2_DESC=	Read/write MS Excel 2007+ with textproc/py-openpyxl (EXPERIMENTAL)
 XLRD_DESC=	Read MS Excel with textproc/py-xlrd
 XLWT_DESC=	Write MS Excel with textproc/py-xlwt
 ACCEL_DESC=	Computation Acceleration Add-ons
 STORAGE_DESC=	Data Storage Add-ons
 HTML_DESC=	HTML Parsing Add-ons
 EXCEL_DESC=	MS Excel I/O Add-ons
+OPYXL_DESC=	MS Excel I/O Add-ons (openpyxl alternatives)
 
 MPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib
 SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:${PORTSDIR}/science/py-scipy
 BTLNCK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottleneck>0:${PORTSDIR}/math/py-bottleneck
-NUMEXPR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numexpr>0:${PORTSDIR}/math/py-numexpr
+NUMEXPR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numexpr>=2.1.0:${PORTSDIR}/math/py-numexpr
 BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:${PORTSDIR}/devel/py-boto
-TABLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tables>0:${PORTSDIR}/devel/py-tables
+TABLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tables>=3.0.0:${PORTSDIR}/devel/py-tables
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
 HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib
-OPENPYXL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl1<2.0.0:${PORTSDIR}/textproc/py-openpyxl1
+OPENPYXL1_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl1<2.0.0:${PORTSDIR}/textproc/py-openpyxl1
+OPENPYXL2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=2.0.0:${PORTSDIR}/textproc/py-openpyxl
 XLRD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlrd>0:${PORTSDIR}/textproc/py-xlrd
 XLWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlwt>0:${PORTSDIR}/textproc/py-xlwt
 
