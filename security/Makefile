@@ -256,6 +256,7 @@
     SUBDIR += l0phtcrack
     SUBDIR += l5
     SUBDIR += lasso
+    SUBDIR += lastpass-cli
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf
