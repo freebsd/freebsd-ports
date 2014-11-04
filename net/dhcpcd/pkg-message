@@ -1,0 +1,4 @@
+The default FreeBSD kernel does not allow userland to provide IPv6
+Prefix Routes, which dhcpcd needs to do when running the default configuration.
+
+See http://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194485 for a patch.
