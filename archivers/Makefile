@@ -9,6 +9,7 @@
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += ark
+    SUBDIR += atool
     SUBDIR += bicom
     SUBDIR += bzip
     SUBDIR += bzip2
