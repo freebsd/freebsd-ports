@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foxtrotgps
-PORTVERSION=	1.1.1
-PORTREVISION=	7
+PORTVERSION=	1.2.0
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 
@@ -23,7 +22,8 @@ CONFIGURE_ARGS=	--disable-schemas-install
 USES=		gettext gmake pkgconfig shebangfix
 SHEBANG_FILES=	contrib/convert2gpx \
 		contrib/convert2osm \
-		contrib/georss2foxtrotgps-poi
+		contrib/georss2foxtrotgps-poi\
+		contrib/gpx2osm
 
 USE_GNOME=	gtk20 gconf2 libxml2 intltool libglade2
 USE_SQLITE=	3
