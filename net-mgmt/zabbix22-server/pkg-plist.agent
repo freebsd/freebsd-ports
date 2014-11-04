@@ -4,9 +4,6 @@ bin/zabbix_get
 bin/zabbix_sender
 sbin/zabbix_agent
 sbin/zabbix_agentd
-@dirrmtry %%ETCDIR%%/zabbix_agentd.conf.d
-@dirrmtry %%ETCDIR%%/zabbix_agent.conf.d
-@dirrmtry %%ETCDIR%%
 man/man1/zabbix_get.1.gz
 man/man1/zabbix_sender.1.gz
 man/man8/zabbix_%%ZABBIX_BUILD%%d.8.gz
