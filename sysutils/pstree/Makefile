@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://ftp.thp.uni-due.de/pub/source/ \
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	List processes as a tree
 
+USES=		alias
 NO_WRKSUBDIR=	yes
 
 CONFLICTS=	psmisc-[0-9]*
