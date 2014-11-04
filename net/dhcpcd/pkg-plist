@@ -1,4 +1,4 @@
-%%ETCDIR%%.conf
+@sample etc/dhcpcd.conf.sample
 libexec/dhcpcd-hooks/01-test
 libexec/dhcpcd-hooks/02-dump
 libexec/dhcpcd-hooks/10-mtu
@@ -14,4 +14,3 @@ man/man5/dhcpcd.conf.5.gz
 man/man8/dhcpcd-run-hooks.8.gz
 man/man8/dhcpcd.8.gz
 sbin/dhcpcd
-@dirrmtry libexec/dhcpcd-hooks
