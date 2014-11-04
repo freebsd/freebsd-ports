@@ -54,7 +54,7 @@
 #
 # In any case, you will need a working fetchmailrc file. Please consult
 # the man page fetchmail(1), the documentation in %%PREFIX%%/share/doc/fetchmail/
-# and/or the material found at http://fetchmail.berlios.de/.
+# and/or the material found at <http://www.fetchmail.info/>.
 
 . /etc/rc.subr
 
