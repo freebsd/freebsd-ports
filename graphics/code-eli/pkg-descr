@@ -1,0 +1,6 @@
+This is a collection of C++ libraries that provides a variety of
+functionalities.  Eigen3 is needed for most of the components to work
+since all of the vector and matrix math is done using Eigen3. CPPTest
+is used to perform unit testing on the components.
+
+WWW: https://github.com/ddmarshall/Code-Eli

@@ -85,6 +85,7 @@
     SUBDIR += clutter
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
+    SUBDIR += code-eli
     SUBDIR += colord
     SUBDIR += colord-gtk
     SUBDIR += comical
