@@ -63,7 +63,9 @@ CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	55
 
-CONFLICTS_INSTALL=	mysql5.[0-46-9]-server-* mysql[0-46-9][0-9]-server-* mariadb[0-9][0-9]-server-* percona[0-9][0-9]-server-*
+CONFLICTS_INSTALL=	mysql5[0-46-9]-server-* \
+			mariadb*-server-* \
+			percona*-server-*
 
 USE_RC_SUBR=	mysql-server
 
