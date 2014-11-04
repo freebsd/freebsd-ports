@@ -38,6 +38,7 @@
 %%WWWDIR%%/include/locales.inc.php
 %%WWWDIR%%/include/translateDefines.inc.php
 %%WWWDIR%%/include/draw.inc.php
+%%WWWDIR%%/include/classes/validators/CDecimalStringValidator.php
 %%WWWDIR%%/include/views/administration.general.image.edit.php
 %%WWWDIR%%/include/views/administration.general.regularexpressions.list.php
 %%WWWDIR%%/include/views/monitoring.discovery.php
@@ -455,33 +456,6 @@
 %%WWWDIR%%/slideconf.php
 %%WWWDIR%%/adm.valuemapping.php
 %%WWWDIR%%/popup_media.php
-%%WWWDIR%%/images/sysmaps/Printer.png
-%%WWWDIR%%/images/sysmaps/UPS_small.png
-%%WWWDIR%%/images/sysmaps/Server_small.png
-%%WWWDIR%%/images/sysmaps/Router.png
-%%WWWDIR%%/images/sysmaps/Network.png
-%%WWWDIR%%/images/sysmaps/Phone.png
-%%WWWDIR%%/images/sysmaps/Workstation.png
-%%WWWDIR%%/images/sysmaps/Notebook_small.png
-%%WWWDIR%%/images/sysmaps/Notebook.png
-%%WWWDIR%%/images/sysmaps/Network_small.png
-%%WWWDIR%%/images/sysmaps/Satellite.png
-%%WWWDIR%%/images/sysmaps/README
-%%WWWDIR%%/images/sysmaps/Server.png
-%%WWWDIR%%/images/sysmaps/UPS.png
-%%WWWDIR%%/images/sysmaps/Phone_small.png
-%%WWWDIR%%/images/sysmaps/Printer_small.png
-%%WWWDIR%%/images/sysmaps/Workstation_small.png
-%%WWWDIR%%/images/sysmaps/Hub.png
-%%WWWDIR%%/images/sysmaps/Router_small.png
-%%WWWDIR%%/images/sysmaps/Satellite_small.png
-%%WWWDIR%%/images/sysmaps/Hub_small.png
-%%WWWDIR%%/images/sysmaps/old/Workstation.png
-%%WWWDIR%%/images/sysmaps/old/Hub.png
-%%WWWDIR%%/images/sysmaps/old/Router.png
-%%WWWDIR%%/images/sysmaps/old/Server.png
-%%WWWDIR%%/images/sysmaps/old/Notebook.png
-%%WWWDIR%%/images/sysmaps/old/Printer.png
 %%WWWDIR%%/images/flash/zbxclock.swf
 %%WWWDIR%%/images/gradients/table_head2_bb.gif
 %%WWWDIR%%/images/gradients/sla_red15.png
@@ -821,126 +795,3 @@
 %%WWWDIR%%/tr_logform.php
 %%WWWDIR%%/auditlogs.php
 %%WWWDIR%%/report6.php
-@dirrm %%WWWDIR%%/audio
-@dirrm %%WWWDIR%%/include/views/js
-@dirrm %%WWWDIR%%/include/views
-@dirrm %%WWWDIR%%/include/classes/graphdraw
-@dirrm %%WWWDIR%%/include/classes/import/formatters
-@dirrm %%WWWDIR%%/include/classes/import/readers
-@dirrm %%WWWDIR%%/include/classes/import/importers
-@dirrm %%WWWDIR%%/include/classes/import
-@dirrm %%WWWDIR%%/include/classes/tree
-@dirrm %%WWWDIR%%/include/classes/export/writers
-@dirrm %%WWWDIR%%/include/classes/export
-@dirrm %%WWWDIR%%/include/classes/debug
-@dirrm %%WWWDIR%%/include/classes/api
-@dirrm %%WWWDIR%%/include/classes/core
-@dirrm %%WWWDIR%%/include/classes/sysmaps
-@dirrm %%WWWDIR%%/include/classes/db
-@dirrm %%WWWDIR%%/include/classes/helpers
-@dirrm %%WWWDIR%%/include/classes/screens
-@dirrm %%WWWDIR%%/include/classes/parsers
-@dirrm %%WWWDIR%%/include/classes/html
-@dirrm %%WWWDIR%%/include/classes/items
-@dirrm %%WWWDIR%%/include/classes/macros
-@dirrm %%WWWDIR%%/include/classes/server
-@dirrm %%WWWDIR%%/include/classes/validators/schema
-@dirrm %%WWWDIR%%/include/classes/validators/hostgroup
-@dirrm %%WWWDIR%%/include/classes/validators/event
-@dirrm %%WWWDIR%%/include/classes/validators/host
-@dirrm %%WWWDIR%%/include/classes/validators/string
-@dirrm %%WWWDIR%%/include/classes/validators/object
-@dirrm %%WWWDIR%%/include/classes/validators
-@dirrm %%WWWDIR%%/include/classes
-@dirrm %%WWWDIR%%/include
-@dirrm %%WWWDIR%%/api/rpc
-@dirrm %%WWWDIR%%/api/classes/managers
-@dirrm %%WWWDIR%%/api/classes
-@dirrm %%WWWDIR%%/api
-@dirrm %%WWWDIR%%/images/sysmaps/old
-@dirrm %%WWWDIR%%/images/sysmaps
-@dirrm %%WWWDIR%%/images/flash
-@dirrm %%WWWDIR%%/images/gradients
-@dirrm %%WWWDIR%%/images/general/tree
-@dirrm %%WWWDIR%%/images/general/browserwarning
-@dirrm %%WWWDIR%%/images/general/bttn
-@dirrm %%WWWDIR%%/images/general/setup
-@dirrm %%WWWDIR%%/images/general/login
-@dirrm %%WWWDIR%%/images/general/bar
-@dirrm %%WWWDIR%%/images/general
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/locale/hu/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/hu
-@dirrm %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/pt_BR
-@dirrm %%WWWDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/pt_PT
-@dirrm %%WWWDIR%%/locale/pl/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/pl
-@dirrm %%WWWDIR%%/locale/es/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/es
-@dirrm %%WWWDIR%%/locale/cs/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/cs
-@dirrm %%WWWDIR%%/locale/fa/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/fa
-@dirrm %%WWWDIR%%/locale/fi/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/fi
-@dirrm %%WWWDIR%%/locale/fr/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/fr
-@dirrm %%WWWDIR%%/locale/nl/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/nl
-@dirrm %%WWWDIR%%/locale/uk/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/uk
-@dirrm %%WWWDIR%%/locale/de/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/de
-@dirrm %%WWWDIR%%/locale/ja/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/ja
-@dirrm %%WWWDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/zh_TW
-@dirrm %%WWWDIR%%/locale/el/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/el
-@dirrm %%WWWDIR%%/locale/lv/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/lv
-@dirrm %%WWWDIR%%/locale/ko/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/ko
-@dirrm %%WWWDIR%%/locale/sv/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/sv
-@dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/zh_CN
-@dirrm %%WWWDIR%%/locale/ru/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/ru
-@dirrm %%WWWDIR%%/locale/id/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/id
-@dirrm %%WWWDIR%%/locale/it/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/it
-@dirrm %%WWWDIR%%/locale/tr/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/tr
-@dirrm %%WWWDIR%%/locale/sk/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/sk
-@dirrm %%WWWDIR%%/locale/en_US/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/en_US
-@dirrm %%WWWDIR%%/locale/bg/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/bg
-@dirrm %%WWWDIR%%/locale/lt/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/lt
-@dirrm %%WWWDIR%%/locale/ro/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/ro
-@dirrm %%WWWDIR%%/locale/vi/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/vi
-@dirrm %%WWWDIR%%/locale
-@dirrm %%WWWDIR%%/conf
-@dirrm %%WWWDIR%%/js/jquery
-@dirrm %%WWWDIR%%/js/vendors
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/fonts
-@dirrm %%WWWDIR%%/styles/themes/classic/images
-@dirrm %%WWWDIR%%/styles/themes/classic
-@dirrm %%WWWDIR%%/styles/themes/darkorange/images
-@dirrm %%WWWDIR%%/styles/themes/darkorange
-@dirrm %%WWWDIR%%/styles/themes/darkblue/images
-@dirrm %%WWWDIR%%/styles/themes/darkblue
-@dirrm %%WWWDIR%%/styles/themes/originalblue/images
-@dirrm %%WWWDIR%%/styles/themes/originalblue
-@dirrm %%WWWDIR%%/styles/themes
-@dirrm %%WWWDIR%%/styles
-@dirrm %%WWWDIR%%
