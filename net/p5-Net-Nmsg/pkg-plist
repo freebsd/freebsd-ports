@@ -1,0 +1,17 @@
+%%PERL5_MAN3%%/Net::Nmsg.3.gz
+%%PERL5_MAN3%%/Net::Nmsg::IO.3.gz
+%%PERL5_MAN3%%/Net::Nmsg::Input.3.gz
+%%PERL5_MAN3%%/Net::Nmsg::Msg.3.gz
+%%PERL5_MAN3%%/Net::Nmsg::Output.3.gz
+%%PERL5_MAN3%%/Net::Nmsg::Util.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Nmsg.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Nmsg/Handle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Nmsg/IO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Nmsg/Input.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Nmsg/Layer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Nmsg/Msg.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Nmsg/Output.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Nmsg/Typemap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Nmsg/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Nmsg/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Nmsg/Nmsg.so

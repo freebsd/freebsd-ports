@@ -1,0 +1,14 @@
+Net::Nmsg is a perl binding to libnmsg, the reference implementation of
+the NMSG binary structured message interchange format. The NMSG
+documentation describes the format as:
+
+  The NMSG format is an efficient encoding of typed, structured data
+  into payloads which are packed into containers which can be
+  transmitted over the network or stored to disk. Each payload is
+  associated with a specific message schema. Modules implementing a
+  certain message schema along with functionality to convert between
+  binary and presentation formats can be loaded at runtime by libnmsg.
+  nmsgtool provides a command line interface to control the
+  transmission, storage, creation, and conversion of NMSG payloads.
+
+WWW: https://tools.netsa.cert.org/confluence/display/tt/Net-Nmsg
