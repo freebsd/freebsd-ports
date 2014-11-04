@@ -580,6 +580,7 @@
     SUBDIR += luminance-qt5
     SUBDIR += luxrender
     SUBDIR += mahotas
+    SUBDIR += maim
     SUBDIR += makehuman
     SUBDIR += mandelbulber
     SUBDIR += mapnik
