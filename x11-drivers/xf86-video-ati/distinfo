@@ -1,4 +1,2 @@
-SHA256 (xorg/driver/xf86-video-ati-6.14.6.tar.bz2) = aa5286b3e4f0187d7df14785c06dd800255d9405205dbf061da5d77df86bec36
-SIZE (xorg/driver/xf86-video-ati-6.14.6.tar.bz2) = 1139495
-SHA256 (xorg/driver/xf86-video-ati-7.2.0.tar.bz2) = f30f5efdc8d7d18d06eda7ef2f91a8b7290f1cfbf6ff26362cd47ab8969daec4
-SIZE (xorg/driver/xf86-video-ati-7.2.0.tar.bz2) = 824613
+SHA256 (xorg/driver/xf86-video-ati-7.5.0.tar.bz2) = ec3e6f06b6cf9a40c72aafa3448aae8b034c80b37410ca9442d5cf6806e07936
+SIZE (xorg/driver/xf86-video-ati-7.5.0.tar.bz2) = 809756
