@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	raptor2
-PORTVERSION=	2.0.14
+PORTVERSION=	2.0.15
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/ \
 		SF/librdf/${PORTNAME}/${PORTVERSION}
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
 		--with-icu-config=${LOCALBASE}/bin/icu-config \
 		--with-www=curl
+INSTALL_TARGET=	install-strip
 
 USE_LDCONFIG=	yes
 
