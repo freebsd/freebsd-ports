@@ -1,4 +1,4 @@
-bin/toppler
+@(,games,2555) bin/toppler
 man/man6/toppler.6.gz
 share/applications/toppler.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -23,10 +23,5 @@ share/pixmaps/toppler.xpm
 %%DATADIR%%/pasi2.ttm
 %%DATADIR%%/toppler.dat
 %%DATADIR%%/toppler.ogg
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p /var/games/toppler
-@exec chgrp games /var/games/toppler
-@unexec if [ ! -s /var/games/toppler/toppler.hsc ] ; then rm -f /var/games/toppler/toppler.hsc; rmdir /var/games/toppler ; fi
-@exec touch /var/games/toppler/toppler.hsc
-@exec chmod 664 /var/games/toppler/toppler.hsc
+@sample(,games,664) /var/games/toppler/toppler.hsc.sample
+@dir(,games,775) /var/games/toppler

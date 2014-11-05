@@ -1,5 +1,5 @@
---- ./Makefile.in.orig	2011-03-06 20:00:43.000000000 +0000
-+++ ./Makefile.in	2013-10-23 16:58:33.155503773 +0000
+--- Makefile.in.orig	2011-03-06 20:00:43 UTC
++++ Makefile.in
 @@ -359,7 +359,7 @@
  dist_pixmaps_DATA = $(PACKAGE).xpm
  applications_DATA = $(PACKAGE).desktop
@@ -9,12 +9,9 @@
  dist_pkgdata_DATA = \
    toppler.dat toppler.ogg \
    m1.ttm m2.ttm ball1.ttm ball2.ttm ball3.ttm abc.ttm pasi2.ttm david1.ttm
-@@ -1084,16 +1084,14 @@
- 
- install-data-am: install-applicationsDATA install-dist_pixmapsDATA \
+@@ -1086,14 +1086,12 @@
  	install-dist_pkgdataDATA install-dist_pkgdocDATA \
--	install-dist_pkglocalstateDATA install-man
-+	install-man
+ 	install-dist_pkglocalstateDATA install-man
  	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
  install-dvi: install-dvi-recursive
