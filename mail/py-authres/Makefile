@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	authres
-PORTVERSION=	0.602
+PORTVERSION=	0.701
 CATEGORIES=	mail python
-MASTER_SITES=	http://launchpad.net/authentication-results-python/trunk/0.602/+download/
+MASTER_SITES=	http://launchpad.net/authentication-results-python/0.700/0.701/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yasu@utahime.org
@@ -22,7 +22,7 @@ PORTDOCS=	CHANGES README
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
