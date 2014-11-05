@@ -1,4 +1,4 @@
 A pure Python module to decode (read) and encode (write) PNG files.
 All PNG formats are supported.
 
-WWW: http://code.google.com/p/pypng/
+WWW: https://github.com/drj11/pypng
