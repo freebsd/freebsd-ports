@@ -1442,6 +1442,7 @@ lib32/wine/fakedlls/msxml3.dll
 lib32/wine/fakedlls/msxml4.dll
 lib32/wine/fakedlls/msxml6.dll
 lib32/wine/fakedlls/nddeapi.dll
+lib32/wine/fakedlls/ndis.sys
 lib32/wine/fakedlls/net.exe
 lib32/wine/fakedlls/netapi32.dll
 lib32/wine/fakedlls/netcfgx.dll
@@ -1491,6 +1492,7 @@ lib32/wine/fakedlls/plugplay.exe
 lib32/wine/fakedlls/powrprof.dll
 lib32/wine/fakedlls/presentationfontcache.exe
 lib32/wine/fakedlls/printui.dll
+lib32/wine/fakedlls/prntvpt.dll
 lib32/wine/fakedlls/progman.exe
 lib32/wine/fakedlls/propsys.dll
 lib32/wine/fakedlls/psapi.dll
@@ -2006,6 +2008,7 @@ lib32/wine/msxml3.dll.so
 lib32/wine/msxml4.dll.so
 lib32/wine/msxml6.dll.so
 lib32/wine/nddeapi.dll.so
+lib32/wine/ndis.sys.so
 lib32/wine/net.exe.so
 lib32/wine/netapi32.dll.so
 lib32/wine/netcfgx.dll.so
@@ -2055,6 +2058,7 @@ lib32/wine/plugplay.exe.so
 lib32/wine/powrprof.dll.so
 lib32/wine/presentationfontcache.exe.so
 lib32/wine/printui.dll.so
+lib32/wine/prntvpt.dll.so
 lib32/wine/progman.exe.so
 lib32/wine/propsys.dll.so
 lib32/wine/psapi.dll.so
