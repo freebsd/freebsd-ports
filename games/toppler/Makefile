@@ -3,7 +3,7 @@
 
 PORTNAME=	toppler
 PORTVERSION=	1.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -21,5 +21,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
+
+SCOREFILE=	/var/games/toppler/toppler.hsc
+
+post-install:
+	${MV} ${STAGEDIR}${SCOREFILE} ${STAGEDIR}${SCOREFILE}.sample
 
 .include <bsd.port.mk>
