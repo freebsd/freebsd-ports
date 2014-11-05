@@ -57,6 +57,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0167f5ad-64ea-11e4-98c1-00269ee29e57">
+    <topic>Konversation -- out-of-bounds read on a heap-allocated array</topic>
+    <affects>
+      <package>
+	<name>konversation</name>
+	<range><lt>1.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Konversation developers reports:</p>
+	<blockquote cite="https://www.kde.org/info/security/advisory-20141104-1.txt">
+	  <p>Konversation's Blowfish ECB encryption support assumes incoming blocks
+	  to be the expected 12 bytes. The lack of a sanity-check for the actual
+	  size can cause a denial of service and an information leak to the local
+	  user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8483</cvename>
+      <url>https://www.kde.org/info/security/advisory-20141104-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-11-04</discovery>
+      <entry>2014-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="21ce1840-6107-11e4-9e84-0022156e8794">
     <topic>twiki -- remote Perl code execution</topic>
     <affects>
