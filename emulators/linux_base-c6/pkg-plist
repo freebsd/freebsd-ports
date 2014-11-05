@@ -3576,7 +3576,6 @@ var/mail
 @dirrm usr/share/gnome
 @dirrm usr/share/ghostscript/conf.d
 @dirrm usr/share/ghostscript
-@dirrm usr/share/glib-2.0/schemas
 @dirrm usr/share/glib-2.0
 @dirrm usr/share/games
 @dirrm usr/share/empty
@@ -3605,12 +3604,10 @@ var/mail
 @dirrm usr/share/doc/grep-2.6.3
 @dirrm usr/share/doc/glibc-common-2.12
 @dirrm usr/share/doc/glibc-2.12
-@dirrm usr/share/doc/glib2-2.26.1
 @dirrm usr/share/doc/gdbm-1.8.0
 @dirrm usr/share/doc/gamin-0.1.10
 @dirrm usr/share/doc/freetype-2.3.11
 @dirrm usr/share/doc/findutils-4.4.2
-@dirrm usr/share/doc/elfutils-0.152
 @dirrm usr/share/doc/e2fsprogs-libs-1.41.12
 @dirrm usr/share/doc/e2fsprogs-1.41.12
 @dirrm usr/share/doc/db4-4.7.25
