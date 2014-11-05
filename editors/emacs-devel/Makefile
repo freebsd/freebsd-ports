@@ -21,8 +21,8 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
-EMACS_VER=	24.4.50
-EMACS_REV=	117676
+EMACS_VER=	25.0.50
+EMACS_REV=	118251
 GNU_CONFIGURE=	yes
 USES=		gmake makeinfo ncurses pkgconfig shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -40,7 +40,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --without-compress-install
 EMACS_DIRS=	${DATADIR}/${EMACS_VER}/lisp ${DATADIR}/${EMACS_VER}/src \
 		${PREFIX}/libexec/${PORTNAME}
 
-PLIST_SUB=	EMACS_VER=${EMACS_VER} INFODIR=${INFO_PATH}
+PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 
 MAKE_ENV=	LC_ALL=C
 
@@ -202,7 +202,7 @@ IGNORE=	opentype fonts support requires Xft. Please run 'make config'
 
 .for OPT in SVG GTK2 GTK3 XAW3D XAW MOTIF SCROLLBARS JPEG TIFF GIF PNG XPM XFT M17N MAGICK GCONF GSETTINGS XIM
 .if ${PORT_OPTIONS:M${OPT}}
-IGNORE=	${OPT} option depends on X11 option
+IGNORE=	option ${OPT} requires X11 option
 .endif
 .endfor
 
@@ -210,7 +210,7 @@ IGNORE=	${OPT} option depends on X11 option
 
 .if !${PORT_OPTIONS:MDBUS}
 .if ${PORT_OPTIONS:MGSETTINGS}
-IGNORE=	GSettings support requires DBUS. Please run 'make config'
+IGNORE=	support for GSettings requires DBUS. Please run 'make config'
 .endif
 .endif
 
@@ -235,17 +235,6 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e "s/^\(DBUS_LIBS.*\)-pthread\(.*\)$$/\1$$(${DBUS_PTHREAD_LIBS})\2/" \
 			  ${WRKSRC}/src/Makefile
-
-add-plist-data:
-.for i in ${EMACS_DIRS}
-	@${FIND} ${STAGEDIR}${i} -type f |${SED} -E -e 's,^${STAGEDIR}${PREFIX}/,,g'  >>${TMPPLIST}
-.endfor
-	@${FIND} ${WRKSRC}/etc -type f |${SED} -E -e 's,^${WRKSRC},${DATADIR_REL}/${EMACS_VER},g' -e '/etc\/(\..*|ChangeLog)$$/d' >>${TMPPLIST}
-	@${FIND} ${WRKSRC}/etc -type d -depth |${SED} -E -e 's,^${WRKSRC},@dirrm ${DATADIR_REL}/${EMACS_VER},g' >>${TMPPLIST}
-.for i in ${EMACS_DIRS}
-	@${FIND} ${STAGEDIR}${i} -type d -depth |${SED} -E -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,g' >>${TMPPLIST}
-.endfor
-	@${ECHO} "@unexec rmdir %D/${DATADIR_REL}/${EMACS_VER} 2>/dev/null || true" >>${TMPPLIST}
 
 pre-configure:
 	@cd ${WRKSRC} && ./autogen.sh
