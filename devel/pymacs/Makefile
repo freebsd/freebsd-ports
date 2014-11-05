@@ -3,6 +3,7 @@
 
 PORTNAME=	Pymacs
 PORTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	devel editors python elisp
 MASTER_SITES=	GH
 

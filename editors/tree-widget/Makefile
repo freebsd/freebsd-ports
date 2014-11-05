@@ -3,7 +3,7 @@
 
 PORTNAME=	tree-widget
 PORTVERSION=	2.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	editors elisp
 MASTER_SITES=	SF/emhacks/${PORTNAME}/${PORTVERSION} \
 		http://dryice.name/computer/FreeBSD/distfiles/

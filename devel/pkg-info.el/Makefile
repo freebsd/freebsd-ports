@@ -2,6 +2,7 @@
 
 PORTNAME=	pkg-info.el
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 DISTNAME=	pkg-info-${PORTVERSION}
 
