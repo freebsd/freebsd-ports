@@ -1,20 +1,17 @@
-bin/xboard
 bin/cmail
+bin/xboard
 man/man6/xboard.6.gz
-share/applications/xboard.desktop
 share/applications/xboard-config.desktop
 share/applications/xboard-fen-viewer.desktop
 share/applications/xboard-pgn-viewer.desktop
 share/applications/xboard-tourney.desktop
-share/icons/hicolor/48x48/apps/xboard.png
-share/icons/hicolor/scalable/apps/xboard.svg
-share/mime/packages/xboard.xml
-%%DATADIR%%/pixmaps/textures/board32.xpm
-%%DATADIR%%/pixmaps/textures/board48.xpm
-%%DATADIR%%/pixmaps/textures/cross32.xpm
-%%DATADIR%%/pixmaps/textures/cross48.xpm
-%%DATADIR%%/pixmaps/textures/ini32.xpm
-%%DATADIR%%/pixmaps/textures/ini48.xpm
+share/applications/xboard.desktop
+%%DATADIR%%/pixmaps/textures/board32.png
+%%DATADIR%%/pixmaps/textures/board48.png
+%%DATADIR%%/pixmaps/textures/cross32.png
+%%DATADIR%%/pixmaps/textures/cross48.png
+%%DATADIR%%/pixmaps/textures/ini32.png
+%%DATADIR%%/pixmaps/textures/ini48.png
 %%DATADIR%%/sounds/cymbal.wav
 %%DATADIR%%/sounds/ding1.wav
 %%DATADIR%%/sounds/gong.wav
@@ -23,59 +20,94 @@ share/mime/packages/xboard.xml
 %%DATADIR%%/sounds/penalty.wav
 %%DATADIR%%/sounds/phone.wav
 %%DATADIR%%/sounds/pop2.wav
+%%DATADIR%%/sounds/roar.wav
 %%DATADIR%%/sounds/slap.wav
 %%DATADIR%%/sounds/woodthunk.wav
+%%DATADIR%%/themes/conf/chu
+%%DATADIR%%/themes/conf/ics
+%%DATADIR%%/themes/conf/mini
+%%DATADIR%%/themes/conf/mini.fen
+%%DATADIR%%/themes/conf/sho
+%%DATADIR%%/themes/conf/sho.fen
+%%DATADIR%%/themes/conf/shogi
+%%DATADIR%%/themes/conf/xq
 %%DATADIR%%/themes/default/BlackAdvisor.svg
 %%DATADIR%%/themes/default/BlackArchbishop.svg
 %%DATADIR%%/themes/default/BlackBishop.svg
 %%DATADIR%%/themes/default/BlackCanon.svg
 %%DATADIR%%/themes/default/BlackChancellor.svg
+%%DATADIR%%/themes/default/BlackClaw.svg
 %%DATADIR%%/themes/default/BlackCobra.svg
 %%DATADIR%%/themes/default/BlackCommoner.svg
 %%DATADIR%%/themes/default/BlackCrownedBishop.svg
 %%DATADIR%%/themes/default/BlackCrownedRook.svg
+%%DATADIR%%/themes/default/BlackDolphin.svg
 %%DATADIR%%/themes/default/BlackElephant.svg
 %%DATADIR%%/themes/default/BlackGold.svg
 %%DATADIR%%/themes/default/BlackGoldKnight.svg
 %%DATADIR%%/themes/default/BlackGoldLance.svg
 %%DATADIR%%/themes/default/BlackGoldPawn.svg
 %%DATADIR%%/themes/default/BlackGoldSilver.svg
+%%DATADIR%%/themes/default/BlackHCrown.svg
+%%DATADIR%%/themes/default/BlackHSword.svg
 %%DATADIR%%/themes/default/BlackHawk.svg
 %%DATADIR%%/themes/default/BlackKing.svg
 %%DATADIR%%/themes/default/BlackKnight.svg
 %%DATADIR%%/themes/default/BlackLance.svg
+%%DATADIR%%/themes/default/BlackLeopard.svg
+%%DATADIR%%/themes/default/BlackLion.svg
 %%DATADIR%%/themes/default/BlackMarshall.svg
 %%DATADIR%%/themes/default/BlackNightrider.svg
 %%DATADIR%%/themes/default/BlackPawn.svg
 %%DATADIR%%/themes/default/BlackPrincess.svg
+%%DATADIR%%/themes/default/BlackPromoBishop.svg
+%%DATADIR%%/themes/default/BlackPromoDragon.svg
+%%DATADIR%%/themes/default/BlackPromoHSword.svg
+%%DATADIR%%/themes/default/BlackPromoHorse.svg
+%%DATADIR%%/themes/default/BlackPromoRook.svg
+%%DATADIR%%/themes/default/BlackPromoSword.svg
 %%DATADIR%%/themes/default/BlackQueen.svg
 %%DATADIR%%/themes/default/BlackRook.svg
+%%DATADIR%%/themes/default/BlackSword.svg
 %%DATADIR%%/themes/default/BlackUnicorn.svg
 %%DATADIR%%/themes/default/WhiteAdvisor.svg
 %%DATADIR%%/themes/default/WhiteArchbishop.svg
 %%DATADIR%%/themes/default/WhiteBishop.svg
 %%DATADIR%%/themes/default/WhiteCanon.svg
 %%DATADIR%%/themes/default/WhiteChancellor.svg
+%%DATADIR%%/themes/default/WhiteClaw.svg
 %%DATADIR%%/themes/default/WhiteCobra.svg
 %%DATADIR%%/themes/default/WhiteCommoner.svg
 %%DATADIR%%/themes/default/WhiteCrownedBishop.svg
 %%DATADIR%%/themes/default/WhiteCrownedRook.svg
+%%DATADIR%%/themes/default/WhiteDolphin.svg
 %%DATADIR%%/themes/default/WhiteElephant.svg
 %%DATADIR%%/themes/default/WhiteGold.svg
 %%DATADIR%%/themes/default/WhiteGoldKnight.svg
 %%DATADIR%%/themes/default/WhiteGoldLance.svg
 %%DATADIR%%/themes/default/WhiteGoldPawn.svg
 %%DATADIR%%/themes/default/WhiteGoldSilver.svg
+%%DATADIR%%/themes/default/WhiteHCrown.svg
+%%DATADIR%%/themes/default/WhiteHSword.svg
 %%DATADIR%%/themes/default/WhiteHawk.svg
 %%DATADIR%%/themes/default/WhiteKing.svg
 %%DATADIR%%/themes/default/WhiteKnight.svg
 %%DATADIR%%/themes/default/WhiteLance.svg
+%%DATADIR%%/themes/default/WhiteLeopard.svg
+%%DATADIR%%/themes/default/WhiteLion.svg
 %%DATADIR%%/themes/default/WhiteMarshall.svg
 %%DATADIR%%/themes/default/WhiteNightrider.svg
 %%DATADIR%%/themes/default/WhitePawn.svg
 %%DATADIR%%/themes/default/WhitePrincess.svg
+%%DATADIR%%/themes/default/WhitePromoBishop.svg
+%%DATADIR%%/themes/default/WhitePromoDragon.svg
+%%DATADIR%%/themes/default/WhitePromoHSword.svg
+%%DATADIR%%/themes/default/WhitePromoHorse.svg
+%%DATADIR%%/themes/default/WhitePromoRook.svg
+%%DATADIR%%/themes/default/WhitePromoSword.svg
 %%DATADIR%%/themes/default/WhiteQueen.svg
 %%DATADIR%%/themes/default/WhiteRook.svg
+%%DATADIR%%/themes/default/WhiteSword.svg
 %%DATADIR%%/themes/default/WhiteUnicorn.svg
 %%DATADIR%%/themes/default/eo_Analyzing.svg
 %%DATADIR%%/themes/default/eo_Black.svg
@@ -132,10 +164,14 @@ share/mime/packages/xboard.xml
 %%DATADIR%%/themes/xiangqi/WhiteKnight.svg
 %%DATADIR%%/themes/xiangqi/WhitePawn.svg
 %%DATADIR%%/themes/xiangqi/WhiteRook.svg
+share/icons/hicolor/48x48/apps/xboard.png
+share/icons/hicolor/scalable/apps/xboard.svg
 %%NLS%%share/locale/da/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xboard.mo
@@ -143,14 +179,5 @@ share/mime/packages/xboard.xml
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xboard.mo
-@dirrm %%DATADIR%%/pixmaps/textures
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/themes/default
-@dirrm %%DATADIR%%/themes/shogi
-@dirrm %%DATADIR%%/themes/textures
-@dirrm %%DATADIR%%/themes/xiangqi
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%
-@dirrmtry share/games
+share/mime/packages/xboard.xml
 @sample etc/xboard.conf.sample
