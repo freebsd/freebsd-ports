@@ -20,4 +20,6 @@ PLIST_FILES=	bin/vnless \
 		man/man1/vnlesskey.1.gz \
 		share/misc/vnless.help
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
