@@ -3,6 +3,7 @@
 
 PORTNAME=	alsa-plugins-oss
 PORTVERSION=	1.0.21
+PORTREVISION=	1
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
 

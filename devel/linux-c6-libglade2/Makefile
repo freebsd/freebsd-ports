@@ -3,6 +3,7 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org

@@ -3,6 +3,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.8.8
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org

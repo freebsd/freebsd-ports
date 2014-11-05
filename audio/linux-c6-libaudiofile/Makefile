@@ -3,6 +3,7 @@
 
 PORTNAME=	libaudiofile
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	audio linux
 DISTNAME=	audiofile-${PORTVERSION}-${RPMVERSION}
 

@@ -26,14 +26,3 @@ usr/share/man/man1/nasd.1x.gz
 usr/share/man/man1/playbucket.1x.gz
 usr/share/man/man1/soundtoh.1x.gz
 usr/share/man/man5/nasd.conf.5x.gz
-@dirrmtry usr/share/man/man5
-@dirrmtry usr/share/man/man1
-@dirrmtry usr/share/man
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry usr/share/doc
-@dirrmtry usr/share
-@dirrmtry usr/lib/X11
-@dirrmtry usr/lib
-@dirrmtry usr
-@dirrmtry etc/nas
-@dirrmtry etc

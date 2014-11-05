@@ -51,8 +51,8 @@ IGNORE=         valid values for OVERRIDE_LINUX_NONBASE_PORTS are: \"f10\" and \
 LINUX_DIST_SUFFIX=      -${USE_LINUX}
 .        endif
 .  else
-# default
-LINUX_DIST_SUFFIX=      -f10 # temporary default, set to -c6 soon
+# default to CentOS 6.6
+LINUX_DIST_SUFFIX=      -c6
 .  endif
 
 WEB_AUTH=			nvu
@@ -212,7 +212,7 @@ gnutls_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-gnutls
 gnutls_DEPENDS=		libtasn1 libgcrypt libgpg-error
 
 gtk2_f10_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.1400.7
-gtk2_c6_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.2000.1
+gtk2_c6_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.2400.23
 gtk2_DETECT=		${gtk2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gtk2_PORT=			${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-gtk2
 gtk2_DEPENDS=		atk jpeg png pango tiff xorglibs
@@ -335,7 +335,7 @@ naslibs_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-nas-libs
 naslibs_DEPENDS=	xorglibs
 
 openldap_f10_FILE=	${LINUXBASE}/usr/lib/libldap-2.4.so.2.2.0
-openldap_c6_FILE=	${LINUXBASE}/lib/libldap-2.4.so.2.5.6
+openldap_c6_FILE=	${LINUXBASE}/lib/libldap-2.4.so.2.10.2
 openldap_DETECT=	${openldap${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openldap_PORT=		${PORTSDIR}/net/linux${LINUX_DIST_SUFFIX}-openldap
 

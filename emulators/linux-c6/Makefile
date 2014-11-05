@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linux-c6
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -77,7 +76,6 @@ RUN_DEPENDS+=	linux-c6-libasyncns>0:${PORTSDIR}/dns/linux-c6-libasyncns \
 		linux-c6-curl>0:${PORTSDIR}/ftp/linux-c6-curl \
 		linux-c6-tcp_wrappers-libs>0:${PORTSDIR}/net/linux-c6-tcp_wrappers-libs \
 		linux-c6-openldap>0:${PORTSDIR}/net/linux-c6-openldap \
-		linux-c6-avahi-libs>0:${PORTSDIR}/net/linux-c6-avahi-libs \
 		linux-c6-expat>0:${PORTSDIR}/textproc/linux-c6-expat \
 		linux-c6-aspell>0:${PORTSDIR}/textproc/linux-c6-aspell \
 		linux-c6-libxml2>0:${PORTSDIR}/textproc/linux-c6-libxml2 \
@@ -86,13 +84,7 @@ RUN_DEPENDS+=	linux-c6-libasyncns>0:${PORTSDIR}/dns/linux-c6-libasyncns \
 		linux-c6-png>0:${PORTSDIR}/graphics/linux-c6-png \
 		linux-c6-tiff>0:${PORTSDIR}/graphics/linux-c6-tiff \
 		linux-c6-jpeg>0:${PORTSDIR}/graphics/linux-c6-jpeg \
-		linux-c6-cairo>0:${PORTSDIR}/graphics/linux-c6-cairo
-
-OPTIONS_DEFINE=	NVIDIA_GL
-NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
-
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
-			linux-c6-libGLU>0:${PORTSDIR}/graphics/linux-c6-libGLU
-NVIDIA_GL_RUN_DEPENDS_OFF=	linux-c6-dri>0:${PORTSDIR}/graphics/linux-c6-dri
+		linux-c6-cairo>0:${PORTSDIR}/graphics/linux-c6-cairo \
+		linux-c6-dri>0:${PORTSDIR}/graphics/linux-c6-dri
 
 .include <bsd.port.mk>

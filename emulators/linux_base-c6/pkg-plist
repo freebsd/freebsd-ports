@@ -122,8 +122,9 @@ etc/yum.repos.d/CentOS-Base.repo
 etc/yum.repos.d/CentOS-Debuginfo.repo
 etc/yum.repos.d/CentOS-Media.repo
 etc/yum.repos.d/CentOS-Vault.repo
+etc/yum.repos.d/CentOS-fasttrack.repo
+etc/yum/vars/infra
 etc/bash_completion.d/gdbus-bash-completion.sh
-etc/bash_completion.d/gsettings-bash-completion.sh
 lib/i686/nosegneg/libc-2.12.so
 lib/i686/nosegneg/libc.so.6
 lib/i686/nosegneg/libm-2.12.so
@@ -170,19 +171,19 @@ lib/libext2fs.so.2.4
 lib/libgcc_s-4.4.7-20120601.so.1
 lib/libgcc_s.so.1
 lib/libgio-2.0.so.0
-lib/libgio-2.0.so.0.2600.1
+lib/libgio-2.0.so.0.2800.8
 lib/libglib-2.0.so.0
-lib/libglib-2.0.so.0.2600.1
+lib/libglib-2.0.so.0.2800.8
 lib/libgmodule-2.0.so.0
-lib/libgmodule-2.0.so.0.2600.1
+lib/libgmodule-2.0.so.0.2800.8
 lib/libgobject-2.0.so.0
-lib/libgobject-2.0.so.0.2600.1
+lib/libgobject-2.0.so.0.2800.8
 lib/libgssapi_krb5.so.2
 lib/libgssapi_krb5.so.2.2
 lib/libgssrpc.so.4
 lib/libgssrpc.so.4.1
 lib/libgthread-2.0.so.0
-lib/libgthread-2.0.so.0.2600.1
+lib/libgthread-2.0.so.0.2800.8
 lib/libidn.so.11
 lib/libidn.so.11.6.1
 lib/libkeyutils.so.1
@@ -348,6 +349,7 @@ usr/bin/eu-objdump
 usr/bin/eu-ranlib
 usr/bin/eu-readelf
 usr/bin/eu-size
+usr/bin/eu-stack
 usr/bin/eu-strings
 usr/bin/eu-strip
 usr/bin/eu-unstrip
@@ -363,7 +365,6 @@ usr/bin/getconf
 usr/bin/getent
 usr/bin/gio-querymodules-32
 usr/bin/glib-compile-schemas
-usr/bin/gsettings
 usr/bin/groups
 usr/bin/head
 usr/bin/hostid
@@ -388,11 +389,13 @@ usr/bin/logname
 usr/bin/lp
 usr/bin/lsattr
 usr/bin/lsb_release
+usr/bin/lslogins
 usr/bin/md5sum
 usr/bin/mkfifo
 usr/bin/nl
 usr/bin/nohup
 usr/bin/nproc
+usr/bin/nsenter
 usr/bin/od
 usr/bin/oldfind
 usr/bin/paste
@@ -857,9 +860,12 @@ usr/share/doc/e2fsprogs-1.41.12/COPYING
 usr/share/doc/e2fsprogs-1.41.12/README
 usr/share/doc/e2fsprogs-1.41.12/RELEASE-NOTES
 usr/share/doc/e2fsprogs-libs-1.41.12/COPYING
-usr/share/doc/elfutils-0.152/COPYING
-usr/share/doc/elfutils-0.152/README
-usr/share/doc/elfutils-0.152/TODO
+usr/share/doc/elfutils-0.158/CONTRIBUTING
+usr/share/doc/elfutils-0.158/COPYING
+usr/share/doc/elfutils-0.158/COPYING-GPLV2
+usr/share/doc/elfutils-0.158/COPYING-LGPLV3
+usr/share/doc/elfutils-0.158/README
+usr/share/doc/elfutils-0.158/TODO
 usr/share/doc/findutils-4.4.2/AUTHORS
 usr/share/doc/findutils-4.4.2/COPYING
 usr/share/doc/findutils-4.4.2/NEWS
@@ -904,10 +910,10 @@ usr/share/doc/gamin-0.1.10/using.html
 usr/share/doc/gdbm-1.8.0/COPYING
 usr/share/doc/gdbm-1.8.0/NEWS
 usr/share/doc/gdbm-1.8.0/README
-usr/share/doc/glib2-2.26.1/AUTHORS
-usr/share/doc/glib2-2.26.1/COPYING
-usr/share/doc/glib2-2.26.1/NEWS
-usr/share/doc/glib2-2.26.1/README
+usr/share/doc/glib2-2.28.8/AUTHORS
+usr/share/doc/glib2-2.28.8/COPYING
+usr/share/doc/glib2-2.28.8/NEWS
+usr/share/doc/glib2-2.28.8/README
 usr/share/doc/glibc-2.12/BUGS
 usr/share/doc/glibc-2.12/CONFORMANCE
 usr/share/doc/glibc-2.12/COPYING
@@ -1857,6 +1863,7 @@ usr/share/locale/uk/LC_MESSAGES/glib20.mo
 usr/share/locale/uk/LC_MESSAGES/grep.mo
 usr/share/locale/uk/LC_MESSAGES/popt.mo
 usr/share/locale/uk/LC_TIME/coreutils.mo
+usr/share/locale/ug/LC_MESSAGES/glib20.mo
 usr/share/locale/vi/LC_MESSAGES/bash.mo
 usr/share/locale/vi/LC_MESSAGES/coreutils.mo
 usr/share/locale/vi/LC_MESSAGES/e2fsprogs.mo
@@ -2059,7 +2066,6 @@ usr/share/man/man1/fold.1.gz
 usr/share/man/man1/gdbus.1.gz
 usr/share/man/man1/gio-querymodules.1.gz
 usr/share/man/man1/glib-compile-schemas.1.gz
-usr/share/man/man1/gsettings.1.gz
 usr/share/man/man1/getopts.1.gz
 usr/share/man/man1/grep.1.gz
 usr/share/man/man1/groups.1.gz
@@ -2090,6 +2096,7 @@ usr/share/man/man1/local.1.gz
 usr/share/man/man1/logname.1.gz
 usr/share/man/man1/logout.1.gz
 usr/share/man/man1/ls.1.gz
+usr/share/man/man1/lslogins.1.gz
 usr/share/man/man1/lsattr.1.gz
 usr/share/man/man1/lsb_release.1.gz
 usr/share/man/man1/mapfile.1.gz
@@ -2103,6 +2110,7 @@ usr/share/man/man1/nice.1.gz
 usr/share/man/man1/nl.1.gz
 usr/share/man/man1/nohup.1.gz
 usr/share/man/man1/nproc.1.gz
+usr/share/man/man1/nsenter.1.gz
 usr/share/man/man1/od.1.gz
 usr/share/man/man1/paste.1.gz
 usr/share/man/man1/pathchk.1.gz
@@ -2316,6 +2324,8 @@ usr/tmp
 var/mail
 @sample etc/krb5.conf.sample
 @sample etc/yp.conf.sample
+@dir /compat/linux
+@dir /compat
 @dirrm bin
 @dirrm var/yp
 @dirrm var/spool/mail

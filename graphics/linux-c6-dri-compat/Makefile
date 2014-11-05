@@ -3,6 +3,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://vault.centos.org/6.4/os/i386/Packages/
 PKGNAMESUFFIX=	-compat

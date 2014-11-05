@@ -10,6 +10,7 @@
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += c++-gtk-utils
+    SUBDIR += eel
     SUBDIR += elementary
     SUBDIR += flowcanvas
     SUBDIR += fltk
@@ -28,6 +29,7 @@
     SUBDIR += gdl
     SUBDIR += girara
     SUBDIR += gnocl
+    SUBDIR += gnome-desktop-sharp20
     SUBDIR += gnome-pty-helper
     SUBDIR += gnome-sharp20
     SUBDIR += gnomemm
