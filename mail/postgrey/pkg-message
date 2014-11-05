@@ -1,7 +1,33 @@
 
-ATTENTION
+NETWORK LISTENER WARNING
+------------------------
 
-The startup script for postgrey will make it listen on TCP port
-10023 by default. If you want to use a different setting, please
-read the comments in the RC script and set the appropriate settings
-via rc.conf before starting postgrey.
+By default, the startup script specifies "--inet=10023" in postgrey_flags.
+This makes postgrey listen on localhost TCP port 10023.  If you want to use a
+unix socket, a different port, or an external interface, please see the
+postgrey(1) man page about the use of the --inet and --unix flags and set
+postgrey_flags as appropriate.
+
+
+THIRD-PARTY DISCLOSURE WARNING
+------------------------------
+
+The default text used when postgrey returns a "greylisted" response includes a
+URL of the form:
+
+http://postgrey.schweikert.ch/help/example.com.html
+
+where example.com is the FQDN of the RCPT TO address of the greylisted message.
+This is a potential information disclosure in the following ways:
+
+- Indicates you are using David Schweikert's postgrey;
+- Someone who goes to that link may disclose to the website's operator that
+  they sent email to your domain.
+
+If you do not want this behaviour, you can override the default text by
+setting --greylist-text in postgrey_flags.  An example of a generic setting
+would be --greylist-text='4.7.1 Greylisted'.
+
+Please see the "Greylist Text" section of the postgrey(1) man page for more
+information.
+
