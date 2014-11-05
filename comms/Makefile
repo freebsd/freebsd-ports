@@ -132,6 +132,7 @@
     SUBDIR += qpage
     SUBDIR += qrq
     SUBDIR += qsstv
+    SUBDIR += qt5-serialport
     SUBDIR += quisk
     SUBDIR += remserial
     SUBDIR += rtl-sdr

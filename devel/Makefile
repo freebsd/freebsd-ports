@@ -4174,7 +4174,7 @@
     SUBDIR += qt5-linguisttools
     SUBDIR += qt5-qdbus
     SUBDIR += qt5-qdbusviewer
-    SUBDIR += qt5-qmldevtools
+    SUBDIR += qt5-qdoc
     SUBDIR += qt5-script
     SUBDIR += qt5-scripttools
     SUBDIR += qt5-testlib
