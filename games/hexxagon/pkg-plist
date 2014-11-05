@@ -10,5 +10,3 @@ bin/hexxagon
 %%DATADIR%%/images/computer_wins.xpm
 %%DATADIR%%/images/draw.xpm
 %%DATADIR%%/images/you_win.xpm
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

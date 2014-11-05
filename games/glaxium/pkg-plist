@@ -57,6 +57,3 @@ man/man6/glaxium.6.gz
 %%DATADIR%%/textures/sphere.png
 %%DATADIR%%/textures/tache.png
 %%DATADIR%%/textures/thunder.png
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/samples
-@dirrm %%DATADIR%%

@@ -31,4 +31,3 @@ bin/hex-a-hop
 %%DATADIR%%/tiles.dat
 %%DATADIR%%/tiles_reflect.dat
 %%DATADIR%%/title.dat
-@dirrm %%DATADIR%%
