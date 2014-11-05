@@ -1,11 +1,11 @@
-@unexec if cmp -s %D/etc/postfix/dist-postgrey_whitelist_recipients %D/etc/postfix/postgrey_whitelist_recipients; then rm -f %D/etc/postfix/postgrey_whitelist_recipients; fi
-@unexec if cmp -s %D/etc/postfix/dist-postgrey_whitelist_clients %D/etc/postfix/postgrey_whitelist_clients; then rm -f %D/etc/postfix/postgrey_whitelist_clients; fi
-etc/postfix/dist-postgrey_whitelist_recipients
-etc/postfix/dist-postgrey_whitelist_clients
+@sample etc/postfix/postgrey_whitelist_clients.sample
+@sample etc/postfix/postgrey_whitelist_recipients.sample
 man/man1/policy-test.1.gz
 man/man1/postgrey.1.gz
 man/man1/postgreyreport.1.gz
 sbin/postgrey
 sbin/policy-test
 sbin/postgreyreport
-@dir(%%USER%%,%%GROUP%%,2775) /var/db/postgrey
+@dir etc/postfix
+@dir(%%PG_USER%%,%%PG_GROUP%%,750) %%PG_DBDIR%%
+@dir(%%PG_USER%%,%%PG_GROUP%%,750) %%PG_RUNDIR%%
