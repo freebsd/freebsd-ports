@@ -42,6 +42,8 @@ MAKE_ENV+=	TARGET_DIR="${STAGEDIR}${PREFIX}/lib/erlang/lib/rabbitmq_server-${POR
 		MAN_DIR="${STAGEDIR}${PREFIX}/man" \
 		DOC_INSTALL_DIR="${STAGEDIR}${EXAMPLESDIR}"
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MADMIN}
