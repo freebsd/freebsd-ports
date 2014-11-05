@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.6.2
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,12 +17,11 @@ ALL_TARGET=	shared_lib all
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-DOS_FREEBSD
 LDFLAGS+=	-L${LOCALBASE}/lib
-#MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		compiler:c++11-lang gmake
 
 GH_ACCOUNT=	facebook
-GH_COMMIT=	7a9dd5f
+GH_COMMIT=	b11a617
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 USE_GITHUB=	yes
@@ -38,7 +36,7 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/rocksdb/ ${STAGEDIR}${DATADIR}/
 	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/include/rocksdb/* ${STAGEDIR}${PREFIX}/include/rocksdb/
+	cd ${WRKSRC}/include/rocksdb/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/rocksdb/
 	${INSTALL_LIB} ${WRKSRC}/librocksdb.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/librocksdb.so ${STAGEDIR}${PREFIX}/lib/librocksdb.so.0
 	${LN} -fs librocksdb.so.0 ${STAGEDIR}${PREFIX}/lib/librocksdb.so
