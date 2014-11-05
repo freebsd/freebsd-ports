@@ -2,6 +2,7 @@
 
 PORTNAME=	clojure-cider
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 DISTNAME=	cider-${PORTVERSION}
 

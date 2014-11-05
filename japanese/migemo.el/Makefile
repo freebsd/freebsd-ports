@@ -3,6 +3,7 @@
 
 PORTNAME=	migemo.el
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	japanese elisp
 
 MAINTAINER=	nobutaka@FreeBSD.org

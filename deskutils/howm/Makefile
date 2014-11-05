@@ -2,7 +2,7 @@
 
 PORTNAME=	howm
 PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
 
