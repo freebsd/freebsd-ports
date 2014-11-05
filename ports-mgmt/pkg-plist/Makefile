@@ -16,6 +16,9 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/pkg-plist man/man1/pkg-plist.1.gz
 
+DEPRECATED=	Generate incorrect plists
+EXPIRATION_DATE=	2014-11-30
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg-plist ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pkg-plist.1 ${STAGEDIR}${MANPREFIX}/man/man1
