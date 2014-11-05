@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	amd64 i386 ia64
 
 PATCH_STRIP=	-p1
 
-USES=		gmake
+USES=		alias gmake
 
 MAKE_ENV+=	FREEBSD=1
 LDFLAGS=	-lkvm
