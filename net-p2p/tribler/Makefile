@@ -57,8 +57,7 @@ VLC_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 TRIBLER_DIR=	${PYTHONPREFIX_SITELIBDIR}/tribler
 
 post-extract:
-	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} data.tar.gz \
-		${EXTRACT_AFTER_ARGS})
+	@${TAR} -C ${WRKDIR} -xf ${WRKDIR}/data.tar.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -82,13 +81,13 @@ post-patch:
 		${WRKDIR}/usr/share/tribler/Tribler/vlc.py
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} swift \
-		${STAGEDIR}${PREFIX}/libexec)
-	(cd ${WRKDIR}/usr/bin && ${INSTALL_SCRIPT} tribler \
-		${STAGEDIR}${PREFIX}/bin)
-	@${MKDIR} ${STAGEDIR}${TRIBLER_DIR}/Tribler
-	@${LN} -sf ${PREFIX}/libexec/swift ${STAGEDIR}${TRIBLER_DIR}
-	@(${TAR} -C ${WRKDIR}/usr/share/tribler/Tribler \
+	@${MKDIR} ${STAGEDIR}${TRIBLER_DIR}/Tribler \
+		${STAGEDIR}${DESKTOPDIR} \
+		${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/swift ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKDIR}/usr/bin/tribler ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ${PREFIX}/libexec/swift ${STAGEDIR}${TRIBLER_DIR}
+	(${TAR} -C ${WRKDIR}/usr/share/tribler/Tribler \
 		--exclude "Build" \
 		--exclude "LGPL-2.1.txt" \
 		--exclude "SwiftEngine" \
@@ -96,22 +95,20 @@ do-install:
 		--exclude "*LICENSE*.txt" \
 		--exclude "*.orig" \
 		-cf - . | ${TAR} -C ${STAGEDIR}${TRIBLER_DIR}/Tribler -xf -)
-	@${FIND} ${STAGEDIR}${TRIBLER_DIR}/Tribler -type f -print0 | \
+	${FIND} ${STAGEDIR}${TRIBLER_DIR}/Tribler -type f -print0 | \
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	@${FIND} ${STAGEDIR}${TRIBLER_DIR}/Tribler -type d -print0 | \
+	${FIND} ${STAGEDIR}${TRIBLER_DIR}/Tribler -type d -print0 | \
 		${XARGS} -0 ${CHMOD} a+rx
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	(cd ${WRKDIR}/usr/share/applications && ${INSTALL_DATA} \
 		tribler.desktop ${STAGEDIR}${DESKTOPDIR})
 	(cd ${WRKDIR}/usr/share/pixmaps && ${INSTALL_DATA} \
 		tribler.xpm ${STAGEDIR}${PREFIX}/share/pixmaps)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/usr/share/tribler/Tribler && ${INSTALL_DATA} \
 		*LICENSE*.txt readme.txt ${STAGEDIR}${DOCSDIR})
-	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O -m compileall \
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O -m compileall \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
