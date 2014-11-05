@@ -38,9 +38,11 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraph_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicsanchorlayout_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicseffect_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicsgridlayoutengine_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicsitem_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicslayout_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicslayoutitem_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicslayoutstyleinfo_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicsproxywidget_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicsscene_bsp_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicsscene_p.h
@@ -50,7 +52,6 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicstransform_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicsview_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgraphicswidget_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgridlayoutengine_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgtk2painter_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgtkglobal_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qgtkpainter_p.h
@@ -74,6 +75,7 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmenu_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmenu_wince_resource_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmenubar_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qopenglwidget_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qpixmapfilter_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qplaintextedit_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qproxystyle_p.h

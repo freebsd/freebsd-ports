@@ -49,6 +49,19 @@ IGNORE=	Incorrect 'USES+= qmake' usage: argument '${arg}' is not recognized
 USE_QT${_QT_VERSION:R:R}+=	qmake_build
 .endif
 
+.if ${_QT_VERSION:M5*}
+# We deliberately do not pass -I${LOCALBASE}/include and -L${LOCALBASE}/lib
+# in the FreeBSD mkspecs because in Qt5 they are always added before the
+# paths in ${WRKSRC}. In other words, if one is upgrading an existing
+# installation the old headers and libraries will always be picked up.
+# Those directories to be passed though, they just need to be passed last.
+# See QTBUG-40825 and ports/194088 for more information.
+CONFIGURE_ENV+=	CPATH=${LOCALBASE}/include \
+		LIBRARY_PATH=${LOCALBASE}/lib
+MAKE_ENV+=	CPATH=${LOCALBASE}/include \
+		LIBRARY_PATH=${LOCALBASE}/lib
+.endif  # ${_QT_VERSION:M5*}
+
 # QMAKESPEC belongs to bsd.qt.mk.
 QMAKE_ENV?=	${CONFIGURE_ENV}
 QMAKE_ARGS+=	-spec ${QMAKESPEC} \

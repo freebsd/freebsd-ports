@@ -1,3 +1,4 @@
+%%QT_INCDIR%%/QtXml/%%FULLVER%%/QtXml/private/qxml_p.h
 %%QT_INCDIR%%/QtXml/QDomAttr
 %%QT_INCDIR%%/QtXml/QDomCDATASection
 %%QT_INCDIR%%/QtXml/QDomCharacterData

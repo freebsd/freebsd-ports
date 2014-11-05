@@ -104,6 +104,7 @@
 %%QT_QMLDIR%%/QtWebKit/experimental/libqmlwebkitexperimentalplugin.so
 %%QT_QMLDIR%%/QtWebKit/experimental/qmldir
 %%QT_QMLDIR%%/QtWebKit/libqmlwebkitplugin.so
+%%QT_QMLDIR%%/QtWebKit/plugins.qmltypes
 %%QT_QMLDIR%%/QtWebKit/qmldir
 libdata/pkgconfig/Qt5WebKit.pc
 libdata/pkgconfig/Qt5WebKitWidgets.pc

@@ -2,7 +2,6 @@
 
 PORTNAME=	qt5
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -14,8 +13,8 @@ COMMENT=	Cross-platform application and UI framework (metaport)
 USE_QT5=	clucene concurrent core dbus declarative designer \
 		graphicaleffects gui help imageformats multimedia \
 		network opengl printsupport qml quick script \
-		scripttools sql svg testlib webkit widgets xml \
-		xmlpatterns
+		scripttools serialport sql svg testlib webkit widgets x11extras \
+		xml xmlpatterns
 
 NO_BUILD=	yes
 NO_MTREE=	yes
@@ -29,7 +28,7 @@ SQL_PLUGINS_USE=sql-ibase sql-mysql sql-odbc sql-pgsql sql-sqlite2 \
 
 TOOLS_DESC=	Install Qt tools (qmake, moc, etc.)
 TOOLS_USE=	assistant buildtools linguist linguisttools \
-		pixeltool qdbus qdbusviewer qev qmake
+		pixeltool qdbus qdbusviewer qdoc qev qmake
 
 .for opt in ${OPTIONS_DEFINE}
 ${opt}_USE:=	${${opt}_USE:S/^/QT5=/}

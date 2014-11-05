@@ -27,7 +27,7 @@ Qt_Pre_Include=	bsd.qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=	4 5
 QT4_VERSION?=	4.8.6
-QT5_VERSION?=	5.2.1
+QT5_VERSION?=	5.3.2
 
 QT_PREFIX?=		${LOCALBASE}
 
@@ -103,12 +103,15 @@ QT_DIST=		base declarative doc graphicaleffects imageformats \
 # Qt configure requires pkg-config to detect dependencies.
 USES+=			pkgconfig
 
-# Use mkspecs installed in QMAKEPATH/mkspecs when building qtbase.
-CONFIGURE_ENV+=	QMAKEPATH="${QT_MKSPECDIR:H}"
-MAKE_ENV+=		QMAKEPATH="${QT_MKSPECDIR:H}"
+# Set QMAKESPEC when building qtbase so that qmake (called by the configure
+# script) can find the mkspecs we create ourselves in devel/qmake5.
+CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}"
+MAKE_ENV+=		QMAKESPEC="${QMAKESPEC}"
 .  endif
 
-# -nomake flags aren't enough.
+# -nomake is only used by qtbase's configure script.
+# Other ports from other Qt modules will automatically build examples and
+# tests if the directories exist because of mkspecs/features/qt_parts.prf.
 EXTRACT_AFTER_ARGS?=	${DISTNAME:S,$,/examples,:S,^,--exclude ,} \
 				${DISTNAME:S,$,/tests,:S,^,--exclude ,}
 . endif # ! ${_QT_VERSION:M4*}
@@ -137,8 +140,7 @@ CONFIGURE_ARGS+=-fast \
 				-examplesdir ${PREFIX}/${QT_EXAMPLEDIR_REL}/examples \
 				-demosdir ${PREFIX}/${QT_EXAMPLEDIR_REL}/demos
 . else
-CONFIGURE_ARGS+=-dont-process \
-				-nomake examples -nomake tests \
+CONFIGURE_ARGS+=-nomake examples -nomake tests \
 				-archdatadir ${PREFIX}/${QT_ARCHDIR_REL} \
 				-libexecdir ${PREFIX}/${QT_LIBEXECDIR_REL} \
 				-qmldir ${PREFIX}/${QT_QMLDIR_REL} \
@@ -169,9 +171,7 @@ CONFIGURE_ARGS+=-verbose
 EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-libtool
-.  if ${_QT_VERSION:M5*}
-EXTRA_PATCHES+=	${.CURDIR:H:H}/devel/qt5-core/files/extrapatch-src__corelib__tools__qdatetime.cpp
-.  elif ${_QT_VERSION:M4*}
+.  if ${_QT_VERSION:M4*}
 EXTRA_PATCHES?=	${EXTRA_PATCHES} \
 				${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h
 .  endif
@@ -297,8 +297,8 @@ _USE_QT4_ONLY=	accessible assistant-adp assistantclient codecs-cn codecs-jp \
 				qtestlib qvfb rcc uic uic3 xmlpatterns-tool
 
 _USE_QT5_ONLY=	buildtools concurrent core graphicaleffects linguisttools \
-				printsupport qdbus qdoc qev qml qmldevtools quick \
-				quickcontrols uitools widgets x11extras
+				printsupport qdbus qdoc qev qml quick \
+				quickcontrols serialport uitools widgets x11extras
 
 accessible_PORT=	accessibility/${_QT_RELNAME}-accessible
 accessible_PATH=	${QT_PLUGINDIR}/accessible/libqtaccessiblewidgets.so
@@ -438,9 +438,6 @@ qmake_PATH=			${QMAKE}
 qml_PORT=			lang/${_QT_RELNAME}-qml
 qml_PATH=			${QT_LIBDIR}/libQt${_QT_LIBVER}Qml.so
 
-qmldevtools_PORT=	devel/${_QT_RELNAME}-qmldevtools
-qmldevtools_PATH=	${QT_LIBDIR}/libQt${_QT_LIBVER}QmlDevTools.a
-
 qmlviewer_PORT=		devel/${_QT_RELNAME}-qmlviewer
 qmlviewer_PATH=		${QT_BINDIR}/qmlviewer
 
@@ -470,6 +467,9 @@ script_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}Script.so
 
 scripttools_PORT=	devel/${_QT_RELNAME}-scripttools
 scripttools_PATH=	${QT_LIBDIR}/libQt${_QT_LIBVER}ScriptTools.so
+
+serialport_PORT=	comms/${_QT_RELNAME}-serialport
+serialport_PATH=	${QT_LIBDIR}/libQt${_QT_LIBVER}SerialPort.so
 
 sql_PORT=			databases/${_QT_RELNAME}-sql
 sql_PATH=			${QT_LIBDIR}/libQt${_QT_LIBVER}Sql.so
@@ -551,7 +551,10 @@ _QT_TOOLS=		# empty
 _QT_TOOLS+=		${QMAKE}
 .  endif
 .  if ${PORTNAME} != "buildtools"
-_QT_TOOLS+=		${MOC} qdoc ${RCC}
+_QT_TOOLS+=		${MOC} ${RCC}
+.  endif
+.  if ${PORTNAME} != "qdoc"
+_QT_TOOLS+=		qdoc
 .  endif
 .  if ${PORTNAME} != "dbus"
 _QT_TOOLS+=		qdbuscpp2xml qdbusxml2cpp
@@ -562,25 +565,38 @@ _QT_TOOLS+=		${UIC}
 
 pre-configure: qtbase-pre-configure
 qtbase-pre-configure:
-.  if ${PORTNAME} != "qmake"
-	@(cd ${WRKSRC} && ${SETENV} ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS})
-# 	@${RM} -rf ${CONFIGURE_WRKSRC}/mkspecs
-# 	@${MKDIR} ${CONFIGURE_WRKSRC}/mkspecs
-.  endif
 .  for tool in ${_QT_TOOLS}
 	@${TEST} -e ${QT_BINDIR}/${tool:T} && \
 		${LN} -sf ${QT_BINDIR}/${tool:T} ${CONFIGURE_WRKSRC}/bin/${tool:T} || \
 		${TRUE}
 .  endfor
 
+# Add ${LOCALBASE}/lib to DEFAULT_LIBDIRS, which we use to filter out
+# certain paths from pkg-config calls (see the explanation in
+# devel/qt5/files/patch-configure) as well as for setting
+# QMAKE_DEFAULT_LIBDIR in mkspecs/qconfig.pri. Part of the solution for
+# ports/194088.
+post-patch: qtbase-post-patch
+qtbase-post-patch:
+	${REINPLACE_CMD} -e "/DEFAULT_LIBDIRS=/ s,\\\\\"\\\\n,\\\\n${LOCALBASE}/lib&," \
+		${WRKSRC}/configure
+
 .  if ${PORTNAME} != "qmake"
-_QMAKE_WRKSRC=	${BUILD_WRKSRC}
-QMAKE_SOURCE_PATH=	${_QMAKE_WRKSRC}
 _QMAKE=			${CONFIGURE_WRKSRC}/bin/qmake
 
 post-configure: qmake-configure
 .  endif
 . endif # ${QT_DIST} == "base"
+
+# Qt 5.3.2 introduced a check in mkspecs/features/create_cmake.prf that
+# requires tests/auto/cmake to be present, otherwise the configure stage will
+# fail.
+# Since we cannot extract tests/auto/cmake/ and exclude tests/ at the same
+# time, we have to disable the check in a cache file (the only way to get this
+# value through to the configure script in qtbase).
+pre-configure: qt5-pre-configure
+qt5-pre-configure:
+	${ECHO_CMD} 'CMAKE_MODULE_TESTS = -' > ${WRKSRC}/.qmake.cache
 
 pre-install: qt-pre-install
 qt-pre-install:

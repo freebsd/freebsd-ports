@@ -8,6 +8,7 @@
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkmetric_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkperfevents_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkvalgrind_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qcsvbenchmarklogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qplaintestlogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qsignaldumper_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcoreelement_p.h

@@ -2,7 +2,6 @@
 
 PORTNAME=	webkit
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	5
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -26,8 +25,7 @@ USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_SQLITE=	3
 USE_XORG=	x11 xcomposite xrender
-USES=		alias bison gmake gperf perl5 pkgconfig python:build \
-		qmake:outsource
+USES=		bison gmake gperf perl5 pkgconfig python:build qmake:outsource
 # Keep make(1) from descending into obj/ subdirectories during tests.
 CONFIGURE_ENV=	MAKEOBJDIR=.
 # Use flex(1) from ports.

@@ -1,7 +1,17 @@
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QDDSPlugin.cmake
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QJp2Plugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QMngPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake
+%%QT_PLUGINDIR%%/imageformats/libqdds.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqdds.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqicns.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqicns.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqjp2.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqjp2.so.debug
 %%QT_PLUGINDIR%%/imageformats/libqmng.so
 %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqmng.so.debug
 %%QT_PLUGINDIR%%/imageformats/libqtga.so
@@ -10,3 +20,5 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqtiff.so.debug
 %%QT_PLUGINDIR%%/imageformats/libqwbmp.so
 %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqwbmp.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqwebp.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqwebp.so.debug

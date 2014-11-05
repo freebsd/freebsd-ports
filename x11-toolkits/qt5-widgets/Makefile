@@ -2,7 +2,6 @@
 
 PORTNAME=	widgets
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -40,12 +39,6 @@ QT_CONFIG+=	gtkstyle
 QT_DEFINES+=	-STYLE_GTK
 QT_CONFIG+=	-gtkstyle
 .endif
-
-post-configure:
-.for d in ${MORE_WRKSRCS}
-	@cd ${WRKSRC}/${d} && \
-		${SETENV} ${QMAKE_ENV} ${WRKSRC}/bin/qmake ${QMAKE_ARGS}
-.endfor
 
 pre-build:
 	@cd ${WRKSRC}/src/tools/uic && \

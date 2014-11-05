@@ -2,7 +2,6 @@
 
 PORTNAME=	uitools
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -14,6 +13,7 @@ QT_DIST=	tools
 USES=		qmake
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
-WRKSRC_SUBDIR=	src/designer/src/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/src/designer/src/${PORTNAME}
+INSTALL_WRKSRC=	${WRKSRC}/src/designer/src/${PORTNAME}
 
 .include <bsd.port.mk>
