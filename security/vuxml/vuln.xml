@@ -67,7 +67,7 @@ Notes:
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Konversation developers reports:</p>
+	<p>Konversation developers report:</p>
 	<blockquote cite="https://www.kde.org/info/security/advisory-20141104-1.txt">
 	  <p>Konversation's Blowfish ECB encryption support assumes incoming blocks
 	  to be the expected 12 bytes. The lack of a sanity-check for the actual
