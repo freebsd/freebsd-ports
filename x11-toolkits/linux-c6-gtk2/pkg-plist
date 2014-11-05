@@ -219,7 +219,6 @@ usr/share/themes/Industrial/gtk-2.0/gtkrc
 usr/share/themes/Mist/gtk-2.0/gtkrc
 usr/share/themes/Raleigh/gtk-2.0/gtkrc
 usr/share/themes/ThinIce/gtk-2.0/gtkrc
-@dirrmtry etc/gtk-2.0/i386-redhat-linux-gnu
 @dirrmtry usr/lib/gtk-2.0/2.10.0/engines
 @dirrmtry usr/lib/gtk-2.0/2.10.0/filesystems
 @dirrmtry usr/lib/gtk-2.0/modules
@@ -241,12 +240,9 @@ usr/share/themes/ThinIce/gtk-2.0/gtkrc
 @dirrm usr/share/themes/Mist
 @dirrm usr/share/themes/ThinIce/gtk-2.0
 @dirrm usr/share/themes/ThinIce
-@dirrm usr/share/doc/gtk2-2.20.1
 @dirrm usr/lib/gtk-2.0/immodules
 @dirrm usr/lib/gtk-2.0/2.10.0/printbackends
-@dirrm usr/lib/gtk-2.0/2.10.0/loaders
 @dirrm usr/lib/gtk-2.0/2.10.0/immodules
 @dirrm usr/lib/gtk-2.0/2.10.0/engines
 @dirrm usr/lib/gtk-2.0/2.10.0
 @dirrm usr/lib/gtk-2.0
-@dirrm etc/gtk-2.0
