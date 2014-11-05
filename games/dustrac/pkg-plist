@@ -128,15 +128,3 @@ share/icons/hicolor/64x64/apps/dustrac-editor.png
 share/icons/hicolor/64x64/apps/dustrac-game.png
 share/pixmaps/dustrac-editor.png
 share/pixmaps/dustrac-game.png
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
