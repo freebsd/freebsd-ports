@@ -255,8 +255,12 @@ generate_plist() {
 	### HANDLE DIRS
 	cat ${WRKDIR}/.plist-dirs-unsorted ${WRKDIR}/.mtree \
 	    | sort -u >${WRKDIR}/.traced-dirs
-	find -sd ${STAGEDIR} -type d | sed -e "s,^${STAGEDIR},,;/^$/d" \
+	find ${STAGEDIR} -type d | sed -e "s,^${STAGEDIR},,;/^$/d" | sort \
+	    >${WRKDIR}/.staged-dirrms-sorted
+	find -sd ${STAGEDIR}${PREFIX} -type d -empty | sed -e "s,^${STAGEDIR},,;\,^${PREFIX}$,d;/^$/d" \
 	    >${WRKDIR}/.staged-dirs-dfs
+	find -sd ${STAGEDIR} -type d ! -path "${STAGEDIR}${PREFIX}/*" | sed -e "s,^${STAGEDIR},,;\,^${PREFIX}$,d;/^$/d" \
+	    >>${WRKDIR}/.staged-dirs-dfs
 	sort ${WRKDIR}/.staged-dirs-dfs >${WRKDIR}/.staged-dirs-sorted
 	awk '{print FNR, $0}' ${WRKDIR}/.staged-dirs-dfs \
 	    >${WRKDIR}/.staged-dirs-dfs-sorted
@@ -274,7 +278,6 @@ check_orphans_from_plist() {
 	# Handle whitelisting
 	while read path; do
 		case "${path}" in
-		*'@dir '[^/]*) ;;
 		*.bak) ;;
 		*.orig) ;;
 		*/.DS_Store) ;;
@@ -324,7 +327,7 @@ check_missing_plist_items() {
 	rm -rf ${WRKDIR}/.missing-dirs > /dev/null 2>&1 || :
 	mkdir ${WRKDIR}/.missing-dirs
 	comm -23 ${WRKDIR}/.plist-dirs-sorted-no-comments \
-	    ${WRKDIR}/.staged-dirs-sorted > ${WRKDIR}/.missing-plist-dirs
+	    ${WRKDIR}/.staged-dirrms-sorted > ${WRKDIR}/.missing-plist-dirs
 	# Creates the dirs in WRKDIR/.missing-dirs and ensure spaces are
 	# quoted.
 	sed -e "s,^,${WRKDIR}/.missing-dirs," \
