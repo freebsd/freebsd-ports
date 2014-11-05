@@ -12,6 +12,7 @@ USE_QT5=	core dbus xml buildtools_build
 QT_DIST=	tools
 USES=		qmake
 
-WRKSRC_SUBDIR=	src/${PORTNAME}/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}/${PORTNAME}
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .include <bsd.port.mk>

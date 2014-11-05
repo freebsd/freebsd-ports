@@ -1,5 +1,23 @@
---- ./configure.orig	2013-10-22 01:49:15.000000000 -0700
-+++ ./configure	2013-11-04 07:23:05.115448412 -0800
+* The "build qmake" chunk is required for qtbase ports other than devel/qmake5
+  to use the already built qmake instead of always building their own copy.
+
+* All the other chunks are part of the changes required to avoid ports/194088.
+
+  We want to avoid passing -I${LOCALBASE}/include and -L${LOCALBASE}/lib to the
+  compiler since in Qt5 at least for the Qt ports themselves those parameters
+  will be passed before the build directories, and consequently an older
+  installed version will be used when building a new Qt port and cause
+  problems. See QTBUG-40825 for a discussion we have started upstream.
+
+  This part of the solution comprises both filtering the output of the
+  pkg-config calls so it does not contain those parameters as well as
+  changing the default value of DEFAULT_LIBDIRS in bsd.qt.mk (in the
+  qtbase-post-patch target). It is used in the pkg-config filtering as well
+  as the value of QMAKE_DEFAULT_LIBDIRS in mkspecs/qconfig.pri (which qmake
+  uses to filter out those same paths when processing .pro files).
+
+--- configure
++++ configure
 @@ -4073,7 +4073,7 @@
  }
  
@@ -9,3 +27,164 @@
      echo "Creating qmake..."
  
      mkdir -p "$outpath/qmake" || exit
+@@ -4481,8 +4481,8 @@ for _SQLDR in $CFG_SQL_AVAILABLE; do
+                 SQLITE_AUTODETECT_FAILED="no"
+                 if [ "$CFG_SQLITE" = "system" ]; then
+                     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists sqlite3 2>/dev/null; then
+-                        QT_CFLAGS_SQLITE=`$PKG_CONFIG --cflags sqlite3 2>/dev/null`
+-                        QT_LFLAGS_SQLITE=`$PKG_CONFIG --libs sqlite3 2>/dev/null`
++                        QT_CFLAGS_SQLITE=`$PKG_CONFIG --cflags sqlite3 2>/dev/null | filterIncludeOptions`
++                        QT_LFLAGS_SQLITE=`$PKG_CONFIG --libs sqlite3 2>/dev/null | filterLibraryOptions`
+                     else
+                         QT_CFLAGS_SQLITE=
+                         QT_LFLAGS_SQLITE="-lsqlite3 -lz"
+@@ -4582,8 +4582,8 @@ fi
+ # auto-detect libdbus-1 support
+ if [ "$CFG_DBUS" != "no" ]; then
+     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --atleast-version="$MIN_DBUS_1_VERSION" dbus-1 2>/dev/null; then
+-        QT_CFLAGS_DBUS=`$PKG_CONFIG --cflags dbus-1 2>/dev/null`
+-        QT_LIBS_DBUS=`$PKG_CONFIG --libs dbus-1 2>/dev/null`
++        QT_CFLAGS_DBUS=`$PKG_CONFIG --cflags dbus-1 2>/dev/null | filterIncludeOptions`
++        QT_LIBS_DBUS=`$PKG_CONFIG --libs dbus-1 2>/dev/null | filterLibraryOptions`
+     else
+         QT_LIBS_DBUS="-ldbus-1"
+     fi
+@@ -4615,8 +4615,8 @@ fi
+ # auto-detect Glib support
+ if [ "$CFG_GLIB" != "no" ]; then
+     if [ -n "$PKG_CONFIG" ]; then
+-        QT_CFLAGS_GLIB=`$PKG_CONFIG --cflags glib-2.0 gthread-2.0 2>/dev/null`
+-        QT_LIBS_GLIB=`$PKG_CONFIG --libs glib-2.0 gthread-2.0 2>/dev/null`
++        QT_CFLAGS_GLIB=`$PKG_CONFIG --cflags glib-2.0 gthread-2.0 2>/dev/null | filterIncludeOptions`
++        QT_LIBS_GLIB=`$PKG_CONFIG --libs glib-2.0 gthread-2.0 2>/dev/null | filterLibraryOptions`
+     fi
+     if compileTest unix/glib "Glib" $QT_CFLAGS_GLIB $QT_LIBS_GLIB; then
+         CFG_GLIB=yes
+@@ -4638,9 +4638,9 @@ fi
+ # auto-detect GTK style support
+ if [ "$CFG_GLIB" = "yes" -a "$CFG_QGTKSTYLE" != "no" ]; then
+     if [ -n "$PKG_CONFIG" ]; then
+-        QT_CFLAGS_QGTK2=`$PKG_CONFIG --cflags gtk+-2.0 ">=" 2.18 atk 2>/dev/null`
+-        QT_LIBS_QGTK2=`$PKG_CONFIG --libs gtk+-2.0 2>/dev/null`
+-        QT_LIBS_QGOBJECT=`$PKG_CONFIG --libs gobject-2.0 2>/dev/null`
++        QT_CFLAGS_QGTK2=`$PKG_CONFIG --cflags gtk+-2.0 ">=" 2.18 atk 2>/dev/null | filterIncludeOptions`
++        QT_LIBS_QGTK2=`$PKG_CONFIG --libs gtk+-2.0 2>/dev/null | filterLibraryOptions`
++        QT_LIBS_QGOBJECT=`$PKG_CONFIG --libs gobject-2.0 2>/dev/null | filterLibraryOptions`
+     fi
+     if [ -n "$QT_CFLAGS_QGTK2" ] ; then
+         CFG_QGTKSTYLE=yes
+@@ -4686,8 +4686,8 @@ fi
+ # Auto-detect PulseAudio support
+ if [ "$CFG_PULSEAUDIO" != "no" ]; then
+     if [ -n "$PKG_CONFIG" ]; then
+-        QT_CFLAGS_PULSEAUDIO=`$PKG_CONFIG --cflags libpulse '>=' 0.9.10 libpulse-mainloop-glib 2>/dev/null`
+-        QT_LIBS_PULSEAUDIO=`$PKG_CONFIG --libs libpulse '>=' 0.9.10 libpulse-mainloop-glib 2>/dev/null`
++        QT_CFLAGS_PULSEAUDIO=`$PKG_CONFIG --cflags libpulse '>=' 0.9.10 libpulse-mainloop-glib 2>/dev/null | filterIncludeOptions`
++        QT_LIBS_PULSEAUDIO=`$PKG_CONFIG --libs libpulse '>=' 0.9.10 libpulse-mainloop-glib 2>/dev/null | filterLibraryOptions`
+     fi
+     if compileTest unix/pulseaudio "PulseAudio" $QT_CFLAGS_PULSEAUDIO $QT_LIBS_PULSEAUDIO; then
+         CFG_PULSEAUDIO=yes
+@@ -4810,10 +4810,10 @@ if [ "$CFG_OPENGL" = "auto" ] || [ "$CFG_OPENGL" = "yes" ]; then
+ elif [ "$CFG_OPENGL" = "es2" ]; then
+     #OpenGL ES 2.x
+     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists glesv2 2>/dev/null; then
+-        QMAKE_INCDIR_OPENGL_ES2=`$PKG_CONFIG --cflags-only-I glesv2 2>/dev/null | sed -e 's,^-I,,g' -e 's, -I, ,g'`
+-        QMAKE_LIBDIR_OPENGL_ES2=`$PKG_CONFIG --libs-only-L glesv2 2>/dev/null | sed -e 's,^-L,,g' -e 's, -L, ,g'`
+-        QMAKE_LIBS_OPENGL_ES2=`$PKG_CONFIG --libs glesv2 2>/dev/null`
+-        QMAKE_CFLAGS_OPENGL_ES2=`$PKG_CONFIG --cflags glesv2 2>/dev/null`
++        QMAKE_INCDIR_OPENGL_ES2=`$PKG_CONFIG --cflags-only-I glesv2 2>/dev/null | filterIncludeOptions | sed -e 's,^-I,,g' -e 's, -I, ,g'`
++        QMAKE_LIBDIR_OPENGL_ES2=`$PKG_CONFIG --libs-only-L glesv2 2>/dev/null | filterLibraryOptions | sed -e 's,^-L,,g' -e 's, -L, ,g'`
++        QMAKE_LIBS_OPENGL_ES2=`$PKG_CONFIG --libs glesv2 2>/dev/null | filterIncludeOptions`
++        QMAKE_CFLAGS_OPENGL_ES2=`$PKG_CONFIG --cflags glesv2 2>/dev/null | filterLibraryOptions`
+         QMakeVar set QMAKE_INCDIR_OPENGL_ES2 "`shellArgumentListToQMakeList "$QMAKE_INCDIR_OPENGL_ES2"`"
+         QMakeVar set QMAKE_LIBDIR_OPENGL_ES2 "`shellArgumentListToQMakeList "$QMAKE_LIBDIR_OPENGL_ES2"`"
+         QMakeVar set QMAKE_LIBS_OPENGL_ES2 "`shellArgumentListToQMakeList "$QMAKE_LIBS_OPENGL_ES2"`"
+@@ -4842,8 +4842,8 @@ fi
+ # auto-detect FontConfig support
+ if [ "$CFG_FONTCONFIG" != "no" ]; then
+     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists fontconfig --exists freetype2 2>/dev/null; then
+-        QT_CFLAGS_FONTCONFIG=`$PKG_CONFIG --cflags fontconfig --cflags freetype2 2>/dev/null`
+-        QT_LIBS_FONTCONFIG=`$PKG_CONFIG --libs fontconfig --libs freetype2 2>/dev/null`
++        QT_CFLAGS_FONTCONFIG=`$PKG_CONFIG --cflags fontconfig --cflags freetype2 2>/dev/null | filterIncludeOptions`
++        QT_LIBS_FONTCONFIG=`$PKG_CONFIG --libs fontconfig --libs freetype2 2>/dev/null | filterLibraryOptions`
+     else
+         QT_CFLAGS_FONTCONFIG=
+         QT_LIBS_FONTCONFIG="-lfreetype -lfontconfig"
+@@ -4869,8 +4869,8 @@ ORIG_CFG_KMS="$CFG_KMS"
+ 
+ if [ "$CFG_LIBUDEV" != "no" ]; then
+     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists libudev 2>/dev/null; then
+-        QMAKE_INCDIR_LIBUDEV=`$PKG_CONFIG --cflags-only-I libudev 2>/dev/null | sed -e 's,^-I,,g' -e 's, -I, ,g'`
+-        QMAKE_LIBS_LIBUDEV=`$PKG_CONFIG --libs libudev 2>/dev/null`
++        QMAKE_INCDIR_LIBUDEV=`$PKG_CONFIG --cflags-only-I libudev 2>/dev/null | filterIncludeOptions | sed -e 's,^-I,,g' -e 's, -I, ,g'`
++        QMAKE_LIBS_LIBUDEV=`$PKG_CONFIG --libs libudev 2>/dev/null | filterLibraryOptions`
+         QMakeVar set QMAKE_INCDIR_LIBUDEV "$QMAKE_INCDIR_LIBUDEV"
+         QMakeVar set QMAKE_LIBS_LIBUDEV "$QMAKE_LIBS_LIBUDEV"
+     fi
+@@ -4958,8 +4958,8 @@ fi
+ 
+ if [ "$CFG_XCB" != "no" ]; then
+     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists "xcb >= 1.5" 2>/dev/null; then
+-        QMAKE_CFLAGS_XCB="`$PKG_CONFIG --cflags xcb 2>/dev/null`"
+-        QMAKE_LIBS_XCB="`$PKG_CONFIG --libs xcb 2>/dev/null`"
++        QMAKE_CFLAGS_XCB="`$PKG_CONFIG --cflags xcb 2>/dev/null | filterIncludeOptions`"
++        QMAKE_LIBS_XCB="`$PKG_CONFIG --libs xcb 2>/dev/null | filterLibraryOptions`"
+     fi
+     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists "x11" 2> /dev/null; then
+         QMAKE_X11_PREFIX="`$PKG_CONFIG --variable=prefix x11`"
+@@ -4978,16 +4978,16 @@ if [ "$CFG_XCB" != "no" ]; then
+             CFG_XCB="system"
+             if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists "xcb >= 1.5" 2>/dev/null; then
+                 XCB_PACKAGES="xcb xcb-shm xcb-sync xcb-xfixes xcb-randr xcb-image xcb-keysyms xcb-icccm xcb-shape"
+-                QMAKE_CFLAGS_XCB="`$PKG_CONFIG --cflags $XCB_PACKAGES 2>/dev/null`"
+-                QMAKE_LIBS_XCB="`$PKG_CONFIG --libs $XCB_PACKAGES 2>/dev/null`"
++                QMAKE_CFLAGS_XCB="`$PKG_CONFIG --cflags $XCB_PACKAGES 2>/dev/null | filterIncludeOptions`"
++                QMAKE_LIBS_XCB="`$PKG_CONFIG --libs $XCB_PACKAGES 2>/dev/null | filterLibraryOptions`"
+             fi
+ 
+             # libxcb version 1.10 was the first version that enables xcb-xkb by default,
+             # therefore the minimal xcb-xkb version we support is 1.10
+             CFG_XKB=no
+             if $PKG_CONFIG --exists "xcb-xkb >= 1.10" 2>/dev/null; then
+-                QMAKE_CFLAGS_XKB="`$PKG_CONFIG --cflags xcb xcb-xkb 2>/dev/null`"
+-                QMAKE_LIBS_XKB="`$PKG_CONFIG --libs xcb xcb-xkb 2>/dev/null`"
++                QMAKE_CFLAGS_XKB="`$PKG_CONFIG --cflags xcb xcb-xkb 2>/dev/null | filterIncludeOptions`"
++                QMAKE_LIBS_XKB="`$PKG_CONFIG --libs xcb xcb-xkb 2>/dev/null | filterLibraryOptions`"
+                 if compileTest qpa/xcb-xkb "xcb-xkb" $QMAKE_CFLAGS_XKB $QMAKE_LIBS_XKB; then
+                     CFG_XKB=yes
+                 fi
+@@ -5040,8 +5040,8 @@ fi
+ 
+ if [ "$CFG_DIRECTFB" != "no" ]; then
+     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists directfb 2>/dev/null; then
+-        QMAKE_CFLAGS_DIRECTFB=`$PKG_CONFIG --cflags directfb 2>/dev/null`
+-        QMAKE_LIBS_DIRECTFB=`$PKG_CONFIG --libs directfb 2>/dev/null`
++        QMAKE_CFLAGS_DIRECTFB=`$PKG_CONFIG --cflags directfb 2>/dev/null | filterIncludeOptions`
++        QMAKE_LIBS_DIRECTFB=`$PKG_CONFIG --libs directfb 2>/dev/null | filterLibraryOptions`
+         if compileTest qpa/directfb "DirectFB" $QMAKE_CFLAGS_DIRECTFB $QMAKE_LIBS_DIRECTFB; then
+             CFG_DIRECTFB=yes
+         elif [ "$CFG_DIRECTFB" = "yes" ] && [ "$CFG_CONFIGURE_EXIT_ON_ERROR" = "yes" ]; then
+@@ -5093,8 +5093,8 @@ ORIG_CFG_XKBCOMMON="$CFG_XKBCOMMON"
+ if [ "$CFG_XCB" != "no" ]; then
+     if [ "$CFG_XKBCOMMON" = "auto" ] || [ "$CFG_XKBCOMMON" = "system" ]; then
+         if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists "xkbcommon xkbcommon-x11 >= $MIN_REQ_XKBCOMMON" 2>/dev/null; then
+-            QMAKE_CFLAGS_XKBCOMMON="`$PKG_CONFIG --cflags xkbcommon xkbcommon-x11 2>/dev/null`"
+-            QMAKE_LIBS_XKBCOMMON="`$PKG_CONFIG --libs xkbcommon xkbcommon-x11 2>/dev/null`"
++            QMAKE_CFLAGS_XKBCOMMON="`$PKG_CONFIG --cflags xkbcommon xkbcommon-x11 2>/dev/null | filterIncludeOptions`"
++            QMAKE_LIBS_XKBCOMMON="`$PKG_CONFIG --libs xkbcommon xkbcommon-x11 2>/dev/null | filterLibraryOptions`"
+ 
+             QMakeVar set QMAKE_CFLAGS_XKBCOMMON "$QMAKE_CFLAGS_XKBCOMMON"
+             QMakeVar set QMAKE_LIBS_XKBCOMMON "$QMAKE_LIBS_XKBCOMMON"
+@@ -5139,9 +5139,9 @@ if [ "$CFG_EGL" != "no" ]; then
+     fi
+ 
+     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists egl 2>/dev/null; then
+-        QMAKE_INCDIR_EGL=`$PKG_CONFIG --cflags-only-I egl 2>/dev/null | sed -e 's,^-I,,g' -e 's, -I, ,g'`
+-        QMAKE_LIBS_EGL=`$PKG_CONFIG --libs egl 2>/dev/null`
+-        QMAKE_CFLAGS_EGL=`$PKG_CONFIG --cflags egl 2>/dev/null`
++        QMAKE_INCDIR_EGL=`$PKG_CONFIG --cflags-only-I egl 2>/dev/null | filterIncludeOptions | sed -e 's,^-I,,g' -e 's, -I, ,g'`
++        QMAKE_LIBS_EGL=`$PKG_CONFIG --libs egl 2>/dev/null | filterLibraryOptions`
++        QMAKE_CFLAGS_EGL=`$PKG_CONFIG --cflags egl 2>/dev/null | filterIncludeOptions`
+         QMakeVar set QMAKE_INCDIR_EGL "$QMAKE_INCDIR_EGL"
+         QMakeVar set QMAKE_LIBS_EGL "$QMAKE_LIBS_EGL"
+         QMakeVar set QMAKE_CFLAGS_EGL "`echo " $QMAKE_CFLAGS_EGL " | sed -e 's, -I[^ ]* , ,g;s,^ ,,;s, $,,'`"

@@ -1,7 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	1
-
 DB=		SQLite2
 DB_DESC=	SQLite 2
 

@@ -12,6 +12,7 @@
 %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qgraphicsshadereffect_p.h
 %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qpaintengineex_opengl2_p.h
 %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qtextureglyphcache_gl_p.h
+%%QT_INCDIR%%/QtOpenGL/QGL
 %%QT_INCDIR%%/QtOpenGL/QGLBuffer
 %%QT_INCDIR%%/QtOpenGL/QGLColormap
 %%QT_INCDIR%%/QtOpenGL/QGLContext

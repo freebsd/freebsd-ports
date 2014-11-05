@@ -1,3 +1,4 @@
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qabstractlayoutstyleinfo_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qabstracttextdocumentlayout_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qaccessiblecache_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qbezier_p.h
@@ -31,6 +32,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qgifhandler_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qglyphrun_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qgrayraster_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qgridlayoutengine_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qguiapplication_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qharfbuzzng_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qhexstring_p.h
@@ -43,6 +45,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qjpeghandler_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qkeymapper_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qkeysequence_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qlayoutpolicy_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qmath_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qmemrotate_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qnativeimage_p.h
@@ -60,6 +63,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopenglshadercache_meego_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopenglshadercache_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopengltexture_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopengltextureblitter_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopengltexturecache_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopengltextureglyphcache_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopengltexturehelper_p.h
@@ -296,6 +300,8 @@
 %%QT_INCDIR%%/QtGui/QOpenGLVersionFunctions
 %%QT_INCDIR%%/QtGui/QOpenGLVersionProfile
 %%QT_INCDIR%%/QtGui/QOpenGLVertexArrayObject
+%%QT_INCDIR%%/QtGui/QPageLayout
+%%QT_INCDIR%%/QtGui/QPageSize
 %%QT_INCDIR%%/QtGui/QPagedPaintDevice
 %%QT_INCDIR%%/QtGui/QPaintDevice
 %%QT_INCDIR%%/QtGui/QPaintEngine
@@ -462,6 +468,8 @@
 %%QT_INCDIR%%/QtGui/qopenglversionfunctions.h
 %%QT_INCDIR%%/QtGui/qopenglvertexarrayobject.h
 %%QT_INCDIR%%/QtGui/qpagedpaintdevice.h
+%%QT_INCDIR%%/QtGui/qpagelayout.h
+%%QT_INCDIR%%/QtGui/qpagesize.h
 %%QT_INCDIR%%/QtGui/qpaintdevice.h
 %%QT_INCDIR%%/QtGui/qpaintengine.h
 %%QT_INCDIR%%/QtGui/qpainter.h
@@ -517,9 +525,15 @@
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qcfsocketnotifier_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qcoretextfontdatabase_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qdevicediscovery_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglcompositor_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglconvenience_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglpbuffer_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformbackingstore_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformcontext_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformcursor_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformintegration_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformscreen_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qeglplatformwindow_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qevdevkeyboard_defaultmap_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qevdevkeyboardhandler_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qevdevkeyboardmanager_p.h
@@ -532,6 +546,7 @@
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qfbbackingstore_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qfbcursor_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qfbscreen_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qfbvthandler_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qfbwindow_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qfontconfigdatabase_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qfontengine_coretext_p.h
@@ -541,6 +556,7 @@
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qgenericunixservices_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qgenericunixthemes_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qglxconvenience_p.h
+%%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qmacmime_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qunixeventdispatcher_qpa_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/qxlibeglintegration_p.h
 %%QT_INCDIR%%/QtPlatformSupport/%%FULLVER%%/QtPlatformSupport/private/struct_marshallers_p.h
@@ -551,8 +567,10 @@
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5GuiConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake
+%%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake

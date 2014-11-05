@@ -36,6 +36,7 @@
 %%QT_INCDIR%%/QtHelp/qhelpsearchresultwidget.h
 %%QT_INCDIR%%/QtHelp/qthelpversion.h
 %%QT_LIBDIR%%/cmake/Qt5Help/Qt5HelpConfig.cmake
+%%QT_LIBDIR%%/cmake/Qt5Help/Qt5HelpConfigExtras.cmake
 %%QT_LIBDIR%%/cmake/Qt5Help/Qt5HelpConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5Help.prl
 %%QT_LIBDIR%%/libQt5Help.so

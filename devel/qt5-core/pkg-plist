@@ -48,6 +48,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_glib_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_unix_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_win_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_winrt_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventloop_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventtransition_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfactoryloader_p.h
@@ -59,6 +60,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystementry_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemiterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemmetadata_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_fsevents_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_inotify_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_kqueue_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_p.h
@@ -115,6 +117,10 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qorderedmutexlocker_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qparallelanimationgroup_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpodlist_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsattribute_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsattributeprivate_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsobject_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsobjectprivate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qprocess_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpropertyanimation_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qreadwritelock_p.h
@@ -133,6 +139,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsjiscodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstatemachine_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstringiterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsystemerror_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsystemlibrary_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsystemsemaphore_p.h
@@ -179,6 +186,7 @@
 %%QT_INCDIR%%/QtCore/QArrayDataPointerRef
 %%QT_INCDIR%%/QtCore/QAssociativeIterable
 %%QT_INCDIR%%/QtCore/QAtomicInt
+%%QT_INCDIR%%/QtCore/QAtomicInteger
 %%QT_INCDIR%%/QtCore/QAtomicPointer
 %%QT_INCDIR%%/QtCore/QBBSystemLocaleData
 %%QT_INCDIR%%/QtCore/QBasicMutex
@@ -288,6 +296,7 @@
 %%QT_INCDIR%%/QtCore/QMapNode
 %%QT_INCDIR%%/QtCore/QMapNodeBase
 %%QT_INCDIR%%/QtCore/QMargins
+%%QT_INCDIR%%/QtCore/QMarginsF
 %%QT_INCDIR%%/QtCore/QMessageAuthenticationCode
 %%QT_INCDIR%%/QtCore/QMessageLogContext
 %%QT_INCDIR%%/QtCore/QMessageLogger
@@ -365,6 +374,7 @@
 %%QT_INCDIR%%/QtCore/QSharedDataPointer
 %%QT_INCDIR%%/QtCore/QSharedMemory
 %%QT_INCDIR%%/QtCore/QSharedPointer
+%%QT_INCDIR%%/QtCore/QSignalBlocker
 %%QT_INCDIR%%/QtCore/QSignalMapper
 %%QT_INCDIR%%/QtCore/QSignalTransition
 %%QT_INCDIR%%/QtCore/QSize
@@ -474,24 +484,16 @@
 %%QT_INCDIR%%/QtCore/qarraydataops.h
 %%QT_INCDIR%%/QtCore/qarraydatapointer.h
 %%QT_INCDIR%%/QtCore/qatomic.h
-%%QT_INCDIR%%/QtCore/qatomic_alpha.h
 %%QT_INCDIR%%/QtCore/qatomic_armv5.h
 %%QT_INCDIR%%/QtCore/qatomic_armv6.h
 %%QT_INCDIR%%/QtCore/qatomic_armv7.h
-%%QT_INCDIR%%/QtCore/qatomic_bfin.h
 %%QT_INCDIR%%/QtCore/qatomic_bootstrap.h
 %%QT_INCDIR%%/QtCore/qatomic_cxx11.h
 %%QT_INCDIR%%/QtCore/qatomic_gcc.h
 %%QT_INCDIR%%/QtCore/qatomic_ia64.h
-%%QT_INCDIR%%/QtCore/qatomic_integrity.h
 %%QT_INCDIR%%/QtCore/qatomic_mips.h
 %%QT_INCDIR%%/QtCore/qatomic_msvc.h
-%%QT_INCDIR%%/QtCore/qatomic_power.h
-%%QT_INCDIR%%/QtCore/qatomic_s390.h
-%%QT_INCDIR%%/QtCore/qatomic_sh4a.h
-%%QT_INCDIR%%/QtCore/qatomic_sparc.h
 %%QT_INCDIR%%/QtCore/qatomic_unix.h
-%%QT_INCDIR%%/QtCore/qatomic_vxworks.h
 %%QT_INCDIR%%/QtCore/qatomic_x86.h
 %%QT_INCDIR%%/QtCore/qbasicatomic.h
 %%QT_INCDIR%%/QtCore/qbasictimer.h
@@ -540,6 +542,7 @@
 %%QT_INCDIR%%/QtCore/qfunctions_nacl.h
 %%QT_INCDIR%%/QtCore/qfunctions_vxworks.h
 %%QT_INCDIR%%/QtCore/qfunctions_wince.h
+%%QT_INCDIR%%/QtCore/qfunctions_winrt.h
 %%QT_INCDIR%%/QtCore/qfuture.h
 %%QT_INCDIR%%/QtCore/qfutureinterface.h
 %%QT_INCDIR%%/QtCore/qfuturesynchronizer.h
@@ -585,7 +588,6 @@
 %%QT_INCDIR%%/QtCore/qobjectcleanuphandler.h
 %%QT_INCDIR%%/QtCore/qobjectdefs.h
 %%QT_INCDIR%%/QtCore/qobjectdefs_impl.h
-%%QT_INCDIR%%/QtCore/qoldbasicatomic.h
 %%QT_INCDIR%%/QtCore/qpair.h
 %%QT_INCDIR%%/QtCore/qparallelanimationgroup.h
 %%QT_INCDIR%%/QtCore/qpauseanimation.h
