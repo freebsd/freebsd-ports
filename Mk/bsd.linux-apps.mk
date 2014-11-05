@@ -202,6 +202,7 @@ freealut_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-freealut
 freealut_DEPENDS=	openal
 
 gdkpixbuf_f10_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf.so.2
+gdkpixbuf_c6_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf.so.2
 gdkpixbuf_DETECT=	${gdkpixbuf${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gdkpixbuf_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-gdk-pixbuf
 

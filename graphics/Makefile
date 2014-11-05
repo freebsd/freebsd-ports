@@ -560,6 +560,7 @@
     SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-dri
     SUBDIR += linux-c6-dri-compat
+    SUBDIR += linux-c6-gdk-pixbuf
     SUBDIR += linux-c6-jpeg
     SUBDIR += linux-c6-libGLU
     SUBDIR += linux-c6-png

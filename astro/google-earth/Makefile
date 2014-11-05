@@ -36,7 +36,7 @@ UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 .if ${PORT_OPTIONS:MNVIDIA}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
-USE_LINUX_APPS+=	dri libpciaccess
+USE_LINUX_APPS+=	libpciaccess
 LIBGL_ALWAYS_SOFTWARE=LIBGL_ALWAYS_SOFTWARE=yes
 .endif
 
