@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfixbuf
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
