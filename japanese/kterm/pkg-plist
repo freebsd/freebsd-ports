@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/kterm
 man/ja/man1/kterm.1.gz
 man/man1/kterm.1.gz

@@ -1,4 +1,3 @@
-@comment $NetBSD: PLIST,v 1.1.1.1 2001/01/10 14:47:47 taca Exp $
 share/chasen/dic/ipadic/Makefile.bat
 share/chasen/dic/ipadic/cforms.cha
 share/chasen/dic/ipadic/chadic.da

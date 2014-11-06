@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/stoken
 %%X11%%bin/stoken-gui
 include/stoken.h

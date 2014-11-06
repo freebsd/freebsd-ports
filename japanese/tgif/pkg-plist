@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @sample %%XAPPLRESDIR%%/Tgif.sample
 @dirrmtry %%XAPPLRESDIR%%
 @dirrmtry lib/X11/ja_JP.eucJP
