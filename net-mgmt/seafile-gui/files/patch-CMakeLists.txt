@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2014-09-03 23:17:55.314282575 -0400
++++ CMakeLists.txt	2014-09-03 23:19:48.914240566 -0400
+@@ -21,7 +21,7 @@
+     IF (${CMAKE_BUILD_TYPE} MATCHES Release)
+       SET(GUI_TYPE WIN32)
+     ENDIF()
+-ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|DragonFly|NetBSD|OpenBSD")
+     INCLUDE_DIRECTORIES(${QT_QTDBUS_INCLUDE_DIR})
+     LINK_DIRECTORIES(${QT_QTDBUS_LIBRARIES})
+     SET(EXTRA_LIBS ${EXTRA_LIBS} ${QT_QTDBUS_LIBRARIES})
+@@ -42,7 +42,7 @@
+ ####################
+ ###### BEGIN: QT configuration
+ ####################
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|DragonFly|NetBSD|OpenBSD")
+   SET(QtDBus "QtDBus")
+ ENDIF()
+ 
+@@ -380,7 +380,7 @@
+   ${EXTRA_LIBS}
+ )
+ 
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|DragonFly|NetBSD|OpenBSD")
+   TARGET_LINK_LIBRARIES(seafile-applet
+     ${QT_QTDBUS_LIBRARIES}
+   )
