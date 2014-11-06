@@ -2310,6 +2310,7 @@
     SUBDIR += p5-Log-Dispatch-Screen-Color
     SUBDIR += p5-Log-Dispatch-Scribe
     SUBDIR += p5-Log-Dispatchouli
+    SUBDIR += p5-Log-Dump
     SUBDIR += p5-Log-Handler
     SUBDIR += p5-Log-Log4perl
     SUBDIR += p5-Log-Log4perl-Appender-RabbitMQ

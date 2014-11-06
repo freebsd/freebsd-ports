@@ -1,0 +1,10 @@
+Log::Dump is a simple logger mix-in mainly for debugging. This
+installs six methods into a caller (the class that used Log::Dump) via
+Sub::Install. The point is you don't need to load extra dumper modules
+or you don't need to concatenate messages. Just log things and they
+will be dumped (and concatenated if necessary) to stderr, and to a
+file if you prefer. Also, you can use these logging methods as class
+methods or object methods (though usually you don't want to mix them,
+especially when you're doing something special).
+
+WWW: http://search.cpan.org/dist/Log-Dump/
