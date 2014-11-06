@@ -1,4 +1,3 @@
-@comment $NetBSD: PLIST,v 1.3 1999/10/27 15:34:11 hubertf Exp $
 share/festival/lib/dicts/cmu/allowables.scm
 share/festival/lib/dicts/cmu/cmulex.scm
 share/festival/lib/dicts/cmu/cmu_lts_rules.scm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 etc/cups/mimefx.convs
 etc/cups/mimefx.types
 libexec/cups/filter/pdftopdffx

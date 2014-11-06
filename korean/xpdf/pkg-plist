@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/korean/Adobe-Korea1.cidToUnicode
 %%DATADIR%%/korean/ISO-2022-KR.unicodeMap
 %%DATADIR%%/korean/README
