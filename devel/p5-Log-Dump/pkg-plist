@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/Log::Dump.3.gz
+%%PERL5_MAN3%%/Log::Dump::Class.3.gz
+%%PERL5_MAN3%%/Log::Dump::Functions.3.gz
+%%SITE_PERL%%/Log/Dump.pm
+%%SITE_PERL%%/Log/Dump/Class.pm
+%%SITE_PERL%%/Log/Dump/Functions.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dump/.packlist
