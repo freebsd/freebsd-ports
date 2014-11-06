@@ -10,4 +10,3 @@
 %%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/seafile_dav_provider.py
 %%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/seafile_dav_provider.pyc
 %%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/seafile_dav_provider.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile
