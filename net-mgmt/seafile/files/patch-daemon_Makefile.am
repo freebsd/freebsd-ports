@@ -1,0 +1,12 @@
+--- daemon/Makefile.am.orig	2014-08-05 01:28:35.000000000 -0400
++++ daemon/Makefile.am	2014-08-30 01:44:16.911202899 -0400
+@@ -125,7 +125,8 @@
+ 	@GLIB2_LIBS@  @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 -levent \
+ 	$(top_builddir)/common/cdc/libcdc.la \
+ 	$(top_builddir)/common/index/libindex.la ${LIB_WS32} \
+-	@SEARPC_LIBS@ @CCNET_LIBS@ @GNOME_KEYRING_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@
++	@SEARPC_LIBS@ @CCNET_LIBS@ @GNOME_KEYRING_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ \
++	@ZLIB_LIBS@ @LIB_INOTIFY@
+ 
+ seaf_daemon_LDFLAGS = @STATIC_COMPILE@ @CONSOLE@
+ 

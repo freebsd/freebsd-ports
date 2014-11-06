@@ -281,6 +281,7 @@
     SUBDIR += sblim-wbemcli
     SUBDIR += scli
     SUBDIR += sdig
+    SUBDIR += seafile
     SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sipcalc
