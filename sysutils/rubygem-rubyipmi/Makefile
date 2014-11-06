@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	rubyipmi
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Command line wrapper for ipmitool and freeipmi
 
-LICENSE=	GPLv3
+LICENSE=	LGPL21
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/bmc-device:${PORTSDIR}/sysutils/freeipmi
 
