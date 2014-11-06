@@ -1,0 +1,4 @@
+This addon provides seafile implementation for Web DAV server by
+utilizing WsgiDAV interface.
+
+WWW: https://github.com/haiwen/seafdav

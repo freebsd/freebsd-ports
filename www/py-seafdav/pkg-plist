@@ -1,0 +1,13 @@
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/__init__.py
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/__init__.pyc
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/__init__.pyo
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/domain_controller.py
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/domain_controller.pyc
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/domain_controller.pyo
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/seaf_utils.py
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/seaf_utils.pyc
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/seaf_utils.pyo
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/seafile_dav_provider.py
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/seafile_dav_provider.pyc
+%%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile/seafile_dav_provider.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/wsgidav/addons/seafile
