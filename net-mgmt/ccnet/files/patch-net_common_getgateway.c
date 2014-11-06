@@ -5,7 +5,7 @@
  #endif
  
 -#ifdef BSD
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
  #undef USE_PROC_NET_ROUTE
  #define USE_SOCKET_ROUTE
  #undef USE_SYSCTL_NET_ROUTE
