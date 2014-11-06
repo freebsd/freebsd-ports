@@ -1,0 +1,15 @@
+%%PERL5_MAN3%%/Path::Extended.3.gz
+%%PERL5_MAN3%%/Path::Extended::Class.3.gz
+%%PERL5_MAN3%%/Path::Extended::Class::Dir.3.gz
+%%PERL5_MAN3%%/Path::Extended::Class::File.3.gz
+%%PERL5_MAN3%%/Path::Extended::Dir.3.gz
+%%PERL5_MAN3%%/Path::Extended::Entity.3.gz
+%%PERL5_MAN3%%/Path::Extended::File.3.gz
+%%SITE_PERL%%/Path/Extended.pm
+%%SITE_PERL%%/Path/Extended/Class.pm
+%%SITE_PERL%%/Path/Extended/Class/Dir.pm
+%%SITE_PERL%%/Path/Extended/Class/File.pm
+%%SITE_PERL%%/Path/Extended/Dir.pm
+%%SITE_PERL%%/Path/Extended/Entity.pm
+%%SITE_PERL%%/Path/Extended/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Extended/.packlist
