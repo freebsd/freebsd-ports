@@ -43,7 +43,7 @@
  SORTUNIQ=0
  SUPPORT_CRACKING_IGNORE=0
  SYSLOGSUMMARY=0
--LOCKDIR=/var/lock/logcheck
+-LOCKDIR=/run/lock/logcheck
 +LOCKDIR=/var/run/logcheck
  LOCKFILE="$LOCKDIR/logcheck"
  

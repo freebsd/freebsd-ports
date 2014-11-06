@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logcheck
-PORTVERSION=	1.3.16
+PORTVERSION=	1.3.17
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -72,34 +72,34 @@ do-build:
 		${WRKSRC}/etc/logcheck.logfiles
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/detectrotate \
+		  ${STAGEDIR}${DBDIR} \
+		  ${STAGEDIR}${DOCSDIR} \
+		  ${STAGEDIR}${ETCDIR} \
+		  ${STAGEDIR}${EXAMPLESDIR} \
+		  ${STAGEDIR}${RUNDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail2 ${STAGEDIR}${PREFIX}/sbin
-	@${INSTALL} -d ${STAGEDIR}${DBDIR} ${STAGEDIR}${RUNDIR}
-	@${INSTALL} -d ${STAGEDIR}${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.conf \
+	${INSTALL_DATA} ${WRKSRC}/etc/logcheck.conf \
 		${STAGEDIR}${ETCDIR}/logcheck.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.logfiles \
+	${INSTALL_DATA} ${WRKSRC}/etc/logcheck.logfiles \
 		${STAGEDIR}${ETCDIR}/logcheck.logfiles.sample
 .for i in ${CONFIG_DIRS}
-	@${INSTALL} -d ${STAGEDIR}${ETCDIR}/${i}
-	@${INSTALL_DATA} ${WRKSRC}/rulefiles/linux/${i}/* \
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/rulefiles/linux/${i}/* \
 		${STAGEDIR}${ETCDIR}/${i}
 .endfor
-	@${INSTALL} -d ${STAGEDIR}${DATADIR}/detectrotate
-	@${INSTALL_DATA} ${WRKSRC}/src/detectrotate/*.dtr \
+	${INSTALL_DATA} ${WRKSRC}/src/detectrotate/*.dtr \
 		${STAGEDIR}${DATADIR}/detectrotate
-	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d \
+	${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d \
 		${STAGEDIR}${EXAMPLESDIR}/crontab.in
 	@${ECHO_CMD} '@exec ${CHGRP} -R ${LOGCHECK_GROUP} \
 		${ETCDIR:S|^${PREFIX}/|%D/|} \
 		${DATADIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 .for i in ${MAN_FILES}
-	@${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${MAN8PREFIX}/man/man8
-	@${GZIP_CMD} ${STAGEDIR}${MAN8PREFIX}/man/man8/$i
+	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${MAN8PREFIX}/man/man8
 .endfor
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
