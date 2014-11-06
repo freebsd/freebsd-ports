@@ -282,6 +282,7 @@
     SUBDIR += scli
     SUBDIR += sdig
     SUBDIR += seafile
+    SUBDIR += seafile-gui
     SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sipcalc

@@ -1,0 +1,10 @@
+%%QT_BINDIR%%/seafile-applet
+share/applications/seafile.desktop
+share/icons/hicolor/128x128/apps/seafile.png
+share/icons/hicolor/16x16/apps/seafile.png
+share/icons/hicolor/22x22/apps/seafile.png
+share/icons/hicolor/24x24/apps/seafile.png
+share/icons/hicolor/32x32/apps/seafile.png
+share/icons/hicolor/48x48/apps/seafile.png
+share/icons/hicolor/scalable/apps/seafile.svg
+share/pixmaps/seafile.png
