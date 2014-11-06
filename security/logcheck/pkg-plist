@@ -47,7 +47,6 @@
 %%ETCDIR%%/ignore.d.server/dhcp
 %%ETCDIR%%/ignore.d.server/dictd
 %%ETCDIR%%/ignore.d.server/dkfilter
-%%ETCDIR%%/ignore.d.server/dkim-filter
 %%ETCDIR%%/ignore.d.server/dnsmasq
 %%ETCDIR%%/ignore.d.server/dovecot
 %%ETCDIR%%/ignore.d.server/dropbear
