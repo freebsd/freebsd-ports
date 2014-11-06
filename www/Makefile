@@ -1697,6 +1697,7 @@
     SUBDIR += py-wikitools
     SUBDIR += py-ws4py
     SUBDIR += py-wsgiauth
+    SUBDIR += py-wsgidav
     SUBDIR += py-zope.app.wsgi
     SUBDIR += pyblosxom
     SUBDIR += pydio
