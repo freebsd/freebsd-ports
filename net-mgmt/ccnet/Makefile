@@ -2,6 +2,7 @@
 
 PORTNAME=	ccnet
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	yan_jingfeng@yahoo.com
@@ -39,12 +40,11 @@ WITH_OPENSSL_PORT=	yes
 USE_OPENSSL=	yes
 
 WWWDIR=		${PREFIX}/www/haiwen/seafile-server
+SEABIN=		${STAGEDIR}${WWWDIR}/seafile/bin
 
 post-install:
-	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}/seafile/bin
-	${INSTALL} -m 0755  ${STAGEDIR}${PREFIX}/bin/ccnet-init \
-		${STAGEDIR}${WWWDIR}/seafile/bin/ccnet-init
-	${INSTALL} -m 0755  ${STAGEDIR}${PREFIX}/bin/ccnet-server \
-		${STAGEDIR}${WWWDIR}/seafile/bin/ccnet-server
+	@${MKDIR} ${SEABIN}
+	${LN} ${STAGEDIR}${PREFIX}/bin/ccnet-init ${SEABIN}
+	${LN} ${STAGEDIR}${PREFIX}/bin/ccnet-server ${SEABIN}
 
 .include <bsd.port.mk>

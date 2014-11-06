@@ -16,7 +16,7 @@
  #endif  /* ifdef WIN32 */
  
 -#ifdef __linux__
-+#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
  /* read the link of /proc/123/exe and compare with `process_name' */
  static int
  find_process_in_dirent(struct dirent *dir, const char *process_name)
@@ -26,7 +26,7 @@
 +#if defined(__linux__)
      if (sprintf (path, "/proc/%s/exe", dir->d_name) < 0) {
 +#endif
-+#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +    if (sprintf (path, "/proc/%s/file", dir->d_name) < 0) {
 +#endif
          return -1;
@@ -38,7 +38,7 @@
  
 +/*
 + * Finally, we should not enforce to use /proc
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +gboolean process_is_running (const char *process_name)
 +{
 +    //TODO
