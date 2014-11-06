@@ -1,0 +1,12 @@
+--- lib/Makefile.am.orig	2014-08-30 02:00:00.097346044 -0400
++++ lib/Makefile.am	2014-08-30 02:00:10.951213463 -0400
+@@ -72,8 +72,4 @@
+ 	rm -f $(top_srcdir)/lib/rpc_table.pyc
+ 
+ install-data-local:
+-if MACOS
+-	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+-else
+-	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+-endif
++	${SED} -i '' "s|(DESTDIR)|${PREFIX}|g" $(pcfiles)
