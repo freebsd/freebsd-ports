@@ -105,7 +105,6 @@
     SUBDIR += eigen2
     SUBDIR += eigen3
     SUBDIR += eispack
-    SUBDIR += elmer-umfpack
     SUBDIR += emc2
     SUBDIR += ent
     SUBDIR += entropy

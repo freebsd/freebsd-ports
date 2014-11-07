@@ -1,6 +1,0 @@
-bin/matc
-lib/libmatc.a
-include/elmer/fnames.h
-include/elmer/gra.h
-include/elmer/matc.h
-@dirrm include/elmer

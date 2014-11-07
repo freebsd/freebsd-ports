@@ -1,9 +1,0 @@
-Input/Output Data base interface for use in the ELMER FEM package.
-
-Elmer is an open-source computational tool for multi-physics problems.
-
-Elmer includes physical models of fluid dynamics, structural mechanics,
-electromagnetics and heat transfer. These are described by partial
-differential equations which Elmer solves by the Finite Element Method (FEM)
-
-WWW: http://www.csc.fi/elmer/

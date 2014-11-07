@@ -1,8 +1,0 @@
-This is a slightly modified version of umfpack for use with the Elmer FEM
-package.
-
-Among other small changes, Elmer calls umfpack routines from f90 using
-umf4_f77wrapper.c from umfpacks demo directory. The elmer-umfpack build
-compiles this and includes it in the libumfpack.a.
-
-WWW: http://www.csc.fi/elmer/
