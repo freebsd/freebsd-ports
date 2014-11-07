@@ -1,4 +1,5 @@
 bin/kst2
+lib/kst2/plugins/libkst2_dataobject_activitylevel.so
 lib/kst2/plugins/libkst2_dataobject_bin.so
 lib/kst2/plugins/libkst2_dataobject_chop.so
 lib/kst2/plugins/libkst2_dataobject_convolution_convolve.so
@@ -6,7 +7,6 @@ lib/kst2/plugins/libkst2_dataobject_convolution_deconvolve.so
 lib/kst2/plugins/libkst2_dataobject_correlation_autocorrelation.so
 lib/kst2/plugins/libkst2_dataobject_correlation_crosscorrelation.so
 lib/kst2/plugins/libkst2_dataobject_crossspectrum.so
-lib/kst2/plugins/libkst2_dataobject_differentiation.so
 lib/kst2/plugins/libkst2_dataobject_effectivebandwidth.so
 lib/kst2/plugins/libkst2_dataobject_genericfilter.so
 lib/kst2/plugins/libkst2_dataobject_interpolations_akima.so
@@ -29,13 +29,16 @@ lib/kst2/plugins/libkst2_datasource_ascii.so
 %%NETCDF%%lib/kst2/plugins/libkst2_datasource_netcdf.so
 lib/kst2/plugins/libkst2_datasource_qimagesource.so
 lib/kst2/plugins/libkst2_datasource_sampledatasource.so
+lib/kst2/plugins/libkst2_datasource_sourcelist.so
 lib/kst2/plugins/libkst2_filters_butterworth_bandpass.so
 lib/kst2/plugins/libkst2_filters_butterworth_bandstop.so
 lib/kst2/plugins/libkst2_filters_butterworth_highpass.so
 lib/kst2/plugins/libkst2_filters_butterworth_lowpass.so
+lib/kst2/plugins/libkst2_filters_cumulativeaverage.so
 lib/kst2/plugins/libkst2_filters_cumulativesum.so
 lib/kst2/plugins/libkst2_filters_despike.so
 lib/kst2/plugins/libkst2_filters_differentiation.so
+lib/kst2/plugins/libkst2_filters_unwind.so
 lib/kst2/plugins/libkst2_fits_exponential_unweighted.so
 lib/kst2/plugins/libkst2_fits_exponential_weighted.so
 lib/kst2/plugins/libkst2_fits_gaussian_unweighted.so
@@ -73,20 +76,15 @@ share/icons/hicolor/64x64/apps/application-x-kst.png
 share/icons/hicolor/64x64/apps/kst.png
 share/icons/hicolor/scalable/apps/application-x-kst.svg
 share/icons/hicolor/scalable/apps/kst.svg
+%%DATADIR%%/locale/kst_common_ca.qm
+%%DATADIR%%/locale/kst_common_ca@valencia.qm
+%%DATADIR%%/locale/kst_common_de.qm
+%%DATADIR%%/locale/kst_common_en_GB.qm
+%%DATADIR%%/locale/kst_common_fr.qm
+%%DATADIR%%/locale/kst_common_nl.qm
+%%DATADIR%%/locale/kst_common_pl.qm
+%%DATADIR%%/locale/kst_common_pt.qm
+%%DATADIR%%/locale/kst_common_pt_BR.qm
+%%DATADIR%%/locale/kst_common_sv.qm
+%%DATADIR%%/locale/kst_common_uk.qm
 share/mimelnk/application/x-kst2.desktop
-@dirrmtry share/mimelnk/application
-@dirrmtry share/mimelnk
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm lib/kst2/plugins
-@dirrm lib/kst2
