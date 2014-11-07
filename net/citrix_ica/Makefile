@@ -3,7 +3,7 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net comms linux
 MASTER_SITES=	#
 DISTNAME=	linuxx86_12.1.0.203066
@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
+USES=		webplugin:linux
+WEBPLUGIN_FILES=	npica.so
 USE_LINUX=	yes
 USE_LINUX_APPS=	alsalib gtk2 openmotif
 RESTRICTED=	License prohibits redistribution
