@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
 		libpng15.so:${PORTSDIR}/graphics/png \
-		libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+		libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-XML-XQL>=0:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_GNOME=	gtkmm24 intlhack libxslt

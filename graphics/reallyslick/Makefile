@@ -11,7 +11,7 @@ DISTNAME=	rss-glx_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL screensaver collection
 
-LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick \
 		libGLC.so:${PORTSDIR}/graphics/quesoglc
 
 USE_GL=		glut

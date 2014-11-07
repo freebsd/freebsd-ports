@@ -124,7 +124,7 @@ CONFIGURE_ARGS+=	--enable-customization
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickCore-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 .else
 CONFIGURE_ARGS+=	--without-magick
 .endif

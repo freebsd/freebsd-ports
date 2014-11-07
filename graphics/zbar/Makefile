@@ -29,7 +29,7 @@ X11_USE=	XORG=ice,sm,x11,xau,xcb,xdmcp,xext,xv
 X11_CONFIGURE_ON=	--with-x=yes
 X11_CONFIGURE_OFF=	--with-x=no --without-xshm --without-xv
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 IMAGEMAGICK_CONFIGURE_ON=	--with-imagemagick=yes
 IMAGEMAGICK_CONFIGURE_OFF=	--with-imagemagick=no
 

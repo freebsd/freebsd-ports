@@ -8,7 +8,7 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
-LIB_DEPENDS=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	libMagickCore-6.Q16.so:${PORTSDIR}/graphics/ImageMagick \
 		libQtGStreamer-0.10.so:${PORTSDIR}/multimedia/gstreamer-qt4
 
 KIPI_PLUGIN=	videoslideshow

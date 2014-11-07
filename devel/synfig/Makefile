@@ -13,7 +13,7 @@ COMMENT=	Vector based 2D animation package
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	etl>=0.04.17:${PORTSDIR}/devel/etl
-LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libmng.so:${PORTSDIR}/graphics/libmng \

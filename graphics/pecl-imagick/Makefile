@@ -16,8 +16,8 @@ LICENSE=	PHP301
 
 OPTIONS_DEFINE=	X11
 
-X11_LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
-X11_LIB_DEPENDS_OFF=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick-nox11
+X11_LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
+X11_LIB_DEPENDS_OFF=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick-nox11
 
 USES=		pkgconfig tar:tgz
 USE_PHP=	yes
