@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-review
-PORTVERSION=	1.23
-PORTREVISION=	1
+PORTVERSION=	1.24
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -11,19 +10,21 @@ COMMENT=	Allow to push review and interact with a Gerrit server
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:${PORTSDIR}/devel/py-pbr
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 
 USES=		python
-NO_BUILD=	yes
+USE_PYTHON=	distutils autoplist
 
-PLIST_FILES=	bin/git-review \
-		man/man1/git-review.1.gz
+PLIST_FILES=	man/man1/git-review.1.gz
 PORTDOCS=	README.rst HACKING.rst AUTHORS
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/git-review ${STAGEDIR}${PREFIX}/bin/git-review
-	${INSTALL_MAN} ${WRKSRC}/git-review.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+.include <bsd.port.options.mk>
 
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/git-review.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+.endif
 .include <bsd.port.mk>
