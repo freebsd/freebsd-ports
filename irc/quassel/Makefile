@@ -9,11 +9,14 @@ MASTER_SITES=	http://www.quassel-irc.org/pub/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt 4 based distributed IRC client
 
-USES=		cmake:outsource compiler:c++11-lib execinfo tar:bzip2
+USES=		cmake:outsource compiler:c++11-lib cpe execinfo tar:bzip2
 USE_QT4=	corelib network script sql \
 		qmake_build moc_build rcc_build uic_build
 CMAKE_ARGS=	-DWITH_LIBINDICATE=off \
 		-DEMBED_DATA=on
+
+CPE_VENDOR=	quassel-irc
+CPE_PRODUCT=	quassel_irc
 
 OPTIONS_DEFINE=	KDE NLS
 OPTIONS_MULTI=	MODULE
