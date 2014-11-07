@@ -1,0 +1,5 @@
+
+MediaBrowser uses ffmpeg for transcoding, which by default has
+lame support disabled due to licensing issues. To enable mp3
+audio when transcoding, you must reinstall multimedia/ffmpeg
+from ports with the lame support option enabled.

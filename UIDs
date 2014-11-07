@@ -308,4 +308,5 @@ puppetdb:*:985:985::0:0:PuppetDB Daemon pseudo-user:/nonexistent:/usr/sbin/nolog
 kamailio:*:986:986::0:0:kamailio daemon:/nonexistent:/usr/sbin/nologin
 spark:*:987:987::0:0:Apache Spark user:/nonexistent:/usr/sbin/nologin
 toxdht:*:988:65534::0:0:Tox DHT bootstrap user:/nonexistent:/usr/sbin/nologin
+mediabrowser:*:989:989::0:0:MediaBrowser:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
