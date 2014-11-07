@@ -3,7 +3,7 @@
 
 PORTNAME=	bsdadminscripts
 PORTVERSION=	6.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -21,7 +21,7 @@ PORTDOCS=	ABOUT CHANGES INSTALL NOTES THANKS
 
 OPTIONS_DEFINE=	DOCS
 
-SUB_FILES=	pkg_libchk pkg_upgrade uma
+SUB_FILES=	distviper pkg_libchk pkg_upgrade uma
 SUB_LIST=	TMP=${TMP} PREFIX=${PREFIX} VAR=${VAR} PORTS=${PORTSDIR}
 
 .include <bsd.port.options.mk>
@@ -37,7 +37,7 @@ do-install:
 		-distdir=${STAGEDIR}${DISTDIR} \
 		-datadir=${STAGEDIR}${DATADIR} \
 		${EVALDOCS}
-.for n in pkg_libchk pkg_upgrade uma
+.for n in distviper pkg_libchk pkg_upgrade uma
 	${MV} ${WRKDIR}/${n} ${WRKSRC}/src
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${n} ${STAGEDIR}${PREFIX}/sbin
 .endfor
