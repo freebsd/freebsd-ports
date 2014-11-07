@@ -53,6 +53,7 @@
     SUBDIR += firedns
     SUBDIR += fpdns
     SUBDIR += gdnsd
+    SUBDIR += gdnsd2
     SUBDIR += geta
     SUBDIR += getdns
     SUBDIR += ghtool

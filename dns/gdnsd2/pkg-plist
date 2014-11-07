@@ -1,0 +1,58 @@
+bin/gdnsd_geoip_test
+include/gdnsd/alloc.h
+include/gdnsd/compiler.h
+include/gdnsd/dmn.h
+include/gdnsd/dname.h
+include/gdnsd/log.h
+include/gdnsd/misc.h
+include/gdnsd/mon.h
+include/gdnsd/net.h
+include/gdnsd/paths.h
+include/gdnsd/plugapi.h
+include/gdnsd/plugin.h
+include/gdnsd/stats.h
+include/gdnsd/vscf.h
+lib/gdnsd/libgdnsd.so
+lib/gdnsd/plugin_extfile.so
+lib/gdnsd/plugin_extmon.so
+lib/gdnsd/plugin_geoip.so
+lib/gdnsd/plugin_http_status.so
+lib/gdnsd/plugin_metafo.so
+lib/gdnsd/plugin_multifo.so
+lib/gdnsd/plugin_null.so
+lib/gdnsd/plugin_reflect.so
+lib/gdnsd/plugin_simplefo.so
+lib/gdnsd/plugin_static.so
+lib/gdnsd/plugin_tcp_connect.so
+lib/gdnsd/plugin_weighted.so
+libexec/gdnsd/gdnsd_extmon_helper
+man/man1/gdnsd_geoip_test.1.gz
+man/man3/gdnsd-plugin-api.3.gz
+man/man5/gdnsd.config.5.gz
+man/man5/gdnsd.djbdns.5.gz
+man/man5/gdnsd.zonefile.5.gz
+man/man8/gdnsd-plugin-extfile.8.gz
+man/man8/gdnsd-plugin-extmon.8.gz
+man/man8/gdnsd-plugin-geoip.8.gz
+man/man8/gdnsd-plugin-http_status.8.gz
+man/man8/gdnsd-plugin-metafo.8.gz
+man/man8/gdnsd-plugin-multifo.8.gz
+man/man8/gdnsd-plugin-null.8.gz
+man/man8/gdnsd-plugin-reflect.8.gz
+man/man8/gdnsd-plugin-simplefo.8.gz
+man/man8/gdnsd-plugin-static.8.gz
+man/man8/gdnsd-plugin-tcp_connect.8.gz
+man/man8/gdnsd-plugin-weighted.8.gz
+man/man8/gdnsd.8.gz
+sbin/gdnsd
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/gdnsd_manual.txt
+@dir %%ETCDIR%%/djbdns
+@dir %%ETCDIR%%/geoip
+@dir %%ETCDIR%%/zones
+@dir /var/db/gdnsd
+@dir /var/run/gdnsd
