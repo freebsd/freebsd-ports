@@ -17,8 +17,8 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	bin/sendxmpp \
-		%%SITE_PERL%%/mach/auto/sendxmpp/.packlist \
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/sendxmpp/.packlist \
 		man/man1/sendxmpp.1.gz
-PLIST_DIRS=	%%SITE_PERL%%/mach/auto/sendxmpp
+PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/sendxmpp
 
 .include <bsd.port.mk>

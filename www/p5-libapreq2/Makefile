@@ -45,10 +45,10 @@ post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libapreq2*
 	${RM} ${STAGEDIR}${PREFIX}/libexec/apache22/mod_apreq2*
 	${FIND} ${STAGEDIR} -name '*.bs' -type f -size 0c -exec ${RM} {} \;
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/mach/auto/APR/Request/Request.so
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/APR/Request/Request.so
 .for i in Apache2 CGI Cookie Error Hook Param Parser
 	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/mach/auto/APR/Request/${i}/${i}.so
+		${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/APR/Request/${i}/${i}.so
 .endfor
 
 .include <bsd.port.mk>

@@ -36,7 +36,7 @@ RUBY_USE=		RUBY=yes
 
 post-install:
 .if ${PORT_OPTIONS:MPERL}
-	${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
+	${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 	${SED} -i '' -e 's,^${STAGEDIR},,g' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/RDF/Redland/CORE/.packlist
 .endif
 

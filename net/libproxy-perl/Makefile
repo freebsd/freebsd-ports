@@ -19,10 +19,10 @@ USES=		perl5
 LIBPROXY_SLAVE=	perl
 
 do-install:
-	${MKDIR} ${STAGEDIR}${SITE_PERL}/mach/auto/Net/Libproxy ${STAGEDIR}${SITE_PERL}/mach/Net
+	${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/Libproxy ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/Net
 	${INSTALL_LIB} ${WRKSRC}/perl/blib/arch/auto/Net/Libproxy.so \
-		${STAGEDIR}${SITE_PERL}/mach/auto/Net/Libproxy/
+		${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/Libproxy/
 	${INSTALL_DATA} ${WRKSRC}/perl/blib/lib/Libproxy.pm \
-		${STAGEDIR}${SITE_PERL}/mach/Net/
+		${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/Net/
 
 .include "${MASTERDIR}/Makefile"

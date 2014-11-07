@@ -15,10 +15,10 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	%%SITE_PERL%%/Snort/Rule.pm \
-		%%SITE_PERL%%/mach/auto/Snort/Rule/.packlist \
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Snort/Rule/.packlist \
 		%%PERL5_MAN3%%/Snort::Rule.3.gz
-PLIST_DIRS=	%%SITE_PERL%%/mach/auto/Snort/Rule \
-		%%SITE_PERL%%/mach/auto/Snort \
+PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Snort/Rule \
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Snort \
 		%%SITE_PERL%%/Snort
 
 .include <bsd.port.mk>

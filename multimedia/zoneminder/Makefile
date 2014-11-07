@@ -140,7 +140,7 @@ post-install:
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
-	-${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
+	-${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 	${MKDIR} -m 0700 -p ${STAGEDIR}${M_TMPDIR}
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${M_TMPDIR}
 	${MKDIR} -m 0755 -p ${STAGEDIR}${M_RUNDIR}
