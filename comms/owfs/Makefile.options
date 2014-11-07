@@ -1,6 +1,8 @@
 # $FreeBSD$
 
-OPTIONS_DEFINE = OWDEBUG \
+OPTIONS_DEFINE = \
+	OWDEBUG \
+	OWMUTEXDEBUG \
 	OWSHELL \
 	OWNET \
 	I2C \
@@ -27,6 +29,7 @@ OPTIONS_DEFINE = OWDEBUG \
 
 
 OWDEBUG_DESC=		Enable debug output
+OWMUTEXDEBUG_DESC=	Enable mutex debug
 OWSHELL_DESC=		Enable CLI utils
 OWNET_DESC=		Enable network communication
 I2C_DESC=		Enable i2c (DS2482-x00) support (UNTESTED)
