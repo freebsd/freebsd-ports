@@ -27,9 +27,3 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/status.sh
 %%DATADIR%%/testport.sh
 %%ZSH%%share/zsh/site-functions/_poudriere
-%%ZSH%%@dirrmtry share/zsh/site-functions
-%%ZSH%%@dirrmtry share/zsh/
-@dirrmtry libexec/poudriere
-@dirrmtry %%DATADIR%%/awk
-@dirrmtry %%DATADIR%%/html
-@dirrmtry %%DATADIR%%
