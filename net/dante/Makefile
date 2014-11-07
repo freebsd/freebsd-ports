@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dante
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	net security ipv6
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
@@ -12,11 +12,10 @@ MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Circuit-level firewall/proxy
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	socks5-[0-9]*
-
-BROKEN_i386=	see PR 192295, requests tweaked sysctls
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
@@ -27,6 +26,7 @@ LIBS+=		-L${LOCALBASE}/lib
 USES=	libtool
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	sockd
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -34,10 +34,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .if ${OSVERSION} >= 1000044
 CONFIGURE_ARGS+=	--with-libc=libc.so.7
-.endif
-
-.if ${OPSYS} == FreeBSD
-FORBIDDEN=	Building on 10+ triggers a nasty bug with unix domain sockets
 .endif
 
 post-install:
