@@ -3,6 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -25,11 +26,14 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 
 EMACS_VER=	24.4
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gmake makeinfo ncurses pkgconfig shebangfix tar:xz
+USES=		gmake makeinfo ncurses pkgconfig shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO_PATH=	${DATADIR_REL}/info
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+SUB_FILES=	pkg-install
+SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
 SHEBANG_FILES=	lib-src/grep-changelog
 
 # Append --without-compress-install to prevent emacs from compressing info
@@ -90,6 +94,7 @@ CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
 
 SOUND_CONFIGURE_OFF=	--with-sound=no
 ALSA_CONFIGURE_ON=	--with-sound=alsa
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 OSS_CONFIGURE_ON=	--with-sound=oss
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
@@ -106,6 +111,7 @@ SVG_CONFIGURE_WITH=	rsvg
 
 X11_CONFIGURE_WITH=	x
 X11_USE=		XORG=x11
+X11_USES=		desktop-file-utils
 X11_PLIST_DIRSTRY_OFF=	share/icons/hicolor/scalable/mimetypes \
 			share/icons/hicolor/scalable/apps \
 			share/icons/hicolor/scalable \
