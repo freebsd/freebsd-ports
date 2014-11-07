@@ -1665,6 +1665,7 @@
     SUBDIR += py-scrapy
     SUBDIR += py-scriptaculous
     SUBDIR += py-seafdav
+    SUBDIR += py-seafobj
     SUBDIR += py-selector
     SUBDIR += py-selenium
     SUBDIR += py-slimmer
