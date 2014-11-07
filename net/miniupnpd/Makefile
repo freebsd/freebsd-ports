@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	miniupnpd
-PORTVERSION=	1.8.20141022
+PORTVERSION=	1.9
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
