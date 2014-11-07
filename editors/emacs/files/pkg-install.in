@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+GAMESROOT=/var/games/emacs
+ARCHLIBDIR=%%ARCHLIBDIR%%
+
+if [ "$2" = "POST-INSTALL" ]; then
+    umask 022
+    mkdir -p $GAMESROOT
+    touch $GAMESROOT/snake-scores
+    touch $GAMESROOT/tetris-scores
+    chown games $ARCHLIBDIR/update-game-score
+    chmod u+s $ARCHLIBDIR/update-game-score
+    chown games $GAMESROOT
+    chmod 775 $GAMESROOT
+fi
+
+exit 0
