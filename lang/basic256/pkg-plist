@@ -128,6 +128,7 @@ bin/basic256
 %%DATADIR%%/basic256_en.qm
 %%DATADIR%%/basic256_es.qm
 %%DATADIR%%/basic256_fr.qm
+%%DATADIR%%/basic256_it.qm
 %%DATADIR%%/basic256_nl.qm
 %%DATADIR%%/basic256_pt.qm
 %%DATADIR%%/basic256_ru.qm
