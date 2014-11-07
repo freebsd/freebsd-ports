@@ -3,6 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
@@ -31,6 +32,8 @@ INFO_PATH=	${DATADIR_REL}/info
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env autoheader:env
 
+SUB_FILES=	pkg-install
+SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
 SHEBANG_FILES=	${WRKSRC}/lib-src/grep-changelog
 
 # Append --without-compress-install to prevent emacs from compressing info
@@ -79,6 +82,7 @@ OPTIONS_SUB=		SOURCES
 
 SOUND_CONFIGURE_OFF=	--with-sound=no
 ALSA_CONFIGURE_ON=		--with-sound=alsa
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 OSS_CONFIGURE_ON=		--with-sound=oss
 
 DBUS_LIB_DEPENDS=		libdbus-1.so:${PORTSDIR}/devel/dbus
@@ -95,6 +99,7 @@ SVG_CONFIGURE_WITH=	rsvg
 
 X11_CONFIGURE_WITH=	x
 X11_USE=	XORG=x11
+X11_USES=		desktop-file-utils
 X11_PLIST_DIRSTRY_OFF=	share/icons/hicolor/scalable/mimetypes \
 			share/icons/hicolor/scalable/apps \
 			share/icons/hicolor/scalable \
