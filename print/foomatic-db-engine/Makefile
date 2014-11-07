@@ -26,6 +26,8 @@ CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/ \
 		CUPS_FILTERS=${LOCALBASE}/libexec/cups/filters \
 		CUPS_BACKENDS=${LOCALBASE}/libexec/cups/backends
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s,sysconfdir=/etc,sysconfdir=\'${PREFIX}/etc\',g ; \
@@ -38,7 +40,7 @@ post-patch:
 
 post-install:
 .for file in foomatic-combo-xml foomatic-perl-data
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 
 .include <bsd.port.mk>
