@@ -3,7 +3,7 @@
 
 PORTNAME=	gdnsd
 PORTVERSION=	1.11.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/blblack/gdnsd/releases/download/v${PORTVERSION}/ \
 		http://gdnsd.scaleengine.net/gdnsd/
@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 USES=		pkgconfig libtool tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFLICTS_INSTALL=	gdnsd2-2.[0-9]*
 
 USE_RC_SUBR=	gdnsd
 
