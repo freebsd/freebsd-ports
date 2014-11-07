@@ -204,6 +204,7 @@ lib/elixir/lib/elixir/ebin/elixir_map.beam
 lib/elixir/lib/elixir/ebin/elixir_module.beam
 lib/elixir/lib/elixir/ebin/elixir_parser.beam
 lib/elixir/lib/elixir/ebin/elixir_quote.beam
+lib/elixir/lib/elixir/ebin/elixir_rewrite.beam
 lib/elixir/lib/elixir/ebin/elixir_scope.beam
 lib/elixir/lib/elixir/ebin/elixir_sup.beam
 lib/elixir/lib/elixir/ebin/elixir_tokenizer.beam
