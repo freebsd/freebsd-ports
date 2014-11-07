@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kid3
-PORTVERSION=	3.1
-PORTREVISION=	3
+PORTVERSION=	3.1.1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -14,7 +13,8 @@ LICENSE=	GPLv2
 USE_PERL5=	build
 USES=		cmake:outsource perl5
 CMAKE_ARGS=	-DWITH_DOCBOOKDIR=${LOCALBASE}/share/xsl/docbook \
-		-DWITH_MANDIR=man
+		-DWITH_MANDIR=man \
+		-DFFMPEG_ROOT=${LOCALBASE}
 CXXFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	CHROMAPRINT FLAC ID3LIB MP4V2 VORBIS TAGLIB \
@@ -64,7 +64,7 @@ CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}KDE"
 PLIST_SUB+=	QT="@comment " KDE=""
 .endif
 
-PLIST_SUB+=	SHLIB_VER=${PORTVERSION}.0
+PLIST_SUB+=	SHLIB_VER=${PORTVERSION}
 
 CLI_DESC=	Build and install command line utility
 CLI_USES=	readline
@@ -111,8 +111,5 @@ PLIST_SUB+=	OGGFLAC=""
 .else
 PLIST_SUB+=	OGGFLAC="@comment "
 .endif
-
-pre-configure:
-	${REINPLACE_CMD} 's,-lstdc++,,' ${WRKSRC}/src/app/qt/CMakeLists.txt
 
 .include <bsd.port.mk>
