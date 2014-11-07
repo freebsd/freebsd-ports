@@ -17,7 +17,6 @@ man/man8/sockd.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sockd-chaining.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks-simple-withoutnameserver.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks-simple.conf
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README.socksify
 %%PORTDOCS%%%%DOCSDIR%%/README.survey
 %%PORTDOCS%%%%DOCSDIR%%/README.usage
@@ -28,5 +27,3 @@ man/man8/sockd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/rfc1928.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1929.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1961.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
