@@ -18,7 +18,7 @@ EXPIRATION_DATE=	2014-11-26
 LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+		libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 
 PLIST_FILES=	bin/dcraw-m
 

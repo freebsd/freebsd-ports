@@ -51,7 +51,7 @@ QT_USE=			QT4=moc_build,corelib,gui
 QT_CONFIGURE_ENABLE=	qt
 
 IMAGEMAGICK_CONFIGURE_ENABLE=	imagemagick
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 
 GDAL_CONFIGURE_ENABLE=	gdal
 GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal

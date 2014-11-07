@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Ebook management application
 
-LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
 		libwmflite.so:${PORTSDIR}/graphics/libwmf \

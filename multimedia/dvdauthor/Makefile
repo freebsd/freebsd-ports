@@ -45,7 +45,7 @@ PAL_DESC=	Default video format PAL
 
 SUB_FILES=	README.FreeBSD
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 
 .include <bsd.port.options.mk>
 

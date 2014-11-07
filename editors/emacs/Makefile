@@ -166,7 +166,7 @@ M17N_CONFIGURE_WITH=	m17n-flt
 OTF_LIB_DEPENDS=	libotf.so:${PORTSDIR}/print/libotf
 OTF_CONFIGURE_WITH=	libotf
 
-MAGICK_LIB_DEPENDS=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+MAGICK_LIB_DEPENDS=	libMagickCore-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 MAGICK_CONFIGURE_WITH=	imagemagick
 
 GSETTINGS_USE=		gnome=glib20

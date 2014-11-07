@@ -19,9 +19,9 @@ OPTIONS_DEFAULT=	X11
 
 USES=		pkgconfig
 .if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 .else
-LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick-nox11
+LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
 .include <bsd.port.mk>
