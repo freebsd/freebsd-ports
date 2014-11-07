@@ -464,83 +464,22 @@ etc/periodic/daily/111.clean-squirrelmail
 %%PORTDOCS%%%%DOCSDIR%%/security.txt
 %%PORTDOCS%%%%DOCSDIR%%/translating.txt
 %%PORTDOCS%%%%DOCSDIR%%/translating_help.txt
-@dirrm %%SQUIRRELDIR%%/themes/css
-@dirrm %%SQUIRRELDIR%%/themes
-@dirrm %%SQUIRRELDIR%%/src
-@dirrm %%SQUIRRELDIR%%/scripts
-@dirrm %%SQUIRRELDIR%%/po
-@dirrm %%SQUIRRELDIR%%/plugins/translate
-@dirrm %%SQUIRRELDIR%%/plugins/test
-@dirrm %%SQUIRRELDIR%%/plugins/squirrelspell/modules
-@dirrm %%SQUIRRELDIR%%/plugins/squirrelspell/js
-@dirrm %%SQUIRRELDIR%%/plugins/squirrelspell
-@dirrm %%SQUIRRELDIR%%/plugins/spamcop
-@dirrm %%SQUIRRELDIR%%/plugins/sent_subfolders
-@dirrm %%SQUIRRELDIR%%/plugins/newmail/sounds
-@dirrm %%SQUIRRELDIR%%/plugins/newmail
-@dirrm %%SQUIRRELDIR%%/plugins/message_details
-@dirrm %%SQUIRRELDIR%%/plugins/mail_fetch
-@dirrm %%SQUIRRELDIR%%/plugins/listcommands
-@dirrm %%SQUIRRELDIR%%/plugins/info
-@dirrm %%SQUIRRELDIR%%/plugins/fortune
-@dirrm %%SQUIRRELDIR%%/plugins/filters/bulkquery
-@dirrm %%SQUIRRELDIR%%/plugins/filters
-@dirrm %%SQUIRRELDIR%%/plugins/demo
-@dirrm %%SQUIRRELDIR%%/plugins/delete_move_next
-@dirrm %%SQUIRRELDIR%%/plugins/calendar
-@dirrm %%SQUIRRELDIR%%/plugins/bug_report
-@dirrm %%SQUIRRELDIR%%/plugins/administrator
-@dirrmtry %%SQUIRRELDIR%%/plugins
-@dirrmtry %%SQUIRRELDIR%%/locale
-@dirrm %%SQUIRRELDIR%%/include/options
-@dirrm %%SQUIRRELDIR%%/include
-@dirrmtry %%SQUIRRELDIR%%/images
-@dirrm %%SQUIRRELDIR%%/help/en_US
-@dirrmtry %%SQUIRRELDIR%%/help
-@dirrm %%SQUIRRELDIR%%/functions/encode
-@dirrm %%SQUIRRELDIR%%/functions/decode
-@dirrm %%SQUIRRELDIR%%/functions
 @owner %%SMUSER%%
 @group %%SMGROUP%%
 @mode 0750
-@dirrm %%SQUIRRELDIR%%/data
+@dir %%SQUIRRELDIR%%/data
 @group
 @owner
 @mode 0755
-@dirrmtry %%SQUIRRELDIR%%/config
-@dirrm %%SQUIRRELDIR%%/class/mime
-@dirrm %%SQUIRRELDIR%%/class/helper
-@dirrm %%SQUIRRELDIR%%/class/deliver
-@dirrm %%SQUIRRELDIR%%/class
+@dir %%SQUIRRELDIR%%/config
+@dir %%SQUIRRELDIR%%/class/mime
+@dir %%SQUIRRELDIR%%/class/helper
+@dir %%SQUIRRELDIR%%/class/deliver
+@dir %%SQUIRRELDIR%%/class
 @owner %%SMUSER%%
 @group %%SMGROUP%%
 @mode 0730
-@dirrmtry %%SQUIRRELDIR%%/attach
+@dir %%SQUIRRELDIR%%/attach
 @mode
 @group
 @owner
-@dirrmtry %%SQUIRRELDIR%%
-@dirrmtry etc/periodic/daily
-@dirrmtry etc/periodic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/release_notes_archive/1.4
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/release_notes_archive/1.3
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/release_notes_archive/1.2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/release_notes_archive
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/translate
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/test
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/squirrelspell
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/spamcop
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/newmail
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/mail_fetch
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/listcommands
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/info
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/fortune
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/filters/bulkquery
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/filters
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/demo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/delete_move_next
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/calendar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/bug_report
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/administrator
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/plugins
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
