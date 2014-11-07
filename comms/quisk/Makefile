@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quisk
-PORTVERSION=	3.6.18
-PORTREVISION=	3
+PORTVERSION=	3.6.19
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://james.ahlstrom.name/quisk/ \
 		${MASTER_SITE_LOCAL}
