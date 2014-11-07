@@ -21,8 +21,8 @@
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# as defined in bsd.default-versions.mk.
 #   USE_GCC=	any			# port requires GCC 4.2 or later.
-#   USE_GCC=	4.8+		# port requires GCC 4.8 or later.
-#   USE_GCC=	4.8			# port requires GCC 4.8.
+#   USE_GCC=	4.9+		# port requires GCC 4.9 or later.
+#   USE_GCC=	4.9			# port requires GCC 4.9.
 #
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
