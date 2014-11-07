@@ -1,0 +1,20 @@
+--- Makefile.am.orig	2014-05-09 20:57:53 UTC
++++ Makefile.am
+@@ -42,7 +42,7 @@
+ 
+ DOXYGEN = @DOXYGEN@
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ 
+ dist_pkgconfig_DATA =
+ dist_doc_DATA =
+@@ -233,6 +233,8 @@
+ dist_include_HEADERS += ini/ini_config.h ini/ini_configobj.h ini/ini_valueobj.h ini/ini_comment.h
+ 
+ libini_config_la_SOURCES = \
++    ini/flags.c \
++    ini/fmemopen.c \
+     ini/ini_config.c \
+     ini/ini_config.h \
+     ini/ini_get_value.c \

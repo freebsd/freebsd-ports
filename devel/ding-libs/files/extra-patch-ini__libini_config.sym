@@ -1,0 +1,11 @@
+--- ini/libini_config.sym.orig	2014-10-23 22:57:13 UTC
++++ ini/libini_config.sym
+@@ -1,6 +1,8 @@
+ INI_CONFIG_1.1.0 {
+ global:
+     /* ini_config.h */
++    __sflags;
++    fmemopen;
+     config_from_file;
+     config_from_fd;
+     config_from_file_with_metadata;
