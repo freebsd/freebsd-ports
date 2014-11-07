@@ -215,6 +215,7 @@
     SUBDIR += lxdvdrip
     SUBDIR += m2tstoavi
     SUBDIR += m2vrequantiser
+    SUBDIR += mediabrowser
     SUBDIR += mediadownloader
     SUBDIR += mediainfo
     SUBDIR += mencoder
