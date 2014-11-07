@@ -1,0 +1,5 @@
+Groonga::API is a very thin wrapper of Groonga C APIs.  All it does is
+to map types, and it's not meant to be used by a casual perl user.
+Try Ploonga for ordinary use.
+
+WWW: http://search.cpan.org/dist/Groonga-API/
