@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2014-07-20 09:38:16 UTC
++++ CMakeLists.txt
+@@ -64,11 +64,6 @@
+ project(Kst)
+ 
+ 
+-if(kst_release)
+-    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+-else()
+-    set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
+-endif()
+ 
+ 
+ if(kst_sanitize)
+@@ -226,11 +219,6 @@
+ # React on options
+ 
+ 
+-if(kst_verbose)
+-    set(CMAKE_VERBOSE_MAKEFILE 1)
+-else()
+-    set(CMAKE_VERBOSE_MAKEFILE 0)
+-endif()
+ 
+ if(kst_install_prefix)
+     set(CMAKE_INSTALL_PREFIX ${kst_install_prefix} CACHE PATH "User's choice for install prefix" FORCE)
