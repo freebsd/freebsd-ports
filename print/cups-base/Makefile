@@ -67,7 +67,7 @@ OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_SUB=		yes
 .else
-PORTREVISION=	1
+PORTREVISION=	2
 CUPS_SUFFIX=	-base
 # No DOCS option.  Files are needed by web interface.
 OPTIONS_DEFINE=		DBUS ICONS LIBPAPER LIBUSB PAM XDG_OPEN
@@ -175,12 +175,15 @@ LIB_DEPENDS+=		libpaper.so:${PORTSDIR}/print/libpaper
 LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-avahi
+SUB_LIST+=		ZEROCONF="mdnsd"
 .elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-avahi
 LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
+SUB_LIST+=		ZEROCONF="avahi_daemon"
 .else
 CONFIGURE_ARGS+=	--disable-dnssd
 CONFIGURE_ARGS+=	--disable-avahi
+SUB_LIST+=		ZEROCONF=""
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPAM}
