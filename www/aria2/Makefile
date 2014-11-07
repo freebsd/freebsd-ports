@@ -33,6 +33,7 @@ USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+USE_RC_SUBR=	${PORTNAME}
 USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
 
 PORTDOCS=	*

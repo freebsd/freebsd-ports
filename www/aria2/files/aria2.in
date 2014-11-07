@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: aria2
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable aria2:
+#
+# aria2_enable="YES"
+#
+# You can define flags for aria2 running. See aria2c(1) for details.
+#
+
+. /etc/rc.subr
+
+name=aria2
+rcvar=aria2_enable
+
+command=%%PREFIX%%/bin/aria2c
+
+# read configuration and set defaults
+load_rc_config $name
+aria2_enable=${aria2_enable:-"NO"}
+aria2_config=${aria2_config:-"%%PREFIX%%/etc/aria2.conf"}
+aria2_flags=${aria2_flags:-""}
+aria2_user=${aria2_user:-"nobody"}
+aria2_group=${aria2_group:-"nobody"}
+
+required_files=${aria2_config}
+command_args="-D --conf-path=${aria2_config} ${aria2_flags}"
+
+run_rc_command "$1"
