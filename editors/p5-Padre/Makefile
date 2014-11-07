@@ -110,7 +110,7 @@ post-patch:
 		 s|-lgtk-x11-2.0.*-lpangoft2-1.0|-lm| ; \
 		 /-lgobject-2.0/d ; \
 		 /-lglib-2.0/d ; \
-		 s|\\$$ORIGIN|${SITE_PERL}/mach/auto/Wx/Scintilla|' \
+		 s|\\$$ORIGIN|${SITE_PERL}/${PERL_ARCH}/auto/Wx/Scintilla|' \
 		${WRKDIR}/${WXSC_DISTNAME}/inc/Module/Build/Scintilla/GTK.pm
 
 pre-configure:

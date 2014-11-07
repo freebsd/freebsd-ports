@@ -49,10 +49,10 @@ post-configure:
 
 post-stage:
 	${FIND} ${STAGEDIR} -name '*.bs' -size 0c -exec ${RM} {} \;
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/mach/auto/Tk/Tk.so
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Tk/Tk.so
 .for i in Canvas Compound Entry Event HList IO InputO JPEG Listbox Menubutton Mwm NBFrame PNG Pixmap Scale Scrollbar TList Text TixGrid WinPhoto X Xlib
 		${STRIP_CMD} \
-		    ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/mach/auto/Tk/${i}/${i}.so
+		    ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Tk/${i}/${i}.so
 .endfor
 
 .include <bsd.port.mk>
