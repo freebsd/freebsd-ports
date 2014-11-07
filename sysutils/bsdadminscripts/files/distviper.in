@@ -1,0 +1,227 @@
+#!/bin/sh
+#
+# Copyright (c) 2009
+# Dominic Fandrey <kamikaze@bsdforen.de>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+# OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+readonly name=distviper
+readonly version=1.1
+
+verbose=
+demo=
+quiet=
+interactive=
+
+# Determine portsdir
+portsdir="$(make -V PORTSDIR -f /usr/share/mk/bsd.port.mk)"
+if [ ! -d "$portsdir" ]; then
+        echo "The PORTSDIR '$portsdir' is missing."
+        exit 1
+fi
+
+# Determine distdir
+distdir="$(make -V DISTDIR -f /usr/share/mk/bsd.port.mk)"
+if [ ! -d "$distdir" ]; then
+        echo "The DISTDIR '$distdir' is missing."
+        exit 2
+fi
+
+# Extract file from distinfo.
+extractFileCmd="sed -E -e 's/^[^(]*\(//1' -e 's/\).*$//1'"
+
+# Display help.
+printHelp() {
+	echo "$name v$version
+usage:	$name [-d] [-h] [-i] [-q] [-v] [fast|thorough]"
+}
+
+#
+# Handle parameters.
+#
+# @param $1
+#	The parameter to handle.
+# @param $verbose
+#	Is set to create verbose output.
+# @param $demo
+#	Is set to only print the output that would occur.
+# @param $quiet
+#	Is set to act without creating any output.
+# @return
+#	Returns 0 if the processed parameter was a valid parameter,
+#	returns 1 if not.
+#
+readParams() {
+	case "$1" in
+		"-d" | "--demo")
+			demo=1
+			return 0
+		;;
+		"-h" | "--help")
+			printHelp
+			exit 0
+		;;
+		"-i" | "--interactive")
+			interactive=-i
+			return 0
+		;;
+		"-q" | "--quiet")
+			quiet=1
+			return 0
+		;;
+		"-v" | "--verbose")
+			verbose=1
+			return 0
+		;;
+		-? | --*)
+			return 1
+		;;
+		-*)
+			# Split parameters.
+			# first parameter
+			readParams "${1%${1#-?}}" || return $?
+			# remaining parameters
+			readParams "-${1#-?}"
+			return $?
+		;;
+		*)
+			return 1
+		;;
+	esac
+}
+
+#
+# This algorithm outputs the distfiles of installed ports. If a port downloads
+# a distfile through depending on the fetch target of another port, it
+# is missed, in case that other port is not installed as well.
+#
+# @param $portsdir
+#	The direcotry holding the ports tree.
+#
+getDistFiles_fast() {
+	for port in $(pkg_info -qoa); {
+		if [ -e "$portsdir/$port/distinfo" ]; then
+			eval "$extractFileCmd '$portsdir/$port/distinfo'" | uniq
+		fi
+	}
+}
+
+#
+# This algorithm outputs the distfiles of all ports.
+#
+# @param $portsdir
+#	The direcotry holding the ports tree.
+#
+getDistFiles_thorough() {
+	find -H "$portsdir" -type f -name distinfo | \
+		eval "xargs $extractFileCmd" | uniq
+}
+
+# The current parameter processing stage.
+stage=params
+
+# The selected algorithm for finding distfiles to keep.
+algorithm=thorough
+
+# Parse the command line parameters.
+for command; {
+	# Read parameters until an unknown one is encountered.
+	# In that case switch into command stage.
+	if [ "$stage" = "params" ]; then
+		if ! readParams "$command"; then
+			stage=command
+		fi
+	fi
+
+	# All parameters have been read, now either nothing or a mode
+	# command should occur.
+	if [ "$stage" = "command" ]; then
+		stage=end
+		case "$command" in
+			thorough | fast)
+				algorithm="$command"
+			;;
+			-*)
+				echo "$name: Unknown parameter '$command'" \
+					"encountered, exiting." 1>&2
+				return 1
+			;;
+			*)
+				echo "$name: Unknown command '$command'" \
+					"encountered, exiting." 1>&2
+				return 2
+			;;
+		esac
+		# Skip everything following and continue with the next
+		# argument.
+		continue
+	fi
+
+	# Still being in the loop at this stage means unexpected parameters
+	# have been encountered.
+	if [ "$stage" = "end" ]; then
+		echo "$name: The command '$command' is not allowed here, only" \
+			"one command at a time is permitted." 1>&2
+		return 3
+	fi
+}
+
+# Check for inprobable options.
+if [ -n "$interactive" -a -n "$demo" ]; then
+	echo "$name: Interactive mode is ignored in demo mode." 1>&2
+fi
+
+test -n "$verbose" && echo "Create a list of up to date distfiles to keep" \
+	"using a $algorithm algorithm:"
+
+# Create the list of files to keep, using the selected algorithm.
+keepFiles="$(eval "getDistFiles_$algorithm" | sort -u)"
+if [ -n "$verbose" ]; then
+	echo "$(($(echo "$keepFiles" | wc -l))) files recorded for keeping."
+	echo "Search and delete outdated distfiles:"
+fi
+
+# Files before deletion.
+filesCount="$(($(find -H "$distdir" -type f|wc -l)))"
+filesDelete=0
+
+# Seek and destroy files not in the $keepFiles list.
+for file in $(find -H "$distdir" -type f); {
+	file="${file#$distdir/}"
+
+	if (echo "$keepFiles" | grep -qx "$file"); then
+		test -n "$verbose" && echo "keep $file"
+	else
+		test -z "$quiet" && echo "delete $file"
+		test -z "$demo" && rm $interactive "$distdir/$file"
+		filesDelete=$(($filesDelete + 1))
+	fi
+}
+
+# The number of deleted files
+filesDeleted="$(($filesCount - $(find -H "$distdir" -type f|wc -l)))"
+
+test -z "$demo" && find -H -d "$distdir" -type d -exec rmdir \{} \; 2> /dev/null
+
+if [ -n "$verbose" ]; then
+	echo "$filesDelete files were suggested for deletion."
+	echo "$filesDeleted files of $filesCount have been removed."
+fi
+
+return 0
