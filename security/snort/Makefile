@@ -20,17 +20,15 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 BUILD_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq
 RUN_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq
 
-OPTIONS_DEFINE=		IPV6 GRE ZLIB NORMALIZER REACT \
-			PERFPROFILE LRGPCAP SOURCEFIRE NONETHER \
-			DOCS
+OPTIONS_DEFINE=		IPV6 GRE HA NORMALIZER DOCS APPID \
+			PERFPROFILE LRGPCAP SOURCEFIRE NONETHER
 
 OPTIONS_GROUP=		ADDONS DEV
 OPTIONS_GROUP_ADDONS=	BARNYARD PULLEDPORK
 OPTIONS_GROUP_DEV=	DBGSNORT
-
-OPTIONS_DEFAULT=	IPV6 GRE ZLIB NORMALIZER REACT \
-			PERFPROFILE SOURCEFIRE PULLEDPORK \
-			BARNYARD
+OPTIONS_SUB=		yes
+OPTIONS_DEFAULT=	IPV6 GRE NORMALIZER BARNYARD \
+			PERFPROFILE SOURCEFIRE PULLEDPORK
 
 GRE_DESC=		GRE support
 IPV6_DESC=		IPv6 in snort.conf
@@ -38,15 +36,14 @@ LRGPCAP_DESC=		Pcaps larger than 2GB
 NONETHER_DESC=		Non-Ethernet Decoders
 NORMALIZER_DESC=	Normalizer
 PERFPROFILE_DESC=	Performance profiling
-REACT_DESC=		React
-SOURCEFIRE_DESC=	Sourcefire-specific build options
+SOURCEFIRE_DESC=	Sourcefire recommended build options
 TARGETBASED_DESC=	Targetbased support
-ZLIB_DESC=		GZIP support
-
+APPID_DESC=		Build with application id support (EXPERIMENTAL)
+HA_DESC=		Enable high-availability state sharing (EXPERIMENTAL)
+FILEINSPECT_DESC=	Build with extended file inspection features (EXPERIMENTAL)
 ADDONS_DESC=		Depend on 3rd party addons
 BARNYARD_DESC=		Depend on barnyard2 (supports also snortsam)
 PULLEDPORK_DESC=	Depend on pulledpork
-
 DEV_DESC=		Developper options
 DBGSNORT_DESC=		Enable debugging symbols+core dumps
 
@@ -57,12 +54,16 @@ LRGPCAP_CONFIGURE_ENABLE=	large-pcap
 NONETHER_CONFIGURE_ENABLE=	non-ether-decoders
 NORMALIZER_CONFIGURE_ENABLE=	normalizer
 PERFPROFILE_CONFIGURE_ENABLE=	perfprofiling ppm
-REACT_CONFIGURE_ENABLE=		react
 SOURCEFIRE_CONFIGURE_ENABLE=	sourcefire
-ZLIB_CONFIGURE_ENABLE=		zlib
+APPID_CONFIGURE_ENABLE=		open-appid
+HA_CONFIGURE_ENABLE=		ha
+FILEINSPECT_CONFIGURE_ENABLE=	file-inspect
 
 BARNYARD_RUN_DEPENDS=	barnyard2:${PORTSDIR}/security/barnyard2
 PULLEDPORK_RUN_DEPENDS=	pulledpork.pl:${PORTSDIR}/security/pulledpork
+APPID_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LOCALBASE}/include/luajit-2.0" \
+			luajit_LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.options.mk>
 

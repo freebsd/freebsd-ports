@@ -1,6 +1,8 @@
 bin/snort
 bin/u2boat
 bin/u2spewfoo
+%%APPID%%bin/u2openappid
+%%APPID%%bin/u2streamer
 @unexec if cmp  -s %D/etc/snort/classification.config-sample %D/etc/snort/classification.config; then rm -f %D/etc/snort/classification.config; fi
 etc/snort/classification.config-sample
 @exec if [ ! -f %D/etc/snort/classification.config ] ; then cp -p %D/%F %B/classification.config; fi
@@ -45,6 +47,13 @@ include/snort/dynamic_output/sfrt_dir.h
 include/snort/dynamic_output/sfrt_trie.h
 include/snort/dynamic_output/snort_debug.h
 include/snort/dynamic_output/stream_api.h
+%%APPID%%include/snort/dynamic_preproc/md5.h
+%%APPID%%include/snort/dynamic_preproc/sfghash.h
+%%APPID%%include/snort/dynamic_preproc/sfhashfcn.h
+%%APPID%%include/snort/dynamic_preproc/sflsq.h
+%%APPID%%include/snort/dynamic_preproc/sfmemcap.h
+%%APPID%%include/snort/dynamic_preproc/sfprimetable.h
+%%APPID%%include/snort/dynamic_preproc/sfxhash.h
 include/snort/dynamic_preproc/appId.h
 include/snort/dynamic_preproc/bitop.h
 include/snort/dynamic_preproc/cpuclock.h
@@ -102,6 +111,10 @@ lib/snort_dynamicengine/libsf_engine.a
 lib/snort_dynamicengine/libsf_engine.so
 lib/snort_dynamicengine/libsf_engine.so.0
 lib/snort_dynamicengine/libsf_engine.so.0.0.0
+%%APPID%%lib/snort_dynamicpreprocessor/libsf_appid_preproc.a
+%%APPID%%lib/snort_dynamicpreprocessor/libsf_appid_preproc.so
+%%APPID%%lib/snort_dynamicpreprocessor/libsf_appid_preproc.so.0
+%%APPID%%lib/snort_dynamicpreprocessor/libsf_appid_preproc.so.0.0.0
 lib/snort_dynamicpreprocessor/libsf_dce2_preproc.a
 lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so
 lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so.0
@@ -226,6 +239,10 @@ man/man8/snort.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/WISHLIST
 %%PORTDOCS%%%%DOCSDIR%%/generators
 %%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
+%%APPID%%src/snort_dynamicsrc/md5.h
+%%APPID%%src/snort_dynamicsrc/sfmemcap.h
+%%APPID%%src/snort_dynamicsrc/sfprimetable.h
+%%APPID%%src/snort_dynamicsrc/sfxhash.h
 src/snort_dynamicsrc/Unified2_common.h
 src/snort_dynamicsrc/appId.h
 src/snort_dynamicsrc/bitop.h
