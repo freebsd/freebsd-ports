@@ -31,6 +31,26 @@ ROOTFS=`mount | awk '/ \/ / {print $1}'`
 BEDS="$( echo ${ROOTFS} | awk -F '/' '{print $2}' )"
 if [ "$BEDS" = "dev" ] ; then BEDS="ROOT"; fi
 
+serial=0;
+console=0;
+for x in ${GRUB_TERMINAL_OUTPUT}; do
+    if [ xserial = "x$x" ]; then
+        serial=1;
+    fi
+    if [ xgfxterm = "x$x" ]; then
+        console=1;
+    fi
+    if [ xconsole = "x$x" ]; then
+        console=1;
+    fi
+done
+if [ "x$serial" = "x1" ]; then
+    if [ "x$console" = "x1" ]; then
+        out="-Dh"
+    else
+        out="-h"
+    fi
+fi
 
 display_loaderopts()
 {
@@ -216,7 +236,7 @@ EOF
 EOF
   # Get the dataset guts
   cat /tmp/.grubdataset.$$.1
-  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel"
+  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel ${out}"
   echo "    kfreebsd_loadenv ${shortdataset}@/boot/device.hints"
   cat /tmp/.grubdataset.$$.2
 
@@ -232,7 +252,7 @@ EOF
 EOF
   # Get the dataset guts
   cat /tmp/.grubdataset.$$.1
-  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel -s"
+  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel ${out} -s"
   echo "    kfreebsd_loadenv ${shortdataset}@/boot/device.hints"
   cat /tmp/.grubdataset.$$.2
 
@@ -248,7 +268,7 @@ EOF
 EOF
   # Get the dataset guts
   cat /tmp/.grubdataset.$$.1
-  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel -v"
+  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel ${out} -v"
   echo "    kfreebsd_loadenv ${shortdataset}@/boot/device.hints"
   cat /tmp/.grubdataset.$$.2
 
