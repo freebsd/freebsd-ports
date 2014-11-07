@@ -7176,3 +7176,8 @@ www/rt38||2014-10-31|Has expired: Has expired: End of Life March 2014
 textproc/libmwaw|textproc/libmwaw03|2014-10-31|Replaced by newer version
 databases/pecl-yac|devel/pecl-yac|2014-11-04|Duplicate port
 devel/qt5-qmldevtools||2014-11-05|Merged into lang/qt5-qml
+math/elmer-umfpack|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmer-eio|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmer-matc|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmer-meshgen2d|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmergrid|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
