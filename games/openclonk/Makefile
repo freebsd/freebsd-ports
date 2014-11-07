@@ -6,7 +6,7 @@ PORTVERSION=	5.1
 DISTVERSIONPREFIX=	5.
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
-MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/
+MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSIONPREFIX}${DISTVERSION}/
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Multiplayer action game involving small and nimble humanoids
