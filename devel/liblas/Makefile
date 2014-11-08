@@ -12,6 +12,10 @@ COMMENT=	Library For Reading And Writing LAS-Format Data
 
 BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
 
+LICENSE=	BSD2CLAUSE
+
+CONFLICTS=	liblas12-1.2*
+
 USES=		cmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
