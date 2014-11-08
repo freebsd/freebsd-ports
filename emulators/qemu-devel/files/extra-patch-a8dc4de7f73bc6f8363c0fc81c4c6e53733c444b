@@ -1,0 +1,108 @@
+From a8dc4de7f73bc6f8363c0fc81c4c6e53733c444b Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Fri, 7 Nov 2014 22:24:56 +0000
+Subject: [PATCH] Make bindat(2), connectat(2) and accept4(2) syscall handlers
+ consistent.
+
+The stubs for bindat(2) and connectat(2) didn't have the correct number of
+arguments.  Also, since bindat, connectat and accept4 are freebsd-only
+system calls the handlers should be do_freebsd_* instead of do_bsd_*.
+---
+ bsd-user/freebsd/os-socket.h | 18 ++++++++++--------
+ bsd-user/syscall.c           |  6 +++---
+ 2 files changed, 13 insertions(+), 11 deletions(-)
+
+diff --git a/bsd-user/freebsd/os-socket.h b/bsd-user/freebsd/os-socket.h
+index 4212f0a..31bd1b3 100644
+--- a/bsd-user/freebsd/os-socket.h
++++ b/bsd-user/freebsd/os-socket.h
+@@ -559,8 +559,8 @@ static inline abi_long do_freebsd_sendfile(abi_long fd, abi_long s,
+ 
+ #if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
+ /* bindat(2) */
+-static inline abi_long do_bsd_bindat(int fd, int sockfd, abi_ulong target_addr,
+-        socklen_t addrlen)
++static inline abi_long do_freebsd_bindat(int fd, int sockfd,
++	abi_ulong target_addr, socklen_t addrlen)
+ {
+     abi_long ret;
+     void *addr;
+@@ -579,7 +579,7 @@ static inline abi_long do_bsd_bindat(int fd, int sockfd, abi_ulong target_addr,
+ }
+ 
+ /* connectat(2) */
+-static inline abi_long do_bsd_connectat(int fd, int sockfd,
++static inline abi_long do_freebsd_connectat(int fd, int sockfd,
+ 	abi_ulong target_addr, socklen_t addrlen)
+ {
+     abi_long ret;
+@@ -600,7 +600,7 @@ static inline abi_long do_bsd_connectat(int fd, int sockfd,
+ }
+ 
+ /* accept4(2) */
+-static inline abi_long do_bsd_accept4(int fd, abi_ulong target_addr,
++static inline abi_long do_freebsd_accept4(int fd, abi_ulong target_addr,
+         abi_ulong target_addrlen_addr, int flags)
+ {
+     socklen_t addrlen;
+@@ -635,7 +635,7 @@ static inline abi_long do_bsd_accept4(int fd, abi_ulong target_addr,
+ #else /* ! __FreeBSD_version >= 1000000 */
+ 
+ /* bindat(2) */
+-static inline abi_long do_bsd_bindat(__unused int sockfd,
++static inline abi_long do_freebsd_bindat(__unused int fd, __unused int sockfd,
+ 	__unused abi_ulong target_addr, __unused socklen_t addrlen)
+ {
+ 
+@@ -644,15 +644,17 @@ static inline abi_long do_bsd_bindat(__unused int sockfd,
+ }
+ 
+ /* connectat(2) */
+-static inline abi_long do_bsd_connectat(__unused int sockfd,
+-	__unused abi_ulong target_addr, __unused socklen_t addrlen)
++static inline abi_long do_freebsd_connectat(__unused int fd,
++	__unused int sockfd, __unused abi_ulong target_addr,
++	__unused socklen_t addrlen)
+ {
+ 
+     qemu_log("qemu: Unsupported syscall connectat()\n");
+     return -TARGET_ENOSYS;
+ }
+ 
+-static inline abi_long do_bsd_accept4(__unused int fd,
++/* accept4(2) */
++static inline abi_long do_freebsd_accept4(__unused int fd,
+ 	__unused abi_ulong target_addr, __unused abi_ulong target_addrlen_addr,
+ 	__unused int flags)
+ {
+diff --git a/bsd-user/syscall.c b/bsd-user/syscall.c
+index 4a743e8..243eb13 100644
+--- a/bsd-user/syscall.c
++++ b/bsd-user/syscall.c
+@@ -1072,7 +1072,7 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         break;
+ 
+     case TARGET_FREEBSD_NR_accept4: /* accept4(2) */
+-        ret = do_bsd_accept4(arg1, arg2, arg3, arg4);
++        ret = do_freebsd_accept4(arg1, arg2, arg3, arg4);
+         break;
+ 
+     case TARGET_FREEBSD_NR_bind: /* bind(2) */
+@@ -1080,7 +1080,7 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         break;
+ 
+     case TARGET_FREEBSD_NR_bindat: /* bindat(2) */
+-        ret = do_bsd_bindat(arg1, arg2, arg3, arg4);
++        ret = do_freebsd_bindat(arg1, arg2, arg3, arg4);
+         break;
+ 
+     case TARGET_FREEBSD_NR_connect: /* connect(2) */
+@@ -1088,7 +1088,7 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         break;
+ 
+     case TARGET_FREEBSD_NR_connectat: /* connectat(2) */
+-        ret = do_bsd_connectat(arg1, arg2, arg3, arg4);
++        ret = do_freebsd_connectat(arg1, arg2, arg3, arg4);
+         break;
+ 
+     case TARGET_FREEBSD_NR_getpeername: /* getpeername(2) */

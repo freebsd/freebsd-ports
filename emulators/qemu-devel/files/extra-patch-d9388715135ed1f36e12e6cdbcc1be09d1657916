@@ -1,0 +1,112 @@
+From d9388715135ed1f36e12e6cdbcc1be09d1657916 Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Tue, 4 Nov 2014 22:14:50 +0000
+Subject: [PATCH] Add stubs for the new cap_*() system calls.
+
+This change adds stubs for cap_right_limit(2), cap_ioctls_limit(2),
+cap_ioctls_get(2), cap_fcntls_limit(2), and cap_fcntls_get(2) system calls.
+---
+ bsd-user/freebsd/os-proc.h    | 42 ++++++++++++++++++++++++++++++++++++++++++
+ bsd-user/freebsd/syscall_nr.h |  7 ++++++-
+ bsd-user/syscall.c            | 20 ++++++++++++++++++++
+ 3 files changed, 68 insertions(+), 1 deletion(-)
+
+diff --git a/bsd-user/freebsd/os-proc.h b/bsd-user/freebsd/os-proc.h
+index 8e28f04..cd05e96 100644
+--- a/bsd-user/freebsd/os-proc.h
++++ b/bsd-user/freebsd/os-proc.h
+@@ -419,6 +419,48 @@ static inline abi_long do_freebsd_cap_getmode(abi_ulong arg1)
+     return -TARGET_ENOSYS;
+ }
+ 
++/* cap_rights_limit(2) */
++static inline abi_long do_freebsd_cap_rights_limit(int arg1, abi_ulong arg2)
++{
++
++    qemu_log("qemu: Unsupported syscall cap_rights_limit()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* cap_ioctls_limit(2) */
++static inline abi_long do_freebsd_cap_ioctls_limit(int arg1, abi_ulong arg2,
++	abi_ulong arg3)
++{
++
++    qemu_log("qemu: Unsupported syscall cap_ioctls_limit()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* cap_ioctls_get(2) */
++static inline abi_long do_freebsd_cap_ioctls_get(int arg1, abi_ulong arg2,
++	abi_ulong arg3)
++{
++
++    qemu_log("qemu: Unsupported syscall cap_ioctls_limit()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* cap_fcntls_limit(2) */
++static inline abi_long do_freebsd_cap_fcntls_limit(int arg1, abi_ulong arg2)
++{
++
++    qemu_log("qemu: Unsupported syscall cap_fcntls_limit()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* cap_fcntls_get(2) */
++static inline abi_long do_freebsd_cap_fcntls_get(int arg1, abi_ulong arg2)
++{
++
++    qemu_log("qemu: Unsupported syscall cap_fcntls_get()\n");
++    return -TARGET_ENOSYS;
++}
++
+ /* audit(2) */
+ static inline abi_long do_freebsd_audit(abi_ulong arg1, abi_ulong arg2)
+ {
+diff --git a/bsd-user/freebsd/syscall_nr.h b/bsd-user/freebsd/syscall_nr.h
+index 779e192..2ab3e1e 100644
+--- a/bsd-user/freebsd/syscall_nr.h
++++ b/bsd-user/freebsd/syscall_nr.h
+@@ -448,4 +448,9 @@
+ #define TARGET_FREEBSD_NR_posix_fallocate   530
+ #define TARGET_FREEBSD_NR_posix_fadvise 531
+ #define TARGET_FREEBSD_NR_wait6 	532
+-#define TARGET_FREEBSD_NR_MAXSYSCALL    533
++#define TARGET_FREEBSD_NR_cap_rights_limit  533
++#define TARGET_FREEBSD_NR_cap_ioctls_limit  534
++#define TARGET_FREEBSD_NR_cap_ioctls_get    535
++#define TARGET_FREEBSD_NR_cap_fcntls_limit  536
++#define TARGET_FREEBSD_NR_cap_fcntls_get    537
++#define TARGET_FREEBSD_NR_MAXSYSCALL    538
+diff --git a/bsd-user/syscall.c b/bsd-user/syscall.c
+index 4f5a008..c615bb8 100644
+--- a/bsd-user/syscall.c
++++ b/bsd-user/syscall.c
+@@ -367,6 +367,26 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         ret = do_freebsd_cap_getmode(arg1);
+         break;
+ 
++    case TARGET_FREEBSD_NR_cap_rights_limit: /* cap_rights_limit(2) */
++        ret = do_freebsd_cap_rights_limit(arg1, arg2);
++        break;
++
++    case TARGET_FREEBSD_NR_cap_ioctls_limit: /* cap_ioctls_limit(2) */
++        ret = do_freebsd_cap_ioctls_limit(arg1, arg2, arg3);
++        break;
++
++    case TARGET_FREEBSD_NR_cap_ioctls_get: /* cap_ioctls_get(2) */
++        ret = do_freebsd_cap_ioctls_get(arg1, arg2, arg3);
++        break;
++
++    case TARGET_FREEBSD_NR_cap_fcntls_limit: /* cap_fcntls_limit(2) */
++        ret = do_freebsd_cap_fcntls_limit(arg1, arg2);
++        break;
++
++    case TARGET_FREEBSD_NR_cap_fcntls_get: /* cap_fcntls_get(2) */
++        ret = do_freebsd_cap_fcntls_get(arg1, arg2);
++        break;
++
+     case TARGET_FREEBSD_NR_audit: /* audit(2) */
+         ret = do_freebsd_audit(arg1, arg2);
+         break;

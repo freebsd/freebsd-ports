@@ -1,0 +1,226 @@
+From ac9f83019a2059d4bfe5cedfae35ba4151d5ac88 Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Tue, 4 Nov 2014 21:34:25 +0000
+Subject: [PATCH] Add support for the wait6(2) system call.
+
+---
+ bsd-user/bsd-proc.c           | 37 ++++++++++++++++++++++-------
+ bsd-user/freebsd/os-proc.h    | 55 ++++++++++++++++++++++++++++++++++++++++++-
+ bsd-user/freebsd/syscall_nr.h |  3 ++-
+ bsd-user/qemu-bsd.h           |  2 ++
+ bsd-user/syscall.c            |  6 ++++-
+ bsd-user/syscall_defs.h       |  5 ++++
+ 6 files changed, 97 insertions(+), 11 deletions(-)
+
+diff --git a/bsd-user/bsd-proc.c b/bsd-user/bsd-proc.c
+index a4bcdc8..7f0b21c 100644
+--- a/bsd-user/bsd-proc.c
++++ b/bsd-user/bsd-proc.c
+@@ -1,7 +1,7 @@
+ /*
+  *  BSD process related system call helpers
+  *
+- *  Copyright (c) 2013 Stacey D. Son
++ *  Copyright (c) 2013-14 Stacey D. Son
+  *
+  *  This program is free software; you can redistribute it and/or modify
+  *  it under the terms of the GNU General Public License as published by
+@@ -108,14 +108,9 @@ abi_ulong host_to_target_rlim(rlim_t rlim)
+     return result;
+ }
+ 
+-abi_long host_to_target_rusage(abi_ulong target_addr,
+-        const struct rusage *rusage)
++static void h2t_rusage(const struct rusage *rusage,
++	struct target_freebsd_rusage *target_rusage)
+ {
+-    struct target_freebsd_rusage *target_rusage;
+-
+-    if (!lock_user_struct(VERIFY_WRITE, target_rusage, target_addr, 0)) {
+-        return -TARGET_EFAULT;
+-    }
+     __put_user(rusage->ru_utime.tv_sec, &target_rusage->ru_utime.tv_sec);
+     __put_user(rusage->ru_utime.tv_usec, &target_rusage->ru_utime.tv_usec);
+ 
+@@ -136,11 +131,37 @@ abi_long host_to_target_rusage(abi_ulong target_addr,
+     __put_user(rusage->ru_nsignals, &target_rusage->ru_nsignals);
+     __put_user(rusage->ru_nvcsw, &target_rusage->ru_nvcsw);
+     __put_user(rusage->ru_nivcsw, &target_rusage->ru_nivcsw);
++}
++
++abi_long host_to_target_rusage(abi_ulong target_addr,
++        const struct rusage *rusage)
++{
++    struct target_freebsd_rusage *target_rusage;
++
++    if (!lock_user_struct(VERIFY_WRITE, target_rusage, target_addr, 0)) {
++        return -TARGET_EFAULT;
++    }
++    h2t_rusage(rusage, target_rusage);
+     unlock_user_struct(target_rusage, target_addr, 1);
+ 
+     return 0;
+ }
+ 
++abi_long host_to_target_wrusage(abi_ulong target_addr,
++	const struct __wrusage *wrusage)
++{
++    struct target_freebsd__wrusage *target_wrusage;
++
++    if (!lock_user_struct(VERIFY_WRITE, target_wrusage, target_addr, 0)) {
++        return -TARGET_EFAULT;
++    }
++    h2t_rusage(&wrusage->wru_self, &target_wrusage->wru_self);
++    h2t_rusage(&wrusage->wru_children, &target_wrusage->wru_children);
++    unlock_user_struct(target_wrusage, target_addr, 1);
++
++    return 0;
++}
++
+ /*
+  * wait status conversion.
+  *
+diff --git a/bsd-user/freebsd/os-proc.h b/bsd-user/freebsd/os-proc.h
+index b31f7c4..8e28f04 100644
+--- a/bsd-user/freebsd/os-proc.h
++++ b/bsd-user/freebsd/os-proc.h
+@@ -1,7 +1,7 @@
+ /*
+  *  process related system call shims and definitions
+  *
+- *  Copyright (c) 2013 Stacey D. Son
++ *  Copyright (c) 2013-14 Stacey D. Son
+  *
+  *  This program is free software; you can redistribute it and/or modify
+  *  it under the terms of the GNU General Public License as published by
+@@ -20,6 +20,9 @@
+ #ifndef __FREEBSD_PROC_H_
+ #define __FREEBSD_PROC_H_
+ 
++#if defined(__FreeBSD_version) && __FreeBSD_version > 1100000
++#include <sys/signal.h>
++#endif
+ #include <sys/types.h>
+ #if defined(__FreeBSD_version) && __FreeBSD_version > 900000
+ #include <sys/procdesc.h>
+@@ -72,6 +75,56 @@ static inline abi_long do_freebsd_wait4(abi_long arg1, abi_ulong target_status,
+     return ret;
+ }
+ 
++#if defined(__FreeBSD_version) && __FreeBSD_version > 1100000
++/* wait6(2) */
++static inline abi_long do_freebsd_wait6(abi_long idtype, abi_long id,
++	abi_ulong target_status, abi_long options, abi_ulong target_wrusage,
++	abi_ulong target_infop)
++{
++    abi_long ret;
++    int status;
++    struct __wrusage wrusage, *wrusage_ptr = NULL;
++    siginfo_t info;
++    void *p;
++
++    if (target_wrusage) {
++        wrusage_ptr = &wrusage;
++    }
++    ret = get_errno(wait6(idtype, id, &status, options, wrusage_ptr, &info));
++    if (!is_error(ret)) {
++        status = host_to_target_waitstatus(status);
++        if (put_user_s32(status, target_status) != 0) {
++            return -TARGET_EFAULT;
++        }
++        if (target_wrusage != 0) {
++            host_to_target_wrusage(target_wrusage, &wrusage);
++        }
++	if (target_infop != 0) {
++            p = lock_user(VERIFY_WRITE, target_infop, sizeof(target_siginfo_t),
++			0);
++	    if (p == NULL) {
++		return -TARGET_EFAULT;
++	    }
++	    host_to_target_siginfo(p, &info);
++            unlock_user(p, target_infop, sizeof(target_siginfo_t));
++	}
++    }
++    return ret;
++}
++
++#else /* !  __FreeBSD_version > 1100000 */
++
++static inline abi_long do_freebsd_wait6( __unused abi_long idtype,
++	__unused abi_long id,  __unused abi_ulong target_status,
++	__unused abi_long options, __unused abi_ulong target_wrusage,
++	__unused abi_ulong target_infop)
++{
++
++    qemu_log("qemu: Unsupported syscall wait6()\n");
++    return -TARGET_ENOSYS;
++}
++#endif /* __FreeBSD_version > 1100000 */
++
+ #if defined(__FreeBSD_version) && __FreeBSD_version > 900000
+ /* setloginclass(2) */
+ static inline abi_long do_freebsd_setloginclass(abi_ulong arg1)
+diff --git a/bsd-user/freebsd/syscall_nr.h b/bsd-user/freebsd/syscall_nr.h
+index d849024..779e192 100644
+--- a/bsd-user/freebsd/syscall_nr.h
++++ b/bsd-user/freebsd/syscall_nr.h
+@@ -447,4 +447,5 @@
+ #define TARGET_FREEBSD_NR_rctl_remove_rule  529
+ #define TARGET_FREEBSD_NR_posix_fallocate   530
+ #define TARGET_FREEBSD_NR_posix_fadvise 531
+-#define TARGET_FREEBSD_NR_MAXSYSCALL    532
++#define TARGET_FREEBSD_NR_wait6 	532
++#define TARGET_FREEBSD_NR_MAXSYSCALL    533
+diff --git a/bsd-user/qemu-bsd.h b/bsd-user/qemu-bsd.h
+index 771245d..e58fdd7 100644
+--- a/bsd-user/qemu-bsd.h
++++ b/bsd-user/qemu-bsd.h
+@@ -48,6 +48,8 @@ rlim_t target_to_host_rlim(abi_ulong target_rlim);
+ abi_ulong host_to_target_rlim(rlim_t rlim);
+ abi_long host_to_target_rusage(abi_ulong target_addr,
+         const struct rusage *rusage);
++abi_long host_to_target_wrusage(abi_ulong target_addr,
++        const struct __wrusage *wrusage);
+ int host_to_target_waitstatus(int status);
+ 
+ /* bsd-socket.c */
+diff --git a/bsd-user/syscall.c b/bsd-user/syscall.c
+index ac27584..4f5a008 100644
+--- a/bsd-user/syscall.c
++++ b/bsd-user/syscall.c
+@@ -2,7 +2,7 @@
+  *  BSD syscalls
+  *
+  *  Copyright (c) 2003 - 2008 Fabrice Bellard
+- *  Copyright (c) 2013 Stacey D. Son
++ *  Copyright (c) 2013-14 Stacey D. Son
+  *
+  *  This program is free software; you can redistribute it and/or modify
+  *  it under the terms of the GNU General Public License as published by
+@@ -189,6 +189,10 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         ret = do_freebsd_wait4(arg1, arg2, arg3, arg4);
+         break;
+ 
++    case TARGET_FREEBSD_NR_wait6: /* wait6(2) */
++        ret = do_freebsd_wait6(arg1, arg2, arg3, arg4, arg5, arg6);
++        break;
++
+     case TARGET_FREEBSD_NR_exit: /* exit(2) */
+         ret = do_bsd_exit(cpu_env, arg1);
+         break;
+diff --git a/bsd-user/syscall_defs.h b/bsd-user/syscall_defs.h
+index d02476c..1af31da 100644
+--- a/bsd-user/syscall_defs.h
++++ b/bsd-user/syscall_defs.h
+@@ -281,6 +281,11 @@ struct target_freebsd_rusage {
+     abi_long    ru_nivcsw;      /* involuntary context switches */
+ };
+ 
++struct target_freebsd__wrusage {
++    struct target_freebsd_rusage wru_self;
++    struct target_freebsd_rusage wru_children;
++};
++
+ /*
+  * sys/socket.h
+  */

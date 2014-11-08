@@ -1,0 +1,45 @@
+From 72f0a64c7dd7be796dc2d8f2b0dab340309800e2 Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Fri, 7 Nov 2014 20:48:56 +0000
+Subject: [PATCH] struct __wrusage is not available until FreeBSD 10.0.
+
+---
+ bsd-user/bsd-proc.c | 2 ++
+ bsd-user/qemu-bsd.h | 2 ++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/bsd-user/bsd-proc.c b/bsd-user/bsd-proc.c
+index 7f0b21c..503e928 100644
+--- a/bsd-user/bsd-proc.c
++++ b/bsd-user/bsd-proc.c
+@@ -147,6 +147,7 @@ abi_long host_to_target_rusage(abi_ulong target_addr,
+     return 0;
+ }
+ 
++:#if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
+ abi_long host_to_target_wrusage(abi_ulong target_addr,
+ 	const struct __wrusage *wrusage)
+ {
+@@ -161,6 +162,7 @@ abi_long host_to_target_wrusage(abi_ulong target_addr,
+ 
+     return 0;
+ }
++#endif /* ! __FreeBSD_version >= 1000000 */
+ 
+ /*
+  * wait status conversion.
+diff --git a/bsd-user/qemu-bsd.h b/bsd-user/qemu-bsd.h
+index e58fdd7..0c0d1e3 100644
+--- a/bsd-user/qemu-bsd.h
++++ b/bsd-user/qemu-bsd.h
+@@ -48,8 +48,10 @@ rlim_t target_to_host_rlim(abi_ulong target_rlim);
+ abi_ulong host_to_target_rlim(rlim_t rlim);
+ abi_long host_to_target_rusage(abi_ulong target_addr,
+         const struct rusage *rusage);
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
+ abi_long host_to_target_wrusage(abi_ulong target_addr,
+         const struct __wrusage *wrusage);
++#endif /*  __FreeBSD_version >= 1000000 */
+ int host_to_target_waitstatus(int status);
+ 
+ /* bsd-socket.c */

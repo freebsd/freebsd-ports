@@ -1,0 +1,77 @@
+From 9ed0e07e2e07791858339874eb4d20daca858c8a Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Fri, 7 Nov 2014 22:17:58 +0000
+Subject: [PATCH] Fix typo and some other build issues.
+
+---
+ bsd-user/bsd-proc.c        | 5 +++--
+ bsd-user/freebsd/os-proc.c | 4 ++++
+ bsd-user/freebsd/os-proc.h | 1 +
+ 3 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/bsd-user/bsd-proc.c b/bsd-user/bsd-proc.c
+index 503e928..248bcfb 100644
+--- a/bsd-user/bsd-proc.c
++++ b/bsd-user/bsd-proc.c
+@@ -17,6 +17,7 @@
+  *  along with this program; if not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/resource.h>
+ #include <sys/wait.h>
+@@ -147,7 +148,7 @@ abi_long host_to_target_rusage(abi_ulong target_addr,
+     return 0;
+ }
+ 
+-:#if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
+ abi_long host_to_target_wrusage(abi_ulong target_addr,
+ 	const struct __wrusage *wrusage)
+ {
+@@ -162,7 +163,7 @@ abi_long host_to_target_wrusage(abi_ulong target_addr,
+ 
+     return 0;
+ }
+-#endif /* ! __FreeBSD_version >= 1000000 */
++#endif /* __FreeBSD_version >= 1000000 */
+ 
+ /*
+  * wait status conversion.
+diff --git a/bsd-user/freebsd/os-proc.c b/bsd-user/freebsd/os-proc.c
+index b185439..fd0b64f 100644
+--- a/bsd-user/freebsd/os-proc.c
++++ b/bsd-user/freebsd/os-proc.c
+@@ -234,7 +234,9 @@ abi_long freebsd_exec_common(abi_ulong path_or_fd, abi_ulong guest_argp,
+     }
+ 
+     if (do_fexec) {
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1100000
+         char execpath[PATH_MAX], *scriptargs;
++#endif /* __FreeBSD_version < 1100000 */
+ 
+         if (((int)path_or_fd > 0 &&
+             is_target_elf_binary((int)path_or_fd)) == 1) {
+@@ -291,7 +293,9 @@ abi_long freebsd_exec_common(abi_ulong path_or_fd, abi_ulong guest_argp,
+         }
+     } else {
+         int fd;
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1100000
+         char execpath[PATH_MAX], *scriptargs;
++#endif
+ 
+         p = lock_user_string(path_or_fd);
+         if (p == NULL) {
+diff --git a/bsd-user/freebsd/os-proc.h b/bsd-user/freebsd/os-proc.h
+index 193e1fc..487aef3 100644
+--- a/bsd-user/freebsd/os-proc.h
++++ b/bsd-user/freebsd/os-proc.h
+@@ -20,6 +20,7 @@
+ #ifndef __FREEBSD_PROC_H_
+ #define __FREEBSD_PROC_H_
+ 
++#include <sys/param.h>
+ #if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
+ #include <sys/procctl.h>
+ #include <sys/signal.h>
