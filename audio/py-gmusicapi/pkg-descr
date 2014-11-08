@@ -1,0 +1,13 @@
+gmusicapi is an unofficial API for Google Play Music, written in python.
+
+All major functionality is supported:
+* Library management: list, create, delete, and modify songs and playlists
+* Streaming and single-song downloading
+* Music Manager uploading/scan-and-match and library downloading
+* Most All Access features
+
+This project is not supported nor endorsed by Google. The author kindly
+asks the users of this API to use common sense (protocol compliance,
+reasonable load, etc) when accessing Google Play Music through this API.
+
+WWW: http://github.com/simon-weber/Unofficial-Google-Music-API
