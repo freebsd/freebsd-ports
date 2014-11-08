@@ -15,10 +15,3 @@
 %%SITE_PERL%%/Net/OpenID/Yadis.pm
 %%SITE_PERL%%/Net/OpenID/Yadis/Service.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/Common/.packlist
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/Common
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dir %%SITE_PERL%%/Net/OpenID/Yadis
-@dir %%SITE_PERL%%/Net/OpenID/Extension
-@dir %%SITE_PERL%%/Net/OpenID
-@dir %%SITE_PERL%%/Net

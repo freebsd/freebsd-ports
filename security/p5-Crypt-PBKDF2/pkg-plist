@@ -11,8 +11,3 @@
 %%SITE_PERL%%/Crypt/PBKDF2/Hash/HMACSHA2.pm
 %%SITE_PERL%%/Crypt/PBKDF2/Hash/HMACSHA3.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PBKDF2/.packlist
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PBKDF2
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dir %%SITE_PERL%%/Crypt/PBKDF2/Hash
-@dir %%SITE_PERL%%/Crypt/PBKDF2
-@dir %%SITE_PERL%%/Crypt
