@@ -47,7 +47,7 @@
 +        close(priv->efd);
 +#endif
  
-     G_OBJECT_CLASS (entangle_device_manager_parent_class)->finalize (object);
+     G_OBJECT_CLASS(entangle_device_manager_parent_class)->finalize(object);
  }
 @@ -85,6 +100,7 @@ static void entangle_device_manager_clas
  }
@@ -57,7 +57,7 @@
  static void do_udev_event(GUdevClient *client G_GNUC_UNUSED,
                            const char *action,
                            GUdevDevice *dev,
-@@ -126,6 +142,91 @@ static void do_udev_event(GUdevClient *c
+@@ -126,6 +142,96 @@ static void do_udev_event(GUdevClient *c
      }
      g_free(port);
  }
@@ -69,7 +69,7 @@
 +                              gpointer user_data)
 +{
 +    EntangleDeviceManager *manager = user_data;
-+    char *event, *cutoff;
++    char *event, *action, *device;
 +    gsize end;
 +    GIOStatus status;
 +
@@ -78,15 +78,20 @@
 +    switch (status) {
 +    case G_IO_STATUS_NORMAL:
 +        event[end] = '\0';
-+        if (strncmp(event + 1, "ugen", 4))
-+            break;
-+        if (!(cutoff = strchr(event + 5, ' ')))
-+            break;
-+        *cutoff = '\0';
-+        if (*event == '+') {
-+            g_signal_emit_by_name(manager, "device-added", event + 1);
-+        } else if (*event == '-') {
-+            g_signal_emit_by_name(manager, "device-removed", event + 1);
++        if (strstr(event, "system=USB") &&
++          strstr(event, "subsystem=DEVICE") &&
++          (device = strstr(event, "cdev=ugen")) &&
++          (action = strstr(event, "type="))) {
++            char *cutoff;
++            device += sizeof("ugen");
++            action += sizeof("type");
++            cutoff = strchr(device, ' ');
++            if (cutoff)
++                *cutoff = '\0';
++            if (!strncmp(action, "ATTACH", sizeof("ATTACH") - 1))
++                g_signal_emit_by_name(manager, "device-added", device);
++            else if (!strncmp(action, "DETACH", sizeof("DETACH") - 1))
++                g_signal_emit_by_name(manager, "device-removed", device);
 +        }
 +        g_free(event);
 +        break;
@@ -149,7 +154,7 @@
  
  
  EntangleDeviceManager *entangle_device_manager_new(void)
-@@ -136,6 +237,7 @@ EntangleDeviceManager *entangle_device_m
+@@ -136,6 +242,7 @@ EntangleDeviceManager *entangle_device_m
  
  static void entangle_device_manager_init_devices(EntangleDeviceManager *manager)
  {
@@ -157,7 +162,7 @@
      EntangleDeviceManagerPrivate *priv = manager->priv;
      GList *devs, *tmp;
      const gchar *const subsys[] = {
-@@ -161,6 +263,12 @@ static void entangle_device_manager_init
+@@ -161,6 +268,12 @@ static void entangle_device_manager_init
      }
  
      g_list_free(devs);
