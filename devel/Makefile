@@ -3611,6 +3611,7 @@
     SUBDIR += py-anonfunc
     SUBDIR += py-anyjson
     SUBDIR += py-apipkg
+    SUBDIR += py-appdirs
     SUBDIR += py-application
     SUBDIR += py-archetypes.querywidget
     SUBDIR += py-archetypes.referencebrowserwidget
