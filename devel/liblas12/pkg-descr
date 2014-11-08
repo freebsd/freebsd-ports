@@ -1,0 +1,6 @@
+libLAS is a BSD library for reading and writing ASPRS LAS version 1.0, 1.1 and
+1.2 data. LAS-formatted data is heavily used in LiDAR processing operations,
+and the LAS format is a sequential binary format used to store data from
+sensors and as intermediate processing storage by some applications.
+
+WWW: http://liblas.org/
