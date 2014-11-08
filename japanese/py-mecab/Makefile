@@ -3,6 +3,7 @@
 
 PORTNAME=	mecab
 PORTVERSION=	0.996
+PORTREVISION=	1
 CATEGORIES=	japanese python textproc
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-python-${PORTVERSION}
@@ -10,7 +11,7 @@ DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	Python bindings for MeCab
 
-LICENSE=	BSD GPLv2 LGPL21
+LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
@@ -23,6 +24,9 @@ PYDISTUTILS_EGGINFO=	${PORTNAME}_python-${PKGVERSION}-${PYTHON_VERSION:S/thon//}
 pre-patch:
 	@${REINPLACE_CMD} -e 's|cmd1("mecab-config --version")|"${PKGVERSION}"|' \
 		${WRKSRC}/setup.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_MeCab.so
 
 .include <bsd.port.pre.mk>
 
