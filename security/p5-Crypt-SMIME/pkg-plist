@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SMIME.pm
 %%PERL5_MAN3%%/SMIME.3.gz
 %%PERL5_MAN3%%/SMIME::JA.3.gz
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SMIME
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SMIME
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
