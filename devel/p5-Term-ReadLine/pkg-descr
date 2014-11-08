@@ -1,0 +1,4 @@
+Perl interface to various readline packages. If no real package is found,
+substitutes stubs instead of basic functions.
+
+WWW: http://github.com/rafl/term-readline
