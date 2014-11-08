@@ -9,6 +9,7 @@ include/spatialindex/capi/LeafQuery.h
 include/spatialindex/capi/ObjVisitor.h
 include/spatialindex/capi/sidx_api.h
 include/spatialindex/capi/sidx_config.h
+include/spatialindex/capi/sidx_export.h
 include/spatialindex/capi/sidx_impl.h
 include/spatialindex/capi/Utility.h
 include/spatialindex/LineSegment.h
@@ -30,10 +31,10 @@ include/spatialindex/tools/Tools.h
 include/spatialindex/tools/rand48.h
 lib/libspatialindex.a
 lib/libspatialindex.so
-lib/libspatialindex.so.3
-lib/libspatialindex.so.3.0.0
+lib/libspatialindex.so.4
+lib/libspatialindex.so.4.0.1
 lib/libspatialindex_c.a
 lib/libspatialindex_c.so
-lib/libspatialindex_c.so.3
-lib/libspatialindex_c.so.3.0.0
+lib/libspatialindex_c.so.4
+lib/libspatialindex_c.so.4.0.1
 libdata/pkgconfig/libspatialindex.pc
