@@ -1,9 +1,9 @@
-%%QGIS_FCGI%%%%QT_BINDIR%%/admin.sld
+%%QGIS_MAPSERVER%%%%QT_BINDIR%%/admin.sld
 %%QT_BINDIR%%/qbrowser
 %%QT_BINDIR%%/qgis
 %%QT_BINDIR%%/qgis_bench
-%%QGIS_FCGI%%%%QT_BINDIR%%/qgis_mapserv.fcgi
-%%QGIS_FCGI%%%%QT_BINDIR%%/wms_metadata.xml
+%%QGIS_MAPSERVER%%%%QT_BINDIR%%/qgis_mapserv.fcgi
+%%QGIS_MAPSERVER%%%%QT_BINDIR%%/wms_metadata.xml
 include/qgis/Bezier3D.h
 include/qgis/CloughTocherInterpolator.h
 include/qgis/DualEdgeTriangulation.h
