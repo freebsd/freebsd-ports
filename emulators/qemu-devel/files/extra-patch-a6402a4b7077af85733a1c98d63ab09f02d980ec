@@ -1,0 +1,173 @@
+From a6402a4b7077af85733a1c98d63ab09f02d980ec Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Wed, 5 Nov 2014 22:35:23 +0000
+Subject: [PATCH] Add stubs for the new aio_*() system calls.
+
+This change adds stubs for the asynchronous I/O system calls including:
+aio_cancel(2), aio_error(2), aio_return(2), aio_read(2), aio_write(2),
+aio_syspend(2), aio_waitcomplete(2), aio_fsync(2), and aio_mlock(2).
+---
+ bsd-user/freebsd/os-file.h    | 78 +++++++++++++++++++++++++++++++++++++++++++
+ bsd-user/freebsd/syscall_nr.h |  4 ++-
+ bsd-user/syscall.c            | 43 ++++++++++++++++++++++++
+ 3 files changed, 124 insertions(+), 1 deletion(-)
+
+diff --git a/bsd-user/freebsd/os-file.h b/bsd-user/freebsd/os-file.h
+index 2c6bc24..0b3e8c5 100644
+--- a/bsd-user/freebsd/os-file.h
++++ b/bsd-user/freebsd/os-file.h
+@@ -21,10 +21,88 @@
+ #define __FREEBSD_OS_FILE_H_
+ 
+ #include <sys/stat.h>
++#include <aio.h>
+ #include <unistd.h>
+ 
+ #include "qemu-os.h"
+ 
++/*
++ * Asynchronous I/O.
++ */
++
++/* aio_read(2) */
++static abi_long do_freebsd_aio_read(__unused abi_ulong iocb)
++{
++    qemu_log("qemu: Unsupported syscall aio_read()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* aio_write(2) */
++static abi_long do_freebsd_aio_write(__unused abi_ulong iocb)
++{
++    qemu_log("qemu: Unsupported syscall aio_write()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* aio_suspend(2) */
++static abi_long do_freebsd_aio_suspend(__unused abi_ulong iocbs,
++	__unused int niocb, __unused abi_ulong timeout)
++{
++    qemu_log("qemu: Unsupported syscall aio_suspend()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* aio_cancel(2) */
++static abi_long do_freebsd_aio_cancel(__unused int fildes,
++	__unused abi_ulong iocb)
++{
++    qemu_log("qemu: Unsupported syscall aio_cancel()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* aio_error(2) */
++static abi_long do_freebsd_aio_error(__unused abi_ulong iocb)
++{
++    qemu_log("qemu: Unsupported syscall aio_error()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* oaio_read(2) */
++static abi_long do_freebsd_oaio_read(__unused abi_ulong iocb)
++{
++    qemu_log("qemu: Unsupported syscall oaio_read()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* oaio_write(2) */
++static abi_long do_freebsd_oaio_write(__unused abi_ulong iocb)
++{
++    qemu_log("qemu: Unsupported syscall oaio_write()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* aio_waitcomplete(2) */
++static abi_long do_freebsd_aio_waitcomplete(__unused abi_ulong iocbp,
++	__unused abi_ulong timeout)
++{
++    qemu_log("qemu: Unsupported syscall aio_waitcomplete()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* aio_fsync(2) */
++static abi_long do_freebsd_aio_fsync(__unused int op,
++	__unused abi_ulong iocb)
++{
++    qemu_log("qemu: Unsupported syscall aio_fsync()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* aio_mlock(2) */
++static abi_long do_freebsd_aio_mlock(__unused abi_ulong iocb)
++{
++    qemu_log("qemu: Unsupported syscall aio_mlock()\n");
++    return -TARGET_ENOSYS;
++}
+ 
+ #if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
+ /* pipe2(2) */
+diff --git a/bsd-user/freebsd/syscall_nr.h b/bsd-user/freebsd/syscall_nr.h
+index b44545b..7d6bef8 100644
+--- a/bsd-user/freebsd/syscall_nr.h
++++ b/bsd-user/freebsd/syscall_nr.h
+@@ -458,4 +458,6 @@
+ #define TARGET_FREEBSD_NR_chflagsat	540
+ #define TARGET_FREEBSD_NR_accept4	541
+ #define	TARGET_FREEBSD_NR_pipe2		542
+-#define TARGET_FREEBSD_NR_MAXSYSCALL	543
++#define	TARGET_FREEBSD_NR_aio_mlock	543
++#define	TARGET_FREEBSD_NR_procctl	544
++#define TARGET_FREEBSD_NR_MAXSYSCALL	545
+diff --git a/bsd-user/syscall.c b/bsd-user/syscall.c
+index 0a2ab88..30dc2f3 100644
+--- a/bsd-user/syscall.c
++++ b/bsd-user/syscall.c
+@@ -1582,6 +1582,49 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         ret = do_obreak(arg1);
+         break;
+ 
++	/*
++	 * Asynchronous I/O
++	 */
++    case  TARGET_FREEBSD_NR_aio_read: /* aio_read(2) */
++	ret = do_freebsd_aio_read(arg1);
++	break;
++
++    case  TARGET_FREEBSD_NR_aio_write: /* aio_write(2) */
++	ret = do_freebsd_aio_write(arg1);
++	break;
++
++    case  TARGET_FREEBSD_NR_aio_suspend: /* aio_suspend(2) */
++	ret = do_freebsd_aio_suspend(arg1, arg2, arg3);
++	break;
++
++    case  TARGET_FREEBSD_NR_aio_cancel: /* aio_cancel(2) */
++	ret = do_freebsd_aio_cancel(arg1, arg2);
++	break;
++
++    case  TARGET_FREEBSD_NR_aio_error: /* aio_error(2) */
++	ret = do_freebsd_aio_error(arg1);
++	break;
++
++    case  TARGET_FREEBSD_NR_oaio_read: /* oaio_read(2) */
++	ret = do_freebsd_oaio_read(arg1);
++	break;
++
++    case  TARGET_FREEBSD_NR_oaio_write: /* oaio_write(2) */
++	ret = do_freebsd_oaio_write(arg1);
++	break;
++
++    case  TARGET_FREEBSD_NR_aio_waitcomplete: /* aio_waitcomplete(2) */
++	ret = do_freebsd_aio_waitcomplete(arg1, arg2);
++	break;
++
++    case  TARGET_FREEBSD_NR_aio_fsync: /* aio_fsync(2) */
++	ret = do_freebsd_aio_fsync(arg1, arg2);
++	break;
++
++    case  TARGET_FREEBSD_NR_aio_mlock: /* aio_mlock(2) */
++	ret = do_freebsd_aio_mlock(arg1);
++	break;
++
+     default:
+         ret = get_errno(syscall(num, arg1, arg2, arg3, arg4, arg5, arg6, arg7,
+                     arg8));

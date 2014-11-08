@@ -1,0 +1,63 @@
+From 3ed485b9b4ef8d8ba916760aec0cdf9dbce8ca27 Mon Sep 17 00:00:00 2001
+From: Sean Bruno <sbruno@crack.ysv.freebsd.org>
+Date: Fri, 7 Nov 2014 19:19:38 +0000
+Subject: [PATCH] Now that the kernel image activators can be run
+ independantly, there's no need for qemu itself to do this.  This allows
+ /bin/sh to be used as a static amd64 binary on my poudriere jails.
+
+---
+ bsd-user/freebsd/os-proc.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/bsd-user/freebsd/os-proc.c b/bsd-user/freebsd/os-proc.c
+index 24b8d27..b185439 100644
+--- a/bsd-user/freebsd/os-proc.c
++++ b/bsd-user/freebsd/os-proc.c
+@@ -82,6 +82,7 @@ get_filename_from_fd(pid_t pid, int fd, char *filename, size_t len)
+     return ret;
+ }
+ 
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1100000
+ static int
+ is_target_shell_script(int fd, char *interp, size_t size, char **interp_args)
+ {
+@@ -143,6 +144,7 @@ is_target_shell_script(int fd, char *interp, size_t size, char **interp_args)
+ 
+     return 0;
+ }
++#endif
+ 
+ /*
+  * execve/fexecve
+@@ -257,6 +259,7 @@ abi_long freebsd_exec_common(abi_ulong path_or_fd, abi_ulong guest_argp,
+                 ret = -TARGET_EBADF;
+                 goto execve_end;
+             }
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1100000
+         } else if (is_target_shell_script((int)path_or_fd, execpath,
+                     sizeof(execpath), &scriptargs) != 0) {
+             char scriptpath[PATH_MAX];
+@@ -282,6 +285,7 @@ abi_long freebsd_exec_common(abi_ulong path_or_fd, abi_ulong guest_argp,
+                 ret = -TARGET_EBADF;
+                 goto execve_end;
+             }
++#endif
+         } else {
+             ret = get_errno(fexecve((int)path_or_fd, argp, envp));
+         }
+@@ -310,6 +314,7 @@ abi_long freebsd_exec_common(abi_ulong path_or_fd, abi_ulong guest_argp,
+             *qarg1++ = (char *)interp_prefix;
+ #endif
+             ret = get_errno(execve(qemu_proc_pathname, qargp, envp));
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1100000
+         } else if (is_target_shell_script(fd, execpath,
+                     sizeof(execpath), &scriptargs) != 0) {
+             close(fd);
+@@ -328,6 +333,7 @@ abi_long freebsd_exec_common(abi_ulong path_or_fd, abi_ulong guest_argp,
+                 *qarg1 = scriptargs;
+             }
+             ret = get_errno(execve(qemu_proc_pathname, qarg0, envp));
++#endif
+         } else {
+             close(fd);
+             /* Execve() as a host native binary. */

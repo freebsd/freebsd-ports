@@ -1,0 +1,224 @@
+From c9c55ac786f09ce575b5f67b35241ce9452896c9 Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Tue, 4 Nov 2014 23:38:38 +0000
+Subject: [PATCH] Add support for new socket system calls.
+
+This change adds support for bindat(2), connectat(2), and accept4(2)
+system calls.
+---
+ bsd-user/freebsd/os-socket.h  | 106 +++++++++++++++++++++++++++++++++++++++++-
+ bsd-user/freebsd/strace.list  |  13 ++++++
+ bsd-user/freebsd/syscall_nr.h |   6 ++-
+ bsd-user/syscall.c            |  12 +++++
+ 4 files changed, 135 insertions(+), 2 deletions(-)
+
+diff --git a/bsd-user/freebsd/os-socket.h b/bsd-user/freebsd/os-socket.h
+index 6530a07..61e3440 100644
+--- a/bsd-user/freebsd/os-socket.h
++++ b/bsd-user/freebsd/os-socket.h
+@@ -1,7 +1,7 @@
+ /*
+  *  FreeBSD socket related system call shims
+  *
+- *  Copyright (c) 2013 Stacey D. Son
++ *  Copyright (c) 2013-14 Stacey D. Son
+  *
+  *  This program is free software; you can redistribute it and/or modify
+  *  it under the terms of the GNU General Public License as published by
+@@ -557,4 +557,108 @@ static inline abi_long do_freebsd_sendfile(abi_long fd, abi_long s,
+     return -TARGET_ENOSYS;
+ }
+ 
++#if defined(__FreeBSD_version) && __FreeBSD_version > 1100000
++/* bindat(2) */
++static inline abi_long do_bsd_bindat(int fd, int sockfd, abi_ulong target_addr,
++        socklen_t addrlen)
++{
++    abi_long ret;
++    void *addr;
++
++    if ((int)addrlen < 0) {
++        return -TARGET_EINVAL;
++    }
++
++    addr = alloca(addrlen + 1);
++    ret = target_to_host_sockaddr(addr, target_addr, addrlen);
++    if (is_error(ret)) {
++        return ret;
++    }
++
++    return get_errno(bindat(fd, sockfd, addr, addrlen));
++}
++
++/* connectat(2) */
++static inline abi_long do_bsd_connectat(int fd, int sockfd,
++	abi_ulong target_addr, socklen_t addrlen)
++{
++    abi_long ret;
++    void *addr;
++
++    if ((int)addrlen < 0) {
++        return -TARGET_EINVAL;
++    }
++    addr = alloca(addrlen);
++
++    ret = target_to_host_sockaddr(addr, target_addr, addrlen);
++
++    if (is_error(ret)) {
++        return ret;
++    }
++
++    return get_errno(connectat(fd, sockfd, addr, addrlen));
++}
++
++/* accept4(2) */
++static inline abi_long do_bsd_accept4(int fd, abi_ulong target_addr,
++        abi_ulong target_addrlen_addr, int flags)
++{
++    socklen_t addrlen;
++    void *addr;
++    abi_long ret;
++
++    if (target_addr == 0) {
++        return get_errno(accept(fd, NULL, NULL));
++    }
++    /* return EINVAL if addrlen pointer is invalid */
++    if (get_user_u32(addrlen, target_addrlen_addr)) {
++        return -TARGET_EINVAL;
++    }
++    if ((int)addrlen < 0) {
++        return -TARGET_EINVAL;
++    }
++    if (!access_ok(VERIFY_WRITE, target_addr, addrlen)) {
++        return -TARGET_EINVAL;
++    }
++    addr = alloca(addrlen);
++
++    ret = get_errno(accept4(fd, addr, &addrlen, flags));
++    if (!is_error(ret)) {
++        host_to_target_sockaddr(target_addr, addr, addrlen);
++        if (put_user_u32(addrlen, target_addrlen_addr)) {
++            ret = -TARGET_EFAULT;
++        }
++    }
++    return ret;
++}
++
++#else /* ! __FreeBSD_version > 1100000 */
++
++/* bindat(2) */
++static inline abi_long do_bsd_bindat(__unused int sockfd,
++	__unused abi_ulong target_addr, __unused socklen_t addrlen)
++{
++
++    qemu_log("qemu: Unsupported syscall bindat()\n");
++    return -TARGET_ENOSYS;
++}
++
++/* connectat(2) */
++static inline abi_long do_bsd_connectat(__unused int sockfd,
++	__unused abi_ulong target_addr, __unused socklen_t addrlen)
++{
++
++    qemu_log("qemu: Unsupported syscall connectat()\n");
++    return -TARGET_ENOSYS;
++}
++
++static inline abi_long do_bsd_accept4(__unused int fd,
++	__unused abi_ulong target_addr, __unused abi_ulong target_addrlen_addr,
++	__unused int flags)
++{
++
++    qemu_log("qemu: Unsupported syscall accept4()\n");
++    return -TARGET_ENOSYS;
++}
++#endif /* ! __FreeBSD_version > 1100000 */
+ #endif /* !__FREEBSD_SOCKET_H_ */
+diff --git a/bsd-user/freebsd/strace.list b/bsd-user/freebsd/strace.list
+index f8858aa..991cbe2 100644
+--- a/bsd-user/freebsd/strace.list
++++ b/bsd-user/freebsd/strace.list
+@@ -34,11 +34,22 @@
+ { TARGET_FREEBSD_NR___sysctl, "__sysctl", NULL, print_sysctl, NULL },
+ { TARGET_FREEBSD_NR__umtx_op, "_umtx_op", "%s(%#x, %d, %d, %#x, %#x)", NULL, NULL },
+ { TARGET_FREEBSD_NR_accept, "accept", "%s(%d,%#x,%#x)", NULL, NULL },
++{ TARGET_FREEBSD_NR_accept4, "accept4", "%s(%d,%d,%#x,%#x)", NULL, NULL },
+ { TARGET_FREEBSD_NR_access, "access", "%s(\"%s\",%#o)", NULL, NULL },
+ { TARGET_FREEBSD_NR_acct, "acct", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_adjtime, "adjtime", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_bind, "bind", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_bindat, "bindat", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_break, "break", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_enter, "cap_enter", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_fcntls_get, "cap_fcntls_get", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_fcntls_limit, "cap_fcntls_limit", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_getmode, "cap_getmode", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_getrights, "cap_getrights", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_ioctls_get, "cap_ioctls_get", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_ioctls_limit, "cap_ioctls_limit", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_new, "cap_new", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_rights_limit, "cap_rights_limit", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_chdir, "chdir", "%s(\"%s\")", NULL, NULL },
+ { TARGET_FREEBSD_NR_chflags, "chflags", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_chmod, "chmod", "%s(\"%s\",%#o)", NULL, NULL },
+@@ -49,6 +60,7 @@
+ { TARGET_FREEBSD_NR_clock_settime, "clock_settime", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_close, "close", "%s(%d)", NULL, NULL },
+ { TARGET_FREEBSD_NR_connect, "connect", "%s(%d,%#x,%d)", NULL, NULL },
++{ TARGET_FREEBSD_NR_connectat, "connectat", "%s(%d,%d,%#x,%d)", NULL, NULL },
+ { TARGET_FREEBSD_NR_dup, "dup", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_dup2, "dup2", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_eaccess, "eaccess", "%s(\"%s\",%#x)", NULL, NULL },
+@@ -228,6 +240,7 @@
+ { TARGET_FREEBSD_NR_utimes, "utimes", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_vfork, "vfork", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_wait4, "wait4", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_wait6, "wait6", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_write, "write", "%s(%d,%#x,%d)", NULL, NULL },
+ { TARGET_FREEBSD_NR_writev, "writev", "%s(%d,%p,%#x)", NULL, NULL },
+ { TARGET_FREEBSD_NR_posix_openpt, "posix_openpt", "%s(%d)", NULL, NULL },
+diff --git a/bsd-user/freebsd/syscall_nr.h b/bsd-user/freebsd/syscall_nr.h
+index 2ab3e1e..260fd82 100644
+--- a/bsd-user/freebsd/syscall_nr.h
++++ b/bsd-user/freebsd/syscall_nr.h
+@@ -453,4 +453,8 @@
+ #define TARGET_FREEBSD_NR_cap_ioctls_get    535
+ #define TARGET_FREEBSD_NR_cap_fcntls_limit  536
+ #define TARGET_FREEBSD_NR_cap_fcntls_get    537
+-#define TARGET_FREEBSD_NR_MAXSYSCALL    538
++#define TARGET_FREEBSD_NR_bindat	538
++#define TARGET_FREEBSD_NR_connectat	539
++#define TARGET_FREEBSD_NR_chflagsat	540
++#define TARGET_FREEBSD_NR_accept4	541
++#define TARGET_FREEBSD_NR_MAXSYSCALL	542
+diff --git a/bsd-user/syscall.c b/bsd-user/syscall.c
+index c615bb8..e043396 100644
+--- a/bsd-user/syscall.c
++++ b/bsd-user/syscall.c
+@@ -1056,14 +1056,26 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         ret = do_bsd_accept(arg1, arg2, arg3);
+         break;
+ 
++    case TARGET_FREEBSD_NR_accept4: /* accept4(2) */
++        ret = do_bsd_accept4(arg1, arg2, arg3, arg4);
++        break;
++
+     case TARGET_FREEBSD_NR_bind: /* bind(2) */
+         ret = do_bsd_bind(arg1, arg2, arg3);
+         break;
+ 
++    case TARGET_FREEBSD_NR_bindat: /* bindat(2) */
++        ret = do_bsd_bindat(arg1, arg2, arg3, arg4);
++        break;
++
+     case TARGET_FREEBSD_NR_connect: /* connect(2) */
+         ret = do_bsd_connect(arg1, arg2, arg3);
+         break;
+ 
++    case TARGET_FREEBSD_NR_connectat: /* connectat(2) */
++        ret = do_bsd_connectat(arg1, arg2, arg3, arg4);
++        break;
++
+     case TARGET_FREEBSD_NR_getpeername: /* getpeername(2) */
+         ret = do_bsd_getpeername(arg1, arg2, arg3);
+         break;

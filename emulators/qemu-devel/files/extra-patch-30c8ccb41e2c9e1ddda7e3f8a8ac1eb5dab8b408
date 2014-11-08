@@ -1,0 +1,51 @@
+From 30c8ccb41e2c9e1ddda7e3f8a8ac1eb5dab8b408 Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Wed, 5 Nov 2014 22:52:17 +0000
+Subject: [PATCH] Add stub for the new procctl(2) system call.
+
+---
+ bsd-user/freebsd/os-proc.h | 10 ++++++++++
+ bsd-user/syscall.c         |  4 +++-
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/bsd-user/freebsd/os-proc.h b/bsd-user/freebsd/os-proc.h
+index 612a5fd..193e1fc 100644
+--- a/bsd-user/freebsd/os-proc.h
++++ b/bsd-user/freebsd/os-proc.h
+@@ -21,6 +21,7 @@
+ #define __FREEBSD_PROC_H_
+ 
+ #if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
++#include <sys/procctl.h>
+ #include <sys/signal.h>
+ #endif
+ #include <sys/types.h>
+@@ -520,4 +521,13 @@ static inline abi_long do_freebsd_auditctl(abi_ulong arg1)
+     return -TARGET_ENOSYS;
+ }
+ 
++/* procctl(2) */
++static inline abi_long do_freebsd_procctl(__unused int idtype, __unused int id,
++	__unused int cmd, __unused abi_ulong arg)
++{
++
++    qemu_log("qemu: Unsupported syscall procctl()\n");
++    return -TARGET_ENOSYS;
++}
++
+ #endif /* ! __FREEBSD_PROC_H_ */
+diff --git a/bsd-user/syscall.c b/bsd-user/syscall.c
+index 30dc2f3..2ad63e5 100644
+--- a/bsd-user/syscall.c
++++ b/bsd-user/syscall.c
+@@ -432,7 +432,9 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         ret = do_bsd_setpriority(arg1, arg2, arg3);
+         break;
+ 
+-
++    case TARGET_FREEBSD_NR_procctl: /* procctl(2) */
++        ret = do_freebsd_procctl(arg1, arg2, arg3, arg4);
++        break;
+ 
+         /*
+          * File system calls.
