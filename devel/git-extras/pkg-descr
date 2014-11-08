@@ -1,0 +1,10 @@
+Additional Git sub-commands:
+ - repository summary
+ - author commit percentages
+ - changelog population
+ - shortcuts for branching/tagging/releasing
+ - GitHub related shortcuts
+ - repl (read-eval-print-loop), an interactive mode
+ - and more...
+
+WWW: https://github.com/tj/git-extras/
