@@ -1059,6 +1059,7 @@
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += yum
+    SUBDIR += zbackup
     SUBDIR += zeitgeist
     SUBDIR += zeroer
     SUBDIR += zetaback
