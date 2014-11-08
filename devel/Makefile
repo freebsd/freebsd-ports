@@ -540,6 +540,7 @@
     SUBDIR += gio-sharp
     SUBDIR += git
     SUBDIR += git-bzr-ng
+    SUBDIR += git-extras
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
     SUBDIR += git-review
