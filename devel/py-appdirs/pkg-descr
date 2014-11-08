@@ -1,0 +1,19 @@
+appdirs is small Python module for determining appropriate platform-specific
+dirs, e.g. a "user data dir". Those are typically platform-specific, for
+instance, if running on Mac OS X, you should use:
+
+~/Library/Application Support/<AppName>
+
+On Linux (and other Unices) the dir, according to the XDG spec, is:
+
+~/.local/share/<AppName>
+
+appdirs will help the application to choose an appropriate:
+- user data dir (user_data_dir)
+- user config dir (user_config_dir)
+- user cache dir (user_cache_dir)
+- site data dir (site_data_dir)
+- site config dir (site_config_dir)
+- user log dir (user_log_dir)
+
+WWW: http://github.com/ActiveState/appdirs
