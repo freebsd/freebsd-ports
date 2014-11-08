@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.0
 CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -22,8 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/erlang16/bin/erlc:${PORTSDIR}/lang/erlang-runtim
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
 GH_PROJECT=	leofs
-GH_TAGNAME=	707b21b
-GH_COMMIT=	707b21b
+GH_TAGNAME=	2f6d896
+GH_COMMIT=	2f6d896
 
 LEOFS_USER=	leofs
 LEOFS_GROUP=	leofs
@@ -69,9 +69,9 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang16/bin:${PATH}
 
 LEOFS_DEPS=	\
-	leo-project/leo_gateway=${PORTVERSION}?606217b:leo_gateway \
-	leo-project/leo_manager=${PORTVERSION}?4fd2d11:leo_manager \
-	leo-project/leo_storage=${PORTVERSION}?1cdf0f5:leo_storage \
+	leo-project/leo_gateway=${PORTVERSION}?2249fc4:leo_gateway \
+	leo-project/leo_manager=${PORTVERSION}?3f6c0f6:leo_manager \
+	leo-project/leo_storage=${PORTVERSION}?34f304d:leo_storage \
 	DeadZen/goldrush=0.1.6?71e6321:goldrush \
 	basho/cuttlefish=origin/develop?c2c7679:cuttlefish \
 	basho/eleveldb=1.4.10?a84b18c:eleveldb \
@@ -81,31 +81,33 @@ LEOFS_DEPS=	\
 	boundary/folsom=4824aec?4824aec:folsom \
 	davisp/jiffy=0.11.3?99867af:jiffy \
 	eproxus/meck=0.8.2?dde7590:meck \
-	extend/cowboy=0.8.6?9eaee45:cowboy \
-	extend/cowlib=0.6.2?e2ffefe:cowlib \
+	extend/cowlib=1.0.0?d544a49:cowlib \
 	extend/ranch=0.8.4?4f70a16:ranch \
 	jcomellas/getopt=v0.4.3?659a28f:getopt \
 	leo-project/bitcask=1.7.0?97d9345:bitcask \
+	leo-project/elarm=238e4bb?238e4bb:elarm \
 	leo-project/erlang-lz4=0.2.2?80a5777:lz4 \
 	leo-project/erpcgen=0.2.3?b35d6b8:erpcgen \
-	leo-project/leo_backend_db=1.1.2?46bba43:leo_backend_db \
+	leo-project/leo_backend_db=1.1.3?d7e8979:leo_backend_db \
 	leo-project/leo_cache=0.6.0?39c8210:leo_cache \
 	leo-project/leo_commons=1.1.0?c1e6825:leo_commons \
 	leo-project/leo_dcerl=0.2.11?929fd59:leo_dcerl \
 	leo-project/leo_logger=1.1.3?a05cce4:leo_logger \
 	leo-project/leo_mcerl=0.4.1?addcda0:leo_mcerl \
-	leo-project/leo_mq=1.0.10?1a84c33:leo_mq \
-	leo-project/leo_object_storage=1.1.5?924ae78:leo_object_storage \
+	leo-project/leo_mq=1.2.0?11571f0:leo_mq \
+	leo-project/leo_object_storage=1.1.8?0d44205:leo_object_storage \
 	leo-project/leo_ordning_reda=0.10.9?eb168f0:leo_ordning_reda \
 	leo-project/leo_pod=0.6.2?cfd8557:leo_pod \
-	leo-project/leo_redundant_manager=1.9.0?ea3e5e9:leo_redundant_manager \
+	leo-project/leo_redundant_manager=1.9.1?9c3bbe7:leo_redundant_manager \
 	leo-project/leo_rpc=0.8.10?5f55064:leo_rpc \
-	leo-project/leo_s3_libs=1.1.3?9df4f33:leo_s3_libs \
+	leo-project/leo_s3_libs=1.1.4?8b159b0:leo_s3_libs \
 	leo-project/leo_statistics=1.0.7?4bdb570:leo_statistics \
 	leo-project/libcutil=0.4.3?36b02d9:libcutil \
+	leo-project/leo_watchdog=0.4.1?4d6db9b:leo_watchdog \
 	leo-project/nfs_rpc_server=0.2.2?d63c5ba:nfs_rpc_server \
 	leo-project/savanna_agent=0.4.4?850143a:savanna_agent \
 	leo-project/savanna_commons=0.8.6?bbcc77f:savanna_commons \
+	ninenines/cowboy=1.0.0?021f4f6:cowboy \
 	manopapad/proper=7d535ac?7d535ac:proper \
 	seancribbs/neotoma=1.7.2?760928e:neotoma \
 
