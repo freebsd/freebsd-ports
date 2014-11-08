@@ -982,9 +982,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d35/transcode__data_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d36/stringio_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d36/stringio_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d3e/vmtc_8inc__dep__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d3e/vmtc_8inc__dep__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d3e/vmtc_8inc__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d44/hash_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d44/hash_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d44/hash_8c__incl.png
@@ -1367,7 +1364,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/d74/intern_8h__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/d75/modify_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/d75/modify_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/d75/structruby__method__ids__check.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/d79/structpair__t.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/d79/structrb__method__attr__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/d7b/japanese__sjis_8c__incl.map
@@ -1423,9 +1419,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/db9/trans_2gb18030_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dbf/basicsocket_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dbf/basicsocket_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dc2/ripper_8y__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dc2/ripper_8y__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dc2/ripper_8y__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dcc/digest_2sha1_2extconf_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dcc/digest_2sha1_2extconf_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d2/dd5/euc__kr_8c.html
@@ -1750,9 +1743,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db4/fiddle_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db4/fiddle_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db4/fiddle_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db4/parse_8y__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db4/parse_8y__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db4/parse_8y__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dbc/structglobal__variable.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dc0/syck_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dc0/syck_8h__dep__incl.md5
@@ -3825,7 +3815,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/functions_enum.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/functions_eval.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/functions_f.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/functions_func.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/functions_g.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/functions_h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/functions_i.html
@@ -4112,9 +4101,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d0/d35/transcode__data_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d0/d36/stringio_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d0/d36/stringio_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d0/d3e/vmtc_8inc__dep__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d0/d3e/vmtc_8inc__dep__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d0/d3e/vmtc_8inc__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d0/d44/hash_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d0/d44/hash_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d0/d44/hash_8c__incl.png
@@ -4497,7 +4483,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/d74/intern_8h__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/d75/modify_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/d75/modify_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/d75/structruby__method__ids__check.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/d79/structpair__t.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/d79/structrb__method__attr__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/d7b/japanese__sjis_8c__incl.map
@@ -4553,9 +4538,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/db9/trans_2gb18030_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/dbf/basicsocket_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/dbf/basicsocket_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/dc2/ripper_8y__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/dc2/ripper_8y__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/dc2/ripper_8y__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/dcc/digest_2sha1_2extconf_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/dcc/digest_2sha1_2extconf_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d2/dd5/euc__kr_8c.html
@@ -4880,9 +4862,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d4/db4/fiddle_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d4/db4/fiddle_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d4/db4/fiddle_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d4/db4/parse_8y__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d4/db4/parse_8y__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d4/db4/parse_8y__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d4/dbc/structglobal__variable.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d4/dc0/syck_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/d4/dc0/syck_8h__dep__incl.md5
@@ -6955,7 +6934,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/functions_enum.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/functions_eval.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/functions_f.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/html/functions_func.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/functions_g.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/functions_h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/html/functions_i.html
