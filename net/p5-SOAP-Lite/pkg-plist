@@ -1,8 +1,6 @@
 bin/SOAPsh.pl
-bin/XMLRPCsh.pl
 bin/stubmaker.pl
 %%PERL5_MAN3%%/Apache::SOAP.3.gz
-%%PERL5_MAN3%%/Apache::XMLRPC::Lite.3.gz
 %%PERL5_MAN3%%/SOAP::Client.3.gz
 %%PERL5_MAN3%%/SOAP::Constants.3.gz
 %%PERL5_MAN3%%/SOAP::Data.3.gz
@@ -21,16 +19,9 @@ bin/stubmaker.pl
 %%PERL5_MAN3%%/SOAP::Transport.3.gz
 %%PERL5_MAN3%%/SOAP::Transport::LOOPBACK.3.gz
 %%PERL5_MAN3%%/SOAP::Transport::POP3.3.gz
+%%PERL5_MAN3%%/SOAP::Transport::TCP.3.gz
 %%PERL5_MAN3%%/SOAP::Utils.3.gz
-%%PERL5_MAN3%%/UDDI::Lite.3.gz
-%%PERL5_MAN3%%/XML::Parser::Lite.3.gz
-%%PERL5_MAN3%%/XMLRPC::Lite.3.gz
-%%PERL5_MAN3%%/XMLRPC::Test.3.gz
-%%PERL5_MAN3%%/XMLRPC::Transport::HTTP.3.gz
-%%PERL5_MAN3%%/XMLRPC::Transport::POP3.3.gz
-%%PERL5_MAN3%%/XMLRPC::Transport::TCP.3.gz
 %%SITE_PERL%%/Apache/SOAP.pm
-%%SITE_PERL%%/Apache/XMLRPC/Lite.pm
 %%SITE_PERL%%/SOAP/Client.pod
 %%SITE_PERL%%/SOAP/Constants.pm
 %%SITE_PERL%%/SOAP/Data.pod
@@ -58,28 +49,8 @@ bin/stubmaker.pl
 %%SITE_PERL%%/SOAP/Transport/LOOPBACK.pm
 %%SITE_PERL%%/SOAP/Transport/MAILTO.pm
 %%SITE_PERL%%/SOAP/Transport/POP3.pm
+%%SITE_PERL%%/SOAP/Transport/TCP.pm
 %%SITE_PERL%%/SOAP/Utils.pod
-%%SITE_PERL%%/UDDI/Lite.pm
-%%SITE_PERL%%/XML/Parser/Lite.pm
-%%SITE_PERL%%/XMLRPC/Lite.pm
-%%SITE_PERL%%/XMLRPC/Test.pm
-%%SITE_PERL%%/XMLRPC/Transport/HTTP.pm
-%%SITE_PERL%%/XMLRPC/Transport/POP3.pm
-%%SITE_PERL%%/XMLRPC/Transport/TCP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite/.packlist
 man/man1/SOAPsh.pl.1.gz
-man/man1/XMLRPCsh.pl.1.gz
 man/man1/stubmaker.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
-@dirrmtry %%SITE_PERL%%/XMLRPC/Transport
-@dirrmtry %%SITE_PERL%%/XMLRPC
-@dirrmtry %%SITE_PERL%%/XML/Parser
-@dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%/UDDI
-@dirrmtry %%SITE_PERL%%/SOAP/Transport
-@dirrmtry %%SITE_PERL%%/SOAP/Lite/Deserializer
-@dirrmtry %%SITE_PERL%%/SOAP/Lite
-@dirrmtry %%SITE_PERL%%/SOAP
-@dirrmtry %%SITE_PERL%%/Apache/XMLRPC
-@dirrmtry %%SITE_PERL%%/Apache
