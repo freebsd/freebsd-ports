@@ -3,16 +3,20 @@
 
 PORTNAME=	odt2txt
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://stosberg.net/odt2txt/ \
-		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	GH
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple converter from OpenDocument Text to plain text
 
 LICENSE=	GPLv2
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	dstosberg
+GH_PROJECT=	odt2txt
+GH_COMMIT=	97b8999
+GH_TAGNAME=	${GH_COMMIT}
 USES=		iconv gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
