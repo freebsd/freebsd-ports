@@ -3,12 +3,12 @@
 #
 
 PORTNAME=	kamailio
-PORTVERSION=	4.1.6
+PORTVERSION=	4.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olivermahmoudi@gmail.com
 COMMENT=	Very fast and configurable open source SIP proxy
 
 LICENSE=	GPLv2
@@ -118,7 +118,8 @@ post-stage:
 	htable topoh auth sms async \
 	prefix_route speeddial registrar mtree uid_avp_db \
 	xlog sipt siptrace qos pdb xprint auth_radius \
-	sanity uid_gflags db_text sdpops sipcapture
+	sanity uid_gflags db_text sdpops sipcapture \
+	tsilo nosip rtpengine jsonrpc-s
 	@if [ -e ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so ]; then \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so; \
 	fi
