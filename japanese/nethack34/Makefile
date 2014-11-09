@@ -3,7 +3,7 @@
 
 PORTNAME=	nethack
 PORTVERSION=	3.4.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
@@ -68,6 +68,8 @@ do-configure:
 post-install:
 	(cd ${WRKSRC}/doc && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} manpages)
+	${INSTALL_DATA} ${WRKSRC}/win/X11/JNetHack.ad \
+		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/JNetHack
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README.j ChangeLog.j INSTALL.j \
