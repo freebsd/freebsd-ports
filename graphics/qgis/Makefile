@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.4.0
-PORTREVISION=	4
+PORTVERSION=	2.6.0
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -25,7 +24,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-QGIS-${GH_COMMIT}
 
 USE_GITHUB=
 GH_ACCOUNT=	qgis
-GH_COMMIT=	00ab94f
+GH_COMMIT=	5016213
 GH_TAGNAME=	${GH_COMMIT}
 
 USES=		bison cmake fortran gmake python
