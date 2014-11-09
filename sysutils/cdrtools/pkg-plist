@@ -1,7 +1,7 @@
 bin/btcflash
 %%CDDA2MP3%%bin/cdda2mp3
-%%CDDA2MP3%%man/man1/cdda2mp3.1.gz
 %%CDDA2OGG%%bin/cdda2ogg
+%%CDDA2MP3%%man/man1/cdda2mp3.1.gz
 %%CDDA2OGG%%man/man1/cdda2ogg.1.gz
 bin/cdda2wav
 bin/cdrecord
@@ -70,9 +70,7 @@ man/man1/readcd.1.gz
 man/man1/scgcheck.1.gz
 man/man8/isoinfo.8.gz
 man/man8/mkisofs.8.gz
-@dirrm lib/siconv
-%%RSCSI%%sbin/rscsi
-%%RSCSI%%@exec chmod u+s %B/%f
+%%RSCSI%%@(,,4555) sbin/rscsi
 @sample etc/cdrecord.sample
 %%RSCSI%%@sample etc/rscsi.sample
 %%RSCSI%%@unexec if pw usershow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, user \"rscsi\" and its homedirectory must be removed manually."; fi
@@ -87,7 +85,6 @@ man/man8/mkisofs.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/README
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cdda2wav
 %%PORTDOCS%%%%DOCSDIR%%/cdrecord/README
 %%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.ATAPI
 %%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.DiskT@2
@@ -103,7 +100,6 @@ man/man8/mkisofs.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.rscsi
 %%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.sony
 %%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.verify
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cdrecord
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.compression
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.eltorito
@@ -120,5 +116,3 @@ man/man8/mkisofs.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.sort
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.sparcboot
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.sunx86boot
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mkisofs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
