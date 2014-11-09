@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
-MAINTAINER=	olivermahmoudi@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast and configurable open source SIP proxy
 
 LICENSE=	GPLv2
