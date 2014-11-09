@@ -94,6 +94,7 @@ lib/kamailio/modules/group.so
 lib/kamailio/modules/htable.so
 lib/kamailio/modules/imc.so
 lib/kamailio/modules/ipops.so
+lib/kamailio/modules/jsonrpc-s.so
 lib/kamailio/modules/kex.so
 lib/kamailio/modules/malloc_test.so
 lib/kamailio/modules/mangler.so
@@ -110,6 +111,7 @@ lib/kamailio/modules/msrp.so
 lib/kamailio/modules/mtree.so
 lib/kamailio/modules/nat_traversal.so
 lib/kamailio/modules/nathelper.so
+lib/kamailio/modules/nosip.so
 lib/kamailio/modules/p_usrloc.so
 lib/kamailio/modules/path.so
 lib/kamailio/modules/pdb.so
@@ -126,8 +128,8 @@ lib/kamailio/modules/ratelimit.so
 lib/kamailio/modules/registrar.so
 lib/kamailio/modules/rr.so
 lib/kamailio/modules/rtimer.so
+lib/kamailio/modules/rtpengine.so
 lib/kamailio/modules/rtpproxy.so
-lib/kamailio/modules/rtpproxy-ng.so
 lib/kamailio/modules/sanity.so
 lib/kamailio/modules/sca.so
 lib/kamailio/modules/sdpops.so
@@ -150,6 +152,7 @@ lib/kamailio/modules/tm.so
 lib/kamailio/modules/tmrec.so
 lib/kamailio/modules/tmx.so
 lib/kamailio/modules/topoh.so
+lib/kamailio/modules/tsilo.so
 lib/kamailio/modules/uac.so
 lib/kamailio/modules/uac_redirect.so
 lib/kamailio/modules/uid_auth_db.so
@@ -246,6 +249,8 @@ lib/kamailio/modules/xprint.so
 %%MYSQL%%%%DATADIR%%/mysql/group-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/htable-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/imc-create.sql
+%%MYSQL%%%%DATADIR%%/mysql/ims_usrloc_pcscf-create.sql
+%%MYSQL%%%%DATADIR%%/mysql/ims_usrloc_scscf-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/lcr-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/matrix-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/mohqueue-create.sql
@@ -357,6 +362,7 @@ lib/kamailio/modules/xprint.so
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.htable
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.imc
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.ipops
+%%PORTDOCS%%%%DOCSDIR%%/modules/README.jsonrpc-s
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.kex
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.malloc_test
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.mangler
@@ -373,6 +379,7 @@ lib/kamailio/modules/xprint.so
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.mtree
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.nat_traversal
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.nathelper
+%%PORTDOCS%%%%DOCSDIR%%/modules/README.nosip
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.p_usrloc
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.path
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.pdb
@@ -389,8 +396,8 @@ lib/kamailio/modules/xprint.so
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.registrar
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.rr
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.rtimer
+%%PORTDOCS%%%%DOCSDIR%%/modules/README.rtpengine
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.rtpproxy
-%%PORTDOCS%%%%DOCSDIR%%/modules/README.rtpproxy-ng
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.sanity
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.sca
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.sdpops
@@ -413,6 +420,7 @@ lib/kamailio/modules/xprint.so
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.tmrec
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.tmx
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.topoh
+%%PORTDOCS%%%%DOCSDIR%%/modules/README.tsilo
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.uac
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.uac_redirect
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.uid_auth_db

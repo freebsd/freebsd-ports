@@ -1,5 +1,5 @@
---- Makefile.orig	2014-08-06 15:29:50 UTC
-+++ Makefile
+--- Makefile.orig	2014-10-16 14:46:22.000000000 +0200
++++ Makefile	2014-11-09 11:52:07.000000000 +0100
 @@ -95,7 +95,7 @@
  # whether or not to install $(MAIN_NAME).cfg or just $(MAIN_NAME).cfg.default
  # ($(MAIN_NAME).cfg will never be overwritten by make install, this is usefull
@@ -9,14 +9,18 @@
  
  #extra modules to exclude
  skip_modules?=
-@@ -820,8 +820,8 @@
+@@ -819,10 +819,10 @@
+ 				fi ; \
  			fi ; \
- 		done; true
- 		# radius dictionary
--		$(INSTALL_TOUCH) $(cfg_prefix)/$(cfg_dir)/dictionary.$(CFG_NAME)
--		$(INSTALL_CFG) etc/dictionary.$(CFG_NAME) $(cfg_prefix)/$(cfg_dir)
-+		$(INSTALL_TOUCH) $(cfg_prefix)/$(cfg_dir)/dictionary.$(CFG_NAME).sample
-+		$(INSTALL_CFG) etc/dictionary.$(CFG_NAME) $(cfg_prefix)/$(cfg_dir)/dictionary.$(CFG_NAME).sample
+ 			: ; done; true
+-	@# radius dictionary
+-	@$(INSTALL_TOUCH) $(cfg_prefix)/$(cfg_dir)/dictionary.$(CFG_NAME)
+-	@$(INSTALL_CFG) etc/dictionary.$(CFG_NAME) $(cfg_prefix)/$(cfg_dir)
+-	@echo "config files installed"
++	# radius dictionary
++	$(INSTALL_TOUCH) $(cfg_prefix)/$(cfg_dir)/dictionary.$(CFG_NAME).sample
++	$(INSTALL_CFG) etc/dictionary.$(CFG_NAME) $(cfg_prefix)/$(cfg_dir)/dictionary.$(CFG_NAME).sample
++	echo "config files installed"
  
  install-bin: $(bin_prefix)/$(bin_dir) $(NAME)
- 		$(INSTALL_TOUCH) $(bin_prefix)/$(bin_dir)/$(NAME)
+ 	$(INSTALL_TOUCH) $(bin_prefix)/$(bin_dir)/$(NAME)
