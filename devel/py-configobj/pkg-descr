@@ -1,5 +1,5 @@
-ConfigObj is a simple but powerful config file reader and writer: an ini file
-round tripper. Its main feature is that it is very easy to use, with a
-straightforward programmer's interface and a simple syntax for config file 
+ConfigObj is a simple but powerful config file reader and writer: an ini
+file round tripper. Its main feature is that it is very easy to use, with a
+straightforward programmer's interface and a simple syntax for config file.
 
-WWW:	http://www.voidspace.org.uk/python/configobj.html
+WWW: http://www.voidspace.org.uk/python/configobj.html
