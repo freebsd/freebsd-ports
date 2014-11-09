@@ -22,12 +22,14 @@ PORTNAME=	cdrtools
 PORTVERSION=	3.00
 PORTREVISION=	2
 CATEGORIES=	sysutils audio
-MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
-		http://ftp.berlios.de/pub/cdrecord/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	CD/DVD/BluRay and ISO-9660 image creation and extraction tools
+
+LICENSE=	BSD2CLAUSE CDDL GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 CONFLICTS=	cdrkit-* cdrtools-devel-* cjk-cdrtools-*
 
@@ -54,19 +56,27 @@ USES=		gmake tar:bzip2
 SUB_FILES=	pkg-message
 MAKE_JOBS_UNSAFE=	yes
 
-.if defined(WITH_CDDA2MP3)
+OPTIONS_DEFINE=	CDDA2MP3 CDDA2OGG DOCS NLS RSCSI
+
+CDDA2MP3_DESC=	Build cdda2mp3 (requires audio/lame)
+CDDA2OGG_DESC=	Build cdda2ogg (requires audio/vorbis-tools)
+RSCSI_DESC=	Build rscsi suid root remote SCSI access daemon
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCDDA2MP3}
 PLIST_SUB+=	CDDA2MP3=""
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .else
 PLIST_SUB+=	CDDA2MP3="@comment "
 .endif
-.if defined(WITH_CDDA2OGG)
+.if ${PORT_OPTIONS:MCDDA2OGG}
 PLIST_SUB+=	CDDA2OGG=""
 RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
 .else
 PLIST_SUB+=	CDDA2OGG="@comment "
 .endif
-.if defined(WITH_RSCSI)
+.if ${PORT_OPTIONS:MRSCSI}
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
 PLIST_SUB+=	RSCSI=""
 PKGNAMESUFFIX=	-rscsi
@@ -78,35 +88,10 @@ MAKE_ENV=	CCOM=cc GMAKE_NOWARN=true INS_BASE=${LOCALBASE} \
 		INS_RBASE=${LOCALBASE}
 CDRTLSTARGET=	${ARCH:S/powerpc64/powerpc/}-freebsd-cc
 
-OPTIONS_DEFINE=	DOCS NLS
-
-.include <bsd.port.options.mk>
-
-.if exists(${LOCALBASE}/lib/libiconv.a) || \
+.if exists(/usr/include/iconv.h) || exists(${LOCALBASE}/lib/libiconv.a) || \
 	exists(${LOCALBASE}/lib/libintl.a) || ${PORT_OPTIONS:MNLS}
 MAKE_ENV+=	OSDEFS=-I${LOCALBASE}/include
 USES+=		gettext iconv
-.endif
-
-pre-everything::
-.if !defined(WITH_CDDA2MP3) || !defined(CDDA2OGG) || !defined(WITH_RSCSI)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build option(s):"
-	@${ECHO_MSG} ""
-.if !defined(WITH_CDDA2MP3)
-	@${ECHO_MSG} "WITH_CDDA2MP3=yes	builds with cdda2mp3 (requires audio/lame)"
-.endif
-.if !defined(WITH_CDDA2OGG)
-	@${ECHO_MSG} "WITH_CDDA2OGG=yes	builds with cdda2ogg (requires audio/vorbis-tools)"
-.endif
-.if !defined(WITH_RSCSI)
-	@${ECHO_MSG} "WITH_RSCSI=yes		builds with the rscsi daemon which provides access to"
-	@${ECHO_MSG} "			local SCSI-devices over the network (the client-side"
-	@${ECHO_MSG} "			in cdda2wav, cdrecord, etc. is built unconditionally)."
-	@${ECHO_MSG} "			BEWARE:	The rscsi binary will be installed suid root"
-	@${ECHO_MSG} "				as this is the preferred way of setting it up."
-.endif
-	@${ECHO_MSG} ""
 .endif
 
 post-extract:
@@ -122,7 +107,7 @@ post-extract:
 
 post-patch:
 	@${RM} ${WRKSRC}/TARGETS/55scgskeleton ${WRKSRC}/TARGETS/85man
-.if !defined(WITH_RSCSI)
+.if !${PORT_OPTIONS:MRSCSI}
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif
 	@${REINPLACE_CMD} -e 's|\/opt\/schily\/bin\/|${PREFIX}\/etc\/|g' \
@@ -153,14 +138,15 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/btcflash/OBJ/${CDRTLSTARGET}/btcflash \
 		${STAGEDIR}${PREFIX}/bin
-.if defined(WITH_CDDA2MP3)
+.if ${PORT_OPTIONS:MCDDA2MP3}
 	${INSTALL_SCRIPT} ${WRKSRC}/cdda2wav/cdda2mp3 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2ogg.1 \
 		${STAGEDIR}${PREFIX}/man/man1/cdda2mp3.1
 .endif
-.if defined(WITH_CDDA2OGG)
+.if ${PORT_OPTIONS:MCDDA2OGG}
 	${INSTALL_SCRIPT} ${WRKSRC}/cdda2wav/cdda2ogg ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2ogg.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2ogg.1 \
+		${STAGEDIR}${PREFIX}/man/man1
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${CDRTLSTARGET}/cdda2wav \
 		${STAGEDIR}${PREFIX}/bin
@@ -176,34 +162,41 @@ do-install:
 	${LN} -sf mkisofs ${STAGEDIR}${PREFIX}/bin/mkhybrid
 	${INSTALL_PROGRAM} ${WRKSRC}/readcd/OBJ/${CDRTLSTARGET}/readcd \
 		${STAGEDIR}${PREFIX}/bin
-.if defined(WITH_RSCSI)
+.if ${PORT_OPTIONS:MRSCSI}
 	${INSTALL_PROGRAM} ${WRKSRC}/rscsi/OBJ/${CDRTLSTARGET}/rscsi \
 		${STAGEDIR}${PREFIX}/sbin
-	${CHMOD} u+s ${STAGEDIR}${PREFIX}/sbin/rscsi
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/scgcheck/OBJ/${CDRTLSTARGET}/scgcheck \
 		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/btcflash/btcflash.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/btcflash/btcflash.1 \
+		${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 \
+		${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 \
+		${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/readcd/readcd.1 ${STAGEDIR}${PREFIX}/man/man1
-.if defined(WITH_RSCSI)
+.if ${PORT_OPTIONS:MRSCSI}
 	@${INSTALL_MAN} ${WRKSRC}/rscsi/rscsi.1 ${STAGEDIR}${PREFIX}/man/man1
 .endif
-	${INSTALL_MAN} ${WRKSRC}/scgcheck/scgcheck.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/scgcheck/scgcheck.1 \
+		${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/mkisofs/mkisofs.8 ${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 \
+		${STAGEDIR}${PREFIX}/man/man8
 	${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl \
 		${STAGEDIR}${PREFIX}/etc/cdrecord.sample
 .if !exists(${STAGEDIR}${PREFIX}/etc/cdrecord)
-	${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl ${STAGEDIR}${PREFIX}/etc/cdrecord
+	${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl \
+		${STAGEDIR}${PREFIX}/etc/cdrecord
 .endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/siconv
 .for i in ${SICONVTABLES}
-	${INSTALL_DATA} ${WRKSRC}/libsiconv/tables/${i} ${STAGEDIR}${PREFIX}/lib/siconv
+	${INSTALL_DATA} ${WRKSRC}/libsiconv/tables/${i} \
+		${STAGEDIR}${PREFIX}/lib/siconv
 .endfor
-.if defined(WITH_RSCSI)
-	${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl ${STAGEDIR}${PREFIX}/etc/rscsi.sample
+.if ${PORT_OPTIONS:MRSCSI}
+	${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl \
+		${STAGEDIR}${PREFIX}/etc/rscsi.sample
 .if !exists(${STAGEDIR}${PREFIX}/etc/rscsi)
 	${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl ${STAGEDIR}${PREFIX}/etc/rscsi
 .endif
