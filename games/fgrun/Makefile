@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fgrun
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	games
 MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAGNAME}.tar.gz?dummy= \
 		LOCAL/martymac
@@ -24,12 +23,12 @@ WRKSRC=		${WRKDIR}/${GO_ACCOUNT}-${GO_PROJECT}
 
 CMAKE_ARGS+=	-DLIB_DIR=${PREFIX}/lib
 
-USES=		cmake
+USES=		cmake compiler
 USE_GL=		gl
 
 GO_ACCOUNT=	fg
 GO_PROJECT=	fgrun
-GO_TAGNAME=	e13e42811239008fded7685d8f2311bb571f6a58
+GO_TAGNAME=	00580a1c6b64b46fe430b0f1c0caafb4f63448fb
 FETCH_ARGS?=	-o ${DISTDIR}/${DISTFILES}
 
 OPTIONS_DEFINE=	NLS
@@ -37,4 +36,10 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CMAKE_ON=	-DENABLE_NLS=yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
+USE_GCC=	4.6+
+.endif
+
+.include <bsd.port.post.mk>
