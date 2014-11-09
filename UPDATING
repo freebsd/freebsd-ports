@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141109:
+  AFFECTS: users of multimedia/mediabrowser
+  AUTHOR: woodsb02@gmail.com
+
+  The default MediaBrowser database/configuration/logs/media metadata
+  storage directory has moved from /usr/local/mediabrowser to
+  /var/db/mediabrowser. Users are advised either to move the contents of
+  the old directory to the new location, or to add a mediabrowser_data_dir
+  entry to /etc/rc.conf.
+
 20141029:
   AFFECTS: users of devel/libvirt
   AUTHOR: jgh@FreeBSD.org

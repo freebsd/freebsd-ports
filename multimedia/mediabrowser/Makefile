@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediabrowser
-PORTVERSION=	3.0.5416.0
+PORTVERSION=	3.0.5424.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
@@ -18,16 +18,15 @@ LIB_DEPENDS=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	MediaBrowser
 GH_PROJECT=	MediaBrowser
-GH_COMMIT=	14a81fb
+GH_COMMIT=	628919d
 GH_TAGNAME=	${PORTVERSION}
 
 USES=		mono pkgconfig
 
 USE_RC_SUBR=	mediabrowser
-SUB_LIST=	SUPPORT_PATH=${SUPPORT_PATH} USERS=${USERS} GROUPS=${GROUPS}
+SUB_LIST=	PORTNAME=${PORTNAME} USER=${USERS} GROUP=${GROUPS}
 USERS=		mediabrowser
 GROUPS=		mediabrowser
-SUPPORT_PATH?=	${PREFIX}/mediabrowserdata
 
 do-build:
 	(cd ${WRKSRC} && \
@@ -37,9 +36,9 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mediabrowser
 	(cd ${WRKSRC}/MediaBrowser.Server.Mono/bin/Release\ Mono && \
-		${RM} -rv ./MediaInfo && \
-		${RM} -rv ./libwebp && \
-		${RM} -rv ./sqlite3 && \
+		${ECHO_MSG} "Deleting the following non-FreeBSD library files:" && \
+		${FIND} -E . -iregex '(.*\.dylib|.*libwebp.*|.*sqlite3.*|.*.dylib.*|MediaInfo\.dll)' -print -delete && \
+		${FIND} . -type d -empty -print -delete && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/mediabrowser)
 
 .include <bsd.port.mk>
