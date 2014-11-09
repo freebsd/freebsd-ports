@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amanda
-PORTVERSION=	3.3.2
-PORTREVISION?=	3
+PORTVERSION=	3.3.6
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -106,7 +105,8 @@ pre-fetch:
 CONFLICTS=	amanda-server-2.* amanda-server-3.2.* amanda2[56]-server-*
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client
-RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client
+RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
 CONFIGURE_ARGS+=--without-client
 

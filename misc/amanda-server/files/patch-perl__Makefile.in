@@ -1,7 +1,7 @@
---- perl/Makefile.in.orig	2010-10-07 03:58:28.000000000 +0900
-+++ perl/Makefile.in	2010-10-16 21:16:31.327136585 +0900
-@@ -1541,13 +1541,15 @@
- # PACKAGE: Amanda::Script_App
+--- perl/Makefile.in.orig	2014-07-09 16:23:26.000000000 +0200
++++ perl/Makefile.in	2014-09-12 16:42:55.653005667 +0200
+@@ -1812,13 +1812,15 @@
+ # PACKAGE: Amanda::Extract
  
  # PACKAGE: Amanda::Script
 +@WANT_CLIENT_TRUE@am__append_xfer = Amanda/Xfer.pm
@@ -13,12 +13,12 @@
  	$(am__append_13) Amanda/BigIntCompat.pm Amanda/Debug.pm \
  	Amanda/Config.pm Amanda/Util.pm Amanda/Header.pm \
  	Amanda/Tests.pm Amanda/MainLoop.pm Amanda/Paths.pm \
--	Amanda/Constants.pm Amanda/Script_App.pm $(am__append_16) \
-+	$(am__append_const) Amanda/Script_App.pm $(am__append_16) \
- 	$(am__append_17) Amanda/Script.pm
+-	Amanda/Constants.pm Amanda/Script_App.pm Amanda/Extract.pm \
++	$(am__append_const) Amanda/Script_App.pm Amanda/Extract.pm \
+ 	$(am__append_16) $(am__append_17) Amanda/Script.pm
  
  # PACKAGE: Amanda::Archive
-@@ -1670,12 +1672,12 @@
+@@ -1947,12 +1949,12 @@
  @WANT_SERVER_TRUE@Amanda_DB_DATA = Amanda/DB/Catalog.pm
  
  # PACKAGE: Amanda::Xfer
