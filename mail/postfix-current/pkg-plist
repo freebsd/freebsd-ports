@@ -127,32 +127,37 @@ libexec/postfix/virtual
 sbin/postalias
 sbin/postcat
 sbin/postconf
-sbin/postdrop
 sbin/postfix
 sbin/postkick
 sbin/postlock
 sbin/postlog
 sbin/postmap
 sbin/postmulti
+@group maildrop
+@mode 2755
+sbin/postdrop
 sbin/postqueue
+@group
+@mode
 sbin/postsuper
 sbin/sendmail
+@dir libexec/postfix/postfix-files.d
 @dir /var/db/postfix
-@dir /var/spool/postfix/active
-@dir /var/spool/postfix/bounce
-@dir /var/spool/postfix/corrupt
-@dir /var/spool/postfix/defer
-@dir /var/spool/postfix/deferred
-@dir /var/spool/postfix/flush
-@dir /var/spool/postfix/hold
-@dir /var/spool/postfix/incoming
-@dir /var/spool/postfix/maildrop
-@dir /var/spool/postfix/pid
-@dir /var/spool/postfix/private
-@dir /var/spool/postfix/public
-@dir /var/spool/postfix/saved
-@dir /var/spool/postfix/trace
-@dir /var/spool/postfix
+@dir(postfix,,700) /var/spool/postfix/active
+@dir(postfix,,700) /var/spool/postfix/bounce
+@dir(postfix,,700) /var/spool/postfix/corrupt
+@dir(postfix,,700) /var/spool/postfix/defer
+@dir(postfix,,700) /var/spool/postfix/deferred
+@dir(postfix,,700) /var/spool/postfix/flush
+@dir(postfix,,700) /var/spool/postfix/hold
+@dir(postfix,,700) /var/spool/postfix/incoming
+@dir(postfix,maildrop,730) /var/spool/postfix/maildrop
+@dir(,postfix,755) /var/spool/postfix/pid
+@dir(postfix,,700) /var/spool/postfix/private
+@dir(postfix,maildrop,710) /var/spool/postfix/public
+@dir(postfix,,700) /var/spool/postfix/saved
+@dir(postfix,,700) /var/spool/postfix/trace
+@dir(postfix,postfix,700) /var/spool/postfix
 %%BASE%%@cwd /
 @dir etc/postfix
 @cwd %%RESETPREFIX%%
