@@ -2,80 +2,40 @@
 
 # $FreeBSD$
 #
-# PROVIDE: mediabrowser
+# PROVIDE: %%PORTNAME%%
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# Add the following lines to /etc/rc.conf to enable the MediaBrowser Server:
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
 #
-# mediabrowser_enable="YES"
-#
-# mediabrowser_support_path="%%SUPPORT_PATH%%" # MediaBrowser data: logs, media metadata, settings, etc
-#
+# %%PORTNAME%%_enable:	Set to YES to enable %%PORTNAME%%
+#			Default: NO
+# %%PORTNAME%%_data_dir:	Directory where %%PORTNAME%% configuration
+#			data is stored.
+#			Default: /var/db/%%PORTNAME%%
 
 . /etc/rc.subr
-
-name=mediabrowser
-rcvar=mediabrowser_enable
+name=%%PORTNAME%%
+rcvar=${name}_enable
 load_rc_config $name
 
-: ${mediabrowser_enable:=NO}
-: ${mediabrowser_support_path="%%SUPPORT_PATH%%"}
-: ${mediabrowser_user="%%USERS%%"}
-: ${mediabrowser_group="%%GROUPS%%"}
+: ${%%PORTNAME%%_enable:="NO"}
+: ${%%PORTNAME%%_data_dir:="/var/db/%%PORTNAME%%"}
 
-extra_commands=status
+pidfile="/var/run/%%PORTNAME%%.pid"
+command="/usr/sbin/daemon"
+procname="%%LOCALBASE%%/bin/mono"
+command_args="-f -u %%USER%% -p ${pidfile} ${procname} %%PREFIX%%/lib/mediabrowser/MediaBrowser.Server.Mono.exe -ffmpeg %%LOCALBASE%%/bin/ffmpeg -ffprobe %%LOCALBASE%%/bin/ffprobe -programdata ${%%PORTNAME%%_data_dir}"
+
 start_precmd=mediabrowser_precmd
-start_cmd=mediabrowser_startcmd
-status_cmd=mediabrowser_statuscmd
-stop_cmd=mediabrowser_stopcmd
-pidfile=/var/run/${name}.pid
-
 mediabrowser_precmd()
 {
 	export LC_ALL="C"
 	export LANG="C"
-	ulimit -s 3000
 
-	if [ ! -d "${mediabrowser_support_path}" ]; then
-		install -d -g ${mediabrowser_group} -o ${mediabrowser_user} "${mediabrowser_support_path}";
-	fi
-}
-
-mediabrowser_startcmd()
-{
-	if [ -f "${pidfile}" ] && (pgrep -F ${pidfile} -f MediaBrowser >/dev/null); then
-		echo "${name} is already running with pid: $(cat ${pidfile})";
-	else
-		echo "Starting ${name}."
-		/usr/sbin/daemon -u ${mediabrowser_user} -p ${pidfile} -f \
-			%%PREFIX%%/bin/mono %%PREFIX%%/lib/mediabrowser/MediaBrowser.Server.Mono.exe \
-			-ffmpeg %%PREFIX%%/bin/ffmpeg -ffprobe %%PREFIX%%/bin/ffprobe \
-			-programdata ${mediabrowser_support_path}
-	fi
-}
-
-mediabrowser_statuscmd()
-{
-	if [ -f "${pidfile}" ] && (pgrep -F ${pidfile} -f MediaBrowser >/dev/null); then
-		echo "${name} is running with pid: $(cat ${pidfile})";
-	else
-		echo "${name} is not running.";
-		exit 1;
-	fi	
-}
-
-mediabrowser_stopcmd()
-{
-	if [ -f "${pidfile}" ] && (pgrep -F ${pidfile} -f MediaBrowser >/dev/null); then
-		main_pid=$(cat ${pidfile});
-		child_pids=$(pgrep -P ${main_pid});
-		all_pids="${main_pid} ${child_pids}"
-		kill ${sig_stop} ${all_pids};
-		wait_for_pids ${all_pids};
-	else
-		echo "${name} is not running.";
-		exit 1;
+	if [ ! -d "${%%PORTNAME%%_data_dir}" ]; then
+		install -d -g %%GROUP%% -o %%GROUP%% "${%%PORTNAME%%_data_dir}";
 	fi
 }
 
