@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	2.12-20141020
+DISTVERSION=	2.12-20141106
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -45,6 +45,7 @@ OPTIONS_RADIO_RG2=	SASLKRB5 SASLKMIT
 OPTIONS_DEFAULT=	PCRE
 
 PCRE_DESC=	Perl Compatible Regular Expressions
+EAI_DESC=	Email Address Internationalization (EAI, RFC 6531..6533)
 SASL2_DESC=	Cyrus SASLv2 (Simple Auth. and Sec. Layer)
 DOVECOT_DESC=	Dovecot 1.x SASL authentication method
 DOVECOT2_DESC=	Dovecot 2.x SASL authentication method
@@ -132,6 +133,14 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 
 # Default requirement for postfix rc script
 _REQUIRE=		LOGIN cleanvar
+
+.if ${PORT_OPTIONS:MEAI}
+LIB_DEPENDS+=		libicuuc.so:${PORTSDIR}/devel/icu
+POSTFIX_CCARGS+=	-DHAS_EAI -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -licuuc
+.else
+POSTFIX_CCARGS+=	-DNO_EAI
+.endif
 
 .if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
@@ -320,7 +329,7 @@ pre-install:
 .endif
 
 do-install:
-	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=/tmp \
+	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=${WRKDIR} \
 		config_directory=${ETCDIR} \
 		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \
