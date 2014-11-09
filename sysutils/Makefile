@@ -762,6 +762,7 @@
     SUBDIR += raincoat
     SUBDIR += rcadm
     SUBDIR += rclean
+    SUBDIR += rcm
     SUBDIR += rdate
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
