@@ -1,4 +1,2 @@
-SHA256 (create-cert-2.4.tar.gz) = 46fcd55b84af95f5cb7b53b4e527b82858538014bcb8f35aa9543b34875636d5
-SIZE (create-cert-2.4.tar.gz) = 72547
-SHA256 (create-cert-2.4.tar.gz.asc) = b38b5e236b401a93efb21f9ab24d15491f008ed2ca4d9ece13eb335596b81e72
-SIZE (create-cert-2.4.tar.gz.asc) = 181
+SHA256 (create-cert-2.5.tar.gz) = 240195b7ace5dd4313c7a295df709bb353fdf94721924cecac9e5872d378112a
+SIZE (create-cert-2.5.tar.gz) = 72690

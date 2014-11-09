@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	create-cert
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ee.lbl.gov/
 
