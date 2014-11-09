@@ -2,7 +2,6 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION?=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -38,6 +37,15 @@ ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOS2UNIX_FILES=	jdk/src/share/classes/com/sun/org/apache/xml/internal/security/resource/xmlsecurity_en.properties \
+		jdk/src/bsd/doc/man/java.1 \
+		jdk/src/bsd/doc/man/javac.1 \
+		jdk/src/bsd/doc/man/javap.1 \
+		jdk/src/linux/doc/man/java.1 \
+		jdk/src/linux/doc/man/javac.1 \
+		jdk/src/linux/doc/man/javap.1 \
+		jdk/src/solaris/doc/sun/man/man1/java.1 \
+		jdk/src/solaris/doc/sun/man/man1/javac.1 \
+		jdk/src/solaris/doc/sun/man/man1/javap.1 \
 		nashorn/test/script/jfx.js
 SHEBANG_FILES=	configure
 
@@ -62,8 +70,8 @@ NO_CCACHE=		yes
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	11
-JDK_BUILD_NUMBER=	12
+JDK_UPDATE_VERSION=	25
+JDK_BUILD_NUMBER=	17
 DIST_BUILD_NUMBER=	132
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
@@ -163,33 +171,20 @@ ICONV_LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 .endif
 
 post-extract:
-	@${MV} -f ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-debug \
-	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx
-	@${MV} -f ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-product \
-	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-product.macosx
-	@${CP} -f ${WRKSRC}/hotspot/make/linux/makefiles/mapfile-vers-debug \
-	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-debug
-	@${CP} -f ${WRKSRC}/hotspot/make/linux/makefiles/mapfile-vers-product \
-	    ${WRKSRC}/hotspot/make/bsd/makefiles/mapfile-vers-product
-	@${MKDIR} ${WRKSRC}/jdk/src/bsd/classes/java/net \
-	    ${WRKSRC}/jdk/src/bsd/classes/sun/nio/ch
-	@${MV} -f ${WRKSRC}/jdk/src/macosx/classes/java/net/DefaultInterface.java \
-	    ${WRKSRC}/jdk/src/bsd/classes/java/net
-	@${MV} -f ${WRKSRC}/jdk/src/macosx/classes/sun/nio/ch/DefaultSelectorProvider.java \
-	    ${WRKSRC}/jdk/src/bsd/classes/sun/nio/ch
-	@${MV} -f ${WRKSRC}/jdk/src/macosx/classes/sun/nio/ch/KQueue*.java \
-	    ${WRKSRC}/jdk/src/solaris/classes/sun/nio/ch
-	@${MV} -f ${WRKSRC}/jdk/src/macosx/native/sun/nio/ch/KQueue*.c \
-	    ${WRKSRC}/jdk/src/solaris/native/sun/nio/ch
+	@${CP} ${FILESDIR}/jdk-test-javax-imageio-plugins-jpeg-truncated.jpg \
+	    ${WRKSRC}/jdk/test/javax/imageio/plugins/jpeg/truncated.jpg
+	@${CP} ${FILESDIR}/nashorn-test-script-jfx-flyingimage-golden-bsd.png \
+	    ${WRKSRC}/nashorn/test/script/jfx/flyingimage/golden/bsd.png
+	@${CP} ${FILESDIR}/nashorn-test-script-jfx-kaleidoscope-golden-bsd.png \
+	    ${WRKSRC}/nashorn/test/script/jfx/kaleidoscope/golden/bsd.png
+	@${CP} ${FILESDIR}/nashorn-test-script-jfx-spread-golden-bsd.png \
+	    ${WRKSRC}/nashorn/test/script/jfx/spread/golden/bsd.png
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${RMDIR} ${WRKSRC}/jdk/src/macosx/classes/java/net \
 	    ${WRKSRC}/jdk/src/macosx/native/sun/nio/ch \
 	    ${WRKSRC}/jdk/src/macosx/native/sun/nio
-	@${CP} -f ${WRKSRC}/jdk/src/solaris/classes/java/lang/UNIXProcess.java.bsd \
-	    ${WRKSRC}/jdk/src/solaris/classes/java/lang/UNIXProcess.java.macosx
-	@${CP} -f ${FILESDIR}/jdk-test-javax-imageio-plugins-jpeg-truncated.jpg \
-	    ${WRKSRC}/jdk/test/javax/imageio/plugins/jpeg/truncated.jpg
-
-post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    ${FILESDIR}/bsd.fontconfig.properties.in > \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties

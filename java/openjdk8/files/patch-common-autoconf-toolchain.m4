@@ -1,11 +1,11 @@
---- common/autoconf/toolchain.m4.orig	2014-04-26 00:48:48.000000000 -0400
-+++ common/autoconf/toolchain.m4	2014-04-26 00:49:35.000000000 -0400
-@@ -885,7 +885,7 @@
-   CCXXFLAGS_JDK="$CCXXFLAGS_JDK $ADD_LP64"
+--- common/autoconf/toolchain.m4.orig	2014-11-08 19:52:00.000000000 -0800
++++ common/autoconf/toolchain.m4	2014-11-08 19:52:15.000000000 -0800
+@@ -971,7 +971,7 @@
+     fi
  
-   # The package path is used only on macosx?
--  PACKAGE_PATH=/opt/local
-+  PACKAGE_PATH=%%LOCALBASE%%
-   AC_SUBST(PACKAGE_PATH)
+     if test "`uname -s`" = "FreeBSD"; then
+-      PACKAGE_PATH=/usr/local
++      PACKAGE_PATH=%%LOCALBASE%%
+     fi
  
-   if test "x$OPENJDK_TARGET_CPU_ENDIAN" = xlittle; then
+     if test "`uname -s`" = "NetBSD"; then
