@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2014-10-11 19:24:48.000000000 +0900
++++ Makefile.in	2014-10-23 21:48:16.000000000 +0900
+@@ -1982,10 +1982,10 @@
+ @HAVE_DOXYGEN_TRUE@	rm -fr $(builddir)/docs/html
+ 
+ sidplayfp/psiddrv.o65:
+-	xa -R -G $(srcdir)/sidplayfp/psiddrv.a65 -o $@
++	xa65 -R -G $(srcdir)/sidplayfp/psiddrv.a65 -o $@
+ 
+ sidplayfp/psiddrv.bin: sidplayfp/psiddrv.o65
+-	od -v -An -w8 -tx1 $< | sed -re 's/[[:alnum:]]+/0x&,/g' > sidplayfp/psiddrv.bin
++	od -v -An -tx1 $< | sed -re 's/[[:alnum:]]+/0x&,/g' | rs 0 8 > sidplayfp/psiddrv.bin
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
