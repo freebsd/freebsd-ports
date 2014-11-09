@@ -3,6 +3,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.11.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -38,8 +39,8 @@ USE_SUBMAKE=	yes
 USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
-OPTIONS_DEFINE=	PCRE SASL2 TLS BDB MYSQL PGSQL SQLITE OPENLDAP LDAP_SASL \
-		CDB NIS VDA TEST SPF INST_BASE LMDB DOCS
+OPTIONS_DEFINE=	BDB CDB DOCS INST_BASE LDAP_SASL LMDB MYSQL NIS \
+		OPENLDAP PCRE PGSQL SASL2 SPF SQLITE TEST TLS VDA
 
 OPTIONS_RADIO=		RG1 RG2
 OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
@@ -332,7 +333,7 @@ pre-install:
 .endif
 
 do-install:
-	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=/tmp \
+	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=${WRKDIR} \
 		config_directory=${ETCDIR} \
 		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \
