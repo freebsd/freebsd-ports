@@ -1,19 +1,19 @@
---- jdk/make/lib/Awt2dLibraries.gmk
-+++ jdk/make/lib/Awt2dLibraries.gmk
-@@ -1243,6 +1243,8 @@
-     LIBSPLASHSCREEN_CFLAGS += -DWITH_WIN32
+--- jdk/make/lib/Awt2dLibraries.gmk.orig	2014-11-08 19:54:51.000000000 -0800
++++ jdk/make/lib/Awt2dLibraries.gmk	2014-11-08 19:56:30.000000000 -0800
+@@ -1257,7 +1257,7 @@
    else ifeq ($(OPENJDK_TARGET_OS), solaris)
      LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 -I$(OPENWIN_HOME)/include -I$(OPENWIN_HOME)/include/X11/extensions
-+  else ifeq ($(OPENJDK_TARGET_OS), bsd)
-+    LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 $(X_CFLAGS) %%ICONV_CPPFLAGS%%
+   else ifeq ($(OPENJDK_TARGET_OS), bsd)
+-    LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 $(X_CFLAGS) -DLIBICONV_PLUG
++    LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 $(X_CFLAGS) -DLIBICONV_PLUG %%ICONV_CPPFLAGS%%
    else
      LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 $(X_CFLAGS)
    endif
-@@ -1267,7 +1269,7 @@
+@@ -1282,7 +1282,7 @@
      # Solaris still uses OPENWIN_LIB ..
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += -L$(OPENWIN_LIB)$(OPENJDK_TARGET_CPU_ISADIR) -lX11 -lXext $(LIBM) -lpthread
    else ifeq ($(OPENJDK_TARGET_OS), bsd)
--    LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -liconv -pthread
+-    LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM)  -pthread
 +    LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) %%ICONV_LDFLAGS%% -pthread
    else	# .. all other Unixes can use X_LIBS
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -lpthread
