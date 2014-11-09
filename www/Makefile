@@ -1454,6 +1454,7 @@
     SUBDIR += py-bleach
     SUBDIR += py-blogofile
     SUBDIR += py-bottle
+    SUBDIR += py-bottle-cork
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
     SUBDIR += py-clientform
