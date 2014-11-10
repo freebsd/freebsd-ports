@@ -10,6 +10,8 @@ bin/h2pas
 bin/h2paspp
 bin/instantfpc
 bin/makeskel
+bin/pas2fpm
+bin/pas2ut
 bin/plex
 bin/postw32
 bin/ppdep
