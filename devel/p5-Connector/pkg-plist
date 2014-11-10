@@ -1,4 +1,5 @@
 %%PERL5_MAN3%%/Connector.3.gz
+%%PERL5_MAN3%%/Connector::Builtin::Authentication::LDAP.3.gz
 %%PERL5_MAN3%%/Connector::Builtin::Authentication::Password.3.gz
 %%PERL5_MAN3%%/Connector::Builtin::Authentication::PasswordScheme.3.gz
 %%PERL5_MAN3%%/Connector::Builtin::Env.3.gz
@@ -15,6 +16,7 @@
 %%PERL5_MAN3%%/Connector::Wrapper.3.gz
 %%SITE_PERL%%/Connector.pm
 %%SITE_PERL%%/Connector/Builtin.pm
+%%SITE_PERL%%/Connector/Builtin/Authentication/LDAP.pm
 %%SITE_PERL%%/Connector/Builtin/Authentication/Password.pm
 %%SITE_PERL%%/Connector/Builtin/Authentication/PasswordScheme.pm
 %%SITE_PERL%%/Connector/Builtin/Env.pm
