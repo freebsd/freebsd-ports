@@ -19,8 +19,6 @@ USES=		pkgconfig python
 USE_GNOME=	glib20
 USE_PYTHON=	distutils autoplist pythonprefix
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/nidsmodule.so
-
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .include <bsd.port.pre.mk>
