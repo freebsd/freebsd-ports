@@ -2,9 +2,9 @@ bin/img2sixel
 bin/sixel2png
 include/sixel.h
 lib/libsixel.a
-lib/libsixel.so.0
-lib/libsixel.so.0.0.0
 lib/libsixel.so
+lib/libsixel.so.1
+lib/libsixel.so.1.0.2
 libdata/pkgconfig/libsixel.pc
 man/man1/img2sixel.1.gz
 man/man1/sixel2png.1.gz
