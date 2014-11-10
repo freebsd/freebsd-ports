@@ -21,7 +21,7 @@ GH_COMMIT=	1cfd813
 
 USES=		gmake
 
-PORTDOCS=	README.md lmicdiusb \
+PORTDOCS=	README.md \
 		lmicdiusb/commands.txt lmicdiusb/README
 PLIST_FILES=	bin/lm4flash bin/lmicdi
 
