@@ -37,8 +37,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgtk2ext.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libplibglade2.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgtkglext.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgdkglext.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

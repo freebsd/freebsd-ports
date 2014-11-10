@@ -17,8 +17,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome1/libpgconfclient.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome1/libplibgnome.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome1/libplibgnomeui.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome1/libplibzvt.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome1
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

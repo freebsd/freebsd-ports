@@ -60,10 +60,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/xforms/libpxforms.a
 %%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/xforms/arrowbutton.pp
 %%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/xforms/Makefile.fpc
 %%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/xforms/yesno.pp
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/xforms
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc
-%%PORTEXAMPLES%%@dirrm share/examples/fpc-%%PORTVERSION%%/xforms
-%%PORTEXAMPLES%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

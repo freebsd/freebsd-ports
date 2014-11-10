@@ -53,8 +53,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/numlib/libpsle.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/numlib/libpspe.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/numlib/libpspl.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/numlib/libpnumlib.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/numlib
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc
