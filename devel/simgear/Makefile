@@ -27,7 +27,7 @@ USES=		tar:bzip2 cmake compiler openal:al,alut
 
 # When building with Gcc, needs Gcc 4.6+
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
-USE_GCC=	4.6+
+USE_GCC=	yes
 .endif
 
 .include <bsd.port.post.mk>
