@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	nawk
-PORTVERSION=	20110810
+PORTVERSION=	20121220
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.princeton.edu/~bwk/btl.mirror/
 DISTNAME=	awk
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	nawk-${PORTVERSION}
 
-MAINTAINER=	ota@j.email.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Kernighan's pattern scanning and processing language
 
 NO_WRKSUBDIR=	yes
