@@ -17,6 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib \
-		EXPATINCPATH=${LOCALBASE}/include </dev/null
+		EXPATINCPATH=${LOCALBASE}/include
 
 .include <bsd.port.mk>
