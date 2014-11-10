@@ -259,10 +259,6 @@ post-install-script:
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} '@exec ${SH} -c "cd %D/${DOCSDIR_REL}/html/libraries && ./gen_contents_index"' >> ${TMPPLIST}
 .endif
-	@${FIND} -ds ${STAGEDIR}${DOCSDIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-	@${FIND} -ds ${GHC_LIBDIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|; \
