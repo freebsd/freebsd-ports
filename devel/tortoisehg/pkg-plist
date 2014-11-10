@@ -111,9 +111,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/htmlui.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/htmlui.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/htmlui.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/i18n.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/i18n.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/i18n.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/icons_rc.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/icons_rc.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/icons_rc.pyo
@@ -264,9 +261,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thread.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thread.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thread.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.pyo
