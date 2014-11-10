@@ -50,7 +50,7 @@ DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
 
 # Chase devel/simgear compiler version
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
-USE_GCC=	4.6+
+USE_GCC=	yes
 .endif
 
 post-install:
