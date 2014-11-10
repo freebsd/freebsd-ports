@@ -18,11 +18,3 @@ bin/runghc-%%GHC_VERSION%%
 @exec /bin/mkdir -p %D/share/cabal/ghc-%%GHC_VERSION%%           || return true
 @exec /bin/mkdir -p %D/share/doc/cabal/ghc-%%GHC_VERSION%%       || return true
 @exec /bin/mkdir -p %D/share/examples/cabal/ghc-%%GHC_VERSION%%  || return true
-@dirrmtry lib/cabal/ghc-%%GHC_VERSION%%
-@dirrmtry lib/cabal
-@dirrmtry share/cabal/ghc-%%GHC_VERSION%%
-@dirrmtry share/cabal
-@dirrmtry share/doc/cabal/ghc-%%GHC_VERSION%%
-@dirrmtry share/doc/cabal
-@dirrmtry share/examples/cabal/ghc-%%GHC_VERSION%%
-@dirrmtry share/examples/cabal
