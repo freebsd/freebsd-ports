@@ -14,8 +14,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/sha1.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/sha1.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/uuid.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/uuid.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

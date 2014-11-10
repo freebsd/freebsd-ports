@@ -8,8 +8,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/spellcheck.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/libpaspell.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/libpaspelldyn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/libpspellcheck.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fastcgi/fastcgi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fastcgi/fastcgi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fastcgi/fpunits.cfg
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fastcgi/libpfastcgi.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fastcgi
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc
