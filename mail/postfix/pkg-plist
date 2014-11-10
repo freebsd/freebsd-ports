@@ -156,7 +156,7 @@ sbin/sendmail
 @dir(postfix,maildrop,710) /var/spool/postfix/public
 @dir(postfix,,700) /var/spool/postfix/saved
 @dir(postfix,,700) /var/spool/postfix/trace
-@dir(postfix,postfix,700) /var/spool/postfix
+@dir(,,755) /var/spool/postfix
 %%BASE%%@cwd /
 @dir etc/postfix
 @cwd %%RESETPREFIX%%
