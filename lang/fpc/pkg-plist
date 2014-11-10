@@ -1,6 +1,3 @@
-@unexec if cmp -s %D/etc/fpc.cfg.sample %D/etc/fpc.cfg; then rm -f %D/etc/fpc.cfg; fi
-etc/fpc.cfg.sample
-@exec if [ ! -f %D/etc/fpc.cfg ] ; then cp -p %D/%F %B/fpc.cfg; fi
 bin/fpc
 bin/fpcsubst
 bin/fpcmake
@@ -12,6 +9,7 @@ bin/ppufiles
 bin/ppumove
 %%FPC_I386%%bin/ppc386
 %%FPC_AMD64%%bin/ppcx64
+@sample etc/fpc.cfg.sample
 lib/fpc/%%PORTVERSION%%/msg/errorct.msg
 lib/fpc/%%PORTVERSION%%/msg/errord.msg
 lib/fpc/%%PORTVERSION%%/msg/errorda.msg
