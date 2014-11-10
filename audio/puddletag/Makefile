@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puddletag
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	audio python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -21,8 +20,11 @@ RUN_DEPENDS=	chromaprint>=0.4:${PORTSDIR}/audio/chromaprint \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.5.0:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
 USES=		python:2
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 INSTALLS_ICONS=	yes
 NO_BUILD=	yes
+
+post-patch:
+	@${REINPLACE_CMD} 's|share/man/man1|man/man1|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
