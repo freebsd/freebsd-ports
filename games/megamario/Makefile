@@ -3,7 +3,7 @@
 
 PORTNAME=	megamario
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/mmario/Mega%20Mario%20Full%20Game/Mega%20Mario%20v${PORTVERSION}%20%28Full%20Game%2C%20high%20Quality%20music%29/
 DISTNAME=	MegaMario_v${PORTVERSION}_full
@@ -26,7 +26,19 @@ ALL_TARGET=	${PORTNAME}
 pre-extract:
 		@${MKDIR} ${WRKDIR}/${DISTNAME}
 
-PORTDOCS=	CONTROLS.txt fixes_v1.7.txt readme.txt
+PORTDOCS=	*
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	CONTROLS.txt fixes_v1.7.txt readme.txt
+
+DOCSRCDIR2=	${WRKSRC}/help
+DOCSDIR2=	${DOCSDIR}/help
+DOC_FILES2=	*
+
+DOCSRCDIR3=	${WRKSRC}/screens
+DOCSDIR3=	${DOCSDIR}/screens
+DOC_FILES3=	*
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -41,14 +53,18 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.for d in help mp3music screens
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
-.endfor
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} mp3music ${STAGEDIR}${DATADIR})
+
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR3}
+	${INSTALL_DATA} ${DOC_FILES3:S|^|${DOCSRCDIR3}/|} ${STAGEDIR}${DOCSDIR3}
 
 .include <bsd.port.mk>
