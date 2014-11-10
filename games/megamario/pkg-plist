@@ -236,9 +236,6 @@ share/applications/megamario.desktop
 %%DATADIR%%/gfx/tiles/pipes/up/3.png
 %%DATADIR%%/gfx/tiles/pipes/up/4.png
 %%DATADIR%%/gfx/tiles/smallcastle.png
-%%DATADIR%%/help/editor.doc
-%%DATADIR%%/help/editor_FAQ.png
-%%DATADIR%%/help/editor_Roehren.png
 %%DATADIR%%/levels/1/1
 %%DATADIR%%/levels/1/main
 %%DATADIR%%/levels/1/text
@@ -321,12 +318,6 @@ share/applications/megamario.desktop
 %%DATADIR%%/mp3music/orig.mp3
 %%DATADIR%%/mp3music/star2.mp3
 %%DATADIR%%/save.sav
-%%DATADIR%%/screens/1.png
-%%DATADIR%%/screens/2.png
-%%DATADIR%%/screens/3.png
-%%DATADIR%%/screens/4.png
-%%DATADIR%%/screens/5.png
-%%DATADIR%%/screens/6.gif
 %%DATADIR%%/sfx/1-up.wav
 %%DATADIR%%/sfx/bowserfall.wav
 %%DATADIR%%/sfx/cannon.wav
