@@ -2218,6 +2218,16 @@
    #define JNIEXPORT     __attribute__((visibility("default")))
    #define JNIIMPORT     __attribute__((visibility("default")))
  #else
+--- ./hotspot/src/cpu/x86/vm/x86_32.ad	2014-11-11 15:50:09.000000000 -0500
++++ ./hotspot/src/cpu/x86/vm/x86_32.ad	2014-11-11 16:05:43.000000000 -0500
+@@ -1210,6 +1210,7 @@
+ 
+ 
+   Unimplemented();
++  return 0;
+ }
+ 
+ #ifndef PRODUCT
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
 +++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Wed Nov 05 15:01:44 2014 -0800
 @@ -0,0 +1,47 @@
@@ -6189,12 +6199,13 @@
          -DELAYLOAD:secur32.dll -DELAYLOAD:iphlpapi.dll, \
 --- ./jdk/make/lib/NioLibraries.gmk	Tue Sep 09 12:00:58 2014 -0700
 +++ ./jdk/make/lib/NioLibraries.gmk	Wed Nov 05 12:14:24 2014 -0800
-@@ -77,9 +77,27 @@
+@@ -77,9 +77,28 @@
        UnixNativeDispatcher.c
  endif
  
 +ifeq ($(OPENJDK_TARGET_OS), bsd)
 +  BUILD_LIBNIO_MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libnio/mapfile-$(OPENJDK_TARGET_OS)
++  BUILD_LIBNIO_SRC += $(JDK_TOPDIR)/src/bsd/native/sun/nio/ch
 +  BUILD_LIBNIO_FILES += \
 +      BsdNativeDispatcher.c \
 +      GnomeFileTypeDetector.c \
@@ -6218,7 +6229,7 @@
    BUILD_LIBNIO_FILES += \
        InheritedChannel.c \
        NativeThread.c \
-@@ -149,6 +167,7 @@
+@@ -149,6 +168,7 @@
      LDFLAGS_SUFFIX_windows := jvm.lib ws2_32.lib $(WIN_JAVA_LIB) \
          $(JDK_OUTPUTDIR)/objs/libnet/net.lib \
          advapi32.lib, \
@@ -6226,7 +6237,7 @@
      LDFLAGS_SUFFIX_macosx := -ljava -lnet -pthread -framework CoreFoundation, \
      LDFLAGS_SUFFIX :=, \
      VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
-@@ -194,6 +213,7 @@
+@@ -194,6 +214,7 @@
          LDFLAGS_SUFFIX_linux := -lpthread $(LIBDL) -ljava -ljvm, \
          LDFLAGS_SUFFIX_posix := -lnio -lnet, \
          LDFLAGS_SUFFIX_solaris := -lsocket -ljava -ljvm -lc, \
@@ -6411,7 +6422,7 @@
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
 +++ ./jdk/make/mapfiles/libnio/mapfile-bsd	Wed Nov 05 12:14:24 2014 -0800
-@@ -0,0 +1,189 @@
+@@ -0,0 +1,195 @@
 +#
 +# Copyright (c) 2001, 2013, Oracle and/or its affiliates. All rights reserved.
 +# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -6526,6 +6537,12 @@
 +		Java_sun_nio_ch_Net_localInetAddress;
 +		Java_sun_nio_ch_Net_localPort;
 +		Java_sun_nio_ch_Net_poll;
++		Java_sun_nio_ch_Net_pollconnValue;
++		Java_sun_nio_ch_Net_pollerrValue;
++		Java_sun_nio_ch_Net_pollhupValue;
++		Java_sun_nio_ch_Net_pollinValue;
++		Java_sun_nio_ch_Net_pollnvalValue;
++		Java_sun_nio_ch_Net_polloutValue;
 +		Java_sun_nio_ch_Net_setIntOption0;
 +		Java_sun_nio_ch_Net_setInterface4;
 +		Java_sun_nio_ch_Net_setInterface6;
