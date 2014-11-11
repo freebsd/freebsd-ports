@@ -79,6 +79,3 @@ share/htmllint/html/htmllint.css
 share/htmllint/html/htmllint2.css
 share/htmllint/html/tagslist.cgi
 share/htmllint/htmllint.env
-@dirrm share/htmllint/rule
-@dirrm share/htmllint/html
-@dirrm share/htmllint
