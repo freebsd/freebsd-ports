@@ -3,4 +3,3 @@ bin/minecraft-client
 %%DATADIR%%/minecraft-runtime
 %%DATADIR%%/Notifier.java
 share/pixmaps/minecraft-client.png
-@dirrm %%DATADIR%%
