@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
 		http://mirrors.rit.edu/zi/
@@ -13,20 +13,22 @@ COMMENT=	High Performance Network IDS, IPS and Security Monitoring engine
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libhtp.so:${PORTSDIR}/devel/libhtp \
 		libnet.so:${PORTSDIR}/net/libnet \
 		libyaml.so:${PORTSDIR}/textproc/libyaml
 
-OPTIONS_DEFINE=	IPFW PRELUDE PORTS_PCAP TESTS
-OPTIONS_DEFAULT=IPFW PRELUDE
+OPTIONS_DEFINE=	IPFW PRELUDE PORTS_PCAP TESTS JSON GEOIP HTP_PORT
+OPTIONS_DEFAULT=IPFW PRELUDE HTP_PORT
 OPTIONS_SUB=	yes
 
 IPFW_DESC=	Enable IPFW and IP Divert support for inline IDP
 PRELUDE_DESC=	Enable Prelude support for NIDS alerts
 PORTS_PCAP_DESC=Use libpcap from ports
 TESTS_DESC=	Enable unit tests in suricata binary
+JSON_DESC=	Enable Suricata JSON output
+GEOIP_DESC=	Enable GeoIP support for Suricata
+HTP_PORT_DESC=	Use libhtp from ports instead of bundled
 
-USES=		gmake pkgconfig libtool
+USES=		gmake pkgconfig libtool pathfix
 USE_AUTOTOOLS=	aclocal autoconf automake
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -43,10 +45,18 @@ PRELUDE_LIB_DEPENDS=		libprelude.so:${PORTSDIR}/security/libprelude
 PRELUDE_CONFIGURE_ENABLE=	prelude
 PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
 TESTS_CONFIGURE_ENABLE=		unittests
+JSON_CONFIGURE_OFF=		--with-libjansson-includes=${LOCALBASE}/include	\
+				--with-libjansson-libraries=${LOCALBASE}/lib
+JSON_LIB_DEPENDS=		libjansson.so:${PORTSDIR}/devel/jansson
+GEOIP_CONFIGURE_ON=		--enable-geoip
+GEOIP_LIB_DEPENDS=		libGeoIP.so:${PORTSDIR}/net/GeoIP
+HTP_PORT_CONFIGURE_ON=		--enable-non-bundled-htp
+HTP_PORT_LIB_DEPENDS=		libhtp.so:${PORTSDIR}/devel/libhtp
+HTP_PORT_CONFLICT_OFF=		libhtp-[0-9]* libhtp-suricata
 
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=--enable-non-bundled-htp --enable-gccprotect \
+CONFIGURE_ARGS+=--enable-gccprotect \
 		--with-libpcre-includes=${LOCALBASE}/include \
 		--with-libpcre-libraries=${LOCALBASE}/lib \
 		--with-libyaml-includes=${LOCALBASE}/include \
@@ -66,6 +76,12 @@ LOGS_DIR?=	/var/log/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MHTP_PORT}
+PLIST_SUB+=	HTPPORT="@comment "
+.else
+PLIST_SUB+=	HTPPORT=""
+.endif
+
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
@@ -80,7 +96,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${CONFIG_DIR}
 	${MKDIR} ${STAGEDIR}${RULES_DIR}
 .for f in ${CONFIG_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${CONFIG_DIR}/${f}-sample
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${CONFIG_DIR}/${f}.sample
 .endfor
 
 TMPDIR?=	/tmp
