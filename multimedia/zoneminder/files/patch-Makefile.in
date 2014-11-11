@@ -1,23 +1,5 @@
 --- Makefile.in.orig	2011-08-23 08:10:37.000000000 -0700
 +++ Makefile.in	2014-07-24 13:33:49.000000000 -0700
-@@ -275,7 +275,7 @@
- webuser = @WEB_USER@
- webgroup = @WEB_GROUP@
- sysconf_DATA = \
--	zm.conf
-+	zm.conf.sample
- 
- SUBDIRS = \
- 	src \
-@@ -343,7 +343,7 @@
- 
- distclean-hdr:
- 	-rm -f config.h stamp-h1
--zm.conf: $(top_builddir)/config.status $(srcdir)/zm.conf.in
-+zm.conf.sample: $(top_builddir)/config.status $(srcdir)/zm.conf.in
- 	cd $(top_builddir) && $(SHELL) ./config.status $@
- zmconfgen.pl: $(top_builddir)/config.status $(srcdir)/zmconfgen.pl.in
- 	cd $(top_builddir) && $(SHELL) ./config.status $@
 @@ -742,7 +742,6 @@
  
  install-data-am:
