@@ -1,7 +1,5 @@
 bin/portsreinstall
-@unexec if cmp -s %D/etc/portsreinstall.conf.sample %D/etc/portsreinstall.conf; then rm -f %D/etc/portsreinstall.conf; fi
-etc/portsreinstall.conf.sample
-@exec [ -f %B/portsreinstall.conf ] || cp %B/%f %B/portsreinstall.conf
+@sample etc/portsreinstall.conf.sample
 lib/portsreinstall/libcommand.sh
 lib/portsreinstall/libconf.sh
 lib/portsreinstall/libdatabase_build.sh
@@ -19,4 +17,3 @@ lib/portsreinstall/libstr.sh
 lib/portsreinstall/libtemp.sh
 lib/portsreinstall/libusage.sh
 man/man8/portsreinstall.8.gz
-@dirrm lib/portsreinstall
