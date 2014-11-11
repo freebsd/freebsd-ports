@@ -3,7 +3,7 @@
 
 PORTNAME=	xrdesktop
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://luggage.linux0wnsyou.com/xrdesktop/
 
@@ -14,7 +14,8 @@ RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
 		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	xrdesktop
 
 PLIST_FILES=	bin/xrdesktop
 
