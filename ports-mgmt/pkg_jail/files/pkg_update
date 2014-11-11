@@ -1,5 +1,5 @@
 #!/bin/sh
-#	$Id: pkg_update,v 1.78 2014/09/05 07:42:04 cvs Exp $
+#	$Id: pkg_update,v 1.79 2014/10/27 05:32:25 cvs Exp $
 #	$FreeBSD$
 #
 # Copyright (c) 2001-2006
@@ -2071,11 +2071,15 @@ nowarn="COMMENT=0 CATEGORIES=0 PORTVERSION=0"
 portsdir=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V PORTSDIR`
 pkg_dbdir=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V PKG_DBDIR`
 packages=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V PACKAGES`
-if test -e /usr/sbin/pkg
+pkgng="yes"
+if test ! -e /usr/sbin/pkg
 then
-	pkgng="yes"
-else
 	pkgng=""
+else
+	if test ! -e /var/db/pkg/local.sqlite
+	then
+		pkgng=""
+	fi
 fi
 quiet_mkdir "${pkginfo_cache}"
 #
@@ -2107,6 +2111,10 @@ make-packages)
 			make_packages_in_dir "${i}"
 		fi
 	done
+	if test "${pkgng}" != ""
+	then
+		pkg repo "${packages}/All"
+	fi
 	;;
 add-packages)
 	shift
@@ -2542,12 +2550,24 @@ check-update)
 	next_target "${@}"
 	;;
 update-pkg)
-	cd "${portsdir}/ports-mgmt/pkg" && make clean deinstall PREFIX=/usr/pkgng package install
+	defaultdata="${localdir}/data/make-packages.${hostname}"
+	if test ! -f "${defaultdata}"
+	then
+		echo "!!WARNNING!! Such a file should only exist for your build jail" >&2
+		echo "!!WARNNING!! This will uninstall all packages." >&2
+		echo "!!WARNNING!! This will delete your config in /usr/local." >&2
+		exit 64
+	fi
+	pkg delete -y -a -f
+	/etc/rc.d/ldconfig start
+	cd "${portsdir}/ports-mgmt/pkg" && make clean deinstall PREFIX=/usr/pkgng PKGNAMESUFFIX=-pkgng package install
 	if test ! -h /usr/sbin/pkg
 	then
 		mv -f /usr/sbin/pkg /usr/sbin/pkg.orig
 		ln -s "${pkg_prefix}/sbin/pkg" /usr/sbin/pkg
 	fi
+	cd "${portsdir}/ports-mgmt/pkg" && make clean package install
+	pkg delete -y -f pkg
 	;;
 *)
 	usage
