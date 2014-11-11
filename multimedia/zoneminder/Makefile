@@ -110,7 +110,6 @@ BROKEN=	does not compile on 7.X and 8.X
 .endif
 
 post-configure:
-	${MV} ${WRKSRC}/zm.conf ${WRKSRC}/zm.conf.sample
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/bin:/usr/bin,/bin:/usr/bin:${LOCALBASE}/bin,g' ${WRKSRC}/scripts/*.pl.in
@@ -125,6 +124,8 @@ post-patch:
 		-e 's,^FFMPEG_CFLAGS=.*,,g' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,ZM_V4L2,ZM_HAS_V4L2,g' ${WRKSRC}//web/skins/classic/views/monitorprobe.php
+	${REINPLACE_CMD} -e 's,chown,true chown,g' ${WRKSRC}/Makefile.in \
+		${WRKSRC}/src/Makefile.in ${WRKSRC}/web/Makefile.in
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 pre-build:
@@ -135,22 +136,15 @@ pre-build:
 	${CP} ${FILESDIR}/README.FreeBSD  ${PKGMESSAGE}
 
 post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/zm.conf ${STAGEDIR}${PREFIX}/etc/zm.conf.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} ${WRKSRC}/db/zm_create.sql ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
 	-${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
-	${MKDIR} -m 0700 -p ${STAGEDIR}${M_TMPDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${M_TMPDIR}
-	${MKDIR} -m 0755 -p ${STAGEDIR}${M_RUNDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${M_RUNDIR}
-	${MKDIR} -m 0755 -p ${STAGEDIR}${M_LOGDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${M_LOGDIR}
-
-pre-deinstall:
-	-${RMDIR} ${STAGEDIR}${M_RUNDIR}
-	-${RMDIR} ${STAGEDIR}${M_TMPDIR}
-	-${RMDIR} ${STAGEDIR}${M_LOGDIR}
+	${MKDIR} -p ${STAGEDIR}${M_TMPDIR}
+	${MKDIR} -p ${STAGEDIR}${M_RUNDIR}
+	${MKDIR} -p ${STAGEDIR}${M_LOGDIR}
 
 .include <bsd.port.post.mk>
