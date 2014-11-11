@@ -16907,3 +16907,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-precedence_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-refinements_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/unknown/cdesc-unknown.ri
+@dir %%RUBY_LIBDIR%%/racc/rdoc
+@dir %%RUBY_SITEARCHLIBDIR%%
+@dir %%RUBY_VENDORARCHLIBDIR%%
+@dir %%RUBY_EXAMPLESDIR%%/curses
+@dir %%RUBY_SITERIDIR%%
