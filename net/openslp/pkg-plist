@@ -1,14 +1,7 @@
 bin/slptool
-@unexec if cmp -s %D/etc/openslp/slp.reg %D/etc/openslp/slp.reg.default; then rm -f %D/etc/openslp/slp.reg; fi
-etc/openslp/slp.reg.default
-@exec [ -f %B/slp.reg ] || cp %B/%f %B/slp.reg
-@unexec if cmp -s %D/etc/openslp/slp.conf %D/etc/openslp/slp.conf.default; then rm -f %D/etc/openslp/slp.conf; fi
-etc/openslp/slp.conf.default
-@exec [ -f %B/slp.conf ] || cp %B/%f %B/slp.conf
-@unexec if cmp -s %D/etc/openslp/slp.spi %D/etc/openslp/slp.spi.default; then rm -f %D/etc/openslp/slp.spi; fi
-etc/openslp/slp.spi.default
-@exec [ -f %B/slp.spi ] || cp %B/%f %B/slp.spi
-@dirrm etc/openslp
+@sample etc/openslp/slp.conf.sample
+@sample etc/openslp/slp.reg.sample
+@sample etc/openslp/slp.spi.sample
 include/slp.h
 lib/libslp.a
 lib/libslp.so
@@ -72,9 +65,3 @@ sbin/slpd
 %%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/smalllogo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/faq.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/UsersGuide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/IntroductionToSLP
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ProgrammersGuide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
