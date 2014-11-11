@@ -133,6 +133,7 @@ include/ImageMagick-6/magick/transform.h
 include/ImageMagick-6/magick/type.h
 include/ImageMagick-6/magick/utility.h
 include/ImageMagick-6/magick/version.h
+include/ImageMagick-6/magick/vision.h
 include/ImageMagick-6/magick/widget.h
 include/ImageMagick-6/magick/xml-tree.h
 include/ImageMagick-6/magick/xwindow.h
@@ -346,6 +347,8 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sfw.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sgi.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sgi.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sixel.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sixel.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/stegano.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/stegano.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/sun.la
@@ -494,6 +497,9 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/images/logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%-6/images/montage.jpg
 %%PORTDOCS%%%%DOCSDIR%%-6/images/navy.png
+%%PORTDOCS%%%%DOCSDIR%%-6/images/objects.gif
+%%PORTDOCS%%%%DOCSDIR%%-6/images/objects.jpg
+%%PORTDOCS%%%%DOCSDIR%%-6/images/objects.png
 %%PORTDOCS%%%%DOCSDIR%%-6/images/patterns/bricks.png
 %%PORTDOCS%%%%DOCSDIR%%-6/images/patterns/checkerboard.png
 %%PORTDOCS%%%%DOCSDIR%%-6/images/patterns/circles.png
@@ -1402,6 +1408,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/compose.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/composite.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/conjure.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/connected-components.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/contact.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/convert.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/display.html
@@ -1465,3 +1472,4 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/t-shirt.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/wand.png
+@dir lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%
