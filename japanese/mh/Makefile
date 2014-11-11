@@ -41,10 +41,15 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	${REINPLACE_CMD} -e "s/-O /${CFLAGS} /g" ${WRKSRC}/configure
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc-JP && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmh.so.3
+.for i in ap conflict dp fmtdump install-mh mhl post rcvdist rcvpack rcvstore rcvtty slocal spost
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mh/${i}
+.endfor
 
 .include <bsd.port.mk>

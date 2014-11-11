@@ -1,0 +1,13 @@
+--- conf/makefiles/uip.orig	2001-05-30 23:57:47.000000000 +0900
++++ conf/makefiles/uip	2014-10-13 17:55:46.000000000 +0900
+@@ -995,10 +995,6 @@
+ 		-chmod g-s zrcvtty
+ 		$(CP) xrcvtty $@
+ 		-@chmod $(PGMPROT) $@
+-@BEGIN: BSD43
+-		-@chgrp tty $@
+-		-@chmod g+s $@
+-@END: BSD43
+ 		-@ls -l $@
+ 		-@echo ""
+ 
