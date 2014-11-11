@@ -4,6 +4,7 @@ etc/xdg/midori/search
 lib/libmidori-core.so
 lib/libmidori-core.so.0.0.0
 lib/libmidori-core.so.1
+lib/midori/libabout.so
 lib/midori/libadblock.so
 %%ONLY_WEBKIT1%%lib/midori/libaddons.so
 lib/midori/libapps.so
@@ -32,6 +33,7 @@ lib/midori/libtabby.so
 lib/midori/libtabs-minimized.so
 lib/midori/libtoolbar-editor.so
 lib/midori/libtransfers.so
+lib/midori/libwebmedia-now-playing.so
 share/appdata/midori.appdata.xml
 share/applications/midori-private.desktop
 share/applications/midori.desktop
@@ -59,9 +61,12 @@ share/applications/midori.desktop
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze-katze-http-auth.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze-katze-utils.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze.devhelp2
+%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/left-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/left.png
+%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/right-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/right.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/style.css
+%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/up-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/up.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/annotation-glossary.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/api-index-full.html
@@ -69,9 +74,11 @@ share/applications/midori.desktop
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/deprecated-api-index.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/home.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/index.html
+%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/left-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/left.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriBrowser.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriExtension.html
+%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriExtensionsColumn.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriPreferences.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori-app.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori-array.html
@@ -90,8 +97,10 @@ share/applications/midori.desktop
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-sokoke.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori.devhelp2
+%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/right-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/right.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/style.css
+%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/up-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/up.png
 share/icons/hicolor/16x16/apps/midori.png
 share/icons/hicolor/16x16/categories/extension.png
@@ -102,11 +111,13 @@ share/icons/hicolor/22x22/status/internet-news-reader.png
 share/icons/hicolor/scalable/apps/midori.svg
 share/icons/hicolor/scalable/categories/extension.svg
 share/icons/hicolor/scalable/status/internet-news-reader.svg
+share/locale/af/LC_MESSAGES/midori.mo
 share/locale/am/LC_MESSAGES/midori.mo
 share/locale/ar/LC_MESSAGES/midori.mo
 share/locale/ast/LC_MESSAGES/midori.mo
 share/locale/be/LC_MESSAGES/midori.mo
 share/locale/bg/LC_MESSAGES/midori.mo
+share/locale/bn/LC_MESSAGES/midori.mo
 share/locale/bs/LC_MESSAGES/midori.mo
 share/locale/ca/LC_MESSAGES/midori.mo
 share/locale/ckb/LC_MESSAGES/midori.mo
@@ -128,12 +139,14 @@ share/locale/fr/LC_MESSAGES/midori.mo
 share/locale/gd/LC_MESSAGES/midori.mo
 share/locale/gl/LC_MESSAGES/midori.mo
 share/locale/he/LC_MESSAGES/midori.mo
+share/locale/hi/LC_MESSAGES/midori.mo
 share/locale/hr/LC_MESSAGES/midori.mo
 share/locale/hu/LC_MESSAGES/midori.mo
 share/locale/ia/LC_MESSAGES/midori.mo
 share/locale/id/LC_MESSAGES/midori.mo
 share/locale/it/LC_MESSAGES/midori.mo
 share/locale/ja/LC_MESSAGES/midori.mo
+share/locale/ka/LC_MESSAGES/midori.mo
 share/locale/kk/LC_MESSAGES/midori.mo
 share/locale/km/LC_MESSAGES/midori.mo
 share/locale/ko/LC_MESSAGES/midori.mo
@@ -142,6 +155,7 @@ share/locale/lt/LC_MESSAGES/midori.mo
 share/locale/lv/LC_MESSAGES/midori.mo
 share/locale/ml/LC_MESSAGES/midori.mo
 share/locale/ms/LC_MESSAGES/midori.mo
+share/locale/nap/LC_MESSAGES/midori.mo
 share/locale/nb/LC_MESSAGES/midori.mo
 share/locale/nl/LC_MESSAGES/midori.mo
 share/locale/nn/LC_MESSAGES/midori.mo
@@ -158,6 +172,8 @@ share/locale/sq/LC_MESSAGES/midori.mo
 share/locale/sr/LC_MESSAGES/midori.mo
 share/locale/sr@latin/LC_MESSAGES/midori.mo
 share/locale/sv/LC_MESSAGES/midori.mo
+share/locale/ta/LC_MESSAGES/midori.mo
+share/locale/te/LC_MESSAGES/midori.mo
 share/locale/th/LC_MESSAGES/midori.mo
 share/locale/tr/LC_MESSAGES/midori.mo
 share/locale/ug/LC_MESSAGES/midori.mo
@@ -190,42 +206,3 @@ share/locale/zh_TW/LC_MESSAGES/midori.mo
 %%DATADIR%%/res/speeddial-head.html
 %%DATADIR%%/res/tabby/Create.sql
 %%DATADIR%%/res/tabby/Update1.sql
-@dirrm %%DATADIR%%/res/tabby
-@dirrm %%DATADIR%%/res/notes
-@dirrm %%DATADIR%%/res/nojs
-@dirrm %%DATADIR%%/res/history
-@dirrm %%DATADIR%%/res/forms
-@dirrm %%DATADIR%%/res/flummi
-@dirrm %%DATADIR%%/res/bookmarks
-@dirrm %%DATADIR%%/res/adblock
-@dirrm %%DATADIR%%/res
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrmtry share/locale/gd/LC_MESSAGES
-@dirrmtry share/locale/gd
-@dirrmtry share/locale/ckb/LC_MESSAGES
-@dirrmtry share/locale/ckb
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-%%APIDOCS%%@dirrm share/gtk-doc/html/midori-%%VERSION%%/midori
-%%APIDOCS%%@dirrm share/gtk-doc/html/midori-%%VERSION%%/katze
-%%APIDOCS%%@dirrm share/gtk-doc/html/midori-%%VERSION%%
-%%APIDOCS%%@dirrmtry share/gtk-doc/html
-%%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrm %%DOCSDIR%%
-@dirrmtry share/appdata
-@dirrm lib/midori
-@dirrm etc/xdg/midori/extensions/adblock
-@dirrm etc/xdg/midori/extensions
-@dirrm etc/xdg/midori
