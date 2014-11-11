@@ -33,6 +33,7 @@
     SUBDIR += R-cran-reshape2
     SUBDIR += SpecTcl
     SUBDIR += aap
+    SUBDIR += aarch64-binutils
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
     SUBDIR += ace+tao-doc
