@@ -1472,4 +1472,4 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/t-shirt.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/wand.png
-@dir lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%
+%%WITH_PERL%%@dir lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%
