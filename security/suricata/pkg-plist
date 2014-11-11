@@ -28,7 +28,28 @@ bin/suricata
 %%DOCSDIR%%/Ubuntu_Installation.txt
 %%DOCSDIR%%/Ubuntu_Installation_from_GIT.txt
 %%DOCSDIR%%/Windows.txt
-@sample etc/suricata/suricata.yaml-sample
-@sample etc/suricata/classification.config-sample
-@sample etc/suricata/reference.config-sample
+%%HTPPORT%%include/htp/bstr.h
+%%HTPPORT%%include/htp/bstr_builder.h
+%%HTPPORT%%include/htp/htp.h
+%%HTPPORT%%include/htp/htp_base64.h
+%%HTPPORT%%include/htp/htp_config.h
+%%HTPPORT%%include/htp/htp_connection_parser.h
+%%HTPPORT%%include/htp/htp_core.h
+%%HTPPORT%%include/htp/htp_decompressors.h
+%%HTPPORT%%include/htp/htp_hooks.h
+%%HTPPORT%%include/htp/htp_list.h
+%%HTPPORT%%include/htp/htp_multipart.h
+%%HTPPORT%%include/htp/htp_table.h
+%%HTPPORT%%include/htp/htp_transaction.h
+%%HTPPORT%%include/htp/htp_urlencoded.h
+%%HTPPORT%%include/htp/htp_utf8_decoder.h
+%%HTPPORT%%include/htp/htp_version.h
+%%HTPPORT%%lib/libhtp-0.5.15.so.1
+%%HTPPORT%%lib/libhtp-0.5.15.so.1.0.0
+%%HTPPORT%%lib/libhtp.a
+%%HTPPORT%%lib/libhtp.so
+%%HTPPORT%%libdata/pkgconfig/htp.pc
+@sample etc/suricata/suricata.yaml.sample
+@sample etc/suricata/classification.config.sample
+@sample etc/suricata/reference.config.sample
 @dir etc/suricata/rules
