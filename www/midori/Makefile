@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	midori
-PORTVERSION=	0.5.8
-PORTREVISION=	6
+PORTVERSION=	0.5.9
 CATEGORIES=	www xfce
 MASTER_SITES=	http://www.midori-browser.org/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_all_
@@ -21,11 +20,12 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-Wno-return-type
 CMAKE_ARGS=	-DUSE_GCR:BOOL=OFF
 
-#WRKSRC=	${WRKDIR}/${DISTNAME:C/([a-z]*)_([0-9\.]*)(_all_)/\1-\2/}
+WRKSRC=	${WRKDIR}/${DISTNAME:C/([a-z]*)_([0-9\.]*)(_all_)/\1-\2/}
 NO_WRKSUBDIR=	yes
 USE_GNOME=	glib20 intltool libxml2
 USE_XORG=	xscrnsaver
@@ -40,6 +40,8 @@ OPTIONS_DEFINE=	DOCS GIR GRANITE ZEITGEIST
 OPTIONS_SINGLE=	GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3
 OPTIONS_DEFAULT=	GTK2
+# Need x11-toolkits/granite >= 0.3 (Granite.Widgets.LightWindow is deprecated)
+OPTIONS_EXCLUDE=	GRANITE
 GIR_DESC=	GObject Introspection
 GRANITE_DESC=	Additional GTK widgets (require GTK3)
 ZEITGEIST_DESC=	User logs activities
