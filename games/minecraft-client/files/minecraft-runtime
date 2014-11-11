@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/sh
 
 LWJGL_JLP_OVRD="/usr/local/lib/lwjgl2.9.1"
 LWJGL_OVRD="/usr/local/share/java/classes/lwjgl/lwjgl.jar"
@@ -7,40 +7,38 @@ LWJGL_UTIL_OVRD="/usr/local/share/java/classes/lwjgl/lwjgl_util.jar"
 export JAVA_HOME=/usr/local/openjdk8
 
 build_classpath() {
-    j=0
-    ocp=`echo ${1} | sed 's/:/ /g'`
-    for p in ${ocp}
+    local IFS=":"
+    for p in ${1}
     do
-        if [[ $p == *lwjgl-* ]]
-        then
-            ncp[$j]=${LWJGL_OVRD}
-        elif [[ $p == *lwjgl_util* ]]
-        then
-            ncp[$j]=${LWJGL_UTIL_OVRD}
-        else
-            ncp[$j]=${p}
-        fi
-        j=$(( j + 1 ))
+        case "${p}" in
+        *lwjgl-*)
+            cp="${cp}:${LWJGL_OVRD}"
+            ;;
+        *lwjgl_util*)
+            cp="${cp}:${LWJGL_UTIL_OVRD}"
+            ;;
+        *)
+            cp="${cp}:${p}"
+            ;;
+        esac
     done
-
-    cp=`echo ${ncp[@]} | sed 's/ /:/g'`
+    cp=${cp#?}
 }
 
-
-i=0
 for var in "${@}"
 do
-    if [[ "$var" == -Djava.library* ]]
-    then
-        args[$i]="-Djava.library.path=${LWJGL_JLP_OVRD}"
-    elif [[ "$var" == *lwjgl_util* ]]
-    then
+    case "${var}" in
+    -Djava.library*)
+        args="${args} -Djava.library.path=${LWJGL_JLP_OVRD}"
+        ;;
+    *lwjgl_util*)
         build_classpath "${var}"
-        args[$i]="$cp"
-    else
-        args[$i]=$var
-    fi
-        i=$(( i + 1 ))
+        args="${args} ${cp}"
+        ;;
+    *)
+        args="${args} ${var}"
+        ;;
+    esac
 done
 
-${JAVA_HOME}/jre/bin/java ${args[@]}
+${JAVA_HOME}/jre/bin/java ${args}
