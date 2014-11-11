@@ -3,6 +3,7 @@
 
 PORTNAME=	openmotif
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,7 +13,7 @@ CONFLICTS=	linux-openmotif-[0-9]* linux-f8-openmotif-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
-RPMVERSION=	6.1.el6_4
+RPMVERSION=	8.el6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 USE_LDCONFIG=	yes

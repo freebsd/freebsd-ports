@@ -3,6 +3,7 @@
 
 PORTNAME=	libv4l
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	multimedia linux
 
 MAINTAINER=	emulation@FreeBSD.org

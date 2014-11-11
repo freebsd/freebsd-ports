@@ -122,8 +122,9 @@ etc/yum.repos.d/CentOS-Base.repo
 etc/yum.repos.d/CentOS-Debuginfo.repo
 etc/yum.repos.d/CentOS-Media.repo
 etc/yum.repos.d/CentOS-Vault.repo
+etc/yum.repos.d/CentOS-fasttrack.repo
+etc/yum/vars/infra
 etc/bash_completion.d/gdbus-bash-completion.sh
-etc/bash_completion.d/gsettings-bash-completion.sh
 lib/i686/nosegneg/libc-2.12.so
 lib/i686/nosegneg/libc.so.6
 lib/i686/nosegneg/libm-2.12.so
@@ -170,19 +171,19 @@ lib/libext2fs.so.2.4
 lib/libgcc_s-4.4.7-20120601.so.1
 lib/libgcc_s.so.1
 lib/libgio-2.0.so.0
-lib/libgio-2.0.so.0.2600.1
+lib/libgio-2.0.so.0.2800.8
 lib/libglib-2.0.so.0
-lib/libglib-2.0.so.0.2600.1
+lib/libglib-2.0.so.0.2800.8
 lib/libgmodule-2.0.so.0
-lib/libgmodule-2.0.so.0.2600.1
+lib/libgmodule-2.0.so.0.2800.8
 lib/libgobject-2.0.so.0
-lib/libgobject-2.0.so.0.2600.1
+lib/libgobject-2.0.so.0.2800.8
 lib/libgssapi_krb5.so.2
 lib/libgssapi_krb5.so.2.2
 lib/libgssrpc.so.4
 lib/libgssrpc.so.4.1
 lib/libgthread-2.0.so.0
-lib/libgthread-2.0.so.0.2600.1
+lib/libgthread-2.0.so.0.2800.8
 lib/libidn.so.11
 lib/libidn.so.11.6.1
 lib/libkeyutils.so.1
@@ -348,6 +349,7 @@ usr/bin/eu-objdump
 usr/bin/eu-ranlib
 usr/bin/eu-readelf
 usr/bin/eu-size
+usr/bin/eu-stack
 usr/bin/eu-strings
 usr/bin/eu-strip
 usr/bin/eu-unstrip
@@ -363,7 +365,6 @@ usr/bin/getconf
 usr/bin/getent
 usr/bin/gio-querymodules-32
 usr/bin/glib-compile-schemas
-usr/bin/gsettings
 usr/bin/groups
 usr/bin/head
 usr/bin/hostid
@@ -388,11 +389,13 @@ usr/bin/logname
 usr/bin/lp
 usr/bin/lsattr
 usr/bin/lsb_release
+usr/bin/lslogins
 usr/bin/md5sum
 usr/bin/mkfifo
 usr/bin/nl
 usr/bin/nohup
 usr/bin/nproc
+usr/bin/nsenter
 usr/bin/od
 usr/bin/oldfind
 usr/bin/paste
@@ -857,9 +860,12 @@ usr/share/doc/e2fsprogs-1.41.12/COPYING
 usr/share/doc/e2fsprogs-1.41.12/README
 usr/share/doc/e2fsprogs-1.41.12/RELEASE-NOTES
 usr/share/doc/e2fsprogs-libs-1.41.12/COPYING
-usr/share/doc/elfutils-0.152/COPYING
-usr/share/doc/elfutils-0.152/README
-usr/share/doc/elfutils-0.152/TODO
+usr/share/doc/elfutils-0.158/CONTRIBUTING
+usr/share/doc/elfutils-0.158/COPYING
+usr/share/doc/elfutils-0.158/COPYING-GPLV2
+usr/share/doc/elfutils-0.158/COPYING-LGPLV3
+usr/share/doc/elfutils-0.158/README
+usr/share/doc/elfutils-0.158/TODO
 usr/share/doc/findutils-4.4.2/AUTHORS
 usr/share/doc/findutils-4.4.2/COPYING
 usr/share/doc/findutils-4.4.2/NEWS
@@ -904,10 +910,10 @@ usr/share/doc/gamin-0.1.10/using.html
 usr/share/doc/gdbm-1.8.0/COPYING
 usr/share/doc/gdbm-1.8.0/NEWS
 usr/share/doc/gdbm-1.8.0/README
-usr/share/doc/glib2-2.26.1/AUTHORS
-usr/share/doc/glib2-2.26.1/COPYING
-usr/share/doc/glib2-2.26.1/NEWS
-usr/share/doc/glib2-2.26.1/README
+usr/share/doc/glib2-2.28.8/AUTHORS
+usr/share/doc/glib2-2.28.8/COPYING
+usr/share/doc/glib2-2.28.8/NEWS
+usr/share/doc/glib2-2.28.8/README
 usr/share/doc/glibc-2.12/BUGS
 usr/share/doc/glibc-2.12/CONFORMANCE
 usr/share/doc/glibc-2.12/COPYING
@@ -1857,6 +1863,7 @@ usr/share/locale/uk/LC_MESSAGES/glib20.mo
 usr/share/locale/uk/LC_MESSAGES/grep.mo
 usr/share/locale/uk/LC_MESSAGES/popt.mo
 usr/share/locale/uk/LC_TIME/coreutils.mo
+usr/share/locale/ug/LC_MESSAGES/glib20.mo
 usr/share/locale/vi/LC_MESSAGES/bash.mo
 usr/share/locale/vi/LC_MESSAGES/coreutils.mo
 usr/share/locale/vi/LC_MESSAGES/e2fsprogs.mo
@@ -2059,7 +2066,6 @@ usr/share/man/man1/fold.1.gz
 usr/share/man/man1/gdbus.1.gz
 usr/share/man/man1/gio-querymodules.1.gz
 usr/share/man/man1/glib-compile-schemas.1.gz
-usr/share/man/man1/gsettings.1.gz
 usr/share/man/man1/getopts.1.gz
 usr/share/man/man1/grep.1.gz
 usr/share/man/man1/groups.1.gz
@@ -2090,6 +2096,7 @@ usr/share/man/man1/local.1.gz
 usr/share/man/man1/logname.1.gz
 usr/share/man/man1/logout.1.gz
 usr/share/man/man1/ls.1.gz
+usr/share/man/man1/lslogins.1.gz
 usr/share/man/man1/lsattr.1.gz
 usr/share/man/man1/lsb_release.1.gz
 usr/share/man/man1/mapfile.1.gz
@@ -2103,6 +2110,7 @@ usr/share/man/man1/nice.1.gz
 usr/share/man/man1/nl.1.gz
 usr/share/man/man1/nohup.1.gz
 usr/share/man/man1/nproc.1.gz
+usr/share/man/man1/nsenter.1.gz
 usr/share/man/man1/od.1.gz
 usr/share/man/man1/paste.1.gz
 usr/share/man/man1/pathchk.1.gz
@@ -2316,3 +2324,570 @@ usr/tmp
 var/mail
 @sample etc/krb5.conf.sample
 @sample etc/yp.conf.sample
+@dir /compat/linux
+@dir /compat
+@dir etc/X11/applnk
+@dir etc/X11/fontpath.d
+@dir etc/ld.so.conf.d
+@dir etc/opt
+@dir etc/pm/config.d
+@dir etc/pm/power.d
+@dir etc/pm/sleep.d
+@dir etc/popt.d
+@dir etc/request-key.d
+@dir etc/sysconfig
+@dir etc/xdg/autostart
+@dir etc/xinetd.d
+@dir lib/modules
+@dir lib/tls
+@dir mnt
+@dir opt
+@dir proc
+@dir selinux
+@dir srv
+@dir sys
+@dir usr/X11R6/bin
+@dir usr/X11R6/include
+@dir usr/X11R6/lib/tls
+@dir usr/X11R6/man
+@dir usr/X11R6/share
+@dir usr/etc
+@dir usr/games
+@dir usr/lib/X11
+@dir usr/lib/games
+@dir usr/lib/krb5/plugins/authdata
+@dir usr/lib/krb5/plugins/libkrb5
+@dir usr/lib/krb5/plugins/preauth
+@dir usr/lib/pm-utils/module.d
+@dir usr/lib/pm-utils/power.d
+@dir usr/lib/pm-utils/sleep.d
+@dir usr/lib/sse2
+@dir usr/lib/tls
+@dir usr/share/X11
+@dir usr/share/applications
+@dir usr/share/augeas/lenses
+@dir usr/share/backgrounds
+@dir usr/share/desktop-directories
+@dir usr/share/dict
+@dir usr/share/empty
+@dir usr/share/games
+@dir usr/share/ghostscript/conf.d
+@dir usr/share/glib-2.0
+@dir usr/share/gnome
+@dir usr/share/icons
+@dir usr/share/idl
+@dir usr/share/locale/aa/LC_MESSAGES
+@dir usr/share/locale/ab/LC_MESSAGES
+@dir usr/share/locale/ace/LC_MESSAGES
+@dir usr/share/locale/ach/LC_MESSAGES
+@dir usr/share/locale/ada/LC_MESSAGES
+@dir usr/share/locale/ady/LC_MESSAGES
+@dir usr/share/locale/ae/LC_MESSAGES
+@dir usr/share/locale/af_ZA/LC_MESSAGES
+@dir usr/share/locale/afa/LC_MESSAGES
+@dir usr/share/locale/afh/LC_MESSAGES
+@dir usr/share/locale/ain/LC_MESSAGES
+@dir usr/share/locale/ak/LC_MESSAGES
+@dir usr/share/locale/akk/LC_MESSAGES
+@dir usr/share/locale/ale/LC_MESSAGES
+@dir usr/share/locale/alg/LC_MESSAGES
+@dir usr/share/locale/alt/LC_MESSAGES
+@dir usr/share/locale/am_ET/LC_MESSAGES
+@dir usr/share/locale/an/LC_MESSAGES
+@dir usr/share/locale/ang/LC_MESSAGES
+@dir usr/share/locale/anp/LC_MESSAGES
+@dir usr/share/locale/apa/LC_MESSAGES
+@dir usr/share/locale/arc/LC_MESSAGES
+@dir usr/share/locale/arn/LC_MESSAGES
+@dir usr/share/locale/arp/LC_MESSAGES
+@dir usr/share/locale/art/LC_MESSAGES
+@dir usr/share/locale/arw/LC_MESSAGES
+@dir usr/share/locale/ast_ES/LC_MESSAGES
+@dir usr/share/locale/ath/LC_MESSAGES
+@dir usr/share/locale/aus/LC_MESSAGES
+@dir usr/share/locale/av/LC_MESSAGES
+@dir usr/share/locale/awa/LC_MESSAGES
+@dir usr/share/locale/ay/LC_MESSAGES
+@dir usr/share/locale/az_IR/LC_MESSAGES
+@dir usr/share/locale/ba/LC_MESSAGES
+@dir usr/share/locale/bad/LC_MESSAGES
+@dir usr/share/locale/bai/LC_MESSAGES
+@dir usr/share/locale/bal/LC_MESSAGES
+@dir usr/share/locale/ban/LC_MESSAGES
+@dir usr/share/locale/bas/LC_MESSAGES
+@dir usr/share/locale/bat/LC_MESSAGES
+@dir usr/share/locale/bej/LC_MESSAGES
+@dir usr/share/locale/bem/LC_MESSAGES
+@dir usr/share/locale/ber/LC_MESSAGES
+@dir usr/share/locale/bg_BG/LC_MESSAGES
+@dir usr/share/locale/bh/LC_MESSAGES
+@dir usr/share/locale/bho/LC_MESSAGES
+@dir usr/share/locale/bi/LC_MESSAGES
+@dir usr/share/locale/bik/LC_MESSAGES
+@dir usr/share/locale/bin/LC_MESSAGES
+@dir usr/share/locale/bla/LC_MESSAGES
+@dir usr/share/locale/bm/LC_MESSAGES
+@dir usr/share/locale/bnt/LC_MESSAGES
+@dir usr/share/locale/bo/LC_MESSAGES
+@dir usr/share/locale/br/LC_MESSAGES
+@dir usr/share/locale/bra/LC_MESSAGES
+@dir usr/share/locale/btk/LC_MESSAGES
+@dir usr/share/locale/bua/LC_MESSAGES
+@dir usr/share/locale/bug/LC_MESSAGES
+@dir usr/share/locale/byn/LC_MESSAGES
+@dir usr/share/locale/ca_ES/LC_MESSAGES
+@dir usr/share/locale/ca_ES@valencian/LC_MESSAGES
+@dir usr/share/locale/cad/LC_MESSAGES
+@dir usr/share/locale/cai/LC_MESSAGES
+@dir usr/share/locale/car/LC_MESSAGES
+@dir usr/share/locale/cau/LC_MESSAGES
+@dir usr/share/locale/ce/LC_MESSAGES
+@dir usr/share/locale/ceb/LC_MESSAGES
+@dir usr/share/locale/cel/LC_MESSAGES
+@dir usr/share/locale/ch/LC_MESSAGES
+@dir usr/share/locale/chb/LC_MESSAGES
+@dir usr/share/locale/chg/LC_MESSAGES
+@dir usr/share/locale/chk/LC_MESSAGES
+@dir usr/share/locale/chm/LC_MESSAGES
+@dir usr/share/locale/chn/LC_MESSAGES
+@dir usr/share/locale/cho/LC_MESSAGES
+@dir usr/share/locale/chp/LC_MESSAGES
+@dir usr/share/locale/chr/LC_MESSAGES
+@dir usr/share/locale/chy/LC_MESSAGES
+@dir usr/share/locale/cmc/LC_MESSAGES
+@dir usr/share/locale/co/LC_MESSAGES
+@dir usr/share/locale/cop/LC_MESSAGES
+@dir usr/share/locale/cpe/LC_MESSAGES
+@dir usr/share/locale/cpf/LC_MESSAGES
+@dir usr/share/locale/cpp/LC_MESSAGES
+@dir usr/share/locale/cr/LC_MESSAGES
+@dir usr/share/locale/crh/LC_MESSAGES
+@dir usr/share/locale/crp/LC_MESSAGES
+@dir usr/share/locale/cs_CZ/LC_MESSAGES
+@dir usr/share/locale/csb/LC_MESSAGES
+@dir usr/share/locale/cu/LC_MESSAGES
+@dir usr/share/locale/cus/LC_MESSAGES
+@dir usr/share/locale/cv/LC_MESSAGES
+@dir usr/share/locale/dak/LC_MESSAGES
+@dir usr/share/locale/dar/LC_MESSAGES
+@dir usr/share/locale/day/LC_MESSAGES
+@dir usr/share/locale/de_AT/LC_MESSAGES
+@dir usr/share/locale/de_CH/LC_MESSAGES
+@dir usr/share/locale/de_DE/LC_MESSAGES
+@dir usr/share/locale/default/LC_MESSAGES
+@dir usr/share/locale/del/LC_MESSAGES
+@dir usr/share/locale/den/LC_MESSAGES
+@dir usr/share/locale/dgr/LC_MESSAGES
+@dir usr/share/locale/din/LC_MESSAGES
+@dir usr/share/locale/doi/LC_MESSAGES
+@dir usr/share/locale/dra/LC_MESSAGES
+@dir usr/share/locale/dsb/LC_MESSAGES
+@dir usr/share/locale/dua/LC_MESSAGES
+@dir usr/share/locale/dum/LC_MESSAGES
+@dir usr/share/locale/dv/LC_MESSAGES
+@dir usr/share/locale/dyu/LC_MESSAGES
+@dir usr/share/locale/ee/LC_MESSAGES
+@dir usr/share/locale/efi/LC_MESSAGES
+@dir usr/share/locale/egy/LC_MESSAGES
+@dir usr/share/locale/eka/LC_MESSAGES
+@dir usr/share/locale/el_GR/LC_MESSAGES
+@dir usr/share/locale/elx/LC_MESSAGES
+@dir usr/share/locale/en_AU/LC_MESSAGES
+@dir usr/share/locale/en_NZ/LC_MESSAGES
+@dir usr/share/locale/enm/LC_MESSAGES
+@dir usr/share/locale/es_AR/LC_MESSAGES
+@dir usr/share/locale/es_CL/LC_MESSAGES
+@dir usr/share/locale/es_CO/LC_MESSAGES
+@dir usr/share/locale/es_CR/LC_MESSAGES
+@dir usr/share/locale/es_DO/LC_MESSAGES
+@dir usr/share/locale/es_EC/LC_MESSAGES
+@dir usr/share/locale/es_ES/LC_MESSAGES
+@dir usr/share/locale/es_GT/LC_MESSAGES
+@dir usr/share/locale/es_HN/LC_MESSAGES
+@dir usr/share/locale/es_MX/LC_MESSAGES
+@dir usr/share/locale/es_NI/LC_MESSAGES
+@dir usr/share/locale/es_PA/LC_MESSAGES
+@dir usr/share/locale/es_PE/LC_MESSAGES
+@dir usr/share/locale/es_PR/LC_MESSAGES
+@dir usr/share/locale/es_SV/LC_MESSAGES
+@dir usr/share/locale/es_UY/LC_MESSAGES
+@dir usr/share/locale/es_VE/LC_MESSAGES
+@dir usr/share/locale/et_EE/LC_MESSAGES
+@dir usr/share/locale/eu_ES/LC_MESSAGES
+@dir usr/share/locale/ewo/LC_MESSAGES
+@dir usr/share/locale/fa_IR/LC_MESSAGES
+@dir usr/share/locale/fan/LC_MESSAGES
+@dir usr/share/locale/fat/LC_MESSAGES
+@dir usr/share/locale/ff/LC_MESSAGES
+@dir usr/share/locale/fi_FI/LC_MESSAGES
+@dir usr/share/locale/fil/LC_MESSAGES
+@dir usr/share/locale/fiu/LC_MESSAGES
+@dir usr/share/locale/fj/LC_MESSAGES
+@dir usr/share/locale/fo/LC_MESSAGES
+@dir usr/share/locale/fon/LC_MESSAGES
+@dir usr/share/locale/fr_BE/LC_MESSAGES
+@dir usr/share/locale/fr_CA/LC_MESSAGES
+@dir usr/share/locale/fr_CH/LC_MESSAGES
+@dir usr/share/locale/fr_FR/LC_MESSAGES
+@dir usr/share/locale/frm/LC_MESSAGES
+@dir usr/share/locale/fro/LC_MESSAGES
+@dir usr/share/locale/frr/LC_MESSAGES
+@dir usr/share/locale/frs/LC_MESSAGES
+@dir usr/share/locale/fur/LC_MESSAGES
+@dir usr/share/locale/fy/LC_MESSAGES
+@dir usr/share/locale/gaa/LC_MESSAGES
+@dir usr/share/locale/gay/LC_MESSAGES
+@dir usr/share/locale/gba/LC_MESSAGES
+@dir usr/share/locale/gd/LC_MESSAGES
+@dir usr/share/locale/gem/LC_MESSAGES
+@dir usr/share/locale/gez/LC_MESSAGES
+@dir usr/share/locale/gil/LC_MESSAGES
+@dir usr/share/locale/gl_ES/LC_MESSAGES
+@dir usr/share/locale/gmh/LC_MESSAGES
+@dir usr/share/locale/gn/LC_MESSAGES
+@dir usr/share/locale/goh/LC_MESSAGES
+@dir usr/share/locale/gon/LC_MESSAGES
+@dir usr/share/locale/gor/LC_MESSAGES
+@dir usr/share/locale/got/LC_MESSAGES
+@dir usr/share/locale/grb/LC_MESSAGES
+@dir usr/share/locale/grc/LC_MESSAGES
+@dir usr/share/locale/gsw/LC_MESSAGES
+@dir usr/share/locale/gv/LC_MESSAGES
+@dir usr/share/locale/gwi/LC_MESSAGES
+@dir usr/share/locale/ha/LC_MESSAGES
+@dir usr/share/locale/hai/LC_MESSAGES
+@dir usr/share/locale/haw/LC_MESSAGES
+@dir usr/share/locale/he_IL/LC_MESSAGES
+@dir usr/share/locale/hil/LC_MESSAGES
+@dir usr/share/locale/him/LC_MESSAGES
+@dir usr/share/locale/hit/LC_MESSAGES
+@dir usr/share/locale/hmn/LC_MESSAGES
+@dir usr/share/locale/ho/LC_MESSAGES
+@dir usr/share/locale/hr_HR/LC_MESSAGES
+@dir usr/share/locale/hsb/LC_MESSAGES
+@dir usr/share/locale/ht/LC_MESSAGES
+@dir usr/share/locale/hu_HU/LC_MESSAGES
+@dir usr/share/locale/hup/LC_MESSAGES
+@dir usr/share/locale/hz/LC_MESSAGES
+@dir usr/share/locale/ia/LC_MESSAGES
+@dir usr/share/locale/iba/LC_MESSAGES
+@dir usr/share/locale/ie/LC_MESSAGES
+@dir usr/share/locale/ig/LC_MESSAGES
+@dir usr/share/locale/ii/LC_MESSAGES
+@dir usr/share/locale/ijo/LC_MESSAGES
+@dir usr/share/locale/ik/LC_MESSAGES
+@dir usr/share/locale/ilo/LC_MESSAGES
+@dir usr/share/locale/inc/LC_MESSAGES
+@dir usr/share/locale/ine/LC_MESSAGES
+@dir usr/share/locale/inh/LC_MESSAGES
+@dir usr/share/locale/io/LC_MESSAGES
+@dir usr/share/locale/ira/LC_MESSAGES
+@dir usr/share/locale/iro/LC_MESSAGES
+@dir usr/share/locale/it_CH/LC_MESSAGES
+@dir usr/share/locale/it_IT/LC_MESSAGES
+@dir usr/share/locale/iu/LC_MESSAGES
+@dir usr/share/locale/ja_JP/LC_MESSAGES
+@dir usr/share/locale/jbo/LC_MESSAGES
+@dir usr/share/locale/jpr/LC_MESSAGES
+@dir usr/share/locale/jrb/LC_MESSAGES
+@dir usr/share/locale/jv/LC_MESSAGES
+@dir usr/share/locale/kaa/LC_MESSAGES
+@dir usr/share/locale/kab/LC_MESSAGES
+@dir usr/share/locale/kac/LC_MESSAGES
+@dir usr/share/locale/kam/LC_MESSAGES
+@dir usr/share/locale/kar/LC_MESSAGES
+@dir usr/share/locale/kaw/LC_MESSAGES
+@dir usr/share/locale/kbd/LC_MESSAGES
+@dir usr/share/locale/kg/LC_MESSAGES
+@dir usr/share/locale/kha/LC_MESSAGES
+@dir usr/share/locale/khi/LC_MESSAGES
+@dir usr/share/locale/kho/LC_MESSAGES
+@dir usr/share/locale/ki/LC_MESSAGES
+@dir usr/share/locale/kj/LC_MESSAGES
+@dir usr/share/locale/kl/LC_MESSAGES
+@dir usr/share/locale/km/LC_MESSAGES
+@dir usr/share/locale/kmb/LC_MESSAGES
+@dir usr/share/locale/ko_KR/LC_MESSAGES
+@dir usr/share/locale/kok/LC_MESSAGES
+@dir usr/share/locale/kos/LC_MESSAGES
+@dir usr/share/locale/kpe/LC_MESSAGES
+@dir usr/share/locale/kr/LC_MESSAGES
+@dir usr/share/locale/krc/LC_MESSAGES
+@dir usr/share/locale/krl/LC_MESSAGES
+@dir usr/share/locale/kro/LC_MESSAGES
+@dir usr/share/locale/kru/LC_MESSAGES
+@dir usr/share/locale/ks/LC_MESSAGES
+@dir usr/share/locale/ks@devanagari/LC_MESSAGES
+@dir usr/share/locale/kum/LC_MESSAGES
+@dir usr/share/locale/kut/LC_MESSAGES
+@dir usr/share/locale/kv/LC_MESSAGES
+@dir usr/share/locale/kw/LC_MESSAGES
+@dir usr/share/locale/la/LC_MESSAGES
+@dir usr/share/locale/lad/LC_MESSAGES
+@dir usr/share/locale/lah/LC_MESSAGES
+@dir usr/share/locale/lam/LC_MESSAGES
+@dir usr/share/locale/lb/LC_MESSAGES
+@dir usr/share/locale/lez/LC_MESSAGES
+@dir usr/share/locale/li/LC_MESSAGES
+@dir usr/share/locale/ln/LC_MESSAGES
+@dir usr/share/locale/lo/LC_MESSAGES
+@dir usr/share/locale/lol/LC_MESSAGES
+@dir usr/share/locale/loz/LC_MESSAGES
+@dir usr/share/locale/lu/LC_MESSAGES
+@dir usr/share/locale/lua/LC_MESSAGES
+@dir usr/share/locale/lui/LC_MESSAGES
+@dir usr/share/locale/lun/LC_MESSAGES
+@dir usr/share/locale/luo/LC_MESSAGES
+@dir usr/share/locale/lus/LC_MESSAGES
+@dir usr/share/locale/lv_LV/LC_MESSAGES
+@dir usr/share/locale/mad/LC_MESSAGES
+@dir usr/share/locale/mag/LC_MESSAGES
+@dir usr/share/locale/mak/LC_MESSAGES
+@dir usr/share/locale/man/LC_MESSAGES
+@dir usr/share/locale/map/LC_MESSAGES
+@dir usr/share/locale/mas/LC_MESSAGES
+@dir usr/share/locale/mdf/LC_MESSAGES
+@dir usr/share/locale/mdr/LC_MESSAGES
+@dir usr/share/locale/men/LC_MESSAGES
+@dir usr/share/locale/mga/LC_MESSAGES
+@dir usr/share/locale/mh/LC_MESSAGES
+@dir usr/share/locale/mi/LC_MESSAGES
+@dir usr/share/locale/mic/LC_MESSAGES
+@dir usr/share/locale/min/LC_MESSAGES
+@dir usr/share/locale/mis/LC_MESSAGES
+@dir usr/share/locale/mkh/LC_MESSAGES
+@dir usr/share/locale/mnc/LC_MESSAGES
+@dir usr/share/locale/mni/LC_MESSAGES
+@dir usr/share/locale/mno/LC_MESSAGES
+@dir usr/share/locale/mo/LC_MESSAGES
+@dir usr/share/locale/moh/LC_MESSAGES
+@dir usr/share/locale/mos/LC_MESSAGES
+@dir usr/share/locale/ms_MY/LC_MESSAGES
+@dir usr/share/locale/mt/LC_MESSAGES
+@dir usr/share/locale/mul/LC_MESSAGES
+@dir usr/share/locale/mun/LC_MESSAGES
+@dir usr/share/locale/mus/LC_MESSAGES
+@dir usr/share/locale/mwl/LC_MESSAGES
+@dir usr/share/locale/mwr/LC_MESSAGES
+@dir usr/share/locale/my/LC_MESSAGES
+@dir usr/share/locale/my_MM/LC_MESSAGES
+@dir usr/share/locale/myn/LC_MESSAGES
+@dir usr/share/locale/myv/LC_MESSAGES
+@dir usr/share/locale/na/LC_MESSAGES
+@dir usr/share/locale/nah/LC_MESSAGES
+@dir usr/share/locale/nai/LC_MESSAGES
+@dir usr/share/locale/nap/LC_MESSAGES
+@dir usr/share/locale/nb_NO/LC_MESSAGES
+@dir usr/share/locale/nd/LC_MESSAGES
+@dir usr/share/locale/nds@NFE/LC_MESSAGES
+@dir usr/share/locale/nds_DE/LC_MESSAGES
+@dir usr/share/locale/new/LC_MESSAGES
+@dir usr/share/locale/ng/LC_MESSAGES
+@dir usr/share/locale/nia/LC_MESSAGES
+@dir usr/share/locale/nic/LC_MESSAGES
+@dir usr/share/locale/niu/LC_MESSAGES
+@dir usr/share/locale/nl_BE/LC_MESSAGES
+@dir usr/share/locale/nl_NL/LC_MESSAGES
+@dir usr/share/locale/no/LC_MESSAGES
+@dir usr/share/locale/nog/LC_MESSAGES
+@dir usr/share/locale/non/LC_MESSAGES
+@dir usr/share/locale/nqo/LC_MESSAGES
+@dir usr/share/locale/nr/LC_MESSAGES
+@dir usr/share/locale/nso/LC_MESSAGES
+@dir usr/share/locale/nub/LC_MESSAGES
+@dir usr/share/locale/nv/LC_MESSAGES
+@dir usr/share/locale/nwc/LC_MESSAGES
+@dir usr/share/locale/ny/LC_MESSAGES
+@dir usr/share/locale/nym/LC_MESSAGES
+@dir usr/share/locale/nyn/LC_MESSAGES
+@dir usr/share/locale/nyo/LC_MESSAGES
+@dir usr/share/locale/nzi/LC_MESSAGES
+@dir usr/share/locale/oj/LC_MESSAGES
+@dir usr/share/locale/om/LC_MESSAGES
+@dir usr/share/locale/os/LC_MESSAGES
+@dir usr/share/locale/osa/LC_MESSAGES
+@dir usr/share/locale/ota/LC_MESSAGES
+@dir usr/share/locale/oto/LC_MESSAGES
+@dir usr/share/locale/paa/LC_MESSAGES
+@dir usr/share/locale/pag/LC_MESSAGES
+@dir usr/share/locale/pal/LC_MESSAGES
+@dir usr/share/locale/pam/LC_MESSAGES
+@dir usr/share/locale/pap/LC_MESSAGES
+@dir usr/share/locale/pau/LC_MESSAGES
+@dir usr/share/locale/peo/LC_MESSAGES
+@dir usr/share/locale/phi/LC_MESSAGES
+@dir usr/share/locale/phn/LC_MESSAGES
+@dir usr/share/locale/pi/LC_MESSAGES
+@dir usr/share/locale/pl_PL/LC_MESSAGES
+@dir usr/share/locale/pon/LC_MESSAGES
+@dir usr/share/locale/pra/LC_MESSAGES
+@dir usr/share/locale/pro/LC_MESSAGES
+@dir usr/share/locale/pt_PT/LC_MESSAGES
+@dir usr/share/locale/qaa-qtz/LC_MESSAGES
+@dir usr/share/locale/qu/LC_MESSAGES
+@dir usr/share/locale/raj/LC_MESSAGES
+@dir usr/share/locale/rap/LC_MESSAGES
+@dir usr/share/locale/rar/LC_MESSAGES
+@dir usr/share/locale/rm/LC_MESSAGES
+@dir usr/share/locale/rn/LC_MESSAGES
+@dir usr/share/locale/roa/LC_MESSAGES
+@dir usr/share/locale/rom/LC_MESSAGES
+@dir usr/share/locale/ru_RU/LC_MESSAGES
+@dir usr/share/locale/rup/LC_MESSAGES
+@dir usr/share/locale/sa/LC_MESSAGES
+@dir usr/share/locale/sad/LC_MESSAGES
+@dir usr/share/locale/sah/LC_MESSAGES
+@dir usr/share/locale/sai/LC_MESSAGES
+@dir usr/share/locale/sal/LC_MESSAGES
+@dir usr/share/locale/sam/LC_MESSAGES
+@dir usr/share/locale/sas/LC_MESSAGES
+@dir usr/share/locale/sat/LC_MESSAGES
+@dir usr/share/locale/sc/LC_MESSAGES
+@dir usr/share/locale/scn/LC_MESSAGES
+@dir usr/share/locale/sco/LC_MESSAGES
+@dir usr/share/locale/sd/LC_MESSAGES
+@dir usr/share/locale/se/LC_MESSAGES
+@dir usr/share/locale/sel/LC_MESSAGES
+@dir usr/share/locale/sem/LC_MESSAGES
+@dir usr/share/locale/sg/LC_MESSAGES
+@dir usr/share/locale/sga/LC_MESSAGES
+@dir usr/share/locale/sgn/LC_MESSAGES
+@dir usr/share/locale/shn/LC_MESSAGES
+@dir usr/share/locale/sid/LC_MESSAGES
+@dir usr/share/locale/sio/LC_MESSAGES
+@dir usr/share/locale/sit/LC_MESSAGES
+@dir usr/share/locale/sl_SI/LC_MESSAGES
+@dir usr/share/locale/sla/LC_MESSAGES
+@dir usr/share/locale/sm/LC_MESSAGES
+@dir usr/share/locale/sma/LC_MESSAGES
+@dir usr/share/locale/smi/LC_MESSAGES
+@dir usr/share/locale/smj/LC_MESSAGES
+@dir usr/share/locale/smn/LC_MESSAGES
+@dir usr/share/locale/sms/LC_MESSAGES
+@dir usr/share/locale/sn/LC_MESSAGES
+@dir usr/share/locale/snk/LC_MESSAGES
+@dir usr/share/locale/so/LC_MESSAGES
+@dir usr/share/locale/sog/LC_MESSAGES
+@dir usr/share/locale/son/LC_MESSAGES
+@dir usr/share/locale/sq_AL/LC_MESSAGES
+@dir usr/share/locale/sr@Latn/LC_MESSAGES
+@dir usr/share/locale/sr@ijekavian/LC_MESSAGES
+@dir usr/share/locale/sr@ijekavianlatin/LC_MESSAGES
+@dir usr/share/locale/sr_RS/LC_MESSAGES
+@dir usr/share/locale/srn/LC_MESSAGES
+@dir usr/share/locale/srr/LC_MESSAGES
+@dir usr/share/locale/ss/LC_MESSAGES
+@dir usr/share/locale/ssa/LC_MESSAGES
+@dir usr/share/locale/st/LC_MESSAGES
+@dir usr/share/locale/su/LC_MESSAGES
+@dir usr/share/locale/suk/LC_MESSAGES
+@dir usr/share/locale/sus/LC_MESSAGES
+@dir usr/share/locale/sux/LC_MESSAGES
+@dir usr/share/locale/sv_SE/LC_MESSAGES
+@dir usr/share/locale/sw/LC_MESSAGES
+@dir usr/share/locale/syc/LC_MESSAGES
+@dir usr/share/locale/syr/LC_MESSAGES
+@dir usr/share/locale/tai/LC_MESSAGES
+@dir usr/share/locale/tem/LC_MESSAGES
+@dir usr/share/locale/ter/LC_MESSAGES
+@dir usr/share/locale/tet/LC_MESSAGES
+@dir usr/share/locale/tg/LC_MESSAGES
+@dir usr/share/locale/ti/LC_MESSAGES
+@dir usr/share/locale/tig/LC_MESSAGES
+@dir usr/share/locale/tiv/LC_MESSAGES
+@dir usr/share/locale/tk/LC_MESSAGES
+@dir usr/share/locale/tkl/LC_MESSAGES
+@dir usr/share/locale/tlh/LC_MESSAGES
+@dir usr/share/locale/tli/LC_MESSAGES
+@dir usr/share/locale/tmh/LC_MESSAGES
+@dir usr/share/locale/tn/LC_MESSAGES
+@dir usr/share/locale/to/LC_MESSAGES
+@dir usr/share/locale/tog/LC_MESSAGES
+@dir usr/share/locale/tpi/LC_MESSAGES
+@dir usr/share/locale/ts/LC_MESSAGES
+@dir usr/share/locale/tsi/LC_MESSAGES
+@dir usr/share/locale/tum/LC_MESSAGES
+@dir usr/share/locale/tup/LC_MESSAGES
+@dir usr/share/locale/tut/LC_MESSAGES
+@dir usr/share/locale/tvl/LC_MESSAGES
+@dir usr/share/locale/tw/LC_MESSAGES
+@dir usr/share/locale/ty/LC_MESSAGES
+@dir usr/share/locale/tyv/LC_MESSAGES
+@dir usr/share/locale/udm/LC_MESSAGES
+@dir usr/share/locale/uga/LC_MESSAGES
+@dir usr/share/locale/uk_UA/LC_MESSAGES
+@dir usr/share/locale/umb/LC_MESSAGES
+@dir usr/share/locale/und/LC_MESSAGES
+@dir usr/share/locale/ur/LC_MESSAGES
+@dir usr/share/locale/ur_PK/LC_MESSAGES
+@dir usr/share/locale/uz/LC_MESSAGES
+@dir usr/share/locale/uz@Latn/LC_MESSAGES
+@dir usr/share/locale/uz@cyrillic/LC_MESSAGES
+@dir usr/share/locale/vai/LC_MESSAGES
+@dir usr/share/locale/ve/LC_MESSAGES
+@dir usr/share/locale/vo/LC_MESSAGES
+@dir usr/share/locale/vot/LC_MESSAGES
+@dir usr/share/locale/wak/LC_MESSAGES
+@dir usr/share/locale/wal/LC_MESSAGES
+@dir usr/share/locale/war/LC_MESSAGES
+@dir usr/share/locale/was/LC_MESSAGES
+@dir usr/share/locale/wen/LC_MESSAGES
+@dir usr/share/locale/wo/LC_MESSAGES
+@dir usr/share/locale/xal/LC_MESSAGES
+@dir usr/share/locale/yao/LC_MESSAGES
+@dir usr/share/locale/yap/LC_MESSAGES
+@dir usr/share/locale/yo/LC_MESSAGES
+@dir usr/share/locale/ypk/LC_MESSAGES
+@dir usr/share/locale/za/LC_MESSAGES
+@dir usr/share/locale/zap/LC_MESSAGES
+@dir usr/share/locale/zbl/LC_MESSAGES
+@dir usr/share/locale/zen/LC_MESSAGES
+@dir usr/share/locale/zh/LC_MESSAGES
+@dir usr/share/locale/zh_CN.GB2312/LC_MESSAGES
+@dir usr/share/locale/zh_TW.Big5/LC_MESSAGES
+@dir usr/share/locale/znd/LC_MESSAGES
+@dir usr/share/locale/zu/LC_MESSAGES
+@dir usr/share/locale/zun/LC_MESSAGES
+@dir usr/share/locale/zxx/LC_MESSAGES
+@dir usr/share/locale/zza/LC_MESSAGES
+@dir usr/share/man/man0p
+@dir usr/share/man/man1p
+@dir usr/share/man/man1x
+@dir usr/share/man/man2
+@dir usr/share/man/man2x
+@dir usr/share/man/man3
+@dir usr/share/man/man3p
+@dir usr/share/man/man3x
+@dir usr/share/man/man4
+@dir usr/share/man/man4x
+@dir usr/share/man/man5x
+@dir usr/share/man/man6
+@dir usr/share/man/man6x
+@dir usr/share/man/man7x
+@dir usr/share/man/man8x
+@dir usr/share/man/man9
+@dir usr/share/man/man9x
+@dir usr/share/man/mann
+@dir usr/share/mime-info
+@dir usr/share/misc
+@dir usr/share/omf
+@dir usr/share/pixmaps
+@dir usr/share/sounds
+@dir usr/share/themes
+@dir usr/share/xsessions
+@dir usr/src/debug
+@dir usr/src/kernels
+@dir var/cache/ldconfig
+@dir var/db
+@dir var/empty
+@dir var/games
+@dir var/lib/games
+@dir var/lib/misc
+@dir var/local
+@dir var/lock/subsys
+@dir var/nis
+@dir var/opt
+@dir var/preserve
+@dir var/spool/lpd
+@dir var/spool/mail
+@dir var/yp

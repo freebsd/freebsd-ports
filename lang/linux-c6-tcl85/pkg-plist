@@ -923,3 +923,5 @@ usr/%%DATADIR%%8/8.4/platform-1.0.4.tm
 usr/%%DATADIR%%8/8.4/platform/shell-1.1.4.tm
 usr/%%DATADIR%%8/8.5/msgcat-1.4.2.tm
 usr/%%DATADIR%%8/8.5/tcltest-2.3.1.tm
+@dir usr/lib/tcl8.5
+@dir usr/%%DATADIR%%8/8.3

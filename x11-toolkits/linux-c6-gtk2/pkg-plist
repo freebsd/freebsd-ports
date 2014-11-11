@@ -1,7 +1,5 @@
-usr/bin/gdk-pixbuf-query-loaders-32
 usr/bin/gtk-query-immodules-2.0-32
 usr/bin/gtk-update-icon-cache
-usr/bin/update-gdk-pixbuf-loaders
 usr/bin/update-gtk-immodules
 usr/lib/gtk-2.0/2.10.0/engines/libclearlooks.so
 usr/lib/gtk-2.0/2.10.0/engines/libcrux-engine.so
@@ -12,22 +10,6 @@ usr/lib/gtk-2.0/2.10.0/engines/libmist.so
 usr/lib/gtk-2.0/2.10.0/engines/libpixmap.so
 usr/lib/gtk-2.0/2.10.0/engines/libredmond95.so
 usr/lib/gtk-2.0/2.10.0/engines/libthinice.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ani.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-bmp.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-gif.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-icns.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ico.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jasper.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jpeg.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-pcx.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-pnm.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ras.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-tga.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-tiff.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-wbmp.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-xbm.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-xpm.so
-usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-qtif.so 
 usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so
 usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-file.so
 usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.so
@@ -36,21 +18,21 @@ usr/lib/gtk-2.0/modules/libgail.so
 usr/lib/libgailutil.so.18
 usr/lib/libgailutil.so.18.0.1
 usr/lib/libgdk-x11-2.0.so.0
-usr/lib/libgdk-x11-2.0.so.0.2000.1
-usr/lib/libgdk_pixbuf-2.0.so.0
-usr/lib/libgdk_pixbuf-2.0.so.0.2000.1
-usr/lib/libgdk_pixbuf_xlib-2.0.so.0
-usr/lib/libgdk_pixbuf_xlib-2.0.so.0.2000.1
+usr/lib/libgdk-x11-2.0.so.0.2400.23
 usr/lib/libgtk-x11-2.0.so.0
-usr/lib/libgtk-x11-2.0.so.0.2000.1
+usr/lib/libgtk-x11-2.0.so.0.2400.23
 usr/lib/libjasper.so.1
 usr/lib/libjasper.so.1.0.0
 usr/lib/libpixman-1.so.0
-usr/lib/libpixman-1.so.0.26.2
-usr/share/doc/gtk2-2.20.1/AUTHORS
-usr/share/doc/gtk2-2.20.1/COPYING
-usr/share/doc/gtk2-2.20.1/NEWS
-usr/share/doc/gtk2-2.20.1/README
+usr/lib/libpixman-1.so.0.32.4
+%%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/AUTHORS
+%%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/COPYING
+%%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/NEWS
+%%PORTDOCS%%usr/%%DOCSDIR%%-2.24.23/README
+%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/AUTHORS
+%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/COPYING
+%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/NEWS
+%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/README
 usr/share/gtk-engines/clearlooks.xml
 usr/share/gtk-engines/crux-engine.xml
 usr/share/gtk-engines/glide.xml
@@ -135,6 +117,7 @@ usr/share/locale/it/LC_MESSAGES/gtk20.mo
 usr/share/locale/ja/LC_MESSAGES/gtk-engines.mo
 usr/share/locale/ja/LC_MESSAGES/gtk20.mo
 usr/share/locale/ka/LC_MESSAGES/gtk20.mo
+usr/share/locale/kk/LC_MESSAGES/gtk20.mo
 usr/share/locale/kn/LC_MESSAGES/gtk-engines.mo
 usr/share/locale/kn/LC_MESSAGES/gtk20.mo
 usr/share/locale/ko/LC_MESSAGES/gtk-engines.mo
@@ -207,6 +190,7 @@ usr/share/locale/tk/LC_MESSAGES/gtk20.mo
 usr/share/locale/tr/LC_MESSAGES/gtk-engines.mo
 usr/share/locale/tr/LC_MESSAGES/gtk20.mo
 usr/share/locale/tt/LC_MESSAGES/gtk20.mo
+usr/share/locale/ug/LC_MESSAGES/gtk20.mo
 usr/share/locale/uk/LC_MESSAGES/gtk-engines.mo
 usr/share/locale/uk/LC_MESSAGES/gtk20.mo
 usr/share/locale/ur/LC_MESSAGES/gtk20.mo
@@ -223,6 +207,10 @@ usr/share/locale/zh_HK/LC_MESSAGES/gtk-engines.mo
 usr/share/locale/zh_HK/LC_MESSAGES/gtk20.mo
 usr/share/locale/zh_TW/LC_MESSAGES/gtk-engines.mo
 usr/share/locale/zh_TW/LC_MESSAGES/gtk20.mo
+usr/share/man/man1/gtk-query-immodules-2.0-32.1.gz
+usr/share/man/man1/gtk-query-immodules-2.0.1.gz
+usr/share/man/man1/gtk-update-icon-cache.1.gz
+usr/share/man/man1/update-gtk-immodules.1.gz
 usr/share/themes/Clearlooks/gtk-2.0/gtkrc
 usr/share/themes/Crux/gtk-2.0/gtkrc
 usr/share/themes/Default/gtk-2.0-key/gtkrc
@@ -231,19 +219,8 @@ usr/share/themes/Industrial/gtk-2.0/gtkrc
 usr/share/themes/Mist/gtk-2.0/gtkrc
 usr/share/themes/Raleigh/gtk-2.0/gtkrc
 usr/share/themes/ThinIce/gtk-2.0/gtkrc
-%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/AUTHORS
-%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/COPYING
-%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/NEWS
-%%PORTDOCS%%usr/%%DOCSDIR%%-engines-2.18.4/README
-@exec /bin/mkdir -p %D/etc/gtk-2.0/i386-redhat-linux-gnu
-@exec /bin/mkdir -p %D/usr/lib/gtk-2.0/2.10.0/filesystems
-@exec /bin/mkdir -p %D/usr/lib/gtk-2.0/modules
-@unexec rm -f %D/etc/gtk-2.0/i386-redhat-linux-gnu/gdk-pixbuf.loaders
-@unexec rm -f %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
-@dir etc/gtk-2.0
-@dir etc/gtk-2.0/i386-redhat-linux-gnu
-@dir usr/lib/gtk-2.0
-@dir usr/lib/gtk-2.0/2.10.0
 @dir usr/lib/gtk-2.0/2.10.0/filesystems
-@exec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
-@exec chroot %D /usr/bin/gdk-pixbuf-query-loaders-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gdk-pixbuf.loaders
+@dir usr/lib/gtk-2.0/2.10.0/immodules
+@dir usr/lib/gtk-2.0/immodules
+@dir usr/share/gtk-2.0
+

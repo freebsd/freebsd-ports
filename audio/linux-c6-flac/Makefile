@@ -3,7 +3,7 @@
 
 PORTNAME=		flac
 PORTVERSION=		1.2.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		audio linux
 
 MAINTAINER=		emulation@FreeBSD.org

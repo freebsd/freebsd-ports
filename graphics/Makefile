@@ -557,6 +557,8 @@
     SUBDIR += linux-c6-sdl_ttf
     SUBDIR += linux-c6-dri
     SUBDIR += linux-c6-dri-compat
+    SUBDIR += linux-c6-gdk-pixbuf
+    SUBDIR += linux-c6-glx-utils
     SUBDIR += linux-c6-jpeg
     SUBDIR += linux-c6-libGLU
     SUBDIR += linux-c6-tiff

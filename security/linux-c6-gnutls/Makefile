@@ -3,6 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.8.5
+PORTREVISION=	1
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,7 +13,7 @@ USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	libtasn1 libgcrypt libgpg-error
 
-RPMVERSION=	10.el6_4.2
+RPMVERSION=	14.el6_5
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"

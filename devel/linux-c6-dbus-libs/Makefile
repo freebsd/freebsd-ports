@@ -3,6 +3,7 @@
 
 PORTNAME=	dbus-libs
 PORTVERSION=	1.2.24
+PORTREVISION=	1
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org

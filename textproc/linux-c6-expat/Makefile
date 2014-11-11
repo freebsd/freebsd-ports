@@ -3,6 +3,7 @@
 
 PORTNAME=	expat
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org

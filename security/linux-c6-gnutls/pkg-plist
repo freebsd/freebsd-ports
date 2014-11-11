@@ -18,29 +18,3 @@ usr/share/locale/nl/LC_MESSAGES/libgnutls.mo
 usr/share/locale/pl/LC_MESSAGES/libgnutls.mo
 usr/share/locale/sv/LC_MESSAGES/libgnutls.mo
 usr/share/locale/vi/LC_MESSAGES/libgnutls.mo
-@dirrmtry usr/share/locale/vi/LC_MESSAGES
-@dirrmtry usr/share/locale/vi
-@dirrmtry usr/share/locale/sv/LC_MESSAGES
-@dirrmtry usr/share/locale/sv
-@dirrmtry usr/share/locale/pl/LC_MESSAGES
-@dirrmtry usr/share/locale/pl
-@dirrmtry usr/share/locale/nl/LC_MESSAGES
-@dirrmtry usr/share/locale/nl
-@dirrmtry usr/share/locale/ms/LC_MESSAGES
-@dirrmtry usr/share/locale/ms
-@dirrmtry usr/share/locale/fr/LC_MESSAGES
-@dirrmtry usr/share/locale/fr
-@dirrmtry usr/share/locale/en@quot/LC_MESSAGES
-@dirrmtry usr/share/locale/en@quot
-@dirrmtry usr/share/locale/en@boldquot/LC_MESSAGES
-@dirrmtry usr/share/locale/en@boldquot
-@dirrmtry usr/share/locale/de/LC_MESSAGES
-@dirrmtry usr/share/locale/de
-@dirrmtry usr/share/locale/cs/LC_MESSAGES
-@dirrmtry usr/share/locale/cs
-@dirrmtry usr/share/locale
-@dirrmtry usr/share/doc/gnutls-%%PORTVERSION%%
-@dirrmtry usr/share/doc
-@dirrmtry usr/share
-@dirrmtry usr/lib
-@dirrmtry usr

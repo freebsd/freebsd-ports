@@ -3,6 +3,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://vault.centos.org/6.4/os/i386/Packages/
 PKGNAMESUFFIX=	-compat
@@ -31,5 +32,6 @@ USE_LINUX=	c6
 USE_LINUX_APPS=	xorglibs
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
+DESCR=             ${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

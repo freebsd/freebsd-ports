@@ -124,3 +124,4 @@ usr/share/terminfo/x/xterm-xf86-v44
 usr/share/terminfo/x/xterm-xfree86
 usr/share/terminfo/x/xterm-xi
 usr/share/terminfo/x/xterms
+@dir etc/terminfo

@@ -3,6 +3,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.7.6
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,7 +14,7 @@ CONFLICTS=	linux-libxml2-[0-9]* linux-f8-libxml2-[0-9]*
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 
-RPMVERSION=	14.el6
+RPMVERSION=	14.el6_5.2
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 

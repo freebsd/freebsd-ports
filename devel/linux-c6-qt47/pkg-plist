@@ -75,3 +75,5 @@ usr/share/qt47/translations/qt_sv.qm
 usr/share/qt47/translations/qt_uk.qm
 usr/share/qt47/translations/qt_zh_CN.qm
 usr/share/qt47/translations/qt_zh_TW.qm
+@dir usr/lib/qt47/plugins/crypto
+%%PORTDOCS%%@dir usr/%%DOCSDIR%%/qch

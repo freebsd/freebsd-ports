@@ -202,6 +202,7 @@ freealut_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-freealut
 freealut_DEPENDS=	openal
 
 gdkpixbuf_f10_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf.so.2
+gdkpixbuf_c6_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf-2.0.so.0
 gdkpixbuf_DETECT=	${gdkpixbuf${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gdkpixbuf_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-gdk-pixbuf
 
@@ -212,7 +213,7 @@ gnutls_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-gnutls
 gnutls_DEPENDS=		libtasn1 libgcrypt libgpg-error
 
 gtk2_f10_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.1400.7
-gtk2_c6_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.2000.1
+gtk2_c6_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.2400.23
 gtk2_DETECT=		${gtk2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gtk2_PORT=			${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-gtk2
 gtk2_DEPENDS=		atk jpeg png pango tiff xorglibs
@@ -284,6 +285,7 @@ libpciaccess_DETECT=		${libogg${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libpciaccess_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libpciaccess
 
 libsigcpp20_f10_FILE=	${LINUXBASE}/usr/lib/libsigc-2.0.so.0
+libsigcpp20_c6_FILE=	${LINUXBASE}/usr/lib/libsigc-2.0.so.0
 libsigcpp20_DETECT=	${libsigcpp20${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libsigcpp20_PORT=	${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libsigc++20
 
@@ -335,7 +337,7 @@ naslibs_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-nas-libs
 naslibs_DEPENDS=	xorglibs
 
 openldap_f10_FILE=	${LINUXBASE}/usr/lib/libldap-2.4.so.2.2.0
-openldap_c6_FILE=	${LINUXBASE}/lib/libldap-2.4.so.2.5.6
+openldap_c6_FILE=	${LINUXBASE}/lib/libldap-2.4.so.2.10.2
 openldap_DETECT=	${openldap${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openldap_PORT=		${PORTSDIR}/net/linux${LINUX_DIST_SUFFIX}-openldap
 
