@@ -3,6 +3,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	11.2r202.418
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
 		LOCAL/nox:suplib
@@ -16,7 +17,7 @@ COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	c6
-USE_LINUX_APPS=	curl cyrus-sasl2 gtk2 nspr nss openssl-compat #-alsalib libssh2 openldap
+USE_LINUX_APPS=	curl cyrus-sasl2 gdkpixbuf gtk2 nspr nss openssl-compat #-alsalib libssh2 openldap
 WANT_GNOME=	yes
 
 RESTRICTED=	Redistribution not allowed
