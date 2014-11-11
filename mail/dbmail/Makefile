@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbmail
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/ \
 		http://www.dbmail.org/download/3.2/
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libzdb.so:${PORTSDIR}/databases/libzdb \
 		libmhash.so:${PORTSDIR}/security/mhash \
 		libevent.so:${PORTSDIR}/devel/libevent2
-
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/sgml/docbook/4.5:${PORTSDIR}/textproc/docbook-sgml
@@ -64,10 +63,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/dbmail.schema ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/sql && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-	#@for f in mysql oracle postgresql sqlite; do \
-	#	${MKDIR} ${STAGEDIR}${DATADIR}/$$f ; \
-	#	${INSTALL_DATA} ${WRKSRC}/sql/$$f/* ${STAGEDIR}${DATADIR}/$$f; \
-	#done
 	@${MKDIR} ${STAGEDIR}${PIDDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
