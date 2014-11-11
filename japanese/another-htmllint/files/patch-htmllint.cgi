@@ -2,7 +2,7 @@
 +++ htmllint.cgi	Fri Sep 29 14:41:55 2000
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
-+#!/usr/bin/perl
++#!%PERL%
  
  # CGI script for Another HTML-lint gateway ###################
  
