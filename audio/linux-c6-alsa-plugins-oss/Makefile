@@ -3,7 +3,7 @@
 
 PORTNAME=	alsa-plugins-oss
 PORTVERSION=	1.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
 
@@ -30,5 +30,6 @@ CONF_FILE=	etc/alsa/pcm/pcm-oss.conf
 
 post-patch:
 	@${RM} ${WRKSRC}/${CONF_FILE}.orig
+	@${MV} ${WRKSRC}/${CONF_FILE} ${WRKSRC}/${CONF_FILE}.sample
 
 .include <bsd.port.mk>
