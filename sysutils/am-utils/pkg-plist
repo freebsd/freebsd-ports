@@ -1,4 +1,3 @@
-bin/expn
 bin/pawd
 etc/amd.conf-sample
 etc/lostaltmail.conf-sample
@@ -6,7 +5,6 @@ lib/libamu.a
 lib/libamu.so
 lib/libamu.so.4
 lib/libamu.so.4.0.0
-man/man1/expn.1.gz
 man/man1/pawd.1.gz
 man/man5/amd.conf.5.gz
 man/man8/amd.8.gz
@@ -16,6 +14,7 @@ man/man8/fixmount.8.gz
 man/man8/fsinfo.8.gz
 man/man8/hlfsd.8.gz
 man/man8/mk-amd-map.8.gz
+man/man8/sun2amd.8.gz
 man/man8/wire-test.8.gz
 sbin/am-eject
 sbin/amd
@@ -32,6 +31,7 @@ sbin/fsinfo
 sbin/hlfsd
 sbin/lostaltmail
 sbin/mk-amd-map
+sbin/sun2amd
 sbin/wait4amd
 sbin/wait4amd2die
 sbin/wire-test
@@ -43,4 +43,3 @@ sbin/wire-test
 %%LDAP_DOC%%%%PORTDOCS%%%%DOCSDIR%%/README.ldap
 %%LDAP_DOC%%%%PORTDOCS%%%%DOCSDIR%%/ldap-id.txt
 %%LDAP_DOC%%%%PORTDOCS%%%%DOCSDIR%%/ldap.schema
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
