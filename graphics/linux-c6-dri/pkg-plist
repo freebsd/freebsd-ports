@@ -11,9 +11,6 @@ usr/lib/libGL.so.1
 usr/lib/libGL.so.1.2.0
 usr/lib/libGLU.so.1
 usr/lib/libGLU.so.1.3.1
-usr/lib/libdricore9.2.0-devel.so
-usr/lib/libdricore9.2.0-devel.so.1
-usr/lib/libdricore9.2.0-devel.so.1.0.0
 usr/lib/libdrm.so.2
 usr/lib/libdrm.so.2.4.0
 usr/lib/libdrm_intel.so.1
@@ -44,5 +41,5 @@ usr/share/doc/freeglut-2.6.0/index.html
 usr/share/doc/freeglut-2.6.0/ogl_sm.png
 usr/share/doc/freeglut-2.6.0/progress.html
 usr/share/doc/freeglut-2.6.0/structure.html
-usr/share/doc/libdrm-2.4.45/README
+usr/share/doc/libdrm-2.4.52/README
 %%ETCDIR%%rc

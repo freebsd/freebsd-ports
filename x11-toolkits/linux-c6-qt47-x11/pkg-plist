@@ -98,3 +98,7 @@ usr/share/qt47/translations/qtconfig_sl.qm
 usr/share/qt47/translations/qtconfig_uk.qm
 usr/share/qt47/translations/qtconfig_zh_CN.qm
 usr/share/qt47/translations/qtconfig_zh_TW.qm
+@dir usr/lib/qt47/plugins/gui_platform
+@dir usr/lib/qt47/plugins/phonon_backend
+@dir usr/lib/qt47/plugins/styles
+@dir usr/share/kde4/services/phononbackends

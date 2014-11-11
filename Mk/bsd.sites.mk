@@ -253,7 +253,7 @@ MASTER_SITE_EXIM+= \
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX+= \
 	http://mirror.centos.org/centos/6/os/i386/Packages/ \
-	http://vault.centos.org/6.5/os/Source/SPackages/ \
+	http://vault.centos.org/6.6/os/Source/SPackages/ \
 	http://mirror.centos.org/%SUBDIR%/ \
 	http://vault.centos.org/%SUBDIR%/
 
@@ -262,7 +262,7 @@ MASTER_SITE_CENTOS_LINUX+= \
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX_UPDATES+= \
 	http://mirror.centos.org/centos/6/updates/i386/Packages/ \
-	http://vault.centos.org/6.5/updates/Source/SPackages/
+	http://vault.centos.org/${LINUX_DIST_VER}/updates/Source/SPackages/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EPEL)

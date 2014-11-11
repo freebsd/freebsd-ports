@@ -3,6 +3,7 @@
 
 PORTNAME=	${LINUX_NAME}-base
 PORTVERSION=	5.7
+PORTREVISION=	1
 CATEGORIES=	devel linux
 
 MAINTAINER=	jwbacon@tds.net

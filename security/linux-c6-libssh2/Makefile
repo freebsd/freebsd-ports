@@ -3,6 +3,7 @@
 
 PORTNAME=	libssh2
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org

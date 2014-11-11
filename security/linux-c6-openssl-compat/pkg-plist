@@ -24,7 +24,3 @@ usr/share/doc/openssl098e-0.9.8e/LICENSE
 usr/share/doc/openssl098e-0.9.8e/NEWS
 usr/share/doc/openssl098e-0.9.8e/README
 usr/share/doc/openssl098e-0.9.8e/README.FIPS
-
-@dirrm usr/share/doc/openssl098e-%%PORTVERSION%%
-@dirrm usr/lib/openssl098e/engines
-@dirrm usr/lib/openssl098e

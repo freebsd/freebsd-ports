@@ -3,6 +3,7 @@
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.0.22
+PORTREVISION=	1
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
 
@@ -20,6 +21,6 @@ USE_LINUX_APPS=	alsalib alsa-plugins-oss
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes
-RPMVERSION=	5.el6
+RPMVERSION=	7.el6
 
 .include <bsd.port.mk>

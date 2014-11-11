@@ -74,7 +74,6 @@ usr/include/asm-generic/statfs.h
 usr/include/asm-generic/swab.h
 usr/include/asm-generic/termbits.h
 usr/include/asm-generic/termios.h
-usr/include/asm-generic/trace_clock.h
 usr/include/asm-generic/types.h
 usr/include/asm-generic/ucontext.h
 usr/include/asm-generic/unistd.h
@@ -126,7 +125,6 @@ usr/include/asm/statfs.h
 usr/include/asm/swab.h
 usr/include/asm/termbits.h
 usr/include/asm/termios.h
-usr/include/asm/trace_clock.h
 usr/include/asm/types.h
 usr/include/asm/ucontext.h
 usr/include/asm/unistd.h
@@ -1423,6 +1421,7 @@ usr/include/linux/usb/vstusb.h
 usr/include/linux/usbdevice_fs.h
 usr/include/linux/utime.h
 usr/include/linux/utsname.h
+usr/include/linux/uuid.h
 usr/include/linux/version.h
 usr/include/linux/veth.h
 usr/include/linux/vhost.h
@@ -1782,7 +1781,7 @@ usr/lib/gcc/i686-redhat-linux/4.4.7
 usr/lib/gcrt1.o
 usr/lib/libBrokenLocale.so
 usr/lib/libanl.so
-usr/lib/libbfd-2.20.51.0.2-5.36.el6.so
+usr/lib/libbfd-2.20.51.0.2-5.42.el6.so
 usr/lib/libbfd.a
 usr/lib/libbfd.so
 usr/lib/libbsd-compat.a
@@ -1812,7 +1811,7 @@ usr/lib/libnss_files.so
 usr/lib/libnss_hesiod.so
 usr/lib/libnss_nis.so
 usr/lib/libnss_nisplus.so
-usr/lib/libopcodes-2.20.51.0.2-5.36.el6.so
+usr/lib/libopcodes-2.20.51.0.2-5.42.el6.so
 usr/lib/libopcodes.a
 usr/lib/libopcodes.so
 usr/lib/libpthread.so
@@ -2067,167 +2066,3 @@ usr/share/man/man1/size.1.gz
 usr/share/man/man1/strings.1.gz
 usr/share/man/man1/strip.1.gz
 usr/share/man/man1/unprotoize.1.gz
-usr/share/man/man1/windmc.1.gz
-@dir lib
-@dir usr/bin
-@dir usr/include/arpa
-@dir usr/include/asm
-@dir usr/include/asm-generic
-@dir usr/include/bits
-@dir usr/include/c++/4.4.4/backward
-@dir usr/include/c++/4.4.4/bits
-@dir usr/include/c++/4.4.4/debug
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/basic_tree_policy
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/bin_search_tree_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/binary_heap_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/binomial_heap_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/binomial_heap_base_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/cc_hash_table_map_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/eq_fn
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/gp_hash_table_map_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/hash_fn
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/left_child_next_sibling_heap_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/list_update_map_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/list_update_policy
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/ov_tree_map_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/pairing_heap_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/pat_trie_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/rb_tree_map_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/rc_binomial_heap_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/resize_policy
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/splay_tree_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/thin_heap_
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/tree_policy
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/trie_policy
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail/unordered_iterator
-@dir usr/include/c++/4.4.4/ext/pb_ds/detail
-@dir usr/include/c++/4.4.4/ext/pb_ds
-@dir usr/include/c++/4.4.4/ext
-@dir usr/include/c++/4.4.4/i686-redhat-linux/bits
-@dir usr/include/c++/4.4.4/i686-redhat-linux
-@dir usr/include/c++/4.4.4/parallel
-@dir usr/include/c++/4.4.4/tr1
-@dir usr/include/c++/4.4.4/tr1_impl
-@dir usr/include/c++/4.4.4
-@dir usr/include/c++
-@dir usr/include/drm
-@dir usr/include/gnu
-@dir usr/include/linux/byteorder
-@dir usr/include/linux/can
-@dir usr/include/linux/dvb
-@dir usr/include/linux/hdlc
-@dir usr/include/linux/isdn
-@dir usr/include/linux/netfilter/ipset
-@dir usr/include/linux/netfilter
-@dir usr/include/linux/netfilter_arp
-@dir usr/include/linux/netfilter_bridge
-@dir usr/include/linux/netfilter_ipv4
-@dir usr/include/linux/netfilter_ipv6
-@dir usr/include/linux/nfsd
-@dir usr/include/linux/raid
-@dir usr/include/linux/spi
-@dir usr/include/linux/sunrpc
-@dir usr/include/linux/tc_act
-@dir usr/include/linux/tc_ematch
-@dir usr/include/linux/usb
-@dir usr/include/linux/wimax
-@dir usr/include/linux
-@dir usr/include/mtd
-@dir usr/include/net
-@dir usr/include/netash
-@dir usr/include/netatalk
-@dir usr/include/netax25
-@dir usr/include/neteconet
-@dir usr/include/netinet
-@dir usr/include/netipx
-@dir usr/include/netiucv
-@dir usr/include/netpacket
-@dir usr/include/netrom
-@dir usr/include/netrose
-@dir usr/include/nfs
-@dir usr/include/protocols
-@dir usr/include/rdma
-@dir usr/include/rpc
-@dir usr/include/rpcsvc
-@dir usr/include/scsi
-@dir usr/include/sound
-@dir usr/include/sys
-@dir usr/include/video
-@dir usr/include/xen
-@dir usr/include
-@dir usr/lib/gcc/i686-redhat-linux/4.4.4/finclude
-@dir usr/lib/gcc/i686-redhat-linux/4.4.4/include
-@dir usr/lib/gcc/i686-redhat-linux/4.4.4
-@dir usr/lib/gcc/i686-redhat-linux
-@dir usr/lib/gcc
-@dir usr/lib/sse2
-@dir usr/lib
-@dir usr/libexec/gcc/i686-redhat-linux/4.4.4
-@dir usr/libexec/gcc/i686-redhat-linux
-@dir usr/libexec/gcc
-@dir usr/libexec/getconf
-@dir usr/libexec
-@dir usr/share/doc/binutils-2.20.51.0.2
-@dir usr/share/doc/gcc-4.4.7
-@dir usr/share/doc/gcc-c++-4.4.7
-@dir usr/share/doc/gcc-gfortran-4.4.7
-@dir usr/share/doc/gmp-4.3.1
-@dir usr/share/doc/libstdc++-devel-4.4.7
-@dir usr/share/doc/mpfr-2.4.1
-@dir usr/share/doc
-@dir usr/share/info
-@dir usr/share/locale/be/LC_MESSAGES
-@dir usr/share/locale/be
-@dir usr/share/locale/ca/LC_MESSAGES
-@dir usr/share/locale/ca
-@dir usr/share/locale/da/LC_MESSAGES
-@dir usr/share/locale/da
-@dir usr/share/locale/de/LC_MESSAGES
-@dir usr/share/locale/de
-@dir usr/share/locale/el/LC_MESSAGES
-@dir usr/share/locale/el
-@dir usr/share/locale/es/LC_MESSAGES
-@dir usr/share/locale/es
-@dir usr/share/locale/fi/LC_MESSAGES
-@dir usr/share/locale/fi
-@dir usr/share/locale/fr/LC_MESSAGES
-@dir usr/share/locale/fr
-@dir usr/share/locale/ga/LC_MESSAGES
-@dir usr/share/locale/ga
-@dir usr/share/locale/id/LC_MESSAGES
-@dir usr/share/locale/id
-@dir usr/share/locale/ja/LC_MESSAGES
-@dir usr/share/locale/ja
-@dir usr/share/locale/ms/LC_MESSAGES
-@dir usr/share/locale/ms
-@dir usr/share/locale/nl/LC_MESSAGES
-@dir usr/share/locale/nl
-@dir usr/share/locale/pt_BR/LC_MESSAGES
-@dir usr/share/locale/pt_BR
-@dir usr/share/locale/ro/LC_MESSAGES
-@dir usr/share/locale/ro
-@dir usr/share/locale/ru/LC_MESSAGES
-@dir usr/share/locale/ru
-@dir usr/share/locale/rw/LC_MESSAGES
-@dir usr/share/locale/rw
-@dir usr/share/locale/sk/LC_MESSAGES
-@dir usr/share/locale/sk
-@dir usr/share/locale/sr/LC_MESSAGES
-@dir usr/share/locale/sr
-@dir usr/share/locale/sv/LC_MESSAGES
-@dir usr/share/locale/sv
-@dir usr/share/locale/tr/LC_MESSAGES
-@dir usr/share/locale/tr
-@dir usr/share/locale/uk/LC_MESSAGES
-@dir usr/share/locale/uk
-@dir usr/share/locale/vi/LC_MESSAGES
-@dir usr/share/locale/vi
-@dir usr/share/locale/zh_CN/LC_MESSAGES
-@dir usr/share/locale/zh_CN
-@dir usr/share/locale/zh_TW/LC_MESSAGES
-@dir usr/share/locale/zh_TW
-@dir usr/share/locale
-@dir usr/share/man/man1
-@dir usr/share/man
-@dir usr/share
-@dir usr

@@ -3,6 +3,7 @@
 
 PORTNAME=	libvorbis
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org

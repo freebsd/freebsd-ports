@@ -3,7 +3,7 @@
 
 PORTNAME=	alsa-plugins-pulseaudio
 PORTVERSION=	1.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
 

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gtk2
-PORTVERSION=	2.20.1
+PORTVERSION=	2.24.23
 CATEGORIES=	x11-toolkits linux
 DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
 		${PORTNAME}-engines-2.18.4-5.el6.${LINUX_DIST}.${LINUX_RPM_ARCH}.rpm \
-		pixman-0.26.2-5.el6_4.${LINUX_RPM_ARCH}.rpm \
+		pixman-0.32.4-4.el6.${LINUX_RPM_ARCH}.rpm \
 		jasper-libs-1.900.1-15.el6_1.1.${LINUX_RPM_ARCH}.rpm
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -18,10 +18,16 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
 USE_LINUX_APPS=	png jpeg tiff xorglibs pango atk
 USE_LINUX_RPM=	yes
-RPMVERSION=	4.el6
+RPMVERSION=	6.el6
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}0/pkg-descr
+
+.if defined(PACKAGE_BUILDING)
+SRC_DISTFILES=	gtk2-2.24.23-6.el6.src.rpm \
+		pixman-0.32.4-4.el6.src.rpm \
+		jasper-1.900.1-15.el6_1.1.src.rpm
+.endif
 
 .include <bsd.port.mk>

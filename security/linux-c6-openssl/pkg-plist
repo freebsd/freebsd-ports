@@ -94,19 +94,8 @@ usr/share/man/man5/config.5ssl.gz
 usr/share/man/man5/openssl.cnf.5ssl.gz
 usr/share/man/man5/x509v3_config.5ssl.gz
 usr/share/man/man7/des_modes.7ssl.gz
-@comment deal with empty directories installed by the port
-@exec /bin/mkdir -p %D/etc/pki/CA/private
-@dirrmtry etc/pki/CA/private
-@exec /bin/mkdir -p %D/etc/pki/tls/private
-@dirrmtry etc/pki/tls/private
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/openssl-%%PORTVERSION%%
-@dirrm usr/lib/openssl/engines
-@dirrm usr/lib/openssl
-@dirrm etc/pki/tls/misc
-@dirrm etc/pki/tls/certs
-@dirrm etc/pki/tls
-@dirrm etc/pki/CA/certs
-@dirrm etc/pki/CA/crl
-@dirrm etc/pki/CA/newcerts
-@dirrm etc/pki/CA
+@dir etc/pki/CA/private
+@dir etc/pki/CA/certs
+@dir etc/pki/CA/crl
+@dir etc/pki/CA/newcerts
+@dir etc/pki/tls/private

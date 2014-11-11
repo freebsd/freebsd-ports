@@ -3,8 +3,8 @@
 
 PORTNAME=	libasyncns
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	dns devel linux
-PKGNAMEPREFIX=	linux-c6-
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	C library for executing DNS queries asynchronously (Linux CentOS ${LINUX_DIST_VER})

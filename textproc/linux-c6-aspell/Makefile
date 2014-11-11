@@ -3,6 +3,7 @@
 
 PORTNAME=	aspell
 PORTVERSION=	0.60.6
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
