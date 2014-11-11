@@ -3,7 +3,7 @@
 
 PORTNAME=	pfstat
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -17,13 +17,11 @@ MAKE_ENV+=	__MAKE_CONF=/dev/null
 USES=		iconv
 
 USE_RC_SUBR=	pfstatd
-MAN8=		pfstat.8 \
-		pfstatd.8
 
 PLIST_FILES=	bin/pfstat \
-		bin/pfstatd
-
-.include <bsd.port.pre.mk>
+		bin/pfstatd \
+		man/man8/pfstat.8.gz \
+		man/man8/pfstatd.8.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lgd|-l$${LD_GD}|; s| -lttf||' \
@@ -37,4 +35,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/pfstat.8 ${STAGEDIR}/${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.8 ${STAGEDIR}/${PREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
