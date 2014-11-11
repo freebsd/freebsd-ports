@@ -32,7 +32,7 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Image processing tools
 
 LICENSE=	APACHE20
-LICENSE_FILE=	LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
