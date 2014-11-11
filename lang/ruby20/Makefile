@@ -86,9 +86,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .if ${OPSYS} == "FreeBSD"
-.if exists(/usr/sbin/dtrace) && \
-	((${ARCH} == "i386" && ${OSVERSION} > 1010000) || \
-	(${ARCH} == "amd64" && ${OSVERSION} > 903000))
+.if exists(/usr/sbin/dtrace) && (${OSVERSION} > 1100032)
 CONFIGURE_ARGS+=	--enable-dtrace
 .else
 CONFIGURE_ARGS+=	--disable-dtrace
