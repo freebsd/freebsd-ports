@@ -62,7 +62,7 @@ CAPIDOCS_BUILD_DEPENDS=	doxygen>0:${PORTSDIR}/devel/doxygen \
 CAPIDOCS_CONFIGURE_OFF=	--disable-install-capi
 RDOC_CONFIGURE_OFF=	--disable-install-rdoc
 
-USES=		execinfo cpe tar:bzip2
+USES=		execinfo cpe tar:xz
 
 CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}
