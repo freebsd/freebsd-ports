@@ -167,7 +167,11 @@ pkg_jail_start()
 	pkg_jail_create_devfs
 	pkg_jail_create_jail_mount "${pkg_jail_dir}"
 	sysctl security.jail.sysvipc_allowed=1
-	/usr/sbin/jail -n "${pkg_jail_short}" "${pkg_jail_dir}" "${pkg_jail_hostname}" "${pkg_jail_ip}" /bin/sh /etc/rc
+	/usr/sbin/jail -c name="${pkg_jail_short}" path="${pkg_jail_dir}" \
+		host.hostname="${pkg_jail_hostname}" \
+		allow.sysvipc allow.raw_sockets \
+		ip4.addr="${pkg_jail_ip}"\
+		command=/bin/sh /etc/rc
 }
 pkg_jail_status()
 {
@@ -215,8 +219,11 @@ pkg_jail_init()
 		pkg_jail_setup
 		pkg_jail_create_devfs
 		pkg_jail_create_jail_mount "${pkg_jail_dir}"
-		/usr/sbin/jail -n "${pkg_jail_short}" "${pkg_jail_dir}" "${pkg_jail_hostname}" "${pkg_jail_ip}" \
-			/bin/sh -c "cd /usr/ports/ports-mgmt/pkg_jail && make install-ports"
+		/usr/sbin/jail -c name="${pkg_jail_short}" path="${pkg_jail_dir}" \
+			host.hostname="${pkg_jail_hostname}" \
+			allow.sysvipc allow.raw_sockets \
+			ip4.addr="${pkg_jail_ip}"\
+			command=/bin/sh -c "cd /usr/ports/ports-mgmt/pkg_jail && make install-ports"
 		pkg_jail_umount
 	fi
 }
@@ -227,7 +234,11 @@ pkg_jail_shell()
 		echo "Shell in jail-${pkg_jail_hostname}-${pkg_jail_ip}"
 		pkg_jail_create_devfs
 		pkg_jail_create_jail_mount "${pkg_jail_dir}"
-		/usr/sbin/jail -n "${pkg_jail_short}" "${pkg_jail_dir}" "${pkg_jail_hostname}" "${pkg_jail_ip}" /bin/csh
+		/usr/sbin/jail -c name="${pkg_jail_short}" path="${pkg_jail_dir}" \
+			host.hostname="${pkg_jail_hostname}" \
+			allow.sysvipc allow.raw_sockets \
+			ip4.addr="${pkg_jail_ip}"\
+			command=/bin/csh
 		pkg_jail_umount
 	fi
 }
