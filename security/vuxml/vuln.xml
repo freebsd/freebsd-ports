@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c1930f45-6982-11e4-80e1-bcaec565249c">
+    <topic>dbus -- incomplete fix for CVE-2014-3636 part A</topic>
+    <affects>
+      <package>
+	<name>dbus</name>
+	<range><lt>1.8.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon McVittie reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/dbus/2014-November/016395.html">
+	  <p>The patch issued by the D-Bus maintainers for CVE-2014-3636
+	    was based on incorrect reasoning, and does not fully prevent
+	    the attack described as "CVE-2014-3636 part A", which is
+	    repeated below. Preventing that attack requires raising the
+	    system dbus-daemon's RLIMIT_NOFILE (ulimit -n) to a higher
+	    value. CVE-2014-7824 has been allocated for this
+	    vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-7824</cvename>
+      <url>http://lists.freedesktop.org/archives/dbus/2014-November/016395.html</url>
+    </references>
+    <dates>
+      <discovery>2014-11-10</discovery>
+      <entry>2014-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee7b4f9d-66c8-11e4-9ae1-e8e0b722a85e">
     <topic>wget -- path traversal vulnerability in recursive FTP mode</topic>
     <affects>
