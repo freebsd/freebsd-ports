@@ -84,8 +84,8 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		compat-gcc-32-3.2.3-69.el6.src.rpm \
 		db4-4.7.25-18.el6_4.src.rpm \
 		e2fsprogs-1.41.12-21.el6.src.rpm \
-		elfutils-0.158-3.2.el6.i686.rpm \
-		centos-release-6-6.el6.centos.12.2.i686.rpm \
+		elfutils-0.158-3.2.el6.src.rpm \
+		centos-release-6-6.el6.centos.12.2.src.rpm \
 		filesystem-2.4.30-3.el6.src.rpm \
 		findutils-4.4.2-6.el6.src.rpm \
 		freetype-2.3.11-14.el6_3.1.src.rpm \
