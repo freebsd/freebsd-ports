@@ -10,6 +10,3 @@ lib/libpackagekit-qt.so.14
 lib/libpackagekit-qt.so.14.0.5
 libdata/pkgconfig/packagekit-qt.pc
 share/cmake/Modules/FindQPackageKit.cmake
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake
-@dirrm include/PackageKit/packagekit-qt
