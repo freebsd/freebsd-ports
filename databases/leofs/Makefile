@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -22,8 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/erlang16/bin/erlc:${PORTSDIR}/lang/erlang-runtim
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
 GH_PROJECT=	leofs
-GH_TAGNAME=	2f6d896
-GH_COMMIT=	2f6d896
+GH_TAGNAME=	d05ea26
+GH_COMMIT=	d05ea26
 
 LEOFS_USER=	leofs
 LEOFS_GROUP=	leofs
@@ -69,9 +69,9 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang16/bin:${PATH}
 
 LEOFS_DEPS=	\
-	leo-project/leo_gateway=${PORTVERSION}?2249fc4:leo_gateway \
-	leo-project/leo_manager=${PORTVERSION}?3f6c0f6:leo_manager \
-	leo-project/leo_storage=${PORTVERSION}?34f304d:leo_storage \
+	leo-project/leo_gateway=${PORTVERSION}?22be437:leo_gateway \
+	leo-project/leo_manager=${PORTVERSION}?face7a7:leo_manager \
+	leo-project/leo_storage=${PORTVERSION}?526d34b:leo_storage \
 	DeadZen/goldrush=0.1.6?71e6321:goldrush \
 	basho/cuttlefish=origin/develop?c2c7679:cuttlefish \
 	basho/eleveldb=1.4.10?a84b18c:eleveldb \
