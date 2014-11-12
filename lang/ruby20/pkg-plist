@@ -17131,4 +17131,4 @@ man/man1/%%RUBY_NAME%%.1.gz
 @dir %%RUBY_LIBDIR%%/racc/rdoc
 @dir %%RUBY_SITEARCHLIBDIR%%
 @dir %%RUBY_VENDORARCHLIBDIR%%
-@dir %%RUBY_SITERIDIR%%
+%%RDOC%%@dir %%RUBY_SITERIDIR%%
