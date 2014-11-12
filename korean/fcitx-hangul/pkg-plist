@@ -10,6 +10,3 @@ share/icons/hicolor/64x64/status/fcitx-hanja-inactive.png
 share/locale/ko/LC_MESSAGES/fcitx-hangul.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-hangul.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-hangul.mo
-@dirrm share/fcitx/skin/imicon
-@dirrmtry share/fcitx/skin
-@dirrm share/fcitx/hangul

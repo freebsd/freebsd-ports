@@ -1,17 +1,12 @@
 bin/kWnn4/katod
 bin/kWnn4/katof
 bin/kWnn4/kdtoa
-@owner wnn
-bin/kWnn4/kserver
-@owner root
+@(wnn,,) bin/kWnn4/kserver
 bin/kWnn4/kwddel
 bin/kWnn4/kwdreg
 bin/kWnn4/kwnnkill
 bin/kWnn4/kwnnstat
 bin/kWnn4/kwnntouch
-@dirrm bin/kWnn4
 lib/wnn/ko_KR/dic/sys/full.fzk
 lib/wnn/ko_KR/dic/sys/hword.dic
 lib/wnn/ko_KR/dic/sys/single.dic
-@dirrm lib/wnn/ko_KR/dic/sys
-@dirrm lib/wnn/ko_KR/dic

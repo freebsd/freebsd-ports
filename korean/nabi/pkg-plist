@@ -48,15 +48,3 @@ bin/nabi
 %%DATADIR%%/themes/ubuntu-mono-light/none.png
 %%NLS%%share/locale/de/LC_MESSAGES/nabi.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/nabi.mo
-@dirrm %%DATADIR%%/themes/ubuntu-mono-light
-@dirrm %%DATADIR%%/themes/ubuntu-mono-dark
-@dirrm %%DATADIR%%/themes/malys
-@dirrm %%DATADIR%%/themes/keyboard
-@dirrm %%DATADIR%%/themes/Tux
-@dirrm %%DATADIR%%/themes/SimplyRed
-@dirrm %%DATADIR%%/themes/Onion
-@dirrm %%DATADIR%%/themes/KingSejong2
-@dirrm %%DATADIR%%/themes/KingSejong
-@dirrm %%DATADIR%%/themes/Jini
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%

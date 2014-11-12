@@ -32,9 +32,4 @@ share/gtkcomm/script/monitor.scr
 share/gtkcomm/script/now-login.scr
 share/gtkcomm/script/startup.scr
 share/gtkcomm/up/DEFAULT_UPLOAD_DIR
-@dirrm share/gtkcomm/capture
-@dirrm share/gtkcomm/down
-@dirrm share/gtkcomm/pixmap
-@dirrm share/gtkcomm/script
-@dirrm share/gtkcomm/up
-@dirrm share/gtkcomm
+share/locale/ko/LC_MESSAGES/gtkcomm.mo

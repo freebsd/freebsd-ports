@@ -3,7 +3,7 @@
 
 PORTNAME=	ko.TeX
 PORTVERSION=	0.1.1.20080329
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	korean print
 MASTER_SITES=	http://ftp.ktug.or.kr/KTUG/ko.TeX/current/
 DISTNAME=	ko.tex-macro-20080329
@@ -13,6 +13,8 @@ COMMENT=	Korean TeX macro and utilities
 
 RUN_DEPENDS=	${BASE_MAP}:${PORTSDIR}/korean/ko.TeX-fonts-base
 
+USES=		shebangfix
+SHEBANG_FILES=	util/*.pl
 USE_TEX=	latex
 CONFLICTS=	hlatex-[0-9]*
 
