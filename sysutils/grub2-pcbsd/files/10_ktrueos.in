@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright 2013 iXsystems (Kris Moore)
+# Copyright 2014 iXsystems (Kris Moore)
 # All rights reserved
 #
 # Redistribution and use in source and binary forms, with or without
@@ -139,7 +139,14 @@ display_loaderopts()
     done < /tmp/.lRObjs.$$
   fi
 
-  # Any sysctls to set?
+  # Add our compat kenv lines
+  echo "    set kFreeBSD.bootfile=\"kernel\""
+  echo "    set kFreeBSD.kernel=\"kernel\""
+  echo "    set kFreeBSD.kernel_options=\"\""
+  echo "    set kFreeBSD.kernelname=\"/boot/kernel/kernel\""
+  echo "    set kFreeBSD.module_path=\"/boot/kernel;/boot/modules\""
+
+  # Any kenv to set?
   if [ "$haveSysCtls" = "1" ] ; then
     while read line
     do
@@ -147,8 +154,11 @@ display_loaderopts()
       echo "$line" | grep -q "vfs.root.mountfrom"
       if [ $? -eq 0 ] ; then continue ; fi
 
-      val="`echo $line | sed 's|"||g'`"
-      echo "    set kFreeBSD.${val}"
+      line="`echo $line | sed 's|"||g'`"
+      key="`echo $line | cut -d '=' -f 1`"
+      val="`echo $line | cut -d '=' -f 2`"
+      if [ -z "$key" -o -z "$val" ] ; then continue ; fi
+      echo "    set kFreeBSD.${key}=\"${val}\""
     done < /tmp/.lSysCtls.$$
   fi
 
@@ -160,11 +170,11 @@ display_loaderopts()
   fi
 
   # Set the grub.platform kenv variable
-  echo "    set kFreeBSD.grub.platform=\$grub_platform"
+  echo "    set kFreeBSD.grub.platform=\"\$grub_platform\""
 
   # See if we need to do GELI passphrase passthrough
   if [ "$haveGELI" = "true" ] ; then
-    echo "    set kFreeBSD.kern.geom.eli.passphrase=\$pass"
+    echo "    set kFreeBSD.kern.geom.eli.passphrase=\"\$pass\""
   fi
 }
 
