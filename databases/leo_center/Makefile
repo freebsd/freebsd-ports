@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leo_center
-PORTVERSION=	0.4.10
+PORTVERSION=	0.4.11
 CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
