@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome2
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	x11 rubygems
 CATEGORIES=	x11 gnome rubygems
 MASTER_SITES=	# none
@@ -14,7 +13,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Meta port for all Ruby Gnome2 Gems
 
 RUN_DEPENDS=	rubygem-clutter-gtk>=${PORTVERSION}:${PORTSDIR}/graphics/rubygem-clutter-gtk \
-		rubygem-goocanvas>=${PORTVERSION}:${PORTSDIR}/graphics/rubygem-goocanvas \
+		rubygem-goocanvas>=2.2.0:${PORTSDIR}/graphics/rubygem-goocanvas \
 		rubygem-rsvg2>=${PORTVERSION}:${PORTSDIR}/graphics/rubygem-rsvg2 \
 		rubygem-clutter-gstreamer>=${PORTVERSION}:${PORTSDIR}/multimedia/rubygem-clutter-gstreamer \
 		rubygem-webkit-gtk>=${PORTVERSION}:${PORTSDIR}/www/rubygem-webkit-gtk \
