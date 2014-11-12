@@ -51,16 +51,3 @@ share/hangul_keyboard/dvorak.map
 %%DATADIR%%/pix/woody/ami-d.xpm
 %%DATADIR%%/pix/woody/ami-e.xpm
 %%DATADIR%%/pix/woody/ami-h.xpm
-@dirrm share/hangul_keyboard
-@dirrm %%DATADIR%%/pix/Aqua
-@dirrm %%DATADIR%%/pix/AquaG
-@dirrm %%DATADIR%%/pix/Mac
-@dirrm %%DATADIR%%/pix/OSX
-@dirrm %%DATADIR%%/pix/arctic
-@dirrm %%DATADIR%%/pix/bluemarble
-@dirrm %%DATADIR%%/pix/deepblue
-@dirrm %%DATADIR%%/pix/love
-@dirrm %%DATADIR%%/pix/steelblue
-@dirrm %%DATADIR%%/pix/woody
-@dirrm %%DATADIR%%/pix
-@dirrm %%DATADIR%%

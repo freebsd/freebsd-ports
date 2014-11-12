@@ -5,4 +5,3 @@ lib/gtk-%%GTKVER%%/immodules/im-hangul.so
 %%GTK3%%%%NLS%%share/locale/ko/LC_MESSAGES/im-hangul-3.0.mo
 %%GTK3%%@exec %D/bin/gtk-query-immodules-3.0 --update-cache
 %%GTK3%%@unexec %D/bin/gtk-query-immodules-3.0 --update-cache
-@dirrmtry lib/gtk-%%GTKVER%%/immodules

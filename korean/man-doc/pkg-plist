@@ -1677,14 +1677,3 @@ share/man/ko_KR.eucKR/man9/vref.9.gz
 share/man/ko_KR.eucKR/man9/vrele.9.gz
 share/man/ko_KR.eucKR/man9/vslock.9.gz
 share/man/ko_KR.eucKR/man9/zone.9.gz
-@dirrm share/man/ko_KR.eucKR/man9
-@dirrm share/man/ko_KR.eucKR/man8
-@dirrm share/man/ko_KR.eucKR/man7
-@dirrm share/man/ko_KR.eucKR/man6
-@dirrm share/man/ko_KR.eucKR/man5
-@dirrm share/man/ko_KR.eucKR/man4
-@dirrm share/man/ko_KR.eucKR/man3
-@dirrm share/man/ko_KR.eucKR/man2
-@dirrm share/man/ko_KR.eucKR/man1
-@dirrm share/man/ko_KR.eucKR
-@dirrm share/man

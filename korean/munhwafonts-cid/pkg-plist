@@ -6,5 +6,3 @@
 %%FONTSDIR%%/MunhwaGothic-Bold-KSC-EUC-H.gsf
 %%FONTSDIR%%/MunhwaGothic-Regular
 %%FONTSDIR%%/MunhwaGothic-Regular-KSC-EUC-H.gsf
-@dirrmtry %%FONTSDIR%%
-@dirrmtry share/fonts

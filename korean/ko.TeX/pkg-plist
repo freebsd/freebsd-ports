@@ -119,25 +119,4 @@ share/texmf-local/tex/latex/kotex/utf/tex4ht/kosections-utf.4ht
 share/texmf-local/tex/plain/kotex/hangulcweb.tex
 share/texmf-local/tex/plain/kotex/kotexplain.tex
 @exec %%TEXHASH%%
-@dirrm share/texmf-local/tex/plain/kotex
-@dirrm share/texmf-local/tex/latex/kotex/utf/tex4ht
-@dirrm share/texmf-local/tex/latex/kotex/utf/oblivoir/memhangul
-@dirrm share/texmf-local/tex/latex/kotex/utf/oblivoir
-@dirrm share/texmf-local/tex/latex/kotex/utf/midkor
-@dirrm share/texmf-local/tex/latex/kotex/utf/contrib
-@dirrmtry share/texmf-local/tex/latex/kotex/utf
-@dirrm share/texmf-local/tex/latex/kotex/euc/contrib/third-party
-@dirrm share/texmf-local/tex/latex/kotex/euc/contrib
-@dirrmtry share/texmf-local/tex/latex/kotex/euc
-@dirrmtry share/texmf-local/tex/latex/kotex
-@dirrm share/texmf-local/scripts/kotex/perl
-@dirrm share/texmf-local/scripts/kotex
-@dirrm share/texmf-local/makeindex/kotex/utf
-@dirrm share/texmf-local/makeindex/kotex/euc
-@dirrm share/texmf-local/makeindex/kotex
-@dirrm share/texmf-local/doc/latex/kotex/fig
-@dirrm share/texmf-local/doc/latex/kotex
-@dirrm share/texmf-local/bibtex/bst/kotex/euc
-@dirrm share/texmf-local/bibtex/bst/kotex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec %%TEXHASH%%
