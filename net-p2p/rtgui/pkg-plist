@@ -42,6 +42,3 @@
 %%WWWDIR%%/submodal/subModal.css
 %%WWWDIR%%/submodal/subModal.js
 %%WWWDIR%%/view.php
-@dirrm %%WWWDIR%%/submodal
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%

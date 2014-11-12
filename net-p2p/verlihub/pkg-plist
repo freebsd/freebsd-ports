@@ -113,7 +113,3 @@ lib/libvhapi.so.0.0.0
 %%DATADIR%%/sql/default_file_trigger.sql
 %%DATADIR%%/sql/default_pi_plug.sql
 %%DATADIR%%/sql/default_reglist.sql
-@dirrm include/verlihub
-@dirrm %%DATADIR%%/sql
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%

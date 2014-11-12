@@ -252,33 +252,3 @@
 %%MONOLITHIC%%share/pixmaps/amule.xpm
 %%AMULEGUI%%share/pixmaps/amulegui.xpm
 %%WXCAS%%share/pixmaps/wxcas.xpm
-%%XAS%%@dirrmtry lib/xchat/plugins
-%%XAS%%@dirrmtry lib/xchat
-@dirrmtry man/de/man1
-@dirrmtry man/de
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/hu/man1
-@dirrmtry man/hu
-@dirrmtry man/it/man1
-@dirrmtry man/it
-@dirrmtry man/ru/man1
-@dirrmtry man/ru
-@dirrmtry man/tr/man1
-@dirrmtry man/tr
-@dirrmtry man/zh_TW/man1
-@dirrmtry man/zh_TW
-@dirrmtry %%DATADIR%%/skins
-%%WEBSERVER%%@dirrmtry %%DATADIR%%/webserver/default
-%%WEBSERVER%%@dirrmtry %%DATADIR%%/webserver
-@dirrmtry %%DATADIR%%
-%%CAS%%@dirrmtry share/cas
-%%NLS%%@dirrmtry share/locale/et_EE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/et_EE
-%%NLS%%@dirrmtry share/locale/it_CH/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_CH
-%%NLS%%@dirrmtry share/locale/ko_KR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ko_KR
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

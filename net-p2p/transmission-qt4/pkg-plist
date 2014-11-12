@@ -6,4 +6,3 @@ share/applications/transmission-qt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README-qt4
 share/pixmaps/transmission-qt.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

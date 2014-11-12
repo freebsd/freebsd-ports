@@ -352,8 +352,3 @@ share/icons/hicolor/24x24/apps/gnunet-fs-gtk.png
 share/icons/hicolor/32x32/apps/gnunet-fs-gtk.png
 share/icons/hicolor/scalable/apps/gnunet-fs-gtk.svg
 share/icons/hicolor/scalable/status/gnunet-fs-gtk-ns-association.svg
-@dirrm %%DATADIR%%/flags
-@dirrm %%DATADIR%%/config.d
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/gnunet-gtk

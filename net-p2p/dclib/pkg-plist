@@ -61,8 +61,5 @@ include/dclib/dcos.h
 lib/libdc.so
 lib/libdc.so.5
 lib/libdc.so.5.0.0
-@dirrmtry lib/dclib/plugin
-@dirrmtry lib/dclib
 libdata/pkgconfig/dclib.pc
-@dirrm include/dclib/core
-@dirrm include/dclib
+@dir lib/dclib/plugin

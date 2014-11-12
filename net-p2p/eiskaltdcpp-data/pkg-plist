@@ -636,14 +636,3 @@ share/icons/hicolor/32x32/apps/eiskaltdcpp.png
 share/icons/hicolor/48x48/apps/eiskaltdcpp.png
 share/icons/hicolor/64x64/apps/eiskaltdcpp.png
 share/pixmaps/eiskaltdcpp.png
-%%EMOTICONS%%@dirrm %%DATADIR%%/emoticons/default
-%%EMOTICONS%%@dirrm %%DATADIR%%/emoticons/flylink
-%%EMOTICONS%%@dirrm %%DATADIR%%/emoticons/kde4
-%%EMOTICONS%%@dirrm %%DATADIR%%/emoticons/nerdcore
-%%EMOTICONS%%@dirrm %%DATADIR%%/emoticons/peerweb
-%%EMOTICONS%%@dirrm %%DATADIR%%/emoticons/radox
-%%EMOTICONS%%@dirrm %%DATADIR%%/emoticons
-%%EXAMPLES%%@dirrm %%DATADIR%%/examples
-%%LUASCRIPTS%%@dirrm %%DATADIR%%/luascripts
-%%SOUNDS%%@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%

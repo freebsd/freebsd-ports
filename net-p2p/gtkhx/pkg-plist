@@ -11,5 +11,3 @@ man/man1/gtkhx.1.gz
 %%DATADIR%%/sounds/part.aiff
 %%DATADIR%%/icons.rsrc
 %%NLS%%share/locale/fr/LC_MESSAGES/gtkhx.mo
-@dirrm %%DATADIR%%/sounds
-@dirrm	%%DATADIR%%

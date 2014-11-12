@@ -15,5 +15,3 @@ share/jigdo/debian-mirrors.jigdo
 %%GUI%%share/jigdo/pixmaps/restart.png
 %%GUI%%share/jigdo/pixmaps/start.png
 %%GUI%%share/jigdo/pixmaps/stop.png
-%%GUI%%@dirrm share/jigdo/pixmaps
-@dirrm share/jigdo

@@ -137,7 +137,3 @@ lib/libtorrent-rasterbar.so
 lib/libtorrent-rasterbar.so.%%SHLIB_VER%%
 lib/libtorrent-rasterbar.so.%%SHLIB_VER%%.0.0
 libdata/pkgconfig/libtorrent-rasterbar.pc
-@dirrm include/libtorrent/aux_
-@dirrm include/libtorrent/extensions
-@dirrm include/libtorrent/kademlia
-@dirrm include/libtorrent

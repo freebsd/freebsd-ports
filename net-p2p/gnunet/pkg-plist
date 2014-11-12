@@ -445,11 +445,3 @@ man/man5/gnunet.conf.5.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/gnunet.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gnunet.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnunet.mo
-@dirrm %%DATADIR%%/hellos
-@dirrm %%DATADIR%%/config.d
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/gnunet/libexec
-@dirrm lib/gnunet
-@dirrm include/gnunet
