@@ -1,10 +1,5 @@
 share/dict/wdic-fpw/catalogs
 share/dict/wdic-fpw/wdic/data/honmon
 share/dict/wdic-fpw/wdic/gaiji/gai16h
-@dirrm share/dict/wdic-fpw/wdic/data
-@dirrm share/dict/wdic-fpw/wdic/gaiji
-@dirrm share/dict/wdic-fpw/wdic/
-@dirrm share/dict/wdic-fpw
 %%PORTDOCS%%%%DOCSDIR%%/readme.1st
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

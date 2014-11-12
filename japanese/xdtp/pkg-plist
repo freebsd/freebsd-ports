@@ -59,12 +59,3 @@ libdata/pkgconfig/libxdtp.pc
 %%DATADIR%%/toXHTML/DocumentModule.xsl
 %%DATADIR%%/toXHTML/GLSD.xsl
 %%DATADIR%%/toXHTML/GLSDocumentModule.xsl
-@dirrm %%DATADIR%%/toXHTML
-@dirrm %%DATADIR%%/toTEXT
-@dirrm %%DATADIR%%/toHTML
-@dirrm %%DATADIR%%/emacs
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%INCLUDE%%@dirrm include/xdtp/modules/imports
-%%INCLUDE%%@dirrm include/xdtp/modules
-%%INCLUDE%%@dirrm include/xdtp

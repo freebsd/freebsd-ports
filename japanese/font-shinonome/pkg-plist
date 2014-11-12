@@ -63,7 +63,6 @@
 %%DATADIR%%/shnmk16minbi.pcf.gz
 %%DATADIR%%/shnmk16mini.pcf.gz
 %%DATADIR%%/fonts.alias
-@dirrm %%DATADIR%%
 %%LOCAL_FONTSDIR%%/shinonome/shnm6x12a.pcf.gz
 %%LOCAL_FONTSDIR%%/shinonome/shnm6x12ab.pcf.gz
 %%LOCAL_FONTSDIR%%/shinonome/shnm6x12abi.pcf.gz
@@ -128,8 +127,6 @@
 %%LOCAL_FONTSDIR%%/shinonome/shnmk16minb.pcf.gz
 %%LOCAL_FONTSDIR%%/shinonome/shnmk16minbi.pcf.gz
 %%LOCAL_FONTSDIR%%/shinonome/shnmk16mini.pcf.gz
-@dirrm %%LOCAL_FONTSDIR%%/shinonome
-@dirrmtry %%LOCAL_FONTSDIR%%
 %%X_FONTSDIR%%/misc/shnm6x12a.pcf.gz
 %%X_FONTSDIR%%/misc/shnm6x12ab.pcf.gz
 %%X_FONTSDIR%%/misc/shnm6x12abi.pcf.gz
@@ -194,4 +191,3 @@
 %%X_FONTSDIR%%/misc/shnmk16minb.pcf.gz
 %%X_FONTSDIR%%/misc/shnmk16minbi.pcf.gz
 %%X_FONTSDIR%%/misc/shnmk16mini.pcf.gz
-@dirrmtry %%X_FONTSDIR%%/misc

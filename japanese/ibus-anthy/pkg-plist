@@ -46,8 +46,3 @@ share/ibus/component/anthy.xml
 share/locale/fr/LC_MESSAGES/ibus-anthy.mo
 share/locale/ja/LC_MESSAGES/ibus-anthy.mo
 share/locale/zh_CN/LC_MESSAGES/ibus-anthy.mo
-@dirrmtry %%DATADIR%%/dicts
-@dirrmtry %%DATADIR%%/engine
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%/setup
-@dirrmtry %%DATADIR%%

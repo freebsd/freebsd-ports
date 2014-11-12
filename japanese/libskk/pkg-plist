@@ -81,35 +81,3 @@ share/gir-1.0/Skk-1.0.gir
 %%NLS%%share/locale/ja/LC_MESSAGES/libskk.mo
 share/vala/vapi/skk-1.0.deps
 share/vala/vapi/skk-1.0.vapi
-@dirrm %%DATADIR%%/rules/tutcode/rom-kana
-@dirrm %%DATADIR%%/rules/tutcode/keymap
-@dirrm %%DATADIR%%/rules/tutcode-touch16x/rom-kana
-@dirrm %%DATADIR%%/rules/tutcode-touch16x/keymap
-@dirrm %%DATADIR%%/rules/tutcode-touch16x
-@dirrm %%DATADIR%%/rules/tutcode
-@dirrm %%DATADIR%%/rules/trycode/rom-kana
-@dirrm %%DATADIR%%/rules/trycode/keymap
-@dirrm %%DATADIR%%/rules/trycode
-@dirrm %%DATADIR%%/rules/tcode/rom-kana
-@dirrm %%DATADIR%%/rules/tcode/keymap
-@dirrm %%DATADIR%%/rules/tcode
-@dirrm %%DATADIR%%/rules/nicola/rom-kana
-@dirrm %%DATADIR%%/rules/nicola/keymap
-@dirrm %%DATADIR%%/rules/nicola
-@dirrm %%DATADIR%%/rules/kzik/rom-kana
-@dirrm %%DATADIR%%/rules/kzik/keymap
-@dirrm %%DATADIR%%/rules/kzik
-@dirrm %%DATADIR%%/rules/default/rom-kana
-@dirrm %%DATADIR%%/rules/default/keymap
-@dirrm %%DATADIR%%/rules/default
-@dirrm %%DATADIR%%/rules/azik/rom-kana
-@dirrm %%DATADIR%%/rules/azik/keymap
-@dirrm %%DATADIR%%/rules/azik
-@dirrm %%DATADIR%%/rules/act/rom-kana
-@dirrm %%DATADIR%%/rules/act/keymap
-@dirrm %%DATADIR%%/rules/act
-@dirrm %%DATADIR%%/rules
-@dirrm %%DATADIR%%
-@dirrmtry share/gir-1.0
-@dirrmtry lib/girepository-1.0
-@dirrm include/libskk

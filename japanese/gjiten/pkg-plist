@@ -19,11 +19,3 @@ share/pixmaps/jiten.png
 share/pixmaps/kanjidic.png
 share/pixmaps/kanjipad.png
 share/pixmaps/left_ptr_question.png
-@dirrm share/pixmaps/gjiten
-@dirrm share/omf/gjiten
-@dirrm share/gjiten/dics
-@dirrm share/gjiten
-@dirrmtry share/locale/de_CH/LC_MESSAGES
-@dirrmtry share/locale/de_CH
-@dirrmtry share/gnome/help/gjiten/C
-@dirrmtry share/gnome/help/gjiten

@@ -1,8 +1,4 @@
 share/dict/devil-fpw/devil/data/honmon
 share/dict/devil-fpw/catalogs
-@dirrm share/dict/devil-fpw/devil/data
-@dirrm share/dict/devil-fpw/devil
-@dirrm share/dict/devil-fpw
 %%PORTDOCS%%%%DOCSDIR%%/readme.pkg
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

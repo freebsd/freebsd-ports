@@ -53,9 +53,3 @@ bin/xpdfj.pl
 %%SITE_PERL%%/PDFJ/U2C.pm
 %%SITE_PERL%%/PDFJ/Unicode.pm
 %%SITE_PERL%%/XPDFJ.pm
-@dirrm %%SITE_PERL%%/PDFJ
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFJ
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/macro
-@dirrm %%DATADIR%%

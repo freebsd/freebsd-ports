@@ -14,5 +14,3 @@ share/netype/pixmaps/wall.xpm
 share/netype/pixmaps/wall2.xpm
 share/netype/pixmaps/wincat.xpm
 share/netype/pixmaps/wincat2.xpm
-@dirrm share/netype/pixmaps
-@dirrm share/netype

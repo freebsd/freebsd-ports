@@ -15,8 +15,4 @@ man/ja/man1/sj3.1.gz
 man/ja/man1/sj3dic.1.gz
 man/ja/man1/sj3mkdic.1.gz
 man/ja/man1/sj3serv.1.gz
-@exec install -m 0775 -o %%USERS%% -g %%GROUPS%% -d %D/lib/sj3/dict/user
-@dirrm lib/sj3/dict/user
-@dirrm lib/sj3/dict
-@dirrm lib/sj3
-@dirrm etc/sj3
+@dir(%%USERS%%,%%GROUPS%%,0775) lib/sj3/dict/user

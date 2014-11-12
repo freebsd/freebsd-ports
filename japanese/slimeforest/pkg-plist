@@ -11,7 +11,3 @@ bin/slimeforest.sh
 %%DATADIR%%/maps/forest.map
 %%DATADIR%%/playerdata/data.ver
 %%DATADIR%%/sfd.wad
-@dirrmtry %%DATADIR%%/images
-@dirrmtry %%DATADIR%%/maps
-@dirrmtry %%DATADIR%%/playerdata
-@dirrmtry %%DATADIR%%

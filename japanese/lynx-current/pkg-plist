@@ -2,13 +2,10 @@ bin/lynx
 @sample etc/lynx.cfg.sample
 %%COLOR_STYLE%%@sample etc/lynx.lss.sample
 man/man1/lynx.1.gz
-@exec mkdir -p %D/share/lynx_help
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER
-%%PORTDOCS%%@exec ln -sf %D/%F %D/share/lynx_help
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER.asc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%@exec ln -sf %D/%F %D/share/lynx_help
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.asc
 %%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -118,9 +115,3 @@ share/lynx_help/keystrokes/xterm_help.html
 share/lynx_help/lynx-dev.html
 share/lynx_help/lynx_help_main.html
 share/lynx_help/lynx_url_support.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/test
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/lynx_help/keystrokes
-@dirrm share/lynx_help

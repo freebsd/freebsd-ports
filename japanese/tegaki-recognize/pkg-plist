@@ -4,4 +4,3 @@ bin/tegaki-recognize
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/pixmaps/tegaki-recognize.svg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

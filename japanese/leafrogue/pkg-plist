@@ -5,5 +5,3 @@ share/rogue_s/leaf.msg
 %%PORTDOCS%%%%DOCSDIR%%/lf_rogue.txt
 %%PORTDOCS%%%%DOCSDIR%%/guide.tex
 %%PORTDOCS%%%%DOCSDIR%%/guide.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/rogue_s

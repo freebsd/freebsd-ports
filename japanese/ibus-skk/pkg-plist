@@ -4,6 +4,3 @@ libexec/ibus-setup-skk
 %%DATADIR%%/setup/ibus-skk-preferences.ui
 %%DATADIR%%/icons/ibus-skk.svg
 share/ibus/component/skk.xml
-@dirrm %%DATADIR%%/setup
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

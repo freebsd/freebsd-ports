@@ -15,7 +15,3 @@ lib/libmigemo.so
 %%DATADIR%%/utf-8/hira2kata.dat
 %%DATADIR%%/utf-8/roma2hira.dat
 %%DATADIR%%/utf-8/zen2han.dat
-@dirrmtry %%DATADIR%%/cp932
-@dirrmtry %%DATADIR%%/euc-jp
-@dirrmtry %%DATADIR%%/utf-8
-@dirrmtry %%DATADIR%%

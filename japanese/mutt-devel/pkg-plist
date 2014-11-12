@@ -121,6 +121,3 @@ man/man5/muttrc.5.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mutt.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples/iconv
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

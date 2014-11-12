@@ -1,10 +1,7 @@
 %%DATADIR%%/ipaexg.otf
 %%DATADIR%%/ipaexm.otf
-@dirrm %%DATADIR%%
 %%LOCAL_FONTSDIR%%/OTF/ipaexg.otf
 %%LOCAL_FONTSDIR%%/OTF/ipaexm.otf
-@dirrmtry %%LOCAL_FONTSDIR%%/OTF
-@dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-ipaex.conf
 etc/fonts/conf.avail/62-fonts-ipaex.conf
 etc/fonts/conf.d/20-unhint-ipaex.conf
@@ -14,5 +11,4 @@ etc/fonts/conf.d/62-fonts-ipaex.conf
 @exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/OTF || true
 @unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/OTF || true
 @unexec rm -f %D/%%X_FONTSDIR%%/OTF/fonts.cache-1
-@dirrmtry %%X_FONTSDIR%%/OTF
 @unexec if [ -d %D/%%X_FONTSDIR%%/OTF ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/OTF || true; fi

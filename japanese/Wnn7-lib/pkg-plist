@@ -17,8 +17,6 @@ include/wnn7/wnn/rk_spclval.h
 include/wnn7/wnn/wnn_os.h
 include/wnn7/wnn/wnn_string.h
 include/wnn7/wnn/wnnerror.h
-@dirrm include/wnn7/wnn
-@dirrm include/wnn7
 lib/libwnn7.a
 lib/libwnn7.so
 lib/libwnn7.so.1

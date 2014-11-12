@@ -16,5 +16,3 @@ share/xtr/mode.xtr
 share/xtr/pcpr.xtr
 share/xtr/prev.xtr
 man/man1/xtr.1.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/xtr

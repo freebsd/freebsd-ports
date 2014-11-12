@@ -238,10 +238,4 @@ share/asterisk/sounds/ja/wakeup-call.gsm
 share/asterisk/sounds/ja/wakeup-menu.gsm
 share/asterisk/sounds/ja/wakeup-menu2.gsm
 share/asterisk/sounds/ja/wakeup.gsm
-@dirrm share/asterisk/sounds/ja/digits
-@dirrm share/asterisk/sounds/ja
-@dirrmtry share/asterisk/sounds
-@dirrmtry share/asterisk
 %%PORTDOCS%%%%DOCSDIR%%/ja/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

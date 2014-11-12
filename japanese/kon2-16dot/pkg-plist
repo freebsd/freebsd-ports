@@ -1,16 +1,8 @@
 bin/fld
-@mode 4555
-bin/kon
-@mode
+@(,,4555) bin/kon
 etc/kon.cfg
-@owner bin
-@group bin
-share/fonts/bdf/7x14rk.bdf.gz
-share/fonts/bdf/k14.bdf.gz
-share/fonts/bdf/8x16rk.bdf.gz
-share/fonts/bdf/jiskan16.bdf.gz
-@owner
-@group
+@(bin,bin,) share/fonts/bdf/7x14rk.bdf.gz
+@(bin,bin,) share/fonts/bdf/k14.bdf.gz
+@(bin,bin,) share/fonts/bdf/8x16rk.bdf.gz
+@(bin,bin,) share/fonts/bdf/jiskan16.bdf.gz
 man/ja/man1/kon.1.gz
-@dirrm share/fonts/bdf
-@dirrmtry share/fonts

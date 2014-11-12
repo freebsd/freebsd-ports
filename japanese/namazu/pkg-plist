@@ -36,11 +36,4 @@ namazu/lib/NMZ.foot.ja
 namazu/lib/NMZ.head.en
 namazu/lib/NMZ.head.ja
 namazu/lib/namazu.conf-dist
-@dirrm namazu/bin
-@dirrm namazu/contrib
-@dirrm namazu/doc/en
-@dirrm namazu/doc/ja
-@dirrm namazu/doc
-@dirrm namazu/index
-@dirrm namazu/lib
-@dirrm namazu
+@dir namazu/index

@@ -25,5 +25,3 @@
 %%RUBY_MODDOCDIR%%/uguide23.html
 %%RUBY_MODDOCDIR%%/uguide24.html
 %%RUBY_MODDOCDIR%%/uguide25.html
-@dirrm %%RUBY_MODDOCDIR%%
-@dirrmtry %%RUBY_DOCDIR%%

@@ -8,7 +8,6 @@ include/wnn/msg.h
 include/wnn/rk_spclval.h
 include/wnn/wnn_config.h
 include/wnn/wnnerror.h
-@dirrm include/wnn
 lib/wnn/ja_JP/rk/1B_TOUPPER
 lib/wnn/ja_JP/rk/1B_ZENHIRA
 lib/wnn/ja_JP/rk/1B_ZENKATA
@@ -82,12 +81,6 @@ lib/libwnn.la
 lib/libwnn.so
 lib/libwnn.so.0
 lib/libwnn.so.0.0.0
-@dirrm lib/wnn/ja_JP/rk
-@dirrm lib/wnn/ja_JP/rk.vi
-@dirrmtry lib/wnn/ja_JP
-@dirrm lib/wnn/lt_LN/rk
-@dirrm lib/wnn/lt_LN
-@dirrmtry lib/wnn
 man/ja/man3/jl_bun_suu.3.gz
 man/ja/man3/jl_c_zenkouho.3.gz
 man/ja/man3/jl_close.3.gz

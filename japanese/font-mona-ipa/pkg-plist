@@ -34,28 +34,17 @@
 %%DATADIR%%/fonts/Makefile.am
 %%DATADIR%%/fonts/COPYING.font.ja
 %%DATADIR%%/fonts/doc/sazanami/doc/shinonome/LICENSE
-@dirrm %%DATADIR%%/fonts/doc/sazanami/doc/shinonome
 %%DATADIR%%/fonts/doc/sazanami/doc/oradano/README.txt
-@dirrm %%DATADIR%%/fonts/doc/sazanami/doc/oradano
 %%DATADIR%%/fonts/doc/sazanami/doc/mplus/LICENSE_J
-@dirrm %%DATADIR%%/fonts/doc/sazanami/doc/mplus
 %%DATADIR%%/fonts/doc/sazanami/doc/misaki/misakib8.txt
-@dirrm %%DATADIR%%/fonts/doc/sazanami/doc/misaki
 %%DATADIR%%/fonts/doc/sazanami/doc/kappa/README
-@dirrm %%DATADIR%%/fonts/doc/sazanami/doc/kappa
 %%DATADIR%%/fonts/doc/sazanami/doc/ayu/README.txt
-@dirrm %%DATADIR%%/fonts/doc/sazanami/doc/ayu
-@dirrm %%DATADIR%%/fonts/doc/sazanami/doc
 %%DATADIR%%/fonts/doc/sazanami/README
-@dirrm %%DATADIR%%/fonts/doc/sazanami
 %%DATADIR%%/fonts/doc/mplus/README_J
 %%DATADIR%%/fonts/doc/mplus/README_E
 %%DATADIR%%/fonts/doc/mplus/LICENSE_J
 %%DATADIR%%/fonts/doc/mplus/LICENSE_E
-@dirrm %%DATADIR%%/fonts/doc/mplus
 %%DATADIR%%/fonts/doc/mona/README.euc
-@dirrm %%DATADIR%%/fonts/doc/mona
-@dirrm %%DATADIR%%/fonts/doc
 %%DATADIR%%/fonts/README_ipamona.txt
 %%DATADIR%%/doc/ProjectOverview.pdf
 %%DATADIR%%/doc/Makefile.in
@@ -78,20 +67,11 @@
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/COPYING
 %%DATADIR%%/AUTHORS
-@dirrm %%DATADIR%%/ppd
-@dirrm %%DATADIR%%/opvp
-@dirrm %%DATADIR%%/libopvp/doc
-@dirrm %%DATADIR%%/libopvp
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%
 %%LOCAL_FONTSDIR%%/TTF/ipag-mona.ttf
 %%LOCAL_FONTSDIR%%/TTF/ipagp-mona.ttf
 %%LOCAL_FONTSDIR%%/TTF/ipagui-mona.ttf
 %%LOCAL_FONTSDIR%%/TTF/ipam-mona.ttf
 %%LOCAL_FONTSDIR%%/TTF/ipamp-mona.ttf
-@dirrmtry %%LOCAL_FONTSDIR%%/TTF
-@dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-mona-ipa.conf
 etc/fonts/conf.avail/62-fonts-mona-ipa.conf
 etc/fonts/conf.d/20-unhint-mona-ipa.conf
@@ -104,5 +84,4 @@ etc/fonts/conf.d/62-fonts-mona-ipa.conf
 @exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
-@dirrmtry %%X_FONTSDIR%%/TTF
 @unexec if [ -d %D/%%X_FONTSDIR%%/TTF ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TTF || true; fi

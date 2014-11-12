@@ -17,8 +17,3 @@ bin/ebview
 share/applications/ebview.desktop
 share/locale/ja/LC_MESSAGES/ebview.mo
 share/pixmaps/ebview.xpm
-@dirrm %%DATADIR%%/help/ja
-@dirrm %%DATADIR%%/help/en
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

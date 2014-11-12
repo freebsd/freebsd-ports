@@ -10,4 +10,3 @@ share/chasen/dic/ipadic/ctypes.cha
 share/chasen/dic/ipadic/grammar.cha
 share/chasen/dic/ipadic/matrix.cha
 share/chasen/dic/ipadic/table.cha
-@dirrm share/chasen/dic/ipadic

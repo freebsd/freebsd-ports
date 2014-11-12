@@ -12,7 +12,6 @@ share/slrn/tin-group.sl
 share/slrn/ttyprint.sl
 share/slrn/util.sl
 share/slrn/xcomment.sl
-@dirrm share/slrn
 share/doc/slrn/ja/BUG.euc
 share/doc/slrn/ja/README.euc
 share/doc/slrn/ja/README.macros.euc
@@ -25,7 +24,6 @@ share/doc/slrn/ja/jslrn.rc
 share/doc/slrn/ja/kon.terminfo
 share/doc/slrn/ja/score.euc
 share/doc/slrn/ja/slrn.1
-@dirrm share/doc/slrn/ja
 share/doc/slrn/slrnpull/FAQ
 share/doc/slrn/slrnpull/QUICK_INSTALL
 share/doc/slrn/slrnpull/README
@@ -34,7 +32,6 @@ share/doc/slrn/slrnpull/setgid.txt
 share/doc/slrn/slrnpull/slrn.rc
 share/doc/slrn/slrnpull/slrnpull.conf
 share/doc/slrn/slrnpull/slrnpull.sh
-@dirrm share/doc/slrn/slrnpull
 share/doc/slrn/COPYING
 share/doc/slrn/COPYRIGHT
 share/doc/slrn/FAQ
@@ -54,4 +51,3 @@ share/doc/slrn/score.txt
 share/doc/slrn/slrn-doc.html
 share/doc/slrn/slrn.rc
 share/doc/slrn/slrnfuns.txt
-@dirrm share/doc/slrn

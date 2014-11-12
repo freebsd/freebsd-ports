@@ -1,3 +1,2 @@
 bin/jyuroku
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
