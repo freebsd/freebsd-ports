@@ -63,8 +63,3 @@ lib/libtorrent.so
 lib/libtorrent.so.18
 lib/libtorrent.so.18.0.0
 libdata/pkgconfig/libtorrent.pc
-@dirrmtry include/torrent/utils
-@dirrmtry include/torrent/peer
-@dirrmtry include/torrent/download
-@dirrmtry include/torrent/data
-@dirrmtry include/torrent

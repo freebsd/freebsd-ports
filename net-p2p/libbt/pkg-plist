@@ -15,4 +15,3 @@ include/libbt/stream.h
 include/libbt/types.h
 include/libbt/util.h
 lib/libbt.a
-@dirrm include/libbt

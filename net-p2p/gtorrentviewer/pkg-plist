@@ -16,5 +16,3 @@ share/GTorrentViewer/pixmaps/warning.png
 share/applications/gtorrentviewer.desktop
 share/pixmaps/gtorrentviewer.png
 share/pixmaps/gtorrentviewer.xpm
-@dirrm share/GTorrentViewer/pixmaps
-@dirrm share/GTorrentViewer

@@ -1,8 +1,8 @@
 bin/pybitmessage
+man/man1/pybitmessage.1.gz
 share/applications/pybitmessage.desktop
 share/icons/hicolor/24x24/apps/pybitmessage.png
 share/icons/hicolor/scalable/apps/pybitmessage.svg
-share/man/man1/pybitmessage.1.gz
 share/pybitmessage/addresses.py
 share/pybitmessage/addresses.pyc
 share/pybitmessage/addresses.pyo
@@ -241,18 +241,3 @@ share/pybitmessage/translations/bitmessage_ru.ts
 share/pybitmessage/translations/bitmessage_zh_cn.pro
 share/pybitmessage/translations/bitmessage_zh_cn.qm
 share/pybitmessage/translations/bitmessage_zh_cn.ts
-@dir share/icons/hicolor/24x24/apps
-@dir share/icons/hicolor/24x24
-@dir share/icons/hicolor/scalable/apps
-@dir share/icons/hicolor/scalable
-@dir share/icons/hicolor
-@dir share/icons
-@dir share/man/man1
-@dir share/man
-@dir share/pybitmessage/bitmessagecurses
-@dir share/pybitmessage/bitmessageqt
-@dir share/pybitmessage/images
-@dir share/pybitmessage/pyelliptic
-@dir share/pybitmessage/socks
-@dir share/pybitmessage/translations
-@dir share/pybitmessage

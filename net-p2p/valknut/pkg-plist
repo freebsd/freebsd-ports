@@ -129,31 +129,4 @@ share/icons/hicolor/32x32/apps/valknut.png
 share/icons/hicolor/48x48/apps/valknut.png
 share/icons/hicolor/64x64/apps/valknut.png
 share/pixmaps/valknut.png
-@dirrm %%DATADIR%%/translation
-@dirrm %%DATADIR%%/sounds/default
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/icons/user/default
-@dirrm %%DATADIR%%/icons/user
-@dirrm %%DATADIR%%/icons/emot/simple
-@dirrm %%DATADIR%%/icons/emot/default
-@dirrm %%DATADIR%%/icons/emot
-@dirrm %%DATADIR%%/icons/appl/default
-@dirrm %%DATADIR%%/icons/appl
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+@dir %%DATADIR%%/sounds/default

@@ -22,6 +22,3 @@ lib/ocaml/hlfreenet.mli
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/liber_mimetypes
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/ocaml

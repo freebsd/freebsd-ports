@@ -276,27 +276,3 @@ share/locale/ug/LC_MESSAGES/ktorrent.mo
 share/locale/uk/LC_MESSAGES/ktorrent.mo
 share/locale/zh_CN/LC_MESSAGES/ktorrent.mo
 share/locale/zh_TW/LC_MESSAGES/ktorrent.mo
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrm share/doc/HTML/en/ktorrent
-@dirrm share/apps/ktorrent/www/mobile
-@dirrm share/apps/ktorrent/www/default
-@dirrm share/apps/ktorrent/www/common
-@dirrm share/apps/ktorrent/www/coldmilk
-@dirrm share/apps/ktorrent/www
-@dirrm share/apps/ktorrent/search/home
-@dirrm share/apps/ktorrent/search
-@dirrm share/apps/ktorrent/scripts/tracker_groups
-@dirrm share/apps/ktorrent/scripts/email_notifications
-@dirrm share/apps/ktorrent/scripts/auto_resume
-@dirrm share/apps/ktorrent/scripts/auto_remove
-@dirrm share/apps/ktorrent/scripts
-@dirrm share/apps/ktorrent/opensearch/thepiratebay
-@dirrm share/apps/ktorrent/opensearch/mininova
-@dirrm share/apps/ktorrent/opensearch/legittorrents
-@dirrm share/apps/ktorrent/opensearch/ktorrents
-@dirrm share/apps/ktorrent/opensearch/btjunkie
-@dirrm share/apps/ktorrent/opensearch/bittorrent
-@dirrm share/apps/ktorrent/opensearch/bitenova
-@dirrm share/apps/ktorrent/opensearch
-@dirrm share/apps/ktorrent

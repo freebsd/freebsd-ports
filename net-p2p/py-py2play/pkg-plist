@@ -21,6 +21,3 @@
 %%PYTHON_SITELIBDIR%%/py2play/player.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/startdemo
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/py2play

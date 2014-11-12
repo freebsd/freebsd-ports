@@ -86,14 +86,3 @@ share/applications/gtk-gnutella.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
 share/pixmaps/gtk-gnutella.png
 share/pixmaps/gtk-gnutella.svg
-%%GUI%%@dirrmtry share/icons/hicolor/512x512/apps
-%%GUI%%@dirrmtry share/icons/hicolor/512x512
-@dirrm %%DATADIR%%/tr
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/ja
-@dirrm %%DATADIR%%/fr
-@dirrm %%DATADIR%%/en
-@dirrm %%DATADIR%%/el
-@dirrm %%DATADIR%%/%%ARCH%%-%%OPSYS%%
-@dirrm %%DATADIR%%
-@dirrmtry share/appdata

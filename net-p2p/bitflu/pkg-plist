@@ -8,7 +8,3 @@ bin/bitflu
 %%DATADIR%%/plugins/Bitflu/30_SourcesBitTorrentKademlia.pm
 %%DATADIR%%/plugins/Bitflu/99_Cron.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bitflu.config
-@dirrmtry %%DATADIR%%/plugins/Bitflu
-@dirrmtry %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

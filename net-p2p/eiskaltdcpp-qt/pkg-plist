@@ -274,25 +274,3 @@ share/applications/eiskaltdcpp-qt.desktop
 %%DATADIR%%/qt/ts/sk.qm
 %%DATADIR%%/qt/ts/sr@latin.qm
 %%DATADIR%%/qt/ts/uk.qm
-%%QTSCRIPT%%@dirrm %%DATADIR%%/qt/qtscripts/amarok_nowplay
-%%QTSCRIPT%%@dirrm %%DATADIR%%/qt/qtscripts/clementine_nowplay
-%%QTSCRIPT%%@dirrm %%DATADIR%%/qt/qtscripts/gnome
-%%QTSCRIPT%%@dirrm %%DATADIR%%/qt/qtscripts/logmanager
-%%QTSCRIPT%%@dirrmtry %%DATADIR%%/qt/qtscripts/qmmp_nowplaying/qmmp_langs
-%%QTSCRIPT%%@dirrmtry %%DATADIR%%/qt/qtscripts/qmmp_nowplaying
-%%QTSCRIPT%%@dirrm %%DATADIR%%/qt/qtscripts/tic-tac-toe/content/pics
-%%QTSCRIPT%%@dirrm %%DATADIR%%/qt/qtscripts/tic-tac-toe/content
-%%QTSCRIPT%%@dirrm %%DATADIR%%/qt/qtscripts/tic-tac-toe
-%%QTSCRIPT%%@dirrm %%DATADIR%%/qt/qtscripts/konsole
-%%QTSCRIPT%%@dirrm %%DATADIR%%/qt/qtscripts
-@dirrm %%DATADIR%%/qt/icons/appl/default
-@dirrm %%DATADIR%%/qt/icons/appl/faenza
-@dirrm %%DATADIR%%/qt/icons/appl/monochrome
-@dirrm %%DATADIR%%/qt/icons/appl
-@dirrm %%DATADIR%%/qt/icons/user/default
-@dirrm %%DATADIR%%/qt/icons/user/valknut
-@dirrm %%DATADIR%%/qt/icons/user
-@dirrm %%DATADIR%%/qt/icons
-@dirrm %%DATADIR%%/qt/ts
-@dirrm %%DATADIR%%/qt/resources
-@dirrm %%DATADIR%%/qt

@@ -1,5 +1,4 @@
 bin/bnbt
 %%ETCDIR%%/.keep
 /var/log/bnbt/.keep
-@dirrmtry %%ETCDIR%%
-@dirrmtry /var/log/bnbt
+@dir /var/log/bnbt

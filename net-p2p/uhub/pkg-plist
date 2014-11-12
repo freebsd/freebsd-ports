@@ -1,13 +1,9 @@
 bin/uhub
 %%SQLITE%%bin/uhub-passwd
-@group uhub
-@mode 640
-@sample %%ETCDIR%%/motd.txt.sample
-@sample %%ETCDIR%%/rules.txt.sample
-@sample %%ETCDIR%%/uhub.conf.sample
-@sample %%ETCDIR%%/users.conf.sample
-@mode
-@group
+@sample(,uhub,0640) %%ETCDIR%%/motd.txt.sample
+@sample(,uhub,0640) %%ETCDIR%%/rules.txt.sample
+@sample(,uhub,0640) %%ETCDIR%%/uhub.conf.sample
+@sample(,uhub,0640) %%ETCDIR%%/users.conf.sample
 lib/uhub/mod_auth_simple.so
 %%SQLITE%%lib/uhub/mod_auth_sqlite.so
 lib/uhub/mod_chat_history.so
@@ -18,5 +14,3 @@ lib/uhub/mod_logging.so
 lib/uhub/mod_no_guest_downloads.so
 lib/uhub/mod_topic.so
 lib/uhub/mod_welcome.so
-@dirrm lib/uhub
-@dirrm %%ETCDIR%%
