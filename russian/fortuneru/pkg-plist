@@ -82,6 +82,3 @@ share/games/fortune/rus/matilda
 share/games/fortune/rus/matilda.dat
 share/games/fortune/rus/house-md
 share/games/fortune/rus/house-md.dat
-@dirrm share/games/fortune/rus
-@dirrmtry share/games/fortune
-@dirrmtry share/games
