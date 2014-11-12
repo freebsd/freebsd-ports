@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra
-PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -23,26 +22,23 @@ USE_RC_SUBR=	cassandra
 
 CONFIGS=	cassandra-topology.properties \
 		cassandra.yaml \
-		log4j-server.properties \
-		log4j-tools.properties \
 		cassandra-rackdc.properties \
 		commitlog_archiving.properties
 SCRIPTS=	cassandra \
 		cassandra-cli \
-		json2sstable \
+		debug-cql \
 		nodetool \
-		sstable2json \
 		sstablekeys \
 		sstableloader \
-		sstablescrub
+		sstablescrub \
+		sstableupgrade
 
 CONFLICTS_INSTALL=	cassandra-1.*
 
-OPTIONS_DEFINE=	MX4J JNA CQL DOCS
+OPTIONS_DEFINE=	MX4J CQL DOCS
 OPTIONS_SUB=	yes
 
 MX4J_DESC=	Enable HTTP interface for JMX
-JNA_DESC=	Use JNA native access
 CQL_DESC=	Install cqlsh
 DOCS_DESC=	Install javadoc documentation
 
@@ -53,7 +49,6 @@ SUB_FILES=	repaircluster
 RUN_DEPENDS+=	${JAVALIBDIR}/snappy-java.jar:${PORTSDIR}/archivers/snappy-java
 
 MX4J_RUN_DEPENDS=	${JAVAJARDIR}/mx4j-tools.jar:${PORTSDIR}/java/mx4j
-JNA_RUN_DEPENDS=	${JAVAJARDIR}/jna.jar:${PORTSDIR}/devel/jna
 CQL_USE=	python=yes
 
 PORTDOCS=	javadoc *.txt
@@ -76,13 +71,10 @@ post-extract:
 .endif
 
 post-patch:
+.for i in ${SCRIPTS}
 	${REINPLACE_CMD} -e 's|/usr/share/cassandra|${DATADIR}/bin|' \
-		${WRKSRC}/bin/cassandra-cli \
-		${WRKSRC}/bin/nodetool \
-		${WRKSRC}/bin/sstableloader \
-		${WRKSRC}/bin/sstable2json \
-		${WRKSRC}/bin/json2sstable \
-		${WRKSRC}/bin/sstablekeys
+		${WRKSRC}/bin/${i}
+.endfor
 	${REINPLACE_CMD} -e 's|\`dirname \$$\0\`/..|${DATADIR}|' \
 		${WRKSRC}/bin/cassandra.in.sh
 	${RM} -f ${WRKSRC}/conf/*.orig
@@ -105,24 +97,12 @@ do-install:
 	${MV} ${STAGEDIR}${DATADIR}/*.txt ${STAGEDIR}${DOCSDIR}
 	cd ${STAGEDIR}${DATADIR}/bin/ && ${CHMOD} ${BINMODE} ${SCRIPTS}
 	${INSTALL_SCRIPT} ${WRKDIR}/repaircluster ${STAGEDIR}${DATADIR}/bin
-	${LN} -sf ${DATADIR}/bin/cassandra-cli ${STAGEDIR}${PREFIX}/bin/cassandra-cli
-	${LN} -sf ${DATADIR}/bin/nodetool ${STAGEDIR}${PREFIX}/bin/nodetool
-	${LN} -sf ${DATADIR}/bin/sstableloader ${STAGEDIR}${PREFIX}/bin/sstableloader
-	${LN} -sf ${DATADIR}/bin/repaircluster ${STAGEDIR}${PREFIX}/bin/repaircluster
-	${LN} -sf ${DATADIR}/bin/json2sstable ${STAGEDIR}${PREFIX}/bin/json2sstable
-	${LN} -sf ${DATADIR}/bin/sstable2json ${STAGEDIR}${PREFIX}/bin/sstable2json
-	${LN} -sf ${DATADIR}/bin/sstablekeys ${STAGEDIR}${PREFIX}/bin/sstablekeys
-	${LN} -sf ${DATADIR}/bin/sstablescrub ${STAGEDIR}${PREFIX}/bin/sstablescrub
+.for i in ${SCRIPTS}
+	${LN} -sf ${DATADIR}/bin/${i} ${STAGEDIR}${PREFIX}/bin/${i}
+.endfor
 
-.if ${PORT_OPTIONS:MCQL}
-	${LN} -sf ${DATADIR}/bin/cqlsh ${STAGEDIR}${PREFIX}/bin/cqlsh
-.endif
 .if ${PORT_OPTIONS:MMX4J}
 	${LN} -sf ${LOCALBASE}/share/java/classes/mx4j-tools.jar ${STAGEDIR}${DATADIR}/lib/mx4j-tools.jar
-.endif
-.if ${PORT_OPTIONS:MJNA}
-	${LN} -sf ${LOCALBASE}/share/java/classes/jna.jar ${STAGEDIR}${DATADIR}/lib/jna.jar
-	${LN} -sf ${LOCALBASE}/share/java/classes/jna-platform.jar ${STAGEDIR}${DATADIR}/lib/jna-platform.jar
 .endif
 
 .include <bsd.port.mk>
