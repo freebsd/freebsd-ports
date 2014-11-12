@@ -18,4 +18,10 @@ RUBYGEM_AUTOPLIST=	yes
 GEM_ENV	+=EXTERNAL_LIB="YES"
 CONFIGURE_ARGS=	"--with-opt-dir=${LOCALBASE}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 2.1
+BROKEN=		Does not build with Ruby 2.1
+.endif
+
+.include <bsd.port.post.mk>
