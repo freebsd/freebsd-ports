@@ -9,4 +9,3 @@ man/man1/xrus.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/xrus.doc-english
 %%PORTDOCS%%%%DOCSDIR%%/xrus.doc-koi8
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

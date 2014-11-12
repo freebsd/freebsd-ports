@@ -145,7 +145,3 @@ share/locale/uk/LC_MESSAGES/sheetssolver.mo
 share/locale/uk/LC_MESSAGES/stage.mo
 share/locale/uk/LC_MESSAGES/thesaurus_tool.mo
 share/locale/uk/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/uk/stage
-@dirrm share/doc/HTML/uk/sheets
-@dirrm share/doc/HTML/uk/kexi
-@dirrm share/doc/HTML/uk/calligra

@@ -398,17 +398,4 @@ man/man8/ircd.8.gz
 %%DOCSDIR%%/server-version-info
 %%DOCSDIR%%/serverhide.txt
 %%DOCSDIR%%/whats-new.txt
-@dirrm share/doc/ircd
-@dirrm lib/ircd-hybrid-ru-modules/autoload
-@dirrm lib/ircd-hybrid-ru-modules
-@dirrm help/users
-@dirrm help/opers
-@dirrm help
-@dirrm etc/ircd-hybrid-ru/codepages
-@dirrm etc/ircd-hybrid-ru
-@owner %%USR%%
-@group %%GRP%%
-@exec install -d -m 755 -o %%USR%% -g %%GRP%% /var/log/ircd-hybrid-ru
-@dirrmtry /var/log/ircd-hybrid-ru
-@owner root
-@group wheel
+@dir(%%USR%%,%%GRP%%,0755) /var/log/ircd-hybrid-ru

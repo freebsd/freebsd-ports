@@ -23,7 +23,7 @@ do-install:
 # Maintainer
 plist:	patch
 	@( cd ${WRKSRC}/ && ${FIND} * -type f | ${AWK} '{print "%%WWWDIR%%/"$$1}' | ${SORT} > ${PLIST}.new )
-	@( cd ${WRKSRC}/ && ${FIND} * -type d | ${AWK} '{print "@dirrmtry %%WWWDIR%%/"$$1}' | ${SORT} -r >> ${PLIST}.new )
+	@( cd ${WRKSRC}/ && ${FIND} * -type d -empty | ${AWK} '{print "@dir %%WWWDIR%%/"$$1}' | ${SORT} -r >> ${PLIST}.new )
 	@if ${DIFF} -u ${PLIST} ${PLIST}.new ; then \
 		${ECHO_MSG} no pkg-plist changes; \
 		${RM} ${PLIST}.new ; \
