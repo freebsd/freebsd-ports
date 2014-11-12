@@ -16,6 +16,4 @@ share/applications/www.octave.org-octave.desktop
 %%PORTDOCS%%%%DOCSDIR%%/refcard-legal.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-letter.ps
 %%PORTDOCS%%%%DOCSDIR%%/octave.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @comment Insert PLIST here
-@dirrm lib/octave

@@ -1,5 +1,4 @@
 @unexec %D/libexec/octave/load-octave-pkg || true
 libexec/octave/load-octave-pkg
-@exec mkdir -p %D/share/octave/tarballs
 @exec %D/libexec/octave/load-octave-pkg
-@dirrmtry share/octave/tarballs
+@dir share/octave/tarballs
