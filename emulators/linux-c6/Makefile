@@ -87,7 +87,7 @@ RUN_DEPENDS+=	linux-c6-libasyncns>0:${PORTSDIR}/dns/linux-c6-libasyncns \
 		linux-c6-tiff>0:${PORTSDIR}/graphics/linux-c6-tiff \
 		linux-c6-jpeg>0:${PORTSDIR}/graphics/linux-c6-jpeg \
 		linux-c6-glx-utils>0:${PORTSDIR}/graphics/linux-c6-glx-utils \
-		linux-c6-gdk-pixbuf>0:${PORTSDIR}/graphics/linux-c6-gdk-pixbuf \
+		linux-c6-gdk-pixbuf2>0:${PORTSDIR}/graphics/linux-c6-gdk-pixbuf \
 		linux-c6-cairo>0:${PORTSDIR}/graphics/linux-c6-cairo
 
 OPTIONS_DEFINE=	NVIDIA_GL
