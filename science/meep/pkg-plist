@@ -10,5 +10,3 @@ include/meep/vec.hpp
 %%DATADIR%%/casimir.scm
 %%DATADIR%%/meep-enums.scm
 %%DATADIR%%/meep.scm
-@dirrm %%DATADIR%%
-@dirrm include/meep

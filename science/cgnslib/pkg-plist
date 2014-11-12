@@ -99,5 +99,3 @@ lib/libcgns.so.3.2
 %%TOOLS%%share/cgnstools/utilities.mnu
 %%TOOLS%%share/cgnstools/vgrid.tcl
 %%TOOLS%%share/cgnstools/vtk.tcl
-%%TOOLS%%@dirrm share/cgnstools
-%%TOOLS%%@dirrm bin/cgnstools

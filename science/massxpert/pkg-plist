@@ -209,16 +209,3 @@ share/applications/massxpert.desktop
 %%DATADIR%%/dictionaries/protein-1-to-3.dic
 %%DATADIR%%/dictionaries/protein-3-to-1.dic
 %%DATADIR%%/chem_pad.conf
-@dirrmtry %%DATADIR%%/pol-seqs
-@dirrmtry %%DATADIR%%/pol-chem-defs/saccharide
-@dirrmtry %%DATADIR%%/pol-chem-defs/protein-3-letters
-@dirrmtry %%DATADIR%%/pol-chem-defs/protein-1-letter
-@dirrmtry %%DATADIR%%/pol-chem-defs/nucac
-@dirrmtry %%DATADIR%%/pol-chem-defs/dna
-@dirrmtry %%DATADIR%%/pol-chem-defs
-@dirrmtry %%DATADIR%%/locales
-@dirrmtry %%DATADIR%%/dictionaries
-@dirrmtry %%DATADIR%%
-@dirrm %%DOCSDIR%%
-@dirrm lib/massxpert/plugins
-@dirrm lib/massxpert

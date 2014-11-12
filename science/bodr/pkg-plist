@@ -13,7 +13,3 @@ libdata/pkgconfig/bodr.pc
 %%PORTDOCS%%%%DOCSDIR%%/biblio/elements_biblio.html
 %%PORTDOCS%%%%DOCSDIR%%/biblio/isotopes_biblio.html
 %%PORTDOCS%%%%DOCSDIR%%/biblio/space-groups_biblio.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/biblio
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/dicts
-@dirrm %%DATADIR%%

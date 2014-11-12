@@ -331,17 +331,3 @@ libdata/CLHEP-%%VERSION%%/CLHEPConfigVersion.cmake
 libdata/CLHEP-%%VERSION%%/CLHEPLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 libdata/CLHEP-%%VERSION%%/CLHEPLibraryDepends.cmake
 libdata/pkgconfig/clhep.pc
-@dirrm libdata/CLHEP-%%VERSION%%
-@dirrm include/CLHEP/Vector
-@dirrm include/CLHEP/Utility
-@dirrm include/CLHEP/Units
-@dirrm include/CLHEP/RefCount
-@dirrm include/CLHEP/RandomObjects
-@dirrm include/CLHEP/Random
-@dirrm include/CLHEP/Matrix
-@dirrm include/CLHEP/Geometry
-@dirrm include/CLHEP/GenericFunctions
-@dirrm include/CLHEP/Exceptions
-@dirrm include/CLHEP/Evaluator
-@dirrm include/CLHEP/Cast
-@dirrm include/CLHEP

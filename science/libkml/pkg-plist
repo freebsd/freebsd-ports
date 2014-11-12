@@ -182,20 +182,4 @@ lib/liburiparser.a
 lib/liburiparser.so
 lib/liburiparser.so.1
 lib/liburiparser.so.1.0.5
-@dirrm lib/libkml
-@dirrm include/kml/xsd
-@dirrm include/kml/third_party/boost_1_34_1/boost/detail
-@dirrm include/kml/third_party/boost_1_34_1/boost/config/stdlib
-@dirrm include/kml/third_party/boost_1_34_1/boost/config/platform
-@dirrm include/kml/third_party/boost_1_34_1/boost/config/no_tr1
-@dirrm include/kml/third_party/boost_1_34_1/boost/config/compiler
-@dirrm include/kml/third_party/boost_1_34_1/boost/config
-@dirrm include/kml/third_party/boost_1_34_1/boost
-@dirrm include/kml/third_party/boost_1_34_1
-@dirrm include/kml/third_party
-@dirrm include/kml/regionator
-@dirrm include/kml/engine
-@dirrm include/kml/dom
-@dirrm include/kml/convenience
-@dirrm include/kml/base
-@dirrm include/kml
+@dir lib/libkml

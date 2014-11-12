@@ -24,5 +24,3 @@ share/locale/zh/LC_MESSAGES/linsmith.mo
 share/pixmaps/linsmith/linsmith_icon.xpm
 share/pixmaps/linsmith/smith4.png
 share/pixmaps/linsmith/smithent.png
-@dirrm share/pixmaps/linsmith
-@dirrm %%DATADIR%%

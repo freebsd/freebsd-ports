@@ -98,15 +98,3 @@ GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/unmarkRec2.tif
 GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/wbicn.tif
 GNUstep/Local/Applications/GTAMSAnalyzer.app/stamp.make
 GNUstep/Local/Tools/GTAMSAnalyzer
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/kappa.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/codeBrowser.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MyPanedDocument.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MWSummaryReport.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FreqCount.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.gorm
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources
-@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app

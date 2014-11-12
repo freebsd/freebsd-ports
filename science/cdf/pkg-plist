@@ -65,6 +65,3 @@ lib/libcdf.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ij01r39.cdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/read_example1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfia10x.cdf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/cdf/help
-@dirrm lib/cdf

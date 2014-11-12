@@ -49,11 +49,3 @@ man/man3/metaf2xml::src2raw.3pm.gz
 %%WWWDIR%%/htdocs/metaf.xsl
 %%WWWDIR%%/htdocs/metaf2xml.css
 %%WWWDIR%%/htdocs/stations.xml
-%%APACHE%%@dirrmtry %%APACHEETCDIR%%/Includes
-%%APACHE%%@dirrmtry %%APACHEETCDIR%%
-@dirrmtry %%SITE_PERL%%/metaf2xml
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%
-@dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%/htdocs
-@dirrmtry %%WWWDIR%%

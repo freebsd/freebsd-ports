@@ -41,7 +41,6 @@ man/man1/cht.1.gz
 %%EXAMPLESDIR%%/tetracyclin.cht
 %%EXAMPLESDIR%%/v3000.mol
 %%EXAMPLESDIR%%/viagra.cht
-@dirrm %%EXAMPLESDIR%%
 share/locale/cs/LC_MESSAGES/chemtool.mo
 share/locale/de/LC_MESSAGES/chemtool.mo
 share/locale/fr/LC_MESSAGES/chemtool.mo

@@ -122,4 +122,3 @@ lib/cdcldbase/state_usa
 lib/libcdcl.a
 lib/libcdcl.so
 lib/libf2c4dcl.a
-@dirrm lib/cdcldbase

@@ -1025,9 +1025,3 @@ man/man1/afni.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.volreg
 %%PORTDOCS%%%%DOCSDIR%%/README.web
 %%PORTDOCS%%%%DOCSDIR%%/README.ziad
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/funstuff
-@dirrm %%DATADIR%%
-@dirrm lib/afni
-@dirrm include/afni
-@dirrmtry etc/mri

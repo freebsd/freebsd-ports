@@ -4,7 +4,6 @@ bin/zbuf
 %%PORTDOCS%%%%DOCSDIR%%/ms_thesis.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/nonuniform_manual.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/readme.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/30pin.inp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/3d_example2.inp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/3d_example2_coarse.inp
@@ -34,4 +33,3 @@ bin/zbuf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tree_sample.hier
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tree_sample.inp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vias.inp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -110,13 +110,13 @@ do-install:
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	cd ${STAGEDIR}${PREFIX}; ${FIND} share/doc/mpqc \
 	   \( -type f -or -type l \) | ${SORT} >> ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX}; ${FIND} share/doc/mpqc -type d | \
-	   ${SORT} -r | ${SED} -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX}; ${FIND} share/doc/mpqc -type d -empty | \
+	   ${SORT} -r | ${SED} -e 's/^/@dir /g' >> ${TMPPLIST}
 .endif
 	cd ${STAGEDIR}${PREFIX}; ${FIND} share/mpqc \
 	   \( -type f -or -type l \) | ${SORT} >> ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX}; ${FIND} share/mpqc -type d | ${SORT} -r | \
-	   ${SED} -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX}; ${FIND} share/mpqc -type d -empty | ${SORT} -r | \
+	   ${SED} -e 's/^/@dir /g' >> ${TMPPLIST}
 
 validate:
 	(cd ${WRKSRC}/src/bin/mpqc/validate && \

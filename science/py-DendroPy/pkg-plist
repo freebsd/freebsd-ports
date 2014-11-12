@@ -477,15 +477,3 @@ bin/sumtrees.py
 %%PYTHON_SITELIBDIR%%/dendropy/utility/vcsinfo.py
 %%PYTHON_SITELIBDIR%%/dendropy/utility/vcsinfo.pyc
 %%PYTHON_SITELIBDIR%%/dendropy/utility/vcsinfo.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/dataio
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/dataobject
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/interop
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/mathlib
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/test/data/chars
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/test/data/mixed
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/test/data/trees
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/test/data
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/test/support
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/test
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy/utility
-@dirrmtry %%PYTHON_SITELIBDIR%%/dendropy

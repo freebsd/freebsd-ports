@@ -59,10 +59,3 @@ man/man1/gen-ctl-io.1.gz
 %%DATADIR%%/utils/geom.scm
 %%DATADIR%%/utils/nlopt-constants.scm
 %%DATADIR%%/utils/nlopt.c
-@dirrm %%DATADIR%%/utils
-@dirrm %%DATADIR%%/base
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.libs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.deps
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

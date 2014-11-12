@@ -5,4 +5,3 @@ man/man1/2d-rewriter.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/life2.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sierpinski.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/srloop.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

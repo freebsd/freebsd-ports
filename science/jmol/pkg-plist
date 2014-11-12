@@ -77,11 +77,3 @@ bin/jmol
 %%JAVAJARDIR%%/Jmol.jar
 %%JAVAJARDIR%%/JmolData.jar
 %%JAVAJARDIR%%/JmolLib.jar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/xml2po-modes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/po
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/history
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/applet
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/JmolUserGuide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
