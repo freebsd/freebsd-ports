@@ -17,4 +17,23 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 QT_DEFINES=	ACCESSIBILITY
 QT_CONFIG=	accessibility accessibility-atspi-bridge
 
+# libQt5Qml.so and libQt5QmlDevTools.a come from lang/qt5-qml, so we do not
+# want to build them again here. On the other hand, if we just remove qml/ and
+# qmldevtools/ from src/src.pro the versions installed in ${LOCALBASE} will be
+# picked up and their .pri files will make -Wl,-rpath-link,${LOCALBASE}/lib be
+# used when building targets such as tools/qmltestrunner. This causes problems
+# when building the port with an older version installed (bug 194870).
+# Instead, we let the .pri modules be created in ${WRKSRC}/mkspecs but symlink
+# the existing libraries and trick the existing Makefiles into doing nothing
+# (it is more future-proof than whitelisting the other directories).
+post-configure:
+	${LN} -s ${QT_LIBDIR}/libQt5Qml.so \
+		${CONFIGURE_WRKSRC}/lib/libQt5Qml.so
+	${LN} -s ${QT_LIBDIR}/libQt5QmlDevTools.a \
+		${CONFIGURE_WRKSRC}/lib/libQt5QmlDevTools.a
+	${PRINTF} ".DEFAULT:\n\t@${DO_NADA}" \
+		> ${CONFIGURE_WRKSRC}/src/qml/Makefile
+	${PRINTF} ".DEFAULT:\n\t@${DO_NADA}" \
+		> ${CONFIGURE_WRKSRC}/src/qmldevtools/Makefile
+
 .include <bsd.port.mk>
