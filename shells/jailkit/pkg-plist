@@ -32,5 +32,3 @@ sbin/jk_socketd
 sbin/jk_update
 %%DATADIR%%/jk_lib.py
 %%DATADIR%%/jk_lib.pyc
-@dirrm %%DATADIR%%
-@dirrmtry %%ETCDIR%%

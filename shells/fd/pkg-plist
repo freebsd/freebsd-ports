@@ -16,10 +16,8 @@ man/man1/fdsh.1.gz
 %%PORTDOCS%%share/doc/ja/fd/README
 %%PORTDOCS%%share/doc/ja/fd/TECHKNOW
 %%PORTDOCS%%share/doc/ja/fd/ToAdmin
-%%PORTDOCS%%@dirrm share/doc/ja/fd
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.eng
 %%PORTDOCS%%%%DOCSDIR%%/LICENSES.eng
 %%PORTDOCS%%%%DOCSDIR%%/README.eng
 %%PORTDOCS%%%%DOCSDIR%%/TECHKNOW.eng
 %%PORTDOCS%%%%DOCSDIR%%/ToAdmin.eng
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

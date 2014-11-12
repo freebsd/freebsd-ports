@@ -7,4 +7,3 @@ bin/tcshrc_config
 %%DATADIR%%/tcshrc.local
 %%DATADIR%%/tcshrc.set
 %%DATADIR%%/README.txt
-@dirrm %%DATADIR%%
