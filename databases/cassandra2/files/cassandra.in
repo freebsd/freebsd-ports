@@ -53,7 +53,7 @@ export MAX_HEAP_SIZE="$cassandra_memory"
 export HEAP_NEWSIZE="$cassandra_newgen"
 export PATH=$PATH:%%LOCALBASE%%/bin
 export CASSANDRA_HOME=%%DATADIR%%
-export JVM_OPTS=-javaagent:%%DATADIR%%/lib/jamm-0.2.5.jar
+export JVM_OPTS=-javaagent:%%DATADIR%%/lib/jamm-0.2.6.jar
 export JVM_OVERRIDE_OPTS="$cassandra_vmargs"
 
 export JAVA_VENDOR=openjdk
