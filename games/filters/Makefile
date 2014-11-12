@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filters
-PORTVERSION=	2.52
+PORTVERSION=	2.53
 CATEGORIES=	games perl5
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
 		CRITICAL
