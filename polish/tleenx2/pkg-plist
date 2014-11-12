@@ -57,5 +57,3 @@ man/man1/tleenx2.1.gz
 %%DATADIR%%/pixmaps/zdegustowany.png
 %%DATADIR%%/pixmaps/zeby.png
 %%DATADIR%%/pixmaps/zlosc.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

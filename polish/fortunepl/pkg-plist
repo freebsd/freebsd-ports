@@ -116,6 +116,3 @@ share/games/fortune/pl/zen
 share/games/fortune/pl/zen.dat
 share/games/fortune/pl/znaki_zodiaku
 share/games/fortune/pl/znaki_zodiaku.dat
-@dirrm share/games/fortune/pl
-@dirrm share/games/fortune
-@dirrm share/games
