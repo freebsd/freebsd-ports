@@ -1,18 +1,11 @@
 bin/jmanpath
-@owner man
-@mode 4555
-bin/jman
-@owner bin
-@group bin
-@mode
-bin/japropos
-bin/jwhatis
-bin/jmakewhatis
-bin/jcatman
-libexec/jmakewhatis.local
-libexec/jcatman.local
-@owner
-@group
+@(man,,4555) bin/jman
+@(bin,bin,) bin/japropos
+@(bin,bin,) bin/jwhatis
+@(bin,bin,) bin/jmakewhatis
+@(bin,bin,) bin/jcatman
+@(bin,bin,) libexec/jmakewhatis.local
+@(bin,bin,) libexec/jcatman.local
 man/man1/jman.1.gz
 man/man1/jmanpath.1.gz
 man/man1/japropos.1.gz

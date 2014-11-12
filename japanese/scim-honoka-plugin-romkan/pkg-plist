@@ -6,5 +6,3 @@ share/scim/honoka/like-msime.rkt
 share/scim/honoka/kigou-def.rkt
 share/scim/honoka/honoka-def.rkt
 share/locale/ja/LC_MESSAGES/honoka-plugin-romkan.mo
-@dirrmtry lib/scim-1.0/1.4.0/honoka
-@dirrmtry share/scim/honoka

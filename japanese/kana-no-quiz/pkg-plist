@@ -769,25 +769,3 @@ share/applications/kana-no-quiz.desktop
 %%DATADIR%%/sound/kana_male/ze.wav
 %%DATADIR%%/sound/kana_male/zo.wav
 %%DATADIR%%/sound/kana_male/zu.wav
-@dirrm %%PYTHON_SITELIBDIR%%/kananoquiz
-@dirrm %%DATADIR%%/img/kana/choplair
-@dirrm %%DATADIR%%/img/kana/kanatest
-@dirrm %%DATADIR%%/img/kana
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%/locale/de/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/de
-@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/fr
-@dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/pt_BR
-@dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ru
-@dirrm %%DATADIR%%/locale/sr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/sr
-@dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/sv
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/sound/kana_female
-@dirrm %%DATADIR%%/sound/kana_male
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%

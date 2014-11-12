@@ -12,5 +12,3 @@ lib/libslang.so.2
 %%PORTDOCS%%%%DOCSDIR%%/slangdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/slangfun.txt
 %%PORTDOCS%%%%DOCSDIR%%/slang-j.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/slang

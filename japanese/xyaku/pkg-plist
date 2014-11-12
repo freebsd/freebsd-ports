@@ -10,7 +10,6 @@ libexec/xyaku/searcheb.rb
 libexec/xyaku/showrc.sh
 libexec/xyaku/websearch.sh
 libexec/xyaku/xyakurc
-@dirrm libexec/xyaku
 %%PORTDOCS%%%%DOCSDIR%%/ADDIN.txt
 %%PORTDOCS%%%%DOCSDIR%%/ADDIN.ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -20,5 +19,3 @@ libexec/xyaku/xyakurc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/ja/README.searcheb.ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

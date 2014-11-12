@@ -30,7 +30,3 @@ share/anthy/zipcode.t
 %%ELISPDIR%%/anthy-kyuri.el
 %%ELISPDIR%%/anthy.el
 %%ELISPDIR%%/leim-list.el
-@dirrm share/anthy
-@dirrm include/anthy
-@dirrm %%ELISPDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -23,6 +23,3 @@
 %%PYTHON_SITELIBDIR%%/tegakigtk/renderers.pyc
 %%PYTHON_SITELIBDIR%%/tegakigtk/renderers.pyo
 share/tegaki/icons/handwriting.png
-@dirrmtry share/tegaki/icons
-@dirrmtry share/tegaki
-@dirrmtry %%PYTHON_SITELIBDIR%%/tegakigtk

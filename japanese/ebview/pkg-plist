@@ -12,8 +12,3 @@ share/ebview/help/ja/index.html
 share/ebview/searchengines.xml
 share/ebview/shortcut.xml
 share/locale/ja/LC_MESSAGES/ebview.mo
-@dirrm share/ebview/help/ja
-@dirrm share/ebview/help/en
-@dirrm share/ebview/help
-@dirrm share/ebview
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

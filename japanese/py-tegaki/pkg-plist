@@ -31,5 +31,3 @@
 %%PYTHON_SITELIBDIR%%/tegaki/trainer.py
 %%PYTHON_SITELIBDIR%%/tegaki/trainer.pyc
 %%PYTHON_SITELIBDIR%%/tegaki/trainer.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/tegaki/engines
-@dirrmtry %%PYTHON_SITELIBDIR%%/tegaki

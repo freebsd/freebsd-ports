@@ -23,10 +23,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/softbank-table.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/softbank-table.yaml
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/softbank-unicode2sjis_auto.yaml
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/MIME
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode

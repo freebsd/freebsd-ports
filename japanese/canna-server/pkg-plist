@@ -31,27 +31,21 @@ bin/syncdic
 bin/wtoc
 sbin/cannaserver
 sbin/cannakill
-@owner bin
-@group bin
-%%DATADIR%%/dic/canna/bushu.cld
-%%DATADIR%%/dic/canna/chimei.ctd
-%%DATADIR%%/dic/canna/dics.dir
-%%DATADIR%%/dic/canna/fuzokugo.cbd
-%%DATADIR%%/dic/canna/hojomwd.ctd
-%%DATADIR%%/dic/canna/hojoswd.ctd
-%%DATADIR%%/dic/canna/iroha.cbd
-%%DATADIR%%/dic/canna/iroha.cld
-%%DATADIR%%/dic/canna/kanasmpl.ctd
-%%DATADIR%%/dic/canna/katakana.ctd
-%%DATADIR%%/dic/canna/keishiki.ctd
-%%DATADIR%%/dic/canna/necgaiji.ctd
-%%DATADIR%%/dic/canna/number.ctd
-%%DATADIR%%/dic/canna/software.ctd
-%%DATADIR%%/dic/canna/suffix.ctd
-@exec chown bin:bin %D/%%DATADIR%%/dic
-@exec chmod 0775 %D/%%DATADIR%%/dic
-@owner root
-@group wheel
+@(bin,bin,) %%DATADIR%%/dic/canna/bushu.cld
+@(bin,bin,) %%DATADIR%%/dic/canna/chimei.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/dics.dir
+@(bin,bin,) %%DATADIR%%/dic/canna/fuzokugo.cbd
+@(bin,bin,) %%DATADIR%%/dic/canna/hojomwd.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/hojoswd.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/iroha.cbd
+@(bin,bin,) %%DATADIR%%/dic/canna/iroha.cld
+@(bin,bin,) %%DATADIR%%/dic/canna/kanasmpl.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/katakana.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/keishiki.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/necgaiji.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/number.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/software.ctd
+@(bin,bin,) %%DATADIR%%/dic/canna/suffix.ctd
 man/ja/man1/addwords.1.gz
 man/ja/man1/cannacheck.1.gz
 man/ja/man1/cannakill.1.gz
@@ -180,6 +174,4 @@ man/man3/cannalib.3.gz
 man/man3/jrKanjiControl.3.gz
 man/man3/jrKanjiString.3.gz
 man/man3/uilib.3.gz
-@dirrmtry %%DATADIR%%/dic/canna
-@dirrmtry %%DATADIR%%/dic
-@dirrmtry %%DATADIR%%
+@dir(bin,bin,0775) %%DATADIR%%/dic

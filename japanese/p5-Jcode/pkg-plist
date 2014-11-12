@@ -3,5 +3,3 @@
 %%SITE_PERL%%/Jcode.pm
 %%SITE_PERL%%/Jcode/Nihongo.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode/.packlist
-@dirrm %%SITE_PERL%%/Jcode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode

@@ -10,4 +10,3 @@ man/man1/makeedict.1.gz
 %%DATADIR%%/hiraplus.edic
 %%DATADIR%%/kata.edic
 %%DATADIR%%/kataplus.edic
-@dirrm %%DATADIR%%

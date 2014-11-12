@@ -949,5 +949,3 @@
 %%DATADIR%%/data/zip-997.json
 %%DATADIR%%/data/zip-998.json
 %%DATADIR%%/data/zip-999.json
-@dirrm %%DATADIR%%/data
-@dirrmtry %%DATADIR%%

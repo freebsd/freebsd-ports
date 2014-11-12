@@ -2,7 +2,3 @@ share/dict/lsd-fpw/lsd/data/honmon
 share/dict/lsd-fpw/catalogs
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.pkg
-@dirrm share/dict/lsd-fpw/lsd/data
-@dirrm share/dict/lsd-fpw/lsd
-@dirrm share/dict/lsd-fpw
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

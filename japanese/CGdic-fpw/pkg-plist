@@ -1,7 +1,3 @@
 share/dict/CGdic-fpw/cg/data/honmon
 share/dict/CGdic-fpw/catalogs
-@dirrm share/dict/CGdic-fpw/cg/data
-@dirrm share/dict/CGdic-fpw/cg
-@dirrm share/dict/CGdic-fpw
 %%PORTDOCS%%%%DOCSDIR%%/readme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

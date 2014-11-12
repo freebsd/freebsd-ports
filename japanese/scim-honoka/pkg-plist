@@ -22,4 +22,3 @@ include/honoka/honokastatus.h
 include/honoka/preeditor.h
 share/locale/ja/LC_MESSAGES/honoka.mo
 libdata/pkgconfig/honoka.pc
-@dirrmtry include/honoka

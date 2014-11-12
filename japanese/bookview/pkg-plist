@@ -39,5 +39,3 @@ bin/bookview
 %%DATADIR%%/prev.gif
 %%DATADIR%%/setup.tcl
 %%DATADIR%%/space.xbm
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%

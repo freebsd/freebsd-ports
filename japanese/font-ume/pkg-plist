@@ -16,7 +16,6 @@
 %%DATADIR%%/ume-tms3.ttf
 %%DATADIR%%/ume-ugo4.ttf
 %%DATADIR%%/ume-ugo5.ttf
-@dirrm %%DATADIR%%
 %%LOCAL_FONTSDIR%%/TTF/ume-pgc4.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-pgc5.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-pgo4.ttf
@@ -35,8 +34,6 @@
 %%LOCAL_FONTSDIR%%/TTF/ume-tms3.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-ugo4.ttf
 %%LOCAL_FONTSDIR%%/TTF/ume-ugo5.ttf
-@dirrmtry %%LOCAL_FONTSDIR%%/TTF
-@dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-ume.conf
 etc/fonts/conf.avail/62-fonts-ume.conf
 etc/fonts/conf.d/20-unhint-ume.conf
@@ -62,5 +59,4 @@ etc/fonts/conf.d/62-fonts-ume.conf
 @exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
-@dirrmtry %%X_FONTSDIR%%/TTF
 @unexec if [ -d %D/%%X_FONTSDIR%%/TTF ]; then %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true; fi

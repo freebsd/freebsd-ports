@@ -46,4 +46,3 @@
 %%ELISPDIR%%/lookup/stem-english.elc
 %%ELISPDIR%%/lookup/lookup-vars.el
 %%ELISPDIR%%/lookup/lookup-vars.elc
-@dirrm %%ELISPDIR%%/lookup

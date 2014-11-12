@@ -1,8 +1,4 @@
 share/dict/wwasw-fpw/wwasw/data/honmon
 share/dict/wwasw-fpw/catalogs
-@dirrm share/dict/wwasw-fpw/wwasw/data
-@dirrm share/dict/wwasw-fpw/wwasw
-@dirrm share/dict/wwasw-fpw
 %%PORTDOCS%%%%DOCSDIR%%/readme.pkg
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

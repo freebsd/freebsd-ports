@@ -17,26 +17,20 @@ lib/libcanna16.a
 lib/libcanna16.so
 lib/libcanna16.so.1
 %%DATADIR%%/default.canna
-@owner bin
-@group bin
-%%DATADIR%%/dic/default.cbp
-%%DATADIR%%/dic/english.cbp
-%%DATADIR%%/dic/jdaemon.cbp
-%%DATADIR%%/dic/just.cbp
-%%DATADIR%%/dic/kaisoku.cbp
-%%DATADIR%%/dic/kana.cbp
-%%DATADIR%%/dic/lan5.cbp
-%%DATADIR%%/dic/matsu.cbp
-%%DATADIR%%/dic/newjis.cbp
-%%DATADIR%%/dic/romaji.cbp
-%%DATADIR%%/dic/sokuon.cbp
-%%DATADIR%%/dic/tut.cbp
-%%DATADIR%%/dic/vje.cbp
-%%DATADIR%%/dic/wx2+.cbp
-@exec chown bin:bin %D/%%DATADIR%%/dic
-@exec chmod 0775 %D/%%DATADIR%%/dic
-@owner root
-@group wheel
+@(bin,bin,) %%DATADIR%%/dic/default.cbp
+@(bin,bin,) %%DATADIR%%/dic/english.cbp
+@(bin,bin,) %%DATADIR%%/dic/jdaemon.cbp
+@(bin,bin,) %%DATADIR%%/dic/just.cbp
+@(bin,bin,) %%DATADIR%%/dic/kaisoku.cbp
+@(bin,bin,) %%DATADIR%%/dic/kana.cbp
+@(bin,bin,) %%DATADIR%%/dic/lan5.cbp
+@(bin,bin,) %%DATADIR%%/dic/matsu.cbp
+@(bin,bin,) %%DATADIR%%/dic/newjis.cbp
+@(bin,bin,) %%DATADIR%%/dic/romaji.cbp
+@(bin,bin,) %%DATADIR%%/dic/sokuon.cbp
+@(bin,bin,) %%DATADIR%%/dic/tut.cbp
+@(bin,bin,) %%DATADIR%%/dic/vje.cbp
+@(bin,bin,) %%DATADIR%%/dic/wx2+.cbp
 %%DATADIR%%/sample/1.1.canna
 %%DATADIR%%/sample/1.2.canna
 %%DATADIR%%/sample/fixer.canna
@@ -67,8 +61,4 @@ lib/libcanna16.so.1
 %%DATADIR%%/sample/verbose.canna
 %%DATADIR%%/sample/vje.canna
 %%DATADIR%%/sample/wx2+.canna
-@dirrm include/canna
-@dirrm %%DATADIR%%/sample/src
-@dirrm %%DATADIR%%/sample
-@dirrmtry %%DATADIR%%/dic
-@dirrmtry %%DATADIR%%
+@dir(bin,bin,0775) %%DATADIR%%/dic

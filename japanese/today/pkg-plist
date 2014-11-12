@@ -39,5 +39,3 @@ etc/today.cnf
 %%DATADIR%%/sekki.tbl
 %%DATADIR%%/suffix.tbl
 %%DATADIR%%/week.tbl
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

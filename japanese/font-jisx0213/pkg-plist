@@ -38,7 +38,6 @@
 %%FONTDIR%%/jiskan24-2000-2b.pcf.gz
 %%FONTDIR%%/jiskan24-2000-2bi.pcf.gz
 %%FONTDIR%%/jiskan24-2000-2i.pcf.gz
-@dirrm %%FONTDIR%%
 %%XFONTDIR%%/K12-1.pcf.gz
 %%XFONTDIR%%/K12-1b.pcf.gz
 %%XFONTDIR%%/K12-1bi.pcf.gz

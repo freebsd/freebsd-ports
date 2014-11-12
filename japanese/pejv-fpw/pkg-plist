@@ -1,9 +1,5 @@
 share/dict/pejv-fpw/pejv/data/honmon
 share/dict/pejv-fpw/catalogs
-@dirrm share/dict/pejv-fpw/pejv/data
-@dirrm share/dict/pejv-fpw/pejv
-@dirrm share/dict/pejv-fpw
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTDOCS%%%%DOCSDIR%%/legumin.doc
 %%PORTDOCS%%%%DOCSDIR%%/pejvo.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
