@@ -17,5 +17,3 @@ share/cmake/Modules/netcdf-config-version.cmake
 share/cmake/Modules/netcdf-config.cmake
 share/cmake/Modules/netcdf-targets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Modules/netcdf-targets.cmake
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake

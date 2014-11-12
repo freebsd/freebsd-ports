@@ -273,16 +273,3 @@ share/openbabel/%%VERSION%%/superatom.txt
 share/openbabel/%%VERSION%%/svgformat.script
 share/openbabel/%%VERSION%%/torlib.txt
 share/openbabel/%%VERSION%%/types.txt
-@dirrm share/openbabel/%%VERSION%%
-@dirrm share/openbabel
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-%%PYTHON%%@dirrmtry %%PYTHON_LIBDIR%%
-@dirrm lib/openbabel/%%VERSION%%
-@dirrm lib/openbabel
-@dirrm lib/cmake/openbabel2
-@dirrmtry lib/cmake
-@dirrm include/openbabel-2.0/openbabel/stereo
-@dirrm include/openbabel-2.0/openbabel/math
-@dirrm include/openbabel-2.0/openbabel
-@dirrm include/openbabel-2.0
-@dirrm include/inchi

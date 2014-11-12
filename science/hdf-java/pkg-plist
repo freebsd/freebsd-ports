@@ -386,29 +386,3 @@ bin/hdfview.sh
 %%JAVAJARDIR%%/netcdf.jar
 %%JAVAJARDIR%%/slf4j-api-1.7.5.jar
 %%JAVAJARDIR%%/slf4j-nop-1.7.5.jar
-@dirrmtry %%JAVAJARDIR%%/ext
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/resources
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/view/class-use
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/view
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/class-use
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/object/h5
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/class-use
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/object/h4
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/object/class-use
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/object
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/class-use
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdflib
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/class-use
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/class-use
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/class-use
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/class-use
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa/hdf
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs/ncsa
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/javadocs
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/UsersGuide/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/UsersGuide
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

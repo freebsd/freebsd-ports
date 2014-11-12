@@ -30,5 +30,3 @@ man/man1/h5tovtk.1.gz
 %%DATADIR%%/colormaps/yarg
 %%DATADIR%%/colormaps/yellow
 %%DATADIR%%/colormaps/dkbluered
-@dirrm %%DATADIR%%/colormaps
-@dirrm %%DATADIR%%

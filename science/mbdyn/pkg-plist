@@ -40,7 +40,3 @@ share/awk/mbdyn2pod.awk
 share/awk/periodize.awk
 share/c81/naca0012.c81
 share/octave/pod.m
-@dirrm share/octave
-@dirrm share/c81
-@dirrm share/awk
-@dirrm share/Aster

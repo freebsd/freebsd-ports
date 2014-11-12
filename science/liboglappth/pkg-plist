@@ -11,4 +11,3 @@ lib/liboglappth.so
 lib/liboglappth.so.2
 lib/liboglappth.so.2.0.1
 libdata/pkgconfig/liboglappth.pc
-@dirrm include/oglappth

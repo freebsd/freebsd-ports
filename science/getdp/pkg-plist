@@ -42,6 +42,3 @@ man/man1/getdp.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/magnet.msh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/magnet.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/magnet.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/texinfo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

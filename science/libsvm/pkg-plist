@@ -8,4 +8,3 @@ lib/libsvm.so.2
 %%DATADIR%%/easy.py
 %%DATADIR%%/grid.py
 %%DATADIR%%/subset.py
-@dirrm %%DATADIR%%

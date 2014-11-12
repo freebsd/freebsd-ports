@@ -43,5 +43,3 @@ lib/libghmm.so
 lib/libghmm.so.0
 lib/libghmm.so.0.0.7
 %%DATADIR%%/PHI_001_20.dat
-@dirrmtry %%DATADIR%%
-@dirrmtry include/ghmm

@@ -119,4 +119,3 @@ lib/dcldbase/plate_world
 lib/dcldbase/pref_japan
 lib/dcldbase/state_usa
 lib/libf77dcl548.a
-@dirrm lib/dcldbase

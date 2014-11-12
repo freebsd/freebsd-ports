@@ -5,4 +5,3 @@ man/man1/mpb.1.gz
 man/man1/mpb-data.1.gz
 man/man1/mpb-split.1.gz
 share/libctl/specs/mpb.scm
-@dirrmtry share/libctl/specs

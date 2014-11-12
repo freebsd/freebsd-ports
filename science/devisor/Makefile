@@ -32,28 +32,24 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/devisorgrid.sh ${STAGEDIR}${PREFIX}/bin/devisorgrid
 	cd ${WRKSRC} \
-	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \; \
-	  && ${FIND} ${DATAFILES} -type f -not -name '*.pdf' -print -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
+	  && ${COPYTREE_SHARE} "${DATAFILES}" ${STAGEDIR}${DATADIR} "-not -name *\.pdf"
 	cd ${WRKSRC} \
-	  && ${FIND} ${CLASSFILES} -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \; \
-	  && ${FIND} ${CLASSFILES} -name '*.class' -type f -print -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
+	  && ${COPYTREE_SHARE} "${CLASSFILES}" ${STAGEDIR}${DATADIR} "-name *\.class"
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/manual \
-	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -name '*.pdf' -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
+	  && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "-name *\.pdf"
 .endif
 
 post-install:
 	@cd ${WRKSRC} \
 	  && ${FIND} -s ${DATAFILES} -type f -not -name '*.pdf' \
-	    | ${SED} -ne 's,^,${DATADIR:S,${STAGEDIR}${PREFIX}/,,}/,p' >> ${TMPPLIST} \
-	  && ${FIND} -s -d ${DATAFILES} -type d \
-	    | ${SED} -ne 's,^,@dirrm ${DATADIR:S,${STAGEDIR}${PREFIX}/,,}/,p' >> ${TMPPLIST}
+	    | ${SED} -ne 's,^,${DATADIR_REL}/,p' >> ${TMPPLIST} \
+	  && ${FIND} -s -d ${DATAFILES} -type d -empty \
+	    | ${SED} -ne 's,^,@dir ${DATADIR_REL}/,p' >> ${TMPPLIST}
 	@cd ${WRKSRC} \
 	  && ${FIND} -s ${CLASSFILES} -name '*.class' -type f \
-	    | ${SED} -ne 's,^,${DATADIR:S,${STAGEDIR}${PREFIX}/,,}/,p' >> ${TMPPLIST} \
-	  && ${FIND} -s -d ${CLASSFILES} -type d \
-	    | ${SED} -ne 's,^,@dirrm ${DATADIR:S,${STAGEDIR}${PREFIX}/,,}/,p' >> ${TMPPLIST}
-	@${ECHO_CMD} '@dirrm ${DATADIR:S,${PREFIX}/,,}' >> ${TMPPLIST}
+	    | ${SED} -ne 's,^,${DATADIR_REL}/,p' >> ${TMPPLIST} \
+	  && ${FIND} -s -d ${CLASSFILES} -type d -empty \
+	    | ${SED} -ne 's,^,@dir ${DATADIR_REL}/,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

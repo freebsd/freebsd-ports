@@ -1979,47 +1979,4 @@ GNUstep/Local/Applications/FisicaLab.app/Resources/doc_warning.rtf
 GNUstep/Local/Applications/FisicaLab.app/Resources/menuConversionFactors.plist
 GNUstep/Local/Applications/FisicaLab.app/stamp.make
 GNUstep/Local/Tools/FisicaLab
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/staticRigidBodies.gorm
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/preferences.gorm
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/dynamicsCircular.gorm
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/staticRigidBodies.gorm
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/preferences.gorm
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/dynamicsCircular.gorm
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/calorimetry.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/Fisica.gorm
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/COPYING.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources
-@dirrm GNUstep/Local/Applications/FisicaLab.app
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/dynamics.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/dynamicsCircular.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/dynamicsCircularExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/dynamicsExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/introduction.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/kinematics.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/kinematicsCircular.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/kinematicsCircularExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/kinematicsExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/statics.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/staticsExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/staticsRigid.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/staticsRigidExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/calorimetry.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/dynamics.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/dynamicsCircular.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/dynamicsCircularExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/dynamicsExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/introduction.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/kinematics.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/kinematicsCircular.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/kinematicsCircularExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/kinematicsExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/statics.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/staticsExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/staticsRigid.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/staticsRigidExamples.rtfd
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/Spanish.lproj/help.gorm
-@dirrm GNUstep/Local/Applications/FisicaLab.app/Resources/English.lproj/help.gorm
 
