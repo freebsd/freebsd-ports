@@ -71,7 +71,3 @@ bin/portbuilder
 %%PYTHON_SITELIBDIR%%/libpb/stacks/repo.py
 %%PYTHON_SITELIBDIR%%/libpb/stacks/repo.pyc
 %%PYTHON_SITELIBDIR%%/libpb/stacks/repo.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/libpb/stacks
-@dirrm %%PYTHON_SITELIBDIR%%/libpb/port
-@dirrm %%PYTHON_SITELIBDIR%%/libpb/pkg
-@dirrm %%PYTHON_SITELIBDIR%%/libpb

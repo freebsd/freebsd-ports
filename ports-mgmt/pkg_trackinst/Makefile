@@ -3,7 +3,7 @@
 
 PORTNAME=	pkg_trackinst
 PORTVERSION=	1.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://people.freebsd.org/~perky/distfiles/
 

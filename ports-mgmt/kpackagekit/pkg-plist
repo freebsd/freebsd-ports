@@ -77,13 +77,3 @@ share/locale/tr/LC_MESSAGES/kpackagekit.mo
 share/locale/uk/LC_MESSAGES/kpackagekit.mo
 share/locale/zh_CN/LC_MESSAGES/kpackagekit.mo
 share/locale/zh_TW/LC_MESSAGES/kpackagekit.mo
-@dirrm share/apps/kpackagekit/icons/hicolor/48x48/categories
-@dirrm share/apps/kpackagekit/icons/hicolor/48x48/animations
-@dirrm share/apps/kpackagekit/icons/hicolor/48x48/actions
-@dirrm share/apps/kpackagekit/icons/hicolor/48x48
-@dirrm share/apps/kpackagekit/icons/hicolor/22x22/actions
-@dirrm share/apps/kpackagekit/icons/hicolor/22x22
-@dirrm share/apps/kpackagekit/icons/hicolor
-@dirrm share/apps/kpackagekit/icons
-@dirrm share/apps/kpackagekit
-@dirrm share/apps/KPackageKitSmartIcon
