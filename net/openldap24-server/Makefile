@@ -58,8 +58,8 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	1
+PORTREVISION_CLIENT=	1
+PORTREVISION_SERVER=	2
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	10.3
 OPENLDAP_MAJOR=		${DISTVERSION:R}
@@ -76,6 +76,7 @@ OPTIONS_DEFINE+=	ACCESSLOG AUDITLOG COLLECT CONSTRAINT DDS
 OPTIONS_DEFINE+=	DEREF DYNGROUP DYNLIST MEMBEROF PPOLICY PROXYCACHE
 OPTIONS_DEFINE+=	REFINT RETCODE RWM SEQMOD SSSVLV SYNCPROV TRANSLUCENT
 OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD SHA2 DYNAMIC_BACKENDS SASL
+OPTIONS_DEFINE+=	LMPASSWD
 
 OPTIONS_DEFAULT=	MDB SYNCPROV DYNAMIC_BACKENDS
 
@@ -117,6 +118,7 @@ UNIQUE_DESC=		With attribute Uniqueness overlay
 VALSORT_DESC=		With Value Sorting overlay
 SMBPWD_DESC=		With Samba Password hashes overlay
 SHA2_DESC=		With SHA2 Password hashes overlay
+LMPASSWD_DESC=		With LM hash password support (DEPRECATED)
 DYNAMIC_BACKENDS_DESC=	Build dynamic backends
 .endif
 
@@ -130,7 +132,7 @@ OPENLDAP_PKGFILESUFX=
 
 CONFIGURE_SED=		-e 's,uuid/uuid.h,xxuuid/uuid.h,g'
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(CLIENT_ONLY)
 PORTDOCS=		CHANGES drafts rfc
@@ -244,7 +246,6 @@ OVERLAY_ENABLE=		yes
 
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 			--enable-crypt \
-			--enable-lmpasswd \
 			--enable-ldap=${BACKEND_ENABLE} \
 			--enable-meta=${BACKEND_ENABLE} \
 			--enable-rewrite \
@@ -283,6 +284,10 @@ CONFIGURE_ARGS+=	--enable-dyngroup=${OVERLAY_ENABLE}
 
 .if ${PORT_OPTIONS:MDYNLIST}
 CONFIGURE_ARGS+=	--enable-dynlist=${OVERLAY_ENABLE}
+.endif
+
+.if ${PORT_OPTIONS:MLMPASSWD}
+CONFIGURE_ARGS+=	--enable-lmpasswd
 .endif
 
 .if ${PORT_OPTIONS:MMEMBEROF}
@@ -561,4 +566,4 @@ post-install:
 .endif
 .endif # defined(CLIENT_ONLY)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
