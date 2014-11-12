@@ -89,9 +89,3 @@ share/locale/uk/LC_MESSAGES/jpilot.mo
 share/locale/vi/LC_MESSAGES/jpilot.mo
 share/locale/zh_CN/LC_MESSAGES/jpilot.mo
 share/locale/zh_TW/LC_MESSAGES/jpilot.mo
-@dirrmtry lib/jpilot/plugins
-@dirrmtry lib/jpilot
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%
