@@ -31,6 +31,3 @@ share/qfaktury/icons/usun_kontrahentow.png
 share/qfaktury/icons/usun_przelew.png
 share/qfaktury/icons/usun_towar.png
 share/qfaktury/templates/style.css
-@dirrm share/qfaktury/templates
-@dirrm share/qfaktury/icons
-@dirrm share/qfaktury

@@ -2,4 +2,3 @@ bin/trfs
 bin/trf
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
