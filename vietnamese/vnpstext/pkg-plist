@@ -8,4 +8,3 @@ share/vn-fonts/cour12b.pro
 share/vn-fonts/cour17.pro
 share/vn-fonts/cour17b.pro
 man/man1/vnpstext.1.gz
-@dirrm share/vn-fonts
