@@ -25,7 +25,6 @@ PLIST_SUB+=	Dcmp=${WWWDIR_REL}/fonts/cm-fonts/plain
 do-install:
 	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/fonts
 	@${CP} -Rp ${WRKSRC}/fonts/ ${STAGEDIR}${WWWDIR}/fonts/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${WWWDIR}/fonts/
 	@${CHMOD} -R go-w ${STAGEDIR}${WWWDIR}/fonts/
 
 .include <bsd.port.mk>
