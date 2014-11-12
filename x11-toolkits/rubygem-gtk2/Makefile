@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk2
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.3
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 

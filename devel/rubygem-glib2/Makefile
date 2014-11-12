@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	glib2
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,4 +15,10 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 2.1
+BROKEN=		Does not build with Ruby 2.1
+.endif
+
+.include <bsd.port.post.mk>
