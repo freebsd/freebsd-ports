@@ -57,4 +57,3 @@ lib/libbeecrypt.a
 lib/libbeecrypt.so
 lib/libbeecrypt.so.7
 lib/libbeecrypt.so.7.0.0
-@dirrm include/beecrypt

@@ -60,10 +60,3 @@ man/man8/fpupdate.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/Helpfiles_v6/test_inst.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Helpfiles_v6/todo.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Helpfiles_v6/updater.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/Helpfiles_v6/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/Helpfiles_v6
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry libexec/f-prot
-@dirrmtry etc/periodic/daily
-@dirrmtry etc/periodic

@@ -334,29 +334,3 @@ share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_19.xslt
 share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_20.xslt
 share/fwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_21.xslt
 share/fwbuilder-%%BUILD_VERSION%%/fwbuilder.dtd
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/platform
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/os
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/migration
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/help/en_US
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/help
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/sveasoft
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/solaris
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/procurve
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/pf
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/macosx
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ipfw
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ipf
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ios
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/fwsm_os
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets
-@dirrm share/fwbuilder-%%BUILD_VERSION%%

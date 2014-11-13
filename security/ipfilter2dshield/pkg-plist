@@ -1,3 +1,2 @@
 @sample etc/ipfilter2dshield/dshield-freebsd.pl.sample
 sbin/dshield-freebsd.pl
-@dirrm etc/ipfilter2dshield

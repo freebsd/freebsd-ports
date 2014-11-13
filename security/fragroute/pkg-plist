@@ -20,4 +20,3 @@ man/man8/fragtest.8.gz
 %%DATADIR%%/tcp-5
 %%DATADIR%%/tcp-7
 %%DATADIR%%/tcp-9
-@dirrm %%DATADIR%%

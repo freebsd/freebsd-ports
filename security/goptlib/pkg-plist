@@ -9,15 +9,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pt_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/socks.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/socks_test.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples/dummy-server
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples/dummy-client
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/git.torproject.org/pluggable-transports
-@dirrmtry %%GO_SRCDIR%%/git.torproject.org
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry %%GO_LIBDIR%%/git.torproject.org/pluggable-transports
-@dirrmtry %%GO_LIBDIR%%/git.torproject.org
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

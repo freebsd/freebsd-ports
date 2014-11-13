@@ -1,11 +1,6 @@
 bin/aide
-@unexec if cmp -s %D/etc/aide.conf %D/etc/aide.conf.sample; then rm -f %D/etc/aide.conf; fi
-etc/aide.conf.sample
-@exec [ ! -f %B/aide.conf ] && cp %B/%f %B/aide.conf
+@sample etc/aide.conf.sample
 man/man1/aide.1.gz
 man/man5/aide.conf.5.gz
-@exec /bin/mkdir -p /var/db/aide/databases
-@exec [ -f /var/db/aide/aide.conf ] || /usr/sbin/chown root:wheel /var/db/aide
-@exec [ -f /var/db/aide/aide.conf ] || /usr/sbin/chown root:wheel /var/db/aide/databases
-@exec [ -f /var/db/aide/aide.conf ] || /bin/chmod 0700 /var/db/aide
-@exec [ -f /var/db/aide/aide.conf ] || /bin/chmod 0700 /var/db/aide/databases
+@dir(,,0700) /var/db/aide/databases
+@dir(,,0700) /var/db/aide

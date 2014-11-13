@@ -18,4 +18,3 @@ man/man5/doormand.cf.5.gz
 man/man5/guestlist.5.gz
 man/man8/doormand.8.gz
 sbin/doormand
-@dirrmtry etc/doormand

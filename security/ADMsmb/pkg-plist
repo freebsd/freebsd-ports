@@ -1,3 +1,2 @@
 bin/ADMsmb
 %%DATADIR%%/README
-@dirrm %%DATADIR%%

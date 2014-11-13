@@ -68,7 +68,5 @@ post-patch:
 
 post-install:
 	@(cd "${STAGEDIR}${PREFIX}"; ${FIND} -s include/botan-1.10 -not -type d) >> ${TMPPLIST}
-	@${ECHO_CMD} @dirrm include/botan-1.10/botan >> ${TMPPLIST}
-	@${ECHO_CMD} @dirrm include/botan-1.10 >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

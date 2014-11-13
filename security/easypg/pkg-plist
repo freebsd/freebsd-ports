@@ -14,4 +14,3 @@
 %%EMACS_SITE_LISPDIR%%/epg/epg-config.elc
 %%EMACS_SITE_LISPDIR%%/epg/epg-package-info.elc
 %%EMACS_SITE_LISPDIR%%/epg/epg.elc
-@dirrm %%EMACS_SITE_LISPDIR%%/epg

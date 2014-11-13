@@ -90,6 +90,3 @@ include/cyassl/sniffer_error.h
 include/cyassl/ssl.h
 include/cyassl/test.h
 include/cyassl/version.h
-@dirrm include/cyassl/openssl
-@dirrm include/cyassl/ctaocrypt
-@dirrm include/cyassl

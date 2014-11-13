@@ -31,5 +31,3 @@ bin/hmap.py
 %%DATADIR%%/thttpd.2.23beta1.freebsd.4.6.st
 %%DATADIR%%/thttpd.2.23beta1.rhl.7.3
 %%DATADIR%%/zope.2.6.0.solaris.8
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

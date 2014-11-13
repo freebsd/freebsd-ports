@@ -8,4 +8,3 @@ man/man8/apgd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/pronun.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc0972.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1750.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

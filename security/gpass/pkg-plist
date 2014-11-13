@@ -16,4 +16,3 @@ share/pixmaps/gpass-icon.png
 %%DATADIR%%/preferences.glade
 %%DATADIR%%/welcome.glade
 %%DATADIR%%/window.glade
-@dirrm %%DATADIR%%
