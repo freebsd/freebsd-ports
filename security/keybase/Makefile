@@ -8,7 +8,7 @@ MASTER_SITES=	https://dist.keybase.io/pkg/files/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bdrewery@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Keybase.io client
 
 LICENSE=	BSD3CLAUSE
