@@ -61,12 +61,9 @@ share/applications/midori.desktop
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze-katze-http-auth.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze-katze-utils.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze.devhelp2
-%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/left-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/left.png
-%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/right-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/right.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/style.css
-%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/up-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/up.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/annotation-glossary.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/api-index-full.html
@@ -74,12 +71,11 @@ share/applications/midori.desktop
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/deprecated-api-index.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/home.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/index.html
-%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/left-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/left.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriBrowser.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriExtension.html
-%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriExtensionsColumn.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriPreferences.html
+%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-MidoriViewable.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori-app.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori-array.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori-bookmarks-db.html
@@ -97,7 +93,6 @@ share/applications/midori.desktop
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-midori.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori-sokoke.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori.devhelp2
-%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/right-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/right.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/style.css
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/up-insensitive.png
