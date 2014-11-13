@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.2.1
-PORTREVISION=	1
+DISTVERSION=	2.3.1
 CATEGORIES=	lang python
-MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/ https://bitbucket.org/pypy/pypy/downloads/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
+DISTNAME=	release-${DISTVERSION}
+DIST_SUBDIR=	pypy
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
@@ -35,15 +35,15 @@ OPTIONS_SINGLE_TRANS=	PYTHON PYPY PYPY_MINMEM
 OPTIONS_DEFAULT+=	PYPY_MINMEM
 .endif
 
-CONFLICTS_INSTALL=	pypy-devel-[0-9]*
+CONFLICTS_INSTALL=	pypy-[0-9]*
 
 ALL_TARGET=	${PYPY_NAMES}
 BUILD_WRKSRC=	${WRKDIR}
-DATE=		20130810
 USES=		compiler:c11 gettext iconv tar:bzip2
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+WRKSRC=		${WRKDIR}/pypy-pypy-32f35069a16d
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
@@ -58,9 +58,6 @@ PLIST_SUB+=	PYPY_LIBDIR=${PYPY_LIBDIR} \
 
 MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
 		WRKSRC=${WRKSRC} PYPY_LOCALBASE=${LOCALBASE}
-
-LOCALBASE_REFIX=	\
-		lib_pypy/_sqlite3.py
 
 .include <bsd.port.options.mk>
 .include "${MASTERDIR}/files/bsd.pypy.inst.mk"
@@ -228,11 +225,6 @@ post-extract:
 .endfor
 	${LN} -s ${WRKDIR}/lib ${WRKSRC}/lib
 
-post-patch:
-.for file in ${LOCALBASE_REFIX}
-	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${file}
-.endfor
-
 do-configure:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%PYPY_NAMES%%|${PYPY_NAMES}|g' \
@@ -244,7 +236,7 @@ do-configure:
 post-build:
 # UPDATING: check pypy/tool/release/package.py for list of cffi modules
 .for mod in _sqlite3 _curses syslog
-	${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
+	${SETENV} ${MAKE_ENV} ${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
 .endfor
 	${STRIP_CMD} ${WRKDIR}/${PYPY_LIBDIR}/lib_pypy/__pycache__/_cffi__*.pypy-${PYPY_VER:C/\.//}.so
 .for _path in ${PYPYDIRS}
