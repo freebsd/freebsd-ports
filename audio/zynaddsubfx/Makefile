@@ -3,7 +3,7 @@
 
 PORTNAME=	zynaddsubfx
 PORTVERSION=	2.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	ZynAddSubFX-${PORTVERSION}
@@ -16,10 +16,14 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libmxml.so:${PORTSDIR}/textproc/mxml
 
+BROKEN_ia64=	invokes i386 asm
+BROKEN_powerpc=	invokes i386 asm
+BROKEN_sparc64=	invokes i386 asm
+
 USES=		tar:bzip2 cmake pkgconfig
 
-OPTIONS_DEFINE=	DOCS EXAMPLES GUI LASH LO JACK PORTAUDIO
-OPTIONS_DEFAULT=	GUI PORTAUDIO
+OPTIONS_DEFINE=		JACK GUI PORTAUDIO LASH LO DOCS EXAMPLES
+OPTIONS_DEFAULT=	JACK GUI PORTAUDIO
 OPTIONS_RADIO=		AUDIO
 OPTIONS_RADIO_AUDIO=	ALSAMIDI DSSI
 OPTIONS_SUB=		yes
@@ -74,10 +78,6 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64: invokes i386 asm
-.endif
-
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 CFLAGS+=	-DASM_F2I_YES
 .endif
@@ -94,22 +94,20 @@ post-patch:
 		 /pthread/d ; \
 		 s|lib64|lib|' ${WRKSRC}/src/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/src/Misc/Config.cpp
-	@${REINPLACE_CMD} -e 's|portaudio.h|portaudio2/portaudio.h|' ${WRKSRC}/src/Nio/PaEngine.h
-
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/banks
-	(cd ${WRKDIR}/${DISTNAME}/instruments/banks \
-		&& ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/banks)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/banks \
+		${STAGEDIR}${DOCSDIR} \
+		${STAGEDIR}${DOCSDIR2} \
+		${STAGEDIR}${DOCSDIR3} \
+		${STAGEDIR}${EXAMPLESDIR}
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/${DISTNAME}/instruments/banks && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/banks)
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR3}
 	${INSTALL_DATA} ${DOC_FILES3:S|^|${DOCSRCDIR3}/|} ${STAGEDIR}${DOCSDIR3}
-
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/instruments/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/instruments/examples && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.post.mk>
