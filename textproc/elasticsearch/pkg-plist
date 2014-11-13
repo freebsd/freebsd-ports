@@ -1,11 +1,11 @@
 @owner %%SEARCHUSER%%
 @group %%SEARCHGROUP%%
-@unexec if cmp  -s %D/etc/elasticsearch/elasticsearch.yml.sample %D/etc/elasticsearch/elasticsearch.yml; then rm -f %D/etc/elasticsearch/elasticsearch.yml; fi
-etc/elasticsearch/elasticsearch.yml.sample
-@exec if [ ! -f %D/etc/elasticsearch/elasticsearch.yml ] ; then cp -p %D/%F %B/elasticsearch.yml; fi
-@unexec if cmp  -s %D/etc/elasticsearch/logging.yml.sample %D/etc/elasticsearch/logging.yml; then rm -f %D/etc/elasticsearch/logging.yml; fi
-etc/elasticsearch/logging.yml.sample
-@exec if [ ! -f %D/etc/elasticsearch/logging.yml ] ; then cp -p %D/%F %B/logging.yml; fi
+@unexec if cmp  -s %D/%%DATADIR%%/elasticsearch.yml.sample %D/etc/elasticsearch/elasticsearch.yml; then rm -f %D/etc/elasticsearch/elasticsearch.yml; fi
+%%DATADIR%%/elasticsearch.yml.sample
+@exec if [ ! -f %D/etc/elasticsearch/elasticsearch.yml ] ; then cp -p %D/%F %D/etc/elasticsearch/elasticsearch.yml; fi
+@unexec if cmp  -s %D/%%DATADIR%%/logging.yml.sample %D/etc/elasticsearch/logging.yml; then rm -f %D/etc/elasticsearch/logging.yml; fi
+%%DATADIR%%/logging.yml.sample
+@exec if [ ! -f %D/etc/elasticsearch/logging.yml ] ; then cp -p %D/%F %D/etc/elasticsearch/logging.yml; fi
 @unexec if [ -d %%ELASTIC_LOGDIR%% ]; then echo "You should remove %%ELASTIC_LOGDIR%% if you don't need it any more."; fi
 @unexec if [ -d %%ELASTIC_DBDIR%% ]; then echo "You should remove %%ELASTIC_DBDIR%% if you don't need it any more."; fi
 @owner root
@@ -20,7 +20,6 @@ lib/elasticsearch/jna-4.1.0.jar
 lib/elasticsearch/jts-1.13.jar
 lib/elasticsearch/log4j-1.2.17.jar
 lib/elasticsearch/lucene-analyzers-common-%%LUCENEVER%%.jar
-lib/elasticsearch/lucene-codecs-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-core-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-expressions-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-grouping-%%LUCENEVER%%.jar
@@ -39,6 +38,7 @@ lib/elasticsearch/spatial4j-0.4.1.jar
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.textile
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%
 @dirrmtry etc/elasticsearch
 @dirrm lib/elasticsearch/sigar
 @dirrm lib/elasticsearch
