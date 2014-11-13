@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	piwigo
-PORTVERSION=	2.6.3
+PORTVERSION=	2.7.1
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/ \
 		SF/${PORTNAME}/Piwigo/${PORTVERSION}
 
-MAINTAINER=	glz@hidden-powers.com
+MAINTAINER=	tremere@cainites.net
 COMMENT=	PHP based Web Gallery
 
 LICENSE=	GPLv2
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 NO_BUILD=	yes
 USE_PHP=	calendar ctype dom exif filter gd gettext hash iconv json \
-		mbstring mcrypt mhash mysql mysqli openssl pcre pdf pdo posix \
+		mbstring mcrypt mysql mysqli openssl pcre pdf pdo posix \
 		session simplexml sockets spl tokenizer xml xmlreader \
 		xmlwriter zlib
 USES=		zip
@@ -50,7 +50,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
 post-extract:
-	@${MV} ${WRKSRC}/local ${WRKSRC}/local.sample
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 	@${FIND} -d ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
 	@${FIND} -d ${WRKSRC} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
@@ -65,27 +64,9 @@ do-install:
 	@cd ${WRKSRC}/tools/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 	@cd ${WRKSRC}/doc/ && ${RM} ${PORTDOCS}
-	@${RM} -fr ${WRKSRC}/tools ${WRKSRC}/_data ${WRKSRC}/upload
+	@${RM} -fr ${WRKSRC}/tools ${WRKSRC}/_data/dummy.txt
 	@${INSTALL} -d ${STAGEDIR}${WWWDIR}
 	@${TAR} -C ${WRKSRC} -cf - . | \
-			${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
-
-post-install:
-	@if [ ! -e ${STAGEDIR}${WWWDIR}/local ]; then \
-		${INSTALL} -d ${STAGEDIR}${WWWDIR}/local/ ; \
-		${CP} -a ${STAGEDIR}${WWWDIR}/local.sample/ \
-			${STAGEDIR}${WWWDIR}/local/ ; \
-	fi;
-	@${CHOWN} -fR ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/plugins
-	@if [ ! -e ${STAGEDIR}${WWWDIR}/upload ]; then \
-		${INSTALL} -d ${STAGEDIR}${WWWDIR}/upload/ ; \
-		${CHMOD} 750 ${STAGEDIR}${WWWDIR}/upload ; \
-		${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/upload ; \
-	fi
-	@if [ ! -e ${STAGEDIR}${WWWDIR}/_data ]; then \
-		${INSTALL} -d ${STAGEDIR}${WWWDIR}/_data/ ; \
-		${CHMOD} 777 ${STAGEDIR}${WWWDIR}/_data ; \
-		${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/_data ; \
-	fi
+	${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
 
 .include <bsd.port.post.mk>
