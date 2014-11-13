@@ -7181,3 +7181,4 @@ science/elmer-eio|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
 science/elmer-matc|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
 science/elmer-meshgen2d|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
 science/elmergrid|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+security/pinentry-gtk||2014-11-13|Removed: upstream ended support for GTK+ 1
