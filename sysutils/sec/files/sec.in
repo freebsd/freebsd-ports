@@ -32,7 +32,7 @@ rcvar=sec_enable
 
 command="%%PREFIX%%/bin/sec"
 command_args="-detach"
-command_interpreter="/usr/bin/perl"
+command_interpreter="%%PERL%%"
 extra_commands="reload"
 pidfile="/var/run/sec.pid"
 
