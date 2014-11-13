@@ -3,13 +3,13 @@
 
 PORTNAME=	apel
 PORTVERSION=	${APEL_VER}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://git.chise.org/elisp/dist/apel/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
-COMMENT?=	A Portable Emacs Library for emacs
+COMMENT?=	Portable Emacs Library
 
 LICENSE=	GPLv2
 
