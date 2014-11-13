@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/stass/valgrind-freebsd/downloads/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory debugging and profiling tool
 
 LICENSE=	GPLv2
