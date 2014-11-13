@@ -34,14 +34,10 @@ var/lib/rkhunter/db/suspscan.dat
 @unexec rm -f %D/var/lib/rkhunter/db/rkhunter.dat* 2> /dev/null || true
 var/lib/rkhunter/tmp/group
 var/lib/rkhunter/tmp/passwd
-@dirrmtry etc/periodic/security
-@dirrmtry etc/periodic
-@dirrm var/lib/rkhunter/tmp
-@dirrm var/lib/rkhunter/db/signatures
-@dirrm var/lib/rkhunter/db/i18n
-@dirrm var/lib/rkhunter/db
-@dirrm var/lib/rkhunter
-@dirrmtry var/lib
-@dirrmtry var
-@dirrm lib/rkhunter/scripts
-@dirrm lib/rkhunter
+@dir(,,0750) lib/rkhunter/scripts
+@dir(,,0750) lib/rkhunter
+@dir(,,0750) var/lib/rkhunter/db/i18n
+@dir(,,0750) var/lib/rkhunter/db/signatures
+@dir(,,0750) var/lib/rkhunter/db
+@dir(,,0750) var/lib/rkhunter/tmp
+@dir(,,0750) var/lib/rkhunter

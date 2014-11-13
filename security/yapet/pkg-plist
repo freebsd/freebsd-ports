@@ -8,10 +8,15 @@ man/man5/yapet_colors.5.gz
 man/man5/yapet_config.5.gz
 share/applications/yapet.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/DESIGN
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/html/DESIGN.html
+%%PORTDOCS%%%%DOCSDIR%%/html/README.html
+%%CONVERTERS%%%%PORTDOCS%%%%DOCSDIR%%/html/csv2yapet.html
+%%PORTDOCS%%%%DOCSDIR%%/html/yapet.html
+%%CONVERTERS%%%%PORTDOCS%%%%DOCSDIR%%/html/yapet2csv.html
 %%NLS%%share/locale/de/LC_MESSAGES/libyacurs.mo
 %%NLS%%share/locale/de/LC_MESSAGES/yapet.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -16,5 +16,3 @@ bin/webscarab_lite
 %%DATADIR%%/lib/openamf.jar
 %%DATADIR%%/lib/bsf-2.3.0.jar
 %%DATADIR%%/webscarab.jar
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/

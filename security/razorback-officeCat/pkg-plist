@@ -1,12 +1,8 @@
 etc/razorback/officecat.conf.sample
-@dirrmtry etc/razorback
 lib/razorback/officeCat.so.2.0.0
 lib/razorback/officeCat.so.2
 lib/razorback/officeCat.so
 lib/razorback/officeCat.a
-@dirrmtry lib/razorback
 libexec/razorback/officeCat/officecat.exe
 libexec/razorback/officeCat/officecat.exe.so
 libexec/razorback/officeCat/officecat.exe.exe.so
-@dirrm libexec/razorback/officeCat
-@dirrmtry libexec/razorback

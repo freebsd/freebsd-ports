@@ -9,4 +9,3 @@ share/xml/dtd/vuxml/xml1.dcl
 @exec %%XMLCAT_ADD%%
 @unexec %%SGMLCAT_RM%%
 @exec %%SGMLCAT_ADD%%
-@dirrm %%dir_DTD%%

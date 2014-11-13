@@ -125,12 +125,7 @@ man/man8/tcsd.8.gz
 @mode 0600
 etc/tcsd.conf.dist
 @exec [ -f %D/etc/tcsd.conf ] || cp -p %D/etc/tcsd.conf.dist %D/etc/tcsd.conf
-@mode 0700
-@dirrmtry var/lib/tpm
 @owner
 @group
 @mode
-@dirrmtry var/lib
-@dirrmtry var
-@dirrm include/tss
-@dirrm include/trousers
+@dir(_tss,_tss,0700) var/lib/tpm
