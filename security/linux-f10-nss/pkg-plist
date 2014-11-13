@@ -16,9 +16,3 @@ lib/libsoftokn3.so
 lib/libsoftokn3.chk
 lib/libssl3.so
 usr/lib/nss/unsupported-tools/shlibsign
-@comment non-empty directory listing in revers order
-@dirrm usr/lib/nss/unsupported-tools
-@dirrm usr/lib/nss
-@dirrm etc/prelink.conf.d
-@dirrm etc/pki/nssdb
-@dirrmtry etc/pki

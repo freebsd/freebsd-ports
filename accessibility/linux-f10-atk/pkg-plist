@@ -92,5 +92,3 @@ usr/share/locale/yi/LC_MESSAGES/atk10.mo
 usr/share/locale/zh_CN/LC_MESSAGES/atk10.mo
 usr/share/locale/zh_HK/LC_MESSAGES/atk10.mo
 usr/share/locale/zh_TW/LC_MESSAGES/atk10.mo
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/atk-1.24.0

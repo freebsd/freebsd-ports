@@ -84,11 +84,3 @@ usr/share/doc/alsa-lib-1.0.21/COPYING
 usr/share/doc/alsa-lib-1.0.21/ChangeLog
 usr/share/doc/alsa-lib-1.0.21/TODO
 usr/share/doc/alsa-lib-1.0.21/asoundrc.txt
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/alsa-lib-1.0.21
-@dirrm usr/share/alsa/pcm
-@dirrm usr/share/alsa/cards/SI7018
-@dirrm usr/share/alsa/cards
-@dirrm usr/share/alsa
-@dirrm usr/lib/alsa-lib/smixer
-@dirrm usr/lib/alsa-lib

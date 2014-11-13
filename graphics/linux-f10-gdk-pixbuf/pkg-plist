@@ -43,8 +43,3 @@ usr/share/doc/gdk-pixbuf-0.22.0/html/license.html
 usr/share/doc/gdk-pixbuf-0.22.0/html/r27.html
 usr/share/doc/gdk-pixbuf-0.22.0/html/x3715.html
 usr/share/doc/gdk-pixbuf-0.22.0/html/x3767.html
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/gdk-pixbuf-0.22.0/html
-@dirrm usr/share/doc/gdk-pixbuf-0.22.0
-@dirrm usr/lib/gdk-pixbuf/loaders
-@dirrm usr/lib/gdk-pixbuf

@@ -20,5 +20,3 @@ usr/share/doc/imlib-1.9.15/AUTHORS
 usr/share/doc/imlib-1.9.15/COPYING.LIB
 usr/share/doc/imlib-1.9.15/ChangeLog
 usr/share/doc/imlib-1.9.15/README
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/imlib-1.9.15

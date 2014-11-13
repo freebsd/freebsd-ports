@@ -1,6 +1,4 @@
 @comment file listing
 usr/lib/gtk-2.0/immodules/im-scim.so
-@comment non-empty directory listing in revers order
-@dirrmtry usr/lib/gtk-2.0/immodules
 @exec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
 @unexec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules

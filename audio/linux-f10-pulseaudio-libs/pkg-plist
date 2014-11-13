@@ -13,5 +13,3 @@ usr/share/locale/de/LC_MESSAGES/pulseaudio.mo
 usr/share/locale/el/LC_MESSAGES/pulseaudio.mo
 usr/share/locale/fr/LC_MESSAGES/pulseaudio.mo
 usr/share/locale/sv/LC_MESSAGES/pulseaudio.mo
-@dirrm usr/share/doc/pulseaudio-libs-0.9.14
-@dirrmtry etc/pulse
