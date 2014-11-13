@@ -33,13 +33,10 @@ bin/wftopfa
 include/ghostscript/gdevdsp.h
 include/ghostscript/iapi.h
 include/ghostscript/ierrors.h
-@dirrm include/ghostscript
 lib/libgs.so
 lib/libgs.so.%%SHLIB_VER%%
 lib/libgs.so.%%GS_VERSION%%
 %%X11BITS%%lib/ghostscript/%%GS_VERSION%%/X11.so
-%%X11BITS%%@dirrm lib/ghostscript/%%GS_VERSION%%
-%%X11BITS%%@dirrmtry lib/ghostscript
 man/man1/dvipdf.1.gz
 man/man1/eps2eps.1.gz
 man/man1/font2c.1.gz
@@ -443,12 +440,10 @@ man/man1/wftopfa.1.gz
 %%DATADIR%%/%%GS_VERSION%%/Resource/Init/pdf_rbld.ps
 %%DATADIR%%/%%GS_VERSION%%/Resource/Init/pdf_sec.ps
 %%DATADIR%%/%%GS_VERSION%%/Resource/Init/xlatmap
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/Init
 %%DATADIR%%/%%GS_VERSION%%/Resource/SubstCID/CNS1-WMode
 %%DATADIR%%/%%GS_VERSION%%/Resource/SubstCID/GB1-WMode
 %%DATADIR%%/%%GS_VERSION%%/Resource/SubstCID/Japan1-WMode
 %%DATADIR%%/%%GS_VERSION%%/Resource/SubstCID/Korea1-WMode
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/SubstCID
 %%DATADIR%%/%%GS_VERSION%%/lib/ht_ccsto.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/acctest.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/addxchar.ps
@@ -646,19 +641,3 @@ man/man1/wftopfa.1.gz
 %%DATADIR%%/%%GS_VERSION%%/Resource/CIDFSubst/DroidSansFallback.ttf
 %%DATADIR%%/%%GS_VERSION%%/Resource/CIDFont/fonts
 %%DATADIR%%/%%GS_VERSION%%/Resource/CIDFont/ArtifexBullet
-%%GS_pcl3%%@dirrm %%DATADIR%%/%%GS_VERSION%%/pcl3
-@dirrm %%DATADIR%%/%%GS_VERSION%%/lib
-@dirrm %%DATADIR%%/%%GS_VERSION%%/examples/cjk
-@dirrm %%DATADIR%%/%%GS_VERSION%%/examples
-@dirrm %%DATADIR%%/%%GS_VERSION%%/doc
-@dirrm %%DATADIR%%/%%GS_VERSION%%/iccprofiles
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/Font
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/Encoding
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/CMap
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/CIDFSubst
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/CIDFont
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource
-@dirrmtry %%DATADIR%%/%%GS_VERSION%%
-@dirrmtry %%DATADIR%%

@@ -341,22 +341,4 @@ share/locale/uk/LC_MESSAGES/gutenprint.mo
 share/locale/vi/LC_MESSAGES/gutenprint.mo
 share/locale/zh_CN/LC_MESSAGES/gutenprint.mo
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
-@dirrm %%DATADIR%%/samples
-@dirrm %%DATADIR%%/doc/reference-html
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/5.2/xml/escp2/weaves
-@dirrm %%DATADIR%%/5.2/xml/escp2/qualitypresets
-@dirrm %%DATADIR%%/5.2/xml/escp2/model
-@dirrm %%DATADIR%%/5.2/xml/escp2/mediasizes
-@dirrm %%DATADIR%%/5.2/xml/escp2/media
-@dirrm %%DATADIR%%/5.2/xml/escp2/inputslots
-@dirrm %%DATADIR%%/5.2/xml/escp2/inks
-@dirrm %%DATADIR%%/5.2/xml/escp2
-@dirrm %%DATADIR%%/5.2/xml
-@dirrm %%DATADIR%%/5.2
-@dirrm %%DATADIR%%
-@dirrmtry lib/gutenprint/5.2/modules
-@dirrmtry lib/gutenprint/5.2
-@dirrmtry lib/gutenprint
-@dirrm include/gutenprintui2
-@dirrm include/gutenprint
+@dir lib/gutenprint/5.2/modules

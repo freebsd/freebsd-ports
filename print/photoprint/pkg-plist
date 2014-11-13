@@ -27,8 +27,3 @@ share/locale/ru/LC_MESSAGES/photoprint.mo
 %%DATADIR%%/shortcuts/size/Letter-10x8-1up.preset
 %%DATADIR%%/shortcuts/size/A4-8x6-1up.preset
 %%DATADIR%%/shortcuts/size/Letter-7x5-2up.preset
-@dirrm %%DATADIR%%/shortcuts/profiling
-@dirrm %%DATADIR%%/shortcuts/size
-@dirrm %%DATADIR%%/shortcuts
-@dirrm %%DATADIR%%/borders
-@dirrm %%DATADIR%%

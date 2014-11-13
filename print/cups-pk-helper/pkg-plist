@@ -30,5 +30,3 @@ share/locale/uk/LC_MESSAGES/cups-pk-helper.mo
 share/locale/zh_CN/LC_MESSAGES/cups-pk-helper.mo
 share/locale/zh_TW/LC_MESSAGES/cups-pk-helper.mo
 share/polkit-1/actions/org.opensuse.cupspkhelper.mechanism.policy
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia

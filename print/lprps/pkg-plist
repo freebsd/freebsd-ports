@@ -11,4 +11,3 @@ libexec/psif-ps
 %%DATADIR%%/banner.ps
 bin/textps
 bin/psrev
-@dirrm %%DATADIR%%

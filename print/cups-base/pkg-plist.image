@@ -8,5 +8,3 @@ libexec/cups/filter/rastertoepson
 libexec/cups/filter/rastertohp
 libexec/cups/filter/rastertolabel
 libexec/cups/filter/rastertopwg
-@dirrmtry libexec/cups/filter
-@dirrmtry libexec/cups

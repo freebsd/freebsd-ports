@@ -125,30 +125,3 @@ share/locale/vi/LC_MESSAGES/ggv.mo
 share/locale/xh/LC_MESSAGES/ggv.mo
 share/locale/zh_CN/LC_MESSAGES/ggv.mo
 share/locale/zh_TW/LC_MESSAGES/ggv.mo
-@dirrm share/pixmaps/ggv
-@dirrm share/omf/ggv
-@dirrm share/gnome/help/ggv/zh_TW/figures
-@dirrm share/gnome/help/ggv/zh_TW
-@dirrm share/gnome/help/ggv/zh_CN/figures
-@dirrm share/gnome/help/ggv/zh_CN
-@dirrm share/gnome/help/ggv/sv/figures
-@dirrm share/gnome/help/ggv/sv
-@dirrm share/gnome/help/ggv/ko/figures
-@dirrm share/gnome/help/ggv/ko
-@dirrm share/gnome/help/ggv/ja/figures
-@dirrm share/gnome/help/ggv/ja
-@dirrm share/gnome/help/ggv/it/figures
-@dirrm share/gnome/help/ggv/it
-@dirrm share/gnome/help/ggv/fr/figures
-@dirrm share/gnome/help/ggv/fr
-@dirrm share/gnome/help/ggv/es/figures
-@dirrm share/gnome/help/ggv/es
-@dirrm share/gnome/help/ggv/de/figures
-@dirrm share/gnome/help/ggv/de
-@dirrm share/gnome/help/ggv/C/figures
-@dirrm share/gnome/help/ggv/C
-@dirrm share/gnome/help/ggv
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw

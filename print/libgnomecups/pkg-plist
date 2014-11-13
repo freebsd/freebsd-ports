@@ -55,13 +55,3 @@ share/locale/wa/LC_MESSAGES/libgnomecups.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomecups.mo
 share/locale/zh_HK/LC_MESSAGES/libgnomecups.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomecups.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry include/libgnomecups-1/libgnomecups
-@dirrmtry include/libgnomecups-1

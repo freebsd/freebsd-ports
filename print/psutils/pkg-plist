@@ -41,4 +41,3 @@ man/man1/psselect.1.gz
 man/man1/pstops.1.gz
 %%DATADIR%%/md68_0.ps
 %%DATADIR%%/md71_0.ps
-@dirrm %%DATADIR%%

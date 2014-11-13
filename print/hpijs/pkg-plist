@@ -428,6 +428,3 @@ bin/hpijs
 %%CUPS%%@unexec /bin/rm -f %%LOCALBASE%%/share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%/gs_hpijs.png
 %%PORTDOCS%%%%DOCSDIR%%/hpijs_readme.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%FOOMATIC%%@dirrm share/ppd/HP
-%%FOOMATIC%%@dirrm share/ppd

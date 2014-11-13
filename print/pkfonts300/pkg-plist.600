@@ -551,5 +551,3 @@ lib/fonts/pk600/linew10.600pk
 lib/fonts/pk600/linew10.657pk
 lib/fonts/pk600/linew10.720pk
 lib/fonts/pk600/linew10.864pk
-@dirrm lib/fonts/pk600
-@dirrmtry lib/fonts

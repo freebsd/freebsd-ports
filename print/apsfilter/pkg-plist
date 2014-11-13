@@ -315,18 +315,3 @@ man/man5/apsfilterrc.5.gz
 %%DATADIR%%/setup/test.ps
 %%DATADIR%%/template/README
 %%DATADIR%%/template/apsfilterrc
-@dirrm etc/apsfilter
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/driver/gimp
-@dirrm %%DATADIR%%/driver/hpdj
-@dirrm %%DATADIR%%/driver/hpijs
-@dirrm %%DATADIR%%/driver/ijs
-@dirrm %%DATADIR%%/driver/omni
-@dirrm %%DATADIR%%/driver/pcl3
-@dirrm %%DATADIR%%/driver/pips
-@dirrm %%DATADIR%%/driver/ppa
-@dirrm %%DATADIR%%/driver/stp
-@dirrm %%DATADIR%%/driver
-@dirrm %%DATADIR%%/setup
-@dirrm %%DATADIR%%/template
-@dirrm %%DATADIR%%

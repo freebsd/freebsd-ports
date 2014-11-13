@@ -66,11 +66,3 @@ share/muttprint/translations/translation-pt.pl
 share/muttprint/translations/translation-ru.pl
 share/muttprint/translations/translation-sl.pl
 share/muttprint/translations/translation-sv.pl
-@dirrm share/muttprint/translations
-@dirrm share/muttprint
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-es
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-it
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual-sl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

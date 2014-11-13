@@ -21,10 +21,3 @@ lib/libgnomeprintmm-%%API_VERSION%%/include/libgnomeprintmmconfig.h
 lib/libgnomeprintmm-%%API_VERSION%%/proc/m4/convert.m4
 lib/libgnomeprintmm-%%API_VERSION%%/proc/m4/convert_libgnomeprintmm.m4
 libdata/pkgconfig/libgnomeprintmm-%%API_VERSION%%.pc
-@dirrm lib/libgnomeprintmm-%%API_VERSION%%/proc/m4
-@dirrm lib/libgnomeprintmm-%%API_VERSION%%/proc
-@dirrm lib/libgnomeprintmm-%%API_VERSION%%/include
-@dirrm lib/libgnomeprintmm-%%API_VERSION%%
-@dirrm include/libgnomeprintmm-%%API_VERSION%%/libgnomeprintmm/private
-@dirrm include/libgnomeprintmm-%%API_VERSION%%/libgnomeprintmm
-@dirrm include/libgnomeprintmm-%%API_VERSION%%

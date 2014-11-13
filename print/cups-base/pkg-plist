@@ -1,20 +1,3 @@
-@exec mkdir -p /var/spool/cups/tmp || true
-@exec chown -R root:cups /var/spool/cups
-@exec chmod 1710 /var/spool/cups/tmp
-@comment
-@exec mkdir -p %%CACHEDIR%%/rss || true
-@exec chown -R root:cups %%CACHEDIR%%
-@exec chmod -R 775 %%CACHEDIR%%
-@comment
-@exec mkdir -p /var/log/cups || true
-@exec chown cups:daemon /var/log/cups
-@comment
-@exec mkdir -p /var/run/cups/certs
-@exec chown root:cups /var/run/cups
-@exec chown cups:wheel /var/run/cups/certs
-@comment
-@exec mkdir -p %D/etc/cups/ppd || true
-@exec mkdir -p %D/etc/cups/interfaces || true
 %%OVERWRITE%%@exec if test -e /usr/bin/lp; then chmod -h 0 /usr/bin/lp; fi
 %%OVERWRITE%%@exec if test -e /usr/bin/lpq; then chmod -h 0 /usr/bin/lpq; fi
 %%OVERWRITE%%@exec if test -e /usr/bin/lpr; then chmod -h 0 /usr/bin/lpr; fi
@@ -30,7 +13,6 @@
 @sample %%ETCDIR%%/mime.convs.sample
 @sample %%ETCDIR%%/mime.types.sample
 @sample %%ETCDIR%%/snmp.conf.sample
-@exec chgrp cups %D/etc/cups
 %%PAM%%@unexec if cmp -s %D/etc/pam.d/cups.default %D/etc/pam.d/cups; then rm -f %D/etc/pam.d/cups ; fi
 %%PAM%%etc/pam.d/cups.default
 %%PAM%%@exec if [ ! -f %D/etc/pam.d/cups ] ; then cp -p %D/%F %B/cups; fi
@@ -1029,66 +1011,17 @@ share/locale/it/cups_it.po
 share/locale/ja/cups_ja.po
 share/locale/pt_BR/cups_pt_BR.po
 share/locale/ru/cups_ru.po
-@unexec rmdir "/var/spool/cups/tmp" >/dev/null 2>&1 || :
-@unexec rmdir "/var/spool/cups" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/cups/certs" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/cups" >/dev/null 2>&1 || :
-@unexec rmdir "/var/log/cups" >/dev/null 2>&1 || :
-@unexec rmdir "/var/db/cups/rss" >/dev/null 2>&1 || :
-@unexec rmdir "/var/db/cups" >/dev/null 2>&1 || :
-%%ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/16x16
-%%ICONS%%@dirrmtry share/icons/hicolor/32x32/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/32x32
-%%ICONS%%@dirrmtry share/icons/hicolor/64x64/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/64x64
-%%ICONS%%@dirrmtry share/icons/hicolor/128x128/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/128x128
-%%ICONS%%@dirrmtry share/icons/hicolor
-%%ICONS%%@dirrmtry share/icons
-@dirrm %%DOCSDIR%%/cs
-@dirrm %%DOCSDIR%%/ca
-@dirrm %%DOCSDIR%%/de
-@dirrm %%DOCSDIR%%/ru
-@dirrm %%DOCSDIR%%/pt_BR
-@dirrm %%DOCSDIR%%/ja
-@dirrm %%DOCSDIR%%/it
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%/help
-@dirrm %%DOCSDIR%%/es
-@dirrm %%DOCSDIR%%/fr
-@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%LIBUSB%%@dirrm %%DATADIR%%/usb
-@dirrm %%DATADIR%%/templates/cs
-@dirrm %%DATADIR%%/templates/ca
-@dirrm %%DATADIR%%/templates/ru
-@dirrm %%DATADIR%%/templates/pt_BR
-@dirrm %%DATADIR%%/templates/ja
-@dirrm %%DATADIR%%/templates/it
-@dirrm %%DATADIR%%/templates/es
-@dirrm %%DATADIR%%/templates/fr
-@dirrm %%DATADIR%%/templates/de
-@dirrm %%DATADIR%%/templates
-@exec  mkdir -p %D/%%DATADIR%%/profiles
-@dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%/ppdc
-@exec  mkdir -p %D/%%DATADIR%%/model
-@dirrmtry %%DATADIR%%/model
-@dirrm %%DATADIR%%/mime
-@dirrm %%DATADIR%%/ipptool
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/drv
-@dirrmtry %%DATADIR%%
-@dirrm libexec/cups/notifier
-@dirrm libexec/cups/monitor
-@exec mkdir -p %D/libexec/cups/driver
-@dirrmtry libexec/cups/driver
-@dirrmtry libexec/cups/daemon
-@dirrmtry libexec/cups/cgi-bin
-@dirrmtry libexec/cups/backend
-@dirrmtry libexec/cups
-@dirrmtry etc/cups/interfaces
-@dirrmtry etc/cups/ppd
-@dirrmtry etc/cups/ssl
-@dirrmtry etc/cups
+@dir etc/cups/interfaces
+@dir etc/cups/ppd
+@dir etc/cups/ssl
+@dir(,cups,) etc/cups
+@dir libexec/cups/driver
+@dir %%DATADIR%%/model
+@dir %%DATADIR%%/profiles
+@dir(root,cups,775) %%CACHEDIR%%/rss
+@dir(root,cups,775) %%CACHEDIR%%
+@dir(cups,daemon,) /var/log/cups
+@dir(cups,wheel,) /var/run/cups/certs
+@dir(root,cups,) /var/run/cups
+@dir(root,cups,1710) /var/spool/cups/tmp
+@dir(root,cups,) /var/spool/cups

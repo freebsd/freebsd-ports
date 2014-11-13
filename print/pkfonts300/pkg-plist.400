@@ -695,5 +695,3 @@ lib/fonts/pk400/linew10.691pk
 lib/fonts/pk400/linew10.829pk
 lib/fonts/pk400/linew10.995pk
 lib/fonts/pk400/logo50.400pk
-@dirrm lib/fonts/pk400
-@dirrmtry lib/fonts

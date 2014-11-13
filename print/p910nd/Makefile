@@ -27,5 +27,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pl ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${P910ND_RUNDIR}
 
 .include <bsd.port.mk>

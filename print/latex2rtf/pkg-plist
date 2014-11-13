@@ -49,5 +49,3 @@ man/man1/latex2rtf.1.gz
 %%DATADIR%%/cfg/ukrainian.cfg
 %%DATADIR%%/cfg/usorbian.cfg
 %%DATADIR%%/cfg/welsh.cfg
-@dirrmtry %%DATADIR%%/cfg
-@dirrmtry %%DATADIR%%

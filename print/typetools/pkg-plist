@@ -23,4 +23,3 @@ man/man1/ttftotype42.1.gz
 %%DATADIR%%/7t.enc
 %%DATADIR%%/glyphlist.txt
 %%DATADIR%%/texglyphlist.txt
-@dirrm %%DATADIR%%

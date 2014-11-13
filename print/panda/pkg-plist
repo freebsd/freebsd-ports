@@ -121,6 +121,3 @@ man/man3/panda_xsnprintf.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/morecircles.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pandaexample.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/template.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/panda

@@ -110,9 +110,3 @@
 %%FPDF_DIR%%/makefont/koi8-u.map
 %%FPDF_DIR%%/makefont/makefont.php
 %%FPDF_DIR%%/makefont/ttfparser.php
-@dirrm %%FPDF_DIR%%/makefont
-@dirrm %%FPDF_DIR%%/font
-@dirrm %%FPDF_DIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

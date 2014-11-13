@@ -468,16 +468,3 @@ libexec/cups/filter/pstopxl
 etc/cups/pstoraster.convs
 share/cups/model/pxlcolor.ppd
 share/cups/model/pxlmono.ppd
-@dirrm %%DATADIR%%/%%GS_VERSION%%/lib/cjkv
-@dirrm %%DATADIR%%/%%GS_VERSION%%/lib
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/CMap
-@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource
-@dirrm %%DATADIR%%/%%GS_VERSION%%
-@dirrmtry %%DATADIR%%
-@dirrmtry libexec/cups/filter
-@dirrmtry libexec/cups
-@dirrmtry share/cups/model
-@dirrmtry share/cups
-@dirrmtry etc/cups

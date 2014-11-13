@@ -33,11 +33,4 @@ share/cloudprint-cups/testfiles/Test Page.png
 share/cloudprint-cups/testfiles/capabilitylist
 share/cloudprint-cups/testfiles/testppd.ppd
 share/cloudprint-cups/upgrade.py
-@dirrmtry share/cups/model
-@dirrmtry share/cups
-@dirrmtry share/cloudprint-cups/testfiles
-@dirrmtry share/cloudprint-cups/oauth2client
-@dirrmtry share/cloudprint-cups
-@dirrmtry libexec/cups/driver
-@dirrmtry libexec/cups/backend
-@dirrmtry libexec/cups
+@dir share/cups/model
