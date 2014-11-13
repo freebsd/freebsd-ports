@@ -53,4 +53,3 @@ share/arirang/server11.rb
 share/arirang/server11_relay.rb
 share/arirang/size.rb
 share/arirang/ssh.rb
-@dirrm share/arirang

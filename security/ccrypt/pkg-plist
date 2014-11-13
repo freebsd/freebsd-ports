@@ -13,4 +13,3 @@ man/man1/ccguess.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ccrypt.html
 %%PORTDOCS%%%%DOCSDIR%%/cypfaq01.txt
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

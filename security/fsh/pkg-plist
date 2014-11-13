@@ -17,4 +17,3 @@ libexec/fcpwrap
 %%DATADIR%%/fshversion.pyc
 %%DATADIR%%/infshd.py
 %%DATADIR%%/infshd.pyc
-@dirrm %%DATADIR%%

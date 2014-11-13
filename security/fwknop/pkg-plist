@@ -9,4 +9,3 @@ lib/libfko.so.2.0.0
 sbin/fwknopd
 man/man8/fwknop.8.gz
 man/man8/fwknopd.8.gz
-@dirrm %%ETCDIR%%

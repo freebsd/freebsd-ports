@@ -16,5 +16,3 @@ etc/barnyard2.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_mysql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_oracle.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_postgresql
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

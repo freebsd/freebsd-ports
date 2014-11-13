@@ -55,10 +55,3 @@ bugs-%%PORTVERSION%%/include/wrapper.h
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/lib_hist.txt
 %%PORTDOCS%%%%DOCSDIR%%/history/old_french.txt
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/history
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fulldoc/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fulldoc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cv
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm bugs-%%PORTVERSION%%/include
-@dirrm bugs-%%PORTVERSION%%

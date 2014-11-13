@@ -29,10 +29,7 @@ share/applications/gnomint.desktop
 %%DATADIR%%/new_req_window.ui
 %%DATADIR%%/preferences_dialog.ui
 %%DATADIR%%/sign.png
-@dirrmtry %%DATADIR%%
 share/mime/packages/gnomint.xml
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
 etc/gconf/schemas/gnomint.schemas
 %%NLS%%share/locale/ca/LC_MESSAGES/gnomint.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnomint.mo

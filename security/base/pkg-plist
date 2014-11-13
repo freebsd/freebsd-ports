@@ -6,7 +6,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/GPL
 %%PORTDOCS%%%%DOCSDIR%%/base_faq.rtf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 www/base/admin/base_roleadmin.php
 www/base/admin/base_useradmin.php
 www/base/admin/index.php
@@ -117,14 +116,4 @@ www/base/styles/base_black_style.css
 www/base/styles/base_red_style.css
 www/base/styles/base_style.css
 www/base/styles/acid_style.css
-@dirrm www/base/styles
-@dirrm www/base/sql
-@dirrm www/base/setup
-@dirrm www/base/languages
-@dirrm www/base/includes/templates/default
-@dirrm www/base/includes/templates
-@dirrm www/base/includes
-@dirrm www/base/images
-@dirrm www/base/help
-@dirrm www/base/admin
-@dirrmtry www/base
+@dir www/base/includes/templates/default

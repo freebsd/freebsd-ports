@@ -83,19 +83,3 @@ lib/gorilla/twofish/twofish.tcl
 lib/gorilla/twofish/twotest.tcl
 lib/gorilla/twofish/pkgIndex.tcl
 lib/gorilla/twofish/LICENSE.txt
-@dirrm lib/gorilla/blowfish
-@dirrm lib/gorilla/tcllib/csv
-@dirrm lib/gorilla/tcllib/md5
-@dirrm lib/gorilla/modules
-@dirrm lib/gorilla/msgs/help
-@dirrm lib/gorilla/msgs
-@dirrm lib/gorilla/pics
-@dirrm lib/gorilla/pwsafe
-@dirrm lib/gorilla/tcllib/sha1
-@dirrm lib/gorilla/twofish
-@dirrm lib/gorilla/tcllib/sha256c/%%GORILLAARCH%%
-@dirrm lib/gorilla/tcllib/sha256c
-@dirrm lib/gorilla/tcllib/tooltip
-@dirrm lib/gorilla/tcllib/uuid
-@dirrm lib/gorilla/tcllib
-@dirrm lib/gorilla

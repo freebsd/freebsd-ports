@@ -3,4 +3,3 @@ man/man1/hackbot.1.gz
 %%DATADIR%%/google.db
 %%DATADIR%%/fingerprint.db
 %%DATADIR%%/cgi.db
-@dirrm %%DATADIR%%

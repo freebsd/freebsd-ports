@@ -1,6 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @sample etc/bruteforceblocker.conf.sample
 sbin/bruteforceblocker

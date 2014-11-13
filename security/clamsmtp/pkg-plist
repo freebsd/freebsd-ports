@@ -4,4 +4,3 @@ man/man8/clamsmtpd.8.gz
 sbin/clamsmtpd
 etc/clamsmtpd.conf-sample
 %%EXAMPLESDIR%%/virus_action.sh
-@dirrm %%EXAMPLESDIR%%

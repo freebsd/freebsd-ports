@@ -11,5 +11,3 @@ man/man1/psk-crack.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/udp-backoff-fingerprinting-paper.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/ike-scan

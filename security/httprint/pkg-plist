@@ -43,5 +43,3 @@ bin/httprint
 %%DATADIR%%/images/xerver.gif
 %%DATADIR%%/images/zeus.gif
 %%DATADIR%%/images/zope.gif
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

@@ -136,7 +136,5 @@ lib/libcryptopp.a
 %%DYNAMIC_ENABLED%%lib/libcryptopp.so
 %%DYNAMIC_ENABLED%%lib/libcryptopp.so.%%LIBVERSION%%
 %%DYNAMIC_ENABLED%%lib/libcryptopp.so.%%PORTVERSION%%
-@dirrm include/cryptopp
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/License
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

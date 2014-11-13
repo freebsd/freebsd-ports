@@ -75,11 +75,3 @@ share/applications/gcipher.desktop
 %%DATADIR%%/plugins/cipher/Identity.py
 %%DATADIR%%/plugins/ciphergui/Identity.py
 %%DATADIR%%/plugins/ciphergui/PluginCipherGUIList.py
-@dirrm %%DATADIR%%/plugins/ciphergui
-@dirrm %%DATADIR%%/plugins/cipher
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/lib/ciphergui
-@dirrm %%DATADIR%%/lib/cipher
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

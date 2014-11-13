@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/iked.conf %D/etc/iked.conf.sample; then rm -f %D/etc/iked.conf; fi
-etc/iked.conf.sample
-@exec [ -f %D/etc/iked.conf ] || cp %D/etc/iked.conf.sample %D/etc/iked.conf
+@sample etc/iked.conf.sample
 bin/ikec
 sbin/iked
 %%QTGUI%%bin/qikea

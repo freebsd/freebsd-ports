@@ -228,11 +228,3 @@ cops/suid.stop
 cops/tilde
 cops/user.chk
 cops/yp_pass.chk
-@dirrm cops/src
-@dirrm cops/perl
-@dirrm cops/extra_src
-@dirrm cops/extensions
-@dirrm cops/docs
-@dirrm cops/checkacct
-@dirrm cops/carp
-@dirrm cops

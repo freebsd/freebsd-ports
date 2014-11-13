@@ -21,5 +21,3 @@ bin/dirbuster
 %%DATADIR%%/apache-user-enum-2.0.txt
 %%DATADIR%%/apache-user-enum-1.0.txt
 %%DATADIR%%/DirBuster-1.0-RC1.jar
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/

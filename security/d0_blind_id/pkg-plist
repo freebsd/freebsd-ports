@@ -12,4 +12,3 @@ lib/libd0_rijndael.so.0
 lib/libd0_rijndael.so.0.0.0
 libdata/pkgconfig/d0_blind_id.pc
 libdata/pkgconfig/d0_rijndael.pc
-@dirrmtry include/d0_blind_id

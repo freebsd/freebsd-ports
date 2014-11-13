@@ -13,8 +13,4 @@ share/crank/slft.dat
 share/crank/source.xpm
 share/crank/stop.xpm
 share/crank/trift.dat
-@dirrm share/crank/patch
-@dirrm share/crank/scheme
-@dirrm share/crank
-@dirrm lib/crank/plugins
-@dirrm lib/crank
+@dir lib/crank/plugins

@@ -34,4 +34,3 @@ man/man1/tcp6.1.gz
 man/man5/ipv6toolkit.conf.5.gz
 man/man7/ipv6toolkit.7.gz
 %%DATADIR%%/oui.txt
-@dirrm %%DATADIR%%
