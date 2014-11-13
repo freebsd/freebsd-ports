@@ -22,14 +22,8 @@ lib/X11/fonts/misc/System2.pcf.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/TOS-VERSIONS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench1.pas
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench1.prg
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/gemdos_c/mint
-@dirrm %%DATADIR%%/gemdos_c
-@dirrm %%DATADIR%%
-@dirrmtry %%ETCDIR%%
 @exec mkfontdir %D/lib/X11/fonts/misc
 @exec xset fp+ %D/lib/X11/fonts/misc
 @exec xset fp rehash
