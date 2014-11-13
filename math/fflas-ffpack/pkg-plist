@@ -126,11 +126,3 @@ include/fflas-ffpack/utils/print-utils.h
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/test-utils_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/todo.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack.html
-%%DOXYGEN%%@dirrm %%DOCSDIR%%/fflas-ffpack-dev-html
-%%DOXYGEN%%@dirrm %%DOCSDIR%%/fflas-ffpack-html
-%%DOXYGEN%%@dirrm %%DOCSDIR%%
-@dirrm include/fflas-ffpack/utils
-@dirrm include/fflas-ffpack/field
-@dirrm include/fflas-ffpack/ffpack
-@dirrm include/fflas-ffpack/fflas
-@dirrm include/fflas-ffpack

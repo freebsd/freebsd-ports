@@ -102,4 +102,3 @@ include/abacus/timer.h
 include/abacus/valbranchrule.h
 include/abacus/variable.h
 include/abacus/vartype.h
-@dirrm include/abacus

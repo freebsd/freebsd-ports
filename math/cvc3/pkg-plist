@@ -91,4 +91,3 @@ lib/libcvc3.so.5
 lib/libcvc3.so.5.0
 lib/libcvc3.so.5.0.0
 libdata/pkgconfig/cvc3.pc
-@dirrm include/cvc3

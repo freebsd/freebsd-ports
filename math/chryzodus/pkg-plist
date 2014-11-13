@@ -6,4 +6,3 @@ bin/chryzodus
 %%PORTDOCS%%%%DOCSDIR%%/keyboard.html
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

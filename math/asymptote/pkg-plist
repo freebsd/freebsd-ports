@@ -516,17 +516,4 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xxsq01y.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yingyang.asy
 %%TEXMFLOCALDIR%%/tex/context/third/asymptote/colo-asy.tex
-@dirrmtry info/asymptote
-@dirrmtry %%DATADIR%%/GUI
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/asy-faq.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/animations
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%TEXMFLOCALDIR%%/tex/context/third/asymptote
-@dirrmtry %%TEXMFLOCALDIR%%/tex/context/third
-@dirrmtry %%TEXMFLOCALDIR%%/tex/context
-@dirrmtry %%TEXMFLOCALDIR%%/tex/latex/asymptote
-@dirrmtry %%TEXMFLOCALDIR%%/tex/latex
-@dirrmtry %%TEXMFLOCALDIR%%/tex
-@dirrmtry %%TEXMFLOCALDIR%%
+@dir %%TEXMFLOCALDIR%%/tex/latex/asymptote

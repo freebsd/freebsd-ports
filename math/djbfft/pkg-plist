@@ -8,4 +8,3 @@ include/djbfft/fftr8.h
 include/djbfft/real4.h
 include/djbfft/real8.h
 lib/libdjbfft.a
-@dirrm include/djbfft

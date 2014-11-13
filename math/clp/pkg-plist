@@ -116,7 +116,3 @@ share/doc/coin/CoinUtils/AUTHORS
 share/doc/coin/CoinUtils/LICENSE
 share/doc/coin/CoinUtils/README
 share/doc/coin/CoinUtils/coinutils_addlibs.txt
-@dirrm share/doc/coin/CoinUtils
-@dirrm share/doc/coin/Clp
-@dirrm share/doc/coin
-@dirrm include/coin

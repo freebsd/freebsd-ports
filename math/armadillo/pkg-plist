@@ -409,6 +409,3 @@ share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends.cmake
-@dirrmtry include/armadillo_bits
-@dirrmtry share/Armadillo/CMake
-@dirrmtry share/Armadillo

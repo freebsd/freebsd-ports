@@ -266,4 +266,3 @@ libdata/pkgconfig/osi-cbc.pc
 libdata/pkgconfig/osi-clp.pc
 libdata/pkgconfig/osi-unittests.pc
 libdata/pkgconfig/osi.pc
-@dirrmtry include/coin

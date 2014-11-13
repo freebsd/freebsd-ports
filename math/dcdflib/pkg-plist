@@ -6,4 +6,3 @@ lib/libdcdflib.so.1
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/dcdflib.chs
 %%PORTDOCS%%%%DOCSDIR%%/dcdflib.fdoc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

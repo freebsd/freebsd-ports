@@ -12,7 +12,3 @@ man/man1/euktopdf.1.gz
 man/man1/euktopst.1.gz
 man/man1/euktotex.1.gz
 man/man1/eukleides.1.gz
-@dirrm share/texmf/tex/latex/eukleides
-@dirrmtry share/texmf/tex/latex
-@dirrmtry share/texmf/tex
-@dirrmtry share/texmf
