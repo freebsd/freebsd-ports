@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	ZynAddSubFX-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Realtime software synthesizer
 
 LICENSE=	GPLv2
