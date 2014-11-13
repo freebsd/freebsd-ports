@@ -1,5 +1,5 @@
---- ldap-init-krb5-cache.c.orig	2009-11-06 11:28:08.000000000 +0100
-+++ ldap-init-krb5-cache.c	2014-03-26 21:42:54.575385677 +0100
+--- ldap-init-krb5-cache.c.orig
++++ ldap-init-krb5-cache.c
 @@ -109,14 +109,14 @@
  #include <gssapi/gssapi.h>
  #include <gssapi/gssapi_krb5.h>
@@ -47,6 +47,15 @@
  	{
  	  debug ("==> krb5_cache_kt_is_accessible: kt type = FILE");
  	  uid_t ruid = getuid ();
+@@ -243,7 +254,7 @@
+ 	    {
+ 	      setreuid (ruid, euid);
+ 	    }
+-	  if (rgid != rgid)
++	  if (rgid != egid)
+ 	    {
+ 	      setregid (rgid, egid);
+ 	    }
 @@ -542,7 +553,7 @@
      }
    profile_release (profile);
