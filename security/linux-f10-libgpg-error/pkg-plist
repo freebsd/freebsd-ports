@@ -13,14 +13,3 @@ usr/share/locale/pl/LC_MESSAGES/libgpg-error.mo
 %%PORTDOCS%%usr/%%DOCSDIR%%-%%PORTVERSION%%/ChangeLog
 %%PORTDOCS%%usr/%%DOCSDIR%%-%%PORTVERSION%%/NEWS
 %%PORTDOCS%%usr/%%DOCSDIR%%-%%PORTVERSION%%/README
-%%PORTDOCS%%@dirrm usr/%%DOCSDIR%%-%%PORTVERSION%%
-@dirrmtry usr/share/locale/vi/LC_MESSAGES
-@dirrmtry usr/share/locale/sv/LC_MESSAGES
-@dirrmtry usr/share/locale/pl/LC_MESSAGES
-@dirrmtry usr/share/locale/fr/LC_MESSAGES
-@dirrmtry usr/share/locale/de/LC_MESSAGES
-@dirrmtry usr/share/locale/vi
-@dirrmtry usr/share/locale/sv
-@dirrmtry usr/share/locale/pl
-@dirrmtry usr/share/locale/fr
-@dirrmtry usr/share/locale/de

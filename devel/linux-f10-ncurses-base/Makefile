@@ -3,7 +3,7 @@
 
 PORTNAME=	ncurses-base
 PORTVERSION=	5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/10/Fedora/i386/os/Packages/
 

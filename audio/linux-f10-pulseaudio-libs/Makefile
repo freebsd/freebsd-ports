@@ -25,9 +25,4 @@ pre-patch:
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
-post-install:
-	@if [ ! -f ${PREFIX}/${CONF_FILE} ]; then \
-		${CP} -p ${STAGEDIR}${PREFIX}/${CONF_FILE}-dist ${STAGEDIR}${PREFIX}/${CONF_FILE} ; \
-	fi
-
 .include <bsd.port.mk>

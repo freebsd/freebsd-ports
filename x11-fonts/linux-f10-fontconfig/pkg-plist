@@ -14,5 +14,3 @@ usr/share/man/man1/fc-cat.1.gz
 usr/share/man/man1/fc-list.1.gz
 usr/share/man/man1/fc-match.1.gz
 usr/share/man/man5/fonts-conf.5.gz
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/fontconfig-2.6.0

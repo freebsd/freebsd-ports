@@ -178,14 +178,3 @@ usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/tclIndex
 usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/treeview.tcl
 usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/treeview.xbm
 usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/treeview_m.xbm
-@dirrm usr/share/doc/blt-%%PORTVERSION%%/html
-@dirrm usr/share/doc/blt-%%PORTVERSION%%
-@dirrm usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/demos/bitmaps/fish
-@dirrm usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/demos/bitmaps/hand
-@dirrm usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/demos/bitmaps
-@dirrm usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/demos/images
-@dirrm usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/demos/scripts
-@dirrm usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/demos
-@dirrm usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%/dd_protocols
-@dirrm usr/share/tcl%%TCLVERSION%%/blt%%PORTVERSION%%
-@dirrm usr/lib/tcl%%TCLVERSION%%/blt%%PORTVERSION%%

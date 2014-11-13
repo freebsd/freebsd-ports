@@ -22,6 +22,3 @@ usr/share/doc/audiofile-0.2.6/docs/afSetVirtualByteOrder
 usr/share/doc/audiofile-0.2.6/docs/afWriteFrames
 usr/share/doc/audiofile-0.2.6/docs/sfconvert
 usr/share/doc/audiofile-0.2.6/docs/sfinfo
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/audiofile-0.2.6/docs
-@dirrm usr/share/doc/audiofile-0.2.6

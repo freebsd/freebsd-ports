@@ -65,7 +65,3 @@ usr/lib/mcop/soundserver.mcoptype
 usr/lib/mcop/x11globalcomm.mcopclass
 usr/lib/mcop/x11globalcomm.mcoptype
 usr/share/doc/arts-1.5.10/COPYING.LIB
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/arts-1.5.10
-@dirrm usr/lib/mcop/Arts
-@dirrm usr/lib/mcop
