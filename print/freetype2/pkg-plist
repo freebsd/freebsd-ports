@@ -58,5 +58,3 @@ lib/libfreetype.so.6.11.2
 libdata/pkgconfig/freetype2.pc
 man/man1/freetype-config.1.gz
 share/aclocal/freetype2.m4
-@dirrm include/freetype2/config
-@dirrm include/freetype2

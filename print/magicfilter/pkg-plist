@@ -57,4 +57,3 @@ libexec/magicfilter/tek4696
 libexec/magicfilter/textonly
 man/man5/magicfilter.5.gz
 man/man8/magicfilter.8.gz
-@dirrm libexec/magicfilter

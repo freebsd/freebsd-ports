@@ -45,8 +45,3 @@ share/cups/model/xerox/ph5500.ppd
 share/cups/model/xerox/ph6100.ppd
 share/cups/model/xerox/ph6110.ppd
 share/cups/model/xerox/wc3119.ppd
-@dirrm share/cups/model/dell
-@dirrm share/cups/model/samsung
-@dirrm share/cups/model/xerox
-@dirrmtry share/cups/model
-@dirrmtry share/cups

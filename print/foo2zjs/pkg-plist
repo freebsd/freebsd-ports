@@ -317,20 +317,8 @@ share/foo2qpdl/crd/black-text.ps
 %%DATADIR%%/crd/screen2400.ps
 %%DATADIR%%/gamma-lookup.ps
 %%DATADIR%%/gamma.ps
-@dirrmtry %%DATADIR%%/crd
-@dirrmtry %%DATADIR%%
-@dirrmtry share/foo2xqx
-@dirrmtry share/foo2qpdl/crd
-@dirrmtry share/foo2qpdl
-@dirrmtry share/foo2oak
-@dirrmtry share/foo2lava
-@dirrmtry share/foo2hp
-@dirrmtry share/foo2hiperc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry share/cups/model
-@dirrmtry share/cups
-@dirrmtry foomatic/db/source/printer
-@dirrmtry foomatic/db/source/opt
-@dirrmtry foomatic/db/source
-@dirrmtry foomatic/db
-@dirrmtry foomatic
+@dir share/foo2hiperc
+@dir share/foo2hp
+@dir share/foo2lava
+@dir share/foo2oak
+@dir share/foo2xqx

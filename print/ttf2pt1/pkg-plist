@@ -91,21 +91,3 @@ bin/ttf2pt1_x2gs
 man/man1/ttf2pt1.1.gz
 man/man1/ttf2pt1_convert.1.gz
 man/man1/ttf2pt1_x2gs.1.gz
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/other
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/encodings/russian
-@dirrm %%DATADIR%%/encodings/latin5
-@dirrm %%DATADIR%%/encodings/latin4
-@dirrm %%DATADIR%%/encodings/latin2
-@dirrm %%DATADIR%%/encodings/latin1
-@dirrm %%DATADIR%%/encodings/cyrillic
-@dirrm %%DATADIR%%/encodings/bulgarian
-@dirrm %%DATADIR%%/encodings/adobestd
-@dirrm %%DATADIR%%/encodings
-@dirrm %%DATADIR%%/app/netscape
-@dirrm %%DATADIR%%/app/X11
-@dirrm %%DATADIR%%/app/TeX
-@dirrm %%DATADIR%%/app/RPM
-@dirrm %%DATADIR%%/app
-@dirrm %%DATADIR%%

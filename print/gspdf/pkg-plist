@@ -23,8 +23,3 @@ GNUstep/System/Applications/GSPdf.app/Resources/zoomin.tiff
 GNUstep/System/Applications/GSPdf.app/Resources/zoomout.tiff
 GNUstep/System/Applications/GSPdf.app/stamp.make
 GNUstep/System/Tools/GSPdf
-@dirrm GNUstep/System/Applications/GSPdf.app/Resources/GSPdfDocument.gorm
-@dirrm GNUstep/System/Applications/GSPdf.app/Resources/GSPdfConsole.gorm
-@dirrm GNUstep/System/Applications/GSPdf.app/Resources/GSPdf.gorm
-@dirrm GNUstep/System/Applications/GSPdf.app/Resources
-@dirrm GNUstep/System/Applications/GSPdf.app

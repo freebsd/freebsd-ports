@@ -8,5 +8,3 @@ bin/FoxitReader
 %%NLS%%share/locale/ja/LC_MESSAGES/FoxitReader.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/FoxitReader.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/FoxitReader.mo
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

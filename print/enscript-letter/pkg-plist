@@ -162,6 +162,3 @@ man/man1/states.1.gz
 %%NLS%%share/locale/sl/LC_MESSAGES/enscript.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/enscript.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/enscript.mo
-@dirrm %%DATADIR%%/afm
-@dirrm %%DATADIR%%/hl
-@dirrm %%DATADIR%%

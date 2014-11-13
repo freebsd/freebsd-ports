@@ -4,7 +4,3 @@ libexec/cups/backend/cups-pdf
 share/cups/model/CUPS-PDF.ppd
 @sample etc/cups/cups-pdf.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry libexec/cups/backend
-@dirrmtry libexec/cups
-@dirrmtry share/cups

@@ -18,5 +18,3 @@ lib/libpdf.so.6.0.5
 %%JAVA%%%%JAVAJARDIR%%/pdflib.jar
 %%DATADIR%%/fonts/pdflib.upr
 %%DATADIR%%/fonts/print_glyphs.ps
-@dirrm share/pdflib/fonts
-@dirrm share/pdflib

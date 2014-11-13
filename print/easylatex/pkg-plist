@@ -35,9 +35,3 @@ bin/easylatex
 %%DATADIR%%/transforms/92tempKludges.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo-no-graph.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/transforms
-@dirrm %%DATADIR%%/embed_transforms
-@dirrm %%DATADIR%%/disabled
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

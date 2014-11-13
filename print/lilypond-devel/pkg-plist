@@ -362,23 +362,3 @@ share/emacs/site-lisp/lilypond-words.el
 %%NLS%%share/locale/uk/LC_MESSAGES/lilypond.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/lilypond.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lilypond.mo
-@dirrm lib/lilypond/%%PORTVERSION%%/python
-@dirrm lib/lilypond/%%PORTVERSION%%
-@dirrm lib/lilypond
-@dirrm %%DATADIR%%/%%PORTVERSION%%/vim/syntax
-@dirrm %%DATADIR%%/%%PORTVERSION%%/vim/indent
-@dirrm %%DATADIR%%/%%PORTVERSION%%/vim/ftplugin
-@dirrm %%DATADIR%%/%%PORTVERSION%%/vim/ftdetect
-@dirrm %%DATADIR%%/%%PORTVERSION%%/vim/compiler
-@dirrm %%DATADIR%%/%%PORTVERSION%%/vim
-@dirrm %%DATADIR%%/%%PORTVERSION%%/tex
-@dirrm %%DATADIR%%/%%PORTVERSION%%/scm
-@dirrm %%DATADIR%%/%%PORTVERSION%%/python
-@dirrm %%DATADIR%%/%%PORTVERSION%%/ps
-@dirrm %%DATADIR%%/%%PORTVERSION%%/ly
-@dirrm %%DATADIR%%/%%PORTVERSION%%/fonts/svg
-@dirrm %%DATADIR%%/%%PORTVERSION%%/fonts/source
-@dirrm %%DATADIR%%/%%PORTVERSION%%/fonts/otf
-@dirrm %%DATADIR%%/%%PORTVERSION%%/fonts
-@dirrm %%DATADIR%%/%%PORTVERSION%%
-@dirrm %%DATADIR%%

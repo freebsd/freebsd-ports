@@ -9,6 +9,3 @@ man/man1/ps2eps.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/ps2eps.html
 %%PORTDOCS%%%%DOCSDIR%%/pdf/bbox.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/ps2eps.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

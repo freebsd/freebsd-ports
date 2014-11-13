@@ -357,11 +357,3 @@ man/man1/tie.1.gz
 man/man1/vftovp.1.gz
 man/man1/vptovf.1.gz
 man/man1/weave.1.gz
-@dirrm include/kpathsea
-@dirrm share/texmf/fontname
-@dirrm share/texmf/fonts/tfm
-@dirrm share/texmf/fonts
-@dirrm share/texmf/metafont
-@dirrm share/texmf/tex
-@dirrm share/texmf/web2c
-@dirrm share/texmf

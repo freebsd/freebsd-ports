@@ -408,7 +408,6 @@ share/fonts/cm-super/afm/sfxc2074.afm
 share/fonts/cm-super/afm/sfxc2488.afm
 share/fonts/cm-super/afm/sfxc2986.afm
 share/fonts/cm-super/afm/sfxc3583.afm
-@dirrm share/fonts/cm-super/afm
 %%X11%%share/fonts/cm-super/type1/Fontmap
 %%X11%%share/fonts/cm-super/type1/fonts.dir
 %%X11%%share/fonts/cm-super/type1/fonts.scale
@@ -821,15 +820,12 @@ share/fonts/cm-super/type1/sfxc2074.pfb
 share/fonts/cm-super/type1/sfxc2488.pfb
 share/fonts/cm-super/type1/sfxc2986.pfb
 share/fonts/cm-super/type1/sfxc3583.pfb
-@dirrm share/fonts/cm-super/type1
-@dirrm share/fonts/cm-super
 share/texmf/fonts/map/dvipdfm/cm-super/cm-super-t1.map
 share/texmf/fonts/map/dvipdfm/cm-super/cm-super-t2a.map
 share/texmf/fonts/map/dvipdfm/cm-super/cm-super-t2b.map
 share/texmf/fonts/map/dvipdfm/cm-super/cm-super-t2c.map
 share/texmf/fonts/map/dvipdfm/cm-super/cm-super-ts1.map
 share/texmf/fonts/map/dvipdfm/cm-super/cm-super-x2.map
-@dirrm share/texmf/fonts/map/dvipdfm/cm-super
 share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc
 share/texmf/fonts/map/dvips/cm-super/cm-super-t1.map
 share/texmf/fonts/enc/dvips/cm-super/cm-super-t2a.enc
@@ -842,12 +838,9 @@ share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 share/texmf/fonts/map/dvips/cm-super/cm-super-ts1.map
 share/texmf/fonts/enc/dvips/cm-super/cm-super-x2.enc
 share/texmf/fonts/map/dvips/cm-super/cm-super-x2.map
-@dirrm share/texmf/fonts/enc/dvips/cm-super
-@dirrm share/texmf/fonts/map/dvips/cm-super
 share/texmf/fonts/type1/public/cm-super
 share/texmf/fonts/afm/public/cm-super
 %%MACRODIR%%/type1ec.sty
-@dirrm %%MACRODIR%%
 @exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
 @exec for F in %%MAPFILES%%; do echo "Adding $F..."; %%UPDMAP_SYS%% --nohash --nomkmap --enable Map=${F}; done
 @exec echo "Regenerating mapfiles..."; %%UPDMAP_SYS%%

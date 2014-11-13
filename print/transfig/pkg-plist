@@ -75,6 +75,3 @@ man/man1/fig2dev.1.gz
 man/man1/fig2ps2tex.1.gz
 man/man1/pic2tpic.1.gz
 man/man1/transfig.1.gz
-@dirrm lib/X11/xfig/bitmaps
-@dirrmtry lib/X11/xfig
-@dirrm lib/X11/fig2dev

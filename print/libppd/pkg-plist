@@ -15,5 +15,3 @@ man/man3/ppd_file_new.3.gz
 man/man3/ppd_find_choice.3.gz
 man/man3/ppd_get_num_conflicts.3.gz
 man/man3/ppd_get_page_length.3.gz
-@dirrm share/postscript/ppd
-@dirrm share/postscript

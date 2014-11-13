@@ -1103,9 +1103,3 @@ share/locale/uk/LC_MESSAGES/FontForge.mo
 share/locale/vi/LC_MESSAGES/FontForge.mo
 share/locale/zh_CN/LC_MESSAGES/FontForge.mo
 share/locale/zh_TW/LC_MESSAGES/FontForge.mo
-@dirrm %%DATADIR%%/python
-%%PLUGINS%%@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
-@dirrm include/fontforge

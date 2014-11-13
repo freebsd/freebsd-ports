@@ -5,5 +5,3 @@ man/man1/xdvi.1.gz
 %%TEXMFDISTDIR%%/xdvi/config.xdvi
 %%TEXMFDISTDIR%%/xdvi/pixmaps/toolbar.xpm
 %%TEXMFDISTDIR%%/xdvi/pixmaps/toolbar2.xpm
-@dirrm %%TEXMFDISTDIR%%/xdvi/pixmaps
-@dirrm %%TEXMFDISTDIR%%/xdvi

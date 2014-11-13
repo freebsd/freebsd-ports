@@ -16,5 +16,3 @@ lib/libttf.a
 lib/libttf.so
 lib/libttf.so.2
 lib/libttf.so.2.2.0
-@dirrm include/freetype1/freetype
-@dirrm include/freetype1

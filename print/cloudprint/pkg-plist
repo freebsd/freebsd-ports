@@ -16,7 +16,3 @@ bin/cloudprint
 %%PYTHON_SITELIBDIR%%/cloudprint/xmpp.py
 %%PYTHON_SITELIBDIR%%/cloudprint/xmpp.pyc
 %%PYTHON_SITELIBDIR%%/cloudprint/xmpp.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/cloudprint-0.11-py2.7.egg-info
-@dirrmtry %%PYTHON_SITELIBDIR%%/cloudprint
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

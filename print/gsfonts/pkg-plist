@@ -159,5 +159,3 @@
 %%FONTSDIR%%/STHeiti-Regular
 %%FONTSDIR%%/STSong-Light
 %%FONTSDIR%%/MSung-Light
-@dirrm %%FONTSDIR%%
-@dirrmtry share/ghostscript

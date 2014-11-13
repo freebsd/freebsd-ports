@@ -14,7 +14,6 @@
 %%EMACS_SITE_LISPDIR%%/yatex/yatexprc.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexsec.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexpkg.el
-@dirrm %%EMACS_SITE_LISPDIR%%/yatex
 %%EMACS_SITE_LISPDIR%%/YATEXHLP.jp
 %%EMACS_SITE_LISPDIR%%/YATEXHLP.eng
 %%EMACS_SITE_LISPDIR%%/yatex-startup.el

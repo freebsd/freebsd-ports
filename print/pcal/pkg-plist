@@ -36,4 +36,3 @@ man/man1/pcal.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fonttest_roman8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fonttest_thai
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcal-cfg.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

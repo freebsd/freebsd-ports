@@ -23,12 +23,4 @@ man/man1/xdvipdfmx.1.gz
 %%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-texnansi.map
 %%TEXMFDISTDIR%%/fonts/map/dvipdfmx/cid-x.map
 %%TEXMFDISTDIR%%/fonts/map/dvipdfmx/ckx.map
-@dirrmtry %%TEXMFDISTDIR%%/fonts/map/dvipdfmx/updmap
-@dirrmtry %%TEXMFDISTDIR%%/fonts/map/dvipdfmx
-@dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm
-@dirrmtry %%TEXMFDISTDIR%%/fonts/map/dvipdfm
-@dirrmtry %%TEXMFDISTDIR%%/fonts/map
-@dirrm %%TEXMFDISTDIR%%/fonts/cmap/dvipdfmx
-@dirrmtry %%TEXMFDISTDIR%%/fonts/cmap
-@dirrm %%TEXMFDISTDIR%%/dvipdfmx
-@dirrm %%TEXMFDISTDIR%%/doc/dvipdfmx
+@dir %%TEXMFDISTDIR%%/fonts/map/dvipdfmx/updmap

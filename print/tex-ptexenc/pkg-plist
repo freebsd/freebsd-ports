@@ -1,7 +1,6 @@
 include/ptexenc/ptexenc.h
 include/ptexenc/unicode.h
 include/ptexenc/unicode-jp.h
-@dirrm include/ptexenc
 lib/libptexenc.a
 lib/libptexenc.so
 lib/libptexenc.so.1

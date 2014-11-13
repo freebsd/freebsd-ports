@@ -27,5 +27,3 @@ share/hyperlatex/simplepanels.hlx
 share/hyperlatex/siteinit.hlx
 share/hyperlatex/tabularx.hlx
 share/texmf/tex/latex/hyperlatex/hyperlatex.sty
-@dirrmtry share/texmf/tex/latex/hyperlatex
-@dirrmtry share/hyperlatex

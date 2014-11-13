@@ -272,6 +272,4 @@ share/texmf/tex/musixtex.sty
 share/texmf/tex/musixtex.tex
 share/texmf/tex/musixtri.tex
 @exec %D/bin/texhash || true
-@dirrm share/texmf/documentation/musixtex.examples
-@dirrmtry share/texmf/documentation
 @unexec %D/bin/texhash || true
