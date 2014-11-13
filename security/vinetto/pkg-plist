@@ -9,4 +9,3 @@ bin/vinetto
 %%DATADIR%%/header
 %%DATADIR%%/huffman
 %%DATADIR%%/quantization
-@dirrm %%DATADIR%%

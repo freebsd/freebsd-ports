@@ -7,5 +7,3 @@ man/man1/rats.1.gz
 %%DATADIR%%/rats-python.xml
 %%DATADIR%%/rats-ruby.xml
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

@@ -15,5 +15,3 @@ man/man1/zebedee.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/ftpgw.tcl.html
 %%PORTDOCS%%%%DOCSDIR%%/zebedee.html
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

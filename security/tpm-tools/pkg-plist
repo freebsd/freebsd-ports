@@ -51,4 +51,3 @@ man/man8/tpm_setoperatorauth.8.gz
 man/man8/tpm_setownable.8.gz
 man/man8/tpm_setpresence.8.gz
 man/man8/tpm_takeownership.8.gz
-@dirrm include/tpm_tools

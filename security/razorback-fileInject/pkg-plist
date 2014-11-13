@@ -1,3 +1,2 @@
 bin/fileInject
 etc/razorback/fileInject.conf.sample
-@dirrmtry etc/razorback

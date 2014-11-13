@@ -13,9 +13,7 @@ sbin/siggen
 share/doc/tripwire/COPYING
 share/doc/tripwire/TRADEMARK
 share/doc/tripwire/policyguide.txt
-@dirrm share/doc/tripwire
 %%ETCDIR%%/twpol-FreeBSD.txt
-@dirrmtry %%ETCDIR%%
-@dirrmtry %%TWDB%%/report
-@dirrmtry %%TWDB%%
-
+@dir(,,0750) %%ETCDIR%%
+@dir %%TWDB%%/report
+@dir %%TWDB%%

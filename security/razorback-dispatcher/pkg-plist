@@ -4,4 +4,3 @@ bin/dispatcher_safed
 share/razorback/razorback.sql
 share/razorback/razorback-data.sql
 share/razorback/truncate.sql
-@dirrmtry share/razorback

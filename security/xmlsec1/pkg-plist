@@ -226,14 +226,3 @@ share/aclocal/xmlsec1.m4
 %%PORTDOCS%%%%DOCSDIR%%/xmldsig.html
 %%PORTDOCS%%%%DOCSDIR%%/xmlenc.html
 %%PORTDOCS%%%%DOCSDIR%%/xmlsec-man.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/api/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry include/xmlsec1/xmlsec/private
-@dirrmtry include/xmlsec1/xmlsec/openssl
-%%NSS%%@dirrmtry include/xmlsec1/xmlsec/nss
-%%GNUTLS%%@dirrmtry include/xmlsec1/xmlsec/gnutls
-@dirrmtry include/xmlsec1/xmlsec/gcrypt
-@dirrmtry include/xmlsec1/xmlsec
-@dirrmtry include/xmlsec1
