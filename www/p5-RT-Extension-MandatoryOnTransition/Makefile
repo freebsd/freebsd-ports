@@ -12,6 +12,8 @@ COMMENT=	Extension to require core and ticket custom fields on status changes
 
 LICENSE=	GPLv2
 
+NEED_ROOT=	yes
+
 OPTIONS_SINGLE=                 RTVERSION
 OPTIONS_SINGLE_RTVERSION=       RT40 RT42
 RT40_DESC=                      Install for rt-4.0.x (www/rt40)
