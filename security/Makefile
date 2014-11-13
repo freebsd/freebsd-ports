@@ -981,6 +981,7 @@
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
     SUBDIR += tclsasl
+    SUBDIR += tcpcrypt
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += tlswrap
