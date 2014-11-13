@@ -5,5 +5,3 @@ lib/libann.so.0
 lib/libann.so
 lib/libann.a
 %%DOCSDIR%%/ANNmanual.pdf
-@dirrm include/ANN
-@dirrm %%DOCSDIR%%

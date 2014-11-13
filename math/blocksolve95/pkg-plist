@@ -125,4 +125,3 @@ man/man3/BStri_solve.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/worker7.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/worker8.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/write_mat_matlab.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

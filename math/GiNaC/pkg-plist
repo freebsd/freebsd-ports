@@ -54,4 +54,3 @@ lib/libginac.so.2.1.0
 libdata/pkgconfig/ginac.pc
 man/man1/ginsh.1.gz
 man/man1/viewgar.1.gz
-@dirrm include/ginac

@@ -8,4 +8,3 @@ include/arpack_compat_f.h
 %%PORTDOCS%%%%DOCSDIR%%/ex-nonsym.doc.gz
 %%PORTDOCS%%%%DOCSDIR%%/ex-sym.doc.gz
 %%PORTDOCS%%%%DOCSDIR%%/ug.ps.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

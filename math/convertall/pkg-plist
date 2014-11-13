@@ -83,9 +83,3 @@ bin/convertall
 %%NLS%%%%DOCSDIR%%/README_de.html
 %%NLS%%%%DOCSDIR%%/README_es.html
 %%NLS%%%%DOCSDIR%%/README_fr.html
-@dirrmtry %%DATADIR%%/__pycache__
-@dirrmtry %%DATADIR%%/data
-@dirrmtry %%DATADIR%%/icons
-%%NLS%%@dirrmtry %%DATADIR%%/translations
-@dirrmtry %%DATADIR%%
-@dirrmtry %%DOCSDIR%%

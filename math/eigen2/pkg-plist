@@ -123,23 +123,3 @@ include/eigen2/unsupported/Eigen/IterativeSolvers
 include/eigen2/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h
 include/eigen2/unsupported/Eigen/src/IterativeSolvers/IterationController.h
 libdata/pkgconfig/eigen2.pc
-@dirrm include/eigen2/unsupported/Eigen/src/IterativeSolvers
-@dirrm include/eigen2/unsupported/Eigen/src
-@dirrm include/eigen2/unsupported/Eigen
-@dirrm include/eigen2/unsupported
-@dirrm include/eigen2/Eigen/src/Sparse
-@dirrm include/eigen2/Eigen/src/SVD
-@dirrm include/eigen2/Eigen/src/QR
-@dirrm include/eigen2/Eigen/src/LeastSquares
-@dirrm include/eigen2/Eigen/src/LU
-@dirrm include/eigen2/Eigen/src/Geometry
-@dirrm include/eigen2/Eigen/src/Core/util
-@dirrm include/eigen2/Eigen/src/Core/arch/SSE
-@dirrm include/eigen2/Eigen/src/Core/arch/AltiVec
-@dirrm include/eigen2/Eigen/src/Core/arch
-@dirrm include/eigen2/Eigen/src/Core
-@dirrm include/eigen2/Eigen/src/Cholesky
-@dirrm include/eigen2/Eigen/src/Array
-@dirrm include/eigen2/Eigen/src
-@dirrm include/eigen2/Eigen
-@dirrm include/eigen2

@@ -10,7 +10,6 @@ DISTNAME=	ann_1.1.2
 MAINTAINER=	tzhuan@csie.org
 COMMENT=	Library for Approximate Nearest Neighbor Searching
 
-WRKSRC=		${WRKDIR}/ann_1.1.2
 USE_LDCONFIG=	yes
 USES=		gmake
 

@@ -37,9 +37,3 @@ share/algotutor/data/randgrid.gr
 share/algotutor/data/simple.gr
 share/algotutor/data/trc.gr
 share/algotutor/data/tt.gr
-@dirrm share/algotutor/data
-@dirrm share/algotutor
-@dirrm %%SITE_PERL%%/algotutor/graph
-@dirrm %%SITE_PERL%%/algotutor/dp
-@dirrm %%SITE_PERL%%/algotutor/cgeom
-@dirrm %%SITE_PERL%%/algotutor

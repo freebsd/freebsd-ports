@@ -87,9 +87,3 @@ man/man1/algae.1.gz
 %%DATADIR%%/%%ALGAE_VERSION%%/tools/what.A
 %%DATADIR%%/%%ALGAE_VERSION%%/tools/who.A
 %%DATADIR%%/html
-@dirrm %%DATADIR%%/%%ALGAE_VERSION%%/tools
-@dirrm %%DATADIR%%/%%ALGAE_VERSION%%/html
-@dirrm %%DATADIR%%/%%ALGAE_VERSION%%
-@dirrm %%DATADIR%%
-@dirrm lib/algae/%%ALGAE_VERSION%%
-@dirrm lib/algae
