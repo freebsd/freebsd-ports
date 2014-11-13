@@ -305,10 +305,6 @@ pre-configure:
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cabal/ghc-${GHC_VERSION}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/cabal/ghc-${GHC_VERSION}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cabal/ghc-${GHC_VERSION}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/cabal/ghc-${GHC_VERSION}
 	@${RM} -f ${STAGEDIR}${PREFIX}/bin/haddock
 .if ${PORT_OPTIONS:MDOCS}
 	@${LN} -sf haddock-ghc-${GHC_VERSION} ${STAGEDIR}${PREFIX}/bin/haddock
