@@ -64,11 +64,10 @@ pre-install:
 
 .	if ${PKGNAMESUFFIX} != "-ui-console"
 		@${ECHO_CMD} "lib/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}.so" >> ${PLIST}
-		@${ECHO_CMD} "@dirrmtry lib/${PORTNAME}" >> ${PLIST}
 .	else
 		@${ECHO_CMD} "bin/${PORTNAME}" >> ${PLIST}
 .	endif
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
+	@${ECHO_CMD} "@dir %%DATADIR%%" >> ${PLIST}
 .else
 post-patch:
 	@cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e 's|gcc|${CC}|g' -e \

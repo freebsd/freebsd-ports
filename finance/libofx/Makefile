@@ -35,8 +35,8 @@ post-install:
 .if ${PORT_OPTIONS:MDOXYGEN}
 	@${FIND} -P ${STAGEDIR}${DOCSDIR}/html -type f 2>/dev/null | \
 		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
-	@${FIND} -P -d ${STAGEDIR}${DOCSDIR}/ -type d 2>/dev/null | \
-		${SED} -ne 's|^${STAGEDIR}${PREFIX}/|@dirrmtry |p' >> ${TMPPLIST}
+	@${FIND} -P -d ${STAGEDIR}${DOCSDIR}/ -type d -empty 2>/dev/null | \
+		${SED} -ne 's|^${STAGEDIR}${PREFIX}/|@dir |p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>

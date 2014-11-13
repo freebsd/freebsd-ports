@@ -34,7 +34,6 @@ do-install:
 	@${LN} -sf ${PREFIX}/${PORTNAME}/bin/tr ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${ECHO} bin/${PORTNAME} >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} . ! -type d) | ${SORT} | ${SED} "s|^.|${PORTNAME}|" >> ${TMPPLIST}
-	@(cd ${WRKSRC}; ${FIND} . -type d) | ${SORT} -r | ${SED} "s|^.|@dirrm ${PORTNAME}|" >> ${TMPPLIST}
-	@(cd ${WRKSRC}; ${FIND} . -type d -empty) | ${SORT} -r | ${SED} "s|^.|@exec mkdir -p ${PORTNAME}|" >> ${TMPPLIST}
+	@(cd ${WRKSRC}; ${FIND} . -type d -empty) | ${SORT} -r | ${SED} "s|^.|@dir ${PORTNAME}|" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

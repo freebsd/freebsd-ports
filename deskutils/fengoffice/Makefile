@@ -39,10 +39,9 @@ pre-install:
 	@${ECHO_CMD} -e '@owner ${WWWOWN}\n@group ${WWWGRP}' >> ${PLIST}
 	@cd ${WRKSRC} && \
 		${FIND} . -type f | ${SORT} | ${SED} -e 's|^|www/fengoffice/|' -e 's|\./||g' >> ${PLIST} && \
-			${FIND} . -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm www/fengoffice|' -e 's|\.||g' >> ${PLIST}
+			${FIND} . -type d | ${SORT} -r | ${SED} -e 's|^|@dir www/fengoffice|' -e 's|\.||g' >> ${PLIST}
 	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${PLIST}
 	@${ECHO_CMD} "%%PORTDOCS%%%%DOCSDIR%%/README" >> ${PLIST}
-	@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FENGOFFICE_WWWDIR}

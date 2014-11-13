@@ -25,14 +25,12 @@ USE_LDCONFIG=	yes
 USERS=		_tss
 GROUPS=		_tss
 SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}"
+PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 
 BROKEN_powerpc=		Does not compile on powerpc
 
 post-install:
-	@${ECHO_CMD} "@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 /var/run/tpm" >> ${TMPPLIST}
 	@${MKDIR} ${STAGEDIR}/var/run/tpm
-	@${ECHO_CMD} "@dirrmtry /var/run/tpm" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 %D/var/db/tpm" >> ${TMPPLIST}
-	@${MKDIR} ${STAGEDIR}/${PREFIX}/var/db/tpm
+	@${MKDIR} ${STAGEDIR}${PREFIX}/var/db/tpm
 
 .include <bsd.port.mk>
