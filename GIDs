@@ -223,6 +223,7 @@ dotlrn:*:821:
 polw:*:825:
 statsd:*:826:
 netdisco:*:840:
+tcpcryptd:*:841:
 munin:*:842:
 dahdi:*:843:asterisk
 fossy:*:901:www
