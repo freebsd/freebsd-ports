@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leo_center
-PORTVERSION=	0.4.11
+PORTVERSION=	0.4.12
 CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -19,7 +19,7 @@ GH_COMMIT=	f7b6570
 DIST_SUBDIR=	leofs
 
 RUN_DEPENDS=	rubygem-haml>=0:${PORTSDIR}/www/rubygem-haml \
-		rubygem-leo_manager_client>=0.4.10:${PORTSDIR}/databases/rubygem-leo_manager_client \
+		rubygem-leo_manager_client>=0.4.13:${PORTSDIR}/databases/rubygem-leo_manager_client \
 		rubygem-sinatra-contrib>=0:${PORTSDIR}/www/rubygem-sinatra-contrib \
 		rubygem-sinatra>=1.4.3:${PORTSDIR}/www/rubygem-sinatra \
 		rubygem-thin>=0:${PORTSDIR}/www/rubygem-thin
