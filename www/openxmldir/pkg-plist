@@ -1,5 +1,5 @@
-@owner ${WWWOWN}
-@group ${WWWGRP}
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/PhoneUI/index.php
 %%WWWDIR%%/PhoneUI/lib/headers.php
 %%WWWDIR%%/PhoneUI/lib/sec_breach.php
@@ -163,17 +163,19 @@
 %%WWWDIR%%/lib/mysql.php
 %%WWWDIR%%/lib/utils.php
 %%WWWDIR%%/lib/xtpl.php
-@dirrm %%WWWDIR%%/PhoneUI/lib
-@dirrm %%WWWDIR%%/PhoneUI/templates
-@dirrm %%WWWDIR%%/PhoneUI
-@dirrm %%WWWDIR%%/WebUI/images/ref
-@dirrm %%WWWDIR%%/WebUI/images
-@dirrm %%WWWDIR%%/WebUI/lib
-@dirrm %%WWWDIR%%/WebUI/modules/images/_notes
-@dirrm %%WWWDIR%%/WebUI/modules/images/help
-@dirrm %%WWWDIR%%/WebUI/modules/images
-@dirrm %%WWWDIR%%/WebUI/modules/templates
-@dirrm %%WWWDIR%%/WebUI/modules
-@dirrm %%WWWDIR%%/WebUI
-@dirrm %%WWWDIR%%/lib
-@dirrm %%WWWDIR%%
+@dir %%WWWDIR%%/PhoneUI/lib
+@dir %%WWWDIR%%/PhoneUI/templates
+@dir %%WWWDIR%%/PhoneUI
+@dir %%WWWDIR%%/WebUI/images/ref
+@dir %%WWWDIR%%/WebUI/images
+@dir %%WWWDIR%%/WebUI/lib
+@dir %%WWWDIR%%/WebUI/modules/images/_notes
+@dir %%WWWDIR%%/WebUI/modules/images/help
+@dir %%WWWDIR%%/WebUI/modules/images
+@dir %%WWWDIR%%/WebUI/modules/templates
+@dir %%WWWDIR%%/WebUI/modules
+@dir %%WWWDIR%%/WebUI
+@dir %%WWWDIR%%/lib
+@dir %%WWWDIR%%
+@owner
+@group
