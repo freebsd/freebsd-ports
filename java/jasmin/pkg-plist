@@ -27,5 +27,3 @@ bin/jasmin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/VerifyTest.j
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/VerifyTest1.j
 share/java/classes/jasmin.jar
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

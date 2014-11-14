@@ -18,9 +18,3 @@ man/man1/sablevm.1.gz
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/LGPL-2.1
 %%DATADIR%%/LICENSE
-@dirrm %%DATADIR%%
-@dirrmtry lib/sablevm/jre
-@dirrm lib/sablevm/include
-@dirrm lib/sablevm/bin
-@dirrmtry lib/sablevm
-@dirrm include/sablevm
