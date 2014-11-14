@@ -132,6 +132,7 @@
     SUBDIR += sablevm
     SUBDIR += sablevm-classpath
     SUBDIR += servingxml
+    SUBDIR += sigar
     SUBDIR += springframework
     SUBDIR += springframework31
     SUBDIR += sqlitejdbc
