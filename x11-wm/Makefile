@@ -107,8 +107,8 @@
     SUBDIR += lwm
     SUBDIR += lxmed
     SUBDIR += lxsession
-    SUBDIR += matwm2
     SUBDIR += marco
+    SUBDIR += matwm2
     SUBDIR += mcwm
     SUBDIR += metacity
     SUBDIR += musca
