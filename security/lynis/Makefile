@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lynis
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.4
 CATEGORIES=	security
 MASTER_SITES=	http://cisofy.com/files/
 
@@ -30,7 +30,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "include db plugins" ${STAGEDIR}${DATADIR}/
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/dev/bash_completion.d/${PORTNAME} \
+	${INSTALL_DATA} ${WRKSRC}/extras/bash_completion.d/${PORTNAME} \
 		${STAGEDIR}${EXAMPLESDIR}/bash_completion.d/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
