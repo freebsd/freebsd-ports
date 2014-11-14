@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leo_manager_client
-PORTVERSION=	0.4.10
+PORTVERSION=	0.4.13
 CATEGORIES=	databases
 MASTER_SITES=	RG
 
