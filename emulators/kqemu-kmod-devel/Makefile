@@ -60,7 +60,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/CC=/s,gcc,${CC},' ${WRKSRC}/common/Makefile
 
 do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} beforedepend && ${LN} -sfh @/sys sys)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} beforedepend && ${LN} -sfh machine/../../sys sys)
 	@(cd ${BUILD_WRKSRC}/common; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile ${MAKE_CMD_ARGS} ${ALL_TARGET})
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
