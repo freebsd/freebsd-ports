@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	38.0.2125.111
+PORTVERSION=	38.0.2125.122
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -169,7 +169,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libusb-pc
 .if !exists(/usr/lib/libexecinfo.so)
 CFLAGS+=	-fno-omit-frame-pointer
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fixup-ffmpeg
-PORTREVISION=	1
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
