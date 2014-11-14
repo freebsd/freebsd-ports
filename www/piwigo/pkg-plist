@@ -3088,5 +3088,5 @@
 %%WWWDIR%%/upgrade.php
 %%WWWDIR%%/upgrade_feed.php
 %%WWWDIR%%/ws.php
-@dir(%%WWWOWN%%,%%WWGRP%%,777) %%WWWDIR%%/_data
-@dir(%%WWWOWN%%,%%WWGRP%%,750) %%WWWDIR%%/upload
+@dir(%%WWWOWN%%,%%WWWGRP%%,777) %%WWWDIR%%/_data
+@dir(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/upload

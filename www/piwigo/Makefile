@@ -3,6 +3,7 @@
 
 PORTNAME=	piwigo
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/ \
 		SF/${PORTNAME}/Piwigo/${PORTVERSION}
@@ -50,7 +51,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
 post-extract:
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 	@${FIND} -d ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
 	@${FIND} -d ${WRKSRC} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 
