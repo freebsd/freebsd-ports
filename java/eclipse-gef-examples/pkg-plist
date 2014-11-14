@@ -20,13 +20,3 @@ lib/eclipse/features/org.eclipse.gef.examples_3.0.0/feature.xml
 lib/eclipse/features/org.eclipse.gef.examples_3.0.0/eclipse_update_120.jpg
 lib/eclipse/features/org.eclipse.gef.examples_3.0.0/cpl-v10.html
 lib/eclipse/features/org.eclipse.gef.examples_3.0.0/feature.properties
-@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.logic_3.0.0
-@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.flow_3.0.0
-@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src
-@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0
-@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0
-@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0
-@dirrm lib/eclipse/features/org.eclipse.gef.examples_3.0.0
-@dirrmtry lib/eclipse/plugins
-@dirrmtry lib/eclipse/features
-@dirrmtry lib/eclipse

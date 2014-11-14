@@ -43,8 +43,8 @@ generate-plist-locally: build
 	@(cd ${WRKSRC} && ${FIND} -s features plugins -not -type d) \
 		| ${SED} -ne 's,^,lib/eclipse/,p' > ${PLIST}
 # annotate installation directories
-	@(cd ${WRKSRC} && ${FIND} -s -d features plugins -type d) \
+	@(cd ${WRKSRC} && ${FIND} -s -d features plugins -type d -empty) \
 		| ${GREP} -vE '^plugins$$|^features$$' \
-		| ${SED} -ne 's,^,@dirrm lib/eclipse/,p' >> ${PLIST}
+		| ${SED} -ne 's,^,@dir lib/eclipse/,p' >> ${PLIST}
 
 .include <bsd.port.mk>

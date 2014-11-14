@@ -37,25 +37,3 @@ lib/eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/feature.xml
 lib/eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/eclipse_update_120.jpg
 lib/eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/license.html
 lib/eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/feature.properties
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/vm
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/src
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/overrides/org/eclipse/ve/examples/java/vm
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/overrides/org/eclipse/ve/examples/java
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/overrides/org/eclipse/ve/examples
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/overrides/org/eclipse/ve
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/overrides/org/eclipse
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/overrides/org
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/overrides
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/images
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/icons
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/examples
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/META-INF
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src/org.eclipse.ve.examples_%%RELEASEVERSION%%/vm
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src/org.eclipse.ve.examples_%%RELEASEVERSION%%
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src
-@dirrm lib/eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%
-@dirrm lib/eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%
-@dirrmtry lib/eclipse/plugins
-@dirrmtry lib/eclipse/features
-@dirrmtry lib/eclipse

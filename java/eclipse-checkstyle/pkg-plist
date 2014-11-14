@@ -65,10 +65,3 @@ lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/plugin.xml
 lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/toc.xml
 lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/xercesImpl.jar
 lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/xmlParserAPIs.jar
-@dirrm lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/license
-@dirrm lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/doc/images
-@dirrm lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/doc/csdocs
-@dirrm lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/doc
-@dirrm lib/eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0
-@dirrmtry lib/eclipse/plugins
-@dirrmtry lib/eclipse
