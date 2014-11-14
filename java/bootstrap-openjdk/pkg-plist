@@ -53,19 +53,3 @@
 %%JDK_ROOT%%/jre/lib/zi
 %%JDK_ROOT%%/lib/ct.sym
 %%JDK_ROOT%%/lib/tools.jar
-@dirrm %%JDK_ROOT%%/lib
-@dirrm %%JDK_ROOT%%/jre/lib/security
-@dirrm %%JDK_ROOT%%/jre/lib/ext
-@dirrm %%JDK_ROOT%%/jre/lib/cmm
-@dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%/xawt
-@dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%/server
-@dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%/headless
-%%CLIENTVM%%@dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%/client
-@dirrm %%JDK_ROOT%%/jre/lib/%%ARCH%%
-@dirrm %%JDK_ROOT%%/jre/lib
-@dirrm %%JDK_ROOT%%/jre/bin
-@dirrm %%JDK_ROOT%%/jre
-@dirrm %%JDK_ROOT%%/include/freebsd
-@dirrm %%JDK_ROOT%%/include
-@dirrm %%JDK_ROOT%%/bin
-@dirrm %%JDK_ROOT%%

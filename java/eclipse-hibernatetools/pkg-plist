@@ -366,32 +366,3 @@ lib/eclipse/plugins/org.jboss.tools.hibernate.ui.view_3.2.3.GA/images/wiz_icon.g
 lib/eclipse/plugins/org.jboss.tools.hibernate.ui.view_3.2.3.GA/plugin.properties
 lib/eclipse/plugins/org.jboss.tools.hibernate.ui.view_3.2.3.GA/plugin.xml
 lib/eclipse/plugins/org.jboss.tools.hibernate.ui.view_3.2.3.GA/view.jar
-@dirrm lib/eclipse/features/org.hibernate.eclipse.feature_3.2.3.GA
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.console_3.2.3.GA/META-INF
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.console_3.2.3.GA/doc/newandnoteworthy
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.console_3.2.3.GA/doc
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.console_3.2.3.GA/icons/images/xpl
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.console_3.2.3.GA/icons/images
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.console_3.2.3.GA/icons
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.console_3.2.3.GA
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.help_3.2.3.GA/META-INF
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.help_3.2.3.GA
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.mapper_3.2.3.GA/META-INF
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.mapper_3.2.3.GA/icons/images
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.mapper_3.2.3.GA/icons
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse.mapper_3.2.3.GA
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse_3.2.3.GA/META-INF
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse_3.2.3.GA/lib/annotations
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse_3.2.3.GA/lib/hibernate
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse_3.2.3.GA/lib/tools
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse_3.2.3.GA/lib
-@dirrm lib/eclipse/plugins/org.hibernate.eclipse_3.2.3.GA
-@dirrm lib/eclipse/plugins/org.jboss.ide.eclipse.freemarker_1.0.1.GA/META-INF
-@dirrm lib/eclipse/plugins/org.jboss.ide.eclipse.freemarker_1.0.1.GA/icons
-@dirrm lib/eclipse/plugins/org.jboss.ide.eclipse.freemarker_1.0.1.GA
-@dirrm lib/eclipse/plugins/org.jboss.tools.hibernate.ui.veditor_3.2.3.GA/META-INF
-@dirrm lib/eclipse/plugins/org.jboss.tools.hibernate.ui.veditor_3.2.3.GA/icons
-@dirrm lib/eclipse/plugins/org.jboss.tools.hibernate.ui.veditor_3.2.3.GA
-@dirrm lib/eclipse/plugins/org.jboss.tools.hibernate.ui.view_3.2.3.GA/META-INF
-@dirrm lib/eclipse/plugins/org.jboss.tools.hibernate.ui.view_3.2.3.GA/images
-@dirrm lib/eclipse/plugins/org.jboss.tools.hibernate.ui.view_3.2.3.GA

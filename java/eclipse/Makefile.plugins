@@ -10,5 +10,5 @@ do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/share/eclipse/dropins/${PORTNAME}/eclipse
 		@(cd ${WRKSRC}; ${COPYTREE_SHARE} "${REPO_DIRS}" ${STAGEDIR}${PREFIX}/share/eclipse/dropins/${PORTNAME}/eclipse/)
 		@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s share/eclipse/dropins/${PORTNAME} -not -type d) >> ${TMPPLIST}
-		@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s -d share/eclipse/dropins/${PORTNAME} -type d) \
-			| ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
+		@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s -d share/eclipse/dropins/${PORTNAME} -type d -empty) \
+			| ${SED} -ne 's,^,@dir ,p' >> ${TMPPLIST}

@@ -25,7 +25,7 @@ do-install:
 	@${CP} -r ${WRKSRC}/com.sysdeo.eclipse.tomcat_${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/eclipse/plugins
 	@(cd ${WRKSRC}; ${FIND} -s com.sysdeo.eclipse.tomcat_${PORTVERSION} -not -type d) \
 		| ${SED} -ne 's,^,lib/eclipse/plugins/,p' >> ${TMPPLIST}
-	@(cd ${WRKSRC}; ${FIND} -s -d com.sysdeo.eclipse.tomcat_${PORTVERSION} -type d) \
-		| ${SED} -ne 's,^,@dirrm lib/eclipse/plugins/,p' >> ${TMPPLIST}
+	@(cd ${WRKSRC}; ${FIND} -s -d com.sysdeo.eclipse.tomcat_${PORTVERSION} -type d -empty) \
+		| ${SED} -ne 's,^,@dir lib/eclipse/plugins/,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

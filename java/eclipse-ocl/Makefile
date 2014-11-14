@@ -29,8 +29,8 @@ do-install:
 	@${CP} -r ${WRKSRC}/eclipse/plugins ${STAGEDIR}${PREFIX}/lib/eclipse
 	@${CP} -r ${WRKSRC}/eclipse/features ${STAGEDIR}${PREFIX}/lib/eclipse
 	@(cd ${WRKSRC}; ${FIND} -s eclipse/features eclipse/plugins -not -type d) | ${SED} -e 's,^eclipse,lib/eclipse,' >> ${TMPPLIST}
-	@(cd ${WRKSRC}; ${FIND} -s -d eclipse/features eclipse/plugins -type d) \
+	@(cd ${WRKSRC}; ${FIND} -s -d eclipse/features eclipse/plugins -type d -empty) \
 		| ${GREP} -vE 'eclipse/plugins$$|eclipse/features$$' \
-		| ${SED} -ne 's,^,@dirrm lib/,p' >> ${TMPPLIST}
+		| ${SED} -ne 's,^,@dir lib/,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

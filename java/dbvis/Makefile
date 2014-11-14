@@ -32,7 +32,7 @@ do-install:
 post-install:
 	${FIND} ${STAGEDIR}${DATADIR} -not -type d \
 	  | ${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
-	${FIND} -d ${STAGEDIR}${DATADIR} -type d \
-	  | ${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
+	${FIND} -d ${STAGEDIR}${DATADIR} -type d -empty \
+	  | ${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dir ,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

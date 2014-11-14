@@ -56,8 +56,8 @@ post-install:
 .for FILE in ${RDTFILES}
 	@${FIND} ${WRKSRC}/${FILE} -type f \
 	  | ${SED} -ne 's,^${WRKSRC},${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -d ${WRKSRC}/${FILE} -type d \
-	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -d ${WRKSRC}/${FILE} -type d -empty \
+	  | ${SED} -ne 's,^${WRKSRC},@dir ${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 .endfor
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@
 %%DATADIR%%/doc/com/oreilly/servlet/multipart/FilePart.html
 %%DATADIR%%/doc/com/oreilly/servlet/multipart/DefaultFileRenamePolicy.html
 %%DATADIR%%/doc/com/oreilly/servlet/multipart/BufferedServletInputStream.html
-@dirrm %%DATADIR%%/doc/com/oreilly/servlet/multipart
 %%DATADIR%%/doc/com/oreilly/servlet/VersionDetector.html
 %%DATADIR%%/doc/com/oreilly/servlet/ServletUtils.html
 %%DATADIR%%/doc/com/oreilly/servlet/RemoteHttpServlet.html
@@ -39,9 +38,6 @@
 %%DATADIR%%/doc/com/oreilly/servlet/CacheHttpServlet.html
 %%DATADIR%%/doc/com/oreilly/servlet/Base64Encoder.html
 %%DATADIR%%/doc/com/oreilly/servlet/Base64Decoder.html
-@dirrm %%DATADIR%%/doc/com/oreilly/servlet
-@dirrm %%DATADIR%%/doc/com/oreilly
-@dirrm %%DATADIR%%/doc/com
 %%DATADIR%%/doc/images/blue-ball-small.gif
 %%DATADIR%%/doc/images/blue-ball.gif
 %%DATADIR%%/doc/images/class-index.gif
@@ -65,7 +61,6 @@
 %%DATADIR%%/doc/images/variables.gif
 %%DATADIR%%/doc/images/yellow-ball-small.gif
 %%DATADIR%%/doc/images/yellow-ball.gif
-@dirrm %%DATADIR%%/doc/images
 %%DATADIR%%/doc/package-list
 %%DATADIR%%/doc/packages.html
 %%DATADIR%%/doc/stylesheet.css
@@ -79,5 +74,3 @@
 %%DATADIR%%/doc/allclasses-frame.html
 %%DATADIR%%/doc/deprecated-list.html
 %%DATADIR%%/doc/upload.war
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%
