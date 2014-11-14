@@ -1,5 +1,5 @@
---- spunk/coll.h.orig	Wed Dec 18 23:42:14 1996
-+++ spunk/coll.h	Sun Oct  8 10:19:16 2006
+--- spunk/coll.h.orig	1996-12-18 23:42:14.000000000 +0100
++++ spunk/coll.h	2014-11-14 08:12:06.000000000 +0100
 @@ -24,7 +24,7 @@
  
  
@@ -39,6 +39,15 @@
  
      // Item not found
      return -1;
+@@ -512,7 +512,7 @@
+     }
+ 
+     // Index points to the correct position, insert item
+-    AtInsert (Index, Item);
++    this->AtInsert (Index, Item);
+ }
+ 
+ 
 @@ -522,7 +522,7 @@
  {
      // do a binary search
