@@ -298,52 +298,10 @@ Wingz3/Boundins/array/makefile
 Wingz3/Boundins/array/array.scz
 Wingz3/Boundins/array/array.c
 Wingz3/Boundins/array/LINUX/array
-@dirrm Wingz3/release
-@dirrm Wingz3/pkginfo/LINUX
-@dirrm Wingz3/pkginfo
-@dirrm Wingz3/license/LINUX
-@dirrm Wingz3/license
-@dirrm Wingz3/lib/fonts
-@dirrm Wingz3/lib/LINUX
-@dirrm Wingz3/lib/.hpfonts
-@dirrm Wingz3/lib/libc5
-@dirrm Wingz3/lib
-@dirrm Wingz3/incl
-@dirrm Wingz3/etc
-@dirrm Wingz3/bin/LINUX
-@dirrm Wingz3/bin
-@dirrm Wingz3/WingzPro/LINUX
-@dirrm Wingz3/WingzPro
-@dirrm Wingz3/Utility/wzlisten/LINUX
-@dirrm Wingz3/Utility/wzlisten
-@dirrm Wingz3/Utility/international/collation
-@dirrm Wingz3/Utility/international/charset/LINUX
-@dirrm Wingz3/Utility/international/charset
-@dirrm Wingz3/Utility/international
-@dirrm Wingz3/Utility/dateconv
-@dirrm Wingz3/Utility
-@dirrm Wingz3/Runtime/411/source
-@dirrm Wingz3/Runtime/411
-@dirrm Wingz3/Runtime
-@dirrm Wingz3/Plugins
-@dirrm Wingz3/Examples/teltool
-@dirrm Wingz3/Examples/database
-@dirrm Wingz3/Examples
-@dirrm Wingz3/DataLink/DLUtil
-@dirrm Wingz3/DataLink/DBLink/LINUX
-@dirrm Wingz3/DataLink/DBLink
-@dirrm Wingz3/DataLink
-@dirrm Wingz3/Boundins/userfunc/LINUX
-@dirrm Wingz3/Boundins/userfunc
-@dirrm Wingz3/Boundins/simple/LINUX
-@dirrm Wingz3/Boundins/simple
-@dirrm Wingz3/Boundins/array/LINUX
-@dirrm Wingz3/Boundins/array
-@dirrm Wingz3/Boundins
-@dirrm Wingz3
-@cwd %%LINUXBASE%%
-lib/ld-linux.so.1
-lib/ld-linux.so.1.9.5
-lib/ld.so
-lib/ld.so.1.9.5
-lib/libdl.so.1.9.5
+%%LINUXBASE%%/lib/ld-linux.so.1
+%%LINUXBASE%%/lib/ld-linux.so.1.9.5
+%%LINUXBASE%%/lib/ld.so
+%%LINUXBASE%%/lib/ld.so.1.9.5
+%%LINUXBASE%%/lib/libdl.so.1.9.5
+@dir Wingz3/Plugins
+@dir Wingz3/lib/.hpfonts

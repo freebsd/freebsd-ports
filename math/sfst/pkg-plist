@@ -41,4 +41,3 @@ man/man1/fst-parse2.1.gz
 man/man1/fst-print.1.gz
 man/man1/fst-text2bin.1.gz
 man/man1/fst-train.1.gz
-@dirrm include/sfst

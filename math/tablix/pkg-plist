@@ -47,5 +47,3 @@ man/man1/tablix2_plot.1.gz
 man/man1/tablix2_test.1.gz
 share/locale/sl/LC_MESSAGES/tablix2.mo
 share/tablix2/modulesref.xml
-@dirrm lib/tablix2
-@dirrm share/tablix2

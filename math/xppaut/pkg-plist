@@ -230,9 +230,3 @@ man/man1/xppaut.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/odesol2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/odesol2.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/odesol2.o
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/odes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xbm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ode
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

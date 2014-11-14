@@ -120,41 +120,8 @@ share/icons/hicolor/64x64/apps/qtoctave.png
 %%DATADIR%%/syntax_files/h.xml
 %%DATADIR%%/syntax_files/m.xml
 %%DATADIR%%/syntax_files/sh.xml
-@dirrm %%DATADIR%%/syntax_files
-@dirrm %%DATADIR%%/scripts_octave
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/menus/Statistics
-@dirrm %%DATADIR%%/menus/Plot/Export
-@dirrm %%DATADIR%%/menus/Plot
-@dirrm %%DATADIR%%/menus/Matrix
-@dirrm %%DATADIR%%/menus/Help
-@dirrm %%DATADIR%%/menus/Equations
-@dirrm %%DATADIR%%/menus/Data
-@dirrm %%DATADIR%%/menus/Analysis/Ordinary Differential Equations
-@dirrm %%DATADIR%%/menus/Analysis/Integrate function
-@dirrm %%DATADIR%%/menus/Analysis
-@dirrm %%DATADIR%%/menus
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DOCSDIR%%/utils/qtjs/doc/images
-@dirrm %%DOCSDIR%%/utils/qtjs/doc/espanol/images
-@dirrm %%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos/sombrero
-@dirrm %%DOCSDIR%%/utils/qtjs/doc/espanol/ejemplos
-@dirrm %%DOCSDIR%%/utils/qtjs/doc/espanol
-@dirrm %%DOCSDIR%%/utils/qtjs/doc/english/examples
-@dirrm %%DOCSDIR%%/utils/qtjs/doc/english
-@dirrm %%DOCSDIR%%/utils/qtjs/doc/ejemplos/sombrero
-@dirrm %%DOCSDIR%%/utils/qtjs/doc/ejemplos
-@dirrm %%DOCSDIR%%/utils/qtjs/doc
-@dirrm %%DOCSDIR%%/utils/qtjs
-@dirrm %%DOCSDIR%%/utils
-@dirrm %%DOCSDIR%%/qtoctave_doc
-@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%DATADIR%%/menus/Help
-@exec mkdir -p %D/%%DATADIR%%/menus/Matrix
-@exec mkdir -p %D/%%DATADIR%%/menus/Statistics
+@dir %%DOCSDIR%%/utils/qtjs/doc/ejemplos/sombrero
+@dir %%DOCSDIR%%/utils/qtjs/doc/images
+@dir %%DATADIR%%/menus/Help
+@dir %%DATADIR%%/menus/Matrix
+@dir %%DATADIR%%/menus/Statistics

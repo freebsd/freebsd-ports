@@ -729,10 +729,3 @@ man/manl/ztrmvt.l.gz
 %%DATADIR%%/TESTING/xzqr
 %%DATADIR%%/TESTING/xzsep
 %%DATADIR%%/TESTING/xztrd
-@dirrm %%DATADIR%%/TESTING
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/pkgconfig
-@dirrm lib/cmake/scalapack-%%PORTVERSION%%
-@dirrmtry lib/cmake

@@ -19,5 +19,3 @@ bin/ump
 %%DATADIR%%/ump-files/lcm.ump
 %%DATADIR%%/ump-files/sign.ump
 %%DATADIR%%/ump-files/trans.ump
-@dirrm %%DATADIR%%/ump-files
-@dirrm %%DATADIR%%

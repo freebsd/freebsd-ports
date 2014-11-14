@@ -4,4 +4,3 @@ lib/libmgrid.a
 lib/libparmgrid.a
 include/mgridgen.h
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

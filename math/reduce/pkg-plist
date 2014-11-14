@@ -104,8 +104,3 @@ man/man1/redcsl.1.gz
 %%DATADIR%%/reduce.fonts/src/cmr10.asm.gz
 %%DATADIR%%/reduce.fonts/src/cmsy10.asm.gz
 %%DATADIR%%/reduce.img
-@dirrm %%DATADIR%%/reduce.fonts/src
-@dirrm %%DATADIR%%/reduce.fonts/pfmfiles
-@dirrm %%DATADIR%%/reduce.fonts
-@dirrm %%DATADIR%%/reduce.doc
-@dirrm %%DATADIR%%

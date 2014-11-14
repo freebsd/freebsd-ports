@@ -104,6 +104,3 @@ man/man1/xgvis.1.gz
 %%PORTDOCS%%share/examples/xgobi/data_xgvis/torus1.pos
 %%PORTDOCS%%share/examples/xgobi/data_xgvis/torus2.edges
 %%PORTDOCS%%share/examples/xgobi/data_xgvis/torus2.pos
-%%PORTDOCS%%@dirrm share/examples/xgobi/data_xgvis
-%%PORTDOCS%%@dirrm share/examples/xgobi/data_xgobi
-%%PORTDOCS%%@dirrm share/examples/xgobi

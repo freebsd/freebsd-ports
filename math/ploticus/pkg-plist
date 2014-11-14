@@ -140,5 +140,3 @@ man/man3/libploticus.3.gz
 %%DATADIR%%/stack.pl
 %%DATADIR%%/vbars.pl
 %%DATADIR%%/vdist.pl
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

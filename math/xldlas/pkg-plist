@@ -12,5 +12,3 @@ man/man1/xldlas.1.gz
 %%DATADIR%%/help/test.help
 %%DATADIR%%/help/filter.help
 %%DATADIR%%/help/.directory
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
