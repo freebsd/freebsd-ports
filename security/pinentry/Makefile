@@ -25,33 +25,28 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .if !defined(PINENTRY_SLAVE)
 OPTIONS_MULTI=	FRONTEND
 OPTIONS_MULTI_FRONTEND=	NCURSES GTK2 QT4
-OPTIONS_DEFAULT=	${PINENTRY_DEFAULT}
+OPTIONS_DEFAULT=	${OPTIONS_MULTI_FRONTEND}
 
 NCURSES_DESC=	Curses frontend
 GTK2_DESC=	Gtk+ 2 frontend
 QT4_DESC=	Qt 4 frontend
+
+. if exists(/usr/lib/libc++.so)
+OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:NQT4}
+QT4_DESC=	Qt 4 frontend (broken)
+. endif
 .else
 PKGNAMESUFFIX=	${PINENTRY_SLAVE}
 .endif
 
 .include <bsd.port.options.mk>
 
-.if !defined(PINENTRY_SLAVE)
-. if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-PINENTRY_DEFAULT=	${OPTIONS_MULTI_FRONTEND:NQT4}
-QT4_DESC=	Qt 4 frontend (broken)
-. else
-PINENTRY_DEFAULT=	${OPTIONS_MULTI_FRONTEND}
-. endif
-.endif
-
 .if ${PORT_OPTIONS:MQT4}
-. if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+. if exists(/usr/lib/libc++.so)
 IGNORE=		with Qt 4 frontend does not compile with libc++
 . endif
 USE_QT4=	gui moc_build
 PLIST_SUB+=	WITH_QT4=""
-MOC4=		${LOCALBASE}/bin/moc-qt4
 .else
 CONFIGURE_ARGS+=--disable-pinentry-qt4
 PLIST_SUB+=	WITH_QT4="@comment "
@@ -76,9 +71,9 @@ PLIST_SUB+=	WITH_NCURSES="@comment "
 pre-configure:
 .if ${PORT_OPTIONS:MQT4}
 	cd ${WRKSRC}/qt4 && \
-		${MOC4} pinentrydialog.h > pinentrydialog.moc && \
-		${MOC4} qsecurelineedit.h > qsecurelineedit.moc && \
-		${MOC4} pinentryconfirm.h > pinentryconfirm.moc
+		${MOC} pinentrydialog.h > pinentrydialog.moc && \
+		${MOC} qsecurelineedit.h > qsecurelineedit.moc && \
+		${MOC} pinentryconfirm.h > pinentryconfirm.moc
 .endif
 
 .include <bsd.port.mk>
