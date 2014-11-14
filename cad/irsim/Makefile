@@ -3,6 +3,7 @@
 
 PORTNAME=	irsim
 PORTVERSION=	9.7.87
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 EXTRACT_SUFX=	.tgz
