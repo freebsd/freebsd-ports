@@ -1,6 +1,39 @@
---- spunk/stream.h.orig	Thu Nov  7 18:06:52 1996
-+++ spunk/stream.h	Tue Sep  6 09:54:21 2005
-@@ -50,19 +50,19 @@
+--- spunk/stream.h.orig	1996-11-07 18:06:52.000000000 +0100
++++ spunk/stream.h	2014-11-14 08:10:27.000000000 +0100
+@@ -44,25 +44,53 @@
+ #include <stdio.h>
+ #include <string.h>
+ 
++#include "machine.h"
++
++class Stream;
++
++Stream& operator << (Stream&, char);
++Stream& operator << (Stream&, unsigned char);
++Stream& operator << (Stream&, signed char);
++Stream& operator << (Stream&, i16);
++Stream& operator << (Stream&, u16);
++Stream& operator << (Stream&, i32);
++Stream& operator << (Stream&, u32);
++Stream& operator << (Stream&, float);
++Stream& operator << (Stream&, double);
++Stream& operator << (Stream&, char*);
++
++Stream& operator >> (Stream&, char&);
++Stream& operator >> (Stream&, unsigned char&);
++Stream& operator >> (Stream&, signed char&);
++Stream& operator >> (Stream&, i16&);
++Stream& operator >> (Stream&, u16&);
++Stream& operator >> (Stream&, i32&);
++Stream& operator >> (Stream&, u32&);
++Stream& operator >> (Stream&, float&);
++Stream& operator >> (Stream&, double&);
++Stream& operator >> (Stream&, char*);
++
++
+ #include "strmable.h"
+ #include "coll.h"
+ #include "str.h"
  
  
  
@@ -17,6 +50,7 @@
 -static const stSeekError    = 10;   // error using Seek, GetPos etc.
 -static const stReadTimeout  = 11;   // Timeout on read (CharacterStream only)
 -static const stWriteTimeout = 12;   // Timeout on write (CharcterStream only)
++
 +static const int stOk           =  0;   // things are allright
 +static const int stInitError    =  1;   // error initializing the stream
 +static const int stReadError    =  2;   // error reading from the stream
