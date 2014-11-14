@@ -101,22 +101,3 @@ include/pdal/plang/Script.hpp
 include/pdal/third/nanoflann.hpp
 lib/libpdal.so
 lib/libpdal.so.0
-@dirrmtry include/pdal/drivers/buffer
-@dirrmtry include/pdal/drivers/caris
-@dirrmtry include/pdal/drivers/faux
-@dirrmtry include/pdal/drivers/las
-@dirrmtry include/pdal/drivers/mrsid
-@dirrmtry include/pdal/drivers/nitf
-@dirrmtry include/pdal/drivers/oci
-@dirrmtry include/pdal/drivers/p2g
-@dirrmtry include/pdal/drivers/pgpointcloud
-@dirrmtry include/pdal/drivers/pipeline
-@dirrmtry include/pdal/drivers/qfit
-@dirrmtry include/pdal/drivers/soci
-@dirrmtry include/pdal/drivers/terrasolid
-@dirrmtry include/pdal/drivers/text
-@dirrmtry include/pdal/drivers
-@dirrmtry include/pdal/filters
-@dirrmtry include/pdal/plang
-@dirrmtry include/pdal/third
-@dirrmtry include/pdal

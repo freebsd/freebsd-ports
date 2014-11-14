@@ -122,11 +122,3 @@ share/aclocal/tvmet.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xpr_print_v2.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xpr_print_v3.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xpr_print_v4.cc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/tvmet/xpr
-@dirrm include/tvmet/util
-@dirrm include/tvmet/meta
-@dirrm include/tvmet/loop
-@dirrm include/tvmet/config
-@dirrm include/tvmet

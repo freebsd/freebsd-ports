@@ -2,6 +2,3 @@ bin/plman
 %%PORTDOCS%%%%DOCSDIR%%/PLMan_Users_Manual.pdf
 %%DATADIR%%/lib/ant.jar
 %%DATADIR%%/lib/plman.jar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%

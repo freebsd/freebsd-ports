@@ -8,5 +8,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rand.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/std_header.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

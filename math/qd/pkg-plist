@@ -18,6 +18,3 @@ lib/qd/qdext.mod
 lib/qd/qdmodule.mod
 share/doc/qd/README
 share/doc/qd/qd.pdf
-@dirrm include/qd
-@dirrm lib/qd
-@dirrm share/doc/qd

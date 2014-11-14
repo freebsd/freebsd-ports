@@ -57,9 +57,3 @@ share/qalculate-gtk/glade/variableedit.glade
 share/qalculate-gtk/glade/variables.glade
 share/locale/nl/LC_MESSAGES/qalculate-gtk.mo
 share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
-@dirrm share/qalculate-gtk/glade
-@dirrm share/qalculate-gtk
-@dirrm share/omf/qalculate-gtk
-@dirrm share/gnome/help/qalculate-gtk/C/figures
-@dirrm share/gnome/help/qalculate-gtk/C
-@dirrm share/gnome/help/qalculate-gtk

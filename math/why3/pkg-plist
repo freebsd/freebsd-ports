@@ -186,21 +186,3 @@ lib/why3/why3-cpulimit
 %%DATADIR%%/theories/tptp.why
 %%DATADIR%%/vim/why3.vim
 %%DATADIR%%/why3session.dtd
-@dirrm %%OCAML_SITELIBDIR%%/why3
-@dirrm lib/why3/plugins
-@dirrm lib/why3
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/drivers
-@dirrm %%DATADIR%%/emacs
-@dirrm %%DATADIR%%/images/boomy
-@dirrm %%DATADIR%%/images/fatcow
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/javascript/themes/default
-@dirrm %%DATADIR%%/javascript/themes
-@dirrm %%DATADIR%%/javascript
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/modules/mach
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/theories
-@dirrm %%DATADIR%%/vim
-@dirrm %%DATADIR%%

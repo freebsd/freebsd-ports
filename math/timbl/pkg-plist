@@ -38,5 +38,3 @@ libdata/pkgconfig/timbl.pc
 %%EXAMPLESDIR%%/small_3.train
 %%EXAMPLESDIR%%/small_4.train
 %%EXAMPLESDIR%%/small_5.train
-@dirrm %%EXAMPLESDIR%%
-@dirrm include/timbl

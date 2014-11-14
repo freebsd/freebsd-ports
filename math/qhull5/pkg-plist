@@ -75,7 +75,3 @@ lib/libqhull.so.5.0.0
 %%PORTDOCS%%%%DOCSDIR%%/html/qvoron_f.htm
 %%PORTDOCS%%%%DOCSDIR%%/html/qvoronoi.htm
 %%PORTDOCS%%%%DOCSDIR%%/html/rbox.htm
-@dirrm include/qhull
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%

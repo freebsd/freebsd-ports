@@ -10,9 +10,7 @@ include/superlu_mt/slu_mt_machines.h
 include/superlu_mt/slu_mt_util.h
 include/superlu_mt/slu_scomplex.h
 include/superlu_mt/supermatrix.h
-@dirrm include/superlu_mt
 lib/libsuperlu_mt.a
 lib/libsuperlu_mt.so
 lib/libsuperlu_mt.so.1
 %%PORTDOCS%%%%DOCSDIR%%/simax97.ps.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

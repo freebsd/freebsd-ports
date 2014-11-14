@@ -102,43 +102,7 @@ lib/libspooles.a
 lib/libspooles.so
 lib/libspooles.so.1
 %%MPI%%include/spooles/MPI/spoolesMPI.h
-%%MPI%%@dirrm include/spooles/MPI
 %%MT%%include/spooles/MT/spoolesMT.h
-%%MT%%@dirrm include/spooles/MT
-@dirrm include/spooles/A2
-@dirrm include/spooles/BPG
-@dirrm include/spooles/Chv
-@dirrm include/spooles/ChvList
-@dirrm include/spooles/ChvManager
-@dirrm include/spooles/Coords
-@dirrm include/spooles/DenseMtx
-@dirrm include/spooles/Drand
-@dirrm include/spooles/DSTree
-@dirrm include/spooles/DV
-@dirrm include/spooles/ETree
-@dirrm include/spooles/FrontMtx
-@dirrm include/spooles/GPart
-@dirrm include/spooles/Graph
-@dirrm include/spooles/I2Ohash
-@dirrm include/spooles/IIheap
-@dirrm include/spooles/IV
-@dirrm include/spooles/IVL
-@dirrm include/spooles/Ideq
-@dirrm include/spooles/InpMtx
-@dirrm include/spooles/Lock
-@dirrm include/spooles/MSMD
-@dirrm include/spooles/PatchAndGoInfo
-@dirrm include/spooles/Pencil
-@dirrm include/spooles/SolveMap
-@dirrm include/spooles/SubMtx
-@dirrm include/spooles/SubMtxList
-@dirrm include/spooles/SubMtxManager
-@dirrm include/spooles/SymbFac
-@dirrm include/spooles/Tree
-@dirrm include/spooles/Utilities
-@dirrm include/spooles/ZV
-@dirrm include/spooles/misc
-@dirrm include/spooles
 %%PORTDOCS%%%%DOCSDIR%%/AllInOne.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/Eigen.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/Install.ps.gz
@@ -146,4 +110,3 @@ lib/libspooles.so.1
 %%PORTDOCS%%%%DOCSDIR%%/Ordering.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/PP99.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/ReferenceManual.ps.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

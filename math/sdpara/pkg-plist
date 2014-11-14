@@ -6,5 +6,3 @@ share/examples/sdpara/example1.ini-s
 share/examples/sdpara/example2.dat
 share/examples/sdpara/param.sdpa
 share/sdpara/param.sdpa
-@dirrm share/sdpara
-@dirrm share/examples/sdpara
