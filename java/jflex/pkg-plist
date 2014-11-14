@@ -4,12 +4,10 @@ bin/jflex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary/StraightStreamReader.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary/binary.flex
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/binary
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/byaccj/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/byaccj/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/byaccj/calc.flex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/byaccj/calc.y
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/byaccj
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/Main.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/README
@@ -17,7 +15,6 @@ bin/jflex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/output.good
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/test.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/ycalc.cup
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cup
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/AST.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Main.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Makefile
@@ -43,7 +40,6 @@ bin/jflex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/example.as
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/parser.cup
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/scanner.flex
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/interpreter
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/JavaParser.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/JavaSymbol.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Makefile
@@ -54,7 +50,6 @@ bin/jflex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/java12.cup
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/lexer-output.good
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/unicode.flex
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/Utility.java
@@ -62,11 +57,8 @@ bin/jflex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/output.good
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.flex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/test.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/build.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/sample.inp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/standalone.flex
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/standalone
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

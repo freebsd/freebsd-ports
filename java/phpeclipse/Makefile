@@ -61,12 +61,10 @@ plist: build
 		| ${SED} "s|${WRKSRC}|%%ECLIPSE%%|1" \
 		| ${SED} "s|${PLIST_VER}|%%VER%%|g" \
 		>> ${PLIST}
-	@${FIND} -d ${WRKSRC}/${_path}/ -mindepth 1 -type d \
-		| ${SED} "s|${WRKSRC}|@dirrm %%ECLIPSE%%|1" \
+	@${FIND} -d ${WRKSRC}/${_path}/ -mindepth 1 -type d -empty \
+		| ${SED} "s|${WRKSRC}|@dir %%ECLIPSE%%|1" \
 		| ${SED} "s|${PLIST_VER}|%%VER%%|g" \
 		>> ${PLIST}
-	@${ECHO} "@dirrmtry ${ECLIPSE}/${_path}" >> ${PLIST}
 .endfor
-	@${ECHO} "@dirrmtry ${ECLIPSE}" >> ${PLIST}
 
 .include <bsd.port.mk>

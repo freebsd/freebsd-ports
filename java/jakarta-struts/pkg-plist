@@ -50,10 +50,3 @@
 %%T%%/webapps/struts-examples.war
 %%T%%/webapps/struts-mailreader.war
 %%T%%/webapps/tiles-documentation.war
-@dirrm %%T%%/contrib/struts-el/lib
-@dirrm %%T%%/contrib/struts-el/webapps
-@dirrm %%T%%/contrib/struts-el
-@dirrm %%T%%/contrib
-@dirrm %%T%%/lib
-@dirrm %%T%%/webapps
-@dirrm %%T%%
