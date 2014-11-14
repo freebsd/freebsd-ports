@@ -14,6 +14,8 @@ COMMENT=	Library of optimized inner loops
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
+BROKEN_powerpc=	fails to compile vec_memcpy.S
+
 USES=		libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
