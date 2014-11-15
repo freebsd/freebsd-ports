@@ -125,7 +125,7 @@ IGNORE=		this port has new UI option (CONSOLE) for users who do not need GUI sup
 .endif
 
 .if ${PORT_OPTIONS:MDEFAULT_VIMRC}
-RUN_DEPENDS+=   ${LOCALBASE}/share/vim/vimrc:${PORTSDIR}/editors/vim-config
+DEFAULT_VIMRC_LOCATION=${PREFIX}/share/vim
 .endif
 
 .if ${PORT_OPTIONS:MCONSOLE} || ${PORT_OPTIONS:MX11}
@@ -190,5 +190,8 @@ post-install:
 .endif
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
 	${TOUCH} ${STAGEDIR}${DATADIR}/${VIM_VER}/lang/.keepme
+.if ${PORT_OPTIONS:MDEFAULT_VIMRC}
+	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${DEFAULT_VIMRC_LOCATION}/vimrc
+.endif
 
 .include <bsd.port.post.mk>
