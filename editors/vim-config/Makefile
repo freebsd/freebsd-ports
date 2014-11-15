@@ -19,5 +19,5 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${DATADIR}
-	
+
 .include <bsd.port.mk>
