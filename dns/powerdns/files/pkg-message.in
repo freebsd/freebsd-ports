@@ -11,7 +11,7 @@
  %%EXAMPLESDIR%% 
 
  ---------------------------------------------
- IMPORTANT: PowerDNS Authoritive Server 3.4.0:
+ IMPORTANT: PowerDNS Authoritive Server 3.4.0+:
  ---------------------------------------------
  This version needs a mandatory schema change for the gmsyql, 
  gpgsql and gsqlite3 backends. SQL statements are available in
