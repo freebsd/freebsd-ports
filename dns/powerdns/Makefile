@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -152,20 +152,6 @@ MODULES+=	opendbx
 CONFIGURE_ARGS+=	--without-system-polarssl
 .else
 LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
-.endif
-
-post-patch:
-.if ${PORT_OPTIONS:MOPENLDAP}
-	@${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
-		-e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib;' \
-		${WRKSRC}/modules/ldapbackend/Makefile.in
-	@${REINPLACE_CMD} -e 's;@LIBDL@;@LIBDL@ -L${LOCALBASE}/lib;' \
-		-e 's;@modulelibs@;@modulelibs@ -llber;' \
-		${WRKSRC}/pdns/Makefile.in
-.endif
-.if ${PORT_OPTIONS:MPGSQL}
-	@${REINPLACE_CMD} -E -e 's;(PGSQL_inc_check="\$$withval/include/pgsql)";\1 \$$withval/include";' \
-		${WRKSRC}/configure
 .endif
 
 post-install:
