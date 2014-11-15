@@ -1,0 +1,4 @@
+Enable a light default set of options for Vim.
+
+Without this port, vim runs in old vi-compatible mode which
+makes it very unfriendly for most new users.

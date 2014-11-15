@@ -252,6 +252,7 @@
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
+    SUBDIR += vim-config
     SUBDIR += vim-lite
     SUBDIR += winefish
     SUBDIR += wordgrinder
