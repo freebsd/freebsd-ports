@@ -85,7 +85,6 @@
     SUBDIR += csound
     SUBDIR += csound6
     SUBDIR += ctronome
-    SUBDIR += cuberok
     SUBDIR += cue2toc
     SUBDIR += cueplayer
     SUBDIR += cuetools
