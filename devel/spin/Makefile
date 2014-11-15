@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	spin
-PORTVERSION=	6.3.2
+PORTVERSION=	6.4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antont@inbox.lv
 COMMENT=	On-the-fly verification system for asynchronous concurrent systems
 
 OPTIONS_DEFINE=	ISPIN DOCS
@@ -17,10 +17,10 @@ ISPIN_DESC=	Install xspin and TCL/Tk dependency
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MISPIN}
-USES= 		shebangfix tk
+USES=		shebangfix tk
 SHEBANG_FILES=	../iSpin/ispin.tcl
 tk_OLD_CMD=	/bin/sh
-tk_CMD= 	${WISH} -f
+tk_CMD=		${WISH} -f
 PLIST_SUB+=	ISPIN=""
 .else
 PLIST_SUB+=	ISPIN="@comment "
