@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -36,9 +36,7 @@ SUB_FILES=	pkg-install
 SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
 SHEBANG_FILES=	lib-src/grep-changelog
 
-# Append --without-compress-install to prevent emacs from compressing info
-# which bsd.port.mk is not able to detect
-CONFIGURE_ARGS=	--localstatedir=/var --without-compress-install
+CONFIGURE_ARGS=	--localstatedir=/var
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 
@@ -75,7 +73,7 @@ OPTIONS_SINGLE_X11=	GTK2 GTK3 XAW XAW3D MOTIF
 OPTIONS_SINGLE_SOUND=	ALSA OSS
 
 .if !defined(EMACS_NO_X11_SLAVE)
-OPTIONS_DEFAULT=DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT \
+OPTIONS_DEFAULT=DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF \
 		SCROLLBARS XFT XIM XML XPM MAGICK GNUTLS GSETTINGS OSS X11
 CONFLICTS+=	emacs-nox11-[0-9]*
 .else
@@ -144,8 +142,6 @@ MOTIF_USES=		motif
 MOTIF_CONFIGURE_ON+=	--with-x-toolkit=motif
 
 SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
-
-SYNC_INPUT_CONFIGURE_WITH=	sync-input
 
 JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 JPEG_CONFIGURE_WITH=	jpeg
@@ -259,6 +255,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
 	${INSTALL_DATA} ${WRKSRC}/sources.el ${STAGEDIR}${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
 .endif
+	@${FIND} ${STAGEDIR}${PREFIX}/${INFO_PATH} -type f -name '*.gz' -exec ${GUNZIP_CMD} '{}' \;
 
 .if !defined(WITHOUT_X11)
 pre-everything::
