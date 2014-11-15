@@ -15337,6 +15337,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Document/cdesc-Document.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Document/clone-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Document/doctype-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/REXML/Document/document-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Document/encoding-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Document/entity_expansion_count-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Document/entity_expansion_limit%3d-c.ri
@@ -19937,3 +19938,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/cache.ri
 %%RDOC%%%%RUBY_RIDIR%%/created.rid
 %%RDOC%%%%RUBY_RIDIR%%/fatal/cdesc-fatal.ri
+@dir %%RUBY_SITEARCHLIBDIR%%
+@dir %%RUBY_VENDORARCHLIBDIR%%
+%%RDOC%%@dir %%RUBY_SITERIDIR%%
+%%CAPIDOCS%%@dir %%RUBY_RIDIR%%
