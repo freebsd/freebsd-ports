@@ -3,12 +3,12 @@
 
 PORTNAME=	spl
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Shakespeare programming language
+COMMENT=	Shakespeare programming language
 
 USES=		bison gmake
 
@@ -28,6 +28,7 @@ post-patch:
 do-install:
 	${TAR} -C ${WRKSRC}/spl -cf - . | ${TAR} -C ${STAGEDIR}${PREFIX} -xf -
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${ALL_EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && \
+		${INSTALL_DATA} ${ALL_EXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
