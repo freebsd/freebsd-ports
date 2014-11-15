@@ -1,5 +1,5 @@
---- configure.orig	2014-08-22 16:06:02.000000000 +0200
-+++ configure	2014-08-27 09:28:32.000000000 +0200
+--- configure.orig	2014-10-22 12:32:42.000000000 +0000
++++ configure	2014-11-15 10:50:06.000000000 +0000
 @@ -3538,6 +3538,7 @@
  # Threads support - this auto-enables if Tcl was compiled threaded
  #------------------------------------------------------------------------
@@ -8,7 +8,7 @@
  
      # Check whether --enable-threads or --disable-threads was given.
  if test "${enable_threads+set}" = set; then
-@@ -5829,7 +5830,7 @@
+@@ -5835,7 +5836,7 @@
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
@@ -17,10 +17,10 @@
  	    if test $doRpath = yes; then
  
  		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
-@@ -5852,33 +5853,19 @@
+@@ -5857,10 +5858,14 @@
+ 	    SHLIB_CFLAGS="-fPIC"
  	    SHLIB_LD="${CC} -shared"
- 	    TCL_SHLIB_LD_EXTRAS="-Wl,-soname,\$@"
- 	    TK_SHLIB_LD_EXTRAS="-Wl,-soname,\$@"
+ 	    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} -Wl,-soname,\$@"
 -	    SHLIB_SUFFIX=".so"
 +	    SHLIB_SUFFIX=".so.${SHLIB_VERSION}"
  	    DL_OBJS="tclLoadDl.o"
@@ -33,16 +33,10 @@
  	    if test $doRpath = yes; then
  
  		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 		LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
--fi
--
--	    if test "${TCL_THREADS}" = "1"; then
--
--		# The -pthread needs to go in the LDFLAGS, not LIBS
--		LIBS=`echo $LIBS | sed s/-pthread//`
--		CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
--		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
--fi
+@@ -5874,16 +5879,6 @@
+ 		CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+ 		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
+ fi
 -
 -	    case $system in
 -	    FreeBSD-3.*)
@@ -53,7 +47,6 @@
 -		TCL_LIB_VERSIONS_OK=nodots
 -		;;
 -	    esac
-+	    fi
  	    ;;
  	Darwin-*)
  	    CFLAGS_OPTIMIZE="-Os"
