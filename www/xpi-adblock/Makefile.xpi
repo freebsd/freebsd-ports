@@ -150,6 +150,7 @@ _TD_FULL=	${XPI_XPIDIR}
 _A=	>> ${TMPPLIST}
 _Q=	2>/dev/null || true
 PLIST_FILES+=	${XPI_FILES:S!^!${_TD}/!}
+PLIST_DIRS+=	${XPI_DIRS:S!^!${_TD}/!}
 
 .for dist in ${XPI_DISTNAMES}
 XPI_XPIDIR_${dist}=	${XPI_LIBDIR}/${XPI_ID_${dist}}
@@ -164,7 +165,9 @@ do-install:
 	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
 		then ${INSTALL_DATA} ${FILESDIR}/chrome.manifest ${STAGEDIR}${_TD_FULL}/ ; fi
 	@${CHMOD} -R a+rX,go-w ${STAGEDIR}${_TD_FULL}/
-	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${STAGEDIR}${PREFIX},%D,}' ${_A}
+	@for sldir in ${XPI_SLDIRS_ALL}; do \
+		${ECHO_CMD} "@dir $${sldir}" ${_A}; \
+	done
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL} $$_dir/ ${_Q}; }' ${_A}
 	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${XPI_ID} ; }' ${_A}
 .endif
