@@ -87,4 +87,3 @@ man/man3/libraptor.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/tutorial-serializer-to-destination.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial-serializing.html
 %%PORTDOCS%%%%DOCSDIR%%/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

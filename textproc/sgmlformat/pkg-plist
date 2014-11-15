@@ -27,4 +27,3 @@ share/sgml/transpec/linuxdoc-roff.ts
 share/sgml/transpec/roff.cmap
 share/sgml/transpec/roff.sdata
 share/sgml/transpec/transpec.dtd
-@dirrm share/sgml/transpec

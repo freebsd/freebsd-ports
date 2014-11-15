@@ -1,5 +1,3 @@
 bin/ag
 man/man1/ag.1.gz
 %%DATADIR%%/completions/ag.bashcomp.sh
-@dirrm share/the_silver_searcher/completions
-@dirrm share/the_silver_searcher

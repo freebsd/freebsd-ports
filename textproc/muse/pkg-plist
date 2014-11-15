@@ -94,17 +94,3 @@
 %%EXAMPLESDIR%%/mwolson/templates/header.html
 %%EXAMPLESDIR%%/mwolson/templates/header.tex
 %%EXAMPLESDIR%%/publish-project
-@dirrm %%EXAMPLESDIR%%/mwolson/templates
-@dirrm %%EXAMPLESDIR%%/mwolson/stylesheets
-@dirrm %%EXAMPLESDIR%%/mwolson
-@dirrm %%EXAMPLESDIR%%/ikiwiki
-@dirrm %%EXAMPLESDIR%%/johnw
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%EMACS_SITE_LISPDIR%%/muse/experimental
-@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/blosxom
-@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/ikiwiki/IkiWiki/Plugin
-@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/ikiwiki/IkiWiki
-@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/ikiwiki
-@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom
-@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib
-@dirrm %%EMACS_SITE_LISPDIR%%/muse

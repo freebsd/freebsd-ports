@@ -5,5 +5,3 @@ share/guile/scss/parser.scm
 share/guile/scss/properties.scm
 share/guile/scss/scss.scm
 share/guile/scss/sdom.scm
-@dirrm share/guile/scss
-@dirrmtry share/guile

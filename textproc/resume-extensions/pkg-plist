@@ -5,7 +5,3 @@ share/xsl/resume-extensions/format/text.xsl
 share/xsl/resume-extensions/format/xml.xsl
 share/xsl/resume-extensions/lib/extrefs.xsl
 share/xsl/resume-extensions/params.xsl
-@dirrm share/xsl/resume-extensions/lib
-@dirrm share/xsl/resume-extensions/format
-@dirrm share/xsl/resume-extensions
-@dirrmtry share/xsl

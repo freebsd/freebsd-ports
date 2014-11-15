@@ -137,13 +137,3 @@
 %%DBKDIR%%/catalog
 @unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove CATALOG %D/%F
 @exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
-@dirrmtry %%DBKDIR%%/4.5
-@dirrmtry %%DBKDIR%%/4.4
-@dirrmtry %%DBKDIR%%/4.3
-@dirrmtry %%DBKDIR%%/4.2
-@dirrmtry %%DBKDIR%%/4.1
-@dirrmtry %%DBKDIR%%/4.0
-@dirrmtry %%DBKDIR%%/3.1
-@dirrmtry %%DBKDIR%%/3.0
-@dirrmtry %%DBKDIR%%/2.4.1
-@dirrmtry %%DBKDIR%%

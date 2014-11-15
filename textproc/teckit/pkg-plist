@@ -19,5 +19,3 @@ lib/libTECkit_Compiler.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/TECkit_Binary_Format.doc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/TECkit_Language_2.1.doc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/TECkit_version_2.1.doc.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/teckit

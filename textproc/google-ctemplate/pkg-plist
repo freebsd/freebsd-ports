@@ -40,5 +40,3 @@ libdata/pkgconfig/libctemplate_nothreads.pc
 %%PORTDOCS%%%%DOCSDIR%%/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/tips.html
 %%PORTDOCS%%%%DOCSDIR%%/xss_resources.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/ctemplate

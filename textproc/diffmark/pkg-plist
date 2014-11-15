@@ -17,4 +17,3 @@ lib/libdiffmark.a
 lib/libdiffmark.so
 lib/libdiffmark.so.1
 lib/libdiffmark.so.1.1.3
-@dirrm include/diffmark

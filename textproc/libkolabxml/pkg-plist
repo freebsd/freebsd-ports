@@ -18,6 +18,3 @@ lib/cmake/Libkolabxml/LibkolabxmlTargets.cmake
 lib/libkolabxml.so
 lib/libkolabxml.so.1
 lib/libkolabxml.so.%%SHLIB_VER%%
-@dirrm lib/cmake/Libkolabxml
-@dirrmtry lib/cmake
-@dirrm include/kolabxml

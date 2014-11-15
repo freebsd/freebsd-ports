@@ -78,7 +78,3 @@ man/man1/htmldoc.1.gz
 %%DATADIR%%/data/koi8-r
 %%DATADIR%%/data/prolog.ps
 %%DATADIR%%/data/psglyphs
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%

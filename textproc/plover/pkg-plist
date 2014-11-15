@@ -67,8 +67,3 @@ share/pixmaps/plover_on.png
 %%PYTHON_SITELIBDIR%%/plover/steno.py
 %%PYTHON_SITELIBDIR%%/plover/steno.pyc
 %%PYTHON_SITELIBDIR%%/plover/steno.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/plover/machine
-@dirrm %%PYTHON_SITELIBDIR%%/plover/gui
-@dirrm %%PYTHON_SITELIBDIR%%/plover/dictionary
-@dirrm %%PYTHON_SITELIBDIR%%/plover/assets
-@dirrm %%PYTHON_SITELIBDIR%%/plover

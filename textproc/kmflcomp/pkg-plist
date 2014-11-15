@@ -10,6 +10,3 @@ lib/libkmflcomp.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/KMFL-Compiler.sxw
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/doc/kmfl
-@dirrmtry include/kmfl

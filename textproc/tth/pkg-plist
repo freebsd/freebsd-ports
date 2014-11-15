@@ -6,4 +6,3 @@ bin/tth
 man/man1/tth.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/tth_manual.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

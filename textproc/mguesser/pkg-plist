@@ -103,4 +103,3 @@ bin/mguesser
 %%DATADIR%%/vi.viscii.lm
 %%DATADIR%%/zh.big5.lm
 %%DATADIR%%/zh.gb2312.lm
-@dirrm %%DATADIR%%

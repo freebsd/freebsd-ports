@@ -106,7 +106,3 @@ share/gtk-doc/html/raptor2/tutorial-serializer-to-destination.html
 share/gtk-doc/html/raptor2/tutorial-serializing.html
 share/gtk-doc/html/raptor2/tutorial.html
 share/gtk-doc/html/raptor2/up.png
-@dirrm share/gtk-doc/html/raptor2
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/raptor2

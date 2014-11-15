@@ -99,14 +99,3 @@ bin/txt2tags
 %%EXAMPLESDIR%%/sample.txt
 %%EXAMPLESDIR%%/sample.wiki
 %%EXAMPLESDIR%%/sample.xhtml
-@dirrm %%EXAMPLESDIR%%/module
-@dirrm %%EXAMPLESDIR%%/img
-@dirrm %%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images
-@dirrm %%EXAMPLESDIR%%/extras/markitup/sets/txt2tags
-@dirrm %%EXAMPLESDIR%%/extras/markitup/sets
-@dirrm %%EXAMPLESDIR%%/extras/markitup
-@dirrm %%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit
-@dirrm %%EXAMPLESDIR%%/extras/pmwiki
-@dirrm %%EXAMPLESDIR%%/extras
-@dirrm %%EXAMPLESDIR%%/css
-@dirrm %%EXAMPLESDIR%%

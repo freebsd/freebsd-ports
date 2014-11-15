@@ -117,11 +117,3 @@ lib/erlang/lib/exmpp-%%VERSION%%/priv/lib/exmpp_xml_expat_legacy.a
 lib/erlang/lib/exmpp-%%VERSION%%/priv/lib/exmpp_xml_expat_legacy.so
 lib/erlang/lib/exmpp-%%VERSION%%/priv/lib/exmpp_xml_libxml2.a
 lib/erlang/lib/exmpp-%%VERSION%%/priv/lib/exmpp_xml_libxml2.so
-@dirrm lib/erlang/lib/exmpp-%%VERSION%%/priv/lib
-@dirrm lib/erlang/lib/exmpp-%%VERSION%%/priv
-@dirrm lib/erlang/lib/exmpp-%%VERSION%%/include/internal
-@dirrm lib/erlang/lib/exmpp-%%VERSION%%/include
-@dirrm lib/erlang/lib/exmpp-%%VERSION%%/ebin
-%%PORTDOCS%%@dirrm lib/erlang/lib/exmpp-%%VERSION%%/doc/html
-%%PORTDOCS%%@dirrm lib/erlang/lib/exmpp-%%VERSION%%/doc
-@dirrm lib/erlang/lib/exmpp-%%VERSION%%

@@ -359,37 +359,3 @@ lib/libclucene-shared.so.1
 lib/libclucene-shared.so.2.3.3.4
 libdata/pkgconfig/libclucene-core.pc
 %%DATADIR%%/CLuceneConfig.cmake
-@dirrm %%DATADIR%%
-@dirrm include/CLucene/util
-@dirrm include/CLucene/store
-@dirrm include/CLucene/snowball/src_c
-@dirrm include/CLucene/snowball/runtime
-@dirrm include/CLucene/snowball/libstemmer
-@dirrm include/CLucene/snowball/include
-@dirrm include/CLucene/snowball
-@dirrm include/CLucene/search/spans
-@dirrm include/CLucene/search
-@dirrm include/CLucene/queryParser/legacy
-@dirrm include/CLucene/queryParser
-@dirrm include/CLucene/index
-@dirrm include/CLucene/highlighter
-@dirrm include/CLucene/ext/boost/smart_ptr/detail
-@dirrm include/CLucene/ext/boost/smart_ptr
-@dirrm include/CLucene/ext/boost/exception/detail
-@dirrm include/CLucene/ext/boost/exception
-@dirrm include/CLucene/ext/boost/detail
-@dirrm include/CLucene/ext/boost/config/stdlib
-@dirrm include/CLucene/ext/boost/config/platform
-@dirrm include/CLucene/ext/boost/config/no_tr1
-@dirrm include/CLucene/ext/boost/config/compiler
-@dirrm include/CLucene/ext/boost/config/abi
-@dirrm include/CLucene/ext/boost/config
-@dirrm include/CLucene/ext/boost
-@dirrm include/CLucene/ext
-@dirrm include/CLucene/document
-@dirrm include/CLucene/debug
-@dirrm include/CLucene/analysis/standard
-@dirrm include/CLucene/analysis/de
-@dirrm include/CLucene/analysis/cjk
-@dirrm include/CLucene/analysis
-@dirrm include/CLucene

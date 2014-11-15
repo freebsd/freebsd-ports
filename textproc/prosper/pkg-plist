@@ -111,12 +111,5 @@
 %%PROSPERDIR%%/PPRnuancegris.sty
 %%PROSPERDIR%%/PPRtroispoints.sty
 %%PROSPERDIR%%/prosper.cls
-@dirrm %%PROSPERDIR%%/img
-@dirrm %%PROSPERDIR%%/designer
-@dirrm %%PROSPERDIR%%/contrib/img
-@dirrm %%PROSPERDIR%%/contrib
-@dirrm %%PROSPERDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%

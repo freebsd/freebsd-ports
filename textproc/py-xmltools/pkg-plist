@@ -11,5 +11,3 @@
 %%PYTHON_SITELIBDIR%%/logilab/xmltools/__pkginfo__.py
 %%PYTHON_SITELIBDIR%%/logilab/xmltools/__pkginfo__.pyc
 %%PYTHON_SITELIBDIR%%/logilab/xmltools/__pkginfo__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/xmltools
-@dirrm %%PYTHON_SITELIBDIR%%/logilab

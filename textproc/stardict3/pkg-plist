@@ -171,36 +171,3 @@ share/stardict/pixmaps/splash.png
 share/stardict/pixmaps/video.png
 share/stardict/sounds/buttonactive.wav
 share/stardict/sounds/menushow.wav
-@dirrm share/stardict/sounds
-@dirrm share/stardict/pixmaps
-@dirrm share/stardict/dic/stardict-dict/res
-@dirrm share/stardict/dic/stardict-dict
-@dirrmtry share/stardict/dic
-@dirrmtry share/stardict
-%%GNOME%%@dirrm share/omf/stardict
-@dirrmtry share/locale/tt/LC_MESSAGES
-@dirrmtry share/locale/tt
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-%%GNOME%%@dirrmtry share/idl
-%%GNOME%%@dirrm share/gnome/help/stardict/zh_TW/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/zh_TW
-%%GNOME%%@dirrm share/gnome/help/stardict/zh_CN/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/zh_CN
-%%GNOME%%@dirrm share/gnome/help/stardict/uk/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/uk
-%%GNOME%%@dirrm share/gnome/help/stardict/ru/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/ru
-%%GNOME%%@dirrm share/gnome/help/stardict/nl/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/nl
-%%GNOME%%@dirrm share/gnome/help/stardict/mk/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/mk
-%%GNOME%%@dirrm share/gnome/help/stardict/C/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/C
-%%GNOME%%@dirrm share/gnome/help/stardict
-@dirrm lib/stardict/plugins
-@dirrm lib/stardict

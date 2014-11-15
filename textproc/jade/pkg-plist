@@ -193,7 +193,3 @@ share/sgml/jade/pdfjadetex.ini
 share/sgml/jade/style-sheet.dtd
 share/xml/jade/xml.soc
 share/xml/jade/xml.dcl
-@dirrm include/sp
-@dirrm %%DOCSDIR%%
-@dirrm share/sgml/jade
-@dirrm share/xml/jade

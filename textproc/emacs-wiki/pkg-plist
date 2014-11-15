@@ -17,5 +17,3 @@
 %%CONTRIB%%%%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib/httpd.el
 %%CONTRIB%%%%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib/table.el
 %%CONTRIB%%%%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib/update-remote.el
-%%CONTRIB%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki

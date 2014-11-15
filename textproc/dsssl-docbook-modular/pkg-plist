@@ -728,32 +728,3 @@ share/sgml/docbook/dsssl/modular/print/plain.dsl
 share/sgml/docbook/dsssl/modular/print/version.dsl
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/catalog
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/catalog
-@dirrm share/sgml/docbook/dsssl/modular/print
-@dirrm share/sgml/docbook/dsssl/modular/olink
-@dirrm share/sgml/docbook/dsssl/modular/lib
-@dirrm share/sgml/docbook/dsssl/modular/images/callouts
-@dirrm share/sgml/docbook/dsssl/modular/images
-@dirrm share/sgml/docbook/dsssl/modular/html
-@dirrm share/sgml/docbook/dsssl/modular/frames
-@dirrm share/sgml/docbook/dsssl/modular/dtds/olink
-@dirrm share/sgml/docbook/dsssl/modular/dtds/imagelib
-@dirrm share/sgml/docbook/dsssl/modular/dtds/html
-@dirrm share/sgml/docbook/dsssl/modular/dtds/decls
-@dirrm share/sgml/docbook/dsssl/modular/dtds/dbdsssl
-@dirrm share/sgml/docbook/dsssl/modular/dtds
-@dirrm share/sgml/docbook/dsssl/modular/doc/testdata
-@dirrm share/sgml/docbook/dsssl/modular/doc/print
-@dirrm share/sgml/docbook/dsssl/modular/doc/lib
-@dirrm share/sgml/docbook/dsssl/modular/doc/html
-@dirrm share/sgml/docbook/dsssl/modular/doc
-@dirrm share/sgml/docbook/dsssl/modular/contrib/subdoc
-@dirrm share/sgml/docbook/dsssl/modular/contrib/renumberinpart
-@dirrm share/sgml/docbook/dsssl/modular/contrib/print
-@dirrm share/sgml/docbook/dsssl/modular/contrib/imagemap
-@dirrm share/sgml/docbook/dsssl/modular/contrib/html
-@dirrm share/sgml/docbook/dsssl/modular/contrib
-@dirrm share/sgml/docbook/dsssl/modular/common
-@dirrm share/sgml/docbook/dsssl/modular/bin
-@dirrm share/sgml/docbook/dsssl/modular
-@dirrmtry share/sgml/docbook/dsssl
-@dirrmtry share/sgml/docbook

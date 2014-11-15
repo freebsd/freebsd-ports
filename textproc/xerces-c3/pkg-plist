@@ -487,29 +487,3 @@ include/xercesc/validators/schema/identity/XercesXPath.hpp
 include/xercesc/xinclude/XIncludeDOMDocumentProcessor.hpp
 include/xercesc/xinclude/XIncludeLocation.hpp
 include/xercesc/xinclude/XIncludeUtils.hpp
-@dirrm include/xercesc/xinclude
-@dirrm include/xercesc/validators/schema/identity
-@dirrm include/xercesc/validators/schema
-@dirrm include/xercesc/validators/datatype
-@dirrm include/xercesc/validators/common
-@dirrm include/xercesc/validators/DTD
-@dirrm include/xercesc/validators
-@dirrm include/xercesc/util/regx
-@dirrm include/xercesc/util/Transcoders/Iconv
-@dirrm include/xercesc/util/Transcoders
-@dirrm include/xercesc/util/NetAccessors/Socket
-@dirrm include/xercesc/util/NetAccessors
-@dirrm include/xercesc/util/MutexManagers
-@dirrm include/xercesc/util/MsgLoaders/InMemory
-@dirrm include/xercesc/util/MsgLoaders
-@dirrm include/xercesc/util/FileManagers
-@dirrm include/xercesc/util
-@dirrm include/xercesc/sax2
-@dirrm include/xercesc/sax
-@dirrm include/xercesc/parsers
-@dirrm include/xercesc/internal
-@dirrm include/xercesc/framework/psvi
-@dirrm include/xercesc/framework
-@dirrm include/xercesc/dom/impl
-@dirrm include/xercesc/dom
-@dirrm include/xercesc

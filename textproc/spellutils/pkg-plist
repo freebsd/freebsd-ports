@@ -6,5 +6,3 @@ man/man1/pospell.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aspell.sl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

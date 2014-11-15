@@ -29,4 +29,3 @@ man/man7/tbl.7.gz
 man/man8/makewhatis.8.gz
 sbin/makewhatis
 %%EXAMPLESDIR%%/example.style.css
-@dirrmtry %%EXAMPLESDIR%%

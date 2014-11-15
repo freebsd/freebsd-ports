@@ -396,30 +396,3 @@ lib/libxqilla.a
 lib/libxqilla.so
 lib/libxqilla.so.6
 lib/libxqilla.so.6.0.0
-@dirrm include/xqilla/xqts
-@dirrm include/xqilla/xerces
-@dirrm include/xqilla/utils
-@dirrm include/xqilla/update
-@dirrm include/xqilla/simple-api
-@dirrm include/xqilla/schema
-@dirrm include/xqilla/runtime
-@dirrm include/xqilla/parser
-@dirrm include/xqilla/optimizer
-@dirrm include/xqilla/operators
-@dirrm include/xqilla/mapm
-@dirrm include/xqilla/items/impl
-@dirrm include/xqilla/items
-@dirrm include/xqilla/functions
-@dirrm include/xqilla/fulltext
-@dirrm include/xqilla/framework
-@dirrm include/xqilla/fastxdm
-@dirrm include/xqilla/exceptions
-@dirrm include/xqilla/events
-@dirrm include/xqilla/dom-api/impl
-@dirrm include/xqilla/dom-api
-@dirrm include/xqilla/debug
-@dirrm include/xqilla/context/impl
-@dirrm include/xqilla/context
-@dirrm include/xqilla/axis
-@dirrm include/xqilla/ast
-@dirrm include/xqilla

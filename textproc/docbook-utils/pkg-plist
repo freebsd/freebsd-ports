@@ -36,8 +36,3 @@ share/sgml/docbook/utils-0.6.14/docbook-utils.dsl
 share/sgml/docbook/utils-0.6.14/frontends/docbook
 share/sgml/docbook/utils-0.6.14/helpers/docbook2man-spec.pl
 share/sgml/docbook/utils-0.6.14/helpers/docbook2texi-spec.pl
-@dirrmtry share/sgml/docbook/utils-0.6.14/helpers
-@dirrmtry share/sgml/docbook/utils-0.6.14/frontends
-@dirrmtry share/sgml/docbook/utils-0.6.14/backends
-@dirrmtry share/sgml/docbook/utils-0.6.14
-@dirrmtry share/sgml/docbook

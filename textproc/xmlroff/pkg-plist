@@ -390,12 +390,3 @@ share/xml/libfo-0.6.2/catalog.xml
 share/xml/libfo-0.6.2/libfo-compat.xsl
 share/xml/libfo-0.6.2/xmlroff.fo
 share/xml/libfo-0.6.2/xmlroff.xml
-@dirrm share/xml/libfo-0.6.2
-@dirrm %%DOCSDIR%%
-@dirrm include/libfo-0.6/libfo/util
-@dirrm include/libfo-0.6/libfo/property
-@dirrm include/libfo-0.6/libfo/fo
-@dirrm include/libfo-0.6/libfo/datatype
-@dirrm include/libfo-0.6/libfo/area
-@dirrm include/libfo-0.6/libfo
-@dirrm include/libfo-0.6

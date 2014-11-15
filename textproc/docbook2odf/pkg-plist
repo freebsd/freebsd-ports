@@ -351,19 +351,3 @@ share/applications/docbook2odf.desktop
 %%DATADIR%%/xsl/overlay/default.xsl
 %%DATADIR%%/xsl/param.xsl
 share/pixmaps/docbook2odf.png
-@dirrm %%DATADIR%%/xsl/overlay
-@dirrm %%DATADIR%%/xsl/document-styles
-@dirrm %%DATADIR%%/xsl/document-content
-@dirrm %%DATADIR%%/xsl/common
-@dirrm %%DATADIR%%/xsl
-@dirrm %%DATADIR%%/utils
-@dirrm %%DATADIR%%/tests/tests/svg
-@dirrm %%DATADIR%%/tests/tests/mathml
-@dirrm %%DATADIR%%/tests/tests/ebnf
-@dirrm %%DATADIR%%/tests/tests/5.0
-@dirrm %%DATADIR%%/tests/tests
-@dirrm %%DATADIR%%/tests/imagelib
-@dirrm %%DATADIR%%/tests/i18n
-@dirrm %%DATADIR%%/tests/graphics
-@dirrm %%DATADIR%%/tests
-@dirrm %%DATADIR%%

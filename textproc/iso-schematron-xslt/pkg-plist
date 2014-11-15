@@ -21,7 +21,3 @@
 %%INSTDIR%%/xslt2/sch-messages-fr.xhtml
 %%INSTDIR%%/xslt2/sch-messages-nl.xhtml
 %%INSTDIR%%/xslt2/schematron-skeleton-api.htm
-@dirrm %%INSTDIR%%/xslt1
-@dirrm %%INSTDIR%%/xslt2
-@dirrm %%INSTDIR%%
-@dirrmtry share/xsl

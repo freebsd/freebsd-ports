@@ -6,7 +6,6 @@
 %%RUBY_SITELIBDIR%%/xmlscan/version.rb
 %%RUBY_SITELIBDIR%%/xmlscan/visitor.rb
 %%RUBY_SITELIBDIR%%/xmlscan/xmlchar.rb
-@dirrm %%RUBY_SITELIBDIR%%/xmlscan
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/THANKS
@@ -20,8 +19,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/conformance.ja.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/manual.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/manual.ja.rd
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/chibixml.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/getxmlchar.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rexml.rb
@@ -36,6 +33,3 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlbench/parser/xmlscan.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlbench/xmlbench-lib.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlconftest.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/xmlbench/parser
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/xmlbench
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

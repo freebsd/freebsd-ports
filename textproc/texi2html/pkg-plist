@@ -268,34 +268,3 @@ man/man1/%%PROGRAM_PREFIX%%texi2html.1.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/texi2html.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/texi2html.mo
 %%PORTDOCS%%%%DOCSDIR%%/texi2html.html
-@dirrm %%DATADIR%%/lib/libintl-perl/lib/Locale/Recode
-@dirrm %%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData
-@dirrm %%DATADIR%%/lib/libintl-perl/lib/Locale
-@dirrm %%DATADIR%%/lib/libintl-perl/lib
-@dirrm %%DATADIR%%/lib/libintl-perl
-@dirrm %%DATADIR%%/lib/Unicode-EastAsianWidth/lib/Unicode
-@dirrm %%DATADIR%%/lib/Unicode-EastAsianWidth/lib
-@dirrm %%DATADIR%%/lib/Unicode-EastAsianWidth
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/i18n
-@dirrm %%DATADIR%%
-@dirrmtry %%TEXINFODIR%%/init
-@dirrmtry %%TEXINFODIR%%
-%%NLS%%@dirrm share/locale/de.us-ascii/LC_MESSAGES
-%%NLS%%@dirrm share/locale/de.us-ascii
-%%NLS%%@dirrm share/locale/es.us-ascii/LC_MESSAGES
-%%NLS%%@dirrm share/locale/es.us-ascii
-%%NLS%%@dirrm share/locale/fr.us-ascii/LC_MESSAGES
-%%NLS%%@dirrm share/locale/fr.us-ascii
-%%NLS%%@dirrm share/locale/nl.us-ascii/LC_MESSAGES
-%%NLS%%@dirrm share/locale/nl.us-ascii
-%%NLS%%@dirrm share/locale/no.us-ascii/LC_MESSAGES
-%%NLS%%@dirrm share/locale/no.us-ascii
-%%NLS%%@dirrm share/locale/pt.us-ascii/LC_MESSAGES
-%%NLS%%@dirrm share/locale/pt.us-ascii
-%%NLS%%@dirrm share/locale/pt_BR.us-ascii/LC_MESSAGES
-%%NLS%%@dirrm share/locale/pt_BR.us-ascii
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

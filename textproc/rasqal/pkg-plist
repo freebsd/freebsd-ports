@@ -48,7 +48,3 @@ share/gtk-doc/html/rasqal/reference-manual.html
 share/gtk-doc/html/rasqal/right.png
 share/gtk-doc/html/rasqal/style.css
 share/gtk-doc/html/rasqal/up.png
-@dirrm share/gtk-doc/html/rasqal
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/rasqal

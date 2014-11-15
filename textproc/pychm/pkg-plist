@@ -9,4 +9,3 @@
 %%PYTHON_SITELIBDIR%%/chm/chmlib.pyc
 %%PYTHON_SITELIBDIR%%/chm/chmlib.pyo
 %%PYTHON_SITELIBDIR%%/chm/extra.so
-@dirrm %%PYTHON_SITELIBDIR%%/chm

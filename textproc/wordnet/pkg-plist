@@ -28,9 +28,6 @@ lib/tcl%%TCL_DVER%%/Wordnet/pkgIndex.tcl
 %%DATADIR%%/verb.exc
 %%DATADIR%%/verb.Framestext
 %%DATADIR%%/wn.xbm
-@dirrm include/WordNet
-@dirrm lib/tcl%%TCL_DVER%%/Wordnet
-@dirrm %%DATADIR%%
 man/man1/wn.1.gz
 man/man1/wnb.1.gz
 man/man1/wnintro.1.gz

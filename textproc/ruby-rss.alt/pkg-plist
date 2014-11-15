@@ -45,10 +45,3 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Tutorial.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Tutorial.ja
-%%PORTDOCS%%@dirrmtry %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrmtry %%RUBY_MODDOCDIR%%
-%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
-@dirrm %%RUBY_SITELIBDIR%%/rss/maker
-@dirrm %%RUBY_SITELIBDIR%%/rss/dublincore
-@dirrm %%RUBY_SITELIBDIR%%/rss/content
-@dirrm %%RUBY_SITELIBDIR%%/rss

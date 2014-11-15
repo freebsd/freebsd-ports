@@ -23,4 +23,3 @@ include/scew/tree.h
 include/scew/writer.h
 include/scew/writer_buffer.h
 include/scew/writer_file.h
-@dirrm include/scew

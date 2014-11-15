@@ -59,12 +59,3 @@ bin/s5
 %%DATADIR%%/s5-blank/ui/default/slides.css
 %%DATADIR%%/s5-blank/ui/default/slides.js
 man/man1/s5.1.gz
-@dirrm %%DATADIR%%/pix
-@dirrm %%DATADIR%%/primer
-@dirrm %%DATADIR%%/s5-blank/ui/default
-@dirrm %%DATADIR%%/s5-blank/ui
-@dirrm %%DATADIR%%/s5-blank
-@dirrm %%DATADIR%%/ui/default
-@dirrm %%DATADIR%%/ui/i18n
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%

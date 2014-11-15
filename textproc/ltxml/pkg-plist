@@ -40,6 +40,3 @@ include/ltxml12/xmlconfig.h
 lib/libltapi12.a
 lib/libltstd12.a
 lib/ltxml12/Makefile.usr
-@dirrm lib/ltxml12
-@dirrm include/ltxml12/sys
-@dirrm include/ltxml12

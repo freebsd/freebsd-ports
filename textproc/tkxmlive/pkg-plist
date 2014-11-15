@@ -42,10 +42,3 @@ bin/tkxmlive
 %%DATADIR%%/sample/docbook.css
 %%DATADIR%%/sample/docbook.xml
 %%DATADIR%%/tkxmlive
-@dirrm %%DATADIR%%/gui/msgs
-@dirrm %%DATADIR%%/gui
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%/library
-@dirrm %%DATADIR%%/sample/article
-@dirrm %%DATADIR%%/sample
-@dirrm %%DATADIR%%

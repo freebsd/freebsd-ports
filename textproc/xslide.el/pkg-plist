@@ -10,5 +10,3 @@ lib/xemacs/site-lisp/xslide-data.el
 lib/xemacs/site-lisp/xslide-font.el
 lib/xemacs/site-lisp/xslide-initial.xsl
 lib/xemacs/site-lisp/xslide-process.el
-@dirrmtry lib/xemacs/site-lisp
-@dirrmtry lib/xemacs

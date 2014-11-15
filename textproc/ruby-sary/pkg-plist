@@ -9,5 +9,3 @@ bin/rsary.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja.rd
 %%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/Reference.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Reference.ja.rd
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

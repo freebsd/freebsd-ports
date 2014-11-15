@@ -1,4 +1,2 @@
 share/xml/docbook/jrefentry/catalog
 share/xml/docbook/jrefentry/jrefentry.dtd
-@dirrm share/xml/docbook/jrefentry
-@dirrmtry share/xml/docbook
