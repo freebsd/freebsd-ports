@@ -51,7 +51,3 @@ lib/libparsifal.so
 %%PORTDOCS%%%%DOCSDIR%%/xmlconf_results.html
 %%PORTDOCS%%%%DOCSDIR%%/xmlconf_results_valid.html
 %%PORTDOCS%%%%DOCSDIR%%/xmlplint.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/csrchtml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/libparsifal

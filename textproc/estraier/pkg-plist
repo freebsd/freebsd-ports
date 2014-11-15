@@ -40,9 +40,3 @@ libexec/estspellen
 %%DATADIR%%/skins/stoic/estsearch.tmpl
 %%DATADIR%%/spex-ja.html
 %%DATADIR%%/spex.html
-@dirrm %%DATADIR%%/skins/stoic
-@dirrm %%DATADIR%%/skins/school
-@dirrm %%DATADIR%%/skins
-@dirrm %%DATADIR%%/locale/ja
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%

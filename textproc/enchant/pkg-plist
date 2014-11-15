@@ -26,6 +26,3 @@ lib/libenchant.so.1.6.0
 libdata/pkgconfig/enchant.pc
 man/man1/enchant.1.gz
 %%DATADIR%%/enchant.ordering
-@dirrm %%DATADIR%%
-@dirrm lib/enchant
-@dirrm include/enchant

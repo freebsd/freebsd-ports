@@ -3,4 +3,3 @@ man/man1/artha.1.gz
 share/applications/artha.desktop
 share/pixmaps/artha.png
 %%DATADIR%%/gui.glade
-@dirrm %%DATADIR%%

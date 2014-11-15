@@ -10,6 +10,3 @@ bin/info2pod
 %%DATADIR%%/cs/Pathname.pm
 %%DATADIR%%/cs/Sink.pm
 %%DATADIR%%/cs/Source.pm
-@dirrm %%DATADIR%%/cs/GNUInfo
-@dirrm %%DATADIR%%/cs
-@dirrm %%DATADIR%%

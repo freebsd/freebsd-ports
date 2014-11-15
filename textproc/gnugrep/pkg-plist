@@ -47,5 +47,3 @@ man/man1/grep.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/grep.mo
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky

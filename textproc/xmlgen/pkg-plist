@@ -7,5 +7,3 @@ share/doc/xmlgen/htmlgen.html
 share/doc/xmlgen/overview.html
 share/doc/xmlgen/sidenav.html
 share/doc/xmlgen/xmlgen.html
-@dirrm share/doc/xmlgen
-@dirrm lib/xmlgen

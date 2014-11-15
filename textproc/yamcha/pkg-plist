@@ -20,4 +20,3 @@ libexec/yamcha/showse
 libexec/yamcha/svm_learn_wrapper
 libexec/yamcha/zipmodel
 man/man1/yamcha.1.gz
-@dirrm libexec/yamcha

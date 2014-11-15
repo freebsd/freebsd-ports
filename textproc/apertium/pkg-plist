@@ -164,7 +164,3 @@ share/aclocal/apertium.m4
 %%DATADIR%%/reformat.xsl
 %%DATADIR%%/tagger.dtd
 %%DATADIR%%/transfer.dtd
-@dirrm include/apertium-%%APVER%%/apertium
-@dirrm include/apertium-%%APVER%%
-@dirrm %%DATADIR%%/modes
-@dirrm %%DATADIR%%

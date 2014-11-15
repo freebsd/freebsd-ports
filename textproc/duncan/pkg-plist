@@ -20,9 +20,3 @@ GNUstep/Local/Applications/Duncan.app/Resources/Thai.lproj/MainMenu.gorm/data.cl
 GNUstep/Local/Applications/Duncan.app/Resources/Thai.lproj/MainMenu.gorm/objects.gorm
 GNUstep/Local/Applications/Duncan.app/stamp.make
 GNUstep/Local/Tools/Duncan
-@dirrm GNUstep/Local/Applications/Duncan.app/Resources/Thai.lproj/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/Duncan.app/Resources/Thai.lproj
-@dirrm GNUstep/Local/Applications/Duncan.app/Resources/English.lproj/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/Duncan.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Duncan.app/Resources
-@dirrm GNUstep/Local/Applications/Duncan.app

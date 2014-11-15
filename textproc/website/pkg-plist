@@ -211,38 +211,3 @@ share/xsl/website/xsl/website-common.xsl
 share/xsl/website/xsl/website-targets.xsl
 share/xsl/website/xsl/website.xsl
 share/xsl/website/xsl/xbel.xsl
-@dirrm share/xsl/website/xsl
-@dirrm share/xsl/website/schema/relaxng
-@dirrm share/xsl/website/schema/dtd
-@dirrm share/xsl/website/schema
-@dirrm share/xsl/website/extensions/xalan2/com/nwalsh/xalan
-@dirrm share/xsl/website/extensions/xalan2/com/nwalsh
-@dirrm share/xsl/website/extensions/xalan2/com
-@dirrm share/xsl/website/extensions/xalan2
-@dirrm share/xsl/website/extensions/saxon64/com/nwalsh/saxon
-@dirrm share/xsl/website/extensions/saxon64/com/nwalsh
-@dirrm share/xsl/website/extensions/saxon64/com
-@dirrm share/xsl/website/extensions/saxon64
-@dirrm share/xsl/website/extensions
-@dirrm share/xsl/website
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/subdir
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/triangle/other
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/triangle/current
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/triangle
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/plusminus/other
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/plusminus/current
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/plusminus
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder16/other
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder16/current
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder16
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder/other
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder/current
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/arrow/other
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/arrow/current
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/arrow
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/navicons
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics/icons
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphics
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bookmark
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

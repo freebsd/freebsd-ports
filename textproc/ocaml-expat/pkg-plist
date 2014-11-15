@@ -20,5 +20,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/index_values.html
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/type_Expat.html
-@dirrmtry %%OCAML_SITELIBDIR%%/expat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

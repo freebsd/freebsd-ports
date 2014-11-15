@@ -19,9 +19,3 @@ man/man1/unroff.1.gz
 %%DATADIR%%/scm/html/ms.scm.orig
 %%DATADIR%%/scm/misc/hyper.scm
 %%DATADIR%%/scm/misc/hyper.scm.orig
-@dirrm %%DATADIR%%/scm/misc
-@dirrm %%DATADIR%%/scm/html
-@dirrm %%DATADIR%%/scm
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

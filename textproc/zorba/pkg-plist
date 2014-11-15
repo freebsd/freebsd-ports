@@ -217,19 +217,6 @@ lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_b.gif
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_l.gif
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_r.gif
-%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/examples
-%%WITH_RUBY%%@dirrmtry share/ruby
-%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/html
-%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby
-%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php/html
-%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php
-%%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/examples
-%%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/html
-%%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python
-%%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/html
-%%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/java
-%%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqj/html
-%%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqj
 %%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx/www/index.xq
 %%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx/www/index_0.0.xq
 %%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx/www/index_0.xq
@@ -384,85 +371,8 @@ lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
 %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD/xhtml1-strict.dtd.xsd
 %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD/xhtml1-transitional.dtd.xsd
 %%DATADIR%%/uris/core/%%FULLVERSION%%/org/xqdoc/www/1.0.xsd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqdoc/requisites/templates
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqdoc/requisites/styles
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqdoc/requisites/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqdoc/requisites/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqdoc/requisites
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqdoc/generator
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqdoc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/code/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/code
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/c/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/c/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/c
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/cmake/Modules/zorba-%%FULLVERSION%%/ZorbaModule.cmake
 share/cmake/Modules/zorba-%%FULLVERSION%%/ZorbaConfig.cmake
 share/cmake/Modules/zorba-%%FULLVERSION%%/ZorbaConfigVersion.cmake
 share/cmake/Modules/zorba-%%FULLVERSION%%/ZorbaUse.cmake
 share/cmake/Modules/zorba-%%FULLVERSION%%/ExternalModuleConfig.cmake.in
-@dirrm share/cmake/Modules/zorba-%%FULLVERSION%%
-@dirrm lib/zorba/core/%%FULLVERSION%%/org/expath/ns
-@dirrm lib/zorba/core/%%FULLVERSION%%/org/expath
-@dirrm lib/zorba/core/%%FULLVERSION%%/org
-@dirrm lib/zorba/core/%%FULLVERSION%%/edu/princeton/wordnet
-@dirrm lib/zorba/core/%%FULLVERSION%%/edu/princeton
-@dirrm lib/zorba/core/%%FULLVERSION%%/edu
-@dirrm lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery/www/modules
-@dirrm lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery/www
-@dirrm lib/zorba/core/%%FULLVERSION%%/com/zorba-xquery
-@dirrm lib/zorba/core/%%FULLVERSION%%/com
-@dirrm lib/zorba/core/%%FULLVERSION%%
-@dirrm lib/zorba/core
-@dirrm lib/zorba
-@dirrm include/zorba/util
-@dirrm include/zorba/internal
-@dirrm include/zorba
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/xqdoc/www
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/xqdoc
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1/DTD
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR/xhtml1
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/TR
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2010
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005/xpath-functions
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2005
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www/2001
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3/www
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/w3
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/jsoniq
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath/ns
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org/expath
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/org
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/schemas
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/xqdoc2xhtml
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/integrity_constraints
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/indexes
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static/collections
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/static
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections/w3c
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic/collections
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/dynamic
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store/data-structures
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/store
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/introspection
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/debugger
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules/converters
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www/modules
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery/www
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/zorba-xquery
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx/www
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com/functx
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%/com
-@dirrm %%DATADIR%%/uris/core/%%FULLVERSION%%
-@dirrm %%DATADIR%%/uris/core
-@dirrm %%DATADIR%%/uris
-@dirrm %%DATADIR%%
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake

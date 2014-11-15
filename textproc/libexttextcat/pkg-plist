@@ -176,7 +176,3 @@ share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/zh-Hans.lm
 %%DATADIR%%/zh-Hant.lm
 %%DATADIR%%/zu.lm
-@dirrm %%DATADIR%%
-@dirrmtry share/vala/vapi
-@dirrmtry share/vala/
-@dirrm include/libexttextcat

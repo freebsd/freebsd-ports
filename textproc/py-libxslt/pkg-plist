@@ -12,5 +12,3 @@
 %%EXAMPLESDIR%%/pyxsltproc.py
 %%EXAMPLESDIR%%/test.xml
 %%EXAMPLESDIR%%/test.xsl
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%

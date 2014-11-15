@@ -44,6 +44,3 @@ man/man1/lt-proc.1.gz
 man/man1/lt-tmxcomp.1.gz
 man/man1/lt-tmxproc.1.gz
 man/man1/lt-trim.1.gz
-@dirrm %%DATADIR%%
-@dirrm include/lttoolbox-%%APVER%%/lttoolbox
-@dirrm include/lttoolbox-%%APVER%%

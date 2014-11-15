@@ -16,4 +16,3 @@ bin/qq
 %%DATADIR%%/sgmllib_rev.py
 %%DATADIR%%/texparser.py
 %%DATADIR%%/unification.py
-@dirrm %%DATADIR%%

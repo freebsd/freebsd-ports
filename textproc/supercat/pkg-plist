@@ -11,4 +11,3 @@ bin/spc
 %%ETCDIR%%/spcrc-svn
 %%ETCDIR%%/spcrc-xorg
 man/man1/spc.1.gz
-@dirrmtry %%ETCDIR%%

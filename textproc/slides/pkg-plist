@@ -142,21 +142,3 @@ share/xsl/slides/xsl/xhtml/slides-common.xsl
 share/xsl/slides/xsl/xhtml/tables.xsl
 share/xsl/slides/xsl/xhtml/vslides.xsl
 share/xsl/slides/xsl/xhtml/w3c.xsl
-@dirrm share/xsl/slides/xsl/xhtml
-@dirrm share/xsl/slides/xsl/svg
-@dirrm share/xsl/slides/xsl/keynote/xsltsl
-@dirrm share/xsl/slides/xsl/keynote
-@dirrm share/xsl/slides/xsl/htmlhelp
-@dirrm share/xsl/slides/xsl/html
-@dirrm share/xsl/slides/xsl/fo
-@dirrm share/xsl/slides/xsl
-@dirrm share/xsl/slides/schema/relaxng
-@dirrm share/xsl/slides/schema/dtd
-@dirrm share/xsl/slides/schema
-@dirrm share/xsl/slides/graphics/toc
-@dirrm share/xsl/slides/graphics/inactive
-@dirrm share/xsl/slides/graphics/active
-@dirrm share/xsl/slides/graphics
-@dirrm share/xsl/slides/browser
-@dirrm share/xsl/slides
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

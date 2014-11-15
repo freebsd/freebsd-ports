@@ -7,5 +7,3 @@ share/sgml/X11/xorg-chunk.xsl
 share/sgml/X11/defs.ent
 share/sgml/X11/dbs/masterdb.pdf.xml
 share/sgml/X11/dbs/masterdb.html.xml
-@dirrm share/sgml/X11/dbs
-@dirrm share/sgml/X11

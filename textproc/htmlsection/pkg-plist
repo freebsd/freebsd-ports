@@ -8,5 +8,3 @@ man/man1/htmlsection.1.gz
 %%JADOCSDIR%%/README-j
 %%JADOCSDIR%%/htmlsection-j.html
 %%JADOCSDIR%%/htmlsection-j_orig.html
-@dirrmtry %%JADOCSDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

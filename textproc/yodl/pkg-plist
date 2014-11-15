@@ -60,6 +60,3 @@ share/yodl-%%PORTVERSION%%/txt.yo
 share/yodl-%%PORTVERSION%%/xlatin1.tex
 share/yodl-%%PORTVERSION%%/xml.yo
 share/yodl-%%PORTVERSION%%/yodlversion.yo
-@dirrm share/yodl-%%PORTVERSION%%/chartables
-@dirrm share/yodl-%%PORTVERSION%%/xml
-@dirrm share/yodl-%%PORTVERSION%%

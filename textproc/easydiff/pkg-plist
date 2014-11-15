@@ -8,7 +8,3 @@ GNUstep/Local/Applications/EasyDiff.app/Resources/window.gorm/data.classes
 GNUstep/Local/Applications/EasyDiff.app/Resources/window.gorm/objects.gorm
 GNUstep/Local/Applications/EasyDiff.app/stamp.make
 GNUstep/Local/Tools/EasyDiff
-@dirrm GNUstep/Local/Applications/EasyDiff.app/Resources/window.gorm
-@dirrm GNUstep/Local/Applications/EasyDiff.app/Resources/main.gorm
-@dirrm GNUstep/Local/Applications/EasyDiff.app/Resources
-@dirrm GNUstep/Local/Applications/EasyDiff.app

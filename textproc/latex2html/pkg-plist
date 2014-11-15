@@ -315,21 +315,3 @@ man/man1/latex2html.1.gz
 %%TEXMFDIR%%/tex/latex/html/techexplHTML.tex
 %%TEXMFDIR%%/tex/latex/html/url.sty
 %%TEXMFDIR%%/tex/latex/html/verbatimfiles.sty
-@dirrm lib/latex2html
-@dirrm %%DATADIR%%/IndicTeX-HTML
-@dirrm %%DATADIR%%/L2hos
-@dirrm %%DATADIR%%/XyMTeX-HTML
-@dirrm %%DATADIR%%/cweb2html
-@dirrm %%DATADIR%%/docs/changebar
-@dirrm %%DATADIR%%/docs/hthtml
-@dirrm %%DATADIR%%/docs/psfiles
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/example
-@dirrm %%DATADIR%%/foilhtml
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/makeseg
-@dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%/texinputs
-@dirrm %%DATADIR%%/versions
-@dirrm %%DATADIR%%
-@dirrm %%TEXMFDIR%%/tex/latex/html

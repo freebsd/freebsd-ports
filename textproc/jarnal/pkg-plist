@@ -17,6 +17,3 @@ bin/jarnalannotate.sh
 %%JAVAJARDIR%%/lib/jpedalt.jar
 %%JAVAJARDIR%%/lib/lbouncy_license.html
 %%JAVAJARDIR%%/lib/lib-ver.txt
-@dirrmtry %%JAVAJARDIR%%/lib
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%

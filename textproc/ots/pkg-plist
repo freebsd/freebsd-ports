@@ -42,6 +42,3 @@ libdata/pkgconfig/libots-1.pc
 %%DATADIR%%/tr.xml
 %%DATADIR%%/uk.xml
 %%DATADIR%%/yi.xml
-@dirrm include/libots-1/ots
-@dirrm include/libots-1
-@dirrm %%DATADIR%%

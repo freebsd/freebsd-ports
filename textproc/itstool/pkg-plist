@@ -6,5 +6,3 @@ man/man1/itstool.1.gz
 %%DATADIR%%/its/mallard.its
 %%DATADIR%%/its/ttml.its
 %%DATADIR%%/its/xhtml.its
-@dirrm %%DATADIR%%/its
-@dirrm %%DATADIR%%

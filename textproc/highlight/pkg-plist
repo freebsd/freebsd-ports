@@ -291,8 +291,3 @@ man/man1/highlight.1.gz
 %%DATADIR%%/themes/zellner.theme
 %%DATADIR%%/themes/zenburn.theme
 %%DATADIR%%/themes/zmrok.theme
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/langDefs
-@dirrm %%DATADIR%%
-@dirrmtry %%ETCDIR%%

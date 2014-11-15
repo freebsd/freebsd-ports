@@ -81,5 +81,3 @@ lib/libticpp.a
 lib/libticpp.so
 lib/libticpp.so.0
 lib/libticpp.so.0.0.0
-@dirrm include/LDHT
-@dirrm include/RandLM

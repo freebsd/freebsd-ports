@@ -34,5 +34,3 @@ man/man1/tohtml.1.gz
 %%DATADIR%%/up.gif
 %%DATADIR%%/up.xbm
 %%DATADIR%%/yellowball.gif
-@dirrm %%DATADIR%%/doctext
-@dirrm %%DATADIR%%

@@ -23,4 +23,3 @@ share/xml/xmlcharent/iso-lat2.ent
 share/xml/xmlcharent/iso-num.ent
 share/xml/xmlcharent/iso-pub.ent
 share/xml/xmlcharent/iso-tech.ent
-@dirrm share/xml/xmlcharent

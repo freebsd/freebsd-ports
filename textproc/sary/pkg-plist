@@ -34,8 +34,3 @@ man/man1/sary.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ja/libsary.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/suffix-array.html
 %%PORTDOCS%%%%DOCSDIR%%/sary.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/sary

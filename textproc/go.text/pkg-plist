@@ -142,34 +142,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/trie_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/triedata_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/triegen.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/transform
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/language
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/unicode
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/traditionalchinese
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/simplifiedchinese
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/korean
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/japanese
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/charmap
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools/colcmp
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/code.google.com/p
-@dirrmtry %%GO_SRCDIR%%/code.google.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/unicode
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/collate
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_LIBDIR%%/code.google.com/p
-@dirrmtry %%GO_LIBDIR%%/code.google.com
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

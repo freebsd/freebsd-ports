@@ -8,5 +8,3 @@ lib/libAiksaurus.so
 libdata/pkgconfig/aiksaurus-1.0.pc
 %%DATADIR%%/meanings.dat
 %%DATADIR%%/words.dat
-@dirrm %%DATADIR%%
-@dirrm include/Aiksaurus

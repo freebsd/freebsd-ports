@@ -69,5 +69,3 @@ man/man1/wdiff.1.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wdiff.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wdiff-gnulib.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wdiff.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw

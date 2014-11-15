@@ -2,7 +2,6 @@ share/xml/resume/catalog
 share/xml/resume/iso-lat1.ent
 share/xml/resume/resume.dcl
 share/xml/resume/resume.dtd
-@dirrm share/xml/resume
 share/xsl/resume/country/br.xsl
 share/xsl/resume/country/de.xsl
 share/xsl/resume/country/es.xsl
@@ -59,15 +58,6 @@ share/xsl/resume/output/us-text.xsl
 share/xsl/resume/paper/a4.xsl
 share/xsl/resume/paper/letter.xsl
 share/xsl/resume/params.xsl
-@dirrm share/xsl/resume/paper
-@dirrm share/xsl/resume/output
-@dirrm share/xsl/resume/misc
-@dirrm share/xsl/resume/lib
-@dirrm share/xsl/resume/format/css
-@dirrm share/xsl/resume/format
-@dirrm share/xsl/resume/country
-@dirrm share/xsl/resume
-@dirrmtry share/xsl
 %%JAVAJARDIR%%/xmlresume-filter.jar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/Makefile
@@ -84,5 +74,3 @@ share/xsl/resume/params.xsl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.xml
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/addressing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

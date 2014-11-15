@@ -46,7 +46,3 @@ share/gtk-doc/html/ctpl/left.png
 share/gtk-doc/html/ctpl/right.png
 share/gtk-doc/html/ctpl/style.css
 share/gtk-doc/html/ctpl/up.png
-@dirrm share/gtk-doc/html/ctpl
-@dirrm share/gtk-doc/html
-@dirrm share/gtk-doc
-@dirrm include/ctpl

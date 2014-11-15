@@ -207,15 +207,4 @@ www/icons/htdig/star.gif
 www/icons/htdig/star.png
 www/icons/htdig/star_blank.gif
 www/icons/htdig/star_blank.png
-@dirrmtry www/icons/htdig
-@dirrmtry www/icons
-@dirrmtry www/data
-@dirrmtry www/cgi-bin
-@dirrmtry %%DATADIR%%/database
-@dirrmtry %%DATADIR%%/common
-@dirrmtry %%DATADIR%%
-@dirrmtry lib/htdig_db
-@dirrmtry lib/htdig
-@dirrmtry include/htdig_db
-@dirrmtry include/htdig
-@dirrmtry %%ETCDIR%%
+@dir %%DATADIR%%/database

@@ -30,4 +30,3 @@ libdata/pkgconfig/libwbxml2.pc
 %%PORTDOCS%%%%DOCSDIR%%/References
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

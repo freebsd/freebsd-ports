@@ -12,4 +12,3 @@ bin/xt-xp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/split.xsl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/textfile.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/textfile.xsl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -170,18 +170,3 @@ share/dbus-1/interfaces/org.soprano.StatementIterator.xml
 %%DATADIR%%/plugins/virtuosobackend.desktop
 %%DATADIR%%/rules/nrl.rules
 %%DATADIR%%/rules/rdfs.rules
-@dirrm %%DATADIR%%/rules
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake
-@dirrm lib/soprano
-@dirrm include/soprano
-@dirrm include/Soprano/Vocabulary
-@dirrm include/Soprano/Util
-@dirrm include/Soprano/Server
-@dirrm include/Soprano/Query
-@dirrm include/Soprano/Inference
-@dirrm include/Soprano/Error
-@dirrm include/Soprano/Client
-@dirrm include/Soprano

@@ -389,8 +389,3 @@ man/man1/source-highlight.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/test_refs.h.html
 %%PORTDOCS%%%%DOCSDIR%%/test_regexrange4.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml.css
-@dirrm include/srchilite
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%BASH%%@dirrmtry etc/bash_completion.d

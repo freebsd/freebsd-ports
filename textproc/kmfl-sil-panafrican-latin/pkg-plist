@@ -3,7 +3,3 @@
 share/kmfl/AfricaDeadKey.kmn
 share/kmfl/AfricaUS.kmn
 share/kmfl/icons/AFR.bmp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrmtry share/doc/kmfl
-@dirrmtry share/kmfl/icons
-@dirrmtry share/kmfl

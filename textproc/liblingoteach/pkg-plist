@@ -26,6 +26,3 @@ libdata/pkgconfig/liblingoteach.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_func.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_type.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/lingoteach

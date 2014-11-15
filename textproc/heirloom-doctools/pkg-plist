@@ -463,19 +463,3 @@ man/man7/mpictures.7.gz
 %%DATADIR%%/tmac/thesis.me
 %%DATADIR%%/tmac/v
 %%DATADIR%%/tmac/vgrind
-@dirrmtry %%DATADIR%%/tmac
-@dirrmtry %%DATADIR%%/pub
-@dirrmtry %%DATADIR%%/nterm
-@dirrmtry %%DATADIR%%/hyphen
-@dirrmtry %%DATADIR%%/font/devpsmed
-@dirrmtry %%DATADIR%%/font/devpslow
-@dirrmtry %%DATADIR%%/font/devps
-@dirrmtry %%DATADIR%%/font/devpost/postscript
-@dirrmtry %%DATADIR%%/font/devpost/charlib
-@dirrmtry %%DATADIR%%/font/devpost
-@dirrmtry %%DATADIR%%/font/devaps
-@dirrmtry %%DATADIR%%/font
-@dirrmtry %%DATADIR%%
-@dirrmtry %%LIBEXECDIR%%/reftools/papers
-@dirrmtry %%LIBEXECDIR%%/reftools
-@dirrmtry %%LIBEXECDIR%%

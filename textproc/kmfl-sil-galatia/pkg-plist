@@ -2,7 +2,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/welcome.htm
 share/kmfl/GrkPolyCompv103.kmn
 share/kmfl/icons/ALPHA.bmp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrmtry share/doc/kmfl
-@dirrmtry share/kmfl/icons
-@dirrmtry share/kmfl

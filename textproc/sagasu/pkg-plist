@@ -20,8 +20,3 @@ share/pixmaps/close.xpm
 share/pixmaps/sagasu.png
 %%DATADIR%%/COPYING
 %%DATADIR%%/sagasu-helper.pl
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/sagasu/fr
-@dirrm share/gnome/help/sagasu/C
-@dirrm share/gnome/help/sagasu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

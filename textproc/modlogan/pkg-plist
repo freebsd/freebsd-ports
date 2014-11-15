@@ -16,7 +16,6 @@ etc/modlogan/modlogan.conf-dist
 etc/modlogan/modlogan.css-dist
 @unexec if cmp -s %D/etc/modlogan/modlogan.def.conf %D/etc/modlogan/modlogan.def.conf-dist; then rm -f %D/etc/modlogan/modlogan.def.conf; fi
 etc/modlogan/modlogan.def.conf-dist
-@dirrm etc/modlogan
 lib/libmla_input_bsdftpd.a
 lib/libmla_input_bsdftpd.so
 lib/libmla_input_clf.a
@@ -116,5 +115,3 @@ share/locale/hu/LC_MESSAGES/modlogan.mo
 share/locale/it/LC_MESSAGES/modlogan.mo
 share/locale/pl/LC_MESSAGES/modlogan.mo
 share/locale/ru/LC_MESSAGES/modlogan.mo
-@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%

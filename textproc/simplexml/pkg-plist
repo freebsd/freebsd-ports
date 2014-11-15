@@ -12,4 +12,3 @@ include/simplexml/xml-value.hpp
 lib/libsimplexml.so
 lib/libsimplexml.so.1
 lib/libsimplexml.so.1.0
-@dirrm include/simplexml

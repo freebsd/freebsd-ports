@@ -44,14 +44,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/inc1/inc2/inc2.xsl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/preamble.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/text.xsl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xsl/inc1/inc2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xsl/inc1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xsl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xml/subdir1/subdir2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xml/subdir1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xml
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/styles
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

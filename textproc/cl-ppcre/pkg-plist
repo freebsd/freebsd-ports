@@ -24,8 +24,5 @@ lib/common-lisp/cl-ppcre/test/perltestdata
 lib/common-lisp/cl-ppcre/test/perltestinput
 lib/common-lisp/cl-ppcre/test/simple
 lib/common-lisp/cl-ppcre/test/tests.lisp
-@dirrm lib/common-lisp/cl-ppcre/test
-@dirrm lib/common-lisp/cl-ppcre
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
