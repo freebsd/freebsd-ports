@@ -17,4 +17,3 @@ bin/geonext-%%LANG%%
 %%MASTER%%%%DATADIR%%/ubt.gif
 %%MASTER%%%%DATADIR%%/x.ico
 %%MASTER%%%%DATADIR%%/xwc.ico
-%%MASTER%%@dirrmtry %%DATADIR%%

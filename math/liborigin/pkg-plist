@@ -8,4 +8,3 @@ lib/liborigin.a
 lib/liborigin.so
 lib/liborigin.so.2
 lib/liborigin.so.2.0.0
-@dirrm include/liborigin

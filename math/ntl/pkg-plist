@@ -172,5 +172,3 @@ lib/libntl.a
 %%PORTDOCS%%%%DOCSDIR%%/vector.txt
 %%PORTDOCS%%%%DOCSDIR%%/version.txt
 %%PORTDOCS%%%%DOCSDIR%%/xdouble.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/NTL

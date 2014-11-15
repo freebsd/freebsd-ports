@@ -52,4 +52,3 @@ share/icons/hicolor/scalable/mimetypes/application-vnd.geogebra.tool.svgz
 %%DATADIR%%/jlm_cyrillic.jar
 %%DATADIR%%/jlm_greek.jar
 share/mime/packages/geogebra.xml
-@dirrm %%DATADIR%%

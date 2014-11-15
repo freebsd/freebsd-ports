@@ -86,11 +86,3 @@ include/LTL/ltl/util/u_exception.h
 include/LTL/ltl/util/utdate.h
 include/LTL/ltl/wcs.h
 lib/libltl.a
-@dirrm include/LTL/ltl/util
-@dirrm include/LTL/ltl/misc
-@dirrm include/LTL/ltl/marray
-@dirrm include/LTL/ltl/io
-@dirrm include/LTL/ltl/fvector
-@dirrm include/LTL/ltl/fmatrix
-@dirrm include/LTL/ltl
-@dirrm include/LTL

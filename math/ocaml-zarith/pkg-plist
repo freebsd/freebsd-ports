@@ -12,4 +12,3 @@
 %%OCAML_SITELIBDIR%%/zarith/zarith.cmxa
 %%OCAML_SITELIBDIR%%/zarith/zarith.cmxs
 %%OCAML_SITELIBDIR%%/zarith/zarith.h
-@dirrm %%OCAML_SITELIBDIR%%/zarith

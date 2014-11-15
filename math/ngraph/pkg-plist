@@ -44,7 +44,4 @@ lib/Ngraph/ngraph
 lib/Ngraph/ngraph.sh
 lib/Ngraph/terminal
 lib/Ngraph/text-in.nsc
-@dirrmtry lib/Ngraph/demo
-@dirrmtry lib/Ngraph/doc
-@dirrmtry lib/Ngraph/ja
-@dirrmtry lib/Ngraph
+@dir lib/Ngraph/doc

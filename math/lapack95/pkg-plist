@@ -5,4 +5,3 @@ lib/lapack95_modules/f77_lapack.mod
 lib/lapack95_modules/f95_lapack.mod
 lib/lapack95_modules/la_auxmod.mod
 lib/lapack95_modules/la_precision.mod
-@dirrm lib/lapack95_modules

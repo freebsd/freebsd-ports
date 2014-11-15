@@ -234,4 +234,3 @@ man/man1/gsl-config.1.gz
 man/man1/gsl-histogram.1.gz
 man/man1/gsl-randist.1.gz
 man/man3/gsl.3.gz
-@dirrm include/gsl

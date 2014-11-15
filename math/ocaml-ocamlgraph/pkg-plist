@@ -70,4 +70,3 @@
 %%GUI%%%%OCAMLGRAPHDIR%%/viewgraph.o
 %%GUI%%%%OCAMLGRAPHDIR%%/xDot.mli
 %%GUI%%%%OCAMLGRAPHDIR%%/xDotDraw.mli
-@dirrm %%OCAMLGRAPHDIR%%

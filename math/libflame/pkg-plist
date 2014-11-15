@@ -287,4 +287,3 @@ include/libflame/blis_type_defs.h
 %%SHARED%%lib/libflame_pic.a
 %%SHARED%%lib/libflame.so
 %%SHARED%%lib/libflame.so.0
-@dirrm include/libflame

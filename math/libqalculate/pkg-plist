@@ -29,5 +29,3 @@ share/qalculate/planets.xml
 share/qalculate/prefixes.xml
 share/qalculate/units.xml
 share/qalculate/variables.xml
-@dirrm share/qalculate
-@dirrm include/libqalculate

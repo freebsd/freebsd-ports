@@ -228,5 +228,3 @@ lib/libglpk.a
 lib/libglpk.so
 lib/libgoblin.a
 lib/libgoblin.so
-@dirrm include/goblin
-@dirrm lib/goblin

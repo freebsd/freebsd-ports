@@ -31,4 +31,3 @@ include/lpsolve/yacc_read.h
 lib/liblpsolve55.a
 lib/liblpsolve55.so
 lib/liblpsolve55.so.1
-@dirrm include/lpsolve
