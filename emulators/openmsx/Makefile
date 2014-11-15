@@ -1,16 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	openmsx
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Open source MSX emulator
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libpng15.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
