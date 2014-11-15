@@ -1,4 +1,4 @@
-# Created by: David O'Brien <obrien@cs.ucdavis.edu>
+# Created by: Alfred Perlstein <alfred@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	vim-config
