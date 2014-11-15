@@ -41,15 +41,3 @@ share/locale/tr/LC_MESSAGES/galculator.mo
 share/locale/zh_CN/LC_MESSAGES/galculator.mo
 share/locale/zh_TW/LC_MESSAGES/galculator.mo
 share/pixmaps/galculator.xpm
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/locale/da_DK/LC_MESSAGES
-@dirrmtry share/locale/da_DK
-@dirrmtry share/locale/kk_KZ/LC_MESSAGES
-@dirrmtry share/locale/kk_KZ
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%

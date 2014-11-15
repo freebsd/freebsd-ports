@@ -2,7 +2,3 @@ mingw32/include/gmp.h
 mingw32/include/gmpxx.h
 mingw32/lib/libgmp.a
 mingw32/lib/libgmpxx.a
-@dirrmtry mingw32/include
-@dirrmtry mingw32/info
-@dirrmtry mingw32/lib
-@dirrmtry mingw32

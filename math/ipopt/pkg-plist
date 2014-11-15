@@ -51,8 +51,6 @@ include/coin/ThirdParty/mumps_compat.h
 include/coin/ThirdParty/proto.h
 include/coin/ThirdParty/rename.h
 include/coin/ThirdParty/struct.h
-@dirrm include/coin/ThirdParty
-@dirrmtry include/coin
 lib/libcoinmetis.so
 lib/libcoinmetis.so.1
 lib/libcoinmetis.so.1.2.10

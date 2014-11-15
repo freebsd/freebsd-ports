@@ -16,6 +16,4 @@ include/metis/metis.h
 include/metis/proto.h
 include/metis/rename.h
 include/metis/struct.h
-@dirrm include/metis
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

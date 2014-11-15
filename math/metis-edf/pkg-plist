@@ -15,7 +15,6 @@ include/metis/metis.h
 include/metis/proto.h
 include/metis/rename.h
 include/metis/struct.h
-@dirrm include/metis
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/0README
@@ -24,5 +23,3 @@ include/metis/struct.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/metis.mesh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtest
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.mgraph
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

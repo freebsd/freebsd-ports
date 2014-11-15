@@ -10,7 +10,6 @@ include/newmat/newmatrm.h
 include/newmat/precisio.h
 include/newmat/solution.h
 include/newmat/tmt.h
-@dirrm include/newmat
 lib/libnewmat.a
 lib/libnewmat.so.1
 lib/libnewmat.so

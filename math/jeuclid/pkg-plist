@@ -39,5 +39,3 @@ bin/mml2xxx
 %%DATADIR%%/repo/xml-apis-1.3.04.jar
 %%DATADIR%%/repo/xml-apis-ext-1.3.04.jar
 %%DATADIR%%/repo/xmlgraphics-commons-1.3.1.jar
-@dirrm %%DATADIR%%/repo
-@dirrm %%DATADIR%%

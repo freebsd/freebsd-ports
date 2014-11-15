@@ -5,6 +5,3 @@ bin/oleo
 %%DATADIR%%/Oleo
 %%DATADIR%%/fr/Oleo
 %%DATADIR%%/nl/Oleo
-@dirrm %%DATADIR%%/nl
-@dirrm %%DATADIR%%/fr
-@dirrm %%DATADIR%%

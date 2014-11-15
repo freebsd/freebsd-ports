@@ -35,5 +35,3 @@ lib/libzmumps.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssimpletest.F
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zsimpletest
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zsimpletest.F
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

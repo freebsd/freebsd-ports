@@ -233,27 +233,3 @@ lib/libpcfg_common.a
 %%DATADIR%%/training/wrappers/parse-de-bitpar.perl
 %%DATADIR%%/training/wrappers/parse-en-collins.perl
 %%DATADIR%%/training/wrappers/syntax-hyphen-splitting.perl
-@dirrmtry %%DATADIR%%/OSM
-@dirrmtry %%DATADIR%%/Transliteration
-@dirrmtry %%DATADIR%%/analysis/perllib
-@dirrmtry %%DATADIR%%/analysis/smtgui
-@dirrmtry %%DATADIR%%/analysis
-@dirrmtry %%DATADIR%%/ems/example/data
-@dirrmtry %%DATADIR%%/ems/example
-@dirrmtry %%DATADIR%%/ems/support
-@dirrmtry %%DATADIR%%/ems/web/javascripts/scriptaculous-js-1.8.3/lib
-@dirrmtry %%DATADIR%%/ems/web/javascripts/scriptaculous-js-1.8.3/src
-@dirrmtry %%DATADIR%%/ems/web/javascripts/scriptaculous-js-1.8.3
-@dirrmtry %%DATADIR%%/ems/web/javascripts
-@dirrmtry %%DATADIR%%/ems/web
-@dirrmtry %%DATADIR%%/ems
-@dirrmtry %%DATADIR%%/fuzzy-match
-@dirrmtry %%DATADIR%%/generic
-@dirrmtry %%DATADIR%%/recaser
-@dirrmtry %%DATADIR%%/share/nonbreaking_prefixes
-@dirrmtry %%DATADIR%%/share
-@dirrmtry %%DATADIR%%/tokenizer
-@dirrmtry %%DATADIR%%/training/wrappers/adam-suffix-array
-@dirrmtry %%DATADIR%%/training/wrappers
-@dirrmtry %%DATADIR%%/training
-@dirrmtry %%DATADIR%%

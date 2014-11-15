@@ -62,6 +62,3 @@ lib/libgracetmpl.a
 %%PORTDOCS%%%%DOCSDIR%%/test05.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tmpl_knowledge.html
 %%PORTDOCS%%%%DOCSDIR%%/todo.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/graceTMPL
-@dirrm %%PYTHON_INCLUDEDIR%%/graceTMPL
