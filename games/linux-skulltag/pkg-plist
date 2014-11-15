@@ -18,8 +18,3 @@ share/games/skulltag/skins/ST_Procyon.pk3
 share/games/skulltag/skins/ST_Seenas.pk3
 share/games/skulltag/skins/ST_Strife_Guy.pk3
 share/games/skulltag/skins/ST_Synas.pk3
-@dirrm share/games/skulltag/announcer
-@dirrm share/games/skulltag/skins
-@dirrm share/games/skulltag
-@dirrmtry share/games/skulltag
-@dirrmtry share/games

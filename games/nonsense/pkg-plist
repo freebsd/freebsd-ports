@@ -24,7 +24,3 @@ bin/nonsense
 %%DATADIR%%/template/slashdot.rdf.template
 %%DATADIR%%/template/techdirt.html.template
 man/man6/nonsense.6.gz
-@dirrm %%DATADIR%%
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/template
-@dirrm share/nonsense
