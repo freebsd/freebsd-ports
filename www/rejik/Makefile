@@ -1,3 +1,4 @@
+# Created by: Elisey Savateev <b3k@mail.ru>
 # $FreeBSD$
 
 PORTNAME=       rejik
