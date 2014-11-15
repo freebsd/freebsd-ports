@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	signing-party
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
@@ -32,6 +32,7 @@ BINS=		keyanalyze/keyanalyze keyanalyze/process_keys \
 		gpgwrap/bin/gpgwrap
 SCRIPTS=	caff/caff caff/pgp-clean caff/pgp-fixkey gpglist/gpglist \
 		gpgparticipants/gpgparticipants gpgsigs/gpgsigs \
+		gpg-key2latex/gpg-key2latex \
 		gpg-key2ps/gpg-key2ps gpg-mailkeys/gpg-mailkeys \
 		keyart/keyart keylookup/keylookup \
 		sig2dot/sig2dot springgraph/springgraph \
