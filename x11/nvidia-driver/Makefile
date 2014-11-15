@@ -180,12 +180,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/kmem_/s/kernel_map/kernel_arena/' \
 		${WRKSRC}/src/nvidia_subr.c
 .endif
-# Adopt to cap_rights_t type change in FreeBSD src SVN r255219
-.if ${OSVERSION} > 1000052 && ${NVVERSION} < 331.067
-	${REINPLACE_CMD} -e 's/u_long cmd;/& cap_rights_t rights;/ ; \
-		s/CAP_IOCTL/cap_rights_init(\&rights, &)/' \
-			${WRKSRC}/src/nvidia_linux.c
-.endif
 # Argument count of vm_map_find() changed in FreeBSD src SVN r255426
 .if ${OSVERSION} > 1000054 && ${NVVERSION} < 304.123 # < 331.067
 	${REINPLACE_CMD} -e 's/virtual_address, size,/& 0,/' \
@@ -198,12 +192,8 @@ post-patch: .SILENT
 			${WRKSRC}/src/nvidia_sysctl.c
 .endif
 # Fix stack buffer overflow in nvidia_sysctl_bus_type()
-.if ${NVVERSION} < 304.123 # < 319.023
-	${REINPLACE_CMD} -E '/bus_type\[4\]/d ; \
-		s/sprintf\(bus_type, (".+")/return SYSCTL_OUT(req, \1, sizeof(\1)/ ; \
-		/return SYSCTL_OUT\(req, bus_type/d' \
-			${WRKSRC}/src/nvidia_sysctl.c
-.endif
+	${REINPLACE_CMD} -e 's/8 bus_type\[4\]/8 bus_type[8]/' \
+		${WRKSRC}/src/nvidia_sysctl.c
 # Unbreak the build of 173.14.xx legacy series on recent -CURRENT
 .if ${NVVERSION} < 195.022 && ${NVVERSION} >= 169.004
 	${REINPLACE_CMD} -E 's/os_(alloc|free)_contig_pages/NV_API_CALL &/' \
