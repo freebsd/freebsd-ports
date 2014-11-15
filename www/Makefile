@@ -1719,6 +1719,7 @@
     SUBDIR += redmine-basecamp
     SUBDIR += redmine-http-auth
     SUBDIR += redmine-sidebar_hide
+    SUBDIR += rejik
     SUBDIR += rekonq
     SUBDIR += reportmagic
     SUBDIR += repos-style
