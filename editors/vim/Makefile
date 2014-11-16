@@ -20,13 +20,14 @@ COMMENT?=	Improved version of the vi editor
 
 PATCH_DEPENDS=	${LOCALBASE}/bin/gpatch:${PORTSDIR}/devel/patch
 
-OPTIONS_DEFINE=	CSCOPE EXUBERANT_CTAGS LUA NLS PERL PYTHON RUBY TCL XTERM_SAVE
+OPTIONS_DEFINE=	CSCOPE EXUBERANT_CTAGS LUA NLS PERL PYTHON RUBY TCL XTERM_SAVE DEFAULT_VIMRC
 OPTIONS_SINGLE=	UI
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 MOTIF X11
 OPTIONS_SUB=	yes
 ATHENA_DESC=		Athena GUI toolkit
 CSCOPE_DESC=		cscope support
 CONSOLE_DESC=		Console/terminal mode
+DEFAULT_VIMRC_DESC=	Install a default vimrc for new users
 EXUBERANT_CTAGS_DESC=	Use exctags instead of ctags
 UI_DESC=		User interface
 XTERM_SAVE_DESC=	Restore xterm screen after exit
@@ -88,6 +89,8 @@ MAKE_ARGS+=	CONF_OPT_FEAT=--with-features=big \
 PLIST_SUB+=	NON_LITE=""
 .endif
 
+OPTIONS_DEFAULT+=	DEFAULT_VIMRC
+
 ATHENA_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=athena
 ATHENA_USE=		XORG=xaw
 CONSOLE_MAKE_ARGS=	CONF_OPT_GUI="--enable-gui=no --without-x"
@@ -119,6 +122,10 @@ X11_USE=		XORG=x11,xt
 
 .if !${PORT_OPTIONS:MATHENA} && !${PORT_OPTIONS:MCONSOLE} && !${PORT_OPTIONS:MGNOME} && !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MMOTIF} && !${PORT_OPTIONS:MX11}
 IGNORE=		this port has new UI option (CONSOLE) for users who do not need GUI support. Please run "make config" to modify your setting
+.endif
+
+.if ${PORT_OPTIONS:MDEFAULT_VIMRC}
+DEFAULT_VIMRC_LOCATION=${PREFIX}/share/vim
 .endif
 
 .if ${PORT_OPTIONS:MCONSOLE} || ${PORT_OPTIONS:MX11}
@@ -183,5 +190,8 @@ post-install:
 .endif
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
 	${TOUCH} ${STAGEDIR}${DATADIR}/${VIM_VER}/lang/.keepme
+.if ${PORT_OPTIONS:MDEFAULT_VIMRC}
+	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${DEFAULT_VIMRC_LOCATION}/vimrc
+.endif
 
 .include <bsd.port.post.mk>
