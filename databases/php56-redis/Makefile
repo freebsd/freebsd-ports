@@ -4,7 +4,7 @@
 PORTNAME=	redis
 PORTVERSION=	2.2.5
 CATEGORIES=	databases
-PKGNAMEPREFIX=	php5-
+PKGNAMEPREFIX=	php56-
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	PHP5 extension for Redis
