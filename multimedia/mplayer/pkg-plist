@@ -7,6 +7,3 @@ man/man1/mplayer.1.gz
 %%DATADIR%%/examples/etc/input.conf
 %%DATADIR%%/examples/etc/menu.conf
 %%DATADIR%%/examples/etc/dvb-menu.conf
-@dirrm %%DATADIR%%/examples/etc
-@dirrm %%DATADIR%%/examples
-@dirrmtry %%DATADIR%%
