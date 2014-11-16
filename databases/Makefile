@@ -626,6 +626,7 @@
     SUBDIR += php56-pdo_pgsql
     SUBDIR += php56-pdo_sqlite
     SUBDIR += php56-pgsql
+    SUBDIR += php56-redis
     SUBDIR += php56-sqlite3
     SUBDIR += php56-sybase_ct
     SUBDIR += phpminiadmin
@@ -763,9 +764,10 @@
     SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy
-    SUBDIR += py-sqlalchemy-devel
     SUBDIR += py-sqlalchemy-migrate
     SUBDIR += py-sqlalchemy06
+    SUBDIR += py-sqlalchemy07
+    SUBDIR += py-sqlalchemy08
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlite3dbm
     SUBDIR += py-sqlkit
