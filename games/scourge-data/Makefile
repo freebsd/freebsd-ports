@@ -8,7 +8,7 @@ MASTER_SITES=	SF/scourge/scourge/${PORTVERSION}
 DISTNAME=	scourge-${PORTVERSION}.data
 DIST_SUBDIR=	scourge
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	S.C.O.U.R.G.E data files
 
 NO_BUILD=	yes
