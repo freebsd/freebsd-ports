@@ -813,6 +813,7 @@
     SUBDIR += rubygem-hammer_cli
     SUBDIR += rubygem-hammer_cli_foreman
     SUBDIR += rubygem-hammer_cli_foreman_bootdisk
+    SUBDIR += rubygem-hammer_cli_foreman_ssh
     SUBDIR += rubygem-hiera
     SUBDIR += rubygem-hiera-json
     SUBDIR += rubygem-hiera-puppet
