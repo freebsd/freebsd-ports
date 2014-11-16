@@ -1321,6 +1321,7 @@ lib/wine/fakedlls/msvcm80.dll
 lib/wine/fakedlls/msvcm90.dll
 lib/wine/fakedlls/msvcp100.dll
 lib/wine/fakedlls/msvcp110.dll
+lib/wine/fakedlls/msvcp120.dll
 lib/wine/fakedlls/msvcp60.dll
 lib/wine/fakedlls/msvcp70.dll
 lib/wine/fakedlls/msvcp71.dll
@@ -1328,6 +1329,7 @@ lib/wine/fakedlls/msvcp80.dll
 lib/wine/fakedlls/msvcp90.dll
 lib/wine/fakedlls/msvcr100.dll
 lib/wine/fakedlls/msvcr110.dll
+lib/wine/fakedlls/msvcr120.dll
 lib/wine/fakedlls/msvcr70.dll
 lib/wine/fakedlls/msvcr71.dll
 lib/wine/fakedlls/msvcr80.dll
@@ -1733,6 +1735,7 @@ lib/wine/libmsi.def
 lib/wine/libmsimg32.def
 lib/wine/libmsvcr100.def
 lib/wine/libmsvcr110.def
+lib/wine/libmsvcr120.def
 lib/wine/libmsvcr70.def
 lib/wine/libmsvcr71.def
 lib/wine/libmsvcr80.def
@@ -1887,6 +1890,7 @@ lib/wine/msvcm80.dll.so
 lib/wine/msvcm90.dll.so
 lib/wine/msvcp100.dll.so
 lib/wine/msvcp110.dll.so
+lib/wine/msvcp120.dll.so
 lib/wine/msvcp60.dll.so
 lib/wine/msvcp70.dll.so
 lib/wine/msvcp71.dll.so
@@ -1894,6 +1898,7 @@ lib/wine/msvcp80.dll.so
 lib/wine/msvcp90.dll.so
 lib/wine/msvcr100.dll.so
 lib/wine/msvcr110.dll.so
+lib/wine/msvcr120.dll.so
 lib/wine/msvcr70.dll.so
 lib/wine/msvcr71.dll.so
 lib/wine/msvcr80.dll.so
