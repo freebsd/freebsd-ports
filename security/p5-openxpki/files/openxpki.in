@@ -1,15 +1,18 @@
 #!/bin/sh
 # $FreeBSD$
-
+#
 # PROVIDE: openxpki
 # REQUIRE: LOGIN
 # REQUIRE: postgresql
 # REQUIRE: mysql
 # KEYWORD: shutdown
-
-# Define this variable in the file /etc/rc.conf:
+#
+# Define this variable in file /etc/rc.conf:
 # openxpki_enable="YES"
 # to ensure that openxpki starts at boot time.
+# Define and edit this variable in file /etc/rc.conf:
+# openxpki_conf="/usr/local/etc/openxpki/config.git"
+# if your configuration is in different place.
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 # SET THEM IN THE /etc/rc.conf FILE
@@ -18,15 +21,26 @@
 . /etc/rc.subr
 
 name=openxpki
+desc="OpenXPKI daemon"
 rcvar=openxpki_enable
-load_rc_config $name
-command="%%PREFIX%%/bin/openxpkictl"
-
-openxpki_enable="${openxpki_enable-NO}"
-openxpki_pidfile="%%PREFIX%%/var/openxpki/openxpki.pid"
-
+load_rc_config ${name}
+: ${openxpki_enable:=no}
+: ${openxpki_conf=%%PREFIX%%/etc/openxpki/config.git}
+command=%%PREFIX%%/bin/openxpkictl
 procname=openxpkid
+openxpki_user=${name}
+pidfile=/var/openxpki/openxpkid.pid
 
-pidfile=${openxpki_pidfile}
+extra_commands=reload
+start_cmd=control
+stop_cmd=control
+restart_cmd=control
+status_cmd=control
+reload_cmd=control
+
+control()
+{
+	USER=${openxpki_user} ${command} --config ${openxpki_conf} ${rc_arg}
+}
 
 run_rc_command "$1"
