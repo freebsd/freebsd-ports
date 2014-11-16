@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	0.10.4
+PORTVERSION=	0.10.5
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 
@@ -26,7 +26,7 @@ post-patch:
 do-build:
 	# timestamp here refers to source, not build time
 	cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; \
-		${SETENV} GOPATH=${WRKSRC} go run build.go
+		${SETENV} GOPATH=${WRKSRC} go run build.go -version v${PORTVERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/bin/syncthing \
