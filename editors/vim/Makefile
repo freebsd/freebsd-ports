@@ -58,7 +58,7 @@ INSTALL_WRKSRC=	${WRKDIR}/${VIM_VER}/src
 WRKSRC=		${WRKDIR}/${VIM_VER}
 
 PLIST_SUB=	VIM_VER=${VIM_VER}
-PORTDATA=	*
+PORTDATA=	${VIM_VER}
 
 VIM_VER=	${PORTNAME}${PORTVERSION:R:S/.//g}
 
@@ -126,6 +126,9 @@ IGNORE=		this port has new UI option (CONSOLE) for users who do not need GUI sup
 
 .if ${PORT_OPTIONS:MDEFAULT_VIMRC}
 DEFAULT_VIMRC_LOCATION=${PREFIX}/share/vim
+PLIST_SUB+=	DEFAULT_VIMRC="@sample "
+.else
+PLIST_SUB+=	DEFAULT_VIMRC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCONSOLE} || ${PORT_OPTIONS:MX11}
@@ -191,7 +194,8 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
 	${TOUCH} ${STAGEDIR}${DATADIR}/${VIM_VER}/lang/.keepme
 .if ${PORT_OPTIONS:MDEFAULT_VIMRC}
-	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${DEFAULT_VIMRC_LOCATION}/vimrc
+	${INSTALL_DATA} ${WRKSRC}/runtime/vimrc_example.vim ${STAGEDIR}${DEFAULT_VIMRC_LOCATION}/vimrc
+	${INSTALL_DATA} ${WRKSRC}/runtime/gvimrc_example.vim ${STAGEDIR}${DEFAULT_VIMRC_LOCATION}/gvimrc
 .endif
 
 .include <bsd.port.post.mk>
