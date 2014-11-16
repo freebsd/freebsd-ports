@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.10.2
-PORTREVISION=	2
+PORTVERSION=	4.10.3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfdesktop/${PORTVERSION:R}
@@ -13,16 +12,21 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's desktop manager
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_GNOME=	glib20 gtk20 intltool intlhack libwnck
 USE_XFCE=	configenv garcon libmenu libutil libexo xfconf
-USES=	pathfix pkgconfig gmake tar:bzip2
+USES=	pkgconfig gmake tar:bzip2
 USE_XORG=	x11 sm
+
+# Prevent build error, with macro 'g_return_val_if_fail ()'
+CFLAGS+=	-Wno-return-type
 
 CONFIGURE_ARGS+=--enable-gio-unix \
 	--enable-notifications
