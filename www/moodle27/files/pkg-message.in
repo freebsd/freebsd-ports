@@ -20,11 +20,6 @@ POST-INSTALL CONFIGURATION FOR MOODLE
       Order Allow,Deny
       Allow from all 
    </Directory>
-   <Directory %%PREFIX%%/%%MOODLEDATADIR%%>
-      AllowOverride None
-      Order Allow,Deny
-      Deny from all 
-   </Directory>
 
    For Apache version 2.4.x or above:
 
@@ -33,10 +28,6 @@ POST-INSTALL CONFIGURATION FOR MOODLE
    <Directory %%PREFIX%%/%%MOODLEDIR%%/>
       AllowOverride None
       Require all granted
-   </Directory>
-   <Directory %%PREFIX%%/%%MOODLEDATADIR%%/>
-      AllowOverride None
-      Require all denied
    </Directory>
 
 3) Visit your Moodle site with a browser (i.e.,
