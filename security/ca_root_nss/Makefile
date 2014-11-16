@@ -64,6 +64,6 @@ post-install:
 	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}/etc/ssl/cert.pem
 .endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ssl
-	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/etc/cert.pem
+	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/etc/ssl/cert.pem
 
 .include <bsd.port.mk>
