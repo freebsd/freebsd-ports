@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	0.21.0.1
+PORTVERSION=	0.23.0.1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	openxpki
 
 MAINTAINER=	svysh.fbsd@gmail.com
-COMMENT=	Perl based trustcenter software for PKI: server and deployment
+COMMENT=	Perl based trustcenter for PKI: universal server building block
 
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	\
+	p5-Test-Prereq>=0:${PORTSDIR}/devel/p5-Test-Prereq \
+	p5-Config-GitLike>=0:${PORTSDIR}/devel/p5-Config-GitLike \
 	p5-openxpki-i18n>=0.20.0.1:${PORTSDIR}/security/p5-openxpki-i18n \
 	openca-tools-forked>=1.4.0:${PORTSDIR}/security/openca-tools-forked \
 	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
@@ -56,7 +58,10 @@ BUILD_DEPENDS=	\
 	p5-Config-Std>=0:${PORTSDIR}/devel/p5-Config-Std \
 	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 	p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-	bash:${PORTSDIR}/shells/bash
+	p5-DBD-Mock>=0:${PORTSDIR}/databases/p5-DBD-Mock \
+	p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
+	bash:${PORTSDIR}/shells/bash \
+
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	\
@@ -69,19 +74,22 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 GH_PROJECT=	openxpki
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	908559d
+GH_COMMIT=	ec42128
 
 USE_OPENSSL=	yes
 USE_PERL5=	configure
 USES=		gmake perl5
 USE_RC_SUBR=	openxpki
+SUB_FILES=	pkg-message
+PORTDOCS=	*
 
 WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/core/server
 
 USERS=	openxpki
 GROUPS=	openxpki
+NO_ARCH=	yes
 
-OPTIONS_DEFINE=	GRAPHVIZ
+OPTIONS_DEFINE=	GRAPHVIZ DOCS
 
 GRAPHVIZ_DESC=	With graphical visualization of workflows?
 GRAPHVIZ_RUN_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
@@ -89,8 +97,33 @@ GRAPHVIZ_RUN_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|..vergen --format version.|"${PORTVERSION:R}"|g' ${WRKSRC}/Makefile.PL
+	@${RM} -f ${WRKSRC}/Makefile.PL.bak
+	@( \
+	cd ${WRKSRC}/../..; \
+	for f in `${FIND} config core/server doc qatest tools -type f ! -path "core/server/t/*"`; do \
+		${REINPLACE_CMD} -e 's|/etc/openxpki|${PREFIX}/etc/openxpki|g' $${f}; \
+		${REINPLACE_CMD} -e 's|/var/run/openxpkid.pid|/var/openxpki/openxpkid.pid|g' $${f}; \
+		${REINPLACE_CMD} -e 's|/var/openxpki/\([^\.]*\)\.log|/var/log/openxpki/\1\.log|g' $${f}; \
+		${RM} -f $${f}.bak; \
+	done \
+	)
+
+post-stage:
+	@${MKDIR} ${STAGEDIR}/var/openxpki
+	@${MKDIR} ${STAGEDIR}/var/openxpki/session
+	@${MKDIR} ${STAGEDIR}/var/log/openxpki
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openxpki
+
+pre-install:	test
+
+.include <bsd.port.pre.mk>
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/OpenXPKI/OpenXPKI.so
-
-.include <bsd.port.mk>
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/OpenXPKI/OpenXPKI.so
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/../../config && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+.	if ${PORT_OPTIONS:MDOCS}
+		@${MKDIR} ${STAGEDIR}${DOCSDIR}
+		@(cd ${WRKSRC}/../../doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+.	endif
+.include <bsd.port.post.mk>

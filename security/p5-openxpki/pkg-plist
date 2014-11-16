@@ -275,6 +275,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::SPKAC.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::SmartcardPINUnblockAuthIDs.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::ValidityTime.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::ValidityWindow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::WFObject.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::WFObject::WFArray.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::WFObject::WFHash.3.gz
@@ -595,6 +596,7 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/SPKAC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/SmartcardPINUnblockAuthIDs.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/ValidityTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/ValidityWindow.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/WFObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/WFObject/WFArray.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/WFObject/WFHash.pm
@@ -626,76 +628,141 @@ man/man1/openxpkiadm.1.gz
 man/man1/openxpkicli.1.gz
 man/man1/openxpkicmd.1.gz
 man/man1/openxpkictl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Handle
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Config
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Connector
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Secret
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/SOAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/Appender
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Watchdog
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRLIssuance
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertIssuance
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertRenewal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/NICE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Reports/CertExport
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Reports
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Connector
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Transfer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Connector
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/NICE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/SCEPv2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Smartcard
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/NICE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/WFObject
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Test
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Transport
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache/openxpki-scep.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/_workflow/workflow_activity_smartcard_personalization_v4.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/_workflow/workflow_activity_smartcard_pin_unblock.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/_workflow/workflow_condition_smartcard_personalization_v4.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/_workflow/workflow_condition_smartcard_pin_unblock.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/_workflow/workflow_def_smartcard_personalization_v4.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/_workflow/workflow_def_smartcard_pin_unblock.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/_workflow/workflow_validator_smartcard_personalization_v4.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/profile/I18N_OPENXPKI_PROFILE_USER_AUTHENTICATION_NOMAIL.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/profile/I18N_OPENXPKI_PROFILE_USER_ENCRYPTION.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/profile/I18N_OPENXPKI_PROFILE_USER_SIGNATURE.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/smartcard/card2user.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/smartcard/cardinfo.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/smartcard/cardstatus.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/smartcard/employee.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/smartcard/groupinfo.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/smartcard/policy.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/smartcard/publishing.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/smartcard/upninfo.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/smartcard/config.d/realm/ca-one/users.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/soap/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/soap/soap/default.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/soap/soap/log.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/unsorted/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/unsorted/config.d/realm/ca-one/_workflow/workflow_activity_cert_export.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/unsorted/config.d/realm/ca-one/_workflow/workflow_activity_testing.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/unsorted/config.d/realm/ca-one/_workflow/workflow_condition_cert_export.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/unsorted/config.d/realm/ca-one/_workflow/workflow_def_cert_export.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/unsorted/config.d/realm/ca-one/_workflow/workflow_def_testing.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/unsorted/config.d/realm/ca-one/approval.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/unsorted/config.d/realm/ca-one/cert_revoke.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/unsorted/config.d/realm/ca-one/export.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/workflow-yaml/config.d/realm/ca-one/workflow/def/test.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/workflow-yaml/config.d/realm/ca-one/workflow/global/action.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/workflow-yaml/config.d/realm/ca-one/workflow/observer.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feature/workflow-yaml/config.d/realm/ca-one/workflow/persister.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graffle/workflow_certificate_revoke.graffle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graffle/workflow_enrollment.graffle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graffle/workflow_ogflow.graffle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity_certificate_publishing.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity_certificate_renewal_request.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity_certificate_revocation_request.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity_certificate_signing_request.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity_certificate_signing_request_v2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity_change_metadata.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity_crl_issuance.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity_enrollment.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_activity_nice.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_condition.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_condition_acl.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_condition_enrollment.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_condition_nice.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_def_certificate_publishing.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_def_certificate_renewal_request.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_def_certificate_revocation_request.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_def_certificate_revocation_request_v2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_def_certificate_signing_request.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_def_certificate_signing_request_v2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_def_change_metadata.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_def_crl_issuance.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_def_enrollment.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_validator.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_validator_certificate_revocation_request.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_validator_certificate_signing_request.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_validator_change_metadata.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/_workflow/workflow_validator_enrollment.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/auth/connector.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/auth/handler.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/auth/roles.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/auth/stack.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/auth/wfacl.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/crl/default.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/crypto.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/metadata.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/nice.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/notification/rt.yaml.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/notification/servicenow.yaml.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/notification/smtp.yaml.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/profile/I18N_OPENXPKI_PROFILE_TLS_SERVER.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/profile/I18N_OPENXPKI_PROFILE_USER.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/profile/default.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/profile/sample.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/profile/template.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/publishing.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/realm/ca-one/scep/scep-server-1.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/system/crypto.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/system/database.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/system/realms.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/system/server.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/config.d/system/watchdog.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/log.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/cert_issued.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/cert_issued.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/csr_created_raop.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/csr_created_user.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/csr_created_user.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/csr_rejected.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/csr_rejected.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/images/.keep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/images/foot.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/images/head.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scep_approval_pending_raop.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scep_approval_pending_requestor.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scep_approval_pending_requestor.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scep_approval_rejected.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scep_approval_rejected.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scep_auth_denied.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scep_auth_denied.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scep_cert_issued.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scep_cert_issued.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scpu_notify_authcontact.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/scpu_notify_user.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/testmail.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/email/testmail.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/rt/cert_issued.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/rt/cert_issued_internal.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/rt/csr_approvers.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/rt/csr_created.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/rt/csr_created_comment.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/rt/csr_rejected.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/notification/rt/test.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/scep/default.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/scep/log.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/ssl/ca-one/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openxpki/webui/log.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/profiles/I18N_OPENXPKI_PROFILE_OPENVPN_CLIENT.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/profiles/I18N_OPENXPKI_PROFILE_SCEP_CLIENT.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampleconfig.sh
+@owner openxpki
+@group openxpki
+@dir %%ETCDIR%%
+@dir /var/openxpki/session
+@dir /var/openxpki
+@dir /var/log/openxpki
