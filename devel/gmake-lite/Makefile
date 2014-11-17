@@ -2,6 +2,7 @@
 
 PORTNAME=	make
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	devel ports-mgmt
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	g
@@ -16,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS+=	--program-prefix=g \
 			--program-suffix=-lite \
+			--without-guile \
 			--disable-nls
 
 USES=	tar:bzip2
