@@ -1,29 +1,26 @@
 # Created by: Elisey Savateev <b3k@mail.ru>
 # $FreeBSD$
 
-PORTNAME=       rejik
-PORTVERSION=    3.2.11
-CATEGORIES=     www
-MASTER_SITES=   http://www.rejik.ru/download/
-DISTNAME=       redirector-${PORTVERSION}_squid_3.4
+PORTNAME=	rejik
+PORTVERSION=	3.2.11
+PORTREVISION=	1
+CATEGORIES=	www
+MASTER_SITES=	http://www.rejik.ru/download/
+DISTNAME=	redirector-${PORTVERSION}_squid_3.4
 
-MAINTAINER=     roma.a.g@gmail.com
-COMMENT=        Squid redirector used for blocking unwanted content
+MAINTAINER=	roma.a.g@gmail.com
+COMMENT=	Squid redirector used for blocking unwanted content
 
-LICENSE=        BSD4CLAUSE
+LICENSE=	BSD4CLAUSE
 
-BROKEN=		Fails to stage as a regular user, installs suspicious check-redirector and set-permissions
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-RUN_DEPENDS=    ${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
-LIB_DEPENDS+=   libpcre.so:${PORTSDIR}/devel/pcre
+USES=		perl5 tar:tgz
+USE_GCC=	any
+MAKE_ARGS=	CC=${CC}
 
-USES=           perl5 tar:tgz
-USE_GCC=        any
-
-post-patch:
-	 @${REINPLACE_CMD} -e 's|gcc|${CC}|; s|INSTALL_PATH=/usr/local/rejik3|INSTALL_PATH=${STAGEDIR}${PREFIX}/rejik3|; s|>> ${INSTALL_PATH}|/usr/local/rejik3|g' ${WRKSRC}/Makefile
-post-install:
-	 ${STRIP_CMD} ${STAGEDIR}${PREFIX}/rejik3/make-cache
-	 ${STRIP_CMD} ${STAGEDIR}${PREFIX}/rejik3/redirector
+USERS=		squid
+GROUPS=		squid
 
 .include <bsd.port.mk>

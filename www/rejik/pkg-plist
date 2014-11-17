@@ -1,8 +1,10 @@
-rejik3/make-cache
-rejik3/redirector
-rejik3/redirector.conf.dist
-rejik3/tools/IN.gz
-rejik3/tools/benchmark
-rejik3/tools/check-redirector
-rejik3/tools/kill-cache
-rejik3/tools/set-permissions
+@(squid,squid,) rejik3/make-cache
+@(squid,squid,) rejik3/redirector
+@(squid,squid,) rejik3/redirector.conf.dist
+@(squid,squid,) rejik3/tools/IN.gz
+@(squid,squid,) rejik3/tools/benchmark
+@(squid,squid,) rejik3/tools/check-redirector
+@(squid,squid,) rejik3/tools/kill-cache
+@(squid,squid,) rejik3/tools/set-permissions
+@dir(squid,squid,) rejik3/tools
+@dir(squid,squid,) rejik3
