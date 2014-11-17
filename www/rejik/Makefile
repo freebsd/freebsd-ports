@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		perl5 tar:tgz
 USE_GCC=	any
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC=${CC} INSTALL_PATH=${PREFIX}/rejik3
 
 USERS=		squid
 GROUPS=		squid
