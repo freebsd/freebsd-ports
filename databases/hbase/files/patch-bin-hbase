@@ -1,0 +1,10 @@
+--- bin/hbase.orig	2014-07-14 09:50:03.000000000 +0400
++++ bin/hbase	2014-11-17 15:26:40.000000000 +0300
+@@ -55,6 +55,7 @@
+ bin=`dirname "$0"`
+ bin=`cd "$bin">/dev/null; pwd`
+ 
++export HBASE_CONF_DIR=%%ETCDIR%%
+ # This will set HBASE_HOME, etc.
+ . "$bin"/hbase-config.sh
+ 
