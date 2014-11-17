@@ -1,6 +1,6 @@
---- plugins/node.d/hddtemp_smartctl.in.orig	2014-04-22 19:29:32 UTC
+--- plugins/node.d/hddtemp_smartctl.in.orig	2014-10-26 14:12:24 UTC
 +++ plugins/node.d/hddtemp_smartctl.in
-@@ -162,7 +162,7 @@
+@@ -162,7 +162,7 @@ if ($^O eq 'linux') {
    
  } elsif ($^O eq 'freebsd') {
    opendir(DEV, '/dev');

@@ -1,6 +1,6 @@
---- plugins/node.d/squeezebox_.in.orig	2014-04-22 19:29:32 UTC
+--- plugins/node.d/squeezebox_.in.orig	2014-10-26 14:12:24 UTC
 +++ plugins/node.d/squeezebox_.in
-@@ -157,7 +157,7 @@
+@@ -157,7 +157,7 @@ if [ "$CMD" = "years" ]; then
  		printf "graph_order y"
          echo $years_array | sed 's/ / y/g'
  
@@ -9,7 +9,7 @@
  			year=$(echo ${arr1[$i]})
  			if [ $year = 0 ]; then
  				echo y0.label No year
-@@ -172,7 +172,7 @@
+@@ -172,7 +172,7 @@ if [ "$CMD" = "years" ]; then
  		done
  		exit 0
  	fi
@@ -18,7 +18,7 @@
  		year=$(echo ${arr1[$i]})
  		printf "y%s.value " ${year}
  		printf "%b" "albums 0 0 year:${year}\nexit\n" | $NC $HOST $PORT | sed 's/%3A/:/g' | cut -d ':' -f 3
-@@ -183,7 +183,7 @@
+@@ -183,7 +183,7 @@ elif [ "$CMD" = "signalstrength" -o "$CM
              echo "graph_category Squeezebox"
              COUNT=$(printf "%b" "player count ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 3)
              (( COUNT-- ))
@@ -27,7 +27,7 @@
                  MAC=$(printf "%b" "player id $ID ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%3A/:/g')
  		NAME=$(printf "%b" "player name $MAC ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%20/ /g')
  		MAC2=$(echo $MAC | sed 's/://g; s/\./_/g')
-@@ -193,7 +193,7 @@
+@@ -193,7 +193,7 @@ elif [ "$CMD" = "signalstrength" -o "$CM
          fi
          COUNT=$(printf "%b" "player count ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 3)
          (( COUNT-- ))

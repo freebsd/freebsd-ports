@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -35,14 +36,19 @@ ALL_TARGET=	build-node build-plugins
 INSTALL_TARGET=	install-node-prime install-plugins-prime
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	SNMP JAVA
-OPTIONS_DEFAULT=	SNMP
+OPTIONS_DEFINE=	SNMP PERL JAVA
+OPTIONS_DEFAULT=	SNMP PERL
 OPTIONS_SUB=	yes
 SNMP_DESC=	Include SNMP plugins
+PERL_DESC=	Include all Perl modules (adds dependencies)
 JAVA_DESC=	Include JAVA plugins
 
-SNMP_BUILD_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-SNMP_RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+SNMP_BUILD_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+PERL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
+		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 JAVA_USE=	java=yes
 JAVA_INSTALL_TARGET=	install-plugins-java
 JAVA_BUILD=	yes
