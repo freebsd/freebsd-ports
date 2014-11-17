@@ -3,6 +3,7 @@
 
 PORTNAME=	sigar
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	GH
 PKGNAMEPREFIX=	java-
@@ -14,10 +15,11 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/NOTICE
 
 BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
+LIB_DEPENDS=	libsigar.so:${PORTSDIR}/devel/sigar
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	hyperic
-GH_COMMIT=	236006e
+GH_ACCOUNT=	amishHammer
+GH_COMMIT=	b5af695
 GH_TAGNAME=	${GH_COMMIT}
 
 USES=		perl5
@@ -29,7 +31,7 @@ USE_GCC=	any
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 
-WRKSRC=		${WRKDIR}/hyperic-sigar-${GH_COMMIT}
+WRKSRC=		${WRKDIR}/amishHammer-sigar-${GH_COMMIT}
 
 .include <bsd.port.pre.mk>
 
