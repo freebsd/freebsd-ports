@@ -14,7 +14,7 @@ COMMENT=	Course management system based on social constructionism
 LICENSE=	GPLv3
 
 DEPRECATED=	Deprecated by upstream, use www/moodle2{7,8} instead
-EXPIRATION_DATE=2014-11-30
+EXPIRATION_DATE=2015-04-17
 
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
