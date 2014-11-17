@@ -184,5 +184,5 @@ man/man1/xxd.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimdiff.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimtutor.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/xxd.1.gz
-%%DEFAULT_VIMRC%%share/vim/vimrc
-%%DEFAULT_VIMRC%%share/vim/gvimrc
+%%DEFAULT_VIMRC%%@sample share/vim/vimrc.sample
+%%DEFAULT_VIMRC%%@sample share/vim/gvimrc.sample
