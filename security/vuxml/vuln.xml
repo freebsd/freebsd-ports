@@ -57,6 +57,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dafa13a8-6e9b-11e4-8ef7-5453ed2e2b49">
+    <topic>kde-workspace -- privilege escalation</topic>
+    <affects>
+      <package>
+	<name>kde-workspace</name>
+	<range><lt>4.11.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>David Edmundson reports:</p>
+	<blockquote cite="https://www.kde.org/info/security/advisory-20141106-1.txt">
+	  <p>KDE workspace configuration module for setting the date and time
+	    has a helper program which runs as root for performing actions.
+	    This is secured with polkit.</p>
+	  <p>This helper takes the name of the ntp utility to run as an
+	    argument. This allows a hacker to run any arbitrary command as root
+	    under the guise of updating the time.</p>
+	  <p>An application can gain root priveledges from an admin user with
+	    either misleading information or no interaction.</p>
+	  <p>On some systems the user will be shown a prompt to change the
+	    time. However, if the system has policykit-desktop-privileges
+	    installed, the datetime helper will be invoked by an admin user
+	    without any prompts.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8651</cvename>
+      <mlist>http://seclists.org/oss-sec/2014/q4/520</mlist>
+    </references>
+    <dates>
+      <discovery>2014-11-06</discovery>
+      <entry>2014-11-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c1930f45-6982-11e4-80e1-bcaec565249c">
     <topic>dbus -- incomplete fix for CVE-2014-3636 part A</topic>
     <affects>
