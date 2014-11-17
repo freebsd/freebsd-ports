@@ -1,6 +1,6 @@
---- plugins/node.d.freebsd/if_packets_.in.orig	2014-10-27 10:21:08 UTC
+--- plugins/node.d.freebsd/if_packets_.in.orig	2014-11-17 14:29:50 UTC
 +++ plugins/node.d.freebsd/if_packets_.in
-@@ -0,0 +1,101 @@
+@@ -0,0 +1,110 @@
 +#!@@GOODSH@@
 +# -*- sh -*-
 +#
@@ -76,7 +76,11 @@
 +	if (NF == 10) { 
 +		rsum += $4; osum += $7;
 +	} else if (NF == 11) {
-+		rsum += $5; osum += $8;
++		if ($4 ~ /:/) {
++			rsum += $5; osum += $8;
++		} else {
++			rsum += $4; osum += $8;
++		}
 +	} else { # NF == 12
 +		rsum += $6; osum += $9;
 +	}
@@ -93,10 +97,15 @@
 +		print "rpackets.value", $4;
 +		print "opackets.value", $7;
 +	} else if (NF == 11) {
-+		print "rbytes.value", $5;
-+		print "obytes.value", $8;
++		if ($4 ~ /:/) {
++			print "rpackets.value", $5;
++			print "opackets.value", $8;
++		} else {
++			print "rpackets.value", $4;
++			print "opackets.value", $8;
++		}
 +	} else { # NF == 12
-+		print "rpackets.value", $6;
++		print "rpackets.value", $5;
 +		print "opackets.value", $9;
 +	}
 +}'

@@ -1,6 +1,6 @@
---- plugins/node.d/multiping.in.orig	2014-04-22 19:29:32 UTC
+--- plugins/node.d/multiping.in.orig	2014-10-26 14:12:24 UTC
 +++ plugins/node.d/multiping.in
-@@ -59,6 +59,7 @@
+@@ -59,6 +59,7 @@ if [ -z "$host" ]; then
      host=${host:-${file_host:-www.google.com}}
  fi
  
