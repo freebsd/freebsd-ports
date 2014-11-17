@@ -4654,6 +4654,7 @@
     SUBDIR += shmap
     SUBDIR += shtk
     SUBDIR += shtool
+    SUBDIR += sigar
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
     SUBDIR += silentbob
