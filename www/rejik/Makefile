@@ -12,6 +12,8 @@ COMMENT=        Squid redirector used for blocking unwanted content
 
 LICENSE=        BSD4CLAUSE
 
+BROKEN=		Fails to stage as a regular user, installs suspicious check-redirector and set-permissions
+
 RUN_DEPENDS=    ${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 LIB_DEPENDS+=   libpcre.so:${PORTSDIR}/devel/pcre
 
