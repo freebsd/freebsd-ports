@@ -1,21 +1,15 @@
 share/java/zi/Africa/Abidjan
 share/java/zi/Africa/Accra
-share/java/zi/Africa/Addis_Ababa
 share/java/zi/Africa/Algiers
-share/java/zi/Africa/Asmara
 share/java/zi/Africa/Bissau
 share/java/zi/Africa/Cairo
 share/java/zi/Africa/Casablanca
 share/java/zi/Africa/Ceuta
-share/java/zi/Africa/Dar_es_Salaam
-share/java/zi/Africa/Djibouti
 share/java/zi/Africa/El_Aaiun
 share/java/zi/Africa/Johannesburg
-share/java/zi/Africa/Kampala
 share/java/zi/Africa/Khartoum
 share/java/zi/Africa/Lagos
 share/java/zi/Africa/Maputo
-share/java/zi/Africa/Mogadishu
 share/java/zi/Africa/Monrovia
 share/java/zi/Africa/Nairobi
 share/java/zi/Africa/Ndjamena
@@ -339,16 +333,13 @@ share/java/zi/Europe/Zaporozhye
 share/java/zi/Europe/Zurich
 share/java/zi/GMT
 share/java/zi/HST
-share/java/zi/Indian/Antananarivo
 share/java/zi/Indian/Chagos
 share/java/zi/Indian/Christmas
 share/java/zi/Indian/Cocos
-share/java/zi/Indian/Comoro
 share/java/zi/Indian/Kerguelen
 share/java/zi/Indian/Mahe
 share/java/zi/Indian/Maldives
 share/java/zi/Indian/Mauritius
-share/java/zi/Indian/Mayotte
 share/java/zi/Indian/Reunion
 share/java/zi/MET
 share/java/zi/MST
@@ -407,3 +398,19 @@ share/java/zi/SystemV/YST9
 share/java/zi/SystemV/YST9YDT
 share/java/zi/WET
 share/java/zi/ZoneInfoMappings
+@dirrm share/java/zi/SystemV
+@dirrm share/java/zi/Pacific
+@dirrm share/java/zi/Indian
+@dirrm share/java/zi/Europe
+@dirrm share/java/zi/Etc
+@dirrm share/java/zi/Australia
+@dirrm share/java/zi/Atlantic
+@dirrm share/java/zi/Asia
+@dirrm share/java/zi/Antarctica
+@dirrm share/java/zi/America/North_Dakota
+@dirrm share/java/zi/America/Kentucky
+@dirrm share/java/zi/America/Indiana
+@dirrm share/java/zi/America/Argentina
+@dirrm share/java/zi/America
+@dirrm share/java/zi/Africa
+@dirrm share/java/zi
