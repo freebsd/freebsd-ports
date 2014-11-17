@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141117:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Most of the optional patches for OpenSSH do not apply to the 6.7 update yet.
+  The 6.6 version has been copied to security/openssh-portable66 if you require
+  the use of one of the optional ports.
+
 20141109:
   AFFECTS: users of multimedia/mediabrowser
   AUTHOR: woodsb02@gmail.com
