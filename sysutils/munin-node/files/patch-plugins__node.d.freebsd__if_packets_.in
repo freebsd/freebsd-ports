@@ -5,14 +5,14 @@
 +# -*- sh -*-
 +#
 +# Wildcard-plugin to monitor network interfaces. To monitor an
-+# interface, link if_<interface> to this file. E.g.
++# interface, link if_packets_<interface> to this file. E.g.
 +#
-+#    ln -s /usr/share/munin/node/plugins-auto/if_ /etc/munin/node.d/if_eth0
++#    ln -s /usr/share/munin/node/plugins-auto/if_packets_ /etc/munin/node.d/if_packets_eth0
 +#
 +# ...will monitor eth0.
 +#
 +# To aggregate all network interfaces on the system (except lo0),
-+# link if_aggregated to this file.
++# link if_packets_aggregated to this file.
 +#
 +# Any device found in /usr/bin/netstat can be monitored.
 +#
@@ -22,7 +22,7 @@
 +#%# family=auto
 +#%# capabilities=autoconf suggest
 +
-+INTERFACE=${0##*if_}
++INTERFACE=${0##*if_packets_}
 +
 +if [ "$1" = "autoconf" ]; then
 +	if [ -x /sbin/ifconfig -o -x /usr/bin/netstat ]; then
