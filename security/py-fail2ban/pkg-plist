@@ -3,13 +3,17 @@ bin/fail2ban-regex
 bin/fail2ban-server
 %%ETCDIR%%/fail2ban.conf
 %%ETCDIR%%/jail.conf
-%%ETCDIR%%/paths-freebsd.conf
 %%ETCDIR%%/paths-common.conf
+%%ETCDIR%%/paths-debian.conf
+%%ETCDIR%%/paths-fedora.conf
+%%ETCDIR%%/paths-freebsd.conf
+%%ETCDIR%%/paths-osx.conf
 %%ETCDIR%%/action.d/apf.conf
 %%ETCDIR%%/action.d/badips.conf
 %%ETCDIR%%/action.d/badips.py
 %%ETCDIR%%/action.d/blocklist_de.conf
 %%ETCDIR%%/action.d/bsd-ipfw.conf
+%%ETCDIR%%/action.d/cloudflare.conf
 %%ETCDIR%%/action.d/complain.conf
 %%ETCDIR%%/action.d/dshield.conf
 %%ETCDIR%%/action.d/dummy.conf
@@ -19,7 +23,7 @@ bin/fail2ban-server
 %%ETCDIR%%/action.d/ipfilter.conf
 %%ETCDIR%%/action.d/ipfw.conf
 %%ETCDIR%%/action.d/iptables-allports.conf
-%%ETCDIR%%/action.d/iptables-blocktype.conf
+%%ETCDIR%%/action.d/iptables-common.conf
 %%ETCDIR%%/action.d/iptables-ipset-proto4.conf
 %%ETCDIR%%/action.d/iptables-ipset-proto6-allports.conf
 %%ETCDIR%%/action.d/iptables-ipset-proto6.conf
@@ -47,6 +51,7 @@ bin/fail2ban-server
 %%ETCDIR%%/action.d/sendmail.conf
 %%ETCDIR%%/action.d/shorewall.conf
 %%ETCDIR%%/action.d/smtp.py
+%%ETCDIR%%/action.d/symbiosis-blacklist-allports.conf
 %%ETCDIR%%/action.d/ufw.conf
 %%ETCDIR%%/action.d/xarf-login-attack.conf
 %%ETCDIR%%/filter.d/3proxy.conf
@@ -58,6 +63,7 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/apache-nohome.conf
 %%ETCDIR%%/filter.d/apache-noscript.conf
 %%ETCDIR%%/filter.d/apache-overflows.conf
+%%ETCDIR%%/filter.d/apache-shellshock.conf
 %%ETCDIR%%/filter.d/assp.conf
 %%ETCDIR%%/filter.d/asterisk.conf
 %%ETCDIR%%/filter.d/bsd-sendmail.conf
@@ -68,8 +74,10 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/courier-auth.conf
 %%ETCDIR%%/filter.d/courier-smtp.conf
 %%ETCDIR%%/filter.d/cyrus-imap.conf
+%%ETCDIR%%/filter.d/directadmin.conf
 %%ETCDIR%%/filter.d/dovecot.conf
 %%ETCDIR%%/filter.d/dropbear.conf
+%%ETCDIR%%/filter.d/ejabberd-auth.conf
 %%ETCDIR%%/filter.d/exim-common.conf
 %%ETCDIR%%/filter.d/exim-spam.conf
 %%ETCDIR%%/filter.d/exim.conf
@@ -80,15 +88,18 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/horde.conf
 %%ETCDIR%%/filter.d/kerio.conf
 %%ETCDIR%%/filter.d/lighttpd-auth.conf
+%%ETCDIR%%/filter.d/monit.conf
 %%ETCDIR%%/filter.d/mysqld-auth.conf
 %%ETCDIR%%/filter.d/nagios.conf
 %%ETCDIR%%/filter.d/named-refused.conf
 %%ETCDIR%%/filter.d/nginx-http-auth.conf
 %%ETCDIR%%/filter.d/nsd.conf
 %%ETCDIR%%/filter.d/openwebmail.conf
+%%ETCDIR%%/filter.d/oracleims.conf
 %%ETCDIR%%/filter.d/pam-generic.conf
 %%ETCDIR%%/filter.d/perdition.conf
 %%ETCDIR%%/filter.d/php-url-fopen.conf
+%%ETCDIR%%/filter.d/portsentry.conf
 %%ETCDIR%%/filter.d/postfix-sasl.conf
 %%ETCDIR%%/filter.d/postfix.conf
 %%ETCDIR%%/filter.d/proftpd.conf
@@ -195,23 +206,20 @@ bin/fail2ban-server
 %%PYTHON_SITELIBDIR%%/fail2ban/server/ticket.pyc
 %%PYTHON_SITELIBDIR%%/fail2ban/server/transmitter.py
 %%PYTHON_SITELIBDIR%%/fail2ban/server/transmitter.pyc
-%%PYTHON_SITELIBDIR%%/fail2ban/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/fail2ban/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/fail2ban/tests/utils.py
-%%PYTHON_SITELIBDIR%%/fail2ban/tests/utils.pyc
 man/man1/fail2ban-client.1.gz
 man/man1/fail2ban-regex.1.gz
 man/man1/fail2ban-server.1.gz
 man/man1/fail2ban.1.gz
 man/man5/fail2ban-jail.conf.5.gz
-@dirrm %%PYTHON_SITELIBDIR%%/fail2ban/tests
-@dirrm %%PYTHON_SITELIBDIR%%/fail2ban/server
-@dirrm %%PYTHON_SITELIBDIR%%/fail2ban/client
-@dirrm %%PYTHON_SITELIBDIR%%/fail2ban
-@dirrmtry %%ETCDIR%%/jail.d
-@dirrmtry %%ETCDIR%%/filter.d
-@dirrmtry %%ETCDIR%%/fail2ban.d
-@dirrmtry %%ETCDIR%%/action.d
-@dirrmtry %%ETCDIR%%
-@dirrmtry /var/run/fail2ban
-@dirrmtry /var/db/fail2ban
+@dir %%PYTHON_SITELIBDIR%%/fail2ban/server
+@dir %%PYTHON_SITELIBDIR%%/fail2ban/client
+@dir %%PYTHON_SITELIBDIR%%/fail2ban
+@dir %%ETCDIR%%/jail.d
+@dir %%ETCDIR%%/filter.d
+@dir %%ETCDIR%%/fail2ban.d
+@dir %%ETCDIR%%/action.d
+@dir %%ETCDIR%%
+@dir /var/run/fail2ban
+@dir /var/db/fail2ban
+@dir /var/lib/fail2ban
+@dir /var/lib
