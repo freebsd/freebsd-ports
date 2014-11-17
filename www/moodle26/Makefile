@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	2.6.5
+PORTVERSION=	2.6.6
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable26/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
@@ -13,10 +13,13 @@ COMMENT=	Course management system based on social constructionism
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Deprecated by upstream, use www/moodle2{7,8} instead
+EXPIRATION_DATE=2014-11-30
+
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 
-CONFLICTS=	moodle-1.*.* moodle24-2.4.* moodle25-2.5.[0-9]* moodle27-2.7.[0-9]*
+CONFLICTS=	moodle27-2.7.[0-9]* moodle28-2.8.[0-9]*
 
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
 		soap openssl simplexml spl dom json zip zlib hash
