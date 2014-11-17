@@ -408,6 +408,7 @@ sbin/rndc
 sbin/rndc-confgen
 sbin/tsig-keygen
 %%ETCDIR%%/rndc.conf.sample
+%%NOBASE%%%%ETCDIR%%/bind.keys
 %%NOBASE%%@sample %%ETCDIR%%/named.conf.sample
 %%NOBASE%%%%ETCDIR%%/named.root
 %%NOBASE%%%%ETCDIR%%/master/empty.db
