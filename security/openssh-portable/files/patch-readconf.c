@@ -18,22 +18,21 @@ Submitted upstream, no reaction.
 
 Submitted by:   delphij@
 
-
---- readconf.c.orig	2013-10-03 06:56:21.649139613 -0500
-+++ readconf.c	2013-10-03 06:56:50.961467272 -0500
+--- readconf.c.orig	2014-07-17 23:11:26.000000000 -0500
++++ readconf.c	2014-11-03 16:45:05.188796445 -0600
 @@ -17,6 +17,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <sys/socket.h>
 +#include <sys/sysctl.h>
  #include <sys/wait.h>
+ #include <sys/un.h>
  
- #include <netinet/in.h>
-@@ -282,7 +283,19 @@
- 	Forward *fwd;
+@@ -281,7 +282,19 @@ add_local_forward(Options *options, cons
+ 	struct Forward *fwd;
  #ifndef NO_IPPORT_RESERVED_CONCEPT
  	extern uid_t original_real_uid;
--	if (newfwd->listen_port < IPPORT_RESERVED && original_real_uid != 0)
+-	if (newfwd->listen_port < IPPORT_RESERVED && original_real_uid != 0 &&
 +	int ipport_reserved;
 +#ifdef __FreeBSD__
 +	size_t len_ipport_reserved = sizeof(ipport_reserved);
@@ -46,11 +45,11 @@ Submitted by:   delphij@
 +#else
 +	ipport_reserved = IPPORT_RESERVED;
 +#endif
-+	if (newfwd->listen_port < ipport_reserved && original_real_uid != 0)
++	if (newfwd->listen_port < ipport_reserved && original_real_uid != 0 &&
+ 	    newfwd->listen_path == NULL)
  		fatal("Privileged ports can only be forwarded by root.");
  #endif
- 	options->local_forwards = xrealloc(options->local_forwards,
-@@ -1607,7 +1620,7 @@
+@@ -1674,7 +1687,7 @@ fill_default_options(Options * options)
  	if (options->batch_mode == -1)
  		options->batch_mode = 0;
  	if (options->check_host_ip == -1)
