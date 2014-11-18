@@ -18,7 +18,7 @@ COMMENT=	User-level file synchronization tool
 LICENSE=	GPLv3
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-USES=		gmake
+USES=		desktop-file-utils gmake
 WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 
@@ -44,7 +44,6 @@ RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 PATCH_DEPENDS+=	${BUILD_DEPENDS}
 CONFLICTS+=	ocaml-nox11*
 SUB_FILES+=	${PORTNAME}.desktop
-PLIST_FILES+=	share/pixmaps/${PORTNAME}${PKGNAMESUFFIX}.png
 .else
 MAKE_ARGS+=	UISTYLE=text
 PLIST_SUB+=	TEXT="@comment "
