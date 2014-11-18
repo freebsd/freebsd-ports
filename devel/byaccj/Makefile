@@ -7,7 +7,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}_src
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Java extension of BSD YACC-compatible parser generator
 
 PLIST_FILES=	bin/byaccj
