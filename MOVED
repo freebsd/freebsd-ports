@@ -7182,3 +7182,4 @@ science/elmer-meshgen2d|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/el
 science/elmergrid|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
 security/pinentry-gtk||2014-11-13|Removed: upstream ended support for GTK+ 1
 audio/cuberok||2014-11-15|Has expired: Upstream development has stalled
+sysutils/cfengine36-rc|sysutils/cfengine36|2014-11-18|Has gone GA
