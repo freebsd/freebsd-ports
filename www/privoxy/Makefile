@@ -3,7 +3,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
@@ -15,8 +15,9 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
-USES=		gmake
+USES=		gmake shebangfix
 USE_AUTOTOOLS=	autoconf
+SHEBANG_FILES=	tools/privoxy-log-parser.pl tools/privoxy-regression-test.pl tools/uagen.pl
 
 USE_RC_SUBR=	privoxy
 SUB_FILES=	pkg-message
