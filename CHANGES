@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20141118:
+AUTHOR: mat@FreeBSD.org
+
+  To ease future work, a new SITE_ARCH variable and PLIST_SUB replacement
+  containing SITE_PERL/PERL_ARCH has been added.
+
 20141102:
 AUTHOR: bdrewery@FreeBSD.org
 
