@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/%%WWWDIR%%/custom_inc.php.sample %D/%%WWWDIR%%/custom_inc.php; then rm -f %D/%%WWWDIR%%/custom_inc.php; fi
-%%WWWDIR%%/custom_inc.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/custom_inc.php ] ; then cp -p %D/%F %B/custom_inc.php; fi
+@sample %%WWWDIR%%/custom_inc.php.sample
 %%WWWDIR%%/.buildpath
 %%WWWDIR%%/.project
 %%WWWDIR%%/.settings/.jsdtscope
@@ -643,68 +641,7 @@
 %%WWWDIR%%/themes/text/images/pixel.png
 %%WWWDIR%%/themes/text/images/view.png
 %%WWWDIR%%/themes/text/style.css
-@dirrm %%WWWDIR%%/themes/text/images
-@dirrm %%WWWDIR%%/themes/text
-@dirrm %%WWWDIR%%/themes/default/images
-@dirrm %%WWWDIR%%/themes/default
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/sql/upgrade
-@dirrm %%WWWDIR%%/sql
-@dirrm %%WWWDIR%%/modules/utils
-@dirrm %%WWWDIR%%/modules/settings
-@dirrm %%WWWDIR%%/modules/reviews
-@dirrm %%WWWDIR%%/modules/restaurants
-@dirrm %%WWWDIR%%/modules/recipes
-@dirrm %%WWWDIR%%/modules/meals
-@dirrm %%WWWDIR%%/modules/login
-@dirrm %%WWWDIR%%/modules/lists
-@dirrm %%WWWDIR%%/modules/ingredients
-@dirrm %%WWWDIR%%/modules/admin
-@dirrm %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/libs/phpsm/sql
-@dirrm %%WWWDIR%%/libs/phpsm/pages
-@dirrm %%WWWDIR%%/libs/phpsm/forms
-@dirrm %%WWWDIR%%/libs/phpsm/docs
-@dirrm %%WWWDIR%%/libs/phpsm/classes/drivers
-@dirrm %%WWWDIR%%/libs/phpsm/classes
-@dirrm %%WWWDIR%%/libs/phpsm
-@dirrm %%WWWDIR%%/libs/phpmailer/language
-@dirrm %%WWWDIR%%/libs/phpmailer
-@dirrm %%WWWDIR%%/libs/adodb5/xsl
-@dirrm %%WWWDIR%%/libs/adodb5/tests
-@dirrm %%WWWDIR%%/libs/adodb5/session/old
-@dirrm %%WWWDIR%%/libs/adodb5/session
-@dirrm %%WWWDIR%%/libs/adodb5/perf
-@dirrm %%WWWDIR%%/libs/adodb5/pear/Auth/Container
-@dirrm %%WWWDIR%%/libs/adodb5/pear/Auth
-@dirrm %%WWWDIR%%/libs/adodb5/pear
-@dirrm %%WWWDIR%%/libs/adodb5/lang
-@dirrm %%WWWDIR%%/libs/adodb5/drivers
-@dirrm %%WWWDIR%%/libs/adodb5/docs
-@dirrm %%WWWDIR%%/libs/adodb5/datadict
-@dirrm %%WWWDIR%%/libs/adodb5/cute_icons_for_site
-@dirrm %%WWWDIR%%/libs/adodb5/contrib
-@dirrm %%WWWDIR%%/libs/adodb5
-@dirrm %%WWWDIR%%/libs/adodb4/xsl
-@dirrm %%WWWDIR%%/libs/adodb4/tests
-@dirrm %%WWWDIR%%/libs/adodb4/session/old
-@dirrm %%WWWDIR%%/libs/adodb4/session
-@dirrm %%WWWDIR%%/libs/adodb4/perf
-@dirrm %%WWWDIR%%/libs/adodb4/pear/Auth/Container
-@dirrm %%WWWDIR%%/libs/adodb4/pear/Auth
-@dirrm %%WWWDIR%%/libs/adodb4/pear
-@dirrm %%WWWDIR%%/libs/adodb4/lang
-@dirrm %%WWWDIR%%/libs/adodb4/drivers
-@dirrm %%WWWDIR%%/libs/adodb4/docs
-@dirrm %%WWWDIR%%/libs/adodb4/datadict
-@dirrm %%WWWDIR%%/libs/adodb4/cute_icons_for_site
-@dirrm %%WWWDIR%%/libs/adodb4/contrib
-@dirrm %%WWWDIR%%/libs/adodb4
-@dirrm %%WWWDIR%%/libs
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/docs
-@dirrm %%WWWDIR%%/classes
-@dirrm %%WWWDIR%%/.settings
-@dirrm %%WWWDIR%%
+@dir %%WWWDIR%%/modules/settings
+@dir %%WWWDIR%%/modules
+@dir %%WWWDIR%%
+@dir www
