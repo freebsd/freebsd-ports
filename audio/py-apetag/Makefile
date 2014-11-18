@@ -9,7 +9,7 @@ MASTER_SITES=	SF/pylibape/py-ApeTag/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-ApeTag-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for APE Tag written in Python
 
 USES=		python

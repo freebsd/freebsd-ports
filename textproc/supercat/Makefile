@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://supercat.nosredna.net/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Regexp-based text colorizer with ASCII/HTML output
 
 GNU_CONFIGURE=	yes

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	YAML-1.1 parser and emitter
 
 LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml

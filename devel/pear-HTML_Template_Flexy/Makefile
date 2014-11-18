@@ -5,7 +5,7 @@ PORTNAME=	HTML_Template_Flexy
 PORTVERSION=	1.3.12
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful Tokenizer driven Template engine
 
 OPTIONS_DEFINE=	PEAR_HTML_JAVASCRIPT PEAR_FILE_GETTEXT PEAR_TRANSLATION2

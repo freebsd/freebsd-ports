@@ -5,7 +5,7 @@ PORTNAME=	mybb
 PORTVERSION=	1.6.9
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based bulletin board / discussion forum system
 
 USE_GITHUB=	yes

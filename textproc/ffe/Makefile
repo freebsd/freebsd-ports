@@ -6,7 +6,7 @@ PORTVERSION=	0.3.4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/ff-extractor/ff-extractor/${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flat file extractor
 
 OPTIONS_DEFINE=	DOCS

@@ -6,7 +6,7 @@ PORTVERSION=	0.0.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://tokyocabinet.sourceforge.net/misc/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thin wrapper library of LZMA
 
 USES=		gmake

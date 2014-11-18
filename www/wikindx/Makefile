@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}3_8_2
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bibliographic and quotations/notes management system
 
 USE_PHP=	session mysql xml ctype

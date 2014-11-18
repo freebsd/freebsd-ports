@@ -5,7 +5,7 @@ PORTNAME=	google_analytics
 DISTVERSION=	6.x-3.5
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds the Google Analytics web stats tracking system to your website
 
 USES=		drupal:6,module

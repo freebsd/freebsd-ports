@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	El-Kabong is a speedy, yet forgiving, SAX-style HTML parser
 
 GNU_CONFIGURE=	yes

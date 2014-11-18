@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://code.soundsoftware.ac.uk/attachments/download/224/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vamp audio analysis plugin SDK
 
 LICENSE=	MIT

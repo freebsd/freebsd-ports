@@ -7,7 +7,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://mirror.irssi.org/snapshots/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular IRC client with many features
 
 LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20

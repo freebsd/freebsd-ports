@@ -5,7 +5,7 @@ PORTNAME=	PHP_Archive
 PORTVERSION=	0.11.4
 CATEGORIES=	archivers
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create and Use PHP Archive files
 
 USES=	pear

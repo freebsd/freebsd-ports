@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel BZIP2
 
 LICENSE=	BSD4CLAUSE

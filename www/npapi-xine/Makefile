@@ -9,7 +9,7 @@ CATEGORIES=	www multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-plugin/${PORTVERSION}
 PKGNAMEPREFIX=	npapi-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embed Xine player into browser
 
 LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine

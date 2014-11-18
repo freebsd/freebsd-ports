@@ -6,7 +6,7 @@ DISTVERSION=	6.x-1.12
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Token module for Drupal
 
 USES=		drupal:6,module

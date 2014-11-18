@@ -6,7 +6,7 @@ PORTVERSION=	1.8.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	twitterFox firefox plugin
 
 XPI_NUM=	5081

@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	databases www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Database Abstraction Layer
 
 USES=		pear

@@ -6,7 +6,7 @@ PORTVERSION=	0.5.3.043
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Content filtering extension
 
 XPI_NUM=	10

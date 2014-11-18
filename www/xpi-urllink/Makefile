@@ -6,7 +6,7 @@ PORTVERSION=	2.03.3
 DISTVERSIONSUFFIX=	-fx+tb
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Select a non-URL and open it in a browser window
 
 XPI_DISTNAME=	url_link

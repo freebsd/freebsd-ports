@@ -5,7 +5,7 @@ PORTNAME=	wysiwyg
 DISTVERSION=	7.x-2.0
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 
 #LICENSE from bsd.drupal.mk

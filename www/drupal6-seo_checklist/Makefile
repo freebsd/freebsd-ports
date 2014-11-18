@@ -5,7 +5,7 @@ PORTNAME=	seo_checklist
 DISTVERSION=	6.x-3.0
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to provide checklist of actions for SEO
 
 USES=		drupal:6,module

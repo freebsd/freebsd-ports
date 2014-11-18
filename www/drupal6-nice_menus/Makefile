@@ -5,7 +5,7 @@ PORTNAME=	nice_menus
 DISTVERSION=	6.x-2.1
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CSS / JavaScript pull-down menus for Drupal
 
 USES=		drupal:6,module

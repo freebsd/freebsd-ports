@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	qOrganizer-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General organizer that includes calendar with jurnal and schedule
 
 USES=		qmake

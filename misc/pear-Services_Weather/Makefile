@@ -6,7 +6,7 @@ PORTVERSION=	1.4.6
 PORTEPOCH=	1
 CATEGORIES=	misc www pear geography
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR interface to various online weather-services
 
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request

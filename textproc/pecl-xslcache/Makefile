@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Caches the parsed XSL stylesheet between sessions
 
 USE_PHP=	dom xml xsl

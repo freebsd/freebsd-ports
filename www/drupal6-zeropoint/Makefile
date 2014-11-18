@@ -6,7 +6,7 @@ DISTVERSION=	6.x-2.3
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The zeropoint drupal theme
 
 USES=		drupal:6,theme

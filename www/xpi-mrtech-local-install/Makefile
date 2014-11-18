@@ -6,7 +6,7 @@ DISTVERSION=	5.3.2.3
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+nv+zm+sb+tb
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage extensions and themes locally
 
 XPI_DISTNAME=	mr_tech_local_install

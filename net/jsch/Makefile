@@ -6,7 +6,7 @@ PORTVERSION=	0.1.51
 CATEGORIES=	net java security
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Java implementation of SSH2
 
 USES=		zip

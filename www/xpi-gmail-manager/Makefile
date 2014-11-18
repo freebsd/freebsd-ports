@@ -7,7 +7,7 @@ CATEGORIES=	www mail
 MASTER_SITES=	http://www.longfocus.com/firefox/gmanager/releases/
 DISTFILES=	gmanager061.xpi
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage multiple Gmail accounts and receive new mail notifications
 
 XPI_DISTNAME=	gmail_manager

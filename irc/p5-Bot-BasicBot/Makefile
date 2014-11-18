@@ -7,7 +7,7 @@ CATEGORIES=	irc perl5
 MASTER_SITES=	CPAN/Bot
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple irc bot baseclass
 
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \

@@ -6,7 +6,7 @@ PORTVERSION=	1.3.7
 PORTREVISION=	1
 CATEGORIES=	ftp www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR OO interface to the PHP FTP functions plus some additions
 
 USE_PHP=	ftp

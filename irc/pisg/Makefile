@@ -6,7 +6,7 @@ PORTVERSION=	0.73
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl IRC Statistics Generator
 
 USES=		perl5

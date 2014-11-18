@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 		http://pub.allbsd.org/MirOS/dist/mir/mksh/
 DISTFILES=	${PORTNAME}-${DISTVERSION}.tgz
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MirBSD Korn Shell
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
