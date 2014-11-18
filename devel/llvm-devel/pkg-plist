@@ -219,6 +219,7 @@ llvm-devel/include/llvm/CodeGen/DAGCombine.h
 llvm-devel/include/llvm/CodeGen/DFAPacketizer.h
 llvm-devel/include/llvm/CodeGen/EdgeBundles.h
 llvm-devel/include/llvm/CodeGen/FastISel.h
+llvm-devel/include/llvm/CodeGen/ForwardControlFlowIntegrity.h
 llvm-devel/include/llvm/CodeGen/FunctionLoweringInfo.h
 llvm-devel/include/llvm/CodeGen/GCMetadata.h
 llvm-devel/include/llvm/CodeGen/GCMetadataPrinter.h
@@ -272,8 +273,8 @@ llvm-devel/include/llvm/CodeGen/PBQP/CostAllocator.h
 llvm-devel/include/llvm/CodeGen/PBQP/Graph.h
 llvm-devel/include/llvm/CodeGen/PBQP/Math.h
 llvm-devel/include/llvm/CodeGen/PBQP/ReductionRules.h
-llvm-devel/include/llvm/CodeGen/PBQP/RegAllocSolver.h
 llvm-devel/include/llvm/CodeGen/PBQP/Solution.h
+llvm-devel/include/llvm/CodeGen/PBQPRAConstraint.h
 llvm-devel/include/llvm/CodeGen/Passes.h
 llvm-devel/include/llvm/CodeGen/PseudoSourceValue.h
 llvm-devel/include/llvm/CodeGen/RegAllocPBQP.h
@@ -507,7 +508,9 @@ llvm-devel/include/llvm/ProfileData/CoverageMappingWriter.h
 llvm-devel/include/llvm/ProfileData/InstrProf.h
 llvm-devel/include/llvm/ProfileData/InstrProfReader.h
 llvm-devel/include/llvm/ProfileData/InstrProfWriter.h
+llvm-devel/include/llvm/ProfileData/SampleProf.h
 llvm-devel/include/llvm/ProfileData/SampleProfReader.h
+llvm-devel/include/llvm/ProfileData/SampleProfWriter.h
 llvm-devel/include/llvm/Support/AIXDataTypesFix.h
 llvm-devel/include/llvm/Support/ARMBuildAttributes.h
 llvm-devel/include/llvm/Support/ARMEHABI.h
@@ -567,6 +570,7 @@ llvm-devel/include/llvm/Support/MemoryObject.h
 llvm-devel/include/llvm/Support/Mutex.h
 llvm-devel/include/llvm/Support/MutexGuard.h
 llvm-devel/include/llvm/Support/OnDiskHashTable.h
+llvm-devel/include/llvm/Support/Options.h
 llvm-devel/include/llvm/Support/OutputBuffer.h
 llvm-devel/include/llvm/Support/Path.h
 llvm-devel/include/llvm/Support/PluginLoader.h
@@ -588,9 +592,8 @@ llvm-devel/include/llvm/Support/Signals.h
 llvm-devel/include/llvm/Support/Solaris.h
 llvm-devel/include/llvm/Support/SourceMgr.h
 llvm-devel/include/llvm/Support/SpecialCaseList.h
-llvm-devel/include/llvm/Support/StreamableMemoryObject.h
+llvm-devel/include/llvm/Support/StreamingMemoryObject.h
 llvm-devel/include/llvm/Support/StringPool.h
-llvm-devel/include/llvm/Support/StringRefMemoryObject.h
 llvm-devel/include/llvm/Support/SwapByteOrder.h
 llvm-devel/include/llvm/Support/SystemUtils.h
 llvm-devel/include/llvm/Support/TargetRegistry.h
@@ -663,6 +666,7 @@ llvm-devel/include/llvm/Transforms/Utils/SSAUpdater.h
 llvm-devel/include/llvm/Transforms/Utils/SSAUpdaterImpl.h
 llvm-devel/include/llvm/Transforms/Utils/SimplifyIndVar.h
 llvm-devel/include/llvm/Transforms/Utils/SimplifyLibCalls.h
+llvm-devel/include/llvm/Transforms/Utils/SymbolRewriter.h
 llvm-devel/include/llvm/Transforms/Utils/UnifyFunctionExitNodes.h
 llvm-devel/include/llvm/Transforms/Utils/UnrollLoop.h
 llvm-devel/include/llvm/Transforms/Utils/ValueMapper.h
@@ -700,6 +704,7 @@ llvm-devel/lib/libLLVMExecutionEngine.a
 llvm-devel/lib/libLLVMHexagonAsmPrinter.a
 llvm-devel/lib/libLLVMHexagonCodeGen.a
 llvm-devel/lib/libLLVMHexagonDesc.a
+llvm-devel/lib/libLLVMHexagonDisassembler.a
 llvm-devel/lib/libLLVMHexagonInfo.a
 llvm-devel/lib/libLLVMIRReader.a
 llvm-devel/lib/libLLVMInstCombine.a
@@ -736,6 +741,7 @@ llvm-devel/lib/libLLVMPowerPCDesc.a
 llvm-devel/lib/libLLVMPowerPCDisassembler.a
 llvm-devel/lib/libLLVMPowerPCInfo.a
 llvm-devel/lib/libLLVMProfileData.a
+llvm-devel/lib/libLLVMR600AsmParser.a
 llvm-devel/lib/libLLVMR600AsmPrinter.a
 llvm-devel/lib/libLLVMR600CodeGen.a
 llvm-devel/lib/libLLVMR600Desc.a
@@ -951,6 +957,8 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersManual.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Projects.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Projects.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/R600Usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/R600Usage.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseProcess.html
