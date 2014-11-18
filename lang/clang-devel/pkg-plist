@@ -222,7 +222,9 @@ llvm-devel/include/clang/Basic/OperatorPrecedence.h
 llvm-devel/include/clang/Basic/PartialDiagnostic.h
 llvm-devel/include/clang/Basic/PlistSupport.h
 llvm-devel/include/clang/Basic/PrettyStackTrace.h
+llvm-devel/include/clang/Basic/SanitizerBlacklist.h
 llvm-devel/include/clang/Basic/Sanitizers.def
+llvm-devel/include/clang/Basic/Sanitizers.h
 llvm-devel/include/clang/Basic/SourceLocation.h
 llvm-devel/include/clang/Basic/SourceManager.h
 llvm-devel/include/clang/Basic/SourceManagerInternals.h
@@ -291,6 +293,8 @@ llvm-devel/include/clang/Frontend/MigratorOptions.h
 llvm-devel/include/clang/Frontend/MultiplexConsumer.h
 llvm-devel/include/clang/Frontend/PreprocessorOutputOptions.h
 llvm-devel/include/clang/Frontend/SerializedDiagnosticPrinter.h
+llvm-devel/include/clang/Frontend/SerializedDiagnosticReader.h
+llvm-devel/include/clang/Frontend/SerializedDiagnostics.h
 llvm-devel/include/clang/Frontend/TextDiagnostic.h
 llvm-devel/include/clang/Frontend/TextDiagnosticBuffer.h
 llvm-devel/include/clang/Frontend/TextDiagnosticPrinter.h
@@ -438,6 +442,7 @@ llvm-devel/include/clang/Tooling/ArgumentsAdjusters.h
 llvm-devel/include/clang/Tooling/CommonOptionsParser.h
 llvm-devel/include/clang/Tooling/CompilationDatabase.h
 llvm-devel/include/clang/Tooling/CompilationDatabasePluginRegistry.h
+llvm-devel/include/clang/Tooling/Core/Replacement.h
 llvm-devel/include/clang/Tooling/FileMatchTrie.h
 llvm-devel/include/clang/Tooling/JSONCompilationDatabase.h
 llvm-devel/include/clang/Tooling/Refactoring.h
@@ -451,8 +456,11 @@ llvm-devel/lib/clang/3.6.0/include/altivec.h
 llvm-devel/lib/clang/3.6.0/include/ammintrin.h
 llvm-devel/lib/clang/3.6.0/include/arm_neon.h
 llvm-devel/lib/clang/3.6.0/include/avx2intrin.h
+llvm-devel/lib/clang/3.6.0/include/avx512bwintrin.h
 llvm-devel/lib/clang/3.6.0/include/avx512erintrin.h
 llvm-devel/lib/clang/3.6.0/include/avx512fintrin.h
+llvm-devel/lib/clang/3.6.0/include/avx512vlbwintrin.h
+llvm-devel/lib/clang/3.6.0/include/avx512vlintrin.h
 llvm-devel/lib/clang/3.6.0/include/avxintrin.h
 llvm-devel/lib/clang/3.6.0/include/bmi2intrin.h
 llvm-devel/lib/clang/3.6.0/include/bmiintrin.h
@@ -507,6 +515,7 @@ llvm-devel/lib/libclangStaticAnalyzerCheckers.a
 llvm-devel/lib/libclangStaticAnalyzerCore.a
 llvm-devel/lib/libclangStaticAnalyzerFrontend.a
 llvm-devel/lib/libclangTooling.a
+llvm-devel/lib/libclangToolingCore.a
 llvm-devel/lib/python/Reporter.py
 llvm-devel/lib/python/Resources/FileRadar.scpt
 llvm-devel/lib/python/Resources/GetRadarVersion.scpt
