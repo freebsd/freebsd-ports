@@ -462,26 +462,3 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/translations/qt_uk.qm
 %%DATADIR%%/data/translations/qt_zh_CN.qm
 %%DATADIR%%/data/translations/qt_zh_TW.qm
-@dirrm %%DATADIR%%/data/translations
-@dirrm %%DATADIR%%/data/sounds/default
-@dirrm %%DATADIR%%/data/sounds
-@dirrm %%DATADIR%%/data/misc
-@dirrm %%DATADIR%%/data/gfx/gui/table/default_800x480
-@dirrm %%DATADIR%%/data/gfx/gui/table/default
-@dirrm %%DATADIR%%/data/gfx/gui/table/danuxi1
-@dirrm %%DATADIR%%/data/gfx/gui/table
-@dirrm %%DATADIR%%/data/gfx/gui/misc/actionpics
-@dirrm %%DATADIR%%/data/gfx/gui/misc
-@dirrm %%DATADIR%%/data/gfx/gui
-@dirrm %%DATADIR%%/data/gfx/cards/default4c
-@dirrm %%DATADIR%%/data/gfx/cards/default_800x480
-@dirrm %%DATADIR%%/data/gfx/cards/default
-@dirrm %%DATADIR%%/data/gfx/cards
-@dirrm %%DATADIR%%/data/gfx/avatars/default/people
-@dirrm %%DATADIR%%/data/gfx/avatars/default/misc
-@dirrm %%DATADIR%%/data/gfx/avatars/default
-@dirrm %%DATADIR%%/data/gfx/avatars
-@dirrm %%DATADIR%%/data/gfx
-@dirrm %%DATADIR%%/data/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
