@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	isomaster
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://littlesvr.ca/isomaster/releases/
 
