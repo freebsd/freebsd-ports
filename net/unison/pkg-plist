@@ -1,12 +1,10 @@
 bin/unison
 %%TEXT%%share/applications/unison.desktop
 %%TEXT%%bin/unison-text
+%%TEXT%%share/pixmaps/unison.png
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/unison-%%PORTVERSION%%-manual.html
 %%PORTDOCS%%%%DOCSDIR%%/unison-%%PORTVERSION%%-manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/unison-%%PORTVERSION%%-manual.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%TEXT%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
-%%TEXT%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
