@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module providing object tracking support for Devel::Events
 
 BUILD_DEPENDS=	p5-Devel-Events>=0:${PORTSDIR}/devel/p5-Devel-Events \

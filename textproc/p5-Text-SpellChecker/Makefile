@@ -7,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 OO interface for spell-checking a block of text
 
 RUN_DEPENDS=	p5-Text-Aspell>=0:${PORTSDIR}/textproc/p5-Text-Aspell
