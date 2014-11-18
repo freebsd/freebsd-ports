@@ -8,9 +8,3 @@ bin/freesynd
 %%DATADIR%%/data/music/intro.ogg
 %%DATADIR%%/data/ref/original_data.crc
 %%DATADIR%%/data/ref/research.dat
-@dirrmtry %%DATADIR%%/data/ref
-@dirrmtry %%DATADIR%%/data/music
-@dirrmtry %%DATADIR%%/data/lang
-@dirrmtry %%DATADIR%%/data/cursors
-@dirrmtry %%DATADIR%%/data
-@dirrmtry %%DATADIR%%
