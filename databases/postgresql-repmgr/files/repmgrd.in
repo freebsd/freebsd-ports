@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: repmgrd
+# REQUIRE: postgresql
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf to enable this
+# service:
+#
+# repmgrd_enable (bool):   Set to YES to enable repmgrd.  Default: NO
+#
+# repmgrd_config (path):   Default: %%PREFIX%%/etc/repmgr.conf
+#
+
+. /etc/rc.subr
+
+name=repmgrd
+rcvar=repmgrd_enable
+
+load_rc_config $name
+
+: ${repmgrd_enable:="NO"}
+: ${repmgrd_config="%%PREFIX%%/etc/repmgr.conf"}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+command_args="-p $pidfile -f $repmgrd_config"
+
+run_rc_command "$1"
+
