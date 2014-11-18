@@ -10,3 +10,5 @@ lib/liblua-5.1.so
 libdata/pkgconfig/lua-5.1.pc
 man/man1/lua51.1.gz
 man/man1/luac51.1.gz
+@dir lib/lua/5.1
+@dir %%DATADIR%%/5.1
