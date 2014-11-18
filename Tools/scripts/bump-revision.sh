@@ -59,7 +59,7 @@ do
 	    # 1, bail out and complain.
 	    # The proper fix is to do a stricter check that PORTREVISION
 	    # is an integer.
-	    awk -F "\t" '/^PORTREVISION\??=/{ rplc = gsub ($2,$2+1); if (rplc != 1) { exit 1 } };{ print }' "$1/Makefile" > $tempfile \
+	    awk -F "\t+" '/^PORTREVISION\??=/{ rplc = gsub ($2,$2+1); if (rplc != 1) { exit 1 } };{ print }' "$1/Makefile" > $tempfile \
             && { cat $tempfile > "$1/Makefile" ; printc "$1: $revision found, bumping it by 1." "green" ; } \
 	    || printc "$1: FAILED TO BUMP PORTREVISION" red
 	    ;;
