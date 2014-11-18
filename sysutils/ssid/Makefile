@@ -6,7 +6,7 @@ PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple setsid replacement
 
 LICENSE=	MIT

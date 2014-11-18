@@ -5,7 +5,7 @@ PORTNAME=	Services_Twitter
 PORTVERSION=	0.6.3
 CATEGORIES=	net www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP interface to Twitter's API
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2

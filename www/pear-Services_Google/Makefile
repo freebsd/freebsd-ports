@@ -5,7 +5,7 @@ PORTNAME=	Services_Google
 PORTVERSION=	0.2.0
 CATEGORIES=	www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP interface to access the Google SOAP Web APIs
 
 USES=	pear

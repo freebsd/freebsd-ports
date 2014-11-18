@@ -6,7 +6,7 @@ PORTVERSION=	1.7
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension to display form's action
 
 XPI_NUM=	1579

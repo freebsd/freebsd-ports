@@ -6,7 +6,7 @@ PORTVERSION=	0.6.3.5
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Saves and restores the state of all windows
 
 XPI_DISTNAME=	session_manager

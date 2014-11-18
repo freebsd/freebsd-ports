@@ -8,7 +8,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/fluxthemes/
 DISTNAME=	tenr.de-styles-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tenner themes pack for fluxbox
 
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox

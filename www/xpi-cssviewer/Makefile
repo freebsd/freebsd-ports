@@ -6,7 +6,7 @@ PORTVERSION=	1.0.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple CSS property viewer
 
 XPI_NUM=	2104

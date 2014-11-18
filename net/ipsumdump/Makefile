@@ -6,7 +6,7 @@ PORTVERSION=	1.84
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce ASCII summary of network traffic or tcpdump(1) file
 
 USES=		gmake perl5

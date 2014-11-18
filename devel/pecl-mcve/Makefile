@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL Extension for Interface the MCVE/Monetra API
 
 LIB_DEPENDS=	libmonetra.so:${PORTSDIR}/devel/libmonetra

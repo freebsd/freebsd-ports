@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shoutcast stream for gmpc
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \

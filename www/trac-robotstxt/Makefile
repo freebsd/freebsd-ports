@@ -9,7 +9,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	TracRobotsTxt-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows simple management of a robots.txt
 
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac

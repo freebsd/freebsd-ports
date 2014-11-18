@@ -5,7 +5,7 @@ PORTNAME=	path_redirect
 DISTVERSION=	6.x-1.0-rc2
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to allow redirects
 
 USES=		drupal:6,module

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JROCKWAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl 5 module to automatically create a DBIx::Class mapping table
 
 RUN_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose

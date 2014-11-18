@@ -6,7 +6,7 @@ PORTVERSION=	0.42
 CATEGORIES=	net-im perl5
 MASTER_SITES=	http://www.hardakers.net/twitmail/releases/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based mail-like interface to Twitter
 
 BUILD_DEPENDS=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \

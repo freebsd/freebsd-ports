@@ -7,7 +7,7 @@ CATEGORIES=	irc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parser for the IRC protocol
 
 LICENSE=	ART10 GPLv1

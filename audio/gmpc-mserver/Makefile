@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lets you stream music files to your mpd that are not in your database
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \

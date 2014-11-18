@@ -6,7 +6,7 @@ PORTVERSION=	2.8.4
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPOlight/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful web content management system
 
 NO_BUILD=	yes

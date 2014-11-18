@@ -6,7 +6,7 @@ PORTVERSION=	1.0.7
 PORTREVISION=	1
 CATEGORIES=	dns net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolver library used to communicate with a DNS server
 
 PORTSCOUT=	skipv:1.00b2,1.00b1

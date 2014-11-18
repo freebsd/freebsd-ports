@@ -6,7 +6,7 @@ PORTVERSION=	1.0305
 CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/${PORTNAME}/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New Visual Shell
 
 BUILD_DEPENDS=	p5-Term-Screen>=0:${PORTSDIR}/devel/p5-Term-Screen

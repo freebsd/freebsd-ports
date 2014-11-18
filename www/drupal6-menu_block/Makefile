@@ -5,7 +5,7 @@ PORTNAME=	menu_block
 DISTVERSION=	6.x-2.4
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to provide configurable menu tree blocks
 
 USES=		drupal:6,module

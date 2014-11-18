@@ -5,7 +5,7 @@ PORTNAME=	PHP_CodeSniffer
 PORTVERSION=	1.5.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP Script Tokenises and Sniffs PHP and JavaScript code
 
 LICENSE=	BSD3CLAUSE

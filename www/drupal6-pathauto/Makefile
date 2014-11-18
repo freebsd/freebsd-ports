@@ -5,7 +5,7 @@ PORTNAME=	pathauto
 DISTVERSION=	6.x-2.0
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically generates URLs for Drupal content
 
 RUN_DEPENDS=	drupal6-token>=0:${PORTSDIR}/www/drupal6-token

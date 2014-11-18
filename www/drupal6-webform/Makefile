@@ -6,7 +6,7 @@ DISTVERSION=	6.x-3.17
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal module to allow easy creation of forms
 
 USES=		drupal:6,module

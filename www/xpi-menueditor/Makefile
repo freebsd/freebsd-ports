@@ -6,7 +6,7 @@ PORTVERSION=	1.2.7
 DISTVERSIONSUFFIX=	-fx+tb
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Customize application menus
 
 XPI_DISTNAME=	menu_editor

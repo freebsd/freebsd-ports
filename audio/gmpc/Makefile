@@ -9,7 +9,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured GTK2 client for musicpd
 
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2 \

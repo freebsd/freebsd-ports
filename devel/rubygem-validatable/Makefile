@@ -6,7 +6,7 @@ PORTVERSION=	1.6.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for adding database/object validations
 
 USE_RUBY=	yes

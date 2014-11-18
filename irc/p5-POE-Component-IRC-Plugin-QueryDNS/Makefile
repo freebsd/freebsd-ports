@@ -7,7 +7,7 @@ CATEGORIES=	irc perl5 devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POE::Component::IRC plugin for IRC based DNS queries
 
 BUILD_DEPENDS=	p5-Net-IP>=1.25:${PORTSDIR}/net-mgmt/p5-Net-IP \
