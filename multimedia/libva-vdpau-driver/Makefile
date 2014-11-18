@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+PLIST_FILES=	lib/va/nvidia_drv_video.so lib/va/s3g_drv_video.so lib/va/vdpau_drv_video.so
+
 OPTIONS_DEFINE=	DEBUG
 DEBUG_CONFIGURE_ENABLE=	debug
 
