@@ -4,7 +4,7 @@
 
 PORTNAME=	geary
 PORTVERSION=	0.8.0
-CATEGORIES=	deskutils gnome
+CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
