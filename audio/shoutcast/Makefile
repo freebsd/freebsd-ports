@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	shoutcast
-PORTVERSION=	2.2.1.109
-PORTREVISION=	1
+PORTVERSION=	2.4.2.167
 CATEGORIES=	audio net
 MASTER_SITES=	http://download.nullsoft.com/shoutcast/tools/
-DISTNAME=	sc_serv2_bsd_8_x_11_29_2013
+DISTNAME=	sc_serv2_bsd-latest
 
-MAINTAINER=	jarrod@downtools.com.au
+MAINTAINER=	sbruno@freebsd.org
 COMMENT=	SHOUTcast Distributed Network Audio Server
 
 RESTRICTED=	redistribution of software is not permitted
@@ -81,6 +80,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/builder.sh ${STAGEDIR}${PREFIX}/sbin
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}${SHOUTCASTLDIR}
 	${MKDIR} ${STAGEDIR}${SHOUTCASTDIR}
@@ -89,6 +89,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/DNAS_Server_Changelog.html ${STAGEDIR}${DOCSDIR}/DNAS_Server_Changelog.html
 	${INSTALL_DATA} ${WRKSRC}/Readme_DNAS_Server.html ${STAGEDIR}${DOCSDIR}/Readme_DNAS_Server.html
 	${INSTALL_DATA} ${WRKSRC}/tos.txt ${STAGEDIR}${DOCSDIR}/tos.txt
+	${INSTALL_DATA} ${WRKSRC}/cacert.pem ${STAGEDIR}${DOCSDIR}/cacert.pem
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
 	${INSTALL_DATA} ${WRKSRC}/docs/DNAS_Server_XML_Responses.html ${STAGEDIR}${DOCSDIR}/docs/DNAS_Server_XML_Responses.html
 	${INSTALL_DATA} ${WRKSRC}/docs/DNAS_Server_Authhash_Management.html ${STAGEDIR}${DOCSDIR}/docs/DNAS_Server_Authhash_Management.html
@@ -99,6 +100,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/res/Linux_Console.png ${STAGEDIR}${DOCSDIR}/docs/res/Linux_Console.png
 	${INSTALL_DATA} ${WRKSRC}/docs/res/Output_tag_configuration_error.png ${STAGEDIR}${DOCSDIR}/docs/res/Output_tag_configuration_error.png
 	${INSTALL_DATA} ${WRKSRC}/docs/res/Stream_Ban_List_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Stream_Ban_List_Page.png
+	${INSTALL_DATA} ${WRKSRC}/docs/res/Stream_Blocked_User_Agent_List_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Stream_Ban_Blocked_User_Agent_List_Page.png
 	${INSTALL_DATA} ${WRKSRC}/docs/res/Start.png ${STAGEDIR}${DOCSDIR}/docs/res/Start.png
 	${INSTALL_DATA} ${WRKSRC}/docs/res/Server_Bandwidth_Page.png ${STAGEDIR}${DOCSDIR}/docs/res/Server_Bandwidth_Page.png
 	${INSTALL_DATA} ${WRKSRC}/docs/res/Manual.png ${STAGEDIR}${DOCSDIR}/docs/res/Manual.png
