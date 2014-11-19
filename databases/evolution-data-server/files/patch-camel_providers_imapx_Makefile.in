@@ -1,8 +1,6 @@
-Our gperf (2.7.2) doesn't understand --output-file.
-
---- camel/providers/imapx/Makefile.in.orig	2010-04-26 14:33:56.000000000 +0200
-+++ camel/providers/imapx/Makefile.in	2010-04-26 14:35:10.000000000 +0200
-@@ -914,7 +914,7 @@ uninstall-am: uninstall-camel_providerDA
+--- camel/providers/imapx/Makefile.in.orig	2014-03-14 14:10:01.171545474 +0000
++++ camel/providers/imapx/Makefile.in	2014-03-14 14:10:08.618544114 +0000
+@@ -1117,7 +1117,7 @@
  
  
  camel-imapx-tokenise.h: camel-imapx-tokens.txt

@@ -3,6 +3,7 @@
 
     COMMENT = X11 themes
 
+    SUBDIR += adwaita-icon-theme
     SUBDIR += audacious-skins
     SUBDIR += beastie
     SUBDIR += claws-mail-themes
@@ -48,9 +49,11 @@
     SUBDIR += gnome-icons-slick
     SUBDIR += gnome-icons-snow-apple
     SUBDIR += gnome-icons-stylish
+    SUBDIR += gnome-icon-theme-symbolic
     SUBDIR += gnome-icons-ximian-south
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras
+    SUBDIR += gnome-themes-standard
     SUBDIR += greybird-theme
     SUBDIR += gtk-aluminumalloy-cryogenic-theme
     SUBDIR += gtk-aluminumalloy-smog-theme
@@ -138,6 +141,7 @@
     SUBDIR += metacity-milk-theme
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
+    SUBDIR += mint-themes
     SUBDIR += murrine-configurator
     SUBDIR += nimbus
     SUBDIR += numix-theme

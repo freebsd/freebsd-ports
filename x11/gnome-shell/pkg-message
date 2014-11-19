@@ -1,33 +1,12 @@
-Running
+Gnome-shell requires acceleration of to work. For this a nvidia card
+with the nvidia-driver, or a Intel/ATI KMS enabled card is needed.
 
-You can either start gnome-shell "nested" in a window within your current 
-session, or you can run it within your session replacing gnome-panel and 
-window manager.
+For the nvidia users no other changes are needed. For Intel/ATI KMS
+driver the user needs to have read/write permissions on
+/dev/dri/cardN (usually N=0). If gnome-shell is launched from gdm, the
+gdm user also needs this access.
 
-Depending on the state of your X drivers, one or of the other of these may
-work better. So, if the first one you try doesn't work, try the other.
+Access can be granted by adding the user(s) to the wheel group or using
+a devfs.rules(5) to change the mode of the /dev/dri/card0 on creation. 
 
-====
-
-Running gnome-shell replacing the panel
-
-This approach is best when trying out the GNOME Shell and wanting to see its
-full potential.
-
-gnome-shell --replace
-
-When gnome-shell exits (you can kill it with Control-C in the terminal in which
-you started it), gnome-panel and metacity are restarted.
-
-====
-
-Running gnome-shell nested
-
-This approach is useful when developing the GNOME Shell and wanting to quickly
-test some changes. NOTE: It isn't useful for getting a good feel for how the
-shell works since it will be really slow, and won't properly integrate with
-the rest of your desktop.
-
-gnome-shell
-(This requires a relatively recent version of Xephyr with GLX support to be
-installed on your system (x11-servers/xephyr).
+	add path 'dri/*' mode 0666 group operator

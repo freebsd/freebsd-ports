@@ -27,13 +27,7 @@ LIBS+=		-L${LOCALBASE}/lib
 
 AWN_DESKTOP?=	agnostic
 
-.if ${AWN_DESKTOP} == "gnome"
-USE_GNOME+=	gnomedesktop libgnomeui
-CONFIGURE_ARGS+=	--with-desktop=gnome
-CONFLICTS=	${PORTNAME}-xfce4-[0-9]* ${PORTNAME}-[0-9]*
-WITH_GCONF=	yes
-PKGNAMESUFFIX=	-gnome
-.elif ${AWN_DESKTOP} == "xfce4"
+.if ${AWN_DESKTOP} == "xfce4"
 OPTIONS_DEFINE=	GCONF
 USE_XFCE+=	thunar
 CONFIGURE_ARGS+=	--with-desktop=xfce4

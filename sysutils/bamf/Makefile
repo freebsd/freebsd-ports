@@ -13,7 +13,7 @@ COMMENT=	BAMF Application Matching Framework
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala \
 	${PYTHON_PKGNAMEPREFIX}libxml2>=2.8.0:${PORTSDIR}/textproc/py-libxml2 \
 	${PYTHON_PKGNAMEPREFIX}libxslt>=1.1.28:${PORTSDIR}/textproc/py-libxslt
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \

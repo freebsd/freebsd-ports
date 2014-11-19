@@ -15,7 +15,6 @@ include/gconf/2/gconf/gconf-listeners.h
 include/gconf/2/gconf/gconf-schema.h
 include/gconf/2/gconf/gconf-value.h
 include/gconf/2/gconf/gconf.h
-libexec/gconf-defaults-mechanism
 %%LDAP%%lib/GConf/2/libgconfbackend-evoldap.a
 %%LDAP%%lib/GConf/2/libgconfbackend-evoldap.so
 lib/GConf/2/libgconfbackend-oldxml.a
@@ -30,12 +29,36 @@ lib/libgconf-2.so
 lib/libgconf-2.so.4
 lib/libgconf-2.so.4.1.5
 libdata/pkgconfig/gconf-2.0.pc
-libexec/gconf-sanity-check-2
+libexec/gconf-defaults-mechanism
 libexec/gconfd-2
+man/man1/gconftool-2.1.gz
+man/man1/gsettings-data-convert.1.gz
+man/man1/gsettings-schema-convert.1.gz
 %%LDAP%%share/GConf/schema/evoldap.schema
 share/aclocal/gconf-2.m4
 share/dbus-1/system-services/org.gnome.GConf.Defaults.service
 share/dbus-1/services/org.gnome.GConf.service
+share/doc/gconf/ch01.html
+share/doc/gconf/gconf-gconf-backend.html
+share/doc/gconf/gconf-gconf-changeset.html
+share/doc/gconf/gconf-gconf-client.html
+share/doc/gconf/gconf-gconf-engine.html
+share/doc/gconf/gconf-gconf-error.html
+share/doc/gconf/gconf-gconf-internals.html
+share/doc/gconf/gconf-gconf-listeners.html
+share/doc/gconf/gconf-gconf-locale.html
+share/doc/gconf/gconf-gconf-schema.html
+share/doc/gconf/gconf-gconf-sources.html
+share/doc/gconf/gconf-gconf-value.html
+share/doc/gconf/gconf-gconf.html
+share/doc/gconf/gconf.devhelp2
+share/doc/gconf/home.png
+share/doc/gconf/index.html
+share/doc/gconf/index.sgml
+share/doc/gconf/left.png
+share/doc/gconf/right.png
+share/doc/gconf/style.css
+share/doc/gconf/up.png
 share/gir-1.0/GConf-2.0.gir
 share/locale/am/LC_MESSAGES/GConf2.mo
 share/locale/ar/LC_MESSAGES/GConf2.mo
@@ -58,6 +81,7 @@ share/locale/el/LC_MESSAGES/GConf2.mo
 share/locale/en@shaw/LC_MESSAGES/GConf2.mo
 share/locale/en_CA/LC_MESSAGES/GConf2.mo
 share/locale/en_GB/LC_MESSAGES/GConf2.mo
+share/locale/eo/LC_MESSAGES/GConf2.mo
 share/locale/es/LC_MESSAGES/GConf2.mo
 share/locale/et/LC_MESSAGES/GConf2.mo
 share/locale/eu/LC_MESSAGES/GConf2.mo
@@ -77,6 +101,7 @@ share/locale/is/LC_MESSAGES/GConf2.mo
 share/locale/it/LC_MESSAGES/GConf2.mo
 share/locale/ja/LC_MESSAGES/GConf2.mo
 share/locale/ka/LC_MESSAGES/GConf2.mo
+share/locale/km/LC_MESSAGES/GConf2.mo
 share/locale/kn/LC_MESSAGES/GConf2.mo
 share/locale/ko/LC_MESSAGES/GConf2.mo
 share/locale/ku/LC_MESSAGES/GConf2.mo
@@ -113,6 +138,7 @@ share/locale/ta/LC_MESSAGES/GConf2.mo
 share/locale/te/LC_MESSAGES/GConf2.mo
 share/locale/th/LC_MESSAGES/GConf2.mo
 share/locale/tr/LC_MESSAGES/GConf2.mo
+share/locale/ug/LC_MESSAGES/GConf2.mo
 share/locale/uk/LC_MESSAGES/GConf2.mo
 share/locale/vi/LC_MESSAGES/GConf2.mo
 share/locale/xh/LC_MESSAGES/GConf2.mo
@@ -122,8 +148,5 @@ share/locale/zh_HK/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 share/polkit-1/actions/org.gnome.gconf.defaults.policy
 share/sgml/gconf/gconf-1.0.dtd
-man/man1/gconftool-2.1.gz
-man/man1/gsettings-data-convert.1.gz
-man/man1/gsettings-schema-convert.1.gz
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true

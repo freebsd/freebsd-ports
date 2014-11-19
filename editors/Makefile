@@ -68,7 +68,6 @@
     SUBDIR += gedit-plugins
     SUBDIR += ghex
     SUBDIR += gmanedit
-    SUBDIR += gnome2-office
     SUBDIR += gnotepad+
     SUBDIR += gobby
     SUBDIR += gwrite

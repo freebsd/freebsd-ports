@@ -1,9 +1,10 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/py-atspi/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/accessibility/py-atspi/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	atspi
-PORTVERSION=	2.8.0
+PORTVERSION=	2.12.0
+PORTREVISION=	3
 CATEGORIES=	accessibility x11-toolkits python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pyatspi/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at
 CONFLICTS=	at-spi-1.[0-9]*
 
 USES=		gettext gmake pathfix pkgconfig python:2 tar:xz
-USE_GNOME=	gnomehier intlhack pygobject3
+USE_GNOME=	intlhack pygobject3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

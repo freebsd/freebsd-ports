@@ -1,41 +1,33 @@
-# Created by: Jeremy Lea <reg@shale.csir.co.za>
+# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/games/gnome-chess/Makefile 19989 2014-10-18 09:53:56Z gusi $
 
 PORTNAME=	gnome-chess
-PORTVERSION=	3.10.2
-PORTREVISION=	2
+PORTVERSION=	3.14.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GUI chess front-end to crafy, for the GNOME Desktop Environment
+COMMENT=	Gnome chess
 
-RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
-BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty \
-		itstool:${PORTSDIR}/textproc/itstool \
-		xmllint:${PORTSDIR}/textproc/libxml2 \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
+		itstool:${PORTSDIR}/textproc/itstool
 
-USES=		gmake pkgconfig desktop-file-utils shared-mime-info tar:xz
-USE_GL=		gl glu
-USE_GNOME=	gtk30 intlhack librsvg2
-INSTALLS_OMF=	yes
+USES=		desktop-file-utils gettext gmake pkgconfig tar:xz
+USE_GNOME=	gtk30 intlhack librsvg2 libxml2:build
 INSTALLS_ICONS=	yes
+USE_XORG=	x11
+USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-MAKE_ARGS=	XML_I18N_UPDATE="${TRUE}" XML_I18N_EXTRACT="${TRUE}"
-DATADIR=	${PREFIX}/share/gnome-chess
 
-OPTIONS_DEFINE=	NLS
+GLIB_SCHEMAS=	org.gnome.chess.gschema.xml
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-USES+=		gettext
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_DEFINE=	GNUCHESS
+OPTIONS_DEFAULT=GNUCHESS
+GNUCHESS_DESC=	Use gnuchess engine for computer player
+GNUCHESS_RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess
 
 .include <bsd.port.mk>

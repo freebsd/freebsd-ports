@@ -11,6 +11,7 @@
     SUBDIR += atk
     SUBDIR += atk-reference
     SUBDIR += atkmm
+    SUBDIR += caribou
     SUBDIR += dasher
     SUBDIR += eflite
     SUBDIR += gnome-mag
@@ -30,6 +31,7 @@
     SUBDIR += orca
     SUBDIR += py-atspi
     SUBDIR += py-papi
+    SUBDIR += py3-atspi
     SUBDIR += qt4-accessible
     SUBDIR += redshift
     SUBDIR += rubygem-atk

@@ -1,0 +1,245 @@
+Revert the following commit, so we can lower the gbm requirements.
+Because it needs gbm 10.3+
+
+This exposes a bug that the cursor isn't rendered correctly on newer
+Radeon cards that support 256x256 cursors. But we don't support those
+really yet.
+
+From 488dd0b402dc8c56a70f995a7456c2ff511a818b Mon Sep 17 00:00:00 2001
+From: "Jasper St. Pierre" <jstpierre@mecheye.net>
+Date: Wed, 24 Sep 2014 15:40:09 -0600
+Subject: Support for hardware cursor sizes other than 64x64 on wayland
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Use the new DRM capabilities to figure out the correct cursor size, and
+make sure that matches instead of hardcoding 64x64. This fixes incorrect
+rendering on some newer AMD cards that support 256x256 cursors.
+
+Based heavily on a patch by:
+Alvaro Fernando García <alvarofernandogarcia@gmail.com>
+
+
+--- ./src/backends/native/meta-cursor-renderer-native.c.orig	2014-10-02 16:29:20.000000000 +0200
++++ ./src/backends/native/meta-cursor-renderer-native.c	2014-11-03 17:38:11.528443462 +0100
+@@ -27,27 +27,16 @@
+ #include "meta-cursor-renderer-native.h"
+ 
+ #include <gbm.h>
+-#include <xf86drm.h>
+ 
+ #include "meta-cursor-private.h"
+ #include "meta-monitor-manager.h"
+ 
+-#ifndef DRM_CAP_CURSOR_WIDTH
+-#define DRM_CAP_CURSOR_WIDTH 0x8
+-#endif
+-#ifndef DRM_CAP_CURSOR_HEIGHT
+-#define DRM_CAP_CURSOR_HEIGHT 0x9
+-#endif
+-
+ struct _MetaCursorRendererNativePrivate
+ {
+   gboolean has_hw_cursor;
+ 
+   int drm_fd;
+   struct gbm_device *gbm;
+-
+-  uint64_t cursor_width;
+-  uint64_t cursor_height;
+ };
+ typedef struct _MetaCursorRendererNativePrivate MetaCursorRendererNativePrivate;
+ 
+@@ -82,13 +71,17 @@ set_crtc_cursor (MetaCursorRendererNativ
+     {
+       struct gbm_bo *bo;
+       union gbm_bo_handle handle;
++      int width, height;
+       int hot_x, hot_y;
+ 
+       bo = meta_cursor_reference_get_gbm_bo (cursor, &hot_x, &hot_y);
+ 
+       handle = gbm_bo_get_handle (bo);
++      width = gbm_bo_get_width (bo);
++      height = gbm_bo_get_height (bo);
++
+       drmModeSetCursor2 (priv->drm_fd, crtc->crtc_id, handle.u32,
+-                         priv->cursor_width, priv->cursor_height, hot_x, hot_y);
++                         width, height, hot_x, hot_y);
+     }
+   else
+     {
+@@ -193,19 +186,6 @@ meta_cursor_renderer_native_init (MetaCu
+       CoglRenderer *cogl_renderer = cogl_display_get_renderer (cogl_context_get_display (ctx));
+       priv->drm_fd = cogl_kms_renderer_get_kms_fd (cogl_renderer);
+       priv->gbm = gbm_create_device (priv->drm_fd);
+-
+-      uint64_t width, height;
+-      if (drmGetCap (priv->drm_fd, DRM_CAP_CURSOR_WIDTH, &width) == 0 &&
+-          drmGetCap (priv->drm_fd, DRM_CAP_CURSOR_HEIGHT, &height) == 0)
+-        {
+-          priv->cursor_width = width;
+-          priv->cursor_height = height;
+-        }
+-      else
+-        {
+-          priv->cursor_width = 64;
+-          priv->cursor_height = 64;
+-        }
+     }
+ #endif
+ }
+@@ -219,16 +199,6 @@ meta_cursor_renderer_native_get_gbm_devi
+ }
+ 
+ void
+-meta_cursor_renderer_native_get_cursor_size (MetaCursorRendererNative *native,
+-                                             uint64_t *width, uint64_t *height)
+-{
+-  MetaCursorRendererNativePrivate *priv = meta_cursor_renderer_native_get_instance_private (native);
+-
+-  *width = priv->cursor_width;
+-  *height = priv->cursor_height;
+-}
+-
+-void
+ meta_cursor_renderer_native_force_update (MetaCursorRendererNative *native)
+ {
+   update_hw_cursor (native, TRUE);
+--- ./src/backends/native/meta-cursor-renderer-native.h.orig	2014-10-02 16:29:20.000000000 +0200
++++ ./src/backends/native/meta-cursor-renderer-native.h	2014-11-03 17:38:11.529443324 +0100
+@@ -50,7 +50,6 @@ struct _MetaCursorRendererNativeClass
+ GType meta_cursor_renderer_native_get_type (void) G_GNUC_CONST;
+ 
+ struct gbm_device * meta_cursor_renderer_native_get_gbm_device (MetaCursorRendererNative *renderer);
+-void meta_cursor_renderer_native_get_cursor_size (MetaCursorRendererNative *native, uint64_t *width, uint64_t *height);
+ void meta_cursor_renderer_native_force_update (MetaCursorRendererNative *renderer);
+ 
+ #endif /* META_CURSOR_RENDERER_NATIVE_H */
+--- ./src/backends/meta-cursor.c.orig	2014-10-30 11:57:01.000000000 +0100
++++ ./src/backends/meta-cursor.c	2014-11-03 17:38:11.526443521 +0100
+@@ -140,55 +140,34 @@ load_cursor_on_client (MetaCursor cursor
+ }
+ 
+ static void
+-get_hardware_cursor_size (uint64_t *cursor_width, uint64_t *cursor_height)
+-{
+-#ifdef HAVE_NATIVE_BACKEND
+-  MetaBackend *meta_backend = meta_get_backend ();
+-  MetaCursorRenderer *renderer = meta_backend_get_cursor_renderer (meta_backend);
+-
+-  if (META_IS_CURSOR_RENDERER_NATIVE (renderer))
+-    {
+-      meta_cursor_renderer_native_get_cursor_size (META_CURSOR_RENDERER_NATIVE (renderer), cursor_width, cursor_height);
+-      return;
+-    }
+-#endif
+-
+-  g_assert_not_reached ();
+-}
+-
+-static void
+ meta_cursor_image_load_gbm_buffer (struct gbm_device *gbm,
+                                    MetaCursorImage   *image,
+                                    uint8_t           *pixels,
+-                                   uint               width,
+-                                   uint               height,
++                                   int                width,
++                                   int                height,
+                                    int                rowstride,
+                                    uint32_t           gbm_format)
+ {
+-  uint64_t cursor_width, cursor_height;
+-  get_hardware_cursor_size (&cursor_width, &cursor_height);
+-
+-  if (width > cursor_width || height > cursor_height)
++  if (width > 64 || height > 64)
+     {
+-      meta_warning ("Invalid theme cursor size (must be at most %ux%u)\n",
+-                    (unsigned int)cursor_width, (unsigned int)cursor_height);
++      meta_warning ("Invalid theme cursor size (must be at most 64x64)\n");
+       return;
+     }
+ 
+   if (gbm_device_is_format_supported (gbm, gbm_format,
+-                                      GBM_BO_USE_CURSOR | GBM_BO_USE_WRITE))
++                                      GBM_BO_USE_CURSOR_64X64 | GBM_BO_USE_WRITE))
+     {
+-      uint8_t buf[4 * cursor_width * cursor_height];
+-      uint i;
++      uint8_t buf[4 * 64 * 64];
++      int i;
+ 
+-      image->bo = gbm_bo_create (gbm, cursor_width, cursor_height,
+-                                 gbm_format, GBM_BO_USE_CURSOR | GBM_BO_USE_WRITE);
++      image->bo = gbm_bo_create (gbm, 64, 64,
++                                 gbm_format, GBM_BO_USE_CURSOR_64X64 | GBM_BO_USE_WRITE);
+ 
+       memset (buf, 0, sizeof(buf));
+       for (i = 0; i < height; i++)
+-        memcpy (buf + i * 4 * cursor_width, pixels + i * rowstride, width * 4);
++        memcpy (buf + i * 4 * 64, pixels + i * rowstride, width * 4);
+ 
+-      gbm_bo_write (image->bo, buf, cursor_width * cursor_height * 4);
++      gbm_bo_write (image->bo, buf, 64 * 64 * 4);
+     }
+   else
+     meta_warning ("HW cursor for format %d not supported\n", gbm_format);
+@@ -212,7 +191,7 @@ static void
+ meta_cursor_image_load_from_xcursor_image (MetaCursorImage   *image,
+                                            XcursorImage      *xc_image)
+ {
+-  uint width, height, rowstride;
++  int width, height, rowstride;
+   CoglPixelFormat cogl_format;
+   uint32_t gbm_format;
+   ClutterBackend *clutter_backend;
+@@ -283,8 +262,7 @@ meta_cursor_image_load_from_buffer (Meta
+   CoglContext *cogl_context;
+   struct wl_shm_buffer *shm_buffer;
+   uint32_t gbm_format;
+-  uint64_t cursor_width, cursor_height;
+-  uint width, height;
++  int width, height;
+ 
+   image->hot_x = hot_x;
+   image->hot_y = hot_y;
+@@ -335,23 +313,22 @@ meta_cursor_image_load_from_buffer (Meta
+     }
+   else
+     {
+-      if (gbm)
++      /* HW cursors must be 64x64, but 64x64 is huge, and no cursor theme actually uses
++         that, so themed cursors must be padded with transparent pixels to fill the
++         overlay. This is trivial if we have CPU access to the data, but it's not
++         possible if the buffer is in GPU memory (and possibly tiled too), so if we
++         don't get the right size, we fallback to GL.
++      */
++      if (width != 64 || height != 64)
+         {
+-          /* HW cursors have a predefined size (at least 64x64), which usually is bigger than cursor theme
+-             size, so themed cursors must be padded with transparent pixels to fill the
+-             overlay. This is trivial if we have CPU access to the data, but it's not
+-             possible if the buffer is in GPU memory (and possibly tiled too), so if we
+-             don't get the right size, we fallback to GL.
+-          */
+-          get_hardware_cursor_size (&cursor_width, &cursor_height);
+-
+-          if (width != cursor_width || height != cursor_height)
+-            {
+-              meta_warning ("Invalid cursor size (must be 64x64), falling back to software (GL) cursors\n");
+-              return;
+-            }
++          meta_warning ("Invalid cursor size (must be 64x64), falling back to software (GL) cursors\n");
++          return;
++        }
+ 
+-          image->bo = gbm_bo_import (gbm, GBM_BO_IMPORT_WL_BUFFER, buffer, GBM_BO_USE_CURSOR);
++      if (gbm)
++        {
++          image->bo = gbm_bo_import (gbm, GBM_BO_IMPORT_WL_BUFFER,
++                                     buffer, GBM_BO_USE_CURSOR_64X64);
+           if (!image->bo)
+             meta_warning ("Importing HW cursor from wl_buffer failed\n");
+         }

@@ -19,6 +19,7 @@
     SUBDIR += emesene
     SUBDIR += empathy
     SUBDIR += farsight2
+    SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += folks
     SUBDIR += folks04
@@ -53,6 +54,8 @@
     SUBDIR += ktp-send-file
     SUBDIR += ktp-text-ui
     SUBDIR += libjreen
+    SUBDIR += libnice-gst010
+    SUBDIR += libnice-gst1
     SUBDIR += libnice
     SUBDIR += libpurple
     SUBDIR += libtelepathy
@@ -144,6 +147,7 @@
     SUBDIR += telegram-cli
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farsight
+    SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-haze
@@ -153,6 +157,7 @@
     SUBDIR += telepathy-mission-control
     SUBDIR += telepathy-python
     SUBDIR += telepathy-qt4
+    SUBDIR += telepathy-rakia
     SUBDIR += telepathy-salut
     SUBDIR += telepathy-sofiasip
     SUBDIR += tg

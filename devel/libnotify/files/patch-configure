@@ -1,6 +1,6 @@
---- configure.orig	2011-08-30 23:03:20.000000000 +0200
-+++ configure	2011-08-30 23:03:01.000000000 +0200
-@@ -648,8 +648,6 @@
+--- configure.orig	2014-03-10 12:16:13.565833797 +0000
++++ configure	2014-03-10 12:18:02.733826506 +0000
+@@ -668,8 +668,6 @@
  INTROSPECTION_COMPILER
  INTROSPECTION_SCANNER
  GLIB_GENMARSHAL
@@ -9,7 +9,7 @@
  PACKAGE_LIBS
  PACKAGE_CFLAGS
  PKG_CONFIG_LIBDIR
-@@ -806,8 +804,6 @@
+@@ -829,8 +827,6 @@
  PKG_CONFIG_LIBDIR
  PACKAGE_CFLAGS
  PACKAGE_LIBS
@@ -18,7 +18,7 @@
  GTKDOC_DEPS_CFLAGS
  GTKDOC_DEPS_LIBS
  XMLTO
-@@ -1477,9 +1473,6 @@
+@@ -1500,9 +1496,6 @@
                C compiler flags for PACKAGE, overriding pkg-config
    PACKAGE_LIBS
                linker flags for PACKAGE, overriding pkg-config
@@ -28,7 +28,7 @@
    GTKDOC_DEPS_CFLAGS
                C compiler flags for GTKDOC_DEPS, overriding pkg-config
    GTKDOC_DEPS_LIBS
-@@ -11664,98 +11657,6 @@
+@@ -11830,99 +11823,6 @@
  
  fi
  
@@ -48,6 +48,7 @@
 -  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
 -  test $ac_status = 0; }; then
 -  pkg_cv_TESTS_CFLAGS=`$PKG_CONFIG --cflags "$tests_modules" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
 -else
 -  pkg_failed=yes
 -fi
@@ -64,6 +65,7 @@
 -  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
 -  test $ac_status = 0; }; then
 -  pkg_cv_TESTS_LIBS=`$PKG_CONFIG --libs "$tests_modules" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
 -else
 -  pkg_failed=yes
 -fi
@@ -83,9 +85,9 @@
 -        _pkg_short_errors_supported=no
 -fi
 -        if test $_pkg_short_errors_supported = yes; then
--	        TESTS_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "$tests_modules" 2>&1`
+-	        TESTS_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$tests_modules" 2>&1`
 -        else
--	        TESTS_PKG_ERRORS=`$PKG_CONFIG --print-errors "$tests_modules" 2>&1`
+-	        TESTS_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$tests_modules" 2>&1`
 -        fi
 -	# Put the nasty error message in config.log where it belongs
 -	echo "$TESTS_PKG_ERRORS" >&5
@@ -100,7 +102,6 @@
 -Alternatively, you may set the environment variables TESTS_CFLAGS
 -and TESTS_LIBS to avoid the need to call pkg-config.
 -See the pkg-config man page for more details." "$LINENO" 5
--
 -elif test $pkg_failed = untried; then
 -     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 -$as_echo "no" >&6; }
@@ -116,7 +117,6 @@
 -
 -To get pkg-config, see <http://pkg-config.freedesktop.org/>.
 -See \`config.log' for more details" "$LINENO" 5; }
--
 -else
 -	TESTS_CFLAGS=$pkg_cv_TESTS_CFLAGS
 -	TESTS_LIBS=$pkg_cv_TESTS_LIBS
@@ -124,6 +124,7 @@
 -$as_echo "yes" >&6; }
 -
 -fi
- 
+-
  GLIB_GENMARSHAL=`pkg-config --variable=glib_genmarshal glib-2.0`
+ 
  

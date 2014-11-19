@@ -1,29 +1,27 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/archivers/file-roller/Makefile,v 1.184 2010/11/15 22:58:48 kwm Exp $
+#   $MCom: ports/trunk/archivers/file-roller/Makefile 19980 2014-10-17 06:01:57Z gusi $
 
 PORTNAME=	file-roller
-PORTVERSION=	2.32.1
-PORTREVISION=	2
+PORTVERSION=	3.14.1
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Archive manager for zip files, tar, etc
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
-    		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
+    		unzip:${PORTSDIR}/archivers/unzip
 
 USES=		desktop-file-utils gettext gmake libtool \
-		pathfix pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix intlhack gnomedocutils gtk20 gconf2
+		pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 USE_XORG=	sm
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-GNOME_DESKTOP_VERSION=2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -31,26 +29,28 @@ CONFIGURE_ARGS=	--disable-packagekit
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS NEWS README TODO ChangeLog
-GCONF_SCHEMAS=	file-roller.schemas
+GLIB_SCHEMAS=	org.gnome.FileRoller.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	DOCS NAUTILUS
-NAUTILUS_DESC=	Enable Nautilus extension
-
+OPTIONS_DEFINE=	NAUTILUS
 OPTIONS_DEFAULT=NAUTILUS
-
-NAUTILUS_USE=	GNOME=nautilus2
-NAUTILUS_CONFIGURE_OFF=	--disable-nautilus-actions
+NAUTILUS_DESC=	Enable Nautilus extension
+NAUTILUS_USE=	GNOME=nautilus3
+NAUTILUS_CONFIGURE_ENABLE=	nautilus-actions
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/fr-command-tar.c \
 		${WRKSRC}/src/fr-command-zip.c
 
+.include <bsd.port.options.mk>
+
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
+.endif
 
 .include <bsd.port.mk>

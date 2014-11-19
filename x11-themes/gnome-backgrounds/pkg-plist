@@ -1,5 +1,24 @@
-share/gnome-background-properties/gnome-abstract.xml
-share/gnome-background-properties/gnome-nature.xml
+share/backgrounds/gnome/Blinds.jpg
+share/backgrounds/gnome/Bokeh_Tails.jpg
+share/backgrounds/gnome/Chmiri.jpg
+share/backgrounds/gnome/Dark_Ivy.jpg
+share/backgrounds/gnome/Fabric.jpg
+share/backgrounds/gnome/Flowerbed.jpg
+share/backgrounds/gnome/FootFall.png
+share/backgrounds/gnome/Mirror.jpg
+share/backgrounds/gnome/Road.jpg
+share/backgrounds/gnome/Sandstone.jpg
+share/backgrounds/gnome/Stones.jpg
+share/backgrounds/gnome/Terraform-green.jpg
+share/backgrounds/gnome/Waves.jpg
+share/backgrounds/gnome/Whispy_Tails.jpg
+share/backgrounds/gnome/adwaita-day.jpg
+share/backgrounds/gnome/adwaita-lock.jpg
+share/backgrounds/gnome/adwaita-morning.jpg
+share/backgrounds/gnome/adwaita-night.jpg
+share/backgrounds/gnome/adwaita-timed.xml
+share/gnome-background-properties/adwaita.xml
+share/gnome-background-properties/gnome-backgrounds.xml
 share/locale/af/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/an/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ar/LC_MESSAGES/gnome-backgrounds.mo
@@ -42,6 +61,7 @@ share/locale/it/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ja/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ka/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/kk/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/km/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/kn/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ko/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ku/LC_MESSAGES/gnome-backgrounds.mo
@@ -79,86 +99,15 @@ share/locale/sr@latin/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/sv/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ta/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/te/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/tg/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/th/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/tr/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ug/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/uk/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/uz/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/vi/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/xh/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-backgrounds.mo
-share/pixmaps/backgrounds/gnome/abstract/Flow.png
-share/pixmaps/backgrounds/gnome/abstract/Gulp.png
-share/pixmaps/backgrounds/gnome/abstract/Silk.png
-share/pixmaps/backgrounds/gnome/abstract/Spring.png
-share/pixmaps/backgrounds/gnome/abstract/Waves.png
-share/pixmaps/backgrounds/gnome/nature/Aqua.jpg
-share/pixmaps/backgrounds/gnome/nature/Blinds.jpg
-share/pixmaps/backgrounds/gnome/nature/Dune.jpg
-share/pixmaps/backgrounds/gnome/nature/FreshFlower.jpg
-share/pixmaps/backgrounds/gnome/nature/Garden.jpg
-share/pixmaps/backgrounds/gnome/nature/GreenMeadow.jpg
-share/pixmaps/backgrounds/gnome/nature/LadyBird.jpg
-share/pixmaps/backgrounds/gnome/nature/RainDrops.jpg
-share/pixmaps/backgrounds/gnome/nature/Storm.jpg
-share/pixmaps/backgrounds/gnome/nature/TwoWings.jpg
-share/pixmaps/backgrounds/gnome/nature/Wood.jpg
-share/pixmaps/backgrounds/gnome/nature/YellowFlower.jpg
-@dirrm share/pixmaps/backgrounds/gnome/nature
-@dirrm share/pixmaps/backgrounds/gnome/abstract
-@dirrmtry share/pixmaps/backgrounds/gnome
-@dirrmtry share/pixmaps/backgrounds
-@dirrmtry share/gnome-background-properties
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an

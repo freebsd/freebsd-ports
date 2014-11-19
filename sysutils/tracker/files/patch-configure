@@ -1,0 +1,87 @@
+--- configure.orig	2014-07-10 16:14:37.471040624 +0000
++++ configure	2014-07-10 16:20:50.072015231 +0000
+@@ -19531,7 +19531,6 @@
+ # First test for 3_3_5
+ TRACKER_MINER_EVOLUTION_3_3_5_REQUIRED="glib-2.0                  >= $GLIB_REQUIRED
+                                         evolution-shell-3.0       >= 3.1
+-                                        evolution-plugin-3.0
+                                         libemail-utils
+                                         libemail-engine
+                                         evolution-data-server-1.2 >= $EDS_REQUIRED
+@@ -19626,7 +19625,6 @@
+ # Second test for 3_2
+ TRACKER_MINER_EVOLUTION_3_2_REQUIRED="glib-2.0                  >= $GLIB_REQUIRED
+                                       evolution-shell-3.0       >= 3.1
+-                                      evolution-plugin-3.0
+                                       evolution-data-server-1.2 >= $EDS_REQUIRED
+                                       camel-1.2                 >= $CAMEL_REQUIRED"
+ 
+@@ -19716,7 +19714,6 @@
+ # Third test for 2_91
+ TRACKER_MINER_EVOLUTION_2_91_REQUIRED="glib-2.0                  >= $GLIB_REQUIRED
+                                        evolution-shell-3.0
+-                                       evolution-plugin-3.0
+                                        evolution-data-server-1.2 >= $EDS_REQUIRED
+                                        camel-1.2                 >= $CAMEL_REQUIRED"
+ 
+@@ -19802,7 +19799,6 @@
+ # Fourth test others (do we really want support for anything < 3.2)?
+ TRACKER_MINER_EVOLUTION_LAST_REQUIRED="glib-2.0                  >= $GLIB_REQUIRED
+                                        evolution-shell           >= $EVO_SHELL_REQUIRED
+-                                       evolution-plugin          >= $EVO_REQUIRED
+                                        evolution-data-server-1.2 >= $EDS_REQUIRED
+                                        camel-1.2                 >= $CAMEL_REQUIRED"
+ 
+@@ -24340,14 +24336,14 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"dbus-1      >= \$DBUS_REQUIRED
+-                      hal         >= \$HAL_REQUIRED\""; } >&5
++                      hal         >= \$HAL_REQUIRED dbus-glib-1\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "dbus-1      >= $DBUS_REQUIRED
+-                      hal         >= $HAL_REQUIRED") 2>&5
++                      hal         >= $HAL_REQUIRED dbus-glib-1"; ) >&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_HAL_CFLAGS=`$PKG_CONFIG --cflags "dbus-1      >= $DBUS_REQUIRED
+-                      hal         >= $HAL_REQUIRED" 2>/dev/null`
++                      hal         >= $HAL_REQUIRED dbus-glib-1" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -24360,14 +24356,16 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"dbus-1      >= \$DBUS_REQUIRED
+-                      hal         >= \$HAL_REQUIRED\""; } >&5
++                      hal         >= \$HAL_REQUIRED dbus-glib-1\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "dbus-1      >= $DBUS_REQUIRED
+-                      hal         >= $HAL_REQUIRED") 2>&5
++                      hal         >= $HAL_REQUIRED
++		      dbus-glib-1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_HAL_LIBS=`$PKG_CONFIG --libs "dbus-1      >= $DBUS_REQUIRED
+-                      hal         >= $HAL_REQUIRED" 2>/dev/null`
++                      hal         >= $HAL_REQUIRED
++		      dbus-glib-1" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -24389,10 +24387,12 @@
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        HAL_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "dbus-1      >= $DBUS_REQUIRED
+-                      hal         >= $HAL_REQUIRED" 2>&1`
++                      hal         >= $HAL_REQUIRED
++		      dbus-glib-1" 2>&1`
+         else
+ 	        HAL_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "dbus-1      >= $DBUS_REQUIRED
+-                      hal         >= $HAL_REQUIRED" 2>&1`
++                      hal         >= $HAL_REQUIRED
++		      dbus-glib-1" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$HAL_PKG_ERRORS" >&5

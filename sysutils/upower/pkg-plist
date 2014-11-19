@@ -1,11 +1,9 @@
-bin/devkit-power
 bin/upower
 etc/UPower/UPower.conf
 etc/dbus-1/system.d/org.freedesktop.UPower.conf
 include/libupower-glib/up-client.h
 include/libupower-glib/up-device.h
 include/libupower-glib/up-history-item.h
-include/libupower-glib/up-qos-item.h
 include/libupower-glib/up-stats-item.h
 include/libupower-glib/up-types.h
 include/libupower-glib/up-version.h
@@ -14,19 +12,16 @@ include/libupower-glib/up-wakeups.h
 include/libupower-glib/upower.h
 lib/girepository-1.0/UPowerGlib-1.0.typelib
 lib/libupower-glib.a
-lib/libupower-glib.la
 lib/libupower-glib.so
-lib/libupower-glib.so.1
-lib/libupower-glib.so.1.0.1
+lib/libupower-glib.so.2
+lib/libupower-glib.so.2.0.0
 libdata/pkgconfig/upower-glib.pc
-libexec/devkit-power-daemon
 libexec/upowerd
 %%MANPAGES%%man/man1/upower.1.gz
 %%MANPAGES%%man/man7/UPower.7.gz
 %%MANPAGES%%man/man8/upowerd.8.gz
 share/dbus-1/interfaces/org.freedesktop.UPower.Device.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.KbdBacklight.xml
-share/dbus-1/interfaces/org.freedesktop.UPower.QoS.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.Wakeups.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.xml
 share/dbus-1/system-services/org.freedesktop.UPower.service
@@ -35,7 +30,5 @@ share/locale/fr/LC_MESSAGES/upower.mo
 share/locale/it/LC_MESSAGES/upower.mo
 share/locale/pl/LC_MESSAGES/upower.mo
 share/locale/sv/LC_MESSAGES/upower.mo
-share/polkit-1/actions/org.freedesktop.upower.policy
-share/polkit-1/actions/org.freedesktop.upower.qos.policy
 @dir /var/lib/upower
 @dir /var/lib/

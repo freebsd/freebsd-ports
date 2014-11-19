@@ -663,18 +663,3 @@ share/webkitgtk-1.0/webinspector/textViewer.css
 share/webkitgtk-1.0/webinspector/timelinePanel.css
 share/webkitgtk-1.0/webinspector/treeoutline.js
 share/webkitgtk-1.0/webinspector/utilities.js
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrm share/webkitgtk-1.0/webinspector/UglifyJS
-@dirrm share/webkitgtk-1.0/webinspector/Images
-@dirrm share/webkitgtk-1.0/webinspector
-@dirrm share/webkitgtk-1.0/resources
-@dirrm share/webkitgtk-1.0/images
-@dirrm share/webkitgtk-1.0
-@dirrm include/webkitgtk-1.0/webkit2/WebKit2
-@dirrm include/webkitgtk-1.0/webkit2
-@dirrm include/webkitgtk-1.0/webkit
-@dirrm include/webkitgtk-1.0/JavaScriptCore
-@dirrm include/webkitgtk-1.0

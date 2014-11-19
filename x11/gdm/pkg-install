@@ -8,17 +8,29 @@ POST-INSTALL)
 	CHOWN=/usr/sbin/chown
 	MKDIR=/bin/mkdir
 
+	${MKDIR} -p /var/gdm
+	${MKDIR} -p /var/log/gdm
+	${CHMOD} 1770 /var/log/gdm
+	${CHOWN} ${USER}:${GROUP} /var/log/gdm
+	${CHOWN} -R root:${GROUP} /var/gdm
+	${CHMOD} 1770 /var/gdm
+	${MKDIR} -p /var/run/gdm/greeter
+	${CHOWN} root:${GROUP} /var/run/gdm
+	${CHMOD} -R 1777 /var/run/gdm
+	${MKDIR} -p /var/cache/gdm
+	${CHMOD} 1755 /var/cache/gdm
+	${CHOWN} root:${GROUP} /var/cache/gdm
 	${CHOWN} root:wheel ${PKG_PREFIX}/share/gdm
 	${CHMOD} 0755 ${PKG_PREFIX}/share/gdm
-	${MKDIR} -p ${PKG_PREFIX}/etc/gdm/home
-	${CHOWN} ${USER}:${GROUP} ${PKG_PREFIX}/etc/gdm/home
-	${CHMOD} 1770 ${PKG_PREFIX}/etc/gdm/home
-	install  -o root -g wheel -m 444 ${PKG_PREFIX}/share/gdm/gconf.path ${PKG_PREFIX}/etc/gdm/home/.gconf.path
 	gconftool-2 --direct --config-source=xml:merged:${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory --recursive-unset /
-	gconftool-2 --direct --config-source=xml:merged:${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory --load ${PKG_PREFIX}/share/gdm/session-setup.entries
 	${CHOWN} -R ${USER}:${GROUP} ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory
 	${CHMOD} 1750 ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory
 	${CHMOD} 1640 ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory/*.xml
+
+	${MKDIR} -p ${PKG_PREFIX}/etc/gdm/Sessions
+	${MKDIR} -p ${PKG_PREFIX}/etc/dm/Sessions
+
+	${CHOWN} -R ${USER}:${GROUP} ${PKG_PREFIX}/etc/gdm/home
 
 	exit 0
 	;;

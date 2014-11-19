@@ -11,6 +11,7 @@ include/at-spi-2.0/atspi/atspi-device-listener.h
 include/at-spi-2.0/atspi/atspi-device-listener-private.h
 include/at-spi-2.0/atspi/atspi-document.h
 include/at-spi-2.0/atspi/atspi-editabletext.h
+include/at-spi-2.0/atspi/atspi-enum-types.h
 include/at-spi-2.0/atspi/atspi-event-listener.h
 include/at-spi-2.0/atspi/atspi-event-listener-private.h
 include/at-spi-2.0/atspi/atspi-gmain.c
@@ -26,6 +27,7 @@ include/at-spi-2.0/atspi/atspi-registry.h
 include/at-spi-2.0/atspi/atspi-relation.h
 include/at-spi-2.0/atspi/atspi-selection.h
 include/at-spi-2.0/atspi/atspi-stateset.h
+include/at-spi-2.0/atspi/atspi-table-cell.h
 include/at-spi-2.0/atspi/atspi-table.h
 include/at-spi-2.0/atspi/atspi-text.h
 include/at-spi-2.0/atspi/atspi-types.h
@@ -99,6 +101,8 @@ share/locale/eu/LC_MESSAGES/at-spi2-core.mo
 share/locale/fa/LC_MESSAGES/at-spi2-core.mo
 share/locale/fi/LC_MESSAGES/at-spi2-core.mo
 share/locale/fr/LC_MESSAGES/at-spi2-core.mo
+share/locale/fur/LC_MESSAGES/at-spi2-core.mo
+share/locale/ga/LC_MESSAGES/at-spi2-core.mo
 share/locale/gl/LC_MESSAGES/at-spi2-core.mo
 share/locale/gu/LC_MESSAGES/at-spi2-core.mo
 share/locale/he/LC_MESSAGES/at-spi2-core.mo
@@ -141,31 +145,3 @@ share/locale/vi/LC_MESSAGES/at-spi2-core.mo
 share/locale/zh_CN/LC_MESSAGES/at-spi2-core.mo
 share/locale/zh_HK/LC_MESSAGES/at-spi2-core.mo
 share/locale/zh_TW/LC_MESSAGES/at-spi2-core.mo
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrm share/gtk-doc/html/libatspi
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/at-spi-2.0/atspi
-@dirrm include/at-spi-2.0
-@dirrm etc/at-spi2

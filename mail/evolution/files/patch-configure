@@ -1,15 +1,6 @@
---- configure.orig	2009-12-26 20:42:20.000000000 +0100
-+++ configure	2009-12-26 20:49:17.000000000 +0100
-@@ -4329,7 +4329,7 @@
- 	-Wdeclaration-after-statement
- 	-Werror-implicit-function-declaration
- 	-Wformat-security -Winit-self
--	-Wmissing-declarations -Wmissing-include-dirs
-+	-Wmissing-declarations 
- 	-Wmissing-noreturn -Wnested-externs -Wpointer-arith
- 	-Wredundant-decls -Wundef -Wwrite-strings"
-   flags_supported=""
-@@ -16441,6 +16441,16 @@
+--- configure.orig	2011-01-26 18:09:29.000000000 +0000
++++ configure	2011-01-26 18:11:16.000000000 +0000
+@@ -15450,6 +15450,16 @@
  	CHAMPLAIN_REQUIREMENT=''
  	GEOCLUE_REQUIREMENT=''
  	;;
@@ -26,11 +17,3 @@
  *)
  	os_win32=no
  	NO_UNDEFINED='-no-undefined'
-@@ -18544,6 +18554,7 @@
- 		#include <sys/socket.h>
- 		#include <netinet/in.h>
- 		#include <netdb.h>
-+		#include <stdio.h>
- 
- 		#define BUFSIZE (sizeof(struct hostent)+10)
- 

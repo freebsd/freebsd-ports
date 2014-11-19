@@ -22,6 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		librsvg2>=2.32.1:${PORTSDIR}/graphics/librsvg2 \
 		${PYTHON_PKGNAMEPREFIX}libvirt>=0:${PORTSDIR}/devel/py-libvirt
 
+BROKEN=		Needs work after gtk-vnc update, maintainer is aware.
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 

@@ -177,6 +177,7 @@
     SUBDIR += libfame
     SUBDIR += libkate
     SUBDIR += libmatroska
+    SUBDIR += libmediaart
     SUBDIR += libmediainfo
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
@@ -339,6 +340,7 @@
     SUBDIR += smplayer-themes
     SUBDIR += sms1xxx-kmod
     SUBDIR += smtube
+    SUBDIR += snappy
     SUBDIR += spigot
     SUBDIR += spook
     SUBDIR += spotify-websocket-api

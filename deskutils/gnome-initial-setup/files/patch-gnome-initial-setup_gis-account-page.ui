@@ -1,0 +1,21 @@
+$OpenBSD: patch-gnome-initial-setup_pages_account_gis-account-page_ui,v 1.1 2014/04/26 17:08:12 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=728879
+(upstream will _not_ accept --disable-kerberos patches)
+
+--- gnome-initial-setup/pages/account/gis-account-page.ui.orig	Sat Apr 26 18:43:02 2014
++++ gnome-initial-setup/pages/account/gis-account-page.ui	Sat Apr 26 18:44:09 2014
+@@ -18,11 +18,13 @@
+                 <property name="visible">True</property>
+               </object>
+             </child>
++<!--
+             <child>
+               <object class="GisAccountPageEnterprise" id="page_enterprise">
+                 <property name="visible">True</property>
+               </object>
+             </child>
++-->
+           </object>
+           <packing>
+             <property name="expand">False</property>

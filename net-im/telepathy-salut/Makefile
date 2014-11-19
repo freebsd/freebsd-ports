@@ -1,9 +1,10 @@
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net-im/telepathy-salut/Makefile,v 1.9 2012/08/17 19:06:46 kwm Exp $
+#   $MCom: ports/trunk/net-im/telepathy-salut/Makefile 19802 2014-08-13 12:13:08Z gusi $
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -22,9 +23,12 @@ USE_SQLITE=	3
 CONFIGURE_ARGS=	--disable-Werror --enable-avahi-tests=no
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
+
+PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|make -C|${MAKE_CMD} -C|g' \
+	@${REINPLACE_CMD} -e 's|make -C|${GMAKE} -C|g' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/tests/Makefile.in
 

@@ -1,27 +1,25 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/gconf-editor/Makefile,v 1.85 2010/09/27 18:22:59 kwm Exp $
+#   $MCom: ports/trunk/sysutils/gconf-editor/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	gconf-editor
-PORTVERSION=	2.32.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 PORTEPOCH=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Gconf database editor for the GNOME 2 environment
+COMMENT=	Gconf database editor for the GNOME 3 environment
 
-USES=		gettext gmake pkgconfig tar:bzip2
+USES=		gettext gmake pathfix pkgconfig tar:xz
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack libgnomeui gnomedocutils
+USE_GNOME=	gnomeprefix intlhack gtk30 gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gconf-editor.schemas
-INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

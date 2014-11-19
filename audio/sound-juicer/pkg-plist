@@ -1,88 +1,93 @@
 bin/sound-juicer
 man/man1/sound-juicer.1.gz
+share/GConf/gsettings/sound-juicer.convert
 share/applications/sound-juicer.desktop
-share/gnome/help/sound-juicer/C/figures/prefs.png
-share/gnome/help/sound-juicer/C/figures/startup.png
-share/gnome/help/sound-juicer/C/legal.xml
-share/gnome/help/sound-juicer/C/sound-juicer.xml
-share/gnome/help/sound-juicer/ar/figures/prefs.png
-share/gnome/help/sound-juicer/ar/figures/startup.png
-share/gnome/help/sound-juicer/ar/legal.xml
-share/gnome/help/sound-juicer/ar/sound-juicer.xml
-share/gnome/help/sound-juicer/ca/figures/prefs.png
-share/gnome/help/sound-juicer/ca/figures/startup.png
-share/gnome/help/sound-juicer/ca/legal.xml
-share/gnome/help/sound-juicer/ca/sound-juicer.xml
-share/gnome/help/sound-juicer/cs/figures/prefs.png
-share/gnome/help/sound-juicer/cs/figures/startup.png
-share/gnome/help/sound-juicer/cs/legal.xml
-share/gnome/help/sound-juicer/cs/sound-juicer.xml
-share/gnome/help/sound-juicer/de/figures/prefs.png
-share/gnome/help/sound-juicer/de/figures/startup.png
-share/gnome/help/sound-juicer/de/legal.xml
-share/gnome/help/sound-juicer/de/sound-juicer.xml
-share/gnome/help/sound-juicer/el/figures/prefs.png
-share/gnome/help/sound-juicer/el/figures/startup.png
-share/gnome/help/sound-juicer/el/legal.xml
-share/gnome/help/sound-juicer/el/sound-juicer.xml
-share/gnome/help/sound-juicer/en_GB/figures/prefs.png
-share/gnome/help/sound-juicer/en_GB/figures/startup.png
-share/gnome/help/sound-juicer/en_GB/legal.xml
-share/gnome/help/sound-juicer/en_GB/sound-juicer.xml
-share/gnome/help/sound-juicer/es/figures/prefs.png
-share/gnome/help/sound-juicer/es/figures/startup.png
-share/gnome/help/sound-juicer/es/legal.xml
-share/gnome/help/sound-juicer/es/sound-juicer.xml
-share/gnome/help/sound-juicer/eu/figures/prefs.png
-share/gnome/help/sound-juicer/eu/figures/startup.png
-share/gnome/help/sound-juicer/eu/legal.xml
-share/gnome/help/sound-juicer/eu/sound-juicer.xml
-share/gnome/help/sound-juicer/fr/figures/prefs.png
-share/gnome/help/sound-juicer/fr/figures/startup.png
-share/gnome/help/sound-juicer/fr/legal.xml
-share/gnome/help/sound-juicer/fr/sound-juicer.xml
-share/gnome/help/sound-juicer/ja/figures/prefs.png
-share/gnome/help/sound-juicer/ja/figures/startup.png
-share/gnome/help/sound-juicer/ja/legal.xml
-share/gnome/help/sound-juicer/ja/sound-juicer.xml
-share/gnome/help/sound-juicer/nl/figures/prefs.png
-share/gnome/help/sound-juicer/nl/figures/startup.png
-share/gnome/help/sound-juicer/nl/legal.xml
-share/gnome/help/sound-juicer/nl/sound-juicer.xml
-share/gnome/help/sound-juicer/oc/figures/prefs.png
-share/gnome/help/sound-juicer/oc/figures/startup.png
-share/gnome/help/sound-juicer/oc/legal.xml
-share/gnome/help/sound-juicer/oc/sound-juicer.xml
-share/gnome/help/sound-juicer/pl/figures/prefs.png
-share/gnome/help/sound-juicer/pl/figures/startup.png
-share/gnome/help/sound-juicer/pl/legal.xml
-share/gnome/help/sound-juicer/pl/sound-juicer.xml
-share/gnome/help/sound-juicer/pt_BR/figures/prefs.png
-share/gnome/help/sound-juicer/pt_BR/figures/startup.png
-share/gnome/help/sound-juicer/pt_BR/legal.xml
-share/gnome/help/sound-juicer/pt_BR/sound-juicer.xml
-share/gnome/help/sound-juicer/ru/figures/prefs.png
-share/gnome/help/sound-juicer/ru/figures/startup.png
-share/gnome/help/sound-juicer/ru/legal.xml
-share/gnome/help/sound-juicer/ru/sound-juicer.xml
-share/gnome/help/sound-juicer/sv/figures/prefs.png
-share/gnome/help/sound-juicer/sv/figures/startup.png
-share/gnome/help/sound-juicer/sv/legal.xml
-share/gnome/help/sound-juicer/sv/sound-juicer.xml
-share/gnome/help/sound-juicer/uk/figures/prefs.png
-share/gnome/help/sound-juicer/uk/figures/startup.png
-share/gnome/help/sound-juicer/uk/legal.xml
-share/gnome/help/sound-juicer/uk/sound-juicer.xml
-share/gnome/help/sound-juicer/zh_CN/figures/prefs.png
-share/gnome/help/sound-juicer/zh_CN/figures/startup.png
-share/gnome/help/sound-juicer/zh_CN/legal.xml
-share/gnome/help/sound-juicer/zh_CN/sound-juicer.xml
+share/help/C/sound-juicer/index.docbook
+share/help/C/sound-juicer/legal.xml
+share/help/C/sound-juicer/figures/prefs.png
+share/help/C/sound-juicer/figures/startup.png
+share/help/ar/sound-juicer/index.docbook
+share/help/ar/sound-juicer/legal.xml
+share/help/ar/sound-juicer/figures/prefs.png
+share/help/ar/sound-juicer/figures/startup.png
+share/help/ca/sound-juicer/index.docbook
+share/help/ca/sound-juicer/legal.xml
+share/help/ca/sound-juicer/figures/prefs.png
+share/help/ca/sound-juicer/figures/startup.png
+share/help/cs/sound-juicer/index.docbook
+share/help/cs/sound-juicer/legal.xml
+share/help/cs/sound-juicer/figures/prefs.png
+share/help/cs/sound-juicer/figures/startup.png
+share/help/de/sound-juicer/index.docbook
+share/help/de/sound-juicer/legal.xml
+share/help/de/sound-juicer/figures/prefs.png
+share/help/de/sound-juicer/figures/startup.png
+share/help/el/sound-juicer/index.docbook
+share/help/el/sound-juicer/legal.xml
+share/help/el/sound-juicer/figures/prefs.png
+share/help/el/sound-juicer/figures/startup.png
+share/help/en_GB/sound-juicer/index.docbook
+share/help/en_GB/sound-juicer/legal.xml
+share/help/en_GB/sound-juicer/figures/prefs.png
+share/help/en_GB/sound-juicer/figures/startup.png
+share/help/es/sound-juicer/index.docbook
+share/help/es/sound-juicer/legal.xml
+share/help/es/sound-juicer/figures/prefs.png
+share/help/es/sound-juicer/figures/startup.png
+share/help/eu/sound-juicer/index.docbook
+share/help/eu/sound-juicer/legal.xml
+share/help/eu/sound-juicer/figures/prefs.png
+share/help/eu/sound-juicer/figures/startup.png
+share/help/fr/sound-juicer/index.docbook
+share/help/fr/sound-juicer/legal.xml
+share/help/fr/sound-juicer/figures/prefs.png
+share/help/fr/sound-juicer/figures/startup.png
+share/help/ja/sound-juicer/index.docbook
+share/help/ja/sound-juicer/legal.xml
+share/help/ja/sound-juicer/figures/prefs.png
+share/help/ja/sound-juicer/figures/startup.png
+share/help/nl/sound-juicer/index.docbook
+share/help/nl/sound-juicer/legal.xml
+share/help/nl/sound-juicer/figures/prefs.png
+share/help/nl/sound-juicer/figures/startup.png
+share/help/oc/sound-juicer/index.docbook
+share/help/oc/sound-juicer/legal.xml
+share/help/oc/sound-juicer/figures/prefs.png
+share/help/oc/sound-juicer/figures/startup.png
+share/help/pl/sound-juicer/index.docbook
+share/help/pl/sound-juicer/legal.xml
+share/help/pl/sound-juicer/figures/prefs.png
+share/help/pl/sound-juicer/figures/startup.png
+share/help/pt_BR/sound-juicer/index.docbook
+share/help/pt_BR/sound-juicer/legal.xml
+share/help/pt_BR/sound-juicer/figures/prefs.png
+share/help/pt_BR/sound-juicer/figures/startup.png
+share/help/ru/sound-juicer/index.docbook
+share/help/ru/sound-juicer/legal.xml
+share/help/ru/sound-juicer/figures/prefs.png
+share/help/ru/sound-juicer/figures/startup.png
+share/help/sl/sound-juicer/index.docbook
+share/help/sl/sound-juicer/legal.xml
+share/help/sl/sound-juicer/figures/prefs.png
+share/help/sl/sound-juicer/figures/startup.png
+share/help/sv/sound-juicer/index.docbook
+share/help/sv/sound-juicer/legal.xml
+share/help/sv/sound-juicer/figures/prefs.png
+share/help/sv/sound-juicer/figures/startup.png
+share/help/uk/sound-juicer/index.docbook
+share/help/uk/sound-juicer/legal.xml
+share/help/uk/sound-juicer/figures/prefs.png
+share/help/uk/sound-juicer/figures/startup.png
+share/help/zh_CN/sound-juicer/index.docbook
+share/help/zh_CN/sound-juicer/legal.xml
+share/help/zh_CN/sound-juicer/figures/prefs.png
+share/help/zh_CN/sound-juicer/figures/startup.png
 share/icons/hicolor/16x16/apps/sound-juicer.png
 share/icons/hicolor/22x22/apps/sound-juicer.png
 share/icons/hicolor/24x24/apps/sound-juicer.png
+share/icons/hicolor/256x256/apps/sound-juicer.png
 share/icons/hicolor/32x32/apps/sound-juicer.png
 share/icons/hicolor/48x48/apps/sound-juicer.png
-share/icons/hicolor/scalable/apps/sound-juicer.svg
 share/locale/ar/LC_MESSAGES/sound-juicer.mo
 share/locale/as/LC_MESSAGES/sound-juicer.mo
 share/locale/ast/LC_MESSAGES/sound-juicer.mo
@@ -104,6 +109,7 @@ share/locale/el/LC_MESSAGES/sound-juicer.mo
 share/locale/en_CA/LC_MESSAGES/sound-juicer.mo
 share/locale/en_GB/LC_MESSAGES/sound-juicer.mo
 share/locale/en@shaw/LC_MESSAGES/sound-juicer.mo
+share/locale/eo/LC_MESSAGES/sound-juicer.mo
 share/locale/es/LC_MESSAGES/sound-juicer.mo
 share/locale/et/LC_MESSAGES/sound-juicer.mo
 share/locale/eu/LC_MESSAGES/sound-juicer.mo
@@ -163,100 +169,6 @@ share/locale/xh/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_CN/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_HK/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_TW/LC_MESSAGES/sound-juicer.mo
-share/omf/sound-juicer/sound-juicer-C.omf
-share/omf/sound-juicer/sound-juicer-ar.omf
-share/omf/sound-juicer/sound-juicer-ca.omf
-share/omf/sound-juicer/sound-juicer-cs.omf
-share/omf/sound-juicer/sound-juicer-de.omf
-share/omf/sound-juicer/sound-juicer-el.omf
-share/omf/sound-juicer/sound-juicer-en_GB.omf
-share/omf/sound-juicer/sound-juicer-es.omf
-share/omf/sound-juicer/sound-juicer-eu.omf
-share/omf/sound-juicer/sound-juicer-fr.omf
-share/omf/sound-juicer/sound-juicer-ja.omf
-share/omf/sound-juicer/sound-juicer-nl.omf
-share/omf/sound-juicer/sound-juicer-oc.omf
-share/omf/sound-juicer/sound-juicer-pl.omf
-share/omf/sound-juicer/sound-juicer-pt_BR.omf
-share/omf/sound-juicer/sound-juicer-ru.omf
-share/omf/sound-juicer/sound-juicer-sv.omf
-share/omf/sound-juicer/sound-juicer-uk.omf
-share/omf/sound-juicer/sound-juicer-zh_CN.omf
+%%DATADIR%%/rhythmbox.gep
+%%DATADIR%%/sound-juicer-menu.ui
 %%DATADIR%%/sound-juicer.ui
-@dirrm %%DATADIR%%
-@dirrm share/omf/sound-juicer
-@dirrm share/gnome/help/sound-juicer/zh_CN/figures
-@dirrm share/gnome/help/sound-juicer/zh_CN
-@dirrm share/gnome/help/sound-juicer/uk/figures
-@dirrm share/gnome/help/sound-juicer/uk
-@dirrm share/gnome/help/sound-juicer/sv/figures
-@dirrm share/gnome/help/sound-juicer/sv
-@dirrm share/gnome/help/sound-juicer/ru/figures
-@dirrm share/gnome/help/sound-juicer/ru
-@dirrm share/gnome/help/sound-juicer/pt_BR/figures
-@dirrm share/gnome/help/sound-juicer/pt_BR
-@dirrm share/gnome/help/sound-juicer/pl/figures
-@dirrm share/gnome/help/sound-juicer/pl
-@dirrm share/gnome/help/sound-juicer/oc/figures
-@dirrm share/gnome/help/sound-juicer/oc
-@dirrm share/gnome/help/sound-juicer/nl/figures
-@dirrm share/gnome/help/sound-juicer/nl
-@dirrm share/gnome/help/sound-juicer/ja/figures
-@dirrm share/gnome/help/sound-juicer/ja
-@dirrm share/gnome/help/sound-juicer/fr/figures
-@dirrm share/gnome/help/sound-juicer/fr
-@dirrm share/gnome/help/sound-juicer/eu/figures
-@dirrm share/gnome/help/sound-juicer/eu
-@dirrm share/gnome/help/sound-juicer/es/figures
-@dirrm share/gnome/help/sound-juicer/es
-@dirrm share/gnome/help/sound-juicer/en_GB/figures
-@dirrm share/gnome/help/sound-juicer/en_GB
-@dirrm share/gnome/help/sound-juicer/el/figures
-@dirrm share/gnome/help/sound-juicer/el
-@dirrm share/gnome/help/sound-juicer/de/figures
-@dirrm share/gnome/help/sound-juicer/de
-@dirrm share/gnome/help/sound-juicer/cs/figures
-@dirrm share/gnome/help/sound-juicer/cs
-@dirrm share/gnome/help/sound-juicer/ca/figures
-@dirrm share/gnome/help/sound-juicer/ca
-@dirrm share/gnome/help/sound-juicer/ar/figures
-@dirrm share/gnome/help/sound-juicer/ar
-@dirrm share/gnome/help/sound-juicer/C/figures
-@dirrm share/gnome/help/sound-juicer/C
-@dirrm share/gnome/help/sound-juicer
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

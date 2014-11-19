@@ -1,10 +1,9 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glib20/Makefile 18634 2013-07-26 10:42:35Z kwm $
+#   $MCom: ports/trunk/devel/glib20/Makefile 19944 2014-10-15 05:33:09Z gusi $
 
 PORTNAME=	glib
-PORTVERSION=	2.36.3
-PORTREVISION=	4
+PORTVERSION=	2.42.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -31,7 +30,7 @@ USES+=		gettext gmake iconv:wchar_t libtool pathfix perl5 \
 USE_PYTHON=	py3kplist
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
-		--enable-static \
+		--enable-static=yes \
 		--with-pcre=system \
 		--disable-fam
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=
@@ -39,13 +38,20 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
+SHEBANG_FILES=	*/*.pl
 
-LIBVERSION=	0.3600.3
+LIBVERSION=	0.4200.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
-OPTIONS_DEFINE=	COLLATION_FIX DEBUG
+glib_MAN=	gtester.1 gtester-report.1 glib-gettextize.1
+gio_MAN=	gdbus.1 gsettings.1 gio-querymodules.1 \
+		glib-compile-schemas.1 gapplication.1 \
+		glib-compile-resources.1 gresource.1 gdbus-codegen.1
+gobject_MAN=	glib-genmarshal.1 glib-mkenums.1 gobject-query.1
+
+OPTIONS_DEFINE=	COLLATION_FIX DEBUG GDB
 COLLATION_FIX_DESC=	fix string collation
+GDB_DESC=	Install python gdb scripts
 
 .include <bsd.port.pre.mk>
 
@@ -87,11 +93,17 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 #CONFIGURE_ENV+=	CFLAGS="-D__STDC_ISO_10646__"
 .endif
 
+.if ${PORT_OPTIONS:MGDB}
+PLIST_SUB+=	GDB=""
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-glib_gdbscripts \
+		${FILESDIR}/extra-gobject_gdbscripts
+PLIST_SUB+=	GDB="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug=yes \
 			--disable-silent-rules
-.else
-CONFIGURE_ARGS+=	--disable-modular-tests
 .endif
 
 post-patch:
@@ -107,6 +119,11 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gio/modules
+.for m in glib gio gobject
+	${INSTALL_MAN} ${${m}_MAN:S|^|${WRKSRC}/docs/reference/${m}/|} \
+		${STAGEDIR}${PREFIX}/man/man1
+.endfor
 
 .include <bsd.port.post.mk>
 

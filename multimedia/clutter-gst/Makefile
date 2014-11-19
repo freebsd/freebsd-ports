@@ -1,33 +1,28 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/multimedia/clutter-gst/Makefile,v 1.6 2010/06/29 21:14:02 kwm Exp $
+#   $MCom: ports-experimental/trunk/multimedia/clutter-gst/Makefile 19553 2014-04-20 07:23:27Z gusi $
 
 PORTNAME=	clutter-gst
-PORTVERSION=	1.3.4
-PORTREVISION=	3
+PORTVERSION=	2.0.12
 CATEGORIES=	multimedia
-MASTER_SITES=	http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter GStreamer integration
 
-LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libclutter-1.0.so:${PORTSDIR}/graphics/clutter
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	introspection gnomeprefix
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix
-USE_GSTREAMER=	yes
 USE_GL=		gl
+USE_GSTREAMER1=	yes
 USE_XORG=	xp x11
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
+MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 INSTALL_TARGET=	install-strip
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/clutter-gst/Makefile.in
 
 .include <bsd.port.mk>

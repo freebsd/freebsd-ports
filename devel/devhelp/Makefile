@@ -1,53 +1,31 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/devhelp/Makefile,v 1.45 2012/09/01 23:02:09 mezz Exp $
+#   $MCom: ports/trunk/devel/devhelp/Makefile 19980 2014-10-17 06:01:57Z gusi $
 
 PORTNAME=	devhelp
-PORTVERSION=	2.32.0
-PORTREVISION=	7
-PORTEPOCH=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Developer help browser for GNOME 2
+COMMENT=	Developer help browser for GNOME 3
 
-LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
 
-CONFLICTS=	devhelp-3.[0-9]*
-
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack libxslt
 USE_XORG=	x11
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	intlhack gnomeprefix libgnomeui libwnck
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-GCONF_SCHEMAS=	devhelp.schemas
-CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	GEDIT
-GEDIT_DESC=	Enable GEdit plug-in support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGEDIT}
-BUILD_DEPENDS+=	gedit<3.0.0:${PORTSDIR}/editors/gedit
-RUN_DEPENDS+=	gedit<3.0.0:${PORTSDIR}/editors/gedit
-PLIST_SUB+=	GEDIT=""
-.else
-PLIST_SUB+=	GEDIT="@comment "
-.endif
+GLIB_SCHEMAS=	org.gnome.devhelp.gschema.xml
 
 post-patch:
-.if ! ${PORT_OPTIONS:MGEDIT}
-	@${REINPLACE_CMD} -e 's|gedit-plugin||' \
-		${WRKSRC}/misc/Makefile.in
-	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_SINGLE_INCLUDES||g' \
-		${WRKSRC}/src/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e 's|gedit-plugin||g' ${WRKSRC}/misc/Makefile.in
 
 .include <bsd.port.mk>

@@ -1,78 +1,88 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.218 2013/03/09 09:12:37 kwm Exp $
+#   $MCom: ports/trunk/databases/evolution-data-server/Makefile 20029 2014-11-02 20:54:47Z kwm $
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	2.32.1
-PORTREVISION=	12
+PORTVERSION=	3.12.7
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	The data backends for the Evolution integrated mail/PIM suite
+COMMENT=	Data backends for the Evolution integrated mail/PIM suite
 
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	gcr>=3.11:${PORTSDIR}/security/gcr \
+		vapigen:${PORTSDIR}/lang/vala
+LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
+		liboauth.so:${PORTSDIR}/net/liboauth \
+		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
 		libgdata.so:${PORTSDIR}/devel/libgdata \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libical.so:${PORTSDIR}/devel/libical \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libtasn1.so:${PORTSDIR}/security/libtasn1 \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
-USES=		bison gettext gmake gperf libtool pathfix pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix intlhack gconf2 libxml2
+USES=		bison gettext gmake gperf libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build \
+		libxml2
 USE_OPENLDAP=	yes
-USE_SQLITE=	3
-USE_BDB=	41+
-USE_LDCONFIG=	yes
+USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
+USE_BDB=	5
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static \
-		--enable-gnome-keyring=yes \
 		--with-openldap=yes \
+		--disable-uoa \
+		--enable-vala-bindings \
 		--with-libdb=${LOCALBASE}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
+LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-PLIST_SUB=	VERSION="2.32" EVO_VERSION="1.2"
+GLIB_SCHEMAS=	org.gnome.Evolution.DefaultSources.gschema.xml \
+		org.gnome.evolution.eds-shell.gschema.xml \
+		org.gnome.evolution-data-server.addressbook.gschema.xml \
+		org.gnome.evolution-data-server.calendar.gschema.xml \
+		org.gnome.evolution.shell.network-config.gschema.xml
+
+PLIST_SUB=	VERSION="3.12" EVO_VERSION="1.2"
 
 OPTIONS_DEFINE=	WEATHER KERBEROS
 OPTIONS_DEFAULT=WEATHER KERBEROS
-OPTIONS_SUB=	yes
 WEATHER_DESC=	Weather calendar backend
-
-WEATHER_LIB_DEPENDS=	libgweather.so:${PORTSDIR}/net/libgweather
-WEATHER_CONFIGURE_WITH=	weather
-KERBEROS_CONFIGURE_ON=	--with-krb5=/usr
-KERBEROS_CONFIGURE_OFF=	--without-krb5
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKERBEROS}
-KRB5_LIB=	`/usr/bin/krb5-config gssapi --libs`
+CONFIGURE_ARGS+=	--with-krb5=/usr
+KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .endif
 
-EDS_BDB_MSG=	"!!!WARNING!!!: Berkeley Database version is ${BDB_VER}.  If this is an upgrade, you may experience problems if you or any other Evolution-data-server users were previously using BDB_VER 41."
+.if ${PORT_OPTIONS:MWEATHER}
+LIB_DEPENDS+=		libgweather-3.so:${PORTSDIR}/net/libgweather
+CONFIGURE_ARGS+=	--enable-weather
+PLIST_SUB+=		WEATHER=""
+.else
+CONFIGURE_ARGS+=	--disable-weather
+PLIST_SUB+=		WEATHER="@comment "
+.endif
+
+EDS_BDB_MSG=	"!!!WARNING!!!: Berkeley Database version is ${BDB_VER}.  If this is an upgrade, you may experience problems if you or any other Evolution-data-server users were previously using BDB_VER 5."
 
 pre-everything::
-	@if [ x"${BDB_VER}" != x"41" ]; then \
+	@if [ x"${BDB_VER}" != x"5" ]; then \
 		${ECHO_MSG} ${EDS_BDB_MSG} | ${FMT} 75 79 ; \
 	fi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g ; \
 		s|heimlibs=".*"|heimlibs="${KRB5_LIB}"|g ; \
-		s|-DGTK_DISABLE_DEPRECATED||g ; \
-		s|-DG_DISABLE_DEPRECATED||g ; \
 		s|-Wl,--no-undefined||g ; \
+		s|-Wnoexcept||g ; \
 		s|-Wmissing-include-dirs||g' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} '/g_thread_init/d' \
-		${WRKSRC}/calendar/backends/file/e-cal-backend-file.c \
-		${WRKSRC}/camel/camel-index-control.c \
-		${WRKSRC}/camel/providers/imapx/test-imapx.c \
-		${WRKSRC}/libedataserverui/test-name-selector.c \
-		${WRKSRC}/servers/groupwise/soap-test.c
 
 .include <bsd.port.mk>

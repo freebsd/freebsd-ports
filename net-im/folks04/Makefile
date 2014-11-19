@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	04
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to aggregate people from multiple sources
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 

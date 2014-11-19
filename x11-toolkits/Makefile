@@ -39,6 +39,7 @@
     SUBDIR += gtk-sharp-beans
     SUBDIR += gtk-sharp10
     SUBDIR += gtk-sharp20
+    SUBDIR += gtk-sharp30
     SUBDIR += gtk12
     SUBDIR += gtk20
     SUBDIR += gtk20-reference
@@ -97,7 +98,6 @@
     SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm26
     SUBDIR += libgtksourceviewmm
-    SUBDIR += libpanelappletmm
     SUBDIR += libsexy
     SUBDIR += libsexymm
     SUBDIR += libunique3
@@ -184,8 +184,6 @@
     SUBDIR += py-Pmw
     SUBDIR += py-SquareMap
     SUBDIR += py-fltk
-    SUBDIR += py-gnome-desktop
-    SUBDIR += py-gnome-extras
     SUBDIR += py-gnome2
     SUBDIR += py-gtk2
     SUBDIR += py-gtkglext

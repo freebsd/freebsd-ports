@@ -1,27 +1,29 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/deskutils/gucharmap/Makefile,v 1.75 2010/11/13 13:05:08 kwm Exp $
+#   $MCom: ports/trunk/deskutils/gucharmap/Makefile 20012 2014-10-22 05:38:08Z gusi $
 
 PORTNAME=	gucharmap
-PORTVERSION=	2.32.1
-PORTREVISION=	2
+PORTVERSION=	3.14.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Unicode/ISO10646 character map and font viewer
 
-LIB_DEPENDS=	librarian.so:${PORTSDIR}/textproc/rarian
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
+		appdata-tools>=0:${PORTSDIR}/devel/appdata-tools
 
-USES=		gettext pkgconfig gmake libtool pathfix tar:bzip2
-USE_GNOME=	gnomeprefix intlhack gtk20 gnomedocutils gconf2
+USES=		desktop-file-utils gettext gmake libtool pathfix \
+		pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-Bsymbolic
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-GCONF_SCHEMAS=	gucharmap.schemas
+GLIB_SCHEMAS=	org.gnome.Charmap.enums.xml org.gnome.Charmap.gschema.xml
 
 .include <bsd.port.mk>

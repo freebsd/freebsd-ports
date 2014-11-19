@@ -1,10 +1,10 @@
---- configure.orig	2011-03-30 10:06:27.000000000 +0200
-+++ configure	2011-03-30 10:07:52.000000000 +0200
-@@ -13230,6 +13230,78 @@
- 		if test -n "${osreldate}" && test ${osreldate} -ge 600000 ; then
- 		    EXTRA_SYSDEPS_LIBS="-lgeom -ldevstat"
- 		fi
-+		{ echo "$as_me:$LINENO: checking for kinfo_getfile in -lutil" >&5
+--- configure.orig	2014-04-29 10:12:29.633996234 +0000
++++ configure	2014-04-29 10:14:19.976988652 +0000
+@@ -13638,6 +13638,79 @@
+ 
+ done
+ 
++               { echo "$as_me:$LINENO: checking for kinfo_getfile in -lutil" >&5
 +echo $ECHO_N "checking for kinfo_getfile in -lutil... $ECHO_C" >&6; }
 +if test "${ac_cv_lib_util_kinfo_getfile+set}" = set; then
 +  echo $ECHO_N "(cached) $ECHO_C" >&6
@@ -47,35 +47,36 @@
 +  cat conftest.err >&5
 +  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 +  (exit $ac_status); } && {
-+	 test -z "$ac_c_werror_flag" ||
-+	 test ! -s conftest.err
++        test -z "$ac_c_werror_flag" ||
++        test ! -s conftest.err
 +       } && test -s conftest$ac_exeext &&
-+       $as_test_x conftest$ac_exeext; then
++	       $as_test_x conftest$ac_exeext; then
 +  ac_cv_lib_util_kinfo_getfile=yes
 +else
 +  echo "$as_me: failed program was:" >&5
 +sed 's/^/| /' conftest.$ac_ext >&5
 +
-+	ac_cv_lib_util_kinfo_getfile=no
++       ac_cv_lib_util_kinfo_getfile=no
 +fi
-+
++ 
 +rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-+      conftest$ac_exeext conftest.$ac_ext
++	      conftest$ac_exeext conftest.$ac_ext
 +LIBS=$ac_check_lib_save_LIBS
 +fi
 +{ echo "$as_me:$LINENO: result: $ac_cv_lib_util_kinfo_getfile" >&5
 +echo "${ECHO_T}$ac_cv_lib_util_kinfo_getfile" >&6; }
 +if test $ac_cv_lib_util_kinfo_getfile = yes; then
 +  EXTRA_SYSDEPS_LIBS="${EXTRA_SYSDEPS_LIBS} -lutil"
-+
++  
 +cat >>confdefs.h <<\_ACEOF
 +#define HAVE_KINFO_GETFILE 1
 +_ACEOF
-+
++  
 +else
 +  :
 +fi
 +
- 		;;
-           esac
- 
++
+ 	  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for I4B" >&5
+ $as_echo_n "checking for I4B... " >&6; }
+ 	  cat confdefs.h - <<_ACEOF >conftest.$ac_ext

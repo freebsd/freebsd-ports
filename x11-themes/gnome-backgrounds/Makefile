@@ -1,20 +1,20 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-themes/gnome-backgrounds/Makefile,v 1.49 2010/09/27 19:52:50 kwm Exp $
+#   $MCom: ports/trunk/x11-themes/gnome-backgrounds/Makefile 19969 2014-10-16 08:10:18Z gusi $
 
 PORTNAME=	gnome-backgrounds
-PORTVERSION=	2.32.0
+PORTVERSION=	3.14.1
 CATEGORIES=	x11-themes graphics gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Collection of backgrounds for GNOME 2
+COMMENT=	Collection of backgrounds for GNOME
 
-USES=		gettext gmake pathfix tar:bzip2
-GNU_CONFIGURE=	yes
+USES=		gettext gmake pathfix tar:xz
 USE_GNOME=	gnomeprefix intlhack
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

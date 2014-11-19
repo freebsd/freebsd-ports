@@ -1,36 +1,34 @@
 # Created by: Garrett Rooney <rooneg@electricjellyfish.net>
 # $FreeBSD$
-#   $MCom: ports/x11-wm/metacity/Makefile,v 1.158 2010/09/30 07:04:02 kwm Exp $
+#   $MCom: ports/trunk/x11-wm/metacity/Makefile 20004 2014-10-20 14:11:09Z gusi $
 
 PORTNAME=	metacity
-PORTVERSION=	2.30.3
-PORTREVISION=	2
+PORTVERSION=	3.14.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Window manager for the adult in you
 
-BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
+BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
+		itstool:${PORTSDIR}/textproc/itstool \
+		gsettings-desktop-schemas>=3.3.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
-		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
-RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
+		libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
+		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
+		gsettings-desktop-schemas>=3.3.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USE_XORG=	x11 xcomposite xdamage
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-INSTALL_TARGET=	install-strip
+USE_XORG=	x11 xcomposite xdamage xrender xcursor xinerama xext xrandr
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix intlhack gconf2 gtk20
+USE_GNOME=	gnomeprefix gtk30 intlhack libxml2:build
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
+INSTALL_TARGET=	install-strip
 
-GCONF_SCHEMAS=	metacity.schemas
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||g' \
-		${WRKSRC}/configure
+GLIB_SCHEMAS=	org.gnome.metacity.gschema.xml
 
 .include <bsd.port.mk>

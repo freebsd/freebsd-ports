@@ -37,6 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/include/gpod|${LOCALBASE}/include/gpod| ; \
 		 s|/usr/include/glib|${LOCALBASE}/include/glib| ; \
+		 s|/usr/lib/glib|${LOCALBASE}/lib/glib| ; \
 		 s|linux|freebsd|' ${WRKSRC}/src/mediadevices/ipod/ipod.pro
 	@${REINPLACE_CMD} -e \
 		's|^RUNDIR.*|RUNDIR=${PREFIX}/lib/last.fm|' \

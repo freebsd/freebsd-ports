@@ -1,124 +1,85 @@
 bin/totem
 bin/totem-audio-preview
-bin/totem-video-indexer
 bin/totem-video-thumbnailer
+include/totem/1.0/totem-dirs.h
+include/totem/1.0/totem-interface.h
+include/totem/1.0/totem-plugin.h
+include/totem/1.0/totem.h
 %%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-cone-plugin.a
-%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-cone-plugin.la
 %%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-cone-plugin.so
 %%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-gmp-plugin.a
-%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-gmp-plugin.la
 %%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-gmp-plugin.so
 %%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-mully-plugin.a
-%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-mully-plugin.la
 %%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-mully-plugin.so
 %%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-narrowspace-plugin.a
-%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-narrowspace-plugin.la
 %%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-narrowspace-plugin.so
-lib/nautilus/extensions-2.0/libtotem-properties-page.a
-lib/nautilus/extensions-2.0/libtotem-properties-page.la
-lib/nautilus/extensions-2.0/libtotem-properties-page.so
-lib/totem/plugins/brasero-disc-recorder/brasero-disc-recorder.totem-plugin
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-vegas-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-vegas-plugin.so
+lib/girepository-1.0/Totem-1.0.typelib
+lib/libtotem.a
+lib/libtotem.so
+lib/libtotem.so.0
+lib/libtotem.so.0.0.0
+lib/nautilus/extensions-3.0/libtotem-properties-page.a
+lib/nautilus/extensions-3.0/libtotem-properties-page.so
+lib/totem/plugins/brasero-disc-recorder/brasero-disc-recorder.plugin
 lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.a
-lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.la
 lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.so
-lib/totem/plugins/coherence_upnp/coherence_upnp.py
-lib/totem/plugins/coherence_upnp/coherence_upnp.pyc
-lib/totem/plugins/coherence_upnp/coherence_upnp.pyo
-lib/totem/plugins/coherence_upnp/coherence_upnp.totem-plugin
-lib/totem/plugins/dbus/dbus-service.py
-lib/totem/plugins/dbus/dbus-service.pyc
-lib/totem/plugins/dbus/dbus-service.pyo
-lib/totem/plugins/dbus/dbus-service.totem-plugin
-%%GALAGO%%lib/totem/plugins/galago/galago.totem-plugin
-%%GALAGO%%lib/totem/plugins/galago/libtgp.a
-%%GALAGO%%lib/totem/plugins/galago/libtgp.la
-%%GALAGO%%lib/totem/plugins/galago/libtgp.so
-lib/totem/plugins/gromit/gromit.totem-plugin
-lib/totem/plugins/iplayer/iplayer.py
-lib/totem/plugins/iplayer/iplayer.pyc
-lib/totem/plugins/iplayer/iplayer.pyo
-lib/totem/plugins/iplayer/iplayer.totem-plugin
-lib/totem/plugins/iplayer/iplayer.ui
-lib/totem/plugins/iplayer/iplayer2.py
-lib/totem/plugins/iplayer/iplayer2.pyc
-lib/totem/plugins/iplayer/iplayer2.pyo
-lib/totem/plugins/iplayer/listparser.py
-lib/totem/plugins/iplayer/listparser.pyc
-lib/totem/plugins/iplayer/listparser.pyo
+lib/totem/plugins/chapters/chapters-edit.ui
+lib/totem/plugins/chapters/chapters-list.ui
+lib/totem/plugins/dbus/__pycache__/dbusservice.cpython-%%PYVER%%.pyc
+lib/totem/plugins/dbus/__pycache__/dbusservice.cpython-%%PYVER%%.pyo
+lib/totem/plugins/dbus/dbusservice.plugin
+lib/totem/plugins/dbus/dbusservice.py
+lib/totem/plugins/gromit/gromit.plugin
 lib/totem/plugins/gromit/libgromit.a
-lib/totem/plugins/gromit/libgromit.la
 lib/totem/plugins/gromit/libgromit.so
-%%LIRC%%lib/totem/plugins/lirc/lirc.totem-plugin
+lib/totem/plugins/im-status/libtotem-im-status.a
+lib/totem/plugins/im-status/libtotem-im-status.so
+lib/totem/plugins/im-status/totem-im-status.plugin
+%%LIRC%%lib/totem/plugins/lirc/lirc.plugin
 %%LIRC%%lib/totem/plugins/lirc/liblirc.a
-%%LIRC%%lib/totem/plugins/lirc/liblirc.la
 %%LIRC%%lib/totem/plugins/lirc/liblirc.so
 %%LIRC%%lib/totem/plugins/lirc/totem_lirc_default
 lib/totem/plugins/media-player-keys/libmedia_player_keys.a
-lib/totem/plugins/media-player-keys/libmedia_player_keys.la
 lib/totem/plugins/media-player-keys/libmedia_player_keys.so
-lib/totem/plugins/media-player-keys/media-player-keys.totem-plugin
+lib/totem/plugins/media-player-keys/media-player-keys.plugin
 lib/totem/plugins/ontop/libontop.a
-lib/totem/plugins/ontop/libontop.la
 lib/totem/plugins/ontop/libontop.so
-lib/totem/plugins/ontop/ontop.totem-plugin
+lib/totem/plugins/ontop/ontop.plugin
+lib/totem/plugins/opensubtitles/__pycache__/hash.cpython-%%PYVER%%.pyc
+lib/totem/plugins/opensubtitles/__pycache__/hash.cpython-%%PYVER%%.pyo
+lib/totem/plugins/opensubtitles/__pycache__/opensubtitles.cpython-%%PYVER%%.pyc
+lib/totem/plugins/opensubtitles/__pycache__/opensubtitles.cpython-%%PYVER%%.pyo
 lib/totem/plugins/opensubtitles/hash.py
-lib/totem/plugins/opensubtitles/hash.pyc
-lib/totem/plugins/opensubtitles/hash.pyo
+lib/totem/plugins/opensubtitles/opensubtitles.plugin
 lib/totem/plugins/opensubtitles/opensubtitles.py
-lib/totem/plugins/opensubtitles/opensubtitles.pyc
-lib/totem/plugins/opensubtitles/opensubtitles.pyo
-lib/totem/plugins/opensubtitles/opensubtitles.totem-plugin
 lib/totem/plugins/opensubtitles/opensubtitles.ui
-%%PUBLISH%%lib/totem/plugins/publish/libpublish.a
-%%PUBLISH%%lib/totem/plugins/publish/libpublish.la
-%%PUBLISH%%lib/totem/plugins/publish/libpublish.so
-%%PUBLISH%%lib/totem/plugins/publish/publish-plugin.ui
-%%PUBLISH%%lib/totem/plugins/publish/publish.totem-plugin
 lib/totem/plugins/properties/libmovie-properties.a
-lib/totem/plugins/properties/libmovie-properties.la
 lib/totem/plugins/properties/libmovie-properties.so
-lib/totem/plugins/properties/movie-properties.totem-plugin
+lib/totem/plugins/properties/movie-properties.plugin
 lib/totem/plugins/screensaver/libscreensaver.a
-lib/totem/plugins/screensaver/libscreensaver.la
 lib/totem/plugins/screensaver/libscreensaver.so
-lib/totem/plugins/screensaver/screensaver.totem-plugin
+lib/totem/plugins/screensaver/screensaver.plugin
 lib/totem/plugins/screenshot/gallery.ui
-lib/totem/plugins/screenshot/gnome-screenshot.ui
 lib/totem/plugins/screenshot/libscreenshot.a
-lib/totem/plugins/screenshot/libscreenshot.la
 lib/totem/plugins/screenshot/libscreenshot.so
-lib/totem/plugins/screenshot/screenshot.totem-plugin
+lib/totem/plugins/screenshot/screenshot.plugin
 lib/totem/plugins/skipto/libskipto.a
-lib/totem/plugins/skipto/libskipto.la
 lib/totem/plugins/skipto/libskipto.so
-lib/totem/plugins/skipto/skipto.totem-plugin
+lib/totem/plugins/skipto/skipto.plugin
 lib/totem/plugins/skipto/skipto.ui
-lib/totem/plugins/thumbnail/libthumbnail.a
-lib/totem/plugins/thumbnail/libthumbnail.la
-lib/totem/plugins/thumbnail/libthumbnail.so
-lib/totem/plugins/thumbnail/thumbnail.totem-plugin
-%%TRACKER%%lib/totem/plugins/tracker/libtracker.a
-%%TRACKER%%lib/totem/plugins/tracker/libtracker.la
-%%TRACKER%%lib/totem/plugins/tracker/libtracker.so
-%%TRACKER%%lib/totem/plugins/tracker/tracker.totem-plugin
-lib/totem/plugins/totem/__init__.py
-lib/totem/plugins/totem/__init__.pyc
-lib/totem/plugins/totem/__init__.pyo
-lib/totem/plugins/youtube/libyoutube.a
-lib/totem/plugins/youtube/libyoutube.la
-lib/totem/plugins/youtube/libyoutube.so
-lib/totem/plugins/youtube/youtube.totem-plugin
-lib/totem/plugins/youtube/youtube.ui
+libdata/pkgconfig/totem.pc
 %%BROWSER_PLUGINS%%libexec/totem-plugin-viewer
 libexec/totem/totem-bugreport.py
-man/man1/totem-video-thumbnailer.1.gz
 man/man1/totem.1.gz
+man/man1/totem-video-thumbnailer.1.gz
+share/GConf/gsettings/opensubtitles.convert
+share/GConf/gsettings/totem.convert
+share/appdata/totem.appdata.xml
 share/applications/totem.desktop
 %%DOCSDIR%%/BaconVideoWidget.html
-%%DOCSDIR%%/TotemCellRendererVideo.html
 %%DOCSDIR%%/TotemObject.html
-%%DOCSDIR%%/TotemPlugin.html
-%%DOCSDIR%%/TotemVideoList.html
 %%DOCSDIR%%/annotation-glossary.html
 %%DOCSDIR%%/api-index-deprecated.html
 %%DOCSDIR%%/api-index-full.html
@@ -128,245 +89,324 @@ share/applications/totem.desktop
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/ix02.html
 %%DOCSDIR%%/ix03.html
+%%DOCSDIR%%/ix04.html
+%%DOCSDIR%%/ix05.html
+%%DOCSDIR%%/left-insensitive.png
 %%DOCSDIR%%/left.png
+%%DOCSDIR%%/right-insensitive.png
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/totem-Interface.html
-%%DOCSDIR%%/totem.devhelp
-%%DOCSDIR%%/totem.devhelp2
+%%DOCSDIR%%/totem-TotemPlugin.html
 %%DOCSDIR%%/totem-plugins.html
+%%DOCSDIR%%/totem.devhelp2
 %%DOCSDIR%%/tutorials.html
+%%DOCSDIR%%/up-insensitive.png
 %%DOCSDIR%%/up.png
-%%DOCSDIR%%/widget-api.html
-share/gnome/help/totem/C/figures/totem_next_button.png
-share/gnome/help/totem/C/figures/totem_pause_button.png
-share/gnome/help/totem/C/figures/totem_play_button.png
-share/gnome/help/totem/C/figures/totem_previous_button.png
-share/gnome/help/totem/C/figures/totem_show_playlist_button.png
-share/gnome/help/totem/C/figures/totem_start_window.png
-share/gnome/help/totem/C/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/C/figures/totem_volume_mute_button.png
-share/gnome/help/totem/C/legal.xml
-share/gnome/help/totem/C/totem.xml
-share/gnome/help/totem/bg/figures/totem_next_button.png
-share/gnome/help/totem/bg/figures/totem_pause_button.png
-share/gnome/help/totem/bg/figures/totem_play_button.png
-share/gnome/help/totem/bg/figures/totem_previous_button.png
-share/gnome/help/totem/bg/figures/totem_show_playlist_button.png
-share/gnome/help/totem/bg/figures/totem_start_window.png
-share/gnome/help/totem/bg/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/bg/figures/totem_volume_mute_button.png
-share/gnome/help/totem/bg/totem.xml
-share/gnome/help/totem/ca/figures/totem_next_button.png
-share/gnome/help/totem/ca/figures/totem_pause_button.png
-share/gnome/help/totem/ca/figures/totem_play_button.png
-share/gnome/help/totem/ca/figures/totem_previous_button.png
-share/gnome/help/totem/ca/figures/totem_show_playlist_button.png
-share/gnome/help/totem/ca/figures/totem_start_window.png
-share/gnome/help/totem/ca/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/ca/figures/totem_volume_mute_button.png
-share/gnome/help/totem/ca/totem.xml
-share/gnome/help/totem/cs/figures/totem_next_button.png
-share/gnome/help/totem/cs/figures/totem_pause_button.png
-share/gnome/help/totem/cs/figures/totem_play_button.png
-share/gnome/help/totem/cs/figures/totem_previous_button.png
-share/gnome/help/totem/cs/figures/totem_show_playlist_button.png
-share/gnome/help/totem/cs/figures/totem_start_window.png
-share/gnome/help/totem/cs/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/cs/figures/totem_volume_mute_button.png
-share/gnome/help/totem/cs/totem.xml
-share/gnome/help/totem/da/figures/totem_next_button.png
-share/gnome/help/totem/da/figures/totem_pause_button.png
-share/gnome/help/totem/da/figures/totem_play_button.png
-share/gnome/help/totem/da/figures/totem_previous_button.png
-share/gnome/help/totem/da/figures/totem_show_playlist_button.png
-share/gnome/help/totem/da/figures/totem_start_window.png
-share/gnome/help/totem/da/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/da/figures/totem_volume_mute_button.png
-share/gnome/help/totem/da/totem.xml
-share/gnome/help/totem/de/figures/totem_next_button.png
-share/gnome/help/totem/de/figures/totem_pause_button.png
-share/gnome/help/totem/de/figures/totem_play_button.png
-share/gnome/help/totem/de/figures/totem_previous_button.png
-share/gnome/help/totem/de/figures/totem_show_playlist_button.png
-share/gnome/help/totem/de/figures/totem_start_window.png
-share/gnome/help/totem/de/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/de/figures/totem_volume_mute_button.png
-share/gnome/help/totem/de/totem.xml
-share/gnome/help/totem/el/figures/totem_next_button.png
-share/gnome/help/totem/el/figures/totem_pause_button.png
-share/gnome/help/totem/el/figures/totem_play_button.png
-share/gnome/help/totem/el/figures/totem_previous_button.png
-share/gnome/help/totem/el/figures/totem_show_playlist_button.png
-share/gnome/help/totem/el/figures/totem_start_window.png
-share/gnome/help/totem/el/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/el/figures/totem_volume_mute_button.png
-share/gnome/help/totem/el/totem.xml
-share/gnome/help/totem/en_GB/figures/totem_next_button.png
-share/gnome/help/totem/en_GB/figures/totem_pause_button.png
-share/gnome/help/totem/en_GB/figures/totem_play_button.png
-share/gnome/help/totem/en_GB/figures/totem_previous_button.png
-share/gnome/help/totem/en_GB/figures/totem_show_playlist_button.png
-share/gnome/help/totem/en_GB/figures/totem_start_window.png
-share/gnome/help/totem/en_GB/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/en_GB/figures/totem_volume_mute_button.png
-share/gnome/help/totem/en_GB/totem.xml
-share/gnome/help/totem/es/figures/totem_next_button.png
-share/gnome/help/totem/es/figures/totem_pause_button.png
-share/gnome/help/totem/es/figures/totem_play_button.png
-share/gnome/help/totem/es/figures/totem_previous_button.png
-share/gnome/help/totem/es/figures/totem_show_playlist_button.png
-share/gnome/help/totem/es/figures/totem_start_window.png
-share/gnome/help/totem/es/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/es/figures/totem_volume_mute_button.png
-share/gnome/help/totem/es/totem.xml
-share/gnome/help/totem/eu/figures/totem_next_button.png
-share/gnome/help/totem/eu/figures/totem_pause_button.png
-share/gnome/help/totem/eu/figures/totem_play_button.png
-share/gnome/help/totem/eu/figures/totem_previous_button.png
-share/gnome/help/totem/eu/figures/totem_show_playlist_button.png
-share/gnome/help/totem/eu/figures/totem_start_window.png
-share/gnome/help/totem/eu/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/eu/figures/totem_volume_mute_button.png
-share/gnome/help/totem/eu/totem.xml
-share/gnome/help/totem/fi/figures/totem_next_button.png
-share/gnome/help/totem/fi/figures/totem_pause_button.png
-share/gnome/help/totem/fi/figures/totem_play_button.png
-share/gnome/help/totem/fi/figures/totem_previous_button.png
-share/gnome/help/totem/fi/figures/totem_show_playlist_button.png
-share/gnome/help/totem/fi/figures/totem_start_window.png
-share/gnome/help/totem/fi/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/fi/figures/totem_volume_mute_button.png
-share/gnome/help/totem/fi/totem.xml
-share/gnome/help/totem/fr/figures/totem_next_button.png
-share/gnome/help/totem/fr/figures/totem_pause_button.png
-share/gnome/help/totem/fr/figures/totem_play_button.png
-share/gnome/help/totem/fr/figures/totem_previous_button.png
-share/gnome/help/totem/fr/figures/totem_show_playlist_button.png
-share/gnome/help/totem/fr/figures/totem_start_window.png
-share/gnome/help/totem/fr/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/fr/figures/totem_volume_mute_button.png
-share/gnome/help/totem/fr/totem.xml
-share/gnome/help/totem/it/figures/totem_next_button.png
-share/gnome/help/totem/it/figures/totem_pause_button.png
-share/gnome/help/totem/it/figures/totem_play_button.png
-share/gnome/help/totem/it/figures/totem_previous_button.png
-share/gnome/help/totem/it/figures/totem_show_playlist_button.png
-share/gnome/help/totem/it/figures/totem_start_window.png
-share/gnome/help/totem/it/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/it/figures/totem_volume_mute_button.png
-share/gnome/help/totem/it/totem.xml
-share/gnome/help/totem/ja/figures/totem_next_button.png
-share/gnome/help/totem/ja/figures/totem_pause_button.png
-share/gnome/help/totem/ja/figures/totem_play_button.png
-share/gnome/help/totem/ja/figures/totem_previous_button.png
-share/gnome/help/totem/ja/figures/totem_show_playlist_button.png
-share/gnome/help/totem/ja/figures/totem_start_window.png
-share/gnome/help/totem/ja/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/ja/figures/totem_volume_mute_button.png
-share/gnome/help/totem/ja/totem.xml
-share/gnome/help/totem/oc/figures/totem_next_button.png
-share/gnome/help/totem/oc/figures/totem_pause_button.png
-share/gnome/help/totem/oc/figures/totem_play_button.png
-share/gnome/help/totem/oc/figures/totem_previous_button.png
-share/gnome/help/totem/oc/figures/totem_show_playlist_button.png
-share/gnome/help/totem/oc/figures/totem_start_window.png
-share/gnome/help/totem/oc/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/oc/figures/totem_volume_mute_button.png
-share/gnome/help/totem/oc/totem.xml
-share/gnome/help/totem/pa/figures/totem_next_button.png
-share/gnome/help/totem/pa/figures/totem_pause_button.png
-share/gnome/help/totem/pa/figures/totem_play_button.png
-share/gnome/help/totem/pa/figures/totem_previous_button.png
-share/gnome/help/totem/pa/figures/totem_show_playlist_button.png
-share/gnome/help/totem/pa/figures/totem_start_window.png
-share/gnome/help/totem/pa/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/pa/figures/totem_volume_mute_button.png
-share/gnome/help/totem/pa/totem.xml
-share/gnome/help/totem/pl/figures/totem_next_button.png
-share/gnome/help/totem/pl/figures/totem_pause_button.png
-share/gnome/help/totem/pl/figures/totem_play_button.png
-share/gnome/help/totem/pl/figures/totem_previous_button.png
-share/gnome/help/totem/pl/figures/totem_show_playlist_button.png
-share/gnome/help/totem/pl/figures/totem_start_window.png
-share/gnome/help/totem/pl/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/pl/figures/totem_volume_mute_button.png
-share/gnome/help/totem/pl/totem.xml
-share/gnome/help/totem/pt_BR/figures/totem_next_button.png
-share/gnome/help/totem/pt_BR/figures/totem_pause_button.png
-share/gnome/help/totem/pt_BR/figures/totem_play_button.png
-share/gnome/help/totem/pt_BR/figures/totem_previous_button.png
-share/gnome/help/totem/pt_BR/figures/totem_show_playlist_button.png
-share/gnome/help/totem/pt_BR/figures/totem_start_window.png
-share/gnome/help/totem/pt_BR/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/pt_BR/figures/totem_volume_mute_button.png
-share/gnome/help/totem/pt_BR/totem.xml
-share/gnome/help/totem/ru/figures/totem_next_button.png
-share/gnome/help/totem/ru/figures/totem_pause_button.png
-share/gnome/help/totem/ru/figures/totem_play_button.png
-share/gnome/help/totem/ru/figures/totem_previous_button.png
-share/gnome/help/totem/ru/figures/totem_show_playlist_button.png
-share/gnome/help/totem/ru/figures/totem_start_window.png
-share/gnome/help/totem/ru/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/ru/figures/totem_volume_mute_button.png
-share/gnome/help/totem/ru/totem.xml
-share/gnome/help/totem/sv/figures/totem_next_button.png
-share/gnome/help/totem/sv/figures/totem_pause_button.png
-share/gnome/help/totem/sv/figures/totem_play_button.png
-share/gnome/help/totem/sv/figures/totem_previous_button.png
-share/gnome/help/totem/sv/figures/totem_show_playlist_button.png
-share/gnome/help/totem/sv/figures/totem_start_window.png
-share/gnome/help/totem/sv/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/sv/figures/totem_volume_mute_button.png
-share/gnome/help/totem/sv/totem.xml
-share/gnome/help/totem/uk/figures/totem_next_button.png
-share/gnome/help/totem/uk/figures/totem_pause_button.png
-share/gnome/help/totem/uk/figures/totem_play_button.png
-share/gnome/help/totem/uk/figures/totem_previous_button.png
-share/gnome/help/totem/uk/figures/totem_show_playlist_button.png
-share/gnome/help/totem/uk/figures/totem_start_window.png
-share/gnome/help/totem/uk/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/uk/figures/totem_volume_mute_button.png
-share/gnome/help/totem/uk/totem.xml
-share/gnome/help/totem/zh_CN/figures/totem_next_button.png
-share/gnome/help/totem/zh_CN/figures/totem_pause_button.png
-share/gnome/help/totem/zh_CN/figures/totem_play_button.png
-share/gnome/help/totem/zh_CN/figures/totem_previous_button.png
-share/gnome/help/totem/zh_CN/figures/totem_show_playlist_button.png
-share/gnome/help/totem/zh_CN/figures/totem_start_window.png
-share/gnome/help/totem/zh_CN/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/zh_CN/figures/totem_volume_mute_button.png
-share/gnome/help/totem/zh_CN/totem.xml
-share/gnome/help/totem/zh_HK/figures/totem_next_button.png
-share/gnome/help/totem/zh_HK/figures/totem_pause_button.png
-share/gnome/help/totem/zh_HK/figures/totem_play_button.png
-share/gnome/help/totem/zh_HK/figures/totem_previous_button.png
-share/gnome/help/totem/zh_HK/figures/totem_show_playlist_button.png
-share/gnome/help/totem/zh_HK/figures/totem_start_window.png
-share/gnome/help/totem/zh_HK/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/zh_HK/figures/totem_volume_mute_button.png
-share/gnome/help/totem/zh_HK/totem.xml
-share/gnome/help/totem/zh_TW/figures/totem_next_button.png
-share/gnome/help/totem/zh_TW/figures/totem_pause_button.png
-share/gnome/help/totem/zh_TW/figures/totem_play_button.png
-share/gnome/help/totem/zh_TW/figures/totem_previous_button.png
-share/gnome/help/totem/zh_TW/figures/totem_show_playlist_button.png
-share/gnome/help/totem/zh_TW/figures/totem_start_window.png
-share/gnome/help/totem/zh_TW/figures/totem_volume_maximum_button.png
-share/gnome/help/totem/zh_TW/figures/totem_volume_mute_button.png
-share/gnome/help/totem/zh_TW/totem.xml
+share/gir-1.0/Totem-1.0.gir
+share/help/C/totem/index.docbook
+share/help/C/totem/legal.xml
+share/help/C/totem/figures/totem_next_button.png
+share/help/C/totem/figures/totem_pause_button.png
+share/help/C/totem/figures/totem_play_button.png
+share/help/C/totem/figures/totem_previous_button.png
+share/help/C/totem/figures/totem_show_playlist_button.png
+share/help/C/totem/figures/totem_start_window.png
+share/help/C/totem/figures/totem_volume_maximum_button.png
+share/help/C/totem/figures/totem_volume_mute_button.png
+share/help/bg/totem/index.docbook
+share/help/bg/totem/legal.xml
+share/help/bg/totem/figures/totem_next_button.png
+share/help/bg/totem/figures/totem_pause_button.png
+share/help/bg/totem/figures/totem_play_button.png
+share/help/bg/totem/figures/totem_previous_button.png
+share/help/bg/totem/figures/totem_show_playlist_button.png
+share/help/bg/totem/figures/totem_start_window.png
+share/help/bg/totem/figures/totem_volume_maximum_button.png
+share/help/bg/totem/figures/totem_volume_mute_button.png
+share/help/ca/totem/index.docbook
+share/help/ca/totem/legal.xml
+share/help/ca/totem/figures/totem_next_button.png
+share/help/ca/totem/figures/totem_pause_button.png
+share/help/ca/totem/figures/totem_play_button.png
+share/help/ca/totem/figures/totem_previous_button.png
+share/help/ca/totem/figures/totem_show_playlist_button.png
+share/help/ca/totem/figures/totem_start_window.png
+share/help/ca/totem/figures/totem_volume_maximum_button.png
+share/help/ca/totem/figures/totem_volume_mute_button.png
+share/help/cs/totem/index.docbook
+share/help/cs/totem/legal.xml
+share/help/cs/totem/figures/totem_next_button.png
+share/help/cs/totem/figures/totem_pause_button.png
+share/help/cs/totem/figures/totem_play_button.png
+share/help/cs/totem/figures/totem_previous_button.png
+share/help/cs/totem/figures/totem_show_playlist_button.png
+share/help/cs/totem/figures/totem_start_window.png
+share/help/cs/totem/figures/totem_volume_maximum_button.png
+share/help/cs/totem/figures/totem_volume_mute_button.png
+share/help/da/totem/index.docbook
+share/help/da/totem/legal.xml
+share/help/da/totem/figures/totem_next_button.png
+share/help/da/totem/figures/totem_pause_button.png
+share/help/da/totem/figures/totem_play_button.png
+share/help/da/totem/figures/totem_previous_button.png
+share/help/da/totem/figures/totem_show_playlist_button.png
+share/help/da/totem/figures/totem_start_window.png
+share/help/da/totem/figures/totem_volume_maximum_button.png
+share/help/da/totem/figures/totem_volume_mute_button.png
+share/help/de/totem/index.docbook
+share/help/de/totem/legal.xml
+share/help/de/totem/figures/totem_next_button.png
+share/help/de/totem/figures/totem_pause_button.png
+share/help/de/totem/figures/totem_play_button.png
+share/help/de/totem/figures/totem_previous_button.png
+share/help/de/totem/figures/totem_show_playlist_button.png
+share/help/de/totem/figures/totem_start_window.png
+share/help/de/totem/figures/totem_volume_maximum_button.png
+share/help/de/totem/figures/totem_volume_mute_button.png
+share/help/el/totem/index.docbook
+share/help/el/totem/legal.xml
+share/help/el/totem/figures/totem_next_button.png
+share/help/el/totem/figures/totem_pause_button.png
+share/help/el/totem/figures/totem_play_button.png
+share/help/el/totem/figures/totem_previous_button.png
+share/help/el/totem/figures/totem_show_playlist_button.png
+share/help/el/totem/figures/totem_start_window.png
+share/help/el/totem/figures/totem_volume_maximum_button.png
+share/help/el/totem/figures/totem_volume_mute_button.png
+share/help/en_GB/totem/index.docbook
+share/help/en_GB/totem/legal.xml
+share/help/en_GB/totem/figures/totem_next_button.png
+share/help/en_GB/totem/figures/totem_pause_button.png
+share/help/en_GB/totem/figures/totem_play_button.png
+share/help/en_GB/totem/figures/totem_previous_button.png
+share/help/en_GB/totem/figures/totem_show_playlist_button.png
+share/help/en_GB/totem/figures/totem_start_window.png
+share/help/en_GB/totem/figures/totem_volume_maximum_button.png
+share/help/en_GB/totem/figures/totem_volume_mute_button.png
+share/help/es/totem/index.docbook
+share/help/es/totem/legal.xml
+share/help/es/totem/figures/totem_next_button.png
+share/help/es/totem/figures/totem_pause_button.png
+share/help/es/totem/figures/totem_play_button.png
+share/help/es/totem/figures/totem_previous_button.png
+share/help/es/totem/figures/totem_show_playlist_button.png
+share/help/es/totem/figures/totem_start_window.png
+share/help/es/totem/figures/totem_volume_maximum_button.png
+share/help/es/totem/figures/totem_volume_mute_button.png
+share/help/eu/totem/index.docbook
+share/help/eu/totem/legal.xml
+share/help/eu/totem/figures/totem_next_button.png
+share/help/eu/totem/figures/totem_pause_button.png
+share/help/eu/totem/figures/totem_play_button.png
+share/help/eu/totem/figures/totem_previous_button.png
+share/help/eu/totem/figures/totem_show_playlist_button.png
+share/help/eu/totem/figures/totem_start_window.png
+share/help/eu/totem/figures/totem_volume_maximum_button.png
+share/help/eu/totem/figures/totem_volume_mute_button.png
+share/help/fi/totem/index.docbook
+share/help/fi/totem/legal.xml
+share/help/fi/totem/figures/totem_next_button.png
+share/help/fi/totem/figures/totem_pause_button.png
+share/help/fi/totem/figures/totem_play_button.png
+share/help/fi/totem/figures/totem_previous_button.png
+share/help/fi/totem/figures/totem_show_playlist_button.png
+share/help/fi/totem/figures/totem_start_window.png
+share/help/fi/totem/figures/totem_volume_maximum_button.png
+share/help/fi/totem/figures/totem_volume_mute_button.png
+share/help/fr/totem/index.docbook
+share/help/fr/totem/legal.xml
+share/help/fr/totem/figures/totem_next_button.png
+share/help/fr/totem/figures/totem_pause_button.png
+share/help/fr/totem/figures/totem_play_button.png
+share/help/fr/totem/figures/totem_previous_button.png
+share/help/fr/totem/figures/totem_show_playlist_button.png
+share/help/fr/totem/figures/totem_start_window.png
+share/help/fr/totem/figures/totem_volume_maximum_button.png
+share/help/fr/totem/figures/totem_volume_mute_button.png
+share/help/gl/totem/index.docbook
+share/help/gl/totem/legal.xml
+share/help/gl/totem/figures/totem_next_button.png
+share/help/gl/totem/figures/totem_pause_button.png
+share/help/gl/totem/figures/totem_play_button.png
+share/help/gl/totem/figures/totem_previous_button.png
+share/help/gl/totem/figures/totem_show_playlist_button.png
+share/help/gl/totem/figures/totem_start_window.png
+share/help/gl/totem/figures/totem_volume_maximum_button.png
+share/help/gl/totem/figures/totem_volume_mute_button.png
+share/help/id/totem/index.docbook
+share/help/id/totem/legal.xml
+share/help/id/totem/figures/totem_next_button.png
+share/help/id/totem/figures/totem_pause_button.png
+share/help/id/totem/figures/totem_play_button.png
+share/help/id/totem/figures/totem_previous_button.png
+share/help/id/totem/figures/totem_show_playlist_button.png
+share/help/id/totem/figures/totem_start_window.png
+share/help/id/totem/figures/totem_volume_maximum_button.png
+share/help/id/totem/figures/totem_volume_mute_button.png
+share/help/it/totem/index.docbook
+share/help/it/totem/legal.xml
+share/help/it/totem/figures/totem_next_button.png
+share/help/it/totem/figures/totem_pause_button.png
+share/help/it/totem/figures/totem_play_button.png
+share/help/it/totem/figures/totem_previous_button.png
+share/help/it/totem/figures/totem_show_playlist_button.png
+share/help/it/totem/figures/totem_start_window.png
+share/help/it/totem/figures/totem_volume_maximum_button.png
+share/help/it/totem/figures/totem_volume_mute_button.png
+share/help/ja/totem/index.docbook
+share/help/ja/totem/legal.xml
+share/help/ja/totem/figures/totem_next_button.png
+share/help/ja/totem/figures/totem_pause_button.png
+share/help/ja/totem/figures/totem_play_button.png
+share/help/ja/totem/figures/totem_previous_button.png
+share/help/ja/totem/figures/totem_show_playlist_button.png
+share/help/ja/totem/figures/totem_start_window.png
+share/help/ja/totem/figures/totem_volume_maximum_button.png
+share/help/ja/totem/figures/totem_volume_mute_button.png
+share/help/oc/totem/index.docbook
+share/help/oc/totem/legal.xml
+share/help/oc/totem/figures/totem_next_button.png
+share/help/oc/totem/figures/totem_pause_button.png
+share/help/oc/totem/figures/totem_play_button.png
+share/help/oc/totem/figures/totem_previous_button.png
+share/help/oc/totem/figures/totem_show_playlist_button.png
+share/help/oc/totem/figures/totem_start_window.png
+share/help/oc/totem/figures/totem_volume_maximum_button.png
+share/help/oc/totem/figures/totem_volume_mute_button.png
+share/help/pa/totem/index.docbook
+share/help/pa/totem/legal.xml
+share/help/pa/totem/figures/totem_next_button.png
+share/help/pa/totem/figures/totem_pause_button.png
+share/help/pa/totem/figures/totem_play_button.png
+share/help/pa/totem/figures/totem_previous_button.png
+share/help/pa/totem/figures/totem_show_playlist_button.png
+share/help/pa/totem/figures/totem_start_window.png
+share/help/pa/totem/figures/totem_volume_maximum_button.png
+share/help/pa/totem/figures/totem_volume_mute_button.png
+share/help/pl/totem/index.docbook
+share/help/pl/totem/legal.xml
+share/help/pl/totem/figures/totem_next_button.png
+share/help/pl/totem/figures/totem_pause_button.png
+share/help/pl/totem/figures/totem_play_button.png
+share/help/pl/totem/figures/totem_previous_button.png
+share/help/pl/totem/figures/totem_show_playlist_button.png
+share/help/pl/totem/figures/totem_start_window.png
+share/help/pl/totem/figures/totem_volume_maximum_button.png
+share/help/pl/totem/figures/totem_volume_mute_button.png
+share/help/pt_BR/totem/index.docbook
+share/help/pt_BR/totem/legal.xml
+share/help/pt_BR/totem/figures/totem_next_button.png
+share/help/pt_BR/totem/figures/totem_pause_button.png
+share/help/pt_BR/totem/figures/totem_play_button.png
+share/help/pt_BR/totem/figures/totem_previous_button.png
+share/help/pt_BR/totem/figures/totem_show_playlist_button.png
+share/help/pt_BR/totem/figures/totem_start_window.png
+share/help/pt_BR/totem/figures/totem_volume_maximum_button.png
+share/help/pt_BR/totem/figures/totem_volume_mute_button.png
+share/help/ro/totem/index.docbook
+share/help/ro/totem/legal.xml
+share/help/ro/totem/figures/totem_next_button.png
+share/help/ro/totem/figures/totem_pause_button.png
+share/help/ro/totem/figures/totem_play_button.png
+share/help/ro/totem/figures/totem_previous_button.png
+share/help/ro/totem/figures/totem_show_playlist_button.png
+share/help/ro/totem/figures/totem_start_window.png
+share/help/ro/totem/figures/totem_volume_maximum_button.png
+share/help/ro/totem/figures/totem_volume_mute_button.png
+share/help/ru/totem/index.docbook
+share/help/ru/totem/legal.xml
+share/help/ru/totem/figures/totem_next_button.png
+share/help/ru/totem/figures/totem_pause_button.png
+share/help/ru/totem/figures/totem_play_button.png
+share/help/ru/totem/figures/totem_previous_button.png
+share/help/ru/totem/figures/totem_show_playlist_button.png
+share/help/ru/totem/figures/totem_start_window.png
+share/help/ru/totem/figures/totem_volume_maximum_button.png
+share/help/ru/totem/figures/totem_volume_mute_button.png
+share/help/sl/totem/index.docbook
+share/help/sl/totem/legal.xml
+share/help/sl/totem/figures/totem_next_button.png
+share/help/sl/totem/figures/totem_pause_button.png
+share/help/sl/totem/figures/totem_play_button.png
+share/help/sl/totem/figures/totem_previous_button.png
+share/help/sl/totem/figures/totem_show_playlist_button.png
+share/help/sl/totem/figures/totem_start_window.png
+share/help/sl/totem/figures/totem_volume_maximum_button.png
+share/help/sl/totem/figures/totem_volume_mute_button.png
+share/help/sv/totem/index.docbook
+share/help/sv/totem/legal.xml
+share/help/sv/totem/figures/totem_next_button.png
+share/help/sv/totem/figures/totem_pause_button.png
+share/help/sv/totem/figures/totem_play_button.png
+share/help/sv/totem/figures/totem_previous_button.png
+share/help/sv/totem/figures/totem_show_playlist_button.png
+share/help/sv/totem/figures/totem_start_window.png
+share/help/sv/totem/figures/totem_volume_maximum_button.png
+share/help/sv/totem/figures/totem_volume_mute_button.png
+share/help/te/totem/index.docbook
+share/help/te/totem/legal.xml
+share/help/te/totem/figures/totem_next_button.png
+share/help/te/totem/figures/totem_pause_button.png
+share/help/te/totem/figures/totem_play_button.png
+share/help/te/totem/figures/totem_previous_button.png
+share/help/te/totem/figures/totem_show_playlist_button.png
+share/help/te/totem/figures/totem_start_window.png
+share/help/te/totem/figures/totem_volume_maximum_button.png
+share/help/te/totem/figures/totem_volume_mute_button.png
+share/help/uk/totem/index.docbook
+share/help/uk/totem/legal.xml
+share/help/uk/totem/figures/totem_next_button.png
+share/help/uk/totem/figures/totem_pause_button.png
+share/help/uk/totem/figures/totem_play_button.png
+share/help/uk/totem/figures/totem_previous_button.png
+share/help/uk/totem/figures/totem_show_playlist_button.png
+share/help/uk/totem/figures/totem_start_window.png
+share/help/uk/totem/figures/totem_volume_maximum_button.png
+share/help/uk/totem/figures/totem_volume_mute_button.png
+share/help/zh_CN/totem/index.docbook
+share/help/zh_CN/totem/legal.xml
+share/help/zh_CN/totem/figures/totem_next_button.png
+share/help/zh_CN/totem/figures/totem_pause_button.png
+share/help/zh_CN/totem/figures/totem_play_button.png
+share/help/zh_CN/totem/figures/totem_previous_button.png
+share/help/zh_CN/totem/figures/totem_show_playlist_button.png
+share/help/zh_CN/totem/figures/totem_start_window.png
+share/help/zh_CN/totem/figures/totem_volume_maximum_button.png
+share/help/zh_CN/totem/figures/totem_volume_mute_button.png
+share/help/zh_HK/totem/index.docbook
+share/help/zh_HK/totem/legal.xml
+share/help/zh_HK/totem/figures/totem_next_button.png
+share/help/zh_HK/totem/figures/totem_pause_button.png
+share/help/zh_HK/totem/figures/totem_play_button.png
+share/help/zh_HK/totem/figures/totem_previous_button.png
+share/help/zh_HK/totem/figures/totem_show_playlist_button.png
+share/help/zh_HK/totem/figures/totem_start_window.png
+share/help/zh_HK/totem/figures/totem_volume_maximum_button.png
+share/help/zh_HK/totem/figures/totem_volume_mute_button.png
+share/help/zh_TW/totem/index.docbook
+share/help/zh_TW/totem/legal.xml
+share/help/zh_TW/totem/figures/totem_next_button.png
+share/help/zh_TW/totem/figures/totem_pause_button.png
+share/help/zh_TW/totem/figures/totem_play_button.png
+share/help/zh_TW/totem/figures/totem_previous_button.png
+share/help/zh_TW/totem/figures/totem_show_playlist_button.png
+share/help/zh_TW/totem/figures/totem_start_window.png
+share/help/zh_TW/totem/figures/totem_volume_maximum_button.png
+share/help/zh_TW/totem/figures/totem_volume_mute_button.png
 share/icons/hicolor/16x16/apps/totem.png
 share/icons/hicolor/16x16/devices/totem-tv.png
 share/icons/hicolor/22x22/apps/totem.png
 share/icons/hicolor/22x22/devices/totem-tv.png
 share/icons/hicolor/24x24/apps/totem.png
 share/icons/hicolor/24x24/devices/totem-tv.png
+share/icons/hicolor/256x256/apps/totem.png
 share/icons/hicolor/32x32/apps/totem.png
 share/icons/hicolor/32x32/devices/totem-tv.png
 share/icons/hicolor/48x48/apps/totem.png
 share/icons/hicolor/48x48/devices/totem-tv.png
-share/icons/hicolor/scalable/apps/totem.svg
 share/icons/hicolor/scalable/devices/totem-tv.svg
+share/locale/af/LC_MESSAGES/totem.mo
 share/locale/am/LC_MESSAGES/totem.mo
 share/locale/ar/LC_MESSAGES/totem.mo
 share/locale/as/LC_MESSAGES/totem.mo
@@ -390,6 +430,7 @@ share/locale/el/LC_MESSAGES/totem.mo
 share/locale/en@shaw/LC_MESSAGES/totem.mo
 share/locale/en_CA/LC_MESSAGES/totem.mo
 share/locale/en_GB/LC_MESSAGES/totem.mo
+share/locale/eo/LC_MESSAGES/totem.mo
 share/locale/es/LC_MESSAGES/totem.mo
 share/locale/et/LC_MESSAGES/totem.mo
 share/locale/eu/LC_MESSAGES/totem.mo
@@ -397,8 +438,11 @@ share/locale/fa/LC_MESSAGES/totem.mo
 share/locale/fi/LC_MESSAGES/totem.mo
 share/locale/fr/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
+share/locale/gd/LC_MESSAGES/totem.mo
 share/locale/gl/LC_MESSAGES/totem.mo
 share/locale/gu/LC_MESSAGES/totem.mo
+share/locale/gv/LC_MESSAGES/totem.mo
+share/locale/ky/LC_MESSAGES/totem.mo
 share/locale/he/LC_MESSAGES/totem.mo
 share/locale/hi/LC_MESSAGES/totem.mo
 share/locale/hr/LC_MESSAGES/totem.mo
@@ -406,6 +450,7 @@ share/locale/hu/LC_MESSAGES/totem.mo
 share/locale/id/LC_MESSAGES/totem.mo
 share/locale/is/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
+share/locale/km/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
 share/locale/ka/LC_MESSAGES/totem.mo
 share/locale/kk/LC_MESSAGES/totem.mo
@@ -420,6 +465,7 @@ share/locale/mk/LC_MESSAGES/totem.mo
 share/locale/ml/LC_MESSAGES/totem.mo
 share/locale/mr/LC_MESSAGES/totem.mo
 share/locale/ms/LC_MESSAGES/totem.mo
+share/locale/my/LC_MESSAGES/totem.mo
 share/locale/nb/LC_MESSAGES/totem.mo
 share/locale/ne/LC_MESSAGES/totem.mo
 share/locale/nl/LC_MESSAGES/totem.mo
@@ -442,6 +488,7 @@ share/locale/sr@latin/LC_MESSAGES/totem.mo
 share/locale/sv/LC_MESSAGES/totem.mo
 share/locale/ta/LC_MESSAGES/totem.mo
 share/locale/te/LC_MESSAGES/totem.mo
+share/locale/tg/LC_MESSAGES/totem.mo
 share/locale/th/LC_MESSAGES/totem.mo
 share/locale/tr/LC_MESSAGES/totem.mo
 share/locale/ug/LC_MESSAGES/totem.mo
@@ -452,157 +499,14 @@ share/locale/xh/LC_MESSAGES/totem.mo
 share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_HK/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
-share/omf/totem/totem-C.omf
-share/omf/totem/totem-bg.omf
-share/omf/totem/totem-ca.omf
-share/omf/totem/totem-cs.omf
-share/omf/totem/totem-da.omf
-share/omf/totem/totem-de.omf
-share/omf/totem/totem-el.omf
-share/omf/totem/totem-en_GB.omf
-share/omf/totem/totem-es.omf
-share/omf/totem/totem-eu.omf
-share/omf/totem/totem-fi.omf
-share/omf/totem/totem-fr.omf
-share/omf/totem/totem-it.omf
-share/omf/totem/totem-ja.omf
-share/omf/totem/totem-oc.omf
-share/omf/totem/totem-pa.omf
-share/omf/totem/totem-pl.omf
-share/omf/totem/totem-pt_BR.omf
-share/omf/totem/totem-ru.omf
-share/omf/totem/totem-sv.omf
-share/omf/totem/totem-uk.omf
-share/omf/totem/totem-zh_CN.omf
-share/omf/totem/totem-zh_HK.omf
-share/omf/totem/totem-zh_TW.omf
-%%DATADIR%%/filmholes-big-left.png
-%%DATADIR%%/filmholes-big-right.png
-%%DATADIR%%/filmholes.png
-%%DATADIR%%/fullscreen.ui
+share/locale/zu/LC_MESSAGES/totem.mo
+share/thumbnailers/totem.thumbnailer
+%%DATADIR%%/controls.ui
+%%DATADIR%%/mozilla-viewer.css
 %%DATADIR%%/mozilla-viewer.ui
+%%DATADIR%%/org_gnome_totem_PluginViewer.xml
 %%DATADIR%%/playlist.ui
-%%DATADIR%%/plugins.ui
+%%DATADIR%%/preferences.ui
 %%DATADIR%%/properties.ui
 %%DATADIR%%/totem.ui
 %%DATADIR%%/uri.ui
-%%DATADIR%%/video-list.ui
-share/vala/vapi/totem.deps
-share/vala/vapi/totem.vapi
-@dirrm %%DATADIR%%
-@dirrm share/omf/totem
-@dirrm share/gnome/help/totem/zh_TW/figures
-@dirrm share/gnome/help/totem/zh_TW
-@dirrm share/gnome/help/totem/zh_HK/figures
-@dirrm share/gnome/help/totem/zh_HK
-@dirrm share/gnome/help/totem/zh_CN/figures
-@dirrm share/gnome/help/totem/zh_CN
-@dirrm share/gnome/help/totem/uk/figures
-@dirrm share/gnome/help/totem/uk
-@dirrm share/gnome/help/totem/sv/figures
-@dirrm share/gnome/help/totem/sv
-@dirrm share/gnome/help/totem/ru/figures
-@dirrm share/gnome/help/totem/ru
-@dirrm share/gnome/help/totem/pt_BR/figures
-@dirrm share/gnome/help/totem/pt_BR
-@dirrm share/gnome/help/totem/pl/figures
-@dirrm share/gnome/help/totem/pl
-@dirrm share/gnome/help/totem/pa/figures
-@dirrm share/gnome/help/totem/pa
-@dirrm share/gnome/help/totem/oc/figures
-@dirrm share/gnome/help/totem/oc
-@dirrm share/gnome/help/totem/ja/figures
-@dirrm share/gnome/help/totem/ja
-@dirrm share/gnome/help/totem/it/figures
-@dirrm share/gnome/help/totem/it
-@dirrm share/gnome/help/totem/fr/figures
-@dirrm share/gnome/help/totem/fr
-@dirrm share/gnome/help/totem/fi/figures
-@dirrm share/gnome/help/totem/fi
-@dirrm share/gnome/help/totem/eu/figures
-@dirrm share/gnome/help/totem/eu
-@dirrm share/gnome/help/totem/es/figures
-@dirrm share/gnome/help/totem/es
-@dirrm share/gnome/help/totem/en_GB/figures
-@dirrm share/gnome/help/totem/en_GB
-@dirrm share/gnome/help/totem/el/figures
-@dirrm share/gnome/help/totem/el
-@dirrm share/gnome/help/totem/de/figures
-@dirrm share/gnome/help/totem/de
-@dirrm share/gnome/help/totem/da/figures
-@dirrm share/gnome/help/totem/da
-@dirrm share/gnome/help/totem/cs/figures
-@dirrm share/gnome/help/totem/cs
-@dirrm share/gnome/help/totem/ca/figures
-@dirrm share/gnome/help/totem/ca
-@dirrm share/gnome/help/totem/bg/figures
-@dirrm share/gnome/help/totem/bg
-@dirrm share/gnome/help/totem/C/figures
-@dirrm share/gnome/help/totem/C
-@dirrm share/gnome/help/totem
-@dirrm %%DOCSDIR%%
-@dirrm libexec/totem
-@dirrm lib/totem/plugins/youtube
-@dirrm lib/totem/plugins/totem
-%%TRACKER%%@dirrm lib/totem/plugins/tracker
-@dirrm lib/totem/plugins/thumbnail
-@dirrm lib/totem/plugins/skipto
-@dirrm lib/totem/plugins/screenshot
-@dirrm lib/totem/plugins/screensaver
-%%PUBLISH%%@dirrm lib/totem/plugins/publish
-@dirrm lib/totem/plugins/properties
-@dirrm lib/totem/plugins/opensubtitles
-@dirrm lib/totem/plugins/ontop
-@dirrm lib/totem/plugins/media-player-keys
-%%LIRC%%@dirrm lib/totem/plugins/lirc
-@dirrm lib/totem/plugins/iplayer
-@dirrm lib/totem/plugins/gromit
-%%GALAGO%%@dirrm lib/totem/plugins/galago
-@dirrm lib/totem/plugins/dbus
-@dirrm lib/totem/plugins/coherence_upnp
-@dirrm lib/totem/plugins/brasero-disc-recorder
-@dirrm lib/totem/plugins
-@dirrm lib/totem
-%%BROWSER_PLUGINS%%@dirrmtry %%WEBPLUGIN_DIR%%
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

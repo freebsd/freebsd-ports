@@ -2,28 +2,30 @@ bin/metacity
 bin/metacity-message
 bin/metacity-theme-viewer
 bin/metacity-window-demo
-include/metacity-1/metacity-private/boxes.h
-include/metacity-1/metacity-private/common.h
-include/metacity-1/metacity-private/gradient.h
-include/metacity-1/metacity-private/preview-widget.h
-include/metacity-1/metacity-private/theme-parser.h
-include/metacity-1/metacity-private/theme.h
-include/metacity-1/metacity-private/util.h
+include/metacity/metacity-private/boxes.h
+include/metacity/metacity-private/common.h
+include/metacity/metacity-private/gradient.h
+include/metacity/metacity-private/preview-widget.h
+include/metacity/metacity-private/theme-parser.h
+include/metacity/metacity-private/theme.h
+include/metacity/metacity-private/util.h
 lib/libmetacity-private.a
-lib/libmetacity-private.la
 lib/libmetacity-private.so
-lib/libmetacity-private.so.0
-lib/libmetacity-private.so.0.0.0
+lib/libmetacity-private.so.2
+lib/libmetacity-private.so.2.0.0
 libdata/pkgconfig/libmetacity-private.pc
 man/man1/metacity-message.1.gz
 man/man1/metacity-theme-viewer.1.gz
 man/man1/metacity-window-demo.1.gz
 man/man1/metacity.1.gz
+share/GConf/gsettings/metacity-schemas.convert
 share/applications/metacity.desktop
-share/gnome-control-center/keybindings/50-metacity-desktop-key.xml
-share/gnome-control-center/keybindings/50-metacity-key.xml
-share/gnome/help/creating-metacity-themes/C/creating-metacity-themes.xml
+share/gnome-control-center/keybindings/50-metacity-navigation.xml
+share/gnome-control-center/keybindings/50-metacity-system.xml
+share/gnome-control-center/keybindings/50-metacity-windows.xml
 share/gnome/wm-properties/metacity-wm.desktop
+share/help/C/creating-metacity-themes/index.docbook
+share/help/de/creating-metacity-themes/index.docbook
 share/locale/am/LC_MESSAGES/metacity.mo
 share/locale/ar/LC_MESSAGES/metacity.mo
 share/locale/as/LC_MESSAGES/metacity.mo
@@ -109,6 +111,7 @@ share/locale/te/LC_MESSAGES/metacity.mo
 share/locale/th/LC_MESSAGES/metacity.mo
 share/locale/tk/LC_MESSAGES/metacity.mo
 share/locale/tr/LC_MESSAGES/metacity.mo
+share/locale/ug/LC_MESSAGES/metacity.mo
 share/locale/uk/LC_MESSAGES/metacity.mo
 share/locale/vi/LC_MESSAGES/metacity.mo
 share/locale/wa/LC_MESSAGES/metacity.mo
@@ -220,73 +223,3 @@ share/themes/Simple/metacity-1/maximize.png
 share/themes/Simple/metacity-1/maximized.png
 share/themes/Simple/metacity-1/metacity-theme-1.xml
 share/themes/Simple/metacity-1/minimize.png
-@dirrm share/themes/Simple/metacity-1
-@dirrmtry share/themes/Simple
-@dirrm share/themes/Metabox/metacity-1
-@dirrmtry share/themes/Metabox
-@dirrm share/themes/Esco/metacity-1
-@dirrmtry share/themes/Esco
-@dirrm share/themes/Crux/metacity-1
-@dirrmtry share/themes/Crux
-@dirrm share/themes/Bright/metacity-1
-@dirrmtry share/themes/Bright
-@dirrm share/themes/Atlanta/metacity-1
-@dirrmtry share/themes/Atlanta
-@dirrm share/themes/AgingGorilla/metacity-1
-@dirrmtry share/themes/AgingGorilla
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/creating-metacity-themes/C
-@dirrm share/gnome/help/creating-metacity-themes
-@dirrm include/metacity-1/metacity-private
-@dirrm include/metacity-1
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yo/LC_MESSAGES
-@dirrmtry share/locale/yo
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/la/LC_MESSAGES
-@dirrmtry share/locale/la
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ig/LC_MESSAGES
-@dirrmtry share/locale/ig
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/ha/LC_MESSAGES
-@dirrmtry share/locale/ha
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

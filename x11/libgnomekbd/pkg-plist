@@ -1,31 +1,34 @@
-bin/gkbd-indicator-plugins-capplet
+bin/gkbd-keyboard-display
+include/libgnomekbd/gkbd-configuration.h
 include/libgnomekbd/gkbd-desktop-config.h
 include/libgnomekbd/gkbd-indicator-config.h
-include/libgnomekbd/gkbd-indicator-plugin.h
 include/libgnomekbd/gkbd-indicator.h
 include/libgnomekbd/gkbd-keyboard-config.h
 include/libgnomekbd/gkbd-keyboard-drawing.h
 include/libgnomekbd/gkbd-status.h
 include/libgnomekbd/gkbd-util.h
+lib/girepository-1.0/Gkbd-3.0.typelib
 lib/libgnomekbd.a
-lib/libgnomekbd.la
 lib/libgnomekbd.so
-lib/libgnomekbd.so.4
-lib/libgnomekbd.so.4.2.0
+lib/libgnomekbd.so.8
+lib/libgnomekbd.so.8.0.0
 lib/libgnomekbdui.a
-lib/libgnomekbdui.la
 lib/libgnomekbdui.so
-lib/libgnomekbdui.so.4
-lib/libgnomekbdui.so.4.2.0
+lib/libgnomekbdui.so.8
+lib/libgnomekbdui.so.8.0.0
 libdata/pkgconfig/libgnomekbd.pc
 libdata/pkgconfig/libgnomekbdui.pc
-share/applications/gkbd-indicator-plugins-capplet.desktop
-%%DATADIR%%/ui/gkbd-indicator-plugins.ui
-%%DATADIR%%/ui/gkbd-indicator-plugins_add.ui
+share/GConf/gsettings/libgnomekbd.convert
+share/applications/gkbd-keyboard-display.desktop
+share/gir-1.0/Gkbd-3.0.gir
+%%DATADIR%%/icons/kbdled-caps-lock.svg
+%%DATADIR%%/icons/kbdled-num-lock.svg
+%%DATADIR%%/icons/kbdled-scroll-lock.svg
 %%DATADIR%%/ui/show-layout.ui
 share/locale/ar/LC_MESSAGES/libgnomekbd.mo
 share/locale/as/LC_MESSAGES/libgnomekbd.mo
 share/locale/ast/LC_MESSAGES/libgnomekbd.mo
+share/locale/be/LC_MESSAGES/libgnomekbd.mo
 share/locale/be@latin/LC_MESSAGES/libgnomekbd.mo
 share/locale/bg/LC_MESSAGES/libgnomekbd.mo
 share/locale/bn/LC_MESSAGES/libgnomekbd.mo
@@ -37,12 +40,13 @@ share/locale/da/LC_MESSAGES/libgnomekbd.mo
 share/locale/de/LC_MESSAGES/libgnomekbd.mo
 share/locale/dz/LC_MESSAGES/libgnomekbd.mo
 share/locale/el/LC_MESSAGES/libgnomekbd.mo
-share/locale/en_GB/LC_MESSAGES/libgnomekbd.mo
 share/locale/en@shaw/LC_MESSAGES/libgnomekbd.mo
+share/locale/en_GB/LC_MESSAGES/libgnomekbd.mo
 share/locale/eo/LC_MESSAGES/libgnomekbd.mo
 share/locale/es/LC_MESSAGES/libgnomekbd.mo
 share/locale/et/LC_MESSAGES/libgnomekbd.mo
 share/locale/eu/LC_MESSAGES/libgnomekbd.mo
+share/locale/fa/LC_MESSAGES/libgnomekbd.mo
 share/locale/fi/LC_MESSAGES/libgnomekbd.mo
 share/locale/fr/LC_MESSAGES/libgnomekbd.mo
 share/locale/ga/LC_MESSAGES/libgnomekbd.mo
@@ -86,39 +90,9 @@ share/locale/ta/LC_MESSAGES/libgnomekbd.mo
 share/locale/te/LC_MESSAGES/libgnomekbd.mo
 share/locale/th/LC_MESSAGES/libgnomekbd.mo
 share/locale/tr/LC_MESSAGES/libgnomekbd.mo
+share/locale/ug/LC_MESSAGES/libgnomekbd.mo
 share/locale/uk/LC_MESSAGES/libgnomekbd.mo
 share/locale/vi/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_HK/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomekbd.mo
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%
-@dirrm include/libgnomekbd
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

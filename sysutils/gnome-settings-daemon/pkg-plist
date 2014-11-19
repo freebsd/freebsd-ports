@@ -1,88 +1,90 @@
-etc/dbus-1/system.d/org.gnome.SettingsDaemon.DateTimeMechanism.conf
 etc/xdg/autostart/gnome-settings-daemon.desktop
-include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-client.h
-include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-plugin.h
-lib/gnome-settings-daemon-2.0/a11y-keyboard.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/background.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/clipboard.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/font.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/housekeeping.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/keybindings.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/keyboard.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/liba11y-keyboard.a
-lib/gnome-settings-daemon-2.0/liba11y-keyboard.so
-lib/gnome-settings-daemon-2.0/libbackground.a
-lib/gnome-settings-daemon-2.0/libbackground.so
-lib/gnome-settings-daemon-2.0/libclipboard.a
-lib/gnome-settings-daemon-2.0/libclipboard.so
-lib/gnome-settings-daemon-2.0/libfont.a
-lib/gnome-settings-daemon-2.0/libfont.so
-lib/gnome-settings-daemon-2.0/libhousekeeping.a
-lib/gnome-settings-daemon-2.0/libhousekeeping.so
-lib/gnome-settings-daemon-2.0/libkeybindings.a
-lib/gnome-settings-daemon-2.0/libkeybindings.so
-lib/gnome-settings-daemon-2.0/libkeyboard.a
-lib/gnome-settings-daemon-2.0/libkeyboard.so
-%%PULSEAUDIO%%lib/gnome-settings-daemon-2.0/libmedia-keys.a
-%%PULSEAUDIO%%lib/gnome-settings-daemon-2.0/libmedia-keys.so
-lib/gnome-settings-daemon-2.0/libmouse.a
-lib/gnome-settings-daemon-2.0/libmouse.so
-lib/gnome-settings-daemon-2.0/libsmartcard.a
-lib/gnome-settings-daemon-2.0/libsmartcard.so
-lib/gnome-settings-daemon-2.0/libsound.a
-lib/gnome-settings-daemon-2.0/libsound.so
-lib/gnome-settings-daemon-2.0/libtyping-break.a
-lib/gnome-settings-daemon-2.0/libtyping-break.so
-lib/gnome-settings-daemon-2.0/libxrandr.a
-lib/gnome-settings-daemon-2.0/libxrandr.so
-lib/gnome-settings-daemon-2.0/libxrdb.a
-lib/gnome-settings-daemon-2.0/libxrdb.so
-lib/gnome-settings-daemon-2.0/libxsettings.a
-lib/gnome-settings-daemon-2.0/libxsettings.so
-%%PULSEAUDIO%%lib/gnome-settings-daemon-2.0/media-keys.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/mouse.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/smartcard.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/sound.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/typing-break.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/xrandr.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/xrdb.gnome-settings-plugin
-lib/gnome-settings-daemon-2.0/xsettings.gnome-settings-plugin
+include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
+include/gnome-settings-daemon-3.0/gnome-settings-daemon/gsd-enums.h
+lib/gnome-settings-daemon-3.0/a11y-keyboard.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/a11y-settings.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/clipboard.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/color.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/cursor.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/datetime.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/housekeeping.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/keyboard.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/liba11y-keyboard.a
+lib/gnome-settings-daemon-3.0/liba11y-keyboard.so
+lib/gnome-settings-daemon-3.0/liba11y-settings.a
+lib/gnome-settings-daemon-3.0/liba11y-settings.so
+lib/gnome-settings-daemon-3.0/libclipboard.a
+lib/gnome-settings-daemon-3.0/libclipboard.so
+lib/gnome-settings-daemon-3.0/libcolor.a
+lib/gnome-settings-daemon-3.0/libcolor.so
+lib/gnome-settings-daemon-3.0/libcursor.a
+lib/gnome-settings-daemon-3.0/libcursor.so
+lib/gnome-settings-daemon-3.0/libdatetime.a
+lib/gnome-settings-daemon-3.0/libdatetime.so
+lib/gnome-settings-daemon-3.0/libgsd.a
+lib/gnome-settings-daemon-3.0/libgsd.so
+lib/gnome-settings-daemon-3.0/libhousekeeping.a
+lib/gnome-settings-daemon-3.0/libhousekeeping.so
+lib/gnome-settings-daemon-3.0/libkeyboard.a
+lib/gnome-settings-daemon-3.0/libkeyboard.so
+lib/gnome-settings-daemon-3.0/libmedia-keys.a
+lib/gnome-settings-daemon-3.0/libmedia-keys.so
+lib/gnome-settings-daemon-3.0/libmouse.a
+lib/gnome-settings-daemon-3.0/libmouse.so
+lib/gnome-settings-daemon-3.0/libpower.a
+lib/gnome-settings-daemon-3.0/libpower.so
+%%CUPS%%lib/gnome-settings-daemon-3.0/libprint-notifications.a
+%%CUPS%%lib/gnome-settings-daemon-3.0/libprint-notifications.so
+lib/gnome-settings-daemon-3.0/libscreensaver-proxy.a
+lib/gnome-settings-daemon-3.0/libscreensaver-proxy.so
+lib/gnome-settings-daemon-3.0/libsharing.a
+lib/gnome-settings-daemon-3.0/libsharing.so
+%%SMARTCARD%%lib/gnome-settings-daemon-3.0/libsmartcard.a
+%%SMARTCARD%%lib/gnome-settings-daemon-3.0/libsmartcard.so
+lib/gnome-settings-daemon-3.0/libsound.a
+lib/gnome-settings-daemon-3.0/libsound.so
+lib/gnome-settings-daemon-3.0/libxrandr.a
+lib/gnome-settings-daemon-3.0/libxrandr.so
+lib/gnome-settings-daemon-3.0/libxsettings.a
+lib/gnome-settings-daemon-3.0/libxsettings.so
+lib/gnome-settings-daemon-3.0/media-keys.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/mouse.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/power.gnome-settings-plugin
+%%CUPS%%lib/gnome-settings-daemon-3.0/print-notifications.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/screensaver-proxy.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/sharing.gnome-settings-plugin
+%%SMARTCARD%%lib/gnome-settings-daemon-3.0/smartcard.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/sound.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/xrandr.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/xsettings.gnome-settings-plugin
 libdata/pkgconfig/gnome-settings-daemon.pc
 libexec/gnome-settings-daemon
-libexec/gsd-datetime-mechanism
+libexec/gnome-settings-daemon-localeexec
 libexec/gsd-locate-pointer
-share/dbus-1/services/org.gnome.SettingsDaemon.service
-share/dbus-1/system-services/org.gnome.SettingsDaemon.DateTimeMechanism.service
-share/gnome-control-center/keybindings/50-accessibility.xml
-%%DATADIR%%/acme.ui
-%%DATADIR%%/gsd-a11y-preferences-dialog.ui
-%%DATADIR%%/icons/hicolor/64x64/devices/kbd-capslock-off.png
-%%DATADIR%%/icons/hicolor/64x64/devices/kbd-capslock-on.png
-%%DATADIR%%/icons/hicolor/64x64/devices/kbd-numlock-off.png
-%%DATADIR%%/icons/hicolor/64x64/devices/kbd-numlock-on.png
-%%DATADIR%%/icons/hicolor/64x64/devices/kbd-scrolllock-off.png
-%%DATADIR%%/icons/hicolor/64x64/devices/kbd-scrolllock-on.png
-%%DATADIR%%/modmap-dialog.ui
-%%DATADIR%%/xrdb/Editres.ad
-%%DATADIR%%/xrdb/Emacs.ad
-%%DATADIR%%/xrdb/General.ad
-%%DATADIR%%/xrdb/Motif.ad
-%%DATADIR%%/xrdb/Tk.ad
-%%DATADIR%%/xrdb/Xaw.ad
-share/icons/hicolor/16x16/actions/touchpad-disabled.png
-share/icons/hicolor/16x16/actions/touchpad-enabled.png
+%%CUPS%%libexec/gsd-printer
+libexec/gsd-test-a11y-keyboard
+libexec/gsd-test-a11y-settings
+libexec/gsd-test-input-helper
+libexec/gsd-test-cursor
+libexec/gsd-test-datetime
+libexec/gsd-test-housekeeping
+libexec/gsd-test-keyboard
+libexec/gsd-test-media-keys
+libexec/gsd-test-mouse
+%%CUPS%%libexec/gsd-test-print-notifications
+%%SMARTCARD%%libexec/gsd-test-smartcard
+libexec/gsd-test-sound
+libexec/gsd-test-screensaver-proxy
+libexec/gsd-test-xrandr
+libexec/gsd-test-xsettings
+man/man1/gnome-settings-daemon.1.gz
+share/GConf/gsettings/gnome-settings-daemon.convert
+%%DATADIR%%/datetime/backward
+share/gnome-settings-daemon-3.0/input-device-example.sh
 share/icons/hicolor/16x16/apps/gsd-xrandr.png
-share/icons/hicolor/22x22/actions/touchpad-disabled.png
-share/icons/hicolor/22x22/actions/touchpad-enabled.png
 share/icons/hicolor/22x22/apps/gsd-xrandr.png
-share/icons/hicolor/24x24/actions/touchpad-disabled.png
-share/icons/hicolor/24x24/actions/touchpad-enabled.png
 share/icons/hicolor/24x24/apps/gsd-xrandr.png
-share/icons/hicolor/32x32/actions/touchpad-disabled.png
-share/icons/hicolor/32x32/actions/touchpad-enabled.png
 share/icons/hicolor/32x32/apps/gsd-xrandr.png
-share/icons/hicolor/scalable/actions/touchpad-disabled.svg
-share/icons/hicolor/scalable/actions/touchpad-enabled.svg
 share/icons/hicolor/scalable/apps/gsd-xrandr.svg
 share/locale/af/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/am/LC_MESSAGES/gnome-settings-daemon.mo
@@ -109,6 +111,7 @@ share/locale/el/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/en_CA/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/en_GB/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/eo/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/es/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/et/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/eu/LC_MESSAGES/gnome-settings-daemon.mo
@@ -117,6 +120,7 @@ share/locale/fi/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/fr/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ga/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/gl/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/gd/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/gu/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/he/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/hi/LC_MESSAGES/gnome-settings-daemon.mo
@@ -127,6 +131,7 @@ share/locale/is/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/it/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ja/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ka/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/km/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/kn/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ko/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ku/LC_MESSAGES/gnome-settings-daemon.mo
@@ -163,8 +168,10 @@ share/locale/sr@latin/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/sv/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ta/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/te/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/tg/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/th/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/tr/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/ug/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/uk/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/vi/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/wa/LC_MESSAGES/gnome-settings-daemon.mo
@@ -173,59 +180,4 @@ share/locale/zh_CN/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zu/LC_MESSAGES/gnome-settings-daemon.mo
-share/polkit-1/actions/org.gnome.settingsdaemon.datetimemechanism.policy
-@dirrm %%DATADIR%%/xrdb
-@dirrm %%DATADIR%%/icons/hicolor/64x64/devices
-@dirrm %%DATADIR%%/icons/hicolor/64x64
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm lib/gnome-settings-daemon-2.0
-@dirrm include/gnome-settings-daemon-2.0/gnome-settings-daemon
-@dirrm include/gnome-settings-daemon-2.0
-@dirrmtry etc/gnome-settings-daemon/xrandr
-@dirrmtry etc/gnome-settings-daemon
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
+share/polkit-1/actions/org.gnome.settings-daemon.plugins.power.policy

@@ -1,3 +1,4 @@
+bin/gapplication
 bin/gdbus
 bin/gdbus-codegen
 bin/gio-querymodules
@@ -35,6 +36,7 @@ include/glib-2.0/gio/gasyncinitable.h
 include/glib-2.0/gio/gasyncresult.h
 include/glib-2.0/gio/gbufferedinputstream.h
 include/glib-2.0/gio/gbufferedoutputstream.h
+include/glib-2.0/gio/gbytesicon.h
 include/glib-2.0/gio/gcancellable.h
 include/glib-2.0/gio/gcharsetconverter.h
 include/glib-2.0/gio/gcontenttype.h
@@ -108,11 +110,13 @@ include/glib-2.0/gio/gnetworkaddress.h
 include/glib-2.0/gio/gnetworking.h
 include/glib-2.0/gio/gnetworkmonitor.h
 include/glib-2.0/gio/gnetworkservice.h
+include/glib-2.0/gio/gnotification.h
 include/glib-2.0/gio/goutputstream.h
 include/glib-2.0/gio/gpermission.h
 include/glib-2.0/gio/gpollableinputstream.h
 include/glib-2.0/gio/gpollableoutputstream.h
 include/glib-2.0/gio/gpollableutils.h
+include/glib-2.0/gio/gpropertyaction.h
 include/glib-2.0/gio/gproxy.h
 include/glib-2.0/gio/gproxyaddress.h
 include/glib-2.0/gio/gproxyaddressenumerator.h
@@ -139,6 +143,8 @@ include/glib-2.0/gio/gsocketcontrolmessage.h
 include/glib-2.0/gio/gsocketlistener.h
 include/glib-2.0/gio/gsocketservice.h
 include/glib-2.0/gio/gsrvtarget.h
+include/glib-2.0/gio/gsubprocess.h
+include/glib-2.0/gio/gsubprocesslauncher.h
 include/glib-2.0/gio/gtask.h
 include/glib-2.0/gio/gtcpconnection.h
 include/glib-2.0/gio/gtcpwrapperconnection.h
@@ -240,7 +246,6 @@ include/glib-2.0/glib/gvarianttype.h
 include/glib-2.0/glib/gversion.h
 include/glib-2.0/glib/gversionmacros.h
 include/glib-2.0/glib/gwin32.h
-include/glib-2.0/glibconfig.h
 include/glib-2.0/gmodule.h
 include/glib-2.0/gobject/gbinding.h
 include/glib-2.0/gobject/gboxed.h
@@ -261,6 +266,7 @@ include/glib-2.0/gobject/gvalue.h
 include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
+lib/glib-2.0/include/glibconfig.h
 lib/libgio-2.0.a
 lib/libgio-2.0.so
 lib/libgio-2.0.so.0
@@ -289,9 +295,26 @@ libdata/pkgconfig/gmodule-export-2.0.pc
 libdata/pkgconfig/gmodule-no-export-2.0.pc
 libdata/pkgconfig/gobject-2.0.pc
 libdata/pkgconfig/gthread-2.0.pc
+man/man1/gapplication.1.gz
+man/man1/gdbus-codegen.1.gz
+man/man1/gdbus.1.gz
+man/man1/gio-querymodules.1.gz
+man/man1/glib-compile-resources.1.gz
+man/man1/glib-compile-schemas.1.gz
+man/man1/glib-genmarshal.1.gz
+man/man1/glib-gettextize.1.gz
+man/man1/glib-mkenums.1.gz
+man/man1/gobject-query.1.gz
+man/man1/gresource.1.gz
+man/man1/gsettings.1.gz
+man/man1/gtester-report.1.gz
+man/man1/gtester.1.gz
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
+share/bash-completion/completions/gapplication
+%%GDB%%share/gdb/auto-load/libglib-2.0.so.%%LIBVERSION%%-gdb.py
+%%GDB%%share/gdb/auto-load/libgobject-2.0.so.%%LIBVERSION%%-gdb.py
 share/glib-2.0/codegen/__init__.py
 share/glib-2.0/codegen/__init__.pyc
 share/glib-2.0/codegen/__init__.pyo
@@ -316,10 +339,13 @@ share/glib-2.0/codegen/parser.pyo
 share/glib-2.0/codegen/utils.py
 share/glib-2.0/codegen/utils.pyc
 share/glib-2.0/codegen/utils.pyo
+%%GDB%%share/glib-2.0/gdb/glib.py
+%%GDB%%share/glib-2.0/gdb/gobject.py
 share/glib-2.0/gettext/po/Makefile.in.in
 share/glib-2.0/schemas/gschema.dtd
 share/locale/af/LC_MESSAGES/glib20.mo
 share/locale/am/LC_MESSAGES/glib20.mo
+share/locale/an/LC_MESSAGES/glib20.mo
 share/locale/ar/LC_MESSAGES/glib20.mo
 share/locale/as/LC_MESSAGES/glib20.mo
 share/locale/ast/LC_MESSAGES/glib20.mo
@@ -413,80 +439,7 @@ share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/tt/LC_MESSAGES
-@dirrmtry share/locale/tt
-@dirrmtry share/locale/tl/LC_MESSAGES
-@dirrmtry share/locale/tl
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr@ije/LC_MESSAGES
-@dirrmtry share/locale/sr@ije
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@exec mkdir -p %D/share/glib-2.0/schemas
-@exec glib-compile-schemas %D/share/glib-2.0/schemas
-@dirrm share/glib-2.0/schemas
-@dirrm share/glib-2.0/gettext/po
-@dirrm share/glib-2.0/gettext
-@dirrm share/glib-2.0/codegen
-@dirrm share/glib-2.0
-@dirrmtry share/bash-completion/completions
-@dirrmtry share/bash-completion
-@exec mkdir -p %D/share/GConf/gsettings
-@dirrm share/GConf/gsettings
-@dirrm share/GConf
-@exec mkdir -p %D/lib/gio/modules
+@dir lib/gio/modules
+@dir share/GConf/gsettings
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas 2>/dev/null || /usr/bin/true
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
-@dirrmtry lib/gio/modules
-@dirrmtry lib/gio
-@dirrm include/glib-2.0/gobject
-@dirrm include/glib-2.0/glib/deprecated
-@dirrm include/glib-2.0/glib
-@dirrm include/glib-2.0/gio
-@dirrm include/glib-2.0
-@dirrm include/gio-unix-2.0/gio
-@dirrm include/gio-unix-2.0

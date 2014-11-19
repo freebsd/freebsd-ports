@@ -1,10 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/multimedia/totem-pl-parser/Makefile,v 1.45 2011/02/21 19:10:03 kwm Exp $
+#   $MCom: ports/trunk/multimedia/totem-pl-parser/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	totem-pl-parser
-PORTVERSION=	2.32.3
-PORTREVISION=	6
+PORTVERSION=	3.10.3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,22 +11,29 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject-based library to parse a host of playlist formats
 
-LIB_DEPENDS=	libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
+LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix glib20 libxml2 intlhack introspection:build,run
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 gnomeprefix intlhack introspection:build \
+		libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--enable-libarchive
+CONFIGURE_ENV=	ARCHIVE_CFLAGS="-I/usr/include" \
+		ARCHIVE_LIBS="-L/usr/lib -larchive"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	QUVI
-QUVI_DESC=	Enable flash media stream URL support
+OPTIONS_DEFAULT=QUVI
+QUVI_DESC=	Flash media stream URL support
+QUVI_CONFIGURE_ENABLE=	quvi
+QUVI_LIB_DEPENDS=	libquvi-0.9.so:${PORTSDIR}/multimedia/libquvi09
 
-QUVI_LIB_DEPENDS=	libquvi.so:${PORTSDIR}/multimedia/libquvi
-QUVI_CONFIGURE_ON=	--enable-enable-quvi
-QUVI_CONFIGURE_OFF=	--enable-enable-quvi=no
+post-patch:
+	@${REINPLACE_CMD} -e 's|pkg_modules libarchive"|pkg_modules"|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -1,33 +1,33 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/libgnomekbd/Makefile,v 1.48 2010/09/28 08:01:11 kwm Exp $
+#   $MCom: ports/trunk/x11/libgnomekbd/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libgnomekbd
-PORTVERSION=	2.32.0
-PORTREVISION=	4
+PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME keyboard shared library
 
+BUILD_DEPENDS=	libxklavier>=5.2:${PORTSDIR}/x11/libxklavier
 LIB_DEPENDS=	libxklavier.so:${PORTSDIR}/x11/libxklavier
 
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intltool introspection:build \
+		libxml2
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gconf2
+USE_XORG=	ice
 INSTALLS_ICONS=	yes
-INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-GCONF_SCHEMAS=	desktop_gnome_peripherals_keyboard_xkb.schemas
-
-#post-patch:
-#	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-#	    	's|-Werror||g'
+GLIB_SCHEMAS=	org.gnome.libgnomekbd.desktop.gschema.xml \
+		org.gnome.libgnomekbd.gschema.xml \
+		org.gnome.libgnomekbd.keyboard.gschema.xml
 
 .include <bsd.port.mk>

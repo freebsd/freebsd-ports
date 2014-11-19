@@ -1,9 +1,10 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 19945 2014-10-15 05:41:04Z gusi $
+# Please keep gtk30 and x11-themes/gnome-themes-standard minor version in sync
 
 PORTNAME=	gtk
-PORTVERSION=	3.8.8
+PORTVERSION=	3.14.3
 PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -24,9 +25,9 @@ PORTSCOUT=	ignore:1
 .else
 PORTSCOUT=	limit:1,even
 
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
-RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
+BUILD_DEPENDS+=	at-spi2-atk>=0:${PORTSDIR}/accessibility/at-spi2-atk
+RUN_DEPENDS+=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme \
+		at-spi2-atk>=0:${PORTSDIR}/accessibility/at-spi2-atk
 
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -36,44 +37,37 @@ USE_GNOME=	atk gdkpixbuf2 gtk-update-icon-cache \
 USES+=		gettext gmake libtool pathfix perl5 pkgconfig
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
-CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit
+CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit \
+		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	INTROSPECTION_GIRDIR=`pkg-config --variable=girdir gobject-introspection-1.0`
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-LIBVERSION=	0.800.8
+LIBVERSION=	0.1400.3
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.ColorChooser.gschema.xml \
-		org.gtk.Settings.FileChooser.gschema.xml
+		org.gtk.Settings.Debug.gschema.xml \
+		org.gtk.Settings.FileChooser.gschema.xml \
+		org.gtk.exampleapp.gschema.xml
 
-OPTIONS_DEFINE=	CUPS COLORD DEBUG
+OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG
 OPTIONS_DEFAULT=CUPS COLORD
+OPTIONS_SUB=	yes
 COLORD_DESC=	Color profile support
+COLORD_LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord
+COLORD_CONFIGURE_ENABLE=colord
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_CONFIGURE_ENABLE=	cups
+CLOUDPRINT_DESC=	Cloud printing support
+CLOUDPRINT_CONFIGURE_ENABLE=	cloudprint
+CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
+			libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+DEBUG_CONFIGURE_ENABLE=debug
 
+# needed for the exists() check, booo
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-CONFIGURE_ARGS+=--enable-cups=auto
-PLIST_SUB+=	CUPS=""
-.else
-CONFIGURE_ARGS+=--disable-cups
-PLIST_SUB+=	CUPS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug=yes
-.endif
-
-.if ${PORT_OPTIONS:MCOLORD}
-LIB_DEPENDS+=	libcolord.so:${PORTSDIR}/graphics/colord
-CONFIGURE_ARGS+=--enable-colord
-.else
-CONFIGURE_ARGS+=--disable-colord
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${GREP} -l lgmodule | \
@@ -83,6 +77,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@LN_S@|${LN} -sf|' ${WRKSRC}/gtk/Makefile.in
 	@${REINPLACE_CMD} -e 's|file,cups|file,cups,lpr|' \
 		${WRKSRC}/gtk/Makefile.in
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_CHECKS||' \
+		${WRKSRC}/configure
 
 pre-configure:
 .if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc)

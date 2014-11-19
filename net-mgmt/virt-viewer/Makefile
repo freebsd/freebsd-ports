@@ -13,14 +13,15 @@ COMMENT=	Provides a graphical viewer for a guest OS display
 BUILD_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2 \
 		intltoolize:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt \
-		libgtk-vnc-1.0.so:${PORTSDIR}/net/gtk-vnc
+		libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
-USES=		gmake pkgconfig
+CONFIGURE_ARGS=	--with-gtk=3.0
+USES=		desktop-file-utils gmake pkgconfig shared-mime-info
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls

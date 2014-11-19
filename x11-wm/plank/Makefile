@@ -13,7 +13,7 @@ COMMENT=	Elegant, simple, and clean dock
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libbamf3.so:${PORTSDIR}/sysutils/bamf \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee
 

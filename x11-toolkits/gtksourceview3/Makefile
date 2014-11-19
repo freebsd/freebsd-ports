@@ -1,30 +1,30 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/gtksourceview3/Makefile,v 1.21 2012/05/31 11:57:38 kwm Exp $
+#   $MCom: ports/trunk/x11-toolkits/gtksourceview3/Makefile 19949 2014-10-15 06:25:06Z gusi $
 
 PORTNAME=	gtksourceview
-PORTVERSION=	3.4.2
-PORTREVISION?=	3
+PORTVERSION=	3.14.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Widget that adds syntax highlighting to GtkTextView
+COMMENT=	Text widget that adds syntax highlighting to the GtkTextView widget
 
 USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
-USES+=		gettext gmake libtool:keepla pathfix pkgconfig
-USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix gtk30 libxml2 intlhack referencehack
+USES+=		gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build \
+		libxml2 referencehack
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no --enable-glade-catalog=no \
 		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-patch:

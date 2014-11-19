@@ -1,45 +1,62 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/databases/glom/Makefile,v 1.30 2010/11/04 15:57:03 kwm Exp $
+#   $MCom: ports/trunk/databases/glom/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	glom
-PORTVERSION=	1.12.2
-PORTREVISION=	10
+PORTVERSION=	1.24.0
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME database designer and user interface
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-LIB_DEPENDS=	libgdamm-4.0.so:${PORTSDIR}/databases/libgdamm \
-		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
-		libgtksourceviewmm-2.0.so:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
-		libavahi-ui.so:${PORTSDIR}/net/avahi-gtk \
+BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		libepc>=0.4.0:${PORTSDIR}/www/libepc \
+		libgda5-mysql>=0:${PORTSDIR}/databases/libgda5-mysql \
+		libgda5-postgresql>=0:${PORTSDIR}/databases/libgda5-postgresql
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libepc-1.0.so:${PORTSDIR}/www/libepc \
-		libgoocanvasmm-1.0.so:${PORTSDIR}/graphics/goocanvasmm
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-4.0.pc:${PORTSDIR}/databases/libgda4-postgresql
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-4.0.pc:${PORTSDIR}/databases/libgda4-postgresql
+		libgoocanvasmm-2.0.so:${PORTSDIR}/graphics/goocanvasmm2 \
+		libevview3.so:${PORTSDIR}/graphics/evince
+RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		libgda5-mysql>=0:${PORTSDIR}/databases/libgda5-mysql \
+		libgda5-postgresql>=0:${PORTSDIR}/databases/libgda5-postgresql
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USES=		desktop-file-utils gettext gmake libtool pathfix \
-		pgsql pkgconfig python shared-mime-info tar:bzip2
-USE_GNOME=	gnomedocutils gnomeprefix pygnomeextras
+		pgsql pkgconfig python shared-mime-info tar:xz
+USE_GNOME=	gnomedocutils gnomeprefix intlhack pygobject3 libxml2 \
+		gtksourceviewmm3 libgdamm5
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-postgres-utils=${LOCALBASE}/bin
+INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--with-postgres-utils=${LOCALBASE}/bin \
+		--disable-documentation
 INSTALLS_ICONS=	yes
 
+.include <bsd.port.options.mk>
+
+PLIST_SUB+=	VERSION=${PORTVERSION:R}
+#PLIST_SUB+=	VERSION=1.24
+
+# We need postgreSQL tools the server installs, and configure checks for these.
 # Note: USE_PGSQL has already been set above.
-BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-server
-RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-server
+BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER:S/.//}-server
+RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER:S/.//}-server
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|std::locale("")|std::locale()|g' \
+		${WRKSRC}/glom/libglom/data_structure/glomconversions.cc \
+		${WRKSRC}/glom/libglom/data_structure/glomconversions.h \
+		${WRKSRC}/glom/libglom/utils.cc \
+		${WRKSRC}/glom/mode_design/layout/layout_item_dialogs/comboentry_borderwidth.cc \
+		${WRKSRC}/glom/mode_design/layout/layout_item_dialogs/dialog_group_by.cc \
+		${WRKSRC}/glom/main.cc
 
 .include <bsd.port.mk>

@@ -8,4 +8,4 @@ PulseAudio sound server. Specifically it can do for you:
  - Start the auxiliary tools PulseAudio Volume Control, PulseAudio Volume
    Meter, PulseAudio Manager, PulseAudio Preferences
 
-WWW: http://0pointer.de/lennart/projects/padevchooser/
+WWW: http://freedesktop.org/software/pulseaudio/pavucontrol/

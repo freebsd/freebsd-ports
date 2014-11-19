@@ -1,5 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/net-im/loudmouth/Makefile 19914 2014-09-25 22:33:21Z kwm $
 
 PORTNAME=	loudmouth
 PORTVERSION=	1.4.3
@@ -13,12 +14,13 @@ COMMENT=	Lightweight Jabber client library
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20
 CONFIGURE_ARGS=	--disable-gtk-doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFAULT=GNUTLS
 OPTIONS_RADIO=	SSL

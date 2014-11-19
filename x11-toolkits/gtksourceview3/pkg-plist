@@ -7,6 +7,10 @@ include/gtksourceview-3.0/gtksourceview/gtksourcecompletioninfo.h
 include/gtksourceview-3.0/gtksourceview/gtksourcecompletionitem.h
 include/gtksourceview-3.0/gtksourceview/gtksourcecompletionproposal.h
 include/gtksourceview-3.0/gtksourceview/gtksourcecompletionprovider.h
+include/gtksourceview-3.0/gtksourceview/gtksourceencoding.h
+include/gtksourceview-3.0/gtksourceview/gtksourcefile.h
+include/gtksourceview-3.0/gtksourceview/gtksourcefileloader.h
+include/gtksourceview-3.0/gtksourceview/gtksourcefilesaver.h
 include/gtksourceview-3.0/gtksourceview/gtksourcegutter.h
 include/gtksourceview-3.0/gtksourceview/gtksourcegutterrenderer.h
 include/gtksourceview-3.0/gtksourceview/gtksourcegutterrendererpixbuf.h
@@ -16,31 +20,45 @@ include/gtksourceview-3.0/gtksourceview/gtksourcelanguagemanager.h
 include/gtksourceview-3.0/gtksourceview/gtksourcemark.h
 include/gtksourceview-3.0/gtksourceview/gtksourcemarkattributes.h
 include/gtksourceview-3.0/gtksourceview/gtksourceprintcompositor.h
+include/gtksourceview-3.0/gtksourceview/gtksourcesearchcontext.h
+include/gtksourceview-3.0/gtksourceview/gtksourcesearchsettings.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestyle.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestylescheme.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestyleschememanager.h
+include/gtksourceview-3.0/gtksourceview/gtksourcetypes.h
 include/gtksourceview-3.0/gtksourceview/gtksourceundomanager.h
+include/gtksourceview-3.0/gtksourceview/gtksourceutils.h
 include/gtksourceview-3.0/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-3.0/gtksourceview/gtksourceview.h
 lib/girepository-1.0/GtkSource-3.0.typelib
-lib/libgtksourceview-3.0.la
 lib/libgtksourceview-3.0.so
-lib/libgtksourceview-3.0.so.0
-lib/libgtksourceview-3.0.so.0.0.0
+lib/libgtksourceview-3.0.so.1
+lib/libgtksourceview-3.0.so.1.3.0
 libdata/pkgconfig/gtksourceview-3.0.pc
 share/gir-1.0/GtkSource-3.0.gir
 share/doc/gtksourceview-3.0/GtkSourceBuffer.html
 share/doc/gtksourceview-3.0/GtkSourceCompletion.html
+share/doc/gtksourceview-3.0/GtkSourceCompletionContext.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionInfo.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionItem.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionProposal.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionProvider.html
+share/doc/gtksourceview-3.0/GtkSourceCompletionWords.html
+share/doc/gtksourceview-3.0/GtkSourceEncoding.html
+share/doc/gtksourceview-3.0/GtkSourceFile.html
+share/doc/gtksourceview-3.0/GtkSourceFileLoader.html
+share/doc/gtksourceview-3.0/GtkSourceFileSaver.html
 share/doc/gtksourceview-3.0/GtkSourceGutter.html
+share/doc/gtksourceview-3.0/GtkSourceGutterRenderer.html
+share/doc/gtksourceview-3.0/GtkSourceGutterRendererPixbuf.html
+share/doc/gtksourceview-3.0/GtkSourceGutterRendererText.html
 share/doc/gtksourceview-3.0/GtkSourceLanguage.html
 share/doc/gtksourceview-3.0/GtkSourceLanguageManager.html
 share/doc/gtksourceview-3.0/GtkSourceMark.html
 share/doc/gtksourceview-3.0/GtkSourceMarkAttributes.html
 share/doc/gtksourceview-3.0/GtkSourcePrintCompositor.html
+share/doc/gtksourceview-3.0/GtkSourceSearchContext.html
+share/doc/gtksourceview-3.0/GtkSourceSearchSettings.html
 share/doc/gtksourceview-3.0/GtkSourceStyle.html
 share/doc/gtksourceview-3.0/GtkSourceStyleScheme.html
 share/doc/gtksourceview-3.0/GtkSourceStyleSchemeManager.html
@@ -48,37 +66,44 @@ share/doc/gtksourceview-3.0/GtkSourceUndoManager.html
 share/doc/gtksourceview-3.0/GtkSourceView.html
 share/doc/gtksourceview-3.0/annotation-glossary.html
 share/doc/gtksourceview-3.0/api-index-3-0.html
+share/doc/gtksourceview-3.0/api-index-3-10.html
+share/doc/gtksourceview-3.0/api-index-3-12.html
+share/doc/gtksourceview-3.0/api-index-3-14.html
+share/doc/gtksourceview-3.0/api-index-3-4.html
 share/doc/gtksourceview-3.0/api-index-deprecated.html
 share/doc/gtksourceview-3.0/api-index-full.html
-share/doc/gtksourceview-3.0/gtksourceview-3.0-GtkSourceGutterRenderer.html
-share/doc/gtksourceview-3.0/gtksourceview-3.0-GtkSourceGutterRendererPixbuf.html
-share/doc/gtksourceview-3.0/gtksourceview-3.0-GtkSourceGutterRendererText.html
-share/doc/gtksourceview-3.0/gtksourceview-3.0-completioncontext.html
+share/doc/gtksourceview-3.0/ch01.html
+share/doc/gtksourceview-3.0/ch02.html
+share/doc/gtksourceview-3.0/gtksourceview-3.0-GtkSourceUtils.html
 share/doc/gtksourceview-3.0/gtksourceview-3.0.devhelp2
 share/doc/gtksourceview-3.0/home.png
 share/doc/gtksourceview-3.0/index.html
 share/doc/gtksourceview-3.0/index.sgml
 share/doc/gtksourceview-3.0/lang-reference.html
 share/doc/gtksourceview-3.0/lang-tutorial.html
+share/doc/gtksourceview-3.0/left-insensitive.png
 share/doc/gtksourceview-3.0/left.png
+share/doc/gtksourceview-3.0/object-tree.html
+share/doc/gtksourceview-3.0/right-insensitive.png
 share/doc/gtksourceview-3.0/right.png
-share/doc/gtksourceview-3.0/rn01.html
-share/doc/gtksourceview-3.0/rn02.html
 share/doc/gtksourceview-3.0/style-reference.html
 share/doc/gtksourceview-3.0/style.css
+share/doc/gtksourceview-3.0/up-insensitive.png
 share/doc/gtksourceview-3.0/up.png
 share/gtksourceview-3.0/language-specs/R.lang
+share/gtksourceview-3.0/language-specs/actionscript.lang
+share/gtksourceview-3.0/language-specs/ansforth94.lang
 share/gtksourceview-3.0/language-specs/ada.lang
 share/gtksourceview-3.0/language-specs/asp.lang
 share/gtksourceview-3.0/language-specs/automake.lang
 share/gtksourceview-3.0/language-specs/awk.lang
 share/gtksourceview-3.0/language-specs/bennugd.lang
 share/gtksourceview-3.0/language-specs/bibtex.lang
+share/gtksourceview-3.0/language-specs/bluespec.lang
 share/gtksourceview-3.0/language-specs/boo.lang
 share/gtksourceview-3.0/language-specs/c.lang
 share/gtksourceview-3.0/language-specs/cg.lang
 share/gtksourceview-3.0/language-specs/changelog.lang
-share/gtksourceview-3.0/language-specs/check-language.sh
 share/gtksourceview-3.0/language-specs/chdr.lang
 share/gtksourceview-3.0/language-specs/cmake.lang
 share/gtksourceview-3.0/language-specs/cobol.lang
@@ -111,24 +136,33 @@ share/gtksourceview-3.0/language-specs/haddock.lang
 share/gtksourceview-3.0/language-specs/haskell-literate.lang
 share/gtksourceview-3.0/language-specs/haskell.lang
 share/gtksourceview-3.0/language-specs/html.lang
+share/gtksourceview-3.0/language-specs/idl-exelis.lang
 share/gtksourceview-3.0/language-specs/idl.lang
 share/gtksourceview-3.0/language-specs/imagej.lang
 share/gtksourceview-3.0/language-specs/ini.lang
+share/gtksourceview-3.0/language-specs/j.lang
 share/gtksourceview-3.0/language-specs/java.lang
 share/gtksourceview-3.0/language-specs/javascript.lang
 share/gtksourceview-3.0/language-specs/json.lang
+share/gtksourceview-3.0/language-specs/julia.lang
 share/gtksourceview-3.0/language-specs/language.dtd
 share/gtksourceview-3.0/language-specs/language.rng
 share/gtksourceview-3.0/language-specs/language2.rng
 share/gtksourceview-3.0/language-specs/latex.lang
+share/gtksourceview-3.0/language-specs/lex.lang
 share/gtksourceview-3.0/language-specs/libtool.lang
+share/gtksourceview-3.0/language-specs/llvm.lang
 share/gtksourceview-3.0/language-specs/lua.lang
 share/gtksourceview-3.0/language-specs/m4.lang
 share/gtksourceview-3.0/language-specs/makefile.lang
 share/gtksourceview-3.0/language-specs/mallard.lang
 share/gtksourceview-3.0/language-specs/markdown.lang
 share/gtksourceview-3.0/language-specs/matlab.lang
+share/gtksourceview-3.0/language-specs/mediawiki.lang
+share/gtksourceview-3.0/language-specs/modelica.lang
+share/gtksourceview-3.0/language-specs/mxml.lang
 share/gtksourceview-3.0/language-specs/nemerle.lang
+share/gtksourceview-3.0/language-specs/netrexx.lang
 share/gtksourceview-3.0/language-specs/nsis.lang
 share/gtksourceview-3.0/language-specs/objc.lang
 share/gtksourceview-3.0/language-specs/objj.lang
@@ -145,16 +179,20 @@ share/gtksourceview-3.0/language-specs/pkgconfig.lang
 share/gtksourceview-3.0/language-specs/po.lang
 share/gtksourceview-3.0/language-specs/prolog.lang
 share/gtksourceview-3.0/language-specs/protobuf.lang
+share/gtksourceview-3.0/language-specs/puppet.lang
 share/gtksourceview-3.0/language-specs/python.lang
 share/gtksourceview-3.0/language-specs/python3.lang
 share/gtksourceview-3.0/language-specs/rpmspec.lang
+share/gtksourceview-3.0/language-specs/rst.lang
 share/gtksourceview-3.0/language-specs/ruby.lang
+share/gtksourceview-3.0/language-specs/scala.lang
 share/gtksourceview-3.0/language-specs/scheme.lang
 share/gtksourceview-3.0/language-specs/scilab.lang
 share/gtksourceview-3.0/language-specs/sh.lang
 share/gtksourceview-3.0/language-specs/sml.lang
 share/gtksourceview-3.0/language-specs/sparql.lang
 share/gtksourceview-3.0/language-specs/sql.lang
+share/gtksourceview-3.0/language-specs/sweave.lang
 share/gtksourceview-3.0/language-specs/systemverilog.lang
 share/gtksourceview-3.0/language-specs/t2t.lang
 share/gtksourceview-3.0/language-specs/tcl.lang
@@ -166,11 +204,13 @@ share/gtksourceview-3.0/language-specs/vhdl.lang
 share/gtksourceview-3.0/language-specs/xml.lang
 share/gtksourceview-3.0/language-specs/xslt.lang
 share/gtksourceview-3.0/language-specs/yacc.lang
-share/gtksourceview-3.0/styles/check-style.sh
+share/gtksourceview-3.0/language-specs/yaml.lang
 share/gtksourceview-3.0/styles/classic.xml
 share/gtksourceview-3.0/styles/cobalt.xml
 share/gtksourceview-3.0/styles/kate.xml
 share/gtksourceview-3.0/styles/oblivion.xml
+share/gtksourceview-3.0/styles/solarized-dark.xml
+share/gtksourceview-3.0/styles/solarized-light.xml
 share/gtksourceview-3.0/styles/styles.rng
 share/gtksourceview-3.0/styles/tango.xml
 share/locale/ar/LC_MESSAGES/gtksourceview-3.0.mo
@@ -243,6 +283,7 @@ share/locale/sr@latin/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/sv/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/ta/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/te/LC_MESSAGES/gtksourceview-3.0.mo
+share/locale/tg/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/th/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/tr/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/ug/LC_MESSAGES/gtksourceview-3.0.mo
@@ -252,45 +293,3 @@ share/locale/xh/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/gtksourceview-3.0.mo
-@dirrm share/gtksourceview-3.0/styles
-@dirrm share/gtksourceview-3.0/language-specs
-@dirrm share/gtksourceview-3.0
-@dirrm share/doc/gtksourceview-3.0/
-@dirrm include/gtksourceview-3.0/gtksourceview/completion-providers/words
-@dirrm include/gtksourceview-3.0/gtksourceview/completion-providers
-@dirrm include/gtksourceview-3.0/gtksourceview
-@dirrm include/gtksourceview-3.0
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

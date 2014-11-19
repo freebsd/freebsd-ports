@@ -1,56 +1,82 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-settings-daemon/Makefile,v 1.75 2011/04/25 19:56:57 mezz Exp $
+#   $MCom: ports/trunk/sysutils/gnome-settings-daemon/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	2.32.1
-PORTREVISION=	6
+PORTVERSION=	3.14.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 2 settings daemon
+COMMENT=	GNOME 3 settings daemon
 
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
+BUILD_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
+		geoclue>=0:${PORTSDIR}/net/geoclue \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
+		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libcolord.so:${PORTSDIR}/graphics/colord \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libpulse.so:${PORTSDIR}/audio/pulseaudio \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libnss3.so:${PORTSDIR}/security/nss
-RUN_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
-
-CONFLICTS=	gnome-settings-daemon-3.[0-9]*
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
+		libgweather-3.so:${PORTSDIR}/net/libgweather
+RUN_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
+		geoclue>=0:${PORTSDIR}/net/geoclue \
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_XORG=	xxf86misc
-USE_GNOME=	gnomeprefix intlhack gnomedesktop libgnomekbd
-USE_GSTREAMER=	good
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libxslt
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+CONFIGURE_ARGS=	--disable-gudev \
+		--disable-systemd \
+		--disable-rfkill \
+		--disable-network-manager \
+		--disable-packagekit
+#		--disable-ibus \
+#--with-pnpids=${LOCALBASE}/share/libgnome-desktop-3.0/pnp.ids
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	PULSEAUDIO
-OPTIONS_DEFAULT=PULSEAUDIO
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	CUPS SMARTCARD
+OPTIONS_DEFAULT=CUPS SMARTCARD
+SMARTCARD_DESC=	Smartcard support
+CUPS_CONFIGURE_ENABLE=	cups
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+SMARTCARD_CONFIGURE_ENABLE=	smartcard-support
+SMARTCARD_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 
-GCONF_SCHEMAS=	apps_gnome_settings_daemon_housekeeping.schemas \
-		apps_gnome_settings_daemon_keybindings.schemas \
-		apps_gnome_settings_daemon_xrandr.schemas \
-		desktop_gnome_font_rendering.schemas \
-		desktop_gnome_keybindings.schemas \
-		desktop_gnome_peripherals_smartcard.schemas \
-		desktop_gnome_peripherals_touchpad.schemas \
-		gnome-settings-daemon.schemas
+GLIB_SCHEMAS=	org.gnome.settings-daemon.enums.xml \
+		org.gnome.settings-daemon.peripherals.gschema.xml \
+		org.gnome.settings-daemon.plugins.color.gschema.xml \
+		org.gnome.settings-daemon.plugins.datetime.gschema.xml \
+		org.gnome.settings-daemon.plugins.gschema.xml \
+		org.gnome.settings-daemon.plugins.housekeeping.gschema.xml \
+		org.gnome.settings-daemon.plugins.keyboard.gschema.xml \
+		org.gnome.settings-daemon.plugins.media-keys.gschema.xml \
+		org.gnome.settings-daemon.plugins.power.gschema.xml \
+		org.gnome.settings-daemon.plugins.print-notifications.gschema.xml \
+		org.gnome.settings-daemon.plugins.sharing.gschema.xml \
+		org.gnome.settings-daemon.plugins.xrandr.gschema.xml \
+		org.gnome.settings-daemon.plugins.xsettings.gschema.xml
+# work around missing cursor with xorg-server 1.12.
+GLIB_SCHEMAS+=	cursor-plugin.gschema.override
 
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc/gnome|${PREFIX}/etc/gnome|g' \
+		${WRKSRC}/data/org.gnome.settings-daemon.plugins.xrandr.gschema.xml.in.in
 
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=--enable-pulse
-PLIST_SUB+=	PULSEAUDIO=""
-.else
-CONFIGURE_ARGS+=--disable-pulse
-PLIST_SUB+=	PULSEAUDIO="@comment "
-.endif
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/cursor-plugin.gschema.override \
+		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas
 
 .include <bsd.port.mk>

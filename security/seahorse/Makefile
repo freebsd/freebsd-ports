@@ -1,67 +1,47 @@
 # Created by: Dave McKay <dave@mu.org>
 # $FreeBSD$
-#   $MCom: ports/security/seahorse/Makefile,v 1.109 2012/09/01 23:02:12 mezz Exp $
+#   $MCom: ports/trunk/security/seahorse/Makefile 19992 2014-10-18 19:48:08Z gusi $
 
 PORTNAME=	seahorse
-PORTVERSION=	2.32.0
-PORTREVISION=	13
+PORTVERSION=	3.14.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
 
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
+		valac:${PORTSDIR}/lang/vala \
+		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
-    		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgcr.so:${PORTSDIR}/security/gnome-keyring \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libgcr-3.so:${PORTSDIR}/security/gcr \
+		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-
-CONFLICTS=	libcryptui-3.[0-9]* seahorse-3.[0-9]*
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 USE_XORG=	sm
 USE_LDCONFIG=	yes
-USES=		pathfix gettext gmake libtool:keepla pkgconfig tar:bzip2
-USE_GNOME=	intlhack gnomeprefix gconf2 gnomedocutils
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	intlhack gnomeprefix gtk30
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--enable-introspection=no
-INSTALL_TARGET=	install-strip
 
-GCONF_SCHEMAS=	seahorse.schemas
+GLIB_SCHEMAS=	org.gnome.seahorse.gschema.xml \
+		org.gnome.seahorse.manager.gschema.xml \
+		org.gnome.seahorse.window.gschema.xml
 
-OPTIONS_DEFINE=	LDAP NOTIFY MDNS
-OPTIONS_DEFAULT=LDAP NOTIFY MDNS
-MDNS_DESC=	mDNS key sharing
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-.else
-CONFIGURE_ARGS+=--disable-ldap
-.endif
-
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-.else
-CONFIGURE_ARGS+=--disable-libnotify
-.endif
-
-.if ${PORT_OPTIONS:MMDNS}
-LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
-.else
-CONFIGURE_ARGS+=--disable-sharing
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|" == "|" = "|g' \
-			${WRKSRC}/configure
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	LDAP NOTIFY AVAHI
+OPTIONS_DEFAULT=LDAP NOTIFY AVAHI
+LDAP_CONFIGURE_ENABLE=	ldap
+LDAP_USE=	OPENLDAP=yes
+NOTIFY_CONFIGURE_ENABLE=	libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+AVAHI_CONFIGURE_ENABLE=	sharing
+AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
 .include <bsd.port.mk>
