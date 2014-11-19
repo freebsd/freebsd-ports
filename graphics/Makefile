@@ -1071,7 +1071,6 @@
     SUBDIR += xv
     SUBDIR += xv-m17n
     SUBDIR += xwpick
-    SUBDIR += xzgv
     SUBDIR += yafray
     SUBDIR += yagf
     SUBDIR += yed
