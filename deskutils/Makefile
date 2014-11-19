@@ -104,7 +104,6 @@
     SUBDIR += gruler
     SUBDIR += gtg
     SUBDIR += gtimer
-    SUBDIR += gtkjournal
     SUBDIR += gtodo
     SUBDIR += gtweakui
     SUBDIR += gucharmap
