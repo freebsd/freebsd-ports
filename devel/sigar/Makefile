@@ -3,6 +3,7 @@
 
 PORTNAME=	sigar
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GH
 
@@ -17,12 +18,8 @@ GH_ACCOUNT=	amishHammer
 GH_COMMIT=	b5af695
 GH_TAGNAME=	${GH_COMMIT}
 
-WRKSRC=		${WRKDIR}/amishHammer-sigar-${GH_COMMIT}
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf automake aclocal libtoolize
-USES=		libtool pkgconfig
-
-run-autotools:
-	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${SH} ./autogen.sh)
+USES=		autoreconf libtool pkgconfig
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
