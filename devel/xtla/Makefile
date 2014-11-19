@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs front-end to tla
 
+BROKEN=		Fails to package
+
 BUILD_DEPENDS+=	tla:${PORTSDIR}/devel/tla \
 		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/tree-widget/tree-widget.el:${PORTSDIR}/editors/tree-widget
 RUN_DEPENDS:=	${BUILD_DEPENDS}
