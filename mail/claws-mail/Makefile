@@ -41,7 +41,7 @@ JPILOT_RUN_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
 LDAP_CONFIGURE_ENABLE=	ldap
 LDAP_USE=		openldap=yes
 
-MANUAL_DESC=		User manual
+MANUAL_DESC=		User manual (many dependencies, including texlive)
 MANUAL_CONFIGURE_ON=	--enable-manual --with-manualdir=${DOCSDIR}/manual
 MANUAL_CONFIGURE_OFF=	--disable-manual
 MANUAL_BUILD_DEPENDS=	docbook-utils>0:${PORTSDIR}/textproc/docbook-utils
