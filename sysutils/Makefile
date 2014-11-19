@@ -863,7 +863,6 @@
     SUBDIR += searchmonkey
     SUBDIR += seatools
     SUBDIR += sec
-    SUBDIR += serpentine
     SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += sformat
