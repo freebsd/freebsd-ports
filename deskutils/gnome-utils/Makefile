@@ -1,47 +1,42 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnome-utils/Makefile,v 1.159 2012/09/01 23:02:09 mezz Exp $
+#   $MCom: ports/trunk/deskutils/gnome-utils/Makefile 20017 2014-10-24 08:53:51Z gusi $
 
 PORTNAME=	gnome-utils
-PORTVERSION=	2.32.0
-PORTREVISION=	3
-PORTEPOCH=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 2 support utilities
+COMMENT=	GNOME 3 support utilities
 
-LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
-		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
+RUN_DEPENDS=	baobab>=3.0:${PORTSDIR}/deskutils/baobab \
+		gnome-screenshot>=3.0:${PORTSDIR}/deskutils/gnome-screenshot \
+		gnote>=3.0:${PORTSDIR}/deskutils/gnote \
+		gnome-contacts>=3.0:${PORTSDIR}/deskutils/gnome-contacts \
+		gnome-search-tool>=3.0:${PORTSDIR}/deskutils/gnome-search-tool \
+		gnome-dictionary>=3.0:${PORTSDIR}/deskutils/gnome-dictionary \
+		gnome-system-log>=3.0:${PORTSDIR}/deskutils/gnome-system-log \
+		gnome-font-viewer>=3.0:${PORTSDIR}/deskutils/gnome-font-viewer \
+		gnome-system-monitor>=3.0:${PORTSDIR}/sysutils/gnome-system-monitor \
+		gnome-photos>=3.0:${PORTSDIR}/deskutils/gnome-photos \
+		gnome-clocks>=3.0:${PORTSDIR}/deskutils/gnome-clocks \
+		gnome-maps>=3.0:${PORTSDIR}/deskutils/gnome-maps \
+		gnome-weather>=3.0:${PORTSDIR}/deskutils/gnome-weather
 
-CONFLICTS=	baobob-3.[0-9]* gnome-dictionary-3.[0-9]* \
-		gnome-font-viewer-3.[0-9]* gnome-screenshot-3.[0-9]* \
-		gnome-search-tool-3.[0-9]* gnome-system-log-3.[0-9]*
+NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
-INSTALLS_OMF=	yes
-USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack gnomepanel
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-maintainer-flags=no
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
+OPTIONS_DEFINE=	DOCS 
+DOCS_DESC=	Build Gnome Documents (pulls in tracker)
 
-GCONF_SCHEMAS=	gnome-dictionary.schemas gnome-screenshot.schemas \
-		gnome-search-tool.schemas baobab.schemas \
-		gnome-system-log.schemas
+.include <bsd.port.options.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/gsearchtool/libgnomeui-deprecated/Makefile.in
-	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/gnome-dictionary/libgdict/Makefile.in \
-		${WRKSRC}/gsearchtool/Makefile.in \
-		${WRKSRC}/gsearchtool/libgnomeui-deprecated/Makefile.in \
-		${WRKSRC}/libeggsmclient/Makefile.in
+.if ${PORT_OPTIONS:MDOCS}
+RUN_DEPENDS+=	gnome-documents>=0:${PORTSDIR}/deskutils/gnome-documents
+.endif
 
 .include <bsd.port.mk>

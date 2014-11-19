@@ -19,9 +19,6 @@
     SUBDIR += dclock
     SUBDIR += emiclock
     SUBDIR += eyeclock
-    SUBDIR += gdesklets-clock
-    SUBDIR += gdesklets-countdown
-    SUBDIR += gdesklets-ebichuclock
     SUBDIR += glclock
     SUBDIR += gtubeclock
     SUBDIR += intclock

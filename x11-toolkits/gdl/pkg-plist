@@ -1,139 +1,118 @@
-include/libgdl-1.0/gdl/gdl-dock-bar.h
-include/libgdl-1.0/gdl/gdl-dock-item.h
-include/libgdl-1.0/gdl/gdl-dock-item-grip.h
-include/libgdl-1.0/gdl/gdl-dock-layout.h
-include/libgdl-1.0/gdl/gdl-dock-master.h
-include/libgdl-1.0/gdl/gdl-dock-object.h
-include/libgdl-1.0/gdl/gdl-dock-placeholder.h
-include/libgdl-1.0/gdl/gdl-dock.h
-include/libgdl-1.0/gdl/gdl-tools.h
-include/libgdl-1.0/gdl/gdl.h
-include/libgdl-1.0/gdl/libgdltypebuiltins.h
-lib/libgdl-1.la
-lib/libgdl-1.so
-lib/libgdl-1.so.3
-lib/libgdl-1.so.3.0.0
-libdata/pkgconfig/gdl-1.0.pc
-%%DOCSDIR%%/gdl-gdl-dock-bar.html
-%%DOCSDIR%%/gdl-gdl-dock-item.html
-%%DOCSDIR%%/gdl-gdl-dock-layout.html
-%%DOCSDIR%%/gdl-gdl-dock-master.html
-%%DOCSDIR%%/gdl-gdl-dock-object.html
-%%DOCSDIR%%/gdl-gdl-dock-placeholder.html
-%%DOCSDIR%%/gdl-gdl-tools.html
-%%DOCSDIR%%/gdl-gdl-dock.html
-%%DOCSDIR%%/gdl-main.html
-%%DOCSDIR%%/gdl.devhelp
-%%DOCSDIR%%/gdl.devhelp2
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
-share/gdl/ui/layout.ui
-share/locale/am/LC_MESSAGES/gdl-1.mo
-share/locale/ar/LC_MESSAGES/gdl-1.mo
-share/locale/ast/LC_MESSAGES/gdl-1.mo
-share/locale/az/LC_MESSAGES/gdl-1.mo
-share/locale/be/LC_MESSAGES/gdl-1.mo
-share/locale/bg/LC_MESSAGES/gdl-1.mo
-share/locale/bn/LC_MESSAGES/gdl-1.mo
-share/locale/ca/LC_MESSAGES/gdl-1.mo
-share/locale/ca@valencia/LC_MESSAGES/gdl-1.mo
-share/locale/cs/LC_MESSAGES/gdl-1.mo
-share/locale/da/LC_MESSAGES/gdl-1.mo
-share/locale/de/LC_MESSAGES/gdl-1.mo
-share/locale/dz/LC_MESSAGES/gdl-1.mo
-share/locale/el/LC_MESSAGES/gdl-1.mo
-share/locale/en_CA/LC_MESSAGES/gdl-1.mo
-share/locale/en_GB/LC_MESSAGES/gdl-1.mo
-share/locale/en@shaw/LC_MESSAGES/gdl-1.mo
-share/locale/es/LC_MESSAGES/gdl-1.mo
-share/locale/et/LC_MESSAGES/gdl-1.mo
-share/locale/eu/LC_MESSAGES/gdl-1.mo
-share/locale/fi/LC_MESSAGES/gdl-1.mo
-share/locale/fr/LC_MESSAGES/gdl-1.mo
-share/locale/ga/LC_MESSAGES/gdl-1.mo
-share/locale/gl/LC_MESSAGES/gdl-1.mo
-share/locale/gu/LC_MESSAGES/gdl-1.mo
-share/locale/he/LC_MESSAGES/gdl-1.mo
-share/locale/hi/LC_MESSAGES/gdl-1.mo
-share/locale/hr/LC_MESSAGES/gdl-1.mo
-share/locale/hu/LC_MESSAGES/gdl-1.mo
-share/locale/hy/LC_MESSAGES/gdl-1.mo
-share/locale/id/LC_MESSAGES/gdl-1.mo
-share/locale/it/LC_MESSAGES/gdl-1.mo
-share/locale/ja/LC_MESSAGES/gdl-1.mo
-share/locale/ko/LC_MESSAGES/gdl-1.mo
-share/locale/lt/LC_MESSAGES/gdl-1.mo
-share/locale/lv/LC_MESSAGES/gdl-1.mo
-share/locale/mai/LC_MESSAGES/gdl-1.mo
-share/locale/mk/LC_MESSAGES/gdl-1.mo
-share/locale/ml/LC_MESSAGES/gdl-1.mo
-share/locale/mr/LC_MESSAGES/gdl-1.mo
-share/locale/nb/LC_MESSAGES/gdl-1.mo
-share/locale/ne/LC_MESSAGES/gdl-1.mo
-share/locale/nl/LC_MESSAGES/gdl-1.mo
-share/locale/oc/LC_MESSAGES/gdl-1.mo
-share/locale/or/LC_MESSAGES/gdl-1.mo
-share/locale/pa/LC_MESSAGES/gdl-1.mo
-share/locale/pl/LC_MESSAGES/gdl-1.mo
-share/locale/ps/LC_MESSAGES/gdl-1.mo
-share/locale/pt/LC_MESSAGES/gdl-1.mo
-share/locale/pt_BR/LC_MESSAGES/gdl-1.mo
-share/locale/ro/LC_MESSAGES/gdl-1.mo
-share/locale/ru/LC_MESSAGES/gdl-1.mo
-share/locale/rw/LC_MESSAGES/gdl-1.mo
-share/locale/si/LC_MESSAGES/gdl-1.mo
-share/locale/sk/LC_MESSAGES/gdl-1.mo
-share/locale/sl/LC_MESSAGES/gdl-1.mo
-share/locale/sq/LC_MESSAGES/gdl-1.mo
-share/locale/sr/LC_MESSAGES/gdl-1.mo
-share/locale/sr@latin/LC_MESSAGES/gdl-1.mo
-share/locale/sv/LC_MESSAGES/gdl-1.mo
-share/locale/te/LC_MESSAGES/gdl-1.mo
-share/locale/th/LC_MESSAGES/gdl-1.mo
-share/locale/tr/LC_MESSAGES/gdl-1.mo
-share/locale/ug/LC_MESSAGES/gdl-1.mo
-share/locale/uk/LC_MESSAGES/gdl-1.mo
-share/locale/vi/LC_MESSAGES/gdl-1.mo
-share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
-share/locale/zh_HK/LC_MESSAGES/gdl-1.mo
-share/locale/zh_TW/LC_MESSAGES/gdl-1.mo
-@dirrm share/gdl/ui
-@dirrm share/gdl
-@dirrm %%DOCSDIR%%
-@dirrm include/libgdl-1.0/gdl
-@dirrm include/libgdl-1.0
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
+include/libgdl-3.0/gdl/gdl-dock-bar.h
+include/libgdl-3.0/gdl/gdl-dock-item-grip.h
+include/libgdl-3.0/gdl/gdl-dock-item.h
+include/libgdl-3.0/gdl/gdl-dock-layout.h
+include/libgdl-3.0/gdl/gdl-dock-master.h
+include/libgdl-3.0/gdl/gdl-dock-object.h
+include/libgdl-3.0/gdl/gdl-dock-placeholder.h
+include/libgdl-3.0/gdl/gdl-dock.h
+include/libgdl-3.0/gdl/gdl.h
+include/libgdl-3.0/gdl/libgdltypebuiltins.h
+lib/girepository-1.0/Gdl-3.typelib
+lib/libgdl-3.so
+lib/libgdl-3.so.5
+lib/libgdl-3.so.5.0.8
+libdata/pkgconfig/gdl-3.0.pc
+share/doc/gdl-3.0/GdlDock.html
+share/doc/gdl-3.0/GdlDockBar.html
+share/doc/gdl-3.0/GdlDockItem.html
+share/doc/gdl-3.0/GdlDockItemButtonImage.html
+share/doc/gdl-3.0/GdlDockItemGrip.html
+share/doc/gdl-3.0/GdlDockLayout.html
+share/doc/gdl-3.0/GdlDockMaster.html
+share/doc/gdl-3.0/GdlDockNotebook.html
+share/doc/gdl-3.0/GdlDockObject.html
+share/doc/gdl-3.0/GdlDockPaned.html
+share/doc/gdl-3.0/GdlDockPlaceholder.html
+share/doc/gdl-3.0/GdlDockTablabel.html
+share/doc/gdl-3.0/GdlPreviewWindow.html
+share/doc/gdl-3.0/GdlSwitcher.html
+share/doc/gdl-3.0/annotation-glossary.html
+share/doc/gdl-3.0/api-index-full.html
+share/doc/gdl-3.0/api.html
+share/doc/gdl-3.0/core.html
+share/doc/gdl-3.0/deprecated.html
+share/doc/gdl-3.0/gdl-3.0.devhelp2
+share/doc/gdl-3.0/home.png
+share/doc/gdl-3.0/index.html
+share/doc/gdl-3.0/index.sgml
+share/doc/gdl-3.0/left.png
+share/doc/gdl-3.0/private.html
+share/doc/gdl-3.0/right.png
+share/doc/gdl-3.0/style.css
+share/doc/gdl-3.0/up.png
+share/doc/gdl-3.0/widget.html
+share/gir-1.0/Gdl-3.gir
+share/locale/am/LC_MESSAGES/gdl-3.mo
+share/locale/ar/LC_MESSAGES/gdl-3.mo
+share/locale/as/LC_MESSAGES/gdl-3.mo
+share/locale/ast/LC_MESSAGES/gdl-3.mo
+share/locale/az/LC_MESSAGES/gdl-3.mo
+share/locale/be/LC_MESSAGES/gdl-3.mo
+share/locale/bg/LC_MESSAGES/gdl-3.mo
+share/locale/bn/LC_MESSAGES/gdl-3.mo
+share/locale/ca/LC_MESSAGES/gdl-3.mo
+share/locale/ca@valencia/LC_MESSAGES/gdl-3.mo
+share/locale/cs/LC_MESSAGES/gdl-3.mo
+share/locale/da/LC_MESSAGES/gdl-3.mo
+share/locale/de/LC_MESSAGES/gdl-3.mo
+share/locale/dz/LC_MESSAGES/gdl-3.mo
+share/locale/el/LC_MESSAGES/gdl-3.mo
+share/locale/en@shaw/LC_MESSAGES/gdl-3.mo
+share/locale/en_CA/LC_MESSAGES/gdl-3.mo
+share/locale/en_GB/LC_MESSAGES/gdl-3.mo
+share/locale/eo/LC_MESSAGES/gdl-3.mo
+share/locale/es/LC_MESSAGES/gdl-3.mo
+share/locale/et/LC_MESSAGES/gdl-3.mo
+share/locale/eu/LC_MESSAGES/gdl-3.mo
+share/locale/fi/LC_MESSAGES/gdl-3.mo
+share/locale/fr/LC_MESSAGES/gdl-3.mo
+share/locale/ga/LC_MESSAGES/gdl-3.mo
+share/locale/gl/LC_MESSAGES/gdl-3.mo
+share/locale/gu/LC_MESSAGES/gdl-3.mo
+share/locale/he/LC_MESSAGES/gdl-3.mo
+share/locale/hi/LC_MESSAGES/gdl-3.mo
+share/locale/hr/LC_MESSAGES/gdl-3.mo
+share/locale/hu/LC_MESSAGES/gdl-3.mo
+share/locale/hy/LC_MESSAGES/gdl-3.mo
+share/locale/id/LC_MESSAGES/gdl-3.mo
+share/locale/it/LC_MESSAGES/gdl-3.mo
+share/locale/ja/LC_MESSAGES/gdl-3.mo
+share/locale/km/LC_MESSAGES/gdl-3.mo
+share/locale/ko/LC_MESSAGES/gdl-3.mo
+share/locale/lt/LC_MESSAGES/gdl-3.mo
+share/locale/lv/LC_MESSAGES/gdl-3.mo
+share/locale/mai/LC_MESSAGES/gdl-3.mo
+share/locale/mk/LC_MESSAGES/gdl-3.mo
+share/locale/ml/LC_MESSAGES/gdl-3.mo
+share/locale/mr/LC_MESSAGES/gdl-3.mo
+share/locale/nb/LC_MESSAGES/gdl-3.mo
+share/locale/ne/LC_MESSAGES/gdl-3.mo
+share/locale/nl/LC_MESSAGES/gdl-3.mo
+share/locale/oc/LC_MESSAGES/gdl-3.mo
+share/locale/or/LC_MESSAGES/gdl-3.mo
+share/locale/pa/LC_MESSAGES/gdl-3.mo
+share/locale/pl/LC_MESSAGES/gdl-3.mo
+share/locale/ps/LC_MESSAGES/gdl-3.mo
+share/locale/pt/LC_MESSAGES/gdl-3.mo
+share/locale/pt_BR/LC_MESSAGES/gdl-3.mo
+share/locale/ro/LC_MESSAGES/gdl-3.mo
+share/locale/ru/LC_MESSAGES/gdl-3.mo
+share/locale/rw/LC_MESSAGES/gdl-3.mo
+share/locale/si/LC_MESSAGES/gdl-3.mo
+share/locale/sk/LC_MESSAGES/gdl-3.mo
+share/locale/sl/LC_MESSAGES/gdl-3.mo
+share/locale/sq/LC_MESSAGES/gdl-3.mo
+share/locale/sr/LC_MESSAGES/gdl-3.mo
+share/locale/sr@latin/LC_MESSAGES/gdl-3.mo
+share/locale/sv/LC_MESSAGES/gdl-3.mo
+share/locale/te/LC_MESSAGES/gdl-3.mo
+share/locale/tg/LC_MESSAGES/gdl-3.mo
+share/locale/th/LC_MESSAGES/gdl-3.mo
+share/locale/tr/LC_MESSAGES/gdl-3.mo
+share/locale/ug/LC_MESSAGES/gdl-3.mo
+share/locale/uk/LC_MESSAGES/gdl-3.mo
+share/locale/vi/LC_MESSAGES/gdl-3.mo
+share/locale/zh_CN/LC_MESSAGES/gdl-3.mo
+share/locale/zh_HK/LC_MESSAGES/gdl-3.mo
+share/locale/zh_TW/LC_MESSAGES/gdl-3.mo

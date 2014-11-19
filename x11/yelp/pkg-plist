@@ -1,7 +1,47 @@
 bin/gnome-help
 bin/yelp
+include/libyelp/yelp-bookmarks.h
+include/libyelp/yelp-docbook-document.h
+include/libyelp/yelp-document.h
+include/libyelp/yelp-help-list.h
+include/libyelp/yelp-info-document.h
+include/libyelp/yelp-mallard-document.h
+include/libyelp/yelp-man-document.h
+include/libyelp/yelp-search-entry.h
+include/libyelp/yelp-settings.h
+include/libyelp/yelp-simple-document.h
+include/libyelp/yelp-sqlite-storage.h
+include/libyelp/yelp-storage.h
+include/libyelp/yelp-transform.h
+include/libyelp/yelp-types.h
+include/libyelp/yelp-uri.h
+include/libyelp/yelp-view.h
+lib/libyelp.a
+lib/libyelp.so
+lib/libyelp.so.0
+lib/libyelp.so.0.0.0
 share/applications/yelp.desktop
-share/icons/hicolor/192x192/apps/yelp-icon-big.png
+share/doc/libyelp/YelpDocument.html
+share/doc/libyelp/YelpSettings.html
+share/doc/libyelp/YelpSimpleDocument.html
+share/doc/libyelp/YelpUri.html
+share/doc/libyelp/YelpView.html
+share/doc/libyelp/api-index-full.html
+share/doc/libyelp/ch01.html
+share/doc/libyelp/ch01s02.html
+share/doc/libyelp/home.png
+share/doc/libyelp/index.html
+share/doc/libyelp/index.sgml
+share/doc/libyelp/left-insensitive.png
+share/doc/libyelp/left.png
+share/doc/libyelp/libyelp-yelp-error.html
+share/doc/libyelp/libyelp.devhelp2
+share/doc/libyelp/object-tree.html
+share/doc/libyelp/right-insensitive.png
+share/doc/libyelp/right.png
+share/doc/libyelp/style.css
+share/doc/libyelp/up-insensitive.png
+share/doc/libyelp/up.png
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/ar/LC_MESSAGES/yelp.mo
@@ -24,7 +64,6 @@ share/locale/da/LC_MESSAGES/yelp.mo
 share/locale/de/LC_MESSAGES/yelp.mo
 share/locale/dz/LC_MESSAGES/yelp.mo
 share/locale/el/LC_MESSAGES/yelp.mo
-share/locale/en@shaw/LC_MESSAGES/yelp.mo
 share/locale/en_CA/LC_MESSAGES/yelp.mo
 share/locale/en_GB/LC_MESSAGES/yelp.mo
 share/locale/eo/LC_MESSAGES/yelp.mo
@@ -36,8 +75,10 @@ share/locale/fi/LC_MESSAGES/yelp.mo
 share/locale/fr/LC_MESSAGES/yelp.mo
 share/locale/fur/LC_MESSAGES/yelp.mo
 share/locale/ga/LC_MESSAGES/yelp.mo
+share/locale/gd/LC_MESSAGES/yelp.mo
 share/locale/gl/LC_MESSAGES/yelp.mo
 share/locale/gu/LC_MESSAGES/yelp.mo
+share/locale/km/LC_MESSAGES/yelp.mo
 share/locale/he/LC_MESSAGES/yelp.mo
 share/locale/hi/LC_MESSAGES/yelp.mo
 share/locale/hr/LC_MESSAGES/yelp.mo
@@ -103,98 +144,225 @@ share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_HK/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
-%%DATADIR%%/default.css
-%%DATADIR%%/icons/yelp-icon-caution.png
-%%DATADIR%%/icons/yelp-icon-important.png
-%%DATADIR%%/icons/yelp-icon-note.png
-%%DATADIR%%/icons/yelp-icon-tip.png
-%%DATADIR%%/icons/yelp-icon-warning.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-00AB.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-00BB.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-201C.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-201D.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-201E.png
-%%DATADIR%%/important_docs.xml
-%%DATADIR%%/info.xml
-%%DATADIR%%/man.xml
-%%DATADIR%%/scrollkeeper.xml
-%%DATADIR%%/toc.xml
-%%DATADIR%%/ui/yelp-bookmarks-add.ui
-%%DATADIR%%/ui/yelp-bookmarks.ui
-%%DATADIR%%/ui/yelp-open-location.ui
-%%DATADIR%%/ui/yelp-preferences.ui
-%%DATADIR%%/ui/yelp-search-ui.xml
-%%DATADIR%%/ui/yelp-ui.xml
-%%DATADIR%%/xslt/db-title.xsl
+%%DATADIR%%/dtd/catalog
+%%DATADIR%%/dtd/docbookx.dtd
+%%DATADIR%%/dtd/isoamsa.ent
+%%DATADIR%%/dtd/isoamsb.ent
+%%DATADIR%%/dtd/isoamsc.ent
+%%DATADIR%%/dtd/isoamsn.ent
+%%DATADIR%%/dtd/isoamso.ent
+%%DATADIR%%/dtd/isoamsr.ent
+%%DATADIR%%/dtd/isobox.ent
+%%DATADIR%%/dtd/isocyr1.ent
+%%DATADIR%%/dtd/isocyr2.ent
+%%DATADIR%%/dtd/isodia.ent
+%%DATADIR%%/dtd/isogrk1.ent
+%%DATADIR%%/dtd/isogrk2.ent
+%%DATADIR%%/dtd/isogrk3.ent
+%%DATADIR%%/dtd/isogrk4.ent
+%%DATADIR%%/dtd/isolat1.ent
+%%DATADIR%%/dtd/isolat2.ent
+%%DATADIR%%/dtd/isonum.ent
+%%DATADIR%%/dtd/isopub.ent
+%%DATADIR%%/dtd/isotech.ent
+%%DATADIR%%/icons/hicolor/16x16/status/bookmark.png
+%%DATADIR%%/icons/hicolor/16x16/status/yelp-page-task.png
+%%DATADIR%%/icons/hicolor/16x16/status/yelp-page-tip.png
+%%DATADIR%%/icons/hicolor/16x16/status/yelp-page-ui.png
+%%DATADIR%%/icons/hicolor/16x16/status/yelp-page-video.png
+%%DATADIR%%/icons/hicolor/scalable/actions/yelp-bookmark-add-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/yelp-bookmark-remove-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-problem-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-search-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-task-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-tip-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-ui-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-video-symbolic.svg
+%%DATADIR%%/mathjax/MathJax.js
+%%DATADIR%%/mathjax/config/MMLorHTML.js
+%%DATADIR%%/mathjax/config/yelp.js
+%%DATADIR%%/mathjax/extensions/MathEvents.js
+%%DATADIR%%/mathjax/extensions/MathMenu.js
+%%DATADIR%%/mathjax/extensions/MathZoom.js
+%%DATADIR%%/mathjax/extensions/mml2jax.js
+%%DATADIR%%/mathjax/extensions/HTML-CSS/handle-floats.js
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Bold.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Bold.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Bold.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Italic.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Script-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff
+%%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff
+%%DATADIR%%/mathjax/jax/element/mml/jax.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/Arrows.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/BasicLatin.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/CombDiactForSymbols.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/Dingbats.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/GeneralPunctuation.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/GeometricShapes.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/GreekAndCoptic.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/Latin1Supplement.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/LetterlikeSymbols.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/Makefile.am
+%%DATADIR%%/mathjax/jax/element/mml/optable/MathOperators.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/MiscMathSymbolsA.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/MiscMathSymbolsB.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/MiscSymbolsAndArrows.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/MiscTechnical.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/SpacingModLetters.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/SuppMathOperators.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/SupplementalArrowsA.js
+%%DATADIR%%/mathjax/jax/element/mml/optable/SupplementalArrowsB.js
+%%DATADIR%%/mathjax/jax/input/MathML/config.js
+%%DATADIR%%/mathjax/jax/input/MathML/jax.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/a.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/b.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/c.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/d.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/e.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/f.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/fr.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/g.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/h.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/i.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/j.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/k.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/l.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/m.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/n.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/o.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/opf.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/p.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/q.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/r.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/s.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/scr.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/t.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/u.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/v.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/w.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/x.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/y.js
+%%DATADIR%%/mathjax/jax/input/MathML/entities/z.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/config.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/jax.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/Makefile.am
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/annotation-xml.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/maction.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/menclose.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/mglyph.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/mmultiscripts.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/ms.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/mtable.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/multiline.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/fontdata-extra.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/fontdata.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/Arrows.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/BBBold.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/BoxDrawing.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/Dingbats.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/EnclosedAlphanum.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/GeneralPunctuation.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/GeometricShapes.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/GreekAndCoptic.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/Latin1Supplement.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/LatinExtendedA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/LetterlikeSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/MathOperators.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/MiscMathSymbolsB.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/MiscSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/MiscTechnical.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/PUA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/SpacingModLetters.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular/SuppMathOperators.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold/PUA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular/PUA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/BoldItalic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Italic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/Arrows.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/CombDiactForSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/GeneralPunctuation.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/GeometricShapes.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/Latin1Supplement.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/LatinExtendedA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/LatinExtendedB.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/LetterlikeSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/MathOperators.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/MiscMathSymbolsA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/MiscSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/MiscTechnical.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/SpacingModLetters.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/SuppMathOperators.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold/SupplementalArrowsA.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/GeneralPunctuation.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/Latin1Supplement.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/LetterlikeSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/GeometricShapes.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/MiscSymbols.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular/SpacingModLetters.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math/BoldItalic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math/Italic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script/Regular/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script/Regular/Other.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size1/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size2/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size3/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size4/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular/BasicLatin.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular/CombDiacritMarks.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular/Main.js
+%%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular/Other.js
+%%DATADIR%%/mathjax/jax/output/NativeMML/config.js
+%%DATADIR%%/mathjax/jax/output/NativeMML/jax.js
 %%DATADIR%%/xslt/db2html.xsl
 %%DATADIR%%/xslt/info2html.xsl
 %%DATADIR%%/xslt/mal2html.xsl
 %%DATADIR%%/xslt/man2html.xsl
-%%DATADIR%%/xslt/search2html.xsl
-%%DATADIR%%/xslt/toc2html.xsl
 %%DATADIR%%/xslt/yelp-common.xsl
-%%DATADIR%%/yelp.js
-@dirrm %%DATADIR%%/xslt
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/la/LC_MESSAGES
-@dirrmtry share/locale/la
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ks/LC_MESSAGES
-@dirrmtry share/locale/ks
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
+share/yelp-xsl/xslt/common/domains/yelp.xml

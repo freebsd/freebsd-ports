@@ -1,11 +1,11 @@
---- Makefile.in.orig	2011-09-15 18:04:34.000000000 +0200
-+++ Makefile.in	2011-09-15 18:05:12.000000000 +0200
-@@ -422,7 +422,7 @@
+--- Makefile.in.orig	2014-10-14 15:48:07.903444240 +0200
++++ Makefile.in	2014-10-14 15:49:51.089555876 +0200
+@@ -540,7 +540,7 @@
  	|| { echo "Gtk+Tests:ERROR: Failed to start Xvfb environment for X11 target tests."; exit 1; } \
  	&& DISPLAY=:$$XID && export DISPLAY
  
--SRC_SUBDIRS = gdk gtk libgail-util modules demos tests perf examples
-+SRC_SUBDIRS = gdk gtk libgail-util modules demos perf examples
+-SRC_SUBDIRS = util gdk gtk libgail-util modules demos tests testsuite examples
++SRC_SUBDIRS = util gdk gtk libgail-util modules demos examples
  SUBDIRS = po po-properties $(SRC_SUBDIRS) docs m4macros build
  ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
  MAINTAINERCLEANFILES = \

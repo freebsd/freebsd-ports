@@ -1,10 +1,9 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gobject-introspection/Makefile 18652 2013-08-18 15:14:13Z kwm $
+#   $MCom: ports/trunk/devel/gobject-introspection/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gobject-introspection
-PORTVERSION=	1.36.0
-PORTREVISION=	3
+PORTVERSION=	1.42.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,11 +18,10 @@ LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 USES=		bison gettext gmake libtool pathfix pkgconfig \
 		python:2 tar:xz
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehier glib20
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 # Force it to put the .cache in ${WRKSRC} instead of ~/.cache. ports/143260

@@ -1,0 +1,11 @@
+--- configure.orig	2013-05-12 12:16:28.000000000 +0000
++++ configure	2013-05-12 12:16:52.000000000 +0000
+@@ -14495,7 +14495,7 @@
+ 		disabled_plugins="$disabled_plugins, $1 ($2)"
+ 	fi
+ 
+-	PLUGINS=$(echo "$PLUGINS" | sed -e "s/[^a-zA-Z0-9_]$1[ \t\r\n\f]\{1,\}/ /" -e "s/[^a-zA-Z0-9_]$1$//" -e "s/^$1[ \t\r\n\f]\{1,\}//")
++	PLUGINS=$(echo "$PLUGINS" | sed -e "s/[^a-zA-Z0-9_]$1[ \t\r\n]\{1,\}/ /" -e "s/[^a-zA-Z0-9_]$1$//" -e "s/^$1[ \t\r\n]\{1,\}//")
+ }
+ 
+ # Disable python plugins if there is no python support

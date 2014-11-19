@@ -64,7 +64,7 @@ GTK3_USE=		GNOME=gtk30
 GTK3_CONFIGURE_ENABLE=	gtk3 libnotify
 GTK3_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 
-VALA_BUILD_DEPENDS=	vala-vapigen>=0.16:${PORTSDIR}/lang/vala-vapigen
+VALA_BUILD_DEPENDS=	vala>=0.16:${PORTSDIR}/lang/vala
 VALA_CONFIGURE_ENABLE=	vala
 
 GINTRO_BUILD_DEPENDS=	gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection

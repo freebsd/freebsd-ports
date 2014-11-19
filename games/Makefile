@@ -25,6 +25,7 @@
     SUBDIR += afternoonstalker
     SUBDIR += agame
     SUBDIR += airstrike
+    SUBDIR += aisleriot
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += alephone-scenarios
@@ -255,6 +256,7 @@
     SUBDIR += fillets-ng
     SUBDIR += filters
     SUBDIR += fishsupper
+    SUBDIR += five-or-more
     SUBDIR += fkiss
     SUBDIR += flare-engine
     SUBDIR += flare-game
@@ -271,6 +273,7 @@
     SUBDIR += formido
     SUBDIR += fortunate
     SUBDIR += fotaq
+    SUBDIR += four-in-a-row
     SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-nox11
@@ -337,10 +340,16 @@
     SUBDIR += gno3dtet
     SUBDIR += gnome-chess
     SUBDIR += gnome-games
+    SUBDIR += gnome-klotski
+    SUBDIR += gnome-mahjongg
+    SUBDIR += gnome-mines
+    SUBDIR += gnome-nibbles
+    SUBDIR += gnome-robots
+    SUBDIR += gnome-sudoku
+    SUBDIR += gnome-tetravex
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
     SUBDIR += gnomekiss
-    SUBDIR += gnomesudoku
     SUBDIR += gnono
     SUBDIR += gnubg
     SUBDIR += gnuchess
@@ -396,6 +405,7 @@
     SUBDIR += hohlin
     SUBDIR += hoichess
     SUBDIR += holotz-castle
+    SUBDIR += iagno
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += iceicepenguin
@@ -503,6 +513,7 @@
     SUBDIR += libmaitretarot
     SUBDIR += libmt_client
     SUBDIR += libshhcards
+    SUBDIR += lightsoff
     SUBDIR += lincity
     SUBDIR += lincity-ng
     SUBDIR += linux-candycruncher-demo
@@ -775,11 +786,13 @@
     SUBDIR += qmars
     SUBDIR += qnetwalk
     SUBDIR += qonk
+    SUBDIR += qqwing
     SUBDIR += qstat
     SUBDIR += qtads
     SUBDIR += qtv
     SUBDIR += quackle
     SUBDIR += quadra
+    SUBDIR += quadrapassel
     SUBDIR += quake-data
     SUBDIR += quake-dpmod
     SUBDIR += quake-reaper
@@ -914,10 +927,12 @@
     SUBDIR += supertux
     SUBDIR += supertux-devel
     SUBDIR += supertuxkart
+    SUBDIR += swell-foop
     SUBDIR += sxsame
     SUBDIR += syobon
     SUBDIR += tads
     SUBDIR += taipan
+    SUBDIR += tali
     SUBDIR += tanglet
     SUBDIR += tank
     SUBDIR += tbclock

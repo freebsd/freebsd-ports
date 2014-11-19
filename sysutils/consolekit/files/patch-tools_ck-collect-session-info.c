@@ -1,5 +1,10 @@
---- tools/ck-collect-session-info.c.orig	2009-04-29 15:07:29.000000000 -0400
-+++ tools/ck-collect-session-info.c	2010-07-12 23:55:13.000000000 -0400
+$OpenBSD: patch-tools_ck-collect-session-info_c,v 1.1 2011/04/28 13:08:33 ajacoutot Exp $
+
+XXX revert 4f88228f31a63c026c424a92827f26ad7535275c
+The Kit people assume the world runs Linux and PAM, see
+https://bugs.freedesktop.org/show_bug.cgi?id=28377
+--- tools/ck-collect-session-info.c.orig	2013-08-10 20:47:52.000000000 +0200
++++ tools/ck-collect-session-info.c	2013-08-10 20:47:33.000000000 +0200
 @@ -226,6 +226,12 @@ fill_x11_info (SessionInfo *si)
          gboolean       res;
          CkProcessStat *xorg_stat;
@@ -13,7 +18,7 @@
  
          /* assume this is true then check it */
          si->x11_display = ck_unix_pid_get_env (si->pid, "DISPLAY");
-@@ -272,6 +278,52 @@ fill_x11_info (SessionInfo *si)
+@@ -272,9 +278,56 @@ fill_x11_info (SessionInfo *si)
          }
  
          si->x11_display_device = ck_process_stat_get_tty (xorg_stat);
@@ -65,11 +70,23 @@
 +gotit:
          ck_process_stat_free (xorg_stat);
  
-         si->is_local = TRUE;
-@@ -410,5 +462,5 @@ main (int    argc,
+-        /* don't set is-local here - let the daemon do that */
++        si->is_local = TRUE;
++        si->is_local_is_set = TRUE;
  
-         ret = collect_session_info (user_id, process_id);
+         g_free (si->remote_host_name);
+         si->remote_host_name = NULL;
+@@ -303,6 +356,13 @@ fill_session_info (SessionInfo *si)
  
--	return ret != TRUE;
-+        return ret != TRUE;
- }
+         fill_x11_info (si);
+ 
++        if (! si->is_local_is_set) {
++                /* FIXME: how should we set this? */
++                /* non x11 sessions must be local I guess */
++                si->is_local = TRUE;
++                si->is_local_is_set = TRUE;
++        }
++
+         res = ck_unix_pid_get_login_session_id (si->pid, &si->login_session_id);
+         if (! res) {
+                 si->login_session_id = NULL;

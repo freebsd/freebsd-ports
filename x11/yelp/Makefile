@@ -1,43 +1,43 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/yelp/Makefile,v 1.171 2012/10/01 16:19:07 kwm Exp $
+#   $MCom: ports/trunk/x11/yelp/Makefile 19967 2014-10-16 06:45:29Z gusi $
 
 PORTNAME=	yelp
-PORTVERSION=	2.30.2
-PORTREVISION=	10
+PORTVERSION=	3.14.1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	LOCAL/kwm
-DISTNAME=	${PORTNAME}-webkit-${PORTVERSION}
-DIST_SUBDIR=	gnome2
+MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Help browser for the GNOME 2 desktop
+COMMENT=	Help browser for the GNOME 3 desktop
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
-		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
-		librarian.so:${PORTSDIR}/textproc/rarian
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	yelp-3.[0-9]*
+BUILD_DEPENDS=	yelp-xsl>=0:${PORTSDIR}/textproc/yelp-xsl \
+		itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+RUN_DEPENDS=	yelp-xsl>=0:${PORTSDIR}/textproc/yelp-xsl
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:bzip2
-USE_XORG=	ice
-USE_GNOME=	gnomeprefix intlhack gconf2 gnomedocutils
+USES=		desktop-file-utils gettext gmake libtool pathfix \
+		pkgconfig tar:xz
+USE_XORG=	x11 ice
+USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 libxslt
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib \
-		-fstack-protector
+LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
+GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
+INSTALL_TARGET=	install-strip
 
-GCONF_SCHEMAS=	yelp.schemas
+.include <bsd.port.pre.mk>
 
-post-extract:
-	${RM} -f ${WRKSRC}/data/yelp.schemas
+.if ${OSVERSION} >= 900012 || (${OSVERSION} >= 800505 && ${OSVERSION} < 900000)
+CONFIGURE_ENV+=	YELP_LZMA_CFLAGS="-I/usr/include" \
+		YELP_LZMA_LIBS="-L/usr/lib -llzma"
+.else
+LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
+.endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,[-/]unstable,,' \
-		-e 's/ --define-variable=includetype=unstable//' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} '/g_thread_init/d' ${WRKSRC}/src/yelp-main.c
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

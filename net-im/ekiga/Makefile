@@ -1,13 +1,12 @@
 # Created by: Charlie & <root@ws.ipfw.ru>
 # $FreeBSD$
+#    $MCom: ports/trunk/net-im/ekiga/Makefile 19954 2014-10-15 10:03:57Z kwm $
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
-#MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/
-#DISTNAME=	ekiga-${PORTVERSION}
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,14 +20,14 @@ LIB_DEPENDS=	libboost_signals.so:${PORTSDIR}/devel/boost-libs \
 RUN_DEPENDS=	gnome-icon-theme>=3.0.0:${PORTSDIR}/misc/gnome-icon-theme
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool perl5 pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix perl5 pkgconfig \
+		tar:xz
 USE_XORG=	xv
-USE_GNOME=	gtk20 intltool libxml2
-INSTALLS_OMF=	yes
+USE_GNOME=	gtk20 intlhack libxml2
 INSTALLS_ICONS=	yes
-
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LIBS+=		-I${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	LDAP NOTIFY EVOLUTION GCONF DBUS AVAHI GNOMEHELP
 OPTIONS_DEFAULT=NOTIFY DBUS GCONF AVAHI
@@ -102,6 +101,12 @@ CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
+.if defined(WITH_PLUGINS)
+PLIST_SUB+=	PLUGINS=""
+.else
+PLIST_SUB+=	PLUGINS="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MNOTIFY}
 LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify
@@ -132,7 +137,8 @@ PLIST_SUB+=	GCONF=""
 .endif
 
 .if ${PORT_OPTIONS:MEVOLUTION}
-USE_GNOME+=	evolutiondataserver
+USE_GNOME+=	evolutiondataserver3
+LIB_DEPENDS+=	libgcr-3.so:${PORTSDIR}/security/gcr
 CONFIGURE_ARGS+=--enable-eds
 PLIST_SUB+=	EVOLUTION=""
 WITH_PLUGINS=	1
@@ -152,21 +158,12 @@ PLIST_SUB+=	AVAHI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNOMEHELP}
+INSTALLS_OMF=	yes
 PLIST_SUB+=	GNOMEHELP=""
 USE_GNOME+=	gnomedocutils
 .else
 CONFIGURE_ARGS+=--disable-gdu
 PLIST_SUB+=	GNOMEHELP="@comment "
 .endif
-
-.if defined(WITH_PLUGINS)
-PLIST_SUB+=	PLUGINS=""
-.else
-PLIST_SUB+=	PLUGINS="@comment "
-.endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ekiga/${PORTVERSION}/libekiga.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ekiga/${PORTVERSION}/plugins/*.so
 
 .include <bsd.port.mk>

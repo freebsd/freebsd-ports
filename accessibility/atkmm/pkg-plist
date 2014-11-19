@@ -46,10 +46,3 @@ lib/libatkmm-1.6.so
 lib/libatkmm-1.6.so.1
 lib/libatkmm-1.6.so.1.1.0
 libdata/pkgconfig/atkmm-1.6.pc
-@dirrm lib/atkmm-1.6/proc/m4
-@dirrm lib/atkmm-1.6/proc
-@dirrm lib/atkmm-1.6/include
-@dirrm lib/atkmm-1.6
-@dirrm include/atkmm-1.6/atkmm/private
-@dirrm include/atkmm-1.6/atkmm
-@dirrm include/atkmm-1.6

@@ -1,54 +1,54 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net/vinagre/Makefile,v 1.48 2012/09/01 23:02:11 mezz Exp $
+#  $MCom: ports/trunk/net/vinagre/Makefile 19981 2014-10-17 06:13:26Z gusi $
 
 PORTNAME=	vinagre
-PORTVERSION=	2.30.3
-PORTREVISION=	6
+PORTVERSION=	3.14.1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
-LIB_DEPENDS=	libgtk-vnc-1.0.so:${PORTSDIR}/net/gtk-vnc \
-		libavahi-core.so:${PORTSDIR}/net/avahi-app \
-		libavahi-ui.so:${PORTSDIR}/net/avahi-gtk \
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc \
+    		libavahi-core.so:${PORTSDIR}/net/avahi-app \
+		libavahi-ui-gtk3.so:${PORTSDIR}/net/avahi-gtk3 \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
-CONFLICTS=	vinagre-3.[0-9]*
-
-USES=		desktop-file-utils pathfix gettext gmake libtool pkgconfig \
-		shared-mime-info tar:bzip2
-USE_GNOME=	gnomeprefix intlhack vte gconf2 gnomedocutils gnomepanel
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 vte3
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--enable-avahi --enable-applet -enable-ssh
-CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--disable-spice --enable-ssh
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	vinagre.schemas
+GLIB_SCHEMAS=	org.gnome.Vinagre.gschema.xml
 
-OPTIONS_DEFINE=	TELEPATHY DOCS
-OPTIONS_DEFAULT=TELEPATHY
 OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	TELEPATHY RDP
+OPTIONS_DEFAULT=TELEPATHY RDP
 TELEPATHY_DESC=	Telepathy integration
-TELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
-TELEPATHY_CONFIGURE_ENABLE=	telepathy
+RDP_DESC=	MS Windows remote desktop support
+TELEPATHY_CONFIGURE_WITH=	telepathy
+TELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+			libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+RDP_CONFIGURE_ENABLE=	rdp
+RDP_BUILD_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
+RDP_RUN_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
 
 .include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} '/^libvinagre_la_LIBADD =/s/$$/ -lgmodule-2.0/' \
-		${WRKSRC}/vinagre/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in AUTHORS COPYING ChangeLog MAINTAINERS NEWS README
+.for f in AUTHORS COPYING ChangeLog NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif

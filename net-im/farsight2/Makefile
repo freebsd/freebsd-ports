@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/net-im/farsight2/Makefile,v 1.10 2012/06/13 09:31:14 kwm Exp $
+#    $MCom: ports/trunk/net-im/farsight2/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	farsight2
 PORTVERSION=	0.0.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://www.freedesktop.org/software/farstream/releases/farsight2/ \
 		http://miwibox.org/distfiles/
@@ -13,10 +13,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of GStreamer modules and libraries for videoconferencing
 
 LIB_DEPENDS=	libnice.so:${PORTSDIR}/net-im/libnice
+RUN_DEPENDS=	libnice-gst010>=0:${PORTSDIR}/net-im/libnice-gst010
 
-CONFLICTS=	farstream-[0-9]*
-
-USES=		gettext gmake libtool pathfix pkgconfig python
+USES=		gettext libtool gmake pathfix pkgconfig python
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 USE_GSTREAMER=	core good bad python

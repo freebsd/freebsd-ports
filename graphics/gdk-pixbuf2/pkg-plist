@@ -14,49 +14,30 @@ include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-simple-anim.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-transform.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixdata.h
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-ani.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-ani.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-bmp.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-bmp.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-gif.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-gif.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-icns.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-icns.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-ico.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-ico.so
-%%JP2%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-jasper.la
-%%JP2%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-jasper.so
-%%JPEG%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-jpeg.la
+%%JASPER%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-jasper.so
 %%JPEG%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-jpeg.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-pcx.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-pcx.so
-%%PNG%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-png.la
 %%PNG%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-png.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-pnm.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-pnm.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-qtif.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-qtif.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-ras.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-ras.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-tga.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-tga.so
-%%TIFF%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-tiff.la
 %%TIFF%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-tiff.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-wbmp.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-wbmp.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-xbm.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-xbm.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-xpm.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-xpm.so
 lib/girepository-1.0/GdkPixbuf-2.0.typelib
-lib/libgdk_pixbuf-2.0.la
 lib/libgdk_pixbuf-2.0.so
 lib/libgdk_pixbuf-2.0.so.0
-lib/libgdk_pixbuf-2.0.so.0.2800.2
-lib/libgdk_pixbuf_xlib-2.0.la
+lib/libgdk_pixbuf-2.0.so.0.3100.1
 lib/libgdk_pixbuf_xlib-2.0.so
 lib/libgdk_pixbuf_xlib-2.0.so.0
-lib/libgdk_pixbuf_xlib-2.0.so.0.2800.2
+lib/libgdk_pixbuf_xlib-2.0.so.0.3100.1
 libdata/pkgconfig/gdk-pixbuf-2.0.pc
 libdata/pkgconfig/gdk-pixbuf-xlib-2.0.pc
 man/man1/gdk-pixbuf-csource.1.gz
@@ -168,75 +149,3 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
 @exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
 @unexec rm %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>&1 >/dev/null || true
-%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_HK
-%%NLS%%@dirrmtry share/locale/yi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/yi
-%%NLS%%@dirrmtry share/locale/xh/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/xh
-%%NLS%%@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uz@cyrillic
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/tt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tt
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@latin
-%%NLS%%@dirrmtry share/locale/sr@ije/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@ije
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/ps/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ps
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/nso/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nso
-%%NLS%%@dirrmtry share/locale/nds/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nds
-%%NLS%%@dirrmtry share/locale/my/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/my
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/mi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mi
-%%NLS%%@dirrmtry share/locale/mai/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mai
-%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ku
-%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/km
-%%NLS%%@dirrmtry share/locale/io/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/io
-%%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ia
-%%NLS%%@dirrmtry share/locale/hy/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hy
-%%NLS%%@dirrmtry share/locale/en@shaw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@shaw
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
-%%NLS%%@dirrmtry share/locale/csb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/csb
-%%NLS%%@dirrmtry share/locale/crh/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/crh
-%%NLS%%@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca@valencia
-%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bn_IN
-%%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/be@latin
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/as
-%%NLS%%@dirrmtry share/locale/ang/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ang
-@dirrm lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders
-@dirrm lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%
-@dirrm lib/gdk-pixbuf-2.0
-@dirrm include/gdk-pixbuf-2.0/gdk-pixbuf-xlib
-@dirrm include/gdk-pixbuf-2.0/gdk-pixbuf
-@dirrm include/gdk-pixbuf-2.0

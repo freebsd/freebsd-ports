@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/www/webkit-gtk2/Makefile,v 1.92 2013/03/09 09:12:39 kwm Exp $
+#   $MCom: ports/trunk/www/webkit-gtk2/Makefile 20029 2014-11-02 20:54:47Z kwm $
 
 PORTNAME=	webkit
 PORTVERSION=	1.8.3
@@ -12,9 +12,8 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc
+BUILD_DEPENDS=	flex>=0:${PORTSDIR}/textproc/flex \
+		gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libicutu.so:${PORTSDIR}/devel/icu \
 		libcurl.so:${PORTSDIR}/ftp/curl \
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 
 USE_GSTREAMER=	yes
 USE_XORG=	xt
-USES=		bison gettext gmake libtool perl5 pkgconfig tar:xz
+USES=		bison gettext gmake gperf libtool perl5 pkgconfig tar:xz
 USE_GNOME=	gtk20 libxslt introspection:build
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes
@@ -62,6 +61,10 @@ CONFIGURE_ARGS+=--enable-debug
 CONFIGURE_ARGS+=--disable-debug
 .endif
 
+.if ${ARCH} == powerpc64
+CFLAGS+=	-mminimal-toc
+.endif
+
 CCISCLANG!=     ${CC} --version
 
 .if !empty(CCISCLANG:M*clang*)
@@ -69,10 +72,6 @@ CPPFLAGS+=	-Wno-c++11-extensions
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc64
-CFLAGS+=	-mminimal-toc
-.endif
 
 .if ${PERL_LEVEL} >= 501400
 BUILD_DEPENDS+=	p5-Switch>0:${PORTSDIR}/lang/p5-Switch
@@ -87,7 +86,7 @@ post-patch:
 		${WRKSRC}/Source/WebCore/dom/make_names.pl \
 		${WRKSRC}/Source/WebCore/css/make-css-file-arrays.pl \
 		${WRKSRC}/Source/WebCore/bindings/scripts/IDLParser.pm
-	@${REINPLACE_CMD} -e 's|"gperf|"${LOCALBASE}/bin/gperf|g' \
+	@${REINPLACE_CMD} -e 's|"gperf|"${GPERF}|g' \
 		${WRKSRC}/Source/WebCore/css/makevalues.pl \
 		${WRKSRC}/Source/WebCore/css/makeprop.pl \
 		${WRKSRC}/Source/WebCore/make-hash-tools.pl

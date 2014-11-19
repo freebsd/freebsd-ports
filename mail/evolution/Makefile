@@ -1,124 +1,117 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/mail/evolution/Makefile 19979 2014-10-17 05:16:24Z gusi $
 
 PORTNAME=	evolution
-PORTVERSION=	2.32.1
-PORTREVISION=	12
+PORTVERSION=	3.12.7
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
 
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
+		highlight:${PORTSDIR}/textproc/highlight
 LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
-		libgtkimageview.so:${PORTSDIR}/x11-toolkits/gtkimageview
-RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell
+		libgcr-3.so:${PORTSDIR}/security/gcr \
+		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
+		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
+		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
+		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
+		libnotify.so:${PORTSDIR}/devel/libnotify
+RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight
 
-CONFLICTS=	evolution-3.[0-9]*
-
-USES=		bison desktop-file-utils gettext gmake libtool:keepla pathfix \
-		perl5 pkgconfig tar:bzip2
-USE_PERL5=	run
-USE_GNOME=	gnomeprefix intlhack evolutiondataserver gtkhtml3 \
-		gnomedocutils gnomedesktop
+USES=		desktop-file-utils bison gettext gmake libtool \
+		pathfix perl5 pkgconfig tar:xz
+USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix gtkhtml4 \
+		intlhack
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USE_GSTREAMER=	yes
-INSTALLS_OMF=	yes
+USE_GSTREAMER1=	yes
 INSTALLS_ICONS=	yes
-USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-nss=yes \
-		--enable-mono=no \
-		--disable-nm \
 		--with-sub-version=" FreeBSD GNOME Team Port"
+# gtkimageview needs to get a gtk3 release first.
+CONFIGURE_ARGS+=--disable-image-inline
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-GCONF_SCHEMAS=	apps_evolution_addressbook.schemas \
-		apps-evolution-attachment-reminder.schemas \
-		apps_evolution_calendar.schemas \
-		apps_evolution_email_custom_header.schemas \
-		apps-evolution-mail-notification.schemas \
-		apps-evolution-mail-prompts-checkdefault.schemas \
-		apps_evolution_shell.schemas \
-		apps-evolution-template-placeholders.schemas \
-		bogo-junk-plugin.schemas \
-		evolution-mail.schemas
+GLIB_SCHEMAS=	org.gnome.evolution.gschema.xml \
+		org.gnome.evolution.addressbook.gschema.xml \
+		org.gnome.evolution.calendar.gschema.xml \
+		org.gnome.evolution.importer.gschema.xml \
+		org.gnome.evolution.mail.gschema.xml \
+		org.gnome.evolution.shell.gschema.xml \
+		org.gnome.evolution.bogofilter.gschema.xml \
+		org.gnome.evolution.spamassassin.gschema.xml \
+		org.gnome.evolution.plugin.attachment-reminder.gschema.xml \
+		org.gnome.evolution.plugin.autocontacts.gschema.xml \
+		org.gnome.evolution.plugin.email-custom-header.gschema.xml \
+		org.gnome.evolution.plugin.external-editor.gschema.xml \
+		org.gnome.evolution.plugin.face-picture.gschema.xml \
+		org.gnome.evolution.plugin.itip.gschema.xml \
+		org.gnome.evolution.plugin.mail-notification.gschema.xml \
+		org.gnome.evolution.plugin.prefer-plain.gschema.xml \
+		org.gnome.evolution.plugin.publish-calendar.gschema.xml \
+		org.gnome.evolution.plugin.templates.gschema.xml
 
-EVO_VERSION=	2.32
+EVO_VERSION=	3.12
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
-OPTIONS_DEFINE=	LDAP CANBERRA SPAMASSASSIN
-OPTIONS_DEFAULT=LDAP CANBERRA
+OPTIONS_DEFINE=	LDAP WEATHER CANBERRA PST
+OPTIONS_DEFAULT=LDAP WEATHER CANBERRA BOGOFILTER
+OPTIONS_GROUP=	SPAM
+OPTIONS_GROUP_SPAM=SPAMASSASSIN BOGOFILTER
+
+OPTIONS_SUB=	yes
+
 CANBERRA_DESC=	Canberra theme audio plugin
+WEATHER_DESC=	Weather calendar backend
+SPAM_DESC=	Spam filter support
 SPAMASSASSIN_DESC=	SpamAssassin spam filtering
+BOGOFILTER_DESC=	Bogofilter spam filtering
+PST_DESC=	Outlook .pst importer
+MAPS_DESC=	Contact maps
 
-.include <bsd.port.options.mk>
+LDAP_CONFIGURE_WITH=	openldap
+LDAP_USE=	OPENLDAP=yes
 
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-openldap=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-openldap=no
-.endif
+WEATHER_LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather
+WEATHER_CONFIGURE_ENABLE=	weather
 
-.if ${PORT_OPTIONS:MSPAMASSASSIN}
-RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/spamassassin
-.endif
+SPAMASSASSIN_CONFIGURE_ENABLE=	spamassassin
+SPAMASSASSIN_BUILD_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
+SPAMASSASSIN_RUN_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
 
-.if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL) || defined(NO_KERBEROS)
-HEIMDAL_HOME?=		${LOCALBASE}
-LIB_DEPENDS+=		libkrb5.so:${PORTSDIR}/security/heimdal
-CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} \
-			--with-krb5-includes=${HEIMDAL_HOME}/include
-KRB5_LIB=		`${HEIMDAL_HOME}/bin/krb5-config gssapi --libs`
-.elif !defined(NO_KERBEROS)
-CONFIGURE_ARGS+=	--with-krb5=/usr
-KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
-.endif
+BOGOFILTER_CONFIGURE_ENABLE=	bogofilter
+BOGOFILTER_BUILD_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
+BOGOFILTER_RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
 
-.if ${PORT_OPTIONS:MCANBERRA}
-LIB_DEPENDS+=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
-CONFIGURE_ARGS+=--enable-canberra=yes
-PLIST_SUB+=	CANBERRA=""
-.else
-CONFIGURE_ARGS+=--enable-canberra=no
-PLIST_SUB+=	CANBERRA="@comment "
-.endif
+CANBERRA_LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+CANBERRA_CONFIGURE_ENABLE=	canberra
 
-# needs newer libpst version 0.6.41 or higher
-#.if defined (WITH_PST)
-#CONFIGURE_ARGS+=	--enable-pst-import
-#BUILD_DEPENDS+=		lspst:${PORTSDIR}/mail/libpst
-#RUN_DEPENDS+=		lspst:${PORTSDIR}/mail/libpst
-#PLIST_SUB+=		PST=""
-#.else
-CONFIGURE_ARGS+=	--disable-pst-import
-PLIST_SUB+=		PST="@comment "
-#.endif
+PST_CONFIGURE_ENABLE=	pst-import
+PST_BUILD_DEPENDS=	libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
+PST_RUN_DEPENDS=	libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
+
+CONFIGURE_ARGS+=--disable-contact-maps
+#MAPS_CONFIGURE_ENABLE=	contact-maps
+#MAPS_LIB_DEPENDS=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain \
+#			libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
+#MAPS_BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^plugins_standard_always/s/audio-inline//' \
 	    	-e 's|-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi|${KRB5_LIB}|g' \
 		-e 's|-Wl,--no-undefined||g' \
-		-e 's|-DGTK_DISABLE_DEPRECATED||g' \
-		-e 's|-DG_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
-	@${REINPLACE_CMD} 's/g_thread_init.*/(void)0;/' \
-		${WRKSRC}/calendar/gui/alarm-notify/notify-main.c \
-		${WRKSRC}/capplet/settings/mail-guess-servers.c \
-		${WRKSRC}/capplet/anjal-settings-main.c \
-		${WRKSRC}/plugins/backup-restore/backup.c \
-		${WRKSRC}/shell/main.c
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
-		${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c
-	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/bin|g' \
-		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
-	@${SH} ${FILESDIR}/fix-plugins.sh ${WRKSRC}
+		${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
+		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c
+#	@${SH} ${FILESDIR}/fix-plugins.sh ${WRKSRC}
 
 .include <bsd.port.mk>

@@ -1,11 +1,14 @@
---- vapi/libpq.vapi.orig	2009-07-17 21:34:39.000000000 +0600
-+++ vapi/libpq.vapi	2009-11-23 01:18:21.000000000 +0500
-@@ -22,7 +22,7 @@
+--- vapi/libpq.vapi.orig	2014-02-03 19:35:53.000000000 +0000
++++ vapi/libpq.vapi	2014-03-10 10:22:09.771304414 +0000
+@@ -20,11 +20,7 @@
+  * 	Jukka-Pekka Iivonen <jp0409@jippii.fi>
+  */
  
- using GLib;
- 
+-#if LIBPQ_9_3
+ [CCode (cprefix = "PQ", cheader_filename = "libpq-fe.h")]
+-#else
 -[CCode (cprefix = "PQ", cheader_filename = "postgresql/libpq-fe.h")]
-+[CCode (cprefix = "PQ", cheader_filename = "libpq-fe.h")]
+-#endif
  namespace Postgres {
  
- 	[CCode (cname = "ConnStatusType", cprefix = "CONNECTION_")]
+ 	[CCode (cname = "ConnStatusType", cprefix = "CONNECTION_", has_type_id = false)]

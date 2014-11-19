@@ -1,23 +1,11 @@
---- src/Makefile.in.orig	2010-06-25 21:42:58.000000000 +0200
-+++ src/Makefile.in	2010-06-25 21:52:27.000000000 +0200
-@@ -2914,7 +2914,7 @@
- libpulsecommon_@PA_MAJORMINORMICRO@_la_LDFLAGS = $(AM_LDFLAGS) \
- 	-avoid-version $(am__append_14)
- libpulsecommon_@PA_MAJORMINORMICRO@_la_LIBADD = $(AM_LIBADD) \
--	$(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) \
-+	$(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) -lexecinfo \
- 	$(LIBSNDFILE_LIBS) $(am__append_16) $(am__append_20)
- 
- ###################################
-@@ -7778,9 +7778,8 @@
- 
+--- src/Makefile.in.orig	2012-06-08 11:09:45.000000000 +0200
++++ src/Makefile.in	2012-06-08 11:10:00.000000000 +0200
+@@ -8531,7 +8531,7 @@
  info-am:
  
--install-data-am: install-alsapathsDATA install-alsaprofilesetsDATA \
--	install-dbuspolicyDATA install-pulseconfDATA \
--	install-pulseincludeHEADERS install-udevrulesDATA \
-+install-data-am: install-dbuspolicyDATA  \
-+	install-pulseincludeHEADERS  \
- 	install-xdgautostartDATA
+ install-data-am: install-dbuspolicyDATA install-dist_alsapathsDATA \
+-	install-dist_alsaprofilesetsDATA install-dist_udevrulesDATA \
++	install-dist_alsaprofilesetsDATA \
+ 	install-padsplibLTLIBRARIES install-pulseconfDATA \
+ 	install-pulseincludeHEADERS install-xdgautostartDATA
  
- install-dvi: install-dvi-am

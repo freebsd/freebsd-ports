@@ -1,0 +1,7 @@
+bin/appdata-validate
+lib/locale/en_GB/LC_MESSAGES/appdata-tools.mo
+share/aclocal/appdata-xml.m4
+share/appdata/schema/appdata.rnc
+share/appdata/schema/appdata.xsd
+share/appdata/schema/schema-locating-rules.xml
+share/emacs/site-lisp/site-start.d/appdata-rng-init.el

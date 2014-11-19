@@ -1,20 +1,24 @@
 bin/alacarte
-%%PYTHON_SITELIBDIR%%/Alacarte/MainWindow.py
-%%PYTHON_SITELIBDIR%%/Alacarte/MainWindow.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/MainWindow.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/MenuEditor.py
-%%PYTHON_SITELIBDIR%%/Alacarte/MenuEditor.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/MenuEditor.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/__init__.py
-%%PYTHON_SITELIBDIR%%/Alacarte/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/config.py
-%%PYTHON_SITELIBDIR%%/Alacarte/config.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/config.pyo
-%%PYTHON_SITELIBDIR%%/Alacarte/util.py
-%%PYTHON_SITELIBDIR%%/Alacarte/util.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/util.pyo
+lib/python/site-packages/Alacarte/ItemEditor.py
+lib/python/site-packages/Alacarte/MainWindow.py
+lib/python/site-packages/Alacarte/MenuEditor.py
+lib/python/site-packages/Alacarte/__init__.py
+lib/python/site-packages/Alacarte/config.py
+lib/python/site-packages/Alacarte/util.py
+lib/python/site-packages/Alacarte/__pycache__/ItemEditor.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/ItemEditor.cpython-33.pyo
+lib/python/site-packages/Alacarte/__pycache__/MenuEditor.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/MenuEditor.cpython-33.pyo
+lib/python/site-packages/Alacarte/__pycache__/__init__.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/__init__.cpython-33.pyo
+lib/python/site-packages/Alacarte/__pycache__/config.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/config.cpython-33.pyo
+lib/python/site-packages/Alacarte/__pycache__/util.cpython-33.pyc
+lib/python/site-packages/Alacarte/__pycache__/util.cpython-33.pyo
+man/man1/alacarte.1.gz
 share/alacarte/alacarte.ui
+share/alacarte/directory-editor.ui
+share/alacarte/launcher-editor.ui
 share/applications/alacarte.desktop
 share/icons/hicolor/16x16/apps/alacarte.png
 share/icons/hicolor/22x22/apps/alacarte.png
@@ -22,6 +26,7 @@ share/icons/hicolor/24x24/apps/alacarte.png
 share/icons/hicolor/256x256/apps/alacarte.png
 share/icons/hicolor/32x32/apps/alacarte.png
 share/icons/hicolor/48x48/apps/alacarte.png
+share/locale/af/LC_MESSAGES/alacarte.mo
 share/locale/an/LC_MESSAGES/alacarte.mo
 share/locale/ar/LC_MESSAGES/alacarte.mo
 share/locale/as/LC_MESSAGES/alacarte.mo
@@ -33,6 +38,7 @@ share/locale/bg/LC_MESSAGES/alacarte.mo
 share/locale/bn/LC_MESSAGES/alacarte.mo
 share/locale/bn_IN/LC_MESSAGES/alacarte.mo
 share/locale/br/LC_MESSAGES/alacarte.mo
+share/locale/brx/LC_MESSAGES/alacarte.mo
 share/locale/ca/LC_MESSAGES/alacarte.mo
 share/locale/ca@valencia/LC_MESSAGES/alacarte.mo
 share/locale/crh/LC_MESSAGES/alacarte.mo
@@ -67,7 +73,9 @@ share/locale/io/LC_MESSAGES/alacarte.mo
 share/locale/it/LC_MESSAGES/alacarte.mo
 share/locale/ja/LC_MESSAGES/alacarte.mo
 share/locale/ka/LC_MESSAGES/alacarte.mo
+share/locale/kg/LC_MESSAGES/alacarte.mo
 share/locale/kk/LC_MESSAGES/alacarte.mo
+share/locale/km/LC_MESSAGES/alacarte.mo
 share/locale/kn/LC_MESSAGES/alacarte.mo
 share/locale/ko/LC_MESSAGES/alacarte.mo
 share/locale/ku/LC_MESSAGES/alacarte.mo
@@ -100,6 +108,7 @@ share/locale/sq/LC_MESSAGES/alacarte.mo
 share/locale/sr/LC_MESSAGES/alacarte.mo
 share/locale/sr@latin/LC_MESSAGES/alacarte.mo
 share/locale/sv/LC_MESSAGES/alacarte.mo
+share/locale/sw/LC_MESSAGES/alacarte.mo
 share/locale/ta/LC_MESSAGES/alacarte.mo
 share/locale/te/LC_MESSAGES/alacarte.mo
 share/locale/th/LC_MESSAGES/alacarte.mo
@@ -111,61 +120,4 @@ share/locale/vi/LC_MESSAGES/alacarte.mo
 share/locale/zh_CN/LC_MESSAGES/alacarte.mo
 share/locale/zh_HK/LC_MESSAGES/alacarte.mo
 share/locale/zh_TW/LC_MESSAGES/alacarte.mo
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrm share/alacarte
-@dirrm %%PYTHON_SITELIBDIR%%/Alacarte
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/io/LC_MESSAGES
-@dirrmtry share/locale/io
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/bem/LC_MESSAGES
-@dirrmtry share/locale/bem
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
+share/locale/zu/LC_MESSAGES/alacarte.mo

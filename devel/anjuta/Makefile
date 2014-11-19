@@ -29,6 +29,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yelp:${PORTSDIR}/x11/yelp
 
 CONFLICTS=	anjuta-3.[0-9]*
+IGNORE=		Needs update after gnome 3 import
 
 USES=		desktop-file-utils gmake gettext libtool pathfix \
 		perl5 pkgconfig python shared-mime-info shebangfix tar:bzip2

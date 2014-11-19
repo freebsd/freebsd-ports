@@ -15,10 +15,3 @@ share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.gabble.service
 %%DOCSDIR%%/si-multiple.html
 %%DOCSDIR%%/tubes.html
 share/telepathy/managers/gabble.manager
-@dirrmtry share/telepathy/managers
-@dirrmtry share/telepathy
-@dirrm %%DOCSDIR%%
-@dirrmtry lib/telepathy/gabble-0/plugins
-@dirrmtry lib/telepathy/gabble-0/lib
-@dirrmtry lib/telepathy/gabble-0
-@dirrmtry lib/telepathy

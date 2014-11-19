@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libpeas/Makefile 19006 2014-02-16 10:03:26Z kwm $
+#   $MCom: ports/trunk/devel/libpeas/Makefile 19947 2014-10-15 05:54:00Z gusi $
 
 PORTNAME=	libpeas
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.12.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,52 +13,25 @@ COMMENT=	Next evolution of the Gedit plugins engine
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
-USE_LDCONFIG=	yes
-USES=		gettext gmake libtool:keepla pathfix pkgconfig python:2 tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig \
+		python:3 tar:xz
 USE_GNOME=	gtk30 intlhack introspection:build
+USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS+=--disable-glade-catalog
+CONFIGURE_ARGS+=--disable-glade-catalog \
+		--disable-python2
 
-OPTIONS_DEFINE=	PYTHON
-OPTIONS_DEFAULT=PYTHON GJS
-OPTIONS_MULTI=	JS
-OPTIONS_MULTI_JS=SEED GJS
-JS_DESC=JavaScript plugin support
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	PYTHON SEED
+OPTIONS_DEFAULT=PYTHON SEED
 SEED_DESC=	JavaScript support based on webkit-gtk3
-GJS_DESC=	JavaScript support based on spidermonkey
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSEED}
-CONFIGURE_ARGS+=--enable-seed=yes
-LIB_DEPENDS=	libseed-gtk3.so:${PORTSDIR}/devel/seed3
-PLIST_SUB+=	SEED=""
-.else
-CONFIGURE_ARGS+=--enable-seed=no
-PLIST_SUB+=	SEED="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-CONFIGURE_ARGS+=--enable-python2 --disable-python3
-USE_GNOME+=	pygobject3
-PLIST_SUB+=	PYTHONS=""
-.else
-CONFIGURE_ARGS+=--disable-python2 --disable-python3
-PLIST_SUB+=	PYTHONS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGJS}
-CONFIGURE_ARGS+=--enable-gjs
-BUILD_DEPENDS+=	gjs>=1.32.0:${PORTSDIR}/lang/gjs
-LIB_DEPENDS+=	libgjs.so:${PORTSDIR}/lang/gjs
-PLIST_SUB+=	GJS=""
-.else
-CONFIGURE_ARGS+=--enable-gjs=no
-PLIST_SUB+=	GJS="@comment "
-.endif
+SEED_LIB_DEPENDS=	libseed-gtk3.so:${PORTSDIR}/devel/seed
+SEED_CONFIGURE_ENABLE=	seed	
+PYTHON_USE=	GNOME=py3gobject3
+PYTHON_CONFIGURE_ENABLE=	python3
 
 .include <bsd.port.mk>

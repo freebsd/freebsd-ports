@@ -1,83 +1,367 @@
 bin/gnome-terminal
+lib/nautilus/extensions-3.0/libterminal-nautilus.a
+lib/nautilus/extensions-3.0/libterminal-nautilus.so
+%%MIGRATION%%libexec/gnome-terminal-migration
+libexec/gnome-terminal-server
+share/appdata/gnome-terminal.appdata.xml
 share/applications/gnome-terminal.desktop
-%%DATADIR%%/encodings-dialog.ui
-%%DATADIR%%/find-dialog.ui
-%%DATADIR%%/keybinding-editor.ui
-%%DATADIR%%/profile-manager.ui
-%%DATADIR%%/profile-new-dialog.ui
-%%DATADIR%%/profile-preferences.ui
-%%DATADIR%%/skey-challenge.ui
-%%DATADIR%%/terminal.about
-%%DATADIR%%/terminal.xml
-share/gnome/help/gnome-terminal/C/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/C/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/C/gnome-terminal.xml
-share/gnome/help/gnome-terminal/C/legal.xml
-share/gnome/help/gnome-terminal/bg/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/bg/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/bg/gnome-terminal.xml
-share/gnome/help/gnome-terminal/bg/legal.xml
-share/gnome/help/gnome-terminal/ca/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ca/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ca/gnome-terminal.xml
-share/gnome/help/gnome-terminal/cs/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/cs/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/cs/gnome-terminal.xml
-share/gnome/help/gnome-terminal/da/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/da/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/da/gnome-terminal.xml
-share/gnome/help/gnome-terminal/de/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/de/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/de/gnome-terminal.xml
-share/gnome/help/gnome-terminal/el/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/el/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/el/gnome-terminal.xml
-share/gnome/help/gnome-terminal/en_GB/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/en_GB/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/en_GB/gnome-terminal.xml
-share/gnome/help/gnome-terminal/es/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/es/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/es/gnome-terminal.xml
-share/gnome/help/gnome-terminal/fr/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/fr/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/fr/gnome-terminal.xml
-share/gnome/help/gnome-terminal/it/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/it/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/it/gnome-terminal.xml
-share/gnome/help/gnome-terminal/ja/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ja/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ja/gnome-terminal.xml
-share/gnome/help/gnome-terminal/ja/legal.xml
-share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ko/gnome-terminal.xml
-share/gnome/help/gnome-terminal/oc/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/oc/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/oc/gnome-terminal.xml
-share/gnome/help/gnome-terminal/pt_BR/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/pt_BR/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/pt_BR/gnome-terminal.xml
-share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ro/gnome-terminal.xml
-share/gnome/help/gnome-terminal/ro/legal.xml
-share/gnome/help/gnome-terminal/ru/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ru/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ru/gnome-terminal.xml
-share/gnome/help/gnome-terminal/sv/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/sv/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/sv/gnome-terminal.xml
-share/gnome/help/gnome-terminal/uk/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/uk/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/uk/gnome-terminal.xml
-share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/zh_CN/gnome-terminal.xml
-share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/zh_TW/gnome-terminal.xml
-share/gnome/help/gnome-terminal/zh_TW/legal.xml
+share/dbus-1/services/org.gnome.Terminal.service
+share/help/C/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/C/gnome-terminal/app-colors.page
+share/help/C/gnome-terminal/app-cursor.page
+share/help/C/gnome-terminal/app-fonts.page
+share/help/C/gnome-terminal/app-fullscreen.page
+share/help/C/gnome-terminal/app-terminal-sizes.page
+share/help/C/gnome-terminal/app-zoom.page
+share/help/C/gnome-terminal/figures/gnome-terminal-icon.png
+share/help/C/gnome-terminal/figures/gnome-terminal.png
+share/help/C/gnome-terminal/gs-execute-commands.page
+share/help/C/gnome-terminal/gs-tabs.page
+share/help/C/gnome-terminal/index.page
+share/help/C/gnome-terminal/introduction.page
+share/help/C/gnome-terminal/legal.xml
+share/help/C/gnome-terminal/overview.page
+share/help/C/gnome-terminal/pref-bell.page
+share/help/C/gnome-terminal/pref-custom-command.page
+share/help/C/gnome-terminal/pref-custom-exit.page
+share/help/C/gnome-terminal/pref-encoding.page
+share/help/C/gnome-terminal/pref-keyboard-access.page
+share/help/C/gnome-terminal/pref-menubar.page
+share/help/C/gnome-terminal/pref-profile-char-width.page
+share/help/C/gnome-terminal/pref-profile-encoding.page
+share/help/C/gnome-terminal/pref-profiles.page
+share/help/C/gnome-terminal/pref-scrolling.page
+share/help/C/gnome-terminal/pref-tab-window.page
+share/help/C/gnome-terminal/pref-theme.page
+share/help/C/gnome-terminal/pref.page
+share/help/C/gnome-terminal/prob-reset.page
+share/help/C/gnome-terminal/profile.page
+share/help/C/gnome-terminal/txt-copy-paste.page
+share/help/C/gnome-terminal/txt-links.page
+share/help/C/gnome-terminal/txt-search.page
+share/help/C/gnome-terminal/txt-select-text.page
+share/help/cs/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/cs/gnome-terminal/app-colors.page
+share/help/cs/gnome-terminal/app-cursor.page
+share/help/cs/gnome-terminal/app-fonts.page
+share/help/cs/gnome-terminal/app-fullscreen.page
+share/help/cs/gnome-terminal/app-terminal-sizes.page
+share/help/cs/gnome-terminal/app-zoom.page
+share/help/cs/gnome-terminal/gs-execute-commands.page
+share/help/cs/gnome-terminal/gs-tabs.page
+share/help/cs/gnome-terminal/index.page
+share/help/cs/gnome-terminal/introduction.page
+share/help/cs/gnome-terminal/legal.xml
+share/help/cs/gnome-terminal/overview.page
+share/help/cs/gnome-terminal/pref-bell.page
+share/help/cs/gnome-terminal/pref-custom-command.page
+share/help/cs/gnome-terminal/pref-custom-exit.page
+share/help/cs/gnome-terminal/pref-encoding.page
+share/help/cs/gnome-terminal/pref-keyboard-access.page
+share/help/cs/gnome-terminal/pref-menubar.page
+share/help/cs/gnome-terminal/pref-profile-char-width.page
+share/help/cs/gnome-terminal/pref-profile-encoding.page
+share/help/cs/gnome-terminal/pref-profiles.page
+share/help/cs/gnome-terminal/pref-scrolling.page
+share/help/cs/gnome-terminal/pref-tab-window.page
+share/help/cs/gnome-terminal/pref-theme.page
+share/help/cs/gnome-terminal/pref.page
+share/help/cs/gnome-terminal/prob-reset.page
+share/help/cs/gnome-terminal/profile.page
+share/help/cs/gnome-terminal/txt-copy-paste.page
+share/help/cs/gnome-terminal/txt-links.page
+share/help/cs/gnome-terminal/txt-search.page
+share/help/cs/gnome-terminal/txt-select-text.page
+share/help/de/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/de/gnome-terminal/app-colors.page
+share/help/de/gnome-terminal/app-cursor.page
+share/help/de/gnome-terminal/app-fonts.page
+share/help/de/gnome-terminal/app-fullscreen.page
+share/help/de/gnome-terminal/app-terminal-sizes.page
+share/help/de/gnome-terminal/app-zoom.page
+share/help/de/gnome-terminal/gs-execute-commands.page
+share/help/de/gnome-terminal/gs-tabs.page
+share/help/de/gnome-terminal/index.page
+share/help/de/gnome-terminal/introduction.page
+share/help/de/gnome-terminal/legal.xml
+share/help/de/gnome-terminal/overview.page
+share/help/de/gnome-terminal/pref-bell.page
+share/help/de/gnome-terminal/pref-custom-command.page
+share/help/de/gnome-terminal/pref-custom-exit.page
+share/help/de/gnome-terminal/pref-encoding.page
+share/help/de/gnome-terminal/pref-keyboard-access.page
+share/help/de/gnome-terminal/pref-menubar.page
+share/help/de/gnome-terminal/pref-profile-char-width.page
+share/help/de/gnome-terminal/pref-profile-encoding.page
+share/help/de/gnome-terminal/pref-profiles.page
+share/help/de/gnome-terminal/pref-scrolling.page
+share/help/de/gnome-terminal/pref-tab-window.page
+share/help/de/gnome-terminal/pref-theme.page
+share/help/de/gnome-terminal/pref.page
+share/help/de/gnome-terminal/prob-reset.page
+share/help/de/gnome-terminal/profile.page
+share/help/de/gnome-terminal/txt-copy-paste.page
+share/help/de/gnome-terminal/txt-links.page
+share/help/de/gnome-terminal/txt-search.page
+share/help/de/gnome-terminal/txt-select-text.page
+share/help/el/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/el/gnome-terminal/app-colors.page
+share/help/el/gnome-terminal/app-cursor.page
+share/help/el/gnome-terminal/app-fonts.page
+share/help/el/gnome-terminal/app-fullscreen.page
+share/help/el/gnome-terminal/app-terminal-sizes.page
+share/help/el/gnome-terminal/app-zoom.page
+share/help/el/gnome-terminal/gs-execute-commands.page
+share/help/el/gnome-terminal/gs-tabs.page
+share/help/el/gnome-terminal/index.page
+share/help/el/gnome-terminal/introduction.page
+share/help/el/gnome-terminal/legal.xml
+share/help/el/gnome-terminal/overview.page
+share/help/el/gnome-terminal/pref-bell.page
+share/help/el/gnome-terminal/pref-custom-command.page
+share/help/el/gnome-terminal/pref-custom-exit.page
+share/help/el/gnome-terminal/pref-encoding.page
+share/help/el/gnome-terminal/pref-keyboard-access.page
+share/help/el/gnome-terminal/pref-menubar.page
+share/help/el/gnome-terminal/pref-profile-char-width.page
+share/help/el/gnome-terminal/pref-profile-encoding.page
+share/help/el/gnome-terminal/pref-profiles.page
+share/help/el/gnome-terminal/pref-scrolling.page
+share/help/el/gnome-terminal/pref-tab-window.page
+share/help/el/gnome-terminal/pref-theme.page
+share/help/el/gnome-terminal/pref.page
+share/help/el/gnome-terminal/prob-reset.page
+share/help/el/gnome-terminal/profile.page
+share/help/el/gnome-terminal/txt-copy-paste.page
+share/help/el/gnome-terminal/txt-links.page
+share/help/el/gnome-terminal/txt-search.page
+share/help/el/gnome-terminal/txt-select-text.page
+share/help/es/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/es/gnome-terminal/app-colors.page
+share/help/es/gnome-terminal/app-cursor.page
+share/help/es/gnome-terminal/app-fonts.page
+share/help/es/gnome-terminal/app-fullscreen.page
+share/help/es/gnome-terminal/app-terminal-sizes.page
+share/help/es/gnome-terminal/app-zoom.page
+share/help/es/gnome-terminal/gs-execute-commands.page
+share/help/es/gnome-terminal/gs-tabs.page
+share/help/es/gnome-terminal/index.page
+share/help/es/gnome-terminal/introduction.page
+share/help/es/gnome-terminal/legal.xml
+share/help/es/gnome-terminal/overview.page
+share/help/es/gnome-terminal/pref-bell.page
+share/help/es/gnome-terminal/pref-custom-command.page
+share/help/es/gnome-terminal/pref-custom-exit.page
+share/help/es/gnome-terminal/pref-encoding.page
+share/help/es/gnome-terminal/pref-keyboard-access.page
+share/help/es/gnome-terminal/pref-menubar.page
+share/help/es/gnome-terminal/pref-profile-char-width.page
+share/help/es/gnome-terminal/pref-profile-encoding.page
+share/help/es/gnome-terminal/pref-profiles.page
+share/help/es/gnome-terminal/pref-scrolling.page
+share/help/es/gnome-terminal/pref-tab-window.page
+share/help/es/gnome-terminal/pref-theme.page
+share/help/es/gnome-terminal/pref.page
+share/help/es/gnome-terminal/prob-reset.page
+share/help/es/gnome-terminal/profile.page
+share/help/es/gnome-terminal/txt-copy-paste.page
+share/help/es/gnome-terminal/txt-links.page
+share/help/es/gnome-terminal/txt-search.page
+share/help/es/gnome-terminal/txt-select-text.page
+share/help/fi/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/fi/gnome-terminal/app-colors.page
+share/help/fi/gnome-terminal/app-cursor.page
+share/help/fi/gnome-terminal/app-fonts.page
+share/help/fi/gnome-terminal/app-fullscreen.page
+share/help/fi/gnome-terminal/app-terminal-sizes.page
+share/help/fi/gnome-terminal/app-zoom.page
+share/help/fi/gnome-terminal/gs-execute-commands.page
+share/help/fi/gnome-terminal/gs-tabs.page
+share/help/fi/gnome-terminal/index.page
+share/help/fi/gnome-terminal/introduction.page
+share/help/fi/gnome-terminal/legal.xml
+share/help/fi/gnome-terminal/overview.page
+share/help/fi/gnome-terminal/pref-bell.page
+share/help/fi/gnome-terminal/pref-custom-command.page
+share/help/fi/gnome-terminal/pref-custom-exit.page
+share/help/fi/gnome-terminal/pref-encoding.page
+share/help/fi/gnome-terminal/pref-keyboard-access.page
+share/help/fi/gnome-terminal/pref-menubar.page
+share/help/fi/gnome-terminal/pref-profile-char-width.page
+share/help/fi/gnome-terminal/pref-profile-encoding.page
+share/help/fi/gnome-terminal/pref-profiles.page
+share/help/fi/gnome-terminal/pref-scrolling.page
+share/help/fi/gnome-terminal/pref-tab-window.page
+share/help/fi/gnome-terminal/pref-theme.page
+share/help/fi/gnome-terminal/pref.page
+share/help/fi/gnome-terminal/prob-reset.page
+share/help/fi/gnome-terminal/profile.page
+share/help/fi/gnome-terminal/txt-copy-paste.page
+share/help/fi/gnome-terminal/txt-links.page
+share/help/fi/gnome-terminal/txt-search.page
+share/help/fi/gnome-terminal/txt-select-text.page
+share/help/fr/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/fr/gnome-terminal/app-colors.page
+share/help/fr/gnome-terminal/app-cursor.page
+share/help/fr/gnome-terminal/app-fonts.page
+share/help/fr/gnome-terminal/app-fullscreen.page
+share/help/fr/gnome-terminal/app-terminal-sizes.page
+share/help/fr/gnome-terminal/app-zoom.page
+share/help/fr/gnome-terminal/gs-execute-commands.page
+share/help/fr/gnome-terminal/gs-tabs.page
+share/help/fr/gnome-terminal/index.page
+share/help/fr/gnome-terminal/introduction.page
+share/help/fr/gnome-terminal/legal.xml
+share/help/fr/gnome-terminal/overview.page
+share/help/fr/gnome-terminal/pref-bell.page
+share/help/fr/gnome-terminal/pref-custom-command.page
+share/help/fr/gnome-terminal/pref-custom-exit.page
+share/help/fr/gnome-terminal/pref-encoding.page
+share/help/fr/gnome-terminal/pref-keyboard-access.page
+share/help/fr/gnome-terminal/pref-menubar.page
+share/help/fr/gnome-terminal/pref-profile-char-width.page
+share/help/fr/gnome-terminal/pref-profile-encoding.page
+share/help/fr/gnome-terminal/pref-profiles.page
+share/help/fr/gnome-terminal/pref-scrolling.page
+share/help/fr/gnome-terminal/pref-tab-window.page
+share/help/fr/gnome-terminal/pref-theme.page
+share/help/fr/gnome-terminal/pref.page
+share/help/fr/gnome-terminal/prob-reset.page
+share/help/fr/gnome-terminal/profile.page
+share/help/fr/gnome-terminal/txt-copy-paste.page
+share/help/fr/gnome-terminal/txt-links.page
+share/help/fr/gnome-terminal/txt-search.page
+share/help/fr/gnome-terminal/txt-select-text.page
+share/help/gl/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/gl/gnome-terminal/app-colors.page
+share/help/gl/gnome-terminal/app-cursor.page
+share/help/gl/gnome-terminal/app-fonts.page
+share/help/gl/gnome-terminal/app-fullscreen.page
+share/help/gl/gnome-terminal/app-terminal-sizes.page
+share/help/gl/gnome-terminal/app-zoom.page
+share/help/gl/gnome-terminal/gs-execute-commands.page
+share/help/gl/gnome-terminal/gs-tabs.page
+share/help/gl/gnome-terminal/index.page
+share/help/gl/gnome-terminal/introduction.page
+share/help/gl/gnome-terminal/legal.xml
+share/help/gl/gnome-terminal/overview.page
+share/help/gl/gnome-terminal/pref-bell.page
+share/help/gl/gnome-terminal/pref-custom-command.page
+share/help/gl/gnome-terminal/pref-custom-exit.page
+share/help/gl/gnome-terminal/pref-encoding.page
+share/help/gl/gnome-terminal/pref-keyboard-access.page
+share/help/gl/gnome-terminal/pref-menubar.page
+share/help/gl/gnome-terminal/pref-profile-char-width.page
+share/help/gl/gnome-terminal/pref-profile-encoding.page
+share/help/gl/gnome-terminal/pref-profiles.page
+share/help/gl/gnome-terminal/pref-scrolling.page
+share/help/gl/gnome-terminal/pref-tab-window.page
+share/help/gl/gnome-terminal/pref-theme.page
+share/help/gl/gnome-terminal/pref.page
+share/help/gl/gnome-terminal/prob-reset.page
+share/help/gl/gnome-terminal/profile.page
+share/help/gl/gnome-terminal/txt-copy-paste.page
+share/help/gl/gnome-terminal/txt-links.page
+share/help/gl/gnome-terminal/txt-search.page
+share/help/gl/gnome-terminal/txt-select-text.page
+share/help/hu/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/hu/gnome-terminal/app-colors.page
+share/help/hu/gnome-terminal/app-cursor.page
+share/help/hu/gnome-terminal/app-fonts.page
+share/help/hu/gnome-terminal/app-fullscreen.page
+share/help/hu/gnome-terminal/app-terminal-sizes.page
+share/help/hu/gnome-terminal/app-zoom.page
+share/help/hu/gnome-terminal/gs-execute-commands.page
+share/help/hu/gnome-terminal/gs-tabs.page
+share/help/hu/gnome-terminal/index.page
+share/help/hu/gnome-terminal/introduction.page
+share/help/hu/gnome-terminal/legal.xml
+share/help/hu/gnome-terminal/overview.page
+share/help/hu/gnome-terminal/pref-bell.page
+share/help/hu/gnome-terminal/pref-custom-command.page
+share/help/hu/gnome-terminal/pref-custom-exit.page
+share/help/hu/gnome-terminal/pref-encoding.page
+share/help/hu/gnome-terminal/pref-keyboard-access.page
+share/help/hu/gnome-terminal/pref-menubar.page
+share/help/hu/gnome-terminal/pref-profile-char-width.page
+share/help/hu/gnome-terminal/pref-profile-encoding.page
+share/help/hu/gnome-terminal/pref-profiles.page
+share/help/hu/gnome-terminal/pref-scrolling.page
+share/help/hu/gnome-terminal/pref-tab-window.page
+share/help/hu/gnome-terminal/pref-theme.page
+share/help/hu/gnome-terminal/pref.page
+share/help/hu/gnome-terminal/prob-reset.page
+share/help/hu/gnome-terminal/profile.page
+share/help/hu/gnome-terminal/txt-copy-paste.page
+share/help/hu/gnome-terminal/txt-links.page
+share/help/hu/gnome-terminal/txt-search.page
+share/help/hu/gnome-terminal/txt-select-text.page
+share/help/pt_BR/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/pt_BR/gnome-terminal/app-colors.page
+share/help/pt_BR/gnome-terminal/app-cursor.page
+share/help/pt_BR/gnome-terminal/app-fonts.page
+share/help/pt_BR/gnome-terminal/app-fullscreen.page
+share/help/pt_BR/gnome-terminal/app-terminal-sizes.page
+share/help/pt_BR/gnome-terminal/app-zoom.page
+share/help/pt_BR/gnome-terminal/gs-execute-commands.page
+share/help/pt_BR/gnome-terminal/gs-tabs.page
+share/help/pt_BR/gnome-terminal/index.page
+share/help/pt_BR/gnome-terminal/introduction.page
+share/help/pt_BR/gnome-terminal/legal.xml
+share/help/pt_BR/gnome-terminal/overview.page
+share/help/pt_BR/gnome-terminal/pref-bell.page
+share/help/pt_BR/gnome-terminal/pref-custom-command.page
+share/help/pt_BR/gnome-terminal/pref-custom-exit.page
+share/help/pt_BR/gnome-terminal/pref-encoding.page
+share/help/pt_BR/gnome-terminal/pref-keyboard-access.page
+share/help/pt_BR/gnome-terminal/pref-menubar.page
+share/help/pt_BR/gnome-terminal/pref-profile-char-width.page
+share/help/pt_BR/gnome-terminal/pref-profile-encoding.page
+share/help/pt_BR/gnome-terminal/pref-profiles.page
+share/help/pt_BR/gnome-terminal/pref-scrolling.page
+share/help/pt_BR/gnome-terminal/pref-tab-window.page
+share/help/pt_BR/gnome-terminal/pref-theme.page
+share/help/pt_BR/gnome-terminal/pref.page
+share/help/pt_BR/gnome-terminal/prob-reset.page
+share/help/pt_BR/gnome-terminal/profile.page
+share/help/pt_BR/gnome-terminal/txt-copy-paste.page
+share/help/pt_BR/gnome-terminal/txt-links.page
+share/help/pt_BR/gnome-terminal/txt-search.page
+share/help/pt_BR/gnome-terminal/txt-select-text.page
+share/help/ru/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/ru/gnome-terminal/app-colors.page
+share/help/ru/gnome-terminal/app-cursor.page
+share/help/ru/gnome-terminal/app-fonts.page
+share/help/ru/gnome-terminal/app-fullscreen.page
+share/help/ru/gnome-terminal/app-terminal-sizes.page
+share/help/ru/gnome-terminal/app-zoom.page
+share/help/ru/gnome-terminal/gs-execute-commands.page
+share/help/ru/gnome-terminal/gs-tabs.page
+share/help/ru/gnome-terminal/index.page
+share/help/ru/gnome-terminal/introduction.page
+share/help/ru/gnome-terminal/legal.xml
+share/help/ru/gnome-terminal/overview.page
+share/help/ru/gnome-terminal/pref-bell.page
+share/help/ru/gnome-terminal/pref-custom-command.page
+share/help/ru/gnome-terminal/pref-custom-exit.page
+share/help/ru/gnome-terminal/pref-encoding.page
+share/help/ru/gnome-terminal/pref-keyboard-access.page
+share/help/ru/gnome-terminal/pref-menubar.page
+share/help/ru/gnome-terminal/pref-profile-char-width.page
+share/help/ru/gnome-terminal/pref-profile-encoding.page
+share/help/ru/gnome-terminal/pref-profiles.page
+share/help/ru/gnome-terminal/pref-scrolling.page
+share/help/ru/gnome-terminal/pref-tab-window.page
+share/help/ru/gnome-terminal/pref-theme.page
+share/help/ru/gnome-terminal/pref.page
+share/help/ru/gnome-terminal/prob-reset.page
+share/help/ru/gnome-terminal/profile.page
+share/help/ru/gnome-terminal/txt-copy-paste.page
+share/help/ru/gnome-terminal/txt-links.page
+share/help/ru/gnome-terminal/txt-search.page
+share/help/ru/gnome-terminal/txt-select-text.page
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
+share/locale/an/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
 share/locale/as/LC_MESSAGES/gnome-terminal.mo
 share/locale/ast/LC_MESSAGES/gnome-terminal.mo
@@ -97,18 +381,19 @@ share/locale/da/LC_MESSAGES/gnome-terminal.mo
 share/locale/de/LC_MESSAGES/gnome-terminal.mo
 share/locale/dz/LC_MESSAGES/gnome-terminal.mo
 share/locale/el/LC_MESSAGES/gnome-terminal.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-terminal.mo
 share/locale/en_CA/LC_MESSAGES/gnome-terminal.mo
 share/locale/en_GB/LC_MESSAGES/gnome-terminal.mo
 share/locale/eo/LC_MESSAGES/gnome-terminal.mo
 share/locale/es/LC_MESSAGES/gnome-terminal.mo
 share/locale/et/LC_MESSAGES/gnome-terminal.mo
-share/locale/en@shaw/LC_MESSAGES/gnome-terminal.mo
 share/locale/eu/LC_MESSAGES/gnome-terminal.mo
 share/locale/fa/LC_MESSAGES/gnome-terminal.mo
 share/locale/fi/LC_MESSAGES/gnome-terminal.mo
 share/locale/fr/LC_MESSAGES/gnome-terminal.mo
 share/locale/fur/LC_MESSAGES/gnome-terminal.mo
 share/locale/ga/LC_MESSAGES/gnome-terminal.mo
+share/locale/gd/LC_MESSAGES/gnome-terminal.mo
 share/locale/gl/LC_MESSAGES/gnome-terminal.mo
 share/locale/gu/LC_MESSAGES/gnome-terminal.mo
 share/locale/he/LC_MESSAGES/gnome-terminal.mo
@@ -121,6 +406,7 @@ share/locale/it/LC_MESSAGES/gnome-terminal.mo
 share/locale/ja/LC_MESSAGES/gnome-terminal.mo
 share/locale/ka/LC_MESSAGES/gnome-terminal.mo
 share/locale/kk/LC_MESSAGES/gnome-terminal.mo
+share/locale/km/LC_MESSAGES/gnome-terminal.mo
 share/locale/kn/LC_MESSAGES/gnome-terminal.mo
 share/locale/ko/LC_MESSAGES/gnome-terminal.mo
 share/locale/ku/LC_MESSAGES/gnome-terminal.mo
@@ -157,6 +443,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-terminal.mo
 share/locale/sv/LC_MESSAGES/gnome-terminal.mo
 share/locale/ta/LC_MESSAGES/gnome-terminal.mo
 share/locale/te/LC_MESSAGES/gnome-terminal.mo
+share/locale/tg/LC_MESSAGES/gnome-terminal.mo
 share/locale/th/LC_MESSAGES/gnome-terminal.mo
 share/locale/tr/LC_MESSAGES/gnome-terminal.mo
 share/locale/ug/LC_MESSAGES/gnome-terminal.mo
@@ -167,117 +454,3 @@ share/locale/xh/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
-share/omf/gnome-terminal/gnome-terminal-C.omf
-share/omf/gnome-terminal/gnome-terminal-bg.omf
-share/omf/gnome-terminal/gnome-terminal-ca.omf
-share/omf/gnome-terminal/gnome-terminal-cs.omf
-share/omf/gnome-terminal/gnome-terminal-da.omf
-share/omf/gnome-terminal/gnome-terminal-de.omf
-share/omf/gnome-terminal/gnome-terminal-el.omf
-share/omf/gnome-terminal/gnome-terminal-en_GB.omf
-share/omf/gnome-terminal/gnome-terminal-es.omf
-share/omf/gnome-terminal/gnome-terminal-fr.omf
-share/omf/gnome-terminal/gnome-terminal-it.omf
-share/omf/gnome-terminal/gnome-terminal-ja.omf
-share/omf/gnome-terminal/gnome-terminal-ko.omf
-share/omf/gnome-terminal/gnome-terminal-oc.omf
-share/omf/gnome-terminal/gnome-terminal-pt_BR.omf
-share/omf/gnome-terminal/gnome-terminal-ro.omf
-share/omf/gnome-terminal/gnome-terminal-ru.omf
-share/omf/gnome-terminal/gnome-terminal-sv.omf
-share/omf/gnome-terminal/gnome-terminal-uk.omf
-share/omf/gnome-terminal/gnome-terminal-zh_CN.omf
-share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
-@dirrm share/omf/gnome-terminal
-@dirrm share/gnome/help/gnome-terminal/zh_TW/figures
-@dirrm share/gnome/help/gnome-terminal/zh_TW
-@dirrm share/gnome/help/gnome-terminal/zh_CN/figures
-@dirrm share/gnome/help/gnome-terminal/zh_CN
-@dirrm share/gnome/help/gnome-terminal/uk/figures
-@dirrm share/gnome/help/gnome-terminal/uk
-@dirrm share/gnome/help/gnome-terminal/sv/figures
-@dirrm share/gnome/help/gnome-terminal/sv
-@dirrm share/gnome/help/gnome-terminal/ru/figures
-@dirrm share/gnome/help/gnome-terminal/ru
-@dirrm share/gnome/help/gnome-terminal/ro/figures
-@dirrm share/gnome/help/gnome-terminal/ro
-@dirrm share/gnome/help/gnome-terminal/pt_BR/figures
-@dirrm share/gnome/help/gnome-terminal/pt_BR
-@dirrm share/gnome/help/gnome-terminal/oc/figures
-@dirrm share/gnome/help/gnome-terminal/oc
-@dirrm share/gnome/help/gnome-terminal/ko/figures
-@dirrm share/gnome/help/gnome-terminal/ko
-@dirrm share/gnome/help/gnome-terminal/ja/figures
-@dirrm share/gnome/help/gnome-terminal/ja
-@dirrm share/gnome/help/gnome-terminal/it/figures
-@dirrm share/gnome/help/gnome-terminal/it
-@dirrm share/gnome/help/gnome-terminal/fr/figures
-@dirrm share/gnome/help/gnome-terminal/fr
-@dirrm share/gnome/help/gnome-terminal/es/figures
-@dirrm share/gnome/help/gnome-terminal/es
-@dirrm share/gnome/help/gnome-terminal/en_GB/figures
-@dirrm share/gnome/help/gnome-terminal/en_GB
-@dirrm share/gnome/help/gnome-terminal/el/figures
-@dirrm share/gnome/help/gnome-terminal/el
-@dirrm share/gnome/help/gnome-terminal/de/figures
-@dirrm share/gnome/help/gnome-terminal/de
-@dirrm share/gnome/help/gnome-terminal/da/figures
-@dirrm share/gnome/help/gnome-terminal/da
-@dirrm share/gnome/help/gnome-terminal/cs/figures
-@dirrm share/gnome/help/gnome-terminal/cs
-@dirrm share/gnome/help/gnome-terminal/ca/figures
-@dirrm share/gnome/help/gnome-terminal/ca
-@dirrm share/gnome/help/gnome-terminal/bg/figures
-@dirrm share/gnome/help/gnome-terminal/bg
-@dirrm share/gnome/help/gnome-terminal/C/figures
-@dirrm share/gnome/help/gnome-terminal/C
-@dirrm share/gnome/help/gnome-terminal
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

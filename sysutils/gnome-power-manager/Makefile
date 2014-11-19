@@ -1,45 +1,43 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-power-manager/Makefile,v 1.73 2011/04/30 20:43:26 mezz Exp $
+#   $MCom: ports/trunk/sysutils/gnome-power-manager/Makefile 19622 2014-05-12 09:47:14Z gusi $
 
 PORTNAME=	gnome-power-manager
-PORTVERSION=	2.32.0
-PORTREVISION=	5
+PORTVERSION=	3.12.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the GNOME Desktop
 
-LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower \
-		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
-RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
+LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower
 
-CONFLICTS=	gnome-power-manager-3.[0-9]*
-
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
-INSTALLS_OMF=	yes
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack libwnck gnomedocutils gnomepanel
+USE_GNOME=	gnomeprefix gtk30 intlhack
+MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-doc-dir=${PREFIX}/share/doc \
-		--disable-docbook-docs \
-		--enable-hal
+		--disable-docbook-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
 
-GCONF_SCHEMAS=	gnome-power-manager.schemas
+GLIB_SCHEMAS=	org.gnome.power-manager.gschema.xml
 
+OPTIONS_DEFINE=	MANPAGES
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMANPAGES} || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml
-
+PLIST_SUB+=	MAN=""
+.else
+PLIST_SUB+=	MAN="@comment "
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lresolv|| ; s|-Werror||g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|2MAN_TRUE=$$|2MAN_TRUE='#'|g ; \
+		s|2MAN_FALSE='#'|2MAN_FALSE=|g" ${WRKSRC}/configure
+.endif
 
 .include <bsd.port.mk>

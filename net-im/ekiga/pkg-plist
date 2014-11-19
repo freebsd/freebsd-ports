@@ -3,11 +3,11 @@ bin/ekiga-config-tool
 %%DBUS%%bin/ekiga-helper
 %%GCONF%%etc/ekiga/ekiga.schemas
 lib/ekiga/%%VERSION%%/libekiga.so
-%%AVAHI%%lib/ekiga/%%VERSION%%/plugins/libgmavahi.so
-%%EVOLUTION%%lib/ekiga/%%VERSION%%/plugins/libgmevolution.so
-%%LDAP%%lib/ekiga/%%VERSION%%/plugins/libgmldap.so
-%%NOTIFY%%lib/ekiga/%%VERSION%%/plugins/libgmlibnotify.so
 man/man1/ekiga.1.gz
+%%AVAHI%%lib/ekiga/%%VERSION%%/plugins/libgmavahi.so
+%%EVOLUTION%%lib/ekiga/4.0.1/plugins/libgmevolution.so
+%%LDAP%%lib/ekiga/4.0.1/plugins/libgmldap.so
+%%NOTIFY%%lib/ekiga/%%VERSION%%/plugins/libgmlibnotify.so
 share/applications/ekiga.desktop
 %%DBUS%%share/dbus-1/services/org.ekiga.Ekiga.service
 %%DBUS%%share/dbus-1/services/org.ekiga.Helper.service
@@ -602,45 +602,3 @@ share/sounds/ekiga/dialtone.wav
 share/sounds/ekiga/newmessage.wav
 share/sounds/ekiga/ring.wav
 share/sounds/ekiga/voicemail.wav
-@dirrm share/pixmaps/ekiga
-@dirrm share/sounds/ekiga
-%%GNOMEHELP%%@dirrm share/omf/ekiga
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/zh_CN/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/zh_CN
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/uk/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/uk
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/sv/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/sv
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/sl/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/sl
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/ru/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/ru
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/pt_BR/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/pt_BR
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/oc/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/oc
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/fr/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/fr
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/fi/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/fi
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/eu/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/eu
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/es/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/es
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/en_GB/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/en_GB
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/el/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/el
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/de/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/de
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/ca/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/ca
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/bg/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/bg
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/C/figures
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga/C
-%%GNOMEHELP%%@dirrm share/gnome/help/ekiga
-%%PLUGINS%%@dirrm lib/ekiga/%%VERSION%%/plugins
-@dirrm lib/ekiga/%%VERSION%%
-@dirrm lib/ekiga
-%%GCONF%%@dirrm etc/ekiga

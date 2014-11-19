@@ -3,7 +3,7 @@
 
 PORTNAME=	libgksu
 PORTVERSION=	2.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
@@ -12,7 +12,7 @@ COMMENT=	Library providing su and sudo functionality
 
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 		libglade-2.0.so:${PORTSDIR}/devel/libglade2 \
-		libgcr.so:${PORTSDIR}/security/gnome-keyring \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	xauth:${PORTSDIR}/x11/xauth \
 		sudo:${PORTSDIR}/security/sudo

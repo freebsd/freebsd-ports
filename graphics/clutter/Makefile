@@ -1,42 +1,34 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/graphics/clutter/Makefile,v 1.34 2010/09/24 16:35:42 kwm Exp $
+#   $MCom: ports/trunk/graphics/clutter/Makefile 19945 2014-10-15 05:41:04Z gusi $
 
 PORTNAME=	clutter
-PORTVERSION=	1.4.0
-PORTREVISION=	4
+PORTVERSION=	1.20.0
 CATEGORIES=	graphics
-MASTER_SITES=	GNOME \
-		http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL based interactive canvas library
 
-LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
-
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	gdkpixbuf2 gnomeprefix atk pango introspection:build
-INSTALL_TARGET=	install-strip
-USE_GL=		gl
+LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
+		libcogl.so:${PORTSDIR}/graphics/cogl
+
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gdkpixbuf2 gnomeprefix atk pango \
+		introspection:build
+USE_GL=		gl egl
 USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-x --enable-conformance=no
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-x --enable-conformance=no \
+		--enable-egl-backend=yes \
+		--disable-gdk-backend
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|G_CONST_RETURN|const|g' \
-		${WRKSRC}/clutter/cally/*.c \
-		${WRKSRC}/clutter/*.[ch] \
-		${WRKSRC}/clutter/glx/*.c \
-		${WRKSRC}/clutter/x11/*.h \
-		${WRKSRC}/clutter/cogl/cogl/*.h \
-		${WRKSRC}/clutter/json/*.c
-	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/clutter/Makefile.in
+CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

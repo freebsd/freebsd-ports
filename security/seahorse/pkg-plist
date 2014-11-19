@@ -1,133 +1,281 @@
 bin/seahorse
-bin/seahorse-daemon
-include/libcryptui/cryptui-key-chooser.h
-include/libcryptui/cryptui-key-combo.h
-include/libcryptui/cryptui-key-list.h
-include/libcryptui/cryptui-key-store.h
-include/libcryptui/cryptui-keyset.h
-include/libcryptui/cryptui.h
-lib/libcryptui.a
-lib/libcryptui.la
-lib/libcryptui.so
-lib/libcryptui.so.0
-lib/libcryptui.so.0.0.0
 lib/seahorse/seahorse-ssh-askpass
 lib/seahorse/xloadimage
-libdata/pkgconfig/cryptui-0.0.pc
-man/man1/seahorse-daemon.1.gz
 man/man1/seahorse.1.gz
+share/GConf/gsettings/org.gnome.seahorse.convert
+share/GConf/gsettings/org.gnome.seahorse.manager.convert
+share/appdata/seahorse.appdata.xml
 share/applications/seahorse.desktop
-share/dbus-1/services/org.gnome.seahorse.service
-share/doc/libcryptui/ch01.html
-share/doc/libcryptui/home.png
-share/doc/libcryptui/index.html
-share/doc/libcryptui/index.sgml
-share/doc/libcryptui/left.png
-share/doc/libcryptui/libcryptui-cryptui-defines.html
-share/doc/libcryptui/libcryptui-cryptui-key-chooser.html
-share/doc/libcryptui/libcryptui-cryptui-key-combo.html
-share/doc/libcryptui/libcryptui-cryptui-key-list.html
-share/doc/libcryptui/libcryptui-cryptui-key-store.html
-share/doc/libcryptui/libcryptui-cryptui-keyset.html
-share/doc/libcryptui/libcryptui-cryptui-marshal.html
-share/doc/libcryptui/libcryptui-cryptui.html
-share/doc/libcryptui/libcryptui.devhelp
-share/doc/libcryptui/libcryptui.devhelp2
-share/doc/libcryptui/right.png
-share/doc/libcryptui/style.css
-share/doc/libcryptui/up.png
-share/doc/libseahorse/api-index-full.html
-share/doc/libseahorse/ch01.html
-share/doc/libseahorse/home.png
-share/doc/libseahorse/index.html
-share/doc/libseahorse/index.sgml
-share/doc/libseahorse/left.png
-share/doc/libseahorse/libseahorse-SeahorseKeyserverControl.html
-share/doc/libseahorse/libseahorse-SeahorseObjectModel.html
-share/doc/libseahorse/libseahorse-SeahorseObjectWidget.html
-share/doc/libseahorse/libseahorse-SeahorseOperation.html
-share/doc/libseahorse/libseahorse-SeahorseSecureEntry.html
-share/doc/libseahorse/libseahorse-SeahorseUnknown.html
-share/doc/libseahorse/libseahorse-SeahorseWidget.html
-share/doc/libseahorse/libseahorse-seahorse-check-button-control.html
-share/doc/libseahorse/libseahorse-seahorse-combo-keys.html
-share/doc/libseahorse/libseahorse-seahorse-commands.html
-share/doc/libseahorse/libseahorse-seahorse-context.html
-share/doc/libseahorse/libseahorse-seahorse-dns-sd.html
-share/doc/libseahorse/libseahorse-seahorse-gconf.html
-share/doc/libseahorse/libseahorse-seahorse-gtkstock.html
-share/doc/libseahorse/libseahorse-seahorse-libdialogs.html
-share/doc/libseahorse/libseahorse-seahorse-marshal.html
-share/doc/libseahorse/libseahorse-seahorse-object.html
-share/doc/libseahorse/libseahorse-seahorse-passphrase.html
-share/doc/libseahorse/libseahorse-seahorse-prefs.html
-share/doc/libseahorse/libseahorse-seahorse-progress.html
-share/doc/libseahorse/libseahorse-seahorse-secure-memory.html
-share/doc/libseahorse/libseahorse-seahorse-servers.html
-share/doc/libseahorse/libseahorse-seahorse-set-model.html
-share/doc/libseahorse/libseahorse-seahorse-set.html
-share/doc/libseahorse/libseahorse-seahorse-source.html
-share/doc/libseahorse/libseahorse-seahorse-transfer-operation.html
-share/doc/libseahorse/libseahorse-seahorse-types.html
-share/doc/libseahorse/libseahorse-seahorse-unix-signal.html
-share/doc/libseahorse/libseahorse-seahorse-unknown-source.html
-share/doc/libseahorse/libseahorse-seahorse-util.html
-share/doc/libseahorse/libseahorse-seahorse-validity.html
-share/doc/libseahorse/libseahorse-seahorse-view.html
-share/doc/libseahorse/libseahorse-seahorse-xxx.html
-share/doc/libseahorse/libseahorse.devhelp
-share/doc/libseahorse/libseahorse.devhelp2
-share/doc/libseahorse/object-tree.html
-share/doc/libseahorse/right.png
-share/doc/libseahorse/style.css
-share/doc/libseahorse/up.png
-share/gnome/help/seahorse/C/figures/seahorse-window.png
-share/gnome/help/seahorse/C/legal.xml
-share/gnome/help/seahorse/C/seahorse.xml
-share/gnome/help/seahorse/ca/figures/seahorse-window.png
-share/gnome/help/seahorse/ca/seahorse.xml
-share/gnome/help/seahorse/cs/figures/seahorse-window.png
-share/gnome/help/seahorse/cs/seahorse.xml
-share/gnome/help/seahorse/de/figures/seahorse-window.png
-share/gnome/help/seahorse/de/seahorse.xml
-share/gnome/help/seahorse/el/figures/seahorse-window.png
-share/gnome/help/seahorse/el/seahorse.xml
-share/gnome/help/seahorse/en_GB/figures/seahorse-window.png
-share/gnome/help/seahorse/en_GB/seahorse.xml
-share/gnome/help/seahorse/es/figures/seahorse-window.png
-share/gnome/help/seahorse/es/seahorse.xml
-share/gnome/help/seahorse/eu/figures/seahorse-window.png
-share/gnome/help/seahorse/eu/seahorse.xml
-share/gnome/help/seahorse/fr/figures/seahorse-window.png
-share/gnome/help/seahorse/fr/seahorse.xml
-share/gnome/help/seahorse/it/figures/seahorse-window.png
-share/gnome/help/seahorse/it/seahorse.xml
-share/gnome/help/seahorse/ja/figures/seahorse-window.png
-share/gnome/help/seahorse/ja/seahorse.xml
-share/gnome/help/seahorse/oc/figures/seahorse-window.png
-share/gnome/help/seahorse/oc/seahorse.xml
-share/gnome/help/seahorse/ru/figures/seahorse-window.png
-share/gnome/help/seahorse/ru/seahorse.xml
-share/gnome/help/seahorse/sv/figures/seahorse-window.png
-share/gnome/help/seahorse/sv/seahorse.xml
-share/gnome/help/seahorse/vi/figures/seahorse-window.png
-share/gnome/help/seahorse/vi/seahorse.xml
-share/gnome/help/seahorse/zh_CN/figures/seahorse-window.png
-share/gnome/help/seahorse/zh_CN/seahorse.xml
+share/dbus-1/services/org.gnome.seahorse.Application.service
+share/gnome-shell/search-providers/seahorse-search-provider.ini
 share/icons/hicolor/16x16/apps/seahorse-preferences.png
 share/icons/hicolor/16x16/apps/seahorse.png
 share/icons/hicolor/22x22/apps/seahorse-preferences.png
 share/icons/hicolor/22x22/apps/seahorse.png
 share/icons/hicolor/24x24/apps/seahorse-preferences.png
 share/icons/hicolor/24x24/apps/seahorse.png
+share/icons/hicolor/256x256/apps/seahorse.png
 share/icons/hicolor/32x32/apps/seahorse-preferences.png
 share/icons/hicolor/32x32/apps/seahorse.png
 share/icons/hicolor/48x48/apps/seahorse-preferences.png
 share/icons/hicolor/48x48/apps/seahorse.png
+share/help/C/seahorse/glossary.page
+share/help/C/seahorse/index.page
+share/help/C/seahorse/introduction.page
+share/help/C/seahorse/key-servers-add.page
+share/help/C/seahorse/keyring-change-default.page
+share/help/C/seahorse/keyring-create.page
+share/help/C/seahorse/keyring-lock.page
+share/help/C/seahorse/keyring-unlock.page
+share/help/C/seahorse/keyring-update-password.page
+share/help/C/seahorse/keyring.page
+share/help/C/seahorse/legal.xml
+share/help/C/seahorse/misc-key-backup.page
+share/help/C/seahorse/misc-key-fingerprint.page
+share/help/C/seahorse/passwords-stored-create.page
+share/help/C/seahorse/passwords-view.page
+share/help/C/seahorse/passwords.page
+share/help/C/seahorse/pgp-create.page
+share/help/C/seahorse/pgp-delete.page
+share/help/C/seahorse/pgp-expiration-change.page
+share/help/C/seahorse/pgp-expired.page
+share/help/C/seahorse/pgp-export.page
+share/help/C/seahorse/pgp-import.page
+share/help/C/seahorse/pgp-photoid.page
+share/help/C/seahorse/pgp-publish.page
+share/help/C/seahorse/pgp-retrieve-remote.page
+share/help/C/seahorse/pgp-sign.page
+share/help/C/seahorse/pgp-subkeys.page
+share/help/C/seahorse/pgp-sync.page
+share/help/C/seahorse/pgp-userid-add.page
+share/help/C/seahorse/pgp-userid-primary.page
+share/help/C/seahorse/pgp-userid-remove.page
+share/help/C/seahorse/pgp-userid.page
+share/help/C/seahorse/pgp.page
+share/help/C/seahorse/ssh-connect-remote.page
+share/help/C/seahorse/ssh-create.page
+share/help/C/seahorse/ssh-export.page
+share/help/C/seahorse/ssh-import.page
+share/help/C/seahorse/ssh.page
+share/help/C/seahorse/subkeys-add.page
+share/help/C/seahorse/subkeys-examine.page
+share/help/C/seahorse/subkeys-revoke.page
+share/help/C/seahorse/media/seahorse.png
+share/help/de/seahorse/glossary.page
+share/help/de/seahorse/index.page
+share/help/de/seahorse/introduction.page
+share/help/de/seahorse/key-servers-add.page
+share/help/de/seahorse/keyring-change-default.page
+share/help/de/seahorse/keyring-create.page
+share/help/de/seahorse/keyring-lock.page
+share/help/de/seahorse/keyring-unlock.page
+share/help/de/seahorse/keyring-update-password.page
+share/help/de/seahorse/keyring.page
+share/help/de/seahorse/legal.xml
+share/help/de/seahorse/misc-key-backup.page
+share/help/de/seahorse/misc-key-fingerprint.page
+share/help/de/seahorse/passwords-stored-create.page
+share/help/de/seahorse/passwords-view.page
+share/help/de/seahorse/passwords.page
+share/help/de/seahorse/pgp-create.page
+share/help/de/seahorse/pgp-delete.page
+share/help/de/seahorse/pgp-expiration-change.page
+share/help/de/seahorse/pgp-expired.page
+share/help/de/seahorse/pgp-export.page
+share/help/de/seahorse/pgp-import.page
+share/help/de/seahorse/pgp-photoid.page
+share/help/de/seahorse/pgp-publish.page
+share/help/de/seahorse/pgp-retrieve-remote.page
+share/help/de/seahorse/pgp-sign.page
+share/help/de/seahorse/pgp-subkeys.page
+share/help/de/seahorse/pgp-sync.page
+share/help/de/seahorse/pgp-userid-add.page
+share/help/de/seahorse/pgp-userid-primary.page
+share/help/de/seahorse/pgp-userid-remove.page
+share/help/de/seahorse/pgp-userid.page
+share/help/de/seahorse/pgp.page
+share/help/de/seahorse/ssh-connect-remote.page
+share/help/de/seahorse/ssh-create.page
+share/help/de/seahorse/ssh-export.page
+share/help/de/seahorse/ssh-import.page
+share/help/de/seahorse/ssh.page
+share/help/de/seahorse/subkeys-add.page
+share/help/de/seahorse/subkeys-examine.page
+share/help/de/seahorse/subkeys-revoke.page
+share/help/de/seahorse/media/seahorse.png
+share/help/el/seahorse/glossary.page
+share/help/el/seahorse/index.page
+share/help/el/seahorse/introduction.page
+share/help/el/seahorse/key-servers-add.page
+share/help/el/seahorse/keyring-change-default.page
+share/help/el/seahorse/keyring-create.page
+share/help/el/seahorse/keyring-lock.page
+share/help/el/seahorse/keyring-unlock.page
+share/help/el/seahorse/keyring-update-password.page
+share/help/el/seahorse/keyring.page
+share/help/el/seahorse/legal.xml
+share/help/el/seahorse/misc-key-backup.page
+share/help/el/seahorse/misc-key-fingerprint.page
+share/help/el/seahorse/passwords-stored-create.page
+share/help/el/seahorse/passwords-view.page
+share/help/el/seahorse/passwords.page
+share/help/el/seahorse/pgp-create.page
+share/help/el/seahorse/pgp-delete.page
+share/help/el/seahorse/pgp-expiration-change.page
+share/help/el/seahorse/pgp-expired.page
+share/help/el/seahorse/pgp-export.page
+share/help/el/seahorse/pgp-import.page
+share/help/el/seahorse/pgp-photoid.page
+share/help/el/seahorse/pgp-publish.page
+share/help/el/seahorse/pgp-retrieve-remote.page
+share/help/el/seahorse/pgp-sign.page
+share/help/el/seahorse/pgp-subkeys.page
+share/help/el/seahorse/pgp-sync.page
+share/help/el/seahorse/pgp-userid-add.page
+share/help/el/seahorse/pgp-userid-primary.page
+share/help/el/seahorse/pgp-userid-remove.page
+share/help/el/seahorse/pgp-userid.page
+share/help/el/seahorse/pgp.page
+share/help/el/seahorse/ssh-connect-remote.page
+share/help/el/seahorse/ssh-create.page
+share/help/el/seahorse/ssh-export.page
+share/help/el/seahorse/ssh-import.page
+share/help/el/seahorse/ssh.page
+share/help/el/seahorse/subkeys-add.page
+share/help/el/seahorse/subkeys-examine.page
+share/help/el/seahorse/subkeys-revoke.page
+share/help/el/seahorse/media/seahorse.png
+share/help/es/seahorse/glossary.page
+share/help/es/seahorse/index.page
+share/help/es/seahorse/introduction.page
+share/help/es/seahorse/key-servers-add.page
+share/help/es/seahorse/keyring-change-default.page
+share/help/es/seahorse/keyring-create.page
+share/help/es/seahorse/keyring-lock.page
+share/help/es/seahorse/keyring-unlock.page
+share/help/es/seahorse/keyring-update-password.page
+share/help/es/seahorse/keyring.page
+share/help/es/seahorse/legal.xml
+share/help/es/seahorse/misc-key-backup.page
+share/help/es/seahorse/misc-key-fingerprint.page
+share/help/es/seahorse/passwords-stored-create.page
+share/help/es/seahorse/passwords-view.page
+share/help/es/seahorse/passwords.page
+share/help/es/seahorse/pgp-create.page
+share/help/es/seahorse/pgp-delete.page
+share/help/es/seahorse/pgp-expiration-change.page
+share/help/es/seahorse/pgp-expired.page
+share/help/es/seahorse/pgp-export.page
+share/help/es/seahorse/pgp-import.page
+share/help/es/seahorse/pgp-photoid.page
+share/help/es/seahorse/pgp-publish.page
+share/help/es/seahorse/pgp-retrieve-remote.page
+share/help/es/seahorse/pgp-sign.page
+share/help/es/seahorse/pgp-subkeys.page
+share/help/es/seahorse/pgp-sync.page
+share/help/es/seahorse/pgp-userid-add.page
+share/help/es/seahorse/pgp-userid-primary.page
+share/help/es/seahorse/pgp-userid-remove.page
+share/help/es/seahorse/pgp-userid.page
+share/help/es/seahorse/pgp.page
+share/help/es/seahorse/ssh-connect-remote.page
+share/help/es/seahorse/ssh-create.page
+share/help/es/seahorse/ssh-export.page
+share/help/es/seahorse/ssh-import.page
+share/help/es/seahorse/ssh.page
+share/help/es/seahorse/subkeys-add.page
+share/help/es/seahorse/subkeys-examine.page
+share/help/es/seahorse/subkeys-revoke.page
+share/help/es/seahorse/media/seahorse.png
+share/help/fr/seahorse/glossary.page
+share/help/fr/seahorse/index.page
+share/help/fr/seahorse/introduction.page
+share/help/fr/seahorse/key-servers-add.page
+share/help/fr/seahorse/keyring-change-default.page
+share/help/fr/seahorse/keyring-create.page
+share/help/fr/seahorse/keyring-lock.page
+share/help/fr/seahorse/keyring-unlock.page
+share/help/fr/seahorse/keyring-update-password.page
+share/help/fr/seahorse/keyring.page
+share/help/fr/seahorse/legal.xml
+share/help/fr/seahorse/media/seahorse.png
+share/help/fr/seahorse/misc-key-backup.page
+share/help/fr/seahorse/misc-key-fingerprint.page
+share/help/fr/seahorse/passwords-stored-create.page
+share/help/fr/seahorse/passwords-view.page
+share/help/fr/seahorse/passwords.page
+share/help/fr/seahorse/pgp-create.page
+share/help/fr/seahorse/pgp-delete.page
+share/help/fr/seahorse/pgp-expiration-change.page
+share/help/fr/seahorse/pgp-expired.page
+share/help/fr/seahorse/pgp-export.page
+share/help/fr/seahorse/pgp-import.page
+share/help/fr/seahorse/pgp-photoid.page
+share/help/fr/seahorse/pgp-publish.page
+share/help/fr/seahorse/pgp-retrieve-remote.page
+share/help/fr/seahorse/pgp-sign.page
+share/help/fr/seahorse/pgp-subkeys.page
+share/help/fr/seahorse/pgp-sync.page
+share/help/fr/seahorse/pgp-userid-add.page
+share/help/fr/seahorse/pgp-userid-primary.page
+share/help/fr/seahorse/pgp-userid-remove.page
+share/help/fr/seahorse/pgp-userid.page
+share/help/fr/seahorse/pgp.page
+share/help/fr/seahorse/ssh-connect-remote.page
+share/help/fr/seahorse/ssh-create.page
+share/help/fr/seahorse/ssh-export.page
+share/help/fr/seahorse/ssh-import.page
+share/help/fr/seahorse/ssh.page
+share/help/fr/seahorse/subkeys-add.page
+share/help/fr/seahorse/subkeys-examine.page
+share/help/fr/seahorse/subkeys-revoke.page
+share/help/ru/seahorse/glossary.page
+share/help/ru/seahorse/index.page
+share/help/ru/seahorse/introduction.page
+share/help/ru/seahorse/key-servers-add.page
+share/help/ru/seahorse/keyring-change-default.page
+share/help/ru/seahorse/keyring-create.page
+share/help/ru/seahorse/keyring-lock.page
+share/help/ru/seahorse/keyring-unlock.page
+share/help/ru/seahorse/keyring-update-password.page
+share/help/ru/seahorse/keyring.page
+share/help/ru/seahorse/legal.xml
+share/help/ru/seahorse/misc-key-backup.page
+share/help/ru/seahorse/misc-key-fingerprint.page
+share/help/ru/seahorse/passwords-stored-create.page
+share/help/ru/seahorse/passwords-view.page
+share/help/ru/seahorse/passwords.page
+share/help/ru/seahorse/pgp-create.page
+share/help/ru/seahorse/pgp-delete.page
+share/help/ru/seahorse/pgp-expiration-change.page
+share/help/ru/seahorse/pgp-expired.page
+share/help/ru/seahorse/pgp-export.page
+share/help/ru/seahorse/pgp-import.page
+share/help/ru/seahorse/pgp-photoid.page
+share/help/ru/seahorse/pgp-publish.page
+share/help/ru/seahorse/pgp-retrieve-remote.page
+share/help/ru/seahorse/pgp-sign.page
+share/help/ru/seahorse/pgp-subkeys.page
+share/help/ru/seahorse/pgp-sync.page
+share/help/ru/seahorse/pgp-userid-add.page
+share/help/ru/seahorse/pgp-userid-primary.page
+share/help/ru/seahorse/pgp-userid-remove.page
+share/help/ru/seahorse/pgp-userid.page
+share/help/ru/seahorse/pgp.page
+share/help/ru/seahorse/ssh-connect-remote.page
+share/help/ru/seahorse/ssh-create.page
+share/help/ru/seahorse/ssh-export.page
+share/help/ru/seahorse/ssh-import.page
+share/help/ru/seahorse/ssh.page
+share/help/ru/seahorse/subkeys-add.page
+share/help/ru/seahorse/subkeys-examine.page
+share/help/ru/seahorse/subkeys-revoke.page
+share/help/ru/seahorse/media/seahorse.png
 share/locale/ar/LC_MESSAGES/seahorse.mo
 share/locale/as/LC_MESSAGES/seahorse.mo
 share/locale/ast/LC_MESSAGES/seahorse.mo
 share/locale/az/LC_MESSAGES/seahorse.mo
+share/locale/be/LC_MESSAGES/seahorse.mo
 share/locale/be@latin/LC_MESSAGES/seahorse.mo
 share/locale/bg/LC_MESSAGES/seahorse.mo
 share/locale/bn/LC_MESSAGES/seahorse.mo
@@ -141,9 +289,10 @@ share/locale/da/LC_MESSAGES/seahorse.mo
 share/locale/de/LC_MESSAGES/seahorse.mo
 share/locale/dz/LC_MESSAGES/seahorse.mo
 share/locale/el/LC_MESSAGES/seahorse.mo
+share/locale/en@shaw/LC_MESSAGES/seahorse.mo
 share/locale/en_CA/LC_MESSAGES/seahorse.mo
 share/locale/en_GB/LC_MESSAGES/seahorse.mo
-share/locale/en@shaw/LC_MESSAGES/seahorse.mo
+share/locale/eo/LC_MESSAGES/seahorse.mo
 share/locale/es/LC_MESSAGES/seahorse.mo
 share/locale/et/LC_MESSAGES/seahorse.mo
 share/locale/eu/LC_MESSAGES/seahorse.mo
@@ -160,8 +309,8 @@ share/locale/id/LC_MESSAGES/seahorse.mo
 share/locale/it/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
 share/locale/kn/LC_MESSAGES/seahorse.mo
-share/locale/ku/LC_MESSAGES/seahorse.mo
 share/locale/ko/LC_MESSAGES/seahorse.mo
+share/locale/ku/LC_MESSAGES/seahorse.mo
 share/locale/lt/LC_MESSAGES/seahorse.mo
 share/locale/lv/LC_MESSAGES/seahorse.mo
 share/locale/mai/LC_MESSAGES/seahorse.mo
@@ -191,55 +340,30 @@ share/locale/sr@latin/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/ta/LC_MESSAGES/seahorse.mo
 share/locale/te/LC_MESSAGES/seahorse.mo
+share/locale/tg/LC_MESSAGES/seahorse.mo
 share/locale/th/LC_MESSAGES/seahorse.mo
 share/locale/tr/LC_MESSAGES/seahorse.mo
+share/locale/ug/LC_MESSAGES/seahorse.mo
 share/locale/uk/LC_MESSAGES/seahorse.mo
 share/locale/vi/LC_MESSAGES/seahorse.mo
 share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 share/locale/zh_HK/LC_MESSAGES/seahorse.mo
 share/locale/zh_TW/LC_MESSAGES/seahorse.mo
-share/omf/seahorse/seahorse-C.omf
-share/omf/seahorse/seahorse-ca.omf
-share/omf/seahorse/seahorse-cs.omf
-share/omf/seahorse/seahorse-de.omf
-share/omf/seahorse/seahorse-el.omf
-share/omf/seahorse/seahorse-en_GB.omf
-share/omf/seahorse/seahorse-es.omf
-share/omf/seahorse/seahorse-eu.omf
-share/omf/seahorse/seahorse-fr.omf
-share/omf/seahorse/seahorse-it.omf
-share/omf/seahorse/seahorse-ja.omf
-share/omf/seahorse/seahorse-oc.omf
-share/omf/seahorse/seahorse-ru.omf
-share/omf/seahorse/seahorse-sv.omf
-share/omf/seahorse/seahorse-vi.omf
-share/omf/seahorse/seahorse-zh_CN.omf
-share/pixmaps/seahorse/22x22/seahorse-key-personal.png
-share/pixmaps/seahorse/22x22/seahorse-key-ssh.png
-share/pixmaps/seahorse/22x22/seahorse-key.png
-share/pixmaps/seahorse/22x22/seahorse-person.png
-share/pixmaps/seahorse/22x22/seahorse-share-keys.png
-share/pixmaps/seahorse/22x22/seahorse-sign-bad.png
-share/pixmaps/seahorse/22x22/seahorse-sign-ok.png
-share/pixmaps/seahorse/22x22/seahorse-sign.png
-share/pixmaps/seahorse/48x48/seahorse-key-personal.png
-share/pixmaps/seahorse/48x48/seahorse-key-ssh.png
-share/pixmaps/seahorse/48x48/seahorse-key.png
-share/pixmaps/seahorse/48x48/seahorse-person.png
-share/pixmaps/seahorse/48x48/seahorse-share-keys.png
-share/pixmaps/seahorse/48x48/seahorse-sign-bad.png
-share/pixmaps/seahorse/48x48/seahorse-sign-ok.png
-share/pixmaps/seahorse/48x48/seahorse-sign-unknown.png
-share/pixmaps/seahorse/48x48/seahorse-sign.png
-share/pixmaps/seahorse/scalable/seahorse-key-personal.svg
-share/pixmaps/seahorse/scalable/seahorse-key-ssh.svg
-share/pixmaps/seahorse/scalable/seahorse-key.svg
-share/pixmaps/seahorse/scalable/seahorse-person.svg
-share/pixmaps/seahorse/scalable/seahorse-share-keys.svg
-share/pixmaps/seahorse/scalable/seahorse-sign-bad.svg
-share/pixmaps/seahorse/scalable/seahorse-sign-ok.svg
-share/pixmaps/seahorse/scalable/seahorse-sign-unknown.svg
-share/pixmaps/seahorse/scalable/seahorse-sign.svg
+%%DATADIR%%/icons/hicolor/22x22/apps/seahorse-key-personal.png
+%%DATADIR%%/icons/hicolor/22x22/apps/seahorse-key-ssh.png
+%%DATADIR%%/icons/hicolor/22x22/apps/seahorse-key.png
+%%DATADIR%%/icons/hicolor/22x22/apps/seahorse-person.png
+%%DATADIR%%/icons/hicolor/22x22/status/seahorse-sign-bad.png
+%%DATADIR%%/icons/hicolor/22x22/status/seahorse-sign-ok.png
+%%DATADIR%%/icons/hicolor/22x22/status/seahorse-sign.png
+%%DATADIR%%/icons/hicolor/48x48/apps/seahorse-key-personal.png
+%%DATADIR%%/icons/hicolor/48x48/apps/seahorse-key-ssh.png
+%%DATADIR%%/icons/hicolor/48x48/apps/seahorse-key.png
+%%DATADIR%%/icons/hicolor/48x48/apps/seahorse-person.png
+%%DATADIR%%/icons/hicolor/48x48/status/seahorse-sign-bad.png
+%%DATADIR%%/icons/hicolor/48x48/status/seahorse-sign-ok.png
+%%DATADIR%%/icons/hicolor/48x48/status/seahorse-sign-unknown.png
+%%DATADIR%%/icons/hicolor/48x48/status/seahorse-sign.png
 %%DATADIR%%/ui/seahorse-add-keyring.xml
 %%DATADIR%%/ui/seahorse-add-keyserver.xml
 %%DATADIR%%/ui/seahorse-add-subkey.xml
@@ -256,10 +380,11 @@ share/pixmaps/seahorse/scalable/seahorse-sign.svg
 %%DATADIR%%/ui/seahorse-keyserver-results.xml
 %%DATADIR%%/ui/seahorse-keyserver-search.xml
 %%DATADIR%%/ui/seahorse-keyserver-sync.xml
-%%DATADIR%%/ui/seahorse-notify.xml
 %%DATADIR%%/ui/seahorse-pgp-generate.xml
 %%DATADIR%%/ui/seahorse-pgp-private-key-properties.xml
 %%DATADIR%%/ui/seahorse-pgp-public-key-properties.xml
+%%DATADIR%%/ui/seahorse-pkcs11-generate.xml
+%%DATADIR%%/ui/seahorse-pkcs11-request.xml
 %%DATADIR%%/ui/seahorse-prefs.xml
 %%DATADIR%%/ui/seahorse-progress.xml
 %%DATADIR%%/ui/seahorse-revoke.xml
@@ -268,79 +393,4 @@ share/pixmaps/seahorse/scalable/seahorse-sign.svg
 %%DATADIR%%/ui/seahorse-ssh-generate.xml
 %%DATADIR%%/ui/seahorse-ssh-key-properties.xml
 %%DATADIR%%/ui/seahorse-ssh-upload.xml
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%
-@dirrm share/pixmaps/seahorse/scalable
-@dirrm share/pixmaps/seahorse/48x48
-@dirrm share/pixmaps/seahorse/22x22
-@dirrm share/pixmaps/seahorse
-@dirrm share/omf/seahorse
-@dirrm share/gnome/help/seahorse/zh_CN/figures
-@dirrm share/gnome/help/seahorse/zh_CN
-@dirrm share/gnome/help/seahorse/vi/figures
-@dirrm share/gnome/help/seahorse/vi
-@dirrm share/gnome/help/seahorse/sv/figures
-@dirrm share/gnome/help/seahorse/sv
-@dirrm share/gnome/help/seahorse/ru/figures
-@dirrm share/gnome/help/seahorse/ru
-@dirrm share/gnome/help/seahorse/oc/figures
-@dirrm share/gnome/help/seahorse/oc
-@dirrm share/gnome/help/seahorse/ja/figures
-@dirrm share/gnome/help/seahorse/ja
-@dirrm share/gnome/help/seahorse/it/figures
-@dirrm share/gnome/help/seahorse/it
-@dirrm share/gnome/help/seahorse/fr/figures
-@dirrm share/gnome/help/seahorse/fr
-@dirrm share/gnome/help/seahorse/eu/figures
-@dirrm share/gnome/help/seahorse/eu
-@dirrm share/gnome/help/seahorse/es/figures
-@dirrm share/gnome/help/seahorse/es
-@dirrm share/gnome/help/seahorse/en_GB/figures
-@dirrm share/gnome/help/seahorse/en_GB
-@dirrm share/gnome/help/seahorse/el/figures
-@dirrm share/gnome/help/seahorse/el
-@dirrm share/gnome/help/seahorse/de/figures
-@dirrm share/gnome/help/seahorse/de
-@dirrm share/gnome/help/seahorse/cs/figures
-@dirrm share/gnome/help/seahorse/cs
-@dirrm share/gnome/help/seahorse/ca/figures
-@dirrm share/gnome/help/seahorse/ca
-@dirrm share/gnome/help/seahorse/C/figures
-@dirrm share/gnome/help/seahorse/C
-@dirrm share/gnome/help/seahorse
-@dirrm share/doc/libseahorse
-@dirrm share/doc/libcryptui
-@dirrm lib/seahorse
-@dirrm include/libcryptui
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
+%%DATADIR%%/ui/seahorse.css

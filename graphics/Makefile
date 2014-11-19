@@ -85,7 +85,10 @@
     SUBDIR += clutter
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
+    SUBDIR += clutter-gtk3
+    SUBDIR += cluttermm
     SUBDIR += code-eli
+    SUBDIR += cogl
     SUBDIR += colord
     SUBDIR += colord-gtk
     SUBDIR += comical
@@ -289,6 +292,8 @@
     SUBDIR += gmt
     SUBDIR += gnash
     SUBDIR += gnofract4d
+    SUBDIR += gnome-color-manager
+    SUBDIR += gnome-video-effects
     SUBDIR += gnustep-slideshow
     SUBDIR += gnustep-slideshowkit
     SUBDIR += gocr
@@ -511,6 +516,7 @@
     SUBDIR += libgnomecanvas-reference
     SUBDIR += libgnomecanvasmm26
     SUBDIR += libgphoto2
+    SUBDIR += libgxps
     SUBDIR += libimg
     SUBDIR += libiptcdata
     SUBDIR += libjpeg-turbo
@@ -971,6 +977,7 @@
     SUBDIR += seejpeg
     SUBDIR += separate
     SUBDIR += seq2gif
+    SUBDIR += shared-color-profiles
     SUBDIR += sharpconstruct
     SUBDIR += shiva-collections
     SUBDIR += shotwell

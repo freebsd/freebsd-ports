@@ -9,18 +9,11 @@ share/yelp-xsl/icons/hicolor/48x48/status/yelp-note-important.png
 share/yelp-xsl/icons/hicolor/48x48/status/yelp-note-tip.png
 share/yelp-xsl/icons/hicolor/48x48/status/yelp-note-warning.png
 share/yelp-xsl/icons/hicolor/48x48/status/yelp-note.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-00AB.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-00BB.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-201C.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-201D.png
-share/yelp-xsl/icons/hicolor/48x48/status/yelp-quote-201E.png
 share/yelp-xsl/icons/hicolor/scalable/status/yelp-note-bug.svg
 share/yelp-xsl/icons/hicolor/scalable/status/yelp-note-important.svg
 share/yelp-xsl/icons/hicolor/scalable/status/yelp-note-tip.svg
 share/yelp-xsl/icons/hicolor/scalable/status/yelp-note-warning.svg
 share/yelp-xsl/icons/hicolor/scalable/status/yelp-note.svg
-share/yelp-xsl/icons/hicolor/watermarks/yelp-code-python.png
-share/yelp-xsl/icons/hicolor/watermarks/yelp-code.png
 share/yelp-xsl/js/jquery.js
 share/yelp-xsl/js/jquery.syntax.brush.apache.js
 share/yelp-xsl/js/jquery.syntax.brush.applescript.js
@@ -61,15 +54,16 @@ share/yelp-xsl/js/jquery.syntax.core.js
 share/yelp-xsl/js/jquery.syntax.js
 share/yelp-xsl/js/jquery.syntax.layout.yelp.js
 share/yelp-xsl/xslt/common/color.xsl
-share/yelp-xsl/xslt/common/domains/yelp-xsl.xml
 share/yelp-xsl/xslt/common/html.xsl
 share/yelp-xsl/xslt/common/icons.xsl
-share/yelp-xsl/xslt/common/l10n.xsl
 share/yelp-xsl/xslt/common/l10n-numbers.xsl
+share/yelp-xsl/xslt/common/l10n.xsl
 share/yelp-xsl/xslt/common/ttml.xsl
 share/yelp-xsl/xslt/common/utils.xsl
+share/yelp-xsl/xslt/common/domains/yelp-xsl.xml
 share/yelp-xsl/xslt/docbook/common/db-chunk.xsl
 share/yelp-xsl/xslt/docbook/common/db-common.xsl
+share/yelp-xsl/xslt/docbook/common/db-profile.xsl
 share/yelp-xsl/xslt/docbook/common/db-title.xsl
 share/yelp-xsl/xslt/docbook/common/db-xref.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-bibliography.xsl
@@ -87,6 +81,7 @@ share/yelp-xsl/xslt/docbook/html/db2html-inline.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-l10n.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-links.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-list.xsl
+share/yelp-xsl/xslt/docbook/html/db2html-math.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-media.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-refentry.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-suppressed.xsl
@@ -94,12 +89,6 @@ share/yelp-xsl/xslt/docbook/html/db2html-table.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-xref.xsl
 share/yelp-xsl/xslt/docbook/html/db2html.xsl
 share/yelp-xsl/xslt/docbook/html/db2xhtml.xsl
-share/yelp-xsl/xslt/docbook/omf/db2omf.xsl
-share/yelp-xsl/xslt/docbook/utils/chunks.xsl
-share/yelp-xsl/xslt/docbook/utils/credits.xsl
-share/yelp-xsl/xslt/docbook/utils/figures.xsl
-share/yelp-xsl/xslt/docbook/utils/graphics.xsl
-share/yelp-xsl/xslt/docbook/utils/ids.xsl
 share/yelp-xsl/xslt/mallard/cache/mal-cache.xsl
 share/yelp-xsl/xslt/mallard/common/mal-gloss.xsl
 share/yelp-xsl/xslt/mallard/common/mal-if.xsl
@@ -112,6 +101,7 @@ share/yelp-xsl/xslt/mallard/html/mal2html-gloss.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-inline.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-links.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-list.xsl
+share/yelp-xsl/xslt/mallard/html/mal2html-math.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-media.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-page.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-svg.xsl
@@ -119,26 +109,3 @@ share/yelp-xsl/xslt/mallard/html/mal2html-table.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-ui.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html.xsl
 share/yelp-xsl/xslt/mallard/html/mal2xhtml.xsl
-@dirrm share/yelp-xsl/xslt/mallard/html
-@dirrm share/yelp-xsl/xslt/mallard/common
-@dirrm share/yelp-xsl/xslt/mallard/cache
-@dirrm share/yelp-xsl/xslt/mallard
-@dirrm share/yelp-xsl/xslt/docbook/utils
-@dirrm share/yelp-xsl/xslt/docbook/omf
-@dirrm share/yelp-xsl/xslt/docbook/html
-@dirrm share/yelp-xsl/xslt/docbook/common
-@dirrm share/yelp-xsl/xslt/docbook
-@dirrm share/yelp-xsl/xslt/common/domains
-@dirrm share/yelp-xsl/xslt/common
-@dirrm share/yelp-xsl/xslt
-@dirrm share/yelp-xsl/js
-@dirrm share/yelp-xsl/icons/hicolor/watermarks
-@dirrm share/yelp-xsl/icons/hicolor/scalable/status
-@dirrm share/yelp-xsl/icons/hicolor/scalable
-@dirrm share/yelp-xsl/icons/hicolor/48x48/status
-@dirrm share/yelp-xsl/icons/hicolor/48x48
-@dirrm share/yelp-xsl/icons/hicolor/24x24/status
-@dirrm share/yelp-xsl/icons/hicolor/24x24
-@dirrm share/yelp-xsl/icons/hicolor
-@dirrm share/yelp-xsl/icons
-@dirrm share/yelp-xsl

@@ -15,13 +15,14 @@ LICENSE_COMB=	multi
 LICENSE_DISTFILES=	${WRKSRC}/COPYING-GPL3 ${WRKSRC}/COPYING.2.1 \
 	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
-	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala \
+		gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
 LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
 GNU_CONFIGURE=	yes
-USES=	gmake pkgconfig pathfix libtool
-USE_GNOME=	glib20 intltool intlhack libxslt introspection:build
+USES=		gmake pkgconfig pathfix libtool
+USE_GNOME=	gnomedocutils:build glib20 intltool intlhack libxslt \
+		introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

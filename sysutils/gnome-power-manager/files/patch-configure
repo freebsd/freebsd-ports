@@ -1,6 +1,6 @@
---- configure.orig	2010-01-30 18:17:55.000000000 -0500
-+++ configure	2010-01-30 18:18:23.000000000 -0500
-@@ -12822,21 +12822,15 @@ if test "$GCC" = "yes"; then
+--- configure.orig	2011-09-18 12:34:50.000000000 +0200
++++ configure	2011-09-18 12:37:22.000000000 +0200
+@@ -12669,17 +12669,10 @@
  	WARNINGFLAGS="$WARNINGFLAGS -Wreturn-type"
  	WARNINGFLAGS="$WARNINGFLAGS -Wformat-nonliteral"
  	WARNINGFLAGS="$WARNINGFLAGS -Wformat-security"
@@ -9,17 +9,12 @@
 -	WARNINGFLAGS="$WARNINGFLAGS -Wclobbered"
 -	WARNINGFLAGS="$WARNINGFLAGS -Wempty-body"
 -	WARNINGFLAGS="$WARNINGFLAGS -Wignored-qualifiers"
- #	WARNINGFLAGS="$WARNINGFLAGS -Wsign-compare"
 -	WARNINGFLAGS="$WARNINGFLAGS -Wtype-limits"
- #	WARNINGFLAGS="$WARNINGFLAGS -Wuninitialized"
- #	WARNINGFLAGS="$WARNINGFLAGS -Waggregate-return"
  	WARNINGFLAGS="$WARNINGFLAGS -Wdeclaration-after-statement"
  	WARNINGFLAGS="$WARNINGFLAGS -Wshadow"
  	WARNINGFLAGS="$WARNINGFLAGS -Winline"
- #	WARNINGFLAGS="$WARNINGFLAGS -Wswitch-enum"
 -	WARNINGFLAGS="$WARNINGFLAGS -Wmissing-parameter-type"
 -	WARNINGFLAGS="$WARNINGFLAGS -Woverride-init"
-+#	WARNINGFLAGS="$WARNINGFLAGS -Woverride-init"
  	WARNINGFLAGS="$WARNINGFLAGS -Wno-strict-aliasing"
  else
  	WARNINGFLAGS=""

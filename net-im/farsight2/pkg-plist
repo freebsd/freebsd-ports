@@ -109,12 +109,3 @@ share/gtk-doc/html/farsight2-plugins-0.10/pt03.html
 share/gtk-doc/html/farsight2-plugins-0.10/right.png
 share/gtk-doc/html/farsight2-plugins-0.10/style.css
 share/gtk-doc/html/farsight2-plugins-0.10/up.png
-@dirrm share/gtk-doc/html/farsight2-plugins-0.10
-@dirrm share/gtk-doc/html/farsight2-libs-0.10
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm share/farsight2/0.0/fsrtpconference
-@dirrm share/farsight2/0.0
-@dirrm share/farsight2
-@dirrm lib/farsight2-0.0
-@dirrm include/gstreamer-0.10/gst/farsight

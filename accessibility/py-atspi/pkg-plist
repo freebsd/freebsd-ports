@@ -58,6 +58,9 @@
 %%PYTHON_SITELIBDIR%%/pyatspi/table.py
 %%PYTHON_SITELIBDIR%%/pyatspi/table.pyc
 %%PYTHON_SITELIBDIR%%/pyatspi/table.pyo
+%%PYTHON_SITELIBDIR%%/pyatspi/tablecell.py
+%%PYTHON_SITELIBDIR%%/pyatspi/tablecell.pyc
+%%PYTHON_SITELIBDIR%%/pyatspi/tablecell.pyo
 %%PYTHON_SITELIBDIR%%/pyatspi/text.py
 %%PYTHON_SITELIBDIR%%/pyatspi/text.pyc
 %%PYTHON_SITELIBDIR%%/pyatspi/text.pyo
@@ -67,4 +70,3 @@
 %%PYTHON_SITELIBDIR%%/pyatspi/value.py
 %%PYTHON_SITELIBDIR%%/pyatspi/value.pyc
 %%PYTHON_SITELIBDIR%%/pyatspi/value.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pyatspi

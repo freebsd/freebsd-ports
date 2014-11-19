@@ -63,10 +63,13 @@ include/telepathy-qt4/TelepathyQt/ChannelInterfaceHoldInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceMediaSignallingInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceMessagesInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfacePasswordInterface
+include/telepathy-qt4/TelepathyQt/ChannelInterfaceRoomConfigInterface
+include/telepathy-qt4/TelepathyQt/ChannelInterfaceRoomInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceSASLAuthenticationInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceSMSInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceSecurableInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceServicePointInterface
+include/telepathy-qt4/TelepathyQt/ChannelInterfaceSubjectInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceTubeInterface
 include/telepathy-qt4/TelepathyQt/ChannelRequest
 include/telepathy-qt4/TelepathyQt/ChannelRequestHints
@@ -134,9 +137,11 @@ include/telepathy-qt4/TelepathyQt/DBusProxyFactory
 include/telepathy-qt4/TelepathyQt/DBusTubeChannel
 include/telepathy-qt4/TelepathyQt/Debug
 include/telepathy-qt4/TelepathyQt/DebugReceiver
-include/telepathy-qt4/TelepathyQt/Farsight/Channel
-include/telepathy-qt4/TelepathyQt/Farsight/channel.h
-include/telepathy-qt4/TelepathyQt/Farsight/global.h
+include/telepathy-qt4/TelepathyQt/Farstream/Channel
+include/telepathy-qt4/TelepathyQt/Farstream/Global
+include/telepathy-qt4/TelepathyQt/Farstream/PendingChannel
+include/telepathy-qt4/TelepathyQt/Farstream/channel.h
+include/telepathy-qt4/TelepathyQt/Farstream/global.h
 include/telepathy-qt4/TelepathyQt/Feature
 include/telepathy-qt4/TelepathyQt/Features
 include/telepathy-qt4/TelepathyQt/FileTransferChannel
@@ -379,20 +384,13 @@ lib/cmake/TelepathyQt4/TelepathyQt4Config.cmake
 lib/cmake/TelepathyQt4/TelepathyQt4ConfigVersion.cmake
 lib/cmake/TelepathyQt4/TelepathyQt4Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/TelepathyQt4/TelepathyQt4Targets.cmake
-lib/cmake/TelepathyQt4Farsight/TelepathyQt4FarsightConfig.cmake
-lib/cmake/TelepathyQt4Farsight/TelepathyQt4FarsightConfigVersion.cmake
-lib/libtelepathy-qt4-farsight.so
-lib/libtelepathy-qt4-farsight.so.2
-lib/libtelepathy-qt4-farsight.so.2.%%PORTVERSION%%
+lib/cmake/TelepathyQt4Farstream/TelepathyQt4FarstreamConfig.cmake
+lib/cmake/TelepathyQt4Farstream/TelepathyQt4FarstreamConfigVersion.cmake
 lib/libtelepathy-qt4.so
 lib/libtelepathy-qt4.so.2
 lib/libtelepathy-qt4.so.2.%%PORTVERSION%%
+lib/libtelepathy-qt4-farstream.so
+lib/libtelepathy-qt4-farstream.so.2
+lib/libtelepathy-qt4-farstream.so.2.%%PORTVERSION%%
+libdata/pkgconfig/TelepathyQt4Farstream.pc
 libdata/pkgconfig/TelepathyQt4.pc
-libdata/pkgconfig/TelepathyQt4Farsight.pc
-@dirrm lib/cmake/TelepathyQt4Farsight
-@dirrm lib/cmake/TelepathyQt4
-@dirrmtry lib/cmake
-@dirrm include/telepathy-qt4/TelepathyQt/_gen
-@dirrm include/telepathy-qt4/TelepathyQt/Farsight
-@dirrm include/telepathy-qt4/TelepathyQt
-@dirrm include/telepathy-qt4

@@ -1,45 +1,88 @@
 bin/mutter
-bin/mutter-message
-bin/mutter-theme-viewer
-bin/mutter-window-demo
-include/mutter/mutter-private/atomnames.h
-include/mutter/mutter-private/boxes.h
-include/mutter/mutter-private/common.h
-include/mutter/mutter-private/compositor-mutter.h
-include/mutter/mutter-private/compositor.h
-include/mutter/mutter-private/display.h
-include/mutter/mutter-private/errors.h
-include/mutter/mutter-private/gradient.h
-include/mutter/mutter-private/group.h
-include/mutter/mutter-private/keybindings.h
-include/mutter/mutter-private/main.h
-include/mutter/mutter-private/mutter-plugin.h
-include/mutter/mutter-private/mutter-window.h
-include/mutter/mutter-private/prefs.h
-include/mutter/mutter-private/preview-widget.h
-include/mutter/mutter-private/screen.h
-include/mutter/mutter-private/theme-parser.h
-include/mutter/mutter-private/theme.h
-include/mutter/mutter-private/types.h
-include/mutter/mutter-private/util.h
-include/mutter/mutter-private/window.h
-include/mutter/mutter-private/workspace.h
-lib/libmutter-private.a
-lib/libmutter-private.la
-lib/libmutter-private.so
-lib/libmutter-private.so.0
-lib/libmutter-private.so.0.0.0
-lib/mutter/Meta-2.31.gir
-lib/mutter/Meta-2.31.typelib
+include/mutter/meta/atomnames.h
+include/mutter/meta/barrier.h
+include/mutter/meta/boxes.h
+include/mutter/meta/common.h
+include/mutter/meta/compositor-mutter.h
+include/mutter/meta/compositor.h
+include/mutter/meta/display.h
+include/mutter/meta/errors.h
+include/mutter/meta/gradient.h
+include/mutter/meta/group.h
+include/mutter/meta/keybindings.h
+include/mutter/meta/main.h
+include/mutter/meta/meta-backend.h
+include/mutter/meta/meta-background-actor.h
+include/mutter/meta/meta-background-group.h
+include/mutter/meta/meta-background-image.h
+include/mutter/meta/meta-background.h
+include/mutter/meta/meta-cursor-tracker.h
+include/mutter/meta/meta-idle-monitor.h
+include/mutter/meta/meta-plugin.h
+include/mutter/meta/meta-shadow-factory.h
+include/mutter/meta/meta-shaped-texture.h
+include/mutter/meta/meta-version.h
+include/mutter/meta/meta-window-actor.h
+include/mutter/meta/prefs.h
+include/mutter/meta/screen.h
+include/mutter/meta/theme.h
+include/mutter/meta/types.h
+include/mutter/meta/util.h
+include/mutter/meta/window.h
+include/mutter/meta/workspace.h
+lib/libmutter.so
+lib/libmutter.so.0
+lib/libmutter.so.0.0.0
+lib/mutter/Meta-3.0.gir
+lib/mutter/Meta-3.0.typelib
 lib/mutter/plugins/default.so
-libdata/pkgconfig/libmutter-private.pc
-libdata/pkgconfig/mutter-plugins.pc
-man/man1/mutter-message.1.gz
-man/man1/mutter-theme-viewer.1.gz
-man/man1/mutter-window-demo.1.gz
+libdata/pkgconfig/libmutter.pc
+libexec/mutter-restart-helper
 man/man1/mutter.1.gz
+share/GConf/gsettings/mutter-schemas.convert
 share/applications/mutter.desktop
-share/gnome/wm-properties/mutter-wm.desktop
+share/applications/mutter-wayland.desktop
+share/doc/meta/MetaBackgroundActor.html
+share/doc/meta/MetaBarrier.html
+share/doc/meta/MetaDisplay.html
+share/doc/meta/MetaPlugin.html
+share/doc/meta/MetaRectangle.html
+share/doc/meta/MetaScreen.html
+share/doc/meta/MetaShadowFactory.html
+share/doc/meta/MetaShapedTexture.html
+share/doc/meta/MetaWindow.html
+share/doc/meta/MetaWindowActor.html
+share/doc/meta/MetaWorkspace.html
+share/doc/meta/annotation-glossary.html
+share/doc/meta/api-index-full.html
+share/doc/meta/core-reference.html
+share/doc/meta/deprecated-api-index.html
+share/doc/meta/home.png
+share/doc/meta/index.html
+share/doc/meta/index.sgml
+share/doc/meta/left-insensitive.png
+share/doc/meta/left.png
+share/doc/meta/meta-Common.html
+share/doc/meta/meta-Errors.html
+share/doc/meta/meta-Gradients.html
+share/doc/meta/meta-Main.html
+share/doc/meta/meta-MetaCompositor.html
+share/doc/meta/meta-MetaGroup.html
+share/doc/meta/meta-MetaKeybinding.html
+share/doc/meta/meta-Preferences.html
+share/doc/meta/meta-Utility-functions.html
+share/doc/meta/meta.devhelp2
+share/doc/meta/mutter-overview.html
+share/doc/meta/object-tree.html
+share/doc/meta/right-insensitive.png
+share/doc/meta/right.png
+share/doc/meta/running-mutter.html
+share/doc/meta/style.css
+share/doc/meta/up-insensitive.png
+share/doc/meta/up.png
+share/gnome-control-center/keybindings/50-mutter-navigation.xml
+share/gnome-control-center/keybindings/50-mutter-windows.xml
+share/gnome-control-center/keybindings/50-mutter-system.xml
 share/locale/am/LC_MESSAGES/mutter.mo
 share/locale/ar/LC_MESSAGES/mutter.mo
 share/locale/as/LC_MESSAGES/mutter.mo
@@ -62,6 +105,7 @@ share/locale/dz/LC_MESSAGES/mutter.mo
 share/locale/el/LC_MESSAGES/mutter.mo
 share/locale/en_CA/LC_MESSAGES/mutter.mo
 share/locale/en_GB/LC_MESSAGES/mutter.mo
+share/locale/eo/LC_MESSAGES/mutter.mo
 share/locale/es/LC_MESSAGES/mutter.mo
 share/locale/et/LC_MESSAGES/mutter.mo
 share/locale/eu/LC_MESSAGES/mutter.mo
@@ -83,6 +127,7 @@ share/locale/is/LC_MESSAGES/mutter.mo
 share/locale/it/LC_MESSAGES/mutter.mo
 share/locale/ja/LC_MESSAGES/mutter.mo
 share/locale/ka/LC_MESSAGES/mutter.mo
+share/locale/kk/LC_MESSAGES/mutter.mo
 share/locale/kn/LC_MESSAGES/mutter.mo
 share/locale/ko/LC_MESSAGES/mutter.mo
 share/locale/ku/LC_MESSAGES/mutter.mo
@@ -119,9 +164,11 @@ share/locale/sr@latin/LC_MESSAGES/mutter.mo
 share/locale/sv/LC_MESSAGES/mutter.mo
 share/locale/ta/LC_MESSAGES/mutter.mo
 share/locale/te/LC_MESSAGES/mutter.mo
+share/locale/tg/LC_MESSAGES/mutter.mo
 share/locale/th/LC_MESSAGES/mutter.mo
 share/locale/tk/LC_MESSAGES/mutter.mo
 share/locale/tr/LC_MESSAGES/mutter.mo
+share/locale/ug/LC_MESSAGES/mutter.mo
 share/locale/uk/LC_MESSAGES/mutter.mo
 share/locale/vi/LC_MESSAGES/mutter.mo
 share/locale/wa/LC_MESSAGES/mutter.mo
@@ -130,56 +177,3 @@ share/locale/yo/LC_MESSAGES/mutter.mo
 share/locale/zh_CN/LC_MESSAGES/mutter.mo
 share/locale/zh_HK/LC_MESSAGES/mutter.mo
 share/locale/zh_TW/LC_MESSAGES/mutter.mo
-%%DATADIR%%/icons/mutter-window-demo.png
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm lib/mutter/plugins
-@dirrm lib/mutter
-@dirrm include/mutter/mutter-private
-@dirrm include/mutter
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yo/LC_MESSAGES
-@dirrmtry share/locale/yo
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/la/LC_MESSAGES
-@dirrmtry share/locale/la
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ig/LC_MESSAGES
-@dirrmtry share/locale/ig
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/ha/LC_MESSAGES
-@dirrmtry share/locale/ha
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

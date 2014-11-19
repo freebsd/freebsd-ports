@@ -13,9 +13,7 @@ include/libsecret-1/libsecret/secret-types.h
 include/libsecret-1/libsecret/secret-value.h
 include/libsecret-1/libsecret/secret.h
 lib/girepository-1.0/Secret-1.typelib
-lib/girepository-1.0/SecretUnstable-0.typelib
 lib/libsecret-1.a
-lib/libsecret-1.la
 lib/libsecret-1.so
 lib/libsecret-1.so.0
 lib/libsecret-1.so.0.0.0
@@ -23,9 +21,7 @@ libdata/pkgconfig/libsecret-1.pc
 libdata/pkgconfig/libsecret-unstable.pc
 man/man1/secret-tool.1.gz
 share/gir-1.0/Secret-1.gir
-share/gir-1.0/SecretUnstable-0.gir
 share/gtk-doc/html/libsecret-1/SecretCollection.html
-share/gtk-doc/html/libsecret-1/SecretError.html
 share/gtk-doc/html/libsecret-1/SecretItem.html
 share/gtk-doc/html/libsecret-1/SecretPrompt.html
 share/gtk-doc/html/libsecret-1/SecretService.html
@@ -44,11 +40,13 @@ share/gtk-doc/html/libsecret-1/js-examples.html
 share/gtk-doc/html/libsecret-1/js-lookup-example.html
 share/gtk-doc/html/libsecret-1/js-remove-example.html
 share/gtk-doc/html/libsecret-1/js-store-example.html
+share/gtk-doc/html/libsecret-1/left-insensitive.png
 share/gtk-doc/html/libsecret-1/left.png
 share/gtk-doc/html/libsecret-1/libsecret-1.devhelp2
 share/gtk-doc/html/libsecret-1/libsecret-DBus-Path-Related-Functions.html
 share/gtk-doc/html/libsecret-1/libsecret-Password-storage.html
 share/gtk-doc/html/libsecret-1/libsecret-Secret-Attributes.html
+share/gtk-doc/html/libsecret-1/libsecret-SecretError.html
 share/gtk-doc/html/libsecret-1/libsecret-SecretSchema.html
 share/gtk-doc/html/libsecret-1/migrating-api.html
 share/gtk-doc/html/libsecret-1/migrating-introduction.html
@@ -66,9 +64,11 @@ share/gtk-doc/html/libsecret-1/py-examples.html
 share/gtk-doc/html/libsecret-1/py-lookup-example.html
 share/gtk-doc/html/libsecret-1/py-remove-example.html
 share/gtk-doc/html/libsecret-1/py-store-example.html
+share/gtk-doc/html/libsecret-1/right-insensitive.png
 share/gtk-doc/html/libsecret-1/right.png
 share/gtk-doc/html/libsecret-1/simple.html
 share/gtk-doc/html/libsecret-1/style.css
+share/gtk-doc/html/libsecret-1/up-insensitive.png
 share/gtk-doc/html/libsecret-1/up.png
 share/gtk-doc/html/libsecret-1/using-c.html
 share/gtk-doc/html/libsecret-1/using-js.html
@@ -79,23 +79,42 @@ share/gtk-doc/html/libsecret-1/vala-examples.html
 share/gtk-doc/html/libsecret-1/vala-lookup-example.html
 share/gtk-doc/html/libsecret-1/vala-remove-example.html
 share/gtk-doc/html/libsecret-1/vala-store-example.html
+share/locale/an/LC_MESSAGES/libsecret.mo
+share/locale/as/LC_MESSAGES/libsecret.mo
+share/locale/be/LC_MESSAGES/libsecret.mo
+share/locale/ca/LC_MESSAGES/libsecret.mo
+share/locale/ca@valencia/LC_MESSAGES/libsecret.mo
 share/locale/cs/LC_MESSAGES/libsecret.mo
+share/locale/da/LC_MESSAGES/libsecret.mo
+share/locale/de/LC_MESSAGES/libsecret.mo
+share/locale/el/LC_MESSAGES/libsecret.mo
 share/locale/es/LC_MESSAGES/libsecret.mo
+share/locale/eo/LC_MESSAGES/libsecret.mo
+share/locale/fr/LC_MESSAGES/libsecret.mo
+share/locale/fur/LC_MESSAGES/libsecret.mo
 share/locale/gl/LC_MESSAGES/libsecret.mo
+share/locale/he/LC_MESSAGES/libsecret.mo
 share/locale/hu/LC_MESSAGES/libsecret.mo
+share/locale/id/LC_MESSAGES/libsecret.mo
 share/locale/it/LC_MESSAGES/libsecret.mo
 share/locale/ja/LC_MESSAGES/libsecret.mo
+share/locale/ko/LC_MESSAGES/libsecret.mo
+share/locale/lt/LC_MESSAGES/libsecret.mo
+share/locale/lv/LC_MESSAGES/libsecret.mo
+share/locale/ml/LC_MESSAGES/libsecret.mo
+share/locale/nb/LC_MESSAGES/libsecret.mo
+share/locale/nl/LC_MESSAGES/libsecret.mo
+share/locale/pa/LC_MESSAGES/libsecret.mo
 share/locale/pl/LC_MESSAGES/libsecret.mo
+share/locale/pt/LC_MESSAGES/libsecret.mo
 share/locale/pt_BR/LC_MESSAGES/libsecret.mo
 share/locale/ru/LC_MESSAGES/libsecret.mo
 share/locale/sl/LC_MESSAGES/libsecret.mo
+share/locale/sk/LC_MESSAGES/libsecret.mo
 share/locale/sr/LC_MESSAGES/libsecret.mo
 share/locale/sr@latin/LC_MESSAGES/libsecret.mo
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrm share/gtk-doc/html/libsecret-1
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/libsecret-1/libsecret
-@dirrm include/libsecret-1
-
+share/locale/tg/LC_MESSAGES/libsecret.mo
+share/locale/uk/LC_MESSAGES/libsecret.mo
+share/locale/zh_CN/LC_MESSAGES/libsecret.mo
+share/locale/zh_HK/LC_MESSAGES/libsecret.mo
+share/locale/zh_TW/LC_MESSAGES/libsecret.mo

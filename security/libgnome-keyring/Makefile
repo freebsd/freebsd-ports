@@ -1,24 +1,27 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/security/libgnome-keyring/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	libgnome-keyring
-PORTVERSION=	2.32.0
-PORTREVISION=	9
+PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Program that keeps passwords and other secrets
 
-LIB_DEPENDS=	libtasn1.so:${PORTSDIR}/security/libtasn1 \
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix intlhack gconf2
-USE_LDCONFIG=	yes
+USE_GNOME=	glib20 gnomeprefix intlhack \
+		introspection:build
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-vala
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

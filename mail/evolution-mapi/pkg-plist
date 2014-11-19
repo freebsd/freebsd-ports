@@ -1,25 +1,28 @@
-include/evolution-data-server-%%EVO_VERSION%%/mapi/em-operation-queue.h
-include/evolution-data-server-%%EVO_VERSION%%/mapi/exchange-mapi-cal-recur-utils.h
-include/evolution-data-server-%%EVO_VERSION%%/mapi/exchange-mapi-cal-tz-utils.h
-include/evolution-data-server-%%EVO_VERSION%%/mapi/exchange-mapi-cal-utils.h
-include/evolution-data-server-%%EVO_VERSION%%/mapi/exchange-mapi-connection.h
-include/evolution-data-server-%%EVO_VERSION%%/mapi/exchange-mapi-defs.h
-include/evolution-data-server-%%EVO_VERSION%%/mapi/exchange-mapi-folder.h
-include/evolution-data-server-%%EVO_VERSION%%/mapi/exchange-mapi-mail-utils.h
-include/evolution-data-server-%%EVO_VERSION%%/mapi/exchange-mapi-utils.h
-lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelmapi.la
-lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelmapi.so
-lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelmapi.urls
-lib/evolution-data-server-%%EDS_VERSION%%/extensions/libebookbackendmapi.la
-lib/evolution-data-server-%%EDS_VERSION%%/extensions/libebookbackendmapi.so
-lib/evolution-data-server-%%EDS_VERSION%%/extensions/libecalbackendmapi.la
-lib/evolution-data-server-%%EDS_VERSION%%/extensions/libecalbackendmapi.so
-lib/evolution/%%EVO_VERSION%%/plugins/liborg-gnome-exchange-mapi.la
-lib/evolution/%%EVO_VERSION%%/plugins/liborg-gnome-exchange-mapi.so
-lib/evolution/%%EVO_VERSION%%/plugins/org-gnome-exchange-mapi.eplug
-lib/libexchangemapi-1.0.la
+include/evolution-data-server/mapi/e-mapi-book-utils.h
+include/evolution-data-server/mapi/e-mapi-cal-recur-utils.h
+include/evolution-data-server/mapi/e-mapi-cal-tz-utils.h
+include/evolution-data-server/mapi/e-mapi-cal-utils.h
+include/evolution-data-server/mapi/e-mapi-connection.h
+include/evolution-data-server/mapi/e-mapi-debug.h
+include/evolution-data-server/mapi/e-mapi-defs.h
+include/evolution-data-server/mapi/e-mapi-fast-transfer.h
+include/evolution-data-server/mapi/e-mapi-folder.h
+include/evolution-data-server/mapi/e-mapi-mail-utils.h
+include/evolution-data-server/mapi/e-mapi-operation-queue.h
+include/evolution-data-server/mapi/e-mapi-utils.h
+lib/evolution/%%VERSION%%/modules/module-mapi-configuration.so
+lib/evolution-data-server/addressbook-backends/libebookbackendmapi.so
+lib/evolution-data-server/calendar-backends/libecalbackendmapi.so
+lib/evolution-data-server/camel-providers/libcamelmapi.urls
+lib/evolution-data-server/camel-providers/libcamelmapi.so
+lib/evolution-data-server/registry-modules/module-mapi-backend.so
 lib/libexchangemapi-1.0.so
 lib/libexchangemapi-1.0.so.0
+lib/libexchangemapi-1.0.so.0.0.0
+libdata/pkgconfig/libexchangemapi-1.0.pc
+share/appdata/evolution-mapi.metainfo.xml
+share/evolution-data-server/mapi/tz-ical-to-mapi
+share/evolution-data-server/mapi/tz-mapi-to-ical
 share/locale/as/LC_MESSAGES/evolution-mapi.mo
 share/locale/ast/LC_MESSAGES/evolution-mapi.mo
 share/locale/bg/LC_MESSAGES/evolution-mapi.mo
@@ -31,8 +34,9 @@ share/locale/cs/LC_MESSAGES/evolution-mapi.mo
 share/locale/da/LC_MESSAGES/evolution-mapi.mo
 share/locale/de/LC_MESSAGES/evolution-mapi.mo
 share/locale/el/LC_MESSAGES/evolution-mapi.mo
-share/locale/en_GB/LC_MESSAGES/evolution-mapi.mo
 share/locale/en@shaw/LC_MESSAGES/evolution-mapi.mo
+share/locale/en_GB/LC_MESSAGES/evolution-mapi.mo
+share/locale/eo/LC_MESSAGES/evolution-mapi.mo
 share/locale/es/LC_MESSAGES/evolution-mapi.mo
 share/locale/et/LC_MESSAGES/evolution-mapi.mo
 share/locale/eu/LC_MESSAGES/evolution-mapi.mo
@@ -73,35 +77,9 @@ share/locale/ta/LC_MESSAGES/evolution-mapi.mo
 share/locale/te/LC_MESSAGES/evolution-mapi.mo
 share/locale/th/LC_MESSAGES/evolution-mapi.mo
 share/locale/tr/LC_MESSAGES/evolution-mapi.mo
+share/locale/ug/LC_MESSAGES/evolution-mapi.mo
 share/locale/uk/LC_MESSAGES/evolution-mapi.mo
 share/locale/vi/LC_MESSAGES/evolution-mapi.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-mapi.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-mapi.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-mapi.mo
-libdata/pkgconfig/libexchangemapi-1.0.pc
-share/evolution-data-server-%%EVO_VERSION%%/mapi/tz-mapi-to-ical
-share/evolution-data-server-%%EVO_VERSION%%/mapi/tz-ical-to-mapi
-@dirrm share/evolution-data-server-%%EVO_VERSION%%/mapi
-@dirrm include/evolution-data-server-%%EVO_VERSION%%/mapi
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

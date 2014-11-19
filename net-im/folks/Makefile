@@ -1,46 +1,51 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net-im/folks/Makefile,v 1.29 2012/08/17 19:06:45 kwm Exp $
+#   $MCom: ports/trunk/net-im/folks/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	folks
-PORTVERSION=	0.7.0
+PORTVERSION=	0.10.0
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	library to aggregates people from multiple sources
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
+LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
+		libgcr-3.so:${PORTSDIR}/security/gcr \
+		libzeitgeist-1.0.so:${PORTSDIR}/sysutils/libzeitgeist \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
-IGNORE=		Doesn't build currently, missing components
 CONFLICTS=	folks-0.4.[0-9]*
 
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehier gnomehack intlhack ltverhack evolutiondataserver3
-USES=		gettext gmake tar:xz
+USES=		gettext libtool gmake pathfix pkgconfig tar:xz
+USE_GNOME=	evolutiondataserver3 intlhack \
+		introspection:build
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-bluez-backend
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=deprecated-declarations
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-PLIST_SUB=	LIBVER=25 VERSION=33
+GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
 
-#OPTIONS=	SOCIALWEB "Enable social web backend" on
+PLIST_SUB=	LIBVER=25 VERSION=42 LIBVERLONG=25.17.2
 
-#.include <bsd.port.options.mk>
-
-#.if defined(WITH_SOCIALWEB)
-#LIB_DEPENDS+=	socialweb.0:${PORTSDIR}/www/libsocialweb
-#CONFIGURE_ARGS+=--enable-libsocialweb-backend=yes
-#.else
-CONFIGURE_ARGS+=--enable-libsocialweb-backend=no
-#.endif
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	SOCIALWEB TRACKER
+OPTIONS_DEFAULT=SOCIALWEB TRACKER
+SOCIALWEB_DESC=	Social web backend
+TRACKER_DESC=	Tracker backend
+SOCIALWEB_CONFIGURE_ENABLE=	libsocialweb-backend
+SOCIALWEB_LIB_DEPENDS=	libsocialweb.so:${PORTSDIR}/www/libsocialweb
+TRACKER_CONFIGURE_ENABLE=	tracker-backend
+TRACKER_LIB_DEPENDS=	libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|g' \
-		${WRKDIR}/gnome-libtool
+#	@${REINPLACE_CMD} -e 's|TRACKER_SPARQL_MAJOR=0.16|TRACKER_SPARQL_MAJOR=1.0|g' \
+#		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|--fatal-warnings||g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

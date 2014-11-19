@@ -133,16 +133,20 @@
     SUBDIR += fspclient
     SUBDIR += fsplib
     SUBDIR += g2ipmsg
+    SUBDIR += geoclue
+    SUBDIR += geocode-glib
     SUBDIR += geoipupdate
     SUBDIR += get_iplayer
+    SUBDIR += gfbgraph
     SUBDIR += gini
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
     SUBDIR += glib-networking
     SUBDIR += gnet2
     SUBDIR += gnetcat
-    SUBDIR += gnome-netstatus
     SUBDIR += gnome-nettool
+    SUBDIR += gnome-online-accounts
+    SUBDIR += gnome-online-miners
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
     SUBDIR += go-cs
@@ -157,6 +161,8 @@
     SUBDIR += gpxe
     SUBDIR += gq
     SUBDIR += grdesktop
+    SUBDIR += grilo-plugins
+    SUBDIR += grilo
     SUBDIR += grive
     SUBDIR += grsync
     SUBDIR += gsk
@@ -278,6 +284,7 @@
     SUBDIR += libbgpdump
     SUBDIR += libcapn
     SUBDIR += libcmis
+    SUBDIR += libdmapsharing
     SUBDIR += libdnet
     SUBDIR += libexosip2
     SUBDIR += libfb
@@ -320,6 +327,7 @@
     SUBDIR += libunp
     SUBDIR += libutp
     SUBDIR += libvncserver
+    SUBDIR += libzapojit
     SUBDIR += libzmq2
     SUBDIR += libzmq3
     SUBDIR += libzmq4
@@ -1188,6 +1196,7 @@
     SUBDIR += udpxy
     SUBDIR += udt
     SUBDIR += uget
+    SUBDIR += uhttpmock
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
     SUBDIR += unison

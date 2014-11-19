@@ -1,8 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/py3-gobject3/Makefile 19571 2014-04-25 18:12:46Z kwm $
-
-PORTREVISION=	1
+#   $MCom: ports/trunk/devel/py3-gobject3/Makefile 19696 2014-05-26 11:20:01Z gusi $
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	3

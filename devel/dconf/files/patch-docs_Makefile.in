@@ -1,0 +1,19 @@
+--- docs/Makefile.in.bak	2014-09-05 12:17:30.648164095 +0200
++++ docs/Makefile.in	2014-09-05 12:17:30.689163669 +0200
+@@ -938,13 +938,13 @@
+ .PHONY : dist-hook-local docs
+ 
+ %.1: %.xml
+-	$(AM_V_GEN) $(XSLTPROC) $(XSLTPROC_MAN_FLAGS) http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
++	$(AM_V_GEN) $(XSLTPROC) $(XSLTPROC_MAN_FLAGS) %%LOCALBASE%%/share/xsl/docbook/manpages/docbook.xsl $<
+ 
+ dconf.1: dconf-tool.xml
+-	$(AM_V_GEN) $(XSLTPROC) $(XSLTPROC_MAN_FLAGS) http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
++	$(AM_V_GEN) $(XSLTPROC) $(XSLTPROC_MAN_FLAGS) %%LOCALBASE%%/share/xsl/docbook/manpages/docbook.xsl $<
+ 
+ dconf.7: dconf-overview.xml
+-	$(AM_V_GEN) $(XSLTPROC) $(XSLTPROC_MAN_FLAGS) http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
++	$(AM_V_GEN) $(XSLTPROC) $(XSLTPROC_MAN_FLAGS) %%LOCALBASE%%/share/xsl/docbook/manpages/docbook.xsl $<
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

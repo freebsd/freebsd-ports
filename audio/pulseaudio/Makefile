@@ -1,15 +1,13 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-stable/audio/pulseaudio/Makefile,v 1.7 2010/06/25 20:35:01 kwm Exp $
-
-# !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
-# PORTREVISION bumps to audio/gnome-media, sysutils/gnome-settings-daemon,
-# and audio/gstreamer-plugins-pulse.
+#   $MCom: ports/trunk/audio/pulseaudio/Makefile 20031 2014-11-02 21:47:55Z kwm $
 #
+# !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
+# PORTREVISION bumps of depending ports.
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.23
-PORTREVISION=	3
+PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -19,85 +17,61 @@ COMMENT=	Sound server for UNIX
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libspeexdsp.so:${PORTSDIR}/audio/speex \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		liborc-0.4.so:${PORTSDIR}/devel/orc \
+		libjson-c.so:${PORTSDIR}/devel/json-c \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 
 USE_GNOME=	glib20 intltool
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		execinfo gettext gmake libtool pathfix pkgconfig
+USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		OPENSSL_CFLAGS="-I/usr/include" \
 		OPENSSL_LIBS="-lcrypto -lssl" \
-		ac_cv_header_linux_input_h=
+		LIBS="-lm -lintl" \
+		ac_cv_header_linux_input_h=""
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lm -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-.if ${CC} == clang
-CFLAGS+=	-fheinous-gnu-extensions
-.endif
-
 CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-database=gdbm \
+		--with-database=simple \
 		--without-caps \
-		--disable-alsa \
 		--disable-udev \
-		--disable-gtk2 \
+		--disable-gtk3 \
+		--disable-systemd \
+		--disable-neon-opt \
 		--disable-lirc # untested
+
+#FIXME --with-database=auto|tdb|gdbm|simple
 
 USERS=		pulse
 GROUPS=		pulse pulse-access pulse-rt
 
-OPTIONS_DEFINE=	JACK AVAHI HAL GCONF
-OPTIONS_DEFAULT=	AVAHI HAL GCONF
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	JACK AVAHI GCONF ALSA SIMD
+OPTIONS_DEFAULT=AVAHI SIMD
+JACK_CONFIGURE_ENABLE=	jack
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+AVAHI_CONFIGURE_ENABLE=	avahi
+AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+GCONF_CONFIGURE_ENABLE=	gconf
+GCONF_USE=	GNOME=gconf2
+ALSA_CONFIGURE_ENABLE=	alsa
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+SIMD_CONFIGURE_ENABLE=	orc
+SIMD_LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 
 PULSE_VERSION=	${PORTVERSION}
 PLIST_SUB=	PULSE_VERSION=${PULSE_VERSION}
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-PLIST_SUB+=	JACK=""
-.else
-PLIST_SUB+=	JACK="@comment "
-CONFIGURE_ARGS+=--disable-jack
-.endif
-
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
-PLIST_SUB+=	AVAHI=""
-.else
-CONFIGURE_ARGS+=--disable-avahi
-PLIST_SUB+=	AVAHI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
-PLIST_SUB+=	HAL=""
-.else
-CONFIGURE_ARGS+=--disable-hal
-PLIST_SUB+=	HAL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	gconf2
-PLIST_SUB+=	GCONF=""
-.else
-CONFIGURE_ARGS+=--disable-gconf
-PLIST_SUB+=	GCONF="@comment "
-.endif
-
-.if ((${OSVERSION} >= 800000) && (${OSVERSION} < 802504)) || \
-	((${OSVERSION} >= 900000) && (${OSVERSION} < 900037))
-EXTRA_PATCHES+=	${FILESDIR}/extra-src_modules_oss_module-oss.c
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -109,7 +83,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pulse
 .for ii in default.pa daemon.conf client.conf system.pa
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
-		${STAGEDIR}${PREFIX}/etc/pulse/${ii}-dist
+		${STAGEDIR}${PREFIX}/etc/pulse/${ii}.sample
 .endfor
 
 .include <bsd.port.post.mk>

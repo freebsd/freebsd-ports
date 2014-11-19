@@ -1,30 +1,31 @@
-# Created by: FreeBSD GNOME Team
+# Created by: Joe Maloney jmaloney@pkgdemon.com>
 # $FreeBSD$
-#    $MCom: ports/deskutils/alacarte/Makefile,v 1.25 2010/03/29 13:19:00 avl Exp $
+#   $MCom: ports/trunk/deskutils/alacarte/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	alacarte
-PORTVERSION=	0.13.2
-PORTREVISION=	3
+PORTVERSION=	3.11.91
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
-MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Editor for the freedesktop.org menu specification
+MAINTAINER=	gnome@freebsd.org
+COMMENT=	Freedesktop compliant menu editor for GNOME
 
-USE_GNOME=	gnomehack gnomeprefix pygnomedesktop intlhack
-USES=		gettext gmake pkgconfig python tar:bzip2
+BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+
+USES=		gettext gmake pkgconfig python:3 tar:xz
+USE_GNOME=	gnomemenus3 gnomeprefix intlhack libxslt:build \
+		py3gobject3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|applications.menu|gnome-applications.menu|' \
+	@${REINPLACE_CMD} -e 's|from gi._glib import|from gi.repository.GLib import|g' \
+		${WRKSRC}/Alacarte/util.py
+	@${REINPLACE_CMD} -e "s|ron\['XDG_MENU_PREFIX'\]|ron.get('XDG_MENU_PREFIX', '')|g" \
 		${WRKSRC}/Alacarte/MenuEditor.py
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-	    ${WRKSRC}/Alacarte/util.py
-	@${REINPLACE_CMD} -e 's|python2.4|${PYTHON_VERSION}|g' \
-	    	${WRKSRC}/configure
 
 .include <bsd.port.mk>

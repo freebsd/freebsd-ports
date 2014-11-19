@@ -164,10 +164,9 @@ include/telepathy-1.0/telepathy-glib/verify.h
 include/telepathy-1.0/telepathy-glib/version.h
 lib/girepository-1.0/TelepathyGLib-0.12.typelib
 lib/libtelepathy-glib.a
-lib/libtelepathy-glib.la
 lib/libtelepathy-glib.so
 lib/libtelepathy-glib.so.0
-lib/libtelepathy-glib.so.0.78.2
+lib/libtelepathy-glib.so.0.84.1
 libdata/pkgconfig/telepathy-glib.pc
 share/gir-1.0/TelepathyGLib-0.12.gir
 share/gtk-doc/html/telepathy-glib/TpBaseCallChannel.html
@@ -274,7 +273,9 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-mail.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-manager.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-powersaving.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-presence.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-renaming.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-requests.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-sidecars.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-simple-presence.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-contact-search-result.html
@@ -354,9 +355,3 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp2
 share/gtk-doc/html/telepathy-glib/up.png
 share/vala/vapi/telepathy-glib.deps
 share/vala/vapi/telepathy-glib.vapi
-@dirrm share/gtk-doc/html/telepathy-glib
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/telepathy-1.0/telepathy-glib/_gen
-@dirrm include/telepathy-1.0/telepathy-glib
-@dirrmtry include/telepathy-1.0

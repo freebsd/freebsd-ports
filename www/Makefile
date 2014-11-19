@@ -171,10 +171,8 @@
     SUBDIR += entrans
     SUBDIR += ephemera
     SUBDIR += epiphany
-    SUBDIR += epiphany-extensions
     SUBDIR += erwn
     SUBDIR += eventum
-    SUBDIR += evolution-webcal
     SUBDIR += extjs
     SUBDIR += fancybox
     SUBDIR += faup
@@ -362,6 +360,7 @@
     SUBDIR += libhpack
     SUBDIR += libhtp-suricata
     SUBDIR += libmicrohttpd
+    SUBDIR += libsocialweb
     SUBDIR += libwww
     SUBDIR += libxul
     SUBDIR += lifetype

@@ -30,8 +30,3 @@ share/gtk-doc/html/loudmouth/loudmouth.devhelp2
 share/gtk-doc/html/loudmouth/right.png
 share/gtk-doc/html/loudmouth/style.css
 share/gtk-doc/html/loudmouth/up.png
-@dirrm share/gtk-doc/html/loudmouth
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/loudmouth-1.0/loudmouth
-@dirrm include/loudmouth-1.0

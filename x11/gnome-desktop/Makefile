@@ -1,34 +1,41 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-desktop/Makefile,v 1.190 2010/11/17 12:03:52 kwm Exp $
+#   $MCom: ports/trunk/x11/gnome-desktop/Makefile 19960 2014-10-15 14:24:24Z gusi $
 
 PORTNAME=	gnome-desktop
-PORTVERSION=	2.32.1
-PORTREVISION?=	5
+PORTVERSION=	3.14.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Additional UI API for GNOME 2
+COMMENT=	Additional UI API for GNOME 3
 
-USES=		tar:bzip2
+USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
+BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
+		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile \
+		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
+		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 
-USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig python:2
-USE_XORG=	xpm
-USE_GNOME=	gnomeprefix intlhack gnomedocutils gconf2 pygtk2 \
+USES+=		bison gettext gmake libtool pathfix pkgconfig python:3
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build \
 		referencehack
-INSTALLS_OMF=	yes
-INSTALL_TARGET=	install-strip
+USE_XORG=	x11 xrandr xext
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|xsltproc -o| xsltproc --nonet -o|g' \

@@ -12,6 +12,7 @@
     SUBDIR += abck
     SUBDIR += abgx360
     SUBDIR += abgx360gui
+    SUBDIR += accountsservice
     SUBDIR += acpi_call
     SUBDIR += acpica-tools
     SUBDIR += adtool
@@ -117,6 +118,8 @@
     SUBDIR += cfengine35
     SUBDIR += cfengine36
     SUBDIR += chgrep
+    SUBDIR += cinnamon-control-center
+    SUBDIR += cinnamon-settings-daemon
     SUBDIR += ciso
     SUBDIR += ciso-maker
     SUBDIR += ck4up
@@ -331,7 +334,6 @@
     SUBDIR += gnome-schedule
     SUBDIR += gnome-settings-daemon
     SUBDIR += gnome-system-monitor
-    SUBDIR += gnome-system-tools
     SUBDIR += gnome_subr
     SUBDIR += goaccess
     SUBDIR += gosa
@@ -941,9 +943,6 @@
     SUBDIR += torsmo
     SUBDIR += toshctl
     SUBDIR += tracker
-    SUBDIR += tracker-client
-    SUBDIR += tracker-gnome
-    SUBDIR += tracker-libtrackergtk
     SUBDIR += tree
     SUBDIR += tren
     SUBDIR += ts

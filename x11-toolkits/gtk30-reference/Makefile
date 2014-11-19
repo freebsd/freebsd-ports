@@ -1,9 +1,9 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	0
 
-BOOKS=		gdk gtk
+BOOKS=		gdk gtk libgail-util
 
 do-install:
 .for d in ${BOOKS}

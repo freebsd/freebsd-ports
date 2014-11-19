@@ -95,9 +95,7 @@ include/giggle/libgiggle-git/giggle-git-config-write.h
 include/giggle/libgiggle-git/giggle-git-config-read.h
 include/giggle/libgiggle/giggle-enums.h
 lib/giggle/plugins/%%GIGGLE_VER%%/libpersonal-details.so
-%%VTE%%lib/giggle/plugins/%%GIGGLE_VER%%/libterminal-view.so
 lib/giggle/plugins/%%GIGGLE_VER%%/personal-details.xml
-%%VTE%%lib/giggle/plugins/%%GIGGLE_VER%%/terminal-view.xml
 lib/libgiggle-git.so
 lib/libgiggle-git.so.0
 lib/libgiggle-git.so.0.0.0

@@ -9,23 +9,9 @@ bin/gtkdoc-mktmpl
 bin/gtkdoc-rebase
 bin/gtkdoc-scan
 bin/gtkdoc-scangobj
-bin/gtkdoc-scanobj
 bin/gtkdocize
 libdata/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
-share/gnome/help/gtk-doc-manual/C/fdl-appendix.xml
-share/gnome/help/gtk-doc-manual/C/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/bn_IN/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/de/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/el/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/en_GB/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/es/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/fr/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/gu/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/sl/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/sv/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/ta/gtk-doc-manual.xml
-share/gnome/help/gtk-doc-manual/te/gtk-doc-manual.xml
 %%DATADIR%%/data/devhelp2.xsl
 %%DATADIR%%/data/gtk-doc.dcl
 %%DATADIR%%/data/gtk-doc.dsl
@@ -36,40 +22,42 @@ share/gnome/help/gtk-doc-manual/te/gtk-doc-manual.xml
 %%DATADIR%%/data/gtk-doc.xsl
 %%DATADIR%%/data/gtkdoc-common.pl
 %%DATADIR%%/data/home.png
+%%DATADIR%%/data/left-insensitive.png
 %%DATADIR%%/data/left.png
+%%DATADIR%%/data/right-insensitive.png
 %%DATADIR%%/data/right.png
 %%DATADIR%%/data/style.css
+%%DATADIR%%/data/up-insensitive.png
 %%DATADIR%%/data/up.png
 %%DATADIR%%/data/version-greater-or-equal.xsl
-share/omf/gtk-doc-manual/gtk-doc-manual-C.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-bn_IN.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-de.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-el.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-en_GB.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-es.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-fr.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-gu.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-sl.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-sv.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-ta.omf
-share/omf/gtk-doc-manual/gtk-doc-manual-te.omf
+share/help/C/gtk-doc-manual/fdl-appendix.xml
+share/help/C/gtk-doc-manual/index.docbook
+share/help/bn_IN/gtk-doc-manual/fdl-appendix.xml
+share/help/bn_IN/gtk-doc-manual/index.docbook
+share/help/de/gtk-doc-manual/fdl-appendix.xml
+share/help/de/gtk-doc-manual/index.docbook
+share/help/el/gtk-doc-manual/fdl-appendix.xml
+share/help/el/gtk-doc-manual/index.docbook
+share/help/en_GB/gtk-doc-manual/fdl-appendix.xml
+share/help/en_GB/gtk-doc-manual/index.docbook
+share/help/es/gtk-doc-manual/fdl-appendix.xml
+share/help/es/gtk-doc-manual/index.docbook
+share/help/fr/gtk-doc-manual/fdl-appendix.xml
+share/help/fr/gtk-doc-manual/index.docbook
+share/help/gu/gtk-doc-manual/fdl-appendix.xml
+share/help/gu/gtk-doc-manual/index.docbook
+share/help/pt_BR/gtk-doc-manual/fdl-appendix.xml
+share/help/pt_BR/gtk-doc-manual/index.docbook
+share/help/sl/gtk-doc-manual/fdl-appendix.xml
+share/help/sl/gtk-doc-manual/index.docbook
+share/help/sv/gtk-doc-manual/fdl-appendix.xml
+share/help/sv/gtk-doc-manual/index.docbook
+share/help/ta/gtk-doc-manual/fdl-appendix.xml
+share/help/ta/gtk-doc-manual/index.docbook
+share/help/te/gtk-doc-manual/fdl-appendix.xml
+share/help/te/gtk-doc-manual/index.docbook
+share/help/zh_CN/gtk-doc-manual/fdl-appendix.xml
+share/help/zh_CN/gtk-doc-manual/index.docbook
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 share/sgml/gtk-doc/gtk-doc.cat
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%CATALOG_DIR%%/gtk-doc.cat
-@dirrm share/sgml/gtk-doc
-@dirrm share/omf/gtk-doc-manual
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/gtk-doc-manual/te
-@dirrm share/gnome/help/gtk-doc-manual/ta
-@dirrm share/gnome/help/gtk-doc-manual/sv
-@dirrm share/gnome/help/gtk-doc-manual/sl
-@dirrm share/gnome/help/gtk-doc-manual/gu
-@dirrm share/gnome/help/gtk-doc-manual/fr
-@dirrm share/gnome/help/gtk-doc-manual/es
-@dirrm share/gnome/help/gtk-doc-manual/en_GB
-@dirrm share/gnome/help/gtk-doc-manual/el
-@dirrm share/gnome/help/gtk-doc-manual/de
-@dirrm share/gnome/help/gtk-doc-manual/bn_IN
-@dirrm share/gnome/help/gtk-doc-manual/C
-@dirrm share/gnome/help/gtk-doc-manual

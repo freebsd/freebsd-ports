@@ -60,6 +60,8 @@
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
+    SUBDIR += appdata-tools
+    SUBDIR += appstream-glib
     SUBDIR += apr1
     SUBDIR += apr2
     SUBDIR += arcanist
@@ -147,7 +149,6 @@
     SUBDIR += bsdcflow
     SUBDIR += bsdowl
     SUBDIR += bufferpool
-    SUBDIR += bug-buddy
     SUBDIR += bugzilla44
     SUBDIR += build
     SUBDIR += buildbot
@@ -552,6 +553,7 @@
     SUBDIR += gitolite2
     SUBDIR += gitphp
     SUBDIR += gittrac
+    SUBDIR += glade
     SUBDIR += glade2
     SUBDIR += glade3
     SUBDIR += glademm
@@ -574,7 +576,6 @@
     SUBDIR += gnome-vfs-monikers
     SUBDIR += gnome-vfs-reference
     SUBDIR += gnome-vfsmm
-    SUBDIR += gnome2-hacker-tools
     SUBDIR += gnucflow
     SUBDIR += gnulib
     SUBDIR += gnulibiberty
@@ -1034,6 +1035,7 @@
     SUBDIR += libgetline
     SUBDIR += libghthash
     SUBDIR += libgit2
+    SUBDIR += libgit2-glib
     SUBDIR += libglade2
     SUBDIR += libglade2-reference
     SUBDIR += libglademm24

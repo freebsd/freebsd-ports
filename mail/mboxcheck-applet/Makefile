@@ -24,6 +24,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mboxcheck.py ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/configmbox.py ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/mboxcheck.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/libdata/bonobo/servers
 	${INSTALL_DATA} ${WRKSRC}/GNOME_MboxCheck.server \
 		${STAGEDIR}${PREFIX}/libdata/bonobo/servers
 

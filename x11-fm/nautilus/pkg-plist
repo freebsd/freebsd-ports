@@ -1,7 +1,7 @@
 bin/nautilus
 bin/nautilus-autorun-software
 bin/nautilus-connect-server
-bin/nautilus-file-management-properties
+etc/xdg/autostart/nautilus-autostart.desktop
 include/nautilus/libnautilus-extension/nautilus-column-provider.h
 include/nautilus/libnautilus-extension/nautilus-column.h
 include/nautilus/libnautilus-extension/nautilus-extension-types.h
@@ -13,54 +13,50 @@ include/nautilus/libnautilus-extension/nautilus-menu-provider.h
 include/nautilus/libnautilus-extension/nautilus-menu.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page.h
-lib/girepository-1.0/Nautilus-2.0.typelib
-lib/libnautilus-extension.a
-lib/libnautilus-extension.la
+lib/girepository-1.0/Nautilus-3.0.typelib
 lib/libnautilus-extension.so
 lib/libnautilus-extension.so.1
-lib/libnautilus-extension.so.1.2.0
+lib/libnautilus-extension.so.1.4.0
+lib/nautilus/extensions-3.0/libnautilus-sendto.so
 libexec/nautilus-convert-metadata
 libdata/pkgconfig/libnautilus-extension.pc
 man/man1/nautilus-connect-server.1.gz
-man/man1/nautilus-file-management-properties.1.gz
 man/man1/nautilus.1.gz
+share/GConf/gsettings/nautilus.convert
+share/appdata/org.gnome.Nautilus.appdata.xml
 share/applications/nautilus-autorun-software.desktop
-share/applications/nautilus-browser.desktop
-share/applications/nautilus-computer.desktop
-share/applications/nautilus-file-management-properties.desktop
-share/applications/nautilus-folder-handler.desktop
-share/applications/nautilus-home.desktop
-share/applications/nautilus.desktop
-share/applications/network-scheme.desktop
+share/applications/nautilus-classic.desktop
+share/applications/nautilus-connect-server.desktop
+share/applications/org.gnome.Nautilus.desktop
+share/dbus-1/services/org.freedesktop.FileManager1.service
+share/dbus-1/services/org.gnome.Nautilus.service
 share/doc/libnautilus-extension/ch01.html
 share/doc/libnautilus-extension/home.png
 share/doc/libnautilus-extension/index.html
 share/doc/libnautilus-extension/index.sgml
 share/doc/libnautilus-extension/ix01.html
+share/doc/libnautilus-extension/left-insensitive.png
 share/doc/libnautilus-extension/left.png
-share/doc/libnautilus-extension/libnautilus-extension.devhelp
 share/doc/libnautilus-extension/libnautilus-extension.devhelp2
-share/doc/libnautilus-extension/libnautilus-extension-nautilus-column.html
 share/doc/libnautilus-extension/libnautilus-extension-nautilus-column-provider.html
+share/doc/libnautilus-extension/libnautilus-extension-nautilus-column.html
 share/doc/libnautilus-extension/libnautilus-extension-nautilus-extension-types.html
 share/doc/libnautilus-extension/libnautilus-extension-nautilus-file-info.html
 share/doc/libnautilus-extension/libnautilus-extension-nautilus-info-provider.html
 share/doc/libnautilus-extension/libnautilus-extension-nautilus-location-widget-provider.html
-share/doc/libnautilus-extension/libnautilus-extension-nautilus-menu.html
 share/doc/libnautilus-extension/libnautilus-extension-nautilus-menu-provider.html
+share/doc/libnautilus-extension/libnautilus-extension-nautilus-menu.html
 share/doc/libnautilus-extension/libnautilus-extension-nautilus-property-page.html
 share/doc/libnautilus-extension/libnautilus-extension-nautilus-property-page-provider.html
 share/doc/libnautilus-extension/pt01.html
+share/doc/libnautilus-extension/right-insensitive.png
 share/doc/libnautilus-extension/right.png
 share/doc/libnautilus-extension/style.css
+share/doc/libnautilus-extension/up-insensitive.png
 share/doc/libnautilus-extension/up.png
-share/gir-1.0/Nautilus-2.0.gir
-share/icons/hicolor/16x16/apps/nautilus.png
-share/icons/hicolor/22x22/apps/nautilus.png
-share/icons/hicolor/24x24/apps/nautilus.png
-share/icons/hicolor/32x32/apps/nautilus.png
-share/icons/hicolor/scalable/apps/nautilus.svg
+share/gir-1.0/Nautilus-3.0.gir
 share/locale/af/LC_MESSAGES/nautilus.mo
+share/locale/an/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
 share/locale/ar/LC_MESSAGES/nautilus.mo
 share/locale/as/LC_MESSAGES/nautilus.mo
@@ -71,6 +67,7 @@ share/locale/be@latin/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
 share/locale/bn/LC_MESSAGES/nautilus.mo
 share/locale/bn_IN/LC_MESSAGES/nautilus.mo
+share/locale/bo/LC_MESSAGES/nautilus.mo
 share/locale/br/LC_MESSAGES/nautilus.mo
 share/locale/bs/LC_MESSAGES/nautilus.mo
 share/locale/ca/LC_MESSAGES/nautilus.mo
@@ -92,9 +89,10 @@ share/locale/eu/LC_MESSAGES/nautilus.mo
 share/locale/fa/LC_MESSAGES/nautilus.mo
 share/locale/fi/LC_MESSAGES/nautilus.mo
 share/locale/fr/LC_MESSAGES/nautilus.mo
-share/locale/fy/LC_MESSAGES/nautilus.mo
 share/locale/fur/LC_MESSAGES/nautilus.mo
+share/locale/fy/LC_MESSAGES/nautilus.mo
 share/locale/ga/LC_MESSAGES/nautilus.mo
+share/locale/gd/LC_MESSAGES/nautilus.mo
 share/locale/gl/LC_MESSAGES/nautilus.mo
 share/locale/gu/LC_MESSAGES/nautilus.mo
 share/locale/gv/LC_MESSAGES/nautilus.mo
@@ -116,6 +114,7 @@ share/locale/km/LC_MESSAGES/nautilus.mo
 share/locale/kn/LC_MESSAGES/nautilus.mo
 share/locale/ko/LC_MESSAGES/nautilus.mo
 share/locale/ku/LC_MESSAGES/nautilus.mo
+share/locale/ky/LC_MESSAGES/nautilus.mo
 share/locale/li/LC_MESSAGES/nautilus.mo
 share/locale/lt/LC_MESSAGES/nautilus.mo
 share/locale/lv/LC_MESSAGES/nautilus.mo
@@ -127,6 +126,7 @@ share/locale/ml/LC_MESSAGES/nautilus.mo
 share/locale/mn/LC_MESSAGES/nautilus.mo
 share/locale/mr/LC_MESSAGES/nautilus.mo
 share/locale/ms/LC_MESSAGES/nautilus.mo
+share/locale/my/LC_MESSAGES/nautilus.mo
 share/locale/nb/LC_MESSAGES/nautilus.mo
 share/locale/nds/LC_MESSAGES/nautilus.mo
 share/locale/ne/LC_MESSAGES/nautilus.mo
@@ -153,6 +153,7 @@ share/locale/sr@ije/LC_MESSAGES/nautilus.mo
 share/locale/sv/LC_MESSAGES/nautilus.mo
 share/locale/ta/LC_MESSAGES/nautilus.mo
 share/locale/te/LC_MESSAGES/nautilus.mo
+share/locale/tg/LC_MESSAGES/nautilus.mo
 share/locale/th/LC_MESSAGES/nautilus.mo
 share/locale/tk/LC_MESSAGES/nautilus.mo
 share/locale/tr/LC_MESSAGES/nautilus.mo
@@ -169,151 +170,6 @@ share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_HK/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
+share/gnome-shell/search-providers/nautilus-search-provider.ini
+share/mime/application/x-gnome-saved-search.xml
 share/mime/packages/nautilus.xml
-%%DATADIR%%/browser.xml
-%%DATADIR%%/icons/hicolor/16x16/emblems/emblem-note.png
-%%DATADIR%%/icons/hicolor/24x24/emblems/emblem-note.png
-%%DATADIR%%/icons/hicolor/48x48/emblems/emblem-note.png
-%%DATADIR%%/nautilus-extras.placeholder
-%%DATADIR%%/nautilus-suggested.placeholder
-%%DATADIR%%/patterns/blue_gray_rough.png
-%%DATADIR%%/patterns/blue_ridge.png
-%%DATADIR%%/patterns/blue_type.png
-%%DATADIR%%/patterns/brushed_metal.png
-%%DATADIR%%/patterns/burlap.jpg
-%%DATADIR%%/patterns/camouflage.png
-%%DATADIR%%/patterns/chalk.jpg
-%%DATADIR%%/patterns/cork.png
-%%DATADIR%%/patterns/countertop.png
-%%DATADIR%%/patterns/dark-gnome.jpg
-%%DATADIR%%/patterns/dots.png
-%%DATADIR%%/patterns/fibers.png
-%%DATADIR%%/patterns/fleur_de_lis.png
-%%DATADIR%%/patterns/floral.png
-%%DATADIR%%/patterns/fossil.png
-%%DATADIR%%/patterns/gnome.jpg
-%%DATADIR%%/patterns/green_weave.png
-%%DATADIR%%/patterns/ice.png
-%%DATADIR%%/patterns/manila_paper.png
-%%DATADIR%%/patterns/moss_ridge.png
-%%DATADIR%%/patterns/numbers.png
-%%DATADIR%%/patterns/ocean_stripes.png
-%%DATADIR%%/patterns/purple_marble.png
-%%DATADIR%%/patterns/reset.png
-%%DATADIR%%/patterns/ridged_paper.png
-%%DATADIR%%/patterns/rough_paper.png
-%%DATADIR%%/patterns/sky_ridge.png
-%%DATADIR%%/patterns/snow_ridge.png
-%%DATADIR%%/patterns/stucco.jpg
-%%DATADIR%%/patterns/terracotta.png
-%%DATADIR%%/patterns/wavy_white.png
-%%DATADIR%%/ui/nautilus-bookmarks-window.ui
-%%DATADIR%%/ui/nautilus-file-management-properties.ui
-%%DATADIR%%/ui/nautilus-desktop-icon-view-ui.xml
-%%DATADIR%%/ui/nautilus-directory-view-ui.xml
-%%DATADIR%%/ui/nautilus-icon-view-ui.xml
-%%DATADIR%%/ui/nautilus-list-view-ui.xml
-%%DATADIR%%/ui/nautilus-navigation-window-ui.xml
-%%DATADIR%%/ui/nautilus-shell-ui.xml
-%%DATADIR%%/ui/nautilus-spatial-window-ui.xml
-share/pixmaps/nautilus/audio.svg
-share/pixmaps/nautilus/backgrounds.png
-share/pixmaps/nautilus/chit_frame.png
-share/pixmaps/nautilus/colors.png
-share/pixmaps/nautilus/emblems.png
-share/pixmaps/nautilus/erase.png
-share/pixmaps/nautilus/knob.png
-share/pixmaps/nautilus/thumbnail_frame.png
-@dirrm share/pixmaps/nautilus
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/patterns
-@dirrmtry %%DATADIR%%/icons/hicolor/48x48/emblems
-@dirrmtry %%DATADIR%%/icons/hicolor/48x48
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24/emblems
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16/emblems
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16
-@dirrmtry %%DATADIR%%/icons/hicolor
-@dirrmtry %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrmtry lib/nautilus/extensions-2.0
-@dirrmtry lib/nautilus
-@dirrm include/nautilus/libnautilus-extension
-@dirrm include/nautilus
-@dirrm share/doc/libnautilus-extension
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yo/LC_MESSAGES
-@dirrmtry share/locale/yo
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr@ije/LC_MESSAGES
-@dirrmtry share/locale/sr@ije
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mi/LC_MESSAGES
-@dirrmtry share/locale/mi
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/io/LC_MESSAGES
-@dirrmtry share/locale/io
-@dirrmtry share/locale/ig/LC_MESSAGES
-@dirrmtry share/locale/ig
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/ha/LC_MESSAGES
-@dirrmtry share/locale/ha
-@dirrmtry share/locale/gv/LC_MESSAGES
-@dirrmtry share/locale/gv
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

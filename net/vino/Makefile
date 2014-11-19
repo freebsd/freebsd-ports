@@ -1,37 +1,39 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $MCom: ports/net/vino/Makefile,v 1.81 2010/09/27 13:51:24 kwm Exp $
+#   $MCom: ports/trunk/net/vino/Makefile 19968 2014-10-16 07:29:56Z gusi $
 
 PORTNAME=	vino
-PORTVERSION=	2.32.2
-PORTREVISION=	7
+PORTVERSION=	3.14.0
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC server that allows for remote access to your GNOME desktop
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libavahi-glib.so:${PORTSDIR}/net/avahi-app
 
-USES=		gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel
-USE_XORG=	xtst
-GNOME_DESKTOP_VERSION=2
+USES=		gettext gmake pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack
+USE_XORG=	xdamage xfixes xtst
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--without-network-manager \
+		--disable-http-server
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+GLIB_SCHEMAS=	org.gnome.Vino.enums.xml org.gnome.Vino.gschema.xml
 
-GCONF_SCHEMAS=	vino-server.schemas
-
-.if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=--enable-libnotify=yes
-.else
-CONFIGURE_ARGS+=--enable-libnotify=no
-.endif
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	NOTIFY
+OPTIONS_DEFAULT=NOTIFY
+NOTIFY_LIBS_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_CONFIGURE_WITH=	libnotify	
 
 .include <bsd.port.mk>

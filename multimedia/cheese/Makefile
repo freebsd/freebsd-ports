@@ -1,36 +1,40 @@
-# Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
+# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/multimedia/cheese/Makefile,v 1.63 2010/09/28 08:21:02 kwm Exp $
+#   $MCom: ports/trunk/multimedia/cheese/Makefile 20000 2014-10-20 11:21:21Z gusi $
 
 PORTNAME=	cheese
-PORTVERSION=	2.32.0
-PORTREVISION=	5
+PORTVERSION=	3.14.1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Photobooth-inspired app for taking pictures and videos from webcam
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
-		libhal.so:${PORTSDIR}/sysutils/hal
+BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat \
+		gnome-video-effects>=0:${PORTSDIR}/graphics/gnome-video-effects \
+		vala>=0.14.0:${PORTSDIR}/lang/vala \
+		itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
+		libhal.so:${PORTSDIR}/sysutils/hal \
+		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
+		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst
+RUN_DEPENDS=	gnome-video-effects>=0:${PORTSDIR}/graphics/gnome-video-effects
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
-USE_XORG=	xxf86vm
-USE_GNOME=	gnomeprefix intlhack evolutiondataserver librsvg2 \
-		gnomedocutils gnomedesktop
-USE_GSTREAMER=	gconf good ogg theora v4l2 vorbis
-INSTALLS_OMF=	yes
-INSTALL_TARGET=	install-strip
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 librsvg2 \
+		gnomedesktop3 libxml2:build introspection:build
+USE_XORG=	xxf86vm x11
+USE_GSTREAMER1=	bad good jpeg ogg theora v4l2 vpx
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README
-GCONF_SCHEMAS=	cheese.schemas
+GLIB_SCHEMAS=	org.gnome.Cheese.gschema.xml
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
