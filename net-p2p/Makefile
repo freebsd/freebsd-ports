@@ -35,7 +35,6 @@
     SUBDIR += gnunet
     SUBDIR += gnunet-gtk
     SUBDIR += gtk-gnutella
-    SUBDIR += gtkhx
     SUBDIR += gtorrentviewer
     SUBDIR += jigdo
     SUBDIR += ktorrent
