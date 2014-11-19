@@ -1,7 +1,5 @@
-Index: twext/trunk/twext/python/log.py
-===================================================================
---- twext/python/log.py.orig	2013-09-17 23:08:55.000000000 +0000
-+++ twext/python/log.py	2014-01-22 09:29:56.000000000 +0000
+--- twext/python/log.py.orig	2013-09-17 23:08:55 UTC
++++ twext/python/log.py
 @@ -932,24 +932,29 @@
          # Don't patch this module
          if moduleName is __name__:
