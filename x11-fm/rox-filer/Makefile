@@ -10,8 +10,6 @@ DISTNAME=	rox-filer-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Simple and easy to use graphical file manager
 
-RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
-
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
 USE_XORG=	x11 sm xaw xproto
