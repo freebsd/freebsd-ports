@@ -54,6 +54,9 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.0rc.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.10.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.6.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.7.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.12.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.3.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.4.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.5.0.sql
@@ -62,21 +65,22 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.9.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.3.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.6.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.7.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_icinga_objects_oracle.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_oracle_sys.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_icinga_objects_oracle.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/icinga_defines.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/oracle-delete.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/oracle-drop.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/oracle-truncate.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/oracle.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.3.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.0.1.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.0.2-fix-object-relations.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.0.3.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.10.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.3.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.6.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.7.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.12.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.3.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.4.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.5.0.sql
@@ -84,8 +88,6 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.7.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.9.0.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.6.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.7.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_alter_icinga13_numbers.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_alter_icinga13_objects.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_recreate_icinga13_functions.sql
@@ -96,6 +98,9 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.10.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.3.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.6.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.7.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.12.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.3.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.4.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.5.0.sql
@@ -103,8 +108,6 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.7.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.9.0.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.6.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.7.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/comment_history.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/comments.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/contact_notification_methods.sql
@@ -242,6 +245,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/de/monitoring-windows.html
 %%ICINGAWWWDIR%%/docs/de/mrtggraphs.html
 %%ICINGAWWWDIR%%/docs/de/networkreachability.html
+%%ICINGAWWWDIR%%/docs/de/newbie.html
 %%ICINGAWWWDIR%%/docs/de/notifications.html
 %%ICINGAWWWDIR%%/docs/de/notifications2.html
 %%ICINGAWWWDIR%%/docs/de/nrpe.html
@@ -376,6 +380,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/en/monitoring-windows.html
 %%ICINGAWWWDIR%%/docs/en/mrtggraphs.html
 %%ICINGAWWWDIR%%/docs/en/networkreachability.html
+%%ICINGAWWWDIR%%/docs/en/newbie.html
 %%ICINGAWWWDIR%%/docs/en/notifications.html
 %%ICINGAWWWDIR%%/docs/en/notifications2.html
 %%ICINGAWWWDIR%%/docs/en/nrpe.html
@@ -677,6 +682,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/images/Icinga_TAC_Header_Webinterface.jpg
 %%ICINGAWWWDIR%%/images/ack.gif
 %%ICINGAWWWDIR%%/images/action.gif
+%%ICINGAWWWDIR%%/images/activeonly.gif
 %%ICINGAWWWDIR%%/images/application-monitor.png
 %%ICINGAWWWDIR%%/images/cmd_shadow.gif
 %%ICINGAWWWDIR%%/images/cmd_stop.png
@@ -694,6 +700,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/images/downtime.gif
 %%ICINGAWWWDIR%%/images/empty.gif
 %%ICINGAWWWDIR%%/images/enabled.gif
+%%ICINGAWWWDIR%%/images/eventhandlingdisabled.gif
 %%ICINGAWWWDIR%%/images/export_csv.png
 %%ICINGAWWWDIR%%/images/export_json.png
 %%ICINGAWWWDIR%%/images/export_link.png
@@ -2378,3 +2385,6 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/stylesheets/tac.css
 %%ICINGAWWWDIR%%/stylesheets/tacheader.css
 %%ICINGAWWWDIR%%/stylesheets/trends.css
+@dir %%ETCDIR%%/conf.d
+@dir %%ICINGAWWWDIR%%/media
+@dir %%ICINGAWWWDIR%%/ssi
