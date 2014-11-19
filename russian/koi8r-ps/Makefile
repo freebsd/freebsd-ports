@@ -3,16 +3,16 @@
 
 PORTNAME=	koi8rPS
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	russian print
 MASTER_SITES=	ftp://ftp.redcom.ru/pub/X/psfonts/ \
 		ftp://ftp.kapella.gpi.ru/pub/cyrillic/psfonts/
 DISTFILES=	gs-type1_koi8_fonts.tgz gs-type1_koi8_afm.tgz \
 		XFree86-Type1_fonts.dir.scale.gz
+EXTRACT_ONLY=
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Add Russian (KOI8) fonts to your PostScript fonts collection
-
-EXTRACT_ONLY=
 
 DIST_SUBDIR=	koi8r-ps
 
@@ -25,7 +25,7 @@ FONTMAP!=	${SH} ${FILESDIR}/find-fontmap.sh 2>/dev/null || ${ECHO_CMD}
 NO_PACKAGE=	Nothing to build, configurations only
 NO_WRKSUBDIR=	Yes
 
-CPS_DIR=	${STAGEDIR}${PREFIX}/share/koi8r-ps
+CPS_DIR=	${PREFIX}/share/koi8r-ps
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -43,10 +43,10 @@ do-configure:
 		< ${FILESDIR}/Fontmap.diff > ${WRKSRC}/Fontmap.diff
 
 do-install:
-	${MKDIR} ${CPS_DIR}
-	${TAR} -C ${CPS_DIR} -xzpf \
+	${MKDIR} ${STAGEDIR}${CPS_DIR}
+	${TAR} -C ${STAGEDIR}${CPS_DIR} -xzpf \
 		${DISTDIR}/${DIST_SUBDIR}/gs-type1_koi8_fonts.tgz
-	${TAR} -C ${CPS_DIR} -xzpf \
+	${TAR} -C ${STAGEDIR}${CPS_DIR} -xzpf \
 		${DISTDIR}/${DIST_SUBDIR}/gs-type1_koi8_afm.tgz
 .if !exists(${FONTMAP})
 	#################################################################
@@ -57,7 +57,6 @@ do-install:
 	###	${PREFIX}/share/ghostscript/5.50/Fontmap
 	### for GhostScript to use cyrillic fonts.
 	#################################################################
-	@test -t 0 && test -t 1 && ${ECHO} -n "Press enter" && read junk || ${TRUE}
 .else
 	@if ${GREP} -q ArialCyrMT-BoldItalic "${FONTMAP}" ; then \
 		${ECHO} Apparently, Fontmap already lists this fonts. Ok. \
@@ -69,10 +68,10 @@ do-install:
 			${RM} -f "${FONTMAP}".CyrPS ; \
 	fi
 .endif
-	${ECHO_CMD} ${FONTMAP} > ${CPS_DIR}/fontmap.path
-	${INSTALL_DATA} ${WRKSRC}/Fontmap.diff ${CPS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${CPS_DIR}
-	${LN} -s fonts.dir ${CPS_DIR}/fonts.scale
+	${ECHO_CMD} ${FONTMAP} > ${STAGEDIR}${CPS_DIR}/fontmap.path
+	${INSTALL_DATA} ${WRKSRC}/Fontmap.diff ${STAGEDIR}${CPS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${STAGEDIR}${CPS_DIR}
+	${LN} -s fonts.dir ${STAGEDIR}${CPS_DIR}/fonts.scale
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
