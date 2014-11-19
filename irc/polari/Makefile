@@ -4,7 +4,7 @@
 
 PORTNAME=	polari
 PORTVERSION=	3.14.1
-CATEGORIES=	deskutils gnome
+CATEGORIES=	irc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 

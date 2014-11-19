@@ -5,7 +5,7 @@
 PORTNAME=	nemo-extensions
 PORTVERSION=	2.2.0
 PORTREVISION=	2
-CATEGORIES=	x11-fm gnome
+CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gustau.perez@gmail.com
