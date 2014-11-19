@@ -4,18 +4,16 @@ bin/checkalias
 bin/elmalias
 bin/fastmail
 bin/frm
-@exec ln -f %D/%F %D/bin/nfrm
-@unexec rm -f %D/bin/nfrm
 bin/listalias
 bin/messages
 bin/newalias
 bin/newmail
-@exec ln -f %D/%F %D/bin/wnewmail
-@unexec rm -f %D/bin/wnewmail
+bin/nfrm
 bin/printmail
 bin/readmsg
 bin/prlong
 bin/mmencode
+bin/wnewmail
 lib/elmrc-info
 lib/help-main
 lib/help-options

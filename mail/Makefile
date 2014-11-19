@@ -105,6 +105,7 @@
     SUBDIR += dsbl-testers
     SUBDIR += dspam
     SUBDIR += ecartis
+    SUBDIR += elm
     SUBDIR += elmo
     SUBDIR += elmo-devel
     SUBDIR += emil
