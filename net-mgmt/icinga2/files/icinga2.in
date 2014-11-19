@@ -52,7 +52,7 @@ configtest_cmd="${checkconfig_cmd}"
 sig_reload=HUP
 
 required_files="${icinga2_configfile}"
-command_args="-d -e ${icinga2_errorlogfile} -u ${icinga2_user} -g ${icinga2_group} -c ${icinga2_configfile}"
+command_args="daemon -d -e ${icinga2_errorlogfile} -c ${icinga2_configfile}"
 
 icinga2_checkconfig() {
   echo -n "Performing sanity check of icinga2 configuration: "
@@ -61,7 +61,7 @@ icinga2_checkconfig() {
     quietredir="2>&1 >/dev/null"
   fi
 
-  ${command} -c ${icinga2_configfile} -C -u ${icinga2_user} -g ${icinga2_group}
+  ${command} daemon -c ${icinga2_configfile} -C
 
   if [ $? -ne 0 ]; then
     echo "FAILED"

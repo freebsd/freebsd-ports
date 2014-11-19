@@ -1,9 +1,0 @@
---- components/db_ido_mysql/CMakeLists.txt.orig	2014-06-16 23:31:26.000000000 +0000
-+++ components/db_ido_mysql/CMakeLists.txt	2014-06-16 23:31:37.000000000 +0000
-@@ -38,4 +38,6 @@
-       RUNTIME DESTINATION ${CMAKE_INSTALL_SBINDIR}
-       LIBRARY DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/icinga2
-     )
-+else()
-+    message( FATAL_ERROR "You have selected MySQL support, but MySQL could not be found." )
- endif()

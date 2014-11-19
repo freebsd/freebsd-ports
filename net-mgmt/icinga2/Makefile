@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icinga2
-DISTVERSION=	2.1.1
-PORTREVISION=	3
+DISTVERSION=	2.2.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://github.com/Icinga/${PORTNAME}/archive/v${DISTVERSION}.tar.gz?dummy=/
 
@@ -11,29 +10,29 @@ COMMENT=	Monitoring and management system for hosts, services and networks
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX}
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libyajl.so:${PORTSDIR}/devel/yajl \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo # for better debugging
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USES=		alias bison cmake python
+USES=		alias bison cmake
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_DEFINE=		DOCS
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	MYSQL PGSQL
 OPTIONS_RADIO=		PLUGINS
 OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
 
-OPTIONS_DEFAULT=	MYSQL PGSQL MONPLUGINS EXAMPLES
+OPTIONS_DEFAULT=	MYSQL PGSQL MONPLUGINS
 
 MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-MYSQL_CMAKE_ON=	-DWITH_MYSQL:BOOL=true
-PGSQL_CMAKE_ON=	-DWITH_PGSQL:BOOL=true
+MYSQL_CMAKE_ON=	-DICINGA2_WITH_MYSQL:BOOL=true
+PGSQL_CMAKE_ON=	-DICINGA2_WITH_PGSQL:BOOL=true
 
 ICINGA2USER?=	icinga
 ICINGA2GROUP?=	icinga
@@ -58,7 +57,7 @@ SUB_LIST=	ICINGA2LOGDIR=${ICINGA2LOGDIR} \
 		WWWGRP=${WWWGRP}
 
 # Config files with references to "Linux"
-LINUX_CONFIG=	groups.conf services.conf hosts/localhost.conf
+LINUX_CONFIG=	groups.conf services.conf hosts.conf
 
 MYSQL_USE=	mysql=yes
 PGSQL_USES=	pgsql
@@ -73,24 +72,13 @@ CXXFLAGS+=	-I${LOCALBASE}/include/flex
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/^add_subdirectory(initsystem)/d' \
-	                 -e '/logrotate\.d/d' ${WRKSRC}/etc/CMakeLists.txt
 .for f in ${LINUX_CONFIG}
 	${REINPLACE_CMD} 's,[Ll]inux,FreeBSD,g' ${WRKSRC}/etc/icinga2/conf.d/${f}
 .endfor
-.if !${PORT_OPTIONS:MMYSQL}
-	${REINPLACE_CMD} '/^add_subdirectory(db_ido_mysql)/d' ${WRKSRC}/components/CMakeLists.txt
-.endif
-.if !${PORT_OPTIONS:MMYSQL}
-	${REINPLACE_CMD} '/^add_subdirectory(db_ido_pgsql)/d' ${WRKSRC}/components/CMakeLists.txt
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-.for db in mysql pgsql
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${db}
-	(cd ${WRKSRC}/components/db_ido_${db} && ${COPYTREE_SHARE} schema ${STAGEDIR}${EXAMPLESDIR}/${db})
-.endfor
-.endif
+pre-install:
+	${FIND} ${WRKSRC}/etc -type f -name "*.conf" -exec ${MV} {} {}.sample \;
+	${FIND} ${WRKSRC}/etc/icinga2/scripts -type f -name "*.sh" \
+		-exec ${MV} {} {}.sample \;
 
 .include <bsd.port.mk>
