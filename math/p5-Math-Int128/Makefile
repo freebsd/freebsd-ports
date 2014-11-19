@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-Int128
-PORTVERSION=	0.13
-PORTREVISION=	2
+PORTVERSION=	0.15
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,5 +28,8 @@ CC=	/usr/bin/clang
 .else
 USE_GCC=	yes
 .endif
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Math/Int128/Int128.so
 
 .include <bsd.port.post.mk>
