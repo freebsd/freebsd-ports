@@ -3,6 +3,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	3.3.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -170,6 +171,10 @@ CFLAGS=		-DFreeBSD_NO_SNAPSHOT_DUMP=t
 .endif
 
 .endif
+
+# See PR 194811.
+post-patch:
+	${REINPLACE_CMD} -e 's|#undef bool||g' ${WRKSRC}/perl/Amanda/*.c
 
 # MEMO:
 #   Prefix @WANT_SERVER_TRUE@ for server only files.
