@@ -106,7 +106,6 @@
     SUBDIR += libwnck-reference
     SUBDIR += libxaw3dxft
     SUBDIR += libxfce4gui
-    SUBDIR += libzvt
     SUBDIR += linux-c6-pango
     SUBDIR += linux-c6-tk85
     SUBDIR += linux-c6-gtk2
