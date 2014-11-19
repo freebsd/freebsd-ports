@@ -17,7 +17,8 @@ LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libstroke.so:${PORTSDIR}/devel/libstroke \
 		libguile.so:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
+		m4>=1.4.11:${PORTSDIR}/devel/m4
 
 USES=		desktop-file-utils gettext gmake libtool pathfix perl5 \
 		pkgconfig python:run shared-mime-info shebangfix
@@ -29,6 +30,7 @@ SHEBANG_FILES=	examples/lightning_detector/bom libgeda/docs/*.dox \
 USE_GNOME=	gtk20
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--with-libstroke=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
