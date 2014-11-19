@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: caldavd
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
 #
 # Add the following lines to /etc/rc.conf to run caldavd:
 #
@@ -20,21 +20,18 @@
 : ${caldavd_enable="NO"}
 : ${caldavd_conf="%%PREFIX%%/etc/caldavd/caldavd.plist"}
 
+
 name="caldavd"
-rcvar=`set_rcvar`
+
 command="%%PREFIX%%/bin/caldavd"
 command_args=" -f ${caldavd_conf} -R kqueue"
 
-extra_commands="reload"
 pidfile="/var/db/${name}/${name}.pid"
-
-
 required_files="${caldavd_conf}"
 
-stop_cmd=" if [ -f ${pidfile} ] ; then kill -TERM `cat ${pidfile}` ; else echo 'Not running.'; fi "
-start_precmd="install -d -o %%USER%% /var/db/caldavd/Data/Documents /var/db/caldavd/Documents && install -d /var/log/caldavd"
-reload_cmd=" if [ -f ${pidfile} ] ; then kill -HUP `cat ${pidfile}` ; else echo 'Not running.'; fi "
-status_cmd=" if [ -f ${pidfile} ] ; then ps -xl `cat ${pidfile}` ; else echo 'Not running.'; fi "
+procname="%%PYTHON_CMD%%"    
+PATH=${PATH}:%%PREFIX%%/bin
 
-load_rc_config ${name}
+start_precmd="install -d -o caldavd /var/db/caldavd/Data/Documents /var/db/caldavd/Documents && install -d /var/log/caldavd"
+
 run_rc_command "$1"
