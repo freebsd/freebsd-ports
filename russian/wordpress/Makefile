@@ -41,7 +41,7 @@ pre-install:
 	${ECHO_CMD} '@owner www' > ${PLIST}
 	${ECHO_CMD} '@group www' >> ${PLIST}
 	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} -e 's|^|%%WWWDIR%%/|' >> ${PLIST}
-	cd ${WRKSRC}/ && ${FIND} -d . -type d | ${SED} -e 's|^\.|@dirrm %%WWWDIR%%|' >> ${PLIST}
+	cd ${WRKSRC}/ && ${FIND} -d . -type d | ${SED} -e 's|^\.|@dir %%WWWDIR%%|' >> ${PLIST}
 	${ECHO_CMD} '@owner' >> ${PLIST}
 	${ECHO_CMD} '@group' >> ${PLIST}
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \

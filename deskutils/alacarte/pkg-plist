@@ -121,14 +121,3 @@ share/locale/zh_CN/LC_MESSAGES/alacarte.mo
 share/locale/zh_HK/LC_MESSAGES/alacarte.mo
 share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 share/locale/zu/LC_MESSAGES/alacarte.mo
-@dirrm share/locale/sw/LC_MESSAGES
-@dirrm share/locale/sw
-@dirrm share/locale/brx/LC_MESSAGES
-@dirrm share/locale/brx
-@dirrm share/locale/bem/LC_MESSAGES
-@dirrm share/locale/bem
-@dirrm share/alacarte
-@dirrm lib/python/site-packages/Alacarte/__pycache__
-@dirrm lib/python/site-packages/Alacarte
-@dirrmtry lib/python/site-packages
-@dirrmtry lib/python

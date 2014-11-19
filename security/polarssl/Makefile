@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polarssl
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.12
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/download/
@@ -11,10 +11,6 @@ COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
 LICENSE=	GPLv2
 
-# bypass the HTML "now downloading..." splash site, code below
-# .include <bsd.port.pre.mk>
-URL_SUFFIX=	?do=yes
-FETCH_ARGS=	-pRro ${DISTFILES}
 ALL_TARGET=	no_test
 
 USES=	gmake tar:tgz
@@ -37,8 +33,9 @@ BINFILES=	aescrypt2 benchmark dh_client dh_genprime dh_server hello \
 do-install:
 	@cd ${WRKSRC}/include && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${PREFIX}/include "! -name *.orig"
 	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.a ${STAGEDIR}${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.so  ${STAGEDIR}${PREFIX}/lib/libpolarssl.so.0
-	cd ${STAGEDIR}${PREFIX}/lib/ && ${LN} -sf libpolarssl.so.0 libpolarssl.so
+	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.so ${STAGEDIR}${PREFIX}/lib/libpolarssl.so.5
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpolarssl.so.5
+	cd ${STAGEDIR}${PREFIX}/lib/ && ${LN} -sf libpolarssl.so.5 libpolarssl.so
 .for i in ${BINFILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/programs/*/${i} ${STAGEDIR}${PREFIX}/bin/polarssl_${i}
 .endfor
@@ -55,13 +52,8 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-FETCH_CMD=	${SH} ${FILESDIR}/fetchwrapper.sh \
-			${URL_SUFFIX} ${FETCH_BINARY} ${FETCH_ARGS}
-
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

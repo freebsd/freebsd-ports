@@ -74,5 +74,6 @@ post-install:
 .endfor
 .endif
 	@${FIND} ${STAGEDIR}${DATADIR} -empty -delete
+	@${MKDIR} ${STAGEDIR}${SCOREDIR}
 
 .include <bsd.port.post.mk>

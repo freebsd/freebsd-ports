@@ -43,13 +43,3 @@
 %%DATADIR%%/parsers/sendmail_parser.pl
 %%DATADIR%%/parsers/snortalert2csv.pl
 %%DATADIR%%/parsers/tcpdump2csv.pl
-@dirrm %%DATADIR%%/parsers
-@dirrm %%DATADIR%%/loganalysis/Text
-@dirrm %%DATADIR%%/loganalysis/IP
-@dirrm %%DATADIR%%/loganalysis/Crypt
-@dirrm %%DATADIR%%/loganalysis
-@dirrm %%DATADIR%%/graph/Text
-@dirrm %%DATADIR%%/graph
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/charts
-@dirrm %%DATADIR%%

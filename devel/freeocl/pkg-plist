@@ -28,6 +28,3 @@ lib/libFreeOCL.so
 lib/libOpenCL.so
 lib/libOpenCL.so.1
 lib/libOpenCL.so.1.2
-@dirrm include/FreeOCL
-@dirrm etc/OpenCL/vendors
-@dirrm etc/OpenCL

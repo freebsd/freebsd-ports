@@ -35,5 +35,3 @@ man/man1/hcs12mem.1.gz
 %%DATADIR%%/mc9s12uf32.dat
 %%DATADIR%%/mc9s12xd256.dat
 %%DATADIR%%/mc9s12xd512.dat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

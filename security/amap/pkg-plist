@@ -9,6 +9,3 @@ include/amap/amap-inc.h
 include/amap/amap-lib.h
 lib/amap/amap-lib.o
 man/man1/amap.1.gz
-@dirrm lib/amap
-@dirrm include/amap
-@dirrmtry etc/amap

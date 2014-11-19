@@ -115,15 +115,3 @@ lib/cbb-%%VERSION%%/tcl/prefs.tcl
 lib/cbb-%%VERSION%%/tcl/reports.tcl
 lib/cbb-%%VERSION%%/tcl/splits.tcl
 lib/cbb-%%VERSION%%/tcl/undo.tcl
-@dirrm lib/cbb-%%VERSION%%/tcl
-@dirrm lib/cbb-%%VERSION%%/reports
-@dirrm lib/cbb-%%VERSION%%/perl
-@dirrm lib/cbb-%%VERSION%%/languages
-@dirrm lib/cbb-%%VERSION%%/images
-@dirrm lib/cbb-%%VERSION%%/graphs
-@dirrm lib/cbb-%%VERSION%%/etc
-@dirrm lib/cbb-%%VERSION%%/docs/cbb-man/icons.png
-@dirrm lib/cbb-%%VERSION%%/docs/cbb-man
-@dirrm lib/cbb-%%VERSION%%/docs
-@dirrm lib/cbb-%%VERSION%%/contrib
-@dirrm lib/cbb-%%VERSION%%

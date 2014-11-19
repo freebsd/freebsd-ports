@@ -12,5 +12,3 @@ share/icons/hicolor/32x32/apps/kipi-panorama.png
 share/icons/hicolor/48x48/apps/kipi-panorama.png
 share/icons/hicolor/scalable/apps/kipi-panorama.svgz
 share/kde4/services/kipiplugin_panorama.desktop
-@dirrm share/apps/kipiplugin_panorama/pics
-@dirrm share/apps/kipiplugin_panorama

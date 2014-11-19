@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bookmark synchronizer
 
 XPI_DISTNAME=	foxmarks_bookmark_synchronizer

@@ -12,8 +12,7 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	lerik@nolink.net
 COMMENT=	Python radix-tree implementation
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

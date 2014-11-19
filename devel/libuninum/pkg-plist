@@ -8,4 +8,3 @@ lib/libuninum.so
 lib/libuninum.so.5
 lib/libuninum.so.5.2.1
 man/man1/numconv.1.gz
-@dirrmtry include/uninum

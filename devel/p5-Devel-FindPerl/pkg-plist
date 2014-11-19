@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Devel/FindPerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/FindPerl/.packlist
 %%PERL5_MAN3%%/Devel::FindPerl.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/FindPerl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

@@ -111,9 +111,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/htmlui.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/htmlui.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/htmlui.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/i18n.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/i18n.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/i18n.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/icons_rc.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/icons_rc.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/icons_rc.pyo
@@ -264,9 +261,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thread.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thread.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thread.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.pyo
@@ -585,28 +579,3 @@ share/pixmaps/tortoisehg/icons/svg/thg_logo.svg
 share/pixmaps/tortoisehg/icons/thg_logo.ico
 share/pixmaps/tortoisehg/icons/thg_logo_92x50.png
 share/tortoisehg/mergetools.rc
-@dirrm share/tortoisehg
-@dirrm share/pixmaps/tortoisehg/icons/16x16/mimetypes
-@dirrm share/pixmaps/tortoisehg/icons/16x16/apps
-@dirrm share/pixmaps/tortoisehg/icons/16x16
-@dirrm share/pixmaps/tortoisehg/icons/22x22/actions
-@dirrm share/pixmaps/tortoisehg/icons/22x22
-@dirrm share/pixmaps/tortoisehg/icons/24x24/actions
-@dirrm share/pixmaps/tortoisehg/icons/24x24
-@dirrm share/pixmaps/tortoisehg/icons/32x32/actions
-@dirrm share/pixmaps/tortoisehg/icons/32x32
-@dirrm share/pixmaps/tortoisehg/icons/scalable/apps
-@dirrm share/pixmaps/tortoisehg/icons/scalable/actions
-@dirrm share/pixmaps/tortoisehg/icons/scalable/status
-@dirrm share/pixmaps/tortoisehg/icons/scalable
-@dirrm share/pixmaps/tortoisehg/icons/svg
-@dirrm share/pixmaps/tortoisehg/icons
-@dirrm share/pixmaps/tortoisehg
-%%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/jv
-@dirrm %%PYTHON_SITELIBDIR%%/tortoisehg/util
-@dirrm %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt
-@dirrm %%PYTHON_SITELIBDIR%%/tortoisehg
-%%NAUTILUS%%@dirrmtry lib/nautilus/extensions-2.0/python
-%%NAUTILUS%%@dirrmtry lib/nautilus/extensions-2.0
-%%NAUTILUS%%@dirrmtry lib/nautilus

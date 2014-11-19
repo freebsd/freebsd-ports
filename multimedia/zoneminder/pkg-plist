@@ -15,10 +15,7 @@ bin/zmupdate.pl
 bin/zmvideo.pl
 bin/zmwatch.pl
 bin/zmx10.pl
-@unexec if cmp -s %D/etc/zm.conf.sample %D/etc/zm.conf; then rm -f %D/etc/zm.conf; fi
-@mode 0600
-etc/zm.conf.sample
-@mode
+@sample(,,600) etc/zm.conf.sample
 %%DOCSDIR%%/zm_create.sql
 %%PERL5_MAN3%%/ZoneMinder.3.gz
 %%PERL5_MAN3%%/ZoneMinder::Base.3.gz
@@ -302,60 +299,6 @@ etc/zm.conf.sample
 %%WWWDIR%%/data/tools/mootools/mootools-more.js
 %%WWWDIR%%/data/views/file.php
 %%WWWDIR%%/data/views/image.php
-@dirrm %%WWWDIR%%/data/views
-@dirrm %%WWWDIR%%/data/tools/mootools
-@dirrm %%WWWDIR%%/data/tools
-@dirrm %%WWWDIR%%/data/temp
-@dirrm %%WWWDIR%%/data/sounds
-@dirrm %%WWWDIR%%/data/skins/xml/views
-@dirrm %%WWWDIR%%/data/skins/xml/includes
-@dirrm %%WWWDIR%%/data/skins/xml
-@dirrm %%WWWDIR%%/data/skins/mobile/views/css
-@dirrm %%WWWDIR%%/data/skins/mobile/views
-@dirrm %%WWWDIR%%/data/skins/mobile/lang
-@dirrm %%WWWDIR%%/data/skins/mobile/includes
-@dirrm %%WWWDIR%%/data/skins/mobile/graphics
-@dirrm %%WWWDIR%%/data/skins/mobile/css
-@dirrm %%WWWDIR%%/data/skins/mobile/ajax
-@dirrm %%WWWDIR%%/data/skins/mobile
-@dirrm %%WWWDIR%%/data/skins/classic/views/js
-@dirrm %%WWWDIR%%/data/skins/classic/views/css
-@dirrm %%WWWDIR%%/data/skins/classic/views
-@dirrm %%WWWDIR%%/data/skins/classic/lang
-@dirrm %%WWWDIR%%/data/skins/classic/js
-@dirrm %%WWWDIR%%/data/skins/classic/includes
-@dirrm %%WWWDIR%%/data/skins/classic/graphics
-@dirrm %%WWWDIR%%/data/skins/classic/css
-@dirrm %%WWWDIR%%/data/skins/classic/ajax
-@dirrm %%WWWDIR%%/data/skins/classic
-@dirrm %%WWWDIR%%/data/skins
-@dirrm %%WWWDIR%%/data/lang
-@dirrm %%WWWDIR%%/data/js
-@dirrm %%WWWDIR%%/data/includes
-@dirrm %%WWWDIR%%/data/images
-@dirrm %%WWWDIR%%/data/graphics
-@dirrm %%WWWDIR%%/data/events
-@dirrm %%WWWDIR%%/data/css
-@dirrm %%WWWDIR%%/data/ajax
-@dirrm %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/cgi-bin
-@dirrm %%WWWDIR%%
-@dirrm %%SITE_PERL%%/mach/auto/ZoneMinder
-@dirrm %%SITE_PERL%%/ZoneMinder/Trigger/Connection
-@dirrm %%SITE_PERL%%/ZoneMinder/Trigger/Channel
-@dirrm %%SITE_PERL%%/ZoneMinder/Trigger
-@dirrm %%SITE_PERL%%/ZoneMinder/Memory
-@dirrm %%SITE_PERL%%/ZoneMinder/Control
-@dirrm %%SITE_PERL%%/ZoneMinder
-@exec mkdir -m 0700 -p %%ZM_TMPDIR%%/fgfhfh
-@exec chown %%WEB_USER%% %%ZM_TMPDIR%%
-@exec chgrp %%WEB_GROUP%% %%ZM_TMPDIR%%
-@exec mkdir -m 0755 -p %%ZM_RUNDIR%%
-@exec chown %%WEB_USER%% %%ZM_RUNDIR%%
-@exec chgrp %%WEB_GROUP%% %%ZM_RUNDIR%%
-@exec mkdir -m 0755 -p %%ZM_LOGDIR%%
-@exec chown %%WEB_USER%% %%ZM_LOGDIR%%
-@exec chgrp %%WEB_GROUP%% %%ZM_LOGDIR%%
-@unexec rmdir %%ZM_RUNDIR%%
-@unexec rmdir %%ZM_TMPDIR%%
-@unexec rmdir %%ZM_LOGDIR%%
+@dir(%%WEB_USER%%,%%WEB_GROUP%%,0700) %%ZM_TMPDIR%%
+@dir(%%WEB_USER%%,%%WEB_GROUP%%,0755) %%ZM_RUNDIR%%
+@dir(%%WEB_USER%%,%%WEB_GROUP%%,0755) %%ZM_LOGDIR%%

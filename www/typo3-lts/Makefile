@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	6.2.4
+PORTVERSION=	6.2.6
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	freebsd-ports@charlieroot.de
-COMMENT=	The typo3 content management system
+COMMENT=	Typo3 content management system
 
 LICENSE=	GPLv2
 

@@ -142,5 +142,3 @@ man/man1/ragel.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/union.rl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml.rl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlcommon.rl
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

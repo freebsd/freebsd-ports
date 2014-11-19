@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Time/Interval.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Interval/.packlist
 %%PERL5_MAN3%%/Time::Interval.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Interval
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
-@dirrmtry %%SITE_PERL%%/Time

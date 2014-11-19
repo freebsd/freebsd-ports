@@ -164,13 +164,3 @@ man/man1/utf8trans.1.gz
 %%DATADIR%%/xslt/texi/toc.xsl
 %%DATADIR%%/xslt/texi/verbatim.xsl
 %%DATADIR%%/xslt/texi/xref.xsl
-@dirrm %%DATADIR%%/xslt/texi
-@dirrm %%DATADIR%%/xslt/man
-@dirrm %%DATADIR%%/xslt/common/text
-@dirrm %%DATADIR%%/xslt/common
-@dirrm %%DATADIR%%/xslt/backend
-@dirrm %%DATADIR%%/xslt
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%/charmaps
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

@@ -1,6 +1,5 @@
 lib/tcl%%TCLVERSION%%/gpsmanshp-%%PORTVERSION%%/gpsmanshp.so
 lib/tcl%%TCLVERSION%%/gpsmanshp-%%PORTVERSION%%/pkgIndex.tcl
-@dirrm lib/tcl%%TCLVERSION%%/gpsmanshp-%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/GPL.txt
 %%PORTDOCS%%%%DOCSDIR%%/GPSManSHP.html
 %%PORTDOCS%%%%DOCSDIR%%/GPSManSHP.pdf
@@ -16,4 +15,3 @@ lib/tcl%%TCLVERSION%%/gpsmanshp-%%PORTVERSION%%/pkgIndex.tcl
 %%PORTDOCS%%%%DOCSDIR%%/next.gif
 %%PORTDOCS%%%%DOCSDIR%%/previous.gif
 %%PORTDOCS%%%%DOCSDIR%%/up.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

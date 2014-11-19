@@ -3,4 +3,3 @@ include/eio-1/eio_inline_helper.x
 lib/libeio.so
 lib/libeio.so.8
 libdata/pkgconfig/eio.pc
-@dirrm include/eio-1

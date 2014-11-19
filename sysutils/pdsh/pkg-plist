@@ -5,9 +5,9 @@ bin/rpdcp
 lib/pdsh/execcmd.a
 lib/pdsh/execcmd.la
 lib/pdsh/execcmd.so
-%%DSH%%lib/pdsh/dshgroup.a
-%%DSH%%lib/pdsh/dshgroup.la
-%%DSH%%lib/pdsh/dshgroup.so
+%%DSHGROUPS%%lib/pdsh/dshgroup.a
+%%DSHGROUPS%%lib/pdsh/dshgroup.la
+%%DSHGROUPS%%lib/pdsh/dshgroup.so
 %%NETGROUP%%lib/pdsh/netgroup.a
 %%NETGROUP%%lib/pdsh/netgroup.la
 %%NETGROUP%%lib/pdsh/netgroup.so
@@ -21,4 +21,3 @@ man/man1/dshbak.1.gz
 man/man1/pdcp.1.gz
 man/man1/pdsh.1.gz
 man/man1/rpdcp.1.gz
-@dirrm lib/pdsh

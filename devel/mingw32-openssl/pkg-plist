@@ -88,11 +88,3 @@ mingw32/openssl/misc/c_issuer
 mingw32/openssl/misc/c_name
 mingw32/openssl/misc/tsget
 mingw32/openssl/openssl.cnf
-@dirrm mingw32/include/openssl
-@dirrmtry mingw32/include
-@dirrm mingw32/lib/engines
-@dirrmtry mingw32/lib/pkgconfig
-@dirrmtry mingw32/openssl/certs
-@dirrm mingw32/openssl/misc
-@dirrmtry mingw32/openssl/private
-@dirrm mingw32/openssl

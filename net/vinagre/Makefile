@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/branches/GNOME_3_12/net/vinagre/Makefile 19879 2014-09-15 08:17:00Z gusi $
+#  $MCom: ports/trunk/net/vinagre/Makefile 19981 2014-10-17 06:13:26Z gusi $
 
 PORTNAME=	vinagre
-PORTVERSION=	3.12.2
-PORTREVISION=	2
+PORTVERSION=	3.14.1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -41,6 +40,7 @@ TELEPATHY_CONFIGURE_WITH=	telepathy
 TELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
 			libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RDP_CONFIGURE_ENABLE=	rdp
+RDP_BUILD_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
 RDP_RUN_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
 
 .include <bsd.port.options.mk>

@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/avsn/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple collect-dots-avoid-blocks game
 
 LICENSE=	GPLv2 CCbyNCSA3

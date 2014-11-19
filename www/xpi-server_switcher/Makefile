@@ -6,7 +6,7 @@ DISTVERSION=	0.4
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Navigational help tool for web developers
 
 XPI_NUM=	2409

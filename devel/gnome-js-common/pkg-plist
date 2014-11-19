@@ -6,5 +6,3 @@ lib/gnome-js/tweener/equations.js
 lib/gnome-js/tweener/tweenList.js
 lib/gnome-js/tweener/tweener.js
 libdata/pkgconfig/gnome-js-common.pc
-@dirrm lib/gnome-js/tweener
-@dirrm lib/gnome-js

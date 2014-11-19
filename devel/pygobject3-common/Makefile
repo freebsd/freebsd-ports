@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/pygobject3-common/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/devel/pygobject3-common/Makefile 19953 2014-10-15 08:51:31Z gusi $
 
 PORTNAME=	gobject
-PORTVERSION=	3.12.2
+PORTVERSION=	3.14.0
 PORTREVISION?=	0
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME

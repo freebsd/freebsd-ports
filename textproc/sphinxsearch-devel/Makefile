@@ -7,6 +7,7 @@
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/ \
@@ -167,7 +168,7 @@ install-man:
 install-examples:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${EXAMPLES}" ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

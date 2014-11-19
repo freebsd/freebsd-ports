@@ -382,19 +382,3 @@ lib/mapnik/input/shape.input
 %%PYTHON_SITELIBDIR%%/mapnik/paths.py
 %%PYTHON_SITELIBDIR%%/mapnik/_mapnik.so
 %%PYTHON_SITELIBDIR%%/mapnik2/__init__.py
-@dirrm %%PYTHON_SITELIBDIR%%/mapnik
-@dirrm %%PYTHON_SITELIBDIR%%/mapnik2
-@dirrm lib/mapnik/input
-@dirrm lib/mapnik/fonts
-@dirrm lib/mapnik
-@dirrm include/mapnik/wkt
-@dirrm include/mapnik/util
-@dirrm include/mapnik/text_placements
-@dirrm include/mapnik/svg
-@dirrm include/mapnik/sparsehash/internal
-@dirrm include/mapnik/sparsehash
-@dirrm include/mapnik/json
-@dirrm include/mapnik/grid
-@dirrm include/mapnik/formatting
-@dirrm include/mapnik/agg
-@dirrm include/mapnik

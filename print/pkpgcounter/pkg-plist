@@ -78,4 +78,3 @@ bin/pkpgcounter
 %%PYTHON_SITELIBDIR%%/pkpgpdls/zjstream.pyc
 %%PYTHON_SITELIBDIR%%/pkpgpdls/zjstream.pyo
 man/man1/pkpgcounter.1.gz
-@dirrmtry %%PYTHON_SITELIBDIR%%/pkpgpdls

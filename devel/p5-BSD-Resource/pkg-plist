@@ -32,6 +32,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/times.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/utime.al
 %%PERL5_MAN3%%/BSD::Resource.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/BSD

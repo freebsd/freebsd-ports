@@ -20,6 +20,3 @@ bin/mediathek
 %%DATADIR%%/lib/swingx-painters-1.6.5-1.jar
 %%DATADIR%%/lib/swingx-plaf-1.6.5-1.jar
 %%DATADIR%%/lib/xz.jar
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

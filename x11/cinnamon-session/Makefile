@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/cinnamon-session/Makefile 19789 2014-08-05 07:43:54Z gusi $
+#   $MCom: ports/trunk/x11/cinnamon-session/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cinnamon-session
 PORTVERSION=	2.2.2
@@ -11,8 +11,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the cinnamon desktop
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		libtoolize:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
@@ -20,13 +19,13 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 RUN_DEPENDS=	console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		autoreconf:build execinfo gettext gmake libtool \
+		pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite
 USE_GL=		gl
-USE_GNOME=	gnomeprefix gtk30 intltool
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 CONFIGURE_ARGS=	--disable-docbook-docs
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral -Wno-error=implicit-function-declaration
@@ -37,6 +36,6 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.cinnamon.SessionManager.gschema.xml
 
 pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
+	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

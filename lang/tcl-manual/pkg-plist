@@ -1258,33 +1258,3 @@ share/doc/tcl86/UserCmd/tclsh.htm
 share/doc/tcl86/UserCmd/wish.htm
 share/doc/tcl86/contents.htm
 share/doc/tcl86/docs.css
-@dirrm share/doc/tcl86/UserCmd
-@dirrm share/doc/tcl86/TkLib
-@dirrm share/doc/tcl86/TkCmd
-@dirrm share/doc/tcl86/Thread2.7.0Cmd
-@dirrm share/doc/tcl86/Tdbcsqlite3-1.0.0Cmd
-@dirrm share/doc/tcl86/Tdbcodbc1.0.0Cmd
-@dirrm share/doc/tcl86/Tdbcmysql1.0.0Cmd
-@dirrm share/doc/tcl86/Tdbc1.0.0Lib
-@dirrm share/doc/tcl86/Tdbc1.0.0Cmd
-@dirrm share/doc/tcl86/TclLib
-@dirrm share/doc/tcl86/TclCmd
-@dirrm share/doc/tcl86/Sqlite3Cmd
-@dirrm share/doc/tcl86/Keywords
-@dirrm share/doc/tcl86/Itcl4.0.0Lib
-@dirrm share/doc/tcl86/Itcl4.0.0Cmd
-@dirrm share/doc/tcl86
-@dirrm share/doc/tcl85/UserCmd
-@dirrm share/doc/tcl85/TkLib
-@dirrm share/doc/tcl85/TkCmd
-@dirrm share/doc/tcl85/TclLib
-@dirrm share/doc/tcl85/TclCmd
-@dirrm share/doc/tcl85/Keywords
-@dirrm share/doc/tcl85
-@dirrm share/doc/tcl84/UserCmd
-@dirrm share/doc/tcl84/TkLib
-@dirrm share/doc/tcl84/TkCmd
-@dirrm share/doc/tcl84/TclLib
-@dirrm share/doc/tcl84/TclCmd
-@dirrm share/doc/tcl84/Keywords
-@dirrm share/doc/tcl84

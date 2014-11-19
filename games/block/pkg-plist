@@ -8,4 +8,3 @@ man/man6/block.6.gz
 %%DATADIR%%/4.block
 %%DATADIR%%/5.block
 %%DATADIR%%/6.block
-@dirrm %%DATADIR%%

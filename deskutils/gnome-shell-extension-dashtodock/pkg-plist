@@ -27,7 +27,3 @@ share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/po/pt_BR.po
 share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/po/zh_CN.po
 share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/prefs.js
 share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css
-@dirrm share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/media
-@dirrm share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/po
-@dirrm share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
-@dirrmtry share/gnome-shell/extensions

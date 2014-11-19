@@ -57,5 +57,3 @@
 %%PYTHON_SITELIBDIR%%/dbus/types.py
 %%PYTHON_SITELIBDIR%%/dbus/types.pyc
 %%PYTHON_SITELIBDIR%%/dbus/types.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/dbus/mainloop
-@dirrm %%PYTHON_SITELIBDIR%%/dbus

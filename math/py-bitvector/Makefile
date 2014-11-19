@@ -14,8 +14,8 @@ COMMENT=	Pure-Python memory-efficient packed representation for bit arrays
 
 LICENSE=	PSFL
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	BitVector
 
 PORTDOCS=	README BitVector-${PORTVERSION}.html

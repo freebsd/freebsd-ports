@@ -777,20 +777,3 @@ share/pixmaps/supertux.png
 %%DATADIR%%/sounds/upgrade.wav
 %%DATADIR%%/sounds/warp.wav
 %%DATADIR%%/supertux.strf
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/levels/worldmaps
-@dirrm %%DATADIR%%/levels/world1
-@dirrm %%DATADIR%%/levels/misc
-@dirrm %%DATADIR%%/levels/bonus2
-@dirrm %%DATADIR%%/levels/bonus1
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/images/worldmap
-@dirrm %%DATADIR%%/images/title
-@dirrm %%DATADIR%%/images/tilesets
-@dirrm %%DATADIR%%/images/status
-@dirrm %%DATADIR%%/images/shared
-@dirrm %%DATADIR%%/images/icons
-@dirrm %%DATADIR%%/images/background
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

@@ -257,6 +257,7 @@
     SUBDIR += l0phtcrack
     SUBDIR += l5
     SUBDIR += lasso
+    SUBDIR += lastpass-cli
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf
@@ -348,6 +349,7 @@
     SUBDIR += nmap
     SUBDIR += nmapsi4
     SUBDIR += nss
+    SUBDIR += nss_compat_ossl
     SUBDIR += oath-toolkit
     SUBDIR += obfsclient
     SUBDIR += obfsproxy
@@ -370,6 +372,7 @@
     SUBDIR += openscep
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
+    SUBDIR += openssh-portable66
     SUBDIR += openssh-portable-base
     SUBDIR += openssl
     SUBDIR += openssl_tpm_engine
@@ -715,7 +718,6 @@
     SUBDIR += pidgin-otr
     SUBDIR += pinentry
     SUBDIR += pinentry-curses
-    SUBDIR += pinentry-gtk
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt4
     SUBDIR += pkcrack
@@ -979,6 +981,7 @@
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
     SUBDIR += tclsasl
+    SUBDIR += tcpcrypt
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += tlswrap

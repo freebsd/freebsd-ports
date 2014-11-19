@@ -12,8 +12,8 @@ libexec/sqwebmail/sqwebmaild
 libexec/sqwebmail/sqwebpasswd
 libexec/sqwebmaild.rc
 %%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
-sbin/sharedindexinstall
-sbin/sharedindexsplit
+sbin/sharedindexinstall.sqwebmail
+sbin/sharedindexsplit.sqwebmail
 share/sqwebmail/cleancache.pl
 share/sqwebmail/html/en
 share/sqwebmail/html/en-us/CHARSET

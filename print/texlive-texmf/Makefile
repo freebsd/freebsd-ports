@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20140525
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2014/
 PKGNAMESUFFIX=	-texmf
@@ -246,6 +246,7 @@ do-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
+	${REINPLACE_CMD} -i '' 's/\\def\\magyar@sugg@ie@low#1#2#3/\\def\\magyar@sugg@ie@low\\protect #1#2#3/' ${STAGEDIR}${PREFIX}/share/texmf-dist/tex/latex/babel-hungarian/magyar.ldf
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/doc
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/doc/.keep_me
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/source

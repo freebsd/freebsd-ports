@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Config/YAML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/YAML/.packlist
 %%PERL5_MAN3%%/Config::YAML.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/YAML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config

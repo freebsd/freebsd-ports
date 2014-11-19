@@ -20,8 +20,3 @@ share/apps/libkface/haarcascades/haarcascade_mcs_mouth.xml
 share/apps/libkface/haarcascades/haarcascade_mcs_nose.xml
 share/apps/libkface/haarcascades/haarcascade_mcs_righteye.xml
 share/apps/libkface/haarcascades/haarcascade_profileface.xml
-@dirrm share/apps/libkface/haarcascades
-@dirrm share/apps/libkface/database
-@dirrm share/apps/libkface/alignment-congealing
-@dirrm share/apps/libkface
-@dirrm include/libkface

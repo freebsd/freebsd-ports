@@ -95,4 +95,7 @@ usr/share/man/man5/openssl.cnf.5ssl.gz
 usr/share/man/man5/x509v3_config.5ssl.gz
 usr/share/man/man7/des_modes.7ssl.gz
 @dir etc/pki/CA/private
+@dir etc/pki/CA/certs
+@dir etc/pki/CA/crl
+@dir etc/pki/CA/newcerts
 @dir etc/pki/tls/private

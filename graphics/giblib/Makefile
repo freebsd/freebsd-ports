@@ -10,6 +10,9 @@ MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility library that includes a wrapper for imlib2
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		pathfix pkgconfig libtool
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes

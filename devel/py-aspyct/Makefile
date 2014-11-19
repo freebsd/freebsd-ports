@@ -13,8 +13,7 @@ COMMENT=	Python library including an aspect-oriented programming (AOP) engine
 
 LICENSE=	LGPL3
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

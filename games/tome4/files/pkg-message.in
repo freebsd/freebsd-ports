@@ -1,2 +1,6 @@
 The game files for ToME can be found in %%DATADIR%%.
 Launch the game with a wrapper in %%PREFIX%%/tome4
+
+Addons and expansions can be installed per user:
+ $ mkdir -p ~/.t-engine/4.0/addons
+ $ cp my-addon.teaac ~/.t-engine/4.0/addons/

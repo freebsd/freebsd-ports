@@ -61,5 +61,3 @@ share/locale/zh_TW/LC_MESSAGES/gtk-vnc.mo
 share/vala/vapi/gtk-vnc-2.0.deps
 share/vala/vapi/gtk-vnc-2.0.vapi
 share/vala/vapi/gvnc-1.0.vapi
-@dirrm include/gtk-vnc-2.0
-@dirrm include/gvnc-1.0

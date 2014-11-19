@@ -51,5 +51,3 @@ usr/share/man/man1/tiffinfo.1.gz
 usr/share/man/man1/tiffmedian.1.gz
 usr/share/man/man1/tiffset.1.gz
 usr/share/man/man1/tiffsplit.1.gz
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/libtiff-%%PORTVERSION%%

@@ -117,17 +117,3 @@ share/locale/vi/LC_MESSAGES/kuickshow.mo
 share/locale/xh/LC_MESSAGES/kuickshow.mo
 share/locale/zh_CN/LC_MESSAGES/kuickshow.mo
 share/locale/zh_TW/LC_MESSAGES/kuickshow.mo
-@dirrm share/doc/HTML/uk/kuickshow
-@dirrm share/doc/HTML/sv/kuickshow
-@dirrm share/doc/HTML/ru/kuickshow
-@dirrm share/doc/HTML/pt_BR/kuickshow
-@dirrm share/doc/HTML/pt/kuickshow
-@dirrm share/doc/HTML/it/kuickshow
-@dirrm share/doc/HTML/fr/kuickshow
-@dirrm share/doc/HTML/et/kuickshow
-@dirrm share/doc/HTML/es/kuickshow
-@dirrm share/doc/HTML/en/kuickshow
-@dirrm share/doc/HTML/de/kuickshow
-@dirrm share/doc/HTML/da/kuickshow
-@dirrm share/apps/kuickshow/pics
-@dirrm share/apps/kuickshow

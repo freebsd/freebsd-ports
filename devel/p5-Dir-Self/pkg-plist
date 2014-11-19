@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Dir/Self.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Self/.packlist
 %%PERL5_MAN3%%/Dir::Self.3.gz
-@dirrmtry %%SITE_PERL%%/Dir
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Self
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir

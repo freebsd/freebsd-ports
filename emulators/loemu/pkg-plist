@@ -35,11 +35,3 @@ bin/loemu-builder
 share/locale/fr/LC_MESSAGES/loemu.mo
 share/locale/ca/LC_MESSAGES/loemu.mo
 share/locale/sv/LC_MESSAGES/loemu.mo
-@dirrm %%DATADIR%%/snaps
-@dirrm %%DATADIR%%/roms
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/flyers
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/loemu

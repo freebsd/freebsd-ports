@@ -192,8 +192,3 @@ man/man1/ffc.1.gz
 %%PYTHON_SITELIBDIR%%/ffc/wrappers.py
 %%PYTHON_SITELIBDIR%%/ffc/wrappers.pyc
 %%PYTHON_SITELIBDIR%%/ffc/wrappers.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/ffc/uflacsrepr
-@dirrm %%PYTHON_SITELIBDIR%%/ffc/tensor
-@dirrm %%PYTHON_SITELIBDIR%%/ffc/quadrature
-@dirrm %%PYTHON_SITELIBDIR%%/ffc/errorcontrol
-@dirrm %%PYTHON_SITELIBDIR%%/ffc

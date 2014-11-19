@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+USES=		python
 
 PLIST_FILES=	bin/deheader man/man1/deheader.1.gz
 

@@ -27,3 +27,4 @@ usr/sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/sysadmin.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrading.html
 %%PORTDOCS%%%%DOCSDIR%%/windows.html
+@dir etc/sasl2

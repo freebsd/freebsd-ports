@@ -19,9 +19,8 @@ COMMENT=	Dancing simulation game similar to the kind in arcades
 BUILD_DEPENDS=	${PYGAME}
 RUN_DEPENDS=	${PYGAME}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_NOEGGINFO=	yes
+USES=		python
+USE_PYTHON=	distutils noegginfo
 SUB_FILES=	pkg-message
 
 SONGS=		forkbomb.ogg forkbomb.dance forkbomb-bg.jpg forkbomb-banner.png \

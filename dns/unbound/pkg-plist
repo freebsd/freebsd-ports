@@ -64,10 +64,5 @@ sbin/unbound-host
 %%MUNIN%%etc/munin/plugins/unbound_munin_memory
 %%MUNIN%%etc/munin/plugins/unbound_munin_queue
 %%MUNIN%%share/munin/plugins/unbound_munin_
-%%MUNIN%%@dirrmtry etc/munin/plugins
-%%MUNIN%%@dirrmtry etc/munin
-%%MUNIN%%@dirrmtry share/munin/plugins
-%%MUNIN%%@dirrmtry share/munin
-@dirrmtry etc/unbound
 @unexec rm -fr /var/run/unbound
 @exec chown unbound %D/etc/unbound

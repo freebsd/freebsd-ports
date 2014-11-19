@@ -13,12 +13,9 @@ share/BLACS/TESTING/bsbr.dat
 share/BLACS/TESTING/bt.dat
 share/BLACS/TESTING/comb.dat
 share/BLACS/TESTING/sdrv.dat
-@dirrm share/BLACS/TESTING
-@dirrm share/BLACS
 %%PORTDOCS%%%%DOCSDIR%%/blacs_install.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/f77blacsqref.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/mpi_prop.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/cblacsqref.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/lawn94.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/mpiblacs_issues.ps.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

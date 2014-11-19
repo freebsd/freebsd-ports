@@ -1,5 +1,3 @@
 %%PERL5_MAN3%%/Try::Tiny::Retry.3.gz
 %%SITE_PERL%%/Try/Tiny/Retry.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Try/Tiny/Retry/.packlist
-@dirrmtry %%SITE_PERL%%/Try/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Try/Tiny/Retry

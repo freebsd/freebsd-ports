@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/DateTime::Calendar::Julian.3.gz
 %%SITE_PERL%%/DateTime/Calendar/Julian.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Julian/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Julian
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime/Calendar
-@dirrmtry %%SITE_PERL%%/DateTime

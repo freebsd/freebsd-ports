@@ -10,5 +10,3 @@
 %%SITE_PERL%%/SVN/Dump/Reader.pm
 %%SITE_PERL%%/SVN/Dump/Record.pm
 %%SITE_PERL%%/SVN/Dump/Text.pm
-@dirrm %%SITE_PERL%%/SVN/Dump
-@dirrmtry %%SITE_PERL%%/SVN

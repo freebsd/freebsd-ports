@@ -1,5 +1,0 @@
-
-To add this desklet to your desktop:
-
-    gdesklets open %%PREFIX%%/share/gdesklets/Displays/%%NAME%%/%%NAME%%.display
-

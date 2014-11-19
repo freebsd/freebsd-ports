@@ -53,4 +53,3 @@ include/igraph/vector.pmt
 include/igraph/walktrap_communities.h
 include/igraph/walktrap_graph.h
 include/igraph/walktrap_heap.h
-@dirrm include/igraph

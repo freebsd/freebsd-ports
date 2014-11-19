@@ -14,9 +14,8 @@ COMMENT=	Python interface to the Akismet API
 
 LICENSE=	BSD
 
-USES=		zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python zip
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	akismet
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

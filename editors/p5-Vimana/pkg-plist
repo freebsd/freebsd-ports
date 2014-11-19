@@ -49,8 +49,3 @@ man/man1/vim_record.1.gz
 man/man1/vimana.1.gz
 bin/vimana
 bin/vim_record
-@dirrmtry %%SITE_PERL%%/Vimana/VimOnline
-@dirrmtry %%SITE_PERL%%/Vimana/Installer
-@dirrmtry %%SITE_PERL%%/Vimana/Command
-@dirrmtry %%SITE_PERL%%/Vimana
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Vimana

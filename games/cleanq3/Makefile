@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.bfeared.com/library/quake/archive/quakedev/temor/downloads/
 DISTNAME=	CleanQ3_v${PORTVERSION}-srcbin
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cleaned up copy of the original Quake III Arena source code
 
 USES=		dos2unix gmake zip

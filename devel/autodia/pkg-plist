@@ -44,8 +44,3 @@ bin/autodia.pl
 %%PERL5_MAN3%%/Autodia::Handler::umbrello.3.gz
 %%PERL5_MAN3%%/autodia.3.gz
 man/man1/autodia.pl.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Autodia
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrm %%SITE_PERL%%/Autodia/Handler
-@dirrm %%SITE_PERL%%/Autodia/Diagram
-@dirrm %%SITE_PERL%%/Autodia

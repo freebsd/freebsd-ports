@@ -17,6 +17,3 @@ man/man1/schwartzmon.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/schema-postgres.sql
 %%PORTDOCS%%%%DOCSDIR%%/schema.sql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz
-@dirrmtry %%SITE_PERL%%/TheSchwartz

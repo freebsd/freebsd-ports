@@ -35,10 +35,3 @@
 %%PERL5_MAN3%%/User::Identity::Item.3.gz
 %%PERL5_MAN3%%/User::Identity::Location.3.gz
 %%PERL5_MAN3%%/User::Identity::System.3.gz
-@dirrm %%SITE_PERL%%/User/Identity/Archive
-@dirrm %%SITE_PERL%%/User/Identity/Collection
-@dirrm %%SITE_PERL%%/User/Identity
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/User/Identity
-@dirrmtry %%SITE_PERL%%/Mail
-@dirrmtry %%SITE_PERL%%/User
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/User

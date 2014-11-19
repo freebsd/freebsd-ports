@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--without-iconv
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python=${PREFIX} \
 			--enable-pygobject
-USE_PYTHON=		yes
+USES+=			python
 USE_GNOME=		pygobject3
 PYCOMPILE=		${PREFIX}/lib/${PYTHON_VERSION}/compileall.py
 .else

@@ -134,29 +134,3 @@ share/pixmaps/trophy.png
 %%DATADIR%%/upgrades/tires/tires_3.tga
 %%DATADIR%%/upgrades/tires/tires_4.tga
 %%DATADIR%%/upgrades/tires/tires_5.tga
-@dirrm %%DATADIR%%/upgrades/tires
-@dirrm %%DATADIR%%/upgrades/motors
-@dirrm %%DATADIR%%/upgrades/armors
-@dirrm %%DATADIR%%/upgrades
-@dirrm %%DATADIR%%/tracks/Zurich
-@dirrm %%DATADIR%%/tracks/Zigzag
-@dirrm %%DATADIR%%/tracks/Snake
-@dirrm %%DATADIR%%/tracks/Rally
-@dirrm %%DATADIR%%/tracks/Moon
-@dirrm %%DATADIR%%/tracks/Loops
-@dirrm %%DATADIR%%/tracks/Industrial
-@dirrm %%DATADIR%%/tracks/Downtown
-@dirrm %%DATADIR%%/tracks
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/panel
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/menu
-@dirrm %%DATADIR%%/gui
-@dirrm %%DATADIR%%/goody
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/cars/z3
-@dirrm %%DATADIR%%/cars/vw
-@dirrm %%DATADIR%%/cars/jeep
-@dirrm %%DATADIR%%/cars/flash2
-@dirrm %%DATADIR%%/cars
-@dirrm %%DATADIR%%

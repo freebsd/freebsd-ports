@@ -9,6 +9,3 @@ bin/kuklomenos
 %%VORBIS%%%%DATADIR%%/sounds/shield.ogg
 %%VORBIS%%%%DATADIR%%/sounds/shot.ogg
 %%VORBIS%%%%DATADIR%%/sounds/spark.ogg
-%%VORBIS%%@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%

@@ -39,17 +39,3 @@
 %%PERL5_MAN3%%/MooseX::Storage::Traits::DisableCycleDetection.3.gz
 %%PERL5_MAN3%%/MooseX::Storage::Traits::OnlyWhenBuilt.3.gz
 %%PERL5_MAN3%%/MooseX::Storage::Util.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Storage
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/Traits
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/Meta/Attribute/Trait
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/Meta/Attribute
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/Meta
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/IO
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/Format
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/Engine/Trait
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/Engine/IO
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/Engine
-@dirrmtry %%SITE_PERL%%/MooseX/Storage/Base
-@dirrmtry %%SITE_PERL%%/MooseX/Storage
-@dirrmtry %%SITE_PERL%%/MooseX

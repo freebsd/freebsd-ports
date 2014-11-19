@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	foreman-proxy>=1.6.0:${PORTSDIR}/net/foreman-proxy \
 		${PYTHON_PKGNAMEPREFIX}salt>0:${PORTSDIR}/sysutils/py-salt
 
-USE_PYTHON=	yes
+USES=		python
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

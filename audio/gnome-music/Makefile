@@ -1,10 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/audio/gnome-music/Makefile 19808 2014-08-14 07:46:12Z gusi $
+#   $MCom: ports/trunk/audio/gnome-music/Makefile 19994 2014-10-19 08:07:16Z gusi $
 
 PORTNAME=	gnome-music
-PORTVERSION=	3.12.2.1
-PORTREVISION=	3
+PORTVERSION=	3.14.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,7 +12,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgrilo-0.2.so:${PORTSDIR}/net/grilo
+LIB_DEPENDS=	libgrilo-0.2.so:${PORTSDIR}/net/grilo \
+		libmediaart-1.0.so:${PORTSDIR}/multimedia/libmediaart
 
 USES=		gettext gmake libtool pathfix pkgconfig \
 		python:3 tar:xz

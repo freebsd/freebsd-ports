@@ -98,17 +98,3 @@ share/xsl/uml2svg/xsl/UseCaseDiagrams/PackageUseCase.xsl
 share/xsl/uml2svg/xsl/UseCaseDiagrams/PackageUseCaseBody.xsl
 share/xsl/uml2svg/xsl/UseCaseDiagrams/UseCase.xsl
 share/xsl/uml2svg/xsl/UseCaseDiagrams/UseCaseDiagram.xsl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/xsl/uml2svg/xsl/ActivityDiagrams
-@dirrm share/xsl/uml2svg/xsl/ClassDiagrams
-@dirrm share/xsl/uml2svg/xsl/CollaborationDiagrams
-@dirrm share/xsl/uml2svg/xsl/Common
-@dirrm share/xsl/uml2svg/xsl/DeploymentDiagrams
-@dirrm share/xsl/uml2svg/xsl/SequenceDiagrams
-@dirrm share/xsl/uml2svg/xsl/StateDiagrams
-@dirrm share/xsl/uml2svg/xsl/System
-@dirrm share/xsl/uml2svg/xsl/UseCaseDiagrams
-@dirrm share/xsl/uml2svg/xsl
-@dirrm share/xsl/uml2svg
-@dirrmtry share/xsl

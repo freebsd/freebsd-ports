@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Lib/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Lib/Lib.so
 %%PERL5_MAN3%%/Event::Lib.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Lib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Event

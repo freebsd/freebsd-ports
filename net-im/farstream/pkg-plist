@@ -89,12 +89,3 @@ share/gtk-doc/html/farstream-plugins-0.2/pt03.html
 share/gtk-doc/html/farstream-plugins-0.2/right.png
 share/gtk-doc/html/farstream-plugins-0.2/style.css
 share/gtk-doc/html/farstream-plugins-0.2/up.png
-@dirrm share/gtk-doc/html/farstream-plugins-0.2
-@dirrm share/gtk-doc/html/farstream-libs-0.2
-@dirrm %%DATADIR%%/0.2/fsrtpconference
-@dirrm %%DATADIR%%/0.2/fsrawconference
-@dirrm %%DATADIR%%/0.2
-@dirrm %%DATADIR%%
-@dirrm lib/farstream-0.2
-@dirrm include/farstream-0.2/farstream
-@dirrm include/farstream-0.2

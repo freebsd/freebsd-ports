@@ -33,8 +33,8 @@ do-install:
 		"${STAGEDIR}${PREFIX}/man/man1/"
 	@${MKDIR} "${STAGEDIR}${PREFIX}/etc/eiskaltdcpp" || true
 	@${INSTALL_DATA} "${WRKSRC}/eiskaltdcpp-cli/cli-jsonrpc-config.pl" \
-		"${STAGEDIR}${PREFIX}/etc/eiskaltdcpp/cli-jsonrpc-config.pl.dist"
+		"${STAGEDIR}${PREFIX}/etc/eiskaltdcpp/cli-jsonrpc-config.pl.sample"
 	@${INSTALL_DATA} "${WRKSRC}/eiskaltdcpp-cli/cli-xmlrpc-config.pl" \
-		"${STAGEDIR}${PREFIX}/etc/eiskaltdcpp/cli-xmlrpc-config.pl.dist"
+		"${STAGEDIR}${PREFIX}/etc/eiskaltdcpp/cli-xmlrpc-config.pl.sample"
 
 .include "${MASTERDIR}/Makefile"

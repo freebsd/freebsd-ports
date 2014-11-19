@@ -16,7 +16,3 @@ bin/vigor
 %%DATADIR%%/tcl/gnats.tcl
 %%DATADIR%%/tcl/mailprocs.tcl
 %%DATADIR%%/tcl/wc.tcl
-@dirrm %%DATADIR%%/tcl
-@dirrm %%DATADIR%%/perl
-@dirrm %%DATADIR%%/catalog
-@dirrm %%DATADIR%%

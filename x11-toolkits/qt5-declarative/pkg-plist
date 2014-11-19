@@ -215,6 +215,9 @@
 %%QT_INCDIR%%/QtDeclarative/qtdeclarativeversion.h
 %%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5DeclarativeConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5DeclarativeConfigVersion.cmake
+%%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5Declarative_QTcpServerConnection.cmake
+%%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5Declarative_QtQuick1Plugin.cmake
+%%QT_LIBDIR%%/cmake/Qt5Designer/Qt5Designer_QDeclarativeViewPlugin.cmake
 %%QT_LIBDIR%%/libQt5Declarative.prl
 %%QT_LIBDIR%%/libQt5Declarative.so
 %%QT_LIBDIR%%/libQt5Declarative.so.5
@@ -253,25 +256,3 @@
 %%QT_PLUGINDIR%%/qml1tooling/libqmldbg_tcp_qtdeclarative.so
 %%DEBUG%%%%QT_PLUGINDIR%%/qml1tooling/libqmldbg_tcp_qtdeclarative.so.debug
 libdata/pkgconfig/Qt5Declarative.pc
-@dirrm %%QT_PLUGINDIR%%/qml1tooling
-@dirrmtry %%QT_PLUGINDIR%%/designer
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrm %%QT_IMPORTDIR%%/QtWebKit
-@dirrm %%QT_IMPORTDIR%%/Qt/labs/shaders
-@dirrm %%QT_IMPORTDIR%%/Qt/labs/particles
-@dirrm %%QT_IMPORTDIR%%/Qt/labs/gestures
-@dirrm %%QT_IMPORTDIR%%/Qt/labs/folderlistmodel
-@dirrmtry %%QT_IMPORTDIR%%/Qt/labs
-@dirrmtry %%QT_IMPORTDIR%%/Qt
-@dirrmtry %%QT_IMPORTDIR%%
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Declarative
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtDeclarative/%%FULLVER%%/QtDeclarative/private
-@dirrm %%QT_INCDIR%%/QtDeclarative/%%FULLVER%%/QtDeclarative
-@dirrm %%QT_INCDIR%%/QtDeclarative/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtDeclarative
-@dirrmtry %%QT_INCDIR%%

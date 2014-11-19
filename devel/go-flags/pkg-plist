@@ -1,7 +1,4 @@
 %%GO_LIBDIR%%/github.com/jessevdk/go-flags.a
-@dirrmtry %%GO_LIBDIR%%/github.com/jessevdk
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/arg.go
@@ -52,10 +49,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/termsize_other.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/termsize_unix.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/unknown_test.go
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/github.com/jessevdk
-@dirrmtry %%GO_SRCDIR%%/github.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

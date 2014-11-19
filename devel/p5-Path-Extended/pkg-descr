@@ -1,0 +1,9 @@
+This is yet another file/directory handler that does a bit more than
+Path::Class for some parts, and a bit less for other parts.  One of
+the main difference is Path::Extended always tries to use forward
+slashes when possible, ie. even when you're on the MS Windows, so that
+you don't need to care about escaping paths that annoys you from time
+to time when you want to apply regexen to a path, especially in file
+tests that use 'like' or 'compare'.
+
+WWW: http://search.cpan.org/dist/Path-Extended/

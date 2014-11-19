@@ -66,8 +66,3 @@ lib/libmozjs-17.0.a
 lib/libmozjs-17.0.so
 lib/libmozjs-17.0.so.1
 libdata/pkgconfig/mozjs-17.0.pc
-@dirrm include/js-17.0/mozilla
-@dirrm include/js-17.0/js
-@dirrm include/js-17.0/gc
-@dirrm include/js-17.0/ds
-@dirrm include/js-17.0

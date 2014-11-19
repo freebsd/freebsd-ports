@@ -3,6 +3,7 @@
 
 PORTNAME=	aria2
 PORTVERSION=	1.18.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -33,6 +34,7 @@ USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+USE_RC_SUBR=	${PORTNAME}
 USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
 
 PORTDOCS=	*

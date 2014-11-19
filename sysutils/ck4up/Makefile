@@ -6,7 +6,7 @@ PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jue.li/crux/ck4up/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks http and ftp sites for updates
 
 RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/gdbm.so:${PORTSDIR}/databases/ruby-gdbm

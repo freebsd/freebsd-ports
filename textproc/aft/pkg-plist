@@ -13,4 +13,3 @@ bin/aft
 %%DATADIR%%/compile.pl
 %%DATADIR%%/launch_ie.pl
 %%DATADIR%%/postrtf.pl
-@dirrm %%DATADIR%%

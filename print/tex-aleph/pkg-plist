@@ -31,8 +31,6 @@ man/man1/ovp2ovf.1.gz
 %%TEXMFDISTDIR%%/tex/plain/config/aleph.ini
 %%TEXMFDISTDIR%%/doc/aleph/base/readme.txt
 %%TEXMFDISTDIR%%/doc/aleph/base/News
-@dirrm %%TEXMFDISTDIR%%/doc/aleph/base
-@dirrm %%TEXMFDISTDIR%%/doc/aleph
 %%TEXMFDISTDIR%%/source/lambda/antomega/antenc.dtx
 %%TEXMFDISTDIR%%/source/lambda/antomega/antomega.ins
 %%TEXMFDISTDIR%%/source/lambda/antomega/antomega.dtx
@@ -99,12 +97,3 @@ man/man1/ovp2ovf.1.gz
 %%TEXMFDISTDIR%%/tex/lambda/oinuit/oinuit.sty
 %%TEXMFDISTDIR%%/tex/lambda/oinuit/litcmr.fd
 %%TEXMFDISTDIR%%/tex/lambda/oinuit/litenc.def
-@dirrm %%TEXMFDISTDIR%%/tex/lambda/oinuit
-@dirrm %%TEXMFDISTDIR%%/tex/lambda/ocherokee
-@dirrm %%TEXMFDISTDIR%%/tex/lambda/config
-@dirrm %%TEXMFDISTDIR%%/tex/lambda/base
-@dirrm %%TEXMFDISTDIR%%/tex/lambda/antomega
-@dirrm %%TEXMFDISTDIR%%/tex/lambda
-@dirrm %%TEXMFDISTDIR%%/source/lambda/oinuit
-@dirrm %%TEXMFDISTDIR%%/source/lambda/antomega
-@dirrm %%TEXMFDISTDIR%%/source/lambda

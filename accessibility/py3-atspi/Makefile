@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/accessibility/py3-atspi/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/accessibility/py3-atspi/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	atspi
 PORTVERSION=	2.12.0
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at
 CONFLICTS=	at-spi-1.[0-9]*
 
 USES=		gettext gmake pathfix pkgconfig python:3 tar:xz
-USE_GNOME=	gnomehier intlhack py3gobject3
+USE_GNOME=	intlhack py3gobject3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

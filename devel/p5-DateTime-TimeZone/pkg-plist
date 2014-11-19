@@ -217,7 +217,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Novosibirsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Omsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Oral.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Phnom_Penh.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Pontianak.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Pyongyang.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Qatar.pm
@@ -239,7 +238,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Ulaanbaatar.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Urumqi.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Ust_Nera.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Vientiane.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Vladivostok.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Yakutsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Yekaterinburg.pm
@@ -343,6 +341,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/PST8PDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Apia.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Auckland.pm
+%%SITE_PERL%%/DateTime/TimeZone/Pacific/Bougainville.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Chatham.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Chuuk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Easter.pm

@@ -56,9 +56,3 @@ libexec/freepwing/perl.sh
 %%DATADIR%%/catalogs/catalogs.txt
 %%DATADIR%%/catalogs/catalogs
 %%DATADIR%%/fpwutils.mk
-@dirrm %%DATADIR%%/catalogs
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/freepwing
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING

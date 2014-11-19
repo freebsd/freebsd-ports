@@ -13,5 +13,3 @@ share/icons/hicolor/16x16/apps/viruskiller.png
 share/icons/hicolor/32x32/apps/viruskiller.png
 share/icons/hicolor/64x64/apps/viruskiller.png
 %%DATADIR%%/viruskiller.pak
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

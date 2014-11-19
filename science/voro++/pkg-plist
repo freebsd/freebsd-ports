@@ -15,4 +15,3 @@ include/voro++/wall.hh
 include/voro++/worklist.hh
 lib/libvoro++.a
 man/man1/voro++.1.gz
-@dirrm include/voro++

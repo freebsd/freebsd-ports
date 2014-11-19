@@ -3,7 +3,7 @@
 
 PORTNAME=	denemo
 PORTVERSION=	1.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -28,6 +28,7 @@ USES=		bison gettext gmake pkgconfig
 USE_GNOME=	librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-jack \
+		--disable-evince \
 		--disable-portmidi \
 		--sysconfdir=${PREFIX}/etc
 
@@ -45,9 +46,7 @@ LILYPOND_RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond
 
 .if ${PORT_OPTIONS:MGTK3}
 USE_GNOME+=	gtk30 gtksourceview3
-CONFIGURE_ARGS+=--disable-evince
 .else
-LIB_DEPENDS+=	libevview.so:${PORTSDIR}/graphics/evince
 USE_GNOME+=	gtk20 gtksourceview2
 CONFIGURE_ARGS+=--enable-gtk2
 .endif
@@ -67,8 +66,6 @@ post-install:
 .for i in actions templates
 	@(cd ${WRKSRC} && ${TAR} --exclude "*Makefile*" -cf - ${i}) | \
 		(cd ${STAGEDIR}${DATADIR} && ${TAR} --unlink -xf -)
-	@${FIND} ${STAGEDIR}${DATADIR}/${i} -print0 | \
-		${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@${FIND} ${STAGEDIR}${DATADIR}/${i} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} a+rx
 	@${FIND} ${STAGEDIR}${DATADIR}/${i} -type f -print0 | \

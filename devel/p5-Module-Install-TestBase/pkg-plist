@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Module::Install::TestBase.3.gz
+%%SITE_PERL%%/Module/Install/TestBase.pm
+%%SITE_PERL%%/Module/Install/TestBase.pod
+%%SITE_ARCH%%/auto/Module/Install/TestBase/.packlist

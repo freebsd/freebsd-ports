@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/BIND::Config::Parser.3.gz
 %%SITE_PERL%%/BIND/Config/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BIND/Config/Parser/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BIND/Config/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BIND/Config
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BIND
-@dirrmtry %%SITE_PERL%%/BIND/Config
-@dirrmtry %%SITE_PERL%%/BIND

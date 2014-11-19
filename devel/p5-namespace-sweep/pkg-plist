@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/sweep/.packlist
 %%SITE_PERL%%/namespace/sweep.pm
 %%PERL5_MAN3%%/namespace::sweep.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/sweep
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace
-@dirrmtry %%SITE_PERL%%/namespace

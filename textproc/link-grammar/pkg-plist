@@ -99,10 +99,3 @@ man/man1/link-parser.1.gz
 %%DATADIR%%/lt/4.0.constituent-knowledge
 %%DATADIR%%/lt/4.0.dict
 %%DATADIR%%/lt/4.0.knowledge
-@dirrm %%DATADIR%%/lt
-@dirrm %%DATADIR%%/en/words
-@dirrm %%DATADIR%%/en
-@dirrm %%DATADIR%%/de
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/link-grammar

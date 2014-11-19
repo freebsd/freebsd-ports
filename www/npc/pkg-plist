@@ -1,7 +1,4 @@
 www/cgi-bin/npc.cgi
-@exec mkdir -p %D/etc/npc
-@dirrm etc/npc
+@dir etc/npc
 share/examples/npc/sample1.idx
 share/examples/npc/sample2.idx
-@dirrm share/examples/npc
-@dirrm www/cgi-bin

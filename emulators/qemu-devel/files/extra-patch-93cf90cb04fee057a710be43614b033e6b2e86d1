@@ -1,0 +1,100 @@
+From 93cf90cb04fee057a710be43614b033e6b2e86d1 Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Fri, 7 Nov 2014 05:35:17 +0000
+Subject: [PATCH] Add support for legacy system calls.
+
+This change adds support for some legacy system calls so qemu bsd
+user-mode will still work on older versions of FreeBSD (i.e. 9.X).
+---
+ bsd-user/freebsd/make_syscall_nr_h.sh | 19 +++++++++++++++++++
+ bsd-user/freebsd/strace.list          | 11 +++++++++++
+ bsd-user/freebsd/syscall_nr.h         | 16 ++++++++++++++++
+ 3 files changed, 46 insertions(+)
+
+diff --git a/bsd-user/freebsd/make_syscall_nr_h.sh b/bsd-user/freebsd/make_syscall_nr_h.sh
+index cc180df..f73dfc9 100644
+--- a/bsd-user/freebsd/make_syscall_nr_h.sh
++++ b/bsd-user/freebsd/make_syscall_nr_h.sh
+@@ -24,3 +24,22 @@ echo " */" >> $sysnr
+ echo "" >> $sysnr
+ 
+ /usr/bin/sed -e 's:SYS_:TARGET_FREEBSD_NR_:' < $syshdr >> $sysnr 
++
++cat << _EOF >> $sysnr
++/* Legacy system calls. */
++#ifndef	TARGET_FREEBSD_NR_killpg
++#define	TARGET_FREEBSD_NR_killpg	146
++#endif
++#ifndef	TARGET_FREEBSD_NR__umtx_lock
++#define	TARGET_FREEBSD_NR__umtx_lock	434
++#endif
++#ifndef	TARGET_FREEBSD_NR__umtx_unlock
++#define	TARGET_FREEBSD_NR__umtx_unlock	435
++#endif
++#ifndef	TARGET_FREEBSD_NR_cap_new
++#define	TARGET_FREEBSD_NR_cap_new	514
++#endif
++#ifndef	TARGET_FREEBSD_NR_cap_getrights
++#define	TARGET_FREEBSD_NR_cap_getrights	515
++#endif
++_EOF
+diff --git a/bsd-user/freebsd/strace.list b/bsd-user/freebsd/strace.list
+index e09048f..6202790 100644
+--- a/bsd-user/freebsd/strace.list
++++ b/bsd-user/freebsd/strace.list
+@@ -33,6 +33,10 @@
+ { TARGET_FREEBSD_NR___syscall, "__syscall", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR___sysctl, "__sysctl", NULL, print_sysctl, NULL },
+ { TARGET_FREEBSD_NR__umtx_op, "_umtx_op", "%s(%#x, %d, %d, %#x, %#x)", NULL, NULL },
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1000000
++{ TARGET_FREEBSD_NR__umtx_lock, "__umtx_lock", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR__umtx_unlock, "__umtx_unlock", NULL, NULL, NULL },
++#endif
+ { TARGET_FREEBSD_NR_accept, "accept", "%s(%d,%#x,%#x)", NULL, NULL },
+ { TARGET_FREEBSD_NR_accept4, "accept4", "%s(%d,%d,%#x,%#x)", NULL, NULL },
+ { TARGET_FREEBSD_NR_access, "access", "%s(\"%s\",%#o)", NULL, NULL },
+@@ -45,6 +49,10 @@
+ { TARGET_FREEBSD_NR_cap_fcntls_get, "cap_fcntls_get", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_cap_fcntls_limit, "cap_fcntls_limit", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_cap_getmode, "cap_getmode", NULL, NULL, NULL },
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1000000
++{ TARGET_FREEBSD_NR_cap_getrights, "cap_getrights", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_cap_new, "cap_new", NULL, NULL, NULL },
++#endif
+ { TARGET_FREEBSD_NR_cap_ioctls_get, "cap_ioctls_get", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_cap_ioctls_limit, "cap_ioctls_limit", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_cap_rights_limit, "cap_rights_limit", NULL, NULL, NULL },
+@@ -126,6 +134,9 @@
+ { TARGET_FREEBSD_NR_issetugid, "issetugid", "%s()", NULL, NULL },
+ { TARGET_FREEBSD_NR_kevent, "kevent", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_kill, "kill", NULL, NULL, NULL },
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1000000
++{ TARGET_FREEBSD_NR_killpg, "killpg", NULL, NULL, NULL },
++#endif
+ { TARGET_FREEBSD_NR_kqueue, "kqueue", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_ktrace, "ktrace", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_lchown, "lchown", NULL, NULL, NULL },
+diff --git a/bsd-user/freebsd/syscall_nr.h b/bsd-user/freebsd/syscall_nr.h
+index 74c3135..dd3cb4f 100644
+--- a/bsd-user/freebsd/syscall_nr.h
++++ b/bsd-user/freebsd/syscall_nr.h
+@@ -467,3 +467,19 @@
+ #define	TARGET_FREEBSD_NR_aio_mlock	543
+ #define	TARGET_FREEBSD_NR_procctl	544
+ #define	TARGET_FREEBSD_NR_MAXSYSCALL	545
++/* Legacy system calls. */
++#ifndef	TARGET_FREEBSD_NR_killpg
++#define	TARGET_FREEBSD_NR_killpg	146
++#endif
++#ifndef	TARGET_FREEBSD_NR__umtx_lock
++#define	TARGET_FREEBSD_NR__umtx_lock	434
++#endif
++#ifndef	TARGET_FREEBSD_NR__umtx_unlock
++#define	TARGET_FREEBSD_NR__umtx_unlock	435
++#endif
++#ifndef	TARGET_FREEBSD_NR_cap_new
++#define	TARGET_FREEBSD_NR_cap_new	514
++#endif
++#ifndef	TARGET_FREEBSD_NR_cap_getrights
++#define	TARGET_FREEBSD_NR_cap_getrights	515
++#endif

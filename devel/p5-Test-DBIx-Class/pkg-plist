@@ -45,19 +45,3 @@
 %%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait/Testpostgresql.pm
 %%SITE_PERL%%/Test/DBIx/Class/Types.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DBIx/Class/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DBIx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/SchemaManager
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/Role
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/FixtureCommand
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Company
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema
-@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class
-@dirrmtry %%SITE_PERL%%/Test/DBIx
-@dirrmtry %%SITE_PERL%%/Test

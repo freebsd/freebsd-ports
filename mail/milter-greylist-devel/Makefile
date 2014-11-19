@@ -110,6 +110,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/greylist.conf ${STAGEDIR}${EXAMPLESDIR}
 .endif
+	@${MKDIR} ${STAGEDIR}/var/milter-greylist
 
 .include "${.CURDIR}/../sendmail/bsd.milter.mk"
 .include <bsd.port.mk>

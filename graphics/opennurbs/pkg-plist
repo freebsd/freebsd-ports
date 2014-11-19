@@ -134,12 +134,3 @@ libexec/openNURBS/example_write
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_userdata/example_ud.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_write/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_write/example_write.cc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_write
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_userdata
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_roundtrip
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_read
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_brep
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm libexec/openNURBS
-@dirrm include/openNURBS/zlib
-@dirrm include/openNURBS

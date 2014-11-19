@@ -1,11 +1,5 @@
 --- amavis-stats.orig	Sat Mar 27 23:25:27 2004
 +++ amavis-stats	Mon Jul 10 22:55:19 2006
-@@ -1,4 +1,4 @@
--#! /usr/bin/perl
-+#!/usr/bin/perl -w
- #
- # amavis-stats -- generate rrds from amavis log output
- #
 @@ -28,6 +28,7 @@
  # ########################################################################
  use strict;

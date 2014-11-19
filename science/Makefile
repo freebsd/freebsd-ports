@@ -37,10 +37,6 @@
     SUBDIR += devisor
     SUBDIR += dlpoly-classic
     SUBDIR += ecs
-    SUBDIR += elmer-eio
-    SUBDIR += elmer-matc
-    SUBDIR += elmer-meshgen2d
-    SUBDIR += elmergrid
     SUBDIR += epte
     SUBDIR += fastcap
     SUBDIR += fasthenry

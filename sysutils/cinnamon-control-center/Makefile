@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/sysutils/cinnamon-control-center/Makefile 19857 2014-09-13 09:46:37Z gusi $
+#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.2.11
@@ -13,8 +13,7 @@ COMMENT=	Control center for Cinnamon
 
 BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		cinnamon-settings-daemon>=0:${PORTSDIR}/sysutils/cinnamon-settings-daemon \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		libtoolize:${PORTSDIR}/devel/libtool
+		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libcheese.so:${PORTSDIR}/multimedia/cheese \
@@ -37,12 +36,12 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-USES=		gettext gmake libtool pathfix python pkgconfig
+USES=		autoreconf:build gettext gmake libtool pathfix \
+		python:2 pkgconfig
 USE_GNOME=	evolutiondataserver3 gconf2 gnomeprefix \
 		gtk30 intlhack libgnomekbd
 USE_XORG=	x11 xfixes sm
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	autoconf automake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compile-warnings=no

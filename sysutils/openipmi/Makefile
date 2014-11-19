@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--with-openssl=no
 .endif
 
 .if ${PORT_OPTIONS:MTKINTER}
-USE_PYTHON=		yes
+USES+=			python
 WITH_PYTHON=		yes
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 			${LOCALBASE}/lib/Tix8.4.3/Tix.tcl:${PORTSDIR}/x11-toolkits/tix
@@ -79,7 +79,7 @@ PLIST_SUB+=		PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		yes
+USES+=			python
 CONFIGURE_ARGS+=	--with-python --with-swig
 BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
 PLIST_SUB+=		PYTHON=""

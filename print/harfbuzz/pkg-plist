@@ -70,7 +70,3 @@ share/gtk-doc/html/harfbuzz/right.png
 share/gtk-doc/html/harfbuzz/style.css
 share/gtk-doc/html/harfbuzz/up-insensitive.png
 share/gtk-doc/html/harfbuzz/up.png
-@dirrm share/gtk-doc/html/harfbuzz
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/harfbuzz

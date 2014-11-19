@@ -663,39 +663,3 @@ man/man7/graphviz.7.gz
 %%SMYRNA%%%%DATADIR%%/smyrna/ltwopi.png
 %%SMYRNA%%%%DATADIR%%/smyrna/selectr.png
 %%SMYRNA%%%%DATADIR%%/smyrna/single_select.png
-%%TCL%%@dirrm lib/tcl%%TCL_VER%%/graphviz
-%%PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
-%%TCL%%@dirrm lib/graphviz/tcl
-%%RUBY%%@dirrm lib/graphviz/ruby
-%%PYTHON%%@dirrm lib/graphviz/python
-%%PHP%%@dirrm lib/graphviz/php
-%%PERL%%@dirrm lib/graphviz/perl
-%%LUA%%@dirrm lib/graphviz/lua
-%%GUILE%%@dirrm lib/graphviz/guile
-@dirrm lib/graphviz
-@dirrm include/graphviz
-%%SMYRNA%%@dirrm %%DATADIR%%/smyrna
-@dirrm %%DATADIR%%/lefty
-@dirrm %%DATADIR%%/gvpr
-%%GVEDIT%%@dirrm %%DATADIR%%/gvedit
-@dirrm %%DATADIR%%/graphs/directed
-@dirrm %%DATADIR%%/graphs/undirected
-@dirrm %%DATADIR%%/graphs
-%%MING%%@dirrm %%DATADIR%%/font
-%%SMYRNA%%@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/doc/html/schema
-@dirrm %%DATADIR%%/doc/html
-@dirrm %%DATADIR%%/doc
-%%LUA%%@dirrmtry %%DATADIR%%/demo
-%%PERL%%@dirrmtry %%DATADIR%%/demo
-%%PHP%%@dirrmtry %%DATADIR%%/demo
-%%PYTHON%%@dirrmtry %%DATADIR%%/demo
-%%RUBY%%@dirrmtry %%DATADIR%%/demo
-%%TCL%%@dirrmtry %%DATADIR%%/demo
-@dirrm %%DATADIR%%
-%%PHP%%@dirrmtry share/php
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pathplan_data
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -2,6 +2,7 @@
 
 PORTNAME=	another-htmllint
 PORTVERSION=	20060601
+PORTREVISION=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://dist.bsdlab.org/
 
@@ -19,7 +20,7 @@ DIR=		${STAGEDIR}${PREFIX}/share/htmllint
 PM=		htmllint.pm RFC2396.pm htmllint.env
 RULE=		*.rul
 HTML=		*.cgi *.html *.gif *.css
-SEDSUB=		${SED} -e 's@%PREFIX%@${PREFIX}@'
+SEDSUB=		${SED} -e 's@%PREFIX%@${PREFIX}@ ; s@%PERL%@${PERL}@'
 
 # Please set this!
 HTMLLINT_ADMIN?=	kuriyama@FreeBSD.org
@@ -41,8 +42,5 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${HTML} ${DIR}/html
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PM} ${DIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${RULE} ${DIR}/rule
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

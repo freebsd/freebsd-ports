@@ -6,7 +6,3 @@
 %%SITE_PERL%%/Test/Tester/CaptureRunner.pm
 %%SITE_PERL%%/Test/Tester/Delegate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Tester/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Tester
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Tester
-@dirrmtry %%SITE_PERL%%/Test

@@ -1,8 +1,5 @@
 bin/ibsh
 etc/ibsh/globals.cmds
 etc/ibsh/globals.xtns
-@exec mkdir -p %D/etc/ibsh/cmds
-@exec mkdir -p %D/etc/ibsh/xtns
-@dirrm etc/ibsh/cmds
-@dirrm etc/ibsh/xtns
-@dirrm etc/ibsh
+@dir etc/ibsh/cmds
+@dir etc/ibsh/xtns

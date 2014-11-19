@@ -22,8 +22,7 @@ LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/sendmail
 PYPORTNAME=	${PKGNAMEPREFIX:C/[0-9]+-//}${PORTNAME}
 
 DIST_SUBDIR=	python
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

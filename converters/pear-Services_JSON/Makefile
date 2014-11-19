@@ -5,7 +5,7 @@ PORTNAME=	Services_JSON
 PORTVERSION=	1.0.3
 CATEGORIES=	converters www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP implementation of json_encode/decode
 
 USES=		pear

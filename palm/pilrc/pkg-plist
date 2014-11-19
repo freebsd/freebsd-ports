@@ -7,5 +7,3 @@ bin/pilrcui
 %%PORTDOCS%%%%DOCSDIR%%/images/download.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

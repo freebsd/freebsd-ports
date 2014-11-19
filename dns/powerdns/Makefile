@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-static \
 		--with-modules="" \
 		--with-dynmodules="pipe bind ${MODULES}" \
+		--docdir="${PREFIX}/share/doc/powerdns" \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}"
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
@@ -32,7 +33,6 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		DISTNAME="${DISTNAME}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
-# DOCSDIR=	${PREFIX}/share/doc/pdns
 
 SUB_FILES=	pkg-message
 
@@ -60,7 +60,7 @@ REMOTE_DESC=		Remote backend
 TINYDNS_DESC=		TinyDNS backend
 TOOLS_DESC=		Build extra tools
 
-OPTIONS_DEFAULT=	PGSQLDB DNSSEC BOTAN110 POLARSSL
+OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
 
 OPTIONS_SUB=	yes
 
@@ -152,20 +152,6 @@ MODULES+=	opendbx
 CONFIGURE_ARGS+=	--without-system-polarssl
 .else
 LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
-.endif
-
-post-patch:
-.if ${PORT_OPTIONS:MOPENLDAP}
-	@${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
-		-e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib;' \
-		${WRKSRC}/modules/ldapbackend/Makefile.in
-	@${REINPLACE_CMD} -e 's;@LIBDL@;@LIBDL@ -L${LOCALBASE}/lib;' \
-		-e 's;@modulelibs@;@modulelibs@ -llber;' \
-		${WRKSRC}/pdns/Makefile.in
-.endif
-.if ${PORT_OPTIONS:MPGSQL}
-	@${REINPLACE_CMD} -E -e 's;(PGSQL_inc_check="\$$withval/include/pgsql)";\1 \$$withval/include";' \
-		${WRKSRC}/configure
 .endif
 
 post-install:

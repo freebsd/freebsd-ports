@@ -1,4 +1,2 @@
 %%SITE_PERL%%/Directory/Scratch/Structured.pm
 %%PERL5_MAN3%%/Directory::Scratch::Structured.3.gz
-@dirrmtry %%SITE_PERL%%/Directory/Scratch
-@dirrmtry %%SITE_PERL%%/Directory

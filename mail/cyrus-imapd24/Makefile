@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.4.17
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -24,6 +24,7 @@ PERLMAN=	${SITE_PERL_REL:S/site_perl\///}
 USE_RC_SUBR=	imapd
 
 USES=		perl5
+USE_PERL5=	run build fixpacklist
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \

@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/SVN::Access.3.gz
 %%PERL5_MAN3%%/SVN::Access::Group.3.gz
 %%PERL5_MAN3%%/SVN::Access::Resource.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Access
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
-@dirrm %%SITE_PERL%%/SVN/Access
-@dirrmtry %%SITE_PERL%%/SVN

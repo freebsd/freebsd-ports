@@ -9,9 +9,3 @@
 %%SITE_PERL%%/DNS/Config/Statement/Zone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS-Config/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS-Config
-@dirrmtry %%SITE_PERL%%/DNS/Config/Statement
-@dirrmtry %%SITE_PERL%%/DNS/Config/File
-@dirrmtry %%SITE_PERL%%/DNS/Config
-@dirrmtry %%SITE_PERL%%/DNS

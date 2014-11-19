@@ -127,17 +127,6 @@ lib/tcl%%TCL_VER%%/tclIndex
 lib/tcl%%TCL_VER%%/tcltest2.2/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/tcltest2.2/tcltest.tcl
 lib/tcl%%TCL_VER%%/word.tcl
-@dirrm lib/tcl%%TCL_VER%%/tcltest2.2
-@dirrm lib/tcl%%TCL_VER%%/platform
-@dirrm lib/tcl%%TCL_VER%%/opt0.4
-@dirrm lib/tcl%%TCL_VER%%/msgcat1.3
-@dirrm lib/tcl%%TCL_VER%%/http2.5
-@dirrm lib/tcl%%TCL_VER%%/http1.0
-@dirrm lib/tcl%%TCL_VER%%/encoding
-@dirrmtry lib/tcl%%TCL_VER%%
-@dirrm include/tcl%%TCL_VER%%/unix
-@dirrm include/tcl%%TCL_VER%%/generic
-@dirrm include/tcl%%TCL_VER%%
 %%MAN%%man/man1/tclsh.tcl84.1.gz
 %%MAN%%man/man3/TCL_MEM_DEBUG.tcl84.3.gz
 %%MAN%%man/man3/Tcl_Access.tcl84.3.gz

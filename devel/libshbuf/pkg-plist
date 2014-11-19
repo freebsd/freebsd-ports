@@ -5,4 +5,3 @@ lib/libshbuf.a
 lib/libshbuf.so
 lib/libshbuf.so.0
 lib/libshbuf.so.0.1.0
-@dirrm include/libshbuf

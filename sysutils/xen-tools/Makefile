@@ -13,8 +13,7 @@ COMMENT=	Xen tools within FreeBSD domU
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 DISTFILES=	xen-${PORTVERSION}.tar.gz
 
-USES=		gmake
-USE_PYTHON=	yes
+USES=		gmake python
 MAKE_ENV+=	PYTHON=${PYTHON_CMD}
 
 ONLY_FOR_ARCHS=		amd64 i386 ia64

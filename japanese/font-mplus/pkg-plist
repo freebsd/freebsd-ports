@@ -80,9 +80,6 @@
 %%DATADIR%%/TTF/mplus-2p-medium.ttf
 %%DATADIR%%/TTF/mplus-2p-regular.ttf
 %%DATADIR%%/TTF/mplus-2p-thin.ttf
-@dirrm %%DATADIR%%/bitmap
-@dirrm %%DATADIR%%/TTF
-@dirrm %%DATADIR%%
 %%LOCAL_FONTSDIR%%/mplus/mplus_f10b-euro.pcf.gz
 %%LOCAL_FONTSDIR%%/mplus/mplus_f10b.pcf.gz
 %%LOCAL_FONTSDIR%%/mplus/mplus_f10r-euro.pcf.gz
@@ -164,9 +161,6 @@
 %%LOCAL_FONTSDIR%%/TTF/mplus-2p-medium.ttf
 %%LOCAL_FONTSDIR%%/TTF/mplus-2p-regular.ttf
 %%LOCAL_FONTSDIR%%/TTF/mplus-2p-thin.ttf
-@dirrm %%LOCAL_FONTSDIR%%/mplus
-@dirrmtry %%LOCAL_FONTSDIR%%/TTF
-@dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-mplus.conf
 etc/fonts/conf.avail/62-fonts-mplus.conf
 etc/fonts/conf.d/20-unhint-mplus.conf

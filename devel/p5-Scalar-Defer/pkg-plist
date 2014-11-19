@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Scalar::Defer.3.gz
 %%SITE_PERL%%/Scalar/Defer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Defer/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Defer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar
-@dirrmtry %%SITE_PERL%%/Scalar

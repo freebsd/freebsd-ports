@@ -18,7 +18,3 @@
 %%PERL5_MAN3%%/Thrift::XS::BinaryProtocol.3.gz
 %%PERL5_MAN3%%/Thrift::XS::CompactProtocol.3.gz
 %%PERL5_MAN3%%/Thrift::XS::MemoryBuffer.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thrift/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thrift
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Thrift/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Thrift

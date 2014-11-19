@@ -1,4 +1,4 @@
---- Makefile.orig	2014-04-22 19:29:32 UTC
+--- Makefile.orig	2014-10-17 09:03:12 UTC
 +++ Makefile
 @@ -68,60 +68,48 @@
  
@@ -96,15 +96,16 @@
 -	mkdir -p $(CONFDIR)/plugins
 -	mkdir -p $(CONFDIR)/plugin-conf.d
 -	mkdir -p $(LIBDIR)/plugins
-+	mkdir -p $(DESTDIR)$(CONFDIR)/plugins
-+	mkdir -p $(DESTDIR)$(CONFDIR)/plugin-conf.d
-+	mkdir -p $(DESTDIR)$(LIBDIR)/plugins
- 	mkdir -p $(PLUGSTATE)
- 
+-	mkdir -p $(PLUGSTATE)
+-
 -	$(CHOWN) root:root $(PLUGSTATE)
 -	$(CHMOD) 0755 $(PLUGSTATE)
 -	$(CHMOD) 0755 $(CONFDIR)/plugin-conf.d
--
++	mkdir -p $(DESTDIR)$(CONFDIR)/plugins
++	mkdir -p $(DESTDIR)$(CONFDIR)/plugin-conf.d
++	mkdir -p $(DESTDIR)$(LIBDIR)/plugins
++	mkdir -p $(DESTDIR)$(PLUGSTATE)
+ 
  	for p in build/plugins/node.d/* build/plugins/node.d.$(OSTYPE)/* ; do \
  	    if test -f "$$p" ; then                            \
  		echo Installing $$p;                           \
@@ -120,9 +121,10 @@
 +	$(INSTALL) -m 0644 build/plugins/plugin.sh $(DESTDIR)$(LIBDIR)/plugins/
  
  install-plugins-java: build-plugins-java
- 	mkdir -p $(JAVALIBDIR)
+-	mkdir -p $(JAVALIBDIR)
 -	$(INSTALL) -m 0644 build/plugins/javalib/munin-jmx-plugins.jar $(JAVALIBDIR)/
 -	mkdir -p $(LIBDIR)/plugins
++	mkdir -p $(DESTDIR)$(JAVALIBDIR)
 +	$(INSTALL) -m 0644 build/plugins/javalib/munin-jmx-plugins.jar $(DESTDIR)$(JAVALIBDIR)/
 +	mkdir -p $(DESTDIR)$(LIBDIR)/plugins
  	for p in build/plugins/node.d.java/*; do               \
@@ -133,6 +135,15 @@
  	    fi                                                 \
  	done
  
+@@ -183,7 +167,7 @@
+ install-node-prime: install-node-pre install-node
+ 
+ install-node-pre: build/node/munin-node.conf install-pre
+-	test -f "$(CONFDIR)/munin-node.conf" || $(INSTALL) -m 0644 build/node/munin-node.conf $(CONFDIR)/
++	test -f "$(DESTDIR)$(CONFDIR)/munin-node.conf" || $(INSTALL) -m 0644 build/node/munin-node.conf $(DESTDIR)$(CONFDIR)/
+ 
+ 
+ install-common-prime: build-common install-common
 @@ -466,6 +450,7 @@
              --install_path sbin=$(SBINDIR)		\
              --install_path bindoc=$(MANDIR)/man1	\

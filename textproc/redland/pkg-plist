@@ -94,9 +94,3 @@ share/gtk-doc/html/redland/up.png
 %%MYSQL%%share/redland/mysql-v1.ttl
 %%MYSQL%%share/redland/mysql-v2.ttl
 %%DATADIR%%/Redland.i
-@comment @exec mkdir -p %D/lib/redland
-@comment @dirrm lib/redland
-@dirrm %%DATADIR%%
-@dirrm share/gtk-doc/html/redland
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc

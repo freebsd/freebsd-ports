@@ -33,5 +33,3 @@ man/man1/uma.1.gz
 %%ETCDIR%%/uma.conf.sample
 %%DATADIR%%/buildflags.awk
 %%DATADIR%%/buildflags.mk
-@dirrm share/bsdadminscripts
-@dirrmtry %%ETCDIR%%

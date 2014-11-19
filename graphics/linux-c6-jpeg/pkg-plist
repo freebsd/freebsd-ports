@@ -16,4 +16,3 @@ usr/share/man/man1/djpeg.1.gz
 usr/share/man/man1/jpegtran.1.gz
 usr/share/man/man1/rdjpgcom.1.gz
 usr/share/man/man1/wrjpgcom.1.gz
-@dirrm usr/share/doc/libjpeg-turbo-1.2.1

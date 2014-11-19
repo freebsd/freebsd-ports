@@ -17,7 +17,3 @@ man/man1/dq-submit.1.gz
 %%PERL5_MAN3%%/IPC::DirQueue::IndexClient.3.gz
 %%PERL5_MAN3%%/IPC::DirQueue::IndexServer.3.gz
 %%PERL5_MAN3%%/IPC::DirQueue::Job.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/DirQueue
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrmtry %%SITE_PERL%%/IPC/DirQueue
-@dirrmtry %%SITE_PERL%%/IPC

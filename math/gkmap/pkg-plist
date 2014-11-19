@@ -7,6 +7,3 @@ share/doc/gkmap/NEWS
 share/doc/gkmap/README
 share/gkmap/pixmaps/kmap.png
 share/gkmap/pixmaps/rc.png
-@dirrm share/gkmap/pixmaps
-@dirrm share/gkmap
-@dirrm share/doc/gkmap

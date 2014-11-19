@@ -1,3 +1,2 @@
 bin/vnccrack
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

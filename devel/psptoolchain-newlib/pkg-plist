@@ -110,12 +110,3 @@ psp/include/ar.h
 psp/include/alloca.h
 psp/include/_syslist.h
 psp/include/_ansi.h
-@dirrm psp/include/sys
-@dirrm psp/include/netinet
-@dirrm psp/include/machine
-@dirrm psp/include/arpa
-@dirrmtry psp/include/rpc
-@dirrmtry psp/include/bits
-@dirrmtry psp/include
-@dirrmtry psp/lib
-@dirrmtry psp

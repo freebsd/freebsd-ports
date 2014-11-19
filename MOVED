@@ -5431,69 +5431,6 @@ editors/openoffice-3|editors/openoffice-4|2014-02-07|OpenOffice 3 is not support
 mail/muttzilla||2014-02-07|Netscape doesn't exist anymore
 www/nscache||2014-02-07|Netscape doesn't exist anymore
 audio/bebocd||2014-02-08|Has expired: abandoned by mainstream
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-accessibility/accerciser3|accessibility/accerciser|%DATE%|moved
-accessibility/mousetweaks3|accessibility/mousetweaks|%DATE%|moved
-accessibility/orca3|accessibility/orca|%DATE%|moved
-archivers/file-roller3|archivers/file-roller|%DATE%|moved
-audio/rhythmbox3|audio/rhythmbox|%DATE%|moved
-databases/evolution-data-server3|databases/evolution-data-server|%DATE%|moved
-deskutils/gucharmap3|deskutils/gucharmap|%DATE%|moved
-devel/anjuta3|devel/anjuta|%DATE%|moved
-devel/devhelp3|devel/devhelp|%DATE%|moved
-devel/seed3|devel/seed|%DATE%|moved
-editors/gedit3|editors/gedit|%DATE%|moved
-editors/gedit-plugins3|editors/gedit-plugins|%DATE%|moved
-editors/ghex3|editors/ghex|%DATE%|moved
-games/gnome-games3|games/gnome-games|%DATE%|moved
-graphics/eog3|graphics/eog|%DATE%|moved
-graphics/eog-plugins3|graphics/eog-plugins|%DATE%|moved
-graphics/evince3|graphics/evince|%DATE%|moved
-mail/evolution-exchange3|mail/evolution-exchange|%DATE%|moved
-mail/evolution-mapi3|mail/evolution-mapi|%DATE%|moved
-math/gcacltool3|math/gcalctool|%DATE%|moved
-misc/gnome-devel-docs3|misc/gnome-devel-docs|%DATE%|moved
-misc/gnome-user-docs3|misc/gnome-user-docs|%DATE%|moved
-multimedia/cheese3|multimedia/cheese|%DATE%|moved
-multimedia/totem3|multimedia/totem|%DATE%|moved
-net/gnome-nettool3|net/gnome-nettool|%DATE%|moved
-net/gtk-vnc3|net/gtk-vnc|%DATE%|moved
-net/vinagre3|net/vinagre|%DATE%|moved
-net/vino3|net/vino|%DATE%|moved
-net-im/empathy3|net-im/empathy|%DATE%|moved
-net-im/folks04|net-im/folks|%DATE%|moved
-net-im/telepathy-farsight|net-im/telepathy-farstream|%DATE%|replaced
-security/gnome-keyring3|security/gnome-keyring|%DATE%|moved
-security/seahorse3|security/seahorse|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-sysutils/brasero3|sysutils/brasero|%DATE%|moved
-sysutils/gconf-editor3|sysutils/gconf-editor|%DATE%|moved
-sysutils/gnome-control-center3|sysutils/gnome-control-center|%DATE%|moved
-sysutils/gnome-power-manager3|sysutils/gnome-power-manager|%DATE%|moved
-sysutils/gnome-system-monitor3|sysutils/gnome-system-monitor|%DATE%|moved
-www/epiphany3|www/epiphany|%DATE%|moved
-www/epiphany-extensions3|www/epiphany-extensions|%DATE%|moved
-x11/gdm3|x11/gdm|%DATE%|moved
-x11/gnome-desktop3|x11/gnome-desktop|%DATE%|moved
-x11/gnome-menus3|x11/gnome-menus|%DATE%|moved
-x11/gnome-panel3|x11/gnome-panel|%DATE%|moved
-x11/gnome-screensaver3|x11/gnome-screensaver|%DATE%|moved
-x11/gnome-session3|x11/gnome-session|%DATE%|moved
-x11/gnome-terminal3|x11/gnome-terminal|%DATE%|moved
-x11/yelp3|x11/yelp|%DATE%|moved
-x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
-x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
-x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
 www/runsomebrowser|www/webbrowser|2014-02-09|Name changed
 irc/trickyirc||2014-02-10|Abandonware, segfaults, no releases in 15 years
 databases/p5-DBD-mysql55|databases/p5-DBD-mysql|2014-02-12|If you need a different default MYSQL version, use DEFAULT_VERSIONS
@@ -6292,76 +6229,6 @@ security/sudosh2||2014-07-01|Has expired: Funcition replaced by sudo -s
 lang/pike76|lang/pike78|2014-07-01|Has expired: Outdated: Users should switch to lang/pike78
 editors/gummi||2014-07-01|Has expired: Builds fine but the program itself is unusable
 archivers/rpm|archivers/rpm4|2014-07-03|rpm3 is long EOLed, rpm4 is the default rpm archivers for most of linux distributions
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-accessibility/accerciser3|accessibility/accerciser|%DATE%|moved
-accessibility/mousetweaks3|accessibility/mousetweaks|%DATE%|moved
-accessibility/orca3|accessibility/orca|%DATE%|moved
-archivers/file-roller3|archivers/file-roller|%DATE%|moved
-audio/rhythmbox3|audio/rhythmbox|%DATE%|moved
-databases/evolution-data-server3|databases/evolution-data-server|%DATE%|moved
-deskutils/gucharmap3|deskutils/gucharmap|%DATE%|moved
-devel/anjuta3|devel/anjuta|%DATE%|moved
-devel/devhelp3|devel/devhelp|%DATE%|moved
-devel/seed3|devel/seed|%DATE%|moved
-editors/gedit3|editors/gedit|%DATE%|moved
-editors/gedit-plugins3|editors/gedit-plugins|%DATE%|moved
-editors/ghex3|editors/ghex|%DATE%|moved
-games/gnome-games3|games/gnome-games|%DATE%|moved
-graphics/eog3|graphics/eog|%DATE%|moved
-graphics/eog-plugins3|graphics/eog-plugins|%DATE%|moved
-graphics/evince3|graphics/evince|%DATE%|moved
-mail/evolution-exchange3|mail/evolution-exchange|%DATE%|moved
-mail/evolution-mapi3|mail/evolution-mapi|%DATE%|moved
-math/gcacltool3|math/gcalctool|%DATE%|moved
-misc/gnome-devel-docs3|misc/gnome-devel-docs|%DATE%|moved
-misc/gnome-user-docs3|misc/gnome-user-docs|%DATE%|moved
-multimedia/cheese3|multimedia/cheese|%DATE%|moved
-multimedia/totem3|multimedia/totem|%DATE%|moved
-net/gnome-nettool3|net/gnome-nettool|%DATE%|moved
-net/gtk-vnc3|net/gtk-vnc|%DATE%|moved
-net/vinagre3|net/vinagre|%DATE%|moved
-net/vino3|net/vino|%DATE%|moved
-net-im/empathy3|net-im/empathy|%DATE%|moved
-net-im/folks04|net-im/folks|%DATE%|moved
-net-im/telepathy-farsight|net-im/telepathy-farstream|%DATE%|replaced
-security/gnome-keyring3|security/gnome-keyring|%DATE%|moved
-security/seahorse3|security/seahorse|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-sysutils/brasero3|sysutils/brasero|%DATE%|moved
-sysutils/gconf-editor3|sysutils/gconf-editor|%DATE%|moved
-sysutils/gnome-control-center3|sysutils/gnome-control-center|%DATE%|moved
-sysutils/gnome-power-manager3|sysutils/gnome-power-manager|%DATE%|moved
-sysutils/gnome-system-monitor3|sysutils/gnome-system-monitor|%DATE%|moved
-www/epiphany3|www/epiphany|%DATE%|moved
-www/epiphany-extensions3|www/epiphany-extensions|%DATE%|moved
-x11/gdm3|x11/gdm|%DATE%|moved
-x11/gnome-desktop3|x11/gnome-desktop|%DATE%|moved
-x11/gnome-menus3|x11/gnome-menus|%DATE%|moved
-x11/gnome-panel3|x11/gnome-panel|%DATE%|moved
-x11/gnome-screensaver3|x11/gnome-screensaver|%DATE%|moved
-x11/gnome-session3|x11/gnome-session|%DATE%|moved
-x11/gnome-terminal3|x11/gnome-terminal|%DATE%|moved
-x11/yelp3|x11/yelp|%DATE%|moved
-x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
-x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
-x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
-multimedia/libgnome-media-profiles||%DATE%|removed
-math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
-www/epiphany-extensions||2014-13-03|Development has ceased
-x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
-deskutils/gnome-music|audio/gnome-music|2014-02-04|Makes more sense to have in under audio/
-deskutils/gnome-search-tool||2014-04-25|removed
-mail/california|deskutils/california|2014-05-24|Does not belong under mail/
 x11-clocks/wmitime||2014-07-04|Has expired
 x11/xorg-edit||2014-07-04|Has expired: Depends on older version of wxGTK
 net/ttbudget||2014-07-06|Has expired: does not build, mastersite disapperead, not staged
@@ -6504,216 +6371,6 @@ security/p5-openxpki-client|security/p5-openxpki|2014-08-04|Has expired: now inc
 security/p5-openxpki-client-scep|security/p5-openxpki|2014-08-04|Has expired: now incorporated within security/p5-openxpki
 security/p5-openxpki-deployment|security/p5-openxpki|2014-08-04|Has expired: now incorporated within security/p5-openxpki
 news/husky-base-devel||2014-08-05|Has been incorporated into the build process of other husky-*-devel ports
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-accessibility/accerciser3|accessibility/accerciser|%DATE%|moved
-accessibility/mousetweaks3|accessibility/mousetweaks|%DATE%|moved
-accessibility/orca3|accessibility/orca|%DATE%|moved
-archivers/file-roller3|archivers/file-roller|%DATE%|moved
-audio/rhythmbox3|audio/rhythmbox|%DATE%|moved
-databases/evolution-data-server3|databases/evolution-data-server|%DATE%|moved
-deskutils/gucharmap3|deskutils/gucharmap|%DATE%|moved
-devel/anjuta3|devel/anjuta|%DATE%|moved
-devel/devhelp3|devel/devhelp|%DATE%|moved
-devel/seed3|devel/seed|%DATE%|moved
-editors/gedit3|editors/gedit|%DATE%|moved
-editors/gedit-plugins3|editors/gedit-plugins|%DATE%|moved
-editors/ghex3|editors/ghex|%DATE%|moved
-games/gnome-games3|games/gnome-games|%DATE%|moved
-graphics/eog3|graphics/eog|%DATE%|moved
-graphics/eog-plugins3|graphics/eog-plugins|%DATE%|moved
-graphics/evince3|graphics/evince|%DATE%|moved
-mail/evolution-exchange3|mail/evolution-exchange|%DATE%|moved
-mail/evolution-mapi3|mail/evolution-mapi|%DATE%|moved
-math/gcacltool3|math/gcalctool|%DATE%|moved
-misc/gnome-devel-docs3|misc/gnome-devel-docs|%DATE%|moved
-misc/gnome-user-docs3|misc/gnome-user-docs|%DATE%|moved
-multimedia/cheese3|multimedia/cheese|%DATE%|moved
-multimedia/totem3|multimedia/totem|%DATE%|moved
-net/gnome-nettool3|net/gnome-nettool%DATE%|moved
-net/gtk-vnc3|net/gtk-vnc|%DATE%|moved
-net/vinagre3|net/vinagre|%DATE%|moved
-net/vino3|net/vino|%DATE%|moved
-net-im/empathy3|net-im/empathy|%DATE%|moved
-net-im/folks04|net-im/folks|%DATE%|moved
-net-im/telepathy-farsight|net-im/telepathy-farstream|%DATE%|replaced
-security/gnome-keyring3|security/gnome-keyring|%DATE%|moved
-security/seahorse3|security/seahorse|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-sysutils/brasero3|sysutils/brasero|%DATE%|moved
-sysutils/gconf-editor3|sysutils/gconf-editor|%DATE%|moved
-sysutils/gnome-control-center3|sysutils/gnome-control-center|%DATE%|moved
-sysutils/gnome-power-manager3|sysutils/gnome-power-manager|%DATE%|moved
-sysutils/gnome-system-monitor3|sysutils/gnome-system-monitor|%DATE%|moved
-www/epiphany3|www/epiphany|%DATE%|moved
-www/epiphany-extensions3|www/epiphany-extensions|%DATE%|moved
-x11/gdm3|x11/gdm|%DATE%|moved
-x11/gnome-desktop3|x11/gnome-desktop|%DATE%|moved
-x11/gnome-menus3|x11/gnome-menus|%DATE%|moved
-x11/gnome-panel3|x11/gnome-panel|%DATE%|moved
-x11/gnome-screensaver3|x11/gnome-screensaver|%DATE%|moved
-x11/gnome-session3|x11/gnome-session|%DATE%|moved
-x11/gnome-terminal3|x11/gnome-terminal|%DATE%|moved
-x11/yelp3|x11/yelp|%DATE%|moved
-x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
-x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
-x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
-multimedia/libgnome-media-profiles||%DATE%|removed
-math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
-www/epiphany-extensions||2014-13-03|Development has ceased
-x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
-deskutils/gnome-music|audio/gnome-music|2014-02-04|Makes more sense to have in under audio/
-deskutils/gnome-search-tool||2014-04-25|removed
-mail/california|deskutils/california|2014-05-24|Does not belong under mail/
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-accessibility/accerciser3|accessibility/accerciser|%DATE%|moved
-accessibility/mousetweaks3|accessibility/mousetweaks|%DATE%|moved
-accessibility/orca3|accessibility/orca|%DATE%|moved
-archivers/file-roller3|archivers/file-roller|%DATE%|moved
-audio/rhythmbox3|audio/rhythmbox|%DATE%|moved
-databases/evolution-data-server3|databases/evolution-data-server|%DATE%|moved
-deskutils/gucharmap3|deskutils/gucharmap|%DATE%|moved
-devel/anjuta3|devel/anjuta|%DATE%|moved
-devel/devhelp3|devel/devhelp|%DATE%|moved
-devel/seed3|devel/seed|%DATE%|moved
-editors/gedit3|editors/gedit|%DATE%|moved
-editors/gedit-plugins3|editors/gedit-plugins|%DATE%|moved
-editors/ghex3|editors/ghex|%DATE%|moved
-games/gnome-games3|games/gnome-games|%DATE%|moved
-graphics/eog3|graphics/eog|%DATE%|moved
-graphics/eog-plugins3|graphics/eog-plugins|%DATE%|moved
-graphics/evince3|graphics/evince|%DATE%|moved
-mail/evolution-exchange3|mail/evolution-exchange|%DATE%|moved
-mail/evolution-mapi3|mail/evolution-mapi|%DATE%|moved
-math/gcacltool3|math/gcalctool|%DATE%|moved
-misc/gnome-devel-docs3|misc/gnome-devel-docs|%DATE%|moved
-misc/gnome-user-docs3|misc/gnome-user-docs|%DATE%|moved
-multimedia/cheese3|multimedia/cheese|%DATE%|moved
-multimedia/totem3|multimedia/totem|%DATE%|moved
-net/gnome-nettool3|net/gnome-nettool%DATE%|moved
-net/gtk-vnc3|net/gtk-vnc|%DATE%|moved
-net/vinagre3|net/vinagre|%DATE%|moved
-net/vino3|net/vino|%DATE%|moved
-net-im/empathy3|net-im/empathy|%DATE%|moved
-net-im/folks04|net-im/folks|%DATE%|moved
-net-im/telepathy-farsight|net-im/telepathy-farstream|%DATE%|replaced
-security/gnome-keyring3|security/gnome-keyring|%DATE%|moved
-security/seahorse3|security/seahorse|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-sysutils/brasero3|sysutils/brasero|%DATE%|moved
-sysutils/gconf-editor3|sysutils/gconf-editor|%DATE%|moved
-sysutils/gnome-control-center3|sysutils/gnome-control-center|%DATE%|moved
-sysutils/gnome-power-manager3|sysutils/gnome-power-manager|%DATE%|moved
-sysutils/gnome-system-monitor3|sysutils/gnome-system-monitor|%DATE%|moved
-www/epiphany3|www/epiphany|%DATE%|moved
-www/epiphany-extensions3|www/epiphany-extensions|%DATE%|moved
-x11/gdm3|x11/gdm|%DATE%|moved
-x11/gnome-desktop3|x11/gnome-desktop|%DATE%|moved
-x11/gnome-menus3|x11/gnome-menus|%DATE%|moved
-x11/gnome-panel3|x11/gnome-panel|%DATE%|moved
-x11/gnome-screensaver3|x11/gnome-screensaver|%DATE%|moved
-x11/gnome-session3|x11/gnome-session|%DATE%|moved
-x11/gnome-terminal3|x11/gnome-terminal|%DATE%|moved
-x11/yelp3|x11/yelp|%DATE%|moved
-x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
-x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
-x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
-multimedia/libgnome-media-profiles||%DATE%|removed
-math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
-www/epiphany-extensions||2014-13-03|Development has ceased
-x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
-deskutils/gnome-music|audio/gnome-music|2014-02-04|Makes more sense to have in under audio/
-deskutils/gnome-search-tool||2014-04-25|removed
-mail/california|deskutils/california|2014-05-24|Does not belong under mail/
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-accessibility/accerciser3|accessibility/accerciser|%DATE%|moved
-accessibility/mousetweaks3|accessibility/mousetweaks|%DATE%|moved
-accessibility/orca3|accessibility/orca|%DATE%|moved
-archivers/file-roller3|archivers/file-roller|%DATE%|moved
-audio/rhythmbox3|audio/rhythmbox|%DATE%|moved
-databases/evolution-data-server3|databases/evolution-data-server|%DATE%|moved
-deskutils/gucharmap3|deskutils/gucharmap|%DATE%|moved
-devel/anjuta3|devel/anjuta|%DATE%|moved
-devel/devhelp3|devel/devhelp|%DATE%|moved
-devel/seed3|devel/seed|%DATE%|moved
-editors/gedit3|editors/gedit|%DATE%|moved
-editors/gedit-plugins3|editors/gedit-plugins|%DATE%|moved
-editors/ghex3|editors/ghex|%DATE%|moved
-games/gnome-games3|games/gnome-games|%DATE%|moved
-graphics/eog3|graphics/eog|%DATE%|moved
-graphics/eog-plugins3|graphics/eog-plugins|%DATE%|moved
-graphics/evince3|graphics/evince|%DATE%|moved
-mail/evolution-exchange3|mail/evolution-exchange|%DATE%|moved
-mail/evolution-mapi3|mail/evolution-mapi|%DATE%|moved
-math/gcacltool3|math/gcalctool|%DATE%|moved
-misc/gnome-devel-docs3|misc/gnome-devel-docs|%DATE%|moved
-misc/gnome-user-docs3|misc/gnome-user-docs|%DATE%|moved
-multimedia/cheese3|multimedia/cheese|%DATE%|moved
-multimedia/totem3|multimedia/totem|%DATE%|moved
-net/gnome-nettool3|net/gnome-nettool%DATE%|moved
-net/gtk-vnc3|net/gtk-vnc|%DATE%|moved
-net/vinagre3|net/vinagre|%DATE%|moved
-net/vino3|net/vino|%DATE%|moved
-net-im/empathy3|net-im/empathy|%DATE%|moved
-net-im/folks04|net-im/folks|%DATE%|moved
-net-im/telepathy-farsight|net-im/telepathy-farstream|%DATE%|replaced
-security/gnome-keyring3|security/gnome-keyring|%DATE%|moved
-security/seahorse3|security/seahorse|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-sysutils/brasero3|sysutils/brasero|%DATE%|moved
-sysutils/gconf-editor3|sysutils/gconf-editor|%DATE%|moved
-sysutils/gnome-control-center3|sysutils/gnome-control-center|%DATE%|moved
-sysutils/gnome-power-manager3|sysutils/gnome-power-manager|%DATE%|moved
-sysutils/gnome-system-monitor3|sysutils/gnome-system-monitor|%DATE%|moved
-www/epiphany3|www/epiphany|%DATE%|moved
-www/epiphany-extensions3|www/epiphany-extensions|%DATE%|moved
-x11/gdm3|x11/gdm|%DATE%|moved
-x11/gnome-desktop3|x11/gnome-desktop|%DATE%|moved
-x11/gnome-menus3|x11/gnome-menus|%DATE%|moved
-x11/gnome-panel3|x11/gnome-panel|%DATE%|moved
-x11/gnome-screensaver3|x11/gnome-screensaver|%DATE%|moved
-x11/gnome-session3|x11/gnome-session|%DATE%|moved
-x11/gnome-terminal3|x11/gnome-terminal|%DATE%|moved
-x11/yelp3|x11/yelp|%DATE%|moved
-x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
-x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
-x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
-multimedia/libgnome-media-profiles||%DATE%|removed
-math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
-www/epiphany-extensions||2014-13-03|Development has ceased
-x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
-deskutils/gnome-music|audio/gnome-music|2014-02-04|Makes more sense to have in under audio/
-deskutils/gnome-search-tool||2014-04-25|removed
-mail/california|deskutils/california|2014-05-24|Does not belong under mail/
 archivers/hs-zlib-conduit||2014-08-10|Removed: Deprecated in favor of conduit-extra
 devel/hs-IORefCAS||2014-08-10|Removed: Deprecated in favor of atomic-primops
 devel/hs-Tensor||2014-08-10|Removed: Deprecated
@@ -6825,7 +6482,6 @@ print/latex-aa||2014-08-22|Has expired: Broken for more than 6 months
 textproc/rast||2014-08-22|Has expired: Broken for more than 6 months
 www/abyssws||2014-08-22|Has expired: Broken for more than 6 months
 www/docebo||2014-08-22|Has expired: Not maintained upstream
-www/rejik||2014-08-22|Has expired: Broken for more than 6 months and depends on www/squid which reached EOL 2 years ago
 devel/rubygem-railsless-deploy||2014-08-22|Removed: Obsolete, Capistrano 3 does not ship with any Railsisms and is better than Capistrano 2 and railsless-deploy
 lang/gcc410|lang/gcc5|2014-08-22|Renamed to GCC 5 upstream
 security/pam_abl||2014-08-24|Has expired: Newer version requires large number of hacks, not worth the effort
@@ -7144,7 +6800,6 @@ net/mknbi||2014-09-01|Not staged
 net/mmucl||2014-09-01|Not staged
 net/ncplib||2014-09-01|Not staged
 net/ng_daphne||2014-09-01|Not staged
-net/ng_mikrotik_eoip||2014-09-01|Not staged
 net/openam||2014-09-01|Not staged
 net/openmcu||2014-09-01|Not staged
 net/openser||2014-09-01|Not staged
@@ -7325,24 +6980,6 @@ games/vdrift||2014-09-01|Not staged
 net-mgmt/zenpack-graphportlet||2014-09-01|Not staged
 sysutils/boxbackup||2014-09-01|Not staged
 www/webcalendar-devel|www/webcalendar|2014-09-04|Removed, use www/webcalendar instead
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-net-im/folks04|net-im/folks|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-multimedia/libgnome-media-profiles||%DATE%|removed
-math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
-www/epiphany-extensions||2014-13-03|Development has ceased
-x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
-x11/gnome-screensaver||2014-08-26|not used in gnome3.
 devel/ruby-memoize||2014-09-06|Has expired: RubyForge shutdown May 15 2014
 www/oops||2014-09-06|Development stops long ago, domain has been expired
 print/ghostscript7||2014-09-06|Not staged
@@ -7482,26 +7119,6 @@ graphics/libggi||2014-09-22|Has expired: Unmaintained upstream
 devel/libgii||2014-09-22|Has expired: Unmaintained upstream
 graphics/fpc-ggi||2014-09-22|Has expired: Unmaintained upstream
 www/mediawiki121||2014-09-23|Has expired: Not maintained upstream
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-net-im/folks04|net-im/folks|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-multimedia/libgnome-media-profiles||%DATE%|removed
-math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
-www/epiphany-extensions||2014-13-03|Development has ceased
-x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
-x11/gnome-screensaver||2014-08-26|not used in gnome3.
-x11/zenity3|x11/zenity|2014-09-14|merged
-devel/cluttermm|graphics/cluttermm|2014-09-20|moved to beter cat
 sysutils/rubygem-chef-expander||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 sysutils/rubygem-chef-server||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 sysutils/rubygem-chef-solr||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
@@ -7526,26 +7143,6 @@ net-mgmt/scdp||2014-09-30|Has expired: Depends on expired net/libnet10
 net-mgmt/angst||2014-09-30|Has expired: Depends on expired net/libnet10
 security/py-otr||2014-09-30|Has expired: Abandoned upstream
 net-p2p/cdonkey||2014-09-30|Has expired: depends on deprecated db41 version
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-net-im/folks04|net-im/folks|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-multimedia/libgnome-media-profiles||%DATE%|removed
-math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
-www/epiphany-extensions||2014-13-03|Development has ceased
-x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
-x11/gnome-screensaver||2014-08-26|not used in gnome3.
-x11/zenity3|x11/zenity|2014-09-14|merged
-devel/cluttermm|graphics/cluttermm|2014-09-20|moved to beter cat
 www/rubygem-puma16||2014-10-02|Has expired: Old version no longer needed
 x11-toolkits/gnome-desktop-sharp20||2014-10-02|Removed, no users and depends on gnome-panel which will be removed
 x11-toolkits/eel||2014-10-03|Removed, doesn't build with updated gnome-desktop
@@ -7554,26 +7151,6 @@ editors/mlview||2014-10-03|Removed, because x11-toolkits/eel was removed
 textproc/gnome-translate||2014-10-03|Removed, because x11-toolkits/eel was removed
 x11/avant-window-navigator-gnome||2014-10-03|Removed doesn't build with update gnome-desktop
 www/moodle25||2014-10-05|Has expired: Upstream support ended
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-net-im/folks04|net-im/folks|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-multimedia/libgnome-media-profiles||%DATE%|removed
-math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
-www/epiphany-extensions||2014-13-03|Development has ceased
-x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
-x11/gnome-screensaver||2014-08-26|not used in gnome3.
-x11/zenity3|x11/zenity|2014-09-14|merged
-devel/cluttermm|graphics/cluttermm|2014-09-20|moved to beter cat
 ports-mgmt/portaudit||2014-10-13|portaudit expired when pkg_tools did, use pkg audit
 ports-mgmt/portaudit-db||2014-10-13|portaudit expired
 ports-mgmt/kports-qt4||2014-10-13|portaudit expired
@@ -7586,23 +7163,76 @@ graphics/libcdr|graphics/libcdr01|2014-10-17|Replaced by newer version
 print/libmspub|print/libmspub01|2014-10-17|Replaced by newer version
 devel/py-olefileio_pl|devel/py-olefile|2014-10-17|Upstream name change
 audio/mad||2014-10-20|Directly use audio/libmad or audio/madplay
-devel/bug-buddy||%DATE%|removed.
-sysutils/tracker-gnome/||%DATE%|removed, it is outdated
-sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
-sysutils/tracker-client|sysutils/tracker|%DATE%|moved
-x11/gnome2||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
-x11/gnome2-fifth-toe||%DATE%|removed
-x11/gnome2-power-tools||%DATE%|removed
-editors/gnome2-office||%DATE%|removed
-misc/gnome2-reference||%DATE%|removed
-devel/gnome2-hacker-tools||%DATE%|removed
-net-im/folks04|net-im/folks|%DATE%|moved
-security/seahorse-plugins||%DATE%|removed
-multimedia/libgnome-media-profiles||%DATE%|removed
-math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
-www/epiphany-extensions||2014-13-03|Development has ceased
-x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
-x11/gnome-screensaver||2014-08-26|not used in gnome3.
-x11/zenity3|x11/zenity|2014-09-14|merged
-devel/cluttermm|graphics/cluttermm|2014-09-20|moved to beter cat
+mail/dspam-devel|mail/dspam|2014-10-20|Merged into mail/dspam
+dns/bind98|dns/bind99|2014-10-21|BIND 9.8 EOL
+dns/powerdns-devel|dns/powerdns|2014-10-24|Older than dns/powerdns and no longer needed
+www/mod_authz_unixgroup|www/mod_authz_unixgroup22|2014-10-26|Reflect Apache version in portsdir
+lang/kroc||2014-10-28|Has expired: Broken for more than 6 months
+net/slirp||2014-10-28|Has expired: Broken for more than 6 months
+www/typo347||2014-10-30|Has expired: Upgrade to www/typo3 or www/typo3-lts
+deskutils/babytrans||2014-10-31|Has expired: Abandonware, dictionaries unavailable
+www/rt38||2014-10-31|Has expired: Has expired: End of Life March 2014
+textproc/libmwaw|textproc/libmwaw03|2014-10-31|Replaced by newer version
+databases/pecl-yac|devel/pecl-yac|2014-11-04|Duplicate port
+devel/qt5-qmldevtools||2014-11-05|Merged into lang/qt5-qml
+math/elmer-umfpack|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmer-eio|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmer-matc|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmer-meshgen2d|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmergrid|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+security/pinentry-gtk||2014-11-13|Removed: upstream ended support for GTK+ 1
+audio/cuberok||2014-11-15|Has expired: Upstream development has stalled
+sysutils/cfengine36-rc|sysutils/cfengine36|2014-11-18|Has gone GA
+deskutils/gdesklets||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+deskutils/gdesklets-recentlyused||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+deskutils/gdesklets-starterbar||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+deskutils/global-menu||2014-11-19|Depends on removed gnome-panel and incompatible with updated gnome-desktop
+deskutils/labyrinth||2014-11-19|Is not compatible with updated gnome-desktop
+deskutils/libopensync-plugin-evolution2||2014-11-19|Is not compatible with updated evolution
+deskutils/libopensync-plugin-evolution2-devel||2014-11-19|Is not compatible with updated evolution
+devel/bug-buddy||2014-11-19|No longer used in GNOME
+devel/gnome2-hacker-tools||2014-11-19|GNOME 2 was removed
+editors/gnome2-office||2014-11-19|GNOME 2 was removed
+games/gnomesudoku|games/gnome-sudoku|2014-11-19|Renamed to what the actualy name
+lang/vala-vapigen|lang/vala|2014-11-19|vapigen merged into vala
+mail/evolution-exchange|mail/evolution-ews|2014-11-19|Replaced by evolution-ews
+mail/gmail-notify||2014-11-19|Depends on removed x11-toolkits/py-gnome-extras
+math/gcalctool|math/gnome-calculator|2014-11-19|Project renamed
+misc/gnome2-reference||2014-11-19|GNOME 2 was removed
+misc/xmonad-log-applet||2014-11-19|Depends on removed gnome-panel
+net/gnome-netstatus||2014-11-19|Depends on removed gnome-panel
+security/seahorse-plugins||2014-11-19|Removed, not used in GNOME 3
+sysutils/gnome-system-tools||2014-11-19|Depends on removed nautilus2
+sysutils/tacker-client|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
+sysutils/tracker-gnome|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
+sysutils/tracker-libtrackergtk|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
+www/epiphany-extensions||2014-11-19|Removed, not used in GNOME 3
+www/evolution-webcal||2014-11-19|Not compatible with evolution 3
+x11-clocks/gdesklets-clock||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+x11-clocks/gdesklets-countdown||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+x11-clocks/gdesklets-ebichuclock||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+x11-toolkits/libpanelappletmm||2014-11-19|Depends on removed GNOME 2 ports
+x11-toolkits/py-gnome-desktop||2014-11-19|Depends on removed GNOME 2 ports
+x11-toolkits/py-gnome-extras||2014-11-19|Depends on removed GNOME 2 ports
+x11/gdesklets-tasklist||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+x11/gnome-applets||2014-11-19|GNOME 2 was removed
+x11/gnome-panel||2014-11-19|GNOME 2 was removed
+x11/gnome-panel-reference||2014-11-19|GNOME 2 was removed
+x11/gnome-pie||2014-11-19|Is not compatible with updated gnome-menus
+x11/gnome-screensaver||2014-11-19|Is not compatible with updated gnome-desktop
+x11/gnome-swallow||2014-11-19|Removed, depends on removed gnome-panel
+x11/gnome2||2014-11-19|GNOME 2 was removed
+x11/gnome2-fifth-toe||2014-11-19|GNOME 2 was removed
+x11/gnome2-lite||2014-11-19|GNOME 2 was removed
+x11/gnome2-power-tools||2014-11-19|GNOME 2 was removed
+x11/xfce4-xfapplet-plugin||2014-11-19|Depends on removed gnome-panel
+net-im/telegram-cli||2014-11-19|Duplicate of net-im/tg
+emulation/wine-doors||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+x11/gtstarter||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+sysutils/serpentine||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+sysutils/pessulus||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+x11-toolkits/libzvt||2014-11-19|Abandonware, not depended on anymore
+net-p2p/gtkhx||2014-11-19|Does not work anymore
+korean/ami||2014-11-19|Does not work anymore
+graphics/xzgv||2014-11-19|Abandonware since at least 2008
+deskutils/gtkjournal||2014-11-19|Abandonware, not working anymore

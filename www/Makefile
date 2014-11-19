@@ -174,7 +174,6 @@
     SUBDIR += epiphany
     SUBDIR += erwn
     SUBDIR += eventum
-    SUBDIR += evolution-webcal
     SUBDIR += extjs
     SUBDIR += fancybox
     SUBDIR += faup
@@ -437,7 +436,8 @@
     SUBDIR += mod_authnz_crowd
     SUBDIR += mod_authnz_external22
     SUBDIR += mod_authnz_external24
-    SUBDIR += mod_authz_unixgroup
+    SUBDIR += mod_authz_unixgroup22
+    SUBDIR += mod_authz_unixgroup24
     SUBDIR += mod_backtrace
     SUBDIR += mod_bw
     SUBDIR += mod_cband
@@ -518,6 +518,7 @@
     SUBDIR += mongrel2
     SUBDIR += moodle26
     SUBDIR += moodle27
+    SUBDIR += moodle28
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch
@@ -1455,6 +1456,7 @@
     SUBDIR += py-bleach
     SUBDIR += py-blogofile
     SUBDIR += py-bottle
+    SUBDIR += py-bottle-cork
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
     SUBDIR += py-clientform
@@ -1665,6 +1667,8 @@
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
     SUBDIR += py-scriptaculous
+    SUBDIR += py-seafdav
+    SUBDIR += py-seafobj
     SUBDIR += py-selector
     SUBDIR += py-selenium
     SUBDIR += py-slimit
@@ -1691,6 +1695,7 @@
     SUBDIR += py-webhelpers
     SUBDIR += py-webkitgtk
     SUBDIR += py-webob
+    SUBDIR += py-websocket-client
     SUBDIR += py-webunit
     SUBDIR += py-webware
     SUBDIR += py-webware-component
@@ -1698,6 +1703,7 @@
     SUBDIR += py-wikitools
     SUBDIR += py-ws4py
     SUBDIR += py-wsgiauth
+    SUBDIR += py-wsgidav
     SUBDIR += py-zope.app.wsgi
     SUBDIR += pyblosxom
     SUBDIR += pydio
@@ -1716,6 +1722,7 @@
     SUBDIR += redmine-basecamp
     SUBDIR += redmine-http-auth
     SUBDIR += redmine-sidebar_hide
+    SUBDIR += rejik
     SUBDIR += rekonq
     SUBDIR += reportmagic
     SUBDIR += repos-style
@@ -1730,7 +1737,6 @@
     SUBDIR += rssroll
     SUBDIR += rsstail
     SUBDIR += rsstool
-    SUBDIR += rt38
     SUBDIR += rt40
     SUBDIR += rt42
     SUBDIR += ruby-amazon
@@ -2087,7 +2093,6 @@
     SUBDIR += typo3
     SUBDIR += typo3-lts
     SUBDIR += typo345
-    SUBDIR += typo347
     SUBDIR += typolight
     SUBDIR += udmsearch
     SUBDIR += uglifyjs

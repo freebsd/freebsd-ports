@@ -14,7 +14,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFIGURE_ARGS=		--enable QtCore
 PYQT4_DIST=		yes
-PYTHON_PY3K_PLIST_HACK=	yes
+USE_PYTHON+=		py3kplist
 USE_QT4=		corelib qmake_build moc_build
 
 OPTIONS_DEFINE=	API DEBUG

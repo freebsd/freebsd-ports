@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net-im/empathy/Makefile 19943 2014-10-14 10:55:06Z gusi $
+#   $MCom: ports/trunk/net-im/empathy/Makefile 20021 2014-10-24 17:45:27Z gusi $
 
 PORTNAME=	empathy
 PORTVERSION=	3.12.7
@@ -38,7 +38,7 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
     		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
 
 USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
-USE_GNOME=	evolutiondataserver3 gnomeprefix
+USE_GNOME=	evolutiondataserver3 gnomeprefix intlhack
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

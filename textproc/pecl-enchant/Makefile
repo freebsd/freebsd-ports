@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libenchant Binder that Support Near All Spelling Tools
 
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant

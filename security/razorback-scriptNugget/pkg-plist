@@ -3,7 +3,4 @@ lib/razorback/scriptNugget.so.2.0.0
 lib/razorback/scriptNugget.so.2
 lib/razorback/scriptNugget.so
 lib/razorback/scriptNugget.a
-@dirrmtry lib/razorback
 libexec/razorback/scriptNugget/test.rb
-@dirrmtry libexec/razorback/scriptNugget
-@dirrmtry libexec/razorback

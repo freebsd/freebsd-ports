@@ -21,9 +21,9 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
+USES=		python
 USE_MYSQL=	server
 USE_PHP=	mysql pcre session
-USE_PYTHON=	yes
 GNUCHESS_RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess
 PHALANX_RUN_DEPENDS=	phalanx:${PORTSDIR}/games/phalanx
 

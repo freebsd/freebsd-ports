@@ -6,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vlaimir.chukharev@gmail.com
+MAINTAINER=	Vladimir.Chukharev@gmail.com
 COMMENT=	User registration with social account authentication
 
 LICENSE=	MIT

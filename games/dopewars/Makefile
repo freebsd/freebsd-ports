@@ -3,7 +3,7 @@
 
 PORTNAME=	dopewars
 PORTVERSION=	1.5.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!/pixmaps!/dopewars/pixmaps!' \
+		-e '/chmod 2755/d' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's!^CFLAGS =!CFLAGS = \@GLIB_CFLAGS\@!' \
 		${WRKSRC}/src/gui_client/Makefile.in \

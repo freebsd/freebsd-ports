@@ -1,7 +1,5 @@
-Index: poe.el
-===================================================================
---- poe.el	(revision 2)
-+++ poe.el	(working copy)
+--- poe.el.orig	2008-09-06 15:16:14 UTC
++++ poe.el
 @@ -38,22 +38,22 @@
  ;;;
  
@@ -62,7 +60,7 @@ Index: poe.el
  If feature FEATURE is not loaded, load it from FILENAME.
  If FEATURE is not a member of the list `features', then the feature
  is not loaded; so load the file FILENAME.
-@@ -86,14 +86,14 @@
+@@ -86,14 +86,14 @@ but in this case `load' insists on addin
  If the optional third argument NOERROR is non-nil,
  then return nil if the file is not found.
  Normally the return value is FEATURE."
@@ -85,7 +83,7 @@ Index: poe.el
  
  ;; Emacs 19.29 and later: (plist-get PLIST PROP)
  ;; (defun-maybe plist-get (plist prop)
-@@ -103,21 +103,21 @@
+@@ -103,21 +103,21 @@ Normally the return value is FEATURE."
  ;;   (car (cdr plist)))
  (static-unless (and (fboundp 'plist-get)
  		    (not (get 'plist-get 'defun-maybe)))
@@ -117,7 +115,7 @@ Index: poe.el
  
  ;; Emacs 19.29 and later: (plist-put PLIST PROP VAL)
  ;; (defun-maybe plist-put (plist prop val)
-@@ -138,11 +138,11 @@
+@@ -138,11 +138,11 @@ one of the properties on the list."
  ;;         (list prop val)))))
  (static-unless (and (fboundp 'plist-put)
  		    (not (get 'plist-put 'defun-maybe)))
@@ -134,7 +132,7 @@ Index: poe.el
  Change value in PLIST of PROP to VAL.
  PLIST is a property list, which is a list of the form
  \(PROP1 VALUE1 PROP2 VALUE2 ...\).  PROP is a symbol and VAL is any object.
-@@ -150,12 +150,12 @@
+@@ -150,12 +150,12 @@ If PROP is already a property on the lis
  otherwise the new PROP VAL pair is added.  The new plist is returned;
  use `\(setq x \(plist-put x prop val\)\)' to be sure to use the new value.
  The PLIST is modified by side effects."
@@ -153,7 +151,7 @@ Index: poe.el
  
  ;; Emacs 19.23 and later: (minibuffer-prompt-width)
  (defun-maybe minibuffer-prompt-width ()
-@@ -170,16 +170,16 @@
+@@ -170,16 +170,16 @@ The PLIST is modified by side effects."
  		   (>= emacs-major-version 20)
  		   (and (= emacs-major-version 19)
  			(>= emacs-minor-version 29)))
@@ -176,7 +174,7 @@ Index: poe.el
  
  ;; (completing-read prompt table &optional
  ;; FSF Emacs
-@@ -203,8 +203,8 @@
+@@ -203,8 +203,8 @@ See `read-from-minibuffer' for details o
  	(fset 'si:completing-read (symbol-function 'completing-read))
  	(defun completing-read
  	  (prompt table &optional predicate require-match init
@@ -187,7 +185,7 @@ Index: poe.el
  PROMPT is a string to prompt with; normally it ends in a colon and a space.
  TABLE is an alist whose elements' cars are strings, or an obarray.
  PREDICATE limits completion to a subset of TABLE.
-@@ -225,10 +225,10 @@
+@@ -225,10 +225,10 @@ DEF, if non-nil, is the default value.
  
  Completion ignores case if the ambient value of
    `completion-ignore-case' is non-nil."
@@ -202,7 +200,7 @@ Index: poe.el
   ;; add 'def' argument.
   ((or (and (featurep 'xemacs)
  	   (or (and (eq emacs-major-version 21)
-@@ -240,8 +240,8 @@
+@@ -240,8 +240,8 @@ Completion ignores case if the ambient v
  	(fset 'si:completing-read (symbol-function 'completing-read))
  	(defun completing-read
  	  (prompt table &optional predicate require-match init
@@ -213,7 +211,7 @@ Index: poe.el
  PROMPT is a string to prompt with; normally it ends in a colon and a space.
  TABLE is an alist whose elements' cars are strings, or an obarray.
  PREDICATE limits completion to a subset of TABLE.
-@@ -269,10 +269,10 @@
+@@ -269,10 +269,10 @@ DEF, if non-nil, is the default value.
  
  Completion ignores case if the ambient value of
    `completion-ignore-case' is non-nil."
@@ -228,7 +226,7 @@ Index: poe.el
  
  ;; v18:	(string-to-int STRING)
  ;; v19:	(string-to-number STRING)
-@@ -281,24 +281,24 @@
+@@ -281,24 +281,24 @@ Completion ignores case if the ambient v
  ;; XXX: `string-to-number' of Emacs 20.3 and earlier is broken.
  ;;	(string-to-number "1e1" 16) => 10.0, should be 481.
  (static-condition-case nil
@@ -271,7 +269,7 @@ Index: poe.el
  Convert STRING to a number by parsing it as a decimal number.
  This parses both integers and floating point numbers.
  It ignores leading spaces and tabs.
-@@ -306,39 +306,39 @@
+@@ -306,39 +306,39 @@ It ignores leading spaces and tabs.
  If BASE, interpret STRING as a number in that base.  If BASE isn't
  present, base 10 is used.  BASE must be between 2 and 16 (inclusive).
  If the base used is not 10, floating point is not recognized."
@@ -344,7 +342,7 @@ Index: poe.el
  
  ;; Emacs 20.1 and 20.2: (concat-chars &rest CHARS)
  ;; Emacs 20.3/XEmacs 21.0 and later: (string &rest CHARS)
-@@ -362,130 +362,130 @@
+@@ -362,130 +362,130 @@ If the base used is not 10, floating poi
  ;; Mule: (char-before POS)
  ;; v20: (char-before &optional POS)
  (static-condition-case nil
@@ -571,7 +569,7 @@ Index: poe.el
  
  ;; Emacs 19.29 and later: (buffer-substring-no-properties START END)
  (defun-maybe buffer-substring-no-properties (start end)
-@@ -813,7 +813,7 @@
+@@ -813,7 +813,7 @@ the value of `foo'."
  ;; So, in Emacs 19.29, `run-hooks' and others will be overrided.
  ;; But, who cares it?
  (static-unless (subrp (symbol-function 'run-hooks))
@@ -580,7 +578,7 @@ Index: poe.el
  
  ;; Emacs 19.29/XEmacs 19.14(?) and later: (add-to-list LIST-VAR ELEMENT)
  (defun-maybe add-to-list (list-var element)
-@@ -916,20 +916,20 @@
+@@ -916,20 +916,20 @@ APEL provides this as dummy for compatib
  (defmacro-maybe save-current-buffer (&rest body)
    "Save the current buffer; execute BODY; restore the current buffer.
  Executes BODY just like `progn'."
@@ -609,7 +607,7 @@ Index: poe.el
  
  ;; Emacs 20.1/XEmacs 20.3(?) and later: (with-temp-file FILE &rest FORMS)
  (defmacro-maybe with-temp-file (file &rest forms)
-@@ -938,68 +938,68 @@
+@@ -938,68 +938,68 @@ The value of the last form in FORMS is r
  See also `with-temp-buffer'."
    (let ((temp-file (make-symbol "temp-file"))
  	(temp-buffer (make-symbol "temp-buffer")))
@@ -719,7 +717,7 @@ Index: poe.el
  
  ;; Emacs 20.1 and later: (combine-after-change-calls &rest BODY)
  (defmacro-maybe combine-after-change-calls (&rest body)
-@@ -1056,20 +1056,20 @@
+@@ -1056,20 +1056,20 @@ STRING should be given if the last searc
  ;; We support following API.
  ;;  (replace-match NEWTEXT &optional FIXEDCASE LITERAL STRING)
  (static-condition-case nil
@@ -754,7 +752,7 @@ Index: poe.el
  If second arg FIXEDCASE is non-nil, do not alter case of replacement text.
  Otherwise maybe capitalize the whole text, or maybe just word initials,
  based on the replaced text.
-@@ -1090,38 +1090,38 @@
+@@ -1090,38 +1090,38 @@ Leaves point at end of replacement text.
  The optional fourth argument STRING can be a string to modify.
  In that case, this function creates and returns a new string
  which is made by replacing the part of STRING that was matched."
@@ -825,7 +823,7 @@ Index: poe.el
  If second arg FIXEDCASE is non-nil, do not alter case of replacement text.
  Otherwise maybe capitalize the whole text, or maybe just word initials,
  based on the replaced text.
-@@ -1142,24 +1142,24 @@
+@@ -1142,24 +1142,24 @@ Leaves point at end of replacement text.
  The optional fourth argument STRING can be a string to modify.
  In that case, this function creates and returns a new string
  which is made by replacing the part of STRING that was matched."
@@ -868,7 +866,7 @@ Index: poe.el
  
  ;; Emacs 20: (format-time-string FORMAT &optional TIME UNIVERSAL)
  ;; Those format constructs are yet to be implemented.
-@@ -1167,26 +1167,26 @@
+@@ -1167,26 +1167,26 @@ which is made by replacing the part of S
  ;; Not fully compatible especially when invalid format is specified.
  (static-unless (and (fboundp 'format-time-string)
  		    (not (get 'format-time-string 'defun-maybe)))
@@ -913,7 +911,7 @@ Index: poe.el
  TIME is specified as (HIGH LOW . IGNORED) or (HIGH . LOW), as returned by
  `current-time' or `file-attributes'.
  The third, optional, argument UNIVERSAL, if non-nil, means describe TIME
-@@ -1238,250 +1238,250 @@
+@@ -1238,250 +1238,250 @@ Compatibility Note.
  Those format constructs are yet to be implemented.
    %c, %C, %j, %U, %W, %x, %X
  Not fully compatible especially when invalid format is specified."
@@ -1408,3 +1406,12 @@ Index: poe.el
  
  ;; Emacs 19.29-19.34/XEmacs: `format-time-string' neither supports the
  ;; format string "%z" nor the third argument `universal'.
+@@ -1667,7 +1667,7 @@ See `walk-windows' for the meaning of MI
+                      )))
+       ;; arglist: (prefix &optional dir-flag suffix)
+       (cond
+-       ((not arglist)
++       ((or (not arglist) (not (listp arglist)))
+         ;; `make-temp-file' is a built-in; expects 3-args.
+         (put 'make-temp-file 'defun-maybe '3-args))
+        ((> (length arglist) 3)

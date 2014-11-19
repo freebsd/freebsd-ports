@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-editi
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
+IGNORE=		3.6.1 has gone GA
 
 LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
 		libpcre.so:${PORTSDIR}/devel/pcre
@@ -125,7 +126,7 @@ CONFIGURE_ARGS+=	--disable-sql
 .endif
 
 .if ${PORT_OPTIONS:MJSON}
-LIB_DEPENDS+=		libjson.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS+=		libjson-c.so:${PORTSDIR}/devel/json-c
 CONFIGURE_ARGS+=	--enable-json
 PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 .else

@@ -8,6 +8,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/version/regex.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/version/vpp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/version/vxs.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/version
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/version/vxs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/version

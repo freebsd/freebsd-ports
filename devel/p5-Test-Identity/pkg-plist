@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/Identity.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Identity/.packlist
 %%PERL5_MAN3%%/Test::Identity.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Identity
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

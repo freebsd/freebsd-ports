@@ -1,9 +1,9 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/net/vino/Makefile 19321 2014-03-25 13:15:22Z gusi $
+#   $MCom: ports/trunk/net/vino/Makefile 19968 2014-10-16 07:29:56Z gusi $
 
 PORTNAME=	vino
-PORTVERSION=	3.12.0
+PORTVERSION=	3.14.0
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libavahi-glib.so:${PORTSDIR}/net/avahi-app
 
 USES=		gettext gmake pathfix pkgconfig tar:xz
@@ -29,15 +30,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.Vino.enums.xml org.gnome.Vino.gschema.xml
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-.else
-CONFIGURE_ARGS+=--without-libnotify
-.endif
+NOTIFY_LIBS_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_CONFIGURE_WITH=	libnotify	
 
 .include <bsd.port.mk>

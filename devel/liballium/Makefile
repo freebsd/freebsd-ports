@@ -4,7 +4,6 @@
 PORTNAME=	liballium
 PORTVERSION=	0.0.1
 CATEGORIES=	devel security
-MASTER_SITES=	GH
 DISTNAME=	g-${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
 MAINTAINER=	fk@fabiankeil.de
@@ -17,15 +16,15 @@ GH_TAGNAME=	${GH_COMMIT}
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pathfix pkgconfig tar:bzip2
+PATHFIX_MAKEFILEIN=Makefile.am
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 PLIST_SUB+=	PKGNAME=${PKGNAME}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS TEST
 
-post-patch:
-	@${REINPLACE_CMD} -E -e "s@^(pkgconfigdir =) .*@\1 ${LOCALBASE}/libdata/pkgconfig@" \
-		${WRKSRC}/Makefile.am
+TEST_ALL_TARGET=check
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

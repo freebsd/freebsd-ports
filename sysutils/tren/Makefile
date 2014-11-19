@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.tundraware.com/Software/tren/
 MAINTAINER=	tren@tundraware.com
 COMMENT=	Powerful File And Directory Batch Renaming Tool
 
-USE_PYTHON=	yes
+USES=		python
 PLIST_FILES=	bin/tren.py man/man1/tren.1.gz
 PORTDOCS=	WHATSNEW.txt tren-license.txt tren.html tren.pdf tren.ps tren.rst
 OPTIONS_DEFINE=	DOCS

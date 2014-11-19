@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prestashop
-PORTVERSION=	1.6.0.8
-PORTREVISION=	1
+PORTVERSION=	1.6.0.9
 CATEGORIES=	finance www
 MASTER_SITES=	http://www.prestashop.com/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -22,7 +21,7 @@ SUB_FILES=	pkg-message
 pre-install:
 	@${ECHO_CMD} -e '@owner ${WWWOWN}\n@group ${WWWGRP}' > ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${PRESTADIR}?g" >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${PRESTADIR}?g" >> ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${PRESTADIR}?g" >> ${PLIST}
 	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${PLIST}
 
 do-install:

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	am-utils
-PORTVERSION=	6.1.5
-PORTREVISION=	2
+PORTVERSION=	6.2
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
@@ -14,19 +13,24 @@ MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Berkeley Automounter Suite of Utilities
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	OPENLDAP DOCS
 OPTIONS_DEFAULT=OPENLDAP
 OPENLDAP_DESC=	OpenLDAP support
 
-USES=		libtool makeinfo
+USES=		bison libtool makeinfo perl5
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
+# Enable some filesystems which are not auto-detected with GENERIC kernel.
+CONFIGURE_ARGS+=	ac_cv_fs_nullfs=yes ac_cv_mnttab_type_nullfs='"nullfs"' ac_cv_mount_type_nullfs='"nullfs"' \
+			ac_cv_fs_udf=yes ac_cv_mnttab_type_udf='"udf"' ac_cv_mount_type_udf='"udf"' \
+			ac_cv_fs_tmpfs=yes ac_cv_mnttab_type_tmpfs='"tmpfs"' ac_cv_mount_type_tmpfs='"tmpfs"'
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
+INSTALL_TARGET=	install-strip
 
 INFO=		am-utils
 DOCS=		AUTHORS BUGS FAQ NEWS README.attrcache

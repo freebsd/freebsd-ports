@@ -3,7 +3,7 @@
 
 PORTNAME=	hinfo
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net perl5
 # note: the "true" MASTER_SITE is http://www.blars.org, but
 # due to policies on that site, it is not reachable from the
@@ -16,30 +16,23 @@ COMMENT=	Utility primarily designed to find the owner of an IP block
 RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		wget:${PORTSDIR}/ftp/wget
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	${HINFO_SCRIPTS}
 
 DATADIR?=	${PREFIX}/lib/${PORTNAME}
 
 HINFO_DBFILES=	dnsbl.ins.pl whois.ins.pl
+# By default, we don't install myhostinfo.cgi.  Install it if you wish; it'll
+# already be patched for you.
 HINFO_SCRIPTS=	hinfo hinfo-update myhostinfo.cgi
 
 NO_BUILD=	yes
 
-# By default, we don't install myhostinfo.cgi.  Install it if you wish; it'll
-# already be patched for you.
-post-extract:
-.for filename in ${HINFO_SCRIPTS}
-	${REINPLACE_CMD} -E '1s|^#!.+|#!${PERL}|' ${WRKSRC}/${filename}
-.endfor
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/hinfo ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/hinfo-update ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/hinfo.conf ${STAGEDIR}${PREFIX}/etc/hinfo.conf.example
-.if !exists(${STAGEDIR}${PREFIX}/etc/hinfo.conf)
-	${INSTALL_DATA} ${WRKSRC}/hinfo.conf ${STAGEDIR}${PREFIX}/etc/hinfo.conf
-.endif
+	${INSTALL_DATA} ${WRKSRC}/hinfo.conf ${STAGEDIR}${PREFIX}/etc/hinfo.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/hinfo.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/hinfo.conf.5 ${STAGEDIR}${PREFIX}/man/man5/
 	@${MKDIR} ${STAGEDIR}${DATADIR}

@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount NTFS partitions (read/write) and disk images
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_BUILD=	bonobo-1.*
 CONFLICTS_INSTALL=	ntfsprogs-*

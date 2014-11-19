@@ -155,6 +155,3 @@ lib/snns/help.hdoc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xor_rec1.pat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xor_rec2.pat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xor_untrained.net
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/snns/bin
-@dirrm lib/snns

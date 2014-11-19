@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Grammar/.packlist
 %%PERL5_MAN3%%/Config::Grammar.3.gz
 %%PERL5_MAN3%%/Config::Grammar::Dynamic.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Grammar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config/Grammar
-@dirrmtry %%SITE_PERL%%/Config

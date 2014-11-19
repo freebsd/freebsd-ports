@@ -13,9 +13,8 @@ COMMENT=	Graphviz to LaTeX converter
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
 		dot:${PORTSDIR}/graphics/graphviz
 
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
 # The .tar.gz sucks!
-USES=		zip
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

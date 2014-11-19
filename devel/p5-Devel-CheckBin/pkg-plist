@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Devel::CheckBin.3.gz
 %%SITE_PERL%%/Devel/CheckBin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckBin/.packlist
-@dirrmtry %%SITE_PERL%%/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckBin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel

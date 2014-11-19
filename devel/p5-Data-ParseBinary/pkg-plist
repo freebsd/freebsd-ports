@@ -28,12 +28,3 @@
 %%PERL5_MAN3%%/Data::ParseBinary::Data::Netflow.3.gz
 %%PERL5_MAN3%%/Data::ParseBinary::Graphics::PNG.3.gz
 %%PERL5_MAN3%%/Data::ParseBinary::FileSystem::MBR.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ParseBinary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/ParseBinary/Stream
-@dirrmtry %%SITE_PERL%%/Data/ParseBinary/Graphics
-@dirrmtry %%SITE_PERL%%/Data/ParseBinary/FileSystem
-@dirrmtry %%SITE_PERL%%/Data/ParseBinary/Executable
-@dirrmtry %%SITE_PERL%%/Data/ParseBinary/Data
-@dirrmtry %%SITE_PERL%%/Data/ParseBinary
-@dirrmtry %%SITE_PERL%%/Data

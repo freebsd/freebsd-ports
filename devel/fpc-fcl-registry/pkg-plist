@@ -5,8 +5,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/xmlreg.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/registry.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/libpxmlreg.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/libpregistry.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

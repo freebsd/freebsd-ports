@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/PAR::Dist.3.gz
 %%SITE_PERL%%/PAR/Dist.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/Dist/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/Dist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR
-@dirrmtry %%SITE_PERL%%/PAR

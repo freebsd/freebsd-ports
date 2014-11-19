@@ -19,5 +19,3 @@
 %%LIB32DIR%%/common-lisp/alexandria/types.lisp
 %%LIB32DIR%%/common-lisp/system-registry/alexandria.asd
 %%PORTDOCS%%%%DOCSDIR%%/alexandria.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LIB32DIR%%/common-lisp/alexandria

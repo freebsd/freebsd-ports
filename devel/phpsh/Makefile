@@ -15,10 +15,8 @@ COMMENT=	Interactive shell for PHP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils autoplist
 USE_PHP=	pcre posix tokenizer
 
 WANT_PHP_CLI=	yes

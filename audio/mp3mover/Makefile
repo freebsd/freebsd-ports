@@ -3,6 +3,7 @@
 
 PORTNAME=	mp3mover
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	SF/mediamover/${PORTNAME}/${PORTVERSION}
 
@@ -11,7 +12,8 @@ COMMENT=	Rename mp3s and manipulate them
 
 RUN_DEPENDS=	p5-tagged>=0:${PORTSDIR}/audio/p5-tagged
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	mp3mover.pl
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mp3mover

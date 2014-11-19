@@ -60,6 +60,3 @@ bin/dynagui.py
 %%PYTHON_SITELIBDIR%%/dynagui_libs/ethsw_properties_dialog.pyo
 %%PYTHON_SITELIBDIR%%/dynagui_libs/C7200_properties_dialog.pyo
 %%DATADIR%%/img/chassis.png
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/dynagui_libs

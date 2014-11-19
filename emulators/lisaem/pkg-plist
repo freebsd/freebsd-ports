@@ -26,5 +26,4 @@ bin/lisaem
 %%DATADIR%%/power_off.png
 %%DATADIR%%/power_on.png
 %%DATADIR%%/poweroffclk.wav
-@dirrm %%DATADIR%%/
 share/LisaEm

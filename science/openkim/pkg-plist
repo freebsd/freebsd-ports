@@ -6,4 +6,3 @@ include/KIM_API/Unit_Handling.h
 include/KIM_API/model_init_include.h
 include/KIM_API/model_kim_str_include.h
 lib/libkim.a
-@dirrm include/KIM_API

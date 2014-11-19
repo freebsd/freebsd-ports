@@ -6,5 +6,3 @@ share/apps/kipiplugin_imageviewer/pics/zoom.png
 share/icons/hicolor/16x16/apps/kipi-ogl.png
 share/icons/hicolor/32x32/apps/kipi-ogl.png
 share/kde4/services/kipiplugin_imageviewer.desktop
-@dirrm share/apps/kipiplugin_imageviewer/pics
-@dirrm share/apps/kipiplugin_imageviewer

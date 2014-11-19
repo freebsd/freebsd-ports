@@ -18,8 +18,7 @@ OPTIONS_DEFAULT=PLUMBUM
 PLUMBUM_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plumbum>0:${PORTSDIR}/sysutils/py-plumbum
 PLUMBUM_DESC=	 Required for features like rpyc_classic.py and zero deploy
 
-USE_PYTHON=		-3.3
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:-3.3
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

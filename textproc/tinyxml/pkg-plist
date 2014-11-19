@@ -91,4 +91,3 @@ lib/libtinyxml.so.%%SHLIB_MAJOR%%
 %%PORTDOCS%%%%DOCSDIR%%/tinystr_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/tinyxml_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial0.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_dnet_bsd_bpf=yes
-USES=		libtool tar:tgz
+USES+=		libtool tar:tgz
 
 .if !defined(LIBDNET_SLAVE)
 CONFIGURE_ARGS+=	--without-python

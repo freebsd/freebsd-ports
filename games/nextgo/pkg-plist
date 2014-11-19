@@ -13,7 +13,3 @@ GNUstep/Local/Applications/NeXTGo.app/Resources/NeXTGoHelp.rtf
 GNUstep/Local/Applications/NeXTGo.app/Resources/intergo.dct
 GNUstep/Local/Applications/NeXTGo.app/stamp.make
 GNUstep/Local/Tools/NeXTGo
-@dirrm GNUstep/Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm
-@dirrm GNUstep/Local/Applications/NeXTGo.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/NeXTGo.app/Resources
-@dirrm GNUstep/Local/Applications/NeXTGo.app

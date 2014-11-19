@@ -3,4 +3,3 @@ lib/gio-sharp/gio-sharp.dll.config
 lib/gio-sharp/gio-sharp.dll.mdb
 libdata/pkgconfig/gio-sharp-2.0.pc
 share/gapi-2.0/gio-api.xml
-@dirrm lib/gio-sharp

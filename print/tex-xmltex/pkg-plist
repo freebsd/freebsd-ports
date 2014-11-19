@@ -37,10 +37,3 @@
 %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/portugeselatin1.xml
 %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/langtest.xml
 %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/testsec.xml
-@dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base
-@dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex
-@dirrmtry %%TEXMFDISTDIR%%/doc/otherformats
-@dirrm %%TEXMFDISTDIR%%/tex/xmltex/passivetex
-@dirrm %%TEXMFDISTDIR%%/tex/xmltex/config
-@dirrm %%TEXMFDISTDIR%%/tex/xmltex/base
-@dirrm %%TEXMFDISTDIR%%/tex/xmltex

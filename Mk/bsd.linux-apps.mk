@@ -285,6 +285,7 @@ libpciaccess_DETECT=		${libogg${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libpciaccess_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libpciaccess
 
 libsigcpp20_f10_FILE=	${LINUXBASE}/usr/lib/libsigc-2.0.so.0
+libsigcpp20_c6_FILE=	${LINUXBASE}/usr/lib/libsigc-2.0.so.0
 libsigcpp20_DETECT=	${libsigcpp20${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libsigcpp20_PORT=	${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libsigc++20
 

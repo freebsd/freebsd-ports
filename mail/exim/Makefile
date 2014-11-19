@@ -3,7 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -49,8 +49,6 @@ EMBEDDED_PERL_USE=	perl5=run,build
 EXIMON_USE=	xorg=x11,xaw,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 ICONV_USES=	iconv:lib,build
-KAS_BUILD_DEPENDS=	libspamtest>=0:${PORTSDIR}/mail/libspamtest
-KAS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-kas
 MYSQL_USE=	mysql=yes
 OPENLDAP_USE=	openldap=yes
 PGSQL_USE=	pgsql=yes

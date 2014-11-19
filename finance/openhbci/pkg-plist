@@ -75,8 +75,3 @@ lib/openhbci/plugins/14/media/rdhfile.so
 lib/openhbci/plugins/14/media/rdhfile.so.0
 lib/openhbci/plugins/14/media/rdhfile.so.0.0.0
 share/aclocal/openhbci.m4
-@dirrm lib/openhbci/plugins/14/media
-@dirrm lib/openhbci/plugins/14
-@dirrm lib/openhbci/plugins
-@dirrm lib/openhbci
-@dirrm include/openhbci

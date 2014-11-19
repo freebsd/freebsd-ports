@@ -19,5 +19,3 @@ man/man1/filepp.1.gz
 %%DATADIR%%/modules/regexp.pm
 %%DATADIR%%/modules/tolower.pm
 %%DATADIR%%/modules/toupper.pm
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%

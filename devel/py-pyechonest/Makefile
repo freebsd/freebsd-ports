@@ -13,7 +13,7 @@ COMMENT=	Python interface to The Echo Nest APIs
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

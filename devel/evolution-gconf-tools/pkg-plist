@@ -19,8 +19,3 @@ etc/gconf/evolution-gconf-tools/prototype-data.xml
 %%PYTHON_SITELIBDIR%%/evolutiongconftools/personalizevisitor.py
 %%PYTHON_SITELIBDIR%%/evolutiongconftools/personalizevisitor.pyc
 %%PYTHON_SITELIBDIR%%/evolutiongconftools/personalizevisitor.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/evolutiongconftools
-@dirrm %%PYTHON_SITELIBDIR%%/evolution-gconf-tools
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
-@dirrm etc/gconf/evolution-gconf-tools

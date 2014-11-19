@@ -10,8 +10,7 @@ MASTER_SITES=	http://www.mollux.org/projects/pecomato/download/sources/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line picture metadata processor
 
-USES=			gmake
-USE_PYTHON_BUILD=	yes
+USES=		gmake python:build
 
 MAKEFILE=	Makefile.unix
 

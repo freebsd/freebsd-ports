@@ -28,5 +28,3 @@ GNUstep/Local/Library/Headers/Performance/GSTicker.h
 GNUstep/Local/Library/Libraries/libPerformance.so
 GNUstep/Local/Library/Libraries/libPerformance.so.0.4
 GNUstep/Local/Library/Libraries/libPerformance.so.0.4.0
-@dirrmtry GNUstep/Local/Library/Headers/Performance
-@dirrmtry GNUstep/Local/Library/Documentation/Performance

@@ -14,9 +14,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=2.3:${PORTSDIR}/devel/py-ply
 
-USES=		zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python zip
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS
 

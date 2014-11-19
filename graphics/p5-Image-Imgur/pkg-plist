@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Image/Imgur.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Imgur/.packlist
 %%PERL5_MAN3%%/Image::Imgur.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Imgur
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-@dirrmtry %%SITE_PERL%%/Image

@@ -7,5 +7,3 @@ bin/antipolix-server
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.motd.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.players.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.server_defaults.sample
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

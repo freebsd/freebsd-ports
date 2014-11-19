@@ -223,6 +223,7 @@ include/mythtv/libmythbase/mythobservable.h
 include/mythtv/libmythbase/mythplugin.h
 include/mythtv/libmythbase/mythpluginapi.h
 include/mythtv/libmythbase/mythqtcompat.h
+include/mythtv/libmythbase/mythsingledownload.h
 include/mythtv/libmythbase/mythsocket.h
 include/mythtv/libmythbase/mythsocket_cb.h
 include/mythtv/libmythbase/mythstorage.h
@@ -297,6 +298,7 @@ include/mythtv/libmythui/mythmainwindow.h
 include/mythtv/libmythui/mythnotification.h
 include/mythtv/libmythui/mythnotificationcenter.h
 include/mythtv/libmythui/mythpainter.h
+include/mythtv/libmythui/mythpainter_ogl.h
 include/mythtv/libmythui/mythpainter_qt.h
 include/mythtv/libmythui/mythprogressdialog.h
 include/mythtv/libmythui/mythrect.h
@@ -407,6 +409,7 @@ include/mythtv/mythplugin.h
 include/mythtv/mythpluginapi.h
 include/mythtv/mythqtcompat.h
 include/mythtv/mythrssmanager.h
+include/mythtv/mythsingledownload.h
 include/mythtv/mythsocket.h
 include/mythtv/mythsocket_cb.h
 include/mythtv/mythstorage.h

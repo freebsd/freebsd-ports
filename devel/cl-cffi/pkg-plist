@@ -44,7 +44,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/cffi-sys-spec.txt
 %%PORTDOCS%%%%DOCSDIR%%/mem-vector.txt
 %%PORTDOCS%%%%DOCSDIR%%/shareable-vectors.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gethostname.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gettimeofday.lisp
@@ -73,9 +72,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/struct.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/union.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translator-test.lisp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%LIB32DIR%%/common-lisp/cffi/uffi-compat
-@dirrm %%LIB32DIR%%/common-lisp/cffi/src
-@dirrm %%LIB32DIR%%/common-lisp/cffi/grovel
-@dirrm %%LIB32DIR%%/common-lisp/cffi

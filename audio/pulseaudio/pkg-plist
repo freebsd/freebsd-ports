@@ -15,18 +15,10 @@ bin/start-pulseaudio-kde
 bin/start-pulseaudio-x11
 etc/bash_completion.d/pulseaudio-bash-completion.sh
 etc/dbus-1/system.d/pulseaudio-system.conf
-@unexec if cmp -s %D/etc/pulse/client.conf %D/etc/pulse/client.conf-dist; then rm -f %D/etc/pulse/client.conf; fi
-etc/pulse/client.conf-dist
-@exec [ -f %B/client.conf ] || cp %B/%f %B/client.conf
-@unexec if cmp -s %D/etc/pulse/daemon.conf %D/etc/pulse/daemon.conf-dist; then rm -f %D/etc/pulse/daemon.conf; fi
-etc/pulse/daemon.conf-dist
-@exec [ -f %B/daemon.conf ] || cp %B/%f %B/daemon.conf
-@unexec if cmp -s %D/etc/pulse/default.pa %D/etc/pulse/default.pa-dist; then rm -f %D/etc/pulse/default.pa; fi
-etc/pulse/default.pa-dist
-@exec [ -f %B/default.pa ] || cp %B/%f %B/default.pa
-@unexec if cmp -s %D/etc/pulse/system.pa %D/etc/pulse/system.pa-dist; then rm -f %D/etc/pulse/system.pa; fi
-etc/pulse/system.pa-dist
-@exec [ -f %B/system.pa ] || cp %B/%f %B/system.pa
+@sample etc/pulse/client.conf.sample
+@sample etc/pulse/daemon.conf.sample
+@sample etc/pulse/default.pa.sample
+@sample etc/pulse/system.pa.sample
 etc/xdg/autostart/pulseaudio.desktop
 etc/xdg/autostart/pulseaudio-kde.desktop
 include/pulse/cdecl.h
@@ -264,25 +256,3 @@ share/vala/vapi/libpulse-mainloop-glib.deps
 share/vala/vapi/libpulse-mainloop-glib.vapi
 share/vala/vapi/libpulse.deps
 share/vala/vapi/libpulse.vapi
-%%ALSA%%@dirrm share/pulseaudio/alsa-mixer/profile-sets
-%%ALSA%%@dirrm share/pulseaudio/alsa-mixer/paths
-%%ALSA%%@dirrm share/pulseaudio/alsa-mixer
-%%ALSA%%@dirrm share/pulseaudio
-%%GCONF%%@dirrm libexec/pulse
-@dirrm lib/pulse-%%PULSE_VERSION%%/modules
-@dirrm lib/pulse-%%PULSE_VERSION%%
-@dirrm lib/pulseaudio
-@dirrmtry lib/cmake/PulseAudio
-@dirrmtry lib/cmake
-@dirrm include/pulse
-@dirrm etc/pulse
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/de_CH/LC_MESSAGES
-@dirrmtry share/locale/de_CH
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

@@ -40,5 +40,3 @@ bin/xcoral
 %%DATADIR%%/version.sc
 %%DATADIR%%/window-utilities.sc
 %%DATADIR%%/xcoralrc.lf
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

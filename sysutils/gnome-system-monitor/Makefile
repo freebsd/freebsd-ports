@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/sysutils/gnome-system-monitor/Makefile 19648 2014-05-13 07:17:28Z gusi $
+#   $MCom: ports/trunk/sysutils/gnome-system-monitor/Makefile 19972 2014-10-16 09:40:45Z gusi $
 
 PORTNAME=	gnome-system-monitor
-PORTVERSION=	3.12.2
+PORTVERSION=	3.14.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,7 +20,8 @@ USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtkmm30 intlhack librsvg2 libwnck3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.gnome-system-monitor.enums.xml \
 		org.gnome.gnome-system-monitor.gschema.xml

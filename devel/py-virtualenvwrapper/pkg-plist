@@ -48,6 +48,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/tips.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_sources
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

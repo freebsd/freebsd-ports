@@ -134,23 +134,3 @@ share/icons/gnome/48x48/mimetypes/application-x-blender.png
 share/icons/gnome/48x48/mimetypes/application-x-cd-image.png
 share/icons/gnome/48x48/mimetypes/application-x-mono-develop-xib.png
 share/icons/gnome/48x48/mimetypes/text-x-opml+xml.png
-@dirrmtry share/icons/gnome/48x48/devices
-@dirrmtry share/icons/gnome/48x48/mimetypes
-@dirrmtry share/icons/gnome/48x48
-@dirrmtry share/icons/gnome/32x32/devices
-@dirrmtry share/icons/gnome/32x32/mimetypes
-@dirrmtry share/icons/gnome/32x32
-@dirrmtry share/icons/gnome/256x256/devices
-@dirrmtry share/icons/gnome/256x256/mimetypes
-@dirrmtry share/icons/gnome/256x256
-@dirrmtry share/icons/gnome/24x24/devices
-@dirrmtry share/icons/gnome/24x24/mimetypes
-@dirrmtry share/icons/gnome/24x24
-@dirrmtry share/icons/gnome/22x22/devices
-@dirrmtry share/icons/gnome/22x22/mimetypes
-@dirrmtry share/icons/gnome/22x22
-@dirrmtry share/icons/gnome/16x16/devices
-@dirrmtry share/icons/gnome/16x16/mimetypes
-@dirrmtry share/icons/gnome/16x16
-@dirrmtry share/icons/gnome
-@dirrmtry share/icons

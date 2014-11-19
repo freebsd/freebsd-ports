@@ -9,4 +9,3 @@ lib/libz80ex.so
 lib/libz80ex.so.1.1.21
 lib/libz80ex_dasm.so
 lib/libz80ex_dasm.so.1.1.21
-@dirrm include/z80ex

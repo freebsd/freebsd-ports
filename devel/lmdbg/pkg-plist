@@ -24,4 +24,3 @@ man/man1/lmdbg-stat.1.gz
 man/man1/lmdbg-sym.1.gz
 man/man1/lmdbg-sysleaks.1.gz
 man/man1/lmdbg.1.gz
-@dirrmtry libexec/lmdbg

@@ -7,6 +7,3 @@ share/sounds/keyany.wav
 share/sounds/keyenter.wav
 %%DATADIR%%/textroom-txr-mime.xml
 %%DATADIR%%/words.txt
-@dirrm %%DATADIR%%
-@dirrmtry share/sounds
-@dirrmtry share/hunspell

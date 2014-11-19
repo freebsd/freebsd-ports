@@ -16,5 +16,3 @@ include/laspack/version.h
 lib/liblaspack.a
 %%PORTDOCS%%%%DOCSDIR%%/laspack1.ps
 %%PORTDOCS%%%%DOCSDIR%%/laspack2.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/laspack

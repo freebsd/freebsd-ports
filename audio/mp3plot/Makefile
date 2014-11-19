@@ -28,7 +28,7 @@ PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 GD_CONFIGURE_ENABLE=	gd
 GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
 IMAGEMAGICK_CONFIGURE_ENABLE=	magick
-IMAGEMAGICK_LIB_DEPENDS=libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 
 post-patch:
 	@${REINPLACE_CMD} -e '/bldtype_/s|-O2||g; s|^extra_LD.*||g' ${WRKSRC}/configure

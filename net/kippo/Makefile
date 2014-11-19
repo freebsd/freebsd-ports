@@ -15,8 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypt
 		${PYTHON_PKGNAMEPREFIX}zope.interface>0:${PORTSDIR}/devel/py-zope.interface
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
-USES=		twisted:run,conch,web
+USES=		python twisted:run,conch,web
 NO_BUILD=	yes
 
 USE_RC_SUBR=	kippo

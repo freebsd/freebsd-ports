@@ -19,7 +19,7 @@ RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 # see also the "post-extract" target below.
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:patch
 
-CONFLICTS=	py*-orbit-2*
+CONFLICTS=	py*-orbit-2* py${PYTHON_SUFFIX}-omniorb3-3*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

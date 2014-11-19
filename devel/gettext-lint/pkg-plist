@@ -22,5 +22,3 @@ man/man1/POFileStatus.1.gz
 %%DATADIR%%/count.xsl
 %%DATADIR%%/report.css
 %%DATADIR%%/report.xsl
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/gettext-lint

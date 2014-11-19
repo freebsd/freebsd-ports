@@ -25,9 +25,8 @@ LIB_DEPENDS=		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 			libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 			libpng15.so:${PORTSDIR}/graphics/png
 
-USES=			openal:al pkgconfig scons
+USES=			openal:al pkgconfig python:2 scons
 USE_GL=			gl
-USE_PYTHON=		2
 USE_SDL=		sdl ttf image
 USE_XORG=		xcursor
 

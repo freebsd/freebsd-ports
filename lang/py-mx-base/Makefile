@@ -11,8 +11,8 @@ DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	eGenix mx-Extension Series for Python
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	egenix-mx-base
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}-nspkg.pth
 

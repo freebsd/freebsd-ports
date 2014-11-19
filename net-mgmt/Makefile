@@ -26,6 +26,7 @@
     SUBDIR += bwm-ng
     SUBDIR += cacti
     SUBDIR += cacti-spine
+    SUBDIR += ccnet
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += centreon-clib
@@ -280,6 +281,8 @@
     SUBDIR += sblim-wbemcli
     SUBDIR += scli
     SUBDIR += sdig
+    SUBDIR += seafile
+    SUBDIR += seafile-gui
     SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sipcalc
@@ -301,6 +304,7 @@
     SUBDIR += torrus
     SUBDIR += unifi2
     SUBDIR += unifi3
+    SUBDIR += unifi4
     SUBDIR += victorops-nagios
     SUBDIR += vidalia
     SUBDIR += virt-viewer
@@ -322,5 +326,9 @@
     SUBDIR += zabbix22-frontend
     SUBDIR += zabbix22-proxy
     SUBDIR += zabbix22-server
+    SUBDIR += zabbix24-agent
+    SUBDIR += zabbix24-frontend
+    SUBDIR += zabbix24-proxy
+    SUBDIR += zabbix24-server
 
 .include <bsd.port.subdir.mk>

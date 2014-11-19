@@ -88,9 +88,8 @@ PLIST_FILES+=	"@owner www" \
 		"@group www" \
 		${MODULE_FILES:C|^|%%DRUPAL_MODDIR%%/|} \
 		"@owner root" \
-		"@owner wheel"
+		"@group wheel"
 PLIST_DIRS+=	${MODULE_DIRS:C|^|%%DRUPAL_MODDIR%%/|}
-PLIST_DIRS+=	${DRUPAL_MODDIR} ${DRUPAL_BASE}
 .endif
 .endif
 

@@ -9,5 +9,3 @@
 %%SITE_PERL%%/Thrift/Server.pm
 %%SITE_PERL%%/Thrift/Socket.pm
 %%SITE_PERL%%/Thrift/Transport.pm
-@dirrm %%SITE_PERL%%/Thrift
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thrift

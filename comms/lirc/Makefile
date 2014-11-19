@@ -3,7 +3,7 @@
 
 PORTNAME=	lirc
 PORTVERSION=	0.9.0
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/LIRC/${PORTVERSION}
@@ -47,8 +47,8 @@ PLIST_SUB+=	SMODE2="@comment "
 .endif
 
 .if empty(PORT_OPTIONS:MMINIMAL)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
-LIB_DEPENDS+=		libftdi.so:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=		libftdi.so:${PORTSDIR}/devel/libftdi \
+			libirman.so:${PORTSDIR}/comms/libirman
 CONFIGURE_ARGS+=	--with-driver=userspace
 .else
 CONFIGURE_ARGS+=	--with-driver=dvico

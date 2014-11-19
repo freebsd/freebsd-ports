@@ -29,14 +29,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcregrep/pcregrep.ml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/subst/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/subst/subst.ml
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/subst
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/pcregrep
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/count_hash
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cloc
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry share/examples/ocaml
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%OCAML_SITELIBDIR%%/pcre
-@dirrmtry %%OCAML_SITELIBDIR%%
-@dirrmtry lib/ocaml

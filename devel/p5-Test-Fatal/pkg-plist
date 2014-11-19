@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/Fatal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fatal/.packlist
 %%PERL5_MAN3%%/Test::Fatal.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fatal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

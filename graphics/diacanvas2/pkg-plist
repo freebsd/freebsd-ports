@@ -62,5 +62,3 @@ share/pygtk/2.0/defs/diacanvas.defs
 share/pygtk/2.0/defs/diageometry.defs
 share/pygtk/2.0/defs/diashape.defs
 share/pygtk/2.0/defs/diaview.defs
-@dirrm %%PYTHON_SITELIBDIR%%/diacanvas
-@dirrm include/diacanvas

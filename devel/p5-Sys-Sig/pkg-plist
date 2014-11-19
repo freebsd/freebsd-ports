@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Sys::Sig.3.gz
 %%SITE_PERL%%/Sys/Sig.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Sig/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Sig
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrmtry %%SITE_PERL%%/Sys

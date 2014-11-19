@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/cinnamon-desktop/Makefile 19786 2014-07-31 10:24:00Z gusi $
+#   $MCom: ports/trunk/x11/cinnamon-desktop/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cinnamon-desktop
 PORTVERSION=	2.2.3
@@ -13,17 +13,15 @@ COMMENT=	Additional UI API for cinnamon
 
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
-		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile \
-		libtoolize:${PORTSDIR}/devel/libtool
+		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 RUN_DEPENDS=	xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
 		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 
 USE_XORG=	x11 xrandr xext
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix gtk30 introspection:build
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project"
 CPPFLAGS+=	-I${LOCALBASE}/include

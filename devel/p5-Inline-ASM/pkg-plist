@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Inline/ASM.pm
 %%SITE_PERL%%/Inline/ASM.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/ASM/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/ASM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
-@dirrmtry %%SITE_PERL%%/Inline

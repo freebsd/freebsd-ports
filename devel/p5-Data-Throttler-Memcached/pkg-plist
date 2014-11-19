@@ -3,9 +3,3 @@
 %%SITE_PERL%%/Data/Throttler/BucketChain/Memcached.pm
 %%PERL5_MAN3%%/Data::Throttler::Memcached.3.gz
 %%PERL5_MAN3%%/Data::Throttler::BucketChain::Memcached.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Throttler/Memcached
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Throttler
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/Throttler/BucketChain
-@dirrmtry %%SITE_PERL%%/Data/Throttler
-@dirrmtry %%SITE_PERL%%/Data

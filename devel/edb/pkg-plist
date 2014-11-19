@@ -20,4 +20,3 @@ libexec/edb/libSymbolViewer.so
 man/man1/edb.1.gz
 share/applications/edb.desktop
 share/pixmaps/edb.png
-@dirrm libexec/edb

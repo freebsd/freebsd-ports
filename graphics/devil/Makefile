@@ -99,6 +99,7 @@ post-patch:
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${DATADIR}/examples
+	@${RMDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS CREDITS ChangeLog Libraries.txt README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

@@ -30,7 +30,7 @@ GSASL_DESC=	GSASL support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 CONFIGURE_ENV+=	PYTHON_CONFIG=${PYTHON_CMD}-config
 PLIST_SUB+=	PYTHON=""
 .else

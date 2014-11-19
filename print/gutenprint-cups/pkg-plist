@@ -2378,7 +2378,4 @@ share/locale/uk/gutenprint_uk.po
 share/locale/vi/gutenprint_vi.po
 share/locale/zh_CN/gutenprint_zh_CN.po
 share/locale/zh_TW/gutenprint_zh_TW.po
-@dirrm share/cups/model/gutenprint/5.2/Global
-@dirrm share/cups/model/gutenprint/5.2
-@dirrm share/cups/model/gutenprint
-@dirrm libexec/cups/driver
+@dir lib/gutenprint/5.2/modules

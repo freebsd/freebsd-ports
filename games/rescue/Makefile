@@ -8,10 +8,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/r/R/}%21%20Max/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/r/R/}_${PORTVERSION}
 DIST_SUBDIR=	java
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Action adventure in Space
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 USES=		dos2unix zip:infozip
 DOS2UNIX_GLOB=	*.txt *.htm *.css *.ini *.xml

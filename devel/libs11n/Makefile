@@ -17,6 +17,8 @@ USE_LDCONFIG=	yes
 
 .if defined(NO_PROFILE)
 PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=""
 .endif
 
 post-extract:

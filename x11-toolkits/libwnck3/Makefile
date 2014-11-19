@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11-toolkits/libwnck3/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/x11-toolkits/libwnck3/Makefile 19952 2014-10-15 08:11:00Z gusi $
 
 PORTNAME=	libwnck
-PORTVERSION=	3.4.7
-PORTREVISION=	1
+PORTVERSION=	3.4.9
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -24,7 +23,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tools
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LINS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	STARTUP

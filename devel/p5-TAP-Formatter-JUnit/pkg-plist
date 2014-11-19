@@ -6,6 +6,3 @@ man/man1/tap2junit.1.gz
 %%PERL5_MAN3%%/TAP::Formatter::JUnit.3.gz
 %%PERL5_MAN3%%/TAP::Formatter::JUnit::Result.3.gz
 %%PERL5_MAN3%%/TAP::Formatter::JUnit::Session.3.gz
-@dirrm %%SITE_PERL%%/TAP/Formatter/JUnit
-@dirrmtry %%SITE_PERL%%/TAP/Formatter
-@dirrmtry %%SITE_PERL%%/TAP

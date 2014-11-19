@@ -9,4 +9,4 @@ lib/libopm.a
 lib/libopm.so
 lib/libopm.so.0
 lib/libopm.so.0.0.0
-@dirrmtry(bopm,bopm,750) %%LOGDIR%%
+@dir(bopm,bopm,750) %%LOGDIR%%

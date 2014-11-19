@@ -1,0 +1,10 @@
+--- lib-src/libvamp/Makefile.in.orig	2014-09-22 20:38:14 UTC
++++ lib-src/libvamp/Makefile.in
+@@ -39,6 +39,7 @@
+ # Compile flags
+ #
+ CC		= @CC@
++CFLAGS		= -I. @CXXFLAGS@ @SNDFILE_CFLAGS@
+ CXX		= @CXX@
+ CXXFLAGS	= -I. @CXXFLAGS@ @SNDFILE_CFLAGS@
+ 

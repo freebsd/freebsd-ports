@@ -1,196 +1,218 @@
-%%PYTHON%%lib/gedit/plugins/bookmarks.plugin
+lib/gedit/plugins/bookmarks.plugin
+lib/gedit/plugins/drawspaces.plugin
+lib/gedit/plugins/libbookmarks.so
+lib/gedit/plugins/libdrawspaces.so
+lib/gedit/plugins/libwordcompletion.so
+lib/gedit/plugins/wordcompletion.plugin
+%%PYTHON%%lib/gedit/plugins/__pycache__/bracketcompletion.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/__pycache__/bracketcompletion.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/__pycache__/codecomment.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/__pycache__/codecomment.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/__pycache__/colorpicker.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/__pycache__/colorpicker.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/__pycache__/gpdefs.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/__pycache__/gpdefs.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/__pycache__/joinlines.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/__pycache__/joinlines.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/__pycache__/smartspaces.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/__pycache__/smartspaces.cpython-33.pyo
 %%PYTHON%%lib/gedit/plugins/bracketcompletion.plugin
 %%PYTHON%%lib/gedit/plugins/bracketcompletion.py
-%%PYTHON%%lib/gedit/plugins/bracketcompletion.pyc
-%%PYTHON%%lib/gedit/plugins/bracketcompletion.pyo
-%%PYTHON%%lib/gedit/plugins/charmap.plugin
-%%PYTHON%%lib/gedit/plugins/charmap/__init__.py
-%%PYTHON%%lib/gedit/plugins/charmap/__init__.pyc
-%%PYTHON%%lib/gedit/plugins/charmap/__init__.pyo
-%%PYTHON%%lib/gedit/plugins/charmap/panel.py
-%%PYTHON%%lib/gedit/plugins/charmap/panel.pyc
-%%PYTHON%%lib/gedit/plugins/charmap/panel.pyo
 %%PYTHON%%lib/gedit/plugins/codecomment.plugin
 %%PYTHON%%lib/gedit/plugins/codecomment.py
-%%PYTHON%%lib/gedit/plugins/codecomment.pyc
-%%PYTHON%%lib/gedit/plugins/codecomment.pyo
-%%PYTHON%%lib/gedit/plugins/colorschemer.plugin
-%%PYTHON%%lib/gedit/plugins/colorschemer/__init__.py
-%%PYTHON%%lib/gedit/plugins/colorschemer/__init__.pyc
-%%PYTHON%%lib/gedit/plugins/colorschemer/__init__.pyo
-%%PYTHON%%lib/gedit/plugins/colorschemer/languages.py
-%%PYTHON%%lib/gedit/plugins/colorschemer/languages.pyc
-%%PYTHON%%lib/gedit/plugins/colorschemer/languages.pyo
-%%PYTHON%%lib/gedit/plugins/colorschemer/schemer.py
-%%PYTHON%%lib/gedit/plugins/colorschemer/schemer.pyc
-%%PYTHON%%lib/gedit/plugins/colorschemer/schemer.pyo
 %%PYTHON%%lib/gedit/plugins/colorpicker.plugin
 %%PYTHON%%lib/gedit/plugins/colorpicker.py
-%%PYTHON%%lib/gedit/plugins/colorpicker.pyc
-%%PYTHON%%lib/gedit/plugins/colorpicker.pyo
+%%PYTHON%%lib/gedit/plugins/colorschemer.plugin
+%%PYTHON%%lib/gedit/plugins/colorschemer/__init__.py
+%%PYTHON%%lib/gedit/plugins/colorschemer/__pycache__/__init__.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/colorschemer/__pycache__/__init__.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/colorschemer/__pycache__/languages.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/colorschemer/__pycache__/languages.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/colorschemer/__pycache__/schemer.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/colorschemer/__pycache__/schemer.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/colorschemer/languages.py
+%%PYTHON%%lib/gedit/plugins/colorschemer/schemer.py
 %%PYTHON%%lib/gedit/plugins/commander.plugin
 %%PYTHON%%lib/gedit/plugins/commander/__init__.py
-%%PYTHON%%lib/gedit/plugins/commander/__init__.pyc
-%%PYTHON%%lib/gedit/plugins/commander/__init__.pyo
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/__init__.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/__init__.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/appactivatable.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/appactivatable.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/entry.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/entry.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/history.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/history.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/info.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/info.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/modules.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/modules.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/utils.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/utils.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/windowactivatable.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/__pycache__/windowactivatable.cpython-33.pyo
 %%PYTHON%%lib/gedit/plugins/commander/appactivatable.py
-%%PYTHON%%lib/gedit/plugins/commander/appactivatable.pyc
-%%PYTHON%%lib/gedit/plugins/commander/appactivatable.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/__init__.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/__init__.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/__init__.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/__init__.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/__init__.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/accel_group.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/accel_group.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/completion.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/completion.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/exceptions.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/exceptions.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/metamodule.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/metamodule.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/method.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/method.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/module.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/module.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/result.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/result.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/rollbackimporter.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/commander/commands/__pycache__/rollbackimporter.cpython-33.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/accel_group.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/accel_group.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/accel_group.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/completion.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/completion.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/completion.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/exceptions.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/exceptions.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/exceptions.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/metamodule.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/metamodule.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/metamodule.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/method.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/method.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/method.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/module.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/module.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/module.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/result.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/result.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/result.pyo
 %%PYTHON%%lib/gedit/plugins/commander/commands/rollbackimporter.py
-%%PYTHON%%lib/gedit/plugins/commander/commands/rollbackimporter.pyc
-%%PYTHON%%lib/gedit/plugins/commander/commands/rollbackimporter.pyo
 %%PYTHON%%lib/gedit/plugins/commander/entry.py
-%%PYTHON%%lib/gedit/plugins/commander/entry.pyc
-%%PYTHON%%lib/gedit/plugins/commander/entry.pyo
 %%PYTHON%%lib/gedit/plugins/commander/history.py
-%%PYTHON%%lib/gedit/plugins/commander/history.pyc
-%%PYTHON%%lib/gedit/plugins/commander/history.pyo
 %%PYTHON%%lib/gedit/plugins/commander/info.py
-%%PYTHON%%lib/gedit/plugins/commander/info.pyc
-%%PYTHON%%lib/gedit/plugins/commander/info.pyo
 %%PYTHON%%lib/gedit/plugins/commander/modules.py
-%%PYTHON%%lib/gedit/plugins/commander/modules.pyc
-%%PYTHON%%lib/gedit/plugins/commander/modules.pyo
-%%PYTHON%%lib/gedit/plugins/commander/transparentwindow.py
-%%PYTHON%%lib/gedit/plugins/commander/transparentwindow.pyc
-%%PYTHON%%lib/gedit/plugins/commander/transparentwindow.pyo
 %%PYTHON%%lib/gedit/plugins/commander/utils.py
-%%PYTHON%%lib/gedit/plugins/commander/utils.pyc
-%%PYTHON%%lib/gedit/plugins/commander/utils.pyo
 %%PYTHON%%lib/gedit/plugins/commander/windowactivatable.py
-%%PYTHON%%lib/gedit/plugins/commander/windowactivatable.pyc
-%%PYTHON%%lib/gedit/plugins/commander/windowactivatable.pyo
-%%PYTHON%%lib/gedit/plugins/dashboard.plugin
-%%PYTHON%%lib/gedit/plugins/dashboard/__init__.py
-%%PYTHON%%lib/gedit/plugins/dashboard/__init__.pyc
-%%PYTHON%%lib/gedit/plugins/dashboard/__init__.pyo
-%%PYTHON%%lib/gedit/plugins/dashboard/dashboard.py
-%%PYTHON%%lib/gedit/plugins/dashboard/dashboard.pyc
-%%PYTHON%%lib/gedit/plugins/dashboard/dashboard.pyo
-%%PYTHON%%lib/gedit/plugins/dashboard/utils.py
-%%PYTHON%%lib/gedit/plugins/dashboard/utils.pyc
-%%PYTHON%%lib/gedit/plugins/dashboard/utils.pyo
-%%PYTHON%%lib/gedit/plugins/drawspaces.plugin
 %%PYTHON%%lib/gedit/plugins/gpdefs.py
-%%PYTHON%%lib/gedit/plugins/gpdefs.pyc
-%%PYTHON%%lib/gedit/plugins/gpdefs.pyo
 %%PYTHON%%lib/gedit/plugins/joinlines.plugin
 %%PYTHON%%lib/gedit/plugins/joinlines.py
-%%PYTHON%%lib/gedit/plugins/joinlines.pyc
-%%PYTHON%%lib/gedit/plugins/joinlines.pyo
-%%PYTHON%%lib/gedit/plugins/libbookmarks.so
-%%PYTHON%%lib/gedit/plugins/libdrawspaces.so
-%%PYTHON%%lib/gedit/plugins/libwordcompletion.so
 %%PYTHON%%lib/gedit/plugins/multiedit.plugin
 %%PYTHON%%lib/gedit/plugins/multiedit/__init__.py
-%%PYTHON%%lib/gedit/plugins/multiedit/__init__.pyc
-%%PYTHON%%lib/gedit/plugins/multiedit/__init__.pyo
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/__init__.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/__init__.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/appactivatable.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/appactivatable.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/signals.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/signals.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/viewactivatable.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/viewactivatable.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/windowactivatable.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/multiedit/__pycache__/windowactivatable.cpython-33.pyo
 %%PYTHON%%lib/gedit/plugins/multiedit/appactivatable.py
-%%PYTHON%%lib/gedit/plugins/multiedit/appactivatable.pyc
-%%PYTHON%%lib/gedit/plugins/multiedit/appactivatable.pyo
 %%PYTHON%%lib/gedit/plugins/multiedit/signals.py
-%%PYTHON%%lib/gedit/plugins/multiedit/signals.pyc
-%%PYTHON%%lib/gedit/plugins/multiedit/signals.pyo
 %%PYTHON%%lib/gedit/plugins/multiedit/viewactivatable.py
-%%PYTHON%%lib/gedit/plugins/multiedit/viewactivatable.pyc
-%%PYTHON%%lib/gedit/plugins/multiedit/viewactivatable.pyo
 %%PYTHON%%lib/gedit/plugins/multiedit/windowactivatable.py
-%%PYTHON%%lib/gedit/plugins/multiedit/windowactivatable.pyc
-%%PYTHON%%lib/gedit/plugins/multiedit/windowactivatable.pyo
 %%PYTHON%%lib/gedit/plugins/smartspaces.plugin
 %%PYTHON%%lib/gedit/plugins/smartspaces.py
-%%PYTHON%%lib/gedit/plugins/smartspaces.pyc
-%%PYTHON%%lib/gedit/plugins/smartspaces.pyo
 %%PYTHON%%lib/gedit/plugins/synctex.plugin
 %%PYTHON%%lib/gedit/plugins/synctex/__init__.py
-%%PYTHON%%lib/gedit/plugins/synctex/__init__.pyc
-%%PYTHON%%lib/gedit/plugins/synctex/__init__.pyo
+%%PYTHON%%lib/gedit/plugins/synctex/__pycache__/__init__.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/synctex/__pycache__/__init__.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/synctex/__pycache__/evince_dbus.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/synctex/__pycache__/evince_dbus.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/synctex/__pycache__/synctex.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/synctex/__pycache__/synctex.cpython-33.pyo
 %%PYTHON%%lib/gedit/plugins/synctex/evince_dbus.py
-%%PYTHON%%lib/gedit/plugins/synctex/evince_dbus.pyc
-%%PYTHON%%lib/gedit/plugins/synctex/evince_dbus.pyo
 %%PYTHON%%lib/gedit/plugins/synctex/synctex.py
-%%PYTHON%%lib/gedit/plugins/synctex/synctex.pyc
-%%PYTHON%%lib/gedit/plugins/synctex/synctex.pyo
 %%PYTHON%%lib/gedit/plugins/textsize.plugin
 %%PYTHON%%lib/gedit/plugins/textsize/__init__.py
-%%PYTHON%%lib/gedit/plugins/textsize/__init__.pyc
-%%PYTHON%%lib/gedit/plugins/textsize/__init__.pyo
+%%PYTHON%%lib/gedit/plugins/textsize/__pycache__/__init__.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/textsize/__pycache__/__init__.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/textsize/__pycache__/signals.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/textsize/__pycache__/signals.cpython-33.pyo
+%%PYTHON%%lib/gedit/plugins/textsize/__pycache__/viewactivatable.cpython-33.pyc
+%%PYTHON%%lib/gedit/plugins/textsize/__pycache__/viewactivatable.cpython-33.pyo
 %%PYTHON%%lib/gedit/plugins/textsize/signals.py
-%%PYTHON%%lib/gedit/plugins/textsize/signals.pyc
-%%PYTHON%%lib/gedit/plugins/textsize/signals.pyo
 %%PYTHON%%lib/gedit/plugins/textsize/viewactivatable.py
-%%PYTHON%%lib/gedit/plugins/textsize/viewactivatable.pyc
-%%PYTHON%%lib/gedit/plugins/textsize/viewactivatable.pyo
-%%PYTHON%%lib/gedit/plugins/wordcompletion.plugin
+share/appdata/gedit-bookmarks.metainfo.xml
+share/appdata/gedit-drawspaces.metainfo.xml
+share/appdata/gedit-wordcompletion.metainfo.xml
+%%PYTHON%%share/appdata/gedit-bracketcompletion.metainfo.xml
+%%PYTHON%%share/appdata/gedit-codecomment.metainfo.xml
+%%PYTHON%%share/appdata/gedit-colorpicker.metainfo.xml
+%%PYTHON%%share/appdata/gedit-colorschemer.metainfo.xml
+%%PYTHON%%share/appdata/gedit-commander.metainfo.xml
+%%PYTHON%%share/appdata/gedit-joinlines.metainfo.xml
+%%PYTHON%%share/appdata/gedit-multiedit.metainfo.xml
+%%PYTHON%%share/appdata/gedit-smartspaces.metainfo.xml
+%%PYTHON%%share/appdata/gedit-synctex.metainfo.xml
+%%PYTHON%%share/appdata/gedit-textsize.metainfo.xml
 %%PYTHON%%share/gedit/plugins/colorschemer/ui/schemer.ui
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/align.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/align.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/bookmark.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/bookmark.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/doc.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/doc.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/edit.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/edit.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/format.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/format.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/goto.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/goto.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/grep.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/grep.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/help.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/help.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/move.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/move.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/reload.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/reload.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/set.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/set.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/shell.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/__pycache__/shell.cpython-33.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/align.py
-%%PYTHON%%share/gedit/plugins/commander/modules/align.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/align.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/bookmark.py
-%%PYTHON%%share/gedit/plugins/commander/modules/bookmark.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/bookmark.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/doc.py
-%%PYTHON%%share/gedit/plugins/commander/modules/doc.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/doc.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/edit.py
-%%PYTHON%%share/gedit/plugins/commander/modules/edit.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/edit.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/find/__init__.py
-%%PYTHON%%share/gedit/plugins/commander/modules/find/__init__.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/find/__init__.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/find/__pycache__/__init__.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/find/__pycache__/__init__.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/find/__pycache__/finder.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/find/__pycache__/finder.cpython-33.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/find/__pycache__/regex.cpython-33.pyc
+%%PYTHON%%share/gedit/plugins/commander/modules/find/__pycache__/regex.cpython-33.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/find/finder.py
-%%PYTHON%%share/gedit/plugins/commander/modules/find/finder.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/find/finder.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/find/regex.py
-%%PYTHON%%share/gedit/plugins/commander/modules/find/regex.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/find/regex.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/format.py
-%%PYTHON%%share/gedit/plugins/commander/modules/format.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/format.pyo
-%%PYTHON%%share/gedit/plugins/commander/modules/grep.py
-%%PYTHON%%share/gedit/plugins/commander/modules/grep.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/grep.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/goto.py
-%%PYTHON%%share/gedit/plugins/commander/modules/goto.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/goto.pyo
+%%PYTHON%%share/gedit/plugins/commander/modules/grep.py
 %%PYTHON%%share/gedit/plugins/commander/modules/help.py
-%%PYTHON%%share/gedit/plugins/commander/modules/help.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/help.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/move.py
-%%PYTHON%%share/gedit/plugins/commander/modules/move.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/move.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/reload.py
-%%PYTHON%%share/gedit/plugins/commander/modules/reload.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/reload.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/set.py
-%%PYTHON%%share/gedit/plugins/commander/modules/set.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/set.pyo
 %%PYTHON%%share/gedit/plugins/commander/modules/shell.py
-%%PYTHON%%share/gedit/plugins/commander/modules/shell.pyc
-%%PYTHON%%share/gedit/plugins/commander/modules/shell.pyo
+share/help/C/gedit/zeitgeist-dataprovider.page
+share/help/ar/gedit/zeitgeist-dataprovider.page
+share/help/bg/gedit/zeitgeist-dataprovider.page
+share/help/ca/gedit/zeitgeist-dataprovider.page
+share/help/cs/gedit/zeitgeist-dataprovider.page
+share/help/da/gedit/zeitgeist-dataprovider.page
+share/help/de/gedit/zeitgeist-dataprovider.page
+share/help/el/gedit/zeitgeist-dataprovider.page
+share/help/es/gedit/zeitgeist-dataprovider.page
+share/help/eu/gedit/zeitgeist-dataprovider.page
+share/help/fi/gedit/zeitgeist-dataprovider.page
+share/help/fr/gedit/zeitgeist-dataprovider.page
+share/help/gl/gedit/zeitgeist-dataprovider.page
+share/help/hu/gedit/zeitgeist-dataprovider.page
+share/help/it/gedit/zeitgeist-dataprovider.page
+share/help/ja/gedit/zeitgeist-dataprovider.page
+share/help/ko/gedit/zeitgeist-dataprovider.page
+share/help/lv/gedit/zeitgeist-dataprovider.page
+share/help/oc/gedit/zeitgeist-dataprovider.page
+share/help/pt_BR/gedit/zeitgeist-dataprovider.page
+share/help/ru/gedit/zeitgeist-dataprovider.page
+share/help/sl/gedit/zeitgeist-dataprovider.page
+share/help/sv/gedit/zeitgeist-dataprovider.page
+share/help/te/gedit/zeitgeist-dataprovider.page
+share/help/th/gedit/zeitgeist-dataprovider.page
+share/help/uk/gedit/zeitgeist-dataprovider.page
+share/help/zh_CN/gedit/zeitgeist-dataprovider.page
+share/help/zh_HK/gedit/zeitgeist-dataprovider.page
+share/help/zh_TW/gedit/zeitgeist-dataprovider.page
 share/locale/af/LC_MESSAGES/gedit-plugins.mo
 share/locale/am/LC_MESSAGES/gedit-plugins.mo
 share/locale/ar/LC_MESSAGES/gedit-plugins.mo
@@ -779,67 +801,3 @@ share/help/zh_TW/gedit/session-saver.page
 share/help/zh_TW/gedit/terminal.page
 share/help/zh_TW/gedit/text-size.page
 share/help/zh_TW/gedit/word-completion.page
-%%PYTHON%%@dirrm lib/gedit/plugins/textsize
-%%PYTHON%%@dirrm lib/gedit/plugins/multiedit
-%%PYTHON%%@dirrm lib/gedit/plugins/synctex
-%%PYTHON%%@dirrm lib/gedit/plugins/dashboard
-%%PYTHON%%@dirrm lib/gedit/plugins/commander/commands
-%%PYTHON%%@dirrm lib/gedit/plugins/commander
-%%PYTHON%%@dirrm lib/gedit/plugins/charmap
-%%PYTHON%%@dirrm share/gedit/plugins/commander/modules/find
-%%PYTHON%%@dirrm share/gedit/plugins/commander/modules
-%%PYTHON%%@dirrm share/gedit/plugins/commander
-%%PYTHON%%@dirrm share/gedit/plugins/colorschemer/ui
-%%PYTHON%%@dirrm share/gedit/plugins/colorschemer
-%%PYTHON%%@dirrmtry share/gedit/plugins
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mi/LC_MESSAGES
-@dirrmtry share/locale/mi
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/la/LC_MESSAGES
-@dirrmtry share/locale/la
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-%%PYTHON%%@dirrm lib/gedit/plugins/colorschemer

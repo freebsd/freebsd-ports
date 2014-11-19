@@ -22,17 +22,3 @@ lib/libjvm.so.0.0.0
 %%WITHOUT_ZIP%%%%DATADIR%%/classes/java/lang/reflect/VMMethod.class
 %%WITHOUT_ZIP%%%%DATADIR%%/classes/java/security/VMAccessController.class
 %%WITHOUT_ZIP%%%%DATADIR%%/classes/sun/reflect/annotation/AnnotationInvocationHandler.class
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/gnu/classpath
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/gnu
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/java/lang/reflect
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/java/lang
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/java/security
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/java
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/sun/reflect/annotation
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/sun/reflect
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/sun
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/jamvm/java/lang
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/jamvm/java
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes/jamvm
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%/classes
-@dirrm %%DATADIR%%

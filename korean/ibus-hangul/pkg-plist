@@ -23,15 +23,3 @@ share/icons/hicolor/scalable/apps/ibus-setup-hangul.svg
 %%DATADIR%%/setup/setup.ui
 %%NLS%%share/locale/ko/LC_MESSAGES/ibus-hangul.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-hangul.mo
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/setup
-@dirrm %%DATADIR%%
-@dirrm lib/ibus-hangul/setup
-@dirrm lib/ibus-hangul

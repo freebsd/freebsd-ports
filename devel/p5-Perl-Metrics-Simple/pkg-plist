@@ -7,10 +7,3 @@ man/man1/countperl.1.gz
 %%SITE_PERL%%/Perl/Metrics/Simple.pm
 %%SITE_PERL%%/Perl/Metrics/Simple/Analysis.pm
 %%SITE_PERL%%/Perl/Metrics/Simple/Analysis/File.pm
-@dirrm %%SITE_PERL%%/Perl/Metrics/Simple/Analysis
-@dirrm %%SITE_PERL%%/Perl/Metrics/Simple
-@dirrmtry %%SITE_PERL%%/Perl/Metrics
-@dirrmtry %%SITE_PERL%%/Perl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Metrics/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Metrics
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl

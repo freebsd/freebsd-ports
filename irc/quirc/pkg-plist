@@ -21,6 +21,3 @@ bin/quirc
 %%DATADIR%%/themes/default.tcl
 %%DATADIR%%/variables.tcl
 %%DATADIR%%/winpopup.tcl
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/common
-@dirrm %%DATADIR%%

@@ -469,12 +469,3 @@ bin/btshowmetainfo.py
 %%DATADIR%%/ip2cc.db
 %%PORTDOCS%%%%DOCSDIR%%/examples/interest.xml
 %%PORTDOCS%%%%DOCSDIR%%/examples/tracker.xml
-@dirrm %%PYTHON_SITELIBDIR%%/BitCrawler
-@dirrm %%PYTHON_SITELIBDIR%%/BitQueue
-@dirrm %%PYTHON_SITELIBDIR%%/BitTornado/BT1
-@dirrm %%PYTHON_SITELIBDIR%%/BitTornado
-@dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
-@dirrm %%PYTHON_SITELIBDIR%%/khashmir
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

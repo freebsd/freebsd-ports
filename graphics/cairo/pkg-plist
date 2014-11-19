@@ -63,5 +63,3 @@ libdata/pkgconfig/cairo-tee.pc
 %%X11%%libdata/pkgconfig/cairo-xlib.pc
 @comment %%X11%%%%XCB%%libdata/pkgconfig/cairo-xlib-xcb.pc
 %%X11%%libdata/pkgconfig/cairo-xlib-xrender.pc
-@dirrm include/cairo
-@dirrm lib/cairo

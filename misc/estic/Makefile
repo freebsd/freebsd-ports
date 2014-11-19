@@ -15,7 +15,8 @@ COMMENT=		Controller for ISDN TK-Anlage (PBX) made by Istec
 
 USES=		zip
 USE_CSTD=	gnu89
-
+USE_CXXSTD=	gnu++98
+USE_GCC=	any
 NO_WRKSUBDIR=	yes
 
 # Personal Preferences, Where to install.
@@ -38,12 +39,6 @@ X11_USE=	xorg=x11
 FIXME=	areacode estic spunk
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} > 1000000
-.if ${CC} != gcc42
-BROKEN=	needs gcc4.2 to compile
-.endif
-.endif
 
 .if ${PORT_OPTIONS:MX11}
 X_OR_NOT=-x

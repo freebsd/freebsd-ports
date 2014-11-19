@@ -23,8 +23,10 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 .if defined(MACHINE_CPU) && ${MACHINE_CPU:Msse}!=""
 CONFIGURE_ARGS+=	--enable-sse
+.endif
 .endif
 
 post-patch:

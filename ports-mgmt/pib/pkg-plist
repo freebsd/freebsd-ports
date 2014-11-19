@@ -2,4 +2,3 @@ bin/pib
 lib/pib/pib.tcl
 lib/pib/tkSteal.tcl
 lib/pib/libTkSteal.so.2
-@dirrm lib/pib

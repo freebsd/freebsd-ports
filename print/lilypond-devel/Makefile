@@ -46,11 +46,10 @@ INFO=		internals \
 		lilypond-web \
 		music-glossary
 
-USES=		bison:build gettext gmake pkgconfig perl5 compiler:c++11-lib
+USES=		bison:build gettext gmake pkgconfig perl5 compiler:c++11-lib python:-3
 USE_CXXSTD=	c++11
 USE_GHOSTSCRIPT=9
 USE_TEX=	latex
-USE_PYTHON=	-3
 USE_PERL5=	build
 USE_GNOME=	pango
 

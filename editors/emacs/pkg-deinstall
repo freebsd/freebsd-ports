@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 GAMESROOT=/var/games/emacs
 
 if [ "$2" = "DEINSTALL" ]; then

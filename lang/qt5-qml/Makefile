@@ -2,7 +2,6 @@
 
 PORTNAME=	qml
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMEPREFIX=	qt5-
 
@@ -14,9 +13,15 @@ QT_DIST=	declarative
 USES=		python:build qmake
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
-WRKSRC_SUBDIR=	src/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/src
+INSTALL_WRKSRC=	${WRKSRC}/src
 
 post-patch:
-	${REINPLACE_CMD} 's,python,${PYTHON_CMD},g' ${WRKSRC}/../3rdparty/masm/masm.pri
+# tools/tools.pro will be processed automatically unless it does not exist.
+	${RM} -r ${WRKSRC}/tools
+
+	${REINPLACE_CMD} 's,python,${PYTHON_CMD},g' \
+		${WRKSRC}/src/3rdparty/masm/masm.pri
+
 
 .include <bsd.port.mk>

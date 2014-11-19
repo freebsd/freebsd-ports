@@ -15,12 +15,12 @@ lib/girepository-1.0/Peas-1.0.typelib
 lib/girepository-1.0/PeasGtk-1.0.typelib
 lib/libpeas-1.0.so
 lib/libpeas-1.0.so.0
-lib/libpeas-1.0.so.0.1001.0
+lib/libpeas-1.0.so.0.1201.0
 %%PYTHON%%lib/libpeas-1.0/loaders/libpython3loader.so
 %%SEED%%lib/libpeas-1.0/loaders/libseedloader.so
 lib/libpeas-gtk-1.0.so
 lib/libpeas-gtk-1.0.so.0
-lib/libpeas-gtk-1.0.so.0.1001.0
+lib/libpeas-gtk-1.0.so.0.1201.0
 lib/peas-demo/plugins/helloworld/helloworld.plugin
 lib/peas-demo/plugins/helloworld/libhelloworld.so
 %%PYTHON%%lib/peas-demo/plugins/pythonhello/__pycache__/pythonhello.cpython-33.pyc
@@ -129,40 +129,3 @@ share/locale/vi/LC_MESSAGES/libpeas.mo
 share/locale/zh_CN/LC_MESSAGES/libpeas.mo
 share/locale/zh_HK/LC_MESSAGES/libpeas.mo
 share/locale/zh_TW/LC_MESSAGES/libpeas.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrm share/gtk-doc/html/libpeas
-%%SEED%%@dirrm lib/peas-demo/plugins/seedhello
-%%PYTHON%%@dirrm lib/peas-demo/plugins/pythonhello/__pycache__
-%%PYTHON%%@dirrm lib/peas-demo/plugins/pythonhello
-@dirrm lib/peas-demo/plugins/secondtime
-@dirrm lib/peas-demo/plugins/helloworld
-@dirrm lib/peas-demo/plugins
-@dirrm lib/peas-demo
-%%PYTHON%%@dirrm lib/libpeas-1.0/loaders
-%%PYTHON%%@dirrm lib/libpeas-1.0
-@dirrm include/libpeas-1.0/libpeas-gtk
-@dirrm include/libpeas-1.0/libpeas
-@dirrm include/libpeas-1.0

@@ -1,11 +1,16 @@
+To setup a tool, qtPrepareTool() doesn't fallback anymore (compared to Qt4) to
+the build directory (/get paths), but relies instead on QT_TOOL.* variables set
+before in the configure stage, which our split configuration doesn't generate.
+With this patch, it's back to the previous behavior (which, by the way, has no
+effect on anything but Qt builds).
 --- ./mkspecs/features/qt_functions.prf.orig	2013-10-22 01:49:28.000000000 -0700
 +++ ./mkspecs/features/qt_functions.prf	2013-11-04 07:50:44.835414343 -0800
 @@ -193,7 +193,7 @@
  defineTest(qtPrepareTool) {
-     $$1 = $$eval(QT_TOOL.$${2}.binary)
-     isEmpty($$1) {
--        $$1 = $$[QT_HOST_BINS]/$$2
-+        $$1 = $$[QT_HOST_BINS/get]/$$2
-         exists($$eval($$1).pl) {
-             $$1 = perl -w $$eval($$1).pl
+     cmd = $$eval(QT_TOOL.$${2}.binary)
+     isEmpty(cmd) {
+-        cmd = $$[QT_HOST_BINS]/$$2
++        cmd = $$[QT_HOST_BINS/get]/$$2
+         exists($${cmd}.pl) {
+             cmd = perl -w $$system_path($${cmd}.pl)
          } else: contains(QMAKE_HOST.os, Windows) {

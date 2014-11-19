@@ -26,7 +26,6 @@ INFO=		a2ps ogonkify regex
 WRKSRC=		${WRKDIR}/${PORTNAME}-4.13
 I18N_PACKAGE=	i18n-fonts-0.1
 
-STRIP=
 CONFIGURE_ARGS=	--with-medium=libpaper --sharedstatedir=${PREFIX}/share \
 	--sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share \
 	--localstatedir=${PREFIX}/share
@@ -80,7 +79,6 @@ post-configure:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/a2ps
 .if ${PORT_OPTIONS:MEMACS}
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps-print.el \

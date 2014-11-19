@@ -74,6 +74,6 @@ post-install:
 	${INSTALL} -m 750 -d ${STAGEDIR}${RUNDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspread.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtspread.so.1
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/mach/auto/Spread/Spread.so
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Spread/Spread.so
 
 .include <bsd.port.post.mk>

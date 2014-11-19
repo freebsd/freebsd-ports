@@ -15,7 +15,7 @@ COMMENT=	Cleans up, regularizes, and reformats the text of Python scripts
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pythontidy

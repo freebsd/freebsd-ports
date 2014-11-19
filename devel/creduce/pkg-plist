@@ -12,5 +12,3 @@ libexec/clang_delta
 %%DATADIR%%/perl/pass_ints.pm
 %%DATADIR%%/perl/pass_clang.pm
 %%DATADIR%%/perl/pass_ternary.pm
-@dirrm %%DATADIR%%/perl
-@dirrm %%DATADIR%%

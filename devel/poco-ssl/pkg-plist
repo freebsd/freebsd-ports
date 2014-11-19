@@ -678,15 +678,3 @@ lib/libPocoZip.so
 lib/libPocoZip.so.12
 lib/libPocoZipd.so
 lib/libPocoZipd.so.12
-@dirrmtry include/Poco/DOM
-@dirrmtry include/Poco/SAX
-@dirrmtry include/Poco/XML
-@dirrmtry include/Poco/Util
-@dirrmtry include/Poco/Net
-@dirrmtry include/Poco/Crypto
-@dirrmtry include/Poco/Data/SQLite
-@dirrmtry include/Poco/Data/ODBC
-@dirrmtry include/Poco/Data/MySQL
-@dirrmtry include/Poco/Data
-@dirrmtry include/Poco/Zip
-@dirrmtry include/Poco

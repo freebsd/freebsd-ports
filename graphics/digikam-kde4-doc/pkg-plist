@@ -292,6 +292,3 @@ share/doc/HTML/en/showfoto/introductionplugininterfaces.png
 share/doc/HTML/en/showfoto/setupgeneral.png
 share/doc/HTML/en/showfoto/setupplugins.png
 share/doc/HTML/en/showfoto/setupslideshow.png
-@dirrm share/doc/HTML/en/showfoto
-@dirrm share/doc/HTML/en/kipi-plugins
-@dirrm share/doc/HTML/en/digikam

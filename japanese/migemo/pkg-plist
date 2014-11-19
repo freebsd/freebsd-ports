@@ -17,4 +17,3 @@
 %%MIGEMO%%share/migemo/migemo.ja.rd
 %%MIGEMO%%share/migemo/user-dict.sample
 %%MIGEMO%%share/migemo/regex-dict.sample
-%%MIGEMO%%@dirrm share/migemo

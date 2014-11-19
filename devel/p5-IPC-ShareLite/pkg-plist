@@ -3,6 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/ShareLite/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/ShareLite/ShareLite.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/ShareLite/autosplit.ix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/ShareLite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPC

@@ -58,9 +58,3 @@ man/man1/xfractint.man.gz
 %%DATADIR%%/pars/newphoen.par
 %%DATADIR%%/pars/orbits.par
 %%DATADIR%%/pars/phoenix.par
-@dirrm %%DATADIR%%/formulas
-@dirrm %%DATADIR%%/ifs
-@dirrm %%DATADIR%%/lsystem
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/pars
-@dirrm %%DATADIR%%

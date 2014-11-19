@@ -2,7 +2,3 @@
 %%SITE_PERL%%/Class/Spiffy/mixin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Spiffy/.packlist
 %%PERL5_MAN3%%/Class::Spiffy.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Spiffy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Spiffy
-@dirrmtry %%SITE_PERL%%/Class

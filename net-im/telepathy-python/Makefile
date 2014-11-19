@@ -14,8 +14,7 @@ COMMENT=	Python bindings for the Telepathy framework
 BUILD_DEPENDS=	py2?-dbus>=0:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	py2?-dbus>=0:${PORTSDIR}/devel/py-dbus
 
-USE_PYTHON=	2
-USES=		gmake
+USES=		gmake python:2
 USE_GNOME=	libxslt:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

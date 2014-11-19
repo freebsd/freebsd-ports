@@ -19,5 +19,3 @@ share/py-sip/QtDeclarative/qdeclarativeview.sip
 share/py-sip/QtDeclarative/qpydeclarativelistproperty.sip
 share/py-sip/QtDeclarative/qpydeclarativepropertyvaluesource.sip
 %%API%%share/qt4/qsci/api/python/QtDeclarative.api
-@dirrmtry share/py-sip/QtDeclarative
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

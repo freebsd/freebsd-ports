@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/String::RexxParse.3.gz
 %%SITE_PERL%%/String/RexxParse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/RexxParse/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/RexxParse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/String

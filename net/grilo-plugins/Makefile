@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net/grilo-plugins/Makefile 19830 2014-08-25 07:07:04Z gusi $
+#   $MCom: ports/trunk/net/grilo-plugins/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	grilo-plugins
 PORTVERSION=	0.2.13
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgrilo-0.2.so:${PORTSDIR}/net/grilo \
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20 gnomehier intlhack libxml2
+USE_GNOME=	glib20 intlhack libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-youtube \
 		--enable-vimeo \

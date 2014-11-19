@@ -18,9 +18,8 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USES=		gmake
+USES=		gmake python
 USE_GNOME=	intlhack pygtk2
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

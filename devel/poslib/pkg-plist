@@ -44,10 +44,3 @@ lib/poslib-%%VERSION%%/include/poslib-config.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnstimeago.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/host.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.cpp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/poslib-%%VERSION%%/include
-@dirrm lib/poslib-%%VERSION%%
-@dirrm include/poslib-%%VERSION%%/poslib/server
-@dirrm include/poslib-%%VERSION%%/poslib
-@dirrm include/poslib-%%VERSION%%

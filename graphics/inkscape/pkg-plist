@@ -843,39 +843,3 @@ share/locale/uk/LC_MESSAGES/inkscape.mo
 share/locale/vi/LC_MESSAGES/inkscape.mo
 share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 share/locale/zh_TW/LC_MESSAGES/inkscape.mo
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/tutorials
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/screens
-@dirrm %%DATADIR%%/patterns
-@dirrm %%DATADIR%%/palettes
-@dirrm %%DATADIR%%/markers
-@dirrm %%DATADIR%%/keys
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/gradients
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/filters
-@dirrm %%DATADIR%%/extensions/xaml2svg
-@dirrm %%DATADIR%%/extensions/alphabet_soup
-@dirrm %%DATADIR%%/extensions/Poly3DObjects
-@dirrm %%DATADIR%%/extensions/Barcode
-@dirrm %%DATADIR%%/extensions
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/clipart
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/te_IN/LC_MESSAGES
-@dirrmtry share/locale/te_IN
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/en_US@piglatin/LC_MESSAGES
-@dirrmtry share/locale/en_US@piglatin
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia

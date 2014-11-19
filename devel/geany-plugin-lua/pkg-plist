@@ -32,14 +32,3 @@ lib/geany/geanylua.so
 %%DATADIR%%/geanylua/work/01.edit-test-script.lua
 %%DATADIR%%/geanylua/work/02.run-test-script.lua
 %%DATADIR%%/geanylua/work/03.install-test-script.lua
-@dirrm %%DATADIR%%/geanylua/work
-@dirrm %%DATADIR%%/geanylua/scripting
-@dirrm %%DATADIR%%/geanylua/info
-@dirrm %%DATADIR%%/geanylua/edit
-@dirrm %%DATADIR%%/geanylua/dialogs
-@dirrm %%DATADIR%%/geanylua
-@dirrmtry %%DATADIR%%
-@dirrm %%DOCSDIR%%/geanylua
-@dirrmtry %%DOCSDIR%%
-@dirrm lib/geany-plugins/geanylua
-@dirrmtry lib/geany-plugins

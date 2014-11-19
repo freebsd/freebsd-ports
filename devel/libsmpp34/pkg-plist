@@ -81,5 +81,3 @@ lib/libsmpp34.so.0
 lib/libsmpp34.so.0.0.1
 lib/libsmpp34.so
 lib/libsmpp34.a
-@dirrm include/def_frame
-@dirrm include/def_list

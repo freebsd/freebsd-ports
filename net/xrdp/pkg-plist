@@ -39,24 +39,24 @@ man/man8/xrdp-sesman.8.gz
 man/man8/xrdp-sesrun.8.gz
 man/man8/xrdp.8.gz
 etc/pam.d/xrdp-sesman
-etc/xrdp/km-0407.ini
-etc/xrdp/km-0409.ini
-etc/xrdp/km-040c.ini
-etc/xrdp/km-0410.ini
-etc/xrdp/km-0419.ini
-etc/xrdp/km-041d.ini
-%%JP106%%etc/xrdp/km-0411.ini
-%%JP106%%etc/xrdp/km-e0010411.ini
-%%JP106%%etc/xrdp/km-e0200411.ini
-%%JP106%%etc/xrdp/km-e0210411.ini
+%%ETCDIR%%/km-0407.ini
+%%ETCDIR%%/km-0409.ini
+%%ETCDIR%%/km-040c.ini
+%%ETCDIR%%/km-0410.ini
+%%ETCDIR%%/km-0419.ini
+%%ETCDIR%%/km-041d.ini
+%%JP106%%%%ETCDIR%%/km-0411.ini
+%%JP106%%%%ETCDIR%%/km-e0010411.ini
+%%JP106%%%%ETCDIR%%/km-e0200411.ini
+%%JP106%%%%ETCDIR%%/km-e0210411.ini
 @unexec if cmp -s %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini; then rm -f %D/etc/xrdp/rsakeys.ini; fi
 @unexec if cmp -s %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini; then rm -f %D/etc/xrdp/sesman.ini; fi
 @unexec if cmp -s %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh; then rm -f %D/etc/xrdp/startwm.sh; fi
 @unexec if cmp -s %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini; then rm -f %D/etc/xrdp/xrdp.ini; fi
-etc/xrdp/rsakeys.ini.sample
-etc/xrdp/sesman.ini.sample
-etc/xrdp/startwm.sh.sample
-etc/xrdp/xrdp.ini.sample
+@sample %%ETCDIR%%/rsakeys.ini.sample
+@sample %%ETCDIR%%/sesman.ini.sample
+@sample %%ETCDIR%%/startwm.sh.sample
+@sample %%ETCDIR%%/xrdp.ini.sample
 @exec [ -f %D/etc/xrdp/sesman.ini ] || cp -p %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini
 @exec [ -f %D/etc/xrdp/startwm.sh ] || cp -p %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh
 @exec [ -f %D/etc/xrdp/xrdp.ini ] || cp -p %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini
@@ -64,13 +64,10 @@ sbin/xrdp
 sbin/xrdp-chansrv
 sbin/xrdp-sesman
 sbin/xrdp-sessvc
-share/xrdp/ad24b.bmp
-share/xrdp/ad256.bmp
-share/xrdp/cursor0.cur
-share/xrdp/cursor1.cur
-share/xrdp/sans-10.fv1
-share/xrdp/xrdp24b.bmp
-share/xrdp/xrdp256.bmp
-@dirrm share/xrdp
-@dirrm lib/xrdp
-@dirrmtry etc/xrdp
+%%DATADIR%%/ad24b.bmp
+%%DATADIR%%/ad256.bmp
+%%DATADIR%%/cursor0.cur
+%%DATADIR%%/cursor1.cur
+%%DATADIR%%/sans-10.fv1
+%%DATADIR%%/xrdp24b.bmp
+%%DATADIR%%/xrdp256.bmp

@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smart Game Format parser library for Python
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 

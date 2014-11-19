@@ -10,4 +10,3 @@
 %%PYTHON_SITELIBDIR%%/sqlcc/data_src.pyo
 %%PYTHON_SITELIBDIR%%/sqlcc/funcs.pyo
 %%PYTHON_SITELIBDIR%%/sqlcc/sql.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/sqlcc

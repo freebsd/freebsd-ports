@@ -3,7 +3,7 @@
 
 PORTNAME=	recoll
 PORTVERSION=	1.19.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	xapian-core>=0:${PORTSDIR}/databases/xapian-core
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		antiword:${PORTSDIR}/textproc/antiword \
 		catdoc:${PORTSDIR}/textproc/catdoc \
-		wpd2html:${PORTSDIR}/textproc/libwpd \
+		wpd2html:${PORTSDIR}/textproc/libwpd010 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		unrar:${PORTSDIR}/archivers/unrar \
 		unrtf:${PORTSDIR}/textproc/unrtf

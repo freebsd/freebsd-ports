@@ -56,8 +56,6 @@ man/man1/grmid.1.gz
 man/man1/grmiregistry.1.gz
 man/man1/gserialver.1.gz
 man/man1/gtnameserv.1.gz
-@dirrm lib/classpath
-@dirrmtry lib/security
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.java2d
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.jawt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
@@ -180,25 +178,3 @@ man/man1/gtnameserv.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/welcome.html
 %%DATADIR%%/glibj.zip
 %%DATADIR%%/tools.zip
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/swing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/sound
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/print
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/midi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/management
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/jawt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/java2d
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/icons
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/html
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/datatransfer
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/awt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/NamingService
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%

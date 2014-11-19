@@ -5,7 +5,3 @@
 %%SITE_PERL%%/Test/Dependencies/Heavy.pm
 %%SITE_PERL%%/Test/Dependencies/Light.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dependencies/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dependencies
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Dependencies
-@dirrmtry %%SITE_PERL%%/Test

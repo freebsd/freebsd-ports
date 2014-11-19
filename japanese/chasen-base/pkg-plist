@@ -1,4 +1,3 @@
-@comment $NetBSD: PLIST,v 1.5 2007/08/02 15:03:10 taca Exp $
 bin/chasen
 bin/chasen-config
 include/chasen.h
@@ -8,10 +7,6 @@ lib/libchasen.so.2
 lib/libchasen.so.2.0.4
 libexec/chasen/makeda
 libexec/chasen/makemat
-@dirrm libexec/chasen
-@exec mkdir -p %D/share/chasen/dic >/dev/null 2>&1 || true
-@dirrm share/chasen/dic
+@dir share/chasen/dic
 %%PORTDOCS%%%%DOCSDIR%%/manual-j.pdf
 %%PORTDOCS%%%%DOCSDIR%%/manual-j.tex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/chasen

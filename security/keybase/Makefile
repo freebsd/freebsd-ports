@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	keybase
-PORTVERSION=	0.4.15
+PORTVERSION=	0.7.2
 CATEGORIES=	security
 MASTER_SITES=	https://dist.keybase.io/pkg/files/ \
 		LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bdrewery@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Keybase.io client
 
 LICENSE=	BSD3CLAUSE

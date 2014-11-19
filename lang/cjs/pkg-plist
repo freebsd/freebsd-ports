@@ -61,13 +61,3 @@ libdata/pkgconfig/cjs-internals-1.0.pc
 %%DATADIR%%-1.0/tweener/equations.js
 %%DATADIR%%-1.0/tweener/tweenList.js
 %%DATADIR%%-1.0/tweener/tweener.js
-@dirrm lib/cjs/girepository-1.0
-@dirrm lib/cjs-1.0
-@dirrm lib/cjs
-@dirrm include/cjs-1.0/gi
-@dirrm include/cjs-1.0/cjs-dbus
-@dirrm include/cjs-1.0/cjs
-@dirrm include/cjs-1.0
-@dirrm %%DATADIR%%-1.0/tweener
-@dirrm %%DATADIR%%-1.0/overrides
-@dirrm %%DATADIR%%-1.0

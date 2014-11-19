@@ -40,4 +40,3 @@ man/man3/Pcre.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/search_8cc.html
 %%PORTDOCS%%%%DOCSDIR%%/split_8cc-source.html
 %%PORTDOCS%%%%DOCSDIR%%/split_8cc.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

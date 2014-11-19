@@ -1,4 +1,3 @@
 bin/add
 man/man1/add.1.gz
 %%DATADIR%%/add.hlp
-@dirrmtry %%DATADIR%%

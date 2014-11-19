@@ -11,9 +11,3 @@
 %%PERL5_MAN3%%/Encode::JP::Emoji::Mapping.3.gz
 %%PERL5_MAN3%%/Encode::JP::Emoji::PP.3.gz
 %%PERL5_MAN3%%/Encode::JP::Emoji::Property.3.gz
-@dirrm %%SITE_PERL%%/Encode/JP/Emoji
-@dirrmtry %%SITE_PERL%%/Encode/JP
-@dirrmtry %%SITE_PERL%%/Encode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Emoji
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode

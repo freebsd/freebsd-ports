@@ -6,11 +6,9 @@
 %%DATADIR%%/oldschema/1.0-mysql-schema.txt
 %%DATADIR%%/oldschema/1.0-pgsql-schema.txt
 %%DATADIR%%/oldschema/1.0-sqlite-schema.txt
-@dirrm %%DATADIR%%/oldschema
 %%DATADIR%%/base/schema-sqlite.txt
 %%DATADIR%%/base/schema-pgsql.txt
 %%DATADIR%%/base/schema-mysql.txt
-@dirrm %%DATADIR%%/base
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.mysql
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.pgsql
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.sqlite
@@ -24,7 +22,6 @@ include/client.h
 %%DATADIR%%/help/en/alis/general
 %%DATADIR%%/help/en/alis/index
 %%DATADIR%%/help/en/alis/list
-@dirrm %%DATADIR%%/help/en/alis
 %%DATADIR%%/help/en/main/u-boot
 %%DATADIR%%/help/en/main/u-chat
 %%DATADIR%%/help/en/main/u-connect
@@ -34,7 +31,6 @@ include/client.h
 %%DATADIR%%/help/en/main/u-service
 %%DATADIR%%/help/en/main/u-stats
 %%DATADIR%%/help/en/main/u-status
-@dirrm %%DATADIR%%/help/en/main
 %%DATADIR%%/help/en/operbot/general
 %%DATADIR%%/help/en/operbot/index
 %%DATADIR%%/help/en/operbot/index-admin
@@ -44,7 +40,6 @@ include/client.h
 %%DATADIR%%/help/en/operbot/op
 %%DATADIR%%/help/en/operbot/u-objoin
 %%DATADIR%%/help/en/operbot/u-obpart
-@dirrm %%DATADIR%%/help/en/operbot
 %%DATADIR%%/help/en/chanserv/addban
 %%DATADIR%%/help/en/chanserv/adduser
 %%DATADIR%%/help/en/chanserv/chandrop
@@ -83,7 +78,6 @@ include/client.h
 %%DATADIR%%/help/en/chanserv/unban
 %%DATADIR%%/help/en/chanserv/unsuspend
 %%DATADIR%%/help/en/chanserv/voice
-@dirrm %%DATADIR%%/help/en/chanserv
 %%DATADIR%%/help/en/userserv/activate
 %%DATADIR%%/help/en/userserv/general
 %%DATADIR%%/help/en/userserv/index
@@ -111,7 +105,6 @@ include/client.h
 %%DATADIR%%/help/en/userserv/usersetpass
 %%DATADIR%%/help/en/userserv/usersuspend
 %%DATADIR%%/help/en/userserv/userunsuspend
-@dirrm %%DATADIR%%/help/en/userserv
 %%DATADIR%%/help/en/jupeserv/calljupe
 %%DATADIR%%/help/en/jupeserv/callunjupe
 %%DATADIR%%/help/en/jupeserv/general
@@ -122,7 +115,6 @@ include/client.h
 %%DATADIR%%/help/en/jupeserv/u-jupe
 %%DATADIR%%/help/en/jupeserv/u-unjupe
 %%DATADIR%%/help/en/jupeserv/unjupe
-@dirrm %%DATADIR%%/help/en/jupeserv
 %%DATADIR%%/help/en/operserv/addignore
 %%DATADIR%%/help/en/operserv/dbsync
 %%DATADIR%%/help/en/operserv/delignore
@@ -147,7 +139,6 @@ include/client.h
 %%DATADIR%%/help/en/operserv/u-osjoin
 %%DATADIR%%/help/en/operserv/u-ospart
 %%DATADIR%%/help/en/operserv/u-takeover
-@dirrm %%DATADIR%%/help/en/operserv
 %%DATADIR%%/help/en/nickserv/drop
 %%DATADIR%%/help/en/nickserv/general
 %%DATADIR%%/help/en/nickserv/index
@@ -159,7 +150,6 @@ include/client.h
 %%DATADIR%%/help/en/nickserv/release
 %%DATADIR%%/help/en/nickserv/set
 %%DATADIR%%/help/en/nickserv/u-nickdrop
-@dirrm %%DATADIR%%/help/en/nickserv
 %%DATADIR%%/help/en/global/addwelcome
 %%DATADIR%%/help/en/global/delwelcome
 %%DATADIR%%/help/en/global/general
@@ -171,7 +161,6 @@ include/client.h
 %%DATADIR%%/help/en/global/u-delwelcome
 %%DATADIR%%/help/en/global/u-listwelcome
 %%DATADIR%%/help/en/global/u-netmsg
-@dirrm %%DATADIR%%/help/en/global
 %%DATADIR%%/help/en/banserv/addregexp
 %%DATADIR%%/help/en/banserv/addregexpneg
 %%DATADIR%%/help/en/banserv/delregexp
@@ -200,24 +189,20 @@ include/client.h
 %%DATADIR%%/help/en/banserv/unresv
 %%DATADIR%%/help/en/banserv/unxline
 %%DATADIR%%/help/en/banserv/xline
-@dirrm %%DATADIR%%/help/en/banserv
 %%DATADIR%%/help/en/watchserv/general
 %%DATADIR%%/help/en/watchserv/index
 %%DATADIR%%/help/en/watchserv/index-admin
 %%DATADIR%%/help/en/watchserv/u-watch
 %%DATADIR%%/help/en/watchserv/watch
-@dirrm %%DATADIR%%/help/en/watchserv
 %%DATADIR%%/help/en/memoserv/delete
 %%DATADIR%%/help/en/memoserv/general
 %%DATADIR%%/help/en/memoserv/index
 %%DATADIR%%/help/en/memoserv/list
 %%DATADIR%%/help/en/memoserv/read
 %%DATADIR%%/help/en/memoserv/send
-@dirrm %%DATADIR%%/help/en/memoserv
 %%DATADIR%%/help/bg/alis/general
 %%DATADIR%%/help/bg/alis/index
 %%DATADIR%%/help/bg/alis/list
-@dirrm %%DATADIR%%/help/bg/alis
 %%DATADIR%%/help/bg/main/u-boot
 %%DATADIR%%/help/bg/main/u-chat
 %%DATADIR%%/help/bg/main/u-connect
@@ -227,7 +212,6 @@ include/client.h
 %%DATADIR%%/help/bg/main/u-service
 %%DATADIR%%/help/bg/main/u-stats
 %%DATADIR%%/help/bg/main/u-status
-@dirrm %%DATADIR%%/help/bg/main
 %%DATADIR%%/help/bg/operbot/general
 %%DATADIR%%/help/bg/operbot/index
 %%DATADIR%%/help/bg/operbot/index-admin
@@ -237,7 +221,6 @@ include/client.h
 %%DATADIR%%/help/bg/operbot/op
 %%DATADIR%%/help/bg/operbot/u-objoin
 %%DATADIR%%/help/bg/operbot/u-obpart
-@dirrm %%DATADIR%%/help/bg/operbot
 %%DATADIR%%/help/bg/chanserv/addban
 %%DATADIR%%/help/bg/chanserv/adduser
 %%DATADIR%%/help/bg/chanserv/chandrop
@@ -276,7 +259,6 @@ include/client.h
 %%DATADIR%%/help/bg/chanserv/unban
 %%DATADIR%%/help/bg/chanserv/unsuspend
 %%DATADIR%%/help/bg/chanserv/voice
-@dirrm %%DATADIR%%/help/bg/chanserv
 %%DATADIR%%/help/bg/userserv/activate
 %%DATADIR%%/help/bg/userserv/general
 %%DATADIR%%/help/bg/userserv/index
@@ -304,7 +286,6 @@ include/client.h
 %%DATADIR%%/help/bg/userserv/usersetpass
 %%DATADIR%%/help/bg/userserv/usersuspend
 %%DATADIR%%/help/bg/userserv/userunsuspend
-@dirrm %%DATADIR%%/help/bg/userserv
 %%DATADIR%%/help/bg/jupeserv/calljupe
 %%DATADIR%%/help/bg/jupeserv/callunjupe
 %%DATADIR%%/help/bg/jupeserv/general
@@ -315,7 +296,6 @@ include/client.h
 %%DATADIR%%/help/bg/jupeserv/u-jupe
 %%DATADIR%%/help/bg/jupeserv/u-unjupe
 %%DATADIR%%/help/bg/jupeserv/unjupe
-@dirrm %%DATADIR%%/help/bg/jupeserv
 %%DATADIR%%/help/bg/operserv/addignore
 %%DATADIR%%/help/bg/operserv/dbsync
 %%DATADIR%%/help/bg/operserv/delignore
@@ -340,7 +320,6 @@ include/client.h
 %%DATADIR%%/help/bg/operserv/u-osjoin
 %%DATADIR%%/help/bg/operserv/u-ospart
 %%DATADIR%%/help/bg/operserv/u-takeover
-@dirrm %%DATADIR%%/help/bg/operserv
 %%DATADIR%%/help/bg/nickserv/drop
 %%DATADIR%%/help/bg/nickserv/general
 %%DATADIR%%/help/bg/nickserv/index
@@ -352,7 +331,6 @@ include/client.h
 %%DATADIR%%/help/bg/nickserv/release
 %%DATADIR%%/help/bg/nickserv/set
 %%DATADIR%%/help/bg/nickserv/u-nickdrop
-@dirrm %%DATADIR%%/help/bg/nickserv
 %%DATADIR%%/help/bg/global/addwelcome
 %%DATADIR%%/help/bg/global/delwelcome
 %%DATADIR%%/help/bg/global/general
@@ -364,7 +342,6 @@ include/client.h
 %%DATADIR%%/help/bg/global/u-delwelcome
 %%DATADIR%%/help/bg/global/u-listwelcome
 %%DATADIR%%/help/bg/global/u-netmsg
-@dirrm %%DATADIR%%/help/bg/global
 %%DATADIR%%/help/bg/banserv/addregexp
 %%DATADIR%%/help/bg/banserv/addregexpneg
 %%DATADIR%%/help/bg/banserv/delregexp
@@ -393,24 +370,20 @@ include/client.h
 %%DATADIR%%/help/bg/banserv/unresv
 %%DATADIR%%/help/bg/banserv/unxline
 %%DATADIR%%/help/bg/banserv/xline
-@dirrm %%DATADIR%%/help/bg/banserv
 %%DATADIR%%/help/bg/watchserv/general
 %%DATADIR%%/help/bg/watchserv/index
 %%DATADIR%%/help/bg/watchserv/index-admin
 %%DATADIR%%/help/bg/watchserv/u-watch
 %%DATADIR%%/help/bg/watchserv/watch
-@dirrm %%DATADIR%%/help/bg/watchserv
 %%DATADIR%%/help/bg/memoserv/delete
 %%DATADIR%%/help/bg/memoserv/general
 %%DATADIR%%/help/bg/memoserv/index
 %%DATADIR%%/help/bg/memoserv/list
 %%DATADIR%%/help/bg/memoserv/read
 %%DATADIR%%/help/bg/memoserv/send
-@dirrm %%DATADIR%%/help/bg/memoserv
 %%DATADIR%%/help/ru/alis/general
 %%DATADIR%%/help/ru/alis/index
 %%DATADIR%%/help/ru/alis/list
-@dirrm %%DATADIR%%/help/ru/alis
 %%DATADIR%%/help/ru/main/u-boot
 %%DATADIR%%/help/ru/main/u-chat
 %%DATADIR%%/help/ru/main/u-connect
@@ -420,7 +393,6 @@ include/client.h
 %%DATADIR%%/help/ru/main/u-service
 %%DATADIR%%/help/ru/main/u-stats
 %%DATADIR%%/help/ru/main/u-status
-@dirrm %%DATADIR%%/help/ru/main
 %%DATADIR%%/help/ru/operbot/general
 %%DATADIR%%/help/ru/operbot/index
 %%DATADIR%%/help/ru/operbot/index-admin
@@ -430,7 +402,6 @@ include/client.h
 %%DATADIR%%/help/ru/operbot/op
 %%DATADIR%%/help/ru/operbot/u-objoin
 %%DATADIR%%/help/ru/operbot/u-obpart
-@dirrm %%DATADIR%%/help/ru/operbot
 %%DATADIR%%/help/ru/chanserv/addban
 %%DATADIR%%/help/ru/chanserv/adduser
 %%DATADIR%%/help/ru/chanserv/chandrop
@@ -469,7 +440,6 @@ include/client.h
 %%DATADIR%%/help/ru/chanserv/unban
 %%DATADIR%%/help/ru/chanserv/unsuspend
 %%DATADIR%%/help/ru/chanserv/voice
-@dirrm %%DATADIR%%/help/ru/chanserv
 %%DATADIR%%/help/ru/userserv/activate
 %%DATADIR%%/help/ru/userserv/general
 %%DATADIR%%/help/ru/userserv/index
@@ -497,7 +467,6 @@ include/client.h
 %%DATADIR%%/help/ru/userserv/usersetpass
 %%DATADIR%%/help/ru/userserv/usersuspend
 %%DATADIR%%/help/ru/userserv/userunsuspend
-@dirrm %%DATADIR%%/help/ru/userserv
 %%DATADIR%%/help/ru/jupeserv/calljupe
 %%DATADIR%%/help/ru/jupeserv/callunjupe
 %%DATADIR%%/help/ru/jupeserv/general
@@ -508,7 +477,6 @@ include/client.h
 %%DATADIR%%/help/ru/jupeserv/u-jupe
 %%DATADIR%%/help/ru/jupeserv/u-unjupe
 %%DATADIR%%/help/ru/jupeserv/unjupe
-@dirrm %%DATADIR%%/help/ru/jupeserv
 %%DATADIR%%/help/ru/operserv/addignore
 %%DATADIR%%/help/ru/operserv/dbsync
 %%DATADIR%%/help/ru/operserv/delignore
@@ -533,7 +501,6 @@ include/client.h
 %%DATADIR%%/help/ru/operserv/u-osjoin
 %%DATADIR%%/help/ru/operserv/u-ospart
 %%DATADIR%%/help/ru/operserv/u-takeover
-@dirrm %%DATADIR%%/help/ru/operserv
 %%DATADIR%%/help/ru/nickserv/drop
 %%DATADIR%%/help/ru/nickserv/general
 %%DATADIR%%/help/ru/nickserv/index
@@ -545,7 +512,6 @@ include/client.h
 %%DATADIR%%/help/ru/nickserv/release
 %%DATADIR%%/help/ru/nickserv/set
 %%DATADIR%%/help/ru/nickserv/u-nickdrop
-@dirrm %%DATADIR%%/help/ru/nickserv
 %%DATADIR%%/help/ru/global/addwelcome
 %%DATADIR%%/help/ru/global/delwelcome
 %%DATADIR%%/help/ru/global/general
@@ -557,7 +523,6 @@ include/client.h
 %%DATADIR%%/help/ru/global/u-delwelcome
 %%DATADIR%%/help/ru/global/u-listwelcome
 %%DATADIR%%/help/ru/global/u-netmsg
-@dirrm %%DATADIR%%/help/ru/global
 %%DATADIR%%/help/ru/banserv/addregexp
 %%DATADIR%%/help/ru/banserv/addregexpneg
 %%DATADIR%%/help/ru/banserv/delregexp
@@ -586,33 +551,22 @@ include/client.h
 %%DATADIR%%/help/ru/banserv/unresv
 %%DATADIR%%/help/ru/banserv/unxline
 %%DATADIR%%/help/ru/banserv/xline
-@dirrm %%DATADIR%%/help/ru/banserv
 %%DATADIR%%/help/ru/watchserv/general
 %%DATADIR%%/help/ru/watchserv/index
 %%DATADIR%%/help/ru/watchserv/index-admin
 %%DATADIR%%/help/ru/watchserv/u-watch
 %%DATADIR%%/help/ru/watchserv/watch
-@dirrm %%DATADIR%%/help/ru/watchserv
 %%DATADIR%%/help/ru/memoserv/delete
 %%DATADIR%%/help/ru/memoserv/general
 %%DATADIR%%/help/ru/memoserv/index
 %%DATADIR%%/help/ru/memoserv/list
 %%DATADIR%%/help/ru/memoserv/read
 %%DATADIR%%/help/ru/memoserv/send
-@dirrm %%DATADIR%%/help/ru/memoserv
-@dirrm %%DATADIR%%/help/en
-@dirrm %%DATADIR%%/help/ru
-@dirrm %%DATADIR%%/help/bg
 %%DATADIR%%/langs/bg.lang
 %%DATADIR%%/langs/ru.lang
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/langs
-@unexec if [ -f "%D/%%DATADIR%%/schema-mysql.txt" ]; then rm -f "%D/%%DATADIR%%/schema-mysql.txt"; fi
-@unexec if [ -f "%D/%%DATADIR%%/schema-pgsql.txt" ]; then rm -f "%D/%%DATADIR%%/schema-pgsql.txt"; fi
-@unexec if [ -f "%D/%%DATADIR%%/schema-sqlite.txt" ]; then rm -f "%D/%%DATADIR%%/schema-sqlite.txt"; fi
-@dirrm %%DATADIR%%
-@dirrmtry %%DBDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@rmtry %%DATADIR%%/schema-mysql.txt
+@rmtry %%DATADIR%%/schema-pgsql.txt
+@rmtry %%DATADIR%%/schema-sqlite.txt
 @sample etc/ratbox-services.conf.sample
-@unexec f="/var/log/ratbox-services.log"; if [ ! -s "$f" ]; then rm -f "$f"; fi
-@unexec f="/var/run/ratbox-services.pid"; if [ ! -s "$f" ]; then rm -f "$f"; fi
+@rmtry /var/log/ratbox-services.log
+@rmtry /var/run/ratbox-services.pid

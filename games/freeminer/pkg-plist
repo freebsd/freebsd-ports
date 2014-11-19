@@ -7,3 +7,4 @@ man/man6/freeminer.6.gz
 man/man6/freeminerserver.6.gz
 share/applications/freeminer.desktop
 share/icons/hicolor/scalable/apps/freeminer.svg
+@dir %%DATADIR%%/games

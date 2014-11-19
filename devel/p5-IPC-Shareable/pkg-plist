@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Shareable/.packlist
 %%PERL5_MAN3%%/IPC::Shareable.3.gz
 %%PERL5_MAN3%%/IPC::Shareable::SharedMem.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Shareable
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrm %%SITE_PERL%%/IPC/Shareable
-@dirrm %%SITE_PERL%%/IPC

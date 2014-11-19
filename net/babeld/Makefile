@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	babeld
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/
 

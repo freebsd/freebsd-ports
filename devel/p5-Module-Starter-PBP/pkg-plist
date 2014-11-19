@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Module/Starter/PBP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/PBP/.packlist
 %%PERL5_MAN3%%/Module::Starter::PBP.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/PBP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module/Starter
-@dirrmtry %%SITE_PERL%%/Module

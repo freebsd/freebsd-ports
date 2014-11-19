@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Devel::ptkdb.3.gz
 %%SITE_PERL%%/Devel/ptkdb.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/ptkdb/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/ptkdb
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel

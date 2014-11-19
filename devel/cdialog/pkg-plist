@@ -191,5 +191,3 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno4
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrm include/cdialog

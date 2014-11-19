@@ -11,5 +11,3 @@ lib/qscheme/%%VERSION%%/loop.scm
 lib/qscheme/%%VERSION%%/wloop.scm
 lib/qscheme/%%VERSION%%/fib.scm
 lib/qscheme/%%VERSION%%/cat.scm
-@dirrm lib/qscheme/%%VERSION%%
-@dirrm lib/qscheme

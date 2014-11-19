@@ -10,8 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Proxy that authenticates the user using the NTLM protocol
 
-USE_PYTHON=	yes
-USES=		dos2unix
+USES=		dos2unix python
 
 DOCS=		COPYING Install.txt changelog.txt readme.txt research.txt
 

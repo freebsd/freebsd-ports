@@ -17,9 +17,8 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gettext gmake perl5 pkgconfig tar:bzip2
+USES=		gettext gmake perl5 pkgconfig python tar:bzip2
 USE_GNOME=	gtk20
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rtb-dir=${PREFIX}/lib/${PORTNAME}
 

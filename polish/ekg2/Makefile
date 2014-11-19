@@ -3,7 +3,7 @@
 
 PORTNAME=	ekg2
 PORTVERSION=	0.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://pl.ekg2.org/
@@ -12,6 +12,7 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu, Jabber, and IRC client
 
 LIB_DEPENDS=	libgadu.so:${PORTSDIR}/polish/libgadu \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
 LICENSE=	GPLv2
@@ -26,10 +27,10 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--without-sqlite \
 			--without-gpm-mouse \
 			--with-libgadu \
-			--without-libgnutls \
 			--without-gif \
 			--without-libjpeg \
 			--without-libidn
+INSTALL_TARGET=	install-strip
 
 LDFLAGS+=		-L${LOCALBASE}/lib -lintl -pthread
 CFLAGS+=		-I${LOCALBASE}/include

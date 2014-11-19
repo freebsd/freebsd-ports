@@ -34,9 +34,3 @@ share/buildtool/templates/pkgflags
 %%PORTDOCS%%%%DOCSDIR%%/PEOPLE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/buildtool
-@dirrm share/buildtool/bt_config
-@dirrm share/buildtool/bt_logic
-@dirrm share/buildtool/templates
-@dirrm share/buildtool

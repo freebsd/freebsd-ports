@@ -121,15 +121,5 @@ www/cgiirc/modules/IRC/Util.pm
 www/cgiirc/modules/Timer.pm
 www/cgiirc/modules/parse.pl
 www/cgiirc/nph-irc.cgi
-@dirrm www/cgiirc/modules/IRC/Channel
-@dirrm www/cgiirc/modules/IRC
-@dirrm www/cgiirc/modules
-@dirrm www/cgiirc/interfaces/interface-make
-@dirrm www/cgiirc/interfaces
-@dirrm www/cgiirc/images/taras
-@dirrm www/cgiirc/images
-@dirrm www/cgiirc/formats
-@dirrm www/cgiirc/docs
-@dirrmtry www/cgiirc
 @owner root
 @group wheel

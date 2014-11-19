@@ -5,7 +5,3 @@
 %%SITE_PERL%%/Set/Infinite/Arithmetic.pm
 %%SITE_PERL%%/Set/Infinite/Basic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Infinite/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Infinite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
-@dirrm %%SITE_PERL%%/Set/Infinite
-@dirrmtry %%SITE_PERL%%/Set

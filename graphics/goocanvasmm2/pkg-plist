@@ -65,8 +65,3 @@ lib/libgoocanvasmm-2.0.so
 lib/libgoocanvasmm-2.0.so.6
 lib/libgoocanvasmm-2.0.so.6.0.0
 libdata/pkgconfig/goocanvasmm-2.0.pc
-@dirrm lib/goocanvasmm-2.0/include
-@dirrm lib/goocanvasmm-2.0
-@dirrm include/goocanvasmm-2.0/goocanvasmm/private
-@dirrm include/goocanvasmm-2.0/goocanvasmm
-@dirrm include/goocanvasmm-2.0

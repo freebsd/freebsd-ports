@@ -322,35 +322,6 @@ include/chemistry/qc/psi/psiinput.h
 include/chemistry/qc/psi/psiwfn.h
 include/scconfig.h
 include/scdirlist.h
-@dirrm include/util/state
-@dirrm include/util/render
-@dirrm include/util/ref
-@dirrm include/util/options
-@dirrm include/util/misc
-@dirrm include/util/keyval
-@dirrm include/util/group
-@dirrm include/util/container
-@dirrm include/util/class
-@dirrm include/util
-@dirrm include/math/symmetry
-@dirrm include/math/scmat
-@dirrm include/math/optimize
-@dirrm include/math/isosurf
-@dirrm include/math
-@dirrm include/chemistry/solvent
-@dirrm include/chemistry/qc/wfn
-@dirrm include/chemistry/qc/scf
-@dirrm include/chemistry/qc/psi
-@dirrm include/chemistry/qc/oint3
-@dirrm include/chemistry/qc/mbpt
-@dirrm include/chemistry/qc/intv3
-@dirrm include/chemistry/qc/dft
-@dirrm include/chemistry/qc/basis
-@dirrm include/chemistry/qc/mbptr12
-@dirrm include/chemistry/qc/cints
-@dirrm include/chemistry/qc
-@dirrm include/chemistry/molecule
-@dirrm include/chemistry
 lib/libSCbasis.a
 lib/libSCbasis.so
 lib/libSCbasis.so.7

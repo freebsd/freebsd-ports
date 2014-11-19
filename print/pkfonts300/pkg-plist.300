@@ -1281,5 +1281,3 @@ lib/fonts/pk300/msym9.219pk
 lib/fonts/pk300/msym9.240pk
 lib/fonts/pk300/msym9.263pk
 lib/fonts/pk300/msym9.288pk
-@dirrm lib/fonts/pk300
-@dirrmtry lib/fonts

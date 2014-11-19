@@ -43,6 +43,3 @@
 %%PYTHON_SITELIBDIR%%/graphy/pie_chart_test.py
 %%PYTHON_SITELIBDIR%%/graphy/pie_chart_test.pyc
 %%PYTHON_SITELIBDIR%%/graphy/util.pyc
-@dirrm %%PYTHON_SITELIBDIR%%/graphy/backends/google_chart_api
-@dirrm %%PYTHON_SITELIBDIR%%/graphy/backends
-@dirrm %%PYTHON_SITELIBDIR%%/graphy

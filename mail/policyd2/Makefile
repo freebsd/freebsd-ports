@@ -3,7 +3,7 @@
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://devlabs.linuxassist.net/attachments/download/${DOWNLOAD_FOLDER}/
 DISTNAME=	cluebringer-${PORTVERSION}
@@ -27,9 +27,9 @@ SHEBANG_FILES=	cbpadmin \
 		database/convert-tsql \
 		database/whitelists/parse*
 
-WEBUIDIR=	${PREFIX}/www/policyd
+WWWDIR=		${PREFIX}/www/policyd
 PORTDOCS=	AUTHORS ChangeLog INSTALL TODO WISHLIST
-PORTDATA=	*
+PORTDATA=	contrib database
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE WEBUI
 OPTIONS_DEFAULT=MYSQL WEBUI
@@ -57,20 +57,18 @@ post-patch:
 		${WRKSRC}/cbpolicyd
 
 do-install:
-	@${INSTALL} -d ${STAGEDIR}${WEBUIDIR} ${STAGEDIR}${SITE_PERL}/cbp
-	cd ${WRKSRC}/webui && ${COPYTREE_SHARE} \* ${STAGEDIR}${WEBUIDIR}
-	cd ${WRKSRC}/cbp && ${COPYTREE_SHARE} \* ${STAGEDIR}${SITE_PERL}/cbp
+	@${MKDIR} ${STAGEDIR}${WWWDIR} \
+		${STAGEDIR}${SITE_PERL}/cbp \
+		${STAGEDIR}${DATADIR} \
+		${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/cbpadmin ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/cbpolicyd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/cluebringer.conf ${STAGEDIR}${PREFIX}/etc/cluebringer.conf.sample
-	@${INSTALL} -d ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} database ${STAGEDIR}${DATADIR}
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Please check INSTALL file to configure!"
-	@${ECHO_MSG}
+	${INSTALL_DATA} ${WRKSRC}/cluebringer.conf \
+		${STAGEDIR}${PREFIX}/etc/cluebringer.conf.sample
+	(cd ${WRKSRC}/webui && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR})
+	(cd ${WRKSRC}/cbp && ${COPYTREE_SHARE} \* ${STAGEDIR}${SITE_PERL}/cbp)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} database ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

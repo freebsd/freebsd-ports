@@ -19,9 +19,3 @@
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/docbook.dsl
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/index.xml
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/logo.png
-@dirrm %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base
-@dirrm %%TEXMFDISTDIR%%/doc/otherformats/jadetex
-@dirrm %%TEXMFDISTDIR%%/tex/jadetex/base
-@dirrm %%TEXMFDISTDIR%%/tex/jadetex
-@dirrm %%TEXMFDISTDIR%%/source/jadetex/base
-@dirrm %%TEXMFDISTDIR%%/source/jadetex

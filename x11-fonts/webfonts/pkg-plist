@@ -11,7 +11,6 @@
 %%FONTSDIR%%/courbd.ttf
 %%FONTSDIR%%/courbi.ttf
 %%FONTSDIR%%/couri.ttf
-@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 %%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/fonts.scale
 %%FONTSDIR%%/georgia.ttf
@@ -34,6 +33,4 @@
 %%FONTSDIR%%/verdanai.ttf
 %%FONTSDIR%%/verdanaz.ttf
 %%FONTSDIR%%/webdings.ttf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%FONTSDIR%%
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
+@fc %%FONTSDIR%%

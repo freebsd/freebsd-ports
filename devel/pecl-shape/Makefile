@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension that wraps libshape
 
 LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib

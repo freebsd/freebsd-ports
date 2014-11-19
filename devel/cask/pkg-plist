@@ -3,5 +3,4 @@
 %%EMACS_SITE_LISPDIR%%/cask-cli.el
 %%EMACS_SITE_LISPDIR%%/templates/init.tpl
 %%EMACS_SITE_LISPDIR%%/templates/init-dev.tpl
-@dirrmtry %%EMACS_SITE_LISPDIR%%/templates
 bin/cask

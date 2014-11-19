@@ -15,10 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0:${PORTSDIR}/devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}prettytable>=0:${PORTSDIR}/devel/py-prettytable \
 		${PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_NOEGGINFO=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist noegginfo
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,install_requires.*,,' ${WRKSRC}/setup.py

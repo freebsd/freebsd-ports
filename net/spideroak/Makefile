@@ -38,8 +38,7 @@ SUB_FILES=	pkg-message
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-USE_PYTHON=	2
-USES=	desktop-file-utils
+USES=		desktop-file-utils python:2
 
 .include <bsd.port.options.mk>
 

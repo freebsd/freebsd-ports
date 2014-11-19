@@ -482,7 +482,3 @@ man/man1/wvWml.1.gz
 %%DATADIR%%/wvWml.xml
 %%DATADIR%%/wvXml.dtd
 %%DATADIR%%/wvXml.xml
-@dirrm %%DATADIR%%/wingdingfont
-@dirrm %%DATADIR%%/patterns
-@dirrm %%DATADIR%%
-@dirrm include/wv

@@ -1,15 +1,6 @@
 %%GO_LIBDIR%%/github.com/mattn/go-runewidth.a
-@dirrmtry %%GO_LIBDIR%%/github.com/mattn
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/README.mkd
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/runewidth.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/runewidth_posix.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/runewidth_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/runewidth_windows.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/github.com/mattn
-@dirrmtry %%GO_SRCDIR%%/github.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

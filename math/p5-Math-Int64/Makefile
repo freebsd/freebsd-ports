@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-Int64
-PORTVERSION=	0.32
+PORTVERSION=	0.34
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,5 +15,9 @@ LICENSE_COMB=	dual
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Math/Int64/Int64.so
+
 
 .include <bsd.port.mk>

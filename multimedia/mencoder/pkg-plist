@@ -23,5 +23,3 @@ man/man1/mencoder.1.gz
 %%DATADIR%%/tools/vobshift.py
 %%DATADIR%%/tools/w32codec_dl.pl
 %%DATADIR%%/tools/wma2ogg.pl
-@dirrm %%DATADIR%%/tools
-@dirrmtry %%DATADIR%%

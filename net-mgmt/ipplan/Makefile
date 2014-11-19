@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%204.92
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP address management and tracking
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap

@@ -1,4 +1,5 @@
 etc/mini_httpd.cnf.sample
+etc/periodic/daily/500.mini_httpd-rotate
 etc/rc.d/mini_httpd.sh
 man/man1/mini_httpd-htpasswd.1.gz
 man/man8/mini_httpd.8.gz

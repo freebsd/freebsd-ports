@@ -3,13 +3,17 @@
 
 PORTNAME=	PHPUnit
 PORTVERSION=	3.7.6
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
+PKGNAMEPREFIX=	pear-
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PEAR regression testing framework for unit tests
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	pear-File_Iterator>=1.3.1:${PORTSDIR}/devel/pear-File_Iterator \
 		pear-Text_Template>=1.1.1:${PORTSDIR}/textproc/pear-Text_Template \
@@ -28,7 +32,7 @@ RUN_DEPENDS=	pear-File_Iterator>=1.3.1:${PORTSDIR}/devel/pear-File_Iterator \
 
 CONFLICTS=	pear-PHPUnit-[12]*
 
-USES=	pear
+USES=		pear
 PEAR_CHANNEL=	phpunit
 
 OPTIONS_DEFINE=	JSON SIMPLEXML TOKENIZER

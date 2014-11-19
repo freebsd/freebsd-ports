@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/sysutils/upower/Makefile 19882 2014-09-16 12:34:00Z kwm $
+#   $MCom: ports/trunk/sysutils/upower/Makefile 19882 2014-09-16 12:34:00Z kwm $
 
 PORTNAME=	upower
 PORTVERSION=	0.99.0
@@ -29,15 +29,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 CONFIGURE_ENV=	GTKDOC="false"
 
-.if defined(NO_INSTALL_MANPAGES)
-CONFIGURE_ARGS+=--disable-man-pages
-PLIST_SUB+=	MAN="@comment "
-.else
-BUILD_DEPENDS+=	docbook-sgml>=0:${PORTSDIR}/textproc/docbook-sgml \
-		docbook-xml>=0:${PORTSDIR}/textproc/docbook-xml \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-USE_GNOME+=	libxslt:build
-PLIST_SUB+=	MAN=""
-.endif
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+OPTIONS_SUB=	yes
+MANPAGES_CONFIGURE_ENABLE=	man-pages
+MANPAGES_BUILD_DEPENDS= \
+	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
+	${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-xml \
+	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+MANPAGES_USE=	GNOME=libxslt:build
 
 .include <bsd.port.mk>

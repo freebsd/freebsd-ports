@@ -5,8 +5,3 @@
 %%SITE_PERL%%/MooseX/HasDefaults/RO.pm
 %%SITE_PERL%%/MooseX/HasDefaults.pm
 %%PERL5_MAN3%%/MooseX::HasDefaults.3.gz
-@dirrm %%SITE_PERL%%/mach/auto/MooseX/HasDefaults
-@dirrmtry %%SITE_PERL%%/mach/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/HasDefaults/Meta
-@dirrm %%SITE_PERL%%/MooseX/HasDefaults
-@dirrmtry %%SITE_PERL%%/MooseX

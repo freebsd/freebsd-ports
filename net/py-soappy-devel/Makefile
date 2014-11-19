@@ -16,9 +16,8 @@ BUILD_DEPENDS=		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst
 RUN_DEPENDS:=		${PYXML} \
 			${BUILD_DEPENDS}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 CONFLICTS=		py*-soappy-0.11.*
 

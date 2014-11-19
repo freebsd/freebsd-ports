@@ -3,6 +3,7 @@
 
 PORTNAME=	clojure-mode.el
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang elisp
 DISTNAME=	clojure-mode-${PORTVERSION}

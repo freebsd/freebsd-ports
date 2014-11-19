@@ -15,4 +15,3 @@ lib/libvmdk.so.1.0.0
 libdata/pkgconfig/libvmdk.pc
 man/man1/vmdkinfo.1.gz
 man/man3/libvmdk.3.gz
-@dirrm include/libvmdk

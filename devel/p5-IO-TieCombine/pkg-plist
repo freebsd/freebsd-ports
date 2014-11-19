@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/IO::TieCombine.3.gz
 %%PERL5_MAN3%%/IO::TieCombine::Handle.3.gz
 %%PERL5_MAN3%%/IO::TieCombine::Scalar.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/TieCombine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO/TieCombine
-@dirrmtry %%SITE_PERL%%/IO

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/TAP/SimpleOutput.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/TAP/SimpleOutput/.packlist
 %%PERL5_MAN3%%/TAP::SimpleOutput.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TAP/SimpleOutput
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TAP
-@dirrmtry %%SITE_PERL%%/TAP

@@ -114,22 +114,3 @@ share/ocio/setup_ocio.sh
 %%PORTDOCS%%%%DOCSDIR%%/userguide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/userguide/looks.html
 %%PORTDOCS%%%%DOCSDIR%%/userguide/tool_overview.html
-@dirrm include/OpenColorIO
-@dirrm include/PyOpenColorIO
-@dirrm share/ocio
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/developers/bindings
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/developers/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/developers
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/configurations
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/userguide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/developers/bindings
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/developers/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/developers
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/configurations
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

@@ -283,20 +283,5 @@ include/ecl/unify.h
 %%LIB32DIR%%/libecl.so.13
 %%LIB32DIR%%/libecl.so.13.5
 %%LIB32DIR%%/libecl.so.13.5.1
-@dirrm %%LIB32DIR%%/ecl-%%VERSION%%/encodings
-@dirrm %%LIB32DIR%%/ecl-%%VERSION%%
-@dirrm include/ecl/impl
-@dirrm include/ecl/gc/private
-@dirrm include/ecl/gc
-%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/sunc
-%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/msftc
-%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/icc
-%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/ibmc
-%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/hpc
-%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/gcc
-%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/armcc
-%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps
-%%THREADS%%@dirrm include/ecl/atomic_ops
 man/man1/ecl-config.1.gz
 man/man1/ecl.1.gz
-@dirrm include/ecl

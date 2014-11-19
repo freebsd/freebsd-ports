@@ -23,6 +23,3 @@ bin/stlinfo
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cube.stl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cube_bin.stl
-@dirrm %%PYTHON_SITELIBDIR%%/stltools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

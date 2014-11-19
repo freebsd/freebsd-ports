@@ -5,5 +5,3 @@
 %%SITE_PERL%%/Module/Build/Kwalitee/003pod.t
 %%SITE_PERL%%/Module/Build/Kwalitee/004uselib.t
 %%PERL5_MAN3%%/Module::Build::Kwalitee.3.gz
-@dirrm %%SITE_PERL%%/Module/Build/Kwalitee
-@dirrmtry %%SITE_PERL%%/Module/Build

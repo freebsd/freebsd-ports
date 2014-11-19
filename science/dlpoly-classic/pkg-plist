@@ -9,6 +9,3 @@ bin/dlpoly-classic-mpi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/execute/select
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/execute/store
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/execute/supa
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/execute
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

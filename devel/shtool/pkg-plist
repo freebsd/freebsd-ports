@@ -42,4 +42,3 @@ share/aclocal/shtool.m4
 %%DATADIR%%/sh.table
 %%DATADIR%%/sh.tarball
 %%DATADIR%%/sh.version
-@dirrm %%DATADIR%%

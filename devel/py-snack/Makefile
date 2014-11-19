@@ -21,9 +21,8 @@ OPTIONS_DEFINE=	EXAMPLES
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 PYSETUP=	${WRKDIR}/setup.py
 
 SUB_FILES=	setup.py

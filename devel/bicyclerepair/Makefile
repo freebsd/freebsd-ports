@@ -10,8 +10,8 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	mwm@mired.org
 COMMENT=	Python refactoring tool
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS
 

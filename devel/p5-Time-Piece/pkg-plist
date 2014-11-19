@@ -4,6 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Time/Seconds.pm
 %%PERL5_MAN3%%/Time::Piece.3.gz
 %%PERL5_MAN3%%/Time::Seconds.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Time

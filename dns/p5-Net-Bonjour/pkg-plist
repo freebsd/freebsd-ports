@@ -7,8 +7,3 @@
 %%SITE_PERL%%/Net/Rendezvous.pm
 %%SITE_PERL%%/Net/Rendezvous/Entry.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Bonjour/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Bonjour
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Rendezvous
-@dirrmtry %%SITE_PERL%%/Net/Bonjour
-@dirrmtry %%SITE_PERL%%/Net

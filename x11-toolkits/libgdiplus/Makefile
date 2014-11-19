@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libgdiplus
-PORTVERSION=	2.10
-PORTREVISION=	4
+PORTVERSION=	3.8
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
+MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GDI+ API for System.Windows.Forms in Mono
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libcairo.so:${PORTSDIR}/graphics/cairo
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_XORG=	x11

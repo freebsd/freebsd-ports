@@ -1,3 +1,2 @@
 bin/truthtable
 %%JAVASHAREDIR%%/truthtable/TruthTable.jar
-@dirrm %%JAVASHAREDIR%%/truthtable

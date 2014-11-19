@@ -24,17 +24,19 @@ WITH_NEW_MESA=1
 WITH_NEW_MESA=1
 .endif
 
-MESAVERSION=	${MESAFAKEVERSION}${MESAFAKESUBVERSION:C/^(.)/.\1/}
+MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
 .if defined(WITH_NEW_MESA)
-MESAFAKEVERSION=	10.3.0
-MESABASEVERSION=	10.3.0
+MESABASEVERSION=	10.3.2
 # if there is a subversion, don't include the '-' between 7.11-rc2.
-MESAFAKESUBVERSION=
 MESASUBVERSION=	
 
+.if ${MESASUBVERSION} == "" && ${MESABASEVERSION:E} != 0
+MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION}/
+.else
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION:R}/
+.endif
 PLIST_SUB+=	OLD="@comment " NEW=""
 
 # work around libarchive bug?
@@ -42,9 +44,7 @@ EXTRACT_CMD=		${LOCALBASE}/bin/gtar
 EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 
 .else
-MESAFAKEVERSION=	10.3.0
 MESABASEVERSION=	9.1.7
-MESAFAKESUBVERSION=
 MESASUBVERSION=		
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/older-versions/${MESABASEVERSION:R:R}.x/${MESABASEVERSION}/
 PLIST_SUB+=	OLD="" NEW="@comment "

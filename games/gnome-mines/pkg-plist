@@ -2,11 +2,29 @@ bin/gnome-mines
 man/man6/gnome-mines.6.gz
 share/appdata/gnome-mines.appdata.xml
 share/applications/gnome-mines.desktop
-share/gnome-mines/bang.svg
-share/gnome-mines/flag-question.svg
+share/gnome-mines/1mines.svg
+share/gnome-mines/2mines.svg
+share/gnome-mines/3mines.svg
+share/gnome-mines/4mines.svg
+share/gnome-mines/5mines.svg
+share/gnome-mines/6mines.svg
+share/gnome-mines/7mines.svg
+share/gnome-mines/8mines.svg
+share/gnome-mines/exploded.svg
+share/gnome-mines/flag-symbolic.svg
 share/gnome-mines/flag.svg
+share/gnome-mines/gnome-mines.css
+share/gnome-mines/interface.ui
+share/gnome-mines/maybe.svg
 share/gnome-mines/mine.svg
-share/gnome-mines/warning.svg
+share/gnome-mines/overmine.svg
+share/icons/HighContrast/16x16/apps/gnome-mines.png
+share/icons/HighContrast/22x22/apps/gnome-mines.png
+share/icons/HighContrast/24x24/apps/gnome-mines.png
+share/icons/HighContrast/256x256/apps/gnome-mines.png
+share/icons/HighContrast/32x32/apps/gnome-mines.png
+share/icons/HighContrast/48x48/apps/gnome-mines.png
+share/icons/hicolor/16x16/actions/flag-symbolic.svg
 share/icons/hicolor/16x16/apps/gnome-mines.png
 share/icons/hicolor/22x22/apps/gnome-mines.png
 share/icons/hicolor/24x24/apps/gnome-mines.png
@@ -731,109 +749,3 @@ share/locale/xh/LC_MESSAGES/gnome-mines.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mines.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mines.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mines.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrm share/help/zh_CN/gnome-mines/figures
-@dirrm share/help/zh_CN/gnome-mines
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sv/gnome-mines/figures
-@dirrm share/help/sv/gnome-mines
-@dirrmtry share/help/sv
-@dirrm share/help/sr@latin/gnome-mines/figures
-@dirrm share/help/sr@latin/gnome-mines
-@dirrmtry share/help/sr@latin
-@dirrm share/help/sr/gnome-mines/figures
-@dirrm share/help/sr/gnome-mines
-@dirrmtry share/help/sr
-@dirrm share/help/sl/gnome-mines/figures
-@dirrm share/help/sl/gnome-mines
-@dirrmtry share/help/sl
-@dirrm share/help/pt_BR/gnome-mines/figures
-@dirrm share/help/pt_BR/gnome-mines
-@dirrmtry share/help/pt_BR
-@dirrm share/help/oc/gnome-mines/figures
-@dirrm share/help/oc/gnome-mines
-@dirrmtry share/help/oc
-@dirrm share/help/ja/gnome-mines/figures
-@dirrm share/help/ja/gnome-mines
-@dirrmtry share/help/ja
-@dirrm share/help/it/gnome-mines/figures
-@dirrm share/help/it/gnome-mines
-@dirrmtry share/help/it
-@dirrm share/help/hu/gnome-mines/figures
-@dirrm share/help/hu/gnome-mines
-@dirrmtry share/help/hu
-@dirrm share/help/gl/gnome-mines/figures
-@dirrm share/help/gl/gnome-mines
-@dirrmtry share/help/gl
-@dirrm share/help/fr/gnome-mines/figures
-@dirrm share/help/fr/gnome-mines
-@dirrmtry share/help/fr
-@dirrm share/help/eu/gnome-mines/figures
-@dirrm share/help/eu/gnome-mines
-@dirrmtry share/help/eu
-@dirrm share/help/es/gnome-mines/figures
-@dirrm share/help/es/gnome-mines
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/gnome-mines/figures
-@dirrm share/help/en_GB/gnome-mines
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/gnome-mines/figures
-@dirrm share/help/el/gnome-mines
-@dirrmtry share/help/el
-@dirrm share/help/de/gnome-mines/figures
-@dirrm share/help/de/gnome-mines
-@dirrmtry share/help/de
-@dirrm share/help/da/gnome-mines/figures
-@dirrm share/help/da/gnome-mines
-@dirrmtry share/help/da
-@dirrm share/help/cs/gnome-mines/figures
-@dirrm share/help/cs/gnome-mines
-@dirrmtry share/help/cs
-@dirrm share/help/ca/gnome-mines/figures
-@dirrm share/help/ca/gnome-mines
-@dirrmtry share/help/ca
-@dirrm share/help/C/gnome-mines/figures
-@dirrm share/help/C/gnome-mines
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/gnome-mines
-@dirrmtry share/appdata

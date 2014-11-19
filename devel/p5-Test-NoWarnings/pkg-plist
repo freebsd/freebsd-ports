@@ -2,7 +2,3 @@
 %%SITE_PERL%%/Test/NoWarnings.pm
 %%SITE_PERL%%/Test/NoWarnings/Warning.pm
 %%PERL5_MAN3%%/Test::NoWarnings.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/NoWarnings
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/NoWarnings
-@dirrmtry %%SITE_PERL%%/Test

@@ -18,8 +18,8 @@ GH_COMMIT=	c8e9781
 GH_TAGNAME=	${PORTVERSION}
 GH_PROJECT=	python-${PORTNAME}
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	python_${PORTNAME}
 
 .include <bsd.port.mk>

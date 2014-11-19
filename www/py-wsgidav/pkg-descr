@@ -1,0 +1,5 @@
+WsgiDAV is a WebDAV server for sharing files and other resources over the
+web. It is based on the WSGI interface.  It comes bundled with a simple
+WSGI web server.  This package is based on PyFileServer by Ho Chun Wei.
+
+WWW: https://github.com/mar10/wsgidav

@@ -16,8 +16,3 @@
 %%EXAMPLESDIR%%/portrait.pl
 %%EXAMPLESDIR%%/sunset.jpg
 %%EXAMPLESDIR%%/sunset.pl
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Caa
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-@dirrmtry %%SITE_PERL%%/Image/Caa
-@dirrmtry %%SITE_PERL%%/Image

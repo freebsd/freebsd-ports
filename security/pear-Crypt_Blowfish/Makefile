@@ -6,7 +6,7 @@ PORTVERSION=	1.1.0.r2
 CATEGORIES=	security www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for blowfish encryption
 
 USES=	pear

@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME:S/p/P/:S/c/C/}_v${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME:S/p/P/:S/c/C/}_v${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small program for playing chess against the computer
 
 LICENSE=	GPLv3

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Data/IEEE754.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/IEEE754/.packlist
 %%PERL5_MAN3%%/Data::IEEE754.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/IEEE754
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data

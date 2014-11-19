@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/gnome-menus/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/x11/gnome-menus/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gnome-menus
-PORTVERSION=	3.10.1
-PORTREVISION=	1
+PORTVERSION=	3.13.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
 
 USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
-USE_GNOME=	glib20 gnomehier gnomeprefix intlhack \
+USE_GNOME=	glib20 gnomeprefix intlhack \
 		introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

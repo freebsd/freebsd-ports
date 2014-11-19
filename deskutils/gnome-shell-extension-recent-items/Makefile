@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-shell-extension-recent-items/Makefile 19940 2014-10-04 22:25:17Z kwm $
+#   $MCom: ports/trunk/deskutils/gnome-shell-extension-recent-items/Makefile 19931 2014-10-01 14:32:38Z kwm $
 
 PORTNAME=	gnome-shell-extension-recent-items
 PORTVERSION=	0.0.0.20141001

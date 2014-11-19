@@ -10,7 +10,7 @@ MASTER_SITES=	http://issv.org.ru/oss/ \
 PKGNAMEPREFIX=	pidgin-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to allow manual resizing of Pidgin's message input area
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin

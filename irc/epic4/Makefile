@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--without-tcl
 #
 .if ${PORT_OPTIONS:MPERL}
 USES+=		perl5
-CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VERSION}/mach/CORE
+CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VERSION}/${PERL_ARCH}/CORE
 .else
 CONFIGURE_ARGS+=	--without-perl
 .endif

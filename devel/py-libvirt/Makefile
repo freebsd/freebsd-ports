@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.10
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/python/ \
 		ftp://libvirt.org/libvirt/python/
@@ -17,12 +16,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
 
-USES=	pkgconfig shebangfix
+USES=	pkgconfig python shebangfix
 SHEBANG_FILES=	generator.py sanitytest.py setup.py
-
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"python"|"${PYTHON_CMD}"|g' \

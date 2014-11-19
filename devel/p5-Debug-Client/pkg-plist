@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Debug/Client.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Debug/Client/.packlist
 %%PERL5_MAN3%%/Debug::Client.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Debug/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Debug
-@dirrmtry %%SITE_PERL%%/Debug

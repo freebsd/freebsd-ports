@@ -361,33 +361,3 @@ share/mime/packages/nip2.xml
 %%DATADIR%%/start/_predicate.def
 %%DATADIR%%/start/_stdenv.def
 %%DATADIR%%/start/_types.def
-@dirrm %%DATADIR%%/start
-@dirrm %%DATADIR%%/rc
-@dirrm %%DATADIR%%/data/examples/registering
-@dirrm %%DATADIR%%/data/examples/overlays_and_blending
-@dirrm %%DATADIR%%/data/examples/manual_balance
-@dirrm %%DATADIR%%/data/examples/logo
-@dirrm %%DATADIR%%/data/examples/framing
-@dirrm %%DATADIR%%/data/examples/clone
-@dirrm %%DATADIR%%/data/examples/businesscard
-@dirrm %%DATADIR%%/data/examples/2_point_mosaic
-@dirrm %%DATADIR%%/data/examples/1_point_mosaic
-@dirrm %%DATADIR%%/data/examples
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/compat/7.9
-@dirrm %%DATADIR%%/compat/7.8
-@dirrm %%DATADIR%%/compat/7.38
-@dirrm %%DATADIR%%/compat/7.28
-@dirrm %%DATADIR%%/compat/7.26
-@dirrm %%DATADIR%%/compat/7.24
-@dirrm %%DATADIR%%/compat/7.16
-@dirrm %%DATADIR%%/compat/7.14
-@dirrm %%DATADIR%%/compat/7.12
-@dirrm %%DATADIR%%/compat/7.10
-@dirrm %%DATADIR%%/compat
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/figs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/appdata

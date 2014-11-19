@@ -17,8 +17,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-process/process.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-process/process.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-process/simpleipc.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-process/simpleipc.ppu
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-process
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

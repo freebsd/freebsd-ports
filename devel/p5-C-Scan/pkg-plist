@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/C::Scan.3.gz
 %%SITE_PERL%%/C/Scan.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/C/Scan/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/C/Scan
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/C
-@dirrmtry %%SITE_PERL%%/C

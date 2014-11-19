@@ -952,23 +952,3 @@ man/man5/oogl.5gv.gz
 %%DATADIR%%/shaders/hlight.slo
 %%DATADIR%%/shaders/hmatte.slo
 %%DATADIR%%/shaders/hplastic.slo
-@dirrm %%DATADIR%%/shaders
-@dirrm %%DATADIR%%/groups
-@dirrm %%DATADIR%%/geom/textured
-@dirrm %%DATADIR%%/geom/spherical
-@dirrm %%DATADIR%%/geom/polyhedra
-@dirrm %%DATADIR%%/geom/pieces
-@dirrm %%DATADIR%%/geom
-@dirrm %%DATADIR%%/gcl
-@dirrm %%DATADIR%%/Mathematica
-@dirrm %%DATADIR%%/Maple
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pt_BR/figs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pt_BR
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/figs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/geomview
-@dirrm include/geomview/private
-@dirrm include/geomview

@@ -254,21 +254,3 @@ bin/rescue
 %%DATADIR%%/missions/ui/rescuemax/9_up.png
 %%DATADIR%%/missions/ui/rescuemax/pspbrwse.jbf
 share/pixmaps/rescue.png
-@dirrm %%DATADIR%%/missions/ui/rescuemax
-@dirrm %%DATADIR%%/missions/ui/rescue
-@dirrm %%DATADIR%%/missions/ui/newmax
-@dirrm %%DATADIR%%/missions/ui
-@dirrm %%DATADIR%%/missions/sounds/voice
-@dirrm %%DATADIR%%/missions/sounds/music
-@dirrm %%DATADIR%%/missions/sounds/effect
-@dirrm %%DATADIR%%/missions/sounds
-@dirrm %%DATADIR%%/missions/so/sosmall
-@dirrm %%DATADIR%%/missions/so/soinfo
-@dirrm %%DATADIR%%/missions/so/sobig
-@dirrm %%DATADIR%%/missions/so
-@dirrm %%DATADIR%%/missions/preview
-@dirrm %%DATADIR%%/missions
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/help/images
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%

@@ -30,8 +30,3 @@
 %%PERL5_MAN3%%/Cache::RemovalStrategy::FIFO.3.gz
 %%PERL5_MAN3%%/Cache::RemovalStrategy::LRU.3.gz
 %%PERL5_MAN3%%/Cache::Tester.3.gz
-@dirrmtry %%SITE_PERL%%/Cache/RemovalStrategy
-@dirrmtry %%SITE_PERL%%/Cache/Null
-@dirrmtry %%SITE_PERL%%/Cache/Memory
-@dirrmtry %%SITE_PERL%%/Cache/File
-@dirrmtry %%SITE_PERL%%/Cache

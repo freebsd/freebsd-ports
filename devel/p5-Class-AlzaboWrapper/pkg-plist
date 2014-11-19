@@ -2,5 +2,3 @@
 %%SITE_PERL%%/Class/AlzaboWrapper/Cursor.pm
 %%PERL5_MAN3%%/Class::AlzaboWrapper.3.gz
 %%PERL5_MAN3%%/Class::AlzaboWrapper::Cursor.3.gz
-@dirrm %%SITE_PERL%%/Class/AlzaboWrapper
-@dirrmtry %%SITE_PERL%%/Class

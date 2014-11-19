@@ -16,4 +16,3 @@
 %%ELISPDIR%%/magit.elc
 %%ELISPDIR%%/rebase-mode.el
 %%ELISPDIR%%/rebase-mode.elc
-@dirrm %%ELISPDIR%%

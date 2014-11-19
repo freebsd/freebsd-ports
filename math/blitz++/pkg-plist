@@ -196,10 +196,4 @@ libdata/pkgconfig/blitz-uninstalled.pc
 %%PORTDOCS%%%%DOCSDIR%%/slice.gif
 %%PORTDOCS%%%%DOCSDIR%%/strideslice.gif
 %%PORTDOCS%%%%DOCSDIR%%/tensor1.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doxygen
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/random
-@dirrm include/blitz/meta
-@dirrm include/blitz/gnu
-@dirrm include/blitz/array
-@dirrm include/blitz
+@comment @dir %%DOCSDIR%%/doxygen

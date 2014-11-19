@@ -1075,7 +1075,6 @@ BBBike/plugins/MultiMap.pm
 BBBike/smsbbbike
 bin/smsbbbike
 BBBike/tkbikepwr
-BBBike/tmp/.keep_me
 man/man1/bbbike.1.gz
 BBBike/lib/%%LOCAL_PERL_ARCH%%/BBBikeXS.pm
 BBBike/lib/%%LOCAL_PERL_ARCH%%/Strassen/Inline.pm
@@ -1094,77 +1093,4 @@ BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/Strassen/Inline2/Inline2.so
 BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/StrassenNetz/CNetFile/CNetFile.so
 BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VectorUtil/Inline/Inline.so
 BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VirtArray/VirtArray.so
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/StrassenNetz/CNetFile
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VectorUtil/Inline
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/Strassen/Inline2
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/Strassen/Inline
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/StrassenNetz
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VectorUtil
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VirtArray
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/Strassen
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/BBBikeXS
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/StrassenNetz
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/VectorUtil
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/Strassen
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto
-@dirrm BBBike/ext/StrassenNetz-CNetFile/t
-@dirrm BBBike/data/sehenswuerdigkeit_img
-@dirrm BBBike/ext/StrassenNetz-CNetFile
-@dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%
-@dirrmtry BBBike/lib/%%PERL_VERSION%%
-@dirrm BBBike/ext/VectorUtil-Inline/t
-@dirrm BBBike/ext/Strassen-Inline2/t
-@dirrm BBBike/ext/VectorUtil-Inline
-@dirrm BBBike/ext/Strassen-Inline/t
-@dirrm BBBike/ext/Strassen-Inline2
-@dirrm BBBike/ext/Strassen-Inline
-@dirrm BBBike/data/temp_blockings
-@dirrm BBBike/lib/Tk/PathEntry
-@dirrm BBBike/lib/BrowserInfo
-@dirrm BBBike/lib/AutoInstall
-@dirrm BBBike/html/opensearch
-@dirrm BBBike/ext/VirtArray/t
-@dirrm BBBike/lib/PDF/Create
-@dirrm BBBike/ext/BBBikeXS/t
-@dirrm BBBike/GPS/GpsmanData
-@dirrm BBBike/ESRI/Shapefile
-@dirrm BBBike/lib/BikePower
-@dirrm BBBike/lib/Algorithm
-@dirrm BBBike/ext/VirtArray
-@dirrm BBBike/ext/BBBikeXS
-@dirrm BBBike/msg/install
-@dirrm BBBike/msg/bbbike
-@dirrm BBBike/BBBikeDraw
-@dirrm BBBike/lib/Devel
-@dirrm BBBike/Route/PDF
-@dirrm BBBike/Geography
-@dirrm BBBike/lib/Text
-@dirrm BBBike/Strassen
-@dirrm BBBike/plugins
-@dirrm BBBike/miscsrc
-@dirrm BBBike/lib/PDF
-@dirrm BBBike/lib/Met
-@dirrm BBBike/cgi/msg
-@dirrm BBBike/lib/Tk
-@dirrm BBBike/lib/GD
-@dirrm BBBike/images
-@dirrm BBBike/ESRI/t
-@dirrm BBBike/Bundle
-@dirrm BBBike/gnome
-@dirrm BBBike/Route
-@dirrm BBBike/Karte
-@dirrm BBBike/html
-@dirrm BBBike/data
-@dirrm BBBike/ESRI
-@dirrm BBBike/tmp
-@dirrm BBBike/msg
-@dirrm BBBike/lib
-@dirrm BBBike/kde
-@dirrm BBBike/ext
-@dirrm BBBike/doc
-@dirrm BBBike/cgi
-@dirrm BBBike/Way
-@dirrm BBBike/PLZ
-@dirrm BBBike/GPS
-@dirrm BBBike/GIS
-@dirrm BBBike
+@dir BBBike/tmp/

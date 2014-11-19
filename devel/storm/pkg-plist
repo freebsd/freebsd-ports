@@ -121,40 +121,6 @@ bin/storm
 %%DATADIR%%/public/component.html
 %%DATADIR%%/public/index.html
 %%DATADIR%%/public/topology.html
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/examples/storm-starter/multilang/resources
-@dirrm %%DATADIR%%/examples/storm-starter/multilang
-@dirrm %%DATADIR%%/examples/storm-starter/src/clj/storm/starter/clj
-@dirrm %%DATADIR%%/examples/storm-starter/src/clj/storm/starter
-@dirrm %%DATADIR%%/examples/storm-starter/src/clj/storm
-@dirrm %%DATADIR%%/examples/storm-starter/src/clj
-@dirrm %%DATADIR%%/examples/storm-starter/src/jvm/storm/starter/bolt
-@dirrm %%DATADIR%%/examples/storm-starter/src/jvm/storm/starter/spout
-@dirrm %%DATADIR%%/examples/storm-starter/src/jvm/storm/starter/tools
-@dirrm %%DATADIR%%/examples/storm-starter/src/jvm/storm/starter/trident
-@dirrm %%DATADIR%%/examples/storm-starter/src/jvm/storm/starter/util
-@dirrm %%DATADIR%%/examples/storm-starter/src/jvm/storm/starter
-@dirrm %%DATADIR%%/examples/storm-starter/src/jvm/storm
-@dirrm %%DATADIR%%/examples/storm-starter/src/jvm
-@dirrm %%DATADIR%%/examples/storm-starter/src
-@dirrm %%DATADIR%%/examples/storm-starter/test/jvm/storm/starter/bolt
-@dirrm %%DATADIR%%/examples/storm-starter/test/jvm/storm/starter/tools
-@dirrm %%DATADIR%%/examples/storm-starter/test/jvm/storm/starter
-@dirrm %%DATADIR%%/examples/storm-starter/test/jvm/storm
-@dirrm %%DATADIR%%/examples/storm-starter/test/jvm
-@dirrm %%DATADIR%%/examples/storm-starter/test
-@dirrm %%DATADIR%%/examples/storm-starter
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/external/storm-kafka
-@dirrm %%DATADIR%%/external
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/public/css
-@dirrm %%DATADIR%%/public/js
-@dirrm %%DATADIR%%/public/templates
-@dirrm %%DATADIR%%/public
 @sample %%DATADIR%%/conf/storm.yaml.sample
 @sample %%DATADIR%%/conf/storm_env.ini.sample
 @sample %%DATADIR%%/logback/cluster.xml.sample
-@dirrmtry %%DATADIR%%/conf
-@dirrmtry %%DATADIR%%/logback
-@dirrmtry %%DATADIR%%

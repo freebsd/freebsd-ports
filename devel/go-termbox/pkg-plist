@@ -1,7 +1,4 @@
 %%GO_LIBDIR%%/github.com/nsf/termbox-go.a
-@dirrmtry %%GO_LIBDIR%%/github.com/nsf
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/AUTHORS
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
@@ -25,10 +22,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/termbox_windows.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/terminfo.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/terminfo_builtin.go
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/_demos
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/github.com/nsf
-@dirrmtry %%GO_SRCDIR%%/github.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

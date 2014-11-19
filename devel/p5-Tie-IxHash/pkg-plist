@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Tie::IxHash.3.gz
 %%SITE_PERL%%/Tie/IxHash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/IxHash/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/IxHash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrmtry %%SITE_PERL%%/Tie

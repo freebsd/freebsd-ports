@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Find/Lib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Find/Lib/.packlist
 %%PERL5_MAN3%%/Find::Lib.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Find/Lib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Find
-@dirrmtry %%SITE_PERL%%/Find

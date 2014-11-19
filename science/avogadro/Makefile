@@ -35,7 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2
+USES+=		python:2
 BUILD_DEPENDS+=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sip>0:${PORTSDIR}/devel/py-sip
 LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs

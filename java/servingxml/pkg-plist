@@ -493,121 +493,23 @@ share/java/servingxml/scripts/lcp.bat
 share/java/servingxml/servingxml
 share/java/servingxml/servingxml.bat
 share/java/servingxml/servingxml.jar
-@dirrm share/java/servingxml/scripts
-@dirrm share/java/servingxml/samples/xml2xml/styles
-@dirrm share/java/servingxml/samples/xml2xml/output
-@dirrm share/java/servingxml/samples/xml2xml/documents
-@dirrm share/java/servingxml/samples/xml2xml
-@dirrm share/java/servingxml/samples/xml2flat/output
-@dirrm share/java/servingxml/samples/xml2flat/expected
-@dirrm share/java/servingxml/samples/xml2flat/eobclaims/output
-@dirrm share/java/servingxml/samples/xml2flat/eobclaims/expected
-@dirrm share/java/servingxml/samples/xml2flat/eobclaims/data
-@dirrm share/java/servingxml/samples/xml2flat/eobclaims
-@dirrm share/java/servingxml/samples/xml2flat/document-sequence/output
-@dirrm share/java/servingxml/samples/xml2flat/document-sequence/data
-@dirrm share/java/servingxml/samples/xml2flat/document-sequence
-@dirrm share/java/servingxml/samples/xml2flat/data
-@dirrm share/java/servingxml/samples/xml2flat
-@dirrm share/java/servingxml/samples/sql/scripts
-@dirrm share/java/servingxml/samples/sql/output
-@dirrm share/java/servingxml/samples/sql/java
-@dirrm share/java/servingxml/samples/sql/data
-@dirrm share/java/servingxml/samples/sql
-@dirrm share/java/servingxml/samples/servingxmlx/output
-@dirrm share/java/servingxml/samples/servingxmlx
-@dirrm share/java/servingxml/samples/saxpipeline/styles
-@dirrm share/java/servingxml/samples/saxpipeline/output
-@dirrm share/java/servingxml/samples/saxpipeline/java
-@dirrm share/java/servingxml/samples/saxpipeline/documents
-@dirrm share/java/servingxml/samples/saxpipeline
-@dirrm share/java/servingxml/samples/saxon/output
-@dirrm share/java/servingxml/samples/saxon/data
-@dirrm share/java/servingxml/samples/saxon
-@dirrm share/java/servingxml/samples/msv/output
-@dirrm share/java/servingxml/samples/msv
-@dirrm share/java/servingxml/samples/mail/output
-@dirrm share/java/servingxml/samples/mail/data
-@dirrm share/java/servingxml/samples/mail
-@dirrm share/java/servingxml/samples/fop/styles
-@dirrm share/java/servingxml/samples/fop/output
-@dirrm share/java/servingxml/samples/fop/documents
-@dirrm share/java/servingxml/samples/fop
-@dirrm share/java/servingxml/samples/flat2xml/styles
-@dirrm share/java/servingxml/samples/flat2xml/output
-@dirrm share/java/servingxml/samples/flat2xml/multiple-readers
-@dirrm share/java/servingxml/samples/flat2xml/java/flat2xml
-@dirrm share/java/servingxml/samples/flat2xml/java
-@dirrm share/java/servingxml/samples/flat2xml/intermediate
-@dirrm share/java/servingxml/samples/flat2xml/expected
-@dirrm share/java/servingxml/samples/flat2xml/eobclaims/output
-@dirrm share/java/servingxml/samples/flat2xml/eobclaims/expected
-@dirrm share/java/servingxml/samples/flat2xml/eobclaims/data
-@dirrm share/java/servingxml/samples/flat2xml/eobclaims
-@dirrm share/java/servingxml/samples/flat2xml/data
-@dirrm share/java/servingxml/samples/flat2xml
-@dirrm share/java/servingxml/samples/flat2fpml/output
-@dirrm share/java/servingxml/samples/flat2fpml/data
-@dirrm share/java/servingxml/samples/flat2fpml
-@dirrm share/java/servingxml/samples/flat2flat/output
-@dirrm share/java/servingxml/samples/flat2flat/java/flat2flat
-@dirrm share/java/servingxml/samples/flat2flat/java
-@dirrm share/java/servingxml/samples/flat2flat/data
-@dirrm share/java/servingxml/samples/flat2flat
-@dirrm share/java/servingxml/samples/embed/output
-@dirrm share/java/servingxml/samples/embed/java/embed
-@dirrm share/java/servingxml/samples/embed/java
-@dirrm share/java/servingxml/samples/embed/data
-@dirrm share/java/servingxml/samples/embed
-@dirrm share/java/servingxml/samples/edtftpj/output
-@dirrm share/java/servingxml/samples/edtftpj/documents
-@dirrm share/java/servingxml/samples/edtftpj
-@dirrm share/java/servingxml/samples/edi/output
-@dirrm share/java/servingxml/samples/edi/expected
-@dirrm share/java/servingxml/samples/edi/data
-@dirrm share/java/servingxml/samples/edi
-@dirrm share/java/servingxml/samples/dynamiccontent/styles
-@dirrm share/java/servingxml/samples/dynamiccontent/output
-@dirrm share/java/servingxml/samples/dynamiccontent/java/dynamiccontent
-@dirrm share/java/servingxml/samples/dynamiccontent/java
-@dirrm share/java/servingxml/samples/dynamiccontent/html
-@dirrm share/java/servingxml/samples/dynamiccontent/css
-@dirrm share/java/servingxml/samples/dynamiccontent
-@dirrm share/java/servingxml/samples
-@dirrm share/java/servingxml/resources/META-INF/components/servingxmlx
-@dirrm share/java/servingxml/resources/META-INF/components/com/servingxml/extensions/saxon
-@dirrm share/java/servingxml/resources/META-INF/components/com/servingxml/extensions/msv
-@dirrm share/java/servingxml/resources/META-INF/components/com/servingxml/extensions/mail
-@dirrm share/java/servingxml/resources/META-INF/components/com/servingxml/extensions/fop
-@dirrm share/java/servingxml/resources/META-INF/components/com/servingxml/extensions/edtftp
-@dirrm share/java/servingxml/resources/META-INF/components/com/servingxml/extensions
-@dirrm share/java/servingxml/resources/META-INF/components/com/servingxml/core
-@dirrm share/java/servingxml/resources/META-INF/components/com/servingxml
-@dirrm share/java/servingxml/resources/META-INF/components/com
-@dirrm share/java/servingxml/resources/META-INF/components
-@dirrm share/java/servingxml/resources/META-INF
-@dirrm share/java/servingxml/resources
-@dirrm share/java/servingxml/lib
-@dirrm share/java/servingxml/config
-@dirrm share/java/servingxml/classes
-@dirrm share/java/servingxml
-@exec mkdir -p %D/share/java/servingxml/samples/xml2xml/output
-@exec mkdir -p %D/share/java/servingxml/samples/xml2flat/output
-@exec mkdir -p %D/share/java/servingxml/samples/xml2flat/expected
-@exec mkdir -p %D/share/java/servingxml/samples/xml2flat/eobclaims/output
-@exec mkdir -p %D/share/java/servingxml/samples/sql/output
-@exec mkdir -p %D/share/java/servingxml/samples/servingxmlx/output
-@exec mkdir -p %D/share/java/servingxml/samples/saxpipeline/output
-@exec mkdir -p %D/share/java/servingxml/samples/saxon/output
-@exec mkdir -p %D/share/java/servingxml/samples/msv/output
-@exec mkdir -p %D/share/java/servingxml/samples/mail/output
-@exec mkdir -p %D/share/java/servingxml/samples/fop/output
-@exec mkdir -p %D/share/java/servingxml/samples/flat2xml/output
-@exec mkdir -p %D/share/java/servingxml/samples/flat2xml/intermediate
-@exec mkdir -p %D/share/java/servingxml/samples/flat2xml/eobclaims/output
-@exec mkdir -p %D/share/java/servingxml/samples/flat2fpml/output
-@exec mkdir -p %D/share/java/servingxml/samples/flat2flat/output
-@exec mkdir -p %D/share/java/servingxml/samples/embed/output
-@exec mkdir -p %D/share/java/servingxml/samples/edtftpj/output
-@exec mkdir -p %D/share/java/servingxml/samples/dynamiccontent/output
-@exec mkdir -p %D/share/java/servingxml/classes
+@dir share/java/servingxml/samples/xml2xml/output
+@dir share/java/servingxml/samples/xml2flat/output
+@dir share/java/servingxml/samples/xml2flat/expected
+@dir share/java/servingxml/samples/xml2flat/eobclaims/output
+@dir share/java/servingxml/samples/sql/output
+@dir share/java/servingxml/samples/servingxmlx/output
+@dir share/java/servingxml/samples/saxpipeline/output
+@dir share/java/servingxml/samples/saxon/output
+@dir share/java/servingxml/samples/msv/output
+@dir share/java/servingxml/samples/mail/output
+@dir share/java/servingxml/samples/fop/output
+@dir share/java/servingxml/samples/flat2xml/output
+@dir share/java/servingxml/samples/flat2xml/intermediate
+@dir share/java/servingxml/samples/flat2xml/eobclaims/output
+@dir share/java/servingxml/samples/flat2fpml/output
+@dir share/java/servingxml/samples/flat2flat/output
+@dir share/java/servingxml/samples/embed/output
+@dir share/java/servingxml/samples/edtftpj/output
+@dir share/java/servingxml/samples/dynamiccontent/output
+@dir share/java/servingxml/classes

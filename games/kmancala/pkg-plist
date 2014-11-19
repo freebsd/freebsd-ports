@@ -16,6 +16,3 @@ share/icons/hicolor/22x22/apps/kmancala.png
 share/icons/hicolor/32x32/apps/kmancala.png
 share/icons/hicolor/48x48/apps/kmancala.png
 share/icons/hicolor/64x64/apps/kmancala.png
-@dirrm share/doc/HTML/en/kmancala
-@dirrm share/apps/kmancala/themes
-@dirrm share/apps/kmancala

@@ -5,7 +5,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ExtAttr/autosplit.ix
 %%PERL5_MAN3%%/File::ExtAttr.3.gz
 %%PERL5_MAN3%%/File::ExtAttr::Tie.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ExtAttr
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/File/ExtAttr
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File

@@ -2,7 +2,7 @@
 
 PORTNAME=	rox-filer
 PORTVERSION=	2.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	SF/rox/rox/${PORTVERSION}
 DISTNAME=	rox-filer-${PORTVERSION}
@@ -10,12 +10,10 @@ DISTNAME=	rox-filer-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Simple and easy to use graphical file manager
 
-RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
-
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
 USE_XORG=	x11 sm xaw xproto
-USE_GNOME=	atk gconf2 glib20 gnomevfs2 gtk20 libglade2 libidl libxml2 orbit2 pango
+USE_GNOME=	atk glib20 gtk20 libxml2 pango
 USES=		gmake pkgconfig shared-mime-info tar:bzip2
 
 GNU_CONFIGURE=		yes

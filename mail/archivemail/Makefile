@@ -7,10 +7,10 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Archive or delete mail older than N days
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 DOCS=		CHANGELOG FAQ NEWS README TODO

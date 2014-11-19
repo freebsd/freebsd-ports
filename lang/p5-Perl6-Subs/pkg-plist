@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Perl6/Subs.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Subs/.packlist
 %%PERL5_MAN3%%/Perl6::Subs.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Subs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6
-@dirrmtry %%SITE_PERL%%/Perl6

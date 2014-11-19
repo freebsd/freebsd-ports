@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Sub/Install.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Install/.packlist
 %%PERL5_MAN3%%/Sub::Install.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
-@dirrmtry %%SITE_PERL%%/Sub

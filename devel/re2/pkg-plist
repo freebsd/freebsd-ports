@@ -7,4 +7,3 @@ lib/libre2.a
 lib/libre2.so
 lib/libre2.so.0
 lib/libre2.so.0.0.0
-@dirrm include/re2

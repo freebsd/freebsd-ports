@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Perl6::Builtins.3.gz
 %%SITE_PERL%%/Perl6/Builtins.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Builtins/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Builtins
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6
-@dirrmtry %%SITE_PERL%%/Perl6

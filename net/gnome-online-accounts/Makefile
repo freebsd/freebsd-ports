@@ -1,14 +1,13 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/net/gnome-online-accounts/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#    $MCom: ports/trunk/net/gnome-online-accounts/Makefile 20037 2014-11-03 08:29:49Z kwm $
 
 PORTNAME=	gnome-online-accounts
-PORTVERSION=	3.12.4
-PORTREVISION=	1
+PORTVERSION=	3.14.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interface provider to access the user's online accounts
 
 BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
@@ -29,5 +28,6 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+GLIB_SCHEMAS=	org.gnome.online-accounts.gschema.xml
 
 .include <bsd.port.mk>

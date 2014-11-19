@@ -5,5 +5,3 @@ share/pixmaps/xcpc.xpm
 %%DATADIR%%/roms/cpc464.rom
 %%DATADIR%%/roms/cpc6128.rom
 %%DATADIR%%/roms/cpc664.rom
-@dirrm %%DATADIR%%/roms
-@dirrm %%DATADIR%%

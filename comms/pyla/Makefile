@@ -22,8 +22,6 @@ DATADIR=	${PREFIX}/lib/pyla
 USES=		python
 PLIST=		${WRKDIR}/pkg-plist
 
-.include <bsd.port.pre.mk>
-
 do-build:
 	@(cd ${FILESDIR} && ${CP} pyla.sh ${WRKDIR})
 	@(cd ${WRKDIR} && ${REINPLACE_CMD} \
@@ -33,13 +31,12 @@ do-build:
 	@(cd ${WRKSRC} && ${CP} language.en language.db)
 
 pre-install:
-	@${ECHO_CMD} '@exec ${MKDIR} %D/lib/pyla' > ${PLIST}
-	@${ECHO_CMD} 'bin/pyla' >> ${PLIST}
+	@${ECHO_CMD} 'bin/pyla' > ${PLIST}
 	@${ECHO_CMD} 'lib/pyla/pyla.pyw' >> ${PLIST}
 	@${FIND} ${WRKSRC}/ -type f | \
 		${SED} -e "s:^${WRKSRC}/:lib/pyla/:g" >> ${PLIST}
-	@${FIND} -d ${WRKSRC} -type d | \
-		${SED} -e "s:^${WRKSRC}:@dirrm lib/pyla:g" >> ${PLIST}
+	@${FIND} -d ${WRKSRC} -type d -empty | \
+		${SED} -e "s:^${WRKSRC}:@dir lib/pyla:g" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -47,4 +44,4 @@ do-install:
 	${TAR} -C ${WRKSRC} --exclude CVS -cf - . | \
 		${TAR} -C ${STAGEDIR}${DATADIR} --unlink -xf -
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

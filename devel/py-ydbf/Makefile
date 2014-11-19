@@ -14,9 +14,7 @@ COMMENT=	Yelded DBF reader/writer for Python
 
 LICENSE=	GPLv2
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGVERSION=	0.0.1dev_20080514
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

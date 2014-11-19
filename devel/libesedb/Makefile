@@ -3,9 +3,10 @@
 
 PORTNAME=	libesedb
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20140803
+DISTVERSION=	experimental-20141110
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSN082cmxsbHB0anc/ \
+		https://github.com/libyal/libesedb/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org

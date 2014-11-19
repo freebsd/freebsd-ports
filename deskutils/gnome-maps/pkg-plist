@@ -1,9 +1,32 @@
 bin/gnome-maps
-share/appdata/gnome-maps.appdata.xml
-share/applications/gnome-maps.desktop
-share/glib-2.0/schemas/org.gnome.maps.gschema.xml
-%%DATADIR%%/pixmaps/bubble.svg
-%%DATADIR%%/pixmaps/pin.svg
+share/appdata/org.gnome.Maps.appdata.xml
+share/applications/org.gnome.Maps.desktop
+share/dbus-1/services/org.gnome.Maps.service
+%%DATADIR%%/icons/hicolor/16x16/apps/layers-button-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/maps-point-end-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/maps-point-end.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/maps-point-start-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/maps-point-start.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/route-bike-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/route-button-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/route-car-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/route-pedestrian-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/route-transit-symbolic.svg
+%%DATADIR%%/icons/hicolor/22x22/apps/user-location.png
+%%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-continue-symbolic.svg
+%%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-left-symbolic.svg
+%%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-right-symbolic.svg
+%%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-sharpleft-symbolic.svg
+%%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-sharpright-symbolic.svg
+%%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-slightleft-symbolic.svg
+%%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.svg
+%%DATADIR%%/icons/hicolor/32x32/apps/maps-pin.svg
+share/icons/HighContrast/16x16/apps/gnome-maps.png
+share/icons/HighContrast/22x22/apps/gnome-maps.png
+share/icons/HighContrast/24x24/apps/gnome-maps.png
+share/icons/HighContrast/256x256/apps/gnome-maps.png
+share/icons/HighContrast/32x32/apps/gnome-maps.png
+share/icons/HighContrast/48x48/apps/gnome-maps.png
 share/icons/hicolor/16x16/apps/gnome-maps.png
 share/icons/hicolor/22x22/apps/gnome-maps.png
 share/icons/hicolor/24x24/apps/gnome-maps.png
@@ -42,11 +65,13 @@ share/locale/lt/LC_MESSAGES/gnome-maps.mo
 share/locale/lv/LC_MESSAGES/gnome-maps.mo
 share/locale/ml/LC_MESSAGES/gnome-maps.mo
 share/locale/nb/LC_MESSAGES/gnome-maps.mo
+share/locale/ne/LC_MESSAGES/gnome-maps.mo
 share/locale/nl/LC_MESSAGES/gnome-maps.mo
 share/locale/pa/LC_MESSAGES/gnome-maps.mo
 share/locale/pl/LC_MESSAGES/gnome-maps.mo
 share/locale/pt/LC_MESSAGES/gnome-maps.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-maps.mo
+share/locale/ro/LC_MESSAGES/gnome-maps.mo
 share/locale/ru/LC_MESSAGES/gnome-maps.mo
 share/locale/sk/LC_MESSAGES/gnome-maps.mo
 share/locale/sl/LC_MESSAGES/gnome-maps.mo
@@ -60,6 +85,3 @@ share/locale/uk/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-maps.mo
-@dirrm share/appdata
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%

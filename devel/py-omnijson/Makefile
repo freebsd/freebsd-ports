@@ -25,9 +25,8 @@ GH_ACCOUNT=	kennethreitz
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	2235005
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest

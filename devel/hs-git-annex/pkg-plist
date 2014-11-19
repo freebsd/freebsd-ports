@@ -2,11 +2,3 @@ etc/xdg/autostart/git-annex.desktop
 share/applications/git-annex.desktop
 share/icons/hicolor/16x16/apps/git-annex.png
 share/icons/hicolor/scalable/apps/git-annex.svg
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons

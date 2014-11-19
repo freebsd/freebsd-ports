@@ -1,7 +1,3 @@
 share/dict/web-fpw/catalogs
 share/dict/web-fpw/web/data/honmon
-@dirrm share/dict/web-fpw/web/data
-@dirrm share/dict/web-fpw/web
-@dirrm share/dict/web-fpw
 %%PORTDOCS%%%%DOCSDIR%%/readme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

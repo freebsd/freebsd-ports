@@ -8,4 +8,3 @@ bin/pksubscribe
 %%PYTHON_SITELIBDIR%%/pkipplib/version.py
 %%PYTHON_SITELIBDIR%%/pkipplib/version.pyc
 %%PYTHON_SITELIBDIR%%/pkipplib/version.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/pkipplib

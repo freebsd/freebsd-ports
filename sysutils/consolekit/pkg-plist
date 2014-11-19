@@ -31,17 +31,5 @@ share/polkit-1/actions/org.freedesktop.consolekit.policy
 @exec mkdir -p %D/etc/ConsoleKit/run-seat.d
 @exec mkdir -p %D/lib/ConsoleKit/run-session.d
 @exec mkdir -p %D/lib/ConsoleKit/run-seat.d
-@dirrm lib/ConsoleKit/scripts
-@dirrmtry lib/ConsoleKit/run-session.d
-@dirrmtry lib/ConsoleKit/run-seat.d
-@dirrmtry lib/ConsoleKit
-@dirrm include/ConsoleKit/ck-connector
-@dirrm include/ConsoleKit
-@dirrm etc/ConsoleKit/seats.d
-@dirrmtry etc/ConsoleKit/run-session.d
-@dirrmtry etc/ConsoleKit/run-seat.d
-@dirrm etc/ConsoleKit
-@cwd /
-@dirrm var/run/ConsoleKit
-@dirrm var/log/ConsoleKit
-@cwd
+@dir /var/run/ConsoleKit
+@dir /var/log/ConsoleKit

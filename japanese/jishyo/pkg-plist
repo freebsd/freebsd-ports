@@ -17,9 +17,3 @@ GNUstep/Local/Applications/Jishyo.app/Resources/edict
 GNUstep/Local/Applications/Jishyo.app/Resources/edict.xjdx
 GNUstep/Local/Applications/Jishyo.app/stamp.make
 GNUstep/Local/Tools/Jishyo
-@dirrm GNUstep/Local/Applications/Jishyo.app/Resources/Thai.lproj
-@dirrm GNUstep/Local/Applications/Jishyo.app/Resources/Japanese.lproj
-@dirrm GNUstep/Local/Applications/Jishyo.app/Resources/English.lproj/Jishyo.gorm
-@dirrm GNUstep/Local/Applications/Jishyo.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Jishyo.app/Resources
-@dirrm GNUstep/Local/Applications/Jishyo.app

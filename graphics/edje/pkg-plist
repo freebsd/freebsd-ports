@@ -63,11 +63,3 @@ libdata/pkgconfig/edje.pc
 %%EXAMPLESDIR%%/toggle_using_filter.edc
 %%DATADIR%%/include/edje.inc
 share/mime/packages/edje.xml
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
-@dirrm lib/edje/utils
-@dirrmtry lib/edje
-@dirrm include/edje-1
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%

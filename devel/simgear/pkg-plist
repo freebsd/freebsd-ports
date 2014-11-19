@@ -29,7 +29,7 @@ include/simgear/canvas/CanvasMgr.hxx
 include/simgear/canvas/CanvasObjectPlacement.hxx
 include/simgear/canvas/CanvasPlacement.hxx
 include/simgear/canvas/CanvasSystemAdapter.hxx
-include/simgear/canvas/MouseEvent.hxx
+include/simgear/canvas/CanvasWindow.hxx
 include/simgear/canvas/ODGauge.hxx
 include/simgear/canvas/ShivaVG/openvg.h
 include/simgear/canvas/ShivaVG/vgu.h
@@ -42,6 +42,13 @@ include/simgear/canvas/elements/CanvasMap.hxx
 include/simgear/canvas/elements/CanvasPath.hxx
 include/simgear/canvas/elements/CanvasText.hxx
 include/simgear/canvas/elements/detail/add_segment_variadic.hxx
+include/simgear/canvas/events/CustomEvent.hxx
+include/simgear/canvas/events/MouseEvent.hxx
+include/simgear/canvas/layout/BoxLayout.hxx
+include/simgear/canvas/layout/Layout.hxx
+include/simgear/canvas/layout/LayoutItem.hxx
+include/simgear/canvas/layout/NasalWidget.hxx
+include/simgear/canvas/layout/SpacerItem.hxx
 include/simgear/compiler.h
 include/simgear/constants.h
 include/simgear/debug/BufferedLogCallback.hxx
@@ -117,6 +124,8 @@ include/simgear/math/sg_types.hxx
 include/simgear/misc/CSSBorder.hxx
 include/simgear/misc/ListDiff.hxx
 include/simgear/misc/ResourceManager.hxx
+include/simgear/misc/SVGpreserveAspectRatio.hxx
+include/simgear/misc/SimpleMarkdown.hxx
 include/simgear/misc/gzcontainerfile.hxx
 include/simgear/misc/interpolator.hxx
 include/simgear/misc/make_new.hxx
@@ -131,7 +140,9 @@ include/simgear/misc/texcoord.hxx
 include/simgear/misc/zfstream.hxx
 include/simgear/nasal/cppbind/Ghost.hxx
 include/simgear/nasal/cppbind/NasalCallContext.hxx
+include/simgear/nasal/cppbind/NasalContext.hxx
 include/simgear/nasal/cppbind/NasalHash.hxx
+include/simgear/nasal/cppbind/NasalObject.hxx
 include/simgear/nasal/cppbind/NasalObjectHolder.hxx
 include/simgear/nasal/cppbind/NasalString.hxx
 include/simgear/nasal/cppbind/detail/from_nasal_function_templates.hxx
@@ -258,7 +269,6 @@ include/simgear/scene/util/parse_color.hxx
 include/simgear/scene/util/project.hxx
 include/simgear/screen/colors.hxx
 include/simgear/screen/extensions.hxx
-include/simgear/screen/jpgfactory.hxx
 include/simgear/screen/screen-dump.hxx
 include/simgear/screen/tr.h
 include/simgear/serial/serial.hxx
@@ -287,8 +297,10 @@ include/simgear/structure/StateMachine.hxx
 include/simgear/structure/StringTable.hxx
 include/simgear/structure/callback.hxx
 include/simgear/structure/commands.hxx
+include/simgear/structure/detail/function_list_template.hxx
 include/simgear/structure/event_mgr.hxx
 include/simgear/structure/exception.hxx
+include/simgear/structure/function_list.hxx
 include/simgear/structure/intern.hxx
 include/simgear/structure/map.hxx
 include/simgear/structure/singleton.hpp

@@ -278,6 +278,7 @@ share/locale/ml/LC_MESSAGES/vinagre.mo
 share/locale/mr/LC_MESSAGES/vinagre.mo
 share/locale/ms/LC_MESSAGES/vinagre.mo
 share/locale/nb/LC_MESSAGES/vinagre.mo
+share/locale/ne/LC_MESSAGES/vinagre.mo
 share/locale/nl/LC_MESSAGES/vinagre.mo
 share/locale/nn/LC_MESSAGES/vinagre.mo
 share/locale/oc/LC_MESSAGES/vinagre.mo
@@ -310,89 +311,3 @@ share/mime/packages/vinagre-mime.xml
 %%TELEPATHY%%share/telepathy/clients/Vinagre.client
 %%DATADIR%%/vinagre-ui.xml
 %%DATADIR%%/vinagre.ui
-@dirrm %%DATADIR%%
-%%TELEPATHY%%@dirrmtry share/telepathy/clients
-%%TELEPATHY%%@dirrmtry share/telepathy
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_CN/vinagre/figures
-@dirrm share/help/zh_CN/vinagre
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sl/vinagre/figures
-@dirrm share/help/sl/vinagre
-@dirrmtry share/help/sl
-@dirrm share/help/ru/vinagre/figures
-@dirrm share/help/ru/vinagre
-@dirrmtry share/help/ru
-@dirrm share/help/pt_BR/vinagre/figures
-@dirrm share/help/pt_BR/vinagre
-@dirrmtry share/help/pt_BR
-@dirrm share/help/lv/vinagre/figures
-@dirrm share/help/lv/vinagre
-@dirrmtry share/help/lv
-@dirrm share/help/id/vinagre/figures
-@dirrm share/help/id/vinagre
-@dirrmtry share/help/id
-@dirrm share/help/hu/vinagre/figures
-@dirrm share/help/hu/vinagre
-@dirrmtry share/help/hu
-@dirrm share/help/gl/vinagre/figures
-@dirrm share/help/gl/vinagre
-@dirrmtry share/help/gl
-@dirrm share/help/fr/vinagre/figures
-@dirrm share/help/fr/vinagre
-@dirrmtry share/help/fr
-@dirrm share/help/fa/vinagre/figures
-@dirrm share/help/fa/vinagre
-@dirrmtry share/help/fa
-@dirrm share/help/eu/vinagre/figures
-@dirrm share/help/eu/vinagre
-@dirrmtry share/help/eu
-@dirrm share/help/es/vinagre/figures
-@dirrm share/help/es/vinagre
-@dirrmtry share/help/es
-@dirrm share/help/el/vinagre/figures
-@dirrm share/help/el/vinagre
-@dirrmtry share/help/el
-@dirrm share/help/de/vinagre/figures
-@dirrm share/help/de/vinagre
-@dirrmtry share/help/de
-@dirrm share/help/cs/vinagre/figures
-@dirrm share/help/cs/vinagre
-@dirrmtry share/help/cs
-@dirrm share/help/C/vinagre/figures
-@dirrm share/help/C/vinagre
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/appdata
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

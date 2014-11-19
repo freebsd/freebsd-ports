@@ -1,0 +1,10 @@
+@unexec if [ -d %%WEBAPPS%%/subsonic ]; then rm -rf %%WEBAPPS%%/subsonic; fi
+@unexec test -d %%SUBSONIC_HOME%% && (echo "Configuration information and database saved." && echo "If you you are permanently uninstalling this package" && echo "please remove %%SUBSONIC_HOME%% and its contents manually.")
+%%FFMPEG%%@exec ln -sf %%PREFIX%%/bin/ffmpeg %%SUBSONIC_HOME%%/transcode/ffmpeg
+%%FLAC%%@exec ln -sf %%PREFIX%%/bin/ffmpeg %%SUBSONIC_HOME%%/transcode/flac
+%%LAME%%@exec ln -sf %%PREFIX%%/bin/lame %%SUBSONIC_HOME%%/transcode/lame
+%%FFMPEG%%@unexec rm -f %%SUBSONIC_HOME%%/transcode/ffmpeg
+%%FLAC%%@unexec rm -f %%SUBSONIC_HOME%%/transcode/flac
+%%LAME%%@unexec rm -f %%SUBSONIC_HOME%%/transcode/lame
+@dir %%SUBSONIC_HOME%%/transcode
+@dir %%SUBSONIC_HOME%%

@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/misc/gnome-user-docs/Makefile 19758 2014-06-25 09:20:54Z gusi $
+#   $MCom: ports/trunk/misc/gnome-user-docs/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gnome-user-docs
-PORTVERSION=	3.12.2
+PORTVERSION=	3.14.0
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,6 +15,6 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 GNU_CONFIGURE=	yes
 USES=		gettext:build gmake pathfix tar:xz
-USE_GNOME=	gnomeprefix gnomehier libxml2:build
+USE_GNOME=	gnomeprefix libxml2:build
 
 .include <bsd.port.mk>

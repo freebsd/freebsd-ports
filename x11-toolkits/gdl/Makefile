@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11-toolkits/gdl/Makefile 19868 2014-09-14 13:50:26Z kwm $
+#   $MCom: ports/trunk/x11-toolkits/gdl/Makefile 19868 2014-09-14 13:50:26Z kwm $
 
 PORTNAME=	gdl
 PORTVERSION=	3.12.0
@@ -15,7 +15,7 @@ COMMENT=	Components intended to be shared between GNOME development tools
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	gnomeprefix gtk30 intltool
+USE_GNOME=	gnomeprefix gtk30 intlhack
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

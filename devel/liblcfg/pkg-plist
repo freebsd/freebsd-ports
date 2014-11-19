@@ -5,5 +5,3 @@ lib/liblcfg.a
 lib/liblcfg.so
 lib/liblcfg.so.1
 lib/liblcfg.so.1.0.0
-@dirrm include/lcfgx
-@dirrm include/lcfg

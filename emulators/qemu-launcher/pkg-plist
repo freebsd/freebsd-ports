@@ -12,14 +12,3 @@ share/locale/lt/LC_MESSAGES/qemu-launcher.mo
 %%DATADIR%%/icons/hicolor/scalable/apps/qemu-launcher.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/qemu-launcher.png
 %%DATADIR%%/icons/hicolor/48x48/apps/qemu-launcher.png
-@dirrm %%DATADIR%%/pixmaps/
-@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
-@dirrm %%DATADIR%%/icons/hicolor/scalable/
-@dirrm %%DATADIR%%/icons/hicolor/16x16/apps
-@dirrm %%DATADIR%%/icons/hicolor/16x16/
-@dirrm %%DATADIR%%/icons/hicolor/48x48/apps
-@dirrm %%DATADIR%%/icons/hicolor/48x48/
-@dirrm %%DATADIR%%/icons/hicolor/
-@dirrm %%DATADIR%%/icons/
-@dirrm %%DATADIR%%/doc/
-@dirrm %%DATADIR%%

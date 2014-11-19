@@ -39,7 +39,7 @@ OPTIONS_DEFAULT=PYTHON
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2
+USES+=		python:2
 PLIST_SUB+=	PYTHON=""
 .else
 PLIST_SUB+=	PYTHON="@comment "

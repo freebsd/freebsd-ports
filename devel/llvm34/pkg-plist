@@ -977,37 +977,3 @@ llvm%%LLVM_SUFFIX%%/lib/libLTO.so
 %%PORTDOCS%%%%DOCSDIR%%/html/websupport.js
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.html
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.txt
-@dirrm llvm%%LLVM_SUFFIX%%/lib
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Transforms
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Target
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/TableGen
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Support
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Option
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Object
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/MC/MCParser
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/MC
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/LTO
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/IRReader
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/IR
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Config
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/PBQP/Heuristics
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/PBQP
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Bitcode
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Assembly
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/Analysis
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm/ADT
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm-c/Transforms
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm-c
-@dirrm llvm%%LLVM_SUFFIX%%/include/llvm
-@dirrm llvm%%LLVM_SUFFIX%%/include
-@dirrm llvm%%LLVM_SUFFIX%%/bin
-@dirrm llvm%%LLVM_SUFFIX%%
-%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%
-%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/formats
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

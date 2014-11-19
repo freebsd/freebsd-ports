@@ -58,8 +58,4 @@ beanie/roff/payslip.tmac
 beanie/roff/porder.tmac
 beanie/roff/sharecert.tmac
 beanie/roff/statement.tmac
-@exec mkdir -p %D/beanie/tmp
-@dirrm beanie/tmp
-@dirrm beanie/roff
-@dirrm beanie/bin
-@dirrm beanie
+@dir beanie/tmp

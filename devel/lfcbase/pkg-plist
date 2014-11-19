@@ -36,4 +36,3 @@ lib/liblfcbase.a
 lib/liblfcbase.so
 lib/liblfcbase.so.1
 lib/liblfcbase.so.1.0.0
-@dirrm include/lfcbase

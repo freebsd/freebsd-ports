@@ -7,7 +7,3 @@
 %%PERL5_MAN3%%/Sub::Exporter::Cookbook.3.gz
 %%PERL5_MAN3%%/Sub::Exporter::Tutorial.3.gz
 %%PERL5_MAN3%%/Sub::Exporter::Util.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
-@dirrmtry %%SITE_PERL%%/Sub/Exporter
-@dirrmtry %%SITE_PERL%%/Sub

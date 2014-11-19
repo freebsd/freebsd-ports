@@ -3,4 +3,3 @@ share/scim/icons/Hanja.png
 share/scim/tables/Hangul.bin
 share/scim/tables/HangulRomaja.bin
 share/scim/tables/Hanja.bin
-@dirrmtry share/scim/tables

@@ -35,5 +35,3 @@ share/kde4/services/kdevphpunitprovider.desktop
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevphp.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/kdevphp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevphp.mo
-@dirrm share/apps/kdevphpsupport
-@dirrmtry share/apps/kdevappwizard/templates

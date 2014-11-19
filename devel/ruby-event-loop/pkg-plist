@@ -4,4 +4,3 @@
 %%RUBY_SITELIBDIR%%/event-loop/io.rb
 %%RUBY_SITELIBDIR%%/event-loop/signal-system.rb
 %%RUBY_SITELIBDIR%%/event-loop/timer.rb
-@dirrm %%RUBY_SITELIBDIR%%/event-loop

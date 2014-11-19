@@ -13,7 +13,5 @@ bin/yed
 %%DATADIR%%/lib/imageio-thumbsdb.jar
 %%DATADIR%%/lib/imageio-tiff.jar
 %%DATADIR%%/lib/vectorgraphics.jar
-@dirrm %%DATADIR%%/lib
 %%DATADIR%%/license.html
 %%DATADIR%%/yed.jar
-@dirrm %%DATADIR%%

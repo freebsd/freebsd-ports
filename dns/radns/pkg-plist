@@ -3,4 +3,3 @@ bin/radns
 etc/radns/dhclient-exit-hooks
 etc/radns/radns-script
 man/man8/radns.8.gz
-@dirrm etc/radns

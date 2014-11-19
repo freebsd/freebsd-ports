@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	msmith
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI Ports Collection management tool
 
+DEPRECATED=	Does not work with tcl/tk 8.4+, does not support pkgng
+EXPIRATION_DATE=	2014-12-06
+
 USES=	tk:build
 
 .include <bsd.port.pre.mk>

@@ -12,11 +12,3 @@ share/pixmaps/raine.png
 %%DATADIR%%/hiscore.dat
 %%DATADIR%%/roms/.keep_me
 %%DATADIR%%/scripts/raine/.keep_me
-@dirrm %%DATADIR%%/scripts/raine
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/roms
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/emudx
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%/artwork
-@dirrm %%DATADIR%%

@@ -11,4 +11,3 @@ include/libiberty/safe-ctype.h
 include/libiberty/sort.h
 include/libiberty/splay-tree.h
 lib/libiberty.a
-@dirrm include/libiberty

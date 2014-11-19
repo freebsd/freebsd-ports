@@ -190,16 +190,3 @@ share/locale/zh_CN/LC_MESSAGES/libsocialweb.mo
 share/locale/zh_TW/LC_MESSAGES/libsocialweb.mo
 share/vala/vapi/libsocialweb-client.deps
 share/vala/vapi/libsocialweb-client.vapi
-@dirrm share/libsocialweb/services
-@dirrm share/libsocialweb
-@dirrm share/gtk-doc/html/libsocialweb
-@dirrm share/gtk-doc/html/libsocialweb-dbus
-@dirrm share/gtk-doc/html/libsocialweb-client
-@dirrm lib/libsocialweb/services
-@dirrm lib/libsocialweb
-@dirrm include/libsocialweb/libsocialweb
-@dirrm include/libsocialweb/libsocialweb-keystore
-@dirrm include/libsocialweb/libsocialweb-keyfob
-@dirrm include/libsocialweb/libsocialweb-client
-@dirrm include/libsocialweb/interfaces
-@dirrm include/libsocialweb

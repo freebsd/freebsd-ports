@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/tactics/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source tactical and strategic RPG
 
 LICENSE=	GPLv2

@@ -24,7 +24,3 @@ share/vi/tcl/errors.tcl
 share/vi/tcl/gnats.tcl
 share/vi/tcl/mailprocs.tcl
 share/vi/tcl/wc.tcl
-@dirrm share/vi/catalog
-@dirrm share/vi/perl
-@dirrm share/vi/tcl
-@dirrm share/vi

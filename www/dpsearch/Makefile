@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source search engine for Internet and Intranet sites
 
 BROKEN=		Does not link
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-11-26
 
 USE_LDCONFIG=	yes
 USES=		gmake tar:bzip2

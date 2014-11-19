@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ReadBackwards/.packlist
 %%SITE_PERL%%/File/ReadBackwards.pm
 %%PERL5_MAN3%%/File::ReadBackwards.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ReadBackwards
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

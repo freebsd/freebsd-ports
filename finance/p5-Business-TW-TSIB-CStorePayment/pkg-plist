@@ -2,11 +2,3 @@
 %%SITE_PERL%%/Business/TW/TSIB/CStorePayment.pm
 %%SITE_PERL%%/Business/TW/TSIB/CStorePayment/Entry.pm
 %%PERL5_MAN3%%/Business::TW::TSIB::CStorePayment.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW/TSIB/CStorePayment
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW/TSIB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business/TW/TSIB/CStorePayment
-@dirrmtry %%SITE_PERL%%/Business/TW/TSIB
-@dirrmtry %%SITE_PERL%%/Business/TW
-@dirrmtry %%SITE_PERL%%/Business

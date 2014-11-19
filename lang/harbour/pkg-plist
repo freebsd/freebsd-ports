@@ -296,6 +296,3 @@ lib/libharbour.so
 lib/libharbour.so.3.0
 lib/libharbour.so.3.0.0
 etc/harbour/hb-charmap.def
-@dirrm include/harbour
-@dirrm lib/harbour
-@dirrm etc/harbour

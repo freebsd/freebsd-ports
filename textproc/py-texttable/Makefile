@@ -7,7 +7,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	http://foutaise.org/code/texttable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Module for creating simple ASCII tables
 
 USE_PYTHON=	yes

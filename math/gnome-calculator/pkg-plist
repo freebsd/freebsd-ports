@@ -1,9 +1,12 @@
 bin/gcalccmd
 bin/gnome-calculator
+libexec/gnome-calculator-search-provider
 man/man1/gcalccmd.1.gz
 man/man1/gnome-calculator.1.gz
 share/appdata/gnome-calculator.appdata.xml
 share/applications/gnome-calculator.desktop
+share/dbus-1/services/org.gnome.Calculator.SearchProvider.service
+share/gnome-shell/search-providers/gnome-calculator-search-provider.ini
 share/help/C/gnome-calculator/absolute.page
 share/help/C/gnome-calculator/base.page
 share/help/C/gnome-calculator/boolean.page
@@ -781,7 +784,6 @@ share/locale/el/LC_MESSAGES/gnome-calculator.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-calculator.mo
 share/locale/en_CA/LC_MESSAGES/gnome-calculator.mo
 share/locale/en_GB/LC_MESSAGES/gnome-calculator.mo
-share/locale/en_US/LC_MESSAGES/gnome-calculator.mo
 share/locale/eo/LC_MESSAGES/gnome-calculator.mo
 share/locale/es/LC_MESSAGES/gnome-calculator.mo
 share/locale/et/LC_MESSAGES/gnome-calculator.mo
@@ -850,85 +852,3 @@ share/locale/xh/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-calculator.mo
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
-@dirrm share/help/zh_TW/gnome-calculator/figures
-@dirrm share/help/zh_TW/gnome-calculator
-@dirrmtry share/help/zh_TW
-@dirrm share/help/zh_HK/gnome-calculator/figures
-@dirrm share/help/zh_HK/gnome-calculator
-@dirrmtry share/help/zh_HK
-@dirrm share/help/zh_CN/gnome-calculator/figures
-@dirrm share/help/zh_CN/gnome-calculator
-@dirrmtry share/help/zh_CN
-@dirrm share/help/te/gnome-calculator/figures
-@dirrm share/help/te/gnome-calculator
-@dirrmtry share/help/te
-@dirrm share/help/sv/gnome-calculator/figures
-@dirrm share/help/sv/gnome-calculator
-@dirrmtry share/help/sv
-@dirrm share/help/sl/gnome-calculator/figures
-@dirrm share/help/sl/gnome-calculator
-@dirrmtry share/help/sl
-@dirrm share/help/ru/gnome-calculator/figures
-@dirrm share/help/ru/gnome-calculator
-@dirrmtry share/help/ru
-@dirrm share/help/ro/gnome-calculator/figures
-@dirrm share/help/ro/gnome-calculator
-@dirrmtry share/help/ro
-@dirrm share/help/pt_BR/gnome-calculator/figures
-@dirrm share/help/pt_BR/gnome-calculator
-@dirrmtry share/help/pt_BR
-@dirrm share/help/oc/gnome-calculator/figures
-@dirrm share/help/oc/gnome-calculator
-@dirrmtry share/help/oc
-@dirrm share/help/lv/gnome-calculator/figures
-@dirrm share/help/lv/gnome-calculator
-@dirrmtry share/help/lv
-@dirrm share/help/ko/gnome-calculator/figures
-@dirrm share/help/ko/gnome-calculator
-@dirrmtry share/help/ko
-@dirrm share/help/ja/gnome-calculator/figures
-@dirrm share/help/ja/gnome-calculator
-@dirrmtry share/help/ja
-@dirrm share/help/it/gnome-calculator/figures
-@dirrm share/help/it/gnome-calculator
-@dirrmtry share/help/it
-@dirrm share/help/hu/gnome-calculator/figures
-@dirrm share/help/hu/gnome-calculator
-@dirrmtry share/help/hu
-@dirrm share/help/gl/gnome-calculator/figures
-@dirrm share/help/gl/gnome-calculator
-@dirrmtry share/help/gl
-@dirrm share/help/fr/gnome-calculator/figures
-@dirrm share/help/fr/gnome-calculator
-@dirrmtry share/help/fr
-@dirrm share/help/fi/gnome-calculator/figures
-@dirrm share/help/fi/gnome-calculator
-@dirrmtry share/help/fi
-@dirrm share/help/eu/gnome-calculator/figures
-@dirrm share/help/eu/gnome-calculator
-@dirrmtry share/help/eu
-@dirrm share/help/es/gnome-calculator/figures
-@dirrm share/help/es/gnome-calculator
-@dirrmtry share/help/es
-@dirrm share/help/el/gnome-calculator/figures
-@dirrm share/help/el/gnome-calculator
-@dirrmtry share/help/el
-@dirrm share/help/de/gnome-calculator/figures
-@dirrm share/help/de/gnome-calculator
-@dirrmtry share/help/de
-@dirrm share/help/cs/gnome-calculator/figures
-@dirrm share/help/cs/gnome-calculator
-@dirrmtry share/help/cs
-@dirrm share/help/ca/gnome-calculator/figures
-@dirrm share/help/ca/gnome-calculator
-@dirrmtry share/help/ca
-@dirrm share/help/bg/gnome-calculator/figures
-@dirrm share/help/bg/gnome-calculator
-@dirrmtry share/help/bg
-@dirrm share/help/C/gnome-calculator/figures
-@dirrm share/help/C/gnome-calculator
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/appdata

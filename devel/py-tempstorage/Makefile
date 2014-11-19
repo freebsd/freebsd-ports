@@ -16,9 +16,7 @@ LICENSE=	ZPL21
 RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=3.9.0:${PORTSDIR}/databases/zodb3 \
 		${PYTHON_PKGNAMEPREFIX}zope.testing>0:${PORTSDIR}/devel/py-zope.testing
 
-USES=		zip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

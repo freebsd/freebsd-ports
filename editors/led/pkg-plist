@@ -13,7 +13,3 @@ lib/led/modules/perlapi.so
 %%DATADIR%%/syntax/sh
 %%DATADIR%%/syntax/syntax
 %%DATADIR%%/syntax/tex
-@dirrm %%DATADIR%%/syntax
-@dirrm %%DATADIR%%
-@dirrm lib/led/modules
-@dirrm lib/led

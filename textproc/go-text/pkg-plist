@@ -11,14 +11,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/mc/mc.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/wrap.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/wrap_test.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/mc
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/colwriter
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/github.com/kr
-@dirrmtry %%GO_SRCDIR%%/github.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry %%GO_LIBDIR%%/github.com/kr
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

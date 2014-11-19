@@ -9,10 +9,10 @@ MASTER_SITES=	http://www.magickwand.org/download/php/
 PKGNAMEPREFIX=	php-
 DISTNAME=	MagickWandForPHP-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP extension to manipulate images
 
-LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 
 USES=		pkgconfig
 USE_PHP=	yes

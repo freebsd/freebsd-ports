@@ -6,7 +6,3 @@ bin/package-stash-conflicts
 %%SITE_PERL%%/Package/Stash/PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash/.packlist
 man/man1/package-stash-conflicts.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package
-@dirrmtry %%SITE_PERL%%/Package/Stash
-@dirrmtry %%SITE_PERL%%/Package

@@ -117,16 +117,3 @@ share/applications/ggobi.desktop
 %%DATADIR%%/plugins/ggvis/plugin.so.0.0.0
 %%DATADIR%%/share/colorschemes.xml
 share/pixmaps/ggobi.png
-@dirrm etc/xdg/ggobi
-@dirrm include/ggobi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/plugins/DataViewer
-@dirrm %%DATADIR%%/plugins/DescribeDisplay
-@dirrm %%DATADIR%%/plugins/GraphAction
-@dirrm %%DATADIR%%/plugins/GraphLayout
-@dirrm %%DATADIR%%/plugins/VarCloud
-@dirrm %%DATADIR%%/plugins/ggvis
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/share
-@dirrm %%DATADIR%%

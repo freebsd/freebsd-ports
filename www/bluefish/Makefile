@@ -3,6 +3,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 		http://bluefish.mrball.net/stable/source/ \
@@ -14,8 +15,7 @@ COMMENT=	HTML editor designed for the experienced web designer
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libenchant.so:${PORTSDIR}/textproc/enchant \
-		libgucharmap.so:${PORTSDIR}/deskutils/gucharmap
+		libenchant.so:${PORTSDIR}/textproc/enchant
 
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

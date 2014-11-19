@@ -1,22 +1,23 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/colord-gtk/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#    $MCom: ports/trunk/graphics/colord-gtk/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	colord-gtk
 PORTVERSION=	0.1.25
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
 
+BUILD_DEPENDS=	colord>=0.1.20:${PORTSDIR}/graphics/colord
 LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
-USE_GNOME=	gnomehier gtk30 intlhack introspection:build
+USE_GNOME=	gtk30 intlhack introspection:build
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes

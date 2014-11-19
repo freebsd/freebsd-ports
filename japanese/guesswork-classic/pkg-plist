@@ -25,18 +25,3 @@
 %%DATADIR%%/test/AllTests.php
 %%DATADIR%%/test/ControllerTest.php
 %%DATADIR%%/test/ValidatorTest.php
-@dirrm %%EXAMPLESDIR%%/examples/mailform
-@dirrm %%EXAMPLESDIR%%/examples
-@dirrm %%EXAMPLESDIR%%/public_html/mailform
-@dirrm %%EXAMPLESDIR%%/public_html
-@dirrm %%EXAMPLESDIR%%/smarty/templates/mailform
-@dirrm %%EXAMPLESDIR%%/smarty/templates
-@dirrm %%EXAMPLESDIR%%/smarty/templates_c
-@dirrm %%EXAMPLESDIR%%/smarty
-@dirrm %%DATADIR%%/lib/Guesswork/plugins
-@dirrm %%DATADIR%%/lib/Guesswork/templates
-@dirrm %%DATADIR%%/lib/Guesswork
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/test
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%

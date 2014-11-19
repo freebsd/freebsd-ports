@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/graphics/eog/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/trunk/graphics/eog/Makefile 19975 2014-10-16 10:47:01Z gusi $
 
 PORTNAME=	eog
-PORTVERSION=	3.12.2
+PORTVERSION=	3.14.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,7 +26,7 @@ USE_GNOME=	gnomeprefix intlhack librsvg2 gtk30 gnomedesktop3 \
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.eog.enums.xml \

@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}4
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba/stable samba/rc
@@ -64,8 +64,7 @@ DESTDIRNAME=		--destdir
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
-USE_PYTHON=		2
-USES=			shebangfix compiler perl5 pkgconfig iconv readline cpe
+USES=			shebangfix compiler perl5 pkgconfig python:2 iconv readline cpe
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 WAF_TOOL=		buildtools/bin/waf
@@ -136,9 +135,8 @@ DEVELOPER_DESC=		With development support
 MANPAGES_DESC=		Build manpages from DOCBOOK templates
 
 OPTIONS_SINGLE=		DNS
-OPTIONS_SINGLE_DNS=	NSUPDATE BIND98 BIND99
+OPTIONS_SINGLE_DNS=	NSUPDATE BIND99
 
-BIND98_DESC=		Use bind98 as a DNS server frontend
 BIND99_DESC=		Use bind99 as a DNS server frontend
 NSUPDATE_DESC=		Use internal DNS with NSUPDATE utility
 OPTIONS_DEFAULT+=	NSUPDATE
@@ -163,10 +161,7 @@ CONFIGURE_ARGS+=	\
 CFLAGS+=		-fno-omit-frame-pointer
 .endif
 
-.if ${PORT_OPTIONS:MBIND98}
-RUN_DEPENDS+=		bind98>=9.8.0.0:${PORTSDIR}/dns/bind98
-SUB_LIST+=		NSUPDATE="@comment "
-.elif ${PORT_OPTIONS:MBIND99}
+.if ${PORT_OPTIONS:MBIND99}
 RUN_DEPENDS+=		bind99>=9.9.0.0:${PORTSDIR}/dns/bind99
 SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MNSUPDATE}

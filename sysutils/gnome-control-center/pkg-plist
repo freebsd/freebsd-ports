@@ -320,29 +320,3 @@ share/sounds/gnome/default/alerts/bark.ogg
 share/sounds/gnome/default/alerts/drip.ogg
 share/sounds/gnome/default/alerts/glass.ogg
 share/sounds/gnome/default/alerts/sonar.ogg
-@dirrmtry share/sounds/gnome/default/alerts
-@dirrmtry share/sounds/gnome/default
-@dirrmtry share/sounds/gnome
-@dirrmtry share/pixmaps/faces
-@dirrmtry share/locale/ilo/LC_MESSAGES
-@dirrmtry share/locale/ilo
-@dirrmtry share/gnome-shell/search-providers
-@dirrmtry share/gnome-shell
-@dirrmtry %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%/icons/hicolor/48x48/devices
-@dirrmtry %%DATADIR%%/icons/hicolor/48x48
-@dirrmtry %%DATADIR%%/icons/hicolor/32x32/status
-@dirrmtry %%DATADIR%%/icons/hicolor/32x32/devices
-@dirrmtry %%DATADIR%%/icons/hicolor/32x32
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24/status
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24/devices
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22/status
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16/status
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16/devices
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16
-@dirrmtry %%DATADIR%%/icons/hicolor
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%/datetime

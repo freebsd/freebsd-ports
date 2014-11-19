@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/sysutils/tracker/Makefile 19954 2014-10-15 10:03:57Z kwm $
+#    $MCom: ports/trunk/sysutils/tracker/Makefile 19993 2014-10-18 21:35:47Z gusi $
 
 PORTNAME=	tracker
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -56,7 +56,7 @@ GLIB_SCHEMAS=	org.freedesktop.Tracker.DB.gschema.xml \
 		org.freedesktop.Tracker.gschema.xml
 
 OPTIONS_DEFINE=		AUDIO_MINERS DOCUMENT_MINERS GRAPHIC_MINERS WEB_MINERS
-OPTIONS_DEFAULT=	AUDIO_MINERS DOCUMENT_MINERS GRAPHIC_MINER
+OPTIONS_DEFAULT=	AUDIO_MINERS DOCUMENT_MINERS GRAPHIC_MINERS
 WEB_MINERS_DESC=	Support for Firefox, Thunderbird and Evolution
 AUDIO_MINERS_DESC=	Support for audio files
 DOCUMENT_MINERS_DESC=	Support for some sort of documents (pdf, ps, xps, office)

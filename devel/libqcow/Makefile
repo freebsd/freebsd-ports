@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libqcow
-DISTVERSION=	alpha-20140729
+DISTVERSION=	alpha-20141021
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSSzlxcHFxRC0zYTA/ \
 		LOCAL/antoine

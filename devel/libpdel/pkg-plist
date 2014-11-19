@@ -519,15 +519,3 @@ man/man3/uroute_get_netmask.3.gz
 man/man3/uroute_print.3.gz
 man/man3/uroute_set_flags.3.gz
 man/man3/valog.3.gz
-@dirrm include/pdel/util
-@dirrm include/pdel/tmpl
-@dirrm include/pdel/sys
-@dirrm include/pdel/structs/type
-@dirrm include/pdel/structs
-@dirrm include/pdel/ppp
-@dirrm include/pdel/net
-@dirrm include/pdel/io
-@dirrm include/pdel/http/servlet
-@dirrm include/pdel/http
-@dirrm include/pdel/config
-@dirrm include/pdel

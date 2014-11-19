@@ -35,7 +35,3 @@ share/gtk-doc/html/libiptcdata/libiptcdata-utils.html
 share/gtk-doc/html/libiptcdata/right.png
 share/gtk-doc/html/libiptcdata/style.css
 share/gtk-doc/html/libiptcdata/up.png
-@dirrm share/gtk-doc/html/libiptcdata
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/libiptcdata

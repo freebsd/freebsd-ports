@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Business/CreditCard.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/CreditCard/.packlist
 %%PERL5_MAN3%%/Business::CreditCard.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/CreditCard
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business

@@ -4,6 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/String/bench.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/LRC/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/LRC/LRC.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/LRC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/String

@@ -6,4 +6,3 @@
 %%GUICORE%%bin/mldonkey_previewer
 %%GUICORE%%bin/mlnet+gui
 %%GUI%%bin/mlgui
-%%CORE%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

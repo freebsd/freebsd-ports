@@ -573,10 +573,3 @@
 %%DATADIR%%/x6300.html
 %%DATADIR%%/x75.html
 %%DATADIR%%/x959.html
-@dirrm %%DATADIR%%/tutorial
-@dirrm %%DATADIR%%/pics
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/equations
-@dirrm %%DATADIR%%/common
-@dirrm %%DATADIR%%
-@dirrmtry share/qtiplot

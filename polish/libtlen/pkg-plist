@@ -15,9 +15,7 @@ include/libtlen/xmltok_impl.h
 lib/libtlen.a
 lib/libtlen.so
 lib/libtlen.so.1
-@dirrm include/libtlen
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/libtlen.css
 %%PORTDOCS%%%%DOCSDIR%%/libtlen.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

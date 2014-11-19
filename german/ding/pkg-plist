@@ -4,4 +4,3 @@ man/man1/ding.1.gz
 %%DATADIR%%/ding.desktop
 %%DATADIR%%/de_ch-en.txt
 %%DATADIR%%/de-en.txt
-@dirrm share/ding

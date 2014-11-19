@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Git/Sub.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Sub/.packlist
 %%PERL5_MAN3%%/Git::Sub.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Sub
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
-@dirrmtry %%SITE_PERL%%/Git

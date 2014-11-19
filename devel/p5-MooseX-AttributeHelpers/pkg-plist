@@ -61,13 +61,3 @@
 %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Number.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeHelpers/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeHelpers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Collection
-@dirrm %%SITE_PERL%%/MooseX/AttributeHelpers/Trait
-@dirrm %%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider
-@dirrm %%SITE_PERL%%/MooseX/AttributeHelpers/Meta/Method
-@dirrm %%SITE_PERL%%/MooseX/AttributeHelpers/Meta
-@dirrm %%SITE_PERL%%/MooseX/AttributeHelpers/Collection
-@dirrm %%SITE_PERL%%/MooseX/AttributeHelpers
-@dirrmtry %%SITE_PERL%%/MooseX

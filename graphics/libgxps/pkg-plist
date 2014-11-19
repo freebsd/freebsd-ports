@@ -35,5 +35,3 @@ libdata/pkgconfig/libgxps.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-@dirrm include/libgxps
-@dirrm %%DOCSDIR%%

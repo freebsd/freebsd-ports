@@ -113,8 +113,3 @@ libdata/pkgconfig/libming.pc
 %%PORTDOCS%%%%DOCSDIR%%/util/TIPS
 %%PORTDOCS%%%%DOCSDIR%%/util/TODO
 %%PORTDOCS%%%%DOCSDIR%%/util/swftoperl.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/util
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/ming/blocks
-@dirrm include/ming/util
-@dirrm include/ming

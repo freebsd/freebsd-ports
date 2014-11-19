@@ -15,5 +15,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var/games
 
 .include <bsd.port.mk>

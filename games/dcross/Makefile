@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 DIST_SUBDIR=	python
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unconventional falling block game
 
 LICENSE=	GPLv2

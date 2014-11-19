@@ -103,28 +103,28 @@ lib/rhythmbox/plugins/audiocd/audiocd.plugin
 lib/rhythmbox/plugins/audiocd/libaudiocd.so
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.plugin
 lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
-%%PYTHON%%lib/rhythmbox/plugins/context/AlbumTab.py
-%%PYTHON%%lib/rhythmbox/plugins/context/ArtistTab.py
-%%PYTHON%%lib/rhythmbox/plugins/context/ContextView.py
-%%PYTHON%%lib/rhythmbox/plugins/context/LastFM.py
-%%PYTHON%%lib/rhythmbox/plugins/context/LinksTab.py
-%%PYTHON%%lib/rhythmbox/plugins/context/LyricsTab.py
-%%PYTHON%%lib/rhythmbox/plugins/context/context.plugin
-%%PYTHON%%lib/rhythmbox/plugins/context/context.py
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/AlbumTab.cpython-%%PYTVER%%.pyc
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/AlbumTab.cpython-%%PYTVER%%.pyo
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/ArtistTab.cpython-%%PYTVER%%.pyc
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/ArtistTab.cpython-%%PYTVER%%.pyo
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/ContextView.cpython-%%PYTVER%%.pyc
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/ContextView.cpython-%%PYTVER%%.pyo
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LastFM.cpython-%%PYTVER%%.pyc
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LastFM.cpython-%%PYTVER%%.pyo
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LinksTab.cpython-%%PYTVER%%.pyc
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LinksTab.cpython-%%PYTVER%%.pyo
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LyricsTab.cpython-%%PYTVER%%.pyc
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LyricsTab.cpython-%%PYTVER%%.pyo
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/context.cpython-%%PYTVER%%.pyc
-%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/context.cpython-%%PYTVER%%.pyo
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/AlbumTab.py
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/ArtistTab.py
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/ContextView.py
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/LastFM.py
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/LinksTab.py
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/LyricsTab.py
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/context.plugin
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/context.py
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/AlbumTab.cpython-%%PYTVER%%.pyc
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/AlbumTab.cpython-%%PYTVER%%.pyo
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/ArtistTab.cpython-%%PYTVER%%.pyc
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/ArtistTab.cpython-%%PYTVER%%.pyo
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/ContextView.cpython-%%PYTVER%%.pyc
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/ContextView.cpython-%%PYTVER%%.pyo
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/LastFM.cpython-%%PYTVER%%.pyc
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/LastFM.cpython-%%PYTVER%%.pyo
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/LinksTab.cpython-%%PYTVER%%.pyc
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/LinksTab.cpython-%%PYTVER%%.pyo
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/LyricsTab.cpython-%%PYTVER%%.pyc
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/LyricsTab.cpython-%%PYTVER%%.pyo
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/context.cpython-%%PYTVER%%.pyc
+%%PYTHON%%%%WEBKIT%%lib/rhythmbox/plugins/context/__pycache__/context.cpython-%%PYTVER%%.pyo
 lib/rhythmbox/plugins/cd-recorder/cd-recorder.plugin
 lib/rhythmbox/plugins/cd-recorder/libcd-recorder.so
 %%DAAP%%lib/rhythmbox/plugins/daap/daap.plugin
@@ -229,7 +229,7 @@ lib/rhythmbox/plugins/power-manager/power-manager.plugin
 %%PYTHON%%lib/rhythmbox/plugins/rb/__pycache__/stringmatch.cpython-%%PYTVER%%.pyc
 %%PYTHON%%lib/rhythmbox/plugins/rb/__pycache__/stringmatch.cpython-%%PYTVER%%.pyo
 %%LIRC%%lib/rhythmbox/plugins/rblirc/librblirc.so
-lib/rhythmbox/plugins/rblirc/rblirc.plugin
+%%LIRC%%lib/rhythmbox/plugins/rblirc/rblirc.plugin
 %%PYTHON%%lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.plugin
 %%PYTHON%%lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.py
 %%PYTHON%%lib/rhythmbox/plugins/rbzeitgeist/__pycache__/rbzeitgeist.cpython-%%PYTVER%%.pyc
@@ -260,6 +260,7 @@ libdata/pkgconfig/rhythmbox.pc
 libexec/rhythmbox-metadata
 man/man1/rhythmbox-client.1.gz
 man/man1/rhythmbox.1.gz
+share/appdata/rhythmbox.appdata.xml
 share/applications/rhythmbox-device.desktop
 share/applications/rhythmbox.desktop
 share/dbus-1/services/org.gnome.Rhythmbox3.service
@@ -721,6 +722,7 @@ share/locale/fa/LC_MESSAGES/rhythmbox.mo
 share/locale/fi/LC_MESSAGES/rhythmbox.mo
 share/locale/fr/LC_MESSAGES/rhythmbox.mo
 share/locale/ga/LC_MESSAGES/rhythmbox.mo
+share/locale/gd/LC_MESSAGES/rhythmbox.mo
 share/locale/gl/LC_MESSAGES/rhythmbox.mo
 share/locale/gu/LC_MESSAGES/rhythmbox.mo
 share/locale/he/LC_MESSAGES/rhythmbox.mo
@@ -798,17 +800,17 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 %%DATADIR%%/plugins/audioscrobbler/Last.fm-symbolic.svg
 %%DATADIR%%/plugins/audioscrobbler/audioscrobbler-preferences.ui
 %%DATADIR%%/plugins/audioscrobbler/audioscrobbler-profile.ui
-%%PYTHON%%%%DATADIR%%/plugins/context/img/Allmusic16x16.png
-%%PYTHON%%%%DATADIR%%/plugins/context/img/Discogs16x16.png
-%%PYTHON%%%%DATADIR%%/plugins/context/img/Wikipedia16x16.png
-%%PYTHON%%%%DATADIR%%/plugins/context/img/lastfm.png
-%%PYTHON%%%%DATADIR%%/plugins/context/img/spinner.gif
-%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/album-tmpl.html
-%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/artist-tmpl.html
-%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/links-tmpl.html
-%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/loading.html
-%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/lyrics-tmpl.html
-%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/main.css
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/img/Allmusic16x16.png
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/img/Discogs16x16.png
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/img/Wikipedia16x16.png
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/img/lastfm.png
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/img/spinner.gif
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/tmpl/album-tmpl.html
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/tmpl/artist-tmpl.html
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/tmpl/links-tmpl.html
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/tmpl/loading.html
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/tmpl/lyrics-tmpl.html
+%%PYTHON%%%%WEBKIT%%%%DATADIR%%/plugins/context/tmpl/main.css
 %%DAAP%%%%DATADIR%%/plugins/daap/daap-prefs.ui
 %%DAAP%%%%DATADIR%%/plugins/daap/daap-toolbar.ui
 %%DAAP%%%%DATADIR%%/plugins/daap/remote-icon.png
@@ -849,149 +851,3 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 %%DATADIR%%/sync-dialog.ui
 %%DATADIR%%/sync-state.ui
 %%DATADIR%%/uri-new.ui
-%%PYTHON%%@dirrm %%DATADIR%%/plugins/replaygain
-%%LIRC%%@dirrm %%DATADIR%%/plugins/rblirc
-%%MTP%%@dirrm %%DATADIR%%/plugins/mtpdevice
-%%PYTHON%%@dirrm %%DATADIR%%/plugins/magnatune
-%%PYTHON%%@dirrm %%DATADIR%%/plugins/lyrics
-@dirrm %%DATADIR%%/plugins/iradio
-%%IPOD%%@dirrm %%DATADIR%%/plugins/ipod
-@dirrm %%DATADIR%%/plugins/generic-player
-@dirrm %%DATADIR%%/plugins/fmradio
-%%DAAP%%@dirrm %%DATADIR%%/plugins/daap
-%%PYTHON%%@dirrm %%DATADIR%%/plugins/context/tmpl
-%%PYTHON%%@dirrm %%DATADIR%%/plugins/context/img
-%%PYTHON%%@dirrm %%DATADIR%%/plugins/context
-@dirrm %%DATADIR%%/plugins/audioscrobbler
-@dirrm %%DATADIR%%/plugins/audiocd
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_CN/rhythmbox/figures
-@dirrm share/help/zh_CN/rhythmbox
-@dirrm share/help/uk/rhythmbox/figures
-@dirrm share/help/uk/rhythmbox
-@dirrm share/help/sv/rhythmbox/figures
-@dirrm share/help/sv/rhythmbox
-@dirrm share/help/sl/rhythmbox/figures
-@dirrm share/help/sl/rhythmbox
-@dirrm share/help/ru/rhythmbox/figures
-@dirrm share/help/ru/rhythmbox
-@dirrm share/help/ro/rhythmbox/figures
-@dirrm share/help/ro/rhythmbox
-@dirrm share/help/pt_BR/rhythmbox/figures
-@dirrm share/help/pt_BR/rhythmbox
-@dirrm share/help/pt/rhythmbox/figures
-@dirrm share/help/pt/rhythmbox
-@dirrmtry share/help/pt
-@dirrm share/help/oc/rhythmbox/figures
-@dirrm share/help/oc/rhythmbox
-@dirrm share/help/ja/rhythmbox/figures
-@dirrm share/help/ja/rhythmbox
-@dirrm share/help/it/rhythmbox/figures
-@dirrm share/help/it/rhythmbox
-@dirrm share/help/gl/rhythmbox/figures
-@dirrm share/help/gl/rhythmbox
-@dirrm share/help/fr/rhythmbox/figures
-@dirrm share/help/fr/rhythmbox
-@dirrm share/help/eu/rhythmbox/figures
-@dirrm share/help/eu/rhythmbox
-@dirrm share/help/es/rhythmbox/figures
-@dirrm share/help/es/rhythmbox
-@dirrm share/help/el/rhythmbox/figures
-@dirrm share/help/el/rhythmbox
-@dirrm share/help/de/rhythmbox/figures
-@dirrm share/help/de/rhythmbox
-@dirrm share/help/da/rhythmbox/figures
-@dirrm share/help/da/rhythmbox
-@dirrmtry share/help/da
-@dirrm share/help/cs/rhythmbox/figures
-@dirrm share/help/cs/rhythmbox
-@dirrm share/help/ca/rhythmbox/figures
-@dirrm share/help/ca/rhythmbox
-@dirrm share/help/C/rhythmbox/figures
-@dirrm share/help/C/rhythmbox
-@dirrm %%DOCSDIR%%
-@dirrm lib/rhythmbox/sample-plugins/sample-vala
-%%PYTHON%%@dirrm lib/rhythmbox/sample-plugins/sample-python/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/sample-plugins/sample-python
-@dirrm lib/rhythmbox/sample-plugins/sample
-@dirrm lib/rhythmbox/sample-plugins
-%%LIRC%%@dirrm lib/rhythmbox/plugins/rblirc
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/sendto/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/sendto
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/replaygain/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/replaygain
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/rbzeitgeist/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/rbzeitgeist
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/rb/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/rb
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/python-console/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/python-console
-@dirrm lib/rhythmbox/plugins/power-manager
-%%NOTIFY%%@dirrm lib/rhythmbox/plugins/notification
-%%MTP%%@dirrm lib/rhythmbox/plugins/mtpdevice
-@dirrm lib/rhythmbox/plugins/mpris
-@dirrm lib/rhythmbox/plugins/mmkeys
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/magnatune/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/magnatune
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/lyrics/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/lyrics
-@dirrm lib/rhythmbox/plugins/iradio
-%%IPOD%%@dirrm lib/rhythmbox/plugins/ipod
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/im-status/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/im-status
-%%GRILO%%@dirrm lib/rhythmbox/plugins/grilo
-@dirrm lib/rhythmbox/plugins/generic-player
-@dirrm lib/rhythmbox/plugins/fmradio
-@dirrm lib/rhythmbox/plugins/dbus-media-server
-%%DAAP%%@dirrm lib/rhythmbox/plugins/daap
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/context/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/context
-@dirrm lib/rhythmbox/plugins/cd-recorder
-@dirrm lib/rhythmbox/plugins/audioscrobbler
-@dirrm lib/rhythmbox/plugins/audiocd
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/artsearch/__pycache__
-%%PYTHON%%@dirrm lib/rhythmbox/plugins/artsearch
-@dirrm lib/rhythmbox/plugins
-@dirrm lib/rhythmbox
-@dirrm include/rhythmbox/widgets
-@dirrm include/rhythmbox/sources
-@dirrm include/rhythmbox/shell
-@dirrm include/rhythmbox/rhythmdb
-@dirrm include/rhythmbox/podcast
-@dirrm include/rhythmbox/plugins
-@dirrm include/rhythmbox/metadata
-@dirrm include/rhythmbox/lib/libmediaplayerid
-@dirrm include/rhythmbox/lib
-@dirrm include/rhythmbox/backends
-@dirrm include/rhythmbox

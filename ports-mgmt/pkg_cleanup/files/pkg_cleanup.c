@@ -28,7 +28,7 @@ static char		**pathv;
 static bool 	uses_pkg;
 static int		menulen=0;
 static int		helpfile=-1;
-static char		*helpfname="/tmp/pkgcleanup.XXXX";
+static char		helpfname[]="/tmp/pkgcleanup.XXXX";
 
 #ifdef OLD_DIALOG
 typedef dialogMenuItem ListItem;

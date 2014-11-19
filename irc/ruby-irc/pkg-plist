@@ -2,7 +2,6 @@
 %%RUBY_SITELIBDIR%%/irc/client.rb
 %%RUBY_SITELIBDIR%%/irc/const.rb
 %%RUBY_SITELIBDIR%%/irc/irc.rb
-@dirrm %%RUBY_SITELIBDIR%%/irc
 %%RUBY_SITELIBDIR%%/localize.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/BUGS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
@@ -17,8 +16,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/irc-client-api.doc
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/irc-lib-api.doc
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/irc-lib.doc
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/cpi/dice.cpi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/cpi/init.cpi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/cpi/omikuji.cpi
@@ -26,9 +23,6 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/cpi/syslog.cpi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/cpi/userlog.cpi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/bot.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ja/cpi
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ja/log
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ja
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cpi/dice.cpi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cpi/init.cpi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cpi/omikuji.cpi
@@ -36,6 +30,3 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cpi/syslog.cpi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cpi/userlog.cpi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bot.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cpi
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/log
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

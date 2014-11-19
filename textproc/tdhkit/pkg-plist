@@ -43,4 +43,3 @@ man/man3/libchron.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/times.html
 %%PORTDOCS%%%%DOCSDIR%%/xlcells.1.html
 %%PORTDOCS%%%%DOCSDIR%%/xlcleaner.1.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

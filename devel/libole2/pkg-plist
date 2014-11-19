@@ -21,7 +21,3 @@ share/aclocal/libole2.m4
 %%DATADIR%%/html/libole2/libole2-msolesummary.html
 %%DATADIR%%/html/libole2/r14.html
 %%DATADIR%%/html/libole2/r19.html
-@dirrm %%DATADIR%%/html/libole2
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%
-@dirrm include/libole2

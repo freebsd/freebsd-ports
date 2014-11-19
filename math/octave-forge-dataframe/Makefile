@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-dataframe
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

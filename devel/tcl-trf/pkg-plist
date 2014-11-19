@@ -28,4 +28,3 @@ man/mann/trf.n.gz
 man/mann/unstack.n.gz
 man/mann/uuencode.n.gz
 man/mann/zip.n.gz
-@dirrm lib/Trf

@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/libgnomekbd/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/x11/libgnomekbd/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libgnomekbd
 PORTVERSION=	3.6.0

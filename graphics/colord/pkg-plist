@@ -29,6 +29,7 @@ include/colord-1/colord/cd-profile.h
 include/colord-1/colord/cd-quirk.h
 include/colord-1/colord/cd-sensor-sync.h
 include/colord-1/colord/cd-sensor.h
+include/colord-1/colord/cd-spectrum.h
 include/colord-1/colord/cd-transform.h
 include/colord-1/colord/cd-version.h
 lib/colord-sensors/libcolord_sensor_argyll.a
@@ -74,6 +75,8 @@ share/color/icc/colord/SwappedRedAndGreen.icc
 share/color/icc/colord/WideGamutRGB.icc
 share/color/icc/colord/sRGB.icc
 share/color/icc/colord/x11-colors.icc
+share/colord/cmf/CIE1931-2deg-XYZ.cmf
+share/colord/cmf/CIE1964-10deg-XYZ.cmf
 share/colord/icons/color-munki-photo-ambient.svg
 share/colord/icons/color-munki-photo-attach.svg
 share/colord/icons/color-munki-photo-calibrate.svg
@@ -90,6 +93,28 @@ share/colord/icons/i1-pro-attach.svg
 share/colord/icons/spyder2-attach.svg
 share/colord/icons/spyder3-attach.svg
 share/colord/icons/spyder4-attach.svg
+share/colord/illuminant/CIE-A.sp
+share/colord/illuminant/CIE-B.sp
+share/colord/illuminant/CIE-C.sp
+share/colord/illuminant/CIE-D50.sp
+share/colord/illuminant/CIE-D55.sp
+share/colord/illuminant/CIE-D65.sp
+share/colord/illuminant/CIE-D93.sp
+share/colord/illuminant/CIE-E.sp
+share/colord/illuminant/CIE-F1.sp
+share/colord/illuminant/CIE-F10.sp
+share/colord/illuminant/CIE-F11.sp
+share/colord/illuminant/CIE-F12.sp
+share/colord/illuminant/CIE-F2.sp
+share/colord/illuminant/CIE-F3.sp
+share/colord/illuminant/CIE-F4.sp
+share/colord/illuminant/CIE-F5.sp
+share/colord/illuminant/CIE-F6.sp
+share/colord/illuminant/CIE-F7.sp
+share/colord/illuminant/CIE-F8.sp
+share/colord/illuminant/CIE-F9.sp
+share/colord/ref/CIE-1986-daylight-SPD.cmf
+share/colord/ref/CIE-TCS.sp
 share/colord/ti1/display-long.ti1
 share/colord/ti1/display-normal.ti1
 share/colord/ti1/display-short.ti1
@@ -169,43 +194,5 @@ share/locale/zh_CN/LC_MESSAGES/colord.mo
 share/locale/zh_HK/LC_MESSAGES/colord.mo
 share/locale/zh_TW/LC_MESSAGES/colord.mo
 share/polkit-1/actions/org.freedesktop.color.policy
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/nn_NO/LC_MESSAGES
-@dirrmtry share/locale/nn_NO
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/it_IT/LC_MESSAGES
-@dirrmtry share/locale/it_IT
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrmtry share/locale/da_DK/LC_MESSAGES
-@dirrmtry share/locale/da_DK
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/bg_BG/LC_MESSAGES
-@dirrmtry share/locale/bg_BG
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/colord/ti1
-@dirrm share/colord/icons
-@dirrm share/colord
-@dirrm share/color/icc/colord
-@dirrm share/color/icc
-@dirrm share/color
-@dirrm lib/colord-sensors
-@dirrm include/colord-1/colord-session
-@dirrm include/colord-1/colord
-@dirrm include/colord-1
-@cwd /
-@dirrmtry var/db/colord/icc
-@dirrmtry var/db/colord
-@cwd
+@dir /var/db/colord/icc
+@dir /var/db/colord

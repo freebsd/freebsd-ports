@@ -5,10 +5,3 @@
 %%SITE_PERL%%/Module/Starter/Plugin/InlineStore.pm
 %%SITE_PERL%%/Module/Starter/Plugin/ModuleStore.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/Plugin/DirStore/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/Plugin/DirStore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module/Starter/Plugin
-@dirrmtry %%SITE_PERL%%/Module/Starter
-@dirrmtry %%SITE_PERL%%/Module

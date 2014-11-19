@@ -14,6 +14,3 @@
 %%PERL5_MAN3%%/Exporter::Declare::Export::Variable.3.gz
 %%PERL5_MAN3%%/Exporter::Declare::Meta.3.gz
 %%PERL5_MAN3%%/Exporter::Declare::Specs.3.gz
-@dirrm %%SITE_PERL%%/Exporter/Declare/Export
-@dirrm %%SITE_PERL%%/Exporter/Declare
-@dirrmtry %%SITE_PERL%%/Exporter

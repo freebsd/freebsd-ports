@@ -9,8 +9,3 @@
 %%PERL5_MAN3%%/Test::Trap::Builder::PerlIO.3.gz
 %%PERL5_MAN3%%/Test::Trap::Builder::SystemSafe.3.gz
 %%PERL5_MAN3%%/Test::Trap::Builder::TempFile.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Trap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Trap/Builder
-@dirrm %%SITE_PERL%%/Test/Trap
-@dirrmtry %%SITE_PERL%%/Test

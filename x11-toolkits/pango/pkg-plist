@@ -129,12 +129,5 @@ share/gtk-doc/html/pango/style.css
 share/gtk-doc/html/pango/tools.html
 share/gtk-doc/html/pango/up-insensitive.png
 share/gtk-doc/html/pango/up.png
-@dirrm share/gtk-doc/html/pango
 @unexec /bin/rm %D/lib/pango/%%VERSION%%/modules.cache
-@dirrm lib/pango/%%VERSION%%/modules
-@dirrm lib/pango/%%VERSION%%
-@dirrm lib/pango
-@dirrm include/pango-1.0/pango
-@dirrm include/pango-1.0
-@dirrm etc/pango
 @exec %%LOCALBASE%%/bin/pango-querymodules --update-cache

@@ -20,18 +20,3 @@ arduino-mk/bin/ard-reset-arduino
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toneMelody/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toneMelody/pitches.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toneMelody/toneMelody.ino
-@dirrmtry arduino-mk/bin
-@dirrmtry arduino-mk
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/AnalogInOutSerial
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Blink
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/BlinkWithoutDelay/build-cli/libs/Ethernet
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/BlinkWithoutDelay/build-cli/libs
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/BlinkWithoutDelay/build-cli
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/BlinkWithoutDelay
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Fade
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/HelloWorld
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/WebServer
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/master_reader
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/toneMelody
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

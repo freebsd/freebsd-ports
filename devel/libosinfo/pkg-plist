@@ -134,16 +134,3 @@ share/gtk-doc/html/Libosinfo/up.png
 %%DATADIR%%/schemas/libosinfo.rng
 %%NLS%%share/locale/pl/LC_MESSAGES/libosinfo.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libosinfo.mo
-@dirrmtry include/libosinfo-1.0/osinfo
-@dirrmtry include/libosinfo-1.0
-@dirrmtry share/gtk-doc/html/Libosinfo
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrmtry %%DATADIR%%/db/datamaps
-@dirrmtry %%DATADIR%%/db/devices
-@dirrmtry %%DATADIR%%/db/hypervisors
-@dirrmtry %%DATADIR%%/db/install-scripts
-@dirrmtry %%DATADIR%%/db/oses
-@dirrmtry %%DATADIR%%/db
-@dirrmtry %%DATADIR%%/schemas
-@dirrmtry %%DATADIR%%

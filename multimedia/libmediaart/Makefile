@@ -1,9 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/multimedia/libmediaart/Makefile 19833 2014-08-26 15:43:46Z kwm $
+#   $MCom: ports/trunk/multimedia/libmediaart/Makefile 19950 2014-10-15 06:29:10Z gusi $
 
 PORTNAME=	libmediaart
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GNOME
 
@@ -11,8 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for handling media art
 
 BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
-		vala>=0:${PORTSDIR}/lang/vala \
-		vapigen:${PORTSDIR}/lang/vala-vapigen
+		vala>=0:${PORTSDIR}/lang/vala
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gdkpixbuf2 glib20 introspection

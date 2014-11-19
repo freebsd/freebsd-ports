@@ -18,7 +18,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/TRADEMARKS.txt
 %%PORTDOCS%%%%DOCSDIR%%/copyright.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
-@dirrm %%FONTSDIR%%
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
+@fc %%FONTSDIR%%

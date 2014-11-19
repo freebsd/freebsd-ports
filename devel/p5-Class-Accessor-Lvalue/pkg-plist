@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Class/Accessor/Lvalue/Fast.pm
 %%PERL5_MAN3%%/Class::Accessor::Lvalue.3.gz
 %%PERL5_MAN3%%/Class::Accessor::Lvalue::Fast.3.gz
-@dirrmtry %%SITE_PERL%%/Class/Accessor/Lvalue
-@dirrmtry %%SITE_PERL%%/Class/Accessor
-@dirrmtry %%SITE_PERL%%/Class

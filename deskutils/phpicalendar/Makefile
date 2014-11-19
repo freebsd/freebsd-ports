@@ -2,33 +2,49 @@
 # $FreeBSD$
 
 PORTNAME=	phpicalendar
-PORTVERSION=	2.24
-PORTREVISION=	2
+PORTVERSION=	2.4
+PORTEPOCH=	1
 CATEGORIES=	deskutils www
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+#MASTER_SITES=	SF/${PORTNAME}/files/${PORTNAME}/${PORTNAME}%202.4%20RC7
+# phpicalendar-2.4_20100615.tar.bz2
+# http://sourceforge.net/projects/phpicalendar/files/phpicalendar/phpicalendar%202.4%20RC7/phpicalendar-2.4_20100615.tar.bz2/download
+# /projects/ not /project/
+MASTER_SITES=	http://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/${PORTNAME}%202.4%20RC7/
+PKGNAMESUFFIX=	-RC7
+DISTNAME=	${PORTNAME}-${PORTVERSION}_20100615
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Webbased calendar with iCal support
 
-USES=		tar:tgz
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:bz2
 NO_BUILD=	yes
 USE_PHP=	session pcre
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/
 
-post-extract:
-	${FIND} ${WRKDIR} -name .DS_Store -delete
-	${FIND} ${WRKDIR} -name '._*' -delete
+PORTDOCS=	AUTHORS COPYING README TIMEZONES
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
-.for dir in admin calendars functions images includes languages rss templates
+	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
+	@${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php.sample
+.for dir in admin calendars functions images includes languages lib nicetitle rss templates
 	@${CP} -Rv ${WRKSRC}/${dir} ${STAGEDIR}${WWWDIR}
 .endfor
-.for f in index.php TIMEZONES error.php day.php preferences.php print.php search.php week.php month.php year.php README COPYING AUTHORS
+.for f in caldav.php config.inc.php.sample day.php default_config.php error.php index.php month.php preferences.php print.php search.php week.php year.php
 	@${CP} -v ${WRKSRC}/${f} ${STAGEDIR}${WWWDIR}
 .endfor
-	@${CP} -v ${WRKSRC}/config.inc-dist.php ${STAGEDIR}${WWWDIR}/config.inc.php.sample
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

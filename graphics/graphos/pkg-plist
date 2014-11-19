@@ -37,8 +37,3 @@ GNUstep/Local/Applications/Graphos.app/Resources/whitearrow.tiff
 GNUstep/Local/Applications/Graphos.app/Resources/x.tiff
 GNUstep/Local/Applications/Graphos.app/stamp.make
 GNUstep/Local/Tools/Graphos
-@dirrmtry GNUstep/Local/Applications/Graphos.app/Resources/PropertiesEditor.gorm
-@dirrmtry GNUstep/Local/Applications/Graphos.app/Resources/MainMenu.gorm
-@dirrmtry GNUstep/Local/Applications/Graphos.app/Resources/GRDocument.gorm
-@dirrmtry GNUstep/Local/Applications/Graphos.app/Resources
-@dirrmtry GNUstep/Local/Applications/Graphos.app

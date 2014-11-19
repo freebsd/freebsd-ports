@@ -11,6 +11,3 @@ GNUstep/Local/Applications/FTP.app/Resources/arrow_left.tiff
 GNUstep/Local/Applications/FTP.app/Resources/arrow_right.tiff
 GNUstep/Local/Applications/FTP.app/stamp.make
 GNUstep/Local/Tools/FTP
-@dirrmtry GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm
-@dirrmtry GNUstep/Local/Applications/FTP.app/Resources
-@dirrmtry GNUstep/Local/Applications/FTP.app

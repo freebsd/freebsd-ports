@@ -99,22 +99,3 @@ share/system-tools-backends-2.0/scripts/Utils/Replace.pm
 share/system-tools-backends-2.0/scripts/Utils/Report.pm
 share/system-tools-backends-2.0/scripts/Utils/Util.pm
 share/system-tools-backends-2.0/scripts/Utils/XML.pm
-@dirrm share/system-tools-backends-2.0/scripts/Utils
-@dirrm share/system-tools-backends-2.0/scripts/Users
-@dirrm share/system-tools-backends-2.0/scripts/Time
-@dirrm share/system-tools-backends-2.0/scripts/Shares
-@dirrm share/system-tools-backends-2.0/scripts/Network
-@dirrm share/system-tools-backends-2.0/scripts/Init
-@dirrm share/system-tools-backends-2.0/scripts
-@dirrm share/system-tools-backends-2.0/files
-@dirrm share/system-tools-backends-2.0
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN

@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Timer/.packlist
 %%PERL5_MAN3%%/Test::Timer.3.gz
 %%PERL5_MAN3%%/Test::Timer::TimeoutException.3.gz
-@dirrmtry %%SITE_PERL%%/Test/Timer
-@dirrmtry %%SITE_PERL%%/Test
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Timer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test

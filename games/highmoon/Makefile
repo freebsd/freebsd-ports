@@ -7,7 +7,7 @@ PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://highmoon.gerdsmeier.net/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Duel in the universe
 
 LICENSE=	GPLv2 # or later

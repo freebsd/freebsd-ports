@@ -129,6 +129,7 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/thirdparty/jit/dump.lua
 %%DATADIR%%/game/thirdparty/jit/v.lua
 %%DATADIR%%/game/thirdparty/licenses/CEF3.txt
+%%DATADIR%%/game/thirdparty/licenses/Font-Salsa-OFL.txt
 %%DATADIR%%/game/thirdparty/licenses/LuaJIT.txt
 %%DATADIR%%/game/thirdparty/licenses/SDL.txt
 %%DATADIR%%/game/thirdparty/licenses/SDL_image.txt

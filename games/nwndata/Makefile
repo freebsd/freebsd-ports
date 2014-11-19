@@ -37,6 +37,9 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/nwn
 RESTRICTED=	Distribution not allowed
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	Binary Distribution on x86 only
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 .if defined(NWN_DIAMOND)

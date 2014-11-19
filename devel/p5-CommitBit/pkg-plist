@@ -22,8 +22,3 @@
 %%SITE_PERL%%/CommitBit/Record.pm
 %%SITE_PERL%%/CommitBit/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CommitBit/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CommitBit
-@dirrmtry %%SITE_PERL%%/CommitBit/Notification
-@dirrmtry %%SITE_PERL%%/CommitBit/Model
-@dirrmtry %%SITE_PERL%%/CommitBit/Action
-@dirrmtry %%SITE_PERL%%/CommitBit

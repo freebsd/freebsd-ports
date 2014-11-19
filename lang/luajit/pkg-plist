@@ -23,6 +23,3 @@ share/luajit-%%VERSION%%/jit/dump.lua
 share/luajit-%%VERSION%%/jit/v.lua
 share/luajit-%%VERSION%%/jit/vmdef.lua
 man/man1/luajit.1.gz
-@dirrm share/luajit-%%VERSION%%/jit
-@dirrm share/luajit-%%VERSION%%
-@dirrm include/luajit-2.0

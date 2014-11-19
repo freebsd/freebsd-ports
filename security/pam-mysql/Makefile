@@ -8,7 +8,7 @@ CATEGORIES=	security databases
 MASTER_SITES=	SF/pam-mysql/pam-mysql/0.7RC1
 DISTNAME=	${PORTNAME}-0.7RC1${DISTVERSIONSUFFIX}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pam module for authenticating with MySQL
 
 USES=		libtool:keepla

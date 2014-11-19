@@ -98,7 +98,4 @@ man/man1/bdc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/KNOWN-ISSUES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm bdc/Plugins
-@dirrm bdc
 @unexec rmdir %D/bdc 2>/dev/null || echo "If you are permanently removing this port, you should do a \"rm -rf %D/bdc\" to remove files installed after doing an update. " | fmt

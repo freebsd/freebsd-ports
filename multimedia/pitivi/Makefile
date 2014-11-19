@@ -14,10 +14,9 @@ COMMENT=	Gstreamer based non-linear audio/video editor
 RUN_DEPENDS=	py*-zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
 		${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake pkgconfig python tar:bzip2
 USE_GNOME=	pygtk2
 USE_GSTREAMER=	gnonlin python good
-USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBAES}/include

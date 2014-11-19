@@ -10,5 +10,3 @@
 %%PERL5_MAN3%%/CPS::Governor.3.gz
 %%PERL5_MAN3%%/CPS::Governor::Deferred.3.gz
 %%PERL5_MAN3%%/CPS::Governor::Simple.3.gz
-@dirrm %%SITE_PERL%%/CPS/Governor
-@dirrm %%SITE_PERL%%/CPS

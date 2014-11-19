@@ -2612,32 +2612,6 @@ lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/src/algebra/xpoly.spad
 lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/src/algebra/ystream.spad
 lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/src/algebra/zerodim.spad
 lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/timestamp
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/algebra/DEPENDENTS.DAASE
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/algebra/USERS.DAASE
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/algebra
-@exec mkdir -p %D/lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/bin/.libs
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/bin/.libs
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/bin
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/include/open-axiom
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/include
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/input
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/interp
-@exec mkdir -p %D/lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/lib/.libs
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/lib/.libs
-@exec mkdir -p %D/lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/lib/graph
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/lib/graph
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/lib
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/share/hypertex/bitmaps
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/share/hypertex/pages
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/share/hypertex
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/share/msgs
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/share/texmf/tex
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/share/texmf
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/share
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/src/algebra
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/src
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/doc/help
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/doc
-@dirrm lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%
-@dirrm lib/open-axiom/%%GNU_HOST%%
-@dirrm lib/open-axiom
+@dir lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/bin/.libs
+@dir lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/lib/.libs
+@dir lib/open-axiom/%%GNU_HOST%%/%%AXIOM_VER%%/lib/graph

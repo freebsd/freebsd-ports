@@ -1,0 +1,11 @@
+--- configure.orig	2012-02-21 18:14:06 UTC
++++ configure
+@@ -2261,7 +2261,7 @@
+ 
+ 
+ eval `$PERL -V:startperl`
+-if test "${startperl:0:1}" = "#" ; then
++if test "$(echo ${startperl} | awk '{ string=substr($0, 1, 1); print string; }')" = "#" ; then
+   startperl="\\$startperl"
+ fi
+ PERL_SHEBANG=$startperl

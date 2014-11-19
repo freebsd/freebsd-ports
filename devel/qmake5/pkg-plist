@@ -20,7 +20,6 @@
 %%QT_MKSPECDIR%%/common/armcc.conf
 %%QT_MKSPECDIR%%/common/c89/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/clang-mac.conf
-%%QT_MKSPECDIR%%/common/clang-unix.conf
 %%QT_MKSPECDIR%%/common/clang.conf
 %%QT_MKSPECDIR%%/common/freebsd.conf
 %%QT_MKSPECDIR%%/common/g++-base.conf
@@ -54,7 +53,22 @@
 %%QT_MKSPECDIR%%/common/unix.conf
 %%QT_MKSPECDIR%%/common/wince/qmake.conf
 %%QT_MKSPECDIR%%/common/wince/qplatformdefs.h
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_44x44.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_480x800.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_71x71.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_large.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_medium.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_small.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_splash.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/logo_store.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/tile_iconic_medium.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/assets/tile_iconic_small.png
+%%QT_MKSPECDIR%%/common/winrt_winphone/manifests/8.0/AppxManifest.xml.in
+%%QT_MKSPECDIR%%/common/winrt_winphone/manifests/8.0/WMAppManifest.xml.in
+%%QT_MKSPECDIR%%/common/winrt_winphone/manifests/8.1/AppxManifest.xml.in
+%%QT_MKSPECDIR%%/common/winrt_winphone/manifests/8.1_wp/AppxManifest.xml.in
 %%QT_MKSPECDIR%%/common/winrt_winphone/qmake.conf
+%%QT_MKSPECDIR%%/common/winrt_winphone/qplatformdefs.h
 %%QT_MKSPECDIR%%/cygwin-g++/qmake.conf
 %%QT_MKSPECDIR%%/cygwin-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/darwin-g++/qmake.conf
@@ -73,6 +87,9 @@
 %%QT_MKSPECDIR%%/devices/linux-arm-amlogic-8726M-g++/qeglfshooks_8726m.cpp
 %%QT_MKSPECDIR%%/devices/linux-arm-amlogic-8726M-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-arm-amlogic-8726M-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/devices/linux-arm-hisilicon-hix5hd2-g++/qeglfshooks_hix5hd2.cpp
+%%QT_MKSPECDIR%%/devices/linux-arm-hisilicon-hix5hd2-g++/qmake.conf
+%%QT_MKSPECDIR%%/devices/linux-arm-hisilicon-hix5hd2-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-arm-trident-pnx8473-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-arm-trident-pnx8473-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-beagleboard-g++/qmake.conf
@@ -140,8 +157,9 @@
 %%QT_MKSPECDIR%%/features/mac/sdk.prf
 %%QT_MKSPECDIR%%/features/moc.prf
 %%QT_MKSPECDIR%%/features/no_debug_info.prf
-%%QT_MKSPECDIR%%/features/opengles1.prf
+%%QT_MKSPECDIR%%/features/precompile_header.prf
 %%QT_MKSPECDIR%%/features/qfeatures.prf
+%%QT_MKSPECDIR%%/features/qlalr.prf
 %%QT_MKSPECDIR%%/features/qml1_module.prf
 %%QT_MKSPECDIR%%/features/qml1_plugin.prf
 %%QT_MKSPECDIR%%/features/qml_debug.prf
@@ -162,6 +180,7 @@
 %%QT_MKSPECDIR%%/features/qt_example_installs.prf
 %%QT_MKSPECDIR%%/features/qt_functions.prf
 %%QT_MKSPECDIR%%/features/qt_headersclean.prf
+%%QT_MKSPECDIR%%/features/qt_helper_lib.prf
 %%QT_MKSPECDIR%%/features/qt_installs.prf
 %%QT_MKSPECDIR%%/features/qt_module.prf
 %%QT_MKSPECDIR%%/features/qt_module_headers.prf
@@ -184,7 +203,6 @@
 %%QT_MKSPECDIR%%/features/uic.prf
 %%QT_MKSPECDIR%%/features/unix/bsymbolic_functions.prf
 %%QT_MKSPECDIR%%/features/unix/dylib.prf
-%%QT_MKSPECDIR%%/features/unix/gdb_dwarf_index.prf
 %%QT_MKSPECDIR%%/features/unix/hide_symbols.prf
 %%QT_MKSPECDIR%%/features/unix/largefile.prf
 %%QT_MKSPECDIR%%/features/unix/opengl.prf
@@ -208,12 +226,17 @@
 %%QT_MKSPECDIR%%/features/win32/msvc_mp.prf
 %%QT_MKSPECDIR%%/features/win32/opengl.prf
 %%QT_MKSPECDIR%%/features/win32/openvg.prf
+%%QT_MKSPECDIR%%/features/win32/qt_config.prf
 %%QT_MKSPECDIR%%/features/win32/qt_dll.prf
 %%QT_MKSPECDIR%%/features/win32/rtti.prf
 %%QT_MKSPECDIR%%/features/win32/rtti_off.prf
 %%QT_MKSPECDIR%%/features/win32/stl.prf
 %%QT_MKSPECDIR%%/features/win32/stl_off.prf
+%%QT_MKSPECDIR%%/features/win32/windeployqt.prf
 %%QT_MKSPECDIR%%/features/win32/windows.prf
+%%QT_MKSPECDIR%%/features/winrt/console.prf
+%%QT_MKSPECDIR%%/features/winrt/font_deployment.prf
+%%QT_MKSPECDIR%%/features/winrt/package_manifest.prf
 %%QT_MKSPECDIR%%/features/yacc.prf
 %%QT_MKSPECDIR%%/freebsd-clang/qmake.conf
 %%QT_MKSPECDIR%%/freebsd-clang/qplatformdefs.h
@@ -314,6 +337,7 @@
 %%QT_MKSPECDIR%%/macx-ios-clang/features/default_pre.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/features/qt.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/features/qt_config.prf
+%%QT_MKSPECDIR%%/macx-ios-clang/features/qt_parts.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/qmake.conf
 %%QT_MKSPECDIR%%/macx-ios-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/macx-ios-clang/rename_main.sh
@@ -331,6 +355,8 @@
 %%QT_MKSPECDIR%%/qdevice.pri
 %%QT_MKSPECDIR%%/qfeatures.pri
 %%QT_MKSPECDIR%%/qmodule.pri
+%%QT_MKSPECDIR%%/qnx-armle-v7-qcc/qmake.conf
+%%QT_MKSPECDIR%%/qnx-armle-v7-qcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/qnx-armv7le-qcc/qmake.conf
 %%QT_MKSPECDIR%%/qnx-armv7le-qcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/qnx-x86-qcc/qmake.conf
@@ -368,6 +394,8 @@
 %%QT_MKSPECDIR%%/unsupported/linux-armcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/linux-host-g++/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/linux-host-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/unsupported/linux-libc++-clang/qmake.conf
+%%QT_MKSPECDIR%%/unsupported/linux-libc++-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/linux-scratchbox2-g++/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/linux-scratchbox2-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/nacl-g++/qmake.conf
@@ -410,152 +438,21 @@
 %%QT_MKSPECDIR%%/wince70embedded-x86-msvc2008/qplatformdefs.h
 %%QT_MKSPECDIR%%/winphone-arm-msvc2012/qmake.conf
 %%QT_MKSPECDIR%%/winphone-arm-msvc2012/qplatformdefs.h
+%%QT_MKSPECDIR%%/winphone-arm-msvc2013/qmake.conf
+%%QT_MKSPECDIR%%/winphone-arm-msvc2013/qplatformdefs.h
 %%QT_MKSPECDIR%%/winphone-x86-msvc2012/qmake.conf
 %%QT_MKSPECDIR%%/winphone-x86-msvc2012/qplatformdefs.h
+%%QT_MKSPECDIR%%/winphone-x86-msvc2013/qmake.conf
+%%QT_MKSPECDIR%%/winphone-x86-msvc2013/qplatformdefs.h
 %%QT_MKSPECDIR%%/winrt-arm-msvc2012/qmake.conf
 %%QT_MKSPECDIR%%/winrt-arm-msvc2012/qplatformdefs.h
+%%QT_MKSPECDIR%%/winrt-arm-msvc2013/qmake.conf
+%%QT_MKSPECDIR%%/winrt-arm-msvc2013/qplatformdefs.h
 %%QT_MKSPECDIR%%/winrt-x64-msvc2012/qmake.conf
 %%QT_MKSPECDIR%%/winrt-x64-msvc2012/qplatformdefs.h
+%%QT_MKSPECDIR%%/winrt-x64-msvc2013/qmake.conf
+%%QT_MKSPECDIR%%/winrt-x64-msvc2013/qplatformdefs.h
 %%QT_MKSPECDIR%%/winrt-x86-msvc2012/qmake.conf
 %%QT_MKSPECDIR%%/winrt-x86-msvc2012/qplatformdefs.h
-@dirrm %%QT_MKSPECDIR%%/winrt-x86-msvc2012
-@dirrm %%QT_MKSPECDIR%%/winrt-x64-msvc2012
-@dirrm %%QT_MKSPECDIR%%/winrt-arm-msvc2012
-@dirrm %%QT_MKSPECDIR%%/winphone-x86-msvc2012
-@dirrm %%QT_MKSPECDIR%%/winphone-arm-msvc2012
-@dirrm %%QT_MKSPECDIR%%/wince70embedded-x86-msvc2008
-@dirrm %%QT_MKSPECDIR%%/wince70embedded-armv4i-msvc2008
-@dirrm %%QT_MKSPECDIR%%/wince60standard-x86-msvc2005
-@dirrm %%QT_MKSPECDIR%%/wince60standard-armv4i-msvc2005
-@dirrm %%QT_MKSPECDIR%%/win32-msvc2013
-@dirrm %%QT_MKSPECDIR%%/win32-msvc2012
-@dirrm %%QT_MKSPECDIR%%/win32-msvc2010
-@dirrm %%QT_MKSPECDIR%%/win32-msvc2008
-@dirrm %%QT_MKSPECDIR%%/win32-msvc2005
-@dirrm %%QT_MKSPECDIR%%/win32-icc
-@dirrm %%QT_MKSPECDIR%%/win32-g++
-@dirrm %%QT_MKSPECDIR%%/unsupported/win32-msvc2003
-@dirrm %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++
-@dirrm %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-dcc
-@dirrm %%QT_MKSPECDIR%%/unsupported/vxworks-ppc-g++
-@dirrm %%QT_MKSPECDIR%%/unsupported/vxworks-ppc-dcc
-@dirrm %%QT_MKSPECDIR%%/unsupported/qnx-X11-g++
-@dirrm %%QT_MKSPECDIR%%/unsupported/nacl64-g++
-@dirrm %%QT_MKSPECDIR%%/unsupported/nacl-g++
-@dirrm %%QT_MKSPECDIR%%/unsupported/linux-scratchbox2-g++
-@dirrm %%QT_MKSPECDIR%%/unsupported/linux-host-g++
-@dirrm %%QT_MKSPECDIR%%/unsupported/linux-armcc
-@dirrm %%QT_MKSPECDIR%%/unsupported/integrity-ghs
-@dirrm %%QT_MKSPECDIR%%/unsupported/android-g++
-@dirrm %%QT_MKSPECDIR%%/unsupported
-@dirrm %%QT_MKSPECDIR%%/unixware-g++
-@dirrm %%QT_MKSPECDIR%%/unixware-cc
-@dirrm %%QT_MKSPECDIR%%/tru64-g++
-@dirrm %%QT_MKSPECDIR%%/tru64-cxx
-@dirrm %%QT_MKSPECDIR%%/solaris-g++-64
-@dirrm %%QT_MKSPECDIR%%/solaris-g++
-@dirrm %%QT_MKSPECDIR%%/solaris-cc-stlport
-@dirrm %%QT_MKSPECDIR%%/solaris-cc-64-stlport
-@dirrm %%QT_MKSPECDIR%%/solaris-cc-64
-@dirrm %%QT_MKSPECDIR%%/solaris-cc
-@dirrm %%QT_MKSPECDIR%%/sco-g++
-@dirrm %%QT_MKSPECDIR%%/sco-cc
-@dirrm %%QT_MKSPECDIR%%/qnx-x86-qcc
-@dirrm %%QT_MKSPECDIR%%/qnx-armv7le-qcc
-@dirrm %%QT_MKSPECDIR%%/openbsd-g++
-@dirrm %%QT_MKSPECDIR%%/netbsd-g++
-@dirrm %%QT_MKSPECDIR%%/macx-xcode
-@dirrm %%QT_MKSPECDIR%%/macx-llvm
-@dirrm %%QT_MKSPECDIR%%/macx-ios-clang/features
-@dirrm %%QT_MKSPECDIR%%/macx-ios-clang
-@dirrm %%QT_MKSPECDIR%%/macx-icc
-@dirrm %%QT_MKSPECDIR%%/macx-g++42
-@dirrm %%QT_MKSPECDIR%%/macx-g++40
-@dirrm %%QT_MKSPECDIR%%/macx-g++-32
-@dirrm %%QT_MKSPECDIR%%/macx-g++
-@dirrm %%QT_MKSPECDIR%%/macx-clang-32
-@dirrm %%QT_MKSPECDIR%%/macx-clang
-@dirrm %%QT_MKSPECDIR%%/lynxos-g++
-@dirrm %%QT_MKSPECDIR%%/linux-pgcc
-@dirrm %%QT_MKSPECDIR%%/linux-lsb-g++
-@dirrm %%QT_MKSPECDIR%%/linux-llvm
-@dirrm %%QT_MKSPECDIR%%/linux-kcc
-@dirrm %%QT_MKSPECDIR%%/linux-icc-64
-@dirrm %%QT_MKSPECDIR%%/linux-icc-32
-@dirrm %%QT_MKSPECDIR%%/linux-icc
-@dirrm %%QT_MKSPECDIR%%/linux-g++-maemo
-@dirrm %%QT_MKSPECDIR%%/linux-g++-64
-@dirrm %%QT_MKSPECDIR%%/linux-g++-32
-@dirrm %%QT_MKSPECDIR%%/linux-g++
-@dirrm %%QT_MKSPECDIR%%/linux-cxx
-@dirrm %%QT_MKSPECDIR%%/linux-clang-libc++
-@dirrm %%QT_MKSPECDIR%%/linux-clang
-@dirrm %%QT_MKSPECDIR%%/linux-arm-gnueabi-g++
-@dirrm %%QT_MKSPECDIR%%/irix-g++-64
-@dirrm %%QT_MKSPECDIR%%/irix-g++
-@dirrm %%QT_MKSPECDIR%%/irix-cc-64
-@dirrm %%QT_MKSPECDIR%%/irix-cc
-@dirrm %%QT_MKSPECDIR%%/hurd-g++
-@dirrm %%QT_MKSPECDIR%%/hpuxi-g++-64
-@dirrm %%QT_MKSPECDIR%%/hpuxi-acc-64
-@dirrm %%QT_MKSPECDIR%%/hpuxi-acc-32
-@dirrm %%QT_MKSPECDIR%%/hpux-g++-64
-@dirrm %%QT_MKSPECDIR%%/hpux-g++
-@dirrm %%QT_MKSPECDIR%%/hpux-acc-o64
-@dirrm %%QT_MKSPECDIR%%/hpux-acc-64
-@dirrm %%QT_MKSPECDIR%%/hpux-acc
-@dirrm %%QT_MKSPECDIR%%/freebsd-icc
-@dirrm %%QT_MKSPECDIR%%/freebsd-g++
-@dirrm %%QT_MKSPECDIR%%/freebsd-clang
-@dirrm %%QT_MKSPECDIR%%/features/win32
-@dirrm %%QT_MKSPECDIR%%/features/unix
-@dirrm %%QT_MKSPECDIR%%/features/qpa
-@dirrm %%QT_MKSPECDIR%%/features/mac
-@dirrm %%QT_MKSPECDIR%%/features/data/headersclean
-@dirrm %%QT_MKSPECDIR%%/features/data/cmake
-@dirrm %%QT_MKSPECDIR%%/features/data/android
-@dirrm %%QT_MKSPECDIR%%/features/data
-@dirrm %%QT_MKSPECDIR%%/features/android
-@dirrm %%QT_MKSPECDIR%%/features
-@dirrm %%QT_MKSPECDIR%%/devices/linux-tegra2-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-snowball-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-sh4-stmicro-ST7540-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-sh4-stmicro-ST7108-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-rasp-pi-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-mipsel-broadcom-97425-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-maemo-n9-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-imx6-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-imx53qsb-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-beagleboard-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-arm-trident-pnx8473-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-arm-amlogic-8726M-g++
-@dirrm %%QT_MKSPECDIR%%/devices/linux-archos-gen8-g++
-@dirrm %%QT_MKSPECDIR%%/devices/common
-@dirrm %%QT_MKSPECDIR%%/devices/blackberry-playbook-x86-qcc
-@dirrm %%QT_MKSPECDIR%%/devices/blackberry-playbook-armv7le-qcc
-@dirrm %%QT_MKSPECDIR%%/devices/blackberry-playbook-armle-v7-qcc
-@dirrm %%QT_MKSPECDIR%%/devices
-@dirrm %%QT_MKSPECDIR%%/darwin-g++
-@dirrm %%QT_MKSPECDIR%%/cygwin-g++
-@dirrm %%QT_MKSPECDIR%%/common/winrt_winphone
-@dirrm %%QT_MKSPECDIR%%/common/wince
-@dirrm %%QT_MKSPECDIR%%/common/posix
-@dirrm %%QT_MKSPECDIR%%/common/nacl
-@dirrm %%QT_MKSPECDIR%%/common/mac
-@dirrm %%QT_MKSPECDIR%%/common/ios/GLES2
-@dirrm %%QT_MKSPECDIR%%/common/ios
-@dirrm %%QT_MKSPECDIR%%/common/c89
-@dirrm %%QT_MKSPECDIR%%/common/android
-@dirrm %%QT_MKSPECDIR%%/common/aix
-@dirrm %%QT_MKSPECDIR%%/common
-@dirrm %%QT_MKSPECDIR%%/blackberry-x86-qcc
-@dirrm %%QT_MKSPECDIR%%/blackberry-armv7le-qcc
-@dirrm %%QT_MKSPECDIR%%/blackberry-armle-v7-qcc
-@dirrm %%QT_MKSPECDIR%%/android-g++
-@dirrm %%QT_MKSPECDIR%%/aix-xlc-64
-@dirrm %%QT_MKSPECDIR%%/aix-xlc
-@dirrm %%QT_MKSPECDIR%%/aix-g++-64
-@dirrm %%QT_MKSPECDIR%%/aix-g++
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%
+%%QT_MKSPECDIR%%/winrt-x86-msvc2013/qmake.conf
+%%QT_MKSPECDIR%%/winrt-x86-msvc2013/qplatformdefs.h

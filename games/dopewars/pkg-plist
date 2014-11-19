@@ -1,4 +1,4 @@
-bin/dopewars
+@(,games,2755) bin/dopewars
 man/man6/dopewars.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/aiplayer.html
 %%PORTDOCS%%%%DOCSDIR%%/clientplay.html
@@ -24,7 +24,7 @@ man/man6/dopewars.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/server.html
 %%PORTDOCS%%%%DOCSDIR%%/servercommands.html
 %%PORTDOCS%%%%DOCSDIR%%/windows.html
-%%DATADIR%%/dopewars.sco
+@(,games,) %%DATADIR%%/dopewars.sco
 %%DATADIR%%/bye.wav
 %%DATADIR%%/colt.wav
 %%DATADIR%%/die.wav
@@ -50,11 +50,3 @@ share/locale/nn/LC_MESSAGES/dopewars.mo
 share/locale/pl/LC_MESSAGES/dopewars.mo
 share/locale/pt_BR/LC_MESSAGES/dopewars.mo
 share/gnome/apps/Games/dopewars.desktop
-@dirrmtry share/locale/fr_CA/LC_MESSAGES
-@dirrmtry share/locale/fr_CA
-@dirrmtry share/gnome/apps/Games
-@dirrmtry share/gnome/apps
-@dirrmtry share/gnome
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/help

@@ -11,8 +11,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/libpapr.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/libpapriconv.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/libpaprutil.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/libphttpd.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

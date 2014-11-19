@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/audio/rhythmbox/Makefile 19885 2014-09-17 07:54:55Z kwm $
+#   $MCom: ports/trunk/audio/rhythmbox/Makefile 20039 2014-11-03 13:42:48Z kwm $
 
 PORTNAME=	rhythmbox
-PORTVERSION=	3.0.3
-PORTREVISION=	3
+PORTVERSION=	3.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -40,7 +39,7 @@ CONFIGURE_ARGS=	--enable-vala \
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//}
@@ -49,7 +48,7 @@ GLIB_SCHEMAS=	org.gnome.rhythmbox.gschema.xml
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DAAP GRILO IPOD NOTIFY PYTHON LIRC MTP WEBKIT
-OPTIONS_DEFAULT=NOTIFY PYTHON
+OPTIONS_DEFAULT=NOTIFY PYTHON WEBKIT
 DAAP_DESC=	DAAP support
 DAAP_CONFIGURE_ENABLE=	daap
 DAAP_LIB_DEPENDS=	libdmapsharing-3.0.so:${PORTSDIR}/net/libdmapsharing
@@ -77,6 +76,5 @@ WEBKIT_LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
 post-patch:
 	@${REINPLACE_CMD} -e 's|{MOZILLA_PLUGINDIR|{MOZILLA_PLUGINDIR}|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/plugins\/context\/Makefile"/d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

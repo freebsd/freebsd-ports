@@ -80,5 +80,3 @@ man/man1/se.1.gz
 %%DATADIR%%/help/y
 %%DATADIR%%/help/z
 %%DATADIR%%/sample.serc
-@dirrmtry %%DATADIR%%/help
-@dirrmtry %%DATADIR%%

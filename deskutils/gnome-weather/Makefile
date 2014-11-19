@@ -1,10 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-weather/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-weather/Makefile 19994 2014-10-19 08:07:16Z gusi $
 
 PORTNAME=	gnome-weather
-PORTVERSION=	3.12.1
-PORTREVISION=	2
+PORTVERSION=	3.14.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,5 +22,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GLIB_SCHEMAS=	org.gnome.Weather.Application.gschema.xml
 
 .include <bsd.port.mk>

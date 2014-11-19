@@ -83,7 +83,9 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/include/ansidecl.h
 	${REINPLACE_CMD} '/#include "ansidecl.h"/d' ${STAGEDIR}${PREFIX}/include/bfd.h
 .else
+.if ${PKGNAMEPREFIX:S/-$//} != ${BUTARGET}
 	${RM} -rf ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}
+.endif
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
 .endif
 

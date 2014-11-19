@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Sub::Override.3.gz
 %%SITE_PERL%%/Sub/Override.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Override/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Override
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
-@dirrmtry %%SITE_PERL%%/Sub

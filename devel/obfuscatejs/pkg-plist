@@ -1,3 +1,2 @@
 bin/obfuscatejs
 %%DATADIR%%/consyntools.jar
-@dirrm %%DATADIR%%

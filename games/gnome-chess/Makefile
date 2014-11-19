@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/games/gnome-chess/Makefile 19910 2014-09-25 21:36:39Z kwm $
+#   $MCom: ports/trunk/games/gnome-chess/Makefile 19989 2014-10-18 09:53:56Z gusi $
 
 PORTNAME=	gnome-chess
-PORTVERSION=	3.12.3
+PORTVERSION=	3.14.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-GLIB_SCHEMAS=	org.gnome.gnome-chess.gschema.xml
+GLIB_SCHEMAS=	org.gnome.chess.gschema.xml
 
 OPTIONS_DEFINE=	GNUCHESS
 OPTIONS_DEFAULT=GNUCHESS

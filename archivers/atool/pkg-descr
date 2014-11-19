@@ -1,0 +1,12 @@
+atool is a script for managing file archives of various types (tar,
+tar+gzip, zip, etc.). It provides the following commands:
+
+  * aunpack: extract an archive, avoiding tar bombs
+  *     als: list the contents of an archive
+  *    acat: extract files to the standard output
+  *   apack: create an archive
+
+Optional dependencies: lbzip2 or pbzip2, lzip, plzip, lzop, lzma, zip,
+unzip, unrar, lha, unace, arj, arc, nomarch, p7zip, unalz.
+
+WWW: http://www.nongnu.org/atool/

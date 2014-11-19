@@ -1,6 +1,6 @@
 # Created by: gnome@freebsd.org
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11-themes/gnome-icon-theme-symbolic/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/x11-themes/gnome-icon-theme-symbolic/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	gnome-icon-theme-symbolic
 PORTVERSION=	3.12.0

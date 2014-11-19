@@ -6,13 +6,17 @@
 # Submitted by: antoine@ (r358029)
 # TODO: Upstream
 
---- ./Makefile.pre.in.orig	2014-05-19 05:19:39.000000000 +0000
-+++ ./Makefile.pre.in	2014-06-15 12:12:17.000000000 +0000
-@@ -70,18 +70,15 @@
+--- Makefile.pre.in.orig	2014-10-08 12:18:14.000000000 +0400
++++ Makefile.pre.in	2014-10-19 12:37:14.000000000 +0400
+@@ -70,23 +70,20 @@
  OPT=		@OPT@
  BASECFLAGS=	@BASECFLAGS@
  BASECPPFLAGS=	@BASECPPFLAGS@
 -CONFIGURE_CFLAGS=	@CFLAGS@
+ # CFLAGS_NODIST is used for building the interpreter and stdlib C extensions.
+ # Use it when a compiler flag should _not_ be part of the distutils CFLAGS
+ # once Python is installed (Issue #21121).
+ CONFIGURE_CFLAGS_NODIST=@CFLAGS_NODIST@
 -CONFIGURE_CPPFLAGS=	@CPPFLAGS@
 -CONFIGURE_LDFLAGS=	@LDFLAGS@
  # Avoid assigning CFLAGS, LDFLAGS, etc. so users can use them on the
@@ -20,6 +24,7 @@
  # values.
 -PY_CFLAGS=	$(BASECFLAGS) $(OPT) $(CONFIGURE_CFLAGS) $(CFLAGS) $(EXTRA_CFLAGS)
 +PY_CFLAGS=	$(BASECFLAGS) $(OPT) $(CFLAGS) $(EXTRA_CFLAGS)
+ PY_CFLAGS_NODIST=$(CONFIGURE_CFLAGS_NODIST) $(CFLAGS_NODIST)
  # Both CPPFLAGS and LDFLAGS need to contain the shell's value for setup.py to
  # be able to build extension modules using the directories specified in the
  # environment variables
@@ -30,7 +35,7 @@
  NO_AS_NEEDED=	@NO_AS_NEEDED@
  LDLAST=		@LDLAST@
  SGI_ABI=	@SGI_ABI@
-@@ -1065,12 +1062,6 @@
+@@ -1080,12 +1077,6 @@
  	else true; \
  	fi
  	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)$(EXE) python3$(EXE))
@@ -43,7 +48,7 @@
  	-rm -f $(DESTDIR)$(BINDIR)/python3-config
  	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)-config python3-config)
  	-rm -f $(DESTDIR)$(LIBPC)/python3.pc
-@@ -1333,6 +1324,12 @@
+@@ -1348,6 +1339,12 @@
  	$(INSTALL_SCRIPT) $(srcdir)/install-sh $(DESTDIR)$(LIBPL)/install-sh
  	$(INSTALL_SCRIPT) python-config.py $(DESTDIR)$(LIBPL)/python-config.py
  	$(INSTALL_SCRIPT) python-config $(DESTDIR)$(BINDIR)/python$(LDVERSION)-config

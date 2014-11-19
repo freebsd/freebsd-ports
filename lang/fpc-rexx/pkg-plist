@@ -2,8 +2,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rexx/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rexx/rexxsaa.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rexx/rexxsaa.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rexx/libprexxsaa.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rexx
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

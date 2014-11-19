@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/List::Rotation::Cycle.3.gz
 %%SITE_PERL%%/List/Rotation/Cycle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Rotation/Cycle/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Rotation/Cycle
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Rotation
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
-@dirrmtry %%SITE_PERL%%/List/Rotation
-@dirrmtry %%SITE_PERL%%/List

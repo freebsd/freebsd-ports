@@ -654,14 +654,3 @@
 %%DATADIR%%/Templates/cygwin-package.sh.in
 %%DATADIR%%/Templates/staticLibFooter.dsptemplate
 %%DATADIR%%/Templates/staticLibHeader.dsptemplate
-@dirrm %%DATADIR%%/Templates
-@dirrm %%DATADIR%%/Modules/Platform
-@dirrm %%DATADIR%%/Modules/IntelVSImplicitPath
-@dirrm %%DATADIR%%/Modules/FortranCInterface/Verify
-@dirrm %%DATADIR%%/Modules/FortranCInterface
-@dirrm %%DATADIR%%/Modules/FindCUDA
-@dirrm %%DATADIR%%/Modules/CompilerId
-@dirrm %%DATADIR%%/Modules/Compiler
-@dirrm %%DATADIR%%/Modules/CMakeAddFortranSubdirectory
-@dirrmtry %%DATADIR%%/Modules
-@dirrmtry %%DATADIR%%

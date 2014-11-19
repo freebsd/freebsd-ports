@@ -159,13 +159,3 @@ share/locale/vi/LC_MESSAGES/sylpheed.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
 share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
 share/pixmaps/sylpheed.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/it
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/es
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

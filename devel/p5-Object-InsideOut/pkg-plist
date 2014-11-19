@@ -19,9 +19,3 @@
 %%PERL5_MAN3%%/Bundle::Object::InsideOut.3.gz
 %%PERL5_MAN3%%/Object::InsideOut.3.gz
 %%PERL5_MAN3%%/Object::InsideOut::Metadata.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/InsideOut
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
-@dirrm %%SITE_PERL%%/Object/InsideOut
-@dirrmtry %%SITE_PERL%%/Object
-@dirrmtry %%SITE_PERL%%/Bundle/Object
-@dirrmtry %%SITE_PERL%%/Bundle

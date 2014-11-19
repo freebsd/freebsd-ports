@@ -15,8 +15,3 @@
 %%SITE_PERL%%/Algorithm/Dependency/Source/Invert.pm
 %%SITE_PERL%%/Algorithm/Dependency/Weight.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Dependency/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Dependency
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrm %%SITE_PERL%%/Algorithm/Dependency/Source
-@dirrmtry %%SITE_PERL%%/Algorithm/Dependency
-@dirrmtry %%SITE_PERL%%/Algorithm

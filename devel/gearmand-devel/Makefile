@@ -24,9 +24,8 @@ GROUPS=		gearmand
 
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USES=		pathfix perl5 gmake gperf libtool execinfo
+USES=		pathfix perl5 gmake gperf libtool execinfo python:build
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=yes
 USE_RC_SUBR=	gearmand
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}
 

@@ -20,11 +20,3 @@
 %%SITE_PERL%%/Class/Component/Component/SingletonMethod.pm
 %%SITE_PERL%%/Class/Component/Plugin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Component/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Component/Component/Plaggerize
-@dirrmtry %%SITE_PERL%%/Class/Component/Component/Autocall
-@dirrmtry %%SITE_PERL%%/Class/Component/Component
-@dirrmtry %%SITE_PERL%%/Class/Component/Attribute
-@dirrmtry %%SITE_PERL%%/Class/Component
-@dirrmtry %%SITE_PERL%%/Class

@@ -39,6 +39,3 @@ share/OpenGTL/shiva/kernels/Tunnel.shiva
 share/OpenGTL/shiva/kernels/Tunnel2.shiva
 share/OpenGTL/shiva/kernels/ZigZag.shiva
 share/OpenGTL/shiva/kernels/oilify.shiva
-@dirrm share/OpenGTL/shiva/kernels
-@dirrmtry share/OpenGTL/shiva
-@dirrmtry share/OpenGTL

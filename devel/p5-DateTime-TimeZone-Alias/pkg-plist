@@ -1,5 +1,3 @@
 %%PERL5_MAN3%%/DateTime::TimeZone::Alias.3.gz
 %%SITE_PERL%%/DateTime/TimeZone/Alias.pm
 %%SITE_PERL%%/DateTime/TimeZone/Alias.pod
-@dirrmtry %%SITE_PERL%%/DateTime/TimeZone
-@dirrmtry %%SITE_PERL%%/DateTime

@@ -97,14 +97,3 @@ lib/liblas_c.so.2.2.0
 %%DATADIR%%/doc/INSTALL
 %%DATADIR%%/doc/LICENSE.txt
 %%DATADIR%%/doc/README.txt
-@dirrmtry include/liblas/capi
-@dirrmtry include/liblas/detail/index
-@dirrmtry include/liblas/detail/reader
-@dirrmtry include/liblas/detail/writer
-@dirrmtry include/liblas/detail
-@dirrmtry include/liblas/external/property_tree/detail
-@dirrmtry include/liblas/external/property_tree
-@dirrmtry include/liblas/external
-@dirrmtry include/liblas
-@dirrmtry %%DATADIR%%/doc
-@dirrmtry %%DATADIR%%

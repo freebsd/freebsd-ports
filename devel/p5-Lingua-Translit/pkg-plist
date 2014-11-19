@@ -5,7 +5,3 @@ man/man1/translit.1.gz
 %%SITE_PERL%%/Lingua/Translit/Tables.pm
 %%SITE_PERL%%/Lingua/Translit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Translit/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Translit
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrm %%SITE_PERL%%/Lingua/Translit
-@dirrmtry %%SITE_PERL%%/Lingua

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/GD::Arrow.3.gz
 %%SITE_PERL%%/GD/Arrow.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Arrow/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Arrow
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
-@dirrmtry %%SITE_PERL%%/GD

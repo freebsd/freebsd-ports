@@ -8,6 +8,4 @@ man/man5/super.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.cdmount
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.tab
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/var
-@dirrmtry var
+@dir var

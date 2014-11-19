@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kyua
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.11
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
@@ -32,8 +31,8 @@ OPTIONS_DEFAULT=TEST
 
 OPTIONS_SUB=		yes
 TEST_CONFIGURE_WITH=	atf
-TEST_BUILD_DEPENDS=	atf>=0.20:${PORTSDIR}/devel/atf
-TEST_RUN_DEPENDS=	atf>=0.20:${PORTSDIR}/devel/atf
+TEST_BUILD_DEPENDS=	atf>=0.21:${PORTSDIR}/devel/atf
+TEST_RUN_DEPENDS=	atf>=0.21:${PORTSDIR}/devel/atf
 
 .include <bsd.port.options.mk>
 

@@ -149,13 +149,3 @@ man/man7/bugle-wireframe.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/trace.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/unwindstack.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wireframe.7.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/bugle
-@dirrm include/bugle/bugle/glx
-@dirrm include/bugle/bugle/glwin
-@dirrm include/bugle/bugle/gl
-@dirrm include/bugle/bugle
-@dirrm include/bugle/budgie
-@dirrm include/bugle

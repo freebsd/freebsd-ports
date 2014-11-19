@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--disable-csharp --disable-java \
 		--with-included-libxml ${ICONV_CONFIGURE_ARG} \
 		--without-emacs --without-git
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 INFO=		autosprintf gettext
 

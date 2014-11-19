@@ -121,24 +121,3 @@ share/locale/ru/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/sk/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/sr@latin/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/uk/LC_MESSAGES/eiskaltdcpp-gtk.mo
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor/16x16/status
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor/16x16
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22/emotes
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22/status
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22/apps
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor/128x128/apps
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor/128x128
-@dirrm share/eiskaltdcpp/gtk/icons/hicolor
-@dirrm share/eiskaltdcpp/gtk/icons
-@dirrm share/eiskaltdcpp/gtk/themes/hicolor/22x22/status
-@dirrm share/eiskaltdcpp/gtk/themes/hicolor/22x22
-@dirrm share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories
-@dirrm share/eiskaltdcpp/gtk/themes/hicolor/32x32
-@dirrm share/eiskaltdcpp/gtk/themes/hicolor/16x16/status
-@dirrm share/eiskaltdcpp/gtk/themes/hicolor/16x16
-@dirrm share/eiskaltdcpp/gtk/themes/hicolor
-@dirrm share/eiskaltdcpp/gtk/themes
-@dirrm share/eiskaltdcpp/gtk/ui
-@dirrm share/eiskaltdcpp/gtk

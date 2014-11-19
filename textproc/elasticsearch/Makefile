@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -18,12 +18,11 @@ JAVA_VERSION=	1.7+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	${PORTNAME}
 
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-LUCENEVER=	4.9.0
+LUCENEVER=	4.10.2
 CONFIG_FILES=	elasticsearch.yml logging.yml
 JARS=		elasticsearch-${PORTVERSION}.jar \
 		asm-4.1.jar \
@@ -34,7 +33,6 @@ JARS=		elasticsearch-${PORTVERSION}.jar \
 		jts-1.13.jar \
 		log4j-1.2.17.jar \
 		lucene-analyzers-common-${LUCENEVER}.jar \
-		lucene-codecs-${LUCENEVER}.jar \
 		lucene-core-${LUCENEVER}.jar \
 		lucene-expressions-${LUCENEVER}.jar \
 		lucene-grouping-${LUCENEVER}.jar \
@@ -65,7 +63,7 @@ ELASTIC_LOGDIR=	/var/log/elasticsearch
 SUB_LIST=	SEARCHUSER=${SEARCHUSER} \
 		SEARCHGROUP=${SEARCHGROUP} \
 		PORTVERSION=${PORTVERSION}
-SUB_FILES=	elasticsearch-plugin
+SUB_FILES=	elasticsearch-plugin pkg-message
 PLIST_SUB=	SIGAR_ARCH=${SIGAR_ARCH} \
 		SEARCHUSER=${SEARCHUSER} \
 		SEARCHGROUP=${SEARCHGROUP} \
@@ -78,9 +76,9 @@ post-patch:
 	${SED} -i .bak -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/config/elasticsearch.yml
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/elasticsearch
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/elasticsearch ${STAGEDIR}${DATADIR}
 .for f in ${CONFIG_FILES}
-	${INSTALL} -m 440 ${WRKSRC}/config/${f} ${STAGEDIR}${PREFIX}/etc/elasticsearch/${f}.sample
+	${INSTALL} -m 440 ${WRKSRC}/config/${f} ${STAGEDIR}${DATADIR}/${f}.sample
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/elasticsearch-plugin ${STAGEDIR}${PREFIX}/bin/elasticsearch-plugin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch

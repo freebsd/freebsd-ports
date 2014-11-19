@@ -34,10 +34,3 @@
 %%SITE_PERL%%/POE/Watcher/Wheel/Run.pm
 %%SITE_PERL%%/POE/Watcher/Wheel/SocketFactory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Stage/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Stage
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrm %%SITE_PERL%%/POE/Watcher/Wheel
-@dirrm %%SITE_PERL%%/POE/Watcher
-@dirrm %%SITE_PERL%%/POE/Stage
-@dirrm %%SITE_PERL%%/POE/Request
-@dirrmtry %%SITE_PERL%%/POE

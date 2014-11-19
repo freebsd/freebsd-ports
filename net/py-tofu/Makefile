@@ -12,10 +12,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Practical high-level network game engine
 
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
-USES=		twisted tar:bzip2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python twisted tar:bzip2
+USE_PYTHON=	distutils autoplist
 WRKSRC=		${WRKDIR}/Tofu-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-tofu
 PORTEXAMPLES=	*

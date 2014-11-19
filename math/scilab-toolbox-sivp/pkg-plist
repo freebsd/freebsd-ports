@@ -112,11 +112,3 @@
 %%TOOLBOXDIR%%/sci_gateway/cpp/libgw_sivp.so
 %%TOOLBOXDIR%%/sci_gateway/cpp/loader.sce
 %%TOOLBOXDIR%%/sci_gateway/loader_gateway.sce
-@dirrm %%TOOLBOXDIR%%/sci_gateway/cpp
-@dirrm %%TOOLBOXDIR%%/sci_gateway
-@dirrm %%TOOLBOXDIR%%/macros
-%%HELP%%@dirrm %%TOOLBOXDIR%%/jar
-@dirrm %%TOOLBOXDIR%%/images
-@dirrm %%TOOLBOXDIR%%/etc
-@dirrm %%TOOLBOXDIR%%/demos
-@dirrm %%TOOLBOXDIR%%

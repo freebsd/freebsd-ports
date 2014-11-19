@@ -6,7 +6,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC/Card.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/PCSC.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Chipcard

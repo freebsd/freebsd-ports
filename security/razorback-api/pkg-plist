@@ -1,6 +1,5 @@
 @sample etc/razorback/api.conf.sample
 @sample etc/razorback/magic.sample
-@dirrmtry etc/razorback
 include/razorback.h
 include/razorback/api.h
 include/razorback/block.h
@@ -72,8 +71,6 @@ include/razorback/libssh/threads.h
 include/razorback/libssh/wrapper.h
 include/razorback/libssh/pki_priv.h
 include/razorback/libssh/ecdh.h
-@dirrm include/razorback/libssh
-@dirrm include/razorback
 lib/librazorback_api.a
 lib/librazorback_api.so
 lib/librazorback_api.so.2

@@ -1,5 +1,4 @@
 bin/noip2
 %%PORTDOCS%%%%DOCSDIR%%/README.FIRST
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec printf "\nTo delete %%USER%% user/group permanently:\npw userdel %%USER%%\n\n"

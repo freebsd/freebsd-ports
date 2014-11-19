@@ -120,9 +120,3 @@ lib/libptypesn.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/utils.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/wshare
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/wshare.cxx
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/wshare
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/include
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/ptypes

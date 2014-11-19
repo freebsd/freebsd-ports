@@ -182,13 +182,3 @@ share/ptlib/make/ptbuildopts.mak
 share/ptlib/make/ptlib-config
 share/ptlib/make/ptlib.mak
 share/ptlib/make/unix.mak
-@dirrm share/ptlib/make
-@dirrm share/ptlib
-%%V4L%%@dirrm lib/ptlib-%%PORTVERSION%%/devices/videoinput
-@dirrm lib/ptlib-%%PORTVERSION%%/devices/sound
-@dirrm lib/ptlib-%%PORTVERSION%%/devices
-@dirrm lib/ptlib-%%PORTVERSION%%
-@dirrm include/ptlib/unix/ptlib
-@dirrm include/ptlib/unix
-@dirrm include/ptlib
-@dirrm include/ptclib

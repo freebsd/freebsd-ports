@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME:S/x//}${PORTVERSION}-src${EXTRACT_SUFX} \
 		${PORTNAME:S/x//}.png:icons
 EXTRACT_ONLY=	${PORTNAME:S/x//}${PORTVERSION}-src${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast action arcade-style game for X Window
 
 LICENSE=	GPLv2

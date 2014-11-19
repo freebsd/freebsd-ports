@@ -152,8 +152,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjpeglib.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjquant1.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjquant2.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjutils.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

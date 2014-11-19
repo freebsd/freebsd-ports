@@ -13,12 +13,9 @@ COMMENT=	Python package used in Ada testsuites
 LICENSE=	GPLv3
 
 SNAPSHOT=	20140205
-USES=		tar:bzip2
+USES=		python tar:bzip2
+USE_PYTHON=	distutils autoplist
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGVERSION=	1.2
 NO_LICENSES_INSTALL=	yes
 
 .include <bsd.port.mk>

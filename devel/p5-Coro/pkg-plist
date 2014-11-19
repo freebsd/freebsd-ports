@@ -62,10 +62,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/readline
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/EV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Coro

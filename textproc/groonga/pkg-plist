@@ -26,6 +26,7 @@ include/groonga/groonga.h
 include/groonga/groonga/nfkc.h
 include/groonga/groonga/normalizer.h
 include/groonga/groonga/plugin.h
+include/groonga/groonga/token_filter.h
 include/groonga/groonga/tokenizer.h
 lib/groonga/plugins/query_expanders/tsv.a
 lib/groonga/plugins/query_expanders/tsv.so
@@ -33,6 +34,8 @@ lib/groonga/plugins/suggest/suggest.a
 lib/groonga/plugins/suggest/suggest.so
 lib/groonga/plugins/table/table.a
 lib/groonga/plugins/table/table.so
+lib/groonga/plugins/token_filters/stop_word.a
+lib/groonga/plugins/token_filters/stop_word.so
 %%MECAB%%lib/groonga/plugins/tokenizers/mecab.a
 %%MECAB%%lib/groonga/plugins/tokenizers/mecab.so
 lib/libgroonga.a
@@ -159,37 +162,3 @@ sbin/groonga-httpd-restart
 %%DATADIR%%/munin/plugins/groonga_query_performance_
 %%DATADIR%%/munin/plugins/groonga_status_
 %%DATADIR%%/munin/plugins/groonga_throughput_
-@dirrm %%DATADIR%%/munin/plugins
-@dirrm %%DATADIR%%/munin
-@dirrm %%DATADIR%%/images/logo
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/html/admin/js
-@dirrm %%DATADIR%%/html/admin/images
-@dirrm %%DATADIR%%/html/admin/css/redmond/images
-@dirrm %%DATADIR%%/html/admin/css/redmond
-@dirrm %%DATADIR%%/html/admin/css
-@dirrm %%DATADIR%%/html/admin
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%/examples/dictionary/jmdict
-@dirrm %%DATADIR%%/examples/dictionary/html/js
-@dirrm %%DATADIR%%/examples/dictionary/html/css/smoothness/images
-@dirrm %%DATADIR%%/examples/dictionary/html/css/smoothness
-@dirrm %%DATADIR%%/examples/dictionary/html/css
-@dirrm %%DATADIR%%/examples/dictionary/html
-@dirrm %%DATADIR%%/examples/dictionary/gene95
-@dirrm %%DATADIR%%/examples/dictionary/eijiro
-@dirrm %%DATADIR%%/examples/dictionary/edict
-@dirrm %%DATADIR%%/examples/dictionary
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%
-%%MECAB%%@dirrm lib/groonga/plugins/tokenizers
-@dirrm lib/groonga/plugins/table
-@dirrm lib/groonga/plugins/suggest
-@dirrm lib/groonga/plugins/query_expanders
-@dirrm lib/groonga/plugins
-@dirrm lib/groonga
-@dirrm include/groonga/groonga
-@dirrm include/groonga
-@dirrm %%ETCDIR%%/httpd/html
-@dirrm %%ETCDIR%%/httpd
-@dirrm %%ETCDIR%%

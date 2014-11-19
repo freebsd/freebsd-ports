@@ -1189,6 +1189,3 @@
 %%DOCSDIR%%/usecasewizard.html
 %%DOCSDIR%%/xmigenerator.html
 %%DOCSDIR%%/xmiimport.html
-@dirrm %%DOCSDIR%%/figs
-@dirrm %%DOCSDIR%%/empty_html
-@dirrm %%DOCSDIR%%

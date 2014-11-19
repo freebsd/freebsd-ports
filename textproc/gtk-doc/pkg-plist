@@ -61,35 +61,3 @@ share/help/zh_CN/gtk-doc-manual/index.docbook
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 share/sgml/gtk-doc/gtk-doc.cat
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%CATALOG_DIR%%/gtk-doc.cat
-@dirrm share/sgml/gtk-doc
-@dirrmtry share/help/zh_CN/gtk-doc-manual
-@dirrmtry share/help/zh_CN
-@dirrmtry share/help/te/gtk-doc-manual
-@dirrmtry share/help/te
-@dirrmtry share/help/ta/gtk-doc-manual
-@dirrmtry share/help/ta
-@dirrmtry share/help/sv/gtk-doc-manual
-@dirrmtry share/help/sv
-@dirrmtry share/help/sl/gtk-doc-manual
-@dirrmtry share/help/sl
-@dirrmtry share/help/pt_BR/gtk-doc-manual
-@dirrmtry share/help/pt_BR
-@dirrmtry share/help/gu/gtk-doc-manual
-@dirrmtry share/help/gu
-@dirrmtry share/help/fr/gtk-doc-manual
-@dirrmtry share/help/fr
-@dirrmtry share/help/es/gtk-doc-manual
-@dirrmtry share/help/es
-@dirrmtry share/help/en_GB/gtk-doc-manual
-@dirrmtry share/help/en_GB
-@dirrmtry share/help/el/gtk-doc-manual
-@dirrmtry share/help/el
-@dirrmtry share/help/de/gtk-doc-manual
-@dirrmtry share/help/de
-@dirrmtry share/help/bn_IN/gtk-doc-manual
-@dirrmtry share/help/bn_IN
-@dirrmtry share/help/C/gtk-doc-manual
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

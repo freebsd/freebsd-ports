@@ -188,8 +188,3 @@ lib/libepp-nicbr-%%VER%%.a
 %%DATADIR%%/templates/login.xml
 %%DATADIR%%/templates/logout.xml
 %%DATADIR%%/templates/poll.xml
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/ssl
-@dirrm %%DATADIR%%/schemas
-@dirrm %%DATADIR%%
-@dirrm include/libepp_nicbr

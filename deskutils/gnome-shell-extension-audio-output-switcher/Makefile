@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-shell-extension-audio-output-switcher/Makefile 19693 2014-05-26 08:54:39Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-shell-extension-audio-output-switcher/Makefile 19693 2014-05-26 08:54:39Z gusi $
 
 PORTNAME=	gnome-shell-extension-audio-output-switcher
 PORTVERSION=	0.0.0.20140520

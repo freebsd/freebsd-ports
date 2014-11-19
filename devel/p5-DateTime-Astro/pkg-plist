@@ -6,7 +6,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Astro/Astro.so
 %%PERL5_MAN3%%/DateTime::Astro.3.gz
 %%PERL5_MAN3%%/DateTime::Event::SolarTerm.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Astro
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Event
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DateTime

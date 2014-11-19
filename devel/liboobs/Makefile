@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/liboobs/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/trunk/devel/liboobs/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	liboobs
 PORTVERSION=	3.0.0

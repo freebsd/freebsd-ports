@@ -22,9 +22,8 @@ OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-bitbucket>=1.0:${PORTSDIR}/textproc/py-sphinxcontrib-bitbucket
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 

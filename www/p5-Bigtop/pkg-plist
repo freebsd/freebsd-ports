@@ -92,6 +92,30 @@ bin/tentmaker
 %%SITE_PERL%%/Bigtop/grammar.pod
 man/man1/bigtop.1.gz
 man/man1/tentmaker.1.gz
+share/TentMaker/tenttemplates/app_body.ttc
+share/TentMaker/tenttemplates/app_body_div.ttc
+share/TentMaker/tenttemplates/app_config.ttc
+share/TentMaker/tenttemplates/app_statements.ttc
+share/TentMaker/tenttemplates/backends.ttc
+share/TentMaker/tenttemplates/bigtop_config.ttc
+share/TentMaker/tenttemplates/controller_config_block.ttc
+share/TentMaker/tenttemplates/data_div.ttc
+share/TentMaker/tenttemplates/default.css
+share/TentMaker/tenttemplates/delete_button.ttc
+share/TentMaker/tenttemplates/delete_link.ttc
+share/TentMaker/tenttemplates/field_block.ttc
+share/TentMaker/tenttemplates/input_boxes.ttc
+share/TentMaker/tenttemplates/method_block.ttc
+share/TentMaker/tenttemplates/new_app_body_div.tt
+share/TentMaker/tenttemplates/new_controller_config_div.tt
+share/TentMaker/tenttemplates/new_data_div.ttc
+share/TentMaker/tenttemplates/new_field_div.tt
+share/TentMaker/tenttemplates/new_method_div.tt
+share/TentMaker/tenttemplates/new_quick_edit.ttc
+share/TentMaker/tenttemplates/quick_edit.ttc
+share/TentMaker/tenttemplates/show_or_hide.ttc
+share/TentMaker/tenttemplates/tenter.js
+share/TentMaker/tenttemplates/tenter.tt
 @dirrmtry %%SITE_PERL%%/Bigtop/ScriptHelp/Style
 @dirrmtry %%SITE_PERL%%/Bigtop/ScriptHelp
 @dirrmtry %%SITE_PERL%%/Bigtop/Docs

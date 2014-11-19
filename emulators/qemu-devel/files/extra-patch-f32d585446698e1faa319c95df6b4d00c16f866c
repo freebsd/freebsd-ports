@@ -1,0 +1,81 @@
+From f32d585446698e1faa319c95df6b4d00c16f866c Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Wed, 5 Nov 2014 20:55:35 +0000
+Subject: [PATCH] The new system calls were actually added in 10.0.
+
+This change fixes when cap_*[_limit, _get](2), bindat(2), connectat(2),
+and wait6(2) were actually added to the FreeBSD kernel.
+---
+ bsd-user/freebsd/os-proc.h   | 8 ++++----
+ bsd-user/freebsd/os-socket.h | 6 +++---
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/bsd-user/freebsd/os-proc.h b/bsd-user/freebsd/os-proc.h
+index cd05e96..612a5fd 100644
+--- a/bsd-user/freebsd/os-proc.h
++++ b/bsd-user/freebsd/os-proc.h
+@@ -20,7 +20,7 @@
+ #ifndef __FREEBSD_PROC_H_
+ #define __FREEBSD_PROC_H_
+ 
+-#if defined(__FreeBSD_version) && __FreeBSD_version > 1100000
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
+ #include <sys/signal.h>
+ #endif
+ #include <sys/types.h>
+@@ -75,7 +75,7 @@ static inline abi_long do_freebsd_wait4(abi_long arg1, abi_ulong target_status,
+     return ret;
+ }
+ 
+-#if defined(__FreeBSD_version) && __FreeBSD_version > 1100000
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
+ /* wait6(2) */
+ static inline abi_long do_freebsd_wait6(abi_long idtype, abi_long id,
+ 	abi_ulong target_status, abi_long options, abi_ulong target_wrusage,
+@@ -112,7 +112,7 @@ static inline abi_long do_freebsd_wait6(abi_long idtype, abi_long id,
+     return ret;
+ }
+ 
+-#else /* !  __FreeBSD_version > 1100000 */
++#else /* !  __FreeBSD_version >= 1000000 */
+ 
+ static inline abi_long do_freebsd_wait6( __unused abi_long idtype,
+ 	__unused abi_long id,  __unused abi_ulong target_status,
+@@ -123,7 +123,7 @@ static inline abi_long do_freebsd_wait6( __unused abi_long idtype,
+     qemu_log("qemu: Unsupported syscall wait6()\n");
+     return -TARGET_ENOSYS;
+ }
+-#endif /* __FreeBSD_version > 1100000 */
++#endif /* __FreeBSD_version >= 1000000 */
+ 
+ #if defined(__FreeBSD_version) && __FreeBSD_version > 900000
+ /* setloginclass(2) */
+diff --git a/bsd-user/freebsd/os-socket.h b/bsd-user/freebsd/os-socket.h
+index 61e3440..4212f0a 100644
+--- a/bsd-user/freebsd/os-socket.h
++++ b/bsd-user/freebsd/os-socket.h
+@@ -557,7 +557,7 @@ static inline abi_long do_freebsd_sendfile(abi_long fd, abi_long s,
+     return -TARGET_ENOSYS;
+ }
+ 
+-#if defined(__FreeBSD_version) && __FreeBSD_version > 1100000
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
+ /* bindat(2) */
+ static inline abi_long do_bsd_bindat(int fd, int sockfd, abi_ulong target_addr,
+         socklen_t addrlen)
+@@ -632,7 +632,7 @@ static inline abi_long do_bsd_accept4(int fd, abi_ulong target_addr,
+     return ret;
+ }
+ 
+-#else /* ! __FreeBSD_version > 1100000 */
++#else /* ! __FreeBSD_version >= 1000000 */
+ 
+ /* bindat(2) */
+ static inline abi_long do_bsd_bindat(__unused int sockfd,
+@@ -660,5 +660,5 @@ static inline abi_long do_bsd_accept4(__unused int fd,
+     qemu_log("qemu: Unsupported syscall accept4()\n");
+     return -TARGET_ENOSYS;
+ }
+-#endif /* ! __FreeBSD_version > 1100000 */
++#endif /* ! __FreeBSD_version >= 1000000 */
+ #endif /* !__FREEBSD_SOCKET_H_ */

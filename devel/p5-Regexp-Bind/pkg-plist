@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Regexp::Bind.3.gz
 %%SITE_PERL%%/Regexp/Bind.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Bind/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Bind
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
-@dirrmtry %%SITE_PERL%%/Regexp

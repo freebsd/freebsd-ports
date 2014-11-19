@@ -17,9 +17,3 @@ GNUstep/Local/Applications/ImageViewer.app/Resources/README
 GNUstep/Local/Applications/ImageViewer.app/Resources/genericImage.tiff
 GNUstep/Local/Applications/ImageViewer.app/stamp.make
 GNUstep/Local/Tools/ImageViewer
-@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources/Hungarian.lproj
-@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources/French.lproj
-@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources
-@dirrm GNUstep/Local/Applications/ImageViewer.app

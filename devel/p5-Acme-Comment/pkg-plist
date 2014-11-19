@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Acme/Comment.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Comment/.packlist
 %%PERL5_MAN3%%/Acme::Comment.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Comment
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme
-@dirrmtry %%SITE_PERL%%/Acme

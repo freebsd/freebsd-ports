@@ -20,5 +20,3 @@ share/pixmaps/linguist-qt4.png
 %%QT_DATADIR%%/phrasebooks/russian.qph
 %%QT_DATADIR%%/phrasebooks/spanish.qph
 %%QT_DATADIR%%/phrasebooks/swedish.qph
-@dirrm %%QT_DATADIR%%/phrasebooks
-@dirrmtry %%QT_DATADIR%%

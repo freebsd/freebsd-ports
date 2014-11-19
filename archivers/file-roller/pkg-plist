@@ -4,6 +4,7 @@ bin/file-roller
 libexec/file-roller/isoinfo.sh
 libexec/file-roller/rpm2cpio
 share/GConf/gsettings/file-roller.convert
+share/appdata/org.gnome.FileRoller.appdata.xml
 share/applications/org.gnome.FileRoller.desktop
 share/dbus-1/services/org.gnome.FileRoller.ArchiveManager1.service
 share/dbus-1/services/org.gnome.FileRoller.service
@@ -134,6 +135,24 @@ share/help/es/file-roller/troubleshooting-password.page
 share/help/es/file-roller/figures/file-roller-3-12.png
 share/help/es/file-roller/figures/file-roller-icon.png
 share/help/es/file-roller/figures/file-roller-open-recent.png
+share/help/fi/file-roller/archive-create.page
+share/help/fi/file-roller/archive-edit.page
+share/help/fi/file-roller/archive-extract-advanced-options.page
+share/help/fi/file-roller/archive-extract.page
+share/help/fi/file-roller/archive-open.page
+share/help/fi/file-roller/archive-view.page
+share/help/fi/file-roller/figures/file-roller-3-12.png
+share/help/fi/file-roller/figures/file-roller-icon.png
+share/help/fi/file-roller/figures/file-roller-open-recent.png
+share/help/fi/file-roller/index.page
+share/help/fi/file-roller/introduction.page
+share/help/fi/file-roller/keyboard-shortcuts.page
+share/help/fi/file-roller/legal.xml
+share/help/fi/file-roller/password-protection.page
+share/help/fi/file-roller/supported-formats.page
+share/help/fi/file-roller/test-integrity.page
+share/help/fi/file-roller/troubleshooting-archive-open.page
+share/help/fi/file-roller/troubleshooting-password.page
 share/help/fr/file-roller/archive-create.page
 share/help/fr/file-roller/archive-edit.page
 share/help/fr/file-roller/archive-extract-advanced-options.page
@@ -422,121 +441,3 @@ share/locale/zh_CN/LC_MESSAGES/file-roller.mo
 share/locale/zh_HK/LC_MESSAGES/file-roller.mo
 share/locale/zh_TW/LC_MESSAGES/file-roller.mo
 share/locale/zu/LC_MESSAGES/file-roller.mo
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr@ije/LC_MESSAGES
-@dirrmtry share/locale/sr@ije
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/my/LC_MESSAGES
-@dirrmtry share/locale/my
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/csb/LC_MESSAGES
-@dirrmtry share/locale/csb
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrm share/help/zh_CN/file-roller/figures
-@dirrm share/help/zh_CN/file-roller
-@dirrmtry share/help/zh_CN
-@dirrm share/help/te/file-roller/figures
-@dirrm share/help/te/file-roller
-@dirrmtry share/help/te
-@dirrm share/help/sl/file-roller/figures
-@dirrm share/help/sl/file-roller
-@dirrmtry share/help/sl
-@dirrm share/help/ru/file-roller/figures
-@dirrm share/help/ru/file-roller
-@dirrmtry share/help/ru
-@dirrm share/help/pt_BR/file-roller/figures
-@dirrm share/help/pt_BR/file-roller
-@dirrmtry share/help/pt_BR
-@dirrm share/help/ja/file-roller/figures
-@dirrm share/help/ja/file-roller
-@dirrmtry share/help/ja
-@dirrm share/help/id/file-roller/figures
-@dirrm share/help/id/file-roller
-@dirrmtry share/help/id
-@dirrm share/help/hu/file-roller/figures
-@dirrm share/help/hu/file-roller
-@dirrmtry share/help/hu
-@dirrm share/help/gl/file-roller/figures
-@dirrm share/help/gl/file-roller
-@dirrmtry share/help/gl
-@dirrm share/help/fr/file-roller/figures
-@dirrm share/help/fr/file-roller
-@dirrmtry share/help/fr
-@dirrm share/help/es/file-roller/figures
-@dirrm share/help/es/file-roller
-@dirrmtry share/help/es
-@dirrm share/help/el/file-roller/figures
-@dirrm share/help/el/file-roller
-@dirrmtry share/help/el
-@dirrm share/help/de/file-roller/figures
-@dirrm share/help/de/file-roller
-@dirrmtry share/help/de
-@dirrm share/help/da/file-roller/figures
-@dirrm share/help/da/file-roller
-@dirrmtry share/help/da
-@dirrm share/help/cs/file-roller/figures
-@dirrm share/help/cs/file-roller
-@dirrmtry share/help/cs
-@dirrm share/help/ca/file-roller/figures
-@dirrm share/help/ca/file-roller
-@dirrmtry share/help/ca
-@dirrm share/help/C/file-roller/figures
-@dirrm share/help/C/file-roller
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm %%DATADIR%%
-@dirrm libexec/file-roller

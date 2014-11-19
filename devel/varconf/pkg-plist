@@ -16,6 +16,3 @@ libdata/pkgconfig/varconf-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-@dirrm include/varconf-1.0/varconf
-@dirrm include/varconf-1.0
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

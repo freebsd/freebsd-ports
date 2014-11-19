@@ -1,4 +1,3 @@
-@comment file listing
 etc/allegrorc
 usr/lib/allegro/4.2.2/alleg-alsadigi.so
 usr/lib/allegro/4.2.2/alleg-alsamidi.so
@@ -16,8 +15,3 @@ usr/share/doc/allegro-4.2.2/THANKS
 usr/share/doc/allegro-4.2.2/linux.txt
 usr/share/doc/allegro-4.2.2/readme.txt
 usr/share/doc/allegro-4.2.2/unix.txt
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/allegro-4.2.2
-@dirrm usr/share/allegro
-@dirrm usr/lib/allegro/4.2.2
-@dirrm usr/lib/allegro

@@ -49,7 +49,3 @@
 %%QT_LIBDIR%%/libQtScript.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtScript.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtScript.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtScript
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

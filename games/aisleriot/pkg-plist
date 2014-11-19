@@ -91,7 +91,7 @@ lib/aisleriot/guile/2.0/zebra.go
 lib/valgrind/aisleriot.supp
 libexec/aisleriot/ar-cards-renderer
 man/man6/sol.6.gz
-%%DATADIR%%/aisleriot.catalog
+share/appdata/sol.appdata.xml
 %%DATADIR%%/cards/anglo.svgz
 %%DATADIR%%/cards/anglo_bitmap.svgz
 %%DATADIR%%/cards/bellot.svgz
@@ -936,6 +936,97 @@ share/help/gl/aisleriot/will_o_the_wisp.xml
 share/help/gl/aisleriot/yield.xml
 share/help/gl/aisleriot/yukon.xml
 share/help/gl/aisleriot/zebra.xml
+share/help/hu/aisleriot/accordion.xml
+share/help/hu/aisleriot/agnes.xml
+share/help/hu/aisleriot/athena.xml
+share/help/hu/aisleriot/auld_lang_syne.xml
+share/help/hu/aisleriot/aunt_mary.xml
+share/help/hu/aisleriot/backbone.xml
+share/help/hu/aisleriot/bakers_dozen.xml
+share/help/hu/aisleriot/bakers_game.xml
+share/help/hu/aisleriot/bear_river.xml
+share/help/hu/aisleriot/beleaguered_castle.xml
+share/help/hu/aisleriot/block_ten.xml
+share/help/hu/aisleriot/bristol.xml
+share/help/hu/aisleriot/camelot.xml
+share/help/hu/aisleriot/canfield.xml
+share/help/hu/aisleriot/carpet.xml
+share/help/hu/aisleriot/chessboard.xml
+share/help/hu/aisleriot/clock.xml
+share/help/hu/aisleriot/cover.xml
+share/help/hu/aisleriot/cruel.xml
+share/help/hu/aisleriot/definitions.xml
+share/help/hu/aisleriot/diamond_mine.xml
+share/help/hu/aisleriot/doublets.xml
+share/help/hu/aisleriot/eagle-wing.xml
+share/help/hu/aisleriot/easthaven.xml
+share/help/hu/aisleriot/eight_off.xml
+share/help/hu/aisleriot/elevator.xml
+share/help/hu/aisleriot/eliminator.xml
+share/help/hu/aisleriot/escalator.xml
+share/help/hu/aisleriot/first_law.xml
+share/help/hu/aisleriot/fortress.xml
+share/help/hu/aisleriot/fortunes.xml
+share/help/hu/aisleriot/forty_thieves.xml
+share/help/hu/aisleriot/fourteen.xml
+share/help/hu/aisleriot/freecell.xml
+share/help/hu/aisleriot/gaps.xml
+share/help/hu/aisleriot/gay_gordons.xml
+share/help/hu/aisleriot/giant.xml
+share/help/hu/aisleriot/glenwood.xml
+share/help/hu/aisleriot/gold_mine.xml
+share/help/hu/aisleriot/golf.xml
+share/help/hu/aisleriot/gypsy.xml
+share/help/hu/aisleriot/helsinki.xml
+share/help/hu/aisleriot/hopscotch.xml
+share/help/hu/aisleriot/index.docbook
+share/help/hu/aisleriot/isabel.xml
+share/help/hu/aisleriot/jamestown.xml
+share/help/hu/aisleriot/jumbo.xml
+share/help/hu/aisleriot/kansas.xml
+share/help/hu/aisleriot/king_albert.xml
+share/help/hu/aisleriot/kings_audience.xml
+share/help/hu/aisleriot/klondike.xml
+share/help/hu/aisleriot/labyrinth.xml
+share/help/hu/aisleriot/lady_jane.xml
+share/help/hu/aisleriot/legal.xml
+share/help/hu/aisleriot/maze.xml
+share/help/hu/aisleriot/monte_carlo.xml
+share/help/hu/aisleriot/napoleons_tomb.xml
+share/help/hu/aisleriot/neighbor.xml
+share/help/hu/aisleriot/odessa.xml
+share/help/hu/aisleriot/osmosis.xml
+share/help/hu/aisleriot/peek.xml
+share/help/hu/aisleriot/pileon.xml
+share/help/hu/aisleriot/plait.xml
+share/help/hu/aisleriot/poker.xml
+share/help/hu/aisleriot/quatorze.xml
+share/help/hu/aisleriot/royal_east.xml
+share/help/hu/aisleriot/saratoga.xml
+share/help/hu/aisleriot/scorpion.xml
+share/help/hu/aisleriot/scuffle.xml
+share/help/hu/aisleriot/seahaven.xml
+share/help/hu/aisleriot/sir_tommy.xml
+share/help/hu/aisleriot/spider.xml
+share/help/hu/aisleriot/spider_three_decks.xml
+share/help/hu/aisleriot/spiderette.xml
+share/help/hu/aisleriot/straight_up.xml
+share/help/hu/aisleriot/streets_and_alleys.xml
+share/help/hu/aisleriot/ten_across.xml
+share/help/hu/aisleriot/terrace.xml
+share/help/hu/aisleriot/thieves.xml
+share/help/hu/aisleriot/thirteen.xml
+share/help/hu/aisleriot/thumb_and_pouch.xml
+share/help/hu/aisleriot/treize.xml
+share/help/hu/aisleriot/triple_peaks.xml
+share/help/hu/aisleriot/union_square.xml
+share/help/hu/aisleriot/valentine.xml
+share/help/hu/aisleriot/westhaven.xml
+share/help/hu/aisleriot/whitehead.xml
+share/help/hu/aisleriot/will_o_the_wisp.xml
+share/help/hu/aisleriot/yield.xml
+share/help/hu/aisleriot/yukon.xml
+share/help/hu/aisleriot/zebra.xml
 share/help/oc/aisleriot/accordion.xml
 share/help/oc/aisleriot/agnes.xml
 share/help/oc/aisleriot/athena.xml
@@ -1764,129 +1855,3 @@ share/locale/xh/LC_MESSAGES/aisleriot.mo
 share/locale/zh_CN/LC_MESSAGES/aisleriot.mo
 share/locale/zh_HK/LC_MESSAGES/aisleriot.mo
 share/locale/zh_TW/LC_MESSAGES/aisleriot.mo
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons/HighContrast/scalable/apps
-@dirrmtry share/icons/HighContrast/scalable
-@dirrmtry share/icons/HighContrast
-@dirrmtry share/icons
-@dirrmtry share/help/zh_CN/aisleriot/figures
-@dirrmtry share/help/zh_CN/aisleriot
-@dirrmtry share/help/zh_CN
-@dirrmtry share/help/sv/aisleriot/figures
-@dirrmtry share/help/sv/aisleriot
-@dirrmtry share/help/sv
-@dirrmtry share/help/sr@latin/aisleriot/figures
-@dirrmtry share/help/sr@latin/aisleriot
-@dirrmtry share/help/sr@latin
-@dirrmtry share/help/sr/aisleriot/figures
-@dirrmtry share/help/sr/aisleriot
-@dirrmtry share/help/sr
-@dirrmtry share/help/sl/aisleriot/figures
-@dirrmtry share/help/sl/aisleriot
-@dirrmtry share/help/sl
-@dirrmtry share/help/ru/aisleriot/figures
-@dirrmtry share/help/ru/aisleriot
-@dirrmtry share/help/ru
-@dirrmtry share/help/pt_BR/aisleriot/figures
-@dirrmtry share/help/pt_BR/aisleriot
-@dirrmtry share/help/pt_BR
-@dirrmtry share/help/oc/aisleriot/figures
-@dirrmtry share/help/oc/aisleriot
-@dirrmtry share/help/oc
-@dirrmtry share/help/gl/aisleriot/figures
-@dirrmtry share/help/gl/aisleriot
-@dirrmtry share/help/gl
-@dirrmtry share/help/fr/aisleriot/figures
-@dirrmtry share/help/fr/aisleriot
-@dirrmtry share/help/fr
-@dirrmtry share/help/eu/aisleriot/figures
-@dirrmtry share/help/eu/aisleriot
-@dirrmtry share/help/eu
-@dirrmtry share/help/es/aisleriot/figures
-@dirrmtry share/help/es/aisleriot
-@dirrmtry share/help/es
-@dirrmtry share/help/en_GB/aisleriot/figures
-@dirrmtry share/help/en_GB/aisleriot
-@dirrmtry share/help/en_GB
-@dirrmtry share/help/el/aisleriot/figures
-@dirrmtry share/help/el/aisleriot
-@dirrmtry share/help/el
-@dirrmtry share/help/de/aisleriot/figures
-@dirrmtry share/help/de/aisleriot
-@dirrmtry share/help/de
-@dirrmtry share/help/ca/aisleriot/figures
-@dirrmtry share/help/ca/aisleriot
-@dirrmtry share/help/ca
-@dirrmtry share/help/C/aisleriot/figures
-@dirrmtry share/help/C/aisleriot
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/cards
-@dirrm %%DATADIR%%
-@dirrm libexec/aisleriot
-@dirrmtry lib/valgrind
-@dirrm lib/aisleriot/guile/2.0/aisleriot
-@dirrm lib/aisleriot/guile/2.0
-@dirrm lib/aisleriot/guile
-@dirrm lib/aisleriot

@@ -12,10 +12,9 @@ DISTNAME=		gadfly-${PORTVERSION}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Graph and set datatypes for Python (C extension)
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-WRKSRC=			${WRKDIR}/${DISTNAME}/kjbuckets
+USES=		python
+USE_PYTHON=	distutils autoplist
+WRKSRC=		${WRKDIR}/${DISTNAME}/kjbuckets
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

@@ -295,14 +295,3 @@ share/vala/vapi/gcr-3.vapi
 share/vala/vapi/gcr-ui-3.deps
 share/vala/vapi/gcr-ui-3.vapi
 share/vala/vapi/pkcs11.vapi
-@dirrm share/gtk-doc/html/gcr-3
-@dirrm share/gtk-doc/html/gck
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm share/gcr-3/ui
-@dirrm share/gcr-3
-@dirrm include/gcr-3/ui
-@dirrm include/gcr-3/gcr
-@dirrm include/gcr-3
-@dirrm include/gck-1/gck
-@dirrm include/gck-1

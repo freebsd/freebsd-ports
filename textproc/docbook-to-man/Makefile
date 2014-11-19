@@ -16,6 +16,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 USES=		imake
 XFREE86_HTML_MAN=	no
 
+MAKE_JOBS_UNSAFE=	yes
+
 # There are two ports that satisfy the nsgmls requirement.
 # Jade is preferred, but OpenJade can be selected if needed.
 OPTIONS_DEFINE=	OPENJADE

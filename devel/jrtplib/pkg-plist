@@ -54,6 +54,3 @@ lib/libjrtp.a
 lib/libjrtp.so
 lib/libjrtp.so.%%JRTPLIB_VER%%
 libdata/pkgconfig/jrtplib.pc
-@dirrm lib/cmake/JRTPLIB
-@dirrmtry lib/cmake
-@dirrm include/jrtplib3

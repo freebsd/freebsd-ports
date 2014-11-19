@@ -34,6 +34,3 @@
 %%EXAMPLESDIR%%/test_observe.py
 %%EXAMPLESDIR%%/tree_demo.py
 %%EXAMPLESDIR%%/tree_demo2.py
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/editobj/icons
-@dirrm %%PYTHON_SITELIBDIR%%/editobj

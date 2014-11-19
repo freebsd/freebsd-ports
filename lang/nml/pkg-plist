@@ -341,11 +341,3 @@ lib/nml/weak.p.cmx
 %%DATADIR%%/contrib/emacs/n-font.el
 %%DATADIR%%/contrib/emacs/n.el
 %%DATADIR%%/contrib/vim/nml.vim
-@dirrm %%DATADIR%%/contrib/vim
-@dirrm %%DATADIR%%/contrib/emacs
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/nml/threads
-@dirrm lib/nml/caml
-@dirrm lib/nml

@@ -27,5 +27,3 @@ include/chipmunk/chipmunk_types.h
 include/chipmunk/chipmunk_private.h
 include/chipmunk/chipmunk_ffi.h
 include/chipmunk/chipmunk.h
-@dirrm include/chipmunk/constraints
-@dirrm include/chipmunk

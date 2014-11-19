@@ -103,10 +103,6 @@ include/eiskaltdcpp/dcpp/stdinc.h
 include/eiskaltdcpp/dcpp/typedefs.h
 include/eiskaltdcpp/dcpp/version.h
 include/eiskaltdcpp/dcpp/w.h
-@dirrm include/eiskaltdcpp/dcpp
-@dirrm include/eiskaltdcpp
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
 lib/libeiskaltdcpp.so.2.2
 lib/libeiskaltdcpp.so.2
 lib/libeiskaltdcpp.so

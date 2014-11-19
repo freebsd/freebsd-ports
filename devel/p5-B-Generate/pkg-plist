@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Generate/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Generate.pm
 %%PERL5_MAN3%%/B::Generate.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Generate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

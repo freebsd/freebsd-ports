@@ -18,9 +18,9 @@ BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
 		itstool:${PORTSDIR}/textproc/itstool
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 
-OPTIONS_DEFINE=	VTE NLS
-OPTIONS_DEFAULT=	VTE NLS
-VTE_DESC=	Terminal Widget
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=	NLS
+#VTE_DESC=	Terminal Widget
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 libglade2 gtksourceview3 gdkpixbuf2
@@ -33,11 +33,13 @@ INSTALL_TARGET=	install-strip
 PLIST_SUB+=	GIGGLE_VER=${PORTVERSION}
 CONFIGURE_ARGS+=	--disable-evolution-data-server \
 			--with-git-command=${LOCALBASE}/bin/git
+# disable vte support until giggle catches up with the new API
+CONFIGURE_ARGS+=	--disable-terminal
 
-OPTIONS_SUB=	VTE
+OPTIONS_SUB=	yes
 
-VTE_USE=		GNOME=vte3
-VTE_CONFIGURE_ENABLE=	terminal
+#VTE_USE=		GNOME=vte3
+#VTE_CONFIGURE_ENABLE=	terminal
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext

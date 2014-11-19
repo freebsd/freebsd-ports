@@ -79,7 +79,3 @@ share/gtk-doc/html/swfdec/swfdec-Version-Information.html
 share/gtk-doc/html/swfdec/swfdec.devhelp
 share/gtk-doc/html/swfdec/swfdec.devhelp2
 share/gtk-doc/html/swfdec/up.png
-@dirrm share/gtk-doc/html/swfdec
-@dirrm include/swfdec-%%VERSION%%/swfdec-gtk
-@dirrm include/swfdec-%%VERSION%%/swfdec
-@dirrm include/swfdec-%%VERSION%%

@@ -34,5 +34,3 @@ man/man1/flex.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/flex.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/flex

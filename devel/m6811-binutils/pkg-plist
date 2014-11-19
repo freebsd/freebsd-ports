@@ -53,7 +53,3 @@ man/man1/m6811-elf-size.1.gz
 man/man1/m6811-elf-strings.1.gz
 man/man1/m6811-elf-strip.1.gz
 man/man1/m6811-elf-windres.1.gz
-@dirrm m6811-elf/lib/ldscripts
-@dirrm m6811-elf/lib
-@dirrm m6811-elf/bin
-@dirrm m6811-elf

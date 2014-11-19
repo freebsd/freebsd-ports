@@ -2,11 +2,3 @@
 %%SITE_PERL%%/Business/OnlinePayment/Beanstream.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Beanstream/.packlist
 %%PERL5_MAN3%%/Business::OnlinePayment::Beanstream.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Beanstream
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment/Beanstream
-@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/auto/Business
-@dirrmtry %%SITE_PERL%%/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/Business

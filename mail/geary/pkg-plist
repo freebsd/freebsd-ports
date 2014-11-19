@@ -163,17 +163,3 @@ share/locale/uk/LC_MESSAGES/geary.mo
 share/locale/vi/LC_MESSAGES/geary.mo
 share/locale/zh_CN/LC_MESSAGES/geary.mo
 share/locale/zh_TW/LC_MESSAGES/geary.mo
-@dirrm share/icons/hicolor/512x512/apps
-@dirrm share/icons/hicolor/512x512
-@dirrm share/gnome/help/geary/it
-@dirrm share/gnome/help/geary/es
-@dirrm share/gnome/help/geary/el
-@dirrm share/gnome/help/geary/C/figures
-@dirrm share/gnome/help/geary/C
-@dirrm share/gnome/help/geary
-@dirrmtry share/appdata
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/theming
-@dirrm %%DATADIR%%/sql
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

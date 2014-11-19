@@ -35,9 +35,3 @@
 %%DATADIR%%/urlencode.rb
 %%RUBY_SITELIBDIR%%/abspath.rb
 %%RUBY_SITELIBDIR%%/findbin.rb
-@dirrm %%DATADIR%%/sample_input
-@dirrm %%DATADIR%%/templates/alternate
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/swigs-converters
-@dirrm %%DATADIR%%/xml-generators
-@dirrm %%DATADIR%%

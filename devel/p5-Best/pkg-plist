@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Best.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Best/.packlist
 %%PERL5_MAN3%%/Best.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Best

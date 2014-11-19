@@ -1,0 +1,23 @@
+Fixes the build with base GCC.
+
+commit b84f08c8b7c91a979bd74840561af2391ef20666
+Author: Lars Knoll <lars.knoll@digia.com>
+Date:   Tue May 6 13:30:31 2014 +0200
+
+    Fix compiler warning
+
+    Change-Id: I26df4f1b8417c6b075d81eaf118669a4103503e2
+    Reviewed-by: Simon Hausmann <simon.hausmann@digia.com>
+
+--- src/qml/jsruntime/qv4object_p.h
++++ src/qml/jsruntime/qv4object_p.h
+@@ -168,7 +168,8 @@ struct Q_QML_EXPORT Object: Managed {
+     void defineReadonlyProperty(const StringRef name, ValueRef value);
+ 
+     void insertMember(const StringRef s, const ValueRef v, PropertyAttributes attributes = Attr_Data) {
+-        insertMember(s, Property(*v), attributes);
++        Property p(*v);
++        insertMember(s, p, attributes);
+     }
+     void insertMember(const StringRef s, const Property &p, PropertyAttributes attributes);
+ 

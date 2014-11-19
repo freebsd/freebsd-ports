@@ -1,0 +1,36 @@
+From ad225b8412847303d48d8e7852589456325e8f9b Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Fri, 7 Nov 2014 16:07:27 +0000
+Subject: [PATCH] Correctly deal with new sem_wait2 and sem_wake2 _umtx ops for
+ 9.x builds.
+
+---
+ bsd-user/freebsd/os-thread.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/bsd-user/freebsd/os-thread.c b/bsd-user/freebsd/os-thread.c
+index cca46cf..baec878 100644
+--- a/bsd-user/freebsd/os-thread.c
++++ b/bsd-user/freebsd/os-thread.c
+@@ -241,9 +241,9 @@ abi_long freebsd_umtx_sem_wake(abi_ulong obj, uint32_t val)
+ 
+     return get_errno(_umtx_op(g2h(obj), UMTX_OP_SEM2_WAKE, val, NULL, NULL));
+ }
+-#endif
+ 
+-#else
++#else /* ! __FreeBSD_version > 1100000 */
++
+ abi_long freebsd_umtx_sem_wait(abi_ulong obj, struct timespec *timeout)
+ {
+ 
+@@ -259,7 +259,8 @@ abi_long freebsd_umtx_sem_wake(abi_ulong obj, uint32_t val)
+ 
+     return get_errno(_umtx_op(g2h(obj), UMTX_OP_SEM_WAKE, val, NULL, NULL));
+ }
+-#endif
++#endif /* ! __FreeBSD_version > 110000 */
++#endif /* ! __FreeBSD_version > 900000 */
+ 
+ abi_long t2h_freebsd_rtprio(struct rtprio *host_rtp, abi_ulong target_addr)
+ {

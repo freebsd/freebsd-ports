@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/games/swell-foop/Makefile 19634 2014-05-12 20:23:40Z gusi $
+#   $MCom: ports/trunk/games/swell-foop/Makefile 19989 2014-10-18 09:53:56Z gusi $
 
 PORTNAME=	swell-foop
-PORTVERSION=	3.12.2
+PORTVERSION=	3.14.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

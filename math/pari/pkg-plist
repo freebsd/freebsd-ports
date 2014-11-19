@@ -28,5 +28,3 @@ man/man1/gp.1.gz
 man/man1/gphelp.1.gz
 man/man1/pari.1.gz
 man/man1/tex2mail.1.gz
-@dirrm lib/pari
-@dirrm include/pari

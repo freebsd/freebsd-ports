@@ -244,33 +244,3 @@ man/man1/rep-remote.1.gz
 man/man1/rep-xgettext.1.gz
 man/man1/rep.1.gz
 man/man1/repdoc.1.gz
-@dirrm share/rep/lisp/rep/xml
-@dirrm share/rep/lisp/rep/www
-@dirrm share/rep/lisp/rep/vm/compiler
-@dirrm share/rep/lisp/rep/vm
-@dirrm share/rep/lisp/rep/util
-@dirrm share/rep/lisp/rep/threads
-@dirrm share/rep/lisp/rep/test
-@dirrm share/rep/lisp/rep/system
-@dirrm share/rep/lisp/rep/net
-@dirrm share/rep/lisp/rep/mail
-@dirrm share/rep/lisp/rep/lang
-@dirrm share/rep/lisp/rep/io/file-handlers/remote
-@dirrm share/rep/lisp/rep/io/file-handlers
-@dirrm share/rep/lisp/rep/io
-@dirrm share/rep/lisp/rep/i18n
-@dirrm share/rep/lisp/rep/ffi
-@dirrm share/rep/lisp/rep/data
-@dirrm share/rep/lisp/rep
-@dirrm share/rep/lisp
-@dirrm share/rep
-@dirrm lib/rep/rep/vm
-@dirrm lib/rep/rep/util
-@dirrm lib/rep/rep/lang
-@dirrm lib/rep/rep/io/db
-@dirrm lib/rep/rep/io
-@dirrm lib/rep/rep/i18n
-@dirrm lib/rep/rep/data
-@dirrm lib/rep/rep
-@dirrm lib/rep
-@dirrm include/rep

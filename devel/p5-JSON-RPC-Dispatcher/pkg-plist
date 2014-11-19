@@ -5,9 +5,3 @@
 %%SITE_PERL%%/JSON/RPC/Dispatcher/App.pm
 %%SITE_PERL%%/JSON/RPC/Dispatcher/Procedure.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC/Dispatcher/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC/Dispatcher
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
-@dirrm %%SITE_PERL%%/JSON/RPC/Dispatcher
-@dirrmtry %%SITE_PERL%%/JSON/RPC
-@dirrmtry %%SITE_PERL%%/JSON

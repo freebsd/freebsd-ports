@@ -13,9 +13,7 @@ COMMENT=	Skype (TM) API wrapper for Python
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		zip
+USES=		python:2 zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

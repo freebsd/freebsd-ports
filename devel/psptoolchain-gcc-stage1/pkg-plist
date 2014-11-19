@@ -166,33 +166,3 @@
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/liblto_plugin.so.0.0.0
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/lto-wrapper
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/lto1
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/install-tools
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/install-tools/include
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/install-tools
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/include-fixed
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/include
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin/include/ada/gcc-interface
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin/include/ada
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin/include/c-family
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin/include/config/mips
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin/include/config
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin/include/cp
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin/include/java
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin/include/objc
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin/include
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2/plugin
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp
-@dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc
-@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/share
-@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/psp/lib
-@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/psp
-@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/include
-@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/lib
-@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/libexec
-@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/bin
-@dirrmtry %%PSP_GCC_STAGE_PREFIX%%
-@dirrmtry psp

@@ -7,5 +7,3 @@ bin/muellerfind
 %%DATADIR%%/Mueller7accentGPL.ru_RU.KOI8-R.h
 %%DATADIR%%/Mueller7accentGPL.ru_RU.UTF-8
 %%DATADIR%%/Mueller7accentGPL.ru_RU.UTF-8.h
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

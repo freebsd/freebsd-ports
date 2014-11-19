@@ -21,8 +21,7 @@ LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_SITELIBDIR}/numpy/core
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

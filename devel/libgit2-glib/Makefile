@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/libgit2-glib/Makefile 19911 2014-09-25 22:01:15Z kwm $
+#   $MCom: ports/trunk/devel/libgit2-glib/Makefile 19962 2014-10-15 14:57:24Z gusi $
 
 PORTNAME=	libgit2-glib
 PORTVERSION=	0.0.20
@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper library around the libgit2 git access library
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala \
 		gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
 LIB_DEPENDS=	libgit2.so:${PORTSDIR}/devel/libgit2
 
@@ -25,5 +25,6 @@ CONFIGURE_ARGS=	--disable-python
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.mk>

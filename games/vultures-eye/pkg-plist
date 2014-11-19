@@ -30,9 +30,7 @@ lib/vulture-nethackdir/graphics/valley.png
 lib/vulture-nethackdir/graphics/winelem.png
 lib/vulture-nethackdir/graphics/yendor.png
 lib/vulture-nethackdir/license
-@mode 664
-lib/vulture-nethackdir/logfile
-@mode
+@(games,games,664) lib/vulture-nethackdir/logfile
 lib/vulture-nethackdir/manual/chapter01.html
 lib/vulture-nethackdir/manual/chapter02.html
 lib/vulture-nethackdir/manual/chapter03.html
@@ -2062,21 +2060,17 @@ lib/vulture-nethackdir/tiles/wall.wall_vine_covered_h_e.png
 lib/vulture-nethackdir/tiles/wall.wall_vine_covered_h_n.png
 lib/vulture-nethackdir/tiles/wall.wall_vine_covered_h_s.png
 lib/vulture-nethackdir/tiles/wall.wall_vine_covered_h_w.png
-@mode 2555
-lib/vulture-nethackdir/vulture-nethack
-@mode
-@mode 775
-@dirrmtry lib/vulture-nethackdir/tiles
-@dirrmtry lib/vulture-nethackdir/sound/scripts
-@dirrmtry lib/vulture-nethackdir/sound
-@dirrmtry lib/vulture-nethackdir/save
-@dirrmtry lib/vulture-nethackdir/music
-@dirrmtry lib/vulture-nethackdir/manual
-@dirrmtry lib/vulture-nethackdir/manual/img
-@dirrmtry lib/vulture-nethackdir/graphics
-@dirrmtry lib/vulture-nethackdir/fonts
-@dirrmtry lib/vulture-nethackdir/config
-@dirrmtry lib/vulture-nethackdir
-@mode
-@owner
+@(games,games,2555) lib/vulture-nethackdir/vulture-nethack
+@dir(games,games,775) lib/vulture-nethackdir/tiles
+@dir(games,games,775) lib/vulture-nethackdir/sound/scripts
+@dir(games,games,775) lib/vulture-nethackdir/sound
+@dir(games,games,775) lib/vulture-nethackdir/save
+@dir(games,games,775) lib/vulture-nethackdir/music
+@dir(games,games,775) lib/vulture-nethackdir/manual
+@dir(games,games,775) lib/vulture-nethackdir/manual/img
+@dir(games,games,775) lib/vulture-nethackdir/graphics
+@dir(games,games,775) lib/vulture-nethackdir/fonts
+@dir(games,games,775) lib/vulture-nethackdir/config
+@dir(games,games,775) lib/vulture-nethackdir
 @group
+@owner

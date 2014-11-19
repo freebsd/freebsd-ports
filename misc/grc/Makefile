@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
-USES=		shebangfix
+USES=		python:run shebangfix
 SHEBANG_FILES=	grc grcat
-USE_PYTHON_RUN=	yes
 
 post-patch:
 .for i in grc grcat

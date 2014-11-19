@@ -14,8 +14,8 @@ COMMENT=	C++ code generator for calling Java from C++/Python
 
 LICENSE=	APACHE20
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	JCC
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -4,7 +4,3 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/Export.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/Import.cfg
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Modified
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

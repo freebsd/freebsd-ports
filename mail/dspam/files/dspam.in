@@ -1,6 +1,5 @@
 #!/bin/sh
 # $FreeBSD$
-# formerly $ FreeBSD: ports/mail/dspam/files/dspam,v 1.1 2005/05/05 21:03:37 pav Exp $
 #
 
 # PROVIDE: dspam
@@ -26,18 +25,15 @@ load_rc_config $name
 #defaults
 : ${dspam_enable="NO"}
 : ${dspam_debug="NO"}
-pidfile=${dspam_pidfile:-/var/run/dspam.pid}
+: ${dspam_pidfile:-/var/run/dspam.pid}
 
 command=%%PREFIX%%/bin/${name}
-start_precmd=dspam_checkdebug
-required_files=%%PREFIX%%/etc/${name}.conf
 
+start_precmd=dspam_checkdebug
 extra_commands=reload
 
-reload()
-{
- kill -HUP `cat $pidfile`
-}
+required_dirs=%%DSPAM_HOME%%
+required_files=%%PREFIX%%/etc/${name}.conf
 
 dspam_checkdebug()
 {
@@ -49,6 +45,9 @@ dspam_checkdebug()
 	fi
 }
 
-required_dirs=%%DSPAM_HOME%%
+reload()
+{
+ kill -HUP `cat $pidfile`
+}
 
 run_rc_command "$1"

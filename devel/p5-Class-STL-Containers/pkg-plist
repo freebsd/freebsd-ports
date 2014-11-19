@@ -12,9 +12,3 @@
 %%SITE_PERL%%/Class/STL/Utilities.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL/Containers/.packlist
 %%SITE_PERL%%/stl.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL/Containers
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrm %%SITE_PERL%%/Class/STL/ClassMembers
-@dirrm %%SITE_PERL%%/Class/STL
-@dirrmtry %%SITE_PERL%%/Class

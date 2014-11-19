@@ -95,11 +95,3 @@ libdata/pkgconfig/thrift-nb.pc
 %%QT4%%libdata/pkgconfig/thrift-qt.pc
 libdata/pkgconfig/thrift-z.pc
 libdata/pkgconfig/thrift.pc
-@dirrm include/thrift/transport
-@dirrm include/thrift/server
-@dirrm include/thrift/qt
-@dirrm include/thrift/protocol
-@dirrm include/thrift/processor
-@dirrm include/thrift/concurrency
-@dirrm include/thrift/async
-@dirrm include/thrift

@@ -9,6 +9,7 @@
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += ark
+    SUBDIR += atool
     SUBDIR += bicom
     SUBDIR += bzip
     SUBDIR += bzip2
@@ -58,6 +59,7 @@
     SUBDIR += libcabinet
     SUBDIR += libcomprex
     SUBDIR += libdynamite
+    SUBDIR += liblz4
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
     SUBDIR += liborange

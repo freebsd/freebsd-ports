@@ -30,7 +30,3 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/tree-widget/tree-widget-themes/folder/open.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/tree-widget/tree-widget.el
 %%EMACS_VERSION_SITE_LISPDIR%%/tree-widget/tree-widget.elc
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/tree-widget/tree-widget-themes/folder
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/tree-widget/tree-widget-themes/default
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/tree-widget/tree-widget-themes
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/tree-widget

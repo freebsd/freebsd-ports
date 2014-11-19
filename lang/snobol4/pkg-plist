@@ -46,8 +46,3 @@ lib/snobol4/%%VERSION%%/lib/url.sno
 lib/snobol4/%%VERSION%%/lib/utf.sno
 lib/snobol4/%%VERSION%%/lib/wrapper.sno
 lib/snobol4/%%VERSION%%/load.txt
-@dirrmtry lib/snobol4/%%VERSION%%/lib
-@dirrmtry lib/snobol4/%%VERSION%%/local
-@dirrmtry lib/snobol4/%%VERSION%%/include
-@dirrmtry lib/snobol4/%%VERSION%%
-@dirrmtry lib/snobol4

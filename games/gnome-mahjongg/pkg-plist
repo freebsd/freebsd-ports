@@ -8,7 +8,6 @@ share/gnome-mahjongg/themes/postmodern.svg
 share/gnome-mahjongg/themes/smooth.png
 share/help/C/gnome-mahjongg/bonustiles.page
 share/help/C/gnome-mahjongg/bug-filing.page
-share/help/C/gnome-mahjongg/choosing.page
 share/help/C/gnome-mahjongg/develop.page
 share/help/C/gnome-mahjongg/documentation.page
 share/help/C/gnome-mahjongg/gameplay.page
@@ -43,7 +42,6 @@ share/help/C/gnome-mahjongg/figures/moves-left.png
 share/help/C/gnome-mahjongg/figures/yellow-symbol.png
 share/help/ca/gnome-mahjongg/bonustiles.page
 share/help/ca/gnome-mahjongg/bug-filing.page
-share/help/ca/gnome-mahjongg/choosing.page
 share/help/ca/gnome-mahjongg/develop.page
 share/help/ca/gnome-mahjongg/documentation.page
 share/help/ca/gnome-mahjongg/gameplay.page
@@ -78,7 +76,6 @@ share/help/ca/gnome-mahjongg/figures/moves-left.png
 share/help/ca/gnome-mahjongg/figures/yellow-symbol.png
 share/help/cs/gnome-mahjongg/bonustiles.page
 share/help/cs/gnome-mahjongg/bug-filing.page
-share/help/cs/gnome-mahjongg/choosing.page
 share/help/cs/gnome-mahjongg/develop.page
 share/help/cs/gnome-mahjongg/documentation.page
 share/help/cs/gnome-mahjongg/gameplay.page
@@ -113,7 +110,6 @@ share/help/cs/gnome-mahjongg/figures/moves-left.png
 share/help/cs/gnome-mahjongg/figures/yellow-symbol.png
 share/help/da/gnome-mahjongg/bonustiles.page
 share/help/da/gnome-mahjongg/bug-filing.page
-share/help/da/gnome-mahjongg/choosing.page
 share/help/da/gnome-mahjongg/develop.page
 share/help/da/gnome-mahjongg/documentation.page
 share/help/da/gnome-mahjongg/gameplay.page
@@ -148,7 +144,6 @@ share/help/da/gnome-mahjongg/figures/moves-left.png
 share/help/da/gnome-mahjongg/figures/yellow-symbol.png
 share/help/de/gnome-mahjongg/bonustiles.page
 share/help/de/gnome-mahjongg/bug-filing.page
-share/help/de/gnome-mahjongg/choosing.page
 share/help/de/gnome-mahjongg/develop.page
 share/help/de/gnome-mahjongg/documentation.page
 share/help/de/gnome-mahjongg/gameplay.page
@@ -183,7 +178,6 @@ share/help/de/gnome-mahjongg/figures/moves-left.png
 share/help/de/gnome-mahjongg/figures/yellow-symbol.png
 share/help/el/gnome-mahjongg/bonustiles.page
 share/help/el/gnome-mahjongg/bug-filing.page
-share/help/el/gnome-mahjongg/choosing.page
 share/help/el/gnome-mahjongg/develop.page
 share/help/el/gnome-mahjongg/documentation.page
 share/help/el/gnome-mahjongg/gameplay.page
@@ -218,7 +212,6 @@ share/help/el/gnome-mahjongg/figures/moves-left.png
 share/help/el/gnome-mahjongg/figures/yellow-symbol.png
 share/help/en_GB/gnome-mahjongg/bonustiles.page
 share/help/en_GB/gnome-mahjongg/bug-filing.page
-share/help/en_GB/gnome-mahjongg/choosing.page
 share/help/en_GB/gnome-mahjongg/develop.page
 share/help/en_GB/gnome-mahjongg/documentation.page
 share/help/en_GB/gnome-mahjongg/gameplay.page
@@ -253,7 +246,6 @@ share/help/en_GB/gnome-mahjongg/figures/moves-left.png
 share/help/en_GB/gnome-mahjongg/figures/yellow-symbol.png
 share/help/es/gnome-mahjongg/bonustiles.page
 share/help/es/gnome-mahjongg/bug-filing.page
-share/help/es/gnome-mahjongg/choosing.page
 share/help/es/gnome-mahjongg/develop.page
 share/help/es/gnome-mahjongg/documentation.page
 share/help/es/gnome-mahjongg/gameplay.page
@@ -288,7 +280,6 @@ share/help/es/gnome-mahjongg/figures/moves-left.png
 share/help/es/gnome-mahjongg/figures/yellow-symbol.png
 share/help/eu/gnome-mahjongg/bonustiles.page
 share/help/eu/gnome-mahjongg/bug-filing.page
-share/help/eu/gnome-mahjongg/choosing.page
 share/help/eu/gnome-mahjongg/develop.page
 share/help/eu/gnome-mahjongg/documentation.page
 share/help/eu/gnome-mahjongg/gameplay.page
@@ -323,7 +314,6 @@ share/help/eu/gnome-mahjongg/figures/moves-left.png
 share/help/eu/gnome-mahjongg/figures/yellow-symbol.png
 share/help/fr/gnome-mahjongg/bonustiles.page
 share/help/fr/gnome-mahjongg/bug-filing.page
-share/help/fr/gnome-mahjongg/choosing.page
 share/help/fr/gnome-mahjongg/develop.page
 share/help/fr/gnome-mahjongg/documentation.page
 share/help/fr/gnome-mahjongg/gameplay.page
@@ -358,7 +348,6 @@ share/help/fr/gnome-mahjongg/figures/moves-left.png
 share/help/fr/gnome-mahjongg/figures/yellow-symbol.png
 share/help/hu/gnome-mahjongg/bonustiles.page
 share/help/hu/gnome-mahjongg/bug-filing.page
-share/help/hu/gnome-mahjongg/choosing.page
 share/help/hu/gnome-mahjongg/develop.page
 share/help/hu/gnome-mahjongg/documentation.page
 share/help/hu/gnome-mahjongg/gameplay.page
@@ -393,7 +382,6 @@ share/help/hu/gnome-mahjongg/figures/moves-left.png
 share/help/hu/gnome-mahjongg/figures/yellow-symbol.png
 share/help/it/gnome-mahjongg/bonustiles.page
 share/help/it/gnome-mahjongg/bug-filing.page
-share/help/it/gnome-mahjongg/choosing.page
 share/help/it/gnome-mahjongg/develop.page
 share/help/it/gnome-mahjongg/documentation.page
 share/help/it/gnome-mahjongg/gameplay.page
@@ -428,7 +416,6 @@ share/help/it/gnome-mahjongg/figures/moves-left.png
 share/help/it/gnome-mahjongg/figures/yellow-symbol.png
 share/help/oc/gnome-mahjongg/bonustiles.page
 share/help/oc/gnome-mahjongg/bug-filing.page
-share/help/oc/gnome-mahjongg/choosing.page
 share/help/oc/gnome-mahjongg/develop.page
 share/help/oc/gnome-mahjongg/documentation.page
 share/help/oc/gnome-mahjongg/gameplay.page
@@ -463,7 +450,6 @@ share/help/oc/gnome-mahjongg/figures/moves-left.png
 share/help/oc/gnome-mahjongg/figures/yellow-symbol.png
 share/help/pl/gnome-mahjongg/bonustiles.page
 share/help/pl/gnome-mahjongg/bug-filing.page
-share/help/pl/gnome-mahjongg/choosing.page
 share/help/pl/gnome-mahjongg/develop.page
 share/help/pl/gnome-mahjongg/documentation.page
 share/help/pl/gnome-mahjongg/gameplay.page
@@ -498,7 +484,6 @@ share/help/pl/gnome-mahjongg/figures/moves-left.png
 share/help/pl/gnome-mahjongg/figures/yellow-symbol.png
 share/help/ru/gnome-mahjongg/bonustiles.page
 share/help/ru/gnome-mahjongg/bug-filing.page
-share/help/ru/gnome-mahjongg/choosing.page
 share/help/ru/gnome-mahjongg/develop.page
 share/help/ru/gnome-mahjongg/documentation.page
 share/help/ru/gnome-mahjongg/gameplay.page
@@ -533,7 +518,6 @@ share/help/ru/gnome-mahjongg/figures/moves-left.png
 share/help/ru/gnome-mahjongg/figures/yellow-symbol.png
 share/help/sl/gnome-mahjongg/bonustiles.page
 share/help/sl/gnome-mahjongg/bug-filing.page
-share/help/sl/gnome-mahjongg/choosing.page
 share/help/sl/gnome-mahjongg/develop.page
 share/help/sl/gnome-mahjongg/documentation.page
 share/help/sl/gnome-mahjongg/gameplay.page
@@ -568,7 +552,6 @@ share/help/sl/gnome-mahjongg/figures/moves-left.png
 share/help/sl/gnome-mahjongg/figures/yellow-symbol.png
 share/help/sr/gnome-mahjongg/bonustiles.page
 share/help/sr/gnome-mahjongg/bug-filing.page
-share/help/sr/gnome-mahjongg/choosing.page
 share/help/sr/gnome-mahjongg/develop.page
 share/help/sr/gnome-mahjongg/documentation.page
 share/help/sr/gnome-mahjongg/gameplay.page
@@ -603,7 +586,6 @@ share/help/sr/gnome-mahjongg/figures/moves-left.png
 share/help/sr/gnome-mahjongg/figures/yellow-symbol.png
 share/help/sr@latin/gnome-mahjongg/bonustiles.page
 share/help/sr@latin/gnome-mahjongg/bug-filing.page
-share/help/sr@latin/gnome-mahjongg/choosing.page
 share/help/sr@latin/gnome-mahjongg/develop.page
 share/help/sr@latin/gnome-mahjongg/documentation.page
 share/help/sr@latin/gnome-mahjongg/gameplay.page
@@ -638,7 +620,6 @@ share/help/sr@latin/gnome-mahjongg/figures/moves-left.png
 share/help/sr@latin/gnome-mahjongg/figures/yellow-symbol.png
 share/help/sv/gnome-mahjongg/bonustiles.page
 share/help/sv/gnome-mahjongg/bug-filing.page
-share/help/sv/gnome-mahjongg/choosing.page
 share/help/sv/gnome-mahjongg/develop.page
 share/help/sv/gnome-mahjongg/documentation.page
 share/help/sv/gnome-mahjongg/gameplay.page
@@ -673,7 +654,6 @@ share/help/sv/gnome-mahjongg/figures/moves-left.png
 share/help/sv/gnome-mahjongg/figures/yellow-symbol.png
 share/help/zh_CN/gnome-mahjongg/bonustiles.page
 share/help/zh_CN/gnome-mahjongg/bug-filing.page
-share/help/zh_CN/gnome-mahjongg/choosing.page
 share/help/zh_CN/gnome-mahjongg/develop.page
 share/help/zh_CN/gnome-mahjongg/documentation.page
 share/help/zh_CN/gnome-mahjongg/gameplay.page
@@ -806,121 +786,3 @@ share/locale/xh/LC_MESSAGES/gnome-mahjongg.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mahjongg.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mahjongg.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mahjongg.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrmtry share/icons/HighContrast/48x48/apps
-@dirrmtry share/icons/HighContrast/48x48
-@dirrmtry share/icons/HighContrast/32x32/apps
-@dirrmtry share/icons/HighContrast/32x32
-@dirrmtry share/icons/HighContrast/256x256/apps
-@dirrmtry share/icons/HighContrast/256x256
-@dirrmtry share/icons/HighContrast/24x24/apps
-@dirrmtry share/icons/HighContrast/24x24
-@dirrmtry share/icons/HighContrast/22x22/apps
-@dirrmtry share/icons/HighContrast/22x22
-@dirrmtry share/icons/HighContrast/16x16/apps
-@dirrmtry share/icons/HighContrast/16x16
-@dirrmtry share/icons/HighContrast
-@dirrm share/help/zh_CN/gnome-mahjongg/figures
-@dirrm share/help/zh_CN/gnome-mahjongg
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sv/gnome-mahjongg/figures
-@dirrm share/help/sv/gnome-mahjongg
-@dirrmtry share/help/sv
-@dirrm share/help/sr@latin/gnome-mahjongg/figures
-@dirrm share/help/sr@latin/gnome-mahjongg
-@dirrmtry share/help/sr@latin
-@dirrm share/help/sr/gnome-mahjongg/figures
-@dirrm share/help/sr/gnome-mahjongg
-@dirrmtry share/help/sr
-@dirrm share/help/sl/gnome-mahjongg/figures
-@dirrm share/help/sl/gnome-mahjongg
-@dirrmtry share/help/sl
-@dirrm share/help/ru/gnome-mahjongg/figures
-@dirrm share/help/ru/gnome-mahjongg
-@dirrmtry share/help/ru
-@dirrm share/help/pl/gnome-mahjongg/figures
-@dirrm share/help/pl/gnome-mahjongg
-@dirrmtry share/help/pl
-@dirrm share/help/oc/gnome-mahjongg/figures
-@dirrm share/help/oc/gnome-mahjongg
-@dirrmtry share/help/oc
-@dirrm share/help/it/gnome-mahjongg/figures
-@dirrm share/help/it/gnome-mahjongg
-@dirrmtry share/help/it
-@dirrm share/help/hu/gnome-mahjongg/figures
-@dirrm share/help/hu/gnome-mahjongg
-@dirrmtry share/help/hu
-@dirrm share/help/fr/gnome-mahjongg/figures
-@dirrm share/help/fr/gnome-mahjongg
-@dirrmtry share/help/fr
-@dirrm share/help/eu/gnome-mahjongg/figures
-@dirrm share/help/eu/gnome-mahjongg
-@dirrmtry share/help/eu
-@dirrm share/help/es/gnome-mahjongg/figures
-@dirrm share/help/es/gnome-mahjongg
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/gnome-mahjongg/figures
-@dirrm share/help/en_GB/gnome-mahjongg
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/gnome-mahjongg/figures
-@dirrm share/help/el/gnome-mahjongg
-@dirrmtry share/help/el
-@dirrm share/help/de/gnome-mahjongg/figures
-@dirrm share/help/de/gnome-mahjongg
-@dirrmtry share/help/de
-@dirrm share/help/da/gnome-mahjongg/figures
-@dirrm share/help/da/gnome-mahjongg
-@dirrmtry share/help/da
-@dirrm share/help/cs/gnome-mahjongg/figures
-@dirrm share/help/cs/gnome-mahjongg
-@dirrmtry share/help/cs
-@dirrm share/help/ca/gnome-mahjongg/figures
-@dirrm share/help/ca/gnome-mahjongg
-@dirrmtry share/help/ca
-@dirrm share/help/C/gnome-mahjongg/figures
-@dirrm share/help/C/gnome-mahjongg
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/gnome-mahjongg/themes
-@dirrmtry share/gnome-mahjongg/maps
-@dirrmtry share/gnome-mahjongg
-@dirrmtry share/appdata

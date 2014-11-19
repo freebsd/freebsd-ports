@@ -70,6 +70,3 @@ bin/egg-helper
 %%ELISPDIR%%/egg/leim-list.elc
 %%ELISPDIR%%/egg/menudiag.el
 %%ELISPDIR%%/egg/menudiag.elc
-@dirrm %%ELISPDIR%%/egg/egg
-@dirrm %%ELISPDIR%%/egg/its
-@dirrm %%ELISPDIR%%/egg

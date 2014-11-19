@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/sysutils/gnome-power-manager/Makefile 19622 2014-05-12 09:47:14Z gusi $
+#   $MCom: ports/trunk/sysutils/gnome-power-manager/Makefile 19622 2014-05-12 09:47:14Z gusi $
 
 PORTNAME=	gnome-power-manager
 PORTVERSION=	3.12.2

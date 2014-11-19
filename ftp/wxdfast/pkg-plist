@@ -96,14 +96,3 @@ share/pixmaps/wxdfast.png
 %%DATADIR%%/xpm/small/wxdfast.xpm
 %%DATADIR%%/xpm/wxdfast.ico
 %%DATADIR%%/xpm/wxdfast.xpm
-@dirrm %%DATADIR%%/xpm/small
-@dirrm %%DATADIR%%/xpm/big
-@dirrm %%DATADIR%%/xpm
-@dirrm %%DATADIR%%/RipStop/toolbar
-@dirrm %%DATADIR%%/RipStop/svg
-@dirrm %%DATADIR%%/RipStop/preview
-@dirrm %%DATADIR%%/RipStop/menubar
-@dirrm %%DATADIR%%/RipStop/logo
-@dirrm %%DATADIR%%/RipStop/icon
-@dirrm %%DATADIR%%/RipStop
-@dirrm %%DATADIR%%

@@ -15,7 +15,7 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 .endif
 PKGDIR=		${.CURDIR}
 
-USE_PYTHON=	yes
+USES+=		python
 
 SVN_BUILD_BINDINGS=	yes
 SVN_BUILD_ADDONS=	yes

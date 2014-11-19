@@ -16,4 +16,3 @@ lib/libesedb.so.1.0.0
 libdata/pkgconfig/libesedb.pc
 man/man1/esedbinfo.1.gz
 man/man3/libesedb.3.gz
-@dirrm include/libesedb

@@ -36,10 +36,3 @@ bin/tla-gpg-check
 %%PORTDOCS%%%%DOCSDIR%%/treedelta/naming-conventions.html
 %%PORTDOCS%%%%DOCSDIR%%/treedelta/rename.html
 %%PORTDOCS%%%%DOCSDIR%%/treedelta/top-nav.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/treedelta
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/my
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/hacking
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/checkout
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/build
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/archreg
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

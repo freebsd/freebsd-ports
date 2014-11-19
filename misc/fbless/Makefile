@@ -9,8 +9,8 @@ CATEGORIES=	misc textproc python
 MAINTAINER=	alexander.4mail@gmail.com
 COMMENT=	Text-mode fb2 books reader
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	matimatik
 GH_COMMIT=	b6259ab

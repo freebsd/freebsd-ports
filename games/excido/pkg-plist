@@ -50,5 +50,3 @@ bin/excido
 %%DATADIR%%/ufo.wav
 %%DATADIR%%/ufodie.wav
 %%DATADIR%%/wmicon.bmp
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

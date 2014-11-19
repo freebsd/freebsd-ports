@@ -3,12 +3,16 @@
 
 PORTNAME=	Config-Any
 PORTVERSION=	0.24
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load class configuration data from a number of file formats
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Config-General>=2.47:${PORTSDIR}/devel/p5-Config-General
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -41,4 +45,12 @@ BUILD_DEPENDS+=	p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML
 RUN_DEPENDS+=	p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502000
+# Module::Pluggable was first released with perl v5.8.9 and removed from v5.19.0
+RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
+
+.include <bsd.port.post.mk>

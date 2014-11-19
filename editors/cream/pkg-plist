@@ -207,13 +207,3 @@ share/vim/%%VIM_VER%%/cream/lang/strings_en_us.utf-8.vim
 share/vim/%%VIM_VER%%/cream/multvals.vim
 share/vim/%%VIM_VER%%/cream/securemodelines.vim
 share/vim/%%VIM_VER%%/cream/taglist.vim
-@dirrm share/vim/%%VIM_VER%%/cream/lang
-@dirrm share/vim/%%VIM_VER%%/cream/help
-@dirrm share/vim/%%VIM_VER%%/cream/bitmaps
-@dirrm share/vim/%%VIM_VER%%/cream/addons
-@dirrm share/vim/%%VIM_VER%%/cream
-@dirrmtry share/vim/%%VIM_VER%%
-@dirrmtry share/vim
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs-html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

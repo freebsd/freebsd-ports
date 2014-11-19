@@ -1,5 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/WWW/Mechanize/PSGI/.packlist
 %%SITE_PERL%%/Test/WWW/Mechanize/PSGI.pm
 %%PERL5_MAN3%%/Test::WWW::Mechanize::PSGI.3.gz
-@dirrmtry %%SITE_PERL%%/Test/WWW/Mechanize
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/WWW/Mechanize/PSGI

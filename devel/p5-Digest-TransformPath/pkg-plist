@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Digest/TransformPath.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/TransformPath/.packlist
 %%PERL5_MAN3%%/Digest::TransformPath.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/TransformPath
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
-@dirrmtry %%SITE_PERL%%/Digest

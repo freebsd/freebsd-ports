@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	Gozerbot - A modular Python IRC and Jabber bot
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-SUB_FILES=		pkg-message
+USES=		python
+USE_PYTHON=	distutils
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	XMPP MYSQL DOCS
 XMPP_DESC=	Jabber functions

@@ -112,16 +112,11 @@ do-install:
 	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/eclipse.tmp ${STAGEDIR}${PREFIX}/bin/eclipse
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s lib/eclipse -not -type d) >> ${TMPPLIST}
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s bin/eclipse -not -type d) >> ${TMPPLIST}
-	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s -d lib/eclipse -type d) | ${SED} -ne "s,^,@dirrm ,p" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${MKDIR} %D/lib/eclipse/dropins > /dev/null || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${MKDIR} %D/share/eclipse/dropins > /dev/null || ${TRUE}" >> ${TMPPLIST}
+	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s -d lib/eclipse -type d -empty) | ${SED} -ne "s,^,@dir ,p" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec echo '-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=%D/share/eclipse/dropins' >> %D/lib/eclipse/eclipse.ini" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${SED} -i '' '/^-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=/d' %D/lib/eclipse/eclipse.ini" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/eclipse/dropins" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/eclipse" >> ${TMPPLIST}
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/eclipse/dropins
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/eclipse/dropins
+	@${ECHO_CMD} "@dir share/eclipse/dropins" >> ${TMPPLIST}
 
 distclean:
 	${RM} -rf ${DISTDIR}/eclipse

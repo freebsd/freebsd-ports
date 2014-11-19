@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
@@ -66,6 +66,10 @@ RUN_DEPENDS+=	${LOCALBASE}/share/${PORTNAME}/baseset/opengfx/opengfx.obg:${PORTS
 		${LOCALBASE}/share/${PORTNAME}/baseset/opensfx/opensfx.obs:${PORTSDIR}/games/opensfx
 .endif
 
+.if defined(WITH_SAVE_PASSWORDS)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-save-passwords
+.endif
+
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -80,6 +84,9 @@ pre-everything::
 .endif
 .if !defined(WITH_OPEN_GAME_FILES)
 	@${ECHO_MSG} "Define WITH_OPEN_GAME_FILES to install with libre graphics, music, and sounds"
+.endif
+.if !defined(WITH_SAVE_PASSWORDS)
+	@${ECHO_MSG} "Define WITH_SAVE_PASSWORDS to save passwords between server restarts"
 .endif
 
 post-patch:

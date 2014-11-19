@@ -56,4 +56,3 @@ lib/libmedimport.a
 lib/libmedimport.so
 lib/libmedimport.so.0
 lib/libmedimport.so.0.2.0
-@dirrm include/2.3.6

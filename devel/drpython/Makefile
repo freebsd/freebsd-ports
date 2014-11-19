@@ -20,10 +20,8 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		zip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 USE_WX=		3.0+
 WX_COMPS=	python:lib
 

@@ -146,7 +146,7 @@ lib/gcc/avr/4.8.3/plugin/include/java/java-tree.def
 lib/gcc/avr/4.8.3/plugin/include/langhooks.h
 lib/gcc/avr/4.8.3/plugin/include/libiberty.h
 lib/gcc/avr/4.8.3/plugin/include/line-map.h
-lib/gcc/avr/4.8.3/plugin/include/%%PERL_ARCH%%mode.h
+lib/gcc/avr/4.8.3/plugin/include/machmode.h
 lib/gcc/avr/4.8.3/plugin/include/md5.h
 lib/gcc/avr/4.8.3/plugin/include/mode-classes.def
 lib/gcc/avr/4.8.3/plugin/include/objc/objc-tree.def

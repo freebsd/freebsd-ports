@@ -101,25 +101,3 @@
 %%CVSMON%%/setup.pl
 %%CVSMON%%/README
 %%CVSMON%%/setup.conf
-@dirrm %%CVSMON%%/html/Admin
-@dirrm %%CVSMON%%/html/Browse
-@dirrm %%CVSMON%%/html/Error
-@dirrm %%CVSMON%%/html/Search
-@dirrm %%CVSMON%%/html
-@dirrm %%CVSMON%%/modules/AppLib/Interface
-@dirrm %%CVSMON%%/modules/AppLib
-@dirrm %%CVSMON%%/modules/CVSMonitor/Backend
-@dirrm %%CVSMON%%/modules/CVSMonitor/Graph
-@dirrm %%CVSMON%%/modules/CVSMonitor/HTML
-@dirrm %%CVSMON%%/modules/CVSMonitor/Range
-@dirrm %%CVSMON%%/modules/CVSMonitor/MetaData/Abstract
-@dirrm %%CVSMON%%/modules/CVSMonitor/MetaData
-@dirrm %%CVSMON%%/modules/CVSMonitor
-@dirrm %%CVSMON%%/modules
-@dirrm %%CVSMON%%/setup/html
-@dirrm %%CVSMON%%/setup
-@dirrm %%CVSMON%%/static/style
-@dirrm %%CVSMON%%/static/images
-@dirrm %%CVSMON%%/static
-@dirrmtry %%CVSMON%%
-@dirrmtry www/cgi-bin

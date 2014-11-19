@@ -86,30 +86,3 @@ share/sushi/js/viewers/html.js
 share/sushi/js/viewers/image.js
 share/sushi/js/viewers/text.js
 share/sushi/style/gtk-style.css
-@dirrm share/sushi/style
-@dirrm share/sushi/js/viewers
-@dirrm share/sushi/js/util
-@dirrm share/sushi/js/ui
-@dirrm share/sushi/js
-@dirrm share/sushi/gir-1.0
-@dirrm share/sushi
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrm lib/sushi/girepository-1.0
-@dirrm lib/sushi

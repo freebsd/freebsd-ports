@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/eol/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/eol.pm
 %%PERL5_MAN3%%/PerlIO::eol.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/eol
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO

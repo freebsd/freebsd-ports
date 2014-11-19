@@ -34,6 +34,3 @@ lib/topaz/tpvview
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/step.tpz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/symbolfontset.tpz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/text.tpz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/topaz/_topaz
-@dirrm lib/topaz

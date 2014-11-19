@@ -8,4 +8,3 @@ man/man1/prn.1.gz
 man/man1/psconv.1.gz
 man/man5/cmtdefs.5.gz
 %%DATADIR%%/cmtdefs
-@dirrm %%DATADIR%%

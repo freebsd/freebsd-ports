@@ -18,8 +18,7 @@ GIT_PROJECT=	freebsd-xen-tools-scripts
 GIT_VERSION=	8cc7fe1
 GITSRC=		${WRKDIR}/${GIT_ACCOUNT}-${GIT_PROJECT}-${GIT_VERSION}/src/
 
-USES=		gmake
-USE_PYTHON=	yes
+USES=		gmake python
 USE_RC_SUBR=	xenguest
 
 ONLY_FOR_ARCHS=		amd64 i386

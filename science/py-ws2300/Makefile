@@ -12,9 +12,8 @@ COMMENT=	Driver for the LaCrosse WS-2300 weather station
 
 LICENSE=	AGPLv3
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/ws2300 ${STAGEDIR}${PREFIX}/bin/ws2300

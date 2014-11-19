@@ -178,11 +178,3 @@ lib/yorick/lib/main.o
 lib/yorick/yorick.el
 man/man1/gist.1.gz
 man/man1/yorick.1.gz
-@dirrm lib/yorick/g
-@dirrm lib/yorick/i0
-@dirrm lib/yorick/i
-@dirrm lib/yorick/include
-@dirrm lib/yorick/i-start
-@dirrm lib/yorick/lib
-@dirrm lib/yorick/bin
-@dirrm lib/yorick

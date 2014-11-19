@@ -34,5 +34,3 @@ include/tnt/jama_svd.h
 %%PORTDOCS%%%%DOCSDIR%%/html/namespace_JAMA.html
 %%PORTDOCS%%%%DOCSDIR%%/html/namespace_TNT.html
 %%PORTDOCS%%%%DOCSDIR%%/html/namespaces.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/

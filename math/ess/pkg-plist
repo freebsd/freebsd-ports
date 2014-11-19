@@ -138,8 +138,3 @@
 %%EMACS_SITE_LISPDIR%%/mouseme.elc
 %%EMACS_SITE_LISPDIR%%/msdos.el
 %%EMACS_SITE_LISPDIR%%/msdos.elc
-@dirrmtry %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR/R
-@dirrmtry %%EMACS_LIBDIR%%/%%ETCDIR%%/ESSR
-@dirrmtry %%EMACS_LIBDIR%%/%%ETCDIR%%/icons
-@dirrmtry %%EMACS_LIBDIR%%/%%ETCDIR%%
-@dirrmtry %%EMACS_LIBDIR%%/etc

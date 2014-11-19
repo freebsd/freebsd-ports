@@ -5,6 +5,3 @@ lib/cmake/STP/STPConfig.cmake
 lib/cmake/STP/STPTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/STP/STPTargets.cmake
 lib/libstp.a
-@dirrmtry include/stp
-@dirrmtry lib/cmake/STP
-@dirrmtry lib/cmake

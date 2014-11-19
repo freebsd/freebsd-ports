@@ -463,7 +463,3 @@ man/man3/PAPI_write.3.gz
 %%DATADIR%%/testlib/papi_test.h
 %%DATADIR%%/testlib/test_utils.c
 %%DATADIR%%/testlib/test_utils.h
-@dirrm %%DATADIR%%/testlib
-@dirrm %%DATADIR%%/ftests
-@dirrm %%DATADIR%%/ctests
-@dirrm %%DATADIR%%

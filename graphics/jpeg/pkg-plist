@@ -29,4 +29,3 @@ man/man1/wrjpgcom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/structure.txt
 %%PORTDOCS%%%%DOCSDIR%%/usage.txt
 %%PORTDOCS%%%%DOCSDIR%%/wizard.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

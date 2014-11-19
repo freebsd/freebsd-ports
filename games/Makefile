@@ -350,7 +350,6 @@
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
     SUBDIR += gnomekiss
-    SUBDIR += gnomesudoku
     SUBDIR += gnono
     SUBDIR += gnubg
     SUBDIR += gnuchess
@@ -674,6 +673,7 @@
     SUBDIR += openastromenace
     SUBDIR += openbubbles
     SUBDIR += opencity
+    SUBDIR += openclonk
     SUBDIR += opengfx
     SUBDIR += openglad
     SUBDIR += openjazz
@@ -681,6 +681,7 @@
     SUBDIR += openmortal
     SUBDIR += openmsx
     SUBDIR += openpref
+    SUBDIR += openra
     SUBDIR += opensfx
     SUBDIR += opensonic
     SUBDIR += openspades
@@ -727,6 +728,7 @@
     SUBDIR += pinball
     SUBDIR += pingus
     SUBDIR += pink-pony
+    SUBDIR += pioneer
     SUBDIR += pioneers
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
@@ -784,6 +786,7 @@
     SUBDIR += qmars
     SUBDIR += qnetwalk
     SUBDIR += qonk
+    SUBDIR += qqwing
     SUBDIR += qstat
     SUBDIR += qtads
     SUBDIR += qtv

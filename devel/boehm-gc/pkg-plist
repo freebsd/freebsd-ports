@@ -28,4 +28,3 @@ lib/libgccpp.so.1
 lib/libgccpp.so.1.0.3
 libdata/pkgconfig/bdw-gc.pc
 man/man3/gc.3.gz
-@dirrm include/gc

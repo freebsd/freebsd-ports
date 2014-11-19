@@ -16,9 +16,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-WRKSRC=			${WRKDIR}/${PORTNAME}
+USES=		python
+USE_PYTHON=	distutils autoplist
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

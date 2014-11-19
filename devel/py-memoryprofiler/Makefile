@@ -19,8 +19,7 @@ PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>1.0.0:${PORTSDIR}/sysutils/py-
 
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -24,9 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browser>=0:${PORTSDIR}/devel/py-zope.br
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=3.7:${PORTSDIR}/devel/py-zope.traversing \
 		${PYTHON_PKGNAMEPREFIX}zope.pagetemplate>=3.5:${PORTSDIR}/devel/py-zope.pagetemplate
 
-USES=		zip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python zip
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

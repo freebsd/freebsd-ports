@@ -241,22 +241,3 @@ bin/svk
 %%PERL5_MAN3%%/SVK::Version.3.gz
 %%PERL5_MAN3%%/SVK::XD.3.gz
 man/man1/svk.1.gz
-@dirrm %%SITE_PERL%%/SVK/Target
-@dirrm %%SITE_PERL%%/SVK/Root
-@dirrm %%SITE_PERL%%/SVK/Resolve
-@dirrm %%SITE_PERL%%/SVK/Path
-@dirrm %%SITE_PERL%%/SVK/Mirror/Backend
-@dirrm %%SITE_PERL%%/SVK/Mirror
-@dirrm %%SITE_PERL%%/SVK/MimeDetect
-@dirrm %%SITE_PERL%%/SVK/Merge
-@dirrm %%SITE_PERL%%/SVK/Log/Filter
-@dirrm %%SITE_PERL%%/SVK/Log
-@dirrm %%SITE_PERL%%/SVK/Inspector
-@dirrm %%SITE_PERL%%/SVK/I18N
-@dirrm %%SITE_PERL%%/SVK/Help/zh_tw
-@dirrm %%SITE_PERL%%/SVK/Help/zh_cn
-@dirrm %%SITE_PERL%%/SVK/Help
-@dirrm %%SITE_PERL%%/SVK/Editor
-@dirrm %%SITE_PERL%%/SVK/Command
-@dirrm %%SITE_PERL%%/SVK
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK

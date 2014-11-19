@@ -53,7 +53,3 @@ bin/parse_newpynfs
 bin/parse_sysbench_cpu
 bin/parse_sysbench_fileio
 bin/parse_test
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Parser
-@dirrmtry %%SITE_PERL%%/Test

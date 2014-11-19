@@ -170,22 +170,3 @@ share/omf/florence/florence-C.omf
 share/omf/florence/florence-fr.omf
 share/omf/florence/florence-ru.omf
 share/pixmaps/florence.svg
-@dirrm include/florence-1.0
-@dirrm %%DATADIR%%/layouts
-@dirrm %%DATADIR%%/relaxng
-@dirrm %%DATADIR%%/styles/bright
-@dirrm %%DATADIR%%/styles/default/sounds
-@dirrm %%DATADIR%%/styles/default
-@dirrm %%DATADIR%%/styles/flat
-@dirrm %%DATADIR%%/styles/hard
-@dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%/svg11
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/florence/C/figures
-@dirrm share/gnome/help/florence/C
-@dirrm share/gnome/help/florence/fr/figures
-@dirrm share/gnome/help/florence/fr
-@dirrm share/gnome/help/florence/ru/figures
-@dirrm share/gnome/help/florence/ru
-@dirrm share/gnome/help/florence
-@dirrm share/omf/florence

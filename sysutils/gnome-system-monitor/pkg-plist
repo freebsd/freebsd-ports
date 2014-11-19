@@ -29,6 +29,31 @@ share/help/C/gnome-system-monitor/process-status.page
 share/help/C/gnome-system-monitor/process-update-speed.page
 share/help/C/gnome-system-monitor/solaris-mode.page
 share/help/C/gnome-system-monitor/units.page
+share/help/cs/gnome-system-monitor/commandline.page
+share/help/cs/gnome-system-monitor/cpu-check.page
+share/help/cs/gnome-system-monitor/cpu-mem-normal.page
+share/help/cs/gnome-system-monitor/cpu-multicore.page
+share/help/cs/gnome-system-monitor/fs-device.page
+share/help/cs/gnome-system-monitor/fs-diskusage.page
+share/help/cs/gnome-system-monitor/fs-info.page
+share/help/cs/gnome-system-monitor/fs-showall.page
+share/help/cs/gnome-system-monitor/index.page
+share/help/cs/gnome-system-monitor/legal.xml
+share/help/cs/gnome-system-monitor/mem-check.page
+share/help/cs/gnome-system-monitor/mem-swap.page
+share/help/cs/gnome-system-monitor/memory-map-use.page
+share/help/cs/gnome-system-monitor/net-bits.page
+share/help/cs/gnome-system-monitor/process-explain.page
+share/help/cs/gnome-system-monitor/process-files.page
+share/help/cs/gnome-system-monitor/process-identify-file.page
+share/help/cs/gnome-system-monitor/process-identify-hog.page
+share/help/cs/gnome-system-monitor/process-kill.page
+share/help/cs/gnome-system-monitor/process-many.page
+share/help/cs/gnome-system-monitor/process-priority-change.page
+share/help/cs/gnome-system-monitor/process-status.page
+share/help/cs/gnome-system-monitor/process-update-speed.page
+share/help/cs/gnome-system-monitor/solaris-mode.page
+share/help/cs/gnome-system-monitor/units.page
 share/help/de/gnome-system-monitor/commandline.page
 share/help/de/gnome-system-monitor/cpu-check.page
 share/help/de/gnome-system-monitor/cpu-mem-normal.page
@@ -154,6 +179,31 @@ share/help/hu/gnome-system-monitor/process-status.page
 share/help/hu/gnome-system-monitor/process-update-speed.page
 share/help/hu/gnome-system-monitor/solaris-mode.page
 share/help/hu/gnome-system-monitor/units.page
+share/help/ro/gnome-system-monitor/commandline.page
+share/help/ro/gnome-system-monitor/cpu-check.page
+share/help/ro/gnome-system-monitor/cpu-mem-normal.page
+share/help/ro/gnome-system-monitor/cpu-multicore.page
+share/help/ro/gnome-system-monitor/fs-device.page
+share/help/ro/gnome-system-monitor/fs-diskusage.page
+share/help/ro/gnome-system-monitor/fs-info.page
+share/help/ro/gnome-system-monitor/fs-showall.page
+share/help/ro/gnome-system-monitor/index.page
+share/help/ro/gnome-system-monitor/legal.xml
+share/help/ro/gnome-system-monitor/mem-check.page
+share/help/ro/gnome-system-monitor/mem-swap.page
+share/help/ro/gnome-system-monitor/memory-map-use.page
+share/help/ro/gnome-system-monitor/net-bits.page
+share/help/ro/gnome-system-monitor/process-explain.page
+share/help/ro/gnome-system-monitor/process-files.page
+share/help/ro/gnome-system-monitor/process-identify-file.page
+share/help/ro/gnome-system-monitor/process-identify-hog.page
+share/help/ro/gnome-system-monitor/process-kill.page
+share/help/ro/gnome-system-monitor/process-many.page
+share/help/ro/gnome-system-monitor/process-priority-change.page
+share/help/ro/gnome-system-monitor/process-status.page
+share/help/ro/gnome-system-monitor/process-update-speed.page
+share/help/ro/gnome-system-monitor/solaris-mode.page
+share/help/ro/gnome-system-monitor/units.page
 share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ar/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/as/LC_MESSAGES/gnome-system-monitor.mo
@@ -191,7 +241,6 @@ share/locale/he/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/hi/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/hr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/hu/LC_MESSAGES/gnome-system-monitor.mo
-share/locale/ky/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/id/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/it/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ja/LC_MESSAGES/gnome-system-monitor.mo
@@ -200,6 +249,7 @@ share/locale/km/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/kn/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ko/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ku/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/ky/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/li/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/lt/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/lv/LC_MESSAGES/gnome-system-monitor.mo
@@ -234,7 +284,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sv/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ta/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/te/LC_MESSAGES/gnome-system-monitor.mo
-share/locale/tg/LC_MESSAGES/gnome-system-monitor.mo 
+share/locale/tg/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/th/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/tr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ug/LC_MESSAGES/gnome-system-monitor.mo
@@ -244,61 +294,3 @@ share/locale/zh_CN/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
 share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/gd/LC_MESSAGES
-@dirrmtry share/locale/gd
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/hu/gnome-system-monitor
-@dirrmtry share/help/hu
-@dirrm share/help/fr/gnome-system-monitor
-@dirrmtry share/help/fr
-@dirrm share/help/es/gnome-system-monitor
-@dirrmtry share/help/es
-@dirrm share/help/el/gnome-system-monitor
-@dirrmtry share/help/el
-@dirrm share/help/de/gnome-system-monitor
-@dirrmtry share/help/de
-@dirrm share/help/C/gnome-system-monitor
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/appdata
-@dirrm libexec/gnome-system-monitor
-

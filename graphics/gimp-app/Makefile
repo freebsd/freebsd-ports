@@ -33,7 +33,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+USES+=		desktop-file-utils gettext gmake libtool:keepla pathfix \
 		pkgconfig tar:bzip2
 USE_XORG=	xpm xmu xext
 USE_GNOME+=	intltool intlhack gtk20 libartlgpl2 gnomehier

@@ -2,8 +2,3 @@
 %%SITE_PERL%%/auto/Class/MethodMapper/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMapper/.packlist
 %%PERL5_MAN3%%/Class::MethodMapper.3.gz
-@dirrm %%SITE_PERL%%/auto/Class/MethodMapper
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMapper
-@dirrmtry %%SITE_PERL%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

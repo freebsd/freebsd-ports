@@ -10,10 +10,3 @@
 %%PERL5_MAN3%%/MooseX::Aliases.3.gz
 %%PERL5_MAN3%%/MooseX::Aliases::Meta::Trait::Attribute.3.gz
 %%PERL5_MAN3%%/MooseX::Aliases::Meta::Trait::Method.3.gz
-@dirrmtry %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Role
-@dirrmtry %%SITE_PERL%%/MooseX/Aliases/Meta/Trait
-@dirrmtry %%SITE_PERL%%/MooseX/Aliases/Meta
-@dirrmtry %%SITE_PERL%%/MooseX/Aliases
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Aliases
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

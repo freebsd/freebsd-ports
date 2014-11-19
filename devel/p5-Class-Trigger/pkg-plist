@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Class::Trigger.3.gz
 %%SITE_PERL%%/Class/Trigger.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Trigger/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Trigger
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

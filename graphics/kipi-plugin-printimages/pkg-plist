@@ -28,5 +28,3 @@ share/apps/kipiplugin_printimages/templates/Thumbnails_5x4.desktop
 share/apps/kipiplugin_printimages/templates/Thumbnails_6x5.desktop
 share/apps/kipiplugin_printimages/templates/templates.xml
 share/kde4/services/kipiplugin_printimages.desktop
-@dirrm share/apps/kipiplugin_printimages/templates
-@dirrm share/apps/kipiplugin_printimages

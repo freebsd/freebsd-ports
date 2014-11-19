@@ -34,7 +34,3 @@
 %%PERL5_MAN3%%/Marpa::PP::Support.3.gz
 %%PERL5_MAN3%%/Marpa::PP::Tracing.3.gz
 %%PERL5_MAN3%%/Marpa::PP::Vocabulary.3.gz
-@dirrm %%SITE_PERL%%/Marpa/PP/Semantics
-@dirrm %%SITE_PERL%%/Marpa/PP/Advanced
-@dirrm %%SITE_PERL%%/Marpa/PP
-@dirrmtry %%SITE_PERL%%/Marpa

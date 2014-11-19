@@ -33,7 +33,3 @@
 %%DOCSDIR%%/examples/star.py
 %%DOCSDIR%%/examples/subgraph.py
 %%DOCSDIR%%/examples/utf8_encoding.py
-@dirrm %%PYTHON_SITELIBDIR%%/pygraphviz/tests
-@dirrm %%PYTHON_SITELIBDIR%%/pygraphviz
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%

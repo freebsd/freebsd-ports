@@ -163,14 +163,3 @@ man/man1/ffprobe.1.gz
 %%DATADIR%%/libvpx-360p.ffpreset
 %%DATADIR%%/libvpx-720p.ffpreset
 %%DATADIR%%/libvpx-720p50_60.ffpreset
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%
-@dirrm include/libswscale
-@dirrm include/libswresample
-@dirrm include/libpostproc
-@dirrm include/libavutil
-@dirrm include/libavresample
-@dirrm include/libavformat
-@dirrm include/libavfilter
-@dirrm include/libavdevice
-@dirrm include/libavcodec

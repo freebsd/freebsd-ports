@@ -12,6 +12,8 @@ DISTNAME=	wsjt-r${SVN_REV}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
 
+BROKEN=		Fails to configure
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
@@ -28,6 +30,7 @@ CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
 		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		VERSION=${VERSION}
 

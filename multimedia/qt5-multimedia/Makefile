@@ -2,7 +2,6 @@
 
 PORTNAME=	multimedia
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	3
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt5-
 
@@ -19,17 +18,17 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 QT_DEFINES=	XVIDEO
 QT_CONFIG=	xlib
 
-OPTIONS_DEFINE=	ALSA GSTREAMER OPENAL PULSEAUDIO
-OPTIONS_DEFAULT=GSTREAMER
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=			AUDIOPLUGIN GSTREAMER OPENAL
+OPTIONS_DEFAULT=		GSTREAMER
+OPTIONS_RADIO=			AUDIOPLUGIN
+OPTIONS_RADIO_AUDIOPLUGIN=	ALSA PULSEAUDIO
+OPTIONS_SUB=			yes
+AUDIOPLUGIN_DESC=		Audio plugins to build
 
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-
 GSTREAMER_BUILD_DEPENDS=${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-GSTREAMER_USE=	GSTREAMER=yes,bad
-
-OPENAL_USES=	openal
-
+GSTREAMER_USE=		GSTREAMER=yes,bad
+OPENAL_USES=		openal
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 .include <bsd.port.options.mk>
@@ -46,12 +45,10 @@ QT_CONFIG+=	-alsa
 .if ${PORT_OPTIONS:MGSTREAMER}
 QT_DEFINES+=	GSTREAMER
 QT_CONFIG+=	gstreamer
-PLIST_SUB+=	NOGSTREAMER="@comment "
 .else
 TBR_DEPENDS+=	gstreamer
 QT_DEFINES+=	-GSTREAMER
 QT_CONFIG+=	-gstreamer
-PLIST_SUB+=	NOGSTREAMER=""
 .endif
 
 .if ! ${PORT_OPTIONS:MOPENAL}
@@ -73,13 +70,6 @@ post-patch:
 		${WRKSRC}/qtmultimedia.pro
 .endfor
 	@${REINPLACE_CMD} -e 's|<linux/types.h>|<sys/types.h>|' \
-		${WRKSRC}/src/gsttools/qgstreamervideoinputdevicecontrol.cpp \
-		${WRKSRC}/src/plugins/gstreamer/audiodecoder/qgstreameraudiodecoderserviceplugin.cpp \
-		${WRKSRC}/src/plugins/gstreamer/camerabin/camerabincontrol.cpp \
-		${WRKSRC}/src/plugins/gstreamer/camerabin/camerabinserviceplugin.cpp \
-		${WRKSRC}/src/plugins/gstreamer/mediacapture/qgstreamercaptureserviceplugin.cpp \
-		${WRKSRC}/src/plugins/gstreamer/mediacapture/qgstreamerv4l2input.cpp \
-		${WRKSRC}/src/plugins/gstreamer/mediaplayer/qgstreamerplayerserviceplugin.cpp \
 		${WRKSRC}/src/plugins/v4l/radio/v4lradiocontrol.h
 
 .include <bsd.port.mk>

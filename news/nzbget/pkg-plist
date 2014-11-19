@@ -2,6 +2,7 @@ bin/nzbget
 @sample etc/nzbget.conf.sample
 sbin/nzbgetd
 @comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/nzbget.conf
@@ -37,9 +38,3 @@ sbin/nzbgetd
 %%DATADIR%%/webui/style.css
 %%DATADIR%%/webui/upload.js
 %%DATADIR%%/webui/util.js
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/scripts
-@dirrmtry %%DATADIR%%/webui/img
-@dirrmtry %%DATADIR%%/webui/lib
-@dirrmtry %%DATADIR%%/webui
-@dirrmtry %%DATADIR%%

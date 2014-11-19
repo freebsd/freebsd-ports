@@ -21,8 +21,8 @@ LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync
 
 CONFLICTS=	rdiff-backup-[0-9]*
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 MAN1S=		rdiff-backup.1 rdiff-backup-statistics.1
 DOCS=		CHANGELOG README COPYING FAQ.html

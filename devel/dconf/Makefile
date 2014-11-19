@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/dconf/Makefile 19891 2014-09-19 23:16:11Z gusi $
+#   $MCom: ports/trunk/devel/dconf/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME?=	dconf
 PORTVERSION=	0.22.0
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	vala>=0.18.1:${PORTSDIR}/lang/vala \
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 USES=		gettext gmake pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomehier intltool
+USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

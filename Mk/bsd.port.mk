@@ -317,8 +317,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # WITH_DEBUG_PORTS		- A list of origins for which WITH_DEBUG will be set
 #
-# WITH_SSP_PORTS
-# 				- If set, SSP_FLAGS (defaults to -fstack-protector)
+# WITHOUT_SSP	- Disable SSP.
+#
+# SSP_CFLAGS	- Defaults to -fstack-protector. This value
 #				  is added to CFLAGS and the necessary flags
 #				  are added to LDFLAGS. Note that SSP_UNSAFE
 #				  can be used in Makefiles by port maintainers
@@ -1147,21 +1148,39 @@ STRIPBIN=	${STRIP_CMD}
 
 .else
 
-# Look for ${PATCH_WRKSRC}/.../*.orig files, and (re-)create
-# ${FILEDIR}/patch-* files from them.
+# Look for files named "*.orig" under ${PATCH_WRKSRC} and (re-)generate
+# ${FILESDIR}/patch-* files from them.  By popular demand, we currently
+# use '_' (underscore) to replace path separators in patch file names.
+#
+# If a file name happens to contain character which is also a separator
+# replacement character, it will be doubled in the resulting patch name.
+#
+# To minimize gratuitous patch renames, newly generated patches will be
+# written under existing file names when they use any of the previously
+# common path separators ([-+_]) or legacy double underscore (__).
 
 .if !target(makepatch)
+PATCH_PATH_SEPARATOR=	_
 makepatch:
 	@${MKDIR} ${FILESDIR}
 	@(cd ${PATCH_WRKSRC}; \
-		for f in `${FIND} . -type f -name '*.orig'`; do \
+		for f in `${FIND} -s . -type f -name '*.orig'`; do \
 			ORIG=$${f#./}; \
 			NEW=$${ORIG%.orig}; \
 			cmp -s $${ORIG} $${NEW} && continue; \
-			PATCH=`${ECHO} $${NEW} | ${SED} -e 's|/|__|g'`; \
+			! for _lps in `${ECHO} _ - + | ${SED} -e \
+				's|${PATCH_PATH_SEPARATOR}|__|'`; do \
+					PATCH=`${ECHO} $${NEW} | ${SED} -e "s|/|$${_lps}|g"`; \
+					test -f "${FILESDIR}/patch-$${PATCH}" && break; \
+			done || ${ECHO} $${_SEEN} | ${GREP} -q /$${PATCH} && { \
+				PATCH=`${ECHO} $${NEW} | ${SED} -e \
+					's|${PATCH_PATH_SEPARATOR}|&&|g' -e \
+					's|/|${PATCH_PATH_SEPARATOR}|g'`; \
+				_SEEN=$${_SEEN}/$${PATCH}; \
+			}; \
 			OUT=${FILESDIR}/patch-$${PATCH}; \
-			${ECHO} ${DIFF} -ud $${ORIG} $${NEW} '>' $${OUT}; \
-			TZ=UTC ${DIFF} -ud $${ORIG} $${NEW} | ${SED} -e \
+			${ECHO} ${DIFF} -udp $${ORIG} $${NEW} '>' $${OUT}; \
+			TZ=UTC ${DIFF} -udp $${ORIG} $${NEW} | ${SED} -e \
 				'/^---/s|\.[0-9]* +0000$$| UTC|' -e \
 				'/^+++/s|\([[:blank:]][-0-9:.+]*\)*$$||' \
 					> $${OUT} || ${TRUE}; \
@@ -1618,7 +1637,7 @@ INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .endif
 .endif
 
-.if defined(WITH_SSP) || defined(WITH_SSP_PORTS)
+.if !defined(WITHOUT_SSP)
 .include "${PORTSDIR}/Mk/bsd.ssp.mk"
 .endif
 
@@ -2073,46 +2092,7 @@ _MAKE_JOBS?=		-j${MAKE_JOBS_NUMBER}
 BUILD_FAIL_MESSAGE+=	Try to set MAKE_JOBS_UNSAFE=yes and rebuild before reporting the failure to the maintainer.
 .endif
 
-# ccache support
-
-# Try to set a default CCACHE_DIR to workaround HOME=/dev/null and
-# HOME=${WRKDIR}/* staging fixes
-.if defined(WITH_CCACHE_BUILD) && !defined(CCACHE_DIR) && \
-    (!defined(HOME) || ${HOME} == /dev/null || ${HOME:S/^${WRKDIR}//} != ${HOME})
-.  if defined(USER) && ${USER} == root
-CCACHE_DIR=	/root/.ccache
-.  else
-NO_CCACHE=	yes
-WARNING+=	WITH_CCACHE_BUILD support disabled, please set CCACHE_DIR.
-.  endif
-.endif
-
-# Support NO_CCACHE for common setups, require WITH_CCACHE_BUILD, and
-# don't use if ccache already set in CC
-.if !defined(NO_CCACHE) && defined(WITH_CCACHE_BUILD) && !${CC:M*ccache*} && \
-  !defined(NO_BUILD) && !defined(NOCCACHE)
-# Avoid depends loops between pkg and ccache
-.	if !${.CURDIR:M*/devel/ccache} && !${.CURDIR:M*/ports-mgmt/pkg}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:${PORTSDIR}/devel/ccache
-.	endif
-
-_CCACHE_PATH=	${LOCALBASE}/libexec/ccache
-
-# Prepend the ccache dir into the PATH and setup ccache env
-PATH:=	${_CCACHE_PATH}:${PATH}
-#.MAKEFLAGS:		PATH=${PATH}
-.if !${MAKE_ENV:MPATH=*} && !${CONFIGURE_ENV:MPATH=*}
-MAKE_ENV+=			PATH=${PATH}
-CONFIGURE_ENV+=		PATH=${PATH}
-.endif
-
-# Ensure this is always in subchild environments
-.	if defined(CCACHE_DIR)
-#.MAKEFLAGS:		CCACHE_DIR=${CCACHE_DIR}
-MAKE_ENV+=		CCACHE_DIR="${CCACHE_DIR}"
-CONFIGURE_ENV+=	CCACHE_DIR="${CCACHE_DIR}"
-.	endif
-.endif
+.include "${PORTSDIR}/Mk/bsd.ccache.mk"
 
 PTHREAD_CFLAGS?=
 PTHREAD_LIBS?=		-pthread

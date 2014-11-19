@@ -16,5 +16,3 @@ man/man1/joe.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.cvs
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry etc/joe

@@ -3,6 +3,7 @@
 
 PORTNAME=	gmake
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
@@ -17,7 +18,8 @@ COMMENT=	GNU version of 'make' utility
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--program-prefix=g
+CONFIGURE_ARGS+=--program-prefix=g \
+		--without-guile
 
 USES=		makeinfo tar:bzip2
 

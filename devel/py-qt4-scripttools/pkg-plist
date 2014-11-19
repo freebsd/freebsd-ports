@@ -2,5 +2,3 @@
 share/py-sip/QtScriptTools/QtScriptToolsmod.sip
 share/py-sip/QtScriptTools/qscriptenginedebugger.sip
 %%API%%share/qt4/qsci/api/python/QtScriptTools.api
-@dirrm share/py-sip/QtScriptTools
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

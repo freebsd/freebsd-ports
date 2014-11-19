@@ -1,10 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/accessibility/at-spi2-atk/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/accessibility/at-spi2-atk/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	at-spi2-atk
-PORTVERSION=	2.12.1
-PORTREVISION=	1
+PORTVERSION=	2.14.1
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,11 +20,11 @@ RUN_DEPENDS=	at-spi2-core>=2.8.0:${PORTSDIR}/accessibility/at-spi2-core
 PORTSCOUT=	limitw:1,even
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	atk glib20 gnomehier intlhack
+USE_GNOME=	atk glib20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-p2p
 INSTALL_TARGET=	install-strip
 

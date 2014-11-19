@@ -15,9 +15,8 @@ COMMENT=	TurboGears plugin to support use of Cheetah templates
 
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 

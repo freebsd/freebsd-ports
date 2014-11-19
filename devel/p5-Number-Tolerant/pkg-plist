@@ -29,9 +29,3 @@
 %%PERL5_MAN3%%/Number::Tolerant::Type::to.3.gz
 %%PERL5_MAN3%%/Number::Tolerant::Union.3.gz
 %%PERL5_MAN3%%/Test::Tolerant.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Tolerant
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
-@dirrm %%SITE_PERL%%/Number/Tolerant/Type
-@dirrm %%SITE_PERL%%/Number/Tolerant
-@dirrmtry %%SITE_PERL%%/Number
-@dirrmtry %%SITE_PERL%%/Test

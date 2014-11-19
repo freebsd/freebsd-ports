@@ -1,10 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com> 
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net/geocode-glib/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/net/geocode-glib/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	geocode-glib
-PORTVERSION=	3.12.2
-PORTREVISION=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	net devel gnome
 MASTER_SITES=	GNOME
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	evolutiondataserver3 gnomehier intlhack
+USE_GNOME=	intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

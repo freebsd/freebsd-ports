@@ -36,6 +36,3 @@ bin/cpants_lint.pl
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Uses.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Version.pm
 man/man1/cpants_lint.pl.1.gz
-@dirrm %%SITE_PERL%%/Module/CPANTS/Kwalitee
-@dirrmtry %%SITE_PERL%%/Module/CPANTS
-@dirrmtry %%SITE_PERL%%/Module

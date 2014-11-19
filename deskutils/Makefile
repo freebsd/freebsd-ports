@@ -9,7 +9,6 @@
     SUBDIR += appwrapper
     SUBDIR += aspostit
     SUBDIR += autocutsel
-    SUBDIR += babytrans
     SUBDIR += baobab
     SUBDIR += basket
     SUBDIR += bigyear
@@ -56,15 +55,11 @@
     SUBDIR += gbirthday
     SUBDIR += gcal
     SUBDIR += gcalcli
-    SUBDIR += gdesklets
-    SUBDIR += gdesklets-recentlyused
-    SUBDIR += gdesklets-starterbar
     SUBDIR += genius
     SUBDIR += gimmie
     SUBDIR += gkrellm-reminder2
     SUBDIR += glabels
     SUBDIR += glipper
-    SUBDIR += global-menu
     SUBDIR += gnochm
     SUBDIR += gnome-blog
     SUBDIR += gnome-clocks
@@ -109,7 +104,6 @@
     SUBDIR += gruler
     SUBDIR += gtg
     SUBDIR += gtimer
-    SUBDIR += gtkjournal
     SUBDIR += gtodo
     SUBDIR += gtweakui
     SUBDIR += gucharmap
@@ -141,11 +135,8 @@
     SUBDIR += kruler
     SUBDIR += ksshaskpass
     SUBDIR += kupfer
-    SUBDIR += labyrinth
     SUBDIR += launchy
     SUBDIR += libgcal
-    SUBDIR += libopensync-plugin-evolution2
-    SUBDIR += libopensync-plugin-evolution2-devel
     SUBDIR += libopensync-plugin-file
     SUBDIR += libopensync-plugin-python
     SUBDIR += libopensync-plugin-sunbird
@@ -171,8 +162,6 @@
     SUBDIR += multisync-syncml
     SUBDIR += myitcrm
     SUBDIR += nagaina
-    SUBDIR += nautilus-actions
-    SUBDIR += nautilus-sendto
     SUBDIR += nemo-extensions
     SUBDIR += note
     SUBDIR += notecase
@@ -260,6 +249,7 @@
     SUBDIR += toolboxkit
     SUBDIR += tpb
     SUBDIR += treeline
+    SUBDIR += treesheets
     SUBDIR += tuxcards
     SUBDIR += vboxgtk
     SUBDIR += virt-manager

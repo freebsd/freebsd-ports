@@ -1,3 +1,4 @@
+%%QT_INCDIR%%/QtXml/%%FULLVER%%/QtXml/private/qxml_p.h
 %%QT_INCDIR%%/QtXml/QDomAttr
 %%QT_INCDIR%%/QtXml/QDomCDATASection
 %%QT_INCDIR%%/QtXml/QDomCharacterData
@@ -47,10 +48,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_xml.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_xml_private.pri
 libdata/pkgconfig/Qt5Xml.pc
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Xml
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtXml
-@dirrmtry %%QT_INCDIR%%

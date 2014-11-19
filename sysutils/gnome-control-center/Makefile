@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/sysutils/gnome-control-center/Makefile 19547 2014-04-16 13:29:05Z gusi $
+#   $MCom: ports/trunk/sysutils/gnome-control-center/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	3.12.1
+PORTVERSION=	3.14.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +14,7 @@ COMMENT=	Control center for GNOME 3 project
 BUILD_DEPENDS=	gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>=3.2.2:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+		iso-codes>=0:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libxklavier.so:${PORTSDIR}/x11/libxklavier \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
@@ -32,7 +32,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 		gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>=3.2.2:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+		iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
 		apg:${PORTSDIR}/security/apg \
 		gcm-calibrate:${PORTSDIR}/graphics/gnome-color-manager
@@ -40,7 +40,7 @@ RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 CONFLICTS=	gnome-media-2.[0-9]*
 
 USES=		gettext gmake pathfix pkgconfig tar:xz
-USE_GNOME=	gnomedesktop3 gnomehier gnomemenus3 gnomeprefix intlhack libxml2
+USE_GNOME=	gnomedesktop3 gnomemenus3 gnomeprefix intlhack libxml2
 USE_XORG=	xscrnsaver x11 xxf86misc kbproto xi
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -49,6 +49,7 @@ CONFIGURE_ARGS=	--with-libsocialweb=yes --disable-systemd
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	CUPS
 OPTIONS_DEFAULT=CUPS
 CUPS_DESC=	Cups (printing) support
@@ -58,29 +59,15 @@ OPTIONS_DEFINE_i386=	CHEESE
 OPTIONS_DEFAULT_i386=	CHEESE
 OPTIONS_DEFINE_amd64=	CHEESE
 OPTIONS_DEFAULT_amd64=	CHEESE
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_CONFIGURE_ENABLE=	cups	
+CHEESE_LIB_DEPENDS=	libcheese.so:${PORTSDIR}/multimedia/cheese
+CHEESE_CONFIGUE_WITH=	cheese	
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-PLIST_SUB+=	CUPS=""
-.else
-PLIST_SUB+=	CUPS="@comment "
-CONFIGURE_ARGS+=--disable-cups
-.endif
-
-.if ${PORT_OPTIONS:MCHEESE}
-CONFIGURE_ARGS+=--with-cheese
-BUILD_DEPENDS+=	cheese>=3.0.1:${PORTSDIR}/multimedia/cheese
-LIB_DEPENDS+=	libcheese.so:${PORTSDIR}/multimedia/cheese
-.else
-CONFIGURE_ARGS+=--without-cheese
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|datetime wacom|datetime|g' \
 		${WRKSRC}/panels/Makefile.in
-	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|file://${PREFIX}/share/xsl/docbook/manpages/docbook.xsl|g' \
-		${WRKSRC}/man/Makefile.in
 
 .include <bsd.port.mk>

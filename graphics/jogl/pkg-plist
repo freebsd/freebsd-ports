@@ -92,16 +92,3 @@ lib/libjogl_awt.so
 %%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/help-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl/util/j2d
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl/util/texture/spi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl/util/texture
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl/util
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/com
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javax/media/opengl/glu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javax/media/opengl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javax/media
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javax
-%%JDK6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

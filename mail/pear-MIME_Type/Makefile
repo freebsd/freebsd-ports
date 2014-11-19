@@ -5,7 +5,7 @@ PORTNAME=	MIME_Type
 PORTVERSION=	1.3.3
 CATEGORIES=	mail www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for dealing with MIME types
 
 OPTIONS_DEFINE=	PEAR_SYSTEM_COMMAND

@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/BeginLift/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/BeginLift/BeginLift.so
 %%PERL5_MAN3%%/Devel::BeginLift.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/BeginLift
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

@@ -6,12 +6,9 @@ bin/chpp
 %%DATADIR%%/include/strings.chh
 %%DATADIR%%/include/time.chh
 %%DATADIR%%/include/w3lib.chh
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/dotest
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/tests
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/regress/arith/arith.txt
@@ -86,21 +83,3 @@ bin/chpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tricks_s.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tricks_s_g.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/website/tricks_t.chml
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/website
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tautogen
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/stringops
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/regex
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/metachar
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/loops
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/include/incdir/incdir2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/include/incdir
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/include
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/hanoi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/fileops
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/error
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/define
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/assoc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/array
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress/arith
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/regress
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

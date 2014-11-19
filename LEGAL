@@ -155,7 +155,7 @@ libamrwb/26204-*.zip	audio/libamrwb		unclear legal status, probably need license
 libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
 linux-nwnclient/*	games/linux-nwnclient	Distribution not allowed
 linux-unrealgold*	games/linux-unrealgold	Redistribution limited
-linux-ut/*		games/linux-ut		Redistribution limited
+linux-ut/*		games/linux-ut		Redistribution is limited, see license
 linuxq3ademo-*		games/linux-quake3	Restrictive license by Loki Software
 linuxq3ademo-*		games/linux-quake3-demo	Restrictive license by Loki Software
 linuxsampler-*		audio/linuxsampler	Commercial use is prohibited
@@ -243,6 +243,7 @@ tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
 unifi-2*/UniFi.unix.zip	net-mgmt/unifi2		Redistribution of bundled firmware images is not permitted
 unifi-3*/UniFi.unix.zip	net-mgmt/unifi3		Redistribution of bundled firmware images is not permitted
+unifi-4*/UniFi.unix.zip	net-mgmt/unifi4		Redistribution of bundled firmware images is not permitted
 uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any way.
 vdr-markad-*		multimedia/vdr-plugin-markad	Installs station logos

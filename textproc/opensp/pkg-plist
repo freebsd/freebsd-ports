@@ -141,7 +141,6 @@ include/OpenSP/rtti.h
 include/OpenSP/sptchar.h
 include/OpenSP/types.h
 include/OpenSP/xnew.h
-@dirrm include/OpenSP
 lib/libosp.a
 lib/libosp.so
 lib/libosp.so.5
@@ -179,5 +178,3 @@ share/sgml/openjade/OpenSP/unicode.sd
 share/sgml/openjade/OpenSP/unicode.syn
 share/sgml/openjade/OpenSP/xml.dcl
 share/sgml/openjade/OpenSP/xml.soc
-@dirrm share/sgml/openjade/OpenSP
-@dirrm share/sgml/openjade

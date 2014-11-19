@@ -1,8 +1,3 @@
 %%SITE_PERL%%/DateTime/Event/Sunrise.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Event/Sunrise/.packlist
 %%PERL5_MAN3%%/DateTime::Event::Sunrise.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Event/Sunrise
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Event
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime/Event
-@dirrmtry %%SITE_PERL%%/DateTime

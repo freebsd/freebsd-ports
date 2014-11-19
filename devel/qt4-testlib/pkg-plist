@@ -83,7 +83,3 @@
 %%QT_LIBDIR%%/libQtTest.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtTest.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtTest.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtTest
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

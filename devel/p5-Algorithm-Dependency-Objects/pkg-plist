@@ -3,9 +3,3 @@
 %%SITE_PERL%%/Algorithm/Dependency/Objects.pm
 %%SITE_PERL%%/Algorithm/Dependency/Objects/Ordered.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Dependency/Objects/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Dependency/Objects
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Dependency
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrm %%SITE_PERL%%/Algorithm/Dependency/Objects
-@dirrmtry %%SITE_PERL%%/Algorithm/Dependency
-@dirrmtry %%SITE_PERL%%/Algorithm

@@ -130,6 +130,8 @@ include/clutter-1.0/clutter/deprecated/clutter-texture.h
 include/clutter-1.0/clutter/deprecated/clutter-timeline.h
 include/clutter-1.0/clutter/deprecated/clutter-timeout-pool.h
 include/clutter-1.0/clutter/deprecated/clutter-util.h
+include/clutter-1.0/clutter/egl/clutter-egl-headers.h
+include/clutter-1.0/clutter/egl/clutter-egl.h
 include/clutter-1.0/clutter/glx/clutter-glx-texture-pixmap.h
 include/clutter-1.0/clutter/glx/clutter-glx.h
 include/clutter-1.0/clutter/x11/clutter-x11-texture-pixmap.h
@@ -139,12 +141,13 @@ lib/girepository-1.0/Clutter-1.0.typelib
 lib/girepository-1.0/ClutterX11-1.0.typelib
 lib/libclutter-1.0.so
 lib/libclutter-1.0.so.0
-lib/libclutter-1.0.so.0.1800.4
+lib/libclutter-1.0.so.0.2000.0
 lib/libclutter-glx-1.0.so
 lib/libclutter-glx-1.0.so.0
 libdata/pkgconfig/cally-1.0.pc
 libdata/pkgconfig/clutter-1.0.pc
 libdata/pkgconfig/clutter-cogl-1.0.pc
+libdata/pkgconfig/clutter-egl-1.0.pc
 libdata/pkgconfig/clutter-glx-1.0.pc
 libdata/pkgconfig/clutter-x11-1.0.pc
 share/doc/cally/CallyActor.html
@@ -417,35 +420,3 @@ share/locale/yi/LC_MESSAGES/clutter-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/clutter-1.0.mo
 share/locale/zh_HK/LC_MESSAGES/clutter-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/clutter-1.0.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/az_IR/LC_MESSAGES
-@dirrmtry share/locale/az_IR
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm %%DOCSDIR%%
-@dirrm share/doc/cally
-@dirrm include/clutter-1.0/clutter/x11
-@dirrm include/clutter-1.0/clutter/glx
-@dirrm include/clutter-1.0/clutter/deprecated
-@dirrm include/clutter-1.0/clutter
-@dirrm include/clutter-1.0/cally
-@dirrm include/clutter-1.0

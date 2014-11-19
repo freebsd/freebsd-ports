@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Damn/Damn.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Acme/Damn.pm
 %%PERL5_MAN3%%/Acme::Damn.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Damn
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Acme

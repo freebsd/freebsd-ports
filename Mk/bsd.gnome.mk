@@ -3,7 +3,7 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/trunk/Mk/bsd.gnome.mk 19008 2014-02-22 13:42:02Z kwm $
+#     $MCom: ports/trunk/Mk/bsd.gnome.mk 20033 2014-11-02 23:07:27Z kwm $
 #
 # Please view me with 4 column tabs!
 
@@ -12,7 +12,7 @@
 # *** WARNING: Disable MARCUSCOM before merge in FreeBSD!
 #     Please also remove this section before merging into FreeBSD.
 #
-MARCUSCOM_CVS=yes
+#MARCUSCOM_CVS=yes
 
 # ======================= USERS =================================
 #
@@ -76,7 +76,7 @@ _USE_GNOME_ALL= esound intlhack intltool introspection \
 _USE_GNOME_ALL+= gdkpixbuf glib12 gtk12 imlib
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 gal2 \
+_USE_GNOME_ALL+= atk atspi cairo desktopfileutils gal2 \
 		gdkpixbuf2 gconf2 glib20 \
 		gnomedocutils gnomesharp20 \
 		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
@@ -84,8 +84,8 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 gal2 \
 		libbonoboui libgda4 libglade2 libgnome \
 		libgnomecanvas libgnomedb libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
-		libxml2 libxslt libzvt linc \
-		orbit2 pango pangox-compat pygnome2 pygnomedesktop pygnomeextras pygobject pygtk2 \
+		libxml2 libxslt linc \
+		orbit2 pango pangox-compat pygnome2 pygobject pygtk2 \
 		pygtksourceview vte
 
 # GNOME 3 components
@@ -95,7 +95,7 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		pygobject3 vte3
 
 # C++ bindings
-_USE_GNOME_ALL+=atkmm cairomm gconfmm gconfmm26 glibmm gtkmm20 gtkmm24 \
+_USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm20 gtkmm24 \
 		gtkmm30 gtksourceviewmm3 libgdamm libgdamm5 \
 		libgtksourceviewmm libxml++26 libsigc++12 libsigc++20 \
 		pangomm
@@ -132,7 +132,6 @@ gnomeprefix_CONFIGURE_ARGS=--localstatedir=${GNOME_LOCALSTATEDIR} \
 			   --with-html-dir=${GNOME_HTML_DIR} \
 			   --disable-gtk-doc \
 			   --with-gconf-source=${GCONF_CONFIG_SOURCE}
-gnomeprefix_USE_GNOME_IMPL=gnomehier
 
 atkmm_DETECT=		${LOCALBASE}/libdata/pkgconfig/atkmm-1.6.pc
 atkmm_LIB_DEPENDS=	libatkmm-1.6.so:${PORTSDIR}/accessibility/atkmm
@@ -148,10 +147,6 @@ cairo_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 cairomm_DETECT=		${LOCALBASE}/libdata/pkgconfig/cairomm-1.0.pc
 cairomm_LIB_DEPENDS=	libcairomm-1.0.so:${PORTSDIR}/graphics/cairomm
 cairomm_USE_GNOME_IMPL=	cairo libxml++26
-
-gconfmm_DETECT=		${LOCALBASE}/libdata/pkgconfig/gconfmm-2.0.pc
-gconfmm_LIB_DEPENDS=	libgconfmm-2.0.so:${PORTSDIR}/devel/gconfmm
-gconfmm_USE_GNOME_IMPL=	gtkmm20 gconf2
 
 gconfmm26_DETECT=		${LOCALBASE}/libdata/pkgconfig/gconfmm-2.6.pc
 gconfmm26_LIB_DEPENDS=		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26
@@ -205,13 +200,13 @@ esound_CONFIGURE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
 esound_MAKE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
 esound_DETECT=		${ESD_CONFIG}
 
-GLIB_CONFIG?=		${LOCALBASE}/bin/glib12-config
+GLIB_CONFIG?=		${LOCALBASE}/bin/glib-config
 glib12_LIB_DEPENDS=	libglib.so:${PORTSDIR}/devel/glib12
 glib12_CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 glib12_MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 glib12_DETECT=		${GLIB_CONFIG}
 
-GTK_CONFIG?=		${LOCALBASE}/bin/gtk12-config
+GTK_CONFIG?=		${LOCALBASE}/bin/gtk-config
 gtk12_LIB_DEPENDS=	libgtk.so:${PORTSDIR}/x11-toolkits/gtk12
 gtk12_CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 gtk12_MAKE_ENV=		GTK_CONFIG="${GTK_CONFIG}"
@@ -235,7 +230,6 @@ imlib_USE_GNOME_IMPL=	gtk12
 gnomemimedata_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
 gnomemimedata_BUILD_DEPENDS=${gnomemimedata_DETECT}:${PORTSDIR}/misc/gnome-mime-data
 gnomemimedata_RUN_DEPENDS=${gnomemimedata_DETECT}:${PORTSDIR}/misc/gnome-mime-data
-gnomemimedata_USE_GNOME_IMPL=gnomehier
 
 glib20_LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20 \
 			libpcre.so:${PORTSDIR}/devel/pcre
@@ -311,7 +305,7 @@ introspection_DETECT=		${LOCALBASE}/libdata/pkgconfig/gobject-introspection-1.0.
 introspection_BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 introspection_LIB_DEPENDS=	libgirepository-1.0.so:${PORTSDIR}/devel/gobject-introspection
 introspection_RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-introspection_USE_GNOME_IMPL=	glib20 gnomehier
+introspection_USE_GNOME_IMPL=	glib20
 introspection_MAKE_ENV=		GI_SCANNER_DISABLE_CACHE=1 XDG_CACHE_HOME=${WRKDIR}
 
 gconf2_LIB_DEPENDS=	libgconf-2.so:${PORTSDIR}/devel/gconf2
@@ -373,21 +367,13 @@ vte_LIB_DEPENDS=	libvte.so:${PORTSDIR}/x11-toolkits/vte
 vte_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte.pc
 vte_USE_GNOME_IMPL=	gtk20
 
-vte3_LIB_DEPENDS=	libvte2_90.so:${PORTSDIR}/x11-toolkits/vte3
-vte3_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte-2.90.pc
+vte3_LIB_DEPENDS=	libvte-2.91.so:${PORTSDIR}/x11-toolkits/vte3
+vte3_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte-2.91.pc
 vte3_USE_GNOME_IMPL=	gtk30
-
-libzvt_LIB_DEPENDS=	libzvt-2.0.so:${PORTSDIR}/x11-toolkits/libzvt
-libzvt_DETECT=	${LOCALBASE}/libdata/pkgconfig/libzvt-2.0.pc
-libzvt_USE_GNOME_IMPL=	gtk20
 
 librsvg2_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc
 librsvg2_USE_GNOME_IMPL=libgsf gtk20
-
-eel2_LIB_DEPENDS=	libeel-2.so:${PORTSDIR}/x11-toolkits/eel
-eel2_DETECT=		${LOCALBASE}/libdata/pkgconfig/eel-2.0.pc
-eel2_USE_GNOME_IMPL=	gnomedesktop
 
 nautilus3_LIB_DEPENDS=	libnautilus-extension.so:${PORTSDIR}/x11-fm/nautilus
 nautilus3_DETECT=	${LOCALBASE}/share/gir-1.0/Nautilus-3.0.gir
@@ -505,21 +491,10 @@ gnomemenus3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnome-menu-3.0.pc
 gnomemenus3_USE_GNOME_IMPL=	glib20
 gnomemenus3_GNOME_DESKTOP_VERSION=3
 
-pygnomeextras_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-extras-2.0.pc
-pygnomeextras_BUILD_DEPENDS=	${pygnomeextras_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-extras
-pygnomeextras_RUN_DEPENDS=	${pygnomeextras_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-extras
-pygnomeextras_USE_GNOME_IMPL=pygnome2 libgtkhtml
-
 gnomedocutils_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-doc-utils.pc
 gnomedocutils_BUILD_DEPENDS=	${gnomedocutils_DETECT}:${PORTSDIR}/textproc/gnome-doc-utils
 gnomedocutils_RUN_DEPENDS=	${gnomedocutils_DETECT}:${PORTSDIR}/textproc/gnome-doc-utils
 gnomedocutils_USE_GNOME_IMPL=	libxslt
-
-pygnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-desktop-2.0.pc
-pygnomedesktop_BUILD_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
-pygnomedesktop_RUN_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
-pygnomedesktop_USE_GNOME_IMPL=	pygnome2 libgnomeprintui gtksourceview libwnck nautilus2 metacity
-pygnomedesktop_GNOME_DESKTOP_VERSION=2
 
 gtksharp10_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc
 gtksharp10_BUILD_DEPENDS=	${gtksharp10_DETECT}:${PORTSDIR}/x11-toolkits/gtk-sharp10
@@ -545,7 +520,7 @@ pygtksourceview_BUILD_DEPENDS=	${pygtksourceview_DETECT}:${PORTSDIR}/x11-toolkit
 pygtksourceview_RUN_DEPENDS=	${pygtksourceview_DETECT}:${PORTSDIR}/x11-toolkits/py-gtksourceview
 pygtksourceview_USE_GNOME_IMPL=	gtksourceview2 pygtk2
 
-gvfs_DETECT=		${LOCALBASE}/lib/libgvfscommon.so
+gvfs_DETECT=		${LOCALBASE}/lib/gvfs/libgvfscommon.so
 gvfs_BUILD_DEPENDS=	gvfs>=0:${PORTSDIR}/devel/gvfs
 gvfs_RUN_DEPENDS=	gvfs>=0:${PORTSDIR}/devel/gvfs
 gvfs_USE_GNOME_IMPL=	glib20

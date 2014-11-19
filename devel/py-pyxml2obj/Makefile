@@ -12,8 +12,7 @@ COMMENT=	Simple way to convert xml to python object and vice versa
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

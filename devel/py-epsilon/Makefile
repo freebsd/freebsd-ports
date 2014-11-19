@@ -16,9 +16,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
 CONFLICTS=	brlcad-[0-9]*
-USES=		twisted
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python twisted
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

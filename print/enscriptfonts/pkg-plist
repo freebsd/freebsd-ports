@@ -184,5 +184,3 @@ share/enscript/xenscript/AbscissaItalic.afm
 share/enscript/xenscript/AbscissaBoldItalic.afm
 share/enscript/xenscript/AbscissaBold.afm
 share/enscript/xenscript/saloon.afm
-@dirrm share/enscript/xenscript
-@dirrm share/enscript

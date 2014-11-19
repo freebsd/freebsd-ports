@@ -1,6 +1,0 @@
-bin/ultracopier
-%%DESKTOPDIR%%/ultracopier.desktop
-%%ICONS_DIR%%/16x16/apps/ultracopier.png
-%%ICONS_DIR%%/128x128/apps/ultracopier.png
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

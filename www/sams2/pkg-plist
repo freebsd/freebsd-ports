@@ -9,9 +9,11 @@ etc/rc.d/sams2
 lib/sams2/libfsusage.a
 lib/sams2/libfsusage.so
 lib/sams2/libfsusage.so.1
+lib/sams2/libfsusage.so.1.0.0
 lib/sams2/libloadavg.a
 lib/sams2/libloadavg.so
 lib/sams2/libloadavg.so.1
+lib/sams2/libloadavg.so.1.0.0
 %%WWWDIR%%/authclass.php
 %%WWWDIR%%/bin/diskspace
 %%WWWDIR%%/bin/freemem
@@ -439,23 +441,3 @@ lib/sams2/libloadavg.so.1
 %%WWWDIR%%/trangeclass.php
 %%WWWDIR%%/tray.php
 %%WWWDIR%%/userclass.php
-@dirrm lib/sams2
-@dirrm %%WWWDIR%%/backup
-@dirrm %%WWWDIR%%/bin
-@dirrm %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/icon/classic
-@dirrm %%WWWDIR%%/icon
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/lib
-@dirrm %%WWWDIR%%/menu
-@dirrm %%WWWDIR%%/plugins/configtray/buttons
-@dirrm %%WWWDIR%%/plugins/configtray
-@dirrm %%WWWDIR%%/plugins/squid/buttons
-@dirrm %%WWWDIR%%/plugins/squid/lang
-@dirrm %%WWWDIR%%/plugins/squid
-@dirrm %%WWWDIR%%/plugins/webconfig/buttons
-@dirrm %%WWWDIR%%/plugins/webconfig/lang
-@dirrm %%WWWDIR%%/plugins/webconfig
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/src
-@dirrm %%WWWDIR%%

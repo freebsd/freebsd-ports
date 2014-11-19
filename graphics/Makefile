@@ -87,6 +87,7 @@
     SUBDIR += clutter-gtk
     SUBDIR += clutter-gtk3
     SUBDIR += cluttermm
+    SUBDIR += code-eli
     SUBDIR += cogl
     SUBDIR += colord
     SUBDIR += colord-gtk
@@ -142,8 +143,8 @@
     SUBDIR += entangle
     SUBDIR += eog
     SUBDIR += eog-plugins
-    SUBDIR += eom
     SUBDIR += eos-movrec
+    SUBDIR += eom
     SUBDIR += epdfview
     SUBDIR += epeg
     SUBDIR += epix
@@ -497,6 +498,7 @@
     SUBDIR += libdrm
     SUBDIR += libecwj2
     SUBDIR += libemf
+    SUBDIR += libepoxy
     SUBDIR += libetonyek
     SUBDIR += libetonyek01
     SUBDIR += libexif
@@ -557,16 +559,17 @@
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-adobesvg
-    SUBDIR += linux-c6-cairo
+    SUBDIR += linux-c6-sdl_image
+    SUBDIR += linux-c6-sdl_ttf
     SUBDIR += linux-c6-dri
     SUBDIR += linux-c6-dri-compat
     SUBDIR += linux-c6-gdk-pixbuf
+    SUBDIR += linux-c6-glx-utils
     SUBDIR += linux-c6-jpeg
     SUBDIR += linux-c6-libGLU
-    SUBDIR += linux-c6-png
-    SUBDIR += linux-c6-sdl_image
-    SUBDIR += linux-c6-sdl_ttf
     SUBDIR += linux-c6-tiff
+    SUBDIR += linux-c6-cairo
+    SUBDIR += linux-c6-png
     SUBDIR += linux-f10-cairo
     SUBDIR += linux-f10-dri
     SUBDIR += linux-f10-gdk-pixbuf
@@ -586,6 +589,7 @@
     SUBDIR += luminance-qt5
     SUBDIR += luxrender
     SUBDIR += mahotas
+    SUBDIR += maim
     SUBDIR += makehuman
     SUBDIR += mandelbulber
     SUBDIR += mapnik
@@ -1067,7 +1071,6 @@
     SUBDIR += xv
     SUBDIR += xv-m17n
     SUBDIR += xwpick
-    SUBDIR += xzgv
     SUBDIR += yafray
     SUBDIR += yagf
     SUBDIR += yed

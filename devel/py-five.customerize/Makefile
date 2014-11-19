@@ -29,9 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.portlets>=0:${PORTSDIR}/www/py-plone.p
 		${PYTHON_PKGNAMEPREFIX}transaction>=0:${PORTSDIR}/devel/py-transaction \
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=			zope zip
+USE_PYTHON=	distutils autoplist
+USES=		python:2 zope zip
 
 .include <bsd.port.mk>

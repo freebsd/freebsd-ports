@@ -1,8 +1,4 @@
 share/dict/ebd-fpw/catalogs
 share/dict/ebd-fpw/ebd/data/honmon
-@dirrm share/dict/ebd-fpw/ebd/data
-@dirrm share/dict/ebd-fpw/ebd
-@dirrm share/dict/ebd-fpw
 %%PORTDOCS%%%%DOCSDIR%%/readme.1st
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

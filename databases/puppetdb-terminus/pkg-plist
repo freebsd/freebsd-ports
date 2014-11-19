@@ -14,3 +14,4 @@
 %%RUBY_SITELIBDIR%%/puppet/util/puppetdb/command.rb
 %%RUBY_SITELIBDIR%%/puppet/util/puppetdb/command_names.rb
 %%RUBY_SITELIBDIR%%/puppet/util/puppetdb/config.rb
+%%RUBY_SITELIBDIR%%/puppet/util/puppetdb/global_check.rb

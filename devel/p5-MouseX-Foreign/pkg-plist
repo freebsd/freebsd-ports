@@ -11,12 +11,3 @@
 %%PERL5_MAN3%%/MouseX::Foreign::Meta::Role::Method::Constructor.3.gz
 %%PERL5_MAN3%%/MouseX::Foreign::Meta::Role::Method::Destructor.3.gz
 %%PERL5_MAN3%%/MouseX::NonMoose.3.gz
-@dirrm %%SITE_PERL%%/MouseX/NonMoose/Meta/Role/Method
-@dirrm %%SITE_PERL%%/MouseX/NonMoose/Meta/Role
-@dirrm %%SITE_PERL%%/MouseX/NonMoose/Meta
-@dirrm %%SITE_PERL%%/MouseX/NonMoose
-@dirrm %%SITE_PERL%%/MouseX/Foreign/Meta/Role/Method
-@dirrm %%SITE_PERL%%/MouseX/Foreign/Meta/Role
-@dirrm %%SITE_PERL%%/MouseX/Foreign/Meta
-@dirrm %%SITE_PERL%%/MouseX/Foreign
-@dirrmtry %%SITE_PERL%%/MouseX

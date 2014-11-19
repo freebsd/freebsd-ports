@@ -20,8 +20,6 @@ include/wnn6/wnn/serverdefs.h
 include/wnn6/wnn/wnn_os.h
 include/wnn6/wnn/wnn_string.h
 include/wnn6/wnn/wnnerror.h
-@dirrm include/wnn6/wnn
-@dirrm include/wnn6
 lib/libwnn6_fromsrc.a
 lib/libwnn6.a
 lib/libwnn6.so

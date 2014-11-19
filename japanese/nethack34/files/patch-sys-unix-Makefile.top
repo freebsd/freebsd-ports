@@ -1,5 +1,5 @@
---- sys/unix/Makefile.top.orig	2014-09-01 22:34:32.000000000 +0900
-+++ sys/unix/Makefile.top	2014-09-01 22:36:34.000000000 +0900
+--- sys/unix/Makefile.top.orig	2014-10-22 13:50:35.000000000 +0900
++++ sys/unix/Makefile.top	2014-10-22 13:52:56.000000000 +0900
 @@ -14,7 +14,6 @@
  # MAKE = make
  
@@ -112,7 +112,7 @@
  	touch $(VARDIR)/perm $(VARDIR)/record
  # and a reminder
  	@echo You may also want to install the man pages via the doc Makefile.
-@@ -241,20 +223,15 @@
+@@ -241,20 +223,14 @@
  install: $(GAME) recover $(VARDAT) dungeon spec_levs
  # set up the directories
  # not all mkdirs have -p; those that don't will create a -p directory
@@ -126,7 +126,6 @@
 -	-$(CHOWN) $(GAMEUID) $(GAMEDIR) $(VARDIR) $(VARDIR)/save
 -	$(CHGRP) $(GAMEGRP) $(GAMEDIR) $(VARDIR) $(VARDIR)/save
 -	chmod $(DIRPERM) $(GAMEDIR) $(VARDIR) $(VARDIR)/save
-+	-chmod $(DIRPERM) ${DESTDIR}$(GAMEDIR) ${DESTDIR}$(VARDIR) ${DESTDIR}$(VARDIR)/save
  # set up the game files
  	( $(MAKE) dofiles )
  # set up some additional files

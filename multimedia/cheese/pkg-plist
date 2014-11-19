@@ -11,15 +11,18 @@ include/cheese/cheese-widget.h
 include/cheese/cheese.h
 lib/libcheese-gtk.so
 lib/libcheese-gtk.so.23
-lib/libcheese-gtk.so.23.1.9
+lib/libcheese-gtk.so.23.1.14
 lib/libcheese.so
 lib/libcheese.so.7
-lib/libcheese.so.7.0.25
+lib/libcheese.so.7.0.30
 lib/girepository-1.0/Cheese-3.0.typelib
 libdata/pkgconfig/cheese-gtk.pc
 libdata/pkgconfig/cheese.pc
-share/appdata/cheese.appdata.xml
-share/applications/cheese.desktop
+libexec/gnome-camera-service
+share/appdata/org.gnome.Cheese.appdata.xml
+share/applications/org.gnome.Cheese.desktop
+share/dbus-1/services/org.gnome.Camera.service
+share/dbus-1/services/org.gnome.Cheese.service
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
@@ -208,6 +211,31 @@ share/help/es/cheese/figures/cheese.png
 share/help/es/cheese/figures/effects.png
 share/help/es/cheese/figures/image-properties.png
 share/help/es/cheese/figures/settings.png
+share/help/fi/cheese/burst-mode.page
+share/help/fi/cheese/effects-apply.page
+share/help/fi/cheese/figures/cheese-delete.png
+share/help/fi/cheese/figures/cheese-effects.png
+share/help/fi/cheese/figures/cheese-introduction.png
+share/help/fi/cheese/figures/cheese-record.png
+share/help/fi/cheese/figures/cheese-save.png
+share/help/fi/cheese/figures/cheese-take.png
+share/help/fi/cheese/figures/cheese.png
+share/help/fi/cheese/figures/effects.png
+share/help/fi/cheese/figures/image-properties.png
+share/help/fi/cheese/figures/settings.png
+share/help/fi/cheese/index.page
+share/help/fi/cheese/introduction.page
+share/help/fi/cheese/legal.xml
+share/help/fi/cheese/photo-delete.page
+share/help/fi/cheese/photo-save.page
+share/help/fi/cheese/photo-take.page
+share/help/fi/cheese/photo-view.page
+share/help/fi/cheese/pref-countdown.page
+share/help/fi/cheese/pref-flash.page
+share/help/fi/cheese/pref-fullscreen.page
+share/help/fi/cheese/pref-image-properties.page
+share/help/fi/cheese/pref-resolution.page
+share/help/fi/cheese/video-record.page
 share/help/fr/cheese/burst-mode.page
 share/help/fr/cheese/effects-apply.page
 share/help/fr/cheese/index.page
@@ -497,36 +525,3 @@ share/locale/zh_CN/LC_MESSAGES/cheese.mo
 share/locale/zh_HK/LC_MESSAGES/cheese.mo
 share/locale/zh_TW/LC_MESSAGES/cheese.mo
 share/locale/zu/LC_MESSAGES/cheese.mo
-@dirrm share/help/zh_CN/cheese/figures
-@dirrm share/help/zh_CN/cheese
-@dirrm share/help/sl/cheese/figures
-@dirrm share/help/sl/cheese
-@dirrm share/help/ru/cheese/figures
-@dirrm share/help/ru/cheese
-@dirrm share/help/ru
-@dirrm share/help/pt_BR/cheese/figures
-@dirrm share/help/pt_BR/cheese
-@dirrm share/help/id/cheese/figures
-@dirrm share/help/id/cheese
-@dirrm share/help/id
-@dirrm share/help/hu/cheese/figures
-@dirrm share/help/hu/cheese
-@dirrm share/help/gl/cheese/figures
-@dirrm share/help/gl/cheese
-@dirrm share/help/fr/cheese/figures
-@dirrm share/help/fr/cheese
-@dirrm share/help/es/cheese/figures
-@dirrm share/help/es/cheese
-@dirrm share/help/el/cheese/figures
-@dirrm share/help/el/cheese
-@dirrm share/help/de/cheese/figures
-@dirrm share/help/de/cheese
-@dirrm share/help/cs/cheese/figures
-@dirrm share/help/cs/cheese
-@dirrm share/help/ca/cheese/figures
-@dirrm share/help/ca/cheese
-@dirrm share/help/C/cheese/figures
-@dirrm share/help/C/cheese
-@dirrm share/appdata
-@dirrm include/cheese
-@dirrm %%DOCSDIR%%

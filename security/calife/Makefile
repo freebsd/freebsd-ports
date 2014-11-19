@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calife
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	security
 MASTER_SITES=	http://assets.keltia.net/calife/
 

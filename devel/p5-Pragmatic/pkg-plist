@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Pragmatic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pragmatic/.packlist
 %%PERL5_MAN3%%/Pragmatic.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pragmatic

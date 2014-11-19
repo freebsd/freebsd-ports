@@ -61,8 +61,6 @@ lib/libqhullstatic.a
 lib/libqhullstatic_p.a
 man/man1/qhull.1.gz
 man/man1/rbox.1.gz
-@dirrm include/libqhull
-@dirrm include/libqhullcpp
 %%PORTDOCS%%%%DOCSDIR%%/Announce.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
@@ -101,4 +99,3 @@ man/man1/rbox.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/rbox.htm
 %%PORTDOCS%%%%DOCSDIR%%/rbox.man
 %%PORTDOCS%%%%DOCSDIR%%/rbox.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

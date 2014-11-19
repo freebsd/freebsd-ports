@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# motsognir.sh for rc.d usage (c) 2013 Mateusz Viste.
+# $Id$
+
+# $FreeBSD$
+#
+# PROVIDE: motsognir
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# motsognir_enable (bool):     Set to NO by default.
+#                              Set it to YES to enable motsognir.
+# motsognir_config (path):     Set to %%PREFIX%%/etc/motsognir.conf
+#                              by default.
+
+. /etc/rc.subr
+
+name=motsognir
+rcvar=motsognir_enable
+
+load_rc_config $name
+
+: ${motsognir_enable:="NO"}
+: ${motsognir_config="%%PREFIX%%/etc/motsognir.conf"}
+
+command=%%PREFIX%%/bin/${name}
+
+command_args="--config $motsognir_config"
+
+run_rc_command "$1"

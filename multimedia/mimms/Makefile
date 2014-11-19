@@ -12,9 +12,8 @@ COMMENT=	Download streams using the MMS protocol
 
 LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=	3.2
 
 PORTDOCS=	AUTHORS COPYING NEWS README

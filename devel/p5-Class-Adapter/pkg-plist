@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Class::Adapter.3.gz
 %%PERL5_MAN3%%/Class::Adapter::Builder.3.gz
 %%PERL5_MAN3%%/Class::Adapter::Clear.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Adapter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Adapter
-@dirrmtry %%SITE_PERL%%/Class

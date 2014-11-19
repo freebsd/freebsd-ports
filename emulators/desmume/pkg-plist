@@ -17,5 +17,3 @@ share/locale/sv/LC_MESSAGES/desmume.mo
 share/locale/zh_CN/LC_MESSAGES/desmume.mo
 share/locale/zh_TW/LC_MESSAGES/desmume.mo
 share/pixmaps/DeSmuME.xpm
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%

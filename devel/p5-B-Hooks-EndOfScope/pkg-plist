@@ -7,10 +7,3 @@
 %%SITE_PERL%%/B/Hooks/EndOfScope/PP/HintHash.pm
 %%SITE_PERL%%/B/Hooks/EndOfScope/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/EndOfScope/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/EndOfScope
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrm %%SITE_PERL%%/B/Hooks/EndOfScope/PP
-@dirrm %%SITE_PERL%%/B/Hooks/EndOfScope
-@dirrmtry %%SITE_PERL%%/B/Hooks
-@dirrmtry %%SITE_PERL%%/B

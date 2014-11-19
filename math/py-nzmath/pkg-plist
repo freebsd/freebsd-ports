@@ -181,14 +181,7 @@
 %%PYTHON_SITELIBDIR%%/nzmath/vector.py
 %%PYTHON_SITELIBDIR%%/nzmath/vector.pyc
 %%PYTHON_SITELIBDIR%%/nzmath/vector.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/nzmath/config
-@dirrm %%PYTHON_SITELIBDIR%%/nzmath/factor
-@dirrm %%PYTHON_SITELIBDIR%%/nzmath/plugin/math
-@dirrm %%PYTHON_SITELIBDIR%%/nzmath/plugin
-@dirrm %%PYTHON_SITELIBDIR%%/nzmath/poly
-@dirrm %%PYTHON_SITELIBDIR%%/nzmath
 %%DATADIR%%/discriminant.csv
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/algfield.pdf
 %%PORTDOCS%%%%DOCSDIR%%/algorithm.pdf
 %%PORTDOCS%%%%DOCSDIR%%/arith1.pdf
@@ -240,4 +233,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/round2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/squarefree.pdf
 %%PORTDOCS%%%%DOCSDIR%%/vector.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

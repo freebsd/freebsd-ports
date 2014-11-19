@@ -49,4 +49,3 @@ lib/libZThread-2.3.so.2.0.0
 lib/libZThread.so
 share/aclocal/pthread.m4
 share/aclocal/zthread.m4
-@dirrm include/zthread

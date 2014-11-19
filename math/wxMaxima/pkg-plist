@@ -27,4 +27,3 @@ share/pixmaps/wxmaxima.png
 %%DATADIR%%/tips.txt
 %%DATADIR%%/wxmathml.lisp
 %%DATADIR%%/wxmaxima.png
-@dirrmtry %%DATADIR%%

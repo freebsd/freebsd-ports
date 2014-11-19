@@ -2,4 +2,3 @@ bin/jikes
 include/jikesapi.h
 man/man1/jikes.1.gz
 share/doc/jikes-%%PORTVERSION%%/license.htm
-@dirrm share/doc/jikes-%%PORTVERSION%%

@@ -7,9 +7,3 @@
 %%SITE_PERL%%/MooseX/Async/Meta/Role.pm
 %%SITE_PERL%%/MooseX/Async/Meta/Trait.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Async/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Async
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Async/Meta/Method
-@dirrm %%SITE_PERL%%/MooseX/Async/Meta
-@dirrm %%SITE_PERL%%/MooseX/Async
-@dirrmtry %%SITE_PERL%%/MooseX

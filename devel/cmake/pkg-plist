@@ -977,27 +977,3 @@ share/aclocal/cmake.m4
 %%PORTDOCS%%%%DOCSDIR%%/cmcompress/Copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/cmsys/Copyright.txt
 share/emacs/site-lisp/cmake-mode.el
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmsys
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmcompress
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/editors/vim
-@dirrm %%DATADIR%%/editors/emacs
-@dirrm %%DATADIR%%/editors
-@dirrm %%DATADIR%%/completions
-@dirrm %%DATADIR%%/Help/variable
-@dirrm %%DATADIR%%/Help/release
-@dirrm %%DATADIR%%/Help/prop_tgt
-@dirrm %%DATADIR%%/Help/prop_test
-@dirrm %%DATADIR%%/Help/prop_sf
-@dirrm %%DATADIR%%/Help/prop_gbl
-@dirrm %%DATADIR%%/Help/prop_dir
-@dirrm %%DATADIR%%/Help/prop_cache
-@dirrm %%DATADIR%%/Help/policy
-@dirrm %%DATADIR%%/Help/module
-@dirrm %%DATADIR%%/Help/manual
-@dirrm %%DATADIR%%/Help/include
-@dirrm %%DATADIR%%/Help/generator
-@dirrm %%DATADIR%%/Help/command
-@dirrm %%DATADIR%%/Help
-@dirrmtry %%DATADIR%%

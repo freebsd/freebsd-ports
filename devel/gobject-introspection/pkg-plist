@@ -21,6 +21,7 @@ include/gobject-introspection-1.0/gitypeinfo.h
 include/gobject-introspection-1.0/gitypelib.h
 include/gobject-introspection-1.0/gitypes.h
 include/gobject-introspection-1.0/giunioninfo.h
+include/gobject-introspection-1.0/giversionmacros.h
 include/gobject-introspection-1.0/givfuncinfo.h
 lib/girepository-1.0/DBus-1.0.typelib
 lib/girepository-1.0/DBusGLib-1.0.typelib
@@ -56,6 +57,9 @@ lib/gobject-introspection/giscanner/ast.pyo
 lib/gobject-introspection/giscanner/cachestore.py
 lib/gobject-introspection/giscanner/cachestore.pyc
 lib/gobject-introspection/giscanner/cachestore.pyo
+lib/gobject-introspection/giscanner/ccompiler.py
+lib/gobject-introspection/giscanner/ccompiler.pyc
+lib/gobject-introspection/giscanner/ccompiler.pyo
 lib/gobject-introspection/giscanner/codegen.py
 lib/gobject-introspection/giscanner/codegen.pyc
 lib/gobject-introspection/giscanner/codegen.pyo
@@ -206,19 +210,10 @@ share/gobject-introspection-1.0/tests/foo.c
 share/gobject-introspection-1.0/tests/foo.h
 share/gobject-introspection-1.0/tests/gimarshallingtests.c
 share/gobject-introspection-1.0/tests/gimarshallingtests.h
+share/gobject-introspection-1.0/tests/gitestmacros.h
 share/gobject-introspection-1.0/tests/regress.c
 share/gobject-introspection-1.0/tests/regress.h
 share/gobject-introspection-1.0/tests/utility.c
 share/gobject-introspection-1.0/tests/utility.h
 share/gobject-introspection-1.0/tests/warnlib.c
 share/gobject-introspection-1.0/tests/warnlib.h
-@dirrm share/gobject-introspection-1.0/tests
-@dirrm share/gobject-introspection-1.0
-@dirrm lib/gobject-introspection/giscanner/doctemplates/Python
-@dirrm lib/gobject-introspection/giscanner/doctemplates/Gjs
-@dirrm lib/gobject-introspection/giscanner/doctemplates/C
-@dirrm lib/gobject-introspection/giscanner/doctemplates
-@dirrm lib/gobject-introspection/giscanner/collections
-@dirrm lib/gobject-introspection/giscanner
-@dirrm lib/gobject-introspection
-@dirrm include/gobject-introspection-1.0

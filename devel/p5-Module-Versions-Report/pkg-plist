@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Module::Versions::Report.3.gz
 %%SITE_PERL%%/Module/Versions/Report.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module-Versions-Report/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module-Versions-Report
-@dirrmtry %%SITE_PERL%%/Module/Versions
-@dirrmtry %%SITE_PERL%%/Module

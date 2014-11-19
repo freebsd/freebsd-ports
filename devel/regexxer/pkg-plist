@@ -43,12 +43,3 @@ share/locale/zh_HK/LC_MESSAGES/regexxer.mo
 share/locale/zh_TW/LC_MESSAGES/regexxer.mo
 share/regexxer/mainwindow.ui
 share/regexxer/prefdialog.ui
-@dirrm share/regexxer
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/or/LC_MESSAGES
-@dirrmtry share/locale/or
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz

@@ -3,6 +3,7 @@
 
 PORTNAME=	openssl-compat
 PORTVERSION=	0.9.8e
+PORTREVISION=	1
 CATEGORIES=	security linux
 DISTNAME=	openssl098e-${PORTVERSION}-${RPMVERSION}
 

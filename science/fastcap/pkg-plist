@@ -42,5 +42,3 @@ bin/pyragen
 %%PORTDOCS%%%%DOCSDIR%%/tcad.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/ug.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/readme.gz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

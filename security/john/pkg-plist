@@ -28,4 +28,3 @@ etc/john.conf.default
 %%DATADIR%%/sha-dump.pl
 %%DATADIR%%/sha-test.pl
 %%DATADIR%%/sipdump2john.py
-@dirrm %%DATADIR%%

@@ -10,6 +10,9 @@ MASTER_SITES=	SF/corewar/pMARS/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable corewar system with ICWS'94 extensions
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/../COPYING
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 OPTIONS_MULTI=	INT
@@ -66,8 +69,6 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${STAGEDIR}${PREFIX}/man/man6
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.   for f in README config doc warriors
-	${CP} -R ${WRKSRC}/../${f} ${STAGEDIR}${DOCSDIR}
-.   endfor
+	cd ${WRKSRC}/.. && ${COPYTREE_SHARE} "README config doc warriors" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

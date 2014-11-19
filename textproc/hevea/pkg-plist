@@ -145,8 +145,3 @@ lib/hevea/winstyles.hva
 lib/hevea/xspace.hva
 lib/hevea/xxcharset.exe
 lib/hevea/xxdate.exe
-@dirrm lib/hevea/text
-@dirrm lib/hevea/mappings
-@dirrm lib/hevea/info
-@dirrm lib/hevea/html
-@dirrm lib/hevea

@@ -14,9 +14,8 @@ COMMENT=	Draw mathematical figures in SVG using Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST= yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.1.2|${PORTVERSION}|' ${WRKSRC}/setup.py

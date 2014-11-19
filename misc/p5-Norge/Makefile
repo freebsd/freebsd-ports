@@ -7,7 +7,7 @@ CATEGORIES=	misc textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Misc. Norwegian methods for Perl, conversion/dates/numbers etc.
 
 USES=		perl5

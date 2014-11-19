@@ -86,4 +86,3 @@ share/locale/rw/LC_MESSAGES/libextractor.mo
 share/locale/sv/LC_MESSAGES/libextractor.mo
 share/locale/uk/LC_MESSAGES/libextractor.mo
 share/locale/vi/LC_MESSAGES/libextractor.mo
-@dirrm lib/libextractor

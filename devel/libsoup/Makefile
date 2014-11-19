@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/libsoup/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/devel/libsoup/Makefile 20035 2014-11-03 08:16:10Z kwm $
 
 PORTNAME=	libsoup
-PORTVERSION=	2.46.0
-PORTREVISION=	1
+PORTVERSION=	2.48.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,14 +21,14 @@ USES=		tar:xz
 
 USES+=		gettext gmake libtool pathfix pkgconfig \
 		python:3:build tar:xz
-USE_GNOME=	glib20 gnomehier intltool introspection:build \
+USE_GNOME=	glib20 intltool introspection:build \
 		libxml2 referencehack
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-more-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 LIBVERSION=	1.7.0
@@ -52,9 +51,9 @@ post-patch:
 
 .if defined(SOUP_SLAVE)
 do-install:
-	@${SED} '/^relink_command/d' ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la
-	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la ${STAGEDIR}${PREFIX}/lib/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gir-1.0/
 	${INSTALL_DATA} ${WRKSRC}/libsoup/SoupGNOME-2.4.gir ${STAGEDIR}${PREFIX}/share/gir-1.0/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/girepository-1.0/
 	${INSTALL_DATA} ${WRKSRC}/libsoup/SoupGNOME-2.4.typelib ${STAGEDIR}${PREFIX}/lib/girepository-1.0/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.1 ${STAGEDIR}${PREFIX}/lib/

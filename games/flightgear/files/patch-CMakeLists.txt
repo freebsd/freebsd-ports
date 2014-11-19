@@ -1,11 +1,16 @@
---- CMakeLists.txt.orig	2012-08-27 18:14:13.000000000 +0200
-+++ CMakeLists.txt	2012-08-27 18:14:52.000000000 +0200
-@@ -225,7 +225,7 @@
-     endif(LIBSVN_FOUND)
- endif(ENABLE_LIBSVN)
+--- CMakeLists.txt.orig	2014-10-21 18:32:02.620104085 +0200
++++ CMakeLists.txt	2014-10-22 06:52:20.912083280 +0200
+@@ -96,10 +96,11 @@
+     find_library(COCOA_LIBRARY Cocoa)
+     list(APPEND PLATFORM_LIBS ${COCOA_LIBRARY} ${CORESERVICES_LIBRARY})
  
--find_package(PLIB REQUIRED puaux pu js fnt)
-+find_package(PLIB REQUIRED puaux pu js fnt net)
+-elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
++elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR
++	${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+     set(USE_DBUS_DEFAULT 1)
+-    find_package(UDev)
  
- # FlightGear and SimGear versions need to match
- find_package(SimGear ${FLIGHTGEAR_VERSION} REQUIRED)
++    find_package(UDev)
+     if(UDEV_FOUND)
+         set(EVENT_INPUT_DEFAULT 1)
+     endif(UDEV_FOUND)

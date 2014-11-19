@@ -1,6 +1,3 @@
 %%SITE_PERL%%/IO/Digest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Digest/.packlist
 %%PERL5_MAN3%%/IO::Digest.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Digest
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO

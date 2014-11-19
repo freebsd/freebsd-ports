@@ -2,4 +2,3 @@ bin/xed
 lib/X11/xed/xed.help
 lib/X11/app-defaults/Xed
 man/man1/xed.1.gz
-@dirrm lib/X11/xed

@@ -91,6 +91,3 @@ share/vala/vapi/grilo-0.2.deps
 share/vala/vapi/grilo-0.2.vapi
 share/vala/vapi/grilo-net-0.2.deps
 share/vala/vapi/grilo-net-0.2.vapi
-@dirrm include/grilo-0.2/pls
-@dirrm include/grilo-0.2/net
-@dirrm include/grilo-0.2

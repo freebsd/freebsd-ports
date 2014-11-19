@@ -21,4 +21,3 @@ man/man1/epstoimg.1.gz
 %%PYTHON_SITELIBDIR%%/imgtopslib/psimage.py
 %%PYTHON_SITELIBDIR%%/imgtopslib/psimage.pyc
 %%PYTHON_SITELIBDIR%%/imgtopslib/psimage.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/imgtopslib

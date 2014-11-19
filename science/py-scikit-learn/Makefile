@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scikit-learn
-PORTVERSION=	0.15.0
-PORTREVISION=	1
+PORTVERSION=	0.15.2
 CATEGORIES=	science python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=source/s/scikit-learn
@@ -16,7 +15,8 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0.8.0:${PORTSDIR}/science/py-scipy
 
-USES=		fortran
+USES=		fortran python
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_SINGLE=		BLAS
 OPTIONS_SINGLE_BLAS=	CBLAS ATLAS
@@ -27,10 +27,12 @@ ATLAS_DESC=	Use math/atlas as BLAS library
 CBLAS_LIB_DEPENDS=	libcblas.so:${PORTSDIR}/math/cblas
 ATLAS_LIB_DEPENDS=	libcblas.so:${PORTSDIR}/math/atlas
 
-LATEST_LINK=	py-${PORTNAME}
+.include <bsd.port.options.mk>
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+.if ${PORT_OPTIONS:MCBLAS}
+LDFLAGS+=	-lblas
+.endif
+
+LATEST_LINK=	py-${PORTNAME}
 
 .include <bsd.port.mk>

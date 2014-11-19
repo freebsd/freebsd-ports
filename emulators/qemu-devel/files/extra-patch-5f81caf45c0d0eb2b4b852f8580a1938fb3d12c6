@@ -1,0 +1,201 @@
+From 5f81caf45c0d0eb2b4b852f8580a1938fb3d12c6 Mon Sep 17 00:00:00 2001
+From: Stacey Son <sson@FreeBSD.org>
+Date: Wed, 5 Nov 2014 20:28:13 +0000
+Subject: [PATCH] Add support for pipe2(2) and chflagsat(2) system calls.
+
+This change adds support for newly added pipe2(2) and chflagsat(2)
+system calls.  It also fixes what obviously looks like a bug with the
+pipe(2) call emulation.  The pipe descriptors were not written back.
+---
+ bsd-user/bsd-file.h           |  8 +++-
+ bsd-user/freebsd/os-file.h    | 86 +++++++++++++++++++++++++++++++++++++++++++
+ bsd-user/freebsd/strace.list  |  2 +
+ bsd-user/freebsd/syscall_nr.h |  3 +-
+ bsd-user/syscall.c            |  9 +++++
+ 5 files changed, 105 insertions(+), 3 deletions(-)
+ create mode 100644 bsd-user/freebsd/os-file.h
+
+diff --git a/bsd-user/bsd-file.h b/bsd-user/bsd-file.h
+index 5d8a347..f697eac 100644
+--- a/bsd-user/bsd-file.h
++++ b/bsd-user/bsd-file.h
+@@ -1013,7 +1013,7 @@ static abi_long do_bsd_lseek(void *cpu_env, abi_long arg1, abi_long arg2,
+ }
+ 
+ /* pipe(2) */
+-static abi_long do_bsd_pipe(void *cpu_env, abi_long arg1)
++static abi_long do_bsd_pipe(void *cpu_env, abi_ulong pipedes)
+ {
+     abi_long ret;
+     int host_pipe[2];
+@@ -1022,8 +1022,12 @@ static abi_long do_bsd_pipe(void *cpu_env, abi_long arg1)
+     if (host_ret != -1) {
+         set_second_rval(cpu_env, host_pipe[1]);
+         ret = host_pipe[0];
++	if (put_user_s32(host_pipe[0], pipedes) ||
++	    put_user_s32(host_pipe[1], pipedes + sizeof(host_pipe[0]))) {
++		return -TARGET_EFAULT;
++	}
+     } else {
+-        ret = get_errno(host_ret);
++	ret = get_errno(host_ret);
+     }
+     return ret;
+ }
+diff --git a/bsd-user/freebsd/os-file.h b/bsd-user/freebsd/os-file.h
+new file mode 100644
+index 0000000..2c6bc24
+--- /dev/null
++++ b/bsd-user/freebsd/os-file.h
+@@ -0,0 +1,86 @@
++/*
++ *  FreeBSD file related system call shims and definitions
++ *
++ *  Copyright (c) 2014 Stacey D. Son
++ *
++ *  This program is free software; you can redistribute it and/or modify
++ *  it under the terms of the GNU General Public License as published by
++ *  the Free Software Foundation; either version 2 of the License, or
++ *  (at your option) any later version.
++ *
++ *  This program is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *  GNU General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public License
++ *  along with this program; if not, see <http://www.gnu.org/licenses/>.
++ */
++
++#ifndef __FREEBSD_OS_FILE_H_
++#define __FREEBSD_OS_FILE_H_
++
++#include <sys/stat.h>
++#include <unistd.h>
++
++#include "qemu-os.h"
++
++
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 1000000
++/* pipe2(2) */
++static abi_long do_bsd_pipe2(void *cpu_env, abi_ulong pipedes, int flags)
++{
++    abi_long ret;
++    int host_pipe[2];
++    int host_ret = pipe2(host_pipe, flags);
++
++    if (is_error(host_ret)) {
++	return get_errno(host_ret);
++    }
++    if (host_ret != -1) {
++        set_second_rval(cpu_env, host_pipe[1]);
++        ret = host_pipe[0];
++	if (put_user_s32(host_pipe[0], pipedes) ||
++	    put_user_s32(host_pipe[1], pipedes + sizeof(host_pipe[0]))) {
++	    	return -TARGET_EFAULT;
++	}
++    } else {
++	ret = get_errno(host_ret);
++    }
++    return ret;
++} 
++
++/* chflagsat(2) */
++static inline abi_long do_bsd_chflagsat(int fd, abi_ulong path,
++	abi_ulong flags, int atflags)
++{
++    abi_long ret;
++    void *p;
++
++    LOCK_PATH(p, path);
++    ret = get_errno(chflagsat(fd, p, flags, atflags)); /* XXX path(p)? */
++    UNLOCK_PATH(p, path);
++
++    return ret;
++}
++
++#else /* !  __FreeBSD_version > 1000000 */
++
++static abi_long do_bsd_pipe2(__unused void *cpu_env, __unused abi_long arg1,
++	__unused int flags)
++{
++
++    qemu_log("qemu: Unsupported syscall pipe2()\n");
++    return -TARGET_ENOSYS;
++}
++
++static inline abi_long do_bsd_chflagsat(__unused int fd,
++	__unused abi_ulong path, __unused abi_ulong flags, int atflags)
++{
++
++    qemu_log("qemu: Unsupported syscall chflagsat()\n");
++    return -TARGET_ENOSYS;
++}
++
++#endif /* !  __FreeBSD_version >= 1000000 */
++#endif /* __FREEBSD_OS_FILE_H_ */
+diff --git a/bsd-user/freebsd/strace.list b/bsd-user/freebsd/strace.list
+index 991cbe2..cba4afe 100644
+--- a/bsd-user/freebsd/strace.list
++++ b/bsd-user/freebsd/strace.list
+@@ -52,6 +52,7 @@
+ { TARGET_FREEBSD_NR_cap_rights_limit, "cap_rights_limit", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_chdir, "chdir", "%s(\"%s\")", NULL, NULL },
+ { TARGET_FREEBSD_NR_chflags, "chflags", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_chflagsat, "chflagsat", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_chmod, "chmod", "%s(\"%s\",%#o)", NULL, NULL },
+ { TARGET_FREEBSD_NR_chown, "chown", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_chroot, "chroot", NULL, NULL, NULL },
+@@ -160,6 +161,7 @@
+ { TARGET_FREEBSD_NR_openat, "openat", "%s(%d, \"%s\",%#x,%#o)", NULL, NULL },
+ { TARGET_FREEBSD_NR_pathconf, "pathconf", "%s(\"%s\", %d)", NULL, NULL },
+ { TARGET_FREEBSD_NR_pipe, "pipe", NULL, NULL, NULL },
++{ TARGET_FREEBSD_NR_pipe2, "pipe2", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_poll, "poll", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_pread, "pread", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_preadv, "preadv", NULL, NULL, NULL },
+diff --git a/bsd-user/freebsd/syscall_nr.h b/bsd-user/freebsd/syscall_nr.h
+index 260fd82..b44545b 100644
+--- a/bsd-user/freebsd/syscall_nr.h
++++ b/bsd-user/freebsd/syscall_nr.h
+@@ -457,4 +457,5 @@
+ #define TARGET_FREEBSD_NR_connectat	539
+ #define TARGET_FREEBSD_NR_chflagsat	540
+ #define TARGET_FREEBSD_NR_accept4	541
+-#define TARGET_FREEBSD_NR_MAXSYSCALL	542
++#define	TARGET_FREEBSD_NR_pipe2		542
++#define TARGET_FREEBSD_NR_MAXSYSCALL	543
+diff --git a/bsd-user/syscall.c b/bsd-user/syscall.c
+index e043396..0a2ab88 100644
+--- a/bsd-user/syscall.c
++++ b/bsd-user/syscall.c
+@@ -44,6 +44,7 @@
+ 
+ /* *BSD dependent syscall shims */
+ #include "os-extattr.h"
++#include "os-file.h"
+ #include "os-time.h"
+ #include "os-misc.h"
+ #include "os-proc.h"
+@@ -646,6 +647,10 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         ret = do_bsd_chflags(arg1, arg2);
+         break;
+ 
++    case TARGET_FREEBSD_NR_chflagsat: /* chflagsat(2) */
++        ret = do_bsd_chflagsat(arg1, arg2, arg3, arg4);
++        break;
++
+     case TARGET_FREEBSD_NR_lchflags: /* lchflags(2) */
+         ret = do_bsd_lchflags(arg1, arg2);
+         break;
+@@ -702,6 +707,10 @@ abi_long do_freebsd_syscall(void *cpu_env, int num, abi_long arg1,
+         ret = do_bsd_pipe(cpu_env, arg1);
+         break;
+ 
++    case TARGET_FREEBSD_NR_pipe2: /* pipe2(2) */
++        ret = do_bsd_pipe2(cpu_env, arg1, arg2);
++        break;
++
+     case TARGET_FREEBSD_NR_swapon: /* swapon(2) */
+         ret = do_bsd_swapon(arg1);
+         break;

@@ -17,6 +17,3 @@ include/bsdnt/tuning.h
 include/bsdnt/types_arch.h
 include/bsdnt/zz.h
 include/bsdnt/zz0.h
-@dirrm include/bsdnt/arch/inline
-@dirrm include/bsdnt/arch
-@dirrm include/bsdnt

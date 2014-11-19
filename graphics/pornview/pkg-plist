@@ -4,5 +4,3 @@ share/pixmaps/pornview.png
 %%NLS%%share/locale/fr/LC_MESSAGES/pornview.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pornview.mo
 share/pornview/scripts/helloworld
-@dirrm share/pornview/scripts
-@dirrm share/pornview

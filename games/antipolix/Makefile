@@ -5,12 +5,14 @@ PORTNAME=	antipolix
 PORTVERSION=	2.1
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games/multiplayer
+MASTER_SITES=	XCONTRIB/games/multiplayer
 DISTNAME=	AntipoliX_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple multiplayer game for X Window System
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 NO_WRKSUBDIR=	yes
 USES=		imake:noman

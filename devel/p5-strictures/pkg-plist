@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/strictures.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/strictures/.packlist
 %%SITE_PERL%%/strictures.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/strictures

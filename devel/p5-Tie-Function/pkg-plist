@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Tie/Function.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Function/.packlist
 %%PERL5_MAN3%%/Tie::Function.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Function
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrmtry %%SITE_PERL%%/Tie

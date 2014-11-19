@@ -37,15 +37,15 @@ lib/girepository-%%TRACKER_VER%%/TrackerMiner-1.0.typelib
 lib/libtracker-control-%%TRACKER_VER%%.a
 lib/libtracker-control-%%TRACKER_VER%%.so
 lib/libtracker-control-%%TRACKER_VER%%.so.0
-lib/libtracker-control-%%TRACKER_VER%%.so.0.104.0
+lib/libtracker-control-%%TRACKER_VER%%.so.0.202.1
 lib/libtracker-miner-%%TRACKER_VER%%.a
 lib/libtracker-miner-%%TRACKER_VER%%.so
 lib/libtracker-miner-%%TRACKER_VER%%.so.0
-lib/libtracker-miner-%%TRACKER_VER%%.so.0.104.0
+lib/libtracker-miner-%%TRACKER_VER%%.so.0.202.1
 lib/libtracker-sparql-%%TRACKER_VER%%.a
 lib/libtracker-sparql-%%TRACKER_VER%%.so
 lib/libtracker-sparql-%%TRACKER_VER%%.so.0
-lib/libtracker-sparql-%%TRACKER_VER%%.so.0.104.0
+lib/libtracker-sparql-%%TRACKER_VER%%.so.0.202.1
 %%DOCUMENT_MINERS%%lib/tracker-%%TRACKER_VER%%/extract-modules/libextract-abw.a
 %%DOCUMENT_MINERS%%lib/tracker-%%TRACKER_VER%%/extract-modules/libextract-abw.so
 %%GRAPHIC_MINERS%%lib/tracker-%%TRACKER_VER%%/extract-modules/libextract-bmp.a
@@ -444,48 +444,3 @@ share/vala/vapi/tracker-sparql-%%TRACKER_VER%%.vapi
 %%WEB_MINERS%%share/xul-ext/trackerfox/chrome/locale/pl-PL/overlay.properties
 %%WEB_MINERS%%share/xul-ext/trackerfox/chrome/skin/overlay.css
 %%WEB_MINERS%%share/xul-ext/trackerfox/defaults/preferences/prefs.js
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/defaults/preferences
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/defaults
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/chrome/skin
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/chrome/locale/pl-PL
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/chrome/locale/fr-FR
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/chrome/locale/es-ES
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/chrome/locale/en-US
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/chrome/locale
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/chrome/content
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox/chrome
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerfox
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/defaults/preferences
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/defaults
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/chrome/skin
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/chrome/locale/pl-PL
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/chrome/locale/fr-FR
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/chrome/locale/es-ES
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/chrome/locale/en-US
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/chrome/locale/de-DE
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/chrome/locale
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/chrome/content
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird/chrome
-%%WEB_MINERS%%@dirrm share/xul-ext/trackerbird
-%%WEB_MINERS%%@dirrm share/xul-ext
-@dirrm %%DATADIR%%/ontologies
-@dirrm %%DATADIR%%/miners
-@dirrm %%DATADIR%%/languages
-@dirrm %%DATADIR%%/extract-rules
-@dirrm %%DATADIR%%-tests
-@dirrm %%DATADIR%%
-@dirrm share/doc/libtracker-sparql
-@dirrm share/doc/libtracker-miner
-@dirrm share/doc/libtracker-control
-@dirrmtry share/appdata
-%%WEB_MINERS%%@dirrm lib/thunderbird-addons/extensions
-%%WEB_MINERS%%@dirrm lib/thunderbird-addons
-@dirrm lib/tracker-%%TRACKER_VER%%/writeback-modules
-@dirrm lib/tracker-%%TRACKER_VER%%/extract-modules
-@dirrm lib/tracker-%%TRACKER_VER%%
-%%WEB_MINERS%%@dirrm lib/firefox-addons/extensions
-%%WEB_MINERS%%@dirrm lib/firefox-addons
-@dirrm include/tracker-%%TRACKER_VER%%/libtracker-sparql
-@dirrm include/tracker-%%TRACKER_VER%%/libtracker-miner
-@dirrm include/tracker-%%TRACKER_VER%%/libtracker-control
-@dirrm include/tracker-%%TRACKER_VER%%

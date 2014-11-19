@@ -105,8 +105,3 @@ share/mimelnk/chemical/x-ncbi-asn1.desktop
 share/mimelnk/chemical/x-shelx.desktop
 share/mimelnk/chemical/x-vmd.desktop
 share/mimelnk/chemical/x-xyz.desktop
-@dirrm share/mime/chemical
-@dirrmtry share/mime-info
-@dirrm share/mimelnk/chemical
-@dirrmtry share/mimelnk
-@dirrm share/doc/chemical-mime-data

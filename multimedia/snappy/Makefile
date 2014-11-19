@@ -1,12 +1,13 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/multimedia/snappy/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/multimedia/snappy/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	snappy
 PORTVERSION=	1.0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
+PKGNAMESUFFIX=	player
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open source gstreamer media player

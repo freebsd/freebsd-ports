@@ -69,4 +69,3 @@ include/mtl/strided_iterator.h
 include/mtl/transform_iterator.h
 include/mtl/uplo.h
 include/mtl/utils.h
-@dirrm include/mtl

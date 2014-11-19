@@ -14,8 +14,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Initial effort to Python code metrics
 
-USES=		dos2unix
-USE_PYTHON=	yes
+USES=		dos2unix python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}

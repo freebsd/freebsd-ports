@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Always/.packlist
 %%SITE_PERL%%/Carp/Always.pm
 %%PERL5_MAN3%%/Carp::Always.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Always
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp
-@dirrmtry %%SITE_PERL%%/Carp

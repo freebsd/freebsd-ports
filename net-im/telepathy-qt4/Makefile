@@ -1,10 +1,9 @@
 # Created by: Alberto Villa <avilla@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/net-im/telepathy-qt4/Makefile 19918 2014-09-25 22:50:43Z kwm $
+#    $MCom: ports/trunk/net-im/telepathy-qt4/Makefile 19955 2014-10-15 10:15:00Z gusi $
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTVERSION=	0.9.4
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
 DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
@@ -21,12 +20,14 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus
 
 USE_GNOME=	libxslt:build
 USE_GSTREAMER=	yes
-USE_QT4=	dbus gui network qtestlib_build xml \
+USE_QT4=	corelib dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
 USES=		cmake pkgconfig python:build
 CMAKE_ARGS=	-DENABLE_FARSIGHT:BOOL=False \
 		-DENABLE_FARSTREAM:BOOL=True \
 		-DENABLE_TESTS:BOOL=False
+CXXFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
@@ -53,8 +54,6 @@ pre-configure:
 		${WRKSRC}/TelepathyQt/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|LIB_INSTALL_DIR}/pkgconfig|LIB_INSTALL_DIR}/../libdata/pkgconfig|' \
 		${WRKSRC}/TelepathyQt/Farstream/CMakeLists.txt
-	${REINPLACE_CMD} -e '/$${LIBXML2_INCLUDE_DIR}/ s|$$| ${LOCALBASE}/include|' \
-		${WRKSRC}/TelepathyQt/Farsight/CMakeLists.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|farstream-0.1|farstream-0.2|g' \

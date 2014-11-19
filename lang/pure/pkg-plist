@@ -39,7 +39,3 @@ man/man1/pure.1.gz
 %%ETC%%%%DATADIR%%/etc/pure.ssh
 %%ETC%%%%DATADIR%%/etc/pure.vim
 %%ETC%%%%DATADIR%%/etc/pure.xml
-%%ETC%%@dirrm %%DATADIR%%/etc
-%%ETC%%@dirrm %%DATADIR%%
-@dirrm lib/pure
-@dirrm include/pure

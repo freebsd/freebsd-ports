@@ -3,7 +3,7 @@
 
 PORTNAME=	cscout
 PORTVERSION=	2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spinellis.gr/cscout/ \
 		http://www.dmst.aueb.gr/dds/cscout/
@@ -19,8 +19,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	The port fetches and installs precompiled binaries
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	bin/csmake bin/cswc
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

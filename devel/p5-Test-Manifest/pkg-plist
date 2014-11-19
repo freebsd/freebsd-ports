@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Test::Manifest.3.gz
 %%SITE_PERL%%/Test/Manifest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Manifest/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Manifest
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

@@ -8,7 +8,7 @@ CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 DIST_SUBDIR=	python
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flashcard trainer with spaced repetition
 
 LICENSE=	AGPLv3

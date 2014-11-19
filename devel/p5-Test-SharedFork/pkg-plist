@@ -4,7 +4,3 @@
 %%SITE_PERL%%/Test/SharedFork/Scalar.pm
 %%SITE_PERL%%/Test/SharedFork/Store.pm
 %%PERL5_MAN3%%/Test::SharedFork.3.gz
-@dirrm %%SITE_PERL%%/Test/SharedFork
-@dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/SharedFork
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test

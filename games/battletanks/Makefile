@@ -16,10 +16,9 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
-USES=		openal:al pkgconfig lua:51 scons tar:bzip2
+USES=		openal:al pkgconfig lua:51 python:build scons tar:bzip2
 USE_LDCONFIG=	yes
 USE_SDL=	image sdl
-USE_PYTHON_BUILD=	yes
 MAKE_ARGS=	prefix=${PREFIX} resources_dir=${DATADIR} \
 		--install-sandbox=${STAGEDIR}
 CXXFLAGS+=	-fpermissive

@@ -88,6 +88,3 @@ share/stamp/fonts/thin.fnt
 %%X11%%share/stamp/pixmaps/stamp_working.xpm
 %%X11%%share/stamp/pixmaps/transfer_not_working.xpm
 %%X11%%share/stamp/pixmaps/transfer_working.xpm
-@dirrm share/stamp/fonts
-%%X11%%@dirrm share/stamp/pixmaps
-@dirrm share/stamp

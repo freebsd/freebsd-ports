@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uopz
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

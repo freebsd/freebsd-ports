@@ -4,4 +4,3 @@ share/docbook-xsd/dbhier.xsd
 share/docbook-xsd/dbnotn.xsd
 share/docbook-xsd/dbpool.xsd
 share/docbook-xsd/docbook.xsd
-@dirrmtry share/docbook-xsd

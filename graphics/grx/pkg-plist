@@ -294,5 +294,3 @@ lib/libgrx20X.so.%%VERSION%%
 %%DATADIR%%/fonts/xm9x15.fnt
 %%DATADIR%%/fonts/xm9x15b.fnt
 %%DATADIR%%/fonts/xm9x17.fnt
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%

@@ -4,7 +4,7 @@
 
 PORTNAME=	hal
 DISTVERSION=	0.5.14
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -16,14 +16,12 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l
 LIB_DEPENDS=	libpolkit.so.2:${PORTSDIR}/sysutils/policykit \
 		libvolume_id.so:${PORTSDIR}/devel/libvolume_id \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
-RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig shebangfix
+USES=		gettext gmake libtool:keepla pathfix pkgconfig python shebangfix
 USE_GNOME=	intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-backend=freebsd \
 		--disable-docbook-docs \
@@ -44,6 +42,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 CONFIGURE_ENV=	GTKDOC="false"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+bash_CMD=	${SH}
 SHEBANG_FILES=	tools/hal-*
 
 #HALVERSION=	0.5.10
@@ -82,6 +81,7 @@ PLIST_SUB+=	USB2="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/==/=/g' ${WRKSRC}/tools/hal-luks*
 	@${REINPLACE_CMD} -e '/^scriptdir = /s|[(]libexecdir[)]/scripts|(libexecdir)/hal/scripts|' \
 		${WRKSRC}/tools/Makefile.in \
 		${WRKSRC}/tools/freebsd/Makefile.in

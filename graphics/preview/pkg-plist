@@ -34,16 +34,3 @@ GNUstep/Local/Applications/Preview.app/Resources/hand.tiff
 GNUstep/Local/Applications/Preview.app/Resources/last_page.tiff
 GNUstep/Local/Applications/Preview.app/stamp.make
 GNUstep/Local/Tools/Preview
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/French.lproj/Preview.help
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/French.lproj/Preview.gorm
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/French.lproj/Main.gorm
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/French.lproj
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/English.lproj/Preview.help
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/English.lproj/Preview.gorm
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/English.lproj/Main.gorm
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/Bulgarian.lproj/Preview.gorm
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/Bulgarian.lproj/Main.gorm
-@dirrm GNUstep/Local/Applications/Preview.app/Resources/Bulgarian.lproj
-@dirrm GNUstep/Local/Applications/Preview.app/Resources
-@dirrm GNUstep/Local/Applications/Preview.app

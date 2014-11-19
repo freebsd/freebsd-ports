@@ -107,7 +107,6 @@ share/pixmaps/truevision/view_rollup.png
 share/pixmaps/truevision/warning.xpm
 share/truevision/materials/Effects/Fire1.tvm
 share/truevision/materials/Effects/water.tvm
-@exec mkdir -p %D/%%DATADIR%%/materials/Glass
 share/truevision/materials/Metals/Brass/Brass1A.tvm
 share/truevision/materials/Metals/Brass/Brass1B.tvm
 share/truevision/materials/Metals/Brass/Brass1C.tvm
@@ -126,20 +125,4 @@ share/truevision/materials/Woods/Soft_Pine.tvm
 share/truevision/python/plug-ins/about_python.py
 share/truevision/python/plug-ins/starfield.py
 share/truevision/python/tv_classes.py
-@dirrm share/truevision/python/plug-ins
-@dirrm share/truevision/python
-@dirrm share/truevision/materials/Woods
-@dirrm share/truevision/materials/Stones
-@dirrm share/truevision/materials/Skies
-@dirrm share/truevision/materials/Metals/Gold
-@dirrm share/truevision/materials/Metals/Copper
-@dirrm share/truevision/materials/Metals/Brass
-@dirrm share/truevision/materials/Metals
-@dirrm share/truevision/materials/Glass
-@dirrm share/truevision/materials/Effects
-@dirrm share/truevision/materials
-@dirrm share/truevision
-@dirrm share/pixmaps/truevision
-@dirrm share/gnome/help/truevision/C/figures
-@dirrm share/gnome/help/truevision/C
-@dirrm share/gnome/help/truevision
+@dir %%DATADIR%%/materials/Glass

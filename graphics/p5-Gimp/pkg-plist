@@ -86,13 +86,3 @@ man/man1/embedxpm.1.gz
 man/man1/gimpdoc.1.gz
 man/man1/scm2perl.1.gz
 man/man1/xcftopnm.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Lib/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Lib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/UI/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/UI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/Lib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/UI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp

@@ -198,10 +198,3 @@ share/py-sip/QtCore/qwaitcondition.sip
 share/py-sip/QtCore/qwineventnotifier.sip
 share/py-sip/QtCore/qxmlstream.sip
 %%API%%share/qt4/qsci/api/python/QtCore.api
-@dirrm share/py-sip/QtCore
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins
-@dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v%%PYTHON_MAJOR_VER%%
-@dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/Loader
-@dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4/uic
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

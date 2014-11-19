@@ -121,8 +121,3 @@ man/man1/cswc.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin.prj
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mkproj
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sh.prj
-@dirrmtry etc/cscout
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.cscout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/awk
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

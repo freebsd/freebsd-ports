@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2014f
+DISTVERSION=	2014j
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iana.org/tz/releases/ \
 		ftp://munnari.oz.au/pub/
@@ -18,11 +18,7 @@ TZFILES=	africa antarctica asia australasia etcetera europe \
 		factory northamerica southamerica systemv
 POSIXRULES=	America/New_York
 
-# Prevent packages if on the FreeBSD building cluster. This because
-# it overwrites system files and directories.
-.if defined(PACKAGE_BUILDING)
-NO_PACKAGE=	Overwrites files in the base system
-.endif
+# Run with "DEVELOPER=1 make check-plist" before commiting!
 
 # Make sure it breaks when the distfile isn't there anymore.
 .if !defined(PACKAGE_BUILDING)

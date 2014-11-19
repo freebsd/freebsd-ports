@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Test/Net/RabbitMQ.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net/RabbitMQ/.packlist
 %%PERL5_MAN3%%/Test::Net::RabbitMQ.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net/RabbitMQ
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Net
-@dirrmtry %%SITE_PERL%%/Test

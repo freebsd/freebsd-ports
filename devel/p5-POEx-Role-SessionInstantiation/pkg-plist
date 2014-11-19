@@ -13,9 +13,3 @@
 %%PERL5_MAN3%%/POEx::Role::SessionInstantiation::Meta::Session::Implementation.3.gz
 %%PERL5_MAN3%%/POEx::Role::SessionInstantiation::Meta::Session::Magic.3.gz
 %%PERL5_MAN3%%/POEx::Role::SessionInstantiation::Meta::Session::Sugar.3.gz
-@dirrm %%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta/Session
-@dirrm %%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta
-@dirrm %%SITE_PERL%%/POEx/Role/SessionInstantiation
-@dirrmtry %%SITE_PERL%%/POEx/Role
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/SessionInstantiation
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role

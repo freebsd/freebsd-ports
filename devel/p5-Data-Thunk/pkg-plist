@@ -7,7 +7,3 @@
 %%PERL5_MAN3%%/Data::Thunk::Code.3.gz
 %%PERL5_MAN3%%/Data::Thunk::Object.3.gz
 %%PERL5_MAN3%%/Data::Thunk::ScalarValue.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Thunk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/Thunk
-@dirrmtry %%SITE_PERL%%/Data

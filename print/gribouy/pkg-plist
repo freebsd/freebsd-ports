@@ -6,6 +6,3 @@ share/gribouy/glade/gribouy.glade
 share/pixmaps/gribouy.png
 share/pixmaps/gribouy/gribouy-graphics.png
 share/pixmaps/gribouy/gribouy-logo.jpg
-@dirrm share/pixmaps/gribouy
-@dirrm share/gribouy/glade
-@dirrm share/gribouy

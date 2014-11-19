@@ -3,5 +3,4 @@ bin/atopsar
 man/man1/atop.1.gz
 man/man1/atopsar.1.gz
 man/man5/atoprc.5.gz
-@exec if [ ! -d %%LOGDIR%% ] ; then mkdir %%LOGDIR%% ; fi
-@unexec rmdir %%LOGDIR%% || true
+@dir %%LOGDIR%%

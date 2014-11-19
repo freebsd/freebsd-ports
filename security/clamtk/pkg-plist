@@ -62,11 +62,3 @@ share/locale/zh_TW/LC_MESSAGES/clamtk.mo
 share/pixmaps/clamtk.png
 share/pixmaps/clamtk.xpm
 share/pixmaps/clamtk-loader.gif
-@dirrmtry share/locale/nl_BE/LC_MESSAGES
-@dirrmtry share/locale/nl_BE
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrmtry share/locale/el_GR/LC_MESSAGES
-@dirrmtry share/locale/el_GR
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/ClamTk

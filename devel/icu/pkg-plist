@@ -254,10 +254,3 @@ man/man8/icupkg.8.gz
 %%DATADIR%%/%%ICUVER%%/mkinstalldirs
 %%DATADIR%%/%%ICUVER%%/license.html
 %%DATADIR%%/%%ICUVER%%/config/mh-bsd-gcc
-@dirrm lib/icu/%%ICUVER%%
-@dirrm lib/icu
-@dirrm include/unicode
-@dirrm include/layout
-@dirrm %%DATADIR%%/%%ICUVER%%/config
-@dirrm %%DATADIR%%/%%ICUVER%%
-@dirrm %%DATADIR%%

@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/HasMessage/.packlist
 %%PERL5_MAN3%%/Role::HasMessage.3.gz
 %%PERL5_MAN3%%/Role::HasMessage::Errf.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/HasMessage
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role
-@dirrmtry %%SITE_PERL%%/Role/HasMessage
-@dirrmtry %%SITE_PERL%%/Role

@@ -50,6 +50,7 @@
     SUBDIR += autopsy
     SUBDIR += b43-fwcutter
     SUBDIR += backuppc
+    SUBDIR += backuppc-devel
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-static
@@ -116,11 +117,11 @@
     SUBDIR += cfengine34
     SUBDIR += cfengine35
     SUBDIR += cfengine36
-    SUBDIR += cfengine36-rc
     SUBDIR += chgrep
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
     SUBDIR += ciso
+    SUBDIR += ciso-maker
     SUBDIR += ck4up
     SUBDIR += clean
     SUBDIR += clockspeed
@@ -334,7 +335,6 @@
     SUBDIR += gnome-schedule
     SUBDIR += gnome-settings-daemon
     SUBDIR += gnome-system-monitor
-    SUBDIR += gnome-system-tools
     SUBDIR += gnome_subr
     SUBDIR += goaccess
     SUBDIR += gosa
@@ -473,6 +473,7 @@
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash
+    SUBDIR += logstash-contrib
     SUBDIR += logstash-forwarder
     SUBDIR += logtool
     SUBDIR += logwatch
@@ -670,7 +671,6 @@
     SUBDIR += pecl-proctitle
     SUBDIR += pefs-kmod
     SUBDIR += personality
-    SUBDIR += pessulus
     SUBDIR += pflogx
     SUBDIR += pfstat
     SUBDIR += pftables
@@ -764,6 +764,7 @@
     SUBDIR += raincoat
     SUBDIR += rcadm
     SUBDIR += rclean
+    SUBDIR += rcm
     SUBDIR += rdate
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
@@ -778,6 +779,7 @@
     SUBDIR += respond
     SUBDIR += retail
     SUBDIR += rfstool
+    SUBDIR += rinse
     SUBDIR += rmonitor
     SUBDIR += roottail
     SUBDIR += rsnapshot
@@ -813,6 +815,7 @@
     SUBDIR += rubygem-hammer_cli
     SUBDIR += rubygem-hammer_cli_foreman
     SUBDIR += rubygem-hammer_cli_foreman_bootdisk
+    SUBDIR += rubygem-hammer_cli_foreman_ssh
     SUBDIR += rubygem-hiera
     SUBDIR += rubygem-hiera-json
     SUBDIR += rubygem-hiera-puppet
@@ -855,12 +858,12 @@
     SUBDIR += screenfetch
     SUBDIR += screenie
     SUBDIR += scterc
+    SUBDIR += sd-agent
     SUBDIR += sdd
     SUBDIR += sdparm
     SUBDIR += searchmonkey
     SUBDIR += seatools
     SUBDIR += sec
-    SUBDIR += serpentine
     SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += sformat
@@ -910,6 +913,7 @@
     SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng33
     SUBDIR += syslog-ng34
+    SUBDIR += syslog-ng35
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
@@ -1055,6 +1059,7 @@
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += yum
+    SUBDIR += zbackup
     SUBDIR += zeitgeist
     SUBDIR += zeroer
     SUBDIR += zetaback
@@ -1063,6 +1068,7 @@
     SUBDIR += zfs-snapshot-clean
     SUBDIR += zfs-snapshot-mgmt
     SUBDIR += zfs-stats
+    SUBDIR += zfs-stats-lite
     SUBDIR += zfsnap
     SUBDIR += zfstools
     SUBDIR += zidrav

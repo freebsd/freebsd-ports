@@ -13,7 +13,3 @@ bin/ppower4
 %%STY_DIR%%/background.sty
 %%STY_DIR%%/pp4link.sty
 %%STY_DIR%%/mpmulti.sty
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%JAR_DIR%%
-@dirrm %%STY_DIR%%

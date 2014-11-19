@@ -57,7 +57,3 @@ man/man1/dirmngr.1.gz
 %%DOCSDIR%%/examples/trusted-certs/S-TRUSTQualifiedRootCA2008-002.final.v3.509.crt
 %%DOCSDIR%%/examples/trusted-certs/bnetza-10r-ca.crt
 %%NLS%%share/locale/de/LC_MESSAGES/dirmngr.mo
-@dirrm %%DOCSDIR%%/examples/trusted-certs
-@dirrm %%DOCSDIR%%/examples/extra-certs
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%

@@ -29,7 +29,3 @@ gprolog-%%GPROLOG_VER%%/lib/libbips_pl.a
 gprolog-%%GPROLOG_VER%%/lib/libengine_pl.a
 gprolog-%%GPROLOG_VER%%/lib/liblinedit.a
 gprolog-%%GPROLOG_VER%%/lib/top_level.o
-@dirrm gprolog-%%GPROLOG_VER%%/bin
-@dirrm gprolog-%%GPROLOG_VER%%/include
-@dirrm gprolog-%%GPROLOG_VER%%/lib
-@dirrm gprolog-%%GPROLOG_VER%%

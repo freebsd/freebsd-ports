@@ -5,7 +5,3 @@ man/man1/dmake.1.gz
 %%DATADIR%%/startup/unix/linux/macros.mk
 %%DATADIR%%/startup/unix/macros.mk
 %%DATADIR%%/startup/unix/recipes.mk
-@dirrm %%DATADIR%%/startup/unix/linux
-@dirrm %%DATADIR%%/startup/unix
-@dirrm %%DATADIR%%/startup
-@dirrm %%DATADIR%%

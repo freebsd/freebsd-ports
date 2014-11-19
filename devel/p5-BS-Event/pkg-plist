@@ -1,6 +1,3 @@
 %%SITE_PERL%%/BS/Event.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BS/Event/.packlist
 %%PERL5_MAN3%%/BS::Event.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BS/Event
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BS
-@dirrmtry %%SITE_PERL%%/BS

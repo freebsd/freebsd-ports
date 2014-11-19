@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mawk
-DISTVERSION=	1.3.4-20140914
+DISTVERSION=	1.3.4-20141027
 CATEGORIES=	lang
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Interpreter for the AWK Programming Language
 
 LICENSE=	GPLv2

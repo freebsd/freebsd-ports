@@ -1,0 +1,264 @@
+--- external/collada2gltf/patches/kill_c++11_code.patch.1.orig	2014-10-23 07:32:50.000000000 -0400
++++ external/collada2gltf/patches/kill_c++11_code.patch.1	2014-10-31 02:10:16.000000000 -0400
+@@ -1531,8 +1531,8 @@
+  
+  
+ diff -ur collada2gltf.org/extensions/o3dgc-compression/GLTF-Open3DGC.cpp collada2gltf/extensions/o3dgc-compression/GLTF-Open3DGC.cpp
+---- collada2gltf.org/extensions/o3dgc-compression/GLTF-Open3DGC.cpp	2014-09-29 15:30:40.134494471 +0200
+-+++ collada2gltf/extensions/o3dgc-compression/GLTF-Open3DGC.cpp	2014-09-29 15:55:51.898551665 +0200
++--- collada2gltf.org/extensions/o3dgc-compression/GLTF-Open3DGC.cpp	2014-05-25 05:30:45.143840000 -0400
+++++ collada2gltf/extensions/o3dgc-compression/GLTF-Open3DGC.cpp	2014-10-31 01:56:34.000000000 -0400
+ @@ -138,7 +138,7 @@
+          return true;
+      }
+@@ -1563,7 +1563,7 @@
+          
+          for (unsigned int i = 0 ; i < primitivesCount ; i++) {
+ -            shared_ptr<GLTF::GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+-+            boost::shared_ptr<GLTF::GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+++            boost::shared_ptr<GLTF::GLTFPrimitive> primitive = boost::static_pointer_cast<GLTFPrimitive>(primitives[i]);
+              if (primitive->getPrimitive() != profile->getGLenumForString("TRIANGLES")) {
+                  return false;
+              }
+@@ -1590,7 +1590,7 @@
+          for (unsigned int i = 0 ; i < primitivesCount ; i++) {
+ -            shared_ptr<GLTF::GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+ -            shared_ptr <GLTF::GLTFAccessor> uniqueIndices = primitive->getIndices();
+-+            boost::shared_ptr<GLTF::GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+++            boost::shared_ptr<GLTF::GLTFPrimitive> primitive = boost::static_pointer_cast<GLTFPrimitive>(primitives[i]);
+ +            boost::shared_ptr <GLTF::GLTFAccessor> uniqueIndices = primitive->getIndices();
+              unsigned int indicesCount = (unsigned int)(uniqueIndices->getCount());
+              //FIXME: assumes triangles, but we are guarded from issues by canEncodeOpen3DGCMesh
+@@ -1601,7 +1601,7 @@
+              allTrianglesCount += trianglesCount;
+ -            shared_ptr<GLTF::GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+ -            shared_ptr <GLTF::GLTFAccessor> uniqueIndices = primitive->getIndices();
+-+            boost::shared_ptr<GLTF::GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+++            boost::shared_ptr<GLTF::GLTFPrimitive> primitive = boost::static_pointer_cast<GLTFPrimitive>(primitives[i]);
+ +            boost::shared_ptr <GLTF::GLTFAccessor> uniqueIndices = primitive->getIndices();
+              unsigned int indicesCount = (unsigned int)(uniqueIndices->getCount());
+              unsigned int* indicesPtr = (unsigned int*)uniqueIndices->getBufferView()->getBufferDataByApplyingOffset();
+@@ -1620,7 +1620,7 @@
+          params.SetNumFloatAttributes(nFloatAttributes);
+          ifs.SetNumFloatAttributes(nFloatAttributes);
+ -        shared_ptr<JSONObject> compressionObject = static_pointer_cast<JSONObject>(mesh->getExtensions()->createObjectIfNeeded("Open3DGC-compression"));
+-+        boost::shared_ptr<JSONObject> compressionObject = static_pointer_cast<JSONObject>(mesh->getExtensions()->createObjectIfNeeded("Open3DGC-compression"));
+++        boost::shared_ptr<JSONObject> compressionObject = boost::static_pointer_cast<JSONObject>(mesh->getExtensions()->createObjectIfNeeded("Open3DGC-compression"));
+          
+          ifs.ComputeMinMax(O3DGC_SC3DMC_MAX_ALL_DIMS);
+          BinaryStream bstream(vertexCount * 8);
+@@ -4251,8 +4251,20 @@
+  
+  #endif
+ diff -ur collada2gltf.org/helpers/geometryHelpers.cpp collada2gltf/helpers/geometryHelpers.cpp
+---- collada2gltf.org/helpers/geometryHelpers.cpp	2014-09-29 15:30:40.146494472 +0200
+-+++ collada2gltf/helpers/geometryHelpers.cpp	2014-09-29 16:01:12.134563781 +0200
++--- collada2gltf.org/helpers/geometryHelpers.cpp	2014-05-25 05:30:45.143840000 -0400
+++++ collada2gltf/helpers/geometryHelpers.cpp	2014-10-31 01:56:35.000000000 -0400
++@@ -121,9 +121,9 @@
++         }
++     };
++     
++-    typedef unordered_map<unsigned int* ,unsigned int /* index of existing n-uplet of indices */, RemappedMeshIndexesHash, RemappedMeshIndexesEq> RemappedMeshIndexesHashmap;
+++    typedef boost::unordered_map<unsigned int* ,unsigned int /* index of existing n-uplet of indices */, RemappedMeshIndexesHash, RemappedMeshIndexesEq> RemappedMeshIndexesHashmap;
++ 
++-    typedef unordered_map<unsigned int ,unsigned int> IndicesMap;
+++    typedef boost::unordered_map<unsigned int ,unsigned int> IndicesMap;
++     
++     //FIXME: this could be just an intermediate anonymous(no id) GLTFBuffer
++     class GLTFPrimitiveRemapInfos
+ @@ -193,8 +193,8 @@
+          for (size_t meshAttributeIndex = 0 ; meshAttributeIndex < count; meshAttributeIndex++) {
+              MeshAttributesBufferInfos *bufferInfos = &allBufferInfos[meshAttributeIndex];
+@@ -4372,7 +4384,7 @@
+              unsigned int* indicesInRemapping = (unsigned int*)malloc(sizeof(unsigned int) * allIndices->size());
+              
+ -            shared_ptr<GLTFPrimitive> sourcePrimitive = static_pointer_cast<GLTFPrimitive>(sourcePrimitives[i]);
+-+            boost::shared_ptr<GLTFPrimitive> sourcePrimitive = static_pointer_cast<GLTFPrimitive>(sourcePrimitives[i]);
+++            boost::shared_ptr<GLTFPrimitive> sourcePrimitive = boost::static_pointer_cast<GLTFPrimitive>(sourcePrimitives[i]);
+              VertexAttributeVector vertexAttributes = sourcePrimitive->getVertexAttributes();
+              for (unsigned int k = 0 ; k < allIndices->size() ; k++) {
+                  GLTF::Semantic semantic = vertexAttributes[k]->getSemantic();
+@@ -4381,7 +4393,7 @@
+              }
+              
+ -            shared_ptr<GLTFPrimitive> targetPrimitive = static_pointer_cast<GLTFPrimitive>(targetPrimitives[i]);
+-+            boost::shared_ptr<GLTFPrimitive> targetPrimitive = static_pointer_cast<GLTFPrimitive>(targetPrimitives[i]);
+++            boost::shared_ptr<GLTFPrimitive> targetPrimitive = boost::static_pointer_cast<GLTFPrimitive>(targetPrimitives[i]);
+              
+ -            shared_ptr<GLTF::GLTFPrimitiveRemapInfos> primitiveRemapInfos = __BuildPrimitiveUniqueIndexes(targetPrimitive, *allIndices, remappedMeshIndexesMap, indicesInRemapping, startIndex, maxVertexAttributes, endIndex, profile);
+ +            boost::shared_ptr<GLTF::GLTFPrimitiveRemapInfos> primitiveRemapInfos = __BuildPrimitiveUniqueIndexes(targetPrimitive, *allIndices, remappedMeshIndexesMap, indicesInRemapping, startIndex, maxVertexAttributes, endIndex, profile);
+@@ -4425,7 +4437,7 @@
+              IndicesVector *allIndices = allIndicesSharedPtr.get();
+              unsigned int* indicesInRemapping = (unsigned int*)calloc(sizeof(unsigned int) * (*allIndices).size(), 1);
+ -            shared_ptr<GLTFPrimitive> sourcePrimitive = static_pointer_cast<GLTFPrimitive>(sourcePrimitives[i]);
+-+            boost::shared_ptr<GLTFPrimitive> sourcePrimitive = static_pointer_cast<GLTFPrimitive>(sourcePrimitives[i]);
+++            boost::shared_ptr<GLTFPrimitive> sourcePrimitive = boost::static_pointer_cast<GLTFPrimitive>(sourcePrimitives[i]);
+              VertexAttributeVector vertexAttributes = sourcePrimitive->getVertexAttributes();
+              
+              for (unsigned int k = 0 ; k < (*allIndices).size() ; k++) {
+@@ -4434,7 +4446,7 @@
+              }
+              
+ -            shared_ptr<GLTFPrimitive> targetPrimitive = static_pointer_cast<GLTFPrimitive>(targetPrimitives[i]);
+-+            boost::shared_ptr<GLTFPrimitive> targetPrimitive = static_pointer_cast<GLTFPrimitive>(targetPrimitives[i]);
+++            boost::shared_ptr<GLTFPrimitive> targetPrimitive = boost::static_pointer_cast<GLTFPrimitive>(targetPrimitives[i]);
+              bool status = __RemapPrimitiveVertices(targetPrimitive,
+                                                     (*allIndices),
+                                                     originalMeshAttributes ,
+@@ -4511,7 +4523,7 @@
+          
+          for (size_t i = 0 ; i < primitives.size() ; i++) {
+ -            shared_ptr<GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+-+            boost::shared_ptr<GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+++            boost::shared_ptr<GLTFPrimitive> primitive = boost::static_pointer_cast<GLTFPrimitive>(primitives[i]);
+          }
+          
+          if (!splitNeeded)
+@@ -4549,7 +4561,7 @@
+ +            boost::shared_ptr <GLTFPrimitive> targetPrimitive;
+              //when we are done with a primitive we mark its nextIndice with a -1
+ -            shared_ptr<GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive> (primitives[i]);
+-+            boost::shared_ptr<GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive> (primitives[i]);
+++            boost::shared_ptr<GLTFPrimitive> primitive = boost::static_pointer_cast<GLTFPrimitive> (primitives[i]);
+  
+ -            targetPrimitive = shared_ptr <GLTFPrimitive> (new GLTFPrimitive((*primitive)));
+ +            targetPrimitive = boost::shared_ptr <GLTFPrimitive> (new GLTFPrimitive((*primitive)));
+@@ -4590,7 +4602,7 @@
+ -            shared_ptr <GLTFPrimitive> refPrimitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+ -            shared_ptr <GLTFPrimitive> targetPrimitive = shared_ptr <GLTFPrimitive> (new GLTFPrimitive((*refPrimitive)));
+ +            boost::shared_ptr <GLTFMesh> targetMesh = boost::shared_ptr <GLTFMesh> (new GLTFMesh());
+-+            boost::shared_ptr <GLTFPrimitive> refPrimitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+++            boost::shared_ptr <GLTFPrimitive> refPrimitive = boost::static_pointer_cast<GLTFPrimitive>(primitives[i]);
+ +            boost::shared_ptr <GLTFPrimitive> targetPrimitive = boost::shared_ptr <GLTFPrimitive> (new GLTFPrimitive((*refPrimitive)));
+  
+              targetMesh->appendPrimitive(targetPrimitive);
+@@ -4612,7 +4624,7 @@
+              
+              // Now for each mesh attribute in the mesh, create another one just for the primitive
+ -            shared_ptr <GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+-+            boost::shared_ptr <GLTFPrimitive> primitive = static_pointer_cast<GLTFPrimitive>(primitives[i]);
+++            boost::shared_ptr <GLTFPrimitive> primitive = boost::static_pointer_cast<GLTFPrimitive>(primitives[i]);
+              VertexAttributeVector vertexAttributes = primitive->getVertexAttributes();
+              for (size_t j = 0 ; j < vertexAttributes.size() ; j++) {
+                  Semantic semantic = vertexAttributes[j]->getSemantic();
+@@ -4786,8 +4798,8 @@
+          if (JSONValue::isEqualTo(value) == true)
+              return true;
+ diff -ur collada2gltf.org/JSON/JSONObject.cpp collada2gltf/JSON/JSONObject.cpp
+---- collada2gltf.org/JSON/JSONObject.cpp	2014-09-29 15:30:40.142494472 +0200
+-+++ collada2gltf/JSON/JSONObject.cpp	2014-09-29 15:48:14.562534363 +0200
++--- collada2gltf.org/JSON/JSONObject.cpp	2014-05-25 05:30:45.116840000 -0400
+++++ collada2gltf/JSON/JSONObject.cpp	2014-10-31 01:56:34.000000000 -0400
+ @@ -38,8 +38,8 @@
+  namespace GLTF 
+  {
+@@ -4815,7 +4827,7 @@
+                      array->_parseRapidJSONArray(currentValue);
+                      this->setValue(key, array);
+                  }
+-@@ -128,10 +128,10 @@
++@@ -128,30 +128,30 @@
+      {
+      }
+      
+@@ -4828,8 +4840,9 @@
+ +            outObject = boost::shared_ptr <GLTF::JSONObject> (new GLTF::JSONObject());
+              setValue(key, outObject);
+          } else {
+-             outObject = static_pointer_cast <GLTF::JSONObject> (getValue(key));
+-@@ -139,10 +139,10 @@
++-            outObject = static_pointer_cast <GLTF::JSONObject> (getValue(key));
+++            outObject = boost::static_pointer_cast <GLTF::JSONObject> (getValue(key));
++         }
+          return outObject;
+      }
+      
+@@ -4842,8 +4855,10 @@
+ +            outObject = boost::shared_ptr <GLTF::JSONArray> (new GLTF::JSONArray());
+              setValue(key, outObject);
+          } else {
+-             outObject = static_pointer_cast <GLTF::JSONArray> (getValue(key));
+-@@ -151,7 +151,7 @@
++-            outObject = static_pointer_cast <GLTF::JSONArray> (getValue(key));
+++            outObject = boost::static_pointer_cast <GLTF::JSONArray> (getValue(key));
++         }
++         return outObject;
+      }
+  
+      
+@@ -4863,16 +4878,18 @@
+      
+ -    shared_ptr <JSONObject> JSONObject::getObject(const std::string &key) {
+ -        shared_ptr <JSONValue> value = this->_keyToJSONValue[key];
++-        return static_pointer_cast <JSONObject> (value);
+ +    boost::shared_ptr <JSONObject> JSONObject::getObject(const std::string &key) {
+ +        boost::shared_ptr <JSONValue> value = this->_keyToJSONValue[key];
+-         return static_pointer_cast <JSONObject> (value);
+++        return boost::static_pointer_cast <JSONObject> (value);
+      }
+  
+ -    shared_ptr <JSONArray> JSONObject::getArray(const std::string &key) {
+ -        shared_ptr <JSONValue> value = this->_keyToJSONValue[key];
++-        return static_pointer_cast <JSONArray> (value);
+ +    boost::shared_ptr <JSONArray> JSONObject::getArray(const std::string &key) {
+ +        boost::shared_ptr <JSONValue> value = this->_keyToJSONValue[key];
+-         return static_pointer_cast <JSONArray> (value);
+++        return boost::static_pointer_cast <JSONArray> (value);
+      }
+  
+      void JSONObject::setUnsignedInt32(const std::string &key, unsigned int value) {
+@@ -4883,7 +4900,7 @@
+      unsigned int JSONObject::getUnsignedInt32(const std::string &key) {
+          if (this->contains(key)) {
+ -            shared_ptr <JSONNumber> number = static_pointer_cast <JSONNumber> (this->getValue(key));
+-+            boost::shared_ptr <JSONNumber> number = static_pointer_cast <JSONNumber> (this->getValue(key));
+++            boost::shared_ptr <JSONNumber> number = boost::static_pointer_cast <JSONNumber> (this->getValue(key));
+              return number->getUnsignedInt32();
+          }
+          return 0;
+@@ -4897,7 +4914,7 @@
+      bool JSONObject::getBool(const std::string &key) {
+          if (this->contains(key)) {
+ -            shared_ptr <JSONNumber> number = static_pointer_cast <JSONNumber> (this->getValue(key));
+-+            boost::shared_ptr <JSONNumber> number = static_pointer_cast <JSONNumber> (this->getValue(key));
+++            boost::shared_ptr <JSONNumber> number = boost::static_pointer_cast <JSONNumber> (this->getValue(key));
+              
+              return number->getBool();
+          }
+@@ -4912,7 +4929,7 @@
+      int JSONObject::getInt32(const std::string &key) {
+          if (this->contains(key)) {
+ -            shared_ptr <JSONNumber> number = static_pointer_cast <JSONNumber> (this->getValue(key));
+-+            boost::shared_ptr <JSONNumber> number = static_pointer_cast <JSONNumber> (this->getValue(key));
+++            boost::shared_ptr <JSONNumber> number = boost::static_pointer_cast <JSONNumber> (this->getValue(key));
+              return number->getInt32();
+          }
+          return 0;
+@@ -4926,7 +4943,7 @@
+      double JSONObject::getDouble(const std::string &key) {
+          if (this->contains(key)) {
+ -            shared_ptr <JSONNumber> number = static_pointer_cast <JSONNumber> (this->getValue(key));
+-+            boost::shared_ptr <JSONNumber> number = static_pointer_cast <JSONNumber> (this->getValue(key));
+++            boost::shared_ptr <JSONNumber> number = boost::static_pointer_cast <JSONNumber> (this->getValue(key));
+              return number->getDouble();
+          }
+          return 0;
+@@ -4940,7 +4957,7 @@
+      const std::string JSONObject::getString(const std::string &key) {
+          if (this->contains(key)) {
+ -            shared_ptr <JSONString> str = static_pointer_cast <JSONString> (this->getValue(key));
+-+            boost::shared_ptr <JSONString> str = static_pointer_cast <JSONString> (this->getValue(key));
+++            boost::shared_ptr <JSONString> str = boost::static_pointer_cast <JSONString> (this->getValue(key));
+              return str->getString();
+          }
+          return "";
+@@ -4994,7 +5011,7 @@
+          JSONValueVectorRef allKeys = keysA->values();
+          for (size_t i = 0 ; i < allKeys.size() ; i++) {
+ -            shared_ptr<JSONString> key = static_pointer_cast<JSONString>(allKeys[i]);
+-+            boost::shared_ptr<JSONString> key = static_pointer_cast<JSONString>(allKeys[i]);
+++            boost::shared_ptr<JSONString> key = boost::static_pointer_cast<JSONString>(allKeys[i]);
+              
+ -            shared_ptr<JSONValue> objA = this->getValue(key->getString());
+ -            shared_ptr<JSONValue> objB = objectValue->getValue(key->getString());

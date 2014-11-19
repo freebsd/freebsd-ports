@@ -40,7 +40,6 @@ include/xmedcon/m-transf.h
 include/xmedcon/m-vifi.h
 include/xmedcon/m-xtract.h
 include/xmedcon/medcon.h
-@dirrm include/xmedcon
 lib/libmdc.a
 lib/libmdc.so
 lib/libmdc.so.2

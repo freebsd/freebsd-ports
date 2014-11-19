@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/gnome3-lite/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/x11/gnome3-lite/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTREVISION=	0
 CATEGORIES=	x11 gnome

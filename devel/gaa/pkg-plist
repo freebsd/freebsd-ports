@@ -11,6 +11,3 @@ share/gaa/gaa.skel
 %%EXAMPLESDIR%%/smain.c
 %%EXAMPLESDIR%%/smain2.c
 %%EXAMPLESDIR%%/config
-@dirrm share/doc/gaa
-@dirrm %%EXAMPLESDIR%%
-@dirrm share/gaa

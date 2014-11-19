@@ -4,6 +4,4 @@ man/man1/mtasc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Future.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
 %%PORTDOCS%%%%DOCSDIR%%/Readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWorld.as
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

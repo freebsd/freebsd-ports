@@ -257,8 +257,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/sqlscript.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/sqlscript.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

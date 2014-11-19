@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/databases/glom/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/trunk/databases/glom/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	glom
 PORTVERSION=	1.24.0
@@ -26,11 +26,10 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake libtool pathfix \
-		pkgconfig python shared-mime-info tar:xz
-USE_GNOME=	gnomedocutils gnomeprefix intltool pygobject3 libxml2 \
+		pgsql pkgconfig python shared-mime-info tar:xz
+USE_GNOME=	gnomedocutils gnomeprefix intlhack pygobject3 libxml2 \
 		gtksourceviewmm3 libgdamm5
 USE_LDCONFIG=	yes
-USE_PGSQL=	yes
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -46,8 +45,8 @@ PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
 # We need postgreSQL tools the server installs, and configure checks for these.
 # Note: USE_PGSQL has already been set above.
-BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
-RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER:S/.//}-server
+RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER:S/.//}-server
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' \

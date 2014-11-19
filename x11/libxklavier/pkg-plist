@@ -27,5 +27,3 @@ libdata/pkgconfig/libxklavier.pc
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 share/gir-1.0/Xkl-1.0.gir
-@dirrm %%DOCSDIR%%
-@dirrm include/libxklavier

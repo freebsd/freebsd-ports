@@ -112,20 +112,14 @@ post-install:
 	@${FIND} -s ${STAGEDIR}$d -not -type d -not -name '*.la' | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${WRKDIR}/PLIST
 	@${FIND} -s ${STAGEDIR}$d -type d -empty | \
-		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@exec ${MKDIR} %D/,' \
-		-e 's,$$, 2>/dev/null || true,' >> ${WRKDIR}/PLIST
-	@${FIND} -s ${STAGEDIR}$d -type d -depth | \
-		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
+		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dir ,' \
+		>> ${WRKDIR}/PLIST
 .endfor
 .for d in ${PREFIX}/libexec/octave/api-v49+ ${PREFIX}/libexec/octave/site ${PREFIX}/lib/octave/site
 	@${FIND} -s ${STAGEDIR}$d -type d -empty | \
-		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@exec ${MKDIR} %D/,' \
-		-e 's,$$, 2>/dev/null || true,' >> ${WRKDIR}/PLIST
-	@${FIND} -s ${STAGEDIR}$d -type d -depth | \
-		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
+		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dir ,' \
+		>> ${WRKDIR}/PLIST
 .endfor
-	${ECHO_CMD} @dirrm libexec/octave >> ${WRKDIR}/PLIST
-	${ECHO_CMD} @dirrm share/octave >> ${WRKDIR}/PLIST
 	cd ${WRKDIR} ; ${SED} -i.bak -e "/PLIST/ r PLIST" ${TMPPLIST}
 
 check regression-test: build

@@ -1,4 +1,5 @@
 bin/caff
+bin/gpg-key2latex
 bin/gpg-key2ps
 bin/gpg-mailkeys
 bin/gpglist
@@ -14,6 +15,7 @@ bin/process_keys
 bin/sig2dot
 bin/springgraph
 man/man1/caff.1.gz
+man/man1/gpg-key2latex.1.gz
 man/man1/gpg-key2ps.1.gz
 man/man1/gpg-mailkeys.1.gz
 man/man1/gpglist.1.gz

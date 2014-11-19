@@ -37,7 +37,3 @@
 %%SITE_PERL%%/ResourcePool/Singleton.pod
 %%SITE_PERL%%/ResourcePool/UML.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool
-@dirrm %%SITE_PERL%%/ResourcePool/LoadBalancer
-@dirrm %%SITE_PERL%%/ResourcePool/Command
-@dirrm %%SITE_PERL%%/ResourcePool

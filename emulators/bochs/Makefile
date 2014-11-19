@@ -268,8 +268,8 @@ post-install:
 .if ${PORT_OPTIONS:MPLUGINS}
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/bochs ! -type d | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${PREFIX}/lib/bochs -type d | ${SORT} -r | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/bochs -type d -empty | ${SORT} -r | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,@dir ,' >> ${TMPPLIST}
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in CHANGES README TODO bochsrc-sample.txt

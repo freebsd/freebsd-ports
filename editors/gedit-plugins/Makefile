@@ -1,10 +1,9 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/editors/gedit-plugins/Makefile 19954 2014-10-15 10:03:57Z kwm $
+#   $MCom: ports/trunk/editors/gedit-plugins/Makefile 19980 2014-10-17 06:01:57Z gusi $
 
 PORTNAME=	gedit-plugins
-PORTVERSION=	3.12.1
-PORTREVISION=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas
 RUN_DEPENDS=	gedit>=0:${PORTSDIR}/editors/gedit
 
 USES=		gettext gmake libtool pathfix pkgconfig \
-		tar:xz
+		python:3 tar:xz
 USE_GNOME=	gnomeprefix gtk30 gtksourceview3 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -37,8 +36,8 @@ PYTHON_DESC=	Build plugins that depend on python
 
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=		python
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/bus.py:${PORTSDIR}/devel/py-dbus
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/bus.py:${PORTSDIR}/devel/py-dbus
+BUILD_DEPENDS+=	py3?-dbus>=0:${PORTSDIR}/devel/py3-dbus
+RUN_DEPENDS+=	py3?-dbus>=0:${PORTSDIR}/devel/py3-dbus
 # the charmap plugin doesn't work, missing py-gucharmap stuff
 CONFIGURE_ARGS+=--enable-python
 PLIST_SUB+=	PYTHON=""

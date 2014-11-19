@@ -6,6 +6,7 @@ hbase/bin/hbase-common.sh
 hbase/bin/hbase-config.sh
 hbase/bin/hbase-daemon.sh
 hbase/bin/hbase-daemons.sh
+hbase/bin/hirb.rb
 hbase/bin/local-master-backup.sh
 hbase/bin/local-regionservers.sh
 hbase/bin/master-backup.sh

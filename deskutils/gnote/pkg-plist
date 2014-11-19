@@ -40,8 +40,8 @@ lib/gnote/addins/%%VERSION%%/underline.so
 lib/gnote/addins/%%VERSION%%/webdavsyncservice.desktop
 lib/gnote/addins/%%VERSION%%/webdavsyncservice.so
 lib/libgnote.so
-lib/libgnote-3.12.so.0
-lib/libgnote-3.12.so.0.0.0
+lib/libgnote-3.14.so.0
+lib/libgnote-3.14.so.0.0.0
 man/man1/gnote.1.gz
 share/appdata/gnote.appdata.xml
 share/applications/gnote.desktop
@@ -279,6 +279,56 @@ share/help/de/gnote/gnote-synchronization.page
 share/help/de/gnote/gnote-template-notes.page
 share/help/de/gnote/gnote-working-with-notebooks.page
 share/help/de/gnote/index.page
+share/help/el/gnote/figures/add-notebook-search.png
+share/help/el/gnote/figures/add-to-notebook.png
+share/help/el/gnote/figures/delete-notebook.png
+share/help/el/gnote/figures/gnote-addin-table-of-contents.png
+share/help/el/gnote/figures/gnote-new-note.png
+share/help/el/gnote/figures/gnote-pindown.png
+share/help/el/gnote/figures/gnote-pinup.png
+share/help/el/gnote/figures/gnote-preferences-add-ins.png
+share/help/el/gnote/figures/gnote-preferences-editing.png
+share/help/el/gnote/figures/gnote-preferences-hotkeys.png
+share/help/el/gnote/figures/gnote-preferences-synchronization.png
+share/help/el/gnote/figures/gnote-search-all-notes.png
+share/help/el/gnote/figures/gnote-sync-progress.png
+share/help/el/gnote/figures/gnote-syncprefs-advanced.png
+share/help/el/gnote/figures/gnote-syncprefs-local.png
+share/help/el/gnote/figures/gnote-syncprefs-webdav.png
+share/help/el/gnote/figures/gnote-template-note.png
+share/help/el/gnote/figures/gnote-tools.png
+share/help/el/gnote/figures/logo32.png
+share/help/el/gnote/figures/note-template.png
+share/help/el/gnote/figures/notebook-icon.png
+share/help/el/gnote/gnote-addin-bugzillalink.page
+share/help/el/gnote/gnote-addin-fixedwidth.page
+share/help/el/gnote/gnote-addin-html.page
+share/help/el/gnote/gnote-addin-notedirwatcher.page
+share/help/el/gnote/gnote-addin-noteoftheday.page
+share/help/el/gnote/gnote-addin-print.page
+share/help/el/gnote/gnote-addin-readonly.page
+share/help/el/gnote/gnote-addin-replacetitle.page
+share/help/el/gnote/gnote-addin-specialnotes.page
+share/help/el/gnote/gnote-addin-sync-local.page
+share/help/el/gnote/gnote-addin-sync-webdav.page
+share/help/el/gnote/gnote-addin-tableofcontents.page
+share/help/el/gnote/gnote-addin-timestamp.page
+share/help/el/gnote/gnote-addin-underline.page
+share/help/el/gnote/gnote-addins-preferences.page
+share/help/el/gnote/gnote-bulleted-lists.page
+share/help/el/gnote/gnote-common-problems.page
+share/help/el/gnote/gnote-creating-notes.page
+share/help/el/gnote/gnote-deleting-notes.page
+share/help/el/gnote/gnote-editing-notes.page
+share/help/el/gnote/gnote-hotkeys.page
+share/help/el/gnote/gnote-introduction.page
+share/help/el/gnote/gnote-links.page
+share/help/el/gnote/gnote-notes-preferences.page
+share/help/el/gnote/gnote-searching-notes.page
+share/help/el/gnote/gnote-synchronization.page
+share/help/el/gnote/gnote-template-notes.page
+share/help/el/gnote/gnote-working-with-notebooks.page
+share/help/el/gnote/index.page
 share/help/es/gnote/figures/add-notebook-search.png
 share/help/es/gnote/figures/add-to-notebook.png
 share/help/es/gnote/figures/delete-notebook.png
@@ -379,6 +429,56 @@ share/help/fr/gnote/gnote-synchronization.page
 share/help/fr/gnote/gnote-template-notes.page
 share/help/fr/gnote/gnote-working-with-notebooks.page
 share/help/fr/gnote/index.page
+share/help/hu/gnote/figures/add-notebook-search.png
+share/help/hu/gnote/figures/add-to-notebook.png
+share/help/hu/gnote/figures/delete-notebook.png
+share/help/hu/gnote/figures/gnote-addin-table-of-contents.png
+share/help/hu/gnote/figures/gnote-new-note.png
+share/help/hu/gnote/figures/gnote-pindown.png
+share/help/hu/gnote/figures/gnote-pinup.png
+share/help/hu/gnote/figures/gnote-preferences-add-ins.png
+share/help/hu/gnote/figures/gnote-preferences-editing.png
+share/help/hu/gnote/figures/gnote-preferences-hotkeys.png
+share/help/hu/gnote/figures/gnote-preferences-synchronization.png
+share/help/hu/gnote/figures/gnote-search-all-notes.png
+share/help/hu/gnote/figures/gnote-sync-progress.png
+share/help/hu/gnote/figures/gnote-syncprefs-advanced.png
+share/help/hu/gnote/figures/gnote-syncprefs-local.png
+share/help/hu/gnote/figures/gnote-syncprefs-webdav.png
+share/help/hu/gnote/figures/gnote-template-note.png
+share/help/hu/gnote/figures/gnote-tools.png
+share/help/hu/gnote/figures/logo32.png
+share/help/hu/gnote/figures/note-template.png
+share/help/hu/gnote/figures/notebook-icon.png
+share/help/hu/gnote/gnote-addin-bugzillalink.page
+share/help/hu/gnote/gnote-addin-fixedwidth.page
+share/help/hu/gnote/gnote-addin-html.page
+share/help/hu/gnote/gnote-addin-notedirwatcher.page
+share/help/hu/gnote/gnote-addin-noteoftheday.page
+share/help/hu/gnote/gnote-addin-print.page
+share/help/hu/gnote/gnote-addin-readonly.page
+share/help/hu/gnote/gnote-addin-replacetitle.page
+share/help/hu/gnote/gnote-addin-specialnotes.page
+share/help/hu/gnote/gnote-addin-sync-local.page
+share/help/hu/gnote/gnote-addin-sync-webdav.page
+share/help/hu/gnote/gnote-addin-tableofcontents.page
+share/help/hu/gnote/gnote-addin-timestamp.page
+share/help/hu/gnote/gnote-addin-underline.page
+share/help/hu/gnote/gnote-addins-preferences.page
+share/help/hu/gnote/gnote-bulleted-lists.page
+share/help/hu/gnote/gnote-common-problems.page
+share/help/hu/gnote/gnote-creating-notes.page
+share/help/hu/gnote/gnote-deleting-notes.page
+share/help/hu/gnote/gnote-editing-notes.page
+share/help/hu/gnote/gnote-hotkeys.page
+share/help/hu/gnote/gnote-introduction.page
+share/help/hu/gnote/gnote-links.page
+share/help/hu/gnote/gnote-notes-preferences.page
+share/help/hu/gnote/gnote-searching-notes.page
+share/help/hu/gnote/gnote-synchronization.page
+share/help/hu/gnote/gnote-template-notes.page
+share/help/hu/gnote/gnote-working-with-notebooks.page
+share/help/hu/gnote/index.page
 share/help/lt/gnote/figures/add-notebook-search.png
 share/help/lt/gnote/figures/add-to-notebook.png
 share/help/lt/gnote/figures/delete-notebook.png
@@ -599,6 +699,7 @@ share/locale/el/LC_MESSAGES/gnote.mo
 share/locale/en_GB/LC_MESSAGES/gnote.mo
 share/locale/eo/LC_MESSAGES/gnote.mo
 share/locale/es/LC_MESSAGES/gnote.mo
+share/locale/eu/LC_MESSAGES/gnote.mo
 share/locale/fr/LC_MESSAGES/gnote.mo
 share/locale/gl/LC_MESSAGES/gnote.mo
 share/locale/gu/LC_MESSAGES/gnote.mo
@@ -634,73 +735,3 @@ share/locale/uk/LC_MESSAGES/gnote.mo
 share/locale/zh_CN/LC_MESSAGES/gnote.mo
 share/locale/zh_HK/LC_MESSAGES/gnote.mo
 share/locale/zh_TW/LC_MESSAGES/gnote.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_CN/gnote/figures
-@dirrm share/help/zh_CN/gnote
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sl/gnote/figures
-@dirrm share/help/sl/gnote
-@dirrmtry share/help/sl
-@dirrm share/help/ru/gnote/figures
-@dirrm share/help/ru/gnote
-@dirrmtry share/help/ru
-@dirrm share/help/lt/gnote/figures
-@dirrm share/help/lt/gnote
-@dirrmtry share/help/lt
-@dirrm share/help/fr/gnote/figures
-@dirrm share/help/fr/gnote
-@dirrmtry share/help/fr
-@dirrm share/help/es/gnote/figures
-@dirrm share/help/es/gnote
-@dirrmtry share/help/es
-@dirrm share/help/de/gnote/figures
-@dirrm share/help/de/gnote
-@dirrmtry share/help/de
-@dirrm share/help/da/gnote/figures
-@dirrm share/help/da/gnote
-@dirrmtry share/help/da
-@dirrm share/help/cs/gnote/figures
-@dirrm share/help/cs/gnote
-@dirrmtry share/help/cs
-@dirrm share/help/C/gnote/figures
-@dirrm share/help/C/gnote
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/24x24/places
-@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/22x22/places
-@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16/places
-@dirrm %%DATADIR%%/icons/hicolor/16x16/apps
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrmtry share/gnome-shell/search-providers
-@dirrmtry share/gnome-shell
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/appdata
-@dirrmtry lib/gnote/addins/%%VERSION%%
-@dirrmtry lib/gnote/addins
-@dirrmtry lib/gnote

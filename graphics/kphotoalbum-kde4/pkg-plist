@@ -375,24 +375,3 @@ share/icons/hicolor/64x64/apps/kphotoalbum.png
 %%NLS%%share/locale/vi/LC_MESSAGES/kphotoalbum.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/kphotoalbum.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kphotoalbum.mo
-@dirrm share/doc/HTML/uk/kphotoalbum
-@dirrm share/doc/HTML/sv/kphotoalbum
-@dirrm share/doc/HTML/pt_BR/kphotoalbum
-@dirrm share/doc/HTML/pt/kphotoalbum
-@dirrm share/doc/HTML/nl/kphotoalbum
-@dirrm share/doc/HTML/it/kphotoalbum
-@dirrm share/doc/HTML/fr/kphotoalbum
-@dirrm share/doc/HTML/et/kphotoalbum
-@dirrm share/doc/HTML/en/kphotoalbum
-@dirrm share/doc/HTML/de/kphotoalbum
-@dirrm share/apps/kphotoalbum/themes/rounded
-@dirrm share/apps/kphotoalbum/themes/picBelow
-@dirrm share/apps/kphotoalbum/themes/grey
-@dirrm share/apps/kphotoalbum/themes/darkJS
-@dirrm share/apps/kphotoalbum/themes/dark
-@dirrm share/apps/kphotoalbum/themes/blue
-@dirrm share/apps/kphotoalbum/themes
-@dirrm share/apps/kphotoalbum/pics
-@dirrm share/apps/kphotoalbum/demo/CategoryImages
-@dirrm share/apps/kphotoalbum/demo
-@dirrm share/apps/kphotoalbum

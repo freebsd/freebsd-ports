@@ -18,41 +18,41 @@
 %%MONO_OR_CLIENT%%share/apps/quassel/stylesheets/default.qss
 %%MONO_OR_CLIENT%%share/apps/quassel/stylesheets/jussi01-darktheme.qss
 %%MONO_OR_CLIENT%%share/apps/quassel/stylesheets/m4yer.qss
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/cs.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/da.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/de.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/el.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/en_GB.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/en_US.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/eo.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/es.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/fi.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/fr.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/gl.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/hi.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/hu.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/it.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/ja.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/ko.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/lt.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/mr.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/nb.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/nl.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/oc.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/pa.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/pl.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/pt.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/pt_BR.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/ro.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/ru.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/sl.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/sq.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/sr.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/sv.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/tr.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/uk.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/zh_CN.qm
-%%MONO_OR_CLIENT%%share/apps/quassel/translations/zh_TW.qm
+%%NLS%%share/apps/quassel/translations/cs.qm
+%%NLS%%share/apps/quassel/translations/da.qm
+%%NLS%%share/apps/quassel/translations/de.qm
+%%NLS%%share/apps/quassel/translations/el.qm
+%%NLS%%share/apps/quassel/translations/en_GB.qm
+%%NLS%%share/apps/quassel/translations/en_US.qm
+%%NLS%%share/apps/quassel/translations/eo.qm
+%%NLS%%share/apps/quassel/translations/es.qm
+%%NLS%%share/apps/quassel/translations/fi.qm
+%%NLS%%share/apps/quassel/translations/fr.qm
+%%NLS%%share/apps/quassel/translations/gl.qm
+%%NLS%%share/apps/quassel/translations/hi.qm
+%%NLS%%share/apps/quassel/translations/hu.qm
+%%NLS%%share/apps/quassel/translations/it.qm
+%%NLS%%share/apps/quassel/translations/ja.qm
+%%NLS%%share/apps/quassel/translations/ko.qm
+%%NLS%%share/apps/quassel/translations/lt.qm
+%%NLS%%share/apps/quassel/translations/mr.qm
+%%NLS%%share/apps/quassel/translations/nb.qm
+%%NLS%%share/apps/quassel/translations/nl.qm
+%%NLS%%share/apps/quassel/translations/oc.qm
+%%NLS%%share/apps/quassel/translations/pa.qm
+%%NLS%%share/apps/quassel/translations/pl.qm
+%%NLS%%share/apps/quassel/translations/pt.qm
+%%NLS%%share/apps/quassel/translations/pt_BR.qm
+%%NLS%%share/apps/quassel/translations/ro.qm
+%%NLS%%share/apps/quassel/translations/ru.qm
+%%NLS%%share/apps/quassel/translations/sl.qm
+%%NLS%%share/apps/quassel/translations/sq.qm
+%%NLS%%share/apps/quassel/translations/sr.qm
+%%NLS%%share/apps/quassel/translations/sv.qm
+%%NLS%%share/apps/quassel/translations/tr.qm
+%%NLS%%share/apps/quassel/translations/uk.qm
+%%NLS%%share/apps/quassel/translations/zh_CN.qm
+%%NLS%%share/apps/quassel/translations/zh_TW.qm
 %%MONO_OR_CLIENT%%share/icons/hicolor/128x128/apps/quassel.png
 %%MONO_OR_CLIENT%%share/icons/hicolor/128x128/status/quassel-inactive.png
 %%MONO_OR_CLIENT%%share/icons/hicolor/128x128/status/quassel-message.png
@@ -71,13 +71,3 @@
 %%MONO_OR_CLIENT%%share/icons/hicolor/64x64/apps/quassel.png
 %%MONO_OR_CLIENT%%share/icons/hicolor/64x64/status/quassel-inactive.png
 %%MONO_OR_CLIENT%%share/icons/hicolor/64x64/status/quassel-message.png
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/translations
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/stylesheets
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/scripts
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/icons/oxygen/scalable/status
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/icons/oxygen/scalable
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/icons/oxygen/16x16/status
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/icons/oxygen/16x16
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/icons/oxygen
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel/icons
-%%MONO_OR_CLIENT%%@dirrm share/apps/quassel

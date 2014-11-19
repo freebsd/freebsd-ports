@@ -63,10 +63,13 @@ include/telepathy-qt4/TelepathyQt/ChannelInterfaceHoldInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceMediaSignallingInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceMessagesInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfacePasswordInterface
+include/telepathy-qt4/TelepathyQt/ChannelInterfaceRoomConfigInterface
+include/telepathy-qt4/TelepathyQt/ChannelInterfaceRoomInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceSASLAuthenticationInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceSMSInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceSecurableInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceServicePointInterface
+include/telepathy-qt4/TelepathyQt/ChannelInterfaceSubjectInterface
 include/telepathy-qt4/TelepathyQt/ChannelInterfaceTubeInterface
 include/telepathy-qt4/TelepathyQt/ChannelRequest
 include/telepathy-qt4/TelepathyQt/ChannelRequestHints
@@ -391,10 +394,3 @@ lib/libtelepathy-qt4-farstream.so.2
 lib/libtelepathy-qt4-farstream.so.2.%%PORTVERSION%%
 libdata/pkgconfig/TelepathyQt4Farstream.pc
 libdata/pkgconfig/TelepathyQt4.pc
-@dirrm lib/cmake/TelepathyQt4Farstream
-@dirrm lib/cmake/TelepathyQt4
-@dirrmtry lib/cmake
-@dirrm include/telepathy-qt4/TelepathyQt/_gen
-@dirrm include/telepathy-qt4/TelepathyQt/Farstream
-@dirrm include/telepathy-qt4/TelepathyQt
-@dirrm include/telepathy-qt4

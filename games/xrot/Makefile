@@ -13,7 +13,7 @@ MASTER_SITES=	http://hanzubon.jp/mirrors/Vine/%SUBDIR%/ \
 		http://ftp.vinelinux.org/pub/Vine/%SUBDIR%/
 MASTER_SITE_SUBDIR=	VinePlus/1.1/JG-0.9.1/sources
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Falling ball puzzle game for X
 
 WRKSRC=		${WRKDIR}/xrot

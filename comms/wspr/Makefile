@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--with-gfortran=${FC} \
 		--with-f2py=f2py-${PYTHON_VER} \
 		--with-python3=${PYTHON_CMD}
 MAKE_ENV+=	PYTHONUSERBASE=${STAGEDIR}${PYTHONBASE}
+LDFLAGS+=	-shared
 VERSION=	4.00
 
 .include <bsd.port.pre.mk>

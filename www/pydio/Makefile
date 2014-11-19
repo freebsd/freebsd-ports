@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pydio
-PORTVERSION=	5.2.3
+PORTVERSION=	5.2.5
 CATEGORIES=	www
 MASTER_SITES=	SF/ajaxplorer/${PORTNAME}/stable-channel/${PORTVERSION}
 DISTNAME=	${PORTNAME}-core-${PORTVERSION}
@@ -14,6 +14,7 @@ LICENSE=	AGPLv3
 PORTSCOUT=	limitw:1,even
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES=		dos2unix shebangfix
 php_OLD_CMD=	/php
 SHEBANG_FILES=	plugins/core.mq/ws-server.php \

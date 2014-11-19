@@ -1,10 +1,9 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/gnome-shell/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/x11/gnome-shell/Makefile 20036 2014-11-03 08:23:27Z kwm $
 
 PORTNAME=	gnome-shell
-PORTVERSION=	3.12.2
-PORTREVISION=	2
+PORTVERSION=	3.14.1.5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -33,8 +32,8 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
 		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz \
-		webplugin:native
+USES=		compiler:c11 gettext gmake libtool pathfix pkgconfig \
+		tar:xz webplugin:native
 USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix \
 		gtk30 intlhack introspection
 USE_XORG=	x11 xfixes sm
@@ -60,8 +59,5 @@ post-patch:
 		${WRKSRC}/browser-plugin/Makefile.in
 	@${REINPLACE_CMD} -e 's|libnm-glib libnm-util ||g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|file://${PREFIX}/share/xsl/docbook/manpages/docbook.xsl|g' \
-		${WRKSRC}/man/Makefile.in
-
 
 .include <bsd.port.mk>

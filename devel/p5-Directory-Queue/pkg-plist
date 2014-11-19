@@ -9,7 +9,3 @@
 %%PERL5_MAN3%%/Directory::Queue::Null.3.gz
 %%PERL5_MAN3%%/Directory::Queue::Set.3.gz
 %%PERL5_MAN3%%/Directory::Queue::Simple.3.gz
-@dirrmtry %%SITE_PERL%%/Directory/Queue
-@dirrmtry %%SITE_PERL%%/Directory
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Directory/Queue
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Directory

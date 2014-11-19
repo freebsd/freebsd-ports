@@ -17,9 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.4.0:${PORTSDIR}/devel/py-simpl
 		${PYTHON_PKGNAMEPREFIX}oauth>=1.0.1:${PORTSDIR}/net/py-oauth \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.2.0:${PORTSDIR}/www/py-requests
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 post-extract:
 		${RM} -r ${WRKSRC}/tests

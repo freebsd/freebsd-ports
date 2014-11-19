@@ -26,15 +26,3 @@ bin/protoc-gen-go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/text_parser.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/text_parser_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/text_test.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/code.google.com/p
-@dirrmtry %%GO_SRCDIR%%/code.google.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_LIBDIR%%/code.google.com/p
-@dirrmtry %%GO_LIBDIR%%/code.google.com
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

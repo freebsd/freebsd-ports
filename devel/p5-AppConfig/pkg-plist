@@ -13,5 +13,3 @@
 %%PERL5_MAN3%%/AppConfig::Getopt.3.gz
 %%PERL5_MAN3%%/AppConfig::State.3.gz
 %%PERL5_MAN3%%/AppConfig::Sys.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AppConfig
-@dirrm %%SITE_PERL%%/AppConfig

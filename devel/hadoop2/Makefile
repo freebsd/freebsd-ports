@@ -3,7 +3,7 @@
 
 PORTNAME=	hadoop
 PORTVERSION=	2.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
 		LOCAL/demon/:maven \
@@ -23,6 +23,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3 \
 		cmake:${PORTSDIR}/devel/cmake \
 		${LOCALBASE}/protobuf25/bin/protoc:${PORTSDIR}/devel/protobuf25
+LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 CONFLICTS_INSTALL=	apache-hadoop-1*
@@ -69,7 +70,7 @@ post-patch:
 do-build:
 	${MKDIR} ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/downloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/apache-tomcat-${TOMCAT_VERSION}.tar.gz ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/downloads/
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean package -Pdist,native -DskipTests
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean package -Pdist,native -DskipTests -Drequire.snappy -Dsnappy.prefix=${LOCALBASE}
 
 post-build:
 	${RM} ${HADOOP_DIST}/etc/hadoop/*.cmd

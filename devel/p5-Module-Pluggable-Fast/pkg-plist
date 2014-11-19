@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Module::Pluggable::Fast.3.gz
 %%SITE_PERL%%/Module/Pluggable/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Pluggable/Fast/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Pluggable/Fast
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Pluggable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module/Pluggable
-@dirrmtry %%SITE_PERL%%/Module

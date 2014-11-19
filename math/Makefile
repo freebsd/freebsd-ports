@@ -105,7 +105,6 @@
     SUBDIR += eigen2
     SUBDIR += eigen3
     SUBDIR += eispack
-    SUBDIR += elmer-umfpack
     SUBDIR += emc2
     SUBDIR += ent
     SUBDIR += entropy
@@ -570,6 +569,7 @@
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
     SUBDIR += py-pycosat
+    SUBDIR += py-pyfst
     SUBDIR += py-pymc
     SUBDIR += py-roman
     SUBDIR += py-scientific

@@ -1,8 +1,3 @@
 %%SITE_PERL%%/File/Attributes/Recursive.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Attributes/Recursive/.packlist
 %%PERL5_MAN3%%/File::Attributes::Recursive.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Attributes/Recursive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Attributes
-@dirrmtry %%SITE_PERL%%/File/Attributes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

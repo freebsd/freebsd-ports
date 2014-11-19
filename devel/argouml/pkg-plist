@@ -69,6 +69,3 @@ bin/argouml
 %%DATADIR%%/org.eclipse.uml2.uml_3.1.1.v201008191505.jar
 %%DATADIR%%/swidgets-0.1.4.jar
 %%DATADIR%%/toolbar-1.4.1-20071227.jar
-@dirrm %%DATADIR%%/icon
-@dirrm %%DATADIR%%/ext
-@dirrm %%DATADIR%%

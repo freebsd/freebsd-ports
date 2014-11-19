@@ -3,9 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Source/cvsbk/.packlist
 %%PERL5_MAN3%%/VCP::Source::cvsbk.3.gz
 %%PERL5_MAN3%%/VCP::Filter::cvsbkchangeset.3.gz
-@dirrmtry %%SITE_PERL%%/VCP/Source
-@dirrmtry %%SITE_PERL%%/VCP/Filter
-@dirrmtry %%SITE_PERL%%/VCP
-@dirrm  %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Source/cvsbk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Source
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP

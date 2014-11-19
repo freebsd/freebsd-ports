@@ -13,10 +13,9 @@ COMMENT=	GNOME vocabulary builder
 
 LICENSE=	GPLv2
 
-USES=		gmake pathfix pkgconfig shebangfix
+USES=		gmake pathfix pkgconfig python shebangfix
 SHEBANG_FILES=	${WRKSRC}/gretools.py
 USE_GNOME=	gnomeprefix pygnome2
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 

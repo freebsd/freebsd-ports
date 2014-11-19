@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Pointer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Pointer/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Pointer/Pointer.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Pointer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

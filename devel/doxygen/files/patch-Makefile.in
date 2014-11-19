@@ -1,6 +1,6 @@
---- Makefile.in-orig	2014-06-14 08:30:10.000000000 +0200
-+++ Makefile.in	2014-06-14 08:31:21.000000000 +0200
-@@ -2,25 +2,24 @@
+--- Makefile.in.orig	2014-08-22 08:36:24 UTC
++++ Makefile.in
+@@ -2,26 +2,25 @@
  DESTDIR = 
  
  doxywizard:
@@ -20,8 +20,7 @@
 +	$(MAKE) -C addon/doxmlparser/examples/metrics
  
  doxyapp:
--	cd addon/doxyapp ; $(MAKE) clean
-+	$(MAKE) -C addon/doxyapp
+ 	cd addon/doxyapp ; $(MAKE) clean
  
  clean: FORCE
 -	- cd examples ; $(MAKE) clean
@@ -29,33 +28,36 @@
 -	- cd qtools ; $(MAKE) clean
 -	- cd src ; $(MAKE) clean
 -	- cd libmd5 ; $(MAKE) clean
+-	- cd vhdlparser ; $(MAKE) clean
 +	-cd examples ; $(MAKE) clean
 +	-cd doc ; $(MAKE) clean
 +	-cd qtools ; $(MAKE) clean
 +	-cd src ; $(MAKE) clean
++	-cd vhdlparser ; $(MAKE) clean
  	-cd addon/doxywizard ; $(MAKE) clean
  	-cd addon/doxysearch ; $(MAKE) clean
  	-cd addon/doxyapp ; $(MAKE) clean
-@@ -32,7 +31,6 @@ clean: FORCE
+@@ -33,7 +32,6 @@
  
  distclean: clean
  	-cd src ; $(MAKE) distclean
 -	-cd libmd5 ; $(MAKE) distclean
+ 	-cd vhdlparser ; $(MAKE) distclean
+ 	-cd qtools ; $(MAKE) distclean
  	-cd addon/doxywizard ; $(MAKE) distclean
- 	-cd addon/doxysearch ; $(MAKE) distclean
- 	-cd addon/doxyapp ; $(MAKE) distclean
-@@ -51,9 +49,8 @@ distclean: clean
+@@ -54,10 +52,9 @@
  	-rm -rf xml
  	-rm -f src/Makefile.doxygen src/Makefile.libdoxygen 
  	-rm -f src/Makefile.libdoxycfg src/libdoxycfg.t src/libdoxygen.t
 -	-rm -f libmd5/Makefile.libmd5
+ 	-rm -f vhdlparser/Makefile.vhdlparser
  	-rm -f .makeconfig .tmakeconfig
--	-rm -f src/doxygen.pro src/libdoxygen.pro qtools/qtools.pro src/libdoxycfg.pro libmd5/libmd5.pro
-+	-rm -f src/doxygen.pro src/libdoxygen.pro qtools/qtools.pro src/libdoxycfg.pro
+-	-rm -f src/doxygen.pro src/libdoxygen.pro qtools/qtools.pro src/libdoxycfg.pro libmd5/libmd5.pro vhdlparser/vhdlparser.pro
++	-rm -f src/doxygen.pro src/libdoxygen.pro qtools/qtools.pro src/libdoxycfg.pro vhdlparser/vhdlparser.pro
  	-rm -rf generated_src
  	-rm -f addon/doxywizard/doxywizard.pro
  	-rm -f VERSION
-@@ -88,14 +85,14 @@ install_docs: 
+@@ -92,14 +89,14 @@
  	cp -r examples $(DESTDIR)$(DOCDIR)
  	cp -r html $(DESTDIR)$(DOCDIR)
  
@@ -70,8 +72,8 @@
 -	cd latex ; $(MAKE)
 +	$(MAKE) -C latex
  
--DISTFILES =  Doxyfile libmd5 addon tmake doc examples bin lib objects testing \
-+DISTFILES =  Doxyfile addon tmake doc examples bin lib objects testing \
+-DISTFILES =  Doxyfile vhdlparser libmd5 addon tmake doc examples bin lib objects testing \
++DISTFILES =  Doxyfile vhdlparser addon tmake doc examples bin lib objects testing \
               qtools src configure configure.bin Makefile.in Makefile.win_nmake.in \
               Makefile.win_make.in INSTALL LANGUAGE.HOWTO LICENSE PLATFORMS \
               VERSION README.md packages winbuild jquery

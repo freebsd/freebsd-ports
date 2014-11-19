@@ -78,7 +78,6 @@ man/man1/dissy.1.gz
 %%PYTHON_SITELIBDIR%%/dissy/valueanalysis.py
 %%PYTHON_SITELIBDIR%%/dissy/valueanalysis.pyc
 %%PYTHON_SITELIBDIR%%/dissy/valueanalysis.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/dissy
 %%DATADIR%%/gfx/red_arrow_left.png
 %%DATADIR%%/gfx/red_line.png
 %%DATADIR%%/gfx/red_start_down.png
@@ -87,5 +86,3 @@ man/man1/dissy.1.gz
 %%DATADIR%%/gfx/red_start_up.png
 %%DATADIR%%/gfx/icon.svg
 %%DATADIR%%/dissy.ui
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%

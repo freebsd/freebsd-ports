@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Ouch.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ouch/.packlist
 %%SITE_PERL%%/Ouch.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ouch

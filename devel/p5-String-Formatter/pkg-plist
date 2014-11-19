@@ -4,7 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Formatter/.packlist
 %%PERL5_MAN3%%/String::Formatter.3.gz
 %%PERL5_MAN3%%/String::Formatter::Cookbook.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Formatter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/String/Formatter
-@dirrmtry %%SITE_PERL%%/String

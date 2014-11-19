@@ -15,9 +15,8 @@ COMMENT=	Python binding to libclamav written in C
 LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
 
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 DOCSDIR?=	${PREFIX}/share/doc/py-${PORTNAME}

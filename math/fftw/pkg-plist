@@ -11,4 +11,3 @@ lib/lib%%FFTW_SUFX%%rfftw.so
 lib/lib%%FFTW_SUFX%%rfftw.so.2
 lib/lib%%FFTW_SUFX%%rfftw.so.2.0.7
 %%PORTDOCS%%%%DOCSDIR%%/fftw.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

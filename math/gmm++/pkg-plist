@@ -52,4 +52,3 @@ include/gmm/gmm_transposed.h
 include/gmm/gmm_tri_solve.h
 include/gmm/gmm_vector.h
 include/gmm/gmm_vector_to_matrix.h
-@dirrm include/gmm

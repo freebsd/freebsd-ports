@@ -12,7 +12,7 @@ DISTFILES=	Super-Mario-Bros-Python-v${DISTVERSION}release${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	Super-Mario-Bros-Python-v${DISTVERSION}release${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the original Super Mario Bros
 
 LICENSE=	GPLv3
@@ -21,11 +21,10 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/Super-Mario-Bros-Python-v${DISTVERSION}release
 
-USES=		shebangfix zip
+USES=		shebangfix python:2 zip
 SHEBANG_FILES=	gamelib/*.py
 python_OLD_CMD?=	/usr/bin/env python
 python_CMD?=		${PYTHON_CMD}
-USE_PYTHON=	2
 
 PORTDOCS=	changelog.txt readme.txt
 OPTIONS_DEFINE=	DOCS

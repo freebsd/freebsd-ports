@@ -64,7 +64,6 @@ include/suitesparse/umfpack_triplet_to_col.h
 include/suitesparse/umfpack_wsolve.h
 include/suitesparse/umf_config.h
 include/ufsparse
-@dirrm include/suitesparse
 lib/libamd.a
 lib/libamd.so
 lib/libamd.so.1

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/List::Permutor.3.gz
 %%SITE_PERL%%/List/Permutor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Permutor/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Permutor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
-@dirrmtry %%SITE_PERL%%/List

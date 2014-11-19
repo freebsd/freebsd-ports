@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net/glib-networking/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/trunk/net/glib-networking/Makefile 19944 2014-10-15 05:33:09Z gusi $
 
 PORTNAME=	glib-networking
-PORTVERSION=	2.40.1
-PORTREVISION=	2
+PORTVERSION=	2.42.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,7 +26,7 @@ USE_GNOME=	glib20 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-patch:

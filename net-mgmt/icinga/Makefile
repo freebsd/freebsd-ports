@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icinga
-PORTVERSION=	1.11.7
+PORTVERSION=	1.12.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/Icinga/${PORTNAME}-core/releases/download/v${PORTVERSION}/
 

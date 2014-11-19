@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	florence
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	x11
 MASTER_SITES=	SF/florence/florence/${PORTVERSION}/
 
@@ -24,6 +24,7 @@ CONFIGURE_ARGS+=--prefix="${LOCALBASE}" \
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 GLIB_SCHEMAS=	org.florence.gschema.xml
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
@@ -45,8 +46,6 @@ post-patch:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libflorence-1.0.so.1
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

@@ -533,4 +533,3 @@ lib/libldns.so
 lib/libldns.so.1
 lib/libldns.so.1.6.17
 libdata/pkgconfig/libldns.pc
-@dirrm include/ldns

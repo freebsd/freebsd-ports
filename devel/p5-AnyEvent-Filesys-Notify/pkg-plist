@@ -10,7 +10,3 @@
 %%PERL5_MAN3%%/AnyEvent::Filesys::Notify::Role::Fallback.3.gz
 %%PERL5_MAN3%%/AnyEvent::Filesys::Notify::Role::Inotify2.3.gz
 %%PERL5_MAN3%%/AnyEvent::Filesys::Notify::Role::KQueue.3.gz
-@dirrmtry %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role
-@dirrmtry %%SITE_PERL%%/AnyEvent/Filesys/Notify
-@dirrmtry %%SITE_PERL%%/AnyEvent/Filesys
-@dirrmtry %%SITE_PERL%%/AnyEvent

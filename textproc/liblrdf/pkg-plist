@@ -6,5 +6,3 @@ lib/liblrdf.so.2
 lib/liblrdf.so.2.0.0
 libdata/pkgconfig/lrdf.pc
 share/ladspa/rdf/ladspa.rdfs
-@dirrmtry share/ladspa/rdf
-@dirrmtry share/ladspa

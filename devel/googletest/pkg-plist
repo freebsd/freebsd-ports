@@ -27,5 +27,3 @@ lib/libgtest_main.so
 lib/libgtest_main.so.0
 lib/libgtest_main.so.0.0.0
 share/aclocal/gtest.m4
-@dirrm include/gtest/internal
-@dirrm include/gtest

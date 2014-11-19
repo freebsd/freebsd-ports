@@ -4,6 +4,3 @@ bin/perltidy
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Tidy/.packlist
 %%PERL5_MAN3%%/Perl::Tidy.3.gz
 man/man1/perltidy.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Tidy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl
-@dirrmtry %%SITE_PERL%%/Perl

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaz
-PORTVERSION=	5.4.3
+PORTVERSION=	5.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -26,12 +26,9 @@ CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_SINGLE=	DB
-OPTIONS_SINGLE_DB=	MEMCACHED REDIS
-OPTIONS_DEFAULT=	REDIS
+OPTIONS_DEFINE=	DOCS MEMCACHED REDIS
 
-MEMCACHED_DESC=	Memcached distributed cache system support
+MEMCACHED_DESC=		Memcached distributed cache system support
 MEMCACHED_CONFIGURE_WITH=	memcached
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 

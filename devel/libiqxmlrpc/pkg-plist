@@ -40,4 +40,3 @@ include/libiqxmlrpc/value_type.inl
 include/libiqxmlrpc/value_type_visitor.h
 lib/libiqxmlrpc.so
 libdata/pkgconfig/libiqxmlrpc.pc
-@dirrm include/libiqxmlrpc

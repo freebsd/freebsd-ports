@@ -16,6 +16,3 @@ etc/docdiff.conf.example
 %%RUBY_SITELIBDIR%%/docdiff/encoding/ja_sjis.rb
 %%RUBY_SITELIBDIR%%/docdiff/encoding/ja_utf8.rb
 %%RUBY_SITELIBDIR%%/docdiff/view.rb
-@dirrm %%RUBY_SITELIBDIR%%/docdiff/encoding
-@dirrm %%RUBY_SITELIBDIR%%/docdiff/diff
-@dirrm %%RUBY_SITELIBDIR%%/docdiff

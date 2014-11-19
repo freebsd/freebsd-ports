@@ -38,6 +38,3 @@
 %%SITE_PERL%%/Spoon/Trace.pm
 %%SITE_PERL%%/Spoon/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spoon/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spoon
-@dirrm %%SITE_PERL%%/Spoon/Template
-@dirrm %%SITE_PERL%%/Spoon

@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CallChecker/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CallChecker/CallChecker.so
 %%PERL5_MAN3%%/Devel::CallChecker.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CallChecker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

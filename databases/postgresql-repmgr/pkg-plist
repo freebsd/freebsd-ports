@@ -1,4 +1,5 @@
 bin/repmgr
+@sample etc/repmgr.conf.sample
 sbin/repmgrd
-%%DATADIR%%/repmgr.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
 %%DATADIR%%/repmgr.sql

@@ -3,7 +3,6 @@ include/eog-%%VERSION%%/eog/eog-application-activatable.h
 include/eog-%%VERSION%%/eog/eog-application.h
 include/eog-%%VERSION%%/eog/eog-clipboard-handler.h
 include/eog-%%VERSION%%/eog/eog-debug.h
-include/eog-%%VERSION%%/eog/eog-dialog.h
 include/eog-%%VERSION%%/eog/eog-enums.h
 %%EXIF%%include/eog-%%VERSION%%/eog/eog-exif-util.h
 include/eog-%%VERSION%%/eog/eog-file-chooser.h
@@ -24,6 +23,7 @@ include/eog-%%VERSION%%/eog/eog-uri-converter.h
 include/eog-%%VERSION%%/eog/eog-window.h
 include/eog-3.0/eog/eog-window-activatable.h
 lib/eog/girepository-1.0/Eog-3.0.typelib
+lib/eog/libeog.so
 lib/eog/plugins/fullscreen.plugin
 lib/eog/plugins/libfullscreen.so
 lib/eog/plugins/libreload.so
@@ -34,73 +34,57 @@ libdata/pkgconfig/eog.pc
 share/GConf/gsettings/eog.convert
 share/appdata/eog.appdata.xml
 share/applications/eog.desktop
-%%DOCSDIR%%/EogDialog.html
-%%DOCSDIR%%/EogFileChooser.html
-%%DOCSDIR%%/EogImageSaveInfo.html
-%%DOCSDIR%%/EogMetadataReaderJpg.html
-%%DOCSDIR%%/EogMetadataReaderPng.html
-%%DOCSDIR%%/EogPreferencesDialog.html
-%%DOCSDIR%%/EogPrintImageSetup.html
-%%DOCSDIR%%/EogPrintPreview.html
-%%DOCSDIR%%/EogScrollView.html
-%%DOCSDIR%%/EogSidebar.html
-%%DOCSDIR%%/EogStatusbar.html
-%%DOCSDIR%%/EogWindowActivatable.html
-%%DOCSDIR%%/annotation-glossary.html
-%%DOCSDIR%%/api-index.html
-%%DOCSDIR%%/ch01.html
-%%DOCSDIR%%/ch02.html
-%%DOCSDIR%%/ch03.html
-%%DOCSDIR%%/ch04.html
-%%DOCSDIR%%/ch05.html
-%%DOCSDIR%%/ch06.html
-%%DOCSDIR%%/ch07.html
-%%DOCSDIR%%/eog-EogExifDetails.html
-%%DOCSDIR%%/eog-eog-application.html
-%%DOCSDIR%%/eog-eog-clipboard-handler.html
-%%DOCSDIR%%/eog-eog-config-keys.html
-%%DOCSDIR%%/eog-eog-debug.html
-%%DOCSDIR%%/eog-eog-error-message-area.html
-%%DOCSDIR%%/eog-eog-exif-util.html
-%%DOCSDIR%%/eog-eog-image.html
-%%DOCSDIR%%/eog-eog-jobs.html
-%%DOCSDIR%%/eog-eog-job-queue.html
-%%DOCSDIR%%/eog-eog-list-store.html
-%%DOCSDIR%%/eog-eog-metadata-reader.html
-%%DOCSDIR%%/eog-eog-pixbuf-util.html
-%%DOCSDIR%%/eog-eog-plugin-engine.html
-%%DOCSDIR%%/eog-eog-print.html
-%%DOCSDIR%%/eog-eog-properties-dialog.html
-%%DOCSDIR%%/eog-eog-save-as-dialog-helper.html
-%%DOCSDIR%%/eog-eog-session.html
-%%DOCSDIR%%/eog-eog-thumb-nav.html
-%%DOCSDIR%%/eog-eog-thumb-view.html
-%%DOCSDIR%%/eog-eog-thumbnail.html
-%%DOCSDIR%%/eog-eog-transform.html
-%%DOCSDIR%%/eog-eog-uri-converter.html
-%%DOCSDIR%%/eog-eog-util.html
-%%DOCSDIR%%/eog-eog-window.html
-%%DOCSDIR%%/eog-zoom.html
-%%DOCSDIR%%/eog.devhelp2
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left-insensitive.png
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/pt01.html
-%%DOCSDIR%%/right-insensitive.png
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/rn01.html
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up-insensitive.png
-%%DOCSDIR%%/up.png
-%%DATADIR%%/eog-app-menu.xml
-%%DATADIR%%/eog-image-properties-dialog.ui
-%%DATADIR%%/eog-multiple-save-as-dialog.ui
-%%DATADIR%%/eog-preferences-dialog.ui
+share/doc/eog/EogClipboardHandler.html
+share/doc/eog/EogFileChooser.html
+share/doc/eog/EogImageSaveInfo.html
+share/doc/eog/EogScrollView.html
+share/doc/eog/EogSidebar.html
+share/doc/eog/EogStatusbar.html
+share/doc/eog/EogWindowActivatable.html
+share/doc/eog/annotation-glossary.html
+share/doc/eog/api-index.html
+share/doc/eog/ch01.html
+share/doc/eog/ch02.html
+share/doc/eog/ch03.html
+share/doc/eog/ch04.html
+share/doc/eog/ch05.html
+share/doc/eog/ch06.html
+share/doc/eog/eog-EogJobScheduler.html
+share/doc/eog/eog-eog-application.html
+share/doc/eog/eog-eog-config-keys.html
+share/doc/eog/eog-eog-debug.html
+share/doc/eog/eog-eog-error-message-area.html
+share/doc/eog/eog-eog-exif-util.html
+share/doc/eog/eog-eog-image.html
+share/doc/eog/eog-eog-jobs.html
+share/doc/eog/eog-eog-list-store.html
+share/doc/eog/eog-eog-pixbuf-util.html
+share/doc/eog/eog-eog-print.html
+share/doc/eog/eog-eog-properties-dialog.html
+share/doc/eog/eog-eog-save-as-dialog-helper.html
+share/doc/eog/eog-eog-session.html
+share/doc/eog/eog-eog-thumb-nav.html
+share/doc/eog/eog-eog-thumb-view.html
+share/doc/eog/eog-eog-thumbnail.html
+share/doc/eog/eog-eog-transform.html
+share/doc/eog/eog-eog-uri-converter.html
+share/doc/eog/eog-eog-util.html
+share/doc/eog/eog-eog-window.html
+share/doc/eog/eog-zoom.html
+share/doc/eog/eog.devhelp2
+share/doc/eog/home.png
+share/doc/eog/index.html
+share/doc/eog/index.sgml
+share/doc/eog/left-insensitive.png
+share/doc/eog/left.png
+share/doc/eog/pt01.html
+share/doc/eog/right-insensitive.png
+share/doc/eog/right.png
+share/doc/eog/rn01.html
+share/doc/eog/style.css
+share/doc/eog/up-insensitive.png
+share/doc/eog/up.png
 %%DATADIR%%/eog-toolbar.xml
-%%DATADIR%%/eog-ui.xml
-%%DATADIR%%/eog.css
 %%DATADIR%%/gir-1.0/Eog-3.0.gir
 %%DATADIR%%/icons/hicolor/16x16/actions/eog-image-gallery.png
 %%DATADIR%%/icons/hicolor/16x16/actions/eog-plugin.png
@@ -1152,6 +1136,53 @@ share/help/pt_BR/eog/figures/prefs-plugins-date.png
 share/help/pt_BR/eog/figures/prefs-plugins-fullscreen.png
 share/help/pt_BR/eog/figures/prefs-plugins.png
 share/help/pt_BR/eog/figures/slideshow-prefs.png
+share/help/ro/eog/bug-filing.page
+share/help/ro/eog/commandline.page
+share/help/ro/eog/copy-paste.page
+share/help/ro/eog/default.page
+share/help/ro/eog/desktop-background.page
+share/help/ro/eog/develop.page
+share/help/ro/eog/documentation.page
+share/help/ro/eog/edit.page
+share/help/ro/eog/figures/eog-logo.png
+share/help/ro/eog/figures/eog-toolbar-editor.png
+share/help/ro/eog/figures/eog-trail.png
+share/help/ro/eog/figures/image-view-prefs.png
+share/help/ro/eog/figures/multiple-convert.png
+share/help/ro/eog/figures/multiple-rename-count.png
+share/help/ro/eog/figures/plugin-send-by-mail.png
+share/help/ro/eog/figures/plugins-all.png
+share/help/ro/eog/figures/prefs-plugins-date.png
+share/help/ro/eog/figures/prefs-plugins-fullscreen.png
+share/help/ro/eog/figures/prefs-plugins.png
+share/help/ro/eog/figures/slideshow-prefs.png
+share/help/ro/eog/flip-rotate.page
+share/help/ro/eog/format-change.page
+share/help/ro/eog/formats-save.page
+share/help/ro/eog/formats-view.page
+share/help/ro/eog/index.page
+share/help/ro/eog/introduction.page
+share/help/ro/eog/legal.xml
+share/help/ro/eog/license.page
+share/help/ro/eog/open.page
+share/help/ro/eog/plugin-exif-digital.page
+share/help/ro/eog/plugin-fullscreen-background.page
+share/help/ro/eog/plugin-fullscreen-double-click.page
+share/help/ro/eog/plugin-picasa.page
+share/help/ro/eog/plugin-python-console.page
+share/help/ro/eog/plugin-send-by-mail.page
+share/help/ro/eog/plugin-slideshow-shuffle.page
+share/help/ro/eog/plugin-zoom-width.page
+share/help/ro/eog/plugins.page
+share/help/ro/eog/preferences.page
+share/help/ro/eog/print.page
+share/help/ro/eog/rename-multiple.page
+share/help/ro/eog/shortcuts.page
+share/help/ro/eog/slideshow.page
+share/help/ro/eog/toolbar.page
+share/help/ro/eog/translate.page
+share/help/ro/eog/view.page
+share/help/ro/eog/zoom.page
 share/help/ru/eog/bug-filing.page
 share/help/ru/eog/commandline.page
 share/help/ru/eog/copy-paste.page
@@ -1637,176 +1668,3 @@ share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_HK/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
 share/locale/zu/LC_MESSAGES/eog.mo
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/ts/LC_MESSAGES
-@dirrmtry share/locale/ts
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/my/LC_MESSAGES
-@dirrmtry share/locale/my
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ks/LC_MESSAGES
-@dirrmtry share/locale/ks
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_TW/eog/figures
-@dirrm share/help/zh_TW/eog
-@dirrmtry share/help/zh_TW
-@dirrm share/help/zh_CN/eog/figures
-@dirrm share/help/zh_CN/eog
-@dirrmtry share/help/zh_CN
-@dirrm share/help/uk/eog/figures
-@dirrm share/help/uk/eog
-@dirrmtry share/help/uk
-@dirrm share/help/th/eog/figures
-@dirrm share/help/th/eog
-@dirrmtry share/help/th
-@dirrm share/help/te/eog/figures
-@dirrm share/help/te/eog
-@dirrmtry share/help/te
-@dirrm share/help/sv/eog/figures
-@dirrm share/help/sv/eog
-@dirrmtry share/help/sv
-@dirrm share/help/sl/eog/figures
-@dirrm share/help/sl/eog
-@dirrmtry share/help/sl
-@dirrm share/help/ru/eog/figures
-@dirrm share/help/ru/eog
-@dirrmtry share/help/ru
-@dirrm share/help/pt_BR/eog/figures
-@dirrm share/help/pt_BR/eog
-@dirrmtry share/help/pt_BR
-@dirrm share/help/pl/eog/figures
-@dirrm share/help/pl/eog
-@dirrmtry share/help/pl
-@dirrm share/help/pa/eog/figures
-@dirrm share/help/pa/eog
-@dirrmtry share/help/pa
-@dirrm share/help/oc/eog/figures
-@dirrm share/help/oc/eog
-@dirrmtry share/help/oc
-@dirrm share/help/lv/eog/figures
-@dirrm share/help/lv/eog
-@dirrmtry share/help/lv
-@dirrm share/help/ko/eog/figures
-@dirrm share/help/ko/eog
-@dirrmtry share/help/ko
-@dirrm share/help/ja/eog/figures
-@dirrm share/help/ja/eog
-@dirrmtry share/help/ja
-@dirrm share/help/it/eog/figures
-@dirrm share/help/it/eog
-@dirrmtry share/help/it
-@dirrm share/help/hu/eog/figures
-@dirrm share/help/hu/eog
-@dirrmtry share/help/hu
-@dirrm share/help/gl/eog/figures
-@dirrm share/help/gl/eog
-@dirrmtry share/help/gl
-@dirrm share/help/fr/eog/figures
-@dirrm share/help/fr/eog
-@dirrmtry share/help/fr
-@dirrm share/help/fi/eog/figures
-@dirrm share/help/fi/eog
-@dirrmtry share/help/fi
-@dirrm share/help/eu/eog/figures
-@dirrm share/help/eu/eog
-@dirrmtry share/help/eu
-@dirrm share/help/es/eog/figures
-@dirrm share/help/es/eog
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/eog/figures
-@dirrm share/help/en_GB/eog
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/eog/figures
-@dirrm share/help/el/eog
-@dirrmtry share/help/el
-@dirrm share/help/de/eog/figures
-@dirrm share/help/de/eog
-@dirrmtry share/help/de
-@dirrm share/help/da/eog/figures
-@dirrm share/help/da/eog
-@dirrmtry share/help/da
-@dirrm share/help/cs/eog/figures
-@dirrm share/help/cs/eog
-@dirrmtry share/help/cs
-@dirrm share/help/ca/eog/figures
-@dirrm share/help/ca/eog
-@dirrmtry share/help/ca
-@dirrm share/help/ar/eog/figures
-@dirrm share/help/ar/eog
-@dirrmtry share/help/ar
-@dirrm share/help/C/eog/figures
-@dirrm share/help/C/eog
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/gir-1.0
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
-@dirrmtry share/appdata
-@dirrm lib/eog/plugins
-@dirrm lib/eog/girepository-1.0
-@dirrm lib/eog
-@dirrm include/eog-%%VERSION%%/eog
-@dirrm include/eog-%%VERSION%%

@@ -8,4 +8,3 @@ lib/libelf.so
 lib/libelf.so.0
 libdata/pkgconfig/libelf.pc
 %%GETTEXT%%share/locale/de/LC_MESSAGES/libelf.mo
-@dirrm include/libelf

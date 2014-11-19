@@ -219,30 +219,8 @@ usr/share/themes/Industrial/gtk-2.0/gtkrc
 usr/share/themes/Mist/gtk-2.0/gtkrc
 usr/share/themes/Raleigh/gtk-2.0/gtkrc
 usr/share/themes/ThinIce/gtk-2.0/gtkrc
-@dirrmtry usr/lib/gtk-2.0/2.10.0/engines
-@dirrmtry usr/lib/gtk-2.0/2.10.0/filesystems
-@dirrmtry usr/lib/gtk-2.0/modules
-@dirrmtry usr/share/gtk-engines
-@comment non-empty directory listing in revers order
-@dirrm usr/share/themes/Default/gtk-2.0-key
-@dirrm usr/share/themes/Default
-@dirrm usr/share/themes/Raleigh/gtk-2.0
-@dirrm usr/share/themes/Raleigh
-@dirrm usr/share/themes/Clearlooks/gtk-2.0
-@dirrm usr/share/themes/Clearlooks
-@dirrm usr/share/themes/Crux/gtk-2.0
-@dirrm usr/share/themes/Crux
-@dirrm usr/share/themes/Emacs/gtk-2.0-key
-@dirrm usr/share/themes/Emacs
-@dirrm usr/share/themes/Industrial/gtk-2.0
-@dirrm usr/share/themes/Industrial
-@dirrm usr/share/themes/Mist/gtk-2.0
-@dirrm usr/share/themes/Mist
-@dirrm usr/share/themes/ThinIce/gtk-2.0
-@dirrm usr/share/themes/ThinIce
-@dirrm usr/lib/gtk-2.0/immodules
-@dirrm usr/lib/gtk-2.0/2.10.0/printbackends
-@dirrm usr/lib/gtk-2.0/2.10.0/immodules
-@dirrm usr/lib/gtk-2.0/2.10.0/engines
-@dirrm usr/lib/gtk-2.0/2.10.0
-@dirrm usr/lib/gtk-2.0
+@dir usr/lib/gtk-2.0/2.10.0/filesystems
+@dir usr/lib/gtk-2.0/2.10.0/immodules
+@dir usr/lib/gtk-2.0/immodules
+@dir usr/share/gtk-2.0
+

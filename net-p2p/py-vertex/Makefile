@@ -18,9 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsil
 
 LICENSE=	BSD
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		twisted
+USES=		python twisted
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

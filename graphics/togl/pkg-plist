@@ -25,6 +25,3 @@ lib/Togl-1.7/libtogl.so.1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/togl.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/togl.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tree2.rgba
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/Togl-1.7

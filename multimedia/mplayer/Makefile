@@ -3,7 +3,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 
 COMMENT=	High performance media player supporting many formats
 
@@ -42,7 +42,7 @@ SUB_FILES=	pkg-message
 CONFLICTS=	mplayer2-2.*
 
 CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
-USES+=		pkgconfig
+USES+=		iconv pkgconfig
 
 .include "${.CURDIR}/Makefile.optvars"
 .include <bsd.port.pre.mk>
@@ -142,6 +142,7 @@ post-patch:
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		-e 's|-lbz2|/usr/lib/libbz2.so|' \
 		-e 's|-lncurses|/usr/lib/libncurses.so|' \
+		-e 's|-liconv|${ICONV_LIB}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*(configure|.sh|Makefile)" -print0 | \

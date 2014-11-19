@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/CheckDeps.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CheckDeps/.packlist
 %%PERL5_MAN3%%/Test::CheckDeps.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CheckDeps
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

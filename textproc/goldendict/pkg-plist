@@ -12,5 +12,3 @@ share/pixmaps/goldendict.png
 %%DATADIR%%/locale/uk_UA.qm
 %%DATADIR%%/locale/vi_VN.qm
 %%DATADIR%%/locale/zh_CN.qm
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%

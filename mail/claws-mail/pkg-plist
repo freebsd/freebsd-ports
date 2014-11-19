@@ -247,7 +247,6 @@ lib/claws-mail/plugins/pgpmime.deps
 lib/claws-mail/plugins/smime.deps
 libdata/pkgconfig/claws-mail.pc
 man/man1/claws-mail.1.gz
-share/appdata/claws-mail.appdata.xml
 share/applications/claws-mail.desktop
 %%DATADIR%%/OOo2claws-mail.pl
 %%DATADIR%%/acroread2claws-mail.pl
@@ -319,6 +318,7 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/it/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/claws-mail.mo

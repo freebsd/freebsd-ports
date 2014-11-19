@@ -21,4 +21,3 @@ man/man1/rtf2latex2e.1.gz
 %%DATADIR%%/rtf-encoding.next
 %%DATADIR%%/cp936raw.txt
 %%DATADIR%%/rtf-encoding.symbolfont
-@dirrm %%DATADIR%%

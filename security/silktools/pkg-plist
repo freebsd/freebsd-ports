@@ -8,6 +8,7 @@ bin/rwbagbuild
 bin/rwbagcat
 bin/rwbagtool
 bin/rwcat
+bin/rwcombine
 bin/rwcompare
 bin/rwcount
 bin/rwcut
@@ -96,15 +97,15 @@ include/silk/utils.h
 lib/libflowsource.a
 lib/libflowsource.so
 lib/libflowsource.so.8
-lib/libflowsource.so.8.0.1
+lib/libflowsource.so.8.1.0
 lib/libsilk-thrd.a
 lib/libsilk-thrd.so
 lib/libsilk-thrd.so.5
-lib/libsilk-thrd.so.5.1.0
+lib/libsilk-thrd.so.5.1.1
 lib/libsilk.a
 lib/libsilk.so
-lib/libsilk.so.15
-lib/libsilk.so.15.0.0
+lib/libsilk.so.16
+lib/libsilk.so.16.0.0
 lib/silk/app-mismatch.a
 lib/silk/app-mismatch.so
 lib/silk/conficker-c.a
@@ -132,6 +133,7 @@ man/man1/rwbagbuild.1.gz
 man/man1/rwbagcat.1.gz
 man/man1/rwbagtool.1.gz
 man/man1/rwcat.1.gz
+man/man1/rwcombine.1.gz
 man/man1/rwcompare.1.gz
 man/man1/rwcount.1.gz
 man/man1/rwcut.1.gz
@@ -242,10 +244,3 @@ share/silk/twoway-silk.conf
 %%PYTHON_SITELIBDIR%%/silk/site.py
 %%PYTHON_SITELIBDIR%%/silk/site.pyc
 %%PYTHON_SITELIBDIR%%/silk/site.pyo
-@dirrmtry share/silk/etc/init.d
-@dirrmtry share/silk/etc
-@dirrmtry share/silk
-@dirrmtry lib/silk
-@dirrmtry include/silk
-@dirrmtry %%PYTHON_SITELIBDIR%%/silk
-@dirrmtry %%PYTHON_SITELIBDIR%%

@@ -80,7 +80,3 @@ bin/blindelephant
 %%PYTHON_SITELIBDIR%%/blindelephant/dbs/wordpress-plugins/wptouch.pkl
 %%PYTHON_SITELIBDIR%%/blindelephant/dbs/wordpress-plugins/yet-another-related-posts-plugin.pkl
 %%PYTHON_SITELIBDIR%%/blindelephant/dbs/wordpress.pkl
-@dirrm %%PYTHON_SITELIBDIR%%/blindelephant/dbs/wordpress-plugins
-@dirrm %%PYTHON_SITELIBDIR%%/blindelephant/dbs/drupal-plugins
-@dirrm %%PYTHON_SITELIBDIR%%/blindelephant/dbs
-@dirrm %%PYTHON_SITELIBDIR%%/blindelephant

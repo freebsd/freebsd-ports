@@ -1,6 +1,6 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/libnotify/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/devel/libnotify/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libnotify
 PORTVERSION=	0.7.6

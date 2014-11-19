@@ -244,25 +244,3 @@ share/themes/xfwm4/top-right-active.png
 share/themes/xfwm4/top-right-active.xpm
 share/themes/xfwm4/top-right-inactive.png
 share/themes/xfwm4/top-right-inactive.xpm
-@dirrmtry share/themes/xfwm4
-@dirrm share/themes/metacity-1
-@dirrm share/themes/gtk-3.0
-@dirrm share/themes/gtk-2.0/styles
-@dirrm share/themes/gtk-2.0/images/treeview
-@dirrm share/themes/gtk-2.0/images/toolbars
-@dirrm share/themes/gtk-2.0/images/separators
-@dirrm share/themes/gtk-2.0/images/scroll
-@dirrm share/themes/gtk-2.0/images/panel
-@dirrm share/themes/gtk-2.0/images/other
-@dirrm share/themes/gtk-2.0/images/notebook
-@dirrm share/themes/gtk-2.0/images/mintmenu
-@dirrm share/themes/gtk-2.0/images/handles
-@dirrm share/themes/gtk-2.0/images/frames
-@dirrm share/themes/gtk-2.0/images/expanders
-@dirrm share/themes/gtk-2.0/images/entry
-@dirrm share/themes/gtk-2.0/images/check-radio
-@dirrm share/themes/gtk-2.0/images/button
-@dirrm share/themes/gtk-2.0/images/arrows
-@dirrm share/themes/gtk-2.0/images
-@dirrm share/themes/gtk-2.0
-@dirrmtry share/themes

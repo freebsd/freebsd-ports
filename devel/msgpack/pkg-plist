@@ -46,6 +46,3 @@ lib/libmsgpackc.a
 lib/libmsgpackc.so
 lib/libmsgpackc.so.2
 lib/libmsgpackc.so.2.0.0
-@dirrm include/msgpack/type/tr1
-@dirrm include/msgpack/type
-@dirrm include/msgpack

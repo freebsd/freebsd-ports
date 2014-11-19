@@ -12,9 +12,8 @@ COMMENT=	Library for making charts with Python
 
 LICENSE=	LGPL3
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=		CAIRO
 OPTIONS_DEFAULT=	CAIRO

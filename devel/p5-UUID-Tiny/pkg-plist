@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UUID/Tiny/.packlist
 %%SITE_PERL%%/UUID/Tiny.pm
 %%PERL5_MAN3%%/UUID::Tiny.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UUID/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UUID
-@dirrmtry %%SITE_PERL%%/UUID

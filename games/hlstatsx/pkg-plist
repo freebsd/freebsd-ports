@@ -500,32 +500,3 @@
 %%WWWDIR%%/web/show_graph.php
 %%WWWDIR%%/web/sig.php
 %%WWWDIR%%/web/status.php
-@dirrm %%WWWDIR%%/web/hlstatsimg/weapons/hl2mp
-@dirrm %%WWWDIR%%/web/hlstatsimg/weapons/hl2ctf
-@dirrm %%WWWDIR%%/web/hlstatsimg/weapons/dods
-@dirrm %%WWWDIR%%/web/hlstatsimg/weapons/css
-@dirrm %%WWWDIR%%/web/hlstatsimg/weapons
-@dirrm %%WWWDIR%%/web/hlstatsimg/progress
-@dirrm %%WWWDIR%%/web/hlstatsimg/maps/hl2mp
-@dirrm %%WWWDIR%%/web/hlstatsimg/maps/dods
-@dirrm %%WWWDIR%%/web/hlstatsimg/maps/css
-@dirrm %%WWWDIR%%/web/hlstatsimg/maps
-@dirrm %%WWWDIR%%/web/hlstatsimg/games
-@dirrm %%WWWDIR%%/web/hlstatsimg/flags
-@dirrm %%WWWDIR%%/web/hlstatsimg
-@dirrm %%WWWDIR%%/web
-@dirrm %%WWWDIR%%/upgrade
-@dirrm %%WWWDIR%%/plugin/weapon_logging/scripting
-@dirrm %%WWWDIR%%/plugin/weapon_logging/plugins
-@dirrm %%WWWDIR%%/plugin/weapon_logging
-@dirrm %%WWWDIR%%/plugin/hlstatsx/scripting
-@dirrm %%WWWDIR%%/plugin/hlstatsx/plugins
-@dirrm %%WWWDIR%%/plugin/hlstatsx/gamedata
-@dirrm %%WWWDIR%%/plugin/hlstatsx
-@dirrm %%WWWDIR%%/plugin
-@dirrm %%WWWDIR%%/perl
-@dirrm %%WWWDIR%%/hlstatsinc/ingame
-@dirrm %%WWWDIR%%/hlstatsinc/admintasks
-@dirrm %%WWWDIR%%/hlstatsinc
-@dirrm %%WWWDIR%%/hitbox
-@dirrm %%WWWDIR%%

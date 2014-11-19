@@ -11,8 +11,7 @@ DISTNAME=	rox-lib2-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Python libraries for ROX
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
+USES=		python tar:bzip2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 		${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2

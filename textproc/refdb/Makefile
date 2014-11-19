@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=	ohartman@zedat.fu-berlin.de
 COMMENT=	Bibliographic reference database
 
+BROKEN=		Fails to link
+
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libbtparse.so:${PORTSDIR}/textproc/btparse \
 		libdbi.so:${PORTSDIR}/databases/libdbi

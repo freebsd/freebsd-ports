@@ -384,7 +384,7 @@ bin/troff
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/www.tmac
 %%DATADIR%%/site-tmac/man.local
 %%DATADIR%%/site-tmac/mdoc.local
-@exec mkdir -p %D/lib/groff/site-tmac
+@dir lib/groff/site-tmac
 man/man1/addftinfo.1.gz
 man/man1/afmtodit.1.gz
 man/man1/eqn.1.gz
@@ -431,31 +431,3 @@ man/man7/groff_ms.7.gz
 man/man7/groff_trace.7.gz
 man/man7/groff_www.7.gz
 man/man7/roff.7.gz
-@dirrm lib/groff/site-tmac
-@dirrm lib/groff
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devX100
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devX100-12
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devX75
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devX75-12
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devascii
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devascii8
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devdvi/generate
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devdvi
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devhtml
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devlatin1
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devlbp
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devlj4/generate
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devlj4
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devnippon
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devps/generate
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devps
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font/devutf8
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/font
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/tmac/mdoc
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/tmac/mm
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%/tmac
-@dirrm %%DATADIR%%/%%GROFF_VERSION%%
-@dirrm %%DATADIR%%/site-tmac
-@dirrm %%DATADIR%%
-@dirrmtry share/doc/groff
-@dirrmtry share/examples/groff

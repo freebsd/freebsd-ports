@@ -1,15 +1,6 @@
---- BASIC256.pro.orig	2014-06-20 21:01:15.000000000 +0200
-+++ BASIC256.pro	2014-06-20 21:03:24.000000000 +0200
-@@ -1,8 +1,4 @@
- 
--lessThan(QT_MAJOR_VERSION, 5) {
--  message( FATAL_ERROR "BASIC-256 requires QT 5 or better." )
--}
--
- 
- TEMPLATE					=	app
- TARGET						=	basic256
-@@ -13,11 +9,6 @@
+--- BASIC256.pro.orig	2014-11-05 17:03:39 UTC
++++ BASIC256.pro
+@@ -13,13 +13,6 @@ CONFIG						+=	 qt debug_and_release
  OBJECTS_DIR					=	tmp/obj
  MOC_DIR						=	tmp/moc
  
@@ -18,10 +9,12 @@
 -QT						+=	sql
 -QT						+=	widgets
 -QT						+=	printsupport
- 
+-QT						+=	serialport
+-
  RESOURCES					+=	resources/resource.qrc
  RC_FILE						=	resources/basic256.rc
-@@ -84,7 +75,7 @@
+ TRANSLATIONS				=	Translations/basic256_en.ts \
+@@ -86,7 +79,7 @@ unix:!macx {
  
  	## TTS Option 2 - use the espeak library
  	DEFINES					+=	ESPEAK
@@ -30,18 +23,20 @@
  	LIBS					+=	-lespeak
  
  	LIBS					+=	-lm
-@@ -99,28 +90,28 @@
+@@ -101,8 +94,10 @@ unix:!macx {
  
  	# Sound - QT Mobility Multimedia AudioOut
  	DEFINES					+=	SOUND_QMOBILITY
 -	QT						+=	multimedia
 -	INCLUDEPATH				+=	QtMultimediaKit
-+	INCLUDEPATH				+=	$$LOCALBASE/include/qt5/QtMultimedia
++	INCLUDEPATH                             +=      $$LOCALBASE/include/qt5/QtMultimedia
++	INCLUDEPATH                             +=      $$LOCALBASE/include/qt5/QtSerialPort
++ 	INCLUDEPATH				+=	QtMobility
++	LIBS                                    +=      -L$$LOCALBASE/lib -lQt5Gui -lQt5Core -lQt5Widgets -lQt5Sql -lQt5Multimedia -lQt5PrintSupport -lQt5SerialPort
  	INCLUDEPATH				+=	QtMobility
-+	LIBS					+=	-L$$LOCALBASE/lib -lQt5Gui -lQt5Core -lQt5Widgets -lQt5Sql -lQt5Multimedia -lQt5PrintSupport
  
  
- 	########
+@@ -110,19 +105,19 @@ unix:!macx {
  	# rules for make install
  	########
  	exampleFiles.files		=	./Examples

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Tie::RefHash.3.gz
 %%SITE_PERL%%/Tie/RefHash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/RefHash/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/RefHash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrmtry %%SITE_PERL%%/Tie

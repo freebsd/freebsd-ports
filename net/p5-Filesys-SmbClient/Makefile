@@ -7,7 +7,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface for access Samba filesystem with libsmclient.so
 
 LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient

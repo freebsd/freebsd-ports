@@ -57,5 +57,3 @@ share/asl/stddefz8.inc
 share/asl/tools.msg
 share/doc/asl/Makefile
 share/doc/asl/as.tex
-@dirrm share/asl
-@dirrm share/doc/asl

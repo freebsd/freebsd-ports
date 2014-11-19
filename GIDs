@@ -67,6 +67,7 @@ fetchmail:*:124:
 postfix:*:125:
 maildrop:*:126:
 nav:*:127:
+sd-agent:*:128:
 vlock:*:129:
 _bgpd:*:130:
 _ospfd:*:131:
@@ -222,6 +223,7 @@ dotlrn:*:821:
 polw:*:825:
 statsd:*:826:
 netdisco:*:840:
+tcpcryptd:*:841:
 munin:*:842:
 dahdi:*:843:asterisk
 fossy:*:901:www
@@ -298,5 +300,6 @@ tvheadend:*:984:
 puppetdb:*:985:
 kamailio:*:986:
 spark:*:987:
+mediabrowser:*:989:
 nogroup:*:65533:
 nobody:*:65534:

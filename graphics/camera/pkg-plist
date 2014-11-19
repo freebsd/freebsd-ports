@@ -8,6 +8,3 @@ GNUstep/Local/Applications/Camera.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/Camera.app/Resources/no_thumbnail.jpg
 GNUstep/Local/Applications/Camera.app/stamp.make
 GNUstep/Local/Tools/Camera
-@dirrm GNUstep/Local/Applications/Camera.app/Resources/Camera.gorm
-@dirrm GNUstep/Local/Applications/Camera.app/Resources
-@dirrm GNUstep/Local/Applications/Camera.app

@@ -27,11 +27,10 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
-PYDISTUTILS_AUTOPLIST=	yes
 
-USE_GITHUB=		yes
-USE_PYDISTUTILS=	yes
-USE_PYTHON=		yes
+USE_GITHUB=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.options.mk>
 

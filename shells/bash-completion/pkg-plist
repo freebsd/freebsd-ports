@@ -571,7 +571,3 @@ libdata/pkgconfig/bash-completion.pc
 %%PORTDOCS%%%%DOCSDIR%%/bash_completion.txt
 %%PORTDOCS%%%%DOCSDIR%%/bashrc
 %%PORTDOCS%%%%DOCSDIR%%/inputrc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/helpers
-@dirrmtry %%DATADIR%%/completions
-@dirrmtry %%DATADIR%%

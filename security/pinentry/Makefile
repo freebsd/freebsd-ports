@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
-PORTVERSION=	0.8.3
-PORTREVISION?=	3
+PORTVERSION=	0.9.0
+PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
 
@@ -17,7 +17,6 @@ CONFLICTS_INSTALL?=	pinentry-[a-z]*
 
 USES=		iconv gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-pinentry-qt
 INFO=		pinentry
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -25,13 +24,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(PINENTRY_SLAVE)
 OPTIONS_MULTI=	FRONTEND
-OPTIONS_MULTI_FRONTEND=	NCURSES GTK GTK2 QT4
+OPTIONS_MULTI_FRONTEND=	NCURSES GTK2 QT4
 OPTIONS_DEFAULT=	${OPTIONS_MULTI_FRONTEND}
 
 NCURSES_DESC=	Curses frontend
-GTK_DESC=	Gtk+ 1 frontend
 GTK2_DESC=	Gtk+ 2 frontend
 QT4_DESC=	Qt 4 frontend
+
+. if exists(/usr/lib/libc++.so)
+OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:NQT4}
+QT4_DESC=	Qt 4 frontend (broken)
+. endif
 .else
 PKGNAMESUFFIX=	${PINENTRY_SLAVE}
 .endif
@@ -39,21 +42,14 @@ PKGNAMESUFFIX=	${PINENTRY_SLAVE}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}
-USE_GCC=	any
+. if exists(/usr/lib/libc++.so)
+IGNORE=		with Qt 4 frontend does not compile with libc++
+. endif
 USE_QT4=	gui moc_build
 PLIST_SUB+=	WITH_QT4=""
-MOC4=		${LOCALBASE}/bin/moc-qt4
 .else
 CONFIGURE_ARGS+=--disable-pinentry-qt4
 PLIST_SUB+=	WITH_QT4="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGTK}
-USE_GNOME+=	gtk12
-PLIST_SUB+=	WITH_GTK=""
-.else
-CONFIGURE_ARGS+=--disable-pinentry-gtk
-PLIST_SUB+=	WITH_GTK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
@@ -75,8 +71,9 @@ PLIST_SUB+=	WITH_NCURSES="@comment "
 pre-configure:
 .if ${PORT_OPTIONS:MQT4}
 	cd ${WRKSRC}/qt4 && \
-		${MOC4} pinentrydialog.h > pinentrydialog.moc && \
-		${MOC4} qsecurelineedit.h > qsecurelineedit.moc
+		${MOC} pinentrydialog.h > pinentrydialog.moc && \
+		${MOC} qsecurelineedit.h > qsecurelineedit.moc && \
+		${MOC} pinentryconfirm.h > pinentryconfirm.moc
 .endif
 
 .include <bsd.port.mk>

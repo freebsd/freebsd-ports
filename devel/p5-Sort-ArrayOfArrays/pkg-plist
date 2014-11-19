@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Sort::ArrayOfArrays.3.gz
 %%SITE_PERL%%/Sort/ArrayOfArrays.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/ArrayOfArrays/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/ArrayOfArrays
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort
-@dirrmtry %%SITE_PERL%%/Sort

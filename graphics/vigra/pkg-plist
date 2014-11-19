@@ -199,13 +199,3 @@ lib/vigra/vigra-targets.cmake
 %%PORTDOCS%%%%DOCSDIR%%/vigra/index.html
 %%PORTDOCS%%%%DOCSDIR%%/vigra/vigra-icon.ico
 %%PORTDOCS%%%%DOCSDIR%%/vigra/vigra.css
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/vigra
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PYTHON%%@dirrmtry lib/vigranumpy
-@dirrmtry lib/vigra
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/vigra/pyqt
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/vigra
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-%%PYTHON%%@dirrmtry %%PYTHON_LIBDIR%%
-@dirrmtry include/vigra/random_forest
-@dirrmtry include/vigra

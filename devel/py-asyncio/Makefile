@@ -13,9 +13,8 @@ COMMENT=	Reference implementation of PEP 3156 (Asynchronous IO)
 
 LICENSE=	APACHE20
 
-USE_PYTHON=		3.3+
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:3.3+
+USE_PYTHON=	distutils autoplist
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} test

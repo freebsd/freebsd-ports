@@ -8,6 +8,3 @@ lib/retroshare/extensions/libFeedReader.so
 lib/retroshare/extensions/libFeedReader.so.1
 %%DATADIR%%/bdboot.txt
 %%DATADIR%%/retrosharelogo1.png
-@dirrm %%DATADIR%%
-@dirrm lib/retroshare/extensions
-@dirrm lib/retroshare

@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-shell-extra-extensions/Makefile 19880 2014-09-15 19:43:06Z kwm $
+#   $MCom: ports/trunk/deskutils/gnome-shell-extra-extensions/Makefile 19880 2014-09-15 19:43:06Z kwm $
 
 PORTNAME=	gnome-shell-extra-extensions
 PORTVERSION=	3.12.2

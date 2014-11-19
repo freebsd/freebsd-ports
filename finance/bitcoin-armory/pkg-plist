@@ -312,19 +312,3 @@ share/armory/img/visible.png
 share/armory/img/visible2.png
 share/armory/img/wallet_16x12.png
 share/armory/img/x-office-address-book.png
-@dirrmtry lib/armory/BitTornado/BT1
-@dirrmtry lib/armory/BitTornado
-@dirrmtry lib/armory/armoryengine
-@dirrmtry lib/armory/bitcoinrpc_jsonrpc
-@dirrmtry lib/armory/extras
-@dirrmtry lib/armory/pytest
-@dirrmtry lib/armory/txjsonrpc/web
-@dirrmtry lib/armory/txjsonrpc
-@dirrmtry lib/armory/ui
-@dirrmtry lib/armory/urllib3/contrib
-@dirrmtry lib/armory/urllib3/packages/ssl_match_hostname
-@dirrmtry lib/armory/urllib3/packages
-@dirrmtry lib/armory/urllib3
-@dirrmtry lib/armory
-@dirrmtry share/armory/img
-@dirrmtry share/armory

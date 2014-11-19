@@ -30,12 +30,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/v6/alpha/.packlist
 %%SITE_PERL%%/v6.pm
 %%SITE_PERL%%/v6/hello_world.pl
-@dirrmtry %%SITE_PERL%%/v6
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/v6/alpha
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/v6
-@dirrmtry %%SITE_PERL%%/Pugs/Runtime
-@dirrmtry %%SITE_PERL%%/Pugs/Grammar
-@dirrmtry %%SITE_PERL%%/Pugs/Emitter/Perl6
-@dirrmtry %%SITE_PERL%%/Pugs/Emitter
-@dirrmtry %%SITE_PERL%%/Pugs/Compiler
-@dirrmtry %%SITE_PERL%%/Pugs

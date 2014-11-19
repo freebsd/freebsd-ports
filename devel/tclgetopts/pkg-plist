@@ -3,4 +3,3 @@ lib/foxGetOpt/foxTypedOpts.tcl
 lib/foxGetOpt/foxGetOpt.tcl
 man/mann/getopt.n.gz
 man/mann/typedopts.n.gz
-@dirrm lib/foxGetOpt

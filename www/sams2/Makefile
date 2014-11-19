@@ -2,7 +2,7 @@
 
 PORTNAME=	sams2
 DISTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://sams.perm.ru/download/ http://razumit.ru/
 
@@ -12,7 +12,7 @@ COMMENT=	Squid Accounting Management System
 LICENSE=	BSD4CLAUSE
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/${_MYSQL_SERVER}
 
 USES=		gmake libtool tar:bzip2
 USE_AUTOTOOLS=	aclocal libtoolize
@@ -21,7 +21,7 @@ USE_PHP=	gd mysql zlib
 USE_MYSQL=	yes
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET= install-strip
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=--datarootdir=${WWWDIR:H}
 MAKE_ARGS+=	docdir=${DOCSDIR}
 

@@ -16,4 +16,3 @@ lib/libeblob_cpp.so.0.17.5
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/eblob.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/eblob.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/eblob-0.0.1-py%%PYTHON_VER%%.egg-info
-@dirrm include/eblob

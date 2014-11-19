@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.rocklinux.net/people/ripclaw/projects/software/chimera/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X/Athena-based World Wide Web client
 
+DEPRECATED=	Abandonware (last update in 1997), restrictive license
+EXPIRATION_DATE=	2014-11-24
+
 RUN_DEPENDS= 	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 NO_LATEST_LINK=	yes

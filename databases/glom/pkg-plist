@@ -317,35 +317,3 @@ share/omf/glom/glom-es.omf
 share/omf/glom/glom-fr.omf
 share/omf/glom/glom-sl.omf
 share/omf/glom/glom-sv.omf
-@dirrm share/omf/glom
-@dirrm share/gnome/help/glom/sv/figures
-@dirrm share/gnome/help/glom/sv
-@dirrm share/gnome/help/glom/sl/figures
-@dirrm share/gnome/help/glom/sl
-@dirrm share/gnome/help/glom/fr/figures
-@dirrm share/gnome/help/glom/fr
-@dirrm share/gnome/help/glom/es/figures
-@dirrm share/gnome/help/glom/es
-@dirrm share/gnome/help/glom/en_GB/figures
-@dirrm share/gnome/help/glom/en_GB
-@dirrm share/gnome/help/glom/de/figures
-@dirrm share/gnome/help/glom/de
-@dirrm share/gnome/help/glom/C/figures
-@dirrm share/gnome/help/glom/C
-@dirrm share/gnome/help/glom
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/xslt
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/glade/operator
-@dirrm %%DATADIR%%/glade/developer
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-@dirrm include/glom-%%VERSION%%/libglom/document/bakery/view
-@dirrm include/glom-%%VERSION%%/libglom/document/bakery
-@dirrm include/glom-%%VERSION%%/libglom/document
-@dirrm include/glom-%%VERSION%%/libglom/data_structure/layout/report_parts
-@dirrm include/glom-%%VERSION%%/libglom/data_structure/layout
-@dirrm include/glom-%%VERSION%%/libglom/data_structure
-@dirrm include/glom-%%VERSION%%/libglom
-@dirrm include/glom-%%VERSION%%

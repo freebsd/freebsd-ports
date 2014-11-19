@@ -6,7 +6,6 @@
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += aleefonts-ttf
-    SUBDIR += ami
     SUBDIR += baekmukfonts-bdf
     SUBDIR += baekmukfonts-ttf
     SUBDIR += engdic

@@ -1,6 +1,6 @@
 # Created by: Charlie & <root@ws.ipfw.ru>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/net-im/ekiga/Makefile 19954 2014-10-15 10:03:57Z kwm $
+#    $MCom: ports/trunk/net-im/ekiga/Makefile 19954 2014-10-15 10:03:57Z kwm $
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1

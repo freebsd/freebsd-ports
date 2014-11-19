@@ -22,8 +22,3 @@ GNUstep/Local/Library/Headers/HighlighterKit
 GNUstep/Local/Library/Libraries/libHighlighterKit.so
 GNUstep/Local/Library/Libraries/libHighlighterKit.so.%%MAJORLIBVERSION%%
 GNUstep/Local/Library/Libraries/libHighlighterKit.so.%%LIBVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions
-@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework

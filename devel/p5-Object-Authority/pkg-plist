@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Object::AUTHORITY.3.gz
 %%SITE_PERL%%/Object/AUTHORITY.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/AUTHORITY/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/AUTHORITY
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
-@dirrmtry %%SITE_PERL%%/Object

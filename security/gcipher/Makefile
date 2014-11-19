@@ -13,7 +13,7 @@ COMMENT=	Simple encryption tool
 LICENSE=	BSD
 
 USE_GNOME=	pygnome2
-USE_PYTHON=	yes
+USES=		python
 
 MAN1=		gcipher.1
 LICENSE_FILES=	${WRKSRC}/LICENSE

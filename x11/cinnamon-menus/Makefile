@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/cinnamon-menus/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/x11/cinnamon-menus/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	cinnamon-menus
 PORTVERSION=	2.2.0
@@ -13,23 +13,22 @@ COMMENT=	Additional UI API for cinnamon
 
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
-		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile \
-		libtoolize:${PORTSDIR}/devel/libtool
+		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 RUN_DEPENDS=	xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
 		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 
-USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
-USE_GNOME=	gnomehier gnomemenus3 gnomeprefix gtk30 intlhack \
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig \
+		python:2 tar:xz
+USE_GNOME=	gnomemenus3 gnomeprefix gtk30 intlhack \
 		introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
+	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

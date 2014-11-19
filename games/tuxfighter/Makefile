@@ -11,7 +11,7 @@ DISTFILES=	TuxFighter${DISTVERSION}.tar.gz \
 		${PORTNAME}_icons.tar.gz:icons
 DIST_SUBDIR=	python
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little Asteroids-like Shooter game
 
 LICENSE=	GPLv2
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}
 
-USE_PYTHON=	2
+USES=		python:2
 
 PORTDOCS=	readme_TuxFighter54.txt
 OPTIONS_DEFINE=	DOCS

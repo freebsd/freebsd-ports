@@ -1,6 +1,3 @@
 %%SITE_PERL%%/UUID/Random.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UUID/Random/.packlist
 %%PERL5_MAN3%%/UUID::Random.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UUID/Random
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UUID
-@dirrmtry %%SITE_PERL%%/UUID

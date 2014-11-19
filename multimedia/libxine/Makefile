@@ -156,7 +156,7 @@ CONFIGURE_ARGS+=	--disable-aalib --disable-aalibtest
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "

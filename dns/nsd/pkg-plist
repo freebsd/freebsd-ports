@@ -13,6 +13,3 @@ sbin/nsd-control-setup
 @exec install -o %%NSDUSER%% -g %%NSDGROUP%% -m 0755 -d %%NSDDBDIR%%
 @exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDRUNDIR%%
 @exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDDBDIR%%
-@dirrmtry %%ETCDIR%%
-@dirrmtry %%NSDRUNDIR%%
-@dirrmtry %%NSDDBDIR%%

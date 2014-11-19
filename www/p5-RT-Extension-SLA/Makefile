@@ -21,6 +21,7 @@ NO_ARCH=	yes
 
 USES+=		perl5
 USE_PERL5=	configure
+NEED_ROOT=	yes
 
 OPTIONS_SINGLE=                 RTVERSION
 OPTIONS_SINGLE_RTVERSION=       RT38 RT40 RT42

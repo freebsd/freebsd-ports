@@ -22,6 +22,3 @@
 %%SITE_PERL%%/DateTime/Format/Epoch/TAI64.pm
 %%SITE_PERL%%/DateTime/Format/Epoch/TJD.pm
 %%SITE_PERL%%/DateTime/Format/Epoch/Unix.pm
-@dirrm %%SITE_PERL%%/DateTime/Format/Epoch
-@dirrmtry %%SITE_PERL%%/DateTime/Format
-@dirrmtry %%SITE_PERL%%/DateTime

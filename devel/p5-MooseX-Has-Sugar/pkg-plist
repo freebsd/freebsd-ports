@@ -5,9 +5,3 @@
 %%PERL5_MAN3%%/MooseX::Has::Sugar.3.gz
 %%PERL5_MAN3%%/MooseX::Has::Sugar::Minimal.3.gz
 %%PERL5_MAN3%%/MooseX::Has::Sugar::Saccharin.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has/Sugar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Has/Sugar
-@dirrmtry %%SITE_PERL%%/MooseX/Has
-@dirrmtry %%SITE_PERL%%/MooseX

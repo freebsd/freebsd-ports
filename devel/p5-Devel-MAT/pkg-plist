@@ -64,13 +64,3 @@ bin/pmat-sizes
 %%PERL5_MAN3%%/Devel::MAT::Tool::Reachability.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Sizes.3.gz
 %%PERL5_MAN3%%/Devel::MAT::UI.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/Dumper
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Tool
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

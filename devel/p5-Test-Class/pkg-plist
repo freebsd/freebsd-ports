@@ -4,5 +4,3 @@
 %%SITE_PERL%%/Test/Class.pm
 %%SITE_PERL%%/Test/Class/Load.pm
 %%SITE_PERL%%/Test/Class/MethodInfo.pm
-@dirrmtry %%SITE_PERL%%/Test/Class
-@dirrmtry %%SITE_PERL%%/Test

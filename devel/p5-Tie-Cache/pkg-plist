@@ -2,6 +2,3 @@
 %%SITE_PERL%%/Tie/Cache.pm
 %%SITE_PERL%%/Tie/tie-cache-bench.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Cache/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Cache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrmtry %%SITE_PERL%%/Tie

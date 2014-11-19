@@ -607,36 +607,3 @@ man/man1/illegal2vrml.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/x3dDraft/LinePropertiesPROTO.wrl
 %%PORTDOCS%%%%DOCSDIR%%/x3dDraft/LoadSensorPROTO.wrl
 %%PORTDOCS%%%%DOCSDIR%%/x3dDraft/MultiTexturePROTO.wrl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/x3dDraft
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/x3d
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/wonderland_module_export
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/vrml97Amendment1
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/usage_docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/typical_vrml_examples/xj3d_RigidBodyPhysics
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/typical_vrml_examples/ecmascript
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/typical_vrml_examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/scripted_Nodes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/scriptedNodes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rendering_bugs/textures
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rendering_bugs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hanim_history
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fieldpipe_examples/C_example
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fieldpipe_examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/export_example_java/jme/classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/export_example_java/jme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/export_example_java/classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/export_example_java
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/export_example_c/libCRWD
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/export_example_c++/libC++RWD
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/export_example_c++
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/export_example_c
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/exportContainers
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/developer_docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/coverNodes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/commandline_examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/VRML97protos_examples/PseudoCollision4ExaminePROTO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/VRML97protos_examples/ParticleSourcePROTO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/VRML97protos_examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/export_example_java/jme/classes
-%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/export_example_java/classes

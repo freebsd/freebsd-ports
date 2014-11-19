@@ -110,24 +110,3 @@ share/xfce4/doc/fr/images/xfprint_prettyprinting.png
 share/xfce4/doc/fr/images/xfprint_sheets.png
 share/xfce4/doc/fr/images/xfprint_virtualpages.png
 share/xfce4/doc/fr/xfprint.html
-@dirrm include/xfce4/libxfprint
-@dirrmtry include/xfce4
-@dirrmtry lib/xfce4/xfprint-plugins
-@dirrmtry lib/xfce4
-@dirrm share/gtk-doc/html/libxfprint
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/xfce4/doc/C/images
-@dirrmtry share/xfce4/doc/C
-@dirrmtry share/xfce4/doc/fr/images
-@dirrmtry share/xfce4/doc/fr
-@dirrmtry share/xfce4/doc
-@dirrmtry share/xfce4

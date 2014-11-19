@@ -1,9 +1,10 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports-experimental/trunk/graphics/cogl/Makefile 19235 2014-03-23 07:26:21Z kwm $
+#  $MCom: ports/trunk/graphics/cogl/Makefile 20024 2014-10-27 12:59:06Z gusi $
 
 PORTNAME=	cogl
 PORTVERSION=	1.18.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -18,10 +19,11 @@ CONFLICTS=	clutter-1.6.[0-9]*
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	gdkpixbuf2 gnomeprefix atk pango introspection:build
-USE_GL=		gl
+USE_GL=		gl egl
 USE_XORG=	x11 xfixes xdamage xcomposite xi xrandr
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-x
+CONFIGURE_ARGS=	--with-x \
+		 --enable-xlib-egl-platform=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip

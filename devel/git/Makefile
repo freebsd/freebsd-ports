@@ -65,7 +65,7 @@ ALL_TARGET=	all strip
 .endif
 
 .if ${PORT_OPTIONS:MP4} || ${PORT_OPTIONS:MCONTRIB}
-USE_PYTHON=	yes
+USES+=		python
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} PYTHON=""
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 .else

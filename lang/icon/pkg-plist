@@ -830,7 +830,3 @@ man/man1/icont.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/relnotes.htm
 %%PORTDOCS%%%%DOCSDIR%%/shortcut.gif
 %%PORTDOCS%%%%DOCSDIR%%/wwwcube.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/icon/lib
-@dirrm lib/icon/bin
-@dirrm lib/icon

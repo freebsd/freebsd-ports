@@ -25,6 +25,8 @@ PLIST_SUB=	LOGDIR=${LOGDIR}
 USERS=	bopm
 GROUPS=	bopm
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,/some/path/bopm.pid,/var/run/bopm.pid,g' \

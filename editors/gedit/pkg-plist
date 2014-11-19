@@ -6,7 +6,6 @@ include/gedit-%%VERSION%%/gedit/gedit-commands.h
 include/gedit-%%VERSION%%/gedit/gedit-debug.h
 include/gedit-%%VERSION%%/gedit/gedit-document.h
 include/gedit-%%VERSION%%/gedit/gedit-encodings-combo-box.h
-include/gedit-%%VERSION%%/gedit/gedit-encodings.h
 include/gedit-%%VERSION%%/gedit/gedit-menu-extension.h
 include/gedit-%%VERSION%%/gedit/gedit-message-bus.h
 include/gedit-%%VERSION%%/gedit/gedit-message.h
@@ -145,8 +144,8 @@ libdata/pkgconfig/gedit.pc
 libexec/gedit/gedit-bugreport.sh
 man/man1/gedit.1.gz
 share/GConf/gsettings/gedit.convert
-share/appdata/gedit.appdata.xml
-share/applications/gedit.desktop
+share/appdata/org.gnome.gedit.appdata.xml
+share/applications/org.gnome.gedit.desktop
 share/dbus-1/services/org.gnome.gedit.service
 %%DOCSDIR%%/GeditAppActivatable.html
 %%DOCSDIR%%/GeditMessage.html
@@ -155,12 +154,14 @@ share/dbus-1/services/org.gnome.gedit.service
 %%DOCSDIR%%/GeditWindowActivatable.html
 %%DOCSDIR%%/annotation-glossary.html
 %%DOCSDIR%%/api-index-full.html
+%%DOCSDIR%%/api-index-3-14.html
+%%DOCSDIR%%/api-index-deprecated.html
 %%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/gedit-GeditCommands.html
 %%DOCSDIR%%/gedit-gedit-app.html
 %%DOCSDIR%%/gedit-gedit-debug.html
 %%DOCSDIR%%/gedit-gedit-document.html
 %%DOCSDIR%%/gedit-gedit-encodings-combo-box.html
-%%DOCSDIR%%/gedit-gedit-encodings.html
 %%DOCSDIR%%/gedit-gedit-menu-extension.html
 %%DOCSDIR%%/gedit-gedit-progress-info-bar.html
 %%DOCSDIR%%/gedit-gedit-statusbar.html
@@ -182,6 +183,11 @@ share/dbus-1/services/org.gnome.gedit.service
 %%DOCSDIR%%/up.png
 %%DATADIR%%/gir-1.0/Gedit-3.0.gir
 %%DATADIR%%/logo/gedit-logo.png
+%%DATADIR%%/plugins/externaltools/tools/build
+%%DATADIR%%/plugins/externaltools/tools/open-terminal-here
+%%DATADIR%%/plugins/externaltools/tools/remove-trailing-spaces
+%%DATADIR%%/plugins/externaltools/tools/run-command
+%%DATADIR%%/plugins/externaltools/tools/send-to-fpaste
 %%DATADIR%%/plugins/externaltools/ui/outputpanel.ui
 %%DATADIR%%/plugins/externaltools/ui/tools.ui
 %%DATADIR%%/plugins/modelines/language-mappings
@@ -235,7 +241,6 @@ share/help/C/gedit/gedit-plugins-pyconsole.page
 share/help/C/gedit/gedit-plugins-quick-open.page
 share/help/C/gedit/gedit-plugins-snippets.page
 share/help/C/gedit/gedit-plugins-sort.page
-share/help/C/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/C/gedit/gedit-printing-order.page
 share/help/C/gedit/gedit-printing-select.page
 share/help/C/gedit/gedit-printing.page
@@ -284,7 +289,6 @@ share/help/ar/gedit/gedit-plugins-pyconsole.page
 share/help/ar/gedit/gedit-plugins-quick-open.page
 share/help/ar/gedit/gedit-plugins-snippets.page
 share/help/ar/gedit/gedit-plugins-sort.page
-share/help/ar/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/ar/gedit/gedit-printing-order.page
 share/help/ar/gedit/gedit-printing-select.page
 share/help/ar/gedit/gedit-printing.page
@@ -333,7 +337,6 @@ share/help/bg/gedit/gedit-plugins-pyconsole.page
 share/help/bg/gedit/gedit-plugins-quick-open.page
 share/help/bg/gedit/gedit-plugins-snippets.page
 share/help/bg/gedit/gedit-plugins-sort.page
-share/help/bg/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/bg/gedit/gedit-printing-order.page
 share/help/bg/gedit/gedit-printing-select.page
 share/help/bg/gedit/gedit-printing.page
@@ -382,7 +385,6 @@ share/help/ca/gedit/gedit-plugins-pyconsole.page
 share/help/ca/gedit/gedit-plugins-quick-open.page
 share/help/ca/gedit/gedit-plugins-snippets.page
 share/help/ca/gedit/gedit-plugins-sort.page
-share/help/ca/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/ca/gedit/gedit-printing-order.page
 share/help/ca/gedit/gedit-printing-select.page
 share/help/ca/gedit/gedit-printing.page
@@ -431,7 +433,6 @@ share/help/cs/gedit/gedit-plugins-pyconsole.page
 share/help/cs/gedit/gedit-plugins-quick-open.page
 share/help/cs/gedit/gedit-plugins-snippets.page
 share/help/cs/gedit/gedit-plugins-sort.page
-share/help/cs/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/cs/gedit/gedit-printing-order.page
 share/help/cs/gedit/gedit-printing-select.page
 share/help/cs/gedit/gedit-printing.page
@@ -480,7 +481,6 @@ share/help/da/gedit/gedit-plugins-pyconsole.page
 share/help/da/gedit/gedit-plugins-quick-open.page
 share/help/da/gedit/gedit-plugins-snippets.page
 share/help/da/gedit/gedit-plugins-sort.page
-share/help/da/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/da/gedit/gedit-printing-order.page
 share/help/da/gedit/gedit-printing-select.page
 share/help/da/gedit/gedit-printing.page
@@ -529,7 +529,6 @@ share/help/de/gedit/gedit-plugins-pyconsole.page
 share/help/de/gedit/gedit-plugins-quick-open.page
 share/help/de/gedit/gedit-plugins-snippets.page
 share/help/de/gedit/gedit-plugins-sort.page
-share/help/de/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/de/gedit/gedit-printing-order.page
 share/help/de/gedit/gedit-printing-select.page
 share/help/de/gedit/gedit-printing.page
@@ -578,7 +577,6 @@ share/help/el/gedit/gedit-plugins-pyconsole.page
 share/help/el/gedit/gedit-plugins-quick-open.page
 share/help/el/gedit/gedit-plugins-snippets.page
 share/help/el/gedit/gedit-plugins-sort.page
-share/help/el/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/el/gedit/gedit-printing-order.page
 share/help/el/gedit/gedit-printing-select.page
 share/help/el/gedit/gedit-printing.page
@@ -627,7 +625,6 @@ share/help/es/gedit/gedit-plugins-pyconsole.page
 share/help/es/gedit/gedit-plugins-quick-open.page
 share/help/es/gedit/gedit-plugins-snippets.page
 share/help/es/gedit/gedit-plugins-sort.page
-share/help/es/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/es/gedit/gedit-printing-order.page
 share/help/es/gedit/gedit-printing-select.page
 share/help/es/gedit/gedit-printing.page
@@ -676,7 +673,6 @@ share/help/eu/gedit/gedit-plugins-pyconsole.page
 share/help/eu/gedit/gedit-plugins-quick-open.page
 share/help/eu/gedit/gedit-plugins-snippets.page
 share/help/eu/gedit/gedit-plugins-sort.page
-share/help/eu/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/eu/gedit/gedit-printing-order.page
 share/help/eu/gedit/gedit-printing-select.page
 share/help/eu/gedit/gedit-printing.page
@@ -725,7 +721,6 @@ share/help/fi/gedit/gedit-plugins-pyconsole.page
 share/help/fi/gedit/gedit-plugins-quick-open.page
 share/help/fi/gedit/gedit-plugins-snippets.page
 share/help/fi/gedit/gedit-plugins-sort.page
-share/help/fi/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/fi/gedit/gedit-printing-order.page
 share/help/fi/gedit/gedit-printing-select.page
 share/help/fi/gedit/gedit-printing.page
@@ -774,7 +769,6 @@ share/help/fr/gedit/gedit-plugins-pyconsole.page
 share/help/fr/gedit/gedit-plugins-quick-open.page
 share/help/fr/gedit/gedit-plugins-snippets.page
 share/help/fr/gedit/gedit-plugins-sort.page
-share/help/fr/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/fr/gedit/gedit-printing-order.page
 share/help/fr/gedit/gedit-printing-select.page
 share/help/fr/gedit/gedit-printing.page
@@ -823,7 +817,6 @@ share/help/gl/gedit/gedit-plugins-pyconsole.page
 share/help/gl/gedit/gedit-plugins-quick-open.page
 share/help/gl/gedit/gedit-plugins-snippets.page
 share/help/gl/gedit/gedit-plugins-sort.page
-share/help/gl/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/gl/gedit/gedit-printing-order.page
 share/help/gl/gedit/gedit-printing-select.page
 share/help/gl/gedit/gedit-printing.page
@@ -872,7 +865,6 @@ share/help/hu/gedit/gedit-plugins-pyconsole.page
 share/help/hu/gedit/gedit-plugins-quick-open.page
 share/help/hu/gedit/gedit-plugins-snippets.page
 share/help/hu/gedit/gedit-plugins-sort.page
-share/help/hu/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/hu/gedit/gedit-printing-order.page
 share/help/hu/gedit/gedit-printing-select.page
 share/help/hu/gedit/gedit-printing.page
@@ -921,7 +913,6 @@ share/help/id/gedit/gedit-plugins-pyconsole.page
 share/help/id/gedit/gedit-plugins-quick-open.page
 share/help/id/gedit/gedit-plugins-snippets.page
 share/help/id/gedit/gedit-plugins-sort.page
-share/help/id/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/id/gedit/gedit-printing-order.page
 share/help/id/gedit/gedit-printing-select.page
 share/help/id/gedit/gedit-printing.page
@@ -970,7 +961,6 @@ share/help/it/gedit/gedit-plugins-pyconsole.page
 share/help/it/gedit/gedit-plugins-quick-open.page
 share/help/it/gedit/gedit-plugins-snippets.page
 share/help/it/gedit/gedit-plugins-sort.page
-share/help/it/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/it/gedit/gedit-printing-order.page
 share/help/it/gedit/gedit-printing-select.page
 share/help/it/gedit/gedit-printing.page
@@ -1019,7 +1009,6 @@ share/help/ja/gedit/gedit-plugins-pyconsole.page
 share/help/ja/gedit/gedit-plugins-quick-open.page
 share/help/ja/gedit/gedit-plugins-snippets.page
 share/help/ja/gedit/gedit-plugins-sort.page
-share/help/ja/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/ja/gedit/gedit-printing-order.page
 share/help/ja/gedit/gedit-printing-select.page
 share/help/ja/gedit/gedit-printing.page
@@ -1068,7 +1057,6 @@ share/help/ko/gedit/gedit-plugins-pyconsole.page
 share/help/ko/gedit/gedit-plugins-quick-open.page
 share/help/ko/gedit/gedit-plugins-snippets.page
 share/help/ko/gedit/gedit-plugins-sort.page
-share/help/ko/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/ko/gedit/gedit-printing-order.page
 share/help/ko/gedit/gedit-printing-select.page
 share/help/ko/gedit/gedit-printing.page
@@ -1117,7 +1105,6 @@ share/help/lv/gedit/gedit-plugins-pyconsole.page
 share/help/lv/gedit/gedit-plugins-quick-open.page
 share/help/lv/gedit/gedit-plugins-snippets.page
 share/help/lv/gedit/gedit-plugins-sort.page
-share/help/lv/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/lv/gedit/gedit-printing-order.page
 share/help/lv/gedit/gedit-printing-select.page
 share/help/lv/gedit/gedit-printing.page
@@ -1166,7 +1153,6 @@ share/help/oc/gedit/gedit-plugins-pyconsole.page
 share/help/oc/gedit/gedit-plugins-quick-open.page
 share/help/oc/gedit/gedit-plugins-snippets.page
 share/help/oc/gedit/gedit-plugins-sort.page
-share/help/oc/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/oc/gedit/gedit-printing-order.page
 share/help/oc/gedit/gedit-printing-select.page
 share/help/oc/gedit/gedit-printing.page
@@ -1215,7 +1201,6 @@ share/help/pt_BR/gedit/gedit-plugins-pyconsole.page
 share/help/pt_BR/gedit/gedit-plugins-quick-open.page
 share/help/pt_BR/gedit/gedit-plugins-snippets.page
 share/help/pt_BR/gedit/gedit-plugins-sort.page
-share/help/pt_BR/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/pt_BR/gedit/gedit-printing-order.page
 share/help/pt_BR/gedit/gedit-printing-select.page
 share/help/pt_BR/gedit/gedit-printing.page
@@ -1264,7 +1249,6 @@ share/help/ru/gedit/gedit-plugins-pyconsole.page
 share/help/ru/gedit/gedit-plugins-quick-open.page
 share/help/ru/gedit/gedit-plugins-snippets.page
 share/help/ru/gedit/gedit-plugins-sort.page
-share/help/ru/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/ru/gedit/gedit-printing-order.page
 share/help/ru/gedit/gedit-printing-select.page
 share/help/ru/gedit/gedit-printing.page
@@ -1313,7 +1297,6 @@ share/help/sl/gedit/gedit-plugins-pyconsole.page
 share/help/sl/gedit/gedit-plugins-quick-open.page
 share/help/sl/gedit/gedit-plugins-snippets.page
 share/help/sl/gedit/gedit-plugins-sort.page
-share/help/sl/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/sl/gedit/gedit-printing-order.page
 share/help/sl/gedit/gedit-printing-select.page
 share/help/sl/gedit/gedit-printing.page
@@ -1362,7 +1345,6 @@ share/help/sv/gedit/gedit-plugins-pyconsole.page
 share/help/sv/gedit/gedit-plugins-quick-open.page
 share/help/sv/gedit/gedit-plugins-snippets.page
 share/help/sv/gedit/gedit-plugins-sort.page
-share/help/sv/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/sv/gedit/gedit-printing-order.page
 share/help/sv/gedit/gedit-printing-select.page
 share/help/sv/gedit/gedit-printing.page
@@ -1411,7 +1393,6 @@ share/help/te/gedit/gedit-plugins-pyconsole.page
 share/help/te/gedit/gedit-plugins-quick-open.page
 share/help/te/gedit/gedit-plugins-snippets.page
 share/help/te/gedit/gedit-plugins-sort.page
-share/help/te/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/te/gedit/gedit-printing-order.page
 share/help/te/gedit/gedit-printing-select.page
 share/help/te/gedit/gedit-printing.page
@@ -1460,7 +1441,6 @@ share/help/th/gedit/gedit-plugins-pyconsole.page
 share/help/th/gedit/gedit-plugins-quick-open.page
 share/help/th/gedit/gedit-plugins-snippets.page
 share/help/th/gedit/gedit-plugins-sort.page
-share/help/th/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/th/gedit/gedit-printing-order.page
 share/help/th/gedit/gedit-printing-select.page
 share/help/th/gedit/gedit-printing.page
@@ -1509,7 +1489,6 @@ share/help/uk/gedit/gedit-plugins-pyconsole.page
 share/help/uk/gedit/gedit-plugins-quick-open.page
 share/help/uk/gedit/gedit-plugins-snippets.page
 share/help/uk/gedit/gedit-plugins-sort.page
-share/help/uk/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/uk/gedit/gedit-printing-order.page
 share/help/uk/gedit/gedit-printing-select.page
 share/help/uk/gedit/gedit-printing.page
@@ -1558,7 +1537,6 @@ share/help/zh_CN/gedit/gedit-plugins-pyconsole.page
 share/help/zh_CN/gedit/gedit-plugins-quick-open.page
 share/help/zh_CN/gedit/gedit-plugins-snippets.page
 share/help/zh_CN/gedit/gedit-plugins-sort.page
-share/help/zh_CN/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/zh_CN/gedit/gedit-printing-order.page
 share/help/zh_CN/gedit/gedit-printing-select.page
 share/help/zh_CN/gedit/gedit-printing.page
@@ -1607,7 +1585,6 @@ share/help/zh_HK/gedit/gedit-plugins-pyconsole.page
 share/help/zh_HK/gedit/gedit-plugins-quick-open.page
 share/help/zh_HK/gedit/gedit-plugins-snippets.page
 share/help/zh_HK/gedit/gedit-plugins-sort.page
-share/help/zh_HK/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/zh_HK/gedit/gedit-printing-order.page
 share/help/zh_HK/gedit/gedit-printing-select.page
 share/help/zh_HK/gedit/gedit-printing.page
@@ -1656,7 +1633,6 @@ share/help/zh_TW/gedit/gedit-plugins-pyconsole.page
 share/help/zh_TW/gedit/gedit-plugins-quick-open.page
 share/help/zh_TW/gedit/gedit-plugins-snippets.page
 share/help/zh_TW/gedit/gedit-plugins-sort.page
-share/help/zh_TW/gedit/gedit-plugins-zeitgeist-dataprovider.page
 share/help/zh_TW/gedit/gedit-printing-order.page
 share/help/zh_TW/gedit/gedit-printing-select.page
 share/help/zh_TW/gedit/gedit-printing.page
@@ -1782,124 +1758,3 @@ share/locale/xh/LC_MESSAGES/gedit.mo
 share/locale/zh_CN/LC_MESSAGES/gedit.mo
 share/locale/zh_HK/LC_MESSAGES/gedit.mo
 share/locale/zh_TW/LC_MESSAGES/gedit.mo
-@dirrm share/locale/la/LC_MESSAGES
-@dirrm share/locale/la
-@dirrm share/help/zh_TW/gedit/figures
-@dirrm share/help/zh_TW/gedit
-@dirrmtry share/help/zh_TW
-@dirrm share/help/zh_HK/gedit/figures
-@dirrm share/help/zh_HK/gedit
-@dirrmtry share/help/zh_HK
-@dirrm share/help/zh_CN/gedit/figures
-@dirrm share/help/zh_CN/gedit
-@dirrmtry share/help/zh_CN
-@dirrm share/help/uk/gedit/figures
-@dirrm share/help/uk/gedit
-@dirrmtry share/help/uk
-@dirrm share/help/th/gedit/figures
-@dirrm share/help/th/gedit
-@dirrmtry share/help/th
-@dirrm share/help/te/gedit/figures
-@dirrm share/help/te/gedit
-@dirrmtry share/help/te
-@dirrm share/help/sv/gedit/figures
-@dirrm share/help/sv/gedit
-@dirrmtry share/help/sv
-@dirrm share/help/sl/gedit/figures
-@dirrm share/help/sl/gedit
-@dirrmtry share/help/sl
-@dirrm share/help/ru/gedit/figures
-@dirrm share/help/ru/gedit
-@dirrmtry share/help/ru
-@dirrm share/help/pt_BR/gedit/figures
-@dirrm share/help/pt_BR/gedit
-@dirrmtry share/help/pt_BR
-@dirrm share/help/oc/gedit/figures
-@dirrm share/help/oc/gedit
-@dirrmtry share/help/oc
-@dirrm share/help/lv/gedit/figures
-@dirrm share/help/lv/gedit
-@dirrmtry share/help/lv
-@dirrm share/help/ko/gedit/figures
-@dirrm share/help/ko/gedit
-@dirrmtry share/help/ko
-@dirrm share/help/ja/gedit/figures
-@dirrm share/help/ja/gedit
-@dirrmtry share/help/ja
-@dirrm share/help/it/gedit/figures
-@dirrm share/help/it/gedit
-@dirrmtry share/help/it
-@dirrm share/help/id/gedit/figures
-@dirrm share/help/id/gedit
-@dirrmtry share/help/id
-@dirrm share/help/hu/gedit/figures
-@dirrm share/help/hu/gedit
-@dirrmtry share/help/hu
-@dirrm share/help/gl/gedit/figures
-@dirrm share/help/gl/gedit
-@dirrmtry share/help/gl
-@dirrm share/help/fr/gedit/figures
-@dirrm share/help/fr/gedit
-@dirrmtry share/help/fr
-@dirrm share/help/fi/gedit/figures
-@dirrm share/help/fi/gedit
-@dirrmtry share/help/fi
-@dirrm share/help/eu/gedit/figures
-@dirrm share/help/eu/gedit
-@dirrmtry share/help/eu
-@dirrm share/help/es/gedit/figures
-@dirrm share/help/es/gedit
-@dirrmtry share/help/es
-@dirrm share/help/el/gedit/figures
-@dirrm share/help/el/gedit
-@dirrmtry share/help/el
-@dirrm share/help/de/gedit/figures
-@dirrm share/help/de/gedit
-@dirrmtry share/help/de
-@dirrm share/help/da/gedit/figures
-@dirrm share/help/da/gedit
-@dirrmtry share/help/da
-@dirrm share/help/cs/gedit/figures
-@dirrm share/help/cs/gedit
-@dirrmtry share/help/cs
-@dirrm share/help/ca/gedit/figures
-@dirrm share/help/ca/gedit
-@dirrmtry share/help/ca
-@dirrm share/help/bg/gedit/figures
-@dirrm share/help/bg/gedit
-@dirrmtry share/help/bg
-@dirrm share/help/ar/gedit/figures
-@dirrm share/help/ar/gedit
-@dirrmtry share/help/ar
-@dirrm share/help/C/gedit/figures
-@dirrm share/help/C/gedit
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm %%DATADIR%%/plugins/snippets/ui
-@dirrm %%DATADIR%%/plugins/snippets/lang
-@dirrm %%DATADIR%%/plugins/snippets
-@dirrm %%DATADIR%%/plugins/pythonconsole/ui
-@dirrm %%DATADIR%%/plugins/pythonconsole
-@dirrm %%DATADIR%%/plugins/modelines
-@dirrm %%DATADIR%%/plugins/externaltools/ui
-@dirrm %%DATADIR%%/plugins/externaltools
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/logo
-@dirrm %%DATADIR%%/gir-1.0
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
-@dirrmtry share/appdata
-@dirrm libexec/gedit
-@dirrm lib/gedit/plugins/snippets/__pycache__
-@dirrm lib/gedit/plugins/snippets
-@dirrm lib/gedit/plugins/quickopen/__pycache__
-@dirrm lib/gedit/plugins/quickopen
-@dirrm lib/gedit/plugins/pythonconsole/__pycache__
-@dirrm lib/gedit/plugins/pythonconsole
-@dirrm lib/gedit/plugins/externaltools/__pycache__
-@dirrm lib/gedit/plugins/externaltools
-@dirrm lib/gedit/plugins
-@dirrm lib/gedit/girepository-1.0
-@dirrm lib/gedit
-@dirrm include/gedit-%%VERSION%%/gedit
-@dirrm include/gedit-%%VERSION%%

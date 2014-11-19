@@ -19,8 +19,7 @@ RUN_DEPENDS=	trytond28>=2.8.2:${PORTSDIR}/finance/trytond28 \
 
 CONFLICTS=	trytond_ldap_connection-2.[46].*
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

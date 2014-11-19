@@ -4,5 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/true/VERSION.pm
 %%PERL5_MAN3%%/true.3.gz
 %%PERL5_MAN3%%/true::VERSION.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/true
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/true

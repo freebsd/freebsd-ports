@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.4.1
-PORTREVISION=	12
+PORTREVISION=	14
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 PKGNAMESUFFIX=	5
@@ -317,7 +317,7 @@ PLIST_SUB+=	PING="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} --enable-python
 PLIST_SUB+=	PYTHON=""
 .else

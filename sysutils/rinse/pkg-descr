@@ -1,0 +1,13 @@
+Rinse is a simple tool which is designed to carry out the installation
+of a new RPM-based distribution.
+
+Using rinse you can easily setup simple chroot() systems running
+different RPM-based distributions, such as Centos, Scientific Linux or
+openSUSE.
+
+The purpose and usage are analogous to the 'debootstrap' utility
+familiar to users of Debian GNU/Linux. It was primarily designed to
+work with the xen-tools software, which creates new guest images for
+running inder the Xen hypervisor.
+
+WWW: http://collab-maint.alioth.debian.org/rinse/

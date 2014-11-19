@@ -15,5 +15,3 @@ lib/libwfut-0.2.so.1
 lib/libwfut-0.2.so.1.1.1
 libdata/pkgconfig/libwfut-0.2.pc
 man/man1/wfut.1.gz
-@dirrm include/libwfut-0.2/libwfut
-@dirrm include/libwfut-0.2

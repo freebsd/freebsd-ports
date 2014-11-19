@@ -80,5 +80,3 @@ include/luabind/wrapper_base.hpp
 include/luabind/yield_policy.hpp
 lib/libluabind.a
 lib/libluabind.so
-@dirrm include/luabind/detail
-@dirrm include/luabind

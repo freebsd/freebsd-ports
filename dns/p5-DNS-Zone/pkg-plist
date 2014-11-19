@@ -5,8 +5,3 @@
 %%SITE_PERL%%/DNS/Zone/Record.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS-Zone/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS-Zone
-@dirrmtry %%SITE_PERL%%/DNS/Zone/File
-@dirrmtry %%SITE_PERL%%/DNS/Zone
-@dirrmtry %%SITE_PERL%%/DNS

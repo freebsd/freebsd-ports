@@ -7,7 +7,3 @@
 %%PERL5_MAN3%%/Data::Average::BoundedExpires.3.gz
 %%PERL5_MAN3%%/Data::Average::Expires.3.gz
 %%PERL5_MAN3%%/Data::Average.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Average
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/Average
-@dirrmtry %%SITE_PERL%%/Data

@@ -3,6 +3,7 @@
 
 PORTNAME=	vsftpd-ext
 PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://vsftpd.devnet.ru/files/${UPSTREAMVERSION}/ext.${EXTVERSION}/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
@@ -17,7 +18,7 @@ LICENSE=	GPLv2
 UPSTREAMVERSION=3.0.2
 EXTVERSION=	1
 
-USES+=		gmake
+USES=		alias gmake
 WRKSRC=		${WRKDIR}/vsFTPd-${UPSTREAMVERSION}-ext.${EXTVERSION}
 ALL_TARGET=	vsftpd
 
@@ -38,7 +39,7 @@ CONFLICTS=	vsftpd-3* vsftpd${SSL_SUFFIX}${PKGNAMESUFFIX2}-3*
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 902001
 BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
 CC=		clang33
 .endif

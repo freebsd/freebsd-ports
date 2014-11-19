@@ -12,9 +12,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@grosbein.net
 COMMENT=	Basic building blocks for python applications
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=python_${PORTNAME}
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

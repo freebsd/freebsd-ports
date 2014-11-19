@@ -56,7 +56,6 @@ include/ptclib/xmpp.h
 include/ptclib/xmpp_c2s.h
 include/ptclib/xmpp_muc.h
 include/ptclib/xmpp_roster.h
-@dirrm include/ptclib
 include/ptlib.h
 include/ptlib/MacMainIf.h
 include/ptlib/args.h
@@ -156,13 +155,10 @@ include/ptlib/unix/ptlib/timer.h
 include/ptlib/unix/ptlib/udpsock.h
 include/ptlib/unix/ptlib/video.h
 include/ptlib/unix/ptlib/videoio.h
-@dirrm include/ptlib/unix/ptlib
-@dirrm include/ptlib/unix
 include/ptlib/vconvert.h
 include/ptlib/video.h
 include/ptlib/videoio.h
 include/ptlib/videoio1394dc.h
-@dirrm include/ptlib
 lib/libpt.so
 lib/libpt_r.so
 lib/libpt_r.so.1
@@ -172,10 +168,6 @@ lib/pwlib/devices/sound/oss_pwplugin.so
 %%BSDVIDEO%%lib/pwlib/devices/videoinput/bsdvideo_pwplugin.so
 %%DC1394%%lib/pwlib/devices/videoinput/dc_pwplugin.so
 %%V4L%%lib/pwlib/devices/videoinput/v4l_pwplugin.so
-@dirrm lib/pwlib/devices/sound
-@dirrm lib/pwlib/devices/videoinput
-@dirrm lib/pwlib/devices
-@dirrmtry lib/pwlib
 %%DATADIR%%/make/common.mak
 %%DATADIR%%/make/lib.mak
 %%DATADIR%%/make/plugins.mak
@@ -184,5 +176,3 @@ lib/pwlib/devices/sound/oss_pwplugin.so
 %%DATADIR%%/make/ptlib.mak
 %%DATADIR%%/make/unix.mak
 %%DATADIR%%/version.h
-@dirrm %%DATADIR%%/make
-@dirrm %%DATADIR%%

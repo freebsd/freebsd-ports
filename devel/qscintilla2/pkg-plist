@@ -66,12 +66,3 @@ share/qt4/qsci/api/python/Python-3.4.api
 %%NLS%%share/qt4/translations/qscintilla_es.qm
 %%NLS%%share/qt4/translations/qscintilla_fr.qm
 %%NLS%%share/qt4/translations/qscintilla_pt_br.qm
-%%NLS%%@dirrmtry share/qt4/translations
-@dirrmtry share/qt4/qsci/api/python
-@dirrmtry share/qt4/qsci/api
-@dirrmtry share/qt4/qsci
-@dirrmtry share/qt4
-@dirrmtry %%QT_MKSPECDIR%%/features
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/Qsci
-@dirrmtry %%QT_INCDIR%%

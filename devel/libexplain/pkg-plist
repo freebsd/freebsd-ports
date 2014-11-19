@@ -717,5 +717,3 @@ man/man3/explain_writev_or_die.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/readme.pdf
 %%PORTDOCS%%%%DOCSDIR%%/reference.pdf
 share/locale/de/LC_MESSAGES/libexplain.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/libexplain

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "${2}" = "POST-INSTALL" ] ; then
+	db_prefix="/var/db/portsearch"
+	arch=`uname -m`
+	db_old="${db_prefix}/1-${arch}"
+	if [ -d "${db_old}" ] ; then
+		rel=`uname -r`
+		mv -f "${db_old}" "${db_prefix}/${rel%%.*}-${arch}"
+	fi
+fi
+
+# EOF

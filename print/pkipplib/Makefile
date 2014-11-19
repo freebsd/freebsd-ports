@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.pykota.com/software/pkipplib/download/tarballs/
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Create and parse IPP requests
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

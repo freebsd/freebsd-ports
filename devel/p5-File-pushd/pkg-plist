@@ -1,6 +1,3 @@
 %%SITE_PERL%%/File/pushd.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/pushd/.packlist
 %%PERL5_MAN3%%/File::pushd.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/pushd
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

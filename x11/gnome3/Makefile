@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/x11/gnome3/Makefile 19831 2014-08-26 15:33:17Z kwm $
 
 PORTNAME=	gnome3
-PORTVERSION=	3.12.0
-PORTREVISION=	3
+PORTVERSION=	3.14.0
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty

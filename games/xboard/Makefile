@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	xboard
-PORTVERSION?=	4.7.3
-PORTREVISION?=	2
+PORTVERSION?=	4.8.0
+PORTREVISION?=	0
 PORTEPOCH?=
 CATEGORIES?=	games
 MASTER_SITES?=	GNU
@@ -73,6 +73,7 @@ INFO=		xboard
 USE_PERL5=	build
 INSTALLS_ICONS=	yes
 DATADIR?=	${PREFIX}/share/games/${PORTNAME}
+XBOARDCONF?=	${WRKSRC}/xboard.conf
 
 PORTDOCS=	AUTHORS COPYING COPYRIGHT ChangeLog DIFFSTAT FAQ.html NEWS README SHORTLOG TODO
 
@@ -87,6 +88,8 @@ PORTDOCS+=	ABOUT-NLS
 .endif
 
 post-patch:
+	-@[ -f ${WRKSRC}/Makefile.in ] && ${REINPLACE_CMD} -e \
+		'/xboard_LDADD/s/-ldl //' ${WRKSRC}/Makefile.in
 	@${ECHO_CMD} -n "" > ${WRKSRC}/engineEntries.txt
 	@${ECHO_CMD} -n "" > ${WRKSRC}/firstEngine.txt
 .if ${PORT_OPTIONS:MCRAFTY}
@@ -110,9 +113,9 @@ post-patch:
 	@${ECHO_CMD} -n "fairymax" > ${WRKSRC}/firstEngine.txt
 .endif
 	@firstEngine=`cat ${WRKSRC}/firstEngine.txt` && \
-	 ${REINPLACE_CMD} -e "s|\(-firstChessProgram\) .*|\1 $${firstEngine}|" ${WRKSRC}/xboard.conf.in
+	 ${REINPLACE_CMD} -e "s|\(-firstChessProgram\) .*|\1 $${firstEngine}|" ${XBOARDCONF}
 	@engineEntries=`cat ${WRKSRC}/engineEntries.txt` && \
-	 ${REINPLACE_CMD} -e "s|\(firstChessProgramNames[ 	]*{\)[ 	]*.*|\1$${engineEntries}}|" ${WRKSRC}/xboard.conf.in
+	 ${REINPLACE_CMD} -e "s|\(firstChessProgramNames[ 	]*{\)[ 	]*.*|\1$${engineEntries}}|" ${XBOARDCONF}
 	@${REINPLACE_CMD} -e '/^#include..malloc.h/d' \
 		${WRKSRC}/engineoutput.c ${WRKSRC}/uci.c
 .if ${PORT_OPTIONS:MZIPPY}
@@ -120,11 +123,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' ${WRKSRC}/xboard.texi
 .endif
 .if ${PORT_OPTIONS:MSOX}
-	@${REINPLACE_CMD} -e "s|\(soundProgram\) .*|\1 \"play -q\"|" ${WRKSRC}/xboard.conf.in
+	@${REINPLACE_CMD} -e "s|\(soundProgram\) .*|\1 \"play -q\"|" ${XBOARDCONF}
 .elif ${PORT_OPTIONS:MALSA}
-	@${REINPLACE_CMD} -e "s|\(soundProgram\) .*|\1 \"aplay -q\"|" ${WRKSRC}/xboard.conf.in
+	@${REINPLACE_CMD} -e "s|\(soundProgram\) .*|\1 \"aplay -q\"|" ${XBOARDCONF}
 .else
-	@${REINPLACE_CMD} -e "s|\(soundProgram\) .*|\1 \"\"|" ${WRKSRC}/xboard.conf.in
+	@${REINPLACE_CMD} -e "s|\(soundProgram\) .*|\1 \"\"|" ${XBOARDCONF}
 .endif
 
 post-install:

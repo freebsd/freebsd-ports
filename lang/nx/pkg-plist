@@ -62,11 +62,3 @@ lib/%%PKGNAME%%/xotcl/xotcl2.tcl
 lib/nsfConfig.sh
 man/man1/xotclsh.1.gz
 man/man1/xowish.1.gz
-@dirrm lib/%%PKGNAME%%/xotcl/serialize
-@dirrm lib/%%PKGNAME%%/xotcl/lib
-@dirrm lib/%%PKGNAME%%/xotcl/comm
-@dirrm lib/%%PKGNAME%%/xotcl
-@dirrm lib/%%PKGNAME%%/serialize
-@dirrm lib/%%PKGNAME%%/nx
-@dirrm lib/%%PKGNAME%%/lib
-@dirrm lib/%%PKGNAME%%

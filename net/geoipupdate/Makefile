@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoipupdate
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	net geography
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -15,11 +15,9 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	929d6a7
+GH_COMMIT=	7d46127
 
-USES=		libtool pathfix
-USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
-AUTOMAKE_ARGS=	--add-missing
+USES=		libtool pathfix autoreconf
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 

@@ -11,4 +11,3 @@ include/spdict/spdictshmhashmap.hpp
 include/spdict/spdictslist.hpp
 lib/libspdict.so
 lib/libspdict.so.1
-@dirrm include/spdict

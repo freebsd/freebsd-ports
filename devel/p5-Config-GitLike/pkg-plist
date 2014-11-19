@@ -5,7 +5,3 @@
 %%SITE_PERL%%/Config/GitLike/Cascaded.pm
 %%SITE_PERL%%/Config/GitLike/Git.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/GitLike/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/GitLike
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrm %%SITE_PERL%%/Config/GitLike
-@dirrmtry %%SITE_PERL%%/Config

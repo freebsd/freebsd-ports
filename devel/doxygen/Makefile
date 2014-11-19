@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doxygen
-PORTVERSION=	1.8.7
-PORTREVISION=	1
+PORTVERSION=	1.8.8
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake \
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		bison gmake iconv perl5 python:2
+ALL_TARGET=	all
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS=	--prefix ${PREFIX} --perl ${PERL} --make ${MAKE_CMD} \
@@ -44,7 +44,7 @@ PDFDOCS_DESC=	Install documentation in PDF format
 
 GRAPHVIZ_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
-LATEX_USE=	TEX=full
+LATEX_USE=	TEX=base,dvipsk,pdftex
 
 QT4_USE=	QT4=corelib,gui,xml,qmake_build,moc_build,rcc_build
 QT4_CONFIGURE_ENV=	QTDIR="${QTDIR}"
@@ -107,9 +107,7 @@ pre-install:
 .endif
 	@cd ${TMPDOCDEST} \
 	&& ${FIND} -s * -type f -o -type l \
-		| ${SED} -e 's|^|share/doc/|' >> ${PLIST} \
-	&& ${FIND} -d * -type d \
-		| ${SED} -e 's|^|@dirrm share/doc/|' >> ${PLIST}
+		| ${SED} -e 's|^|share/doc/|' >> ${PLIST}
 .endif
 
 do-install:

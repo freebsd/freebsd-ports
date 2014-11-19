@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/games/gnome-mahjongg/Makefile 19631 2014-05-12 20:02:07Z gusi $
+#   $MCom: ports/trunk/games/gnome-mahjongg/Makefile 19989 2014-10-18 09:53:56Z gusi $
 
 PORTNAME=	gnome-mahjongg
-PORTVERSION=	3.12.2
+PORTVERSION=	3.14.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,6 +21,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GLIB_SCHEMAS=	org.gnome.gnome-mahjongg.gschema.xml
+GLIB_SCHEMAS=	org.gnome.mahjongg.gschema.xml
 
 .include <bsd.port.mk>

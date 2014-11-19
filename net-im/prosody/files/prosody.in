@@ -23,10 +23,11 @@ load_rc_config $name
 prosody_enable=${prosody_enable:-"NO"}
 pidfile=${prosody_pidfile:-"%%PREFIX%%/var/lib/prosody/prosody.pid"}
 
-extra_commands="status"
+extra_commands="reload status"
 
 start_cmd="prosody_start"
 stop_cmd="prosody_cmd stop"
+reload_cmd="prosody_cmd reload"
 restart_cmd="$stop_cmd; $start_cmd"
 status_cmd="prosody_cmd status"
 

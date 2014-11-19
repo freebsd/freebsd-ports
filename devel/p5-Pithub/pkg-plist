@@ -83,13 +83,3 @@
 %%PERL5_MAN3%%/Pithub::Users::Emails.3.gz
 %%PERL5_MAN3%%/Pithub::Users::Followers.3.gz
 %%PERL5_MAN3%%/Pithub::Users::Keys.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pithub
-@dirrm %%SITE_PERL%%/Pithub/Users
-@dirrm %%SITE_PERL%%/Pithub/Repos/Releases
-@dirrm %%SITE_PERL%%/Pithub/Repos
-@dirrm %%SITE_PERL%%/Pithub/PullRequests
-@dirrm %%SITE_PERL%%/Pithub/Orgs
-@dirrm %%SITE_PERL%%/Pithub/Issues
-@dirrm %%SITE_PERL%%/Pithub/GitData
-@dirrm %%SITE_PERL%%/Pithub/Gists
-@dirrm %%SITE_PERL%%/Pithub

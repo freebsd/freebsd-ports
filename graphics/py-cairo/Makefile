@@ -13,8 +13,7 @@ DISTNAME=	py2${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python 2 bindings for Cairo
 
-USE_PYTHON=	2
-USES=		pkgconfig shebangfix tar:bzip2
+USES=		pkgconfig python:2 shebangfix tar:bzip2
 USE_GNOME=	cairo
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

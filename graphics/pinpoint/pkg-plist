@@ -14,4 +14,3 @@ bin/pinpoint
 %%DATADIR%%/text-slide-down.json
 %%DATADIR%%/text-slide-left.json
 %%DATADIR%%/text-slide-up.json
-@dirrm %%DATADIR%%

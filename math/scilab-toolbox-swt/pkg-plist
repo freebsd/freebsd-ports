@@ -145,12 +145,3 @@
 %%TOOLBOXDIR%%/sci_gateway/c/libswt_c.so
 %%TOOLBOXDIR%%/sci_gateway/c/loader.sce
 %%TOOLBOXDIR%%/sci_gateway/loader_gateway.sce
-@dirrm %%TOOLBOXDIR%%/sci_gateway/c
-@dirrm %%TOOLBOXDIR%%/sci_gateway
-@dirrm %%TOOLBOXDIR%%/macros/help_from_sci
-@dirrm %%TOOLBOXDIR%%/macros
-%%HELP%%@dirrm %%TOOLBOXDIR%%/jar
-@dirrm %%TOOLBOXDIR%%/etc
-@dirrm %%TOOLBOXDIR%%/demos/image
-@dirrm %%TOOLBOXDIR%%/demos
-@dirrm %%TOOLBOXDIR%%

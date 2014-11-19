@@ -8,4 +8,3 @@ bin/physcalc
 %%DATADIR%%/nuclear.phy
 %%DATADIR%%/paper.phy
 %%DATADIR%%/physcalc.phy
-@dirrm %%DATADIR%%

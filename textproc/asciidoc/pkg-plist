@@ -86,20 +86,3 @@ bin/asciidoc.py
 %%PYTHON_SITELIBDIR%%/asciidocapi.py
 man/man1/a2x.1.gz
 man/man1/asciidoc.1.gz
-@dirrm %%ETCDIR%%/themes/volnitsky
-@dirrm %%ETCDIR%%/themes/flask
-@dirrm %%ETCDIR%%/themes
-@dirrm %%ETCDIR%%/stylesheets
-@dirrm %%ETCDIR%%/javascripts
-@dirrm %%ETCDIR%%/images/icons/callouts
-@dirrm %%ETCDIR%%/images/icons
-@dirrm %%ETCDIR%%/images
-@dirrmtry %%ETCDIR%%/filters/source
-@dirrmtry %%ETCDIR%%/filters/music
-@dirrmtry %%ETCDIR%%/filters/latex
-@dirrmtry %%ETCDIR%%/filters/graphviz
-@dirrmtry %%ETCDIR%%/filters/code
-@dirrmtry %%ETCDIR%%/filters
-@dirrm %%ETCDIR%%/docbook-xsl
-@dirrm %%ETCDIR%%/dblatex
-@dirrmtry %%ETCDIR%%

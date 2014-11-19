@@ -4,8 +4,3 @@
 %%SITE_PERL%%/Term/VT102/examples/ssh-usage.pl
 %%SITE_PERL%%/Term/VT102/examples/telnet-usage.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrm %%SITE_PERL%%/Term/VT102/examples
-@dirrm %%SITE_PERL%%/Term/VT102
-@dirrmtry %%SITE_PERL%%/Term

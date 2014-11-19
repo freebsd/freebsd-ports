@@ -193,22 +193,3 @@
 %%DBKDIR%%/catalog
 @unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove CATALOG %D/%F
 @exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
-@dirrmtry %%DBKDIR%%/5.0/xsd
-@dirrmtry %%DBKDIR%%/5.0/tools
-@dirrmtry %%DBKDIR%%/5.0/sch
-@dirrmtry %%DBKDIR%%/5.0/rng
-@dirrmtry %%DBKDIR%%/5.0/dtd
-@dirrmtry %%DBKDIR%%/5.0/docs/images
-@dirrmtry %%DBKDIR%%/5.0/docs
-@dirrmtry %%DBKDIR%%/5.0
-@dirrmtry %%DBKDIR%%/4.5/ent
-@dirrmtry %%DBKDIR%%/4.5
-@dirrmtry %%DBKDIR%%/4.4/ent
-@dirrmtry %%DBKDIR%%/4.4
-@dirrmtry %%DBKDIR%%/4.3/ent
-@dirrmtry %%DBKDIR%%/4.3
-@dirrmtry %%DBKDIR%%/4.2/ent
-@dirrmtry %%DBKDIR%%/4.2
-@dirrmtry %%DBKDIR%%/4.1.2/ent
-@dirrmtry %%DBKDIR%%/4.1.2
-@dirrmtry %%DBKDIR%%

@@ -22,13 +22,13 @@
 +			file.WriteLineToFile(key + TO_STRING(n));
  	}
  
- 	void WriteExtradata(AegisubExtradataMap const& extradata) {
+ 	void WriteExtradata(std::vector<ExtradataEntry> const& extradata) {
 @@ -131,7 +138,7 @@
  		file.WriteLineToFile("[Aegisub Extradata]");
  		for (auto const& edi : extradata) {
  			std::string line = "Data: ";
--			line += std::to_string(edi.first);
-+			line += TO_STRING(edi.first);
+-			line += std::to_string(edi.id);
++			line += TO_STRING(edi.id);
  			line += ",";
- 			line += inline_string_encode(edi.second.first);
+ 			line += inline_string_encode(edi.key);
  			line += ",";

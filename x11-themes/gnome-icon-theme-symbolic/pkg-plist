@@ -385,15 +385,3 @@ share/icons/gnome/scalable/status/weather-showers-scattered-symbolic.svg
 share/icons/gnome/scalable/status/weather-showers-symbolic.svg
 share/icons/gnome/scalable/status/weather-snow-symbolic.svg
 share/icons/gnome/scalable/status/weather-storm-symbolic.svg
-@dirrmtry share/icons/gnome/scalable/status
-@dirrmtry share/icons/gnome/scalable/places
-@dirrmtry share/icons/gnome/scalable/mimetypes
-@dirrmtry share/icons/gnome/scalable/emotes
-@dirrmtry share/icons/gnome/scalable/emblems
-@dirrmtry share/icons/gnome/scalable/devices
-@dirrmtry share/icons/gnome/scalable/categories
-@dirrmtry share/icons/gnome/scalable/apps
-@dirrmtry share/icons/gnome/scalable/actions
-@dirrmtry share/icons/gnome/scalable
-@dirrmtry share/icons/gnome
-@dirrmtry share/icons

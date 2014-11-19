@@ -48,5 +48,3 @@ lib/libart_lgpl_2.la
 lib/libart_lgpl_2.so
 lib/libart_lgpl_2.so.5
 libdata/pkgconfig/libart-2.0.pc
-@dirrm include/libart-2.0/libart_lgpl
-@dirrm include/libart-2.0

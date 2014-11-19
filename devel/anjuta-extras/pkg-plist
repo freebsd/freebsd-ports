@@ -4,29 +4,34 @@ lib/anjuta/anjuta-scratchbox.plugin
 lib/anjuta/libanjuta-editor.a
 lib/anjuta/libanjuta-editor.la
 lib/anjuta/libanjuta-editor.so
+lib/anjuta/libanjuta-profiler.a
+lib/anjuta/libanjuta-profiler.la
+lib/anjuta/libanjuta-profiler.so
 lib/anjuta/libanjuta-sample.a
 lib/anjuta/libanjuta-sample.la
 lib/anjuta/libanjuta-sample.so
 lib/anjuta/libanjuta-scratchbox.a
 lib/anjuta/libanjuta-scratchbox.la
 lib/anjuta/libanjuta-scratchbox.so
+lib/anjuta/profiler.plugin
 share/anjuta/glade/anjuta-editor-scintilla.ui
 share/anjuta/glade/anjuta-scratchbox-panel.png
 share/anjuta/glade/anjuta-scratchbox.ui
+share/anjuta/glade/profiler-call-graph.ui
+share/anjuta/glade/profiler-flat-profile.ui
+share/anjuta/glade/profiler-function-call-tree.ui
+share/anjuta/glade/profiler.ui
 share/anjuta/properties/anjuta.properties
 share/anjuta/properties/styles.properties
 share/anjuta/properties/user.properties
 share/anjuta/ui/anjuta-sample.ui
-share/anjuta/ui/anjuta-scintilla.xml
-share/gnome/help/anjuta-manual/C/scintilla-plugin.page
-share/gnome/help/anjuta-manual/de/scintilla-plugin.page
+share/anjuta/ui/profiler.xml
 share/locale/ar/LC_MESSAGES/anjuta-extras.mo
 share/locale/az/LC_MESSAGES/anjuta-extras.mo
 share/locale/be/LC_MESSAGES/anjuta-extras.mo
 share/locale/be@latin/LC_MESSAGES/anjuta-extras.mo
 share/locale/bg/LC_MESSAGES/anjuta-extras.mo
 share/locale/ca/LC_MESSAGES/anjuta-extras.mo
-share/locale/ca@valencia/LC_MESSAGES/anjuta-extras.mo
 share/locale/cs/LC_MESSAGES/anjuta-extras.mo
 share/locale/da/LC_MESSAGES/anjuta-extras.mo
 share/locale/de/LC_MESSAGES/anjuta-extras.mo
@@ -34,7 +39,6 @@ share/locale/dz/LC_MESSAGES/anjuta-extras.mo
 share/locale/el/LC_MESSAGES/anjuta-extras.mo
 share/locale/en_CA/LC_MESSAGES/anjuta-extras.mo
 share/locale/en_GB/LC_MESSAGES/anjuta-extras.mo
-share/locale/eo/LC_MESSAGES/anjuta-extras.mo
 share/locale/es/LC_MESSAGES/anjuta-extras.mo
 share/locale/eu/LC_MESSAGES/anjuta-extras.mo
 share/locale/fi/LC_MESSAGES/anjuta-extras.mo
@@ -66,7 +70,6 @@ share/locale/pa/LC_MESSAGES/anjuta-extras.mo
 share/locale/pl/LC_MESSAGES/anjuta-extras.mo
 share/locale/pt/LC_MESSAGES/anjuta-extras.mo
 share/locale/pt_BR/LC_MESSAGES/anjuta-extras.mo
-share/locale/ro/LC_MESSAGES/anjuta-extras.mo
 share/locale/ru/LC_MESSAGES/anjuta-extras.mo
 share/locale/rw/LC_MESSAGES/anjuta-extras.mo
 share/locale/si/LC_MESSAGES/anjuta-extras.mo
@@ -86,30 +89,8 @@ share/locale/zh_HK/LC_MESSAGES/anjuta-extras.mo
 share/locale/zh_TW/LC_MESSAGES/anjuta-extras.mo
 share/pixmaps/anjuta/anjuta-editor-scintilla-plugin-48.png
 share/pixmaps/anjuta/anjuta-editor-scintilla-plugin.svg
+share/pixmaps/anjuta/anjuta-profiler-plugin-48.png
+share/pixmaps/anjuta/anjuta-profiler-plugin.svg
 share/pixmaps/anjuta/anjuta-sample-plugin-48.png
 share/pixmaps/anjuta/anjuta-sample-plugin.svg
 share/pixmaps/anjuta/anjuta-scratchbox-48.png
-@dirrm share/anjuta/properties
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrm share/gnome/help/anjuta-manual/de
-@dirrm share/gnome/help/anjuta-manual/C
-@dirrm share/gnome/help/anjuta-manual

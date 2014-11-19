@@ -13,6 +13,3 @@ lib/cmake/Prison/PrisonConfig.cmake
 lib/libprison.so
 lib/libprison.so.0
 lib/libprison.so.0.0.0
-@dirrm lib/cmake/Prison
-@dirrmtry lib/cmake
-@dirrm include/prison

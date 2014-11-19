@@ -13,5 +13,3 @@ include/dict/wb_tree.h
 %%PORTDOCS%%%%DOCSDIR%%/avl_insert.pdf
 %%PORTDOCS%%%%DOCSDIR%%/empty.pdf
 %%PORTDOCS%%%%DOCSDIR%%/treap_insert.pdf
-@dirrm include/dict
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

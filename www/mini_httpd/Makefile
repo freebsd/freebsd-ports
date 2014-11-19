@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mini_httpd
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/mini_httpd/
 
@@ -19,8 +19,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's/\(htpasswd(1)\)/${PORTNAME}-\1/g' ${WRKSRC}/${PORTNAME}.8
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_PROGRAM} ${WRKSRC}/mini_httpd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/htpasswd ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}-htpasswd
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/500.mini_httpd-rotate ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd_wrapper ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mini_httpd.sh ${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/htpasswd.1 ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}-htpasswd.1

@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/x11/cinnamon/Makefile 19857 2014-09-13 09:46:37Z gusi $
+#    $MCom: ports/trunk/x11/cinnamon/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cinnamon
 PORTVERSION=	2.2.16
@@ -12,8 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fork of GNOME Shell with layout similar to GNOME 2
 
 BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		libtoolize:${PORTSDIR}/devel/libtool
+		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libcaribou.so:${PORTSDIR}/accessibility/caribou \
 		libmuffin.so:${PORTSDIR}/x11-wm/muffin \
@@ -39,12 +38,11 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 
 WRKSRC=		${WRKDIR}/Cinnamon-${PORTVERSION}
 
-USES=		gettext gmake libtool pathfix pkgconfig python shebangfix
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig python shebangfix
 USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 \
 		gnomeprefix gtk30 intlhack introspection:build
 # this happens before moving the file to ${PREFIX} (which then will be copied to ${STAGEDIR}${PREFIX})
 SHEBANG_FILES=	files/usr/bin/cinnamon2d
-USE_AUTOTOOLS=	autoconf automake
 USE_XORG=	x11 xfixes sm
 USE_GSTREAMER=	theora vp8 ogg
 INSTALLS_ICONS=	yes

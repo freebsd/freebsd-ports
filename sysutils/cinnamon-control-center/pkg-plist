@@ -276,28 +276,3 @@ share/locale/vi/LC_MESSAGES/cinnamon-control-center-timezones.mo
 share/locale/zh_CN/LC_MESSAGES/cinnamon-control-center-timezones.mo
 share/locale/zh_TW/LC_MESSAGES/cinnamon-control-center-timezones.mo
 share/polkit-1/rules.d/cinnamon-control-center.rules
-@dirrmtry share/locale/ilo/LC_MESSAGES
-@dirrmtry share/locale/ilo
-@dirrm share/cinnamon-control-center/ui/datetime
-@dirrm share/cinnamon-control-center/ui
-@dirrm share/cinnamon-control-center/icons/hicolor/48x48/devices
-@dirrm share/cinnamon-control-center/icons/hicolor/48x48
-@dirrm share/cinnamon-control-center/icons/hicolor/32x32/status
-@dirrm share/cinnamon-control-center/icons/hicolor/32x32/devices
-@dirrm share/cinnamon-control-center/icons/hicolor/32x32
-@dirrm share/cinnamon-control-center/icons/hicolor/24x24/status
-@dirrm share/cinnamon-control-center/icons/hicolor/24x24/devices
-@dirrm share/cinnamon-control-center/icons/hicolor/24x24
-@dirrm share/cinnamon-control-center/icons/hicolor/22x22/status
-@dirrm share/cinnamon-control-center/icons/hicolor/22x22
-@dirrm share/cinnamon-control-center/icons/hicolor/16x16/status
-@dirrm share/cinnamon-control-center/icons/hicolor/16x16/devices
-@dirrm share/cinnamon-control-center/icons/hicolor/16x16
-@dirrm share/cinnamon-control-center/icons/hicolor
-@dirrm share/cinnamon-control-center/icons
-@dirrm share/cinnamon-control-center/datetime
-@dirrm share/cinnamon-control-center
-@dirrm lib/cinnamon-control-center-1/panels
-@dirrm lib/cinnamon-control-center-1
-@dirrm include/cinnamon-control-center-1/libcinnamon-control-center
-@dirrm include/cinnamon-control-center-1

@@ -2,5 +2,3 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/accessible/libqtaccessiblecompatwidgets.so.debug
 %%QT_PLUGINDIR%%/accessible/libqtaccessiblewidgets.so
 %%DEBUG%%%%QT_PLUGINDIR%%/accessible/libqtaccessiblewidgets.so.debug
-@dirrm %%QT_PLUGINDIR%%/accessible
-@dirrmtry %%QT_PLUGINDIR%%

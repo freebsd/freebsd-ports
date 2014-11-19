@@ -180,17 +180,3 @@ lib/liblog4cxx.so
 lib/liblog4cxx.so.10
 lib/liblog4cxx.so.10.0.0
 libdata/pkgconfig/liblog4cxx.pc
-@dirrm include/log4cxx/xml
-@dirrm include/log4cxx/varia
-@dirrm include/log4cxx/spi/location
-@dirrm include/log4cxx/spi
-@dirrm include/log4cxx/rolling
-@dirrm include/log4cxx/private
-@dirrm include/log4cxx/pattern
-@dirrm include/log4cxx/nt
-@dirrm include/log4cxx/net
-@dirrm include/log4cxx/helpers
-@dirrm include/log4cxx/filter
-@dirrm include/log4cxx/db
-@dirrm include/log4cxx/config
-@dirrm include/log4cxx

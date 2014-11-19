@@ -57,10 +57,3 @@ share/dnscheck/locale/en.yaml
 share/dnscheck/locale/sv.yaml
 share/dnscheck/config.yaml
 share/dnscheck/policy.yaml
-@dirrm %%SITE_PERL%%/DNSCheck/Test
-@dirrm %%SITE_PERL%%/DNSCheck/Lookup
-@dirrm %%SITE_PERL%%/DNSCheck
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNSCheck
-@dirrm libexec/dnscheck
-@dirrmtry share/dnscheck/locale
-@dirrmtry share/dnscheck

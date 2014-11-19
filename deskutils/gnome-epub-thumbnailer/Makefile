@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-epub-thumbnailer/Makefile 19743 2014-06-17 07:05:23Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-epub-thumbnailer/Makefile 20014 2014-10-23 07:08:54Z gusi $
 
 PORTNAME=	gnome-epub-thumbnailer
 PORTVERSION=	1.4
@@ -12,13 +12,11 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Thumbnailer for EPub and MOBI books
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		libtoolize:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gdkpixbuf2 gnomedesktop3 gnomeprefix gtk30 \
 		intlhack libxml2
-USE_AUTOTOOLS=	autoconf automake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -30,6 +28,6 @@ post-patch:
 		${WRKSRC}/configure.ac
 
 pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
+	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

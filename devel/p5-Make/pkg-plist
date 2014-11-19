@@ -3,4 +3,3 @@ bin/perlmake
 %%SITE_PERL%%/Make.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Make/.packlist
 man/man1/perlmake.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Make

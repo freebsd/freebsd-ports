@@ -44,7 +44,3 @@ share/aclocal/pstoedit.m4
 %%DATADIR%%/unix.fmp
 %%DATADIR%%/wemf.fmp
 %%DATADIR%%/windows.fmp
-@dirrm %%DATADIR%%/swffonts
-@dirrm %%DATADIR%%
-@dirrm lib/pstoedit
-@dirrm include/pstoedit

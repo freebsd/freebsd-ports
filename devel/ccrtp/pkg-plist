@@ -19,4 +19,3 @@ lib/libccrtp.so
 lib/libccrtp.so.2
 lib/libccrtp.so.2.0.6
 libdata/pkgconfig/libccrtp.pc
-@dirrm include/ccrtp

@@ -11,7 +11,7 @@ DISTFILES=	iip.${DISTVERSION}-final${EXTRACT_SUFX} \
 		${PORTNAME}_icons_1${EXTRACT_SUFX}:icons
 DIST_SUBDIR=	python
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remake of an old SEGA Dreamcast game called Chu Chu Rocket
 
 LICENSE=	GPLv3

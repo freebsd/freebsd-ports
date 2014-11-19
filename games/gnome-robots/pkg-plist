@@ -17,6 +17,8 @@ share/applications/gnome-robots.desktop
 @unexec [ -s %D/share/games/gnobots2.robots_with_safe_teleport-safe.scores ] || rm -f %D/share/games/gnobots2.robots_with_safe_teleport-safe.scores
 @unexec [ -s %D/share/games/gnobots2.robots_with_safe_teleport-super-safe.scores ] || rm -f %D/share/games/gnobots2.robots_with_safe_teleport-super-safe.scores
 @unexec [ -s %D/share/games/gnobots.robots_with_safe_teleport.scores ] || rm -f %D/share/games/gnobots2.robots_with_safe_teleport.scores
+@unexec rm -fr %D/share/games
+share/gnome-robots/app-menu.ui
 share/gnome-robots/games/classic_robots.cfg
 share/gnome-robots/games/nightmare.cfg
 share/gnome-robots/games/robots2.cfg
@@ -45,16 +47,12 @@ share/help/C/gnome-robots/appearance.page
 share/help/C/gnome-robots/basics.page
 share/help/C/gnome-robots/controls-change.page
 share/help/C/gnome-robots/controls-default.page
-share/help/C/gnome-robots/game-types.page
-share/help/C/gnome-robots/index.page
-share/help/C/gnome-robots/legal.xml
-share/help/C/gnome-robots/moves.page
-share/help/C/gnome-robots/scores.page
 share/help/C/gnome-robots/figures/boo-high-risk.png
 share/help/C/gnome-robots/figures/boo-low-risk.png
 share/help/C/gnome-robots/figures/gnome-high-risk.png
 share/help/C/gnome-robots/figures/gnome-low-risk.png
 share/help/C/gnome-robots/figures/gnome-robots.png
+share/help/C/gnome-robots/figures/new.png
 share/help/C/gnome-robots/figures/random.png
 share/help/C/gnome-robots/figures/robots-high-risk.png
 share/help/C/gnome-robots/figures/robots-low-risk.png
@@ -62,20 +60,21 @@ share/help/C/gnome-robots/figures/teleport.png
 share/help/C/gnome-robots/figures/ufo-high-risk.png
 share/help/C/gnome-robots/figures/ufo-low-risk.png
 share/help/C/gnome-robots/figures/wait.png
+share/help/C/gnome-robots/game-types.page
+share/help/C/gnome-robots/index.page
+share/help/C/gnome-robots/legal.xml
+share/help/C/gnome-robots/moves.page
+share/help/C/gnome-robots/scores.page
 share/help/ca/gnome-robots/appearance.page
 share/help/ca/gnome-robots/basics.page
 share/help/ca/gnome-robots/controls-change.page
 share/help/ca/gnome-robots/controls-default.page
-share/help/ca/gnome-robots/game-types.page
-share/help/ca/gnome-robots/index.page
-share/help/ca/gnome-robots/legal.xml
-share/help/ca/gnome-robots/moves.page
-share/help/ca/gnome-robots/scores.page
 share/help/ca/gnome-robots/figures/boo-high-risk.png
 share/help/ca/gnome-robots/figures/boo-low-risk.png
 share/help/ca/gnome-robots/figures/gnome-high-risk.png
 share/help/ca/gnome-robots/figures/gnome-low-risk.png
 share/help/ca/gnome-robots/figures/gnome-robots.png
+share/help/ca/gnome-robots/figures/new.png
 share/help/ca/gnome-robots/figures/random.png
 share/help/ca/gnome-robots/figures/robots-high-risk.png
 share/help/ca/gnome-robots/figures/robots-low-risk.png
@@ -83,20 +82,21 @@ share/help/ca/gnome-robots/figures/teleport.png
 share/help/ca/gnome-robots/figures/ufo-high-risk.png
 share/help/ca/gnome-robots/figures/ufo-low-risk.png
 share/help/ca/gnome-robots/figures/wait.png
+share/help/ca/gnome-robots/game-types.page
+share/help/ca/gnome-robots/index.page
+share/help/ca/gnome-robots/legal.xml
+share/help/ca/gnome-robots/moves.page
+share/help/ca/gnome-robots/scores.page
 share/help/cs/gnome-robots/appearance.page
 share/help/cs/gnome-robots/basics.page
 share/help/cs/gnome-robots/controls-change.page
 share/help/cs/gnome-robots/controls-default.page
-share/help/cs/gnome-robots/game-types.page
-share/help/cs/gnome-robots/index.page
-share/help/cs/gnome-robots/legal.xml
-share/help/cs/gnome-robots/moves.page
-share/help/cs/gnome-robots/scores.page
 share/help/cs/gnome-robots/figures/boo-high-risk.png
 share/help/cs/gnome-robots/figures/boo-low-risk.png
 share/help/cs/gnome-robots/figures/gnome-high-risk.png
 share/help/cs/gnome-robots/figures/gnome-low-risk.png
 share/help/cs/gnome-robots/figures/gnome-robots.png
+share/help/cs/gnome-robots/figures/new.png
 share/help/cs/gnome-robots/figures/random.png
 share/help/cs/gnome-robots/figures/robots-high-risk.png
 share/help/cs/gnome-robots/figures/robots-low-risk.png
@@ -104,20 +104,21 @@ share/help/cs/gnome-robots/figures/teleport.png
 share/help/cs/gnome-robots/figures/ufo-high-risk.png
 share/help/cs/gnome-robots/figures/ufo-low-risk.png
 share/help/cs/gnome-robots/figures/wait.png
+share/help/cs/gnome-robots/game-types.page
+share/help/cs/gnome-robots/index.page
+share/help/cs/gnome-robots/legal.xml
+share/help/cs/gnome-robots/moves.page
+share/help/cs/gnome-robots/scores.page
 share/help/da/gnome-robots/appearance.page
 share/help/da/gnome-robots/basics.page
 share/help/da/gnome-robots/controls-change.page
 share/help/da/gnome-robots/controls-default.page
-share/help/da/gnome-robots/game-types.page
-share/help/da/gnome-robots/index.page
-share/help/da/gnome-robots/legal.xml
-share/help/da/gnome-robots/moves.page
-share/help/da/gnome-robots/scores.page
 share/help/da/gnome-robots/figures/boo-high-risk.png
 share/help/da/gnome-robots/figures/boo-low-risk.png
 share/help/da/gnome-robots/figures/gnome-high-risk.png
 share/help/da/gnome-robots/figures/gnome-low-risk.png
 share/help/da/gnome-robots/figures/gnome-robots.png
+share/help/da/gnome-robots/figures/new.png
 share/help/da/gnome-robots/figures/random.png
 share/help/da/gnome-robots/figures/robots-high-risk.png
 share/help/da/gnome-robots/figures/robots-low-risk.png
@@ -125,20 +126,21 @@ share/help/da/gnome-robots/figures/teleport.png
 share/help/da/gnome-robots/figures/ufo-high-risk.png
 share/help/da/gnome-robots/figures/ufo-low-risk.png
 share/help/da/gnome-robots/figures/wait.png
+share/help/da/gnome-robots/game-types.page
+share/help/da/gnome-robots/index.page
+share/help/da/gnome-robots/legal.xml
+share/help/da/gnome-robots/moves.page
+share/help/da/gnome-robots/scores.page
 share/help/de/gnome-robots/appearance.page
 share/help/de/gnome-robots/basics.page
 share/help/de/gnome-robots/controls-change.page
 share/help/de/gnome-robots/controls-default.page
-share/help/de/gnome-robots/game-types.page
-share/help/de/gnome-robots/index.page
-share/help/de/gnome-robots/legal.xml
-share/help/de/gnome-robots/moves.page
-share/help/de/gnome-robots/scores.page
 share/help/de/gnome-robots/figures/boo-high-risk.png
 share/help/de/gnome-robots/figures/boo-low-risk.png
 share/help/de/gnome-robots/figures/gnome-high-risk.png
 share/help/de/gnome-robots/figures/gnome-low-risk.png
 share/help/de/gnome-robots/figures/gnome-robots.png
+share/help/de/gnome-robots/figures/new.png
 share/help/de/gnome-robots/figures/random.png
 share/help/de/gnome-robots/figures/robots-high-risk.png
 share/help/de/gnome-robots/figures/robots-low-risk.png
@@ -146,20 +148,21 @@ share/help/de/gnome-robots/figures/teleport.png
 share/help/de/gnome-robots/figures/ufo-high-risk.png
 share/help/de/gnome-robots/figures/ufo-low-risk.png
 share/help/de/gnome-robots/figures/wait.png
+share/help/de/gnome-robots/game-types.page
+share/help/de/gnome-robots/index.page
+share/help/de/gnome-robots/legal.xml
+share/help/de/gnome-robots/moves.page
+share/help/de/gnome-robots/scores.page
 share/help/el/gnome-robots/appearance.page
 share/help/el/gnome-robots/basics.page
 share/help/el/gnome-robots/controls-change.page
 share/help/el/gnome-robots/controls-default.page
-share/help/el/gnome-robots/game-types.page
-share/help/el/gnome-robots/index.page
-share/help/el/gnome-robots/legal.xml
-share/help/el/gnome-robots/moves.page
-share/help/el/gnome-robots/scores.page
 share/help/el/gnome-robots/figures/boo-high-risk.png
 share/help/el/gnome-robots/figures/boo-low-risk.png
 share/help/el/gnome-robots/figures/gnome-high-risk.png
 share/help/el/gnome-robots/figures/gnome-low-risk.png
 share/help/el/gnome-robots/figures/gnome-robots.png
+share/help/el/gnome-robots/figures/new.png
 share/help/el/gnome-robots/figures/random.png
 share/help/el/gnome-robots/figures/robots-high-risk.png
 share/help/el/gnome-robots/figures/robots-low-risk.png
@@ -167,20 +170,21 @@ share/help/el/gnome-robots/figures/teleport.png
 share/help/el/gnome-robots/figures/ufo-high-risk.png
 share/help/el/gnome-robots/figures/ufo-low-risk.png
 share/help/el/gnome-robots/figures/wait.png
+share/help/el/gnome-robots/game-types.page
+share/help/el/gnome-robots/index.page
+share/help/el/gnome-robots/legal.xml
+share/help/el/gnome-robots/moves.page
+share/help/el/gnome-robots/scores.page
 share/help/en_GB/gnome-robots/appearance.page
 share/help/en_GB/gnome-robots/basics.page
 share/help/en_GB/gnome-robots/controls-change.page
 share/help/en_GB/gnome-robots/controls-default.page
-share/help/en_GB/gnome-robots/game-types.page
-share/help/en_GB/gnome-robots/index.page
-share/help/en_GB/gnome-robots/legal.xml
-share/help/en_GB/gnome-robots/moves.page
-share/help/en_GB/gnome-robots/scores.page
 share/help/en_GB/gnome-robots/figures/boo-high-risk.png
 share/help/en_GB/gnome-robots/figures/boo-low-risk.png
 share/help/en_GB/gnome-robots/figures/gnome-high-risk.png
 share/help/en_GB/gnome-robots/figures/gnome-low-risk.png
 share/help/en_GB/gnome-robots/figures/gnome-robots.png
+share/help/en_GB/gnome-robots/figures/new.png
 share/help/en_GB/gnome-robots/figures/random.png
 share/help/en_GB/gnome-robots/figures/robots-high-risk.png
 share/help/en_GB/gnome-robots/figures/robots-low-risk.png
@@ -188,20 +192,21 @@ share/help/en_GB/gnome-robots/figures/teleport.png
 share/help/en_GB/gnome-robots/figures/ufo-high-risk.png
 share/help/en_GB/gnome-robots/figures/ufo-low-risk.png
 share/help/en_GB/gnome-robots/figures/wait.png
+share/help/en_GB/gnome-robots/game-types.page
+share/help/en_GB/gnome-robots/index.page
+share/help/en_GB/gnome-robots/legal.xml
+share/help/en_GB/gnome-robots/moves.page
+share/help/en_GB/gnome-robots/scores.page
 share/help/es/gnome-robots/appearance.page
 share/help/es/gnome-robots/basics.page
 share/help/es/gnome-robots/controls-change.page
 share/help/es/gnome-robots/controls-default.page
-share/help/es/gnome-robots/game-types.page
-share/help/es/gnome-robots/index.page
-share/help/es/gnome-robots/legal.xml
-share/help/es/gnome-robots/moves.page
-share/help/es/gnome-robots/scores.page
 share/help/es/gnome-robots/figures/boo-high-risk.png
 share/help/es/gnome-robots/figures/boo-low-risk.png
 share/help/es/gnome-robots/figures/gnome-high-risk.png
 share/help/es/gnome-robots/figures/gnome-low-risk.png
 share/help/es/gnome-robots/figures/gnome-robots.png
+share/help/es/gnome-robots/figures/new.png
 share/help/es/gnome-robots/figures/random.png
 share/help/es/gnome-robots/figures/robots-high-risk.png
 share/help/es/gnome-robots/figures/robots-low-risk.png
@@ -209,20 +214,21 @@ share/help/es/gnome-robots/figures/teleport.png
 share/help/es/gnome-robots/figures/ufo-high-risk.png
 share/help/es/gnome-robots/figures/ufo-low-risk.png
 share/help/es/gnome-robots/figures/wait.png
+share/help/es/gnome-robots/game-types.page
+share/help/es/gnome-robots/index.page
+share/help/es/gnome-robots/legal.xml
+share/help/es/gnome-robots/moves.page
+share/help/es/gnome-robots/scores.page
 share/help/eu/gnome-robots/appearance.page
 share/help/eu/gnome-robots/basics.page
 share/help/eu/gnome-robots/controls-change.page
 share/help/eu/gnome-robots/controls-default.page
-share/help/eu/gnome-robots/game-types.page
-share/help/eu/gnome-robots/index.page
-share/help/eu/gnome-robots/legal.xml
-share/help/eu/gnome-robots/moves.page
-share/help/eu/gnome-robots/scores.page
 share/help/eu/gnome-robots/figures/boo-high-risk.png
 share/help/eu/gnome-robots/figures/boo-low-risk.png
 share/help/eu/gnome-robots/figures/gnome-high-risk.png
 share/help/eu/gnome-robots/figures/gnome-low-risk.png
 share/help/eu/gnome-robots/figures/gnome-robots.png
+share/help/eu/gnome-robots/figures/new.png
 share/help/eu/gnome-robots/figures/random.png
 share/help/eu/gnome-robots/figures/robots-high-risk.png
 share/help/eu/gnome-robots/figures/robots-low-risk.png
@@ -230,20 +236,21 @@ share/help/eu/gnome-robots/figures/teleport.png
 share/help/eu/gnome-robots/figures/ufo-high-risk.png
 share/help/eu/gnome-robots/figures/ufo-low-risk.png
 share/help/eu/gnome-robots/figures/wait.png
+share/help/eu/gnome-robots/game-types.page
+share/help/eu/gnome-robots/index.page
+share/help/eu/gnome-robots/legal.xml
+share/help/eu/gnome-robots/moves.page
+share/help/eu/gnome-robots/scores.page
 share/help/fr/gnome-robots/appearance.page
 share/help/fr/gnome-robots/basics.page
 share/help/fr/gnome-robots/controls-change.page
 share/help/fr/gnome-robots/controls-default.page
-share/help/fr/gnome-robots/game-types.page
-share/help/fr/gnome-robots/index.page
-share/help/fr/gnome-robots/legal.xml
-share/help/fr/gnome-robots/moves.page
-share/help/fr/gnome-robots/scores.page
 share/help/fr/gnome-robots/figures/boo-high-risk.png
 share/help/fr/gnome-robots/figures/boo-low-risk.png
 share/help/fr/gnome-robots/figures/gnome-high-risk.png
 share/help/fr/gnome-robots/figures/gnome-low-risk.png
 share/help/fr/gnome-robots/figures/gnome-robots.png
+share/help/fr/gnome-robots/figures/new.png
 share/help/fr/gnome-robots/figures/random.png
 share/help/fr/gnome-robots/figures/robots-high-risk.png
 share/help/fr/gnome-robots/figures/robots-low-risk.png
@@ -251,20 +258,21 @@ share/help/fr/gnome-robots/figures/teleport.png
 share/help/fr/gnome-robots/figures/ufo-high-risk.png
 share/help/fr/gnome-robots/figures/ufo-low-risk.png
 share/help/fr/gnome-robots/figures/wait.png
+share/help/fr/gnome-robots/game-types.page
+share/help/fr/gnome-robots/index.page
+share/help/fr/gnome-robots/legal.xml
+share/help/fr/gnome-robots/moves.page
+share/help/fr/gnome-robots/scores.page
 share/help/hu/gnome-robots/appearance.page
 share/help/hu/gnome-robots/basics.page
 share/help/hu/gnome-robots/controls-change.page
 share/help/hu/gnome-robots/controls-default.page
-share/help/hu/gnome-robots/game-types.page
-share/help/hu/gnome-robots/index.page
-share/help/hu/gnome-robots/legal.xml
-share/help/hu/gnome-robots/moves.page
-share/help/hu/gnome-robots/scores.page
 share/help/hu/gnome-robots/figures/boo-high-risk.png
 share/help/hu/gnome-robots/figures/boo-low-risk.png
 share/help/hu/gnome-robots/figures/gnome-high-risk.png
 share/help/hu/gnome-robots/figures/gnome-low-risk.png
 share/help/hu/gnome-robots/figures/gnome-robots.png
+share/help/hu/gnome-robots/figures/new.png
 share/help/hu/gnome-robots/figures/random.png
 share/help/hu/gnome-robots/figures/robots-high-risk.png
 share/help/hu/gnome-robots/figures/robots-low-risk.png
@@ -272,20 +280,21 @@ share/help/hu/gnome-robots/figures/teleport.png
 share/help/hu/gnome-robots/figures/ufo-high-risk.png
 share/help/hu/gnome-robots/figures/ufo-low-risk.png
 share/help/hu/gnome-robots/figures/wait.png
+share/help/hu/gnome-robots/game-types.page
+share/help/hu/gnome-robots/index.page
+share/help/hu/gnome-robots/legal.xml
+share/help/hu/gnome-robots/moves.page
+share/help/hu/gnome-robots/scores.page
 share/help/it/gnome-robots/appearance.page
 share/help/it/gnome-robots/basics.page
 share/help/it/gnome-robots/controls-change.page
 share/help/it/gnome-robots/controls-default.page
-share/help/it/gnome-robots/game-types.page
-share/help/it/gnome-robots/index.page
-share/help/it/gnome-robots/legal.xml
-share/help/it/gnome-robots/moves.page
-share/help/it/gnome-robots/scores.page
 share/help/it/gnome-robots/figures/boo-high-risk.png
 share/help/it/gnome-robots/figures/boo-low-risk.png
 share/help/it/gnome-robots/figures/gnome-high-risk.png
 share/help/it/gnome-robots/figures/gnome-low-risk.png
 share/help/it/gnome-robots/figures/gnome-robots.png
+share/help/it/gnome-robots/figures/new.png
 share/help/it/gnome-robots/figures/random.png
 share/help/it/gnome-robots/figures/robots-high-risk.png
 share/help/it/gnome-robots/figures/robots-low-risk.png
@@ -293,20 +302,21 @@ share/help/it/gnome-robots/figures/teleport.png
 share/help/it/gnome-robots/figures/ufo-high-risk.png
 share/help/it/gnome-robots/figures/ufo-low-risk.png
 share/help/it/gnome-robots/figures/wait.png
+share/help/it/gnome-robots/game-types.page
+share/help/it/gnome-robots/index.page
+share/help/it/gnome-robots/legal.xml
+share/help/it/gnome-robots/moves.page
+share/help/it/gnome-robots/scores.page
 share/help/oc/gnome-robots/appearance.page
 share/help/oc/gnome-robots/basics.page
 share/help/oc/gnome-robots/controls-change.page
 share/help/oc/gnome-robots/controls-default.page
-share/help/oc/gnome-robots/game-types.page
-share/help/oc/gnome-robots/index.page
-share/help/oc/gnome-robots/legal.xml
-share/help/oc/gnome-robots/moves.page
-share/help/oc/gnome-robots/scores.page
 share/help/oc/gnome-robots/figures/boo-high-risk.png
 share/help/oc/gnome-robots/figures/boo-low-risk.png
 share/help/oc/gnome-robots/figures/gnome-high-risk.png
 share/help/oc/gnome-robots/figures/gnome-low-risk.png
 share/help/oc/gnome-robots/figures/gnome-robots.png
+share/help/oc/gnome-robots/figures/new.png
 share/help/oc/gnome-robots/figures/random.png
 share/help/oc/gnome-robots/figures/robots-high-risk.png
 share/help/oc/gnome-robots/figures/robots-low-risk.png
@@ -314,20 +324,21 @@ share/help/oc/gnome-robots/figures/teleport.png
 share/help/oc/gnome-robots/figures/ufo-high-risk.png
 share/help/oc/gnome-robots/figures/ufo-low-risk.png
 share/help/oc/gnome-robots/figures/wait.png
+share/help/oc/gnome-robots/game-types.page
+share/help/oc/gnome-robots/index.page
+share/help/oc/gnome-robots/legal.xml
+share/help/oc/gnome-robots/moves.page
+share/help/oc/gnome-robots/scores.page
 share/help/sl/gnome-robots/appearance.page
 share/help/sl/gnome-robots/basics.page
 share/help/sl/gnome-robots/controls-change.page
 share/help/sl/gnome-robots/controls-default.page
-share/help/sl/gnome-robots/game-types.page
-share/help/sl/gnome-robots/index.page
-share/help/sl/gnome-robots/legal.xml
-share/help/sl/gnome-robots/moves.page
-share/help/sl/gnome-robots/scores.page
 share/help/sl/gnome-robots/figures/boo-high-risk.png
 share/help/sl/gnome-robots/figures/boo-low-risk.png
 share/help/sl/gnome-robots/figures/gnome-high-risk.png
 share/help/sl/gnome-robots/figures/gnome-low-risk.png
 share/help/sl/gnome-robots/figures/gnome-robots.png
+share/help/sl/gnome-robots/figures/new.png
 share/help/sl/gnome-robots/figures/random.png
 share/help/sl/gnome-robots/figures/robots-high-risk.png
 share/help/sl/gnome-robots/figures/robots-low-risk.png
@@ -335,20 +346,21 @@ share/help/sl/gnome-robots/figures/teleport.png
 share/help/sl/gnome-robots/figures/ufo-high-risk.png
 share/help/sl/gnome-robots/figures/ufo-low-risk.png
 share/help/sl/gnome-robots/figures/wait.png
+share/help/sl/gnome-robots/game-types.page
+share/help/sl/gnome-robots/index.page
+share/help/sl/gnome-robots/legal.xml
+share/help/sl/gnome-robots/moves.page
+share/help/sl/gnome-robots/scores.page
 share/help/sr/gnome-robots/appearance.page
 share/help/sr/gnome-robots/basics.page
 share/help/sr/gnome-robots/controls-change.page
 share/help/sr/gnome-robots/controls-default.page
-share/help/sr/gnome-robots/game-types.page
-share/help/sr/gnome-robots/index.page
-share/help/sr/gnome-robots/legal.xml
-share/help/sr/gnome-robots/moves.page
-share/help/sr/gnome-robots/scores.page
 share/help/sr/gnome-robots/figures/boo-high-risk.png
 share/help/sr/gnome-robots/figures/boo-low-risk.png
 share/help/sr/gnome-robots/figures/gnome-high-risk.png
 share/help/sr/gnome-robots/figures/gnome-low-risk.png
 share/help/sr/gnome-robots/figures/gnome-robots.png
+share/help/sr/gnome-robots/figures/new.png
 share/help/sr/gnome-robots/figures/random.png
 share/help/sr/gnome-robots/figures/robots-high-risk.png
 share/help/sr/gnome-robots/figures/robots-low-risk.png
@@ -356,20 +368,21 @@ share/help/sr/gnome-robots/figures/teleport.png
 share/help/sr/gnome-robots/figures/ufo-high-risk.png
 share/help/sr/gnome-robots/figures/ufo-low-risk.png
 share/help/sr/gnome-robots/figures/wait.png
+share/help/sr/gnome-robots/game-types.page
+share/help/sr/gnome-robots/index.page
+share/help/sr/gnome-robots/legal.xml
+share/help/sr/gnome-robots/moves.page
+share/help/sr/gnome-robots/scores.page
 share/help/sr@latin/gnome-robots/appearance.page
 share/help/sr@latin/gnome-robots/basics.page
 share/help/sr@latin/gnome-robots/controls-change.page
 share/help/sr@latin/gnome-robots/controls-default.page
-share/help/sr@latin/gnome-robots/game-types.page
-share/help/sr@latin/gnome-robots/index.page
-share/help/sr@latin/gnome-robots/legal.xml
-share/help/sr@latin/gnome-robots/moves.page
-share/help/sr@latin/gnome-robots/scores.page
 share/help/sr@latin/gnome-robots/figures/boo-high-risk.png
 share/help/sr@latin/gnome-robots/figures/boo-low-risk.png
 share/help/sr@latin/gnome-robots/figures/gnome-high-risk.png
 share/help/sr@latin/gnome-robots/figures/gnome-low-risk.png
 share/help/sr@latin/gnome-robots/figures/gnome-robots.png
+share/help/sr@latin/gnome-robots/figures/new.png
 share/help/sr@latin/gnome-robots/figures/random.png
 share/help/sr@latin/gnome-robots/figures/robots-high-risk.png
 share/help/sr@latin/gnome-robots/figures/robots-low-risk.png
@@ -377,20 +390,21 @@ share/help/sr@latin/gnome-robots/figures/teleport.png
 share/help/sr@latin/gnome-robots/figures/ufo-high-risk.png
 share/help/sr@latin/gnome-robots/figures/ufo-low-risk.png
 share/help/sr@latin/gnome-robots/figures/wait.png
+share/help/sr@latin/gnome-robots/game-types.page
+share/help/sr@latin/gnome-robots/index.page
+share/help/sr@latin/gnome-robots/legal.xml
+share/help/sr@latin/gnome-robots/moves.page
+share/help/sr@latin/gnome-robots/scores.page
 share/help/sv/gnome-robots/appearance.page
 share/help/sv/gnome-robots/basics.page
 share/help/sv/gnome-robots/controls-change.page
 share/help/sv/gnome-robots/controls-default.page
-share/help/sv/gnome-robots/game-types.page
-share/help/sv/gnome-robots/index.page
-share/help/sv/gnome-robots/legal.xml
-share/help/sv/gnome-robots/moves.page
-share/help/sv/gnome-robots/scores.page
 share/help/sv/gnome-robots/figures/boo-high-risk.png
 share/help/sv/gnome-robots/figures/boo-low-risk.png
 share/help/sv/gnome-robots/figures/gnome-high-risk.png
 share/help/sv/gnome-robots/figures/gnome-low-risk.png
 share/help/sv/gnome-robots/figures/gnome-robots.png
+share/help/sv/gnome-robots/figures/new.png
 share/help/sv/gnome-robots/figures/random.png
 share/help/sv/gnome-robots/figures/robots-high-risk.png
 share/help/sv/gnome-robots/figures/robots-low-risk.png
@@ -398,20 +412,21 @@ share/help/sv/gnome-robots/figures/teleport.png
 share/help/sv/gnome-robots/figures/ufo-high-risk.png
 share/help/sv/gnome-robots/figures/ufo-low-risk.png
 share/help/sv/gnome-robots/figures/wait.png
+share/help/sv/gnome-robots/game-types.page
+share/help/sv/gnome-robots/index.page
+share/help/sv/gnome-robots/legal.xml
+share/help/sv/gnome-robots/moves.page
+share/help/sv/gnome-robots/scores.page
 share/help/zh_CN/gnome-robots/appearance.page
 share/help/zh_CN/gnome-robots/basics.page
 share/help/zh_CN/gnome-robots/controls-change.page
 share/help/zh_CN/gnome-robots/controls-default.page
-share/help/zh_CN/gnome-robots/game-types.page
-share/help/zh_CN/gnome-robots/index.page
-share/help/zh_CN/gnome-robots/legal.xml
-share/help/zh_CN/gnome-robots/moves.page
-share/help/zh_CN/gnome-robots/scores.page
 share/help/zh_CN/gnome-robots/figures/boo-high-risk.png
 share/help/zh_CN/gnome-robots/figures/boo-low-risk.png
 share/help/zh_CN/gnome-robots/figures/gnome-high-risk.png
 share/help/zh_CN/gnome-robots/figures/gnome-low-risk.png
 share/help/zh_CN/gnome-robots/figures/gnome-robots.png
+share/help/zh_CN/gnome-robots/figures/new.png
 share/help/zh_CN/gnome-robots/figures/random.png
 share/help/zh_CN/gnome-robots/figures/robots-high-risk.png
 share/help/zh_CN/gnome-robots/figures/robots-low-risk.png
@@ -419,6 +434,11 @@ share/help/zh_CN/gnome-robots/figures/teleport.png
 share/help/zh_CN/gnome-robots/figures/ufo-high-risk.png
 share/help/zh_CN/gnome-robots/figures/ufo-low-risk.png
 share/help/zh_CN/gnome-robots/figures/wait.png
+share/help/zh_CN/gnome-robots/game-types.page
+share/help/zh_CN/gnome-robots/index.page
+share/help/zh_CN/gnome-robots/legal.xml
+share/help/zh_CN/gnome-robots/moves.page
+share/help/zh_CN/gnome-robots/scores.page
 share/icons/HighContrast/16x16/apps/gnome-robots.png
 share/icons/HighContrast/22x22/apps/gnome-robots.png
 share/icons/HighContrast/24x24/apps/gnome-robots.png
@@ -520,115 +540,3 @@ share/locale/xh/LC_MESSAGES/gnome-robots.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-robots.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-robots.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-robots.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_CN/gnome-robots/figures
-@dirrm share/help/zh_CN/gnome-robots
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sv/gnome-robots/figures
-@dirrm share/help/sv/gnome-robots
-@dirrmtry share/help/sv
-@dirrm share/help/sr@latin/gnome-robots/figures
-@dirrm share/help/sr@latin/gnome-robots
-@dirrmtry share/help/sr@latin
-@dirrm share/help/sr/gnome-robots/figures
-@dirrm share/help/sr/gnome-robots
-@dirrmtry share/help/sr
-@dirrm share/help/sl/gnome-robots/figures
-@dirrm share/help/sl/gnome-robots
-@dirrmtry share/help/sl
-@dirrm share/help/oc/gnome-robots/figures
-@dirrm share/help/oc/gnome-robots
-@dirrmtry share/help/oc
-@dirrm share/help/it/gnome-robots/figures
-@dirrm share/help/it/gnome-robots
-@dirrmtry share/help/it
-@dirrm share/help/fr/gnome-robots/figures
-@dirrm share/help/fr/gnome-robots
-@dirrmtry share/help/fr
-@dirrm share/help/eu/gnome-robots/figures
-@dirrm share/help/eu/gnome-robots
-@dirrmtry share/help/eu
-@dirrm share/help/es/gnome-robots/figures
-@dirrm share/help/es/gnome-robots
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/gnome-robots/figures
-@dirrm share/help/en_GB/gnome-robots
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/gnome-robots/figures
-@dirrm share/help/el/gnome-robots
-@dirrmtry share/help/el
-@dirrm share/help/de/gnome-robots/figures
-@dirrm share/help/de/gnome-robots
-@dirrmtry share/help/de
-@dirrm share/help/da/gnome-robots/figures
-@dirrm share/help/da/gnome-robots
-@dirrmtry share/help/da
-@dirrm share/help/cs/gnome-robots/figures
-@dirrm share/help/cs/gnome-robots
-@dirrmtry share/help/cs
-@dirrm share/help/ca/gnome-robots/figures
-@dirrm share/help/ca/gnome-robots
-@dirrmtry share/help/ca
-@dirrm share/help/C/gnome-robots/figures
-@dirrm share/help/C/gnome-robots
-@dirrm share/help/hu/gnome-robots/figures
-@dirrm share/help/hu/gnome-robots
-@dirrmtry share/help/hu
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/icons/HighContrast/48x48/apps
-@dirrmtry share/icons/HighContrast/48x48
-@dirrmtry share/icons/HighContrast/32x32/apps
-@dirrmtry share/icons/HighContrast/32x32
-@dirrmtry share/icons/HighContrast/256x256/apps
-@dirrmtry share/icons/HighContrast/256x256
-@dirrmtry share/icons/HighContrast/24x24/apps
-@dirrmtry share/icons/HighContrast/24x24
-@dirrmtry share/icons/HighContrast/22x22/apps
-@dirrmtry share/icons/HighContrast/22x22
-@dirrmtry share/icons/HighContrast/16x16/apps
-@dirrmtry share/icons/HighContrast/16x16
-@dirrmtry share/icons/HighContrast
-@dirrm share/gnome-robots/themes
-@dirrm share/gnome-robots/sounds
-@dirrm share/gnome-robots/pixmaps
-@dirrm share/gnome-robots/games
-@dirrm share/gnome-robots
-@dirrmtry share/appdata

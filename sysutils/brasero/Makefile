@@ -1,10 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/brasero/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#    $MCom: ports/trunk/sysutils/brasero/Makefile 19980 2014-10-17 06:01:57Z gusi $
 
 PORTNAME=	brasero
-PORTVERSION=	3.11.3
-PORTREVISION=	1
+PORTVERSION=	3.11.4
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -36,33 +35,18 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.brasero.gschema.xml
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	NAUTILUS LIBBURNIA
 OPTIONS_DEFAULT=NAUTILUS
 NAUTILUS_DESC=	Build nautilus extension
 LIBBURNIA_DESC=	Build libburnia plug-ins
+NAUTILUS_USE=	GNOME=nautilus3
+NAUTILUS_CONFIGURE_ENABLE=	nautilus
+LIBBURNIA_LIB_DEPENDS=	libburn.so:${PORTSDIR}/devel/libburn \
+			libisofs.so:${PORTSDIR}/devel/libisofs
+LIBBURNIA_CONFIGURE_ENABLE=	libburnia
 
 PLIST_SUB=	FULL_VERSION=${PORTVERSION}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNAUTILUS}
-USE_GNOME+=	nautilus3
-CONFIGURE_ARGS+=--enable-nautilus
-PLIST_SUB+=	NAUTILUS=""
-.else
-PLIST_SUB+=	NAUTILUS="@comment "
-CONFIGURE_ARGS+=--enable-nautilus=no
-.endif
-
-.if ${PORT_OPTIONS:MLIBBURNIA}
-LIB_DEPENDS+=	libburn.so:${PORTSDIR}/devel/libburn \
-		libisofs.so:${PORTSDIR}/devel/libisofs
-CONFIGURE_ARGS+=--enable-libburnia
-PLIST_SUB+=	LIBBURNIA=""
-.else
-CONFIGURE_ARGS+=--disable-libburnia
-PLIST_SUB+=	LIBBURNIA="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

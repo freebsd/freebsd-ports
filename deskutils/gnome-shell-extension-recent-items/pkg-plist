@@ -1,5 +1,2 @@
 share/gnome-shell/extensions/RecentItems@bananenfisch.net/extension.js
 share/gnome-shell/extensions/RecentItems@bananenfisch.net/metadata.json
-@dirrm share/gnome-shell/extensions/RecentItems@bananenfisch.net
-@dirrmtry share/gnome-shell/extensions
-@dirrmtry share/gnome-shell

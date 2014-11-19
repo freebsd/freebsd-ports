@@ -9,7 +9,3 @@ share/java/jbrofuzz/jbrofuzz.jar
 %%DATADIR%%/fuzzers/fuzzers-file-extensions.jbrf
 %%DATADIR%%/fuzzers/fuzzers.jbrf
 %%DATADIR%%/fuzzers/headers.jbrf
-@dirrm %%DATADIR%%/fuzzers
-@dirrm %%DATADIR%%
-@dirrm share/java/jbrofuzz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

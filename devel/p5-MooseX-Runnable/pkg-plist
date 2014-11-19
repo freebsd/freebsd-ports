@@ -29,15 +29,3 @@ bin/mx-run
 %%PERL5_MAN3%%/MooseX::Runnable::Run.3.gz
 %%PERL5_MAN3%%/MooseX::Runnable::Util::ArgParser.3.gz
 man/man1/mx-run.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Runnable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Runnable/Util
-@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Scheme/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Scheme
-@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Role
-@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Role
-@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Restart
-@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin
-@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation
-@dirrm %%SITE_PERL%%/MooseX/Runnable
-@dirrmtry %%SITE_PERL%%/MooseX

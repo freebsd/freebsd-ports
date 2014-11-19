@@ -89,10 +89,3 @@ man/fr/man1/rubber-pipe.1.gz
 man/man1/rubber.1.gz
 man/man1/rubber-info.1.gz
 man/man1/rubber-pipe.1.gz
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrm %%PYTHON_SITELIBDIR%%/rubber/rubber/rules/latex
-@dirrm %%PYTHON_SITELIBDIR%%/rubber/rubber/rules
-@dirrm %%PYTHON_SITELIBDIR%%/rubber/rubber
-@dirrm %%PYTHON_SITELIBDIR%%/rubber/modules
-@dirrm %%PYTHON_SITELIBDIR%%/rubber

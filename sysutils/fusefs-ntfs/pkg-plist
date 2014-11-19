@@ -75,5 +75,3 @@ sbin/ntfsresize
 sbin/ntfsundelete
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-@dirrm include/ntfs-3g
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

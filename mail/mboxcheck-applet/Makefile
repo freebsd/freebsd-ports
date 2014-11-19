@@ -10,7 +10,7 @@ MASTER_SITES=	http://perso.orange.fr/seb128/fichiers/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailbox checking applet for GNOME 2
 
-USE_PYTHON=	yes
+USES=		python
 USE_GNOME=	pygnome2:run
 NO_BUILD=	yes
 
@@ -24,6 +24,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mboxcheck.py ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/configmbox.py ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/mboxcheck.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/libdata/bonobo/servers
 	${INSTALL_DATA} ${WRKSRC}/GNOME_MboxCheck.server \
 		${STAGEDIR}${PREFIX}/libdata/bonobo/servers
 

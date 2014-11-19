@@ -220,10 +220,3 @@ sbin/ircd
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/whois
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/whowas
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/xline
-@dirrm lib/ircd-hybrid/modules/autoload
-@dirrm lib/ircd-hybrid/modules
-@dirrm lib/ircd-hybrid
-@dirrmtry %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help
-@dirrmtry %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid
-@dirrmtry %%DATADIR%%-%%PORTVERSION%%
-@dirrm %%ETCDIR%%

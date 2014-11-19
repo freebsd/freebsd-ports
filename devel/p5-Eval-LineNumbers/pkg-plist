@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Eval/LineNumbers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval/LineNumbers/.packlist
 %%PERL5_MAN3%%/Eval::LineNumbers.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval/LineNumbers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval
-@dirrmtry %%SITE_PERL%%/Eval

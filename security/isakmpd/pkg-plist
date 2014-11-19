@@ -13,4 +13,3 @@ man/man5/isakmpd.conf.5.gz
 man/man5/isakmpd.policy.5.gz
 man/man8/certpatch.8.gz
 man/man8/isakmpd.8.gz
-@dirrm share/examples/isakmpd

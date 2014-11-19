@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11-toolkits/vte3/Makefile 19879 2014-09-15 08:17:00Z gusi $
+#   $MCom: ports/trunk/x11-toolkits/vte3/Makefile 19957 2014-10-15 11:07:14Z gusi $
 
 PORTNAME?=	vte
-PORTVERSION=	0.36.3
-PORTREVISION=	1
+PORTVERSION=	0.38.0
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/gnome-pty-helper/vte/}/${PORTVERSION:R}
@@ -12,7 +12,7 @@ DISTNAME=	vte-${PORTVERSION}
 PKGNAMESUFFIX?=	3
 DIST_SUBDIR=	gnome3
 
-MAINTAINER?=	gnome@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Terminal widget with improved accessibility and I18N support
 
 USES=		tar:xz
@@ -20,7 +20,9 @@ USES=		tar:xz
 .if !defined(REFERENCE_PORT)
 VTE3_SLAVE?=	no
 
-.if ${VTE3_SLAVE}!="yes"
+.if ${VTE3_SLAVE} != yes
+BUILD_DEPENDS+= vapigen:${PORTSDIR}/lang/vala \
+		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gnome-pty-helper
 .endif
 
@@ -29,7 +31,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomeprefix gtk30 referencehack introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS?=--disable-python \
 		--with-gtk=3.0 \
 		--enable-introspection \
@@ -39,12 +41,7 @@ CONFIGURE_ARGS?=--disable-python \
 		--disable-freetypetest
 INSTALL_TARGET=	install-strip
 
-.if !defined(MASTERDIR)
-OPTIONS_DEFINE=	GLX
-GLX_DESC=	Support for DRI/GLX rendering
-.endif
-
-PLIST_SUB=	VERSION=2.90
+PLIST_SUB=	VERSION=2.91
 
 .include <bsd.port.options.mk>
 
@@ -52,9 +49,10 @@ PLIST_SUB=	VERSION=2.90
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnome-pty-helper_gnome-utmp.c
 .endif
 
-.if ${PORT_OPTIONS:MGLX} && !defined(MASTERDIR)
-CONFIGURE_ARGS+=	--with-glX
-USE_GL=			yes
+.if ${VTE3_SLAVE} != yes
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wno-unused-but-set-variable||g' \
+		${WRKSRC}/src/Makefile.in
 .endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+--- lib/libseafile.pc.in.orig	2014-09-03 23:00:38.555065334 -0400
++++ lib/libseafile.pc.in	2014-09-03 23:01:13.715468049 -0400
+@@ -3,9 +3,9 @@
+ libdir=@libdir@
+ includedir=@includedir@
+ 
+-Name: libccnet
++Name: libseafile
+ Description: Client library for accessing seafile service.
+ Version: @VERSION@
+ Libs: -L${libdir} -lseafile @SEARPC_LIBS@
+ Cflags: -I${includedir} @SEARPC_CFLAGS@
+-Requires: gobject-2.0 glib-2.0
+\ No newline at end of file
++Requires: gobject-2.0 glib-2.0

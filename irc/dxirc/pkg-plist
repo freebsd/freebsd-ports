@@ -288,9 +288,3 @@ share/pixmaps/dxirc.png
 %%DATADIR%%/icons/smileys/unhappy.png
 %%NLS%%share/locale/cs/LC_MESSAGES/dxirc.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/dxirc.mo
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/icons/default
-@dirrm %%DATADIR%%/icons/flags
-@dirrm %%DATADIR%%/icons/smileys
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/BinaryData.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/BinaryData/.packlist
 %%PERL5_MAN3%%/Test::BinaryData.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/BinaryData
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

@@ -48,15 +48,3 @@ man/man3/verbiste.3.gz
 %%DATADIR%%-0.1/verbs-it.xml
 %%HASGTK%%share/texmf/tex/latex/verbiste/verbiste.cls
 %%HASGTK%%share/texmf/tex/latex/verbiste/verbiste.cfg
-%%HASGTK%%@dirrm share/texmf/tex/latex/verbiste
-%%HASGTK%%@dirrmtry share/texmf/tex/latex
-%%HASGTK%%@dirrmtry share/texmf/tex
-%%HASGTK%%@dirrmtry share/texmf
-@dirrm %%DATADIR%%-0.1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/verbiste-0.1/verbiste
-@dirrm include/verbiste-0.1
-@dirrmtry man/fr/man3
-@dirrmtry man/fr/man1
-@dirrmtry man/fr

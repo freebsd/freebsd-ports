@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POSIX/strptime/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POSIX/strptime/strptime.so
 %%PERL5_MAN3%%/POSIX::strptime.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POSIX/strptime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POSIX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/POSIX

@@ -272,27 +272,3 @@ share/KCemu/tapes/z1013.kct
 share/locale/de/LC_MESSAGES/KCemu.mo
 share/locale/en/LC_MESSAGES/KCemu.mo
 share/doc/kcemu/changelog
-@dirrm share/KCemu/asm/autostart
-@dirrm share/KCemu/asm
-@dirrm share/KCemu/config
-@dirrm share/KCemu/disks
-@dirrm share/KCemu/doc
-@dirrm share/KCemu/icons
-@dirrm share/KCemu/images
-@dirrm share/KCemu/keymaps
-@dirrm share/KCemu/lib/z80
-@dirrm share/KCemu/lib
-@dirrm share/KCemu/roms/a5105
-@dirrm share/KCemu/roms/c80
-@dirrm share/KCemu/roms/kc85
-@dirrm share/KCemu/roms/kramermc
-@dirrm share/KCemu/roms/lc80
-@dirrm share/KCemu/roms/muglerpc
-@dirrm share/KCemu/roms/poly880
-@dirrm share/KCemu/roms/vcs80
-@dirrm share/KCemu/roms/z1013
-@dirrm share/KCemu/roms/z9001
-@dirrm share/KCemu/roms
-@dirrm share/KCemu/tapes
-@dirrm share/KCemu
-@dirrm share/doc/kcemu

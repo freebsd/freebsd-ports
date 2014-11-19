@@ -79,6 +79,7 @@ include/giomm-%%API_VERSION%%/giomm/networkaddress.h
 include/giomm-%%API_VERSION%%/giomm/networkservice.h
 include/giomm-%%API_VERSION%%/giomm/notification.h
 include/giomm-%%API_VERSION%%/giomm/outputstream.h
+include/giomm-%%API_VERSION%%/giomm/permission.h
 include/giomm-%%API_VERSION%%/giomm/pollableinputstream.h
 include/giomm-%%API_VERSION%%/giomm/pollableoutputstream.h
 include/giomm-%%API_VERSION%%/giomm/private/action_p.h
@@ -161,6 +162,8 @@ include/giomm-%%API_VERSION%%/giomm/private/notification_p.h
 include/giomm-%%API_VERSION%%/giomm/private/outputstream_p.h
 include/giomm-%%API_VERSION%%/giomm/private/pollableinputstream_p.h
 include/giomm-%%API_VERSION%%/giomm/private/pollableoutputstream_p.h
+include/giomm-%%API_VERSION%%/giomm/private/permission_p.h
+include/giomm-%%API_VERSION%%/giomm/private/simplepermission_p.h
 include/giomm-%%API_VERSION%%/giomm/private/proxy_p.h
 include/giomm-%%API_VERSION%%/giomm/private/proxyaddress_p.h
 include/giomm-%%API_VERSION%%/giomm/private/proxyresolver_p.h
@@ -212,6 +215,7 @@ include/giomm-%%API_VERSION%%/giomm/seekable.h
 include/giomm-%%API_VERSION%%/giomm/settings.h
 include/giomm-%%API_VERSION%%/giomm/simpleaction.h
 include/giomm-%%API_VERSION%%/giomm/simpleactiongroup.h
+include/giomm-%%API_VERSION%%/giomm/simplepermission.h
 include/giomm-%%API_VERSION%%/giomm/socket.h
 include/giomm-%%API_VERSION%%/giomm/socketaddress.h
 include/giomm-%%API_VERSION%%/giomm/socketaddressenumerator.h
@@ -221,6 +225,7 @@ include/giomm-%%API_VERSION%%/giomm/socketconnection.h
 include/giomm-%%API_VERSION%%/giomm/socketcontrolmessage.h
 include/giomm-%%API_VERSION%%/giomm/socketlistener.h
 include/giomm-%%API_VERSION%%/giomm/socketservice.h
+include/giomm-%%API_VERSION%%/giomm/socketsource.h
 include/giomm-%%API_VERSION%%/giomm/srvtarget.h
 include/giomm-%%API_VERSION%%/giomm/tcpconnection.h
 include/giomm-%%API_VERSION%%/giomm/themedicon.h
@@ -407,17 +412,3 @@ lib/libglibmm_generate_extra_defs-%%VERSION%%.so.1
 lib/libglibmm_generate_extra_defs-%%VERSION%%.so.1.3.0
 libdata/pkgconfig/giomm-%%API_VERSION%%.pc
 libdata/pkgconfig/glibmm-%%API_VERSION%%.pc
-@dirrm lib/glibmm-%%API_VERSION%%/proc/pm
-@dirrm lib/glibmm-%%API_VERSION%%/proc/m4
-@dirrm lib/glibmm-%%API_VERSION%%/proc
-@dirrm lib/glibmm-%%API_VERSION%%/include
-@dirrm lib/glibmm-%%API_VERSION%%
-@dirrm lib/giomm-%%API_VERSION%%/include
-@dirrm lib/giomm-%%API_VERSION%%
-@dirrm include/glibmm-%%API_VERSION%%/glibmm_generate_extra_defs
-@dirrm include/glibmm-%%API_VERSION%%/glibmm/private
-@dirrm include/glibmm-%%API_VERSION%%/glibmm
-@dirrm include/glibmm-%%API_VERSION%%
-@dirrm include/giomm-%%API_VERSION%%/giomm/private
-@dirrm include/giomm-%%API_VERSION%%/giomm
-@dirrm include/giomm-%%API_VERSION%%

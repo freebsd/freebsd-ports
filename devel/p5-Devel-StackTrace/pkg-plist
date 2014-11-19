@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Devel/StackTrace.pm
 %%SITE_PERL%%/Devel/StackTrace/Frame.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/StackTrace/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/StackTrace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrm %%SITE_PERL%%/Devel/StackTrace
-@dirrmtry %%SITE_PERL%%/Devel

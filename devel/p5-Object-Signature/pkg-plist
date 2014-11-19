@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Object/Signature.pm
 %%SITE_PERL%%/Object/Signature/File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Signature/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Signature
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
-@dirrm %%SITE_PERL%%/Object/Signature
-@dirrmtry %%SITE_PERL%%/Object

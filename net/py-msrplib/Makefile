@@ -24,9 +24,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gnutls>=1.1.6:${PORTSDIR}/security/py-gnut
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=python_${PORTNAME}
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -80,7 +80,3 @@ share/locale/pt/LC_MESSAGES/sheetssolver.mo
 share/locale/pt/LC_MESSAGES/stage.mo
 share/locale/pt/LC_MESSAGES/thesaurus_tool.mo
 share/locale/pt/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/pt/stage
-@dirrm share/doc/HTML/pt/sheets
-@dirrm share/doc/HTML/pt/kexi
-@dirrm share/doc/HTML/pt/calligra

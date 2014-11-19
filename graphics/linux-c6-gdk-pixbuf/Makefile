@@ -1,11 +1,9 @@
-# Created by: Artyom Mirgorodskiy <artyom.mirgorodsky@gmail.com>
+# Created by: Kris Moore <kmoore@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	gdk-pixbuf2
 PORTVERSION=	2.24.1
-PORTREVISION=	1
 CATEGORIES=	graphics linux
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the gdk-pixbuf lib (Linux CentOS ${LINUX_DIST_VER})
@@ -17,5 +15,6 @@ RPMVERSION=	5.el6
 LINUX_NAME=	lib${PORTNAME}
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
+DESCR=		${.CURDIR}/../gdk-pixbuf2/pkg-descr
 
 .include <bsd.port.mk>

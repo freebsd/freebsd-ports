@@ -31,7 +31,3 @@
 %%PERL5_MAN3%%/SVN::Hooks::Mailer.3.gz
 %%PERL5_MAN3%%/SVN::Hooks::Notify.3.gz
 %%PERL5_MAN3%%/SVN::Hooks::UpdateConfFile.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Hooks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
-@dirrm %%SITE_PERL%%/SVN/Hooks
-@dirrmtry %%SITE_PERL%%/SVN

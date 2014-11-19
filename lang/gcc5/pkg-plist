@@ -28,7 +28,6 @@ share/gcc-%%GCC_VERSION%%/python/libstdcxx/__init__.py
 share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/__init__.py
 share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/printers.py
 share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/xmethods.py
-@dirrm share/gcc-%%GCC_VERSION%%
 %%JAVA%%bin/%%GNU_HOST%%-gcj%%SUFFIX%%
 %%JAVA%%bin/aot-compile%%SUFFIX%%
 %%JAVA%%bin/gappletviewer%%SUFFIX%%

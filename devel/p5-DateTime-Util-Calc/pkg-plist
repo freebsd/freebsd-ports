@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Util/Calc/.packlist
 %%SITE_PERL%%/DateTime/Util/Calc.pm
 %%PERL5_MAN3%%/DateTime::Util::Calc.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Util/Calc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime/Util
-@dirrmtry %%SITE_PERL%%/DateTime

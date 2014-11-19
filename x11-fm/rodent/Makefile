@@ -3,6 +3,7 @@
 
 PORTNAME=	rodent
 PORTVERSION=	5.2.9
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/rodent/
 
@@ -18,13 +19,14 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libmagic.so:${PORTSDIR}/sysutils/file \
 		librfm.so:${PORTSDIR}/x11-fm/librfm
 
-USES=		desktop-file-utils gmake libtool:keepla pkgconfig tar:bzip2
+USES=		desktop-file-utils gmake libtool:keepla pkgconfig tar:bzip2 shebangfix
 USE_GNOME=	glib20 gtk20 librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--docdir=${DOCSDIR}
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	configure
 
 PORTDOCS=	*
 

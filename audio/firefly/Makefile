@@ -9,7 +9,7 @@ MASTER_SITES=	http://nightlies.fireflymediaserver.org/nightlies/svn-${PORTVERSIO
 		http://www.magnesium.net/~mdf/distfiles/
 DISTNAME=	mt-daapd-svn-${PORTVERSION}
 
-MAINTAINER=	mark@foster.cc
+MAINTAINER=	info@netocean.de
 COMMENT=	Open-source media server for the Roku SoundBridge and iTunes
 
 LICENSE=	GPLv2

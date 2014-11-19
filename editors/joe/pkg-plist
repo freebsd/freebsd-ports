@@ -27,7 +27,6 @@ bin/termidx
 @unexec if cmp -s %D/%%ETCDIR%%/rjoerc.dist %D/%%ETCDIR%%/rjoerc; then rm -f %D/%%ETCDIR%%/rjoerc; fi
 %%ETCDIR%%/rjoerc.dist
 @exec if [ ! -f %D/%%ETCDIR%%/rjoerc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/rjoerc; fi
-@dirrmtry %%ETCDIR%%
 %%DATADIR%%/charmaps/klingon
 %%DATADIR%%/lang/de.po
 %%DATADIR%%/lang/fr.po
@@ -76,12 +75,5 @@ bin/termidx
 %%DATADIR%%/syntax/verilog.jsf
 %%DATADIR%%/syntax/vhdl.jsf
 %%DATADIR%%/syntax/xml.jsf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 man/man1/joe.1.gz
 man/ru/man1/joe.1.gz
-@dirrmtry man/ru/man1
-@dirrmtry man/ru
-@dirrmtry %%DATADIR%%/charmaps
-@dirrmtry %%DATADIR%%/lang
-@dirrmtry %%DATADIR%%/syntax
-@dirrmtry %%DATADIR%%

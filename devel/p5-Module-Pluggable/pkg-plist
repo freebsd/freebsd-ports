@@ -5,8 +5,3 @@
 %%PERL5_MAN3%%/Devel::InnerPackage.3.gz
 %%PERL5_MAN3%%/Module::Pluggable.3.gz
 %%PERL5_MAN3%%/Module::Pluggable::Object.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Pluggable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Devel
-@dirrmtry %%SITE_PERL%%/Module/Pluggable
-@dirrmtry %%SITE_PERL%%/Module

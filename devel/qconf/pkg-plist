@@ -6,6 +6,3 @@ bin/qconf
 %%DATADIR%%/conf/conf4.pro
 %%DATADIR%%/modules/qt31.qcm
 %%DATADIR%%/modules/qt41.qcm
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%

@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Getopt/Compact.pm
 %%SITE_PERL%%/Getopt/Compact/PodMunger.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Compact/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Compact
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
-@dirrmtry %%SITE_PERL%%/Getopt/Compact
-@dirrmtry %%SITE_PERL%%/Getopt

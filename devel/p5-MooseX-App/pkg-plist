@@ -62,31 +62,3 @@
 %%PERL5_MAN3%%/MooseX::App::Simple.3.gz
 %%PERL5_MAN3%%/MooseX::App::Tutorial.3.gz
 %%PERL5_MAN3%%/MooseX::App::WritingPlugins.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/App/Role
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Version/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Version
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Typo/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Typo
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Term/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Term
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Man/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Man
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Config/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Config
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Color/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Color
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin
-@dirrm %%SITE_PERL%%/MooseX/App/ParsedArgv
-@dirrm %%SITE_PERL%%/MooseX/App/Meta/Role/Class
-@dirrm %%SITE_PERL%%/MooseX/App/Meta/Role/Attribute
-@dirrm %%SITE_PERL%%/MooseX/App/Meta/Role
-@dirrm %%SITE_PERL%%/MooseX/App/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Message
-@dirrmtry %%SITE_PERL%%/MooseX/App
-@dirrmtry %%SITE_PERL%%/MooseX

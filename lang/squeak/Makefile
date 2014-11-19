@@ -3,7 +3,7 @@
 
 PORTNAME=	squeak
 PORTVERSION=	4.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.squeakvm.org/unix/release/:vmsrc \
 		http://ftp.squeak.org/${IMAGE_VERSION}/:src \
@@ -32,6 +32,7 @@ LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas \
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 USES=		pkgconfig
+USE_GNOME=	cairo pango
 USE_GL=		gl
 HAS_CONFIGURE=	yes
 USE_GSTREAMER=	yes

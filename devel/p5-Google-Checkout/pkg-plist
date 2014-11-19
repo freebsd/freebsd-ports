@@ -92,10 +92,3 @@
 %%SITE_PERL%%/Google/Checkout/XML/NotificationResponseXmlWriter.pm
 %%SITE_PERL%%/Google/Checkout/XML/Writer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout
-@dirrm %%SITE_PERL%%/Google/Checkout/XML
-@dirrm %%SITE_PERL%%/Google/Checkout/Notification
-@dirrm %%SITE_PERL%%/Google/Checkout/General
-@dirrm %%SITE_PERL%%/Google/Checkout/Command
-@dirrm %%SITE_PERL%%/Google/Checkout
-@dirrmtry %%SITE_PERL%%/Google

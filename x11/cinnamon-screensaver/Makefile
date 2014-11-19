@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/cinnamon-screensaver/Makefile 19857 2014-09-13 09:46:37Z gusi $
+#   $MCom: ports/trunk/x11/cinnamon-screensaver/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cinnamon-screensaver
 PORTVERSION=	2.2.4
@@ -12,8 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen saver and locker
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		libtoolize:${PORTSDIR}/devel/libtool
+		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libcinnamon-desktop.so:${PORTSDIR}/x11/cinnamon-desktop \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
@@ -21,11 +20,10 @@ RUN_DEPENDS=	pam_helper:${PORTSDIR}/security/pam_helper \
 		gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		gnome-keyring>=0:${PORTSDIR}/security/gnome-keyring
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig tar:xz
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
-USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libgnomekbd libxml2
+USE_GNOME=	gnomedesktop3 gnomeprefix intlhack intlhack libgnomekbd libxml2
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

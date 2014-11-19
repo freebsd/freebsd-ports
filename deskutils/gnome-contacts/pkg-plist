@@ -1,9 +1,10 @@
 bin/gnome-contacts
 libexec/gnome-contacts-search-provider
-share/appdata/gnome-contacts.appdata.xml
-share/applications/gnome-contacts.desktop
+share/appdata/org.gnome.Contacts.appdata.xml
+share/applications/org.gnome.Contacts.desktop
 share/dbus-1/services/org.gnome.Contacts.SearchProvider.service
-share/gnome-shell/search-providers/gnome-contacts-search-provider.ini
+share/dbus-1/services/org.gnome.Contacts.service
+share/gnome-shell/search-providers/org.gnome.Contacts.search-provider.ini
 share/locale/af/LC_MESSAGES/gnome-contacts.mo
 share/locale/ar/LC_MESSAGES/gnome-contacts.mo
 share/locale/as/LC_MESSAGES/gnome-contacts.mo
@@ -46,6 +47,7 @@ share/locale/mk/LC_MESSAGES/gnome-contacts.mo
 share/locale/ml/LC_MESSAGES/gnome-contacts.mo
 share/locale/mr/LC_MESSAGES/gnome-contacts.mo
 share/locale/nb/LC_MESSAGES/gnome-contacts.mo
+share/locale/ne/LC_MESSAGES/gnome-contacts.mo
 share/locale/nl/LC_MESSAGES/gnome-contacts.mo
 share/locale/or/LC_MESSAGES/gnome-contacts.mo
 share/locale/pa/LC_MESSAGES/gnome-contacts.mo
@@ -70,21 +72,3 @@ share/locale/vi/LC_MESSAGES/gnome-contacts.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-contacts.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-contacts.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-contacts.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/gnome-shell/search-providers
-@dirrmtry share/gnome-shell

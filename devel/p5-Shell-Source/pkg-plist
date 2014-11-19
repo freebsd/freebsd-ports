@@ -2,7 +2,3 @@
 %%SITE_PERL%%/Shell/t/Basic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/Source/.packlist
 %%PERL5_MAN3%%/Shell::Source.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/Source
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell
-@dirrmtry %%SITE_PERL%%/Shell/t
-@dirrmtry %%SITE_PERL%%/Shell

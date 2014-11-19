@@ -15,9 +15,8 @@ LIB_DEPENDS=	libpci.so:${PORTSDIR}/devel/libpci
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake pkgconfig tar:tgz
+USES=		gmake pkgconfig python:build tar:tgz
 ALL_TARGET=	x86info lsmsr
-USE_PYTHON_BUILD=yes
 
 PLIST_FILES=	bin/lsmsr bin/x86info man/man8/lsmsr.8.gz man/man1/x86info.1.gz
 

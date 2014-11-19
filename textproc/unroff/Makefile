@@ -38,7 +38,6 @@ do-install:
 .endfor
 	${TAR} -C ${WRKSRC} -cf - scm | \
 		${TAR} -C ${STAGEDIR}${DATADIR} --unlink -xf -
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.ms ${STAGEDIR}${DOCSDIR}
 

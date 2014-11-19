@@ -119,8 +119,3 @@ bin/pyscript
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tex.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twoqubitQST.py
-@dirrmtry %%PYTHON_SITELIBDIR%%/pyscript/fonts
-@dirrmtry %%PYTHON_SITELIBDIR%%/pyscript/lib
-@dirrmtry %%PYTHON_SITELIBDIR%%/pyscript
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

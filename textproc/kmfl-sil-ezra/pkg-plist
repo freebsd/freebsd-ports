@@ -6,7 +6,3 @@
 share/kmfl/EZRAUNI24.kmn
 share/kmfl/icons/HEBDISPY.bmp
 share/kmfl/icons/alef.bmp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrmtry share/doc/kmfl
-@dirrmtry share/kmfl/icons
-@dirrmtry share/kmfl

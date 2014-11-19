@@ -13,8 +13,3 @@ man/man1/dwfilter.1.gz
 %%NLS%%share/locale/es/LC_MESSAGES/dwdiff.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dwdiff.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/dwdiff.mo
-%%NLS%%@dirrmtry man/nl/man1
-%%NLS%%@dirrmtry man/nl.UTF-8/man1
-%%NLS%%@dirrmtry man/nl.UTF-8
-%%NLS%%@dirrmtry man/nl
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

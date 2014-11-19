@@ -202,18 +202,4 @@
 %%CMAPDIR%%/rksj-cmaps/KSC-RKSJ-H
 %%CMAPDIR%%/rksj-cmaps/KSC2-RKSJ-H
 %%CMAPDIR%%/rksj-cmaps/TCVN-RKSJ-H
-@dirrm %%CMAPDIR%%/rksj-cmaps
-@dirrm %%CMAPDIR%%/ak12/CMap
-@dirrm %%CMAPDIR%%/ak12
-@dirrm %%CMAPDIR%%/aj20/CMap
-@dirrm %%CMAPDIR%%/aj20
-@dirrm %%CMAPDIR%%/aj16/CMap
-@dirrm %%CMAPDIR%%/aj16
-@dirrm %%CMAPDIR%%/ai0/CMap
-@dirrm %%CMAPDIR%%/ai0
-@dirrm %%CMAPDIR%%/ag15/CMap
-@dirrm %%CMAPDIR%%/ag15
-@dirrm %%CMAPDIR%%/ac15/CMap
-@dirrm %%CMAPDIR%%/ac15
 @fc %%CMAPDIR%%
-@dirrmtry share/fonts

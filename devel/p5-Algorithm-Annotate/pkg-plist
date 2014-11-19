@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Algorithm::Annotate.3.gz
 %%SITE_PERL%%/Algorithm/Annotate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Annotate/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Annotate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm

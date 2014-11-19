@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Perl/OSType.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/OSType/.packlist
 %%PERL5_MAN3%%/Perl::OSType.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/OSType
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl
-@dirrmtry %%SITE_PERL%%/Perl

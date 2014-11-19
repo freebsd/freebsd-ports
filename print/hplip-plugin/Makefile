@@ -5,7 +5,7 @@ PORTNAME=	hplip-plugin
 PORTVERSION=	3.14.4
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	http://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/
+MASTER_SITES=	http://hplipopensource.com/hplip-web/plugin/
 DISTNAME=	hplip-${DISTVERSION}-plugin
 EXTRACT_SUFX=	.run
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	hp-plugin:${PORTSDIR}/print/hplip
 
 RESTRICTED=	License agreement is required
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/plugin_tmp
 HPLIP_FAKEDIR=	${WRKDIR}/hplip_fakedir

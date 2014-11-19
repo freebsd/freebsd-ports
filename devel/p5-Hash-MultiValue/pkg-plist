@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Hash::MultiValue.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/MultiValue/.packlist
 %%SITE_PERL%%/Hash/MultiValue.pm
-@dirrmtry %%SITE_PERL%%/Hash
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/MultiValue
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash

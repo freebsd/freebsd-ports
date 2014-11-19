@@ -1,13 +1,13 @@
---- Makefile.orig	2010-01-20 18:36:52.000000000 -0800
-+++ Makefile	2012-09-22 01:50:21.019688386 -0700
-@@ -1,5 +1,5 @@
- CFLAGS := -g -Os
+--- Makefile.orig	2010-01-21 02:36:52 UTC
++++ Makefile
+@@ -1,5 +1,4 @@
+-CFLAGS := -g -Os
 -prefix := /usr
 +prefix := /usr/local
  etcprefix :=
  # Define appropiately for your distribution
  # DOCDIR := /usr/share/doc/packages/mcelog
-@@ -28,11 +28,18 @@
+@@ -28,11 +27,18 @@ all: mcelog
  
  .PHONY: install clean depend
  
@@ -29,7 +29,7 @@
  DISKDB_OBJ := diskdb.o dimm.o db.o
  CLEAN := mcelog dmi tsc dbquery .depend .depend.X dbquery.o ${DISKDB_OBJ}
  DOC := mce.pdf
-@@ -48,7 +55,7 @@
+@@ -48,7 +54,7 @@ endif
  
  SRC := $(OBJ:.o=.c)
  
@@ -38,7 +38,7 @@
  
  # dbquery intentionally not installed by default
  install: mcelog
-@@ -82,8 +89,6 @@
+@@ -82,8 +88,6 @@ depend: .depend
  .depend: ${SRC}
  	${CC} -MM -I. ${SRC} > .depend.X && mv .depend.X .depend
  

@@ -124,19 +124,3 @@ bin/keitairc
 %%DATADIR%%/lib/templates/ipod-sjis/recent.html
 %%DATADIR%%/lib/templates/ipod-sjis/root.html
 %%DATADIR%%/lib/templates/ipod-sjis/topic.html
-@dirrm %%DATADIR%%/lib/templates/ipod-sjis
-@dirrm %%DATADIR%%/lib/templates/default
-@dirrm %%DATADIR%%/lib/templates
-@dirrm %%DATADIR%%/lib/public/iui
-@dirrm %%DATADIR%%/lib/public
-@dirrm %%DATADIR%%/lib/plugins
-@dirrm %%DATADIR%%/lib/Keitairc
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%/doc/screenshot/2.0/keitai
-@dirrm %%DATADIR%%/doc/screenshot/2.0/iphone
-@dirrm %%DATADIR%%/doc/screenshot/2.0
-@dirrm %%DATADIR%%/doc/screenshot
-@dirrm %%DATADIR%%/doc/iui
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%

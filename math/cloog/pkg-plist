@@ -29,8 +29,3 @@ lib/libcloog-isl.so
 lib/libcloog-isl.so.4
 lib/libcloog-isl.so.4.0.0
 libdata/pkgconfig/cloog-isl.pc
-@dirrmtry lib/isl
-@dirrmtry lib/cloog-isl
-@dirrmtry include/cloog/matrix
-@dirrmtry include/cloog/isl
-@dirrmtry include/cloog

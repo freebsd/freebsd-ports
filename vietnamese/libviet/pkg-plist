@@ -9,5 +9,3 @@ include/viet/vncompos.h
 include/viet/vnkeys.h
 include/viet/vntype.h
 %%PORTDOCS%%%%DOCSDIR%%/README.lib
-@dirrm include/viet
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

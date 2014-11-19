@@ -81,6 +81,7 @@ share/icons/hicolor/24x24/apps/gnome-tweak-tool.png
 share/icons/hicolor/256x256/apps/gnome-tweak-tool.png
 share/icons/hicolor/32x32/apps/gnome-tweak-tool.png
 share/icons/hicolor/48x48/apps/gnome-tweak-tool.png
+share/locale/as/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ar/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/bg/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ca/LC_MESSAGES/gnome-tweak-tool.mo
@@ -108,6 +109,8 @@ share/locale/lt/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/lv/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/my/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/nb/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/ne/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/nl/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pa/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pl/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pt/LC_MESSAGES/gnome-tweak-tool.mo
@@ -126,15 +129,3 @@ share/locale/vi/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-tweak-tool.mo
-@dirrm share/appdata
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrm %%PYTHON_SITELIBDIR%%/gtweak/tweaks
-@dirrm %%PYTHON_SITELIBDIR%%/gtweak
-@dirrm %%DATADIR%%

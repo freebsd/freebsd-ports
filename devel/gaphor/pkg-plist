@@ -185,21 +185,3 @@ share/icons/hicolor/24x24/apps/gaphor.png
 share/icons/hicolor/256x256/apps/gaphor.png
 share/icons/hicolor/48x48/apps/gaphor.png
 share/icons/hicolor/96x96/apps/gaphor.png
-@dirrmtry %%PYTHON_SITELIBDIR%%/etk/docking/icons/16x16
-@dirrmtry %%PYTHON_SITELIBDIR%%/etk/docking/icons
-@dirrmtry %%PYTHON_SITELIBDIR%%/etk/docking
-@dirrmtry %%PYTHON_SITELIBDIR%%/etk
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphas/tests
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphas
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/ca/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/ca
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/es/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/es
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/fr/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/fr
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/nl/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/nl
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/sv/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale/sv
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data/locale
-@dirrmtry %%PYTHON_SITELIBDIR%%/gaphor/data

@@ -18,6 +18,7 @@ man/man1/gnome-shell.1.gz
 share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop
 share/applications/gnome-shell-extension-prefs.desktop
+share/applications/gnome-shell-wayland.desktop
 share/applications/gnome-shell.desktop
 share/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
@@ -33,7 +34,6 @@ share/doc/shell/ShellGenericContainer.html
 share/doc/shell/ShellGlobal.html
 share/doc/shell/ShellGtkEmbed.html
 share/doc/shell/ShellMountOperation.html
-share/doc/shell/ShellNetworkAgent.html
 share/doc/shell/ShellSlicer.html
 share/doc/shell/ShellStack.html
 share/doc/shell/ShellTpClient.html
@@ -106,6 +106,7 @@ share/doc/st/up-insensitive.png
 share/doc/st/up.png
 share/doc/st/widgets.html
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
+share/gnome-shell/perf-background.xml
 share/gnome-shell/theme/calendar-arrow-left.svg
 share/gnome-shell/theme/calendar-arrow-right.svg
 share/gnome-shell/theme/calendar-today.svg
@@ -123,7 +124,6 @@ share/gnome-shell/theme/filter-selected-rtl.svg
 share/gnome-shell/theme/gnome-shell.css
 share/gnome-shell/theme/logged-in-indicator.svg
 share/gnome-shell/theme/message-tray-background.png
-share/gnome-shell/theme/menu-arrow-symbolic.svg
 share/gnome-shell/theme/more-results.svg
 share/gnome-shell/theme/noise-texture.png
 share/gnome-shell/theme/page-indicator-active.svg
@@ -190,6 +190,7 @@ share/locale/ml/LC_MESSAGES/gnome-shell.mo
 share/locale/mr/LC_MESSAGES/gnome-shell.mo
 share/locale/ms/LC_MESSAGES/gnome-shell.mo
 share/locale/nb/LC_MESSAGES/gnome-shell.mo
+share/locale/ne/LC_MESSAGES/gnome-shell.mo
 share/locale/nl/LC_MESSAGES/gnome-shell.mo
 share/locale/nn/LC_MESSAGES/gnome-shell.mo
 share/locale/or/LC_MESSAGES/gnome-shell.mo
@@ -216,28 +217,3 @@ share/locale/vi/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-shell.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrm share/gnome-shell/theme
-@dirrm share/gnome-shell
-@dirrm lib/gnome-shell
-@dirrm share/doc/st
-@dirrm share/doc/shell

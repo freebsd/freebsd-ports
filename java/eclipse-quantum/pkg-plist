@@ -258,23 +258,3 @@ lib/eclipse/plugins/com.quantum.help_%%VERSION%%/doc/table_view.html
 lib/eclipse/plugins/com.quantum.help_%%VERSION%%/doc/toc.xml
 lib/eclipse/plugins/com.quantum.help_%%VERSION%%/doc/working_bookmarks.html
 lib/eclipse/plugins/com.quantum.help_%%VERSION%%/plugin.xml
-@dirrm lib/eclipse/plugins/com.quantum.help_%%VERSION%%/doc/images/quantum_new_bookmark
-@dirrm lib/eclipse/plugins/com.quantum.help_%%VERSION%%/doc/images/quantum_extender_plugin
-@dirrm lib/eclipse/plugins/com.quantum.help_%%VERSION%%/doc/images
-@dirrm lib/eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog/images
-@dirrm lib/eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog
-@dirrm lib/eclipse/plugins/com.quantum.help_%%VERSION%%/doc
-@dirrm lib/eclipse/plugins/com.quantum.help_%%VERSION%%
-@dirrm lib/eclipse/plugins/com.quantum.flatfiles_%%VERSION%%/icons
-@dirrm lib/eclipse/plugins/com.quantum.flatfiles_%%VERSION%%
-@dirrm lib/eclipse/plugins/com.quantum.dbunit_%%VERSION%%/icons
-@dirrm lib/eclipse/plugins/com.quantum.dbunit_%%VERSION%%
-@dirrm lib/eclipse/plugins/com.quantum.Quantum_%%VERSION%%/schema
-@dirrm lib/eclipse/plugins/com.quantum.Quantum_%%VERSION%%/lib
-@dirrm lib/eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/unused
-@dirrm lib/eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons
-@dirrm lib/eclipse/plugins/com.quantum.Quantum_%%VERSION%%
-@dirrm lib/eclipse/features/com.quantum.help.feature_%%VERSION%%
-@dirrm lib/eclipse/features/com.quantum.flatfiles.feature_%%VERSION%%
-@dirrm lib/eclipse/features/com.quantum.feature_%%VERSION%%
-@dirrm lib/eclipse/features/com.quantum.dbunit.feature_%%VERSION%%

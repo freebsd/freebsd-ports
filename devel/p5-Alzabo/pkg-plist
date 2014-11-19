@@ -104,10 +104,3 @@
 %%PERL5_MAN3%%/Alzabo::Schema.3.gz
 %%PERL5_MAN3%%/Alzabo::Table.3.gz
 %%PERL5_MAN3%%/Alzabo::Utils.3.gz
-@dirrm %%SITE_PERL%%/Alzabo/SQLMaker
-@dirrm %%SITE_PERL%%/Alzabo/Runtime/RowState
-@dirrm %%SITE_PERL%%/Alzabo/Runtime
-@dirrm %%SITE_PERL%%/Alzabo/RDBMSRules
-@dirrm %%SITE_PERL%%/Alzabo/Driver
-@dirrm %%SITE_PERL%%/Alzabo/Create
-@dirrm %%SITE_PERL%%/Alzabo

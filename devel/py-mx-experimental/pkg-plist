@@ -48,8 +48,3 @@
 %%PYTHON_SITELIBDIR%%/mx/__init__.py
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Tidy/mxTidy
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Tidy
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Number/mxNumber
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Number
-@dirrm %%PYTHON_SITELIBDIR%%/mx/

@@ -17,8 +17,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/libppanel.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/libpncrt.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/libpocrt.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/libpmenu.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

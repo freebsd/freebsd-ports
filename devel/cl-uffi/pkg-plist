@@ -70,8 +70,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/with-cstring.html
 %%PORTDOCS%%%%DOCSDIR%%/html/with-foreign-object.html
 %%PORTDOCS%%%%DOCSDIR%%/uffi.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.msvc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-compat-tester.lisp
@@ -89,6 +87,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/strtol.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-examples.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/union.lisp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%LIB32DIR%%/common-lisp/uffi/src
-@dirrm %%LIB32DIR%%/common-lisp/uffi

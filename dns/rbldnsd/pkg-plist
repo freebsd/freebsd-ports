@@ -11,5 +11,3 @@ man/man8/rbldnsd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/rbldnsd.default
 %%PORTDOCS%%%%DOCSDIR%%/rbldnsd.init
 %%PORTDOCS%%%%DOCSDIR%%/rbldnsd.spec
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry etc/rbldnsd

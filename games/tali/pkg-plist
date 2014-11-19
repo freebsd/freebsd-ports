@@ -60,6 +60,10 @@ share/help/pt_BR/tali/index.docbook
 share/help/pt_BR/tali/legal.xml
 share/help/pt_BR/tali/figures/mainwindow.png
 share/help/pt_BR/tali/figures/preferences.png
+share/help/ru/tali/figures/mainwindow.png
+share/help/ru/tali/figures/preferences.png
+share/help/ru/tali/index.docbook
+share/help/ru/tali/legal.xml
 share/help/sl/tali/index.docbook
 share/help/sl/tali/legal.xml
 share/help/sl/tali/figures/mainwindow.png
@@ -193,76 +197,3 @@ share/tali/kismet3.svg
 share/tali/kismet4.svg
 share/tali/kismet5.svg
 share/tali/kismet6.svg
-@dirrmtry share/tali
-@dirrmtry share/icons/HighContrast/48x48/apps
-@dirrmtry share/icons/HighContrast/48x48
-@dirrmtry share/icons/HighContrast/32x32/apps
-@dirrmtry share/icons/HighContrast/32x32
-@dirrmtry share/icons/HighContrast/256x256/apps
-@dirrmtry share/icons/HighContrast/256x256
-@dirrmtry share/icons/HighContrast/24x24/apps
-@dirrmtry share/icons/HighContrast/24x24
-@dirrmtry share/icons/HighContrast/22x22/apps
-@dirrmtry share/icons/HighContrast/22x22
-@dirrmtry share/icons/HighContrast/16x16/apps
-@dirrmtry share/icons/HighContrast/16x16
-@dirrmtry share/icons/HighContrast
-@dirrm share/help/zh_CN/tali/figures
-@dirrm share/help/zh_CN/tali
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sv/tali/figures
-@dirrm share/help/sv/tali
-@dirrmtry share/help/sv
-@dirrm share/help/sr@latin/tali/figures
-@dirrm share/help/sr@latin/tali
-@dirrmtry share/help/sr@latin
-@dirrm share/help/sr/tali/figures
-@dirrm share/help/sr/tali
-@dirrmtry share/help/sr
-@dirrm share/help/sl/tali/figures
-@dirrm share/help/sl/tali
-@dirrmtry share/help/sl
-@dirrm share/help/pt_BR/tali/figures
-@dirrm share/help/pt_BR/tali
-@dirrmtry share/help/pt_BR
-@dirrm share/help/oc/tali/figures
-@dirrm share/help/oc/tali
-@dirrmtry share/help/oc
-@dirrm share/help/it/tali/figures
-@dirrm share/help/it/tali
-@dirrmtry share/help/it
-@dirrm share/help/gl/tali/figures
-@dirrm share/help/gl/tali
-@dirrmtry share/help/gl
-@dirrm share/help/fr/tali/figures
-@dirrm share/help/fr/tali
-@dirrmtry share/help/fr
-@dirrm share/help/eu/tali/figures
-@dirrm share/help/eu/tali
-@dirrmtry share/help/eu
-@dirrm share/help/es/tali/figures
-@dirrm share/help/es/tali
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/tali/figures
-@dirrm share/help/en_GB/tali
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/tali/figures
-@dirrm share/help/el/tali
-@dirrmtry share/help/el
-@dirrm share/help/de/tali/figures
-@dirrm share/help/de/tali
-@dirrmtry share/help/de
-@dirrm share/help/da/tali/figures
-@dirrm share/help/da/tali
-@dirrmtry share/help/da
-@dirrm share/help/cs/tali/figures
-@dirrm share/help/cs/tali
-@dirrmtry share/help/cs
-@dirrm share/help/ca/tali/figures
-@dirrm share/help/ca/tali
-@dirrmtry share/help/ca
-@dirrm share/help/C/tali/figures
-@dirrm share/help/C/tali
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/appdata

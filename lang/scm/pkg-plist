@@ -209,6 +209,3 @@ lib/scm/wbtab.scm
 %%X11%%lib/scm/xatoms.scm
 %%X11%%lib/scm/xevent.scm
 man/man1/scm.1.gz
-@dirrm lib/scm/slib/psd
-@dirrm lib/scm/slib
-@dirrm lib/scm

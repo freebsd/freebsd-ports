@@ -2,11 +2,3 @@
 %%SITE_PERL%%/Finance/Currency/Convert.pm
 %%SITE_PERL%%/auto/Finance/Currency/Convert/autosplit.ix
 %%PERL5_MAN3%%/Finance::Currency::Convert.3.gz
-@dirrmtry %%SITE_PERL%%/auto/Finance/Currency/Convert
-@dirrmtry %%SITE_PERL%%/auto/Finance/Currency
-@dirrmtry %%SITE_PERL%%/auto/Finance
-@dirrmtry %%SITE_PERL%%/Finance/Currency
-@dirrmtry %%SITE_PERL%%/Finance
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance

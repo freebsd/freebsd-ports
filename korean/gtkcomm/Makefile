@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkcomm
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean comms
 MASTER_SITES=	http://kldp.net/frs/download.php/480/
 
@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
-USES=		perl5 pkgconfig
+USES=		pathfix perl5 pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile*in
 USE_PERL5=	build
 USE_GNOME=	glib20 gtk20
 USE_XORG=	x11

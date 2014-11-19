@@ -93,13 +93,3 @@ share/xml/xmltooling/xml.xsd
 share/xml/xmltooling/xmldsig-core-schema.xsd
 share/xml/xmltooling/xmldsig11-schema.xsd
 share/xml/xmltooling/xmltooling.xsd
-@dirrmtry include/xmltooling/encryption
-@dirrmtry include/xmltooling/impl
-@dirrmtry include/xmltooling/io
-@dirrmtry include/xmltooling/security
-@dirrmtry include/xmltooling/signature
-@dirrmtry include/xmltooling/soap
-@dirrmtry include/xmltooling/util
-@dirrmtry include/xmltooling/validation
-@dirrmtry include/xmltooling
-@dirrmtry share/xml/xmltooling

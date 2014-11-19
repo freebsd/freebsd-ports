@@ -9,5 +9,3 @@ bin/qmars
 %%DATADIR%%/warriors/npaper2.rc
 %%DATADIR%%/warriors/sonofvain.rc
 %%DATADIR%%/warriors/stalker.rc
-@dirrm %%DATADIR%%/warriors
-@dirrm %%DATADIR%%

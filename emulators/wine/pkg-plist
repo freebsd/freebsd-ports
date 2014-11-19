@@ -1996,18 +1996,3 @@ share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry man/pl.UTF-8/man1
-@dirrmtry man/pl.UTF-8
-@dirrmtry man/fr.UTF-8/man1
-@dirrmtry man/fr.UTF-8
-@dirrmtry man/de.UTF-8/man1
-@dirrmtry man/de.UTF-8
-@dirrm lib/wine/fakedlls
-@dirrm lib/wine
-@dirrm include/wine/windows/ddk
-@dirrm include/wine/windows
-@dirrm include/wine/msvcrt/sys
-@dirrm include/wine/msvcrt
-@dirrm include/wine

@@ -2,7 +2,7 @@
 
 PORTNAME=	algotutor
 PORTVERSION=	0.8.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
 
@@ -23,7 +23,7 @@ LIBFILES=	BST.pm Board.pm Collection.pm Configurable.pm DCEdge.pm \
 		Vector3.pm Vertex.pm basic.pl utilalgo
 
 USES=		shebangfix perl5 tar:tgz
-SHEBANG_FILES=	algotutor
+SHEBANG_FILES=	algotutor gen_at_graph
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,!!SITE_PERL!!,${SITE_PERL},' \

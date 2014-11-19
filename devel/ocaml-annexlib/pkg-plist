@@ -47,4 +47,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/type_Time.html
 %%PORTDOCS%%%%DOCSDIR%%/type_UnixExtras.html
 %%PORTDOCS%%%%DOCSDIR%%/type_Variant.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

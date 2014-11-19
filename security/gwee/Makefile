@@ -10,9 +10,8 @@ MASTER_SITE_SUBDIR=	UNIX/utilities
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to exploit command execution vulnerabilities in web scripts
 
-USES=		perl5
+USES=		perl5 python
 USE_OPENSSL=	yes
-USE_PYTHON=	yes
 
 LDFLAGS+=	-lssl -lcrypto
 CFLAGS+=	-DWITH_SSL

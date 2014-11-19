@@ -469,7 +469,6 @@
     SUBDIR += xgas
     SUBDIR += xiphos
     SUBDIR += xless
-    SUBDIR += xmonad-log-applet
     SUBDIR += xosd
     SUBDIR += xpns
     SUBDIR += xsw

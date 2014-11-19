@@ -1,5 +1,3 @@
 %%SITE_PERL%%/Sub/Alias.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Alias/.packlist
 %%PERL5_MAN3%%/Sub::Alias.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Alias
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub

@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	IMAGEMAGICK
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 post-patch:

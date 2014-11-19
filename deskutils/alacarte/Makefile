@@ -1,6 +1,6 @@
 # Created by: Joe Maloney jmaloney@pkgdemon.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/alacarte/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/deskutils/alacarte/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	alacarte
 PORTVERSION=	3.11.91

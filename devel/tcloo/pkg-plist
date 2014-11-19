@@ -15,4 +15,3 @@ man/mann/self.n.gz
 man/man3/Class.3.gz
 man/man3/Method.3.gz
 man/man3/OOInitStubs.3.gz
-@dirrm lib/TclOO%%PORTVERSION%%

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Array::Window.3.gz
 %%SITE_PERL%%/Array/Window.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Window/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Window
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array
-@dirrmtry %%SITE_PERL%%/Array

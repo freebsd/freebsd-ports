@@ -15,6 +15,3 @@ man/man1/tview.1.gz
 %%LIBDIR%%/tidy.tcl
 %%LIBDIR%%/tpad.tcl
 %%LIBDIR%%/xmlwf.tcl
-@dirrm %%DATADIR%%
-@dirrm %%LIBDIR%%/msgs
-@dirrm %%LIBDIR%%

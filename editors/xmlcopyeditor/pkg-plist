@@ -335,38 +335,3 @@ share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/xsl/openlearn2daisyhtml/object.xsl
 %%DATADIR%%/xsl/openlearn2daisyhtml/openlearn2daisyhtml.xsl
 %%DATADIR%%/xsl/openlearn2daisyhtml/structure.xsl
-@dirrm %%DATADIR%%/xsl/openlearn2daisyhtml
-@dirrm %%DATADIR%%/xsl
-@dirrm %%DATADIR%%/xpm
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/rulesets
-@dirrm %%DATADIR%%/rng/modules
-@dirrm %%DATADIR%%/rng/exclude
-@dirrm %%DATADIR%%/rng
-@dirrm %%DATADIR%%/po/zh_TW
-@dirrm %%DATADIR%%/po/zh_CN
-@dirrm %%DATADIR%%/po/uk_UA
-@dirrm %%DATADIR%%/po/sv
-@dirrm %%DATADIR%%/po/sk
-@dirrm %%DATADIR%%/po/ru
-@dirrm %%DATADIR%%/po/nl
-@dirrm %%DATADIR%%/po/it
-@dirrm %%DATADIR%%/po/fr
-@dirrm %%DATADIR%%/po/es
-@dirrm %%DATADIR%%/po/de
-@dirrm %%DATADIR%%/po/ca
-@dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/png
-@dirrm %%DATADIR%%/help/html
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/dtd/tei/p5
-@dirrm %%DATADIR%%/dtd/tei/p4
-@dirrm %%DATADIR%%/dtd/tei
-@dirrm %%DATADIR%%/dtd/docbook/5.0
-@dirrm %%DATADIR%%/dtd/docbook/4.4/ent
-@dirrm %%DATADIR%%/dtd/docbook/4.4
-@dirrm %%DATADIR%%/dtd/docbook
-@dirrm %%DATADIR%%/dtd/dita
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%/catalog
-@dirrm %%DATADIR%%

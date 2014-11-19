@@ -15,4 +15,3 @@ lib/liblnk.so.1.0.0
 libdata/pkgconfig/liblnk.pc
 man/man1/lnkinfo.1.gz
 man/man3/liblnk.3.gz
-@dirrm include/liblnk

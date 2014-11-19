@@ -32,4 +32,3 @@ lib/libol.a
 lib/libol.so
 lib/libol.so.0
 lib/libol.so.0.0.0
-@dirrm include/libol

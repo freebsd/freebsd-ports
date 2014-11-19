@@ -22,4 +22,3 @@
 %%PYTHON_SITELIBDIR%%/asterisk/manager.py
 %%PYTHON_SITELIBDIR%%/asterisk/manager.pyc
 %%PYTHON_SITELIBDIR%%/asterisk/manager.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/asterisk

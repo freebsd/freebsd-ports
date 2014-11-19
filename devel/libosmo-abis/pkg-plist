@@ -18,6 +18,3 @@ lib/libosmoabis.a
 lib/libosmotrau.a
 libdata/pkgconfig/libosmoabis.pc
 libdata/pkgconfig/libosmotrau.pc
-@dirrm include/osmocom/abis
-@dirrm include/osmocom/trau
-@dirrmtry include/osmocom

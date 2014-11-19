@@ -160,21 +160,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
 %%DATADIR%%/statsvn.jar
-@dirrm %%DATADIR%%
-%%JDK6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/svnkit
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/output/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/output
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/input/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/input
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/ant/class-use
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/ant
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/net
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/index-files
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

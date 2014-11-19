@@ -35,7 +35,3 @@
 %%PYTHON_SITELIBDIR%%/glew/glew.so
 %%PYTHON_SITELIBDIR%%/glew/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glew/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/glew/wgl
-@dirrm %%PYTHON_SITELIBDIR%%/glew/glx
-@dirrm %%PYTHON_SITELIBDIR%%/glew/gl
-@dirrm %%PYTHON_SITELIBDIR%%/glew

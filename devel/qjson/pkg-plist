@@ -12,6 +12,3 @@ lib/libqjson.so
 lib/libqjson.so.0
 lib/libqjson.so.0.8.1
 libdata/pkgconfig/QJson.pc
-@dirrm lib/cmake/qjson
-@dirrmtry lib/cmake
-@dirrm include/qjson

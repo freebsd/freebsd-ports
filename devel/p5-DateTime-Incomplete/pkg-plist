@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/DateTime::Incomplete.3.gz
 %%SITE_PERL%%/DateTime/Incomplete.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Incomplete/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Incomplete
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime

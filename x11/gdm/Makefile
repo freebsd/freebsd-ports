@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/gdm/Makefile 19935 2014-10-02 11:02:58Z gusi $
+#   $MCom: ports/trunk/x11/gdm/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gdm
-PORTVERSION=	3.12.2
-PORTREVISION=	2
+PORTVERSION=	3.14.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -40,7 +39,7 @@ USERS=		gdm
 GROUPS=		gdm
 
 USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	dconf gnomehier gnomeprefix intlhack introspection librsvg2
+USE_GNOME=	dconf gnomeprefix intlhack introspection librsvg2
 USE_LDCONFIG=	yes
 USE_XORG=	dmx dmxproto
 INSTALLS_ICONS=	yes

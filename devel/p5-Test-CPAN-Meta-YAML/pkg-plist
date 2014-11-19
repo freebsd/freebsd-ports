@@ -3,11 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CPAN/Meta/YAML/.packlist
 %%PERL5_MAN3%%/Test::CPAN::Meta::YAML.3.gz
 %%PERL5_MAN3%%/Test::CPAN::Meta::YAML::Version.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CPAN/Meta/YAML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CPAN/Meta
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CPAN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/CPAN/Meta/YAML
-@dirrmtry %%SITE_PERL%%/Test/CPAN/Meta
-@dirrmtry %%SITE_PERL%%/Test/CPAN
-@dirrmtry %%SITE_PERL%%/Test

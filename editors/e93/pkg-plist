@@ -32,10 +32,3 @@ lib/e93lib/syntaxmaps/verilog.tcl
 lib/e93lib/syntaxmaps/vhdl.tcl
 lib/e93lib/syntaxmaps/xml.tcl
 lib/e93lib/syntaxmaps/xsl.tcl
-@dirrm lib/e93lib/syntaxmaps
-@dirrm lib/e93lib/newstuff
-@dirrm lib/e93lib/modules
-@dirrm lib/e93lib/images
-@dirrm lib/e93lib/highlightschemes
-@dirrm lib/e93lib/examples
-@dirrm lib/e93lib

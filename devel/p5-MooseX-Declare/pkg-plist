@@ -47,11 +47,3 @@
 %%PERL5_MAN3%%/MooseX::Declare::Syntax::OptionHandling.3.gz
 %%PERL5_MAN3%%/MooseX::Declare::Syntax::RoleApplication.3.gz
 %%PERL5_MAN3%%/MooseX::Declare::Util.3.gz
-@dirrm %%SITE_PERL%%/MooseX/Declare/Syntax/MethodDeclaration
-@dirrm %%SITE_PERL%%/MooseX/Declare/Syntax/Keyword
-@dirrm %%SITE_PERL%%/MooseX/Declare/Syntax
-@dirrm %%SITE_PERL%%/MooseX/Declare/Context
-@dirrm %%SITE_PERL%%/MooseX/Declare
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Declare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

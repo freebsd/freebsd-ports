@@ -7,6 +7,3 @@ lib/libhangul.so.1.0.0
 libdata/pkgconfig/libhangul.pc
 %%NLS%%share/locale/ko/LC_MESSAGES/libhangul.mo
 %%DATADIR%%/hanja/hanja.txt
-@dirrm %%DATADIR%%/hanja
-@dirrm %%DATADIR%%
-@dirrm include/hangul-1.0

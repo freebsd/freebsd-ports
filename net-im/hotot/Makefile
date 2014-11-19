@@ -16,8 +16,7 @@ GH_ACCOUNT=	lyricat
 GH_PROJECT=	Hotot
 GH_COMMIT=	1f68d33
 
-USES=		cmake gettext
-USE_PYTHON=	yes
+USES=		cmake gettext python
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 

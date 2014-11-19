@@ -14,6 +14,3 @@
 %%PERL5_MAN3%%/Parse::LexEvent.3.gz
 %%PERL5_MAN3%%/Parse::CLex.3.gz
 %%PERL5_MAN3%%/Parse::Trace.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Lex
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
-@dirrmtry %%SITE_PERL%%/Parse

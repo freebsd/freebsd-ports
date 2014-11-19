@@ -226,20 +226,7 @@ lib/ircd-ratbox/modules/m_part.so
 lib/ircd-ratbox/modules/m_quit.so
 lib/ircd-ratbox/modules/m_server.so
 lib/ircd-ratbox/modules/m_squit.so
-@dirrm libexec/ircd-ratbox
-@dirrm lib/ircd-ratbox/modules/autoload
-@dirrm lib/ircd-ratbox/modules/contrib
-@dirrm lib/ircd-ratbox/modules
-@dirrm lib/ircd-ratbox
-@dirrm %%DATADIR%%/help/users
-@dirrm %%DATADIR%%/help/opers
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
 etc/ircd-ratbox/genssl.sh
 @sample etc/ircd-ratbox/ircd-efnet.conf.sample
 @sample etc/ircd-ratbox/ircd.conf.sample
 @sample etc/ircd-ratbox/ircd.motd.sample
-@dirrmtry etc/ircd-ratbox
-@dirrmtry %%LOGDIR%%
-@dirrmtry %%RUNDIR%%
-@dirrmtry %%DBDIR%%

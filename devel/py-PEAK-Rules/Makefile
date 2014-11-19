@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1.1:${PORTSDIR}/devel/py-extre
 		${PYTHON_PKGNAMEPREFIX}BytecodeAssembler>0:${PORTSDIR}/devel/py-BytecodeAssembler
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

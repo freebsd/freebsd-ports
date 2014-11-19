@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vile
-PORTVERSION=	9.8n
+PORTVERSION=	9.8o
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		ftp://invisible-island.net/vile/current/ \

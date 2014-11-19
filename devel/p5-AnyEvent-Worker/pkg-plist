@@ -3,8 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Worker/.packlist
 %%PERL5_MAN3%%/AnyEvent::Worker.3.gz
 %%PERL5_MAN3%%/AnyEvent::Worker::Pool.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Worker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/AnyEvent/Worker
-@dirrmtry %%SITE_PERL%%/AnyEvent

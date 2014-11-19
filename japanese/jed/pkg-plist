@@ -151,8 +151,3 @@ man/man1/rgrep.1.gz
 %%DATADIR%%/lib/simple.hlp
 %%DATADIR%%/lib/wordstar.hlp
 %%DATADIR%%/lib/jed.rc
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/lib/tm
-@dirrm %%DATADIR%%/lib/colors
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%

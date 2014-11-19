@@ -1,8 +1,3 @@
 %%SITE_PERL%%/MooseX/Types/DateTime.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/DateTime/.packlist
 %%PERL5_MAN3%%/MooseX::Types::DateTime.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/DateTime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Types
-@dirrmtry %%SITE_PERL%%/MooseX

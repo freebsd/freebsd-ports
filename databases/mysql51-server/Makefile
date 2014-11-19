@@ -90,7 +90,9 @@ CXXFLAGS+=	-fno-exceptions
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	51
 
-CONFLICTS_INSTALL=	mysql5.[02-9]-server-* mysql[0-46-9][0-9]-server-* mariadb[0-9][0-9]-server-* percona[0-9][0-9]-server-*
+CONFLICTS_INSTALL=	mysql5[2-9]-server-* \
+			mariadb*-server-* \
+			percona*-server-*
 
 USE_RC_SUBR=	mysql-server
 
@@ -158,7 +160,9 @@ post-patch:
 .else
 # MySQL-Client part
 .if defined(CLIENT_ONLY)
-CONFLICTS_INSTALL=	mysql5.[02-9]-client-* mysql[0-46-9][0-9]-client-*
+CONFLICTS_INSTALL=	mysql5[02-9]-client-* \
+			mariadb*-client-* \
+			percona*-client-* 
 
 MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
 		mysqlbinlog.1 mysqlbug.1 mysqlcheck.1 \
@@ -186,7 +190,7 @@ WANT_MYSQL_VER=	51
 
 RUN_DEPENDS=	p5-DBD-mysql51>=0:${PORTSDIR}/databases/p5-DBD-mysql51
 
-CONFLICTS_INSTALL=	mysql[0-46-9][0-9]-scripts-* mysql5.[02-9]-scripts-*
+CONFLICTS_INSTALL=	mariadb51-scripts-*
 
 MAN1=		msql2mysql.1 mysql_convert_table_format.1 mysql_find_rows.1 \
 		mysql_fix_extensions.1 mysql_secure_installation.1 \

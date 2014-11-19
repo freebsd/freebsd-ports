@@ -141,19 +141,3 @@ include/build-%%BUILD_VER%%/system/config.guess
 include/build-%%BUILD_VER%%/system/config.sub
 include/build-%%BUILD_VER%%/system/configuration-rules.make
 include/build-%%BUILD_VER%%/system/configure
-@dirrm include/build-%%BUILD_VER%%/system
-@dirrm include/build-%%BUILD_VER%%/meta
-@dirrm include/build-%%BUILD_VER%%/m4
-@dirrm include/build-%%BUILD_VER%%/ld
-@dirrm include/build-%%BUILD_VER%%/install
-@dirrm include/build-%%BUILD_VER%%/git
-@dirrm include/build-%%BUILD_VER%%/dist
-@dirrm include/build-%%BUILD_VER%%/cxx/intel
-@dirrm include/build-%%BUILD_VER%%/cxx/gnu
-@dirrm include/build-%%BUILD_VER%%/cxx/generic
-@dirrm include/build-%%BUILD_VER%%/cxx
-@dirrm include/build-%%BUILD_VER%%/c/intel
-@dirrm include/build-%%BUILD_VER%%/c/gnu
-@dirrm include/build-%%BUILD_VER%%/c/generic
-@dirrm include/build-%%BUILD_VER%%/c
-@dirrm include/build-%%BUILD_VER%%

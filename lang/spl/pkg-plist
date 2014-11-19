@@ -9,4 +9,3 @@ lib/libspl.a
 %%PORTEXAMPLES%%share/examples/spl/fibonacci2.spl
 %%PORTEXAMPLES%%share/examples/spl/guess.spl
 %%PORTEXAMPLES%%share/examples/spl/shakesbeer.spl
-%%PORTEXAMPLES%%@dirrm share/examples/spl

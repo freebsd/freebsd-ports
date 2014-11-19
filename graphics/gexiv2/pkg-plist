@@ -5,9 +5,11 @@ include/gexiv2/gexiv2-managed-stream.h
 include/gexiv2/gexiv2-preview-properties.h
 include/gexiv2/gexiv2-preview-image.h
 include/gexiv2/gexiv2-startup.h
+lib/girepository-1.0/GExiv2-0.4.typelib
 lib/libgexiv2.a
 lib/libgexiv2.so
 lib/libgexiv2.so.2
 lib/libgexiv2.so.2.0.0
 libdata/pkgconfig/gexiv2.pc
+share/gir-1.0/GExiv2-0.4.gir
 share/vala/vapi/gexiv2.vapi

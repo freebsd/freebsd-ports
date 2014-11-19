@@ -14,9 +14,8 @@ COMMENT=	Tool to post subversion repository commit information
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>0:${PORTSDIR}/devel/py-subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		tar:bzip2
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2 tar:bzip2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
 PORTDOCS=	*

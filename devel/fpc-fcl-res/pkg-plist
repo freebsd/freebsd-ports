@@ -110,8 +110,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/versiontypes.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/versiontypes.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/winpeimagereader.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/winpeimagereader.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -22,9 +22,8 @@ LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		libhdf5.so:${PORTSDIR}/science/hdf5
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool perl5 tar:bzip2
+USES=		gmake libtool perl5 python tar:bzip2
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL GTK2
 

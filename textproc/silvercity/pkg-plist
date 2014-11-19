@@ -66,4 +66,3 @@ bin/cgi-styler-form.py
 %%PYTHON_SITELIBDIR%%/SilverCity/__init__.pyc
 %%PYTHON_SITELIBDIR%%/SilverCity/__init__.pyo
 %%PYTHON_SITELIBDIR%%/SilverCity/default.css
-@dirrm %%PYTHON_SITELIBDIR%%/SilverCity

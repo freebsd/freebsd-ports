@@ -3,7 +3,7 @@
 
 PORTNAME=	esecanna
 PORTVERSION=	1.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}

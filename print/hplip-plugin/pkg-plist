@@ -25,10 +25,3 @@ share/hplip/scan/plugins/bb_soap-%%LINARCH%%.so
 share/hplip/scan/plugins/bb_soap.so
 share/hplip/scan/plugins/bb_soapht-%%LINARCH%%.so
 share/hplip/scan/plugins/bb_soapht.so
-@dirrm share/hplip/scan/plugins
-@dirrmtry share/hplip/scan
-@dirrm share/hplip/prnt/plugins
-@dirrm share/hplip/fax/plugins
-@dirrmtry share/hplip/fax
-@dirrm share/hplip/data/plugins
-@dirrm share/hplip/data/firmware

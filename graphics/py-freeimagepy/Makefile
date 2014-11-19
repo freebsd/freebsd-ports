@@ -14,9 +14,7 @@ COMMENT=	FreeImage library python wrapper
 LIB_DEPENDS=	libfreeimage.so:${PORTSDIR}/graphics/freeimage
 
 WRKSRC=		${WRKDIR}/FreeImagePy-${PORTVERSION}
-USES=	tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

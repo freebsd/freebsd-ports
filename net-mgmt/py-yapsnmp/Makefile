@@ -16,8 +16,7 @@ LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool
-USE_PYTHON=	yes
+USES=		gmake libtool python
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib

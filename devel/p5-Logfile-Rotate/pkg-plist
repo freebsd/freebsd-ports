@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Logfile::Rotate.3.gz
 %%SITE_PERL%%/Logfile/Rotate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Logfile/Rotate/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Logfile/Rotate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Logfile
-@dirrmtry %%SITE_PERL%%/Logfile

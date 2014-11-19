@@ -8,7 +8,7 @@ CATEGORIES=	games ruby
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/./_/g}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and low-tech monster-bashing maze game
 
 LICENSE=	GPLv2 RUBY

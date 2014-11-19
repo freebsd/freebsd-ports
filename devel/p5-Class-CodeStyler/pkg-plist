@@ -1,5 +1,2 @@
 %%SITE_PERL%%/Class/CodeStyler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/CodeStyler/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/CodeStyler
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

@@ -37,5 +37,3 @@ share/icons/hicolor/scalable/apps/bareftp.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/bareftp.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/bareftp.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bareftp.mo
-@dirrm libexec/bareftp
-@dirrm lib/bareftp

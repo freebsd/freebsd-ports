@@ -2,7 +2,3 @@
 %%SITE_PERL%%/Class/Autouse.pm
 %%SITE_PERL%%/Class/Autouse/Parent.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Autouse/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Autouse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrm %%SITE_PERL%%/Class/Autouse
-@dirrmtry %%SITE_PERL%%/Class

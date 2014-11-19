@@ -46,7 +46,3 @@ man/man1/pmw.1.gz
 %%DATADIR%%/fontmetrics/ZapfDingbats.afm
 %%DATADIR%%/psfonts/PMW-Music.pfa
 %%DATADIR%%/psfonts/PMW-Alpha
-@dirrm %%DATADIR%%/psfonts
-@dirrm %%DATADIR%%/fontmetrics
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

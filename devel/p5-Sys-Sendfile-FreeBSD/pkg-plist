@@ -1,9 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Sendfile/FreeBSD.pm
 %%PERL5_MAN3%%/Sys::Sendfile::FreeBSD.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Sendfile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Sendfile/FreeBSD/FreeBSD.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Sendfile/FreeBSD/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Sendfile/FreeBSD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Sendfile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys

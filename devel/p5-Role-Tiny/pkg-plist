@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/Tiny/.packlist
 %%PERL5_MAN3%%/Role::Tiny.3.gz
 %%PERL5_MAN3%%/Role::Tiny::With.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role
-@dirrm %%SITE_PERL%%/Role/Tiny
-@dirrmtry %%SITE_PERL%%/Role

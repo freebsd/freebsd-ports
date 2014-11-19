@@ -18,8 +18,7 @@ RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 USE_GNOME=	pygtk2
-USES=		iconv tar:bzip2
-USE_PYTHON=	yes
+USES=		iconv python tar:bzip2
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	IBUS NLS

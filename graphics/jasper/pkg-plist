@@ -34,5 +34,3 @@ man/man1/jiv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/jasper.pdf
 %%PORTDOCS%%%%DOCSDIR%%/jpeg2000.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/jasper

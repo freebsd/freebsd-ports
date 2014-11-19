@@ -56,5 +56,3 @@ include/concorde/tinytsp.h
 include/concorde/tsp.h
 include/concorde/util.h
 include/concorde/verify.h
-@dirrm bin/concorde
-@dirrm include/concorde

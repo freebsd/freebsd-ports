@@ -115,7 +115,3 @@
 %%QT_LIBDIR%%/libQtNetwork.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtNetwork.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtNetwork.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtNetwork
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

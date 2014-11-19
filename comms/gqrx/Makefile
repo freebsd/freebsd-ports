@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	20140313
-PORTREVISION=	1
+PORTVERSION=	2.3.1
+PORTEPOCH=	1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
-		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	Qt-based software defined radio receiver
+COMMENT=	Software defined radio receiver powered by GNU Radio and Qt
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnuradio-runtime.so:${PORTSDIR}/comms/gnuradio \
 		libgnuradio-analog.so:${PORTSDIR}/comms/gnuradio \
@@ -21,18 +20,21 @@ LIB_DEPENDS=	libgnuradio-runtime.so:${PORTSDIR}/comms/gnuradio \
 		libgnuradio-audio.so:${PORTSDIR}/comms/gnuradio \
 		libgnuradio-osmosdr.so:${PORTSDIR}/comms/gr-osmosdr \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
+		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
 
-USES=		pkgconfig qmake tar:tgz
+USE_GITHUB=	yes
+GH_ACCOUNT=	csete
+GH_COMMIT=	4d90b84
+GH_TAGNAME=	v${PORTVERSION}
+
+USES=		pkgconfig qmake
 USE_QT5=	buildtools_build core gui svg network widgets
 
-QMAKE_ARGS+=	VER="${PORTVERSION}"
-
-PLIST_FILES=	bin/gqrx
+PLIST_FILES=	bin/gqrx share/applications/gqrx.desktop
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gqrx ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/gqrx.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>

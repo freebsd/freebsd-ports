@@ -152,8 +152,3 @@ share/applications/bombz.desktop
 %%DATADIR%%/sounds/pip1.wav
 %%DATADIR%%/sounds/pip2.wav
 share/pixmaps/bombz.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/pngs
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/bombz
-@dirrm %%DATADIR%%

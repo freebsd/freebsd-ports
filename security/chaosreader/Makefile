@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}${PORTVERSION} sshkeydata0.20
 EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Tool to extract data from tcpdump logs
 
 NO_BUILD=	yes

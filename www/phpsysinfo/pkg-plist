@@ -239,78 +239,11 @@
 %%WWWDIR%%/templates/two.css
 %%WWWDIR%%/templates/two/gradient.png
 %%WWWDIR%%/xml.php
-@dirrm %%WWWDIR%%/templates/two
-@dirrm %%WWWDIR%%/templates/plugin
-@dirrm %%WWWDIR%%/templates/nextgen
-@dirrm %%WWWDIR%%/templates/html
-@dirrm %%WWWDIR%%/templates/cream
-@dirrm %%WWWDIR%%/templates/aqua
-@dirrm %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%/plugins/ipmi/lang
-@dirrm %%WWWDIR%%/plugins/ipmi/js
-@dirrm %%WWWDIR%%/plugins/ipmi
-@dirrm %%WWWDIR%%/plugins/UpdateNotifier/lang
-@dirrm %%WWWDIR%%/plugins/UpdateNotifier/js
-@dirrm %%WWWDIR%%/plugins/UpdateNotifier/gfx
-@dirrm %%WWWDIR%%/plugins/UpdateNotifier/css
-@dirrm %%WWWDIR%%/plugins/UpdateNotifier
-@dirrm %%WWWDIR%%/plugins/SMART/lang
-@dirrm %%WWWDIR%%/plugins/SMART/js
-@dirrm %%WWWDIR%%/plugins/SMART/gfx
-@dirrm %%WWWDIR%%/plugins/SMART/css
-@dirrm %%WWWDIR%%/plugins/SMART
-@dirrm %%WWWDIR%%/plugins/Quotas/lang
-@dirrm %%WWWDIR%%/plugins/Quotas/js
-@dirrm %%WWWDIR%%/plugins/Quotas/gfx
-@dirrm %%WWWDIR%%/plugins/Quotas/css
-@dirrm %%WWWDIR%%/plugins/Quotas
-@dirrm %%WWWDIR%%/plugins/PSStatus/lang
-@dirrm %%WWWDIR%%/plugins/PSStatus/js
-@dirrm %%WWWDIR%%/plugins/PSStatus/gfx
-@dirrm %%WWWDIR%%/plugins/PSStatus/css
-@dirrm %%WWWDIR%%/plugins/PSStatus
-@dirrm %%WWWDIR%%/plugins/PS/lang
-@dirrm %%WWWDIR%%/plugins/PS/js
-@dirrm %%WWWDIR%%/plugins/PS/gfx
-@dirrm %%WWWDIR%%/plugins/PS/css
-@dirrm %%WWWDIR%%/plugins/PS
-@dirrm %%WWWDIR%%/plugins/MDStatus/lang
-@dirrm %%WWWDIR%%/plugins/MDStatus/js
-@dirrm %%WWWDIR%%/plugins/MDStatus/gfx
-@dirrm %%WWWDIR%%/plugins/MDStatus/css
-@dirrm %%WWWDIR%%/plugins/MDStatus
-@dirrm %%WWWDIR%%/plugins/BAT/lang
-@dirrm %%WWWDIR%%/plugins/BAT/js
-@dirrm %%WWWDIR%%/plugins/BAT/gfx
-@dirrm %%WWWDIR%%/plugins/BAT/css
-@dirrm %%WWWDIR%%/plugins/BAT
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/language
-@dirrm %%WWWDIR%%/js/phpSysInfo
-@dirrm %%WWWDIR%%/js/jQuery
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/includes/xml
-@dirrm %%WWWDIR%%/includes/ups
-@dirrm %%WWWDIR%%/includes/to/device
-@dirrm %%WWWDIR%%/includes/to
-@dirrm %%WWWDIR%%/includes/plugin
-@dirrm %%WWWDIR%%/includes/output
-@dirrm %%WWWDIR%%/includes/os
-@dirrm %%WWWDIR%%/includes/mb
-@dirrm %%WWWDIR%%/includes/js
-@dirrm %%WWWDIR%%/includes/interface
-@dirrm %%WWWDIR%%/includes/error
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/gfx/treeTable
-@dirrm %%WWWDIR%%/gfx/images
-@dirrm %%WWWDIR%%/gfx
-@dirrm %%WWWDIR%%/data
-@dirrm %%WWWDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/plugins/UpdateNotifier/gfx
-@exec mkdir -p %D/%%WWWDIR%%/plugins/UpdateNotifier/css
-@exec mkdir -p %D/%%WWWDIR%%/plugins/SMART/gfx
-@exec mkdir -p %D/%%WWWDIR%%/plugins/Quotas/gfx
-@exec mkdir -p %D/%%WWWDIR%%/plugins/PS/gfx
-@exec mkdir -p %D/%%WWWDIR%%/plugins/PS/css
-@exec mkdir -p %D/%%WWWDIR%%/plugins/BAT/gfx
-@exec mkdir -p %D/%%WWWDIR%%/plugins/BAT/css
+@dir %%WWWDIR%%/plugins/UpdateNotifier/gfx
+@dir %%WWWDIR%%/plugins/UpdateNotifier/css
+@dir %%WWWDIR%%/plugins/SMART/gfx
+@dir %%WWWDIR%%/plugins/Quotas/gfx
+@dir %%WWWDIR%%/plugins/PS/gfx
+@dir %%WWWDIR%%/plugins/PS/css
+@dir %%WWWDIR%%/plugins/BAT/gfx
+@dir %%WWWDIR%%/plugins/BAT/css

@@ -3,6 +3,3 @@ bin/bucketize
 %%SITE_PERL%%/Algorithm/Bucketizer.pm
 %%PERL5_MAN3%%/Algorithm::Bucketizer.3.gz
 man/man1/bucketize.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Bucketizer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm

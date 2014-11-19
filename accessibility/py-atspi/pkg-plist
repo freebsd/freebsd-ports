@@ -70,4 +70,3 @@
 %%PYTHON_SITELIBDIR%%/pyatspi/value.py
 %%PYTHON_SITELIBDIR%%/pyatspi/value.pyc
 %%PYTHON_SITELIBDIR%%/pyatspi/value.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pyatspi

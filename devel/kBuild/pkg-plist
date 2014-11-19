@@ -133,9 +133,3 @@ bin/kmk_ash
 %%DATADIR%%/units/qt4.kmk
 %%DATADIR%%/units/yacc.kmk
 %%DATADIR%%/up.kmk
-@dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%/sdks
-@dirrm %%DATADIR%%/units
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/msgstyles
-@dirrm %%DATADIR%%

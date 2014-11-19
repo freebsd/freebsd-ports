@@ -6,7 +6,3 @@
 %%PERL5_MAN3%%/MouseX::Types.3.gz
 %%PERL5_MAN3%%/MouseX::Types::Moose.3.gz
 %%PERL5_MAN3%%/MouseX::Types::Mouse.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Types
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
-@dirrmtry %%SITE_PERL%%/MouseX/Types
-@dirrmtry %%SITE_PERL%%/MouseX

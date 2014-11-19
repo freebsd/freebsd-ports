@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.5.6
-PORTREVISION=	4
+PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
@@ -12,7 +12,8 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-editi
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog
+LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -22,15 +23,14 @@ WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	SYS_SSL PORTS_SSL
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 PCRE SMTP JSON GEOIP DOCS REDIS
-OPTIONS_DEFAULT=	PORTS_SSL PCRE
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS
+OPTIONS_DEFAULT=	PORTS_SSL JSON
 SYS_SSL_DESC=		Build with OpenSSL support (from system)
 PORTS_SSL_DESC=		Build with OpenSSL support (from ports)
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
 SPOOF_DESC=		Build with spoof source support
 IPV6_DESC=		Build with IPV6 support
-PCRE_DESC=		Build with PCRE support
 SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
@@ -89,13 +89,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if ${PORT_OPTIONS:MPCRE}
-CONFIGURE_ARGS+=	--enable-pcre
-LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
-.else
-CONFIGURE_ARGS+=	--disable-pcre
-.endif
-
 .if ${PORT_OPTIONS:MGEOIP}
 CONFIGURE_ARGS+=	--enable-geoip
 LIB_DEPENDS+=		libGeoIP.so:${PORTSDIR}/net/GeoIP
@@ -112,7 +105,6 @@ PLIST_FILES+=           lib/syslog-ng/libredis.so
 .else
 CONFIGURE_ARGS+=        --disable-redis
 .endif
-
 
 .if ${PORT_OPTIONS:MSMTP}
 CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
@@ -133,7 +125,7 @@ CONFIGURE_ARGS+=	--disable-sql
 .endif
 
 .if ${PORT_OPTIONS:MJSON}
-LIB_DEPENDS+=		libjson.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS+=		libjson-c.so:${PORTSDIR}/devel/json-c
 CONFIGURE_ARGS+=	--enable-json
 PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 .else
@@ -155,7 +147,7 @@ post-install:
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS.md ${STAGEDIR}${DOCSDIR}
 .endif
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${STAGEDIR}${PREFIX}/man/man5/

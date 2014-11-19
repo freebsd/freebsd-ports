@@ -10,21 +10,16 @@ MASTER_SITES=	SF/fame/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple video encoder
 
-LIB_DEPENDS=	libfame-0.9.so:${PORTSDIR}/multimedia/libfame
+LIB_DEPENDS=	libfame.so:${PORTSDIR}/multimedia/libfame
 
 GNU_CONFIGURE=	yes
 
-MAN1=		recmpeg.1
 PLIST_FILES=	bin/recmpeg \
 		man/man1/recmpeg.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+BROKEN_ia64=	Fails to link on ia64
 
-.if ${ARCH} == "ia64"
-BROKEN=		Fails to link on ia64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

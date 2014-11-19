@@ -8,9 +8,7 @@ lib/libprojectM.so
 lib/libprojectM.so.2
 lib/libprojectM.so.2.00
 libdata/pkgconfig/libprojectM.pc
-@unexec if cmp -s %D/share/projectM/config.inp.sample %D/share/projectM/config.inp; then rm -f %D/share/projectM/config.inp; fi
-share/projectM/config.inp.sample
-@exec if [ ! -f %D/share/projectM/config.inp ] ; then cp -p %D/%F %B/config.inp; fi
+@sample share/projectM/config.inp.sample
 share/projectM/fonts/Vera.ttf
 share/projectM/fonts/VeraMono.ttf
 share/projectM/presets/Aderrasi - Agitator.milk
@@ -296,8 +294,3 @@ share/projectM/presets/shifter - pulsar.milk
 share/projectM/presets/shifter - snow.milk
 share/projectM/shaders/blur.cg
 share/projectM/shaders/projectM.cg
-@dirrm share/projectM/shaders
-@dirrm share/projectM/presets
-@dirrm share/projectM/fonts
-@dirrm share/projectM
-@dirrm include/libprojectM

@@ -16,8 +16,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
 
-USES=		gmake
-USE_PYTHON=	2
+USES=		gmake python:2
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -fPIC" \
 		LIBPLOT_CPPFLAGS="-I${LOCALBASE}/include" \

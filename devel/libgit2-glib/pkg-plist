@@ -124,6 +124,3 @@ share/gir-1.0/Ggit-1.0.gir
 %%PORTDOCS%%%%DOCSDIR%%-1.0/up.png
 share/vala/vapi/ggit-1.0.deps
 share/vala/vapi/ggit-1.0.vapi
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%-1.0
-@dirrm include/libgit2-glib-1.0/libgit2-glib
-@dirrm include/libgit2-glib-1.0

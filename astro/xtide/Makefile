@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${TCD_DISTNAME}-r3${EXTRACT_SUFX} \
 		${HARM_DISTNAME}-free${EXTRACT_SUFX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Harmonic tide clock and tide predictor
 
 LICENSE=	GPLv3

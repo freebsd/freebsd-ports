@@ -231,28 +231,3 @@ man/man1/cthumb.1.gz
 %%DATADIR%%/tv.theme/right.png
 %%DATADIR%%/tv.theme/theme.conf
 %%DATADIR%%/tv.theme/top.png
-@dirrm %%DATADIR%%/blue-steel.theme
-@dirrm %%DATADIR%%/classic-clips.theme
-@dirrm %%DATADIR%%/classic.theme
-@dirrm %%DATADIR%%/crosshair.theme
-@dirrm %%DATADIR%%/film.theme
-@dirrm %%DATADIR%%/flaps.theme
-@dirrm %%DATADIR%%/float-medium.theme
-@dirrm %%DATADIR%%/float-more.theme
-@dirrm %%DATADIR%%/float-thick.theme
-@dirrm %%DATADIR%%/float.theme
-@dirrm %%DATADIR%%/ithumb.theme
-@dirrm %%DATADIR%%/neat-round.theme
-@dirrm %%DATADIR%%/neat-square.theme
-@dirrm %%DATADIR%%/oak.theme
-@dirrm %%DATADIR%%/postcard.theme
-@dirrm %%DATADIR%%/shiny-tube.theme
-@dirrm %%DATADIR%%/simpleframe.theme
-@dirrm %%DATADIR%%/slides-big.theme
-@dirrm %%DATADIR%%/slides-clean.theme
-@dirrm %%DATADIR%%/slides-huge.theme
-@dirrm %%DATADIR%%/slides-small.theme
-@dirrm %%DATADIR%%/spotlight.theme
-@dirrm %%DATADIR%%/tv-large.theme
-@dirrm %%DATADIR%%/tv.theme
-@dirrm %%DATADIR%%

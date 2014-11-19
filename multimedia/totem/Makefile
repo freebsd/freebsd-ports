@@ -1,6 +1,6 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/multimedia/totem/Makefile 19889 2014-09-19 08:02:10Z gusi $
+#   $MCom: ports/trunk/multimedia/totem/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	totem
 PORTVERSION=	3.12.2
@@ -30,7 +30,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		python:3 shebangfix tar:xz
-USE_GNOME=	gnomehier gnomeprefix gtk30 intlhack introspection:build \
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build \
 		libxml2 nautilus3 py3gobject3
 USE_XORG=	x11 xproto xtst ice sm
 USE_GSTREAMER1=	core good bad soup ugly

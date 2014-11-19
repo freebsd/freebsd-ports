@@ -63,6 +63,9 @@ lib/evince/4/backends/libpsdocument.a
 lib/evince/4/backends/libpsdocument.so
 lib/evince/4/backends/libtiffdocument.a
 lib/evince/4/backends/libtiffdocument.so
+%%XPS%%lib/evince/4/backends/libxpsdocument.a
+%%XPS%%lib/evince/4/backends/libxpsdocument.so
+%%XPS%%lib/evince/4/backends/xpsdocument.evince-backend
 lib/evince/4/backends/pdfdocument.evince-backend
 lib/evince/4/backends/psdocument.evince-backend
 lib/evince/4/backends/tiffdocument.evince-backend
@@ -76,6 +79,8 @@ lib/libevview3.a
 lib/libevview3.so
 lib/libevview3.so.3
 lib/libevview3.so.3.0.0
+lib/mozilla/plugins/libevbrowserplugin.a
+lib/mozilla/plugins/libevbrowserplugin.so
 %%NAUTILUS%%lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.a
 %%NAUTILUS%%lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.so
 libdata/pkgconfig/evince-document-%%VERSION%%.pc
@@ -83,6 +88,14 @@ libdata/pkgconfig/evince-view-%%VERSION%%.pc
 libexec/evinced
 man/man1/evince.1.gz
 share/GConf/gsettings/evince.convert
+%%COMICS%%share/appdata/evince-comicsdocument.metainfo.xml
+%%DJVU%%share/appdata/evince-djvudocument.metainfo.xml
+%%DVI%%share/appdata/evince-dvidocument.metainfo.xml
+share/appdata/evince-pdfdocument.metainfo.xml
+share/appdata/evince-psdocument.metainfo.xml
+share/appdata/evince-tiffdocument.metainfo.xml
+%%XPS%%share/appdata/evince-xpsdocument.metainfo.xml
+share/appdata/evince.appdata.xml
 share/applications/evince-previewer.desktop
 share/applications/evince.desktop
 share/dbus-1/services/org.gnome.evince.Daemon.service
@@ -90,7 +103,6 @@ share/dbus-1/services/org.gnome.evince.Daemon.service
 %%DOCSDIR%%/EvFileMonitor.html
 %%DOCSDIR%%/EvHistory.html
 %%DOCSDIR%%/EvMessageArea.html
-%%DOCSDIR%%/EvOpenRecentAction.html
 %%DOCSDIR%%/EvPageAction.html
 %%DOCSDIR%%/EvPageActionWidget.html
 %%DOCSDIR%%/EvPasswordView.html
@@ -2945,181 +2957,3 @@ share/locale/zh_HK/LC_MESSAGES/evince.mo
 share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/locale/zu/LC_MESSAGES/evince.mo
 share/thumbnailers/evince.thumbnailer
-@dirrm share/thumbnailers
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/my/LC_MESSAGES
-@dirrmtry share/locale/my
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ks/LC_MESSAGES
-@dirrmtry share/locale/ks
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrm share/help/zh_TW/evince/figures
-@dirrm share/help/zh_TW/evince
-@dirrmtry share/help/zh_TW
-@dirrm share/help/zh_HK/evince/figures
-@dirrm share/help/zh_HK/evince
-@dirrmtry share/help/zh_HK
-@dirrm share/help/zh_CN/evince/figures
-@dirrm share/help/zh_CN/evince
-@dirrmtry share/help/zh_CN
-@dirrm share/help/vi/evince/figures
-@dirrm share/help/vi/evince
-@dirrmtry share/help/vi
-@dirrm share/help/uk/evince/figures
-@dirrm share/help/uk/evince
-@dirrmtry share/help/uk
-@dirrm share/help/te/evince/figures
-@dirrm share/help/te/evince
-@dirrmtry share/help/te
-@dirrm share/help/sv/evince/figures
-@dirrm share/help/sv/evince
-@dirrmtry share/help/sv
-@dirrm share/help/sr/evince/figures
-@dirrm share/help/sr/evince
-@dirrmtry share/help/sr
-@dirrm share/help/sl/evince/figures
-@dirrm share/help/sl/evince
-@dirrmtry share/help/sl
-@dirrm share/help/ru/evince/figures
-@dirrm share/help/ru/evince
-@dirrmtry share/help/ru
-@dirrm share/help/pt_BR/evince/figures
-@dirrm share/help/pt_BR/evince
-@dirrmtry share/help/pt_BR
-@dirrm share/help/oc/evince/figures
-@dirrm share/help/oc/evince
-@dirrmtry share/help/oc
-@dirrm share/help/nl/evince/figures
-@dirrm share/help/nl/evince
-@dirrmtry share/help/nl
-@dirrm share/help/lv/evince/figures
-@dirrm share/help/lv/evince
-@dirrmtry share/help/lv
-@dirrm share/help/ko/evince/figures
-@dirrm share/help/ko/evince
-@dirrmtry share/help/ko
-@dirrm share/help/ja/evince/figures
-@dirrm share/help/ja/evince
-@dirrmtry share/help/ja
-@dirrm share/help/it/evince/figures
-@dirrm share/help/it/evince
-@dirrmtry share/help/it
-@dirrm share/help/id/evince/figures
-@dirrm share/help/id/evince
-@dirrmtry share/help/id
-@dirrm share/help/hu/evince/figures
-@dirrm share/help/hu/evince
-@dirrmtry share/help/hu
-@dirrm share/help/gl/evince/figures
-@dirrm share/help/gl/evince
-@dirrmtry share/help/gl
-@dirrm share/help/fr/evince/figures
-@dirrm share/help/fr/evince
-@dirrmtry share/help/fr
-@dirrm share/help/fi/evince/figures
-@dirrm share/help/fi/evince
-@dirrmtry share/help/fi
-@dirrm share/help/eu/evince/figures
-@dirrm share/help/eu/evince
-@dirrmtry share/help/eu
-@dirrm share/help/es/evince/figures
-@dirrm share/help/es/evince
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/evince/figures
-@dirrm share/help/en_GB/evince
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/evince/figures
-@dirrm share/help/el/evince
-@dirrmtry share/help/el
-@dirrm share/help/de/evince/figures
-@dirrm share/help/de/evince
-@dirrmtry share/help/de
-@dirrm share/help/da/evince/figures
-@dirrm share/help/da/evince
-@dirrmtry share/help/da
-@dirrm share/help/cs/evince/figures
-@dirrm share/help/cs/evince
-@dirrmtry share/help/cs
-@dirrm share/help/ca/evince/figures
-@dirrm share/help/ca/evince
-@dirrmtry share/help/ca
-@dirrm share/help/bg/evince/figures
-@dirrm share/help/bg/evince
-@dirrmtry share/help/bg
-@dirrm share/help/C/evince/figures
-@dirrm share/help/C/evince
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm %%DATADIR%%/icons/hicolor/scalable/mimetypes
-@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/32x32/mimetypes
-@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/24x24/mimetypes
-@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/22x22/mimetypes
-@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/mimetypes
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm share/doc/libevview
-@dirrm share/doc/libevdocument
-@dirrm %%DOCSDIR%%
-@dirrm lib/evince/4/backends
-@dirrm lib/evince/4
-@dirrm lib/evince
-@dirrm include/evince/%%VERSION%%/libview
-@dirrm include/evince/%%VERSION%%/libdocument
-@dirrm include/evince/%%VERSION%%
-@dirrm include/evince

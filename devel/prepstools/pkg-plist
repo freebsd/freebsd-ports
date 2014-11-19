@@ -8,5 +8,3 @@ lib/libpreps.so.2.0.0
 %%DATADIR%%/assign.msg
 %%DATADIR%%/new_pr.msg
 %%DATADIR%%/update.msg
-@dirrm include/preps
-@dirrmtry %%DATADIR%%

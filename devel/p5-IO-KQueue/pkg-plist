@@ -3,8 +3,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/KQueue/KQueue.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chat.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tail.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PERL5_MAN3%%/IO::KQueue.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/KQueue
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO

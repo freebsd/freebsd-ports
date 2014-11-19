@@ -4,4 +4,3 @@ bin/cbpp
 man/man1/cbind.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/DOCS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

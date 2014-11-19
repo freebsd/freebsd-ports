@@ -7,11 +7,11 @@ r226103 | des | 2011-10-07 08:10:16 -0500 (Fri, 07 Oct 2011) | 5 lines
 Add a -x option that causes ssh-agent(1) to exit when all clients have
 disconnected.
 
---- ssh-agent.c.orig	2011-06-02 23:14:16.000000000 -0500
-+++ ssh-agent.c	2013-05-09 15:59:14.044627857 -0500
-@@ -137,15 +137,34 @@
- /* Default lifetime (0 == forever) */
- static int lifetime = 0;
+--- ssh-agent.c.orig	2014-07-29 21:32:46.000000000 -0500
++++ ssh-agent.c	2014-11-03 16:48:03.930786112 -0600
+@@ -142,15 +142,34 @@ extern char *__progname;
+ /* Default lifetime in seconds (0 == forever) */
+ static long lifetime = 0;
  
 +/*
 + * Client connection count; incremented in new_socket() and decremented in
@@ -44,7 +44,7 @@ disconnected.
  }
  
  static void
-@@ -900,6 +919,10 @@
+@@ -810,6 +829,10 @@ new_socket(sock_type type, int fd)
  {
  	u_int i, old_alloc, new_alloc;
  
@@ -55,15 +55,16 @@ disconnected.
  	set_nonblock(fd);
  
  	if (fd > max_fd)
-@@ -1120,6 +1143,7 @@
- 	fprintf(stderr, "  -d          Debug mode.\n");
- 	fprintf(stderr, "  -a socket   Bind agent socket to given name.\n");
- 	fprintf(stderr, "  -t life     Default identity lifetime (seconds).\n");
-+	fprintf(stderr, "  -x          Exit when the last client disconnects.\n");
+@@ -1026,7 +1049,7 @@ usage(void)
+ {
+ 	fprintf(stderr,
+ 	    "usage: ssh-agent [-c | -s] [-d] [-a bind_address] [-t life]\n"
+-	    "                 [command [arg ...]]\n"
++	    "                 [-x] [command [arg ...]]\n"
+ 	    "       ssh-agent [-c | -s] -k\n");
  	exit(1);
  }
- 
-@@ -1149,6 +1173,7 @@
+@@ -1056,6 +1079,7 @@ main(int ac, char **av)
  	/* drop */
  	setegid(getgid());
  	setgid(getgid());
@@ -71,7 +72,7 @@ disconnected.
  
  #if defined(HAVE_PRCTL) && defined(PR_SET_DUMPABLE)
  	/* Disable ptrace on Linux without sgid bit */
-@@ -1160,7 +1185,7 @@
+@@ -1069,7 +1093,7 @@ main(int ac, char **av)
  	__progname = ssh_get_progname(av[0]);
  	seed_rng();
  
@@ -80,7 +81,7 @@ disconnected.
  		switch (ch) {
  		case 'c':
  			if (s_flag)
-@@ -1189,6 +1214,9 @@
+@@ -1098,6 +1122,9 @@ main(int ac, char **av)
  				usage();
  			}
  			break;

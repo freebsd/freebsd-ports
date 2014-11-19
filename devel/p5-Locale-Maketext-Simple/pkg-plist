@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Locale/Maketext/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Simple/.packlist
 %%PERL5_MAN3%%/Locale::Maketext::Simple.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
-@dirrmtry %%SITE_PERL%%/Locale/Maketext
-@dirrmtry %%SITE_PERL%%/Locale

@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/PHP::Serialization.3.gz
 %%SITE_PERL%%/PHP/Serialization.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PHP/Serialization/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PHP/Serialization
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PHP
-@dirrmtry %%SITE_PERL%%/PHP

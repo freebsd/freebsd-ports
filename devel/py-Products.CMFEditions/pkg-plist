@@ -231,22 +231,3 @@
 %%PYTHON_SITELIBDIR%%/Products/CMFEditions/www/storageStatistics.pt
 %%PYTHON_SITELIBDIR%%/Products/CMFEditions/www/talesModifierAddForm.pt
 %%PYTHON_SITELIBDIR%%/Products/CMFEditions/www/talesModifierEditForm.pt
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/www
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/tests/images
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/tests/FAQ/skins/faq_public
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/tests/FAQ/skins/faq
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/tests/FAQ/skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/tests/FAQ/model
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/tests/FAQ/Extensions
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/tests/FAQ
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/skins/cmfeditions_views
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/skins/CMFEditions
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/skins
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/profiles/default
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/interfaces
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/exportimport
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions/browser
-@dirrm %%PYTHON_SITELIBDIR%%/Products/CMFEditions
-@dirrmtry %%PYTHON_SITELIBDIR%%/Products

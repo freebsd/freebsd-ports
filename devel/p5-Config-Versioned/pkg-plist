@@ -2,4 +2,3 @@ bin/cfgver
 %%PERL5_MAN3%%/Config::Versioned.3.gz
 %%SITE_PERL%%/Config/Versioned.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Versioned/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Versioned

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns-recursor
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -66,8 +66,6 @@ post-patch:
 	   -e 's;BINDIR=/usr/bin/;BINDIR=${PREFIX}/bin/;' \
 	   -e 's;SYSCONFDIR=/etc/powerdns/;SYSCONFDIR=${PREFIX}/etc/pdns/;' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's;"/etc/powerdns/";"${PREFIX}/etc/pdns/";' \
-		${WRKSRC}/config.h
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/*.8 ${STAGEDIR}${PREFIX}/man/man8/

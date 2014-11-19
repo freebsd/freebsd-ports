@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://jcatki.no-ip.org/files/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible Chinese checkers game using SDL
 
 LICENSE=	GPLv2

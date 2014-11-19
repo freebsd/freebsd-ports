@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/SubCalls.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/SubCalls/.packlist
 %%PERL5_MAN3%%/Test::SubCalls.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/SubCalls
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

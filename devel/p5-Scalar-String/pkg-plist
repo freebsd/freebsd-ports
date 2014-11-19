@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Scalar/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/String/String.so
 %%PERL5_MAN3%%/Scalar::String.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/String
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Scalar

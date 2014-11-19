@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Stopwatch/.packlist
 %%SITE_PERL%%/Time/Stopwatch.pm
 %%PERL5_MAN3%%/Time::Stopwatch.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Stopwatch
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
-@dirrmtry %%SITE_PERL%%/Time

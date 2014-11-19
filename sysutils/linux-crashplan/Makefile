@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	linux-crashplan
-DISTVERSION=	3.6.3
-PORTREVISION=	1
+DISTVERSION=	3.6.4
 CATEGORIES=	sysutils linux
 MASTER_SITES=	http://download.crashplan.com/installs/linux/install/CrashPlan/
-DISTNAME=	CrashPlan_3.6.3_Linux
+DISTNAME=	CrashPlan_${DISTVERSION}_Linux
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Backs up data to remote servers or hard drives
@@ -28,10 +27,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
 CRASHDIR=	${PREFIX}/share/crashplan
-
-post-patch:
-	@${REINPLACE_CMD} 's/SRV_JAVA_OPTS="/SRV_JAVA_OPTS="-Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollSelectorProvider /' ${WRKSRC}/scripts/run.conf
-	@${REINPLACE_CMD} 's/GUI_JAVA_OPTS="/GUI_JAVA_OPTS="-Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollSelectorProvider /' ${WRKSRC}/scripts/run.conf
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${CRASHDIR}

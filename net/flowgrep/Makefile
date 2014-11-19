@@ -12,8 +12,7 @@ COMMENT=	TCP stream/UDP/IP payload 'grep' utility
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nidsmodule.so:${PORTSDIR}/net/pynids
 
-USE_PYTHON=	yes
-
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/flowgrep man/man8/flowgrep.8.gz

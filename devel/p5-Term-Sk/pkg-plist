@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Term/Sk.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Sk/.packlist
 %%PERL5_MAN3%%/Term::Sk.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Sk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term

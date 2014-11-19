@@ -5,9 +5,8 @@ PORTNAME=	seabattle
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	SUNSITE \
+MASTER_SITES=	SUNSITE/games/strategy/ \
 		http://www.deater.net/weave/vmwprod/
-MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based battleship type game

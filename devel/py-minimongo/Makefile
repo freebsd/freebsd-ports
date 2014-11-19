@@ -14,8 +14,7 @@ COMMENT=	Minimal database Model management for MongoDB
 
 RUN_DEPENDS=	pymongo>=1.9:${PORTSDIR}/databases/pymongo
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

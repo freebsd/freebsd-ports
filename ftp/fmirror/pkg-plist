@@ -5,4 +5,3 @@ man/man1/fmirror.1.gz
 %%PORTDOCS%%share/doc/fmirror/generic.conf
 %%PORTDOCS%%share/doc/fmirror/redhat.conf
 %%PORTDOCS%%share/doc/fmirror/sample.conf
-%%PORTDOCS%%@dirrm share/doc/fmirror

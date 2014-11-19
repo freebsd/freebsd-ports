@@ -3,7 +3,7 @@
 
 PORTNAME=	pgbouncer
 PORTVERSION=	1.5.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3393/
 
@@ -56,5 +56,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/pgbouncer.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/etc/userlist.txt \
 		${STAGEDIR}${PREFIX}/etc/pgbouncer.users.sample
+	@${MKDIR} ${STAGEDIR}${PGBOUNCER_RUNDIR} \
+		${STAGEDIR}${PGBOUNCER_LOGDIR}
 
 .include <bsd.port.mk>

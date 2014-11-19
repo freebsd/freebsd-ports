@@ -4,4 +4,3 @@ lib/libOCFPCSC1.so
 lib/libOCFPCSC1.so.1
 lib/libWINSCARD.so
 lib/libWINSCARD.so.1
-%%MOZILLA_PLUGIN%%@dirrmtry lib/browser_plugins

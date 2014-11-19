@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Test/Taint.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Taint/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Taint/Taint.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Taint
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Test

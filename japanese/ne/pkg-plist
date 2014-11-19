@@ -16,5 +16,3 @@ man/ja/man1/ne.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.jp
 %%PORTDOCS%%%%DOCSDIR%%/README.jp
 %%PORTDOCS%%%%DOCSDIR%%/TODO.jp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%ETCDIR%%

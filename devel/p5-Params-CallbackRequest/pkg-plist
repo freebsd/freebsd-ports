@@ -4,5 +4,3 @@
 %%SITE_PERL%%/Params/Callback.pm
 %%SITE_PERL%%/Params/CallbackRequest.pm
 %%SITE_PERL%%/Params/CallbackRequest/Exceptions.pm
-@dirrm %%SITE_PERL%%/Params/CallbackRequest
-@dirrmtry %%SITE_PERL%%/Params

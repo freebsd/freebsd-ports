@@ -9,8 +9,3 @@ man/man1/pfunc.1.gz
 %%SITE_PERL%%/B/BUtils.pm
 %%SITE_PERL%%/Module/Info.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module
-@dirrm %%SITE_PERL%%/B/Module
-@dirrmtry %%SITE_PERL%%/B

@@ -1,8 +1,8 @@
 etc/xdg/autostart/gnome-user-share-obexpush.desktop
-etc/xdg/autostart/gnome-user-share-webdav.desktop
+libexec/gnome-user-share-webdav
 lib/nautilus/extensions-3.0/libnautilus-share-extension.so
-libexec/gnome-user-share
 share/GConf/gsettings/gnome-user-share.convert
+share/applications/gnome-user-share-webdav.desktop
 share/glib-2.0/schemas/org.gnome.desktop.file-sharing.gschema.xml
 share/gnome-user-share/dav_groupfile
 share/gnome-user-share/dav_user_2.0.conf
@@ -88,4 +88,3 @@ share/locale/vi/LC_MESSAGES/gnome-user-share.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-user-share.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-user-share.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-user-share.mo
-@dirrm share/gnome-user-share

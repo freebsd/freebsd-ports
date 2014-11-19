@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Net/Domain/TLD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Domain/TLD/.packlist
 %%PERL5_MAN3%%/Net::Domain::TLD.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Domain/TLD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Domain
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Domain
-@dirrmtry %%SITE_PERL%%/Net

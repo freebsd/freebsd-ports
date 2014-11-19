@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Class::Interfaces.3.gz
 %%SITE_PERL%%/Class/Interfaces.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Interfaces/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Interfaces
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

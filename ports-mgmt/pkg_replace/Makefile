@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_replace
-PORTVERSION=	20140721
+PORTVERSION=	20141022
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://member.tokoha-u.ac.jp/~kdeguchi/download/
 
@@ -16,7 +16,6 @@ NO_BUILD=	yes
 PLIST_FILES=	sbin/pkg_replace \
 		man/man1/pkg_replace.1.gz \
 		"@sample %%ETCDIR%%/pkg_replace.conf.sample"
-PLIST_DIRSTRY=	%%ETCDIR%%
 
 SUB_FILES=	pkg-message
 

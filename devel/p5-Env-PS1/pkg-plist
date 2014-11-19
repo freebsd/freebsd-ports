@@ -11,6 +11,3 @@
 %%SITE_PERL%%/auto/Env/PS1/S.al
 %%SITE_PERL%%/auto/Env/PS1/autosplit.ix
 %%SITE_PERL%%/auto/Env/PS1/dollar.al
-@dirrm %%SITE_PERL%%/auto/Env/PS1
-@dirrmtry %%SITE_PERL%%/auto/Env
-@dirrmtry %%SITE_PERL%%/Env

@@ -29,10 +29,6 @@ PLIST_FILES=	bin/aimsniff
 
 .include <bsd.port.options.mk>
 
-.if !exists(${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/GDBM_File.pm)
-#IGNORE=		You need perl compiled with GDBM support
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aimSniff.pl ${STAGEDIR}${PREFIX}/bin/aimsniff
 .if ${PORT_OPTIONS:MSUID_ROOT}

@@ -7,4 +7,3 @@ lib/libSDL_ttf.a
 lib/libSDL_ttf.la
 lib/libSDL_ttf.so
 libdata/pkgconfig/SDL_ttf.pc
-@dirrmtry include/SDL

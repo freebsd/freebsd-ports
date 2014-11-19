@@ -25,9 +25,3 @@
 %%SITE_PERL%%/Curses/Widgets/Tutorial.pod
 %%SITE_PERL%%/Curses/Widgets/Tutorial/Creation.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Widgets/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Widgets
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses
-@dirrm %%SITE_PERL%%/Curses/Widgets/Tutorial
-@dirrm %%SITE_PERL%%/Curses/Widgets/ListBox
-@dirrm %%SITE_PERL%%/Curses/Widgets
-@dirrmtry %%SITE_PERL%%/Curses

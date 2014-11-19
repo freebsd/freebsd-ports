@@ -269,6 +269,8 @@ lib/evolution-data-server/calendar-backends/libecalbackendcontacts.a
 lib/evolution-data-server/calendar-backends/libecalbackendcontacts.so
 lib/evolution-data-server/calendar-backends/libecalbackendfile.a
 lib/evolution-data-server/calendar-backends/libecalbackendfile.so
+lib/evolution-data-server/calendar-backends/libecalbackendgtasks.a
+lib/evolution-data-server/calendar-backends/libecalbackendgtasks.so
 lib/evolution-data-server/calendar-backends/libecalbackendhttp.a
 lib/evolution-data-server/calendar-backends/libecalbackendhttp.so
 %%WEATHER%%lib/evolution-data-server/calendar-backends/libecalbackendweather.a

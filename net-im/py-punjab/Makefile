@@ -11,10 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP XMPP client interface
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		twisted:words,web,conch,names
+USE_PYTHON=	distutils autoplist
+USES=		python twisted:words,web,conch,names
 
 PORTDOCS=	README.txt INSTALL.txt PKG-INFO
 

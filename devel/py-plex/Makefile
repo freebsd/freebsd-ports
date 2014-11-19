@@ -11,9 +11,8 @@ DISTNAME=	Plex-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lexical Analysis Module for Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 NO_WRKSUBDIR=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

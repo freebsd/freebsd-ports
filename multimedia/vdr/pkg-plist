@@ -141,8 +141,7 @@ include/vdr/tools.h
 include/vdr/transfer.h
 include/vdr/videodir.h
 %%TTXPATCH%%include/vdr/vdrttxtsubshooks.h
-@exec mkdir -p %D/etc/vdr/plugins
-@exec chown %%VDR_USER%%:%%VDR_GROUP%% %D/etc/vdr %D/etc/vdr/plugins
+@dir(%%VDR_USER%%,%%VDR_GROUP%%,) etc/vdr/plugins
 @sample etc/vdr/remote.conf.sample
 @sample etc/vdr/channels.conf.sample
 @sample etc/vdr/diseqc.conf.sample
@@ -150,55 +149,4 @@ include/vdr/videodir.h
 @sample etc/vdr/scr.conf.sample
 @sample etc/vdr/sources.conf.sample
 @sample etc/vdr/svdrphosts.conf.sample
-%%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca_ES
-%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs_CZ
-%%NLS%%@dirrmtry share/locale/da_DK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/da_DK
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
-%%NLS%%@dirrmtry share/locale/el_GR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/el_GR
-%%NLS%%@dirrmtry share/locale/et_EE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/et_EE
-%%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi_FI
-%%NLS%%@dirrmtry share/locale/hr_HR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hr_HR
-%%NLS%%@dirrmtry share/locale/hu_HU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hu_HU
-%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_IT
-%%NLS%%@dirrmtry share/locale/lt_LT/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lt_LT
-%%NLS%%@dirrmtry share/locale/mk_MK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mk_MK
-%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl_NL
-%%NLS%%@dirrmtry share/locale/nn_NO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nn_NO
-%%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl_PL
-%%NLS%%@dirrmtry share/locale/ro_RO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro_RO
-%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU
-%%NLS%%@dirrmtry share/locale/sk_SK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sk_SK
-%%NLS%%@dirrmtry share/locale/sl_SI/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sl_SI
-%%NLS%%@dirrmtry share/locale/tr_TR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tr_TR
-%%NLS%%@dirrmtry share/locale/sr_SR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr_SR
-%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv_SE
-%%NLS%%@dirrmtry share/locale/uk_UA/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk_UA
-@dirrmtry etc/vdr/plugins
-@dirrmtry etc/vdr
-@dirrmtry lib/vdr
-@dirrm include/libsi
-@dirrm include/vdr
 @unexec echo "Warning: If you will *NOT* use this package anymore, please remove the vdr user and group manually."

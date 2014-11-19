@@ -11,7 +11,7 @@ COMMENT=	Easy to use graphics conversion utility
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagick++-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 
 USES=		cmake gettext iconv tar:bzip2
 USE_QT4=	corelib gui linguist_build moc_build qmake_build \

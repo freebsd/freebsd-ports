@@ -13,8 +13,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	The "meta-port" for the default version of Python interpreter
 
-USE_PYTHON_RUN=	yes
-NO_BUILD=	yes
+USES=			python:run
+NO_BUILD=		yes
 PYTHON_NO_DEPENDS=	yes
 
 PLIST_FILES=	bin/2to3 \

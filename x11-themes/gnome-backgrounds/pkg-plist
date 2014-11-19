@@ -5,7 +5,6 @@ share/backgrounds/gnome/Dark_Ivy.jpg
 share/backgrounds/gnome/Fabric.jpg
 share/backgrounds/gnome/Flowerbed.jpg
 share/backgrounds/gnome/FootFall.png
-share/backgrounds/gnome/Locked.jpg
 share/backgrounds/gnome/Mirror.jpg
 share/backgrounds/gnome/Road.jpg
 share/backgrounds/gnome/Sandstone.jpg
@@ -13,6 +12,12 @@ share/backgrounds/gnome/Stones.jpg
 share/backgrounds/gnome/Terraform-green.jpg
 share/backgrounds/gnome/Waves.jpg
 share/backgrounds/gnome/Whispy_Tails.jpg
+share/backgrounds/gnome/adwaita-day.jpg
+share/backgrounds/gnome/adwaita-lock.jpg
+share/backgrounds/gnome/adwaita-morning.jpg
+share/backgrounds/gnome/adwaita-night.jpg
+share/backgrounds/gnome/adwaita-timed.xml
+share/gnome-background-properties/adwaita.xml
 share/gnome-background-properties/gnome-backgrounds.xml
 share/locale/af/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/an/LC_MESSAGES/gnome-backgrounds.mo
@@ -106,64 +111,3 @@ share/locale/xh/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-backgrounds.mo
-@dirrmtry share/backgrounds/gnome
-@dirrmtry share/backgrounds
-@dirrmtry share/gnome-background-properties
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an

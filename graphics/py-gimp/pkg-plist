@@ -38,4 +38,3 @@ libexec/gimp/2.2/python/gimpui.py
 libexec/gimp/2.2/python/gimpui.pyc
 libexec/gimp/2.2/python/gimpui.pyo
 libexec/gimp/2.2/python/pygimp-logo.png
-@dirrm libexec/gimp/2.2/python

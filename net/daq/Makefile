@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	daq
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/snort/snort \
@@ -22,9 +22,22 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		bison gmake libtool
 USE_LDCONFIG=	yes
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.* ${STAGEDIR}${PREFIX}/lib/daq/*.so
+
+.if ${OSVERSION} < 901000
+CONFIGURE_ARGS+=--disable-netmap-module
+PLIST_SUB+=	NETMAP="@comment "
+.else
+PLIST_SUB+=	NETMAP=""
+.endif
+
+.include <bsd.port.post.mk>

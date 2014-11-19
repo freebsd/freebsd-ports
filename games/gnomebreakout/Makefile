@@ -12,7 +12,7 @@ DISTNAME=	gnome-breakout-${PORTVERSION}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic breakout game
 
 USES=		pathfix pkgconfig

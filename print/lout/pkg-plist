@@ -605,15 +605,3 @@ man/man1/prg2lout.1.gz
 %%DATADIR%%/maps/Symb.LCM
 %%DATADIR%%/maps/koi8r.LCM
 %%DATADIR%%/maps/null.LCM
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/hyph
-@dirrm %%DATADIR%%/font
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/user
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/slides
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/expert
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/design
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

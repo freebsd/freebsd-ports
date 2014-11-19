@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/MooseX::Types::Path::Tiny.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Path/Tiny/.packlist
 %%SITE_PERL%%/MooseX/Types/Path/Tiny.pm
-@dirrmtry %%SITE_PERL%%/MooseX/Types/Path
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Path/Tiny
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Path

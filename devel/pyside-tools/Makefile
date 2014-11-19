@@ -24,8 +24,7 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 REINPLACE_ARGS=	-i.bak -e 's+/usr/bin/env python+&${PYTHON_VER}+' \
 		${WRKSRC}/pyside-uic ${WRKSRC}/pysideuic/icon_cache.py
 
-USES=		cmake tar:bzip2
-USE_PYTHON=	2
+USES=		cmake python:2 tar:bzip2
 
 post-patch:
 	${REINPLACE_CMD}

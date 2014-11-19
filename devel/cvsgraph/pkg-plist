@@ -13,6 +13,3 @@ man/man5/cvsgraph.conf.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/automatic_documentation/taginfo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvsgraphwrapper.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mkimage.php
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/automatic_documentation
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

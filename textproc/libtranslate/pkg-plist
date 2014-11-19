@@ -37,8 +37,3 @@ share/doc/libtranslate/up.png
 %%GENERIC%%share/libtranslate/services.dtd
 %%GENERIC%%share/libtranslate/services.xml
 share/locale/fr/LC_MESSAGES/libtranslate.mo
-@dirrm include/libtranslate
-@dirrm lib/libtranslate/modules
-@dirrm lib/libtranslate
-@dirrm share/doc/libtranslate
-@dirrm share/libtranslate

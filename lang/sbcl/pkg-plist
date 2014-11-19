@@ -208,32 +208,3 @@ man/man1/sbcl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/sb-rotate-byte/README
 %%PORTDOCS%%%%DOCSDIR%%/sb-simple-streams/README
 %%PORTDOCS%%%%DOCSDIR%%/sbcl.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-simple-streams
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-rotate-byte
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-posix
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-md5
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-bsd-sockets
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-aclrepl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/asdf-install
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/asdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/sbcl/site-systems
-@dirrm lib/sbcl/sb-sprof
-@dirrm lib/sbcl/sb-simple-streams
-@dirrm lib/sbcl/sb-rt
-@dirrm lib/sbcl/sb-rotate-byte
-@dirrm lib/sbcl/sb-queue
-@dirrm lib/sbcl/sb-posix
-@dirrm lib/sbcl/sb-md5
-@dirrm lib/sbcl/sb-introspect
-@dirrm lib/sbcl/sb-grovel
-@dirrm lib/sbcl/sb-gmp
-@dirrm lib/sbcl/sb-executable
-@dirrm lib/sbcl/sb-cover
-@dirrm lib/sbcl/sb-concurrency
-@dirrm lib/sbcl/sb-cltl2
-@dirrm lib/sbcl/sb-bsd-sockets
-@dirrm lib/sbcl/sb-aclrepl
-@dirrm lib/sbcl/asdf-install
-@dirrm lib/sbcl/asdf
-@dirrm lib/sbcl

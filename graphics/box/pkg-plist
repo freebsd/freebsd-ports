@@ -96,9 +96,3 @@ lib/libboxcore%%PLIST_VER%%.so
 lib/libboxcore%%PLIST_VER%%.so.0
 lib/libboxcore%%PLIST_VER%%.so.0.0.0
 man/man1/box.1.gz
-@dirrm lib/box%%PLIST_VER%%/pkg/g
-@dirrm lib/box%%PLIST_VER%%/pkg
-@dirrm lib/box%%PLIST_VER%%/lib
-@dirrm lib/box%%PLIST_VER%%
-@dirrm include/box%%PLIST_VER%%/box
-@dirrm include/box%%PLIST_VER%%

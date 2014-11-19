@@ -12,10 +12,7 @@ DISTNAME=	generate-${PORTVERSION}
 MAINTAINER=	darcy@druid.net
 COMMENT=	Python module to implement generate
 
-USES=		gmake tar:tgz
-
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		gmake python tar:tgz
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

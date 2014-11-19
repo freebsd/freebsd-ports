@@ -144,6 +144,3 @@ lib/ocaml/site-lib/camlimages/xpm.cmi
 lib/ocaml/site-lib/camlimages/xpm.mli
 lib/ocaml/site-lib/camlimages/xvthumb.cmi
 lib/ocaml/site-lib/camlimages/xvthumb.mli
-@dirrm lib/ocaml/site-lib/camlimages
-@dirrmtry lib/ocaml/site-lib
-@dirrmtry lib/ocaml

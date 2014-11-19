@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-shell-extension-weather/Makefile 19807 2014-08-14 07:04:43Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-shell-extension-weather/Makefile 20013 2014-10-23 06:14:25Z gusi $
 
 PORTNAME=	gnome-shell-extension-weather
 PORTVERSION=	0.0.0.20140520
@@ -10,16 +10,14 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Weather extension for the GNOME3 shell
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		libtoolize:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell
 
 WRKSRC=		${WRKDIR}/Neroth-gnome-shell-extension-weather-489aaa0
 
-USES=		gettext gmake libtool pkgconfig tar:xz
+USES=		autoreconf:build gettext gmake libtool pkgconfig tar:xz
 USE_GNOME=	intltool
 USE_GITHUB=	yes
-USE_AUTOTOOLS=	autoconf automake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

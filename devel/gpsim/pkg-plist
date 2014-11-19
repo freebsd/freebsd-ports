@@ -150,17 +150,3 @@ lib/libgpsimgui.so.0.0.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/projects/p16f628_test/f628.stc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/projects/stack_test/stack_test.asm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/projects/stack_test/stack_test.stc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/projects/stack_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/projects/p16f628_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/projects/digital_stim
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/projects
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/modules/usart_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/modules/usart_gui
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/modules/mod_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/modules/logic_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/modules/led_test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/modules
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/gpsim
-@dirrm include/eXdbm

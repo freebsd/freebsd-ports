@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-contacts/Makefile 19748 2014-06-23 08:06:53Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-contacts/Makefile 20000 2014-10-20 11:21:21Z gusi $
 
 PORTNAME=	gnome-contacts
-PORTVERSION=	3.12.0
-PORTREVISION=	1
+PORTVERSION=	3.14.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 

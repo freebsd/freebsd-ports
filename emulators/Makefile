@@ -37,6 +37,7 @@
     SUBDIR += fmsx
     SUBDIR += frodo
     SUBDIR += fs-uae
+    SUBDIR += fs-uae-launcher
     SUBDIR += fuse
     SUBDIR += fuse-roms
     SUBDIR += fuse-utils
@@ -69,11 +70,11 @@
     SUBDIR += lib765
     SUBDIR += libdsk
     SUBDIR += libspectrum
-    SUBDIR += linux-c6
-    SUBDIR += linux-f10
     SUBDIR += linux_base-c6
     SUBDIR += linux_base-f10
     SUBDIR += linux_base-gentoo-stage3
+    SUBDIR += linux-c6
+    SUBDIR += linux-f10
     SUBDIR += linux_dist-gentoo-stage3
     SUBDIR += lisaem
     SUBDIR += loemu
@@ -151,9 +152,8 @@
     SUBDIR += vmw
     SUBDIR += vxtools
     SUBDIR += wine
-    SUBDIR += wine-compholio
     SUBDIR += wine-devel
-    SUBDIR += wine-doors
+    SUBDIR += wine-compholio
     SUBDIR += wine-gecko
     SUBDIR += wine-gecko-devel
     SUBDIR += wine-mono

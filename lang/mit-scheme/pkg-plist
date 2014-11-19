@@ -784,23 +784,3 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-w32.pkd
 %%POSTGRESQL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prpgsql.so
 %%X11%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prx11.so
 man/man1/scheme.1.gz
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fggen
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%

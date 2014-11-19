@@ -7,6 +7,7 @@ share/dbus-1/services/org.gnome.Polari.service
 share/glib-2.0/schemas/org.gnome.polari.gschema.xml
 share/icons/hicolor/256x256/apps/polari.png
 share/locale/ar/LC_MESSAGES/polari.mo
+share/locale/as/LC_MESSAGES/polari.mo
 share/locale/ca/LC_MESSAGES/polari.mo
 share/locale/ca@valencia/LC_MESSAGES/polari.mo
 share/locale/cs/LC_MESSAGES/polari.mo
@@ -26,16 +27,20 @@ share/locale/ko/LC_MESSAGES/polari.mo
 share/locale/lt/LC_MESSAGES/polari.mo
 share/locale/lv/LC_MESSAGES/polari.mo
 share/locale/nb/LC_MESSAGES/polari.mo
+share/locale/ne/LC_MESSAGES/polari.mo
 share/locale/pa/LC_MESSAGES/polari.mo
 share/locale/pl/LC_MESSAGES/polari.mo
 share/locale/pt/LC_MESSAGES/polari.mo
 share/locale/pt_BR/LC_MESSAGES/polari.mo
+share/locale/ro/LC_MESSAGES/polari.mo
 share/locale/ru/LC_MESSAGES/polari.mo
 share/locale/sk/LC_MESSAGES/polari.mo
 share/locale/sl/LC_MESSAGES/polari.mo
 share/locale/sr/LC_MESSAGES/polari.mo
 share/locale/sr@latin/LC_MESSAGES/polari.mo
+share/locale/sv/LC_MESSAGES/polari.mo
 share/locale/te/LC_MESSAGES/polari.mo
+share/locale/tr/LC_MESSAGES/polari.mo
 share/locale/uk/LC_MESSAGES/polari.mo
 share/locale/zh_CN/LC_MESSAGES/polari.mo
 share/locale/zh_HK/LC_MESSAGES/polari.mo
@@ -68,11 +73,3 @@ share/icons/hicolor/scalable/apps/polari.svg
 %%DATADIR%%/js/tabCompletion.js
 %%DATADIR%%/js/userList.js
 %%DATADIR%%/js/utils.js
-@dirrmtry share/icons/hicolor/512x512/apps
-@dirrmtry share/icons/hicolor/512x512
-@dirrmtry share/appdata
-@dirrm lib/polari/girepository-1.0
-@dirrm lib/polari
-@dirrm %%DATADIR%%/js
-@dirrm %%DATADIR%%/gir-1.0
-@dirrm %%DATADIR%%

@@ -38,5 +38,3 @@ msp430/lib/mcpu-430x/mmpy-16/libm.a
 msp430/lib/mmpy-16/libc.a
 msp430/lib/mmpy-16/libfp.a
 msp430/lib/mmpy-16/libm.a
-@dirrm msp430/include/bits
-@dirrm msp430/include/sys

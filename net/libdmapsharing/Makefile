@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net/libdmapsharing/Makefile 19884 2014-09-17 07:41:30Z kwm $
+#   $MCom: ports/trunk/net/libdmapsharing/Makefile 19962 2014-10-15 14:57:24Z gusi $
 
 PORTNAME=	libdmapsharing
 PORTVERSION=	2.9.24
@@ -14,7 +14,7 @@ COMMENT=	GNOME music playing application
 
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee
-BUILD_DEPENDS=	vala-vapigen>=0.16:${PORTSDIR}/lang/vala-vapigen
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 
 USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20 introspection:build

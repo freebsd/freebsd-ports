@@ -37,4 +37,7 @@ LINUX_RPM_ARCH=	i386
 
 DESCR=	${.CURDIR}/../../devel/qt4/pkg-descr
 
+post-patch:
+	${RM} -f ${WRKDIR}/usr/share/qt47/translations/qt_help_*.qm
+
 .include <bsd.port.mk>

@@ -2,7 +2,3 @@
 %%SITE_PERL%%/Sys/SigAction/Alarm.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/SigAction/.packlist
 %%PERL5_MAN3%%/Sys::SigAction.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/SigAction
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrmtry %%SITE_PERL%%/Sys/SigAction
-@dirrmtry %%SITE_PERL%%/Sys

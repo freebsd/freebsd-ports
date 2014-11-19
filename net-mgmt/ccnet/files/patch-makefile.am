@@ -1,0 +1,17 @@
+--- Makefile.am.orig	2014-07-21 07:24:46.000000000 -0400
++++ Makefile.am	2014-07-21 07:25:02.000000000 -0400
+@@ -22,11 +22,7 @@
+ ACLOCAL_AMFLAGS = -I m4
+ 
+ install-data-local:
+-if MACOS
+-	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+-else
+-	sed -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+-endif
++	sed -i '' "s|(DESTDIR)|${PREFIX}|g" $(pcfiles)
+ 
+ dist-hook:
+-	git log --format='%H' -1 > $(distdir)/latest_commit
+\ No newline at end of file
++	git log --format='%H' -1 > $(distdir)/latest_commit

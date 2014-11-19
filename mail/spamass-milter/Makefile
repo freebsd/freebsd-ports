@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spamass-milter
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
@@ -17,34 +16,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 LICENSE=	GPLv2
 
 
-OPTIONS_DEFINE=	ADDAUTH_PATCH REJECTTEXT_PATCH LDAP SENDMAIL_PORT IPV6 DOCS
-ADDAUTH_PATCH_DESC=	Bypass checks for SMTP AUTH connections
-REJECTTEXT_PATCH_DESC=	Customize SMTP reject message
+OPTIONS_DEFINE=	LDAP SENDMAIL_PORT DOCS
 SENDMAIL_PORT_DESC=	Build against sendmail port
 
 .include <bsd.port.pre.mk>
-
-ORIG_ARGS=	fd:mMp:P:r:u:D:i:b:B:e:x
-NEW_ARGS:=	${ORIG_ARGS}
-
-.if ${PORT_OPTIONS:MADDAUTH_PATCH}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-addauth
-NEW_ARGS:=	${NEW_ARGS}a
-.endif
-
-.if ${PORT_OPTIONS:MREJECTTEXT_PATCH}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext1
-NEW_ARGS:=	${NEW_ARGS}R:
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ipv6
-.endif
-
-# extra-patch-options is modified in pre-patch
-.if ${ORIG_ARGS} != ${NEW_ARGS}
-EXTRA_PATCHES+=	${WRKDIR}/extra-patch-options
-.endif
 
 .if exists(${LOCALBASE}/lib/libldap.so)
 WITH_LDAP=yes
@@ -65,11 +40,6 @@ USE_RC_SUBR=	spamass-milter
 GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
-
-pre-patch:
-.if ${ORIG_ARGS} != ${NEW_ARGS}
-	@${SED} -e 's|%NEW_ARGS%|${NEW_ARGS}|' ${FILESDIR}/extra-patch-options > ${WRKDIR}/extra-patch-options
-.endif
 
 post-patch:
 	@${SED} -e's,%%PREFIX%%,${PREFIX},g' \

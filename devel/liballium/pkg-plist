@@ -6,6 +6,4 @@ lib/liballium-1.0.so
 lib/liballium-1.0.so.0
 lib/liballium-1.0.so.0.0.1
 libdata/pkgconfig/liballium-1.0.pc
-@dirrmtry include/allium
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -11,8 +11,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/libpjsbase.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/libpjsparser.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/libpjsscanner.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/libpjstree.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -46,5 +46,3 @@ lib/liblog4shib.so.1
 lib/liblog4shib.so.1.0.7
 libdata/pkgconfig/log4shib.pc
 share/aclocal/log4shib.m4
-@dirrm include/log4shib/threading
-@dirrm include/log4shib

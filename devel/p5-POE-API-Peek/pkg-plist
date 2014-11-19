@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/API/Peek/.packlist
 %%SITE_PERL%%/POE/API/Peek.pm
 %%PERL5_MAN3%%/POE::API::Peek.3.gz
-@dirrmtry %%SITE_PERL%%/POE/API
-@dirrmtry %%SITE_PERL%%/POE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/API/Peek
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/API
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE

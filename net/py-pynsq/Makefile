@@ -21,11 +21,9 @@ OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tools to run test suite
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-USE_GITHUB=		yes
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-
+USES=		python
+USE_PYTHON=	distutils autoplist
+USE_GITHUB=	yes
 GH_ACCOUNT=	bitly
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	b64f3f3

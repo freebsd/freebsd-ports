@@ -22,5 +22,3 @@ bin/bargraph
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stacked_var.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/value_label.perf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/value_label.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

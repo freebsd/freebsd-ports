@@ -86,7 +86,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .if ${OPSYS} == "FreeBSD"
-.if (${ARCH} == "i386" && ${OSVERSION} > 1010000) || (${ARCH} == "amd64" && ${OSVERSION} > 903000)
+.if exists(/usr/sbin/dtrace) && (${OSVERSION} > 1100032)
 CONFIGURE_ARGS+=	--enable-dtrace
 .else
 CONFIGURE_ARGS+=	--disable-dtrace
@@ -178,6 +178,9 @@ post-build:
 	@${RB_SET_CONF_VAR} "INSTALL_PROGRAM" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} ${STRIP} -m ${BINMODE}' : '${INSTALL_PROGRAM}'"
 	@${RB_SET_CONF_VAR} "INSTALL_SCRIPT" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} -m ${BINMODE}' : '${INSTALL_SCRIPT}'"
 	@${RB_SET_CONF_VAR} "INSTALL_DATA" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} -m ${SHAREMODE}' : '${INSTALL_DATA}'"
+.if ${PORT_OPTIONS:MCAPIDOCS}
+	${FIND} ${WRKSRC}/doc -type d -empty -delete
+.endif
 
 pre-su-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}

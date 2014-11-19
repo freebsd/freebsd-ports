@@ -87,13 +87,3 @@ share/locale/sv/LC_MESSAGES/goobox.mo
 share/locale/vi/LC_MESSAGES/goobox.mo
 share/locale/zh_CN/LC_MESSAGES/goobox.mo
 share/locale/zh_TW/LC_MESSAGES/goobox.mo
-@dirrm share/help/sv/goobox
-@dirrm share/help/sl/goobox
-@dirrm share/help/oc/goobox
-@dirrm share/help/fr/goobox
-@dirrm share/help/es/goobox
-@dirrm share/help/el/goobox
-@dirrm share/help/de/goobox
-@dirrm share/help/cs/goobox
-@dirrm share/help/ca/goobox
-@dirrm share/help/C/goobox

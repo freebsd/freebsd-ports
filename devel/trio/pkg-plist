@@ -14,5 +14,3 @@ lib/libtrio.a
 %%PORTDOCS%%%%DOCSDIR%%/doc/header.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/trio.cfg
 %%PORTDOCS%%%%DOCSDIR%%/doc/trio.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

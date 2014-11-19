@@ -16,8 +16,7 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SquareMap>0:${PORTSDIR}/x11-toolkits/py-SquareMap \
 		${PYTHON_PKGNAMEPREFIX}meliae>0:${PORTSDIR}/devel/py-meliae
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

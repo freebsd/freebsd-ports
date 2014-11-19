@@ -20,9 +20,8 @@ BUILD_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		asciidoc:${PORTSDIR}/textproc/asciidoc
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USES=		gmake
+USE_PYTHON=	distutils
+USES=		gmake python
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

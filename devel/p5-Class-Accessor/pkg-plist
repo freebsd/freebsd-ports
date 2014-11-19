@@ -5,7 +5,3 @@
 %%SITE_PERL%%/Class/Accessor/Fast.pm
 %%SITE_PERL%%/Class/Accessor/Faster.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Accessor
-@dirrmtry %%SITE_PERL%%/Class

@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-screenshot/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/deskutils/gnome-screenshot/Makefile 19966 2014-10-16 06:32:52Z gusi $
 
 PORTNAME=	gnome-screenshot
-PORTVERSION=	3.12.0
+PORTVERSION=	3.14.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,7 +19,7 @@ USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.gnome-screenshot.gschema.xml
 

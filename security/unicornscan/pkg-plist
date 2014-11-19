@@ -20,10 +20,4 @@ share/unicornscan/p0f.fp
 share/unicornscan/p0fa.fp
 share/unicornscan/p0fr.fp
 share/unicornscan/port-numbers
-@exec %D/var/unicornscan/
-@dirrmtry var/unicornscan
-@dirrmtry var
-@dirrmtry share/unicornscan
-@dirrm libexec/unicornscan/modules
-@dirrm libexec/unicornscan
-@dirrmtry etc/unicornscan
+@dir var/unicornscan

@@ -25,4 +25,3 @@ share/mp/mp.pro.l.ps
 share/mp/mp.pro.ps
 share/mp/mp.pro.tm.ps
 share/mp/mp.pro.ts.ps
-@dirrm share/mp

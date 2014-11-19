@@ -5,7 +5,3 @@ bin/mversion
 %%PERL5_MAN3%%/Module::Version.3.gz
 %%PERL5_MAN3%%/Module::Version::App.3.gz
 man/man1/mversion.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Version
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module/Version
-@dirrmtry %%SITE_PERL%%/Module

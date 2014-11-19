@@ -10,7 +10,3 @@
 %%QT_LIBDIR%%/libQtScriptTools.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQtScriptTools.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtScriptTools.pc
-@dirrmtry %%QT_LIBDIR%%
-@dirrm %%QT_INCDIR%%/QtScriptTools
-@dirrmtry %%QT_INCDIR%%/Qt
-@dirrmtry %%QT_INCDIR%%

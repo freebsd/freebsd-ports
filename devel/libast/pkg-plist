@@ -23,4 +23,3 @@ lib/libast.so
 lib/libast.so.2
 lib/libast.so.2.0.1
 share/aclocal/libast.m4
-@dirrm include/libast

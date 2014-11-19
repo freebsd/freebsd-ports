@@ -1,5 +1,5 @@
-SHA256 (rpm/i686/centos/6.6/binutils-2.20.51.0.2-5.42.el6.i686.rpm) = 6893bbe636de7398ac50c6345882ff1696162170ddcbfbf0f3fd3bf693269e0f
-SIZE (rpm/i686/centos/6.6/binutils-2.20.51.0.2-5.42.el6.i686.rpm) = 33035
+SHA256 (rpm/i686/centos/6.6/binutils-2.20.51.0.2-5.42.el6.i686.rpm) = 0d2633db84a1a183fe46d0b600325c038bdaf24faf210f6044d0d5adc5584cca
+SIZE (rpm/i686/centos/6.6/binutils-2.20.51.0.2-5.42.el6.i686.rpm) = 2910904
 SHA256 (rpm/i686/centos/6.6/binutils-devel-2.20.51.0.2-5.42.el6.i686.rpm) = d44c78f454315ea16e0f7a3904e233c5a7d7b7d60e01380ad4701492bc729c0a
 SIZE (rpm/i686/centos/6.6/binutils-devel-2.20.51.0.2-5.42.el6.i686.rpm) = 745200
 SHA256 (rpm/i686/centos/6.6/glibc-devel-2.12-1.149.el6.i686.rpm) = 0d959a633daf7148a495d9f012216d7c7900deab63eb106a32ebf809d74a95fa

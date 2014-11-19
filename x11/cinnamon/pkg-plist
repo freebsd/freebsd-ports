@@ -633,7 +633,6 @@ share/desktop-directories/cinnamon-utility.directory
 share/polkit-1/actions/org.cinnamon.settings-users.policy
 share/xsessions/cinnamon.desktop
 share/xsessions/cinnamon2d.desktop
-@dirrm share/xsessions
 share/icons/hicolor/16x16/categories/cs-backgrounds.svg
 share/icons/hicolor/16x16/categories/cs-desklets.svg
 share/icons/hicolor/scalable/categories/cs-applets.svg
@@ -683,61 +682,3 @@ share/icons/hicolor/scalable/emblems/cs-xlet-installed.svg
 share/icons/hicolor/scalable/emblems/cs-xlet-running.svg
 share/icons/hicolor/scalable/emblems/cs-xlet-system.svg
 share/icons/hicolor/scalable/emblems/cs-xlet-update.svg
-@dirrm %%DATADIR%%/theme
-@dirrm %%DATADIR%%/search_providers
-@dirrm %%DATADIR%%/js/ui/appSwitcher
-@dirrm %%DATADIR%%/js/ui
-@dirrm %%DATADIR%%/js/perf
-@dirrm %%DATADIR%%/js/misc
-@dirrm %%DATADIR%%/js
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/faces
-@dirrm %%DATADIR%%/desklets/photoframe@cinnamon.org
-@dirrm %%DATADIR%%/desklets/launcher@cinnamon.org
-@dirrm %%DATADIR%%/desklets/clock@cinnamon.org
-@dirrm %%DATADIR%%/desklets
-@dirrm %%DATADIR%%/bumpmaps
-@dirrm %%DATADIR%%/applets/xrandr@cinnamon.org
-@dirrm %%DATADIR%%/applets/workspace-switcher@cinnamon.org
-@dirrm %%DATADIR%%/applets/windows-quick-list@cinnamon.org
-@dirrm %%DATADIR%%/applets/window-list@cinnamon.org
-@dirrm %%DATADIR%%/applets/user@cinnamon.org
-@dirrm %%DATADIR%%/applets/trash@cinnamon.org
-@dirrm %%DATADIR%%/applets/systray@cinnamon.org
-@dirrm %%DATADIR%%/applets/spacer@cinnamon.org
-@dirrm %%DATADIR%%/applets/sound@cinnamon.org
-@dirrm %%DATADIR%%/applets/show-desktop@cinnamon.org
-@dirrm %%DATADIR%%/applets/settings@cinnamon.org
-@dirrm %%DATADIR%%/applets/settings-example@cinnamon.org
-@dirrm %%DATADIR%%/applets/separator@cinnamon.org
-@dirrm %%DATADIR%%/applets/scale@cinnamon.org
-@dirrm %%DATADIR%%/applets/removable-drives@cinnamon.org
-@dirrm %%DATADIR%%/applets/recent@cinnamon.org
-@dirrm %%DATADIR%%/applets/power@cinnamon.org
-@dirrm %%DATADIR%%/applets/panel-launchers@cinnamon.org
-@dirrm %%DATADIR%%/applets/notifications@cinnamon.org
-@dirrm %%DATADIR%%/applets/network@cinnamon.org
-@dirrm %%DATADIR%%/applets/menu@cinnamon.org
-@dirrm %%DATADIR%%/applets/keyboard@cinnamon.org/flags
-@dirrm %%DATADIR%%/applets/keyboard@cinnamon.org
-@dirrm %%DATADIR%%/applets/expo@cinnamon.org
-@dirrm %%DATADIR%%/applets/calendar@cinnamon.org
-@dirrm %%DATADIR%%/applets/brightness@cinnamon.org
-@dirrm %%DATADIR%%/applets/a11y@cinnamon.org
-@dirrm %%DATADIR%%/applets
-@dirrm %%DATADIR%%-session/sessions
-@dirrm %%DATADIR%%
-@dirrm libexec/cinnamon
-@dirrm lib/cinnamon-settings/modules
-@dirrm lib/cinnamon-settings/data/spices
-@dirrm lib/cinnamon-settings/data
-@dirrm lib/cinnamon-settings/bin
-@dirrm lib/cinnamon-settings-users
-@dirrm lib/cinnamon-settings
-@dirrm lib/cinnamon-screensaver-lock-dialog
-@dirrm lib/cinnamon-menu-editor/cme
-@dirrm lib/cinnamon-menu-editor
-@dirrm lib/cinnamon-looking-glass
-@dirrm lib/cinnamon-json-makepot
-@dirrm lib/cinnamon-desktop-editor
-@dirrm lib/cinnamon

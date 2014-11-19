@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Class/Method/Modifiers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Method/Modifiers/.packlist
 %%PERL5_MAN3%%/Class::Method::Modifiers.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Method/Modifiers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Method
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Method
-@dirrmtry %%SITE_PERL%%/Class

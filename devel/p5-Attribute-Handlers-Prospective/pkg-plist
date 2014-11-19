@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Attribute::Handlers::Prospective.3.gz
 %%SITE_PERL%%/Attribute/Handlers/Prospective.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute/Handlers/Prospective/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute/Handlers/Prospective
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute/Handlers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute
-@dirrmtry %%SITE_PERL%%/Attribute/Handlers
-@dirrmtry %%SITE_PERL%%/Attribute

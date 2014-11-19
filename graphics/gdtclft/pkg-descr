@@ -1,0 +1,10 @@
+Spencer Thomas said about the original TCL GD: 
+
+	Thomas  Boutell's Gd  package  provides a  convenient way  to
+	generate PNG images with a C program. If you, like me, prefer
+	Tcl for CGI applications, you'll want my TCL GD extension.
+
+The software  is now maintained  by John Ellson  <ellson@lucent.com>, it
+seems.
+
+WWW:	http://graphviz.org/cgi-bin/man?gdtclft

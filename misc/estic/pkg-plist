@@ -8,8 +8,3 @@ etc/pbx/estic.ini.generic_example
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/estic.doc
 var/log/pbx/debug
-@dirrm etc/pbx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm var/log/pbx
-@dirrm var/log
-@dirrm var

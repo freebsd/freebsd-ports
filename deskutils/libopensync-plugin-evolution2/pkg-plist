@@ -1,3 +1,0 @@
-include/opensync-1.0/opensync/evo2_sync.h
-lib/opensync/plugins/evo2_sync.so
-share/opensync/defaults/evo2-sync

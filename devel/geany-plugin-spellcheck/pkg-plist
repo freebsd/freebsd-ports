@@ -4,5 +4,3 @@ lib/geany/spellcheck.so
 %%DOCSDIR%%/spellcheck/ChangeLog
 %%DOCSDIR%%/spellcheck/NEWS
 %%DOCSDIR%%/spellcheck/README
-@dirrm %%DOCSDIR%%/spellcheck
-@dirrmtry %%DOCSDIR%%

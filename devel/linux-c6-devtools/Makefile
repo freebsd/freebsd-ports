@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	devtools
-PORTVERSION=	6.5
-PORTREVISION=	2
+PORTVERSION=	6.6
 CATEGORIES=	devel
 DISTFILES=	binutils-2.20.51.0.2-5.42.el6.i686.rpm \
 		binutils-devel-2.20.51.0.2-5.42.el6.i686.rpm \

@@ -6,9 +6,7 @@ etc/zonecheck-dist/reverse.profile
 etc/zonecheck-dist/rootservers
 etc/zonecheck-dist/zc.conf
 man/man1/zonecheck.1.gz
-@dirrm etc/zonecheck-dist
 %%CGI%%libexec/zonecheck/cgi-bin/zc.cgi
-%%CGI%%@dirrm libexec/zonecheck/cgi-bin
 libexec/zonecheck/lib/textfmt.rb
 libexec/zonecheck/locale/cgi.en
 libexec/zonecheck/locale/cgi.fr
@@ -89,24 +87,12 @@ libexec/zonecheck/zc/report/byseverity.rb
 libexec/zonecheck/zc/testmanager.rb
 libexec/zonecheck/zc/zc.rb
 libexec/zonecheck/zc/zonecheck.rb
-@dirrm libexec/zonecheck/lib
-@dirrm libexec/zonecheck/locale/test
-@dirrm libexec/zonecheck/locale
-@dirrm libexec/zonecheck/test
-@dirrm libexec/zonecheck/zc/data
-@dirrm libexec/zonecheck/zc/ext
-@dirrm libexec/zonecheck/zc/input
-@dirrm libexec/zonecheck/zc/publisher
-@dirrm libexec/zonecheck/zc/report
-@dirrm libexec/zonecheck/zc
-@dirrm libexec/zonecheck
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CGI%%www/zonecheck/html/form.html.en
 %%CGI%%www/zonecheck/html/form.html.fr
 %%CGI%%www/zonecheck/zonecheck.conf.in
@@ -130,8 +116,3 @@ libexec/zonecheck/zc/zonecheck.rb
 %%CGI%%www/zonecheck/js/popupmenu.js
 %%CGI%%www/zonecheck/js/progress.js
 %%CGI%%www/zonecheck/style/zc.css
-%%CGI%%@dirrm www/zonecheck/html
-%%CGI%%@dirrm www/zonecheck/img
-%%CGI%%@dirrm www/zonecheck/js
-%%CGI%%@dirrm www/zonecheck/style
-%%CGI%%@dirrm www/zonecheck

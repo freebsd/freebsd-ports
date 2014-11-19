@@ -4,4 +4,3 @@ lib/libbufferpool.so
 lib/libbufferpool.so.0
 lib/libbufferpool.so.0.4.0
 libdata/pkgconfig/libbufferpool.pc
-@dirrm include/bufferpool

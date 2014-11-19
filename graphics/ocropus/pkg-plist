@@ -42,7 +42,3 @@ include/ocropus/enumerator.h
 %%DATADIR%%/models/latin3-full.model
 %%DATADIR%%/models/ocr-dict-case.fst.gz
 %%DATADIR%%/words/en-us
-@dirrm include/ocropus
-@dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%/words
-@dirrmtry %%DATADIR%%

@@ -13,5 +13,4 @@ sbin/pdnsd-ctl
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/intro.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rm -rf /var/db/pdnsd 2>&1 >/dev/null || true

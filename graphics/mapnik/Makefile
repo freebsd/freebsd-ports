@@ -21,9 +21,8 @@ LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
 		${PYTHON_PKGNAMEPREFIX}icu>=0.8.1:${PORTSDIR}/devel/py-icu
 
-USES=		pkgconfig scons tar:bzip2
+USES=		pkgconfig python scons tar:bzip2
 USE_GNOME=	libxml2
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 WARNING_CXXFLAGS?=	-w
 

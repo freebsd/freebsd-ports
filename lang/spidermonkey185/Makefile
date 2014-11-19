@@ -18,11 +18,10 @@ LIB_DEPENDS=		libnspr4.so:${PORTSDIR}/devel/nspr
 
 CONFLICTS=		njs-[0-9]*
 
-USES=			gmake pathfix perl5 pkgconfig
+USES=			gmake pathfix perl5 pkgconfig python:2,build
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 USE_PERL5=		build
-USE_PYTHON_BUILD=	2
 
 WRKSRC=			${WRKDIR}/js-${PORTVERSION}/js/src
 

@@ -39,7 +39,3 @@
 %%PERL5_MAN3%%/Paranoid::Network::Socket.3.gz
 %%PERL5_MAN3%%/Paranoid::Log::Buffer.3.gz
 %%PERL5_MAN3%%/Paranoid::Debug.3.gz
-@dirrm %%SITE_PERL%%/Paranoid/Log
-@dirrm %%SITE_PERL%%/Paranoid/Network
-@dirrm %%SITE_PERL%%/Paranoid
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Paranoid

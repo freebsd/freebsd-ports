@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nxproxy
-DISTVERSION=	3.5.0.27
+DISTVERSION=	3.5.0.28
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/nx-libs/
 DISTNAME=	nx-libs-${PORTVERSION}-lite

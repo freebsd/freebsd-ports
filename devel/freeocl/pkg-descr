@@ -1,1 +1,5 @@
-FreeOCL - a free OpenCL implementation for CPU
+FreeOCL is an implementation of OpenCL 1.2 specifications 
+targeting CPUs. Instead of using a built-in or dedicated 
+compiler, it relies on an external C++ compiler. 
+
+WWW: https://code.google.com/p/freeocl/

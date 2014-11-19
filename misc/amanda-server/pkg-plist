@@ -25,6 +25,7 @@
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/DB/Catalog.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Device.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Disklist.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Extract.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Holding.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Interactivity.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Interactivity/email.pm
@@ -37,6 +38,8 @@
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Recovery/Scan.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report/human.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report/json.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report/json_raw.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report/postscript.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report/xml.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/ScanInventory.pm
@@ -146,21 +149,6 @@
 %%SERVER_ONLY%%sbin/amtapetype
 %%SERVER_ONLY%%sbin/amtoc
 %%SERVER_ONLY%%sbin/amvault
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/XferServer
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Tapelist
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Logfile
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Disklist
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Device
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Cmdline
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Taper/Scan
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Taper
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Report
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Recovery
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Interactivity
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/DB
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Curinfo
-%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Changer
-%%SERVER_ONLY%%@dirrm include/amanda
 @comment
 @comment plist for misc/amanda-client below
 @comment
@@ -191,6 +179,11 @@
 %%CLIENT_ONLY%%libexec/amanda/amanda-sh-lib.sh
 %%CLIENT_ONLY%%libexec/amanda/amandad
 %%CLIENT_ONLY%%libexec/amanda/amndmjob
+%%CLIENT_ONLY%%@mode 4750
+%%CLIENT_ONLY%%@group %%AMANDA_GROUP%%
+%%CLIENT_ONLY%%libexec/amanda/application/ambsdtar
+%%CLIENT_ONLY%%@mode
+%%CLIENT_ONLY%%@group
 %%CLIENT_ONLY%%@mode 4750
 %%CLIENT_ONLY%%@group %%AMANDA_GROUP%%
 %%CLIENT_ONLY%%libexec/amanda/application/amgtar
@@ -271,6 +264,7 @@
 %%CLIENT_ONLY%%man/man7/amanda-scripts.7.gz
 %%CLIENT_ONLY%%man/man8/amanda.8.gz
 %%CLIENT_ONLY%%man/man8/amarchiver.8.gz
+%%CLIENT_ONLY%%man/man8/ambsdtar.8.gz
 %%CLIENT_ONLY%%man/man8/amdump_client.8.gz
 %%CLIENT_ONLY%%man/man8/amgtar.8.gz
 %%CLIENT_ONLY%%man/man8/ampgsql.8.gz
@@ -306,6 +300,8 @@
 %%CLIENT_ONLY%%%%DATADIR%%/example/amanda-client-postgresql.conf
 %%CLIENT_ONLY%%%%DATADIR%%/example/amanda-client.conf
 %%CLIENT_ONLY%%%%DATADIR%%/example/amanda.conf
+%%CLIENT_ONLY%%%%DATADIR%%/example/amandaclient.xml
+%%CLIENT_ONLY%%%%DATADIR%%/example/amandaserver.xml
 %%CLIENT_ONLY%%%%DATADIR%%/example/chg-multi.conf
 %%CLIENT_ONLY%%%%DATADIR%%/example/chg-scsi.conf
 %%CLIENT_ONLY%%%%DATADIR%%/example/disklist
@@ -329,28 +325,3 @@
 %%CLIENT_ONLY%%%%DATADIR%%/template.d/tapetypes
 %%CLIENT_ONLY%%%%DATADIR%%/template.d/README
 %%CLIENT_ONLY%%%%DATADIR%%/template.d/chg-manual.conf
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Xfer
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Util
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Tests
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/NDMP
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/MainLoop
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/IPC/Binary
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/IPC
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Header
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Feature
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Debug
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Config
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Archive
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Application
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/Amanda/IPC
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Config
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Application
-%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/Amanda
-%%CLIENT_ONLY%%@dirrm %%DATADIR%%/template.d
-%%CLIENT_ONLY%%@dirrm %%DATADIR%%/example/label-templates
-%%CLIENT_ONLY%%@dirrm %%DATADIR%%/example
-%%CLIENT_ONLY%%@dirrm %%DATADIR%%
-%%CLIENT_ONLY%%@dirrm libexec/amanda/application
-%%CLIENT_ONLY%%@dirrm libexec/amanda
-%%CLIENT_ONLY%%@dirrm lib/amanda

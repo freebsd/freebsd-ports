@@ -274,34 +274,3 @@ man/man3/estraier.3.gz
 %%DATADIR%%/locale/ja/estseek.help
 %%DATADIR%%/locale/ja/estseek.tmpl
 %%DATADIR%%/locale/ja/estseek.top
-@dirrm %%DATADIR%%/locale/ja
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/increm
-@dirrm %%DATADIR%%/filter
-@dirrm %%DATADIR%%/doc/rubypureapi/files
-@dirrm %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/ResultDocument.src
-@dirrm %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/NodeResult.src
-@dirrm %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Node.src
-@dirrm %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src
-@dirrm %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Condition.src
-@dirrm %%DATADIR%%/doc/rubypureapi/classes/EstraierPure
-@dirrm %%DATADIR%%/doc/rubypureapi/classes
-@dirrm %%DATADIR%%/doc/rubypureapi
-@dirrm %%DATADIR%%/doc/rubynativeapi/files
-@dirrm %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src
-@dirrm %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src
-@dirrm %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src
-@dirrm %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src
-@dirrm %%DATADIR%%/doc/rubynativeapi/classes/Estraier
-@dirrm %%DATADIR%%/doc/rubynativeapi/classes
-@dirrm %%DATADIR%%/doc/rubynativeapi
-@dirrm %%DATADIR%%/doc/perlnativeapi
-@dirrm %%DATADIR%%/doc/javapureapi/resources
-@dirrm %%DATADIR%%/doc/javapureapi/estraier/pure
-@dirrm %%DATADIR%%/doc/javapureapi/estraier
-@dirrm %%DATADIR%%/doc/javapureapi
-@dirrm %%DATADIR%%/doc/javanativeapi/resources
-@dirrm %%DATADIR%%/doc/javanativeapi/estraier
-@dirrm %%DATADIR%%/doc/javanativeapi
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%

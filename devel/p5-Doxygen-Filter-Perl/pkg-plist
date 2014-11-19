@@ -5,9 +5,3 @@ bin/doxygen-filter-perl
 %%SITE_PERL%%/Doxygen/Filter/Perl.pm
 %%SITE_PERL%%/Doxygen/Filter/Perl/POD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Doxygen/Filter/Perl/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Doxygen/Filter/Perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Doxygen/Filter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Doxygen
-@dirrmtry %%SITE_PERL%%/Doxygen/Filter/Perl
-@dirrmtry %%SITE_PERL%%/Doxygen/Filter
-@dirrmtry %%SITE_PERL%%/Doxygen

@@ -25,8 +25,3 @@ share/locale/zh_CN/LC_MESSAGES/ufraw.mo
 share/locale/zh_TW/LC_MESSAGES/ufraw.mo
 share/pixmaps/ufraw.png
 %%MGTK2%%bin/ufraw
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-%%GIMP%%@dirrmtry libexec/gimp/2.2/plug-ins
-%%GIMP%%@dirrmtry libexec/gimp/2.2
-%%GIMP%%@dirrmtry libexec/gimp

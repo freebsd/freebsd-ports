@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/sysutils/accountsservice/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#    $MCom: ports/trunk/sysutils/accountsservice/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	accountsservice
 PORTVERSION=	0.6.37
@@ -14,7 +14,7 @@ COMMENT=	D-Bus interface for user account query and manipulation
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
-USE_GNOME=	glib20 gnomehier intlhack introspection:build libxslt
+USE_GNOME=	glib20 intlhack introspection:build libxslt
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -1,5 +1,5 @@
---- library/Makefile.orig	2012-11-26 19:20:30.821850410 +0000
-+++ library/Makefile	2012-11-26 19:21:01.534380354 +0000
+--- library/Makefile.orig	2014-10-24 09:42:52.000000000 +0100
++++ library/Makefile	2014-10-27 20:13:26.522466123 +0000
 @@ -18,9 +18,7 @@
  # CFLAGS += -D_BSD_EXTENSION
  
@@ -8,7 +8,7 @@
  CFLAGS += -fPIC
 -endif
  
- SONAME=libpolarssl.so.0
+ SONAME=libpolarssl.so.5
  
 @@ -53,11 +51,7 @@
  

@@ -17,4 +17,3 @@ libdata/pkgconfig/libbde.pc
 man/man1/bdeinfo.1.gz
 man/man1/bdemount.1.gz
 man/man3/libbde.3.gz
-@dirrm include/libbde

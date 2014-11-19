@@ -51,7 +51,3 @@ share/icons/rpcalc/helpprevious.png
 %%DATADIR%%/optiondlg.py
 %%DATADIR%%/rpcalc.py
 %%DATADIR%%/setup.py
-@dirrmtry %%DOCSDIR%%
-@dirrmtry share/icons/rpcalc
-@dirrmtry %%DATADIR%%/__pycache__
-@dirrmtry %%DATADIR%%

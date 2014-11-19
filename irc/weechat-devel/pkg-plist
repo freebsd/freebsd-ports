@@ -76,19 +76,3 @@ libdata/pkgconfig/weechat.pc
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/weechat.mo
-@dirrmtry lib/weechat/plugins
-@dirrmtry lib/weechat
-%%MANPAGES%%@dirrmtry man/pl/man1
-%%MANPAGES%%@dirrmtry man/pl
-%%MANPAGES%%@dirrmtry man/it/man1
-%%MANPAGES%%@dirrmtry man/it
-%%MANPAGES%%@dirrmtry man/fr/man1
-%%MANPAGES%%@dirrmtry man/fr
-%%MANPAGES%%@dirrmtry man/de/man1
-%%MANPAGES%%@dirrmtry man/de
-%%DOCS%%@dirrmtry %%DOCSDIR%%
-%%ICON%%@dirrmtry share/icons/hicolor/32x32/apps
-%%ICON%%@dirrmtry share/icons/hicolor/32x32
-%%ICON%%@dirrmtry share/icons/hicolor
-%%ICON%%@dirrmtry share/icons
-@dirrm include/weechat

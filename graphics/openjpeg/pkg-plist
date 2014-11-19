@@ -11,5 +11,3 @@ lib/openjpeg-%%VER%%/OpenJPEGConfig.cmake
 lib/openjpeg-%%VER%%/OpenJPEGTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/openjpeg-%%VER%%/OpenJPEGTargets.cmake
 libdata/pkgconfig/libopenjp2.pc
-@dirrm lib/openjpeg-%%VER%%
-@dirrm include/openjpeg-%%VER%%

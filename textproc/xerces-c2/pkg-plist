@@ -468,34 +468,6 @@ lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%
 lib/%%XERCESC_DEPDOM_LIB%%
 lib/libxerces-depdom.so
 lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%
-@dirrm include/xercesc/validators/schema/identity
-@dirrm include/xercesc/validators/schema
-@dirrm include/xercesc/validators/datatype
-@dirrm include/xercesc/validators/common
-@dirrm include/xercesc/validators/DTD
-@dirrm include/xercesc/validators
-@dirrm include/xercesc/util/regx
-%%TRANSICONV%%@dirrm include/xercesc/util/Transcoders/IconvFBSD
-%%TRANSICU%%@dirrm include/xercesc/util/Transcoders/ICU
-@dirrm include/xercesc/util/Transcoders
-@dirrm include/xercesc/util/Platforms/FreeBSD
-@dirrm include/xercesc/util/Platforms
-@dirrm include/xercesc/util/NetAccessors/Socket
-@dirrm include/xercesc/util/NetAccessors
-@dirrm include/xercesc/util/MsgLoaders/InMemory
-@dirrm include/xercesc/util/MsgLoaders
-@dirrm include/xercesc/util/Compilers
-@dirrm include/xercesc/util
-@dirrm include/xercesc/sax2
-@dirrm include/xercesc/sax
-@dirrm include/xercesc/parsers
-@dirrm include/xercesc/internal
-@dirrm include/xercesc/framework/psvi
-@dirrm include/xercesc/framework
-@dirrm include/xercesc/dom/impl
-@dirrm include/xercesc/dom/deprecated
-@dirrm include/xercesc/dom
-@dirrm include/xercesc
 %%PORTEXAMPLES%%bin/CreateDOMDocument
 %%PORTEXAMPLES%%bin/DOMCount
 %%PORTEXAMPLES%%bin/DOMPrint
@@ -599,20 +571,3 @@ lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/personal.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/personal.xsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/redirect.dtd
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/StdInParse
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SEnumVal
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SCMPrint
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SAXPrint
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SAXCount
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SAX2Print
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SAX2Count
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Redirect
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/PSVIWriter
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/PParse
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MemParse
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/EnumVal
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/DOMPrint
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/DOMCount
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CreateDOMDocument
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

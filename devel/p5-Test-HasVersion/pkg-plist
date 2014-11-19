@@ -2,6 +2,3 @@ bin/test_version
 %%SITE_PERL%%/Test/HasVersion.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HasVersion/.packlist
 %%PERL5_MAN3%%/Test::HasVersion.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HasVersion
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

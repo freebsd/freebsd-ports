@@ -57,25 +57,21 @@ EG_DATADIR=	${PREFIX}/${EG_DATA}
 pre-install:
 	@${ECHO_CMD} '@owner ${WWWOWN}' > ${PLIST}
 	@${ECHO_CMD} '@group ${WWWGRP}' >> ${PLIST}
+	@${ECHO_CMD} '@mode 755' >> ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${EG_DIR}#g" >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s#${WRKSRC}#@dirrm ${EG_DIR}#g" >> ${PLIST}
-	@${ECHO} @dirrm ${EG_DATA}/files >> ${PLIST}
-	@${ECHO} @dirrm ${EG_DATA}/backup >> ${PLIST}
-	@${ECHO} @dirrm ${EG_DATA} >> ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s#${WRKSRC}#@dir ${EG_DIR}#g" >> ${PLIST}
+	@${ECHO} @dir ${EG_DATA}/files >> ${PLIST}
+	@${ECHO} @dir ${EG_DATA}/backup >> ${PLIST}
+	@${ECHO} @dir ${EG_DATA} >> ${PLIST}
 	@${ECHO_CMD} '@group' >> ${PLIST}
 	@${ECHO_CMD} '@owner' >> ${PLIST}
+	@${ECHO_CMD} '@mode' >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${EG_WWWDIR}
 	@${MKDIR} ${STAGEDIR}${EG_DATADIR}
 	@${MKDIR} ${STAGEDIR}${EG_DATADIR}/files
 	@${MKDIR} ${STAGEDIR}${EG_DATADIR}/backup
-	@${ECHO_CMD} '@owner ${WWWOWN}' >> ${PLIST}
-	@${ECHO_CMD} '@group ${WWWGRP}' >> ${PLIST}
-	@${ECHO_CMD} '@mode 755' >> ${PLIST}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${EG_WWWDIR}
-	@${ECHO_CMD} '@mode' >> ${PLIST}
-	@${ECHO_CMD} '@group' >> ${PLIST}
-	@${ECHO_CMD} '@owner' >> ${PLIST}
 
 .include <bsd.port.mk>

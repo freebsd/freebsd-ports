@@ -28,5 +28,3 @@ sbin/mydns
 %%PORTDOCS%%%%DOCSDIR%%/contrib/admin.php
 %%PORTDOCS%%%%DOCSDIR%%/contrib/create_domain.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/stats.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

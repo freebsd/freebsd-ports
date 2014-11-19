@@ -13,9 +13,3 @@
 %%PERL5_MAN3%%/Shell::EnvImporter.3.gz
 %%PERL5_MAN3%%/Shell::EnvImporter::Result.3.gz
 %%PERL5_MAN3%%/Shell::EnvImporter::Shell.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/EnvImporter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/EnvImporter
-@dirrm %%SITE_PERL%%/Shell/EnvImporter/Shell
-@dirrm %%SITE_PERL%%/Shell/EnvImporter
-@dirrmtry %%SITE_PERL%%/Shell

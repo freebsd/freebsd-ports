@@ -1,4 +1,2 @@
 %%QT_BINDIR%%/assistant
 share/pixmaps/assistant-qt5.png
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%

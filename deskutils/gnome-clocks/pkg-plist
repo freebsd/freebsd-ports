@@ -5,6 +5,7 @@ share/dbus-1/services/org.gnome.clocks.service
 share/glib-2.0/schemas/org.gnome.clocks.gschema.xml
 %%DATADIR%%/images/day.png
 %%DATADIR%%/images/night.png
+share/gnome-shell/search-providers/org.gnome.clocks.search-provider.ini
 share/help/C/gnome-clocks/alarm-add.page
 share/help/C/gnome-clocks/alarm-edit.page
 share/help/C/gnome-clocks/alarm-remove.page
@@ -65,6 +66,18 @@ share/help/es/gnome-clocks/world-add.page
 share/help/es/gnome-clocks/world-check.page
 share/help/es/gnome-clocks/world-remove.page
 share/help/es/gnome-clocks/figures/gnome-clocks.png
+share/help/fi/gnome-clocks/alarm-add.page
+share/help/fi/gnome-clocks/alarm-edit.page
+share/help/fi/gnome-clocks/alarm-remove.page
+share/help/fi/gnome-clocks/alarm-snooze-stop.page
+share/help/fi/gnome-clocks/figures/gnome-clocks.png
+share/help/fi/gnome-clocks/index.page
+share/help/fi/gnome-clocks/legal.xml
+share/help/fi/gnome-clocks/stopwatch.page
+share/help/fi/gnome-clocks/timer.page
+share/help/fi/gnome-clocks/world-add.page
+share/help/fi/gnome-clocks/world-check.page
+share/help/fi/gnome-clocks/world-remove.page
 share/help/fr/gnome-clocks/alarm-add.page
 share/help/fr/gnome-clocks/alarm-edit.page
 share/help/fr/gnome-clocks/alarm-remove.page
@@ -125,6 +138,18 @@ share/help/pt_BR/gnome-clocks/world-add.page
 share/help/pt_BR/gnome-clocks/world-check.page
 share/help/pt_BR/gnome-clocks/world-remove.page
 share/help/pt_BR/gnome-clocks/figures/gnome-clocks.png
+share/help/ru/gnome-clocks/alarm-add.page
+share/help/ru/gnome-clocks/alarm-edit.page
+share/help/ru/gnome-clocks/alarm-remove.page
+share/help/ru/gnome-clocks/alarm-snooze-stop.page
+share/help/ru/gnome-clocks/figures/gnome-clocks.png
+share/help/ru/gnome-clocks/index.page
+share/help/ru/gnome-clocks/legal.xml
+share/help/ru/gnome-clocks/stopwatch.page
+share/help/ru/gnome-clocks/timer.page
+share/help/ru/gnome-clocks/world-add.page
+share/help/ru/gnome-clocks/world-check.page
+share/help/ru/gnome-clocks/world-remove.page
 share/icons/HighContrast/16x16/apps/gnome-clocks.png
 share/icons/HighContrast/22x22/apps/gnome-clocks.png
 share/icons/HighContrast/24x24/apps/gnome-clocks.png
@@ -142,6 +167,7 @@ share/locale/ar/LC_MESSAGES/gnome-clocks.mo
 share/locale/as/LC_MESSAGES/gnome-clocks.mo
 share/locale/be/LC_MESSAGES/gnome-clocks.mo
 share/locale/bg/LC_MESSAGES/gnome-clocks.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-clocks.mo
 share/locale/ca/LC_MESSAGES/gnome-clocks.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-clocks.mo
 share/locale/cs/LC_MESSAGES/gnome-clocks.mo
@@ -158,6 +184,7 @@ share/locale/fi/LC_MESSAGES/gnome-clocks.mo
 share/locale/fr/LC_MESSAGES/gnome-clocks.mo
 share/locale/fur/LC_MESSAGES/gnome-clocks.mo
 share/locale/ga/LC_MESSAGES/gnome-clocks.mo
+share/locale/gd/LC_MESSAGES/gnome-clocks.mo
 share/locale/gl/LC_MESSAGES/gnome-clocks.mo
 share/locale/gu/LC_MESSAGES/gnome-clocks.mo
 share/locale/he/LC_MESSAGES/gnome-clocks.mo
@@ -174,12 +201,14 @@ share/locale/lv/LC_MESSAGES/gnome-clocks.mo
 share/locale/ml/LC_MESSAGES/gnome-clocks.mo
 share/locale/mr/LC_MESSAGES/gnome-clocks.mo
 share/locale/nb/LC_MESSAGES/gnome-clocks.mo
+share/locale/ne/LC_MESSAGES/gnome-clocks.mo
 share/locale/nl/LC_MESSAGES/gnome-clocks.mo
 share/locale/or/LC_MESSAGES/gnome-clocks.mo
 share/locale/pa/LC_MESSAGES/gnome-clocks.mo
 share/locale/pl/LC_MESSAGES/gnome-clocks.mo
 share/locale/pt/LC_MESSAGES/gnome-clocks.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-clocks.mo
+share/locale/ro/LC_MESSAGES/gnome-clocks.mo
 share/locale/ru/LC_MESSAGES/gnome-clocks.mo
 share/locale/sk/LC_MESSAGES/gnome-clocks.mo
 share/locale/sl/LC_MESSAGES/gnome-clocks.mo
@@ -197,40 +226,3 @@ share/locale/vi/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-clocks.mo
-@dirrmtry share/icons/HighContrast/48x48/apps
-@dirrmtry share/icons/HighContrast/48x48
-@dirrmtry share/icons/HighContrast/32x32/apps
-@dirrmtry share/icons/HighContrast/32x32
-@dirrmtry share/icons/HighContrast/256x256/apps
-@dirrmtry share/icons/HighContrast/256x256
-@dirrmtry share/icons/HighContrast/24x24/apps
-@dirrmtry share/icons/HighContrast/24x24
-@dirrmtry share/icons/HighContrast/22x22/apps
-@dirrmtry share/icons/HighContrast/22x22
-@dirrmtry share/icons/HighContrast/16x16/apps
-@dirrmtry share/icons/HighContrast/16x16
-@dirrmtry share/icons/HighContrast
-@dirrm share/help/pt_BR/gnome-clocks/figures
-@dirrm share/help/pt_BR/gnome-clocks
-@dirrm share/help/id/gnome-clocks/figures
-@dirrm share/help/id/gnome-clocks
-@dirrmtry share/help/id
-@dirrm share/help/hu/gnome-clocks/figures
-@dirrm share/help/hu/gnome-clocks
-@dirrm share/help/gl/gnome-clocks/figures
-@dirrm share/help/gl/gnome-clocks
-@dirrm share/help/fr/gnome-clocks/figures
-@dirrm share/help/fr/gnome-clocks
-@dirrm share/help/es/gnome-clocks/figures
-@dirrm share/help/es/gnome-clocks
-@dirrm share/help/el/gnome-clocks/figures
-@dirrm share/help/el/gnome-clocks
-@dirrm share/help/de/gnome-clocks/figures
-@dirrm share/help/de/gnome-clocks
-@dirrm share/help/cs/gnome-clocks/figures
-@dirrm share/help/cs/gnome-clocks
-@dirrm share/help/C/gnome-clocks/figures
-@dirrm share/help/C/gnome-clocks
-@dirrmtry share/appdata
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

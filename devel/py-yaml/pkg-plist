@@ -2,6 +2,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygments-lexer/example.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yaml-highlight/yaml_hl.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yaml-highlight/yaml_hl.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/yaml-highlight
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pygments-lexer
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

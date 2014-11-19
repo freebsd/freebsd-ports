@@ -18,4 +18,3 @@ share/html/callback.html
 share/html/trampoline.html
 share/html/trampoline_r.html
 share/html/vacall.html
-@dirrm share/html

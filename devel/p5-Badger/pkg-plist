@@ -101,14 +101,3 @@
 %%PERL5_MAN3%%/Badger::Codec::TT.3.gz
 %%PERL5_MAN3%%/Badger::Hub::Badger.3.gz
 %%PERL5_MAN3%%/Badger::URL.3.gz
-@dirrmtry %%SITE_PERL%%/Badger/Reporter
-@dirrmtry %%SITE_PERL%%/Badger/Log
-@dirrmtry %%SITE_PERL%%/Badger/Hub
-@dirrmtry %%SITE_PERL%%/Badger/Filesystem
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Badger
-@dirrmtry %%SITE_PERL%%/Badger/Factory
-@dirrmtry %%SITE_PERL%%/Badger/Class
-@dirrmtry %%SITE_PERL%%/Badger/Codec
-@dirrmtry %%SITE_PERL%%/Badger/Config
-@dirrmtry %%SITE_PERL%%/Badger/Test
-@dirrmtry %%SITE_PERL%%/Badger

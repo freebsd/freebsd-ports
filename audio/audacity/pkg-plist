@@ -1,5 +1,6 @@
 bin/audacity
 man/man1/audacity.1.gz
+share/appdata/audacity.appdata.xml
 share/applications/audacity.desktop
 %%DATADIR%%/EQDefaultCurves.xml
 %%DATADIR%%/nyquist/bug.lsp
@@ -62,6 +63,7 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/tremolo.ny
 %%DATADIR%%/plug-ins/vocalremover.ny
 %%DATADIR%%/plug-ins/vocoder.ny
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 share/icons/hicolor/16x16/apps/audacity.png
 share/icons/hicolor/22x22/apps/audacity.png
 share/icons/hicolor/24x24/apps/audacity.png
@@ -114,6 +116,7 @@ share/locale/sl/LC_MESSAGES/audacity.mo
 share/locale/sr_RS/LC_MESSAGES/audacity.mo
 share/locale/sr_RS@latin/LC_MESSAGES/audacity.mo
 share/locale/sv/LC_MESSAGES/audacity.mo
+share/locale/ta/LC_MESSAGES/audacity.mo
 share/locale/tg/LC_MESSAGES/audacity.mo
 share/locale/tr/LC_MESSAGES/audacity.mo
 share/locale/uk/LC_MESSAGES/audacity.mo

@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	pastebinit
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.1
 PORTREVISION=	1
 CATEGORIES=	misc python
-MASTER_SITES=	https://launchpadlibrarian.net/106457425/
+MASTER_SITES=	https://launchpad.net/pastebinit/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line utility for pastebing
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:${PORTSDIR}/devel/py-config
 
 USES=		python:run shebangfix tar:bzip2
 SHEBANG_FILES=	pastebinit
-python_OLD_CMD=	/usr/bin/env python
+python_OLD_CMD=	/usr/bin/python3
 python_CMD=	${PYTHON_CMD}
 NO_BUILD=	yes
 

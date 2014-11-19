@@ -63,9 +63,3 @@ share/gtk-doc/html/libnice/pt04.html
 share/gtk-doc/html/libnice/right.png
 share/gtk-doc/html/libnice/style.css
 share/gtk-doc/html/libnice/up.png
-@dirrm share/gtk-doc/html/libnice
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/stun/usages
-@dirrm include/stun
-@dirrm include/nice

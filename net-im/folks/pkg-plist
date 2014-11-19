@@ -116,14 +116,3 @@ share/vala/vapi/folks-telepathy.vapi
 %%TRACKER%%share/vala/vapi/folks-tracker.vapi
 share/vala/vapi/folks.deps
 share/vala/vapi/folks.vapi
-%%TRACKER%%@dirrm lib/folks/%%VERSION%%/backends/tracker
-@dirrm lib/folks/%%VERSION%%/backends/telepathy
-@dirrm lib/folks/%%VERSION%%/backends/ofono
-%%SOCIALWEB%%@dirrm lib/folks/%%VERSION%%/backends/libsocialweb
-@dirrm lib/folks/%%VERSION%%/backends/key-file
-@dirrm lib/folks/%%VERSION%%/backends/eds
-@dirrm lib/folks/%%VERSION%%/backends/dummy
-@dirrm lib/folks/%%VERSION%%/backends
-@dirrm lib/folks/%%VERSION%%
-@dirrm lib/folks
-@dirrm include/folks

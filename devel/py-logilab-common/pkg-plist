@@ -305,23 +305,3 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/xmlutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/xmlutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/xmlutils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/ureports
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/subdir_differ_dir/subdir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/subdir_differ_dir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/sub
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/same_dir/subdir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/same_dir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/reference_dir/subdir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/reference_dir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/lmfp
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/find_test/sub
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/find_test
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/file_differ_dir/subdirtwo
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/file_differ_dir/subdir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/file_differ_dir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/content_differ_dir/subdir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/content_differ_dir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common
-@dirrm %%PYTHON_SITELIBDIR%%/logilab

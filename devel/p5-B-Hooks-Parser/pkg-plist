@@ -4,10 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser/Install/hook_parser.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/Parser/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/Parser/Parser.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser/Install
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

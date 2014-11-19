@@ -13,9 +13,8 @@ COMMENT=	Python wrapper for the Google web API
 
 RUN_DEPENDS=	${PYXML}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/py-google

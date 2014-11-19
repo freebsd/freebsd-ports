@@ -12,8 +12,8 @@ COMMENT=	Migrates changesets between version control systems
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 OPTIONS_DEFINE=	DOCS
 
 post-install:

@@ -13,5 +13,3 @@ include/fc++/reuse.h
 include/fc++/signature.h
 include/fc++/smart.h
 %%PORTDOCS%%%%DOCSDIR%%/changes.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/fc++

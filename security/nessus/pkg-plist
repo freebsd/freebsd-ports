@@ -27,18 +27,9 @@ sbin/nessus-mkcert
 sbin/nessus-rmuser
 sbin/nessusd
 var/nessus/nessus-services
-@exec mkdir -p %D/var/nessus/jobs
-@exec mkdir -p %D/var/nessus/logs
-@exec mkdir -p %D/var/nessus/tmp
-@exec mkdir -p %D/var/nessus/users
-@unexec if [ ! -s %D/var/nessus/logs/nessusd.messages ]; then rm %D/var/nessus/logs/nessusd.messages 2> /dev/null; fi || true
-@dirrmtry var/nessus/jobs
-@dirrmtry var/nessus/logs
-@dirrmtry var/nessus/tmp
-@dirrmtry var/nessus/users
-@dirrmtry var/nessus
-@dirrmtry var
-@dirrmtry etc/nessus
-@exec mkdir -p %D/lib/nessus/plugins
-@dirrmtry lib/nessus/plugins
-@dirrmtry lib/nessus
+@dir var/nessus/jobs
+@dir var/nessus/logs
+@dir var/nessus/tmp
+@dir var/nessus/users
+@rmtry var/nessus/logs/nessusd.messages
+@dir lib/nessus/plugins

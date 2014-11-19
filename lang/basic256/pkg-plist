@@ -128,6 +128,7 @@ bin/basic256
 %%DATADIR%%/basic256_en.qm
 %%DATADIR%%/basic256_es.qm
 %%DATADIR%%/basic256_fr.qm
+%%DATADIR%%/basic256_it.qm
 %%DATADIR%%/basic256_nl.qm
 %%DATADIR%%/basic256_pt.qm
 %%DATADIR%%/basic256_ru.qm
@@ -1975,14 +1976,3 @@ bin/basic256
 %%DATADIR%%/help/ru_year.html
 %%DATADIR%%/help/start.html
 %%DATADIR%%/help/wiki_welcome.html
-@dirrmtry %%DATADIR%%/Examples/dice
-@dirrmtry %%DATADIR%%/Examples/imgload
-@dirrmtry %%DATADIR%%/Examples/networking
-@dirrmtry %%DATADIR%%/Examples/sound
-@dirrmtry %%DATADIR%%/Examples/sprites
-@dirrmtry %%DATADIR%%/Examples/testing
-@dirrmtry %%DATADIR%%/Examples
-@dirrmtry %%DATADIR%%/help/%%QT_LIBDIR%%/exe
-@dirrmtry %%DATADIR%%/help/%%QT_LIBDIR%%
-@dirrmtry %%DATADIR%%/help
-@dirrmtry %%DATADIR%%

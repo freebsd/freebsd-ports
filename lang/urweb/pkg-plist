@@ -50,8 +50,3 @@ lib/urweb/ur/top.urs
 %%ELISP%%share/emacs/site-lisp/urweb-mode/urweb-mode.el
 %%ELISP%%share/emacs/site-lisp/urweb-mode/urweb-move.el
 %%ELISP%%share/emacs/site-lisp/urweb-mode/urweb-util.el
-%%ELISP%%@dirrm share/emacs/site-lisp/urweb-mode
-@dirrm lib/urweb/ur
-@dirrm lib/urweb/js
-@dirrm lib/urweb
-@dirrm include/urweb

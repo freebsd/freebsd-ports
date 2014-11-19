@@ -1,0 +1,16 @@
+==========================================================================
+ - If this is a new installation or version upgrade,
+    to create/update configuration you should run
+
+     %%ETCDIR%%/update.sh
+
+ - Add the following line to /etc/rc.conf to enable BackupPC:
+
+     backuppc_enable="YES"
+
+ - Data directory is /var/db/BackupPC
+
+     This is where all the backup data is stored.
+     This file system needs to be big enough
+     to accommodate all the PCs you expect to backup.
+==========================================================================

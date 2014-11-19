@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/File::Random.3.gz
 %%SITE_PERL%%/File/Random.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Random/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Random
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File

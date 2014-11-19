@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Theora Video Compression Codec (Linux Fedora 10)
+COMMENT=	Theora Video Compression Codec (Linux  CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-libtheora-[0-9]* linux-f10-libtheora[0-9]*
 

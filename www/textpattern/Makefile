@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://textpattern.com/file_download/57/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, flexible, elegant, easy-to-use content management system
 
 NO_BUILD=	YES

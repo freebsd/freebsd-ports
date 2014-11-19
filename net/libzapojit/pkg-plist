@@ -39,7 +39,3 @@ lib/libzapojit-0.0.so.0
 lib/libzapojit-0.0.so.0.0.0
 libdata/pkgconfig/zapojit-0.0.pc
 share/gir-1.0/Zpj-0.0.gir
-@dirrm include/libzapojit-0.0/zpj
-@dirrm include/libzapojit-0.0
-@dirrm %%DOCSDIR%%-0.0
-@dirrm %%DOCSDIR%%

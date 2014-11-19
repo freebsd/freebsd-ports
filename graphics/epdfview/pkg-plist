@@ -33,10 +33,3 @@ share/applications/epdfview.desktop
 %%DATADIR%%/pixmaps/stock_zoom-page-width.png
 %%DATADIR%%/ui/epdfview-ui-print.xml
 %%DATADIR%%/ui/epdfview-ui.xml
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%/ui
-@dirrmtry %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl_NL
-%%NLS%%@dirrmtry share/locale/he_IL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/he_IL

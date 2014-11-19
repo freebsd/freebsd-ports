@@ -12,7 +12,7 @@ DISTFILES=	chains-${DISTVERSION}${EXTRACT_SUFX} \
 EXTRACT_SUFX=	-src.7z
 EXTRACT_ONLY=	chains-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The aim is to remove all of the targets on each level
 
 LICENSE=	GPLv2

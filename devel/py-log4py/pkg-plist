@@ -13,5 +13,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/footer.template
 %%PORTDOCS%%%%DOCSDIR%%/html/header.template
 %%PORTDOCS%%%%DOCSDIR%%/html/log4py.FileAppender.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -29,7 +29,7 @@ lib/libdbus-1.a
 lib/libdbus-1.la
 lib/libdbus-1.so
 lib/libdbus-1.so.3
-lib/libdbus-1.so.3.8.7
+lib/libdbus-1.so.3.8.8
 libdata/pkgconfig/dbus-1.pc
 @(,%%GROUPS%%,4750) libexec/dbus-daemon-launch-helper
 %%MANPAGES%%man/man1/dbus-cleanup-sockets.1.gz
@@ -39,16 +39,10 @@ libdata/pkgconfig/dbus-1.pc
 %%MANPAGES%%man/man1/dbus-run-session.1.gz
 %%MANPAGES%%man/man1/dbus-send.1.gz
 %%MANPAGES%%man/man1/dbus-uuidgen.1.gz
-@dirrmtry share/dbus-1/system-services
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1/interfaces
-@dirrmtry share/dbus-1
-@dirrm include/dbus-%%VERSION%%/include/dbus
-@dirrm include/dbus-%%VERSION%%/include
-@dirrm include/dbus-%%VERSION%%/dbus
-@dirrm include/dbus-%%VERSION%%
-@dirrm etc/dbus-1/system.d
-@dirrm etc/dbus-1/session.d
-@dirrm etc/dbus-1
-@dirrmtry /var/db/dbus
-@dirrmtry /var/run/dbus
+@dir share/dbus-1/system-services
+@dir share/dbus-1/interfaces
+@dir share/dbus-1/services
+@dir etc/dbus-1/session.d
+@dir etc/dbus-1/system.d
+@dir /var/db/dbus
+@dir /var/run/dbus

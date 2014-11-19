@@ -36,13 +36,3 @@ share/pixmaps/picpuz.png
 %%DATADIR%%/locales/gl/zfuncs.po
 %%DATADIR%%/locales/zh_CN/picpuz.po
 %%DATADIR%%/locales/zh_CN/zfuncs.po
-@dirrm %%DATADIR%%/locales/zh_CN
-@dirrm %%DATADIR%%/locales/gl
-@dirrm %%DATADIR%%/locales/fr
-@dirrm %%DATADIR%%/locales/es
-@dirrm %%DATADIR%%/locales/de
-@dirrm %%DATADIR%%/locales
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%

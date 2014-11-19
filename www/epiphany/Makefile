@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/www/epiphany/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/trunk/www/epiphany/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	epiphany
 PORTVERSION=	3.12.1

@@ -1,6 +1,13 @@
 bin/gnome-mplayer
 man/man1/gnome-mplayer.1.gz
 share/applications/gnome-mplayer.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/dbus.txt
+%%PORTDOCS%%%%DOCSDIR%%/keyboard_shortcuts.txt
+%%PORTDOCS%%%%DOCSDIR%%/plugin-interaction.txt
 share/gnome-control-center/default-apps/gnome-mplayer.xml
 share/icons/hicolor/16x16/apps/gnome-mplayer.png
 share/icons/hicolor/22x22/apps/gnome-mplayer.png
@@ -51,19 +58,3 @@ share/locale/vi/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mplayer.mo
-@dirrmtry share/gnome-control-center/default-apps
-@dirrmtry share/gnome-control-center
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo

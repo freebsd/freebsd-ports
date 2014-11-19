@@ -1,7 +1,3 @@
 %%DATADIR%%/cp932/migemo-dict
 %%DATADIR%%/euc-jp/migemo-dict
 %%DATADIR%%/utf-8/migemo-dict
-@dirrm %%DATADIR%%/cp932
-@dirrm %%DATADIR%%/euc-jp
-@dirrm %%DATADIR%%/utf-8
-@dirrm %%DATADIR%%

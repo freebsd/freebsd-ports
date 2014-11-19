@@ -8,5 +8,3 @@ share/py-sip/QtHelp/qhelpsearchengine.sip
 share/py-sip/QtHelp/qhelpsearchquerywidget.sip
 share/py-sip/QtHelp/qhelpsearchresultwidget.sip
 %%API%%share/qt4/qsci/api/python/QtHelp.api
-@dirrm share/py-sip/QtHelp
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

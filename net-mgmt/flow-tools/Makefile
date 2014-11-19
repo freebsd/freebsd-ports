@@ -16,8 +16,8 @@ OPTIONS_DEFINE=	MYSQL OPENSSL PGSQL
 
 CONFLICTS=	flow-tools-ng-[0-9]*
 
+USES=		python:run
 USE_GCC=	any
-USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--localstatedir="${PREFIX}"
 

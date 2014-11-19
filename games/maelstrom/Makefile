@@ -13,7 +13,7 @@ DISTFILES=	Maelstrom-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	Maelstrom-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asteroids-style game for X Window System
 
 LICENSE=	GPLv2

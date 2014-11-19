@@ -49,8 +49,3 @@ share/pixmaps/cheech/cheech.png
 share/pixmaps/cheech/highlight.png
 share/pixmaps/cheech/pegs.png
 share/pixmaps/cheech/smiley.png
-@dirrm share/pixmaps/cheech
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/cheechweb/images
-@dirrm %%DATADIR%%/cheechweb
-@dirrm %%DATADIR%%

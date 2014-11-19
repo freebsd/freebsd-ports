@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Hash/WithDefaults.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/WithDefaults/.packlist
 %%PERL5_MAN3%%/Hash::WithDefaults.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/WithDefaults
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
-@dirrmtry %%SITE_PERL%%/Hash

@@ -1,6 +1,7 @@
 bin/airdaemon
 bin/filedaemon
 bin/getFlowKeyHash
+bin/ipfixDump
 bin/yaf
 bin/yafMeta2Pcap
 bin/yafcollect
@@ -83,6 +84,10 @@ lib/yaf/ircplugin.a
 lib/yaf/ircplugin.so
 lib/yaf/ircplugin.so.1
 lib/yaf/ircplugin.so.1.0.1
+lib/yaf/ldapplugin.a
+lib/yaf/ldapplugin.so
+lib/yaf/ldapplugin.so.1
+lib/yaf/ldapplugin.so.1.0.1
 lib/yaf/ldpplugin.a
 lib/yaf/ldpplugin.so
 lib/yaf/ldpplugin.so.1
@@ -157,11 +162,9 @@ man/man1/airdaemon.1.gz
 man/man1/applabel.1.gz
 man/man1/filedaemon.1.gz
 man/man1/getFlowKeyHash.1.gz
+man/man1/ipfixDump.1.gz
 man/man1/yaf.1.gz
 man/man1/yafMeta2Pcap.1.gz
 man/man1/yafdhcp.1.gz
 man/man1/yafdpi.1.gz
 man/man1/yafscii.1.gz
-@dirrm lib/yaf
-@dirrm include/yaf
-@dirrm include/airframe

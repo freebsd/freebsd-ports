@@ -23,6 +23,8 @@
 #				  (value: perl5.14)
 # SITE_PERL		- Directory name where site specific perl packages go.
 #				  This value is added to PLIST_SUB.
+# SITE_ARCH		- Directory name where arch site specific perl packages go.
+#				  This value is added to PLIST_SUB.
 # USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
 #				  patch, build, install or run phases.  The fixpacklist is
 #				  needed in some cases, when a .packlist is created, it may
@@ -96,6 +98,8 @@ PERL_PORT?=	perl5.14
 
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
+SITE_ARCH_REL?=	${SITE_PERL_REL}/${PERL_ARCH}
+SITE_ARCH?=	${LOCALBASE}/${SITE_ARCH_REL}
 
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
@@ -156,6 +160,7 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 			PERL_VER=${PERL_VER} \
 			PERL_ARCH=${PERL_ARCH} \
 			PERL5_MAN3=lib/perl5/${PERL_VER}/man/man3 \
+			SITE_ARCH=${SITE_ARCH_REL} \
 			SITE_PERL=${SITE_PERL_REL}
 
 # handle perl5 specific manpages
@@ -170,7 +175,7 @@ MANDIRS+=	${PREFIX}/lib/perl5/${PERL_VER}
 _USE_PERL5+=	configure
 ALL_TARGET?=	# empty
 CONFIGURE_ARGS+=--install_path lib="${PREFIX}/${SITE_PERL_REL}" \
-				--install_path arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
+				--install_path arch="${PREFIX}/${SITE_ARCH_REL}" \
 				--install_path script="${PREFIX}/bin" \
 				--install_path bin="${PREFIX}/bin" \
 				--install_path libdoc="${MAN3PREFIX}/man/man3" \

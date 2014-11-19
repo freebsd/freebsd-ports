@@ -1,7 +1,3 @@
 mingw32/include/yaml.h
 mingw32/lib/libyaml.a
 mingw32/lib/pkgconfig/yaml-0.1.pc
-@dirrmtry mingw32/lib/pkgconfig
-@dirrmtry mingw32/lib
-@dirrmtry mingw32/include
-@dirrmtry mingw32

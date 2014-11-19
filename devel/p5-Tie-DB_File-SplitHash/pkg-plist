@@ -1,5 +1,3 @@
 %%PERL5_MAN3%%/Tie::DB_File::SplitHash.3.gz
 %%SITE_PERL%%/Tie/DB_File/SplitHash.pm
 %%SITE_PERL%%/Tie/DB_File/SplitHash.pod
-@dirrm %%SITE_PERL%%/Tie/DB_File
-@dirrmtry %%SITE_PERL%%/Tie

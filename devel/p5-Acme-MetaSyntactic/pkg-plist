@@ -25,8 +25,3 @@ bin/metafy
 %%PERL5_MAN3%%/eta.3.gz
 man/man1/meta.1.gz
 man/man1/metafy.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/MetaSyntactic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme
-@dirrmtry %%SITE_PERL%%/Test
-@dirrmtry %%SITE_PERL%%/Acme/MetaSyntactic
-@dirrmtry %%SITE_PERL%%/Acme

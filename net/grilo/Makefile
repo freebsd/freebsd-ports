@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net/grilo/Makefile 19829 2014-08-25 06:54:03Z gusi $
+#   $MCom: ports/trunk/net/grilo/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	grilo
 PORTVERSION=	0.2.11
@@ -10,14 +10,14 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Grilo is a framework focused on making media discovery and browsing
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		liboauth.so:${PORTSDIR}/net/liboauth \
 		libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20 gnomehier intlhack introspection:build libxml2
+USE_GNOME=	glib20 intlhack introspection:build libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-vala -disable-debug
 CPPFLAGS+=	-I${LOCALBASE}/include

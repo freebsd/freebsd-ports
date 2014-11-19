@@ -2142,35 +2142,4 @@
 %%TOMCATDIR%%/webapps/deegree-wcs/wcs_basic.html
 %%TOMCATDIR%%/webapps/deegree-wcs/wcs_main.html
 %%TOMCATDIR%%/webapps/deegree-wcs/wcs_navi.jsp
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/images
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/css
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/scripts/shell
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/scripts/batch
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/scripts
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/lib
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/orig
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dop/8.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dop/4.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dop/32.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dop/2.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dop/16.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dop/1.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dop
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dem/80.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dem/40.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dem/20.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dem/10.0
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster/dem
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah/raster
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data/utah
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/data
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/conf/wcs
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/conf
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/classes
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs/META-INF
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
-@dirrm %%TOMCATDIR%%/webapps/deegree-wcs
-@group wheel
-@owner root
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%TOMCATDIR%%/webapps/deegree-wcs

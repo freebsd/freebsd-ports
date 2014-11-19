@@ -281,25 +281,3 @@ lib/cc65/tgi/lynx-160-102-16.tgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tgidemo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/hello.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/text.s
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/geos/ca65-vlir
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/geos
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/cc65/tgi
-@dirrm lib/cc65/ser
-@dirrm lib/cc65/obj
-@dirrm lib/cc65/mou
-@dirrm lib/cc65/lib
-@dirrm lib/cc65/joy
-@dirrm lib/cc65/include/tgi
-@dirrm lib/cc65/include/sys
-@dirrm lib/cc65/include/mouse
-@dirrm lib/cc65/include/joystick
-@dirrm lib/cc65/include/geos
-@dirrm lib/cc65/include/em
-@dirrm lib/cc65/include
-@dirrm lib/cc65/emd
-@dirrm lib/cc65/cfg
-@dirrm lib/cc65/asminc
-@dirrm lib/cc65

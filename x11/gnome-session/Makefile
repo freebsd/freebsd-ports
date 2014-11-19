@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11/gnome-session/Makefile 19789 2014-08-05 07:43:54Z gusi $
+#   $MCom: ports/trunk/x11/gnome-session/Makefile 19960 2014-10-15 14:24:24Z gusi $
 
 PORTNAME=	gnome-session
-PORTVERSION=	3.12.1
+PORTVERSION=	3.14.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consoleki
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 USES=		execinfo gettext gmake pathfix pkgconfig tar:xz
-USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack intltool \
+USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack intlhack \
 		libxslt:build
 USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite
 USE_GL=		gl

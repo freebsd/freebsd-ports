@@ -1,10 +1,9 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/devhelp/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/trunk/devel/devhelp/Makefile 19980 2014-10-17 06:01:57Z gusi $
 
 PORTNAME=	devhelp
-PORTVERSION=	3.12.1
-PORTREVISION=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

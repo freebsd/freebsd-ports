@@ -101,25 +101,3 @@ etc/thales.conf.default
 %%PORTDOCS%%%%DATADIR%%/tools/testbed/killall.sh
 %%PORTDOCS%%%%DATADIR%%/tools/testbed/compileall.sh
 %%PORTDOCS%%%%DATADIR%%/tools/testbed/chgCacheTime.sh
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/recycledcounter
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clones
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/memphistools/status
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/memphistools/counters
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/memphistools
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/whois
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/counter/pictures/5
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/counter/pictures/4
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/counter/pictures/3
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/counter/pictures/2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/counter/pictures/1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/counter/pictures
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/counter
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nickinfo/img
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nickinfo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MRTG
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DATADIR%%/tools/testbed
-%%PORTDOCS%%@dirrm %%DATADIR%%/tools/logfilter
-%%PORTDOCS%%@dirrm %%DATADIR%%/tools/crontab
-%%PORTDOCS%%@dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%

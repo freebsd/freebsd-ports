@@ -3,7 +3,6 @@
 
 PORTNAME=	openldap
 PORTVERSION=	2.4.39
-PORTREVISION=	1
 CATEGORIES=	net linux
 
 MAINTAINER=	emulation@FreeBSD.org

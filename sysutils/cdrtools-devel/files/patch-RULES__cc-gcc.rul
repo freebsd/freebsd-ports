@@ -17,8 +17,12 @@
 
 --- RULES/cc-gcc.rul.orig	Thu Jul  6 12:59:44 2006
 +++ RULES/cc-gcc.rul	Sat Jul 22 03:55:52 2006
-@@ -22,8 +22,9 @@
- ###########################################################################
+@@ -24,11 +24,12 @@
+ GCC_OPT=
+ GCC_OPT32=	-m32
+ GCC_OPT64=	-m64
+-GCC_OPTXX=	$(GCC_OPT$(C_ARCH:gcc%=%))
++GCC_OPTXX=
  
  CPPFLAGS=	-DSCHILY_BUILD $(CPPOPTS) $(CPPOPTX) $(OSINCDIRS:%=-I%) $(OSDEFS) $(OSDEFSX)
 -CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
@@ -28,21 +32,21 @@
 +C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(CXXFLAGS) $(G++OPTOPT) $(C++OPTX)
  
  CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%)
- COPTS=
-@@ -31,12 +32,10 @@
+ COPTS=		$(GCC_OPTXX)
+@@ -36,12 +37,10 @@
  CWOPTS=		-Wall -Wtraditional
  CWOPTS=		-Wall -Wno-unknown-pragmas \
  		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
 -COPTOPT=	-O
  COPTDYN=	-fpic
  COPTGPROF=	-pg
- C++OPTS=
+ C++OPTS=	$(GCC_OPTXX)
  C++WOPTS=	$(CWOPTS)
 -C++OPTOPT=	$(COPTOPT)
  C++OPTDYN=	-fpic
  C++OPTGPROF=	-pg
  
-@@ -56,28 +55,18 @@
+@@ -61,28 +60,18 @@
  
  FLOAT_OPTIONS=	
  
@@ -59,12 +63,12 @@
 -CC=		$(CC_COM_DEF)
 -CCC=		$(CC++_COM_DEF)
 -
--CCCC=		@echo "	==> COMPILING \"$@\""; $(CC_COM)
--CC++ =		@echo "	==> COMPILING \"$@\""; $(CC++_COM)
--LDCC=		@echo "	==> LINKING \"$@\""; $(CC_COM)
--LDCC++ =	@echo "	==> LINKING \"$@\""; $(CC++_COM)
--DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; $(CC_COM)
--DYNLDC++ =	@echo "	==> LINKING dynamic library \"$@\""; $(CC++_COM)
+-CCCC=		@echo "	==> COMPILING \"$@\""; $(CC_COM) $(GCC_OPTXX)
+-CC++ =		@echo "	==> COMPILING \"$@\""; $(CC++_COM) $(GCC_OPTXX)
+-LDCC=		@echo "	==> LINKING \"$@\""; $(CC_COM) $(GCC_OPTXX)
+-LDCC++ =	@echo "	==> LINKING \"$@\""; $(CC++_COM) $(GCC_OPTXX)
+-DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; $(CC_COM) $(GCC_OPTXX)
+-DYNLDC++ =	@echo "	==> LINKING dynamic library \"$@\""; $(CC++_COM) $(GCC_OPTXX)
 +CC_COM=		$(CC)
 +CC++_COM=	$(CXX)
 +
@@ -76,9 +80,9 @@
 +DYNLDC++ =	$(CC++_COM)
  
  RMDEP=		:
--MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CC_COM) -M
+-MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CC_COM) $(GCC_OPTXX) -M
 +MKDEP=		$(CC_COM) -M
  MKDEP_OUT=
--MKC++DEP=	@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CC++_COM) -M
+-MKC++DEP=	@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CC++_COM) $(GCC_OPTXX) -M
 +MKC++DEP=	$(CC++_COM) -M
  MKC++DEP_OUT=

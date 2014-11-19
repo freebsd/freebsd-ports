@@ -17,6 +17,3 @@ lib/cuttlefish/Util.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nyxem-hosts-both.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/witty-combined-small.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/witty-combined.config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
-@dirrm lib/cuttlefish

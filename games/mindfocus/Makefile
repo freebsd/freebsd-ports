@@ -21,24 +21,10 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for i in mayu.mfc mio.mfc misaki2.mfc mizuka.mfc myu.mfc ryoko.mfc
-	${INSTALL_DATA} ${WRKDIR}/$i ${STAGEDIR}${EXAMPLESDIR}
-.endfor
+	${INSTALL_DATA} ${WRKDIR}/*.mfc ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/pixmaps
-.for i in mayu1.xpm mayu2.xpm mayu3.xpm mayu4.xpm \
-	mio1.xpm mio2.xpm mio3.xpm mio4.xpm \
-	misaki2-1.xpm misaki2-2.xpm misaki2-3.xpm misaki2-4.xpm \
-	mizuka1.xpm mizuka2.xpm mizuka3.xpm mizuka4.xpm \
-	myu1.xpm myu2.xpm myu3.xpm myu4.xpm \
-	ryoko1.xpm ryoko2.xpm ryoko3.xpm ryoko4.xpm
-	${INSTALL_DATA} ${WRKDIR}/pixmaps/$i ${STAGEDIR}${EXAMPLESDIR}/pixmaps
-.endfor
-
+	${INSTALL_DATA} ${WRKDIR}/pixmaps/*.xpm ${STAGEDIR}${EXAMPLESDIR}/pixmaps
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/HISTORY.euc ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/MFC.euc ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/README.euc ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/SCRIPT.euc ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/TODO.euc ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.euc ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

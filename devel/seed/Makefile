@@ -1,6 +1,6 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/seed/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/devel/seed/Makefile 19813 2014-08-15 19:44:33Z gusi $
 # NOTE: It may be necessary to update ${FILESDIR}/Seed.js on each release.
 # To do that, just replace imports.searchPaths with "." and ".." elements.
 

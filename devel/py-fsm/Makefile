@@ -15,8 +15,8 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>=1.0:${PORTSDIR}/graphics/py-graphviz
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_EGGINFO=	python_${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
 .include <bsd.port.mk>

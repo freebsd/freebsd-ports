@@ -16,4 +16,3 @@ lib/libqcow.so.1.0.0
 libdata/pkgconfig/libqcow.pc
 man/man1/qcowinfo.1.gz
 man/man3/libqcow.3.gz
-@dirrm include/libqcow

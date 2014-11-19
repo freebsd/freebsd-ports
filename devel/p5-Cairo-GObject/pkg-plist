@@ -3,8 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/GObject/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/GObject/GObject.so
 %%PERL5_MAN3%%/Cairo::GObject.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/GObject
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cairo/GObject/Install
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cairo/GObject
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Cairo

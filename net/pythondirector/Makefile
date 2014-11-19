@@ -12,10 +12,8 @@ COMMENT=	TCP load balancer written in Python
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		twisted:run
+USE_PYTHON=	distutils autoplist
+USES=		python twisted:run
 
 PORTDOCS=	*
 

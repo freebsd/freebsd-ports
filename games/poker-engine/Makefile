@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library that implements poker rules
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync \
@@ -23,8 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig gettext
-USE_PYTHON=	2
+USES=		gettext gmake pkgconfig python:2
 GNU_CONFIGURE=	yes
 
 post-patch:

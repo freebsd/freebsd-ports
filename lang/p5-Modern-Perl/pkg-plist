@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Modern/Perl.pm
 %%PERL5_MAN3%%/Modern::Perl.3.gz
-@dirrmtry %%SITE_PERL%%/Modern

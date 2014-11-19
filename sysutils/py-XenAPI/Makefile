@@ -13,7 +13,7 @@ EXTRACT_ONLY=
 MAINTAINER=	bsdports@wayfair.com
 COMMENT=	Xen API Library for Python
 
-USE_PYTHON=	2
+USES=		python:2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/XenAPI.py \
 		%%PYTHON_SITELIBDIR%%/XenAPI.pyc \

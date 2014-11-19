@@ -12,4 +12,3 @@ bin/scheme-ieee-1178-1900
 %%DATADIR%%/sisc.jar
 %%DATADIR%%/sisc.shp
 %%DATADIR%%/slib.scm
-@dirrm %%DATADIR%%

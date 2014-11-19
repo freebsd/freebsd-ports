@@ -107,12 +107,3 @@ etc/diakonos-256-colour.conf.dist
 %%PORTDOCS%%%%DOCSDIR%%/help/uninstall.dhf
 %%PORTDOCS%%%%DOCSDIR%%/help/welcome.dhf
 %%PORTDOCS%%%%DOCSDIR%%/help/word-wrap.dhf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%RUBY_SITELIBDIR%%/diakonos/buffer
-@dirrm %%RUBY_SITELIBDIR%%/diakonos/core-ext
-@dirrm %%RUBY_SITELIBDIR%%/diakonos/display
-@dirrm %%RUBY_SITELIBDIR%%/diakonos/functions
-@dirrm %%RUBY_SITELIBDIR%%/diakonos/vendor
-@dirrm %%RUBY_SITELIBDIR%%/diakonos/readline
-@dirrm %%RUBY_SITELIBDIR%%/diakonos

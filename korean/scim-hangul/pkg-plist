@@ -13,5 +13,3 @@ share/scim/hangul/symbol.txt
 share/scim/icons/scim-hangul.png
 share/scim/icons/scim-hangul-off.png
 share/scim/icons/scim-hangul-on.png
-@dirrm share/scim/hangul
-@dirrmtry share/scim/icons

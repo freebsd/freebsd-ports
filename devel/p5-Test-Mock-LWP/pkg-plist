@@ -7,10 +7,3 @@
 %%PERL5_MAN3%%/Test::Mock::HTTP::Response.3.gz
 %%PERL5_MAN3%%/Test::Mock::LWP.3.gz
 %%PERL5_MAN3%%/Test::Mock::LWP::UserAgent.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock/LWP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrm %%SITE_PERL%%/Test/Mock/LWP
-@dirrmtry %%SITE_PERL%%/Test/Mock/HTTP
-@dirrmtry %%SITE_PERL%%/Test/Mock
-@dirrmtry %%SITE_PERL%%/Test

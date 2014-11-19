@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	simutrans
-DISTVERSION=	112-3
-PORTREVISION=	1
+DISTVERSION=	120-0-1
 CATEGORIES=	games
 MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION} \
-		SF/simutrans/pak64/${PAK64_DISTVERSION}:pak64 \
+		SF/simutrans/pak64/${PAK64_SUBDIR}:pak64 \
 		SF/simutrans/pak128/pak128%20for%20${PAK128_SUBDIR}:pak128
 DISTFILES=	simutrans-src-${DISTVERSION}.zip \
-		simulinux-${DISTVERSION}.zip
+		simulinux-x64-${DISTVERSION}.zip
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Transport Simulator
@@ -17,9 +16,10 @@ LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/simutrans/license.txt
 
 PAK64_DISTVERSION=	${DISTVERSION}
-PAK128_DISTVERSION=	2.3.0--112.2
-PAK128_SUBDIR=		112-2
-SIMUTRANS_REVISION=	6520
+PAK64_SUBDIR=		120-0
+PAK128_DISTVERSION=	2.5.2--RC_120
+PAK128_SUBDIR=		RC%20120%20%282.5.2%2C%20bugfixes%29
+SIMUTRANS_REVISION=	7373
 
 OPTIONS_DEFINE= 	DOCS
 OPTIONS_MULTI=		PAK
@@ -28,8 +28,11 @@ OPTIONS_DEFAULT=	PAK64
 PAK64_DESC=		Default graphics
 PAK128_DESC=		High resolution graphics
 
+# Threading disabled because FreeBSD does not have a static initializer
+# for recursive mutexes.
 MAKE_ARGS=	BACKEND=mixer_sdl \
 		COLOUR_DEPTH=16 \
+		MULTI_THREAD=0 \
 		OSTYPE=freebsd \
 		FLAGS="-DUSE_C -DREVISION=${SIMUTRANS_REVISION}" \
 		VERBOSE=1
@@ -37,7 +40,7 @@ NO_WRKSUBDIR=	yes
 USES=		gmake zip
 USE_SDL=	sdl mixer
 
-DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" "false"
+DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" false
 PLIST_FILES=	bin/simutrans bin/simutrans-bin
 PORTDATA=	*
 
@@ -56,13 +59,14 @@ post-patch:
 	@${REINPLACE_CMD} 's/simutrans/.simutrans/' ${WRKSRC}/simsys.cc
 
 do-install:
-	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
-		"config font music script skin text" ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
+		"config font music script text themes" ${STAGEDIR}${DATADIR})
 .if ${PORT_OPTIONS:MPAK64}
-	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} pak ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
+		pak ${STAGEDIR}${DATADIR})
 .endif
 .if ${PORT_OPTIONS:MPAK128}
-	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} pak128 ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} pak128 ${STAGEDIR}${DATADIR})
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKSRC}/simutrans/readme.txt ${STAGEDIR}${DATADIR}

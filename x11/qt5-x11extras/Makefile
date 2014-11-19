@@ -11,5 +11,6 @@ COMMENT=	Qt platform-specific features for X11-based systems
 USE_QT5=	core gui widgets
 QT_DIST=	x11extras
 USES=		qmake
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .include <bsd.port.mk>

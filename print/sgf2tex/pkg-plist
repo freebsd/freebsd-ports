@@ -14,7 +14,6 @@ share/texmf/fonts/tfm/public/GOOE/good.tfm
 share/texmf/fonts/tfm/public/GOOE/gooegb.tfm
 share/texmf/fonts/tfm/public/GOOE/gooemt.tfm
 share/texmf/fonts/tfm/public/GOOE/gowl.tfm
-@dirrm share/texmf/fonts/tfm/public/GOOE
 share/texmf/fonts/source/public/GOOE/bodd.mf
 share/texmf/fonts/source/public/GOOE/gobas.mf
 share/texmf/fonts/source/public/GOOE/gobl.mf
@@ -39,10 +38,8 @@ share/texmf/fonts/source/public/GOOE/paramsbl.mf
 share/texmf/fonts/source/public/GOOE/paramsc.mf
 share/texmf/fonts/source/public/GOOE/romandg.mf
 share/texmf/fonts/source/public/GOOE/wodd.mf
-@dirrm share/texmf/fonts/source/public/GOOE
 share/texmf/tex/generic/GOOE/gooemacs.tex
 share/texmf/tex/generic/GOOE/gotcmacs.tex
 share/texmf/tex/generic/GOOE/manual.dvi
-@dirrm share/texmf/tex/generic/GOOE
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%

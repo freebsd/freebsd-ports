@@ -4,12 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Check/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Check/Check.so
 %%PERL5_MAN3%%/B::Hooks::OP::Check.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Check
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Check/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Check
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

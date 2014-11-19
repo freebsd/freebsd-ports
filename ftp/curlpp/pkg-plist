@@ -94,10 +94,3 @@ libdata/pkgconfig/curlpp.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example22.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example23.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example24.cpp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/utilspp/singleton
-@dirrm include/utilspp/functor
-@dirrm include/utilspp
-@dirrm include/curlpp/internal
-@dirrm include/curlpp

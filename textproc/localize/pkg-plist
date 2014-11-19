@@ -20,11 +20,3 @@ GNUstep/Local/Applications/Localize.app/Resources/Translated.tiff
 GNUstep/Local/Applications/Localize.app/Resources/UnMatched.tiff
 GNUstep/Local/Applications/Localize.app/stamp.make
 GNUstep/Local/Tools/Localize
-@dirrm GNUstep/Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm
-@dirrm GNUstep/Local/Applications/Localize.app/Resources/Thai.lproj
-@dirrm GNUstep/Local/Applications/Localize.app/Resources/English.lproj/MakeStrings.gorm
-@dirrm GNUstep/Local/Applications/Localize.app/Resources/English.lproj/Localize.gorm
-@dirrm GNUstep/Local/Applications/Localize.app/Resources/English.lproj/GenericStrings.gorm
-@dirrm GNUstep/Local/Applications/Localize.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Localize.app/Resources
-@dirrm GNUstep/Local/Applications/Localize.app

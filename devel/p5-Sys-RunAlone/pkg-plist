@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Sys/RunAlone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/RunAlone/.packlist
 %%PERL5_MAN3%%/Sys::RunAlone.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/RunAlone
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrmtry %%SITE_PERL%%/Sys

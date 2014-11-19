@@ -5,8 +5,6 @@ lib/libmcrypt.a
 lib/libmcrypt.so
 lib/libmcrypt.so.4
 lib/libmcrypt.so.4.4.8
-@exec mkdir -p %D/lib/libmcrypt
+@dir lib/libmcrypt
 man/man3/mcrypt.3.gz
 share/aclocal/libmcrypt.m4
-@dirrm lib/libmcrypt
-@dirrm include/mutils

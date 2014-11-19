@@ -2,7 +2,6 @@
 
 PORTNAME=	clucene
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	qt5-
 
@@ -14,7 +13,7 @@ QT_DIST=	tools
 USES=		qmake
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
-WRKSRC_SUBDIR=	src/assistant/${PORTNAME}
-PATCH_WRKSRC=	${WRKSRC:H}
+BUILD_WRKSRC=	${WRKSRC}/src/assistant/${PORTNAME}
+INSTALL_WRKSRC=	${WRKSRC}/src/assistant/${PORTNAME}
 
 .include <bsd.port.mk>

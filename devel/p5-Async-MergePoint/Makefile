@@ -17,11 +17,11 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	%%SITE_PERL%%/Async/MergePoint.pm \
-		%%SITE_PERL%%/mach/auto/Async/MergePoint/.packlist \
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Async/MergePoint/.packlist \
 		%%PERL5_MAN3%%/Async::MergePoint.3.gz
 
-PLIST_DIRS=	%%SITE_PERL%%/mach/auto/Async/MergePoint \
-		%%SITE_PERL%%/mach/auto/Async \
+PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Async/MergePoint \
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Async \
 		%%SITE_PERL%%/Async
 
 .include <bsd.port.mk>

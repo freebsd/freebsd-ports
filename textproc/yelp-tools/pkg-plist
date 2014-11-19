@@ -12,6 +12,3 @@ share/yelp-tools/xslt/mal-opf.xsl
 share/yelp-tools/xslt/mal-rng.xsl
 share/yelp-tools/xslt/mal-status.xsl
 share/yelp-tools/xslt/media.xsl
-@dirrm share/yelp-tools/xslt
-@dirrm share/yelp-tools/templates
-@dirrm share/yelp-tools

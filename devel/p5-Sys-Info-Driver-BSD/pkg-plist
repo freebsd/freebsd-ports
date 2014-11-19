@@ -7,12 +7,3 @@
 %%PERL5_MAN3%%/Sys::Info::Driver::BSD::Device.3.gz
 %%PERL5_MAN3%%/Sys::Info::Driver::BSD::Device::CPU.3.gz
 %%PERL5_MAN3%%/Sys::Info::Driver::BSD::OS.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Driver/BSD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Driver
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrm %%SITE_PERL%%/Sys/Info/Driver/BSD/Device
-@dirrm %%SITE_PERL%%/Sys/Info/Driver/BSD
-@dirrmtry %%SITE_PERL%%/Sys/Info/Driver
-@dirrmtry %%SITE_PERL%%/Sys/Info
-@dirrmtry %%SITE_PERL%%/Sys

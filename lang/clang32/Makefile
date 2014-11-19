@@ -32,9 +32,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
-USES=		gmake perl5
+USES=		gmake perl5 python:build
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
 
 MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \
 		LLVMIncDir=${LLVM_PREFIX}/include \

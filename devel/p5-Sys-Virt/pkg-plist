@@ -26,7 +26,3 @@
 %%PERL5_MAN3%%/Sys::Virt::StoragePool.3.gz
 %%PERL5_MAN3%%/Sys::Virt::StorageVol.3.gz
 %%PERL5_MAN3%%/Sys::Virt::Stream.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Virt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys

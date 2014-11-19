@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/SVN::ACL.3.gz
 %%SITE_PERL%%/SVN/ACL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/ACL/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/ACL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
-@dirrmtry %%SITE_PERL%%/SVN

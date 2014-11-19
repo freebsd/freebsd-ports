@@ -82,12 +82,3 @@ share/gtk-doc/html/liblangtag/object-tree.html
 share/gtk-doc/html/liblangtag/right.png
 share/gtk-doc/html/liblangtag/style.css
 share/gtk-doc/html/liblangtag/up.png
-@dirrm share/gtk-doc/html/liblangtag
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm %%DATADIR%%/common/supplemental
-@dirrm %%DATADIR%%/common/bcp47
-@dirrm %%DATADIR%%/common
-@dirrm %%DATADIR%%
-@dirrm lib/liblangtag
-@dirrm include/liblangtag

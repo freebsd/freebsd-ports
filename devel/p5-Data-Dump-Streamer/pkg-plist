@@ -4,10 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer/_/Printers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer/Streamer.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer/_
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data

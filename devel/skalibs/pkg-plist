@@ -96,6 +96,3 @@ lib/skalibs/libwebipc.a
 %%PORTDOCS%%%%DOCSDIR%%/libwebipc.html
 %%PORTDOCS%%%%DOCSDIR%%/selfpipe.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/skalibs
-@dirrm lib/skalibs

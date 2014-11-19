@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11-toolkits/gtksourceview3/Makefile 19871 2014-09-14 14:30:51Z kwm $
+#   $MCom: ports/trunk/x11-toolkits/gtksourceview3/Makefile 19949 2014-10-15 06:25:06Z gusi $
 
 PORTNAME=	gtksourceview
-PORTVERSION=	3.12.3
+PORTVERSION=	3.14.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no --enable-glade-catalog=no \
 		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-patch:

@@ -67,5 +67,3 @@ bin/gcvs
 %%DATADIR%%/pixmaps/warning.xpm
 %%DATADIR%%/pixmaps/watch.xpm
 %%DATADIR%%/startup.tcl
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

@@ -13,8 +13,8 @@ COMMENT=	Program for executing commands on many hosts in parallel
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/py
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS
 

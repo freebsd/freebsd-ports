@@ -47,7 +47,3 @@ lib/libptoc.a
 %%DATADIR%%/graph.pas
 %%DATADIR%%/ptoc.pas
 %%DATADIR%%/tptoc.pas
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/ptoc

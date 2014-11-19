@@ -8,7 +8,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	www
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read, parse, merge and write RSS and Atom feeds
 
 USES=		iconv gmake

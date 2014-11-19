@@ -1,6 +1,6 @@
 bin/baobab
 man/man1/baobab.1.gz
-share/appdata/baobab.appdata.xml
+share/appdata/org.gnome.baobab.appdata.xml
 share/applications/org.gnome.baobab.desktop
 share/dbus-1/services/org.gnome.baobab.service
 share/help/C/baobab/index.page
@@ -63,6 +63,16 @@ share/help/es/baobab/scan-file-system.page
 share/help/es/baobab/scan-folder.page
 share/help/es/baobab/scan-home.page
 share/help/es/baobab/scan-remote.page
+share/help/fi/baobab/index.page
+share/help/fi/baobab/introduction.page
+share/help/fi/baobab/legal.xml
+share/help/fi/baobab/pref-view-chart.page
+share/help/fi/baobab/problem-permissions.page
+share/help/fi/baobab/problem-slow-scan.page
+share/help/fi/baobab/scan-file-system.page
+share/help/fi/baobab/scan-folder.page
+share/help/fi/baobab/scan-home.page
+share/help/fi/baobab/scan-remote.page
 share/help/fr/baobab/index.page
 share/help/fr/baobab/introduction.page
 share/help/fr/baobab/legal.xml
@@ -165,8 +175,6 @@ share/icons/hicolor/24x24/apps/baobab.png
 share/icons/hicolor/256x256/apps/baobab.png
 share/icons/hicolor/32x32/apps/baobab.png
 share/icons/hicolor/48x48/apps/baobab.png
-share/icons/hicolor/scalable/actions/view-ringschart-symbolic.svg
-share/icons/hicolor/scalable/actions/view-treemap-symbolic.svg
 share/locale/af/LC_MESSAGES/baobab.mo
 share/locale/am/LC_MESSAGES/baobab.mo
 share/locale/an/LC_MESSAGES/baobab.mo
@@ -261,88 +269,3 @@ share/locale/xh/LC_MESSAGES/baobab.mo
 share/locale/zh_CN/LC_MESSAGES/baobab.mo
 share/locale/zh_HK/LC_MESSAGES/baobab.mo
 share/locale/zh_TW/LC_MESSAGES/baobab.mo
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_CN/baobab
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sl/baobab
-@dirrmtry share/help/sl
-@dirrm share/help/ru/baobab
-@dirrmtry share/help/ru
-@dirrm share/help/pt_BR/baobab
-@dirrmtry share/help/pt_BR
-@dirrm share/help/it/baobab
-@dirrmtry share/help/it
-@dirrm share/help/id/baobab
-@dirrmtry share/help/id
-@dirrm share/help/hu/baobab
-@dirrmtry share/help/hu
-@dirrm share/help/gl/baobab
-@dirrmtry share/help/gl
-@dirrm share/help/fr/baobab
-@dirrmtry share/help/fr
-@dirrm share/help/es/baobab
-@dirrmtry share/help/es
-@dirrm share/help/el/baobab
-@dirrmtry share/help/el
-@dirrm share/help/de/baobab
-@dirrmtry share/help/de
-@dirrm share/help/cs/baobab
-@dirrmtry share/help/cs
-@dirrm share/help/ca/baobab
-@dirrmtry share/help/ca
-@dirrm share/help/C/baobab
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/icons/HighContrast/48x48/apps
-@dirrmtry share/icons/HighContrast/48x48
-@dirrmtry share/icons/HighContrast/32x32/apps
-@dirrmtry share/icons/HighContrast/32x32
-@dirrmtry share/icons/HighContrast/256x256/apps
-@dirrmtry share/icons/HighContrast/256x256
-@dirrmtry share/icons/HighContrast/24x24/apps
-@dirrmtry share/icons/HighContrast/24x24
-@dirrmtry share/icons/HighContrast/22x22/apps
-@dirrmtry share/icons/HighContrast/22x22
-@dirrmtry share/icons/HighContrast/16x16/apps
-@dirrmtry share/icons/HighContrast/16x16
-@dirrmtry share/icons/HighContrast
-@dirrm share/appdata

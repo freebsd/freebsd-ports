@@ -283,6 +283,7 @@ share/locale/mr/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ms/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ms/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/my/LC_MESSAGES/gnome-online-accounts-tpaw.mo
+share/locale/ne/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/nb/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/nb/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ne/LC_MESSAGES/gnome-online-accounts-tpaw.mo
@@ -291,6 +292,7 @@ share/locale/nl/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/nn/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/oc/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/or/LC_MESSAGES/gnome-online-accounts-tpaw.mo
+share/locale/or/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/pa/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/pa/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/pl/LC_MESSAGES/gnome-online-accounts-tpaw.mo
@@ -341,29 +343,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/zu/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/gnome-online-accounts/goawebview.css
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry %%DATADIR%%
-@dirrm lib/goa-1.0/include
-@dirrm lib/goa-1.0
-@dirrm include/goa-1.0/goabackend
-@dirrm include/goa-1.0/goa
-@dirrm include/goa-1.0

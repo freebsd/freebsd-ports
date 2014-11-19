@@ -12,8 +12,8 @@ COMMENT=	Validator and code generator for YANG (RFC 4741)
 
 LICENSE=	BSD
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
 
 DATADIR=	${PREFIX}/share/yang
 

@@ -288,16 +288,3 @@
 9/man/man1/uniq.1.gz
 9/man/man1/unutf.1.gz
 9/man/man1/yacc.1.gz
-@dirrm 9/lib/troff/tmac/me
-@dirrm 9/lib/troff/tmac
-@dirrm 9/lib/troff/term
-@dirrm 9/lib/troff/font/devutf/charlib
-@dirrm 9/lib/troff/font/devutf
-@dirrm 9/lib/troff/font
-@dirrm 9/lib/troff
-@dirrm 9/lib
-@dirrm 9/man/man1
-@dirrm 9/man
-@dirrm 9/etc
-@dirrm 9/bin
-@dirrm 9

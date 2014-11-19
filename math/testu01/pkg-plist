@@ -142,8 +142,3 @@ lib/libtestu01.so.0.0.1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scat2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vax.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xorshift.c
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/param
-@dirrm %%DATADIR%%
-@dirrm include/%%PORTNAME%%

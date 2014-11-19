@@ -17,4 +17,3 @@ libdata/pkgconfig/libmsiecf.pc
 man/man1/msiecfexport.1.gz
 man/man1/msiecfinfo.1.gz
 man/man3/libmsiecf.3.gz
-@dirrm include/libmsiecf

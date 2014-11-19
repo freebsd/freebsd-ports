@@ -3,6 +3,7 @@
 
 PORTNAME=	librfm
 PORTVERSION=	5.2.10
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/librfm/
 DISTNAME=	${PORTNAME}5-${PORTVERSION}
@@ -20,6 +21,8 @@ LIB_DEPENDS=	libtubo.so:${PORTSDIR}/x11-fm/libtubo \
 
 OPTIONS_DEFINE=	NLS
 
+CONFIGURE_ARGS+=--with-pkglibdata
+MAKE_JOB_UNSAFE=yes
 INSTALLS_ICONS=	yes
 USES=		gmake libtool:keepla pkgconfig tar:bzip2 gettext
 GNU_CONFIGURE=	yes

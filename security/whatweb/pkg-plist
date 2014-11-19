@@ -1776,10 +1776,3 @@ man/man1/whatweb.1.gz
 %%RUBY_SITELIBDIR%%/whatweb/plugins/zeus-cart.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/zikula.rb
 %%RUBY_SITELIBDIR%%/whatweb/plugins/zoph.rb
-@dirrm %%RUBY_SITELIBDIR%%/whatweb/addons
-@dirrm %%RUBY_SITELIBDIR%%/whatweb/lib
-@dirrm %%RUBY_SITELIBDIR%%/whatweb/my-plugins
-@dirrm %%RUBY_SITELIBDIR%%/whatweb/plugin-development
-@dirrm %%RUBY_SITELIBDIR%%/whatweb/plugins
-@dirrm %%RUBY_SITELIBDIR%%/whatweb/plugins-disabled
-@dirrm %%RUBY_SITELIBDIR%%/whatweb

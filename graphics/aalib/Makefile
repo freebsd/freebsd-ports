@@ -47,4 +47,7 @@ post-patch:
 	@${FIND} ${WRKSRC} \( -name '*.[ch]' \! -name acconfig.h \) \
 		| ${XARGS} ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g'
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaa.so
+
 .include <bsd.port.mk>

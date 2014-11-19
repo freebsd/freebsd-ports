@@ -4,5 +4,3 @@ lib/geany/geanyvc.so
 %%DOCSDIR%%/geanyvc/ChangeLog
 %%DOCSDIR%%/geanyvc/NEWS
 %%DOCSDIR%%/geanyvc/README
-@dirrm %%DOCSDIR%%/geanyvc
-@dirrmtry %%DOCSDIR%%

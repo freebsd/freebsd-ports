@@ -5,4 +5,3 @@ bin/naturalmath
 %%PORTDOCS%%share/doc/naturalmath/tutor.nat
 %%PORTDOCS%%share/doc/naturalmath/tutor.ps
 %%PORTDOCS%%share/doc/naturalmath/tutor.tex
-%%PORTDOCS%%@dirrm share/doc/naturalmath

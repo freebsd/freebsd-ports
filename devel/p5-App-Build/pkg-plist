@@ -1,6 +1,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%SITE_PERL%%/App/Build.pm
 %%PERL5_MAN3%%/App::Build.3.gz
-@dirrmtry %%SITE_PERL%%/App

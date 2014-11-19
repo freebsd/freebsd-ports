@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig	2014-10-22 07:01:17.414717967 +0200
++++ CMakeLists.txt	2014-10-22 07:01:34.267267822 +0200
+@@ -266,13 +266,13 @@
+ 
+ # Sqlite always depends on the threading lib
+ list(APPEND SQLITE3_LIBRARY ${CMAKE_THREAD_LIBS_INIT})
+ 
+ ##############################################################################
+ 
+-find_package(PLIB REQUIRED puaux pu js fnt)
++find_package(PLIB REQUIRED puaux pu js fnt net)
+ 
+ # FlightGear and SimGear versions need to match
+ find_package(SimGear ${FLIGHTGEAR_VERSION} REQUIRED)
+ 
+ ##############################################################################
+ 

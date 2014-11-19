@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	6.6p1
-PORTREVISION=	4
+DISTVERSION=	6.7p1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -33,32 +33,30 @@ ETCOLD=			${PREFIX}/etc
 SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
 
-# https://github.com/openssh/openssh-portable/commit/5618210618256bbf5f4f71b2887ff186fd451736.patch
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-openssh661
-
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
-			HPN LPK X509 KERB_GSSAPI \
+			HPN X509 KERB_GSSAPI \
 			OVERWRITE_BASE SCTP AES_THREADED LDNS NONECIPHER
-OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS HPN LDNS NONECIPHER
+OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
 TCP_WRAPPERS_DESC=	tcp_wrappers support
 BSM_DESC=		OpenBSM Auditing
-KERB_GSSAPI_DESC=	Kerberos/GSSAPI patch (req: GSSAPI)
-HPN_DESC=		HPN-SSH patch
-LPK_DESC=		LDAP Public Key (LPK) [OBSOLETE]
+KERB_GSSAPI_DESC=	Kerberos/GSSAPI patch (req: GSSAPI) [BROKEN]
+HPN_DESC=		HPN-SSH patch [BROKEN]
 LDNS_DESC=		SSHFP/LDNS support
-X509_DESC=		x509 certificate patch
+X509_DESC=		x509 certificate patch [BROKEN]
 SCTP_DESC=		SCTP support
 OVERWRITE_BASE_DESC=	OpenSSH overwrite base
 HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 MIT_DESC=		MIT Kerberos (security/krb5)
-AES_THREADED_DESC=	Threaded AES-CTR
-NONECIPHER_DESC=	NONE Cipher support
+AES_THREADED_DESC=	Threaded AES-CTR [BROKEN]
+NONECIPHER_DESC=	NONE Cipher support [BROKEN]
 
 OPTIONS_SUB=		yes
 PLIST_SUB+=		MANPREFIX=${MANPREFIX}
+
+TCP_WRAPPERS_EXTRA_PATCHES=${FILESDIR}/extra-patch-tcpwrappers
 
 LDNS_CONFIGURE_WITH=	ldns
 LDNS_LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
@@ -72,24 +70,13 @@ HPN_CONFIGURE_WITH=		hpn
 NONECIPHER_CONFIGURE_WITH=	nonecipher
 AES_THREADED_CONFIGURE_WITH=	aes-threaded
 
-# See http://code.google.com/p/openssh-lpk/wiki/Main
-# and svn repo described here:
-# http://code.google.com/p/openssh-lpk/source/checkout
-# LPK is now OBSOLETE with 6.2: https://code.google.com/p/openssh-lpk/issues/detail?id=15#c1
-LPK_PATCHFILES=		${PORTNAME}-lpk-6.3p1.patch.gz
-LPK_CPPFLAGS=		-I${LOCALBASE}/include
-LPK_CONFIGURE_ON=	--with-ldap=yes \
-			--with-ldflags='-L${LOCALBASE}/lib' \
-			--with-cppflags='${CPPFLAGS}'
-LPK_USE=		OPENLDAP=yes
-
 # See http://www.roumenpetrov.info/openssh/
 X509_VERSION=		7.9
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
 X509_PATCHFILES=	${PORTNAME}-6.6p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 # See https://bugzilla.mindrot.org/show_bug.cgi?id=2016
-SCTP_PATCHFILES=	${PORTNAME}-6.6p1-sctp-2329.patch.gz
+SCTP_PATCHFILES=	${PORTNAME}-6.7p1-sctp-2496.patch.gz:-p1
 SCTP_CONFIGURE_WITH=	sctp
 
 # 6.6 patch taken from http://www.stacken.kth.se/~haba/ which was originally
@@ -137,16 +124,22 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sshd-utmp-size
 .endif
 
 .if ${PORT_OPTIONS:MX509}
+BROKEN=		X509 does not apply yet. Use security/openssh-portable66
+.endif
+.if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
+BROKEN=		HPN does not apply yet. Use security/openssh-portable66
+.endif
+.if ${PORT_OPTIONS:MKERB_GSSAPI}
+BROKEN=		KERB_GSSAPI does not apply yet. Use security/openssh-portable66
+.endif
+
+.if ${PORT_OPTIONS:MX509}
 .  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 BROKEN=		X509 patch and HPN patch do not apply cleanly together
 .  endif
 
 .  if ${PORT_OPTIONS:MSCTP}
 BROKEN=		X509 patch and SCTP patch do not apply cleanly together
-.  endif
-
-.  if ${PORT_OPTIONS:MLPK}
-BROKEN=		X509 patch and LPK patch do not apply cleanly together
 .  endif
 
 .  if ${PORT_OPTIONS:MKERB_GSSAPI}
@@ -194,10 +187,6 @@ IGNORE=	KERB_GSSAPI requires one of MIT HEIMDAL or HEIMDAL_BASE
 
 .if ${OPENSSLBASE} != "/usr"
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
-.endif
-
-.if ${PORT_OPTIONS:MLPK}
-CONFIGURE_LIBS+=	-lldap
 .endif
 
 EMPTYDIR=		/var/empty

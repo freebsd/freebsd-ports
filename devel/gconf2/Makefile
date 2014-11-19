@@ -1,10 +1,10 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/gconf2/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/devel/gconf2/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gconf2
 PORTVERSION=	3.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
 USES+=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomehier orbit2 gtk20 libxml2 \
+USE_GNOME=	orbit2 gtk20 libxml2 \
 		referencehack intlhack dconf introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

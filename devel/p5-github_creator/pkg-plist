@@ -1,4 +1,3 @@
 bin/github_creator
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/github_creator/.packlist
 man/man1/github_creator.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/github_creator

@@ -44,8 +44,3 @@
 %%PERL5_MAN3%%/IO::Lambda::Socket.3.gz
 %%PERL5_MAN3%%/IO::Lambda::Throttle.3.gz
 %%PERL5_MAN3%%/IO::Lambda::Thread.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Lambda
-@dirrm %%SITE_PERL%%/IO/Lambda/Loop
-@dirrm %%SITE_PERL%%/IO/Lambda/HTTP/Authen
-@dirrm %%SITE_PERL%%/IO/Lambda/HTTP
-@dirrm %%SITE_PERL%%/IO/Lambda

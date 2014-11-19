@@ -57,12 +57,3 @@ bin/graph-easy
 %%PERL5_MAN3%%/Graph::Easy::Parser::VCG.3.gz
 %%PERL5_MAN3%%/Graph::Easy::Util.3.gz
 man/man1/graph-easy.1.gz
-@dirrmtry %%SITE_PERL%%/Graph/Easy/Parser
-@dirrmtry %%SITE_PERL%%/Graph/Easy/Node
-@dirrmtry %%SITE_PERL%%/Graph/Easy/Layout
-@dirrmtry %%SITE_PERL%%/Graph/Easy/Group
-@dirrmtry %%SITE_PERL%%/Graph/Easy/Edge
-@dirrmtry %%SITE_PERL%%/Graph/Easy
-@dirrmtry %%SITE_PERL%%/Graph
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph

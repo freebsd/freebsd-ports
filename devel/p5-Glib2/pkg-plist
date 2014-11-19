@@ -71,8 +71,3 @@
 %%PERL5_MAN3%%/Glib::index.3.gz
 %%PERL5_MAN3%%/Glib::version.3.gz
 %%PERL5_MAN3%%/Glib::xsapi.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib

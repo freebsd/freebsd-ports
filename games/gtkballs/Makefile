@@ -7,7 +7,7 @@ PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lines-like simple logic game for X Window System
 
 LICENSE=	GPLv2 # or later

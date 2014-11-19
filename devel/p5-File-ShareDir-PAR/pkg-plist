@@ -4,14 +4,3 @@
 %%SITE_PERL%%/auto/share/dist/File-ShareDir-PAR/subdir/sample.txt
 %%SITE_PERL%%/auto/share/module/File-ShareDir-PAR/test_file.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir/PAR/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir/PAR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrm %%SITE_PERL%%/auto/share/module/File-ShareDir-PAR
-@dirrmtry %%SITE_PERL%%/auto/share/module
-@dirrm %%SITE_PERL%%/auto/share/dist/File-ShareDir-PAR/subdir
-@dirrm %%SITE_PERL%%/auto/share/dist/File-ShareDir-PAR
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/auto/share
-@dirrmtry %%SITE_PERL%%/File/ShareDir
-@dirrmtry %%SITE_PERL%%/File

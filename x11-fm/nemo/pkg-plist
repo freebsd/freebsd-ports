@@ -68,20 +68,3 @@ share/mime/packages/nemo.xml
 %%DATADIR%%/nemo-extras.placeholder
 %%DATADIR%%/nemo-suggested.placeholder
 share/polkit-1/actions/org.nemo.root.policy
-@dirrm %%DATADIR%%/icons/hicolor/48x48/emblems
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/24x24/emblems
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/16x16/emblems
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/actions
-@dirrm %%DATADIR%%
-@dirrmtry share/mime/application
-@dirrmtry share/gtksourceview-3.0/language-specs
-@dirrmtry share/gtksourceview-3.0
-@dirrmtry share/gtksourceview-2.0/language-specs
-@dirrmtry share/gtksourceview-2.0
-@dirrm include/nemo/libnemo-extension
-@dirrm include/nemo

@@ -5,7 +5,3 @@
 %%SITE_PERL%%/MooX/Cmd/Role.pm
 %%SITE_PERL%%/MooX/Cmd/Tester.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/Cmd/.packlist
-@dirrmtry %%SITE_PERL%%/MooX/Cmd
-@dirrmtry %%SITE_PERL%%/MooX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/Cmd
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX

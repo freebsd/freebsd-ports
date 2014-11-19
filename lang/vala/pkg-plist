@@ -1,7 +1,13 @@
 bin/vala
 bin/vala-%%VERSION%%
+bin/vala-gen-introspect
+bin/vala-gen-introspect-%%VERSION%%
 bin/valac
 bin/valac-%%VERSION%%
+bin/vapicheck
+bin/vapicheck-%%VERSION%%
+bin/vapigen
+bin/vapigen-%%VERSION%%
 include/vala-%%VERSION%%/vala.h
 include/vala-%%VERSION%%/valaccode.h
 include/vala-%%VERSION%%/valacodegen.h
@@ -9,11 +15,19 @@ include/vala-%%VERSION%%/valagee.h
 lib/libvala-%%VERSION%%.so
 lib/libvala-%%VERSION%%.so.0
 lib/libvala-%%VERSION%%.so.0.0.0
+lib/vala-%%VERSION%%/gen-introspect-%%VERSION%%
 libdata/pkgconfig/libvala-%%VERSION%%.pc
 libdata/pkgconfig/vala-1.0.pc
+libdata/pkgconfig/vapigen-%%VERSION%%.pc
+libdata/pkgconfig/vapigen.pc
+man/man1/vala-gen-introspect-%%VERSION%%.1.gz
+man/man1/vala-gen-introspect.1.gz
 man/man1/valac-%%VERSION%%.1.gz
 man/man1/valac.1.gz
+man/man1/vapigen-%%VERSION%%.1.gz
+man/man1/vapigen.1.gz
 share/aclocal/vala.m4
+share/aclocal/vapigen.m4
 share/devhelp/books/vala-%%VERSION%%/attributes.html
 share/devhelp/books/vala-%%VERSION%%/classes.html
 share/devhelp/books/vala-%%VERSION%%/default.css
@@ -108,6 +122,8 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-0.10.deps
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-0.10.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-1.0.vapi
+%%DATADIR%%-%%VERSION%%/vapi/gstreamer-allocators-1.0.deps
+%%DATADIR%%-%%VERSION%%/vapi/gstreamer-allocators-1.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-app-0.10.deps
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-app-0.10.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-app-1.0.deps
@@ -150,6 +166,8 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-pbutils-1.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-riff-0.10.deps
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-riff-0.10.vapi
+%%DATADIR%%-%%VERSION%%/vapi/gstreamer-riff-1.0.deps
+%%DATADIR%%-%%VERSION%%/vapi/gstreamer-riff-1.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-rtp-0.10.deps
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-rtp-0.10.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-rtp-1.0.deps
@@ -308,15 +326,14 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/vte.vapi
 %%DATADIR%%-%%VERSION%%/vapi/webkit-1.0.deps
 %%DATADIR%%-%%VERSION%%/vapi/webkit-1.0.vapi
+%%DATADIR%%-%%VERSION%%/vapi/webkit2gtk-4.0.deps
+%%DATADIR%%-%%VERSION%%/vapi/webkit2gtk-4.0.vapi
+%%DATADIR%%-%%VERSION%%/vapi/webkit2gtk-web-extension-4.0.deps
+%%DATADIR%%-%%VERSION%%/vapi/webkit2gtk-web-extension-4.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/x11.vapi
 %%DATADIR%%-%%VERSION%%/vapi/xcb-icccm.vapi
 %%DATADIR%%-%%VERSION%%/vapi/xcb.vapi
 %%DATADIR%%-%%VERSION%%/vapi/xtst.deps
 %%DATADIR%%-%%VERSION%%/vapi/xtst.vapi
 %%DATADIR%%-%%VERSION%%/vapi/zlib.vapi
-@dirrm %%DATADIR%%-%%VERSION%%/vapi
-@dirrm %%DATADIR%%-%%VERSION%%
-@dirrm share/devhelp/books/vala-%%VERSION%%
-@dirrmtry share/devhelp/books
-@dirrmtry share/devhelp
-@dirrm include/vala-%%VERSION%%
+%%DATADIR%%/Makefile.vapigen

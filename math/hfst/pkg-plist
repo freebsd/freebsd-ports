@@ -187,9 +187,3 @@ man/man1/hfst-txt2fst.1.gz
 man/man1/hfst-union.1.gz
 man/man1/hfst-xfst.1.gz
 share/aclocal/hfst.m4
-@dirrm include/hfst/implementations/compose_intersect
-@dirrm include/hfst/implementations/optimized-lookup
-@dirrm include/hfst/implementations
-@dirrm include/hfst/parsers
-@dirrm include/hfst
-@dirrmtry libdata/pkgconfig

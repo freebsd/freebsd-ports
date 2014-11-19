@@ -1,4 +1,5 @@
-lib/teamspeak/server/libts3db_mysql.so
+lib/teamspeak/server/libmariadb.so.2
+lib/teamspeak/server/libts3db_mariadb.so
 lib/teamspeak/server/libts3db_sqlite3.so
 libexec/teamspeak_server
 share/teamspeak/server/CHANGELOG
@@ -134,6 +135,12 @@ share/teamspeak/server/serverquerydocs/tokenuse.txt
 share/teamspeak/server/serverquerydocs/use.txt
 share/teamspeak/server/serverquerydocs/version.txt
 share/teamspeak/server/serverquerydocs/whoami.txt
+share/teamspeak/server/sql/create_mariadb/create_tables.sql
+share/teamspeak/server/sql/create_mariadb/drop_tables.sql
+share/teamspeak/server/sql/create_sqlite/create_tables.sql
+share/teamspeak/server/sql/create_sqlite/drop_tables.sql
+share/teamspeak/server/sql/updates_and_fixes/convert_mysql_to_mariadb.sql
+share/teamspeak/server/sql/updates_and_fixes/mariadb_fix_latin_utf8.sql
 share/teamspeak/server/sql/ban_delete.sql
 share/teamspeak/server/sql/ban_insert.sql
 share/teamspeak/server/sql/ban_list.sql
@@ -163,12 +170,9 @@ share/teamspeak/server/sql/clientid_get_by_name_pw.sql
 share/teamspeak/server/sql/clientid_get_by_name_pw_serverid.sql
 share/teamspeak/server/sql/complain_delete.sql
 share/teamspeak/server/sql/complain_delete_all.sql
+share/teamspeak/server/sql/complain_delete_prune.sql
 share/teamspeak/server/sql/complain_get_by_serverid.sql
 share/teamspeak/server/sql/complain_insert.sql
-share/teamspeak/server/sql/create_mysql/create_tables.sql
-share/teamspeak/server/sql/create_mysql/drop_tables.sql
-share/teamspeak/server/sql/create_sqlite/create_tables.sql
-share/teamspeak/server/sql/create_sqlite/drop_tables.sql
 share/teamspeak/server/sql/custom_delete_by_clientid.sql
 share/teamspeak/server/sql/custom_get_by_id.sql
 share/teamspeak/server/sql/custom_get_by_ident.sql
@@ -240,7 +244,8 @@ share/teamspeak/server/sql/update_18.sql
 share/teamspeak/server/sql/update_19.sql
 share/teamspeak/server/sql/update_20.sql
 share/teamspeak/server/sql/update_21.sql
+share/teamspeak/server/sql/update_22.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_permissions_12.sql
 @dir(teamspeak,teamspeak,) %%DBDIR%%
-@dir %%LOGDIR%%
+@dir(teamspeak,wheel,) %%LOGDIR%%

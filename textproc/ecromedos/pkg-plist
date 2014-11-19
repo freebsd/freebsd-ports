@@ -216,18 +216,4 @@ bin/ecromedos
 %%DATADIR%%/transform/xhtml/toc.xsl
 %%DATADIR%%/transform/xhtml/utility.xsl
 %%DATADIR%%/transform/xhtml/xhtml.xsl
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%/lib/hylight/langDefs
-@dirrm %%DATADIR%%/lib/hylight/themes
-@dirrm %%DATADIR%%/lib/hylight
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/spool
-@dirrm %%DATADIR%%/transform/DTD
-@dirrm %%DATADIR%%/transform/i18n
-@dirrm %%DATADIR%%/transform/latex
-@dirrm %%DATADIR%%/transform/xhtml
-@dirrm %%DATADIR%%/transform
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/spool

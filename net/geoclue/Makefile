@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com> 
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net/geoclue/Makefile 19754 2014-06-25 06:01:39Z gusi $
+#   $MCom: ports/trunk/net/geoclue/Makefile 20032 2014-11-02 21:57:34Z kwm $
 
 PORTNAME=	geoclue
 PORTVERSION=	2.1.9
@@ -14,17 +14,12 @@ LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 	
 USES=		gettext gmake pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomehier intlhack 
-#USE_AUTOTOOLS=	autoconf automake
+USE_GNOME=	glib20 intlhack 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-#PATHFIX_MAKEFILEIN=	Makefile.am
 CONFIGURE_ARGS=	--disable-3g-source \
 		--disable-modem-gps-source
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-#pre-configure:
-#		cd ${WRKSRC} && aclocal && autoconf
 
 .include <bsd.port.mk>

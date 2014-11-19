@@ -55,9 +55,3 @@ include/Kyra/util/glisomath.h
 include/Kyra/util/gllist.h
 include/Kyra/util/glstring.h
 lib/libkyra.a
-@dirrm include/Kyra/util
-@dirrm include/Kyra/tinyxml
-@dirrm include/Kyra/guiExtended
-@dirrm include/Kyra/gui
-@dirrm include/Kyra/engine
-@dirrm include/Kyra

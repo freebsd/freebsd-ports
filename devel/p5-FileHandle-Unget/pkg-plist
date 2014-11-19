@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/FileHandle::Unget.3.gz
 %%SITE_PERL%%/FileHandle/Unget.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle/Unget/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle/Unget
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle
-@dirrmtry %%SITE_PERL%%/FileHandle

@@ -99,12 +99,3 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
 %%RUBY_SITELIBDIR%%/ubygems.rb
 lib/ruby/gems/%%RUBY_VER%%/doc/.keep_this
-@dirrm %%RUBY_SITELIBDIR%%/rubygems/ssl_certs
-@dirrm %%RUBY_SITELIBDIR%%/rubygems/package/tar_reader
-@dirrm %%RUBY_SITELIBDIR%%/rubygems/package
-@dirrm %%RUBY_SITELIBDIR%%/rubygems/ext
-@dirrm %%RUBY_SITELIBDIR%%/rubygems/commands
-@dirrm %%RUBY_SITELIBDIR%%/rubygems
-@dirrm %%RUBY_SITELIBDIR%%/rbconfig
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby

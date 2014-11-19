@@ -6,7 +6,3 @@ bin/vlpatch
 %%SITE_PERL%%/VCS/Lite.pm
 %%SITE_PERL%%/VCS/Lite/Delta.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS/Lite/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS/Lite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS
-@dirrm %%SITE_PERL%%/VCS/Lite
-@dirrmtry %%SITE_PERL%%/VCS

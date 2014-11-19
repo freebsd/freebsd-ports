@@ -121,5 +121,3 @@ bin/glxs
 %%DATADIR%%/yesglow.raw
 %%DATADIR%%/you.raw
 %%DATADIR%%/youglow.raw
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

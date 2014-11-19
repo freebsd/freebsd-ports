@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/gsettings-desktop-schemas/Makefile 19910 2014-09-25 21:36:39Z kwm $
+#   $MCom: ports/trunk/devel/gsettings-desktop-schemas/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gsettings-desktop-schemas
-PORTVERSION=	3.12.2
+PORTVERSION=	3.14.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11
 
 USES=		gettext gmake pathfix perl5 pkgconfig tar:xz
 USE_PERL5=	build
-USE_GNOME=	intltool glib20 gnomehier introspection:build
+USE_GNOME=	intltool glib20 introspection:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -47,6 +47,7 @@ GLIB_SCHEMAS=	org.gnome.desktop.a11y.applications.gschema.xml \
 		org.gnome.desktop.wm.keybindings.gschema.xml \
 		org.gnome.desktop.wm.preferences.gschema.xml \
 		org.gnome.system.locale.gschema.xml \
+		org.gnome.system.location.gschema.xml \
 		org.gnome.system.proxy.gschema.xml
 
 .include <bsd.port.mk>

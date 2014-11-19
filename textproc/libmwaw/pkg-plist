@@ -1,7 +1,0 @@
-include/libmwaw-0.2/libmwaw/MWAWDocument.hxx
-include/libmwaw-0.2/libmwaw/libmwaw.hxx
-lib/libmwaw-0.2.la
-lib/libmwaw-0.2.so
-lib/libmwaw-0.2.so.2
-lib/libmwaw-0.2.so.2.0.0
-libdata/pkgconfig/libmwaw-0.2.pc

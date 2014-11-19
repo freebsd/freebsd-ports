@@ -79,8 +79,3 @@ share/locale/uk/LC_MESSAGES/grilo-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/grilo-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/grilo-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/grilo-plugins.mo
-@dirrm share/help/C/grilo-plugins
-@dirrm share/help/C/examples
-@dirrm share/help/C
-@dirrm share/help
-@dirrm lib/grilo-0.2

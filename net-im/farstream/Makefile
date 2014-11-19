@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net-im/farstream/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/net-im/farstream/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	farstream
 PORTVERSION=	0.2.4

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdata
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Plugin providing Google Contacts in the Tab-address completion
 

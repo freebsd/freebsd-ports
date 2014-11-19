@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Compare/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Compare/Compare.so
 %%PERL5_MAN3%%/Regexp::Compare.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Compare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Regexp

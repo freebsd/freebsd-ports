@@ -32,4 +32,3 @@ lib/libgraphite.so
 lib/libgraphite.so.3
 lib/libgraphite.so.3.0.0
 libdata/pkgconfig/silgraphite.pc
-@dirrm include/graphite

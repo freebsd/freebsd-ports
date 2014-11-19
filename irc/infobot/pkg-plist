@@ -76,10 +76,3 @@ bin/infobot
 %%PORTDOCS%%%%DOCSDIR%%/REVISIONS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/extras
-@dirrm %%DATADIR%%/files
-@dirrm %%DATADIR%%/scripts
-@dirrmtry %%DATADIR%%/src
-@dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%

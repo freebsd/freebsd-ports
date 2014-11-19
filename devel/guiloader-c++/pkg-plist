@@ -4,4 +4,3 @@ lib/libguiloader-c++.so.1
 lib/libguiloader-c++.so.1.0.0
 libdata/pkgconfig/guiloader-c++.pc
 share/locale/ru/LC_MESSAGES/guiloader-c++.mo
-@dirrm include/guiloader-c++

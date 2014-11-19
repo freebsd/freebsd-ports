@@ -16,9 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=1.11.2:${PORTSDIR}/devel/py-virtualenv \
 		${PYTHON_PKGNAMEPREFIX}pylib>=1.4.17:${PORTSDIR}/devel/py-pylib
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	PYTEST
 PYTEST_DESC=	Include the pytest test runner

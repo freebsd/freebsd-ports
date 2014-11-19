@@ -192,5 +192,3 @@ lib/libwxsvg.so
 lib/libwxsvg.so.3
 lib/libwxsvg.so.3.8.0
 libdata/pkgconfig/libwxsvg.pc
-@dirrmtry include/wxSVGXML
-@dirrmtry include/wxSVG

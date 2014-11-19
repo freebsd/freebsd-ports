@@ -70,8 +70,3 @@ share/gtk-doc/html/libcroco/libcroco.devhelp2
 share/gtk-doc/html/libcroco/right.png
 share/gtk-doc/html/libcroco/style.css
 share/gtk-doc/html/libcroco/up.png
-@dirrm share/gtk-doc/html/libcroco
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/libcroco-%%VERSION%%/libcroco
-@dirrm include/libcroco-%%VERSION%%

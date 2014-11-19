@@ -348,31 +348,3 @@ libdata/pkgconfig/clanSDL-%%VER%%.pc
 libdata/pkgconfig/clanSignals-%%VER%%.pc
 libdata/pkgconfig/clanSound-%%VER%%.pc
 libdata/pkgconfig/clanVorbis-%%VER%%.pc
-@dirrm include/ClanLib-%%VER%%/ClanLib/Vorbis
-@dirrm include/ClanLib-%%VER%%/ClanLib/Sound/SoundProviders
-@dirrm include/ClanLib-%%VER%%/ClanLib/Sound/SoundFilters
-@dirrm include/ClanLib-%%VER%%/ClanLib/Sound
-@dirrm include/ClanLib-%%VER%%/ClanLib/Signals
-@dirrm include/ClanLib-%%VER%%/ClanLib/SDL
-@dirrm include/ClanLib-%%VER%%/ClanLib/Network/Socket
-@dirrm include/ClanLib-%%VER%%/ClanLib/Network/NetVariables
-@dirrm include/ClanLib-%%VER%%/ClanLib/Network/NetSession
-@dirrm include/ClanLib-%%VER%%/ClanLib/Network/NetObjects
-@dirrm include/ClanLib-%%VER%%/ClanLib/Network/IRC
-@dirrm include/ClanLib-%%VER%%/ClanLib/Network
-@dirrm include/ClanLib-%%VER%%/ClanLib/MikMod
-@dirrm include/ClanLib-%%VER%%/ClanLib/GUIStyleSilver
-@dirrm include/ClanLib-%%VER%%/ClanLib/GUI
-@dirrm include/ClanLib-%%VER%%/ClanLib/GL
-@dirrm include/ClanLib-%%VER%%/ClanLib/Display/Providers
-@dirrm include/ClanLib-%%VER%%/ClanLib/Display/Collision
-@dirrm include/ClanLib-%%VER%%/ClanLib/Display
-@dirrm include/ClanLib-%%VER%%/ClanLib/Core/XML
-@dirrm include/ClanLib-%%VER%%/ClanLib/Core/System
-@dirrm include/ClanLib-%%VER%%/ClanLib/Core/Resources
-@dirrm include/ClanLib-%%VER%%/ClanLib/Core/Math
-@dirrm include/ClanLib-%%VER%%/ClanLib/Core/IOData
-@dirrm include/ClanLib-%%VER%%/ClanLib/Core
-@dirrm include/ClanLib-%%VER%%/ClanLib/Application
-@dirrm include/ClanLib-%%VER%%/ClanLib
-@dirrm include/ClanLib-%%VER%%

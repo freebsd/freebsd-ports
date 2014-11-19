@@ -4,5 +4,3 @@
 %%PERL5_MAN3%%/Meta::Builder.3.gz
 %%PERL5_MAN3%%/Meta::Builder::Base.3.gz
 %%PERL5_MAN3%%/Meta::Builder::Util.3.gz
-@dirrm %%SITE_PERL%%/Meta/Builder
-@dirrmtry %%SITE_PERL%%/Meta

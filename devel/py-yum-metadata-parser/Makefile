@@ -15,9 +15,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libglib-2.0.so:${PORTSDIR}/devel/glib20
 
-USES=		pkgconfig
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		pkgconfig python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -40,6 +40,3 @@ man/man2/NAL_decode_uint32.2.gz
 man/man8/distcache.8.gz
 share/swamp/A-client.pem
 share/swamp/CA.pem
-@dirrm include/distcache
-@dirrm include/libnal
-@dirrm share/swamp

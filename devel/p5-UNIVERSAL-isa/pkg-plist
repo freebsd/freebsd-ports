@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/UNIVERSAL::isa.3.gz
 %%SITE_PERL%%/UNIVERSAL/isa.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/isa/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/isa
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL
-@dirrmtry %%SITE_PERL%%/UNIVERSAL

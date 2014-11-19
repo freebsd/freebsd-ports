@@ -1,7 +1,7 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: head/Mk/bsd.linux-rpm.mk 352986 2014-05-05 09:45:36Z bapt $
+# $FreeBSD$
 #
 
 # Variables:
@@ -43,13 +43,13 @@ NO_WRKSUBDIR=		yes
 NO_BUILD=			yes
 
 .	if ${ARCH} == "amd64" || ${ARCH} == "i386"
-.		if ${USE_LINUX} == "c6" || ${USE_LINUX} == "yes" 		# default to CentOS 6.6
+.		if ${USE_LINUX} == "c6"
 # Do not build CentOS 6.6 ports if overridden by f10
 .			if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
-IGNORE=		This port requires CentOS 6.6. Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
+IGNORE=		This port requires CentOS ${LINUX_DIST_VER}. Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
 .			endif
 LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
-.		elif ${USE_LINUX} == "f10"
+.		elif ${USE_LINUX} == "f10" || ${USE_LINUX} == "yes" # temporary default, move or clause to line 46
 # Do not build Fedora 10 ports unless specifically overridden.
 #.			if ! defined(OVERRIDE_LINUX_NONBASE_PORTS) || ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
 #IGNORE=		This port requires Fedora 10, yet Fedora 10 is heavily outdated and contains many vulnerable ports. If you really need it, add OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
@@ -68,11 +68,11 @@ LINUX_RPM_ARCH?=	ppc
 
 Linux_RPM_Post_Include=	bsd.linux-rpm.mk
 
-.if ${USE_LINUX} == "f10"
+.if ${USE_LINUX} == "f10" || ${USE_LINUX} == "yes" # temporary default, remove or clause soon
 USE_LINUX?=	"f10"
 LINUX_DIST=	fedora
 LINUX_DIST_VER=	10
-.else						# default to CentOS 6.6
+.else
 LINUX_DIST=	centos
 LINUX_DIST_VER=	6.6
 .endif
@@ -112,7 +112,7 @@ MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/
 MASTER_SITES_SUBDIR=	/centos/6/os/i386/Packages/
 .					else
 MASTER_SITES?=  http://vault.centos.org/%SUBDIR%/
-MASTER_SITES_SUBDIR=	/6.6/os/Source/SPackages/
+MASTER_SITES_SUBDIR=	/${LINUX_DIST_VER}/os/Source/SPackages/
 .					endif
 
 .				else
@@ -189,10 +189,7 @@ pre-install: linux-rpm-generate-plist
 .  if !target(linux-rpm-generate-plist)
 linux-rpm-generate-plist:
 	cd ${WRKSRC} && \
-	${FIND} * ! -path "stage/*" ! -type d | ${SORT} > ${PLIST} && \
-	${FIND} * ! -path "stage*" -type d | ${SORT} | ${SED} -e 's|^|@dirrm |' > ${PLIST}.dirs
-	@${GREP} '^@dirrm' ${PORTSDIR}/emulators/linux_base-${_LINUX_BASE_SUFFIX}/pkg-plist | ${SED} 's:^@dirrmtry:@dirrm:g' | ${SORT} > ${PLIST}.shared-dirs
-	@${COMM} -1 -3 ${PLIST}.shared-dirs ${PLIST}.dirs | ${SORT} -r >> ${PLIST}
+	${FIND} * ! -path "stage/*" ! -type d | ${SORT} > ${PLIST}
 .	endif
 .  endif
 
@@ -209,14 +206,4 @@ do-install:
 	cd ${WRKSRC} && ${FIND} * ! -path "stage*" -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;
 	cd ${WRKSRC} && ${FIND} * ! -path "stage/*" ! -type d | ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
 .  endif
-
-.  if !target(new-plist)
-new-plist: build
-	@${RM} -f ${PLIST}.new
-	@cd ${WRKSRC} && \
-		${FIND} * ! -path "stage/*" ! -type d | ${SORT} > ${PLIST}.new; \
-		${FIND} -d * ! -path "stage*" -type d | ${SED} -e 's|^|@dirrm |' >> ${PLIST}.new; \
-	done
-.  endif
-
 .endif

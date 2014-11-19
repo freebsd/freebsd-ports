@@ -176,6 +176,8 @@
 %%QT_INCDIR%%/QtDesignerComponents/qtdesignercomponentsversion.h
 %%QT_LIBDIR%%/cmake/Qt5Designer/Qt5DesignerConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Designer/Qt5DesignerConfigVersion.cmake
+%%QT_LIBDIR%%/cmake/Qt5Designer/Qt5Designer_QQuickWidgetPlugin.cmake
+%%QT_LIBDIR%%/cmake/Qt5Designer/Qt5Designer_QWebViewPlugin.cmake
 %%QT_LIBDIR%%/libQt5Designer.prl
 %%QT_LIBDIR%%/libQt5Designer.so
 %%QT_LIBDIR%%/libQt5Designer.so.5
@@ -194,23 +196,8 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_designercomponents_private.pri
 %%QT_PLUGINDIR%%/designer/libqwebview.so
 %%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebview.so.debug
+%%QT_PLUGINDIR%%/designer/libqquickwidget.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libqquickwidget.so.debug
 libdata/pkgconfig/Qt5Designer.pc
 libdata/pkgconfig/Qt5DesignerComponents.pc
 share/pixmaps/designer-qt5.png
-@dirrmtry %%QT_PLUGINDIR%%/designer
-@dirrmtry %%QT_PLUGINDIR%%
-@dirrmtry %%QT_MKSPECDIR%%/modules
-@dirrmtry %%QT_MKSPECDIR%%
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5Designer
-@dirrmtry %%QT_LIBDIR%%/cmake
-@dirrm %%QT_INCDIR%%/QtDesignerComponents/%%FULLVER%%/QtDesignerComponents/private
-@dirrm %%QT_INCDIR%%/QtDesignerComponents/%%FULLVER%%/QtDesignerComponents
-@dirrm %%QT_INCDIR%%/QtDesignerComponents/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtDesignerComponents
-@dirrm %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private
-@dirrm %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner
-@dirrm %%QT_INCDIR%%/QtDesigner/%%FULLVER%%
-@dirrm %%QT_INCDIR%%/QtDesigner
-@dirrmtry %%QT_INCDIR%%

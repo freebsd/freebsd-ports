@@ -15,11 +15,9 @@ LICENSE=	GPLv2 # (or later)
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=3-2.5.1_1:${PORTSDIR}/databases/py-sqlite3
 
-USES=		desktop-file-utils gettext
+USES=		desktop-file-utils gettext python
 USE_GNOME=	pygnomedesktop
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		PYGSTREAMER

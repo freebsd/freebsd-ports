@@ -4,4 +4,3 @@ man/man8/hostip.8.gz
 sbin/dnscrypt-proxy
 bin/hostip
 %%DATADIR%%/dnscrypt-resolvers.csv
-@dirrmtry %%DATADIR%%

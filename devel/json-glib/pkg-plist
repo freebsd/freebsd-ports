@@ -93,9 +93,9 @@ share/locale/lt/LC_MESSAGES/json-glib-1.0.mo
 share/locale/lv/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ml/LC_MESSAGES/json-glib-1.0.mo
 share/locale/nb/LC_MESSAGES/json-glib-1.0.mo
-share/locale/pl/LC_MESSAGES/json-glib-1.0.mo
 share/locale/or/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pa/LC_MESSAGES/json-glib-1.0.mo
+share/locale/pl/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pt/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pt_BR/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ru/LC_MESSAGES/json-glib-1.0.mo
@@ -113,10 +113,3 @@ share/locale/vi/LC_MESSAGES/json-glib-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/json-glib-1.0.mo
 share/locale/zh_HK/LC_MESSAGES/json-glib-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/json-glib-1.0.mo
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrm %%DOCSDIR%%
-@dirrm include/json-glib-1.0/json-glib
-@dirrm include/json-glib-1.0

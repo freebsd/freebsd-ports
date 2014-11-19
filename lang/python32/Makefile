@@ -2,7 +2,7 @@
 
 PORTNAME=	python32
 PORTVERSION=	3.2.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -33,13 +33,14 @@ MAKE_ARGS+=		LIBPC="${PREFIX}/libdata/pkgconfig"			# Until pathfix gets support 
 PLIST_SUB=		ABI=${ABIFLAGS} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. http://bugs.python.org/issue19554
 
-OPTIONS_DEFINE=		DEBUG IPV6 NLS PYMALLOC THREADS TSC UCS4
-OPTIONS_DEFAULT=	IPV6 NLS PYMALLOC THREADS UCS4
+OPTIONS_DEFINE=		DEBUG IPV6 NLS PYMALLOC THREADS TSC UCS4 LIBFFI
+OPTIONS_DEFAULT=	IPV6 NLS PYMALLOC THREADS UCS4 LIBFFI
 OPTIONS_SUB=		yes
 
 NLS_DESC=		Enable gettext support for the locale module
 PYMALLOC_DESC=		Enable specialized mallocs
 TSC_DESC=		Enable processor timestamp counter profiling
+LIBFFI_DESC=		Use libffi from ports instead of bundled version
 
 DEBUG_CONFIGURE_WITH=	pydebug
 IPV6_CONFIGURE_ENABLE=	ipv6
@@ -73,6 +74,11 @@ CONFIGURE_ARGS+=	--without-pymalloc
 
 .if ${PORT_OPTIONS:MDEBUG}
 ABIFLAGS:=		d${ABIFLAGS}
+.endif
+
+.if ${PORT_OPTIONS:MLIBFFI}
+CONFIGURE_ARGS+=	--with-system-ffi
+LIB_DEPENDS+=		libffi.so:${PORTSDIR}/devel/libffi
 .endif
 
 .if !empty(ABIFLAGS)

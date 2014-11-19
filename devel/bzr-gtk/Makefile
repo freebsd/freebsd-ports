@@ -18,11 +18,9 @@ RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
 		${PYTHON_PKGNAMEPREFIX}cairo>=0:${PORTSDIR}/graphics/py-cairo
 
 
-USES=		desktop-file-utils
-USE_PYTHON=	yes
+USES=		desktop-file-utils python
+USE_PYTHON=	distutils autoplist
 USE_GNOME=	pygtk2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTKSOURCE

@@ -6,4 +6,3 @@ lib/X11/spider/doc.intro
 lib/X11/spider/doc.misc
 lib/X11/spider/doc.rules
 lib/X11/spider/doc.summary
-@dirrm lib/X11/spider

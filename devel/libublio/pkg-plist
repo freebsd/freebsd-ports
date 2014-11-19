@@ -4,4 +4,3 @@ lib/libublio.a
 lib/libublio.so
 lib/libublio.so.1
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

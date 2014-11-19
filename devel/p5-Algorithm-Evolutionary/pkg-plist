@@ -77,7 +77,6 @@ bin/tide_float.pl
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Run.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Utils.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Wheel.3.gz
-%%PERL5_MAN3%%/Algorithm::Evolutionary::XML.3.gz
 %%SITE_PERL%%/Algorithm/Evolutionary.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Experiment.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Fitness/Any.pm
@@ -153,17 +152,8 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Run.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Utils.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Wheel.pm
-%%SITE_PERL%%/Algorithm/Evolutionary/XML.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary/.packlist
 man/man1/canonical-genetic-algorithm.pl.1.gz
 man/man1/rectangle-coverage.pl.1.gz
 man/man1/tide_bitstring.pl.1.gz
 man/man1/tide_float.pl.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Op/Eval
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Op
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Individual
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Fitness
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary
-@dirrmtry %%SITE_PERL%%/Algorithm

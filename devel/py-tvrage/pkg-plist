@@ -16,4 +16,3 @@
 %%PYTHON_SITELIBDIR%%/tvrage/util.py
 %%PYTHON_SITELIBDIR%%/tvrage/util.pyc
 %%PYTHON_SITELIBDIR%%/tvrage/util.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/tvrage

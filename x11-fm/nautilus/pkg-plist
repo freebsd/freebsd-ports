@@ -23,13 +23,12 @@ libdata/pkgconfig/libnautilus-extension.pc
 man/man1/nautilus-connect-server.1.gz
 man/man1/nautilus.1.gz
 share/GConf/gsettings/nautilus.convert
-share/appdata/nautilus.appdata.xml
+share/appdata/org.gnome.Nautilus.appdata.xml
 share/applications/nautilus-autorun-software.desktop
 share/applications/nautilus-classic.desktop
 share/applications/nautilus-connect-server.desktop
-share/applications/nautilus.desktop
+share/applications/org.gnome.Nautilus.desktop
 share/dbus-1/services/org.freedesktop.FileManager1.service
-share/dbus-1/services/org.gnome.Nautilus.SearchProvider.service
 share/dbus-1/services/org.gnome.Nautilus.service
 share/doc/libnautilus-extension/ch01.html
 share/doc/libnautilus-extension/home.png
@@ -174,98 +173,3 @@ share/locale/zu/LC_MESSAGES/nautilus.mo
 share/gnome-shell/search-providers/nautilus-search-provider.ini
 share/mime/application/x-gnome-saved-search.xml
 share/mime/packages/nautilus.xml
-%%DATADIR%%/nautilus-extras.placeholder
-%%DATADIR%%/nautilus-suggested.placeholder
-@dirrm %%DATADIR%%
-@dirrmtry share/gnome-shell/search-providers
-@dirrmtry share/gnome-shell
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yo/LC_MESSAGES
-@dirrmtry share/locale/yo
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/tg/LC_MESSAGES
-@dirrmtry share/locale/tg
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr@ije/LC_MESSAGES
-@dirrmtry share/locale/sr@ije
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/my/LC_MESSAGES
-@dirrmtry share/locale/my
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mi/LC_MESSAGES
-@dirrmtry share/locale/mi
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/io/LC_MESSAGES
-@dirrmtry share/locale/io
-@dirrmtry share/locale/ig/LC_MESSAGES
-@dirrmtry share/locale/ig
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/ha/LC_MESSAGES
-@dirrmtry share/locale/ha
-@dirrmtry share/locale/gv/LC_MESSAGES
-@dirrmtry share/locale/gv
-@dirrmtry share/locale/gd/LC_MESSAGES
-@dirrmtry share/locale/gd
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bo/LC_MESSAGES
-@dirrmtry share/locale/bo
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/doc/libnautilus-extension
-@dirrmtry share/appdata
-@dirrmtry lib/nautilus/extensions-3.0
-@dirrmtry lib/nautilus
-@dirrm include/nautilus/libnautilus-extension
-@dirrm include/nautilus

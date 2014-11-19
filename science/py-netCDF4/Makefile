@@ -24,9 +24,8 @@ GH_PROJECT=	netcdf4-python
 GH_TAGNAME=	v${PORTVERSION}rel
 GH_COMMIT=	1344040
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

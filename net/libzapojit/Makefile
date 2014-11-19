@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net/libzapojit/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/trunk/net/libzapojit/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	libzapojit
 PORTVERSION=	0.0.3

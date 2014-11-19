@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythes
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	ukrainian textproc
 MASTER_SITES=	SF/ispell-uk/spell-uk/${PORTVERSION}
 DISTNAME=	spell-uk-${PORTVERSION}

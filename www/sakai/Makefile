@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sakai
-PORTVERSION=	10.0
+PORTVERSION=	10.2
 CATEGORIES=	www java
 MASTER_SITES=	http://source.sakaiproject.org/release/${PORTVERSION}/artifacts/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}

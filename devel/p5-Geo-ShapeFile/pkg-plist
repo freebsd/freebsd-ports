@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Geo::ShapeFile.3.gz
 %%PERL5_MAN3%%/Geo::ShapeFile::Point.3.gz
 %%PERL5_MAN3%%/Geo::ShapeFile::Shape.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/ShapeFile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/Geo/ShapeFile
-@dirrmtry %%SITE_PERL%%/Geo

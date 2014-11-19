@@ -10,9 +10,8 @@ pkg_update \- Easy handling of jailed packages builds.
 is a script to handle an clean jail for package-builds.
 .SH ARGUMENTS
 .TP
-.B cvsup
-Installs a copy of cvsup-without-gui package and start
-"make update" for the ports tree.
+.B update-ports
+Start "make update" for the ports tree.
 .TP
 .B make-packages
 Builds a port and its dependencies in a clean /usr/local.
@@ -37,13 +36,13 @@ Find packages that use openssl and move them out of the way
 .TP
 .B full-update-jail
 Do full update cycle:
-1. "cvsup" to update the ports tree
+1. "update-ports" to update the ports tree
 2. "clean-packages" to keep only good packages
 3. remove all old error logs
 4. "make-packages" to rebuild missing packages
 .TP
 .B full-update-jail retry
-Skip "cvsup" and procced as above.
+Skip "update-ports" and procced as above.
 .TP
 .B fetch-distfiles
 Fetch distfiles for list of ports.

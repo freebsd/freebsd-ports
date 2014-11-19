@@ -80,13 +80,3 @@ bin/xgettext-perl
 %%PERL5_MAN3%%/Log::Report::Translator::POT.3.gz
 %%PERL5_MAN3%%/Log::Report::Util.3.gz
 %%PERL5_MAN3%%/Log::Report::Win32Locale.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Report
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
-@dirrmtry %%SITE_PERL%%/Log/Report/messages/log-report
-@dirrmtry %%SITE_PERL%%/Log/Report/messages
-@dirrmtry %%SITE_PERL%%/Log/Report/Translator
-@dirrmtry %%SITE_PERL%%/Log/Report/Lexicon
-@dirrmtry %%SITE_PERL%%/Log/Report/Extract
-@dirrmtry %%SITE_PERL%%/Log/Report/Dispatcher
-@dirrmtry %%SITE_PERL%%/Log/Report
-@dirrmtry %%SITE_PERL%%/Log

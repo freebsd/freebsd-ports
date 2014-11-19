@@ -2,8 +2,3 @@
 %%SITE_PERL%%/Mac/FileSpec/Unixish.pm
 %%SITE_PERL%%/Mac/FileSpec/unixish_guts_test.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac
-@dirrm %%SITE_PERL%%/Mac/FileSpec
-@dirrmtry %%SITE_PERL%%/Mac

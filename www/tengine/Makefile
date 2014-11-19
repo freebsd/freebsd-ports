@@ -461,7 +461,7 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 			libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 			libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
 			libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
-			libMagickWand.so:${PORTSDIR}/graphics/ImageMagick
+			libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.2.0
 GIT_VIDEO_THUMBEXTRACTOR_VERSION=	0-g9406457
 MASTER_SITES+=	https://github.com/wandenberg/nginx-video-thumbextractor-module/tarball/${NGINX_VIDEO_THUMBEXTRACTOR_VERSION}/:videothumbextractor

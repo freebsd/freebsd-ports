@@ -52,5 +52,3 @@ share/applications/gwrite.desktop
 share/locale/fr/LC_MESSAGES/gwrite.mo
 share/locale/zh_CN/LC_MESSAGES/gwrite.mo
 share/pixmaps/gwrite.png
-@dirrm %%PYTHON_SITELIBDIR%%/gwrite/icons
-@dirrm %%PYTHON_SITELIBDIR%%/gwrite

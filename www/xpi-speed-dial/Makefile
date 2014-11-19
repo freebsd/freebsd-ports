@@ -8,7 +8,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 MASTER_SITES=	http://speeddial.uworks.net/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access websites through custom thumbnail views
 
 XPI_DISTNAME=	speed_dial

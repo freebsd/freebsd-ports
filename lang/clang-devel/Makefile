@@ -3,7 +3,6 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.6.r${SVN_REV}
-PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -52,6 +51,8 @@ ASSERTS_DESC=	Enable assertions (thread unsafe)
 CONFIGURE_ARGS+=	--enable-optimized --enable-shared
 # Build some docs manually later
 CONFIGURE_ARGS+=	--disable-docs
+# Don't build bindings, the ocaml ones break
+CONFIGURE_ARGS+=	--enable-bindings=none
 
 PLIST_SUB+=	CLANG_RELEASE=${CLANG_RELEASE}
 
@@ -192,11 +193,5 @@ build-plist:
 	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${PLIST_DIR_LIST:S|^|${STAGEDIR}${LLVM_PREFIX}/|} -type d | \
-	    ${SED} -e 's|${STAGEDIR}${PREFIX}/|@dirrm |' | \
-	    ${SORT} -r >> ${PLIST}
-	${FIND} ${STAGEDIR}${DOCSDIR} -type d | ${SORT} -r | \
-	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' \
-	    >> ${PLIST}
 
 .include <bsd.port.post.mk>

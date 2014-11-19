@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		sudo:${PORTSDIR}/security/sudo
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

@@ -14,4 +14,3 @@ lib/libjbig85.so.1
 man/man1/jbgtopbm.1.gz
 man/man1/pbmtojbg.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/jbig.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

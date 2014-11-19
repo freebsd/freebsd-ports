@@ -12,7 +12,7 @@ DISTFILES=	sdllopan-${DISTVERSION}.tgz \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	sdllopan-${DISTVERSION}.tgz
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mahjong game remake
 
 WRKSRC=		${WRKDIR}/sdllopan-${PORTVERSION}

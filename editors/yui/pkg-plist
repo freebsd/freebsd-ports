@@ -17,5 +17,3 @@ man/man1/y.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.ITK
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/yui

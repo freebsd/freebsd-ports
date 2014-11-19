@@ -31,12 +31,15 @@ share/doc/gnome-desktop3/index.html
 share/doc/gnome-desktop3/index.sgml
 share/doc/gnome-desktop3/intro.html
 share/doc/gnome-desktop3/languages.html
+share/doc/gnome-desktop3/left-insensitive.png
 share/doc/gnome-desktop3/left.png
 share/doc/gnome-desktop3/randr.html
+share/doc/gnome-desktop3/right-insensitive.png
 share/doc/gnome-desktop3/right.png
 share/doc/gnome-desktop3/gnome-desktop3-gnome-rr.html
 share/doc/gnome-desktop3/style.css
 share/doc/gnome-desktop3/thumbnail.html
+share/doc/gnome-desktop3/up-insensitive.png
 share/doc/gnome-desktop3/up.png
 share/doc/gnome-desktop3/wall-clock.html
 share/doc/gnome-desktop3/xkb-info.html
@@ -220,177 +223,3 @@ share/locale/zh_CN/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/zu/LC_MESSAGES/gnome-desktop-3.0.mo
-@dirrm share/libgnome-desktop-3.0
-@dirrm share/doc/gnome-desktop3
-@dirrm include/gnome-desktop-3.0/libgnome-desktop
-@dirrm include/gnome-desktop-3.0
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yo/LC_MESSAGES
-@dirrmtry share/locale/yo
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mi/LC_MESSAGES
-@dirrmtry share/locale/mi
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/lo/LC_MESSAGES
-@dirrmtry share/locale/lo
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/kg/LC_MESSAGES
-@dirrmtry share/locale/kg
-@dirrmtry share/locale/ig/LC_MESSAGES
-@dirrmtry share/locale/ig
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/ha/LC_MESSAGES
-@dirrmtry share/locale/ha
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/csb/LC_MESSAGES
-@dirrmtry share/locale/csb
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrmtry share/help/zh_CN/lgpl
-@dirrmtry share/help/zh_CN/gpl
-@dirrmtry share/help/zh_CN/fdl
-@dirrmtry share/help/zh_CN
-@dirrmtry share/help/vi/lgpl
-@dirrmtry share/help/vi/gpl
-@dirrmtry share/help/vi/fdl
-@dirrmtry share/help/vi
-@dirrmtry share/help/uk/lgpl
-@dirrmtry share/help/uk/gpl
-@dirrmtry share/help/uk/fdl
-@dirrmtry share/help/uk
-@dirrmtry share/help/sv/lgpl
-@dirrmtry share/help/sv/gpl
-@dirrmtry share/help/sv/fdl
-@dirrmtry share/help/sv
-@dirrmtry share/help/sr@latin/gpl
-@dirrmtry share/help/sr@latin
-@dirrmtry share/help/sr/gpl
-@dirrmtry share/help/sr
-@dirrmtry share/help/sl/lgpl
-@dirrmtry share/help/sl/gpl
-@dirrmtry share/help/sl/fdl
-@dirrmtry share/help/sl
-@dirrmtry share/help/pt_BR/lgpl
-@dirrmtry share/help/pt_BR/gpl
-@dirrmtry share/help/pt_BR/fdl
-@dirrmtry share/help/pt_BR
-@dirrmtry share/help/pl/fdl
-@dirrmtry share/help/pl
-@dirrmtry share/help/pa/lgpl
-@dirrmtry share/help/pa/gpl
-@dirrmtry share/help/pa
-@dirrmtry share/help/oc/lgpl
-@dirrmtry share/help/oc/gpl
-@dirrmtry share/help/oc/fdl
-@dirrmtry share/help/oc
-@dirrmtry share/help/nds/gpl
-@dirrmtry share/help/nds
-@dirrmtry share/help/ko/lgpl
-@dirrmtry share/help/ko/gpl
-@dirrmtry share/help/ko/fdl
-@dirrmtry share/help/ko
-@dirrmtry share/help/hu/lgpl
-@dirrmtry share/help/hu/gpl
-@dirrmtry share/help/hu/fdl
-@dirrmtry share/help/hu
-@dirrmtry share/help/gl/gpl
-@dirrmtry share/help/gl/fdl
-@dirrmtry share/help/gl
-@dirrmtry share/help/fr/lgpl
-@dirrmtry share/help/fr/gpl
-@dirrmtry share/help/fr/fdl
-@dirrmtry share/help/fr
-@dirrmtry share/help/fi/lgpl
-@dirrmtry share/help/fi/gpl
-@dirrmtry share/help/fi
-@dirrmtry share/help/eu/lgpl
-@dirrmtry share/help/eu/gpl
-@dirrmtry share/help/eu/fdl
-@dirrmtry share/help/eu
-@dirrmtry share/help/es/lgpl
-@dirrmtry share/help/es/gpl
-@dirrmtry share/help/es/fdl
-@dirrmtry share/help/es
-@dirrmtry share/help/el/lgpl
-@dirrmtry share/help/el/gpl
-@dirrmtry share/help/el/fdl
-@dirrmtry share/help/el
-@dirrmtry share/help/de/lgpl
-@dirrmtry share/help/de/gpl
-@dirrmtry share/help/de/fdl
-@dirrmtry share/help/de
-@dirrmtry share/help/cs/gpl
-@dirrmtry share/help/cs
-@dirrmtry share/help/ca/lgpl
-@dirrmtry share/help/ca/gpl
-@dirrmtry share/help/ca/fdl
-@dirrmtry share/help/ca
-@dirrmtry share/help/ar/lgpl
-@dirrmtry share/help/ar/gpl
-@dirrmtry share/help/ar/fdl
-@dirrmtry share/help/ar
-@dirrmtry share/help/C/lgpl
-@dirrmtry share/help/C/gpl
-@dirrmtry share/help/C/fdl
-@dirrmtry share/help/C
-@dirrmtry share/help

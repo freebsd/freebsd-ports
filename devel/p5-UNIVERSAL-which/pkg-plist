@@ -1,6 +1,3 @@
 %%SITE_PERL%%/UNIVERSAL/which.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/which/.packlist
 %%PERL5_MAN3%%/UNIVERSAL::which.3.gz
-@dirrmtry %%SITE_PERL%%/UNIVERSAL
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/which
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL

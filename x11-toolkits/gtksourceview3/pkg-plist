@@ -7,6 +7,10 @@ include/gtksourceview-3.0/gtksourceview/gtksourcecompletioninfo.h
 include/gtksourceview-3.0/gtksourceview/gtksourcecompletionitem.h
 include/gtksourceview-3.0/gtksourceview/gtksourcecompletionproposal.h
 include/gtksourceview-3.0/gtksourceview/gtksourcecompletionprovider.h
+include/gtksourceview-3.0/gtksourceview/gtksourceencoding.h
+include/gtksourceview-3.0/gtksourceview/gtksourcefile.h
+include/gtksourceview-3.0/gtksourceview/gtksourcefileloader.h
+include/gtksourceview-3.0/gtksourceview/gtksourcefilesaver.h
 include/gtksourceview-3.0/gtksourceview/gtksourcegutter.h
 include/gtksourceview-3.0/gtksourceview/gtksourcegutterrenderer.h
 include/gtksourceview-3.0/gtksourceview/gtksourcegutterrendererpixbuf.h
@@ -29,7 +33,7 @@ include/gtksourceview-3.0/gtksourceview/gtksourceview.h
 lib/girepository-1.0/GtkSource-3.0.typelib
 lib/libgtksourceview-3.0.so
 lib/libgtksourceview-3.0.so.1
-lib/libgtksourceview-3.0.so.1.2.0
+lib/libgtksourceview-3.0.so.1.3.0
 libdata/pkgconfig/gtksourceview-3.0.pc
 share/gir-1.0/GtkSource-3.0.gir
 share/doc/gtksourceview-3.0/GtkSourceBuffer.html
@@ -40,6 +44,10 @@ share/doc/gtksourceview-3.0/GtkSourceCompletionItem.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionProposal.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionProvider.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionWords.html
+share/doc/gtksourceview-3.0/GtkSourceEncoding.html
+share/doc/gtksourceview-3.0/GtkSourceFile.html
+share/doc/gtksourceview-3.0/GtkSourceFileLoader.html
+share/doc/gtksourceview-3.0/GtkSourceFileSaver.html
 share/doc/gtksourceview-3.0/GtkSourceGutter.html
 share/doc/gtksourceview-3.0/GtkSourceGutterRenderer.html
 share/doc/gtksourceview-3.0/GtkSourceGutterRendererPixbuf.html
@@ -60,6 +68,7 @@ share/doc/gtksourceview-3.0/annotation-glossary.html
 share/doc/gtksourceview-3.0/api-index-3-0.html
 share/doc/gtksourceview-3.0/api-index-3-10.html
 share/doc/gtksourceview-3.0/api-index-3-12.html
+share/doc/gtksourceview-3.0/api-index-3-14.html
 share/doc/gtksourceview-3.0/api-index-3-4.html
 share/doc/gtksourceview-3.0/api-index-deprecated.html
 share/doc/gtksourceview-3.0/api-index-full.html
@@ -284,45 +293,3 @@ share/locale/xh/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/gtksourceview-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/gtksourceview-3.0.mo
-@dirrm share/gtksourceview-3.0/styles
-@dirrm share/gtksourceview-3.0/language-specs
-@dirrm share/gtksourceview-3.0
-@dirrm share/doc/gtksourceview-3.0/
-@dirrm include/gtksourceview-3.0/gtksourceview/completion-providers/words
-@dirrm include/gtksourceview-3.0/gtksourceview/completion-providers
-@dirrm include/gtksourceview-3.0/gtksourceview
-@dirrm include/gtksourceview-3.0
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as

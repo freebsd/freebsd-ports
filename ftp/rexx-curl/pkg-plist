@@ -11,6 +11,3 @@ lib/librexxcurl.so
 %%DATADIR%%/scp.rexx
 %%DATADIR%%/testcurl.rexx
 %%DATADIR%%/upload.rexx
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

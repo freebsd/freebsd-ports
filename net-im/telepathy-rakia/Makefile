@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/net-im/telepathy-rakia/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#    $MCom: ports/trunk/net-im/telepathy-rakia/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	telepathy-rakia
 PORTVERSION=	0.8.0

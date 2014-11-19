@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Throw stones into free columns
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

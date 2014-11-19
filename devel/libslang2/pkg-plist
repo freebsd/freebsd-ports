@@ -110,13 +110,4 @@ man/man1/slsh.1.gz
 %%DATADIR%%/termios.sl
 %%DATADIR%%/varray.sl
 %%DATADIR%%/zlib.sl
-@exec mkdir -p %D/%%DATADIR%%/local-packages
-@dirrmtry lib/slang/v2/modules
-@dirrmtry lib/slang/v2
-@dirrmtry lib/slang
-@dirrm %%DATADIR%%/cmaps
-@dirrm %%DATADIR%%/help
-@dirrmtry %%DATADIR%%/local-packages
-@dirrm %%DATADIR%%/rline
-@dirrm %%DATADIR%%/scripts
-@dirrmtry %%DATADIR%%
+@dir %%DATADIR%%/local-packages

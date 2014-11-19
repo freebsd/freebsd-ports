@@ -15,10 +15,9 @@ OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gmake libtool:keepla pathfix pkgconfig python:2 tar:bzip2
 USE_GNOME=	pygtk2
 INSTALL_TARGET=	install-strip
-USE_PYTHON=	2
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS

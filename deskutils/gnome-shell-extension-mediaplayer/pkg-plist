@@ -22,32 +22,3 @@ share/gnome-shell/extensions/mediaplayer@patapon.info/prefs.js
 share/gnome-shell/extensions/mediaplayer@patapon.info/settings.js
 share/gnome-shell/extensions/mediaplayer@patapon.info/stylesheet.css
 share/gnome-shell/extensions/mediaplayer@patapon.info/widget.js
-@dirrmtry lib/locale/de/LC_MESSAGES
-@dirrmtry lib/locale/de
-@dirrmtry lib/locale/es/LC_MESSAGES
-@dirrmtry lib/locale/es
-@dirrmtry lib/locale/fr/LC_MESSAGES
-@dirrmtry lib/locale/fr
-@dirrmtry lib/locale/gl/LC_MESSAGES
-@dirrmtry lib/locale/gl
-@dirrmtry lib/locale/he/LC_MESSAGES
-@dirrmtry lib/locale/he
-@dirrmtry lib/locale/it/LC_MESSAGES
-@dirrmtry lib/locale/it
-@dirrmtry lib/locale/lt/LC_MESSAGES
-@dirrmtry lib/locale/lt
-@dirrmtry lib/locale/nl/LC_MESSAGES
-@dirrmtry lib/locale/nl
-@dirrmtry lib/locale/pl/LC_MESSAGES
-@dirrmtry lib/locale/pl
-@dirrmtry lib/locale/pt_BR/LC_MESSAGES
-@dirrmtry lib/locale/pt_BR
-@dirrmtry lib/locale/ru/LC_MESSAGES
-@dirrmtry lib/locale/ru
-@dirrmtry lib/locale/tr/LC_MESSAGES
-@dirrmtry lib/locale/tr
-@dirrmtry lib/locale/zh_TW/LC_MESSAGES
-@dirrmtry lib/locale/zh_TW
-@dirrmtry lib/locale
-@dirrm share/gnome-shell/extensions/mediaplayer@patapon.info
-@dirrmtry share/gnome-shell/extensions

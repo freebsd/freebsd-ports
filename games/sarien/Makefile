@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sierra AGI games interpreter
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_XORG=	x11
@@ -23,7 +26,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/src/filesys/unix/path.c
 
 do-install:
-	${INSTALL} ${WRKSRC}/bin/sarien ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/sarien ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/etc/sarien.cfg ${STAGEDIR}${PREFIX}/etc/sarien.conf
 
 .include <bsd.port.mk>

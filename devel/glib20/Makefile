@@ -1,9 +1,9 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/devel/glib20/Makefile 19909 2014-09-24 09:45:23Z kwm $
+#   $MCom: ports/trunk/devel/glib20/Makefile 19944 2014-10-15 05:33:09Z gusi $
 
 PORTNAME=	glib
-PORTVERSION=	2.40.2
+PORTVERSION=	2.42.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 # (wchar_t is used by glibmm, rawtherapee triggered this)
 USES+=		gettext gmake iconv:wchar_t libtool pathfix perl5 \
 		pkgconfig python shebangfix
-PYTHON_FEATURES=	py3kplist
+USE_PYTHON=	py3kplist
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
 		--enable-static=yes \
@@ -38,10 +38,16 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
+SHEBANG_FILES=	*/*.pl
 
-LIBVERSION=	0.4002.0
+LIBVERSION=	0.4200.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
+
+glib_MAN=	gtester.1 gtester-report.1 glib-gettextize.1
+gio_MAN=	gdbus.1 gsettings.1 gio-querymodules.1 \
+		glib-compile-schemas.1 gapplication.1 \
+		glib-compile-resources.1 gresource.1 gdbus-codegen.1
+gobject_MAN=	glib-genmarshal.1 glib-mkenums.1 gobject-query.1
 
 OPTIONS_DEFINE=	COLLATION_FIX DEBUG GDB
 COLLATION_FIX_DESC=	fix string collation
@@ -113,6 +119,11 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gio/modules
+.for m in glib gio gobject
+	${INSTALL_MAN} ${${m}_MAN:S|^|${WRKSRC}/docs/reference/${m}/|} \
+		${STAGEDIR}${PREFIX}/man/man1
+.endfor
 
 .include <bsd.port.post.mk>
 

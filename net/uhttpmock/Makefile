@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net/uhttpmock/Makefile 19922 2014-09-27 13:23:59Z kwm $
+#   $MCom: ports/trunk/net/uhttpmock/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	uhttpmock
 PORTVERSION=	0.3.1
@@ -13,12 +13,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	HTTP web service mocking library for GNOME
 
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		vapigen:${PORTSDIR}/lang/vala-vapigen \
+		vapigen:${PORTSDIR}/lang/vala \
 		gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomehier gnomeprefix gtk20 introspection:build
+USE_GNOME=	gnomeprefix gtk20 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

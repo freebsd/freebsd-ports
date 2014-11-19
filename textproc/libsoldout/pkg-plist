@@ -7,4 +7,3 @@ include/soldout/markdown.h
 include/soldout/renderers.h
 lib/libsoldout.so
 lib/libsoldout.so.1
-@dirrm include/soldout

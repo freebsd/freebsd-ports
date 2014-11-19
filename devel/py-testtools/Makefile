@@ -16,7 +16,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}extras>=0.0.3:${PORTSDIR}/devel/py-extras
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

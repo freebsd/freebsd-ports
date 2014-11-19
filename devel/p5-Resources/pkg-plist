@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Resources.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Resources/.packlist
 %%PERL5_MAN3%%/Resources.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Resources

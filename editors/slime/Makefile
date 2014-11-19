@@ -3,6 +3,7 @@
 
 PORTNAME=	slime
 PORTVERSION=	2.10.1
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	https://codeload.github.com/slime/slime/legacy.tar.gz/v${PORTVERSION}?dummy=/
 

@@ -1,10 +1,7 @@
-@exec mkdir -p %%LIBDIR%%/baseq2
 %%CLIENT%%bin/r1q2
 %%DEDICATED%%bin/r1q2ded
 %%GAME%%%%LIBDIR%%/baseq2/game.so
 %%REF_GL%%%%LIBDIR%%/ref_gl.so
 %%PORTDOCS%%%%DOCSDIR%%/r1q2.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-@dirrm %%LIBDIR%%/baseq2
-@dirrm %%LIBDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir %%LIBDIR%%/baseq2

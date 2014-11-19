@@ -17,5 +17,3 @@ share/pixmaps/qcomicbook.png
 %%DATADIR%%/i18n/qcomicbook_ru_RU.qm
 %%DATADIR%%/i18n/qcomicbook_uk_UA.qm
 %%DATADIR%%/i18n/qcomicbook_zh_CN.qm
-@dirrm %%DATADIR%%/i18n
-@dirrm %%DATADIR%%

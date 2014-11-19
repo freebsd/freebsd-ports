@@ -4,7 +4,6 @@ man/man1/gsed.1.gz
 %%EXAMPLESDIR%%/binary2.sed
 %%EXAMPLESDIR%%/binary3.sed
 %%EXAMPLESDIR%%/dc.sed
-@dirrm %%EXAMPLESDIR%%
 %%NLS%%share/locale/af/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sed.mo
@@ -43,5 +42,3 @@ man/man1/gsed.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sed.mo
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast

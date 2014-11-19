@@ -235,6 +235,7 @@ share/doc/libbrasero-burn/ch01.html
 share/doc/libbrasero-burn/home.png
 share/doc/libbrasero-burn/index.html
 share/doc/libbrasero-burn/index.sgml
+share/doc/libbrasero-burn/left-insensitive.png
 share/doc/libbrasero-burn/left.png
 share/doc/libbrasero-burn/libbrasero-burn-BraseroBlankDialog.html
 share/doc/libbrasero-burn/libbrasero-burn-BraseroBurn.html
@@ -261,8 +262,10 @@ share/doc/libbrasero-burn/libbrasero-burn-brasero-track-data.html
 share/doc/libbrasero-burn/libbrasero-burn-brasero-track-type.html
 share/doc/libbrasero-burn/libbrasero-burn.devhelp2
 share/doc/libbrasero-burn/object-tree.html
+share/doc/libbrasero-burn/right-insensitive.png
 share/doc/libbrasero-burn/right.png
 share/doc/libbrasero-burn/style.css
+share/doc/libbrasero-burn/up-insensitive.png
 share/doc/libbrasero-burn/up.png
 share/doc/libbrasero-media/annotation-glossary.html
 share/doc/libbrasero-media/api-index-full.html
@@ -270,6 +273,7 @@ share/doc/libbrasero-media/ch01.html
 share/doc/libbrasero-media/home.png
 share/doc/libbrasero-media/index.html
 share/doc/libbrasero-media/index.sgml
+share/doc/libbrasero-media/left-insensitive.png
 share/doc/libbrasero-media/left.png
 share/doc/libbrasero-media/libbrasero-media-BraseroDriveSelection.html
 share/doc/libbrasero-media/libbrasero-media-BraseroMedium.html
@@ -281,8 +285,10 @@ share/doc/libbrasero-media/libbrasero-media-brasero-media.html
 share/doc/libbrasero-media/libbrasero-media-brasero-units.html
 share/doc/libbrasero-media/libbrasero-media.devhelp2
 share/doc/libbrasero-media/object-tree.html
+share/doc/libbrasero-media/right-insensitive.png
 share/doc/libbrasero-media/right.png
 share/doc/libbrasero-media/style.css
+share/doc/libbrasero-media/up-insensitive.png
 share/doc/libbrasero-media/up.png
 share/help/C/brasero/create-cover.page
 share/help/C/brasero/figures/brasero-main-window.png
@@ -765,6 +771,7 @@ share/locale/fa/LC_MESSAGES/brasero.mo
 share/locale/fi/LC_MESSAGES/brasero.mo
 share/locale/fr/LC_MESSAGES/brasero.mo
 share/locale/ga/LC_MESSAGES/brasero.mo
+share/locale/gd/LC_MESSAGES/brasero.mo
 share/locale/gl/LC_MESSAGES/brasero.mo
 share/locale/gu/LC_MESSAGES/brasero.mo
 share/locale/he/LC_MESSAGES/brasero.mo
@@ -815,149 +822,3 @@ share/locale/zh_CN/LC_MESSAGES/brasero.mo
 share/locale/zh_HK/LC_MESSAGES/brasero.mo
 share/locale/zh_TW/LC_MESSAGES/brasero.mo
 share/mime/packages/brasero.xml
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/my/LC_MESSAGES
-@dirrmtry share/locale/my
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_TW/brasero/figures
-@dirrm share/help/zh_TW/brasero
-@dirrmtry share/help/zh_TW
-@dirrm share/help/zh_HK/brasero/figures
-@dirrm share/help/zh_HK/brasero
-@dirrmtry share/help/zh_HK
-@dirrm share/help/zh_CN/brasero/figures
-@dirrm share/help/zh_CN/brasero
-@dirrmtry share/help/zh_CN
-@dirrm share/help/te/brasero/figures
-@dirrm share/help/te/brasero
-@dirrmtry share/help/te
-@dirrm share/help/sv/brasero/figures
-@dirrm share/help/sv/brasero
-@dirrmtry share/help/sv
-@dirrm share/help/sl/brasero/figures
-@dirrm share/help/sl/brasero
-@dirrmtry share/help/sl
-@dirrm share/help/ru/brasero/figures
-@dirrm share/help/ru/brasero
-@dirrmtry share/help/ru
-@dirrm share/help/ro/brasero/figures
-@dirrm share/help/ro/brasero
-@dirrmtry share/help/ro
-@dirrm share/help/pt_BR/brasero/figures
-@dirrm share/help/pt_BR/brasero
-@dirrmtry share/help/pt_BR
-@dirrm share/help/pl/brasero/figures
-@dirrm share/help/pl/brasero
-@dirrmtry share/help/pl
-@dirrm share/help/lv/brasero/figures
-@dirrm share/help/lv/brasero
-@dirrmtry share/help/lv
-@dirrm share/help/ko/brasero/figures
-@dirrm share/help/ko/brasero
-@dirrmtry share/help/ko
-@dirrm share/help/ja/brasero/figures
-@dirrm share/help/ja/brasero
-@dirrmtry share/help/ja
-@dirrm share/help/it/brasero/figures
-@dirrm share/help/it/brasero
-@dirrmtry share/help/it
-@dirrm share/help/id/brasero/figures
-@dirrm share/help/id/brasero
-@dirrmtry share/help/id
-@dirrm share/help/hu/brasero/figures
-@dirrm share/help/hu/brasero
-@dirrmtry share/help/hu
-@dirrm share/help/gl/brasero/figures
-@dirrm share/help/gl/brasero
-@dirrmtry share/help/gl
-@dirrm share/help/fr/brasero/figures
-@dirrm share/help/fr/brasero
-@dirrmtry share/help/fr
-@dirrm share/help/fi/brasero/figures
-@dirrm share/help/fi/brasero
-@dirrmtry share/help/fi
-@dirrm share/help/eu/brasero/figures
-@dirrm share/help/eu/brasero
-@dirrmtry share/help/eu
-@dirrm share/help/es/brasero/figures
-@dirrm share/help/es/brasero
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/brasero/figures
-@dirrm share/help/en_GB/brasero
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/brasero/figures
-@dirrm share/help/el/brasero
-@dirrmtry share/help/el
-@dirrm share/help/de/brasero/figures
-@dirrm share/help/de/brasero
-@dirrmtry share/help/de
-@dirrm share/help/cs/brasero/figures
-@dirrm share/help/cs/brasero
-@dirrmtry share/help/cs
-@dirrm share/help/ca/brasero/figures
-@dirrm share/help/ca/brasero
-@dirrmtry share/help/ca
-@dirrm share/help/bg/brasero/figures
-@dirrm share/help/bg/brasero
-@dirrmtry share/help/bg
-@dirrm share/help/C/brasero/figures
-@dirrm share/help/C/brasero
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm share/doc/libbrasero-media
-@dirrm share/doc/libbrasero-burn
-@dirrm %%DATADIR%%/icons/hicolor/scalable/status
-@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/32x32/status
-@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/24x24/status
-@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/22x22/status
-@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm lib/brasero3/plugins
-@dirrm lib/brasero3
-@dirrm include/brasero3

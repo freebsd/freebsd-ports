@@ -216,7 +216,3 @@ man/man5/rle.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/lenna.rle
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/mandrill.rle
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/tack_w_shadow.rle
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/img
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -497,23 +497,3 @@ share/icons/hicolor/scalable/apps/grisbi.svg
 share/mime-info/grisbi.keys
 share/mime-info/grisbi.mime
 share/mime/packages/grisbi.xml
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/pixmaps/flags
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/categories/ru
-@dirrm %%DATADIR%%/categories/it
-@dirrm %%DATADIR%%/categories/fr_FR
-@dirrm %%DATADIR%%/categories/fr
-@dirrm %%DATADIR%%/categories/de_DE
-@dirrm %%DATADIR%%/categories/de_AT
-@dirrm %%DATADIR%%/categories/C
-@dirrm %%DATADIR%%/categories
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr/image/screenshot
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr/image/icon
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr/image
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/C
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -14,6 +14,3 @@ share/gnome-shell/extensions/gTile@vibou/metadata.json
 share/gnome-shell/extensions/gTile@vibou/prefs.js
 share/gnome-shell/extensions/gTile@vibou/stylesheet.css
 share/gnome-shell/extensions/gTile@vibou/utils.js
-@dirrm share/gnome-shell/extensions/gTile@vibou/images
-@dirrm share/gnome-shell/extensions/gTile@vibou
-@dirrmtry share/gnome-shell/extensions

@@ -15,10 +15,8 @@ COMMENT=	Standard client library for many popular cloud providers
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=			tar:bzip2
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 post-extract:
 	@${MV} ${WRKSRC}/libcloud/test ${WRKSRC}/test # no need to install tests

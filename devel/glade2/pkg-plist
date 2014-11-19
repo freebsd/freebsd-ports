@@ -78,22 +78,5 @@ share/omf/glade-2/glade-faq-ro.omf
 share/omf/glade-2/glade-user-guide-C.omf
 share/pixmaps/glade-2.png
 share/pixmaps/glade-2/glade_logo.png
-@dirrm share/pixmaps/glade-2
-@dirrm share/omf/glade-2
-@dirrm share/gnome/help/glade-2/ro/figures
-@dirrm share/gnome/help/glade-2/ro
-@dirrm share/gnome/help/glade-2/C/figures
-@dirrm share/gnome/help/glade-2/C
-@dirrm share/gnome/help/glade-2
-@dirrm share/glade-2/gtk
-@dirrm share/glade-2
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz

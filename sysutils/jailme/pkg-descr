@@ -4,4 +4,4 @@ This version is installed setuid and does some sanity checking
 to ensure the username and UID match between the jail and the
 host system.
 
-WWW: http://people.collaborativefusion.com/~wmoran/code/jailme.html
+WWW: https://github.com/Intermedix/jailme

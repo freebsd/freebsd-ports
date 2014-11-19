@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phplist
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.10
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -20,7 +20,7 @@ NO_ARCH=	yes
 
 PEARDIR?=	${LOCALBASE}/share/pear
 
-PORTDOCS=	BUGS INSTALL PEOPLE README README.batches \
+PORTDOCS=	BUGS INSTALL PEOPLE README.md README.batches \
 		README.bounces README.commandline README.passwords \
 		README.repetition README.rssfeeds README.security \
 		README.usertables README.utf8 TODO UPGRADE VERSION \

@@ -474,29 +474,3 @@ lib/web/css/openid.css
 %%DATADIR%%/clpqr/README
 %%DATADIR%%/clpr.pl
 %%DATADIR%%/clpq.pl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/clpqr
-@dirrm %%DATADIR%%/clpq
-@dirrm %%DATADIR%%/clpr
-@dirrm %%DATADIR%%/chr
-@dirrm %%DATADIR%%/problog_examples
-@dirrm %%DATADIR%%/problog
-@dirrm %%DATADIR%%/clpbn/examples/School
-@dirrm %%DATADIR%%/clpbn/examples
-@dirrm %%DATADIR%%/clpbn/learning
-@dirrm %%DATADIR%%/clpbn
-@dirrm %%DATADIR%%/clp
-@dirrm %%DATADIR%%/minisat_examples
-@dirrm %%DATADIR%%/dialect/swi
-@dirrm %%DATADIR%%/dialect
-@dirrm %%DATADIR%%/semweb
-@dirrm %%DATADIR%%/DTD
-@dirrm %%DATADIR%%/http/web/icons
-@dirrm %%DATADIR%%/http/web
-@dirrm %%DATADIR%%/http
-@dirrm %%DATADIR%%/pl
-@dirrm %%DATADIR%%
-@dirrm lib/web/css
-@dirrm lib/web
-@dirrm lib/Yap
-@dirrm include/Yap

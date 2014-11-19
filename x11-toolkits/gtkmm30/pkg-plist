@@ -92,6 +92,8 @@ include/gtkmm-%%API_VERSION%%/gtkmm/cellrenderertoggle.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellview.h
 include/gtkmm-%%API_VERSION%%/gtkmm/checkbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/checkmenuitem.h
+include/gtkmm-%%API_VERSION%%/gtkmm/childpropertyproxy.h
+include/gtkmm-%%API_VERSION%%/gtkmm/childpropertyproxy_base.h
 include/gtkmm-%%API_VERSION%%/gtkmm/clipboard.h
 include/gtkmm-%%API_VERSION%%/gtkmm/colorbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/colorchooser.h
@@ -109,6 +111,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/entrybuffer.h
 include/gtkmm-%%API_VERSION%%/gtkmm/entrycompletion.h
 include/gtkmm-%%API_VERSION%%/gtkmm/enums.h
 include/gtkmm-%%API_VERSION%%/gtkmm/eventbox.h
+include/gtkmm-%%API_VERSION%%/gtkmm/eventcontroller.h
 include/gtkmm-%%API_VERSION%%/gtkmm/expander.h
 include/gtkmm-%%API_VERSION%%/gtkmm/filechooser.h
 include/gtkmm-%%API_VERSION%%/gtkmm/filechooserbutton.h
@@ -124,6 +127,15 @@ include/gtkmm-%%API_VERSION%%/gtkmm/fontchooserdialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/fontchooserwidget.h
 include/gtkmm-%%API_VERSION%%/gtkmm/fontselection.h
 include/gtkmm-%%API_VERSION%%/gtkmm/frame.h
+include/gtkmm-%%API_VERSION%%/gtkmm/gesture.h
+include/gtkmm-%%API_VERSION%%/gtkmm/gesturedrag.h
+include/gtkmm-%%API_VERSION%%/gtkmm/gesturelongpress.h
+include/gtkmm-%%API_VERSION%%/gtkmm/gesturemultipress.h
+include/gtkmm-%%API_VERSION%%/gtkmm/gesturepan.h
+include/gtkmm-%%API_VERSION%%/gtkmm/gesturerotate.h
+include/gtkmm-%%API_VERSION%%/gtkmm/gesturesingle.h
+include/gtkmm-%%API_VERSION%%/gtkmm/gestureswipe.h
+include/gtkmm-%%API_VERSION%%/gtkmm/gesturezoom.h
 include/gtkmm-%%API_VERSION%%/gtkmm/grid.h
 include/gtkmm-%%API_VERSION%%/gtkmm/handlebox.h
 include/gtkmm-%%API_VERSION%%/gtkmm/headerbar.h
@@ -151,6 +163,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/listbox.h
 include/gtkmm-%%API_VERSION%%/gtkmm/listboxrow.h
 include/gtkmm-%%API_VERSION%%/gtkmm/liststore.h
 include/gtkmm-%%API_VERSION%%/gtkmm/listviewtext.h
+include/gtkmm-%%API_VERSION%%/gtkmm/lockbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/main.h
 include/gtkmm-%%API_VERSION%%/gtkmm/menu.h
 include/gtkmm-%%API_VERSION%%/gtkmm/menubar.h
@@ -165,6 +178,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/numerableicon.h
 include/gtkmm-%%API_VERSION%%/gtkmm/object.h
 include/gtkmm-%%API_VERSION%%/gtkmm/offscreenwindow.h
 include/gtkmm-%%API_VERSION%%/gtkmm/orientable.h
+include/gtkmm-%%API_VERSION%%/gtkmm/overlay.h
 include/gtkmm-%%API_VERSION%%/gtkmm/pagesetup.h
 include/gtkmm-%%API_VERSION%%/gtkmm/pagesetupunixdialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/paned.h
@@ -240,6 +254,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/entrybuffer_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/entrycompletion_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/enums_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/eventbox_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/eventcontroller_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/expander_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/filechooser_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/filechooserbutton_p.h
@@ -255,6 +270,15 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/fontchooserdialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/fontchooserwidget_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/fontselection_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/frame_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/gesture_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturedrag_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturelongpress_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturemultipress_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturepan_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturerotate_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturesingle_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/gestureswipe_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturezoom_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/grid_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/handlebox_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/headerbar_p.h
@@ -281,6 +305,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/linkbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/listbox_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/listboxrow_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/liststore_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/lockbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/main_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/menu_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/menubar_p.h
@@ -295,6 +320,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/numerableicon_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/object_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/offscreenwindow_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/orientable_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/overlay_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/pagesetup_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/pagesetupunixdialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/paned_p.h
@@ -342,7 +368,6 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/socket_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/spinbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/spinner_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/stack_p.h
-include/gtkmm-%%API_VERSION%%/gtkmm/stackswitcher.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/stackswitcher_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/statusbar_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/statusicon_p.h
@@ -425,6 +450,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/socket.h
 include/gtkmm-%%API_VERSION%%/gtkmm/spinbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/spinner.h
 include/gtkmm-%%API_VERSION%%/gtkmm/stack.h
+include/gtkmm-%%API_VERSION%%/gtkmm/stackswitcher.h
 include/gtkmm-%%API_VERSION%%/gtkmm/statusbar.h
 include/gtkmm-%%API_VERSION%%/gtkmm/statusicon.h
 include/gtkmm-%%API_VERSION%%/gtkmm/stock.h
@@ -479,28 +505,17 @@ include/gtkmm-%%API_VERSION%%/gtkmm/window.h
 include/gtkmm-%%API_VERSION%%/gtkmm/wrap_init.h
 lib/gdkmm-%%API_VERSION%%/include/gdkmmconfig.h
 lib/gtkmm-%%API_VERSION%%/include/gtkmmconfig.h
+lib/gtkmm-%%API_VERSION%%/proc/m4/child_property.m4
 lib/gtkmm-%%API_VERSION%%/proc/m4/class_gtkobject.m4
 lib/gtkmm-%%API_VERSION%%/proc/m4/convert.m4
 lib/gtkmm-%%API_VERSION%%/proc/m4/convert_gdk.m4
 lib/gtkmm-%%API_VERSION%%/proc/m4/convert_gtk.m4
 lib/gtkmm-%%API_VERSION%%/proc/m4/convert_gtkmm.m4
-lib/libgdkmm-%%VERSION%%.so
-lib/libgdkmm-%%VERSION%%.so.1
-lib/libgdkmm-%%VERSION%%.so.1.1.0
-lib/libgtkmm-%%VERSION%%.so
-lib/libgtkmm-%%VERSION%%.so.1
-lib/libgtkmm-%%VERSION%%.so.1.1.0
+lib/libgdkmm-%%API_VERSION%%.so
+lib/libgdkmm-%%API_VERSION%%.so.1
+lib/libgdkmm-%%API_VERSION%%.so.1.1.0
+lib/libgtkmm-%%API_VERSION%%.so
+lib/libgtkmm-%%API_VERSION%%.so.1
+lib/libgtkmm-%%API_VERSION%%.so.1.1.0
 libdata/pkgconfig/gdkmm-%%API_VERSION%%.pc
 libdata/pkgconfig/gtkmm-%%API_VERSION%%.pc
-@dirrm lib/gtkmm-%%API_VERSION%%/proc/m4
-@dirrm lib/gtkmm-%%API_VERSION%%/proc
-@dirrm lib/gtkmm-%%API_VERSION%%/include
-@dirrm lib/gtkmm-%%API_VERSION%%
-@dirrm lib/gdkmm-%%API_VERSION%%/include
-@dirrm lib/gdkmm-%%API_VERSION%%
-@dirrm include/gtkmm-%%API_VERSION%%/gtkmm/private
-@dirrm include/gtkmm-%%API_VERSION%%/gtkmm
-@dirrm include/gtkmm-%%API_VERSION%%
-@dirrm include/gdkmm-%%API_VERSION%%/gdkmm/private
-@dirrm include/gdkmm-%%API_VERSION%%/gdkmm
-@dirrm include/gdkmm-%%API_VERSION%%

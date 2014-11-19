@@ -10,7 +10,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple/Fmt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Simple/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Simple/Simple.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date

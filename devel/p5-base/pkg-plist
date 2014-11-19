@@ -3,4 +3,3 @@
 %%SITE_PERL%%/base.pm
 %%SITE_PERL%%/fields.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/base/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/base

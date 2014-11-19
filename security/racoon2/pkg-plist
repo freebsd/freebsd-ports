@@ -37,17 +37,4 @@ man/man8/iked.8.gz
 %%KINK%%man/man8/kinkd.8.gz
 @exec test -f %%PFX%%/etc/racoon2/spmd.pwd && mv %%PFX%%/etc/racoon2/spmd.pwd %%PFX%%/etc/racoon2/spmd.pwd.bak && %%PFX%%/pskgen -r -o %%PFX%%/etc/racoon2/spmd.pwd
 @unexec rm -f %%PFX/etc/racoon2/spmd.pwd
-@exec /usr/sbin/install -d -o 0 -g 0 -m 700 /var/run/racoon2
-@dirrm etc/racoon2/cert
-@dirrm etc/racoon2/hook/ph1-up.d
-@dirrm etc/racoon2/hook/ph1-down.d
-@dirrm etc/racoon2/hook/migration.d
-@dirrm etc/racoon2/hook/ikesa-up.d
-@dirrm etc/racoon2/hook/ikesa-rekey.d
-@dirrm etc/racoon2/hook/ikesa-down.d
-@dirrm etc/racoon2/hook/child-up.d
-@dirrm etc/racoon2/hook/child-rekey.d
-@dirrm etc/racoon2/hook/child-down.d
-@dirrm etc/racoon2/hook
-@dirrm etc/racoon2/psk
-@dirrm etc/racoon2
+@dir(root,wheel,700) /var/run/racoon2

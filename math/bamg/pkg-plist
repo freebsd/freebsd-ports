@@ -26,9 +26,3 @@ bin/drawbdmesh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/dotest1.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/dotest2.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/dotest3.pl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NACA012
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/quadloop
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/square
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

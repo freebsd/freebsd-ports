@@ -55,8 +55,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/paslzx.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/paslzx.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/paslzxcomp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm/paslzxcomp.ppu
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/chm
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

@@ -11,5 +11,3 @@ share/pixmaps/yabause.png
 %%DATADIR%%/yts/pt.yts
 %%DATADIR%%/yts/pt_BR.yts
 %%DATADIR%%/yts/sv.yts
-@dirrm %%DATADIR%%/yts
-@dirrm %%DATADIR%%

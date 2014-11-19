@@ -378,11 +378,3 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/yum.aug
 share/vim/vimfiles/ftdetect/augeas.vim
 share/vim/vimfiles/syntax/augeas.vim
-@dirrm %%DATADIR%%/lenses/dist/tests
-@dirrm %%DATADIR%%/lenses/dist
-@dirrm %%DATADIR%%/lenses
-@dirrm %%DATADIR%%
-@dirrmtry share/vim/vimfiles/syntax
-@dirrmtry share/vim/vimfiles/ftdetect
-@dirrmtry share/vim/vimfiles
-@dirrmtry share/vim

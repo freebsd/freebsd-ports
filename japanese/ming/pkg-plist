@@ -38,8 +38,6 @@ include/ming/blocks/sprite.h
 include/ming/blocks/swf.h
 include/ming/blocks/utf8.h
 include/ming/mingpp.h
-@dirrm include/ming/blocks
-@dirrm include/ming
 lib/libming.a
 lib/libming.so
 lib/libming.so.3
@@ -49,5 +47,3 @@ lib/libming.so.3
 %%PORTDOCS%%share/doc/ming/TODO
 %%PORTDOCS%%share/doc/ming/utils/README
 %%PORTDOCS%%share/doc/ming/utils/TODO
-%%PORTDOCS%%@dirrm share/doc/ming/utils
-%%PORTDOCS%%@dirrm share/doc/ming

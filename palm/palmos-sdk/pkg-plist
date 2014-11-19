@@ -206,32 +206,3 @@
 %%BASEDIR%%/lib/m68k-palmos-coff/libPalmOSGlue.a
 %%BASEDIR%%/PalmOS 5 SDK 68K R3 Readme.txt
 %%BASEDIR%%/Palm License.txt
-@dirrm %%BASEDIR%%/lib/m68k-palmos-coff/mown-gp
-@dirrm %%BASEDIR%%/lib/m68k-palmos-coff
-@dirrm %%BASEDIR%%/lib
-@dirrm %%BASEDIR%%/include/Libraries/Telephony/UI
-@dirrm %%BASEDIR%%/include/Libraries/Telephony
-@dirrm %%BASEDIR%%/include/Libraries/Sms
-@dirrm %%BASEDIR%%/include/Libraries/Simulator/Locale
-@dirrm %%BASEDIR%%/include/Libraries/Simulator
-@dirrm %%BASEDIR%%/include/Libraries/SSL
-@dirrm %%BASEDIR%%/include/Libraries/Pdi
-@dirrm %%BASEDIR%%/include/Libraries/PalmOSGlue
-@dirrm %%BASEDIR%%/include/Libraries/Lz77
-@dirrm %%BASEDIR%%/include/Libraries/INet
-@dirrm %%BASEDIR%%/include/Libraries/ExgLocal
-@dirrm %%BASEDIR%%/include/Libraries/CPMLib
-@dirrm %%BASEDIR%%/include/Libraries/AddressSort
-@dirrm %%BASEDIR%%/include/Libraries
-@dirrm %%BASEDIR%%/include/Extensions/ExpansionMgr
-@dirrm %%BASEDIR%%/include/Extensions/Bluetooth
-@dirrm %%BASEDIR%%/include/Extensions
-@dirrm %%BASEDIR%%/include/Dynamic
-@dirrm %%BASEDIR%%/include/Core/UI
-@dirrm %%BASEDIR%%/include/Core/System/Unix
-@dirrm %%BASEDIR%%/include/Core/System
-@dirrm %%BASEDIR%%/include/Core/Hardware
-@dirrm %%BASEDIR%%/include/Core
-@dirrm %%BASEDIR%%/include
-@dirrm %%BASEDIR%%
-@dirrm palmdev

@@ -43,113 +43,76 @@ share/doc/gdl-3.0/style.css
 share/doc/gdl-3.0/up.png
 share/doc/gdl-3.0/widget.html
 share/gir-1.0/Gdl-3.gir
-lib/locale/am/LC_MESSAGES/gdl-3.mo
-lib/locale/ar/LC_MESSAGES/gdl-3.mo
-lib/locale/as/LC_MESSAGES/gdl-3.mo
-lib/locale/ast/LC_MESSAGES/gdl-3.mo
-lib/locale/az/LC_MESSAGES/gdl-3.mo
-lib/locale/be/LC_MESSAGES/gdl-3.mo
-lib/locale/bg/LC_MESSAGES/gdl-3.mo
-lib/locale/bn/LC_MESSAGES/gdl-3.mo
-lib/locale/ca/LC_MESSAGES/gdl-3.mo
-lib/locale/ca@valencia/LC_MESSAGES/gdl-3.mo
-lib/locale/cs/LC_MESSAGES/gdl-3.mo
-lib/locale/da/LC_MESSAGES/gdl-3.mo
-lib/locale/de/LC_MESSAGES/gdl-3.mo
-lib/locale/dz/LC_MESSAGES/gdl-3.mo
-lib/locale/el/LC_MESSAGES/gdl-3.mo
-lib/locale/en@shaw/LC_MESSAGES/gdl-3.mo
-lib/locale/en_CA/LC_MESSAGES/gdl-3.mo
-lib/locale/en_GB/LC_MESSAGES/gdl-3.mo
-lib/locale/eo/LC_MESSAGES/gdl-3.mo
-lib/locale/es/LC_MESSAGES/gdl-3.mo
-lib/locale/et/LC_MESSAGES/gdl-3.mo
-lib/locale/eu/LC_MESSAGES/gdl-3.mo
-lib/locale/fi/LC_MESSAGES/gdl-3.mo
-lib/locale/fr/LC_MESSAGES/gdl-3.mo
-lib/locale/ga/LC_MESSAGES/gdl-3.mo
-lib/locale/gl/LC_MESSAGES/gdl-3.mo
-lib/locale/gu/LC_MESSAGES/gdl-3.mo
-lib/locale/he/LC_MESSAGES/gdl-3.mo
-lib/locale/hi/LC_MESSAGES/gdl-3.mo
-lib/locale/hr/LC_MESSAGES/gdl-3.mo
-lib/locale/hu/LC_MESSAGES/gdl-3.mo
-lib/locale/hy/LC_MESSAGES/gdl-3.mo
-lib/locale/id/LC_MESSAGES/gdl-3.mo
-lib/locale/it/LC_MESSAGES/gdl-3.mo
-lib/locale/ja/LC_MESSAGES/gdl-3.mo
-lib/locale/km/LC_MESSAGES/gdl-3.mo
-lib/locale/ko/LC_MESSAGES/gdl-3.mo
-lib/locale/lt/LC_MESSAGES/gdl-3.mo
-lib/locale/lv/LC_MESSAGES/gdl-3.mo
-lib/locale/mai/LC_MESSAGES/gdl-3.mo
-lib/locale/mk/LC_MESSAGES/gdl-3.mo
-lib/locale/ml/LC_MESSAGES/gdl-3.mo
-lib/locale/mr/LC_MESSAGES/gdl-3.mo
-lib/locale/nb/LC_MESSAGES/gdl-3.mo
-lib/locale/ne/LC_MESSAGES/gdl-3.mo
-lib/locale/nl/LC_MESSAGES/gdl-3.mo
-lib/locale/oc/LC_MESSAGES/gdl-3.mo
-lib/locale/or/LC_MESSAGES/gdl-3.mo
-lib/locale/pa/LC_MESSAGES/gdl-3.mo
-lib/locale/pl/LC_MESSAGES/gdl-3.mo
-lib/locale/ps/LC_MESSAGES/gdl-3.mo
-lib/locale/pt/LC_MESSAGES/gdl-3.mo
-lib/locale/pt_BR/LC_MESSAGES/gdl-3.mo
-lib/locale/ro/LC_MESSAGES/gdl-3.mo
-lib/locale/ru/LC_MESSAGES/gdl-3.mo
-lib/locale/rw/LC_MESSAGES/gdl-3.mo
-lib/locale/si/LC_MESSAGES/gdl-3.mo
-lib/locale/sk/LC_MESSAGES/gdl-3.mo
-lib/locale/sl/LC_MESSAGES/gdl-3.mo
-lib/locale/sq/LC_MESSAGES/gdl-3.mo
-lib/locale/sr/LC_MESSAGES/gdl-3.mo
-lib/locale/sr@latin/LC_MESSAGES/gdl-3.mo
-lib/locale/sv/LC_MESSAGES/gdl-3.mo
-lib/locale/te/LC_MESSAGES/gdl-3.mo
-lib/locale/tg/LC_MESSAGES/gdl-3.mo
-lib/locale/th/LC_MESSAGES/gdl-3.mo
-lib/locale/tr/LC_MESSAGES/gdl-3.mo
-lib/locale/ug/LC_MESSAGES/gdl-3.mo
-lib/locale/uk/LC_MESSAGES/gdl-3.mo
-lib/locale/vi/LC_MESSAGES/gdl-3.mo
-lib/locale/zh_CN/LC_MESSAGES/gdl-3.mo
-lib/locale/zh_HK/LC_MESSAGES/gdl-3.mo
-lib/locale/zh_TW/LC_MESSAGES/gdl-3.mo
-@dirrmtry lib/locale/zh_HK/LC_MESSAGES
-@dirrmtry lib/locale/zh_HK
-@dirrmtry lib/locale/ug/LC_MESSAGES
-@dirrmtry lib/locale/ug
-@dirrmtry lib/locale/te/LC_MESSAGES
-@dirrmtry lib/locale/te
-@dirrmtry lib/locale/sr@latin/LC_MESSAGES
-@dirrmtry lib/locale/sr@latin
-@dirrmtry lib/locale/si/LC_MESSAGES
-@dirrmtry lib/locale/si
-@dirrmtry lib/locale/rw/LC_MESSAGES
-@dirrmtry lib/locale/rw
-@dirrmtry lib/locale/ps/LC_MESSAGES
-@dirrmtry lib/locale/ps
-@dirrmtry lib/locale/oc/LC_MESSAGES
-@dirrmtry lib/locale/oc
-@dirrmtry lib/locale/mr/LC_MESSAGES
-@dirrmtry lib/locale/mr
-@dirrmtry lib/locale/mai/LC_MESSAGES
-@dirrmtry lib/locale/mai
-@dirrmtry lib/locale/km/LC_MESSAGES
-@dirrmtry lib/locale/km
-@dirrmtry lib/locale/hy/LC_MESSAGES
-@dirrmtry lib/locale/hy
-@dirrmtry lib/locale/en@shaw/LC_MESSAGES
-@dirrmtry lib/locale/en@shaw
-@dirrmtry lib/locale/dz/LC_MESSAGES
-@dirrmtry lib/locale/dz
-@dirrmtry lib/locale/ca@valencia/LC_MESSAGES
-@dirrmtry lib/locale/ca@valencia
-@dirrmtry lib/locale/ast/LC_MESSAGES
-@dirrmtry lib/locale/ast
-@dirrmtry lib/locale/as/LC_MESSAGES
-@dirrmtry lib/locale/as
-@dirrm share/doc/gdl-3.0
-@dirrm include/libgdl-3.0/gdl
-@dirrm include/libgdl-3.0
+share/locale/am/LC_MESSAGES/gdl-3.mo
+share/locale/ar/LC_MESSAGES/gdl-3.mo
+share/locale/as/LC_MESSAGES/gdl-3.mo
+share/locale/ast/LC_MESSAGES/gdl-3.mo
+share/locale/az/LC_MESSAGES/gdl-3.mo
+share/locale/be/LC_MESSAGES/gdl-3.mo
+share/locale/bg/LC_MESSAGES/gdl-3.mo
+share/locale/bn/LC_MESSAGES/gdl-3.mo
+share/locale/ca/LC_MESSAGES/gdl-3.mo
+share/locale/ca@valencia/LC_MESSAGES/gdl-3.mo
+share/locale/cs/LC_MESSAGES/gdl-3.mo
+share/locale/da/LC_MESSAGES/gdl-3.mo
+share/locale/de/LC_MESSAGES/gdl-3.mo
+share/locale/dz/LC_MESSAGES/gdl-3.mo
+share/locale/el/LC_MESSAGES/gdl-3.mo
+share/locale/en@shaw/LC_MESSAGES/gdl-3.mo
+share/locale/en_CA/LC_MESSAGES/gdl-3.mo
+share/locale/en_GB/LC_MESSAGES/gdl-3.mo
+share/locale/eo/LC_MESSAGES/gdl-3.mo
+share/locale/es/LC_MESSAGES/gdl-3.mo
+share/locale/et/LC_MESSAGES/gdl-3.mo
+share/locale/eu/LC_MESSAGES/gdl-3.mo
+share/locale/fi/LC_MESSAGES/gdl-3.mo
+share/locale/fr/LC_MESSAGES/gdl-3.mo
+share/locale/ga/LC_MESSAGES/gdl-3.mo
+share/locale/gl/LC_MESSAGES/gdl-3.mo
+share/locale/gu/LC_MESSAGES/gdl-3.mo
+share/locale/he/LC_MESSAGES/gdl-3.mo
+share/locale/hi/LC_MESSAGES/gdl-3.mo
+share/locale/hr/LC_MESSAGES/gdl-3.mo
+share/locale/hu/LC_MESSAGES/gdl-3.mo
+share/locale/hy/LC_MESSAGES/gdl-3.mo
+share/locale/id/LC_MESSAGES/gdl-3.mo
+share/locale/it/LC_MESSAGES/gdl-3.mo
+share/locale/ja/LC_MESSAGES/gdl-3.mo
+share/locale/km/LC_MESSAGES/gdl-3.mo
+share/locale/ko/LC_MESSAGES/gdl-3.mo
+share/locale/lt/LC_MESSAGES/gdl-3.mo
+share/locale/lv/LC_MESSAGES/gdl-3.mo
+share/locale/mai/LC_MESSAGES/gdl-3.mo
+share/locale/mk/LC_MESSAGES/gdl-3.mo
+share/locale/ml/LC_MESSAGES/gdl-3.mo
+share/locale/mr/LC_MESSAGES/gdl-3.mo
+share/locale/nb/LC_MESSAGES/gdl-3.mo
+share/locale/ne/LC_MESSAGES/gdl-3.mo
+share/locale/nl/LC_MESSAGES/gdl-3.mo
+share/locale/oc/LC_MESSAGES/gdl-3.mo
+share/locale/or/LC_MESSAGES/gdl-3.mo
+share/locale/pa/LC_MESSAGES/gdl-3.mo
+share/locale/pl/LC_MESSAGES/gdl-3.mo
+share/locale/ps/LC_MESSAGES/gdl-3.mo
+share/locale/pt/LC_MESSAGES/gdl-3.mo
+share/locale/pt_BR/LC_MESSAGES/gdl-3.mo
+share/locale/ro/LC_MESSAGES/gdl-3.mo
+share/locale/ru/LC_MESSAGES/gdl-3.mo
+share/locale/rw/LC_MESSAGES/gdl-3.mo
+share/locale/si/LC_MESSAGES/gdl-3.mo
+share/locale/sk/LC_MESSAGES/gdl-3.mo
+share/locale/sl/LC_MESSAGES/gdl-3.mo
+share/locale/sq/LC_MESSAGES/gdl-3.mo
+share/locale/sr/LC_MESSAGES/gdl-3.mo
+share/locale/sr@latin/LC_MESSAGES/gdl-3.mo
+share/locale/sv/LC_MESSAGES/gdl-3.mo
+share/locale/te/LC_MESSAGES/gdl-3.mo
+share/locale/tg/LC_MESSAGES/gdl-3.mo
+share/locale/th/LC_MESSAGES/gdl-3.mo
+share/locale/tr/LC_MESSAGES/gdl-3.mo
+share/locale/ug/LC_MESSAGES/gdl-3.mo
+share/locale/uk/LC_MESSAGES/gdl-3.mo
+share/locale/vi/LC_MESSAGES/gdl-3.mo
+share/locale/zh_CN/LC_MESSAGES/gdl-3.mo
+share/locale/zh_HK/LC_MESSAGES/gdl-3.mo
+share/locale/zh_TW/LC_MESSAGES/gdl-3.mo

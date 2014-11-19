@@ -2,4 +2,3 @@ include/ecore-1/Ecore_Ipc.h
 lib/libecore_ipc.so
 lib/libecore_ipc.so.8
 libdata/pkgconfig/ecore-ipc.pc
-@dirrmtry include/ecore-1

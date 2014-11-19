@@ -47,7 +47,6 @@ share/mkcmd/type/socket.mh
 share/mkcmd/type/socket.mi
 share/mkcmd/type/time.m
 share/mkcmd/type/timebox.m
-@dirrm share/mkcmd/type
 share/mkcmd/cmd/add.m
 share/mkcmd/cmd/add.mc
 share/mkcmd/cmd/cd.m
@@ -71,10 +70,8 @@ share/mkcmd/cmd/source.mc
 share/mkcmd/cmd/umask.m
 share/mkcmd/cmd/umask.mc
 share/mkcmd/cmd/version.m
-@dirrm share/mkcmd/cmd
 share/mkcmd/dir/check.m
 share/mkcmd/dir/check.mc
-@dirrm share/mkcmd/dir
 share/mkcmd/example/cgi.m
 share/mkcmd/example/cmd.m
 share/mkcmd/example/date.m
@@ -97,17 +94,13 @@ share/mkcmd/example/rlsd.m
 share/mkcmd/example/server.m
 share/mkcmd/example/time.m
 share/mkcmd/example/timebox.m
-@dirrm share/mkcmd/example
 share/mkcmd/getopt/key.m
-@dirrm share/mkcmd/getopt
 share/mkcmd/enum.info
 share/mkcmd/glob/ieee.m
 share/mkcmd/glob/ieee.mc
-@dirrm share/mkcmd/glob
 share/mkcmd/rpc/client.m
 share/mkcmd/rpc/server.m
 share/mkcmd/rpc/server.mc
-@dirrm share/mkcmd/rpc
 share/mkcmd/std/control.m
 share/mkcmd/std/datehdr.m
 share/mkcmd/std/filter.m
@@ -123,9 +116,7 @@ share/mkcmd/std/noargs.m
 share/mkcmd/std/targets.m
 share/mkcmd/std/version.m
 share/mkcmd/std/xdev.m
-@dirrm share/mkcmd/std
 share/mkcmd/time/tz.m
-@dirrm share/mkcmd/time
 share/mkcmd/tftp/client.m
 share/mkcmd/tftp/client.mc
 share/mkcmd/tftp/client.mh
@@ -134,7 +125,6 @@ share/mkcmd/tftp/server.m
 share/mkcmd/tftp/server.mc
 share/mkcmd/tftp/server.mh
 share/mkcmd/tftp/server.mi
-@dirrm share/mkcmd/tftp
 share/mkcmd/util/by.m
 share/mkcmd/util/cgi.m
 share/mkcmd/util/cgi.mc
@@ -222,7 +212,6 @@ share/mkcmd/util/unity.mc
 share/mkcmd/util/whittle.m
 share/mkcmd/util/zombie.m
 share/mkcmd/util/zombie.mc
-@dirrm share/mkcmd/util
 share/mkcmd/xdr/Cargv.m
 share/mkcmd/xdr/Cargv.mc
 share/mkcmd/xdr/Cargv.mh
@@ -233,5 +222,3 @@ share/mkcmd/xdr/Cstring.mh
 share/mkcmd/xdr/Cstring.mi
 man/man1/mkcmd.1.gz
 man/man5/mkcmd.5.gz
-@dirrm share/mkcmd/xdr
-@dirrm share/mkcmd

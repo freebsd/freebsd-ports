@@ -38,6 +38,3 @@ share/pixmaps/qtiplot.png
 %%NLS%%%%DATADIR%%/translations/qtiplot_ro.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_ru.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_sv.qm
-%%NLS%%@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/fitPlugins
-@dirrmtry %%DATADIR%%

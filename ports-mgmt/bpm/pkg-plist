@@ -10,6 +10,3 @@ libexec/bpm/fetch-wrapper
 %%DATADIR%%/pixmaps/lock_48.png
 share/locale/en_CA/LC_MESSAGES/bpm.mo
 share/applications/bpm.desktop
-@dirrm libexec/bpm
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

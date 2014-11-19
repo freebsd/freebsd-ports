@@ -38,23 +38,4 @@
 %%TOMCATDIR%%/webapps/deegree-wps/wps_basic.html
 %%TOMCATDIR%%/webapps/deegree-wps/wps_main.html
 %%TOMCATDIR%%/webapps/deegree-wps/wps_navi.jsp
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/images
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/css
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/client/requests/wps/examples/Execute/xml
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/client/requests/wps/examples/Execute
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/client/requests/wps/examples
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/client/requests/wps
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/client/requests
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/client
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/WEB-INF/lib
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/WEB-INF/conf/wps/processConfigs
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/WEB-INF/conf/wps
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/WEB-INF/conf
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/WEB-INF/classes
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/WEB-INF
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps/META-INF
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
-@dirrm %%TOMCATDIR%%/webapps/deegree-wps
-@group wheel
-@owner root
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%TOMCATDIR%%/webapps/deegree-wps

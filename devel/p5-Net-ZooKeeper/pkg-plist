@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ZooKeeper/ZooKeeper.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/ZooKeeper.pm
 %%PERL5_MAN3%%/Net::ZooKeeper.3.gz
-@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ZooKeeper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/mach/Net

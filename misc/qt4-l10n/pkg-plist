@@ -97,5 +97,3 @@
 %%QT_L10NDIR%%/qvfb_uk.qm
 %%QT_L10NDIR%%/qvfb_zh_CN.qm
 %%QT_L10NDIR%%/qvfb_zh_TW.qm
-@dirrm %%QT_L10NDIR%%
-@dirrmtry %%QT_DATADIR%%

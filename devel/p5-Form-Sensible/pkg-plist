@@ -69,17 +69,3 @@
 %%PERL5_MAN3%%/Form::Sensible::Renderer::HTML::RenderedForm.3.gz
 %%PERL5_MAN3%%/Form::Sensible::Validator.3.gz
 %%PERL5_MAN3%%/Form::Sensible::Validator::Result.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Form/Sensible
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Form
-@dirrm %%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/table
-@dirrm %%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default
-@dirrm %%SITE_PERL%%/auto/share/dist/Form-Sensible/templates
-@dirrm %%SITE_PERL%%/auto/share/dist/Form-Sensible
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/auto/share
-@dirrm %%SITE_PERL%%/Form/Sensible/Validator
-@dirrm %%SITE_PERL%%/Form/Sensible/Renderer/HTML
-@dirrm %%SITE_PERL%%/Form/Sensible/Renderer
-@dirrm %%SITE_PERL%%/Form/Sensible/Field
-@dirrm %%SITE_PERL%%/Form/Sensible
-@dirrmtry %%SITE_PERL%%/Form

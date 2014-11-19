@@ -75,7 +75,6 @@ SRC_DISTFILES=	libICE-1.0.6-1.el6.src.rpm \
 		libxcb-1.9.1-2.el6.src.rpm \
 		libxkbfile-1.0.6-1.1.el6.src.rpm \
 		mesa-libGLw-6.5.1-10.el6.src.rpm
-
 .endif
 
 MAINTAINER=		emulation@FreeBSD.org

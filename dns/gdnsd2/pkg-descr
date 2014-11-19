@@ -1,0 +1,13 @@
+gdnsd is an Authoritative-only DNS server.
+
+The initial g stands for Geographic, as gdnsd offers a plugin system for
+geographic (or other sorts of) balancing, redirection, and 
+service-state-conscious failover. If you don't care about that feature, 
+it's still quite good at being a very fast, lean, and resilient 
+authoritative-only server for static DNS data.
+
+gdnsd is written in C using libev and pthreads with a focus on high 
+performance, low latency service. It does not offer any form of caching or 
+recursive service, and does not support DNSSEC.
+
+WWW: https://github.com/blblack/gdnsd/

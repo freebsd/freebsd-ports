@@ -118,11 +118,3 @@ share/locale/uk/LC_MESSAGES/libsecret.mo
 share/locale/zh_CN/LC_MESSAGES/libsecret.mo
 share/locale/zh_HK/LC_MESSAGES/libsecret.mo
 share/locale/zh_TW/LC_MESSAGES/libsecret.mo
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrm share/gtk-doc/html/libsecret-1
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/libsecret-1/libsecret
-@dirrm include/libsecret-1
-

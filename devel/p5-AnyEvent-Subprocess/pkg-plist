@@ -31,8 +31,6 @@
 %%PERL5_MAN3%%/AnyEvent::Subprocess::Running::Delegate::MonitorHandle.3.gz
 %%PERL5_MAN3%%/AnyEvent::Subprocess::Running::Delegate::Timeout.3.gz
 %%PERL5_MAN3%%/AnyEvent::Subprocess::Types.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Subprocess
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
 %%SITE_PERL%%/AnyEvent/Subprocess.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/DefaultDelegates.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Delegate.pm
@@ -47,8 +45,6 @@
 %%SITE_PERL%%/AnyEvent/Subprocess/Done/Delegate/Handle.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Done/Delegate/State.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Done/Delegate/Timeout.pm
-@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Done/Delegate
-@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Done
 %%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/Callback.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/CaptureHandle.pm
@@ -58,12 +54,8 @@
 %%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/PrintError.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/Pty.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/Timeout.pm
-@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate
-@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Job
 %%SITE_PERL%%/AnyEvent/Subprocess/Role/WithDelegates.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Role/WithDelegates/Manager.pm
-@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Role/WithDelegates
-@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Role
 %%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/Callback.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/CaptureHandle.pm
@@ -71,7 +63,3 @@
 %%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/Handle.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/MonitorHandle.pm
 %%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/Timeout.pm
-@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate
-@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Running
-@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess
-@dirrmtry %%SITE_PERL%%/AnyEvent

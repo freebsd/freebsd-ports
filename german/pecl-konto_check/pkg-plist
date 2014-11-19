@@ -1,5 +1,3 @@
 %%ETCDIR%%/blz.lut
 %%ETCDIR%%/blz.lut2
-@dirrm %%ETCDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/00liesmich.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

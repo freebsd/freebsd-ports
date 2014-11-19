@@ -7,5 +7,3 @@ lib/libsenna.a
 lib/libsenna.so
 lib/libsenna.so.0
 lib/libsenna.so.0.0.0
-@dirrm include/senna
-@dirrmtry lib/pkgconfig

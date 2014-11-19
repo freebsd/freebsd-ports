@@ -3,6 +3,3 @@ bin/cpan-outdated
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/cpanoutdated/.packlist
 %%PERL5_MAN3%%/App::cpanoutdated.3.gz
 man/man1/cpan-outdated.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/cpanoutdated
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrmtry %%SITE_PERL%%/App

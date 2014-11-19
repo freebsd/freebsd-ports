@@ -43,8 +43,3 @@ share/icons/hicolor/scalable/apps/myBudget-icon.svg
 %%DATADIR%%/gnumeric_head.txt
 %%DATADIR%%/po/myBudget.po
 %%DATADIR%%/splashscreen.png
-@dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/MyBudget.html_files
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

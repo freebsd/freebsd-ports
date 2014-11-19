@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Forward/.packlist
 %%SITE_PERL%%/Class/Forward.pm
 %%PERL5_MAN3%%/Class::Forward.3.gz
-@dirrmtry %%SITE_PERL%%/Class
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Forward
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

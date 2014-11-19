@@ -19,7 +19,5 @@ man/man1/kakasi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.lib
 %%PORTDOCS%%%%DOCSDIR%%/README.wakati
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/itaijidict
 %%DATADIR%%/kanwadict
-@dirrm %%DATADIR%%

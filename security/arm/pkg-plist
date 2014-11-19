@@ -215,16 +215,3 @@ bin/arm
 %%PYTHON_SITELIBDIR%%/arm/util/uiTools.pyc
 %%PYTHON_SITELIBDIR%%/arm/util/uiTools.pyo
 man/man1/arm.1.gz
-@dirrm %%PYTHON_SITELIBDIR%%/arm/TorCtl
-@dirrm %%PYTHON_SITELIBDIR%%/arm/cli/connections
-@dirrm %%PYTHON_SITELIBDIR%%/arm/cli/graphing
-@dirrm %%PYTHON_SITELIBDIR%%/arm/cli/menu
-@dirrm %%PYTHON_SITELIBDIR%%/arm/cli
-@dirrm %%PYTHON_SITELIBDIR%%/arm/gui/connections
-@dirrm %%PYTHON_SITELIBDIR%%/arm/gui/graphing
-@dirrm %%PYTHON_SITELIBDIR%%/arm/gui
-@dirrm %%PYTHON_SITELIBDIR%%/arm/resources/exitNotice
-@dirrm %%PYTHON_SITELIBDIR%%/arm/resources/torrcOverride
-@dirrm %%PYTHON_SITELIBDIR%%/arm/resources
-@dirrm %%PYTHON_SITELIBDIR%%/arm/util
-@dirrm %%PYTHON_SITELIBDIR%%/arm

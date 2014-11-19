@@ -1,0 +1,153 @@
+@stopdaemon backuppc
+@mode 0555
+bin/BackupPC
+bin/BackupPC_Admin_SCGI
+bin/BackupPC_archive
+bin/BackupPC_archiveHost
+bin/BackupPC_archiveStart
+bin/BackupPC_attribPrint
+bin/BackupPC_backupDelete
+bin/BackupPC_backupDuplicate
+bin/BackupPC_dump
+bin/BackupPC_fixupBackupSummary
+bin/BackupPC_fsck
+bin/BackupPC_ls
+bin/BackupPC_nightly
+bin/BackupPC_poolCntPrint
+bin/BackupPC_refCountUpdate
+bin/BackupPC_restore
+bin/BackupPC_rrdUpdate
+bin/BackupPC_sendEmail
+bin/BackupPC_serverMesg
+bin/BackupPC_tarCreate
+bin/BackupPC_tarExtract
+bin/BackupPC_zcat
+bin/BackupPC_zipCreate
+@mode 0444
+lib/BackupPC/CGI/AdminOptions.pm
+lib/BackupPC/CGI/Archive.pm
+lib/BackupPC/CGI/ArchiveInfo.pm
+lib/BackupPC/CGI/Browse.pm
+lib/BackupPC/CGI/DirHistory.pm
+lib/BackupPC/CGI/EditConfig.pm
+lib/BackupPC/CGI/EmailSummary.pm
+lib/BackupPC/CGI/GeneralInfo.pm
+lib/BackupPC/CGI/HostInfo.pm
+lib/BackupPC/CGI/LOGlist.pm
+lib/BackupPC/CGI/Lib.pm
+lib/BackupPC/CGI/Queue.pm
+lib/BackupPC/CGI/RSS.pm
+lib/BackupPC/CGI/ReloadServer.pm
+lib/BackupPC/CGI/Restore.pm
+lib/BackupPC/CGI/RestoreFile.pm
+lib/BackupPC/CGI/RestoreInfo.pm
+lib/BackupPC/CGI/StartServer.pm
+lib/BackupPC/CGI/StartStopBackup.pm
+lib/BackupPC/CGI/StopServer.pm
+lib/BackupPC/CGI/Summary.pm
+lib/BackupPC/CGI/View.pm
+lib/BackupPC/Config/Meta.pm
+lib/BackupPC/DirOps.pm
+lib/BackupPC/Lang/cz.pm
+lib/BackupPC/Lang/de.pm
+lib/BackupPC/Lang/en.pm
+lib/BackupPC/Lang/es.pm
+lib/BackupPC/Lang/fr.pm
+lib/BackupPC/Lang/it.pm
+lib/BackupPC/Lang/ja.pm
+lib/BackupPC/Lang/nl.pm
+lib/BackupPC/Lang/pl.pm
+lib/BackupPC/Lang/pt_br.pm
+lib/BackupPC/Lang/ru.pm
+lib/BackupPC/Lang/uk.pm
+lib/BackupPC/Lang/zh_CN.pm
+lib/BackupPC/Lib.pm
+lib/BackupPC/Storage.pm
+lib/BackupPC/Storage/Text.pm
+lib/BackupPC/View.pm
+lib/BackupPC/Xfer.pm
+lib/BackupPC/Xfer/Archive.pm
+lib/BackupPC/Xfer/Ftp.pm
+lib/BackupPC/Xfer/Protocol.pm
+lib/BackupPC/Xfer/Rsync.pm
+lib/BackupPC/Xfer/Smb.pm
+lib/BackupPC/Xfer/Tar.pm
+lib/BackupPC/Zip/FileMember.pm
+lib/Net/FTP/AutoReconnect.pm
+lib/Net/FTP/RetrHandle.pm
+man/man1/backuppc.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/BackupPC.html
+%%PORTDOCS%%%%DOCSDIR%%/BackupPC.pod
+%%WWWDIR%%/0000000.gif
+%%WWWDIR%%/0000011.gif
+%%WWWDIR%%/0001000.gif
+%%WWWDIR%%/0010000.gif
+%%WWWDIR%%/0010001.gif
+%%WWWDIR%%/0011000.gif
+%%WWWDIR%%/0011001.gif
+%%WWWDIR%%/1000000.gif
+%%WWWDIR%%/1000100.gif
+%%WWWDIR%%/1001000.gif
+%%WWWDIR%%/1001100.gif
+%%WWWDIR%%/1010000.gif
+%%WWWDIR%%/1010001.gif
+%%WWWDIR%%/1011000.gif
+%%WWWDIR%%/1100000.gif
+%%WWWDIR%%/1100100.gif
+%%WWWDIR%%/1100101.gif
+%%WWWDIR%%/1100110.gif
+%%WWWDIR%%/1100111.gif
+%%WWWDIR%%/1101000.gif
+%%WWWDIR%%/1101100.gif
+%%WWWDIR%%/1101101.gif
+%%WWWDIR%%/1101110.gif
+%%WWWDIR%%/1101111.gif
+%%WWWDIR%%/1110000.gif
+%%WWWDIR%%/1110001.gif
+%%WWWDIR%%/1110100.gif
+%%WWWDIR%%/1110101.gif
+%%WWWDIR%%/1110110.gif
+%%WWWDIR%%/1110111.gif
+%%WWWDIR%%/1111000.gif
+%%WWWDIR%%/1111001.gif
+%%WWWDIR%%/1111100.gif
+%%WWWDIR%%/1111101.gif
+%%WWWDIR%%/1111110.gif
+%%WWWDIR%%/1111111.gif
+%%WWWDIR%%/BackupPC.html
+%%WWWDIR%%/BackupPC_stnd.css
+%%WWWDIR%%/BackupPC_stnd_orig.css
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/icon-dir.png
+%%WWWDIR%%/icon-file.png
+%%WWWDIR%%/icon-hardlink.png
+%%WWWDIR%%/icon-symlink.png
+%%WWWDIR%%/logo.gif
+%%WWWDIR%%/sorttable.js
+@owner backuppc
+@group backuppc
+@mode 04554
+%%CGIDIR%%/BackupPC_Admin
+@owner
+@group
+@mode
+@owner backuppc
+@group backuppc
+@dir /var/run/BackupPC
+@dir /var/log/BackupPC
+@dir /var/db/BackupPC/cpool
+@dir /var/db/BackupPC/pc
+@dir /var/db/BackupPC/pool
+@dir /var/db/BackupPC
+@comment .sample files actually are templates for the configuration script
+@comment and should not be installed as working configuration files.
+@mode 0640
+@sample %%ETCDIR%%/config.pl.sample
+@mode 0644
+@sample %%ETCDIR%%/hosts.sample
+@owner
+@group
+@mode 0544
+%%ETCDIR%%/update.sh
+libexec/backuppc/update.pl
+@mode

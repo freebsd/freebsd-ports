@@ -27,5 +27,3 @@ libexec/rbenv-whence
 libexec/rbenv-which
 %%DATADIR%%/completions/rbenv.bash
 %%DATADIR%%/completions/rbenv.zsh
-@dirrm %%DATADIR%%/completions
-@dirrm %%DATADIR%%

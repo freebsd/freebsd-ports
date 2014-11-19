@@ -80,7 +80,3 @@ share/pixmaps/swine.png
 %%DATADIR%%/translations/pl.qm
 %%DATADIR%%/translations/tr.qm
 %%DATADIR%%/translations/vi.qm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrm lib/swine

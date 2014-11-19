@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/graphics/colord/Makefile 19898 2014-09-20 11:04:55Z kwm $
+#    $MCom: ports/trunk/graphics/colord/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	colord
-PORTVERSION=	1.1.7
+PORTVERSION=	1.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -18,7 +18,7 @@ USERS=		colord
 GROUPS=		colord
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomehier glib20 intlhack introspection:build
+USE_GNOME=	glib20 intlhack introspection:build
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

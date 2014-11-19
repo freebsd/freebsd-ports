@@ -18,5 +18,3 @@ lib/evas/utils/evas_image_loader.raf
 lib/evas/utils/evas_image_loader.sr2
 lib/evas/utils/evas_image_loader.srf
 lib/evas/utils/evas_image_loader.x3f
-@dirrmtry lib/evas/utils
-@dirrmtry lib/evas

@@ -11,7 +11,3 @@
 %%SITE_PERL%%/Hash/Case/Upper.pm
 %%SITE_PERL%%/Hash/Case/Upper.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
-@dirrm %%SITE_PERL%%/Hash/Case
-@dirrmtry %%SITE_PERL%%/Hash

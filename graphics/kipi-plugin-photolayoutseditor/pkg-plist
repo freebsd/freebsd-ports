@@ -21,9 +21,3 @@ share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Flipping Tux 
 share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Its a boy.ple
 share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Its a girl.ple
 share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Tux Rider.ple
-@dirrm share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h
-@dirrm share/templates/kipiplugins_photolayoutseditor/data/templates/a4
-@dirrm share/templates/kipiplugins_photolayoutseditor/data/templates
-@dirrm share/templates/kipiplugins_photolayoutseditor/data
-@dirrm share/templates/kipiplugins_photolayoutseditor
-@dirrm share/apps/photolayoutseditor

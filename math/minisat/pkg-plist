@@ -22,8 +22,3 @@ lib/libminisat.so.2.1.0
 lib/libminisat.so.2
 lib/libminisat.so
 lib/libminisat.a
-@dirrmtry include/minisat/utils
-@dirrmtry include/minisat/simp
-@dirrmtry include/minisat/mtl
-@dirrmtry include/minisat/core
-@dirrmtry include/minisat

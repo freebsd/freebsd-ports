@@ -16,9 +16,8 @@ LICENSE=	LGPL20
 
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
-USES=		tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pythondialog
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-dialog

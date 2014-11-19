@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/sysutils/cinnamon-settings-daemon/Makefile 19786 2014-07-31 10:24:00Z gusi $
+#   $MCom: ports/trunk/sysutils/cinnamon-settings-daemon/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	cinnamon-settings-daemon
 PORTVERSION=	2.2.4
@@ -14,8 +14,7 @@ COMMENT=	GNOME 3 settings daemon
 BUILD_DEPENDS=	cinnamon-session:${PORTSDIR}/x11/cinnamon-session \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		libtoolize:${PORTSDIR}/devel/libtool
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
@@ -29,12 +28,12 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 RUN_DEPENDS=	cinnamon-session:${PORTSDIR}/x11/cinnamon-session \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomehier gnomeprefix intlhack libgnomekbd \
+USES=		autoreconf:build gettext gmake libtool pathfix \
+		pkgconfig tar:xz
+USE_GNOME=	gnomeprefix intlhack libgnomekbd \
 		libxslt:build
 USE_XORG=	xxf86misc
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf automake
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -73,8 +72,6 @@ post-patch:
 		${WRKSRC}/data/org.cinnamon.settings-daemon.plugins.xrandr.gschema.xml.in.in
 	@${REINPLACE_CMD} -e '/wacom/d' \
 		${WRKSRC}/data/Makefile.am
-	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|file://${PREFIX}/share/xsl/docbook/manpages/docbook.xsl|g' \
-		${WRKSRC}/man/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh

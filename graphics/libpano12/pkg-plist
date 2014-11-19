@@ -12,4 +12,3 @@ include/pano12/version.h
 lib/libpano12.so
 lib/libpano12.so.0
 lib/libpano12.so.0.0.0
-@dirrm include/pano12

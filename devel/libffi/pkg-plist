@@ -11,5 +11,3 @@ man/man3/ffi.3.gz
 man/man3/ffi_call.3.gz
 man/man3/ffi_prep_cif.3.gz
 man/man3/ffi_prep_cif_var.3.gz
-@dirrm lib/libffi-%%PORTVERSION%%/include
-@dirrm lib/libffi-%%PORTVERSION%%

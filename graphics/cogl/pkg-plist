@@ -13,6 +13,8 @@ include/cogl/cogl/cogl-defines.h
 include/cogl/cogl/cogl-deprecated.h
 include/cogl/cogl/cogl-depth-state.h
 include/cogl/cogl/cogl-display.h
+include/cogl/cogl/cogl-egl-defines.h
+include/cogl/cogl/cogl-egl.h
 include/cogl/cogl/cogl-enum-types.h
 include/cogl/cogl/cogl-error.h
 include/cogl/cogl/cogl-euler.h
@@ -172,29 +174,3 @@ share/locale/vi/LC_MESSAGES/cogl.mo
 share/locale/zh_CN/LC_MESSAGES/cogl.mo
 share/locale/zh_HK/LC_MESSAGES/cogl.mo
 share/locale/zh_TW/LC_MESSAGES/cogl.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrmtry share/cogl/examples-data
-@dirrmtry share/cogl
-@dirrm include/cogl/cogl/gl-prototypes
-@dirrm include/cogl/cogl/deprecated
-@dirrm include/cogl/cogl-path
-@dirrm include/cogl/cogl
-@dirrm include/cogl/cogl-pango
-@dirrm include/cogl

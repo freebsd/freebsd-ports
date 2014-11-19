@@ -13,8 +13,7 @@ COMMENT=	Allows to set the available languages in Plone site
 
 LICENSE=	GPLv2
 
-USES=		zip
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=		python zip
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

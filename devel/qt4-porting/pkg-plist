@@ -1,4 +1,3 @@
 %%QT_BINDIR%%/qt3to4
 %%DEBUG%%%%QT_BINDIR%%/qt3to4.debug
 %%QT_DATADIR%%/q3porting.xml
-@dirrmtry %%QT_DATADIR%%

@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/String/Ediff.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Ediff/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Ediff/Ediff.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Ediff
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/String

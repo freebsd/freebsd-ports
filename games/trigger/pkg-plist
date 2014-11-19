@@ -106,29 +106,3 @@ bin/trigger
 %%DATADIR%%/vehicles/seat/seat_complete.fx
 %%DATADIR%%/vehicles/seat/seat_complete.jpg
 %%DATADIR%%/vehicles/seat/seat_wheel.ase
-@dirrm %%DATADIR%%/vehicles/seat
-@dirrm %%DATADIR%%/vehicles/focus
-@dirrm %%DATADIR%%/vehicles/evo
-@dirrm %%DATADIR%%/vehicles
-@dirrm %%DATADIR%%/textures/veg
-@dirrm %%DATADIR%%/textures/splash
-@dirrm %%DATADIR%%/textures/sky
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/sounds/evo_sound
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/maps/saharatea
-@dirrm %%DATADIR%%/maps/roundhouse
-@dirrm %%DATADIR%%/maps/mountainpass
-@dirrm %%DATADIR%%/maps/greengrounds
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/events/triggercup/warmup
-@dirrm %%DATADIR%%/events/triggercup/oldmacdonald
-@dirrm %%DATADIR%%/events/triggercup/monkeybusiness
-@dirrm %%DATADIR%%/events/triggercup/lunar
-@dirrm %%DATADIR%%/events/triggercup/desertstorm
-@dirrm %%DATADIR%%/events/triggercup/bigjump
-@dirrm %%DATADIR%%/events/triggercup
-@dirrm %%DATADIR%%/events
-@dirrm %%DATADIR%%

@@ -3,7 +3,7 @@
 
 PORTNAME=	prosody
 PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 				http://redundancy.redundancy.org/mirror/
@@ -25,9 +25,9 @@ GROUPS=		${USERS}
 
 USE_RC_SUBR=	prosody
 
-OPTIONS_DEFINE= LUAJIT
-LUAJIT_DESC=    Run prosody using luajit
-LUAJIT_LIB_DEPENDS=     libluajit-5.1.so:${PORTSDIR}/lang/luajit
+OPTIONS_DEFINE=	LUAJIT
+LUAJIT_DESC=	Run prosody using luajit
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 
 .include <bsd.port.options.mk>
 
@@ -35,17 +35,16 @@ USES=	gmake lua:51 shebangfix
 SHEBANG_LANG=	lua
 SHEBANG_FILES=	prosody prosodyctl
 lua_OLD_CMD=	${SETENV} lua
+.if ${PORT_OPTIONS:MLUAJIT}
+lua_CMD=	${LOCALBASE}/bin/luajit
+.else
 lua_CMD=	${LOCALBASE}/bin/${LUA_CMD}
+.endif
 LUA_PREMK=	yes
 
 .include <bsd.port.pre.mk>
 
 HAS_CONFIGURE=	yes
-.if ${PORT_OPTIONS:MLUAJIT}
-CONFIGURE_ARGS+= --runwith=`which luajit`
-.else
-CONFIGURE_ARGS+= --runwith=`which ${LUA_CMD}`
-.endif
 CONFIGURE_ARGS+=	--ostype=freebsd --c-compiler="${CC}" --linker="${LD}" --with-lua-include="${LUA_INCDIR}"
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" PREFIX="${PREFIX}" LUA_SUFFIX="-${LUA_VER}" LUA_LIBDIR="${LUA_LIBDIR}" LUA_INCDIR="${LUA_INCDIR}"
 

@@ -2,8 +2,3 @@
 %%SITE_PERL%%/MooX/StrictConstructor.pm
 %%PERL5_MAN3%%/Method::Generate::Constructor::Role::StrictConstructor.3.gz
 %%PERL5_MAN3%%/MooX::StrictConstructor.3.gz
-@dirrmtry %%SITE_PERL%%/MooX
-@dirrm %%SITE_PERL%%/Method/Generate/Constructor/Role
-@dirrm %%SITE_PERL%%/Method/Generate/Constructor
-@dirrmtry %%SITE_PERL%%/Method/Generate
-@dirrmtry %%SITE_PERL%%/Method

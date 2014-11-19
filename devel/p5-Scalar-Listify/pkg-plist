@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Scalar::Listify.3.gz
 %%SITE_PERL%%/Scalar/Listify.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Listify/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Listify
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar
-@dirrmtry %%SITE_PERL%%/Scalar

@@ -41,5 +41,3 @@ bin/lopster
 %%DATADIR%%/pixmaps/transfer.xpm
 %%DATADIR%%/pixmaps/user1.xpm
 %%DATADIR%%/pixmaps/user2.xpm
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

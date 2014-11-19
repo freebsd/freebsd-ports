@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Hash/Flatten.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Flatten/.packlist
 %%PERL5_MAN3%%/Hash::Flatten.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Flatten
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
-@dirrmtry %%SITE_PERL%%/Hash

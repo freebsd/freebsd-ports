@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Role/Basic.pm
 %%SITE_PERL%%/Role/Basic/Philosophy.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/Basic/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/Basic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Role
-@dirrmtry %%SITE_PERL%%/Role/Basic
-@dirrmtry %%SITE_PERL%%/Role

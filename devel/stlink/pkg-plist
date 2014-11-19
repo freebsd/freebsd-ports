@@ -4,5 +4,3 @@ bin/st-term
 bin/st-util
 %%GTK3%%bin/stlink-gui
 %%GTK3%%%%DATADIR%%/ui/stlink-gui.ui
-%%GTK3%%@dirrmtry %%DATADIR%%/ui
-%%GTK3%%@dirrmtry %%DATADIR%%

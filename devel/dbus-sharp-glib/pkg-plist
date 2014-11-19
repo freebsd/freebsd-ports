@@ -3,6 +3,3 @@ lib/mono/gac/dbus-sharp-glib/1.0.0.0__5675b0c3093115b5/dbus-sharp-glib.dll
 lib/mono/gac/dbus-sharp-glib/1.0.0.0__5675b0c3093115b5/dbus-sharp-glib.dll.config
 lib/mono/gac/dbus-sharp-glib/1.0.0.0__5675b0c3093115b5/dbus-sharp-glib.dll.mdb
 libdata/pkgconfig/dbus-sharp-glib-1.0.pc
-@dirrmtry lib/mono/gac/dbus-sharp-glib/1.0.0.0__5675b0c3093115b5
-@dirrmtry lib/mono/gac/dbus-sharp-glib
-@dirrmtry lib/mono/dbus-sharp-glib-1.0

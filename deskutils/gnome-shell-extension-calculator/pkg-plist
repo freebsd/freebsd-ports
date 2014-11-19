@@ -1,5 +1,3 @@
 share/gnome-shell/extensions/calc@patapon.info/COPYING
 share/gnome-shell/extensions/calc@patapon.info/extension.js
 share/gnome-shell/extensions/calc@patapon.info/metadata.json
-@dirrm share/gnome-shell/extensions/calc@patapon.info
-@dirrmtry share/gnome-shell/extensions

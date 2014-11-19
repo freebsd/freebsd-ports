@@ -9,5 +9,3 @@ libdata/pkgconfig/notify-python.pc
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 share/pygtk/2.0/defs/pynotify.defs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/pynotify

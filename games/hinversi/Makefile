@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/latest
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reversi/Othello clone
 
 LICENSE=	GPLv2 # or later

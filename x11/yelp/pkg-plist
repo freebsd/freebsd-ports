@@ -5,9 +5,9 @@ include/libyelp/yelp-docbook-document.h
 include/libyelp/yelp-document.h
 include/libyelp/yelp-help-list.h
 include/libyelp/yelp-info-document.h
-include/libyelp/yelp-location-entry.h
 include/libyelp/yelp-mallard-document.h
 include/libyelp/yelp-man-document.h
+include/libyelp/yelp-search-entry.h
 include/libyelp/yelp-settings.h
 include/libyelp/yelp-simple-document.h
 include/libyelp/yelp-sqlite-storage.h
@@ -22,7 +22,6 @@ lib/libyelp.so.0
 lib/libyelp.so.0.0.0
 share/applications/yelp.desktop
 share/doc/libyelp/YelpDocument.html
-share/doc/libyelp/YelpLocationEntry.html
 share/doc/libyelp/YelpSettings.html
 share/doc/libyelp/YelpSimpleDocument.html
 share/doc/libyelp/YelpUri.html
@@ -33,12 +32,15 @@ share/doc/libyelp/ch01s02.html
 share/doc/libyelp/home.png
 share/doc/libyelp/index.html
 share/doc/libyelp/index.sgml
+share/doc/libyelp/left-insensitive.png
 share/doc/libyelp/left.png
 share/doc/libyelp/libyelp-yelp-error.html
 share/doc/libyelp/libyelp.devhelp2
 share/doc/libyelp/object-tree.html
+share/doc/libyelp/right-insensitive.png
 share/doc/libyelp/right.png
 share/doc/libyelp/style.css
+share/doc/libyelp/up-insensitive.png
 share/doc/libyelp/up.png
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
@@ -364,132 +366,3 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 %%DATADIR%%/xslt/man2html.xsl
 %%DATADIR%%/xslt/yelp-common.xsl
 share/yelp-xsl/xslt/common/domains/yelp.xml
-@dirrm %%DATADIR%%/xslt
-@dirrm %%DATADIR%%/mathjax/jax/output/NativeMML
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Typewriter
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size4/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size4
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size3/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size3
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size2/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size2
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size1/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Size1
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Script
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Italic
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif/Bold
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/SansSerif
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math/Italic
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math/BoldItalic
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Math
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Italic
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main/Bold
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Main
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Italic
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/BoldItalic
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek/Bold
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Greek
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur/Bold
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Fraktur
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic/Bold
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/Caligraphic
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS/Regular
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX/AMS
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts/TeX
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/fonts
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload
-@dirrm %%DATADIR%%/mathjax/jax/output/HTML-CSS
-@dirrm %%DATADIR%%/mathjax/jax/output
-@dirrm %%DATADIR%%/mathjax/jax/input/MathML/entities
-@dirrm %%DATADIR%%/mathjax/jax/input/MathML
-@dirrm %%DATADIR%%/mathjax/jax/input
-@dirrm %%DATADIR%%/mathjax/jax/element/mml/optable
-@dirrm %%DATADIR%%/mathjax/jax/element/mml
-@dirrm %%DATADIR%%/mathjax/jax/element
-@dirrm %%DATADIR%%/mathjax/jax
-@dirrm %%DATADIR%%/mathjax/fonts/HTML-CSS/TeX/woff
-@dirrm %%DATADIR%%/mathjax/fonts/HTML-CSS/TeX
-@dirrm %%DATADIR%%/mathjax/fonts/HTML-CSS
-@dirrm %%DATADIR%%/mathjax/fonts
-@dirrm %%DATADIR%%/mathjax/extensions/HTML-CSS
-@dirrm %%DATADIR%%/mathjax/extensions
-@dirrm %%DATADIR%%/mathjax/config
-@dirrm %%DATADIR%%/mathjax
-@dirrm %%DATADIR%%/icons/hicolor/scalable/status
-@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mg/LC_MESSAGES
-@dirrmtry share/locale/mg
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/la/LC_MESSAGES
-@dirrmtry share/locale/la
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/ks/LC_MESSAGES
-@dirrmtry share/locale/ks
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/doc/libyelp
-@dirrm include/libyelp

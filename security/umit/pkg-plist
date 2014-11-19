@@ -706,40 +706,10 @@ share/pixmaps/umit/wizard_logo.png
 %%DATADIR%%/misc/os_classification.dmp
 %%DATADIR%%/misc/os_db.dmp
 %%DATADIR%%/misc/services.dmp
-@exec mkdir -p %D/%%DATADIR%%/plugins
+@dir %%DATADIR%%/plugins
 %%DATADIR%%/sql/sqlite-delete-triggers.sql
 %%DATADIR%%/sql/sqlite-drop-tables.sql
 %%DATADIR%%/sql/sqlite-drop-triggers.sql
 %%DATADIR%%/sql/sqlite-insert-triggers.sql
 %%DATADIR%%/sql/sqlite-schema.sql
 %%DATADIR%%/sql/sqlite-update-triggers.sql
-@dirrm %%DATADIR%%/sql
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%
-@dirrm share/pixmaps/umit/uie
-@dirrm share/pixmaps/umit/radialnet/icons
-@dirrm share/pixmaps/umit/radialnet/application
-@dirrm share/pixmaps/umit/radialnet
-@dirrm share/pixmaps/umit/networkinventory
-@dirrm share/pixmaps/umit
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/ms_MY/LC_MESSAGES
-@dirrmtry share/locale/ms_MY
-@dirrmtry share/locale/id_ID/LC_MESSAGES
-@dirrmtry share/locale/id_ID
-@dirrmtry share/icons/umit
-@dirrm %%PYTHON_SITELIBDIR%%/umit/plugin
-@dirrm %%PYTHON_SITELIBDIR%%/umit/merger
-@dirrm %%PYTHON_SITELIBDIR%%/umit/inventory
-@dirrm %%PYTHON_SITELIBDIR%%/umit/interfaceeditor/selectborder
-@dirrm %%PYTHON_SITELIBDIR%%/umit/interfaceeditor
-@dirrm %%PYTHON_SITELIBDIR%%/umit/gui/radialnet
-@dirrm %%PYTHON_SITELIBDIR%%/umit/gui
-@dirrm %%PYTHON_SITELIBDIR%%/umit/db
-@dirrm %%PYTHON_SITELIBDIR%%/umit/core/radialnet
-@dirrm %%PYTHON_SITELIBDIR%%/umit/core
-@dirrm %%PYTHON_SITELIBDIR%%/umit
-@dirrm %%PYTHON_SITELIBDIR%%/higwidgets

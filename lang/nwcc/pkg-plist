@@ -13,7 +13,3 @@ nwcc/include/stddef.h
 nwcc/lib/dynlibnwcc.o
 nwcc/lib/fcatalog.idx
 nwcc/lib/libnwcc.o
-@dirrmtry nwcc/bin
-@dirrmtry nwcc/include
-@dirrmtry nwcc/lib
-@dirrmtry nwcc

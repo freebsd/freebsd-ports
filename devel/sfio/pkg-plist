@@ -6,4 +6,3 @@ lib/libsfio.a
 lib/libstdio.a
 man/man1/iffe.1.gz
 man/man3/sfio.3.gz
-@dirrm include/sfio

@@ -3273,24 +3273,3 @@ bin/frozen-bubble-editor
 man/man1/frozen-bubble-editor.1.gz
 man/man1/frozen-bubble.1.gz
 share/pixmaps/frozen-bubble.png
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/snd
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/locale
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/icons
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/pinguins
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/menu/anims
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/menu
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/intro
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/flags
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/balls
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/FrozenBubble/CStuff
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/FrozenBubble
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Games/FrozenBubble
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Games
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

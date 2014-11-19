@@ -29,7 +29,3 @@ man/man1/dateparse.1.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural::Test.3.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural::Utils.3.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural::Wrappers.3.gz
-@dirrmtry %%SITE_PERL%%/DateTime/Format/Natural/Duration
-@dirrmtry %%SITE_PERL%%/DateTime/Format/Natural/Lang
-@dirrmtry %%SITE_PERL%%/DateTime/Format/Natural
-@dirrmtry %%SITE_PERL%%/DateTime/Format

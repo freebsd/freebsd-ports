@@ -6,7 +6,7 @@ PORTVERSION=	0.7.9.2007113020
 DISTVERSIONSUFFIX=	-fx+tb+fl
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber client
 
 RUN_DEPENDS=	xpi-xmpp4moz>=0.5.2:${PORTSDIR}/www/xpi-xmpp4moz

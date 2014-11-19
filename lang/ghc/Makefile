@@ -259,10 +259,6 @@ post-install-script:
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} '@exec ${SH} -c "cd %D/${DOCSDIR_REL}/html/libraries && ./gen_contents_index"' >> ${TMPPLIST}
 .endif
-	@${FIND} -ds ${STAGEDIR}${DOCSDIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-	@${FIND} -ds ${GHC_LIBDIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|; \
@@ -309,10 +305,6 @@ pre-configure:
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cabal/ghc-${GHC_VERSION}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/cabal/ghc-${GHC_VERSION}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cabal/ghc-${GHC_VERSION}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/cabal/ghc-${GHC_VERSION}
 	@${RM} -f ${STAGEDIR}${PREFIX}/bin/haddock
 .if ${PORT_OPTIONS:MDOCS}
 	@${LN} -sf haddock-ghc-${GHC_VERSION} ${STAGEDIR}${PREFIX}/bin/haddock

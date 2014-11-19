@@ -52,21 +52,3 @@
 %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/Exists/Any/File.pm
 %%SITE_PERL%%/Path/IsDev/Role/Matcher/FullPath/Is/Any.pm
 %%SITE_PERL%%/Path/IsDev/Role/NegativeHeuristic.pm
-@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/FullPath/Is
-@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/FullPath
-@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/Exists/Any
-@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/Exists
-@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/BaseName/MatchRegexp
-@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/BaseName
-@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child
-@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher
-@dirrm %%SITE_PERL%%/Path/IsDev/Role/HeuristicSet
-@dirrm %%SITE_PERL%%/Path/IsDev/Role
-@dirrm %%SITE_PERL%%/Path/IsDev/NegativeHeuristic/IsDev
-@dirrm %%SITE_PERL%%/Path/IsDev/NegativeHeuristic
-@dirrm %%SITE_PERL%%/Path/IsDev/HeuristicSet
-@dirrm %%SITE_PERL%%/Path/IsDev/Heuristic/VCS
-@dirrm %%SITE_PERL%%/Path/IsDev/Heuristic/Tool
-@dirrm %%SITE_PERL%%/Path/IsDev/Heuristic
-@dirrm %%SITE_PERL%%/Path/IsDev
-@dirrmtry %%SITE_PERL%%/Path

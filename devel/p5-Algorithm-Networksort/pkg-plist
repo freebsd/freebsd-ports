@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Algorithm::Networksort.3.gz
 %%SITE_PERL%%/Algorithm/Networksort.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Networksort/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Networksort
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm

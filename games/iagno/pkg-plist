@@ -425,6 +425,12 @@ share/iagno/sounds/flip-piece.ogg
 share/iagno/sounds/gameover.ogg
 share/iagno/themes/black_and_white.svg
 share/iagno/themes/sun_and_star.svg
+share/icons/HighContrast/16x16/apps/iagno.png
+share/icons/HighContrast/22x22/apps/iagno.png
+share/icons/HighContrast/24x24/apps/iagno.png
+share/icons/HighContrast/256x256/apps/iagno.png
+share/icons/HighContrast/32x32/apps/iagno.png
+share/icons/HighContrast/48x48/apps/iagno.png
 share/icons/hicolor/16x16/apps/iagno.png
 share/icons/hicolor/22x22/apps/iagno.png
 share/icons/hicolor/24x24/apps/iagno.png
@@ -520,105 +526,3 @@ share/locale/xh/LC_MESSAGES/iagno.mo
 share/locale/zh_CN/LC_MESSAGES/iagno.mo
 share/locale/zh_HK/LC_MESSAGES/iagno.mo
 share/locale/zh_TW/LC_MESSAGES/iagno.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrmtry share/iagno/themes
-@dirrmtry share/iagno/sounds
-@dirrmtry share/iagno
-@dirrm share/help/zh_CN/iagno/figures
-@dirrm share/help/zh_CN/iagno
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sv/iagno/figures
-@dirrm share/help/sv/iagno
-@dirrmtry share/help/sv
-@dirrm share/help/sr@latin/iagno/figures
-@dirrm share/help/sr@latin/iagno
-@dirrmtry share/help/sr@latin
-@dirrm share/help/sr/iagno/figures
-@dirrm share/help/sr/iagno
-@dirrmtry share/help/sr
-@dirrm share/help/sl/iagno/figures
-@dirrm share/help/sl/iagno
-@dirrmtry share/help/sl
-@dirrm share/help/pt_BR/iagno/figures
-@dirrm share/help/pt_BR/iagno
-@dirrmtry share/help/pt_BR
-@dirrm share/help/oc/iagno/figures
-@dirrm share/help/oc/iagno
-@dirrmtry share/help/oc
-@dirrm share/help/it/iagno/figures
-@dirrm share/help/it/iagno
-@dirrmtry share/help/it
-@dirrm share/help/hu/iagno/figures
-@dirrm share/help/hu/iagno
-@dirrmtry share/help/hu
-@dirrm share/help/gl/iagno/figures
-@dirrm share/help/gl/iagno
-@dirrmtry share/help/gl
-@dirrm share/help/fr/iagno/figures
-@dirrm share/help/fr/iagno
-@dirrmtry share/help/fr
-@dirrm share/help/eu/iagno/figures
-@dirrm share/help/eu/iagno
-@dirrmtry share/help/eu
-@dirrm share/help/es/iagno/figures
-@dirrm share/help/es/iagno
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/iagno/figures
-@dirrm share/help/en_GB/iagno
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/iagno/figures
-@dirrm share/help/el/iagno
-@dirrmtry share/help/el
-@dirrm share/help/de/iagno/figures
-@dirrm share/help/de/iagno
-@dirrmtry share/help/de
-@dirrm share/help/cs/iagno/figures
-@dirrm share/help/cs/iagno
-@dirrmtry share/help/cs
-@dirrm share/help/ca/iagno/figures
-@dirrm share/help/ca/iagno
-@dirrmtry share/help/ca
-@dirrm share/help/C/iagno/figures
-@dirrm share/help/C/iagno
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/appdata

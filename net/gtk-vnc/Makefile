@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net/gtk-vnc/Makefile 19919 2014-09-26 09:26:39Z kwm $
+#   $MCom: ports/trunk/net/gtk-vnc/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gtk-vnc
 PORTVERSION=	0.4.4
@@ -14,12 +14,12 @@ COMMENT=	VNC viewer widget for GTK+
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
-USE_GNOME=	gnomehier gtk30 introspection:build
+USE_GNOME=	gtk30 introspection:build
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

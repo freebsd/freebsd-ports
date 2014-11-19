@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/x11/gnome-shell-extensions/Makefile 19666 2014-05-14 10:45:59Z gusi $
+#    $MCom: ports/trunk/x11/gnome-shell-extensions/Makefile 20004 2014-10-20 14:11:09Z gusi $
 
 PORTNAME=	gnome-shell-extensions
-PORTVERSION=	3.12.2
+PORTVERSION=	3.14.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 RUN_DEPENDS=	gnome-shell>=3.12.0:${PORTSDIR}/x11/gnome-shell
 
 USES=		gettext gmake pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomedesktop3 intltool
+USE_GNOME=	glib20 gnomedesktop3 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-extensions=all
@@ -24,6 +24,7 @@ GLIB_SCHEMAS=	org.gnome.shell.extensions.auto-move-windows.gschema.xml \
 		org.gnome.shell.extensions.classic-overrides.gschema.xml \
 		org.gnome.shell.extensions.example.gschema.xml \
 		org.gnome.shell.extensions.native-window-placement.gschema.xml \
+		org.gnome.shell.extensions.screenshot-window-sizer.gschema.xml \
 		org.gnome.shell.extensions.user-theme.gschema.xml \
 		org.gnome.shell.extensions.window-list.gschema.xml
 

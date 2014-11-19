@@ -37,6 +37,3 @@ libdata/pkgconfig/zbar.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-@dirrmtry share/zbar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/zbar

@@ -76,14 +76,3 @@ share/gtk-doc/html/libdbusmenu-gtk/up.png
 share/vala/vapi/Dbusmenu-%%VERSION%%.vapi
 %%GTK2%%share/vala/vapi/DbusmenuGtk-%%VERSION%%.vapi
 %%GTK3%%share/vala/vapi/DbusmenuGtk3-%%VERSION%%.vapi
-@dirrm share/gtk-doc/html/libdbusmenu-gtk
-@dirrm share/gtk-doc/html/libdbusmenu-glib
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm %%DOCSDIR%%
-%%GTK2%%@dirrm include/libdbusmenu-gtk-%%VERSION%%/libdbusmenu-gtk
-%%GTK2%%@dirrm include/libdbusmenu-gtk-%%VERSION%%
-%%GTK3%%@dirrm include/libdbusmenu-gtk3-%%VERSION%%/libdbusmenu-gtk
-%%GTK3%%@dirrm include/libdbusmenu-gtk3-%%VERSION%%
-@dirrm include/libdbusmenu-glib-%%VERSION%%/libdbusmenu-glib
-@dirrm include/libdbusmenu-glib-%%VERSION%%

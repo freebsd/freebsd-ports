@@ -1,12 +1,10 @@
 bin/pmd
-%%DATADIR%%/asm-5.0.2.jar
-%%DATADIR%%/commons-io-2.2.jar
-%%DATADIR%%/commons-lang3-3.1.jar
-%%DATADIR%%/dom4j-1.6.1.jar
+%%DATADIR%%/asm-5.0.3.jar
+%%DATADIR%%/commons-io-2.4.jar
+%%DATADIR%%/commons-lang3-3.3.2.jar
 %%DATADIR%%/javacc-5.0.jar
-%%DATADIR%%/jaxen-1.1.1.jar
-%%DATADIR%%/jcommander-1.27.jar
-%%DATADIR%%/jdom-1.0.jar
+%%DATADIR%%/jaxen-1.1.4.jar
+%%DATADIR%%/jcommander-1.35.jar
 %%DATADIR%%/pmd-core-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-cpp-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-cs-%%PORTVERSION%%.jar
@@ -20,11 +18,9 @@ bin/pmd
 %%DATADIR%%/pmd-ruby-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-vm-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-xml-%%PORTVERSION%%.jar
-%%DATADIR%%/rhino-1.7R3.jar
+%%DATADIR%%/rhino-1.7R4.jar
 %%DATADIR%%/saxon-9.1.0.8-dom.jar
 %%DATADIR%%/saxon-9.1.0.8.jar
-%%DATADIR%%/xercesImpl-2.9.1.jar
-%%DATADIR%%/xml-apis-1.3.02.jar
-%%DATADIR%%/xmlParserAPIs-2.6.2.jar
-%%DATADIR%%/xom-1.0.jar
+%%DATADIR%%/xercesImpl-2.11.0.jar
+%%DATADIR%%/xml-apis-1.4.01.jar
 @dir %%DATADIR%%

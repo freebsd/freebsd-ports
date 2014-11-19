@@ -40,10 +40,5 @@
 %%RUBY_SITELIBDIR%%/xmltree.rb
 %%RUBY_SITELIBDIR%%/xmltreebuilder.rb
 %%RUBY_SITELIBDIR%%/xmltreevisitor.rb
-@dirrm %%RUBY_SITELIBDIR%%/xml/dom2
-@dirrm %%RUBY_SITELIBDIR%%/xml/dom
-@dirrm %%RUBY_SITELIBDIR%%/xml
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

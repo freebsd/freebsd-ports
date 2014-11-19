@@ -126,7 +126,6 @@
     SUBDIR += js_of_ocaml
     SUBDIR += jython
     SUBDIR += kawa
-    SUBDIR += kroc
     SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += libhx
@@ -323,7 +322,6 @@
     SUBDIR += v8
     SUBDIR += v8-devel
     SUBDIR += vala
-    SUBDIR += vala-vapigen
     SUBDIR += visualworks
     SUBDIR += whitespace
     SUBDIR += x10

@@ -15,8 +15,3 @@ GNUstep/Local/Applications/SlideShow.app/Resources/rotateRight.tiff
 GNUstep/Local/Applications/SlideShow.app/SlideShow
 GNUstep/Local/Applications/SlideShow.app/stamp.make
 GNUstep/Local/Tools/SlideShow
-@dirrm GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm
-@dirrm GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm
-@dirrm GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/SlideShow.app/Resources
-@dirrm GNUstep/Local/Applications/SlideShow.app

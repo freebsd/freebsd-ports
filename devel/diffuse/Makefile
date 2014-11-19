@@ -14,8 +14,7 @@ LICENSE_COMB=	dual
 
 NO_BUILD=	yes
 
-USES=		tar:bzip2
-USE_PYTHON=	2
+USES=		python:2 tar:bzip2
 USE_GNOME=	pygtk2
 
 CONFLICTS_INSTALL=	tinker-[0-9]*

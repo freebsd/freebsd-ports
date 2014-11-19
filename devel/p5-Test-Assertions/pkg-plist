@@ -5,7 +5,3 @@
 %%PERL5_MAN3%%/Test::Assertions.3.gz
 %%PERL5_MAN3%%/Test::Assertions::Manual.3.gz
 %%PERL5_MAN3%%/Test::Assertions::TestScript.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Assertions
-@dirrmtry %%SITE_PERL%%/Test/Assertions
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

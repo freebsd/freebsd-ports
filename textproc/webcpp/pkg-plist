@@ -73,5 +73,3 @@ share/webcpp/whatis.Scs2
 share/webcpp/whitenblue.Scs2
 share/webcpp/whitengrey.Scs2
 share/webcpp/winter.Scs2
-%%PORTDOCS%%@dirrm share/doc/webcpp
-@dirrm share/webcpp

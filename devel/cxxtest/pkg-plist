@@ -58,6 +58,3 @@ include/cxxtest/YesNoRunner.h
 %%EXAMPLESDIR%%/file_printer.tpl
 %%EXAMPLESDIR%%/only.tpl
 %%EXAMPLESDIR%%/yes_no_runner.cpp
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/cxxtest

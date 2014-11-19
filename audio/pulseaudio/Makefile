@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/audio/pulseaudio/Makefile 19894 2014-09-20 07:55:02Z kwm $
+#   $MCom: ports/trunk/audio/pulseaudio/Makefile 20031 2014-11-02 21:47:55Z kwm $
 #
 # !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
 # PORTREVISION bumps of depending ports.
@@ -25,11 +25,10 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 
-USE_GNOME=	glib20 gnomehier intltool
+USE_GNOME=	glib20 intltool
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		execinfo gettext gmake libtool pathfix \
-		pkgconfig tar:xz
+USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -46,6 +45,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-caps \
 		--disable-udev \
 		--disable-gtk3 \
+		--disable-systemd \
 		--disable-neon-opt \
 		--disable-lirc # untested
 
@@ -83,7 +83,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pulse
 .for ii in default.pa daemon.conf client.conf system.pa
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
-		${STAGEDIR}${PREFIX}/etc/pulse/${ii}-dist
+		${STAGEDIR}${PREFIX}/etc/pulse/${ii}.sample
 .endfor
 
 .include <bsd.port.post.mk>

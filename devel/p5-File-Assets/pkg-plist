@@ -23,12 +23,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Assets/.packlist
 %%PERL5_MAN3%%/File::Assets.3.gz
 %%PERL5_MAN3%%/File::Assets::Asset.3.gz
-@dirrmtry %%SITE_PERL%%/File/Assets/Filter/Minifier/CSS
-@dirrmtry %%SITE_PERL%%/File/Assets/Filter/Minifier/JavaScript
-@dirrmtry %%SITE_PERL%%/File/Assets/Filter/Minifier
-@dirrmtry %%SITE_PERL%%/File/Assets/Filter
-@dirrmtry %%SITE_PERL%%/File/Assets/Asset
-@dirrmtry %%SITE_PERL%%/File/Assets
-@dirrmtry %%SITE_PERL%%/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Assets
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

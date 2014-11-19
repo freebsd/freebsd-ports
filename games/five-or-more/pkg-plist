@@ -628,6 +628,12 @@ share/help/zh_CN/five-or-more/scores.page
 share/help/zh_CN/five-or-more/shortcuts.page
 share/help/zh_CN/five-or-more/strategy.page
 share/help/zh_CN/five-or-more/translate.page
+share/icons/HighContrast/16x16/apps/five-or-more.png
+share/icons/HighContrast/22x22/apps/five-or-more.png
+share/icons/HighContrast/24x24/apps/five-or-more.png
+share/icons/HighContrast/256x256/apps/five-or-more.png
+share/icons/HighContrast/32x32/apps/five-or-more.png
+share/icons/HighContrast/48x48/apps/five-or-more.png
 share/icons/hicolor/16x16/apps/five-or-more.png
 share/icons/hicolor/22x22/apps/five-or-more.png
 share/icons/hicolor/24x24/apps/five-or-more.png
@@ -721,111 +727,3 @@ share/locale/xh/LC_MESSAGES/five-or-more.mo
 share/locale/zh_CN/LC_MESSAGES/five-or-more.mo
 share/locale/zh_HK/LC_MESSAGES/five-or-more.mo
 share/locale/zh_TW/LC_MESSAGES/five-or-more.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_CN/five-or-more/figures
-@dirrm share/help/zh_CN/five-or-more
-@dirrmtry share/help/zh_CN
-@dirrm share/help/tr/five-or-more/figures
-@dirrm share/help/tr/five-or-more
-@dirrmtry share/help/tr
-@dirrm share/help/sv/five-or-more/figures
-@dirrm share/help/sv/five-or-more
-@dirrmtry share/help/sv
-@dirrm share/help/sr@latin/five-or-more/figures
-@dirrm share/help/sr@latin/five-or-more
-@dirrmtry share/help/sr@latin
-@dirrm share/help/sr/five-or-more/figures
-@dirrm share/help/sr/five-or-more
-@dirrmtry share/help/sr
-@dirrm share/help/sl/five-or-more/figures
-@dirrm share/help/sl/five-or-more
-@dirrmtry share/help/sl
-@dirrm share/help/ru/five-or-more/figures
-@dirrm share/help/ru/five-or-more
-@dirrmtry share/help/ru
-@dirrm share/help/pt_BR/five-or-more/figures
-@dirrm share/help/pt_BR/five-or-more
-@dirrmtry share/help/pt_BR
-@dirrm share/help/pl/five-or-more/figures
-@dirrm share/help/pl/five-or-more
-@dirrmtry share/help/pl
-@dirrm share/help/oc/five-or-more/figures
-@dirrm share/help/oc/five-or-more
-@dirrmtry share/help/oc
-@dirrm share/help/it/five-or-more/figures
-@dirrm share/help/it/five-or-more
-@dirrmtry share/help/it
-@dirrm share/help/hu/five-or-more/figures
-@dirrm share/help/hu/five-or-more
-@dirrmtry share/help/hu
-@dirrm share/help/gl/five-or-more/figures
-@dirrm share/help/gl/five-or-more
-@dirrmtry share/help/gl
-@dirrm share/help/fr/five-or-more/figures
-@dirrm share/help/fr/five-or-more
-@dirrmtry share/help/fr
-@dirrm share/help/eu/five-or-more/figures
-@dirrm share/help/eu/five-or-more
-@dirrmtry share/help/eu
-@dirrm share/help/es/five-or-more/figures
-@dirrm share/help/es/five-or-more
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/five-or-more/figures
-@dirrm share/help/en_GB/five-or-more
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/five-or-more/figures
-@dirrm share/help/el/five-or-more
-@dirrmtry share/help/el
-@dirrm share/help/de/five-or-more/figures
-@dirrm share/help/de/five-or-more
-@dirrmtry share/help/de
-@dirrm share/help/cs/five-or-more/figures
-@dirrm share/help/cs/five-or-more
-@dirrmtry share/help/cs
-@dirrm share/help/ca/five-or-more/figures
-@dirrm share/help/ca/five-or-more
-@dirrmtry share/help/ca
-@dirrm share/help/C/five-or-more/figures
-@dirrm share/help/C/five-or-more
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/five-or-more/themes
-@dirrmtry share/five-or-more
-@dirrmtry share/appdata

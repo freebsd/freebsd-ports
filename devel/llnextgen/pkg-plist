@@ -8,4 +8,3 @@ man/man1/LLnextgen.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/calculator.g
 %%PORTDOCS%%%%DOCSDIR%%/threadsafe.g
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

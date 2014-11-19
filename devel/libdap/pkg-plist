@@ -114,5 +114,3 @@ libdata/pkgconfig/libdapserver.pc
 man/man1/dap-config.1.gz
 man/man1/getdap.1.gz
 share/aclocal/libdap.m4
-@dirrm include/libdap/test
-@dirrm include/libdap

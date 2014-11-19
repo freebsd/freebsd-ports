@@ -28,11 +28,8 @@ CONFIG_FILES=	abuse.txt.in dest.blk mix.cfg news.hlp pubring.mix type1.hlp \
 		allpingers.txt
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 .include <bsd.port.options.mk>
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000000
 BROKEN=		Does not compile
@@ -49,7 +46,7 @@ pre-install:
 	${GZCAT} ${DISTDIR}/allpingers.txt.gz >${WRKSRC}/Mix/conf/allpingers.txt
 	${REINPLACE_CMD} -e "s|/etc/mixmaster|${ETCDIR}|g" ${WRKDIR}/mixmaster-update.pl
 	${REINPLACE_CMD} -e "s|/usr/bin|${PREFIX}/bin|g" ${WRKDIR}/mixmaster-update.pl
-	${MKDIR} ${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Mix/Src/mixmaster ${STAGEDIR}${PREFIX}/bin/mixmaster
@@ -67,4 +64,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/Mix/conf/${FILE} ${STAGEDIR}${ETCDIR}/${FILE}.sample
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

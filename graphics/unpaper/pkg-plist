@@ -32,5 +32,3 @@ bin/unpaper
 %%PORTDOCS%%%%DOCSDIR%%/img/x-click-but04.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/unpaper.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

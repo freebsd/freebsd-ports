@@ -3,4 +3,3 @@ man/manl/idea.l.gz
 %%PORTDOCS%%%%DOCSDIR%%/idea_cmd.txt
 %%PORTDOCS%%%%DOCSDIR%%/byte_ord.ps
 %%EXAMPLESDIR%%/Examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

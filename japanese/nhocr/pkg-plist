@@ -12,6 +12,3 @@ sbin/makevec
 %%DATADIR%%/cctable-ascii+
 %%DATADIR%%/cctable-jpn
 share/ocropus/scripts/rec-nhocr.lua
-@dirrmtry share/ocropus/scripts
-@dirrmtry share/ocropus
-@dirrm %%DATADIR%%

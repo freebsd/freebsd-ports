@@ -3,12 +3,12 @@
 
 PORTNAME=	freedoko
 PORTVERSION=	0.7.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/FreeDoko%20source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Doppelkopf
 
 LICENSE=	GPLv2

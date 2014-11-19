@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freecol
-PORTVERSION=	0.10.7
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,20 +19,22 @@ SUB_FILES=	freecol
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-PLIST_FILES=	bin/freecol
+PLIST_FILES=	bin/freecol \
+		${DESKTOPDIR:S,^${PREFIX}/,,}/freecol.desktop
 PORTDATA=	*
 PORTDOCS=	*
-
-DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;StrategyGame;" true
 
 post-extract:
 	@${MV} ${WRKDIR}/freecol ${WRKSRC}
 
+post-patch:
+	@${REINPLACE_CMD} "s|Icon=|Icon=${DATADIR}/|" ${WRKSRC}/freecol.desktop
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/freecol ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/freecol.desktop ${STAGEDIR}${DESKTOPDIR}/
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/FreeCol.jar ${STAGEDIR}${DATADIR}/
-	@${INSTALL_DATA} ${WRKSRC}/freecol.xpm ${STAGEDIR}${DATADIR}/
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}/)
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} jars ${STAGEDIR}${DATADIR}/)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

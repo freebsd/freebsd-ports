@@ -186,8 +186,3 @@ man/man4/cckd.4.gz
 %%DATADIR%%/rawstape.jcl
 %%DATADIR%%/tapeconv.jcl
 %%DATADIR%%/zzsacard.bin
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/include
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/hercules

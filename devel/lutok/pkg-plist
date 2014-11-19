@@ -221,15 +221,11 @@ libdata/pkgconfig/lutok.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_defs.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/search
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bindings.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/raii.cpp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%TEST%%tests/lutok/Kyuafile
 %%TEST%%tests/lutok/c_gate_test
 %%TEST%%tests/lutok/debug_test
@@ -238,5 +234,3 @@ libdata/pkgconfig/lutok.pc
 %%TEST%%tests/lutok/operations_test
 %%TEST%%tests/lutok/stack_cleaner_test
 %%TEST%%tests/lutok/state_test
-%%TEST%%@dirrm tests/lutok
-@dirrm include/lutok

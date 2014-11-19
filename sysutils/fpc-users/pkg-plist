@@ -8,8 +8,3 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/libpgrp.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/libppwd.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/libpusers.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc

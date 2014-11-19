@@ -11,7 +11,7 @@ DISTNAME=	dx-${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
-LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick	\
+LIB_DEPENDS=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick	\
 		libtiff.so:${PORTSDIR}/graphics/tiff		\
 		libcdf.so:${PORTSDIR}/science/cdf
 

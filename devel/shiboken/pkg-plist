@@ -99,11 +99,3 @@ libdata/pkgconfig/shiboken.pc
 %%PORTDOCS%%%%DOCSDIR%%/typeconverters.html
 %%PORTDOCS%%%%DOCSDIR%%/typesystemvariables.html
 %%PORTDOCS%%%%DOCSDIR%%/wordsofadvice.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/cmake/Shiboken-%%PORTVERSION%%
-@dirrm lib/cmake
-@dirrm include/shiboken

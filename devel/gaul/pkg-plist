@@ -40,4 +40,3 @@ lib/libnn_util.a
 lib/libnn_util.so
 lib/libnn_util.so.0
 lib/libnn_util.so.0.0.49
-@dirrm include/gaul

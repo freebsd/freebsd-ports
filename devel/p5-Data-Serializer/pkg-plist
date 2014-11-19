@@ -18,14 +18,6 @@
 %%SITE_PERL%%/Data/Serializer/XML/Simple.pm
 %%SITE_PERL%%/Data/Serializer/YAML.pm
 %%SITE_PERL%%/Data/Serializer/YAML/Syck.pm
-@dirrm %%SITE_PERL%%/Data/Serializer/YAML
-@dirrm %%SITE_PERL%%/Data/Serializer/XML
-@dirrm %%SITE_PERL%%/Data/Serializer/PHP
-@dirrm %%SITE_PERL%%/Data/Serializer/JSON
-@dirrm %%SITE_PERL%%/Data/Serializer/Data
-@dirrm %%SITE_PERL%%/Data/Serializer/Convert
-@dirrm %%SITE_PERL%%/Data/Serializer/Config
-@dirrm %%SITE_PERL%%/Data/Serializer
 %%PERL5_MAN3%%/Data::Serializer.3.gz
 %%PERL5_MAN3%%/Data::Serializer::Bencode.3.gz
 %%PERL5_MAN3%%/Data::Serializer::Config::General.3.gz
@@ -46,4 +38,3 @@
 %%PERL5_MAN3%%/Data::Serializer::XML::Simple.3.gz
 %%PERL5_MAN3%%/Data::Serializer::YAML.3.gz
 %%PERL5_MAN3%%/Data::Serializer::YAML::Syck.3.gz
-@dirrmtry %%SITE_PERL%%/Data

@@ -233,23 +233,3 @@ share/icons/hicolor/48x48/proofgeneral.png
 share/mime-info/proofgeneral.keys
 share/mime-info/proofgeneral.mime
 share/pixmaps/proofgeneral.png
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry %%EMACS_SITE_LISPDIR%%/site-start.d
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/phox
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/pgshell
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/lib
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/lego
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/isar
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/images
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/hol98
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/generic
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/coq
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/contrib/mmm
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/contrib
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/ccc
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/acl2
-@dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral

@@ -66,14 +66,13 @@ if [ "$2" = "POST-INSTALL" ]; then
 	done
 
         cmp ${DAEMONDIR}/main.cf ${ETCDIR}/main.cf >/dev/null 2>&1 \
-	 && POSTARG="set-permissions" \
 	 || POSTARG="upgrade-package"
 
 	/bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
 	 daemon_directory=${DAEMONDIR} \
 	 html_directory=${READMEDIR} \
 	 readme_directory=${READMEDIR} \
-	 ${POSTARG}
+	 set-permissions ${POSTARG}
 fi
 
 if [ "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" -a -f "${MC}" ]; then

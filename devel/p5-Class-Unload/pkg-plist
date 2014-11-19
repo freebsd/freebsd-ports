@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Class::Unload.3.gz
 %%SITE_PERL%%/Class/Unload.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Unload/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Unload
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

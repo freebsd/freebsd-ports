@@ -36,7 +36,3 @@
 %%PERL5_MAN3%%/IO::All::Socket.3.gz
 %%PERL5_MAN3%%/IO::All::String.3.gz
 %%PERL5_MAN3%%/IO::All::Temp.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrm %%SITE_PERL%%/IO/All
-@dirrmtry %%SITE_PERL%%/IO

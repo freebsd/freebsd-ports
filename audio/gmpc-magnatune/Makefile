@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Magnatune plugin let's you preview music from Magnatune
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \

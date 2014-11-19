@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owfs
-PORTVERSION=	2.9p5
+PORTVERSION=	2.9p8
 CATEGORIES=	comms
 MASTER_SITES=	SF/owfs/owfs/${PORTVERSION}
 
@@ -18,6 +18,7 @@ USE_AUTOTOOLS=	libtoolize aclocal autoheader autoconf automake
 AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	On
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
 .include "Makefile.options"
 
@@ -30,6 +31,7 @@ CONFIGURE_ARGS+=	--disable-w1
 CONFIGURE_ARGS+=	--disable-parport
 
 OWDEBUG_CONFIGURE_ENABLE=	debug
+OWMUTEXDEBUG_CONFIGURE_ENABLE=	mutexdebug
 OWSHELL_CONFIGURE_ENABLE=	owshell
 OWNET_CONFIGURE_ENABLE=		ownet
 
@@ -39,13 +41,13 @@ OWFTPD_CONFIGURE_ENABLE=	owftpd
 OWSERVER_CONFIGURE_ENABLE=	owserver
 
 OWTAP_CONFIGURE_ENABLE=		owtap
-OWTAP_USE=			tk=yes tk_wrapper=yes
+OWTAP_USES=			tk:wrapper
 
 OWMALLOC_CONFIGURE_ENABLE=	owmalloc
 OWTRAFFIC_CONFIGURE_ENABLE=	owtraffic
 
 OWMON_CONFIGURE_ENABLE=		owmon
-OWMON_USE=			tk=yes tk_wrapper=yes
+OWMON_USES=			tk:wrapper
 
 OWCAPI_CONFIGURE_ENABLE=	owcapi
 
@@ -111,17 +113,6 @@ CONFIGURE_ARGS+=		--disable-swig
 CONFIGURE_ARGS+=		--enable-owtcl --with-tcl=${TCL_LIBDIR}
 .endif
 
-# These __version__ fixes should be unnecessary on next release
-post-patch:
-	@${REINPLACE_CMD} \
-		-e "s/^\(__version__ = '[[:digit:]]\.[[:digit:]]\).*/\1'/" \
-		${WRKSRC}/module/swig/python/unittest/*.py \
-		${WRKSRC}/module/ownet/python/ownet/__init__.py
-	@${REINPLACE_CMD} -e "s/\(__version__ =\).*/\1 '1.9'/" \
-		${WRKSRC}/module/ownet/python/ownet/connection.py
-	@${REINPLACE_CMD} -e "s/\(__version__ = .*\) [+].*/\1/" \
-		${WRKSRC}/module/swig/python/ow/__init__.py
-
 # This takes a few seconds so give the user some notice
 pre-configure:
 	${MKDIR} ${WRKSRC}/m4
@@ -137,7 +128,7 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MOWPERL}
 	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/perl5/site_perl/5.16/mach/auto/OW/OW.so
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/OW/OW.so
 .endif
 
 .include <bsd.port.mk>

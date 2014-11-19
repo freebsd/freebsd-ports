@@ -203,11 +203,3 @@ lib/ROX-Lib2/tests/python/testtasks.pyo
 lib/ROX-Lib2/tests/python/testxxmlrpc.py
 lib/ROX-Lib2/tests/python/testxxmlrpc.pyc
 lib/ROX-Lib2/tests/python/testxxmlrpc.pyo
-@dirrm lib/ROX-Lib2/tests/python
-@dirrm lib/ROX-Lib2/tests
-@dirrm lib/ROX-Lib2/python/rox
-@dirrm lib/ROX-Lib2/python
-@dirrm lib/ROX-Lib2/Messages
-@dirrm lib/ROX-Lib2/Help/python
-@dirrm lib/ROX-Lib2/Help
-@dirrm lib/ROX-Lib2

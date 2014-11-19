@@ -883,38 +883,3 @@ share/locale/fr/LC_MESSAGES/ncs.mo
 %%DATADIR%%/users/rayt/usray3.f90
 %%DATADIR%%/users/rayt/usray4.f90
 %%DATADIR%%/users/rayt/usray5.f90
-@dirrm %%DATADIR%%/users/rayt
-@dirrm %%DATADIR%%/users/pprt
-@dirrm %%DATADIR%%/users/lagr
-@dirrm %%DATADIR%%/users/fuel
-@dirrm %%DATADIR%%/users/elec
-@dirrm %%DATADIR%%/users/ctwr
-@dirrm %%DATADIR%%/users/cplv
-@dirrm %%DATADIR%%/users/cogz
-@dirrm %%DATADIR%%/users/cfbl
-@dirrm %%DATADIR%%/users/base
-@dirrm %%DATADIR%%/users/atmo
-@dirrm %%DATADIR%%/users
-@dirrm %%DATADIR%%/data/thch
-@dirrm %%DATADIR%%/data/mati
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/3-stratified_junction/mesh
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/3-stratified_junction/case5
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/3-stratified_junction
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/2-full_domain/mesh
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/2-full_domain/case4
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/2-full_domain/case3
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/2-full_domain/case2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/2-full_domain
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/1-simple_junction/mesh
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/1-simple_junction/case1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/1-simple_junction
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/ncs/Pages
-@dirrm %%PYTHON_SITELIBDIR%%/ncs/Base/icons/SplashScreen
-@dirrm %%PYTHON_SITELIBDIR%%/ncs/Base/icons
-@dirrm %%PYTHON_SITELIBDIR%%/ncs/Base
-@dirrm %%PYTHON_SITELIBDIR%%/ncs
-@dirrmtry etc/bash_completion.d

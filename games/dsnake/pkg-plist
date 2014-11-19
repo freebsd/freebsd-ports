@@ -12,6 +12,3 @@ bin/dsnake
 %%DATADIR%%/midi/fall.mid
 %%DATADIR%%/midi/partille.mid
 %%DATADIR%%/midi/The_Jayomon_Beat.mid
-@dirrm %%DATADIR%%/midi
-@dirrm %%DATADIR%%/data
-@dirrmtry %%DATADIR%%

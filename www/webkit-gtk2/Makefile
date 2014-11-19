@@ -1,22 +1,18 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/www/webkit-gtk2/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/www/webkit-gtk2/Makefile 20029 2014-11-02 20:54:47Z kwm $
 
 PORTNAME=	webkit
 PORTVERSION=	1.8.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An opensource browser engine
-
-# Use the port>=0 form or the system versions of flex and gperf 
-# will be detected instead, breaking the build.
+COMMENT=	Opensource browser engine
 
 BUILD_DEPENDS=	flex>=0:${PORTSDIR}/textproc/flex \
-		gperf>=0:${PORTSDIR}/devel/gperf \
 		gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libicutu.so:${PORTSDIR}/devel/icu \
@@ -25,7 +21,7 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 
 USE_GSTREAMER=	yes
 USE_XORG=	xt
-USES=		bison gettext gmake libtool perl5 pkgconfig tar:xz
+USES=		bison gettext gmake gperf libtool perl5 pkgconfig tar:xz
 USE_GNOME=	gtk20 libxslt introspection:build
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes
@@ -90,14 +86,9 @@ post-patch:
 		${WRKSRC}/Source/WebCore/dom/make_names.pl \
 		${WRKSRC}/Source/WebCore/css/make-css-file-arrays.pl \
 		${WRKSRC}/Source/WebCore/bindings/scripts/IDLParser.pm
-	@${REINPLACE_CMD} -e 's|"gperf|"${LOCALBASE}/bin/gperf|g' \
+	@${REINPLACE_CMD} -e 's|"gperf|"${GPERF}|g' \
 		${WRKSRC}/Source/WebCore/css/makevalues.pl \
 		${WRKSRC}/Source/WebCore/css/makeprop.pl \
 		${WRKSRC}/Source/WebCore/make-hash-tools.pl
-
-post-install:
-# Add work around for epiphany 2.x gobject-introspection build.
-	${LN} -sf ${PREFIX}/libdata/pkgconfig/webkit-1.0.pc \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig/webkitgtk-1.0.pc
 
 .include <bsd.port.post.mk>

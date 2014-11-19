@@ -1,0 +1,3 @@
+#!/bin/sh
+
+%%GNUSTEP_SYSTEM_TOOLS%%/openapp oolite "$@"

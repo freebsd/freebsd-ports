@@ -24,6 +24,3 @@ libdata/pkgconfig/clutter-box2d-0.10.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-@dirrmtry %%DOCSDIR%%
-@dirrm include/clutter-1.0/clutter-box2d
-@dirrmtry include/clutter-1.0

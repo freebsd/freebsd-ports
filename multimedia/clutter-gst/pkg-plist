@@ -32,6 +32,3 @@ libdata/pkgconfig/clutter-gst-2.0.pc
 %%DOCSDIR%%/up-insensitive.png
 %%DOCSDIR%%/up.png
 share/gir-1.0/ClutterGst-2.0.gir
-@dirrmtry %%DOCSDIR%%
-@dirrm include/clutter-gst-2.0/clutter-gst
-@dirrm include/clutter-gst-2.0

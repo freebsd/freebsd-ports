@@ -1,10 +1,9 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/graphics/clutter-gtk3/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#    $MCom: ports/trunk/graphics/clutter-gtk3/Makefile 19945 2014-10-15 05:41:04Z gusi $
 
 PORTNAME=	clutter-gtk
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3

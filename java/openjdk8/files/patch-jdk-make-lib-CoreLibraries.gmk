@@ -1,14 +1,15 @@
---- jdk/make/lib/CoreLibraries.gmk
-+++ jdk/make/lib/CoreLibraries.gmk
-@@ -496,10 +496,11 @@
+--- jdk/make/lib/CoreLibraries.gmk.orig	2014-11-08 19:58:00.000000000 -0800
++++ jdk/make/lib/CoreLibraries.gmk	2014-11-08 19:58:38.000000000 -0800
+@@ -516,11 +516,11 @@
      CFLAGS := $(CFLAGS_JDKLIB) \
          -I$(JDK_TOPDIR)/src/share/npt \
          -I$(JDK_TOPDIR)/src/$(OPENJDK_TARGET_OS_API_DIR)/npt, \
-+    CFLAGS_bsd := %%ICONV_CPPFLAGS%%, \
+-    CFLAGS_bsd := -DLIBICONV_PLUG, \
++    CFLAGS_bsd := -DLIBICONV_PLUG %%ICONV_CPPFLAGS%%, \
      MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libnpt/mapfile-vers, \
      LDFLAGS := $(LDFLAGS_JDKLIB) \
          $(call SET_SHARED_LIBRARY_ORIGIN), \
--    LDFLAGS_bsd := -liconv, \
+-    LDFLAGS_bsd := , \
 +    LDFLAGS_bsd := %%ICONV_LDFLAGS%%, \
      LDFLAGS_macosx := -liconv, \
      LDFLAGS_SUFFIX_windows := -export:nptInitialize -export:nptTerminate, \

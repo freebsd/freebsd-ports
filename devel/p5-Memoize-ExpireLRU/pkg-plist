@@ -4,8 +4,3 @@
 %%SITE_PERL%%/auto/Memoize/ExpireLRU/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize/ExpireLRU/.packlist
 %%PERL5_MAN3%%/Memoize::ExpireLRU.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize/ExpireLRU
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize
-@dirrm %%SITE_PERL%%/auto/Memoize/ExpireLRU
-@dirrmtry %%SITE_PERL%%/auto/Memoize
-@dirrmtry %%SITE_PERL%%/Memoize

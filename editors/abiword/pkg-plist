@@ -353,13 +353,3 @@ share/abiword-%%ABIVERSION%%/xsltml/tokens.xsl
 share/applications/abiword.desktop
 share/icons/abiword_48.png
 share/mime-info/abiword.keys
-@dirrm share/abiword-%%ABIVERSION%%/xsltml
-@dirrm share/abiword-%%ABIVERSION%%/ui
-@dirrm share/abiword-%%ABIVERSION%%/templates
-@dirrm share/abiword-%%ABIVERSION%%/strings
-%%CLIPART%%@dirrm share/abiword-%%ABIVERSION%%/clipart
-%%COLLAB%%@dirrm share/abiword-%%ABIVERSION%%/certs
-@dirrm share/abiword-%%ABIVERSION%%
-@dirrm lib/abiword-%%ABIVERSION%%/plugins
-@dirrm lib/abiword-%%ABIVERSION%%
-@dirrm include/abiword-%%ABIVERSION%%

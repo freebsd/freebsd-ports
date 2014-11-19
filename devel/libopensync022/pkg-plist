@@ -53,8 +53,3 @@ lib/opensync/formats/xmldoc.so
 libdata/pkgconfig/opensync-1.0.pc
 libdata/pkgconfig/osengine-1.0.pc
 libexec/osplugin
-@dirrmtry lib/opensync/formats
-@dirrmtry lib/opensync
-@dirrmtry include/opensync-1.0/osengine
-@dirrmtry include/opensync-1.0/opensync
-@dirrmtry include/opensync-1.0

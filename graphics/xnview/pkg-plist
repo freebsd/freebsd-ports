@@ -8,4 +8,3 @@ man/man1/xnview.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ReadMe.txt
 %%PORTDOCS%%%%DOCSDIR%%/Usage.txt
 %%PORTDOCS%%%%DOCSDIR%%/WhatsNew.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

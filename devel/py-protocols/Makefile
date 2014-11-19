@@ -13,9 +13,8 @@ DISTNAME=	PyProtocols-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python module extending the PEP 246 adapt() function
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${RM} -rf ${WRKSRC}/setuptools

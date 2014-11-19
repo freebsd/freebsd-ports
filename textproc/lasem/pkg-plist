@@ -40,5 +40,3 @@ share/locale/de/LC_MESSAGES/lasem-0.4.mo
 share/locale/fr/LC_MESSAGES/lasem-0.4.mo
 share/locale/pl/LC_MESSAGES/lasem-0.4.mo
 share/locale/sv/LC_MESSAGES/lasem-0.4.mo
-@dirrm include/lasem-0.4
-@dirrm %%DOCSDIR%%

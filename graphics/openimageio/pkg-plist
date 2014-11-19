@@ -57,5 +57,3 @@ lib/libOpenImageIO_Util.so.1.4.12
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/openimageio.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/OpenImageIO

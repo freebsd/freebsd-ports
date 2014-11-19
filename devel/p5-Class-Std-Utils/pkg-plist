@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Class/Std/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Std/Utils/.packlist
 %%PERL5_MAN3%%/Class::Std::Utils.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Std/Utils
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Std
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Std
-@dirrmtry %%SITE_PERL%%/Class

@@ -51,22 +51,3 @@ share/guile/site/texinfo/reflection.scm
 share/guile/site/texinfo/serialize.scm
 share/guile/site/text/parse-lalr.scm
 share/guile/site/unit-test.scm
-@dirrm share/guile/site/text
-@dirrm share/guile/site/texinfo
-@dirrm share/guile/site/term
-@dirrm share/guile/site/sxml/upstream
-@dirrm share/guile/site/sxml/ssax
-@dirrm share/guile/site/sxml
-@dirrm share/guile/site/string
-@dirrm share/guile/site/search
-@dirrm share/guile/site/scheme
-@dirrm share/guile/site/os
-@dirrm share/guile/site/math
-@dirrm share/guile/site/logging
-@dirrm share/guile/site/io
-@dirrm share/guile/site/graph
-@dirrm share/guile/site/debugging
-@dirrm share/guile/site/container
-@dirrm share/guile/site/config
-@dirrm share/guile/site/compat
-@dirrm share/guile/site

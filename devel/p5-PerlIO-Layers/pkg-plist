@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/Layers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Layers/Layers.so
 %%PERL5_MAN3%%/PerlIO::Layers.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Layers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO

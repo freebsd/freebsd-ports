@@ -47,17 +47,3 @@ GNUstep/Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/objects.
 GNUstep/Local/Applications/Popup.app/Resources/Wrong.wav
 GNUstep/Local/Applications/Popup.app/stamp.make
 GNUstep/Local/Tools/Popup
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/Thai.lproj
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/SpellingQuiz.gorm
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Preferences.gorm
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Editor.gorm
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/ChoiceQuiz.gorm
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardQuiz.gorm
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardInspector.gorm
-@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Popup.app/Resources
-@dirrm GNUstep/Local/Applications/Popup.app

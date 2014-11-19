@@ -42,8 +42,8 @@ post-install:
 .for file in ${EPICFILES}
 	@${FIND} ${WRKSRC}/${file} -type f \
 	  | ${SED} -ne 's,^${WRKSRC},${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -d ${WRKSRC}/${file} -type d \
-	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -d ${WRKSRC}/${file} -type d -empty \
+	  | ${SED} -ne 's,^${WRKSRC},@dir ${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 .endfor
 
 .include <bsd.port.mk>

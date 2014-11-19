@@ -421,10 +421,3 @@ bin/specTcl
 %%DATADIR%%/lib/trace.tcl
 %%DATADIR%%/lib/undo.tk
 %%DATADIR%%/license.terms
-@dirrm %%DATADIR%%/lib/images
-@dirrm %%DATADIR%%/lib/help
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/demo/images
-@dirrm %%DATADIR%%/demo
-@dirrm %%DATADIR%%

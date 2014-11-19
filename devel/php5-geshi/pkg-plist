@@ -299,13 +299,3 @@ lib/php/geshi/geshi/zxbasic.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/langcheck.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/langwiz.php
-@dirrmtry lib/php/geshi/geshi
-@dirrmtry lib/php/geshi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/__filesource
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/geshi/core
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/geshi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/media/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/media
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

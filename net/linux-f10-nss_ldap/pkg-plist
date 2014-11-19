@@ -5,4 +5,3 @@ usr/lib/libnss_ldap.so.2
 %%PAM%%usr/share/man/man5/pam_ldap.5.gz
 %%PAM%%lib/security/pam_ldap.so
 usr/share/man/man5/nss_ldap.5.gz
-%%PAM%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/pam.d

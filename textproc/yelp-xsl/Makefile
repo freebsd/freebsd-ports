@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/textproc/yelp-xsl/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/textproc/yelp-xsl/Makefile 19967 2014-10-16 06:45:29Z gusi $
 
 PORTNAME=	yelp-xsl
-PORTVERSION=	3.12.0
+PORTVERSION=	3.14.0
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,6 +17,6 @@ USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack libxml2 libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

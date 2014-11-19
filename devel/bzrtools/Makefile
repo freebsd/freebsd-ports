@@ -18,9 +18,9 @@ OPTIONS_DEFINE=	GRAPHVIZ RSYNC
 GRAPHVIZ_DESC=	graphviz for graph-ancestry
 RSYNC_DESC=	rsync for rspush
 
-WRKSRC=	${WRKDIR}/bzrtools
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+WRKSRC=		${WRKDIR}/bzrtools
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	BzrTools
 
 GRAPHVIZ_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz

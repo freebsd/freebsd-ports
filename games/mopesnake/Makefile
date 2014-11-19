@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-pc-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-pc-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic snake game in which you attempt to eat all the pain
 
 LICENSE=	GPLv2 # or later

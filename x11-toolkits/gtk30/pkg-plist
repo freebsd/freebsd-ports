@@ -1,7 +1,9 @@
+bin/gtk-encode-symbolic-svg
 bin/gtk-launch
 bin/gtk-query-immodules-3.0
 bin/gtk3-demo
 bin/gtk3-demo-application
+bin/gtk3-icon-browser
 bin/gtk3-widget-factory
 etc/gtk-3.0/im-multipress.conf
 include/gail-3.0/libgail-util/gail-util.h
@@ -10,7 +12,6 @@ include/gail-3.0/libgail-util/gailtextutil.h
 include/gtk-3.0/gdk/gdk.h
 include/gtk-3.0/gdk/gdkapplaunchcontext.h
 include/gtk-3.0/gdk/gdkcairo.h
-include/gtk-3.0/gdk/gdkcolor.h
 include/gtk-3.0/gdk/gdkconfig.h
 include/gtk-3.0/gdk/gdkcursor.h
 include/gtk-3.0/gdk/gdkdevice.h
@@ -109,9 +110,12 @@ include/gtk-3.0/gtk/a11y/gtktoplevelaccessible.h
 include/gtk-3.0/gtk/a11y/gtktreeviewaccessible.h
 include/gtk-3.0/gtk/a11y/gtkwidgetaccessible.h
 include/gtk-3.0/gtk/a11y/gtkwindowaccessible.h
+include/gtk-3.0/gdk/deprecated/gdkcolor.h
 include/gtk-3.0/gtk/deprecated/gtkaction.h
 include/gtk-3.0/gtk/deprecated/gtkactiongroup.h
 include/gtk-3.0/gtk/deprecated/gtkactivatable.h
+include/gtk-3.0/gtk/deprecated/gtkalignment.h
+include/gtk-3.0/gtk/deprecated/gtkarrow.h
 include/gtk-3.0/gtk/deprecated/gtkcolorsel.h
 include/gtk-3.0/gtk/deprecated/gtkcolorseldialog.h
 include/gtk-3.0/gtk/deprecated/gtkfontsel.h
@@ -126,14 +130,18 @@ include/gtk-3.0/gtk/deprecated/gtkhseparator.h
 include/gtk-3.0/gtk/deprecated/gtkhsv.h
 include/gtk-3.0/gtk/deprecated/gtkiconfactory.h
 include/gtk-3.0/gtk/deprecated/gtkimagemenuitem.h
+include/gtk-3.0/gtk/deprecated/gtkmisc.h
+include/gtk-3.0/gtk/deprecated/gtknumerableicon.h
 include/gtk-3.0/gtk/deprecated/gtkradioaction.h
 include/gtk-3.0/gtk/deprecated/gtkrc.h
 include/gtk-3.0/gtk/deprecated/gtkrecentaction.h
 include/gtk-3.0/gtk/deprecated/gtkstock.h
 include/gtk-3.0/gtk/deprecated/gtkstyle.h
+include/gtk-3.0/gtk/deprecated/gtkstatusicon.h
 include/gtk-3.0/gtk/deprecated/gtksymboliccolor.h
 include/gtk-3.0/gtk/deprecated/gtktable.h
 include/gtk-3.0/gtk/deprecated/gtktearoffmenuitem.h
+include/gtk-3.0/gtk/deprecated/gtkthemingengine.h
 include/gtk-3.0/gtk/deprecated/gtktoggleaction.h
 include/gtk-3.0/gtk/deprecated/gtkuimanager.h
 include/gtk-3.0/gtk/deprecated/gtkvbbox.h
@@ -152,14 +160,12 @@ include/gtk-3.0/gtk/gtkaccessible.h
 include/gtk-3.0/gtk/gtkactionable.h
 include/gtk-3.0/gtk/gtkactionbar.h
 include/gtk-3.0/gtk/gtkadjustment.h
-include/gtk-3.0/gtk/gtkalignment.h
 include/gtk-3.0/gtk/gtkappchooser.h
 include/gtk-3.0/gtk/gtkappchooserbutton.h
 include/gtk-3.0/gtk/gtkappchooserdialog.h
 include/gtk-3.0/gtk/gtkappchooserwidget.h
 include/gtk-3.0/gtk/gtkapplication.h
 include/gtk-3.0/gtk/gtkapplicationwindow.h
-include/gtk-3.0/gtk/gtkarrow.h
 include/gtk-3.0/gtk/gtkaspectframe.h
 include/gtk-3.0/gtk/gtkassistant.h
 include/gtk-3.0/gtk/gtkbbox.h
@@ -209,6 +215,7 @@ include/gtk-3.0/gtk/gtkentrybuffer.h
 include/gtk-3.0/gtk/gtkentrycompletion.h
 include/gtk-3.0/gtk/gtkenums.h
 include/gtk-3.0/gtk/gtkeventbox.h
+include/gtk-3.0/gtk/gtkeventcontroller.h
 include/gtk-3.0/gtk/gtkexpander.h
 include/gtk-3.0/gtk/gtkfilechooser.h
 include/gtk-3.0/gtk/gtkfilechooserbutton.h
@@ -222,6 +229,15 @@ include/gtk-3.0/gtk/gtkfontchooser.h
 include/gtk-3.0/gtk/gtkfontchooserdialog.h
 include/gtk-3.0/gtk/gtkfontchooserwidget.h
 include/gtk-3.0/gtk/gtkframe.h
+include/gtk-3.0/gtk/gtkgesture.h
+include/gtk-3.0/gtk/gtkgesturedrag.h
+include/gtk-3.0/gtk/gtkgesturelongpress.h
+include/gtk-3.0/gtk/gtkgesturemultipress.h
+include/gtk-3.0/gtk/gtkgesturepan.h
+include/gtk-3.0/gtk/gtkgesturerotate.h
+include/gtk-3.0/gtk/gtkgesturesingle.h
+include/gtk-3.0/gtk/gtkgestureswipe.h
+include/gtk-3.0/gtk/gtkgesturezoom.h
 include/gtk-3.0/gtk/gtkgrid.h
 include/gtk-3.0/gtk/gtkheaderbar.h
 include/gtk-3.0/gtk/gtkicontheme.h
@@ -249,11 +265,9 @@ include/gtk-3.0/gtk/gtkmenuitem.h
 include/gtk-3.0/gtk/gtkmenushell.h
 include/gtk-3.0/gtk/gtkmenutoolbutton.h
 include/gtk-3.0/gtk/gtkmessagedialog.h
-include/gtk-3.0/gtk/gtkmisc.h
 include/gtk-3.0/gtk/gtkmodules.h
 include/gtk-3.0/gtk/gtkmountoperation.h
 include/gtk-3.0/gtk/gtknotebook.h
-include/gtk-3.0/gtk/gtknumerableicon.h
 include/gtk-3.0/gtk/gtkoffscreenwindow.h
 include/gtk-3.0/gtk/gtkorientable.h
 include/gtk-3.0/gtk/gtkoverlay.h
@@ -298,7 +312,6 @@ include/gtk-3.0/gtk/gtksocket.h
 include/gtk-3.0/gtk/gtkspinbutton.h
 include/gtk-3.0/gtk/gtkspinner.h
 include/gtk-3.0/gtk/gtkstatusbar.h
-include/gtk-3.0/gtk/gtkstatusicon.h
 include/gtk-3.0/gtk/gtkstack.h
 include/gtk-3.0/gtk/gtkstackswitcher.h
 include/gtk-3.0/gtk/gtkstylecontext.h
@@ -317,7 +330,6 @@ include/gtk-3.0/gtk/gtktextmark.h
 include/gtk-3.0/gtk/gtktexttag.h
 include/gtk-3.0/gtk/gtktexttagtable.h
 include/gtk-3.0/gtk/gtktextview.h
-include/gtk-3.0/gtk/gtkthemingengine.h
 include/gtk-3.0/gtk/gtktogglebutton.h
 include/gtk-3.0/gtk/gtktoggletoolbutton.h
 include/gtk-3.0/gtk/gtktoolbar.h
@@ -344,6 +356,7 @@ include/gtk-3.0/gtk/gtkvolumebutton.h
 include/gtk-3.0/gtk/gtkwidget.h
 include/gtk-3.0/gtk/gtkwidgetpath.h
 include/gtk-3.0/gtk/gtkwindow.h
+include/gtk-3.0/gtk/gtkwindowgroup.h
 include/gtk-3.0/gtk/gtkx.h
 include/gtk-3.0/unix-print/gtk/gtkpagesetupunixdialog.h
 include/gtk-3.0/unix-print/gtk/gtkprinter.h
@@ -386,6 +399,7 @@ libdata/pkgconfig/gtk+-x11-3.0.pc
 man/man1/gtk-query-immodules-3.0.1.gz
 share/aclocal/gtk-3.0.m4
 share/applications/gtk3-demo.desktop
+share/applications/gtk3-icon-browser.desktop
 share/applications/gtk3-widget-factory.desktop
 share/gir-1.0/Gdk-3.0.gir
 share/gir-1.0/GdkX11-3.0.gir
@@ -635,114 +649,13 @@ share/themes/Default/gtk-3.0/gtk-keys.css
 share/themes/Emacs/gtk-3.0/gtk-keys.css
 @exec /usr/bin/find %%LOCALBASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
 @unexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
-@dirrm share/themes/Emacs/gtk-3.0
-@dirrmtry share/themes/Emacs
-@dirrm share/themes/Default/gtk-3.0
-@dirrmtry share/themes/Default
-@dirrmtry share/themes
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/tt/LC_MESSAGES
-@dirrmtry share/locale/tt
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr@ije/LC_MESSAGES
-@dirrmtry share/locale/sr@ije
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/my/LC_MESSAGES
-@dirrmtry share/locale/my
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mi/LC_MESSAGES
-@dirrmtry share/locale/mi
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/lg/LC_MESSAGES
-@dirrmtry share/locale/lg
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/kg/LC_MESSAGES
-@dirrmtry share/locale/kg
-@dirrmtry share/locale/io/LC_MESSAGES
-@dirrmtry share/locale/io
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/gd/LC_MESSAGES
-@dirrmtry share/locale/gd
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/crh/LC_MESSAGES
-@dirrmtry share/locale/crh
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/az_IR/LC_MESSAGES
-@dirrmtry share/locale/az_IR
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/ang/LC_MESSAGES
-@dirrmtry share/locale/ang
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrm share/gtk-3.0
 @exec %D/bin/gtk-query-immodules-3.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
 @rmtry lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
 @exec /bin/mkdir -p %D/lib/gtk-3.0/modules
 @exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/engines
 @exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/loaders
-@dirrm lib/gtk-3.0/modules
-@dirrm lib/gtk-3.0/%%GTK3_VERSION%%/printbackends
-@dirrm lib/gtk-3.0/%%GTK3_VERSION%%/loaders
-@dirrm lib/gtk-3.0/%%GTK3_VERSION%%/immodules
-@dirrm lib/gtk-3.0/%%GTK3_VERSION%%/engines
-@dirrm lib/gtk-3.0/%%GTK3_VERSION%%
-@dirrm lib/gtk-3.0
-@dirrm include/gtk-3.0/unix-print/gtk
-@dirrm include/gtk-3.0/unix-print
-@dirrm include/gtk-3.0/gtk/deprecated
-@dirrm include/gtk-3.0/gtk/a11y
-@dirrm include/gtk-3.0/gtk
-@dirrm include/gtk-3.0/gdk/x11
-@dirrm include/gtk-3.0/gdk
-@dirrm include/gtk-3.0
-@dirrm include/gail-3.0/libgail-util
-@dirrm include/gail-3.0
-@dirrm etc/gtk-3.0
+@dir lib/gtk-3.0
+@dir lib/gtk-3.0/%%GTK3_VERSION%%
+@dir lib/gtk-3.0/%%GTK3_VERSION%%/engines
+@dir lib/gtk-3.0/%%GTK3_VERSION%%/loaders
+@dir lib/gtk-3.0/modules

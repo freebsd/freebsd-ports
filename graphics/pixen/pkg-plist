@@ -150,30 +150,3 @@ GNUstep/Local/Applications/Pixen.app/Resources/zoomOut.png
 GNUstep/Local/Applications/Pixen.app/Resources/zoomfit.png
 GNUstep/Local/Applications/Pixen.app/stamp.make
 GNUstep/Local/Tools/Pixen
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXToolProperties.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXToolPalette.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXRectangleToolPropertiesView.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXPreview.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXPreferences.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXPencilToolPropertiesView.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXNamePrompt.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXMonotoneBackgroundConfigurator.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXLayerDetailsView.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXLayerController.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXInfoPanel.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXImageSizePrompt.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXImageBackgroundConfigurator.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXGridSettingsPrompter.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXGradientBuilder.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXEllipseToolPropertiesView.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXDuotoneBackgroundConfigurator.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXDocument.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXDiscoverPixen.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXColorPalette.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXBlankPropertiesView.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXBackgroundController.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/PXAbout.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj/MainMenu.gorm
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Pixen.app/Resources
-@dirrm GNUstep/Local/Applications/Pixen.app

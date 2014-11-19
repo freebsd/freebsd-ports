@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME 2 password generator
 
 USE_GNOME=	pygnome2
-USE_PYTHON=	yes
+USES=		python
 
 do-build:
 	@cd ${WRKSRC} && ${SED} -e 's|/usr/bin/python|${PYTHON_CMD}|g ; \

@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/net-im/libtelepathy/Makefile 19913 2014-09-25 22:29:26Z kwm $
+#    $MCom: ports/trunk/net-im/libtelepathy/Makefile 19913 2014-09-25 22:29:26Z kwm $
 
 PORTNAME=	libtelepathy
 PORTVERSION=	0.3.3

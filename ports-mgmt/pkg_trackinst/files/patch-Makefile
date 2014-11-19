@@ -12,7 +12,7 @@ $FreeBSD$
 -	${PYTHON_CMD} setup.py install -c -O1 --prefix=${PREFIX}
 +	${INSTALL} ${STRIP} \
 +		${SHLIB_NAME} ${STAGEDIR}${SHLIBDIR}
-+	${PYTHON_CMD} setup.py install -c -O1 --prefix=${STAGEDIR}${PREFIX}
++	${PYTHON_CMD} setup.py install -c -O1 --prefix=${PREFIX} --root=${STAGEDIR}
  
  sdist:
  	${PYTHON_CMD} setup.py sdist

@@ -1,8 +1,3 @@
 %%SITE_PERL%%/MooseX/Object/Pluggable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Object/Pluggable/.packlist
 %%PERL5_MAN3%%/MooseX::Object::Pluggable.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Object/Pluggable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Object
-@dirrmtry %%SITE_PERL%%/MooseX

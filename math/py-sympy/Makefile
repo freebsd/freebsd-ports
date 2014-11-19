@@ -13,9 +13,8 @@ COMMENT=	Python Library For Symbolic Mathematics
 
 LICENSE=	BSD
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	PYGLET
 PYGLET_DESC=	Enable plotting support

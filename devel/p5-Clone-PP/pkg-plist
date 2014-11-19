@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Clone::PP.3.gz
 %%SITE_PERL%%/Clone/PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/PP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/PP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone
-@dirrmtry %%SITE_PERL%%/Clone

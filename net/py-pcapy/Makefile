@@ -16,9 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 FETCH_BEFORE_ARGS=-o ${DISTFILES}
-USES=		dos2unix
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		dos2unix python
+USE_PYTHON=	distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

@@ -1,5 +1,0 @@
-include/amd_elmer.h
-include/umfpack_elmer.h
-lib/libamd_elmer.a
-lib/libamdf77_elmer.a
-lib/libumfpack_elmer.a

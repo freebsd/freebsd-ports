@@ -12,6 +12,3 @@
 %%SITE_PERL%%/MooX/Options/Manual/MooXCmd.pod
 %%SITE_PERL%%/MooX/Options/Manual/NamespaceClean.pod
 %%SITE_PERL%%/MooX/Options/Role.pm
-@dirrmtry %%SITE_PERL%%/MooX/Options/Descriptive
-@dirrmtry %%SITE_PERL%%/MooX/Options/Manual
-@dirrmtry %%SITE_PERL%%/MooX/Options

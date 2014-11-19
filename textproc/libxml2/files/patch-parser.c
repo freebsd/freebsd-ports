@@ -1,38 +1,45 @@
-CVE-2014-0191
-
-From 9cd1c3cfbd32655d60572c0a413e017260c854df Mon Sep 17 00:00:00 2001
+From 72a46a519ce7326d9a00f0b6a7f2a8e958cd1675 Mon Sep 17 00:00:00 2001
 From: Daniel Veillard <veillard@redhat.com>
-Date: Tue, 22 Apr 2014 15:30:56 +0800
-Subject: Do not fetch external parameter entities
+Date: Thu, 23 Oct 2014 11:35:36 +0800
+Subject: Fix missing entities after CVE-2014-3660 fix
 
-Unless explicitely asked for when validating or replacing entities
-with their value. Problem pointed out by Daniel Berrange <berrange@redhat.com>
+For https://bugzilla.gnome.org/show_bug.cgi?id=738805
 
-diff --git a/parser.c b/parser.c
-index 9347ac9..c0dea05 100644
---- parser.c
-+++ parser.c
-@@ -2598,6 +2598,20 @@ xmlParserHandlePEReference(xmlParserCtxtPtr ctxt) {
- 		    xmlCharEncoding enc;
- 
- 		    /*
-+		     * Note: external parsed entities will not be loaded, it is
-+		     * not required for a non-validating parser, unless the
-+		     * option of validating, or substituting entities were
-+		     * given. Doing so is far more secure as the parser will
-+		     * only process data coming from the document entity by
-+		     * default.
-+		     */
-+                    if ((entity->etype == XML_EXTERNAL_PARAMETER_ENTITY) &&
-+		        ((ctxt->options & XML_PARSE_NOENT) == 0) &&
-+			((ctxt->options & XML_PARSE_DTDVALID) == 0) &&
-+			(ctxt->validate == 0))
-+			return;
-+
-+		    /*
- 		     * handle the extra spaces added before and after
- 		     * c.f. http://www.w3.org/TR/REC-xml#as-PE
- 		     * this is done independently.
--- 
-cgit v0.10.1
+The fix for CVE-2014-3660 introduced a regression in some case
+where entity substitution is required and the entity is used
+first in anotther entity referenced from an attribute value
 
+---
+
+From 0e6659ec960734b0b01aad196d4bdb4a3800b493 Mon Sep 17 00:00:00 2001
+From: Lubomir Rintel <lkundrak@v3.sk>
+Date: Thu, 16 Oct 2014 19:10:59 +0200
+Subject: [PATCH] Revert "Missing initialization for the catalog module"
+
+It's not correct to always load the default catalog.
+https://bugzilla.redhat.com/show_bug.cgi?id=1153753
+
+This reverts commit 054c716ea1bf001544127a4ab4f4346d1b9947e7.
+
+--- parser.c.orig	2014-10-29 14:28:43.755327730 +0100
++++ parser.c	2014-10-29 14:28:55.287325756 +0100
+@@ -7235,7 +7235,8 @@
+      * far more secure as the parser will only process data coming from
+      * the document entity by default.
+      */
+-    if ((ent->checked == 0) &&
++    if (((ent->checked == 0) ||
++         ((ent->children == NULL) && (ctxt->options & XML_PARSE_NOENT))) &&
+         ((ent->etype != XML_EXTERNAL_GENERAL_PARSED_ENTITY) ||
+          (ctxt->options & (XML_PARSE_NOENT | XML_PARSE_DTDVALID)))) {
+ 	unsigned long oldnbent = ctxt->nbentities;
+@@ -14830,9 +14831,6 @@
+ #ifdef LIBXML_XPATH_ENABLED
+ 	xmlXPathInit();
+ #endif
+-#ifdef LIBXML_CATALOG_ENABLED
+-        xmlInitializeCatalog();
+-#endif
+ 	xmlParserInitialized = 1;
+ #ifdef LIBXML_THREAD_ENABLED
+     }

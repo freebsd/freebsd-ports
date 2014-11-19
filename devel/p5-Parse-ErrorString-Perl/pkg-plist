@@ -7,9 +7,3 @@ man/man1/check_perldiag.1.gz
 %%PERL5_MAN3%%/Parse::ErrorString::Perl.3.gz
 %%PERL5_MAN3%%/Parse::ErrorString::Perl::ErrorItem.3.gz
 %%PERL5_MAN3%%/Parse::ErrorString::Perl::StackItem.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ErrorString/Perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ErrorString
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
-@dirrmtry %%SITE_PERL%%/Parse/ErrorString/Perl
-@dirrmtry %%SITE_PERL%%/Parse/ErrorString
-@dirrmtry %%SITE_PERL%%/Parse

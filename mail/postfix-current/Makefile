@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	2.12-20140709
-PORTREVISION=	2
+DISTVERSION=	2.12-20141106
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -33,15 +33,12 @@ USES=		perl5 shebangfix cpe
 SHEBANG_LANG=	perl
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
-CPE_VENDOR=	postfix
-CPE_PRODUCT=	postfix
-
 USE_SUBMAKE=	yes
 USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
-OPTIONS_DEFINE=	PCRE SASL2 TLS BDB MYSQL PGSQL SQLITE OPENLDAP LDAP_SASL \
-		CDB NIS VDA TEST SPF INST_BASE LMDB DOCS
+OPTIONS_DEFINE=	BDB CDB DOCS EAI INST_BASE LDAP_SASL LMDB MYSQL NIS \
+		OPENLDAP PCRE PGSQL SASL2 SPF SQLITE TEST TLS VDA
 
 OPTIONS_RADIO=		RG1 RG2
 OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
@@ -49,6 +46,7 @@ OPTIONS_RADIO_RG2=	SASLKRB5 SASLKMIT
 OPTIONS_DEFAULT=	PCRE
 
 PCRE_DESC=	Perl Compatible Regular Expressions
+EAI_DESC=	Email Address Internationalization (EAI, RFC 6531..6533)
 SASL2_DESC=	Cyrus SASLv2 (Simple Auth. and Sec. Layer)
 DOVECOT_DESC=	Dovecot 1.x SASL authentication method
 DOVECOT2_DESC=	Dovecot 2.x SASL authentication method
@@ -107,6 +105,7 @@ PLIST_SUB+=	BASE="@comment " BMAN=""
 PLIST_SUB+=	PFETC=${ETCDIR}
 
 .if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
 READMEDIR=	${DOCSDIR}
 .else
 READMEDIR=	no
@@ -134,7 +133,15 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-Wmissing-prototypes -Wformat -Wno-comment
 
 # Default requirement for postfix rc script
-_REQUIRE=	LOGIN cleanvar
+_REQUIRE=		LOGIN cleanvar
+
+.if ${PORT_OPTIONS:MEAI}
+LIB_DEPENDS+=		libicuuc.so:${PORTSDIR}/devel/icu
+POSTFIX_CCARGS+=	-DHAS_EAI -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -licuuc
+.else
+POSTFIX_CCARGS+=	-DNO_EAI
+.endif
 
 .if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
@@ -161,10 +168,7 @@ _REQUIRE+=		dovecot
 .endif
 
 .if ${PORT_OPTIONS:MSASLKRB5}
-.if ${OSVERSION} >= 800037
-KRB5_EXTR=		-lhx509
-.endif
-POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
+POSTFIX_AUXLIBS+=	-lkrb5 -lhx509 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if ${PORT_OPTIONS:MSASLKMIT}
@@ -220,7 +224,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
 
 .if ${PORT_OPTIONS:MOPENLDAP}
 USE_OPENLDAP=		yes
-.if ${PORT_OPTIONS:MOPENLDAP_VER}
+.if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
@@ -326,7 +330,7 @@ pre-install:
 .endif
 
 do-install:
-	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=/tmp \
+	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=${WRKDIR} \
 		config_directory=${ETCDIR} \
 		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \

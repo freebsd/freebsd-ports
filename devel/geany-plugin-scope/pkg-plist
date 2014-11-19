@@ -33,8 +33,3 @@ share/geany-plugins/scope/StepOver.png
 share/geany-plugins/scope/StepOver22.png
 share/geany-plugins/scope/StepOver24.png
 share/geany-plugins/scope/scope.glade
-@dirrm share/geany-plugins/scope
-@dirrmtry share/geany-plugins
-@dirrm %%DOCSDIR%%/scope/html
-@dirrm %%DOCSDIR%%/scope
-@dirrm %%DOCSDIR%%

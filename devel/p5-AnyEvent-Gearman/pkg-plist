@@ -19,9 +19,3 @@
 %%PERL5_MAN3%%/AnyEvent::Gearman::Types.3.gz
 %%PERL5_MAN3%%/AnyEvent::Gearman::Worker.3.gz
 %%PERL5_MAN3%%/AnyEvent::Gearman::Worker::Connection.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Gearman
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrm %%SITE_PERL%%/AnyEvent/Gearman/Worker
-@dirrm %%SITE_PERL%%/AnyEvent/Gearman/Client
-@dirrm %%SITE_PERL%%/AnyEvent/Gearman
-@dirrmtry %%SITE_PERL%%/AnyEvent

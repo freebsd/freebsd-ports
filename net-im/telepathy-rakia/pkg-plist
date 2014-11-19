@@ -12,7 +12,3 @@ libexec/telepathy-rakia
 man/man8/telepathy-rakia.8.gz
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.sofiasip.service
 share/telepathy/managers/rakia.manager
-@dirrmtry share/telepathy/managers
-@dirrmtry share/telepathy
-@dirrm include/telepathy-rakia-0.7/rakia
-@dirrm include/telepathy-rakia-0.7

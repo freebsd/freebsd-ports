@@ -11,4 +11,3 @@ share/icons/hicolor/48x48/apps/snappy.png
 %%DATADIR%%/subtitles-active.svg
 %%DATADIR%%/subtitles-inactive.svg
 %%DATADIR%%/video-stream-toggle.png
-@dirrm %%DATADIR%%

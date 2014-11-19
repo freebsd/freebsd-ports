@@ -42,11 +42,3 @@ lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/plugin_fr.properties
 lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/pmd-eclipse.jar
 lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/toc.xml
 lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/welcome.xml
-@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl/fr
-@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl
-@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/lib
-@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons
-@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%
-@dirrm lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/lib
-@dirrm lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%
-@dirrm lib/eclipse/features/%%PLUGIN_PMD_DIR%%

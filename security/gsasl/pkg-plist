@@ -181,5 +181,3 @@ man/man3/gsasl_stringprep_trace.3.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gsasl.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

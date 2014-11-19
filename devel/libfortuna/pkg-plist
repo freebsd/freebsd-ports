@@ -9,4 +9,3 @@ include/fortuna/sha1.h
 include/fortuna/sha2.h
 lib/libfortuna.a
 lib/libfortuna.so
-@dirrm include/fortuna

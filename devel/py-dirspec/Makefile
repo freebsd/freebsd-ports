@@ -14,8 +14,7 @@ COMMENT=	XDG Base and User directories implementation
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

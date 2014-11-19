@@ -19,12 +19,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/transaction.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/utils.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/utils_test.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/github.com/go-sql-driver
-@dirrmtry %%GO_SRCDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%/github.com/go-sql-driver
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

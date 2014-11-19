@@ -49,21 +49,9 @@ sbin/ods-signerd
 %%DATADIR%%/zonefetch.rng
 %%DATADIR%%/zonelist.rnc
 %%DATADIR%%/zonelist.rng
-@dirrm var/opendnssec/unsigned
-@dirrm var/opendnssec/tmp
-@dirrm var/opendnssec/signed
-@dirrm var/opendnssec/signconf
-@dirrm var/opendnssec
-@dirrm %%DATADIR%%
-%%AUDITOR%%@dirrm lib/opendnssec/kasp_auditor
-%%AUDITOR%%@dirrm lib/opendnssec
-@dirrm %%ETCDIR%%
 @exec mkdir -p %D/var/run/opendnssec
 @exec mkdir -p %D/var/opendnssec/unsigned
 @exec mkdir -p %D/var/opendnssec/tmp
 @exec mkdir -p %D/var/opendnssec/signed
 @exec mkdir -p %D/var/opendnssec/signconf
 @exec chown -R %%USER%%:%%GROUP%% %D/var/opendnssec
-@dirrmtry var/run/opendnssec
-@dirrmtry var/run
-@dirrmtry var

@@ -3,6 +3,7 @@
 
     COMMENT = X11 themes
 
+    SUBDIR += adwaita-icon-theme
     SUBDIR += audacious-skins
     SUBDIR += beastie
     SUBDIR += claws-mail-themes
@@ -49,6 +50,7 @@
     SUBDIR += gnome-icons-slick
     SUBDIR += gnome-icons-snow-apple
     SUBDIR += gnome-icons-stylish
+    SUBDIR += gnome-icon-theme-symbolic
     SUBDIR += gnome-icons-ximian-south
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras

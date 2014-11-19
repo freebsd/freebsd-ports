@@ -122,4 +122,3 @@ man/man1/xfmconcat.1.gz
 man/man1/xfmflip.1.gz
 man/man1/xfminvert.1.gz
 man/man3/ParseArgv.3.gz
-@dirrm include/volume_io

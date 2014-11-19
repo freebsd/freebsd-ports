@@ -31,10 +31,3 @@ share/gtk-doc/html/telepathy-logger/style.css
 share/gtk-doc/html/telepathy-logger/telepathy-logger.devhelp2
 share/gtk-doc/html/telepathy-logger/up.png
 share/telepathy/clients/Logger.client
-@dirrmtry share/telepathy/clients
-@dirrmtry share/telepathy
-@dirrm share/gtk-doc/html/telepathy-logger
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/telepathy-logger-0.2/telepathy-logger
-@dirrm include/telepathy-logger-0.2

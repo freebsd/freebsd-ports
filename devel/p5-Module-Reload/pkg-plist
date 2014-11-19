@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Module::Reload.3.gz
 %%SITE_PERL%%/Module/Reload.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Reload/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Reload
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module

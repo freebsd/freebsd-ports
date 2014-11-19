@@ -5,12 +5,6 @@ share/appdata/gnome-chess.appdata.xml
 share/applications/gnome-chess.desktop
 share/gnome-chess/gnome-chess.ui
 share/gnome-chess/menu.ui
-share/gnome-chess/pieces/3d/bishop.3ds
-share/gnome-chess/pieces/3d/king.3ds
-share/gnome-chess/pieces/3d/knight.3ds
-share/gnome-chess/pieces/3d/pawn.3ds
-share/gnome-chess/pieces/3d/queen.3ds
-share/gnome-chess/pieces/3d/rook.3ds
 share/gnome-chess/pieces/fancy/blackBishop.svg
 share/gnome-chess/pieces/fancy/blackKing.svg
 share/gnome-chess/pieces/fancy/blackKnight.svg
@@ -37,8 +31,6 @@ share/gnome-chess/pieces/simple/whiteQueen.svg
 share/gnome-chess/pieces/simple/whiteRook.svg
 share/gnome-chess/preferences.ui
 share/gnome-chess/promotion-type-selector.ui
-share/gnome-chess/textures/board.png
-share/gnome-chess/textures/piece.png
 share/help/C/gnome-chess/index.docbook
 share/help/C/gnome-chess/legal.xml
 share/help/C/gnome-chess/figures/game-3-12.png
@@ -144,6 +136,7 @@ share/help/zh_CN/gnome-chess/legal.xml
 share/help/zh_CN/gnome-chess/figures/game-3-12.png
 share/help/zh_CN/gnome-chess/figures/preferences-appearance-3-12.png
 share/help/zh_CN/gnome-chess/figures/preferences-game-3-12.png
+share/icons/HighContrast/scalable/apps/gnome-chess.svg
 share/icons/hicolor/16x16/apps/gnome-chess.png
 share/icons/hicolor/22x22/apps/gnome-chess.png
 share/icons/hicolor/24x24/apps/gnome-chess.png
@@ -238,115 +231,3 @@ share/locale/xh/LC_MESSAGES/gnome-chess.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-chess.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-chess.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-chess.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_CN/gnome-chess/figures
-@dirrm share/help/zh_CN/gnome-chess
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sv/gnome-chess/figures
-@dirrm share/help/sv/gnome-chess
-@dirrmtry share/help/sv
-@dirrm share/help/sr@latin/gnome-chess/figures
-@dirrm share/help/sr@latin
-@dirrmtry share/help/sr@latin/gnome-chess
-@dirrm share/help/sr/gnome-chess/figures
-@dirrm share/help/sr/gnome-chess
-@dirrmtry share/help/sr
-@dirrm share/help/sl/gnome-chess/figures
-@dirrm share/help/sl/gnome-chess
-@dirrmtry share/help/sl
-@dirrm share/help/ru/gnome-chess/figures
-@dirrm share/help/ru/gnome-chess
-@dirrmtry share/help/ru
-@dirrm share/help/pt_BR/gnome-chess/figures
-@dirrm share/help/pt_BR/gnome-chess
-@dirrmtry share/help/pt_BR
-@dirrm share/help/oc/gnome-chess/figures
-@dirrm share/help/oc/gnome-chess
-@dirrmtry share/help/oc
-@dirrm share/help/ko/gnome-chess/figures
-@dirrm share/help/ko/gnome-chess
-@dirrmtry share/help/ko
-@dirrm share/help/ja/gnome-chess/figures
-@dirrm share/help/ja/gnome-chess
-@dirrmtry share/help/ja
-@dirrm share/help/gl/gnome-chess/figures
-@dirrm share/help/gl/gnome-chess
-@dirrmtry share/help/gl
-@dirrm share/help/fr/gnome-chess/figures
-@dirrm share/help/fr/gnome-chess
-@dirrmtry share/help/fr
-@dirrm share/help/eu/gnome-chess/figures
-@dirrm share/help/eu/gnome-chess
-@dirrmtry share/help/eu
-@dirrm share/help/es/gnome-chess/figures
-@dirrm share/help/es/gnome-chess
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/gnome-chess/figures
-@dirrm share/help/en_GB/gnome-chess
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/gnome-chess/figures
-@dirrm share/help/el/gnome-chess
-@dirrmtry share/help/el
-@dirrm share/help/de/gnome-chess/figures
-@dirrm share/help/de/gnome-chess
-@dirrmtry share/help/de
-@dirrm share/help/da/gnome-chess/figures
-@dirrm share/help/da/gnome-chess
-@dirrmtry share/help/da
-@dirrm share/help/cs/gnome-chess/figures
-@dirrm share/help/cs/gnome-chess
-@dirrmtry share/help/cs
-@dirrm share/help/ca/gnome-chess/figures
-@dirrm share/help/ca/gnome-chess
-@dirrmtry share/help/ca
-@dirrm share/help/C/gnome-chess/figures
-@dirrm share/help/C/gnome-chess
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/icons/hicolor/512x512/apps
-@dirrmtry share/icons/hicolor/512x512
-@dirrm share/gnome-chess/textures
-@dirrm share/gnome-chess/pieces/simple
-@dirrm share/gnome-chess/pieces/fancy
-@dirrm share/gnome-chess/pieces/3d
-@dirrm share/gnome-chess/pieces
-@dirrm share/gnome-chess
-@dirrmtry share/appdata
-@dirrm %%ETCDIR%%

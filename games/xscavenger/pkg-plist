@@ -13,4 +13,3 @@ lib/X11/scavenger/reddevil.lbm
 lib/X11/scavenger/regularguy.lbm
 lib/X11/scavenger/spiralthing.lbm
 lib/X11/scavenger/victory.raw
-@dirrm lib/X11/scavenger

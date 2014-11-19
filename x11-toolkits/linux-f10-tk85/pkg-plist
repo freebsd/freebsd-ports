@@ -259,12 +259,3 @@ usr/share/tk8.5/ttk/winTheme.tcl
 usr/share/tk8.5/ttk/xpTheme.tcl
 usr/share/tk8.5/unsupported.tcl
 usr/share/tk8.5/xmfbox.tcl
-@comment non-empty directory listing in revers order
-@dirrm usr/share/tk8.5/ttk
-@dirrm usr/share/tk8.5/msgs
-@dirrm usr/share/tk8.5/images
-@dirrm usr/share/tk8.5/demos/images
-@dirrm usr/share/tk8.5/demos
-@dirrm usr/share/tk8.5
-@dirrm usr/share/doc/tk-8.5.3
-@dirrm usr/lib/tk8.5

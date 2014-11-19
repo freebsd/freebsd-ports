@@ -24,7 +24,3 @@
 %%PYTHON_SITELIBDIR%%/reverend/ui/util.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/emailtrainer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/readme.txt
-@dirrm %%PYTHON_SITELIBDIR%%/reverend/guessers
-@dirrm %%PYTHON_SITELIBDIR%%/reverend/ui
-@dirrm %%PYTHON_SITELIBDIR%%/reverend
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

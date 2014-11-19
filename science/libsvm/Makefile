@@ -25,7 +25,7 @@ ALL_TARGET=	all lib
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-python"
 CATEGORIES+=	python
 
-USE_PYTHON=	yes
+USES+=		python
 
 MAKE_ARGS=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR}
 

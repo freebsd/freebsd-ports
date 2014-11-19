@@ -11,8 +11,3 @@
 %%PERL5_MAN3%%/Data::Printer::Filter::DB.3.gz
 %%PERL5_MAN3%%/Data::Printer::Filter::DateTime.3.gz
 %%PERL5_MAN3%%/Data::Printer::Filter::Digest.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Printer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm %%SITE_PERL%%/Data/Printer/Filter
-@dirrm %%SITE_PERL%%/Data/Printer
-@dirrmtry %%SITE_PERL%%/Data

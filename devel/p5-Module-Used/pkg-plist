@@ -2,4 +2,3 @@ bin/modules-used
 man/man1/modules-used.1.gz
 %%PERL5_MAN3%%/Module::Used.3.gz
 %%SITE_PERL%%/Module/Used.pm
-@dirrmtry %%SITE_PERL%%/Module

@@ -7,10 +7,11 @@ PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	http://www.mudmagic.com/mud-client/downloads/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ based MUD client
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpcre.so:${PORTSDIR}/devel/pcre \
@@ -18,10 +19,9 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig python
 USE_GNOME=	gtk20 libglade2 libxml2
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

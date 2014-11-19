@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/net-im/folks/Makefile 19910 2014-09-25 21:36:39Z kwm $
+#   $MCom: ports/trunk/net-im/folks/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	folks
 PORTVERSION=	0.10.0
@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	library to aggregates people from multiple sources
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
 		libzeitgeist-1.0.so:${PORTSDIR}/sysutils/libzeitgeist \
@@ -20,7 +20,7 @@ CONFLICTS=	folks-0.4.[0-9]*
 
 USE_LDCONFIG=	yes
 USES=		gettext libtool gmake pathfix pkgconfig tar:xz
-USE_GNOME=	evolutiondataserver3 gnomehier intlhack \
+USE_GNOME=	evolutiondataserver3 intlhack \
 		introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-bluez-backend

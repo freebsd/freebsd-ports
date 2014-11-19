@@ -17,11 +17,11 @@ USE_GL=		gl
 USE_SDL=	sdl image ttf
 SCONS_ARGS=	prefix=${PREFIX}
 
-PLIST=		${WRKDIR}/pkg-plist
-PLIST_FILES=	bin/mars-nomercy libexec/mars
-PLIST_DIRS=	%%DATADIR%%
 SUB_FILES=	mars-nomercy pkg-message
 WRKSRC=		${WRKDIR}/mars-${PORTVERSION}
+
+PLIST_FILES=	bin/mars-nomercy libexec/mars
+PORTDATA=	*
 
 OPTIONS_DEFINE=	DEBUG OPENGL
 
@@ -42,18 +42,10 @@ SCONS_ARGS+=	with_opengl=0
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}
 
-pre-install:
-	@${RM} -f ${PLIST}
-	@cd ${WRKSRC}/data && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-		${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@cd ${WRKSRC}/data && \
-		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
-	@${INSTALL_SCRIPT} ${WRKDIR}/mars-nomercy ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mars ${STAGEDIR}${PREFIX}/libexec/mars
+	${INSTALL_SCRIPT} ${WRKDIR}/mars-nomercy ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/mars ${STAGEDIR}${PREFIX}/libexec/mars
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	@${RM} -f ${STAGEDIR}${DATADIR}/SConscript
 
 .include <bsd.port.mk>

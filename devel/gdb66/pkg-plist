@@ -40,8 +40,6 @@ man/man1/gdb%%VER%%.1.gz
 %%INSIGHT%%share/redhat/gui/wframe.tcl
 %%INSIGHT%%share/redhat/gui/wingrab.tcl
 %%INSIGHT%%share/redhat/gui/tclIndex
-%%INSIGHT%%@dirrm share/redhat/gui
-%%INSIGHT%%@dirrm share/redhat
 %%INSIGHT%%lib/insight1.0/about.tcl
 %%INSIGHT%%lib/insight1.0/actiondlg.tcl
 %%INSIGHT%%lib/insight1.0/attachdlg.itb
@@ -253,9 +251,3 @@ man/man1/gdb%%VER%%.1.gz
 %%INSIGHT%%lib/insight1.0/warning.tcl
 %%INSIGHT%%lib/insight1.0/watch.tcl
 %%INSIGHT%%lib/insight1.0/tclIndex
-%%INSIGHT%%@dirrm lib/insight1.0/images2
-%%INSIGHT%%@dirrm lib/insight1.0/images
-%%INSIGHT%%@dirrm lib/insight1.0/help/trace
-%%INSIGHT%%@dirrm lib/insight1.0/help/images
-%%INSIGHT%%@dirrm lib/insight1.0/help
-%%INSIGHT%%@dirrm lib/insight1.0

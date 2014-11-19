@@ -6,11 +6,7 @@ PORTVERSION=	3.1.1424
 CATEGORIES=	lang devel
 MASTER_SITES=	http://download.openpkg.org/components/cache/see/ \
 		http://lil.fr.distfiles.macports.org/see/ \
-		ftp://ftp7.freebsd.org/sites/distfiles.macports.org/see/ \
 		ftp://ftp.mirrorservice.org/sites/distfiles.macports.org/see/ \
-		ftp://kuiper.mirrorservice.org/sites/distfiles.macports.org/see/ \
-		ftp://copernicus.mirrorservice.org/sites/distfiles.macports.org/see/ \
-		ftp://ftp2.uk.i-scream.org/sites/distfiles.macports.org/see/ \
 		ftp://mirror.csclub.uwaterloo.ca/MacPorts/mpdistfiles/see/
 
 MAINTAINER=	numisemis@yahoo.com

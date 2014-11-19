@@ -49,7 +49,6 @@ man/man1/giram.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/superel3.pov
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.pov
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/torus.pov
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 share/locale/ca/LC_MESSAGES/giram.mo
 share/locale/cs/LC_MESSAGES/giram.mo
 share/locale/da/LC_MESSAGES/giram.mo
@@ -78,19 +77,3 @@ share/locale/tr/LC_MESSAGES/giram.mo
 share/locale/uk/LC_MESSAGES/giram.mo
 share/locale/zh_CN/LC_MESSAGES/giram.mo
 share/locale/zh_TW/LC_MESSAGES/giram.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/giram/plug-ins
-@dirrm libexec/giram
-@dirrm lib/giram/0.3/tips
-@dirrm lib/giram/0.3/texture
-@dirrm lib/giram/0.3/shape
-@dirrm lib/giram/0.3/pigment
-@dirrm lib/giram/0.3/normal
-@dirrm lib/giram/0.3/modules
-@dirrm lib/giram/0.3/finish
-@dirrm lib/giram/0.3/color_map
-@dirrm lib/giram/0.3/color
-@dirrm lib/giram/0.3
-@dirrm lib/giram
-@dirrm etc/giram/0.3
-@dirrm etc/giram

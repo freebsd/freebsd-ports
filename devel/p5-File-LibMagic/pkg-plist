@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/LibMagic/LibMagic.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/LibMagic/.packlist
 %%PERL5_MAN3%%/File::LibMagic.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/LibMagic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File

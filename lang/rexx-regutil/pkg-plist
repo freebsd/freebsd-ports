@@ -2,4 +2,3 @@ lib/librexxutil.so
 man/man1/regutil.1.gz
 man/man1/rexxutil.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/regutil.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

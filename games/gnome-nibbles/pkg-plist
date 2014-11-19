@@ -10,6 +10,7 @@ share/applications/gnome-nibbles.desktop
 @unexec [ -s %D/share/games/gnibbles.3.1.scores ] || rm -f %D/share/games/gnibbles.3.1.scores
 @unexec [ -s %D/share/games/gnibbles.4.0.scores ] || rm -f %D/share/games/gnibbles.4.0.scores
 @unexec [ -s %D/share/games/gnibbles.4.1.scores ] || rm -f %D/share/games/gnibbles.4.1.scores
+@unexec rm -fr %D/share/games
 share/gnome-nibbles/games/level001.gnl
 share/gnome-nibbles/games/level002.gnl
 share/gnome-nibbles/games/level003.gnl
@@ -596,111 +597,3 @@ share/locale/xh/LC_MESSAGES/gnome-nibbles.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-nibbles.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-nibbles.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-nibbles.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/help/zh_CN/gnome-nibbles/figures
-@dirrm share/help/zh_CN/gnome-nibbles
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sv/gnome-nibbles/figures
-@dirrm share/help/sv/gnome-nibbles
-@dirrmtry share/help/sv
-@dirrm share/help/sr@latin/gnome-nibbles/figures
-@dirrm share/help/sr@latin/gnome-nibbles
-@dirrmtry share/help/sr@latin
-@dirrm share/help/sr/gnome-nibbles/figures
-@dirrm share/help/sr/gnome-nibbles
-@dirrmtry share/help/sr
-@dirrm share/help/sl/gnome-nibbles/figures
-@dirrm share/help/sl/gnome-nibbles
-@dirrmtry share/help/sl
-@dirrm share/help/oc/gnome-nibbles/figures
-@dirrm share/help/oc/gnome-nibbles
-@dirrmtry share/help/oc
-@dirrm share/help/hu/gnome-nibbles/figures
-@dirrm share/help/hu/gnome-nibbles
-@dirrmtry share/help/hu
-@dirrm share/help/it/gnome-nibbles/figures
-@dirrm share/help/it/gnome-nibbles
-@dirrmtry share/help/it
-@dirrm share/help/fr/gnome-nibbles/figures
-@dirrm share/help/fr/gnome-nibbles
-@dirrmtry share/help/fr
-@dirrm share/help/eu/gnome-nibbles/figures
-@dirrm share/help/eu/gnome-nibbles
-@dirrmtry share/help/eu
-@dirrm share/help/es/gnome-nibbles/figures
-@dirrm share/help/es/gnome-nibbles
-@dirrmtry share/help/es
-@dirrm share/help/en_GB/gnome-nibbles/figures
-@dirrm share/help/en_GB/gnome-nibbles
-@dirrmtry share/help/en_GB
-@dirrm share/help/el/gnome-nibbles/figures
-@dirrm share/help/el/gnome-nibbles
-@dirrmtry share/help/el
-@dirrm share/help/de/gnome-nibbles/figures
-@dirrm share/help/de/gnome-nibbles
-@dirrmtry share/help/de
-@dirrm share/help/cs/gnome-nibbles/figures
-@dirrm share/help/cs/gnome-nibbles
-@dirrmtry share/help/cs
-@dirrm share/help/ca/gnome-nibbles/figures
-@dirrm share/help/ca/gnome-nibbles
-@dirrmtry share/help/ca
-@dirrm share/help/C/gnome-nibbles/figures
-@dirrm share/help/C/gnome-nibbles
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/icons/HighContrast/48x48/apps
-@dirrmtry share/icons/HighContrast/48x48
-@dirrmtry share/icons/HighContrast/32x32/apps
-@dirrmtry share/icons/HighContrast/32x32
-@dirrmtry share/icons/HighContrast/256x256/apps
-@dirrmtry share/icons/HighContrast/256x256
-@dirrmtry share/icons/HighContrast/24x24/apps
-@dirrmtry share/icons/HighContrast/24x24
-@dirrmtry share/icons/HighContrast/22x22/apps
-@dirrmtry share/icons/HighContrast/22x22
-@dirrmtry share/icons/HighContrast/16x16/apps
-@dirrmtry share/icons/HighContrast/16x16
-@dirrmtry share/icons/HighContrast
-@dirrmtry share/gnome-nibbles/sounds
-@dirrmtry share/gnome-nibbles/pixmaps
-@dirrmtry share/gnome-nibbles/games
-@dirrmtry share/gnome-nibbles
-@dirrmtry share/appdata

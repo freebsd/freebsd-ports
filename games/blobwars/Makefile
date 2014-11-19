@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mission and Objective based 2D Platform Game
 
 LICENSE=	GPLv2 CCbyNCSA3 # GPLv2 or later

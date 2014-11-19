@@ -12,9 +12,9 @@ COMMENT=	Mathematical function graph plotter
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	yes
+USES=		python
+USE_PYTHON=	distutils
 USE_GNOME=	pygtk2 gnomehier
-USE_PYDISTUTILS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g'\

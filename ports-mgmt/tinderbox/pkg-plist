@@ -149,26 +149,3 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/user_admin.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/user_permissions.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/user_properties.tpl
-%%WEBUI%%@dirrm tinderbox/scripts/webui/templates/paefchen/images
-%%WEBUI%%@dirrm tinderbox/scripts/webui/templates/paefchen
-%%WEBUI%%@dirrm tinderbox/scripts/webui/templates/default
-%%WEBUI%%@dirrm tinderbox/scripts/webui/templates
-%%WEBUI%%@dirrm tinderbox/scripts/webui/module
-%%WEBUI%%@dirrm tinderbox/scripts/webui/core
-%%WEBUI%%@dirrmtry tinderbox/scripts/webui
-@dirrm tinderbox/scripts/upgrade
-@dirrm tinderbox/scripts/sql
-@dirrm tinderbox/scripts/lib/Tinderbox
-@dirrm tinderbox/scripts/lib
-@dirrm tinderbox/scripts/etc/rc.d
-@dirrm tinderbox/scripts/etc/env
-@dirrm tinderbox/scripts/etc
-@dirrm tinderbox/scripts/contrib/hooks/mass-build-pgsql
-@dirrm tinderbox/scripts/contrib/hooks/make-jobs-safe
-@dirrm tinderbox/scripts/contrib/hooks/kse-fix
-@dirrm tinderbox/scripts/contrib/hooks/create-pkgng-repo
-@dirrm tinderbox/scripts/contrib/hooks/compress_wrkdir
-@dirrmtry tinderbox/scripts/contrib/hooks
-@dirrmtry tinderbox/scripts/contrib
-@dirrmtry tinderbox/scripts
-@dirrmtry tinderbox

@@ -219,24 +219,3 @@ share/abiword-2.8/help/pl-PL/problems/problemsfaq.html
 share/abiword-2.8/help/pl-PL/problems/problemshelp.html
 share/abiword-2.8/help/pl-PL/style.css
 share/abiword-2.8/help/pl-PL/tutorial/index.html
-@dirrm share/abiword-2.8/help/pl-PL/tutorial
-@dirrm share/abiword-2.8/help/pl-PL/problems
-@dirrm share/abiword-2.8/help/pl-PL/plugins
-@dirrm share/abiword-2.8/help/pl-PL/interface
-@dirrm share/abiword-2.8/help/pl-PL/info
-@dirrm share/abiword-2.8/help/pl-PL/howto
-@dirrm share/abiword-2.8/help/pl-PL
-@dirrm share/abiword-2.8/help/fr-FR/tutorial
-@dirrm share/abiword-2.8/help/fr-FR/plugins
-@dirrm share/abiword-2.8/help/fr-FR/interface
-@dirrm share/abiword-2.8/help/fr-FR/info
-@dirrm share/abiword-2.8/help/fr-FR/howto
-@dirrm share/abiword-2.8/help/fr-FR
-@dirrm share/abiword-2.8/help/en-US/tutorial
-@dirrm share/abiword-2.8/help/en-US/problems
-@dirrm share/abiword-2.8/help/en-US/plugins
-@dirrm share/abiword-2.8/help/en-US/interface
-@dirrm share/abiword-2.8/help/en-US/info
-@dirrm share/abiword-2.8/help/en-US/howto
-@dirrm share/abiword-2.8/help/en-US
-@dirrm share/abiword-2.8/help

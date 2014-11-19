@@ -3,6 +3,3 @@
 %%SITE_PERL%%/Stanford/DNS.pm
 %%SITE_PERL%%/Stanford/DNSserver.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford/DNSserver/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford/DNSserver
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford
-@dirrmtry %%SITE_PERL%%/Stanford

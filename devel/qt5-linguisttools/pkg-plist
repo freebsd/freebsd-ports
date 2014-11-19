@@ -6,7 +6,3 @@
 %%QT_BINDIR%%/lupdate
 man/man1/lrelease.1.gz
 man/man1/lupdate.1.gz
-@dirrmtry %%QT_BINDIR%%
-@dirrmtry %%QT_ARCHDIR%%
-@dirrm %%QT_LIBDIR%%/cmake/Qt5LinguistTools
-@dirrmtry %%QT_LIBDIR%%/cmake

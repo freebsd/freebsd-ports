@@ -1,17 +1,15 @@
-%%PLASMAMULE%%@cwd %%KDE4_PREFIX%%
-%%PLASMAMULE%%bin/plasmamule-engine-feeder
-%%PLASMAMULE%%lib/kde4/plasma-applet-plasmamule.so
-%%PLASMAMULE%%lib/kde4/plasma-engine-plasmamule.so
-%%PLASMAMULE%%share/applications/plasmamule-engine-feeder.desktop
-%%PLASMAMULE%%share/icons/hicolor/scalable/mimetypes/application-x-emulecollection.svg
-%%PLASMAMULE%%share/kde4/services/ed2k.protocol
-%%PLASMAMULE%%share/kde4/services/magnet.protocol
-%%PLASMAMULE%%share/kde4/services/plasma-applet-plasmamule.desktop
-%%PLASMAMULE%%share/kde4/services/plasma-engine-plasmamule.desktop
-%%PLASMAMULE%%share/mime/amule.xml
-%%PLASMAMULE%%@exec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
-%%PLASMAMULE%%@unexec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
-%%PLASMAMULE%%@cwd %%RESETPREFIX%%
+%%PLASMAMULE%%%%KDE4_PREFIX%%/bin/plasmamule-engine-feeder
+%%PLASMAMULE%%%%KDE4_PREFIX%%/lib/kde4/plasma-applet-plasmamule.so
+%%PLASMAMULE%%%%KDE4_PREFIX%%/lib/kde4/plasma-engine-plasmamule.so
+%%PLASMAMULE%%%%KDE4_PREFIX%%/share/applications/plasmamule-engine-feeder.desktop
+%%PLASMAMULE%%%%KDE4_PREFIX%%/share/icons/hicolor/scalable/mimetypes/application-x-emulecollection.svg
+%%PLASMAMULE%%%%KDE4_PREFIX%%/share/kde4/services/ed2k.protocol
+%%PLASMAMULE%%%%KDE4_PREFIX%%/share/kde4/services/magnet.protocol
+%%PLASMAMULE%%%%KDE4_PREFIX%%/share/kde4/services/plasma-applet-plasmamule.desktop
+%%PLASMAMULE%%%%KDE4_PREFIX%%/share/kde4/services/plasma-engine-plasmamule.desktop
+%%PLASMAMULE%%%%KDE4_PREFIX%%/share/mime/amule.xml
+%%PLASMAMULE%%@exec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %%KDE4_PREFIX%%/share/mime >/dev/null 2>&1 || true
+%%PLASMAMULE%%@unexec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %%KDE4_PREFIX%%/share/mime >/dev/null 2>&1 || true
 %%ALC%%bin/alc
 %%ALCC%%bin/alcc
 %%MONOLITHIC%%bin/amule
@@ -241,31 +239,3 @@
 %%MONOLITHIC%%share/pixmaps/amule.xpm
 %%AMULEGUI%%share/pixmaps/amulegui.xpm
 %%WXCAS%%share/pixmaps/wxcas.xpm
-%%XAS%%@dirrmtry lib/xchat/plugins
-%%XAS%%@dirrmtry lib/xchat
-@dirrmtry man/de/man1
-@dirrmtry man/de
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/hu/man1
-@dirrmtry man/hu
-@dirrmtry man/it/man1
-@dirrmtry man/it
-@dirrmtry man/ru/man1
-@dirrmtry man/ru
-@dirrmtry man/tr/man1
-@dirrmtry man/tr
-@dirrmtry %%DATADIR%%/skins
-%%WEBSERVER%%@dirrmtry %%DATADIR%%/webserver/default
-%%WEBSERVER%%@dirrmtry %%DATADIR%%/webserver
-@dirrmtry %%DATADIR%%
-%%CAS%%@dirrmtry share/cas
-%%NLS%%@dirrmtry share/locale/et_EE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/et_EE
-%%NLS%%@dirrmtry share/locale/it_CH/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_CH
-%%NLS%%@dirrmtry share/locale/ko_KR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ko_KR
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

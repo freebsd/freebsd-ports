@@ -16,9 +16,8 @@ LICENSE=	BSD2CLAUSE
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tox for running unit tests
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:${PORTSDIR}/devel/py-tox
 

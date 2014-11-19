@@ -14,4 +14,3 @@ bin/cflow2vcg
 %%PORTDOCS%%%%DOCSDIR%%/cflow2vcg_ext.jpg
 %%PORTDOCS%%%%DOCSDIR%%/cflow2vcg_int.jpg
 %%PORTDOCS%%%%DOCSDIR%%/cflow2vcg_man.sgm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

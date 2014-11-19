@@ -1,3 +1,0 @@
-include/php/ext/crack/config.h
-include/php/ext/crack/php_crack.h
-@dirrm include/php/ext/crack

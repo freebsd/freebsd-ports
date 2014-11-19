@@ -28,6 +28,3 @@ lib/bsvc/device.tk
 lib/bsvc/bsvc.tk
 lib/bsvc/breakpt.tk
 lib/bsvc/bsvc.ad
-@dirrm lib/bsvc/bitmaps
-@dirrm lib/bsvc/help
-@dirrm lib/bsvc

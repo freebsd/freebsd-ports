@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Class::Default.3.gz
 %%SITE_PERL%%/Class/Default.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Default/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Default
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class

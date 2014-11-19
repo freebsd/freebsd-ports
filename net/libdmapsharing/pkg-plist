@@ -59,6 +59,3 @@ libdata/pkgconfig/libdmapsharing-3.0.pc
 %%DOCSDIR%%-3.0/right.png
 %%DOCSDIR%%-3.0/style.css
 %%DOCSDIR%%-3.0/up.png
-@dirrm include/libdmapsharing-3.0/libdmapsharing
-@dirrm include/libdmapsharing-3.0
-@dirrm %%DOCSDIR%%-3.0

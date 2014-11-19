@@ -15,10 +15,3 @@
 %%SITE_PERL%%/DateTime/Format/Builder/Parser/generic.pm
 %%SITE_PERL%%/DateTime/Format/Builder/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Builder/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Builder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrm %%SITE_PERL%%/DateTime/Format/Builder/Parser
-@dirrm %%SITE_PERL%%/DateTime/Format/Builder
-@dirrmtry %%SITE_PERL%%/DateTime/Format
-@dirrmtry %%SITE_PERL%%/DateTime

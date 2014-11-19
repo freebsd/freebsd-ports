@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	selector
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +14,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}resolver>=0.2.1:${PORTSDIR}/devel/py-resolver
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-
-post-patch:
-	@${REINPLACE_CMD} 's/license="MIT",/license="MIT", zip_safe=False,/' \
-		${WRKSRC}/setup.py
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

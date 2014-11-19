@@ -3,6 +3,3 @@
 %%SITE_PERL%%/Sys/README.pod
 %%SITE_PERL%%/Sys/Syscall.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Syscall/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Syscall
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrmtry %%SITE_PERL%%/Sys

@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/DateTime::Format::SQLite.3.gz
 %%SITE_PERL%%/DateTime/Format/SQLite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/SQLite/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/SQLite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime/Format
-@dirrmtry %%SITE_PERL%%/DateTime

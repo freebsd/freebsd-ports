@@ -44,7 +44,3 @@ share/doc/telepathy-mission-control/mission-control-plugins/style.css
 share/doc/telepathy-mission-control/mission-control-plugins/up.png
 share/dbus-1/services/org.freedesktop.Telepathy.AccountManager.service
 share/dbus-1/services/org.freedesktop.Telepathy.MissionControl5.service
-@dirrm share/doc/telepathy-mission-control/mission-control-plugins
-@dirrm share/doc/telepathy-mission-control
-@dirrm include/mission-control-5.5/mission-control-plugins
-@dirrm include/mission-control-5.5

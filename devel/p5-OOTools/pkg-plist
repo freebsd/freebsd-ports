@@ -17,8 +17,3 @@
 %%SITE_PERL%%/Package/groups.pm
 %%SITE_PERL%%/Package/props.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/props/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/props
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Package
-@dirrmtry %%SITE_PERL%%/Object
-@dirrmtry %%SITE_PERL%%/Class

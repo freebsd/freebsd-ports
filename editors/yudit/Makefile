@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yudit
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.6
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		SUNSITE/apps/editors/X

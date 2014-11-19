@@ -11,4 +11,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTDOCS%%%%DOCSDIR%%/readme.kaname_bdf
 %%PORTDOCS%%%%DOCSDIR%%/readme.knm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

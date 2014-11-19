@@ -136,39 +136,4 @@ bin/yoono
 %%DATADIR%%/xulrunner/xulrunner-bin
 %%DATADIR%%/xulrunner/xulrunner-stub
 %%DATADIR%%/yoono-desktop
-@dirrm %%DATADIR%%/xulrunner/plugins
-@dirrm %%DATADIR%%/xulrunner/icons
-@dirrm %%DATADIR%%/xulrunner/hyphenation
-@dirrm %%DATADIR%%/xulrunner/dictionaries
-@dirrm %%DATADIR%%/xulrunner/components
-@dirrm %%DATADIR%%/xulrunner/chrome/icons/default
-@dirrm %%DATADIR%%/xulrunner/chrome/icons
-@dirrm %%DATADIR%%/xulrunner/chrome
-@dirrm %%DATADIR%%/xulrunner
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/modules
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/lib_win/tray
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/lib_win
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/lib_unix/tray
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/lib_unix
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/lib
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/defaults/preferences
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/defaults
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/chrome/icons/default
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/chrome/icons
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/chrome
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx/META-INF
-@dirrm %%DATADIR%%/extensions/mintrayr@tn123.ath.cx
-@dirrm %%DATADIR%%/extensions
-@dirrm %%DATADIR%%/defaults/preferences
-@dirrm %%DATADIR%%/defaults
-@dirrm %%DATADIR%%/components
-@dirrm %%DATADIR%%/chrome/skin
-@dirrm %%DATADIR%%/chrome/icons/default
-@dirrm %%DATADIR%%/chrome/icons
-@dirrm %%DATADIR%%/chrome/content
-@dirrm %%DATADIR%%/chrome/branding/locale
-@dirrm %%DATADIR%%/chrome/branding/content
-@dirrm %%DATADIR%%/chrome/branding
-@dirrm %%DATADIR%%/chrome
-@dirrm %%DATADIR%%
-@exec mkdir -p %D/%%DATADIR%%/xulrunner/plugins
+@dir %%DATADIR%%/xulrunner/plugins

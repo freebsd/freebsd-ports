@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/deskutils/gnome-utils/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/deskutils/gnome-utils/Makefile 20017 2014-10-24 08:53:51Z gusi $
 
 PORTNAME=	gnome-utils
-PORTVERSION=	3.12.0
-PORTEPOCH=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -24,7 +23,8 @@ RUN_DEPENDS=	baobab>=3.0:${PORTSDIR}/deskutils/baobab \
 		gnome-system-monitor>=3.0:${PORTSDIR}/sysutils/gnome-system-monitor \
 		gnome-photos>=3.0:${PORTSDIR}/deskutils/gnome-photos \
 		gnome-clocks>=3.0:${PORTSDIR}/deskutils/gnome-clocks \
-		gnome-maps>=3.0:${PORTSDIR}/deskutils/gnome-maps
+		gnome-maps>=3.0:${PORTSDIR}/deskutils/gnome-maps \
+		gnome-weather>=3.0:${PORTSDIR}/deskutils/gnome-weather
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

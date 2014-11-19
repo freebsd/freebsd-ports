@@ -1,10 +1,9 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libsigc++20/Makefile 18634 2013-07-26 10:42:35Z kwm $
+#   $MCom: ports/trunk/devel/libsigc++20/Makefile 19952 2014-10-15 08:11:00Z gusi $
 
 PORTNAME=	libsigc++
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 

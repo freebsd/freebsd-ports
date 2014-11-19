@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby metaprogramming helpers
 
 USE_RUBY=	yes

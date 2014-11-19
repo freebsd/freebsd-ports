@@ -1,17 +1,8 @@
-              PHYLIP - Phylogeny Inference Package (version 3.6)
-
 PHYLIP (the PHYLogeny Inference Package) is a package of programs for
-inferring phylogenies (evolutionary trees).  Methods that are
-available in the package include parsimony, distance matrix, and
-likelihood methods, including bootstrapping and consensus trees. Data
-types that can be handled include molecular sequences, gene
-frequencies, restriction sites, distance matrices, and 0/1 discrete
-characters.
-
- Joe Felsenstein
- Department of Genetics
- University of Washington
- Box 357360
- Seattle, Washington 98195-7360, U.S.A.
+inferring phylogenies (evolutionary trees). Methods that are available
+in the package include parsimony, distance matrix, and likelihood
+methods, including bootstrapping and consensus trees. Data types that
+can be handled include molecular sequences, gene frequencies,
+restriction sites, distance matrices, and 0/1 discrete characters.
 
 WWW: http://evolution.genetics.washington.edu/phylip.html

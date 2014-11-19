@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Test/Bits.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Bits/.packlist
 %%PERL5_MAN3%%/Test::Bits.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Bits
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test

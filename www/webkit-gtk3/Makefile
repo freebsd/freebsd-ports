@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/www/webkit-gtk3/Makefile 19940 2014-10-04 22:25:17Z kwm $
+#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	webkit
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.7
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk3
@@ -12,11 +12,7 @@ DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 
-# Use the port>=0 form or the system gperf version will get 
-# detected instead, breaking the build.
-
-BUILD_DEPENDS=	gperf>=0:${PORTSDIR}/devel/gperf \
-		gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc \
+BUILD_DEPENDS=	gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc \
 		geoclue>=0:${PORTSDIR}/net/geoclue
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
@@ -29,12 +25,11 @@ RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
-USES=		bison gettext gmake libtool perl5 pkgconfig \
-		shebangfix tar:xz
+USES=		bison gettext gmake gperf libtool perl5 \
+		pkgconfig shebangfix tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
-USE_GNOME=	cairo gnomehier gtk20 gtk30 introspection:build \
-		libxslt
+USE_GNOME=	cairo gtk20 gtk30 introspection:build libxslt
 USE_SQLITE=	3
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -95,15 +90,15 @@ CXXFLAGS+=	-Wno-c++11-extensions -Qunused-arguments
 CONFIGURE_ARGS+=--enable-webkit2
 # We need clang + libc++ or gcc 4.7+. gcc has libstdc++ conflict between
 # gcc port and base. This originates from icu
-CXXFLAGS+=	-stdlib=libc++
-LDFLAGS+=	-stdlib=libc++
 .if ${OSVERSION}<1000019
-BUILD_DEPENDS+=	clang33>=3.3_1:${PORTSDIR}/lang/clang33 \
+CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1
+LDFLAGS+=	-stdlib=libc++
+BUILD_DEPENDS+=	clang34>=3.4:${PORTSDIR}/lang/clang34 \
 		libc++>=0:${PORTSDIR}/devel/libc++
 RUN_DEPENDS+=	libc++>=0:${PORTSDIR}/devel/libc++
-CC=		clang33
-CXX=		clang++33
-CPP=		clang-cpp33
+CC=		clang34
+CXX=		clang++34
+CPP=		clang-cpp34
 CONFIGURE_ENV+=	CC=${CC} CXX=${CXX} CPP=${CPP}
 .endif
 
@@ -119,7 +114,7 @@ BUILD_DEPENDS+=	p5-Switch>0:${PORTSDIR}/lang/p5-Switch
 
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex
-CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
+CONFIGURE_ENV+=	FLEX="${LOCALBASE}/bin/flex"
 .endif
 
 post-patch:

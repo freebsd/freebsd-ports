@@ -11,6 +11,7 @@ COMMENT=	Robust high performance CORBA ORB for C++ and Python
 
 LICENSE=	GPLv2
 
+CONFLICTS=	omniORB41-4.1.*
 PLIST_SUB+=	SONUM=${PORTVERSION:C/.*\.//}
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

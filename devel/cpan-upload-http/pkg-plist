@@ -1,4 +1,3 @@
 bin/cpan-upload-http
 man/man1/cpan-upload-http.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/cpan-upload-http/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/cpan-upload-http

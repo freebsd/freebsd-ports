@@ -5,7 +5,3 @@ man/man1/dnswalk.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendreports
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/dnswalk.errors
-@comment @exec mkdir -p %D/%%EXAMPLESDIR%%
-@comment @exec mkdir -p %D/%%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

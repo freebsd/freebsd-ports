@@ -9,4 +9,3 @@ man/man8/adsuck.8.gz
 %%EXAMPLESDIR%%/hosts.yoyo
 %%EXAMPLESDIR%%/regex
 %%EXAMPLESDIR%%/resolv.conf
-@dirrm %%EXAMPLESDIR%%

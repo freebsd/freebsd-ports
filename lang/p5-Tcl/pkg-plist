@@ -2,4 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Tcl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl/Tcl.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl

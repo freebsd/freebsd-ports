@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Class::Accessor::Installer.3.gz
 %%SITE_PERL%%/Class/Accessor/Installer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Installer/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Installer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/Accessor
-@dirrmtry %%SITE_PERL%%/Class

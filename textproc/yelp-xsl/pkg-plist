@@ -109,23 +109,3 @@ share/yelp-xsl/xslt/mallard/html/mal2html-table.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-ui.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html.xsl
 share/yelp-xsl/xslt/mallard/html/mal2xhtml.xsl
-@dirrm share/yelp-xsl/xslt/mallard/html
-@dirrm share/yelp-xsl/xslt/mallard/common
-@dirrm share/yelp-xsl/xslt/mallard/cache
-@dirrm share/yelp-xsl/xslt/mallard
-@dirrm share/yelp-xsl/xslt/docbook/html
-@dirrm share/yelp-xsl/xslt/docbook/common
-@dirrm share/yelp-xsl/xslt/docbook
-@dirrm share/yelp-xsl/xslt/common/domains
-@dirrm share/yelp-xsl/xslt/common
-@dirrm share/yelp-xsl/xslt
-@dirrm share/yelp-xsl/js
-@dirrm share/yelp-xsl/icons/hicolor/scalable/status
-@dirrm share/yelp-xsl/icons/hicolor/scalable
-@dirrm share/yelp-xsl/icons/hicolor/48x48/status
-@dirrm share/yelp-xsl/icons/hicolor/48x48
-@dirrm share/yelp-xsl/icons/hicolor/24x24/status
-@dirrm share/yelp-xsl/icons/hicolor/24x24
-@dirrm share/yelp-xsl/icons/hicolor
-@dirrm share/yelp-xsl/icons
-@dirrm share/yelp-xsl

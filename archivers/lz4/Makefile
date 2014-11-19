@@ -13,6 +13,8 @@ COMMENT=	Fast compressor using LZ4 algorithm
 USES=		gmake
 ALL_TARGET=	lz4c
 
+CONFLICTS=	liblz4-*
+
 PLIST_FILES=	bin/lz4c
 
 do-install:

@@ -12,7 +12,7 @@ COMMENT=	Python/Tk graphical client for Wolfpack Empire servers
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw
 
-USE_PYTHON=	yes
+USES=		python
 
 do-build:
 	@${FIND} ${WRKSRC} -name "*.pyc" -delete

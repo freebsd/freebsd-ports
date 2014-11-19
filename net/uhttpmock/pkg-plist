@@ -35,6 +35,3 @@ share/doc/libuhttpmock-0.0/up.png
 share/gir-1.0/Uhm-0.0.gir
 share/vala/vapi/libuhttpmock-0.0.deps
 share/vala/vapi/libuhttpmock-0.0.vapi
-@dirrmtry share/doc/libuhttpmock-0.0
-@dirrmtry include/libuhttpmock-0.0/uhttpmock
-@dirrmtry include/libuhttpmock-0.0

@@ -48,4 +48,3 @@ man/man1/wordlist2dawg.1.gz
 man/man5/unicharambigs.5.gz
 man/man5/unicharset.5.gz
 libdata/pkgconfig/tesseract.pc
-@dirrm include/tesseract

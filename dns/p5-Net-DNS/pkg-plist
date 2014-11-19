@@ -134,9 +134,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ZoneFile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/DNS.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

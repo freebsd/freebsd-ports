@@ -137,18 +137,3 @@ share/locale/xh/LC_MESSAGES/kiconedit.mo
 share/locale/zh_CN/LC_MESSAGES/kiconedit.mo
 share/locale/zh_HK/LC_MESSAGES/kiconedit.mo
 share/locale/zh_TW/LC_MESSAGES/kiconedit.mo
-@dirrm share/doc/HTML/uk/kiconedit
-@dirrm share/doc/HTML/sv/kiconedit
-@dirrm share/doc/HTML/ru/kiconedit
-@dirrm share/doc/HTML/pt_BR/kiconedit
-@dirrm share/doc/HTML/pt/kiconedit
-@dirrm share/doc/HTML/it/kiconedit
-@dirrm share/doc/HTML/hu/kiconedit
-@dirrm share/doc/HTML/fr/kiconedit
-@dirrm share/doc/HTML/et/kiconedit
-@dirrm share/doc/HTML/es/kiconedit
-@dirrm share/doc/HTML/en/kiconedit
-@dirrm share/doc/HTML/de/kiconedit
-@dirrm share/doc/HTML/da/kiconedit
-@dirrm share/apps/kiconedit/pics
-@dirrm share/apps/kiconedit

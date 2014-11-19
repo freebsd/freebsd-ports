@@ -192,30 +192,5 @@
 %%PHPBT%%/templates/default/wrap.html
 %%PHPBT%%/upgrade.php
 %%PHPBT%%/user.php
-@dirrm %%PHPBT%%/admin
-@dirrm %%PHPBT%%/contrib
-@dirrm %%PHPBT%%/docs/html/images/callouts
-@dirrm %%PHPBT%%/docs/html/images/shots/user
-@dirrm %%PHPBT%%/docs/html/images/shots
-@dirrm %%PHPBT%%/docs/html/images
-@dirrm %%PHPBT%%/docs/html
-@dirrm %%PHPBT%%/docs/sgml
-@dirrm %%PHPBT%%/docs
-@dirrm %%PHPBT%%/inc/db
-@dirrm %%PHPBT%%/inc/htmlMimeMail
-@dirrm %%PHPBT%%/inc
-@dirrm %%PHPBT%%/schemas/old
-@dirrm %%PHPBT%%/schemas
-@dirrm %%PHPBT%%/styles
-@dirrm %%PHPBT%%/languages/old
-@dirrm %%PHPBT%%/languages
-@dirrm %%PHPBT%%/jpgimages
-@dirrm %%PHPBT%%/templates/default/base
-@dirrm %%PHPBT%%/templates/default/admin
-@dirrm %%PHPBT%%/templates/default/images
-@dirrm %%PHPBT%%/templates/default
-@dirrm %%PHPBT%%/templates
-@dirrm %%PHPBT%%
 @owner root
 @group wheel
-@dirrmtry www/data-dist

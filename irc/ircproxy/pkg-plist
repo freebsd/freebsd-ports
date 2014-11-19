@@ -6,4 +6,3 @@ bin/imkpasswd
 %%DATADIR%%/ircproxyd-user.conf
 %%DATADIR%%/ircproxyd-conn.conf
 %%DATADIR%%/ircproxyd-autoop.conf
-@dirrm %%DATADIR%%

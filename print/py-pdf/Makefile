@@ -12,9 +12,7 @@ DISTNAME=	pyPdf-${PORTVERSION}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Pure-Python PDF toolkit
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pyPdf
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

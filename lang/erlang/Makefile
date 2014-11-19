@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	17.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -54,8 +54,8 @@ USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-EI_VSN=		3.7.17
-TOOLS_VSN=	2.6.15
+EI_VSN=		3.7.18
+TOOLS_VSN=	2.7
 
 .include <bsd.port.options.mk>
 

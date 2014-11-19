@@ -11,4 +11,4 @@ This architecture makes it easy to implement specific techniques to
 cross a given network boundary, possibly by using a proxy on one side of
 the network fence, and a reverse-proxy on the other side of the fence.
 
-WWW: http://search.cpan.org/dist/Net-Proxy
+WWW: http://search.cpan.org/dist/Net-Proxy/

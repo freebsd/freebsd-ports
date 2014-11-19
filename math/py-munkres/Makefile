@@ -14,8 +14,8 @@ COMMENT=	Python implementation of the munkres algorithm
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/munkres.py \
 		%%PYTHON_SITELIBDIR%%/munkres.pyc \

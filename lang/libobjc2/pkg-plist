@@ -21,4 +21,3 @@ lib/libobjc.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%WITH_SEPARATECXX%%lib/libobjcxx.so
 %%WITH_SEPARATECXX%%lib/libobjcxx.so.%%SHLIB_MAJOR%%
 %%WITH_SEPARATECXX%%lib/libobjcxx.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
-@dirrm include/objc

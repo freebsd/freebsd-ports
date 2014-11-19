@@ -8,9 +8,3 @@ man/man8/telepathy-salut.8.gz
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.salut.service
 %%DOCSDIR%%/clique.html
 share/telepathy/managers/salut.manager
-@dirrmtry share/telepathy/managers
-@dirrmtry share/telepathy
-@dirrm %%DOCSDIR%%
-@dirrm lib/telepathy/salut-0/lib
-@dirrm lib/telepathy/salut-0
-@dirrmtry lib/telepathy

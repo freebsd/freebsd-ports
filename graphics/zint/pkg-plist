@@ -9,5 +9,3 @@ lib/libzint.so
 lib/libzint.so.2.4
 lib/libzint.so.2.4.1
 share/cmake/Modules/FindZint.cmake
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake

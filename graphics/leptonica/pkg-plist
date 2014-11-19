@@ -44,4 +44,3 @@ lib/liblept.so
 lib/liblept.so.4
 lib/liblept.so.4.0.1
 libdata/pkgconfig/lept.pc
-@dirrm include/leptonica

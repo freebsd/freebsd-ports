@@ -1,6 +1,6 @@
---- Makefile.defs.orig	2014-09-18 16:09:15.000000000 +0200
-+++ Makefile.defs	2014-09-19 08:27:49.000000000 +0200
-@@ -265,7 +265,7 @@
+--- Makefile.defs.orig	2014-10-16 14:46:23.000000000 +0200
++++ Makefile.defs	2014-11-09 11:54:46.000000000 +0100
+@@ -264,7 +264,7 @@
  
  # find compiler name & version
  ifeq ($(CC),)
@@ -9,7 +9,7 @@
  endif
  LD= $(CC)
  CC_LONGVER:=$(shell if  $(CC) -v 2>/dev/null; then \
-@@ -279,7 +279,7 @@
+@@ -278,7 +278,7 @@
  #find-out the compiler's name
  
  ifneq (,$(findstring gcc, $(CC_LONGVER)))
@@ -18,7 +18,7 @@
  	RPAREN=)
  	CC_VER:=$(word 1,$(CC)) $(shell $(CC) - --version|head -n 1|\
  				sed  -e 's/([^$(RPAREN)]*)//g' \
-@@ -432,7 +432,7 @@
+@@ -431,7 +431,7 @@
  ifeq ($(LIBDIR),)
  ARCHBSZ= $(shell echo $(ARCH) | sed -e 's/.*64.*/64b/')
  ifeq ($(ARCHBSZ),64b)
@@ -27,21 +27,19 @@
  else
  	LIBDIR = lib
  endif
-@@ -946,11 +946,8 @@
+@@ -945,10 +945,7 @@
  ifeq		($(CC_NAME), clang)
  $(call                          set_if_empty,CPU,athlon64)
  					C_DEFS+=-DCC_GCC_LIKE_ASM
--                                        CFLAGS+=-m32
+-                                        CFLAGS+=-g -m32
 -                                                $(CC_OPT) \
 -                                                          \
 -                                                -mtune=$(CPU)
--                                        LDFLAGS+=-m32
-+					CFLAGS+=-m32 $(CC_OPT) -mtune=$(CPU)
-+					LDFLAGS+=-m32
++                                        CFLAGS+=-g -m32 $(CC_OPT) -mtune=$(CPU)
+                                         LDFLAGS+=-m32
  else			# CC_NAME, clang
  ifeq		($(CC_NAME), icc)
- 			C_DEFS+=-DCC_GCC_LIKE_ASM
-@@ -1745,7 +1742,7 @@
+@@ -1744,7 +1741,7 @@
  endif
  YACC_FLAGS=-d -b cfg
  # on solaris add -lxnet (e.g. LIBS= -lxnet)

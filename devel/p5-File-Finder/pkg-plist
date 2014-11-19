@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Finder/.packlist
 %%PERL5_MAN3%%/File::Finder.3.gz
 %%PERL5_MAN3%%/File::Finder::Steps.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Finder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Finder
-@dirrmtry %%SITE_PERL%%/File

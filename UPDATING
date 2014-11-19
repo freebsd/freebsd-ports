@@ -5,6 +5,55 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141119:
+  AFFECTS: users of x11/gnome2, graphics/clutter and lang/vala
+  AUTHOR: kwm@FreeBSD.org
+
+  GNOME 3.14 was imported. Because this is a big change some manual help is
+  needed. Please use the following instructions to update.
+
+  Delete the old and conflicting packages:
+  # pkg delete clutter gnome-utils gnome-panel gnome-keyring vala-vapigen \
+      guile gcalctool gnome-media libgnomekbd
+  # pkg delete gnome-screensaver gnome-applets bug-buddy \
+      evolution-exchange evolution-webcal gnome-system-tools \
+      seahorse-plugins gnome-control-center
+
+  For package users the following lines will be enough:
+  # pkg upgrade
+  # pkg install gnome3
+
+  For ports users should do the following:
+  # portmaster -a
+  # portmaster x11/gnome3
+
+20141117:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Most of the optional patches for OpenSSH do not apply to the 6.7 update yet.
+  The 6.6 version has been copied to security/openssh-portable66 if you require
+  the use of one of the optional ports.
+
+20141109:
+  AFFECTS: users of multimedia/mediabrowser
+  AUTHOR: woodsb02@gmail.com
+
+  The default MediaBrowser database/configuration/logs/media metadata
+  storage directory has moved from /usr/local/mediabrowser to
+  /var/db/mediabrowser. Users are advised either to move the contents of
+  the old directory to the new location, or to add a mediabrowser_data_dir
+  entry to /etc/rc.conf.
+
+20141029:
+  AFFECTS: users of devel/libvirt
+  AUTHOR: jgh@FreeBSD.org
+
+  Application state and resource information has been changed from older
+  path of /usr/local/var to /var. Users are advised to copy over contents
+  of old var directory to new location if they wish to preserve resources
+  from the old setup.
+
 20141019:
   AFFECTS: users of x11/kde4-runtime
   AUTHOR: kde@FreeBSD.org

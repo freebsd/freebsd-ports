@@ -19,8 +19,3 @@ share/gtk-doc/html/telepathy-farstream/right.png
 share/gtk-doc/html/telepathy-farstream/style.css
 share/gtk-doc/html/telepathy-farstream/telepathy-farstream.devhelp2
 share/gtk-doc/html/telepathy-farstream/up.png
-@dirrm share/gtk-doc/html/telepathy-farstream
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/telepathy-1.0/telepathy-farstream
-

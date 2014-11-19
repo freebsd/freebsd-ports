@@ -3,4 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shape/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shape/.packlist
 %%PERL5_MAN3%%/Shape.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shape

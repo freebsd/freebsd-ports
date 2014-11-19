@@ -1,6 +1,7 @@
 bin/snmptrapd-simple.pl
 bin/snmptrapd-sendtest.pl
 %%SITE_PERL%%/Net/SNMPTrapd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMPTrapd/.packlist
 %%PERL5_MAN3%%/Net::SNMPTrapd.3.gz
 man/man1/snmptrapd-sendtest.pl.1.gz
 man/man1/snmptrapd-simple.pl.1.gz

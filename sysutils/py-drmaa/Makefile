@@ -14,8 +14,7 @@ COMMENT=	Interact with DRMAA-compliant distributed resource management systems
 LICENSE=	BSD
 PROJECTHOST=	drmaa-python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

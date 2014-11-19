@@ -155,6 +155,20 @@ share/help/ko/lightsoff/license.page
 share/help/ko/lightsoff/rules.page
 share/help/ko/lightsoff/strategy.page
 share/help/ko/lightsoff/translate.page
+share/help/pt_BR/lightsoff/basic.page
+share/help/pt_BR/lightsoff/bug-filing.page
+share/help/pt_BR/lightsoff/develop.page
+share/help/pt_BR/lightsoff/documentation.page
+share/help/pt_BR/lightsoff/figures/lightsoff.jpg
+share/help/pt_BR/lightsoff/figures/lightsoff.ogv
+share/help/pt_BR/lightsoff/figures/lightsoff_logo.jpg
+share/help/pt_BR/lightsoff/figures/lo1.jpg
+share/help/pt_BR/lightsoff/index.page
+share/help/pt_BR/lightsoff/legal.xml
+share/help/pt_BR/lightsoff/license.page
+share/help/pt_BR/lightsoff/rules.page
+share/help/pt_BR/lightsoff/strategy.page
+share/help/pt_BR/lightsoff/translate.page
 share/help/ro/lightsoff/basic.page
 share/help/ro/lightsoff/bug-filing.page
 share/help/ro/lightsoff/develop.page
@@ -231,10 +245,7 @@ share/icons/HighContrast/24x24/apps/lightsoff.png
 share/icons/HighContrast/256x256/apps/lightsoff.png
 share/icons/HighContrast/48x48/apps/lightsoff.png
 share/icons/hicolor/scalable/apps/lightsoff.svg
-share/lightsoff/arrow.svg
-share/lightsoff/backing.svg
 share/lightsoff/highlight.svg
-share/lightsoff/led-back.svg
 share/lightsoff/off.svg
 share/lightsoff/on.svg
 share/locale/af/LC_MESSAGES/lightsoff.mo
@@ -325,105 +336,3 @@ share/locale/xh/LC_MESSAGES/lightsoff.mo
 share/locale/zh_CN/LC_MESSAGES/lightsoff.mo
 share/locale/zh_HK/LC_MESSAGES/lightsoff.mo
 share/locale/zh_TW/LC_MESSAGES/lightsoff.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
-@dirrmtry share/lightsoff
-@dirrmtry share/icons/HighContrast/48x48/apps
-@dirrmtry share/icons/HighContrast/48x48
-@dirrmtry share/icons/HighContrast/256x256/apps
-@dirrmtry share/icons/HighContrast/256x256
-@dirrmtry share/icons/HighContrast/24x24/apps
-@dirrmtry share/icons/HighContrast/24x24
-@dirrmtry share/icons/HighContrast/22x22/apps
-@dirrmtry share/icons/HighContrast/22x22
-@dirrmtry share/icons/HighContrast/16x16/apps
-@dirrmtry share/icons/HighContrast/16x16
-@dirrmtry share/icons/HighContrast
-@dirrm share/help/zh_CN/lightsoff/figures
-@dirrm share/help/zh_CN/lightsoff
-@dirrmtry share/help/zh_CN
-@dirrm share/help/sv/lightsoff/figures
-@dirrm share/help/sv/lightsoff
-@dirrmtry share/help/sv
-@dirrm share/help/sl/lightsoff/figures
-@dirrm share/help/sl/lightsoff
-@dirrmtry share/help/sl
-@dirrm share/help/ru/lightsoff/figures
-@dirrm share/help/ru/lightsoff
-@dirrmtry share/help/ru
-@dirrm share/help/ro/lightsoff/figures
-@dirrm share/help/ro/lightsoff
-@dirrmtry share/help/ro
-@dirrm share/help/ko/lightsoff/figures
-@dirrm share/help/ko/lightsoff
-@dirrmtry share/help/ko
-@dirrm share/help/hu/lightsoff/figures
-@dirrm share/help/hu/lightsoff
-@dirrmtry share/help/hu
-@dirrm share/help/gl/lightsoff/figures
-@dirrm share/help/gl/lightsoff
-@dirrmtry share/help/gl
-@dirrm share/help/fr/lightsoff/figures
-@dirrm share/help/fr/lightsoff
-@dirrmtry share/help/fr
-@dirrm share/help/fi/lightsoff/figures
-@dirrm share/help/fi/lightsoff
-@dirrmtry share/help/fi
-@dirrm share/help/es/lightsoff/figures
-@dirrm share/help/es/lightsoff
-@dirrmtry share/help/es
-@dirrm share/help/el/lightsoff/figures
-@dirrm share/help/el/lightsoff
-@dirrmtry share/help/el
-@dirrm share/help/de/lightsoff/figures
-@dirrm share/help/de/lightsoff
-@dirrmtry share/help/de
-@dirrm share/help/cs/lightsoff/figures
-@dirrm share/help/cs/lightsoff
-@dirrmtry share/help/cs
-@dirrm share/help/ca/lightsoff/figures
-@dirrm share/help/ca/lightsoff
-@dirrmtry share/help/ca
-@dirrm share/help/C/lightsoff/figures
-@dirrm share/help/C/lightsoff
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrmtry share/appdata

@@ -583,36 +583,3 @@ share/locale/vi/LC_MESSAGES/kpovmodeler.mo
 share/locale/xh/LC_MESSAGES/kpovmodeler.mo
 share/locale/zh_CN/LC_MESSAGES/kpovmodeler.mo
 share/locale/zh_TW/LC_MESSAGES/kpovmodeler.mo
-@dirrm share/doc/HTML/uk/kpovmodeler
-@dirrm share/doc/HTML/sv/kpovmodeler
-@dirrm share/doc/HTML/ru/kpovmodeler
-@dirrm share/doc/HTML/pt_BR/kpovmodeler
-@dirrm share/doc/HTML/pt/kpovmodeler
-@dirrm share/doc/HTML/hu/kpovmodeler
-@dirrm share/doc/HTML/fr/kpovmodeler
-@dirrm share/doc/HTML/et/kpovmodeler
-@dirrm share/doc/HTML/es/kpovmodeler
-@dirrm share/doc/HTML/en/kpovmodeler
-@dirrm share/doc/HTML/de/kpovmodeler
-@dirrm share/doc/HTML/da/kpovmodeler
-@dirrm share/doc/HTML/ca/kpovmodeler
-@dirrm share/apps/kpovmodeler/icons/locolor/16x16/actions
-@dirrm share/apps/kpovmodeler/icons/locolor/16x16
-@dirrm share/apps/kpovmodeler/icons/locolor
-@dirrm share/apps/kpovmodeler/icons/hicolor/22x22/actions
-@dirrm share/apps/kpovmodeler/icons/hicolor/22x22
-@dirrm share/apps/kpovmodeler/icons/hicolor/16x16/actions
-@dirrm share/apps/kpovmodeler/icons/hicolor/16x16
-@dirrm share/apps/kpovmodeler/icons/hicolor
-@dirrm share/apps/kpovmodeler/icons
-@dirrm share/apps/kpovmodeler/examples/scenes/objects
-@dirrm share/apps/kpovmodeler/examples/scenes/lights
-@dirrm share/apps/kpovmodeler/examples/scenes/interior
-@dirrm share/apps/kpovmodeler/examples/scenes/csg
-@dirrm share/apps/kpovmodeler/examples/scenes/advanced
-@dirrm share/apps/kpovmodeler/examples/scenes
-@dirrm share/apps/kpovmodeler/examples/includes/original
-@dirrm share/apps/kpovmodeler/examples/includes/inlined
-@dirrm share/apps/kpovmodeler/examples/includes
-@dirrm share/apps/kpovmodeler/examples
-@dirrm share/apps/kpovmodeler

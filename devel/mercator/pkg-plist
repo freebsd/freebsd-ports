@@ -26,6 +26,4 @@ include/Mercator-0.3/Mercator/ShaderFactory.h
 include/Mercator-0.3/Mercator/ShaderFactory_impl.h
 include/Mercator-0.3/Mercator/Area.h
 include/Mercator-0.3/Mercator/AreaShader.h
-@dirrm include/Mercator-0.3/Mercator
-@dirrm include/Mercator-0.3
 libdata/pkgconfig/mercator-0.3.pc

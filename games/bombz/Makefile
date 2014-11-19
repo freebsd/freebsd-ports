@@ -12,20 +12,20 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple 2D puzzle game with bombs
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.TXT
 
 RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/Bombz
 
-USES=		dos2unix zip
+USES=		dos2unix python zip
 DOS2UNIX_FILES=	*.txt
 USE_SDL=	sdl image mixer
 INSTALLS_ICONS=	yes
-USE_PYTHON=	yes
 
 PORTDOCS=	ChangeLog readme.txt
 OPTIONS_DEFINE=	DOCS

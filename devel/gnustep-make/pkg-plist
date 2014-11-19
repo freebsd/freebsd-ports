@@ -44,6 +44,7 @@ GNUstep/System/Library/Makefiles/Master/application.make
 GNUstep/System/Library/Makefiles/Master/bundle.make
 GNUstep/System/Library/Makefiles/Master/clibrary.make
 GNUstep/System/Library/Makefiles/Master/ctool.make
+GNUstep/System/Library/Makefiles/Master/deb.make
 GNUstep/System/Library/Makefiles/Master/documentation.make
 GNUstep/System/Library/Makefiles/Master/framework.make
 GNUstep/System/Library/Makefiles/Master/gswapp.make
@@ -95,6 +96,7 @@ GNUstep/System/Library/Makefiles/config.make
 GNUstep/System/Library/Makefiles/config.sub
 GNUstep/System/Library/Makefiles/cpu.sh
 GNUstep/System/Library/Makefiles/ctool.make
+GNUstep/System/Library/Makefiles/deb-equivs-control.template
 GNUstep/System/Library/Makefiles/documentation.make
 GNUstep/System/Library/Makefiles/empty.make
 GNUstep/System/Library/Makefiles/executable.template
@@ -143,92 +145,39 @@ GNUstep/System/Tools/gnustep-config
 GNUstep/System/Tools/gnustep-tests
 GNUstep/System/Tools/openapp
 GNUstep/System/Tools/opentool
-@rmtry GNUstep/System/Makefiles
-@dirrm GNUstep/System/Tools/Resources
-@dirrm GNUstep/System/Tools/Java
-@dirrm GNUstep/System/Tools
-@dirrm GNUstep/System/Library/Sounds
-@dirrm GNUstep/System/Library/Services
-@dirrm GNUstep/System/Library/PostScript
-@dirrm GNUstep/System/Library/Makefiles/%%GNU_ARCH%%
-@dirrm GNUstep/System/Library/Makefiles/TestFramework
-@dirrm GNUstep/System/Library/Makefiles/Master
-@dirrm GNUstep/System/Library/Makefiles/Instance/Shared
-@dirrm GNUstep/System/Library/Makefiles/Instance/Documentation
-@dirrm GNUstep/System/Library/Makefiles/Instance
-@dirrm GNUstep/System/Library/Makefiles/Auxiliary
-@dirrm GNUstep/System/Library/Makefiles/Additional
-@dirrm GNUstep/System/Library/Makefiles
-@dirrm GNUstep/System/Library/Libraries/Resources
-@dirrm GNUstep/System/Library/Libraries/Java
-@dirrm GNUstep/System/Library/Libraries
-@dirrm GNUstep/System/Library/KeyBindings
-@dirrm GNUstep/System/Library/Images
-@dirrm GNUstep/System/Library/Headers
-@dirrm GNUstep/System/Library/Frameworks
-@dirrm GNUstep/System/Library/Fonts
-@dirrm GNUstep/System/Library/Documentation/man/man7
-@dirrm GNUstep/System/Library/Documentation/man/man1
-@dirrm GNUstep/System/Library/Documentation/man
-@dirrm GNUstep/System/Library/Documentation/info
-@dirrm GNUstep/System/Library/Documentation/User
-@dirrm GNUstep/System/Library/Documentation/Developer
-@dirrm GNUstep/System/Library/Documentation
-@dirrm GNUstep/System/Library/DocTemplates
-@dirrm GNUstep/System/Library/Colors
-@dirrm GNUstep/System/Library/ColorPickers
-@dirrm GNUstep/System/Library/Bundles
-@dirrm GNUstep/System/Library/ApplicationSupport
-@dirrm GNUstep/System/Library
-@dirrm GNUstep/System/Applications
-@dirrm GNUstep/System
-@dirrm GNUstep/Local/Tools/Resources
-@dirrm GNUstep/Local/Tools
-@dirrm GNUstep/Local/Library/Services
-@dirrm GNUstep/Local/Library/Preferences
-@dirrm GNUstep/Local/Library/Libraries
-@dirrm GNUstep/Local/Library/Headers
-@dirrm GNUstep/Local/Library/Frameworks
-@dirrm GNUstep/Local/Library/Documentation
-@dirrm GNUstep/Local/Library/Bundles
-@dirrm GNUstep/Local/Library/ApplicationSupport
-@dirrm GNUstep/Local/Library
-@dirrm GNUstep/Local/Applications
-@dirrm GNUstep/Local
-@dirrm GNUstep
-@exec ln -s Library/Makefiles %D/GNUstep/System/
-@exec mkdir -p %D/GNUstep/Local/Applications
-@exec mkdir -p %D/GNUstep/Local/Library/ApplicationSupport
-@exec mkdir -p %D/GNUstep/Local/Library/Bundles
-@exec mkdir -p %D/GNUstep/Local/Library/Documentation
-@exec mkdir -p %D/GNUstep/Local/Library/Frameworks
-@exec mkdir -p %D/GNUstep/Local/Library/Headers
-@exec mkdir -p %D/GNUstep/Local/Library/Libraries
-@exec mkdir -p %D/GNUstep/Local/Library/Preferences
-@exec mkdir -p %D/GNUstep/Local/Library/Services
-@exec mkdir -p %D/GNUstep/Local/Tools/Resources
-@exec mkdir -p %D/GNUstep/System/Applications
-@exec mkdir -p %D/GNUstep/System/Library/ApplicationSupport
-@exec mkdir -p %D/GNUstep/System/Library/Bundles
-@exec mkdir -p %D/GNUstep/System/Library/ColorPickers
-@exec mkdir -p %D/GNUstep/System/Library/Colors
-@exec mkdir -p %D/GNUstep/System/Library/DocTemplates
-@exec mkdir -p %D/GNUstep/System/Library/Documentation/man
-@exec mkdir -p %D/GNUstep/System/Library/Documentation/info
-@exec mkdir -p %D/GNUstep/System/Library/Documentation/Developer
-@exec mkdir -p %D/GNUstep/System/Library/Documentation/User
-@exec mkdir -p %D/GNUstep/System/Library/Fonts
-@exec mkdir -p %D/GNUstep/System/Library/Frameworks
-@exec mkdir -p %D/GNUstep/System/Library/Headers
-@exec mkdir -p %D/GNUstep/System/Library/Images
-@exec mkdir -p %D/GNUstep/System/Library/KeyBindings
-@exec mkdir -p %D/GNUstep/System/Library/Libraries/Java
-@exec mkdir -p %D/GNUstep/System/Library/Libraries/Resources
-@exec mkdir -p %D/GNUstep/System/Library/Makefiles/Additional
-@exec mkdir -p %D/GNUstep/System/Library/Makefiles/Auxiliary
-@exec mkdir -p %D/GNUstep/System/Library/Makefiles/%%GNU_ARCH%%
-@exec mkdir -p %D/GNUstep/System/Library/PostScript
-@exec mkdir -p %D/GNUstep/System/Library/Sounds
-@exec mkdir -p %D/GNUstep/System/Library/Services
-@exec mkdir -p %D/GNUstep/System/Tools/Java
-@exec mkdir -p %D/GNUstep/System/Tools/Resources
+GNUstep/System/Makefiles
+@dir GNUstep/Local/Applications
+@dir GNUstep/Local/Library/ApplicationSupport
+@dir GNUstep/Local/Library/Bundles
+@dir GNUstep/Local/Library/Documentation
+@dir GNUstep/Local/Library/Frameworks
+@dir GNUstep/Local/Library/Headers
+@dir GNUstep/Local/Library/Libraries
+@dir GNUstep/Local/Library/Preferences
+@dir GNUstep/Local/Library/Services
+@dir GNUstep/Local/Tools/Resources
+@dir GNUstep/System/Applications
+@dir GNUstep/System/Library/ApplicationSupport
+@dir GNUstep/System/Library/Bundles
+@dir GNUstep/System/Library/ColorPickers
+@dir GNUstep/System/Library/Colors
+@dir GNUstep/System/Library/DocTemplates
+@dir GNUstep/System/Library/Documentation/man
+@dir GNUstep/System/Library/Documentation/info
+@dir GNUstep/System/Library/Documentation/Developer
+@dir GNUstep/System/Library/Documentation/User
+@dir GNUstep/System/Library/Fonts
+@dir GNUstep/System/Library/Frameworks
+@dir GNUstep/System/Library/Headers
+@dir GNUstep/System/Library/Images
+@dir GNUstep/System/Library/KeyBindings
+@dir GNUstep/System/Library/Libraries/Java
+@dir GNUstep/System/Library/Libraries/Resources
+@dir GNUstep/System/Library/Makefiles/Additional
+@dir GNUstep/System/Library/Makefiles/Auxiliary
+@dir GNUstep/System/Library/Makefiles/%%GNU_ARCH%%
+@dir GNUstep/System/Library/PostScript
+@dir GNUstep/System/Library/Sounds
+@dir GNUstep/System/Library/Services
+@dir GNUstep/System/Tools/Java
+@dir GNUstep/System/Tools/Resources

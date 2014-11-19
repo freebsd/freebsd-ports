@@ -3,6 +3,3 @@ bin/cpaninject
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Inject/.packlist
 %%PERL5_MAN3%%/CPAN::Inject.3.gz
 man/man1/cpaninject.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Inject
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
-@dirrmtry %%SITE_PERL%%/CPAN

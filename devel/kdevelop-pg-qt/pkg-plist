@@ -7,6 +7,3 @@ include/kdevelop-pg-qt/kdev-pg-memory-pool.h
 include/kdevelop-pg-qt/kdev-pg-token-stream.h
 lib/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfig.cmake
 lib/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfigVersion.cmake
-@dirrm lib/cmake/KDevelop-PG-Qt
-@dirrmtry lib/cmake
-@dirrm include/kdevelop-pg-qt

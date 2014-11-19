@@ -1,8 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Event/Lunar/.packlist
 %%SITE_PERL%%/DateTime/Event/Lunar.pm
 %%PERL5_MAN3%%/DateTime::Event::Lunar.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Event/Lunar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Event
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime/Event
-@dirrmtry %%SITE_PERL%%/DateTime

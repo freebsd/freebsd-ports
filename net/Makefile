@@ -62,6 +62,7 @@
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
+    SUBDIR += cloud-init
     SUBDIR += clusterit
     SUBDIR += cnd
     SUBDIR += coda6_client
@@ -143,7 +144,6 @@
     SUBDIR += glib-networking
     SUBDIR += gnet2
     SUBDIR += gnetcat
-    SUBDIR += gnome-netstatus
     SUBDIR += gnome-nettool
     SUBDIR += gnome-online-accounts
     SUBDIR += gnome-online-miners
@@ -153,16 +153,16 @@
     SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
+    SUBDIR += googlecl
     SUBDIR += google-cloud-sdk
     SUBDIR += google-daemon
-    SUBDIR += googlecl
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gpxe
     SUBDIR += gq
     SUBDIR += grdesktop
-    SUBDIR += grilo
     SUBDIR += grilo-plugins
+    SUBDIR += grilo
     SUBDIR += grive
     SUBDIR += grsync
     SUBDIR += gsk
@@ -349,6 +349,7 @@
     SUBDIR += luasocket
     SUBDIR += lvwimax
     SUBDIR += mDNSResponder
+    SUBDIR += macchanger
     SUBDIR += mad_fcl
     SUBDIR += mcast-tools
     SUBDIR += mediastreamer
@@ -367,6 +368,7 @@
     SUBDIR += morebalance
     SUBDIR += mosh
     SUBDIR += mosquitto
+    SUBDIR += motsognir
     SUBDIR += mpd-l2tp-ipv6pd-client
     SUBDIR += mpd5
     SUBDIR += mpich
@@ -401,6 +403,7 @@
     SUBDIR += netwib
     SUBDIR += neubot
     SUBDIR += nfsshell
+    SUBDIR += ng_mikrotik_eoip
     SUBDIR += ngrep
     SUBDIR += nifmon
     SUBDIR += nload
@@ -599,6 +602,7 @@
     SUBDIR += p5-Net-NIS
     SUBDIR += p5-Net-NIS-Listgroup
     SUBDIR += p5-Net-Nessus-XMLRPC
+    SUBDIR += p5-Net-Nmsg
     SUBDIR += p5-Net-OAuth
     SUBDIR += p5-Net-OAuth-Simple
     SUBDIR += p5-Net-OAuth2
@@ -834,8 +838,8 @@
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
     SUBDIR += php55-xmlrpc
-    SUBDIR += php56-ldap
-    SUBDIR += php56-soap
+    SUBDIR += php56-ldap  
+    SUBDIR += php56-soap  
     SUBDIR += php56-sockets
     SUBDIR += php56-xmlrpc
     SUBDIR += phpldapadmin
@@ -1012,9 +1016,9 @@
     SUBDIR += rubygem-iproto
     SUBDIR += rubygem-lita-gems
     SUBDIR += rubygem-macaddr
+    SUBDIR += rubygem-netrc
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
-    SUBDIR += rubygem-netrc
     SUBDIR += rubygem-network_interface
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
@@ -1091,7 +1095,6 @@
     SUBDIR += sixxs-aiccu
     SUBDIR += skstream
     SUBDIR += sl2tps
-    SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smb4k-kde4
     SUBDIR += smbldap-tools

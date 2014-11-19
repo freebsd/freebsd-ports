@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Math/Financial.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Financial/.packlist
 %%PERL5_MAN3%%/Math::Financial.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Financial
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/Math

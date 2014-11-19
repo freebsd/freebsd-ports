@@ -134,9 +134,3 @@ share/gtk-doc/html/libchamplain-gtk-%%VERSION%%/up-insensitive.png
 share/gtk-doc/html/libchamplain-gtk-%%VERSION%%/up.png
 share/vala/vapi/champlain-%%VERSION%%.vapi
 share/vala/vapi/champlain-gtk-%%VERSION%%.vapi
-@dirrm share/gtk-doc/html/libchamplain-gtk-%%VERSION%%
-@dirrm share/gtk-doc/html/libchamplain-%%VERSION%%
-@dirrm include/libchamplain-gtk-%%VERSION%%/champlain-gtk
-@dirrm include/libchamplain-gtk-%%VERSION%%
-@dirrm include/libchamplain-%%VERSION%%/champlain
-@dirrm include/libchamplain-%%VERSION%%

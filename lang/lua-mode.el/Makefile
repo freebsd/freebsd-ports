@@ -3,7 +3,7 @@
 
 PORTNAME=	lua-mode.el
 PORTVERSION=	1.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://lua-users.org/files/wiki_insecure/editors/
 DISTNAME=	lua-mode.el
@@ -19,14 +19,14 @@ NO_WRKSUBDIR=	yes
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-PLIST_FILES=	share/emacs/site-lisp/lua-mode.el lib/xemacs/site-lisp/lua-mode.el
-PLIST_DIRSTRY=	lib/xemacs/site-lisp lib/xemacs
+PLIST_FILES=	share/emacs/site-lisp/lua-mode.el \
+		lib/xemacs/site-lisp/lua-mode.el
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${EMACSLISPDIR}
-	@${MKDIR} ${STAGEDIR}${XEMACSLISPDIR}
+	@${MKDIR} ${STAGEDIR}${EMACSLISPDIR} ${STAGEDIR}${XEMACSLISPDIR}
 	${INSTALL_DATA} ${_DISTDIR}/${DISTNAME} \
 		${STAGEDIR}${EMACSLISPDIR}/lua-mode.el
+	${SED} -i '' -e 's/last-command-char/last-command-event/g' ${STAGEDIR}${EMACSLISPDIR}/lua-mode.el
 	${LN} -sf ${EMACSLISPDIR}/lua-mode.el ${STAGEDIR}${XEMACSLISPDIR}
 
 .include <bsd.port.mk>

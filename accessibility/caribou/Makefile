@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/accessibility/caribou/Makefile 19845 2014-09-04 05:31:44Z gusi $
+#    $MCom: ports/trunk/accessibility/caribou/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	caribou
-PORTVERSION=	0.4.14
+PORTVERSION=	0.4.15
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,7 +21,7 @@ RUN_DEPENDS=	py2?-atspi>=2.1.91:${PORTSDIR}/accessibility/py-atspi
 
 USES=		gettext gmake libtool pathfix pkgconfig python:2 \
 		shebangfix tar:xz
-USE_GNOME=	gnomehier gtk30 intlhack introspection:build libxml2 \
+USE_GNOME=	gtk30 intlhack introspection:build libxml2 \
 		libxslt:build pygobject3
 SHEBANG_FILES=	tools/fix_gir.py tools/make_schema.py
 USE_XORG=	x11 xtst

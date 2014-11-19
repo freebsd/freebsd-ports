@@ -10,7 +10,3 @@
 %%PERL5_MAN3%%/Data::Util::Error.3.gz
 %%PERL5_MAN3%%/Data::Util::JA.3.gz
 %%PERL5_MAN3%%/Data::Util::PurePerl.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Data/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data

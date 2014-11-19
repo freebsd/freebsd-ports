@@ -38,6 +38,7 @@ mycflags=	-shared -fPIC -DPIC ${PTHREAD_CFLAGS} \
 		-I${LOCALBASE}/include/libpurple \
 		-I${LOCALBASE}/include/pidgin \
 		-I${LOCALBASE}/include/glib-2.0 \
+		-I${LOCALBASE}/lib/glib-2.0/include \
 		-DPURPLE_PLUGINS
 mylibs=		${PTHREAD_LIBS}
 

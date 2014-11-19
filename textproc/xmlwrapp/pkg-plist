@@ -25,5 +25,3 @@ lib/libxmlwrapp.so.6.0.0
 %%XSLT%%lib/libxsltwrapp.so.4.0.0
 libdata/pkgconfig/xmlwrapp.pc
 %%XSLT%%libdata/pkgconfig/xsltwrapp.pc
-%%XSLT%%@dirrm include/xsltwrapp
-@dirrm include/xmlwrapp

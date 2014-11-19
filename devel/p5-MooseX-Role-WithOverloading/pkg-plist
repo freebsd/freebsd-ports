@@ -26,13 +26,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Composite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/WithOverloading/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/WithOverloading/WithOverloading.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/WithOverloading
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application/Composite
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role/Application
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta/Role
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading/Meta
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role/WithOverloading
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MooseX/Role
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MooseX

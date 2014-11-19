@@ -54,9 +54,8 @@ SUB_FILES=	pkg-message
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 AUTOMAKE_ARGS=	-a -c -f
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 USE_OPENLDAP=	yes
-USES=		gettext gmake iconv libtool pathfix pkgconfig shebangfix
+USES=		gettext gmake iconv libtool pathfix pkgconfig python shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.am
 SHEBANG_FILES=	src/tools/sss_obfuscate
 

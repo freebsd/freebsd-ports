@@ -2,8 +2,3 @@
 %%SITE_PERL%%/auto/Data/Uniqid/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Uniqid/.packlist
 %%PERL5_MAN3%%/Data::Uniqid.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Uniqid
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/auto/Data/Uniqid
-@dirrmtry %%SITE_PERL%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data

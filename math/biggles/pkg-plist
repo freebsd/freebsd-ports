@@ -37,5 +37,3 @@
 %%PYTHON_SITELIBDIR%%/biggles/matlab.py
 %%PYTHON_SITELIBDIR%%/biggles/matlab.pyc
 %%PYTHON_SITELIBDIR%%/biggles/matlab.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/biggles/libplot
-@dirrm %%PYTHON_SITELIBDIR%%/biggles

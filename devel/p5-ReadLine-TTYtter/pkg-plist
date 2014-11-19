@@ -1,7 +1,3 @@
 %%SITE_PERL%%/Term/ReadLine/TTYtter.pm
 %%SITE_PERL%%/Term/ReadLine/readline_ttytter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term/ReadLine
-@dirrmtry %%SITE_PERL%%/Term

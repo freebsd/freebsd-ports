@@ -23,7 +23,3 @@
 %%SITE_PERL%%/Geometry/Primitive/Rectangle.pm
 %%SITE_PERL%%/Geometry/Primitive/Shape.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geometry/Primitive/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geometry/Primitive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geometry
-@dirrmtry %%SITE_PERL%%/Geometry/Primitive
-@dirrmtry %%SITE_PERL%%/Geometry

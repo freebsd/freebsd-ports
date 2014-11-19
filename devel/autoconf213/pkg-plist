@@ -20,4 +20,3 @@ share/autoconf-%%BUILD_VERSION%%/autoheader.m4f
 share/autoconf-%%BUILD_VERSION%%/config.guess
 share/autoconf-%%BUILD_VERSION%%/config.sub
 share/autoconf-%%BUILD_VERSION%%/install-sh
-@dirrm share/autoconf-%%BUILD_VERSION%%

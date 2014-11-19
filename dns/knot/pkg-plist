@@ -9,7 +9,6 @@ man/man1/knsupdate.1.gz
 man/man5/knot.conf.5.gz
 man/man8/knotc.8.gz
 man/man8/knotd.8.gz
-@dirrmtry %%ETCDIR%%
 bin/kdig
 bin/khost
 bin/knsec3hash

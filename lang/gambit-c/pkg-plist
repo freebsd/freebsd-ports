@@ -43,6 +43,3 @@ man/man1/gsi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/gambit-c.pdf
 %%PORTDOCS%%%%DOCSDIR%%/gambit-c.txt
 share/emacs/site-lisp/gambit.el
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/gambit-c
-@dirrmtry include/gambit-c

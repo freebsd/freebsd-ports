@@ -7,7 +7,7 @@ CATEGORIES=		emulators linux
 MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/ \
 		http://mirror.centos.org/centos/6/updates/i386/Packages/
 PKGNAMEPREFIX=		linux_base-
-DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
+DISTFILES=		${PRE_BIN_DISTFILES} ${BIN_DISTFILES} ${SRC_DISTFILES}
 EXTRACT_ONLY=		${BIN_DISTFILES}
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -16,6 +16,11 @@ COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux CentOS 
 LINUX_DIST=	centos
 LINUX_DIST_VER=6.6
 DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
+
+# these get extracted from pre-extract, then some directory permissions
+# get fixed up
+PRE_BIN_DISTFILES=	filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm  \
+			setup-2.8.14-20.el6_4.1.noarch.rpm
 
 BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		bash-4.1.2-29.el6.${LINUX_RPM_ARCH}.rpm \
@@ -30,7 +35,6 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		e2fsprogs-libs-1.41.12-21.el6.${LINUX_RPM_ARCH}.rpm \
 		elfutils-0.158-3.2.el6.${LINUX_RPM_ARCH}.rpm \
 		centos-release-6-6.el6.centos.12.2.${LINUX_RPM_ARCH}.rpm \
-		filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm \
 		findutils-4.4.2-6.el6.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.3.11-14.el6_3.1.${LINUX_RPM_ARCH}.rpm \
 		gamin-0.1.10-9.el6.${LINUX_RPM_ARCH}.rpm \
@@ -62,15 +66,14 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		redhat-lsb-core-4.0-7.el6.centos.${LINUX_RPM_ARCH}.rpm \
 		sed-4.2.1-10.el6.${LINUX_RPM_ARCH}.rpm \
 		setserial-2.17-25.el6.${LINUX_RPM_ARCH}.rpm \
-		setup-2.8.14-20.el6_4.1.noarch.rpm \
 		slang-2.2.1-1.el6.${LINUX_RPM_ARCH}.rpm \
 		util-linux-ng-2.17.2-12.18.el6.${LINUX_RPM_ARCH}.rpm \
 		which-2.19-6.el6.${LINUX_RPM_ARCH}.rpm \
 		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
-MASTER_SITES+=	http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/ \
-		http://vault.centos.org/6.5/updates/Source/SPackages/:updates
+MASTER_SITES+=	http://vault.centos.org/${LINUX_DIST_VER}/os/Source/SPackages/ \
+		http://vault.centos.org/${LINUX_DIST_VER}/updates/Source/SPackages/:updates
 
 SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		bash-4.1.2-29.el6.src.rpm \
@@ -81,8 +84,8 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		compat-gcc-32-3.2.3-69.el6.src.rpm \
 		db4-4.7.25-18.el6_4.src.rpm \
 		e2fsprogs-1.41.12-21.el6.src.rpm \
-		elfutils-0.158-3.2.el6.i686.rpm \
-		centos-release-6-6.el6.centos.12.2.i686.rpm \
+		elfutils-0.158-3.2.el6.src.rpm \
+		centos-release-6-6.el6.centos.12.2.src.rpm \
 		filesystem-2.4.30-3.el6.src.rpm \
 		findutils-4.4.2-6.el6.src.rpm \
 		freetype-2.3.11-14.el6_3.1.src.rpm \
@@ -134,10 +137,7 @@ bash_CMD=	/usr/bin/env bash
 # TODO:
 # - move master sites to bsd.sites.mk
 # - add 2-3 mirrors from each country (http://www.centos.org/modules/tinycontent/index.php?id=31)
-# - create centos infrastructure in bsd.linux*.mk
 # - look for updates in the updates folder of the CentOS mirrors
-# - research what are the important differences between 2.6.16 and 2.6.18, and
-#   if we need to add something to the linuxulator
 
 EXTRACT_ONLY=		${BIN_DISTFILES}
 
@@ -172,6 +172,17 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LATEST_LINK:=		${PKGBASE:C/linux/linux32/}
 ARCH=			i386
 .endif
+
+pre-extract:
+	@for file in ${PRE_BIN_DISTFILES}; do \
+	    if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+	    then \
+	        exit 1; \
+	    fi; \
+	done
+	# now fix up broken permissions
+	@${CHMOD} -R u+rwX ${WRKDIR}/bin ${WRKDIR}/lib ${WRKDIR}/sbin ${WRKDIR}/usr/bin ${WRKDIR}/usr/lib ${WRKDIR}/usr/sbin
+	@${CHMOD} 400 ${WRKDIR}/etc/*shadow
 
 do-build:
 	@for D in ${REMOVE_DIRS}; do \

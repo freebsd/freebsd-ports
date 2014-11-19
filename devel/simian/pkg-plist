@@ -7,7 +7,3 @@ bin/simian
 %%MONO%%simian/bin/IKVM.OpenJDK.Util.dll
 %%MONO%%simian/bin/IKVM.Runtime.dll
 share/xsl/simian/simian.xsl
-@dirrm simian/bin
-@dirrm simian
-@dirrm share/xsl/simian
-@dirrmtry share/xsl

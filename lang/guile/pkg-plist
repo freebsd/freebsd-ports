@@ -291,19 +291,3 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-8.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-88.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-9.scm
-@dirrm %%DATADIR%%/%%GUILE_VER%%/srfi
-@dirrm %%DATADIR%%/%%GUILE_VER%%/scripts
-@dirrm %%DATADIR%%/%%GUILE_VER%%/oop/goops
-@dirrm %%DATADIR%%/%%GUILE_VER%%/oop
-@dirrm %%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives
-@dirrm %%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals
-@dirrm %%DATADIR%%/%%GUILE_VER%%/lang/elisp
-@dirrm %%DATADIR%%/%%GUILE_VER%%/lang
-@dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9/debugging
-@dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9/debugger
-@dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9
-@dirrm %%DATADIR%%/%%GUILE_VER%%
-@dirrm %%DATADIR%%
-@dirrm include/libguile
-@dirrm include/guile/srfi
-@dirrm include/guile

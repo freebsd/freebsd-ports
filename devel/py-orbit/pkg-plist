@@ -7,4 +7,3 @@ include/pyorbit-2/pyorbit.h
 %%PYTHON_SITELIBDIR%%/PortableServer.pyc
 %%PYTHON_SITELIBDIR%%/PortableServer.pyo
 libdata/pkgconfig/pyorbit-2.pc
-@dirrm include/pyorbit-2

@@ -39,4 +39,3 @@ man/man1/cht.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tetracyclin.cht
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v3000.mol
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/viagra.cht
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

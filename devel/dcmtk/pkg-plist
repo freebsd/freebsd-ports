@@ -665,29 +665,3 @@ man/man1/xml2dsr.1.gz
 %%DATADIR%%/wlistqry/wlistqry7.dump
 %%DATADIR%%/wlistqry/wlistqry8.dump
 %%DATADIR%%/wlistqry/wlistqry9.dump
-@dirrm %%DATADIR%%/wlistdb/OFFIS
-@dirrm %%DATADIR%%/wlistqry
-@dirrm %%DATADIR%%/wlistdb
-@dirrm %%DATADIR%%
-@dirrm etc/dcmtk
-@dirrm bin/dcmtk
-@dirrm include/dcmtk/ofstd
-@dirrm include/dcmtk/oflog/spi
-@dirrm include/dcmtk/oflog/helpers
-@dirrm include/dcmtk/oflog/config
-@dirrm include/dcmtk/oflog
-@dirrm include/dcmtk/dcmwlm
-@dirrm include/dcmtk/dcmtls
-@dirrm include/dcmtk/dcmsr
-@dirrm include/dcmtk/dcmsign
-@dirrm include/dcmtk/dcmqrdb
-@dirrm include/dcmtk/dcmpstat
-@dirrm include/dcmtk/dcmnet
-@dirrm include/dcmtk/dcmjpls
-@dirrm include/dcmtk/dcmjpeg
-@dirrm include/dcmtk/dcmimgle
-@dirrm include/dcmtk/dcmimage
-@dirrm include/dcmtk/dcmdata/libi2d
-@dirrm include/dcmtk/dcmdata
-@dirrm include/dcmtk/config
-@dirrm include/dcmtk

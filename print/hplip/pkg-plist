@@ -2352,43 +2352,6 @@ share/ppd/HP/hp-psc_950vr-hpijs.ppd.gz
 share/ppd/HP/hp-psc_950vr.ppd.gz
 share/ppd/HP/hp-psc_950xi-hpijs.ppd.gz
 share/ppd/HP/hp-psc_950xi.ppd.gz
-@dirrm share/ppd/HP
-@dirrm share/ppd
-%%QT%%@dirrm %%DATADIR%%/ui4/plugins
-%%QT%%@dirrm %%DATADIR%%/ui4
-%%SCAN%%@dirrmtry %%DATADIR%%/scan
-@dirrmtry %%DATADIR%%/prnt
-@dirrm %%DATADIR%%/pcard
-@dirrm %%DATADIR%%/installer
-%%FAX%%@dirrmtry %%DATADIR%%/fax
-@dirrm %%DATADIR%%/data/ps
-@dirrm %%DATADIR%%/data/pcl
-@dirrm %%DATADIR%%/data/models
-@dirrm %%DATADIR%%/data/localization
-@dirrm %%DATADIR%%/data/ldl
-%%QT%%@dirrm %%DATADIR%%/data/images/other
-%%QT%%@dirrm %%DATADIR%%/data/images/devices
-%%QT%%@dirrm %%DATADIR%%/data/images/64x64
-%%QT%%@dirrm %%DATADIR%%/data/images/32x32
-%%QT%%@dirrm %%DATADIR%%/data/images/256x256
-%%QT%%@dirrm %%DATADIR%%/data/images/24x24
-%%QT%%@dirrm %%DATADIR%%/data/images/16x16
-%%QT%%@dirrm %%DATADIR%%/data/images/128x128
-%%QT%%@dirrm %%DATADIR%%/data/images
-@dirrmtry %%DATADIR%%/data
-@dirrm %%DATADIR%%/copier
-@dirrm %%DATADIR%%/base
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/styles
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry libexec/cups/filter
-@dirrmtry libexec/cups/backend
-@dirrmtry libexec/cups
-%%SCAN%%@dirrmtry lib/sane
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry etc/hp
-%%FAX%%@dirrmtry etc/cups
-%%QT%%@exec mkdir -p %D/%%DATADIR%%/ui4/plugins
+%%QT%%@dir %%DATADIR%%/ui4/plugins
 %%SCAN%%@exec if ! grep ^hpaio %%LOCALBASE%%/etc/sane.d/dll.conf >/dev/null 2>/dev/null ; then echo hpaio >> %%LOCALBASE%%/etc/sane.d/dll.conf; fi
 %%SCAN%%@unexec sed -i "" -e '/^hpaio$/d' %%LOCALBASE%%/etc/sane.d/dll.conf

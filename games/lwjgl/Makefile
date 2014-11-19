@@ -8,7 +8,7 @@ MASTER_SITES=	SF/java-game-lib/Official%20Releases/${PORTNAME:tu}%20${PORTVERSIO
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-source-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Java Game Library
 
 LICENSE=	BSD3CLAUSE

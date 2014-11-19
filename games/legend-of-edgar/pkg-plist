@@ -36,10 +36,3 @@ share/icons/hicolor/64x64/apps/edgar.png
 %%NLS%%share/locale/vi/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/edgar.mo
 share/pixmaps/edgar.png
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/jv
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
-@dirrm %%DATADIR%%

@@ -12,5 +12,3 @@ man/man1/tre_agrep.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/tre.mo
 %%PORTDOCS%%%%DOCSDIR%%/tre-api.html
 %%PORTDOCS%%%%DOCSDIR%%/tre-syntax.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/tre

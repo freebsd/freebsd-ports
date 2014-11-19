@@ -53,35 +53,3 @@ share/icons/hicolor/scalable/apps/gobby.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gobby.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gobby.mo
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/gv/LC_MESSAGES
-@dirrmtry share/locale/gv
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/icons/HighContrastLargePrintInverse/scalable/apps
-@dirrmtry share/icons/HighContrastLargePrintInverse/scalable
-@dirrmtry share/icons/HighContrastLargePrintInverse/48x48/apps
-@dirrmtry share/icons/HighContrastLargePrintInverse/48x48
-@dirrmtry share/icons/HighContrastLargePrintInverse
-@dirrmtry share/icons/HighContrastLargePrint/scalable/apps
-@dirrmtry share/icons/HighContrastLargePrint/scalable
-@dirrmtry share/icons/HighContrastLargePrint/48x48/apps
-@dirrmtry share/icons/HighContrastLargePrint/48x48
-@dirrmtry share/icons/HighContrastLargePrint
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons/HighContrastLargePrintInverse/scalable/actions
-@dirrm %%DATADIR%%/icons/HighContrastLargePrintInverse/scalable
-@dirrm %%DATADIR%%/icons/HighContrastLargePrintInverse/48x48/actions
-@dirrm %%DATADIR%%/icons/HighContrastLargePrintInverse/48x48
-@dirrm %%DATADIR%%/icons/HighContrastLargePrintInverse
-@dirrm %%DATADIR%%/icons/HighContrastLargePrint/scalable/actions
-@dirrm %%DATADIR%%/icons/HighContrastLargePrint/scalable
-@dirrm %%DATADIR%%/icons/HighContrastLargePrint/48x48/actions
-@dirrm %%DATADIR%%/icons/HighContrastLargePrint/48x48
-@dirrm %%DATADIR%%/icons/HighContrastLargePrint
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

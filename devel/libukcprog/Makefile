@@ -5,7 +5,7 @@ PORTNAME=	libukcprog
 PORTVERSION=	1.0.2
 PORTREVISION=	5
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.uk.i-scream.org/pub/i-scream/libukcprog/ \
+MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/libukcprog/ \
 		http://dl.ambiweb.de/mirrors/ftp.i-scream.org/libukcprog/ \
 		http://ftp.i-scream.org/pub/i-scream/libukcprog/
 

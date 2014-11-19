@@ -6,7 +6,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/XSAccessor/Heavy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/XSAccessor.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/XSAccessor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class

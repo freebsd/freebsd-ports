@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/www/gnome-user-share/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#   $MCom: ports/trunk/www/gnome-user-share/Makefile 19970 2014-10-16 08:47:02Z gusi $
 
 PORTNAME=	gnome-user-share
-PORTVERSION=	3.10.1
-PORTREVISION=	3
+PORTVERSION=	3.14.0
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +20,7 @@ RUN_DEPENDS=	ap*-mod_dnssd>=0:${PORTSDIR}/www/mod_dnssd \
 		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
 
 USES=		gettext gmake libtool pkgconfig tar:xz
-USE_APACHE=	22
+USE_APACHE=	22+
 USE_XORG=	sm
 USE_GNOME=	gnomeprefix gtk30 intlhack nautilus3
 GNU_CONFIGURE=	yes
@@ -29,7 +28,7 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--with-modules-path=${LOCALBASE}/${APACHEMODDIR} \
 		--disable-bluetooth
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-patch:

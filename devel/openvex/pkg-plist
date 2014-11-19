@@ -109,11 +109,3 @@ man/man1/openvex-new-project.1.gz
 %%DATADIR%%/readme.txt
 %%DATADIR%%/svnignores.txt
 %%DATADIR%%/todo
-@dirrm %%DATADIR%%/Lib
-@dirrm %%DATADIR%%/Include
-@dirrm %%DATADIR%%/HiBob
-@dirrm %%DATADIR%%/Doc
-@dirrm %%DATADIR%%/Bin
-@dirrm %%DATADIR%%/Beginner
-@dirrm %%DATADIR%%/Advanced
-@dirrm %%DATADIR%%

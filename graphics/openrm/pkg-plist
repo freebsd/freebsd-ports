@@ -30,4 +30,3 @@ lib/librmi.so.1
 lib/librmv.a
 lib/librmv.so
 lib/librmv.so.1
-@dirrm include/rm

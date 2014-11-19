@@ -161,9 +161,3 @@ man/man1/aap.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/user-variant.html
 %%PORTDOCS%%%%DOCSDIR%%/html/user-version.html
 %%PORTDOCS%%%%DOCSDIR%%/html/user.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/aap/Exec-%%PORTVERSION%%/tools
-@dirrm lib/aap/Exec-%%PORTVERSION%%/modules
-@dirrm lib/aap/Exec-%%PORTVERSION%%
-@dirrmtry lib/aap

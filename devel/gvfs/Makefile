@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD: head/devel/gvfs/Makefile 353795 2014-05-12 10:28:51Z tijl $
-#   $MCom: ports/branches/GNOME_3_12/devel/gvfs/Makefile 19827 2014-08-24 08:15:41Z gusi $
+# $FreeBSD$
+#   $MCom: ports/trunk/devel/gvfs/Makefile 19827 2014-08-24 08:15:41Z gusi $
 
 PORTNAME=	gvfs
 PORTVERSION=	1.20.3
@@ -67,6 +67,10 @@ AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000000
+LIB_DEPENDS+=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
+.endif
 
 .if ${PORT_OPTIONS:MSAMBA}
 GLIB_SCHEMAS+=	org.gnome.system.smb.gschema.xml

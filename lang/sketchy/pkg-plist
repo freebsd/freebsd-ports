@@ -353,10 +353,3 @@ man/man1/skpp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/sk10.html
 %%PORTDOCS%%%%DOCSDIR%%/toc2-x.html
 %%PORTDOCS%%%%DOCSDIR%%/toc2.html
-@dirrm %%DATADIR%%/ext
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/library
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/prog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

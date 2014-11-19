@@ -43,8 +43,3 @@ share/gtk-doc/html/gfbgraph/object-tree.html
 share/gtk-doc/html/gfbgraph/right.png
 share/gtk-doc/html/gfbgraph/style.css
 share/gtk-doc/html/gfbgraph/up.png
-@dirrm share/gtk-doc/html/gfbgraph
-@dirrm include/gfbgraph-0.2/gfbgraph
-@dirrm include/gfbgraph-0.2
-@dirrm doc/libgfbgraph
-@dirrmtry doc

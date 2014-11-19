@@ -64,5 +64,3 @@ lib/libisl.so.13
 lib/libisl.so.13.0.0
 lib/libisl.so.13.0.0-gdb.py
 libdata/pkgconfig/isl.pc
-@dirrm include/isl/deprecated
-@dirrm include/isl

@@ -1,10 +1,9 @@
 # Created by: ade, archie
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/x11-fm/nautilus/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/x11-fm/nautilus/Makefile 19960 2014-10-15 14:24:24Z gusi $
 
 PORTNAME=	nautilus
-PORTVERSION=	3.12.2
-PORTREVISION=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

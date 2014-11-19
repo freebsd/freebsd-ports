@@ -31,6 +31,3 @@
 %%DATADIR%%/lib/xerces_2_5_0.jar
 %%DATADIR%%/lib/xml-apis-ext.jar
 %%DATADIR%%/lib/xml-apis.jar
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/extensions
-@dirrm %%DATADIR%%

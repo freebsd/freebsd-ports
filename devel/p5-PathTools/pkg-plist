@@ -20,6 +20,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/File/Spec/Win32.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cwd/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cwd/Cwd.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cwd
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File/Spec
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File

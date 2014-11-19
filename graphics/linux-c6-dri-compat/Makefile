@@ -32,5 +32,6 @@ USE_LINUX=	c6
 USE_LINUX_APPS=	xorglibs
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
+DESCR=             ${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

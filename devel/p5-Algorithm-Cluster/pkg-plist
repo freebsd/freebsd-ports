@@ -3,7 +3,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm/Cluster/Record.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Cluster/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Cluster/Cluster.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Cluster
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm/Cluster
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm

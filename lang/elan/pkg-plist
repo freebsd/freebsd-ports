@@ -20,9 +20,5 @@ man/man1/elancc.1.gz
 %%DATADIR%%/src/elan0.e
 %%DATADIR%%/src/kareltje.e
 %%DATADIR%%/src/standard.e
-@dirrm %%DATADIR%%/prelude
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/elan-compiler.ps
 %%PORTDOCS%%%%DOCSDIR%%/elan-language.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

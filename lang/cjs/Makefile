@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/lang/cjs/Makefile 19857 2014-09-13 09:46:37Z gusi $
+#    $MCom: ports/trunk/lang/cjs/Makefile 20008 2014-10-21 15:13:35Z gusi $
 
 PORTNAME=	cjs
 PORTVERSION=	2.2.2
@@ -11,21 +11,19 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	JavaScript bindings based on gobject-introspection
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		libtoolize:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185
 
 CONFLICTS_BUILD=spidermonkey17-1.7.*
 
-USES=		gettext libtool gmake pathfix pkgconfig python:build \
+USES=		autoreconf:build gettext libtool gmake pathfix pkgconfig python:build \
 		shebangfix
 USE_GNOME=	cairo glib20 gnomeprefix introspection:build \
 		intlhack
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf automake
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -37,6 +35,6 @@ python_OLD_CMD=	/usr/bin/env python
 python_CMD=	${PYTHON_CMD}
 
 pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
+	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

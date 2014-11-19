@@ -59,5 +59,3 @@ share/scim/input-pad/tai_le.pad
 share/scim/input-pad/tai_lue.pad
 share/scim/input-pad/thai.pad
 share/scim/input-pad/tibet.pad
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/scim/input-pad

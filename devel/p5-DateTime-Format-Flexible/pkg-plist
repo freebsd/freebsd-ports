@@ -9,10 +9,3 @@
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/en.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/es.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Flexible/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Flexible
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrm %%SITE_PERL%%/DateTime/Format/Flexible/lang
-@dirrm %%SITE_PERL%%/DateTime/Format/Flexible
-@dirrmtry %%SITE_PERL%%/DateTime/Format
-@dirrmtry %%SITE_PERL%%/DateTime

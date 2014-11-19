@@ -7,4 +7,3 @@ man/man1/mixal.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mystery.mix
 %%PORTDOCS%%%%DOCSDIR%%/opcodes
 %%PORTDOCS%%%%DOCSDIR%%/prime.mix
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

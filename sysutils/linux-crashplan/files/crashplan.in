@@ -10,13 +10,27 @@
 name="crashplan"
 rcvar=${name}_enable
 
-command="/usr/bin/cpuset -l 0 %%PREFIX%%/share/crashplan/bin/CrashPlanEngine"
-
+crashplan_bin="%%PREFIX%%/share/crashplan/bin"
+command="${crashplan_bin}/CrashPlanEngine"
 pidfile="/var/run/CrashPlanEngine.pid"
 
-start_precmd="install -d /var/log/crashplan"
-start_cmd="${command} start"
+crashplan_start() {
+    local crashplan_poll_selector
+    crashplan_poll_selector="-Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollSelectorProvider"
+
+    /usr/bin/install -d /var/log/crashplan || exit 1
+
+    sed -E -e "s/-Djava.nio.channels.spi.SelectorProvider=[^[:blank:]]+//"      \
+           -e "s/SRV_JAVA_OPTS=\"/SRV_JAVA_OPTS=\"${crashplan_poll_selector} /" \
+           -e "s/GUI_JAVA_OPTS=\"/GUI_JAVA_OPTS=\"${crashplan_poll_selector} /" \
+        -i bak "${crashplan_bin}/run.conf" || exit 1
+
+    /usr/bin/cpuset -l 0 ${command} start
+}
+
+start_cmd="${name}_start"
 stop_cmd="${command} stop"
+status_cmd="${command} status"
 
 load_rc_config ${name}
 run_rc_command "$1"

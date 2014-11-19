@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/branches/GNOME_3_12/audio/libcanberra/Makefile 19894 2014-09-20 07:55:02Z kwm $
+#   $MCom: ports/trunk/audio/libcanberra/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.30
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libltdl.so:${PORTSDIR}/devel/libltdl
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomehier gnomeprefix gtk20 
+USE_GNOME=	gnomeprefix gtk20 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa

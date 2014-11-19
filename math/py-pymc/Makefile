@@ -34,6 +34,8 @@ USES=			python
 USE_PYTHON=		distutils autoplist
 PORTDOCS=	*
 
+LDFLAGS+=	-shared
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/flib.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/gp/cov_funs/distances.so

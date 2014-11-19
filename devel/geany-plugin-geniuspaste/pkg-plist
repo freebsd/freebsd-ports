@@ -4,5 +4,3 @@ lib/geany/geniuspaste.so
 %%DOCSDIR%%/geniuspaste/ChangeLog
 %%DOCSDIR%%/geniuspaste/NEWS
 %%DOCSDIR%%/geniuspaste/README
-@dirrm %%DOCSDIR%%/geniuspaste
-@dirrmtry %%DOCSDIR%%

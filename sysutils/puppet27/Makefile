@@ -101,4 +101,10 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 2.0
+BROKEN=		Does not work with Ruby 2.0 or Ruby 2.1
+.endif
+
 .include <bsd.port.post.mk>

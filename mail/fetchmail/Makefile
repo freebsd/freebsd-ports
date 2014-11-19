@@ -3,7 +3,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
 		http://mandree.home.pages.de/${PORTNAME}/
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--enable-POP2
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USE_PYTHON_RUN=	yes
+USES+=		python:run
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter
 PLIST_SUB+=	NOX11="@comment "
 .else

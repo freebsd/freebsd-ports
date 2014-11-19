@@ -68,10 +68,3 @@ sbin/gdnsd
 @exec mkdir -p %%ETCDIR%%/geoip
 @exec mkdir -p %%ETCDIR%%/zones
 @unexec rmdir "/var/run/gdnsd" >/dev/null 2>&1 || :
-@dirrmtry %%ETCDIR%%/geoip
-@dirrmtry %%ETCDIR%%/zones
-@dirrmtry %%ETCDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry libexec/gdnsd
-@dirrmtry lib/gdnsd
-@dirrmtry include/gdnsd

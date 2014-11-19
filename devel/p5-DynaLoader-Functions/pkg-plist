@@ -1,6 +1,3 @@
 %%SITE_PERL%%/DynaLoader/Functions.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DynaLoader/Functions/.packlist
 %%PERL5_MAN3%%/DynaLoader::Functions.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DynaLoader/Functions
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DynaLoader
-@dirrmtry %%SITE_PERL%%/DynaLoader

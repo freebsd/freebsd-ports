@@ -93,10 +93,3 @@ libdata/pkgconfig/muparser.pc
 %%PORTDOCS%%%%DOCSDIR%%/style/formate.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.cpp
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/misc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/script
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/sources
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/style
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

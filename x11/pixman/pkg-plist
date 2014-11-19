@@ -4,6 +4,5 @@ lib/libpixman-1.a
 lib/libpixman-1.la
 lib/libpixman-1.so
 lib/libpixman-1.so.0
-lib/libpixman-1.so.0.32.4
+lib/libpixman-1.so.0.32.6
 libdata/pkgconfig/pixman-1.pc
-@dirrm include/pixman-1

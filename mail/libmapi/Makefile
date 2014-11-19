@@ -23,8 +23,7 @@ CODENAME=	QUADRANT
 DOWNLOADCODE=	244
 
 USE_SQLITE=	3
-USES=		gmake pathfix pkgconfig shebangfix
-USE_PYTHON=	yes
+USES=		gmake pathfix pkgconfig python shebangfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

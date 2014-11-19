@@ -1,6 +1,3 @@
 %%SITE_PERL%%/SVN/Agent.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Agent/.packlist
 %%PERL5_MAN3%%/SVN::Agent.3.gz
-@dirrmtry %%SITE_PERL%%/SVN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Agent
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN

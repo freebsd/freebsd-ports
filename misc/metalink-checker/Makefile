@@ -13,8 +13,7 @@ COMMENT=	Python script to check metalink files and complete a basic download
 
 LICENSE=	GPLv2
 
-USES=		dos2unix
-USE_PYTHON=	yes
+USES=		dos2unix python
 NO_BUILD=	yes
 
 PORTDOCS=	README

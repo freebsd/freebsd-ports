@@ -25,4 +25,3 @@
 %%RUBY_SITELIBDIR%%/htree/template.rb
 %%RUBY_SITELIBDIR%%/htree/text.rb
 %%RUBY_SITELIBDIR%%/htree/traverse.rb
-@dirrm %%RUBY_SITELIBDIR%%/htree

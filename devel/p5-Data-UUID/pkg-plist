@@ -2,6 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/UUID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID/UUID.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data

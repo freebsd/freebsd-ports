@@ -1,4 +1,3 @@
 sbin/arpCounterattack
 @sample etc/arpCounterattack/arpCounterattack.conf.sample
 etc/arpCounterattack/oui.txt
-@dirrmtry etc/arpCounterattack

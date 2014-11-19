@@ -164,6 +164,3 @@ man/man3/pslib.3.gz
 %%DATADIR%%/draft.ps
 %%DATADIR%%/exectime.ps
 %%DATADIR%%/grid.ps
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/libps

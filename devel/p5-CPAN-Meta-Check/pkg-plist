@@ -1,8 +1,3 @@
 %%SITE_PERL%%/CPAN/Meta/Check.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Meta/Check/.packlist
 %%PERL5_MAN3%%/CPAN::Meta::Check.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Meta/Check
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Meta
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
-@dirrmtry %%SITE_PERL%%/CPAN/Meta
-@dirrmtry %%SITE_PERL%%/CPAN

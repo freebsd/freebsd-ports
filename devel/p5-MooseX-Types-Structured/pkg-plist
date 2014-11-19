@@ -13,14 +13,3 @@
 %%SITE_PERL%%/MooseX/Types/Structured/MessageStack.pm
 %%SITE_PERL%%/MooseX/Types/Structured/OverflowHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Structured/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Structured
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrm %%SITE_PERL%%/MooseX/Types/Structured
-@dirrmtry %%SITE_PERL%%/MooseX/Types
-@dirrm %%SITE_PERL%%/MooseX/Meta/TypeConstraint/Structured
-@dirrmtry %%SITE_PERL%%/MooseX/Meta/TypeConstraint
-@dirrm %%SITE_PERL%%/MooseX/Meta/TypeCoercion/Structured
-@dirrmtry %%SITE_PERL%%/MooseX/Meta/TypeCoercion
-@dirrmtry %%SITE_PERL%%/MooseX/Meta
-@dirrmtry %%SITE_PERL%%/MooseX

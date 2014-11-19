@@ -1,4 +1,3 @@
 bin/pcal
 %%SITE_PERL%%/Calendar/Simple.pm
 %%PERL5_MAN3%%/Calendar::Simple.3.gz
-@dirrmtry %%SITE_PERL%%/Calendar

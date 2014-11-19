@@ -1,6 +1,3 @@
 %%SITE_PERL%%/Tie/DB_FileLock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DB_FileLock/.packlist
 %%PERL5_MAN3%%/Tie::DB_FileLock.3.gz
-@dirrm %%SITE_PERL%%/Tie
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DB_FileLock
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie

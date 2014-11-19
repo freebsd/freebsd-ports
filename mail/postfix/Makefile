@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.11.1
-PORTREVISION=	4
+PORTVERSION=	2.11.3
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -22,6 +22,8 @@ LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+PORTSCOUT=	limit:^2\.11\.
+
 VDAVERSION=	2.10.0
 CONFLICTS_INSTALL?=	courier-0.* postfix-1.* postfix2?-* postfix21?-* \
 		postfix-current-2.* postfix-current-base-2.* postfix-tls-* \
@@ -29,7 +31,7 @@ CONFLICTS_INSTALL?=	courier-0.* postfix-1.* postfix2?-* postfix21?-* \
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix cpe
 SHEBANG_LANG=	perl
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
@@ -37,8 +39,8 @@ USE_SUBMAKE=	yes
 USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
-OPTIONS_DEFINE=	PCRE SASL2 TLS BDB MYSQL PGSQL SQLITE OPENLDAP LDAP_SASL \
-		CDB NIS VDA TEST SPF INST_BASE LMDB DOCS
+OPTIONS_DEFINE=	BDB CDB DOCS INST_BASE LDAP_SASL LMDB MYSQL NIS \
+		OPENLDAP PCRE PGSQL SASL2 SPF SQLITE TEST TLS VDA
 
 OPTIONS_RADIO=		RG1 RG2
 OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
@@ -84,10 +86,6 @@ IS_INTERACTIVE=	yes
 .endif
 .endif
 
-.if ${OSVERSION} >= 800037
-KRB5_EXTR=	-lhx509
-.endif
-
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
 .endif
@@ -108,6 +106,7 @@ PLIST_SUB+=	BASE="@comment " BMAN=""
 PLIST_SUB+=	PFETC=${ETCDIR}
 
 .if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
 READMEDIR=	${DOCSDIR}
 .else
 READMEDIR=	no
@@ -161,7 +160,7 @@ _REQUIRE+=		dovecot
 .endif
 
 .if ${PORT_OPTIONS:MSASLKRB5}
-POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
+POSTFIX_AUXLIBS+=	-lkrb5 -lhx509 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if ${PORT_OPTIONS:MSASLKMIT}
@@ -217,7 +216,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
 
 .if ${PORT_OPTIONS:MOPENLDAP}
 USE_OPENLDAP=		yes
-.if ${PORT_OPTIONS:MOPENLDAP_VER}
+.if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
@@ -334,7 +333,7 @@ pre-install:
 .endif
 
 do-install:
-	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=/tmp \
+	@(cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=${WRKDIR} \
 		config_directory=${ETCDIR} \
 		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \

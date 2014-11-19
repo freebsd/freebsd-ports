@@ -21,4 +21,3 @@ libdata/pkgconfig/libexif-gtk.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libexif-gtk-5.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libexif-gtk-5.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libexif-gtk-5.mo
-@dirrm include/libexif-gtk

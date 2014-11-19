@@ -8,12 +8,8 @@
 %%PORTDOCS%%@exec echo "For information on several potential security concerns,"
 %%PORTDOCS%%@exec echo "please read:"
 %%PORTDOCS%%@exec echo "%%PREFIX%%/%%DOCSDIR%%/SECURITY"
-%%CHROOT%%sbin/scponlyc
-%%CHROOT%%@exec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
-%%CHROOT%%@unexec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+%%CHROOT%%@shell sbin/scponlyc
 %%CHROOT%%%%EXAMPLESDIR%%/setup_chroot.sh
 %%CHROOT%%%%EXAMPLESDIR%%/config.h
 etc/scponly/debuglevel
 man/man8/scponly.8.gz
-@dirrm etc/scponly
-%%CHROOT%%@dirrm %%EXAMPLESDIR%%

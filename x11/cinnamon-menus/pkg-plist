@@ -6,4 +6,3 @@ lib/libcinnamon-menu-3.so.0.0.1
 lib/girepository-1.0/CMenu-3.0.typelib
 libdata/pkgconfig/libcinnamon-menu-3.0.pc
 share/gir-1.0/CMenu-3.0.gir
-@dirrm include/cinnamon-menus-3.0
