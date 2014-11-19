@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} \
 SUB_FILES+=	pkg-message
 
 PGSQL_USES=	pgsql
-PGSQL_CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
+PGSQL_CONFIGURE_WITH=	pgsql=${LOCALBASE}
 
 .include <bsd.port.options.mk>
 
