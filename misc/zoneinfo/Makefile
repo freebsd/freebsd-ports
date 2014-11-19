@@ -20,12 +20,6 @@ POSIXRULES=	America/New_York
 
 # Run with "DEVELOPER=1 make check-plist" before commiting!
 
-# Prevent packages if on the FreeBSD building cluster. This because
-# it overwrites system files and directories.
-.if defined(PACKAGE_BUILDING)
-NO_PACKAGE=	Overwrites files in the base system
-.endif
-
 # Make sure it breaks when the distfile isn't there anymore.
 .if !defined(PACKAGE_BUILDING)
 MASTER_SITES+=	http://people.freebsd.org/~edwin/
