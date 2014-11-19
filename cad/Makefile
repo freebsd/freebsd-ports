@@ -76,6 +76,7 @@
     SUBDIR += qelectrotech
     SUBDIR += qfsm
     SUBDIR += qmls
+    SUBDIR += qucs
     SUBDIR += repsnapper
     SUBDIR += sceptre
     SUBDIR += scotch
