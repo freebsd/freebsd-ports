@@ -1,50 +1,44 @@
-bin/icinga2-build-ca
-bin/icinga2-build-key
-bin/icinga2-sign-key
-%%ETCDIR%%/conf.d/commands.conf
-%%ETCDIR%%/conf.d/downtimes.conf
-%%ETCDIR%%/conf.d/groups.conf
-%%ETCDIR%%/conf.d/hosts/localhost.conf
-%%ETCDIR%%/conf.d/hosts/localhost/disk.conf
-%%ETCDIR%%/conf.d/hosts/localhost/http.conf
-%%ETCDIR%%/conf.d/hosts/localhost/icinga.conf
-%%ETCDIR%%/conf.d/hosts/localhost/load.conf
-%%ETCDIR%%/conf.d/hosts/localhost/procs.conf
-%%ETCDIR%%/conf.d/hosts/localhost/ssh.conf
-%%ETCDIR%%/conf.d/hosts/localhost/swap.conf
-%%ETCDIR%%/conf.d/hosts/localhost/users.conf
-%%ETCDIR%%/conf.d/notifications.conf
-%%ETCDIR%%/conf.d/services.conf
-%%ETCDIR%%/conf.d/templates.conf
-%%ETCDIR%%/conf.d/timeperiods.conf
-%%ETCDIR%%/conf.d/users.conf
-%%ETCDIR%%/constants.conf
-%%ETCDIR%%/features-available/api.conf
-%%ETCDIR%%/features-available/checker.conf
-%%ETCDIR%%/features-available/command.conf
-%%ETCDIR%%/features-available/compatlog.conf
-%%ETCDIR%%/features-available/debuglog.conf
-%%ETCDIR%%/features-available/graphite.conf
-%%ETCDIR%%/features-available/icingastatus.conf
-%%ETCDIR%%/features-available/livestatus.conf
-%%ETCDIR%%/features-available/mainlog.conf
-%%ETCDIR%%/features-available/notification.conf
-%%ETCDIR%%/features-available/perfdata.conf
-%%ETCDIR%%/features-available/statusdata.conf
-%%ETCDIR%%/features-available/syslog.conf
+etc/bash_completion.d/icinga2
+@sample %%ETCDIR%%/conf.d/commands.conf.sample
+@sample %%ETCDIR%%/conf.d/downtimes.conf.sample
+@sample %%ETCDIR%%/conf.d/groups.conf.sample
+@sample %%ETCDIR%%/conf.d/hosts.conf.sample
+@sample %%ETCDIR%%/conf.d/notifications.conf.sample
+@sample %%ETCDIR%%/conf.d/satellite.conf.sample
+@sample %%ETCDIR%%/conf.d/services.conf.sample
+@sample %%ETCDIR%%/conf.d/templates.conf.sample
+@sample %%ETCDIR%%/conf.d/timeperiods.conf.sample
+@sample %%ETCDIR%%/conf.d/users.conf.sample
+@sample %%ETCDIR%%/constants.conf.sample
+@sample %%ETCDIR%%/features-available/api.conf.sample
+@sample %%ETCDIR%%/features-available/checker.conf.sample
+@sample %%ETCDIR%%/features-available/command.conf.sample
+@sample %%ETCDIR%%/features-available/compatlog.conf.sample
+@sample %%ETCDIR%%/features-available/debuglog.conf.sample
+@sample %%ETCDIR%%/features-available/gelf.conf.sample
+@sample %%ETCDIR%%/features-available/graphite.conf.sample
+@sample %%ETCDIR%%/features-available/icingastatus.conf.sample
+@sample(icinga,icinga,0640) %%ETCDIR%%/features-available/ido-mysql.conf.sample
+@sample(icinga,icinga,0640) %%ETCDIR%%/features-available/ido-pgsql.conf.sample
+@sample %%ETCDIR%%/features-available/livestatus.conf.sample
+@sample %%ETCDIR%%/features-available/mainlog.conf.sample
+@sample %%ETCDIR%%/features-available/notification.conf.sample
+@sample %%ETCDIR%%/features-available/perfdata.conf.sample
+@sample %%ETCDIR%%/features-available/statusdata.conf.sample
+@sample %%ETCDIR%%/features-available/syslog.conf.sample
 %%ETCDIR%%/features-enabled/checker.conf
 %%ETCDIR%%/features-enabled/mainlog.conf
 %%ETCDIR%%/features-enabled/notification.conf
-@(icinga,icinga,0640) %%ETCDIR%%/features-available/ido-mysql.conf
-@(icinga,icinga,0640) %%ETCDIR%%/features-available/ido-pgsql.conf
-%%ETCDIR%%/icinga2.conf
-%%ETCDIR%%/scripts/mail-host-notification.sh
-%%ETCDIR%%/scripts/mail-service-notification.sh
-%%ETCDIR%%/zones.conf
+@sample %%ETCDIR%%/icinga2.conf.sample
+@sample %%ETCDIR%%/init.conf.sample
+%%ETCDIR%%/repository.d/README
+@sample %%ETCDIR%%/scripts/mail-host-notification.sh.sample
+@sample %%ETCDIR%%/scripts/mail-service-notification.sh.sample
+@sample %%ETCDIR%%/zones.conf.sample
 %%ETCDIR%%/zones.d/README
 lib/icinga2/libbase.so
-lib/icinga2/libcJSON.so
 lib/icinga2/libchecker.so
+lib/icinga2/libcli.so
 lib/icinga2/libcompat.so
 lib/icinga2/libconfig.so
 lib/icinga2/libdb_ido.so
@@ -60,36 +54,9 @@ lib/icinga2/libmmatch.so
 lib/icinga2/libnotification.so
 lib/icinga2/libperfdata.so
 lib/icinga2/libremote.so
-%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/icinga2-2.1.1-py%%PYTHON_VER%%.egg-info/top_level.txt
-%%PYTHON_SITELIBDIR%%/icinga2/__init__.py
-%%PYTHON_SITELIBDIR%%/icinga2/__init__.pyc
-%%PYTHON_SITELIBDIR%%/icinga2/commands/__init__.py
-%%PYTHON_SITELIBDIR%%/icinga2/commands/__init__.pyc
-%%PYTHON_SITELIBDIR%%/icinga2/commands/list_objects.py
-%%PYTHON_SITELIBDIR%%/icinga2/commands/list_objects.pyc
-%%PYTHON_SITELIBDIR%%/icinga2/config.py
-%%PYTHON_SITELIBDIR%%/icinga2/config.pyc
-%%PYTHON_SITELIBDIR%%/icinga2/utils/__init__.py
-%%PYTHON_SITELIBDIR%%/icinga2/utils/__init__.pyc
-%%PYTHON_SITELIBDIR%%/icinga2/utils/debug.py
-%%PYTHON_SITELIBDIR%%/icinga2/utils/debug.pyc
-%%PYTHON_SITELIBDIR%%/icinga2/utils/netstring.py
-%%PYTHON_SITELIBDIR%%/icinga2/utils/netstring.pyc
-man/man8/icinga2-build-ca.8.gz
-man/man8/icinga2-build-key.8.gz
-man/man8/icinga2-disable-feature.8.gz
-man/man8/icinga2-enable-feature.8.gz
 man/man8/icinga2-prepare-dirs.8.gz
-man/man8/icinga2-sign-key.8.gz
 man/man8/icinga2.8.gz
 sbin/icinga2
-sbin/icinga2-disable-feature
-sbin/icinga2-enable-feature
-sbin/icinga2-list-objects
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.Exceptions
@@ -98,19 +65,21 @@ sbin/icinga2-list-objects
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/1-about.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/2-getting-started.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/3-monitoring-basics.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/4-monitoring-remote-systems.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/5-addons-plugins.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/6-configuring-icinga-2.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/7-troubleshooting.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/3-troubleshooting.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/4-monitoring-basics.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/5-monitoring-remote-systems.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/6-addons-plugins.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/7-configuring-icinga-2.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/8-migration.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/9-appendix.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/schema/mysql.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/schema/upgrade/2.0.2.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/schema/upgrade/2.1.0.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/schema/pgsql.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/schema/upgrade/2.0.2.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/schema/upgrade/2.1.0.sql
+%%DATADIR%%-ido-mysql/schema/mysql.sql
+%%DATADIR%%-ido-mysql/schema/upgrade/2.0.2.sql
+%%DATADIR%%-ido-mysql/schema/upgrade/2.1.0.sql
+%%DATADIR%%-ido-mysql/schema/upgrade/2.2.0.sql
+%%DATADIR%%-ido-pgsql/schema/pgsql.sql
+%%DATADIR%%-ido-pgsql/schema/upgrade/2.0.2.sql
+%%DATADIR%%-ido-pgsql/schema/upgrade/2.1.0.sql
+%%DATADIR%%-ido-pgsql/schema/upgrade/2.2.0.sql
 %%DATADIR%%/include/command-icinga.conf
 %%DATADIR%%/include/command-plugins-manubulon.conf
 %%DATADIR%%/include/command-plugins.conf
@@ -119,10 +88,7 @@ sbin/icinga2-list-objects
 %%DATADIR%%/include/manubulon
 %%DATADIR%%/include/plugins
 %%DATADIR%%/include/timeperiod.conf
-%%DATADIR%%/pki/openssl-quiet.cnf
-%%DATADIR%%/pki/openssl.cnf
-%%DATADIR%%/pki/pkifuncs
-%%DATADIR%%/pki/vars
+@dir %%ETCDIR%%/pki
 @dir /var/cache/icinga2
 @dir /var/lib/icinga2/api/log
 @dir /var/lib/icinga2/api/repository
