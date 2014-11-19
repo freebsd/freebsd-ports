@@ -13,6 +13,8 @@ COMMENT=	Collection of Emacs Development Environment Tools
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build
+
 USE_EMACS=		yes
 USES=			gmake makeinfo
 MAKE_JOBS_UNSAFE=	yes
