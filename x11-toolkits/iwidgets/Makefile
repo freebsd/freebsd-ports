@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/incrtcl/%5BIncr%20Widgets%5D/${PORTVERSION}
 DISTNAME=	iwidgets${PORTVERSION}
 
-MAINTAINER=	pauls@utdallas.edu
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Iwidgets - [incr Widgets]
 
 LIB_DEPENDS=	libitk.so:${PORTSDIR}/x11-toolkits/itk
