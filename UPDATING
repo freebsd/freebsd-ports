@@ -12,6 +12,9 @@ you update your ports collection, before attempting any port upgrades.
   GNOME 3.14 was imported. Because this is a big change some manual help is
   needed. Please use the following instructions to update.
 
+  Make a list of the installed ports:
+  # pkg info > ~/installed-ports-list
+
   Delete the old and conflicting packages:
   # pkg delete clutter gnome-utils gnome-panel gnome-keyring vala-vapigen \
       guile gcalctool gnome-media libgnomekbd
@@ -26,6 +29,9 @@ you update your ports collection, before attempting any port upgrades.
   For ports users should do the following:
   # portmaster -a
   # portmaster x11/gnome3
+
+  After these steps, check with the list we made earlier if your favorite
+  ports are still installed, and reinstall them if needed.
 
 20141117:
   AFFECTS: users of security/openssh-portable
