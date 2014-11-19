@@ -3,6 +3,7 @@
 
 PORTNAME=	sigram
 PORTVERSION=	0.11182014
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	kmoore@freebsd.org
@@ -17,7 +18,7 @@ GH_COMMIT=	ce3fb15
 
 USE_QT5=	core gui network opengl xml widgets buildtools_build graphicaleffects \
 		multimedia printsupport qml quick quickcontrols widgets \
-		sql
+		sql sql-sqlite3
 USES=		compiler:c++11-lib openal:soft qmake
 QMAKE_ARGS+=	target.path=${LOCALBASE}/bin
 
