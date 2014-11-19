@@ -7231,3 +7231,4 @@ emulation/wine-doors||2014-11-19|Abandonware, depends on non existing USE_GNOME 
 x11/gtstarter||2014-11-19|Abandonware, depends on non existing USE_GNOME components
 sysutils/serpentine||2014-11-19|Abandonware, depends on non existing USE_GNOME components
 sysutils/pessulus||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+x11-toolkits/libzvt||2014-11-19|Abandonware, not depended on anymore

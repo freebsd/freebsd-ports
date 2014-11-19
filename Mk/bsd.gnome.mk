@@ -84,7 +84,7 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils gal2 \
 		libbonoboui libgda4 libglade2 libgnome \
 		libgnomecanvas libgnomedb libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
-		libxml2 libxslt libzvt linc \
+		libxml2 libxslt linc \
 		orbit2 pango pangox-compat pygnome2 pygobject pygtk2 \
 		pygtksourceview vte
 
@@ -374,10 +374,6 @@ vte_USE_GNOME_IMPL=	gtk20
 vte3_LIB_DEPENDS=	libvte-2.91.so:${PORTSDIR}/x11-toolkits/vte3
 vte3_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte-2.91.pc
 vte3_USE_GNOME_IMPL=	gtk30
-
-libzvt_LIB_DEPENDS=	libzvt-2.0.so:${PORTSDIR}/x11-toolkits/libzvt
-libzvt_DETECT=	${LOCALBASE}/libdata/pkgconfig/libzvt-2.0.pc
-libzvt_USE_GNOME_IMPL=	gtk20
 
 librsvg2_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc
