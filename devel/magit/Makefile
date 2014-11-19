@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	magit
-PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTVERSION=	1.2.1
 CATEGORIES=	devel elisp
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://cloud.github.com/downloads/magit/magit/
-MASTER_SITE_SUBDIR=	kuriyama
+MASTER_SITES=	https://github.com/magit/magit/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	kuriyama@FreeBSD.org
