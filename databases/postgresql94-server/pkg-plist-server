@@ -117,6 +117,7 @@ lib/libpgcommon.a
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_resetxlog-9.4.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/plpgsql-9.4.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/postgres-9.4.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_controldata-9.4.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_ctl-9.4.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/initdb-9.4.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_basebackup-9.4.mo
@@ -647,6 +648,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/PST8PDT
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Apia
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Auckland
+%%TZDATA%%%%DATADIR%%/timezone/Pacific/Bougainville
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Chatham
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Chuuk
 %%TZDATA%%%%DATADIR%%/timezone/Pacific/Easter
