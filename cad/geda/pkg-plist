@@ -2341,3 +2341,4 @@ share/mime/application/x-geda-gsch2pcb-project.xml
 share/mime/application/x-geda-schematic.xml
 share/mime/application/x-geda-symbol.xml
 share/mime/packages/libgeda.xml
+@dir %%DATADIR%%/sym/local
