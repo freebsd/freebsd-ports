@@ -1,11 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.1.0
-PORTREVISION=	0
+PORTVERSION=	2.0.26
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
+PKGNAMESUFFIX=	20
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -20,37 +21,49 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LIB
 LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libksba.so:${PORTSDIR}/security/libksba \
-		libnpth.so:${PORTSDIR}/devel/npth
+		libpth.so:${PORTSDIR}/devel/pth
 BUILD_DEPENDS=	libgpg-error>=1.11:${PORTSDIR}/security/libgpg-error
 
 GNU_CONFIGURE=	YES
 USES=		gmake iconv tar:bzip2
 USE_LDCONFIG=	YES
-CONFIGURE_ARGS+=	--enable-symcryptrun --enable-gpgsm
+CONFIGURE_ARGS+=	--enable-symcryptrun
 
-OPTIONS_DEFINE=		PINENTRY LDAP SCDAEMON KDNS NLS DOCS SUID_GPG
+OPTIONS_DEFINE=		PINENTRY LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS DOCS SUID_GPG
 PINENTRY_DESC=		Use pinentry
 LDAP_DESC=		LDAP keyserver interface
 SCDAEMON_DESC=		Enable Smartcard daemon (with libusb)
+CURL_DESC=		Use the real curl library (worked around if no)
+GPGSM_DESC=		Enable GPGSM (requires LDAP)
 KDNS_DESC=		Use DNS CERT helper
+STD_SOCKET_DESC=	Use standard socket for agent
 SUID_GPG_DESC=		Install GPG with suid
-OPTIONS_DEFAULT=	PINENTRY
+OPTIONS_DEFAULT=	CURL
 NO_OPTIONS_SORT=	YES
 OPTIONS_SUB=		YES
-# In jail, SUID is required to avoid warning (security.bsd.unprivileged_mlock sysctl is not used in jail).
 
 DOCS_CONFIGURE_ENABLE=	doc
 PINENTRY_RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
+GPGSM_RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
+GPGSM_CONFIGURE_ENABLE=	gpgsm
 KDNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
 KDNS_CONFIGURE_ON=	--with-adns=${LOCALBASE}
+STD_SOCKET_CONFIGURE_ENABLE=	standard-socket
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 SCDAEMON_CONFIGURE_ENABLE=	scdaemon
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
+CURL_CONFIGURE_OFF=	--without-libcurl
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 INFO=		gnupg
+.endif
+
+.if ${PORT_OPTIONS:MGPGSM}
+PORT_OPTIONS+=	LDAP
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
