@@ -54,13 +54,3 @@ bin/xslate
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/Xslate.so
 man/man1/xslate.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Type
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Syntax
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Manual
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Bridge
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
