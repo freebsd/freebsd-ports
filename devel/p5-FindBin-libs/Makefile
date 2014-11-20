@@ -1,17 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	FindBin-libs
-PORTVERSION=	1.8000
+PORTVERSION=	2.1100
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LEMBARK
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/000$//}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to locate and use lib directories
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
