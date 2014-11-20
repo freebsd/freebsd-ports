@@ -1,14 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class-Fixtures
-PORTVERSION=	1.001021
+PORTVERSION=	1.001024
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
+MASTER_SITE_SUBDIR=	CPAN:SKAUFMAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to use fixtures with DBIx::Class
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Class-Accessor-Grouped>=0.1001:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
@@ -32,5 +35,6 @@ TEST_DEPENDS=	\
 
 USES=	perl5
 USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
