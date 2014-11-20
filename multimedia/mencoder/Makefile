@@ -3,19 +3,19 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Convenient video file and movie encoder
 
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
 OPTIONS_DEFINE=	AMR_NB AMR_WB BLURAY CDIO CDPARANOIA DEBUG DIRAC \
-		DV FAAC FONTCONFIG FRIBIDI GIF GSM IPV6 JACK \
+		DV FAAC FONTCONFIG FRIBIDI GIF GNUTLS GSM IPV6 JACK \
 		LADSPA LIBMNG LZO MAD MEMALIGN NAS OCFLAGS OPENAL \
 		OPENJPEG OPUS OTCHAIN PROFILE PULSEAUDIO REAL RTCPU RTMP \
 		SCHROEDINGER SMB THEORA TWOLAME V4L VPX WIN32 X264 XVID
 
-OPTIONS_DEFAULT=GIF IPV6 OCFLAGS RTCPU WIN32 X264 XVID
+OPTIONS_DEFAULT=GIF GNUTLS IPV6 OCFLAGS RTCPU WIN32 X264 XVID
 
 BLURAY_DESC?=	BluRay support
 LZO_DESC?=	Enable external liblzo library
@@ -41,7 +41,7 @@ TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
 		subedit.pl subsearch.sh vobshift.py \
 		w32codec_dl.pl wma2ogg.pl
 
-USES+=		alias iconv shebangfix
+USES+=		alias iconv pkgconfig shebangfix
 SHEBANG_FILES=	TOOLS/calcbpp.pl TOOLS/checktree.sh TOOLS/countquant.pl	\
 		TOOLS/divx2svcd.sh TOOLS/dvd2divxscript.pl TOOLS/mencvcd.sh \
 		TOOLS/mphelp_check.py TOOLS/plotpsnr.pl TOOLS/psnr-video.sh \
