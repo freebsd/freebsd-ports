@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Tiny
-PORTVERSION=	0.014
+PORTVERSION=	1.000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,5 +13,6 @@ LICENSE=	APACHE20
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
