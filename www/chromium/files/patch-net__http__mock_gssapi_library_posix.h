@@ -1,4 +1,4 @@
---- net/http/mock_gssapi_library_posix.h.orig	2014-10-02 17:18:59 UTC
+--- net/http/mock_gssapi_library_posix.h.orig	2014-10-10 09:15:31 UTC
 +++ net/http/mock_gssapi_library_posix.h
 @@ -15,6 +15,9 @@
      MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_9

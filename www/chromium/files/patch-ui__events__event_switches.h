@@ -1,7 +1,7 @@
---- ui/events/event_switches.h.orig	2014-10-02 17:39:48 UTC
+--- ui/events/event_switches.h.orig	2014-10-10 08:54:18 UTC
 +++ ui/events/event_switches.h
-@@ -21,7 +21,7 @@
- EVENTS_BASE_EXPORT extern const char kUnifiedGestureDetectorDisabled[];
+@@ -17,7 +17,7 @@
+ EVENTS_BASE_EXPORT extern const char kTouchEventsDisabled[];
  EVENTS_BASE_EXPORT extern const char kCompensateForUnstablePinchZoom[];
  
 -#if defined(OS_LINUX)

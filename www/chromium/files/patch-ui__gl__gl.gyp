@@ -1,6 +1,6 @@
---- ui/gl/gl.gyp.orig	2014-10-02 17:39:48 UTC
+--- ui/gl/gl.gyp.orig	2014-10-10 09:15:32 UTC
 +++ ui/gl/gl.gyp
-@@ -174,7 +174,7 @@
+@@ -173,7 +173,7 @@
          },
        ],
        'conditions': [
@@ -9,7 +9,7 @@
            'sources': [
              'egl_util.cc',
              'egl_util.h',
-@@ -195,7 +195,7 @@
+@@ -194,7 +194,7 @@
              '<(DEPTH)/third_party/khronos',
          ],
          }],

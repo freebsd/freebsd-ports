@@ -1,4 +1,4 @@
---- net/dns/dns_session.cc.orig	2014-10-02 17:39:47 UTC
+--- net/dns/dns_session.cc.orig	2014-10-10 08:54:16 UTC
 +++ net/dns/dns_session.cc
 @@ -178,7 +178,7 @@
    base::TimeDelta current_error = rtt - estimate;

@@ -1,4 +1,4 @@
---- chrome/test/perf/perf_test.cc.orig	2014-10-02 17:18:56 UTC
+--- chrome/test/perf/perf_test.cc.orig	2014-10-10 08:54:13 UTC
 +++ chrome/test/perf/perf_test.cc
 @@ -352,7 +352,7 @@
    AppendResult(output, "ws_final_t", "", "ws_f_t" + trace_name,

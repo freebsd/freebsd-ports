@@ -1,4 +1,4 @@
---- chrome/browser/plugins/plugins_resource_service.cc.orig	2014-10-02 17:18:54 UTC
+--- chrome/browser/plugins/plugins_resource_service.cc.orig	2014-10-10 08:54:10 UTC
 +++ chrome/browser/plugins/plugins_resource_service.cc
 @@ -33,7 +33,7 @@
    std::string filename;

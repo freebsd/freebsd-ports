@@ -1,4 +1,4 @@
---- third_party/webrtc/base/systeminfo.cc.orig	2014-10-02 17:40:33 UTC
+--- third_party/webrtc/base/systeminfo.cc.orig	2014-10-10 09:16:13 UTC
 +++ third_party/webrtc/base/systeminfo.cc
 @@ -19,8 +19,12 @@
  #elif defined(WEBRTC_MAC) && !defined(WEBRTC_IOS)

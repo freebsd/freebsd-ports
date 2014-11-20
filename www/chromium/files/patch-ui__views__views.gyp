@@ -1,6 +1,6 @@
---- ui/views/views.gyp.orig	2014-10-02 17:39:48 UTC
+--- ui/views/views.gyp.orig	2014-10-10 08:54:19 UTC
 +++ ui/views/views.gyp
-@@ -605,7 +605,7 @@
+@@ -612,7 +612,7 @@
              '../display/display.gyp:display_util',
            ],
          }],

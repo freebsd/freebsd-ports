@@ -1,4 +1,4 @@
---- build/common.gypi.orig	2014-10-02 17:39:45 UTC
+--- build/common.gypi.orig	2014-10-10 09:15:29 UTC
 +++ build/common.gypi
 @@ -91,7 +91,7 @@
  
@@ -9,7 +9,7 @@
                'use_ash%': 1,
                'use_aura%': 1,
              }],
-@@ -676,7 +676,7 @@
+@@ -702,7 +702,7 @@
          }],
  
          # DBus usage.
@@ -18,7 +18,7 @@
            'use_dbus%': 1,
          }, {
            'use_dbus%': 0,
-@@ -931,7 +931,7 @@
+@@ -952,7 +952,7 @@
          }, {
            'use_openmax_dl_fft%': 0,
          }],
@@ -27,7 +27,7 @@
              'enable_mdns%' : 1,
          }],
  
-@@ -954,7 +954,7 @@
+@@ -975,7 +975,7 @@
          # except when building Android WebView or Chromecast.
          # TODO(jshin): Handle 'use_system_icu' on Linux (Chromium).
          # Set the data reduction proxy origin for Android Webview.
@@ -36,7 +36,7 @@
            'icu_use_data_file_flag%' : 1,
            'spdy_proxy_auth_origin%': '',
            'data_reduction_proxy_probe_url%': '',
-@@ -1193,6 +1193,10 @@
+@@ -1228,6 +1228,10 @@
      # able to turn it off for various reasons.
      'linux_disable_pie%': 0,
  
@@ -47,7 +47,7 @@
      # The release channel that this build targets. This is used to restrict
      # channel-specific build options, like which installer packages to create.
      # The default is 'all', which does no channel-specific filtering.
-@@ -4280,6 +4284,13 @@
+@@ -4391,6 +4395,13 @@
          'ldflags': [
            '-Wl,--no-keep-memory',
          ],

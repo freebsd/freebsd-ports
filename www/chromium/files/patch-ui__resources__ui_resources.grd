@@ -1,5 +1,5 @@
---- ui/resources/ui_resources.grd.orig	2014-09-10 01:47:14.000000000 +0200
-+++ ui/resources/ui_resources.grd	2014-09-17 13:51:43.000000000 +0200
+--- ui/resources/ui_resources.grd.orig	2014-10-10 09:15:32 UTC
++++ ui/resources/ui_resources.grd
 @@ -39,7 +39,7 @@
          <structure type="chrome_scaled_image" name="IDR_APP_TOP_LEFT" file="app_top_left.png" />
          <structure type="chrome_scaled_image" name="IDR_APP_TOP_RIGHT" file="app_top_right.png" />
