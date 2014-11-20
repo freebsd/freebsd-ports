@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Proclet
-PORTVERSION=	0.32
+PORTVERSION=	0.35
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZEBURO
@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for minimalistic Supervisor
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	\
 	p5-Data-Validator>0:${PORTSDIR}/devel/p5-Data-Validator \
 	p5-File-Which>=1.09:${PORTSDIR}/sysutils/p5-File-Which \
@@ -17,6 +20,7 @@ RUN_DEPENDS=	\
 	p5-Log-Minimal>=0.14:${PORTSDIR}/devel/p5-Log-Minimal \
 	p5-Mouse>0:${PORTSDIR}/devel/p5-Mouse \
 	p5-Parallel-Prefork>=0.13:${PORTSDIR}/devel/p5-Parallel-Prefork \
+	p5-String-ShellQuote>0:${PORTSDIR}/textproc/p5-String-ShellQuote \
 	p5-YAML-LibYAML>=0.38:${PORTSDIR}/textproc/p5-YAML-LibYAML \
 	p5-Time-Crontab>=0.01:${PORTSDIR}/devel/p5-Time-Crontab
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -28,5 +32,6 @@ TEST_DEPENDS=	\
 
 USES=	perl5
 USE_PERL5=	modbuild
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
