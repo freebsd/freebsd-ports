@@ -110,10 +110,6 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "arm"
-BROKEN=		Does not build on arm
-.endif
-
 CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -I${OPENSSLLIB}
 
