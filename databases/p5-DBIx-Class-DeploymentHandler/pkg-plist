@@ -38,9 +38,6 @@
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::HandlesDeploy.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::HandlesVersionStorage.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::HandlesVersioning.3.gz
-%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::LogImporter.3.gz
-%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Logger.3.gz
-%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::LogRouter.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Manual::CatalystIntro.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Manual::Intro.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Types.3.gz
@@ -55,5 +52,4 @@
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Standard::Component.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Standard::VersionResult.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Standard::VersionResultSet.3.gz
-%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::WithApplicatorDumple.3.gz
 %%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::WithReasonableDefaults.3.gz
