@@ -2,7 +2,7 @@
 
 PORTNAME=	calendarserver
 PORTVERSION=	5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	LOCAL/wg
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,18 +33,25 @@ EXAMPLES_DESC=	Install configuration examples
 DOCS_DESC=	Install additional documentation
 
 NEED_ROOT=	yes
-USES=		shebangfix pgsql:9.0+ python twisted:run,conch,mail,names,runner,web,words
+USES=		shebangfix pgsql:9.0+ python \
+		twisted:run,conch,mail,names,runner,web,words
 USE_PYTHON=	autoplist distutils
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	USER=${USERS}
 
-SHEBANG_FILES=\
-	${WRKSRC}/calendarserver/tools/backup_pg.py \
-	${WRKSRC}/calendarserver/tools/backup.py \
-	${WRKSRC}/twext/python/test/pullpipe.py
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	${PYTHON_CMD}
+
+SHEBANG_FILES=	bin/calendarserver_* \
+		bin/icalendar_split \
+		bin/proxyclean \
+		calendarserver/tools/backup_pg.py \
+		calendarserver/tools/backup.py \
+		twext/python/test/pullpipe.py
 
 USE_RC_SUBR=	caldavd
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 SVN_REPOSITORY_URL=	http://svn.calendarserver.org/repository/calendarserver
 SVN_TAG1=	CalendarServer/tags/release/${DISTNAME}
@@ -77,10 +84,8 @@ maint-gen-distfile:
 	fi
 
 post-patch:
-
 	@${REINPLACE_CMD} -e 's|"{number} ({info})".format(number=version_number, info=version_info)|"5.1"|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|distutils.core|setuptools|g' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e 's|bin/bash|usr/bin/env bash|' ${WRKSRC}/bin/caldavd
 	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g' ${WRKSRC}/calendarserver/tools/bootstrapdatabase.py
 	@${REINPLACE_CMD} -e 's|"/etc/caldavd/caldavd.plist"|"${ETCDIR}/caldavd.plist"|g' ${WRKSRC}/twistedcaldav/stdconfig.py
 	@${REINPLACE_CMD} -e 's|/usr/share/caldavd/lib/python/txdav/common/datastore|${SHAREDIR}|' ${WRKSRC}/calendarserver/tools/bootstrapdatabase.py
@@ -88,15 +93,17 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/auth
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	(cd ${WRKSRC}/bin && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/conf && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-	cd ${WRKSRC}/doc && \
-	for i in `ls |${GREP} -v '.8'`; do \
+	(cd ${WRKSRC}/doc && \
+		for i in `ls |${GREP} -v '.8'`; do \
 		${MKDIR} ${STAGEDIR}${DOCSDIR}/$${i} && \
-		${INSTALL_MAN} ${WRKSRC}/doc/$${i}/* ${STAGEDIR}${DOCSDIR}/$${i}; done
-	${CP} -p ${WRKSRC}/txdav/common/datastore/sql_schema/current.sql ${STAGEDIR}${DOCSDIR}
+		${INSTALL_MAN} ${WRKSRC}/doc/$${i}/* \
+		${STAGEDIR}${DOCSDIR}/$${i}; \
+		done)
+	${CP} -p ${WRKSRC}/txdav/common/datastore/sql_schema/current.sql \
+		${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>

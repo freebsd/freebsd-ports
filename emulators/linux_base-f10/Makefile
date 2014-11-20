@@ -3,7 +3,7 @@
 
 PORTNAME=		f10
 PORTVERSION=		10
-PORTREVISION=		7
+PORTREVISION=		8
 CATEGORIES=		emulators linux
 MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
 PKGNAMEPREFIX=		linux_base-
@@ -75,6 +75,7 @@ SRC_DISTFILES+=	acl-2.2.47-3.fc10.src.rpm \
 		fedora-release-10-1.src.rpm \
 		filesystem-2.4.19-1.fc10.src.rpm \
 		freetype-2.3.7-1.fc10.src.rpm \
+		gamin-0.1.9-6.fc10.src.rpm \
 		gcc-4.3.2-7.src.rpm \
 		gdbm-1.8.0-29.fc10.src.rpm \
 		glib-1.2.10-32.fc10.src.rpm \

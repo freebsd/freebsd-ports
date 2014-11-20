@@ -1,4 +1,4 @@
---- tools/gyp/pylib/gyp/generator/make.py.orig	2014-10-02 17:40:30 UTC
+--- tools/gyp/pylib/gyp/generator/make.py.orig	2014-10-10 09:16:07 UTC
 +++ tools/gyp/pylib/gyp/generator/make.py
 @@ -88,7 +88,7 @@
    else:

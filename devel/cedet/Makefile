@@ -13,6 +13,10 @@ COMMENT=	Collection of Emacs Development Environment Tools
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build, use Emacs' builtin cedet package instead
+DEPRECATED=	Fails to build, use Emacs' builtin cedet package instead
+EXPIRATION_DATE=	2015-01-01
+
 USE_EMACS=		yes
 USES=			gmake makeinfo
 MAKE_JOBS_UNSAFE=	yes

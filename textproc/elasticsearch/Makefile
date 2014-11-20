@@ -3,6 +3,7 @@
 
 PORTNAME=	elasticsearch
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -11,6 +12,8 @@ MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
+
+RUN_DEPENDS=	java-sigar>=0:${PORTSDIR}/java/sigar
 
 USE_JAVA=	yes
 NO_BUILD=	yes
@@ -60,6 +63,8 @@ GROUPS=		${SEARCHGROUP}
 ELASTIC_DBDIR=	/var/db/elasticsearch
 ELASTIC_LOGDIR=	/var/log/elasticsearch
 
+SIGAR_LIBNAME=	libsigar-${ARCH:S,i386,x86,}-freebsd-${PLATFORM_VER}.so
+
 SUB_LIST=	SEARCHUSER=${SEARCHUSER} \
 		SEARCHGROUP=${SEARCHGROUP} \
 		PORTVERSION=${PORTVERSION}
@@ -70,7 +75,8 @@ PLIST_SUB=	SIGAR_ARCH=${SIGAR_ARCH} \
 		LUCENEVER=${LUCENEVER} \
 		PORTVERSION=${PORTVERSION} \
 		ELASTIC_DBDIR=${ELASTIC_DBDIR} \
-		ELASTIC_LOGDIR=${ELASTIC_LOGDIR}
+		ELASTIC_LOGDIR=${ELASTIC_LOGDIR} \
+		SIGAR_LIBNAME=${SIGAR_LIBNAME}
 
 post-patch:
 	${SED} -i .bak -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/config/elasticsearch.yml
@@ -87,7 +93,9 @@ do-install:
 .endfor
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar
-	${INSTALL_DATA} ${WRKSRC}/lib/sigar/sigar-1.6.4.jar ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar/
+#	${INSTALL_DATA} ${WRKSRC}/lib/sigar/sigar-1.6.4.jar ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar/
+	cd ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar && ${LN} -s ${JAVAJARDIR}/sigar.jar
+	cd ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar && ${LN} -s ${JAVAJARDIR}/${SIGAR_LIBNAME}
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

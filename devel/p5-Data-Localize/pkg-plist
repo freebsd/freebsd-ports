@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Localize/.packlist
 %%SITE_PERL%%/Data/Localize.pm
 %%SITE_PERL%%/Data/Localize/Auto.pm
 %%SITE_PERL%%/Data/Localize/Format.pm
@@ -25,6 +24,7 @@
 %%PERL5_MAN3%%/Data::Localize::Gettext.3.gz
 %%PERL5_MAN3%%/Data::Localize::Gettext::Parser.3.gz
 %%PERL5_MAN3%%/Data::Localize::Localizer.3.gz
+%%PERL5_MAN3%%/Data::Localize::Log.3.gz
 %%PERL5_MAN3%%/Data::Localize::MultiLevel.3.gz
 %%PERL5_MAN3%%/Data::Localize::Namespace.3.gz
 %%PERL5_MAN3%%/Data::Localize::Storage.3.gz

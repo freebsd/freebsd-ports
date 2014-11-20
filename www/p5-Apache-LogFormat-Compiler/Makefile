@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Apache-LogFormat-Compiler
-PORTVERSION=	0.22
+PORTVERSION=	0.32
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -9,11 +9,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to compile a log format string to perl-code
 
-TEST_DEPENDS=	\
-	p5-HTTP-Message>0:${PORTSDIR}/www/p5-HTTP-Message \
-	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	\
+	p5-POSIX-strftime-Compiler>=0.30:${PORTSDIR}/devel/p5-POSIX-strftime-Compiler
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_ARCH=	YES
 
 .include <bsd.port.mk>

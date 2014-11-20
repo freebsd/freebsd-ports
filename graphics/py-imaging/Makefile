@@ -3,7 +3,7 @@
 
 PORTNAME=	imaging
 PORTVERSION=	1.1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/media/downloads/ \
 		http://www.pythonware.net/storage/
@@ -26,6 +26,8 @@ USE_PYTHON=	distutils autoplist concurrent
 PLIST_FILES=	%%PYTHON_INCLUDEDIR%%/ImPlatform.h %%PYTHON_INCLUDEDIR%%/Imaging.h
 PORTDOCS=	*
 PORTEXAMPLES=	*
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pillow-*
 
 OPTIONS_DEFINE=	DOCS TKINTER
 TKINTER_DESC=	tkinter for X support

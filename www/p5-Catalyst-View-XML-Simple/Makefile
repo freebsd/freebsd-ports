@@ -17,7 +17,7 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS=	\
 	p5-File-Remove>0:${PORTSDIR}/devel/p5-File-Remove \
 	p5-Module-Install>0:${PORTSDIR}/devel/p5-Module-Install \
-	p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base \
+	p5-Module-Install-TestBase>0:${PORTSDIR}/devel/p5-Module-Install-TestBase \
 	p5-Catalyst-Runtime>0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 	p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
 

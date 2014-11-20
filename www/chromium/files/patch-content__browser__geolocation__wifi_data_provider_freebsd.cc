@@ -1,6 +1,6 @@
---- content/browser/geolocation/wifi_data_provider_freebsd.cc.orig	2014-10-02 21:05:41 UTC
+--- content/browser/geolocation/wifi_data_provider_freebsd.cc.orig	2014-10-13 17:11:09 UTC
 +++ content/browser/geolocation/wifi_data_provider_freebsd.cc
-@@ -0,0 +1,200 @@
+@@ -0,0 +1,201 @@
 +// Copyright (c) 2010 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -25,6 +25,7 @@
 +
 +#include "base/strings/utf_string_conversions.h"
 +#include "content/browser/geolocation/wifi_data_provider_common.h"
++#include "content/browser/geolocation/wifi_data_provider_manager.h"
 +
 +namespace content {
 +namespace {
@@ -49,10 +50,10 @@
 +}
 +
 +// Provides the wifi API binding for FreeBSD.
-+class FreeBSDAccessPointData : public WifiDataProviderCommon::WlanApiInterface {
++class AccessPointDataFreeBSD : public WifiDataProviderCommon::WlanApiInterface {
 +public:
-+	FreeBSDAccessPointData();
-+	~FreeBSDAccessPointData();
++	AccessPointDataFreeBSD();
++	~AccessPointDataFreeBSD();
 +
 +	// this does nothing
 +	bool Init();
@@ -61,20 +62,20 @@
 +	virtual bool GetAccessPointData(WifiData::AccessPointDataSet* data);
 +
 +private:
-+	DISALLOW_COPY_AND_ASSIGN(FreeBSDAccessPointData);
++	DISALLOW_COPY_AND_ASSIGN(AccessPointDataFreeBSD);
 +};
 +
-+FreeBSDAccessPointData::FreeBSDAccessPointData() {
++AccessPointDataFreeBSD::AccessPointDataFreeBSD() {
 +}
 +
-+FreeBSDAccessPointData::~FreeBSDAccessPointData() {
++AccessPointDataFreeBSD::~AccessPointDataFreeBSD() {
 +}
 +
-+bool FreeBSDAccessPointData::Init() {
++bool AccessPointDataFreeBSD::Init() {
 +	return true;
 +}
 +
-+bool FreeBSDAccessPointData::GetAccessPointData(WifiData::AccessPointDataSet* data) {
++bool AccessPointDataFreeBSD::GetAccessPointData(WifiData::AccessPointDataSet* data) {
 +	bool			res;
 +	char			*dupn;
 +	struct ifaddrs		*ifal, *ifa;
@@ -174,26 +175,26 @@
 +}  // namespace
 +
 +// static
-+WifiDataProviderImplBase* WifiDataProvider::DefaultFactoryFunction() {
-+	return new FreeBSDWifiDataProvider();
++WifiDataProvider* WifiDataProviderManager::DefaultFactoryFunction() {
++	return new WifiDataProviderFreeBSD();
 +}
 +
-+FreeBSDWifiDataProvider::FreeBSDWifiDataProvider() {
++WifiDataProviderFreeBSD::WifiDataProviderFreeBSD() {
 +}
 +
-+FreeBSDWifiDataProvider::~FreeBSDWifiDataProvider() {
++WifiDataProviderFreeBSD::~WifiDataProviderFreeBSD() {
 +}
 +
-+WifiDataProviderCommon::WlanApiInterface* FreeBSDWifiDataProvider::NewWlanApi() {
++WifiDataProviderCommon::WlanApiInterface* WifiDataProviderFreeBSD::NewWlanApi() {
 +
-+	scoped_ptr<FreeBSDAccessPointData> wlan_api(new FreeBSDAccessPointData);
++	scoped_ptr<AccessPointDataFreeBSD> wlan_api(new AccessPointDataFreeBSD);
 +	if (wlan_api->Init())
 +		return wlan_api.release();
 +
 +	return NULL;
 +}
 +
-+WifiPollingPolicy* FreeBSDWifiDataProvider::NewPollingPolicy() {
++WifiPollingPolicy* WifiDataProviderFreeBSD::NewPollingPolicy() {
 +	return new GenericWifiPollingPolicy<kDefaultPollingInterval,
 +	    kNoChangePollingInterval,
 +	    kTwoNoChangePollingInterval,

@@ -1,4 +1,4 @@
---- chrome/test/base/testing_browser_process.h.orig	2014-10-02 17:39:46 UTC
+--- chrome/test/base/testing_browser_process.h.orig	2014-10-10 09:15:30 UTC
 +++ chrome/test/base/testing_browser_process.h
 @@ -105,8 +105,8 @@
    virtual DownloadStatusUpdater* download_status_updater() OVERRIDE;

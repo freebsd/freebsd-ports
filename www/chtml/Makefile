@@ -18,5 +18,6 @@ USE_PERL5=	run
 MAKE_ENV=	SITE_PERL=${SITE_PERL}
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

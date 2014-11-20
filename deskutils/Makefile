@@ -219,7 +219,6 @@
     SUBDIR += simpleagenda
     SUBDIR += simplegroupware
     SUBDIR += sliderule
-    SUBDIR += splashsetter
     SUBDIR += steadyflow
     SUBDIR += strigi
     SUBDIR += strigiclient

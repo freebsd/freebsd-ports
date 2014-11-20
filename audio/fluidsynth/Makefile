@@ -11,6 +11,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO SNDFILE
 OPTIONS_DEFAULT=	JACK
@@ -21,8 +22,8 @@ CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CMAKE_OFF=		-Denable-jack:BOOL=FALSE
@@ -43,20 +44,12 @@ LASH_CMAKE_OFF=		-Denable-lash:BOOL=FALSE
 PORTAUDIO_BUILD_DEPENDS=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
 PORTAUDIO_RUN_DEPENDS=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
 PORTAUDIO_CMAKE_ON=	-Denable-portaudio:BOOL=TRUE
-PORTAUDIO_CFLAGS=	-I${LOCALBASE}/include/portaudio2
-PORTAUDIO_LDFLAGS=	-L${LOCALBASE}/lib/portaudio2
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-Denable-pulseaudio:BOOL=FALSE
 
 SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 SNDFILE_CMAKe_OFF=	-Denable-libsndfile:BOOL=FALSE
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPORTAUDIO} && exists(${LOCALBASE}/include/portaudio.h)
-BROKEN=		portaudio2 support does not build in presence of old portaudio
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

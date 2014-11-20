@@ -1,6 +1,6 @@
---- breakpad/breakpad.gyp.orig	2014-10-02 17:39:45 UTC
+--- breakpad/breakpad.gyp.orig	2014-10-10 09:15:29 UTC
 +++ breakpad/breakpad.gyp
-@@ -349,7 +349,7 @@
+@@ -353,7 +353,7 @@
          },
        ],
      }],

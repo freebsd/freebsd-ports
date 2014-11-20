@@ -86,7 +86,7 @@ PLIST_SUB+=	RSCSI="@comment "
 
 MAKE_ENV=	CCOM=cc GMAKE_NOWARN=true INS_BASE=${LOCALBASE} \
 		INS_RBASE=${LOCALBASE}
-CDRTLSTARGET=	${ARCH:S/powerpc64/powerpc/}-freebsd-cc
+CDRTLSTARGET=	${ARCH:S/powerpc64/powerpc/}-${OPSYS:tl}-cc
 
 .if exists(/usr/include/iconv.h) || exists(${LOCALBASE}/lib/libiconv.a) || \
 	exists(${LOCALBASE}/lib/libintl.a) || ${PORT_OPTIONS:MNLS}

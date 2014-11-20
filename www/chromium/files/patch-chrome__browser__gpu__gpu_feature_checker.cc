@@ -1,4 +1,4 @@
---- chrome/browser/gpu/gpu_feature_checker.cc.orig	2014-10-02 17:39:45 UTC
+--- chrome/browser/gpu/gpu_feature_checker.cc.orig	2014-10-10 08:54:10 UTC
 +++ chrome/browser/gpu/gpu_feature_checker.cc
 @@ -33,7 +33,7 @@
    CHECK(content::BrowserThread::CurrentlyOn(content::BrowserThread::UI));

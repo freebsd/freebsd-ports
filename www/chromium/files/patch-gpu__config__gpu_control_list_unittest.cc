@@ -1,4 +1,4 @@
---- gpu/config/gpu_control_list_unittest.cc.orig	2014-10-02 17:39:47 UTC
+--- gpu/config/gpu_control_list_unittest.cc.orig	2014-10-10 08:54:15 UTC
 +++ gpu/config/gpu_control_list_unittest.cc
 @@ -177,8 +177,7 @@
    features = control_list->MakeDecision(

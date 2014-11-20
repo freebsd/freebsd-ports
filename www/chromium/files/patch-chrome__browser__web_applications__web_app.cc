@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/web_app.cc.orig	2014-10-02 17:39:46 UTC
+--- chrome/browser/web_applications/web_app.cc.orig	2014-10-10 08:54:11 UTC
 +++ chrome/browser/web_applications/web_app.cc
 @@ -424,7 +424,7 @@
  }

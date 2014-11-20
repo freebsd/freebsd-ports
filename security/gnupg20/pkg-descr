@@ -1,0 +1,7 @@
+GnuPG is a complete and free replacement for PGP.
+
+Because it does not use the patented IDEA algorithm, it can be used
+without any restrictions.  GnuPG is an RFC2440 (OpenPGP) compliant
+application.
+
+WWW: http://www.gnupg.org/

@@ -1,4 +1,4 @@
---- net/quic/congestion_control/rtt_stats.cc.orig	2014-10-02 17:18:59 UTC
+--- net/quic/congestion_control/rtt_stats.cc.orig	2014-10-10 08:54:16 UTC
 +++ net/quic/congestion_control/rtt_stats.cc
 @@ -85,7 +85,7 @@
    } else {

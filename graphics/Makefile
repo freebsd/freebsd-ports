@@ -239,6 +239,7 @@
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf
     SUBDIR += gdk-pixbuf2
+    SUBDIR += gdtclft
     SUBDIR += geeqie
     SUBDIR += gegl
     SUBDIR += generic_image_decoder

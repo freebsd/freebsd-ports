@@ -1,4 +1,4 @@
---- third_party/ffmpeg/libavutil/mem.c.orig	2014-10-02 17:40:35 UTC
+--- third_party/ffmpeg/libavutil/mem.c.orig	2014-10-10 09:16:21 UTC
 +++ third_party/ffmpeg/libavutil/mem.c
 @@ -32,7 +32,7 @@
  #include <stdint.h>

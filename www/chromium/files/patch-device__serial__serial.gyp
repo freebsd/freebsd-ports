@@ -1,7 +1,7 @@
---- device/serial/serial.gyp.orig	2014-10-02 17:39:47 UTC
+--- device/serial/serial.gyp.orig	2014-10-10 09:15:31 UTC
 +++ device/serial/serial.gyp
-@@ -32,6 +32,12 @@
-             '../../build/linux/system.gyp:udev',
+@@ -38,6 +38,12 @@
+             'serial_device_enumerator_linux.h',
            ],
          }],
 +        ['os_bsd==1', {

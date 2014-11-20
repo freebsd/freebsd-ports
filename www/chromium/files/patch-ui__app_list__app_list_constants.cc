@@ -1,6 +1,6 @@
---- ui/app_list/app_list_constants.cc.orig	2014-10-02 17:39:48 UTC
+--- ui/app_list/app_list_constants.cc.orig	2014-10-10 09:15:32 UTC
 +++ ui/app_list/app_list_constants.cc
-@@ -95,7 +95,7 @@
+@@ -94,7 +94,7 @@
  const ui::ResourceBundle::FontStyle kItemTextFontStyle =
      ui::ResourceBundle::SmallBoldFont;
  

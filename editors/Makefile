@@ -57,7 +57,6 @@
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += emacs-nox11
-    SUBDIR += emacs23
     SUBDIR += fb
     SUBDIR += flim
     SUBDIR += fpc-ide

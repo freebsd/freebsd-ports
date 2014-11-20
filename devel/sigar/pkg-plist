@@ -1,0 +1,12 @@
+include/sigar.h
+include/sigar_fileinfo.h
+include/sigar_format.h
+include/sigar_getline.h
+include/sigar_log.h
+include/sigar_private.h
+include/sigar_ptql.h
+include/sigar_util.h
+lib/libsigar.a
+lib/libsigar.so
+lib/libsigar.so.0
+lib/libsigar.so.0.0.0

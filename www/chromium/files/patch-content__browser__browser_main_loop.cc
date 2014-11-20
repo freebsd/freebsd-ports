@@ -1,6 +1,6 @@
---- content/browser/browser_main_loop.cc.orig	2014-10-02 17:39:47 UTC
+--- content/browser/browser_main_loop.cc.orig	2014-10-10 09:15:31 UTC
 +++ content/browser/browser_main_loop.cc
-@@ -134,7 +134,7 @@
+@@ -135,7 +135,7 @@
  namespace content {
  namespace {
  
@@ -9,7 +9,7 @@
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    base::FilePath sandbox_binary;
-@@ -376,7 +376,7 @@
+@@ -377,7 +377,7 @@
  void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  
@@ -18,7 +18,7 @@
    // No thread should be created before this call, as SetupSandbox()
    // will end-up using fork().
    SetupSandbox(parsed_command_line_);
-@@ -809,9 +809,9 @@
+@@ -808,9 +808,9 @@
    }
  #endif
  

@@ -32,8 +32,9 @@ lib/elasticsearch/lucene-queryparser-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-sandbox-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-spatial-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-suggest-%%LUCENEVER%%.jar
-lib/elasticsearch/sigar/sigar-1.6.4.jar
 lib/elasticsearch/spatial4j-0.4.1.jar
+lib/elasticsearch/sigar/sigar.jar
+lib/elasticsearch/sigar/%%SIGAR_LIBNAME%%
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.textile

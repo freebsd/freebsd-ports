@@ -119,15 +119,3 @@ man/man8/calendarserver_shell.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/servertoserver.dtd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudoers.plist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/accounts.xml
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/resources
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/auth
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/RFC
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Extensions
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Developer
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Client-Server
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Admin
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry etc/caldavd/auth
-@dirrmtry etc/caldavd

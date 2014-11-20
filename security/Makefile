@@ -150,6 +150,7 @@
     SUBDIR += gnomint
     SUBDIR += gnupg
     SUBDIR += gnupg1
+    SUBDIR += gnupg20
     SUBDIR += gnutls
     SUBDIR += go.crypto
     SUBDIR += goptlib

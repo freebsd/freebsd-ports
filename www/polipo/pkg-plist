@@ -4,4 +4,4 @@ bin/polipo
 etc/periodic/daily/400.polipo
 man/man1/polipo.1.gz
 %%DATADIR%%/www/index.html
-@dir %%PCACHEDIR%%
+@dir(polipo,polipo,0770) %%PCACHEDIR%%

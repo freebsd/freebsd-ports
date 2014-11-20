@@ -1,6 +1,6 @@
---- chrome/chrome_browser_extensions.gypi.orig	2014-10-02 17:39:46 UTC
+--- chrome/chrome_browser_extensions.gypi.orig	2014-10-10 09:15:30 UTC
 +++ chrome/chrome_browser_extensions.gypi
-@@ -1023,6 +1023,11 @@
+@@ -950,6 +950,11 @@
          '<@(chrome_browser_extensions_enabled_sources)',
        ],
        'conditions': [

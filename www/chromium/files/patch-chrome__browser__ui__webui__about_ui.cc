@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/about_ui.cc.orig	2014-10-02 17:39:46 UTC
+--- chrome/browser/ui/webui/about_ui.cc.orig	2014-10-10 09:15:30 UTC
 +++ chrome/browser/ui/webui/about_ui.cc
 @@ -761,7 +761,7 @@
    return data;

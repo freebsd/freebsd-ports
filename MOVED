@@ -4450,7 +4450,6 @@ audio/xmms-kde||2013-07-26|Has expired: Depends on Qt 3.x
 audio/yammi||2013-07-26|Has expired: Depends on Qt 3.x
 biology/xdrawchem||2013-07-26|Has expired: Depends on Qt 3.x
 cad/opencascade-tutorial||2013-07-26|Has expired: Depends on Qt 3.x
-cad/qucs||2013-07-26|Has expired: Depends on Qt 3.x
 cad/vipec||2013-07-26|Has expired: Depends on Qt 3.x
 chinese/kde3-i18n-zh_CN||2013-07-26|Has expired: Depends on Qt 3.x
 chinese/kde3-i18n-zh_TW||2013-07-26|Has expired: Depends on Qt 3.x
@@ -7236,3 +7235,5 @@ net-p2p/gtkhx||2014-11-19|Does not work anymore
 korean/ami||2014-11-19|Does not work anymore
 graphics/xzgv||2014-11-19|Abandonware since at least 2008
 deskutils/gtkjournal||2014-11-19|Abandonware, not working anymore
+deskutils/splashsetter||2014-11-19|Abandonware, useless without gnome2
+editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use editors/emacs
