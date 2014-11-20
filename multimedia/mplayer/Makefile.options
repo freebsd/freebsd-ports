@@ -48,6 +48,12 @@ DEFAULT_KERN_HZ=1024
 # Non-simplified OPTIONS handling
 # ===============================
 
+.if ${PORT_OPTIONS:MGNUTLS}
+LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--enable-gnutls
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnutls
+.endif
+
 .if ${PORT_OPTIONS:MIPV6}
 CATEGORIES+=	ipv6
 .else
