@@ -4,5 +4,3 @@
 %%SITE_PERL%%/Router/Boom.pm
 %%SITE_PERL%%/Router/Boom/Method.pm
 %%SITE_PERL%%/Router/Boom/Node.pm
-@dirrm %%SITE_PERL%%/Router/Boom
-@dirrmtry %%SITE_PERL%%/Router
