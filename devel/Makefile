@@ -1675,6 +1675,7 @@
     SUBDIR += p5-Code-Perl
     SUBDIR += p5-Commands-Guarded
     SUBDIR += p5-CommitBit
+    SUBDIR += p5-Compiler-Lexer
     SUBDIR += p5-Config-Any
     SUBDIR += p5-Config-ApacheFormat
     SUBDIR += p5-Config-Auto
