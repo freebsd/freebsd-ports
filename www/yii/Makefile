@@ -2,23 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	yii
-PORTVERSION=	1.1.14
-DISTVERSIONSUFFIX=	.f0fee9
+PORTVERSION=	1.1.15
+DISTVERSIONSUFFIX=	.022a51
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance component-based PHP framework
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yiisoft
 GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	f0fee9
+GH_COMMIT=	022a51
 
-WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-72100b6
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-65ddd44
 
 NO_BUILD=	yes
+USES=		cpe
+CPE_VENDOR=	yiiframework
+CPE_PRODUCT=	yiiframework
 USE_PHP=	pcre spl
 WANT_PHP_WEB=	yes
 
@@ -52,10 +55,10 @@ post-patch:
 	@${SED} -i "" -e "s,dirname(__FILE__),'${DATADIR}/framework'," ${WRKSRC}/framework/yiic
 
 do-install:
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "${INSTALL_DIRS}" ${STAGEDIR}${DATADIR})
-	@${INSTALL_SCRIPT} ${WRKSRC}/framework/yiic ${STAGEDIR}${PREFIX}/bin
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "demos requirements" ${STAGEDIR}${EXAMPLESDIR})
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${INSTALL_DIRS}" ${STAGEDIR}${DATADIR})
+	${INSTALL_SCRIPT} ${WRKSRC}/framework/yiic ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "demos requirements" ${STAGEDIR}${EXAMPLESDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
