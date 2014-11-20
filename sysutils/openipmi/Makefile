@@ -80,7 +80,7 @@ PLIST_SUB+=		PERL="@comment "
 
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=			python
-CONFIGURE_ARGS+=	--with-python --with-swig
+CONFIGURE_ARGS+=	--with-python --with-swig ac_cv_path_pythonprog=${PYTHON_CMD}
 BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
 PLIST_SUB+=		PYTHON=""
 .else
