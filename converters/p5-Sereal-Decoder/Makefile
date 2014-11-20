@@ -1,19 +1,25 @@
 # $FreeBSD$
 
 PORTNAME=	Sereal-Decoder
-PORTVERSION=	2.03
+PORTVERSION=	3.003
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:SMUELLER
+MASTER_SITE_SUBDIR=	CPAN:YVES
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for fast, compact, powerful binary deserialization
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 TEST_DEPENDS=	\
 	p5-Test-LongString>0:${PORTSDIR}/devel/p5-Test-LongString
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Sereal/Decoder/Decoder.so
 
 .include <bsd.port.mk>
