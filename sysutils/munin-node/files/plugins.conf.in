@@ -62,3 +62,7 @@ env.mailstats /usr/sbin/mailstats
 [fail2ban*]
 user root
 env.client %%LOCALBASE%%/bin/fail2ban-client
+
+[nut*]
+env.upsc    %%LOCALBASE%%/bin/upsc
+env.upsconf %%LOCALBASE%%/etc/nut/ups.conf"
