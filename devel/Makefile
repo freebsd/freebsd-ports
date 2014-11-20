@@ -2573,6 +2573,7 @@
     SUBDIR += p5-POEx-Role-SessionInstantiation
     SUBDIR += p5-POEx-Role-Streaming
     SUBDIR += p5-POEx-Types
+    SUBDIR += p5-POSIX-strftime-Compiler
     SUBDIR += p5-POSIX-strptime
     SUBDIR += p5-PPerl
     SUBDIR += p5-PV
