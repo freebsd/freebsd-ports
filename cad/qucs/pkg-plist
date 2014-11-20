@@ -57,9 +57,24 @@ include/qucs-core/va2cpp.makefile
 include/qucs-core/valuelist.cpp
 include/qucs-core/valuelist.h
 include/qucs-core/vector.h
-lib/libqucs.la
 lib/libqucs.so
 lib/libqucs.so.0
+lib/libqucs.so.0.0.0
+man/man1/admsCheck.1.gz
+man/man1/admsXml.1.gz
+man/man1/ps2sp.1.gz
+man/man1/qucs.1.gz
+man/man1/qucsator.1.gz
+man/man1/qucsattenuator.1.gz
+man/man1/qucsconv.1.gz
+man/man1/qucsdigi.1.gz
+man/man1/qucsdigilib.1.gz
+man/man1/qucsedit.1.gz
+man/man1/qucsfilter.1.gz
+man/man1/qucshelp.1.gz
+man/man1/qucslib.1.gz
+man/man1/qucstrans.1.gz
+man/man1/qucsveri.1.gz
 share/applications/qucs.desktop
 share/icons/hicolor/128x128/apps/qucs.png
 share/icons/hicolor/16x16/apps/qucs.png
@@ -425,26 +440,3 @@ share/icons/hicolor/scalable/apps/qucs.svg
 %%DATADIR%%/tline/hp.trc
 %%DATADIR%%/tline/ustrip50fr4.trc
 %%DATADIR%%/tline/ustrip_jansen.trc
-@dirrmtry include/qucs-core
-@dirrmtry share/icons/hicolor/512x512/apps
-@dirrmtry share/icons/hicolor/512x512
-@dirrmtry share/man/man1
-@dirrmtry share/man
-@dirrmtry %%DATADIR%%/docs/cs
-@dirrmtry %%DATADIR%%/docs/de
-@dirrmtry %%DATADIR%%/docs/en
-@dirrmtry %%DATADIR%%/docs/es
-@dirrmtry %%DATADIR%%/docs/examples
-@dirrmtry %%DATADIR%%/docs/fr
-@dirrmtry %%DATADIR%%/docs/pt
-@dirrmtry %%DATADIR%%/docs/report
-@dirrmtry %%DATADIR%%/docs/ru
-@dirrmtry %%DATADIR%%/docs/technical
-@dirrmtry %%DATADIR%%/docs/tutorial
-@dirrmtry %%DATADIR%%/docs/uk
-@dirrmtry %%DATADIR%%/docs
-@dirrmtry %%DATADIR%%/lang
-@dirrmtry %%DATADIR%%/library
-@dirrmtry %%DATADIR%%/octave
-@dirrmtry %%DATADIR%%/tline
-@dirrmtry %%DATADIR%%

@@ -8,16 +8,16 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical circuit design and simulation tool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_QT4=	gui linguist
-#USE_GCC=	any
-USES=		gmake
-HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
-
-MAN1=		admsCheck.1 admsXml.1 ps2sp.1 qucs.1 qucsator.1 qucsattenuator.1 qucsconv.1 \
-		qucsdigi.1 qucsdigilib.1 qucsedit.1 qucsfilter.1 qucshelp.1 qucslib.1 \
-		qucstrans.1 qucsveri.1
+USE_QT4=	moc_build uic_build rcc_build linguist_build \
+		corelib gui xml svg script qt3support
+USES=		bison gmake libtool shebangfix
+SHEBANG_FILES=	contrib/ps2sp
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
