@@ -1,7 +1,16 @@
 man/man1/dancer.1.gz
 %%PERL5_MAN3%%/Dancer.3.gz
+%%PERL5_MAN3%%/Dancer::App.3.gz
 %%PERL5_MAN3%%/Dancer::Config.3.gz
 %%PERL5_MAN3%%/Dancer::Config::Object.3.gz
+%%PERL5_MAN3%%/Dancer::Continuation.3.gz
+%%PERL5_MAN3%%/Dancer::Continuation::Halted.3.gz
+%%PERL5_MAN3%%/Dancer::Continuation::Route.3.gz
+%%PERL5_MAN3%%/Dancer::Continuation::Route::ErrorSent.3.gz
+%%PERL5_MAN3%%/Dancer::Continuation::Route::FileSent.3.gz
+%%PERL5_MAN3%%/Dancer::Continuation::Route::Forwarded.3.gz
+%%PERL5_MAN3%%/Dancer::Continuation::Route::Passed.3.gz
+%%PERL5_MAN3%%/Dancer::Continuation::Route::Templated.3.gz
 %%PERL5_MAN3%%/Dancer::Cookbook.3.gz
 %%PERL5_MAN3%%/Dancer::Cookie.3.gz
 %%PERL5_MAN3%%/Dancer::Cookies.3.gz
@@ -13,10 +22,14 @@ man/man1/dancer.1.gz
 %%PERL5_MAN3%%/Dancer::Error.3.gz
 %%PERL5_MAN3%%/Dancer::Exception.3.gz
 %%PERL5_MAN3%%/Dancer::Exception::Base.3.gz
+%%PERL5_MAN3%%/Dancer::Factory::Hook.3.gz
 %%PERL5_MAN3%%/Dancer::FileUtils.3.gz
+%%PERL5_MAN3%%/Dancer::GetOpt.3.gz
 %%PERL5_MAN3%%/Dancer::HTTP.3.gz
+%%PERL5_MAN3%%/Dancer::Handler.3.gz
 %%PERL5_MAN3%%/Dancer::Handler::Debug.3.gz
 %%PERL5_MAN3%%/Dancer::Handler::PSGI.3.gz
+%%PERL5_MAN3%%/Dancer::Handler::Standalone.3.gz
 %%PERL5_MAN3%%/Dancer::Hook.3.gz
 %%PERL5_MAN3%%/Dancer::Hook::Properties.3.gz
 %%PERL5_MAN3%%/Dancer::Introduction.3.gz
@@ -36,12 +49,19 @@ man/man1/dancer.1.gz
 %%PERL5_MAN3%%/Dancer::Plugin.3.gz
 %%PERL5_MAN3%%/Dancer::Plugin::Ajax.3.gz
 %%PERL5_MAN3%%/Dancer::Plugins.3.gz
+%%PERL5_MAN3%%/Dancer::Policy.3.gz
+%%PERL5_MAN3%%/Dancer::Renderer.3.gz
 %%PERL5_MAN3%%/Dancer::Request.3.gz
 %%PERL5_MAN3%%/Dancer::Request::Upload.3.gz
 %%PERL5_MAN3%%/Dancer::Response.3.gz
+%%PERL5_MAN3%%/Dancer::Route.3.gz
 %%PERL5_MAN3%%/Dancer::Route::Cache.3.gz
+%%PERL5_MAN3%%/Dancer::Route::Registry.3.gz
 %%PERL5_MAN3%%/Dancer::Serializer.3.gz
+%%PERL5_MAN3%%/Dancer::Serializer::Abstract.3.gz
+%%PERL5_MAN3%%/Dancer::Serializer::Dumper.3.gz
 %%PERL5_MAN3%%/Dancer::Serializer::JSON.3.gz
+%%PERL5_MAN3%%/Dancer::Serializer::JSONP.3.gz
 %%PERL5_MAN3%%/Dancer::Serializer::Mutable.3.gz
 %%PERL5_MAN3%%/Dancer::Serializer::XML.3.gz
 %%PERL5_MAN3%%/Dancer::Serializer::YAML.3.gz
@@ -49,6 +69,7 @@ man/man1/dancer.1.gz
 %%PERL5_MAN3%%/Dancer::Session::Abstract.3.gz
 %%PERL5_MAN3%%/Dancer::Session::Simple.3.gz
 %%PERL5_MAN3%%/Dancer::Session::YAML.3.gz
+%%PERL5_MAN3%%/Dancer::SharedData.3.gz
 %%PERL5_MAN3%%/Dancer::Template.3.gz
 %%PERL5_MAN3%%/Dancer::Template::Abstract.3.gz
 %%PERL5_MAN3%%/Dancer::Template::Simple.3.gz
@@ -108,6 +129,7 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Plugin.pm
 %%SITE_PERL%%/Dancer/Plugin/Ajax.pm
 %%SITE_PERL%%/Dancer/Plugins.pod
+%%SITE_PERL%%/Dancer/Policy.pod
 %%SITE_PERL%%/Dancer/Renderer.pm
 %%SITE_PERL%%/Dancer/Request.pm
 %%SITE_PERL%%/Dancer/Request/Upload.pm
@@ -119,6 +141,7 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Serializer/Abstract.pm
 %%SITE_PERL%%/Dancer/Serializer/Dumper.pm
 %%SITE_PERL%%/Dancer/Serializer/JSON.pm
+%%SITE_PERL%%/Dancer/Serializer/JSONP.pm
 %%SITE_PERL%%/Dancer/Serializer/Mutable.pm
 %%SITE_PERL%%/Dancer/Serializer/XML.pm
 %%SITE_PERL%%/Dancer/Serializer/YAML.pm
@@ -134,22 +157,3 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Test.pm
 %%SITE_PERL%%/Dancer/Timer.pm
 %%SITE_PERL%%/Dancer/Tutorial.pod
-@dirrm %%SITE_PERL%%/Dancer/Template
-@dirrm %%SITE_PERL%%/Dancer/Session
-@dirrm %%SITE_PERL%%/Dancer/Serializer
-@dirrm %%SITE_PERL%%/Dancer/Route
-@dirrm %%SITE_PERL%%/Dancer/Request
-@dirrm %%SITE_PERL%%/Dancer/Plugin
-@dirrm %%SITE_PERL%%/Dancer/Object
-@dirrm %%SITE_PERL%%/Dancer/Logger/Capture
-@dirrm %%SITE_PERL%%/Dancer/Logger
-@dirrm %%SITE_PERL%%/Dancer/Hook
-@dirrm %%SITE_PERL%%/Dancer/Handler
-@dirrm %%SITE_PERL%%/Dancer/Factory
-@dirrm %%SITE_PERL%%/Dancer/Exception
-@dirrm %%SITE_PERL%%/Dancer/Development
-@dirrm %%SITE_PERL%%/Dancer/Continuation/Route
-@dirrm %%SITE_PERL%%/Dancer/Continuation
-@dirrm %%SITE_PERL%%/Dancer/Config
-@dirrm %%SITE_PERL%%/Dancer
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer
