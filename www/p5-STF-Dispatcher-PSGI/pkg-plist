@@ -8,7 +8,3 @@
 %%PERL5_MAN3%%/STF::Dispatcher::PSGI.3.gz
 %%PERL5_MAN3%%/STF::Dispatcher::PSGI::HTTPException.3.gz
 %%PERL5_MAN3%%/STF::Dispatcher::Test.3.gz
-@dirrm %%SITE_PERL%%/STF/Dispatcher/PSGI
-@dirrm %%SITE_PERL%%/STF/Dispatcher/Impl
-@dirrm %%SITE_PERL%%/STF/Dispatcher
-@dirrm %%SITE_PERL%%/STF
