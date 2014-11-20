@@ -17,6 +17,10 @@ LICENSE=	GPLv2
 USES=		gmake makeinfo
 USE_EMACS=	yes
 
+BROKEN=		does not work with newer Emacs versions, use the elpa package instead
+DEPRECATED=	does not work with newer Emacs versions, use the elpa package instead
+EXPIRATION_DATE=	2015-01-01
+
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 ICONSRC=	${WRKSRC}/ecb-images
 ICONDIR=	${LISPDIR}/ecb-images
