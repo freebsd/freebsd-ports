@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Session-Storage-Secure
-PORTVERSION=	0.007
+PORTVERSION=	0.010
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for encrypted, serialized session data with integrity
+
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
 	p5-Crypt-CBC>0:${PORTSDIR}/security/p5-Crypt-CBC \
@@ -29,5 +31,6 @@ TEST_DEPENDS=	\
 
 USES=	perl5
 USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
