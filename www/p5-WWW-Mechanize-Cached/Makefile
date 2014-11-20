@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-Cached
-PORTVERSION=	1.43
+PORTVERSION=	1.44
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to cache response to be polite
 
 RUN_DEPENDS=	\
+	p5-CHI>0:${PORTSDIR}/devel/p5-CHI \
 	p5-Cache-Cache>=1.02:${PORTSDIR}/devel/p5-Cache-Cache \
 	p5-Data-Dump>0:${PORTSDIR}/devel/p5-Data-Dump \
 	p5-Devel-SimpleTrace>0:${PORTSDIR}/devel/p5-Devel-SimpleTrace \
@@ -23,5 +24,6 @@ TEST_DEPENDS=	p5-Test-Warn>0:${PORTSDIR}/devel/p5-Test-Warn
 
 USES=	perl5
 USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
