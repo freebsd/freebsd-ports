@@ -1,4 +1,4 @@
---- content/browser/geolocation/location_arbitrator_impl.cc.orig	2014-10-02 17:18:57 UTC
+--- content/browser/geolocation/location_arbitrator_impl.cc.orig	2014-10-10 08:54:14 UTC
 +++ content/browser/geolocation/location_arbitrator_impl.cc
 @@ -159,7 +159,7 @@
  }

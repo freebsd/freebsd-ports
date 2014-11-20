@@ -1,4 +1,4 @@
---- third_party/pdfium/core/include/fxcrt/fx_system.h.orig	2014-10-02 17:40:24 UTC
+--- third_party/pdfium/core/include/fxcrt/fx_system.h.orig	2014-10-10 09:15:54 UTC
 +++ third_party/pdfium/core/include/fxcrt/fx_system.h
 @@ -21,7 +21,7 @@
  #elif defined(_WIN32) || defined(_WIN64)

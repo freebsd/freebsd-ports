@@ -1,4 +1,4 @@
---- ppapi/shared_impl/private/net_address_private_impl.cc.orig	2014-10-02 17:19:00 UTC
+--- ppapi/shared_impl/private/net_address_private_impl.cc.orig	2014-10-10 08:54:16 UTC
 +++ ppapi/shared_impl/private/net_address_private_impl.cc
 @@ -14,6 +14,10 @@
  #include <sys/types.h>

@@ -1,4 +1,4 @@
---- testing/gtest/include/gtest/internal/gtest-port.h.orig	2014-10-02 17:39:53 UTC
+--- testing/gtest/include/gtest/internal/gtest-port.h.orig	2014-10-10 09:15:35 UTC
 +++ testing/gtest/include/gtest/internal/gtest-port.h
 @@ -343,6 +343,8 @@
  # define GTEST_OS_NACL 1

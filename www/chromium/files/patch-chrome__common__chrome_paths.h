@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.h.orig	2014-10-02 17:18:54 UTC
+--- chrome/common/chrome_paths.h.orig	2014-10-10 08:54:11 UTC
 +++ chrome/common/chrome_paths.h
 @@ -112,7 +112,7 @@
    DIR_SUPERVISED_USERS_DEFAULT_APPS,  // Directory where installer places .crx

@@ -1,5 +1,5 @@
---- chrome/browser/ui/browser_view_prefs.cc.orig	2014-10-06 09:19:40.000000000 +0200
-+++ chrome/browser/ui/browser_view_prefs.cc	2014-10-06 09:24:45.000000000 +0200
+--- chrome/browser/ui/browser_view_prefs.cc.orig	2014-10-10 08:54:11 UTC
++++ chrome/browser/ui/browser_view_prefs.cc
 @@ -9,7 +9,7 @@
  #include "chrome/common/pref_names.h"
  #include "components/pref_registry/pref_registry_syncable.h"

@@ -1,4 +1,4 @@
---- ppapi/proxy/file_io_resource.cc.orig	2014-10-02 17:39:47 UTC
+--- ppapi/proxy/file_io_resource.cc.orig	2014-10-10 08:54:16 UTC
 +++ ppapi/proxy/file_io_resource.cc
 @@ -283,15 +283,17 @@
  

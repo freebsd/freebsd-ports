@@ -1,4 +1,4 @@
---- base/test/expectations/expectation.cc.orig	2014-10-02 17:18:52 UTC
+--- base/test/expectations/expectation.cc.orig	2014-10-10 08:54:09 UTC
 +++ base/test/expectations/expectation.cc
 @@ -60,6 +60,7 @@
          variant != "64") {

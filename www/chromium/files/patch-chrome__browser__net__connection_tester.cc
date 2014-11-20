@@ -1,4 +1,4 @@
---- chrome/browser/net/connection_tester.cc.orig	2014-10-02 17:18:53 UTC
+--- chrome/browser/net/connection_tester.cc.orig	2014-10-10 09:15:30 UTC
 +++ chrome/browser/net/connection_tester.cc
 @@ -219,7 +219,7 @@
    // Otherwise returns a network error code.

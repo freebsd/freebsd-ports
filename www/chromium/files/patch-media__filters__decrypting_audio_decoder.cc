@@ -1,4 +1,4 @@
---- media/filters/decrypting_audio_decoder.cc.orig	2014-10-02 17:39:47 UTC
+--- media/filters/decrypting_audio_decoder.cc.orig	2014-10-10 08:54:15 UTC
 +++ media/filters/decrypting_audio_decoder.cc
 @@ -30,7 +30,7 @@
    // Out of sync of 100ms would be pretty noticeable and we should keep any

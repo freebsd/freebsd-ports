@@ -1,4 +1,4 @@
---- build/linux/unbundle/libwebp.gyp.orig	2014-10-02 17:18:52 UTC
+--- build/linux/unbundle/libwebp.gyp.orig	2014-10-10 08:54:09 UTC
 +++ build/linux/unbundle/libwebp.gyp
 @@ -14,13 +14,7 @@
        },

@@ -1,4 +1,4 @@
---- net/http/http_auth_gssapi_posix.cc.orig	2014-10-02 17:18:59 UTC
+--- net/http/http_auth_gssapi_posix.cc.orig	2014-10-10 08:54:16 UTC
 +++ net/http/http_auth_gssapi_posix.cc
 @@ -431,8 +431,8 @@
      static const char* const kDefaultLibraryNames[] = {

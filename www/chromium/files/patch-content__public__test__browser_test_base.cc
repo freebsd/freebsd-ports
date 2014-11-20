@@ -1,4 +1,4 @@
---- content/public/test/browser_test_base.cc.orig	2014-10-02 17:39:47 UTC
+--- content/public/test/browser_test_base.cc.orig	2014-10-10 09:15:31 UTC
 +++ content/public/test/browser_test_base.cc
 @@ -4,6 +4,10 @@
  
