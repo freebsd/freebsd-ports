@@ -100,7 +100,6 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_webkit_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webkitwidgets.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webkitwidgets_private.pri
-%%QT_PLUGINDIR%%/webkit/libplatformplugin.so
 %%QT_QMLDIR%%/QtWebKit/experimental/libqmlwebkitexperimentalplugin.so
 %%QT_QMLDIR%%/QtWebKit/experimental/qmldir
 %%QT_QMLDIR%%/QtWebKit/libqmlwebkitplugin.so
