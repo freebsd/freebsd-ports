@@ -2780,6 +2780,17 @@
                     os::current_process_id(), os::current_process_id());
  
        os::fork_and_exec(buf);
+--- ./hotspot/src/share/vm/classfile/javaClasses.cpp	2014-11-19 14:08:52.000000000 -0500
++++ ./hotspot/src/share/vm/classfile/javaClasses.cpp	2014-11-19 14:10:18.000000000 -0500
+@@ -1242,7 +1242,7 @@
+ // Helper backtrace functions to store bci|version together.
+ static inline int merge_bci_and_version(int bci, int version) {
+   // only store u2 for version, checking for overflow.
+-  if (version > USHRT_MAX || version < 0) version = MAX_VERSION;
++  if (version > (int)USHRT_MAX || version < 0) version = MAX_VERSION;
+   assert((jushort)bci == bci, "bci should be short");
+   return build_int_from_shorts(version, bci);
+ }
 --- ./hotspot/src/share/vm/opto/node.cpp	Mon Sep 08 12:35:01 2014 -0700
 +++ ./hotspot/src/share/vm/opto/node.cpp	Wed Nov 05 15:01:44 2014 -0800
 @@ -286,6 +286,10 @@
