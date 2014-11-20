@@ -1,13 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	Plack-Middleware-ServerStatus-Lite
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Plack middleware to show server status like Apache mod_status
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-JSON>=2.53:${PORTSDIR}/converters/p5-JSON \
@@ -23,5 +26,6 @@ TEST_DEPENDS=	\
 
 USES=	perl5
 USE_PERL5=	modbuild
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
