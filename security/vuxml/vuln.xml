@@ -57,6 +57,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5a35bc56-7027-11e4-a4a3-001999f8d30b">
+    <topic>yii -- Remote arbitrary PHP code execution</topic>
+    <affects>
+      <package>
+	<name>yii</name>
+	<range><lt>1.1.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yii PHP Framework developers report:</p>
+	<blockquote cite="http://www.yiiframework.com/news/78/yii-1-1-15-is-released-security-fix/">
+	  <p>We are releasing Yii 1.1.15 to fix a security issue
+	  found in 1.1.14. We urge all 1.1.14 users to upgrade their
+	  Yii to this latest release. Note that the issue only
+	  affects 1.1.14. All previous releases are not affected.
+	  Upgrading to this release from 1.1.14 is very safe and
+	  will not break your existing code.</p>
+	  <p>The vulnerability is in the CDetailView widget. When
+	  a Yii application uses this widget and configures the
+	  "value" property of a CDetailView attribute using end
+	  user inputs, it may allow attackers to potentially execute
+	  arbitrary PHP scripts on the server. We are not showing
+	  how to exploit it here to allow users to upgrade before
+	  details about the exploit become publicly known. To our
+	  knowledge the details of this issue are only known to
+	  core team members.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4672</cvename>
+      <url>http://www.yiiframework.com/news/78/yii-1-1-15-is-released-security-fix</url>
+    </references>
+    <dates>
+      <discovery>2014-07-03</discovery>
+      <entry>2014-11-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d395e44f-6f4f-11e4-a444-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
