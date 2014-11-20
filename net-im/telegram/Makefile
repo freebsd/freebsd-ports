@@ -1,7 +1,7 @@
 # Created by: gahr
 # $FreeBSD$
 
-PORTNAME=	tg
+PORTNAME=	telegram
 PORTVERSION=	1.0.5.1
 PORTREVISION=	1
 CATEGORIES=	net-im
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vysheng
+GH_PROJECT=	tg
 GH_TAGNAME=	1.0.5.1
 GH_COMMIT=	77bbb4c
 
