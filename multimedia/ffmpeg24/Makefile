@@ -150,6 +150,10 @@ OPENCV_CONFIGURE_ENABLE=	libopencv
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
+# openssl
+OPENSSL_USE=		OPENSSL=yes
+OPENSSL_CONFIGURE_ENABLE=	openssl
+
 # opus
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
 OPUS_CONFIGURE_ENABLE=	libopus
@@ -221,7 +225,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
 # ssl
 .if ${PORT_OPTIONS:MOPENSSL} && empty(PORT_OPTIONS:MGNUTLS)
-USE_OPENSSL=	yes
 FFMPEG_NONFREE=	yes
 .endif
 
