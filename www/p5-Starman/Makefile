@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Starman
-PORTVERSION=	0.4008
+PORTVERSION=	0.4011
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for high-performance preforking PSGI web server
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Data-Dump>0:${PORTSDIR}/devel/p5-Data-Dump \
@@ -25,5 +28,10 @@ TEST_DEPENDS=	\
 USES=	perl5
 USE_PERL5=	modbuildtiny
 USE_RC_SUBR=	starman
+NO_ARCH=	YES
+
+# Workaround until Module::Build::Tiny 0.039.
+post-patch:
+	${REINPLACE_CMD} -e 's|0.039|0.038|' ${WRKSRC}/Build.PL
 
 .include <bsd.port.mk>
