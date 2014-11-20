@@ -1,3 +1,4 @@
+%%SITE_ARCH%%/auto/SQL/Maker/.packlist
 %%SITE_PERL%%/SQL/Maker.pm
 %%SITE_PERL%%/SQL/Maker/Condition.pm
 %%SITE_PERL%%/SQL/Maker/Plugin/InsertMulti.pm
@@ -13,4 +14,6 @@
 %%PERL5_MAN3%%/SQL::Maker::Plugin::InsertOnDuplicate.3.gz
 %%PERL5_MAN3%%/SQL::Maker::SQLType.3.gz
 %%PERL5_MAN3%%/SQL::Maker::Select.3.gz
+%%PERL5_MAN3%%/SQL::Maker::Select::Oracle.3.gz
 %%PERL5_MAN3%%/SQL::Maker::SelectSet.3.gz
+%%PERL5_MAN3%%/SQL::Maker::Util.3.gz
