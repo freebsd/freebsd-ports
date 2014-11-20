@@ -57,6 +57,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="890b6b22-70fa-11e4-91ae-5453ed2e2b49">
+    <topic>kwebkitpart, kde-runtime -- insufficient input validation</topic>
+    <affects>
+      <package>
+	<name>kde-runtime</name>
+	<range><lt>4.14.2_2</lt></range>
+      </package>
+      <package>
+	<name>kwebkitpart</name>
+	<range><lt>1.3.2_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Albert Aastals Cid reports:</p>
+	<blockquote cite="https://www.kde.org/info/security/advisory-20141113-1.txt">
+	  <p>kwebkitpart and the bookmarks:// io slave were not sanitizing
+	    input correctly allowing to some javascript being executed on the
+	    context of the referenced hostname.</p>
+	  <p>Whilst in most cases, the JavaScript will be executed in an
+	    untrusted context, with the bookmarks IO slave, it will be executed
+	    in the context of the referenced hostname. It should however be
+	    noted that KDE mitigates this risk by attempting to ensure that
+	    such URLs cannot be embedded directly into Internet hosted
+	    content.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.kde.org/info/security/advisory-20141113-1.txt</url>
+      <cvename>CVE-2014-8600</cvename>
+    </references>
+    <dates>
+      <discovery>2014-11-13</discovery>
+      <entry>2014-11-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5a35bc56-7027-11e4-a4a3-001999f8d30b">
     <topic>yii -- Remote arbitrary PHP code execution</topic>
     <affects>
