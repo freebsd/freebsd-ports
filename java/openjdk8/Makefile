@@ -2,14 +2,14 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
 		LOCAL/jkim:jdk,jtreg
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b${DIST_BUILD_NUMBER}-03_mar_2014
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:jdk
+DISTFILES=	${DISTNAME}.zip:jdk
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-USES=		compiler:features dos2unix gmake iconv pkgconfig shebangfix zip
+USES=		compiler:features dos2unix gmake iconv pkgconfig shebangfix
 USE_AUTOTOOLS=	autoconf
 USE_XORG=	x11 xext xi xrender xt xtst
 
@@ -123,7 +123,7 @@ TEST_DESC=		Run regression tests
 RELEASE_CONFIGURE_ON=	--disable-debug-symbols
 TEST_ALL_TARGET=	test
 TEST_CONFIGURE_ON=	--with-jtreg=${WRKDIR}/jtreg
-TEST_DISTFILES=		jtreg${JTREG_VERSION}-${JTREG_BUILD_NUMBER}.tar.gz:jtreg
+TEST_DISTFILES=		jtreg${JTREG_VERSION}-${JTREG_BUILD_NUMBER}${EXTRACT_SUFX}:jtreg
 .else
 CONFIGURE_ARGS+=	--disable-debug-symbols
 JAVAVMS_COMMENT+=	JRE
@@ -229,11 +229,13 @@ do-install:
 	    ${FIND} bin jre/bin -type f -exec ${CHMOD} ${BINMODE} {} \; && \
 	    ${CHMOD} ${BINMODE} jre/lib/${ARCH}/jexec \
 	    jre/lib/${ARCH}/jspawnhelper lib/${ARCH}/jexec
+	@${ECHO} "@dir ${INSTALLDIR}/jre/lib/applet" >> ${TMPPLIST}
 .else
 	@cd ${JRE_IMAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
 	@cd ${STAGEDIR}${INSTALLDIR} && \
 	    ${FIND} bin -type f -exec ${CHMOD} ${BINMODE} {} \; && \
 	    ${CHMOD} ${BINMODE} lib/${ARCH}/jexec lib/${ARCH}/jspawnhelper
+	@${ECHO} "@dir ${INSTALLDIR}/lib/applet" >> ${TMPPLIST}
 .endif
 	@${ECHO} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${STAGEDIR}${INSTALLDIR} -not -type d | ${SORT} | \
