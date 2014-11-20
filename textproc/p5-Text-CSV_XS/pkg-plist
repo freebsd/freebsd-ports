@@ -1,7 +1,4 @@
 %%PERL5_MAN3%%/Text::CSV_XS.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV_XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV_XS/CSV_XS.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/CSV_XS.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV_XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
+%%SITE_ARCH%%/Text/CSV_XS.pm
+%%SITE_ARCH%%/auto/Text/CSV_XS/.packlist
+%%SITE_ARCH%%/auto/Text/CSV_XS/CSV_XS.so
