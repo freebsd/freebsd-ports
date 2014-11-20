@@ -1,13 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	Plack-Middleware-Session
-PORTVERSION=	0.21
+PORTVERSION=	0.25
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for session management middleware for Plack
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Cookie-Baker>0:${PORTSDIR}/www/p5-Cookie-Baker \
@@ -23,5 +26,6 @@ TEST_DEPENDS=	\
 
 USES=	perl5
 USE_PERL5=	modbuildtiny
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
