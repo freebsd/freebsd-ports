@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Net-LDAP
-PORTVERSION=	0.02
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +17,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
