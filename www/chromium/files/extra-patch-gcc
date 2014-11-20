@@ -66,13 +66,13 @@
  #include <jpeglib.h>
  #elif defined(USE_LIBJPEG_TURBO)
  #include "third_party/libjpeg_turbo/jpeglib.h"
---- media/cast/logging/encoding_event_subscriber.cc.orig	2014-10-02 19:39:47.000000000 +0200
-+++ media/cast/logging/encoding_event_subscriber.cc	2014-10-06 10:38:30.000000000 +0200
-@@ -4,6 +4,7 @@
+--- third_party/webrtc/common_audio/wav_writer.h.orig	2014-10-17 02:57:34.000000000 +0200
++++ third_party/webrtc/common_audio/wav_writer.h	2014-10-18 12:04:03.000000000 +0200
+@@ -14,6 +14,7 @@
+ #ifdef __cplusplus
  
- #include "media/cast/logging/encoding_event_subscriber.h"
- 
-+#include <algorithm>
- #include <cstring>
- #include <utility>
+ #include <stdint.h>
++#include <stdio.h>
+ #include <cstddef>
+ #include <string>
  

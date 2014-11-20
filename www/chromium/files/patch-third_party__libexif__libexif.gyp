@@ -1,4 +1,4 @@
---- third_party/libexif/libexif.gyp.orig	2014-09-04 00:04:19 UTC
+--- third_party/libexif/libexif.gyp.orig	2014-10-10 08:54:17 UTC
 +++ third_party/libexif/libexif.gyp
 @@ -5,9 +5,9 @@
  {

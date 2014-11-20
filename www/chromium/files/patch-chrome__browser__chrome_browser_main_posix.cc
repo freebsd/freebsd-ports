@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main_posix.cc.orig	2014-10-02 17:18:53 UTC
+--- chrome/browser/chrome_browser_main_posix.cc.orig	2014-10-10 08:54:10 UTC
 +++ chrome/browser/chrome_browser_main_posix.cc
 @@ -270,6 +270,11 @@
      g_pipe_pid = getpid();

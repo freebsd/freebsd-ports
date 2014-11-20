@@ -1,4 +1,4 @@
---- third_party/pdfium/build/standalone.gypi.orig	2014-10-02 17:40:24 UTC
+--- third_party/pdfium/build/standalone.gypi.orig	2014-10-10 09:15:54 UTC
 +++ third_party/pdfium/build/standalone.gypi
 @@ -13,7 +13,7 @@
        'variables': {

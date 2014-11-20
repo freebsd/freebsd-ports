@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2014-10-02 21:05:31 UTC
+--- chrome/common/chrome_paths.cc.orig	2014-10-10 08:54:11 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -461,10 +461,12 @@
        if (!base::PathExists(cur))  // We don't want to create this

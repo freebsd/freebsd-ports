@@ -1,4 +1,4 @@
---- media/base/audio_splicer.cc.orig	2014-10-02 17:39:47 UTC
+--- media/base/audio_splicer.cc.orig	2014-10-10 08:54:15 UTC
 +++ media/base/audio_splicer.cc
 @@ -137,7 +137,7 @@
        output_timestamp_helper_.GetTimestamp();

@@ -1,5 +1,5 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2014-10-06 09:37:47.000000000 +0200
-+++ chrome/browser/ui/views/frame/browser_frame.cc	2014-10-06 09:37:33.000000000 +0200
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2014-10-10 08:54:11 UTC
++++ chrome/browser/ui/views/frame/browser_frame.cc
 @@ -36,7 +36,7 @@
  #include "ui/views/controls/menu/menu_runner.h"
  #include "ui/views/widget/native_widget.h"

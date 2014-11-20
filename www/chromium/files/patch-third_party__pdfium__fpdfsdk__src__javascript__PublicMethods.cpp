@@ -1,4 +1,4 @@
---- third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp.orig	2014-10-02 17:40:24 UTC
+--- third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp.orig	2014-10-10 09:15:55 UTC
 +++ third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp
 @@ -1052,7 +1052,7 @@
  //function AFNumber_Format(nDec, sepStyle, negStyle, currStyle, strCurrency, bCurrencyPrepend)

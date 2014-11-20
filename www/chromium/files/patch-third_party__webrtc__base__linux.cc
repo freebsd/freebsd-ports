@@ -1,4 +1,4 @@
---- third_party/webrtc/base/linux.cc.orig	2014-10-02 17:40:33 UTC
+--- third_party/webrtc/base/linux.cc.orig	2014-10-10 09:16:13 UTC
 +++ third_party/webrtc/base/linux.cc
 @@ -8,7 +8,7 @@
   *  be found in the AUTHORS file in the root of the source tree.

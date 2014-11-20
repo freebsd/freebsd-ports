@@ -1,6 +1,6 @@
---- net/base/mime_util_unittest.cc.orig	2014-10-02 17:39:47 UTC
+--- net/base/mime_util_unittest.cc.orig	2014-10-10 08:54:16 UTC
 +++ net/base/mime_util_unittest.cc
-@@ -383,7 +383,7 @@
+@@ -392,7 +392,7 @@
      { "MeSsAge/*",  1, "eml" },
      { "image/bmp",  1, "bmp" },
      { "video/*",    6, "mp4" },

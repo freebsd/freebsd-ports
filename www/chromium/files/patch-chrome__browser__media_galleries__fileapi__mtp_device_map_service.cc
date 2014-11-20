@@ -1,4 +1,4 @@
---- chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc.orig	2014-10-02 17:39:46 UTC
+--- chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc.orig	2014-10-10 08:54:10 UTC
 +++ chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc
 @@ -33,9 +33,11 @@
      // Note that this initializes the delegate asynchronously, but since

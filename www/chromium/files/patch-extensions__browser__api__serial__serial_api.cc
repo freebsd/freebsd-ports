@@ -1,4 +1,4 @@
---- extensions/browser/api/serial/serial_api.cc.orig	2014-10-02 17:39:47 UTC
+--- extensions/browser/api/serial/serial_api.cc.orig	2014-10-10 08:54:15 UTC
 +++ extensions/browser/api/serial/serial_api.cc
 @@ -85,11 +85,13 @@
  void SerialGetDevicesFunction::Work() {

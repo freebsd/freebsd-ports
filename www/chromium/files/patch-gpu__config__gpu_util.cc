@@ -1,4 +1,4 @@
---- gpu/config/gpu_util.cc.orig	2014-10-02 17:18:58 UTC
+--- gpu/config/gpu_util.cc.orig	2014-10-10 08:54:15 UTC
 +++ gpu/config/gpu_util.cc
 @@ -54,10 +54,12 @@
  }

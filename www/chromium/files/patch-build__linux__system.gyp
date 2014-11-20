@@ -1,6 +1,6 @@
---- build/linux/system.gyp.orig	2014-10-02 17:39:45 UTC
+--- build/linux/system.gyp.orig	2014-10-10 08:54:09 UTC
 +++ build/linux/system.gyp
-@@ -890,6 +890,13 @@
+@@ -866,6 +866,13 @@
        'include_dirs': [
          '../..',
        ],

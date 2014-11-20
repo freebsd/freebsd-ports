@@ -1,4 +1,4 @@
---- third_party/WebKit/Source/wtf/ByteSwap.h.orig	2014-10-02 18:00:38 UTC
+--- third_party/WebKit/Source/wtf/ByteSwap.h.orig	2014-10-10 09:34:38 UTC
 +++ third_party/WebKit/Source/wtf/ByteSwap.h
 @@ -52,14 +52,20 @@
  

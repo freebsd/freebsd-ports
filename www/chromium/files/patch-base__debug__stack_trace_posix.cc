@@ -1,4 +1,4 @@
---- base/debug/stack_trace_posix.cc.orig	2014-10-02 17:18:52 UTC
+--- base/debug/stack_trace_posix.cc.orig	2014-10-10 09:15:29 UTC
 +++ base/debug/stack_trace_posix.cc
 @@ -588,6 +588,10 @@
    // for the modules that are loaded in the current process.
