@@ -54,9 +54,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/graph.py
 %%PYTHON_SITELIBDIR%%/logilab/common/graph.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/graph.pyo
-%%PYTHON_SITELIBDIR%%/logilab/common/hg.py
-%%PYTHON_SITELIBDIR%%/logilab/common/hg.pyc
-%%PYTHON_SITELIBDIR%%/logilab/common/hg.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/interface.py
 %%PYTHON_SITELIBDIR%%/logilab/common/interface.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/interface.pyo
@@ -197,9 +194,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_changelog.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_changelog.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_changelog.pyo
-%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_compat.py
-%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_compat.pyc
-%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_compat.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_configuration.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_configuration.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_configuration.pyo
