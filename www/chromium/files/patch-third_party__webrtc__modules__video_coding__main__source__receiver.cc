@@ -1,4 +1,4 @@
---- third_party/webrtc/modules/video_coding/main/source/receiver.cc.orig	2014-10-02 17:40:34 UTC
+--- third_party/webrtc/modules/video_coding/main/source/receiver.cc.orig	2014-10-10 09:16:13 UTC
 +++ third_party/webrtc/modules/video_coding/main/source/receiver.cc
 @@ -134,8 +134,8 @@
    // Assume that render timing errors are due to changes in the video stream.

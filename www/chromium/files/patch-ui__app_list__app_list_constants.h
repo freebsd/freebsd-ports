@@ -1,4 +1,4 @@
---- ui/app_list/app_list_constants.h.orig	2014-10-02 17:39:48 UTC
+--- ui/app_list/app_list_constants.h.orig	2014-10-10 09:15:32 UTC
 +++ ui/app_list/app_list_constants.h
 @@ -66,8 +66,8 @@
  

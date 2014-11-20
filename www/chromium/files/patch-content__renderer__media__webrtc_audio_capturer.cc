@@ -1,6 +1,6 @@
---- content/renderer/media/webrtc_audio_capturer.cc.orig	2014-10-02 17:39:47 UTC
+--- content/renderer/media/webrtc_audio_capturer.cc.orig	2014-10-10 09:15:31 UTC
 +++ content/renderer/media/webrtc_audio_capturer.cc
-@@ -430,8 +430,8 @@
+@@ -448,8 +448,8 @@
  // CaptureCallback.
  #if defined(OS_WIN) || defined(OS_MACOSX)
    DCHECK_LE(volume, 1.0);

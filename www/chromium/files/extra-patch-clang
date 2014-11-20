@@ -217,17 +217,6 @@
  #if defined(__GCC__)
  #pragma GCC diagnostic pop
  #endif
---- v8/src/unique.h.orig	2014-01-07 21:03:55.000000000 +0100
-+++ v8/src/unique.h	2014-01-13 00:41:59.000000000 +0100
-@@ -130,7 +130,7 @@
- 
-   // TODO(titzer): this is a hack to migrate to Unique<T> incrementally.
-   static Unique<T> CreateUninitialized(Handle<T> handle) {
--    return Unique<T>(reinterpret_cast<Address>(NULL), handle);
-+    return Unique<T>(static_cast<Address>(NULL), handle);
-   }
- 
-   static Unique<T> CreateImmovable(Handle<T> handle) {
 --- content/browser/frame_host/render_widget_host_view_guest.cc.orig	2014-03-05 22:24:07.000000000 +0100
 +++ content/browser/frame_host/render_widget_host_view_guest.cc	2014-03-09 20:01:20.000000000 +0100
 @@ -258,11 +258,11 @@
@@ -256,14 +245,14 @@
  
    tasks_.erase(it, tasks_.end());
  
---- v8/src/unique.h.orig	2014-09-04 02:30:24.000000000 +0200
-+++ v8/src/unique.h	2014-09-10 16:19:37.000000000 +0200
-@@ -167,7 +167,7 @@
+--- v8/src/unique.h.orig	2014-10-10 11:16:50.000000000 +0200
++++ v8/src/unique.h	2014-10-13 18:55:35.000000000 +0200
+@@ -110,7 +110,7 @@
  
    // TODO(titzer): this is a hack to migrate to Unique<T> incrementally.
-   static PrintableUnique<T> CreateUninitialized(Zone* zone, Handle<T> handle) {
--    return PrintableUnique<T>(zone, reinterpret_cast<Address>(NULL), handle);
-+    return PrintableUnique<T>(zone, static_cast<Address>(NULL), handle);
+   static Unique<T> CreateUninitialized(Handle<T> handle) {
+-    return Unique<T>(reinterpret_cast<Address>(NULL), handle);
++    return Unique<T>(static_cast<Address>(NULL), handle);
    }
  
-   static PrintableUnique<T> CreateImmovable(Zone* zone, Handle<T> handle) {
+   static Unique<T> CreateImmovable(Handle<T> handle) {

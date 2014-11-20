@@ -1,4 +1,4 @@
---- chrome/browser/gpu/gl_string_manager.cc.orig	2014-10-02 17:18:53 UTC
+--- chrome/browser/gpu/gl_string_manager.cc.orig	2014-10-10 08:54:10 UTC
 +++ chrome/browser/gpu/gl_string_manager.cc
 @@ -25,7 +25,7 @@
  

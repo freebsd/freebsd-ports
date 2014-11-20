@@ -1,6 +1,6 @@
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2014-10-02 17:39:46 UTC
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2014-10-10 09:15:30 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -79,7 +79,7 @@
+@@ -80,7 +80,7 @@
  #include "components/user_manager/user_manager.h"
  #endif
  

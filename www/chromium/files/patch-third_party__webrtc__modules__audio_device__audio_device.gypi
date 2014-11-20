@@ -1,4 +1,4 @@
---- third_party/webrtc/modules/audio_device/audio_device.gypi.orig	2014-10-02 17:40:34 UTC
+--- third_party/webrtc/modules/audio_device/audio_device.gypi.orig	2014-10-10 09:16:13 UTC
 +++ third_party/webrtc/modules/audio_device/audio_device.gypi
 @@ -49,7 +49,7 @@
          'dummy/file_audio_device.h',

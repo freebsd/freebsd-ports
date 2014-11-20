@@ -1,4 +1,4 @@
---- chrome/browser/diagnostics/diagnostics_writer.cc.orig	2014-10-02 17:18:53 UTC
+--- chrome/browser/diagnostics/diagnostics_writer.cc.orig	2014-10-10 08:54:10 UTC
 +++ chrome/browser/diagnostics/diagnostics_writer.cc
 @@ -266,7 +266,7 @@
        console_->SetColor(color);

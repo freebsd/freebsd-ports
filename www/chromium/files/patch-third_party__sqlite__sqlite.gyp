@@ -1,4 +1,4 @@
---- third_party/sqlite/sqlite.gyp.orig	2014-10-02 17:39:48 UTC
+--- third_party/sqlite/sqlite.gyp.orig	2014-10-10 09:15:32 UTC
 +++ third_party/sqlite/sqlite.gyp
 @@ -105,6 +105,8 @@
              'amalgamation',

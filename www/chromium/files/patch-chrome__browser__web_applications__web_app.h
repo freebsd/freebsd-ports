@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/web_app.h.orig	2014-10-02 17:18:54 UTC
+--- chrome/browser/web_applications/web_app.h.orig	2014-10-10 08:54:11 UTC
 +++ chrome/browser/web_applications/web_app.h
 @@ -208,7 +208,7 @@
  void GetIconsInfo(const WebApplicationInfo& app_info, IconInfoList* icons);

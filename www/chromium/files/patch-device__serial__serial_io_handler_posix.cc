@@ -1,4 +1,4 @@
---- device/serial/serial_io_handler_posix.cc.orig	2014-10-02 17:18:57 UTC
+--- device/serial/serial_io_handler_posix.cc.orig	2014-10-10 08:54:15 UTC
 +++ device/serial/serial_io_handler_posix.cc
 @@ -39,7 +39,7 @@
      BITRATE_TO_SPEED_CASE(9600)

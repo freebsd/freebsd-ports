@@ -1,6 +1,6 @@
---- third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig	2014-10-02 18:00:37 UTC
+--- third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig	2014-10-10 09:34:37 UTC
 +++ third_party/WebKit/Source/platform/heap/ThreadState.cpp
-@@ -54,13 +54,22 @@
+@@ -56,13 +56,22 @@
  #include <sanitizer/msan_interface.h>
  #endif
  
@@ -24,7 +24,7 @@
          void* base;
          size_t size;
          int error = pthread_attr_getstack(&attr, &base, &size);
-@@ -68,6 +77,9 @@
+@@ -70,6 +79,9 @@
          pthread_attr_destroy(&attr);
          return reinterpret_cast<Address>(base) + size;
      }

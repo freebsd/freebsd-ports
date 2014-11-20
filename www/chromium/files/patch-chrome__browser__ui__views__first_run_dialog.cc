@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/first_run_dialog.cc.orig	2014-10-02 17:39:46 UTC
+--- chrome/browser/ui/views/first_run_dialog.cc.orig	2014-10-10 08:54:11 UTC
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -124,12 +124,16 @@
+@@ -118,12 +118,16 @@
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

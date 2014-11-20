@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main.cc.orig	2014-10-02 17:39:45 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2014-10-10 09:15:30 UTC
 +++ chrome/browser/chrome_browser_main.cc
 @@ -947,7 +947,7 @@
    }

@@ -1,4 +1,4 @@
---- base/security_unittest.cc.orig	2014-10-02 17:18:52 UTC
+--- base/security_unittest.cc.orig	2014-10-10 09:15:29 UTC
 +++ base/security_unittest.cc
 @@ -160,7 +160,7 @@
  // FAILS_ is too clunky.
