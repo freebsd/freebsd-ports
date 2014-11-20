@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Session
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of yet another session manager
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Class-Accessor>=0.31:${PORTSDIR}/devel/p5-Class-Accessor \
@@ -25,6 +28,7 @@ TEST_DEPENDS=	\
 	p5-Test-Memory-Cycle>0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
