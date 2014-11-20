@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Path-Iterator-Rule
-PORTVERSION=	1.006
+PORTVERSION=	1.008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for iterative, recursive file finder
+
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
 	p5-Data-Clone>0:${PORTSDIR}/devel/p5-Data-Clone \
@@ -25,5 +27,6 @@ TEST_DEPENDS=	\
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
