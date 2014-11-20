@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Monoceros
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZEBURO
@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	PSGI/Plack server w/ event driven connection manager, prefork workers
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-AnyEvent>=7.04:${PORTSDIR}/devel/p5-AnyEvent \
@@ -25,5 +28,6 @@ TEST_DEPENDS=	\
 
 USES=	perl5
 USE_PERL5=	modbuild
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
