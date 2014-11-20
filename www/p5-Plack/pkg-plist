@@ -143,21 +143,3 @@ bin/plackup
 %%SITE_PERL%%/auto/share/dist/Plack/#foo
 %%SITE_PERL%%/auto/share/dist/Plack/baybridge.jpg
 %%SITE_PERL%%/auto/share/dist/Plack/face.jpg
-@dirrm %%SITE_PERL%%/auto/share/dist/Plack
-@dirrm %%SITE_PERL%%/Plack/Util
-@dirrm %%SITE_PERL%%/Plack/Test
-@dirrm %%SITE_PERL%%/Plack/Request
-@dirrm %%SITE_PERL%%/Plack/Middleware/Auth
-@dirrm %%SITE_PERL%%/Plack/Middleware/AccessLog
-@dirrm %%SITE_PERL%%/Plack/Middleware
-@dirrm %%SITE_PERL%%/Plack/Loader
-@dirrm %%SITE_PERL%%/Plack/Handler/HTTP/Server
-@dirrm %%SITE_PERL%%/Plack/Handler/HTTP
-@dirrm %%SITE_PERL%%/Plack/Handler/Apache2
-@dirrm %%SITE_PERL%%/Plack/Handler
-@dirrm %%SITE_PERL%%/Plack/HTTPParser
-@dirrm %%SITE_PERL%%/Plack/App
-@dirrm %%SITE_PERL%%/Plack
-@dirrmtry %%SITE_PERL%%/HTTP/Server
-@dirrmtry %%SITE_PERL%%/HTTP/Message
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
