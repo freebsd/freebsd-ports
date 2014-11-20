@@ -15,7 +15,3 @@
 %%PERL5_MAN3%%/HTTP::Exception::5XX.3.gz
 %%PERL5_MAN3%%/HTTP::Exception::Base.3.gz
 %%PERL5_MAN3%%/HTTP::Exception::Loader.3.gz
-@dirrm %%SITE_PERL%%/HTTP/Exception
-@comment @dirrm %%SITE_PERL%%/HTTP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Exception
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
