@@ -10,8 +10,6 @@ DISTFILES=	nagios-plugins-1.5.tar.gz
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Nagios plugin for checking memcached
 
-BROKEN=		Fails to link with nagios-plugins-2.0.3
-
 LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 BUILD_DEPENDS=	nagios-plugins>0:${PLUGINS} \
 		${EXTRA_DEPENDS} \
@@ -38,7 +36,7 @@ do-build:
 		$${NDIR}/plugins/netutils.o $${NDIR}/plugins/utils.o \
 		$${NDIR}/lib/utils_base.o $${NDIR}/lib/extra_opts.o $${NDIR}/lib/parse_ini.o \
 		$${NDIR}/gl/getopt.o $${NDIR}/gl/getopt1.o \
-		$${NDIR}/gl/sha1.o \
+		$${NDIR}/gl/idpriv-droptemp.o $${NDIR}/gl/sha1.o \
 		-L${LOCALBASE}/lib -lintl -lmemcached ${FILE}
 
 do-install:
