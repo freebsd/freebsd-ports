@@ -10,4 +10,3 @@
 %%SITE_PERL%%/Furl/Response.pm
 %%SITE_PERL%%/Furl/Request.pm
 %%SITE_PERL%%/Furl/ZlibStream.pm
-@dirrm %%SITE_PERL%%/Furl
