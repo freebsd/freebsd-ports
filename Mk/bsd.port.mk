@@ -5221,6 +5221,24 @@ install-rc-script:
 .endif
 .endif
 
+.if !target(check-man)
+check-man: stage
+	@${ECHO_MSG} "====> Checking man pages (check-man)"
+	@mdirs= ; \
+	for dir in ${MANDIRS:S/^/${STAGEDIR}/} ; do \
+		[ -d $$dir ] && mdirs="$$mdirs $$dir" ;\
+	done ; \
+	err=0 ; \
+	for dir in $$mdirs; do \
+		for f in $$(find $$dir -name "*.gz"); do \
+			${ECHO_CMD} "===> Checking $${f##*/}" ; \
+			gunzip -c $$f | mandoc -Tlint -Werror || zgrep -q "^.so" $$f && continue ; \
+			err=1 ; \
+		done ; \
+	done ; \
+	exit $$err
+.endif
+
 # Compress all manpage not already compressed which are not hardlinks
 # Find all manpages which are not compressed and are hadlinks, and only get the list of inodes concerned, for each of them compress the first one found and recreate the hardlinks for the others
 # Fixes all dead symlinks left by the previous round
