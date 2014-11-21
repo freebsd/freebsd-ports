@@ -57,6 +57,68 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7bfd797c-716d-11e4-b008-001999f8d30b">
+    <topic>asterisk -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>AST-2014-014 - High call load may result in hung
+	  channels in ConfBridge.</p>
+	  <p>AST-2014-017 - Permission escalation through ConfBridge
+	  actions/dialplan functions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-014.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-017.html</url>
+    </references>
+    <dates>
+      <discovery>2014-11-21</discovery>
+      <entry>2014-11-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a92ed304-716c-11e4-b008-001999f8d30b">
+    <topic>asterisk -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.8.32.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>AST-2014-012 - Mixed IP address families in access
+	  control lists may permit unwanted traffic.</p>
+	  <p>AST-2014-018 - AMI permission escalation through DB
+	  dialplan function.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-012.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-018.html</url>
+    </references>
+    <dates>
+      <discovery>2014-11-21</discovery>
+      <entry>2014-11-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5d4a82a-7153-11e4-88c7-6805ca0b3d42">
     <topic>phpMyAdmin -- XSS and information disclosure vulnerabilities</topic>
     <affects>
