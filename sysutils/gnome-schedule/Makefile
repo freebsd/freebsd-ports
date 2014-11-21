@@ -21,7 +21,7 @@ BUILD_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
 USES=		gmake pathfix python
-USE_GNOME=	gnomeprefix pygnome2
+USE_GNOME=	gnomeprefix pygnome2 gnomedocutils
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
