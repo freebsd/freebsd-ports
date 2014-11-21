@@ -39,7 +39,3 @@ share/locale/uk/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/zh_CN/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/zh_TW/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/telepathy/clients/KTp.FileTransferHandler.client
-@dirrmtry share/telepathy/clients
-@dirrmtry share/telepathy
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia

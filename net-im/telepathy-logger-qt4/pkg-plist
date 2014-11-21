@@ -37,8 +37,3 @@ lib/libtelepathy-logger-qt4.so
 lib/libtelepathy-logger-qt4.so.1
 lib/libtelepathy-logger-qt4.so.1.0.5.60
 libdata/pkgconfig/TelepathyLoggerQt4.pc
-@dirrm lib/cmake/TelepathyLoggerQt4
-@dirrmtry lib/cmake
-@dirrm include/telepathy-logger-0.2/TelepathyLoggerQt4/_gen
-@dirrm include/telepathy-logger-0.2/TelepathyLoggerQt4
-@dirrmtry include/telepathy-logger-0.2

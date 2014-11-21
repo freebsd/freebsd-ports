@@ -28,4 +28,3 @@ man/man1/centerim.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/centerim.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/centerim.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/centerim.mo
-@dirrm %%DATADIR%%

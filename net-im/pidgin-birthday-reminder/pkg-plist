@@ -23,6 +23,3 @@ share/pixmaps/pidgin/birthday_reminder/birthday7.png
 share/pixmaps/pidgin/birthday_reminder/birthday8.png
 share/pixmaps/pidgin/birthday_reminder/birthday9.png
 share/sounds/pidgin/birthday_reminder/birthday.wav
-@dirrm share/sounds/pidgin/birthday_reminder
-@dirrmtry share/sounds/pidgin
-@dirrm share/pixmaps/pidgin/birthday_reminder

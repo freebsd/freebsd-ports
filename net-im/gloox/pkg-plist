@@ -151,4 +151,3 @@ lib/libgloox.so
 lib/libgloox.so.12
 lib/libgloox.so.12.0.0
 libdata/pkgconfig/gloox.pc
-@dirrm include/gloox

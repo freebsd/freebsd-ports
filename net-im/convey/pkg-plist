@@ -5,5 +5,3 @@ bin/convey
 %%DATADIR%%/lib/jaxp-1.1.jar
 %%DATADIR%%/lib/jdom-b7.jar
 %%DATADIR%%/lib/muse-0.72.jar
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%

@@ -450,25 +450,3 @@ share/locale/zh_TW/LC_MESSAGES/ktp-filters.mo
 share/locale/zh_TW/LC_MESSAGES/ktp-text-ui.mo
 share/locale/zh_TW/LC_MESSAGES/ktpchat.mo
 share/telepathy/clients/KTp.TextUi.client
-@dirrmtry share/telepathy/clients
-@dirrmtry share/telepathy
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrm share/apps/ktp-text-ui
-@dirrm share/apps/ktp-log-viewer
-@dirrm share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/images
-@dirrm share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Variants
-@dirrm share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Styles
-@dirrm share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Outgoing
-@dirrm share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Incoming
-@dirrm share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources
-@dirrm share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents
-@dirrm share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle
-@dirrm share/apps/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Outgoing
-@dirrm share/apps/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Incoming
-@dirrm share/apps/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources
-@dirrm share/apps/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents
-@dirrm share/apps/ktelepathy/styles/SimKete.AdiumMessageStyle
-@dirrm share/apps/ktelepathy/styles
-@dirrmtry share/apps/ktelepathy
-@dirrmtry include/KTp

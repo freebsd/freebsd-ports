@@ -27,6 +27,3 @@ libdata/pkgconfig/meanwhile.pc
 %%DOCSDIR%%/samples/redirect_server.c
 %%DOCSDIR%%/samples/sendmessage.c
 %%DOCSDIR%%/samples/socket.c
-@dirrm %%DOCSDIR%%/samples
-@dirrm %%DOCSDIR%%
-@dirrm include/meanwhile

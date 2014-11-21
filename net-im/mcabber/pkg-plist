@@ -393,21 +393,3 @@ share/applications/mcabber.desktop
 %%DATADIR%%/contrib/cicq2mcabber.pl
 %%DATADIR%%/contrib/filter_statusmsg.py
 %%DATADIR%%/contrib/merge_history.py
-@dirrm %%EXAMPLESDIR%%
-@dirrm include/mcabber
-@dirrm lib/mcabber
-@dirrm %%DATADIR%%/contrib/vim
-@dirrm %%DATADIR%%/contrib/events
-@dirrm %%DATADIR%%/contrib/themes
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%/help/cs
-@dirrm %%DATADIR%%/help/de
-@dirrm %%DATADIR%%/help/en
-@dirrm %%DATADIR%%/help/fr
-@dirrm %%DATADIR%%/help/it
-@dirrm %%DATADIR%%/help/nl
-@dirrm %%DATADIR%%/help/pl
-@dirrm %%DATADIR%%/help/ru
-@dirrm %%DATADIR%%/help/uk
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%

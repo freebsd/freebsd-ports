@@ -95,7 +95,3 @@ bin/cjc
 %%DATADIR%%/plugins/version.pyc
 %%DATADIR%%/plugins/xmlconsole.py
 %%DATADIR%%/plugins/xmlconsole.pyc
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/cjc/ui
-@dirrm %%DATADIR%%/cjc
-@dirrm %%DATADIR%%

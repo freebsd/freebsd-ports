@@ -86,11 +86,3 @@ share/pixmaps/buddy.png
 share/pixmaps/group-chat.png
 share/pixmaps/group.png
 share/pixmaps/smileys.png
-@dirrmtry share/applnk/Internet
-@dirrmtry share/applnk
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/smileys/Giles Smileys
-@dirrm %%DATADIR%%/smileys/Console Smileys
-@dirrm %%DATADIR%%/smileys
-@dirrm %%DATADIR%%
-@dirrm lib/ayttm

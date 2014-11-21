@@ -370,7 +370,3 @@ share/telepathy/profiles/local-xmpp.profile
 share/telepathy/profiles/msn-xmpp.profile
 share/telepathy/profiles/msn.profile
 share/telepathy/profiles/sofiasip-sip.profile
-@dirrm share/telepathy/profiles
-@dirrmtry share/telepathy
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia

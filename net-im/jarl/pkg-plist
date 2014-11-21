@@ -319,14 +319,3 @@ bin/jarl
 %%DATADIR%%/bitmaps/30/available-away-from-secure.xpm
 %%DATADIR%%/bitmaps/logo.xpm
 %%DATADIR%%/bitmaps/logo_small.xpm
-@dirrm %%DATADIR%%/lib/Tk
-@dirrm %%DATADIR%%/lib/Jarl/Profile
-@dirrm %%DATADIR%%/lib/Jarl
-@dirrm %%DATADIR%%/lib/CLI
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/bitmaps/30
-@dirrm %%DATADIR%%/bitmaps/25
-@dirrm %%DATADIR%%/bitmaps/20
-@dirrm %%DATADIR%%/bitmaps/15
-@dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%

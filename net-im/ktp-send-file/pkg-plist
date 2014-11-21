@@ -41,5 +41,3 @@ share/locale/uk/LC_MESSAGES/ktp-send-file.mo
 share/locale/vi/LC_MESSAGES/ktp-send-file.mo
 share/locale/zh_CN/LC_MESSAGES/ktp-send-file.mo
 share/locale/zh_TW/LC_MESSAGES/ktp-send-file.mo
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
