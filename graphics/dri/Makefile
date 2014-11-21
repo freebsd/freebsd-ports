@@ -92,7 +92,7 @@ IGNORE=	VDPAU option requires GALLIUM support to be enabled
 .endif
 CONFIGURE_ARGS+=--enable-vdpau
 LIB_DEPENDS+=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
-RUN_DEPENDS+=	llvm${DRI_LLVM_VER}:${PORTSDIR}/lang/llvm${DRI_LLVM_VER}
+RUN_DEPENDS+=	llvm${DRI_LLVM_VER}:${PORTSDIR}/devel/llvm${DRI_LLVM_VER}
 PLIST_SUB+=	VDPAU=""
 .else
 CONFIGURE_ARGS+=--disable-vdpau
