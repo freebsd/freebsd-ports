@@ -20,19 +20,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}libvirt>=0:${PORTSDIR}/devel/py-libvirt \
 		gtk-vnc>=0.4.4:${PORTSDIR}/net/gtk-vnc \
 		libvirt-glib>=0.1.9:${PORTSDIR}/devel/libvirt-glib \
-		libosinfo.so:${PORTSDIR}/devel/libosinfo
+		libosinfo>=0:${PORTSDIR}/devel/libosinfo
 
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--prefix=${PREFIX}
-USES=	python:2.7
+USES=	python:2.7 desktop-file-utils gettext shebangfix cpe
 USE_PYTHON=	distutils autoplist
+CPE_VENDOR=	redhat
 
 USE_GNOME=	introspection:run intltool librsvg2 pygobject3
 
 INSTALLS_ICONS=	yes
 
-USES=	desktop-file-utils gettext shebangfix
 SHEBANG_FILES=	virt-manager \
 		virt-install \
 		virt-clone \
