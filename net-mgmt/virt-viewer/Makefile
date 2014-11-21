@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-viewer
-PORTVERSION=	0.5.7
-PORTREVISION=	5
+PORTVERSION=	1.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 
@@ -20,8 +19,10 @@ OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
-CONFIGURE_ARGS=	--with-gtk=3.0
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info
+CONFIGURE_ARGS=	--with-gtk=3.0 --without-spice-gtk
+USES=		desktop-file-utils gmake pkgconfig shared-mime-info cpe
+USE_GNOME=	gtk30
+CPE_VENDOR=	redhat
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
