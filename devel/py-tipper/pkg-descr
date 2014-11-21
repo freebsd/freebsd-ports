@@ -1,7 +1,3 @@
-========
- Tipper
-========
-
 Tipper is a small utility for dumping `stack tracebacks`_ of running
 Python processes.
 
