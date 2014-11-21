@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yodl
-PORTVERSION=	3.03.0
-PORTREVISION=	1
+PORTVERSION=	3.04.00
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix compiler:c++11-lang
 USE_PERL5=	build
 
 SHEBANG_LANG=	icmake
@@ -62,7 +61,8 @@ post-patch:
 		s|"/share/man"|"/man"| ; \
 		s|"/share/doc/yodl"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
 		s|"/share/doc/yodl-doc"|"/share/doc/${PORTNAME}-${PORTVERSION}/doc"| ; \
-		s|"gcc"|"${CC}"|' \
+		s|"gcc"|"${CC}"| ; \
+		s|"g++"|"${CXX}"|' \
 		${WRKSRC}/INSTALL.im
 	@${REINPLACE_CMD} -e 's|yodlconverters.1|yodlconverters.1.gz| ; \
 		s|".1"|".1.gz"|' \
