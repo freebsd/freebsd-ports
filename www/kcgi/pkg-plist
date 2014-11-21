@@ -1,0 +1,5 @@
+include/kcgi.h
+lib/libkcgi.a
+man/man3/kcgi.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/template.xml

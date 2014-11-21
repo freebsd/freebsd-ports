@@ -1,0 +1,20 @@
+# $FreeBSD$
+
+PORTNAME=	kcgi
+PORTVERSION=	0.3.3
+CATEGORIES=	www devel
+MASTER_SITES=	http://kristaps.bsd.lv/kcgi/snapshots/
+
+MAINTAINER=	bapt@FreeBSD.org
+COMMENT=	Minimal CGI library in C
+
+LICENSE=	ISCL
+
+USES=		tar:tgz
+
+OPTIONS_DEFINE=	EXAMPLES
+
+HAS_CONFIGURE=	yes
+MAKE_ARGS=	DATADIR=${EXAMPLESDIR}
+
+.include <bsd.port.mk>

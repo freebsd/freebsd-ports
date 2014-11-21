@@ -1,0 +1,25 @@
+--- Makefile.orig	2014-07-07 14:23:50 UTC
++++ Makefile
+@@ -67,14 +67,14 @@ installcgi: sample 
+ install: libkcgi.a
+ 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATADIR@!$(DATADIR)!g" kcgi.h >kcgi.h~
+ 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATADIR@!$(DATADIR)!g" kcgi.3 >kcgi.3~
+-	mkdir -p $(LIBDIR)
+-	mkdir -p $(INCLUDEDIR)
+-	mkdir -p $(DATADIR)
+-	mkdir -p $(MANDIR)
+-	install -m 0444 libkcgi.a $(LIBDIR)
+-	install -m 0444 kcgi.h~ $(INCLUDEDIR)/kcgi.h
+-	install -m 0444 kcgi.3~ $(MANDIR)/kcgi.3
+-	install -m 0444 template.xml sample.c $(DATADIR)
++	mkdir -p $(DESTDIR)$(LIBDIR)
++	mkdir -p $(DESTDIR)$(INCLUDEDIR)
++	mkdir -p $(DESTDIR)$(DATADIR)
++	mkdir -p $(DESTDIR)$(MANDIR)
++	install -m 0444 libkcgi.a $(DESTDIR)$(LIBDIR)
++	install -m 0444 kcgi.h~ $(DESTDIR)$(INCLUDEDIR)/kcgi.h
++	install -m 0444 kcgi.3~ $(DESTDIR)$(MANDIR)/kcgi.3
++	install -m 0444 template.xml sample.c $(DESTDIR)$(DATADIR)
+ 	rm -f kcgi.h~ kcgi.3~
+ 
+ sample: sample.o libkcgi.a
