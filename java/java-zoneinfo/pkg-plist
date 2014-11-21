@@ -398,19 +398,3 @@ share/java/zi/SystemV/YST9
 share/java/zi/SystemV/YST9YDT
 share/java/zi/WET
 share/java/zi/ZoneInfoMappings
-@dirrm share/java/zi/SystemV
-@dirrm share/java/zi/Pacific
-@dirrm share/java/zi/Indian
-@dirrm share/java/zi/Europe
-@dirrm share/java/zi/Etc
-@dirrm share/java/zi/Australia
-@dirrm share/java/zi/Atlantic
-@dirrm share/java/zi/Asia
-@dirrm share/java/zi/Antarctica
-@dirrm share/java/zi/America/North_Dakota
-@dirrm share/java/zi/America/Kentucky
-@dirrm share/java/zi/America/Indiana
-@dirrm share/java/zi/America/Argentina
-@dirrm share/java/zi/America
-@dirrm share/java/zi/Africa
-@dirrm share/java/zi
