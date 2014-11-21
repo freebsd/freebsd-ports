@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	kamailio
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -13,7 +13,7 @@ COMMENT=	Very fast and configurable open source SIP proxy
 
 LICENSE=	GPLv2
 
-USES=		gmake shebangfix
+USES=		gmake shebangfix readline
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	utils/kamctl/kamctl utils/kamctl/kamdbctl
 CFLAGS+=	-Wall
