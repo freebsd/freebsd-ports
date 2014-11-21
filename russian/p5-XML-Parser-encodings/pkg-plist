@@ -1,6 +1,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/cp1251.enc
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/cp866.enc
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/mac-cyrillic.enc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML
