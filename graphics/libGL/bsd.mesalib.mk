@@ -28,7 +28,7 @@ MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
 .if defined(WITH_NEW_MESA)
-MESABASEVERSION=	10.3.2
+MESABASEVERSION=	10.3.3
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=	
 
@@ -58,8 +58,8 @@ BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend \
 
 LIB_DEPENDS+=	libdevq.so:${PORTSDIR}/devel/libdevq
 
-USES+=		bison gmake libtool pathfix pkgconfig python:2,build \
-		shebangfix tar:bzip2
+USES+=		bison gettext:build gmake libtool pathfix pkgconfig \
+		python:2,build shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
