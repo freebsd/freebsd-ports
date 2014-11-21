@@ -28,7 +28,3 @@ share/locale/en@boldquot/LC_MESSAGES/freetalk.mo
 share/locale/en@quot/LC_MESSAGES/freetalk.mo
 info/freetalk.info
 man/man1/freetalk.1.gz
-@dirrm %%DATADIR%%/extensions
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%

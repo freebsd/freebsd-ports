@@ -30,7 +30,3 @@ share/pixmaps/pidgin/protocols/24/sipe.png
 share/pixmaps/pidgin/protocols/32/sipe.png
 share/pixmaps/pidgin/protocols/48/sipe.png
 share/pixmaps/pidgin/protocols/scalable/sipe.svg
-@dirrmtry share/pixmaps/pidgin/protocols/32
-@dirrmtry share/pixmaps/pidgin/protocols/24
-@dirrm share/locale/fr_CA/LC_MESSAGES
-@dirrm share/locale/fr_CA

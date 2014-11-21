@@ -138,4 +138,3 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-ourversion.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-ourversion.elc
 libexec/emacs-jabber-uri-handler
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber

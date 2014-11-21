@@ -1,8 +1,6 @@
 @sample %%ETCDIR%%/acl.txt.sample
 @sample %%ETCDIR%%/badwords.txt.sample
 @sample %%ETCDIR%%/imspector.conf.sample
-@exec /bin/mkdir -p /var/lib/imspector
-@exec /bin/mkdir -p /var/log/imspector
 lib/imspector/aclfilterplugin.so
 lib/imspector/badwordsfilterplugin.so
 lib/imspector/catsloggingplugin.so
@@ -24,10 +22,6 @@ lib/imspector/yahooprotocolplugin.so
 %%PLUGINS%%lib/imspector/sqliteloggingplugin.so
 lib/libimspector.so
 sbin/imspector
-@dirrmtry %%ETCDIR%%
-@dirrm lib/imspector
-@cwd /var
-@dirrmtry lib/imspector
-@dirrmtry lib
-@dirrmtry log/imspector
-@cwd
+@dir /var/lib/imspector
+@dir /var/lib
+@dir /var/log/imspector

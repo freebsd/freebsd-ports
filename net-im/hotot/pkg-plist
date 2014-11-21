@@ -16,7 +16,6 @@
 %%GTK2%%%%PYTHON_SITELIBDIR%%/hotot/utils.pyc
 %%GTK2%%%%PYTHON_SITELIBDIR%%/hotot/view.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/hotot/view.pyc
-%%GTK2%%@dirrm %%PYTHON_SITELIBDIR%%/hotot
 %%GTK2%%share/applications/hotot.desktop
 %%QT4%%share/applications/hotot-qt.desktop
 share/hotot/_locales/bg/messages.json
@@ -253,63 +252,3 @@ share/locale/pt_PT/LC_MESSAGES/hotot.mo
 share/locale/tr_TR/LC_MESSAGES/hotot.mo
 share/locale/zh_CN/LC_MESSAGES/hotot.mo
 share/locale/zh_TW/LC_MESSAGES/hotot.mo
-@dirrmtry share/locale/tr_TR/LC_MESSAGES
-@dirrmtry share/locale/tr_TR
-@dirrmtry share/locale/it_IT/LC_MESSAGES
-@dirrmtry share/locale/it_IT
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrm share/hotot/theme/New Hope
-@dirrm share/hotot/theme/Iron Heart
-@dirrm share/hotot/theme/Classic
-@dirrm share/hotot/theme/Bare
-@dirrm share/hotot/theme
-@dirrm share/hotot/sound
-@dirrm share/hotot/js
-@dirrm share/hotot/image
-@dirrm share/hotot/icons/64x64/apps
-@dirrm share/hotot/icons/64x64
-@dirrm share/hotot/icons/48x48/apps
-@dirrm share/hotot/icons/48x48
-@dirrm share/hotot/icons/32x32/apps
-@dirrm share/hotot/icons/32x32
-@dirrm share/hotot/icons/24x24/apps
-@dirrm share/hotot/icons/24x24
-@dirrm share/hotot/icons/22x22/apps
-@dirrm share/hotot/icons/22x22
-@dirrm share/hotot/icons/128x128/apps
-@dirrm share/hotot/icons/128x128
-@dirrm share/hotot/icons
-@dirrm share/hotot/ext/org.hotot.translate
-@dirrm share/hotot/ext/org.hotot.stat
-@dirrm share/hotot/ext/org.hotot.shorturl
-@dirrm share/hotot/ext/org.hotot.sample
-@dirrm share/hotot/ext/org.hotot.imghp
-@dirrm share/hotot/ext/org.hotot.gmap
-@dirrm share/hotot/ext/org.hotot.expandurls
-@dirrm share/hotot/ext/org.hotot.cfw
-@dirrm share/hotot/ext/org.hotot.appmask
-@dirrm share/hotot/ext
-@dirrm share/hotot/css
-@dirrm share/hotot/_locales/zh_TW
-@dirrm share/hotot/_locales/zh_CN
-@dirrm share/hotot/_locales/zh_CLS
-@dirrm share/hotot/_locales/zh_CAN
-@dirrm share/hotot/_locales/uk
-@dirrm share/hotot/_locales/ru
-@dirrm share/hotot/_locales/pt_BR
-@dirrm share/hotot/_locales/pl_PL
-@dirrm share/hotot/_locales/nl
-@dirrm share/hotot/_locales/lv
-@dirrm share/hotot/_locales/ja
-@dirrm share/hotot/_locales/it
-@dirrm share/hotot/_locales/fr
-@dirrm share/hotot/_locales/es
-@dirrm share/hotot/_locales/en
-@dirrm share/hotot/_locales/el
-@dirrm share/hotot/_locales/de
-@dirrm share/hotot/_locales/ca
-@dirrm share/hotot/_locales/bn
-@dirrm share/hotot/_locales/bg
-@dirrm share/hotot/_locales
-@dirrm share/hotot

@@ -732,37 +732,4 @@ share/ramblercontacts/translations/ru_RU/traymanager.qm
 share/ramblercontacts/translations/ru_RU/vcard.qm
 share/ramblercontacts/translations/ru_RU/xmppstreams.qm
 share/ramblercontacts/translations/ru_RU/xmppuriqueries.qm
-@dirrm share/ramblercontacts/translations/ru_RU
-@dirrm share/ramblercontacts/translations
-@dirrm share/ramblercontacts/resources/stylesheets/shared/images
-@dirrm share/ramblercontacts/resources/stylesheets/shared
-@dirrm share/ramblercontacts/resources/stylesheets
-@dirrm share/ramblercontacts/resources/statusicons/shared
-@dirrm share/ramblercontacts/resources/statusicons
-@dirrm share/ramblercontacts/resources/sounds/shared
-@dirrm share/ramblercontacts/resources/sounds
-@dirrm share/ramblercontacts/resources/menuicons/shared
-@dirrm share/ramblercontacts/resources/menuicons
-@dirrm share/ramblercontacts/resources/graphicseffects/shared
-@dirrm share/ramblercontacts/resources/graphicseffects
-@dirrm share/ramblercontacts/resources/fonts/shared
-@dirrm share/ramblercontacts/resources/fonts
-@dirrm share/ramblercontacts/resources/emoticons/smiles_dark
-@dirrm share/ramblercontacts/resources/emoticons/smiles
-@dirrm share/ramblercontacts/resources/emoticons
-@dirrm share/ramblercontacts/resources/customborder/shared
-@dirrm share/ramblercontacts/resources/customborder
-@dirrm share/ramblercontacts/resources/adiummessagestyles/shared/Outgoing
-@dirrm share/ramblercontacts/resources/adiummessagestyles/shared/Incoming
-@dirrm share/ramblercontacts/resources/adiummessagestyles/shared
-@dirrm share/ramblercontacts/resources/adiummessagestyles/Default/Contents/Resources/Variants
-@dirrm share/ramblercontacts/resources/adiummessagestyles/Default/Contents/Resources/Outgoing
-@dirrm share/ramblercontacts/resources/adiummessagestyles/Default/Contents/Resources/Incoming
-@dirrm share/ramblercontacts/resources/adiummessagestyles/Default/Contents/Resources
-@dirrm share/ramblercontacts/resources/adiummessagestyles/Default/Contents
-@dirrm share/ramblercontacts/resources/adiummessagestyles/Default
-@dirrm share/ramblercontacts/resources/adiummessagestyles
-@dirrm share/ramblercontacts/resources
-@dirrm share/ramblercontacts
-@dirrm lib/ramblercontacts/plugins
-@dirrm lib/ramblercontacts
+@dir share/ramblercontacts/resources/adiummessagestyles/shared/Outgoing

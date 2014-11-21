@@ -45,7 +45,3 @@ share/locale/zh_TW/LC_MESSAGES/ktp-auth-handler.mo
 share/telepathy/clients/KTp.ConfAuthObserver.client
 share/telepathy/clients/KTp.SASLHandler.client
 share/telepathy/clients/KTp.TLSHandler.client
-@dirrmtry share/telepathy/clients
-@dirrmtry share/telepathy
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia

@@ -42,5 +42,3 @@ share/locale/sv/LC_MESSAGES/kded_ktp_integration_module.mo
 share/locale/uk/LC_MESSAGES/kded_ktp_integration_module.mo
 share/locale/zh_CN/LC_MESSAGES/kded_ktp_integration_module.mo
 share/locale/zh_TW/LC_MESSAGES/kded_ktp_integration_module.mo
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia

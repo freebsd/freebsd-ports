@@ -20,9 +20,3 @@ share/vala/vapi/folks-telepathy.deps
 share/vala/vapi/folks-telepathy.vapi
 share/vala/vapi/folks.deps
 share/vala/vapi/folks.vapi
-@dirrm lib/folks/%%VERSION%%/backends/telepathy
-@dirrm lib/folks/%%VERSION%%/backends/key-file
-@dirrm lib/folks/%%VERSION%%/backends
-@dirrm lib/folks/%%VERSION%%
-@dirrm lib/folks
-@dirrm include/folks

@@ -66,5 +66,3 @@ lib/libjreen.so
 lib/libjreen.so.1
 lib/libjreen.so.1.1.1
 libdata/pkgconfig/libjreen.pc
-@dirrm include/jreen/experimental
-@dirrm include/jreen

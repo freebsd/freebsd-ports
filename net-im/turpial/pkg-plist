@@ -9,5 +9,3 @@ share/locale/pt_BR/LC_MESSAGES/turpial.mo
 share/locale/pt_PT/LC_MESSAGES/turpial.mo
 share/locale/ru_RU/LC_MESSAGES/turpial.mo
 share/locale/tr/LC_MESSAGES/turpial.mo
-@dirrmtry share/locale/ru_RU/LC_MESSAGES
-@dirrmtry share/locale/ru_RU

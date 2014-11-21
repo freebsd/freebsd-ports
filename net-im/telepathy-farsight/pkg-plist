@@ -19,7 +19,3 @@ share/gtk-doc/html/telepathy-farsight/style.css
 share/gtk-doc/html/telepathy-farsight/telepathy-farsight.devhelp
 share/gtk-doc/html/telepathy-farsight/telepathy-farsight.devhelp2
 share/gtk-doc/html/telepathy-farsight/up.png
-@dirrm share/gtk-doc/html/telepathy-farsight
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm include/telepathy-1.0/telepathy-farsight

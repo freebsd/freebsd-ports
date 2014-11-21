@@ -176,26 +176,3 @@ share/icons/hicolor/64x64/apps/psi.png
 %%DATADIR%%/sound/offline.wav
 %%DATADIR%%/sound/online.wav
 %%DATADIR%%/sound/send.wav
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/iconsets/system/default/whiteboarding
-@dirrm %%DATADIR%%/iconsets/system/default
-@dirrm %%DATADIR%%/iconsets/system
-@dirrm %%DATADIR%%/iconsets/roster/default
-@dirrm %%DATADIR%%/iconsets/roster
-@dirrm %%DATADIR%%/iconsets/emoticons/default
-@dirrm %%DATADIR%%/iconsets/emoticons
-@dirrm %%DATADIR%%/iconsets
-@dirrm %%DATADIR%%/certs
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons

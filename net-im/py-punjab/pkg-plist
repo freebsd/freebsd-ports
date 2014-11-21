@@ -3,4 +3,3 @@ libexec/punjab.tac
 %%WWWDIR%%/crossdomain.xml
 %%WWWDIR%%/punjab.gif
 %%WWWDIR%%/index.html
-@dirrmtry %%WWWDIR%%

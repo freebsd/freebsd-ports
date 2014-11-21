@@ -270,19 +270,3 @@ bin/pork
 %%DATADIR%%/help/win/set
 %%DATADIR%%/help/win/swap
 %%DATADIR%%/porkrc
-@dirrm %%DATADIR%%/help/win
-@dirrm %%DATADIR%%/help/timer
-@dirrm %%DATADIR%%/help/scroll
-@dirrm %%DATADIR%%/help/perl
-@dirrm %%DATADIR%%/help/main
-@dirrm %%DATADIR%%/help/input
-@dirrm %%DATADIR%%/help/history
-@dirrm %%DATADIR%%/help/file
-@dirrm %%DATADIR%%/help/event
-@dirrm %%DATADIR%%/help/chat
-@dirrm %%DATADIR%%/help/buddy
-@dirrm %%DATADIR%%/help/blist
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/examples/perl
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%
