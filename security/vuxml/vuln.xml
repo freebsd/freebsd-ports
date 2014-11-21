@@ -57,6 +57,79 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a5d4a82a-7153-11e4-88c7-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS and information disclosure vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-13.php">
+	  <ul>
+	    <li>With a crafted database, table or column name it is
+	      possible to trigger an XSS attack in the table browse
+	      page.</li>
+	    <li>With a crafted ENUM value it is possible to trigger
+	      XSS attacks in the table print view and zoom search
+	      pages.</li>
+	    <li>With a crafted value for font size it is possible to
+	      trigger an XSS attack in the home page.</li>
+	  </ul>
+	  <p>These vulnerabilities can be triggered only by someone
+	    who is logged in to phpMyAdmin, as the usual token
+	    protection prevents non-logged-in users from accessing the
+	    required pages. Moreover, exploitation of the XSS
+	    vulnerability related to the font size requires forgery of
+	    the pma_fontsize cookie.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-14.php">
+	  <p> In the GIS editor feature, a parameter specifying the
+	    geometry type was not correcly validated, opening the door
+	    to a local file inclusion attack.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	    is logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    page.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-15.php">
+	  <p>With a crafted file name it is possible to trigger an
+	    XSS in the error reporting page.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	    is logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    page.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-16.php">
+	  <p>In the error reporting feature, a parameter specifying
+	    the file was not correctly validated, allowing the
+	    attacker to derive the line count of an arbitrary file</p>
+	  <p>This vulnerability can be triggered only by someone who
+	    is logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-13.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-14.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-15.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-16.php</url>
+      <cvename>CVE-2014-8958</cvename>
+      <cvename>CVE-2014-8959</cvename>
+      <cvename>CVE-2014-8960</cvename>
+      <cvename>CVE-2014-8961</cvename>
+    </references>
+    <dates>
+      <discovery>2014-11-20</discovery>
+      <entry>2014-11-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="890b6b22-70fa-11e4-91ae-5453ed2e2b49">
     <topic>kwebkitpart, kde-runtime -- insufficient input validation</topic>
     <affects>
