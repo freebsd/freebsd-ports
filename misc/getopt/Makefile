@@ -4,7 +4,7 @@
 PORTNAME=	getopt
 PORTVERSION=	1.1.5
 CATEGORIES=	misc
-MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/ \
+MASTER_SITES=	http://frodo.looijaard.name/system/files/software/getopt/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
