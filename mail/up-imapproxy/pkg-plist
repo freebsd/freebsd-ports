@@ -6,4 +6,3 @@ sbin/in.imapproxyd
 %%PORTDOCS%%%%DOCSDIR%%/README.debian
 %%PORTDOCS%%%%DOCSDIR%%/README.known_issues
 %%PORTDOCS%%%%DOCSDIR%%/README.ssl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -3,7 +3,7 @@
 
 PORTNAME=	couriergraph
 PORTVERSION=	20060202
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.arschkrebs.de/postfix/${PORTNAME}/
 DISTNAME=	${PORTNAME}
@@ -14,8 +14,9 @@ COMMENT=	RRDtool frontend for Courier statistics
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	couriergraph.cgi couriergraph.pl
 USE_RC_SUBR=	${PORTNAME}
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -24,6 +25,8 @@ DATADIR?=	/var/db/couriergraph
 COURIERGRAPH_USER?=	${WWWOWN}
 COURIERGRAPH_GROUP?=	${WWWGRP}
 
+PLIST_SUB=	COURIERGRAPH_USER=${COURIERGRAPH_USER} \
+		COURIERGRAPH_GROUP=${COURIERGRAPH_GROUP}
 SUB_LIST=	COURIERGRAPH_USER=${COURIERGRAPH_USER} \
 		COURIERGRAPH_GROUP=${COURIERGRAPH_GROUP}
 STARTUP_FILE=	${PREFIX}/etc/rc.d/couriergraph.sh
@@ -50,8 +53,6 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/cgi-bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${CHOWN} -R ${COURIERGRAPH_USER}:${COURIERGRAPH_GROUP} \
-		${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/couriergraph.pl \
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/couriergraph.cgi \

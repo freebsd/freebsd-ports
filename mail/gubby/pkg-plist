@@ -1,4 +1,3 @@
 bin/gubby
 man/man1/gubby.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

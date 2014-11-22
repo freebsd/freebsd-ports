@@ -10,7 +10,4 @@ bin/pymsgauth-mail
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/pymsgauth.html
 %%PORTDOCS%%%%DOCSDIR%%/pymsgauth.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pymsgauthrc-example
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%

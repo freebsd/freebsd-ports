@@ -33,7 +33,6 @@ lib/%%PORTNAME%%/Resources/UI.xml
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-DEV-v4
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-v4
 %%PORTDOCS%%%%DOCSDIR%%/Mulberry_License
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec if cmp -s %D/etc/mailcap %D/%%EXAMPLESDIR%%/mailcap; then rm -f %D/etc/mailcap; fi
 %%EXAMPLESDIR%%/mailcap
 @exec [ -f %D/etc/mailcap ] || cp %D/%%EXAMPLESDIR%%/mailcap %D/etc/mailcap

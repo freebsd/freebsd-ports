@@ -49,5 +49,3 @@ man/man1/getmail_mbox.1.gz
 %%PYTHON_SITELIBDIR%%/getmailcore/utilities.pyc
 %%PYTHON_SITELIBDIR%%/getmailcore/utilities.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getmailrc-examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/getmailcore

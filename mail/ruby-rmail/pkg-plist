@@ -9,9 +9,6 @@
 %%RUBY_SITELIBDIR%%/rmail/parser/pushbackreader.rb
 %%RUBY_SITELIBDIR%%/rmail/serialize.rb
 %%RUBY_SITELIBDIR%%/rmail/utils.rb
-@dirrm %%RUBY_SITELIBDIR%%/rmail/parser
-@dirrm %%RUBY_SITELIBDIR%%/rmail/mailbox
-@dirrm %%RUBY_SITELIBDIR%%/rmail
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NOTES
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
@@ -174,28 +171,3 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib/rmail/parser
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib/rmail/mailbox
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib/rmail
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/guide
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Utils.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamParser.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/StreamHandler.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Serialize.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Parser
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Message.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Mailbox/MBoxReader.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Mailbox.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Mailbox
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Header.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/Parser.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Address/List.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Address.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail/Address
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RMail
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

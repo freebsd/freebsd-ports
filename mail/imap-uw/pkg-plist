@@ -77,6 +77,3 @@ man/man8/imapd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5161.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5162.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/draft
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

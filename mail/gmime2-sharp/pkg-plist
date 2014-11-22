@@ -2,6 +2,3 @@ lib/mono/gac/gmime-sharp/2.4.0.0__2b75c2ad004c52e4/gmime-sharp.dll
 lib/mono/gac/gmime-sharp/2.4.0.0__2b75c2ad004c52e4/gmime-sharp.dll.config
 lib/mono/gmime-sharp-2.4/gmime-sharp.dll
 libdata/pkgconfig/gmime-sharp-2.4.pc
-@dirrm lib/mono/gmime-sharp-2.4
-@dirrmtry lib/mono/gac/gmime-sharp/2.4.0.0__2b75c2ad004c52e4
-@dirrmtry lib/mono/gac/gmime-sharp

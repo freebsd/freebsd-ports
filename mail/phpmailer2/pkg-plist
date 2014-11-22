@@ -65,12 +65,3 @@
 %%DATADIR%%/test/phpmailer_test.php
 %%DATADIR%%/test/phpunit.php
 %%DATADIR%%/test/test.png
-@dirrm %%DATADIR%%/test
-@dirrm %%DATADIR%%/language
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/media
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/PHPMailer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/__filesource
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

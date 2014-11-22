@@ -17,7 +17,6 @@ bin/osbf-util
 %%PORTDOCS%%%%DOCSDIR%%/Hound_of_the_Baskervilles_first_500_lines.txt
 %%PORTDOCS%%%%DOCSDIR%%/Macbeth_Act_IV.txt
 %%PORTDOCS%%%%DOCSDIR%%/The_Wind_in_the_Willows_Chap_1.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reto_procmailrc.recipe
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailfilter.crm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailfilter.cf
@@ -34,4 +33,3 @@ bin/osbf-util
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklist.mfp.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitelist.mfp.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crm114-mode.el
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

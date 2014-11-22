@@ -95,11 +95,6 @@ bin/tmda-sendmail
 %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/quoprimime.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/utils.py
 %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/utils.pyc
-@dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/mime
-@dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email
-@dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib
-@dirrm %%PYTHON_SITELIBDIR%%/TMDA/Queue
-@dirrm %%PYTHON_SITELIBDIR%%/TMDA
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/collectaddys
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/def2html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-tmda/README
@@ -123,10 +118,6 @@ bin/tmda-sendmail
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vpopmail-vdir.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vtmdarc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wrapfd3.sh
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dot-tmda/lists
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dot-tmda/filters
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dot-tmda
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%DATADIR%%/bounce_expired_dated.txt
 %%DATADIR%%/bounce_fail_dated.txt
 %%DATADIR%%/bounce_fail_keyword.txt
@@ -136,7 +127,6 @@ bin/tmda-sendmail
 %%DATADIR%%/bounce_missing_pending.txt
 %%DATADIR%%/confirm_accept.txt
 %%DATADIR%%/confirm_request.txt
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/CODENAMES
 %%PORTDOCS%%%%DOCSDIR%%/CRYPTO
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -377,16 +367,3 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/html/TmdaI18n.html
 %%PORTDOCS%%%%DOCSDIR%%/pdf/ConfigurationVariables.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/TmdaFaq.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments/WikiSandBox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments/TmdaPostfixPolicy
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments/TmdaFingerprint
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments/TmdaFetchMailHowTo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments/HelpOnTables
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments/HelpOnInstalling(2f)WikiInstanceCreation
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments/HelpOnInstalling(2f)BasicInstallation
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments/HelpOnInstalling(2f)ApacheOnLinuxFtp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments/HelpOnActions(2f)AttachFile
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/attachments
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

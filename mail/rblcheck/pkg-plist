@@ -7,4 +7,3 @@ etc/rblcheckrc.sample
 %%PORTDOCS%%share/doc/rblcheck/INSTALL
 %%PORTDOCS%%share/doc/rblcheck/NEWS
 %%PORTDOCS%%share/doc/rblcheck/README
-%%PORTDOCS%%@dirrm share/doc/rblcheck

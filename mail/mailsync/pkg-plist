@@ -12,5 +12,3 @@ man/man1/mailsync.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mail_open_close_flowchart.svg
 %%PORTDOCS%%%%DOCSDIR%%/mail_open_close_flowchart2.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailsync
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

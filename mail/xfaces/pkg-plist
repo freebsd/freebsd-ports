@@ -41,5 +41,3 @@ lib/X11/app-defaults/XFaces
 %%DATADIR%%/images/www-shape.xpm
 %%DATADIR%%/images/x.xpm
 %%DATADIR%%/images/xconq.xpm
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%

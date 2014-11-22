@@ -34,4 +34,3 @@ include/c-client/OSCFLAGS
 lib/%%SHLIBNAME%%
 lib/libc-client4.a
 lib/libc-client4.so
-@dirrm include/c-client

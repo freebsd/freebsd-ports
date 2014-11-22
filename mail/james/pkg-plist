@@ -75,13 +75,3 @@ james2.3.1/tools/lib/spice-configkit-1.1.2.jar
 james2.3.1/tools/lib/spice.LICENSE
 james2.3.1/tools/lib/xsdlib-20020414.jar
 james2.3.1/tools/lib/xsdlib.LICENSE
-@dirrm james2.3.1/tools/lib
-@dirrm james2.3.1/tools
-@dirrm james2.3.1/logs
-@dirrm james2.3.1/lib
-@dirrm james2.3.1/ext
-@dirrm james2.3.1/conf
-@dirrm james2.3.1/bin/lib
-@dirrm james2.3.1/bin
-@dirrm james2.3.1/apps
-@dirrm james2.3.1

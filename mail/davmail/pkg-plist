@@ -75,15 +75,3 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/woodstox-core-asl-4.1.2.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/xercesImpl-2.8.1.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/web.xml
-@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/MacOS
-@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java
-@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/en.lproj
-@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources
-@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app/Contents
-@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app
-@dirrm %%JAVASHAREDIR%%/davmail/lib
-@dirrm %%JAVASHAREDIR%%/davmail/web/WEB-INF/classes
-@dirrm %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib
-@dirrm %%JAVASHAREDIR%%/davmail/web/WEB-INF
-@dirrm %%JAVASHAREDIR%%/davmail/web
-@dirrm %%JAVASHAREDIR%%/davmail

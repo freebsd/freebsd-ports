@@ -246,11 +246,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ja/dot.folders
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ja/dot.wl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ja/ja.Emacs
-@dirrm %%WL_LISPDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%WL_ICONDIR%%
-@dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/wl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/en
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ja
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -35,4 +35,3 @@ man/man1/lbdb_dotlock.1.gz
 man/man1/lbdbq.1.gz
 man/man1/mutt_ldap_query.1.gz
 man/man1/nodelist2lbdb.1.gz
-@dirrm libexec/lbdb

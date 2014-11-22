@@ -20,5 +20,3 @@ www/sgwi/license.txt
 www/sgwi/main.css
 www/sgwi/opt_in_out.php
 www/sgwi/readme.txt
-@dirrm www/sgwi/includes
-@dirrm www/sgwi

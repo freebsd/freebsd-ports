@@ -82,8 +82,3 @@ lib/IM/Util.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scan.sbr
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scan.sbr.sample1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scan.sbr.sample2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/man
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/IM
-@dirrm %%ETCDIR%%

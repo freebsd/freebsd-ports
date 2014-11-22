@@ -13,6 +13,3 @@
 %%WWWDIR%%/vqregister.cgi
 %%WWWDIR%%/vqregister.conf
 %%WWWDIR%%/vqregister.email
-@dirrm %%WWWDIR%%/html
-@dirrm %%WWWDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

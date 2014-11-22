@@ -23,6 +23,3 @@ lib/libesmtp.so.6.1.6
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail-file.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-mail
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/esmtp-plugins

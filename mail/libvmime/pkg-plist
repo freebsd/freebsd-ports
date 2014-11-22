@@ -233,30 +233,3 @@ lib/libvmime.so
 lib/libvmime.so.0
 lib/libvmime.so.0.0.0
 libdata/pkgconfig/vmime.pc
-@dirrm include/vmime/utility/sync
-@dirrm include/vmime/utility/encoder
-@dirrm include/vmime/utility
-@dirrm include/vmime/security/sasl
-@dirrm include/vmime/security/digest/sha1
-@dirrm include/vmime/security/digest/md5
-@dirrm include/vmime/security/digest
-@dirrm include/vmime/security/cert/openssl
-@dirrm include/vmime/security/cert/gnutls
-@dirrm include/vmime/security/cert
-@dirrm include/vmime/security
-@dirrm include/vmime/platforms/windows
-@dirrm include/vmime/platforms/posix
-@dirrm include/vmime/platforms
-@dirrm include/vmime/net/tls/openssl
-@dirrm include/vmime/net/tls/gnutls
-@dirrm include/vmime/net/tls
-@dirrm include/vmime/net/smtp
-@dirrm include/vmime/net/sendmail
-@dirrm include/vmime/net/pop3
-@dirrm include/vmime/net/maildir/format
-@dirrm include/vmime/net/maildir
-@dirrm include/vmime/net/imap
-@dirrm include/vmime/net
-@dirrm include/vmime/misc
-@dirrm include/vmime/mdn
-@dirrm include/vmime

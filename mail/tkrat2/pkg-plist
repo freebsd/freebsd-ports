@@ -86,8 +86,3 @@ lib/tkrat/ratatosk2.1.so
 %%DATADIR%%/watcher.tcl
 %%DATADIR%%/winctl.tcl
 man/man1/tkrat.1.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/util
-@dirrm %%DATADIR%%
-@dirrm lib/ratatosk
-@dirrm lib/tkrat

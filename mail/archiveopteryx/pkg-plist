@@ -21,7 +21,4 @@ man/man8/recorder.8.gz
 sbin/archiveopteryx
 sbin/logd
 sbin/recorder
-@dirrm libexec/aox/contrib
-@dirrm libexec/aox
-@dirrm libdata/aox
-@dirrm %%ETCDIR%%
+@dir %%ETCDIR%%

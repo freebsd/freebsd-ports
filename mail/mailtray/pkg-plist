@@ -5,5 +5,3 @@ man/man1/mailtray.1.gz
 %%DATADIR%%/icons/disconnect.png
 %%DATADIR%%/icons/newmail.png
 %%DATADIR%%/icons/nomail.png
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

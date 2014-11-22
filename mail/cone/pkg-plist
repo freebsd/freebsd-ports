@@ -163,5 +163,3 @@ man/man1/leaf.1.gz
 %%DATADIR%%/http.handler
 %%DATADIR%%/https.handler
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

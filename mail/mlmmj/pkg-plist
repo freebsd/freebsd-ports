@@ -371,17 +371,6 @@ bin/mlmmj-unsub
 %%PHPWEB%%www/mlmmj/php-user/README
 %%PHPWEB%%www/mlmmj/php-user/example.html
 %%PHPWEB%%www/mlmmj/php-user/mlmmj.php
-%%PHPWEB%%@dirrm www/mlmmj/php-user
-%%PHPWEB%%@dirrm www/mlmmj/php-admin/templates
-%%PHPWEB%%@dirrm www/mlmmj/php-admin/htdocs
-%%PHPWEB%%@dirrm www/mlmmj/php-admin/conf
-%%PHPWEB%%@dirrm www/mlmmj/php-admin
-%%PERLWEB%%@dirrm www/mlmmj/perl-user
-%%PERLWEB%%@dirrm www/mlmmj/perl-admin/templates
-%%PERLWEB%%@dirrm www/mlmmj/perl-admin/htdocs
-%%PERLWEB%%@dirrm www/mlmmj/perl-admin/conf
-%%PERLWEB%%@dirrm www/mlmmj/perl-admin
-%%WEB%%@dirrm www/mlmmj
 man/man1/mlmmj-bounce.1.gz
 man/man1/mlmmj-list.1.gz
 man/man1/mlmmj-maintd.1.gz
@@ -391,15 +380,3 @@ man/man1/mlmmj-recieve.1.gz
 man/man1/mlmmj-send.1.gz
 man/man1/mlmmj-sub.1.gz
 man/man1/mlmmj-unsub.1.gz
-@dirrm %%DATADIR%%/text.skel/cz
-@dirrm %%DATADIR%%/text.skel/da
-@dirrm %%DATADIR%%/text.skel/de
-@dirrm %%DATADIR%%/text.skel/en
-@dirrm %%DATADIR%%/text.skel/es
-@dirrm %%DATADIR%%/text.skel/fr
-@dirrm %%DATADIR%%/text.skel/it
-@dirrm %%DATADIR%%/text.skel/nl
-@dirrm %%DATADIR%%/text.skel/ru
-@dirrm %%DATADIR%%/text.skel/tr
-@dirrm %%DATADIR%%/text.skel
-@dirrm %%DATADIR%%

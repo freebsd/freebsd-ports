@@ -24,4 +24,3 @@ lib/libspf2.a
 lib/libspf2.so
 lib/libspf2.so.2
 lib/libspf2.so.2.1.0
-@dirrm include/spf2

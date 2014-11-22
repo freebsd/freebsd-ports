@@ -44,4 +44,3 @@ lib/X11/ml/spellcheck.help
 lib/X11/ml/takeaddr.help
 lib/X11/ml/tcpport.help
 lib/X11/ml/viewwin.help
-@dirrm lib/X11/ml

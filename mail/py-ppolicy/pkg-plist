@@ -4,6 +4,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/ppolicy.sql
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/TESTS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 sbin/ppolicy.tap
 etc/ppolicy.conf
