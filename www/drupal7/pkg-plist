@@ -146,6 +146,8 @@
 %%DRUPAL_BASE%%/misc/tableselect.js
 %%DRUPAL_BASE%%/misc/textarea.js
 %%DRUPAL_BASE%%/misc/throbber.gif
+%%DRUPAL_BASE%%/misc/throbber-active.gif
+%%DRUPAL_BASE%%/misc/throbber-inactive.png
 %%DRUPAL_BASE%%/misc/timezone.js
 %%DRUPAL_BASE%%/misc/tree-bottom.png
 %%DRUPAL_BASE%%/misc/tree.png
@@ -734,6 +736,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_basetheme/test_basetheme.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_subtheme/test_subtheme.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/template.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/templates/node--1.tpl.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/test_theme.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/unicode.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/update.test
@@ -1070,6 +1073,8 @@
 %%DRUPAL_BASE%%/update.php
 %%DRUPAL_BASE%%/web.config
 %%DRUPAL_BASE%%/xmlrpc.php
+@dir %%DRUPAL_BASE%%/sites/all/libraries
+@dir %%DRUPAL_BASE%%/sites/default/files
 @unexec rm -f %%DRUPAL_BASE%%/files/.htaccess 2> /dev/null || true
 @owner root
 @group wheel
