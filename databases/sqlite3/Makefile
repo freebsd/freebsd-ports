@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.7
-PORTREVISION=	1
+PORTVERSION=	3.8.7.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2014/ http://www2.sqlite.org/2014/ http://www3.sqlite.org/2014/
-DISTNAME=	sqlite-autoconf-3080700
+DISTNAME=	sqlite-autoconf-3080702
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -45,6 +44,7 @@ SECURE_DELETE_DESC=	Overwrite deleted information with zeros
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 EXTENSION_DESC=		Allow loadable extensions
 
+# http://www.sqlite.org/tempfiles.html#tempstore
 OPTIONS_SINGLE_RAMT=	TS0 TS1 TS2 TS3
 RAMT_DESC=		Where to store temporary file
 TS0_DESC=		Always use temporary file
@@ -52,6 +52,7 @@ TS1_DESC=		File by default, change allowed PRAGMA
 TS2_DESC=		Memory by default, change allowed PRAGMA
 TS3_DESC=		Always use memory
 
+# http://www.sqlite.org/queryplanner-ng.html#qpstab
 OPTIONS_RADIO_STAT=	STAT3 STAT4
 STAT_DESC=		Which query planner to use
 STAT3_DESC=		collect histogram data from leftmost column
