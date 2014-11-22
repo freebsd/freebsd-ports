@@ -110,6 +110,3 @@ man/man1/rdiff-backup.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%PYTHON_SITELIBDIR%%/rdiff_backup
-@dirrmtry %%PYTHON_SITELIBDIR%%

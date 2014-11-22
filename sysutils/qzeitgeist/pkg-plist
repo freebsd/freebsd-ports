@@ -32,11 +32,3 @@ lib/libqzeitgeist.so.1
 %%QT_LIBDIR%%/imports/org/gnome/zeitgeist/libQZeitgeistDeclarativePlugin.so
 %%QT_LIBDIR%%/imports/org/gnome/zeitgeist/qmldir
 libdata/pkgconfig/QZeitgeist.pc
-@dirrm %%QT_LIBDIR%%/imports/org/gnome/zeitgeist
-@dirrm %%QT_LIBDIR%%/imports/org/gnome
-@dirrmtry %%QT_LIBDIR%%/imports/org
-@dirrmtry %%QT_LIBDIR%%/imports
-@dirrm lib/cmake/QZeitgeist
-@dirrmtry lib/cmake
-@dirrm include/QZeitgeist/DataModel
-@dirrm include/QZeitgeist

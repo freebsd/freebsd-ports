@@ -149,21 +149,3 @@ share/pixmaps/xvidcap.png
 %%DATADIR%%/ppm2mpeg.sh
 %%DATADIR%%/xvidcap.desktop
 %%DATADIR%%/xvidcap.png
-@dirrmtry man/de/man1
-@dirrmtry man/de
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrmtry man/it/man1
-@dirrmtry man/it
-@dirrm share/gnome/help/xvidcap/C/figures
-@dirrm share/gnome/help/xvidcap/C
-@dirrm share/gnome/help/xvidcap/de/figures
-@dirrm share/gnome/help/xvidcap/de
-@dirrm share/gnome/help/xvidcap/es/figures
-@dirrm share/gnome/help/xvidcap/es
-@dirrm share/gnome/help/xvidcap/it/figures
-@dirrm share/gnome/help/xvidcap/it
-@dirrm share/gnome/help/xvidcap
-@dirrm share/omf/xvidcap
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%

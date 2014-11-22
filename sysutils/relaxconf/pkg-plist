@@ -51,4 +51,3 @@ bin/relaxxconf
 %%DATADIR%%/ttys
 %%DATADIR%%/usbd.conf
 %%DATADIR%%/xorg.conf.vmware
-@dirrm %%DATADIR%%

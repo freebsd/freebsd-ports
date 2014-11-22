@@ -5,5 +5,3 @@ man/man1/snowlog.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/filters.example
 %%PORTDOCS%%%%DATADIR%%/referers.regexp
 %%PORTDOCS%%%%DATADIR%%/useragents.regexp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%DATADIR%%

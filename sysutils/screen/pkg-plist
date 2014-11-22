@@ -20,6 +20,3 @@ bin/screen
 %%DATADIR%%/utf8encodings/cc
 %%DATADIR%%/utf8encodings/cd
 %%DATADIR%%/utf8encodings/d6
-@dirrm %%DATADIR%%/utf8encodings
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%

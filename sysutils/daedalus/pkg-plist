@@ -2,4 +2,3 @@ bin/daedalus.rb
 etc/rc.d/daedalus.sh
 etc/daedalus/daedalus.xml.sample
 etc/daedalus/templates.xml.sample
-@dirrm etc/daedalus

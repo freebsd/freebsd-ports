@@ -22,6 +22,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_iostat.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_list.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_status.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/date_based_snapshots
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/replicationd
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

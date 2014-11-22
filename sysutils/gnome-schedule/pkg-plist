@@ -172,33 +172,3 @@ share/pixmaps/gnome-schedule/calendar.svg
 share/pixmaps/gnome-schedule/crontab.svg
 share/pixmaps/gnome-schedule/gnome-schedule.svg
 share/pixmaps/gnome-schedule/template.svg
-@dirrm share/pixmaps/gnome-schedule
-@dirrm share/omf/gnome-schedule
-%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_HK
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
-@dirrm share/gnome/help/gnome-schedule/sv/figures
-@dirrm share/gnome/help/gnome-schedule/sv
-@dirrm share/gnome/help/gnome-schedule/sl/figures
-@dirrm share/gnome/help/gnome-schedule/sl
-@dirrm share/gnome/help/gnome-schedule/oc/figures
-@dirrm share/gnome/help/gnome-schedule/oc
-@dirrm share/gnome/help/gnome-schedule/it/figures
-@dirrm share/gnome/help/gnome-schedule/it
-@dirrm share/gnome/help/gnome-schedule/fr/figures
-@dirrm share/gnome/help/gnome-schedule/fr
-@dirrm share/gnome/help/gnome-schedule/es/figures
-@dirrm share/gnome/help/gnome-schedule/es
-@dirrm share/gnome/help/gnome-schedule/de/figures
-@dirrm share/gnome/help/gnome-schedule/de
-@dirrm share/gnome/help/gnome-schedule/cs/figures
-@dirrm share/gnome/help/gnome-schedule/cs
-@dirrm share/gnome/help/gnome-schedule/C/figures
-@dirrm share/gnome/help/gnome-schedule/C
-@dirrm share/gnome/help/gnome-schedule
-@dirrm %%DATADIR%%

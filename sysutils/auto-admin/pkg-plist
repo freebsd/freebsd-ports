@@ -56,4 +56,3 @@ man/man1/auto-update-port-framework.1.gz
 man/man1/auto-using-pkgng.1.gz
 man/man1/auto-xdm-toggle.1.gz
 %%DATADIR%%/ipfw-rules.sh
-@dirrm %%DATADIR%%

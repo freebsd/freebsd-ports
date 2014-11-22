@@ -10,6 +10,3 @@ GNUstep/Local/Applications/TimeMon.app/Resources/TimeMonP.tiff
 GNUstep/Local/Applications/TimeMon.app/TimeMon
 GNUstep/Local/Applications/TimeMon.app/stamp.make
 GNUstep/Local/Tools/TimeMon
-@dirrm GNUstep/Local/Applications/TimeMon.app/Resources/TimeMon.gorm
-@dirrm GNUstep/Local/Applications/TimeMon.app/Resources
-@dirrm GNUstep/Local/Applications/TimeMon.app

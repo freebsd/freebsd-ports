@@ -29,6 +29,3 @@ bin/rsyncbackup
 %%PORTDOCS%%%%DOCSDIR%%/icons/tip.png
 %%PORTDOCS%%%%DOCSDIR%%/icons/up.png
 %%PORTDOCS%%%%DOCSDIR%%/icons/warning.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%ETCDIR%%

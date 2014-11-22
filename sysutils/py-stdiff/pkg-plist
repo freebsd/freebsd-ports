@@ -28,4 +28,3 @@ bin/stdiff_install_db.py
 %%PYTHON_SITELIBDIR%%/spot/spot_sqlite.py
 %%PYTHON_SITELIBDIR%%/spot/spot_sqlite.pyc
 %%PYTHON_SITELIBDIR%%/spot/spot_sqlite.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/spot

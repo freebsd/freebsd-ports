@@ -57,6 +57,3 @@ libdata/pkgconfig/zeitgeist-1.0.pc
 %%PORTDOCS%%share/doc/zeitgeist-1.0/zeitgeist-1.0.devhelp2
 share/vala/vapi/zeitgeist-1.0.deps
 share/vala/vapi/zeitgeist-1.0.vapi
-%%PORTDOCS%%@dirrm share/doc/zeitgeist-1.0
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/zeitgeist-1.0

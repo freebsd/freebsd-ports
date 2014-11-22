@@ -11,5 +11,3 @@ include/grok_version.h
 lib/libgrok.so
 man/man1/grok.1.gz
 %%DATADIR%%/patterns/base
-@dirrm %%DATADIR%%/patterns
-@dirrm %%DATADIR%%

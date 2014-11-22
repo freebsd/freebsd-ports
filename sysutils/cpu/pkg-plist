@@ -13,4 +13,3 @@ man/man8/cpu.8.gz
 sbin/cpu
 %%DATADIR%%/cpu.conf.doc
 %%DATADIR%%/test.ldif
-@dirrmtry %%DATADIR%%

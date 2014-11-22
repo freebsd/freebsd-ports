@@ -13,9 +13,3 @@ bin/unhfs.sh
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/troubleshooting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
-@dirrm %%DATADIR%%/res
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

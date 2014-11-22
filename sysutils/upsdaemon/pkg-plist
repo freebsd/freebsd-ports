@@ -2,4 +2,3 @@ sbin/upsdaemon
 libexec/upsdaemon/upsdaemon-alerts
 libexec/upsdaemon/upsdaemon.sh
 man/man8/upsdaemon.8.gz
-@dirrm libexec/upsdaemon

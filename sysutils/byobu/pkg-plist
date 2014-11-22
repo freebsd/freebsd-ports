@@ -141,14 +141,3 @@ share/applications/byobu.desktop
 %%DATADIR%%/Z97-byobu.sh
 %%PORTDOCS%%%%DOCSDIR%%/help.screen.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.tmux.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/windows
-@dirrm %%DATADIR%%/tests
-@dirrm %%DATADIR%%/status
-@dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/keybindings
-@dirrm %%DATADIR%%
-@dirrm lib/byobu/include
-@dirrm lib/byobu
-@dirrm %%ETCDIR%%

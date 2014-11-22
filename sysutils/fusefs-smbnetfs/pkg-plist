@@ -3,4 +3,3 @@ bin/smbnetfs
 %%PORTDOCS%%%%DOCSDIR%%/ENGLISH.FAQ
 %%PORTDOCS%%%%DOCSDIR%%/RUSSIAN.FAQ
 %%PORTDOCS%%%%DOCSDIR%%/smbnetfs.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

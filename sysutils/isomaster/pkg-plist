@@ -50,9 +50,3 @@ share/locale/uk/LC_MESSAGES/isomaster.mo
 share/locale/ur_PK/LC_MESSAGES/isomaster.mo
 share/locale/zh_CN/LC_MESSAGES/isomaster.mo
 share/locale/zh_TW/LC_MESSAGES/isomaster.mo
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%

@@ -1,4 +1,2 @@
 bin/contractor
 share/dbus-1/services/org.elementary.contractor.service
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1

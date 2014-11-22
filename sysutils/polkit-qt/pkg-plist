@@ -37,9 +37,3 @@ libdata/pkgconfig/polkit-qt-1.pc
 libdata/pkgconfig/polkit-qt-agent-1.pc
 libdata/pkgconfig/polkit-qt-core-1.pc
 libdata/pkgconfig/polkit-qt-gui-1.pc
-@dirrm lib/cmake/PolkitQt-1
-@dirrmtry lib/cmake
-@dirrm include/polkit-qt-1/PolkitQt1/Gui
-@dirrm include/polkit-qt-1/PolkitQt1/Agent
-@dirrm include/polkit-qt-1/PolkitQt1
-@dirrm include/polkit-qt-1

@@ -16,5 +16,3 @@ share/locale/ru/LC_MESSAGES/GdMap.mo
 share/locale/sv/LC_MESSAGES/GdMap.mo
 share/locale/tr/LC_MESSAGES/GdMap.mo
 share/pixmaps/gdmap_icon.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

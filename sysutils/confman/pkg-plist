@@ -21,7 +21,3 @@ sbin/confman
 %%DATADIR%%/confmandoc.sh
 %%DATADIR%%/confmanlib.sh
 %%DATADIR%%/libfiledb.sh
-@dirrmtry etc/bash_completion.d
-@dirrmtry etc/defaults
-@dirrm libexec/confman
-@dirrm %%DATADIR%%

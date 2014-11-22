@@ -7,5 +7,3 @@ man/man1/shmcat.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/shmcat.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/shmcat.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/shmcat.mo
-%%NLS%%@dirrmtry man/de/man1
-%%NLS%%@dirrmtry man/de

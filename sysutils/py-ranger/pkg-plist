@@ -249,20 +249,3 @@ man/man1/rifle.1.gz
 %%PYTHON_SITELIBDIR%%/ranger/gui/widgets/titlebar.py
 %%PYTHON_SITELIBDIR%%/ranger/gui/widgets/titlebar.pyc
 %%PYTHON_SITELIBDIR%%/ranger/gui/widgets/titlebar.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/gui/widgets
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/gui
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/ext/vcs
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/ext
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/data
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/core
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/container
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/config
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/colorschemes
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/api
-@dirrm %%PYTHON_SITELIBDIR%%/ranger
-@dirrm doc/ranger/tools
-@dirrm doc/ranger/examples
-@dirrm doc/ranger/config/colorschemes
-@dirrm doc/ranger/config
-@dirrm doc/ranger
-@dirrmtry doc

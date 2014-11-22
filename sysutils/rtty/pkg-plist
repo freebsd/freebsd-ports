@@ -6,11 +6,9 @@ rtty/bin/locbrok
 rtty/bin/rtty
 rtty/bin/startsrv
 rtty/bin/ttysrv
-@dirrmtry rtty/sock
-@dirrmtry rtty/pid
-@dirrmtry rtty/out
-@dirrmtry rtty/opt
-@dirrmtry rtty/log
-@dirrmtry rtty/dev
-@dirrmtry rtty/bin
-@dirrmtry rtty
+@dir rtty/dev
+@dir rtty/log
+@dir rtty/opt
+@dir rtty/out
+@dir rtty/pid
+@dir rtty/sock

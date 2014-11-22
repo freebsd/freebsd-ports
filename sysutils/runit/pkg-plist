@@ -34,5 +34,3 @@ sbin/runsvdir
 sbin/sv
 sbin/svlogd
 sbin/utmpset
-@dirrm etc/runit/getty-ttyv4
-@dirrm etc/runit

@@ -559,26 +559,3 @@ man/man8/grub-probe.8.gz
 man/man8/grub-reboot.8.gz
 man/man8/grub-set-default.8.gz
 man/man8/grub-sparc64-setup.8.gz
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/de@hebrew/LC_MESSAGES
-@dirrmtry share/locale/de@hebrew
-@dirrmtry share/locale/de_CH/LC_MESSAGES
-@dirrmtry share/locale/de_CH
-@dirrmtry share/locale/en@arabic/LC_MESSAGES
-@dirrmtry share/locale/en@arabic
-@dirrmtry share/locale/en@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/en@cyrillic
-@dirrmtry share/locale/en@greek/LC_MESSAGES
-@dirrmtry share/locale/en@greek
-@dirrmtry share/locale/en@hebrew/LC_MESSAGES
-@dirrmtry share/locale/en@hebrew
-@dirrmtry share/locale/en@piglatin/LC_MESSAGES
-@dirrmtry share/locale/en@piglatin
-%%MKFONT%%@dirrm share/grub/themes/starfield
-%%MKFONT%%@dirrm share/grub/themes
-@dirrm share/grub
-@dirrm lib/grub/i386-pc
-@dirrm lib/grub
-@dirrmtry etc/grub.d
-@dirrmtry etc/bash_completion.d

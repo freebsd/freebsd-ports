@@ -1,3 +1,2 @@
 bin/jdiskreport
 %%JDISKDIR%%/jdiskreport-%%PORTVERSION%%.jar
-@dirrm %%JDISKDIR%%

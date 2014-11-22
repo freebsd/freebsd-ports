@@ -4,4 +4,3 @@ etc/reoback/files.conf.dist
 etc/reoback/settings.conf.dist
 man/man1/reoback.1.gz
 man/man1/reoback.pl.1.gz
-@dirrm etc/reoback

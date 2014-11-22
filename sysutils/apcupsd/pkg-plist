@@ -16,7 +16,6 @@ sbin/smtp
 %%CGI%%%%ETCDIR%%/cgi/upsfstats.cgi
 %%CGI%%%%ETCDIR%%/cgi/upsimage.cgi
 %%CGI%%%%ETCDIR%%/cgi/upsstats.cgi
-%%CGI%%@dirrm %%ETCDIR%%/cgi
 %%GAPCMON%%bin/gapcmon
 %%GAPCMON%%share/applications/gapcmon.desktop
 %%GAPCMON%%share/pixmaps/apcupsd.png
@@ -30,4 +29,3 @@ man/man8/apcaccess.8.gz
 man/man8/apccontrol.8.gz
 man/man8/apctest.8.gz
 man/man8/apcupsd.8.gz
-@dirrmtry %%ETCDIR%%

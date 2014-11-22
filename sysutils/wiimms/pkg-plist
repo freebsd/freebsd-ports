@@ -18,4 +18,3 @@ bin/wwt
 %%DATADIR%%/titles-zhcn.txt
 %%DATADIR%%/titles-zhtw.txt
 %%DATADIR%%/titles.txt
-@dirrm %%DATADIR%%

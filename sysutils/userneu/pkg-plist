@@ -12,6 +12,4 @@ sbin/smbrepair.pl
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/userneu.pod
 %%PORTDOCS%%%%DOCSDIR%%/userquick.pod
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/list-sample
-@dirrm %%EXAMPLESDIR%%

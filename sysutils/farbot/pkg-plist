@@ -24,8 +24,6 @@ etc/farbot.conf.sample
 %%PYTHON_SITELIBDIR%%/farb/runner.pyo
 %%PYTHON_SITELIBDIR%%/farb/sysinstall.pyo
 %%PYTHON_SITELIBDIR%%/farb/utils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/farb/data
-@dirrm %%PYTHON_SITELIBDIR%%/farb
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s03.html
@@ -34,5 +32,3 @@ etc/farbot.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/docbook.css
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/index.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/pr01.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xhtml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

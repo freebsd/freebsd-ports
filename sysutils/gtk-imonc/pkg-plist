@@ -12,5 +12,3 @@ share/applications/gtk-imonc.desktop
 %%DATADIR%%/pixmaps/shutdown.png
 share/locale/de/LC_MESSAGES/gtk-imonc.mo
 share/pixmaps/gtk-imonc.png
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%

@@ -19,5 +19,3 @@ share/locale/fr/LC_MESSAGES/k4dirstat.mo
 share/locale/hu/LC_MESSAGES/k4dirstat.mo
 share/locale/it/LC_MESSAGES/k4dirstat.mo
 share/locale/ja/LC_MESSAGES/k4dirstat.mo
-@dirrmtry share/doc/HTML/en/k4dirstat
-@dirrmtry share/apps/k4dirstat

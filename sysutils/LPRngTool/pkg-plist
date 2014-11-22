@@ -8,4 +8,3 @@ libexec/filters/testpage.asc
 libexec/filters/testpage.ps
 libexec/filters/testpage-a4.ps
 man/man1/lprngtool.1.gz
-@dirrmtry libexec/filters

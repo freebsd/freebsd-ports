@@ -11,15 +11,14 @@ COMMENT=	Wrapper around the rm command to prevent accidental deletions
 
 LICENSE=	GPLv3
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	safe-rm
 NO_BUILD=	yes
 
 DOCS=		COPYING Changes README
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/safe-rm ${STAGEDIR}${PREFIX}/bin

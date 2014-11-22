@@ -473,10 +473,3 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-2.6.4/html/tutorial_intro_files.tar
 %%PORTDOCS%%%%DOCSDIR%%-2.6.4/html/tutorials.html
 %%PORTDOCS%%%%DOCSDIR%%-2.6.4/html/usage_pies.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-2.6.4/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-2.6.4
-@dirrm lib/slurm/src/srun
-@dirrm lib/slurm/src/sattach
-@dirrm lib/slurm/src
-@dirrm lib/slurm
-@dirrm include/slurm

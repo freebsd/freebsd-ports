@@ -25,10 +25,6 @@ sbin/gkrellmd
 %%NLS%%share/locale/ru/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gkrellm.mo
-%%CLIENT%%@dirrmtry %%DATADIR%%2/themes
-%%CLIENT%%@dirrmtry %%DATADIR%%2
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry libexec/gkrellm2/plugins-gkrellmd
-%%CLIENT%%@dirrmtry libexec/gkrellm2/plugins
-@dirrmtry libexec/gkrellm2
-@dirrm include/gkrellm2
+%%CLIENT%%@dir libexec/gkrellm2/plugins
+@dir libexec/gkrellm2/plugins-gkrellmd
+%%CLIENT%%@dir %%DATADIR%%2/themes

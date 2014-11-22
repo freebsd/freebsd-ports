@@ -41,4 +41,3 @@ share/autostart/polkit-kde-authentication-agent-1.desktop
 %%NLS%%share/locale/tr/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
-@dirrm share/apps/policykit1-kde

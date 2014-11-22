@@ -187,9 +187,3 @@ share/locale/pl/LC_MESSAGES/graveman.mo
 share/locale/pt_BR/LC_MESSAGES/graveman.mo
 share/locale/ru/LC_MESSAGES/graveman.mo
 share/locale/sv/LC_MESSAGES/graveman.mo
-@dirrm share/graveman/themes/default
-@dirrm share/graveman/themes/essai
-@dirrm share/graveman/themes/isoset
-@dirrm share/graveman/themes/plainset
-@dirrm share/graveman/themes
-@dirrm share/graveman
