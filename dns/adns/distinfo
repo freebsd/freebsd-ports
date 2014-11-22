@@ -1,4 +1,2 @@
-SHA256 (adns-1.5.0~rc0.tar.gz) = ae9459c778d21b6cdb8cd98731ff103c264b47df4bd44e38573a697cb0893b4a
-SIZE (adns-1.5.0~rc0.tar.gz) = 345530
-SHA256 (adns-ipv6.patch) = 84adcc350ee9a3144e0b48fb12ad8f7e8f028a5316b7948e698acaf57afae2e4
-SIZE (adns-ipv6.patch) = 88709
+SHA256 (adns-1.5.0.tar.gz) = 7fc5eb4d315111a3a3a3f45ff143339ad4050185fbe6bff687f21364cb4ae841
+SIZE (adns-1.5.0.tar.gz) = 310885
