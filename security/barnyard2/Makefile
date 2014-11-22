@@ -59,7 +59,7 @@ MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 MYSQL_SSL_CONFIGURE_ENABLE=	mysql-ssl-support
 ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 ODBC_WITH=		odbc
-PGSQL_USE=		PGSQL=yes
+PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config --with-pgsql-includes=${LOCALBASE}/include/postgresql/server
 PGSQL_CONFIGURE_OFF=	--without-postgresql
 TCL_USES=		tcl

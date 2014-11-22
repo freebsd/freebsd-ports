@@ -70,7 +70,7 @@ MYSQL_CMAKE_OFF=-DWITH_MySQL:BOOL=FALSE
 
 PGSQL_DESC=	PostgreSQL database support in Kexi
 PGSQL_LIB_DEPENDS=libpqxx-3.1.so:${PORTSDIR}/databases/postgresql-libpqxx3
-PGSQL_USE=	PGSQL=yes
+PGSQL_USES=	pgsql
 PGSQL_CMAKE_OFF=-DWITH_PostgreSQL:BOOL=FALSE
 
 SYBASE_DESC=	Sybase database support in Kexi

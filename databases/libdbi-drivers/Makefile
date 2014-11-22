@@ -31,7 +31,7 @@ OPTIONS_SUB=	yes
 MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_PLIST_FILES=	lib/dbd/libdbdmysql.so
-PGSQL_USE=	PGSQL=yes
+PGSQL_USES=	pgsql
 PGSQL_CONFIGURE_WITH=	pgsql
 PGSQL_PLIST_FILES=	lib/dbd/libdbdpgsql.so
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3

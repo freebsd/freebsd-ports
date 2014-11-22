@@ -37,7 +37,7 @@ SSL_CONFIGURE_ON=	--with-openssl \
 			--with-openssl-include=${OPENSSLINC} \
 			--with-openssl-lib=${OPENSSLLIB}
 
-PGSQL_USE=	PGSQL=yes
+PGSQL_USES=	pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql \
 			--with-pgsql-include=${LOCALBASE}/include \
 			--with-pgsql-lib=${LOCALBASE}/lib

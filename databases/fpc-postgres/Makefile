@@ -18,6 +18,6 @@ OPTIONS_DEFINE=	PGSQL
 PGSQL_DESC=	Install PostgreSQL client
 OPTIONS_DEFAULT=	PGSQL
 
-PGSQL_USE=	PGSQL=yes
+PGSQL_USES=	pgsql
 
 .include "${MASTERDIR}/Makefile"

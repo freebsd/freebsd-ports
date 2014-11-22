@@ -47,7 +47,7 @@ GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 LDAP_USE=		OPENLDAP=yes
 MYSQL_USE=		MYSQL=yes
 NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
-PGSQL_USE=		PGSQL=yes
+PGSQL_USES=		pgsql
 SQLITE_USE=		SQLITE=yes
 SSL_USE=		OPENSSL=yes
 

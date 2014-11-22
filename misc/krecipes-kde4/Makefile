@@ -26,7 +26,7 @@ SQLITE_CMAKE_OFF=	-DWITH_Sqlite:BOOL=OFF
 MYSQL_USE=		MYSQL=yes \
 			QT4=sql-mysql_run
 
-PGSQL_USE=		PGSQL=yes \
-			QT4=sql-pgsql_run
+PGSQL_USES=		pgsql
+PGSQL_USE=		QT4=sql-pgsql_run
 
 .include <bsd.port.mk>
