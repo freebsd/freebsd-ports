@@ -15,6 +15,7 @@ include/nemo/libnemo-extension/nemo-property-page.h
 lib/girepository-1.0/Nemo-3.0.typelib
 lib/libnemo-extension.a
 lib/libnemo-extension.so
+lib/libnemo-extension.so.1
 lib/libnemo-extension.so.1.4.0
 libdata/pkgconfig/libnemo-extension.pc
 libexec/nemo-convert-metadata

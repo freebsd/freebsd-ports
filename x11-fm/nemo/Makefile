@@ -4,6 +4,7 @@
 
 PORTNAME=	nemo
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
