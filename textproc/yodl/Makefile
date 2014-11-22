@@ -17,7 +17,7 @@ BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
-USES=		perl5 shebangfix compiler:c++11-lang
+USES=		perl5 shebangfix compiler:c++11-lib
 USE_PERL5=	build
 
 SHEBANG_LANG=	icmake
