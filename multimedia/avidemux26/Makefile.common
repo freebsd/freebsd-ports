@@ -195,7 +195,7 @@ PLIST_SUB+=	FAAD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX264}
-LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/libx264
 PLIST_SUB+=	X264=""
 .else
 CMAKE_ARGS+=	-DX264:BOOL=OFF

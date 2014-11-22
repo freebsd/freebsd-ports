@@ -2,7 +2,7 @@
 
 PORTNAME=	libav
 PORTVERSION=	10.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
@@ -146,7 +146,7 @@ WEBP_CONFIGURE_ENABLE=		libwebp
 
 X11GRAB_USE=			XORG=x11,xext,xfixes
 
-X264_LIB_DEPENDS=		libx264.so:${PORTSDIR}/multimedia/x264
+X264_LIB_DEPENDS=		libx264.so:${PORTSDIR}/multimedia/libx264
 X264_CONFIGURE_ENABLE=		libx264
 
 XVID_LIB_DEPENDS=		libxvidcore.so:${PORTSDIR}/multimedia/xvid

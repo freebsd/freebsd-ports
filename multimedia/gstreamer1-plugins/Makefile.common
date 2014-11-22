@@ -423,7 +423,7 @@ gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesrc.la \
 .endif
 
 # x264
-gst_x264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264
+gst_x264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
 gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.la \
 			${GST_LIB_DIR}/libgstx264.so \
 			share/gstreamer-${VERSION}/presets/GstX264Enc.prs

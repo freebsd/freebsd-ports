@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	2.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -198,7 +198,7 @@ VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 VPX_CONFIGURE_ENABLE=	libvpx
 
 # x264
-X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264
+X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
 X264_CONFIGURE_ENABLE=	libx264
 
 # x265
