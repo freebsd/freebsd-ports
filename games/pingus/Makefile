@@ -7,7 +7,7 @@ PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://pingus.seul.org/files/
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Lemmings-like game
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
@@ -39,10 +39,11 @@ pre-install:
 	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@cd ${WRKSRC}/data && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/win32/icon1.ico ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/data && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/src/win32/icon1.ico \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
 
 .include <bsd.port.mk>
