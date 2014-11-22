@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-extras
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	igor.ostapenko@gmail.com
@@ -14,8 +14,7 @@ RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tj
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	28f0ad8
+GH_COMMIT=	075d0ce
 
 USES=		gmake shebangfix
 SHEBANG_FILES=	bin/git-squash
