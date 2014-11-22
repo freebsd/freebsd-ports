@@ -1,3 +1,2 @@
 bin/mouseclock
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -76,12 +76,3 @@ share/asclock/shaped/minute.xpm
 share/asclock/shaped/month.xpm
 share/asclock/shaped/second.xpm
 share/asclock/shaped/weekday.xpm
-@dirrm share/asclock/Freeamp
-@dirrm share/asclock/Newstone
-@dirrm share/asclock/Orb
-@dirrm share/asclock/Stone
-@dirrm share/asclock/beats
-@dirrm share/asclock/classic
-@dirrm share/asclock/penguin
-@dirrm share/asclock/shaped
-@dirrm share/asclock
