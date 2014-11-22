@@ -1,6 +1,8 @@
 bin/minecraft-server
 @owner mcserver
 @group mcserver
+@dir %%DATADIR%%
+@dir %%ETCDIR%%
 %%DATADIR%%/banned-ips.json
 %%DATADIR%%/banned-players.json
 %%DATADIR%%/debug

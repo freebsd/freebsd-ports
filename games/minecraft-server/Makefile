@@ -2,7 +2,7 @@
 
 PORTNAME=	minecraft-server
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games java
 MASTER_SITES=	https://s3.amazonaws.com/Minecraft.Download/versions/${PORTVERSION}/
 DISTNAME=	minecraft_server.${PORTVERSION}.jar
