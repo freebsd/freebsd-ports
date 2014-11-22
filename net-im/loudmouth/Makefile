@@ -11,6 +11,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight Jabber client library
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
