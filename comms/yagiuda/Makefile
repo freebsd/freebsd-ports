@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.g8wrb.org/yagi/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Used to calculate yagi-uda antenna patterns useful to ham radio
 
 LICENSE=	GPLv2

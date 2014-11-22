@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz yfk.png
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
 
 LICENSE=	GPLv2

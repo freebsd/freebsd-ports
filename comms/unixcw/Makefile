@@ -7,7 +7,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	unixcw_3.3.0.orig
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Libs for cw on unix
 
 LICENSE=	GPLv2

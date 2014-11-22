@@ -7,7 +7,7 @@ MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Convert text files into cw as an mp3 or ogg file
 
 LICENSE=	GPLv2

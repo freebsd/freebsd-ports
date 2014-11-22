@@ -7,7 +7,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
 		http://chronos.org.uk/distfiles/
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio sound modem
 
 LICENSE=	GPLv1
