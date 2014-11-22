@@ -109,7 +109,6 @@
     SUBDIR += dixit
     SUBDIR += doc-mode.el
     SUBDIR += docbook
-    SUBDUR += docbook2mdoc
     SUBDIR += docbook-sgml
     SUBDIR += docbook-tdg
     SUBDIR += docbook-to-man
@@ -119,6 +118,7 @@
     SUBDIR += docbook-xsl
     SUBDIR += docbook-xsl-ns
     SUBDIR += docbook2X
+    SUBDIR += docbook2mdoc
     SUBDIR += docbook2odf
     SUBDIR += docbookide.el
     SUBDIR += docdiff
