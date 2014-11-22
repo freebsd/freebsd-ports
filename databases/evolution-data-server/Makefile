@@ -56,9 +56,11 @@ WEATHER_DESC=	Weather calendar backend
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MKERBEROS}
+.if ${PORT_OPTIONS:MKERBEROS} && exists(/usr/bin/krb5-config)
 CONFIGURE_ARGS+=	--with-krb5=/usr
 KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
+.else
+CONFIGURE_ARGS+=	--without-krb5
 .endif
 
 .if ${PORT_OPTIONS:MWEATHER}
