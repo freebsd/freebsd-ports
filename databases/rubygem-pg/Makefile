@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 CONFIGURE_ARGS=	--with-pgsql-include-dir=`${PG_CONFIG} --includedir` \
 		--with-pgsql-lib-dir=`${PG_CONFIG} --libdir`
 PG_CONFIG=	${LOCALBASE}/bin/pg_config
-USE_PGSQL=	yes
+USES+=		pgsql
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

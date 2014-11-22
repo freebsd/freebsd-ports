@@ -42,7 +42,7 @@ FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
 
 .if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=--with-pgsql="${PREFIX}"
-USE_PGSQL=	yes
+USES+=		pgsql
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}

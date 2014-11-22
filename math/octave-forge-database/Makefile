@@ -19,7 +19,7 @@ OCTSRC=		${DISTNAME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 GNU_CONFIGURE=	yes
-USE_PGSQL=	yes
+USES+=		pgsql
 ALL_TARGET=
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"

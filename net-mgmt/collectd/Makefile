@@ -334,7 +334,7 @@ PLIST_SUB+=	PDNS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=--enable-postgresql
 PLIST_SUB+=	PGSQL=""
 .else

@@ -43,7 +43,7 @@ USE_MYSQL=	yes
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	83
+USES+=		pgsql
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
@@ -80,7 +80,7 @@ do-install:
 				fi \
 			fi \
 		fi \
-	elif [ "${USE_MYSQL}" -o "${USE_PGSQL}" ]; then  \
+	elif [ "${USE_MYSQL}" -o "${USES:MPGSQL}" ]; then  \
 		${INSTALL} ${WRKSRC}/conf/rackmonkey.conf-default ${STAGEDIR}${WWWDIR}/; \
 	fi
 	if [ -e "${WWWDIR}/rackmonkey.conf" ]; then \

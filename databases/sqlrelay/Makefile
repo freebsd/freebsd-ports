@@ -101,7 +101,7 @@ CONFIGURE_ARGS+=	--disable-firebird
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=			pgsql
 CONFIGURE_ARGS+=	--with-postgresql-prefix="${LOCALBASE}"
 .else
 CONFIGURE_ARGS+=	--disable-postgresql

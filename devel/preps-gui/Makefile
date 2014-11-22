@@ -15,9 +15,8 @@ COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	prepsdb_tool:${PORTSDIR}/devel/prepstools
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig pgsql
 USE_GNOME=	gnomeprefix gtk20 gconf2 libgnomeui
-USE_PGSQL=	yes
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	preps.schema
 

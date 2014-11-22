@@ -51,7 +51,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 ICONV_USES=	iconv:lib,build
 MYSQL_USE=	mysql=yes
 OPENLDAP_USE=	openldap=yes
-PGSQL_USE=	pgsql=yes
+PGSQL_USES=	pgsql
 REDIS_LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
 SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 SA_EXIM_RUN_DEPENDS=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/spamassassin

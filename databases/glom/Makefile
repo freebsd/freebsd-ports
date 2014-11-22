@@ -27,6 +27,7 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pgsql pkgconfig python shared-mime-info tar:xz
+WANT_PGSQL=	server
 USE_GNOME=	gnomedocutils gnomeprefix intlhack pygobject3 libxml2 \
 		gtksourceviewmm3 libgdamm5
 USE_LDCONFIG=	yes
@@ -42,11 +43,6 @@ INSTALLS_ICONS=	yes
 
 PLIST_SUB+=	VERSION=${PORTVERSION:R}
 #PLIST_SUB+=	VERSION=1.24
-
-# We need postgreSQL tools the server installs, and configure checks for these.
-# Note: USE_PGSQL has already been set above.
-BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER:S/.//}-server
-RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER:S/.//}-server
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' \

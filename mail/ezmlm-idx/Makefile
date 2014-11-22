@@ -44,7 +44,7 @@ PLIST_SUB+=	MYSQL="" PGSQL="@comment " SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include
 EXTRACT_LIB+=	-L${LOCALBASE}/lib -lpq -lcrypt
 ALL_TARGET+=	pgsql

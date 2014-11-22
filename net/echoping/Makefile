@@ -36,7 +36,7 @@ PLIST_SUB=	WITH_LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 PING_PLUGINS+=	postgresql
 PLIST_SUB+=	WITH_PGSQL=""
 .else

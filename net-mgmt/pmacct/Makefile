@@ -45,7 +45,7 @@ PLIST_SUB+=	WITH_MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=--enable-pgsql
 PLIST_SUB+=	WITH_PGSQL=""
 .else

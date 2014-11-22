@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=--enable-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CPPFLAGS+=	-DwithPGSQL -I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lpq
 CONFIGURE_ARGS+=--enable-postgresql

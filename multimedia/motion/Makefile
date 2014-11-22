@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=--without-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/lib \
 		--with-pgsql-include=${LOCALBASE}/include
 .else
