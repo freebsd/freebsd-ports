@@ -10,11 +10,10 @@ MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Problem reporting system
 
-RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${DEFAULT_PGSQL_VER}-server
-
 LICENSE=	GPLv2
 
 USES=		gmake pkgconfig libtool pgsql
+WANT_PGSQL=	server
 USE_GNOME=	gtk20 gconf2 glib20 libgnomeui
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
