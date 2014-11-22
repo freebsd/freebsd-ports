@@ -35,19 +35,24 @@ WRKSRC=		${WRKDIR}/amishHammer-sigar-${GH_COMMIT}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD
+.  if ${OSVERSION} >= 1000000
 PLATFORM_VER=	1
-.elif ${OSVERSION} >= 900000
+.  elif ${OSVERSION} >= 900000
 PLATFORM_VER=	9
-.elif ${OSVERSION} >= 800000
+.  elif ${OSVERSION} >= 800000
 PLATFORM_VER=	8
-.elif ${OSVERSION} >= 700000
+.  elif ${OSVERSION} >= 700000
 PLATFORM_VER=	7
-.elif ${OSVERSION} >= 600000
+.  elif ${OSVERSION} >= 600000
 PLATFORM_VER=	6
-.else
+.  else
 BROKEN=		Unsupported FreeBSD version
+.  endif
+.else
+BROKEN=		${OPSYS} platform is not supported
 .endif
+
 LIBNAME=	libsigar-${ARCH:S,i386,x86,}-freebsd-${PLATFORM_VER}.so
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
