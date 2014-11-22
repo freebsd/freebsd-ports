@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	argrllcms
+PORTNAME=	argyllcms
 PORTVERSION=	1.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.argyllcms.com/
