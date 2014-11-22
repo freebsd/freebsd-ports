@@ -4,7 +4,7 @@
 
 PORTNAME=	seahorse
 PORTVERSION=	3.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
 
-BUILD_DEPENDS=	gnupg20>=0:${PORTSDIR}/security/gnupg20 \
+BUILD_DEPENDS=	gnupg>=2.1:${PORTSDIR}/security/gnupg \
 		valac:${PORTSDIR}/lang/vala \
 		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	gnupg20>=0:${PORTSDIR}/security/gnupg20
+RUN_DEPENDS=	gnupg>=2.1:${PORTSDIR}/security/gnupg
 
 USE_XORG=	sm
 USE_LDCONFIG=	yes
