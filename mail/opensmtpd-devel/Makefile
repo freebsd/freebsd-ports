@@ -52,7 +52,7 @@ SQLITE_CFLAGS=		-I${LOCALBASE}/include
 SQLITE_LDFLAGS=		-L${LOCALBASE}/lib
 SQLITE_CONFIGURE_ON=	--with-experimental-sqlite
 
-PGSQL_USE=		PGSQL=yes
+PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-experimental-postgres
 
 LDAP_CONFIGURE_ON=	--with-experimental-ldap

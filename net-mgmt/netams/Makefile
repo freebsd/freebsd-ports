@@ -31,7 +31,7 @@ OPTIONS_MULTI_DATABASE=	MYSQL PGSQL
 CGI_DESC=	Install admin/user CGI scripts
 
 OPTIONS_SUB=	yes
-PGSQL_USE=	PGSQL=yes
+PGSQL_USES=	pgsql
 MYSQL_USE=	MYSQL=yes
 
 .include <bsd.port.options.mk>

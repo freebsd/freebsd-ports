@@ -39,7 +39,8 @@ LDAP_USE=	PHP=ldap
 MP3INFO_BUILD_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info
 MP3INFO_RUN_DEPENDS=	${MP3INFO_BUILD_DEPENDS}
 MYSQL_USE=	MYSQL=client PHP=mysql,pdo_mysql
-PGSQL_USE=	PGSQL=yes PHP=pdo_pgsql,pgsql
+PGSQL_USES=	pgsql
+PGSQL_USE=	PHP=pdo_pgsql,pgsql
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
 SSL_USE=	PHP=openssl
 

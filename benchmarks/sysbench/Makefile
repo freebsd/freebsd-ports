@@ -35,6 +35,6 @@ MYSQL_USE=		MYSQL=yes
 
 PGSQL_CONFIGURE_ON=	--with-pgsql
 PGSQL_CONFIGURE_OFF=	--with-pgsql=no
-PGSQL_USE=		PGSQL=yes
+PGSQL_USES=		pgsql
 
 .include <bsd.port.mk>
