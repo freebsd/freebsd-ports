@@ -69,4 +69,8 @@
 %%LISPDIR%%/navi2ch/navi2ch-xmas.elc
 %%LISPDIR%%/navi2ch/navi2ch.el
 %%LISPDIR%%/navi2ch/navi2ch.elc
+%%LISPDIR%%/navi2ch/navi2ch-p2.el
+%%LISPDIR%%/navi2ch/navi2ch-p2.elc
+%%LISPDIR%%/navi2ch/navi2ch-thumbnail.el
+%%LISPDIR%%/navi2ch/navi2ch-thumbnail.elc
 @dirrm %%LISPDIR%%/navi2ch

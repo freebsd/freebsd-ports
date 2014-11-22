@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	navi2ch
-PORTVERSION=	1.8.4
-PORTREVISION=	5
+PORTVERSION=	2.0.0.d
 PORTEPOCH=	1
 CATEGORIES=	japanese www elisp
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/ LOCAL/hrs
+DISTNAME=	navi2ch-git-75ceac8e93d8d7cc02cc8fa44f14cd44ce0b9d0a
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -14,8 +14,7 @@ COMMENT=	2ch.net and 2ch-like BBS navigator for Emacsen
 
 LICENSE=	GPLv2
 
-BROKEN=		Fails to build
-
+USES=		zip
 USE_EMACS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS="${EMACS_CMD}"
@@ -31,12 +30,7 @@ LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 
 OPTIONS_DEFINE=	DOCS X11
 OPTIONS_DEFAULT=DOCS X11
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanese/monafonts
-.endif
+X11_RUN_DEPENDS=${LOCALBASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanese/monafonts
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
