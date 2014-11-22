@@ -1,14 +1,16 @@
---- cmake/jemalloc.cmake.orig	2013-09-20 00:34:22.000000000 +0200
-+++ cmake/jemalloc.cmake	2013-09-27 22:46:05.791110010 +0200
-@@ -37,9 +37,9 @@
-     SET(WITH_JEMALLOC "no")
-   ENDIF()
-   IF(WITH_JEMALLOC STREQUAL "system" OR WITH_JEMALLOC STREQUAL "yes")
--    CHECK_LIBRARY_EXISTS(jemalloc malloc_stats_print "" HAVE_JEMALLOC)
+--- cmake/jemalloc.cmake.orig	2014-10-08 15:19:51.000000000 +0200
++++ cmake/jemalloc.cmake	2014-11-16 20:27:50.032638191 +0100
+@@ -22,11 +22,11 @@
+       SET(libname jemalloc)
+     ENDIF()
+ 
+-    CHECK_LIBRARY_EXISTS(${libname} malloc_stats_print "" HAVE_JEMALLOC)
 +    CHECK_LIBRARY_EXISTS(c malloc_stats_print "" HAVE_JEMALLOC)
+     SET(CMAKE_REQUIRED_LIBRARIES)
+ 
      IF (HAVE_JEMALLOC)
--      SET(LIBJEMALLOC jemalloc)
+-      SET(LIBJEMALLOC ${libname})
 +      SET(LIBJEMALLOC c)
-     ELSEIF (WITH_JEMALLOC STREQUAL "system")
-       MESSAGE(FATAL_ERROR "system jemalloc is not found")
-     ELSEIF (WITH_JEMALLOC STREQUAL "yes")
+     ELSEIF (NOT WITH_JEMALLOC STREQUAL "auto")
+       MESSAGE(FATAL_ERROR "${libname} is not found")
+     ENDIF()
