@@ -13,10 +13,9 @@ COMMENT=	Cross-platform port of Arx Fatalis
 LICENSE=	GPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/ARX_PUBLIC_LICENSE.txt
 
-LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libGLEW.so:${PORTSDIR}/graphics/glew \
+		libfreetype.so:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/foreach.hpp:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake openal tar:xz
 USE_SDL=	sdl
@@ -42,7 +41,7 @@ PLIST_SUB+=	CRASHREPORTER="@comment "
 .endif
 
 post-patch:
-.if ${OSVERSION} >= 1000705
+.if (${OSVERSION} >= 1000705 && ${OSVERSION} < 1001503) || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100046)
 # Workaround for clang 3.4 bug: it crashes when debug info is enabled
 # See http://llvm.org/bugs/show_bug.cgi?id=19031, http://llvm.org/bugs/show_bug.cgi?id=20893
 	@${REINPLACE_CMD} -e '/add_cxxflag.*-g2/ d' ${WRKSRC}/cmake/BuildType.cmake
