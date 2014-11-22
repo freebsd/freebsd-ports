@@ -27,7 +27,3 @@ share/gtubeclock/pixmaps/tubeclock/1-9.png
 share/gtubeclock/pixmaps/tubeclock/Background-scaled.png
 share/gtubeclock/pixmaps/tubeclock/Background.png
 share/gtubeclock/pixmaps/tubeclock/Reflection.png
-@dirrm share/gtubeclock/pixmaps/tubeclock
-@dirrm share/gtubeclock/pixmaps/newclock
-@dirrm share/gtubeclock/pixmaps
-@dirrm share/gtubeclock
