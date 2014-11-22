@@ -104,7 +104,7 @@ XZ_CMD?=		/usr/bin/xz ${XZ}
 
 MD5?=			/sbin/md5
 SHA256?=		/sbin/sha256
-.if exist(/usr/bin/soeliminate)
+.if exists(/usr/bin/soeliminate)
 SOELIM?=		/usr/bin/soeliminate
 .else
 SOELIM?=		/usr/bin/soelim
