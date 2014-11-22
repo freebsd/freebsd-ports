@@ -5232,7 +5232,7 @@ check-man: stage
 	for dir in $$mdirs; do \
 		for f in $$(find $$dir -name "*.gz"); do \
 			${ECHO_CMD} "===> Checking $${f##*/}" ; \
-			gunzip -c $$f | mandoc -Tlint -Werror || zgrep -q "^.so" $$f && continue ; \
+			gunzip -c $$f | mandoc -Tlint -Werror && continue ; \
 			err=1 ; \
 		done ; \
 	done ; \
