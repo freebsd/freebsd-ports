@@ -60,15 +60,3 @@ man/man8/honeyd.8.gz
 %%DATADIR%%/scripts/kuang2.conf
 %%DATADIR%%/scripts/smtp.pl
 %%DATADIR%%/scripts/proxy.pl
-@dirrm include/honeyd
-@dirrm lib/honeyd
-@dirrm %%DATADIR%%/scripts/snmp
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/webserver/htdocs/templates/inc
-@dirrm %%DATADIR%%/webserver/htdocs/templates
-@dirrm %%DATADIR%%/webserver/htdocs/graphs
-@dirrm %%DATADIR%%/webserver/htdocs/images
-@dirrm %%DATADIR%%/webserver/htdocs/styles
-@dirrm %%DATADIR%%/webserver/htdocs
-@dirrm %%DATADIR%%/webserver
-@dirrm %%DATADIR%%

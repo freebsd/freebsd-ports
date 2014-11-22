@@ -30,11 +30,3 @@ mozilla/directory/public/ldap-private/ldap-int.h
 mozilla/directory/public/ldap-private/ldaplog.h
 mozilla/directory/public/ldap-private/ldaprot.h
 mozilla/directory/public/ldap-private/portable.h
-@dirrm mozilla/directory/public/ldap-private
-@dirrm mozilla/directory/public/ldap
-@dirrm mozilla/directory/public
-@dirrm mozilla/directory/lib
-@dirrm mozilla/directory/etc
-@dirrm mozilla/directory/bin
-@dirrm mozilla/directory
-@dirrm mozilla

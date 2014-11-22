@@ -2,4 +2,3 @@ bin/urlencode
 bin/urldecode
 %%PORTDOCS%%share/doc/urlendec/index.html
 %%PORTDOCS%%share/doc/urlendec/rfc1738.txt
-%%PORTDOCS%%@dirrm share/doc/urlendec

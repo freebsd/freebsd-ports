@@ -17,4 +17,3 @@ lib/libvncserver.so.0
 lib/libvncserver.so.0.0.0
 libdata/pkgconfig/libvncclient.pc
 libdata/pkgconfig/libvncserver.pc
-@dirrm include/rfb

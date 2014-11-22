@@ -65,6 +65,3 @@ share/examples/ntlmaps/server.cfg
 %%PYTHON_SITELIBDIR%%/ntlmaps/www_client.py
 %%PYTHON_SITELIBDIR%%/ntlmaps/www_client.pyc
 %%PYTHON_SITELIBDIR%%/ntlmaps/www_client.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/ntlmaps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/examples/ntlmaps

@@ -11,4 +11,3 @@ lib/siproxd/plugin_logcall.so
 lib/siproxd/plugin_shortdial.la
 lib/siproxd/plugin_shortdial.so
 sbin/siproxd
-@dirrm lib/siproxd

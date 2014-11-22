@@ -11,5 +11,3 @@ lib/libqjsonrpc.so.1
 lib/libqjsonrpc.so.1.0
 lib/libqjsonrpc.so.1.0.0
 libdata/pkgconfig/qjsonrpc.pc
-@dirrm include/qjsonrpc/json
-@dirrm include/qjsonrpc

@@ -71,7 +71,3 @@ man/man1/vdetaplib.1.gz
 man/man1/vdeterm.1.gz
 man/man1/wirefilter.1.gz
 man/man8/vde_tunctl.8.gz
-@dirrm lib/vde2/vde_l3
-@dirrm lib/vde2
-@dirrm etc/vde2/libvdemgmt
-@dirrm etc/vde2

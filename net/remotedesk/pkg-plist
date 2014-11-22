@@ -9,6 +9,3 @@ GNUstep/Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/objects.gorm
 GNUstep/Local/Applications/RemoteDesk.app/Resources/remotedesk.tiff
 GNUstep/Local/Applications/RemoteDesk.app/stamp.make
 GNUstep/Local/Tools/RemoteDesk
-@dirrm GNUstep/Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm
-@dirrm GNUstep/Local/Applications/RemoteDesk.app/Resources
-@dirrm GNUstep/Local/Applications/RemoteDesk.app

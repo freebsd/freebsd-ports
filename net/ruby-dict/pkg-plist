@@ -4,4 +4,3 @@ bin/rdict
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/dict.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdict.html
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

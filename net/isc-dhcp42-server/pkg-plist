@@ -32,6 +32,3 @@ lib/libdhcpctl.a
 lib/libomapi.a
 lib/libdst.a
 %%LDAP%%%%SCHEMA_DIR%%/dhcp.schema
-%%LDAP%%@dirrm %%SCHEMA_DIR%%
-@dirrm include/omapip
-@dirrm include/isc-dhcp

@@ -110,12 +110,3 @@ share/sounds/linphone/rings/sweet.wav
 share/sounds/linphone/rings/synth.wav
 share/sounds/linphone/rings/tapping.wav
 share/sounds/linphone/rings/toy-mono.wav
-@dirrm include/linphone
-@dirrmtry man/cs/man1
-@dirrmtry man/cs
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb_NO
-@dirrm share/pixmaps/linphone
-@dirrm share/sounds/linphone/rings
-@dirrm share/sounds/linphone

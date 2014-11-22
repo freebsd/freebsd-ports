@@ -196,7 +196,3 @@ etc/wizd.conf.sample
 %%DATADIR%%/skins/simplicity_hires/videos.png
 %%DATADIR%%/skins/simplicity_hires/videos2.png
 %%DATADIR%%/skins/simplicity_hires/wizd_skin.conf
-@dirrm %%DATADIR%%/skins/simplicity_hires
-@dirrm %%DATADIR%%/skins/simplicity
-@dirrm %%DATADIR%%/skins
-@dirrm %%DATADIR%%

@@ -39,10 +39,6 @@ sbin/splatd
 %%PYTHON_SITELIBDIR%%/splat/ldaputils/client.py
 %%PYTHON_SITELIBDIR%%/splat/ldaputils/client.pyc
 %%PYTHON_SITELIBDIR%%/splat/ldaputils/client.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/splat/helpers
-@dirrm %%PYTHON_SITELIBDIR%%/splat/ldaputils
-@dirrm %%PYTHON_SITELIBDIR%%/splat/data
-@dirrm %%PYTHON_SITELIBDIR%%/splat
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s03.html
@@ -60,5 +56,3 @@ sbin/splatd
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/rn01.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/rn01re01.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/rn01re02.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xhtml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -5,4 +5,3 @@ lib/libsocketcpp.a
 lib/libsocketcpp.so
 lib/libsocketcpp.so.0
 lib/libsocketcpp.so.0.0.0
-@dirrm include/libsocketcpp

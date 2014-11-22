@@ -22,9 +22,3 @@ share/locale/ja/LC_MESSAGES/gq.mo
 share/locale/zh_CN/LC_MESSAGES/gq.mo
 share/omf/gq-manual/gq-manual-C.omf
 share/omf/gq-manual/gq-manual-de.omf
-@dirrm share/pixmaps/gq
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/gq-manual/C
-@dirrm share/gnome/help/gq-manual/de
-@dirrm share/gnome/help/gq-manual
-@dirrm share/omf/gq-manual

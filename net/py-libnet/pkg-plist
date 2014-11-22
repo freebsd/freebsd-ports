@@ -5,5 +5,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lnsh/dnsv4.libnet
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lnsh/tcpsyn.libnet
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lnsh/tcpxmas.libnet
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/lnsh
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

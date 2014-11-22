@@ -27,5 +27,3 @@ man/man1/echoping_dns.1.gz
 %%WITH_PGSQL%%man/man1/echoping_postgresql.1.gz
 man/man1/echoping_random.1.gz
 man/man1/echoping_whois.1.gz
-@dirrm include/echoping
-@dirrm lib/echoping

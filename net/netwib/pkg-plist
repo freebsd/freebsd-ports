@@ -139,9 +139,3 @@ man/man3/netwib_net.3.gz
 man/man3/netwib_pkt.3.gz
 man/man3/netwib_shw.3.gz
 man/man3/netwib_sys.3.gz
-@dirrm include/netwib%%SHORTPORTVERSION%%/dat
-@dirrm include/netwib%%SHORTPORTVERSION%%/net
-@dirrm include/netwib%%SHORTPORTVERSION%%/pkt
-@dirrm include/netwib%%SHORTPORTVERSION%%/shw
-@dirrm include/netwib%%SHORTPORTVERSION%%/sys
-@dirrm include/netwib%%SHORTPORTVERSION%%

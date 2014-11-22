@@ -19,27 +19,9 @@ man/man1/Xvnc.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/tigervnc.mo
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE.TXT
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/xorg/modules/extensions
-@dirrmtry lib/xorg/modules
-@dirrmtry lib/xorg
 %%VIEWER%%share/icons/hicolor/16x16/apps/tigervnc.png
 %%VIEWER%%share/icons/hicolor/22x22/apps/tigervnc.png
 %%VIEWER%%share/icons/hicolor/24x24/apps/tigervnc.png
 %%VIEWER%%share/icons/hicolor/32x32/apps/tigervnc.png
 %%VIEWER%%share/icons/hicolor/48x48/apps/tigervnc.png
 %%VIEWER%%share/icons/hicolor/scalable/apps/tigervnc.svg
-%%VIEWER%%@dirrmtry share/icons/hicolor/48x48/apps
-%%VIEWER%%@dirrmtry share/icons/hicolor/48x48
-%%VIEWER%%@dirrmtry share/icons/hicolor/32x32/apps
-%%VIEWER%%@dirrmtry share/icons/hicolor/32x32
-%%VIEWER%%@dirrmtry share/icons/hicolor/24x24/apps
-%%VIEWER%%@dirrmtry share/icons/hicolor/24x24
-%%VIEWER%%@dirrmtry share/icons/hicolor/22x22/apps
-%%VIEWER%%@dirrmtry share/icons/hicolor/22x22
-%%VIEWER%%@dirrmtry share/icons/hicolor/16x16/apps
-%%VIEWER%%@dirrmtry share/icons/hicolor/16x16
-%%VIEWER%%@dirrmtry share/icons/hicolor/scalable/apps
-%%VIEWER%%@dirrmtry share/icons/hicolor/scalable
-%%VIEWER%%@dirrmtry share/icons/hicolor
-%%VIEWER%%@dirrmtry share/icons

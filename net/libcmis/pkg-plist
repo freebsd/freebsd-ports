@@ -41,7 +41,3 @@ lib/libcmis-c-%%MAJVER%%.so.4
 lib/libcmis-c-%%MAJVER%%.so.4.0.1
 libdata/pkgconfig/libcmis-%%MAJVER%%.pc
 libdata/pkgconfig/libcmis-c-%%MAJVER%%.pc
-@dirrm include/libcmis-c-%%MAJVER%%/libcmis-c
-@dirrm include/libcmis-c-%%MAJVER%%
-@dirrm include/libcmis-%%MAJVER%%/libcmis
-@dirrm include/libcmis-%%MAJVER%%

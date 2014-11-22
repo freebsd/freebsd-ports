@@ -1,4 +1,3 @@
-@stopdaemon ntop
 bin/ntop
 etc/ntop/GeoIPASNum.dat
 etc/ntop/GeoLiteCity.dat
@@ -486,27 +485,4 @@ man/man8/ntop.8.gz
 %%DATADIR%%/python/templates/rrdAlarmConfigurator.tmpl
 %%DATADIR%%/python/templates/rrdAlarmConfiguratorHelp.tmpl
 %%DATADIR%%/python/templates/rrdAlarmStart.tmpl
-@dirrm lib/ntop/plugins
-@dirrm lib/ntop
-@dirrm etc/ntop
-@dirrm %%DATADIR%%/python/templates
-@dirrm %%DATADIR%%/python/rrdalarm/scripts
-@dirrm %%DATADIR%%/python/rrdalarm
-@dirrm %%DATADIR%%/python/json/iphone
-@dirrm %%DATADIR%%/python/json
-@dirrm %%DATADIR%%/python/docs/src
-@dirrm %%DATADIR%%/python/docs
-@dirrm %%DATADIR%%/python
-@dirrm %%DATADIR%%/html/statsicons/os
-@dirrm %%DATADIR%%/html/statsicons/flags
-@dirrm %%DATADIR%%/html/statsicons
-@dirrm %%DATADIR%%/html/jscalendar/lang
-@dirrm %%DATADIR%%/html/jscalendar
-@dirrm %%DATADIR%%/html/jqplot/plugins
-@dirrm %%DATADIR%%/html/jqplot
-@dirrm %%DATADIR%%/html/img_inquisitor
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%
-@exec mkdir -p %%DBDIR%%/ntop
-@exec chown -R nobody:nobody %%DBDIR%%/ntop
-@dirrmtry %%DBDIR%%/ntop
+@dir(nobody,nobody,) %%DBDIR%%/ntop

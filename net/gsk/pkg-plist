@@ -199,18 +199,3 @@ libdata/pkgconfig/gsk-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial-httpserver.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial-server.html
 %%PORTDOCS%%%%DOCSDIR%%/html/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/gsk-1.0/gsk/zlib
-@dirrm include/gsk-1.0/gsk/xmlrpc
-@dirrm include/gsk-1.0/gsk/url
-@dirrm include/gsk-1.0/gsk/store
-@dirrm include/gsk-1.0/gsk/ssl
-@dirrm include/gsk-1.0/gsk/mime
-@dirrm include/gsk-1.0/gsk/http
-@dirrm include/gsk-1.0/gsk/hash
-@dirrm include/gsk-1.0/gsk/dns
-@dirrm include/gsk-1.0/gsk/control
-@dirrm include/gsk-1.0/gsk/common
-@dirrm include/gsk-1.0/gsk
-@dirrm include/gsk-1.0

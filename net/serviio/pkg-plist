@@ -36,8 +36,6 @@ bin/serviio-console
 %%JAVAJARDIR%%/serviio/streamflyer-core.jar
 %%JAVAJARDIR%%/serviio/winp.jar
 %%JAVAJARDIR%%/serviio/xstream.jar
-@dirrm %%JAVAJARDIR%%/serviio/plugins
-@dirrm %%JAVAJARDIR%%/serviio
 @unexec cmp %D/%%ETCDIR%%/application-profiles.xml %D/%%ETCDIR%%/application-profiles.dist.xml && rm -f %D/%%ETCDIR%%/application-profiles.xml || echo Modified application-profiles.xml remains in %D/%%ETCDIR%%
 @unexec cmp %D/%%ETCDIR%%/profiles.xml %D/%%ETCDIR%%/profiles.dist.xml && rm -f %D/%%ETCDIR%%/profiles.xml || echo Modified profiles.xml remains in %D/%%ETCDIR%%
 @unexec cmp %D/%%ETCDIR%%/log4j.xml %D/%%ETCDIR%%/log4j.dist.xml && rm -f %D/%%ETCDIR%%/log4j.xml || echo Modified log4j.xml remains in %D/%%ETCDIR%%
@@ -50,4 +48,4 @@ bin/serviio-console
 @exec [ -f %D/%%ETCDIR%%/profiles.xml ] || cp -v %D/%%ETCDIR%%/profiles.dist.xml %D/%%ETCDIR%%/profiles.xml
 @exec [ -f %D/%%ETCDIR%%/log4j.xml ] || cp -v %D/%%ETCDIR%%/log4j.dist.xml %D/%%ETCDIR%%/log4j.xml
 @exec [ -f %D/%%ETCDIR%%/console-log4j.properties ] || cp -v %D/%%ETCDIR%%/console-log4j.dist.properties %D/%%ETCDIR%%/console-log4j.properties
-@dirrmtry %%ETCDIR%%
+@dir %%JAVAJARDIR%%/serviio/plugins

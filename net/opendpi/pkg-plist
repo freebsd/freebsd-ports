@@ -9,5 +9,3 @@ lib/libopendpi.a
 lib/libopendpi.so
 lib/libopendpi.so.1
 lib/libopendpi.so.1.0.2
-@dirrm include/libopendpi-1.2/libopendpi
-@dirrm include/libopendpi-1.2

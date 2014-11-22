@@ -9,7 +9,3 @@ lib/libqoauth.so.1.0
 lib/libqoauth.so.1.0.1
 libdata/pkgconfig/qoauth.pc
 share/qt4/mkspecs/features/oauth.prf
-@dirrmtry share/qt4/mkspecs/features
-@dirrmtry share/qt4/mkspecs
-@dirrmtry share/qt4
-@dirrm include/QtOAuth

@@ -1,5 +1,3 @@
 bin/bmon
 man/man8/bmon.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/bmon.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -5,4 +5,3 @@ lib/libilbc.a
 lib/libilbc.so
 lib/libilbc.so.0
 lib/libilbc.so.0.0.0
-@dirrm include/ilbc

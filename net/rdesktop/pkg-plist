@@ -8,7 +8,6 @@ man/man1/rdesktop.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/licensing.txt
 %%PORTDOCS%%%%DOCSDIR%%/patches.txt
 %%PORTDOCS%%%%DOCSDIR%%/redirection.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/common
 %%DATADIR%%/keymaps/convert-map
@@ -50,5 +49,3 @@ man/man1/rdesktop.1.gz
 %%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
 %%DATADIR%%/keymaps/tr
-@dirrmtry %%DATADIR%%/keymaps
-@dirrmtry %%DATADIR%%

@@ -73,6 +73,3 @@ share/locale/sr/LC_MESSAGES/libgnetwork-1.0.mo
 share/locale/sr@Latn/LC_MESSAGES/libgnetwork-1.0.mo
 share/locale/sv/LC_MESSAGES/libgnetwork-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnetwork-1.0.mo
-@dirrm %%DOCSDIR%%
-@dirrm include/libgnetwork-1.0/libgnetwork
-@dirrm include/libgnetwork-1.0

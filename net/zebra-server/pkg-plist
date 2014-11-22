@@ -242,19 +242,3 @@ share/idzebra-2.0/tab/wais-variant.est
 share/idzebra-2.0/tab/wais.abs
 share/idzebra-2.0/tab/words-icu-da.xml
 share/idzebra-2.0/tab/words-icu.xml
-@dirrm share/idzebra-2.0/tab
-@dirrm share/idzebra-2.0-examples/oai-pmh/data
-@dirrm share/idzebra-2.0-examples/oai-pmh/conf
-@dirrm share/idzebra-2.0-examples/oai-pmh
-@dirrm share/idzebra-2.0-examples/marcxml
-@dirrm share/idzebra-2.0-examples/marc21
-@dirrm share/idzebra-2.0-examples/gils/records
-@dirrm share/idzebra-2.0-examples/gils
-@dirrm share/idzebra-2.0-examples
-@dirrm share/idzebra-2.0
-@dirrm share/doc/idzebra-2.0/common
-@dirrm share/doc/idzebra-2.0
-@dirrm lib/idzebra-2.0/modules
-@dirrm lib/idzebra-2.0
-@dirrm include/idzebra-2.0/idzebra
-@dirrm include/idzebra-2.0

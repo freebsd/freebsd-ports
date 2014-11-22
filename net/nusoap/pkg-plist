@@ -36,5 +36,3 @@
 %%EXAMPLESDIR%%/wsdlclient7.php
 %%EXAMPLESDIR%%/wsdlclient8.php
 %%EXAMPLESDIR%%/wsdlclient9.php
-@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DATADIR%%

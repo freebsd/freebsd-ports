@@ -27,8 +27,3 @@ lib/ldapbrowser/templates/person.template
 lib/ldapbrowser/templates/organizationalUnit.template
 lib/ldapbrowser/uofmichigan.cfg
 lib/ldapbrowser/uofmichigan.cfg.sample
-@dirrm lib/ldapbrowser/templates
-@dirrm lib/ldapbrowser/lib
-@dirrm lib/ldapbrowser/help
-@dirrm lib/ldapbrowser/applet
-@dirrm lib/ldapbrowser

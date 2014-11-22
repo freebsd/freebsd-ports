@@ -19,6 +19,3 @@ man/man1/ssvncviewer.1.gz
 share/applications/ssvnc.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/stunnel-server.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/ssvnc/util
-@dirrmtry lib/ssvnc

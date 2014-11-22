@@ -47,9 +47,3 @@ share/icons/hicolor/scalable/apps/uget-icon.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/uget.mo
 share/pixmaps/uget/logo.png
 share/sounds/uget/notification.wav
-%%NLS%%@dirrmtry share/locale/bn_BD/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bn_BD
-%%NLS%%@dirrmtry share/locale/ka_GE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ka_GE
-@dirrm share/pixmaps/uget
-@dirrm share/sounds/uget

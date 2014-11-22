@@ -154,5 +154,3 @@
 %%PYTHON_SITELIBDIR%%/pcs/packets/vlan.pyo
 %%PYTHON_SITELIBDIR%%/pcs/clock.so
 %%PYTHON_SITELIBDIR%%/pcs/pcap.so
-@dirrm %%PYTHON_SITELIBDIR%%/pcs/packets
-@dirrm %%PYTHON_SITELIBDIR%%/pcs

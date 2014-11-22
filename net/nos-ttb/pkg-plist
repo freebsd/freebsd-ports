@@ -1,4 +1,3 @@
 bin/ttb
 share/ttb/ttb.glade
 share/ttb/ttb.png
-@dirrm share/ttb

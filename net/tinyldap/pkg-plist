@@ -21,4 +21,3 @@ sbin/tinyldap_standalone
 %%PORTDOCS%%%%DOCSDIR%%/RFCs
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

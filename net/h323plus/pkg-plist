@@ -117,13 +117,3 @@ lib/libh323.so.1
 lib/libh323.so
 lib/libopenh323.so
 share/openh323/openh323u.mak
-@dirrmtry include/openh323/codec
-@dirrmtry include/openh323/h224
-@dirrmtry include/openh323/h230
-@dirrmtry include/openh323/h235
-@dirrmtry include/openh323/h341
-@dirrmtry include/openh323/h350
-@dirrmtry include/openh323/h450
-@dirrmtry include/openh323/h460
-@dirrmtry include/openh323
-@dirrmtry share/openh323

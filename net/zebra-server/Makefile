@@ -3,7 +3,7 @@
 
 PORTNAME=	zebra-server
 PORTVERSION=	2.0.55
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
 DISTNAME=	idzebra-${PORTVERSION}
@@ -19,7 +19,8 @@ CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \
 		--with-tclconfig=${TCL_LIBDIR} \
 		--with-iconv=${ICONV_PREFIX} --with-expat=${LOCALBASE}
 INSTALL_TARGET=	install-strip
-USES=		iconv libtool tcl
+USES=		iconv libtool shebangfix tcl
+SHEBANG_FILES=	util/idzebra-abs2dom
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

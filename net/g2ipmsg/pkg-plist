@@ -9,5 +9,3 @@ share/pixmaps/g2ipmsg/ipmsg.xpm
 share/pixmaps/g2ipmsg/ipmsgrev.xpm
 share/pixmaps/ipmsg.png
 share/sounds/g2ipmsg/g2ipmsg.ogg
-@dirrm share/sounds/g2ipmsg
-@dirrm share/pixmaps/g2ipmsg

@@ -96,13 +96,3 @@ man/man1/google.1.gz
 %%PYTHON_SITELIBDIR%%/googlecl/youtube/service.py
 %%PYTHON_SITELIBDIR%%/googlecl/youtube/service.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/youtube/service.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl/youtube
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl/picasa
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl/finance
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl/docs
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl/discovery
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl/contacts
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl/config
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl/calendar
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl/blogger
-@dirrm %%PYTHON_SITELIBDIR%%/googlecl

@@ -38,11 +38,3 @@ lib/erlang/lib/ranch-%%VERSION%%/src/ranch_transport.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_reverse/src/tcp_reverse.app.src
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_reverse/src/tcp_reverse_app.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_reverse/src/tcp_reverse_sup.erl
-@dirrm lib/erlang/lib/ranch-%%VERSION%%/src
-@dirrm lib/erlang/lib/ranch-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/ranch-%%VERSION%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tcp_reverse/src
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tcp_reverse
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tcp_echo/src
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tcp_echo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

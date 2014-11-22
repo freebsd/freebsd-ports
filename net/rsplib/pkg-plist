@@ -352,6 +352,3 @@ share/fgpconfig/input-249.fsf
 share/fgpconfig/input-250.fsf
 share/fractalpooluser/fractalpooluser_de_DE.qm
 share/fractalpooluser/fractalpooluser_nb_NO.qm
-@dirrm share/fractalpooluser
-@dirrm share/fgpconfig
-@dirrm include/rserpool

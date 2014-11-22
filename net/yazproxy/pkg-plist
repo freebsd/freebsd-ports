@@ -50,8 +50,3 @@ lib/yazproxy/mod_proxy_sample.so
 %%DATADIR%%/yazproxyctl.sh
 %%DATADIR%%/zeerex-2.0.xsd
 man/man8/yazproxy.8.gz
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/common
-@dirrm %%DOCSDIR%%
-@dirrm lib/yazproxy
-@dirrm include/yazproxy

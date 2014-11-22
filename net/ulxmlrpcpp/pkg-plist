@@ -52,7 +52,3 @@ lib/libulxmlrpcpp_contrib.so.24.0.1
 libdata/pkgconfig/ulxmlrpcpp.pc
 %%DATADIR%%/httpd/index.html
 %%DATADIR%%/httpd/logo-ulxmlrpcpp.png
-@dirrm %%DATADIR%%/httpd
-@dirrm %%DATADIR%%
-@dirrm include/ulxmlrpcpp/contrib
-@dirrm include/ulxmlrpcpp

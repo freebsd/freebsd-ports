@@ -175,7 +175,3 @@ sbin/cnid_metad
 %%TIMELORD%%sbin/timelord
 share/aclocal/netatalk.m4
 %%APPLETALK%%%%DATADIR%%/pagecount.ps
-%%APPLETALK%%@dirrm share/netatalk
-@dirrm include/netatalk
-@dirrm include/atalk
-@dirrm libexec/netatalk-uams

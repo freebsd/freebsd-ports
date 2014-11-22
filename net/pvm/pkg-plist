@@ -243,9 +243,3 @@ man/man3/pvmftidtoh.3.gz
 man/man3/pvmftrecv.3.gz
 man/man3/pvmfunpack.3.gz
 man/man3/pvmfupkmesg.3.gz
-@dirrm lib/pvm/lib/FREEBSD
-@dirrm lib/pvm/lib
-@dirrm lib/pvm/conf
-@dirrm lib/pvm/bin/FREEBSD
-@dirrm lib/pvm/bin
-@dirrm lib/pvm
