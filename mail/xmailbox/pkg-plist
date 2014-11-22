@@ -5,5 +5,3 @@ man/man1/xmailbox.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/dingdong.au
 %%DATADIR%%/ugotmail.au
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

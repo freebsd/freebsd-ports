@@ -37,7 +37,3 @@ share/emacs/site-lisp/notmuch-version.el
 share/emacs/site-lisp/notmuch-wash.el
 share/emacs/site-lisp/notmuch.el
 share/zsh/functions/Completion/Unix/_notmuch
-@dirrmtry share/zsh/functions/Completion/Unix
-@dirrmtry share/zsh/functions/Completion
-@dirrmtry share/zsh/functions
-@dirrmtry share/zsh

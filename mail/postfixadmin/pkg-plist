@@ -182,17 +182,3 @@ www/postfixadmin/xmlrpc.php
 %%PORTDOCS%%%%DOCSDIR%%/screenshots/postfixadmin-user-change-forward.jpg
 %%PORTDOCS%%%%DOCSDIR%%/screenshots/postfixadmin-user-overview.jpg
 %%PORTDOCS%%%%DOCSDIR%%/screenshots/postfixadmin-user-vacation.jpg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/screenshots
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm www/postfixadmin/ADDITIONS/cyrus
-@dirrm www/postfixadmin/ADDITIONS
-@dirrm www/postfixadmin/VIRTUAL_VACATION/tests
-@dirrm www/postfixadmin/VIRTUAL_VACATION
-@dirrm www/postfixadmin/admin
-@dirrm www/postfixadmin/css
-@dirrm www/postfixadmin/images
-@dirrm www/postfixadmin/languages
-@dirrm www/postfixadmin/model/
-@dirrm www/postfixadmin/templates
-@dirrm www/postfixadmin/users
-@dirrm www/postfixadmin

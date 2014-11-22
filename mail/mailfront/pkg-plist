@@ -64,6 +64,3 @@ libexec/mailfront/protocol-smtp.so
 %%PORTDOCS%%%%DOCSDIR%%/protocol-qmtp.html
 %%PORTDOCS%%%%DOCSDIR%%/protocol-smtp.html
 %%PORTDOCS%%%%DOCSDIR%%/std-handle.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/mailfront
-@dirrm include/mailfront

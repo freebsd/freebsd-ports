@@ -67,10 +67,3 @@ man/man5/mu-bookmarks.5.gz
 %%GUILE%%%%DATADIR%%/scripts/msgs-per-month.scm
 %%GUILE%%%%DATADIR%%/scripts/msgs-per-year.scm
 %%GUILE%%%%DATADIR%%/scripts/msgs-per-year-month.scm
-%%GUILE%%@dirrm %%DATADIR%%/scripts
-%%GUILE%%@dirrm %%DATADIR%%
-%%GUILE%%@dirrm share/guile/site/2.0/mu
-%%GUILE%%@dirrmtry share/guile/site/2.0
-%%GUILE%%@dirrmtry share/guile/site
-%%GUILE%%@dirrmtry share/guile
-%%MU4E%%@dirrm %%EMACS_SITE_LISPDIR%%/mu4e

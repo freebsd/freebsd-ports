@@ -10,5 +10,3 @@ man/man1/maildirsync.1.gz
 %%EXAMPLESDIR%%/mailbalance/mailbalance.conf
 %%EXAMPLESDIR%%/mailbalance/scoop_users.pl
 %%EXAMPLESDIR%%/mailbalance/todo.txt
-@dirrm %%EXAMPLESDIR%%/mailbalance
-@dirrm %%EXAMPLESDIR%%

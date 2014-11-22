@@ -39,9 +39,3 @@ bin/vqadmin
 %%CGIBINDIR%%/vqadmin/vqadmin.acl
 %%CGIBINDIR%%/vqadmin/vqadmin.cgi
 %%WEBDATADIR%%/images/vqadmin/vqadmin.css
-@dirrm %%CGIBINDIR%%/vqadmin/html
-@dirrm %%CGIBINDIR%%/vqadmin
-@dirrm %%WEBDATADIR%%/images/vqadmin
-@dirrm %%WEBDATADIR%%/images
-@dirrmtry %%CGIBINDIR%%
-@dirrmtry %%WEBDATADIR%%

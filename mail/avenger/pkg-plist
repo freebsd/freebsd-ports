@@ -37,5 +37,3 @@ sbin/asmtpd
 %%DATADIR%%/avsendmail.m4
 %%DATADIR%%/smtp-filter.pf
 share/pf.os
-@dirrm %%DATADIR%%
-@dirrmtry %%ETCDIR%%

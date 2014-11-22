@@ -19,5 +19,3 @@ sbin/opendmarc-import
 sbin/opendmarc-importstats
 sbin/opendmarc-params
 sbin/opendmarc-reports
-@dirrm include/opendmarc
-@dirrmtry etc/mail

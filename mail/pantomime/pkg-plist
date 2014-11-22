@@ -86,13 +86,3 @@ GNUstep/Local/Library/Headers/Pantomime
 GNUstep/Local/Library/Libraries/libPantomime.so
 GNUstep/Local/Library/Libraries/libPantomime.so.%%LIBVERSION%%
 GNUstep/Local/Library/Libraries/libPantomime.so.%%VERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/Resources/German.lproj
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/Resources/English.lproj
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/Resources
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/German.lproj
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/English.lproj
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions
-@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework

@@ -5,4 +5,3 @@ bin/spamdb-curses
 %%PYTHON_SITELIBDIR%%/spamdbcurses/__init__.pyc
 %%PYTHON_SITELIBDIR%%/spamdbcurses/OrderedDict.pyo
 %%PYTHON_SITELIBDIR%%/spamdbcurses/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/spamdbcurses

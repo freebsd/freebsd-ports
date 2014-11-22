@@ -8,8 +8,6 @@ man/man8/noattach.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/noattach.patterns
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/noattach.patterns.johncon
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

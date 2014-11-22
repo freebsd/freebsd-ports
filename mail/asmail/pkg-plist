@@ -68,8 +68,3 @@ man/man5/asmailrc.5.gz
 %%DATADIR%%/sounds/drip.au
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/asmailrc.sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%

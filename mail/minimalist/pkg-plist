@@ -11,6 +11,3 @@ share/minimalist/sample/config
 share/minimalist/sample/footer
 share/minimalist/sample/info
 share/minimalist/virtual-domains.txt
-@dirrm share/minimalist/FAQ
-@dirrm share/minimalist/sample
-@dirrmtry share/minimalist

@@ -165,16 +165,4 @@ lib/pronto/pixmaps/pro/vfolder.xpm
 lib/pronto/pixmaps/splash.xpm
 lib/pronto/pronto.gtkrc
 lib/pronto/prontolib.pl
-@dirrm lib/pronto/pixmaps/pro
-@dirrm lib/pronto/pixmaps/penguin
-@dirrm lib/pronto/pixmaps/neon
-@dirrm lib/pronto/pixmaps/aqua
-@dirrm lib/pronto/pixmaps
-@dirrm lib/pronto/migration-scripts
-@dirrm lib/pronto/docs/images
-@dirrm lib/pronto/docs
-@dirrm lib/pronto/Prontocrypt
-@dirrm lib/pronto/Pronto/Data
-@dirrm lib/pronto/Pronto/Crypt
-@dirrm lib/pronto/Pronto
-@dirrm lib/pronto
+@dir lib/pronto/Prontocrypt

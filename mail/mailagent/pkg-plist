@@ -75,15 +75,3 @@ man/man1/package.1.gz
 %%EXAMPLESDIR%%/misc/unkit/newcmd.cf
 %%EXAMPLESDIR%%/misc/unkit/rules
 %%EXAMPLESDIR%%/misc/unkit/unkit.pl
-@dirrm %%EXAMPLESDIR%%/agent
-@dirrm %%EXAMPLESDIR%%/misc/unkit
-@dirrm %%EXAMPLESDIR%%/misc/shell
-@dirrm %%EXAMPLESDIR%%/misc/pbounce
-@dirrm %%EXAMPLESDIR%%/misc/news
-@dirrm %%EXAMPLESDIR%%/misc/mime
-@dirrm %%EXAMPLESDIR%%/misc/getcost
-@dirrm %%EXAMPLESDIR%%/misc/fakesend
-@dirrm %%EXAMPLESDIR%%/misc
-@dirrm %%EXAMPLESDIR%%
-@dirrm lib/mailagent/help
-@dirrm lib/mailagent

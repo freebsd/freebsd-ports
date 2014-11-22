@@ -6,4 +6,3 @@ man/man1/annoyance-filter.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/annoyance-filter.pdf
 %%PORTDOCS%%%%DOCSDIR%%/statlib.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

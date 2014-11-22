@@ -5,4 +5,3 @@ man/man1/nohtml.1.gz
 %%PORTDOCS%%share/doc/nohtml/nohtml.pdf
 %%PORTDOCS%%share/doc/nohtml/nohtml.ps
 %%PORTDOCS%%share/doc/nohtml/nohtml.txt
-%%PORTDOCS%%@dirrm share/doc/nohtml

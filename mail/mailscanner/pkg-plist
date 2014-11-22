@@ -551,29 +551,3 @@ sbin/MailScanner
 %%PORTDOCS%%%%DOCSDIR%%/Sophos.install.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/reports/sk
-@dirrm %%DATADIR%%/reports/se
-@dirrm %%DATADIR%%/reports/ro
-@dirrm %%DATADIR%%/reports/pt_br
-@dirrm %%DATADIR%%/reports/nl
-@dirrm %%DATADIR%%/reports/it
-@dirrm %%DATADIR%%/reports/hu
-@dirrm %%DATADIR%%/reports/fr
-@dirrm %%DATADIR%%/reports/es
-@dirrm %%DATADIR%%/reports/en
-@dirrm %%DATADIR%%/reports/dk
-@dirrm %%DATADIR%%/reports/de
-@dirrm %%DATADIR%%/reports/cz
-@dirrm %%DATADIR%%/reports/cy+en
-@dirrm %%DATADIR%%/reports/ca
-@dirrm %%DATADIR%%/reports
-@dirrm %%DATADIR%%
-@dirrm libexec/MailScanner
-@dirrm lib/MailScanner/MailScanner/CustomFunctions
-@dirrm lib/MailScanner/MailScanner
-@dirrm lib/MailScanner
-@dirrmtry %%ETCDIR%%/conf.d
-@dirrmtry %%ETCDIR%%/mcp
-@dirrmtry %%ETCDIR%%/rules
-@dirrmtry %%ETCDIR%%

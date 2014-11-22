@@ -203,6 +203,3 @@ man/man1/smew.1.gz
 %%EMACS_SITE_LISPDIR%%/mew/mew-win32.elc
 %%EMACS_SITE_LISPDIR%%/mew/mew.el
 %%EMACS_SITE_LISPDIR%%/mew/mew.elc
-@dirrm %%EMACS_SITE_LISPDIR%%/mew/etc
-@dirrm %%EMACS_SITE_LISPDIR%%/mew
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

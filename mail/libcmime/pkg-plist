@@ -13,4 +13,3 @@ lib/libcmime.so
 lib/libcmime.so.0.1
 lib/libcmime.so.0.1.11
 libdata/pkgconfig/libcmime.pc
-@dirrm include/cmime

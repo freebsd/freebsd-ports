@@ -11,4 +11,3 @@ man/man5/automx_script.5.gz
 %%PYTHON_SITELIBDIR%%/automx/config.py
 %%PYTHON_SITELIBDIR%%/automx/ordereddict.py
 %%PYTHON_SITELIBDIR%%/automx/view.py
-@dirrm %%PYTHON_SITELIBDIR%%/automx

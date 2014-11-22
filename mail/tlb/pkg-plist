@@ -10,4 +10,3 @@ bin/mungelist
 %%PORTDOCS%%share/doc/tlb/complete.tlb
 %%PORTDOCS%%share/doc/tlb/mj.tlb
 %%PORTDOCS%%share/doc/tlb/simple.tlb
-%%PORTDOCS%%@dirrm share/doc/tlb
