@@ -71,6 +71,8 @@ post-patch:
 		${WRKSRC}/${PORTNAME} \
 		${WRKSRC}/${PORTNAME}.cgi
 	@${REINPLACE_CMD} \
+		-e '\|user *= *nobody|s|nobody|www|' \
+		-e '\|group *= *nobody|s|nobody|www|' \
 		-e 's|^\(base_dir *= *\).*|\1${WWWDIR}/|' \
 		-e 's|^\(base_lib *= *\).*|\1${DBDIR}/|' \
 		-e 's|^\(base_cgi *= *\).*|\1${CGIPATH}/|' \
