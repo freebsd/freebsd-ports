@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc5
-PORTVERSION=	5.0.s20141109
+PORTVERSION=	5.0.s20141116
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -49,10 +49,6 @@ OPTIONS_DEFAULT_amd64=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1000000
-IGNORE=                fails to build, fix pending
-.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
