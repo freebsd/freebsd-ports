@@ -4,4 +4,3 @@ man/man5/ptpd2.conf.5.gz
 %%ETCDIR%%/client-e2e-8023.conf.sample
 %%ETCDIR%%/client-e2e-pcap.conf.sample
 %%ETCDIR%%/client-e2e-socket.conf.sample
-@dirrmtry %%ETCDIR%%

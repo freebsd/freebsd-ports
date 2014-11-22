@@ -9,4 +9,3 @@ sbin/l4ip
 %%EXAMPLESDIR%%/ldap.conf
 %%EXAMPLESDIR%%/ldap1.conf
 %%EXAMPLESDIR%%/ldap2.conf
-@dirrm %%EXAMPLESDIR%%

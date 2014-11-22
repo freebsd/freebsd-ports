@@ -370,33 +370,3 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/neubot/www/test/speedtest.html
 %%DATADIR%%/neubot/www/test/speedtest.json
 %%DATADIR%%/neubot/www/update.html
-@dirrm %%DATADIR%%/neubot/www/test
-@dirrm %%DATADIR%%/neubot/www/lang
-@dirrm %%DATADIR%%/neubot/www/js
-@dirrm %%DATADIR%%/neubot/www/img
-@dirrm %%DATADIR%%/neubot/www/css
-@dirrm %%DATADIR%%/neubot/www
-@dirrm %%DATADIR%%/neubot/updater
-@dirrm %%DATADIR%%/neubot/speedtest
-@dirrm %%DATADIR%%/neubot/simplejson
-@dirrm %%DATADIR%%/neubot/rendezvous
-@dirrm %%DATADIR%%/neubot/notifier
-@dirrm %%DATADIR%%/neubot/net
-@dirrm %%DATADIR%%/neubot/negotiate
-@dirrm %%DATADIR%%/neubot/main
-@dirrm %%DATADIR%%/neubot/http
-@dirrm %%DATADIR%%/neubot/debug
-@dirrm %%DATADIR%%/neubot/database
-@dirrm %%DATADIR%%/neubot/bittorrent
-@dirrm %%DATADIR%%/neubot/api
-@dirrm %%DATADIR%%/neubot
-@dirrm %%DATADIR%%/mod_dash
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
-@dirrmtry etc/neubot

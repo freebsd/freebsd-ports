@@ -293,18 +293,3 @@ include/asio/windows/stream_handle.hpp
 include/asio/windows/stream_handle_service.hpp
 include/asio/write.hpp
 include/asio/write_at.hpp
-@dirrm include/asio/windows
-@dirrm include/asio/ssl/detail
-@dirrm include/asio/ssl
-@dirrm include/asio/posix
-@dirrm include/asio/local/detail/impl
-@dirrm include/asio/local/detail
-@dirrm include/asio/local
-@dirrm include/asio/ip/impl
-@dirrm include/asio/ip/detail/impl
-@dirrm include/asio/ip/detail
-@dirrm include/asio/ip
-@dirrm include/asio/impl
-@dirrm include/asio/detail/impl
-@dirrm include/asio/detail
-@dirrm include/asio

@@ -271,16 +271,3 @@ man/man4/wireshark-filter.4.gz
 %%DATADIR%%/wireshark-filter.html
 %%DATADIR%%/wireshark.html
 %%DATADIR%%/ws.css
-@dirrm lib/wireshark/plugins/%%PORTVERSION%%
-@dirrm lib/wireshark/plugins
-@dirrm lib/wireshark
-@dirrm %%DATADIR%%/wimaxasncp
-@dirrm %%DATADIR%%/tpncp
-@dirrm %%DATADIR%%/radius
-@dirrm %%DATADIR%%/profiles/Classic
-@dirrm %%DATADIR%%/profiles/Bluetooth
-@dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/dtds
-@dirrm %%DATADIR%%/diameter
-@dirrm %%DATADIR%%

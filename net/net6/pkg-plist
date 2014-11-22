@@ -41,6 +41,3 @@ libdata/pkgconfig/net6-1.3.pc
 %%NLS%%share/locale/sv/LC_MESSAGES/net6.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/net6.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/net6.mo
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-@dirrm include/net6

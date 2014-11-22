@@ -95,7 +95,3 @@ bin/pmf
 %%DATADIR%%/helpfiles/substitute_history
 %%DATADIR%%/helpfiles/variables
 %%DATADIR%%/helpfiles/verbose
-@dirrm %%DATADIR%%/helpfiles
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

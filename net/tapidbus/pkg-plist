@@ -3,5 +3,3 @@ lib/libtapidbus-0.2.so
 lib/libtapidbus-0.2.so.0
 lib/libtapidbus-0.2.so.0.0.0
 libdata/pkgconfig/tapidbus-0.2.pc
-@dirrm include/tapidbus-0.2/tapidbus
-@dirrm include/tapidbus-0.2

@@ -5,4 +5,3 @@ man/man1/cvsup.1.gz
 man/man8/cvsupd.8.gz
 sbin/cvsupd
 share/cvsup/License
-@dirrm share/cvsup

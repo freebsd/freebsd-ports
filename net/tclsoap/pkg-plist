@@ -16,5 +16,3 @@ lib/tclsoap/rpcvar.tcl
 lib/tclsoap/smtp.tcl
 lib/tclsoap/utils.tcl
 lib/tclsoap/xpath.tcl
-@dirrmtry lib/tclsoap/interop
-@dirrmtry lib/tclsoap

@@ -7,5 +7,3 @@ man/man1/hlmaster.list.1.gz
 %%PORTEXAMPLES%%share/examples/hlmaster/filter.list
 %%PORTEXAMPLES%%share/examples/hlmaster/server.list
 %%PORTEXAMPLES%%share/examples/hlmaster/woncomm.lst
-%%PORTEXAMPLES%%@dirrm share/examples/hlmaster
-%%PORTDOCS%%@dirrm share/doc/hlmaster

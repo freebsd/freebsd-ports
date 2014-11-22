@@ -10,4 +10,3 @@ man/man1/arp-scan.1.gz
 man/man1/get-iab.1.gz
 man/man1/get-oui.1.gz
 man/man5/mac-vendor.5.gz
-@dirrm %%DATADIR%%

@@ -6,7 +6,6 @@ bin/repoutil
 %%PYTHON_SITELIBDIR%%/reposadolib/reposadocommon.py
 %%PYTHON_SITELIBDIR%%/reposadolib/reposadocommon.pyc
 %%PYTHON_SITELIBDIR%%/reposadolib/reposadocommon.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/reposadolib
 %%PORTDOCS%%%%DOCSDIR%%/client_configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/getting_started.txt
 %%PORTDOCS%%%%DOCSDIR%%/reference.txt
@@ -16,4 +15,3 @@ bin/repoutil
 %%PORTDOCS%%%%DOCSDIR%%/reposado_py2exe.txt
 %%PORTDOCS%%%%DOCSDIR%%/URL_rewrites.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

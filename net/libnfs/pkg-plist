@@ -9,4 +9,3 @@ include/nfsc/libnfs-raw-rquota.h
 include/nfsc/libnfs-raw.h
 include/nfsc/libnfs.h
 libdata/pkgconfig/libnfs.pc
-@dirrm include/nfsc

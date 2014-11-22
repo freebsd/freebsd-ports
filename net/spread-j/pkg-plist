@@ -2,5 +2,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Flooder.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/recThread.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/User.java
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

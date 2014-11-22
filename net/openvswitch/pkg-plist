@@ -85,22 +85,6 @@ share/openvswitch/scripts/ovs-bugtool-coverage-show
 share/openvswitch/scripts/ovs-bugtool-vsctl-show
 share/openvswitch/scripts/ovs-bugtool-daemons-ver
 share/openvswitch/scripts/ovs-bugtool-bond-show
-@dirrmtry var/log/openvswitch
-@dirrmtry var/log
-@dirrmtry var/lib/openvswitch/pki
-@dirrmtry var/lib/openvswitch
-@dirrmtry var/lib
-@dirrmtry var/run/openvswitch
-@dirrmtry var/run
-@dirrmtry var
-@dirrmtry share/openvswitch/scripts
-@dirrmtry share/openvswitch/python/ovstest
-@dirrmtry share/openvswitch/python/ovs/db
-@dirrmtry share/openvswitch/python/ovs
-@dirrmtry share/openvswitch/python
-@dirrmtry share/openvswitch/bugtool-plugins/system-logs
-@dirrmtry share/openvswitch/bugtool-plugins/system-configuration
-@dirrmtry share/openvswitch/bugtool-plugins/network-status
-@dirrmtry share/openvswitch/bugtool-plugins/kernel-info
-@dirrmtry share/openvswitch/bugtool-plugins
-@dirrmtry share/openvswitch
+@dir var/lib/openvswitch/pki
+@dir var/log/openvswitch
+@dir var/run/openvswitch

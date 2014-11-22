@@ -1,4 +1,3 @@
 bin/shmux
 %%EXAMPLESDIR%%/mcmd.sh
-@dirrm %%EXAMPLESDIR%%
 man/man1/shmux.1.gz

@@ -13,6 +13,3 @@ man/man1/x11vnc.1.gz
 %%DATADIR%%/classes/VncViewer.jar
 %%DATADIR%%/classes/index.vnc
 share/applications/x11vnc.desktop
-@dirrm %%DATADIR%%/classes/ssl
-@dirrm %%DATADIR%%/classes
-@dirrm %%DATADIR%%

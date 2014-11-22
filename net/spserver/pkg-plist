@@ -37,4 +37,3 @@ lib/libspopenssl.so
 lib/libspopenssl.so.1
 lib/libspserver.so
 lib/libspserver.so.1
-@dirrm include/spserver

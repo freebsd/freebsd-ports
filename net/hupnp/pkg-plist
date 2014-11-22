@@ -112,6 +112,3 @@ lib/libQtSolutions_SOAP-2.7.so
 lib/libQtSolutions_SOAP-2.7.so.1
 lib/libQtSolutions_SOAP-2.7.so.1.0
 lib/libQtSolutions_SOAP-2.7.so.1.0.0
-@dirrm include/HUpnpCore/public
-@dirrm include/HUpnpCore/private
-@dirrm include/HUpnpCore

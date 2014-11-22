@@ -1,3 +1,2 @@
 bin/wmnetload
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

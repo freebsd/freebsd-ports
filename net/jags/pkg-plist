@@ -67,11 +67,5 @@ bin/fixsmbcop
 %%DATADIR%%/sounds/share2.ogg
 %%DATADIR%%/sounds/unmall2.ogg
 %%DATADIR%%/jags.conf.sample
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/plugins/samba-2.0.7.plugin
-@dirrm %%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin
-@dirrm %%DATADIR%%/plugins/offline.plugin
-@dirrm %%DATADIR%%/plugins/freebsd-samba-2.0.7.plugin
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/plugins/freebsd-samba-2.0.7.plugin
+@dir %%DATADIR%%/plugins/offline.plugin

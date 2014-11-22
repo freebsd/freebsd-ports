@@ -3,7 +3,7 @@
 
 PORTNAME=	rsplib
 PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.exp-math.uni-essen.de/~dreibh/rserpool/download/
 
@@ -17,7 +17,8 @@ CONFIGURE_ARGS=	--disable-maintainer-mode \
 		--enable-qt --with-qt-lib=${QT_LIBDIR} \
 		--with-qt-include=${QT_INCDIR}
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool
+USES=		gmake libtool shebangfix
+SHEBANG_FILES=	rsplib/scriptingserviceexample
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml moc_build
 

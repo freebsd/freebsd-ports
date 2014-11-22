@@ -14,5 +14,3 @@ share/google/google_daemon/manage_addresses.py
 share/google/google_daemon/manage_addresses.pyc
 share/google/google_daemon/utils.py
 share/google/google_daemon/utils.pyc
-@dirrmtry share/google/google_daemon
-@dirrmtry share/google

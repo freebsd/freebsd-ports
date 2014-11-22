@@ -19,5 +19,3 @@ man/man5/dotcache.5.gz
 man/man5/gofish.5.gz
 sbin/gofish
 sbin/gopherd
-@dirrm gopher/icons
-@dirrm gopher

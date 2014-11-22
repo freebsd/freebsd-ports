@@ -3,4 +3,3 @@ sbin/queso
 etc/queso.conf.sample
 @exec [ -f %B/queso.conf.sample ] || cp %B/%f %B/queso.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/Documentation.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

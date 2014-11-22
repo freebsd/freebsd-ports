@@ -104,4 +104,3 @@ lib/libxmlrpc_xmltok.a
 lib/libxmlrpc_xmltok.so
 lib/libxmlrpc_xmltok.so.3
 lib/libxmlrpc_xmltok.so.3.36
-@dirrm include/xmlrpc-c

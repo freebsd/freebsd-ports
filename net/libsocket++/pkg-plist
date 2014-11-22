@@ -13,5 +13,3 @@ include/socket++/sockinet.h
 include/socket++/sockstream.h
 include/socket++/sockunix.h
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/socket++

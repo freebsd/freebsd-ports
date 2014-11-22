@@ -190,7 +190,3 @@ lib/libgroupsock.so.1.0.1
 lib/libliveMedia.so
 lib/libliveMedia.so.16
 lib/libliveMedia.so.16.0.1
-@dirrm include/liveMedia
-@dirrm include/groupsock
-@dirrm include/UsageEnvironment
-@dirrm include/BasicUsageEnvironment

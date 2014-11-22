@@ -3,4 +3,3 @@ bin/xprobe2
 %%ETCDIR%%/xprobe2.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/xprobe2.conf ]; then cp -p %D/%F %B/xprobe2.conf; fi
 man/man1/xprobe2.1.gz
-@dirrm %%ETCDIR%%

@@ -5,4 +5,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/users.html
 %%PORTDOCS%%%%DOCSDIR%%/users.txt
 sbin/sprinkle.py
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

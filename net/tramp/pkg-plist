@@ -39,4 +39,3 @@
 %%TRAMP_LISPDIR%%/tramp-cache.elc
 %%TRAMP_LISPDIR%%/trampver.el
 %%TRAMP_LISPDIR%%/trampver.elc
-@dirrm %%TRAMP_LISPDIR%%

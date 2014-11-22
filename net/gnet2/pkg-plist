@@ -55,8 +55,3 @@ share/aclocal/gnet-2.0.m4
 %%PORTDOCS%%%%DOCSDIR%%/gnet/right.png
 %%PORTDOCS%%%%DOCSDIR%%/gnet/style.css
 %%PORTDOCS%%%%DOCSDIR%%/gnet/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/gnet
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/gnet-2.0/include
-@dirrm lib/gnet-2.0
-@dirrm include/gnet-2.0

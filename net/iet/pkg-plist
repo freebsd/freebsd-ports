@@ -1,5 +1,4 @@
 modules/iet.ko
-@exec mkdir -p %D/etc/iet
 @unexec if cmp -s %D/%%DATADIR%%/ietd.conf %D/etc/iet/ietd.conf ; then rm -f %D/etc/iet/ietd.conf ; fi
 %%DATADIR%%/ietd.conf
 @exec if [ ! -f %D/etc/iet/ietd.conf ]; then cp -p %D/%F %D/etc/iet/ietd.conf; fi
@@ -12,10 +11,9 @@ modules/iet.ko
 @unexec if cmp -s %D/%%DATADIR%%/targets.allow %D/etc/iet/targets.allow ; then rm -f %D/etc/iet/targets.allow ; fi
 %%DATADIR%%/targets.allow
 @exec if [ ! -f %D/etc/iet/targets.allow ]; then cp -p %D/%F %D/etc/iet/targets.allow; fi
-@dirrmtry etc/iet
-@dirrm %%DATADIR%%
 man/man5/ietd.conf.5.gz
 man/man8/ietadm.8.gz
 man/man8/ietd.8.gz
 sbin/ietd
 sbin/ietadm
+@dir etc/iet

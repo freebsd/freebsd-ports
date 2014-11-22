@@ -53,9 +53,6 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stream-sock-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/todo.cttproxy
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/internals
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/design-thoughts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-content-sw.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build.cfg
@@ -92,5 +89,3 @@ sbin/haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/503.http
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/504.http
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/README
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/errorfiles
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

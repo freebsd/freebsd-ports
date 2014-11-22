@@ -11,5 +11,3 @@ lib/liblinc.so.1
 lib/liblinc.so.1.0.0
 libdata/pkgconfig/linc.pc
 share/aclocal/linc.m4
-@dirrm include/linc-1.0/linc
-@dirrm include/linc-1.0

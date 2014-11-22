@@ -74,4 +74,3 @@ include/QTweetLib/qtweetusertimeline.h
 lib/libQTweetLib.so
 lib/libQTweetLib.so.1
 lib/libQTweetLib.so.1.0.0
-@dirrm include/QTweetLib

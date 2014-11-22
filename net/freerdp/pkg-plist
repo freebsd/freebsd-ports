@@ -278,15 +278,3 @@ lib/libwinpr-winsock.so.0.1.0
 %%X11%%lib/libxfreerdp-client.so.1.1.0
 libdata/pkgconfig/freerdp.pc
 %%X11%%man/man1/xfreerdp.1.gz
-@dirrmtry include/winpr
-@dirrmtry include/freerdp/utils
-@dirrmtry include/freerdp/server
-@dirrmtry include/freerdp/rail
-@dirrmtry include/freerdp/locale
-@dirrmtry include/freerdp/gdi
-@dirrmtry include/freerdp/crypto
-@dirrmtry include/freerdp/codec
-@dirrmtry include/freerdp/client
-@dirrmtry include/freerdp/channels
-@dirrmtry include/freerdp/cache
-@dirrmtry include/freerdp

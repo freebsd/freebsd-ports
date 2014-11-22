@@ -26,7 +26,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/tcp.html
 %%PORTDOCS%%%%DOCSDIR%%/udp.html
 %%PORTDOCS%%%%DOCSDIR%%/url.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LUA_MODLIBDIR%%/mime
-@dirrm %%LUA_MODLIBDIR%%/socket
-@dirrm %%LUA_MODSHAREDIR%%/socket

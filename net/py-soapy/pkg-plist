@@ -9,6 +9,3 @@
 %%PYTHON_SITELIBDIR%%/soap.py
 %%PYTHON_SITELIBDIR%%/soap.pyc
 %%PYTHON_SITELIBDIR%%/soap.pyo
-%%PORTEXAMPLES%%@dirrm share/examples/py-soapy/test
-%%PORTEXAMPLES%%@dirrm share/examples/py-soapy
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

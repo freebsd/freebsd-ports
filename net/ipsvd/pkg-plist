@@ -24,4 +24,3 @@ man/man8/udpsvd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/udpsvd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/usedietlibc.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

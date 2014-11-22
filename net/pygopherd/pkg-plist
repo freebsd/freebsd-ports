@@ -131,7 +131,4 @@ etc/pygopherd/mime.types
 %%PYTHON_SITELIBDIR%%/pygopherd/zipfile.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/zipfile.pyo
 man/man8/pygopherd.8.gz
-@dirrm %%PYTHON_SITELIBDIR%%/pygopherd/handlers
-@dirrm %%PYTHON_SITELIBDIR%%/pygopherd/protocols
-@dirrm %%PYTHON_SITELIBDIR%%/pygopherd
 @unexec rmdir %D/etc/pygopherd 2> /dev/null || echo "If you do not plan on reinstalling pygopherd, you can safely remove %D/etc/pygopherd"

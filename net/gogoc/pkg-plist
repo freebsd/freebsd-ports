@@ -5,5 +5,3 @@ man/man5/gogoc.conf.5.gz
 man/man8/gogoc.8.gz
 template/README
 template/freebsd.sh
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry template

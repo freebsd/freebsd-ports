@@ -54,7 +54,6 @@ bin/udt-test
 %%PORTDOCS%%%%DOCSDIR%%/doc/trace.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/select.htm
 %%PORTDOCS%%%%DOCSDIR%%/doc/tutorial.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%%%DOCSDIR%%/hlp/ix_end.gif
 %%PORTDOCS%%%%DOCSDIR%%/hlp/ix_list.gif
 %%PORTDOCS%%%%DOCSDIR%%/hlp/ix_link.gif
@@ -69,5 +68,3 @@ bin/udt-test
 %%PORTDOCS%%%%DOCSDIR%%/hlp/ix_open.gif
 %%PORTDOCS%%%%DOCSDIR%%/hlp/ix_listp.gif
 %%PORTDOCS%%%%DOCSDIR%%/hlp/ix_endp.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hlp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/

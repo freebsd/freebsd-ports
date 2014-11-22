@@ -38,6 +38,3 @@ lib/cmake/LibKVkontakte/LibKVkontakteTargets.cmake
 lib/libkvkontakte.so
 lib/libkvkontakte.so.1
 lib/libkvkontakte.so.1.0.0
-@dirrm lib/cmake/LibKVkontakte
-@dirrmtry lib/cmake
-@dirrm include/libkvkontakte
