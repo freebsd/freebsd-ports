@@ -9,6 +9,7 @@
     SUBDIR += R-cran-digest
     SUBDIR += aescrypt
     SUBDIR += aespipe
+    SUBDIR += afl
     SUBDIR += afterglow
     SUBDIR += aide
     SUBDIR += aimsniff
