@@ -1,0 +1,113 @@
+--- mutt.orig/buffy.c	2012-11-02 13:16:39.000000000 +0100
++++ mutt/buffy.c	2012-11-02 13:20:52.000000000 +0100
+@@ -26,6 +26,7 @@
+ #include "mx.h"
+ 
+ #include "mutt_curses.h"
++#include "sidebar.h"
+ 
+ #ifdef USE_IMAP
+ #include "imap.h"
+@@ -564,19 +565,28 @@
+       {
+       case M_MBOX:
+       case M_MMDF:
+-	buffy_mbox_update (tmp);
++	if (sidebar_should_refresh()) {
++	  buffy_mbox_update (tmp);
++	  sidebar_updated();
++	}
+ 	if (buffy_mbox_hasnew (tmp, &sb) > 0)
+ 	  BuffyCount++;
+ 	break;
+ 
+       case M_MAILDIR:
+-	buffy_maildir_update (tmp);
++	if (sidebar_should_refresh()) {
++	  buffy_maildir_update (tmp);
++	  sidebar_updated();
++	}
+ 	if (buffy_maildir_hasnew (tmp) > 0)
+ 	  BuffyCount++;
+ 	break;
+ 
+       case M_MH:
+-	mh_buffy_update (tmp->path, &tmp->msgcount, &tmp->msg_unread, &tmp->msg_flagged);
++	if (sidebar_should_refresh()) {
++	  mh_buffy_update (tmp->path, &tmp->msgcount, &tmp->msg_unread, &tmp->msg_flagged);
++	  sidebar_updated();
++	}
+ 	mh_buffy(tmp);
+ 	if (tmp->new)
+ 	  BuffyCount++;
+Index: mutt/globals.h
+===================================================================
+--- mutt.orig/globals.h	2012-11-02 13:16:39.000000000 +0100
++++ mutt/globals.h	2012-11-02 13:16:40.000000000 +0100
+@@ -214,6 +214,8 @@
+ WHERE struct buffy_t *CurBuffy INITVAL(0);
+ WHERE short DrawFullLine INITVAL(0);
+ WHERE short SidebarWidth;
++WHERE short SidebarRefresh;
++WHERE short SidebarLastRefresh;
+ #ifdef USE_IMAP
+ WHERE short ImapKeepalive;
+ WHERE short ImapPipelineDepth;
+Index: mutt/init.h
+===================================================================
+--- mutt.orig/init.h	2012-11-02 13:16:39.000000000 +0100
++++ mutt/init.h	2012-11-02 13:16:40.000000000 +0100
+@@ -2009,6 +2009,12 @@
+   { "sidebar_width", DT_NUM, R_BOTH, UL &SidebarWidth, 0 },
+   /*
+   ** .pp
++  ** Do not refresh sidebar in less than $sidebar_refresh seconds,
++  ** (0 disables refreshing).
++  */
++  { "sidebar_refresh", DT_NUM, R_BOTH, UL &SidebarRefresh, 60 },
++  /*
++  ** .pp
+   ** The width of the sidebar.
+   */
+   { "sidebar_shortpath", DT_BOOL, R_BOTH, OPTSIDEBARSHORTPATH, 0 },
+Index: mutt/sidebar.c
+===================================================================
+--- mutt.orig/sidebar.c	2012-11-02 13:16:39.000000000 +0100
++++ mutt/sidebar.c	2012-11-02 13:16:40.000000000 +0100
+@@ -252,6 +252,7 @@
+                 saveSidebarWidth = SidebarWidth;
+                 if(!option(OPTSIDEBAR)) SidebarWidth = 0;
+                 initialized = true;
++		SidebarLastRefresh = time(NULL);
+         }
+ 
+         /* save or restore the value SidebarWidth */
+@@ -464,3 +465,16 @@
+ 	set_curbuffy("");	/* default is the first mailbox */
+ 	draw_sidebar(menu);
+ }
++
++int sidebar_should_refresh()
++{
++	if (option(OPTSIDEBAR) && SidebarRefresh > 0) {
++		if (time(NULL) - SidebarLastRefresh >= SidebarRefresh)
++			return 1;
++	}
++	return 0;
++}
++void sidebar_updated()
++{
++	SidebarLastRefresh = time(NULL);
++}
+Index: mutt/sidebar.h
+===================================================================
+--- mutt.orig/sidebar.h	2012-11-02 13:16:39.000000000 +0100
++++ mutt/sidebar.h	2012-11-02 13:16:40.000000000 +0100
+@@ -32,5 +32,7 @@
+ void scroll_sidebar(int, int);
+ void set_curbuffy(char*);
+ void set_buffystats(CONTEXT*);
++int sidebar_should_refresh();
++void sidebar_updated();
+ 
+ #endif /* SIDEBAR_H */

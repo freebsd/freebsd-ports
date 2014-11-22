@@ -49,7 +49,6 @@ man/man5/muttrc.5.gz
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/security.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/tuning.html
 %%XML%%%%HTML%%%%COMPRESS%%%%PORTDOCS%%%%DOCSDIR%%/compressed-folders.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mush.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pine.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tin.rc
@@ -83,8 +82,6 @@ man/man5/muttrc.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-tlr
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smime.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smime_keys_test.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/iconv
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%NLS%%share/locale/bg/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/mutt.mo
