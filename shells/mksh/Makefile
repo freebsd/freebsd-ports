@@ -4,16 +4,15 @@
 PORTNAME=	mksh
 PORTVERSION=	50d
 DISTVERSIONPREFIX=	R
-DISTVERSION=	${DISTVERSIONPREFIX}${PORTVERSION}
 PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 		http://pub.allbsd.org/MirOS/dist/mir/mksh/
-DISTFILES=	${PORTNAME}-${DISTVERSION}.tgz
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	MirBSD Korn Shell
 
+USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
