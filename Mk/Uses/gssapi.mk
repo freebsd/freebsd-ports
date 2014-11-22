@@ -74,9 +74,6 @@
 .if !defined(_INCLUDE_USES_GSSAPI_MK)
 _INCLUDE_USES_GSSAPI_MK=	yes
 
-GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
-GSSAPIINCDIR=	${GSSAPIBASEDIR}/include
-
 _HEIMDAL_DEPENDS=${GSSAPILIBDIR}/libgssapi.so:${PORTSDIR}/security/heimdal
 _MITKRB5_DEPENDS=${GSSAPILIBDIR}/libkrb5support.so:${PORTSDIR}/security/krb5
 _HEADERS=	sys/types.h sys/stat.h stdint.h
@@ -89,31 +86,35 @@ _local:=	${_A}
 .if ${_local} == "base"
 HEIMDAL_HOME=	/usr
 GSSAPIBASEDIR=	${HEIMDAL_HOME}
+GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
+GSSAPIINCDIR=	${GSSAPIBASEDIR}/include
 _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
-GSSAPICPPFLAGS=	-I${GSSAPIINCDIR}
+GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILIBS=	-lkrb5 -lgssapi -lgssapi_krb5
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 .elif ${_local} == "heimdal"
 HEIMDAL_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${HEIMDAL_HOME}
+GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib/heimdal
+GSSAPIINCDIR=	${GSSAPIBASEDIR}/include/heimdal
+_HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 .if !defined(_KRB_BOOTSTRAP)
 BUILD_DEPENDS+=	${_HEIMDAL_DEPENDS}
 RUN_DEPENDS+=	${_HEIMDAL_DEPENDS}
-_HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 .else
 PREFIX=		${HEIMDAL_HOME}
 .endif
-GSSAPICPPFLAGS=	-I${GSSAPIINCDIR}
+GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILIBS=	-lkrb5 -lgssapi
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
 .elif ${_local} == "mit"
 KRB5_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${KRB5_HOME}
+_HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 .if !defined(_KRB_BOOTSTRAP)
 BUILD_DEPENDS+=	${_MITKRB5_DEPENDS}
 RUN_DEPENDS+=	${_MITKRB5_DEPENDS}
-_HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 .else
 PREFIX=		${KRB5_HOME}
 .endif

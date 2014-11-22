@@ -1,5 +1,5 @@
---- configure.orig	2014-08-30 19:16:38.000000000 +0900
-+++ configure	2014-08-30 19:18:12.000000000 +0900
+--- configure.orig	2014-10-20 14:24:44.000000000 +0900
++++ configure	2014-10-20 14:27:30.000000000 +0900
 @@ -9567,29 +9567,6 @@
        hardcode_shlibpath_var=no
        ;;
@@ -41,7 +41,15 @@
  freebsd* | dragonfly*)
    # DragonFly does not have aout.  When/if they implement a new
    # versioning mechanism, adjust this.
-@@ -10590,18 +10563,6 @@
+@@ -10572,7 +10545,6 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -10590,18 +10562,6 @@
    esac
    shlibpath_var=LD_LIBRARY_PATH
    case $host_os in
@@ -60,7 +68,7 @@
    *) # from 4.6 on, and DragonFly
      shlibpath_overrides_runpath=yes
      hardcode_into_libs=yes
-@@ -14227,7 +14188,7 @@
+@@ -14227,7 +14187,7 @@
  	native_pthread_support="netbsd 3 uses explict pthread"
  		PTHREAD_LIBADD="-lpthread"
  	;;
@@ -69,3 +77,12 @@
  	native_pthread_support=yes
  	PTHREAD_LIBADD="-pthread"
  	;;
+@@ -28245,7 +28205,7 @@
+ 
+ krb_cv_compile_et="no"
+ krb_cv_com_err_need_r=""
+-krb_cv_compile_et_cross=no
++krb_cv_compile_et_cross=yes
+ if test "${COMPILE_ET}" = "compile_et"; then
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether compile_et has the features we need" >&5
