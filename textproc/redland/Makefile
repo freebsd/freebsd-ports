@@ -51,7 +51,7 @@ PLIST_SUB+=	MYSQL="@comment "
 #.endif
 
 #.if defined(WITH_PGSQL)
-#USE_PGSQL=	yes
+#USES+=		pgsql
 #CONFIGURE_ARGS+=--with-postgresql=yes
 #PLIST_SUB+=	PGSQL=""
 #.else
