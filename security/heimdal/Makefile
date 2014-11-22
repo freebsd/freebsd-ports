@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	heimdal
-PORTVERSION=	1.5.2
-PORTREVISION=	17
+PORTVERSION=	1.5.3
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
