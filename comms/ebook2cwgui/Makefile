@@ -9,7 +9,7 @@ MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	gui front end for ebooks2cw
 
 RUN_DEPENDS=	ebook2cw:${PORTSDIR}/comms/ebook2cw

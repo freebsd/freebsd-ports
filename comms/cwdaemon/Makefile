@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.chronos.org.uk/download/ \
 		    ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio cw (Morse code) keyer daemon
 
 LICENSE=	GPLv2

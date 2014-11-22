@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	db
 DISTNAME=	fl_geoid
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Geodetic computer for amateur radio use
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk

@@ -7,7 +7,7 @@ MASTER_SITES=	http://fkurz.net/ham/qrq/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Morse telegraphy trainer similar to the classic DOS version by DL4MM
 
 LICENSE=	GPLv2
