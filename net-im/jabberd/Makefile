@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	jabberd
-DISTVERSION=	2.3.1
-PORTREVISION=	6
+PORTVERSION=	2.3.1
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/matthew/${PORTNAME}
@@ -47,13 +47,14 @@ GROUPS=		${JABBER_GROUP}
 JABBER_ETCDIR=	"${PREFIX}/etc/jabberd"
 JABBER_RUNDIR=	"/var/jabberd"
 
-SUB_LIST+=	JABBER_USER=${JABBER_USER} \
+PLIST_SUB+=	JABBER_USER=${JABBER_USER} \
 		JABBER_GROUP=${JABBER_GROUP} \
 		JABBER_ETCDIR="${JABBER_ETCDIR}" \
+		JABBER_RUNDIR="${JABBER_RUNDIR}"
+
+SUB_LIST+=	JABBER_USER=${JABBER_USER} \
 		JABBER_RUNDIR="${JABBER_RUNDIR}" \
 		PERL="${PERL}"
-
-SUB_FILES+=	pkg-install pkg-deinstall
 
 PORTDOCS=	*
 
@@ -141,6 +142,10 @@ SUB_LIST+=	REQUIRE="LOGIN"
 REQUIRES_DESC=	Add backend requires to startup script
 
 post-patch:
+.for FILE in c2s.xml jabberd.cfg router-filter.xml router-users.xml \
+	router.xml s2s.xml sm.xml templates/roster.xml
+	@${MV} ${WRKSRC}/etc/${FILE}.dist.in ${WRKSRC}/etc/${FILE}.sample.in
+.endfor
 	@${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|g' \
 		${WRKSRC}/tools/jabberd.in
 .if ${PORT_OPTIONS:MCYRUS}
@@ -149,6 +154,11 @@ post-patch:
 .endif
 
 post-install:
+.for DIR in db logs pid
+	@${MKDIR} ${STAGEDIR}${JABBER_RUNDIR}/${DIR}
+.endfor
+	@${CHOWN} -R ${JABBER_USER}:${JABBER_GROUP} ${STAGEDIR}${JABBER_RUNDIR}
+	@${CHMOD} -R go= ${STAGEDIR}${JABBER_RUNDIR}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOCFILES}

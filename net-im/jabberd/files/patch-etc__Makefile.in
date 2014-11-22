@@ -1,29 +1,34 @@
---- ./etc/Makefile.in.orig	2013-11-28 11:16:25.000000000 +0000
-+++ ./etc/Makefile.in	2013-12-15 10:29:42.301779845 +0000
-@@ -336,7 +336,7 @@
+--- etc/Makefile.in.orig	2013-11-28 12:16:25.000000000 +0100
++++ etc/Makefile.in	2014-11-22 12:36:09.272204737 +0100
+@@ -334,11 +334,11 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- sysconf_DATA = c2s.xml.dist router.xml.dist s2s.xml.dist sm.xml.dist jabberd.cfg.dist router-users.xml.dist router-filter.xml.dist
+-sysconf_DATA = c2s.xml.dist router.xml.dist s2s.xml.dist sm.xml.dist jabberd.cfg.dist router-users.xml.dist router-filter.xml.dist
++sysconf_DATA = c2s.xml.sample router.xml.sample s2s.xml.sample sm.xml.sample jabberd.cfg.sample router-users.xml.sample router-filter.xml.sample
  initdir = $(prefix)/etc/init
--init_DATA = jabberd-c2s.conf jabberd-router.conf jabberd-s2s.conf jabberd-sm.conf
-+init_DATA = 
+ init_DATA = jabberd-c2s.conf jabberd-router.conf jabberd-s2s.conf jabberd-sm.conf
  configs = $(sysconf_DATA) $(init_DATA)
- EXTRA_DIST = $(sysconf_DATA:%.dist=%.dist.in) $(init_DATA:%.conf=%.conf.in)
+-EXTRA_DIST = $(sysconf_DATA:%.dist=%.dist.in) $(init_DATA:%.conf=%.conf.in)
++EXTRA_DIST = $(sysconf_DATA:%.sample=%.sample.in) $(init_DATA:%.conf=%.conf.in)
  SUBDIRS = templates
-@@ -721,14 +721,9 @@
- 	mv $@.tmp $@ 
+ jabberd_bin = router sm s2s c2s
+ edit = sed \
+@@ -599,7 +599,7 @@
+ uninstall: uninstall-recursive
  
- install-data-hook:
--	@list='$(configs)'; for p in $$list; do \
--      dest=`echo $$p | sed -e s/.dist//`; \
--	  if test -f $(DESTDIR)$(sysconfdir)/$$dest; then \
--        echo "$@ will not overwrite existing $(DESTDIR)$(sysconfdir)/$$dest"; \
--      else \
--	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$dest"; \
--	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$dest; \
--	  fi; \
-+	@list='$(configs)'; for dest in $$list; do \
-+	    echo " $(INSTALL_DATA) $$dest $(DESTDIR)$(sysconfdir)/$$dest"; \
-+	    $(INSTALL_DATA) $$dest $(DESTDIR)$(sysconfdir)/$$dest; \
- 	done
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am 
  
- clean-local:
+ installcheck: installcheck-recursive
+ install-strip:
+@@ -709,7 +709,7 @@
+ 	uninstall-am uninstall-initDATA uninstall-sysconfDATA
+ 
+ 
+-$(configs): $(sysconf_DATA:%.dist=@srcdir@/%.dist.in) $(init_DATA:%.conf=@srcdir@/%.conf.in)
++$(configs): $(sysconf_DATA:%.sample=@srcdir@/%.sample.in) $(init_DATA:%.conf=@srcdir@/%.conf.in)
+ 	@echo "generating $@ from $@.in"; \
+     edit='$(edit)'; \
+     list='$(jabberd_bin)'; for p in $$list; do \
