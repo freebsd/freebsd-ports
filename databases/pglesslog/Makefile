@@ -9,12 +9,11 @@ DISTNAME=	pg_lesslogg_${PORTVERSION}_pg84
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Reduce size of PostgreSQL archive log files by replacing backup blocks
 
-USES=		gmake
-USE_PGSQL=	client server:build
-WANT_PGSQL_VER=	84
+USES=		gmake pgsql:8.4
+WANT_PGSQL=	server:build
 WRKSRC=		${WRKDIR}/pg_lesslog_${PORTVERSION}_pg84
 
-PGSQL_PORT=	databases/postgresql${PGSQL_VER}
+PGSQL_PORT=	databases/postgresql${PGSQL_VER:S,.,,}
 PGSQL_SRCDIR=	`cd ${PORTSDIR}/${PGSQL_PORT}-server; ${MAKE} -VWRKSRC`
 
 pre-build:

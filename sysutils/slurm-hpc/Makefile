@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=--with-mysql_config=/nomysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes	# Job accounting
+USES+=		pgsql	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 		lib/slurm/accounting_storage_pgsql.la \
 		lib/slurm/accounting_storage_pgsql.so \

@@ -49,7 +49,7 @@ USE_MYSQL=	client
 
 .if ${PORT_OPTIONS:MPGSQL}
 WITH_DB=	yes
-USE_PGSQL=	yes
+USES+=		pgsql
 .endif
 .endif
 

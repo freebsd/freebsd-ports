@@ -10,9 +10,7 @@ MAINTAINER=	sam@cassiba.com
 COMMENT=	PostgreSQL tools from Skype: walshipping, queueing, replication
 
 GNU_CONFIGURE=	yes
-USES=		gmake python:2 shebangfix
-
-USE_PGSQL=	yes
+USES=		gmake python:2 shebangfix pgsql
 
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	/usr/bin/env python2

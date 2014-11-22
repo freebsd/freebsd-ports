@@ -59,7 +59,7 @@ PLIST_SUB+=	WEBUI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 .if defined(WEBUI)
 USE_PHP+=	pgsql pdo_pgsql
 .endif

@@ -41,7 +41,7 @@ RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 RUN_DEPENDS+=	p5-DBD-Pg>=2.19.2:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 

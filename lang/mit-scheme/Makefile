@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=--without-openssl
 .if ${PORT_OPTIONS:MPGSQL}
 PLIST_SUB+=	POSTGRESQL=""
 CONFIGURE_ARGS+=--with-libpq=${LOCALBASE}
-USE_PGSQL=	yes
+USES+=		pgsql
 .else
 PLIST_SUB+=	POSTGRESQL="@comment "
 CONFIGURE_ARGS+=--without-libpq

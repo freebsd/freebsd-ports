@@ -119,7 +119,7 @@ MAKE_ENV+=	HB_WITH_MYSQL=no
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 MAKE_ENV+=	HB_WITH_PGSQL=nolocal
 .else
 MAKE_ENV+=	HB_WITH_PGSQL=no

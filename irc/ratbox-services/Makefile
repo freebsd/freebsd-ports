@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=	--enable-mysql=${LOCALBASE}
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
+USES+=			pgsql
 CONFIGURE_ARGS+=	--enable-pgsql=${LOCALBASE}
 .endif
 

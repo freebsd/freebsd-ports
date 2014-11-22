@@ -133,7 +133,7 @@ USE_PHP+=	mysql mysqli
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 USE_PHP+=	pgsql
 .endif
 

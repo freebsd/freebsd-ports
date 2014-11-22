@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=--disable-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=--enable-pgsql
 PLIST_FILES+=	lib/rsyslog/ompgsql.so
 .else

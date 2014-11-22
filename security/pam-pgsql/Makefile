@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmhash.so:${PORTSDIR}/security/mhash \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=		libtool
-USE_PGSQL=	yes
+USES=		libtool pgsql
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 

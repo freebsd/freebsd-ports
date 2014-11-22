@@ -12,8 +12,7 @@ COMMENT=	Logs changes on a table in PostgreSQL
 
 WRKSRC=		${WRKDIR}/table_log-${DISTVERSION}
 
-USES=		gmake
-USE_PGSQL=	yes
+USES=		gmake pgsql
 MAKE_ARGS=	USE_PGXS=1
 
 OPTIONS_DEFINE=	DOCS

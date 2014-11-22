@@ -14,8 +14,7 @@ RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${DEFAULT_PGSQL_VER}-serve
 
 LICENSE=	GPLv2
 
-USE_PGSQL=	yes
-USES=		gmake pkgconfig libtool
+USES=		gmake pkgconfig libtool pgsql
 USE_GNOME=	gtk20 gconf2 glib20 libgnomeui
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes

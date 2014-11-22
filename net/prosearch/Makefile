@@ -107,7 +107,7 @@ ${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mariadb-server
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 RUN_DEPENDS+=\
 p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
@@ -118,9 +118,8 @@ p5-DBD-PgPP>=0:${PORTSDIR}/databases/p5-DBD-PgPP
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MPGPP} || ${PORT_OPTIONS:MDB}
-USE_PGSQL=	yes
-RUN_DEPENDS+=\
-${LOCALBASE}/bin/postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+USES+=		pgsql
+WANT_PGSQL=	client server
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}

@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--with-mysql=no
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
+USES+=			pgsql
 CONFIGURE_ARGS+=	--enable-libpq
 .else
 CONFIGURE_ARGS+=	--disable-libpq

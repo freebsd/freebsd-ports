@@ -17,7 +17,7 @@ NO_ARCH=	yes
 
 USES=		perl5
 USE_PERL5=	configure
-USE_PGSQL=	yes
+USES+=		pgsql
 
 # This script is primarily used for monitoring via Nagios, but it also
 # has output styles compatible with cacti or mrtg.  The options

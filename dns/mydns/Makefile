@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--with-openssl \
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=--without-mysql \
 		--with-pgsql-include=${LOCALBASE}/include \
 		--with-pgsql-lib=${LOCALBASE}/lib

@@ -35,7 +35,7 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
 #USE_SQLITE=	3
 #RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .elif !defined(WITHOUT_PGSQL)
-#USE_PGSQL=	yes
+#USES+=		pgsql
 #RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 

@@ -72,7 +72,7 @@ _REQUIRE+=	mysql
 
 .if ${PORT_OPTIONS:MPGSQL}
 LIB_DEPENDS+=	libzdb.so:${PORTSDIR}/databases/libzdb
-USE_PGSQL=	yes
+USES+=		pgsql
 _REQUIRE+=	postgresql
 .endif
 

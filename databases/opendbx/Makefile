@@ -34,7 +34,7 @@ MYSQL_USE=	MYSQL=YES
 MYSQL_CPPFLAGS=	-I${LOCALBASE}/include/mysql
 MYSQL_LDFLAGS=	-L${LOCALBASE}/lib/mysql
 
-PGSQL_USE=	PGSQL=YES
+PGSQL_USES=	pgsql
 
 SQLITE_LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
 
