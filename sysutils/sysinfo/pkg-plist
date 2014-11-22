@@ -14,5 +14,3 @@ share/sysinfo/modules/services
 share/sysinfo/modules/storage
 share/sysinfo/modules/system
 share/sysinfo/modules/user
-@dirrm share/sysinfo/modules
-@dirrm share/sysinfo

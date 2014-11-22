@@ -38,4 +38,3 @@ sbin/lprng_index_certs
 %%NLS%%share/locale/fr/LC_MESSAGES/LPRng.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/LPRng.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/LPRng.mo
-@dirrm libexec/filters

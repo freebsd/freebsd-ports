@@ -11,4 +11,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
 %%PORTDOCS%%%%DOCSDIR%%/readme.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

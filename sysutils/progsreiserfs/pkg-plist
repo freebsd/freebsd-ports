@@ -38,5 +38,3 @@ sbin/mkfs.reiserfs
 sbin/resizefs.reiserfs
 sbin/tunefs.reiserfs
 share/aclocal/progsreiserfs.m4
-@dirrm include/reiserfs
-@dirrm include/dal

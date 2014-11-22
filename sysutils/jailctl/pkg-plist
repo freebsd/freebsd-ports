@@ -8,6 +8,3 @@ jails/addons/runme.sh
 man/man1/jailctl.1.gz
 man/man1/jails.conf.1.gz
 sbin/jailctl
-@dirrm jails/addons/etc
-@dirrm jails/addons
-@dirrm jails

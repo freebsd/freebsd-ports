@@ -47,13 +47,5 @@ lib/xcdroast-0.98/sound/test.wav
 %%NLS%%share/locale/zh_CN.GB2312/LC_MESSAGES/xcdroast.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xcdroast.mo
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/xcdroast.mo
-@dirrm lib/xcdroast-0.98/bin
-@dirrm lib/xcdroast-0.98/icons
-@dirrm lib/xcdroast-0.98/sound
-@dirrm lib/xcdroast-0.98
 man/man1/xcdroast.1.gz
 @unexec if pw groupshow -n xcdwrite 2>/dev/null 1>&2; then pw groupdel -n xcdwrite; fi
-%%NLS%%@dirrmtry share/locale/el_GR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/el_GR
-%%NLS%%@dirrmtry share/locale/sq_AL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sq_AL

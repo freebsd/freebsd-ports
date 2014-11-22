@@ -14,6 +14,3 @@ libexec/bamf/bamfdaemon
 share/dbus-1/services/org.ayatana.bamf.service
 share/gir-1.0/Bamf-3.gir
 share/vala/vapi/libbamf3.vapi
-@dirrm libexec/bamf
-@dirrm include/libbamf3/libbamf
-@dirrm include/libbamf3

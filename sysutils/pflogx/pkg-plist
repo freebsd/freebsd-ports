@@ -7,5 +7,3 @@ bin/pflogx
 %%PORTDOCS%%%%EXAMPLESDIR%%/export_xhtml.xsl
 %%PORTDOCS%%%%EXAMPLESDIR%%/first_date.xsl
 %%PORTDOCS%%%%EXAMPLESDIR%%/last_date.xsl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

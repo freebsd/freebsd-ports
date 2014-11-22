@@ -5,4 +5,3 @@ sbin/smbrepair.pl
 sbin/userquick
 %%EXAMPLESDIR%%/userlist
 %%EXAMPLESDIR%%/userneu.conf.example
-@dirrm %%EXAMPLESDIR%%

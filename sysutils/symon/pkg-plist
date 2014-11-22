@@ -9,6 +9,3 @@
 %%DATADIR%%/client/SymuxClient.0
 %%DATADIR%%/client/SymuxClient.pm
 %%DATADIR%%/client/getsymonitem.pl
-@dirrm share/symon/client
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%

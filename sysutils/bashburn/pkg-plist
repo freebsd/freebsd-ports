@@ -95,15 +95,3 @@ man/man1/bashburn.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/TRANSLATION_RULE
-@dirrm %%DATADIR%%/burning
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/convert
-@dirrm %%DATADIR%%/func
-@dirrm %%DATADIR%%/lang/English
-@dirrm %%DATADIR%%/lang/German
-@dirrm %%DATADIR%%/lang/Swedish
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/menus
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

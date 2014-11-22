@@ -13,7 +13,5 @@ man/man1/scanmem.1.gz
 %%X11%%share/gameconqueror/misc.py
 %%X11%%share/pixmaps/GameConqueror_128x128.png
 %%X11%%share/pixmaps/GameConqueror_72x72.png
-%%X11%%@dirrm share/gameconqueror
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%X11%%%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

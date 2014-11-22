@@ -9,4 +9,3 @@ sbin/dirvish
 sbin/dirvish-expire
 sbin/dirvish-locate
 sbin/dirvish-runall
-@dirrmtry etc/dirvish

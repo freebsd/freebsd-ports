@@ -4,4 +4,3 @@ lib/libutempter.so
 lib/libutempter.so.0
 lib/libutempter.so.1.1.5
 libexec/utempter/utempter
-@dirrm libexec/utempter

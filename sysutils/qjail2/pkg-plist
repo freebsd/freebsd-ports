@@ -36,26 +36,3 @@ man/man8/qjail.conf.8.gz
 %%EXAMPLESDIR%%/ssh-default/usr/home/qjail/.rhosts
 %%EXAMPLESDIR%%/ssh-default/usr/home/qjail/.shrc
 %%EXAMPLESDIR%%/ssh-default/usr/local/etc/sudoers
-@dirrm %%EXAMPLESDIR%%/ssh-default/usr/home/qjail
-@dirrm %%EXAMPLESDIR%%/ssh-default/usr/home
-@dirrm %%EXAMPLESDIR%%/ssh-default/usr/local/etc
-@dirrm %%EXAMPLESDIR%%/ssh-default/usr/local
-@dirrm %%EXAMPLESDIR%%/ssh-default/usr
-@dirrm %%EXAMPLESDIR%%/ssh-default/root
-@dirrm %%EXAMPLESDIR%%/ssh-default/etc/ssh
-@dirrm %%EXAMPLESDIR%%/ssh-default/etc
-@dirrm %%EXAMPLESDIR%%/ssh-default
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc/mail
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc
-@dirrm %%EXAMPLESDIR%%/nullmailer-example
-@dirrm %%EXAMPLESDIR%%/default/usr/local/etc
-@dirrm %%EXAMPLESDIR%%/default/usr/local
-@dirrm %%EXAMPLESDIR%%/default/usr
-@dirrm %%EXAMPLESDIR%%/default/root
-@dirrm %%EXAMPLESDIR%%/default/etc
-@dirrm %%EXAMPLESDIR%%/default
-@dirrm %%EXAMPLESDIR%%

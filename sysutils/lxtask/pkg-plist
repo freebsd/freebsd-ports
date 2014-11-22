@@ -47,9 +47,3 @@ share/applications/lxtask.desktop
 %%NLS%%share/locale/vi/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lxtask.mo
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/frp
-%%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_VE

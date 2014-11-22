@@ -46,5 +46,3 @@ man/man3/parport_list.3.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ieee1284module.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ieee1284module.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ieee1284module.so
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-%%PYTHON%%@dirrmtry %%PYTHON_LIBDIR%%

@@ -26,7 +26,3 @@ man/man1/battray.1.gz
 %%DATADIR%%/icons/green.png
 %%DATADIR%%/icons/red.png
 %%DATADIR%%/icons/yellow.png
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/battray/platforms
-@dirrm %%PYTHON_SITELIBDIR%%/battray

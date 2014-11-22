@@ -10,5 +10,4 @@ share/pixmaps/document-icons/gcdmaster-doc.png
 share/pixmaps/gcdmaster.png
 share/mime/packages/gcdmaster.xml
 man/man1/gcdmaster.1.gz
-@dirrmtry %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

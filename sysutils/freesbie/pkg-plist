@@ -68,28 +68,3 @@
 %%DATADIR%%/scripts/pkginstall.sh
 %%DATADIR%%/scripts/pkgselect.sh
 %%DATADIR%%/scripts/powerpc/iso.sh
-@dirrm %%DATADIR%%/scripts/powerpc
-@dirrm %%DATADIR%%/scripts/custom
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/extra/xconfig-probe
-@dirrm %%DATADIR%%/extra/xconfig
-@dirrm %%DATADIR%%/extra/xautostart
-@dirrm %%DATADIR%%/extra/varmfs
-@dirrm %%DATADIR%%/extra/swapfind
-@dirrm %%DATADIR%%/extra/sound
-@dirrm %%DATADIR%%/extra/rootmfs
-@dirrm %%DATADIR%%/extra/pf
-@dirrm %%DATADIR%%/extra/mountdisks
-@dirrm %%DATADIR%%/extra/l10n
-@dirrm %%DATADIR%%/extra/etcmfs
-@dirrm %%DATADIR%%/extra/customscripts
-@dirrm %%DATADIR%%/extra/customroot
-@dirrm %%DATADIR%%/extra/backup
-@dirrm %%DATADIR%%/extra/adduser
-@dirrm %%DATADIR%%/extra
-@dirrm %%DATADIR%%/conf/rc.d
-@dirrm %%DATADIR%%/conf/powerpc
-@dirrm %%DATADIR%%/conf/i386
-@dirrm %%DATADIR%%/conf/amd64
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%

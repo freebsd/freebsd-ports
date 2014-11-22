@@ -1,3 +1,2 @@
 bin/plconfig
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

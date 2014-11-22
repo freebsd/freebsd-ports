@@ -62,4 +62,3 @@ man/man8/smp_zone_activate.8.gz
 man/man8/smp_zone_lock.8.gz
 man/man8/smp_zone_unlock.8.gz
 man/man8/smp_zoned_broadcast.8.gz
-@dirrmtry include/scsi

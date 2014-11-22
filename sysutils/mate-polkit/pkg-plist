@@ -65,19 +65,3 @@ share/locale/ur/LC_MESSAGES/mate-polkit.mo
 share/locale/zh_CN/LC_MESSAGES/mate-polkit.mo
 share/locale/zh_HK/LC_MESSAGES/mate-polkit.mo
 share/locale/zh_TW/LC_MESSAGES/mate-polkit.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/cmn/LC_MESSAGES
-@dirrmtry share/locale/cmn
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrm include/polkit-gtk-mate-1/polkitgtkmate
-@dirrm include/polkit-gtk-mate-1

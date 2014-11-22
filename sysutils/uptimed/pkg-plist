@@ -11,5 +11,4 @@ www/cgi-bin/uprecords.cgi
 www/cgi-bin/uprecords.conf.sample
 www/cgi-bin/uprecords.footer.sample
 www/cgi-bin/uprecords.header.sample
-@dirrmtry www/cgi-bin
 @dir /var/spool/uptimed

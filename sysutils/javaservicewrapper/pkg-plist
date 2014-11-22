@@ -111,9 +111,3 @@ bin/javaservicewrapper
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/revisions.txt
 %%PORTDOCS%%%%DOCSDIR%%/wrapper-community-license-1.1.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/test
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%

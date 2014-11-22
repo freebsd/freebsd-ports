@@ -72,8 +72,4 @@ man/man8/httppower.8.gz
 man/man8/plmpower.8.gz
 man/man8/powermand.8.gz
 man/man8/vpcd.8.gz
-@dirrm lib/stonith/plugins/external
-@dirrm lib/stonith/plugins
-@dirrm lib/stonith
-@dirrmtry %%ETCDIR%%
-@dirrmtry /var/run/powerman
+@dir /var/run/powerman

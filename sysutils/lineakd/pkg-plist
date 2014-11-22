@@ -33,8 +33,4 @@ man/man1/lineakd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lineakd.conf.example
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/lineakd/plugins
-@dirrmtry lib/lineakd
-@dirrmtry include/lineak
+@dir lib/lineakd/plugins

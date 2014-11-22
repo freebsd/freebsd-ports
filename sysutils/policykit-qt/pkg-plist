@@ -19,4 +19,3 @@ lib/libpolkit-qt-gui.so.0.9.4
 libdata/pkgconfig/polkit-qt-core.pc
 libdata/pkgconfig/polkit-qt-gui.pc
 libdata/pkgconfig/polkit-qt.pc
-@dirrm include/PolicyKit/polkit-qt

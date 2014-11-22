@@ -11,6 +11,3 @@ GNUstep/Local/Applications/batmon.app/Resources/small_plug.tif
 GNUstep/Local/Applications/batmon.app/batmon
 GNUstep/Local/Applications/batmon.app/stamp.make
 GNUstep/Local/Tools/batmon
-@dirrm GNUstep/Local/Applications/batmon.app/Resources/batmon.gorm
-@dirrm GNUstep/Local/Applications/batmon.app/Resources
-@dirrm GNUstep/Local/Applications/batmon.app

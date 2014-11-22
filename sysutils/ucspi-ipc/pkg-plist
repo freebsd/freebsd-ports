@@ -14,4 +14,3 @@ bin/ipcrulescheck
 bin/ipcrun
 bin/ipcserver
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

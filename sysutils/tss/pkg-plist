@@ -22,5 +22,3 @@ etc/tss/worldwars
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm etc/tss
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

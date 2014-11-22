@@ -1,4 +1,3 @@
 bin/patchelf
 man/man1/patchelf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

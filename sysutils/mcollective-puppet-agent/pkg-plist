@@ -63,21 +63,3 @@ share/mcollective/validator/puppet_tags_validator.ddl
 share/mcollective/validator/puppet_tags_validator.rb
 share/mcollective/validator/puppet_variable_validator.ddl
 share/mcollective/validator/puppet_variable_validator.rb
-@dirrm share/mcollective/util/puppet_agent_mgr/v3
-@dirrm share/mcollective/util/puppet_agent_mgr/v2
-@dirrm share/mcollective/util/puppet_agent_mgr
-@dirrm share/mcollective/util
-@dirrm share/mcollective/spec/validator
-@dirrm share/mcollective/spec/util/v3
-@dirrm share/mcollective/spec/util/v2
-@dirrm share/mcollective/spec/util/puppet_agent_mgr
-@dirrm share/mcollective/spec/util
-@dirrm share/mcollective/spec/fixtures
-@dirrm share/mcollective/spec/data
-@dirrm share/mcollective/spec/application
-@dirrm share/mcollective/spec/aggregate
-@dirrm share/mcollective/spec/agent
-@dirrm share/mcollective/spec
-@dirrm share/mcollective/ext/redhat
-@dirrm share/mcollective/ext/debian
-@dirrm share/mcollective/ext

@@ -22,9 +22,3 @@ Modules/%%MODULES_VERSION%%/modulefiles/modules
 Modules/%%MODULES_VERSION%%/modulefiles/null
 Modules/%%MODULES_VERSION%%/modulefiles/use.own
 Modules/versions/%%MODULES_VERSION%%
-@dirrm Modules/versions
-@dirrm Modules/%%MODULES_VERSION%%/modulefiles
-@dirrm Modules/%%MODULES_VERSION%%/init
-@dirrm Modules/%%MODULES_VERSION%%/bin
-@dirrm Modules/%%MODULES_VERSION%%
-@dirrm Modules

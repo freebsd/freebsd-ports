@@ -168,7 +168,3 @@ man/man1/autopsy.1.gz
 %%DATADIR%%/pict/tl_t_tl_link.jpg
 %%DATADIR%%/pict/tl_t_view_cur.jpg
 %%DATADIR%%/pict/tl_t_view_link.jpg
-@dirrm %%DATADIR%%/pict
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
-@dirrm lib/autopsy

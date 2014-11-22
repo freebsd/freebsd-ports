@@ -8,4 +8,3 @@ share/applications/gksu.desktop
 share/pixmaps/gksu-icon.png
 share/pixmaps/gksu-root-terminal.png
 share/gksu/gksu-migrate-conf.sh
-@dirrm share/gksu

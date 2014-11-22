@@ -49,14 +49,3 @@ sbin/desktop-installer
 %%DATADIR%%/vbox
 %%DATADIR%%/xfce4-print-options
 man/man1/desktop-installer.1.gz
-@dirrm %%DATADIR%%/gcc45/files
-@dirrm %%DATADIR%%/gcc45
-@dirrm %%DATADIR%%/XFCE4
-@dirrm %%DATADIR%%/Scripts
-@dirrm %%DATADIR%%/Patches/linux-f10-flashplugin11
-@dirrm %%DATADIR%%/Patches
-@dirrm %%DATADIR%%/LXDE
-@dirrm %%DATADIR%%/KDE4
-@dirrm %%DATADIR%%/KDE3
-@dirrm %%DATADIR%%/Gnome
-@dirrm %%DATADIR%%
