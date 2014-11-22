@@ -44,6 +44,7 @@
     SUBDIR += apngdis
     SUBDIR += apvlv
     SUBDIR += aqsis
+    SUBDIR += argyllcms
     SUBDIR += asciio
     SUBDIR += atril
     SUBDIR += autopano-sift-c
