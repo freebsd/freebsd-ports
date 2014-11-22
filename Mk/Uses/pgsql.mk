@@ -139,7 +139,7 @@ _USE_PGSQL_DEP_server=	postgres
 BUILD_DEPENDS+=	${_USE_PGSQL_DEP_${depend}}:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-${depend}
 RUN_DEPENDS+=	${_USE_PGSQL_DEP_${depend}}:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-${depend}
 .        elif ${WANT_PGSQL:M${depend}\:*}
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-${depend}:${USE_PGSQL:M${depend}\:*:C,^[^:]*\:,,}
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-${depend}:${WANT_PGSQL:M${depend}\:*:C,^[^:]*\:,,}
 .        endif
 .      endfor
 .    endif
