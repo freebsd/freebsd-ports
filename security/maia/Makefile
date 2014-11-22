@@ -154,7 +154,8 @@ RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MPGSQLSERVER}
-USE_PGSQL=	server
+USES:=		${USES:Npgsql} pgsql
+WANT_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT}
