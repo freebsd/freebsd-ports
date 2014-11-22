@@ -139,39 +139,3 @@ sbin/bsdconfig
 %%DATADIR%%/usermgmt/group_input.subr
 %%DATADIR%%/usermgmt/user_input.subr
 %%DATADIR%%/variable.subr
-@dirrm libexec/bsdconfig/020.docsinstall/include
-@dirrm libexec/bsdconfig/020.docsinstall
-@dirrm libexec/bsdconfig/030.packages/include
-@dirrm libexec/bsdconfig/030.packages
-@dirrm libexec/bsdconfig/040.password/include
-@dirrm libexec/bsdconfig/040.password
-@dirrm libexec/bsdconfig/050.diskmgmt/include
-@dirrm libexec/bsdconfig/050.diskmgmt
-@dirrm libexec/bsdconfig/070.usermgmt/include
-@dirrm libexec/bsdconfig/070.usermgmt
-@dirrm libexec/bsdconfig/080.console/include
-@dirrm libexec/bsdconfig/080.console
-@dirrm libexec/bsdconfig/090.timezone/include
-@dirrm libexec/bsdconfig/090.timezone
-@dirrm libexec/bsdconfig/110.mouse/include
-@dirrm libexec/bsdconfig/110.mouse
-@dirrm libexec/bsdconfig/120.networking/include
-@dirrm libexec/bsdconfig/120.networking
-@dirrm libexec/bsdconfig/130.security/include
-@dirrm libexec/bsdconfig/130.security
-@dirrm libexec/bsdconfig/140.startup/include
-@dirrm libexec/bsdconfig/140.startup
-@dirrm libexec/bsdconfig/150.ttys/include
-@dirrm libexec/bsdconfig/150.ttys
-@dirrm libexec/bsdconfig/dot/include
-@dirrm libexec/bsdconfig/dot
-@dirrm libexec/bsdconfig/include
-@dirrm libexec/bsdconfig
-@dirrm %%DATADIR%%/media
-@dirrm %%DATADIR%%/networking
-@dirrm %%DATADIR%%/packages
-@dirrm %%DATADIR%%/password
-@dirrm %%DATADIR%%/startup
-@dirrm %%DATADIR%%/timezone
-@dirrm %%DATADIR%%/usermgmt
-@dirrm %%DATADIR%%

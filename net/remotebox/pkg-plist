@@ -221,8 +221,3 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/remotebox.xml
 %%DATADIR%%/vboxService.pm
 %%DATADIR%%/vboxserializers.pl
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/icons/gueststatus
-@dirrmtry %%DATADIR%%/icons/os
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%

@@ -44,5 +44,3 @@ share/applications/gigolo.desktop
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gigolo.mo
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK

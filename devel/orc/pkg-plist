@@ -36,14 +36,12 @@ include/orc-0.4/orc/orcutils.h
 include/orc-0.4/orc/orcvariable.h
 include/orc-0.4/orc/orcx86.h
 include/orc-0.4/orc/orcx86insn.h
-lib/liborc-0.4.la
 lib/liborc-0.4.so
 lib/liborc-0.4.so.0
-lib/liborc-0.4.so.0.21.0
-lib/liborc-test-0.4.la
+lib/liborc-0.4.so.0.22.0
 lib/liborc-test-0.4.so
 lib/liborc-test-0.4.so.0
-lib/liborc-test-0.4.so.0.21.0
+lib/liborc-test-0.4.so.0.22.0
 libdata/pkgconfig/orc-0.4.pc
 share/aclocal/orc.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1orc.orc

@@ -3,7 +3,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeSockets
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 include/skstream-0.3/skstream/skaddress.h
 include/skstream-0.3/skstream/sksocket.h
 include/skstream-0.3/skstream/skstream.h
@@ -18,8 +17,3 @@ lib/libskstream-0.3.so.7.0.0
 libdata/pkgconfig/skstream-0.3.pc
 libdata/pkgconfig/skstream-unix-0.3.pc
 lib/skstream-0.3/include/skstream/skstreamconfig.h
-@dirrm include/skstream-0.3/skstream
-@dirrm include/skstream-0.3
-@dirrm lib/skstream-0.3/include/skstream
-@dirrm lib/skstream-0.3/include
-@dirrm lib/skstream-0.3

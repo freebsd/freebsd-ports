@@ -14,4 +14,3 @@ man/cat1/tbku.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tbku.pdf
 %%PORTDOCS%%%%DOCSDIR%%/tbku.ps
 %%PORTDOCS%%%%DOCSDIR%%/tbku.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

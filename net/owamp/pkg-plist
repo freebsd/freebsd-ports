@@ -39,4 +39,3 @@ man/man5/owampd.conf.5.gz
 man/man5/owampd.limits.5.gz
 man/man5/owampd.pfs.5.gz
 man/man8/owampd.8.gz
-@dirrm include/I2util

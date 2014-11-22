@@ -15,4 +15,3 @@ libdata/pkgconfig/libfvde.pc
 man/man1/fvdeinfo.1.gz
 man/man1/fvdemount.1.gz
 man/man3/libfvde.3.gz
-@dirrm include/libfvde

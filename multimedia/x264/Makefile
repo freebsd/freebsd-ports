@@ -1,9 +1,24 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
+#
+# Updating notes:
+# We use the nightly tarballs for the *stable* branch of the git repo.
+# X264_BUILD is the "core" number, and can always be found in x264.h.
+# X264_COMMIT is the commit number, and can be found here:
+# http://git.videolan.org/?p=x264.git;a=shortlog;h=refs/heads/stable
+# To get X264_REV, you must checkout the git revision for the version to
+# which you wish to update, and then run version.sh against it.
+# Don't forget to update these for multimedia/libx264 as well:
+# X264_BUILD, X264_REV, X264_COMMIT, X264_SNAPSHOT
+#
+# distinfo for this port and libx264 should always be *identical*.
+#
+# Bumping PORTREVISION for dependent ports? This is useful:
+# cd $PORTSDIR; for x in $(find . -name "Makefile*" -print);
+# do str=$(grep -i x264.so $x); if [[ -n $str ]] { echo "$x" }; done
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -13,39 +28,41 @@ DIST_SUBDIR=	x264
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Library and tool for encoding H.264/AVC video streams
+COMMENT=	Tool for encoding H.264/AVC video streams
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
 
-X264_BUILD=	136
-X264_REV=	2358
-X264_COMMIT=	3361d59a0a83dcb8b321cc0eb8e6ba68ca49c7d4
+X264_BUILD=	142
+X264_REV=	2455
+X264_COMMIT=	021c0dc6c95c1bc239c9db78a80dd85fc856a4dd
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
-X264_SNAPSHOT=	20130827
+X264_SNAPSHOT=	20140827
 
-USES=		gmake tar:bzip2
+USES=		gmake tar:bzip2 pkgconfig
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		ASM DEBUG HI10P PGO GCC GPAC X11_OUTPUT
+OPTIONS_DEFINE=		ASM DEBUG PGO GCC GPAC LAVF
 OPTIONS_DEFAULT=	ASM GPAC
 ASM_DESC=		Enable Assembly Optimizations
+DEBUG_DESC=		Generate Debugging Symbols
+PGO_DESC=		Use Profile-Guided Optimization
 GCC_DESC=		Use current GCC
-HI10P_DESC=		Enable High 10 Profile 10-bit encoding
 GPAC_DESC=		Enable MPEG-4 Output
-X11_OUTPUT_DESC=	Enable X11 Output
+LAVF_DESC=		Enable libav* format input/output support (requires ffmpeg)
 
 CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include" \
 			--extra-ldflags="-L${LOCALBASE}/lib" \
-			--enable-static --enable-shared \
 			--disable-opencl \
-			--disable-swscale
+			--system-libx264
 
 PLIST_SUB+=	X264_BUILD=${X264_BUILD}
+PLIST_FILES=	bin/x264
 
 .include <bsd.port.options.mk>
 
@@ -57,10 +74,6 @@ USE_GCC=	any
 
 .if !${PORT_OPTIONS:MASM}
 CONFIGURE_ARGS+=	--disable-asm
-.endif
-
-.if ${PORT_OPTIONS:MHI10P}
-CONFIGURE_ARGS+=	--bit-depth=10
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG} || defined(WITH_DEBUG)
@@ -93,9 +106,13 @@ LIB_DEPENDS+=		libgpac.so:${PORTSDIR}/multimedia/gpac-libgpac
 CONFIGURE_ARGS+=	--disable-gpac
 .endif
 
-.if ${PORT_OPTIONS:MX11_OUTPUT}
-CONFIGURE_ARGS+=	--enable-visualize
-USE_XORG=		x11
+.if ${PORT_OPTIONS:MLAVF}
+LIB_DEPENDS+=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=		libavformat.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=		libswscale.so:${PORTSDIR}/multimedia/ffmpeg
+.else
+CONFIGURE_ARGS+=	--disable-swscale --disable-lavf
 .endif
 
 post-extract:
@@ -109,7 +126,10 @@ post-patch:
 		s|/bin/bash|${LOCALBASE}/bin/bash|; \
 		s|gpac_static|gpac|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/version.sh
+	@${REINPLACE_CMD} -e 's|bash|sh|; \
+		s|VER="x"|VER="${X264_REV} ${X264_GITVER}"|; \
+		s|VERSION=""|VERSION=" r${X264_REV} ${X264_GITVER}"|' \
+		${WRKSRC}/version.sh
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
 		s|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile

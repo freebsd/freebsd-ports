@@ -44,6 +44,7 @@
     SUBDIR += apngdis
     SUBDIR += apvlv
     SUBDIR += aqsis
+    SUBDIR += argyllcms
     SUBDIR += asciio
     SUBDIR += atril
     SUBDIR += autopano-sift-c
@@ -791,6 +792,7 @@
     SUBDIR += picviz
     SUBDIR += piddle
     SUBDIR += pinpoint
+    SUBDIR += pinta
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie

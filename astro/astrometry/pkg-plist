@@ -257,3 +257,4 @@ astrometry/lib/python/astrometry/util/w3c_validator.py
 astrometry/lib/python/astrometry/util/yanny.py
 astrometry/ups/astrometry_net.cfg.template
 astrometry/ups/astrometry_net.table
+@dir astrometry/data

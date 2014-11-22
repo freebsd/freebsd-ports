@@ -1,16 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	phantomjs
-PORTVERSION=	1.9.2
-PORTREVISION=	3
+PORTVERSION=	1.9.8
+#PORTREVISION=	0
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		https://bitbucket.org/ariya/phantomjs/downloads/
+MASTER_SITE_SUBDIR=	kuriyama
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Minimalistic, headless, WebKit-based, JavaScript-driven tool
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
@@ -20,6 +22,7 @@ PROJECTHOST=	phantomjs
 USES=		gmake dos2unix pkgconfig zip
 USE_GCC=	any
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PLIST_FILES=	bin/phantomjs
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} OSTYPE=freebsd MAKEFLAGS= PATH=${PATH} bash -x build.sh --jobs ${MAKE_JOBS_NUMBER} --confirm

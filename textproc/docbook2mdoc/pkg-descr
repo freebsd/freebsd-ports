@@ -1,0 +1,6 @@
+The docbook2mdoc utility is a converter from DocBook V4.x and v5.x XML into
+mdoc. Unlike most DocBook utilities, it's a standalone ISC-licensed ISO C
+utility that should compile on any modern UNIX system. The only requirement is
+libexpat (for parsing XML), which is installed by default on most systems.
+
+WWW: http://mdocml.bsd.lv/docbook2mdoc/

@@ -1,4 +1,3 @@
 bin/cryptofs
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/cryptofs.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

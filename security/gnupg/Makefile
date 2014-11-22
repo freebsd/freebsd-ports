@@ -2,7 +2,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.1.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -22,25 +22,25 @@ LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 		libksba.so:${PORTSDIR}/security/libksba \
 		libnpth.so:${PORTSDIR}/devel/npth
 BUILD_DEPENDS=	libgpg-error>=1.11:${PORTSDIR}/security/libgpg-error
+RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
 
 GNU_CONFIGURE=	YES
 USES=		gmake iconv tar:bzip2
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--enable-symcryptrun --enable-gpgsm
+CONFLICTS=	gnupg-2.0.*
 
-OPTIONS_DEFINE=		PINENTRY LDAP SCDAEMON KDNS NLS DOCS SUID_GPG
-PINENTRY_DESC=		Use pinentry
+OPTIONS_DEFINE=		LDAP SCDAEMON KDNS NLS DOCS SUID_GPG
 LDAP_DESC=		LDAP keyserver interface
 SCDAEMON_DESC=		Enable Smartcard daemon (with libusb)
 KDNS_DESC=		Use DNS CERT helper
 SUID_GPG_DESC=		Install GPG with suid
-OPTIONS_DEFAULT=	PINENTRY
+OPTIONS_DEFAULT=	#
 NO_OPTIONS_SORT=	YES
 OPTIONS_SUB=		YES
 # In jail, SUID is required to avoid warning (security.bsd.unprivileged_mlock sysctl is not used in jail).
 
 DOCS_CONFIGURE_ENABLE=	doc
-PINENTRY_RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
 KDNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
 KDNS_CONFIGURE_ON=	--with-adns=${LOCALBASE}
 NLS_USES=		gettext

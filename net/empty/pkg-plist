@@ -12,5 +12,3 @@ man/man1/empty.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/em_telnet_2.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/emsu.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/runtests.sh
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

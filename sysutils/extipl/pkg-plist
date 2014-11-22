@@ -6,6 +6,3 @@ sbin/extipl
 %%PORTDOCS%%%%DOCSDIR%%/Japanese/extipl.txt
 %%PORTDOCS%%%%DOCSDIR%%/Japanese/scorpius.txt
 %%PORTDOCS%%%%DOCSDIR%%/Japanese/techical.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Japanese
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/English
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

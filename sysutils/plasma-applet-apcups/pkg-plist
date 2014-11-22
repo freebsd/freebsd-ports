@@ -17,4 +17,3 @@ share/kde4/services/plasma-applet-apcups.desktop
 share/kde4/services/plasma-engine-apcups.desktop
 share/locale/ca/LC_MESSAGES/plasma_applet_apcups.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_apcups.mo
-@dirrm share/apps/plasma-applet-apcups

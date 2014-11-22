@@ -452,7 +452,3 @@ man/man7/mpi.7.gz
 %%DATADIR%%/doc/ptmalloc2-COPYRIGHT
 %%DATADIR%%/doc/romio-users-guide.ps.gz
 %%DATADIR%%/mpi.share
-@dirrm include/mpi2cxx
-%%32BIT_ONLY%%@dirrm lib/lam
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%

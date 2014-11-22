@@ -153,7 +153,14 @@ include/syslog-ng/str-format.h
 include/syslog-ng/syslog-names.h
 include/syslog-ng/syslog-ng.h
 include/syslog-ng/tags.h
+include/syslog-ng/template/compiler.h
+include/syslog-ng/template/escaping.h
+include/syslog-ng/template/function.h
+include/syslog-ng/template/macros.h
+include/syslog-ng/template/repr.h
+include/syslog-ng/template/simple-function.h
 include/syslog-ng/template/templates.h
+include/syslog-ng/template/user-function.h
 include/syslog-ng/thread-utils.h
 include/syslog-ng/timeutils.h
 include/syslog-ng/tls-support.h
@@ -170,9 +177,9 @@ include/syslog-ng/uuid.h
 include/syslog-ng/value-pairs.h
 include/syslog-ng/versioning.h
 include/syslog-ng/vptransform.h
-lib/libsyslog-ng-3.6.so.0.0.0
+lib/libsyslog-ng-3.7.so.0.0.0
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.6.so.0
+lib/libsyslog-ng-3.7.so.0
 lib/syslog-ng/libafamqp.so
 lib/syslog-ng/libaffile.so
 lib/syslog-ng/libafmongodb.so
@@ -202,6 +209,7 @@ man/man5/syslog-ng.conf.5.gz
 man/man8/syslog-ng.8.gz
 sbin/syslog-ng
 sbin/syslog-ng-ctl
+share/syslog-ng/include/scl/cim/template.conf
 share/syslog-ng/include/scl/graphite/plugin.conf
 share/syslog-ng/include/scl/graphite/README
 share/syslog-ng/include/scl/nodejs/plugin.conf

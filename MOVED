@@ -6596,7 +6596,6 @@ editors/color-mate||2014-09-01|Not staged
 editors/gnuserv||2014-09-01|Not staged
 editors/jext||2014-09-01|Not staged
 editors/komodo-ide||2014-09-01|Not staged
-editors/psgml||2014-09-01|Not staged
 editors/setedit||2014-09-01|Not staged
 editors/softmaker-office||2014-09-01|Not staged
 editors/textedit||2014-09-01|Not staged
@@ -6623,7 +6622,6 @@ graphics/linux_glide||2014-09-01|Not staged
 graphics/mingplot||2014-09-01|Not staged
 graphics/orca||2014-09-01|Not staged
 graphics/php5-chartdirector||2014-09-01|Not staged
-graphics/pinta||2014-09-01|Not staged
 graphics/ruby-rmagick||2014-09-01|Not staged
 graphics/sane-epkowa||2014-09-01|Not staged
 graphics/uDrawGraph||2014-09-01|Not staged
@@ -7238,3 +7236,4 @@ deskutils/gtkjournal||2014-11-19|Abandonware, not working anymore
 deskutils/splashsetter||2014-11-19|Abandonware, useless without gnome2
 editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use editors/emacs
 net-im/tg|net-im/telegram|2014-11-20|Renamed to more specific name
+net-mgmt/virtinst|deskutils/virt-manager|2014-11-20|Obsoleted by deskutils/virt-manager

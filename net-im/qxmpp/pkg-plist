@@ -66,4 +66,3 @@ lib/libqxmpp.so.0
 lib/libqxmpp.so.0.8
 lib/libqxmpp.so.0.8.0
 libdata/pkgconfig/qxmpp.pc
-@dirrmtry include/qxmpp

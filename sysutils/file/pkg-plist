@@ -7,4 +7,3 @@ man/man1/file.1.gz
 man/man3/libmagic.3.gz
 man/man5/magic.5.gz
 %%DATADIR%%/magic.mgc
-@dirrm %%DATADIR%%

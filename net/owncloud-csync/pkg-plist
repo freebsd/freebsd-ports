@@ -44,10 +44,3 @@ lib/libocsync.so.0.2.1
 %%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/tip.png
 %%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/up.png
 %%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/warning.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide/images/icons/callouts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide/images/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry include/ocsync
-@dirrmtry %%ETCDIR%%

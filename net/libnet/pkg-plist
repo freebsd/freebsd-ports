@@ -72,8 +72,3 @@ man/man3/libnet.h.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tring_tcp2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp2.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/%%SNAME%%
-@dirrm include/%%SNAME%%/libnet
-@dirrm include/%%SNAME%%

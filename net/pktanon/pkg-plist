@@ -3,5 +3,3 @@ bin/pktanon
 %%DATADIR%%/profiles/settings_identity.xml
 %%DATADIR%%/profiles/settings_low.xml
 %%DATADIR%%/profiles/settings_medium.xml
-@dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%

@@ -161,18 +161,3 @@ lib/libarms.so.0.0.1
 %%DOCSDIR%%/doc/objects.inv
 %%DOCSDIR%%/doc/search.html
 %%DOCSDIR%%/doc/searchindex.js
-@dirrm %%DOCSDIR%%/doc/intro
-@dirrm %%DOCSDIR%%/doc/impl
-@dirrm %%DOCSDIR%%/doc/arch
-@dirrm %%DOCSDIR%%/doc/appendix
-@dirrm %%DOCSDIR%%/doc/api
-@dirrm %%DOCSDIR%%/doc/_static
-@dirrm %%DOCSDIR%%/doc/_sources/intro
-@dirrm %%DOCSDIR%%/doc/_sources/impl
-@dirrm %%DOCSDIR%%/doc/_sources/arch
-@dirrm %%DOCSDIR%%/doc/_sources/appendix
-@dirrm %%DOCSDIR%%/doc/_sources/api
-@dirrm %%DOCSDIR%%/doc/_sources
-@dirrm %%DOCSDIR%%/doc/_images
-@dirrm %%DOCSDIR%%/doc
-@dirrm %%DOCSDIR%%

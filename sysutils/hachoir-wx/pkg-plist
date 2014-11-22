@@ -129,8 +129,3 @@ bin/hachoir-wx
 %%PYTHON_SITELIBDIR%%/hachoir_wx/version.py
 %%PYTHON_SITELIBDIR%%/hachoir_wx/version.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_wx/version.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_wx/field_view
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_wx/frame_view
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_wx/hex_view
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_wx/resource
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_wx

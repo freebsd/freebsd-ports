@@ -28,7 +28,3 @@ man/man3/erlang_xmlrpc.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/robust_bank_server.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/robust_banking.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/validator.erl
-@dirrm lib/erlang/lib/xmlrpc-%%VERSION%%/src
-@dirrm lib/erlang/lib/xmlrpc-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/xmlrpc-%%VERSION%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

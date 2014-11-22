@@ -435,18 +435,6 @@ lib/kamailio/modules/xprint.so
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xhttp_rpc
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xlog
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xprint
-@dirrmtry etc/kamailio
-@dirrm lib/kamailio/kamctl/dbtextdb
-@dirrm lib/kamailio/kamctl
-@dirrm lib/kamailio/modules
-@dirrm lib/kamailio
-@dirrm %%DATADIR%%/dbtext/kamailio
-@dirrm %%DATADIR%%/dbtext
-%%MYSQL%%@dirrm %%DATADIR%%/mysql
-%%PGSQL%%@dirrm %%DATADIR%%/postgres
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 man/man5/kamailio.cfg.5.gz
 man/man8/kamailio.8.gz
 man/man8/kamcmd.8.gz

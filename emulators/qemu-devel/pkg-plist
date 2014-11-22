@@ -127,4 +127,3 @@
 %%GTK2%%share/locale/it/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/hu/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/tr/LC_MESSAGES/qemu.mo
-%%SOFTMMU%%@exec mkdir -p %D/var/run

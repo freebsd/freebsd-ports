@@ -4,5 +4,3 @@ GNUstep/Local/Library/Bundles/simpleZillionJob.bundle/stamp.make
 GNUstep/Local/Tools/zillion
 GNUstep/Local/Tools/zillionClient
 GNUstep/Local/Tools/zillionLoader
-@dirrm GNUstep/Local/Library/Bundles/simpleZillionJob.bundle/Resources
-@dirrm GNUstep/Local/Library/Bundles/simpleZillionJob.bundle

@@ -17,4 +17,3 @@ bin/hachoir-subfile
 %%PYTHON_SITELIBDIR%%/hachoir_subfile/version.py
 %%PYTHON_SITELIBDIR%%/hachoir_subfile/version.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_subfile/version.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_subfile

@@ -7,4 +7,3 @@
 %%DATADIR%%/viewer.glade
 %%DATADIR%%/GPL.txt
 bin/flyback
-@dirrm %%DATADIR%%

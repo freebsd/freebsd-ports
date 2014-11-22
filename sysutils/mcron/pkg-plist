@@ -9,4 +9,3 @@ man/man1/mcron.1.gz
 %%DATADIR%%/redirect.scm
 %%DATADIR%%/vixie-specification.scm
 %%DATADIR%%/vixie-time.scm
-@dirrm %%DATADIR%%

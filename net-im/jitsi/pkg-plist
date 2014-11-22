@@ -143,8 +143,3 @@ lib/jitsi/sc-bundles/yahooaccregwizz.jar
 lib/jitsi/sc-bundles/zrtp4j.jar
 man/man1/jitsi.1.gz
 share/pixmaps/jitsi.png
-@dirrm lib/jitsi/sc-bundles
-@dirrm lib/jitsi/lib/native
-@dirrm lib/jitsi/lib/bundle
-@dirrm lib/jitsi/lib
-@dirrm lib/jitsi

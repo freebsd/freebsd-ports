@@ -13,5 +13,3 @@ man/man1/x0vncserver.1.gz
 %%SERVER%%%%DATADIR%%/classes/index.vnc
 %%SERVER%%%%DATADIR%%/classes/logo150x150.gif
 %%SERVER%%%%DATADIR%%/classes/vncviewer.jar
-%%SERVER%%@dirrmtry %%DATADIR%%/classes
-%%SERVER%%@dirrmtry %%DATADIR%%

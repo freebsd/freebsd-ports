@@ -21,7 +21,3 @@ share/applications/intclock.desktop
 %%DATADIR%%/intclock.png
 %%DATADIR%%/territories.dat
 %%DATADIR%%/zones.dat
-@dirrm %%SITE_PERL%%/Intclock/L10N
-@dirrm %%SITE_PERL%%/Intclock
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Intclock
-@dirrm %%DATADIR%%

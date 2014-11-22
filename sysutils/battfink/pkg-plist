@@ -32,8 +32,3 @@ share/locale/sr@Latn/LC_MESSAGES/battfink-0.1.mo
 share/locale/sv/LC_MESSAGES/battfink-0.1.mo
 share/locale/zh_CN/LC_MESSAGES/battfink-0.1.mo
 share/locale/zh_TW/LC_MESSAGES/battfink-0.1.mo
-@dirrm share/omf/battfink
-@dirrm share/battfink/icons
-@dirrm share/battfink/help/C
-@dirrm share/battfink/help
-@dirrm share/battfink

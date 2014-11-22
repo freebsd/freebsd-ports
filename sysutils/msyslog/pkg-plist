@@ -23,4 +23,3 @@ man/man8/syslogd.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf.peo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf.pgsql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf.regex
-@dirrm %%EXAMPLESDIR%%

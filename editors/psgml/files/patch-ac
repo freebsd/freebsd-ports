@@ -1,0 +1,29 @@
+--- psgml.el.orig	Wed May 21 14:47:45 2003
++++ psgml.el	Wed May 21 15:44:47 2003
+@@ -340,7 +340,7 @@
+ (put 'sgml-system-path 'sgml-type 'file-list)
+ 
+ (defvar sgml-public-map (or (sgml-parse-colon-path (getenv "SGML_PATH"))
+-			    '("%S" "/usr/local/lib/sgml/%o/%c/%d" ))
++			    '("%S" "@prefix@/share/sgml/%o/%c/%d" ))
+   "*Mapping from public identifiers to file names.
+ This is a list of possible file names.  To find the file for a public
+ identifier the elements of the list are used one at the time from the
+@@ -366,13 +366,15 @@
+ (defvar sgml-catalog-files (or (delete nil
+ 				       (sgml-parse-colon-path
+ 					(getenv "SGML_CATALOG_FILES")))
+-			       '("catalog" "/usr/local/lib/sgml/catalog"))
++			       '("catalog" "@prefix@/share/sgml/catalog"
++			         "@prefix@/share/xml/catalog"))
+   "*List of catalog entry files.
+ The files are in the format defined in the SGML Open Draft Technical
+ Resolution on Entity Management.")
+ (put 'sgml-catalog-files 'sgml-type 'file-list)
+ 
+-(defvar sgml-ecat-files '("ECAT" "~/sgml/ECAT" "/usr/local/lib/sgml/ECAT")
++(defvar sgml-ecat-files '("ECAT" "~/sgml/ECAT" "@prefix@/share/sgml/ECAT"
++			  "@prefix@/share/xml/ECAT")
+   "*List of catalog files for PSGML.")
+ (put 'sgml-ecat-files 'sgml-type 'file-list)
+ 

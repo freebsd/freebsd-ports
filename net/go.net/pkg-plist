@@ -221,30 +221,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/server.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/websocket.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/websocket_test.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/publicsuffix
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/proxy
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/netutil
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/idna
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/scripted
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/atom
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/dict
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/code.google.com/p
-@dirrmtry %%GO_SRCDIR%%/code.google.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/html
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_LIBDIR%%/code.google.com/p
-@dirrmtry %%GO_LIBDIR%%/code.google.com
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

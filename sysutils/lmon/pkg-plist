@@ -2,4 +2,3 @@ etc/rc.d/lmon.sh.sample
 lmon/control.cfg.sample
 lmon/control.pl
 lmon/lmon.pl
-@dirrmtry lmon

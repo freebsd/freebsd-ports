@@ -805,37 +805,3 @@ share/locale/zh_TW/LC_MESSAGES/plugin_notification.mo
 share/locale/zh_TW/LC_MESSAGES/plugin_sound.mo
 share/pixmaps/emesene.png
 share/pixmaps/emesene-big.png
-@dirrm %%DATADIR%%/abstract
-@dirrm %%DATADIR%%/conversation_themes/gtalk
-@dirrm %%DATADIR%%/conversation_themes/default
-@dirrm %%DATADIR%%/conversation_themes/messenger
-@dirrm %%DATADIR%%/conversation_themes/pidgin
-@dirrm %%DATADIR%%/conversation_themes/irc
-@dirrm %%DATADIR%%/conversation_themes
-@dirrm %%DATADIR%%/emesenelib/soap
-@dirrm %%DATADIR%%/emesenelib/p2p
-@dirrm %%DATADIR%%/emesenelib
-@dirrm %%DATADIR%%/plugins_base/currentSong
-@dirrm %%DATADIR%%/plugins_base/encryptMessage
-@dirrm %%DATADIR%%/plugins_base
-@dirrm %%DATADIR%%/smilies/default
-@dirrm %%DATADIR%%/smilies
-@dirrm %%DATADIR%%/sound_themes/default
-@dirrm %%DATADIR%%/sound_themes/freedesktop
-@dirrm %%DATADIR%%/sound_themes
-@dirrm %%DATADIR%%/themes/default
-@dirrm %%DATADIR%%/themes/gnomecolors
-@dirrm %%DATADIR%%/themes/inthemargins
-@dirrm %%DATADIR%%/themes/tango
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/dv/LC_MESSAGES
-@dirrmtry share/locale/dv
-@dirrmtry share/locale/fil/LC_MESSAGES
-@dirrmtry share/locale/fil
-@dirrmtry share/locale/gv/LC_MESSAGES
-@dirrmtry share/locale/gv
-@dirrmtry share/locale/la/LC_MESSAGES
-@dirrmtry share/locale/la
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO

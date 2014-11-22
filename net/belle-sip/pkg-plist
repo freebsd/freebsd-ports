@@ -29,4 +29,3 @@ lib/libbellesip.so
 lib/libbellesip.so.0
 lib/libbellesip.so.0.0.0
 libdata/pkgconfig/belle-sip.pc
-@dirrm include/belle-sip

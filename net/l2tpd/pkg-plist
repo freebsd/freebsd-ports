@@ -4,4 +4,3 @@ bin/l2tpd
 man/man5/l2tp-secrets.5.gz
 man/man5/l2tpd.conf.5.gz
 man/man8/l2tpd.8.gz
-@dirrm %%ETCDIR%%

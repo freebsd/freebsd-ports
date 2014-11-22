@@ -12,5 +12,3 @@ libdata/pkgconfig/cmockery2.pc
 %%PORTDOCS%%%%DOCSDIR%%/coverage.md
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/usage.md
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry include/cmockery

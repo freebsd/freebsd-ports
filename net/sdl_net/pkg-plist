@@ -4,4 +4,3 @@ lib/libSDL_net-1.2.so.0.8.0
 lib/libSDL_net.a
 lib/libSDL_net.so
 libdata/pkgconfig/SDL_net.pc
-@dirrmtry include/SDL

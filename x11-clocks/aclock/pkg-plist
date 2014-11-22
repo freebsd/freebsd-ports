@@ -30,6 +30,3 @@ GNUstep/Local/Applications/AClock.app/Resources/cuckoo9.png
 GNUstep/Local/Applications/AClock.app/Resources/ring.wav
 GNUstep/Local/Applications/AClock.app/stamp.make
 GNUstep/Local/Tools/AClock
-@dirrm GNUstep/Local/Applications/AClock.app/Resources/AClock.gorm
-@dirrm GNUstep/Local/Applications/AClock.app/Resources
-@dirrm GNUstep/Local/Applications/AClock.app

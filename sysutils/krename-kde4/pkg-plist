@@ -25,8 +25,3 @@ share/locale/sv/LC_MESSAGES/krename.mo
 share/locale/tr/LC_MESSAGES/krename.mo
 share/locale/uk/LC_MESSAGES/krename.mo
 share/locale/zh_CN/LC_MESSAGES/krename.mo
-@dirrmtry share/icons/locolor/32x32/apps
-@dirrmtry share/icons/locolor/32x32
-@dirrmtry share/icons/locolor/16x16/apps
-@dirrmtry share/icons/locolor/16x16
-@dirrmtry share/icons/locolor

@@ -85,15 +85,3 @@ lib/jabber/pyicq/src/xdb/mysql.py
 lib/jabber/pyicq/src/xdb/template.py
 lib/jabber/pyicq/src/xdb/xmlfiles.py
 lib/jabber/pyicq/src/xmlconfig.py
-@dirrm lib/jabber/pyicq/src/chardet_utf
-@dirrm lib/jabber/pyicq/src/langs
-@dirrm lib/jabber/pyicq/src/legacy/services
-@dirrm lib/jabber/pyicq/src/legacy
-@dirrm lib/jabber/pyicq/src/services
-@dirrm lib/jabber/pyicq/src/tlib
-@dirrm lib/jabber/pyicq/src/web
-@dirrm lib/jabber/pyicq/src/xdb
-@dirrm lib/jabber/pyicq/src
-@dirrm lib/jabber/pyicq/data
-@dirrm lib/jabber/pyicq
-@dirrmtry lib/jabber

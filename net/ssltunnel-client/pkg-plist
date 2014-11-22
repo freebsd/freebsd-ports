@@ -6,5 +6,3 @@ man/man5/ssltunnelrc.5.gz
 %%ETCDIR%%/client.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/client.LISEZ-MOI
 %%PORTDOCS%%%%DOCSDIR%%/client.README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%ETCDIR%%

@@ -12,4 +12,3 @@ etc/detoxrc.sample
 man/man1/detox.1.gz
 man/man5/detox.tbl.5.gz
 man/man5/detoxrc.5.gz
-@dirrm share/detox

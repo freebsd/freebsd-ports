@@ -4,4 +4,3 @@ bin/icmpchat
 %%PORTDOCS%%%%DOCSDIR%%/Problems
 %%PORTDOCS%%%%DOCSDIR%%/Readme
 %%PORTDOCS%%%%DOCSDIR%%/Todo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

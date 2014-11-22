@@ -46,7 +46,3 @@ share/quiterss/style/pink.qss
 share/quiterss/style/purple.qss
 share/quiterss/style/system.qss
 share/quiterss/style/system2.qss
-@dirrmtry share/quiterss/lang
-@dirrmtry share/quiterss/sound
-@dirrmtry share/quiterss/style
-@dirrmtry share/quiterss

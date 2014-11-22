@@ -18,4 +18,3 @@ sbin/radexample
 sbin/radiusclient
 sbin/radlogin
 sbin/radstatus
-@dirrmtry %%ETCDIR%%

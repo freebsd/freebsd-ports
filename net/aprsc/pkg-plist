@@ -11,5 +11,3 @@ etc/aprsc/web/jquery.flot.selection.min.js
 man/man8/aprsc.8.gz
 sbin/aprsc
 sbin/aprsc_munin
-@dirrm etc/aprsc/web
-@dirrm etc/aprsc

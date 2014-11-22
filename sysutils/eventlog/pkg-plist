@@ -5,4 +5,3 @@ lib/libevtlog.so
 lib/libevtlog.so.0
 lib/libevtlog.so.0.0.0
 libdata/pkgconfig/eventlog.pc
-@dirrm include/eventlog

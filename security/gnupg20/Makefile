@@ -2,7 +2,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.0.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -23,14 +23,15 @@ LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 		libksba.so:${PORTSDIR}/security/libksba \
 		libpth.so:${PORTSDIR}/devel/pth
 BUILD_DEPENDS=	libgpg-error>=1.11:${PORTSDIR}/security/libgpg-error
+RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
 
 GNU_CONFIGURE=	YES
 USES=		gmake iconv tar:bzip2
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--enable-symcryptrun
+CONFLICTS=	gnupg-2.1.*
 
-OPTIONS_DEFINE=		PINENTRY LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS DOCS SUID_GPG
-PINENTRY_DESC=		Use pinentry
+OPTIONS_DEFINE=		LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS DOCS SUID_GPG
 LDAP_DESC=		LDAP keyserver interface
 SCDAEMON_DESC=		Enable Smartcard daemon (with libusb)
 CURL_DESC=		Use the real curl library (worked around if no)
@@ -43,7 +44,6 @@ NO_OPTIONS_SORT=	YES
 OPTIONS_SUB=		YES
 
 DOCS_CONFIGURE_ENABLE=	doc
-PINENTRY_RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
 GPGSM_RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
 GPGSM_CONFIGURE_ENABLE=	gpgsm
 KDNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns

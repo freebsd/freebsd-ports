@@ -1,6 +1,6 @@
---- src/qrunner/qrunner.cxx.orig	2013-11-19 10:58:52.118170777 -0500
-+++ src/qrunner/qrunner.cxx	2013-11-19 11:00:04.670568086 -0500
-@@ -94,7 +94,7 @@
+--- src/qrunner/qrunner.cxx.orig	2014-10-14 21:19:37.000000000 -0400
++++ src/qrunner/qrunner.cxx	2014-10-24 14:39:00.000000000 -0400
+@@ -103,7 +103,7 @@
  		return;
  	qr->inprog = true;
  
@@ -8,4 +8,4 @@
 +	ssize_t n = QRUNNER_READ(fd, rbuf, FIFO_SIZE);
  	switch (n) {
  	case -1:
- 		if (!QRUNNER_EAGAIN())
+ 		if (!QRUNNER_EAGAIN()) {

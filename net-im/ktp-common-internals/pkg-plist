@@ -139,10 +139,3 @@ share/locale/sv/LC_MESSAGES/ktp-common-internals.mo
 share/locale/uk/LC_MESSAGES/ktp-common-internals.mo
 share/locale/zh_CN/LC_MESSAGES/ktp-common-internals.mo
 share/locale/zh_TW/LC_MESSAGES/ktp-common-internals.mo
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrmtry share/apps/ktelepathy
-@dirrmtry lib/kde4/imports/org/kde/telepathy
-@dirrm include/KTp/Widgets
-@dirrm include/KTp/Models
-@dirrmtry include/KTp

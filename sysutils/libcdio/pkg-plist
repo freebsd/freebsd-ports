@@ -77,5 +77,3 @@ man/man1/cd-info.1.gz
 man/man1/cd-read.1.gz
 man/man1/iso-info.1.gz
 man/man1/iso-read.1.gz
-@dirrm include/cdio
-@dirrm include/cdio++

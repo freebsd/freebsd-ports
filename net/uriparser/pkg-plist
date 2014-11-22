@@ -9,4 +9,3 @@ lib/liburiparser.so
 lib/liburiparser.so.1
 lib/liburiparser.so.1.0.14
 libdata/pkgconfig/liburiparser.pc
-@dirrm include/uriparser

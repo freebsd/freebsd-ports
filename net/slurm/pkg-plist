@@ -7,5 +7,3 @@ man/man1/slurm.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/KEYS
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/slurm

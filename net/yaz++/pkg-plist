@@ -41,6 +41,3 @@ share/doc/yazpp/zoom-query.html
 share/doc/yazpp/zoom-record.html
 share/doc/yazpp/zoom-resultset.html
 share/doc/yazpp/zoom.html
-@dirrm share/doc/yazpp/common
-@dirrm share/doc/yazpp
-@dirrm include/yazpp

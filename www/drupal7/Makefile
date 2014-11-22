@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	drupal7
-PORTVERSION=	7.32
+PORTVERSION=	7.34
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	simon.wright@gmx.net
 COMMENT=	Database driven web content management system (CMS)
 
 LICENSE=	GPLv2 GPLv3
@@ -67,7 +67,9 @@ do-install:
 	${CP} ${WRKSRC}/update.php ${STAGEDIR}${DRUPAL_DIR}
 	${CP} ${WRKSRC}/web.config ${STAGEDIR}${DRUPAL_DIR}
 	${CP} ${WRKSRC}/xmlrpc.php ${STAGEDIR}${DRUPAL_DIR}
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

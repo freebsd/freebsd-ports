@@ -1,13 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	LWP-Protocol-PSGI
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to override LWP HTTP/HTTPS backend with your PSGI app
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Guard>0:${PORTSDIR}/devel/p5-Guard \
@@ -19,5 +22,6 @@ TEST_DEPENDS=	\
 
 USES=	perl5
 USE_PERL5=	modbuildtiny
+NO_ARCH=	YES
 
 .include <bsd.port.mk>

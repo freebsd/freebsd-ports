@@ -54,9 +54,3 @@ share/locale/sv/LC_MESSAGES/guifications.mo
 share/locale/uk/LC_MESSAGES/guifications.mo
 share/locale/zh_CN/LC_MESSAGES/guifications.mo
 share/locale/zh_TW/LC_MESSAGES/guifications.mo
-@dirrm share/pixmaps/pidgin/guifications/themes/mini
-@dirrm share/pixmaps/pidgin/guifications/themes/default
-@dirrm share/pixmaps/pidgin/guifications/themes/Penguins
-@dirrm share/pixmaps/pidgin/guifications/themes
-@dirrm share/pixmaps/pidgin/guifications/conf
-@dirrm share/pixmaps/pidgin/guifications

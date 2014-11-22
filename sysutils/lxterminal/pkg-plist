@@ -61,16 +61,3 @@ share/applications/lxterminal.desktop
 %%DATADIR%%/lxterminal-preferences.ui
 %%DATADIR%%/lxterminal.conf
 share/pixmaps/lxterminal.png
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fo
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tt_RU
-%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lg
-%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/frp
-%%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_VE

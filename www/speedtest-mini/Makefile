@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	speedtest-mini
-PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTVERSION=	2.1.8.20141003
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://c.speedtest.net/mini/
 DISTNAME=	mini

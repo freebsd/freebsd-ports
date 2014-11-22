@@ -33,4 +33,3 @@ bin/wmcube-gdk
 %%DATADIR%%/star.wmc
 %%DATADIR%%/starcube.wmc
 %%DATADIR%%/wmlogo.wmc
-@dirrm %%DATADIR%%

@@ -2,4 +2,3 @@ bin/vcp
 etc/vcp.conf.sample
 man/man1/vcp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

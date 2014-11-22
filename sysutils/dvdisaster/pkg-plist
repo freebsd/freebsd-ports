@@ -9,9 +9,3 @@ man/man1/dvdisaster.1.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/dvdisaster.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dvdisaster.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/dvdisaster.mo
-@dirrmtry man/cs/man1
-@dirrmtry man/cs
-@dirrmtry man/de/man1
-@dirrmtry man/de
-@dirrmtry man/it/man1
-@dirrmtry man/it

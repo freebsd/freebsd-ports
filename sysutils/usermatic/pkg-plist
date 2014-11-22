@@ -13,8 +13,6 @@ sbin/newusers.pl
 %%PORTDOCS%%%%DOCSDIR%%/digestion.pl.pod
 %%PORTDOCS%%%%DOCSDIR%%/hunter-seeker.pl.pod
 %%PORTDOCS%%%%DOCSDIR%%/reaper.pl.pod
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/list_digested
 %%EXAMPLESDIR%%/list_raw
 %%EXAMPLESDIR%%/sums_to_ignore
-@dirrm %%EXAMPLESDIR%%

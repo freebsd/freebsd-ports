@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -25,10 +25,13 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes
+CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
+		ac_cv_prog_COMPILE_ET=${WRKSRC}/lib/com_err/compile_et
 CONFIGURE_ARGS=	--with-libintl \
 		--with-libintl-include="${LOCALBASE}/include" \
 		--with-libintl-lib="${LOCALBASE}/lib" \
+		--libdir="${PREFIX}/lib/${PORTNAME}" \
+		--includedir="${PREFIX}/include/${PORTNAME}" \
 		--with-kcm \
 		--with-openssl \
 		--with-openssl-include="${OPENSSLINC}" \
@@ -81,23 +84,13 @@ KX509_DESC=		Enable kx509 support
 KX509_CONFIGURE_ENABLE=	kx509
 
 CRACKLIB_DESC=		Use CrackLib for password quality checking
-CRACKLIB_BUILD_DEPENDS=	${PREFIX}/lib/libcrack.a:${PORTSDIR}/security/cracklib
+CRACKLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 
 X11_DESC=		Build X11 utilies
 X11_USE=		XORG=x11,xt
 X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} < 1000000
-PLIST_SUB+=	LIBCOM_ERR=""
-.else
-PLIST_SUB+=	LIBCOM_ERR="@comment "
-.endif
-.else
-PLIST_SUB+=	LIBCOM_ERR=""
-.endif
 
 .if ${PORT_OPTIONS:MLDAP}
 WANT_OPENLDAP_SASL?=	yes

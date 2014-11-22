@@ -22,6 +22,3 @@ www/data/rtg.php
 www/data/rtg.png
 www/data/rtgback.png
 www/data/view.php
-@dirrmtry contrib
-@dirrmtry %%ETCDIR%%
-@dirrmtry www/data

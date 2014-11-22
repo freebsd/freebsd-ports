@@ -11,7 +11,6 @@ sbin/dt
 %%DATADIR%%/pattern_9
 %%DATADIR%%/pattern_all
 %%DATADIR%%/pattern_dedup
-@dirrm %%DATADIR%%
 %%EXAMPLESDIR%%/dta
 %%EXAMPLESDIR%%/dtc
 %%EXAMPLESDIR%%/dtf
@@ -24,4 +23,3 @@ sbin/dt
 %%EXAMPLESDIR%%/butterfly_file.ksh
 %%EXAMPLESDIR%%/butterfly.ksh
 %%EXAMPLESDIR%%/dtw
-@dirrm %%EXAMPLESDIR%%

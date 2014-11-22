@@ -13,5 +13,3 @@ share/vnc/classes/shared.vnc
 share/vnc/classes/vncCanvas.class
 share/vnc/classes/vncviewer.class
 share/vnc/classes/vncviewer.jar
-@dirrm share/vnc/classes
-@dirrm share/vnc

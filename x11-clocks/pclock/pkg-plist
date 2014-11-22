@@ -15,5 +15,3 @@ bin/pclock
 %%DATADIR%%/pixmaps/wood-tile.xpm
 %%DATADIR%%/pixmaps/wristwatch.xpm
 %%DATADIR%%/pixmaps/yellow-diamond.xpm
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%

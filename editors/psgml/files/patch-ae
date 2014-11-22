@@ -1,0 +1,47 @@
+--- psgml.texi.orig	Mon Nov 16 06:45:07 1998
++++ psgml.texi	Sat Jan 23 21:10:21 1999
+@@ -11,10 +11,9 @@
+ 
+ @ifinfo
+-@format
+-START-INFO-DIR-ENTRY
++@dircategory The Emacs editor and associated tools
++@direntry
+ * PSGML: (psgml).          PSGML, a major mode for SGML documents.
+-END-INFO-DIR-ENTRY
+-@end format
++@end direntry
+ @end ifinfo
+ 
+ @ifinfo
+@@ -401,10 +400,10 @@
+ @code{SGML_PATH}.
+ 
+ Given the public identifier above and the file name template 
+-@samp{/usr/local/lib/sgml/%o/%c/%d}, the resulting file name is
++@samp{@prefix@/share/sgml/%o/%c/%d}, the resulting file name is
+ 
+ @example
+-/usr/local/lib/sgml/ISO_8879:1986/entities/Added_Latin_1
++@prefix@/share/sgml/ISO_8879:1986/entities/Added_Latin_1
+ @end example
+ 
+ Note: blanks are transliterated to @samp{_} (and also @samp{/} to
+@@ -420,7 +419,7 @@
+ is undefined the default is
+ 
+ @lisp
+-("CATALOG" "/usr/local/lib/sgml/CATALOG")
++("catalog" "@prefix@/share/sgml/catalog")
+ @end lisp
+ @end defopt
+ 
+@@ -448,7 +447,7 @@
+ environment variable is undefined the default is
+ 
+ @lisp
+-("%S" "/usr/local/lib/sgml/%o/%c/%d")
++("%S" "@prefix@/share/sgml/%o/%c/%d")
+ @end lisp
+ @c Mapping from public identifiers to file names.
+ @end defopt

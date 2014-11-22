@@ -23,8 +23,6 @@ bin/vncviewer
 %%JVNC_VIEWER%%%%DATADIR%%/classes/VncViewer.jar
 %%JVNC_VIEWER%%%%DATADIR%%/classes/ZlibInStream.class
 %%JVNC_VIEWER%%%%DATADIR%%/classes/index.vnc
-%%JVNC_VIEWER%%@dirrm %%DATADIR%%/classes
-%%JVNC_VIEWER%%@dirrm %%DATADIR%%
 man/man1/Xvnc.1.gz
 man/man1/vncconnect.1.gz
 man/man1/vncpasswd.1.gz

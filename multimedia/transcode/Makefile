@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -56,7 +56,7 @@ XVID_LIB_DEPENDS=		libxvidcore.so:${PORTSDIR}/multimedia/xvid
 XVID_CONFIGURE_ENABLE=		xvid
 XVID_CONFIGURE_ON=		--with-xvid-prefix=${LOCALBASE}
 
-X264_LIB_DEPENDS=		libx264.so:${PORTSDIR}/multimedia/x264
+X264_LIB_DEPENDS=		libx264.so:${PORTSDIR}/multimedia/libx264
 X264_CONFIGURE_ENABLE=		x264
 
 OGG_LIB_DEPENDS=		libogg.so:${PORTSDIR}/audio/libogg

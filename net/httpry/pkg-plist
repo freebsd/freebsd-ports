@@ -22,6 +22,3 @@ man/man1/httpry.1.gz
 %%EXTRASCRIPTS%%bin/httpry-scripts/plugins/log_summary.cfg
 %%PORTDOCS%%%%DOCSDIR%%/perl-tools
 %%PORTDOCS%%%%DOCSDIR%%/format-string
-%%EXTRASCRIPTS%%@dirrm bin/httpry-scripts/plugins
-%%EXTRASCRIPTS%%@dirrm bin/httpry-scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -13,4 +13,3 @@ share/mount.app/notmountable.txt
 share/mount.app/online-help.txt
 share/mount.app/zip_ext.xpm
 share/mount.app/slotin.xpm
-@dirrm share/mount.app

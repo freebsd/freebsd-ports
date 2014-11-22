@@ -3,6 +3,7 @@
 
 PORTNAME=	reoback
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Release%203
 EXTRACT_SUFX=	_r3.tar.gz
@@ -18,7 +19,7 @@ USES=		perl5
 pre-install:
 		cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/home/sforge/reoback/settings.conf,${PREFIX}/etc/reoback/settings.conf,g' ${WRKSRC}/run_reoback.sh
 		cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/home/sforge/reoback/reoback.pl,${PREFIX}/bin/reoback.pl,g' ${WRKSRC}/run_reoback.sh
-		cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,^#!/usr/bin/perl -W,#!/usr/bin/perl -w,g' reoback.pl
+		cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,^#!/usr/bin/perl -W,#!${PERL} -w,g' reoback.pl
 
 do-install:
 		${INSTALL_SCRIPT}	${WRKSRC}/reoback.pl ${STAGEDIR}${PREFIX}/bin/

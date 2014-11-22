@@ -11,7 +11,7 @@ kpasswdd-cracklib.so: kpasswdd-cracklib.c
 
 install-strip: install
 
-install: ${DESTDIR}${PREFIX}/lib/kpasswdd-cracklib.so
+install: ${DESTDIR}${PREFIX}/lib/heimdal/kpasswdd-cracklib.so
 
-${DESTDIR}${PREFIX}/lib/kpasswdd-cracklib.so: kpasswdd-cracklib.so
+${DESTDIR}${PREFIX}/lib/heimdal/kpasswdd-cracklib.so: kpasswdd-cracklib.so
 	${BSD_INSTALL_LIB} ${.ALLSRC} ${.TARGET}

@@ -14,14 +14,13 @@ LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm \
 
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto \
 		presentproto xvmc xshmfence
-USES=		gettext:build
 
 OPTIONS_DEFINE=	TEXTURE
 
-OPTIONS_DEFINE_i386=	GALLIUM VDPAU
-OPTIONS_DEFAULT_i386=	GALLIUM VDPAU
-OPTIONS_DEFINE_amd64=	GALLIUM VDPAU
-OPTIONS_DEFAULT_amd64=	GALLIUM VDPAU
+OPTIONS_DEFINE_i386=	GALLIUM
+OPTIONS_DEFAULT_i386=	GALLIUM
+OPTIONS_DEFINE_amd64=	GALLIUM
+OPTIONS_DEFAULT_amd64=	GALLIUM
 
 GALLIUM_DESC=	Gallium (llvm backed) dri drivers
 TEXTURE_DESC=	Enable texture-float support (patent encumbered)
@@ -60,15 +59,18 @@ DRIREVISION=	6
 PLIST=	${.CURDIR}/pkg-plist-old
 .endif
 
+DRI_LLVM_VER=	0
+
 .if ${PORT_OPTIONS:MGALLIUM}
 . if defined(WITH_NEW_MESA)
 # keep in sync with libopencl please
-BUILD_DEPENDS+=	llvm34>=0:${PORTSDIR}/devel/llvm34
-CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config34
+DRI_LLVM_VER=	34
 . else
-BUILD_DEPENDS+=	llvm33>=0:${PORTSDIR}/devel/llvm33
-CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config33
+DRI_LLVM_VER=	33
 . endif
+
+BUILD_DEPENDS+=	llvm${DRI_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${DRI_LLVM_VER}
+CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${DRI_LLVM_VER}
 
 CONFIGURE_ARGS+=--enable-gallium-llvm \
 		--enable-xvmc \
@@ -84,9 +86,13 @@ PLIST_SUB+=	GALLIUM="@comment "
 CONFIGURE_ARGS+=--enable-texture-float
 .endif
 
-.if ${PORT_OPTIONS:MVDPAU}
+.if 0 #${PORT_OPTIONS:MVDPAU}
+.if ${PORT_OPTIONS:MGALLIUM} == ""
+IGNORE=	VDPAU option requires GALLIUM support to be enabled
+.endif
 CONFIGURE_ARGS+=--enable-vdpau
 LIB_DEPENDS+=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+RUN_DEPENDS+=	llvm${DRI_LLVM_VER}:${PORTSDIR}/devel/llvm${DRI_LLVM_VER}
 PLIST_SUB+=	VDPAU=""
 .else
 CONFIGURE_ARGS+=--disable-vdpau

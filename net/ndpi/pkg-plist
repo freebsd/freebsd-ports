@@ -13,5 +13,3 @@ lib/libndpi.so
 lib/libndpi.so.1
 lib/libndpi.so.1.0.0
 libdata/pkgconfig/libndpi.pc
-@dirrm include/libndpi-%%MAJOR_VER%%/libndpi
-@dirrm include/libndpi-%%MAJOR_VER%%

@@ -131,8 +131,3 @@ man/man1/dar_xform.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/dar.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dar.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dar.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mini-howto
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/man
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/dar

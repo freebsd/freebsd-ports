@@ -21,4 +21,3 @@ man/man8/ospfd.8.gz
 man/man8/ripd.8.gz
 man/man8/ripngd.8.gz
 man/man8/zebra.8.gz
-@dirrm etc/zebra

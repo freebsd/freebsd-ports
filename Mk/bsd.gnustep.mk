@@ -172,7 +172,7 @@ _CLANG!=	${DESTDIR}/usr/bin/clang --version | head -1 | \
 _CLANG=	0
 .endif
 
-.if ${_CLANG} < 33
+.if ${_CLANG} < 34
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
 CPP=	${LOCALBASE}/bin/clang-cpp34
 CC=	${LOCALBASE}/bin/clang34

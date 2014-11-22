@@ -22,7 +22,3 @@ livecd/lang/vnodes_En
 livecd/livecd.sh
 livecd/scripts/create_vnodes.sh
 livecd/scripts/install_freebsd.sh
-@dirrm livecd/scripts
-@dirrm livecd/lang
-@dirrm livecd/files
-@dirrm livecd

@@ -2,4 +2,3 @@ bin/findmtu
 bin/findmtu.real
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.freebsd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

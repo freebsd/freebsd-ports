@@ -60,4 +60,3 @@ bin/hachoir-metadata-gtk
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/video.py
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/video.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/video.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_metadata

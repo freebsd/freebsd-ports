@@ -9,7 +9,4 @@ sbin/smartctl
 sbin/smartd
 sbin/update-smart-drivedb
 %%DATADIR%%/drivedb.h
-@dirrm %%DATADIR%%
-@dirrmtry etc/periodic/daily
-@dirrmtry etc/periodic
-@dirrmtry etc/smartd_warning.d
+@dir etc/smartd_warning.d

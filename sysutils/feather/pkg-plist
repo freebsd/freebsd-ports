@@ -1,4 +1,3 @@
 bin/feather
 etc/feather.yaml.dist
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

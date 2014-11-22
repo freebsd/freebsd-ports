@@ -3,7 +3,7 @@
 
 PORTNAME=	astrometry
 PORTVERSION=	0.46
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
@@ -32,5 +32,13 @@ post-patch:
 # Outwit detection logic that thinks Clang does not support -shared argument
 	@${REINPLACE_CMD} -e '/CCTEST/s,\\|warning:,,' \
 		${WRKSRC}/util/makefile.common
+
+post-install:
+	@${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' \
+		${STAGEDIR}${PREFIX}/${PORTNAME}/etc/${PORTNAME}.cfg
+	@${FIND} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin -type f -not -name "*.py" \
+		-exec ${STRIP_CMD} {} \;
+	@${FIND} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib -type f -name "*.so" \
+		-exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.mk>

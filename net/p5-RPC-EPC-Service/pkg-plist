@@ -1,8 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/EPC/Service/.packlist
 %%SITE_PERL%%/RPC/EPC/Service.pm
 %%PERL5_MAN3%%/RPC::EPC::Service.3.gz
-@dirrm %%SITE_PERL%%/RPC/EPC
-@dirrmtry %%SITE_PERL%%/RPC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/EPC/Service
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/EPC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC

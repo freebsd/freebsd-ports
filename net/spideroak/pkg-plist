@@ -117,14 +117,3 @@ share/pixmaps/SpiderOakGlobalSync.png
 %%DATADIR%%/unicodedata.so
 %%DATADIR%%/zlib.so
 %%DATADIR%%/zope.interface._zope_interface_coptimizations.so
-@dirrmtry etc/dbus-1/system.d
-@dirrmtry etc/dbus-1
-@dirrmtry etc/xdg/menus/applications-merged
-@dirrmtry etc/xdg/menus
-@dirrmtry etc/xdg
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-i686.egg/EGG-INFO
-@dirrmtry %%DATADIR%%/SpideroakVersionMatcher-1.1-py2.7-linux-i686.egg
-@dirrmtry %%DATADIR%%/plugins/systemtrayicon
-@dirrmtry %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%

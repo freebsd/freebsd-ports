@@ -3,6 +3,7 @@
 
 PORTNAME=	remotebox
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${PORTVERSION}
@@ -19,7 +20,8 @@ RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 LICENSE_FILE_GPLv2=	${WRKSRC}/docs/COPYING
 
 NO_BUILD=	yes
-USES=	tar:bzip2
+USES=		shebangfix tar:bzip2
+SHEBANG_FILES=	remotebox
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS

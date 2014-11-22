@@ -57,11 +57,3 @@ sbin/radiusd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/configuration.sample-postgres
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/configuration.sample-unixpass
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/configuration.sample-usersfile
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/accounts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/openradius
-@dirrmtry %%ETCDIR%%/subdicts
-@dirrmtry %%ETCDIR%%/modules
-@dirrmtry %%ETCDIR%%/legacy
-@dirrmtry %%ETCDIR%%

@@ -44,4 +44,3 @@ lib/libeasysoap.a
 lib/libeasysoap.so
 lib/libeasysoap.so.0
 lib/libeasysoap.so.0.0.0
-@dirrm include/easysoap

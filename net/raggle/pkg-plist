@@ -8,7 +8,6 @@ bin/raggle
 %%PORTDOCS%%%%DOCSDIR%%/default_config.rb
 %%PORTDOCS%%%%DOCSDIR%%/pauls_feeds.opml.gz
 %%PORTDOCS%%%%DOCSDIR%%/theme_documentation.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/extras/feed_dump.rb
 %%DATADIR%%/extras/feed_sizes.rb
 %%DATADIR%%/extras/rss_dir_list.rb
@@ -37,10 +36,3 @@ bin/raggle
 %%DATADIR%%/themes/mono.yaml
 %%DATADIR%%/themes/pane.yaml
 %%DATADIR%%/themes/vert.yaml
-@dirrm %%DATADIR%%/extras/web_ui/images
-@dirrm %%DATADIR%%/extras/web_ui/inc
-@dirrm %%DATADIR%%/extras/web_ui
-@dirrm %%DATADIR%%/extras/win32
-@dirrm %%DATADIR%%/extras
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%

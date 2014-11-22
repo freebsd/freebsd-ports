@@ -7,7 +7,6 @@ man/man8/portfwd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/conf.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/alias.cfg
 %%EXAMPLESDIR%%/bind-new.cfg
 %%EXAMPLESDIR%%/bind.cfg
@@ -26,4 +25,3 @@ man/man8/portfwd.8.gz
 %%EXAMPLESDIR%%/test.cfg
 %%EXAMPLESDIR%%/udp.cfg
 %%EXAMPLESDIR%%/x.cfg
-@dirrm %%EXAMPLESDIR%%

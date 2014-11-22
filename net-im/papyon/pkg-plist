@@ -673,38 +673,3 @@
 %%PYTHON_SITELIBDIR%%/papyon/util/weak.py
 %%PYTHON_SITELIBDIR%%/papyon/util/weak.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/weak.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/util/iso8601
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/util
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/sip/extensions
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/sip
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/Spaces
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/SingleSignOn
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/Sharing
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/SchematizedStore
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/RSI
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/OIM
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description/AB
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/description
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/Spaces/scenario
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/Spaces
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/OfflineIM/scenario
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/OfflineIM
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/ContentRoaming/scenario
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/ContentRoaming
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/sync
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/groups
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario/contacts
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook/scenario
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service/AddressBook
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/service
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/msnp2p
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/msnp
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/media
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/gnet/proxy
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/gnet/protocol
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/gnet/message
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/gnet/io
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/gnet
-@dirrm %%PYTHON_SITELIBDIR%%/papyon/event
-@dirrm %%PYTHON_SITELIBDIR%%/papyon

@@ -42,29 +42,3 @@ share/keys/server.id_dsa.key.pub
 %%NLS%%share/locale/ja/LC_MESSAGES/opennx.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/opennx.mo
 share/pconnect.html
-@dirrmtry share/keys
-@dirrmtry share/icons/scalable/mimetypes
-@dirrmtry share/icons/scalable/apps
-@dirrmtry share/icons/scalable
-@dirrmtry share/icons/512x512/mimetypes
-@dirrmtry share/icons/512x512/apps
-@dirrmtry share/icons/512x512
-@dirrmtry share/icons/48x48/mimetypes
-@dirrmtry share/icons/48x48/apps
-@dirrmtry share/icons/48x48
-@dirrmtry share/icons/32x32/mimetypes
-@dirrmtry share/icons/32x32/apps
-@dirrmtry share/icons/32x32
-@dirrmtry share/icons/256x256/mimetypes
-@dirrmtry share/icons/256x256/apps
-@dirrmtry share/icons/256x256
-@dirrmtry share/icons/16x16/mimetypes
-@dirrmtry share/icons/16x16/apps
-@dirrmtry share/icons/16x16
-@dirrmtry share/icons/128x128/mimetypes
-@dirrmtry share/icons/128x128/apps
-@dirrmtry share/icons/128x128
-@dirrmtry share/icons
-@dirrmtry share/cups
-@dirrmtry share/applnk/xdg
-@dirrmtry share/applnk

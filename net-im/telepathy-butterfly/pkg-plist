@@ -85,9 +85,3 @@
 libexec/telepathy-butterfly
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.butterfly.service
 share/telepathy/managers/butterfly.manager
-@dirrm %%PYTHON_SITELIBDIR%%/butterfly/util
-@dirrm %%PYTHON_SITELIBDIR%%/butterfly/media
-@dirrm %%PYTHON_SITELIBDIR%%/butterfly/channel
-@dirrm %%PYTHON_SITELIBDIR%%/butterfly
-@dirrmtry share/telepathy/managers
-@dirrmtry share/telepathy

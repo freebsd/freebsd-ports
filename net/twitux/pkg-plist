@@ -19,21 +19,3 @@ share/twitux/main_window.xml
 share/twitux/prefs_dlg.xml
 share/twitux/send_message_dlg.xml
 share/twitux/spell_dlg.xml
-@dirrm share/twitux
-@dirrm share/omf/twitux
-@dirrm share/gnome/help/twitux/C/figures
-@dirrm share/gnome/help/twitux/C
-@dirrm share/gnome/help/twitux
-@dirrmtry lib/locale/sv/LC_MESSAGES
-@dirrmtry lib/locale/pt/LC_MESSAGES
-@dirrmtry lib/locale/ja/LC_MESSAGES
-@dirrmtry lib/locale/fr/LC_MESSAGES
-@dirrmtry lib/locale/es/LC_MESSAGES
-@dirrmtry lib/locale/de/LC_MESSAGES
-@dirrmtry lib/locale/sv
-@dirrmtry lib/locale/pt
-@dirrmtry lib/locale/ja
-@dirrmtry lib/locale/fr
-@dirrmtry lib/locale/es
-@dirrmtry lib/locale/de
-@dirrmtry lib/locale

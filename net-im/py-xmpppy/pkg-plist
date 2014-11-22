@@ -43,4 +43,3 @@
 %%PYTHON_SITELIBDIR%%/xmpp/transports.py
 %%PYTHON_SITELIBDIR%%/xmpp/transports.pyc
 %%PYTHON_SITELIBDIR%%/xmpp/transports.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/xmpp

@@ -1,6 +1,11 @@
---- ./configure.ac.orig	2014-01-09 22:35:34.000000000 +0000
-+++ ./configure.ac	2014-01-17 17:25:40.113916574 +0000
-@@ -90,10 +90,12 @@
+--- configure.ac.orig	2014-06-10 07:40:26.000000000 +0900
++++ configure.ac	2014-06-13 07:24:14.000000000 +0900
+@@ -86,15 +86,16 @@
+     )
+   )
+ )
+-AC_SEARCH_LIBS(ftime, [compat], , [enable_http=no])
+ 
  AS_IF([test "$enable_http" != "no"], [
     openssl="openssl"
     AC_DEFINE([OP_ENABLE_HTTP], [1], [Enable HTTP support])

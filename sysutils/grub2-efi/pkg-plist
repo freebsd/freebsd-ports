@@ -507,5 +507,3 @@ lib/grub/x86_64-efi/videotest_checksum.mod
 lib/grub/x86_64-efi/videotest_checksum.module
 lib/grub/x86_64-efi/xnu_uuid_test.mod
 lib/grub/x86_64-efi/xnu_uuid_test.module
-@dirrm lib/grub/x86_64-efi
-@dirrmtry lib/grub

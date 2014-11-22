@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	adns
-PORTVERSION=	1.5
+PORTVERSION=	1.5.0
 CATEGORIES=	dns
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~ian/adns/ftp/
-EXTRACT_SUFX=	.0~rc0.tar.gz
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Easy to use asynchronous-capable DNS client library and utilities
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.0~rc0
+LICENSE=	GPLv3
 
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -23,9 +22,6 @@ BUILD_DEPENDS+=		gm4:${PORTSDIR}/devel/m4
 CFLAGS+=		-Ds6_addr16=__u6_addr.__u6_addr16
 CFLAGS+=		-Ds6_addr32=__u6_addr.__u6_addr32
 MAKE_FLAGS+=		M4=gm4
-#PATCH_SITES+=		https://people.debian.org/~lucab/deb/adns/:ipv6patch
-#PATCHFILES+=		adns-ipv6.patch:ipv6patch
-#PATCH_DIST_STRIP+=	-p1
 
 DOCS=		COPYING GPL-vs-LGPL INSTALL README \
 		README.html TODO changelog
@@ -41,9 +37,11 @@ OPTIONS_DEFAULT=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
+.endif
 
 post-stage:
 .for f in ${TOSTRIP}

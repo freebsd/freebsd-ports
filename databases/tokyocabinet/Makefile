@@ -4,12 +4,14 @@
 PORTNAME=	tokyocabinet
 PORTVERSION=	1.4.48
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	LOCAL/kuriyama \
 		http://fallabs.com/${PORTNAME}/
-MASTER_SITE_SUBDIR=	kuriyama
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Modern implementation of DBM
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -45,10 +47,10 @@ CONFIGURE_ARGS+=	--enable-devel
 .if ${PORT_OPTIONS:MFASTEST}
 CONFIGURE_ARGS+=	--enable-fastest
 .endif
-# liblzma on 9-current does not have liblzma.h file.
+# to not confuse with system liblzma
 .if ${PORT_OPTIONS:MLZMA}
 CONFIGURE_ARGS+=	--enable-exlzma
-LIB_DEPENDS+=		liblzma.so:${PORTSDIR}/archivers/lzmalib
+LIB_DEPENDS+=		liblzma.so.1:${PORTSDIR}/archivers/lzmalib
 .else
 CONFIGURE_ARGS+=	--disable-exlzma
 .endif
@@ -85,5 +87,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
 		-e 's|@datarootdir@|@datarootdir@/doc|' \
 		${WRKSRC}/Makefile.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so \
+		${STAGEDIR}${PREFIX}/libexec/tcawmgr.cgi
 
 .include <bsd.port.mk>

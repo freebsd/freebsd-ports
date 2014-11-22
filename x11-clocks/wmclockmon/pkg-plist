@@ -78,5 +78,3 @@ man/man1/wmclockmon.1.gz
 %%DATADIR%%/parts.xpm
 %%DATADIR%%/parts_color.xpm
 %%DATADIR%%/parts_new.xpm
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%

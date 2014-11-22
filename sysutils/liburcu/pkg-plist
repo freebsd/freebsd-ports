@@ -74,8 +74,3 @@ libdata/pkgconfig/liburcu-mb.pc
 libdata/pkgconfig/liburcu-qsbr.pc
 libdata/pkgconfig/liburcu-signal.pc
 libdata/pkgconfig/liburcu.pc
-@dirrm include/urcu/uatomic
-@dirrm include/urcu/static
-@dirrm include/urcu/map
-@dirrm include/urcu/arch
-@dirrm include/urcu

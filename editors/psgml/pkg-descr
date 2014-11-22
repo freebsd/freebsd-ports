@@ -1,0 +1,17 @@
+   PSGML is a major mode for editing SGML and XML documents.  It works
+with GNU Emacs 19.34, 20.3 and later or with XEmacs 19.9 and later.
+PSGML contains a simple SGML parser and can work with any DTD.
+Functions provided includes menus and commands for inserting tags with
+only the contextually valid tags, identification of structural errors,
+editing of attribute values in a separate window with information about
+types and defaults, and structure based editing.
+
+To use psgml, put the following setup into your ~/.emacs:
+
+	(require 'psgml-startup)
+
+Ports of PSGML are initially created by shige <shige@FreeBSD.org> and
+kuriyama@FreeBSD.ORG.
+
+WWW: http://www.lysator.liu.se/~lenst/about_psgml/
+WWW: http://sourceforge.net/projects/psgml/

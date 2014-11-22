@@ -1,4 +1,3 @@
 bin/memfetch
 bin/mffind.pl
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

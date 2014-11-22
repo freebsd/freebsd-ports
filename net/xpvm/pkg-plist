@@ -89,7 +89,3 @@ bin/xpvm
 %%DATADIR%%/src/xbm/zoom.swipe.l.xbm
 %%DATADIR%%/src/xbm/zoom.swipe.r.xbm
 %%DATADIR%%/src/xbm/zoom.swipe.xbm
-@dirrm %%DATADIR%%/src/xbm
-@dirrm %%DATADIR%%/src/help
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%

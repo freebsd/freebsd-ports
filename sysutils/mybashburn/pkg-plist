@@ -126,17 +126,3 @@ man/man1/mybashburn.1.gz
 %%DATADIR%%/burning/bincue.sh
 %%DATADIR%%/burning/multi.sh
 %%DATADIR%%/burning/burning.sh
-@dirrm %%DATADIR%%/burning
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/convert
-@dirrm %%DATADIR%%/lang/Norwegian
-@dirrm %%DATADIR%%/lang/Spanish
-@dirrm %%DATADIR%%/lang/Czech
-@dirrm %%DATADIR%%/lang/English
-@dirrm %%DATADIR%%/lang/Swedish
-@dirrm %%DATADIR%%/lang/Polish
-@dirrm %%DATADIR%%/lang/German
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/menus
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%

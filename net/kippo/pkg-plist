@@ -54,20 +54,3 @@
 %%DATADIR%%/utils/passdb.py
 %%DATADIR%%/utils/playlog.py
 %%DATADIR%%/utils/fsctl.py
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/doc/sql
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/honeyfs/etc
-@dirrm %%DATADIR%%/honeyfs/proc
-@dirrm %%DATADIR%%/honeyfs
-@dirrm %%DATADIR%%/kippo/commands
-@dirrm %%DATADIR%%/kippo/core
-@dirrm %%DATADIR%%/kippo/dblog
-@dirrm %%DATADIR%%/kippo
-@dirrm %%DATADIR%%/txtcmds/bin
-@dirrm %%DATADIR%%/txtcmds/sbin
-@dirrm %%DATADIR%%/txtcmds/usr/bin
-@dirrm %%DATADIR%%/txtcmds/usr
-@dirrm %%DATADIR%%/txtcmds
-@dirrm %%DATADIR%%/utils
-@dirrm %%DATADIR%%

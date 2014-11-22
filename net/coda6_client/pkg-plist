@@ -41,4 +41,3 @@ sbin/venus
 sbin/venus-setup
 sbin/volmunge
 sbin/vutil
-@dirrmtry etc/coda

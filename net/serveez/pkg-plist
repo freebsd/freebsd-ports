@@ -15,4 +15,3 @@ share/aclocal/serveez.m4
 %%DATADIR%%/mandel-client.scm
 %%DATADIR%%/mandel-server.scm
 %%DATADIR%%/mandel-shared.scm
-@dirrm %%DATADIR%%

@@ -1,5 +1,5 @@
 --- menudiag.el.orig	2001-01-28 03:53:13.000000000 +0900
-+++ menudiag.el	2013-03-30 17:12:23.000000000 +0900
++++ menudiag.el	2014-11-22 15:40:36.000000000 +0900
 @@ -296,7 +296,7 @@
  (defun menudiag-goto-item ()
    (interactive)
@@ -19,6 +19,19 @@
    (add-hook 'post-command-hook 'menudiag-selection-align-to-item nil t)
    (use-local-map menudiag-selection-map)
    (setq mode-name "Menudiag Selection")
+@@ -595,10 +596,10 @@
+       (set-buffer sel-buf)
+       (setq completion-reference-buffer tmp-buf)
+       (if event
+-	  (mouse-choose-completion event)
++         (choose-completion event)
+ 	(choose-completion))
+       (set-buffer tmp-buf)
+-      (setq n (string-to-int (buffer-string))))
++      (setq n (string-to-number (buffer-string))))
+     (pop-to-buffer org-buf)
+     (while (and item-list (>= n (length (car item-list))))
+       (setq l (1+ l)
 @@ -619,7 +620,7 @@
    (unless (eq last-command 'menudiag-selection-goto)
      (setq menudiag-goto-number-list nil

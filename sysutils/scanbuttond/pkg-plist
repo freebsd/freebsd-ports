@@ -26,4 +26,3 @@ lib/libscanbtnd-backend_snapscan.so.1.0.0
 lib/libscanbtnd-interface_usb.so
 lib/libscanbtnd-interface_usb.so.1
 lib/libscanbtnd-interface_usb.so.1.0.0
-@dirrm etc/scanbuttond

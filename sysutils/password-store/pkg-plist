@@ -18,12 +18,7 @@
 %%CONTRIB%%%%DATADIR%%/pass.fish-completion
 %%CONTRIB%%%%DATADIR%%/pass.zsh-completion
 %%CONTRIB%%%%DATADIR%%/related-projects.txt
-%%CONTRIB%%@dirrmtry %%DATADIR%%
-%%CONTRIB%%@dirrmtry %%DATADIR%%/dmenu
-%%CONTRIB%%@dirrmtry %%DATADIR%%/emacs
-%%CONTRIB%%@dirrmtry %%DATADIR%%/importers
 %%PORTDOCS%%man/man1/pass.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-filter.sh
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 bin/pass
 libexec/pass

@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	drupal6
-PORTVERSION=	6.33
+PORTVERSION=	6.34
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	simon.wright@gmx.net
 COMMENT=	Database driven web content management system (CMS)
 
 USES=		drupal:6
@@ -62,7 +62,9 @@ do-install:
 	${CP} ${WRKSRC}/xmlrpc.php ${STAGEDIR}${DRUPAL_DIR}
 	${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/all/modules ${STAGEDIR}${DRUPAL_DIR}/sites/all/themes
 	${TOUCH} ${STAGEDIR}${DRUPAL_DIR}/sites/all/modules/.keepme ${STAGEDIR}${DRUPAL_DIR}/sites/all/themes/.keepme
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

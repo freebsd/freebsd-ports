@@ -53,11 +53,4 @@ sbin/dicod
 %%NLS%%share/locale/fi/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/dico.mo
-@dirrm share/dico/%%PORTVERSION%%/include
-@dirrm share/dico/%%PORTVERSION%%
-@dirrm share/dico
-@dirrmtry lib/dico
-@dirrm include/dico
-%%GUILE%%@exec mkdir -p %D/share/guile/site/dico
-%%GUILE%%@dirrmtry share/guile/site/dico
-%%GUILE%%@dirrmtry share/guile/site
+%%GUILE%%@dir share/guile/site/dico

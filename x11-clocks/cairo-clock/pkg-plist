@@ -250,26 +250,3 @@ share/locale/tr/LC_MESSAGES/cairo-clock.mo
 share/locale/zh_CN/LC_MESSAGES/cairo-clock.mo
 share/locale/zh_TW/LC_MESSAGES/cairo-clock.mo
 share/pixmaps/cairo-clock.png
-@dirrmtry %%DATADIR%%/glade
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%/themes/antique
-@dirrmtry %%DATADIR%%/themes/default
-@dirrmtry %%DATADIR%%/themes/default-24
-@dirrmtry %%DATADIR%%/themes/fdo
-@dirrmtry %%DATADIR%%/themes/funky
-@dirrmtry %%DATADIR%%/themes/glassy
-@dirrmtry %%DATADIR%%/themes/gremlin
-@dirrmtry %%DATADIR%%/themes/gremlin-24
-@dirrmtry %%DATADIR%%/themes/ipulse
-@dirrmtry %%DATADIR%%/themes/ipulse-24
-@dirrmtry %%DATADIR%%/themes/quartz-24
-@dirrmtry %%DATADIR%%/themes/radium
-@dirrmtry %%DATADIR%%/themes/radium-24
-@dirrmtry %%DATADIR%%/themes/silvia
-@dirrmtry %%DATADIR%%/themes/silvia-24
-@dirrmtry %%DATADIR%%/themes/simple
-@dirrmtry %%DATADIR%%/themes/simple-24
-@dirrmtry %%DATADIR%%/themes/tango
-@dirrmtry %%DATADIR%%/themes/zen
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%

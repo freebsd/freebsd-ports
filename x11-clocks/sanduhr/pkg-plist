@@ -25,13 +25,5 @@ share/pixmaps/sanduhr/steel/back.png
 share/pixmaps/sanduhr/steel/front.png
 share/pixmaps/sanduhr/steel/mask.png
 share/sounds/sanduhr/bell.wav
-@dirrm share/sounds/sanduhr
-@dirrm share/pixmaps/sanduhr/steel
-@dirrm share/pixmaps/sanduhr/default
-@dirrm share/pixmaps/sanduhr
-@dirrm share/omf/sanduhr
-@dirrm share/gnome/help/sanduhr/de/figures
-@dirrm share/gnome/help/sanduhr/de
-@dirrm share/gnome/help/sanduhr/C/figures
-@dirrm share/gnome/help/sanduhr/C
-@dirrm share/gnome/help/sanduhr
+@dir share/gnome/help/sanduhr/C/figures
+@dir share/gnome/help/sanduhr/de/figures

@@ -158,22 +158,3 @@ share/locale/uk/LC_MESSAGES/liferea.mo
 share/locale/vi/LC_MESSAGES/liferea.mo
 share/locale/zh_CN/LC_MESSAGES/liferea.mo
 share/locale/zh_TW/LC_MESSAGES/liferea.mo
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrm share/liferea/xslt
-@dirrm share/liferea/pixmaps
-@dirrm share/liferea/opml
-@dirrm share/liferea/gir-1.0
-@dirrm share/liferea/dtd
-@dirrm share/liferea/doc/html
-@dirrm share/liferea/doc
-@dirrm share/liferea/css
-@dirrm share/liferea
-@dirrmtry man/pl/man1
-@dirrmtry man/pl
-@dirrmtry share/appdata
-@dirrm lib/liferea/plugins
-@dirrm lib/liferea/girepository-1.0
-@dirrm lib/liferea

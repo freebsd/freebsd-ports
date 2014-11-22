@@ -5,5 +5,3 @@ man/man1/ldapdiff.1.gz
 %%DATADIR%%/samples/webtomware_without_jpeg.user.ldif
 %%DATADIR%%/samples/webtomware.init.ldif
 %%DATADIR%%/samples/webtomware.user.ldif
-@dirrm %%DATADIR%%/samples
-@dirrm %%DATADIR%%

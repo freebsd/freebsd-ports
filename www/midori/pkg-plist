@@ -95,7 +95,6 @@ share/applications/midori.desktop
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/midori.devhelp2
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/right.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/style.css
-%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/up-insensitive.png
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/midori/up.png
 share/icons/hicolor/16x16/apps/midori.png
 share/icons/hicolor/16x16/categories/extension.png

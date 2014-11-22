@@ -5,13 +5,11 @@ man/man1/logtool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/logtool.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/scripts/README
 %%EXAMPLESDIR%%/scripts/cronjob.emailreport.sh
 %%EXAMPLESDIR%%/scripts/cronjob.genwebpage.sh
 %%EXAMPLESDIR%%/scripts/logtool_logcheck.sh
 %%EXAMPLESDIR%%/scripts/monitor.logs.sh
-@dirrm %%EXAMPLESDIR%%/scripts
 %%EXAMPLESDIR%%/blue
 %%EXAMPLESDIR%%/brightblue
 %%EXAMPLESDIR%%/brightcyan
@@ -28,4 +26,3 @@ man/man1/logtool.1.gz
 %%EXAMPLESDIR%%/magenta
 %%EXAMPLESDIR%%/white
 %%EXAMPLESDIR%%/yellow
-@dirrm %%EXAMPLESDIR%%

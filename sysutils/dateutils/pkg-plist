@@ -33,5 +33,3 @@ man/man1/dseq.1.gz
 man/man1/dtest.1.gz
 man/man1/strptime.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/dateutils

@@ -3,4 +3,3 @@ bin/etrace
 %%DATADIR%%/ike
 @sample %%DATADIR%%/profile.sample
 man/man8/etrace.8.gz
-@dirrmtry %%DATADIR%%

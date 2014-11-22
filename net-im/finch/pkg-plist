@@ -60,7 +60,3 @@ lib/libgnt.so.0.8.10
 libdata/pkgconfig/finch.pc
 libdata/pkgconfig/gnt.pc
 man/man1/finch.1.gz
-@dirrm lib/gnt
-@dirrm lib/finch
-@dirrm include/gnt
-@dirrm include/finch

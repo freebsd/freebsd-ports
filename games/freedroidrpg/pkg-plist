@@ -6,3 +6,4 @@ bin/gluefont
 bin/make_atlas
 bin/pngtoico
 man/man6/freedroidRPG.6.gz
+share/pixmaps/freedroidrpg.png

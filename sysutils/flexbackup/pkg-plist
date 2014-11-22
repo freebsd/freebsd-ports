@@ -7,4 +7,3 @@ man/man5/flexbackup.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.15
-PORTREVISION=	6
+PORTVERSION=	0.15.1
 CATEGORIES=	games
-MASTER_SITES=	SF/freedroid/freedroidRPG/freedroidRPG-${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\\1/}/
+MASTER_SITES=	SF/freedroid/${SF_NAME}/${SF_NAME}-${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\\1/}/
+DISTNAME=	${SF_NAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_sparc64=	Does not configure on sparc64
 
 GNU_CONFIGURE=	yes
 USES=		gmake lua:51
@@ -16,40 +21,34 @@ USE_SDL=	sdl image mixer gfx
 CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 USE_GCC=	any # doesn't build with clang
 
+SF_NAME=	freedroidRPG
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 PORTDATA=	*
 
+DESKTOP_ENTRIES="FreedroidRPG" "" \
+		"${PORTNAME}" "${SF_NAME}" \
+		"Game;RolePlaying;" false
+
 OPTIONS_DEFINE=	BACKTRACE OPENGL VORBIS
+OPTIONS_DEFAULT=BACKTRACE OPENGL VORBIS
 BACKTRACE_DESC=	Use backtrace() to generate nice bug reports
 
-OPTIONS_DEFAULT=BACKTRACE OPENGL VORBIS
+BACKTRACE_LIB_DEPENDS=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+BACKTRACE_CONFIGURE_ENABLE=	backtrace
+OPENGL_USE=			GL=gl
+OPENGL_CONFIGURE_ENABLE=	opengl
+VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+				libogg.so:${PORTSDIR}/audio/libogg
+VORBIS_CONFIGURE_ENABLE=	vorbis
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBACKTRACE}
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-CONFIGURE_ARGS+=--enable-backtrace
 STRIP=		#
-.else
-CONFIGURE_ARGS+=--disable-backtrace
 .endif
 
-.if ${PORT_OPTIONS:MOPENGL}
-USE_GL=		yes
-CONFIGURE_ARGS+=--enable-opengl
-.else
-CONFIGURE_ARGS+=--disable-opengl
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg
-CONFIGURE_ARGS+=--enable-vorbis
-.else
-CONFIGURE_ARGS+=--disable-vorbis
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not configure on sparc64
-.endif
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/win32/w32icon2_64x64.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

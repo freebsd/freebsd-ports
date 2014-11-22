@@ -9,5 +9,3 @@ doc/echat-0.04beta1/TODO
 doc/echat-0.04beta1/ec
 etc/echatrc.sample
 man/man1/echat.1.gz
-@dirrm doc/echat-0.04beta1
-@dirrm doc

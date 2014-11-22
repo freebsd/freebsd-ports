@@ -1390,20 +1390,4 @@ man/man8/yate-config.8.gz
 %%DATADIR%%/sounds/ring.au
 %%DATADIR%%/sounds/ring.wav
 %%DATADIR%%/sounds/tone.wav
-@dirrmtry include/yate
-@dirrmtry lib/yate/client
-@dirrmtry lib/yate/jabber
-@dirrmtry lib/yate/qt4
-@dirrmtry lib/yate/server
-@dirrmtry lib/yate/sip
-@dirrmtry lib/yate
-@dirrmtry %%DATADIR%%/data
-@dirrmtry %%DATADIR%%/help
-@dirrmtry %%DATADIR%%/scripts
-@dirrmtry %%DATADIR%%/skins/default
-@dirrmtry %%DATADIR%%/skins
-@dirrmtry %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%-5.4.0/api
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%-5.4.0
-@dirrmtry %%ETCDIR%%
+@dir lib/yate/qt4

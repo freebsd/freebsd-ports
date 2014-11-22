@@ -13,4 +13,3 @@ libdata/pkgconfig/libisoburn-1.pc
 man/man1/xorrecord.1.gz
 man/man1/xorriso.1.gz
 man/man1/xorrisofs.1.gz
-@dirrm include/libisoburn

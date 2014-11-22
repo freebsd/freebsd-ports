@@ -128,16 +128,3 @@ share/locale/zh_CN/LC_MESSAGES/zeitgeist.mo
 %%DATADIR%%/ontology/zeitgeist.py
 %%DATADIR%%/ontology/zg.py
 %%DATADIR%%/ontology/zg.trig
-@dirrm %%DATADIR%%/ontology
-@dirrm %%DATADIR%%/_zeitgeist/engine/upgrades
-@dirrm %%DATADIR%%/_zeitgeist/engine/extensions
-@dirrm %%DATADIR%%/_zeitgeist/engine
-@dirrm %%DATADIR%%/_zeitgeist
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrm %%PYTHON_SITELIBDIR%%/zeitgeist

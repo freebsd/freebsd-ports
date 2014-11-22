@@ -93,4 +93,3 @@ man/man1/tracestats.1.gz
 man/man1/tracesummary.1.gz
 man/man1/tracetop.1.gz
 man/man1/tracetopends.1.gz
-@dirrm lib/libpacketdump

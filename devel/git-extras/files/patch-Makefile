@@ -9,15 +9,6 @@
  BINS = $(wildcard bin/git-*)
  MANS = $(wildcard man/git-*.md)
  MAN_HTML = $(MANS:.md=.html)
-@@ -17,7 +18,7 @@
- 	@mkdir -p $(DESTDIR)$(BINPREFIX)
- 	@echo "... installing bins to $(DESTDIR)$(BINPREFIX)"
- 	@echo "... installing man pages to $(DESTDIR)$(MANPREFIX)"
--	$(eval TEMPFILE := $(shell mktemp))
-+	$(eval TEMPFILE := $(shell mktemp -t git-extras))
- 	@# chmod from rw-------(default) to rwxrwxr-x, so that users can exec the scripts
- 	@chmod 775 $(TEMPFILE)
- 	@$(foreach COMMAND, $(COMMANDS_USED_WITH_GIT_REPO), \
 @@ -31,8 +32,8 @@
  		cp -f bin/$(COMMAND) $(DESTDIR)$(BINPREFIX); \
  	)

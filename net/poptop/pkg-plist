@@ -6,4 +6,3 @@ man/man8/pptpctrl.8.gz
 man/man8/pptpd.8.gz
 sbin/pptpctrl
 sbin/pptpd
-@dirrm lib/pptpd

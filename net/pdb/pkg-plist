@@ -8,4 +8,3 @@ bin/pdb.py
 %%PYTHON_SITELIBDIR%%/pktdbg/packetstream.py
 %%PYTHON_SITELIBDIR%%/pktdbg/packetstream.pyc
 %%PYTHON_SITELIBDIR%%/pktdbg/packetstream.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pktdbg

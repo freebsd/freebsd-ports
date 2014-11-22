@@ -129,8 +129,3 @@ share/applications/skype.desktop
 %%SKYPEDIR%%/sounds/TransferFailed.wav
 %%SKYPEDIR%%/sounds/TransferRequest.wav
 %%SKYPEDIR%%/sounds/VoicemailReceived.wav
-@dirrm %%SKYPEDIR%%/sounds
-@dirrm %%SKYPEDIR%%/lang
-@dirrm %%SKYPEDIR%%/icons
-@dirrm %%SKYPEDIR%%/avatars
-@dirrm %%SKYPEDIR%%

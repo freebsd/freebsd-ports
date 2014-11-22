@@ -13,4 +13,3 @@ libdata/pkgconfig/libcdio_paranoia.pc
 libdata/pkgconfig/libcdio_cdda.pc
 man/man1/cd-paranoia.1.gz
 man/ja/man1/cd-paranoia.1.gz
-@dirrm include/cdio/paranoia

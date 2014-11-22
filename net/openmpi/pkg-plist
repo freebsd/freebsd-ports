@@ -940,29 +940,3 @@
 %%MPIDIR%%/%%DATADIR%%/ortecc-wrapper-data.txt
 %%MPIDIR%%/%%DATADIR%%/shmemcc-wrapper-data.txt
 %%MPIDIR%%/%%DATADIR%%/shmemfort-wrapper-data.txt
-%%VT%%@dirrmtry %%MPIDIR%%/share/vampirtrace/doc/vtsetup
-%%VT%%@dirrmtry %%MPIDIR%%/share/vampirtrace/doc/otf
-%%VT%%@dirrmtry %%MPIDIR%%/share/vampirtrace/doc
-%%VT%%@dirrmtry %%MPIDIR%%/share/vampirtrace
-%%VT%%@dirrmtry %%MPIDIR%%/include/vampirtrace/open-trace-format
-%%VT%%@dirrmtry %%MPIDIR%%/include/vampirtrace
-@dirrmtry %%MPIDIR%%/%%DATADIR%%/amca-param-sets
-@dirrmtry %%MPIDIR%%/%%DATADIR%%
-@dirrmtry %%MPIDIR%%/share
-@dirrmtry %%MPIDIR%%/man/man7
-@dirrmtry %%MPIDIR%%/man/man3
-@dirrmtry %%MPIDIR%%/man/man1
-@dirrmtry %%MPIDIR%%/man
-@dirrmtry %%MPIDIR%%/lib/pkgconfig
-@dirrmtry %%MPIDIR%%/lib/openmpi
-@dirrmtry %%MPIDIR%%/lib
-@dirrmtry %%MPIDIR%%/include/openmpi/ompi/mpi/cxx
-@dirrmtry %%MPIDIR%%/include/openmpi/ompi/mpi
-@dirrmtry %%MPIDIR%%/include/openmpi/ompi
-@dirrmtry %%MPIDIR%%/include/openmpi
-@dirrmtry %%MPIDIR%%/include/mpp
-@dirrmtry %%MPIDIR%%/include
-@dirrmtry %%MPIDIR%%/etc
-@dirrmtry %%MPIDIR%%/bin
-@dirrmtry %%MPIDIR%%
-@dirrmtry %%MPIBASE%%

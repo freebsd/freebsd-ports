@@ -58,14 +58,3 @@ share/pixmaps/tsclient/program.png
 share/pixmaps/tsclient/size.png
 share/pixmaps/tsclient/sound.png
 share/pixmaps/tsclient/tsclient.png
-@dirrm share/pixmaps/tsclient
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/nl_NL/LC_MESSAGES
-@dirrmtry share/locale/nl_NL
-@dirrmtry share/locale/gr/LC_MESSAGES
-@dirrmtry share/locale/gr

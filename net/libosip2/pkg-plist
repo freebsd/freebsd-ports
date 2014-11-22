@@ -50,6 +50,3 @@ lib/libosipparser2.so
 lib/libosipparser2.so.11
 lib/libosipparser2.so.11.0.0
 libdata/pkgconfig/libosip2.pc
-@dirrm include/osipparser2/headers
-@dirrm include/osipparser2
-@dirrm include/osip2

@@ -64,21 +64,3 @@ man/man1/encfsctl.1.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/encfs.mo
-%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_HK
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/nds/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nds
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/hu_HU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hu_HU
-%%NLS%%@dirrmtry share/locale/es_PE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_PE
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
-%%NLS%%@dirrmtry share/locale/de_CH/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_CH

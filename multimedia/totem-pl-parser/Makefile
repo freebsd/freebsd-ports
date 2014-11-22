@@ -26,6 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	QUVI
 OPTIONS_DEFAULT=QUVI
 QUVI_DESC=	Flash media stream URL support

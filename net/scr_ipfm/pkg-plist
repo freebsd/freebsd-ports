@@ -42,15 +42,3 @@
 %%MYADMDIR%%/yearinglobal.php
 %%MYADMDIR%%/yearly-graph.php
 %%MYADMDIR%%/yearly.php
-@dirrm %%MYADMDIR%%/themes/yellow
-@dirrm %%MYADMDIR%%/themes/white
-@dirrm %%MYADMDIR%%/themes/orange
-@dirrm %%MYADMDIR%%/themes/meat
-@dirrm %%MYADMDIR%%/themes/green
-@dirrm %%MYADMDIR%%/themes/default
-@dirrm %%MYADMDIR%%/themes/blue
-@dirrm %%MYADMDIR%%/themes
-@dirrm %%MYADMDIR%%/images
-@dirrm %%MYADMDIR%%/contrib
-@dirrm %%MYADMDIR%%
-@dirrmtry www/data
