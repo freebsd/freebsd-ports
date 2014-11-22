@@ -218,6 +218,7 @@
     SUBDIR += pico-alpine
     SUBDIR += pluma
     SUBDIR += poedit
+    SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-room
     SUBDIR += rox-edit
