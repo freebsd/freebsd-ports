@@ -23,6 +23,7 @@ bin/git-info
 bin/git-line-summary
 bin/git-local-commits
 bin/git-lock
+bin/git-locked
 bin/git-missing
 bin/git-obliterate
 bin/git-pr
@@ -33,6 +34,7 @@ bin/git-release
 bin/git-rename-tag
 bin/git-repl
 bin/git-reset-file
+bin/git-root
 bin/git-setup
 bin/git-show-tree
 bin/git-squash
@@ -65,6 +67,7 @@ man/man1/git-ignore.1.gz
 man/man1/git-info.1.gz
 man/man1/git-local-commits.1.gz
 man/man1/git-lock.1.gz
+man/man1/git-locked.1.gz
 man/man1/git-missing.1.gz
 man/man1/git-pr.1.gz
 man/man1/git-rebase-patch.1.gz
@@ -73,6 +76,7 @@ man/man1/git-release.1.gz
 man/man1/git-rename-tag.1.gz
 man/man1/git-repl.1.gz
 man/man1/git-reset-file.1.gz
+man/man1/git-root.1.gz
 man/man1/git-setup.1.gz
 man/man1/git-show-tree.1.gz
 man/man1/git-squash.1.gz
