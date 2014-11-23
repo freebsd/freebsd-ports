@@ -9,15 +9,15 @@ MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PECL extension to support Internationalization(ICU)
 
 LICENSE=	PHP301
 
 LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
 
-USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
+USES=		tar:tgz
 
 .include <bsd.port.mk>
