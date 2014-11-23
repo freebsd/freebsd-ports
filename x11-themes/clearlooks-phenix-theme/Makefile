@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clearlooks-phenix
-PORTVERSION=	4.0
+PORTVERSION=	6.0.3
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	GH GHC
 PKGNAMESUFFIX=	-theme
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 GH_ACCOUNT=	jpfleury
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	fcf15e9
+GH_COMMIT=	ef314bf
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/Clearlooks-Phenix
