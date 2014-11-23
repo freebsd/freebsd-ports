@@ -3,7 +3,7 @@
 
 PORTNAME=		instantclient
 PORTVERSION=		${ORACLEVERSION}.${DISTDATE}
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		databases
 MASTER_SITES=		#http://www.oracle.com/technology/software/tech/oci/instantclient/
 PKGNAMEPREFIX=		linux-oracle-
@@ -11,7 +11,7 @@ PKGNAMESUFFIX=		-basic
 DISTNAME=		${PORTNAME}${PKGNAMESUFFIX}-${LINUXARCH}-${ORACLEVERSION}-${DISTDATE}
 DIST_SUBDIR=		oracle
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		pi@FreeBSD.org
 COMMENT=		Oracle 10 32Bit Linux InstantClient basics for RDBMS 8.1.2+
 
 ONLY_FOR_ARCHS=		i386 amd64
@@ -40,7 +40,7 @@ WRKSRC=			${WRKDIR}/instantclient_10_2
 INSTBINSDIR=		${STAGEDIR}${PREFIX}/usr/bin
 INSTLIBSDIR=		${STAGEDIR}${PREFIX}/usr/lib/oracle/${ORACLEVERSION}/client/lib
 
-USE_LDCONFIG=		${PREFIX}/usr/lib/oracle/${ORACLEVERSION}/client/lib
+USE_LDCONFIG=		yes
 
 PLIST_SUB=		ORACLEVERSION=${ORACLEVERSION}
 
@@ -48,6 +48,7 @@ PLIST_SUB=		ORACLEVERSION=${ORACLEVERSION}
 
 #.if ${ARCH} == "i386"
 LINUXARCH=		linux32
+LINUXXVAL=		x86
 DISTDATE=		20061115
 #.elif ${ARCH} == "amd64"
 #LINUXARCH=		linux-x86-64
@@ -55,12 +56,19 @@ DISTDATE=		20061115
 #.endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE+=	due to Oracle license restrictions, you must fetch the source distribution manually from http://www.oracle.com/technology/software/tech/oci/instantclient/index.html , follow the link for ${DISTFILES} and place them in ${DISTDIR}/${DIST_SUBDIR}/
+IGNORE=\
+	Due to Oracle license restrictions, you must fetch the source\
+	distribution manually from\
+	http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html\
+	, follow the link for Linux ${LINUXXVAL}, download ${DISTFILES}\
+	and place it in ${DISTDIR}/${DIST_SUBDIR}/
 .endif
 
 do-install:
-	@${MKDIR} -m 0755 ${INSTBINSDIR}
-	@${MKDIR} -m 0755 ${INSTLIBSDIR}
+	${MKDIR} -m 0755 ${INSTBINSDIR}
+	${MKDIR} -m 0755 ${INSTLIBSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ld.so.conf.d
+	${ECHO} /usr/lib/oracle/${ORACLEVERSION}/client/lib > ${STAGEDIR}${PREFIX}/etc/ld.so.conf.d/oracle10.conf
 .for i in ${BINS_LIST}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${INSTBINSDIR}/${i}
 .endfor

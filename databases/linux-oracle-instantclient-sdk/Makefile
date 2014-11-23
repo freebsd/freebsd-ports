@@ -3,7 +3,7 @@
 
 PORTNAME=	instantclient
 PORTVERSION=	${ORACLEVERSION}.${DISTDATE}
-PORTEPOCH=  	1
+PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	#http://www.oracle.com/technology/software/tech/oci/instantclient/
 PKGNAMEPREFIX=	linux-oracle-
@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-sdk
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${LINUXARCH}-${ORACLEVERSION}-${DISTDATE}
 DIST_SUBDIR=	oracle
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Oracle 10 InstantClient SDK. Works with Oracle RDBMS 8.1.2+
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/oracle/${ORACLEVERSION}/client/lib/libocci.so.10.1:${PORTSDIR}/databases/linux-oracle-instantclient-basic
@@ -75,15 +75,16 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 LINUXARCH=	linux32
+LINUXXVAL=	x86
 DISTDATE=	20061115
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE+=	due to Oracle license restrictions, you must fetch the source\
-		distribution manually. Please do a network search for\
-		${DISTFILES} and find the current Oracle Downloads Web site.\
-		After registration and accepting the Oracle License, download\
-		the distribution files and place them in\
-		${DISTDIR}/${DIST_SUBDIR}/
+IGNORE=\
+	Due to Oracle license restrictions, you must fetch the source\
+	distribution manually from\
+	http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html\
+	, follow the link for Linux ${LINUXXVAL}, download ${DISTFILES}\
+	and place it in ${DISTDIR}/${DIST_SUBDIR}/
 .endif
 
 do-install:
