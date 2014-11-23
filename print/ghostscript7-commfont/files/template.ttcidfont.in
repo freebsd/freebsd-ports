@@ -1,0 +1,10 @@
+%!PS-Adobe-3.0 Resource-CIDFont
+%%Creator: $FreeBSD$
+%%BeginResource: CIDFont (%%FONTNAME%%)
+
+(%%FONTNAME%%)
+(%%GENERICFONTNAME_SUBST%%) findlibfile pop pop .openttcidfont
+/CIDFont defineresource pop
+
+%%EndResource
+%%EOF

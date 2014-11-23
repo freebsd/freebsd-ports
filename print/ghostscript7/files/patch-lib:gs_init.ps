@@ -1,0 +1,27 @@
+--- lib/gs_init.ps.orig	Sat Jan 22 13:15:37 2005
++++ lib/gs_init.ps	Sat Jan 22 13:15:05 2005
+@@ -119,6 +119,7 @@
+ currentdict /NOFONTPATH known   /NOFONTPATH exch def
+ currentdict /NOGC known   /NOGC exch def
+ currentdict /NOINTERPOLATE .knownget { /INTERPOLATE exch not def } if
++currentdict /NOMEDIAATTRS known /NOMEDIAATTRS exch def
+ currentdict /NOPAGEPROMPT known   /NOPAGEPROMPT exch def
+ currentdict /NOPAUSE known   /NOPAUSE exch def
+ currentdict /NOPLATFONTS known   /NOPLATFONTS exch def
+@@ -1274,7 +1275,7 @@
+ % Set the default screen and BG/UCR.
+ /.setdefaultbgucr {
+   systemdict /setblackgeneration known {
+-    { pop 0 } dup setblackgeneration setundercolorremoval
++    {} dup setblackgeneration setundercolorremoval
+   } if
+ } bind def
+ /.useloresscreen {	% - .useloresscreen <bool>
+@@ -1883,3 +1884,7 @@
+ userdict /AGM_preserve_spots false put
+ 
+ % The interpreter will run the initial procedure (start).
++
++% unofficial patch:
++% make it possible to print from within acroread pdf viewer
++/Default currenthalftone /Halftone defineresource pop
