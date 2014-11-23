@@ -2,29 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	openshadinglanguage
-PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTVERSION=	1.5.11
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	Advanced shading language for production GI renderers
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	llvm-config33:${PORTSDIR}/devel/llvm33 \
-		clang33>=3.3_3:${PORTSDIR}/lang/clang33
+BUILD_DEPENDS=	llvm-config34:${PORTSDIR}/devel/llvm34 \
+		clang34>=3.4_1:${PORTSDIR}/lang/clang34
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libOpenImageIO.so:${PORTSDIR}/graphics/openimageio
-RUN_DEPENDS=	llvm-config33:${PORTSDIR}/devel/llvm33
+RUN_DEPENDS=	llvm-config34:${PORTSDIR}/devel/llvm34
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenShadingLanguage
 GH_TAGNAME=	Release-${PORTVERSION}
-GH_COMMIT=	2c3574d
+GH_COMMIT=	9c3ba5b
 
-CMAKE_ARGS=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config33"
+CMAKE_ARGS=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config34"
 USE_LDCONFIG=	yes
 USES=		bison cmake:outsource
 
