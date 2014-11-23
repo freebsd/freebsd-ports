@@ -64,6 +64,7 @@
     SUBDIR += font-ipa
     SUBDIR += font-ipa-uigothic
     SUBDIR += font-ipaex
+    SUBDIR += font-ipamjm
     SUBDIR += font-jisx0213
     SUBDIR += font-kochi
     SUBDIR += font-koruri
