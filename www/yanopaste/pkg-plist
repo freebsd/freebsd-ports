@@ -6,8 +6,6 @@
 %%WWWDIR%%/config.php.sample
 %%WWWDIR%%/functions.php
 %%WWWDIR%%/header.jpg
-%%WWWDIR%%/includes/geshi.VERSION
-%%WWWDIR%%/includes/geshi.php
 %%WWWDIR%%/includes/geshi/abap.php
 %%WWWDIR%%/includes/geshi/actionscript.php
 %%WWWDIR%%/includes/geshi/actionscript3.php
@@ -146,11 +144,10 @@
 %%WWWDIR%%/includes/geshi/xorg_conf.php
 %%WWWDIR%%/includes/geshi/xpp.php
 %%WWWDIR%%/includes/geshi/z80.php
+%%WWWDIR%%/includes/geshi.VERSION
+%%WWWDIR%%/includes/geshi.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/screen.css
+%%WWWDIR%%/upgrade.php
 @exec touch %D/%%WWWDIR%%/config.php;chown www %D/%%WWWDIR%%/config.php
 @unexec if [ ! -s %D/%%WWWDIR%%/config.php ];then rm -f %D/%%WWWDIR%%/config.php;fi
-%%WWWDIR%%/upgrade.php
-@dirrm %%WWWDIR%%/includes/geshi
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%
