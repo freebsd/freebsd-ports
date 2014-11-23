@@ -1,4 +1,4 @@
-@sample etc/mt-daapd.conf.sample
+@sample %%ETCDIR%%/mt-daapd.conf.sample
 bin/mt-daapd-ssc.sh
 bin/wavstreamer
 lib/mt-daapd/plugins/out-daap.a
@@ -64,5 +64,5 @@ share/mt-daapd/admin-root/xiph-license.txt
 share/mt-daapd/admin-root/zlib-license.html
 share/mt-daapd/admin-root/zlib-license.txt
 @dir(%%DAAPD_USER%%,%%DAAPD_GROUP%%,) %%DATADIR%%
-@rmtry var/db/firefly/songs3.db
-@dir(%%DAAPD_USER%%,%%DAAPD_GROUP%%,) var/db/firefly
+@rmtry %%DAAPD_DBDIR%%/songs3.db
+@dir(%%DAAPD_USER%%,%%DAAPD_GROUP%%,) %%DAAPD_DBDIR%%
