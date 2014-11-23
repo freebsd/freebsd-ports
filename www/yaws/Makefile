@@ -21,14 +21,11 @@ GH_PROJECT=	yaws
 GH_COMMIT=	83bdc80
 GH_TAGNAME=	yaws-${PORTVERSION}
 
-MAN1=		yaws.1
-MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
-
 APPDIR=		${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=--prefix=${STAGEDIR}${PREFIX} --localstatedir=/var
+CONFIGURE_ARGS=	--localstatedir=/var
 
 .include <bsd.port.pre.mk>
 
