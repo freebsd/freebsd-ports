@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	bitset
-PORTVERSION=	1.0.1
+PORTVERSION=	2.0.1
 CATEGORIES=	math
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PECL extension for manipulating bitsets
+
+LICENSE=	PHP301
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+USES=		tar:tgz
 
 .include <bsd.port.mk>
