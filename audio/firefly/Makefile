@@ -3,17 +3,15 @@
 
 PORTNAME=	firefly
 PORTVERSION=	1696
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
-MASTER_SITES=	http://nightlies.fireflymediaserver.org/nightlies/svn-${PORTVERSION}/ \
-		http://www.magnesium.net/~mdf/distfiles/
+MASTER_SITES=	SF/fireflyserver-server/Sources/mt-daapd/svn-${PORTVERSION}
 DISTNAME=	mt-daapd-svn-${PORTVERSION}
 
-MAINTAINER=	info@netocean.de
+MAINTAINER=	info@NetOcean.de
 COMMENT=	Open-source media server for the Roku SoundBridge and iTunes
 
 LICENSE=	GPLv2
-BROKEN=		Does not fetch
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vorbis/codec.h:${PORTSDIR}/audio/libvorbis \
 		${LOCALBASE}/include/FLAC/metadata.h:${PORTSDIR}/audio/flac
@@ -26,22 +24,25 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--prefix=${PREFIX} --with-id3tag=${PREFIX} \
-			--enable-sqlite3 --enable-oggvorbis --enable-flac
+CONFIGURE_ARGS=	--with-id3tag=${LOCALBASE} --enable-sqlite3 \
+		--enable-oggvorbis --enable-flac --localstatedir=/var
 USES=		libtool
+INSTALL_TARGET=	install-strip
 
 DAAPD_USER?=	daapd
 DAAPD_GROUP?=	daapd
-DAAPD_DBDIR?=	${PREFIX}/var/db/${PORTNAME}
+DAAPD_DBDIR?=	/var/db/${PORTNAME}
 USE_RC_SUBR=	mt-daapd
 USERS=		${DAAPD_USER}
 GROUPS=		${DAAPD_GROUP}
 
+SUB_LIST+=	DAAPD_USER=${DAAPD_USER} \
+		DAAPD_GROUP=${DAAPD_GROUP} \
+		DAAPD_DBDIR=${DAAPD_DBDIR}
+SUB_FILES=	pkg-message
 PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR} \
 		DAAPD_USER=${DAAPD_USER} \
-		DAAPD_GROUP=${DAAPD_GROUP} \
-		DATADIR=${DATADIR}
+		DAAPD_GROUP=${DAAPD_GROUP}
 
 USE_LDCONFIG=	yes
 
@@ -62,25 +63,20 @@ pre-everything::
 	@${ECHO_CMD} "Define vars below if you need:"
 	@${ECHO_CMD} "DAAPD_USER=${DAAPD_USER} (default: daapd)"
 	@${ECHO_CMD} "DAAPD_GROUP=${DAAPD_GROUP} (default: daapd)"
-	@${ECHO_CMD} "DAAPD_DBDIR=${DAAPD_DBDIR} (default: ${PREFIX}/var/db/${PORTNAME})"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
-		${WRKSRC}/configure
+	@${ECHO_CMD} "DAAPD_DBDIR=${DAAPD_DBDIR} (default: /var/db/${PORTNAME})"
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README AUTHORS COPYING CREDITS \
 	ChangeLog INSTALL NEWS TODO
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/contrib/mt-daapd.conf \
-		${STAGEDIR}${PREFIX}/etc/mt-daapd.conf.sample
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/mt-daapd.conf.sample
 	@${MKDIR} ${STAGEDIR}${DAAPD_DBDIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${CHMOD} 0755 ${STAGEDIR}${DAAPD_DBDIR}
-	@${CHMOD} 0755 ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

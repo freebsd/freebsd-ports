@@ -1,15 +1,24 @@
---- contrib/mt-daapd.conf.templ	2008-09-23 23:16:46.000000000 -0700
-+++ contrib/mt-daapd.conf.templ	2008-09-23 23:40:43.000000000 -0700
-@@ -57,7 +57,7 @@
+--- contrib/mt-daapd.conf.templ.orig	2007-09-25 07:55:23 UTC
++++ contrib/mt-daapd.conf.templ
+@@ -57,7 +57,7 @@ admin_pw = mt-daapd
  # info in.  Valid choices are "sqlite" and "sqlite3".
  #
-
+ 
 -db_type = sqlite
 +db_type = sqlite3
-
+ 
  #
  # db_parms
-@@ -105,7 +105,7 @@
+@@ -81,7 +81,7 @@ db_parms = @dbdir@
+ # in the same physical filesystem.
+ #
+ 
+-mp3_dir = /mnt/mp3
++mp3_dir = /media,/mnt
+ 
+ #
+ # servername (required)
+@@ -105,7 +105,7 @@ servername = Firefly %v on %h
  # This is also ignored on Windows.
  #
  
@@ -18,7 +27,7 @@
  
  #
  # password (optional)
-@@ -136,7 +136,7 @@
+@@ -136,7 +136,7 @@ runas = nobody
  # --enable-musepack.
  #
  
@@ -27,7 +36,7 @@
  
  #
  # ssc_codectypes (optional)
-@@ -194,8 +194,8 @@
+@@ -194,8 +194,8 @@ ssc_prog = @prefix@/bin/mt-daapd-ssc.sh
  # will vary the amount of logging you get.
  #
  
@@ -38,7 +47,7 @@
  #
  # rescan_interval
  #
-@@ -252,7 +252,7 @@
+@@ -252,7 +252,7 @@ ssc_prog = @prefix@/bin/mt-daapd-ssc.sh
  #   the file is indexed.
  # 
  
@@ -47,3 +56,12 @@
  
  #
  # compress
+@@ -267,7 +267,7 @@ scan_type = 2
+ # It will eventually default to 1, but currently it defaults to 0.
+ #
+ 
+-#compress = 0
++compress = 1
+ 
+ [plugins]
+ plugin_dir = @libdir@/mt-daapd/plugins
