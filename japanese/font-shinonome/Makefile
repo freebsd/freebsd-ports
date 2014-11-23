@@ -76,10 +76,6 @@ do-install:
 	cd ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/misc && ${LN} -s -f \
 	    ../${X_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/*.pcf.gz .
 
-post-su-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
-	    POST-INSTALL
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
