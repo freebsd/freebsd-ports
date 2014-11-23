@@ -27,7 +27,7 @@
 #
 # Affected variables:
 #  PREFIX (bootstrap)
-#  CFLAGS (flags)
+#  CPPFLAGS (flags)
 #  LDADD (flags)
 #  LDCFLAGS
 #
@@ -58,7 +58,7 @@
 #
 #  If pathname is required for Kerberos implementation, use ${GSSAPIBASEDIR}.
 #
-#  CFLAGS, LDFLAGS, and LDADD can automatically be set by using "flags"
+#  CPPFLAGS, LDFLAGS, and LDADD can automatically be set by using "flags"
 #  modifier.  It is useful if the port does not use a configure script.
 #
 # How To Debug:
@@ -144,7 +144,7 @@ LDFLAGS+=	-Wl,-rpath,${_RPATH}:/usr/lib
 _DEBUG_KRB_RPATH=	-Wl,-rpath,${_RPATH}
 .endif
 .if defined(_KRB_USEFLAGS) && !empty(_KRB_USEFLAGS)
-CFLAGS+=	${GSSAPICPPFLAGS}
+CPPFLAGS+=	${GSSAPICPPFLAGS}
 LDFLAGS+=	${GSSAPILDFLAGS}
 LDADD+=		${GSSAPILIBS}
 .endif
