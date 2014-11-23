@@ -5364,7 +5364,6 @@ misc/sword17|misc/sword|2014-01-16|Has expired: use misc/sword
 databases/postgis||2014-01-17|Has expired: EOLed upstream
 textproc/redland-bindings-python||2014-01-19|Use textproc/redland-bindings directly instead
 emulators/seabios-devel||2014-01-19|Has expired: Outdated, no longer needed, broken on 10+
-devel/mico||2014-01-24|Has expired: Broken for more than 6 month
 cad/salome||2014-01-24|Has expired: depends on expired cad/salome-kernel
 cad/salome-netgenplugin||2014-01-24|Has expired: depends on expired cad/salome-kernel
 cad/salome-jobmanager||2014-01-24|Has expired: depends on expired cad/salome-kernel
