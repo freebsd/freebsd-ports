@@ -13,6 +13,7 @@ include/OpenImageIO/SHA1.h
 include/OpenImageIO/array_view.h
 include/OpenImageIO/image_view.h
 include/OpenImageIO/oiioversion.h
+include/OpenImageIO/platform.h
 include/OpenImageIO/strided_ptr.h
 include/OpenImageIO/string_ref.h
 include/OpenImageIO/string_view.h
@@ -49,11 +50,11 @@ include/OpenImageIO/version.h
 lib/libOpenImageIO.so
 lib/libOpenImageIO.so.1
 lib/libOpenImageIO.so.1.4
-lib/libOpenImageIO.so.1.4.12
+lib/libOpenImageIO.so.1.4.14
 lib/libOpenImageIO_Util.so
 lib/libOpenImageIO_Util.so.1
 lib/libOpenImageIO_Util.so.1.4
-lib/libOpenImageIO_Util.so.1.4.12
+lib/libOpenImageIO_Util.so.1.4.14
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/openimageio.pdf
