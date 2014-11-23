@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	nuoveXT2
-PORTVERSION=	2.2
-MASTER_SITES=	http://nuovext.pwsp.net/files/
+PORTVERSION=	2.2.1
+MASTER_SITES=	http://BSDforge.com/projects/source/x11-themes/kde-icons-nuovext2/
 DISTNAME=	nuoveXT-${PORTVERSION}_KDE
 
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	KDE nuoveXT 2 iconset
 
-BROKEN=		Unfetchable
-PLIST_FILE_PATTERN_EXTRA=	-v "(^\./(AUTHORS|COPYING|DONATE|INSTALL|README)$$)|\.DS_Store"
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:xz
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
