@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -97,6 +97,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-72f0a64c7dd7be796dc2d8f2b0dab340309800e2
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-9ed0e07e2e07791858339874eb4d20daca858c8a
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-a8dc4de7f73bc6f8363c0fc81c4c6e53733c444b
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-freebsd-os-socket.h
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cab0d36ffd4e70b1879dc2cf860c975a7965afc3
 .endif
 
 CONFIGURE_ARGS+=	--localstatedir=/var
