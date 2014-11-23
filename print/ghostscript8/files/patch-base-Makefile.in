@@ -1,18 +1,19 @@
 --- base/Makefile.in.orig	2009-12-18 16:04:10.000000000 +0900
-+++ base/Makefile.in	2010-05-23 03:04:55.000000000 +0900
-@@ -47,9 +47,8 @@
++++ base/Makefile.in	2014-11-23 17:40:23.000000000 +0900
+@@ -47,9 +47,9 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
  
 -INSTALL = $(GLSRCDIR)/instcopy -c
 -INSTALL_PROGRAM = $(INSTALL) -m 755
 -INSTALL_DATA = $(INSTALL) -m 644
-+INSTALL_PROGRAM = ${BSD_INSTALL_SCRIPT}
++INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
++INSTALL_SCRIPT = ${BSD_INSTALL_SCRIPT}
 +INSTALL_DATA = ${BSD_INSTALL_DATA}
  INSTALL_SHARED = @INSTALL_SHARED@
  
  prefix = @prefix@
-@@ -156,7 +155,7 @@
+@@ -156,7 +156,7 @@
  # some older JPEG streams that violate the standard. If the JPEG
  # library built from local sources, the patch will be applied.
  
@@ -21,7 +22,7 @@
  JPEG_NAME=jpeg
  
  # Define the directory where the PNG library sources are stored,
-@@ -164,12 +163,12 @@
+@@ -164,12 +164,12 @@
  # You may need to change this if the libpng version changes.
  # See libpng.mak for more information.
  
@@ -36,7 +37,7 @@
  TIFFSRCDIR=@LIBTIFFDIR@
  TIFFPLATFORM=unix
  TIFFCONFIG_SUFFIX=
-@@ -178,7 +177,7 @@
+@@ -178,7 +178,7 @@
  # Define the directory where the zlib sources are stored.
  # See zlib.mak for more information.
  
@@ -45,7 +46,7 @@
  ZSRCDIR=@ZLIBDIR@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
-@@ -254,7 +253,7 @@
+@@ -254,7 +254,7 @@
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
  
@@ -54,7 +55,7 @@
  CFLAGS_DEBUG=-g -O0
  CFLAGS_PROFILE=-pg @OPT_CFLAGS@
  CFLAGS_SO=@DYNAMIC_CFLAGS@
-@@ -299,7 +298,7 @@
+@@ -299,7 +299,7 @@
  # Solaris may need -lnsl -lsocket -lposix4.
  # (Libraries required by individual drivers are handled automatically.)
  
@@ -63,7 +64,7 @@
  
  # Define the standard libraries to search at the end of linking.
  # Most platforms require -lpthread for the POSIX threads library;
-@@ -343,7 +342,7 @@
+@@ -343,7 +343,7 @@
  # the pthread library. Otherwise use SYNC=nosync
  #SYNC=posync
  #SYNC=nosync
@@ -72,7 +73,7 @@
  
  # programs we use
  RM=rm -f
-@@ -436,27 +435,27 @@
+@@ -436,27 +436,27 @@
  #DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev
  #DEVICE_DEVS21=$(DD)spotcmyk.dev $(DD)devicen.dev $(DD)xcf.dev $(DD)psdcmyk.dev $(DD)psdrgb.dev
  DEVICE_DEVS=$(DISPLAY_DEV) @X_DEVS@
@@ -121,7 +122,7 @@
  
  
  # Shared library target to build.
-@@ -490,6 +489,7 @@
+@@ -490,6 +490,7 @@
  # ---------------- End of platform-specific section ---------------- #
  
  INSTALL_CONTRIB=@INSTALL_CONTRIB@
