@@ -53,10 +53,9 @@ BASE_DESC=		Use Heimdal in base
 BASE_USES=		gssapi
 BASE_CONFIGURE_ENABLE=	gssapi
 HEIMDAL_DESC=		Use Heimdal from ports
-HEIMDAL_USES=		gssapi:heimdal
+HEIMDAL_USES=		gssapi:heimdal,flags
 HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 			--with-gss_impl=heimdal
-HEIMDAL_CPPFLAGS=	${GSSAPICPPFLAGS}
 MIT_DESC=		Use MIT Kerberos V5
 MIT_USES=		gssapi:mit
 MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
