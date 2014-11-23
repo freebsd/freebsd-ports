@@ -7,7 +7,7 @@ PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
 LICENSE=	GPLv2
