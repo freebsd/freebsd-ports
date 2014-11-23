@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -46,6 +46,7 @@ ERL_RELEASE=	R${PORTVERSION:S/.//g:tu:S/1$/-1/}
 
 USES=		gmake perl5
 USE_AUTOTOOLS=	autoconf:env
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
