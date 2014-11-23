@@ -34,6 +34,7 @@ VORBIS_CONFIGURE_OFF=no_vorbis
 SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 SNDFILE_CONFIGURE_OFF=no_sndfile
 MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
+MODPLUG_CFLAGS=		-I${LOCALBASE}/include/libmodplug
 MODPLUG_CONFIGURE_OFF=no_modplug
 HTTP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 HTTP_CONFIGURE_OFF=no_http no_scrobbler
