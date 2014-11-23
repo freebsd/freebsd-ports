@@ -10,8 +10,13 @@ share/themes/Greybird/gtk-2.0/apps/thunar/sidebar_active.png
 share/themes/Greybird/gtk-2.0/apps/xfce-panel.rc
 share/themes/Greybird/gtk-2.0/gtkrc
 share/themes/Greybird/gtk-2.0/resize_grip.png
+share/themes/Greybird/gtk-2.0/xfsmlogout.png
 share/themes/Greybird/gtk-3.0/apps/gnome-applications.css
 share/themes/Greybird/gtk-3.0/apps/granite-widgets.css
+share/themes/Greybird/gtk-3.0/apps/lightdm-gtk-greeter.css
+share/themes/Greybird/gtk-3.0/apps/lightdm-unity-greeter.css
+share/themes/Greybird/gtk-3.0/apps/synaptic.css
+share/themes/Greybird/gtk-3.0/apps/unity.css
 share/themes/Greybird/gtk-3.0/apps/xfce.css
 share/themes/Greybird/gtk-3.0/assets/checkbox-checked-hover.png
 share/themes/Greybird/gtk-3.0/assets/checkbox-checked-insensitive.png
@@ -153,12 +158,3 @@ share/themes/Greybird/xfwm4/top-right-active.png
 share/themes/Greybird/xfwm4/top-right-active.xpm
 share/themes/Greybird/xfwm4/top-right-inactive.png
 share/themes/Greybird/xfwm4/top-right-inactive.xpm
-@dirrm share/themes/Greybird/xfwm4
-%%NOTIFYD%%@dirrm share/themes/Greybird/xfce-notify-4.0
-@dirrm share/themes/Greybird/gtk-3.0/assets
-@dirrm share/themes/Greybird/gtk-3.0/apps
-@dirrm share/themes/Greybird/gtk-3.0
-@dirrm share/themes/Greybird/gtk-2.0/apps/thunar
-@dirrm share/themes/Greybird/gtk-2.0/apps
-@dirrm share/themes/Greybird/gtk-2.0
-@dirrm share/themes/Greybird

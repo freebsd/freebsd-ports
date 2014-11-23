@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	greybird
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	GH GHC
 PKGNAMESUFFIX=	-theme
@@ -11,13 +10,12 @@ PKGNAMESUFFIX=	-theme
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Gtk and xfwm4 themes for the Xfce Desktop
 
-RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:${PORTSDIR}/x11-themes/gtk-murrine-engine \
-	gtk3-unico-engine>=1.0.2:${PORTSDIR}/x11-themes/gtk3-unico-engine
+RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:${PORTSDIR}/x11-themes/gtk-murrine-engine
 
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Greybird
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	6406ef6
+GH_COMMIT=	06aa6c8
 
 USE_GITHUB=	yes
 NO_BUILD=	yes
@@ -27,12 +25,6 @@ OPTIONS_DEFAULT=	NOTIFYD
 NOTIFYD_DESC=	Install xfce4-notifyd theme
 
 .include <bsd.port.options.mk>
-
-post-extract:
-# Remove Unity and Lightdm themes
-.for file in lightdm-*-greeter.css unity.css
-	@${RM} ${WRKSRC}/gtk-3.0/apps/${file}
-.endfor
 
 post-patch:
 # Remove .orig file
