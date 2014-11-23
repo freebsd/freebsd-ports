@@ -83,9 +83,6 @@ do-install-outline:
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
 
-post-su-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

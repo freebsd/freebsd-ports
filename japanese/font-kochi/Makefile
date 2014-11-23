@@ -58,7 +58,4 @@ do-install:
 	cd ${WRKSRC} && ${CP} -R ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
-post-su-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 .include <bsd.port.mk>
