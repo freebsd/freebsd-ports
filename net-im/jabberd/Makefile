@@ -157,7 +157,6 @@ post-install:
 .for DIR in db logs pid
 	@${MKDIR} ${STAGEDIR}${JABBER_RUNDIR}/${DIR}
 .endfor
-	@${CHOWN} -R ${JABBER_USER}:${JABBER_GROUP} ${STAGEDIR}${JABBER_RUNDIR}
 	@${CHMOD} -R go= ${STAGEDIR}${JABBER_RUNDIR}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
