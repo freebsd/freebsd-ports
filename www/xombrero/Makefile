@@ -29,10 +29,6 @@ SUB_FILES=	xombrero
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800041
-BROKEN=		does not build due to missing arc4random_buf in libc
-.endif
-
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20
 LIB_DEPENDS+=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
