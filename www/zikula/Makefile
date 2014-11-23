@@ -3,6 +3,7 @@
 
 PORTNAME=	zikula
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.bsdit.com/pub/ \
 		http://zikula.at/
@@ -20,15 +21,11 @@ WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=52
 IGNORE_WITH_MYSQL=	41 50
 
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	(cd ${WRKSRC} && \
-		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${WWWDIR}/{} \; \
-		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;)
-	(cd ${WRKSRC} && \
-		${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${STAGEDIR}${WWWDIR}/{} \; \
-		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
