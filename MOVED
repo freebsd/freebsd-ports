@@ -7231,3 +7231,4 @@ deskutils/splashsetter||2014-11-19|Abandonware, useless without gnome2
 editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use editors/emacs
 net-im/tg|net-im/telegram|2014-11-20|Renamed to more specific name
 net-mgmt/virtinst|deskutils/virt-manager|2014-11-20|Obsoleted by deskutils/virt-manager
+sysutils/firstboot-growfs||2014-11-23|Part of the base system
