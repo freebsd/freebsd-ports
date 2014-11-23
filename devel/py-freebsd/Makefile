@@ -27,5 +27,9 @@ EXTRA_PATCHES+=	${FILESDIR}/freebsd8_patch-src-jail.c
 .if ${OSVERSION} >= 900030
 EXTRA_PATCHES+=	${FILESDIR}/freebsd9_patch-src-sysctl.c
 .endif
+.if ${OSVERSION} >= 1100002
+EXTRA_PATCHES+=	${FILESDIR}/freebsd11_patch-src__.const.def \
+		${FILESDIR}/freebsd11_patch-src__netstat.c
+.endif
 
 .include <bsd.port.post.mk>
