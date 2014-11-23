@@ -123,6 +123,7 @@ include/armadillo_bits/fn_eigs_gen.hpp
 include/armadillo_bits/fn_eigs_sym.hpp
 include/armadillo_bits/fn_elem.hpp
 include/armadillo_bits/fn_eps.hpp
+include/armadillo_bits/fn_expmat.hpp
 include/armadillo_bits/fn_eye.hpp
 include/armadillo_bits/fn_fft.hpp
 include/armadillo_bits/fn_fft2.hpp
@@ -268,6 +269,8 @@ include/armadillo_bits/op_dot_bones.hpp
 include/armadillo_bits/op_dot_meat.hpp
 include/armadillo_bits/op_dotext_bones.hpp
 include/armadillo_bits/op_dotext_meat.hpp
+include/armadillo_bits/op_expmat_bones.hpp
+include/armadillo_bits/op_expmat_meat.hpp
 include/armadillo_bits/op_fft_bones.hpp
 include/armadillo_bits/op_fft_meat.hpp
 include/armadillo_bits/op_find_bones.hpp
@@ -404,7 +407,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.4
-lib/libarmadillo.so.4.500.1
+lib/libarmadillo.so.4.550.0
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
