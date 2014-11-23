@@ -1,5 +1,5 @@
---- openjpeg/libopenjpeg/opj_includes.h.orig	2012-02-13 08:48:33.000000000 +0900
-+++ openjpeg/libopenjpeg/opj_includes.h	2012-02-13 08:50:41.000000000 +0900
+--- openjpeg/src/lib/openjp2/opj_includes.h.orig	2012-02-13 08:48:33.000000000 +0900
++++ openjpeg/src/lib/openjp2/opj_includes.h	2012-02-13 08:50:41.000000000 +0900
 @@ -77,7 +77,7 @@
  #endif /* INLINE */
  

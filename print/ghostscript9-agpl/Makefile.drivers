@@ -295,16 +295,11 @@ OPTIONS_DEFINE+= \
 	GS_png16m \
 	GS_pngalpha \
 	GS_png48 \
-	GS_psmono \
-	GS_psgray \
-	GS_psrgb \
-	GS_pswrite \
 	GS_ps2write \
 	GS_epswrite \
 	GS_cfax \
 	GS_sgirgb \
 	GS_sunhmono \
-	GS_svgwrite \
 	GS_tiffcrle \
 	GS_tiffg3 \
 	GS_tiffg32d \
@@ -551,6 +546,7 @@ OPTIONS_DEFAULT+= \
 	GS_pcx256 \
 	GS_pcx24b \
 	GS_pcxcmyk \
+	GS_pcx2up \
 	GS_pdfwrite \
 	GS_psdrgb \
 	GS_psdcmyk \
@@ -586,20 +582,17 @@ OPTIONS_DEFAULT+= \
 	GS_pngmono \
 	GS_pnggray \
 	GS_png16 \
-	GS_png256 \
 	GS_png16m \
+	GS_png256 \
 	GS_pngalpha \
-	GS_png48 \
-	GS_psmono \
-	GS_psgray \
-	GS_psrgb \
-	GS_pswrite \
+	GS_pnggray \
+	GS_pngmono \
+	GS_psdf \
 	GS_ps2write \
 	GS_epswrite \
 	GS_cfax \
 	GS_sgirgb \
 	GS_sunhmono \
-	GS_svgwrite \
 	GS_tiffcrle \
 	GS_tiffg3 \
 	GS_tiffg32d \
@@ -899,13 +892,11 @@ GS_png48_DESC=		D: PNG 48-bit Color
 GS_psmono_DESC=		D: PostScript (Level 1) monochrome image
 GS_psgray_DESC=		D: PostScript (Level 1) 8-bit gray image
 GS_psrgb_DESC=		D: PostScript (Level 2) 24-bit color image
-GS_pswrite_DESC=	D: PostScript (like PostScript Distiller)
 GS_ps2write_DESC=	D: PostScript (Level 2) output
-GS_epswrite_DESC=	D: Encapsulated PostScript
+GS_eps2write_DESC=	D: Encapsulated PostScript
 GS_cfax_DESC=		D: SFF format for CAPI FAX interface
 GS_sgirgb_DESC=		D: SGI RGB pixmap format
 GS_sunhmono_DESC=	D: Harlequin variant of 1-bit Sun raster file
-GS_svgwrite_DESC=	D: SVG driver
 GS_tiffcrle_DESC=	D: TIFF CCITT RLE 1 dim (G3 FAX with no EOL)
 GS_tiffg3_DESC=		D: TIFF Group 3 FAX (with EOL)
 GS_tiffg32d_DESC=	D: TIFF Group 3 2-D FAX

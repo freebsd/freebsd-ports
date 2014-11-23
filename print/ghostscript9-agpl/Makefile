@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghostscript
-PORTVERSION=	9.07
-PORTREVISION=	7
+PORTVERSION=	9.15
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -57,8 +56,7 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
 		-I${WRKSRC}/lcms2/include \
 		-I${LOCALBASE}/include/libpng \
-		-I${WRKSRC}/openjpeg/libopenjpeg \
-		-I${WRKSRC}/openjpeg \
+		-I${WRKSRC}/openjpeg/src/lib/openjp2 \
 		-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 XCFLAGS=	${PTHREAD_CFLAGS} \
@@ -158,8 +156,6 @@ post-install-docs:
 		( cd ${STAGEDIR}${DOCSDIR} && ${TAR} -xof - )
 
 post-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/${PORTVERSION}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gsc ${STAGEDIR}${PREFIX}/bin/gsx
 	${LN} -sf gsc ${STAGEDIR}${PREFIX}/bin/gs
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont \
 		${STAGEDIR}${DATADIR}/${PORTVERSION}/Resource/CIDFont/fonts
