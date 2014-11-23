@@ -1,0 +1,13 @@
+Properly split multiple arguments passed via CXXFLAGS
+--- SConscript.orig	2014-10-17 23:53:30.000000000 +0400
++++ SConscript	2014-10-17 23:53:48.000000000 +0400
+@@ -119,6 +119,9 @@
+             'CheckSDLLib': CheckSDLLib,
+             'CheckIconv': CheckIconv,
+             })
++
++        self.env["CXXFLAGS"] = sum(map (lambda x: x.split(" "), self.env["CXXFLAGS"]), [])
++
+         self.fatal_error = ""
+         self.reports = ""
+ 
