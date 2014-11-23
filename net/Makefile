@@ -52,6 +52,7 @@
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
     SUBDIR += bounce
+    SUBDIR += bsdec2-image-upload
     SUBDIR += bsdproxy
     SUBDIR += bwi-firmware-kmod
     SUBDIR += bwn-firmware-kmod
