@@ -1,15 +1,14 @@
---- qsstv_8.pro.orig	2014-02-28 08:51:21.000000000 -0800
-+++ qsstv_8.pro	2014-04-08 02:48:09.000000000 -0700
-@@ -420,7 +420,7 @@
- FORMS   += src/scope/scopeoffset.ui \
- 				src/scope/plotform.ui
+--- qsstv/qsstv.pro.orig	2014-10-11 09:38:33.000000000 -0700
++++ qsstv/qsstv.pro	2014-11-22 19:05:11.000000000 -0800
+@@ -420,7 +420,6 @@
+ FORMS   += scope/scopeoffset.ui \
+ 				scope/plotform.ui
  
 - INCLUDEPATH += /usr/include/qwt
-+ INCLUDEPATH += $$PREFIX/include/qwt6
-  LIBS += -lqwt
+  LIBS += ../qwt/libqwt.a
  }
  
-@@ -430,10 +430,10 @@
+@@ -430,10 +429,10 @@
  PRE_TARGETDEPS       +=    dox
  message(dox will be generated)
  }

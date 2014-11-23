@@ -1,5 +1,5 @@
---- src/sound/soundcontrol.cpp.orig	2014-04-09 10:27:08.000000000 -0700
-+++ src/sound/soundcontrol.cpp	2014-04-09 10:27:28.000000000 -0700
+--- qsstv/sound/soundcontrol.cpp.orig	2014-04-09 10:27:08.000000000 -0700
++++ qsstv/sound/soundcontrol.cpp	2014-04-09 10:27:28.000000000 -0700
 @@ -53,8 +53,8 @@
    txClock=qSettings.value("txclock",BASESAMPLERATE).toDouble();
    if(fabs(1-rxClock/BASESAMPLERATE)>0.002) rxClock=BASESAMPLERATE;
