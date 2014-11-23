@@ -51,7 +51,6 @@ man/man1/gsnd.1.gz
 %%GS_pcl3%%man/man1/pcl3opts.1.gz
 man/man1/pdf2dsc.1.gz
 man/man1/pdf2ps.1.gz
-man/man1/pdfopt.1.gz
 man/man1/pf2afm.1.gz
 man/man1/pfbtopfa.1.gz
 man/man1/printafm.1.gz
@@ -245,6 +244,10 @@ man/man1/wftopfa.1.gz
 %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding/Latin1
 %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding/StandardEncoding
 %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding/Unicode
+%%DATADIR%%/%%GS_VERSION%%/Resource/Encoding/CEEncoding
+%%DATADIR%%/%%GS_VERSION%%/Resource/Encoding/ExpertEncoding
+%%DATADIR%%/%%GS_VERSION%%/Resource/Encoding/ExpertSubsetEncoding
+%%DATADIR%%/%%GS_VERSION%%/Resource/Encoding/NotDefEncoding
 %%DATADIR%%/%%GS_VERSION%%/Resource/Encoding/Wingdings
 %%DATADIR%%/%%GS_VERSION%%/Resource/Font/CenturySchL-Bold
 %%DATADIR%%/%%GS_VERSION%%/Resource/Font/CenturySchL-BoldItal
@@ -281,6 +284,7 @@ man/man1/wftopfa.1.gz
 %%DATADIR%%/%%GS_VERSION%%/Resource/Font/URWPalladioL-BoldItal
 %%DATADIR%%/%%GS_VERSION%%/Resource/Font/URWPalladioL-Ital
 %%DATADIR%%/%%GS_VERSION%%/Resource/Font/URWPalladioL-Roma
+%%DATADIR%%/%%GS_VERSION%%/Resource/IdiomSet/Pscript5Idiom
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/default_cmyk.icc
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/default_gray.icc
 %%DATADIR%%/%%GS_VERSION%%/iccprofiles/default_rgb.icc
@@ -505,7 +509,6 @@ man/man1/wftopfa.1.gz
 %%DATADIR%%/%%GS_VERSION%%/lib/pdf2dsc.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/gs_ce_e.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/gs_cmdl.ps
-%%DATADIR%%/%%GS_VERSION%%/lib/gs_fform.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/gs_il2_e.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/gs_kanji.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/gs_ksb_e.ps

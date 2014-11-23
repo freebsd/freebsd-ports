@@ -1,5 +1,5 @@
---- base/gdevperm.c.orig	2012-02-08 17:48:48.000000000 +0900
-+++ base/gdevperm.c	2012-02-13 00:44:23.000000000 +0900
+--- devices/gdevperm.c.orig	2012-02-08 17:48:48.000000000 +0900
++++ devices/gdevperm.c	2012-02-13 00:44:23.000000000 +0900
 @@ -285,7 +285,7 @@
          (strncmp((const char *)name, (const char *)str, name_size) == 0))
  
