@@ -33,20 +33,16 @@ do-install:
 
 # maintainer section:
 
-MS_DIRRMTRY=	albums cache themes zp-core
 MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
 genplist: do-clean extract
 	${ECHO_CMD} '@owner www' > ${MS_PLIST}
 	${ECHO_CMD} '@group www' >> ${MS_PLIST}
 	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
-	cd ${WRKSRC}/ && ${FIND} -s * -type d | ${TAIL} -r | ${SED} 's|^|@dirrm %%WWWDIR%%/|' >> ${MS_PLIST}
-	${ECHO_CMD} '@dirrmtry %%WWWDIR%%' >> ${MS_PLIST}
+	cd ${WRKSRC}/ && ${FIND} -s * -type d | ${TAIL} -r | ${SED} 's|^|@dir %%WWWDIR%%/|' >> ${MS_PLIST}
+	${ECHO_CMD} '@dir %%WWWDIR%%' >> ${MS_PLIST}
 	${ECHO_CMD} '@owner' >> ${MS_PLIST}
 	${ECHO_CMD} '@group' >> ${MS_PLIST}
-.for dir in ${MS_DIRRMTRY}
-	${REINPLACE_CMD} '/^@dirrm %%WWWDIR%%\/${dir:C/\//\\\//g}$$/ s|@dirrm|&try|' ${MS_PLIST}
-.endfor
 	${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 .include <bsd.port.mk>
