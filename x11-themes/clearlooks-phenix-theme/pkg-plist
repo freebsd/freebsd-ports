@@ -1,11 +1,9 @@
 share/themes/Clearlooks-Phenix/gtk-2.0/applications.rc
 share/themes/Clearlooks-Phenix/gtk-2.0/gtkrc
 share/themes/Clearlooks-Phenix/gtk-3.0/applications.css
-share/themes/Clearlooks-Phenix/gtk-3.0/gtk-variant.css
 share/themes/Clearlooks-Phenix/gtk-3.0/gtk-widgets-img.css
 share/themes/Clearlooks-Phenix/gtk-3.0/gtk-widgets.css
 share/themes/Clearlooks-Phenix/gtk-3.0/gtk.css
-share/themes/Clearlooks-Phenix/gtk-3.0/img/border-error.svg
 share/themes/Clearlooks-Phenix/gtk-3.0/img/border-focused-ptb.svg
 share/themes/Clearlooks-Phenix/gtk-3.0/img/border-focused-switch.svg
 share/themes/Clearlooks-Phenix/gtk-3.0/img/border-focused.svg
