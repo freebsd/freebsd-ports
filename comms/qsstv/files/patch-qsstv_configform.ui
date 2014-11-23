@@ -1,5 +1,5 @@
---- src/configform.ui.orig	2014-04-10 15:00:46.000000000 -0700
-+++ src/configform.ui	2014-04-10 15:00:52.000000000 -0700
+--- qsstv/configform.ui.orig	2014-04-10 15:00:46.000000000 -0700
++++ qsstv/configform.ui	2014-04-10 15:00:52.000000000 -0700
 @@ -2293,7 +2293,6 @@
    </layout>
   </widget>

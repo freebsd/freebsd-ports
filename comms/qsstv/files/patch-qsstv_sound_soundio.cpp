@@ -1,5 +1,5 @@
---- src/sound/soundio.cpp.orig	2014-04-03 11:15:08.000000000 -0700
-+++ src/sound/soundio.cpp	2014-04-09 21:47:59.000000000 -0700
+--- qsstv/sound/soundio.cpp.orig	2014-04-03 11:15:08.000000000 -0700
++++ qsstv/sound/soundio.cpp	2014-04-09 21:47:59.000000000 -0700
 @@ -328,7 +328,9 @@
                if ( count == -EPIPE )
                  {
