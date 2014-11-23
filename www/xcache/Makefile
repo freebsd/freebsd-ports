@@ -25,7 +25,6 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PLIST_FILES=	lib/php/%%PHP_EXT_DIR%%/xcache.so
-PLIST_DIRSTRY=	lib/php/%%PHP_EXT_DIR%%
 
 PORTEXAMPLES=	*
 

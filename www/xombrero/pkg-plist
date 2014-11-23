@@ -13,17 +13,3 @@ share/icons/hicolor/64x64/apps/xombreroicon64.png
 %%EXAMPLESDIR%%/favorites
 %%EXAMPLESDIR%%/playflash.sh
 %%EXAMPLESDIR%%/xombrero.conf
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
