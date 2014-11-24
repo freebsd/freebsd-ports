@@ -3,7 +3,7 @@
 
 PORTNAME=	Tk-TableMatrix
 PORTVERSION=	1.23
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +17,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	X11LIB=${LOCALBASE}/lib X11INC=${LOCALBASE}/include
+
+# This would conflict with x11-toolkits/p5-Tk
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Tk/pTk/extralibs.ld
+	@${RMDIR} -p ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Tk/pTk 2>/dev/null || :
 
 .include <bsd.port.mk>

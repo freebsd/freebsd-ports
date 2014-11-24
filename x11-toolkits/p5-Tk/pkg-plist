@@ -740,7 +740,6 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/getPrevFocus.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/interps.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/lsearch.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/pTk/extralibs.ld
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/tabFocus.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/updateWidgets.al
 man/man1/ptked.1.gz
