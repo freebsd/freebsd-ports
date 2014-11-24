@@ -9,6 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	pkg-config implementation for Ruby
 
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
+
 USES=		pkgconfig
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
