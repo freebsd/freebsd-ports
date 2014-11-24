@@ -541,8 +541,10 @@ lib/webmin/apache/cache.pl
 lib/webmin/apache/cgi_args.pl
 lib/webmin/apache/change_dir.cgi
 lib/webmin/apache/change_files.cgi
-lib/webmin/apache/config-CentOS-Linux-7-*
+lib/webmin/apache/config-CentOS-Linux-7.0-*
 lib/webmin/apache/config-Fedora-Linux-20-*
+lib/webmin/apache/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/apache/config-Scientific-Linux-7.0-*
 lib/webmin/apache/config-aix
 lib/webmin/apache/config-cobalt-linux
 lib/webmin/apache/config-coherent-linux
@@ -9758,7 +9760,11 @@ lib/webmin/iscsi-target/up_allow.cgi
 lib/webmin/iscsi-tgtd/CHANGELOG
 lib/webmin/iscsi-tgtd/atboot.cgi
 lib/webmin/iscsi-tgtd/config
+lib/webmin/iscsi-tgtd/config-CentOS-Linux-7.0-*
+lib/webmin/iscsi-tgtd/config-Redhat-Enterprise-Linux-7.0-*
+lib/webmin/iscsi-tgtd/config-Scientific-Linux-7.0-*
 lib/webmin/iscsi-tgtd/config-debian-linux
+lib/webmin/iscsi-tgtd/config-redhat-linux
 lib/webmin/iscsi-tgtd/config.info
 lib/webmin/iscsi-tgtd/config.info.de
 lib/webmin/iscsi-tgtd/config.info.de.UTF-8
@@ -16688,6 +16694,7 @@ lib/webmin/procmail/config.info.nl
 lib/webmin/procmail/config.info.nl.UTF-8
 lib/webmin/procmail/config.info.no
 lib/webmin/procmail/config.info.no.UTF-8
+lib/webmin/procmail/config.info.pl
 lib/webmin/procmail/config.info.ru.UTF-8
 lib/webmin/procmail/config.info.ru_RU
 lib/webmin/procmail/config.info.ru_SU
@@ -16728,6 +16735,8 @@ lib/webmin/procmail/lang/nl
 lib/webmin/procmail/lang/nl.UTF-8
 lib/webmin/procmail/lang/no
 lib/webmin/procmail/lang/no.UTF-8
+lib/webmin/procmail/lang/pl
+lib/webmin/procmail/lang/pl.UTF-8
 lib/webmin/procmail/lang/ru.UTF-8
 lib/webmin/procmail/lang/ru_RU
 lib/webmin/procmail/lang/ru_SU
@@ -22664,6 +22673,8 @@ lib/webmin/vgetty/config.info.nl
 lib/webmin/vgetty/config.info.nl.UTF-8
 lib/webmin/vgetty/config.info.no
 lib/webmin/vgetty/config.info.no.UTF-8
+lib/webmin/vgetty/config.info.pl
+lib/webmin/vgetty/config.info.pl.UTF-8
 lib/webmin/vgetty/config.info.ru.UTF-8
 lib/webmin/vgetty/config.info.ru_RU
 lib/webmin/vgetty/config.info.ru_SU
@@ -22696,6 +22707,8 @@ lib/webmin/vgetty/lang/nl
 lib/webmin/vgetty/lang/nl.UTF-8
 lib/webmin/vgetty/lang/no
 lib/webmin/vgetty/lang/no.UTF-8
+lib/webmin/vgetty/lang/pl
+lib/webmin/vgetty/lang/pl.UTF-8
 lib/webmin/vgetty/lang/ru.UTF-8
 lib/webmin/vgetty/lang/ru_RU
 lib/webmin/vgetty/lang/ru_SU
@@ -22929,6 +22942,8 @@ lib/webmin/webmin/help/twofactor.ca.html
 lib/webmin/webmin/help/twofactor.html
 lib/webmin/webmin/help/twofactor.ms_MY.UTF-8.html
 lib/webmin/webmin/help/twofactor.ms_MY.html
+lib/webmin/webmin/help/twofactor.pl.UTF-8.html
+lib/webmin/webmin/help/twofactor.pl.html
 lib/webmin/webmin/images/access.gif
 lib/webmin/webmin/images/advanced.gif
 lib/webmin/webmin/images/anon.gif
