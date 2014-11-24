@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141123:
+  AFFECTS: users of security/heimdal
+  AUTHOR: hrs@FreeBSD.org
+
+  The header and library files have been moved from PREFIX/{include,lib} to
+  PREFIX/{include,lib}/heimdal at r373047 to fix a library dependency
+  confusion when software attempts to link a Heimdal library in base and
+  an external library in LOCALBASE/lib at the same time.
+
+  All of packages which depend on security/heimdal have to be recompiled
+  and reinstalled because of this library location change.
+
 20141119:
   AFFECTS: users of x11/gnome2, graphics/clutter and lang/vala
   AUTHOR: kwm@FreeBSD.org

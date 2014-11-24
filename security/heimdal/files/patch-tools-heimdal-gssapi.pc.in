@@ -1,0 +1,13 @@
+--- tools/heimdal-gssapi.pc.in.orig	2014-11-24 09:17:39.000000000 +0900
++++ tools/heimdal-gssapi.pc.in	2014-11-24 09:17:44.000000000 +0900
+@@ -1,8 +1,8 @@
+ # $Id$
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
+-includedir=${prefix}/include
++libdir=@libdir@
++includedir=@includedir@
+ 
+ Name: @PACKAGE@
+ Description: Heimdal is an implementation of Kerberos 5, freely available under a three clause BSD style license.
