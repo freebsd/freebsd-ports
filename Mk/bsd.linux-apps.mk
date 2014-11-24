@@ -60,7 +60,7 @@ WEB_AUTH=			nvu
 # Non-version specific components
 _LINUX_APPS_ALL=	allegro alsalib alsa-plugins-oss alsa-plugins-pulseaudio \
 					arts aspell atk avahi-libs cairo cups-libs curl dri devtools esound expat \
-					flac fontconfig freealut gdkpixbuf gnutls gtk2 hicontheme imlib jpeg libaudiofile \
+					flac fontconfig freealut gdkpixbuf gdkpixbuf2 gnutls gtk2 hicontheme imlib jpeg libaudiofile \
 					libasyncns libg2c libgcrypt libglade2 libglu libgpg-error libmng libogg \
 					libpciaccess libsigcpp20 libsndfile libtasn1 libtheora libvorbis libxml2 mikmod \
 					naslibs ncurses-base openal openmotif openssl openssl-compat pango png \
@@ -202,9 +202,17 @@ freealut_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-freealut
 freealut_DEPENDS=	openal
 
 gdkpixbuf_f10_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf.so.2
-gdkpixbuf_c6_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf-2.0.so.0
 gdkpixbuf_DETECT=	${gdkpixbuf${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gdkpixbuf_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-gdk-pixbuf
+
+gdkpixbuf2_f10_FILE=${LINUXBASE}/usr/lib/libgdk_pixbuf-2.0.so.0
+gdkpixbuf2_c6_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf-2.0.so.0
+gdkpixbuf2_DETECT=	${gdkpixbuf2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+.if ${USE_LINUX} == "f10" || ${USE_LINUX} == "yes"	# temporary default, remove or clause soon
+gdkpixbuf2_PORT=	${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-gtk2
+.else
+gdkpixbuf2_PORT=	${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-gdk-pixbuf2
+.endif
 
 gnutls_f10_FILE=	${LINUXBASE}/usr/lib/libgnutls.so.26.4.6
 gnutls_c6_FILE=		${LINUXBASE}/usr/lib/libgnutls.so.26.14.12
@@ -216,7 +224,7 @@ gtk2_f10_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.1400.7
 gtk2_c6_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.2400.23
 gtk2_DETECT=		${gtk2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gtk2_PORT=			${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-gtk2
-gtk2_DEPENDS=		atk jpeg png pango tiff xorglibs
+gtk2_DEPENDS=		atk gdkpixbuf2 jpeg png pango tiff xorglibs
 
 hicontheme_f10_FILE=	${LINUXBASE}/usr/share/icons/hicolor
 hicontheme_c6_FILE=	${LINUXBASE}/usr/share/icons/hicolor
