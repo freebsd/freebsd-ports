@@ -44,6 +44,7 @@ bin/pmat-sizes
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-FORMAT.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-GLOB.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-HASH.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-INVLIST.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-IO.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-LVALUE.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-PAD.svg
