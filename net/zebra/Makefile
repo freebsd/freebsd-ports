@@ -3,7 +3,7 @@
 
 PORTNAME=	zebra
 PORTVERSION=	0.95a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
@@ -52,7 +52,7 @@ NO_OPTIONS_SORT=	yes
 PAM_CONFIGURE_WITH=		pam
 OSPFNSSA_CONFIGURE_ENABLE=	nssa
 SNMP_CONFIGURE_ENABLE=		snmp
-SNMP_LIB_DEPENDS+=		libsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS+=		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 TCPZEBRA_CONFIGURE_ENABLE=	tcp-zebra
 BGPD_CONFIGURE_ENABLE=		bgpd
 OSPF6D_CONFIGURE_ENABLE=	ospf6d
