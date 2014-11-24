@@ -22,6 +22,8 @@ BUILD_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USE_PERL5=	configure
 USES=		perl5
 
