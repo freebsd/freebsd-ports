@@ -7,23 +7,25 @@ CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
 		http://wickedmachine.net/mirror/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple Ogg API
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
-USES=		pkgconfig pathfix libtool
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} --program-transform-name=""
-CONFIGURE_ENV=	HAVE_DOCBOOK2HTML=false DOCBOOKTOMAN=false HAVE_DOXYGEN=false HAVE_VALGRIND=false
+OPTIONS_DEFINE=	DOCS
 
-# First REINPLACE_CMD line makes all timestimes relative to localtime, crude hack
+CONFIGURE_ARGS=	--program-transform-name="" --with-ogg=${LOCALBASE}
+CONFIGURE_ENV=	DOCBOOKTOMAN=false HAVE_DOCBOOK2HTML=false HAVE_DOXYGEN=false HAVE_DOXYGEN=false
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+USES=		libtool pathfix pkgconfig
+
+PORTDOCS=	*
+
 post-patch:
-	@${REINPLACE_CMD} -e 's/timezone/0/' \
-		${WRKSRC}/src/tools/oggz-chop/httpdate.c \
-		${WRKSRC}/src/tools/oggz-chop/httpdate_test.c
+	@${REINPLACE_CMD} -e '/-= timezone;/d' ${WRKSRC}/src/tools/oggz-chop/httpdate.c ${WRKSRC}/src/tools/oggz-chop/httpdate_test.c
 
 .include <bsd.port.mk>
