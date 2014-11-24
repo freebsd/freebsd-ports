@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgeotiff
-PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTVERSION=	1.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
 		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \
@@ -11,6 +10,8 @@ MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing GeoTIFF information tags
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
@@ -29,6 +30,9 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-zlib=/usr
 CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+PORTDATA=	*
 
 .include <bsd.port.mk>
