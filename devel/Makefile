@@ -3718,6 +3718,7 @@
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
     SUBDIR += py-fabric
+    SUBDIR += py-fake-factory
     SUBDIR += py-fam
     SUBDIR += py-fastimport
     SUBDIR += py-fileutils
@@ -3988,6 +3989,7 @@
     SUBDIR += py-tgMochiKit
     SUBDIR += py-thrift
     SUBDIR += py-timelib
+    SUBDIR += py-tipper
     SUBDIR += py-tox
     SUBDIR += py-trace2html
     SUBDIR += py-traits
