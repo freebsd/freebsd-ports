@@ -35,8 +35,8 @@ post-install:
 	${RM} \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/MouseX/App/Cmd.pm \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/MouseX/App/Cmd/Command.pm \
-		${STAGEDIR}${PREFIX}/${SITE_MAN3_REL}/MouseX::App::Cmd.3 \
-		${STAGEDIR}${PREFIX}/${SITE_MAN3_REL}/MouseX::App::Cmd::Command.3
+		${STAGEDIR}${MAN3PREFIX}/man/man3/MouseX::App::Cmd.3 \
+		${STAGEDIR}${MAN3PREFIX}/man/man3/MouseX::App::Cmd::Command.3
 	${RMDIR} -p ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/MouseX/App/Cmd 2>/dev/null || :
 
 .include <bsd.port.mk>
