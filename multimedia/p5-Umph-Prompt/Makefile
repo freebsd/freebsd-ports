@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interactive prompt module for umph and similar programs
 
+LICENSE=	LGPL21
+
 USE_PERL5=	configure
 USES=		perl5
 
