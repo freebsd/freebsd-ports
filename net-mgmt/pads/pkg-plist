@@ -12,4 +12,3 @@ etc/pads.conf
 man/man8/pads-report.8.gz
 man/man8/pads.8.gz
 man/man8/pads.conf.8.gz
-@dirrm %%DATADIR%%

@@ -6,4 +6,3 @@ www/routers2/extensions/routingtable.cgi
 www/routers2/extensions/showcfg.cgi
 www/routers2/extensions/tonagios.cgi
 www/routers2/extensions/trend.cgi
-@dirrm www/routers2/extensions

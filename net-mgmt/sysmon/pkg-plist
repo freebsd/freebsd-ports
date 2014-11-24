@@ -14,4 +14,3 @@ man/man8/sysmon.man.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/sysmon.conf.man.html
 %%PORTDOCS%%%%DOCSDIR%%/sysmon.jpg
 %%PORTDOCS%%%%DOCSDIR%%/sysmon.man.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

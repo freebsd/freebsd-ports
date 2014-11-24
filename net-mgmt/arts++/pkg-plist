@@ -120,5 +120,3 @@ man/manl/artstos.l.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/artsplusplus-3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/artsplusplus-4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/artsplusplus.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

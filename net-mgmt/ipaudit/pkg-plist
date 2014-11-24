@@ -6,4 +6,3 @@ man/man1/ipaudit.1.gz
 man/man1/ipstrings.1.gz
 man/man1/total.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

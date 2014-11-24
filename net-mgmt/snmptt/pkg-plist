@@ -11,5 +11,3 @@ sbin/snmptthandler
 %%DOCSDIR%%/snmptt.html
 %%DOCSDIR%%/snmpttconvert.html
 %%DOCSDIR%%/snmpttconvertmib.html
-@dirrm %%DOCSDIR%%
-@dirrm etc/snmp

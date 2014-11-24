@@ -25,5 +25,3 @@ www/routers2/extras/templates/template-mrtg-ping
 www/routers2/extras/templates/template-mrtg-pnsclient
 www/routers2/extras/winalert.conf
 www/routers2/extras/winalert.pl
-@dirrm www/routers2/extras/templates
-@dirrm www/routers2/extras

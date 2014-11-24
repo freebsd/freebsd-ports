@@ -127,14 +127,3 @@ etc/nagios/ndoutils.cfg-sample
 %%DATADIR%%/queries/timed_event_queue.sql
 %%DATADIR%%/queries/timed_events.sql
 %%DATADIR%%/upgradedb
-@dirrm %%DATADIR%%/queries
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook/en-en/ent
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook/en-en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook/xsl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/en-en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

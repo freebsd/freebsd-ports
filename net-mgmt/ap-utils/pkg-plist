@@ -14,4 +14,3 @@ sbin/ap-trapd
 %%PORTDOCS%%%%DOCSDIR%%/Ovislink-HOWTO.html
 %%PORTDOCS%%%%DOCSDIR%%/HARDWARE-NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README.ap-gl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

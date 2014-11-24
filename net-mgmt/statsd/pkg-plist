@@ -14,6 +14,3 @@
 @unexec if cmp -s %D/etc/statsd.js.sample %D/etc/statsd.js; then rm -f %D/etc/statsd.js; fi
 etc/statsd.js.sample
 @exec [ -f %B/statsd.js ] || cp %B/%f %B/statsd.js
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%/backends
-@dirrmtry %%DATADIR%%

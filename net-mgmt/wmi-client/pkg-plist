@@ -24,8 +24,3 @@ bin/wmic
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/twisted/callback.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/twisted/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/twisted/reactor.py
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/wbem
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/twisted
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/test
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/rpc
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba

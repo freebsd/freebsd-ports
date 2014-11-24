@@ -1,3 +1,2 @@
 bin/nbtscan
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

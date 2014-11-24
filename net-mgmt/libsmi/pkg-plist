@@ -372,14 +372,7 @@ man/man3/smi_node.3.gz
 man/man3/smi_render.3.gz
 man/man3/smi_type.3.gz
 man/man3/smi_util.3.gz
-@dirrmtry share/smi/pibs/tubs
-@dirrmtry share/smi/pibs/site
-@dirrmtry share/smi/pibs/ietf
-@dirrmtry share/smi/pibs
-@dirrmtry share/smi/mibs/tubs
-@dirrmtry share/smi/mibs/site
-@dirrmtry share/smi/mibs/irtf
-@dirrmtry share/smi/mibs/ietf
-@dirrmtry share/smi/mibs/iana
-@dirrmtry share/smi/mibs
-@dirrmtry share/smi
+@dir share/smi/mibs/site
+@dir share/smi/pibs/ietf
+@dir share/smi/pibs/site
+@dir share/smi/pibs/tubs

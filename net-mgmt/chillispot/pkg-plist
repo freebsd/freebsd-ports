@@ -8,4 +8,3 @@ man/man8/chilli.8.gz
 %%DATADIR%%/pf.conf.sample
 %%DATADIR%%/ipfw-config.sample
 %%DATADIR%%/installguide.txt
-@dirrm %%DATADIR%%

@@ -8,6 +8,3 @@
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/lg.cgi
 %%WWWDIR%%/lg.conf
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%
-@dirrmtry %%WWWDIR%%

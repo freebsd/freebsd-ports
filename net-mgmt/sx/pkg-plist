@@ -31,24 +31,10 @@ sbin/sxreport-server
 %%SXSERVER%%sbin/sxserver
 %%SXSERVER%%sbin/sxsetup
 %%SXSERVER%%%%PORTDOCS%%%%DOCSDIR%%/logrotate.d/sxserver
-%%SXSERVER%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/logrotate.d
-%%SXSERVER%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%SXSERVER%%@dirrmtry %%ETCDIR%%/sxserver/errors
-%%SXSERVER%%@dirrmtry %%ETCDIR%%/sxserver
-%%SXSERVER%%@dirrmtry %%ETCDIR%%
-@dirrm lib/sxclient
-%%SXSERVER%%@dirrmtry sxserver/lib/sxserver
-%%SXSERVER%%@dirrmtry sxserver/lib
-%%SXSERVER%%@dirrmtry sxserver/log/sxserver
-%%SXSERVER%%@dirrmtry sxserver/log
-%%SXSERVER%%@dirrmtry sxserver/run/sxserver
-%%SXSERVER%%@dirrmtry sxserver/run
-%%SXSERVER%%@dirrmtry sxserver/sxserver
-%%SXSERVER%%@dirrmtry sxserver
-%%SXCLIENT%%@dirrmtry var/lib/sxserver
-%%SXCLIENT%%@dirrmtry var/lib
-%%SXCLIENT%%@dirrmtry var/log/sxserver
-%%SXCLIENT%%@dirrmtry var/log
-%%SXCLIENT%%@dirrmtry var/run/sxserver
-%%SXCLIENT%%@dirrmtry var/run
-%%SXCLIENT%%@dirrmtry var
+%%SXSERVER%%@dir sxserver/lib/sxserver
+%%SXSERVER%%@dir sxserver/log/sxserver
+%%SXSERVER%%@dir sxserver/run/sxserver
+%%SXSERVER%%@dir sxserver/sxserver
+%%SXCLIENT%%@dir var/lib/sxserver
+%%SXCLIENT%%@dir var/log/sxserver
+%%SXCLIENT%%@dir var/run/sxserver
