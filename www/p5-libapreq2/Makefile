@@ -41,9 +41,9 @@ post-stage:
 	# remove all the non-perl stuff
 	${RM} ${STAGEDIR}${PREFIX}/bin/apreq2-config
 	${RM} -rf ${STAGEDIR}${PREFIX}/include/apreq2
-	${RM} ${STAGEDIR}${PREFIX}/include/apache22/apreq2/apreq_module_apache2.h
+	${RM} ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}/apreq2/apreq_module_apache2.h
 	${RM} ${STAGEDIR}${PREFIX}/lib/libapreq2*
-	${RM} ${STAGEDIR}${PREFIX}/libexec/apache22/mod_apreq2*
+	${RM} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_apreq2*
 	${FIND} ${STAGEDIR} -name '*.bs' -type f -size 0c -exec ${RM} {} \;
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/APR/Request/Request.so
 .for i in Apache2 CGI Cookie Error Hook Param Parser
