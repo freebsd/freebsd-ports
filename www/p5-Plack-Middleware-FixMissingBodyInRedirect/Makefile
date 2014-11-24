@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack-Middleware-FixMissingBodyInRedirect
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
