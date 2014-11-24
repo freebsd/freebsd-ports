@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.6
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libevent_openssl.so:${PORTSDIR}/devel/libevent2 \
 		libspdylay.so:${PORTSDIR}/www/spdylay
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_DEFINE=	HPACK
+OPTIONS_DEFINE=	ASIO HPACK
+OPTIONS_DEFAULT=HPACK
 OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--disable-python-bindings \
@@ -39,8 +40,12 @@ USES=		compiler:c++11-lang libtool pathfix pkgconfig tar:xz
 
 PORTDOCS=	*
 
-HPACK_CONFIGURE_OFF=	--disable-hpack-tools
-HPACK_CONFIGURE_ON=	--enable-hpack-tools
+ASIO_BUILD_DEPENDS=	boost-libs>=1.54.0:${PORTSDIR}/devel/boost-libs
+ASIO_CONFIGURE_OFF=	--with-boost=no
+ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost=${LOCALBASE} --with-boost-asio --with-boost-system --with-boost-thread
+ASIO_LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+ASIO_RUN_DEPENDS=	boost-libs>=1.54.0:${PORTSDIR}/devel/boost-libs
+HPACK_CONFIGURE_ENABLE=	hpack-tools
 HPACK_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 
 .include <bsd.port.pre.mk>
