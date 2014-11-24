@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.2.18
+PORTVERSION=	1.2.19
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
