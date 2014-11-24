@@ -27,8 +27,3 @@
 %%SITE_PERL%%/FormValidator/Lite/Upload/CGI.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload/HTTPEngine.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload/PlackRequest.pm
-@dirrm %%SITE_PERL%%/FormValidator/Lite/Upload
-@dirrm %%SITE_PERL%%/FormValidator/Lite/Messages
-@dirrm %%SITE_PERL%%/FormValidator/Lite/Constraint
-@dirrm %%SITE_PERL%%/FormValidator/Lite
-@dirrmtry %%SITE_PERL%%/FormValidator
