@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ode
-PORTVERSION=	0.11.1
+PORTVERSION=	0.13
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -18,17 +18,14 @@ USES=		tar:bzip2 gmake libtool
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		GIMPACT GYROSCOPIC DOUBLE OU
-OPTIONS_DEFAULT=	GYROSCOPIC
+OPTIONS_DEFINE=		GIMPACT DOUBLE OU
 
 GIMPACT_DESC=		Enable gimpact instead of opcode support
-GYROSCOPIC_DESC=	Configure ODE to work with gyroscopic term
 DOUBLE_DESC=		Enable double precision (BROKEN with GIMPACT)
 OU_DESC=		Enable Thread-local storage (Experimental)
 
 GIMPACT_CONFIGURE_ON=	--with-trimesh=gimpact
 GIMPACT_CONFIGURE_OFF=	--with-trimesh=opcode
-GYROSCOPIC_CONFIGURE_ENABLE=	gyroscopic
 DOUBLE_CONFIGURE_ENABLE=	double-precision
 OU_CONFIGURE_ENABLE=		ou
 
@@ -49,17 +46,17 @@ post-patch:
 		-e 's|^\( *CPPFLAGS=\)|#\1|' -e 's|^\( *CXXFLAGS=\)|#\1|' \
 		-e 's|CPPFLAGS+=" |CPPFLAGS="$$CPPFLAGS |' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|__isnanf||g; s|__isnan||g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/^traplib_PROGRAMS / d' ${WRKSRC}/ode/src/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e '/^DEFAULT_INCLUDES/ s|$$| -I$$(top_builddir)/include|' \
 		-e '/CFLAGS/ s|-O[12]||'
 	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
-		-i "" -e 's|malloc.h|stdlib.h|g'
+		-i "" -e 's|<malloc.h>|<stdlib.h>|g'
 
 post-install:
 	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/ode/src/config.h \
 		> ${STAGEDIR}${PREFIX}/include/ode/config.h
+
+regression-test: build
+	@(cd ${WRKSRC} && ${MAKE} check)
 
 .include <bsd.port.post.mk>
