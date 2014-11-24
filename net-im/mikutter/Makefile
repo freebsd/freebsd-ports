@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	3.0.9
+PORTVERSION=	3.1.0
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -25,7 +25,8 @@ RUN_DEPENDS=	rubygem-gtk2>=2.2.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		${RUBY_PKGNAMEPREFIX}bsearch>=1.5:${PORTSDIR}/devel/ruby-bsearch \
 		rubygem-typed-array>=0.1.2:${PORTSDIR}/devel/rubygem-typed-array \
 		rubygem-delayer>=0.0.2:${PORTSDIR}/devel/rubygem-delayer \
-		rubygem-gettext>=2.3.1:${PORTSDIR}/devel/rubygem-gettext
+		rubygem-gettext>=2.3.1:${PORTSDIR}/devel/rubygem-gettext \
+		rubygem-moneta>=0.7:${PORTSDIR}/devel/rubygem-moneta
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
