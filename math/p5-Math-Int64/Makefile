@@ -16,8 +16,9 @@ LICENSE_COMB=	dual
 USE_PERL5=	configure
 USES=		perl5
 
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Math/Int64/Int64.so
-
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${SITE_ARCH}/auto/Math/Int64/Int64.so
+	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Math/Int64/Int64.so
+	${CHMOD} u-w ${STAGEDIR}${SITE_ARCH}/auto/Math/Int64/Int64.so
 
 .include <bsd.port.mk>
