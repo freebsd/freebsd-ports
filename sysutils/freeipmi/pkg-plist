@@ -174,7 +174,7 @@ include/ipmidetect.h
 lib/libfreeipmi.a
 lib/libfreeipmi.so
 lib/libfreeipmi.so.16
-lib/libfreeipmi.so.16.0.2
+lib/libfreeipmi.so.16.0.3
 lib/libipmiconsole.a
 lib/libipmiconsole.so
 lib/libipmiconsole.so.2
@@ -273,26 +273,11 @@ sbin/ipmiseld
 sbin/pef-config
 sbin/rmcp-ping
 sbin/rmcpping
-@exec mkdir -m 0700 -p %%CACHE_DIR%%/ipmimonitoringsdrcache %%LOG_DIR%% %%RUN_DIR%%
-@exec touch %%RUN_DIR%%/ipckey
-@unexec rm -f %%RUN_DIR%%/ipckey
-@unexec rmdir %%CACHE_DIR%%/ipmimonitoringsdrcache %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%% 2>/dev/null || true
-@dirrm include/freeipmi/util
-@dirrm include/freeipmi/templates
-@dirrm include/freeipmi/spec
-@dirrm include/freeipmi/sensor-read
-@dirrm include/freeipmi/sel
-@dirrm include/freeipmi/sdr
-@dirrm include/freeipmi/record-format
-@dirrm include/freeipmi/payload
-@dirrm include/freeipmi/locate
-@dirrm include/freeipmi/interpret
-@dirrm include/freeipmi/interface
-@dirrm include/freeipmi/fru
-@dirrm include/freeipmi/fiid
-@dirrm include/freeipmi/driver
-@dirrm include/freeipmi/debug
-@dirrm include/freeipmi/cmds
-@dirrm include/freeipmi/api
-@dirrm include/freeipmi
-@dirrmtry %%ETCDIR%%
+/var/lib/freeipmi/ipckey
+@dir /var/run/freeipmi
+@dir /var/run
+@dir /var/lib/freeipmi
+@dir /var/lib
+@dir %%CACHE_DIR%%/ipmiseld
+@dir %%CACHE_DIR%%/ipmimonitoringsdrcache
+@dir %%CACHE_DIR%%
