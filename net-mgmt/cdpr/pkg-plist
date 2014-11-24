@@ -4,5 +4,3 @@ bin/cdpr
 %%DATADIR%%/cdpr.conf
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.cdprs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

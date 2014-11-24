@@ -55,4 +55,3 @@ libexec/nagios/check_ups_output
 libexec/nagios/check_ups_outputs
 libexec/nagios/check_winf_cpuusage
 libexec/nagios/check_winf_mem
-@dirrmtry libexec/nagios

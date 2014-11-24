@@ -39,10 +39,3 @@ share/locale/sv/LC_MESSAGES/etherape.mo
 share/locale/tr/LC_MESSAGES/etherape.mo
 share/omf/etherape/etherape-C.omf
 share/pixmaps/etherape.png
-@dirrm share/omf/etherape
-@dirrm share/gnome/help/etherape/C/figures
-@dirrm share/gnome/help/etherape/C
-@dirrm share/gnome/help/etherape
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-@dirrm %%ETCDIR%%

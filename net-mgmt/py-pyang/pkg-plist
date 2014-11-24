@@ -126,11 +126,3 @@ man/man1/yang2dsdl.1.gz
 %%DATADIR%%/xslt/jsonxsl-templates.xsl
 %%DATADIR%%/xslt/svrl2text.xsl
 %%DATADIR%%/xslt/yin2yang.xsl
-@dirrm %%DATADIR%%/xslt
-@dirrm %%DATADIR%%/schema
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/pyang/translators
-@dirrm %%PYTHON_SITELIBDIR%%/pyang/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/pyang

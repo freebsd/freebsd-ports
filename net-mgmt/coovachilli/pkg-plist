@@ -37,9 +37,6 @@ sbin/chilli_query
 sbin/chilli_radconfig
 sbin/chilli_response
 sbin/test_radius
-@dirrm www/chilli
-@dirrm etc/chilli
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ipfw-config.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pf.conf.sample
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

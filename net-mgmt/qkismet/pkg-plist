@@ -18,5 +18,3 @@ share/qkismet/img/network-workgroup.png
 share/qkismet/img/text-x-generic.png
 share/qkismet/img/utilities-system-monitor.png
 share/qkismet/img/view-filter.png
-@dirrm share/qkismet/img
-@dirrm share/qkismet/

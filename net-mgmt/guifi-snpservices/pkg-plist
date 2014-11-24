@@ -53,11 +53,3 @@
 %%WWWDIR%%/tools/guinux/config.php.guinux
 %%WWWDIR%%/tools/guinux/snpconfig.pl
 %%WWWDIR%%/tools/guinux/snpservices.conf
-@dirrmtry %%WWWDIR%%/tools/guinux
-@dirrmtry %%WWWDIR%%/tools
-@dirrmtry %%WWWDIR%%/services
-@dirrmtry %%WWWDIR%%/misc
-@dirrmtry %%WWWDIR%%/graphs
-@dirrmtry %%WWWDIR%%/debian
-@dirrmtry %%WWWDIR%%/common
-@dirrmtry %%WWWDIR%%

@@ -6,5 +6,3 @@ bin/weathermap
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap-background.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap-overlib.html
 @sample etc/weathermap/weathermap.conf.sample
-@dirrmtry etc/weathermap
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
