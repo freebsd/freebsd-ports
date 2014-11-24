@@ -1011,6 +1011,7 @@
     SUBDIR += rubygem-fog-radosgw
     SUBDIR += rubygem-fog-sakuracloud
     SUBDIR += rubygem-fog-softlayer
+    SUBDIR += rubygem-fog-terremark
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-http_parser.rb
