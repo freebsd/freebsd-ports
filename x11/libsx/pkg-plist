@@ -20,5 +20,3 @@ include/X11/libsx/libsx.h
 %%PORTDOCS%%share/doc/libsx/text_edit.doc.gz
 %%PORTDOCS%%share/doc/libsx/toggle.doc.gz
 %%PORTDOCS%%share/doc/libsx/windows.doc.gz
-@dirrm include/X11/libsx
-%%PORTDOCS%%@dirrm share/doc/libsx
