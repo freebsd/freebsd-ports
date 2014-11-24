@@ -11,5 +11,3 @@ bin/dzen2
 %%GADGETS%%%%DOCSDIR%%/README.textwidth
 %%EXAMPLES%%%%EXAMPLESDIR%%/kittscanner.sh
 %%EXAMPLES%%%%EXAMPLESDIR%%/noisyalert.sh
-@dirrmtry %%DOCSDIR%%
-%%EXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

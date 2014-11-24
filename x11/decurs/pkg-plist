@@ -11,4 +11,3 @@ bin/decurs.bin
 %%DATADIR%%/modified2.bdf
 %%DATADIR%%/pieces.bdf
 %%DATADIR%%/simple.bdf
-@dirrm %%DATADIR%%

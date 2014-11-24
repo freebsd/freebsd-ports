@@ -19,7 +19,3 @@ share/pixmaps/mrxvt-root.png
 share/pixmaps/mrxvt-root.xpm
 share/pixmaps/mrxvt.png
 share/pixmaps/mrxvt.xpm
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry etc/mrxvt

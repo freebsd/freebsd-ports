@@ -1,6 +1,6 @@
---- configure.orig	2014-03-02 17:52:26.000000000 +0200
-+++ configure	2014-03-02 17:53:07.000000000 +0200
-@@ -93,6 +93,8 @@
+--- configure.orig	2012-07-12 03:30:12 UTC
++++ configure
+@@ -93,6 +93,8 @@ if [ "$with_gtk" = "3.0" ]; then
    LIBS_VTE_L=`pkg-config --libs-only-L vte-2.90 2> /dev/null`
  fi
  
@@ -9,3 +9,12 @@
  if [ "$real_gtk" = "2+3" ] || [ "$real_gtk" = "3+2" ]; then
    real_gtk="all"
    LIBS_VTE="-ldl"
+@@ -160,7 +162,7 @@ fi
+   $DO_ECHO
+ 
+ bindir=$prefix/bin
+-mandir=$prefix/share/man/man1
++mandir=$prefix/man/man1
+ deskdir=$prefix/share/applications
+ ICON_DIR=$prefix/share/pixmaps
+ THEME_DIR=$prefix/share/icons

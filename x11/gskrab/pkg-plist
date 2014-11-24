@@ -17,8 +17,3 @@ GNUstep/Local/Library/Libraries/libGSKrab.so
 GNUstep/Local/Library/Libraries/libGSKrab.so.%%MAJORVERSION%%
 GNUstep/Local/Library/Libraries/libGSKrab.so.%%VERSION%%
 GNUstep/Local/Tools/gsks
-@dirrm GNUstep/Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm GNUstep/Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm GNUstep/Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%
-@dirrm GNUstep/Local/Library/Frameworks/GSKrab.framework/Versions
-@dirrm GNUstep/Local/Library/Frameworks/GSKrab.framework

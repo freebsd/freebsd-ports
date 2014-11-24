@@ -1,4 +1,3 @@
 bin/keyboardcast
 share/applications/keyboardcast.desktop
 %%DATADIR%%/keyboardcast.glade
-@dirrm %%DATADIR%%

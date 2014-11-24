@@ -49,13 +49,3 @@ share/Eterm/themes/trans/pixmaps.list
 share/Eterm/themes/trans/theme.cfg
 %%PORTDOCS%%%%DOCSDIR%%/Eterm_reference.html
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes
-@dirrm share/Eterm/pix/scale
-@dirrm share/Eterm/pix/tile
-@dirrm share/Eterm/pix
-@dirrm share/Eterm/themes/Escreen
-@dirrm share/Eterm/themes/Eterm
-@dirrm share/Eterm/themes/auto
-@dirrm share/Eterm/themes/trans
-@dirrm share/Eterm/themes
-@dirrm share/Eterm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -48,7 +48,3 @@
 %%ASDF_PATHNAME%%/xtest.lisp
 %%ASDF_PATHNAME%%/xvidmode.lisp
 %%ASDF_REGISTRY%%/clx.asd
-@dirrm %%ASDF_PATHNAME%%/debug
-@dirrm %%ASDF_PATHNAME%%/demo
-@dirrm %%ASDF_PATHNAME%%/test
-@dirrm %%ASDF_PATHNAME%%

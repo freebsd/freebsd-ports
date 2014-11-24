@@ -242,28 +242,3 @@ man/man1/lxpanelctl.1.gz
 %%DATADIR%%/xkeyboardconfig/layouts.cfg
 %%DATADIR%%/xkeyboardconfig/models.cfg
 %%DATADIR%%/xkeyboardconfig/toggle.cfg
-@dirrm %%DATADIR%%/xkeyboardconfig
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/profile/two_panels/panels
-@dirrm %%DATADIR%%/profile/two_panels
-@dirrm %%DATADIR%%/profile/default/panels
-@dirrm %%DATADIR%%/profile/default
-@dirrm %%DATADIR%%/profile
-@dirrm %%DATADIR%%/images/xkb-flags
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fo
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tt_RU
-%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lg
-%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/frp
-%%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_VE
-@dirrmtry lib/lxpanel/plugins
-@dirrmtry lib/lxpanel
-@dirrmtry include/lxpanel

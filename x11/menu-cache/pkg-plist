@@ -6,5 +6,3 @@ lib/libmenu-cache.so.3.0.1
 libdata/pkgconfig/libmenu-cache.pc
 libexec/menu-cache/menu-cache-gen
 libexec/menu-cache/menu-cached
-@dirrm libexec/menu-cache
-@dirrm include/menu-cache

@@ -325,25 +325,3 @@ bin/bmpanel2
 %%DATADIR%%/themes/xsocam/tb_tile_pressed_img.png
 %%DATADIR%%/themes/xsocam/theme
 %%DATADIR%%/themes/xsocam/tile_img.png
-@dirrm %%DATADIR%%/themes/xsocam-dark
-@dirrm %%DATADIR%%/themes/xsocam
-@dirrm %%DATADIR%%/themes/transpy
-@dirrm %%DATADIR%%/themes/striped
-@dirrm %%DATADIR%%/themes/noir
-@dirrm %%DATADIR%%/themes/native
-@dirrm %%DATADIR%%/themes/flora-pink
-@dirrm %%DATADIR%%/themes/flora-green
-@dirrm %%DATADIR%%/themes/flora-blue
-@dirrm %%DATADIR%%/themes/curvy-pink
-@dirrm %%DATADIR%%/themes/curvy-green
-@dirrm %%DATADIR%%/themes/curvy-blue
-@dirrm %%DATADIR%%/themes/auriel-pink-smooth
-@dirrm %%DATADIR%%/themes/auriel-pink-opaque
-@dirrm %%DATADIR%%/themes/auriel-green-smooth
-@dirrm %%DATADIR%%/themes/auriel-green-opaque
-@dirrm %%DATADIR%%/themes/auriel-blue-smooth
-@dirrm %%DATADIR%%/themes/auriel-blue-opaque
-@dirrm %%DATADIR%%/themes/alduin-smooth
-@dirrm %%DATADIR%%/themes/alduin-glossy
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%

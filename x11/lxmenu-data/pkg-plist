@@ -19,5 +19,3 @@ share/desktop-directories/lxde-system-tools.directory
 share/desktop-directories/lxde-system.directory
 share/desktop-directories/lxde-utility-accessibility.directory
 share/desktop-directories/lxde-utility.directory
-@dirrmtry etc/xdg/menus
-@dirrmtry share/desktop-directories

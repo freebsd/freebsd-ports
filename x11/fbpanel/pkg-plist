@@ -50,7 +50,3 @@ man/man1/fbpanel.1.gz
 %%DATADIR%%/images/logo.png
 %%DATADIR%%/pager
 share/pixmaps/fbpanel.png
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrm libexec/fbpanel
-@dirrm lib/fbpanel
