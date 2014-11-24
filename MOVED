@@ -7233,3 +7233,4 @@ sysutils/firstboot-growfs||2014-11-23|Part of the base system
 graphics/linux-c6-gdk-pixbuf|graphics/linux-c6-gdk-pixbuf2|2014-11-24|Port renamed to align with upstream.
 devel/libole2||2014-11-24|Abandoned upstream, incomplete, not depend on
 net/p5-SOAP-Transport-TCP|net/p5-SOAP-Lite|2014-11-24|Has been integrated into net/p5-SOAP-Lite
+www/chimera||2014-11-24|Has expired: Abandonware (last update in 1997), restrictive license
