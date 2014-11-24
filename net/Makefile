@@ -1007,7 +1007,9 @@
     SUBDIR += rubygem-connection_pool
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-dropbox-sdk
+    SUBDIR += rubygem-fog-profitbricks
     SUBDIR += rubygem-fog-radosgw
+    SUBDIR += rubygem-fog-sakuracloud
     SUBDIR += rubygem-fog-softlayer
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitlab_omniauth-ldap
