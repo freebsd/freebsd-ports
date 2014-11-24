@@ -10,8 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Node builder for Doom
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
