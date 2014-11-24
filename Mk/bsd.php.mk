@@ -211,12 +211,8 @@ add-plist-info: add-plist-phpext
 add-plist-phpext:
 	@${ECHO_CMD} "lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/lib/php/${PHP_EXT_DIR} 2> /dev/null || true" \
-		>> ${TMPPLIST}
 	@${FIND} -P ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME} -type d 2>/dev/null | \
-		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec echo \#include \\\"ext/${PHP_MODNAME}/config.h\\\" >> %D/include/php/ext/php_config.h" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec cp %D/include/php/ext/php_config.h %D/include/php/ext/php_config.h.orig" \
@@ -225,7 +221,7 @@ add-plist-phpext:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rm %D/include/php/ext/php_config.h.orig" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@exec mkdir -p %D/etc/php" \
+	@${ECHO_CMD} "@dir etc/php" \
 		>> ${TMPPLIST}
 .if defined(USE_ZENDEXT)
 	@${ECHO_CMD} "@exec echo zend_extension=%D/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so >> %D/etc/php/extensions.ini" \
@@ -246,8 +242,6 @@ add-plist-phpext:
 	@${ECHO_CMD} "@unexec rm %D/etc/php/extensions.ini.orig" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/etc/php 2> /dev/null || true" \
 		>> ${TMPPLIST}
 
 package-message: php-ini
