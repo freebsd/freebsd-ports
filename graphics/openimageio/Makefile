@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openimageio
-PORTVERSION=	1.4.12
-PORTREVISION?=	2
+PORTVERSION=	1.4.14
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageIO
 GH_PROJECT=	oiio
 GH_TAGNAME=	Release-${PORTVERSION}
-GH_COMMIT=	218fe63
+GH_COMMIT=	08ce694
 
 # fbm also installs bin/idiff
 CONFLICTS=	fbm-[0-9]*
@@ -57,7 +57,7 @@ CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=OFF -DOIIO_BUILD_TOOLS:BOOL=ON
 .else
 LIB_DEPENDS=	libOpenImageIO.so:${PORTSDIR}/graphics/openimageio \
 		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
-USE_PYTHON=	yes
+USES+=		python
 PLIST=		${PKGDIR}/pkg-plist-pybind
 CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=ON -DOIIO_BUILD_TOOLS:BOOL=OFF
 .endif

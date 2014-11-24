@@ -84,6 +84,4 @@ sbin/statit
 sbin/t-hostname
 sbin/t-getgroup
 sbin/tree
-@dirrm include/sm
-@dirrm lib/meta1
 @exec %D/sbin/sm.setup.sh

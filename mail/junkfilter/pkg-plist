@@ -31,5 +31,3 @@ etc/junkfilter/junkfilter.user-default
 etc/junkfilter/junkfilter.white
 etc/junkfilter/procmailrc.sample
 etc/junkfilter/white
-@dirrm etc/junkfilter/domains
-@dirrm etc/junkfilter

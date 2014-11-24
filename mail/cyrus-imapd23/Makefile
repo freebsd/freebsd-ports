@@ -74,7 +74,7 @@ NETSCAPEHACK_CONFIGURE_ENABLE=netscapehack
 NNTP_DESC=		Enable NNTP support
 NNTP_CONFIGURE_ENABLE=	nntp
 PGSQL_DESC=		Enable PostgreSQL backend (experimental)
-PGSQL_USE=		PGSQL=yes
+PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 REPLICATION_DESC=	Enable replication
 REPLICATION_CONFIGURE_ENABLE=replication

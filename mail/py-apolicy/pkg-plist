@@ -13,7 +13,5 @@
 %%PYTHON_SITELIBDIR%%/apolicy/server.py
 %%PYTHON_SITELIBDIR%%/apolicy/server.pyc
 %%PYTHON_SITELIBDIR%%/apolicy/server.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/apolicy
 etc/apolicy/main.conf
 etc/apolicy/policy.conf
-@dirrmtry etc/apolicy

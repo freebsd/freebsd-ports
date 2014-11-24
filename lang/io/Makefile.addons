@@ -194,7 +194,7 @@ USE_XORG+=	xmu
 # PostgreSQL
 #
 .if ${PORT_OPTIONS:MPostgreSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 .endif
 
 #

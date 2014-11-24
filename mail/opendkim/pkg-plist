@@ -78,10 +78,3 @@ sbin/opendkim-genzone
 sbin/opendkim-testadsp
 sbin/opendkim-testkey
 sbin/opendkim-testmsg
-%%VBR%%@dirrm include/vbr
-%%REPUTATION%%@dirrm include/ut
-%%REPUTATION%%@dirrm include/repute
-%%REPRRD%%@dirrm include/reprrd
-%%RBL%%@dirrm include/rbl
-@dirrm include/opendkim
-@dirrmtry etc/mail

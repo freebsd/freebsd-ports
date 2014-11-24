@@ -2,7 +2,7 @@
 
 PORTNAME=	gssapi
 PORTVERSION=	2.1.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/
@@ -53,7 +53,7 @@ BASE_DESC=		Use Heimdal in base
 BASE_USES=		gssapi
 BASE_CONFIGURE_ENABLE=	gssapi
 HEIMDAL_DESC=		Use Heimdal from ports
-HEIMDAL_USES=		gssapi:heimdal
+HEIMDAL_USES=		gssapi:heimdal,flags
 HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 			--with-gss_impl=heimdal
 MIT_DESC=		Use MIT Kerberos V5

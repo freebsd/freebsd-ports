@@ -88,21 +88,3 @@ www/vexim/style.css
 www/vexim/userblocksubmit.php
 www/vexim/userchange.php
 www/vexim/userchangesubmit.php
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/clients
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm www/vexim/locale/ro_RO/LC_MESSAGES
-@dirrm www/vexim/locale/ro_RO
-@dirrm www/vexim/locale/hu_HU/LC_MESSAGES
-@dirrm www/vexim/locale/hu_HU
-@dirrm www/vexim/locale/es_ES/LC_MESSAGES
-@dirrm www/vexim/locale/es_ES
-@dirrm www/vexim/locale/en_EN/LC_MESSAGES
-@dirrm www/vexim/locale/en_EN
-@dirrm www/vexim/locale/de_DE/LC_MESSAGES
-@dirrm www/vexim/locale/de_DE
-@dirrm www/vexim/locale
-@dirrm www/vexim/images
-@dirrm www/vexim/config
-@dirrm www/vexim

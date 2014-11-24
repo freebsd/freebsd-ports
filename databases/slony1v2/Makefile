@@ -12,12 +12,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	PostgreSQL master to multiple replicas replication system
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 GNU_CONFIGURE=	yes
-USES=		bison gmake shebangfix tar:bzip2
-USE_PGSQL=	yes
+USES=		bison gmake shebangfix tar:bzip2 pgsql
+WANT_PGSQL=	server
 USE_RC_SUBR=	slon
 SHEBANG_FILES=	tools/altperl/slonik_restart_node.pl
 

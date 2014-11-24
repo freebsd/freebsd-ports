@@ -46,6 +46,3 @@ sbin/pcheckd
 sbin/pproxy
 sbin/pserv
 sbin/ringd
-@dirrm include/popular
-@dirrm lib/popular
-@dirrmtry etc/popular

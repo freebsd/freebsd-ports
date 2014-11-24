@@ -1,7 +1,7 @@
 # Created by: Shane Ambler
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	graphics multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

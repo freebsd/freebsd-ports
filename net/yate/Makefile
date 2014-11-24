@@ -60,7 +60,7 @@ PLIST_SUB+=		WITH_MYSQL="@comment "
 .if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--with-libpq=${LOCALBASE}
 PLIST_SUB+=		WITH_PGSQL=""
-USE_PGSQL=		yes
+USES+=			pgsql
 .else
 CONFIGURE_ARGS+=	--without-libpq
 PLIST_SUB+=		WITH_PGSQL="@comment "

@@ -9,7 +9,7 @@ MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Little program for monitoring amateur radio beacons
 
 USES=		imake tar:tgz

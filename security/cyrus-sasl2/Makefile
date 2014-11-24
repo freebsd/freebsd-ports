@@ -64,7 +64,7 @@ BDB_CONFIGURE_OFF=	--with-dblib=ndbm
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
 MYSQL_CONFIGURE_OFF=	--without-mysql
-PGSQL_USE=		PGSQL=yes
+PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 PGSQL_CONFIGURE_OFF=	--without-pgsql
 SQLITE2_DESC=		SQLite 2 database

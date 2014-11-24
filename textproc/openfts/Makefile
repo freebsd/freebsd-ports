@@ -10,12 +10,11 @@ DISTNAME=	Search-OpenFTS-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Open Source Full Text Search engine
 
-RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/tsearch2.so:${PORTSDIR}/databases/postgresql${DEFAULT_PGSQL_VER}-contrib \
-		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 
-USE_PGSQL=	yes
-USES=		perl5
+USES+=		perl5 pgsql
 USE_PERL5=	configure
+WANT_PGSQL=	contrib
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

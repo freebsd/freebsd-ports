@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
 			--with-jpeg-lib-dir=${LOCALBASE}/lib \
 			--without-x
+INSTALL_TARGET=	install-strip
 
 MLNKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 	TIFFFlush.3tiff          TIFFFlushData.3tiff \
@@ -95,6 +96,9 @@ __pmlinks3!= ${ECHO_CMD} '${MLNKS:S/    / /}' | ${AWK} \
 		else { printf "${LN} -s " $$i " "; } \
 	} }'
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} "/\.po 0/d" ${WRKSRC}/man/*
 
 pre-configure:
 	${REINPLACE_CMD} \

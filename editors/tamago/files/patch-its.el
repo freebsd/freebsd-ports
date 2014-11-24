@@ -1,5 +1,5 @@
---- its.el.orig	2002-08-02 12:07:34.000000000 +0900
-+++ its.el	2013-03-30 17:11:53.000000000 +0900
+--- its.el.orig	2014-11-23 16:01:01.000000000 +0900
++++ its.el	2014-11-23 16:01:52.000000000 +0900
 @@ -397,7 +397,7 @@
  (defun its-self-insert-char ()
    (interactive)
@@ -17,4 +17,14 @@
 +    (if (its-keyseq-acceptable-p (vector last-command-event) syl)
  	(its-self-insert-char)
        (its-kick-convert-region n))))
-
+ 
+@@ -1554,7 +1554,8 @@
+   (with-output-to-temp-buffer "*Help*"
+     (princ "ITS mode:\n")
+     (princ (documentation 'its-mode))
+-    (help-setup-xref (cons #'help-xref-mode (current-buffer)) (interactive-p))))
++    (help-setup-xref (cons #'help-xref-mode (current-buffer))
++      (called-interactively-p 'interactive))))
+ 
+ ;; The `point-left' hook function will never be called in Emacs 21.2.50
+ ;; when the command `next-line' is used in the last line of a buffer

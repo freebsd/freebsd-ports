@@ -78,7 +78,9 @@ Notes:
     </description>
     <references>
       <url>http://downloads.asterisk.org/pub/security/AST-2014-014.html</url>
+      <cvename>CVE-2014-8414</cvename>
       <url>http://downloads.asterisk.org/pub/security/AST-2014-017.html</url>
+      <cvename>CVE-2014-8417</cvename>
     </references>
     <dates>
       <discovery>2014-11-21</discovery>
@@ -111,7 +113,9 @@ Notes:
     </description>
     <references>
       <url>http://downloads.asterisk.org/pub/security/AST-2014-012.html</url>
+      <cvename>CVE-2014-8412</cvename>
       <url>http://downloads.asterisk.org/pub/security/AST-2014-018.html</url>
+      <cvename>CVE-2014-8418</cvename>
     </references>
     <dates>
       <discovery>2014-11-21</discovery>

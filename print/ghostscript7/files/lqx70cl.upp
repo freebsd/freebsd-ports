@@ -1,0 +1,26 @@
+# $ApsCVS: src/apsfilter/uniprint/lqx70cl.upp,v 1.2 2000/04/21 18:48:00 andreas Exp $
+#
+-supModel="Epson LQ-1170 ESC/P2 Dot Matrix, 180x180DpI, Plain Paper"
+-sDEVICE=uniprint
+-dNOPAUSE
+-dSAFER
+-dupColorModel=/DeviceCMYKgenerate
+-dupRendering=/ErrorDiffusion
+-dupOutputFormat=/EscP2
+-r180x180
+-dupMargins="{ 9.0 0.0 9.0 24.0}"
+-dupOutputPins=24
+-dupBeginPageCommand="<
+   1b40   1b40
+   1b2847 0100 01
+   1b2869 0100 01
+   1b2855 0100 14
+   1b5500
+   1b2865 0200 0002
+   1b2843 0200 0000
+   1b2863 0400 0000 0000
+>"
+-dupAdjustPageLengthCommand
+-dupEndPageCommand="(\014)"
+-dupAbortCommand="(\033@\15\12\12\12\12    Printout-Aborted\15\014)"
+

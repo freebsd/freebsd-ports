@@ -126,7 +126,7 @@ CONFIGURE_ARGS+=--without-authmysql
 
 .if ${AUTHMOD} == authpgsql
 DOCS=		README.authpostgres.html
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=--with-authpgsql
 .else
 CONFIGURE_ARGS+=--without-authpgsql

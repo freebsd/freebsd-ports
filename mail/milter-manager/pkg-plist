@@ -183,31 +183,3 @@ sbin/milter-manager
 %%DATADIR%%/munin/plugins/milter_manager_memory
 %%DATADIR%%/munin/plugins/postfix_processes
 %%DATADIR%%/munin/plugins/sendmail_processes
-@dirrmtry etc/cron.d
-@dirrm %%ETCDIR%%/applicable-conditions
-@dirrm %%ETCDIR%%/defaults
-@dirrm %%ETCDIR%%/models
-@dirrmtry %%ETCDIR%%
-@dirrm include/milter-manager/libmilter/libmilter
-@dirrm include/milter-manager/libmilter
-@dirrm include/milter-manager/milter/client
-@dirrm include/milter-manager/milter/core
-@dirrm include/milter-manager/milter/manager
-@dirrm include/milter-manager/milter/server
-@dirrm include/milter-manager/milter
-@dirrm include/milter-manager
-@dirrm lib/milter-manager/binding/ext
-@dirrm lib/milter-manager/binding/lib/milter/client
-@dirrm lib/milter-manager/binding/lib/milter/core
-@dirrm lib/milter-manager/binding/lib/milter/manager
-@dirrm lib/milter-manager/binding/lib/milter/server
-@dirrm lib/milter-manager/binding/lib/milter
-@dirrm lib/milter-manager/binding/lib
-@dirrm lib/milter-manager/binding
-@dirrm lib/milter-manager/module/configuration
-@dirrm lib/milter-manager/module
-@dirrm lib/milter-manager
-@dirrm %%DATADIR%%/license
-@dirrm %%DATADIR%%/munin/plugins
-@dirrm %%DATADIR%%/munin
-@dirrm %%DATADIR%%

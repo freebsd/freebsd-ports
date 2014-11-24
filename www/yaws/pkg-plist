@@ -366,23 +366,3 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
 %%WWWDIR%%/ybed.erl
 %%WWWDIR%%/ybed_sup.erl
 %%WWWDIR%%/yman.yaws
-@dirrmtry %%WWWDIR%%/testdir
-@dirrmtry %%WWWDIR%%/ssi
-@dirrmtry %%WWWDIR%%/shoppingcart
-@dirrmtry %%WWWDIR%%/jsolait/lib
-@dirrmtry %%WWWDIR%%/jsolait
-@dirrmtry %%WWWDIR%%/icons/small
-@dirrmtry %%WWWDIR%%/icons
-@dirrmtry %%WWWDIR%%/code
-@dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%
-@dirrmtry lib/erlang/lib/yaws-%%VERSION%%/src
-@dirrmtry lib/erlang/lib/yaws-%%VERSION%%/priv/lib
-@dirrmtry lib/erlang/lib/yaws-%%VERSION%%/priv
-@dirrmtry lib/erlang/lib/yaws-%%VERSION%%/include
-@dirrmtry lib/erlang/lib/yaws-%%VERSION%%/examples/src
-@dirrmtry lib/erlang/lib/yaws-%%VERSION%%/examples/ebin
-@dirrmtry lib/erlang/lib/yaws-%%VERSION%%/examples
-@dirrmtry lib/erlang/lib/yaws-%%VERSION%%/ebin
-@dirrmtry lib/erlang/lib/yaws-%%VERSION%%
-@dirrm %%ETCDIR%%

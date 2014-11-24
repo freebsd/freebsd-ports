@@ -3,12 +3,14 @@
 
 PORTNAME=	ceferino
 PORTVERSION=	0.97.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/ceferino/descargas/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game similar to Super Pang
+
+LICENSE=	GPLv2
 
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
@@ -18,18 +20,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
 
 CEFEDIRS=	ima music levels sounds
 
+PORTDOCS=	AUTHORS ChangeLog README
 OPTIONS_DEFINE=	NLS DOCS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
+
+DESKTOP_ENTRIES="Don Ceferino Hazaña" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	NLS=""
-FLAG_NLS=	true
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/-lSDL /`sdl-config --libs`/g' ${WRKSRC}/configure
@@ -43,14 +44,17 @@ do-install:
 	@cd ${WRKSRC}/data && \
 		${FIND} ${CEFEDIRS} -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
 		${FIND} -E ${CEFEDIRS} -type f -iregex ".*\.(png|jpg|xm|map|wav)" -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
-.if defined(FLAG_NLS)
+	${LN} -sf ${DATADIR}/ima/icono.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+.if ${PORT_OPTIONS:MNLS}
 .for f in es ca fr
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES && \
 		${INSTALL_DATA} ${WRKSRC}/po/${f}.gmo ${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 .endif
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && \
-		${INSTALL_DATA} AUTHORS ChangeLog README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

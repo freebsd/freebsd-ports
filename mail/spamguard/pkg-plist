@@ -28,6 +28,3 @@ etc/spamguard/spamguard.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/tr/KURULUM-SONRASI
 %%PORTDOCS%%%%DOCSDIR%%/tr/YAPILACAKLAR
 %%PORTDOCS%%%%DOCSDIR%%/tr/YAZARLAR
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/spamguard

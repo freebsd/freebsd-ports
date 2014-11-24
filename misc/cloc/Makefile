@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	cloc
-PORTVERSION=	1.60
+PORTVERSION=	1.62
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 EXTRACT_SUFX=	.pl
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Counts lines of code
 
 RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff

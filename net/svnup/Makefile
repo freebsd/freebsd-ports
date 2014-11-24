@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	svnup
-PORTVERSION=	1.06
-PORTREVISION=	1
+PORTVERSION=	1.07
 CATEGORIES=	net
 MASTER_SITES=	http://jcm.dsl.visi.com/freebsd/svnup/ \
 		LOCAL/jgh/net/${PORTNAME}/

@@ -1,7 +1,0 @@
-include/rep-gtk/rep-gtk.h
-lib/rep/gui/gtk-2/gtk.a
-lib/rep/gui/gtk-2/gtk.so
-libdata/pkgconfig/rep-gtk.pc
-@dirrm lib/rep/gui/gtk-2
-@dirrm lib/rep/gui
-@dirrm include/rep-gtk

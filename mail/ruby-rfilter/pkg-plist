@@ -7,7 +7,6 @@ bin/rsendmail.rb
 %%RUBY_SITELIBDIR%%/rfilter/keyed_mailbox.rb
 %%RUBY_SITELIBDIR%%/rfilter/mta.rb
 %%RUBY_SITELIBDIR%%/rfilter/tagged.rb
-@dirrm %%RUBY_SITELIBDIR%%/rfilter
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/THANKS
@@ -100,27 +99,3 @@ bin/rsendmail.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib/rfilter
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/bin/rsendmail_rb.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/bin/experimental-filter_rb.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/bin/experimental-deliver_rb.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/bin
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/KeyedMailbox.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/DeliveryAgent/LoggingError.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/DeliveryAgent/DeliverySuccess.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/DeliveryAgent/DeliveryReject.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/DeliveryAgent/DeliveryDefer.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/DeliveryAgent/DeliveryComplete.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/DeliveryAgent/DeliveryCommandFailure.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/DeliveryAgent.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/DeliveryAgent
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/Deliver.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/Deliver
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter/AddressTagger.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/RFilter
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Deliver.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

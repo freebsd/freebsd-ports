@@ -30,7 +30,8 @@ ADDONS_DESC=	install additional workgroup features (addons)
 OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
-PGSQL_USE=	PGSQL=server
+PGSQL_USES=	pgsql
+WANT_PGSQL=	server
 MYSQL_USE=	MYSQL=server
 
 ADDONS_DISTFILES=	${PORTNAME}-addons-${PORTVERSION}${EXTRACT_SUFX}

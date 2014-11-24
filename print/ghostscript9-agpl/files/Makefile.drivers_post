@@ -18,7 +18,8 @@ EPAG_NAME=	${EPAG_SRCS:S,.tar.gz$,,}
 post-extract-epag:
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
 	${LN} -s -f ${EPAG_NAME} ${WRKSRC}/${EPAG_BASE}
-	${INSTALL_DATA} ${FILESDIR}/epag.contrib.mak ${WRKSRC}/base/epag.contrib.mak
+	${INSTALL_DATA} ${FILESDIR}/epag.contrib.mak \
+	    ${WRKSRC}/contrib/epag.contrib.mak
 
 post-extract: post-extract-epag
 
@@ -137,7 +138,7 @@ DEVICE_DEVS6= bj10e.dev bj200.dev bjc600.dev bjc800.dev png48.dev	\
 	pngalpha.dev
 DEVICE_DEVS7= faxg3.dev faxg32d.dev faxg4.dev
 DEVICE_DEVS8= pcxmono.dev pcxgray.dev pcx16.dev pcx256.dev pcx24b.dev	\
-	pcxcmyk.dev svgwrite.dev plan.dev planc.dev plang.dev plank.dev \
+	pcxcmyk.dev plan.dev planc.dev plang.dev plank.dev \
 	planm.dev plib.dev plibc.dev plibg.dev plibk.dev plibm.dev
 DEVICE_DEVS9= pbm.dev pbmraw.dev pgm.dev pgmraw.dev pgnm.dev		\
 	pgnmraw.dev pnm.dev pnmraw.dev ppm.dev ppmraw.dev pkm.dev	\
@@ -146,11 +147,10 @@ DEVICE_DEVS10= tiffcrle.dev tiffg3.dev tiffg32d.dev tiffg4.dev	\
 	tifflzw.dev tiffpack.dev
 DEVICE_DEVS11= tiff12nc.dev tiff24nc.dev tiff48nc tiffgray.dev	\
 	tiff32nc.dev tiff64nc.dev tiffsep.dev tiffsep1.dev
-DEVICE_DEVS12= psmono.dev psgray.dev psrgb.dev bit.dev bitrgb.dev	\
-	bitcmyk.dev
+DEVICE_DEVS12= bit.dev bitrgb.dev bitcmyk.dev
 DEVICE_DEVS13=
 DEVICE_DEVS14= jpeg.dev jpeggray.dev jpegcmyk.dev
-DEVICE_DEVS15= pdfwrite.dev pswrite.dev ps2write.dev epswrite.dev	\
+DEVICE_DEVS15= pdfwrite.dev ps2write.dev eps2write.dev	\
 	txtwrite.dev pxlmono.dev pxlcolor.dev
 DEVICE_DEVS16= bbox.dev
 DEVICE_DEVS17=

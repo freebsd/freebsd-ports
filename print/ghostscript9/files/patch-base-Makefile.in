@@ -1,18 +1,19 @@
---- base/Makefile.in.orig	2012-02-08 17:48:48.000000000 +0900
-+++ base/Makefile.in	2012-02-13 11:01:06.000000000 +0900
-@@ -48,9 +48,8 @@
+--- base/Makefile.in.orig	2012-08-08 17:01:36.000000000 +0900
++++ base/Makefile.in	2014-11-23 17:28:38.000000000 +0900
+@@ -49,9 +49,9 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
  
 -INSTALL = $(GLSRCDIR)/instcopy -c
 -INSTALL_PROGRAM = $(INSTALL) -m 755
 -INSTALL_DATA = $(INSTALL) -m 644
-+INSTALL_PROGRAM = ${BSD_INSTALL_SCRIPT}
++INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
++INSTALL_SCRIPT = ${BSD_INSTALL_SCRIPT}
 +INSTALL_DATA = ${BSD_INSTALL_DATA}
  INSTALL_SHARED = @INSTALL_SHARED@
  
  prefix = @prefix@
-@@ -201,7 +200,7 @@
+@@ -202,7 +202,7 @@
  # some older JPEG streams that violate the standard. If the JPEG
  # library built from local sources, the patch will be applied.
  
@@ -21,7 +22,7 @@
  JPEG_NAME=jpeg
  
  # Define the directory where the PNG library sources are stored,
-@@ -209,12 +208,12 @@
+@@ -210,12 +210,12 @@
  # You may need to change this if the libpng version changes.
  # See png.mak for more information.
  
@@ -36,7 +37,7 @@
  TIFFSRCDIR=@LIBTIFFDIR@
  TIFFPLATFORM=unix
  TIFFCONFIG_SUFFIX=
-@@ -223,7 +222,7 @@
+@@ -224,7 +224,7 @@
  # Define the directory where the zlib sources are stored.
  # See zlib.mak for more information.
  
@@ -45,7 +46,7 @@
  ZSRCDIR=@ZLIBDIR@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
-@@ -250,7 +249,7 @@
+@@ -251,7 +251,7 @@
  JPX_LIB=@JPX_DECODER@
  SHARE_JPX=@SHARE_JPX@
  JPXSRCDIR=@JPXDIR@
@@ -54,7 +55,7 @@
  
  # uncomment the following three lines and one of the last two to
  # compile in the Luratech lwf_jp2 codec
-@@ -330,7 +329,7 @@
+@@ -331,7 +331,7 @@
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
  
@@ -63,7 +64,7 @@
  CFLAGS_DEBUG=@DBG_CFLAGS@
  CFLAGS_PROFILE=-pg @OPT_CFLAGS@
  CFLAGS_SO=@DYNAMIC_CFLAGS@
-@@ -381,7 +380,7 @@
+@@ -382,7 +382,7 @@
  # Solaris may need -lnsl -lsocket -lposix4.
  # (Libraries required by individual drivers are handled automatically.)
  
@@ -72,7 +73,7 @@
  
  # Define the standard libraries to search at the end of linking.
  # Most platforms require -lpthread for the POSIX threads library;
-@@ -425,7 +424,7 @@
+@@ -426,7 +426,7 @@
  # the pthread library. Otherwise use SYNC=nosync
  #SYNC=posync
  #SYNC=nosync
@@ -81,7 +82,7 @@
  
  # programs we use
  RM=rm -f
-@@ -513,27 +512,27 @@
+@@ -518,27 +518,27 @@
  #DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev
  #DEVICE_DEVS21=$(DD)spotcmyk.dev $(DD)devicen.dev $(DD)xcf.dev $(DD)psdcmyk.dev $(DD)psdrgb.dev
  DEVICE_DEVS=$(DISPLAY_DEV) @X11_DEVS@
@@ -130,7 +131,7 @@
  
  
  # Shared library target to build.
-@@ -578,6 +577,7 @@
+@@ -583,6 +583,7 @@
  # ---------------- End of platform-specific section ---------------- #
  
  INSTALL_CONTRIB=@INSTALL_CONTRIB@

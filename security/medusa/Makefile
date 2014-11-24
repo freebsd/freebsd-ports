@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--enable-module-svn=no
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=	--enable-module-postgres
 .else
 CONFIGURE_ARGS+=	--enable-module-postgres=no

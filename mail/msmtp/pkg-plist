@@ -4,4 +4,3 @@ man/man1/msmtp.1.gz
 %%MSMTPQ%%bin/msmtpq
 %%MSMTPQ%%%%DOCSDIR%%/README.msmtpq
 %%NLS%%share/locale/de/LC_MESSAGES/msmtp.mo
-%%MSMTPQ%%@dirrm %%DOCSDIR%%

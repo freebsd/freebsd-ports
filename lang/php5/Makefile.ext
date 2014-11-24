@@ -265,7 +265,7 @@ USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_pgsql"
-USE_PGSQL=	yes
+USES+=		pgsql
 
 CONFIGURE_ARGS+=--with-pdo-pgsql=${LOCALBASE}
 
@@ -282,7 +282,7 @@ USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pgsql"
-USE_PGSQL=	yes
+USES+=		pgsql
 
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif

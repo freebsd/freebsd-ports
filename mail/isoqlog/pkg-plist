@@ -53,10 +53,3 @@ etc/isoqlog.domains-dist
 %%DATADIR%%/lang/spanish
 %%DATADIR%%/lang/swedish
 %%DATADIR%%/lang/turkish
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/htmltemp/images
-@dirrm %%DATADIR%%/htmltemp/library
-@dirrm %%DATADIR%%/htmltemp
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%

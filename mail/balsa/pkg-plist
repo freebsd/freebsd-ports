@@ -222,37 +222,3 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 share/pixmaps/gnome-balsa2.png
 share/sounds/balsa/newmail.wav
 share/sounds/balsa/startup.wav
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/icons/hicolor/48x48/mimetypes
-@dirrm share/help/sl/balsa/figures
-@dirrm share/help/sl/balsa
-@dirrmtry share/help/sl
-@dirrm share/help/fr/balsa/figures
-@dirrm share/help/fr/balsa
-@dirrmtry share/help/fr
-@dirrm share/help/es/balsa/figures
-@dirrm share/help/es/balsa
-@dirrmtry share/help/es
-@dirrm share/help/de/balsa/figures
-@dirrm share/help/de/balsa
-@dirrmtry share/help/de
-@dirrm share/help/C/balsa/figures
-@dirrm share/help/C/balsa
-@dirrmtry share/help/C
-@dirrmtry share/help
-@dirrm share/sounds/balsa
-@dirrm share/balsa/pixmaps
-@dirrm share/balsa/hicolor/16x16/apps
-@dirrm share/balsa/hicolor/16x16
-@dirrm share/balsa/hicolor/24x24/apps
-@dirrm share/balsa/hicolor/24x24
-@dirrm share/balsa/hicolor
-%%GTKSV%%@dirrm share/balsa/gtksourceview-2.0
-@dirrm share/balsa

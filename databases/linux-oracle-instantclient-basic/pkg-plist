@@ -1,3 +1,4 @@
+etc/ld.so.conf.d/oracle10.conf
 usr/bin/genezi
 usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libclntsh.so.10.1
 usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libnnz10.so

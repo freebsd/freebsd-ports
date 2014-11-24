@@ -9,6 +9,7 @@ include/OSL/dual.h
 include/OSL/export.h
 include/OSL/genclosure.h
 include/OSL/Imathx.h
+include/OSL/llvm_util.h
 include/OSL/matrix22.h
 include/OSL/optautomata.h
 include/OSL/oslclosure.h
@@ -17,6 +18,8 @@ include/OSL/oslconfig.h
 include/OSL/oslexec.h
 include/OSL/oslquery.h
 include/OSL/oslversion.h
+include/OSL/rendererservices.h
+include/OSL/shaderglobals.h
 lib/liboslcomp.so
 lib/liboslcomp.so.1
 lib/liboslexec.so

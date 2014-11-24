@@ -49,9 +49,6 @@ do-install:
 	${LN} -s -f ../conf.avail/62-fonts-motoya-al.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-motoya-al.conf
 
-post-su-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

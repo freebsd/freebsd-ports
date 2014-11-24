@@ -6,4 +6,3 @@ sbin/gld
 %%PORTDOCS%%%%DOCSDIR%%/table-whitelist.sql
 %%PORTDOCS%%%%DOCSDIR%%/tables.mysql
 %%PORTDOCS%%%%DOCSDIR%%/tables.pgsql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

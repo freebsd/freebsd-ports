@@ -5,4 +5,3 @@ man/man1/alpine.1.gz
 man/man1/rpdump.1.gz
 man/man1/rpload.1.gz
 @sample etc/alpine.conf.sample
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech-notes

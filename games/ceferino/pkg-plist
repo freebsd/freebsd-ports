@@ -1,33 +1,9 @@
 bin/ceferino
 bin/ceferinoeditor
 bin/ceferinosetup
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%NLS%%share/locale/ca/LC_MESSAGES/ceferino.mo
-%%NLS%%share/locale/es/LC_MESSAGES/ceferino.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/ceferino.mo
 %%DATADIR%%/ima/barra.png
 %%DATADIR%%/ima/cargando.png
 %%DATADIR%%/ima/editor.png
-%%DATADIR%%/ima/fuente1.png
-%%DATADIR%%/ima/fuente2.png
-%%DATADIR%%/ima/fuente.png
-%%DATADIR%%/ima/gaucho.png
-%%DATADIR%%/ima/how_to_play.png
-%%DATADIR%%/ima/icono.png
-%%DATADIR%%/ima/items.png
-%%DATADIR%%/ima/mate.png
-%%DATADIR%%/ima/niveles.png
-%%DATADIR%%/ima/op_items.png
-%%DATADIR%%/ima/pelota_1.png
-%%DATADIR%%/ima/pelota_2.png
-%%DATADIR%%/ima/pelota_3.png
-%%DATADIR%%/ima/pelota_4.png
-%%DATADIR%%/ima/tiros.png
-%%DATADIR%%/ima/tit_1.png
-%%DATADIR%%/ima/tit_2.png
-%%DATADIR%%/ima/tit_3.png
 %%DATADIR%%/ima/final1.jpg
 %%DATADIR%%/ima/final2.jpg
 %%DATADIR%%/ima/final3.jpg
@@ -36,16 +12,34 @@ bin/ceferinosetup
 %%DATADIR%%/ima/final6.jpg
 %%DATADIR%%/ima/fondo.jpg
 %%DATADIR%%/ima/fondos.jpg
+%%DATADIR%%/ima/fuente.png
+%%DATADIR%%/ima/fuente1.png
+%%DATADIR%%/ima/fuente2.png
+%%DATADIR%%/ima/fuente_2.png
+%%DATADIR%%/ima/gaucho.png
+%%DATADIR%%/ima/how_to_play.png
+%%DATADIR%%/ima/icono.png
+%%DATADIR%%/ima/items.png
+%%DATADIR%%/ima/mate.png
 %%DATADIR%%/ima/menu.jpg
+%%DATADIR%%/ima/niveles.png
+%%DATADIR%%/ima/op_items.png
+%%DATADIR%%/ima/pelota_1.png
+%%DATADIR%%/ima/pelota_2.png
+%%DATADIR%%/ima/pelota_3.png
+%%DATADIR%%/ima/pelota_4.png
 %%DATADIR%%/ima/pres_casa.jpg
 %%DATADIR%%/ima/pres_lee.jpg
 %%DATADIR%%/ima/pres_losers.jpg
 %%DATADIR%%/ima/pres_rapto.jpg
 %%DATADIR%%/ima/pres_sentado.jpg
 %%DATADIR%%/ima/pres_vs.jpg
-%%DATADIR%%/ima/fuente_2.png
-%%DATADIR%%/music/menu.xm
+%%DATADIR%%/ima/tiros.png
+%%DATADIR%%/ima/tit_1.png
+%%DATADIR%%/ima/tit_2.png
+%%DATADIR%%/ima/tit_3.png
 %%DATADIR%%/levels/base.map
+%%DATADIR%%/music/menu.xm
 %%DATADIR%%/sounds/alarma.wav
 %%DATADIR%%/sounds/boom.wav
 %%DATADIR%%/sounds/explo.wav
@@ -59,9 +53,7 @@ bin/ceferinosetup
 %%DATADIR%%/sounds/tic.wav
 %%DATADIR%%/sounds/tiro.wav
 %%DATADIR%%/sounds/toc.wav
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/ima
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%
+%%NLS%%share/locale/ca/LC_MESSAGES/ceferino.mo
+%%NLS%%share/locale/es/LC_MESSAGES/ceferino.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/ceferino.mo
+share/pixmaps/ceferino.png

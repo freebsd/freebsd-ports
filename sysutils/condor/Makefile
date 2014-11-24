@@ -18,9 +18,9 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
-USES=		cmake gmake perl5
+USES=		cmake gmake perl5 pgsql
+WANT_PGSQL=	server
 USE_GCC=	any
-USE_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \

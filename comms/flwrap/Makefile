@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.w1hkj.com/downloads/flwrap/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Flwrap is a companion utility for fldigi
 
 LICENSE=	GPLv2

@@ -30,4 +30,3 @@ man/man3/JAM_UnlockMB.3.gz
 man/man3/JAM_WriteLastRead.3.gz
 man/man3/JAM_WriteMBHeader.3.gz
 man/man3/jamlib.3.gz
-@dirrm include/jamlib

@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}term/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio soundcard fsk, pactor 1, amtor, gtor, mt63
 
 LICENSE=	GPLv2

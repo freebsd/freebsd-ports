@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2013-09-27 12:59:06.000000000 +0000
-+++ CMakeLists.txt	2013-09-27 17:45:20.000000000 +0000
-@@ -84,6 +84,7 @@
+--- CMakeLists.txt.orig	2014-07-09 09:27:58.000000000 +0200
++++ CMakeLists.txt	2014-11-17 23:45:13.000000000 +0100
+@@ -89,6 +89,7 @@
  opt(VORO3D "Enable Voro3D (for hex meshing, experimental)" ${DEFAULT})
  opt(WRAP_JAVA "Enable generation of Java wrappers (experimental)" OFF)
  opt(WRAP_PYTHON "Enable generation of Python wrappers" OFF)
@@ -8,7 +8,16 @@
  
  set(GMSH_MAJOR_VERSION 2)
  set(GMSH_MINOR_VERSION 8)
-@@ -1318,7 +1319,7 @@
+@@ -1017,7 +1018,7 @@
+       # ModelingData
+       TKBRep TKGeomBase TKG3d TKG2d
+       # FoundationClasses
+-      TKAdvTools TKMath TKernel)
++      TKMath TKernel)
+   if(ENABLE_SGEOM)
+     set(OCC_LIBS_REQUIRED ${OCC_LIBS_REQUIRED}
+       # For SGEOM
+@@ -1450,7 +1451,7 @@
      set(GMSH_BIN bin)
      set(GMSH_LIB lib)
      set(GMSH_DOC share/doc/gmsh)
@@ -17,7 +26,7 @@
    endif(ENABLE_OS_SPECIFIC_INSTALL)
    if(CYGWIN)
      unix2dos(GMSH_API)
-@@ -1339,7 +1340,7 @@
+@@ -1471,7 +1472,7 @@
    set(GMSH_BIN bin)
    set(GMSH_LIB lib)
    set(GMSH_DOC share/doc/gmsh)
@@ -26,7 +35,7 @@
  endif(WIN32 OR CYGWIN)
  
  # mark targets as optional so we can install them separately if needed
-@@ -1394,11 +1395,13 @@
+@@ -1524,11 +1525,13 @@
  if(ENABLE_BUILD_LIB OR ENABLE_BUILD_SHARED OR ENABLE_BUILD_DYNAMIC)
    install(FILES ${GMSH_API} DESTINATION include/gmsh)
  endif(ENABLE_BUILD_LIB OR ENABLE_BUILD_SHARED OR ENABLE_BUILD_DYNAMIC)

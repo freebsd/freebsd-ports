@@ -7,7 +7,6 @@ bin/sqlgrey-logstats.pl
 man/man1/sqlgrey.1.gz
 sbin/sqlgrey
 sbin/update_sqlgrey_config
-@dirrmtry %%ETCDIR%%
 @unexec echo "---> Please, remember to remove the database directory:"
 @unexec echo "     %%DATADIR%%"
 @unexec echo "     If you're only updating, you can leave the things as they are."

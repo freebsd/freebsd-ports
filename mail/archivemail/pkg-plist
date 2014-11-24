@@ -7,5 +7,3 @@ man/man1/archivemail.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/archivemail_all
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_archivemail
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

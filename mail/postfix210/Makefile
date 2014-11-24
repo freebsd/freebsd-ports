@@ -177,7 +177,7 @@ _REQUIRE+=		mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
+USES+=			pgsql
 POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include -I${LOCALBASE}/pgsql/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/pgsql/lib -lpq -lcrypt
 _REQUIRE+=		postgresql

@@ -38,7 +38,7 @@ SUB_LIST+=	MYSQL=
 
 .if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
-USE_PGSQL=	yes
+USES+=		pgsql
 .	if ${PORT_OPTIONS:MLOCAL_DB_SERVER}
 RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 SUB_LIST+=	PGSQL=postgresql

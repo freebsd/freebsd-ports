@@ -6,5 +6,3 @@ man/man1/smtprc.1.gz
 %%WITHGUI%%man/man1/gsmtprc.1.gz
 %%WITHGUI%%bin/gsmtprc
 %%PORTDOCS%%share/doc/smtprc/README
-%%PORTDOCS%%@dirrm share/doc/smtprc
-@dirrm etc/smtprc

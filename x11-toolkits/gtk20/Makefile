@@ -3,8 +3,8 @@
 #   $MCom: ports/x11-toolkits/gtk20/Makefile,v 1.237 2013/03/04 17:44:38 kwm Exp $
 
 PORTNAME=	gtk
-PORTVERSION=	2.24.22
-PORTREVISION?=	4
+PORTVERSION=	2.24.25
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -27,7 +27,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		python:${PORTSDIR}/lang/python
 
-USES+=		gettext gmake libtool:keepla pathfix perl5 pkgconfig
+USES+=		gettext gmake libtool pathfix perl5 pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk pango gdkpixbuf2 introspection:build \
 		gtk-update-icon-cache
@@ -51,7 +51,7 @@ DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	LIBGAILVER=18.0.1 LIBGVER=0.2400.22
+PLIST_SUB+=	LIBGAILVER=18.0.1 LIBGVER=0.2400.25
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${GREP} -l lgmodule | \

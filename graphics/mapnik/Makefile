@@ -81,7 +81,7 @@ LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 
 .if ${PORT_OPTIONS:MPOSTGIS}
 INPUT_PLUGINS+=	postgis
-USE_PGSQL=	yes
+USES+=		pgsql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}

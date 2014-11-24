@@ -14,4 +14,3 @@ bin/eps-qpdecode
 %%EXAMPLESDIR%%/email.1
 %%EXAMPLESDIR%%/email.2
 %%EXAMPLESDIR%%/virus.email
-@dirrm %%EXAMPLESDIR%%

@@ -34,8 +34,3 @@ share/locale/sr@Latn/LC_MESSAGES/mail-notification.mo
 share/locale/sv/LC_MESSAGES/mail-notification.mo
 %%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-jylefort-mail-notification.so
 %%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/org-jylefort-mail-notification.eplug
-@dirrm share/omf/mail-notification
-@dirrm %%DATADIR%%
-@dirrm share/gnome/help/mail-notification/C/figures
-@dirrm share/gnome/help/mail-notification/C
-@dirrm share/gnome/help/mail-notification

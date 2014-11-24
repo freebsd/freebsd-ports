@@ -9,6 +9,7 @@ OPTIONS_DEFINE=		\
 	COMPOSITOR 	\
 	CYCLES 		\
 	CYCLESOSL 	\
+	DEBUG		\
 	DDS 		\
 	FFMPEG 		\
 	FFTW3 		\
@@ -31,13 +32,12 @@ OPTIONS_DEFINE=		\
 	NLS 		\
 	OPENAL 		\
 	OPENCOLORIO 	\
+	OPENIMAGEIO	\
 	OPENEXR 	\
 	OPENJPEG 	\
-	OPENMP 		\
 	PLAYER 		\
 	RAYOPTIMIZATION	\
 	REDCODE		\
-	SAMPLERATE	\
 	SDL		\
 	SNDFILE		\
 	TIFF		\
@@ -65,11 +65,10 @@ OPTIONS_DEFAULT=	\
 	MOD_SMOKE	\
 	OPENAL		\
 	OPENCOLORIO	\
+	OPENIMAGEIO	\
 	OPENEXR		\
 	OPENJPEG	\
-	OPENMP		\
 	PLAYER		\
-	SAMPLERATE	\
 	SDL		\
 	TIFF		\
 	XINPUT		\
@@ -101,6 +100,7 @@ MOD_OCEANSIM_DESC=	Ocean simulation support
 MOD_REMESH_DESC=	Remesh modifier support
 MOD_SMOKE_DESC=		Smoke simulation support
 OPENCOLORIO_DESC=	OpenColorIO-based color management support
+OPENIMAGEIO_DESC=	OpenImageIO image processing support
 PLAYER_DESC=		Enable blender player
 RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
 REDCODE_DESC=		RedCode graphics format support

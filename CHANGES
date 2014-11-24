@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20141122:
+AUTHOR: crees@FreeBSD.org
+
+  Dependencies on the PostgreSQL ports have been migrated
+  to USES. Instead of USE_PGSQL, please use USES=pgsql instead.
+
+    USE_PGSQL=yes becomes USES=pgsql
+    WANT_PGSQL_VER=91+ becomes USES=pgsql:9.1+
+    USE_PGSQL=server becomes USES=pgsql and WANT_PGSQL=server
+
 20141118:
 AUTHOR: mat@FreeBSD.org
 

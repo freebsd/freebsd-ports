@@ -9,7 +9,7 @@ MASTER_SITES=	http://people.fabaris.it/iz0ete/xwota/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	X version of who is on the air
 
 LICENSE=	GPLv2

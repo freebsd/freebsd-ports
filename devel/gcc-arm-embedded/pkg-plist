@@ -10,6 +10,8 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/bin/objcopy
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/bin/objdump
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/bin/ranlib
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/bin/strip
+@dir gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/bits
+@dir gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/rpc
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/_ansi.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/_syslist.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/alloca.h
@@ -4459,3 +4461,4 @@ gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/printers.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/startup/startup_ARMCM0.S
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/startup/startup_ARMCM3.S
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/startup/startup_ARMCM4.S
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/startup/startup_ARMCM7.S

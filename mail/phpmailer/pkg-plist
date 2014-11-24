@@ -93,12 +93,3 @@
 %%DATADIR%%/test/runfakepopserver.sh
 %%DATADIR%%/test/test_callback.php
 %%DATADIR%%/test/testbootstrap-dist.php
-@dirrm %%DATADIR%%/test
-@dirrm %%DATADIR%%/language
-@dirrm %%DATADIR%%/extras
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/styles
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

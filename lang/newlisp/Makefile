@@ -69,7 +69,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 MODULES+=	postgres
 PLIST_SUB+=	PGSQL=""
 .else

@@ -80,6 +80,7 @@ share/doc/gdk2/icon.png
 share/doc/gdk2/index.html
 share/doc/gdk2/index.sgml
 share/doc/gdk2/iron_cross.png
+share/doc/gdk2/left-insensitive.png
 share/doc/gdk2/left.png
 share/doc/gdk2/left_ptr.png
 share/doc/gdk2/left_side.png
@@ -96,6 +97,7 @@ share/doc/gdk2/pirate.png
 share/doc/gdk2/plus.png
 share/doc/gdk2/question_arrow.png
 share/doc/gdk2/reference.html
+share/doc/gdk2/right-insensitive.png
 share/doc/gdk2/right.png
 share/doc/gdk2/right_ptr.png
 share/doc/gdk2/right_side.png
@@ -126,6 +128,7 @@ share/doc/gdk2/top_tee.png
 share/doc/gdk2/trek.png
 share/doc/gdk2/ul_angle.png
 share/doc/gdk2/umbrella.png
+share/doc/gdk2/up-insensitive.png
 share/doc/gdk2/up.png
 share/doc/gdk2/ur_angle.png
 share/doc/gdk2/watch.png
@@ -536,6 +539,7 @@ share/doc/gtk2/layout-rlbt.png
 share/doc/gtk2/layout-rltb.png
 share/doc/gtk2/layout-tblr.png
 share/doc/gtk2/layout-tbrl.png
+share/doc/gtk2/left-insensitive.png
 share/doc/gtk2/left.png
 share/doc/gtk2/link-button.png
 share/doc/gtk2/list-add.png
@@ -577,6 +581,7 @@ share/doc/gtk2/progressbar.png
 share/doc/gtk2/pt05.html
 share/doc/gtk2/radio-group.png
 share/doc/gtk2/recentchooserdialog.png
+share/doc/gtk2/right-insensitive.png
 share/doc/gtk2/right.png
 share/doc/gtk2/scales.png
 share/doc/gtk2/scrolledwindow.png
@@ -594,6 +599,7 @@ share/doc/gtk2/toolpalette.png
 share/doc/gtk2/tools-check-spelling.png
 share/doc/gtk2/tree-view-coordinates.png
 share/doc/gtk2/ui-manager.html
+share/doc/gtk2/up-insensitive.png
 share/doc/gtk2/up.png
 share/doc/gtk2/view-fullscreen.png
 share/doc/gtk2/view-refresh.png
@@ -607,6 +613,3 @@ share/doc/gtk2/zoom-fit-best.png
 share/doc/gtk2/zoom-in.png
 share/doc/gtk2/zoom-original.png
 share/doc/gtk2/zoom-out.png
-@dirrmtry share/doc/gtk2
-@dirrmtry share/doc/gdk2
-

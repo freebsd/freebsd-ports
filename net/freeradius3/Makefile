@@ -139,7 +139,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	YES
+USES+=		pgsql
 CONFIGURE_ARGS+=--with-rlm_sql_postgresql
 PLIST_SUB+=	PGSQL=""
 _REQUIRE+=	postgresql

@@ -9,7 +9,3 @@ man/man1/scriptindex.1.gz
 %%DATADIR%%/omega/mbox2omega.script
 %%WWWDIR%%/cgi-bin/omega
 %%WWWDIR%%/cgi-bin/outlookmsg2html
-@dirrm %%WWWDIR%%/cgi-bin
-@dirrm %%WWWDIR%%
-@dirrm %%DATADIR%%/omega
-@dirrm %%DATADIR%%

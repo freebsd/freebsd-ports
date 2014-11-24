@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=TK PGSQL SDL
 OPTIONS_SUB=	yes
 TK_USES=	tk:84
 TK_CONFIGURE_WITH=tcl=${LOCALBASE}/lib/tcl8.4 tk=${LOCALBASE}/lib/tk8.4
-PGSQL_USE=	PGSQL=yes
+PGSQL_USES=	pgsql
 SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
 USES=		gmake iconv libtool makeinfo pkgconfig shebangfix tar:xz

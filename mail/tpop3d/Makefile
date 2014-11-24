@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--enable-auth-mysql \
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
+USES+=			pgsql
 DEFAULT_PGSQL_VER=	80
 CONFIGURE_ARGS+=	--enable-auth-pgsql \
 			--with-pgsql-lib-dir=${LOCALBASE}/lib \

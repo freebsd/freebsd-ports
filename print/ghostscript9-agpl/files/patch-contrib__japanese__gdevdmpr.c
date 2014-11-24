@@ -1,5 +1,5 @@
---- contrib/japanese/gdevdmpr.c.orig	2011-08-05 20:12:20.000000000 +0900
-+++ contrib/japanese/gdevdmpr.c	2011-12-06 15:36:10.000000000 +0900
+--- contrib/japanese/gdevdmpr.c.orig	2014-03-26 21:53:47.000000000 +0900
++++ contrib/japanese/gdevdmpr.c	2014-08-25 00:36:18.000000000 +0900
 @@ -32,7 +32,7 @@
  
  #include "gdevprn.h"
@@ -41,13 +41,13 @@
  
    strcpy(fname,fnamebase);
 -  fp = lib_fopen(fname);
-+  fp = fopen(fname,"r");
++  fp = gp_fopen(fname, "r");
    if (fp == NULL) {
      env = getenv("TEXCFG");
      if (env) {
        strcpy(fname,env);
        strcat(fname, gp_file_name_concat_string(env,strlen(env)));
 -      strcat(fname,fnamebase);
-       fp = fopen(fname,gp_fmode_rb);
+       fp = gp_fopen(fname,gp_fmode_rb);
      }
    }

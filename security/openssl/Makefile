@@ -21,7 +21,7 @@ COMMENT=	SSL and crypto library
 
 CONFLICTS?=	libressl-*
 
-OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB SCTP SSL2 SSL3 MD2 RC5 RFC3779 GMP DOCS
+OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB GMP SCTP SSL2 SSL3 RFC3779 MD2 RC5 EXPCIPHERS DOCS
 OPTIONS_DEFAULT=SHARED THREADS SSE2 ASM ZLIB SCTP SSL2 SSL3 MD2
 .for a in amd64 ia64
 OPTIONS_DEFINE_${a}=	EC
@@ -40,13 +40,14 @@ ASM_DESC?=	optimized Assembler code
 PADLOCK_DESC?=	VIA Padlock support
 SHARED_DESC?=	build of shared libs
 ZLIB_DESC?=	zlib compression support
+GMP_DESC?=	gmp support (LGPLv3)
 SCTP_DESC?=	SCTP protocol support
 SSL2_DESC?=	SSLv2 protocol support
 SSL3_DESC?=	SSLv3 protocol support
+RFC3779_DESC?=	RFC3779 support (BGP)
 MD2_DESC?=	MD2 hash (obsolete)
 RC5_DESC?=	RC5 cipher (patented)
-RFC3779_DESC?=	RFC3779 support
-GMP_DESC?=	gmp support (LGPLv3)
+EXPCIPHERS_DESC?=	Include experimental ciphers
 EC_DESC?=	Optimize NIST elliptic curves
 
 GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
@@ -210,6 +211,10 @@ post-patch:
 		${WRKSRC}/crypto/des/Makefile
 	${REINPLACE_CMD} -e 's|SHLIB_VERSION_NUMBER "1.0.0"|SHLIB_VERSION_NUMBER "${OPENSSL_SHLIBVER}"|' \
 		${WRKSRC}/crypto/opensslv.h
+.if ${PORT_OPTIONS:MEXPCIPHERS}
+	${REINPLACE_CMD} -e 's|TLS1_ALLOW_EXPERIMENTAL_CIPHERSUITES	0|TLS1_ALLOW_EXPERIMENTAL_CIPHERSUITES	1|' \
+		${WRKSRC}/ssl/tls1.h
+.endif
 
 do-configure:
 	${REINPLACE_CMD} -e "s|options 386|options|" \

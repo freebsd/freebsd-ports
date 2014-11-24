@@ -19,4 +19,3 @@ include/eps/result.h
 include/eps/rfc2822.h
 include/eps/unfold.h
 lib/libeps.a
-@dirrm include/eps

@@ -177,38 +177,3 @@ sbin/popfile.sh
 %%DATADIR%%/stopwords
 %%DATADIR%%/v%%VERSION%%.change
 %%DATADIR%%/v%%VERSION%%.change.nihongo
-@dirrm %%DATADIR%%/skins/windows
-@dirrm %%DATADIR%%/skins/white
-@dirrm %%DATADIR%%/skins/tinygrey
-@dirrm %%DATADIR%%/skins/strawberryrose
-@dirrm %%DATADIR%%/skins/smallgrey
-@dirrm %%DATADIR%%/skins/smalldefault
-@dirrm %%DATADIR%%/skins/sleet-rtl
-@dirrm %%DATADIR%%/skins/sleet
-@dirrm %%DATADIR%%/skins/simplyblue
-@dirrm %%DATADIR%%/skins/outlook
-@dirrm %%DATADIR%%/skins/osx
-@dirrm %%DATADIR%%/skins/orangecream
-@dirrm %%DATADIR%%/skins/orange
-@dirrm %%DATADIR%%/skins/oceanblue
-@dirrm %%DATADIR%%/skins/ocean
-@dirrm %%DATADIR%%/skins/lavish
-@dirrm %%DATADIR%%/skins/green
-@dirrm %%DATADIR%%/skins/glassblue
-@dirrm %%DATADIR%%/skins/default
-@dirrm %%DATADIR%%/skins/coolyellow
-@dirrm %%DATADIR%%/skins/coolorange
-@dirrm %%DATADIR%%/skins/coolmint
-@dirrm %%DATADIR%%/skins/coolgreen
-@dirrm %%DATADIR%%/skins/coolbrown
-@dirrm %%DATADIR%%/skins/coolblue
-@dirrm %%DATADIR%%/skins/blue
-@dirrm %%DATADIR%%/skins
-@dirrm %%DATADIR%%/languages
-@dirrm %%DATADIR%%/UI
-@dirrm %%DATADIR%%/Services/IMAP
-@dirrm %%DATADIR%%/Services
-@dirrm %%DATADIR%%/Proxy
-@dirrm %%DATADIR%%/POPFile
-@dirrm %%DATADIR%%/Classifier
-@dirrm %%DATADIR%%

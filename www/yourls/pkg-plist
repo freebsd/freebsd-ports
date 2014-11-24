@@ -367,25 +367,25 @@
 %%WWWDIR%%/yourls-go.php
 %%WWWDIR%%/yourls-infos.php
 %%WWWDIR%%/yourls-loader.php
-@dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/includes/geo/flags
-@dirrm %%WWWDIR%%/includes/geo
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/pages
-@dirrm %%WWWDIR%%/user/plugins/hyphens-in-urls
-@dirrm %%WWWDIR%%/user/plugins/random-bg/img
-@dirrm %%WWWDIR%%/user/plugins/random-bg
-@dirrm %%WWWDIR%%/user/plugins/sample-page
-@dirrm %%WWWDIR%%/user/plugins/sample-plugin
-@dirrm %%WWWDIR%%/user/plugins/sample-toolbar/css
-@dirrm %%WWWDIR%%/user/plugins/sample-toolbar/img
-@dirrm %%WWWDIR%%/user/plugins/sample-toolbar/js
-@dirrm %%WWWDIR%%/user/plugins/sample-toolbar
-@dirrm %%WWWDIR%%/user/plugins
-@dirrm %%WWWDIR%%/user
-@dirrm %%WWWDIR%%
+@dir %%WWWDIR%%/admin
+@dir %%WWWDIR%%/css
+@dir %%WWWDIR%%/images
+@dir %%WWWDIR%%/includes/geo/flags
+@dir %%WWWDIR%%/includes/geo
+@dir %%WWWDIR%%/includes
+@dir %%WWWDIR%%/js
+@dir %%WWWDIR%%/pages
+@dir %%WWWDIR%%/user/plugins/hyphens-in-urls
+@dir %%WWWDIR%%/user/plugins/random-bg/img
+@dir %%WWWDIR%%/user/plugins/random-bg
+@dir %%WWWDIR%%/user/plugins/sample-page
+@dir %%WWWDIR%%/user/plugins/sample-plugin
+@dir %%WWWDIR%%/user/plugins/sample-toolbar/css
+@dir %%WWWDIR%%/user/plugins/sample-toolbar/img
+@dir %%WWWDIR%%/user/plugins/sample-toolbar/js
+@dir %%WWWDIR%%/user/plugins/sample-toolbar
+@dir %%WWWDIR%%/user/plugins
+@dir %%WWWDIR%%/user
+@dir %%WWWDIR%%
 @owner root
 @group wheel

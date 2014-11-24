@@ -107,13 +107,7 @@ man/man8/jabberd.8.gz
 man/man8/router.8.gz
 man/man8/s2s.8.gz
 man/man8/sm.8.gz
-@dirrm lib/jabberd
-@dirrmtry etc/jabberd/templates
-@dirrmtry etc/jabberd
-@cwd /
-@exec chown -R %%JABBER_USER%%:%%JABBER_GROUP%% %%JABBER_RUNDIR%%
-@exec chmod -R go= %%JABBER_RUNDIR%%
-@dirrmtry %%JABBER_RUNDIR%%/pid
-@dirrmtry %%JABBER_RUNDIR%%/logs
-@dirrmtry %%JABBER_RUNDIR%%/db
-@dirrmtry %%JABBER_RUNDIR%%
+@dir(%%JABBER_USER%%,%%JABBER_GROUP%%,0700) %%JABBER_RUNDIR%%/db
+@dir(%%JABBER_USER%%,%%JABBER_GROUP%%,0700) %%JABBER_RUNDIR%%/logs
+@dir(%%JABBER_USER%%,%%JABBER_GROUP%%,0700) %%JABBER_RUNDIR%%/pid
+@dir(%%JABBER_USER%%,%%JABBER_GROUP%%,0700) %%JABBER_RUNDIR%%

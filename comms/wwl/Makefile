@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.db.net/downloads/ \
 MASTER_SITE_SUBDIR=	db
 DISTNAME=	${PORTNAME}+db-${PORTVERSION}
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Calculates distance (qrb) used in Amateur Radio
 
 CONFLICTS=	locator*

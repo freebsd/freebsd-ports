@@ -32,7 +32,7 @@ FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_WITH=freetype
 MYSQL_USE=		mysql=yes
 MYSQL_CONFIGURE_WITH=	mysql
-PGSQL_USE=		pgsql=yes
+PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	pgsql
 
 CFLAGS+=	-ffast-math -fomit-frame-pointer

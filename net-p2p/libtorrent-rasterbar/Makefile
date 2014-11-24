@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.16.17
-PORTREVISION=	1
+PORTVERSION=	0.16.18
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME:S/-rasterbar//}/${PORTNAME:S/-rasterbar//}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	C++ library implementing a BitTorrent client
 
 LICENSE=	BSD3CLAUSE
@@ -54,6 +53,10 @@ OPTIONS_DEFAULT=	STRIP
 DEBUG_CONFIGURE_ENABLE=	debug
 
 .include <bsd.port.options.mk>
+
+# Restrict to stable (even) versions, indicated by the second component.
+# With Versions 1.x not build yet net-p2p/qbittorrent
+PORTSCOUT=	limit:^0.16\..*
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "yes" && defined(USE_PYTHON)
 CONFIGURE_ARGS+=	--enable-python-binding \

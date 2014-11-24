@@ -5364,7 +5364,6 @@ misc/sword17|misc/sword|2014-01-16|Has expired: use misc/sword
 databases/postgis||2014-01-17|Has expired: EOLed upstream
 textproc/redland-bindings-python||2014-01-19|Use textproc/redland-bindings directly instead
 emulators/seabios-devel||2014-01-19|Has expired: Outdated, no longer needed, broken on 10+
-devel/mico||2014-01-24|Has expired: Broken for more than 6 month
 cad/salome||2014-01-24|Has expired: depends on expired cad/salome-kernel
 cad/salome-netgenplugin||2014-01-24|Has expired: depends on expired cad/salome-kernel
 cad/salome-jobmanager||2014-01-24|Has expired: depends on expired cad/salome-kernel
@@ -6979,11 +6978,6 @@ sysutils/boxbackup||2014-09-01|Not staged
 www/webcalendar-devel|www/webcalendar|2014-09-04|Removed, use www/webcalendar instead
 devel/ruby-memoize||2014-09-06|Has expired: RubyForge shutdown May 15 2014
 www/oops||2014-09-06|Development stops long ago, domain has been expired
-print/ghostscript7||2014-09-06|Not staged
-print/ghostscript7-commfont||2014-09-06|Not staged
-print/ghostscript7-jpnfont||2014-09-06|Not staged
-print/ghostscript7-korfont||2014-09-06|Not staged
-print/ghostscript7-nox11||2014-09-06|Not staged
 net/freeswitch-core-devel||2014-09-06|Not staged
 net/freeswitch-devel||2014-09-06|Not staged
 audio/freeswitch-sounds||2014-09-06|Not staged
@@ -7237,3 +7231,6 @@ deskutils/splashsetter||2014-11-19|Abandonware, useless without gnome2
 editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use editors/emacs
 net-im/tg|net-im/telegram|2014-11-20|Renamed to more specific name
 net-mgmt/virtinst|deskutils/virt-manager|2014-11-20|Obsoleted by deskutils/virt-manager
+sysutils/firstboot-growfs||2014-11-23|Part of the base system
+graphics/linux-c6-gdk-pixbuf|graphics/linux-c6-gdk-pixbuf2|2014-11-24|Port renamed to align with upstream.
+devel/libole2||2014-11-24|Abandoned upstream, incomplete, not depend on

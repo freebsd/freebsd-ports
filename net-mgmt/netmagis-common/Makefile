@@ -17,10 +17,8 @@ COMMENT?=	Netmagis common infrastructure
 #LICENSE_FILE=	${WRKSRC}/LICENSE
 #LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		tcl:85+
-
-USE_PGSQL=	pgtcl
-WANT_PGSQL_VER=	91+
+USES=		tcl:85+ pgsql:9.1+
+WANT_PGSQL=	pgtcl
 
 RUN_DEPENDS+=	dtplite:${PORTSDIR}/devel/tcllib
 
@@ -30,7 +28,7 @@ RUN_DEPENDS+=	netmagis-config:${PORTSDIR}/net-mgmt/netmagis-common
 
 .if ${PKGNAMESUFFIX} == -database
 RUN_DEPENDS+=	pwgen:${PORTSDIR}/sysutils/pwgen
-USE_PGSQL+=	server pltcl
+WANT_PGSQL+=	server
 .endif
 
 .if ${PKGNAMESUFFIX} == -www

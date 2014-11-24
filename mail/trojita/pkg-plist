@@ -33,5 +33,3 @@ share/icons/hicolor/scalable/apps/trojita.svg
 %%DATADIR%%/locale/trojita_common_x_test.qm
 %%DATADIR%%/locale/trojita_common_zh_CN.qm
 %%DATADIR%%/locale/trojita_common_zh_TW.qm
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%

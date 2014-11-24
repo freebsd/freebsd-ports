@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	5.5.39
+PORTVERSION=	5.5.40
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
@@ -40,7 +40,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_MANDIR="man" \
 		-DINSTALL_MYSQLDATADIR="/var/db/mysql" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
-		-DINSTALL_MYSQLTESTDIR="share/mysql/tests" \
+		-DINSTALL_MYSQLTESTDIR= \
 		-DINSTALL_PLUGINDIR="lib/mysql/plugin" \
 		-DINSTALL_SBINDIR="libexec" \
 		-DINSTALL_SCRIPTDIR="bin" \
@@ -110,7 +110,10 @@ CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	55m
 
-CONFLICTS_INSTALL=	mysql[0-9][0-9]-server-* mariadb[0-46-9][0-9]-server-* mariadb5.[0-46-9]-server-* percona[0-9][0-9]-server-*
+CONFLICTS_INSTALL=	mysql*-server-* \
+			mariadb1[0-9][0-9]-server-* \
+			mariadb5[0-46-9]-server-* \
+			percona*-server-*
 
 USE_RC_SUBR=	mysql-server
 

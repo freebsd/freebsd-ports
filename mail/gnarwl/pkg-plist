@@ -19,9 +19,5 @@ var/lib/gnarwl/badheaders.txt.sample
 var/lib/gnarwl/blacklist.txt.sample
 var/lib/gnarwl/header.txt.sample
 var/lib/gnarwl/footer.txt.sample
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm var/lib/gnarwl/bin
-@dirrm var/lib/gnarwl/block
-@dirrm var/lib/gnarwl
-@dirrmtry var/lib
-@dirrmtry var
+@dir var/lib/gnarwl/bin
+@dir var/lib/gnarwl/block

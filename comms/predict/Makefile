@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.amsat.org/amsat/software/Linux/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Satellite tracking program for amateur radio satellites
 
 LICENSE=	GPLv2

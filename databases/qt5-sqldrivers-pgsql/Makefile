@@ -5,6 +5,6 @@ PORTNAME=	pgsql
 DB=		PSQL
 DB_DESC=	PostgreSQL
 
-USE_PGSQL=	yes
+USES+=		pgsql
 
 .include "${.CURDIR:H:H}/devel/qt5/Makefile.sqldrivers"

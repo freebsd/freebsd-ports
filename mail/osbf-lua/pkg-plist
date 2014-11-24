@@ -12,7 +12,5 @@
 %%SPAMFILTER%%osbf-lua/spamfilter_config.lua
 %%SPAMFILTER%%osbf-lua/toer.lua
 %%SPAMFILTER%%osbf-lua/train.sample
-%%SPAMFILTER%%@dirrmtry osbf-lua
 lib/lua51/osbf.so
 lib/lua51/libosbf.so.2.0.4
-@dirrmtry lib/lua51

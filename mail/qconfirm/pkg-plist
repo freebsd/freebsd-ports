@@ -44,4 +44,3 @@ man/man1/qconfirm-return.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/technical.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/usedietlibc.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

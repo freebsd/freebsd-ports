@@ -29,5 +29,3 @@ man/man5/table.5.gz
 man/man5/smtpd.conf.5.gz
 man/man5/forward.5.gz
 man/man5/aliases.5.gz
-@dirrm libexec/opensmtpd
-@dirrmtry etc/mail

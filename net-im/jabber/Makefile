@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
 .endif
 

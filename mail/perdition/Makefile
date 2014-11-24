@@ -102,7 +102,7 @@ PLIST_SUB+=		MYSQL="@comment "
 
 .if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--enable-pg
-USE_PGSQL=		yes
+USES+=			pgsql
 PLIST_SUB+=		PGSQL=""
 .else
 CONFIGURE_ARGS+=	--disable-pg

@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	8.71
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -140,34 +140,31 @@ pre-build-drivers.mak:
 .endfor
 
 pre-build: pre-build-drivers.mak
-	${MKDIR} ${WRKSRC}/obj
-	${MKDIR} ${WRKSRC}/bin
-	${MKDIR} ${WRKSRC}/freetype/include
+	${MKDIR} ${WRKSRC}/obj ${WRKSRC}/bin ${WRKSRC}/freetype/include
 	${LN} -s -f ${LOCALBASE}/include/ft2build.h \
-		${WRKSRC}/freetype/include/ft2build.h
+	    ${WRKSRC}/freetype/include/ft2build.h
 	${LN} -s -f ${LOCALBASE}/include/freetype2/freetype \
-		${WRKSRC}/freetype/include/freetype
+	    ${WRKSRC}/freetype/include/freetype
 	${MKDIR} ${WRKSRC}/freetype/objs
 	${LN} -s -f ${LOCALBASE}/lib/libfreetype.so \
-		${WRKSRC}/freetype/objs/freetype214MT_D.so
+	    ${WRKSRC}/freetype/objs/freetype214MT_D.so
 
 pre-su-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 
 post-install-docs:
 	${MKDIR} ${WRKSRC}/contrib/japanese
-	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/doc/* ${WRKSRC}/contrib/japanese
+	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/doc/* \
+	    ${WRKSRC}/contrib/japanese
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/contrib && \
-		${TAR} -cf - ${PORTDOC_FILES} | \
-		( cd ${STAGEDIR}${DOCSDIR} && ${TAR} -xof - )
+	    ${TAR} -cf - ${PORTDOC_FILES} | \
+	    (cd ${STAGEDIR}${DOCSDIR} && ${TAR} -xof -)
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/FAPIcidfmap			\
-		${WRKSRC}/lib/FAPIconfig ${WRKSRC}/lib/FAPIfontmap	\
-		${STAGEDIR}${DATADIR}/${PORTVERSION}/Resource/Init
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/${PORTVERSION}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gsc ${STAGEDIR}${PREFIX}/bin/gsx
+	${INSTALL_DATA} ${WRKSRC}/lib/FAPIcidfmap \
+	    ${WRKSRC}/lib/FAPIconfig ${WRKSRC}/lib/FAPIfontmap \
+	    ${STAGEDIR}${DATADIR}/${PORTVERSION}/Resource/Init
 	${LN} -sf gsc ${STAGEDIR}${PREFIX}/bin/gs
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont \
 	    ${STAGEDIR}${CIDFONTDIR}/CIDFont

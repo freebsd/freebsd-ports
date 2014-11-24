@@ -37,4 +37,3 @@ man/man1/emil.cf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/using.html
 %%PORTDOCS%%%%DOCSDIR%%/way.html
 %%PORTDOCS%%%%DOCSDIR%%/why.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

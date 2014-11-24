@@ -42,7 +42,8 @@ CONFIGURE_ARGS+=	with_emacs=no
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	server
+USES+=		pgsql
+WANT_PGSQL=	server
 .else
 CONFIGURE_ENV+=	PGHEADER="no"
 .endif

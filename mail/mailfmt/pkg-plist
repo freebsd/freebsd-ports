@@ -1,4 +1,3 @@
 bin/mailfmt
 man/man1/mailfmt.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mailfmt-license.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -25,5 +25,3 @@ man/man1/asksetup.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_ptbr.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ignorelist.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitelist.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/ask
