@@ -2,8 +2,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Prime/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Prime/XS/XS.so
 %%PERL5_MAN3%%/Math::Prime::XS.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Prime/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Prime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math/Prime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math
