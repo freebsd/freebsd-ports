@@ -1,10 +1,8 @@
 bin/xfstt
-etc/rc.d/xfstt.sh
 man/man1/xfstt.1x.gz
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @rmtry lib/X11/fonts/TrueType/ttname.dir
 @rmtry lib/X11/fonts/TrueType/ttinfo.dir
-@dirrmtry lib/X11/fonts/TrueType
+@dir lib/X11/fonts/TrueType
