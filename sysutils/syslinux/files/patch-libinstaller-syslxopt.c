@@ -1,5 +1,5 @@
---- libinstaller/syslxopt.c.orig	2010-10-20 21:25:38.000000000 +0200
-+++ libinstaller/syslxopt.c	2010-11-16 15:09:16.897550744 +0100
+--- libinstaller/syslxopt.c.orig	2014-10-06 18:27:44.000000000 +0200
++++ libinstaller/syslxopt.c	2014-10-21 23:25:13.000000000 +0200
 @@ -45,6 +45,8 @@
      .activate_partition = 0,
      .force = 0,
@@ -24,7 +24,7 @@
      {"device", 1, NULL, OPT_DEVICE},
 +    {"verbose", 0, NULL, 'v' },
 +    {"bimage", 1, NULL, 'b' },
-     {0, 0, 0, 0}
+     {NULL, 0, NULL, 0}
  };
  
 -const char short_options[] = "t:fid:UuzsS:H:rvho:OM:ma";
