@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	VIM:source \
 		${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|}:patch \
@@ -20,14 +20,14 @@ COMMENT?=	Improved version of the vi editor
 
 PATCH_DEPENDS=	${LOCALBASE}/bin/gpatch:${PORTSDIR}/devel/patch
 
-OPTIONS_DEFINE=	CSCOPE EXUBERANT_CTAGS LUA NLS PERL PYTHON RUBY TCL XTERM_SAVE DEFAULT_VIMRC
+OPTIONS_DEFINE=	CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS LUA NLS PERL PYTHON RUBY TCL XTERM_SAVE
 OPTIONS_SINGLE=	UI
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 MOTIF X11
 OPTIONS_SUB=	yes
 ATHENA_DESC=		Athena GUI toolkit
 CSCOPE_DESC=		cscope support
 CONSOLE_DESC=		Console/terminal mode
-DEFAULT_VIMRC_DESC=	Install a default vimrc for new users
+DEFAULT_VIMRC_DESC=	Install bundle vimrc as default setting
 EXUBERANT_CTAGS_DESC=	Use exctags instead of ctags
 UI_DESC=		User interface
 XTERM_SAVE_DESC=	Restore xterm screen after exit
@@ -40,7 +40,7 @@ REINPLACE_ARGS=	-i ''
 USES=		cpe iconv pkgconfig shebangfix tar:bzip2
 WANT_GNOME=	yes
 
-PATCHLEVEL=	430
+PATCHLEVEL=	518
 PATCHFILES!=	/usr/bin/jot -s " " -w "%03d" ${PATCHLEVEL} 1 ${PATCHLEVEL}
 #POSTPONED_PATCHES=	064 087 147	# patch files postponed to be applied in post-patch:
 SKIPPED_PATCHES=	208 356		# patch files skipped
@@ -71,6 +71,7 @@ SHEBANG_FILES=	runtime/tools/efm_perl.pl
 .if defined(LITE)
 PKGNAMESUFFIX+=	-lite
 CONFLICTS_INSTALL=	vim-[0-9]*
+OPTIONS_DEFAULT=DEFAULT_VIMRC
 OPTIONS_EXCLUDE=ATHENA CSCOPE EXUBERANT_CTAGS GNOME GTK2 LUA MOTIF NLS PERL PYTHON RUBY TCL X11 XTERM_SAVE
 OPTIONS_SLAVE=	CONSOLE
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" \
@@ -82,14 +83,12 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" \
 PLIST_SUB+=	NON_LITE="@comment "
 .else
 CONFLICTS_INSTALL=	vim-lite-[0-9]*
-OPTIONS_DEFAULT=CSCOPE EXUBERANT_CTAGS GTK2 LUA PERL PYTHON RUBY TCL
+OPTIONS_DEFAULT=CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 LUA PERL PYTHON RUBY TCL
 MAKE_ARGS+=	CONF_OPT_FEAT=--with-features=big \
 		CONF_OPT_INPUT=--enable-xim \
 		CONF_OPT_OUTPUT=--enable-fontset
 PLIST_SUB+=	NON_LITE=""
 .endif
-
-OPTIONS_DEFAULT+=	DEFAULT_VIMRC
 
 ATHENA_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=athena
 ATHENA_USE=		XORG=xaw
@@ -122,10 +121,6 @@ X11_USE=		XORG=x11,xt
 
 .if !${PORT_OPTIONS:MATHENA} && !${PORT_OPTIONS:MCONSOLE} && !${PORT_OPTIONS:MGNOME} && !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MMOTIF} && !${PORT_OPTIONS:MX11}
 IGNORE=		this port has new UI option (CONSOLE) for users who do not need GUI support. Please run "make config" to modify your setting
-.endif
-
-.if ${PORT_OPTIONS:MDEFAULT_VIMRC}
-DEFAULT_VIMRC_LOCATION=${PREFIX}/share/vim
 .endif
 
 .if ${PORT_OPTIONS:MCONSOLE} || ${PORT_OPTIONS:MX11}
@@ -184,15 +179,15 @@ post-install:
 	${TEST} -e ${STAGEDIR}${PREFIX}/bin/${file} || ${LN} -fs vim ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 .endif
+.if ${PORT_OPTIONS:MDEFAULT_VIMRC}
+	${INSTALL_DATA} ${WRKSRC}/runtime/gvimrc_example.vim ${STAGEDIR}${DATADIR}/gvimrc.sample
+	${INSTALL_DATA} ${WRKSRC}/runtime/vimrc_example.vim ${STAGEDIR}${DATADIR}/vimrc.sample
+.endif
 .if !${PORT_OPTIONS:MNLS}
 	${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
 	${INSTALL_DATA} ${WRKSRC}/runtime/keymap/* ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
 .endif
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
 	${TOUCH} ${STAGEDIR}${DATADIR}/${VIM_VER}/lang/.keepme
-.if ${PORT_OPTIONS:MDEFAULT_VIMRC}
-	${INSTALL_DATA} ${WRKSRC}/runtime/vimrc_example.vim ${STAGEDIR}${DEFAULT_VIMRC_LOCATION}/vimrc.sample
-	${INSTALL_DATA} ${WRKSRC}/runtime/gvimrc_example.vim ${STAGEDIR}${DEFAULT_VIMRC_LOCATION}/gvimrc.sample
-.endif
 
 .include <bsd.port.post.mk>
