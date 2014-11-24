@@ -12,14 +12,17 @@ DISTNAME=	ParallelUserAgent-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl5 Parallel LWP User Agent for WWW access
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+REINPLACE_ARGS=	-i ''
 USE_PERL5=	configure
 USES=		perl5
-REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${REINPLACE_CMD} -e '/protocol->parse_head/d' ${WRKSRC}/lib/LWP/Parallel/UserAgent.pm
