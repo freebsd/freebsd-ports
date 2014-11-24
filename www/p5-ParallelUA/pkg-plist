@@ -19,8 +19,3 @@
 %%PERL5_MAN3%%/LWP::Parallel::UserAgent.3.gz
 %%PERL5_MAN3%%/LWP::ParallelUA.3.gz
 %%PERL5_MAN3%%/LWP::RobotPUA.3.gz
-@dirrm %%SITE_PERL%%/LWP/Parallel/Protocol
-@dirrm %%SITE_PERL%%/LWP/Parallel
-@dirrmtry %%SITE_PERL%%/LWP
-@dirrmtry %%SITE_PERL%%/Bundle
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Parallel
