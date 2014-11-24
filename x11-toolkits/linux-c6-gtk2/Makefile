@@ -3,6 +3,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.24.23
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
 		${PORTNAME}-engines-2.18.4-5.el6.${LINUX_DIST}.${LINUX_RPM_ARCH}.rpm \
@@ -16,7 +17,7 @@ CONFLICTS=	linux-gtk2-[0-9]* linux-f8-gtk2-[0-9]* linux-f10-gtk2-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
-USE_LINUX_APPS=	png jpeg tiff xorglibs pango atk
+USE_LINUX_APPS=	atk gdkpixbuf2 jpeg pango png tiff xorglibs
 USE_LINUX_RPM=	yes
 RPMVERSION=	6.el6
 BRANDELF_DIRS=	usr/bin

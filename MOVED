@@ -7232,3 +7232,4 @@ editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use
 net-im/tg|net-im/telegram|2014-11-20|Renamed to more specific name
 net-mgmt/virtinst|deskutils/virt-manager|2014-11-20|Obsoleted by deskutils/virt-manager
 sysutils/firstboot-growfs||2014-11-23|Part of the base system
+graphics/linux-c6-gdk-pixbuf|graphics/linux-c6-gdk-pixbuf2|2014-11-24|Port renamed to align with upstream.

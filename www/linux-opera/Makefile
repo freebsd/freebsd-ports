@@ -22,7 +22,7 @@ COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_LINUX=	yes
-USE_LINUX_APPS=	gdkpixbuf gtk2 naslibs png sqlite3 xorglibs
+USE_LINUX_APPS=	gtk2 naslibs png sqlite3 xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		desktop-file-utils shared-mime-info tar:xz
 WANT_GNOME=	yes
