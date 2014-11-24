@@ -30,8 +30,3 @@
 %%PERL5_MAN3%%/Protocol::XMLRPC::Value::String.3.gz
 %%PERL5_MAN3%%/Protocol::XMLRPC::Value::Struct.3.gz
 %%PERL5_MAN3%%/Protocol::XMLRPC::ValueFactory.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/XMLRPC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
-@dirrm %%SITE_PERL%%/Protocol/XMLRPC/Value
-@dirrm %%SITE_PERL%%/Protocol/XMLRPC
-@dirrmtry %%SITE_PERL%%/Protocol
