@@ -17,6 +17,7 @@ lib/rsyslog/lmtcpsrv.so
 lib/rsyslog/lmzlibw.so
 lib/rsyslog/mmexternal.so
 lib/rsyslog/ommail.so
+lib/rsyslog/omprog.so
 lib/rsyslog/omstdout.so
 lib/rsyslog/omtesting.so
 man/man5/rsyslog.conf.5.gz
