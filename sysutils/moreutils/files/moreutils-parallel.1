@@ -63,15 +63,18 @@ Number of arguments to pass to a command at a time\&. Default is 1\&. Incompatib
 .RE
 .SH "EXAMPLE"
 .PP
-.HP \w'\fBparallel\ sh\ \-c\ "echo\ hi;\ sleep\ 2;\ echo\ bye"\ \-\-\ 1\ 2\ 3\fR\ 'u \fBparallel sh \-c "echo hi; sleep 2; echo bye" \-\- 1 2 3\fR
+
+\fBparallel sh \-c "echo hi; sleep 2; echo bye" \-\- 1 2 3\fR
 .PP
 This runs three subshells that each print a message, delay, and print another message\&. If your system has multiple CPUs, parallel will run some of the jobs in parallel, which should be clear from the order the messages are output\&.
 .PP
-.HP \w'\fBparallel\ \-j\ 3\ ufraw\ \-o\ processed\ \-\-\ *\&.NEF\fR\ 'u \fBparallel \-j 3 ufraw \-o processed \-\- *\&.NEF\fR
+
+\fBparallel \-j 3 ufraw \-o processed \-\- *\&.NEF\fR
 .PP
 This runs three ufraw processes at the same time until all of the NEF files have been processed\&.
 .PP
-.HP \w'\fBparallel\ \-j\ 3\ \-\-\ ls\ df\ "echo\ hi"\fR\ 'u \fBparallel \-j 3 \-\- ls df "echo hi"\fR
+
+\fBparallel \-j 3 \-\- ls df "echo hi"\fR
 .PP
 This runs three independent commands in parallel\&.
 .SH "EXIT STATUS"
