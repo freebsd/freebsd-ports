@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ettercap
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
 
@@ -23,13 +22,11 @@ PCRE_DESC=	Use PCRE in filters
 SSL_DESC=	SSH1 and SSL decryption support
 
 CMAKE_ARGS=	-DBUNDLED_LIBS=OFF \
-		-DHAVE_LIBNET=${LOCALBASE}/lib/libnet11 \
+		-DHAVE_DLOPEN=ON \
 		-DHAVE_PCAP=${LIBDIR} \
 		-DHAVE_RESOLV=${LIBDIR} \
+		-DHAVE_LIBNET=${LOCALBASE}/lib/libnet11 \
 		-DINSTALL_SYSCONFDIR=${PREFIX}/etc \
-		-DLIBNET_INCLUDE_DIR=${LOCALBASE}/include/libnet11 \
-		-DLIBNET_LIB_DIR=${LOCALBASE}/lib/libnet11 \
-		-DLIBNET_LIBRARY=${LOCALBASE}/lib/libnet11 \
 		-DMAN_INSTALLDIR=${PREFIX}/man
 CMAKE_VERBOSE=	yes
 LDFLAGS+=	-L${LIBDIR} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet11 ${ICONV_LIB} -lnet -lpcap
@@ -38,14 +35,16 @@ USES=		bison cmake:outsource cpe iconv pkgconfig
 
 DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
-		doc/capture doc/decoders doc/dissectors doc/threads
+		doc/capture doc/decoders doc/dissectors doc/plugins doc/threads
+PORTDATA=	*
+PORTDOCS=	*
 
 CPE_VENDOR=	${PORTNAME}_project
 
 GH_ACCOUNT=	Ettercap
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	99e062a
+GH_COMMIT=	535f984
 USE_GITHUB=	yes
 
 DESKTOP_CMAKE_OFF=	-DINSTALL_DESKTOP=OFF
@@ -67,6 +66,7 @@ PLUGINS_BUILD_DEPENDS=	curl>=7.26.0:${PORTSDIR}/ftp/curl
 PLUGINS_CMAKE_OFF=	-DENABLE_PLUGINS=OFF
 PLUGINS_CMAKE_ON=	-DENABLE_PLUGINS=ON
 PLUGINS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+PLUGINS_USE=		LDCONFIG=${PREFIX}/lib/ettercap
 PLUGINS_USE_OFF=	LDCONFIG=yes
 SSL_CMAKE_OFF=		-DENABLE_SSL=OFF
 SSL_CMAKE_ON=		-DENABLE_SSL=ON
@@ -76,15 +76,8 @@ UTF8_CMAKE_ON=		-DHAVE_UTF8=ON \
 			-DHAVE_ICONV=${ICONV_PREFIX}
 UTF8_USES=		iconv
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPLUGINS}
-USE_LDCONFIG=	${PREFIX}/lib/ettercap
-DOCS+=		doc/plugins
-.endif
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/share/etter.conf ${STAGEDIR}${PREFIX}/etc/etter.conf.sample
+	${INSTALL_DATA} ${STAGEDIR}${ETCDIR}/etter.conf ${STAGEDIR}${PREFIX}/etc/etter.conf.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 
