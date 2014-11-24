@@ -77,7 +77,6 @@
     SUBDIR += checkbot
     SUBDIR += chems
     SUBDIR += cherokee
-    SUBDIR += chimera
     SUBDIR += choqok
     SUBDIR += chpasswd
     SUBDIR += chromium
