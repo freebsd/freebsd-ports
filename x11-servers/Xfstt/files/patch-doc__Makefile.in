@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2014-11-24 20:10:25.000000000 +0100
-+++ src/Makefile.in	2014-11-24 20:10:57.000000000 +0100
-@@ -327,8 +327,8 @@
+--- doc/Makefile.in.orig	2014-11-24 20:13:07.000000000 +0100
++++ doc/Makefile.in	2014-11-24 20:13:33.000000000 +0100
+@@ -275,8 +275,8 @@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -9,5 +9,5 @@
 +fontdir = %%TTFONTDIR%%
 +cachedir = %%TTFONTDIR%%
  pidfile = $(localstatedir)/run/xfstt.pid
- LDADD = @LIBINTL@ -L$(top_builddir)/libfstt -lfstt
- AM_CPPFLAGS = -DLOCALEDIR=\""$(localedir)\"" -DFONTDIR=\""$(fontdir)\"" \
+ man_MANS = xfstt.1x
+ EXTRA_DIST = xfstt.1x.in xfstt.lsm FAQ examples
