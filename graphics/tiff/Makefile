@@ -97,6 +97,9 @@ __pmlinks3!= ${ECHO_CMD} '${MLNKS:S/    / /}' | ${AWK} \
 	} }'
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} "/\.po 0/d" ${WRKSRC}/man/*
+
 pre-configure:
 	${REINPLACE_CMD} \
 		-e 's|^LIBTIFF_VERSION_INFO =.*$$|LIBTIFF_VERSION_INFO = 4:0:0|' \
