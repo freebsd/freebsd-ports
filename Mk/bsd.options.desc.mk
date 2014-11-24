@@ -28,6 +28,7 @@ APACHE_DESC?=		Apache server support
 APE_DESC?=		Monkey's Audio lossless format support
 ARCHIVE_DESC?=		bzip2/zip/iso9660 archive support
 ARMADILLO_DESC?=	TPS transform computation via Armadillo
+ASIO_DESC?=		Asynchronous I/O support
 ASM_DESC?=		Use optimized assembly code
 ASPELL_DESC?=		Spell checking support via GNU Aspell
 ASSERT_DESC?=		Enable debug assertions
