@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Geo/Coder/Googlev3.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Googlev3/.packlist
 %%PERL5_MAN3%%/Geo::Coder::Googlev3.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Googlev3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/Geo/Coder
-@dirrmtry %%SITE_PERL%%/Geo
