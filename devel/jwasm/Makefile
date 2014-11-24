@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	jwasm
-PORTVERSION=	211
+PORTVERSION=	211a
 CATEGORIES=	devel
-MASTER_SITES=	http://www.japheth.de/Download/JWasm/
+MASTER_SITES=	SF/${PORTNAME}/JWasm%20Source%20Code
 DISTNAME=	JWasm${PORTVERSION}s
 
 MAINTAINER=	ak@FreeBSD.org
