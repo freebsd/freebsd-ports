@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	nip2
-PORTVERSION=	7.40.4
-PORTREVISION=	3
+PORTVERSION=	7.42.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Graphical user interface for VIPS
 
 LICENSE=	GPLv2
@@ -43,10 +42,6 @@ GSL_DESC=		Use gsl for numeric functions
 GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 GSL_CONFIGURE_WITH=	gsl
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/bin/bash|/bin/sh|' ${WRKSRC}/test/scripts/*
-
 post-install:
 	(cd ${WRKDIR} && ${INSTALL_SCRIPT} run-nip2.sh \
 		${STAGEDIR}/${PREFIX}/bin)
@@ -58,6 +53,6 @@ test check: build
 	# the log-file:
 	#	${WRKSRC}/test/test_all.sh.log
 	#
-	(cd %{WRKSRC} && ${SETENV} {MAKE_ENV} ${MAKE_CMD} check)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check)
 
 .include <bsd.port.mk>
