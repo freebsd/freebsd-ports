@@ -49,7 +49,7 @@ TOKYOCABINET_DESC=	Enable TokyoCabinet database backend
 QDBM_DESC=	Enable QDBM database backend
 OPTIONS_DEFAULT=TOKYOCABINET
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--with-tokyocabinet=${LOCALBASE}
@@ -78,4 +78,4 @@ CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
 LIB_DEPENDS+=		libvirt.so:${PORTSDIR}/devel/libvirt
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
