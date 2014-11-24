@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
 LICENSE=	GPLv3

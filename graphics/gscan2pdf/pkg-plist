@@ -17,13 +17,15 @@ bin/scanimage-perl
 %%SITE_PERL%%/Gscan2pdf/Scanner/Options.pm
 %%SITE_PERL%%/Gscan2pdf/Tesseract.pm
 %%SITE_PERL%%/Gscan2pdf/Unpaper.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf/.packlist
+%%SITE_ARCH%%/auto/gscan2pdf/.packlist
 man/man1/gscan2pdf.1.gz
 man/man1/scanadf-perl.1.gz
 man/man1/scanimage-perl.1.gz
 share/appdata/gscan2pdf.appdata.xml
 share/applications/gscan2pdf.desktop
 %%DATADIR%%/gscan2pdf.svg
+%%DATADIR%%/hand-tool.svg
+%%DATADIR%%/mail-attach.svg
 %%DATADIR%%/pdf.svg
 %%DATADIR%%/scanner.svg
 %%DATADIR%%/stock-rotate-180.svg
@@ -41,6 +43,7 @@ share/locale/el/LC_MESSAGES/gscan2pdf.mo
 share/locale/en_GB/LC_MESSAGES/gscan2pdf.mo
 share/locale/es/LC_MESSAGES/gscan2pdf.mo
 share/locale/fa/LC_MESSAGES/gscan2pdf.mo
+share/locale/fi/LC_MESSAGES/gscan2pdf.mo
 share/locale/fr/LC_MESSAGES/gscan2pdf.mo
 share/locale/gu/LC_MESSAGES/gscan2pdf.mo
 share/locale/he/LC_MESSAGES/gscan2pdf.mo
