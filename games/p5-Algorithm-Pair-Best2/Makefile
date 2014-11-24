@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Select tournament pairings
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USE_PERL5=	configure
 USES=		perl5
 
