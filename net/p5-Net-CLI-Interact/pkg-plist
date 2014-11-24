@@ -32,6 +32,7 @@
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/fwsm/fwsm3/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/cisco/pixos/pixos7/pb
+%%SITE_PERL%%/Net/CLI/Interact/phrasebook/ovmcli/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/bash/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh/sdf/pb
