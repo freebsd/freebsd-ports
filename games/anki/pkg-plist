@@ -692,6 +692,7 @@ share/applications/anki.desktop
 %%NLS%%share/locale/bg/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/da/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/de/LC_MESSAGES/anki.mo
@@ -743,3 +744,4 @@ share/applications/anki.desktop
 share/mime/packages/anki.xml
 share/pixmaps/anki.png
 share/pixmaps/anki.xpm
+@dir %%DATADIR%%/locale
