@@ -1322,6 +1322,7 @@
     SUBDIR += rubygem-fast_xs
     SUBDIR += rubygem-fast_xs073
     SUBDIR += rubygem-ferret
+    SUBDIR += rubygem-fog-xml
     SUBDIR += rubygem-gemoji
     SUBDIR += rubygem-gherkin
     SUBDIR += rubygem-github-linguist
