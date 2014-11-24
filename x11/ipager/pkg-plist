@@ -8,6 +8,3 @@ bin/ipager
 %%DATADIR%%/themes/industrial.conf
 %%DATADIR%%/themes/light_gray.conf
 %%DATADIR%%/themes/light_orange.conf
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

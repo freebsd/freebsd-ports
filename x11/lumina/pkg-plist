@@ -409,8 +409,3 @@ share/Lumina-DE/i18n/lumina-search_zh_CN.qm
 share/Lumina-DE/i18n/lumina-search_zh_HK.qm
 share/Lumina-DE/i18n/lumina-search_zh_TW.qm
 share/Lumina-DE/i18n/lumina-search_zu.qm
-@dirrm share/Lumina-DE/i18n
-@dirrmtry share/Lumina-DE/colors
-@dirrmtry share/Lumina-DE
-@dirrmtry share/wallpapers/Lumina-DE
-@dirrmtry share/xsessions

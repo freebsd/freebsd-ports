@@ -224,8 +224,3 @@ share/qxkb/theme/default/language/zm.png
 share/qxkb/theme/default/language/zw.png
 share/qxkb/theme/default/rem.png
 share/qxkb/theme/default/up.png
-@dirrm share/qxkb/theme/default/language
-@dirrm share/qxkb/theme/default
-@dirrm share/qxkb/theme
-@dirrm share/qxkb/i18n
-@dirrm share/qxkb

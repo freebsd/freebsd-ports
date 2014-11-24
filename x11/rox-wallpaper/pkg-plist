@@ -32,7 +32,3 @@ apps/Wallpaper/makedist.sh
 apps/Wallpaper/options.py
 apps/Wallpaper/options.pyc
 apps/Wallpaper/options.pyo
-@dirrm apps/Wallpaper/Messages
-@dirrm apps/Wallpaper/Help
-@dirrm apps/Wallpaper
-@dirrmtry apps

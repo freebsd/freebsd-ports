@@ -33,8 +33,3 @@ libdata/pkgconfig/keybinder.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vexample.vala
 share/gir-1.0/Keybinder-0.0.gir
-@dirrmtry share/gir-1.0
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/keybinder
-@dirrmtry lib/girepository-1.0

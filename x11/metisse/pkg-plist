@@ -21,7 +21,6 @@ bin/metisse-xlib
 bin/opale-start-fvwmi
 include/libmetisse/auth.h
 include/libmetisse/proto.h
-@dirrm include/libmetisse
 %%PYTHON_SITELIBDIR%%/facade_setup.py
 %%PYTHON_SITELIBDIR%%/facade_setup.pyc
 %%PYTHON_SITELIBDIR%%/facade_setup.pyo
@@ -73,8 +72,6 @@ libexec/fvwm-insitu/2.5.20/FvwmTile
 libexec/fvwm-insitu/2.5.20/FvwmWharf
 libexec/fvwm-insitu/2.5.20/FvwmWinList
 libexec/fvwm-insitu/2.5.20/FvwmWindowMenu
-@dirrm libexec/fvwm-insitu/2.5.20
-@dirrm libexec/fvwm-insitu
 man/man1/FvwmAnimate.1.gz
 man/man1/FvwmAuto.1.gz
 man/man1/FvwmBacker.1.gz
@@ -130,8 +127,6 @@ share/applications/opale.desktop
 %%PORTDOCS%%%%DOCSDIR%%/metisse.css
 %%PORTDOCS%%%%DOCSDIR%%/no3d.png
 %%PORTDOCS%%%%DOCSDIR%%/up.jpg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/fvwm-insitu/ConfigFvwmBacker
 share/fvwm-insitu/ConfigFvwmButtons
 share/fvwm-insitu/ConfigFvwmDefaults
@@ -293,22 +288,6 @@ share/fvwm-insitu/perllib/FVWM/Tracker/WindowList.pm
 share/fvwm-insitu/perllib/General/FileSystem.pm
 share/fvwm-insitu/perllib/General/Parse.pm
 share/fvwm-insitu/system.fvwm2rc-sample-95
-@dirrm share/fvwm-insitu/perllib/General
-@dirrm share/fvwm-insitu/perllib/FVWM/Tracker
-@dirrm share/fvwm-insitu/perllib/FVWM/Module
-@dirrm share/fvwm-insitu/perllib/FVWM
-@dirrm share/fvwm-insitu/perllib
-@dirrm share/fvwm-insitu/opale/icons/16x16/places
-@dirrm share/fvwm-insitu/opale/icons/16x16/devices
-@dirrm share/fvwm-insitu/opale/icons/16x16/categories
-@dirrm share/fvwm-insitu/opale/icons/16x16/apps
-@dirrm share/fvwm-insitu/opale/icons/16x16/actions
-@dirrm share/fvwm-insitu/opale/icons/16x16
-@dirrm share/fvwm-insitu/opale/icons
-@dirrm share/fvwm-insitu/opale/backgrounds
-@dirrm share/fvwm-insitu/opale-common
-@dirrm share/fvwm-insitu/opale
-@dirrm share/fvwm-insitu
 share/locale/ar/LC_MESSAGES/FvwmScript.mo
 share/locale/ar/LC_MESSAGES/FvwmTaskBar.mo
 share/locale/ar/LC_MESSAGES/fvwm.mo
@@ -321,8 +300,6 @@ share/locale/fr/LC_MESSAGES/fvwm.mo
 share/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
 share/locale/sv_SE/LC_MESSAGES/FvwmTaskBar.mo
 share/locale/sv_SE/LC_MESSAGES/fvwm.mo
-@dirrmtry share/locale/sv_SE/LC_MESSAGES
-@dirrmtry share/locale/sv_SE
 share/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
 share/locale/zh_CN/LC_MESSAGES/FvwmTaskBar.mo
 share/locale/zh_CN/LC_MESSAGES/fvwm.mo
@@ -399,16 +376,3 @@ share/locale/zh_CN/LC_MESSAGES/fvwm.mo
 %%DATADIR%%/shaders/blur-f.glsl
 %%DATADIR%%/shaders/shaders-files-list
 %%DATADIR%%/shaders/simple-anim-f.glsl
-@dirrm %%DATADIR%%/shaders
-%%GCONF%%@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/fvwm/window
-@dirrm %%DATADIR%%/fvwm/themes
-@dirrm %%DATADIR%%/fvwm/images/cursors
-@dirrm %%DATADIR%%/fvwm/images/buttons/redmond
-@dirrm %%DATADIR%%/fvwm/images/buttons/Ia_Ora
-@dirrm %%DATADIR%%/fvwm/images/buttons
-@dirrm %%DATADIR%%/fvwm/images/backgrounds
-@dirrm %%DATADIR%%/fvwm/images
-@dirrm %%DATADIR%%/fvwm/colours
-@dirrm %%DATADIR%%/fvwm
-@dirrm %%DATADIR%%

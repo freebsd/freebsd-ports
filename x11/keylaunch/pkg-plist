@@ -1,3 +1,2 @@
 bin/keylaunch
 %%EXAMPLESDIR%%/keylaunch.rc
-@dirrmtry %%EXAMPLESDIR%%
