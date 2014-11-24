@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Levenshtein
-PORTVERSION=	0.09
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,4 +16,11 @@ LICENSE_COMB=	dual
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502000
+BUILD_DEPENDS+=	p5-Unicode-Collate>=1.04:${PORTSDIR}/textproc/p5-Unicode-Collate
+RUN_DEPENDS+=	p5-Unicode-Collate>=1.04:${PORTSDIR}/textproc/p5-Unicode-Collate
+.endif
+
+.include <bsd.port.post.mk>
