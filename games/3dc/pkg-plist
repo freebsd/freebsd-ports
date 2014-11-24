@@ -4,4 +4,3 @@ bin/3Dc
 %%PORTDOCS%%share/doc/3Dc/GPL
 %%PORTDOCS%%share/doc/3Dc/README
 %%PORTDOCS%%share/doc/3Dc/TODO
-%%PORTDOCS%%@dirrm share/doc/3Dc
