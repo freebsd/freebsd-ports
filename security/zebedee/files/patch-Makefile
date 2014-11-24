@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Sep  6 07:59:53 2005
-+++ Makefile	Thu Sep 15 07:34:55 2005
+--- Makefile.orig	2005-09-06 05:59:53 UTC
++++ Makefile
 @@ -5,7 +5,7 @@
  
  ZBD_VERSION = 2.5.3
@@ -9,7 +9,7 @@
  
  ###
  ### Locations of tools, libraries and installation directories.
-@@ -14,13 +14,11 @@
+@@ -14,13 +14,11 @@ OS = 
  
  # Choose your C compiler
  
@@ -24,7 +24,7 @@
  CC_tru64 = cc
  CC_irix = cc -n32 -woff 1110
  CC_hpux = cc -Ae +DAportable
-@@ -31,7 +29,7 @@
+@@ -31,7 +29,7 @@ CC = $(CC_$(OS))
  # Optimise/debug compilation
  
  #OPTIM = -Wall -g
@@ -33,7 +33,7 @@
  
  # Location of gmp include and library
  #
-@@ -46,25 +44,26 @@
+@@ -46,25 +44,26 @@ OPTIM = -Wall -O3
  # BFINC = /usr/include/openssl
  # BFLIB = -lcrypto
  
@@ -66,7 +66,7 @@
  PERL = $(PERL_$(OS))
  
  BAT_win32 = .bat
-@@ -186,7 +185,8 @@
+@@ -186,7 +185,8 @@ SERVICEOBJ = $(SERVICEOBJ_$(OS))
  #### You REALLY shouldn't have to modify anything beyond here ...
  ####
  
@@ -76,7 +76,19 @@
  
  LIBS = $(GMPLIB) $(BFLIB) $(ZLIB) $(BZLIB) $(OSLIBS)
  
-@@ -206,7 +206,7 @@
+@@ -196,17 +196,17 @@ ZBDFILES = server.zbd vncviewer.zbd vncs
+ 	client1.key client2.key clients.id
+ 
+ TXTFILES = README.txt LICENCE.txt GPL2.txt CHANGES.txt NOTICE.txt \
+-	zebedee.html ftpgw.tcl.html zebedee.ja_JP.html zebedee.iss
++	zebedee.html ftpgw.tcl.html zebedee.iss
+ 
+ EXTRAFILES = $(ZBDFILES) $(TXTFILES)
+ 
+-all : precheck zebedee$(EXE) zebedee.1 zebedee.html ftpgw.tcl.1 ftpgw.tcl.html zebedee.ja_JP.html
++all : precheck zebedee$(EXE) zebedee.1 zebedee.html ftpgw.tcl.1 ftpgw.tcl.html
+ 
+ precheck :
  	@ if test -z "$(OS)"; then echo "Use '$(MAKE) OS=xxx' where xxx is win32, linux, linux64, solaris, freebsd, tru64, irix, hpux, macosx or bsdi"; exit 1; fi
  
  zebedee$(EXE) : $(OBJS)
