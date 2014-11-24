@@ -1089,7 +1089,6 @@
     SUBDIR += libnxt
     SUBDIR += liboil
     SUBDIR += libol
-    SUBDIR += libole2
     SUBDIR += libolecf
     SUBDIR += liboobs
     SUBDIR += liboop
