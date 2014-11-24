@@ -6615,7 +6615,6 @@ games/rftg||2014-09-01|Not staged
 german/manpages||2014-09-01|Not staged
 graphics/Cgraph||2014-09-01|Not staged
 graphics/glide3||2014-09-01|Not staged
-graphics/gdtclft||2014-09-01|Not staged
 graphics/ivtools||2014-09-01|Not staged
 graphics/linux_glide||2014-09-01|Not staged
 graphics/mingplot||2014-09-01|Not staged
@@ -6660,7 +6659,6 @@ lang/xds-c||2014-09-01|Not staged
 lang/xds||2014-09-01|Not staged
 lang/xotcl||2014-09-01|Not staged
 mail/elm+ME||2014-09-01|Not staged
-mail/elm||2014-09-01|Not staged
 mail/emh||2014-09-01|Not staged
 mail/extmail||2014-09-01|Not staged
 mail/extman||2014-09-01|Not staged
@@ -7234,3 +7232,4 @@ net-mgmt/virtinst|deskutils/virt-manager|2014-11-20|Obsoleted by deskutils/virt-
 sysutils/firstboot-growfs||2014-11-23|Part of the base system
 graphics/linux-c6-gdk-pixbuf|graphics/linux-c6-gdk-pixbuf2|2014-11-24|Port renamed to align with upstream.
 devel/libole2||2014-11-24|Abandoned upstream, incomplete, not depend on
+net/p5-SOAP-Transport-TCP|net/p5-SOAP-Lite|2014-11-24|Has been integrated into net/p5-SOAP-Lite
