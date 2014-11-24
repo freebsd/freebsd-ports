@@ -10,6 +10,10 @@ MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Problem reporting system
 
+BROKEN=		public distfiles unavailable
+DEPRECATED=	upstream disappeared
+EXPIRATION_DATE=	2014-12-15
+
 LICENSE=	GPLv2
 
 USES=		gmake pkgconfig libtool pgsql
