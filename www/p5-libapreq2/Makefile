@@ -44,6 +44,8 @@ post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}/apreq2/apreq_module_apache2.h
 	${RM} ${STAGEDIR}${PREFIX}/lib/libapreq2*
 	${RM} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_apreq2*
+	${RMDIR} -p ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}/apreq2 \
+		${STAGEDIR}${PREFIX}/${APACHEMODDIR} 2>/dev/null || :
 	${FIND} ${STAGEDIR} -name '*.bs' -type f -size 0c -exec ${RM} {} \;
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/APR/Request/Request.so
 .for i in Apache2 CGI Cookie Error Hook Param Parser
