@@ -21,7 +21,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb55-client
-USES=		cmake gmake shebangfix
+USES=		cmake execinfo gmake shebangfix
 SHEBANG_FILES=	scripts/*.sh
 NO_OPTIONS_SORT=yes
 
@@ -71,14 +71,10 @@ OPTIONS_DEFAULT+=	MAXKEY
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000052
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
-
-.if ${OSVERSION} < 1000012
-CMAKE_ARGS+=	-DWITH_JEMALLOC="bundled"
-.else
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000012
 CMAKE_ARGS+=	-DWITH_JEMALLOC="system"
+.else
+CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
