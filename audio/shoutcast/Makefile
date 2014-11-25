@@ -3,18 +3,22 @@
 
 PORTNAME=	shoutcast
 PORTVERSION=	2.4.2.167
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://download.nullsoft.com/shoutcast/tools/
 DISTNAME=	sc_serv2_bsd-latest
 
-MAINTAINER=	sbruno@freebsd.org
+MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	SHOUTcast Distributed Network Audio Server
+
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 RESTRICTED=	redistribution of software is not permitted
 IA32_BINARY_PORT=	yes
 
-USES=	dos2unix
+USES=		dos2unix shebangfix
 DOS2UNIX_REGEX=	.*\.(conf|css|html|js|txt|xml)
+SHEBANG_FILES=	builder.sh setup.sh
 
 USE_RC_SUBR=	shoutcast
 
@@ -22,7 +26,7 @@ CONFLICTS=	linux-shoutcast-[0-9]*
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFAULT= CONFIG_BUILDER EXAMPLES
+OPTIONS_DEFAULT=	CONFIG_BUILDER EXAMPLES
 OPTIONS_DEFINE=	CONFIG_BUILDER DOCS EXAMPLES
 CONFIG_BUILDER_DESC=	SHOUTcast Configuration Builder
 EXAMPLE_DESC=	SHOUTcast Server Example Configuration Files
@@ -51,9 +55,9 @@ GROUPS=		${SHOUTCASTGROUP}
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000010
 .if ${ARCH} == "i386"
-RUN_DEPENDS+=   ${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 .else
-RUN_DEPENDS+=   ${LOCALBASE}/lib32/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+RUN_DEPENDS+=	${LOCALBASE}/lib32/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 .endif
 .endif
 
@@ -73,7 +77,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#<[^>]*>Windows<[^>]*>##g' \
 		-e 's#<[^>]*>Macintosh<[^>]*>##g' ${WRKSRC}/config_builder/config_builder.html
 	@${REINPLACE_CMD} -e 's#\(LogFile="\)\([^"/]*\)#\1${SHOUTCASTLDIR}/\2#g' \
-		-e 's#\(ConfFile="\)\([^"/]*\)#\1${STAGEDIR}${ETCDIR}/\2#g' \
+		-e 's#\(ConfFile="\)\([^"/]*\)#\1${ETCDIR}/\2#g' \
 		-e 's#\(BanFile="\)\([^"/]*\)#\1${SHOUTCASTDIR}/\2#g' \
 		-e 's#\(RipFile="\)\([^"/]*\)#\1${SHOUTCASTDIR}/\2#g' ${WRKSRC}/config_builder/config_builder.js
 .endif
@@ -81,6 +85,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/builder.sh ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${STAGEDIR}${PREFIX}/sbin
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}${SHOUTCASTLDIR}
 	${MKDIR} ${STAGEDIR}${SHOUTCASTDIR}
