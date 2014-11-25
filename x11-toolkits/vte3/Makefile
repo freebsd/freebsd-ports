@@ -49,10 +49,16 @@ PLIST_SUB=	VERSION=2.91
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnome-pty-helper_gnome-utmp.c
 .endif
 
-.if ${VTE3_SLAVE} != yes
 post-patch:
+.if ${VTE3_SLAVE} != yes
 	@${REINPLACE_CMD} -e 's|-Wno-unused-but-set-variable||g' \
 		${WRKSRC}/src/Makefile.in
+.endif
+# borrowed osversion from bsd.ssp.mk
+.if ${OSVERSION} < 1000036 && ${ARCH} == i386
+	@${REINPLACE_CMD} -e 's|-fstack-protector-strong||g; \
+		s|-fstack-protector||g' \
+		${WRKSRC}/configure
 .endif
 
 .include <bsd.port.mk>
