@@ -1,5 +1,5 @@
---- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2014-09-14 16:52:56.396443385 +0400
-+++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk	2014-09-14 16:57:44.198422874 +0400
+--- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2014-11-24 19:16:07.000000000 -0500
++++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk	2014-11-24 19:22:38.000000000 -0500
 @@ -36,7 +36,7 @@
  vboxvideo_13_DEFS := $(vboxvideo_70_DEFS) VBOXVIDEO_13
  vboxvideo_15_DEFS := \
@@ -78,15 +78,7 @@
  vboxvideo_drv_19_INCS = \
  	$(vboxvideo_xorg_INCS) \
  	$(VBOX_PATH_X11_ROOT)/xorg-server-1.9.0
-@@ -287,11 +303,19 @@
- vboxvideo_drv_110_TEMPLATE = VBOXGUESTR3XORGMOD
- vboxvideo_drv_110_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_110_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101000000
-+if1of ($(KBUILD_TARGET), freebsd)
-+ vboxvideo_drv_19_DEFS += \
-+ 	VBOX_DRI_OLD
-+endif
- vboxvideo_drv_110_INCS = \
+@@ -291,7 +307,11 @@
  	$(vboxvideo_xorg_INCS) \
  	$(VBOX_PATH_X11_ROOT)/xorg-server-1.10.0
  vboxvideo_drv_110_INCS += $(PATH_ROOT)/src/VBox/Runtime/include
@@ -99,15 +91,7 @@
  
  
  #
-@@ -301,11 +325,15 @@
- vboxvideo_drv_111_TEMPLATE = VBOXGUESTR3XORGMOD
- vboxvideo_drv_111_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_111_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101100000
-+if1of ($(KBUILD_TARGET), freebsd)
-+ vboxvideo_drv_111_DEFS += \
-+ 	VBOX_DRI_OLD
-+endif
- vboxvideo_drv_111_INCS = \
+@@ -305,7 +325,7 @@
  	$(vboxvideo_xorg_INCS) \
  	$(VBOX_PATH_X11_ROOT)/xorg-server-1.11.0
  vboxvideo_drv_111_INCS += $(PATH_ROOT)/src/VBox/Runtime/include
@@ -116,15 +100,7 @@
  
  
  #
-@@ -315,11 +343,15 @@
- vboxvideo_drv_112_TEMPLATE = VBOXGUESTR3XORGMOD
- vboxvideo_drv_112_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_112_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101200000
-+if1of ($(KBUILD_TARGET), freebsd)
-+ vboxvideo_drv_112_DEFS += \
-+ 	VBOX_DRI_OLD
-+endif
- vboxvideo_drv_112_INCS = \
+@@ -319,7 +339,7 @@
  	$(vboxvideo_xorg_INCS) \
  	$(VBOX_PATH_X11_ROOT)/xorg-server-1.12.0
  vboxvideo_drv_112_INCS += $(PATH_ROOT)/src/VBox/Runtime/include
@@ -133,15 +109,7 @@
  
  
  #
-@@ -329,11 +361,15 @@
- vboxvideo_drv_113_TEMPLATE = VBOXGUESTR3XORGMOD
- vboxvideo_drv_113_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_113_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101300000
-+if1of ($(KBUILD_TARGET), freebsd)
-+ vboxvideo_drv_113_DEFS += \
-+ 	VBOX_DRI_OLD
-+endif
- vboxvideo_drv_113_INCS = \
+@@ -333,7 +353,7 @@
  	$(vboxvideo_xorg_INCS) \
  	$(VBOX_PATH_X11_ROOT)/xorg-server-1.13.0
  vboxvideo_drv_113_INCS += $(PATH_ROOT)/src/VBox/Runtime/include
@@ -150,15 +118,7 @@
  
  
  #
-@@ -343,11 +379,15 @@
- vboxvideo_drv_114_TEMPLATE = VBOXGUESTR3XORGMOD
- vboxvideo_drv_114_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_114_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101400000
-+if1of ($(KBUILD_TARGET), freebsd)
-+ vboxvideo_drv_114_DEFS += \
-+ 	VBOX_DRI_OLD
-+endif
- vboxvideo_drv_114_INCS = \
+@@ -347,7 +367,7 @@
  	$(vboxvideo_xorg_INCS) \
  	$(VBOX_PATH_X11_ROOT)/xorg-server-1.14.0
  vboxvideo_drv_114_INCS += $(PATH_ROOT)/src/VBox/Runtime/include
@@ -167,15 +127,7 @@
  
  
  #
-@@ -357,11 +397,15 @@
- vboxvideo_drv_115_TEMPLATE = VBOXGUESTR3XORGMOD
- vboxvideo_drv_115_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_115_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101500000
-+if1of ($(KBUILD_TARGET), freebsd)
-+ vboxvideo_drv_115_DEFS += \
-+ 	VBOX_DRI_OLD
-+endif
- vboxvideo_drv_115_INCS = \
+@@ -361,7 +381,7 @@
  	$(vboxvideo_xorg_INCS) \
  	$(VBOX_PATH_X11_ROOT)/xorg-server-1.15.0
  vboxvideo_drv_115_INCS += $(PATH_ROOT)/src/VBox/Runtime/include
@@ -184,14 +136,12 @@
  
  
  #
-@@ -371,6 +415,10 @@
- vboxvideo_drv_116_TEMPLATE = VBOXGUESTR3XORGMOD
- vboxvideo_drv_116_CFLAGS := $(vboxvideo_drv_70_CFLAGS)
- vboxvideo_drv_116_DEFS := $(vboxvideo_15_DEFS) XORG_VERSION_CURRENT=101600000
-+if1of ($(KBUILD_TARGET), freebsd)
-+ vboxvideo_drv_116_DEFS += \
-+ 	VBOX_DRI_OLD
-+endif
- vboxvideo_drv_116_INCS = \
+@@ -375,7 +395,7 @@
  	$(vboxvideo_xorg_INCS) \
  	$(VBOX_PATH_X11_ROOT)/xorg-server-1.16.0
+ vboxvideo_drv_116_INCS += $(PATH_ROOT)/src/VBox/Runtime/include
+-vboxvideo_drv_116_SOURCES := $(vboxvideo_drv_17_SOURCES)
++vboxvideo_drv_116_SOURCES := $(vboxvideo_drv_110_SOURCES)
+ 
+ 
+ ifdef VBOX_USE_SYSTEM_XORG_HEADERS
