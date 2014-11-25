@@ -24,20 +24,17 @@ USE_XORG=	xv xext
 PLIST_FILES=	bin/nvidia-settings \
 		man/man1/nvidia-settings.1.gz
 
+LDFLAGS+=	-Wl,--as-needed
 MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
 		NV_VERBOSE= \
 		STRIP_CMD=${TRUE} \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_MAN="${INSTALL_MAN}" \
-		prefix=${PREFIX} \
+		INSTALL_BIN_ARGS="${INSTALL_PROGRAM:Ninstall}" \
+		INSTALL_DOC_ARGS="${INSTALL_MAN:Ninstall}" \
 		X_CFLAGS=-I${LOCALBASE}/include \
 		X_LDFLAGS=-L${LOCALBASE}/lib
 
-post-extract:	.SILENT
-	${RM} -f ${WRKSRC}/src/libXNVCtrl/libXNVCtrl.a
-
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e '/^prefix/s/=/?&/' \
+	${REINPLACE_CMD} \
 		 -e '/^MANDIR/s|share/||' ${WRKSRC}/utils.mk
 
 .include <bsd.port.mk>
