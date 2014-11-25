@@ -3,8 +3,8 @@
 #   $MCom: ports/graphics/poppler/Makefile,v 1.84 2013/03/12 14:53:49 kwm Exp $
 
 PORTNAME=	poppler
-PORTVERSION=	0.24.5
-PORTREVISION?=	4
+PORTVERSION=	0.26.3
+PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -12,30 +12,37 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	PDF rendering library
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
 		--disable-gtk-test \
-		--with-html-dir=${DOCSDIR}
+		--without-html-dir \
+		--disable-static
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # see https://bugs.freedesktop.org/show_bug.cgi?id=72499
 CPPFLAGS+=	 -D__LONG_LONG_SUPPORTED
 
+INSTALL_TARGET=	install-strip
+
 .if !defined(SLAVEPORT)
 PORTSCOUT=	limitw:1,even
 
-OPTIONS_DEFINE=	CAIRO OPENJPEG
+OPTIONS_DEFINE=	CAIRO CURL OPENJPEG
 OPTIONS_DEFAULT=CAIRO OPENJPEG
 
 USES+=		iconv
@@ -48,7 +55,7 @@ PORTSCOUT=	ignore:1
 LIB_DEPENDS+=	libpoppler.so:${PORTSDIR}/graphics/poppler
 
 .if ${SLAVEPORT}==glib
-CONFIGURE_ARGS+=--enable-poppler-glib
+CONFIGURE_ARGS+=--enable-poppler-glib --enable-introspection=yes
 USE_GNOME+=	cairo gnomehier glib20 introspection:build
 BUILD_WRKSRC=	${WRKSRC}/glib
 INSTALL_WRKSRC=	${WRKSRC}/glib
@@ -58,7 +65,7 @@ CONFIGURE_ARGS+=--disable-poppler-glib
 
 .if ${SLAVEPORT}==qt4
 CONFIGURE_ARGS+=--enable-poppler-qt4
-CONFIGURE_ENV+=	ac_cv_prog_MOCQT4=${LOCALBASE}/bin/moc-qt4
+CONFIGURE_ENV+=	MOCQT4=${MOC}
 USE_QT4=	gui corelib xml qtestlib moc_build
 BUILD_WRKSRC=	${WRKSRC}/qt4
 INSTALL_WRKSRC=	${WRKSRC}/qt4
@@ -66,11 +73,10 @@ INSTALL_WRKSRC=	${WRKSRC}/qt4
 CONFIGURE_ARGS+=--disable-poppler-qt4
 .endif
 
-# needs checking when Qt5 is available
 .if ${SLAVEPORT}==qt5
 CONFIGURE_ARGS+=--enable-poppler-qt5
-CONFIGURE_ENV+=	ac_cv_prog_MOCQT4=${LOCALBASE}/bin/moc-qt5
-USE_QT5=	gui corelib xml qtestlib moc_build
+CONFIGURE_ENV+=	MOCQT5=${MOC}
+USE_QT5=	core gui widgets xml buildtools_build testlib_build
 BUILD_WRKSRC=	${WRKSRC}/qt5
 INSTALL_WRKSRC=	${WRKSRC}/qt5
 .else
@@ -100,6 +106,15 @@ CONFIGURE_ARGS+=--disable-cairo-output
 PLIST_SUB+=	CAIRO="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MCURL}
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=--enable-libcurl
+PLIST_SUB+=	CURL=""
+.else
+CONFIGURE_ARGS+=--disable-libcurl
+PLIST_SUB+=	CURL="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MOPENJPEG}
 CONFIGURE_ARGS+=--enable-libopenjpeg
 LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
@@ -111,14 +126,6 @@ CONFIGURE_ARGS+=--disable-libopenjpeg
 post-patch:
 	@${REINPLACE_CMD} '/CXXFLAGS.*-ansi/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-fno-check-new||g' ${WRKSRC}/configure
-.if defined(SLAVEPORT) && ${SLAVEPORT}==qt4
-	@${REINPLACE_CMD} -e 's|MOCQT4=`.*|MOCQT4="${LOCALBASE}/bin/moc-qt4"|' \
-		${WRKSRC}/configure
-.endif
-.if defined(SLAVEPORT) && ${SLAVEPORT}==qt5
-	@${REINPLACE_CMD} -e 's|MOCQT5=`.*|MOCQT5="${LOCALBASE}/bin/moc-qt5"|' \
-		${WRKSRC}/configure
-.endif
 
 post-install:
 .if defined(SLAVEPORT)
@@ -133,6 +140,5 @@ post-install:
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
 . endif
 .endif
-	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpoppler*.so.*
 
 .include <bsd.port.mk>

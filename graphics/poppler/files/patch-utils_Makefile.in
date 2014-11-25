@@ -1,5 +1,5 @@
---- utils/Makefile.in.orig	2013-12-02 19:00:03.000000000 +0100
-+++ utils/Makefile.in	2013-12-02 19:01:25.000000000 +0100
+--- utils/Makefile.in.orig	2014-11-25 11:49:19 UTC
++++ utils/Makefile.in
 @@ -111,7 +111,7 @@
  am_pdfdetach_OBJECTS = pdfdetach.$(OBJEXT) $(am__objects_1)
  pdfdetach_OBJECTS = $(am_pdfdetach_OBJECTS)
@@ -16,13 +16,13 @@
 -pdffonts_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
 +pdffonts_DEPENDENCIES =
  am_pdfimages_OBJECTS = pdfimages.$(OBJEXT) ImageOutputDev.$(OBJEXT) \
- 	$(am__objects_1)
+ 	JSInfo.$(OBJEXT) $(am__objects_1)
  pdfimages_OBJECTS = $(am_pdfimages_OBJECTS)
  pdfimages_LDADD = $(LDADD)
 -pdfimages_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
 +pdfimages_DEPENDENCIES =
  am_pdfinfo_OBJECTS = pdfinfo.$(OBJEXT) printencodings.$(OBJEXT) \
- 	$(am__objects_1)
+ 	JSInfo.$(OBJEXT) $(am__objects_1)
  pdfinfo_OBJECTS = $(am_pdfinfo_OBJECTS)
  pdfinfo_LDADD = $(LDADD)
 -pdfinfo_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
@@ -52,7 +52,7 @@
  pdftohtml_OBJECTS = $(am_pdftohtml_OBJECTS)
  pdftohtml_LDADD = $(LDADD)
 -pdftohtml_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdftohtml_DEPENDENCIES = 
++pdftohtml_DEPENDENCIES =
  pdftohtml_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(pdftohtml_CXXFLAGS) \
  	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@

@@ -790,6 +790,7 @@
     SUBDIR += poppler-data
     SUBDIR += poppler-glib
     SUBDIR += poppler-qt4
+    SUBDIR += poppler-qt5
     SUBDIR += poppler-utils
     SUBDIR += pornview
     SUBDIR += potrace
