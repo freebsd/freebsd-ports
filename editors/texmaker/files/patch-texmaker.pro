@@ -1,5 +1,5 @@
---- ./texmaker.pro.orig	2013-10-28 13:47:24.000000000 +0000
-+++ ./texmaker.pro	2013-11-16 20:58:16.201993027 +0000
+--- texmaker.pro.orig	2014-07-29 04:02:06 UTC
++++ texmaker.pro
 @@ -390,13 +390,6 @@
  	utilities/AUTHORS \
  	utilities/COPYING \
@@ -11,10 +11,10 @@
 -	utilities/texmaker64x64.png \
 -	utilities/texmaker128x128.png \
 -	utilities/texmaker.svg \
+ 	scripts/titlecase.tms \
  	locale/qt_cs.qm \
  	locale/qt_de.qm \
- 	locale/qt_es.qm \
-@@ -464,4 +457,20 @@
+@@ -470,4 +463,20 @@
  
  icon.files = utilities/texmaker.png
  INSTALLS += icon
