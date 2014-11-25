@@ -26,4 +26,8 @@ RPMVERSION=	3.el6
 
 USE_LDCONFIG=	yes
 
+# We will use native configuration file, so delete a linux one
+post-extract:
+	@${RM} -r ${WRKSRC}/etc
+
 .include <bsd.port.mk>
