@@ -249,5 +249,5 @@ sbin/munin-sched
 %%PERL%%%%DATADIR%%/plugins/varnish_
 %%DATADIR%%/plugins/vmstat
 %%DATADIR%%/plugins/zimbra_
-@dir(%%USER%%,%%GROUP%%,) %%DBDIR%%/plugin-state
+@dir(%%USER%%,%%GROUP%%,) %%DBDIRNODE%%/plugin-state
 @dir %%ETCDIR%%/plugins

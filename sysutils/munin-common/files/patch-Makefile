@@ -1,6 +1,6 @@
---- Makefile.orig	2014-10-17 09:03:12 UTC
+--- Makefile.orig	2014-11-24 21:46:24 UTC
 +++ Makefile
-@@ -68,60 +68,48 @@
+@@ -68,60 +68,48 @@ install: install-master-prime install-co
  
  install-pre: Makefile Makefile.config
  	@$(CHECKUSER)
@@ -89,7 +89,7 @@
  
  # Not ready to be installed yet
  # $(INSTALL) -m 0755 build/master/_bin/munin-gather $(LIBDIR)/
-@@ -139,33 +127,29 @@
+@@ -139,33 +127,29 @@ endif
  install-plugins-prime: install-plugins build $(PLUGINS) Makefile Makefile.config
  	@$(CHECKGROUP)
  
@@ -135,7 +135,7 @@
  	    fi                                                 \
  	done
  
-@@ -183,7 +167,7 @@
+@@ -183,7 +167,7 @@ install-async:
  install-node-prime: install-node-pre install-node
  
  install-node-pre: build/node/munin-node.conf install-pre
@@ -144,7 +144,7 @@
  
  
  install-common-prime: build-common install-common
-@@ -466,6 +450,7 @@
+@@ -466,6 +450,7 @@ install-%: %/Build
              --install_path sbin=$(SBINDIR)		\
              --install_path bindoc=$(MANDIR)/man1	\
              --install_path libdoc=$(MANDIR)/man3	\
