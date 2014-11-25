@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cx88
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.11
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:${PORTSDIR}/textproc/ezxml \
 
 MAKE_ARGS+=	LIBTUNER_LIB=${LOCALBASE}/lib/libtuner LIBTUNER_HEADER=${LOCALBASE}/include/libtuner KMODDIR=${KMODDIR} PREFIX=${STAGEDIR}${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
-USES=		kmod pkgconfig readline uidfix
+USES=				kmod pkgconfig uidfix
 
 OPTIONS_DEFINE=	DEBUG LINUX_COMPAT HAL
 
@@ -45,8 +45,5 @@ MAKE_ARGS+=	-D WITH_HAL
 .endif
 
 MAKE_ARGS+=	DEFAULT_XML_CONFIG="${EXAMPLESDIR}/cx88.xml.sample"
-
-post-patch:
-	${REINPLACE_CMD} -e 's|install cx88 |install -s cx88 |g' ${WRKSRC}/client/Makefile
 
 .include <bsd.port.mk>
