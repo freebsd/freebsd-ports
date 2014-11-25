@@ -1,0 +1,46 @@
+Rename PREFIX to DATADIR as its purpose is only to find data files (avoids
+conflicts with our PREFIX, which has another meaning).
+Do not enforce compilers.
+
+--- Makefile.orig	2014-01-07 08:52:28.000000000 +0100
++++ Makefile	2014-11-17 19:05:21.738720856 +0100
+@@ -14,7 +14,7 @@
+ RELEASE ?= 1
+ 
+ # Base path of app installation
+-PREFIX ?= /usr/local/share/games/jfsw
++DATADIR ?= /usr/local/share/games/jfsw
+ 
+ # DirectX SDK location
+ DXROOT ?= $(USERPROFILE)/sdks/directx/dx81
+@@ -61,8 +61,8 @@
+ 
+ include $(AUDIOLIBROOT)/Makefile.shared
+ 
+-CC=gcc
+-CXX=g++
++CC?=gcc
++CXX?=g++
+ OURCFLAGS=$(debug) -W -Wall -Wimplicit -Wno-unused \
+ 	-fno-pic -fno-strict-aliasing -DNO_GCC_BUILTINS \
+ 	-I$(INC) -I$(EINC) -I$(MACTROOT) -I$(AUDIOLIBROOT)/include
+@@ -165,6 +165,10 @@
+ 	NASMFLAGS+= -f elf
+ 	GAMELIBS+= $(JFAUDIOLIB_LDFLAGS)
+ endif
++ifeq ($(PLATFORM),BSD)
++	NASMFLAGS+= -f elf
++	GAMELIBS+= $(JFAUDIOLIB_LDFLAGS)
++endif
+ ifeq ($(PLATFORM),WINDOWS)
+ 	OURCFLAGS+= -I$(DXROOT)/include
+ 	NASMFLAGS+= -f win32 --prefix _
+@@ -192,7 +196,7 @@
+ OURCFLAGS+= $(BUILDCFLAGS)
+ 
+ ifneq ($(PLATFORM),WINDOWS)
+-	OURCFLAGS+= -DPREFIX=\"$(PREFIX)\"
++	OURCFLAGS+= -DDATADIR=\"$(DATADIR)\"
+ endif
+ 
+ .PHONY: clean all engine $(ELIB)/$(ENGINELIB) $(ELIB)/$(EDITORLIB) $(AUDIOLIBROOT)/$(JFAUDIOLIB)

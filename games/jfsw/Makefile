@@ -2,12 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	jfsw
-PORTVERSION=	20051009
-PORTREVISION=	4
+PORTVERSION=	20131019
 CATEGORIES=	games
-MASTER_SITES=	http://users.on.net/~jonof/buildport/
-DISTFILES=	${PORTNAME}_src_${PORTVERSION}.zip \
-		jfbuild_src_${PORTVERSION}.zip
+MASTER_SITES=	http://github.com/jonof/${PORTNAME}/archive/${JFSW_COMMIT}.tar.gz?dummy=/ \
+		http://github.com/jonof/jfbuild/archive/${JFBUILD_COMMIT}.tar.gz?dummy=/ \
+		http://github.com/jonof/jfaudiolib/archive/${JFAUDIO_COMMIT}.tar.gz?dummy=/ \
+		http://github.com/jonof/jfmact/archive/${JFMACT_COMMIT}.tar.gz?dummy=/
+DISTFILES=	${PORTNAME}-${JFSW_COMMIT}.tar.gz \
+		jfbuild-${JFBUILD_COMMIT}.tar.gz \
+		jfaudiolib-${JFAUDIO_COMMIT}.tar.gz \
+		jfmact-${JFMACT_COMMIT}.tar.gz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Jonathon Fowler's Shadow Warrior Port
@@ -15,51 +19,55 @@ COMMENT=	Jonathon Fowler's Shadow Warrior Port
 LICENSE=	GPLv2 BuildLic
 LICENSE_COMB=	multi
 LICENSE_NAME_BuildLic=	Build source code license
-LICENSE_FILE_BuildLic=	${WRKDIR}/jfbuild_src_${PORTVERSION}/buildlic.txt
+LICENSE_FILE_BuildLic=	${WRKSRC}/jfbuild/buildlic.txt
 LICENSE_PERMS_BuildLic=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
-NO_CDROM=	Must be distributed only through the Internet and free of charge
-
-ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	uses x86 assembly code
+JFSW_COMMIT=	5cff6a81708ff053b569ba4400fba073afe207fe
+JFBUILD_COMMIT=	a73583184aca466cebde152db2ce1020591d7049
+JFAUDIO_COMMIT=	a39ccf5e95961952d27754a255940be1d76ce85e
+JFMACT_COMMIT=	b1071da75cd465f59257240e5dbc60a014580190
 
 USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
-USE_GCC=	any
 
-USES=	dos2unix gmake zip
+USES=	dos2unix gmake pkgconfig:build
 DOS2UNIX_REGEX=	.*(\.(c|h)|Makefile)(\.deps)?
 
-NO_WRKSUBDIR=	yes
-BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}_src_${PORTVERSION}
+NO_CDROM=	Must be distributed only through the Internet and free of charge
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${JFSW_COMMIT}
+MAKE_ENV+=	DATADIR="${DATADIR}" \
+		NOASM=1 \
+		LINKED_GTK=1
 
 SUB_FILES=	pkg-message
 
 PORTDOCS=	readme.txt releasenotes.html
 
+post-extract:
+	@(cd ${WRKSRC} && \
+		${RMDIR} jfbuild jfaudiolib jfmact && \
+		${LN} -sf ${WRKDIR}/jfbuild-${JFBUILD_COMMIT} jfbuild && \
+		${LN} -sf ${WRKDIR}/jfaudiolib-${JFAUDIO_COMMIT} jfaudiolib && \
+		${LN} -sf ${WRKDIR}/jfmact-${JFMACT_COMMIT} jfmact)
+
 post-patch:
-	@${REINPLACE_CMD} -Ee \
-		's|^(EROOT=)../build/|\1../jfbuild_src_${PORTVERSION}/|; \
-		 s|^(CC=).*|\1${CC}|; \
-		 s|^(CFLAGS=).*|\1${CFLAGS}|; \
-		 s|^(NASMFLAGS=).*|\1 -s -f elf|; \
-		 s|/usr/X11R6|${LOCALBASE}|; \
-		 s|sdl-config|${SDL_CONFIG}|' \
-		${BUILD_WRKSRC}/Makefile \
-		${WRKDIR}/jfbuild_src_${PORTVERSION}/Makefile \
-		${WRKDIR}/jfbuild_src_${PORTVERSION}/Makefile.shared
-	@${REINPLACE_CMD} -e 's|/usr/share/games/jfsw|${DATADIR}|' \
-		${BUILD_WRKSRC}/source/game.c \
-		${BUILD_WRKSRC}/source/jnstub.c
+	@${REINPLACE_CMD} 's|/usr/X11R6|${LOCALBASE}|' \
+		${WRKSRC}/jfbuild/Makefile
+	@${REINPLACE_CMD} 's|sdl-config|${SDL_CONFIG}|' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/jfbuild/Makefile.shared
+	@${REINPLACE_CMD} 's|/usr|${LOCALBASE}|' \
+		${WRKSRC}/jfaudiolib/src/driver_fluidsynth.c
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/sw ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/build ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-build
+	${INSTALL_PROGRAM} ${WRKSRC}/sw ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/build ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-build
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${BUILD_WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
