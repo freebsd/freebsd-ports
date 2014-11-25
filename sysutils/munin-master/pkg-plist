@@ -78,5 +78,6 @@ man/man8/munin-update.8.gz
 www/cgi-bin/munin-cgi-graph
 www/cgi-bin/munin-cgi-html
 @sample %%WWWDIR%%/.htaccess.sample
+@dir %%ETCDIR%%/munin-conf.d
 @dir(%%USER%%,%%GROUP%%,) %%WWWDIR%%
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%DBDIRNODE%%/cgi-tmp
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%DBDIR%%/cgi-tmp
