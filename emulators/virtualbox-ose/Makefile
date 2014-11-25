@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.18
+DISTVERSION=	4.3.20
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -128,7 +128,7 @@ RESTRICTED_FILES=	${GUESTADDITIONS}
 .endif
 
 .if ${PORT_OPTIONS:MMANUAL}
-USE_TEX=	dvipsk:build formats:build texlive
+USE_TEX=	dvipsk:build formats:build
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
