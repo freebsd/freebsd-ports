@@ -1,3 +1,0 @@
-include/evas-1/Evas_Engine_Buffer.h
-lib/evas/modules/engines/buffer/%%E17_ARCH%%/module.so
-libdata/pkgconfig/evas-software-buffer.pc

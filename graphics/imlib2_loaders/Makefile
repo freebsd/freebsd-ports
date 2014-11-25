@@ -31,7 +31,7 @@ MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEET}
-USE_EFL+=	eet
+LIB_DEPENDS+=	libefl.so:${PORTSDIR}/devel/efl
 PLIST_SUB+=	EET=""
 .else
 CONFIGURE_ARGS+=	--disable-eet

@@ -7234,3 +7234,59 @@ graphics/linux-c6-gdk-pixbuf|graphics/linux-c6-gdk-pixbuf2|2014-11-24|Port renam
 devel/libole2||2014-11-24|Abandoned upstream, incomplete, not depend on
 net/p5-SOAP-Transport-TCP|net/p5-SOAP-Lite|2014-11-24|Has been integrated into net/p5-SOAP-Lite
 www/chimera||2014-11-24|Has expired: Abandonware (last update in 1997), restrictive license
+devel/ecore|devel/efl|2014-11-25|Merged to devel/efl
+devel/ecore-file|devel/efl|2014-11-25|Merged to devel/efl
+devel/ecore-ipc|devel/efl|2014-11-25|Merged to devel/efl
+devel/ecore-main|devel/efl|2014-11-25|Merged to devel/efl
+devel/eet|devel/efl|2014-11-25|Merged to devel/efl
+devel/eina|devel/efl|2014-11-25|Merged to devel/efl
+devel/eio|devel/efl|2014-11-25|Merged to devel/efl
+graphics/ecore-evas|devel/efl|2014-11-25|Merged to devel/efl
+graphics/ecore-sdl|devel/efl|2014-11-25|Merged to devel/efl
+graphics/edje|devel/efl|2014-11-25|Merged to devel/efl
+graphics/ethumb|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-core|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-engine-buffer|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-engine-opengl|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-engine-sdl|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-engine-x11|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-bmp|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-eet|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-generic|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-gif|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-ico|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-jpeg|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-pmaps|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-png|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-psd|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-svg|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-tga|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-tiff|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-wbmp|devel/efl|2014-11-25|Merged to devel/efl
+graphics/evas-loader-xpm|devel/efl|2014-11-25|Merged to devel/efl
+lang/embryo|devel/efl|2014-11-25|Merged to devel/efl
+multimedia/emotion|devel/efl|2014-11-25|Merged to devel/efl
+net/ecore-con|devel/efl|2014-11-25|Merged to devel/efl
+x11/ecore-imf|devel/efl|2014-11-25|Merged to devel/efl
+x11/ecore-imf_evas|devel/efl|2014-11-25|Merged to devel/efl
+x11/ecore-input|devel/efl|2014-11-25|Merged to devel/efl
+x11/ecore-input_evas|devel/efl|2014-11-25|Merged to devel/efl
+x11/ecore-x11|devel/efl|2014-11-25|Merged to devel/efl
+x11/efreet|devel/efl|2014-11-25|Merged to devel/efl
+x11-wm/e17-module-alarm|x11-wm/e-module-alarm|2014-11-25|Renamed
+x11-wm/e17-module-cpu|x11-wm/e-module-cpu|2014-11-25|Renamed
+x11-wm/e17-module-deskshow|x11-wm/e-module-deskshow|2014-11-25|Renamed
+x11-wm/e17-module-diskio|x11-wm/e-module-diskio|2014-11-25|Renamed
+x11-wm/e17-module-everything-places|x11-wm/e-module-everything-places|2014-11-25|Renamed
+x11-wm/e17-module-everything-websearch|x11-wm/e-module-everything-websearch|2014-11-25|Renamed
+x11-wm/e17-module-forecasts|x11-wm/e-module-forecasts|2014-11-25|Renamed
+x11-wm/e17-module-mem|x11-wm/e-module-mem|2014-11-25|Renamed
+x11-wm/e17-module-mpdule|x11-wm/e-module-mpdule|2014-11-25|Renamed
+x11-wm/e17-module-net|x11-wm/e-module-net|2014-11-25|Renamed
+x11-wm/e17-module-penguins|x11-wm/e-module-penguins|2014-11-25|Renamed
+x11-wm/e17-module-places|x11-wm/e-module-places|2014-11-25|Renamed
+x11-wm/e17-module-rmb|x11-wm/e-module-rmb|2014-11-25|Renamed
+x11-wm/e17-module-tclock|x11-wm/e-module-tclock|2014-11-25|Renamed
+x11-wm/e17-module-wlan|x11-wm/e-module-wlan|2014-11-25|Renamed
+x11-wm/e17-modules|x11-wm/e-modules|2014-11-25|Renamed

@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141125:
+  AFFECTS: users of EFL libraries
+  AUTHOR: gblach@FreeBSD.org
+
+  EFL libraries has been merged into one port. Before installing devel/efl
+  you must deinstall old EFL libraries:
+
+  # pkg delete -f eina eet evas evas-\* ecore\* eio efreet embryo edje \
+      ethumb emotion
+  # make -C /usr/ports/devel/efl install clean
+
+20141125:
+  AFFECTS: users of x11-wm/e17-module*
+  AUTHOR: gblach@FreeBSD.org
+
+  Enlightenment has been updated to 0.19.1. Some of e-modules can't be build
+  with updated Enlightenment, these modules has been marked as broken.
+  E-modules which work with new Enlightenment has been renamed to
+  x11-wm/e-module-*. To update these modules you must call the following
+  commands (substituting the name of module in place *):
+
+  # portmaster -o x11-wm/e-module-* x11-wm/e17-module-*
+  # portmaster -o x11-wm/e-modules x11-wm/e17-modules
+  or
+  # portupgrade -fo x11-wm/e-module-* x11-wm/e17-module-*
+  # portupgrade -fo x11-wm/e-modules x11-wm/e17-modules
+
 20141123:
   AFFECTS: users of security/heimdal
   AUTHOR: hrs@FreeBSD.org

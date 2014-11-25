@@ -51,13 +51,7 @@
     SUBDIR += dynamag
     SUBDIR += dzen2
     SUBDIR += eaglemode
-    SUBDIR += ecore-imf
-    SUBDIR += ecore-imf_evas
-    SUBDIR += ecore-input
-    SUBDIR += ecore-input_evas
-    SUBDIR += ecore-x11
     SUBDIR += editres
-    SUBDIR += efreet
     SUBDIR += emprint
     SUBDIR += erun
     SUBDIR += eterm

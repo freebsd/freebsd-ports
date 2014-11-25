@@ -109,7 +109,6 @@
     SUBDIR += e169-stats
     SUBDIR += easysoap
     SUBDIR += echoping
-    SUBDIR += ecore-con
     SUBDIR += empty
     SUBDIR += enet
     SUBDIR += erlang_xmlrpc

@@ -1,3 +1,0 @@
-include/evas-1/Evas_Engine_SDL_16.h
-lib/evas/modules/engines/software_16_sdl/%%E17_ARCH%%/module.so
-libdata/pkgconfig/evas-software-sdl.pc

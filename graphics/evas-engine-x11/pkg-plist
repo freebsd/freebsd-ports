@@ -1,3 +1,0 @@
-include/evas-1/Evas_Engine_Software_X11.h
-lib/evas/modules/engines/software_x11/%%E17_ARCH%%/module.so
-libdata/pkgconfig/evas-software-x11.pc
