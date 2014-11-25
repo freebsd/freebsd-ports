@@ -1,5 +1,5 @@
---- platform.h.orig
-+++ platform.h
+--- platform.h.orig	2014-01-06 18:17:50.000000000 +0400
++++ platform.h	2014-11-21 19:53:36.000000000 +0300
 @@ -11,7 +11,7 @@
  // http://predef.sourceforge.net/prearch.html , these ought to work on
  // gcc, Sun Studio and Visual Studio.
@@ -9,3 +9,22 @@
   #define X86_64
  #endif
  
+@@ -85,16 +85,13 @@
+  #include "elglext.h"
+  #define APIENTRY 
+  #define APIENTRYP *
+-#elif !defined(BSD)
++#else
+  #define GL_GLEXT_LEGACY
+  #include <GL/gl.h>
+  #include <GL/glu.h>
+  #undef GL_VERSION_1_2
+  #undef GL_VERSION_1_3
+- #include "glext.h"
+-#else // BSD
+- #include <GL/gl.h>
+- #include <GL/glu.h>
++ #include <GL/glext.h>
+ #endif
+ 
+ // Inlucde the plaform specific location sound libs

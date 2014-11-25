@@ -16,11 +16,11 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libcal3d.so:${PORTSDIR}/graphics/cal3d
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
-USES=		gmake openal:al,alut tar:xz
+USES=		compiler:c++11-lang gmake iconv openal:al,alut tar:xz
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		yes
-LDFLAGS+=	-L${LOCALBASE}/lib -lX11
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lX11
 
 ALL_TARGET=	el.bin
 MAKEFILE=	Makefile.bsd

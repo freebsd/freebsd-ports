@@ -22,7 +22,7 @@
 +LDFLAGS+=$(shell sdl-config --libs) $(shell xml2-config --libs) -lSDL_net -lSDL_image -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile \
  	$(foreach FEATURE, $(FEATURES), $($(FEATURE)_LIBS))
 -_LDFLAGS=$(XDIR) -lGL -lpthread -lstdc++
-+_LDFLAGS=$(XDIR) -lGL -pthread -lstdc++
++_LDFLAGS=$(XDIR) -lGL -pthread
  
  # This works on Ubuntu 8.04 (LTS) at least
  # Install these packages in addition to those required for a standard build
@@ -43,7 +43,7 @@
  endif
  ifndef LINK
 -LINK=gcc
-+LINK?=$(CC)
++LINK?=$(CXX)
  endif
  
  all: $(EXE)
