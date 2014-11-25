@@ -150,7 +150,6 @@
     SUBDIR += epstool
     SUBDIR += etch
     SUBDIR += eterm-bg
-    SUBDIR += ethumb
     SUBDIR += evas_generic_loaders-gst
     SUBDIR += evas_generic_loaders-pdf
     SUBDIR += evas_generic_loaders-ps
