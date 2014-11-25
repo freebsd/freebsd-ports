@@ -61,6 +61,5 @@ post-install:
 	)
 	(cd ${STAGEDIR}${ETCDIR}; for i in `find . -type f`; do mv $$i $$i.sample; done)
 	${MV} ${STAGEDIR}${WWWDIR}/.htaccess ${STAGEDIR}${WWWDIR}/.htaccess.sample
-	@${RMDIR} ${STAGEDIR}${DBDIR} 2>/dev/null || :
 
 .include <bsd.port.mk>
