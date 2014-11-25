@@ -2,6 +2,7 @@ bin/gtest-config
 include/gtest/gtest-death-test.h
 include/gtest/gtest-message.h
 include/gtest/gtest-param-test.h
+include/gtest/gtest-printers.h
 include/gtest/gtest-spi.h
 include/gtest/gtest-test-part.h
 include/gtest/gtest-typed-test.h
