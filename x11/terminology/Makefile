@@ -3,25 +3,28 @@
 
 PORTNAME=	terminology
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 enlightenment
-MASTER_SITES=	http://download.enlightenment.org/rel/apps/terminology/
+MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	EFL Terminal Emulator
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-USES=		pkgconfig tar:xz
-DIST_SUBDIR=	e17
+LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
+		libelementary.so:${PORTSDIR}/x11-toolkits/elementary
+
+DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USE_EFL=	eina eet evas ecore edje emotion elementary
-USE_EFL_ECORE=	imf imf_evas input ipc
+USES=		pkgconfig tar:xz
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
 
-NLS_USES=	gettext
+.include <bsd.port.options.mk>
+
+NLS_USES=				gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

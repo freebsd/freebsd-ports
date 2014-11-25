@@ -54,7 +54,7 @@
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
     SUBDIR += dvts
-    SUBDIR += emotion
+    SUBDIR += emotion_generic_players-vlc
     SUBDIR += emovix
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg0
@@ -324,6 +324,7 @@
     SUBDIR += quodlibet
     SUBDIR += quvi
     SUBDIR += quvi09
+    SUBDIR += rage
     SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex

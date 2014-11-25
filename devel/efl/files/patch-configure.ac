@@ -1,0 +1,19 @@
+--- configure.ac.orig	2014-11-10 12:02:43.000000000 +0100
++++ configure.ac	2014-11-20 23:35:26.000000000 +0100
+@@ -407,14 +407,15 @@
+ execinfo.h \
+ mcheck.h \
+ sys/epoll.h \
+-sys/inotify.h \
+ sys/signalfd.h \
+ sys/types.h \
+ sys/param.h \
+ sys/mman.h \
+ netinet/in.h \
++netinet/tcp.h \
+ ])
+ 
++ac_cv_header_sys_inotify_h="no"
+ have_inotify="${ac_cv_header_sys_inotify_h}"
+ AM_CONDITIONAL([HAVE_INOTIFY], [test "x${have_inotify}" = "xyes"])
+ 

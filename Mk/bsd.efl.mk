@@ -36,8 +36,7 @@ EFL_Include_MAINTAINER=	gblach@FreeBSD.org
 #
 # Define all supported libraries
 #
-_USE_EFL_ALL=	ecore edbus edje eet efreet eio eina elementary embryo \
-		emotion ender enesim epeg esvg etch ethumb evas imlib2
+_USE_EFL_ALL=	epeg imlib2
 
 # For each library supported we define the following variables:
 #	_%%LIB%%_CATEGORY	- category the port belongs to
@@ -46,60 +45,8 @@ _USE_EFL_ALL=	ecore edbus edje eet efreet eio eina elementary embryo \
 #	_%%LIB%%_SLIB		- name of the shared library
 #
 
-_ecore_CATEGORY=	devel
-_ecore_PORTNAME=	ecore-main
-_ecore_VERSION=		8
-
-_edbus_CATEGORY=	devel
-_edbus_PORTNAME=	e_dbus
-_edbus_VERSION=		8
-
-_eet_CATEGORY=		devel
-_eet_VERSION=		8
-
-_efreet_CATEGORY=	x11
-_efreet_VERSION=	8
-
-_edje_CATEGORY=		graphics
-_edje_VERSION=		8
-
-_eio_CATEGORY=		devel
-_eio_VERSION=		8
-
-_eina_CATEGORY=		devel
-_eina_VERSION=		8
-
-_elementary_CATEGORY=	x11-toolkits
-_elementary_VERSION=	8
-
-_embryo_CATEGORY=	lang
-_embryo_VERSION=	8
-
-_emotion_CATEGORY=	multimedia
-_emotion_VERSION=	8
-
-_ender_CATEGORY=	graphics
-_ender_VERSION=		0
-
-_enesim_CATEGORY=	graphics
-_enesim_VERSION=	0
-
 _epeg_CATEGORY=		graphics
 _epeg_VERSION=		9
-
-_esvg_CATEGORY=		www
-_esvg_PORTNAME=		egueb
-_esvg_VERSION=		0
-
-_etch_CATEGORY=		graphics
-_etch_VERSION=		0
-
-_ethumb_CATEGORY=	graphics
-_ethumb_VERSION=	8
-
-_evas_CATEGORY=		graphics
-_evas_PORTNAME=		evas-core
-_evas_VERSION=		8
 
 _imlib2_CATEGORY=	graphics
 _imlib2_VERSION=	5
@@ -121,113 +68,6 @@ _${LIB}_PREFIX=${LOCALBASE}
 .endfor
 
 #
-# Evas engines and loaders support.
-# Values processed:
-# _evas_engine_COMP_CATEGORY	- Where the port for this object is located
-# _evas_engine_COMP_PORTNAME	- Object's port subdirectory
-# _evas_engine_COMP_DIR		- Evas object's subdir
-#
-
-# All components that are currently supported
-_EFL_EVAS_ENGINES_ALL=	buffer opengl sdl x11
-_EFL_EVAS_LOADERS_ALL=	bmp eet generic gif ico jpeg \
-			png pmaps psd svg tga tiff wbmp xpm
-
-#
-# Generic evas engines definitions
-#
-_EFL_EVAS_CATEGORY=		graphics
-_EFL_EVAS_MODDIR=		${LOCALBASE}/lib/evas/modules
-_EFL_EVAS_ENGINES_MODDIR=	${_EFL_EVAS_MODDIR}/engines
-_EFL_EVAS_LOADERS_MODDIR=	${_EFL_EVAS_MODDIR}/loaders
-
-#
-# Evas engine modules definitions
-#
-
-_evas_engine_buffer_DIR=	buffer
-_evas_engine_opengl_DIR=	gl_x11
-_evas_engine_sdl_DIR=		software_16_sdl
-_evas_engine_x11_DIR=		software_x11
-
-#
-# Assign values for variables which were not defined explicitly
-#
-.for COMP in ${_EFL_EVAS_ENGINES_ALL}
-. if !defined(_evas_engine_${COMP}_CATEGORY)
-_evas_engine_${COMP}_CATEGORY=	${_EFL_EVAS_CATEGORY}
-. endif
-. if !defined(_evas_engine_${COMP}_PORTNAME)
-_evas_engine_${COMP}_PORTNAME=	evas-engine-${COMP}
-. endif
-. if !defined(_evas_engine_${COMP}_DIR)
-_evas_engine_${COMP}_DIR=	${COMP}
-. endif
-.endfor
-
-.for COMP in ${_EFL_EVAS_LOADERS_ALL}
-. if !defined(_evas_loader_${COMP}_CATEGORY)
-_evas_loader_${COMP}_CATEGORY=	${_EFL_EVAS_CATEGORY}
-. endif
-. if !defined(_evas_loader_${COMP}_PORTNAME)
-_evas_loader_${COMP}_PORTNAME=	evas-loader-${COMP}
-. endif
-. if !defined(_evas_loader_${COMP}_DIR)
-_evas_loader_${COMP}_DIR=	${COMP}
-. endif
-.endfor
-
-#
-# Ecore modules support
-# Values processed:
-# _ecore_COMP_CATEGORY	- Where the port for this object is located
-# _ecore_COMP_PORTNAME	- Object's port subdirectory
-# _ecore_COMP_NAME	- Ecore library name
-#
-
-# All components that are currently supported
-_EFL_ECORE_ALL=	con config desktop evas file imf imf_evas \
-		input input_evas ipc job sdl txt x11
-
-#
-# Generic ecore definitions
-#
-_EFL_ECORE_CATEGORY=	devel
-_EFL_ECORE_MODDIR=	${LOCALBASE}/lib/
-
-#
-# Ecore modules definitions
-#
-
-_ecore_con_CATEGORY=		net
-_ecore_config_CATEGORY=		sysutils
-_ecore_desktop_CATEGORY=	x11
-_ecore_evas_CATEGORY=		graphics
-_ecore_sdl_CATEGORY=		graphics
-_ecore_txt_CATEGORY=		converters
-_ecore_imf_CATEGORY=		x11
-_ecore_imf_evas_CATEGORY=	x11
-_ecore_input_CATEGORY=		x11
-_ecore_input_evas_CATEGORY=	x11
-_ecore_x11_CATEGORY=		x11
-_ecore_x11_NAME=		ecore_x
-
-#
-# Assign values for variables which were not defined explicitly
-#
-.for COMP in ${_EFL_ECORE_ALL}
-. if !defined(_ecore_${COMP}_CATEGORY)
-_ecore_${COMP}_CATEGORY=${_EFL_ECORE_CATEGORY}
-. endif
-. if !defined(_ecore_${COMP}_PORTNAME)
-_ecore_${COMP}_PORTNAME=ecore-${COMP}
-. endif
-. if !defined(_ecore_${COMP}_NAME)
-_ecore_${COMP}_NAME=	ecore_${COMP}
-. endif
-.endfor
-
-#
 # Handle WANT_EFL feature
 #
 .if !defined(AFTERPORTMK)
@@ -236,7 +76,6 @@ _ecore_${COMP}_NAME=	ecore_${COMP}
 EFL_Include_pre=	bsd.efl.mk
 
 HAVE_EFL?=
-HAVE_EFL_ECORE?=
 .if defined(WANT_EFL)
 #
 # General EFL components
@@ -246,22 +85,13 @@ HAVE_EFL_ECORE?=
 HAVE_EFL+=	${LIB}
 .  endif
 . endfor
-
-#
-# Ecore components
-#
-. for COMP in ${_EFL_ECORE_ALL}
-.  if exists(${_ecore_PREFIX}/lib/lib${_ecore_${COMP}_NAME}.so.${_ecore_VERSION})
-HAVE_EFL_ECORE+=	${COMP}
-.  endif
-. endfor
 .endif
 
 .endif #EFL_Include_pre
 .endif #AFTERPORTMK
 
 #
-# Handle USE_EFL, USE_EFL_EVAS_* and USE_EFL_ECORE features
+# Handle USE_EFL feature
 #
 .if !defined(BEFOREPORTMK)
 .if !defined(EFL_Include_post)

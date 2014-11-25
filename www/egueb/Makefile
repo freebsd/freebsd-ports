@@ -21,6 +21,10 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-static
 
+BROKEN=		Don't build with EFL 1.11
+DEPRECATED=	Unused by EFL 1.11
+EXPIRATION_DATE=2014-12-31
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|@LEX@|${LOCALBASE}/bin/flex|" \
 		${WRKSRC}/ecss/lib/Makefile.in

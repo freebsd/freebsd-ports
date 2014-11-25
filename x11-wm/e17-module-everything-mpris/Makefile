@@ -19,6 +19,10 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig tar:bzip2
 USE_EFL=	edje libtool_hack modarch_hack
 
+BROKEN=		Don't build with EFL 1.11
+DEPRECATED=	Broken and updates aren't available
+EXPIRATION_DATE=2014-12-31
+
 OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>

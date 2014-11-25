@@ -1,5 +1,0 @@
-include/ecore-1/Ecore_IMF.h
-lib/libecore_imf.so
-lib/libecore_imf.so.8
-libdata/pkgconfig/ecore-imf.pc
-@dirrmtry include/ecore-1

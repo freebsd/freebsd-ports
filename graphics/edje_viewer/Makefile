@@ -3,17 +3,18 @@
 
 PORTNAME=	edje_viewer
 PORTVERSION=	20130520
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	LOCAL/gblach/e17/extra/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Simple viewer for .edj files
 
+LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
+		libelementary.so:${PORTSDIR}/x11-toolkits/elementary
+
 USES=		pkgconfig tar:bzip2
 DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes
-USE_EFL=	evas ecore edje elementary
-USE_EFL_ECORE=	file
 
 .include <bsd.port.mk>

@@ -54,7 +54,6 @@
     SUBDIR += elixir
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
-    SUBDIR += embryo
     SUBDIR += erlang
     SUBDIR += erlang-runtime15
     SUBDIR += erlang-runtime16

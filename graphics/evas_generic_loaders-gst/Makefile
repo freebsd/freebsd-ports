@@ -2,23 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	gst
-PORTVERSION=	1.7.9
+PORTVERSION=	1.12.0
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		LOCAL/gblach/e17/
+MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PKGNAMEPREFIX:S/-//}/
 PKGNAMEPREFIX=	evas_generic_loaders-
-DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${DISTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Additional loader for Evas (GStreamer)
 
 LICENSE=	GPLv2
 
-DIST_SUBDIR=	e17
+LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl
+
+DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		pkgconfig tar:bzip2
-USE_EFL=	eina
-USE_GSTREAMER=	good ffmpeg
+USES=		pkgconfig tar:xz
+USE_GSTREAMER1=	core
 USE_LDCONFIG=	yes
 
 BINSRC=		${WRKSRC}/src/bin/${PORTNAME}

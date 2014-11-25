@@ -1,0 +1,9 @@
+These are additional "generic" loaders for Evas that are stand-alone
+executables that evas may run from its generic loader module. This
+means that if they crash, the application loading the image does not
+crash also. In addition the licensing of these binaries will not
+affect the license of any application that uses Evas as this uses a
+completely generic execution system that allows anything to be plugged
+in as a loader.
+
+WWW: http://trac.enlightenment.org/e/wiki/Evas_Generic_Loaders
