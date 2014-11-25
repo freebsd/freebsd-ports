@@ -1,6 +1,6 @@
---- youtube_dl/__init__.py.orig	2014-09-27 21:51:19 UTC
-+++ youtube_dl/__init__.py
-@@ -108,7 +108,6 @@
+--- youtube_dl/__init__.py.orig	2014-11-23 17:50:21.000000000 +0800
++++ youtube_dl/__init__.py	2014-11-23 21:17:37.918929006 +0800
+@@ -34,7 +34,6 @@
      std_headers,
      write_string,
  )
@@ -8,7 +8,7 @@
  from .downloader import (
      FileDownloader,
  )
-@@ -399,17 +398,13 @@
+@@ -324,17 +323,13 @@
              ydl.add_post_processor(ExecAfterDownloadPP(
                  verboseOutput=opts.verbose, exec_cmd=opts.exec_cmd))
  
@@ -22,8 +22,8 @@
  
          # Maybe do nothing
          if (len(all_urls) < 1) and (opts.load_info_filename is None):
--            if not (opts.update_self or opts.rm_cachedir):
-+            if not (opts.rm_cachedir):
-                 parser.error(u'you must provide at least one URL')
-             else:
+-            if opts.update_self or opts.rm_cachedir:
++            if opts.rm_cachedir:
                  sys.exit()
+ 
+             ydl.warn_if_short_id(sys.argv[1:] if argv is None else argv)
