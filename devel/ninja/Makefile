@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ninja
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.3
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_ACCOUNT=	martine
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	85e13c1
+GH_COMMIT=	3309498
 
 CONFLICTS=	irc/ninja-[0-9]*
 USES=		python:build
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-build:
 	@(cd ${WRKSRC} && \
-		CXX="${CXX}" CFLAGS="${CXXFLAGS}" ${PYTHON_CMD} bootstrap.py --verbose)
+		CXX="${CXX}" CFLAGS="${CXXFLAGS}" ${PYTHON_CMD} configure.py --bootstrap)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${STAGEDIR}${PREFIX}/bin
