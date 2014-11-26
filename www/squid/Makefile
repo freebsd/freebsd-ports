@@ -2,6 +2,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.4.9
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -171,7 +172,7 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--sysconfdir=${ETCDIR} \
 		--with-logdir=/var/log/squid \
 		--with-pidfile=/var/run/squid/squid.pid \
-		--with-swapdir=/var/squid/cache/squid \
+		--with-swapdir=/var/squid/cache \
 		--enable-auth \
 		--enable-build-info \
 		--enable-loadable-modules \
