@@ -1218,6 +1218,7 @@
     SUBDIR += py-stripogram
     SUBDIR += py-syck
     SUBDIR += py-texttable
+    SUBDIR += py-tinycss
     SUBDIR += py-trans
     SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
