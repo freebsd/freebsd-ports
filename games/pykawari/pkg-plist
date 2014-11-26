@@ -39,8 +39,3 @@ libexec/ninix/_kawari8.so
 %%DATADIR%%/document/changelog.txt
 %%DATADIR%%/license.txt
 %%DATADIR%%/readme.1st
-@dirrm %%DATADIR%%/document/images
-@dirrm %%DATADIR%%/document/banners
-@dirrm %%DATADIR%%/document
-@dirrm %%DATADIR%%/build
-@dirrm %%DATADIR%%
