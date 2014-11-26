@@ -14,4 +14,4 @@ Feature highlights:
  + High resolution clock
  + Threading and synchronization primitives
 
-WWW: https://github.com/joyent/libuv
+WWW: https://github.com/libuv/libuv
