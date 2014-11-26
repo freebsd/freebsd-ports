@@ -6,7 +6,6 @@
 %%SITE_PERL%%/Test/LectroTest/RegressionTesting.pod
 %%SITE_PERL%%/Test/LectroTest/TestRunner.pm
 %%SITE_PERL%%/Test/LectroTest/Tutorial.pod
-%%SITE_PERL%%/mach/auto/Test/LectroTest/.packlist
 %%PERL5_MAN3%%/Test::LectroTest.3.gz
 %%PERL5_MAN3%%/Test::LectroTest::Compat.3.gz
 %%PERL5_MAN3%%/Test::LectroTest::FailureRecorder.3.gz

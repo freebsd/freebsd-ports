@@ -60,4 +60,3 @@
 %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Counter.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Number.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/String.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeHelpers/.packlist

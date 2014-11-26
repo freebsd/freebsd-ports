@@ -1,9 +1,3 @@
 %%PERL5_MAN3%%/XML::Compile::Dumper.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/Dumper/.packlist
 %%SITE_PERL%%/XML/Compile/Dumper.pod
 %%SITE_PERL%%/XML/Compile/Dumper.pm
-@dirrmtry %%SITE_PERL%%/XML/Compile
-@dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/Dumper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

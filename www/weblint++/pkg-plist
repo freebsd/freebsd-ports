@@ -1,4 +1,2 @@
 bin/weblint++
 man/man1/weblint++.1.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/weblint++/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/weblint++

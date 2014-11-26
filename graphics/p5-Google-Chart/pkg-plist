@@ -64,4 +64,3 @@
 %%PERL5_MAN3%%/Google::Chart::Type::XY.3.gz
 %%PERL5_MAN3%%/Google::Chart::Margin.3.gz
 %%PERL5_MAN3%%/Google::Chart::Types.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Chart/.packlist

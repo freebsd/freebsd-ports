@@ -1,6 +1,5 @@
 %%PERL5_MAN3%%/Term::EditLine.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Term/EditLine.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Term/EditLine.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/EditLine/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/EditLine/EditLine.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/EditLine/autosplit.ix
+%%SITE_ARCH%%/Term/EditLine.pm
+%%SITE_ARCH%%/Term/EditLine.pod
+%%SITE_ARCH%%/auto/Term/EditLine/EditLine.so
+%%SITE_ARCH%%/auto/Term/EditLine/autosplit.ix

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Subprocess/.packlist
 %%PERL5_MAN3%%/AnyEvent::Subprocess.3.gz
 %%PERL5_MAN3%%/AnyEvent::Subprocess::DefaultDelegates.3.gz
 %%PERL5_MAN3%%/AnyEvent::Subprocess::Delegate.3.gz

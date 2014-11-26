@@ -8,4 +8,3 @@
 %%PERL5_MAN3%%/HTML::FormatRTF.3.gz
 %%PERL5_MAN3%%/HTML::FormatText.3.gz
 %%PERL5_MAN3%%/HTML::Formatter.3.gz
-@dirrmtry %%SITE_PERL%%/HTML

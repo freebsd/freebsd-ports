@@ -2,7 +2,6 @@ bin/deploy_magetab_db.pl
 bin/fix_ae_magetab.pl
 bin/read_magetab.pl
 bin/unload_magetab_namespace.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/MAGETAB/.packlist
 %%SITE_PERL%%/Bio/MAGETAB/Util/Reader/DataMatrix.pm
 %%SITE_PERL%%/Bio/MAGETAB/Util/Reader/TagValueFile.pm
 %%SITE_PERL%%/Bio/MAGETAB/Util/Reader/Tabfile.pm

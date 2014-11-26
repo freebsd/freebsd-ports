@@ -111,7 +111,6 @@ bin/psh
 %%SITE_PERL%%/Psh/Support/Functions.pm
 %%SITE_PERL%%/Psh/Support/TiedOption.pm
 %%SITE_PERL%%/Psh/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/psh/.packlist
 man/man1/psh.1.gz
 man/man1/pshcomplete.1.gz
 man/man1/pshconfig.1.gz
@@ -182,11 +181,3 @@ man/man1/pshdevel.1.gz
 @dirrm %%DATADIR%%/complete
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/psh
-@dirrm %%SITE_PERL%%/Psh/Builtins/Fallback
-@dirrm %%SITE_PERL%%/Psh/Builtins
-@dirrm %%SITE_PERL%%/Psh/Locale
-@dirrm %%SITE_PERL%%/Psh/OS
-@dirrm %%SITE_PERL%%/Psh/Strategy
-@dirrm %%SITE_PERL%%/Psh/Support
-@dirrm %%SITE_PERL%%/Psh

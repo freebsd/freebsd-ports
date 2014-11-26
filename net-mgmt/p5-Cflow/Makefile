@@ -3,7 +3,7 @@
 
 PORTNAME=	Cflow
 PORTVERSION=	1.053
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/Cflow/ \
 		http://net.doit.wisc.edu/~plonka/Cflow/old/

@@ -5,7 +5,6 @@
 %%SITE_PERL%%/Mail/SRS/Reversible.pm
 %%SITE_PERL%%/Mail/SRS/Shortcut.pm
 %%SITE_PERL%%/Mail/SRS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SRS/.packlist
 bin/srs
 bin/srsd
 %%PERL5_MAN3%%/Mail::SRS.3.gz
@@ -16,7 +15,3 @@ bin/srsd
 %%PERL5_MAN3%%/Mail::SRS::Shortcut.3.gz
 man/man1/srs.1.gz
 man/man1/srsd.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SRS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrm %%SITE_PERL%%/Mail/SRS
-@dirrmtry %%SITE_PERL%%/Mail

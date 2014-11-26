@@ -21,4 +21,3 @@
 %%SITE_PERL%%/CommitBit/Notification/InviteToProject.pm
 %%SITE_PERL%%/CommitBit/Record.pm
 %%SITE_PERL%%/CommitBit/Test.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CommitBit/.packlist

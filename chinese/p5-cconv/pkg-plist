@@ -1,5 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/cconv.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/cconv/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/cconv/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/cconv/cconv.so
+%%SITE_ARCH%%/cconv.pm
+%%SITE_ARCH%%/auto/cconv/autosplit.ix
+%%SITE_ARCH%%/auto/cconv/cconv.so
 %%PERL5_MAN3%%/cconv.3.gz

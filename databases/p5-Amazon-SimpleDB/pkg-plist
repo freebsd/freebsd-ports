@@ -6,7 +6,6 @@
 %%SITE_PERL%%/Amazon/SimpleDB/ListDomainsResponse.pm
 %%SITE_PERL%%/Amazon/SimpleDB/QueryResponse.pm
 %%SITE_PERL%%/Amazon/SimpleDB/Response.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Amazon/SimpleDB/.packlist
 %%PERL5_MAN3%%/Amazon::SimpleDB.3.gz
 %%PERL5_MAN3%%/Amazon::SimpleDB::Domain.3.gz
 %%PERL5_MAN3%%/Amazon::SimpleDB::ErrorResponse.3.gz

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Metadata/.packlist
 %%SITE_PERL%%/Dist/Metadata.pm
 %%SITE_PERL%%/Dist/Metadata/Archive.pm
 %%SITE_PERL%%/Dist/Metadata/Dir.pm

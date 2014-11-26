@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/HTML::Truncate.3.gz
 %%SITE_PERL%%/HTML/Truncate.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Truncate/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Truncate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML

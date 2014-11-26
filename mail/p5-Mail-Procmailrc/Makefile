@@ -3,6 +3,7 @@
 
 PORTNAME=	Mail-Procmailrc
 PORTVERSION=	1.09
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN \
 		http://scott.wiersdorf.org/perl/

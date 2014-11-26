@@ -18,7 +18,6 @@
 %%SITE_PERL%%/Net/SinFP/Search.pm
 %%SITE_PERL%%/Net/SinFP/SinFP4.pm
 %%SITE_PERL%%/Net/SinFP/SinFP6.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SinFP/.packlist
 %%PERL5_MAN3%%/Net::SinFP.3.gz
 %%PERL5_MAN3%%/Net::SinFP::Consts.3.gz
 %%PERL5_MAN3%%/Net::SinFP::DB.3.gz
@@ -39,8 +38,3 @@
 %%PERL5_MAN3%%/Net::SinFP::Search.3.gz
 %%PERL5_MAN3%%/Net::SinFP::SinFP4.3.gz
 %%PERL5_MAN3%%/Net::SinFP::SinFP6.3.gz
-@dirrmtry %%SITE_PERL%%/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/SinFP/DB
-@dirrm %%SITE_PERL%%/Net/SinFP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SinFP

@@ -12,7 +12,3 @@
 %%SITE_PERL%%/Tatsumaki/Service.pm
 %%SITE_PERL%%/Tatsumaki/Template.pm
 %%SITE_PERL%%/Tatsumaki/Template/Micro.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tatsumaki/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tatsumaki
-@dirrmtry %%SITE_PERL%%/Tatsumaki/Template
-@dirrmtry %%SITE_PERL%%/Tatsumaki

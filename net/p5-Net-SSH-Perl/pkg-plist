@@ -87,18 +87,3 @@
 %%SITE_PERL%%/Net/SSH/Perl/Util/SSH1Misc.pm
 %%SITE_PERL%%/Net/SSH/Perl/Util/SSH2MP.pm
 %%SITE_PERL%%/Net/SSH/Perl/Util/Term.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH/Perl/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH/Perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Util
-@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Subsystem
-@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Key
-@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Kex
-@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Handle
-@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Comp
-@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Cipher
-@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Auth
-@dirrmtry %%SITE_PERL%%/Net/SSH/Perl
-@dirrmtry %%SITE_PERL%%/Net/SSH
-@dirrmtry %%SITE_PERL%%/Net

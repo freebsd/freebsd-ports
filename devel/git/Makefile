@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG
 MASTER_SITE_SUBDIR=	software/scm/git
@@ -237,7 +238,6 @@ post-install:
 	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${LN} -s git.html ${STAGEDIR}${DOCSDIR}/index.html
 .endif
-	-${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/git
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
@@ -260,8 +260,5 @@ post-install:
 .endif
 
 post-stage:
-.if ${PORT_OPTIONS:MPERL}
-	${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
-.endif
 
 .include <bsd.port.mk>

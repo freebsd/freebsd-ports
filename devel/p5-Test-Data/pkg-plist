@@ -3,7 +3,6 @@
 %%SITE_PERL%%/Test/Data/Function.pm
 %%SITE_PERL%%/Test/Data/Hash.pm
 %%SITE_PERL%%/Test/Data/Scalar.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Data/.packlist
 %%PERL5_MAN3%%/Test::Data.3.gz
 %%PERL5_MAN3%%/Test::Data::Array.3.gz
 %%PERL5_MAN3%%/Test::Data::Function.3.gz

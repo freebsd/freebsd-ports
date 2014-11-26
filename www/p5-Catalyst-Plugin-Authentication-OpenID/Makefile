@@ -3,6 +3,7 @@
 
 PORTNAME=	Catalyst-Plugin-Authentication-OpenID
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	www security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

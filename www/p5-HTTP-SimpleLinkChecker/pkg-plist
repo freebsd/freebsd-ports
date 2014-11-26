@@ -1,8 +1,4 @@
 bin/http_status
 %%PERL5_MAN3%%/HTTP::SimpleLinkChecker.3.gz
 %%SITE_PERL%%/HTTP/SimpleLinkChecker.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/SimpleLinkChecker/.packlist
 man/man1/http_status.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/SimpleLinkChecker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
-@dirrmtry %%SITE_PERL%%/HTTP

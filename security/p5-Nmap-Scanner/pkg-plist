@@ -61,12 +61,3 @@
 %%SITE_PERL%%/Nmap/Scanner/TaskProgress.pm
 %%SITE_PERL%%/Nmap/Scanner/Util.pm
 %%SITE_PERL%%/Nmap/Scanner/Util/BannerScanner.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Scanner/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Scanner
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap
-@dirrmtry %%SITE_PERL%%/Nmap/Scanner/Util
-@dirrmtry %%SITE_PERL%%/Nmap/Scanner/RunStats
-@dirrmtry %%SITE_PERL%%/Nmap/Scanner/OS
-@dirrmtry %%SITE_PERL%%/Nmap/Scanner/Backend
-@dirrmtry %%SITE_PERL%%/Nmap/Scanner
-@dirrmtry %%SITE_PERL%%/Nmap

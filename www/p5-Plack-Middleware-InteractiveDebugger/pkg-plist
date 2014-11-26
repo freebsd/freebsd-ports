@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/InteractiveDebugger/.packlist
 %%SITE_PERL%%/Plack/Middleware/InteractiveDebugger.pm
 %%SITE_PERL%%/Plack/Middleware/InteractiveDebugger/HTML.pm
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/console.png
@@ -10,8 +9,3 @@
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/source.png
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/style.css
 %%PERL5_MAN3%%/Plack::Middleware::InteractiveDebugger.3.gz
-@dirrm %%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger
-@dirrm %%SITE_PERL%%/Plack/Middleware/InteractiveDebugger
-@dirrmtry %%SITE_PERL%%/Plack/Middleware
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/InteractiveDebugger
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware

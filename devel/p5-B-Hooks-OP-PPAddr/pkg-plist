@@ -1,6 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/PPAddr.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/PPAddr/Install/Files.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/PPAddr/Install/hook_op_ppaddr.h
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/PPAddr/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/PPAddr/PPAddr.so
+%%SITE_ARCH%%/B/Hooks/OP/PPAddr.pm
+%%SITE_ARCH%%/B/Hooks/OP/PPAddr/Install/Files.pm
+%%SITE_ARCH%%/B/Hooks/OP/PPAddr/Install/hook_op_ppaddr.h
+%%SITE_ARCH%%/auto/B/Hooks/OP/PPAddr/PPAddr.so
 %%PERL5_MAN3%%/B::Hooks::OP::PPAddr.3.gz

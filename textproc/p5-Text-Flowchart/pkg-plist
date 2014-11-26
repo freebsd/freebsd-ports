@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Text::Flowchart.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Flowchart/.packlist
 %%SITE_PERL%%/Text/Flowchart.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Flowchart
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text

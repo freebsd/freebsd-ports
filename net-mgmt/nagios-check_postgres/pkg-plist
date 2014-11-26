@@ -1,5 +1,4 @@
 bin/check_postgres.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/check_postgres/.packlist
 %%NAGIOS%%libexec/nagios/check_postgres_archive_ready
 %%NAGIOS%%libexec/nagios/check_postgres_autovac_freeze
 %%NAGIOS%%libexec/nagios/check_postgres_backends
@@ -61,4 +60,3 @@ man/man1/check_postgres.1p.gz
 %%CACTI%%@dirrmtry share/cacti/scripts
 %%CACTI%%@dirrmtry share/cacti
 %%NAGIOS%%@dirrmtry libexec/nagios
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/check_postgres

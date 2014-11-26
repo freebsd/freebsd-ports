@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Cache/Memcached/Managed.pm
 %%SITE_PERL%%/Cache/Memcached/Managed/Inactive.pm
 %%SITE_PERL%%/Cache/Memcached/Managed/Multi.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/Managed/.packlist

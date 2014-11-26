@@ -11,7 +11,6 @@
 %%SITE_PERL%%/Protocol/WebSocket/Response.pm
 %%SITE_PERL%%/Protocol/WebSocket/Stateful.pm
 %%SITE_PERL%%/Protocol/WebSocket/URL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/WebSocket/.packlist
 %%PERL5_MAN3%%/Protocol::WebSocket.3.gz
 %%PERL5_MAN3%%/Protocol::WebSocket::Cookie.3.gz
 %%PERL5_MAN3%%/Protocol::WebSocket::Cookie::Request.3.gz
@@ -25,9 +24,3 @@
 %%PERL5_MAN3%%/Protocol::WebSocket::Response.3.gz
 %%PERL5_MAN3%%/Protocol::WebSocket::Stateful.3.gz
 %%PERL5_MAN3%%/Protocol::WebSocket::URL.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/WebSocket
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
-@dirrm %%SITE_PERL%%/Protocol/WebSocket/Handshake
-@dirrm %%SITE_PERL%%/Protocol/WebSocket/Cookie
-@dirrm %%SITE_PERL%%/Protocol/WebSocket
-@dirrmtry %%SITE_PERL%%/Protocol

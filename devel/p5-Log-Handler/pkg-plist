@@ -14,7 +14,6 @@
 %%SITE_PERL%%/Log/Handler/Plugin/Config/General.pm
 %%SITE_PERL%%/Log/Handler/Plugin/Config/Properties.pm
 %%SITE_PERL%%/Log/Handler/Plugin/YAML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Handler/.packlist
 %%PERL5_MAN3%%/Log::Handler.3.gz
 %%PERL5_MAN3%%/Log::Handler::Config.3.gz
 %%PERL5_MAN3%%/Log::Handler::Examples.3.gz

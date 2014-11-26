@@ -41,17 +41,5 @@ bin/spkg.pl
 %%SITE_PERL%%/HTML/sbase.pl
 %%SITE_PERL%%/HTML/spkg.pl
 %%SITE_PERL%%/XML/Seamstress.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Seamstress/.packlist
 man/man1/sbase.pl.1.gz
 man/man1/spkg.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Seamstress
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib/HTML/Seamstress
-@dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib/HTML
-@dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib
-@dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/html
-@dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart
-@dirrmtry %%SITE_PERL%%/HTML/Seamstress/Doc
-@dirrmtry %%SITE_PERL%%/HTML/Seamstress
-@dirrmtry %%SITE_PERL%%/HTML

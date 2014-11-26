@@ -1,5 +1,4 @@
 %%PERL5_MAN3%%/BSD::stat.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/BSD/stat.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/stat/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/stat/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/stat/stat.so
+%%SITE_ARCH%%/BSD/stat.pm
+%%SITE_ARCH%%/auto/BSD/stat/autosplit.ix
+%%SITE_ARCH%%/auto/BSD/stat/stat.so

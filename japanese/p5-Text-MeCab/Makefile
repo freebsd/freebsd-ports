@@ -3,6 +3,7 @@
 
 PORTNAME=		Text-MeCab
 PORTVERSION=		0.20009
+PORTREVISION=	1
 CATEGORIES=		japanese textproc perl5
 MASTER_SITES=		CPAN
 

@@ -2,10 +2,3 @@
 %%PERL5_MAN3%%/Games::Tournament::RoundRobin.3.gz
 %%SITE_PERL%%/Games/League/Member.pm
 %%SITE_PERL%%/Games/Tournament/RoundRobin.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Tournament/RoundRobin/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Tournament/RoundRobin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Tournament
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games
-@dirrmtry %%SITE_PERL%%/Games/Tournament
-@dirrmtry %%SITE_PERL%%/Games/League
-@dirrmtry %%SITE_PERL%%/Games

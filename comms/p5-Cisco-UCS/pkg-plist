@@ -11,7 +11,6 @@
 %%SITE_PERL%%/Cisco/UCS/Interconnect.pm
 %%SITE_PERL%%/Cisco/UCS/MgmtEntity.pm
 %%SITE_PERL%%/Cisco/UCS/ServiceProfile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/UCS/.packlist
 %%PERL5_MAN3%%/Cisco::UCS.3.gz
 %%PERL5_MAN3%%/Cisco::UCS::Blade.3.gz
 %%PERL5_MAN3%%/Cisco::UCS::Chassis.3.gz

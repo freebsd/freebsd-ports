@@ -1,4 +1,3 @@
-%%SITE_ARCH%%/auto/HTTP/Session/.packlist
 %%SITE_PERL%%/HTTP/Session.pm
 %%SITE_PERL%%/HTTP/Session/ID/MD5.pm
 %%SITE_PERL%%/HTTP/Session/ID/SHA1.pm

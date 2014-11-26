@@ -3,7 +3,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.4.5
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Releases/
 
@@ -71,7 +71,7 @@ post-install:
 .if defined(SLAVEPORT) && ${SLAVEPORT} == "p5"
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${INSTALL_WRKSRC}/examples/ && ${INSTALL_DATA} *.cgi ${STAGEDIR}${EXAMPLESDIR}/
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/SWF/SWF.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SWF/SWF.so
 .endif
 .if defined(SLAVEPORT) && ${SLAVEPORT} == "py"
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_mingc.so

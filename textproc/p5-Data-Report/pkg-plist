@@ -5,6 +5,3 @@
 %%SITE_PERL%%/Data/Report/Plugin/Csv.pm
 %%SITE_PERL%%/Data/Report/Plugin/Html.pm
 %%SITE_PERL%%/Data/Report/Plugin/Text.pm
-@dirrmtry %%SITE_PERL%%/Data/Report/Plugin
-@dirrmtry %%SITE_PERL%%/Data/Report
-@dirrmtry %%SITE_PERL%%/Data

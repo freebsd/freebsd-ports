@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/AttributeHelpers/.packlist
 %%SITE_PERL%%/MouseX/AttributeHelpers.pm
 %%SITE_PERL%%/MouseX/AttributeHelpers/Base.pm
 %%SITE_PERL%%/MouseX/AttributeHelpers/Bool.pm

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Util/Astro/.packlist
 %%SITE_PERL%%/DateTime/Util/Astro/Common.pm
 %%SITE_PERL%%/DateTime/Util/Astro/Moon.pm
 %%SITE_PERL%%/DateTime/Util/Astro/Sun.pm

@@ -47,7 +47,6 @@
 %%SITE_PERL%%/Apache/MP3/Playlist.pm
 %%SITE_PERL%%/Apache/MP3/Resample.pm
 %%SITE_PERL%%/Apache/MP3/Sorted.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/MP3/.packlist
 %%DATADIR%%/apache_mp3.css
 %%DATADIR%%/apache_mp3_fig1.gif
 %%DATADIR%%/apache_mp3_help.gif
@@ -59,8 +58,3 @@
 %%DATADIR%%/right_arrow.gif
 %%DATADIR%%/sound.gif
 @dirrmtry %%DATADIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/MP3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/Apache/MP3/L10N
-@dirrmtry %%SITE_PERL%%/Apache/MP3
-@dirrmtry %%SITE_PERL%%/Apache

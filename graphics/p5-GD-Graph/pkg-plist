@@ -19,4 +19,3 @@
 %%SITE_PERL%%/GD/Graph/pie.pm
 %%SITE_PERL%%/GD/Graph/points.pm
 %%SITE_PERL%%/GD/Graph/utils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph/.packlist

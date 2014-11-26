@@ -12,4 +12,3 @@
 %%SITE_PERL%%/Path/Extended/Dir.pm
 %%SITE_PERL%%/Path/Extended/Entity.pm
 %%SITE_PERL%%/Path/Extended/File.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Extended/.packlist

@@ -23,7 +23,6 @@
 %%SITE_PERL%%/Mail/LMLM/Types/Mailman.pm
 %%SITE_PERL%%/Mail/LMLM/Types/Majordomo.pm
 %%SITE_PERL%%/Mail/get-version.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/LMLM/.packlist
 %%DATADIR%%/COPYING
 %%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Hamakor.pm
 %%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Iglu.pm
@@ -39,9 +38,3 @@
 @dirrmtry %%EXAMPLESDIR%%/Iglu
 @dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%DATADIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/LMLM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/Mail/LMLM/Types
-@dirrmtry %%SITE_PERL%%/Mail/LMLM/Render
-@dirrmtry %%SITE_PERL%%/Mail/LMLM
-@dirrmtry %%SITE_PERL%%/Mail

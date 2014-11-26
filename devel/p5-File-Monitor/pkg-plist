@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Monitor/.packlist
 %%SITE_PERL%%/File/Monitor.pm
 %%SITE_PERL%%/File/Monitor/Base.pm
 %%SITE_PERL%%/File/Monitor/Delta.pm

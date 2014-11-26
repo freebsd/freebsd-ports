@@ -1,8 +1,2 @@
 %%SITE_PERL%%/Geo/Coder/OSM.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/OSM/.packlist
 %%PERL5_MAN3%%/Geo::Coder::OSM.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/OSM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/Geo/Coder
-@dirrmtry %%SITE_PERL%%/Geo

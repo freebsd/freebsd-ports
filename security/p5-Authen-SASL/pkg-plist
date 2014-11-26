@@ -20,9 +20,3 @@
 %%SITE_PERL%%/Authen/SASL/Perl/GSSAPI.pm
 %%SITE_PERL%%/Authen/SASL/Perl/LOGIN.pm
 %%SITE_PERL%%/Authen/SASL/Perl/PLAIN.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
-@dirrmtry %%SITE_PERL%%/Authen/SASL/Perl
-@dirrmtry %%SITE_PERL%%/Authen/SASL
-@dirrmtry %%SITE_PERL%%/Authen

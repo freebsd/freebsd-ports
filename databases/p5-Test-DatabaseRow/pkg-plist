@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DatabaseRow/.packlist
 %%SITE_PERL%%/Test/DatabaseRow/Result.pm
 %%SITE_PERL%%/Test/DatabaseRow/Object.pm
 %%SITE_PERL%%/Test/DatabaseRow.pm

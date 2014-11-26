@@ -1,16 +1,12 @@
 bin/getaddrinfo
 bin/getnameinfo
-%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo.pm
-%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Core.pm
-%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Emul.pm
-%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Socket6api.pm
-%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Strict.pm
-%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/XS.pm
-%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.so
-%%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo
-%%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket
-%%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo
-%%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket
+%%OLD_PERL%%%%SITE_ARCH%%/Socket/GetAddrInfo.pm
+%%OLD_PERL%%%%SITE_ARCH%%/Socket/GetAddrInfo/Core.pm
+%%OLD_PERL%%%%SITE_ARCH%%/Socket/GetAddrInfo/Emul.pm
+%%OLD_PERL%%%%SITE_ARCH%%/Socket/GetAddrInfo/Socket6api.pm
+%%OLD_PERL%%%%SITE_ARCH%%/Socket/GetAddrInfo/Strict.pm
+%%OLD_PERL%%%%SITE_ARCH%%/Socket/GetAddrInfo/XS.pm
+%%OLD_PERL%%%%SITE_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.so
 %%PERL5_MAN3%%/Socket::GetAddrInfo.3.gz
 %%PERL5_MAN3%%/Socket::GetAddrInfo::Emul.3.gz
 %%PERL5_MAN3%%/Socket::GetAddrInfo::Socket6api.3.gz
@@ -23,5 +19,3 @@ man/man1/getnameinfo.1.gz
 %%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/Socket6api.pm
 %%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/Strict.pm
 %%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/XS.pm
-%%NEW_PERL%%@dirrmtry %%SITE_PERL%%/Socket/GetAddrInfo
-%%NEW_PERL%%@dirrmtry %%SITE_PERL%%/Socket

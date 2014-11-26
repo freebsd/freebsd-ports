@@ -2,8 +2,3 @@
 %%SITE_PERL%%/Crypt/GeneratePassword.pm
 %%SITE_PERL%%/Crypt/GeneratePassword/de.pm
 %%SITE_PERL%%/Crypt/GeneratePassword/en.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GeneratePassword/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GeneratePassword
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/Crypt/GeneratePassword
-@dirrmtry %%SITE_PERL%%/Crypt

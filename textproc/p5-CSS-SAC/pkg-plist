@@ -44,10 +44,3 @@
 %%SITE_PERL%%/CSS/SAC/SelectorList.pm
 %%SITE_PERL%%/CSS/SAC/TestWriter.pm
 %%SITE_PERL%%/CSS/SAC/Writer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/SAC/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/SAC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
-@dirrmtry %%SITE_PERL%%/CSS/SAC/Selector
-@dirrmtry %%SITE_PERL%%/CSS/SAC/Condition
-@dirrmtry %%SITE_PERL%%/CSS/SAC
-@dirrmtry %%SITE_PERL%%/CSS

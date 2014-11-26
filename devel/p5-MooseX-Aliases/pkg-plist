@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Aliases/.packlist
 %%SITE_PERL%%/MooseX/Aliases.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Attribute.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Class.pm

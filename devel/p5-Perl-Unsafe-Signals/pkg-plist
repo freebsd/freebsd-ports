@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Unsafe/Signals/Signals.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Unsafe/Signals/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/Perl/Unsafe/Signals.pm
+%%SITE_ARCH%%/auto/Perl/Unsafe/Signals/Signals.so
+%%SITE_ARCH%%/Perl/Unsafe/Signals.pm
 %%PERL5_MAN3%%/Perl::Unsafe::Signals.3.gz

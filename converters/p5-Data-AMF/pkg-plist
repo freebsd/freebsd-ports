@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/AMF/.packlist
 %%SITE_PERL%%/Data/AMF.pm
 %%SITE_PERL%%/Data/AMF/Formatter.pm
 %%SITE_PERL%%/Data/AMF/Formatter/AMF0.pm

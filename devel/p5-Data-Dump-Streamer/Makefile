@@ -3,6 +3,7 @@
 
 PORTNAME=	Data-Dump-Streamer
 PORTVERSION=	2.38
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +25,6 @@ USES=		perl5
 USE_PERL5=	modbuild
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Data/Dump/Streamer/Streamer.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/Dump/Streamer/Streamer.so
 
 .include <bsd.port.mk>

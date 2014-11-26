@@ -10,11 +10,9 @@ lib/librrd.so.0.0.0
 %%PERL5_MAN3%%/RRDp.3.gz
 %%PERL5_MAN3%%/RRDs.3.gz
 %%SITE_PERL%%/RRDp.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
-%%SITE_PERL%%/%%PERL_ARCH%%/ntmake.pl
+%%SITE_ARCH%%/RRDs.pm
+%%SITE_ARCH%%/auto/RRDs/RRDs.so
+%%SITE_ARCH%%/ntmake.pl
 man/man1/RRDp.1.gz
 man/man1/RRDs.1.gz
 man/man1/bin_dec_hex.1.gz

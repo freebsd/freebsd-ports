@@ -26,9 +26,3 @@
 %%SITE_PERL%%/CGI/Ex/sha1.js
 %%SITE_PERL%%/CGI/Ex/validate.js
 %%SITE_PERL%%/CGI/Ex/yaml_load.js
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrmtry %%SITE_PERL%%/CGI/Ex/App
-@dirrmtry %%SITE_PERL%%/CGI/Ex
-@dirrmtry %%SITE_PERL%%/CGI

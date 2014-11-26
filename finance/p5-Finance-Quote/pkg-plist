@@ -57,7 +57,6 @@
 %%SITE_PERL%%/Finance/Quote/YahooJSON.pm
 %%SITE_PERL%%/Finance/Quote/ZA.pm
 %%SITE_PERL%%/Finance/Quote/ZA_UnitTrusts.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote/.packlist
 %%PERL5_MAN3%%/Finance::Quote.3.gz
 %%PERL5_MAN3%%/Finance::Quote::AEX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::AIAHK.3.gz

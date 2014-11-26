@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Dir/Watch.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Watch/.packlist
 %%PERL5_MAN3%%/Dir::Watch.3.gz

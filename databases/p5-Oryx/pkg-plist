@@ -89,4 +89,3 @@
 %%SITE_PERL%%/Oryx/Value/Oid.pm
 %%SITE_PERL%%/Oryx/Value/String.pm
 %%SITE_PERL%%/Oryx/Value/Text.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Oryx/.packlist

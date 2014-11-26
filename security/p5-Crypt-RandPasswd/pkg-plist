@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Crypt::RandPasswd.3.gz
 %%SITE_PERL%%/Crypt/RandPasswd.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RandPasswd/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RandPasswd
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrm %%SITE_PERL%%/Crypt

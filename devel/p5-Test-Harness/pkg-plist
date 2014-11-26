@@ -49,7 +49,6 @@ bin/p5prove
 %%SITE_PERL%%/TAP/Parser/YAMLish/Writer.pm
 %%SITE_PERL%%/Test/HACKING.pod
 %%SITE_PERL%%/Test/Harness.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Harness/.packlist
 %%PERL5_MAN3%%/App::Prove.3.gz
 %%PERL5_MAN3%%/App::Prove::State.3.gz
 %%PERL5_MAN3%%/App::Prove::State::Result.3.gz

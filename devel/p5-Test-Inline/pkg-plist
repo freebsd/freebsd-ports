@@ -18,5 +18,4 @@ bin/inline2test
 %%SITE_PERL%%/Test/Inline/Script.pm
 %%SITE_PERL%%/Test/Inline/Section.pm
 %%SITE_PERL%%/Test/Inline/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Inline/.packlist
 man/man1/inline2test.1.gz

@@ -14,7 +14,3 @@ man/man1/physics-unit.1.gz
 %%PERL5_MAN3%%/Physics::Unit::Scalar::Implementation.3.gz
 %%PERL5_MAN3%%/Physics::Unit::UnitsByName.3.gz
 %%PERL5_MAN3%%/Physics::Unit::UnitsByType.3.gz
-@dirrm %%SITE_PERL%%/Physics/Unit/Scalar
-@dirrm %%SITE_PERL%%/Physics/Unit/Script
-@dirrm %%SITE_PERL%%/Physics/Unit
-@dirrmtry %%SITE_PERL%%/Physics

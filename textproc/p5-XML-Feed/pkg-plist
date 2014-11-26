@@ -10,11 +10,3 @@
 %%SITE_PERL%%/XML/Feed/Entry/Format/RSS.pm
 %%SITE_PERL%%/XML/Feed/Format/Atom.pm
 %%SITE_PERL%%/XML/Feed/Format/RSS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Feed/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Feed
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Feed/Format
-@dirrmtry %%SITE_PERL%%/XML/Feed/Entry/Format
-@dirrmtry %%SITE_PERL%%/XML/Feed/Entry
-@dirrmtry %%SITE_PERL%%/XML/Feed
-@dirrmtry %%SITE_PERL%%/XML

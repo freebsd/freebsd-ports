@@ -8,8 +8,3 @@
 %%SITE_PERL%%/Date/Handler/Delta.pm
 %%SITE_PERL%%/Date/Handler/Range.pm
 %%SITE_PERL%%/Date/Handler/Test.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Handler/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Handler
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrmtry %%SITE_PERL%%/Date/Handler
-@dirrmtry %%SITE_PERL%%/Date

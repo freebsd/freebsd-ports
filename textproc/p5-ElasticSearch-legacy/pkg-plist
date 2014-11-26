@@ -19,7 +19,3 @@
 %%SITE_PERL%%/ElasticSearch/Transport/HTTPLite.pm
 %%SITE_PERL%%/ElasticSearch/Transport/HTTPTiny.pm
 %%SITE_PERL%%/ElasticSearch/Util.pm
-%%SITE_PERL%%/mach/auto/ElasticSearch/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/ElasticSearch
-@dirrm %%SITE_PERL%%/ElasticSearch/Transport
-@dirrmtry %%SITE_PERL%%/ElasticSearch

@@ -3,6 +3,7 @@
 
 PORTNAME=	Search-Xapian
 PORTVERSION=	1.2.19.0
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet \

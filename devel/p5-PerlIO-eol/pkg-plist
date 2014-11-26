@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/eol/eol.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/eol/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/eol.pm
+%%SITE_ARCH%%/auto/PerlIO/eol/eol.so
+%%SITE_ARCH%%/PerlIO/eol.pm
 %%PERL5_MAN3%%/PerlIO::eol.3.gz

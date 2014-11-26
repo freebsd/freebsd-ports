@@ -1,5 +1,4 @@
 bin/pdbdump
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Palm/.packlist
 %%SITE_PERL%%/Palm/Address.pm
 %%SITE_PERL%%/Palm/Datebook.pm
 %%SITE_PERL%%/Palm/Mail.pm
@@ -17,5 +16,3 @@ bin/pdbdump
 %%PERL5_MAN3%%/Palm::StdAppInfo.3.gz
 %%PERL5_MAN3%%/Palm::ToDo.3.gz
 man/man1/pdbdump.1.gz
-@dirrm %%SITE_PERL%%/Palm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Palm

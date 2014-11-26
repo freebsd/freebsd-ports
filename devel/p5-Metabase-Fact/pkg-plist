@@ -16,7 +16,6 @@ man/man1/metabase-profile.1.gz
 %%SITE_PERL%%/Metabase/Resource/cpan.pm
 %%SITE_PERL%%/Metabase/Resource/perl/commit.pm
 %%SITE_PERL%%/Metabase/Resource/cpan/distfile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Metabase/Fact/.packlist
 %%PERL5_MAN3%%/Metabase::Fact.3.gz
 %%PERL5_MAN3%%/Metabase::Fact::Hash.3.gz
 %%PERL5_MAN3%%/Metabase::Fact::String.3.gz

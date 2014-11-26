@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/.packlist
 %%SITE_PERL%%/Business/FraudDetect.pm
 %%SITE_PERL%%/Business/FraudDetect/preCharge.pm
 %%SITE_PERL%%/Business/OnlinePayment.pm

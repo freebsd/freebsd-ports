@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/RTF::Tokenizer.3.gz
 %%SITE_PERL%%/RTF/Tokenizer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Tokenizer/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Tokenizer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF
-@dirrmtry %%SITE_PERL%%/RTF

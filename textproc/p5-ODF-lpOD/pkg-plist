@@ -33,11 +33,4 @@ bin/lpod_test
 %%SITE_PERL%%/ODF/lpOD/templates/presentation.odp
 %%SITE_PERL%%/ODF/lpOD/templates/spreadsheet.ods
 %%SITE_PERL%%/ODF/lpOD/templates/text.odt
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ODF/lpOD/.packlist
 man/man1/lpod_test.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ODF/lpOD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ODF
-@dirrmtry %%SITE_PERL%%/ODF/lpOD/templates
-@dirrmtry %%SITE_PERL%%/ODF/lpOD/data
-@dirrmtry %%SITE_PERL%%/ODF/lpOD
-@dirrmtry %%SITE_PERL%%/ODF

@@ -1,6 +1,4 @@
 man/man1/netCDFPerl.1.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/NetCDF.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetCDF/NetCDF.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetCDF/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetCDF/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetCDF
+%%SITE_ARCH%%/NetCDF.pm
+%%SITE_ARCH%%/auto/NetCDF/NetCDF.so
+%%SITE_ARCH%%/auto/NetCDF/autosplit.ix

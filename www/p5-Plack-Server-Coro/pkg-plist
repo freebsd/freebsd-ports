@@ -1,8 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server/Coro/.packlist
 %%SITE_PERL%%/Plack/Server/Coro.pm
 %%PERL5_MAN3%%/Plack::Server::Coro.3.gz
-@dirrmtry %%SITE_PERL%%/Plack/Server
-@dirrmtry %%SITE_PERL%%/Plack
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server/Coro
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack

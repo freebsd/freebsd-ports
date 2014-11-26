@@ -24,4 +24,3 @@
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application/Summation.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MethodAttributes/.packlist

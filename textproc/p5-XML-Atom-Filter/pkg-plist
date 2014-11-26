@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/XML::Atom::Filter.3.gz
 %%SITE_PERL%%/XML/Atom/Filter.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Filter/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Filter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Atom
-@dirrmtry %%SITE_PERL%%/XML

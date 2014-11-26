@@ -63,8 +63,3 @@
 %%SITE_PERL%%/FAQ/OMatic/submitMove.pm
 %%SITE_PERL%%/FAQ/OMatic/submitPart.pm
 %%SITE_PERL%%/FAQ/OMatic/submitPass.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FAQ/OMatic/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FAQ/OMatic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FAQ
-@dirrmtry %%SITE_PERL%%/FAQ/OMatic
-@dirrmtry %%SITE_PERL%%/FAQ

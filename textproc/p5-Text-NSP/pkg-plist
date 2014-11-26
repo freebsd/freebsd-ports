@@ -79,7 +79,6 @@ bin/statistic.pl
 %%SITE_PERL%%/Text/NSP/Measures/4D.pm
 %%SITE_PERL%%/Text/NSP/Measures/4D/MI.pm
 %%SITE_PERL%%/Text/NSP/Measures/4D/MI/ll.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP/.packlist
 man/man1/combig.pl.1.gz
 man/man1/count.pl.1.gz
 man/man1/count2huge.pl.1.gz
@@ -92,18 +91,3 @@ man/man1/huge-split.pl.1.gz
 man/man1/kocos.pl.1.gz
 man/man1/rank.pl.1.gz
 man/man1/statistic.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/4D/MI
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/4D
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/3D/MI
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/3D
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/MI
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/Dice
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/CHI
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D
-@dirrmtry %%SITE_PERL%%/Text/NSP/Measures
-@dirrmtry %%SITE_PERL%%/Text/NSP
-@dirrmtry %%SITE_PERL%%/Text

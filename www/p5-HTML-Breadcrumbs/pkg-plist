@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/HTML::Breadcrumbs.3.gz
 %%SITE_PERL%%/HTML/Breadcrumbs.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Breadcrumbs/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Breadcrumbs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML

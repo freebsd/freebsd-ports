@@ -9,10 +9,3 @@
 %%SITE_PERL%%/Mail/Mbox/MessageParser/Grep.pm
 %%SITE_PERL%%/Mail/Mbox/MessageParser/MetaInfo.pm
 %%SITE_PERL%%/Mail/Mbox/MessageParser/Perl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Mbox/MessageParser/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Mbox/MessageParser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Mbox
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/Mail/Mbox/MessageParser
-@dirrmtry %%SITE_PERL%%/Mail/Mbox
-@dirrmtry %%SITE_PERL%%/Mail

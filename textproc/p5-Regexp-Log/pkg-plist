@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Regexp::Log.3.gz
 %%SITE_PERL%%/Regexp/Log.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Log/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Log
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
-@dirrmtry %%SITE_PERL%%/Regexp

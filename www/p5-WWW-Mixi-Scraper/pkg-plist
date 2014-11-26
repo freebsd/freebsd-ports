@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi/Scraper/.packlist
 %%SITE_PERL%%/WWW/Mixi/Scraper.pm
 %%SITE_PERL%%/WWW/Mixi/Scraper/Utils.pm
 %%SITE_PERL%%/WWW/Mixi/Scraper/Mech.pm
@@ -47,10 +46,3 @@
 %%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ListEcho.3.gz
 %%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::RecentEcho.3.gz
 %%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ShowSchedule.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi/Scraper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin
-@dirrmtry %%SITE_PERL%%/WWW/Mixi/Scraper
-@dirrmtry %%SITE_PERL%%/WWW/Mixi
-@dirrmtry %%SITE_PERL%%/WWW

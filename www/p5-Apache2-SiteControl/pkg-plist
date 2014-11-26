@@ -14,8 +14,3 @@
 %%SITE_PERL%%/Apache2/SiteControl/Rule.pm
 %%SITE_PERL%%/Apache2/SiteControl/User.pm
 %%SITE_PERL%%/Apache2/SiteControl/UserFactory.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/SiteControl/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/SiteControl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2
-@dirrm %%SITE_PERL%%/Apache2/SiteControl
-@dirrmtry %%SITE_PERL%%/Apache2

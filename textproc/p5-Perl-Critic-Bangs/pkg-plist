@@ -7,7 +7,6 @@
 %%PERL5_MAN3%%/Perl::Critic::Policy::Bangs::ProhibitVagueNames.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::Bangs::ProhibitCommentedOutCode.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::Bangs::ProhibitBitwiseOperators.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Critic/Bangs/.packlist
 %%SITE_PERL%%/Perl/Critic/Bangs.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Bangs/ProhibitBitwiseOperators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Bangs/ProhibitCommentedOutCode.pm
@@ -17,7 +16,3 @@
 %%SITE_PERL%%/Perl/Critic/Policy/Bangs/ProhibitRefProtoOrProto.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Bangs/ProhibitUselessRegexModifiers.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Bangs/ProhibitVagueNames.pm
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/Bangs
-@dirrmtry %%SITE_PERL%%/Perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Critic/Bangs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Critic

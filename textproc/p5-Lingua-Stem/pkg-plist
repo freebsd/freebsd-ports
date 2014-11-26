@@ -19,8 +19,3 @@
 %%SITE_PERL%%/Lingua/Stem/No.pm
 %%SITE_PERL%%/Lingua/Stem/Pt.pm
 %%SITE_PERL%%/Lingua/Stem/Sv.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrmtry %%SITE_PERL%%/Lingua/Stem
-@dirrmtry %%SITE_PERL%%/Lingua

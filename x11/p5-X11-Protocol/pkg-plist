@@ -31,10 +31,3 @@
 %%SITE_PERL%%/X11/Protocol/Ext/SHAPE.pm
 %%SITE_PERL%%/X11/Protocol/Ext/XC_MISC.pm
 %%SITE_PERL%%/X11/Protocol/Ext/XFree86_Misc.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Protocol/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Protocol
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11
-@dirrmtry %%SITE_PERL%%/X11/Protocol/Ext
-@dirrmtry %%SITE_PERL%%/X11/Protocol/Connection
-@dirrmtry %%SITE_PERL%%/X11/Protocol
-@dirrmtry %%SITE_PERL%%/X11

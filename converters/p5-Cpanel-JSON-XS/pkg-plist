@@ -1,8 +1,7 @@
 bin/cpanel_json_xs
-%%SITE_PERL%%/%%PERL_ARCH%%/Cpanel/JSON/XS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Cpanel/JSON/XS/Boolean.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cpanel/JSON/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cpanel/JSON/XS/XS.so
+%%SITE_ARCH%%/Cpanel/JSON/XS.pm
+%%SITE_ARCH%%/Cpanel/JSON/XS/Boolean.pm
+%%SITE_ARCH%%/auto/Cpanel/JSON/XS/XS.so
 %%PERL5_MAN3%%/Cpanel::JSON::XS.3.gz
 %%PERL5_MAN3%%/Cpanel::JSON::XS::Boolean.3.gz
 man/man1/cpanel_json_xs.1.gz

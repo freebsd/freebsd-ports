@@ -3,7 +3,3 @@
 %%SITE_PERL%%/Math/Kleene.pod
 %%SITE_PERL%%/Math/MatrixReal.pm
 %%SITE_PERL%%/Math/funcs.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MatrixReal/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MatrixReal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/Math

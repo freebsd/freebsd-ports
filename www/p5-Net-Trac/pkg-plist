@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trac/.packlist
 %%SITE_PERL%%/Net/Trac.pm
 %%SITE_PERL%%/Net/Trac/Connection.pm
 %%SITE_PERL%%/Net/Trac/Mechanize.pm
@@ -17,7 +16,3 @@
 %%PERL5_MAN3%%/Net::Trac::TicketHistoryEntry.3.gz
 %%PERL5_MAN3%%/Net::Trac::TicketPropChange.3.gz
 %%PERL5_MAN3%%/Net::Trac::TicketSearch.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trac
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Trac
-@dirrmtry %%SITE_PERL%%/Net

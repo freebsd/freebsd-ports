@@ -56,12 +56,4 @@ bin/html2pdf.pl
 %%SITE_PERL%%/PDF/FromHTML/Template/Iterator.pm
 %%SITE_PERL%%/PDF/FromHTML/Template/TextObject.pm
 %%SITE_PERL%%/PDF/FromHTML/Twig.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/FromHTML/.packlist
 man/man1/html2pdf.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/FromHTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
-@dirrmtry %%SITE_PERL%%/PDF/FromHTML/Template/Element
-@dirrmtry %%SITE_PERL%%/PDF/FromHTML/Template/Container
-@dirrmtry %%SITE_PERL%%/PDF/FromHTML/Template
-@dirrmtry %%SITE_PERL%%/PDF/FromHTML
-@dirrmtry %%SITE_PERL%%/PDF

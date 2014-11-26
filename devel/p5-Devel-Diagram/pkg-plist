@@ -3,7 +3,6 @@
 %%SITE_PERL%%/Devel/Diagram.pm
 %%SITE_PERL%%/Devel/Diagram/Render/UXF20.pm
 %%SITE_PERL%%/Devel/Diagram/xsl/uxf20toHtml.xsl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Diagram/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ClassDiagram.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-CGI.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-CPAN.html

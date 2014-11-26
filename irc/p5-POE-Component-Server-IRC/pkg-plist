@@ -1,6 +1,5 @@
 bin/pmkpasswd
 man/man1/pmkpasswd.1.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/IRC/.packlist
 %%SITE_PERL%%/POE/Component/Server/IRC.pm
 %%SITE_PERL%%/POE/Component/Server/IRC/Common.pm
 %%SITE_PERL%%/POE/Component/Server/IRC/Plugin.pm

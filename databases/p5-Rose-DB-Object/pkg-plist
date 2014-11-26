@@ -147,4 +147,3 @@
 %%SITE_PERL%%/Rose/DB/Object/Std/Metadata.pm
 %%SITE_PERL%%/Rose/DB/Object/Tutorial.pod
 %%SITE_PERL%%/Rose/DB/Object/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB/Object/.packlist

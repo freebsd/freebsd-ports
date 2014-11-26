@@ -15,10 +15,8 @@ lib/libpreludedb/plugins/formats/classic.so
 %%MYSQL%%lib/libpreludedb/plugins/sql/mysql.so
 %%PGSQL%%lib/libpreludedb/plugins/sql/pgsql.so
 %%SQLITE%%lib/libpreludedb/plugins/sql/sqlite3.so
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/PreludeDB.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.so
-%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB
+%%PERL%%%%SITE_ARCH%%/PreludeDB.pm
+%%PERL%%%%SITE_ARCH%%/auto/PreludeDB/PreludeDB.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_preludedb.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb-0.0.0-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.py

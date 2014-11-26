@@ -3,7 +3,6 @@
 %%PERL5_MAN3%%/Sub::Defer.3.gz
 %%PERL5_MAN3%%/Sub::Quote.3.gz
 %%PERL5_MAN3%%/oo.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moo/.packlist
 %%SITE_PERL%%/Method/Generate/Accessor.pm
 %%SITE_PERL%%/Method/Generate/BuildAll.pm
 %%SITE_PERL%%/Method/Generate/Constructor.pm

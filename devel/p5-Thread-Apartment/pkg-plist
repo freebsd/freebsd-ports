@@ -7,5 +7,4 @@
 %%SITE_PERL%%/Thread/Apartment/Client.pm
 %%SITE_PERL%%/Thread/Apartment.pod
 %%SITE_PERL%%/Thread/Apartment.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Apartment/.packlist
 %%PERL5_MAN3%%/Thread::Apartment.3.gz

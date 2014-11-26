@@ -12,4 +12,3 @@
 %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Trait/Parameterized.pm
 %%SITE_PERL%%/MooseX/Role/Parameterized/Parameters.pm
 %%SITE_PERL%%/MooseX/Role/Parameterized/Tutorial.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/Parameterized/.packlist

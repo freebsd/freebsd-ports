@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Crypt::X509.3.gz
 %%SITE_PERL%%/Crypt/X509.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/X509/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/X509
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/Crypt

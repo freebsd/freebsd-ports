@@ -8,8 +8,3 @@
 %%SITE_PERL%%/Frontier/Daemon.pm
 %%SITE_PERL%%/Frontier/RPC2.pm
 %%SITE_PERL%%/Frontier/Responder.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier/RPC/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier/RPC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier
-@dirrmtry %%SITE_PERL%%/Frontier
-@dirrmtry %%SITE_PERL%%/Apache

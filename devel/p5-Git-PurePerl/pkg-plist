@@ -25,4 +25,3 @@
 %%SITE_PERL%%/Git/PurePerl/Protocol/File.pm
 %%SITE_PERL%%/Git/PurePerl/Protocol/Git.pm
 %%SITE_PERL%%/Git/PurePerl/Protocol/SSH.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl/.packlist

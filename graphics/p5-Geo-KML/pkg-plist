@@ -12,4 +12,3 @@
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/kml22gx.xsd
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/ogckml22.xsd
 %%SITE_PERL%%/Geo/KML/xsd/xal-2.0/xAL.xsd
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/KML/.packlist

@@ -12,7 +12,6 @@
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Session.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Timer.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::TrackObjects.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Debug/.packlist
 %%SITE_PERL%%/Plack/Middleware/Debug.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Base.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/CatalystLog.pm
@@ -40,9 +39,3 @@
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-Debug/debug_toolbar/toolbar.js
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-Debug/debug_toolbar/toolbar.min.css
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-Debug/debug_toolbar/toolbar.min.js
-@dirrm %%SITE_PERL%%/auto/share/dist/Plack-Middleware-Debug/debug_toolbar
-@dirrm %%SITE_PERL%%/auto/share/dist/Plack-Middleware-Debug
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrm %%SITE_PERL%%/Plack/Middleware/Debug
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Debug
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware

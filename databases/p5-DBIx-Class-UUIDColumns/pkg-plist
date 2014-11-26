@@ -18,4 +18,3 @@
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/UUID/Random.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32/Guidgen.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32API/GUID.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/UUIDColumns/.packlist

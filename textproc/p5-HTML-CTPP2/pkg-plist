@@ -1,8 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/HTML/CTPP2.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/CTPP2/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/CTPP2/CTPP2.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/CTPP2/autosplit.ix
+%%SITE_ARCH%%/HTML/CTPP2.pm
+%%SITE_ARCH%%/auto/HTML/CTPP2/CTPP2.so
+%%SITE_ARCH%%/auto/HTML/CTPP2/autosplit.ix
 %%PERL5_MAN3%%/HTML::CTPP2.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/CTPP2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML

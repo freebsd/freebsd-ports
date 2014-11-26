@@ -14,4 +14,3 @@
 %%SITE_PERL%%/Net/OpenID/URIFetch.pm
 %%SITE_PERL%%/Net/OpenID/Yadis.pm
 %%SITE_PERL%%/Net/OpenID/Yadis/Service.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/Common/.packlist

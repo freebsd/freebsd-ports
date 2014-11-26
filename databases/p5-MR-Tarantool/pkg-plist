@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MR/Tarantool/.packlist
 %%SITE_PERL%%/MR/Pending.pm
 %%SITE_PERL%%/MR/IProto.pm
 %%SITE_PERL%%/MR/Tarantool/Box/Singleton.pm

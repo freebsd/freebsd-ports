@@ -24,4 +24,3 @@
 %%SITE_PERL%%/Data/Stream/Bulk/Nil.pm
 %%SITE_PERL%%/Data/Stream/Bulk/Path/Class.pm
 %%SITE_PERL%%/Data/Stream/Bulk/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream/Bulk/.packlist

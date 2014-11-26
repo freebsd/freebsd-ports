@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/DKW/.packlist
 %%SITE_PERL%%/Tk/CheckBox.pm
 %%SITE_PERL%%/Tk/ChildNotification.pm
 %%SITE_PERL%%/Tk/Columns.pm
@@ -25,6 +24,3 @@
 %%PERL5_MAN3%%/Tk::TabFrame.3.gz
 %%PERL5_MAN3%%/Tk::TabbedForm.3.gz
 %%PERL5_MAN3%%/Tk::TableEdit.3.gz
-@dirrmtry %%SITE_PERL%%/Tk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/DKW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk

@@ -1,6 +1,2 @@
 %%SITE_PERL%%/OpenCA/X509.pm
 %%SITE_PERL%%/OpenCA/prova.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/X509/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/X509
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA
-@dirrmtry %%SITE_PERL%%/OpenCA

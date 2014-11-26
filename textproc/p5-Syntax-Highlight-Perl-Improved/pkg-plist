@@ -1,10 +1,2 @@
 %%PERL5_MAN3%%/Syntax::Highlight::Perl::Improved.3.gz
 %%SITE_PERL%%/Syntax/Highlight/Perl/Improved.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Perl/Improved/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Perl/Improved
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax
-@dirrmtry %%SITE_PERL%%/Syntax/Highlight/Perl
-@dirrmtry %%SITE_PERL%%/Syntax/Highlight
-@dirrmtry %%SITE_PERL%%/Syntax

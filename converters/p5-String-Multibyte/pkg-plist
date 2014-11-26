@@ -36,4 +36,3 @@
 %%SITE_PERL%%/String/Multibyte/UTF32LE.pm
 %%SITE_PERL%%/String/Multibyte/UTF8.pm
 %%SITE_PERL%%/String/Multibyte/Unicode.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Multibyte/.packlist

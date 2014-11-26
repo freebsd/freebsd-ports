@@ -2,4 +2,3 @@
 %%PERL5_MAN3%%/Graphics::Primitive::Driver::Cairo::TextLayout.3.gz
 %%SITE_PERL%%/Graphics/Primitive/Driver/Cairo.pm
 %%SITE_PERL%%/Graphics/Primitive/Driver/Cairo/TextLayout.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/Driver/Cairo/.packlist

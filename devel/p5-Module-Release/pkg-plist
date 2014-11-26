@@ -7,7 +7,6 @@ bin/release
 %%SITE_PERL%%/Module/Release/Prereq.pm
 %%SITE_PERL%%/Module/Release/SVN.pm
 %%SITE_PERL%%/Module/Release/WebUpload/Mojo.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Release/.packlist
 %%PERL5_MAN3%%/Module::Release.3.gz
 %%PERL5_MAN3%%/Module::Release::FTP.3.gz
 %%PERL5_MAN3%%/Module::Release::Kwalitee.3.gz

@@ -13,37 +13,26 @@ man/man1/razor-revoke.1.gz
 man/man5/razor-agent.conf.5.gz
 man/man5/razor-agents.5.gz
 man/man5/razor-whitelist.5.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Agent.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Config.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Core.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Engine.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Version.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Engine/VR8.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Errorhandler.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Logger.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/Manager.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deBase64.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deHTML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deHTML_comment.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deHTMLxs.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deNewline.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deQP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/enBase64.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Signature/Ephemeral.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Signature/Whiplash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/String.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Syslog.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Syslog/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/razor-agents/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Signature
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Engine
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Razor2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Syslog
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/razor-agents
+%%SITE_ARCH%%/Razor2/Client/Agent.pm
+%%SITE_ARCH%%/Razor2/Client/Config.pm
+%%SITE_ARCH%%/Razor2/Client/Core.pm
+%%SITE_ARCH%%/Razor2/Client/Engine.pm
+%%SITE_ARCH%%/Razor2/Client/Version.pm
+%%SITE_ARCH%%/Razor2/Engine/VR8.pm
+%%SITE_ARCH%%/Razor2/Errorhandler.pm
+%%SITE_ARCH%%/Razor2/Logger.pm
+%%SITE_ARCH%%/Razor2/Preproc/Manager.pm
+%%SITE_ARCH%%/Razor2/Preproc/deBase64.pm
+%%SITE_ARCH%%/Razor2/Preproc/deHTML.pm
+%%SITE_ARCH%%/Razor2/Preproc/deHTML_comment.pm
+%%SITE_ARCH%%/Razor2/Preproc/deHTMLxs.pm
+%%SITE_ARCH%%/Razor2/Preproc/deNewline.pm
+%%SITE_ARCH%%/Razor2/Preproc/deQP.pm
+%%SITE_ARCH%%/Razor2/Preproc/enBase64.pm
+%%SITE_ARCH%%/Razor2/Signature/Ephemeral.pm
+%%SITE_ARCH%%/Razor2/Signature/Whiplash.pm
+%%SITE_ARCH%%/Razor2/String.pm
+%%SITE_ARCH%%/Razor2/Syslog.pm
+%%SITE_ARCH%%/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
+%%SITE_ARCH%%/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.so
+%%SITE_ARCH%%/auto/Razor2/Syslog/autosplit.ix

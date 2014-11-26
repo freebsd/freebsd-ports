@@ -64,12 +64,4 @@ bin/kwiki-install
 %%SITE_PERL%%/CGI/Kwiki/Slides.pm
 %%SITE_PERL%%/CGI/Kwiki/Style.pm
 %%SITE_PERL%%/CGI/Kwiki/Template.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI-Kwiki/.packlist
 man/man1/kwiki-install.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI-Kwiki
-@dirrmtry %%SITE_PERL%%/CGI/Kwiki/Plugin
-@dirrmtry %%SITE_PERL%%/CGI/Kwiki/Pages
-@dirrmtry %%SITE_PERL%%/CGI/Kwiki/I18N
-@dirrmtry %%SITE_PERL%%/CGI/Kwiki/Backup
-@dirrmtry %%SITE_PERL%%/CGI/Kwiki
-@dirrmtry %%SITE_PERL%%/CGI

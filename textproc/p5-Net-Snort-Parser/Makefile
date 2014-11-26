@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-Snort-Parser
 PORTVERSION=	1.41
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	https://projects.honeynet.org/svn/honeywall/honeywall/trunk/rpm-devel/perl-${PORTNAME}/ \
     		http://mirrors.rit.edu/zi/

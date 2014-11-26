@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Sub/Exporter/GlobExporter.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/GlobExporter/.packlist
 %%PERL5_MAN3%%/Sub::Exporter::GlobExporter.3.gz

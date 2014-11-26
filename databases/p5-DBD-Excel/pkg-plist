@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Excel/.packlist
 %%SITE_PERL%%/DBD/Excel.pm
 %%PORTEXAMPLES%%share/examples/DBD-Excel/README
 %%PORTEXAMPLES%%share/examples/DBD-Excel/dbdtest.xls

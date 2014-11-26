@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/WWW::Search::Google.3.gz
 %%SITE_PERL%%/WWW/Search/Google.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/Google/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/Google
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/Search
-@dirrmtry %%SITE_PERL%%/WWW

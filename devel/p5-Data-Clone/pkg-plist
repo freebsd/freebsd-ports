@@ -1,5 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Data/Clone.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Clone/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Clone/Clone.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Clone/data_clone.h
+%%SITE_ARCH%%/Data/Clone.pm
+%%SITE_ARCH%%/auto/Data/Clone/Clone.so
+%%SITE_ARCH%%/auto/Data/Clone/data_clone.h
 %%PERL5_MAN3%%/Data::Clone.3.gz

@@ -65,7 +65,6 @@ man/man1/mogstored.1.gz
 %%SITE_PERL%%/Mogstored/SideChannelClient.pm
 %%SITE_PERL%%/Mogstored/SideChannelListener.pm
 %%SITE_PERL%%/Mogstored/TaskQueue.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server/.packlist
 %%PERL5_MAN3%%/MogileFS::Checksum.3.gz
 %%PERL5_MAN3%%/MogileFS::Class.3.gz
 %%PERL5_MAN3%%/MogileFS::DevFID.3.gz
@@ -93,14 +92,3 @@ man/man1/mogstored.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/pluggable-replication-policies.txt
 %%PORTDOCS%%%%DOCSDIR%%/testing.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
-@dirrmtry %%SITE_PERL%%/Mogstored/HTTPServer
-@dirrmtry %%SITE_PERL%%/Mogstored/ChildProcess
-@dirrmtry %%SITE_PERL%%/Mogstored
-@dirrmtry %%SITE_PERL%%/MogileFS/Worker
-@dirrmtry %%SITE_PERL%%/MogileFS/Store
-@dirrmtry %%SITE_PERL%%/MogileFS/ReplicationPolicy
-@dirrmtry %%SITE_PERL%%/MogileFS/Factory
-@dirrmtry %%SITE_PERL%%/MogileFS/Connection
-@dirrmtry %%SITE_PERL%%/MogileFS

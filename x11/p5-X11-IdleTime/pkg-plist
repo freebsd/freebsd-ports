@@ -1,7 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/X11/IdleTime.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/IdleTime/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/IdleTime/IdleTime.so
+%%SITE_ARCH%%/X11/IdleTime.pm
+%%SITE_ARCH%%/auto/X11/IdleTime/IdleTime.so
 %%PERL5_MAN3%%/X11::IdleTime.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/IdleTime
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/X11

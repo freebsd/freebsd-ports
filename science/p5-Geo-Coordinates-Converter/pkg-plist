@@ -19,13 +19,3 @@
 %%SITE_PERL%%/Geo/Coordinates/Converter/Format/Milliseconds.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Point.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Point/ISO6709.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter/Point
-@dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter/Format
-@dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter/Datum
-@dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter
-@dirrmtry %%SITE_PERL%%/Geo/Coordinates
-@dirrmtry %%SITE_PERL%%/Geo

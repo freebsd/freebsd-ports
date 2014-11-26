@@ -196,25 +196,11 @@ man/man1/spamd.1.gz
 %%SITE_PERL%%/Mail/SpamAssassin/Util/ScopedTimer.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/TieOneStringHash.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/TinyRedis.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
 %%SITE_PERL%%/spamassassin-run.pod
 %%DATADIR%%/languages
 %%DATADIR%%/sa-update-pubkey.txt
 %%DATADIR%%/user_prefs.template
 @dirrm %%DATADIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Util
-@dirrmtry %%SITE_PERL%%/Mail/SpamAssassin/Plugin
-@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Message/Metadata
-@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Message
-@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Logger
-@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Locker
-@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Conf
-@dirrm %%SITE_PERL%%/Mail/SpamAssassin/BayesStore
-@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Bayes
-@dirrm %%SITE_PERL%%/Mail/SpamAssassin
-@dirrmtry %%SITE_PERL%%/Mail
 @dirrmtry %%ETCDIR%%
 @dirrmtry etc/mail
 

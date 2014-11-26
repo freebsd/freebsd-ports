@@ -14,4 +14,3 @@
 %%SITE_PERL%%/Config/Any/Perl.pm
 %%SITE_PERL%%/Config/Any/XML.pm
 %%SITE_PERL%%/Config/Any/YAML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Any/.packlist

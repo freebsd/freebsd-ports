@@ -3,7 +3,7 @@
 
 PORTNAME=	trafficserver
 PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -24,7 +24,7 @@ INSTALL_TARGET=	install-strip
 USES=		cpe gmake libtool perl5 pkgconfig tar:bzip2 tcl
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
-USE_PERL5=	build run fixpacklist
+USE_PERL5=	build run
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -93,7 +93,6 @@ post-patch:
 		${WRKSRC}/lib/Makefile.in
 
 post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 	@${RMDIR} ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/snapshots
 	(cd ${STAGEDIR}${ETCDIR} && for f in *.config *.config.xml; do ${MV} $$f $$f.sample; done)

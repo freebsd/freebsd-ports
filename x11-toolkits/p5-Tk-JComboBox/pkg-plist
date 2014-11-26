@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JComboBox/.packlist
 %%SITE_PERL%%/Tk/CWidget.pm
 %%SITE_PERL%%/Tk/CWidget.pod
 %%SITE_PERL%%/Tk/CWidget/Util/Boolean.pm
@@ -10,9 +9,3 @@
 %%PERL5_MAN3%%/Tk::JComboBox.3.gz
 %%PERL5_MAN3%%/Tk::CWidget.3.gz
 %%PERL5_MAN3%%/Tk::JComboBox::tutorial.3.gz
-@dirrmtry %%SITE_PERL%%/Tk/JComboBox
-@dirrmtry %%SITE_PERL%%/Tk/CWidget/Util
-@dirrmtry %%SITE_PERL%%/Tk/CWidget
-@dirrmtry %%SITE_PERL%%/Tk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JComboBox
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk

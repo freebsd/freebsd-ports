@@ -23,7 +23,6 @@
 %%SITE_PERL%%/IO/All/String.pod
 %%SITE_PERL%%/IO/All/Temp.pm
 %%SITE_PERL%%/IO/All/Temp.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/.packlist
 %%PERL5_MAN3%%/IO::All.3.gz
 %%PERL5_MAN3%%/IO::All::DBM.3.gz
 %%PERL5_MAN3%%/IO::All::Dir.3.gz

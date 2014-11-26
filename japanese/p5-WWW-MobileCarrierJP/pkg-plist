@@ -1,5 +1,4 @@
 bin/www-mobilecarrierjp-dump_all.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/MobileCarrierJP/.packlist
 %%SITE_PERL%%/WWW/MobileCarrierJP/AirHPhone/CIDR.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/DoCoMo/Display.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/DoCoMo/Flash.pm

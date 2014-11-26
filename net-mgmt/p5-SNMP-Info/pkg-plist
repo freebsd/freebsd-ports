@@ -106,7 +106,6 @@
 %%SITE_PERL%%/SNMP/Info/SONMP.pm
 %%SITE_PERL%%/SNMP/Info/AMAP.pm
 %%SITE_PERL%%/SNMP/Info/MRO.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Info/.packlist
 %%PERL5_MAN3%%/SNMP::Info.3.gz
 %%PERL5_MAN3%%/SNMP::Info::AMAP.3.gz
 %%PERL5_MAN3%%/SNMP::Info::AdslLine.3.gz
@@ -215,11 +214,3 @@
 %%PERL5_MAN3%%/SNMP::Info::PowerEthernet.3.gz
 %%PERL5_MAN3%%/SNMP::Info::RapidCity.3.gz
 %%PERL5_MAN3%%/SNMP::Info::SONMP.3.gz
-@dirrm %%SITE_PERL%%/SNMP/Info/Layer7
-@dirrm %%SITE_PERL%%/SNMP/Info/Layer3
-@dirrm %%SITE_PERL%%/SNMP/Info/Layer2
-@dirrm %%SITE_PERL%%/SNMP/Info/Layer1
-@dirrm %%SITE_PERL%%/SNMP/Info
-@dirrm %%SITE_PERL%%/SNMP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Info
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP

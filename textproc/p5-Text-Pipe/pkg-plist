@@ -32,7 +32,6 @@
 %%PERL5_MAN3%%/Text::Pipe::Trim.3.gz
 %%PERL5_MAN3%%/Text::Pipe::Uppercase.3.gz
 %%PERL5_MAN3%%/Text::Pipe::UppercaseFirst.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Pipe/.packlist
 %%SITE_PERL%%/Text/Pipe.pm
 %%SITE_PERL%%/Text/Pipe/Append.pm
 %%SITE_PERL%%/Text/Pipe/Base.pm
@@ -67,8 +66,3 @@
 %%SITE_PERL%%/Text/Pipe/Trim.pm
 %%SITE_PERL%%/Text/Pipe/Uppercase.pm
 %%SITE_PERL%%/Text/Pipe/UppercaseFirst.pm
-@dirrm %%SITE_PERL%%/Text/Pipe/List
-@dirrm %%SITE_PERL%%/Text/Pipe
-@dirrmtry %%SITE_PERL%%/Text
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Pipe
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

@@ -16,4 +16,3 @@
 %%SITE_PERL%%/Graphics/Color/Types.pm
 %%SITE_PERL%%/Graphics/Color/YIQ.pm
 %%SITE_PERL%%/Graphics/Color/YUV.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Color/.packlist

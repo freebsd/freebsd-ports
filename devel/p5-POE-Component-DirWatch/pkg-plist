@@ -10,4 +10,3 @@
 %%SITE_PERL%%/POE/Component/DirWatch/Role/AIO.pm
 %%SITE_PERL%%/POE/Component/DirWatch/Role/Signatures.pm
 %%SITE_PERL%%/POE/Component/DirWatch/Unmodified.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/DirWatch/.packlist

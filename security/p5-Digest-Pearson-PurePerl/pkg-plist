@@ -1,8 +1,2 @@
 %%SITE_PERL%%/Digest/Pearson/PurePerl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Pearson/PurePerl/.packlist
 %%PERL5_MAN3%%/Digest::Pearson::PurePerl.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Pearson/PurePerl/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Pearson/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
-@dirrm %%SITE_PERL%%/Digest/Pearson/
-@dirrmtry %%SITE_PERL%%/Digest/

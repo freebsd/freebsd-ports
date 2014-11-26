@@ -3,6 +3,7 @@
 
 PORTNAME=	Math-TrulyRandom
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +26,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/truerand.c ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/truerand.h ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Math/TrulyRandom/TrulyRandom.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/TrulyRandom/TrulyRandom.so
 
 .include <bsd.port.mk>

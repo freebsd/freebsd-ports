@@ -2,7 +2,7 @@
 
 PORTNAME=	libapreq2
 PORTVERSION=	2.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 
 USES=		gmake libtool perl5
 USE_APACHE=	22+
-USE_PERL5=	fixpacklist run
+USE_PERL5=	run
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} \
@@ -46,11 +46,10 @@ post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_apreq2*
 	${RMDIR} -p ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}/apreq2 \
 		${STAGEDIR}${PREFIX}/${APACHEMODDIR} 2>/dev/null || :
-	${FIND} ${STAGEDIR} -name '*.bs' -type f -size 0c -exec ${RM} {} \;
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/APR/Request/Request.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/APR/Request/Request.so
 .for i in Apache2 CGI Cookie Error Hook Param Parser
 	${STRIP_CMD} \
-		${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/APR/Request/${i}/${i}.so
+		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/APR/Request/${i}/${i}.so
 .endfor
 
 .include <bsd.port.mk>

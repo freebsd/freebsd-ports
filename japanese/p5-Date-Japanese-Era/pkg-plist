@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Date/Japanese/Era.pm
 %%SITE_PERL%%/Date/Japanese/Era/Table.pm
 %%SITE_PERL%%/Date/Japanese/Era/Table/JIS_X0301.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Era/.packlist

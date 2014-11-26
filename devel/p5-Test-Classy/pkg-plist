@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Test/Classy.pm
 %%SITE_PERL%%/Test/Classy/Base.pm
 %%SITE_PERL%%/Test/Classy/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Classy/.packlist

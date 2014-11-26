@@ -11,9 +11,4 @@ bin/mech-dump
 %%SITE_PERL%%/WWW/Mechanize/FAQ.pod
 %%SITE_PERL%%/WWW/Mechanize/Image.pm
 %%SITE_PERL%%/WWW/Mechanize/Link.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/.packlist
 man/man1/mech-dump.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/Mechanize
-@dirrmtry %%SITE_PERL%%/WWW

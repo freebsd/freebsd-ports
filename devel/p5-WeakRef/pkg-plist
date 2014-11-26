@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/WeakRef.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WeakRef/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WeakRef/WeakRef.so
-%%SITE_PERL%%/%%PERL_ARCH%%/WeakRef.pm
+%%SITE_ARCH%%/auto/WeakRef/WeakRef.so
+%%SITE_ARCH%%/WeakRef.pm

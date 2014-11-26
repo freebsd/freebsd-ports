@@ -3,4 +3,3 @@
 %%SITE_PERL%%/LockFile/Lock/Simple.pm
 %%SITE_PERL%%/LockFile/Manager.pm
 %%SITE_PERL%%/LockFile/Simple.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/LockFile/Simple/.packlist

@@ -1,9 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Hostname/FQDN.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname/FQDN/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname/FQDN/FQDN.so
+%%SITE_ARCH%%/Sys/Hostname/FQDN.pm
+%%SITE_ARCH%%/auto/Sys/Hostname/FQDN/FQDN.so
 %%PERL5_MAN3%%/Sys::Hostname::FQDN.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname/FQDN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Hostname
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys

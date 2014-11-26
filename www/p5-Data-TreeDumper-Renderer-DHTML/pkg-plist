@@ -1,16 +1,4 @@
 %%SITE_PERL%%/Data/TreeDumper/Renderer/DHTML.pm
 %%SITE_PERL%%/Data/TreeDumper/Renderer/dhtml_test.pl
 %%SITE_PERL%%/auto/Data/TreeDumper/Renderer/DHTML/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer/DHTML/.packlist
 %%PERL5_MAN3%%/Data::TreeDumper::Renderer::DHTML.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer/DHTML
-@dirrm %%SITE_PERL%%/auto/Data/TreeDumper/Renderer/DHTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/auto/Data/TreeDumper/Renderer
-@dirrmtry %%SITE_PERL%%/auto/Data/TreeDumper
-@dirrmtry %%SITE_PERL%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/TreeDumper/Renderer
-@dirrmtry %%SITE_PERL%%/Data/TreeDumper
-@dirrmtry %%SITE_PERL%%/Data

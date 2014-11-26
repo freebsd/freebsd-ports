@@ -3,6 +3,7 @@
 
 PORTNAME=	ElasticSearch-SearchBuilder
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN/../by-authors/id/D/DR/DRTECH/
 PKGNAMEPREFIX=	p5-

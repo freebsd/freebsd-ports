@@ -1,10 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon/Beacon.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/Beacon.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
+%%SITE_ARCH%%/auto/Net/Multicast/Beacon/Beacon.so
+%%SITE_ARCH%%/Net/Multicast/Beacon.pm
 bin/beacon
 @sample etc/beacon.conf.sample
 etc/rc.d/beacon

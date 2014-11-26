@@ -8,4 +8,3 @@
 %%SITE_PERL%%/Sys/Trace/Impl/Strace.pm
 %%SITE_PERL%%/Sys/Trace/Impl/Truss.pm
 %%SITE_PERL%%/Sys/Trace/Results.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Trace/.packlist

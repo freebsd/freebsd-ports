@@ -28,7 +28,6 @@
 %%SITE_PERL%%/WWW/Facebook/API/Stream.pm
 %%SITE_PERL%%/WWW/Facebook/API/Users.pm
 %%SITE_PERL%%/WWW/Facebook/API/Video.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook/API/.packlist
 %%PERL5_MAN3%%/WWW::Facebook::API.3.gz
 %%PERL5_MAN3%%/WWW::Facebook::API::Admin.3.gz
 %%PERL5_MAN3%%/WWW::Facebook::API::Application.3.gz
@@ -59,9 +58,3 @@
 %%PERL5_MAN3%%/WWW::Facebook::API::Stream.3.gz
 %%PERL5_MAN3%%/WWW::Facebook::API::Users.3.gz
 %%PERL5_MAN3%%/WWW::Facebook::API::Video.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook/API
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/Facebook/API
-@dirrmtry %%SITE_PERL%%/WWW/Facebook
-@dirrmtry %%SITE_PERL%%/WWW

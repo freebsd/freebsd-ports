@@ -2,7 +2,7 @@
 
 PORTNAME=	clang-cheri
 PORTVERSION=	3.5.d20140815
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -127,7 +127,6 @@ post-install:
 build-plist:
 	${RM} -f ${PLIST}
 	${MAKE} makeplist | \
-	    ${GREP} -v /you/have/to/check/what/makeplist/gives/you | \
-	    ${SED} -e 's/%%PERL_ARCH%%/${PERL_ARCH}/' >> ${PLIST}
+	    ${GREP} -v /you/have/to/check/what/makeplist/gives/you >> ${PLIST}
 
 .include <bsd.port.post.mk>

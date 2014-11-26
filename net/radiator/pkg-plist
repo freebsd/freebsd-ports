@@ -229,8 +229,3 @@ bin/radpwtst
 %%SITE_PERL%%/Radius/StatsLogGeneric.pm
 %%SITE_PERL%%/Radius/AuthGeneric.pm
 %%SITE_PERL%%/radhostname.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Radius/.packlist
-@dirrm %%SITE_PERL%%/Radius/Nas
-@dirrm %%SITE_PERL%%/Radius/SMS
-@dirrm %%SITE_PERL%%/Radius
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Radius

@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Algorithm/ChooseSubsets.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/ChooseSubsets/.packlist
 %%PERL5_MAN3%%/Algorithm::ChooseSubsets.3.gz

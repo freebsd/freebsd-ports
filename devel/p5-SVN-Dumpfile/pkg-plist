@@ -10,4 +10,3 @@
 %%SITE_PERL%%/SVN/Dumpfile/Tutorial.pm
 %%SITE_PERL%%/SVN/Dumpfile/Node.pm
 %%SITE_PERL%%/SVN/Dumpfile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Dumpfile/.packlist

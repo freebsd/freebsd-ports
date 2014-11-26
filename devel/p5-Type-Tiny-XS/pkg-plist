@@ -1,6 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Type/Tiny/XS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Type/Tiny/XS/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny/XS/XS.so
+%%SITE_ARCH%%/Type/Tiny/XS.pm
+%%SITE_ARCH%%/Type/Tiny/XS/Util.pm
+%%SITE_ARCH%%/auto/Type/Tiny/XS/XS.so
 %%PERL5_MAN3%%/Type::Tiny::XS.3.gz
 %%PERL5_MAN3%%/Type::Tiny::XS::Util.3.gz

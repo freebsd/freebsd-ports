@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Test/Singleton.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Singleton/.packlist
 %%PERL5_MAN3%%/Test::Singleton.3.gz

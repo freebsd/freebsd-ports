@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Email::Date.3.gz
 %%SITE_PERL%%/Email/Date.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
-@dirrmtry %%SITE_PERL%%/Email

@@ -1,3 +1,2 @@
 %%SITE_PERL%%/ExtUtils/InstallPaths.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/InstallPaths/.packlist
 %%PERL5_MAN3%%/ExtUtils::InstallPaths.3.gz

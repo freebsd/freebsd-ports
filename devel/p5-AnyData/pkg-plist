@@ -32,4 +32,3 @@
 %%SITE_PERL%%/AnyData/Storage/PassThru.pm
 %%SITE_PERL%%/AnyData/Storage/RAM.pm
 %%SITE_PERL%%/AnyData/Storage/TiedHash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyData/.packlist

@@ -3,6 +3,7 @@
 
 PORTNAME=	URI-Escape-JavaScript
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN \
 		http://kostjn.spb.ru/freebsd/

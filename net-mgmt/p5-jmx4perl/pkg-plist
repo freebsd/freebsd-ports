@@ -114,14 +114,4 @@ man/man1/jolokia.1.gz
 %%ETCDIR%%/threads.cfg.sample
 %%ETCDIR%%/tomcat.cfg.sample
 %%ETCDIR%%/weblogic.cfg.sample
-@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia/Verifier
-@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Agent/Jolokia
-@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Agent
-@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Alias
-@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/J4psh/Command
-@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/J4psh
-@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Nagios
-@dirrm %%SITE_PERL%%/JMX/Jmx4Perl/Product
-@dirrm %%SITE_PERL%%/JMX/Jmx4Perl
-@dirrmtry %%SITE_PERL%%/JMX
 @dirrmtry %%ETCDIR%%

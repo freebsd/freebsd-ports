@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Config/GitLike.pm
 %%SITE_PERL%%/Config/GitLike/Cascaded.pm
 %%SITE_PERL%%/Config/GitLike/Git.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/GitLike/.packlist

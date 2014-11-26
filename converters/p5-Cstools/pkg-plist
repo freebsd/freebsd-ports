@@ -25,7 +25,6 @@ bin/dbfcstocs
 %%SITE_PERL%%/Cz/Cstocs/enc/vga.enc
 %%SITE_PERL%%/Cz/Sort.pm
 %%SITE_PERL%%/Cz/Time.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz/.packlist
 man/man1/cssort.1.gz
 man/man1/cstocs.1.gz
 man/man1/dbfcstocs.1.gz

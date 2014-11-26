@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Mixin/Linewise.pm
 %%SITE_PERL%%/Mixin/Linewise/Readers.pm
 %%SITE_PERL%%/Mixin/Linewise/Writers.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin/Linewise/.packlist

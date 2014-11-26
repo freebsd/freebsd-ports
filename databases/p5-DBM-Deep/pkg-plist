@@ -27,7 +27,6 @@
 %%SITE_PERL%%/DBM/Deep/Cookbook.pod
 %%SITE_PERL%%/DBM/Deep.pod
 %%SITE_PERL%%/DBM/Deep.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep/.packlist
 %%PERL5_MAN3%%/DBM::Deep.3.gz
 %%PERL5_MAN3%%/DBM::Deep::Cookbook.3.gz
 %%PERL5_MAN3%%/DBM::Deep::Internals.3.gz

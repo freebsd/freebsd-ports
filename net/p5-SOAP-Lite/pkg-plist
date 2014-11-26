@@ -51,6 +51,5 @@ bin/stubmaker.pl
 %%SITE_PERL%%/SOAP/Transport/POP3.pm
 %%SITE_PERL%%/SOAP/Transport/TCP.pm
 %%SITE_PERL%%/SOAP/Utils.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite/.packlist
 man/man1/SOAPsh.pl.1.gz
 man/man1/stubmaker.pl.1.gz

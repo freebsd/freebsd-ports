@@ -1,8 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/BSD/Sysctl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/BSD/bsd-sysctl.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Sysctl/Sysctl.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Sysctl/.packlist
+%%SITE_ARCH%%/BSD/Sysctl.pm
+%%SITE_ARCH%%/BSD/bsd-sysctl.pl
+%%SITE_ARCH%%/auto/BSD/Sysctl/Sysctl.so
 %%PERL5_MAN3%%/BSD::Sysctl.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Sysctl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/BSD

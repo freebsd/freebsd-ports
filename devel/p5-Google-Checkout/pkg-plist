@@ -91,4 +91,3 @@
 %%SITE_PERL%%/Google/Checkout/XML/Constants.pm
 %%SITE_PERL%%/Google/Checkout/XML/NotificationResponseXmlWriter.pm
 %%SITE_PERL%%/Google/Checkout/XML/Writer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout/.packlist

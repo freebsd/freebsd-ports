@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Devel/Backtrace.pm
 %%SITE_PERL%%/Devel/Backtrace/Point.pm
 %%SITE_PERL%%/Devel/DollarAt.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Backtrace/.packlist

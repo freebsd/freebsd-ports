@@ -1,3 +1,2 @@
 %%SITE_PERL%%/CLASS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CLASS/.packlist
 %%PERL5_MAN3%%/CLASS.3.gz

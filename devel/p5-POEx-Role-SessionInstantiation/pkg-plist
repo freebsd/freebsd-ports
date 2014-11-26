@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/SessionInstantiation/.packlist
 %%SITE_PERL%%/POEx/Role/Event.pm
 %%SITE_PERL%%/POEx/Role/SessionInstantiation.pm
 %%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta/POEState.pm

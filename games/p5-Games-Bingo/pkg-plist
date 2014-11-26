@@ -10,5 +10,3 @@ man/man1/bingo.pl.1.gz
 %%PERL5_MAN3%%/Games::Bingo::Column.3.gz
 %%PERL5_MAN3%%/Games::Bingo::ColumnCollection.3.gz
 %%PERL5_MAN3%%/Games::Bingo::Constants.3.gz
-@dirrm %%SITE_PERL%%/Games/Bingo
-@dirrmtry %%SITE_PERL%%/Games

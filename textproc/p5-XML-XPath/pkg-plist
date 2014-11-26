@@ -36,9 +36,3 @@ bin/xpath
 %%SITE_PERL%%/XML/XPath/Step.pm
 %%SITE_PERL%%/XML/XPath/Variable.pm
 %%SITE_PERL%%/XML/XPath/XMLParser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPath/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPath
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/XPath/Node
-@dirrmtry %%SITE_PERL%%/XML/XPath
-@dirrmtry %%SITE_PERL%%/XML

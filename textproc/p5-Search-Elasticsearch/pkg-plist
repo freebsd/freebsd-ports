@@ -92,27 +92,3 @@
 %%SITE_PERL%%/Search/Elasticsearch/Util.pm
 %%SITE_PERL%%/Search/Elasticsearch/Util/API/Path.pm
 %%SITE_PERL%%/Search/Elasticsearch/Util/API/QS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Elasticsearch/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Elasticsearch
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Util/API
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Util
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Serializer/JSON
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Serializer
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/Serializer
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/CxnPool/Static
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/CxnPool
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/Cxn
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/Client
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/API
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Role
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Logger
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/CxnPool/Static
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/CxnPool
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Cxn
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Client/Direct
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Client/0_90/Direct
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Client/0_90
-@dirrm %%SITE_PERL%%/Search/Elasticsearch/Client
-@dirrmtry %%SITE_PERL%%/Search/Elasticsearch
-@dirrmtry %%SITE_PERL%%/Search

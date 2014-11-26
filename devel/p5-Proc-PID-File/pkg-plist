@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Proc/PID/File.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/PID/File/.packlist
 %%PERL5_MAN3%%/Proc::PID::File.3.gz

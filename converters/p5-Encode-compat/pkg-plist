@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/compat/.packlist
 %%SITE_PERL%%/Encode/compat.pm
 %%SITE_PERL%%/Encode/compat/5006001.pm
 %%SITE_PERL%%/Encode/compat/common.pm

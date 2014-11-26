@@ -6,5 +6,3 @@
 %%PERL5_MAN3%%/Catalyst::DispatchType::LocalRegexp.3.gz
 %%PERL5_MAN3%%/Catalyst::DispatchType::Regex.3.gz
 %%PERL5_MAN3%%/Catalyst::DispatchType::Regexp.3.gz
-@dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
-@dirrmtry %%SITE_PERL%%/Catalyst

@@ -8,4 +8,3 @@
 %%SITE_PERL%%/Class/DBI/Loader/Pg.pm
 %%SITE_PERL%%/Class/DBI/Loader/SQLite.pm
 %%SITE_PERL%%/Class/DBI/Loader/mysql.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Loader/.packlist

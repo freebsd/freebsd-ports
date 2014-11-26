@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das/.packlist
 %%SITE_PERL%%/Bio/Das.pm
 %%SITE_PERL%%/Bio/Das/DSN.pm
 %%SITE_PERL%%/Bio/Das/Request.pm

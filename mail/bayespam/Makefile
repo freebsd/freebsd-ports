@@ -3,6 +3,7 @@
 
 PORTNAME=	bayespam
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.garyarnold.com/sites/default/files/
 EXTRACT_SUFX=	.tar_.gz

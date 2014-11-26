@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Lingua/ZH/HanDetect.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/HanDetect/.packlist
 %%PERL5_MAN3%%/Lingua::ZH::HanDetect.3.gz

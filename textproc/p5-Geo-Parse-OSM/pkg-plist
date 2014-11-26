@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Geo/Parse/OSM.pm
 %%SITE_PERL%%/Geo/Parse/OSM/Multipass.pm
 %%SITE_PERL%%/Geo/Parse/OSM/Singlepass.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Parse/OSM/.packlist

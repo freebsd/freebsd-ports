@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Mail::RFC822::Address.3.gz
 %%SITE_PERL%%/Mail/RFC822/Address.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/RFC822/Address/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/RFC822/Address
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/RFC822
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/Mail/RFC822
-@dirrmtry %%SITE_PERL%%/Mail

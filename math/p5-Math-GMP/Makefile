@@ -3,6 +3,7 @@
 
 PORTNAME=	Math-GMP
 PORTVERSION=	2.07
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +21,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Math/GMP/GMP.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/GMP/GMP.so
 
 .include <bsd.port.mk>

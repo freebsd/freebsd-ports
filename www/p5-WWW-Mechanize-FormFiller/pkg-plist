@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/FormFiller/.packlist
 %%SITE_PERL%%/WWW/Mechanize/FormFiller.pm
 %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value.pm
 %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Keep.pm
@@ -21,11 +20,3 @@
 %%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Random::Chars.3.gz
 %%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Random::Date.3.gz
 %%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Random::Word.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/FormFiller
-@dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random
-@dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value
-@dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/Mechanize
-@dirrmtry %%SITE_PERL%%/WWW

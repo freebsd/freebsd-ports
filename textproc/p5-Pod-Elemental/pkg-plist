@@ -24,7 +24,6 @@
 %%SITE_PERL%%/Pod/Elemental/Transformer/Nester.pm
 %%SITE_PERL%%/Pod/Elemental/Transformer/Pod5.pm
 %%SITE_PERL%%/Pod/Elemental/Types.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Elemental/.packlist
 %%PERL5_MAN3%%/Pod::Elemental.3.gz
 %%PERL5_MAN3%%/Pod::Elemental::Autoblank.3.gz
 %%PERL5_MAN3%%/Pod::Elemental::Autochomp.3.gz
@@ -51,11 +50,3 @@
 %%PERL5_MAN3%%/Pod::Elemental::Transformer::Nester.3.gz
 %%PERL5_MAN3%%/Pod::Elemental::Transformer::Pod5.3.gz
 %%PERL5_MAN3%%/Pod::Elemental::Types.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Elemental
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
-@dirrm %%SITE_PERL%%/Pod/Elemental/Transformer
-@dirrm %%SITE_PERL%%/Pod/Elemental/Element/Pod5
-@dirrm %%SITE_PERL%%/Pod/Elemental/Element/Generic
-@dirrm %%SITE_PERL%%/Pod/Elemental/Element
-@dirrm %%SITE_PERL%%/Pod/Elemental
-@dirrmtry %%SITE_PERL%%/Pod

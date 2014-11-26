@@ -1,10 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Deurl/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Deurl/XS/XS.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Deurl/XS/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/CGI/Deurl/XS.pm
+%%SITE_ARCH%%/auto/CGI/Deurl/XS/XS.so
+%%SITE_ARCH%%/auto/CGI/Deurl/XS/autosplit.ix
+%%SITE_ARCH%%/CGI/Deurl/XS.pm
 %%PERL5_MAN3%%/CGI::Deurl::XS.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CGI/Deurl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CGI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Deurl/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Deurl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI

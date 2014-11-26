@@ -1,3 +1,2 @@
 %%SITE_PERL%%/RRDTool/OO.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDTool/OO/.packlist
 %%PERL5_MAN3%%/RRDTool::OO.3.gz

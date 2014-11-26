@@ -1,14 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/GMPq.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/GMPq/Random.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/GMPq/V.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPq/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPq/GMPq.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPq/Random/Random.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPq/V/V.so
+%%SITE_ARCH%%/Math/GMPq.pm
+%%SITE_ARCH%%/Math/GMPq/Random.pm
+%%SITE_ARCH%%/Math/GMPq/V.pm
+%%SITE_ARCH%%/auto/Math/GMPq/GMPq.so
+%%SITE_ARCH%%/auto/Math/GMPq/Random/Random.so
+%%SITE_ARCH%%/auto/Math/GMPq/V/V.so
 %%PERL5_MAN3%%/Math::GMPq.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPq/V
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPq/Random
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPq
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Math/GMPq
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math

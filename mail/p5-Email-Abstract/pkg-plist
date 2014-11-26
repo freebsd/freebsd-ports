@@ -5,7 +5,6 @@
 %%SITE_PERL%%/Email/Abstract/MailInternet.pm
 %%SITE_PERL%%/Email/Abstract/MailMessage.pm
 %%SITE_PERL%%/Email/Abstract/Plugin.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Abstract/.packlist
 %%PERL5_MAN3%%/Email::Abstract.3.gz
 %%PERL5_MAN3%%/Email::Abstract::EmailMIME.3.gz
 %%PERL5_MAN3%%/Email::Abstract::EmailSimple.3.gz
@@ -13,6 +12,3 @@
 %%PERL5_MAN3%%/Email::Abstract::MailInternet.3.gz
 %%PERL5_MAN3%%/Email::Abstract::MailMessage.3.gz
 %%PERL5_MAN3%%/Email::Abstract::Plugin.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Abstract
-@dirrmtry %%SITE_PERL%%/Email/Abstract
-@dirrmtry %%SITE_PERL%%/Email

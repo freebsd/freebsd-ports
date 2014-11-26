@@ -24,7 +24,3 @@ bin/ltpretty
 %%SITE_PERL%%/LaTeX/Table/Types/TypeI.pm
 man/man1/csv2pdf.1.gz
 man/man1/ltpretty.1.gz
-@dirrm %%SITE_PERL%%/LaTeX/Table/Types
-@dirrm %%SITE_PERL%%/LaTeX/Table/Themes
-@dirrm %%SITE_PERL%%/LaTeX/Table
-@dirrmtry %%SITE_PERL%%/LaTeX

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/KYTProf/.packlist
 %%SITE_PERL%%/Devel/KYTProf.pm
 %%SITE_PERL%%/Devel/KYTProf/Logger/LTSV.pm
 %%SITE_PERL%%/Devel/KYTProf/Logger/LTSV.pod

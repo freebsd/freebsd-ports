@@ -144,6 +144,5 @@ bin/genexp.pl
 %%SITE_PERL%%/Genezzo/genexp.pl
 %%SITE_PERL%%/Genezzo/havok.sql
 %%SITE_PERL%%/Genezzo/syshook.sql
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Genezzo/.packlist
 man/man1/gendba.pl.1.gz
 man/man1/genexp.pl.1.gz

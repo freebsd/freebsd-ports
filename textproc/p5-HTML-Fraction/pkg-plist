@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/HTML::Fraction.3.gz
 %%SITE_PERL%%/HTML/Fraction.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Fraction/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Fraction
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML

@@ -1,3 +1,2 @@
 %%SITE_PERL%%/DBIx/Admin/CreateTable.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Admin/CreateTable/.packlist
 %%PERL5_MAN3%%/DBIx::Admin::CreateTable.3.gz

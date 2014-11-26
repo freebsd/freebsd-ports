@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/WWW::AtMovies::TV.3.gz
 %%SITE_PERL%%/WWW/AtMovies/TV.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/AtMovies/TV/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/AtMovies/TV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/AtMovies
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/AtMovies
-@dirrmtry %%SITE_PERL%%/WWW

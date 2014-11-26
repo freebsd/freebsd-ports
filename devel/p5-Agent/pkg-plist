@@ -6,4 +6,3 @@
 %%SITE_PERL%%/Agent/Message.pm
 %%SITE_PERL%%/Agent/Transport.pm
 %%SITE_PERL%%/Agent/Transport/TCP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Agent/.packlist

@@ -1,6 +1,5 @@
 %%SITE_PERL%%/SCMxx.pm
 %%SITE_PERL%%/SCMxx/Config.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/gscmxx/.packlist
 bin/gscmxx
 share/pixmaps/gscmxx/phonebook_30.xpm
 share/pixmaps/gscmxx/preferences_30.xpm

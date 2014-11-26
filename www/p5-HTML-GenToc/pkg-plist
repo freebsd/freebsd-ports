@@ -2,4 +2,3 @@ bin/hypertoc
 %%PERL5_MAN3%%/HTML::GenToc.3.gz
 %%SITE_PERL%%/HTML/GenToc.pm
 man/man1/hypertoc.1.gz
-@dirrmtry %%SITE_PERL%%/HTML

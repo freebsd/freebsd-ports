@@ -1,4 +1,3 @@
-man/auto/RT/Extension/MandatoryOnTransition/.packlist.gz
 man/man3/RT::Extension::MandatoryOnTransition.3.gz
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Create.html/BeforeCreate
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Elements/EditCustomFields/MassageCustomFields

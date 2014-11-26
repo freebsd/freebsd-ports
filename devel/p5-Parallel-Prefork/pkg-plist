@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Prefork/.packlist
 %%SITE_PERL%%/Parallel/Prefork.pm
 %%SITE_PERL%%/Parallel/Prefork/SpareWorkers.pm
 %%SITE_PERL%%/Parallel/Prefork/SpareWorkers/Scoreboard.pm

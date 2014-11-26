@@ -19,7 +19,6 @@
 %%SITE_PERL%%/PocketIO/Transport/XHRMultipart.pm
 %%SITE_PERL%%/PocketIO/Transport/XHRPolling.pm
 %%SITE_PERL%%/PocketIO/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PocketIO/.packlist
 %%PERL5_MAN3%%/PocketIO.3.gz
 %%PERL5_MAN3%%/PocketIO::Broadcast.3.gz
 %%PERL5_MAN3%%/PocketIO::Connection.3.gz
@@ -38,7 +37,3 @@
 %%PERL5_MAN3%%/PocketIO::Transport::WebSocket.3.gz
 %%PERL5_MAN3%%/PocketIO::Transport::XHRMultipart.3.gz
 %%PERL5_MAN3%%/PocketIO::Transport::XHRPolling.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PocketIO
-@dirrm %%SITE_PERL%%/PocketIO/Transport
-@dirrm %%SITE_PERL%%/PocketIO/Pool
-@dirrm %%SITE_PERL%%/PocketIO

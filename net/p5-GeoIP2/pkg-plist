@@ -33,7 +33,6 @@ bin/web-service-request
 %%SITE_PERL%%/GeoIP2/Role/Record/HasNames.pm
 %%SITE_PERL%%/GeoIP2/Types.pm
 %%SITE_PERL%%/GeoIP2/WebService/Client.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GeoIP2/.packlist
 %%PERL5_MAN3%%/GeoIP2.3.gz
 %%PERL5_MAN3%%/GeoIP2::Database::Reader.3.gz
 %%PERL5_MAN3%%/GeoIP2::Error::Generic.3.gz

@@ -2,5 +2,3 @@ bin/applypatch
 bin/makepatch
 man/man1/makepatch.1.gz
 man/man1/applypatch.1.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/makepatch/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/makepatch

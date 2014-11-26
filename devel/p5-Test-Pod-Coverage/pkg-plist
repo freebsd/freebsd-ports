@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Test/Pod/Coverage.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Pod/Coverage/.packlist
 %%PERL5_MAN3%%/Test::Pod::Coverage.3.gz

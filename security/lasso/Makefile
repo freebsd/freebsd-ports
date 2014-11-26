@@ -3,7 +3,7 @@
 
 PORTNAME=	lasso
 PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/594/
 
@@ -58,8 +58,5 @@ USES+=		python:build
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
-
-post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@
 
 PORTNAME=	HTML-Defaultify
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.jmarshall.com/tools/defaultify/releases/ \
 		CPAN

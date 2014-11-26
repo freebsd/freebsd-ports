@@ -5,4 +5,3 @@
 %%SITE_PERL%%/B/Deobfuscate.pod
 %%SITE_PERL%%/B/Deobfuscate/Dict/Flowers.pm
 %%SITE_PERL%%/B/Deobfuscate/Dict/PGPHashWords.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Deobfuscate/.packlist

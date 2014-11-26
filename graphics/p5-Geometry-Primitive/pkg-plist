@@ -22,4 +22,3 @@
 %%SITE_PERL%%/Geometry/Primitive/Polygon.pm
 %%SITE_PERL%%/Geometry/Primitive/Rectangle.pm
 %%SITE_PERL%%/Geometry/Primitive/Shape.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geometry/Primitive/.packlist

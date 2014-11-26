@@ -1,9 +1,3 @@
 %%PERL5_MAN3%%/Text::Match::FastAlternatives.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Match/FastAlternatives/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Match/FastAlternatives/FastAlternatives.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Match/FastAlternatives.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Text/Match
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Match/FastAlternatives
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Match
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+%%SITE_ARCH%%/auto/Text/Match/FastAlternatives/FastAlternatives.so
+%%SITE_ARCH%%/Text/Match/FastAlternatives.pm

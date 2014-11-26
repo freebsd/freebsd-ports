@@ -52,7 +52,6 @@ man/man1/dnscheck-12hourmailer.1.gz
 %%SITE_PERL%%/DNSCheck/Lookup/ASN.pm
 %%SITE_PERL%%/DNSCheck/Lookup/DNS.pm
 %%SITE_PERL%%/DNSCheck/Lookup/Resolver.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DNSCheck/.packlist
 share/dnscheck/locale/en.yaml
 share/dnscheck/locale/sv.yaml
 share/dnscheck/config.yaml

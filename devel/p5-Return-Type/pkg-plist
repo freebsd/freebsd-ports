@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Return/Type.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Return/Type/.packlist
 %%PERL5_MAN3%%/Return::Type.3.gz

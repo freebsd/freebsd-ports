@@ -4,4 +4,3 @@
 %%SITE_PERL%%/POE/Component/Pluggable.pm
 %%SITE_PERL%%/POE/Component/Pluggable/Constants.pm
 %%SITE_PERL%%/POE/Component/Pluggable/Pipeline.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Pluggable/.packlist

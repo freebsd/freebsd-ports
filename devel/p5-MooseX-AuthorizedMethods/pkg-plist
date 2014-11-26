@@ -5,7 +5,6 @@
 %%SITE_PERL%%/MooseX/Meta/Method/Authorized/Application/ToInstance.pm
 %%SITE_PERL%%/MooseX/Meta/Method/Authorized/CheckRoles.pm
 %%SITE_PERL%%/MooseX/Meta/Method/Authorized/Meta/Role.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AuthorizedMethods/.packlist
 %%PERL5_MAN3%%/MooseX::AuthorizedMethods.3.gz
 %%PERL5_MAN3%%/MooseX::Meta::Method::Authorized.3.gz
 %%PERL5_MAN3%%/MooseX::Meta::Method::Authorized::CheckRoles.3.gz

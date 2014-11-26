@@ -2,6 +2,7 @@
 
 PORTNAME=	Net-RawSock
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/rawsock/download/
 PKGNAMEPREFIX=	p5-
@@ -25,7 +26,7 @@ post-patch:
 		${WRKSRC}/RawSock.pm
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/RawSock/RawSock.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/RawSock/RawSock.so
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}

@@ -3,7 +3,7 @@
 
 PORTNAME=	llgal
 PORTVERSION=	0.13.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.gna.org/llgal/
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
 
 USES=		gettext perl5 gmake tar:bzip2 shebangfix
 SHEBANG_FILES=	llgal.in
-USE_PERL5=	run fixpacklist
+USE_PERL5=	run
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

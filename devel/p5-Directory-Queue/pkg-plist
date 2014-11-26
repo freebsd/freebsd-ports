@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Directory/Queue/.packlist
 %%SITE_PERL%%/Directory/Queue.pm
 %%SITE_PERL%%/Directory/Queue/Normal.pm
 %%SITE_PERL%%/Directory/Queue/Null.pm

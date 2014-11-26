@@ -16,7 +16,6 @@
 %%SITE_PERL%%/Devel/Events/Handler/Log/Memory.pm
 %%SITE_PERL%%/Devel/Events/Handler/Multiplex.pm
 %%SITE_PERL%%/Devel/Events/Match.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Events/.packlist
 %%PERL5_MAN3%%/Devel::Events.3.gz
 %%PERL5_MAN3%%/Devel::Events::Filter.3.gz
 %%PERL5_MAN3%%/Devel::Events::Filter::Callback.3.gz

@@ -1,3 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Encode/EUCJPMS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/EUCJPMS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/EUCJPMS/EUCJPMS.so
+%%SITE_ARCH%%/Encode/EUCJPMS.pm
+%%SITE_ARCH%%/auto/Encode/EUCJPMS/EUCJPMS.so

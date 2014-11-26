@@ -22,5 +22,3 @@ bin/perlanet
 %%SITE_PERL%%/Perlanet/Trait/Tidy.pm
 %%SITE_PERL%%/Perlanet/Trait/YAMLConfig.pm
 man/man1/perlanet.1.gz
-@dirrmtry %%SITE_PERL%%/Perlanet/Trait
-@dirrmtry %%SITE_PERL%%/Perlanet

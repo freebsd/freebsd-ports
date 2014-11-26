@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Sort::Fields.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Fields/.packlist
 %%SITE_PERL%%/Sort/Fields.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Fields
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort
-@dirrmtry %%SITE_PERL%%/Sort

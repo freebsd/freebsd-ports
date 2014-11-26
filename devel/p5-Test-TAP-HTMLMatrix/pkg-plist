@@ -11,4 +11,3 @@
 %%SITE_PERL%%/Test/TAP/Model/File/Visual.pm
 %%SITE_PERL%%/Test/TAP/Model/Subtest/Visual.pm
 %%SITE_PERL%%/Test/TAP/Model/Visual.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/HTMLMatrix/.packlist

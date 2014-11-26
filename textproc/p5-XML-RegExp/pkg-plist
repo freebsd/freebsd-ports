@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/XML::RegExp.3.gz
 %%SITE_PERL%%/XML/RegExp.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RegExp/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RegExp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML

@@ -7,4 +7,3 @@ bin/pod_cover
 %%SITE_PERL%%/Pod/Coverage/CountParents.pm
 %%SITE_PERL%%/Pod/Coverage/ExportOnly.pm
 %%SITE_PERL%%/Pod/Coverage/Overloader.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage/.packlist

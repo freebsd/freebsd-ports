@@ -2,11 +2,3 @@
 %%PERL5_MAN3%%/Plucene::Plugin::Analyzer::SnowballFilter.3.gz
 %%SITE_PERL%%/Plucene/Plugin/Analyzer/SnowballAnalyzer.pm
 %%SITE_PERL%%/Plucene/Plugin/Analyzer/SnowballFilter.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin/Analyzer/SnowballAnalyzer/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin/Analyzer/SnowballAnalyzer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin/Analyzer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin
-@dirrmtry %%SITE_PERL%%/Plucene/Plugin/Analyzer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene
-@dirrmtry %%SITE_PERL%%/Plucene/Plugin
-@dirrmtry %%SITE_PERL%%/Plucene

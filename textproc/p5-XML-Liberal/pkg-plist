@@ -19,9 +19,3 @@
 %%SITE_PERL%%/XML/Liberal/Remedy/UndeclaredNS.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/UnquotedAttribute.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/XHTMLEmptyTag.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Liberal/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Liberal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Liberal/Remedy
-@dirrmtry %%SITE_PERL%%/XML/Liberal
-@dirrmtry %%SITE_PERL%%/XML

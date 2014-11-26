@@ -10,5 +10,3 @@ bin/spdy-server.pl
 %%PERL5_MAN3%%/Net::SPDY::Session.3.gz
 man/man1/spdy-client.pl.1.gz
 man/man1/spdy-server.pl.1.gz
-@dirrm %%SITE_PERL%%/Net/SPDY
-@dirrmtry %%SITE_PERL%%/Net

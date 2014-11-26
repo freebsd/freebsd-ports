@@ -20,7 +20,6 @@
 %%SITE_PERL%%/MDOM/Unknown.pm
 %%SITE_PERL%%/MDOM/Util.pm
 %%SITE_PERL%%/Makefile/DOM.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/DOM/.packlist
 %%PERL5_MAN3%%/MDOM::Dumper.3.gz
 %%PERL5_MAN3%%/MDOM::Element.3.gz
 %%PERL5_MAN3%%/MDOM::Node.3.gz

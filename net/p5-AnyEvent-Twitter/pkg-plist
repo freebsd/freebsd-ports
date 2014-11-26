@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/AnyEvent::Twitter.3.gz
 %%SITE_PERL%%/AnyEvent/Twitter.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Twitter/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Twitter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrmtry %%SITE_PERL%%/AnyEvent

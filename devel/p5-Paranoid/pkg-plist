@@ -18,7 +18,6 @@
 %%SITE_PERL%%/Paranoid/Network/Socket.pm
 %%SITE_PERL%%/Paranoid/Debug.pm
 %%SITE_PERL%%/Paranoid.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Paranoid/.packlist
 %%PERL5_MAN3%%/Paranoid::Data.3.gz
 %%PERL5_MAN3%%/Paranoid::Log::File.3.gz
 %%PERL5_MAN3%%/Paranoid::Log::Email.3.gz

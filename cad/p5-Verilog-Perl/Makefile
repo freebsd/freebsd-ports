@@ -3,6 +3,7 @@
 
 PORTNAME=	Verilog-Perl
 PORTVERSION=	3.404
+PORTREVISION=	1
 CATEGORIES=	cad perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +23,7 @@ CONFIGURE_ENV=	CXX=${CXX}\
 .include <bsd.port.pre.mk>
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Verilog/Parser/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Verilog/Parser/*.so
 
 regression-test: build
 	make test -C ${WRKSRC}

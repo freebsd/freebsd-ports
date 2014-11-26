@@ -1,8 +1,4 @@
 bin/pod2readme
 %%PERL5_MAN3%%/Pod::Readme.3.gz
 %%SITE_PERL%%/Pod/Readme.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Readme/.packlist
 man/man1/pod2readme.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Readme
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
-@dirrmtry %%SITE_PERL%%/Pod

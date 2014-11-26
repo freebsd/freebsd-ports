@@ -1,3 +1,2 @@
 %%SITE_PERL%%/DateTime/Format/XSD.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/XSD/.packlist
 %%PERL5_MAN3%%/DateTime::Format::XSD.3.gz

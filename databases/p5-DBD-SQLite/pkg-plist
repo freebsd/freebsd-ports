@@ -1,9 +1,8 @@
 %%PERL5_MAN3%%/DBD::SQLite.3.gz
 %%PERL5_MAN3%%/DBD::SQLite::Cookbook.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite/Cookbook.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/SQLite.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/DBD-SQLite/sqlite3.c
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/DBD-SQLite/sqlite3.h
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/DBD-SQLite/sqlite3ext.h
+%%SITE_ARCH%%/DBD/SQLite.pm
+%%SITE_ARCH%%/DBD/SQLite/Cookbook.pod
+%%SITE_ARCH%%/auto/DBD/SQLite/SQLite.so
+%%SITE_ARCH%%/auto/share/dist/DBD-SQLite/sqlite3.c
+%%SITE_ARCH%%/auto/share/dist/DBD-SQLite/sqlite3.h
+%%SITE_ARCH%%/auto/share/dist/DBD-SQLite/sqlite3ext.h

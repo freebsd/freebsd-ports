@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Type/Tie.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tie/.packlist
 %%PERL5_MAN3%%/Type::Tie.3.gz

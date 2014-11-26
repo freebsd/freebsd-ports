@@ -1,12 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl/Easy.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl/Form.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl/Multi.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl/Share.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Curl/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Curl/Curl.so
+%%SITE_ARCH%%/WWW/Curl.pm
+%%SITE_ARCH%%/WWW/Curl/Easy.pm
+%%SITE_ARCH%%/WWW/Curl/Form.pm
+%%SITE_ARCH%%/WWW/Curl/Multi.pm
+%%SITE_ARCH%%/WWW/Curl/Share.pm
+%%SITE_ARCH%%/auto/WWW/Curl/Curl.so
 %%PERL5_MAN3%%/WWW::Curl.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Curl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/WWW

@@ -3,7 +3,7 @@
 
 PORTNAME=	hamlib
 PORTVERSION=	1.2.15.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
 USES=		perl5 libtool:keepla pkgconfig pathfix python tcl
+USE_PERL5=	build run
 USE_GNOME=	libxml2
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
@@ -48,9 +49,5 @@ post-install:
 	${WRKSRC}/THANKS
 	@${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-post-stage:
-	${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
-	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod*
 
 .include <bsd.port.mk>

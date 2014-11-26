@@ -283,6 +283,5 @@ bin/goo.pl
 %%SITE_PERL%%/Goo/WebDBLite.pm
 %%SITE_PERL%%/Goo/Zone.pm
 %%SITE_PERL%%/Goo/test.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/.packlist
 man/man1/goo.1.gz
 man/man1/goo.pl.1.gz

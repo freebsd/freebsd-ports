@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Number/Nary.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Nary/.packlist
 %%PERL5_MAN3%%/Number::Nary.3.gz

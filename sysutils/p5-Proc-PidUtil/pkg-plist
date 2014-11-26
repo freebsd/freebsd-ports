@@ -1,6 +1,2 @@
 %%SITE_PERL%%/Proc/PidUtil.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/PidUtil/.packlist
 %%PERL5_MAN3%%/Proc::PidUtil.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/PidUtil
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
-@dirrmtry %%SITE_PERL%%/Proc

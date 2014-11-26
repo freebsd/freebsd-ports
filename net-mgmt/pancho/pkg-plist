@@ -13,10 +13,6 @@ man/man1/pancho.1.gz
 %%SITE_PERL%%/Pancho/Plugins/Alteon.pm
 %%SITE_PERL%%/Pancho/Plugins/Baystack.pm
 %%SITE_PERL%%/Pancho/Plugins/Passport.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pancho/.packlist
-@dirrmtry %%SITE_PERL%%/Pancho/Plugins
-@dirrmtry %%SITE_PERL%%/Pancho
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pancho
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.plugins
 %%PORTDOCS%%%%DOCSDIR%%/Plugin.sample

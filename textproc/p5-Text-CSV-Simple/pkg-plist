@@ -1,7 +1,2 @@
 %%PERL5_MAN3%%/Text::CSV::Simple.3.gz
 %%SITE_PERL%%/Text/CSV/Simple.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV/Simple/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV
-@dirrmtry %%SITE_PERL%%/Text/CSV
-@dirrmtry %%SITE_PERL%%/Text

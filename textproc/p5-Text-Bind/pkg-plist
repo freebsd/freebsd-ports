@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Text::Bind.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bind/.packlist
 %%SITE_PERL%%/Text/Bind.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bind
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text

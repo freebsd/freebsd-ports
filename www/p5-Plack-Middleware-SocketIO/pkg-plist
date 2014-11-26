@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/SocketIO/.packlist
 %%SITE_PERL%%/Plack/Middleware/SocketIO.pm
 %%SITE_PERL%%/Plack/Middleware/SocketIO/Base.pm
 %%SITE_PERL%%/Plack/Middleware/SocketIO/Connection.pm
@@ -19,6 +18,3 @@
 %%PERL5_MAN3%%/Plack::Middleware::SocketIO::WebSocket.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::SocketIO::XHRMultipart.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::SocketIO::XHRPolling.3.gz
-@dirrm %%SITE_PERL%%/Plack/Middleware/SocketIO
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/SocketIO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware

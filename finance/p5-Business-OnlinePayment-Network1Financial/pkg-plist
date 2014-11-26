@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Business/OnlinePayment/Network1Financial.pm
 %%SITE_PERL%%/auto/Business/OnlinePayment/Network1Financial/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Network1Financial/.packlist
 %%PERL5_MAN3%%/Business::OnlinePayment::Network1Financial.3.gz

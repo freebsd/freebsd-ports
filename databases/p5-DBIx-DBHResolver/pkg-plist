@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBHResolver/.packlist
 %%SITE_PERL%%/DBIx/DBHResolver.pm
 %%SITE_PERL%%/DBIx/DBHResolver/Strategy.pm
 %%SITE_PERL%%/DBIx/DBHResolver/Strategy/Key.pm

@@ -1,15 +1,14 @@
 bin/dnet.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Intf.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Ip.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Eth.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Tun.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Route.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Fw.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Arp.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Entry/Intf.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Libdnet/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Libdnet/Libdnet.so
+%%SITE_ARCH%%/Net/Libdnet.pm
+%%SITE_ARCH%%/Net/Libdnet/Intf.pm
+%%SITE_ARCH%%/Net/Libdnet/Ip.pm
+%%SITE_ARCH%%/Net/Libdnet/Eth.pm
+%%SITE_ARCH%%/Net/Libdnet/Tun.pm
+%%SITE_ARCH%%/Net/Libdnet/Route.pm
+%%SITE_ARCH%%/Net/Libdnet/Fw.pm
+%%SITE_ARCH%%/Net/Libdnet/Arp.pm
+%%SITE_ARCH%%/Net/Libdnet/Entry/Intf.pm
+%%SITE_ARCH%%/auto/Net/Libdnet/Libdnet.so
 %%PERL5_MAN3%%/Net::Libdnet.3.gz
 %%PERL5_MAN3%%/Net::Libdnet::Entry::Intf.3.gz
 %%PERL5_MAN3%%/Net::Libdnet::Intf.3.gz
@@ -19,8 +18,3 @@ bin/dnet.pl
 %%PERL5_MAN3%%/Net::Libdnet::Route.3.gz
 %%PERL5_MAN3%%/Net::Libdnet::Fw.3.gz
 %%PERL5_MAN3%%/Net::Libdnet::Arp.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Libdnet
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Entry
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

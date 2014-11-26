@@ -7,8 +7,3 @@
 %%SITE_PERL%%/Text/Highlight/PHP.pm
 %%SITE_PERL%%/Text/Highlight/Perl.pm
 %%SITE_PERL%%/Text/Highlight/SQL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Highlight/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Highlight
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text/Highlight
-@dirrmtry %%SITE_PERL%%/Text

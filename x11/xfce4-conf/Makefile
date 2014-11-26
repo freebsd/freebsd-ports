@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-conf
 PORTVERSION=	4.10.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfconf-${PORTVERSION}
@@ -57,8 +57,4 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-post-install:
-.if ${PORT_OPTIONS:MPERL}
-	@${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
-.endif
 .include <bsd.port.mk>

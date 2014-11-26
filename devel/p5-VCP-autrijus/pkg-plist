@@ -143,5 +143,4 @@ bin/vcp
 %%SITE_PERL%%/VCP/Utils/p4.pm
 %%SITE_PERL%%/VCP/Utils/revml.pm
 %%SITE_PERL%%/VCP/Utils/vss.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/.packlist
 man/man1/vcp.1.gz

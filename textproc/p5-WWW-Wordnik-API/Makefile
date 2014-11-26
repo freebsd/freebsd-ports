@@ -3,7 +3,7 @@
 
 PORTNAME=	WWW-Wordnik-API
 PORTVERSION=	0.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PSILVA
@@ -21,12 +21,7 @@ TEST_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Wordnik/API/.packlist \
-		%%SITE_PERL%%/WWW/Wordnik/API.pm \
+PLIST_FILES=	%%SITE_PERL%%/WWW/Wordnik/API.pm \
 		%%PERL5_MAN3%%/WWW::Wordnik::API.3.gz
-PLIST_DIRS=	%%SITE_PERL%%/WWW/Wordnik %%SITE_PERL%%/WWW \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Wordnik/API \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Wordnik \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 
 .include <bsd.port.mk>

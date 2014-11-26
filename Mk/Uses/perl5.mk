@@ -1,4 +1,5 @@
 # $FreeBSD$
+# ex:ts=4
 #
 # Provide support to use perl5
 #
@@ -8,7 +9,7 @@
 #				  installed from a port, but without the version number.
 #				  Use this if you need to replace "#!" lines in scripts.
 # PERL_VERSION	- Full version of perl5 (see below for current value).
-# 
+#
 # PERL_VER	- Short version of perl5 (major.minor without patchlevel)
 #
 # PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
@@ -26,9 +27,7 @@
 # SITE_ARCH		- Directory name where arch site specific perl packages go.
 #				  This value is added to PLIST_SUB.
 # USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
-#				  patch, build, install or run phases.  The fixpacklist is
-#				  needed in some cases, when a .packlist is created, it may
-#				  reference ${STAGEDIR}
+#				  patch, build, install or run phases.
 #				  It can also have configure, modbuild and modbuildtiny when
 #				  the port needs to run Makefile.PL, Build.PL and a
 #				  Module::Build::Tiny flavor of Build.PL.
@@ -96,10 +95,12 @@ PERL_PORT?=	perl5.16
 PERL_PORT?=	perl5.14
 .endif
 
-SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
+SITE_PERL_REL?=	lib/perl5/site_perl
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
-SITE_ARCH_REL?=	${SITE_PERL_REL}/${PERL_ARCH}
+SITE_ARCH_REL?=	${SITE_PERL_REL}/${PERL_ARCH}/${PERL_VER}
 SITE_ARCH?=	${LOCALBASE}/${SITE_ARCH_REL}
+SITE_MAN3_REL?=	${SITE_PERL_REL}/man/man3
+SITE_MAN3?=	${PREFIX}/${SITE_MAN3_REL}
 
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
@@ -158,10 +159,9 @@ _INCLUDE_USES_PERL5_POST_MK=	yes
 
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 			PERL_VER=${PERL_VER} \
-			PERL_ARCH=${PERL_ARCH} \
-			PERL5_MAN3=lib/perl5/${PERL_VER}/man/man3 \
-			SITE_ARCH=${SITE_ARCH_REL} \
-			SITE_PERL=${SITE_PERL_REL}
+			PERL5_MAN3=${SITE_MAN3_REL} \
+			SITE_PERL=${SITE_PERL_REL} \
+			SITE_ARCH=${SITE_ARCH_REL}
 
 # handle perl5 specific manpages
 .for sect in 3
@@ -169,13 +169,13 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 _MANPAGES+=	${P5MAN${sect}:S%^%${PREFIX}/lib/perl5/${PERL_VER}/man/man${sect}/%}
 .endif
 .endfor
-MANDIRS+=	${PREFIX}/lib/perl5/${PERL_VER}
+MANDIRS+=	${SITE_PERL}/man
 
 .if ${_USE_PERL5:Mmodbuild} || ${_USE_PERL5:Mmodbuildtiny}
 _USE_PERL5+=	configure
 ALL_TARGET?=	# empty
-CONFIGURE_ARGS+=--install_path lib="${PREFIX}/${SITE_PERL_REL}" \
-				--install_path arch="${PREFIX}/${SITE_ARCH_REL}" \
+CONFIGURE_ARGS+=--install_path lib="${SITE_PERL}" \
+				--install_path arch="${SITE_ARCH}" \
 				--install_path script="${PREFIX}/bin" \
 				--install_path bin="${PREFIX}/bin" \
 				--install_path libdoc="${MAN3PREFIX}/man/man3" \
@@ -194,10 +194,12 @@ CONFIGURE_ARGS+=--create_packlist 0
 .if ${PORTNAME} != Module-Build-Tiny
 BUILD_DEPENDS+=	p5-Module-Build-Tiny>=0.039:${PORTSDIR}/devel/p5-Module-Build-Tiny
 .endif
-CONFIGURE_ARGS+=--create_packlist 1
+CONFIGURE_ARGS+=--create_packlist 0
 .endif
 .elif ${_USE_PERL5:Mconfigure}
-CONFIGURE_ARGS+=INSTALLDIRS="site"
+# NO_PACKLIST doesn't do anything before 5.20, but starting at
+# 5.20, it doesn't generate it, so we don't have to remove it.
+CONFIGURE_ARGS+=INSTALLDIRS="site" NO_PACKLIST=1
 .endif # modbuild
 
 .if ${_USE_PERL5:Mconfigure}
@@ -231,14 +233,14 @@ RUN_DEPENDS+=		${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
-MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VER}
+MAN3PREFIX?=		${SITE_PERL}
 .undef HAS_CONFIGURE
 
 .if !target(do-configure)
 do-configure:
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-		  ${SCRIPTDIR}/configure; \
+		${SCRIPTDIR}/configure; \
 	fi
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
@@ -264,16 +266,30 @@ do-install:
 .endif # ! USES=gmake
 .endif # modbuild
 
-.if ${USE_PERL5:Mconfigure} || ${USE_PERL5:Mmodbuildtiny} || ${USE_PERL5:Mfixpacklist}
-fix-packlist::
-	@if [ -d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto ] ; then ${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \; ; fi
-.endif
+# In all those, don't use - before the command so that the user does
+# not wonder what has been ignored by this message "*** Error code 1 (ignored)"
+fix-perl-things:
+# Remove .packlist that can have been generated during installation,
+# and cleanup the directories they're in.
+	@(if [ -d ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto ] ; then \
+			find ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto -name .packlist | while read f ; do \
+					${RM} $${f} ; \
+					${RMDIR} -p $${f%/*} 2>/dev/null || : ; \
+			done \
+	fi) || :
 
 # Starting with perl 5.20, the empty bootstrap files are not installed any more
 # by ExtUtils::MakeMaker.  As we don't need them anyway, remove them.
 # Module::Build continues to install them, so remove the files unconditionally.
-fix-perl-bs:
-	-@${FIND} ${STAGEDIR} -name '*.bs' -size 0 -delete
+	@${FIND} ${STAGEDIR} -name '*.bs' -size 0 -delete || :
+
+# Some ports use their own way of building perl modules and generate
+# perllocal.pod, remove it here so that those ports don't include it
+# by mistake in their plists.  It is sometime compressed, so use a
+# shell glob for the removal.  Also, remove the directories that
+# contain it to not leave orphans directories around.
+	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod* || :
+	@${RMDIR} -p ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} 2>/dev/null || :
 
 .if !target(regression-test)
 TEST_ARGS+=	${MAKE_ARGS}

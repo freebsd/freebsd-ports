@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Guard.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Guard.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Guard/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Guard/Guard.so
+%%SITE_ARCH%%/Guard.pm
+%%SITE_ARCH%%/auto/Guard/Guard.so

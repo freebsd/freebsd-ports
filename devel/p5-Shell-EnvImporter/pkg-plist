@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/EnvImporter/.packlist
 %%SITE_PERL%%/Shell/EnvImporter.pm
 %%SITE_PERL%%/Shell/EnvImporter/Shell.pm
 %%SITE_PERL%%/Shell/EnvImporter/Result.pm

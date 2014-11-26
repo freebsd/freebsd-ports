@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GML/.packlist
 %%SITE_PERL%%/Geo/GML.pm
 %%SITE_PERL%%/Geo/GML.pod
 %%SITE_PERL%%/Geo/GML/GeoPoint.pod

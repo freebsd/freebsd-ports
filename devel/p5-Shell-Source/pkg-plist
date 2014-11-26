@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Shell/Source.pm
 %%SITE_PERL%%/Shell/t/Basic.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/Source/.packlist
 %%PERL5_MAN3%%/Shell::Source.3.gz

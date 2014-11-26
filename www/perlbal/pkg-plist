@@ -60,7 +60,6 @@ bin/perlbal
 %%SITE_PERL%%/Perlbal/Test/WebServer.pm
 %%SITE_PERL%%/Perlbal/UploadListener.pm
 %%SITE_PERL%%/Perlbal/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perlbal/.packlist
 %%PERL5_MAN3%%/Perlbal.3.gz
 %%PERL5_MAN3%%/Perlbal::FAQ.3.gz
 %%PERL5_MAN3%%/Perlbal::Manual.3.gz
@@ -103,8 +102,3 @@ man/man1/perlbal.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/service-parameters.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/hacking
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perlbal
-@dirrm %%SITE_PERL%%/Perlbal/Test
-@dirrm %%SITE_PERL%%/Perlbal/Plugin
-@dirrm %%SITE_PERL%%/Perlbal/Manual
-@dirrm %%SITE_PERL%%/Perlbal

@@ -66,4 +66,3 @@
 %%SITE_PERL%%/Jifty/DBI/Record/Plugin.pm
 %%SITE_PERL%%/Jifty/DBI/Schema.pm
 %%SITE_PERL%%/Jifty/DBI/SchemaGenerator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI/.packlist

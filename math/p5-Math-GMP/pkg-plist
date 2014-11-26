@@ -1,8 +1,4 @@
 %%PERL5_MAN3%%/Math::GMP.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/GMP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMP/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMP/GMP.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMP/autosplit.ix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math
+%%SITE_ARCH%%/Math/GMP.pm
+%%SITE_ARCH%%/auto/Math/GMP/GMP.so
+%%SITE_ARCH%%/auto/Math/GMP/autosplit.ix

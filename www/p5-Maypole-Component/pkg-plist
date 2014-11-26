@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Maypole::Component.3.gz
 %%SITE_PERL%%/Maypole/Component.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole/Component/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole/Component
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole
-@dirrmtry %%SITE_PERL%%/Maypole

@@ -3,12 +3,3 @@
 %%SITE_PERL%%/POE/Component/Server/HTTP/Connection.pm
 %%SITE_PERL%%/POE/Component/Server/HTTP/Request.pm
 %%SITE_PERL%%/POE/Component/Server/HTTP/Response.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/HTTP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/HTTP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/POE/Component/Server/HTTP
-@dirrmtry %%SITE_PERL%%/POE/Component/Server
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE

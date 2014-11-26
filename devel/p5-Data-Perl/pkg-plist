@@ -28,4 +28,3 @@
 %%SITE_PERL%%/Data/Perl/Role/Number.pm
 %%SITE_PERL%%/Data/Perl/Role/String.pm
 %%SITE_PERL%%/Data/Perl/String.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Perl/.packlist

@@ -1,4 +1,3 @@
-man/auto/RTx/Calendar/.packlist.gz
 man/man3/RTx::Calendar.3.gz
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Tabs/Privileged
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs/Default
@@ -20,29 +19,3 @@ man/man3/RTx::Calendar.3.gz
 %%RTHOME%%/plugins/RTx-Calendar/static/images/starts.png
 %%RTHOME%%/plugins/RTx-Calendar/static/images/starts_due.png
 %%RTHOME%%/plugins/RTx-Calendar/static/images/updated.png
-@dirrmtry man/auto/RTx/Calendar
-@dirrmtry man/auto/RTx
-@dirrmtry man/auto
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Tabs
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/User/Elements/Tabs
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/User/Elements
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/User
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Elements
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/Calendar
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/NoAuth
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Prefs/Elements
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Prefs
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html/Search
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/html
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/lib/RTx
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/lib
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/static/css
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/static/images
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar/static
-@dirrmtry %%RTHOME%%/plugins/RTx-Calendar

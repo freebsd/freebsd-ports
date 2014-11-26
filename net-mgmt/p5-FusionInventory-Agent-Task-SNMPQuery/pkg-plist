@@ -3,14 +3,3 @@
 %%SITE_PERL%%/FusionInventory/Agent/Task/SNMPQuery/Nortel.pm
 %%SITE_PERL%%/FusionInventory/Agent/Task/SNMPQuery/Procurve.pm
 %%SITE_PERL%%/FusionInventory/Agent/Task/SNMPQuery/ThreeCom.pm
-%%SITE_PERL%%/mach/auto/FusionInventory/Agent/Task/SNMPQuery/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/FusionInventory/Agent/Task/SNMPQuery
-@dirrmtry %%SITE_PERL%%/mach/auto/FusionInventory/Agent/Task
-@dirrmtry %%SITE_PERL%%/mach/auto/FusionInventory/Agent
-@dirrmtry %%SITE_PERL%%/mach/auto/FusionInventory
-@dirrmtry %%SITE_PERL%%/mach/auto
-@dirrmtry %%SITE_PERL%%/mach
-@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/SNMPQuery
-@dirrmtry %%SITE_PERL%%/FusionInventory/Agent/Task
-@dirrmtry %%SITE_PERL%%/FusionInventory/Agent
-@dirrmtry %%SITE_PERL%%/FusionInventory

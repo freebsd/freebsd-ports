@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Net::EasyTCP.3.gz
 %%SITE_PERL%%/Net/EasyTCP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EasyTCP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EasyTCP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net

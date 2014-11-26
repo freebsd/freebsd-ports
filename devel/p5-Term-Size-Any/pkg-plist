@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Term/Size/Any.pm
 %%SITE_PERL%%/Term/Size/Any.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size/Any/.packlist
 %%PERL5_MAN3%%/Term::Size::Any.3.gz

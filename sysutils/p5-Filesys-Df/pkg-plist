@@ -1,7 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Filesys/Df.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Df/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Df/Df.so
+%%SITE_ARCH%%/Filesys/Df.pm
+%%SITE_ARCH%%/auto/Filesys/Df/Df.so
 %%PERL5_MAN3%%/Filesys::Df.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Df
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Filesys

@@ -1,7 +1,3 @@
 %%PERL5_MAN3%%/Algorithm::Combinatorics.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Algorithm/Combinatorics.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Combinatorics/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Combinatorics/Combinatorics.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Combinatorics
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm
+%%SITE_ARCH%%/Algorithm/Combinatorics.pm
+%%SITE_ARCH%%/auto/Algorithm/Combinatorics/Combinatorics.so

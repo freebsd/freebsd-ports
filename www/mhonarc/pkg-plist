@@ -477,7 +477,3 @@ man/man1/mhonarc.1.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rcfileexs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/MHonArc/UTF8
-@dirrm %%SITE_PERL%%/MHonArc/CharEnt
-@dirrm %%SITE_PERL%%/MHonArc/Char
-@dirrm %%SITE_PERL%%/MHonArc

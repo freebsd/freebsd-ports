@@ -1,5 +1,4 @@
 %%SITE_PERL%%/Term/Animation.pm
 %%SITE_PERL%%/Term/Animation/Entity.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Animation/.packlist
 %%PERL5_MAN3%%/Term::Animation.3.gz
 %%PERL5_MAN3%%/Term::Animation::Entity.3.gz

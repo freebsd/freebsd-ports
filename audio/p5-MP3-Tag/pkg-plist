@@ -22,7 +22,6 @@ bin/mp3info2
 %%SITE_PERL%%/Normalize/Text/Music_Fields/D_Shostakovich.comp
 %%SITE_PERL%%/Normalize/Text/Music_Fields.pm
 %%SITE_PERL%%/Encode/transliterate_win1251.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/.packlist
 %%PERL5_MAN3%%/MP3::Tag.3.gz
 %%PERL5_MAN3%%/MP3::Tag::CDDB_File.3.gz
 %%PERL5_MAN3%%/MP3::Tag::Cue.3.gz

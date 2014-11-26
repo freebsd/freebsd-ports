@@ -1,7 +1,6 @@
 %%PERL5_MAN3%%/MIME::EcoEncode.3.gz
 %%PERL5_MAN3%%/MIME::EcoEncode::Fold.3.gz
 %%PERL5_MAN3%%/MIME::EcoEncode::Param.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/EcoEncode/.packlist
 %%SITE_PERL%%/MIME/EcoEncode.pm
 %%SITE_PERL%%/MIME/EcoEncode.pod
 %%SITE_PERL%%/MIME/EcoEncode/Fold.pm
@@ -10,7 +9,3 @@
 %%SITE_PERL%%/MIME/EcoEncode/JP_Q.pm
 %%SITE_PERL%%/MIME/EcoEncode/Param.pm
 %%SITE_PERL%%/MIME/EcoEncode/Param.pod
-@dirrm %%SITE_PERL%%/MIME/EcoEncode
-@dirrmtry %%SITE_PERL%%/MIME
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/EcoEncode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME

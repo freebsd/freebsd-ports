@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jonk/.packlist
 %%SITE_PERL%%/Jonk.pm
 %%SITE_PERL%%/Jonk/Client.pm
 %%SITE_PERL%%/Jonk/Cookbook.pod

@@ -69,7 +69,6 @@ bin/zmx10.pl
 %%SITE_PERL%%/ZoneMinder/Trigger/Channel/Unix.pm
 %%SITE_PERL%%/ZoneMinder/Trigger/Connection.pm
 %%SITE_PERL%%/ZoneMinder/Trigger/Connection/Example.pm
-%%SITE_PERL%%/mach/auto/ZoneMinder/.packlist
 %%WWWDIR%%/cgi-bin/nph-zms
 %%WWWDIR%%/cgi-bin/zms
 %%WWWDIR%%/data/ajax/alarm.php

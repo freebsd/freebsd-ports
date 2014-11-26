@@ -3,6 +3,7 @@
 
 PORTNAME=	wakeonlan
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://gsd.di.uminho.pt/jpo/software/wakeonlan/downloads/
 

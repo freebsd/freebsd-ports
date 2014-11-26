@@ -1,3 +1,2 @@
-%%SITE_ARCH%%/auto/Test/Requires/.packlist
 %%PERL5_MAN3%%/Test::Requires.3.gz
 %%SITE_PERL%%/Test/Requires.pm

@@ -1,6 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Quota/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Quota/Quota.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Quota/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/Quota.pm
+%%SITE_ARCH%%/auto/Quota/autosplit.ix
+%%SITE_ARCH%%/auto/Quota/Quota.so
+%%SITE_ARCH%%/Quota.pm
 %%PERL5_MAN3%%/Quota.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Quota

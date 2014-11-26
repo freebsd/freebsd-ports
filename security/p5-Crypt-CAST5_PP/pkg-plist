@@ -5,10 +5,3 @@
 %%SITE_PERL%%/auto/Crypt/CAST5_PP/decrypt.al
 %%SITE_PERL%%/auto/Crypt/CAST5_PP/encrypt.al
 %%SITE_PERL%%/auto/Crypt/CAST5_PP/init.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CAST5_PP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CAST5_PP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/auto/Crypt/CAST5_PP
-@dirrmtry %%SITE_PERL%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/Crypt/CAST5_PP
-@dirrmtry %%SITE_PERL%%/Crypt

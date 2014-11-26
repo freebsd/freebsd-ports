@@ -51,7 +51,6 @@
 %%SITE_PERL%%/Badger/Timestamp.pm
 %%SITE_PERL%%/Badger/URL.pm
 %%SITE_PERL%%/Badger/Utils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Badger/.packlist
 %%PERL5_MAN3%%/Badger.3.gz
 %%PERL5_MAN3%%/Badger::Base.3.gz
 %%PERL5_MAN3%%/Badger::Class.3.gz

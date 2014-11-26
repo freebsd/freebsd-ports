@@ -11,7 +11,6 @@
 %%SITE_PERL%%/RT/Client/REST/Ticket.pm
 %%SITE_PERL%%/RT/Client/REST/Transaction.pm
 %%SITE_PERL%%/RT/Client/REST/User.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RT/Client/REST/.packlist
 %%PERL5_MAN3%%/RT::Client::REST.3.gz
 %%PERL5_MAN3%%/RT::Client::REST::Attachment.3.gz
 %%PERL5_MAN3%%/RT::Client::REST::Exception.3.gz
@@ -22,10 +21,3 @@
 %%PERL5_MAN3%%/RT::Client::REST::Ticket.3.gz
 %%PERL5_MAN3%%/RT::Client::REST::Transaction.3.gz
 %%PERL5_MAN3%%/RT::Client::REST::User.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT/Client/REST
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT
-@dirrmtry %%SITE_PERL%%/RT/Client/REST/Object
-@dirrmtry %%SITE_PERL%%/RT/Client/REST
-@dirrmtry %%SITE_PERL%%/RT/Client
-@dirrmtry %%SITE_PERL%%/RT

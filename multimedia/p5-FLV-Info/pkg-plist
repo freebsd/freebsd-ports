@@ -37,12 +37,8 @@ bin/swf2flv
 %%SITE_PERL%%/FLV/ToSWF.pm
 %%SITE_PERL%%/FLV/Util.pm
 %%SITE_PERL%%/FLV/VideoTag.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV/Info/.packlist
 man/man1/flv2flv.1.gz
 man/man1/flv2mp3.1.gz
 man/man1/flv2swf.1.gz
 man/man1/flvinfo.1.gz
 man/man1/swf2flv.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV/Info
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV
-@dirrmtry %%SITE_PERL%%/FLV

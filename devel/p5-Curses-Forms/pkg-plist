@@ -6,4 +6,3 @@
 %%SITE_PERL%%/Curses/Forms/Dialog.pm
 %%SITE_PERL%%/Curses/Forms/Dialog/Input.pm
 %%SITE_PERL%%/Curses/Forms/Dialog/Logon.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Forms/.packlist

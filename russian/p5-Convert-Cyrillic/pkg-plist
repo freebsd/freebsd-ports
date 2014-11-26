@@ -6,6 +6,5 @@
 %%SITE_PERL%%/Lingua/DetectCharset/StatKoi8u.pm
 %%SITE_PERL%%/Lingua/DetectCharset/StatUtf8.pm
 %%SITE_PERL%%/Lingua/DetectCharset/StatWin.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/cyrillic-suite/.packlist
 %%PERL5_MAN3%%/Convert::Cyrillic.3.gz
 %%PERL5_MAN3%%/Lingua::DetectCharset.3.gz

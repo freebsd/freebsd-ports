@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Data::Alias.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Data/Alias.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Alias/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Alias/Alias.so
+%%SITE_ARCH%%/Data/Alias.pm
+%%SITE_ARCH%%/auto/Data/Alias/Alias.so

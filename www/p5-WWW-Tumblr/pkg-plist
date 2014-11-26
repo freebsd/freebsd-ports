@@ -9,14 +9,8 @@
 %%SITE_PERL%%/WWW/Tumblr/Tagged.pm
 %%SITE_PERL%%/WWW/Tumblr/Test.pm
 %%SITE_PERL%%/WWW/Tumblr/User.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Tumblr/.packlist
 %%PERL5_MAN3%%/WWW::Tumblr.3.gz
 %%PERL5_MAN3%%/WWW::Tumblr::Blog.3.gz
 %%PERL5_MAN3%%/WWW::Tumblr::ResponseError.3.gz
 %%PERL5_MAN3%%/WWW::Tumblr::Tagged.3.gz
 %%PERL5_MAN3%%/WWW::Tumblr::User.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Tumblr
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrm %%SITE_PERL%%/WWW/Tumblr/Authentication
-@dirrm %%SITE_PERL%%/WWW/Tumblr
-@dirrmtry %%SITE_PERL%%/WWW

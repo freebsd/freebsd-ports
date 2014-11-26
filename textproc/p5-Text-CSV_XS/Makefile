@@ -3,6 +3,7 @@
 
 PORTNAME=	Text-CSV_XS
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
@@ -27,6 +28,6 @@ NO_ARCH=	yes
 #pre-install:	test
 
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Text/CSV_XS/CSV_XS.so
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Text/CSV_XS/CSV_XS.so
 
 .include <bsd.port.mk>

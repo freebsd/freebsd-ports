@@ -22,8 +22,3 @@
 %%SITE_PERL%%/XML/Grove/Sub.pm
 %%SITE_PERL%%/XML/Grove/Subst.pm
 %%SITE_PERL%%/XML/Grove/XPointer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Grove/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Grove
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Grove
-@dirrmtry %%SITE_PERL%%/XML

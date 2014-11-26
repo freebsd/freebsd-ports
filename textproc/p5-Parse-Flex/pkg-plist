@@ -3,8 +3,3 @@ bin/makelexer.pl
 %%PERL5_MAN3%%/Parse::Flex::Generate.3.gz
 %%SITE_PERL%%/Parse/Flex.pm
 %%SITE_PERL%%/Parse/Flex/Generate.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Flex/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Flex
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
-@dirrmtry %%SITE_PERL%%/Parse/Flex
-@dirrmtry %%SITE_PERL%%/Parse

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Declare/.packlist
 %%SITE_PERL%%/MooseX/Declare.pm
 %%SITE_PERL%%/MooseX/Declare/Context.pm
 %%SITE_PERL%%/MooseX/Declare/Context/Namespaced.pm

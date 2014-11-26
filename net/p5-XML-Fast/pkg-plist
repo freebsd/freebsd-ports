@@ -1,7 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/Fast.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Fast/Fast.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Fast/.packlist
+%%SITE_ARCH%%/XML/Fast.pm
+%%SITE_ARCH%%/auto/XML/Fast/Fast.so
 %%PERL5_MAN3%%/XML::Fast.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Fast
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML

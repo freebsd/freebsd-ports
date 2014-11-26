@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Catalyst::Plugin::Captcha.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/Captcha.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Captcha/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Captcha
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst

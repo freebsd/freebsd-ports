@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Sub::Current.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Sub/Current.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Current/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Current/Current.so
+%%SITE_ARCH%%/Sub/Current.pm
+%%SITE_ARCH%%/auto/Sub/Current/Current.so

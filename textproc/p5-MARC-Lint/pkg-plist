@@ -3,7 +3,4 @@ bin/marclint
 %%PERL5_MAN3%%/MARC::Lint::CodeData.3.gz
 %%SITE_PERL%%/MARC/Lint.pm
 %%SITE_PERL%%/MARC/Lint/CodeData.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC/Lint/.packlist
 man/man1/marclint.1.gz
-@dirrm %%SITE_PERL%%/MARC/Lint
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC/Lint

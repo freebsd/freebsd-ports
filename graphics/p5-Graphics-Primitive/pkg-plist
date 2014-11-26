@@ -46,4 +46,3 @@
 %%SITE_PERL%%/Graphics/Primitive/Paint/Solid.pm
 %%SITE_PERL%%/Graphics/Primitive/Path.pm
 %%SITE_PERL%%/Graphics/Primitive/TextBox.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/.packlist

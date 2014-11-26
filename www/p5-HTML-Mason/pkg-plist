@@ -32,7 +32,6 @@ bin/mason.pl
 %%SITE_PERL%%/HTML/Mason/Tests.pm
 %%SITE_PERL%%/HTML/Mason/Tools.pm
 %%SITE_PERL%%/HTML/Mason/Utils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason/.packlist
 %%PERL5_MAN3%%/HTML::Mason.3.gz
 %%PERL5_MAN3%%/HTML::Mason::Admin.3.gz
 %%PERL5_MAN3%%/HTML::Mason::ApacheHandler.3.gz
@@ -64,13 +63,3 @@ bin/mason.pl
 %%PERL5_MAN3%%/HTML::Mason::Tests.3.gz
 %%PERL5_MAN3%%/HTML::Mason::Tools.3.gz
 %%PERL5_MAN3%%/HTML::Mason::Utils.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrm %%SITE_PERL%%/HTML/Mason/Resolver
-@dirrm %%SITE_PERL%%/HTML/Mason/Plugin
-@dirrm %%SITE_PERL%%/HTML/Mason/Component
-@dirrm %%SITE_PERL%%/HTML/Mason/Compiler
-@dirrm %%SITE_PERL%%/HTML/Mason/Cache
-@dirrm %%SITE_PERL%%/HTML/Mason/Apache
-@dirrm %%SITE_PERL%%/HTML/Mason
-@dirrmtry %%SITE_PERL%%/HTML

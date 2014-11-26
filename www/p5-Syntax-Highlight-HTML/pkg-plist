@@ -1,8 +1,2 @@
 %%SITE_PERL%%/Syntax/Highlight/HTML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/HTML/.packlist
 %%PERL5_MAN3%%/Syntax::Highlight::HTML.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight
-@dirrmtry %%SITE_PERL%%/Syntax/Highlight
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax
-@dirrmtry %%SITE_PERL%%/Syntax

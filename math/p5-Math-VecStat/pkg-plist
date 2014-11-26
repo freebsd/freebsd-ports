@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Math::VecStat.3.gz
 %%SITE_PERL%%/Math/VecStat.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/VecStat/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/VecStat
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/Math

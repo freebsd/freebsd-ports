@@ -10,4 +10,3 @@
 %%SITE_PERL%%/MooseX/Daemonize/Pid/File.pm
 %%SITE_PERL%%/MooseX/Daemonize/WithPidFile.pm
 %%SITE_PERL%%/Test/MooseX/Daemonize.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Daemonize/.packlist

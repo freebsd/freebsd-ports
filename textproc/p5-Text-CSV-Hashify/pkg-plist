@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Text::CSV::Hashify.3.gz
 %%SITE_PERL%%/Text/CSV/Hashify.pm
-%%SITE_PERL%%/mach/auto/Text/CSV/Hashify/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/Text/CSV/Hashify
-@dirrmtry %%SITE_PERL%%/mach/auto/Text/CSV
-@dirrmtry %%SITE_PERL%%/mach/auto/Text
-@dirrmtry %%SITE_PERL%%/Text/CSV
-@dirrmtry %%SITE_PERL%%/Text

@@ -18,6 +18,5 @@ bin/nethirc.pl
 %%SITE_PERL%%/NetHirc/Totalitarian.pm
 %%SITE_PERL%%/NetHirc/Util.pm
 %%SITE_PERL%%/NetHirc.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetHirc/.packlist
 %%PERL5_MAN3%%/NetHirc.3.gz
 man/man1/nethirc.pl.1.gz

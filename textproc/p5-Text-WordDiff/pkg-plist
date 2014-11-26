@@ -6,5 +6,3 @@
 %%SITE_PERL%%/Text/WordDiff/ANSIColor.pm
 %%SITE_PERL%%/Text/WordDiff/HTML.pm
 %%SITE_PERL%%/Text/WordDiff/HTMLTwoLines.pm
-@dirrmtry %%SITE_PERL%%/Text/WordDiff
-@dirrmtry %%SITE_PERL%%/Text

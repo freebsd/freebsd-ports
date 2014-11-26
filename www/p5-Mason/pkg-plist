@@ -115,23 +115,3 @@ man/man1/mason.pl.1.gz
 %%SITE_PERL%%/Mason/t/StaticSource.pm
 %%SITE_PERL%%/Mason/t/Syntax.pm
 %%SITE_PERL%%/Mason/t/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mason/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mason
-@dirrmtry %%SITE_PERL%%/Mason/t
-@dirrmtry %%SITE_PERL%%/Mason/Test/RootClass
-@dirrmtry %%SITE_PERL%%/Mason/Test/Plugins/Notify
-@dirrmtry %%SITE_PERL%%/Mason/Test/Plugins
-@dirrmtry %%SITE_PERL%%/Mason/Test/Overrides/Component
-@dirrmtry %%SITE_PERL%%/Mason/Test/Overrides
-@dirrmtry %%SITE_PERL%%/Mason/Test
-@dirrmtry %%SITE_PERL%%/Mason/PluginBundle
-@dirrmtry %%SITE_PERL%%/Mason/Plugin/TidyObjectFiles
-@dirrmtry %%SITE_PERL%%/Mason/Plugin/LvalueAttributes
-@dirrmtry %%SITE_PERL%%/Mason/Plugin/DollarDot
-@dirrmtry %%SITE_PERL%%/Mason/Plugin/Defer
-@dirrmtry %%SITE_PERL%%/Mason/Plugin
-@dirrmtry %%SITE_PERL%%/Mason/Moose
-@dirrmtry %%SITE_PERL%%/Mason/Manual
-@dirrmtry %%SITE_PERL%%/Mason/Filters
-@dirrmtry %%SITE_PERL%%/Mason/Component
-@dirrmtry %%SITE_PERL%%/Mason

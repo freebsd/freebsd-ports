@@ -2,4 +2,3 @@
 %%PERL5_MAN3%%/MooseX::App::Cmd::Command.3.gz
 %%SITE_PERL%%/MooseX/App/Cmd.pm
 %%SITE_PERL%%/MooseX/App/Cmd/Command.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App/Cmd/.packlist

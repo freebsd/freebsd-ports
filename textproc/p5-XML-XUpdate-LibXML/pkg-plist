@@ -4,10 +4,3 @@ man/man1/xupdate.1.gz
 %%PERL5_MAN3%%/XML::XUpdate::LibXML.3.gz
 %%SITE_PERL%%/XML/Normalize/LibXML.pm
 %%SITE_PERL%%/XML/XUpdate/LibXML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate/LibXML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate/LibXML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/XUpdate
-@dirrmtry %%SITE_PERL%%/XML/Normalize
-@dirrmtry %%SITE_PERL%%/XML

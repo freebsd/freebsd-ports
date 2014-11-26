@@ -34,8 +34,3 @@
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter/simple.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter/standard.pm
-@dirrmtry %%SITE_PERL%%/HTTP/Proxy/HeaderFilter
-@dirrmtry %%SITE_PERL%%/HTTP/Proxy/Engine
-@dirrmtry %%SITE_PERL%%/HTTP/Proxy/BodyFilter
-@dirrmtry %%SITE_PERL%%/HTTP/Proxy
-@dirrmtry %%SITE_PERL%%/HTTP

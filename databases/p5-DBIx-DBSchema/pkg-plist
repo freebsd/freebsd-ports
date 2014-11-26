@@ -21,4 +21,3 @@
 %%SITE_PERL%%/DBIx/DBSchema/Index.pm
 %%SITE_PERL%%/DBIx/DBSchema/Table.pm
 %%SITE_PERL%%/DBIx/DBSchema/_util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBSchema/.packlist

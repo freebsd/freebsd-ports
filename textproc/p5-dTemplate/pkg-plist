@@ -1,6 +1,4 @@
 %%PERL5_MAN3%%/dTemplate.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/dTemplate/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/dTemplate/dTemplate.so
-%%SITE_PERL%%/%%PERL_ARCH%%/dTemplate.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/dTemplate.pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/dTemplate
+%%SITE_ARCH%%/auto/dTemplate/dTemplate.so
+%%SITE_ARCH%%/dTemplate.pm
+%%SITE_ARCH%%/dTemplate.pod

@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Lingua::EN::Fathom.3.gz
 %%SITE_PERL%%/Lingua/EN/Fathom.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Fathom/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Fathom
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrmtry %%SITE_PERL%%/Lingua/EN
-@dirrmtry %%SITE_PERL%%/Lingua

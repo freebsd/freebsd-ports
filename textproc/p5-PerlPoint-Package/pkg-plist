@@ -24,7 +24,6 @@ bin/pp2sdf
 %%SITE_PERL%%/PerlPoint/Tags/Basic.pm
 %%SITE_PERL%%/PerlPoint/Tags/SDF.pm
 %%SITE_PERL%%/PerlPoint/Template.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package/.packlist
 man/man1/perlpoint.1.gz
 man/man1/pp2sdf.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.pp2sdf
@@ -36,10 +35,3 @@ man/man1/pp2sdf.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pp2sdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pp2tree
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint
-@dirrmtry %%SITE_PERL%%/PerlPoint/Tags
-@dirrmtry %%SITE_PERL%%/PerlPoint/Generator/SDF
-@dirrmtry %%SITE_PERL%%/PerlPoint/Generator/Object
-@dirrmtry %%SITE_PERL%%/PerlPoint/Generator
-@dirrmtry %%SITE_PERL%%/PerlPoint

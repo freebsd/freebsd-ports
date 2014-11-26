@@ -10,6 +10,3 @@ bin/othello-demo
 %%SITE_PERL%%/Games/Sequential.pm
 %%SITE_PERL%%/Games/Sequential/Position.pm
 man/man1/othello-demo.1.gz
-@dirrmtry %%SITE_PERL%%/Games/Sequential
-@dirrmtry %%SITE_PERL%%/Games/AlphaBeta
-@dirrmtry %%SITE_PERL%%/Games

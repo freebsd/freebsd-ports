@@ -1,13 +1,8 @@
 %%PERL5_MAN3%%/Net::NIS.3.gz
 %%PERL5_MAN3%%/Net::NISTable.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/NIS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/NIS.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/NIS/Table.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/NISTable.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NIS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NIS/NIS.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NIS/autosplit.ix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NIS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/NIS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
+%%SITE_ARCH%%/Net/NIS.pm
+%%SITE_ARCH%%/Net/NIS.pod
+%%SITE_ARCH%%/Net/NIS/Table.pm
+%%SITE_ARCH%%/Net/NISTable.pod
+%%SITE_ARCH%%/auto/Net/NIS/NIS.so
+%%SITE_ARCH%%/auto/Net/NIS/autosplit.ix

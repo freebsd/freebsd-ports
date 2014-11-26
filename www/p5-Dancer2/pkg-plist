@@ -1,5 +1,4 @@
 bin/dancer2
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2/.packlist
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/MANIFEST.SKIP
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/Makefile.PL
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/config.yml

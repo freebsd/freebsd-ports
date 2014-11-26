@@ -3,7 +3,7 @@
 
 PORTNAME=	checkbot
 PORTVERSION=	1.80
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Checkbot%20${PORTVERSION}
 
@@ -24,9 +24,6 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/checkbot \
-		${SITE_PERL:S!${LOCALBASE}/!!}/${PERL_ARCH}/auto/checkbot/.packlist \
-		man/man1/checkbot.1.gz
-PLIST_DIRS=	${SITE_PERL:S!${LOCALBASE}/!!}/${PERL_ARCH}/auto/checkbot
+PLIST_FILES=	bin/checkbot man/man1/checkbot.1.gz
 
 .include <bsd.port.mk>

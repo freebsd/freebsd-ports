@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Chart::Math::Axis.3.gz
 %%SITE_PERL%%/Chart/Math/Axis.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Math/Axis/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Math/Axis
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Math
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart
-@dirrmtry %%SITE_PERL%%/Chart/Math
-@dirrmtry %%SITE_PERL%%/Chart

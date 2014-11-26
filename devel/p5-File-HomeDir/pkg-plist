@@ -18,4 +18,3 @@
 %%SITE_PERL%%/File/HomeDir/Test.pm
 %%SITE_PERL%%/File/HomeDir/Unix.pm
 %%SITE_PERL%%/File/HomeDir/Windows.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir/.packlist

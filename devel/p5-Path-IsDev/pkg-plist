@@ -25,7 +25,6 @@
 %%PERL5_MAN3%%/Path::IsDev::Role::Matcher::Child::Exists::Any::File.3.gz
 %%PERL5_MAN3%%/Path::IsDev::Role::Matcher::FullPath::Is::Any.3.gz
 %%PERL5_MAN3%%/Path::IsDev::Role::NegativeHeuristic.3.gz
-%%SITE_ARCH%%/auto/Path/IsDev/.packlist
 %%SITE_PERL%%/Path/IsDev.pm
 %%SITE_PERL%%/Path/IsDev/Heuristic/Changelog.pm
 %%SITE_PERL%%/Path/IsDev/Heuristic/DevDirMarker.pm

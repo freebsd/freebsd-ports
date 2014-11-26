@@ -1,7 +1,6 @@
 %%SITE_PERL%%/Geo/ShapeFile.pm
 %%SITE_PERL%%/Geo/ShapeFile/Point.pm
 %%SITE_PERL%%/Geo/ShapeFile/Shape.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/ShapeFile/.packlist
 %%PERL5_MAN3%%/Geo::ShapeFile.3.gz
 %%PERL5_MAN3%%/Geo::ShapeFile::Point.3.gz
 %%PERL5_MAN3%%/Geo::ShapeFile::Shape.3.gz

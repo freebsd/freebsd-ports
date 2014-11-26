@@ -1,6 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/SAVI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SAVI/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SAVI/SAVI.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SAVI/autosplit.ix
+%%SITE_ARCH%%/SAVI.pm
+%%SITE_ARCH%%/auto/SAVI/SAVI.so
+%%SITE_ARCH%%/auto/SAVI/autosplit.ix
 %%PERL5_MAN3%%/SAVI.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SAVI

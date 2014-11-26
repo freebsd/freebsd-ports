@@ -2,6 +2,7 @@
 
 PORTNAME=	TokyoCabinet
 PORTVERSION=	1.34
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://fallabs.com/tokyocabinet/perlpkg/

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Exception/.packlist
 %%SITE_PERL%%/HTTP/Exception.pm
 %%SITE_PERL%%/HTTP/Exception/1XX.pm
 %%SITE_PERL%%/HTTP/Exception/2XX.pm

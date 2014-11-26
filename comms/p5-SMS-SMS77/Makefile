@@ -3,6 +3,7 @@
 
 PORTNAME=	SMS-SMS77
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	comms net perl5
 MASTER_SITES=	http://www.w3r3wolf.de/files/sms77/
 PKGNAMEPREFIX=	p5-

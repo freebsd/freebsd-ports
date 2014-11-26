@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Aggregate/.packlist
 %%SITE_PERL%%/Test/Aggregate/Builder.pm
 %%SITE_PERL%%/Test/Aggregate/Base.pm
 %%SITE_PERL%%/Test/Aggregate/Nested.pm

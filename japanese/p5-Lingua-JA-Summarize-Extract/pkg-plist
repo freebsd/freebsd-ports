@@ -3,7 +3,6 @@
 %%PERL5_MAN3%%/Lingua::JA::Summarize::Extract::Plugin::Parser::NgramSimple.3.gz
 %%PERL5_MAN3%%/Lingua::JA::Summarize::Extract::Plugin::Parser::Trim.3.gz
 %%PERL5_MAN3%%/Lingua::JA::Summarize::Extract::Plugin::Sentence::Base.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Summarize/Extract/.packlist
 %%SITE_PERL%%/Lingua/JA/Summarize/Extract.pm
 %%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin.pm
 %%SITE_PERL%%/Lingua/JA/Summarize/Extract/ResultSet.pm

@@ -5,6 +5,47 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141126:
+  AFFECTS: users of lang/perl5.*
+  AUTHOR: mat@FreeBSD.org
+
+  The directories where Perl modules are installed has changed.  All
+  affected ports' PORTREVISION have been bumped, so upgrading should
+  be as painless as possible.  The old directories have been kept in
+  the default Perl @INC to make it even more painless.
+
+  The default Perl has been switched to lang/perl5.18.  These examples
+  are for switching from lang/perl5.16, if you are running a different
+  version, replace lang/perl5.16 with the origin of the Perl you have
+  installed.
+
+  Binary package users:
+
+    # pkg upgrade -f
+
+  Portupgrade users:
+    0) Fix pkgdb.db (for safety):
+        pkgdb -Ff
+
+    1) Reinstall new version of Perl (5.18):
+        portupgrade -o lang/perl5.18 -f lang/perl5.16
+
+    2) Reinstall everything that depends on Perl:
+        portupgrade -fr lang/perl5.18
+
+  Portmaster users:
+        portmaster -o lang/perl5.18 lang/perl5.16
+
+        Conservative:
+        portmaster p5-
+
+        Comprehensive (but perhaps overkill):
+        portmaster -r perl5-
+
+  Note: If the "perl5-" glob matches more than one port you will need to specify
+        the name of the installed Perl package explicitly.  You can get its name
+        by running: pkg info perl5
+
 20141125:
   AFFECTS: users of EFL libraries
   AUTHOR: gblach@FreeBSD.org

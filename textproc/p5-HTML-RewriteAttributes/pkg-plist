@@ -4,8 +4,3 @@
 %%SITE_PERL%%/HTML/RewriteAttributes.pm
 %%SITE_PERL%%/HTML/RewriteAttributes/Links.pm
 %%SITE_PERL%%/HTML/RewriteAttributes/Resources.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/RewriteAttributes/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/RewriteAttributes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML/RewriteAttributes
-@dirrmtry %%SITE_PERL%%/HTML

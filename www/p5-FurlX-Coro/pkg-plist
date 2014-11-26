@@ -2,5 +2,3 @@
 %%PERL5_MAN3%%/FurlX::Coro::HTTP.3.gz
 %%SITE_PERL%%/FurlX/Coro.pm
 %%SITE_PERL%%/FurlX/Coro/HTTP.pm
-@dirrm %%SITE_PERL%%/FurlX/Coro
-@dirrmtry %%SITE_PERL%%/FurlX

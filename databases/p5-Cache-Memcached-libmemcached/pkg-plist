@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Cache/Memcached/libmemcached.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/libmemcached/.packlist
 %%PERL5_MAN3%%/Cache::Memcached::libmemcached.3.gz

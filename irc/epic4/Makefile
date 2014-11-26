@@ -3,6 +3,7 @@
 
 PORTNAME=	epic4
 PORTVERSION=	2.10.5
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC4-PRODUCTION/ \
@@ -51,7 +52,7 @@ CONFIGURE_ARGS+=	--without-tcl
 #
 .if ${PORT_OPTIONS:MPERL}
 USES+=		perl5
-CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VERSION}/${PERL_ARCH}/CORE
+CONFIGURE_ARGS+=	--with-perl=${LOCALBASE}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/CORE
 .else
 CONFIGURE_ARGS+=	--without-perl
 .endif

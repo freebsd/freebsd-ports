@@ -1,6 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece/Piece.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/Time/Piece.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Time/Seconds.pm
+%%SITE_ARCH%%/auto/Time/Piece/Piece.so
+%%SITE_ARCH%%/Time/Piece.pm
+%%SITE_ARCH%%/Time/Seconds.pm
 %%PERL5_MAN3%%/Time::Piece.3.gz
 %%PERL5_MAN3%%/Time::Seconds.3.gz

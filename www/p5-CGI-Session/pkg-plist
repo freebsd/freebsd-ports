@@ -15,7 +15,6 @@
 %%SITE_PERL%%/CGI/Session/Serialize/storable.pm
 %%SITE_PERL%%/CGI/Session/Test/Default.pm
 %%SITE_PERL%%/CGI/Session/Tutorial.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist
 %%PERL5_MAN3%%/CGI::Session.3.gz
 %%PERL5_MAN3%%/CGI::Session::Driver.3.gz
 %%PERL5_MAN3%%/CGI::Session::Driver::DBI.3.gz
@@ -33,11 +32,3 @@
 %%PERL5_MAN3%%/CGI::Session::Serialize::storable.3.gz
 %%PERL5_MAN3%%/CGI::Session::Test::Default.3.gz
 %%PERL5_MAN3%%/CGI::Session::Tutorial.3.gz
-@dirrm %%SITE_PERL%%/CGI/Session/Driver
-@dirrm %%SITE_PERL%%/CGI/Session/ID
-@dirrm %%SITE_PERL%%/CGI/Session/Serialize
-@dirrm %%SITE_PERL%%/CGI/Session/Test
-@dirrm %%SITE_PERL%%/CGI/Session
-@dirrmtry %%SITE_PERL%%/CGI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI

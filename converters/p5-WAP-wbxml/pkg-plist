@@ -10,6 +10,5 @@ man/man1/wbxmlc.1.gz
 %%SITE_PERL%%/WAP/wbxml/wap.wbrules.xml
 %%SITE_PERL%%/WAP/wbxml/wv.wbrules.pl
 %%SITE_PERL%%/WAP/wbxml/wv.wbrules.xml
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WAP/wbxml/.packlist
 %%PERL5_MAN3%%/WAP::wbxml.3.gz
 %%PERL5_MAN3%%/WAP::wbxml::WbRules.3.gz

@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Statistics::Contingency.3.gz
 %%SITE_PERL%%/Statistics/Contingency.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Contingency/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Contingency
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
-@dirrmtry %%SITE_PERL%%/Statistics

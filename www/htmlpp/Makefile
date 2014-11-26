@@ -3,6 +3,7 @@
 
 PORTNAME=	htmlpp
 PORTVERSION=	4.2a
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://legacy.imatix.com/pub/tools/
 DISTNAME=	htmlp42a

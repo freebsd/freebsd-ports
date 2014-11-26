@@ -3,6 +3,7 @@
 
 PORTNAME=	Syntax-Highlight-Perl-Improved
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAVIDCYL/Syntax-Highlight-Perl-Improved-101

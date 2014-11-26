@@ -27,21 +27,3 @@
 %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/view.tt
 %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/view_macros.tt
 %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/static/css/enzyme.css
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Enzyme/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Enzyme
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/static/css
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/static
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model/Enzyme
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Controller/Enzyme
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Controller
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper
-@dirrmtry %%SITE_PERL%%/Catalyst/Enzyme/CRUD
-@dirrmtry %%SITE_PERL%%/Catalyst/Enzyme
-@dirrmtry %%SITE_PERL%%/Catalyst

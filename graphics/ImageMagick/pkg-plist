@@ -439,12 +439,12 @@ libdata/pkgconfig/Magick++-6.%%QBIT%%%%HDRI%%.pc
 libdata/pkgconfig/MagickCore-6.%%QBIT%%%%HDRI%%.pc
 libdata/pkgconfig/MagickWand-6.%%QBIT%%%%HDRI%%.pc
 libdata/pkgconfig/Wand-6.%%QBIT%%%%HDRI%%.pc
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick/%%QBIT%%%%HDRI%%.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/%%QBIT%%%%HDRI%%.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/autosplit.ix
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
+%%WITH_PERL%%%%SITE_ARCH%%/Image/Magick.pm
+%%WITH_PERL%%%%SITE_ARCH%%/Image/Magick/%%QBIT%%%%HDRI%%.pm
+%%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/Magick.so
+%%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/%%QBIT%%%%HDRI%%.so
+%%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/autosplit.ix
+%%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/autosplit.ix
 %%WITH_PERL%%%%PERL5_MAN3%%/Image::Magick.3.gz
 %%WITH_PERL%%%%PERL5_MAN3%%/Image::Magick::%%QBIT%%%%HDRI%%.3.gz
 man/man1/ImageMagick.1.gz
@@ -1472,4 +1472,3 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/t-shirt.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/wand.png
-%%WITH_PERL%%@dir lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%

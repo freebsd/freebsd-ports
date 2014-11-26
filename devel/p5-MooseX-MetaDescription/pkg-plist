@@ -3,7 +3,6 @@
 %%SITE_PERL%%/MooseX/MetaDescription/Meta/Attribute.pm
 %%SITE_PERL%%/MooseX/MetaDescription/Meta/Class.pm
 %%SITE_PERL%%/MooseX/MetaDescription/Meta/Trait.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MetaDescription/.packlist
 %%PERL5_MAN3%%/MooseX::MetaDescription.3.gz
 %%PERL5_MAN3%%/MooseX::MetaDescription::Description.3.gz
 %%PERL5_MAN3%%/MooseX::MetaDescription::Meta::Attribute.3.gz

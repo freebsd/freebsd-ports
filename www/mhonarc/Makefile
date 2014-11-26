@@ -3,7 +3,7 @@
 
 PORTNAME=	mhonarc
 PORTVERSION=	2.6.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.mhonarc.org/release/MHonArc/tar/ \
 		http://www.oac.uci.edu/indiv/ehood/tar/
@@ -16,7 +16,7 @@ USES=		tar:bzip2 perl5
 NO_BUILD=	Yes
 
 INSTALL_ARGS=	-prefix ${STAGEDIR} -binpath ${STAGEDIR}${PREFIX}/bin \
-		-libpath ${STAGEDIR}${SITE_PERL} \
+		-libpath ${STAGEDIR}${PREFIX}/${SITE_PERL_REL} \
 		-manpath ${STAGEDIR}${PREFIX}/man \
 		-batch
 

@@ -7,4 +7,3 @@ bin/jsan
 %%SITE_PERL%%/JSAN/Indexer.pm
 %%SITE_PERL%%/JSAN/Indexer/Creator.pm
 %%SITE_PERL%%/JSAN/Shell.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSAN/.packlist

@@ -1,21 +1,20 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/ImageView/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/ImageView/ImageView.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pixbuf/Draw/Cache.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Anim.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install/Files.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install/gtkimageviewperl-autogen.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install/gtkimageviewperl.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install/gtkimageviewperl.typemap
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Nav.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/ScrollWin.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool/Dragger.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool/Painter.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool/Selector.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Zoom.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/index.pod
+%%SITE_ARCH%%/auto/Gtk2/ImageView/ImageView.so
+%%SITE_ARCH%%/Gtk2/Gdk/Pixbuf/Draw/Cache.pod
+%%SITE_ARCH%%/Gtk2/ImageView.pm
+%%SITE_ARCH%%/Gtk2/ImageView.pod
+%%SITE_ARCH%%/Gtk2/ImageView/Anim.pod
+%%SITE_ARCH%%/Gtk2/ImageView/Install/Files.pm
+%%SITE_ARCH%%/Gtk2/ImageView/Install/gtkimageviewperl-autogen.h
+%%SITE_ARCH%%/Gtk2/ImageView/Install/gtkimageviewperl.h
+%%SITE_ARCH%%/Gtk2/ImageView/Install/gtkimageviewperl.typemap
+%%SITE_ARCH%%/Gtk2/ImageView/Nav.pod
+%%SITE_ARCH%%/Gtk2/ImageView/ScrollWin.pod
+%%SITE_ARCH%%/Gtk2/ImageView/Tool.pod
+%%SITE_ARCH%%/Gtk2/ImageView/Tool/Dragger.pod
+%%SITE_ARCH%%/Gtk2/ImageView/Tool/Painter.pod
+%%SITE_ARCH%%/Gtk2/ImageView/Tool/Selector.pod
+%%SITE_ARCH%%/Gtk2/ImageView/Zoom.pod
+%%SITE_ARCH%%/Gtk2/ImageView/index.pod
 %%PERL5_MAN3%%/Gtk2::ImageView.3.gz
 %%PERL5_MAN3%%/Gtk2::Gdk::Pixbuf::Draw::Cache.3.gz
 %%PERL5_MAN3%%/Gtk2::ImageView::Anim.3.gz
@@ -27,12 +26,3 @@
 %%PERL5_MAN3%%/Gtk2::ImageView::Tool::Selector.3.gz
 %%PERL5_MAN3%%/Gtk2::ImageView::Zoom.3.gz
 %%PERL5_MAN3%%/Gtk2::ImageView::index.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/ImageView
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pixbuf/Draw
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pixbuf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2

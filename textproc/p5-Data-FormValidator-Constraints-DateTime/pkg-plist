@@ -1,5 +1,2 @@
 %%PERL5_MAN3%%/Data::FormValidator::Constraints::DateTime.3.gz
 %%SITE_PERL%%/Data/FormValidator/Constraints/DateTime.pm
-@dirrmtry %%SITE_PERL%%/Data/FormValidator/Constraints
-@dirrmtry %%SITE_PERL%%/Data/FormValidator
-@dirrmtry %%SITE_PERL%%/Data
