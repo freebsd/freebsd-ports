@@ -25,8 +25,3 @@
 %%SITE_PERL%%/CSS/Selector.pm
 %%SITE_PERL%%/CSS/Style.pm
 %%SITE_PERL%%/CSS/Value.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
-@dirrmtry %%SITE_PERL%%/CSS/Parse
-@dirrmtry %%SITE_PERL%%/CSS/Adaptor
-@dirrmtry %%SITE_PERL%%/CSS

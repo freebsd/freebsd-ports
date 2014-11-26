@@ -1,8 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Digest/FNV.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/FNV/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/FNV/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/FNV/FNV.so
+%%SITE_ARCH%%/Digest/FNV.pm
+%%SITE_ARCH%%/auto/Digest/FNV/autosplit.ix
+%%SITE_ARCH%%/auto/Digest/FNV/FNV.so
 %%PERL5_MAN3%%/Digest::FNV.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/FNV/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Digest/

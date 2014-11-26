@@ -3,6 +3,7 @@
 
 PORTNAME=	NetHirc
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/
 

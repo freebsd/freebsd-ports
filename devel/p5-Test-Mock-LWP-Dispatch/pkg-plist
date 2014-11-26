@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Test/Mock/LWP/Dispatch.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mock/LWP/Dispatch/.packlist
 %%PERL5_MAN3%%/Test::Mock::LWP::Dispatch.3.gz

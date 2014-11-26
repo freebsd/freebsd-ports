@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Tie/File/AsHash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/File/AsHash/.packlist
 %%PERL5_MAN3%%/Tie::File::AsHash.3.gz

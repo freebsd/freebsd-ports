@@ -2,6 +2,7 @@
 
 PORTNAME=	Net-Nmsg
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	https://tools.netsa.cert.org/confluence/download/attachments/12320770/ \
 		http://tools.netsa.cert.org/confluence/download/attachments/12320770/
@@ -27,7 +28,7 @@ PORTEXAMPLES=	*
 .include <bsd.port.options.mk>
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/Nmsg/Nmsg.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Nmsg/Nmsg.so
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})

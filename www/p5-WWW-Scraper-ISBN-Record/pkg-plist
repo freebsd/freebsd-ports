@@ -1,7 +1,2 @@
 %%PERL5_MAN3%%/WWW::Scraper::ISBN::Record.3.gz
 %%SITE_PERL%%/WWW/Scraper/ISBN/Record.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Scraper-ISBN-Record/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Scraper-ISBN-Record
-@dirrmtry %%SITE_PERL%%/WWW/Scraper/ISBN
-@dirrmtry %%SITE_PERL%%/WWW/Scraper
-@dirrmtry %%SITE_PERL%%/WWW

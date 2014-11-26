@@ -6,10 +6,3 @@
 %%SITE_PERL%%/File/Format/RIFF/Chunk.pm
 %%SITE_PERL%%/File/Format/RIFF/Container.pm
 %%SITE_PERL%%/File/Format/RIFF/List.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Format/RIFF/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Format/RIFF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Format
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Format/RIFF
-@dirrmtry %%SITE_PERL%%/File/Format
-@dirrmtry %%SITE_PERL%%/File

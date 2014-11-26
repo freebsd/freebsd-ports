@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Number::Compare.3.gz
 %%SITE_PERL%%/Number/Compare.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Compare/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Compare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
-@dirrmtry %%SITE_PERL%%/Number

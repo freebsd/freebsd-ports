@@ -1,3 +1,2 @@
 %%SITE_PERL%%/ZConf/Runner/GUI/GTK.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Runner/GUI/GTK/.packlist
 %%PERL5_MAN3%%/ZConf::Runner::GUI::GTK.3.gz

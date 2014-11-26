@@ -2,9 +2,5 @@ bin/procinfo
 bin/showprocattr
 bin/topten
 %%PERL5_MAN3%%/BSD::Process.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/BSD/Process.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Process/Process.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Process/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Process
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/BSD
+%%SITE_ARCH%%/BSD/Process.pm
+%%SITE_ARCH%%/auto/BSD/Process/Process.so

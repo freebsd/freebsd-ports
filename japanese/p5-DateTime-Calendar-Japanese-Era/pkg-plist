@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Japanese/Era/.packlist
 %%SITE_PERL%%/auto/share/module/DateTime-Calendar-Japanese-Era/eras.yaml
 %%SITE_PERL%%/auto/share/module/DateTime-Calendar-Japanese-Era/south-eras.yaml
 %%SITE_PERL%%/DateTime/Calendar/Japanese/Era.pm

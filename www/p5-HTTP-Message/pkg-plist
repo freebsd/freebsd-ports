@@ -16,9 +16,3 @@
 %%SITE_PERL%%/HTTP/Request/Common.pm
 %%SITE_PERL%%/HTTP/Response.pm
 %%SITE_PERL%%/HTTP/Status.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Message/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Message
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
-@dirrmtry %%SITE_PERL%%/HTTP/Request
-@dirrmtry %%SITE_PERL%%/HTTP/Headers
-@dirrmtry %%SITE_PERL%%/HTTP

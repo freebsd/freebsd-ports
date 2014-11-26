@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/POE::XS::Loop::Poll.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/POE/XS/Loop/Poll.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/XS/Loop/Poll/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/XS/Loop/Poll/Poll.so
+%%SITE_ARCH%%/POE/XS/Loop/Poll.pm
+%%SITE_ARCH%%/auto/POE/XS/Loop/Poll/Poll.so

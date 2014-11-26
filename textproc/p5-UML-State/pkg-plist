@@ -6,9 +6,5 @@ bin/drawstatexml.pl
 %%SITE_PERL%%/UML/State.pm
 %%SITE_PERL%%/UML/drawstate.pl
 %%SITE_PERL%%/UML/drawstatexml.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/State/.packlist
 man/man1/drawstate.pl.1.gz
 man/man1/drawstatexml.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/State
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML
-@dirrmtry %%SITE_PERL%%/UML

@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-ZooKeeper
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +21,6 @@ CONFIGURE_ARGS+=	--zookeeper-include ${PREFIX}/include \
 			--zookeeper-lib ${PREFIX}/libs
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/ZooKeeper/ZooKeeper.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/ZooKeeper/ZooKeeper.so
 
 .include <bsd.port.mk>

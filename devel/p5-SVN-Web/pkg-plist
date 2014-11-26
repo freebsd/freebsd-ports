@@ -39,7 +39,6 @@ bin/svnweb-install
 %%SITE_PERL%%/SVN/Web/View.pm
 %%SITE_PERL%%/SVN/Web/X.pm
 %%SITE_PERL%%/SVN/Web/action.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web/.packlist
 man/man1/svnweb-install.1.gz
 %%WWWDIR%%/SVN-Web.psgi
 %%WWWDIR%%/css/common.css

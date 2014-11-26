@@ -24,16 +24,8 @@
 %%SITE_PERL%%/XML/SAX/Manifold.pm
 %%SITE_PERL%%/XML/SAX/Pipeline.pm
 %%SITE_PERL%%/XML/SAX/Tap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/append_to_xml_file
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/output_to_process
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml_records_thru_libxslt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml_records_to_data_structures
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/SAX/Machines
-@dirrmtry %%SITE_PERL%%/XML/SAX
-@dirrmtry %%SITE_PERL%%/XML/Filter
-@dirrmtry %%SITE_PERL%%/XML

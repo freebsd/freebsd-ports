@@ -664,4 +664,3 @@
 %%SITE_PERL%%/Net/DRI/Transport/Socket.pm
 %%SITE_PERL%%/Net/DRI/Util.pm
 %%SITE_PERL%%/Net/DRI.pm
-%%SITE_PERL%%/mach/auto/Net/DRI/.packlist

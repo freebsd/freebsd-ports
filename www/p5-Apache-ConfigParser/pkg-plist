@@ -4,8 +4,3 @@
 %%SITE_PERL%%/Apache/ConfigParser.pod
 %%SITE_PERL%%/Apache/ConfigParser/Directive.pm
 %%SITE_PERL%%/Apache/ConfigParser/Directive.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ConfigParser/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ConfigParser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/Apache/ConfigParser
-@dirrmtry %%SITE_PERL%%/Apache

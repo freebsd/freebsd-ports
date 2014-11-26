@@ -3,7 +3,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.25.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
@@ -36,7 +36,7 @@ USE_PHP=	json mysql session
 USE_MYSQL=	yes
 USE_RC_SUBR=	zoneminder
 USE_GCC=	any
-USE_PERL5=	run build fixpacklist
+USE_PERL5=	run build
 
 CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg0
@@ -142,7 +142,6 @@ post-install:
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
-	-${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 	${MKDIR} -p ${STAGEDIR}${M_TMPDIR}
 	${MKDIR} -p ${STAGEDIR}${M_RUNDIR}
 	${MKDIR} -p ${STAGEDIR}${M_LOGDIR}

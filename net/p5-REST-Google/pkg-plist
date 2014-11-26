@@ -34,6 +34,3 @@
 %%SITE_PERL%%/REST/Google/Search/Web.pod
 %%SITE_PERL%%/REST/Google/Translate.pm
 %%SITE_PERL%%/REST/Google/Translate.pod
-@dirrmtry %%SITE_PERL%%/REST/Google/Search
-@dirrmtry %%SITE_PERL%%/REST/Google
-@dirrmtry %%SITE_PERL%%/REST

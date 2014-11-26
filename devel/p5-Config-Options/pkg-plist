@@ -1,5 +1,4 @@
 %%SITE_PERL%%/Config/Options.pm
 %%SITE_PERL%%/Config/Options/Threaded.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Options/.packlist
 %%PERL5_MAN3%%/Config::Options.3.gz
 %%PERL5_MAN3%%/Config::Options::Threaded.3.gz

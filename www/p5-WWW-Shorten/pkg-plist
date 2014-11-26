@@ -22,8 +22,3 @@ man/man1/shorten.1.gz
 %%SITE_PERL%%/WWW/Shorten/UserAgent.pm
 %%SITE_PERL%%/WWW/Shorten/_dead.pm
 %%SITE_PERL%%/WWW/Shorten/generic.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/Shorten
-@dirrmtry %%SITE_PERL%%/WWW

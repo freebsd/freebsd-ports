@@ -2,5 +2,3 @@
 %%PERL5_MAN3%%/Tree::Authz::Role.3.gz
 %%SITE_PERL%%/Tree/Authz.pm
 %%SITE_PERL%%/Tree/Authz/Role.pm
-@dirrmtry %%SITE_PERL%%/Tree/Authz
-@dirrmtry %%SITE_PERL%%/Tree

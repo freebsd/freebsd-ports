@@ -3,6 +3,7 @@
 
 PORTNAME=	grake
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -23,8 +24,6 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/grake
-PLIST_FILES=	bin/grake ${SITE_PERL_REL}/${PERL_ARCH}/auto/grake/.packlist \
-		man/man1/grake.1.gz
+PLIST_FILES=	bin/grake man/man1/grake.1.gz
 
 .include <bsd.port.mk>

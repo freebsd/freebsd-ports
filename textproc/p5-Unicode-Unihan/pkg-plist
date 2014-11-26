@@ -1,5 +1,4 @@
 %%PERL5_MAN3%%/Unicode::Unihan.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Unihan/.packlist
 %%SITE_PERL%%/Unicode/Unihan.pm
 %%SITE_PERL%%/Unicode/Unihan/AccountingNumeric.db
 %%SITE_PERL%%/Unicode/Unihan/BigFive.db
@@ -89,7 +88,3 @@
 %%SITE_PERL%%/Unicode/Unihan/XHC1983.db
 %%SITE_PERL%%/Unicode/Unihan/Xerox.db
 %%SITE_PERL%%/Unicode/Unihan/ZVariant.db
-@dirrmtry %%SITE_PERL%%/Unicode/Unihan
-@dirrmtry %%SITE_PERL%%/Unicode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Unihan
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode

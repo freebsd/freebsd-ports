@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-DOM/.packlist
 %%SITE_PERL%%/XML/DOM.pm
 %%SITE_PERL%%/XML/DOM/AttDef.pod
 %%SITE_PERL%%/XML/DOM/AttlistDecl.pod
@@ -52,5 +51,3 @@
 %%PERL5_MAN3%%/XML::DOM::Text.3.gz
 %%PERL5_MAN3%%/XML::DOM::XMLDecl.3.gz
 %%PERL5_MAN3%%/XML::Handler::BuildDOM.3.gz
-@dirrm %%SITE_PERL%%/XML/DOM
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-DOM

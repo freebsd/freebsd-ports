@@ -3,6 +3,7 @@
 
 PORTNAME=	Template-Plugin-Filter-Minify-JavaScript
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

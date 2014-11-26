@@ -123,4 +123,3 @@ man/man1/use-devel-assertos.1.gz
 %%SITE_PERL%%/Devel/AssertOS/VOS.pm
 %%SITE_PERL%%/Devel/CheckOS.pm
 %%SITE_PERL%%/Devel/CheckOS/Families.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS/.packlist

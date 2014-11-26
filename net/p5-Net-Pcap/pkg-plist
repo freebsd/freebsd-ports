@@ -1,9 +1,5 @@
 bin/pcapinfo
 %%PERL5_MAN3%%/Net::Pcap.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Pcap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Pcap/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Pcap/Pcap.so
+%%SITE_ARCH%%/Net/Pcap.pm
+%%SITE_ARCH%%/auto/Net/Pcap/Pcap.so
 man/man1/pcapinfo.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Pcap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

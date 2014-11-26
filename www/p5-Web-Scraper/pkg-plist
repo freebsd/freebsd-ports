@@ -5,8 +5,3 @@ bin/scraper
 %%SITE_PERL%%/Web/Scraper.pm
 %%SITE_PERL%%/Web/Scraper/Filter.pm
 %%SITE_PERL%%/Web/Scraper/LibXML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Web/Scraper/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Web/Scraper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Web
-@dirrmtry %%SITE_PERL%%/Web/Scraper
-@dirrmtry %%SITE_PERL%%/Web

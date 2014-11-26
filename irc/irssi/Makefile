@@ -2,7 +2,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.17
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	irc
 MASTER_SITES=	http://mirror.irssi.org/
 
@@ -82,8 +82,5 @@ post-configure:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules
-.if ${PORT_OPTIONS:MPERL}
-	@${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
-.endif
 
 .include <bsd.port.mk>

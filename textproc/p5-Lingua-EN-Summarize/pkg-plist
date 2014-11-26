@@ -2,10 +2,3 @@
 %%PERL5_MAN3%%/Lingua::EN::Summarize.3.gz
 %%SITE_PERL%%/Lingua/EN/Summarize.pm
 %%SITE_PERL%%/Lingua/EN/Summarize/Filters.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Summarize/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Summarize
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrmtry %%SITE_PERL%%/Lingua/EN/Summarize
-@dirrmtry %%SITE_PERL%%/Lingua/EN
-@dirrmtry %%SITE_PERL%%/Lingua

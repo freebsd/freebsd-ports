@@ -12,4 +12,3 @@
 %%SITE_PERL%%/Class/MixinFactory/InsideOutAttr.pm
 %%SITE_PERL%%/Class/MixinFactory/NEXT.pm
 %%SITE_PERL%%/Class/MixinFactory/ReadMe.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MixinFactory/.packlist

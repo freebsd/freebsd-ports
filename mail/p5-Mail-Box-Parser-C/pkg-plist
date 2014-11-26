@@ -1,12 +1,4 @@
 %%PERL5_MAN3%%/Mail::Box::Parser::C.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Mail/Box/Parser/C.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Mail/Box/Parser/C.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C/C.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mail/Box/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mail/Box
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mail
+%%SITE_ARCH%%/Mail/Box/Parser/C.pm
+%%SITE_ARCH%%/Mail/Box/Parser/C.pod
+%%SITE_ARCH%%/auto/Mail/Box/Parser/C/C.so

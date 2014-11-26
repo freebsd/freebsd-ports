@@ -1,32 +1,24 @@
 %%PERL5_MAN3%%/XML::SAX::ExpatXS.3.gz
 %%PERL5_MAN3%%/XML::SAX::ExpatXS::Encoding.3.gz
 %%PERL5_MAN3%%/XML::SAX::ExpatXS::Preload.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encoding.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/big5.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/euc-kr.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-2.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-3.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-4.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-5.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-7.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-8.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-9.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/windows-1250.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/windows-1252.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/x-euc-jp-jisx0221.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/x-euc-jp-unicode.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-cp932.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-jdk117.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-jisx0221.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-unicode.enc
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Preload.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS/ExpatXS.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML
+%%SITE_ARCH%%/XML/SAX/ExpatXS.pm
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encoding.pm
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/big5.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/euc-kr.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-2.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-3.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-4.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-5.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-7.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-8.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/iso-8859-9.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/windows-1250.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/windows-1252.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/x-euc-jp-jisx0221.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/x-euc-jp-unicode.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-cp932.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-jdk117.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-jisx0221.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Encodings/x-sjis-unicode.enc
+%%SITE_ARCH%%/XML/SAX/ExpatXS/Preload.pm
+%%SITE_ARCH%%/auto/XML/SAX/ExpatXS/ExpatXS.so

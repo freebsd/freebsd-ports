@@ -4,4 +4,3 @@
 %%SITE_PERL%%/MooseX/MultiInitArg.pm
 %%SITE_PERL%%/MooseX/MultiInitArg/Attribute.pm
 %%SITE_PERL%%/MooseX/MultiInitArg/Trait.pm
-%%SITE_PERL%%/mach/auto/MooseX/MultiInitArg/.packlist

@@ -4,13 +4,3 @@
 %%SITE_PERL%%/ResourcePool/Factory/Net/LDAP.pod
 %%SITE_PERL%%/ResourcePool/Resource/Net/LDAP.pm
 %%SITE_PERL%%/ResourcePool/Resource/Net/LDAP.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/Net/LDAP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/Net/LDAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool
-@dirrmtry %%SITE_PERL%%/ResourcePool/Resource/Net
-@dirrmtry %%SITE_PERL%%/ResourcePool/Resource
-@dirrmtry %%SITE_PERL%%/ResourcePool/Factory/Net
-@dirrmtry %%SITE_PERL%%/ResourcePool/Factory
-@dirrmtry %%SITE_PERL%%/ResourcePool

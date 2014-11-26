@@ -1,12 +1,5 @@
 %%PERL5_MAN3%%/Crypt::OpenSSL::Bignum.3.gz
 %%PERL5_MAN3%%/Crypt::OpenSSL::Bignum::CTX.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/Bignum.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/Bignum/CTX.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/Bignum/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/Bignum/Bignum.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/Bignum
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/Bignum
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
+%%SITE_ARCH%%/Crypt/OpenSSL/Bignum.pm
+%%SITE_ARCH%%/Crypt/OpenSSL/Bignum/CTX.pm
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/Bignum/Bignum.so

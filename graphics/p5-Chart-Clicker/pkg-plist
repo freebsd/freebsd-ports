@@ -74,4 +74,3 @@
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedArea.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedBar.pm
 %%SITE_PERL%%/Chart/Clicker/Tutorial.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Clicker/.packlist

@@ -58,7 +58,6 @@ bin/wordVectors.pl
 %%SITE_PERL%%/WordNet/vector-relation.dat
 %%SITE_PERL%%/WordNet/vectorFile.pm
 %%SITE_PERL%%/WordNet/wordvectors.dat
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity/.packlist
 man/man1/BNCFreq.pl.1.gz
 man/man1/brownFreq.pl.1.gz
 man/man1/compounds.pl.1.gz
@@ -70,7 +69,3 @@ man/man1/similarity_server.pl.1.gz
 man/man1/treebankFreq.pl.1.gz
 man/man1/wnDepths.pl.1.gz
 man/man1/wordVectors.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet
-@dirrmtry %%SITE_PERL%%/WordNet/Similarity
-@dirrmtry %%SITE_PERL%%/WordNet

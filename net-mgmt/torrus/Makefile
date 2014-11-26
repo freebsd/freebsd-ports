@@ -3,6 +3,7 @@
 
 PORTNAME=	torrus
 PORTVERSION=	2.07
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/torrus/torrus/
 

@@ -2,9 +2,3 @@
 %%PERL5_MAN3%%/HTML::Entities::ImodePictogram.ja.3.gz
 %%SITE_PERL%%/HTML/Entities/ImodePictogram.ja.pod
 %%SITE_PERL%%/HTML/Entities/ImodePictogram.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities/ImodePictogram/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities/ImodePictogram
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML/Entities
-@dirrmtry %%SITE_PERL%%/HTML

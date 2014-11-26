@@ -2,7 +2,6 @@
 %%PERL5_MAN3%%/POD2::PT_BR::local::lib.3.gz
 %%PERL5_MAN3%%/lib::core::only.3.gz
 %%PERL5_MAN3%%/local::lib.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/local/lib/.packlist
 %%SITE_PERL%%/lib/core/only.pm
 %%SITE_PERL%%/local/lib.pm
 %%SITE_PERL%%/POD2/DE/local/lib.pod

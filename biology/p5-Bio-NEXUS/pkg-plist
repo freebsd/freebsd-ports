@@ -29,7 +29,6 @@ bin/nextool.pl
 %%SITE_PERL%%/Bio/NEXUS/Util/Exceptions.pm
 %%SITE_PERL%%/Bio/NEXUS/Util/Logger.pm
 %%SITE_PERL%%/Bio/NEXUS/WeightSet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/NEXUS/.packlist
 %%PERL5_MAN3%%/Bio::NEXUS.3.gz
 %%PERL5_MAN3%%/Bio::NEXUS::AssumptionsBlock.3.gz
 %%PERL5_MAN3%%/Bio::NEXUS::Block.3.gz

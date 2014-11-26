@@ -1,6 +1,2 @@
 %%SITE_PERL%%/HTML/RSSAutodiscovery.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/RSSAutodiscovery/.packlist
 %%PERL5_MAN3%%/HTML::RSSAutodiscovery.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/RSSAutodiscovery
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML

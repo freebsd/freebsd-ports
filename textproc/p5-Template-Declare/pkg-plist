@@ -6,7 +6,6 @@
 %%PERL5_MAN3%%/Template::Declare::TagSet::RDF::EM.3.gz
 %%PERL5_MAN3%%/Template::Declare::TagSet::XUL.3.gz
 %%PERL5_MAN3%%/Template::Declare::Tags.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Declare/.packlist
 %%SITE_PERL%%/Template/Declare.pm
 %%SITE_PERL%%/Template/Declare/Buffer.pm
 %%SITE_PERL%%/Template/Declare/TagSet.pm
@@ -15,9 +14,3 @@
 %%SITE_PERL%%/Template/Declare/TagSet/RDF/EM.pm
 %%SITE_PERL%%/Template/Declare/TagSet/XUL.pm
 %%SITE_PERL%%/Template/Declare/Tags.pm
-@dirrmtry %%SITE_PERL%%/Template/Declare/TagSet/RDF
-@dirrmtry %%SITE_PERL%%/Template/Declare/TagSet
-@dirrmtry %%SITE_PERL%%/Template/Declare
-@dirrmtry %%SITE_PERL%%/Template
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Declare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template

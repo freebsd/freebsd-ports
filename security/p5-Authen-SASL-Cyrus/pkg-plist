@@ -1,12 +1,5 @@
 %%PERL5_MAN3%%/Authen::SASL::Cyrus.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Authen/SASL/Cyrus.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Authen/SASL/Cyrus.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Authen/SASL/Cyrus/Security.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/Cyrus/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/Cyrus/Cyrus.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/Cyrus
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Authen/SASL/Cyrus
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Authen/SASL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Authen
+%%SITE_ARCH%%/Authen/SASL/Cyrus.pm
+%%SITE_ARCH%%/Authen/SASL/Cyrus.pod
+%%SITE_ARCH%%/Authen/SASL/Cyrus/Security.pm
+%%SITE_ARCH%%/auto/Authen/SASL/Cyrus/Cyrus.so

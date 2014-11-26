@@ -1,10 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Authen/PAM.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Authen/PAM/FAQ.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PAM/PAM.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PAM/.packlist
+%%SITE_ARCH%%/Authen/PAM.pm
+%%SITE_ARCH%%/Authen/PAM/FAQ.pod
+%%SITE_ARCH%%/auto/Authen/PAM/PAM.so
 %%PERL5_MAN3%%/Authen::PAM.3.gz
 %%PERL5_MAN3%%/Authen::PAM::FAQ.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PAM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Authen/PAM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Authen

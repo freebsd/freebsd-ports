@@ -15,7 +15,6 @@ bin/squatting
 %%PERL5_MAN3%%/Squatting::With::MockRequest.3.gz
 %%PERL5_MAN3%%/Squatting::With::Mount.3.gz
 man/man1/squatting.1.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Squatting/.packlist
 %%SITE_PERL%%/Squatting.pm
 %%SITE_PERL%%/Squatting/Controller.pm
 %%SITE_PERL%%/Squatting/H.pm
@@ -33,8 +32,3 @@ man/man1/squatting.1.gz
 %%SITE_PERL%%/Squatting/With/MockRequest.pm
 %%SITE_PERL%%/Squatting/With/Mount.pm
 %%SITE_PERL%%/squatting.pl
-@dirrmtry %%SITE_PERL%%/Squatting/With/Coro
-@dirrmtry %%SITE_PERL%%/Squatting/With
-@dirrmtry %%SITE_PERL%%/Squatting/On
-@dirrmtry %%SITE_PERL%%/Squatting
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Squatting

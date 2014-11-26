@@ -294,5 +294,4 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/_Util.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class/File.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/.packlist
 man/man1/dbicadmin.1.gz

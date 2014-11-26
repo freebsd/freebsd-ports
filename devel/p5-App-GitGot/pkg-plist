@@ -24,7 +24,6 @@ bin/got-complete
 %%SITE_PERL%%/App/GitGot/Outputter.pm
 %%SITE_PERL%%/App/GitGot/Repo.pm
 %%SITE_PERL%%/App/GitGot/Repo/Git.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot/.packlist
 %%PERL5_MAN3%%/App::GitGot.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::add.3.gz

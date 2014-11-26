@@ -44,4 +44,3 @@
 %%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait/Testmysqld.pm
 %%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait/Testpostgresql.pm
 %%SITE_PERL%%/Test/DBIx/Class/Types.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DBIx/Class/.packlist

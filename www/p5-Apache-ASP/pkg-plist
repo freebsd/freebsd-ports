@@ -29,16 +29,4 @@ bin/asp-perl
 %%SITE_PERL%%/Apache/ASP/StateManager.pm
 %%SITE_PERL%%/Bundle/Apache/ASP.pm
 %%SITE_PERL%%/Bundle/Apache/ASP/Extra.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ASP/.packlist
 man/man1/asp-perl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ASP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/Bundle/Apache/ASP
-@dirrmtry %%SITE_PERL%%/Bundle/Apache
-@dirrmtry %%SITE_PERL%%/Bundle
-@dirrmtry %%SITE_PERL%%/Apache/ASP/Share/CORE
-@dirrmtry %%SITE_PERL%%/Apache/ASP/Share
-@dirrmtry %%SITE_PERL%%/Apache/ASP/Lang
-@dirrmtry %%SITE_PERL%%/Apache/ASP/CGI
-@dirrmtry %%SITE_PERL%%/Apache/ASP
-@dirrmtry %%SITE_PERL%%/Apache

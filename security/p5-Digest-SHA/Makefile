@@ -3,6 +3,7 @@
 
 PORTNAME=	Digest-SHA
 PORTVERSION=	5.93
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +24,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Digest/SHA/SHA.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Digest/SHA/SHA.so
 
 .include <bsd.port.mk>

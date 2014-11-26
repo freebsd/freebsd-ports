@@ -38,7 +38,6 @@ bin/re.pl
 %%SITE_PERL%%/Devel/REPL/Profile/Minimal.pm
 %%SITE_PERL%%/Devel/REPL/Profile/Standard.pm
 %%SITE_PERL%%/Devel/REPL/Script.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/REPL/.packlist
 %%PERL5_MAN3%%/Devel::REPL.3.gz
 %%PERL5_MAN3%%/Devel::REPL::Overview.3.gz
 %%PERL5_MAN3%%/Devel::REPL::Plugin::B::Concise.3.gz

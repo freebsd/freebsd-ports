@@ -97,9 +97,8 @@ lib/libwzd_core.a
 lib/libwzd_core.so
 lib/libwzd_core.so.0
 lib/libwzd_core.so.0.801.1
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd/wzdftpd.so
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/wzdftpd.pm
+%%PERL%%%%SITE_ARCH%%/auto/wzdftpd/wzdftpd.so
+%%PERL%%%%SITE_ARCH%%/wzdftpd.pm
 %%MYSQL%%lib/wzdftpd/backends/libwzdmysql.a
 %%MYSQL%%lib/wzdftpd/backends/libwzdmysql.so
 %%PGSQL%%lib/wzdftpd/backends/libwzdpgsql.a

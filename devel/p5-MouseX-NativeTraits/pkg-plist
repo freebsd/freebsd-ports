@@ -22,7 +22,6 @@
 %%SITE_PERL%%/MouseX/NativeTraits/MethodProvider/Str.pm
 %%SITE_PERL%%/MouseX/NativeTraits/Num.pm
 %%SITE_PERL%%/MouseX/NativeTraits/Str.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/NativeTraits/.packlist
 %%PERL5_MAN3%%/Mouse::Meta::Attribute::Custom::Trait::Array.3.gz
 %%PERL5_MAN3%%/Mouse::Meta::Attribute::Custom::Trait::Bool.3.gz
 %%PERL5_MAN3%%/Mouse::Meta::Attribute::Custom::Trait::Code.3.gz

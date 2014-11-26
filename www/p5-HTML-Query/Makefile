@@ -3,6 +3,7 @@
 
 PORTNAME=	HTML-Query
 PORTVERSION=	0.09
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,9 +21,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	%%SITE_PERL%%/HTML/Query.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Query/.packlist \
 		%%PERL5_MAN3%%/HTML::Query.3.gz
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Query \
-		%%SITE_PERL%%/HTML
 
 .include <bsd.port.mk>

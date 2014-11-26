@@ -3,7 +3,7 @@
 
 PORTNAME=	watchmen
 PORTVERSION=	0.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -28,10 +28,7 @@ POD2MAN?=	pod2man
 
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample etc/${PORTNAME}.conf.sample" \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/watchmen/.packlist \
 		man/man1/${PORTNAME}.1.gz
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/watchmen \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/App
 
 .include <bsd.port.options.mk>
 

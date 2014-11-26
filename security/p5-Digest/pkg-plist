@@ -4,6 +4,3 @@
 %%SITE_PERL%%/Digest.pm
 %%SITE_PERL%%/Digest/base.pm
 %%SITE_PERL%%/Digest/file.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
-@dirrmtry %%SITE_PERL%%/Digest

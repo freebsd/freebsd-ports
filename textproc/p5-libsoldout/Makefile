@@ -3,7 +3,7 @@
 
 PORTNAME=	libsoldout
 PORTVERSION=	0.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ROS
@@ -21,6 +21,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/libsoldout/libsoldout.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/libsoldout/libsoldout.so
 
 .include <bsd.port.mk>

@@ -23,10 +23,3 @@
 %%SITE_PERL%%/Petal/TranslationService/MOFile.pm
 %%SITE_PERL%%/Petal/TranslationService/Noop.pm
 %%SITE_PERL%%/Petal/TranslationService/h4x0r.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal
-@dirrmtry %%SITE_PERL%%/Petal/TranslationService
-@dirrmtry %%SITE_PERL%%/Petal/Hash
-@dirrmtry %%SITE_PERL%%/Petal/Canonicalizer
-@dirrmtry %%SITE_PERL%%/Petal/Cache
-@dirrmtry %%SITE_PERL%%/Petal

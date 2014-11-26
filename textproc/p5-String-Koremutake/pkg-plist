@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/String::Koremutake.3.gz
 %%SITE_PERL%%/String/Koremutake.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Koremutake/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Koremutake
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/String

@@ -5,7 +5,7 @@
  
  install_lib: $(I_LIB)
 -	$(INSTALL) $(I_OWNER) $(I_GROUP) $(I_MODE) $(LIB_TARGET) $(I_LIB)
-+	$(INSTALL) $(I_OWNER) $(I_GROUP) $(I_MODE) $(LIB_TARGET) $(I_LIB)/perl5/site_perl/${PERL_VER}
++	$(INSTALL) $(I_OWNER) $(I_GROUP) $(I_MODE) $(LIB_TARGET) $(I_LIB)/perl5/site_perl
  
  install_man:
  	@$(MAKE) -C man install

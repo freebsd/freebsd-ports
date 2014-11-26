@@ -9,7 +9,6 @@ bin/sdfbatch
 bin/sdfcli
 bin/sdfget
 bin/sdngen
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDF/.packlist
 %%SITE_PERL%%/Pod/Diff.pm
 %%SITE_PERL%%/Pod/Sdf.pm
 %%SITE_PERL%%/sdf/apiperl.pl
@@ -640,17 +639,3 @@ man/man1/pod2sdf.1.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/genhtml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/sdf/home/stdlib
-@dirrm %%SITE_PERL%%/sdf/home/sdf
-@dirrm %%SITE_PERL%%/sdf/home/perl
-@dirrm %%SITE_PERL%%/sdf/home/look/simple
-@dirrm %%SITE_PERL%%/sdf/home/look/overhead
-@dirrm %%SITE_PERL%%/sdf/home/look/infomap
-@dirrm %%SITE_PERL%%/sdf/home/look/fancy
-@dirrm %%SITE_PERL%%/sdf/home/look
-@dirrm %%SITE_PERL%%/sdf/home/locale
-@dirrm %%SITE_PERL%%/sdf/home/images
-@dirrm %%SITE_PERL%%/sdf/home
-@dirrm %%SITE_PERL%%/sdf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDF
-@dirrmtry %%SITE_PERL%%/Pod

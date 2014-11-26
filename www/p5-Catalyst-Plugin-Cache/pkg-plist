@@ -12,13 +12,3 @@
 %%SITE_PERL%%/Catalyst/Plugin/Cache/Curried.pm
 %%SITE_PERL%%/Catalyst/Plugin/Cache/Store.pod
 %%SITE_PERL%%/Catalyst/Plugin/Cache/Store/Memory.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Cache/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Cache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Cache/Store
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Cache/Choose
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Cache/Backend
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Cache
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst

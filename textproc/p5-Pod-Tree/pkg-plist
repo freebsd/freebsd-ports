@@ -25,12 +25,7 @@ bin/podtree2html
 %%SITE_PERL%%/Pod/Tree/PerlTop.pm
 %%SITE_PERL%%/Pod/Tree/PerlUtil.pm
 %%SITE_PERL%%/Pod/Tree/Pod.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tree/.packlist
 man/man1/mod2html.1.gz
 man/man1/perl2html.1.gz
 man/man1/pods2html.1.gz
 man/man1/podtree2html.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tree
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
-@dirrmtry %%SITE_PERL%%/Pod/Tree
-@dirrmtry %%SITE_PERL%%/Pod

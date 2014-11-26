@@ -17,6 +17,3 @@ bin/htmltree
 %%SITE_PERL%%/HTML/Tree/AboutTrees.pod
 %%SITE_PERL%%/HTML/Tree/Scanning.pod
 %%SITE_PERL%%/HTML/TreeBuilder.pm
-@dirrmtry %%SITE_PERL%%/HTML/Tree
-@dirrmtry %%SITE_PERL%%/HTML/Element
-@dirrmtry %%SITE_PERL%%/HTML

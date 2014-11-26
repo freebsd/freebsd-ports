@@ -8,11 +8,3 @@
 %%SITE_PERL%%/CGI/Builder/Conf.pm
 %%SITE_PERL%%/CGI/Builder/Const.pm
 %%SITE_PERL%%/CGI/Builder/Test.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrmtry %%SITE_PERL%%/CGI/Builder
-@dirrmtry %%SITE_PERL%%/CGI
-@dirrmtry %%SITE_PERL%%/Bundle/CGI/Builder
-@dirrmtry %%SITE_PERL%%/Bundle/CGI
-@dirrmtry %%SITE_PERL%%/Bundle

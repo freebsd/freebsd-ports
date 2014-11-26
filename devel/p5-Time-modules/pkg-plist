@@ -8,4 +8,3 @@
 %%SITE_PERL%%/Time/JulianDay.pm
 %%SITE_PERL%%/Time/ParseDate.pm
 %%SITE_PERL%%/Time/Timezone.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time-modules/.packlist

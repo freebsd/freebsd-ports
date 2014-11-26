@@ -2,6 +2,7 @@
 
 PORTNAME=	Lingua-JA-Regular-Unicode
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 

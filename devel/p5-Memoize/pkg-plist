@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize/.packlist
 %%SITE_PERL%%/Memoize.pm
 %%SITE_PERL%%/Memoize/ExpireTest.pm
 %%SITE_PERL%%/Memoize/Expire.pm

@@ -18,7 +18,3 @@
 %%SITE_PERL%%/WebService/ISBNDB/Agent.pm
 %%SITE_PERL%%/WebService/ISBNDB/Agent/REST.pm
 %%SITE_PERL%%/WebService/ISBNDB/Iterator.pm
-@dirrmtry %%SITE_PERL%%/WebService/ISBNDB/Agent
-@dirrmtry %%SITE_PERL%%/WebService/ISBNDB/API
-@dirrmtry %%SITE_PERL%%/WebService/ISBNDB
-@dirrmtry %%SITE_PERL%%/WebService

@@ -3,7 +3,6 @@
 %%SITE_PERL%%/Net/Plurk/Plurk.pm
 %%SITE_PERL%%/Net/Plurk/User.pm
 %%SITE_PERL%%/Net/Plurk/UserProfile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Plurk/.packlist
 %%PERL5_MAN3%%/Net::Plurk.3.gz
 %%PERL5_MAN3%%/Net::Plurk::OAuth.3.gz
 %%PERL5_MAN3%%/Net::Plurk::Plurk.3.gz

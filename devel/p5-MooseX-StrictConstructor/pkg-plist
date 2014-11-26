@@ -4,4 +4,3 @@
 %%SITE_PERL%%/MooseX/StrictConstructor.pm
 %%SITE_PERL%%/MooseX/StrictConstructor/Trait/Class.pm
 %%SITE_PERL%%/MooseX/StrictConstructor/Trait/Method/Constructor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/StrictConstructor/.packlist

@@ -90,7 +90,6 @@
 %%SITE_PERL%%/POE/Wheel/ReadWrite.pm
 %%SITE_PERL%%/POE/Wheel/Run.pm
 %%SITE_PERL%%/POE/Wheel/SocketFactory.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.samples
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/create.perl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fakelogin.perl

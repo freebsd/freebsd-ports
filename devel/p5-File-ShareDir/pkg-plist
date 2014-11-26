@@ -3,4 +3,3 @@
 %%SITE_PERL%%/auto/share/dist/File-ShareDir/sample.txt
 %%SITE_PERL%%/auto/share/dist/File-ShareDir/subdir/sample.txt
 %%SITE_PERL%%/auto/share/module/File-ShareDir/test_file.txt
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir/.packlist

@@ -1,5 +1,4 @@
 bin/envpath
 %%PERL5_MAN3%%/Env::Path.3.gz
 %%SITE_PERL%%/Env/Path.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Env/Path/.packlist
 man/man1/envpath.1.gz

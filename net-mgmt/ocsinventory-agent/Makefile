@@ -2,6 +2,7 @@
 
 PORTNAME=	Ocsinventory
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-2.1/${PORTVERSION}/+download/

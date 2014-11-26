@@ -1,4 +1,3 @@
-%%SITE_ARCH%%/auto/Test/TCP/.packlist
 %%PERL5_MAN3%%/Net::EmptyPort.3.gz
 %%PERL5_MAN3%%/Test::TCP.3.gz
 %%PERL5_MAN3%%/Test::TCP::CheckPort.3.gz

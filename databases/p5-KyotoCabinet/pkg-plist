@@ -1,7 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/KyotoCabinet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/KyotoCabinet.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/KyotoCabinet/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/KyotoCabinet/KyotoCabinet.so
-%%SITE_PERL%%/%%PERL_ARCH%%/kctest.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/makedoc.pl
+%%SITE_ARCH%%/KyotoCabinet.pm
+%%SITE_ARCH%%/KyotoCabinet.pod
+%%SITE_ARCH%%/auto/KyotoCabinet/KyotoCabinet.so
+%%SITE_ARCH%%/kctest.pl
+%%SITE_ARCH%%/makedoc.pl
 %%PERL5_MAN3%%/KyotoCabinet.3.gz

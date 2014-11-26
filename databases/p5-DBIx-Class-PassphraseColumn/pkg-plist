@@ -1,3 +1,2 @@
 %%SITE_PERL%%/DBIx/Class/PassphraseColumn.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/PassphraseColumn/.packlist
 %%PERL5_MAN3%%/DBIx::Class::PassphraseColumn.3.gz

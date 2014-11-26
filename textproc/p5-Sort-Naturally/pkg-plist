@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Sort::Naturally.3.gz
 %%SITE_PERL%%/Sort/Naturally.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Naturally/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Naturally
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort
-@dirrmtry %%SITE_PERL%%/Sort

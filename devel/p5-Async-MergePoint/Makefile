@@ -3,6 +3,7 @@
 
 PORTNAME=	Async-MergePoint
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,11 +18,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	%%SITE_PERL%%/Async/MergePoint.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Async/MergePoint/.packlist \
 		%%PERL5_MAN3%%/Async::MergePoint.3.gz
-
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Async/MergePoint \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Async \
-		%%SITE_PERL%%/Async
 
 .include <bsd.port.mk>

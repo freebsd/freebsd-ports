@@ -20,4 +20,3 @@
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/SweetArgs.pm
 %%SITE_PERL%%/MooseX/POE/Role.pm
 %%SITE_PERL%%/MooseX/POE/SweetArgs.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE/.packlist

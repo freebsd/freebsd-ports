@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Japanese/.packlist
 %%SITE_PERL%%/DateTime/Format/Japanese.pm
 %%SITE_PERL%%/DateTime/Format/Japanese/Common.pm
 %%SITE_PERL%%/DateTime/Format/Japanese/Traditional.pm

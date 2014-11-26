@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Redis/hiredis.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Redis/hiredis/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Redis/hiredis/hiredis.so
+%%SITE_ARCH%%/Redis/hiredis.pm
+%%SITE_ARCH%%/auto/Redis/hiredis/hiredis.so
 %%PERL5_MAN3%%/Redis::hiredis.3.gz

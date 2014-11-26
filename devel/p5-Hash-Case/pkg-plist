@@ -10,4 +10,3 @@
 %%SITE_PERL%%/Hash/Case/Preserve.pod
 %%SITE_PERL%%/Hash/Case/Upper.pm
 %%SITE_PERL%%/Hash/Case/Upper.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case/.packlist

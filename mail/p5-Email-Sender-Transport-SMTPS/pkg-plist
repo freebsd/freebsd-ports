@@ -1,4 +1,2 @@
 %%PERL5_MAN3%%/Email::Sender::Transport::SMTPS.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/Transport/SMTPS/.packlist
 %%SITE_PERL%%/Email/Sender/Transport/SMTPS.pm
-@dirrmtry %%SITE_PERL%%/Email/Sender/Transport

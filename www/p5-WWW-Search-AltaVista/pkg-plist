@@ -18,10 +18,3 @@
 %%SITE_PERL%%/WWW/Search/AltaVista/NL.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/News.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/Web.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/Search/AltaVista
-@dirrmtry %%SITE_PERL%%/WWW/Search
-@dirrmtry %%SITE_PERL%%/WWW

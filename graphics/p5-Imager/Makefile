@@ -3,6 +3,7 @@
 
 PORTNAME=	Imager
 PORTVERSION=	1.000
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,7 +31,7 @@ CONFIGURE_ENV=	IM_CFLAGS="${CFLAGS}" \
 		IM_LIBPATH=${LOCALBASE}/lib
 
 post-install:
-	@${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Imager \
+	@${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Imager \
 		-name "*.so" -exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.mk>

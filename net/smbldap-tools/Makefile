@@ -3,7 +3,7 @@
 
 PORTNAME=	smbldap-tools
 PORTVERSION=	0.9.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.gna.org/smbldap-tools/sources/${PORTVERSION}/
 

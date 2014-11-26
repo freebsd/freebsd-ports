@@ -3,6 +3,7 @@
 
 PORTNAME=	owfs
 PORTVERSION=	2.9p8
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/owfs/owfs/${PORTVERSION}
 
@@ -53,7 +54,7 @@ OWCAPI_CONFIGURE_ENABLE=	owcapi
 
 OWPERL_CONFIGURE_ENABLE=	owperl
 OWPERL_USES=			perl5
-OWPERL_USE=			perl5=build,run,fixpacklist
+OWPERL_USE=			perl5=build,run
 
 # Broken/untested
 OWPHP_CONFIGURE_ENABLE=		owphp
@@ -127,8 +128,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/ow/_OW.so
 .endif
 .if ${PORT_OPTIONS:MOWPERL}
-	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod*
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/OW/OW.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/OW/OW.so
 .endif
 
 .include <bsd.port.mk>

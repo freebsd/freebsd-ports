@@ -7,9 +7,3 @@
 %%SITE_PERL%%/Test/Nginx/Socket.pm
 %%SITE_PERL%%/Test/Nginx/Socket/Lua.pm
 %%SITE_PERL%%/Test/Nginx/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Nginx/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Nginx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/Nginx/Socket
-@dirrmtry %%SITE_PERL%%/Test/Nginx
-@dirrmtry %%SITE_PERL%%/Test

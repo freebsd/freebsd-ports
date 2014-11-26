@@ -3,7 +3,7 @@
 
 PORTNAME=	WWW-iTunesConnect
 PORTVERSION=	1.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,10 +22,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	%%SITE_PERL%%/WWW/iTunesConnect.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/iTunesConnect/.packlist \
 		%%PERL5_MAN3%%/WWW::iTunesConnect.3.gz
-PLIST_DIRS=	%%SITE_PERL%%/WWW \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/iTunesConnect \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 
 .include <bsd.port.mk>

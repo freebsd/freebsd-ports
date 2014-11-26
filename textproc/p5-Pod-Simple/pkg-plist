@@ -50,8 +50,3 @@
 %%SITE_PERL%%/Pod/Simple/TranscodeSmart.pm
 %%SITE_PERL%%/Pod/Simple/XHTML.pm
 %%SITE_PERL%%/Pod/Simple/XMLOutStream.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Simple/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
-@dirrmtry %%SITE_PERL%%/Pod/Simple
-@dirrmtry %%SITE_PERL%%/Pod

@@ -8,7 +8,6 @@
 %%SITE_PERL%%/Image/Caa/DriverANSI.pm
 %%SITE_PERL%%/Image/Caa/DriverCurses.pm
 %%SITE_PERL%%/Image/Caa/DriverTest.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Caa/.packlist
 %%EXAMPLESDIR%%/curses.pl
 %%EXAMPLESDIR%%/kitten.jpg
 %%EXAMPLESDIR%%/kitten.pl

@@ -5,4 +5,3 @@
 %%SITE_PERL%%/uni/perl/ua.pm
 %%SITE_PERL%%/uni/perl/utf.pm
 %%SITE_PERL%%/uni/perl/xd.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/uni/perl/.packlist

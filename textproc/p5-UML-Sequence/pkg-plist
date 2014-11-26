@@ -27,12 +27,6 @@ bin/seq2svg.pl
 %%SITE_PERL%%/UML/genericseq.pl
 %%SITE_PERL%%/UML/seq2rast.pl
 %%SITE_PERL%%/UML/seq2svg.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Sequence/.packlist
 man/man1/genericseq.pl.1.gz
 man/man1/seq2rast.pl.1.gz
 man/man1/seq2svg.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Sequence
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML
-@dirrmtry %%SITE_PERL%%/UML/Sequence
-@dirrmtry %%SITE_PERL%%/UML
-@dirrmtry %%SITE_PERL%%/Devel

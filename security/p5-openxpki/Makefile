@@ -3,6 +3,7 @@
 
 PORTNAME=	openxpki
 PORTVERSION=	0.23.0.1
+PORTREVISION=	1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	openxpki
@@ -119,7 +120,7 @@ pre-install:	test
 .include <bsd.port.pre.mk>
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/OpenXPKI/OpenXPKI.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/OpenXPKI/OpenXPKI.so
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/../../config && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .	if ${PORT_OPTIONS:MDOCS}

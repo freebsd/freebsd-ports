@@ -30,7 +30,6 @@
 %%PERL5_MAN3%%/Excel::Template::Format.3.gz
 %%PERL5_MAN3%%/Excel::Template::Iterator.3.gz
 %%PERL5_MAN3%%/Excel::Template::TextObject.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Template/.packlist
 %%SITE_PERL%%/Excel/Template.pm
 %%SITE_PERL%%/Excel/Template/Base.pm
 %%SITE_PERL%%/Excel/Template/Container.pm
@@ -63,10 +62,3 @@
 %%SITE_PERL%%/Excel/Template/Format.pm
 %%SITE_PERL%%/Excel/Template/Iterator.pm
 %%SITE_PERL%%/Excel/Template/TextObject.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Template
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/Excel/Template/Element
-@dirrmtry %%SITE_PERL%%/Excel/Template/Container
-@dirrmtry %%SITE_PERL%%/Excel/Template
-@dirrmtry %%SITE_PERL%%/Excel

@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Math::Logic.3.gz
 %%SITE_PERL%%/Math/Logic.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Logic/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Logic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/Math

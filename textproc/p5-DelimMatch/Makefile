@@ -3,6 +3,7 @@
 
 PORTNAME=	DelimMatch
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://nwalsh.com/perl/delimmatch/
 PKGNAMEPREFIX=	p5-

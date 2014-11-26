@@ -1,6 +1,5 @@
 bin/tkjpeg-lite
 %%PERL5_MAN3%%/Tk::JPEG::Lite.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/JPEG/Lite.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/Lite.so
+%%SITE_ARCH%%/Tk/JPEG/Lite.pm
+%%SITE_ARCH%%/auto/Tk/JPEG/Lite/Lite.so
 man/man1/tkjpeg-lite.1.gz

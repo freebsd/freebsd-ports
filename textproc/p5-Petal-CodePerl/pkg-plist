@@ -12,9 +12,3 @@
 %%SITE_PERL%%/Petal/CodePerl/GrammarLoader.pm
 %%SITE_PERL%%/Petal/CodePerl/Modifiers.pm
 %%SITE_PERL%%/Petal/CodePerl/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/CodePerl/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/CodePerl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal
-@dirrmtry %%SITE_PERL%%/Petal/CodePerl/Expr
-@dirrmtry %%SITE_PERL%%/Petal/CodePerl
-@dirrmtry %%SITE_PERL%%/Petal

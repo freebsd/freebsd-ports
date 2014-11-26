@@ -9,8 +9,3 @@
 %%PERL5_MAN3%%/WWW::SourceForge::Project.3.gz
 %%PERL5_MAN3%%/WWW::SourceForge::User.3.gz
 %%PERL5_MAN3%%/WWW::SourceForge::Wiki.3.gz
-@dirrm %%SITE_PERL%%/WWW/SourceForge
-@dirrmtry %%SITE_PERL%%/WWW
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/SourceForge/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/SourceForge
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

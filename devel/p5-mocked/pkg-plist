@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/mocked/.packlist
 %%SITE_PERL%%/mocked.pm
 %%SITE_PERL%%/unmocked.pm
 %%PERL5_MAN3%%/mocked.3.gz

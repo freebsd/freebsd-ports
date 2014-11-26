@@ -116,4 +116,3 @@
 %%SITE_PERL%%/Class/MakeMethods/Utility/Inheritable.pm
 %%SITE_PERL%%/Class/MakeMethods/Utility/Ref.pm
 %%SITE_PERL%%/Class/MakeMethods/Utility/TextBuilder.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MakeMethods/.packlist

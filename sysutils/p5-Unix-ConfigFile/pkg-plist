@@ -8,7 +8,3 @@
 %%SITE_PERL%%/Unix/ConfigFile.pm
 %%SITE_PERL%%/Unix/GroupFile.pm
 %%SITE_PERL%%/Unix/PasswdFile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/ConfigFile/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/ConfigFile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix
-@dirrmtry %%SITE_PERL%%/Unix

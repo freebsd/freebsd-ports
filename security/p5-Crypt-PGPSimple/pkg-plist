@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Crypt::PGPSimple.3.gz
 %%SITE_PERL%%/Crypt/PGPSimple.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PGPSimple/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PGPSimple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/Crypt

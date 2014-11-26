@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Data/Flow.pm
 %%SITE_PERL%%/auto/Data/Flow/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Flow/.packlist
 %%PERL5_MAN3%%/Data::Flow.3.gz

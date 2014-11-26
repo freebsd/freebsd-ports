@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Client/.packlist
 %%SITE_PERL%%/FCGI/Client.pm
 %%SITE_PERL%%/FCGI/Client/Connection.pm
 %%SITE_PERL%%/FCGI/Client/Constant.pm
@@ -11,7 +10,3 @@
 %%PERL5_MAN3%%/FCGI::Client::Record.3.gz
 %%PERL5_MAN3%%/FCGI::Client::RecordFactory.3.gz
 %%PERL5_MAN3%%/FCGI::Client::RecordHeader.3.gz
-@dirrmtry %%SITE_PERL%%/FCGI/Client
-@dirrmtry %%SITE_PERL%%/FCGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI

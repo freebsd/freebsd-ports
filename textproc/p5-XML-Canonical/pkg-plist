@@ -1,7 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/Canonical.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Canonical/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Canonical/Canonical.so
+%%SITE_ARCH%%/XML/Canonical.pm
+%%SITE_ARCH%%/auto/XML/Canonical/Canonical.so
 %%PERL5_MAN3%%/XML::Canonical.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Canonical
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML

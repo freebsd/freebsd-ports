@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -37,7 +37,7 @@ USE_RC_SUBR=	snmpd snmptrapd
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USES=		perl5 libtool
-USE_PERL5=	build run fixpacklist
+USE_PERL5=	build run
 
 CFLAGS+=	-I${LOCALBASE}/include -I${PKG_PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

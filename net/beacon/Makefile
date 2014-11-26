@@ -3,7 +3,7 @@
 
 PORTNAME=	beacon
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	SF/multicastbeacon/multicastbeacon/beacon%20v${PORTVERSION}
 
@@ -20,7 +20,6 @@ WWW_DIR?=	${PREFIX}/www/
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 USES=		perl5
-USE_PERL5+=	fixpacklist
 USE_AUTOTOOLS=	autoconf
 PORTDOCS=	README
 
@@ -31,8 +30,7 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 IPV6_BUILD_DEPENDS=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/Multicast/Beacon/Beacon.so
-	${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Multicast/Beacon/Beacon.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

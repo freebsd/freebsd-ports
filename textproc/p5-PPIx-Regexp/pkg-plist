@@ -57,7 +57,6 @@
 %%SITE_PERL%%/PPIx/Regexp/Token/Whitespace.pm
 %%SITE_PERL%%/PPIx/Regexp/Tokenizer.pm
 %%SITE_PERL%%/PPIx/Regexp/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx/Regexp/.packlist
 %%PERL5_MAN3%%/PPIx::Regexp::Tokenizer.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Dumper.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token::Literal.3.gz
@@ -117,13 +116,3 @@
 %%PERL5_MAN3%%/PPIx::Regexp::Token::Whitespace.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure::Subexpression.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx/Regexp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx
-@dirrm %%SITE_PERL%%/PPIx/Regexp/Token/GroupType
-@dirrm %%SITE_PERL%%/PPIx/Regexp/Token/CharClass/POSIX
-@dirrm %%SITE_PERL%%/PPIx/Regexp/Token/CharClass
-@dirrm %%SITE_PERL%%/PPIx/Regexp/Token
-@dirrm %%SITE_PERL%%/PPIx/Regexp/Structure
-@dirrm %%SITE_PERL%%/PPIx/Regexp/Node
-@dirrm %%SITE_PERL%%/PPIx/Regexp
-@dirrmtry %%SITE_PERL%%/PPIx

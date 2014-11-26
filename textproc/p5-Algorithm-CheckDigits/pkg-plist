@@ -88,8 +88,3 @@ man/man1/checkdigits.pl.1.gz
 %%SITE_PERL%%/Algorithm/CheckDigits/MXX_005.pm
 %%SITE_PERL%%/Algorithm/CheckDigits/MXX_006.pm
 %%SITE_PERL%%/Algorithm/CheckDigits.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/CheckDigits/.packlist
-@dirrm %%SITE_PERL%%/Algorithm/CheckDigits
-@dirrm %%SITE_PERL%%/Algorithm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/CheckDigits
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm

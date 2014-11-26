@@ -2,6 +2,5 @@
 %%SITE_PERL%%/Net/DNS/TestNS/DTD.pm
 %%SITE_PERL%%/Net/DNS/TestNS/Nameserver.pm
 %%SITE_PERL%%/Net/DNS/TestNS/Packet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/TestNS/.packlist
 %%PERL5_MAN3%%/Net::DNS::TestNS.3.gz
 %%PERL5_MAN3%%/Net::DNS::TestNS::DTD.3.gz

@@ -1,7 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Shark.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Shark/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Shark/Shark.so
+%%SITE_ARCH%%/Crypt/Shark.pm
+%%SITE_ARCH%%/auto/Crypt/Shark/Shark.so
 %%PERL5_MAN3%%/Crypt::Shark.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Shark/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

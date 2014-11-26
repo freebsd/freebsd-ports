@@ -1,7 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session/ExpireSessions/.packlist
 %%SITE_PERL%%/CGI/Session/ExpireSessions.pm
 %%PERL5_MAN3%%/CGI::Session::ExpireSessions.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session/ExpireSessions

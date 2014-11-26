@@ -4,7 +4,6 @@
 %%SITE_PERL%%/App/Rad/Help.pm
 %%SITE_PERL%%/App/Rad/Include.pm
 %%SITE_PERL%%/App/Rad/Plugin.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Rad/.packlist
 %%PERL5_MAN3%%/App::Rad.3.gz
 %%PERL5_MAN3%%/App::Rad::Exclude.3.gz
 %%PERL5_MAN3%%/App::Rad::Help.3.gz

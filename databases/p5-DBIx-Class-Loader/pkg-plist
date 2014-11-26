@@ -12,4 +12,3 @@
 %%SITE_PERL%%/DBIx/Class/Loader/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Loader/Writing.pm
 %%SITE_PERL%%/DBIx/Class/Loader/mysql.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Loader/.packlist

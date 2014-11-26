@@ -4,11 +4,4 @@ bin/text-vimcolor
 %%SITE_PERL%%/auto/share/dist/Text-VimColor/light.css
 %%SITE_PERL%%/auto/share/dist/Text-VimColor/light.xsl
 %%SITE_PERL%%/auto/share/dist/Text-VimColor/mark.vim
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/VimColor/.packlist
 man/man1/text-vimcolor.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/VimColor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrm %%SITE_PERL%%/auto/share/dist/Text-VimColor
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/auto/share
-@dirrmtry %%SITE_PERL%%/Text

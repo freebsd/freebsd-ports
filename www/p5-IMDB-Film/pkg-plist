@@ -4,7 +4,3 @@
 %%SITE_PERL%%/IMDB/BaseClass.pm
 %%SITE_PERL%%/IMDB/Film.pm
 %%SITE_PERL%%/IMDB/Persons.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDB/Film/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDB/Film
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDB
-@dirrmtry %%SITE_PERL%%/IMDB

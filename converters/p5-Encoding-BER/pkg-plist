@@ -8,4 +8,3 @@
 %%SITE_PERL%%/Encoding/BER/DER.pm
 %%SITE_PERL%%/Encoding/BER/Dumper.pm
 %%SITE_PERL%%/Encoding/BER/SNMP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding/BER/.packlist

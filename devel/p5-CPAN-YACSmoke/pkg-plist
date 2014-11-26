@@ -4,4 +4,3 @@
 %%SITE_PERL%%/CPAN/YACSmoke.pm
 %%SITE_PERL%%/CPAN/YACSmoke/Plugin/Recent.pm
 %%SITE_PERL%%/CPAN/YACSmoke/Plugin/SmokeDB.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/YACSmoke/.packlist

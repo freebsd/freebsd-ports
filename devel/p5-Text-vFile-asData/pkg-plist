@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Text/vFile/asData.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile/asData/.packlist
 %%PERL5_MAN3%%/Text::vFile::asData.3.gz

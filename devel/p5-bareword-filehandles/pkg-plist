@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/bareword/filehandles/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/bareword/filehandles/filehandles.so
-%%SITE_PERL%%/%%PERL_ARCH%%/bareword/filehandles.pm
+%%SITE_ARCH%%/auto/bareword/filehandles/filehandles.so
+%%SITE_ARCH%%/bareword/filehandles.pm
 %%PERL5_MAN3%%/bareword::filehandles.3.gz

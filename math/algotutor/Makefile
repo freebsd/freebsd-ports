@@ -2,7 +2,7 @@
 
 PORTNAME=	algotutor
 PORTVERSION=	0.8.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
 
@@ -31,12 +31,12 @@ post-patch:
 			${WRKSRC}/algotutor
 
 do-install:
-	${MKDIR} ${STAGEDIR}${SITE_PERL}/algotutor
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/algotutor
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/algotutor
 	${CP} -R ${WRKSRC}/data ${STAGEDIR}${PREFIX}/share/algotutor
-	${CP} -R ${WRKSRC}/cgeom ${STAGEDIR}${SITE_PERL}/algotutor
-	${CP} -R ${WRKSRC}/dp ${STAGEDIR}${SITE_PERL}/algotutor
-	${CP} -R ${WRKSRC}/graph ${STAGEDIR}${SITE_PERL}/algotutor
+	${CP} -R ${WRKSRC}/cgeom ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/algotutor
+	${CP} -R ${WRKSRC}/dp ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/algotutor
+	${CP} -R ${WRKSRC}/graph ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/algotutor
 .for file in ${MANPAGES}
 	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
@@ -44,7 +44,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file in ${LIBFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${SITE_PERL}/algotutor
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/algotutor
 .endfor
 
 .include <bsd.port.mk>

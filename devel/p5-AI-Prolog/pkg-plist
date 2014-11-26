@@ -37,5 +37,4 @@ bin/aiprolog
 %%SITE_PERL%%/AI/Prolog/TermList/Clause.pm
 %%SITE_PERL%%/AI/Prolog/TermList/Primitive.pm
 %%SITE_PERL%%/AI/Prolog/TermList/Step.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Prolog/.packlist
 man/man1/aiprolog.1.gz

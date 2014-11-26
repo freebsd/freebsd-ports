@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ClearSilver/HDF/.packlist
 %%SITE_PERL%%/Data/ClearSilver/HDF.pm
 %%PERL5_MAN3%%/Data::ClearSilver::HDF.3.gz
 man/man1/cspage.1.gz

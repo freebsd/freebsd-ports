@@ -26,13 +26,3 @@
 %%SITE_PERL%%/Crypt/RSA/Primitives.pm
 %%SITE_PERL%%/Crypt/RSA/SS/PKCS1v15.pm
 %%SITE_PERL%%/Crypt/RSA/SS/PSS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/Crypt/RSA/SS
-@dirrmtry %%SITE_PERL%%/Crypt/RSA/Key/Public
-@dirrmtry %%SITE_PERL%%/Crypt/RSA/Key/Private
-@dirrmtry %%SITE_PERL%%/Crypt/RSA/Key
-@dirrmtry %%SITE_PERL%%/Crypt/RSA/ES
-@dirrmtry %%SITE_PERL%%/Crypt/RSA
-@dirrmtry %%SITE_PERL%%/Crypt

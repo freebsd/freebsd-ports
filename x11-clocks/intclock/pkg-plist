@@ -16,7 +16,6 @@ bin/intclock
 %%SITE_PERL%%/Intclock/UI_gtk2.pm
 %%SITE_PERL%%/Intclock/UI_tty.pm
 %%SITE_PERL%%/Intclock.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Intclock/.packlist
 share/applications/intclock.desktop
 %%DATADIR%%/intclock.png
 %%DATADIR%%/territories.dat

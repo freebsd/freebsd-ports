@@ -1,4 +1,2 @@
 %%SITE_PERL%%/Plack/Middleware/MethodOverride.pm
 %%PERL5_MAN3%%/Plack::Middleware::MethodOverride.3.gz
-@dirrmtry %%SITE_PERL%%/Plack/Middleware
-@dirrmtry %%SITE_PERL%%/Plack

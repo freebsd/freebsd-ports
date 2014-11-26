@@ -1,6 +1,5 @@
 %%PERL5_MAN3%%/CGI::XMLApplication.3.gz
 %%SITE_PERL%%/CGI/XMLApplication.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/XMLApplication/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex2_finish.xsl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex2_form.xsl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.pl
@@ -15,6 +14,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/minimal.xsl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/minimalapp.pm
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/XMLApplication
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrmtry %%SITE_PERL%%/CGI

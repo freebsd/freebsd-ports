@@ -3,7 +3,7 @@
 
 PORTNAME=	spamcup
 PORTVERSION=	1.09
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -19,9 +19,6 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/spamcup.pl ${SITE_PERL_REL}/spamcup.pl \
-		${SITE_PERL_REL}/${PERL_ARCH}/auto/Spamcup/.packlist
-
-PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/Spamcup
+PLIST_FILES=	bin/spamcup.pl ${SITE_PERL_REL}/spamcup.pl
 
 .include <bsd.port.mk>

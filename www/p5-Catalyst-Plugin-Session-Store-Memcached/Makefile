@@ -3,6 +3,7 @@
 
 PORTNAME=	Catalyst-Plugin-Session-Store-Memcached
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

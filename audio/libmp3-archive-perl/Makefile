@@ -3,6 +3,7 @@
 
 PORTNAME=	libmp3-archive-perl
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
 		LOCAL/sunpoet

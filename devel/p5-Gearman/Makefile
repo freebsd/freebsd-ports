@@ -3,6 +3,7 @@
 
 PORTNAME=	Gearman
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -25,12 +26,8 @@ PLIST_FILES=	%%SITE_PERL%%/Gearman/Client.pm \
 		%%SITE_PERL%%/Gearman/Taskset.pm \
 		%%SITE_PERL%%/Gearman/Util.pm \
 		%%SITE_PERL%%/Gearman/Worker.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/.packlist \
 		%%PERL5_MAN3%%/Gearman::Client.3.gz \
 		%%PERL5_MAN3%%/Gearman::Task.3.gz \
 		%%PERL5_MAN3%%/Gearman::Worker.3.gz
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman \
-		%%SITE_PERL%%/Gearman/ResponseParser \
-		%%SITE_PERL%%/Gearman
 
 .include <bsd.port.mk>

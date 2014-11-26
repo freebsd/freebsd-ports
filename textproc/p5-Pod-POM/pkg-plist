@@ -46,13 +46,6 @@ bin/podlint
 %%SITE_PERL%%/Pod/POM/View/HTML.pm
 %%SITE_PERL%%/Pod/POM/View/Pod.pm
 %%SITE_PERL%%/Pod/POM/View/Text.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/.packlist
 man/man1/podlint.1.gz
 man/man1/pom2.1.gz
 man/man1/pomdump.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
-@dirrmtry %%SITE_PERL%%/Pod/POM/View
-@dirrmtry %%SITE_PERL%%/Pod/POM/Node
-@dirrmtry %%SITE_PERL%%/Pod/POM
-@dirrmtry %%SITE_PERL%%/Pod

@@ -134,7 +134,6 @@ lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki/Setup/Yaml.pm
 %%SITE_PERL%%/IkiWiki/UserInfo.pm
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki/.packlist
 %%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
 man/man1/ikiwiki-calendar.1.gz
 man/man1/ikiwiki-makerepo.1.gz
@@ -892,10 +891,6 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm %%DATADIR%%
 %%W3M%%@dirrmtry libexec/w3m/cgi-bin
 %%W3M%%@dirrmtry libexec/w3m
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki
-@dirrm %%SITE_PERL%%/IkiWiki/Setup
-@dirrm %%SITE_PERL%%/IkiWiki/Plugin
-@dirrm %%SITE_PERL%%/IkiWiki
 @dirrmtry lib/ikiwiki/plugins
 @dirrmtry lib/ikiwiki
 @dirrmtry %%ETCDIR%%

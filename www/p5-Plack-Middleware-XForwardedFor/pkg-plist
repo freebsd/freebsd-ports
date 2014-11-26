@@ -1,8 +1,2 @@
 %%SITE_PERL%%/Plack/Middleware/XForwardedFor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/XForwardedFor/.packlist
 %%PERL5_MAN3%%/Plack::Middleware::XForwardedFor.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/XForwardedFor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
-@dirrmtry %%SITE_PERL%%/Plack/Middleware
-@dirrmtry %%SITE_PERL%%/Plack

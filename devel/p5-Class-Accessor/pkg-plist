@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Class/Accessor.pm
 %%SITE_PERL%%/Class/Accessor/Fast.pm
 %%SITE_PERL%%/Class/Accessor/Faster.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/.packlist

@@ -4,6 +4,3 @@
 %%PERL5_MAN3%%/CGI::Application::Dispatch.3.gz
 %%PERL5_MAN3%%/CGI::Application::Dispatch::PSGI.3.gz
 %%PERL5_MAN3%%/CGI::Application::Dispatch::Regexp.3.gz
-@dirrmtry %%SITE_PERL%%/CGI/Application/Dispatch
-@dirrmtry %%SITE_PERL%%/CGI/Application
-@dirrmtry %%SITE_PERL%%/CGI

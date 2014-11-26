@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Taint/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Util/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Util/Util.so
+%%SITE_ARCH%%/Taint/Util.pm
+%%SITE_ARCH%%/auto/Taint/Util/Util.so
 %%PERL5_MAN3%%/Taint::Util.3.gz

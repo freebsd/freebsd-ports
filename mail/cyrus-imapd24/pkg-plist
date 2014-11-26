@@ -97,15 +97,13 @@ include/cyrus/xstrlcat.h
 include/cyrus/xstrlcpy.h
 lib/libcyrus.a
 lib/libcyrus_min.a
-%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP/Admin.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP/IMSP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP/Shell.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/SIEVE/managesieve.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/IMAP.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.so
+%%SITE_ARCH%%/Cyrus/IMAP/Admin.pm
+%%SITE_ARCH%%/Cyrus/IMAP/IMSP.pm
+%%SITE_ARCH%%/Cyrus/IMAP/Shell.pm
+%%SITE_ARCH%%/Cyrus/IMAP.pm
+%%SITE_ARCH%%/Cyrus/SIEVE/managesieve.pm
+%%SITE_ARCH%%/auto/Cyrus/IMAP/IMAP.so
+%%SITE_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.so
 man/man1/cyradm.1.gz
 man/man1/imtest.1.gz
 man/man1/installsieve.1.gz
@@ -121,12 +119,5 @@ man/man5/cyrus.conf.5.gz
 man/man5/imapd.conf.5.gz
 man/man5/krb.equiv.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/imapd.conf
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/SIEVE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus
 @dirrm include/cyrus
 @dirrm cyrus/bin

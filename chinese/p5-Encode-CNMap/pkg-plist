@@ -1,11 +1,10 @@
 bin/cnmap
 bin/cnmapdir
 bin/cnmapwx
-%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap/cnmapwx.wdr
-%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap/cnmapwx_wdr.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap/CNMap.so
+%%SITE_ARCH%%/Encode/CNMap.pm
+%%SITE_ARCH%%/Encode/CNMap/cnmapwx.wdr
+%%SITE_ARCH%%/Encode/CNMap/cnmapwx_wdr.pl
+%%SITE_ARCH%%/auto/Encode/CNMap/CNMap.so
 man/man1/cnmap.1.gz
 man/man1/cnmapdir.1.gz
 man/man1/cnmapwx.1.gz

@@ -3,6 +3,7 @@
 
 PORTNAME=	Geo-Coordinates-Converter-iArea
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	science geography perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

@@ -120,24 +120,3 @@
 %%SITE_PERL%%/Rose/HTML/Script.pm
 %%SITE_PERL%%/Rose/HTML/Text.pm
 %%SITE_PERL%%/Rose/HTML/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/HTML/Objects/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/HTML/Objects
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/Message
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/MakeMethods
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/Error
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Object
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Time/Split
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Time
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/PhoneNumber/US
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/PhoneNumber
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Option
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/OnOff
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Group
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Split
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/DateTime
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form
-@dirrmtry %%SITE_PERL%%/Rose/HTML
-@dirrmtry %%SITE_PERL%%/Rose

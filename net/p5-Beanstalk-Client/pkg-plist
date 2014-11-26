@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Beanstalk/Client/.packlist
 %%SITE_PERL%%/Beanstalk/Client.pm
 %%SITE_PERL%%/Beanstalk/Job.pm
 %%SITE_PERL%%/Beanstalk/Pool.pm
@@ -7,6 +6,3 @@
 %%PERL5_MAN3%%/Beanstalk::Pool.3.gz
 %%PERL5_MAN3%%/Beanstalk::Stats.3.gz
 %%PERL5_MAN3%%/Beanstalk::Job.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Beanstalk/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Beanstalk
-@dirrmtry %%SITE_PERL%%/Beanstalk

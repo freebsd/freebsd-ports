@@ -1,8 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Sys/CpuLoad.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/CpuLoad/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/CpuLoad/CpuLoad.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/CpuLoad/autosplit.ix
+%%SITE_ARCH%%/Sys/CpuLoad.pm
+%%SITE_ARCH%%/auto/Sys/CpuLoad/CpuLoad.so
+%%SITE_ARCH%%/auto/Sys/CpuLoad/autosplit.ix
 %%PERL5_MAN3%%/Sys::CpuLoad.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/CpuLoad
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys

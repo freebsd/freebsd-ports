@@ -16,8 +16,3 @@
 %%SITE_PERL%%/Math/Polygon/Surface.pod
 %%SITE_PERL%%/Math/Polygon/Transform.pm
 %%SITE_PERL%%/Math/Polygon/Transform.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/Math/Polygon
-@dirrmtry %%SITE_PERL%%/Math

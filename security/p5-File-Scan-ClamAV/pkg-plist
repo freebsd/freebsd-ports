@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/File::Scan::ClamAV.3.gz
 %%SITE_PERL%%/File/Scan/ClamAV.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan/ClamAV/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan/ClamAV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Scan
-@dirrmtry %%SITE_PERL%%/File

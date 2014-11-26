@@ -3,8 +3,4 @@ bin/pkwalify
 %%PERL5_MAN3%%/Schema::Kwalify.3.gz
 %%SITE_PERL%%/Kwalify.pm
 %%SITE_PERL%%/Schema/Kwalify.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwalify/.packlist
 man/man1/pkwalify.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwalify
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry %%SITE_PERL%%/Schema

@@ -1,5 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap/POSIX.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap/Win32.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Mmap.so
+%%SITE_ARCH%%/IPC/Mmap.pm
+%%SITE_ARCH%%/IPC/Mmap/POSIX.pm
+%%SITE_ARCH%%/IPC/Mmap/Win32.pm
+%%SITE_ARCH%%/auto/IPC/Mmap/Mmap.so

@@ -1,7 +1,3 @@
 %%PERL5_MAN3%%/HTML::GenerateUtil.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/HTML/GenerateUtil.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/GenerateUtil/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/GenerateUtil/GenerateUtil.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/GenerateUtil
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML
+%%SITE_ARCH%%/HTML/GenerateUtil.pm
+%%SITE_ARCH%%/auto/HTML/GenerateUtil/GenerateUtil.so

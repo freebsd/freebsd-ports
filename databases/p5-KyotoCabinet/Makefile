@@ -3,7 +3,7 @@
 
 PORTNAME=	KyotoCabinet
 PORTVERSION=	1.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://fallabs.com/kyotocabinet/perlpkg/
 PKGNAMEPREFIX=	p5-

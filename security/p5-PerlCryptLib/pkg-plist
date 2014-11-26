@@ -1,7 +1,5 @@
 %%PERL5_MAN3%%/PerlCryptLib.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/PerlCryptLib.ph
-%%SITE_PERL%%/%%PERL_ARCH%%/PerlCryptLib.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlCryptLib/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlCryptLib/PerlCryptLib.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlCryptLib/autosplit.ix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlCryptLib
+%%SITE_ARCH%%/PerlCryptLib.ph
+%%SITE_ARCH%%/PerlCryptLib.pm
+%%SITE_ARCH%%/auto/PerlCryptLib/PerlCryptLib.so
+%%SITE_ARCH%%/auto/PerlCryptLib/autosplit.ix

@@ -10,4 +10,3 @@
 %%SITE_PERL%%/JSON/Schema/Helper.pm
 %%SITE_PERL%%/JSON/Schema/Null.pm
 %%SITE_PERL%%/JSON/Schema/Result.pm
-%%SITE_PERL%%/mach/auto/JSON/Schema/.packlist

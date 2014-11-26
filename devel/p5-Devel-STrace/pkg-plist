@@ -5,4 +5,3 @@ bin/plstrace
 %%SITE_PERL%%/Devel/STrace.pod
 %%SITE_PERL%%/Devel/STrace/Monitor.pm
 %%SITE_PERL%%/Devel/STrace/Monitor.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/STrace/.packlist

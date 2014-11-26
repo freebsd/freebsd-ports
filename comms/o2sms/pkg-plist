@@ -3,7 +3,6 @@ bin/meteorsms
 bin/o2sms
 bin/threesms
 bin/vodasms
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/o2sms/.packlist
 %%SITE_PERL%%/WWW/SMS/IE/aftsms.action
 %%SITE_PERL%%/WWW/SMS/IE/aftsms.pm
 %%SITE_PERL%%/WWW/SMS/IE/iesms.pm

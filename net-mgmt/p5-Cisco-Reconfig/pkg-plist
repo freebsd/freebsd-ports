@@ -1,7 +1,3 @@
 %%SITE_PERL%%/Cisco/Reconfig.pm
 %%SITE_PERL%%/Cisco/Reconfig.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/Reconfig/.packlist
 %%PERL5_MAN3%%/Cisco::Reconfig.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/Reconfig
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco
-@dirrmtry %%SITE_PERL%%/Cisco

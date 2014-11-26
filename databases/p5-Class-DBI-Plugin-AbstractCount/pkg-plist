@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Class/DBI/Plugin/AbstractCount.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/AbstractCount/.packlist
 %%PERL5_MAN3%%/Class::DBI::Plugin::AbstractCount.3.gz

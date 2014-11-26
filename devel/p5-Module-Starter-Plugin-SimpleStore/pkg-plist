@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Module/Starter/Plugin/DirStore.pm
 %%SITE_PERL%%/Module/Starter/Plugin/InlineStore.pm
 %%SITE_PERL%%/Module/Starter/Plugin/ModuleStore.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/Plugin/DirStore/.packlist

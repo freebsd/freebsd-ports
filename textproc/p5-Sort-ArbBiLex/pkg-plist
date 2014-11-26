@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Sort::ArbBiLex.3.gz
 %%SITE_PERL%%/Sort/ArbBiLex.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/ArbBiLex/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/ArbBiLex
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort
-@dirrmtry %%SITE_PERL%%/Sort

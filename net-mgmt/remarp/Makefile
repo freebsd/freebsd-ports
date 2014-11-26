@@ -3,6 +3,7 @@
 
 PORTNAME=	remarp
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		http://www.raccoon.kiev.ua/projects/remarp/

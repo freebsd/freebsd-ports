@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Redis/.packlist
 %%SITE_PERL%%/AnyEvent/Redis.pm
 %%SITE_PERL%%/AnyEvent/Redis/Error.pm
 %%SITE_PERL%%/AnyEvent/Redis/Protocol.pm

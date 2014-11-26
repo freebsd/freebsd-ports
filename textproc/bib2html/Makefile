@@ -3,6 +3,7 @@
 
 PORTNAME=	bib2html
 DISTVERSION=	5.1-1
+PORTREVISION=	1
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.arakhne.org/IMG/gz/ \
 		http://fresh.t-systems-sfr.com/fresh/unix/src/privat2/
@@ -28,11 +29,9 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bib2html ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bib2xml ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}/Bib2HTML
-	cd ${WRKSRC}/Bib2HTML && ${COPYTREE_SHARE} . ${STAGEDIR}${SITE_PERL}/Bib2HTML
-	${FIND} ${STAGEDIR}${SITE_PERL}/Bib2HTML -type f | \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Bib2HTML
+	cd ${WRKSRC}/Bib2HTML && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Bib2HTML
+	${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Bib2HTML -type f | \
 		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
-	${FIND} ${STAGEDIR}${SITE_PERL}/Bib2HTML -type d | ${SORT} -r | \
-		${SED} "s,^${STAGEDIR}${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
 .include <bsd.port.mk>

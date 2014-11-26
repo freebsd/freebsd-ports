@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Profiler/.packlist
 %%SITE_PERL%%/Devel/Profiler.pm
 %%SITE_PERL%%/Devel/Profiler/Apache.pm
 %%SITE_PERL%%/Devel/Profiler/Test.pm

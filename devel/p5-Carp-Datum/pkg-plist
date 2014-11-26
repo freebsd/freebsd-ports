@@ -8,7 +8,6 @@ bin/datum_strip
 %%SITE_PERL%%/Carp/Datum/Parser.pm
 %%SITE_PERL%%/Carp/Datum/Parser.y
 %%SITE_PERL%%/Carp/Datum/Strip.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Datum/.packlist
 %%PERL5_MAN3%%/Carp::Datum.3.gz
 %%PERL5_MAN3%%/Carp::Datum::Assert.3.gz
 %%PERL5_MAN3%%/Carp::Datum::Cfg.3.gz

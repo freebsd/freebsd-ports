@@ -1,3 +1,2 @@
 %%SITE_PERL%%/IO/Prompt.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Prompt/.packlist
 %%PERL5_MAN3%%/IO::Prompt.3.gz

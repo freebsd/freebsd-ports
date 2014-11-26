@@ -2,7 +2,6 @@
 %%SITE_PERL%%/Params/Validate/Dependencies.pm
 %%SITE_PERL%%/Params/Validate/Dependencies/Documenter.pm
 %%SITE_PERL%%/Params/Validate/Dependencies/Extending.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/Dependencies/.packlist
 %%PERL5_MAN3%%/Data::Domain::Dependencies.3.gz
 %%PERL5_MAN3%%/Params::Validate::Dependencies.3.gz
 %%PERL5_MAN3%%/Params::Validate::Dependencies::Extending.3.gz

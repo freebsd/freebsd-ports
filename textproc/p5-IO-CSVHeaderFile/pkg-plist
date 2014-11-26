@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/IO::CSVHeaderFile.3.gz
 %%SITE_PERL%%/IO/CSVHeaderFile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/CSVHeaderFile/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/CSVHeaderFile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-@dirrmtry %%SITE_PERL%%/IO

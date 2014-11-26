@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Module/Loaded.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Loaded/.packlist
 %%PERL5_MAN3%%/Module::Loaded.3.gz

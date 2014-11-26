@@ -17,7 +17,6 @@ etc/mp3lintrc
 %%SITE_PERL%%/MP3/Archive/Lint/Tools/Mp3info.pm
 %%SITE_PERL%%/MP3/Archive/Lint/Tools/Ogg.pm
 %%SITE_PERL%%/MP3/Archive/Lint/Tools/Wav.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3lint/.packlist
 %%PERL5_MAN3%%/mp3lint-tools.3.gz
 man/man1/mp3lint.1.gz
 man/man1/mp3lintskip.1.gz

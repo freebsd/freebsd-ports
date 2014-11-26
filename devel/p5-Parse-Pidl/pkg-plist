@@ -24,7 +24,6 @@ bin/pidl
 %%SITE_PERL%%/Parse/Pidl/Util.pm
 %%SITE_PERL%%/Parse/Pidl/Wireshark/Conformance.pm
 %%SITE_PERL%%/Parse/Pidl/Wireshark/NDR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Pidl/.packlist
 %%PERL5_MAN3%%/Parse::Pidl::Dump.3.gz
 %%PERL5_MAN3%%/Parse::Pidl::NDR.3.gz
 %%PERL5_MAN3%%/Parse::Pidl::Util.3.gz

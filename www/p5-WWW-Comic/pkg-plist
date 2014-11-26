@@ -16,6 +16,3 @@
 %%SITE_PERL%%/WWW/Comic/Plugin/UserFriendly.pm
 %%SITE_PERL%%/WWW/Comic/Plugin/VenusEnvy.pm
 %%SITE_PERL%%/WWW/Comic/Plugin/uComics.pm
-@dirrmtry %%SITE_PERL%%/WWW/Comic/Plugin
-@dirrmtry %%SITE_PERL%%/WWW/Comic
-@dirrmtry %%SITE_PERL%%/WWW

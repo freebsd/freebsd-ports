@@ -3,6 +3,7 @@
 
 PORTNAME=	RT-Extension-SLA
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -59,5 +60,9 @@ do-configure:
 	    unset PREFIX && \
 	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
 	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/man/auto/RT/Extension/SLA/.packlist
+	${RMDIR} -p ${STAGEDIR}${PREFIX}/man/auto/RT/Extension/SLA 2>/dev/null || :
 
 .include <bsd.port.mk>

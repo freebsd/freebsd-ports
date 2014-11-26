@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Class::XSAccessor::Array.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/XSAccessor/Array.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/Array/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/Array/Array.so
+%%SITE_ARCH%%/Class/XSAccessor/Array.pm
+%%SITE_ARCH%%/auto/Class/XSAccessor/Array/Array.so

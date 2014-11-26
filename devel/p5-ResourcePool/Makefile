@@ -3,6 +3,7 @@
 
 PORTNAME=	ResourcePool
 PORTVERSION=	1.0107
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN \
 		http://www.fatalmind.com/projects/ResourcePool/

@@ -14,4 +14,3 @@
 %%SITE_PERL%%/ResourcePool/Factory/DBI.pod
 %%SITE_PERL%%/ResourcePool/Resource/DBI.pm
 %%SITE_PERL%%/ResourcePool/Resource/DBI.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI/.packlist

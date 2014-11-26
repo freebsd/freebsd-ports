@@ -57,4 +57,3 @@
 %%SITE_PERL%%/Module/Install/WriteAll.pm
 %%SITE_PERL%%/inc/Module/Install.pm
 %%SITE_PERL%%/inc/Module/Install/DSL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/.packlist

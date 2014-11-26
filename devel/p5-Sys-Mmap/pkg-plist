@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Sys::Mmap.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Mmap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Mmap/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Mmap/Mmap.so
+%%SITE_ARCH%%/Sys/Mmap.pm
+%%SITE_ARCH%%/auto/Sys/Mmap/Mmap.so

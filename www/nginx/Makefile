@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -1002,11 +1003,11 @@ do-install:
 .endif
 
 .if !empty(PORT_OPTIONS:MHTTP) && !empty(PORT_OPTIONS:MHTTP_PERL)
-	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/nginx
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
-		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
+		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/nginx
 	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/lib/nginx.pm \
-		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/
+		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
@@ -1017,9 +1018,9 @@ do-install:
 
 post-install:
 .if !empty(PORT_OPTIONS:MHTTP) && !empty(PORT_OPTIONS:MHTTP_PERL)
-	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.so >> ${TMPPLIST}
-	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/nginx.pm >> ${TMPPLIST}
-	${ECHO_CMD} @dirrm ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx >> ${TMPPLIST}
+	${ECHO_CMD} ${SITE_ARCH_REL}/auto/nginx/nginx.so >> ${TMPPLIST}
+	${ECHO_CMD} ${SITE_ARCH_REL}/nginx.pm >> ${TMPPLIST}
+	${ECHO_CMD} @dirrm ${SITE_ARCH_REL}/auto/nginx >> ${TMPPLIST}
 .endif
 	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 

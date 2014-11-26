@@ -1,21 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/TableMatrix.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/TableMatrix.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/TableMatrix/Spreadsheet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/TableMatrix/SpreadsheetHideRows.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/mm.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkTable.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkTableversion.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/version.h
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/TableMatrix.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/autosplit.ix
+%%SITE_ARCH%%/Tk/TableMatrix.pm
+%%SITE_ARCH%%/Tk/TableMatrix.pod
+%%SITE_ARCH%%/Tk/TableMatrix/Spreadsheet.pm
+%%SITE_ARCH%%/Tk/TableMatrix/SpreadsheetHideRows.pm
+%%SITE_ARCH%%/Tk/pTk/mm.h
+%%SITE_ARCH%%/Tk/pTk/tkTable.h
+%%SITE_ARCH%%/Tk/pTk/tkTableversion.h
+%%SITE_ARCH%%/Tk/pTk/version.h
+%%SITE_ARCH%%/auto/Tk/TableMatrix/TableMatrix.so
+%%SITE_ARCH%%/auto/Tk/TableMatrix/autosplit.ix
 %%PERL5_MAN3%%/Tk::TableMatrix.3.gz
 %%PERL5_MAN3%%/Tk::TableMatrix::Spreadsheet.3.gz
 %%PERL5_MAN3%%/Tk::TableMatrix::SpreadsheetHideRows.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TableMatrix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk/TableMatrix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry %%SITE_PERL%%

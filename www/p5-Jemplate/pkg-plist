@@ -12,7 +12,3 @@ man/man1/jemplate.1.gz
 %%SITE_PERL%%/Jemplate/Parser.pm
 %%SITE_PERL%%/Jemplate/Runtime.pm
 %%SITE_PERL%%/Jemplate/Runtime/Compact.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jemplate/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jemplate
-@dirrmtry %%SITE_PERL%%/Jemplate/Runtime
-@dirrmtry %%SITE_PERL%%/Jemplate

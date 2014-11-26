@@ -1,8 +1,2 @@
 %%SITE_PERL%%/MIME/Lite/HTML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite/HTML/.packlist
 %%PERL5_MAN3%%/MIME::Lite::HTML.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
-@dirrmtry %%SITE_PERL%%/MIME/Lite
-@dirrmtry %%SITE_PERL%%/MIME

@@ -352,30 +352,3 @@
 %%SITE_PERL%%/PDF/API3/Compat/API2/fonts/langcover.txt
 %%SITE_PERL%%/PDF/API3/Compat/API2/fonts/status.txt
 %%SITE_PERL%%/PDF/API3/Compat/API2/fonts/unicover.txt
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API3/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/fonts
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/Indexed
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/TrueType
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CMap
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Content
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/PDF
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2
-@dirrmtry %%SITE_PERL%%/PDF/API3/Compat
-@dirrmtry %%SITE_PERL%%/PDF/API3
-@dirrmtry %%SITE_PERL%%/PDF

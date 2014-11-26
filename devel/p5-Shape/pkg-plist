@@ -1,5 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Shape.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Shape/Shape.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Shape/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Shape/.packlist
+%%SITE_ARCH%%/Shape.pm
+%%SITE_ARCH%%/auto/Shape/Shape.so
+%%SITE_ARCH%%/auto/Shape/autosplit.ix
 %%PERL5_MAN3%%/Shape.3.gz

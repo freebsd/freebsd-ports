@@ -14,4 +14,3 @@ bin/dumpswf.plx
 %%SITE_PERL%%/SWF/Element.pod
 %%SITE_PERL%%/SWF/File.pm
 %%SITE_PERL%%/SWF/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/File/.packlist

@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Data/Uniqid.pm
 %%SITE_PERL%%/auto/Data/Uniqid/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Uniqid/.packlist
 %%PERL5_MAN3%%/Data::Uniqid.3.gz

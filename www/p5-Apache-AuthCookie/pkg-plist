@@ -14,11 +14,3 @@
 %%SITE_PERL%%/Apache/AuthCookie/Util.pm
 %%SITE_PERL%%/Apache2/AuthCookie.pm
 %%SITE_PERL%%/Apache2/AuthCookie/Params.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/Apache2/AuthCookie
-@dirrmtry %%SITE_PERL%%/Apache2
-@dirrmtry %%SITE_PERL%%/Apache/AuthCookie/Params
-@dirrmtry %%SITE_PERL%%/Apache/AuthCookie
-@dirrmtry %%SITE_PERL%%/Apache

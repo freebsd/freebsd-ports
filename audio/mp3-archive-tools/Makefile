@@ -3,7 +3,7 @@
 
 PORTNAME=	mp3-archive-tools
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
 		LOCAL/sunpoet

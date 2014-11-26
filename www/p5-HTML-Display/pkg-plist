@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Display/.packlist
 %%SITE_PERL%%/HTML/Display.pm
 %%SITE_PERL%%/HTML/Display/Common.pm
 %%SITE_PERL%%/HTML/Display/Debian.pm
@@ -25,8 +24,3 @@
 %%PERL5_MAN3%%/HTML::Display::Win32.3.gz
 %%PERL5_MAN3%%/HTML::Display::Win32::IE.3.gz
 %%PERL5_MAN3%%/HTML::Display::Win32::OLE.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Display
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML/Display/Win32
-@dirrmtry %%SITE_PERL%%/HTML/Display
-@dirrmtry %%SITE_PERL%%/HTML

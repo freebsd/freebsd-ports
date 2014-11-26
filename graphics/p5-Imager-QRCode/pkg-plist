@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Imager::QRCode.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/QRCode.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode/QRCode.so
+%%SITE_ARCH%%/Imager/QRCode.pm
+%%SITE_ARCH%%/auto/Imager/QRCode/QRCode.so

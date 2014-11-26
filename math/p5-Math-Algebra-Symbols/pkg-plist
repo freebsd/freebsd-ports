@@ -7,10 +7,3 @@
 %%SITE_PERL%%/Math/Algebra/Symbols/Symbols.pm
 %%SITE_PERL%%/Math/Algebra/Symbols/Term.pm
 %%SITE_PERL%%/Math/Algebra/symbols.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Algebra/Symbols/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Algebra/Symbols
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Algebra
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/Math/Algebra/Symbols
-@dirrmtry %%SITE_PERL%%/Math/Algebra
-@dirrmtry %%SITE_PERL%%/Math

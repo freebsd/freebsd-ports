@@ -5,9 +5,3 @@
 %%SITE_PERL%%/Baseball/Sabermetrics/Player.pm
 %%SITE_PERL%%/Baseball/Sabermetrics/Team.pm
 %%SITE_PERL%%/Baseball/Sabermetrics/abstract.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Baseball/Sabermetrics/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Baseball/Sabermetrics
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Baseball
-@dirrmtry %%SITE_PERL%%/Baseball/Sabermetrics/League
-@dirrmtry %%SITE_PERL%%/Baseball/Sabermetrics
-@dirrmtry %%SITE_PERL%%/Baseball

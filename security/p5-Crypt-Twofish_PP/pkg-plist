@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt-Twofish_PP/.packlist
 %%SITE_PERL%%/Crypt/Twofish_PP.pm
 %%SITE_PERL%%/Crypt/Twofish_PP/Key16.pm
 %%SITE_PERL%%/Crypt/Twofish_PP/Key24.pm
@@ -8,9 +7,3 @@
 %%PERL5_MAN3%%/Crypt::Twofish_PP::Key16.3.gz
 %%PERL5_MAN3%%/Crypt::Twofish_PP::Key24.3.gz
 %%PERL5_MAN3%%/Crypt::Twofish_PP::Key32.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt-Twofish_PP
-@dirrmtry %%SITE_PERL%%/Crypt/Twofish_PP
-@dirrmtry %%SITE_PERL%%/Crypt
-@dirrmtry %%SITE_PERL%%/LocaleData/de/LC_MESSAGES
-@dirrmtry %%SITE_PERL%%/LocaleData/de
-@dirrmtry %%SITE_PERL%%/LocaleData

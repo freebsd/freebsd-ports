@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/QuoteTW/.packlist
 %%SITE_PERL%%/Finance/QuoteTW.pm
 %%SITE_PERL%%/Finance/QuoteTW/Allianz.pm
 %%SITE_PERL%%/Finance/QuoteTW/Blackrock.pm

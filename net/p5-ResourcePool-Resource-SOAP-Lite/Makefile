@@ -3,7 +3,7 @@
 
 PORTNAME=	ResourcePool-Resource-SOAP-Lite
 PORTVERSION=	1.0103
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN \
 		http://www.fatalmind.com/projects/ResourcePool/

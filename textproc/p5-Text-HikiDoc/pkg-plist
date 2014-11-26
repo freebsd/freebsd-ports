@@ -11,6 +11,3 @@
 %%SITE_PERL%%/Text/HikiDoc/Plugin/syntaxhighlighter.pm
 %%SITE_PERL%%/Text/HikiDoc/Plugin/texthighlight.pm
 %%SITE_PERL%%/Text/HikiDoc/Plugin/vimcolor.pm
-@dirrm %%SITE_PERL%%/Text/HikiDoc/Plugin
-@dirrm %%SITE_PERL%%/Text/HikiDoc
-@dirrmtry %%SITE_PERL%%/Text

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Cukes/.packlist
 %%SITE_PERL%%/Test/Cukes.pm
 %%SITE_PERL%%/Test/Cukes/Feature.pm
 %%SITE_PERL%%/Test/Cukes/Scenario.pm

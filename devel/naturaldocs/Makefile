@@ -3,7 +3,7 @@
 
 PORTNAME=	naturaldocs
 PORTVERSION=	1.52
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Stable%20Releases/${PORTVERSION}
@@ -30,9 +30,9 @@ do-configure:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/NaturalDocs.sh \
 		${STAGEDIR}${PREFIX}/bin/NaturalDocs
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}/NaturalDocs
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/NaturalDocs
 	(cd ${WRKSRC}/Modules/NaturalDocs \
-		&& ${COPYTREE_SHARE} . ${STAGEDIR}${SITE_PERL}/NaturalDocs)
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/NaturalDocs)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/NaturalDocs ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "Config Info JavaScript Styles" \

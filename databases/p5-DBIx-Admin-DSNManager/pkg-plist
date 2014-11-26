@@ -1,3 +1,2 @@
 %%SITE_PERL%%/DBIx/Admin/DSNManager.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Admin/DSNManager/.packlist
 %%PERL5_MAN3%%/DBIx::Admin::DSNManager.3.gz

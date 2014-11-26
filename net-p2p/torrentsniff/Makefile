@@ -3,6 +3,7 @@
 
 PORTNAME=	torrentsniff
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p perl5
 MASTER_SITES=	http://www.highprogrammer.com/alan/perl/
 
@@ -18,7 +19,7 @@ SHEBANG_FILES=	torrentsniff
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/torrentsniff ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${SITE_PERL}/BitTorrent
-	${INSTALL_DATA} ${WRKSRC}/BitTorrent/BDecode.pm ${STAGEDIR}${SITE_PERL}/BitTorrent
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/BitTorrent
+	${INSTALL_DATA} ${WRKSRC}/BitTorrent/BDecode.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/BitTorrent
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://devlabs.linuxassist.net/attachments/download/${DOWNLOAD_FOLDER}/
 DISTNAME=	cluebringer-${PORTVERSION}
@@ -58,7 +58,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR} \
-		${STAGEDIR}${SITE_PERL}/cbp \
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/cbp \
 		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/cbpadmin ${STAGEDIR}${PREFIX}/bin
@@ -66,7 +66,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cluebringer.conf \
 		${STAGEDIR}${PREFIX}/etc/cluebringer.conf.sample
 	(cd ${WRKSRC}/webui && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR})
-	(cd ${WRKSRC}/cbp && ${COPYTREE_SHARE} \* ${STAGEDIR}${SITE_PERL}/cbp)
+	(cd ${WRKSRC}/cbp && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/cbp)
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} database ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})

@@ -3,7 +3,7 @@
 
 PORTNAME=	DateTime-Calendar-Japanese-Era
 PORTVERSION=	0.08001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese devel perl5
 MASTER_SITES=	CPAN
 

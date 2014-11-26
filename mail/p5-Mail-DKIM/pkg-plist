@@ -48,10 +48,3 @@ bin/dkimverify.pl
 %%SITE_PERL%%/Mail/DKIM/TextWrap.pm
 %%SITE_PERL%%/Mail/DKIM/Verifier.pm
 %%SITE_PERL%%/Mail/sample_mime_lite.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DKIM/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DKIM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/Mail/DKIM/Canonicalization
-@dirrmtry %%SITE_PERL%%/Mail/DKIM/Algorithm
-@dirrmtry %%SITE_PERL%%/Mail/DKIM
-@dirrmtry %%SITE_PERL%%/Mail

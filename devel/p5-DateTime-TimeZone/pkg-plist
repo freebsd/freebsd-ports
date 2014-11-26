@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone/.packlist
 %%SITE_PERL%%/DateTime/TimeZone.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Abidjan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Accra.pm

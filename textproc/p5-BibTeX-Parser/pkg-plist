@@ -4,8 +4,3 @@
 %%SITE_PERL%%/BibTeX/Parser.pm
 %%SITE_PERL%%/BibTeX/Parser/Author.pm
 %%SITE_PERL%%/BibTeX/Parser/Entry.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BibTeX/Parser/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BibTeX/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BibTeX
-@dirrmtry %%SITE_PERL%%/BibTeX/Parser
-@dirrmtry %%SITE_PERL%%/BibTeX

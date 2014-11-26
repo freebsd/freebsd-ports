@@ -12,4 +12,3 @@
 %%SITE_PERL%%/IPC/Run/Win32Helper.pm
 %%SITE_PERL%%/IPC/Run/Win32IO.pm
 %%SITE_PERL%%/IPC/Run/Win32Pump.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Run/.packlist

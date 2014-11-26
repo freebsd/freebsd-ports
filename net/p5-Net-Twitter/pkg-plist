@@ -45,9 +45,3 @@
 %%SITE_PERL%%/Net/Twitter/Role/SimulateCursors.pm
 %%SITE_PERL%%/Net/Twitter/Role/WrapError.pm
 %%SITE_PERL%%/Net/Twitter/Search.pm
-@dirrmtry %%SITE_PERL%%/Net/Twitter/Role/API/Search
-@dirrmtry %%SITE_PERL%%/Net/Twitter/Role/API
-@dirrmtry %%SITE_PERL%%/Net/Twitter/Role
-@dirrmtry %%SITE_PERL%%/Net/Twitter/Manual
-@dirrmtry %%SITE_PERL%%/Net/Twitter
-@dirrmtry %%SITE_PERL%%/Net

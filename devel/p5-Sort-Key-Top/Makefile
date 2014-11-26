@@ -3,6 +3,7 @@
 
 PORTNAME=	Sort-Key-Top
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SALVA
@@ -18,6 +19,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Sort/Key/Top/Top.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Sort/Key/Top/Top.so
 
 .include <bsd.port.mk>

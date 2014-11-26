@@ -61,8 +61,3 @@
 %%SITE_PERL%%/URI/urn.pm
 %%SITE_PERL%%/URI/urn/isbn.pm
 %%SITE_PERL%%/URI/urn/oid.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
-@dirrmtry %%SITE_PERL%%/URI/urn
-@dirrmtry %%SITE_PERL%%/URI/file
-@dirrmtry %%SITE_PERL%%/URI

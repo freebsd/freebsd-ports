@@ -10,7 +10,3 @@
 %%SITE_PERL%%/Pod/Parser.pm
 %%SITE_PERL%%/Pod/PlainText.pm
 %%SITE_PERL%%/Pod/Select.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Parser/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
-@dirrmtry %%SITE_PERL%%/Pod

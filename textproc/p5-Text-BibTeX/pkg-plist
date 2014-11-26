@@ -12,17 +12,17 @@ lib/libbtparse.so
 %%PERL5_MAN3%%/Text::BibTeX::NameFormat.3.gz
 %%PERL5_MAN3%%/Text::BibTeX::Structure.3.gz
 %%PERL5_MAN3%%/Text::BibTeX::Value.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Bib.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/BibFormat.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/BibSort.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Entry.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/File.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Name.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/NameFormat.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Structure.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Value.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX/BibTeX.so
+%%SITE_ARCH%%/Text/BibTeX.pm
+%%SITE_ARCH%%/Text/BibTeX/Bib.pm
+%%SITE_ARCH%%/Text/BibTeX/BibFormat.pm
+%%SITE_ARCH%%/Text/BibTeX/BibSort.pm
+%%SITE_ARCH%%/Text/BibTeX/Entry.pm
+%%SITE_ARCH%%/Text/BibTeX/File.pm
+%%SITE_ARCH%%/Text/BibTeX/Name.pm
+%%SITE_ARCH%%/Text/BibTeX/NameFormat.pm
+%%SITE_ARCH%%/Text/BibTeX/Structure.pm
+%%SITE_ARCH%%/Text/BibTeX/Value.pm
+%%SITE_ARCH%%/auto/Text/BibTeX/BibTeX.so
 man/man1/bt_format_names.1.gz
 man/man1/bt_input.1.gz
 man/man1/bt_language.1.gz
@@ -34,7 +34,3 @@ man/man1/bt_split_names.1.gz
 man/man1/bt_traversal.1.gz
 man/man1/btool_faq.1.gz
 man/man1/btparse.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text

@@ -1,9 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Escape/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Escape/XS/XS.so
-%%SITE_PERL%%/%%PERL_ARCH%%/URI/Escape/XS.pm
+%%SITE_ARCH%%/auto/URI/Escape/XS/XS.so
+%%SITE_ARCH%%/URI/Escape/XS.pm
 %%PERL5_MAN3%%/URI::Escape::XS.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/URI/Escape/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/URI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Escape/XS/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Escape
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI

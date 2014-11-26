@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Umph/Prompt.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Umph/Prompt/.packlist
 %%PERL5_MAN3%%/Umph::Prompt.3.gz

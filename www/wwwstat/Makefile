@@ -2,7 +2,7 @@
 
 PORTNAME=	wwwstat
 PORTVERSION=	2.01
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/websoft/wwwstat/ \
 		ftp://ftp.gwdg.de/pub/misc/www-stat/websoft/wwwstat/
@@ -20,16 +20,16 @@ USE_APACHE_RUN=	22+
 USES=		perl5
 MAKE_ENV+=	PERL=${PERL}
 SUB_FILES=	pkg-message
-SUB_LIST=	SITE_PERL=${SITE_PERL}
+SUB_LIST=	SITE_PERL=${PREFIX}/${SITE_PERL}
 
 BIN_FILES=	monthly oldlog2new splitlog wwwerrs wwwstat
 SPERL_FILES=	domains.pl splitlog.rc wwwstat.rc
 MAN1_FILES=	wwwstat.1 splitlog.1
 
 do-install:
-	@${INSTALL_SCRIPT} ${BIN_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}
-	@${INSTALL_DATA} ${SPERL_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${SITE_PERL}
-	@${INSTALL_MAN} ${MAN1_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${BIN_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	${INSTALL_DATA} ${SPERL_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	${INSTALL_MAN} ${MAN1_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

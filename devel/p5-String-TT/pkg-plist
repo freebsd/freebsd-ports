@@ -1,3 +1,2 @@
 %%SITE_PERL%%/String/TT.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/TT/.packlist
 %%PERL5_MAN3%%/String::TT.3.gz

@@ -1,5 +1,4 @@
 bin/ngs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Nginx/Simple/.packlist
 %%SITE_PERL%%/Nginx/Simple.pm
 %%SITE_PERL%%/Nginx/Simple/Dispatch.pm
 %%SITE_PERL%%/Nginx/Simple/Ajax.pm
@@ -12,8 +11,3 @@ bin/ngs
 %%PERL5_MAN3%%/Nginx::Simple.3.gz
 %%PERL5_MAN3%%/Nginx::Simple::Dispatcher::Attributes.3.gz
 %%PERL5_MAN3%%/Nginx::Simple::Dispatcher.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nginx/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nginx
-@dirrmtry %%SITE_PERL%%/Nginx/Simple/Dispatcher
-@dirrmtry %%SITE_PERL%%/Nginx/Simple
-@dirrmtry %%SITE_PERL%%/Nginx

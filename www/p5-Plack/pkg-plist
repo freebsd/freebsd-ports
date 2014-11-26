@@ -69,7 +69,6 @@ man/man1/plackup.1.gz
 %%PERL5_MAN3%%/Plack::Util.3.gz
 %%PERL5_MAN3%%/Plack::Util::Accessor.3.gz
 bin/plackup
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/.packlist
 %%SITE_PERL%%/HTTP/Message/PSGI.pm
 %%SITE_PERL%%/HTTP/Server/PSGI.pm
 %%SITE_PERL%%/Plack.pm

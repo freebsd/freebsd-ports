@@ -9,19 +9,15 @@ bin/bufrresolve.pl
 %%PERL5_MAN3%%/Geo::bufrencode.3.gz
 %%PERL5_MAN3%%/Geo::bufrread.3.gz
 %%PERL5_MAN3%%/Geo::bufrresolve.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/BUFR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/bufr_reencode.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/bufralter.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/bufrencode.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/bufrread.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/bufrresolve.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/BUFR/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/BUFR/BUFR.so
+%%SITE_ARCH%%/Geo/BUFR.pm
+%%SITE_ARCH%%/Geo/bufr_reencode.pl
+%%SITE_ARCH%%/Geo/bufralter.pl
+%%SITE_ARCH%%/Geo/bufrencode.pl
+%%SITE_ARCH%%/Geo/bufrread.pl
+%%SITE_ARCH%%/Geo/bufrresolve.pl
+%%SITE_ARCH%%/auto/Geo/BUFR/BUFR.so
 man/man1/bufr_reencode.pl.1.gz
 man/man1/bufralter.pl.1.gz
 man/man1/bufrencode.pl.1.gz
 man/man1/bufrread.pl.1.gz
 man/man1/bufrresolve.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/BUFR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Geo

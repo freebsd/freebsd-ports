@@ -1,7 +1,6 @@
 %%SITE_PERL%%/Mac/PropertyList.pm
 %%SITE_PERL%%/Mac/PropertyList/ReadBinary.pm
 %%SITE_PERL%%/Mac/PropertyList/WriteBinary.pm
-%%SITE_PERL%%/mach/auto/Mac/PropertyList/.packlist
 %%PERL5_MAN3%%/Mac::PropertyList.3.gz
 %%PERL5_MAN3%%/Mac::PropertyList::ReadBinary.3.gz
 %%PERL5_MAN3%%/Mac::PropertyList::WriteBinary.3.gz

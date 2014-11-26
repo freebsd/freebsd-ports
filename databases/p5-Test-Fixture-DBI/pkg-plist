@@ -1,6 +1,5 @@
 bin/make_database_yaml.pl
 bin/make_fixture_yaml.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fixture/DBI/.packlist
 %%SITE_PERL%%/Test/Fixture/DBI.pm
 %%SITE_PERL%%/Test/Fixture/DBI/Util.pm
 %%SITE_PERL%%/Test/Fixture/DBI/Util/SQLite.pm

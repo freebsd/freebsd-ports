@@ -3,6 +3,7 @@
 
 PORTNAME=	gcap
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -25,8 +26,6 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/gcap
-PLIST_FILES=	bin/gcap ${SITE_PERL_REL}/${PERL_ARCH}/auto/gcap/.packlist \
-		man/man1/gcap.1.gz
+PLIST_FILES=	bin/gcap man/man1/gcap.1.gz
 
 .include <bsd.port.mk>

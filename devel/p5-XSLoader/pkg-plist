@@ -1,3 +1,2 @@
 %%PERL5_MAN3%%/XSLoader.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/XSLoader.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XSLoader/.packlist
+%%SITE_ARCH%%/XSLoader.pm

@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Parse/PlainConfig.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/PlainConfig/.packlist
 %%PERL5_MAN3%%/Parse::PlainConfig.3.gz

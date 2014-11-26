@@ -3,7 +3,7 @@
 
 PORTNAME=	ftpmirror
 PORTVERSION=	1.96
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.sai.msu.su/pub/unix/FTP/mirror/
 
@@ -30,7 +30,6 @@ post-configure:
 		${WRKSRC}/Fan/Fan.pm
 
 post-install:
-	-@[ -d ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}

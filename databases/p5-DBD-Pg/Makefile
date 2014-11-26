@@ -2,6 +2,7 @@
 
 PORTNAME=	DBD-Pg
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +20,6 @@ USES=		pgsql perl5
 USE_PERL5=	configure
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/DBD/Pg/Pg.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/Pg/Pg.so
 
 .include <bsd.port.mk>

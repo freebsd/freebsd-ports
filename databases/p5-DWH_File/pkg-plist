@@ -50,4 +50,3 @@
 %%SITE_PERL%%/DWH_File/Value/Plain.pm
 %%SITE_PERL%%/DWH_File/Value/Undef.pm
 %%SITE_PERL%%/DWH_File/Work.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DWH_File/.packlist

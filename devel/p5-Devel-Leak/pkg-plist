@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Devel::Leak.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Leak.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak/Leak.so
+%%SITE_ARCH%%/Devel/Leak.pm
+%%SITE_ARCH%%/auto/Devel/Leak/Leak.so

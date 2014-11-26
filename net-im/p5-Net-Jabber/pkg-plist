@@ -36,9 +36,3 @@
 %%SITE_PERL%%/Net/Jabber/Server.pm
 %%SITE_PERL%%/Net/Jabber/Stanza.pm
 %%SITE_PERL%%/Net/Jabber/XDB.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Jabber/Dialback
-@dirrmtry %%SITE_PERL%%/Net/Jabber
-@dirrmtry %%SITE_PERL%%/Net

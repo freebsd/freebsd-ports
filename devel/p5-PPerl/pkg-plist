@@ -1,6 +1,5 @@
 bin/pperl
 man/man1/pperl.1.gz
 %%PERL5_MAN3%%/PPerl.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPerl/PPerl.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPerl/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/PPerl.pm
+%%SITE_ARCH%%/auto/PPerl/PPerl.so
+%%SITE_ARCH%%/PPerl.pm

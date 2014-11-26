@@ -155,4 +155,3 @@
 %%SITE_PERL%%/Tangram/Type/TimeAndDate.pm
 %%SITE_PERL%%/Tangram/Type/TimeAndDate.pod
 %%SITE_PERL%%/auto/Tangram/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram/.packlist

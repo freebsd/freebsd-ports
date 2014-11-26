@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Amazon/SQS/Simple/.packlist
 %%SITE_PERL%%/Amazon/SQS/Simple.pm
 %%SITE_PERL%%/Amazon/SQS/Simple/Base.pm
 %%SITE_PERL%%/Amazon/SQS/Simple/Message.pm
@@ -9,12 +8,3 @@
 %%PERL5_MAN3%%/Amazon::SQS::Simple::Message.3.gz
 %%PERL5_MAN3%%/Amazon::SQS::Simple::Queue.3.gz
 %%PERL5_MAN3%%/Amazon::SQS::Simple::SendResponse.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amazon/SQS/Simple
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amazon/SQS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amazon
-@dirrm %%SITE_PERL%%/Amazon/SQS/Simple
-@dirrm %%SITE_PERL%%/Amazon/SQS
-@dirrm %%SITE_PERL%%/Amazon
-@dirrmtry %%SITE_PERL%%/Amazon/SQS/Simple
-@dirrmtry %%SITE_PERL%%/Amazon/SQS
-@dirrmtry %%SITE_PERL%%/Amazon

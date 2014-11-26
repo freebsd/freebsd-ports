@@ -18,7 +18,6 @@
 %%SITE_PERL%%/SyslogScan/Volume.pm
 %%SITE_PERL%%/SyslogScan/WhereIs.pm
 %%SITE_PERL%%/read_mail_log.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SyslogScan/.packlist
 %%PERL5_MAN3%%/SyslogScan::ByGroup.3.gz
 %%PERL5_MAN3%%/SyslogScan::Delivery.3.gz
 %%PERL5_MAN3%%/SyslogScan::DeliveryIterator.3.gz
@@ -31,5 +30,3 @@
 %%PERL5_MAN3%%/SyslogScan::Usage.3.gz
 %%PERL5_MAN3%%/SyslogScan::WhereIs.3.gz
 %%PERL5_MAN3%%/read_mail_log.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SyslogScan
-@dirrm %%SITE_PERL%%/SyslogScan

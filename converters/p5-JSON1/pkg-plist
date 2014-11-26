@@ -7,7 +7,6 @@
 %%SITE_PERL%%/JSON/Parser.pm
 %%SITE_PERL%%/JSONRPC.pm
 %%SITE_PERL%%/JSONRPC/Transport/HTTP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/.packlist
 %%PERL5_MAN3%%/Apache::JSONRPC.3.gz
 %%PERL5_MAN3%%/JSON.3.gz
 %%PERL5_MAN3%%/JSON::Converter.3.gz

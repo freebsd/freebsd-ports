@@ -1,3 +1,2 @@
 %%SITE_PERL%%/SMS/Send/TW/Qma.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/Qma/.packlist
 %%PERL5_MAN3%%/SMS::Send::TW::Qma.3.gz

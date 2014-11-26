@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.2.30
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 PKGNAMESUFFIX=	12
@@ -48,7 +48,7 @@ PLIST_SUB+=	WITH_RUBY="@comment "
 
 .if ${PORT_OPTIONS:MPERL}
 USES+=		perl5
-USE_PERL5=	run build fixpacklist
+USE_PERL5=	run build
 CONFIGURE_ARGS+=	--enable-perl --enable-perl-site-install
 PLIST_SUB+=	WITH_PERL=""
 .else

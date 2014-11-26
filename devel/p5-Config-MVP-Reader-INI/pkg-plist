@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Config/MVP/Reader/INI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MVP/Reader/INI/.packlist
 %%PERL5_MAN3%%/Config::MVP::Reader::INI.3.gz

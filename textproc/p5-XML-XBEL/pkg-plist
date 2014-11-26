@@ -22,5 +22,3 @@
 %%SITE_PERL%%/XML/XBEL/serialize.pm
 %%SITE_PERL%%/XML/XBEL/thingy.pm
 %%SITE_PERL%%/XML/XBEL/url.pm
-@dirrmtry %%SITE_PERL%%/XML/XBEL
-@dirrmtry %%SITE_PERL%%/XML

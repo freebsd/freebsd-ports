@@ -1,7 +1,6 @@
 %%PERL5_MAN3%%/Math::Geometry::Planar::GPC::Polygon.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Geometry/Planar/GPC/Polygon.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Geometry/Planar/GPC/Polygon/functions.c
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Geometry/Planar/GPC/Polygon/include/gpc.c
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Geometry/Planar/GPC/Polygon/include/gpc.h
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar/GPC/Polygon/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar/GPC/Polygon/Polygon.so
+%%SITE_ARCH%%/Math/Geometry/Planar/GPC/Polygon.pm
+%%SITE_ARCH%%/Math/Geometry/Planar/GPC/Polygon/functions.c
+%%SITE_ARCH%%/Math/Geometry/Planar/GPC/Polygon/include/gpc.c
+%%SITE_ARCH%%/Math/Geometry/Planar/GPC/Polygon/include/gpc.h
+%%SITE_ARCH%%/auto/Math/Geometry/Planar/GPC/Polygon/Polygon.so

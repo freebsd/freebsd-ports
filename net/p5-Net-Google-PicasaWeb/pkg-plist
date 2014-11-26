@@ -9,7 +9,6 @@ bin/picasa-list
 %%SITE_PERL%%/Net/Google/PicasaWeb/Media.pm
 %%SITE_PERL%%/Net/Google/PicasaWeb/MediaEntry.pm
 %%SITE_PERL%%/Net/Google/PicasaWeb/MediaFeed.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/PicasaWeb/.packlist
 %%PERL5_MAN3%%/Net::Google::PicasaWeb.3.gz
 %%PERL5_MAN3%%/Net::Google::PicasaWeb::Album.3.gz
 %%PERL5_MAN3%%/Net::Google::PicasaWeb::Base.3.gz
@@ -21,9 +20,3 @@ bin/picasa-list
 man/man1/picasa.1.gz
 man/man1/picasa-get.1.gz
 man/man1/picasa-list.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/PicasaWeb
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Google/PicasaWeb
-@dirrmtry %%SITE_PERL%%/Net/Google
-@dirrmtry %%SITE_PERL%%/Net

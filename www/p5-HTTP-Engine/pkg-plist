@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Engine/.packlist
 %%SITE_PERL%%/HTTP/Engine.pm
 %%SITE_PERL%%/HTTP/Engine/Cookbook.pod
 %%SITE_PERL%%/HTTP/Engine/Interface.pm
@@ -51,13 +50,3 @@
 %%PERL5_MAN3%%/HTTP::Engine::Role::Interface.3.gz
 %%PERL5_MAN3%%/HTTP::Engine::Test::Request.3.gz
 %%PERL5_MAN3%%/HTTP::Engine::Types::Core.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Engine
-@dirrm %%SITE_PERL%%/HTTP/Engine/Types
-@dirrm %%SITE_PERL%%/HTTP/Engine/Test
-@dirrm %%SITE_PERL%%/HTTP/Engine/Role/ResponseWriter
-@dirrm %%SITE_PERL%%/HTTP/Engine/Role/RequestBuilder
-@dirrm %%SITE_PERL%%/HTTP/Engine/Role
-@dirrm %%SITE_PERL%%/HTTP/Engine/RequestBuilder
-@dirrm %%SITE_PERL%%/HTTP/Engine/Request
-@dirrm %%SITE_PERL%%/HTTP/Engine/Interface
-@dirrm %%SITE_PERL%%/HTTP/Engine

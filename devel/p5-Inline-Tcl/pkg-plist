@@ -1,5 +1,4 @@
 %%PERL5_MAN3%%/Inline::Tcl.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Inline/Tcl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Inline/Tcl.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Tcl/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Tcl/Tcl.so
+%%SITE_ARCH%%/Inline/Tcl.pm
+%%SITE_ARCH%%/Inline/Tcl.pod
+%%SITE_ARCH%%/auto/Inline/Tcl/Tcl.so

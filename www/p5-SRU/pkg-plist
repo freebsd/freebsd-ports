@@ -15,7 +15,6 @@
 %%SITE_PERL%%/SRU/Utils.pm
 %%SITE_PERL%%/SRU/Utils/XML.pm
 %%SITE_PERL%%/SRU/Utils/XMLTest.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SRU/.packlist
 %%PERL5_MAN3%%/Catalyst::Controller::SRU.3.gz
 %%PERL5_MAN3%%/SRU.3.gz
 %%PERL5_MAN3%%/SRU::Request.3.gz
@@ -33,10 +32,3 @@
 %%PERL5_MAN3%%/SRU::Utils.3.gz
 %%PERL5_MAN3%%/SRU::Utils::XML.3.gz
 %%PERL5_MAN3%%/SRU::Utils::XMLTest.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SRU
-@dirrm %%SITE_PERL%%/SRU/Utils
-@dirrm %%SITE_PERL%%/SRU/Response
-@dirrm %%SITE_PERL%%/SRU/Request
-@dirrmtry %%SITE_PERL%%/SRU
-@dirrmtry %%SITE_PERL%%/Catalyst/Controller
-@dirrmtry %%SITE_PERL%%/Catalyst

@@ -1,4 +1,3 @@
-%%SITE_ARCH%%/auto/SQL/Maker/.packlist
 %%SITE_PERL%%/SQL/Maker.pm
 %%SITE_PERL%%/SQL/Maker/Condition.pm
 %%SITE_PERL%%/SQL/Maker/Plugin/InsertMulti.pm

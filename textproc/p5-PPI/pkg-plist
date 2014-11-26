@@ -181,19 +181,3 @@
 %%SITE_PERL%%/PPI/Transform/UpdateCopyright.pm
 %%SITE_PERL%%/PPI/Util.pm
 %%SITE_PERL%%/PPI/XSAccessor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/.packlist
-@dirrm %%SITE_PERL%%/PPI/Token/_QuoteEngine
-@dirrm %%SITE_PERL%%/PPI/Token/QuoteLike
-@dirrm %%SITE_PERL%%/PPI/Token/Regexp
-@dirrm %%SITE_PERL%%/PPI/Token/Quote
-@dirrm %%SITE_PERL%%/PPI/Token/Number
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI
-@dirrmtry %%SITE_PERL%%/PPI/Statement/Include
-@dirrmtry %%SITE_PERL%%/PPI/Statement
-@dirrmtry %%SITE_PERL%%/PPI/Structure
-@dirrmtry %%SITE_PERL%%/PPI/Exception
-@dirrmtry %%SITE_PERL%%/PPI/Document
-@dirrmtry %%SITE_PERL%%/PPI/Normal
-@dirrmtry %%SITE_PERL%%/PPI/Token
-@dirrmtry %%SITE_PERL%%/PPI/Transform
-@dirrmtry %%SITE_PERL%%/PPI

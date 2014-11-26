@@ -1,3 +1,3 @@
 %%PERL5_MAN3%%/Params::Classify.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Params/Classify.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Classify/Classify.so
+%%SITE_ARCH%%/Params/Classify.pm
+%%SITE_ARCH%%/auto/Params/Classify/Classify.so

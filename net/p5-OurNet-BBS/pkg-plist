@@ -1,7 +1,6 @@
 bin/bbsboard
 bin/bbscomd
 bin/bbsmail
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBS/.packlist
 %%SITE_PERL%%/OurNet/BBS.pm
 %%SITE_PERL%%/OurNet/BBS.pod
 %%SITE_PERL%%/OurNet/BBS/Authen.pm
@@ -122,20 +121,3 @@ bin/bbsmail
 man/man1/bbsboard.1.gz
 man/man1/bbscomd.1.gz
 man/man1/bbsmail.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/BBSAgent
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/CVIC
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/Cola
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/External
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/Firebird3
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/MAPLE2
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/MAPLE3
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/MELIX
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/MailBox
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/NNTP
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/OurNet
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/PTT
-@dirrmtry %%SITE_PERL%%/OurNet/BBS/RAM
-@dirrmtry %%SITE_PERL%%/OurNet/BBS
-@dirrmtry %%SITE_PERL%%/OurNet

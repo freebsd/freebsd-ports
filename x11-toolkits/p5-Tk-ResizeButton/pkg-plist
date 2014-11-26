@@ -1,6 +1,2 @@
 %%SITE_PERL%%/Tk/ResizeButton.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ResizeButton/.packlist
 %%PERL5_MAN3%%/Tk::ResizeButton.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ResizeButton
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
-@dirrmtry %%SITE_PERL%%/Tk

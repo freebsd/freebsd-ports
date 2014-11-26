@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder/.packlist
 %%SITE_PERL%%/DBIx/SearchBuilder.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Record.pm

@@ -1,5 +1,4 @@
 bin/module-setup
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Setup/.packlist
 %%SITE_PERL%%/Module/MEMOja.pod
 %%SITE_PERL%%/Module/Setup.pm
 %%SITE_PERL%%/Module/Setup/Devel.pm

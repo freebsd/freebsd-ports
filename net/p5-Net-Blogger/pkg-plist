@@ -24,10 +24,3 @@
 %%SITE_PERL%%/Net/Blogger/Engine/Slash/slashcode.pm
 %%SITE_PERL%%/Net/Blogger/Engine/Userland.pm
 %%SITE_PERL%%/Net/Blogger/Engine/Userland/metaWeblog.pm
-@dirrmtry %%SITE_PERL%%/Net/Blogger/Engine/Userland
-@dirrmtry %%SITE_PERL%%/Net/Blogger/Engine/Slash
-@dirrmtry %%SITE_PERL%%/Net/Blogger/Engine/Movabletype
-@dirrmtry %%SITE_PERL%%/Net/Blogger/Engine
-@dirrmtry %%SITE_PERL%%/Net/Blogger/API
-@dirrmtry %%SITE_PERL%%/Net/Blogger
-@dirrmtry %%SITE_PERL%%/Net

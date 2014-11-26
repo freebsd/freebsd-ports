@@ -1,11 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Mojo/.packlist
 %%SITE_PERL%%/AnyEvent/Mojo.pm
 %%SITE_PERL%%/AnyEvent/Mojo/Server.pm
 %%SITE_PERL%%/AnyEvent/Mojo/Server/Connection.pm
 %%PERL5_MAN3%%/AnyEvent::Mojo.3.gz
 %%PERL5_MAN3%%/AnyEvent::Mojo::Server.3.gz
 %%PERL5_MAN3%%/AnyEvent::Mojo::Server::Connection.3.gz
-@dirrmtry %%SITE_PERL%%/AnyEvent/Mojo/Server
-@dirrmtry %%SITE_PERL%%/AnyEvent/Mojo
-@dirrmtry %%SITE_PERL%%/AnyEvent
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Mojo

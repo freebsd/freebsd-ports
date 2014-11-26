@@ -1,8 +1,4 @@
 bin/bingo_print.pl
 man/man1/bingo_print.pl.1.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games-Bingo-Print/.packlist
 %%SITE_PERL%%/Games/Bingo/Print.pm
 %%PERL5_MAN3%%/Games::Bingo::Print.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games-Bingo-Print
-@dirrmtry %%SITE_PERL%%/Games/Bingo
-@dirrmtry %%SITE_PERL%%/Games

@@ -142,7 +142,6 @@ libexec/trafficserver/tcpinfo.so
 %%SITE_PERL%%/Apache/TS/AdminClient.pm
 %%SITE_PERL%%/Apache/TS/Config.pm
 %%SITE_PERL%%/Apache/TS/Config/Records.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/TS/.packlist
 %%PERL5_MAN3%%/Apache::TS.3.gz
 %%PERL5_MAN3%%/Apache::TS::AdminClient.3.gz
 %%PERL5_MAN3%%/Apache::TS::Config::Records.3.gz
@@ -176,11 +175,6 @@ libexec/trafficserver/tcpinfo.so
 %%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_virtual-ip.1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/trafficshell
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/TS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrm %%SITE_PERL%%/Apache/TS/Config
-@dirrm %%SITE_PERL%%/Apache/TS
-@dirrm %%SITE_PERL%%/Apache
 @dirrm libexec/trafficserver
 @dirrm include/ts
 @dirrm include/atscppapi

@@ -3,6 +3,7 @@
 
 PORTNAME=	Term-ReadLine-Zoid
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN \
 		http://zoidberg.student.utwente.nl/downloads/Term-ReadLine-Zoid/

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/devstat/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/devstat/devstat.so
-%%SITE_PERL%%/%%PERL_ARCH%%/BSD/devstat.pm
+%%SITE_ARCH%%/auto/BSD/devstat/devstat.so
+%%SITE_ARCH%%/BSD/devstat.pm
 %%PERL5_MAN3%%/BSD::devstat.3.gz

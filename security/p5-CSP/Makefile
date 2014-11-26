@@ -3,6 +3,7 @@
 
 PORTNAME=	CSP
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	ftp://ftp.it.su.se/pub/users/leifj/ \
 		http://redundancy.redundancy.org/mirror/

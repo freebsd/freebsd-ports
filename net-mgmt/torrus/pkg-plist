@@ -352,13 +352,3 @@ man/man7/torrus_install_plugin.7.gz
 @dirrmtry etc/torrus/discovery
 @dirrmtry etc/torrus/conf
 @dirrmtry etc/torrus
-@dirrm %%SITE_PERL%%/Torrus/SQL
-@dirrm %%SITE_PERL%%/Torrus/Scheduler
-@dirrm %%SITE_PERL%%/Torrus/ReportOutput
-@dirrm %%SITE_PERL%%/Torrus/ReportGenerator
-@dirrm %%SITE_PERL%%/Torrus/Renderer
-@dirrm %%SITE_PERL%%/Torrus/DevDiscover
-@dirrm %%SITE_PERL%%/Torrus/ConfigTree
-@dirrm %%SITE_PERL%%/Torrus/Collector
-@dirrm %%SITE_PERL%%/Torrus/ACL
-@dirrm %%SITE_PERL%%/Torrus

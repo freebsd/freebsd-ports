@@ -8,8 +8,3 @@
 %%SITE_PERL%%/XML/Schematron/Test.pm
 %%SITE_PERL%%/XML/Schematron/XPath.pm
 %%SITE_PERL%%/XML/Schematron/XSLTProcessor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Schematron/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Schematron
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Schematron
-@dirrmtry %%SITE_PERL%%/XML

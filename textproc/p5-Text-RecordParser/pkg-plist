@@ -10,5 +10,3 @@ bin/tabmerge
 man/man1/tablify.1.gz
 man/man1/tabmerge.1.gz
 man/man1/tab2graph.1.gz
-@dirrm %%SITE_PERL%%/Text/RecordParser
-@dirrmtry %%SITE_PERL%%/Text

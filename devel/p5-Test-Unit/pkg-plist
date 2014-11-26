@@ -57,4 +57,3 @@
 %%SITE_PERL%%/Test/Unit/Tutorial.pm
 %%SITE_PERL%%/Test/Unit/UnitHarness.pm
 %%SITE_PERL%%/Test/Unit/Warning.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Unit/.packlist

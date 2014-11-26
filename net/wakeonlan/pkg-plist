@@ -1,6 +1,4 @@
 bin/wakeonlan
 man/man1/wakeonlan.1.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/wakeonlan/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lab001.wol
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/wakeonlan
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

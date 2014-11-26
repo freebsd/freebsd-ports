@@ -7,7 +7,6 @@
 %%SITE_PERL%%/Config/Objective/Integer.pm
 %%SITE_PERL%%/Config/Objective/String.pm
 %%SITE_PERL%%/Config/Objective/DataType.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Objective/.packlist
 %%PERL5_MAN3%%/Config::Objective::List.3.gz
 %%PERL5_MAN3%%/Config::Objective::Boolean.3.gz
 %%PERL5_MAN3%%/Config::Objective::Table.3.gz

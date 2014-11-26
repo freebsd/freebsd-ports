@@ -40,9 +40,3 @@
 %%SITE_PERL%%/Authen/Captcha/images/x.png
 %%SITE_PERL%%/Authen/Captcha/images/y.png
 %%SITE_PERL%%/Authen/Captcha/images/z.png
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Captcha/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Captcha
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
-@dirrmtry %%SITE_PERL%%/Authen/Captcha/images
-@dirrmtry %%SITE_PERL%%/Authen/Captcha
-@dirrmtry %%SITE_PERL%%/Authen

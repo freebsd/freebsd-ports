@@ -3,8 +3,3 @@
 %%SITE_PERL%%/CGI/Minimal.pod
 %%SITE_PERL%%/CGI/Minimal/Misc.pm
 %%SITE_PERL%%/CGI/Minimal/Multipart.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Minimal/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Minimal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrmtry %%SITE_PERL%%/CGI/Minimal
-@dirrmtry %%SITE_PERL%%/CGI

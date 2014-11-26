@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Phylo/.packlist
 %%SITE_PERL%%/Bio/Phylo.pm
 %%SITE_PERL%%/Bio/Phylo/EvolutionaryModels.pm
 %%SITE_PERL%%/Bio/Phylo/Factory.pm

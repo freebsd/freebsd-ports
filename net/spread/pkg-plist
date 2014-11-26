@@ -33,13 +33,11 @@ man/man3/SP_receive.3.gz
 man/man3/SP_scat_multicast.3.gz
 man/man3/SP_scat_receive.3.gz
 %%PERL5_MAN3%%/Spread.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Spread.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/Spread.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/autosplit.ix
+%%SITE_ARCH%%/Spread.pm
+%%SITE_ARCH%%/auto/Spread/Spread.so
+%%SITE_ARCH%%/auto/Spread/autosplit.ix
 sbin/spread
 %%EXAMPLESDIR%%/test.pl
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread
 @exec install -m 750 -o %%USERS%% -g %%GROUPS%% -d %%RUNDIR%%
 @dirrmtry %%RUNDIR%%

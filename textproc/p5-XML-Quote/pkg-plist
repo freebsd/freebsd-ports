@@ -1,8 +1,4 @@
 %%PERL5_MAN3%%/XML::Quote.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/Quote.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Quote/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Quote/Quote.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Quote/autosplit.ix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Quote
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML
+%%SITE_ARCH%%/XML/Quote.pm
+%%SITE_ARCH%%/auto/XML/Quote/Quote.so
+%%SITE_ARCH%%/auto/XML/Quote/autosplit.ix

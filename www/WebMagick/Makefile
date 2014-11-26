@@ -3,7 +3,9 @@
 
 PORTNAME=	WebMagick
 PORTVERSION=	2.03p25
+PORTREVISION=	1
 DISTVERSION=	2.03pre25
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}-beta/${DISTVERSION}
@@ -41,7 +43,7 @@ X11_CONFIGURE_ENV_OFF=	with_x=no
 .include <bsd.port.pre.mk>
 
 pre-configure:
-	@if [ ! -f ${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm ]; then \
+	@if [ ! -f ${SITE_ARCH}/Image/Magick.pm ]; then \
 		${ECHO_CMD} ERROR: ImageMagick must be installed with the PERL option enabled; \
 		${FALSE}; \
 	fi

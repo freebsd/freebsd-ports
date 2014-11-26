@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Text::Repository.3.gz
 %%SITE_PERL%%/Text/Repository.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Repository/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Repository
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text

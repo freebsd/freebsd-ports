@@ -1,7 +1,2 @@
 %%SITE_PERL%%/MediaWiki/API.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MediaWiki/API/.packlist
 %%PERL5_MAN3%%/MediaWiki::API.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MediaWiki/API
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MediaWiki
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry %%SITE_PERL%%/MediaWiki

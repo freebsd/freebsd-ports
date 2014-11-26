@@ -2,7 +2,6 @@
 %%SITE_PERL%%/Archive/SimpleExtractor/Tar.pm
 %%SITE_PERL%%/Archive/SimpleExtractor/Rar.pm
 %%SITE_PERL%%/Archive/SimpleExtractor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/SimpleExtractor/.packlist
 %%PERL5_MAN3%%/Archive::SimpleExtractor.3.gz
 %%PERL5_MAN3%%/Archive::SimpleExtractor::Rar.3.gz
 %%PERL5_MAN3%%/Archive::SimpleExtractor::Tar.3.gz

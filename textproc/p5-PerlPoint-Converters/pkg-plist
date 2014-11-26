@@ -8,10 +8,5 @@ bin/pp2latex
 %%SITE_PERL%%/PerlPoint/Converters.pm
 %%SITE_PERL%%/PerlPoint/Tags/HTML.pm
 %%SITE_PERL%%/PerlPoint/Tags/LaTeX.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint-Converters/.packlist
 man/man1/pp2html.1.gz
 man/man1/pp2latex.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint-Converters
-@dirrmtry %%SITE_PERL%%/PerlPoint/Tags
-@dirrmtry %%SITE_PERL%%/PerlPoint
-@dirrmtry %%SITE_PERL%%/Bundle

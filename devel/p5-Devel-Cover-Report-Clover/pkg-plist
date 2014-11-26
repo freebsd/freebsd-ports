@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/Report/Clover/.packlist
 %%SITE_PERL%%/Devel/Cover/Report/Clover.pm
 %%SITE_PERL%%/Devel/Cover/Report/Clover/Builder.pm
 %%SITE_PERL%%/Devel/Cover/Report/Clover/Class.pm

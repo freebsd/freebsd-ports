@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Contrib/.packlist
 %%SITE_PERL%%/Tk/Axis.pm
 %%SITE_PERL%%/Tk/Dial.pm
 %%SITE_PERL%%/Tk/OlWm.pm
@@ -7,6 +6,3 @@
 %%PERL5_MAN3%%/Tk::Dial.3.gz
 %%PERL5_MAN3%%/Tk::OlWm.3.gz
 %%PERL5_MAN3%%/Tk::TiedListbox.3.gz
-@dirrmtry %%SITE_PERL%%/Tk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Contrib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk

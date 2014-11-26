@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Amon2/DBI/.packlist
 %%SITE_PERL%%/Amon2/DBI.pm
 %%SITE_PERL%%/Amon2/Plugin/DBI.pm
 %%PERL5_MAN3%%/Amon2::DBI.3.gz

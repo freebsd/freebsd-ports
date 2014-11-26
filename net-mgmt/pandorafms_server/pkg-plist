@@ -34,7 +34,6 @@ etc/rc.d/tentacle_server
 %%SITE_PERL%%/PandoraFMS/Traceroute.pm
 %%SITE_PERL%%/PandoraFMS/Traceroute/PurePerl.pm
 %%SITE_PERL%%/PandoraFMS/WMIServer.pm
-%%SITE_PERL%%/mach/auto/PandoraFMS/.packlist
 man/man1/pandora_server.1.gz
 man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/alert_multicast.pl
@@ -112,9 +111,6 @@ man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/trap_rate.sh
 %%DATADIR%%/util/udp_client.pl
 %%DATADIR%%/util/windows.README
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PandoraFMS
-@dirrm %%SITE_PERL%%/PandoraFMS/Traceroute
-@dirrmtry %%SITE_PERL%%/PandoraFMS
 @dirrm %%DATADIR%%/util/plugin/babel_plugin
 @dirrm %%DATADIR%%/util/plugin/integria_plugin
 @dirrm %%DATADIR%%/util/pandora2ast

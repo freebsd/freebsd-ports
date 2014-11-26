@@ -7,6 +7,3 @@
 %%SITE_PERL%%/Net/DAV/LockManager/Simple.pm
 %%SITE_PERL%%/Net/DAV/Server.pm
 %%SITE_PERL%%/Net/DAV/UUID.pm
-@dirrmtry %%SITE_PERL%%/Net/DAV/LockManager
-@dirrmtry %%SITE_PERL%%/Net/DAV
-@dirrmtry %%SITE_PERL%%/Net

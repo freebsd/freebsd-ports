@@ -1,7 +1,3 @@
 %%PERL5_MAN3%%/String::Divert.3.gz
 %%SITE_PERL%%/String/Divert.pm
 %%SITE_PERL%%/String/Divert.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Divert/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Divert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/String

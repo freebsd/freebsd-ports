@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Text::Autoformat.3.gz
 %%SITE_PERL%%/Text/Autoformat.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Autoformat/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Autoformat
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text

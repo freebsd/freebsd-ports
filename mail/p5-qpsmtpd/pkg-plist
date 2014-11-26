@@ -124,7 +124,6 @@ man/man1/qpsmtpd-async.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tls_ciphers
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/dkim
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/qpsmtpd/.packlist
 %%SITE_PERL%%/Apache/Qpsmtpd.pm
 %%SITE_PERL%%/Danga/Client.pm
 %%SITE_PERL%%/Danga/TimeoutSocket.pm
@@ -158,12 +157,3 @@ man/man1/qpsmtpd-async.1.gz
 @dirrmtry %%DATADIR%%/plugins/logging
 @dirrmtry %%DATADIR%%/plugins/queue
 @dirrmtry %%DATADIR%%/plugins/virus
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/qpsmtpd
-@dirrmtry %%SITE_PERL%%/Apache
-@dirrmtry %%SITE_PERL%%/Danga
-@dirrmtry %%SITE_PERL%%/Qpsmtpd
-@dirrmtry %%SITE_PERL%%/Qpsmtpd/Plugin
-@dirrmtry %%SITE_PERL%%/Qpsmtpd/Plugin/Async
-@dirrmtry %%SITE_PERL%%/Qpsmtpd/Postfix
-@dirrmtry %%SITE_PERL%%/Qpsmtpd/SMTP
-@dirrmtry %%SITE_PERL%%/Qpsmtpd/TcpServer

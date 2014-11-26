@@ -36,5 +36,4 @@ bin/compile_p6grammar.pl
 %%SITE_PERL%%/Pugs/Runtime/Rule.pm
 %%SITE_PERL%%/Pugs/Runtime/StrPos.pm
 %%SITE_PERL%%/Pugs/Runtime/Tracer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pugs/Compiler/Rule/.packlist
 man/man1/compile_p6grammar.pl.1.gz

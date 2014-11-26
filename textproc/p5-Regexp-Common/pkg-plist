@@ -31,7 +31,6 @@
 %%PERL5_MAN3%%/Regexp::Common::profanity.3.gz
 %%PERL5_MAN3%%/Regexp::Common::whitespace.3.gz
 %%PERL5_MAN3%%/Regexp::Common::zip.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/.packlist
 %%SITE_PERL%%/Regexp/Common/CC.pm
 %%SITE_PERL%%/Regexp/Common/SEN.pm
 %%SITE_PERL%%/Regexp/Common/URI/fax.pm
@@ -65,8 +64,3 @@
 %%SITE_PERL%%/Regexp/Common/list.pm
 %%SITE_PERL%%/Regexp/Common/profanity.pm
 %%SITE_PERL%%/Regexp/Common.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
-@dirrm %%SITE_PERL%%/Regexp/Common/URI
-@dirrm %%SITE_PERL%%/Regexp/Common
-@dirrmtry %%SITE_PERL%%/Regexp

@@ -1,3 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Versions/.packlist
 %%SITE_PERL%%/Module/Versions.pm
 %%PERL5_MAN3%%/Module::Versions.3.gz

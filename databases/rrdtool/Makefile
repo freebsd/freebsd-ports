@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.4.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -60,7 +60,7 @@ PLIST_SUB+=	WITH_RUBY="@comment "
 
 .if ${PORT_OPTIONS:MPERL_MODULE}
 USES+=		perl5
-USE_PERL5+=	build run fixpacklist
+USE_PERL5+=	build run
 CONFIGURE_ARGS+=	--enable-perl --enable-perl-site-install
 PLIST_SUB+=	WITH_PERL=""
 .else
@@ -122,7 +122,7 @@ post-install:
 	@${ECHO_MSG} "############################################################################"
 .endif
 .if ${PORT_OPTIONS:MPERL_MODULE}
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/RRDs/RRDs.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/RRDs/RRDs.so
 .endif
 
 .include <bsd.port.mk>

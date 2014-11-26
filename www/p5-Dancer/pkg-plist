@@ -78,7 +78,6 @@ man/man1/dancer.1.gz
 %%PERL5_MAN3%%/Dancer::Timer.3.gz
 %%PERL5_MAN3%%/Dancer::Tutorial.3.gz
 bin/dancer
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/.packlist
 %%SITE_PERL%%/Dancer.pm
 %%SITE_PERL%%/Dancer/App.pm
 %%SITE_PERL%%/Dancer/Config.pm

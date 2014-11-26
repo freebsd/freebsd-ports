@@ -20,8 +20,3 @@
 %%SITE_PERL%%/Math/Expr/TypeDB.pm
 %%SITE_PERL%%/Math/Expr/Var.pm
 %%SITE_PERL%%/Math/Expr/VarSet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Expr/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Expr
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/Math/Expr
-@dirrmtry %%SITE_PERL%%/Math

@@ -9,9 +9,8 @@ include/flowd/store-v2.h
 include/flowd/store.h
 lib/libflowd.a
 %%PERL%%%%PERL5_MAN3%%/Flowd.3.gz
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Flowd.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.so
+%%PERL%%%%SITE_ARCH%%/Flowd.pm
+%%PERL%%%%SITE_ARCH%%/auto/Flowd/Flowd.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/flowd-0.9.1-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.so
 man/man5/flowd.conf.5.gz
@@ -30,6 +29,5 @@ sbin/flowd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stats.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wormsuspects.pl
 @dirrm include/flowd
-%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/flowrrd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

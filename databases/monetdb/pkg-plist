@@ -185,12 +185,12 @@ lib/monetdb5/vault.sql
 lib/monetdb5/xml.mal
 lib/monetdb5/zorder.mal
 @mode 644
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/DBD/monetdb.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/DBD/monetdb/GetInfo.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/DBD/monetdb/TypeInfo.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Mapi.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/MonetDB/CLI.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/MonetDB/CLI/MapiPP.pm
+%%PERL%%%%SITE_ARCH%%/DBD/monetdb.pm
+%%PERL%%%%SITE_ARCH%%/DBD/monetdb/GetInfo.pm
+%%PERL%%%%SITE_ARCH%%/DBD/monetdb/TypeInfo.pm
+%%PERL%%%%SITE_ARCH%%/Mapi.pm
+%%PERL%%%%SITE_ARCH%%/MonetDB/CLI.pm
+%%PERL%%%%SITE_ARCH%%/MonetDB/CLI/MapiPP.pm
 @mode
 %%TESTING%%%%PYTHON_SITELIBDIR%%/MonetDBtesting/__init__.py
 %%TESTING%%%%PYTHON_SITELIBDIR%%/MonetDBtesting/listexports.py

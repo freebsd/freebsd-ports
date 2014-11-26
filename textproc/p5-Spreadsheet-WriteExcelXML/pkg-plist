@@ -10,8 +10,3 @@
 %%SITE_PERL%%/Spreadsheet/WriteExcelXML/Workbook.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcelXML/Worksheet.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcelXML/XMLwriter.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcelXML/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcelXML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet
-@dirrmtry %%SITE_PERL%%/Spreadsheet/WriteExcelXML
-@dirrmtry %%SITE_PERL%%/Spreadsheet

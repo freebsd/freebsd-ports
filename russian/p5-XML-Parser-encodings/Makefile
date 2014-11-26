@@ -3,6 +3,7 @@
 
 PORTNAME=	XML-Parser-encodings
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	russian textproc perl5
 DISTFILES=
 
@@ -46,8 +47,8 @@ do-build:
 .endfor
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/XML/Parser/Encodings
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/XML/Parser/Encodings
 	${INSTALL_DATA} ${WRKSRC}/*.enc \
-		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/XML/Parser/Encodings
+		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/XML/Parser/Encodings
 
 .include <bsd.port.post.mk>

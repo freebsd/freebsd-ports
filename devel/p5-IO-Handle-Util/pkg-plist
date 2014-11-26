@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Handle/Util/.packlist
 %%SITE_PERL%%/IO/Handle/Iterator.pm
 %%SITE_PERL%%/IO/Handle/Prototype.pm
 %%SITE_PERL%%/IO/Handle/Prototype/Fallback.pm

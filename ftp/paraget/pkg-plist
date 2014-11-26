@@ -17,4 +17,3 @@ man/man1/paraget.1.gz
 %%SITE_PERL%%/Net/Paraget/Server.pm
 %%SITE_PERL%%/Net/Paraget/ServerList.pm
 %%SITE_PERL%%/Net/Paraget/ServerQueue.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/paraget/.packlist

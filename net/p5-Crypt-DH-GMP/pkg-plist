@@ -1,12 +1,5 @@
 %%PERL5_MAN3%%/Crypt::DH::GMP.3.gz
 %%PERL5_MAN3%%/Crypt::DH::GMP::Compat.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/DH/GMP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/DH/GMP/Compat.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH/GMP/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH/GMP/GMP.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH/GMP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/DH/GMP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/DH
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
+%%SITE_ARCH%%/Crypt/DH/GMP.pm
+%%SITE_ARCH%%/Crypt/DH/GMP/Compat.pm
+%%SITE_ARCH%%/auto/Crypt/DH/GMP/GMP.so

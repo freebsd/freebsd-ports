@@ -23,5 +23,3 @@ lib/libscribe.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scribe_ctrl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/scribe
-@dirrm %%SITE_PERL%%/Scribe/Thrift
-@dirrm %%SITE_PERL%%/Scribe

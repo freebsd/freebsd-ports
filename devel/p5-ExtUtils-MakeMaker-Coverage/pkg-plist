@@ -1,4 +1,3 @@
 bin/testcover
 %%PERL5_MAN3%%/ExtUtils::MakeMaker::Coverage.3.gz
 %%SITE_PERL%%/ExtUtils/MakeMaker/Coverage.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker/Coverage/.packlist

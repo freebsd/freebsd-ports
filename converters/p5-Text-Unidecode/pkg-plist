@@ -179,5 +179,4 @@
 %%SITE_PERL%%/Text/Unidecode/xfd.pm
 %%SITE_PERL%%/Text/Unidecode/xfe.pm
 %%SITE_PERL%%/Text/Unidecode/xff.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Unidecode/.packlist
 %%PERL5_MAN3%%/Text::Unidecode.3.gz

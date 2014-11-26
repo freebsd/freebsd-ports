@@ -390,36 +390,3 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Violation.3.gz
 %%PERL5_MAN3%%/Test::Perl::Critic::Policy.3.gz
 man/man1/perlcritic.1.gz
-@dirrmtry %%SITE_PERL%%/Test/Perl/Critic
-@dirrmtry %%SITE_PERL%%/Test/Perl
-@dirrmtry %%SITE_PERL%%/Test
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Utils/POD
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Utils
-@dirrmtry %%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior
-@dirrmtry %%SITE_PERL%%/Perl/Critic/PolicyParameter
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Variables
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Subroutines
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/References
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Objects
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/NamingConventions
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Modules
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/InputOutput
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/Documentation
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/ClassHierarchies
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Policy
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Fatal
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Policy
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Global
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception/Configuration
-@dirrmtry %%SITE_PERL%%/Perl/Critic/Exception
-@dirrmtry %%SITE_PERL%%/Perl/Critic
-@dirrmtry %%SITE_PERL%%/Perl

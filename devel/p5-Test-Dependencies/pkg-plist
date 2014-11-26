@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Test/Dependencies.pm
 %%SITE_PERL%%/Test/Dependencies/Heavy.pm
 %%SITE_PERL%%/Test/Dependencies/Light.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dependencies/.packlist

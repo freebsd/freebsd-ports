@@ -8,13 +8,3 @@
 %%SITE_PERL%%/POE/Component/Client/HTTP/RequestFactory.pm
 %%SITE_PERL%%/POE/Filter/HTTPChunk.pm
 %%SITE_PERL%%/POE/Filter/HTTPHead.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/POE/Filter
-@dirrmtry %%SITE_PERL%%/POE/Component/Client/HTTP
-@dirrmtry %%SITE_PERL%%/POE/Component/Client
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE

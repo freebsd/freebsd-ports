@@ -2,7 +2,6 @@
 %%SITE_PERL%%/MouseX/Types/TypeDecorator.pm
 %%SITE_PERL%%/MouseX/Types/Mouse.pm
 %%SITE_PERL%%/MouseX/Types.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Types/.packlist
 %%PERL5_MAN3%%/MouseX::Types.3.gz
 %%PERL5_MAN3%%/MouseX::Types::Moose.3.gz
 %%PERL5_MAN3%%/MouseX::Types::Mouse.3.gz

@@ -1,5 +1,4 @@
 bin/fix_latin
 man/man1/fix_latin.1.gz
 %%SITE_PERL%%/Encoding/FixLatin.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encoding/FixLatin/.packlist
 %%PERL5_MAN3%%/Encoding::FixLatin.3.gz

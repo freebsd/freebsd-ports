@@ -73,15 +73,3 @@ share/pixmaps/syndigator/tokeep-gtk2.png
 share/pixmaps/syndigator/trayicon-notify.gif
 share/pixmaps/syndigator/trayicon.gif
 @dirrm share/pixmaps/syndigator
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/UI
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/Parser
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/Importer
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Notifiers
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Feed
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/Gtk2UI/Category
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/Gtk2UI
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/Fetcher
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/Feed
-@dirrm %%SITE_PERL%%/syndigator/RSSReader/Exporter
-@dirrm %%SITE_PERL%%/syndigator/RSSReader
-@dirrm %%SITE_PERL%%/syndigator

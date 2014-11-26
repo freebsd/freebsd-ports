@@ -3,6 +3,7 @@
 
 PORTNAME=		ftimes
 PORTVERSION=		3.11.0
+PORTREVISION=	1
 CATEGORIES=		security sysutils
 MASTER_SITES=		SF
 
@@ -126,7 +127,6 @@ CONFIGURE_ARGS+=	--disable-xmagic
 
 .if ${INSTALL_PERL5_LIBS}
 PLIST_SUB+=		FTIMES_PERL5_LIBS=""
-USE_PERL5+=		fixpacklist
 .else
 PLIST_SUB+=		FTIMES_PERL5_LIBS="@comment "
 .endif

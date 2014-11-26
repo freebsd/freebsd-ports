@@ -51,9 +51,3 @@
 %%SITE_PERL%%/AI/Categorizer/ObjectSet.pm
 %%SITE_PERL%%/AI/Categorizer/Storable.pm
 %%SITE_PERL%%/AI/Categorizer/Util.pm
-@dirrm %%SITE_PERL%%/AI/Categorizer/Learner
-@dirrm %%SITE_PERL%%/AI/Categorizer/FeatureSelector
-@dirrm %%SITE_PERL%%/AI/Categorizer/Document
-@dirrm %%SITE_PERL%%/AI/Categorizer/Collection
-@dirrm %%SITE_PERL%%/AI/Categorizer
-@dirrmtry %%SITE_PERL%%/AI

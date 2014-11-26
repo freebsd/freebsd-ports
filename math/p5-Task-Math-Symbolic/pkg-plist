@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Task::Math::Symbolic.3.gz
 %%SITE_PERL%%/Task/Math/Symbolic.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Task/Math/Symbolic/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Task/Math/Symbolic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Task/Math
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Task
-@dirrmtry %%SITE_PERL%%/Task/Math
-@dirrmtry %%SITE_PERL%%/Task

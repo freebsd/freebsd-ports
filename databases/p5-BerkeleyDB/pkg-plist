@@ -1,9 +1,8 @@
 %%PERL5_MAN3%%/BerkeleyDB.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB/Btree.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB/Hash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB/BerkeleyDB.so
-%%SITE_PERL%%/%%PERL_ARCH%%/mkconsts.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/scan.pl
+%%SITE_ARCH%%/BerkeleyDB.pm
+%%SITE_ARCH%%/BerkeleyDB.pod
+%%SITE_ARCH%%/BerkeleyDB/Btree.pm
+%%SITE_ARCH%%/BerkeleyDB/Hash.pm
+%%SITE_ARCH%%/auto/BerkeleyDB/BerkeleyDB.so
+%%SITE_ARCH%%/mkconsts.pl
+%%SITE_ARCH%%/scan.pl

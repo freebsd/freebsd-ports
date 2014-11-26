@@ -678,7 +678,6 @@ lib/perl5/%%PERL_VER%%/integer.pm
 lib/perl5/%%PERL_VER%%/less.pm
 lib/perl5/%%PERL_VER%%/locale.pm
 lib/perl5/%%PERL_VER%%/look.pl
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/.packlist
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Concise.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Showlex.pm
@@ -2999,14 +2998,10 @@ man/man1/s2p.1.gz
 man/man1/shasum.1.gz
 man/man1/splain.1.gz
 man/man1/xsubpp.1.gz
-@dir lib/perl5/%%PERL_VER%%/man/man3
+@dir %%SITE_PERL%%/man/man3
 @dir %%SITE_PERL%%/auto
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/machine
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/sys
-@exec cd /usr/include && %D/bin/h2ph -d %D/%%SITE_PERL%%/%%PERL_ARCH%% *.h machine/*.h sys/*.h >/dev/null
+@dir %%SITE_ARCH%%/auto
+@exec makewhatis %D/%%SITE_PERL%%/man
 @exec makewhatis %D/lib/perl5/%%PERL_VER%%/man
-@exec makewhatis %D/lib/perl5/%%PERL_VER%%/perl/man
 @rmtry lib/perl5/%%PERL_VER%%/man/whatis
-@rmtry lib/perl5/%%PERL_VER%%/perl/man/whatis
-@unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
+@rmtry %%SITE_PERL%%/man/whatis

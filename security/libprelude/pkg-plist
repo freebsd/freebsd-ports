@@ -72,10 +72,8 @@ lib/libpreludecpp.so
 lib/libpreludecpp.so.0
 lib/libpreludecpp.so.0.3.0
 man/man1/prelude-admin.1.gz
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.so
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy/.packlist
+%%PERL%%%%SITE_ARCH%%/Prelude.pm
+%%PERL%%%%SITE_ARCH%%/auto/Prelude/Prelude.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/PreludeEasy-%%VERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/PreludeEasy.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/PreludeEasy.pyc
@@ -86,8 +84,6 @@ man/man1/prelude-admin.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.pyc
 libdata/pkgconfig/libprelude.pc
 share/aclocal/libprelude.m4
-%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy
-%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude
 @dirrm include/libprelude
 @dirrmtry %%ETCDIR%%/default
 @dirrmtry %%ETCDIR%%/profile

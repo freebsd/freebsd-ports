@@ -1,3 +1,2 @@
 %%SITE_PERL%%/AnyEvent/DBus.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/DBus/.packlist
 %%PERL5_MAN3%%/AnyEvent::DBus.3.gz

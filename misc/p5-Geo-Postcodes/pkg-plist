@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Postcodes/.packlist
 %%SITE_PERL%%/Geo/Postcodes.pm
 %%SITE_PERL%%/Geo/Postcodes/Ajax.pod
 %%SITE_PERL%%/Geo/Postcodes/Selection.pod
@@ -11,7 +10,3 @@
 %%PERL5_MAN3%%/Geo::Postcodes::Subclass.3.gz
 %%PERL5_MAN3%%/Geo::Postcodes::Tutorial.3.gz
 %%PERL5_MAN3%%/Geo::Postcodes::Update.3.gz
-@dirrmtry %%SITE_PERL%%/Geo/Postcodes
-@dirrmtry %%SITE_PERL%%/Geo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Postcodes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo

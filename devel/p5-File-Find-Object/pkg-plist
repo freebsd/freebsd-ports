@@ -6,4 +6,3 @@
 %%SITE_PERL%%/File/Find/Object/Base.pm
 %%SITE_PERL%%/File/Find/Object/PathComp.pm
 %%SITE_PERL%%/File/Find/Object/Result.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Object/.packlist

@@ -18,4 +18,3 @@
 %%SITE_PERL%%/Graph/Writer/VCG.pm
 %%SITE_PERL%%/Graph/Writer/XML.pm
 %%SITE_PERL%%/Graph/Writer/daVinci.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/ReadWrite/.packlist

@@ -18,4 +18,3 @@
 %%SITE_PERL%%/GraphViz/Regex.pm
 %%SITE_PERL%%/GraphViz/Small.pm
 %%SITE_PERL%%/GraphViz/XML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/.packlist

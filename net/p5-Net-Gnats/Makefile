@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-Gnats
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	net databases perl5
 MASTER_SITES=	SF/gnatsperl/gnatsperl/${PORTVERSION}
 PKGNAMEPREFIX=	p5-

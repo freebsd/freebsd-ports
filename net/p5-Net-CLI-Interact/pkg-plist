@@ -36,7 +36,6 @@
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/bash/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh/pb
 %%SITE_PERL%%/Net/CLI/Interact/phrasebook/unix/csh/sdf/pb
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CLI/Interact/.packlist
 %%PERL5_MAN3%%/Net::CLI::Interact.3.gz
 %%PERL5_MAN3%%/Net::CLI::Interact::Action.3.gz
 %%PERL5_MAN3%%/Net::CLI::Interact::ActionSet.3.gz

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/Cego.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Cego/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Cego/Cego.so
+%%SITE_ARCH%%/DBD/Cego.pm
+%%SITE_ARCH%%/auto/DBD/Cego/Cego.so
 %%PERL5_MAN3%%/DBD::Cego.3.gz

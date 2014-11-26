@@ -148,10 +148,9 @@ libdata/pkgconfig/hamlib.pc
 sbin/rpc.rigd
 sbin/rpc.rotd
 share/aclocal/hamlib.m4
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/Hamlib.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Hamlib.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/perltest.pl
+%%SITE_ARCH%%/auto/Hamlib/Hamlib.so
+%%SITE_ARCH%%/Hamlib.pm
+%%SITE_ARCH%%/perltest.pl
 %%PYTHON_SITELIBDIR%%/_Hamlib.so
 %%PYTHON_SITELIBDIR%%/_Hamlib.la
 %%PYTHON_SITELIBDIR%%/_Hamlib.a

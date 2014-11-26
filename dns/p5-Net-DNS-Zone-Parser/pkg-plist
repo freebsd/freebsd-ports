@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Net/DNS/Zone/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/Zone/Parser/.packlist
 %%PERL5_MAN3%%/Net::DNS::Zone::Parser.3.gz

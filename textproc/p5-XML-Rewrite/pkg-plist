@@ -4,10 +4,5 @@ man/man1/xmlrewrite.1.gz
 %%SITE_PERL%%/XML/Rewrite.pod
 %%SITE_PERL%%/XML/Rewrite/Schema.pm
 %%SITE_PERL%%/XML/Rewrite/Schema.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Rewrite/.packlist
 %%PERL5_MAN3%%/XML::Rewrite.3.gz
 %%PERL5_MAN3%%/XML::Rewrite::Schema.3.gz
-@dirrmtry %%SITE_PERL%%/XML/Rewrite
-@dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Rewrite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

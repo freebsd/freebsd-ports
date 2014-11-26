@@ -1,5 +1,4 @@
 bin/ldapsh
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ldapsh/.packlist
 %%SITE_PERL%%/Net/LDAP/Config.pm
 %%SITE_PERL%%/Net/LDAP/Shell.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Commands/cat.pm
@@ -27,8 +26,5 @@ bin/ldapsh
 man/man1/ldapsh.1.gz
 %%DOCSDIR%%/COMMANDS
 %%EXAMPLESDIR%%/ldapsh_config
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ldapsh
-@dirrm %%SITE_PERL%%/Net/LDAP/Shell/Commands
-@dirrm %%SITE_PERL%%/Net/LDAP/Shell
 @dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%

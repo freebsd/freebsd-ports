@@ -2,6 +2,7 @@
 
 PORTNAME=	icli
 DISTVERSION=	0.47
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://finalrewind.org/projects/icli/
 

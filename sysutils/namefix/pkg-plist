@@ -38,8 +38,3 @@ bin/namefix-cli
 %%SITE_PERL%%/namefix/txt/links.txt
 %%SITE_PERL%%/namefix/txt/thanks.txt
 %%SITE_PERL%%/namefix/txt/todo.txt
-@dirrm %%SITE_PERL%%/namefix/txt
-@dirrm %%SITE_PERL%%/namefix/libs/gui
-@dirrm %%SITE_PERL%%/namefix/libs/cli
-@dirrm %%SITE_PERL%%/namefix/libs
-@dirrm %%SITE_PERL%%/namefix

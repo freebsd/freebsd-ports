@@ -97,7 +97,6 @@ bin/tv_validate_grabber
 %%SITE_PERL%%/XMLTV/ValidateFile.pm
 %%SITE_PERL%%/XMLTV/ValidateGrabber.pm
 %%SITE_PERL%%/XMLTV/Version.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
 man/man1/tv_augment_tz.1.gz
 man/man1/tv_cat.1.gz
 man/man1/tv_check.1.gz
@@ -191,13 +190,6 @@ man/man1/tv_validate_grabber.1.gz
 %%DATADIR%%/xmltv-lineups.xsd
 %%DATADIR%%/xmltv.dtd
 %%CGIDIR%%/tv_pick.cgi
-@dirrm %%SITE_PERL%%/XMLTV/Ask
-@dirrm %%SITE_PERL%%/XMLTV/Configure
-@dirrm %%SITE_PERL%%/XMLTV/Data/Recursive
-@dirrm %%SITE_PERL%%/XMLTV/Data
-@dirrm %%SITE_PERL%%/XMLTV/ProgressBar
-@dirrm %%SITE_PERL%%/XMLTV
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV
 @dirrm %%DATADIR%%/tv_grab_eu_epgdata
 @dirrm %%DATADIR%%/tv_grab_huro
 @dirrm %%DATADIR%%/tv_grab_it

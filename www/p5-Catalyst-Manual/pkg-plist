@@ -66,15 +66,3 @@
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormHandler.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/10_Appendices.pod
 %%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Deployment/nginx
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Deployment/lighttpd
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Deployment/IIS
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Deployment/Apache
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Deployment
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual
-@dirrmtry %%SITE_PERL%%/Catalyst

@@ -11,12 +11,5 @@ bin/emplacken
 %%SITE_PERL%%/Emplacken/Stderr.pm
 %%SITE_PERL%%/Emplacken/Types.pm
 %%SITE_PERL%%/Emplacken/Types/Internal.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Emplacken/.packlist
 %%PERL5_MAN3%%/Emplacken.3.gz
 %%PERL5_MAN3%%/Emplacken::Types.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Emplacken
-@dirrm %%SITE_PERL%%/Emplacken/Types
-@dirrm %%SITE_PERL%%/Emplacken/Role
-@dirrm %%SITE_PERL%%/Emplacken/CodeBuilder
-@dirrm %%SITE_PERL%%/Emplacken/App
-@dirrm %%SITE_PERL%%/Emplacken

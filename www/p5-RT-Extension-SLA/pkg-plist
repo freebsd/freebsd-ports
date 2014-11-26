@@ -22,18 +22,3 @@ man/man3/RT::Condition::SLA_RequireDueSet.3.gz
 man/man3/RT::Condition::SLA_RequireStartsSet.3.gz
 man/man3/RT::Extension::SLA.3.gz
 man/man3/RT::Queue_SLA.3.gz
-man/auto/RT/Extension/SLA/.packlist.gz
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension/SLA
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Condition
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Action
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/etc/upgrade/0.06
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/etc/upgrade
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/etc
-@dirrm %%RTHOME%%/plugins/RT-Extension-SLA
-@dirrm man/auto/RT/Extension/SLA
-@dirrmtry man/auto/RT/Extension
-@dirrmtry man/auto/RT
-@dirrmtry man/auto

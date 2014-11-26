@@ -3,6 +3,5 @@
 %%SITE_PERL%%/Thread/Queue/Queueable.pm
 %%SITE_PERL%%/Thread/Queue/Duplex.pod
 %%SITE_PERL%%/Thread/Queue/Duplex.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Queue/Duplex/.packlist
 %%PERL5_MAN3%%/Thread::Queue::Duplex.3.gz
 %%PERL5_MAN3%%/Thread::Queue::Queueable.3.gz

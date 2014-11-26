@@ -197,4 +197,3 @@
 %%SITE_PERL%%/GD/Barcode/QRcode/rsc30.dat
 %%SITE_PERL%%/GD/Barcode/UPCA.pm
 %%SITE_PERL%%/GD/Barcode/UPCE.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Barcode/.packlist

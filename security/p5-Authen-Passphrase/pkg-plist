@@ -36,5 +36,3 @@
 %%PERL5_MAN3%%/Authen::Passphrase::RejectAll.3.gz
 %%PERL5_MAN3%%/Authen::Passphrase::SaltedDigest.3.gz
 %%PERL5_MAN3%%/Authen::Passphrase::VMSPurdy.3.gz
-@dirrm %%SITE_PERL%%/Authen/Passphrase
-@dirrmtry %%SITE_PERL%%/Authen

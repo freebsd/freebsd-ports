@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider/Encode/.packlist
 %%SITE_PERL%%/Template/Provider/Encode.pm
 %%SITE_PERL%%/Template/Provider/Encode/Guess.pm
 %%PERL5_MAN3%%/Template::Provider::Encode.3.gz

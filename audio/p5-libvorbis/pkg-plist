@@ -1,5 +1,4 @@
 %%PERL5_MAN3%%/Ogg::Vorbis.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Ogg/Vorbis.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/Vorbis.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/autosplit.ix
+%%SITE_ARCH%%/Ogg/Vorbis.pm
+%%SITE_ARCH%%/auto/Ogg/Vorbis/Vorbis.so
+%%SITE_ARCH%%/auto/Ogg/Vorbis/autosplit.ix

@@ -17,13 +17,4 @@ bin/dtd2db.pl
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/index.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/notation.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/prolog.tmpl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2DocBook/.packlist
 man/man1/dtd2db.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2DocBook
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr
-@dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2DocBook/en
-@dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2DocBook
-@dirrmtry %%SITE_PERL%%/XML/Handler
-@dirrmtry %%SITE_PERL%%/XML

@@ -5959,25 +5959,25 @@ _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-ins
 				pre-su-install
 .if defined(NEED_ROOT)
 _STAGE_SUSEQ=	create-users-groups do-install \
-				kmod-post-install \
+				kmod-post-install fix-perl-things \
 				webplugin-post-install post-install post-install-script \
 				move-uniquefiles patch-lafiles post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist fix-packlist fix-perl-bs
+				move-uniquefiles-plist
 .if defined(DEVELOPER)
 _STAGE_SUSEQ+=	stage-qa
 .endif
 .else
 _STAGE_SEQ+=	create-users-groups do-install \
-				kmod-post-install \
+				kmod-post-install fix-perl-things \
 				webplugin-post-install post-install post-install-script \
 				move-uniquefiles patch-lafiles post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist fix-packlist fix-perl-bs
+				move-uniquefiles-plist fix-perl-things
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
 .endif

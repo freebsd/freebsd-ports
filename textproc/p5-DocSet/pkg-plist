@@ -41,12 +41,4 @@ bin/html2ps
 %%SITE_PERL%%/DocSet/Source/Text.pm
 %%SITE_PERL%%/DocSet/Template/Plugin/NavigateCache.pm
 %%SITE_PERL%%/DocSet/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DocSet/.packlist
 man/man1/docset_build.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DocSet
-@dirrmtry %%SITE_PERL%%/DocSet/Template/Plugin
-@dirrmtry %%SITE_PERL%%/DocSet/Template
-@dirrmtry %%SITE_PERL%%/DocSet/Source
-@dirrmtry %%SITE_PERL%%/DocSet/DocSet
-@dirrmtry %%SITE_PERL%%/DocSet/Doc
-@dirrmtry %%SITE_PERL%%/DocSet

@@ -1,5 +1,4 @@
 %%SITE_PERL%%/File/Finder.pm
 %%SITE_PERL%%/File/Finder/Steps.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Finder/.packlist
 %%PERL5_MAN3%%/File::Finder.3.gz
 %%PERL5_MAN3%%/File::Finder::Steps.3.gz

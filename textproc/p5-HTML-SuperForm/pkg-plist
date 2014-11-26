@@ -24,9 +24,3 @@
 %%SITE_PERL%%/HTML/SuperForm/Field/Submit.pm
 %%SITE_PERL%%/HTML/SuperForm/Field/Text.pm
 %%SITE_PERL%%/HTML/SuperForm/Field/Textarea.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/SuperForm/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/SuperForm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML/SuperForm/Field
-@dirrmtry %%SITE_PERL%%/HTML/SuperForm
-@dirrmtry %%SITE_PERL%%/HTML

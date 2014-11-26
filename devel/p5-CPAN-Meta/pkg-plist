@@ -11,7 +11,6 @@
 %%SITE_PERL%%/CPAN/Meta/Prereqs.pm
 %%SITE_PERL%%/CPAN/Meta/Spec.pm
 %%SITE_PERL%%/CPAN/Meta/Validator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Meta/.packlist
 %%PERL5_MAN3%%/CPAN::Meta.3.gz
 %%PERL5_MAN3%%/CPAN::Meta::Converter.3.gz
 %%PERL5_MAN3%%/CPAN::Meta::Feature.3.gz

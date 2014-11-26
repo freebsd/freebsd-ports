@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Archive/Tar.pm
 %%SITE_PERL%%/Archive/Tar/Constant.pm
 %%SITE_PERL%%/Archive/Tar/File.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Tar/.packlist
 %%PERL5_MAN3%%/Archive::Tar.3.gz
 %%PERL5_MAN3%%/Archive::Tar::File.3.gz

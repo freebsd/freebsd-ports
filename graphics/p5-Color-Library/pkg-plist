@@ -48,4 +48,3 @@
 %%SITE_PERL%%/Color/Library/Dictionary/WWW.pm
 %%SITE_PERL%%/Color/Library/Dictionary/Windows.pm
 %%SITE_PERL%%/Color/Library/Dictionary/X11.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Library/.packlist

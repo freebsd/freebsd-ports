@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenPGP/.packlist
 %%SITE_PERL%%/Crypt/OpenPGP.pm
 %%SITE_PERL%%/Crypt/OpenPGP/Words.pm
 %%SITE_PERL%%/Crypt/OpenPGP/Digest.pm
@@ -67,10 +66,3 @@
 %%PERL5_MAN3%%/Crypt::OpenPGP::Certificate.3.gz
 %%PERL5_MAN3%%/Crypt::OpenPGP::Message.3.gz
 %%PERL5_MAN3%%/Crypt::OpenPGP::KeyServer.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenPGP
-@dirrm %%SITE_PERL%%/Crypt/OpenPGP/Key/Secret
-@dirrm %%SITE_PERL%%/Crypt/OpenPGP/Key/Public
-@dirrm %%SITE_PERL%%/Crypt/OpenPGP/Key
-@dirrm %%SITE_PERL%%/Crypt/OpenPGP/Signature
-@dirrm %%SITE_PERL%%/Crypt/OpenPGP
-@dirrmtry %%SITE_PERL%%/Crypt

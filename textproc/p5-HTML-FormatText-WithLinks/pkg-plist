@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/HTML::FormatText::WithLinks.3.gz
 %%SITE_PERL%%/HTML/FormatText/WithLinks.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText/WithLinks/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText/WithLinks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText
-@dirrmtry %%SITE_PERL%%/HTML/FormatText

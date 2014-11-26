@@ -37,15 +37,3 @@
 %%SITE_PERL%%/Authen/PluggableCaptcha/StandardAttributesObject.pm
 %%SITE_PERL%%/Authen/PluggableCaptcha/Tutorial.pm
 %%SITE_PERL%%/Authen/PluggableCaptcha/ValidityObject.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PluggableCaptcha/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PluggableCaptcha
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
-@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Text
-@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/layers
-@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/effects
-@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager
-@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image
-@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render
-@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Challenge
-@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha
-@dirrmtry %%SITE_PERL%%/Authen

@@ -63,4 +63,3 @@ man/man1/pt-table-usage.1.gz
 man/man1/pt-upgrade.1.gz
 man/man1/pt-variable-advisor.1.gz
 man/man1/pt-visual-explain.1.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/percona-toolkit/.packlist

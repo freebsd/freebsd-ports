@@ -32,4 +32,3 @@
 %%SITE_PERL%%/Image/Info/XBM.pm
 %%SITE_PERL%%/Image/Info/XPM.pm
 %%SITE_PERL%%/Image/TIFF.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info/.packlist

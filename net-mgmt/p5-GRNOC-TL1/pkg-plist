@@ -14,16 +14,3 @@
 %%SITE_PERL%%/GRNOC/TL1/Device/Nortel/HDXc.pm
 %%SITE_PERL%%/GRNOC/TL1/Device/Nortel/OME6500.pm
 %%SITE_PERL%%/GRNOC/TL1/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GRNOC/TL1/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GRNOC/TL1
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GRNOC
-@dirrmtry %%SITE_PERL%%/GRNOC/TL1/Device/Nortel
-@dirrmtry %%SITE_PERL%%/GRNOC/TL1/Device/Infinera
-@dirrmtry %%SITE_PERL%%/GRNOC/TL1/Device/GlimmerGlass
-@dirrmtry %%SITE_PERL%%/GRNOC/TL1/Device/Fujitsu
-@dirrmtry %%SITE_PERL%%/GRNOC/TL1/Device/Cisco
-@dirrmtry %%SITE_PERL%%/GRNOC/TL1/Device/Ciena
-@dirrmtry %%SITE_PERL%%/GRNOC/TL1/Device/ADVA
-@dirrmtry %%SITE_PERL%%/GRNOC/TL1/Device
-@dirrmtry %%SITE_PERL%%/GRNOC/TL1
-@dirrmtry %%SITE_PERL%%/GRNOC

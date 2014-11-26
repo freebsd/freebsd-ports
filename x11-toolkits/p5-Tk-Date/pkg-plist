@@ -1,10 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Date.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/date.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/localized_date.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Date/.packlist
+%%SITE_ARCH%%/Tk/Date.pm
+%%SITE_ARCH%%/Tk/demos/widtrib/date.pl
+%%SITE_ARCH%%/Tk/demos/widtrib/localized_date.pl
 %%PERL5_MAN3%%/Tk::Date.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Date
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk

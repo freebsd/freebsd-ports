@@ -1,4 +1,2 @@
 bin/chklinks
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/chklinks/.packlist
 man/man1/chklinks.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/chklinks

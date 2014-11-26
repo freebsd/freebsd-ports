@@ -1,4 +1,3 @@
 %%SITE_PERL%%/DBIx/Perlish.pm
 %%SITE_PERL%%/DBIx/Perlish/Parse.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Perlish/.packlist
 %%PERL5_MAN3%%/DBIx::Perlish.3.gz

@@ -28,7 +28,6 @@ bin/webdao.psgi
 %%SITE_PERL%%/WebDAO/Store/Storable.pm
 %%SITE_PERL%%/WebDAO/Test.pm
 %%SITE_PERL%%/WebDAO/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebDAO/.packlist
 %%PERL5_MAN3%%/WebDAO.3.gz
 %%PERL5_MAN3%%/WebDAO::Base.3.gz
 %%PERL5_MAN3%%/WebDAO::CV.3.gz
@@ -57,9 +56,3 @@ bin/webdao.psgi
 %%PERL5_MAN3%%/WebDAO::Util.3.gz
 man/man1/wd_fcgi.fpl.1.gz
 man/man1/wd_shell.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebDAO
-@dirrmtry %%SITE_PERL%%/WebDAO/Store
-@dirrmtry %%SITE_PERL%%/WebDAO/Lib
-@dirrmtry %%SITE_PERL%%/WebDAO/Lexer
-@dirrmtry %%SITE_PERL%%/WebDAO/FCGI
-@dirrmtry %%SITE_PERL%%/WebDAO

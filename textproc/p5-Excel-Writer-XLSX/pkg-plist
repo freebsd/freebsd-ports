@@ -30,7 +30,6 @@ bin/extract_vba
 %%SITE_PERL%%/Excel/Writer/XLSX/Utility.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Workbook.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Worksheet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Writer/XLSX/.packlist
 %%PERL5_MAN3%%/Excel::Writer::XLSX.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Area.3.gz

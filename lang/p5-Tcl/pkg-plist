@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Tcl.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Tcl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tcl/Tcl.so
+%%SITE_ARCH%%/Tcl.pm
+%%SITE_ARCH%%/auto/Tcl/Tcl.so

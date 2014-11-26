@@ -1,6 +1,5 @@
 bin/dbic-migration
 man/man1/dbic-migration.1.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Migration/.packlist
 %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/FromMigration.pm
 %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/FromMigration/_MigrationHelper.pm
 %%SITE_PERL%%/DBIx/Class/Migration.pm

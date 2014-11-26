@@ -862,25 +862,3 @@
 %%SITE_PERL%%/Net/Amazon/Validate/Type/VehiclePartLookup.pm
 %%SITE_PERL%%/Net/Amazon/Validate/Type/VehiclePartSearch.pm
 %%SITE_PERL%%/Net/Amazon/Validate/Type/VehicleSearch.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/Type
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/it
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/es
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Validate
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Result/Seller
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Result
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Response
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Request
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Property
-@dirrmtry %%SITE_PERL%%/Net/Amazon/Attribute
-@dirrmtry %%SITE_PERL%%/Net/Amazon
-@dirrmtry %%SITE_PERL%%/Net

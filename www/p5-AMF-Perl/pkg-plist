@@ -16,12 +16,3 @@
 %%SITE_PERL%%/AMF/Perl/Sql/MysqlRecordSet.pm
 %%SITE_PERL%%/AMF/Perl/Util/Object.pm
 %%SITE_PERL%%/AMF/Perl/Util/RemotingService.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF/Perl/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF/Perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF
-@dirrmtry %%SITE_PERL%%/AMF/Perl/Util
-@dirrmtry %%SITE_PERL%%/AMF/Perl/Sql
-@dirrmtry %%SITE_PERL%%/AMF/Perl/IO
-@dirrmtry %%SITE_PERL%%/AMF/Perl/App
-@dirrmtry %%SITE_PERL%%/AMF/Perl
-@dirrmtry %%SITE_PERL%%/AMF

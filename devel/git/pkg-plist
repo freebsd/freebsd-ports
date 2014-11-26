@@ -371,7 +371,6 @@ libexec/git-core/mergetools/emerge
 libexec/git-core/mergetools/araxis
 %%GUI%%bin/gitk
 %%PERLSUB%%%%SITE_PERL%%/Git.pm
-%%PERLSUB%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
 %%PERLSUB%%%%SITE_PERL%%/Git/I18N.pm
 %%PERLSUB%%%%SITE_PERL%%/Git/SVN.pm
 %%PERLSUB%%%%SITE_PERL%%/Git/IndexInfo.pm

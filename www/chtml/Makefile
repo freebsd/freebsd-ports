@@ -3,7 +3,7 @@
 
 PORTNAME=	chtml
 PORTVERSION=	0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel lang
 MASTER_SITES=	http://people.delphiforums.com/gjc/
 DISTNAME=	chtml

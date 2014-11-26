@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/HTML::QuickCheck.3.gz
 %%SITE_PERL%%/HTML/QuickCheck.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/QuickCheck/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/QuickCheck
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML

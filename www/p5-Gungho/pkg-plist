@@ -105,27 +105,4 @@ bin/gungho
 %%SITE_PERL%%/Gungho/Request/http.pm
 %%SITE_PERL%%/Gungho/Response.pm
 %%SITE_PERL%%/Gungho/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gungho/.packlist
 man/man1/gungho.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gungho
-@dirrmtry %%SITE_PERL%%/Gungho/Request
-@dirrmtry %%SITE_PERL%%/Gungho/Provider/File
-@dirrmtry %%SITE_PERL%%/Gungho/Provider
-@dirrmtry %%SITE_PERL%%/Gungho/Plugin/Statistics/Storage
-@dirrmtry %%SITE_PERL%%/Gungho/Plugin/Statistics/Format
-@dirrmtry %%SITE_PERL%%/Gungho/Plugin/Statistics
-@dirrmtry %%SITE_PERL%%/Gungho/Plugin
-@dirrmtry %%SITE_PERL%%/Gungho/Manual
-@dirrmtry %%SITE_PERL%%/Gungho/Log
-@dirrmtry %%SITE_PERL%%/Gungho/Handler/FileWriter
-@dirrmtry %%SITE_PERL%%/Gungho/Handler
-@dirrmtry %%SITE_PERL%%/Gungho/Engine/IO
-@dirrmtry %%SITE_PERL%%/Gungho/Engine/Danga
-@dirrmtry %%SITE_PERL%%/Gungho/Engine
-@dirrmtry %%SITE_PERL%%/Gungho/Component/Throttle
-@dirrmtry %%SITE_PERL%%/Gungho/Component/RobotRules/Storage
-@dirrmtry %%SITE_PERL%%/Gungho/Component/RobotRules
-@dirrmtry %%SITE_PERL%%/Gungho/Component/Authentication
-@dirrmtry %%SITE_PERL%%/Gungho/Component
-@dirrmtry %%SITE_PERL%%/Gungho/Base
-@dirrmtry %%SITE_PERL%%/Gungho

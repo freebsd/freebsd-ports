@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Engine/Middleware/.packlist
 %%SITE_PERL%%/HTTP/Engine/Middleware.pm
 %%SITE_PERL%%/HTTP/Engine/Middleware/AccessLog.pm
 %%SITE_PERL%%/HTTP/Engine/Middleware/DebugRequest.pm
@@ -38,9 +37,3 @@
 %%PERL5_MAN3%%/HTTP::Engine::Middleware::Status.3.gz
 %%PERL5_MAN3%%/HTTP::Engine::Middleware::Status::Memory.3.gz
 %%PERL5_MAN3%%/HTTP::Engine::Middleware::UploadTemp.3.gz
-@dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Status
-@dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Role
-@dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Profile
-@dirrm %%SITE_PERL%%/HTTP/Engine/Middleware
-@dirrmtry %%SITE_PERL%%/HTTP/Engine
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Engine/Middleware

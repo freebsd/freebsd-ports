@@ -1,8 +1,4 @@
 bin/shell-quote
 %%PERL5_MAN3%%/String::ShellQuote.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ShellQuote/.packlist
 %%SITE_PERL%%/String/ShellQuote.pm
 man/man1/shell-quote.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ShellQuote
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/String

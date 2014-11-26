@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/Adaptor/.packlist
 %%SITE_PERL%%/Catalyst/Helper/Model/Adaptor.pm
 %%SITE_PERL%%/Catalyst/Helper/Model/Factory.pm
 %%SITE_PERL%%/Catalyst/Helper/Model/Factory/PerRequest.pm
@@ -13,13 +12,3 @@
 %%PERL5_MAN3%%/Catalyst::Model::Adaptor::Base.3.gz
 %%PERL5_MAN3%%/Catalyst::Model::Factory.3.gz
 %%PERL5_MAN3%%/Catalyst::Model::Factory::PerRequest.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/Adaptor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model/Factory
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper
-@dirrmtry %%SITE_PERL%%/Catalyst/Model/Factory
-@dirrmtry %%SITE_PERL%%/Catalyst/Model/Adaptor
-@dirrmtry %%SITE_PERL%%/Catalyst/Model
-@dirrmtry %%SITE_PERL%%/Catalyst

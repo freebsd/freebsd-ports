@@ -3,6 +3,7 @@
 
 PORTNAME=	IO-Lambda
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	devel perl5 parallel net www databases
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

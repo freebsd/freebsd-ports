@@ -1,30 +1,15 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/CA.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/CA/AlphabetSoup.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/CA/Inline/C.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/CA/Resources.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/CONF/CONF.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/PrivateKey/PrivateKey.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/PublicKey/PublicKey.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509/X509.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509V3_EXT/X509V3_EXT.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509_CRL/X509_CRL.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509_NAME/X509_NAME.so
+%%SITE_ARCH%%/Crypt/OpenSSL/CA.pm
+%%SITE_ARCH%%/Crypt/OpenSSL/CA/AlphabetSoup.pod
+%%SITE_ARCH%%/Crypt/OpenSSL/CA/Inline/C.pm
+%%SITE_ARCH%%/Crypt/OpenSSL/CA/Resources.pod
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/CONF/CONF.so
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/PrivateKey/PrivateKey.so
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/PublicKey/PublicKey.so
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/X509/X509.so
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/X509V3_EXT/X509V3_EXT.so
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/X509_CRL/X509_CRL.so
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/CA/X509_NAME/X509_NAME.so
 %%PERL5_MAN3%%/Crypt::OpenSSL::CA.3.gz
 %%PERL5_MAN3%%/Crypt::OpenSSL::CA::AlphabetSoup.3.gz
 %%PERL5_MAN3%%/Crypt::OpenSSL::CA::Inline::C.3.gz
 %%PERL5_MAN3%%/Crypt::OpenSSL::CA::Resources.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509_NAME
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509_CRL
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509V3_EXT
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/PublicKey
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/PrivateKey
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/CONF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/CA/Inline
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/CA
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

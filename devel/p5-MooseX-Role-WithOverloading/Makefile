@@ -3,6 +3,7 @@
 
 PORTNAME=	MooseX-Role-WithOverloading
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -22,6 +23,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/MooseX/Role/WithOverloading/WithOverloading.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/MooseX/Role/WithOverloading/WithOverloading.so
 
 .include <bsd.port.mk>

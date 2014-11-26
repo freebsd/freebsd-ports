@@ -1,5 +1,4 @@
 bin/ark.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ark/.packlist
 %%SITE_PERL%%/Ark.pm
 %%SITE_PERL%%/Ark/Action.pm
 %%SITE_PERL%%/Ark/ActionChain.pm
@@ -55,21 +54,3 @@ bin/ark.pl
 %%PERL5_MAN3%%/Ark::Command::Newapp.3.gz
 %%PERL5_MAN3%%/Ark::Command::Server.3.gz
 %%PERL5_MAN3%%/Ark::Command::View.3.gz
-@dirrm %%SITE_PERL%%/Ark/View
-@dirrm %%SITE_PERL%%/Ark/Plugin/Session/Store
-@dirrm %%SITE_PERL%%/Ark/Plugin/Session/State
-@dirrm %%SITE_PERL%%/Ark/Plugin/Session
-@dirrm %%SITE_PERL%%/Ark/Plugin/Encoding
-@dirrm %%SITE_PERL%%/Ark/Plugin/Authentication/Store/DBIx
-@dirrm %%SITE_PERL%%/Ark/Plugin/Authentication/Store
-@dirrm %%SITE_PERL%%/Ark/Plugin/Authentication/Credential
-@dirrm %%SITE_PERL%%/Ark/Plugin/Authentication
-@dirrm %%SITE_PERL%%/Ark/Plugin
-@dirrm %%SITE_PERL%%/Ark/Model
-@dirrm %%SITE_PERL%%/Ark/DispatchType
-@dirrm %%SITE_PERL%%/Ark/Context
-@dirrm %%SITE_PERL%%/Ark/Command/Interface
-@dirrm %%SITE_PERL%%/Ark/Command/Flavor
-@dirrm %%SITE_PERL%%/Ark/Command
-@dirrm %%SITE_PERL%%/Ark
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ark

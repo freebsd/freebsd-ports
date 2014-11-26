@@ -1,8 +1,3 @@
 %%SITE_PERL%%/Web/oEmbed.pm
 %%SITE_PERL%%/Web/oEmbed/Response.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Web/oEmbed/.packlist
 %%PERL5_MAN3%%/Web::oEmbed.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Web/oEmbed
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Web
-@dirrm %%SITE_PERL%%/Web/oEmbed
-@dirrmtry %%SITE_PERL%%/Web

@@ -6,5 +6,3 @@
 %%PERL5_MAN3%%/Protocol::SocketIO::Handshake.3.gz
 %%PERL5_MAN3%%/Protocol::SocketIO::Message.3.gz
 %%PERL5_MAN3%%/Protocol::SocketIO::Path.3.gz
-@dirrm %%SITE_PERL%%/Protocol/SocketIO
-@dirrmtry %%SITE_PERL%%/Protocol

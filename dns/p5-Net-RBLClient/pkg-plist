@@ -1,5 +1,4 @@
 bin/spamalyze
 %%SITE_PERL%%/Net/RBLClient.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RBLClient/.packlist
 %%PERL5_MAN3%%/Net::RBLClient.3.gz
 man/man1/spamalyze.1.gz

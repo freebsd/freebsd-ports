@@ -2,6 +2,7 @@
 
 PORTNAME=	DBD-cego
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
@@ -24,6 +25,6 @@ USE_PERL5=	configure
 CC:=		${CXX}
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/DBD/Cego/Cego.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/Cego/Cego.so
 
 .include <bsd.port.mk>

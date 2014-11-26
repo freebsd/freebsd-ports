@@ -47,13 +47,4 @@ bin/s3cl
 %%SITE_PERL%%/Net/Amazon/S3/Request/PutPart.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/SetBucketAccessControl.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/SetObjectAccessControl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/S3/.packlist
 man/man1/s3cl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/S3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Amazon/S3/Request
-@dirrmtry %%SITE_PERL%%/Net/Amazon/S3/Client
-@dirrmtry %%SITE_PERL%%/Net/Amazon/S3
-@dirrmtry %%SITE_PERL%%/Net/Amazon
-@dirrmtry %%SITE_PERL%%/Net

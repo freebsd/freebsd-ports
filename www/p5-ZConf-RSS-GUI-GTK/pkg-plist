@@ -1,10 +1,2 @@
 %%SITE_PERL%%/ZConf/RSS/GUI/GTK.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS/GUI/GTK/.packlist
 %%PERL5_MAN3%%/ZConf::RSS::GUI::GTK.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS/GUI/GTK
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS/GUI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
-@dirrmtry %%SITE_PERL%%/ZConf/RSS/GUI
-@dirrmtry %%SITE_PERL%%/ZConf/RSS
-@dirrmtry %%SITE_PERL%%/ZConf

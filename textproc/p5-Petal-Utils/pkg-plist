@@ -22,5 +22,3 @@
 %%SITE_PERL%%/Petal/Utils/US_Date.pm
 %%SITE_PERL%%/Petal/Utils/UpperCase.pm
 %%SITE_PERL%%/Petal/Utils/UriEscape.pm
-@dirrmtry %%SITE_PERL%%/Petal/Utils
-@dirrmtry %%SITE_PERL%%/Petal

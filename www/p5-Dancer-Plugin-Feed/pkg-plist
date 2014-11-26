@@ -1,8 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Feed/.packlist
 %%SITE_PERL%%/Dancer/Plugin/Feed.pm
 %%PERL5_MAN3%%/Dancer::Plugin::Feed.3.gz
-@dirrmtry %%SITE_PERL%%/Dancer/Plugin
-@dirrmtry %%SITE_PERL%%/Dancer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Feed
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer

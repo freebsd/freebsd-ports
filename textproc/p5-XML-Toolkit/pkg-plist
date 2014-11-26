@@ -24,7 +24,6 @@ bin/xmltk
 %%SITE_PERL%%/XML/Toolkit/MetaDescription/Attribute.pm
 %%SITE_PERL%%/XML/Toolkit/MetaDescription/Trait.pm
 %%SITE_PERL%%/XML/Toolkit/Trait/NoXML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Toolkit/.packlist
 %%PERL5_MAN3%%/XML::Filter::Moose.3.gz
 %%PERL5_MAN3%%/XML::Generator::Moose.3.gz
 %%PERL5_MAN3%%/XML::Toolkit.3.gz

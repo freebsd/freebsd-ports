@@ -12,8 +12,3 @@ man/man1/perlinfo.1.gz
 %%SITE_PERL%%/HTML/Perlinfo/HTML.pod
 %%SITE_PERL%%/HTML/Perlinfo/Loaded.pm
 %%SITE_PERL%%/HTML/Perlinfo/Modules.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Perlinfo/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Perlinfo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML/Perlinfo
-@dirrmtry %%SITE_PERL%%/HTML

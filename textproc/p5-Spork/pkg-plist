@@ -15,9 +15,4 @@ bin/spork
 %%SITE_PERL%%/Spork/Registry.pm
 %%SITE_PERL%%/Spork/Slides.pm
 %%SITE_PERL%%/Spork/Template/TT2.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spork/.packlist
 man/man1/spork.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spork
-@dirrmtry %%SITE_PERL%%/Spork/Template
-@dirrmtry %%SITE_PERL%%/Spork/Formatter
-@dirrmtry %%SITE_PERL%%/Spork

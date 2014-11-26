@@ -8,8 +8,3 @@
 %%SITE_PERL%%/XML/RAI/Image.pm
 %%SITE_PERL%%/XML/RAI/Item.pm
 %%SITE_PERL%%/XML/RAI/Object.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RAI/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RAI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/RAI
-@dirrmtry %%SITE_PERL%%/XML

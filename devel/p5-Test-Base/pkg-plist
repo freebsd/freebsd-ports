@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Test/Base.pod
 %%SITE_PERL%%/Test/Base/Filter.pm
 %%SITE_PERL%%/Test/Base/Filter.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Base/.packlist

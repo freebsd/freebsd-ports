@@ -5,4 +5,3 @@
 %%SITE_PERL%%/Class/Tangram/Containers.pod
 %%SITE_PERL%%/Class/Tangram/Generator.pm
 %%SITE_PERL%%/Class/Tangram/Generator/Stub.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Tangram/.packlist
