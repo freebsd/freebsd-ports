@@ -12,5 +12,3 @@ bin/tkmoo
 %%DATADIR%%/plugins/timezone.tcl
 %%DATADIR%%/plugins/url_trigger.tcl
 %%DATADIR%%/plugins/webbrowser.tcl
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%
