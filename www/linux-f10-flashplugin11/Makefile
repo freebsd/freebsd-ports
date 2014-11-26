@@ -3,7 +3,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	11.2r202.418
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:S/r/./}/
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
+
+RUN_DEPENDS+=	linux-${USE_LINUX}-alsa-lib>=1.0.21_5:${PORTSDIR}/audio/linux-f10-alsa-lib
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	f10
