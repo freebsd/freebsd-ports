@@ -222,19 +222,3 @@ bin/fmars
 %%DATADIR%%/rc/top50/willow.rc
 %%DATADIR%%/rc/top50/wipeuncle.rc
 %%DATADIR%%/rc/top50/zooom.rc
-@dirrm %%DATADIR%%/rc/top50
-@dirrm %%DATADIR%%/rc/stone-b-imp
-@dirrm %%DATADIR%%/rc/stone-a-imp
-@dirrm %%DATADIR%%/rc/scanner
-@dirrm %%DATADIR%%/rc/paper-stone
-@dirrm %%DATADIR%%/rc/paper-imp
-@dirrm %%DATADIR%%/rc/paper
-@dirrm %%DATADIR%%/rc/nso
-@dirrm %%DATADIR%%/rc/clear
-@dirrm %%DATADIR%%/rc/bomber
-@dirrm %%DATADIR%%/rc/blur
-@dirrm %%DATADIR%%/rc/0test
-@dirrm %%DATADIR%%/rc-test
-@dirrm %%DATADIR%%/rc
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
