@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	osh
-DISTVERSION=	20140410
-PORTREVISION=	1
+DISTVERSION=	20141024
 CATEGORIES=	shells
 MASTER_SITES=	http://v6shell.org/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Implementation of the UNIX 6th Edition shell
 
 MAKE_ENV+=	DOCDIR=${DOCSDIR} \
@@ -17,6 +16,7 @@ MAKE_ENV+=	DOCDIR=${DOCSDIR} \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 INSTALL_TARGET=	install install-doc install-exp
+PLIST_SUB+=	VER=${DISTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|(DESTEXPDIR)=|\1?=|' \
