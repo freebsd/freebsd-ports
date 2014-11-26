@@ -391,6 +391,7 @@
     SUBDIR += luakit
     SUBDIR += lynx
     SUBDIR += lynx-current
+    SUBDIR += madsonic
     SUBDIR += magento
     SUBDIR += mahara
     SUBDIR += man2web
