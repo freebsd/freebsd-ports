@@ -1,2 +1,2 @@
 #!/compat/linux/bin/sh
-%%DATADIR%%/sublime_text
+%%DATADIR%%/sublime_text $*

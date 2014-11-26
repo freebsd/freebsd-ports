@@ -1,9 +1,15 @@
 bin/sublime
+share/applications/sublime_text.desktop
 share/icons/hicolor/128x128/apps/sublime-text.png
 share/icons/hicolor/16x16/apps/sublime-text.png
 share/icons/hicolor/256x256/apps/sublime-text.png
 share/icons/hicolor/32x32/apps/sublime-text.png
 share/icons/hicolor/48x48/apps/sublime-text.png
+%%DATADIR%%/Icon/128x128/sublime-text.png
+%%DATADIR%%/Icon/16x16/sublime-text.png
+%%DATADIR%%/Icon/256x256/sublime-text.png
+%%DATADIR%%/Icon/32x32/sublime-text.png
+%%DATADIR%%/Icon/48x48/sublime-text.png
 %%DATADIR%%/Packages/ASP.sublime-package
 %%DATADIR%%/Packages/ActionScript.sublime-package
 %%DATADIR%%/Packages/AppleScript.sublime-package
