@@ -44,7 +44,6 @@
     SUBDIR += adime
     SUBDIR += aegis
     SUBDIR += afay
-    SUBDIR += afl
     SUBDIR += ahven
     SUBDIR += aifad
     SUBDIR += alabastra
