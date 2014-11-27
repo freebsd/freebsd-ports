@@ -1,2 +1,2 @@
-MANPATH %%PREFIX%%/lib/perl5/%%PERL_VER%%/man
+MANPATH %%PREFIX%%/%%SITE_PERL%%/man
 MANPATH %%PREFIX%%/lib/perl5/%%PERL_VER%%/perl/man
