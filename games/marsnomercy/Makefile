@@ -11,6 +11,8 @@ DISTNAME=	mars-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn-based strategy game setting on Mars
 
+LICENSE=	GPLv2 # version unspecified actually
+
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 
 USE_GL=		gl
@@ -20,7 +22,9 @@ SCONS_ARGS=	prefix=${PREFIX}
 SUB_FILES=	mars-nomercy pkg-message
 WRKSRC=		${WRKDIR}/mars-${PORTVERSION}
 
-PLIST_FILES=	bin/mars-nomercy libexec/mars
+PLIST_FILES=	bin/mars-nomercy \
+		libexec/mars
+PLIST_DIRS=	%%DATADIR%%/img/units/mercenaries
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DEBUG OPENGL
