@@ -14,6 +14,8 @@ LICENSE_NAME=	LGPL21 with exception
 LICENSE_FILE=	${WRKSRC}/OCCT_LGPL_EXCEPTION.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		Checksum and size mismatch
+
 LIB_DEPENDS=	libtbb.so:${PORTSDIR}/devel/tbb		\
 		libvtksys-${VTKVER}.so:${PORTSDIR}/math/vtk6
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
