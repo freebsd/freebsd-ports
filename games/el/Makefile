@@ -15,34 +15,28 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libcal3d.so:${PORTSDIR}/graphics/cal3d
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
+BROKEN_sparc64=	Does not build on sparc64
+
 USES=		compiler:c++11-lang gmake iconv openal:al,alut tar:xz
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		yes
+USE_XORG=	x11
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lX11
 
 ALL_TARGET=	el.bin
 MAKEFILE=	Makefile.bsd
-PLIST=		${WRKDIR}/pkg-plist
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on ${ARCH}
-.endif
+PLIST_FILES=	bin/el \
+		%%DATADIR%%/el.bin
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/el
 	@${ECHO} "cd ${DATADIR} || exit 1 " >> ${WRKDIR}/el
 	@${ECHO} "exec ${DATADIR}/el.bin" >> ${WRKDIR}/el
 
-	@${ECHO} "bin/el" > ${PLIST}
-	@${ECHO} "%%DATADIR%%/el.bin" >> ${PLIST}
-	@${ECHO} "@dirrmtry %%DATADIR%%" >> ${PLIST}
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/el ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/el.bin ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
