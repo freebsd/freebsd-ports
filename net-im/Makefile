@@ -112,6 +112,7 @@
     SUBDIR += pidgin-skype
     SUBDIR += pidgin-twitter
     SUBDIR += plasma-applet-ktp
+    SUBDIR += poezio
     SUBDIR += pork
     SUBDIR += prosody
     SUBDIR += psi
