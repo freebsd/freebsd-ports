@@ -2,12 +2,15 @@
 
 PORTNAME=	ktouch
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Touch typing tutor for KDE 4
+
+RUN_DEPENDS=	${LOCALBASE}/lib/kde4/imports/org/kde/charts/qmldir:${PORTSDIR}/graphics/kqtquickcharts
 
 USE_KDE4=	kdelibs kdeprefix automoc4
 USES=		cmake:outsource tar:xz
