@@ -3,12 +3,15 @@
 
 PORTNAME=	ivan
 PORTVERSION=	0.50
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/IVAN/IVAN%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical roguelike game
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_SDL=	sdl
 USES=		gmake
@@ -32,5 +35,9 @@ post-patch:
 		${WRKSRC}/Main/Include/human.h ${WRKSRC}/Main/Source/command.cpp \
 		${WRKSRC}/Main/Include/stack.h ${WRKSRC}/Main/Source/lsquare.cpp \
 		${WRKSRC}/Main/Source/lterras.cpp
+
+post-install:
+	${MKDIR} ${STAGEDIR}/var/games/ivan/Bones
+	${TOUCH} ${STAGEDIR}/var/games/ivan/ivan-highscore.scores.sample
 
 .include <bsd.port.mk>
