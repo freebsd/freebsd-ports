@@ -14,6 +14,8 @@ COMMENT=	DeforaOS desktop web browser
 
 LICENSE=	GPLv3
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
