@@ -13,6 +13,8 @@ COMMENT=	MIT Photonic-Bands
 LICENSE=	GPLv2
 
 BROKEN=		Fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-12-27
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw \

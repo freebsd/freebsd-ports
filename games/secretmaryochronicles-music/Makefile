@@ -11,6 +11,9 @@ DISTNAME=	SMC_Music_${PORTVERSION}_high
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Background music for Secret Maryo Chronicles
 
+DEPRECATED=	Depends on expiring games/secretmaryochronicles
+EXPIRATION_DATE=	2014-12-27
+
 RUN_DEPENDS=	smc:${PORTSDIR}/games/secretmaryochronicles
 
 USES=		zip
