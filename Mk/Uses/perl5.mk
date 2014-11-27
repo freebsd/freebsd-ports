@@ -271,10 +271,9 @@ PACKLIST_DIR?=	${PREFIX}/${SITE_ARCH_REL}/auto
 fix-perl-things:
 # Remove STAGEDIR from .packlist and add the file to the plist.
 	@(if [ -d ${STAGEDIR}${PACKLIST_DIR} ] ; then \
-			cd ${STAGEDIR} ; \
-			find .${PACKLIST_DIR} -name .packlist | while read f ; do \
+			find ${STAGEDIR}${PACKLIST_DIR} -name .packlist | while read f ; do \
 					${SED} -i '' 's|^${STAGEDIR}||' "$$f"; \
-					${ECHO} $$f >> ${PLIST}; \
+					${ECHO} $$f | ${SED} -e 's|^${STAGEDIR}||' >> ${TMPPLIST}; \
 			done \
 	fi) || :
 
