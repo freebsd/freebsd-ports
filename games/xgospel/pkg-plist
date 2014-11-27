@@ -5,5 +5,3 @@ bin/xgospel
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/board.xpm
 %%DATADIR%%/pagoda.xpm
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
