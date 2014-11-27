@@ -19,7 +19,7 @@ USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto:both \
 .include "${.CURDIR}/bsd.mesalib.mk"
 
 .if defined(WITH_NEW_MESA)
-LIBGLREVISION=	1
+LIBGLREVISION=	0
 .else
 LIBGLREVISION=	4
 .endif
