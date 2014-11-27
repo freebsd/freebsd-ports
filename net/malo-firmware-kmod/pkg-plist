@@ -1,0 +1,2 @@
+%%KMODDIR%%/linker.hints
+%%KMODDIR%%/%%DRIVERNAME%%.ko

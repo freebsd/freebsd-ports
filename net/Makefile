@@ -351,6 +351,7 @@
     SUBDIR += mDNSResponder
     SUBDIR += macchanger
     SUBDIR += mad_fcl
+    SUBDIR += malo-firmware-kmod
     SUBDIR += mcast-tools
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
