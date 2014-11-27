@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME viewer for CHM files
 
+BROKEN=		Uses unknown GNOME component pygnomeextras
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/chm/_chmlib.so:${PORTSDIR}/textproc/pychm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
