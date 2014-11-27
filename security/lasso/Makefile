@@ -11,6 +11,8 @@ MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Free Liberty Alliance Implementation
 
 BROKEN=		Fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRACTION_DATE=	2014-12-27
 
 RUN_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
 BUILD_DEPENDS:=	${RUN_DEPENDS}

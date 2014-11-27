@@ -11,6 +11,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generates icon thumbnails for PC-BSD installer files
 
 BROKEN=		Violates stagedir and fails to package
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-12-27
 
 USES=		pkgconfig tar:bzip2 uidfix shared-mime-info
 USE_GNOME=	gtk20 gconf2
