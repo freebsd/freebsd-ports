@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -74,6 +74,7 @@ USES=	tar:bzip2 cpe
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
+	-Dlibperl=libperl.so.${PERL_VER} \
 	-Darchlib=${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} \
 	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VER} \
 	-Dman3dir=${PREFIX}/${MAN3PREFIX_REL}/man/man3 \
@@ -82,10 +83,13 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dsitelib=${SITE_PERL} -Dscriptdir=${PREFIX}/bin \
 	-Dsiteman3dir=${SITE_MAN3} \
 	-Dsiteman1dir=${PREFIX}/man/man1 \
-	-Dotherlibdirs=${PREFIX}/lib/perl5/site_perl/${PERL_VER}:${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH} \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
+# When upgrading to 5.22+ remove this.
+CONFIGURE_ARGS+= \
+	-Dotherlibdirs=${PREFIX}/lib/perl5/site_perl/${PERL_VER}:${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
 		LC_TIME=""
@@ -106,7 +110,7 @@ INSTALL_TARGET=	install-strip
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 # if this port is default due PERL5_DEFAULT
-# change PKGNAME to reflect this 
+# change PKGNAME to reflect this
 .if ${PERL_VER} == ${PERL5_DEFAULT}
 PKGNAMESUFFIX=	${PERL_VERSION:C/\.[0-9]+\.[0-9]+$//}
 .else
@@ -133,7 +137,7 @@ CONFIGURE_ARGS+=	\
     -Accflags=-DPERLIOBUF_DEFAULT_BUFSIZ=${PERLIOBUF_DEFAULT_BUFSIZ}
 .endif
 
-MAN3PREFIX_REL=	lib/perl5/${PERL_VER}
+MAN3PREFIX_REL=	lib/perl5/${PERL_VER}/perl
 MAN3PREFIX=	${PREFIX}/${MAN3PREFIX_REL}
 MANDIRS+=	${MAN3PREFIX}/man
 
@@ -187,8 +191,9 @@ post-install:
 	${MKDIR} ${STAGEDIR}${SITE_MAN3}
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/auto
 	${MKDIR} ${STAGEDIR}${SITE_PERL}/auto
-	${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/.packlist
 	${LN} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION} ${STAGEDIR}${PREFIX}/bin/perl5
+	${LN} -s libperl.so.${PERL_VER} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE/libperl.so
+	${LN} -s libperl.so.${PERL_VER} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE/libperl.so.${PERL_VERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 	${INSTALL_DATA} ${WRKDIR}/perl5_version ${STAGEDIR}${PREFIX}/etc
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/machine

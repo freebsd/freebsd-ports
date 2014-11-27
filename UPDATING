@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141127:
+  AFFECTS: users of lang/perl5.*
+  AUTHOR: mat@FreeBSD.org
+
+  The .packlist files are back, if you upgraded all your p5- ports yesterday
+  and need them, you will need to reinstall them again, see yesterday's update
+  for instructions.
+
 20141126:
   AFFECTS: users of multimedia/x264
   AUTHOR: xmj@FreeBSD.org
