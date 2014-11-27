@@ -31,9 +31,9 @@ INSTALL_WRKSRC=	${WRKSRC}/src/egl
 .endif
 
 .if defined(WITH_NEW_MESA)
-LIBEGL_REVISION=	0
+LIBEGL_REVISION=	1
 .else
-LIBEGL_REVISION=	4
+LIBEGL_REVISION=	5
 .endif
 
 .if defined(WITH_NEW_MESA)
@@ -52,5 +52,10 @@ egl-do-install:
 
 . endfor
 .endif
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/.mesa
+	@${MV} ${STAGEDIR}${PREFIX}/lib/libEGL* \
+		${STAGEDIR}${PREFIX}/lib/.mesa/
 
 .include <bsd.port.mk>

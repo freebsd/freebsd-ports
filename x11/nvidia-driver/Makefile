@@ -13,7 +13,7 @@
 PORTNAME=	nvidia-driver
 DISTVERSION?=	340.46
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 # MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
@@ -241,11 +241,17 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
 .endif
 # Adjust installation paths of some conflicting files (shared also between
-# libGL and xorg-server) to ease package manager work, esp. with pkgng
+# libGL, libEGL, libglesv2 and xorg-server) to ease package manager work.
 	${REINPLACE_CMD} -e '/LIBDIR/s:xorg/modules/extensions:&/.nvidia:' \
 		${WRKSRC}/x11/extension/Makefile
 	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
 		${WRKSRC}/lib/libGL/Makefile
+.if ${NVVERSION} >= 331.013
+	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
+		${WRKSRC}/lib/libEGL/Makefile
+	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
+		${WRKSRC}/lib/libGLESv2/Makefile
+.endif
 # Do not execute afterinstall target (prevent automatic module registration
 # and "smart" installation of conflicting files heuristics)
 	${REINPLACE_CMD} -e 's/afterinstall/&_dontexecute/' ${WRKSRC}/Makefile

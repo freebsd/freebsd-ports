@@ -5,7 +5,10 @@ include/GLES3/gl3.h
 %%NEW%%include/GLES3/gl31.h
 include/GLES3/gl3ext.h
 include/GLES3/gl3platform.h
-lib/libGLESv2.so
-lib/libGLESv2.so.2
-lib/libGLESv2.so.2.0.0
+lib/.mesa/libGLESv2.so
+lib/.mesa/libGLESv2.so.2
+lib/.mesa/libGLESv2.so.2.0.0
+@comment lib/libglapi.so
+@comment lib/libglapi.so.0
+@comment lib/libglapi.so.0.0.0
 libdata/pkgconfig/glesv2.pc
