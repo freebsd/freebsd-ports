@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jicmp
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	net java
 MASTER_SITES=	SF/opennms/JICMP/stable-1.4/
 
@@ -20,6 +20,7 @@ JAVA_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 pre-everything::
 	@${ECHO_MSG}	""
