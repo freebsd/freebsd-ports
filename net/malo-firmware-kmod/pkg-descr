@@ -1,0 +1,7 @@
+Marvell Libertas 88W8335 firmware files are not free because Marvell
+refuses to grant distribution rights.  As a result, we need to build the
+firmware using ports.
+
+This firmware files are comed from OpenBSD malo driver.
+
+WWW: http://www.nazgul.ch/malo/

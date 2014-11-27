@@ -165,6 +165,7 @@ l_fc_p*_*.*.*.tar.gz	lang/ifc		Intel forbids any redistribution
 macopix-*.tar.gz	games/macopix		Contains commercial character data
 madfufw-*		audio/madfufw		No redistribution of firmware files
 majesty_demo*		games/linux-majesty-demo	Redistribution is limited, see license
+malo-fw-*.tar.gz	net/malo-firmware-kmod	Marvell refuses to grant distribution rights
 mb339pan_*		games/flightgear-mb339-pan Redistribution prohibited
 mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
 mindfocus-*		games/mindfocus		Contains commercial character data
