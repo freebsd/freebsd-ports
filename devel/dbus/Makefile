@@ -3,7 +3,7 @@
 #   $MCom: ports/devel/dbus/Makefile,v 1.58 2013/02/15 15:06:49 kwm Exp $
 
 PORTNAME=	dbus
-PORTVERSION=	1.8.10
+PORTVERSION=	1.8.12
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	# empty but we need it for USE_GNOME_SUBR
-USES=		gmake libtool:keepla pathfix
+USES=		cpe gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--localstatedir=/var \
@@ -27,6 +27,9 @@ CONFIGURE_ARGS=--localstatedir=/var \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	d-bus_project
+CPE_PRODUCT=	d-bus
 
 USE_RC_SUBR=	dbus
 USE_GNOME_SUBR=	yes
