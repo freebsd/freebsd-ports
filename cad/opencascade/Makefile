@@ -3,6 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	6.8.0
+PORTREVISION=	1
 CATEGORIES=	cad science
 MASTER_SITES=	http://files.opencascade.com/OCCT/OCC_${PORTVERSION}_release/
 
@@ -13,8 +14,6 @@ LICENSE=	OCTPL
 LICENSE_NAME=	LGPL21 with exception
 LICENSE_FILE=	${WRKSRC}/OCCT_LGPL_EXCEPTION.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-BROKEN=		Checksum and size mismatch
 
 LIB_DEPENDS=	libtbb.so:${PORTSDIR}/devel/tbb		\
 		libvtksys-${VTKVER}.so:${PORTSDIR}/math/vtk6
