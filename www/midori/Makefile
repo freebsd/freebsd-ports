@@ -3,7 +3,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.5.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www xfce
 MASTER_SITES=	http://www.midori-browser.org/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_all_
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-Wno-return-type
-CMAKE_ARGS=	-DUSE_GCR:BOOL=OFF
+CMAKE_ARGS=	-DUSE_APIDOCS:BOOL=OFF
 
 WRKSRC=	${WRKDIR}/${DISTNAME:C/([a-z]*)_([0-9\.]*)(_all_)/\1-\2/}
 NO_WRKSUBDIR=	yes
@@ -37,7 +37,7 @@ USE_SQLITE=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
-OPTIONS_DEFINE=	DOCS GIR GRANITE ZEITGEIST
+OPTIONS_DEFINE=	GIR GRANITE ZEITGEIST
 OPTIONS_SINGLE=	GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3
 OPTIONS_DEFAULT=	GTK2
@@ -52,14 +52,17 @@ ZEITGEIST_DESC=	User logs activities
 .if ${PORT_OPTIONS:MGTK2}
 LIB_DEPENDS+=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 USE_GNOME+=	gtk20
-CMAKE_ARGS+=	-DUSE_GTK3:BOOL=OFF
+CMAKE_ARGS+=	-DUSE_GTK3:BOOL=OFF \
+	-DUSE_GCR:BOOL=OFF
 PLIST_SUB+=	ONLY_WEBKIT1=""
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
-LIB_DEPENDS+=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+LIB_DEPENDS+=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
+	libgcr-3.so:${PORTSDIR}/security/gcr
 USE_GNOME+=	gtk30
-CMAKE_ARGS+=	-DUSE_GTK3:BOOL=ON
+CMAKE_ARGS+=	-DUSE_GTK3:BOOL=ON \
+	-DUSE_GCR:BOOL=ON
 
 # Support the new WebKit2 API (>= 1.11.91)
 .if exists(${LOCALBASE}/libdata/pkgconfig/webkit2gtk-3.0.pc)
@@ -77,15 +80,6 @@ CMAKE_ARGS+=	-DUSE_GRANITE:BOOL=ON
 .else
 CMAKE_ARGS+=	-DUSE_GRANITE:BOOL=OFF
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	gtkdoc-scan:${PORTSDIR}/textproc/gtk-doc
-CMAKE_ARGS+=	-DUSE_APIDOCS:BOOL=ON
-PLIST_SUB+=	APIDOCS=""
-.else
-CMAKE_ARGS+=	-DUSE_APIDOCS:BOOL=OFF
-PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MZEITGEIST}
