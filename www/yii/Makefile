@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-65ddd44
 
 NO_BUILD=	yes
 USES=		cpe
-CPE_VENDOR=	yiiframework
 CPE_PRODUCT=	yiiframework
 USE_PHP=	pcre spl
 WANT_PHP_WEB=	yes
