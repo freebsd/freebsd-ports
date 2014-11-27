@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
@@ -27,6 +30,8 @@ USE_SDL=	sdl mixer image net ttf gfx
 
 PLIST_FILES=	bin/widelands
 PORTDATA=	*
+PLIST_DIRS=	%%DATADIR%%/maps/Desert\ Tournament.wmf/scripting \
+		%%DATADIR%%/maps/Swamp\ Monks.wmf/scripting
 
 DESKTOP_ENTRIES="Widelands" \
 		"" \
