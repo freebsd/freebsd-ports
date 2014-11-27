@@ -3,6 +3,7 @@
 
 PORTNAME=	haproxy
 PORTVERSION=	1.5.9
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/1.5/src/
 
