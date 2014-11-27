@@ -31,7 +31,7 @@ INSTALL_WRKSRC=	${WRKSRC}/src/egl
 .endif
 
 .if defined(WITH_NEW_MESA)
-LIBEGL_REVISION=	1
+LIBEGL_REVISION=	0
 .else
 LIBEGL_REVISION=	5
 .endif
