@@ -22,9 +22,10 @@ USES=		dos2unix zip:infozip
 DOS2UNIX_GLOB=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
-PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}linux
 EL_DATA=	${PKGNAMEPREFIX:S/-/_/}linux_${PORTVERSION}.zip
+
+PORTDATA=	*
 
 OPTIONS_DEFINE=	ELSOUND ELMUSIC
 OPTIONS_DEFAULT=	ELSOUND ELMUSIC
@@ -35,12 +36,10 @@ ELMUSIC_DESC=	Install additional music files
 
 .if ${PORT_OPTIONS:MELSOUND}
 DISTFILES+=	EL_sound_191${EXTRACT_SUFX}:sound
-HAVE_ESOUND=	yes
 .endif
 
 .if ${PORT_OPTIONS:MELMUSIC}
 DISTFILES+=	EL_music_full${EXTRACT_SUFX}:music
-HAVE_EMUSIC=	yes
 .endif
 
 do-extract:
@@ -64,17 +63,7 @@ post-extract:
 	@${FIND} ${WRKSRC} -type f -name "*.bin" -print0 | \
 		${XARGS} -0 ${RM} -R
 
-pre-install:
-	@${RM} -f ${PLIST}
-	@cd ${WRKSRC} && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
-
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	@cd ${WRKSRC} && \
-		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
