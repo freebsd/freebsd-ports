@@ -109,7 +109,6 @@
     SUBDIR += latex-resume
     SUBDIR += latex2rtf
     SUBDIR += latexdiff
-    SUBDIR += latexmk
     SUBDIR += libgnomecups
     SUBDIR += libgnomeprint
     SUBDIR += libgnomeprint-reference
