@@ -292,16 +292,15 @@ pre-build:
 .endif
 
 post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/*.so.*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/*.so.*
 .if defined(CUPS_CLIENT)
 	${INSTALL_SCRIPT} ${WRKSRC}/cups-config ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/cups/libcups.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/man/cups-config.man ${STAGEDIR}${PREFIX}/man/man1/cups-config.1
 .elif defined(CUPS_IMAGE)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsimage.so.2
 .else
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupscgi.so.1
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsppdc.so.1
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsmime.so.1
 	${LN} -sf lpr ${STAGEDIR}${PREFIX}/bin/lpr-cups
 	${MKDIR} ${STAGEDIR}${ETCDIR}/
 .for f in cupsd.conf mime.convs mime.types snmp.conf
