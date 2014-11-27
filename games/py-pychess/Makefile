@@ -13,6 +13,8 @@ COMMENT=	GTK chess client written in Python
 
 LICENSE=	GPLv2 # (or later)
 
+BROKEN=		Uses unknown GNOME component pygnomedesktop
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=3-2.5.1_1:${PORTSDIR}/databases/py-sqlite3
 
 USES=		desktop-file-utils gettext python

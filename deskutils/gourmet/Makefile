@@ -14,6 +14,8 @@ COMMENT=	GNOME recipe manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Uses unknown GNOME component pygnomeextras
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distutils-extra>0:${PORTSDIR}/devel/py-distutils-extra \
 		${PYTHON_PKGNAMEPREFIX}elib.intl>0:${PORTSDIR}/textproc/py-elib.intl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \

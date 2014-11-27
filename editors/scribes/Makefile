@@ -13,6 +13,8 @@ COMMENT=	Slick yet powerful text editor for GNOME
 
 LICENSE=	GPLv2
 
+BROKEN=		Uses unknown GNOME component pygnomeextras
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg \
