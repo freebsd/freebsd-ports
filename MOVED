@@ -7293,3 +7293,4 @@ x11-wm/e17-modules|x11-wm/e-modules|2014-11-25|Renamed
 net-im/folks04||2014-11-26|Removed, no longer used after GNOME 3 merge
 devel/afl|security/afl|2014-11-26|Duplicate port
 print/latexmk|print/texlive-base|2014-11-27|Has been incorporated in TeXLive
+print/pdfjam|print/texlive-base|2014-11-27|Has been incorporated in TeXLive

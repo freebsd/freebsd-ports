@@ -160,7 +160,6 @@
     SUBDIR += pdf4tcl
     SUBDIR += pdfbox
     SUBDIR += pdfcube
-    SUBDIR += pdfjam
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
     SUBDIR += pdftk
