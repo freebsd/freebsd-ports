@@ -162,6 +162,9 @@ CONFIGURE_ARGS+=--enable-maintainer-zts
 IGNORE=		cannot be built with DTrace support on FreeBSD < 9.x
 .endif
 CONFIGURE_ARGS+=--enable-dtrace
+PLIST_SUB+=	DTRACE=""
+.else
+PLIST_SUB+=	DTRACE="@comment "
 .endif
 
 .if empty(PORT_OPTIONS:MIPV6)
