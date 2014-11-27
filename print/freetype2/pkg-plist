@@ -51,7 +51,6 @@ include/freetype2/tttables.h
 include/freetype2/tttags.h
 include/freetype2/ttunpat.h
 lib/libfreetype.a
-lib/libfreetype.la
 lib/libfreetype.so
 lib/libfreetype.so.6
 lib/libfreetype.so.6.11.2
