@@ -10,6 +10,9 @@ MASTER_SITES=	http://rplay.doit.org/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network audio player
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 
 USES=		makeinfo
@@ -44,6 +47,7 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librplay.so
 .for file in rplay.conf rplay.helpers rplay.servers rplay.hosts
 	${CP} ${WRKSRC}/etc/${file} ${STAGEDIR}${PREFIX}/etc/${file}.sample
 .endfor
