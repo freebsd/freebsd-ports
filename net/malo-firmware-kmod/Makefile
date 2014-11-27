@@ -11,23 +11,20 @@ DISTNAME=	${FWNAME}
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	Marvell Libertas 88W8335 IEEE 802.11b/g Firmware Kernel Module
 
-LICENSE= 	BSD3CLAUSE
-
 FWNAME=		malo-fw-${FWVERSION}
 FWVERSION=	3.0.0.39
 
-USES=		kmod
+USES=		kmod uidfix
 DRIVERNAME=	malofw
 FIRMS=		malo8335-h:malo8335-m
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
+BUILD_WRKSRC=	${WRKSRC}/${DRIVERNAME}
+INSTALL_WRKSRC=	${WRKSRC}/${DRIVERNAME}
 KMODVERSION=	${FWVERSION:C/^(...)$/\1.0/:S/.//g}
-PLIST_SUB=	DRIVERNAME="${DRIVERNAME}" \
-		KMODDIR="${KMODDIR}"
+PLIST_FILES=	${KMODDIR}/${DRIVERNAME}.ko
 CFLAGS+=	-D_KERNEL
 
 NO_PACKAGE=	This is a modified version of a restricted firmware
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	${MKDIR} ${WRKSRC}/${DRIVERNAME}
@@ -43,13 +40,4 @@ post-patch:
 	${ECHO_CMD} ".include <bsd.kmod.mk>" >> \
 		${WRKSRC}/${DRIVERNAME}/Makefile
 
-do-build:
-	(cd ${WRKSRC}/${DRIVERNAME} && \
-	 ${SETENV} KMODDIR="${KMODDIR}" ${MAKE_CMD} all)
-
-do-install:
-	${MKDIR} ${STAGEDIR}${KMODDIR}
-	cd ${WRKSRC}/${DRIVERNAME}; ${SETENV} KMODDIR="${STAGEDIR}${KMODDIR}" make ${INSTALL}
-	${STRIP_CMD} --strip-unneeded ${STAGEDIR}${KMODDIR}/${DRIVERNAME}.ko
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
