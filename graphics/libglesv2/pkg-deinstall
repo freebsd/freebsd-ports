@@ -7,6 +7,6 @@ PREFIX="${PKG_PREFIX-/usr/local}"
 
 case $2 in
 DEINSTALL)
-	/bin/rm -f ${PREFIX}/lib/libGL.so*
+	/bin/rm -f ${PREFIX}/lib/libGLESv2.so*
 	;;
 esac

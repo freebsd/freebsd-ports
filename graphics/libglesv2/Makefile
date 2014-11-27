@@ -20,9 +20,9 @@ USE_XORG+=	glproto dri2proto xext xdamage xfixes presentproto \
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 
 .if defined(WITH_NEW_MESA)
-LIBGLES_REVISION=	0
+LIBGLES_REVISION=	1
 .else
-LIBGLES_REVISION=	3
+LIBGLES_REVISION=	4
 .endif
 
 .if defined(WITH_NEW_MESA)
@@ -36,9 +36,13 @@ INSTALL_WRKSRC=	${WRKSRC}/src/mapi/es2api
 .if !defined(WITH_NEW_MESA)
 pre-build:
 	@cd ${WRKSRC}/src/mapi/shared-glapi && ${MAKE_CMD} ${_MAKE_JOBS}
-.else
-post-install:
-	@${RM} ${STAGEDIR}/${PREFIX}/lib/libglapi*
 .endif
+
+post-install:
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/.mesa
+	@${MV} ${STAGEDIR}${PREFIX}/lib/libGLESv2.so* \
+		${STAGEDIR}${PREFIX}/lib/.mesa/
 
 .include <bsd.port.mk>

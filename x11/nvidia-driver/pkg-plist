@@ -1,12 +1,12 @@
 bin/nvidia-bug-report.sh
 lib/.nvidia/libGL.so
 lib/.nvidia/libGL.so.1
-lib/libEGL.so
-lib/libEGL.so.1
+lib/.nvidia/libEGL.so
+lib/.nvidia/libEGL.so.1
 lib/libGLESv1_CM.so
 lib/libGLESv1_CM.so.1
-lib/libGLESv2.so
-lib/libGLESv2.so.2
+lib/.nvidia/libGLESv2.so
+lib/.nvidia/libGLESv2.so.2
 lib/libGLcore.so
 lib/libGLcore.so.1
 lib/libXvMCNVIDIA.a
