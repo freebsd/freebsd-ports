@@ -270,7 +270,7 @@ PACKLIST_DIR?=	${PREFIX}/${SITE_ARCH_REL}/auto
 # not wonder what has been ignored by this message "*** Error code 1 (ignored)"
 fix-perl-things:
 # Remove STAGEDIR from .packlist and add the file to the plist.
-	@(set -x; if [ -d ${STAGEDIR}${PACKLIST_DIR} ] ; then \
+	@(if [ -d ${STAGEDIR}${PACKLIST_DIR} ] ; then \
 			cd ${STAGEDIR} ; \
 			find .${PACKLIST_DIR} -name .packlist | while read f ; do \
 					${SED} -i '' 's|^${STAGEDIR}||' "$$f"; \
