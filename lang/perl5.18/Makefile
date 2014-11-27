@@ -205,7 +205,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/sys
 	# h2ph needs perl, but perl is not installed, it's only
 	# staged, so, use the one in WRKDIR 
-	(cd /usr/include && ${ENV} LD_LIBRARY_PATH=${WRKSRC} \
+	(cd /usr/include && ${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
 		${WRKSRC}/perl -I ${WRKSRC}/lib ${STAGEDIR}${PREFIX}/bin/h2ph \
 		-d ${STAGEDIR}${SITE_ARCH} *.h machine/*.h sys/*.h >/dev/null)
 	@${FIND} ${STAGEDIR}${SITE_ARCH} -name '*.ph' | sed -e 's|${STAGEDIR}||' >> ${TMPPLIST}
