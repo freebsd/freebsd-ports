@@ -188,18 +188,16 @@ DESTDIRNAME=	--destdir
 .if ${PORTNAME} != Module-Build
 BUILD_DEPENDS+=	p5-Module-Build>=0.4206:${PORTSDIR}/devel/p5-Module-Build
 .endif
-CONFIGURE_ARGS+=--create_packlist 0
+CONFIGURE_ARGS+=--create_packlist 1
 .endif
 .if ${_USE_PERL5:Mmodbuildtiny}
 .if ${PORTNAME} != Module-Build-Tiny
 BUILD_DEPENDS+=	p5-Module-Build-Tiny>=0.039:${PORTSDIR}/devel/p5-Module-Build-Tiny
 .endif
-CONFIGURE_ARGS+=--create_packlist 0
+CONFIGURE_ARGS+=--create_packlist 1
 .endif
 .elif ${_USE_PERL5:Mconfigure}
-# NO_PACKLIST doesn't do anything before 5.20, but starting at
-# 5.20, it doesn't generate it, so we don't have to remove it.
-CONFIGURE_ARGS+=INSTALLDIRS="site" NO_PACKLIST=1
+CONFIGURE_ARGS+=INSTALLDIRS="site"
 .endif # modbuild
 
 .if ${_USE_PERL5:Mconfigure}
@@ -266,15 +264,17 @@ do-install:
 .endif # ! USES=gmake
 .endif # modbuild
 
+PACKLIST_DIR?=	${PREFIX}/${SITE_ARCH_REL}/auto
+
 # In all those, don't use - before the command so that the user does
 # not wonder what has been ignored by this message "*** Error code 1 (ignored)"
 fix-perl-things:
-# Remove .packlist that can have been generated during installation,
-# and cleanup the directories they're in.
-	@(if [ -d ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto ] ; then \
-			find ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto -name .packlist | while read f ; do \
-					${RM} $${f} ; \
-					${RMDIR} -p $${f%/*} 2>/dev/null || : ; \
+# Remove STAGEDIR from .packlist and add the file to the plist.
+	@(set -x; if [ -d ${STAGEDIR}${PACKLIST_DIR} ] ; then \
+			cd ${STAGEDIR} ; \
+			find .${PACKLIST_DIR} -name .packlist | while read f ; do \
+					${SED} -i '' 's|^${STAGEDIR}||' "$$f"; \
+					${ECHO} $$f >> ${PLIST}; \
 			done \
 	fi) || :
 

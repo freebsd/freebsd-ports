@@ -723,6 +723,7 @@ lib/perl5/%%PERL_VER%%/inc/latest/private.pm
 lib/perl5/%%PERL_VER%%/integer.pm
 lib/perl5/%%PERL_VER%%/less.pm
 lib/perl5/%%PERL_VER%%/locale.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/.packlist
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Concise.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Showlex.pm
@@ -753,6 +754,8 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/iperlsys.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/keywords.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/l1_char_class_tab.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so.%%PERL_VER%%
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so.%%PERL_VERSION%%
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/malloc_ctl.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/metaconfig.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg.h
