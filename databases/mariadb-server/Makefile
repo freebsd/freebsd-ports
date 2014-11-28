@@ -22,7 +22,10 @@ LICENSE=	GPLv2
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
-CONFLICTS?=	mysql[0-9][0-9]-server-* percona[0-9][0-9]-server-* mariadb5.[0-24-9]-server-* mariadb[0-46-9][0-9]-server-*
+CONFLICTS?=	mariadb5[4-9]-server-* \
+		mariadb1[0-9][0-9]-server-* \
+		mysql*-server-* \
+		percona*-server-*
 
 GNU_CONFIGURE=	yes
 USES+=		libtool
