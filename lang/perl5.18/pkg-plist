@@ -2888,6 +2888,6 @@ man/man1/zipdetails.1.gz
 @dir %%SITE_PERL%%/auto
 @dir %%SITE_ARCH%%/auto
 @exec makewhatis %D/%%SITE_PERL%%/man
-@exec makewhatis %D/lib/perl5/%%PERL_VER%%/man
-@rmtry lib/perl5/%%PERL_VER%%/man/whatis
+@exec makewhatis %D/lib/perl5/%%PERL_VER%%/perl/man
+@rmtry lib/perl5/%%PERL_VER%%/perl/man/whatis
 @rmtry %%SITE_PERL%%/man/whatis
