@@ -8,3 +8,13 @@ share/locale/nl/LC_MESSAGES/GalaxyMage.mo
 share/locale/nl/LC_MESSAGES/GalaxyMage.po
 share/locale/sp/LC_MESSAGES/GalaxyMage.mo
 share/locale/sp/LC_MESSAGES/GalaxyMage.pot
+@dir %%DATADIR%%/test/data/core/units
+@dir %%DATADIR%%/test/data/core/textures
+@dir %%DATADIR%%/test/data/core/text
+@dir %%DATADIR%%/test/data/core/sounds
+@dir %%DATADIR%%/test/data/core/scenarios
+@dir %%DATADIR%%/test/data/core/music
+@dir %%DATADIR%%/test/data/core/maps
+@dir %%DATADIR%%/test/data/core/items
+@dir %%DATADIR%%/test/data/core/images
+@dir %%DATADIR%%/test/data/core/fonts
