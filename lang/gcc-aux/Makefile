@@ -56,9 +56,6 @@ BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.100B.tar.bz2
 .  endif
 .endif
 .if ${OPSYS} == DragonFly
-.  if ${OSREL:S/.//} < 37
-MODERN_BINUTILS=	yes
-.  endif
 BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.dragonfly.36A.tar.bz2
 .endif
 
@@ -218,6 +215,11 @@ post-extract:
 	  ${WRKSRC}/gcc/config/dragonfly.h \
 	  ${WRKSRC}/gcc/config/i386/freebsd64.h \
 	  ${WRKSRC}/gcc/config/i386/freebsd.h
+.if defined(MODERN_BINUTILS)
+	# Use dwarf4-compatible addr2line (affects FreeBSD only)
+	${REINPLACE_CMD} -e 's|/usr/bin/addr2line|${PREFIX}/bin/addr2line|g' \
+	  ${WRKSRC}/gcc/ada/traceback_symbolic.c
+.endif
 
 do-configure:
 	${MKDIR} ${BUILDDIR}
