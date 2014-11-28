@@ -49,6 +49,7 @@
     SUBDIR += dlv
     SUBDIR += dmd1
     SUBDIR += dmd2
+    SUBDIR += duktape
     SUBDIR += ecl
     SUBDIR += elan
     SUBDIR += elixir
