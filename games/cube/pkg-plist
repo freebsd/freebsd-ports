@@ -1071,3 +1071,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/pics/octa.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pics/ocull.jpg
 %%PORTDOCS%%%%DOCSDIR%%/readme.html
+@dir %%DATADIR%%/packages/packages
+@dir %%DATADIR%%/packages/models/quad/old
