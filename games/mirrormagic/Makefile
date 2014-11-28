@@ -22,11 +22,6 @@ USE_GCC=	any # doesn't start otherwise (UB?)
 PORTDATA=	*
 PORTDOCS=	*
 
-SCOREDIR=	/var/games/${PORTNAME}
-
-SUB_FILES=	pkg-deinstall pkg-install
-SUB_LIST=	SCOREDIR="${SCOREDIR}"
-
 DESKTOP_ENTRIES="Mirror Magic" \
 		"" \
 		"" \
@@ -62,10 +57,11 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics levels music scores sounds" \
 		${STAGEDIR}${DATADIR}
 	${RMDIR} ${STAGEDIR}${DATADIR}/scores
-	${LN} -s ${SCOREDIR} ${STAGEDIR}${DATADIR}/scores
+	${LN} -s /var/games/${PORTNAME} ${STAGEDIR}${DATADIR}/scores
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CHANGES CREDITS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
+	${MKDIR} ${STAGEDIR}/var/games/${PORTNAME}
 
 .include <bsd.port.mk>
