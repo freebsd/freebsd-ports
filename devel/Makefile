@@ -117,6 +117,8 @@
     SUBDIR += avro-cpp
     SUBDIR += awscli
     SUBDIR += bam
+    SUBDIR += bbfreeze
+    SUBDIR += bbfreeze-loader
     SUBDIR += bcc
     SUBDIR += bcpp
     SUBDIR += beautifyphp
