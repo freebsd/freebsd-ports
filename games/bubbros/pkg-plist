@@ -450,3 +450,4 @@ man/man1/bb.py.1.gz
 %%DATADIR%%/metaserver/pipelayer.py
 %%DATADIR%%/metaserver/socketoverudp.py
 share/pixmaps/bubbros.png
+@dir %%DATADIR%%/bubbob/doc/images
