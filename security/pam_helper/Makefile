@@ -10,8 +10,10 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Authenticate applications requiring PAM services
 
 USES=		tar:bzip2 uidfix
-MAKE_ARGS=	BINOWN=${UID}
 
 PLIST_FILES=	bin/pam_helper
+
+post-patch:
+	@${REINPLACE_CMD} '/BINOWN=/d ; s,$${MINUSLPAM},-lpam,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
