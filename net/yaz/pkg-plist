@@ -10,6 +10,7 @@ bin/yaz-url
 bin/yaz-ztest
 bin/zoomsh
 include/yaz/backend.h
+include/yaz/backtrace.h
 include/yaz/base64.h
 include/yaz/ccl.h
 include/yaz/ccl_xml.h
