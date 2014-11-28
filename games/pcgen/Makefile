@@ -13,32 +13,31 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
-USE_JAVA=	YES
+USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-NO_BUILD=	YES
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-DATAFILES=	batch-convert.jar characters data filepaths.ini lib \
-		logging.properties outputsheets pcgen.jar plugins preview system
 
 SUB_FILES=	pcgen.sh
 
 PLIST_FILES=	bin/pcgen
 PORTDATA=	*
 PORTDOCS=	*
+PLIST_DIRS=	%%DATADIR%%/characters
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 do-install:
-	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} ";"
-	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} "{}" ${STAGEDIR}${DATADIR}/"{}" ";"
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "batch-convert.jar characters data filepaths.ini lib \
+		logging.properties outputsheets pcgen.jar plugins preview system" ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/pcgen.sh ${STAGEDIR}${PREFIX}/bin/pcgen
 .if ${PORT_OPTIONS:MDOCS}
 	cd "${WRKSRC}/docs" && ${COPYTREE_SHARE} . "${STAGEDIR}${DOCSDIR}"
 	${INSTALL_DATA} "${WRKSRC}"/*.html "${STAGEDIR}${DOCSDIR}"
 .endif
-
 
 .include <bsd.port.mk>
