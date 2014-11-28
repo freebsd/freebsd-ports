@@ -1,6 +1,7 @@
 %%DATADIR%%/Plex DLNA Server
 %%DATADIR%%/Plex Media Scanner
 %%DATADIR%%/Plex Media Server
+%%DATADIR%%/Plex_Media_Server
 %%DATADIR%%/Resources/Graphics/DefaultAlbumCover.png
 %%DATADIR%%/Resources/Graphics/actor-icon.png
 %%DATADIR%%/Resources/Graphics/album-fanart.jpg
@@ -3030,3 +3031,24 @@
 %%DATADIR%%/libxslt.so.2
 %%DATADIR%%/libz.so.1
 %%DATADIR%%/libzen.so.0
+@dir %%DATADIR%%/Resources/English.lproj
+@dir %%DATADIR%%/Resources/Python/lib/python2.7/bsddb
+@dir %%DATADIR%%/Resources/Python/lib/python2.7/distutils
+@dir %%DATADIR%%/Resources/Python/lib/python2.7/email/test
+@dir %%DATADIR%%/Resources/Python/lib/python2.7/idlelib
+@dir %%DATADIR%%/Resources/Python/lib/python2.7/lib-tk
+@dir %%DATADIR%%/Resources/Python/lib/python2.7/test
+@dir %%DATADIR%%/Resources/locale/ar/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/cs-CZ/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/da/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/de/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/en/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/es/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/fr/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/he/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/it/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/lt/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/nl/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/nl-BE/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/no/LC_MESSAGES
+@dir %%DATADIR%%/Resources/locale/pt-BR/LC_MESSAGES
