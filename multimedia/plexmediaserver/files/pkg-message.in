@@ -1,0 +1,15 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+multimedia/%%PORTNAME%% includes an RC script:
+%%PREFIX%%/etc/rc.d/%%PORTNAME%%
+
+TO START PLEXMEDIASERVER ON BOOT:
+sysrc %%PORTNAME%%_enable=YES
+
+START MANUALLY:
+service %%PORTNAME%% start
+
+Once started, visit the following to configure:
+http://localhost:32400/web
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
