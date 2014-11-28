@@ -1,6 +1,7 @@
 %%DATADIR%%/Plex DLNA Server
 %%DATADIR%%/Plex Media Scanner
 %%DATADIR%%/Plex Media Server
+%%DATADIR%%/Plex_Media_Server
 %%DATADIR%%/Resources/Graphics/DefaultAlbumCover.png
 %%DATADIR%%/Resources/Graphics/actor-icon.png
 %%DATADIR%%/Resources/Graphics/album-fanart.jpg
