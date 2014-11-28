@@ -3,19 +3,20 @@
 
 PORTNAME=	plexmediaserver
 PORTVERSION?=	0.9.11.4.739
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.plexapp.com/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
 DISTNAME=	PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}-freebsd-${ARCH}
 
-MAINTAINER=	feld@FreeBSD.org
-COMMENT=	The Plex Media Server component
+MAINTAINER?=	feld@FreeBSD.org
+COMMENT=	Plex Media Server component
 
 USES=	tar:bzip2
 PLEX_BUILD?=	a4e710f
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}
 
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR?=	${PORTNAME}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} DATADIR=${DATADIR} USERS=${USERS} GROUPS=${GROUPS}
