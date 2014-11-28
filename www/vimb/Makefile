@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vimb
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.8
 CATEGORIES=	www
 
 MAINTAINER=	mike.d.ft402@gmail.com
@@ -12,7 +11,7 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fanglingsu
-GH_COMMIT=	74fb0a8
+GH_COMMIT=	c642901
 PLIST_FILES=	bin/vimb man/man1/vimb.1.gz
 
 USES=		gmake pkgconfig
