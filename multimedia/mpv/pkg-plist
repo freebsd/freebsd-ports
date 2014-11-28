@@ -1,9 +1,10 @@
 bin/mpv
 %%ETCDIR%%/encoding-profiles.conf
 include/mpv/client.h
+include/mpv/qthelper.hpp
 lib/libmpv.so
 lib/libmpv.so.1
-lib/libmpv.so.1.5.0
+lib/libmpv.so.1.10.0
 libdata/pkgconfig/mpv.pc
 man/man1/mpv.1.gz
 share/applications/mpv.desktop
