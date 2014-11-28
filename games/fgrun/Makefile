@@ -10,6 +10,8 @@ MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAG
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Graphical frontend to run FlightGear Flight Simulator
 
+BROKEN=		checksum mismatch (PR 195277)
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
