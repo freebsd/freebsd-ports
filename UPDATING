@@ -9,6 +9,26 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of lang/perl5.*
   AUTHOR: mat@FreeBSD.org
 
+  There was a nasty bug introduced in the update below, it was introduced in
+  svn revision 373476 and corrected in 373485.  If you get errors looking like
+  this one:
+
+  ===>   Registering installation for p5-Params-Util-1.07_1 as automatic
+  pkg-static: lstat(/usr/ports/devel/p5-Params-Util/work/stage/usr/local/./usr/local/lib/perl5/site_perl/mach/5.16/auto/Params/Util/.packlist): No such file or directory
+  *** [fake-pkg] Error code 74
+
+  You will have to wipe your ports tree clean.  If using portsnap, with:
+
+    portsnap extract
+
+  If using subversion:
+
+    svn revert -R
+
+20141127:
+  AFFECTS: users of lang/perl5.*
+  AUTHOR: mat@FreeBSD.org
+
   The .packlist files are back, if you upgraded all your p5- ports yesterday
   and need them, you will need to reinstall them again, see yesterday's update
   for instructions.
