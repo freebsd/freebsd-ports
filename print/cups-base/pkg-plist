@@ -13,9 +13,7 @@
 @sample %%ETCDIR%%/mime.convs.sample
 @sample %%ETCDIR%%/mime.types.sample
 @sample %%ETCDIR%%/snmp.conf.sample
-%%PAM%%@unexec if cmp -s %D/etc/pam.d/cups.default %D/etc/pam.d/cups; then rm -f %D/etc/pam.d/cups ; fi
-%%PAM%%etc/pam.d/cups.default
-%%PAM%%@exec if [ ! -f %D/etc/pam.d/cups ] ; then cp -p %D/%F %B/cups; fi
+%%PAM%%@sample etc/pam.d/cups.sample
 bin/cancel
 bin/cupstestdsc
 bin/cupstestppd
@@ -34,7 +32,6 @@ bin/ppdhtml
 bin/ppdi
 bin/ppdmerge
 bin/ppdpo
-etc/cups/cupsd.conf.default
 include/cups/cgi.h
 include/cups/help-index.h
 include/cups/mime.h
@@ -1014,6 +1011,7 @@ share/locale/ru/cups_ru.po
 @dir etc/cups/interfaces
 @dir etc/cups/ppd
 @dir etc/cups/ssl
+@dir etc/pam.d
 @dir(,cups,) etc/cups
 @dir libexec/cups/driver
 @dir %%DATADIR%%/model
