@@ -2,7 +2,7 @@
 
 PORTNAME=	postgresql
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP \
 		http://python.projects.postgresql.org/files/
@@ -15,7 +15,7 @@ COMMENT=	Python 3 compatible PostgreSQL database driver and tools
 
 LICENSE=	BSD3CLAUSE
 
-USES=			zip pgsql python:3
+USES=		zip pgsql python:3.3+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
