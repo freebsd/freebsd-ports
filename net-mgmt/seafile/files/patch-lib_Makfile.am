@@ -1,5 +1,14 @@
---- lib/Makefile.am.orig	2014-08-30 02:00:00.097346044 -0400
-+++ lib/Makefile.am	2014-08-30 02:00:10.951213463 -0400
+--- lib/Makefile.am.orig	2014-11-11 10:47:33.631976054 -0500
++++ lib/Makefile.am	2014-11-11 11:40:14.030311321 -0500
+@@ -55,7 +55,7 @@
+ libseafile_common_la_LDFLAGS = -no-undefined
+ libseafile_common_la_LIBADD = @GLIB2_LIBS@  @GOBJECT_LIBS@ -lssl -lcrypto @LIB_GDI32@ \
+ 				     @LIB_UUID@ @LIB_WS32@ @LIB_PSAPI@ -lsqlite3 \
+-					 -levent @SEARPC_LIBS@ @LIB_SHELL32@ \
++					 -levent -lkvm @SEARPC_LIBS@ @LIB_SHELL32@ \
+ 	@ZLIB_LIBS@
+ 
+ searpc_gen = searpc-signature.h searpc-marshal.h
 @@ -72,8 +72,4 @@
  	rm -f $(top_srcdir)/lib/rpc_table.pyc
  

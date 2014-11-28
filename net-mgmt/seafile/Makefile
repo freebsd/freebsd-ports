@@ -2,6 +2,7 @@
 
 PORTNAME=	seafile
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	yan_jingfeng@yahoo.com
@@ -15,7 +16,6 @@ LIB_DEPENDS=	libsearpc.so:${PORTSDIR}/devel/libsearpc \
 		libzdb.so:${PORTSDIR}/databases/libzdb \
 		libcrypto.so:${PORTSDIR}/security/openssl \
 		libarchive.so.13:${PORTSDIR}/archivers/libarchive \
-		libfuse.so:${PORTSDIR}/sysutils/fusefs-libs \
 		libinotify.so:${PORTSDIR}/devel/libinotify \
 		libccnet.so:${PORTSDIR}/net-mgmt/ccnet
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestinfo \
@@ -45,13 +45,32 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=		FUSE RIAK
+OPTIONS_SUB=		yes
+
+FUSE_DESC=		Use file system in userspace
+RIAK_DESC=		Use distributed noSQL database
+
+FUSE_CONFIGURE_ENABLE=	fuse
+FUSE_LIB_DEPENDS=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
+
+RIAK_CONFIGURE_ENABLE=	riak
+RIAK_RUN_DEPENDS=	riak:${PORTSDIR}/databases/riak
+
+OPTIONS_DEFAULT=FUSE
+.if defined(DFLYVERSION)
+OPTIONS_DEFAULT=
+.endif
+
 post-install:
 	@${MKDIR} ${SEABIN} \
 		${STAGEDIR}${WWWDIR}/seafile/share/doc/seafile \
 		${STAGEDIR}${WWWDIR}/upgrade
 .for SERVPROG in fileserver seaf-fsck seafserv-gc seaf-fuse seaf-migrate \
 	seaf-server seaf-server-init seafile-controller seafserv-tool
-	${LN} ${STAGEDIR}${PREFIX}/bin/${SERVPROG} ${SEABIN}
+	if [ -e "${STAGEDIR}${PREFIX}/bin/${SERVPROG}" ]; then \
+		${LN} ${STAGEDIR}${PREFIX}/bin/${SERVPROG} ${SEABIN}; \
+	fi
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][yh] ${STAGEDIR}${WWWDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/upgrade/*.[ps][yh] \
