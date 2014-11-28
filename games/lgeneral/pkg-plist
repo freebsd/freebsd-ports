@@ -216,3 +216,6 @@ share/applications/lgeneral.desktop
 %%NLS%%share/locale/en/LC_MESSAGES/lgeneral.mo
 %%NLS%%share/locale/en/LC_MESSAGES/pg.mo
 share/pixmaps/lgeneral48.png
+@dir %%DATADIR%%/terrain
+@dir %%DATADIR%%/music
+@dir %%DATADIR%%/ai_modules
