@@ -379,6 +379,7 @@
     SUBDIR += libtextcat
     SUBDIR += libtranslate
     SUBDIR += libtre
+    SUBDIR += libucl
     SUBDIR += libunibreak
     SUBDIR += libuninameslist
     SUBDIR += libvisio
