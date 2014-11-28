@@ -1,8 +1,8 @@
-@group games
-@mode 2555
-bin/powermanga
-@mode
-@group
+@(,games,2555) bin/powermanga
 man/man6/powermanga.6.gz
 share/applications/powermanga.desktop
 share/pixmaps/powermanga.xpm
+@sample(,games,664) /var/games/powermanga/powermanga.hi.sample
+@sample(,games,664) /var/games/powermanga/powermanga.hi-easy.sample
+@sample(,games,664) /var/games/powermanga/powermanga.hi-hard.sample
+@dir /var/games/powermanga
