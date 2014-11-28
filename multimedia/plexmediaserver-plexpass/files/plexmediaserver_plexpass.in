@@ -25,7 +25,7 @@ rcvar=%%PORTNAME%%_enable
 load_rc_config $name
 
 : ${%%PORTNAME%%_enable:=NO}
-: ${%%PORTNAME%%_support_path="%%PREFIX%%/plexdata"}
+: ${%%PORTNAME%%_support_path="%%PREFIX%%/plexdata-plexpass"}
 : ${%%PORTNAME%%_user="%%USERS%%"}
 : ${%%PORTNAME%%_group="%%GROUPS%%"}
 : ${%%PORTNAME%%_maxplugins=6}
