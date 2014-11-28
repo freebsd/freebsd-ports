@@ -1118,6 +1118,7 @@
     SUBDIR += libpthread-stubs
     SUBDIR += libqcow
     SUBDIR += libqxt
+    SUBDIR += libr3
     SUBDIR += librcc
     SUBDIR += librcd
     SUBDIR += libreadline-java
