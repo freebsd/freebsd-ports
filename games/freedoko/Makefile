@@ -52,5 +52,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/../doc/manual && ${FIND} . | \
 		${CPIO} --quiet -pdum ${STAGEDIR}${DOCSDIR}
+	@${RMDIR} ${STAGEDIR}${DOCSDIR}/de/pictures
 
 .include <bsd.port.mk>
