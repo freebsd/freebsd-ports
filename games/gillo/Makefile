@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Players are cars throwing a magnetic fuzzy ball into a goal
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${JAM}:${PORTSDIR}/devel/jam \
 		${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
