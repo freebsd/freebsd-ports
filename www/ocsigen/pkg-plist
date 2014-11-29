@@ -1,8 +1,6 @@
 bin/ocsigenserver
 bin/ocsigenserver.opt
-@unexec if cmp -s %D/etc/ocsigenserver.conf.sample %D/etc/ocsigenserver.conf; then rm -f %D/etc/ocsigenserver.conf; fi
-etc/ocsigenserver.conf.sample
-@exec if [ ! -f %D/etc/ocsigenserver.conf ] ; then cp -p %D/%F %B/ocsigenserver.conf; fi
+@sample etc/ocsigenserver.conf.sample
 etc/mime.types
 man/man1/ocsigenserver.1.gz
 share/ocsigen/www/index.html
@@ -30,9 +28,4 @@ share/ocsigen/www/ocsigenstuff/txt.png
 share/ocsigen/www/ocsigenstuff/unknown.png
 share/ocsigen/www/ocsigenstuff/video.png
 share/ocsigen/www/ocsigenstuff/style.css
-@dirrm %%OCAML_SITELIBDIR%%/ocsigenserver/extensions
-@dirrm share/ocsigen/www/ocsigenstuff
-@dirrm share/ocsigen/www
-@dirrm share/ocsigen
-@dirrmtry var/ocsigen
-@dirrmtry var
+@dir var/ocsigen

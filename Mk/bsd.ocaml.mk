@@ -130,7 +130,6 @@ ocaml-findlib:
 	@${FIND} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${DIR}/ -type f -print | ${SED} -e \
 		's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 .   endif
-	@${ECHO_CMD} "@dirrmtry ${OCAML_SITELIBDIR}/${DIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${OCAMLFIND} remove ${DIR} 2>/dev/null" \
 		>> ${TMPPLIST}
 .  endfor
@@ -155,10 +154,8 @@ ocaml-ldconfig:
 .if defined(USE_OCAML_WASH)
 . if !target(ocaml-wash)
 ocaml-wash:
-	@${ECHO_CMD} "@dirrmtry ${OCAML_SITELIBDIR}" >> ${TMPPLIST}
 #	If ld.conf is empty
-	@${ECHO_CMD} "@rmtry ${OCAML_LDCONF}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry ${OCAML_LIBDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec if [ ! -s %D/${OCAML_LDCONF} ]; then ${RM} -f %D/${OCAML_LDCONF}; fi || true" >> ${TMPPLIST}
 . endif
 .endif
 
@@ -175,25 +172,6 @@ ocaml-ldconfig:
 .if !target(ocaml-wash)
 ocaml-wash:
 	@${DO_NADA}
-.endif
-
-#
-# XXX: temporary workaround for non-standard PREFIX
-#
-.if !target(add-plist-post)
-add-plist-post:
-. if (${PREFIX} != ${LOCALBASE} && \
-	${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
-	@${ECHO_CMD} "@dirrmtry ${PREFIX}" >> ${TMPPLIST}
-. else
-	@${DO_NADA}
-. endif
-
-# If we are using PORTDOCS macro port cannot delete OCAML_DOCSDIR, so
-# we shoud try to accomodate it
-. if defined(PORTDOCS)
-	@${ECHO_CMD} "@dirrmtry ${OCAML_DOCSDIR}" >> ${TMPPLIST}
-. endif
 .endif
 
 .endif #!defined(OCAML_include)

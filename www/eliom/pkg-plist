@@ -16,9 +16,3 @@ share/eliom/destillery/basic/PROJECT_NAME.conf.in
 share/eliom/destillery/basic/PROJECT_NAME.eliom
 share/eliom/destillery/basic/README
 share/eliom/destillery/basic/static!css!PROJECT_NAME.css
-@dirrm share/eliom/destillery/basic
-@dirrm share/eliom/destillery
-@dirrm share/eliom
-@dirrm %%OCAML_SITELIBDIR%%/eliom/syntax
-@dirrm %%OCAML_SITELIBDIR%%/eliom/server
-@dirrm %%OCAML_SITELIBDIR%%/eliom/client

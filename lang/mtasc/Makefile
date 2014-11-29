@@ -62,5 +62,7 @@ do-install:
 	${INSTALL_DATA}	${WRKSRC}/mtasc/doc/*.txt ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKSRC}/mtasc/doc/HelloWorld.as ${STAGEDIR}${EXAMPLESDIR}
+# Remove orphan dir created by bsd.ocaml.mk
+	-@${RMDIR} -p ${STAGEDIR}${OCAMLFIND_DESTDIR}
 
 .include <bsd.port.mk>
