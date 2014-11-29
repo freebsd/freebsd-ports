@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiawatha
-PORTVERSION=	9.7
+PORTVERSION=	9.8
 CATEGORIES=	www
 MASTER_SITES=	SF/fbsdports/hiawatha/
 
