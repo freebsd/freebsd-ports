@@ -419,7 +419,6 @@
     SUBDIR += xporthdmv
     SUBDIR += xtheater
     SUBDIR += xvid
-    SUBDIR += y4mscaler
     SUBDIR += yamdi
     SUBDIR += zoneminder
 

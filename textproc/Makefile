@@ -1287,7 +1287,6 @@
     SUBDIR += rtfx
     SUBDIR += rubber
     SUBDIR += ruby-deplate
-    SUBDIR += ruby-diff
     SUBDIR += ruby-escape
     SUBDIR += ruby-format
     SUBDIR += ruby-htmlrepair

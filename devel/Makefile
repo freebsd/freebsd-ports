@@ -466,7 +466,6 @@
     SUBDIR += frama-c
     SUBDIR += freeocl
     SUBDIR += frink
-    SUBDIR += fsmgenerator
     SUBDIR += ftjam
     SUBDIR += ftnchek
     SUBDIR += fuel
@@ -4334,7 +4333,6 @@
     SUBDIR += rubygem-default_value_for
     SUBDIR += rubygem-delayed_job
     SUBDIR += rubygem-delayer
-    SUBDIR += rubygem-dep_selector
     SUBDIR += rubygem-deprecated
     SUBDIR += rubygem-deprecated2
     SUBDIR += rubygem-descendants_tracker
