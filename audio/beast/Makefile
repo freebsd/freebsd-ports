@@ -22,7 +22,8 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 OPTIONS_DEFINE=		DEBUG
 OPTIONS_DEFINE_i386=	SSE
 
-USES=		tar:bzip2 desktop-file-utils gmake gettext pathfix pkgconfig shared-mime-info libtool
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig shared-mime-info shebangfix tar:bzip2
+SHEBANG_FILES=	autotools/intltool-merge
 USE_GCC=	yes
 USE_GNOME=	gnomehier libgnomecanvas
 GNU_CONFIGURE=	yes

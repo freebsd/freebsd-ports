@@ -13,10 +13,11 @@ COMMENT=	WAD file editor, for games like Doom and Hexen
 
 LICENSE=	GPLv2
 
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" PREFIX="${PREFIX}"
 USE_PERL5=	build
+SHEBANG_FILES=	scripts/copyright scripts/youngest
 USE_XORG=	x11
 MAKEFILE=	GNUmakefile
 SUB_FILES=	pkg-message

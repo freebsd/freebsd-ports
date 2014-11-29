@@ -26,7 +26,8 @@ DATADIR=	${PREFIX}/share/games/xboard
 DOCSDIR=	${PREFIX}/share/doc/xboard
 XBOARDCONF=	${WRKSRC}/xboard.conf.in
 
-USES+=	gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	texi2man
 USE_AUTOTOOLS=	automake aclocal
 
 INSTALL_TARGET=	install-strip

@@ -11,7 +11,6 @@ man/man6/yadex.6.gz
 %%DATADIR%%/hexen.ygd
 %%DATADIR%%/strife.ygd
 %%DATADIR%%/strife10.ygd
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/002f2f.png
 %%PORTDOCS%%%%DOCSDIR%%/E1.png
@@ -54,4 +53,3 @@ man/man6/yadex.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/wad_specs.html
 %%PORTDOCS%%%%DOCSDIR%%/yadex1.png
 %%PORTDOCS%%%%DOCSDIR%%/ygd.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
