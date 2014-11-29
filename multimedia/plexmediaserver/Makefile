@@ -3,7 +3,7 @@
 
 PORTNAME=	plexmediaserver
 PORTVERSION?=	0.9.11.4.739
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.plexapp.com/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
 DISTNAME=	PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}-freebsd-${ARCH}
@@ -25,6 +25,7 @@ USERS=	plex
 GROUPS=	${USERS}
 BUNDLE_LIBS=	yes
 
+ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	It is a binary-only program. Source code not available.
 
 .include <bsd.port.pre.mk>

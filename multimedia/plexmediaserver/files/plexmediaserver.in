@@ -38,14 +38,14 @@ pidfile=/var/run/plex/plex.pid
 
 plex_precmd()
 {
-	export SUPPORT_PATH="${plexmediaserver_support_path}"
-	export HOME="${plexmediaserver_support_path}/Plex Media Server"
+	export SUPPORT_PATH="${%%PORTNAME%%_support_path}"
+	export HOME="${%%PORTNAME%%_support_path}/Plex Media Server"
 	export PYTHONHOME="%%DATADIR%%/Resources/Python"
 	export SCRIPTPATH="%%DATADIR%%"
 	export LD_LIBRARY_PATH="${SCRIPTPATH}"
 	export PLEX_MEDIA_SERVER_HOME="${SCRIPTPATH}"
-	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${plexmediaserver_maxplugins}
-	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${plexmediaserver_support_path}
+	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${%%PORTNAME%%_maxplugins}
+	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${%%PORTNAME%%_support_path}
 	export PLEX_MEDIA_SERVER_PIDFILE=${pidfile}
 	export PATH="${SCRIPTPATH}/Resources/Python/bin:${PATH}"
 	export LC_ALL="C"
@@ -53,16 +53,16 @@ plex_precmd()
 	ulimit -s 3000
 
 	if [ ! -d ${pidfile%/*} ]; then
-		install -d -o ${plexmediaserver_user} ${pidfile%/*};
+		install -d -o ${%%PORTNAME%%_user} ${pidfile%/*};
 	fi
 	
-	if [ ! -d "${plexmediaserver_support_path}/Plex Media Server" ]; then
-		install -d -g ${plexmediaserver_group} -o ${plexmediaserver_user} "${plexmediaserver_support_path}/Plex Media Server";
+	if [ ! -d "${%%PORTNAME%%_support_path}/Plex Media Server" ]; then
+		install -d -g ${%%PORTNAME%%_group} -o ${%%PORTNAME%%_user} "${%%PORTNAME%%_support_path}/Plex Media Server";
 	fi
 	
-	if [ ${plexmediaserver_tmp} ]; then 
-		export TMPDIR=${plexmediaserver_tmp};
-		install -d -g ${plexmediaserver_group} -o ${plexmediaserver_user} "${plexmediaserver_tmp}";
+	if [ ${%%PORTNAME%%_tmp} ]; then 
+		export TMPDIR=${%%PORTNAME%%_tmp};
+		install -d -g ${%%PORTNAME%%_group} -o ${%%PORTNAME%%_user} "${%%PORTNAME%%_tmp}";
 	fi
 }
 
