@@ -55,3 +55,4 @@ share/icons/hicolor/48x48/apps/sublime_text.png
 %%DATADIR%%/Pristine Packages/YAML.sublime-package
 %%DATADIR%%/sublime_plugin.py
 %%DATADIR%%/sublime_text
+%%DATADIR%%/lib/python26.zip
