@@ -16,12 +16,14 @@ X11_DESC=	X11/GTK support
 RPLAY_DESC=	rplay audio support
 SOX_DESC=	Sox audio support
 
-WANT_GNOME=	yes
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+
 USE_LDCONFIG=	yes
 
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	X11="@comment "
@@ -35,10 +37,6 @@ LDFLAGS+=	-L../compface -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-imap --enable-pop \
 		--enable-name-unknown --with-spooldir=/var/mail \
 		--with-facedir=${DATADIR}
-.endif
-
-.if ! ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=--disable-nls
 .endif
 
 .ifdef WITH_NAS
@@ -98,4 +96,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

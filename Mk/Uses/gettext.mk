@@ -1,30 +1,21 @@
 # $FreeBSD$
 #
-# handle dependency on the gettext (libintl) port
+# Sets a library dependency on gettext-runtime and a build dependency
+# on gettext-tools.  Same as "USES=gettext-runtime gettext-tools".
 #
 # Feature:	gettext
-# Usage:	USES=gettext or USES=gettext:ARGS
-# Valid ARGS:	build, run, lib (default, implicit)
+# Usage:	USES=gettext
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER:	portmgr@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GETTEXT_MK)
 _INCLUDE_USES_GETTEXT_MK=	yes
 
-_GETTEXT_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
-
-.if empty(gettext_ARGS)
-gettext_ARGS=	lib
+.if !empty(gettext_ARGS)
+IGNORE=		USES=gettext does not take arguments
 .endif
 
-.if ${gettext_ARGS} == "build"
-BUILD_DEPENDS+=	${_GETTEXT_DEPENDS}
-.elif ${gettext_ARGS} == "run"
-RUN_DEPENDS+=	${_GETTEXT_DEPENDS}
-.elif ${gettext_ARGS} == "lib"
-LIB_DEPENDS+=	libintl.so:${PORTSDIR}/devel/gettext
-.else
-IGNORE=	USES=gettext - invalid args: [${gettext_ARGS}] specified
-.endif
+.include "${USESDIR}/gettext-runtime.mk"
+.include "${USESDIR}/gettext-tools.mk"
 
 .endif

@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-engine
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	Murrine GTK+ 2.x cairo based engine
 
-USES=		gmake libtool pkgconfig tar:xz
+USES=		gettext gmake libtool pkgconfig tar:xz
 USE_XORG=	pixman
 USE_GNOME=	gtk20 intltool intlhack
 USE_LDCONFIG=	yes

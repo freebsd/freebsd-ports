@@ -12,7 +12,7 @@ COMMENT=	KDE icon editor
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USES=		cmake tar:bzip2
+USES=		cmake gettext tar:bzip2
 
 EXTRA_VER=	4.4.0
 

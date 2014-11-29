@@ -1,5 +1,6 @@
 bin/mecab
 bin/mecab-config
+@sample etc/mecabrc.sample
 include/mecab.h
 lib/libmecab.a
 lib/libmecab.so
@@ -11,4 +12,3 @@ libexec/mecab/mecab-dict-index
 libexec/mecab/mecab-system-eval
 libexec/mecab/mecab-test-gen
 man/man1/mecab.1.gz
-@sample etc/mecabrc.sample

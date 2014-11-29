@@ -52,17 +52,13 @@
 
 .if !defined(_INCLUDE_USES_AUTORECONF_MK)
 _INCLUDE_USES_AUTORECONF_MK=	yes
-_USES_POST+=		autoreconf
+_USES_POST+=	autoreconf
 
 BUILD_DEPENDS+=	autoconf-2.69:${PORTSDIR}/devel/autoconf \
 		autoheader-2.69:${PORTSDIR}/devel/autoconf \
 		autoreconf-2.69:${PORTSDIR}/devel/autoconf \
 		aclocal-1.14:${PORTSDIR}/devel/automake \
 		automake-1.14:${PORTSDIR}/devel/automake
-
-.if ${USES:Mgettext} && empty(gettext_ARGS:Mrun)
-BUILD_DEPENDS+=	autopoint:${PORTSDIR}/devel/gettext
-.endif
 
 .if ${USES:Mlibtool} && empty(libtool_ARGS:Mbuild)
 BUILD_DEPENDS+=	libtoolize:${PORTSDIR}/devel/libtool

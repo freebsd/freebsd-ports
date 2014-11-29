@@ -14,7 +14,7 @@ COMMENT=	GNOME 3 users guide
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 GNU_CONFIGURE=	yes
-USES=		gettext:build gmake pathfix tar:xz
+USES=		gettext-tools gmake pathfix tar:xz
 USE_GNOME=	gnomeprefix libxml2:build
 
 .include <bsd.port.mk>

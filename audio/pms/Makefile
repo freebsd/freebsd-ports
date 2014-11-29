@@ -13,7 +13,7 @@ COMMENT=	ncurses-based client for the Music Player Daemon
 
 LICENSE=	GPLv3
 
-USES=		pkgconfig tar:bzip2
+USES=		gettext pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
@@ -21,7 +21,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/pms.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	REGEX
 

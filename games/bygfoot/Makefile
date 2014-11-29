@@ -18,10 +18,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USES=		pkgconfig tar:bzip2
+USES=		gettext pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm
+LIBS+=		-L${LOCALBASE}/lib -lm
 
 .include <bsd.port.mk>

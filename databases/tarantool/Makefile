@@ -14,7 +14,7 @@ LICENSE=	BSD
 
 TR_REV=		102-g2857a4e
 MAKE_JOBS_UNSAFE=yes
-USES=		cmake gettext:build gmake iconv perl5 compiler:c++11-lang
+USES=		cmake gettext gmake iconv perl5 compiler:c++11-lang
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message

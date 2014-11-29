@@ -14,7 +14,7 @@ LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection
-USES=		gmake libtool pathfix pkgconfig python:2
+USES=		gettext gmake libtool pathfix pkgconfig python:2
 USE_LDCONFIG=	yes
 USE_GNOME=	intlhack introspection
 CPPFLAGS+=	-I${LOCALBASE}/include

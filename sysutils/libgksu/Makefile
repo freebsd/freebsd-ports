@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 RUN_DEPENDS=	xauth:${PORTSDIR}/x11/xauth \
 		sudo:${PORTSDIR}/security/sudo
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 gconf2
 USE_LDCONFIG=	yes
 USE_XORG=	x11

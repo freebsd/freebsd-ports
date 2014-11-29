@@ -3,7 +3,7 @@
 
 PORTNAME=	froxlor
 PORTVERSION=	0.9.32
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -105,7 +105,7 @@ MYSQLS_USE=	MYSQL=server
 
 PCNTL_USE=	PHP=pcntl
 
-NLS_USES=	gettext:run
+NLS_USES=	gettext-runtime:run
 NLS_USE=	PHP=gettext
 
 .include <bsd.port.options.mk>

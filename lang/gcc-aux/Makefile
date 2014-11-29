@@ -136,7 +136,7 @@ APPLY_DIFFS+=	gcc-testsuite
 .endif
 
 .if ${PORT_OPTIONS:MNLS} && !${PORT_OPTIONS:MBOOTSTRAP}
-USES+=	gettext:build
+USES+=		gettext-tools
 EXTRA_CONFIG+=	--enable-nls
 .else
 EXTRA_CONFIG+=	--disable-nls

@@ -71,6 +71,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk2
 .if ${WXGTK_FLAVOR:M*-common} != ""
 NO_BUILD=	yes
 INSTALL_TARGET=	install-common
+USES+=		gettext-tools
 .else
 USE_LDCONFIG=	yes
 .endif # *-common

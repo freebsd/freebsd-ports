@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig tar:xz
+USES=		gettext-tools gmake pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-icon-mapping

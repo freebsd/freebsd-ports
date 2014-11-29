@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/ico
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack
-USES+=		pathfix gmake pkgconfig
+USES+=		gettext-tools gmake pathfix pkgconfig
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

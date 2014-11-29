@@ -8,7 +8,7 @@ MASTER_SITES=	KDE/unstable/${PORTNAME}/src/
 MAINTAINER=	yurkis@gmail.com
 COMMENT=	Fullscreen launcher with content organized in tabs
 
-USES=		cmake compiler:c++0x tar:bzip2
+USES=		cmake compiler:c++0x gettext tar:bzip2
 USE_KDE4=	kdelibs kdeprefix automoc4 workspace
 USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui
 USE_XORG=	x11

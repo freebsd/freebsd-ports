@@ -24,7 +24,7 @@ RUN_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		toolame:${PORTSDIR}/audio/toolame
 
-USES=		pkgconfig scons tar:bzip2
+USES=		gettext pkgconfig scons tar:bzip2
 USE_GCC=	any
 INSTALLS_ICONS=	yes
 

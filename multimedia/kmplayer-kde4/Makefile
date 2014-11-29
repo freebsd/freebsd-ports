@@ -19,7 +19,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libcairo.so:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-USES=		cmake pkgconfig tar:bzip2
+USES=		cmake gettext pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdelibs kdeprefix

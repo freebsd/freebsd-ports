@@ -19,7 +19,7 @@ LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2 \
 
 CONFLICTS=	sol-*
 
-USES=		desktop-file-utils gmake pathfix pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gconf2 gtk30 intlhack librsvg2 libxml2:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-card-theme-formats=svg \

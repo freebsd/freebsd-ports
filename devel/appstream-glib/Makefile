@@ -4,6 +4,7 @@
 
 PORTNAME=	appstream-glib
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	devel
 DIST_SUBDIR=	gnome3
 
@@ -20,8 +21,8 @@ GH_PROJECT=	appstream-glib
 GH_COMMIT=      f4f3230
 GH_TAGNAME=	${GH_COMMIT}
 
-USES=		autoreconf:build gmake libtool pathfix pkgconfig
-USE_GNOME=	gdkpixbuf2 glib20 gtk30 intlhack
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	gdkpixbuf2 glib20 gtk30
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
@@ -42,6 +43,8 @@ post-patch:
 		${WRKSRC}/configure.ac
 
 pre-configure:
-	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh
+	(cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh)
+	${REINPLACE_CMD} 's/DATADIRNAME=lib/DATADIRNAME=share/' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

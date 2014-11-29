@@ -13,7 +13,7 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 		libpodofo.so:${PORTSDIR}/graphics/podofo
 
-USES=		cmake:outsource tar:bzip2
+USES=		cmake:outsource gettext tar:bzip2
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 

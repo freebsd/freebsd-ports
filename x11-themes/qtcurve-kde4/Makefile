@@ -11,7 +11,7 @@ DISTNAME=	QtCurve-KDE4-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QtCurve KDE4 widget style
 
-USES=		cmake tar:bzip2
+USES=		cmake gettext-tools tar:bzip2
 USE_QT4=	qmake_build uic_build moc_build rcc_build
 USE_KDE4=	kdelibs workspace kdehier kdeprefix automoc4
 

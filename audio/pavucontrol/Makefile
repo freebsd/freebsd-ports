@@ -3,7 +3,7 @@
 
 PORTNAME=	pavucontrol
 PORTVERSION=	0.9.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -15,9 +15,11 @@ LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 		libcanberra.so:${PORTSDIR}/audio/libcanberra
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gettext gmake pkgconfig
 USE_GNOME=	intltool
 
 CONFIGURE_ARGS=	--disable-lynx
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

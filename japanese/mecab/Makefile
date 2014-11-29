@@ -16,9 +16,7 @@ LICENSE_COMB=	multi
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_stdcpp_main=no
 INSTALL_TARGET=	install-strip
-USES=		iconv gettext:build libtool perl5
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtoolize
-AUTOMAKE_ARGS=	--add-missing --copy --force
+USES=		gettext-tools iconv libtool perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
@@ -30,18 +28,18 @@ PORTDOCS=	AUTHORS README *.html
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's/-O3/${CFLAGS}/' ${WRKSRC}/${CONFIGURE_SCRIPT}.in
-	${REINPLACE_CMD} -e 's/conf_DATA = mecabrc/conf_DATA = mecabrc.sample/' ${WRKSRC}/Makefile.am
-
-post-configure:
-	${CP} ${WRKSRC}/mecabrc ${WRKSRC}/mecabrc.sample
-
-pre-install:
-	${CHMOD} a+x ${WRKSRC}/install-sh
+	@${REINPLACE_CMD} '/^libmecab_la_LIBADD =/s/$$/ $$(LTLIBICONV)/' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} \
+		-e '/CFLAGS/s|-O3|${CFLAGS}|' \
+		-e '/CXXFLAGS/s|-O3|${CXXFLAGS}|' \
+		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:N*.html:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${PREFIX}/etc/mecabrc \
+		${STAGEDIR}${PREFIX}/etc/mecabrc.sample
 
 .include <bsd.port.mk>

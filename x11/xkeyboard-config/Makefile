@@ -34,7 +34,7 @@ ETERSOFT_EXTRA_PATCHES=	${FILESDIR}/etersoft-patch-symbols-typo
 
 # !nls case doesn't work correctly, comment it out.
 #.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext:build iconv
+USES+=		gettext-tools iconv
 PLIST_SUB+=	NLS=""
 #.else
 #CONFIGURE_ARGS+=--disable-nls
