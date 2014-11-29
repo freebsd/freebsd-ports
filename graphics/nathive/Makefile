@@ -13,9 +13,8 @@ COMMENT=	Lightweight image editor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
-
 USES=		gmake python:2 tar:tgz
+USE_GNOME=	pygtk2
 MAKEFILE=	makefile
 ALL_TARGET=	default
 
