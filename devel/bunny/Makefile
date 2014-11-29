@@ -5,10 +5,14 @@ PORTNAME=	bunny
 PORTVERSION=	0.93
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE CRITICAL
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Closed loop, high-performance, general purpose protocol-blind fuzzer
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:tgz
 
 PROJECTHOST=	bunny-the-fuzzer
 WRKSRC=		${WRKDIR}/${PORTNAME}
