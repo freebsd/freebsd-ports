@@ -1,18 +1,25 @@
---- makefile.bsd.orig	2014-01-08 00:47:50.667199813 +0100
-+++ makefile.bsd	2014-01-08 00:50:43.955208907 +0100
-@@ -2,13 +2,13 @@
+--- makefile.bsd.orig	2014-09-24 06:50:37.000000000 +0200
++++ makefile.bsd	2014-11-15 21:16:45.051156527 +0100
+@@ -1,10 +1,11 @@
+ #  This is the makefile for edbrowse under BSD Unix.
  
- #  Flags for compilation.
- #  I know - I set the Linux flag here, but it seems to work.
--CFLAGS = -I/usr/local/include -I/usr/local/include/js -DSYSBSD -DXP_UNIX
-+CFLAGS = -I${LOCALBASE}/include -I${LOCALBASE}/include/js -DSYSBSD -DXP_UNIX
+ #  Flags for gcc compilation.
+-JS_CXXFLAGS =-I/usr/include/mozjs-24
++JS_CXXFLAGS = -I${LOCALBASE}/include/mozjs-24
+ 
+ # we need to only use the js flags when building with c++, so use CXXFLAGS
+-CXXFLAGS += $(JS_CXXFLAGS)
++CFLAGS += -I${LOCALBASE}/include 
++CXXFLAGS += $(CFLAGS) $(JS_CXXFLAGS)
  
  #  Tell the dynamic linker to look in the pkg area.
  LFLAGS = -s -Wl,--rpath -Wl,/usr/pkg/lib
+@@ -14,7 +15,7 @@
+ JSLIB = -lmozjs-24
  
  #  Libraries for edbrowse.
--LIBS = -L /usr/local/lib -lpcre -lm -lssl -ljs -lcrypto -lpthread -lcurl
-+LIBS = -L ${LOCALBASE}/lib -lpcre -lm -lssl -lmozjs185 -lcrypto -pthread -lcurl -lreadline
+-LDLIBS = -lpcre -lm -lssl $(JSLIB) -lcurl -lreadline -lncurses -lcrypto -lstdc++
++LIBS = -L${LOCALBASE}/lib -lpcre -lm -lssl $(JSLIB) -lcurl -lreadline -lncurses -lcrypto -lstdc++
  
  #  Make the dynamically linked executable program by default.
  #  Edbrowse executable.
