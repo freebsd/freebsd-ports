@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	edbrowse
-PORTVERSION=	3.4.10
+PORTVERSION=	3.5.1
 CATEGORIES=	www editors
 MASTER_SITES=	http://the-brannons.com/edbrowse/ \
 		http://rithmomachia.org/edbrowse/
@@ -13,11 +13,11 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \
+		libmozjs-24.so:${PORTSDIR}/lang/spidermonkey24 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_OPENSSL=	yes
-USES=		readline zip
+USES=		compiler:c11 readline zip
 
 OPTIONS_DEFINE=	DOCS
 
