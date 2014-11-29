@@ -1,4 +1,4 @@
-bin/icebreaker
+@(,games,2555) bin/icebreaker
 man/man6/icebreaker.6.gz
 share/applications/icebreaker.desktop
 %%DATADIR%%/atom.bmp
@@ -39,4 +39,4 @@ share/applications/icebreaker.desktop
 %%DATADIR%%/turtles.ibt
 %%DATADIR%%/woodblock.bmp
 share/pixmaps/icebreaker.png
-@dirrm %%DATADIR%%
+@sample(,games,664) /var/games/icebreaker.scores.sample
