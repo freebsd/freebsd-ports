@@ -4,7 +4,7 @@
 PORTNAME=	galera
 PORTVERSION=	25.3.5
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://launchpadlibrarian.net/170877450/
 
@@ -21,15 +21,16 @@ LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 USES=		execinfo python:build scons shebangfix
 
 USE_CXXSTD=	c++11
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
+LDFLAGS+=	-lboost_program_options -lboost_system
 MAKE_CMD=	${SCONS} -j${MAKE_JOBS_NUMBER} --config=force
 
 SHEBANG_FILES=	docs/sphinx-*
 
-PLIST_FILES=	%%GARB%%bin/garbd \
-		lib/libgalera_smm.so \
+PLIST_FILES=	lib/libgalera_smm.so \
 		lib/libgalera.so
 
 PORTDOCS=	*
@@ -51,30 +52,17 @@ DOCSRCDIR5=	${DOCSRCDIR1}/gcs
 DOCSDIR5=	${DOCSDIR}/gcs
 DOC_FILES5=	ChangeLog README doc/*.txt doc/*.odt doc/*.png
 
-OPTIONS_DEFINE=	BOOSTPOOL BPOSTATIC DEBUG DOCS GARB TEST
+OPTIONS_DEFINE=	BOOSTPOOL BPOSTATIC DEBUG DOCS TEST
 OPTIONS_GROUP=	DOCS
 OPTIONS_GROUP_DOCS=	EPUB JSON LATEX PICKLE
-OPTIONS_DEFAULT=GARB
 OPTIONS_SUB=	yes
 
 BOOSTPOOL_DESC=	Use boost pool allocator
 BPOSTATIC_DESC=	Use static boost_program_options
 EPUB_DESC=	EPUB support
 PICKLE_DESC=	Pickle support
-GARB_DESC=	Galera Arbitrator
-
-GARB_USE=	RC_SUBR=garb
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 1000000
-BUILD_DEPENDS+=	asio>=0:${PORTSDIR}/net/asio
-RUN_DEPENDS+=	asio>=0:${PORTSDIR}/net/asio
-SUB_LIST=	LD_LIBRARY_PATH=$$LD_LIBRARY_PATH
-.else
-USE_GCC=	yes
-SUB_LIST=	LD_LIBRARY_PATH=${LOCALBASE}/lib/${CC}:$$LD_LIBRARY_PATH
-.endif
 
 .if ${OSVERSION} < 900506
 IGNORE=	need __WORDSIZE found in FreeBSD 9
@@ -93,19 +81,33 @@ MAKE_CMD+=	debug=3
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/-Werror/d' ${WRKSRC}/SConstruct
-
-.if ${OSVERSION} > 1000000
-	@${REINPLACE_CMD} -e '/#\/asio/d' ${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e "/-Werror/d; \
+		s|LINKFLAGS = link_arch|& + ' ' + os.environ['LDFLAGS']|" \
+		${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e '/#\/asio/d; s|asio.hpp|boost/&|; \
+		s|asio/ssl.hpp|boost/&|' ${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e 's|asio.hpp|boost/&|; s|asio/ssl.hpp|boost/&|' \
+		${WRKSRC}/galera/src/ist.hpp \
+		${WRKSRC}/gcomm/src/asio_protonet.hpp
+	@${REINPLACE_CMD} -e 's|asio::system_error|::boost::system::system_error|g' \
+		${WRKSRC}/galera/src/ist.cpp \
+		${WRKSRC}/gcomm/src/asio_tcp.cpp \
+		${WRKSRC}/gcomm/src/asio_udp.cpp
+	@${REINPLACE_CMD} -e 's|asio::error_code|::boost::system::error_code|g' \
+		${WRKSRC}/gcomm/src/asio_protonet.*pp \
+		${WRKSRC}/gcomm/src/asio_tcp.*pp \
+		${WRKSRC}/gcomm/src/asio_udp.*pp
+	@${REINPLACE_CMD} -e 's|asio::|boost::&|g' \
+		${WRKSRC}/galera/src/ist.*pp \
+		${WRKSRC}/galera/src/ist_proto.hpp \
+		${WRKSRC}/gcomm/src/asio_addr.hpp \
+		${WRKSRC}/gcomm/src/asio_protonet.*pp \
+		${WRKSRC}/gcomm/src/asio_tcp.*pp \
+		${WRKSRC}/gcomm/src/asio_udp.*pp
 	@${REINPLACE_CMD} -e 's|LLONG_MAX|gu::LOG_MAX|' \
 		${WRKSRC}/galera/src/monitor.hpp
-.endif
-
-.if ! ${PORT_OPTIONS:MGARB}
 	@${REINPLACE_CMD} -e "s|'galera/SConscript',|'galera/SConscript'])|; \
 		/'garb\/SConscript'])/d" ${WRKSRC}/SConscript
-.endif
-
 	@${REINPLACE_CMD} -e "s|'tests', 1|'tests', 0|" ${WRKSRC}/SConstruct
 
 .if ! ${PORT_OPTIONS:MTEST}
@@ -188,11 +190,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/
 	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libgalera_smm.so \
 		libgalera.so)
-
-.if ${PORT_OPTIONS:MGARB}
-	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/garb/garbd \
-		${STAGEDIR}${PREFIX}/bin/
-.endif
 
 	@(cd ${WRKSRC}/docs/build/man/man1 && ${INSTALL_MAN} \
 		${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/)
