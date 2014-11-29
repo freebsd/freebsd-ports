@@ -55,6 +55,15 @@ DESKTOP_ENTRIES="XMoto" \
 		"Game;SportsGame;ArcadeGame;" \
 		false
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+BROKEN=		does not build
+.endif
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/src/ode
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/lua5.1/lua-${LUA_VER}/g" ${WRKSRC}/configure
 
@@ -64,4 +73,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
