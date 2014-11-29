@@ -1,2 +1,0 @@
-#!/bin/sh
-%%LOCALBASE%%/bin/mono %%PREFIX%%/lib/ironpython/ipy.exe $*

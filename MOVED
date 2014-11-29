@@ -7294,3 +7294,14 @@ net-im/folks04||2014-11-26|Removed, no longer used after GNOME 3 merge
 devel/afl|security/afl|2014-11-26|Duplicate port
 print/latexmk|print/texlive-base|2014-11-27|Has been incorporated in TeXLive
 print/pdfjam|print/texlive-base|2014-11-27|Has been incorporated in TeXLive
+vietnamese/vnlpr||2014-11-29|Has expired: Broken for more than 6 months
+devel/fsmgenerator||2014-11-29|Has expired: Broken for more than 6 months
+graphics/multiraw||2014-11-29|Has expired: Depends on broken and deprecated graphics/dcraw-m
+news/fidogate-ds||2014-11-29|Has expired: Broken for more than 6 months
+net/py-yadis||2014-11-29|Has expired: Broken for more than 6 months
+textproc/ruby-diff||2014-11-29|Has expired: Broken for more than 6 months
+audio/cowbell||2014-11-29|Has expired: Broken for more than 6 months
+lang/ironpython||2014-11-29|Has expired: Broken for more than 6 months
+www/dpsearch||2014-11-29|Has expired: Broken for more than 6 months
+multimedia/y4mscaler||2014-11-29|Has expired: Broken for more than 6 months
+devel/rubygem-dep_selector||2014-11-29|Has expired: Broken for more than 6 months

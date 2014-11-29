@@ -17,7 +17,6 @@
     SUBDIR += vn7to8
     SUBDIR += vnconvert
     SUBDIR += vnless
-    SUBDIR += vnlpr
     SUBDIR += vnpstext
     SUBDIR += vnroff
     SUBDIR += x-unikey
