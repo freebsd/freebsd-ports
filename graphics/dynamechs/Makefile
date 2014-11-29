@@ -12,9 +12,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multibody Dynamic Simulation Library
 
-USES=		gmake perl5 tar:bzip2
+USES=		gmake perl5 shebangfix tar:bzip2
 USE_GL=		glut
 USE_PERL5=	build
+SHEBANG_FILES=	make/*.pl
 MAKE_ENV=	OPENGLINCDIR="${LOCALBASE}/include" \
 		OPENGLLIBDIR="${LOCALBASE}/lib"
 ALL_TARGET=	freebsd
