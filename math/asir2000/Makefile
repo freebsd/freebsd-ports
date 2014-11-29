@@ -21,11 +21,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpari.so:${PORTSDIR}/math/pari
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		tar:bz2
+USES=		autoreconf readline tar:bz2
 USE_XORG=	x11 xaw xext xt
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal automake autoconf
-AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari --with-asir-gc --with-gc7
 ASIR_SRC_VERSION=	${PORTVERSION}
 ASIR_DOC_VERSION=	20140705
