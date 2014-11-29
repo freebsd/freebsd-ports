@@ -31,9 +31,3 @@ libdata/pkgconfig/SoXt.pc
 man/man1/soxt-config.1.gz
 share/Coin/conf/soxt-default.cfg
 share/aclocal/soxt.m4
-@dirrm include/Inventor/Xt/widgets
-@dirrm include/Inventor/Xt/viewers
-@dirrm include/Inventor/Xt/nodes
-@dirrm include/Inventor/Xt/editors
-@dirrm include/Inventor/Xt/devices
-@dirrm include/Inventor/Xt

@@ -18,7 +18,8 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libblkid.so:${PORTSDIR}/misc/e2fsprogs-libblkid
 
 DATE=	20130703
-USES=	tar:xz qmake pkgconfig
+USES=		pkgconfig qmake shebangfix tar:xz
+SHEBANG_FILES=	bin/pathhelper bin/syncheaders
 USE_QT4=declarative corelib dbus gui linguist_build moc_build
 USE_LDCONFIG=	yes
 MOBILITY_MODS=
