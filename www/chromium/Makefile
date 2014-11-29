@@ -3,7 +3,7 @@
 
 #TODO bz@ : if you do undestand the gyp stuff, third_party/widevine/cdm/widevine_cdm.gyp talks about it (plz install libwidevinecdm.so)
 PORTNAME=	chromium
-PORTVERSION=	39.0.2171.65
+PORTVERSION=	39.0.2171.71
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -197,6 +197,7 @@ MAKE_ARGS=	-C out/${BUILDTYPE}
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
+CFLAGS+=	-fno-stack-protector # gcc 4.8 cannot find __stack_chk_fail_local
 .else
 GYP_DEFINES+=	clang=1
 CFLAGS+=	-Wno-unknown-warning-option
