@@ -32,6 +32,5 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/META ${STAGEDIR}${OCAMLFIND_DESTDIR}/${PORTNAME}
 	@${FIND} ${STAGEDIR}${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
 		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm ${OCAML_SITELIBDIR}/${PORTNAME}" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

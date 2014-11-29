@@ -655,39 +655,4 @@ man/man1/gwu.1.gz
 %%DATADIR%%/lang/start.txt
 %%DATADIR%%/lang/start_utf8.txt
 %%DATADIR%%/lang/version.txt
-@dirrm %%DATADIR%%/distribution/gw/etc/perso_module
-@dirrm %%DATADIR%%/distribution/gw/etc/templ502
-@dirrm %%DATADIR%%/distribution/gw/etc/templa
-@dirrm %%DATADIR%%/distribution/gw/etc/templb
-@dirrm %%DATADIR%%/distribution/gw/etc/templc
-@dirrm %%DATADIR%%/distribution/gw/etc/templd
-@dirrm %%DATADIR%%/distribution/gw/etc/templf
-@dirrm %%DATADIR%%/distribution/gw/etc/templh
-@dirrm %%DATADIR%%/distribution/gw/etc/templm
-@dirrm %%DATADIR%%/distribution/gw/etc/templx
-@dirrm %%DATADIR%%/distribution/gw/etc
-@dirrm %%DATADIR%%/distribution/gw/gwtp_tmp/lang
-@dirrm %%DATADIR%%/distribution/gw/gwtp_tmp
-@dirrm %%DATADIR%%/distribution/gw/images/flags
-@dirrm %%DATADIR%%/distribution/gw/images
-@dirrm %%DATADIR%%/distribution/gw/lang
-@dirrmtry %%DATADIR%%/distribution/gw/old
-@dirrm %%DATADIR%%/distribution/gw/setup/lang
-@dirrm %%DATADIR%%/distribution/gw/setup
-@dirrm %%DATADIR%%/distribution/gw
-@dirrm %%DATADIR%%/distribution
-@dirrm %%DATADIR%%/etc/perso_module
-@dirrm %%DATADIR%%/etc/templ502
-@dirrm %%DATADIR%%/etc/templa
-@dirrm %%DATADIR%%/etc/templb
-@dirrm %%DATADIR%%/etc/templc
-@dirrm %%DATADIR%%/etc/templd
-@dirrm %%DATADIR%%/etc/templf
-@dirrm %%DATADIR%%/etc/templh
-@dirrm %%DATADIR%%/etc/templm
-@dirrm %%DATADIR%%/etc/templx
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%/images/flags
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/distribution/gw/old

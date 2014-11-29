@@ -3,6 +3,7 @@
 
 PORTNAME=	bibtex2html
 PORTVERSION=	1.98
+PORTREVISION=	1
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/bibtex2html/
 
@@ -11,6 +12,7 @@ COMMENT=	Tools for searching BibTeX and translating from BibTeX to HTML
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
+USES=		perl5
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	PDFDOCS
@@ -21,12 +23,13 @@ PDFDOCS_USE=	TEX=latex:build
 PDFDOCS_BUILD_DEPENDS=	hevea:${PORTSDIR}/textproc/hevea
 PDFDOCS_INSTALL_TARGET=	install install-doc
 
-PORTDOCS=	*
-
 PLIST_FILES=	bin/aux2bib bin/bib2bib bin/bibtex2html \
 		man/man1/bibtex2html.1.gz man/man1/bib2bib.1.gz man/man1/aux2bib.1.gz
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPDFDOCS}
+PORTDOCS=	*
+.endif
 
 .include <bsd.port.mk>

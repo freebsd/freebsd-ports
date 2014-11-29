@@ -30,8 +30,6 @@ lib/ocaml/site-lib/shell/shell_uq.cmi
 lib/ocaml/site-lib/shell/shell_uq.mli
 lib/ocaml/site-lib/shell/unix_exts.cmi
 lib/ocaml/site-lib/shell/unix_exts.mli
-@dirrm lib/ocaml/site-lib/equeue
-@dirrm lib/ocaml/site-lib/shell
 @unexec ocamlfind remove equeue 2>/dev/null || true
 @unexec ocamlfind remove shell 2>/dev/null || true
 %%TCL%%lib/ocaml/site-lib/equeue-tcl/META
@@ -42,7 +40,6 @@ lib/ocaml/site-lib/shell/unix_exts.mli
 %%TCL%%lib/ocaml/site-lib/equeue-tcl/equeue_tcl.cmxa
 %%TCL%%lib/ocaml/site-lib/equeue-tcl/uq_tcl.cmi
 %%TCL%%lib/ocaml/site-lib/equeue-tcl/uq_tcl.mli
-%%TCL%%@dirrm lib/ocaml/site-lib/equeue-tcl
 %%TCL%%@unexec ocamlfind remove equeue-tcl 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT-FINDLIB
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -137,20 +134,3 @@ lib/ocaml/site-lib/shell/unix_exts.mli
 %%PORTDOCS%%%%EXAMPLESDIR%%/preliminary/pipe-through-eventdriven.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple/a-and-b.ml
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/preliminary
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/multi-threaded
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/filecopy_lablgtk
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/filecopy_labltk
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/filecopy
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/engines
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-guide/src
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-guide/ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-guide/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/users-guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman-shell/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman-shell
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman-equeue/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/refman-equeue
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
