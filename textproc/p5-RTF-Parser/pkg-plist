@@ -14,11 +14,3 @@ bin/rtf2text
 %%SITE_PERL%%/RTF/TEXT/Converter.pm
 %%SITE_PERL%%/RTF/TEXT/Converter/ansi.pm
 %%SITE_PERL%%/RTF/TEXT/Converter/charmap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Parser/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF
-@dirrmtry %%SITE_PERL%%/RTF/TEXT/Converter
-@dirrmtry %%SITE_PERL%%/RTF/TEXT
-@dirrmtry %%SITE_PERL%%/RTF/HTML/Converter
-@dirrmtry %%SITE_PERL%%/RTF/HTML
-@dirrmtry %%SITE_PERL%%/RTF

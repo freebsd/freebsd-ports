@@ -1,21 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/CUPS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/CUPS/Destination.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/CUPS/IPP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/CUPS/PPD.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/CUPS.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/Destination/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/IPP/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/PPD/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/autosplit.ix
+%%SITE_ARCH%%/Net/CUPS.pm
+%%SITE_ARCH%%/Net/CUPS/Destination.pm
+%%SITE_ARCH%%/Net/CUPS/IPP.pm
+%%SITE_ARCH%%/Net/CUPS/PPD.pm
+%%SITE_ARCH%%/auto/Net/CUPS/CUPS.so
+%%SITE_ARCH%%/auto/Net/CUPS/Destination/autosplit.ix
+%%SITE_ARCH%%/auto/Net/CUPS/IPP/autosplit.ix
+%%SITE_ARCH%%/auto/Net/CUPS/PPD/autosplit.ix
+%%SITE_ARCH%%/auto/Net/CUPS/autosplit.ix
 %%PERL5_MAN3%%/Net::CUPS.3.gz
 %%PERL5_MAN3%%/Net::CUPS::Destination.3.gz
 %%PERL5_MAN3%%/Net::CUPS::IPP.3.gz
 %%PERL5_MAN3%%/Net::CUPS::PPD.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/PPD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/IPP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/Destination
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/CUPS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

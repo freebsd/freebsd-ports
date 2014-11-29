@@ -1,5 +1,4 @@
 bin/tinyrepl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval/WithLexicals/.packlist
 %%SITE_PERL%%/Eval/WithLexicals.pm
 %%SITE_PERL%%/Eval/WithLexicals/WithHintPersistence.pm
 man/man1/tinyrepl.1.gz

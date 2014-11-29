@@ -38,4 +38,3 @@
 %%SITE_PERL%%/Connector/Proxy/YAML.pm
 %%SITE_PERL%%/Connector/Types.pm
 %%SITE_PERL%%/Connector/Wrapper.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Connector/.packlist

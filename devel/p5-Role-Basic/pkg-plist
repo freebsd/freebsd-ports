@@ -2,4 +2,3 @@
 %%PERL5_MAN3%%/Role::Basic::Philosophy.3.gz
 %%SITE_PERL%%/Role/Basic.pm
 %%SITE_PERL%%/Role/Basic/Philosophy.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Role/Basic/.packlist

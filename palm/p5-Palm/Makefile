@@ -3,6 +3,7 @@
 
 PORTNAME=	p5-Palm
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	palm perl5
 MASTER_SITES=	http://www.coldsync.org/download/
 

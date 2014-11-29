@@ -46,4 +46,3 @@
 %%SITE_PERL%%/UI/Dialog/KDE.pod
 %%SITE_PERL%%/UI/Dialog/Screen/Menu.pm
 %%SITE_PERL%%/UI/Dialog/Screen/Menu.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UI/Dialog/.packlist

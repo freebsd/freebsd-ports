@@ -3,7 +3,7 @@
 
 PORTNAME=	lasso
 PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/594/
 
@@ -11,6 +11,8 @@ MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Free Liberty Alliance Implementation
 
 BROKEN=		Fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRACTION_DATE=	2014-12-27
 
 RUN_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
 BUILD_DEPENDS:=	${RUN_DEPENDS}
@@ -58,8 +60,5 @@ USES+=		python:build
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
-
-post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 
 .include <bsd.port.mk>

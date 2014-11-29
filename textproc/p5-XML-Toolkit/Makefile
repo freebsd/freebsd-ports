@@ -3,7 +3,7 @@
 
 PORTNAME=	XML-Toolkit
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PERIGRIN
@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Suit of XML tools with Antlers
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Bread-Board>=0:${PORTSDIR}/devel/p5-Bread-Board \
 		p5-Devel-PackagePath>=0.01:${PORTSDIR}/devel/p5-Devel-PackagePath \

@@ -13,10 +13,4 @@ bin/xsh
 %%SITE_PERL%%/XML/XSH/Iterators.pm
 %%SITE_PERL%%/XML/XSH/LibXMLCompat.pm
 %%SITE_PERL%%/XML/XSH/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSH/.packlist
 man/man1/xsh.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSH
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/XSH
-@dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%/Inline

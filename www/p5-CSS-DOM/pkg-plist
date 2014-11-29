@@ -43,11 +43,3 @@
 %%SITE_PERL%%/CSS/DOM/Value/List.pm
 %%SITE_PERL%%/CSS/DOM/Value/Primitive.pm
 %%SITE_PERL%%/CSS/DOM/Value/Primitive/colours.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/DOM/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/DOM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
-@dirrmtry %%SITE_PERL%%/CSS/DOM/Value/Primitive
-@dirrmtry %%SITE_PERL%%/CSS/DOM/Value
-@dirrmtry %%SITE_PERL%%/CSS/DOM/Rule
-@dirrmtry %%SITE_PERL%%/CSS/DOM
-@dirrmtry %%SITE_PERL%%/CSS

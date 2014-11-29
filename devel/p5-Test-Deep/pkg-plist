@@ -42,4 +42,3 @@
 %%SITE_PERL%%/Test/Deep/Shallow.pm
 %%SITE_PERL%%/Test/Deep/Stack.pm
 %%SITE_PERL%%/Test/Deep/String.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Deep/.packlist

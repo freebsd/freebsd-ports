@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Boulder/.packlist
 %%SITE_PERL%%/Stone/Cursor.pm
 %%SITE_PERL%%/Stone/GB_Sequence.pm
 %%SITE_PERL%%/Boulder/Swissprot.pm

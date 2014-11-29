@@ -1,4 +1,3 @@
 %%SITE_PERL%%/IO/CaptureOutput.pm
 %%SITE_PERL%%/IO/CaptureOutput.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/CaptureOutput/.packlist
 %%PERL5_MAN3%%/IO::CaptureOutput.3.gz

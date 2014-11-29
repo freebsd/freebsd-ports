@@ -8,4 +8,3 @@
 %%SITE_PERL%%/POE/Component/LaDBI/Engine.pm
 %%SITE_PERL%%/POE/Component/LaDBI/Request.pm
 %%SITE_PERL%%/POE/Component/LaDBI/Response.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/LaDBI/.packlist

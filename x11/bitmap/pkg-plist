@@ -20,5 +20,3 @@ man/man1/bmtoa.1.gz
 share/X11/app-defaults/Bitmap
 share/X11/app-defaults/Bitmap-color
 share/X11/app-defaults/Bitmap-nocase
-@dirrmtry share/X11/app-defaults
-@dirrmtry share/X11

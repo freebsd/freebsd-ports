@@ -159,19 +159,3 @@ share/pixmaps/pytowerdefense.png
 %%DATADIR%%/widgets.py
 %%DATADIR%%/widgets.pyc
 %%DATADIR%%/widgets.pyo
-@dirrm %%DATADIR%%/images/widgets/menu_title
-@dirrm %%DATADIR%%/images/widgets
-@dirrm %%DATADIR%%/images/towers/wizard_tower
-@dirrm %%DATADIR%%/images/towers
-@dirrm %%DATADIR%%/images/projectiles
-@dirrm %%DATADIR%%/images/money
-@dirrm %%DATADIR%%/images/fonts
-@dirrm %%DATADIR%%/images/enemies/undead
-@dirrm %%DATADIR%%/images/enemies
-@dirrm %%DATADIR%%/images/effects
-@dirrm %%DATADIR%%/images/Menus
-@dirrm %%DATADIR%%/images/Healthbar
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/audio/sfx
-@dirrm %%DATADIR%%/audio
-@dirrm %%DATADIR%%

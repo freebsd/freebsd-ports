@@ -196,7 +196,6 @@ bin/html_formfu_dumpconf.pl
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/repeatable
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/start_block
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/start_form
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/.packlist
 %%PERL5_MAN3%%/HTML::FormFu.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Attribute.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Constraint.3.gz
@@ -318,33 +317,3 @@ bin/html_formfu_dumpconf.pl
 %%PERL5_MAN3%%/HTML::FormFu::Validator::Callback.3.gz
 man/man1/html_formfu_deploy.pl.1.gz
 man/man1/html_formfu_dumpconf.pl.1.gz
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/File
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/Repeatable
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Deflator
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Element
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Exception
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Filter
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/I18N
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Inflator
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Manual
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Model
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/OutputProcessor
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Plugin
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/QueryType/CGI
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/QueryType
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Constraint
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Element
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Filter
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Transformer
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Validator
-@dirrmtry %%SITE_PERL%%/HTML/FormFu
-@dirrmtry %%SITE_PERL%%/MooseX/Attribute
-@dirrmtry %%SITE_PERL%%/MooseX/Traits/Attribute
-@dirrmtry %%SITE_PERL%%/MooseX/Traits
-@dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml
-@dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt
-@dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates
-@dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormFu
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu

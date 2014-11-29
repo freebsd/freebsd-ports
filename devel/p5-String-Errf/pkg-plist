@@ -1,3 +1,2 @@
 %%SITE_PERL%%/String/Errf.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Errf/.packlist
 %%PERL5_MAN3%%/String::Errf.3.gz

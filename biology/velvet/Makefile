@@ -3,7 +3,7 @@
 
 PORTNAME=	velvet
 PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ebi.ac.uk/~zerbino/velvet/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

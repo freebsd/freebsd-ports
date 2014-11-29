@@ -2,4 +2,3 @@
 %%SITE_PERL%%/Config/JFDI.pm
 %%SITE_PERL%%/Config/JFDI/Carp.pm
 %%SITE_PERL%%/Config/JFDI/Source/Loader.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/JFDI/.packlist

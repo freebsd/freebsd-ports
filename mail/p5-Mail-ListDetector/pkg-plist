@@ -45,13 +45,5 @@
 %%SITE_PERL%%/Mail/ListDetector/Detector/Yahoogroups.pm
 %%SITE_PERL%%/Mail/ListDetector/List.pm
 %%SITE_PERL%%/auto/Mail/ListDetector/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/ListDetector/.packlist
 %%EXAMPLESDIR%%/sample.pl
 @dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/ListDetector
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/auto/Mail/ListDetector
-@dirrmtry %%SITE_PERL%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/Mail/ListDetector/Detector
-@dirrmtry %%SITE_PERL%%/Mail/ListDetector
-@dirrmtry %%SITE_PERL%%/Mail

@@ -3,6 +3,7 @@
 
 PORTNAME=	Frontier-RPC
 PORTVERSION=	0.07.b4
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN \
 		http://bitsko.slc.ut.us/~ken/xml-rpc/

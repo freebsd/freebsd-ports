@@ -3,7 +3,7 @@
 
 PORTNAME=	dnscheckengine
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns perl5
 MASTER_SITES=	ftp://www.ns.gen.tx.us/pub/software/dnscheck-se/
 DISTNAME=	DNSCheck-1.1

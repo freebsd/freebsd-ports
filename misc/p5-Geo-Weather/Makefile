@@ -3,6 +3,7 @@
 
 PORTNAME=	Geo-Weather
 PORTVERSION=	1.41
+PORTREVISION=	1
 CATEGORIES=	misc perl5 geography
 MASTER_SITES=	CPAN \
 		ftp://ftp.innercite.com/pub/perl/

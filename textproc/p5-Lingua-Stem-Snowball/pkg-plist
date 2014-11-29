@@ -1,8 +1,3 @@
 %%PERL5_MAN3%%/Lingua::Stem::Snowball.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Lingua/Stem/Snowball.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Snowball.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Lingua/Stem
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Lingua
+%%SITE_ARCH%%/Lingua/Stem/Snowball.pm
+%%SITE_ARCH%%/auto/Lingua/Stem/Snowball/Snowball.so

@@ -3,7 +3,7 @@
 
 PORTNAME=	optimax
 PORTVERSION=	0.63
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.corewar.info/optimax/dload/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_unix
@@ -39,8 +39,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/remote.pl \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-remote
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/optimars ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}
-	${INSTALL_DATA} ${WRKSRC}/optitools.pm ${STAGEDIR}${SITE_PERL}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	${INSTALL_DATA} ${WRKSRC}/optitools.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${CP} -r *.red fsh* templates phase3.lst tables \
 		${STAGEDIR}${DATADIR})

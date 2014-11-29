@@ -2,7 +2,3 @@ bin/pm2port
 man/man1/pm2port.1.gz
 %%PERL5_MAN3%%/App::Pm2Port.3.gz
 %%SITE_PERL%%/App/Pm2Port.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Pm2Port/.packlist
-@dirrmtry %%SITE_PERL%%/App
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Pm2Port
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App

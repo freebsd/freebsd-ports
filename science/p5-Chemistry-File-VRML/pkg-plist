@@ -1,5 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/VRML/.packlist
 %%SITE_PERL%%/Chemistry/File/VRML.pm
 %%PERL5_MAN3%%/Chemistry::File::VRML.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/VRML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File

@@ -3,7 +3,7 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	1.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/attachments/download/241/
 
@@ -69,10 +69,6 @@ post-install:
 		${STAGEDIR}${ETCDIR}/default/${f}.sample
 	${RM} ${STAGEDIR}${ETCDIR}/default/${f}	# Remove files install-data-local installs
 .endfor
-
-.if ${PORT_OPTIONS:MPERL}
-	-@${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

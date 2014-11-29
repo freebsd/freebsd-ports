@@ -14,6 +14,4 @@ sbin/trafd
 sbin/trafstatd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/WhatsNew
-@dirrmtry var/bpft
-@dirrmtry var
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir var/bpft

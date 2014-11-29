@@ -47,7 +47,6 @@ lib/collectd/ntpd.so
 %%NUTUPS%%lib/collectd/nut.so
 lib/collectd/openvpn.so
 %%PERL%%lib/collectd/perl.so
-%%PERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod.gz
 %%PERL%%%%PERL5_MAN3%%/Collectd::Unixsock.3.gz
 %%PERL%%%%SITE_PERL%%/Collectd/Plugins/OpenVZ.pm
 %%PING%%lib/collectd/ping.so
@@ -97,7 +96,6 @@ libdata/pkgconfig/libcollectdclient.pc
 %%DATADIR%%/types.db
 %%PERL%%%%SITE_PERL%%/Collectd.pm
 %%PERL%%%%SITE_PERL%%/Collectd/Unixsock.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Collectd/.packlist
 man/man1/collectd-nagios.1.gz
 man/man1/collectd-tg.1.gz
 man/man1/collectd.1.gz

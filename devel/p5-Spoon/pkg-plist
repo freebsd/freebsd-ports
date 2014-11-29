@@ -37,4 +37,3 @@
 %%SITE_PERL%%/Spoon/Template/TT2.pm
 %%SITE_PERL%%/Spoon/Trace.pm
 %%SITE_PERL%%/Spoon/Utils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spoon/.packlist

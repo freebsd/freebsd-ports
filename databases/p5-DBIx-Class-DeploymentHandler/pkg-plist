@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DeploymentHandler/.packlist
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Cookbook/CustomResultSource.pod
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Dad.pm

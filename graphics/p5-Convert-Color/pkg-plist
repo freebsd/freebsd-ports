@@ -8,7 +8,6 @@
 %%PERL5_MAN3%%/Convert::Color::RGB8.3.gz
 %%PERL5_MAN3%%/Convert::Color::VGA.3.gz
 %%PERL5_MAN3%%/Convert::Color::X11.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Color/.packlist
 %%SITE_PERL%%/Convert/Color.pm
 %%SITE_PERL%%/Convert/Color/CMY.pm
 %%SITE_PERL%%/Convert/Color/CMYK.pm

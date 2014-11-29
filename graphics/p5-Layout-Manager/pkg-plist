@@ -12,4 +12,3 @@
 %%SITE_PERL%%/Layout/Manager/Flow.pm
 %%SITE_PERL%%/Layout/Manager/Grid.pm
 %%SITE_PERL%%/Layout/Manager/Single.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Layout/Manager/.packlist

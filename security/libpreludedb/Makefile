@@ -3,7 +3,7 @@
 
 PORTNAME=	libpreludedb
 PORTVERSION=	1.0.1p1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	https://www.prelude-ids.org/attachments/download/287/
 
@@ -41,7 +41,7 @@ MYSQL_USE=		mysql=yes
 MYSQL_CONFIGURE_WITH=	mysql
 PERL_DESC=		Perl bindings
 PERL_USES=		perl5
-PERL_USE=		perl5=build,fixpacklist,run
+PERL_USE=		perl5=build,run
 PERL_CONFIGURE_WITH=	perl
 PGSQL_DESC=		PostgreSQL plugin
 PGSQL_USES=		pgsql
@@ -64,8 +64,6 @@ post-install:
 .if ${PORT_OPTIONS:MPERL}
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/perl5 \
 		-name "*.so" | ${XARGS} ${STRIP_CMD}
-	@${FIND} ${STAGEDIR}${PREFIX}/lib/perl5 \
-		-name "perllocal.pod*" -delete
 .endif
 .if ${PORT_OPTIONS:MPYTHON}
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \

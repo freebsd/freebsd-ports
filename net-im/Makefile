@@ -22,7 +22,6 @@
     SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += folks
-    SUBDIR += folks04
     SUBDIR += freetalk
     SUBDIR += fugu
     SUBDIR += gajim
@@ -113,6 +112,7 @@
     SUBDIR += pidgin-skype
     SUBDIR += pidgin-twitter
     SUBDIR += plasma-applet-ktp
+    SUBDIR += poezio
     SUBDIR += pork
     SUBDIR += prosody
     SUBDIR += psi
@@ -125,6 +125,7 @@
     SUBDIR += py-punjab
     SUBDIR += py-pyxmpp
     SUBDIR += py-skype4py
+    SUBDIR += py-sleekxmpp
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc

@@ -1,5 +1,2 @@
 bin/twitmail
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/twitmail/.packlist
 man/man1/twitmail.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/twitmail
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto

@@ -3,4 +3,3 @@
 %%SITE_PERL%%/Decision/ACL.pod
 %%SITE_PERL%%/Decision/ACL/Constants.pm
 %%SITE_PERL%%/Decision/ACL/Rule.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Decision/ACL/.packlist

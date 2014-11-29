@@ -9,43 +9,30 @@
 %%PERL5_MAN3%%/Apache2::Cookie.3.gz
 %%PERL5_MAN3%%/Apache2::Request.3.gz
 %%PERL5_MAN3%%/Apache2::Upload.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/CGI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/CGI.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Cookie.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Cookie.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Hook.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Hook.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Parser.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Cookie.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Request.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Upload.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/%%AP_NAME%%/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/Apache2.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/CGI.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/Cookie.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/Error.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/Hook.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/Param.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/Parser.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/APR/Request
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/APR
+%%SITE_ARCH%%/APR/Request.pm
+%%SITE_ARCH%%/APR/Request.pod
+%%SITE_ARCH%%/APR/Request/Apache2.pm
+%%SITE_ARCH%%/APR/Request/Apache2.pod
+%%SITE_ARCH%%/APR/Request/CGI.pm
+%%SITE_ARCH%%/APR/Request/CGI.pod
+%%SITE_ARCH%%/APR/Request/Cookie.pm
+%%SITE_ARCH%%/APR/Request/Cookie.pod
+%%SITE_ARCH%%/APR/Request/Error.pm
+%%SITE_ARCH%%/APR/Request/Error.pod
+%%SITE_ARCH%%/APR/Request/Hook.pm
+%%SITE_ARCH%%/APR/Request/Hook.pod
+%%SITE_ARCH%%/APR/Request/Param.pm
+%%SITE_ARCH%%/APR/Request/Param.pod
+%%SITE_ARCH%%/APR/Request/Parser.pm
+%%SITE_ARCH%%/APR/Request/Parser.pod
+%%SITE_ARCH%%/Apache2/Cookie.pm
+%%SITE_ARCH%%/Apache2/Request.pm
+%%SITE_ARCH%%/Apache2/Upload.pm
+%%SITE_ARCH%%/auto/APR/Request/Apache2/Apache2.so
+%%SITE_ARCH%%/auto/APR/Request/CGI/CGI.so
+%%SITE_ARCH%%/auto/APR/Request/Cookie/Cookie.so
+%%SITE_ARCH%%/auto/APR/Request/Error/Error.so
+%%SITE_ARCH%%/auto/APR/Request/Hook/Hook.so
+%%SITE_ARCH%%/auto/APR/Request/Param/Param.so
+%%SITE_ARCH%%/auto/APR/Request/Parser/Parser.so
+%%SITE_ARCH%%/auto/APR/Request/Request.so

@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Imager/AverageGray.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/AverageGray/.packlist
 %%PERL5_MAN3%%/Imager::AverageGray.3.gz

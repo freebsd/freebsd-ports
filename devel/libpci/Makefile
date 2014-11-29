@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpci
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		LOCAL/sunpoet

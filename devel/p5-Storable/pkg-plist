@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Storable.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/Storable.so
+%%SITE_ARCH%%/Storable.pm
+%%SITE_ARCH%%/auto/Storable/Storable.so
 %%PERL5_MAN3%%/Storable.3.gz

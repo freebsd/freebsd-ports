@@ -19,7 +19,11 @@ include/ode/odecpp.h
 include/ode/odecpp_collision.h
 include/ode/odeinit.h
 include/ode/odemath.h
+include/ode/odemath_legacy.h
+include/ode/precision.h
 include/ode/rotation.h
+include/ode/threading.h
+include/ode/threading_impl.h
 include/ode/timer.h
 lib/libode.a
 libdata/pkgconfig/ode.pc

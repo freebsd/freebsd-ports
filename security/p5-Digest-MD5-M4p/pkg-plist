@@ -1,9 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Digest/MD5/M4p.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD5/M4p/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD5/M4p/M4p.so
+%%SITE_ARCH%%/Digest/MD5/M4p.pm
+%%SITE_ARCH%%/auto/Digest/MD5/M4p/M4p.so
 %%PERL5_MAN3%%/Digest::MD5::M4p.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD5/M4p
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD5
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Digest/MD5
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Digest

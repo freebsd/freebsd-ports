@@ -1,8 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/Date.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/Date.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/Date/Const.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/Date/Invalid.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/Date/Rel.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Date/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Date/Date.so
+%%SITE_ARCH%%/Class/Date.pm
+%%SITE_ARCH%%/Class/Date.pod
+%%SITE_ARCH%%/Class/Date/Const.pm
+%%SITE_ARCH%%/Class/Date/Invalid.pm
+%%SITE_ARCH%%/Class/Date/Rel.pm
+%%SITE_ARCH%%/auto/Class/Date/Date.so
 %%PERL5_MAN3%%/Class::Date.3.gz

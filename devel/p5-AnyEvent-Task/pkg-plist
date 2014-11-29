@@ -6,4 +6,3 @@
 %%SITE_PERL%%/AnyEvent/Task/Server.pm
 %%SITE_PERL%%/AnyEvent/Task/Server/Worker.pm
 %%SITE_PERL%%/AnyEvent/Task/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Task/.packlist

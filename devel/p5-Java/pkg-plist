@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Java.pm
 %%SITE_PERL%%/JavaArray.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Java/.packlist
 %%PERL5_MAN3%%/Java.3.gz
 %%PERL5_MAN3%%/JavaArray.3.gz
 share/p5-Java/JavaServer.jar

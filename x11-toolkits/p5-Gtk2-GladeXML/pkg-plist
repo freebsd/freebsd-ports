@@ -1,12 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GladeXML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GladeXML/Install/Files.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GladeXML/Install/gladexmlperl.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GladeXML/Install/gladexmlperl.typemap
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/GladeXML/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/GladeXML/GladeXML.so
+%%SITE_ARCH%%/Gtk2/GladeXML.pm
+%%SITE_ARCH%%/Gtk2/GladeXML/Install/Files.pm
+%%SITE_ARCH%%/Gtk2/GladeXML/Install/gladexmlperl.h
+%%SITE_ARCH%%/Gtk2/GladeXML/Install/gladexmlperl.typemap
+%%SITE_ARCH%%/auto/Gtk2/GladeXML/GladeXML.so
 %%PERL5_MAN3%%/Gtk2::GladeXML.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/GladeXML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GladeXML/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GladeXML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2

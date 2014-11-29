@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Data::UUID.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Data/UUID.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID/UUID.so
+%%SITE_ARCH%%/Data/UUID.pm
+%%SITE_ARCH%%/auto/Data/UUID/UUID.so

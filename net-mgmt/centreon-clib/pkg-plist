@@ -62,12 +62,3 @@ include/centreon/com/centreon/misc/get_options.hh
 include/centreon/com/centreon/misc/stringifier.hh
 lib/libcentreon_clib.so
 libdata/pkgconfig/centreon-clib.pc
-@dirrm include/centreon/com/centreon/misc
-@dirrm include/centreon/com/centreon/logging
-@dirrm include/centreon/com/centreon/io
-@dirrm include/centreon/com/centreon/exceptions
-@dirrm include/centreon/com/centreon/concurrency
-@dirrm include/centreon/com/centreon/clib
-@dirrm include/centreon/com/centreon
-@dirrm include/centreon/com
-@dirrm include/centreon

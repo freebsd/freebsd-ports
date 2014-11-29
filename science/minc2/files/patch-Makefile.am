@@ -1,6 +1,6 @@
---- Makefile.am.orig
+--- Makefile.am.orig	2012-09-24 17:35:36 UTC
 +++ Makefile.am
-@@ -274,28 +274,28 @@
+@@ -274,28 +274,28 @@ m4_files = \
  	m4/smr_WITH_BUILD_PATH.m4
  
  ezMINC_files = \

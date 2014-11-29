@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	3.9.1
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ja
@@ -13,7 +12,7 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-3.* ru-wordpress-3.*
+CONFLICTS_INSTALL=	wordpress-[0-9].* de-wordpress-[0-9].* ru-wordpress-[0-9].*
 
 NO_BUILD=	yes
 USES=		cpe
@@ -41,7 +40,6 @@ pre-install:
 	${ECHO_CMD} '@owner www' > ${PLIST}
 	${ECHO_CMD} '@group www' >> ${PLIST}
 	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} -e 's|^|%%WWWDIR%%/|' >> ${PLIST}
-	cd ${WRKSRC}/ && ${FIND} -d . -type d | ${SED} -e 's|^\.|@dirrm %%WWWDIR%%|' >> ${PLIST}
 	${ECHO_CMD} '@owner' >> ${PLIST}
 	${ECHO_CMD} '@group' >> ${PLIST}
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \

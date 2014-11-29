@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/String::Scanf.3.gz
 %%SITE_PERL%%/String/Scanf.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Scanf/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Scanf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/String

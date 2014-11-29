@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Data/Dumper/Concise.pm
 %%SITE_PERL%%/Data/Dumper/Concise/Sugar.pm
 %%SITE_PERL%%/Devel/Dwarn.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Concise/.packlist

@@ -7,7 +7,6 @@
 %%SITE_PERL%%/CGI/Push.pm
 %%SITE_PERL%%/CGI/Switch.pm
 %%SITE_PERL%%/CGI/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/caution.xbm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clickable_image.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookie.cgi
@@ -39,5 +38,3 @@
 %%PERL5_MAN3%%/CGI::Push.3.gz
 %%PERL5_MAN3%%/CGI::Switch.3.gz
 %%PERL5_MAN3%%/CGI::Util.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrmtry %%SITE_PERL%%/CGI

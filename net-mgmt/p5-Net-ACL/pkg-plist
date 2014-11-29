@@ -22,7 +22,6 @@
 %%SITE_PERL%%/Net/ACL/Set/Add.pm
 %%SITE_PERL%%/Net/ACL/Set/Scalar.pm
 %%SITE_PERL%%/Net/ACL/Set/Union.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ACL/.packlist
 %%PERL5_MAN3%%/Net::ACL.3.gz
 %%PERL5_MAN3%%/Net::ACL::Bootstrap.3.gz
 %%PERL5_MAN3%%/Net::ACL::File.3.gz
@@ -47,10 +46,3 @@
 %%PERL5_MAN3%%/Net::ACL::Set::Add.3.gz
 %%PERL5_MAN3%%/Net::ACL::Set::Scalar.3.gz
 %%PERL5_MAN3%%/Net::ACL::Set::Union.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ACL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/ACL/Set
-@dirrm %%SITE_PERL%%/Net/ACL/Match
-@dirrm %%SITE_PERL%%/Net/ACL/File
-@dirrm %%SITE_PERL%%/Net/ACL
-@dirrmtry %%SITE_PERL%%/Net

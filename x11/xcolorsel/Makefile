@@ -5,12 +5,14 @@ PORTNAME=	xcolorsel
 PORTVERSION=	1.1a
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	utilities
+MASTER_SITES=	XCONTRIB/utilities
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X utility to translate rgb values into X color names
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/01-COPYING
 
 LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	rgb>=1.0.3:${PORTSDIR}/x11/rgb

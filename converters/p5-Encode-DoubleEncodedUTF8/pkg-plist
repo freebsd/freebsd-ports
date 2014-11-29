@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Encode/DoubleEncodedUTF8.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/DoubleEncodedUTF8/.packlist
 %%PERL5_MAN3%%/Encode::DoubleEncodedUTF8.3.gz

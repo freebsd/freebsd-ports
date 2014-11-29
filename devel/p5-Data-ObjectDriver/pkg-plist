@@ -40,4 +40,3 @@
 %%SITE_PERL%%/Data/ObjectDriver/ResultSet.pm
 %%SITE_PERL%%/Data/ObjectDriver/SQL.pm
 %%SITE_PERL%%/Data/ObjectDriver/SQL/Oracle.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver/.packlist

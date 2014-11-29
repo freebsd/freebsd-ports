@@ -16,7 +16,6 @@
 %%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler/WRR.pm
 %%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler/WeightedRandom.pm
 %%SITE_PERL%%/Geo/Coder/Many/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Many/.packlist
 %%PERL5_MAN3%%/Geo::Coder::Many.3.gz
 %%PERL5_MAN3%%/Geo::Coder::Many::Bing.3.gz
 %%PERL5_MAN3%%/Geo::Coder::Many::Generic.3.gz
@@ -35,11 +34,3 @@
 %%PERL5_MAN3%%/Geo::Coder::Many::Scheduler::UniquenessScheduler::WRR.3.gz
 %%PERL5_MAN3%%/Geo::Coder::Many::Scheduler::UniquenessScheduler::WeightedRandom.3.gz
 %%PERL5_MAN3%%/Geo::Coder::Many::Util.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Many
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrm %%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler
-@dirrm %%SITE_PERL%%/Geo/Coder/Many/Scheduler
-@dirrm %%SITE_PERL%%/Geo/Coder/Many
-@dirrmtry %%SITE_PERL%%/Geo/Coder
-@dirrmtry %%SITE_PERL%%/Geo

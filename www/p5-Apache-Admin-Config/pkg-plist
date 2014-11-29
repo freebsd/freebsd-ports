@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Apache::Admin::Config.3.gz
 %%SITE_PERL%%/Apache/Admin/Config.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Admin/Config/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Admin/Config
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Admin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/Apache/Admin
-@dirrmtry %%SITE_PERL%%/Apache

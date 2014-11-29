@@ -3,6 +3,7 @@
 
 PORTNAME=	Jabber-Connection
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	net-im perl5
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	p5-

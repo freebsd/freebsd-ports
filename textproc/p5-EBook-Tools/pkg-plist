@@ -16,5 +16,3 @@ man/man1/ebook.1.gz
 %%SITE_PERL%%/EBook/Tools/PalmDoc.pm
 %%SITE_PERL%%/EBook/Tools/Unpack.pm
 bin/ebook
-@dirrmtry %%SITE_PERL%%/EBook/Tools
-@dirrmtry %%SITE_PERL%%/EBook

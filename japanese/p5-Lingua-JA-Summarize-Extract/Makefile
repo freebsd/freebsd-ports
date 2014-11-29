@@ -3,7 +3,7 @@
 
 PORTNAME=	Lingua-JA-Summarize-Extract
 PORTVERSION=	0.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=	CPAN
 

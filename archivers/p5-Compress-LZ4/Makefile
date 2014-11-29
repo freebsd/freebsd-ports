@@ -2,6 +2,7 @@
 
 PORTNAME=	Compress-LZ4
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +17,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Compress/LZ4/LZ4.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Compress/LZ4/LZ4.so
 
 .include <bsd.port.mk>

@@ -40,4 +40,3 @@
 %%SITE_PERL%%/Forest/Tree/Writer/ASCIIWithBranches.pm
 %%SITE_PERL%%/Forest/Tree/Writer/SimpleASCII.pm
 %%SITE_PERL%%/Forest/Tree/Writer/SimpleHTML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Forest/.packlist

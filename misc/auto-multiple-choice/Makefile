@@ -2,6 +2,7 @@
 
 PORTNAME=	auto-multiple-choice
 PORTVERSION=	1.2.1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/auto-qcm/
 DISTNAME=	auto-multiple-choice_${PORTVERSION}_precomp

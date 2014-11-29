@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Module/Build/Tiny.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Build/Tiny/.packlist
 %%PERL5_MAN3%%/Module::Build::Tiny.3.gz

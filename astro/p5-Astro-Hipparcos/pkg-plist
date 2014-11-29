@@ -1,6 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Astro/Hipparcos/Record.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Astro/Hipparcos.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Hipparcos/Hipparcos.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Hipparcos/.packlist
+%%SITE_ARCH%%/Astro/Hipparcos/Record.pod
+%%SITE_ARCH%%/Astro/Hipparcos.pm
+%%SITE_ARCH%%/auto/Astro/Hipparcos/Hipparcos.so
 %%PERL5_MAN3%%/Astro::Hipparcos.3.gz
 %%PERL5_MAN3%%/Astro::Hipparcos::Record.3.gz

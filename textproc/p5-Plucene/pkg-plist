@@ -65,7 +65,6 @@
 %%PERL5_MAN3%%/Plucene::Store::OutputStream.3.gz
 %%PERL5_MAN3%%/Plucene::TestCase.3.gz
 %%PERL5_MAN3%%/Plucene::Utils.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/.packlist
 %%SITE_PERL%%/Plucene.pm
 %%SITE_PERL%%/Plucene/Bitvector.pm
 %%SITE_PERL%%/Plucene/Document.pm
@@ -133,12 +132,3 @@
 %%SITE_PERL%%/Plucene/Document/DateSerializer.pm
 %%SITE_PERL%%/Plucene/Store/OutputStream.pm
 %%SITE_PERL%%/Plucene/Store/InputStream.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene
-@dirrm %%SITE_PERL%%/Plucene/Analysis/Standard
-@dirrmtry %%SITE_PERL%%/Plucene/Analysis
-@dirrmtry %%SITE_PERL%%/Plucene/Search/PhraseScorer
-@dirrmtry %%SITE_PERL%%/Plucene/Search
-@dirrmtry %%SITE_PERL%%/Plucene/Index
-@dirrmtry %%SITE_PERL%%/Plucene/Document
-@dirrmtry %%SITE_PERL%%/Plucene/Store
-@dirrmtry %%SITE_PERL%%/Plucene

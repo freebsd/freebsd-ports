@@ -3,6 +3,7 @@
 
 PORTNAME=	DBD-mysql
 PORTVERSION=	4.028
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,6 +30,6 @@ SSL_RUN_DEPENDS=	${SSL_BUILD_DEPENDS}
 SSL_CONFIGURE_ON=	--ssl
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/DBD/mysql/mysql.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/mysql/mysql.so
 
 .include <bsd.port.mk>

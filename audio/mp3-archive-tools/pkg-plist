@@ -6,7 +6,6 @@ bin/movemusic
 bin/mp3id
 bin/pmv
 bin/update-music-symlinks
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3-archive-tools/.packlist
 man/man1/cddbtofilename.1.gz
 man/man1/filenametoid3.1.gz
 man/man1/freedbtofilename.1.gz

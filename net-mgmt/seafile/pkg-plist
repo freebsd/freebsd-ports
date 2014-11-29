@@ -2,7 +2,7 @@ bin/fileserver
 bin/seaf-cli
 bin/seaf-daemon
 bin/seaf-fsck
-bin/seaf-fuse
+%%FUSE%%bin/seaf-fuse
 bin/seaf-migrate
 bin/seaf-server
 bin/seaf-server-init
@@ -47,7 +47,7 @@ man/man1/seafile-applet.1.gz
 %%WWWDIR%%/seafile.sh
 %%WWWDIR%%/seafile/bin/fileserver
 %%WWWDIR%%/seafile/bin/seaf-fsck
-%%WWWDIR%%/seafile/bin/seaf-fuse
+%%FUSE%%%%WWWDIR%%/seafile/bin/seaf-fuse
 %%WWWDIR%%/seafile/bin/seaf-migrate
 %%WWWDIR%%/seafile/bin/seaf-server
 %%WWWDIR%%/seafile/bin/seaf-server-init

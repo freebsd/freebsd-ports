@@ -18,4 +18,3 @@ bin/execflow
 %%SITE_PERL%%/Event/ExecFlow/Job/Group.pm
 %%SITE_PERL%%/Event/ExecFlow/Scheduler.pm
 %%SITE_PERL%%/Event/ExecFlow/Scheduler/SimpleMax.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/ExecFlow/.packlist

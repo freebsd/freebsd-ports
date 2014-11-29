@@ -12,6 +12,3 @@
 %%SITE_PERL%%/HTML/Prototype/Helper.pm
 %%SITE_PERL%%/HTML/Prototype/Helper/Tag.pm
 %%SITE_PERL%%/HTML/Prototype/Js.pm
-@dirrmtry %%SITE_PERL%%/HTML/Prototype/Helper
-@dirrmtry %%SITE_PERL%%/HTML/Prototype
-@dirrmtry %%SITE_PERL%%/HTML

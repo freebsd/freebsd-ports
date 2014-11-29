@@ -14,10 +14,3 @@
 %%SITE_PERL%%/XML/Elemental/SAXHandler.pm
 %%SITE_PERL%%/XML/Elemental/Util.pm
 %%SITE_PERL%%/XML/Parser/Style/Elemental.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Parser/Style
-@dirrmtry %%SITE_PERL%%/XML/Parser
-@dirrmtry %%SITE_PERL%%/XML/Elemental
-@dirrmtry %%SITE_PERL%%/XML

@@ -39,12 +39,6 @@ bin/AmphetaDesk-real
 %%DATADIR%%/templates/default/popup.html
 %%DATADIR%%/templates/default/tpl_footer.html
 %%DATADIR%%/templates/default/tpl_header.html
-@dirrm %%SITE_PERL%%/AmphetaDesk/AmphetaDesk/OS
-@dirrm %%SITE_PERL%%/AmphetaDesk/AmphetaDesk
-@dirrm %%SITE_PERL%%/AmphetaDesk/Text/Template
-@dirrm %%SITE_PERL%%/AmphetaDesk/Text
-@dirrm %%SITE_PERL%%/AmphetaDesk/XML
-@dirrm %%SITE_PERL%%/AmphetaDesk
 @dirrm %%DATADIR%%/lists
 @dirrm %%DATADIR%%/templates/default/gui
 @dirrm %%DATADIR%%/templates/default/images

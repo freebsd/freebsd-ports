@@ -10,5 +10,3 @@ man/man1/charon.local.1.gz
 man/man1/charon.pipe.1.gz
 man/man1/tartarus.1.gz
 %%SITE_PERL%%/Tartarus/Charon/Filter.pm
-@dirrmtry %%SITE_PERL%%/Tartarus/Charon
-@dirrmtry %%SITE_PERL%%/Tartarus

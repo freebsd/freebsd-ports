@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Emoji/.packlist
 %%SITE_PERL%%/Encode/JP/Emoji.pm
 %%SITE_PERL%%/Encode/JP/Emoji/Encoding.pm
 %%SITE_PERL%%/Encode/JP/Emoji/FB_EMOJI_TEXT.pm

@@ -1,3 +1,2 @@
 %%SITE_PERL%%/IO/Null.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Null/.packlist
 %%PERL5_MAN3%%/IO::Null.3.gz

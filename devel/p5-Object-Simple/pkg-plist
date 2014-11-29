@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Object/Simple.pm
 %%SITE_PERL%%/Object/Simple/Accessor.pm
 %%SITE_PERL%%/Object/Simple/Guide.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Simple/.packlist

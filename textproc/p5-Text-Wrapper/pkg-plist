@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Text::Wrapper.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Wrapper/.packlist
 %%SITE_PERL%%/Text/Wrapper.pm
-@dirrmtry %%SITE_PERL%%/Text
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Wrapper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

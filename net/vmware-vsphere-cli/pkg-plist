@@ -1055,7 +1055,6 @@ bin/vmware-cmd
 %%SITE_PERL%%/VMware/VIExt.pm
 %%SITE_PERL%%/VMware/VICredStore.pm
 %%SITE_PERL%%/VMware/VICommon.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/VIPerlToolkit/.packlist
 %%EXAMPLESDIR%%/vm/vmtemplate.pl
 %%EXAMPLESDIR%%/vm/vmsnapshot.pl
 %%EXAMPLESDIR%%/vm/vmregister.pl
@@ -1094,10 +1093,6 @@ bin/vmware-cmd
 %%EXAMPLESDIR%%/AppUtil/XMLInputUtil.pm
 %%EXAMPLESDIR%%/AppUtil/VMUtil.pm
 %%EXAMPLESDIR%%/AppUtil/HostUtil.pm
-@dirrmtry %%SITE_PERL%%/WSMan/Stubs
-@dirrmtry %%SITE_PERL%%/WSMan
-@dirrmtry %%SITE_PERL%%/VMware
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VIPerlToolkit
 @dirrmtry %%EXAMPLESDIR%%/vm
 @dirrmtry %%EXAMPLESDIR%%/session
 @dirrmtry %%EXAMPLESDIR%%/schema

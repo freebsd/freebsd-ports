@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/Pager/.packlist
 %%SITE_PERL%%/DBIx/Skinny/Mixin/Pager.pm
 %%SITE_PERL%%/DBIx/Skinny/Mixin/SearchWithPager.pm
 %%SITE_PERL%%/DBIx/Skinny/Pager.pm

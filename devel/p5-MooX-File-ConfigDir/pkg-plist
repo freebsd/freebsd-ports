@@ -1,3 +1,2 @@
 %%SITE_PERL%%/MooX/File/ConfigDir.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/File/ConfigDir/.packlist
 %%PERL5_MAN3%%/MooX::File::ConfigDir.3.gz

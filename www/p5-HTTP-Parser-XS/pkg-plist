@@ -1,11 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/HTTP/Parser/XS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/HTTP/Parser/XS/PP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS/XS.so
+%%SITE_ARCH%%/HTTP/Parser/XS.pm
+%%SITE_ARCH%%/HTTP/Parser/XS/PP.pm
+%%SITE_ARCH%%/auto/HTTP/Parser/XS/XS.so
 %%PERL5_MAN3%%/HTTP::Parser::XS.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/HTTP/Parser/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP

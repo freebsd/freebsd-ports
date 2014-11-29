@@ -130,24 +130,3 @@ bin/srx2table
 %%SITE_PERL%%/RDF/Trine/Store/SPARQL.pm
 %%SITE_PERL%%/RDF/Trine/VariableBindings.pm
 %%SITE_PERL%%/Test/RDF/Trine/Store.pm
-%%SITE_PERL%%/mach/auto/RDF/Trine/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/RDF/Trine
-@dirrmtry %%SITE_PERL%%/mach/auto/RDF
-@dirrm %%SITE_PERL%%/Test/RDF/Trine
-@dirrmtry %%SITE_PERL%%/Test/RDF
-@dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/RDF/Trine/Store/DBI
-@dirrm %%SITE_PERL%%/RDF/Trine/Store
-@dirrm %%SITE_PERL%%/RDF/Trine/Statement
-@dirrm %%SITE_PERL%%/RDF/Trine/Serializer/NTriples
-@dirrm %%SITE_PERL%%/RDF/Trine/Serializer
-@dirrm %%SITE_PERL%%/RDF/Trine/Parser/Turtle
-@dirrm %%SITE_PERL%%/RDF/Trine/Parser
-@dirrm %%SITE_PERL%%/RDF/Trine/Node
-@dirrm %%SITE_PERL%%/RDF/Trine/Model
-@dirrm %%SITE_PERL%%/RDF/Trine/Iterator/Graph
-@dirrm %%SITE_PERL%%/RDF/Trine/Iterator/Bindings
-@dirrm %%SITE_PERL%%/RDF/Trine/Iterator
-@dirrm %%SITE_PERL%%/RDF/Trine/Exporter
-@dirrm %%SITE_PERL%%/RDF/Trine
-@dirrmtry %%SITE_PERL%%/RDF

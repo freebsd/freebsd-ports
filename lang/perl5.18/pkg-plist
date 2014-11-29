@@ -760,6 +760,8 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/iperlsys.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/keywords.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/l1_char_class_tab.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so.%%PERL_VER%%
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so.%%PERL_VERSION%%
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/malloc_ctl.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/metaconfig.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg.h
@@ -2882,14 +2884,10 @@ man/man1/shasum.1.gz
 man/man1/splain.1.gz
 man/man1/xsubpp.1.gz
 man/man1/zipdetails.1.gz
-@dir lib/perl5/%%PERL_VER%%/man/man3
+@dir %%SITE_PERL%%/man/man3
 @dir %%SITE_PERL%%/auto
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/machine
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/sys
-@exec cd /usr/include && %D/bin/h2ph -d %D/%%SITE_PERL%%/%%PERL_ARCH%% *.h machine/*.h sys/*.h >/dev/null
-@exec makewhatis %D/lib/perl5/%%PERL_VER%%/man
+@dir %%SITE_ARCH%%/auto
+@exec makewhatis %D/%%SITE_PERL%%/man
 @exec makewhatis %D/lib/perl5/%%PERL_VER%%/perl/man
-@rmtry lib/perl5/%%PERL_VER%%/man/whatis
 @rmtry lib/perl5/%%PERL_VER%%/perl/man/whatis
-@unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
+@rmtry %%SITE_PERL%%/man/whatis

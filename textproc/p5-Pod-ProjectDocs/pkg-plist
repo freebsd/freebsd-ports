@@ -12,10 +12,4 @@ bin/pod2projdocs
 %%SITE_PERL%%/Pod/ProjectDocs/Parser/JavaScriptPod.pm
 %%SITE_PERL%%/Pod/ProjectDocs/Parser/PerlPod.pm
 %%SITE_PERL%%/Pod/ProjectDocs/Template.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/ProjectDocs/.packlist
 man/man1/pod2projdocs.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/ProjectDocs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
-@dirrmtry %%SITE_PERL%%/Pod/ProjectDocs/Parser
-@dirrmtry %%SITE_PERL%%/Pod/ProjectDocs
-@dirrmtry %%SITE_PERL%%/Pod

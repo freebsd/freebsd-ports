@@ -3,6 +3,7 @@
 
 PORTNAME=	File-Tee
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN \
 		http://kostjn.spb.ru/freebsd/

@@ -1,9 +1,3 @@
 bin/term-qrcode
 %%PERL5_MAN3%%/Term::QRCode.3.gz
 %%SITE_PERL%%/Term/QRCode.pm
-%%SITE_PERL%%/mach/auto/Term/QRCode/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/Term/QRCode
-@dirrm %%SITE_PERL%%/mach/auto/Term
-@dirrm %%SITE_PERL%%/mach/auto
-@dirrm %%SITE_PERL%%/mach
-@dirrm %%SITE_PERL%%/Term

@@ -2,8 +2,3 @@ bin/ppi2html
 %%PERL5_MAN3%%/PPI::HTML.3.gz
 %%SITE_PERL%%/PPI/HTML.pm
 %%SITE_PERL%%/PPI/HTML/Fragment.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/HTML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI
-@dirrm %%SITE_PERL%%/PPI/HTML
-@dirrmtry %%SITE_PERL%%/PPI

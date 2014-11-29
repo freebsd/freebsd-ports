@@ -20,4 +20,3 @@
 %%SITE_PERL%%/auto/Config/Simple/vars.al
 %%SITE_PERL%%/auto/Config/Simple/verbose.al
 %%SITE_PERL%%/auto/Config/Simple/write_string.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Simple/.packlist

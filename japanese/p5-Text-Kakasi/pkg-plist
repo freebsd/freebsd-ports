@@ -1,6 +1,5 @@
 %%PERL5_MAN3%%/Text::Kakasi.3.gz
 %%PERL5_MAN3%%/Text::Kakasi::JP.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Kakasi.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Kakasi/JP.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi/Kakasi.so
+%%SITE_ARCH%%/Text/Kakasi.pm
+%%SITE_ARCH%%/Text/Kakasi/JP.pod
+%%SITE_ARCH%%/auto/Text/Kakasi/Kakasi.so

@@ -48,7 +48,6 @@
 %%SITE_PERL%%/Maypole/templates/factory/search_form
 %%SITE_PERL%%/Maypole/templates/factory/title
 %%SITE_PERL%%/Maypole/templates/factory/view
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole/.packlist
 %%PERL5_MAN3%%/Apache::MVC.3.gz
 %%PERL5_MAN3%%/CGI::%%AP_NAME%%.3.gz
 %%PERL5_MAN3%%/CGI::Untaint::%%AP_NAME%%.3.gz
@@ -117,15 +116,3 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fancy_example
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/BeerDB
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole
-@dirrmtry %%SITE_PERL%%/Maypole/templates/factory
-@dirrmtry %%SITE_PERL%%/Maypole/templates/beer
-@dirrmtry %%SITE_PERL%%/Maypole/templates
-@dirrmtry %%SITE_PERL%%/Maypole/View
-@dirrmtry %%SITE_PERL%%/Maypole/Model/CDBI
-@dirrmtry %%SITE_PERL%%/Maypole/Model
-@dirrmtry %%SITE_PERL%%/Maypole/Manual
-@dirrmtry %%SITE_PERL%%/Maypole/HTTPD
-@dirrmtry %%SITE_PERL%%/Maypole
-@dirrmtry %%SITE_PERL%%/CGI
-@dirrmtry %%SITE_PERL%%/Apache

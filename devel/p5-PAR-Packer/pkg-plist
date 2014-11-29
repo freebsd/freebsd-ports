@@ -19,7 +19,6 @@ man/man1/tkpp.1.gz
 %%SITE_PERL%%/PAR/StrippedPARL/Base.pm
 %%SITE_PERL%%/PAR/StrippedPARL/Dynamic.pm
 %%SITE_PERL%%/PAR/StrippedPARL/Static.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/Packer/.packlist
 %%PERL5_MAN3%%/App::Packer::PAR.3.gz
 %%PERL5_MAN3%%/Dynamic.3.gz
 %%PERL5_MAN3%%/PAR::Filter.3.gz

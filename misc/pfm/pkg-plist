@@ -90,12 +90,3 @@ man/man1/pfm.1.gz
 %%SITE_PERL%%/App/PFM/Screen/Listing.pm
 %%SITE_PERL%%/App/PFM/State.pm
 %%SITE_PERL%%/App/PFM/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/pfm/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/pfm
-@dirrm %%SITE_PERL%%/App/PFM/Screen
-@dirrm %%SITE_PERL%%/App/PFM/OS
-@dirrm %%SITE_PERL%%/App/PFM/Job
-@dirrm %%SITE_PERL%%/App/PFM/Config
-@dirrm %%SITE_PERL%%/App/PFM/Browser
-@dirrm %%SITE_PERL%%/App/PFM
-@dirrmtry %%SITE_PERL%%/App

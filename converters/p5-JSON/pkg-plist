@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/.packlist
 %%SITE_PERL%%/JSON.pm
 %%SITE_PERL%%/JSON/backportPP.pm
 %%SITE_PERL%%/JSON/backportPP/Boolean.pm

@@ -2,6 +2,7 @@
 
 PORTNAME=	perlkde
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde perl5
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,7 @@ USE_QT4=	network opengl sql svg xml \
 USES=		cmake:outsource compiler:c++11-lib perl5 tar:xz
 
 # Respect PREFIX
-CMAKE_ARGS+=	-DCUSTOM_PERL_SITE_ARCH_DIR=${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}
+CMAKE_ARGS+=	-DCUSTOM_PERL_SITE_ARCH_DIR=${PREFIX}/${SITE_ARCH_REL}
 
 # Fix build PREFIX != KDE4_PREFIX
 CMAKE_ARGS+=	-DSmoke_DIR=${KDE4_PREFIX}/lib/cmake/smoke \

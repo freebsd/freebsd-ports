@@ -4,8 +4,3 @@
 %%SITE_PERL%%/Net/Stomp.pm
 %%SITE_PERL%%/Net/Stomp/Frame.pm
 %%SITE_PERL%%/Net/Stomp/StupidLogger.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Stomp/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Stomp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Stomp
-@dirrmtry %%SITE_PERL%%/Net

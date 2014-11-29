@@ -49,12 +49,12 @@
     SUBDIR += dlv
     SUBDIR += dmd1
     SUBDIR += dmd2
+    SUBDIR += duktape
     SUBDIR += ecl
     SUBDIR += elan
     SUBDIR += elixir
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
-    SUBDIR += embryo
     SUBDIR += erlang
     SUBDIR += erlang-runtime15
     SUBDIR += erlang-runtime16
@@ -117,7 +117,6 @@
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += io
-    SUBDIR += ironpython
     SUBDIR += itcl
     SUBDIR += itcl4
     SUBDIR += jakarta-commons-jelly

@@ -3,4 +3,3 @@
 %%SITE_PERL%%/DBIx/Log4perl/Constants.pm
 %%SITE_PERL%%/DBIx/Log4perl/db.pm
 %%SITE_PERL%%/DBIx/Log4perl/st.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Log4perl/.packlist

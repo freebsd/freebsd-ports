@@ -19,14 +19,3 @@ GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resourc
 GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/stamp.make
 GNUstep/Local/Applications/InnerSpace.app/stamp.make
 GNUstep/Local/Tools/InnerSpace
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/English.lproj/InnerSpace.gorm
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/Resources
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/Resources
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/Black.InnerSpace
-@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources
-@dirrm GNUstep/Local/Applications/InnerSpace.app

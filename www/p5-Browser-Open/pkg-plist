@@ -1,6 +1,2 @@
 %%SITE_PERL%%/Browser/Open.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Browser/Open/.packlist
 %%PERL5_MAN3%%/Browser::Open.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Browser/Open
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Browser
-@dirrmtry %%SITE_PERL%%/Browser

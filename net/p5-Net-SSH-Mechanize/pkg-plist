@@ -6,6 +6,3 @@
 %%PERL5_MAN3%%/Net::SSH::Mechanize::ConnectParams.3.gz
 %%PERL5_MAN3%%/Net::SSH::Mechanize::Multi.3.gz
 %%PERL5_MAN3%%/Net::SSH::Mechanize::Session.3.gz
-@dirrm %%SITE_PERL%%/Net/SSH/Mechanize
-@dirrmtry %%SITE_PERL%%/Net/SSH
-@dirrmtry %%SITE_PERL%%/Net

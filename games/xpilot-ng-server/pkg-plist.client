@@ -108,7 +108,3 @@ share/xpilot-ng/textures/wall_ull.ppm
 share/xpilot-ng/textures/wall_ur.ppm
 share/xpilot-ng/textures/wall_url.ppm
 share/xpilot-ng/textures/wormhole.ppm
-@dirrm share/xpilot-ng/fonts
-%%SOUND%%@dirrm share/xpilot-ng/sound
-@dirrm share/xpilot-ng/textures
-@dirrm share/xpilot-ng

@@ -20,6 +20,10 @@ CONFIGURE_ARGS=	--disable-static
 USES=		gmake libtool pkgconfig tar:bzip2
 USE_EFL=	edje modarch_hack
 
+BROKEN=		Don't build with Enlightenment 0.19
+DEPRECATED=	Broken and updates aren't available
+EXPIRATION_DATE=2014-12-31
+
 OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>

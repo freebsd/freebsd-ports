@@ -14,5 +14,3 @@ bin/simplify.pl
 %%PORTDOCS%%%%DOCSDIR%%/README.sanitizer
 %%PORTDOCS%%%%DOCSDIR%%/sanitizer.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/Anomy/Sanitizer/
-@dirrm %%SITE_PERL%%/Anomy/

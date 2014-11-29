@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Query/SQL/.packlist
 %%SITE_PERL%%/Text/Query/BuildSQLMifluz.pm
 %%SITE_PERL%%/Text/Query/BuildSQLMySQL.pm
 %%SITE_PERL%%/Text/Query/BuildSQLFulcrum.pm

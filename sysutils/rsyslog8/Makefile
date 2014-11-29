@@ -2,6 +2,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	8.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -135,7 +136,7 @@ CFLAGS+=	${CPPFLAGS}
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=	--enable-imfile --enable-mail --enable-imdiag --enable-impstats --enable-omstdout --enable-cached-man-pages --disable-testbench
+CONFIGURE_ARGS+=	--enable-cached-man-pages --enable-imdiag --enable-imfile --enable-impstats --enable-mail --enable-omprog --enable-omstdout --disable-testbench
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
@@ -146,7 +147,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
-.for l in lmregexp lmzlibw lmnet lmnetstrms lmstrmsrv lmnsd_ptcp lmcry_gcry lmtcpsrv lmtcpclt immark imuxsock imtcp imudp omtesting imklog impstats omstdout imfile imdiag ommail
+.for l in imdiag imfile imklog immark impstats imtcp imudp imuxsock lmcry_gcry lmnet lmnetstrms lmnsd_ptcp lmregexp lmstrmsrv lmtcpclt lmtcpsrv lmzlibw mmexternal ommail omprog omstdout omtesting
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/rsyslog/${l}.so
 .endfor
 

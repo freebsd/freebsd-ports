@@ -4,4 +4,3 @@
 %%SITE_PERL%%/MooX/Cmd.pm
 %%SITE_PERL%%/MooX/Cmd/Role.pm
 %%SITE_PERL%%/MooX/Cmd/Tester.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/Cmd/.packlist

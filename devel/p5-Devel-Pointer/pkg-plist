@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Devel::Pointer.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Pointer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Pointer/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Pointer/Pointer.so
+%%SITE_ARCH%%/Devel/Pointer.pm
+%%SITE_ARCH%%/auto/Devel/Pointer/Pointer.so

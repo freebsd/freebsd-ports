@@ -28,57 +28,43 @@ bin/rdfquery.pl
 %%PERL5_MAN3%%/RDFStore::Vocabulary::Generator.3.gz
 %%PERL5_MAN3%%/RDQL::Parser.3.gz
 %%PERL5_MAN3%%/Util::BLOB.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/RDFStore.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBMS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Digest/Digestable.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Literal.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Model.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/NodeFactory.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Object.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/NTriples.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/SiRPAC.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/Styles/RDFStore/Model.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/Styles/RDFStore/Statement.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/RDFNode.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Resource.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/SchemaModel.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer/NTriples.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer/RDFXML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer/RSS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Statement.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Util/Digest.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Util/UTF8.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/VirtualModel.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/DAML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/DC.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/DCQ.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/DCT.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/FOAF.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/Generator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/OWL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/RDF.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/RDFS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/RDFStoreContext.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary/RSS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/RDQL/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Util/BLOB.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBMS/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore/RDFStore.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore/autosplit.ix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDFStore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBMS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDQL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Vocabulary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Util
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Serializer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/Styles/RDFStore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/Styles
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Digest
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
+%%SITE_ARCH%%/DBD/RDFStore.pm
+%%SITE_ARCH%%/DBMS.pm
+%%SITE_ARCH%%/RDFStore.pm
+%%SITE_ARCH%%/RDFStore/Digest/Digestable.pm
+%%SITE_ARCH%%/RDFStore/Literal.pm
+%%SITE_ARCH%%/RDFStore/Model.pm
+%%SITE_ARCH%%/RDFStore/NodeFactory.pm
+%%SITE_ARCH%%/RDFStore/Object.pm
+%%SITE_ARCH%%/RDFStore/Parser.pm
+%%SITE_ARCH%%/RDFStore/Parser/NTriples.pm
+%%SITE_ARCH%%/RDFStore/Parser/SiRPAC.pm
+%%SITE_ARCH%%/RDFStore/Parser/Styles/RDFStore/Model.pm
+%%SITE_ARCH%%/RDFStore/Parser/Styles/RDFStore/Statement.pm
+%%SITE_ARCH%%/RDFStore/RDFNode.pm
+%%SITE_ARCH%%/RDFStore/Resource.pm
+%%SITE_ARCH%%/RDFStore/SchemaModel.pm
+%%SITE_ARCH%%/RDFStore/Serializer.pm
+%%SITE_ARCH%%/RDFStore/Serializer/NTriples.pm
+%%SITE_ARCH%%/RDFStore/Serializer/RDFXML.pm
+%%SITE_ARCH%%/RDFStore/Serializer/RSS.pm
+%%SITE_ARCH%%/RDFStore/Statement.pm
+%%SITE_ARCH%%/RDFStore/Util/Digest.pm
+%%SITE_ARCH%%/RDFStore/Util/UTF8.pm
+%%SITE_ARCH%%/RDFStore/VirtualModel.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/DAML.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/DC.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/DCQ.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/DCT.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/FOAF.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/Generator.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/OWL.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/RDF.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/RDFS.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/RDFStoreContext.pm
+%%SITE_ARCH%%/RDFStore/Vocabulary/RSS.pm
+%%SITE_ARCH%%/RDQL/Parser.pm
+%%SITE_ARCH%%/Util/BLOB.pm
+%%SITE_ARCH%%/auto/DBMS/autosplit.ix
+%%SITE_ARCH%%/auto/RDFStore/RDFStore.so
+%%SITE_ARCH%%/auto/RDFStore/autosplit.ix

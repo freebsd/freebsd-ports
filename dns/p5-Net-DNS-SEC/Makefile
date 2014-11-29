@@ -2,6 +2,7 @@
 
 PORTNAME=	Net-DNS-SEC
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN \
 		http://www.ripe.net/ripencc/pub-services/np/DISI/SRC/

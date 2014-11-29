@@ -2,4 +2,3 @@
 %%SITE_PERL%%/Spiffy.pm
 %%SITE_PERL%%/Spiffy.pod
 %%SITE_PERL%%/Spiffy/mixin.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spiffy/.packlist

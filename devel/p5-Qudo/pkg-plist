@@ -1,5 +1,4 @@
 bin/qudo
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Qudo/.packlist
 %%SITE_PERL%%/Qudo.pm
 %%SITE_PERL%%/Qudo/Driver/Skinny.pm
 %%SITE_PERL%%/Qudo/Driver/Skinny/Row/ExceptionLog.pm

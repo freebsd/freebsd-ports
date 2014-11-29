@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Descriptive/.packlist
 %%SITE_PERL%%/Statistics/Descriptive.pm
 %%SITE_PERL%%/Statistics/Descriptive/Smoother.pm
 %%SITE_PERL%%/Statistics/Descriptive/Smoother/Exponential.pm
@@ -7,8 +6,3 @@
 %%PERL5_MAN3%%/Statistics::Descriptive::Smoother.3.gz
 %%PERL5_MAN3%%/Statistics::Descriptive::Smoother::Exponential.3.gz
 %%PERL5_MAN3%%/Statistics::Descriptive::Smoother::Weightedexponential.3.gz
-@dirrmtry %%SITE_PERL%%/Statistics/Descriptive/Smoother
-@dirrmtry %%SITE_PERL%%/Statistics/Descriptive
-@dirrmtry %%SITE_PERL%%/Statistics
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Descriptive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics

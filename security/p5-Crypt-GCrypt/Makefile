@@ -3,7 +3,7 @@
 
 PORTNAME=	Crypt-GCrypt
 PORTVERSION=	1.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,6 @@ USE_PERL5=	configure
 USES=		perl5
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Crypt/GCrypt/GCrypt.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/GCrypt/GCrypt.so
 
 .include <bsd.port.mk>

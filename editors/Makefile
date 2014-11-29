@@ -88,6 +88,7 @@
     SUBDIR += kile-kde4
     SUBDIR += klat4
     SUBDIR += komodo-edit
+    SUBDIR += latexila
     SUBDIR += lazarus
     SUBDIR += lazarus-lcl-gtk
     SUBDIR += lazarus-lcl-gtk2

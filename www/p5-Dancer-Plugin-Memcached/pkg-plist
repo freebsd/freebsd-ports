@@ -1,5 +1,2 @@
 %%PERL5_MAN3%%/Dancer::Plugin::Memcached.3.gz
 %%SITE_PERL%%/Dancer/Plugin/Memcached.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Memcached/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Memcached
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin

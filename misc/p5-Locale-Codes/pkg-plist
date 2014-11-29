@@ -56,8 +56,3 @@
 %%SITE_PERL%%/Locale/Language.pod
 %%SITE_PERL%%/Locale/Script.pm
 %%SITE_PERL%%/Locale/Script.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Codes/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Codes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
-@dirrm %%SITE_PERL%%/Locale/Codes
-@dirrmtry %%SITE_PERL%%/Locale

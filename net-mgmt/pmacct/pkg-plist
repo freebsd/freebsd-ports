@@ -49,7 +49,6 @@ sbin/uacctd
 %%DATADIR%%/pmacct-create-table_v7.sqlite3
 %%DATADIR%%/pmacct-create-table_v8.sqlite3
 %%DATADIR%%/pmacct-grant-db.mysql
-@dirrmtry %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -87,5 +86,3 @@ sbin/uacctd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rrdtool-example.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampling.map.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tee_receivers.lst.example
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

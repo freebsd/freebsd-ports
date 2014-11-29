@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/common::sense.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/common/sense/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/common/sense.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/common/sense.pod
+%%SITE_ARCH%%/common/sense.pm
+%%SITE_ARCH%%/common/sense.pod

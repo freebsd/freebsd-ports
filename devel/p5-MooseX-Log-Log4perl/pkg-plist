@@ -2,4 +2,3 @@
 %%PERL5_MAN3%%/MooseX::Log::Log4perl::Easy.3.gz
 %%SITE_PERL%%/MooseX/Log/Log4perl.pm
 %%SITE_PERL%%/MooseX/Log/Log4perl/Easy.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Log/Log4perl/.packlist

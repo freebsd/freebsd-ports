@@ -2,4 +2,3 @@ bin/mxico
 man/man1/mxico.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/READMEj
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

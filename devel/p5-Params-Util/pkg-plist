@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Params::Util.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Params/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Util/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Util/Util.so
+%%SITE_ARCH%%/Params/Util.pm
+%%SITE_ARCH%%/auto/Params/Util/Util.so

@@ -15,14 +15,8 @@ bin/dtdparse
 %%SITE_PERL%%/SGML/DTDParse/Format/refentry.pl
 %%SITE_PERL%%/SGML/DTDParse/Tokenizer.pm
 %%SITE_PERL%%/SGML/DTDParse/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse/.packlist
 man/man1/dtddiff.1.gz
 man/man1/dtddiff2html.1.gz
 man/man1/dtdflatten.1.gz
 man/man1/dtdformat.1.gz
 man/man1/dtdparse.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML
-@dirrmtry %%SITE_PERL%%/SGML/DTDParse/Format
-@dirrmtry %%SITE_PERL%%/SGML/DTDParse
-@dirrmtry %%SITE_PERL%%/SGML

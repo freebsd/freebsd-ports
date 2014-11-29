@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandora_server
-PORTREVISION=	1
+PORTREVISION=	2
 
 CATEGORIES=	net-mgmt
 
@@ -41,7 +41,7 @@ ORACLE_DESC=	Use Oracle backend (experimental)
 EXTRAS_DESC=	Extra dependencies for util scripts
 
 USES=		perl5
-USE_PERL5+=	fixpacklist
+USE_PERL5=	build run
 SUB_LIST+=	PERL="${PERL}" DATADIR="${DATADIR}"
 SUB_FILES=	pkg-message
 
@@ -96,7 +96,6 @@ post-patch:
 		`${GREP} -rl /usr/bin/perl ${WRKSRC} | ${GREP} -v pandora_server_installer`
 
 post-install:
-	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 	@${FIND} ${STAGEDIR}${DATADIR} -type l -name PandoraFMS -delete
 .for x in pandora_server tentacle_server
 	@cd ${STAGEDIR}${PREFIX}/etc/rc.d && test -f ${x} \

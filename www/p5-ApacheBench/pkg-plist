@@ -1,12 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/HTTPD/Bench/ApacheBench.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/HTTPD/Bench/ApacheBench/Regression.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/HTTPD/Bench/ApacheBench/Run.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD/Bench/ApacheBench/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD/Bench/ApacheBench/ApacheBench.so
+%%SITE_ARCH%%/HTTPD/Bench/ApacheBench.pm
+%%SITE_ARCH%%/HTTPD/Bench/ApacheBench/Regression.pm
+%%SITE_ARCH%%/HTTPD/Bench/ApacheBench/Run.pm
+%%SITE_ARCH%%/auto/HTTPD/Bench/ApacheBench/ApacheBench.so
 %%PERL5_MAN3%%/HTTPD::Bench::ApacheBench.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD/Bench/ApacheBench
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD/Bench
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTPD/Bench/ApacheBench
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTPD/Bench
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTPD

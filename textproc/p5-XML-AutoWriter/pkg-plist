@@ -8,8 +8,3 @@
 %%SITE_PERL%%/XML/Doctype/AttDef.pm
 %%SITE_PERL%%/XML/Doctype/ElementDecl.pm
 %%SITE_PERL%%/XML/ValidWriter.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/AutoWriter/.packlist
-@dirrm %%SITE_PERL%%/XML/Doctype
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/AutoWriter
-@dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

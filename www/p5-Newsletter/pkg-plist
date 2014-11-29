@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Newsletter/.packlist
 %%SITE_PERL%%/Newsletter.pm
 %%SITE_PERL%%/Newsletter/Html.pm
 %%SITE_PERL%%/Newsletter/Html/Templ.pm
@@ -9,6 +8,3 @@
 %%PERL5_MAN3%%/Newsletter::Html::CSS.3.gz
 %%PERL5_MAN3%%/Newsletter::Html::Upload.3.gz
 %%PERL5_MAN3%%/Newsletter.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Newsletter
-@dirrmtry %%SITE_PERL%%/Newsletter/Html
-@dirrmtry %%SITE_PERL%%/Newsletter

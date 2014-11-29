@@ -16,5 +16,5 @@ lib/libaxtls.a
 lib/libaxtls.so
 lib/libaxtls.so.1
 lib/libaxtls.so.1.2
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/libaxtlsp.so
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/axtlsp.pm
+%%PERL%%%%SITE_ARCH%%/auto/libaxtlsp.so
+%%PERL%%%%SITE_ARCH%%/axtlsp.pm

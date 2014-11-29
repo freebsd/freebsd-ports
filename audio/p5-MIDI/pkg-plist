@@ -12,4 +12,3 @@
 %%SITE_PERL%%/MIDI/Score.pm
 %%SITE_PERL%%/MIDI/Simple.pm
 %%SITE_PERL%%/MIDI/Track.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIDI-Perl/.packlist

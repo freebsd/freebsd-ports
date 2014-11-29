@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Thrift/.packlist
 %%SITE_PERL%%/Thrift.pm
 %%SITE_PERL%%/Thrift/BinaryProtocol.pm
 %%SITE_PERL%%/Thrift/BufferedTransport.pm

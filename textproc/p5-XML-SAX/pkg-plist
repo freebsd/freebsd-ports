@@ -25,10 +25,3 @@
 %%SITE_PERL%%/XML/SAX/PurePerl/Reader/UnicodeExt.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/UnicodeExt.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/XMLDecl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/SAX/PurePerl/Reader
-@dirrmtry %%SITE_PERL%%/XML/SAX/PurePerl
-@dirrmtry %%SITE_PERL%%/XML/SAX
-@dirrmtry %%SITE_PERL%%/XML

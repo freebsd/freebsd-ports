@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	icecast2
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://downloads.xiph.org/releases/icecast/:source \
 		http://svn.xiph.org/releases/icecast/:source \
-		LOCAL/sunpoet:source \
+		LOCAL/sunpoet/icecast:icon,source \
 		http://www.icecast.org/:icon
 DISTFILES=	icecast-${PORTVERSION}${EXTRACT_SUFX}:source \
 		favicon.ico:icon

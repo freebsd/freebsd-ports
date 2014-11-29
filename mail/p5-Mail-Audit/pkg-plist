@@ -12,9 +12,3 @@
 %%SITE_PERL%%/Mail/Audit/MimeEntity.pm
 %%SITE_PERL%%/Mail/Audit/Util/Tempdir.pm
 %%SITE_PERL%%/Mail/Audit/Vacation.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/Mail/Audit/Util
-@dirrmtry %%SITE_PERL%%/Mail/Audit
-@dirrmtry %%SITE_PERL%%/Mail

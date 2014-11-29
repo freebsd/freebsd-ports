@@ -17,7 +17,6 @@
 %%SITE_PERL%%/Data/ParseBinary/Streams.pm
 %%SITE_PERL%%/Data/ParseBinary/Core.pm
 %%SITE_PERL%%/Data/ParseBinary.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ParseBinary/.packlist
 %%PERL5_MAN3%%/Data::ParseBinary::Graphics::WMF.3.gz
 %%PERL5_MAN3%%/Data::ParseBinary::Graphics::EMF.3.gz
 %%PERL5_MAN3%%/Data::ParseBinary.3.gz

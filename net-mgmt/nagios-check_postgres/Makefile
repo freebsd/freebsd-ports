@@ -3,7 +3,7 @@
 
 PORTNAME=	check_postgres
 PORTVERSION=	2.21.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/
 PKGNAMEPREFIX=	nagios-

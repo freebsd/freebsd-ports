@@ -3,7 +3,7 @@
 
 PORTNAME=	spread
 PORTVERSION=	3.17.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net perl5
 MASTER_SITES=	http://bsdforge.com/projects/source/net/spread/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -15,7 +15,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 USES=		perl5 tar:xz
-USE_PERL5=	build fixpacklist run
+USE_PERL5=	build run
 USE_RC_SUBR=	spread
 USE_LDCONFIG=	yes
 
@@ -74,6 +74,6 @@ post-install:
 	${INSTALL} -m 750 -d ${STAGEDIR}${RUNDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspread.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtspread.so.1
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Spread/Spread.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Spread/Spread.so
 
 .include <bsd.port.post.mk>

@@ -40,13 +40,4 @@ bin/dtd2html.pl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/prev.png
 %%SITE_PERL%%/XML/Handler/Dtd2Html/simple.css
 %%SITE_PERL%%/XML/Handler/Dtd2Html/up.png
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2Html/.packlist
 man/man1/dtd2html.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2Html
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2Html/fr
-@dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2Html/en
-@dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2Html
-@dirrmtry %%SITE_PERL%%/XML/Handler
-@dirrmtry %%SITE_PERL%%/XML

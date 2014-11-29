@@ -3,6 +3,7 @@
 
 PORTNAME=	minc
 PORTVERSION=	2.2.00
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	science biology
 MASTER_SITES=	GH
@@ -24,7 +25,6 @@ GH_COMMIT=	6f2f5b9
 
 USES=		bison gmake libtool perl5 shebangfix
 SHEBANG_FILES=	progs/mincview/mincview
-USE_PERL5=	build
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I m4 --automake-acdir=${ACLOCAL_DIR}
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing

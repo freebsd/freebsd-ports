@@ -2,25 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	raw
-PORTVERSION=	1.7.9
-PORTREVISION=	1
+PORTVERSION=	1.12.0
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		LOCAL/gblach/e17/
+MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PKGNAMEPREFIX:S/-//}/
 PKGNAMEPREFIX=	evas_generic_loaders-
-DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${DISTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Additional loader for Evas (raw)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw
+LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
+		libraw.so:${PORTSDIR}/graphics/libraw
 
-DIST_SUBDIR=	e17
+DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		pkgconfig tar:bzip2
-USE_EFL=	eina
+USES=		pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 BINSRC=		${WRKSRC}/src/bin/${PORTNAME}

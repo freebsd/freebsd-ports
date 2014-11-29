@@ -3,7 +3,7 @@
 
 PORTNAME=	DBD-Oracle
 PORTVERSION=	1.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -52,7 +52,7 @@ post-patch:
 		${WRKSRC}/dbdimp.c ${WRKSRC}/Oracle.xs ${WRKSRC}/oci[78].c
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/DBD/Oracle/Oracle.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/Oracle/Oracle.so
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Oracle.ex/Readme 	${STAGEDIR}${EXAMPLESDIR}

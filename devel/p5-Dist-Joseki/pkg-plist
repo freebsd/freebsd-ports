@@ -17,7 +17,6 @@ bin/distfind
 %%SITE_PERL%%/Dist/Joseki/DistType/ModuleBuild.pm
 %%SITE_PERL%%/Dist/Joseki/Find.pm
 %%SITE_PERL%%/Dist/Joseki/Version.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Joseki/.packlist
 %%PERL5_MAN3%%/Dist::Joseki.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Base.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Cmd.3.gz

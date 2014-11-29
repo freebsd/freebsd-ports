@@ -46,4 +46,3 @@
 %%SITE_PERL%%/Data/Rx/TypeBundle.pm
 %%SITE_PERL%%/Data/Rx/TypeBundle/Core.pm
 %%SITE_PERL%%/Data/Rx/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rx/.packlist

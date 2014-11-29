@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.6.19-67.0
+DISTVERSION=	5.6.21-70.1
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.6/Percona-Server-${DISTVERSION}/source/tarball/
@@ -63,7 +63,9 @@ CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	56p
 
-CONFLICTS_INSTALL=	mysql[0-9][0-9]-server-* mariadb[0-9][0-9]-server-* percona5.[0-57-9]-server-* percona[0-46-9][0-9]-server-*
+CONFLICTS_INSTALL=	mysql*-server-* \
+			mariadb*-server-* \
+			percona5[0-57-9]-server-*
 
 USE_RC_SUBR=	mysql-server
 

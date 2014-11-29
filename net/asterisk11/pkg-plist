@@ -1242,11 +1242,11 @@ share/asterisk/static-http/mantest.html
 @dir %%VARDIR%%/spool/asterisk/voicemail/default
 @dir %%VARDIR%%/spool/asterisk/voicemail
 @dir %%VARDIR%%/log/asterisk/cdr-csv
-@dir %%VARDIR%%/log/asterisk/cdr-custom  
+@dir %%VARDIR%%/log/asterisk/cdr-custom
 @dir %%VARDIR%%/log/asterisk/cel-custom
 @dir %%VARDIR%%/log/asterisk
 @dir %%VARDIR%%/spool/asterisk/dictate
-@dir %%VARDIR%%/spool/asterisk/meetme   
+@dir %%VARDIR%%/spool/asterisk/meetme
 @dir %%VARDIR%%/spool/asterisk/monitor
 @dir %%VARDIR%%/spool/asterisk/outgoing
 @dir %%VARDIR%%/spool/asterisk

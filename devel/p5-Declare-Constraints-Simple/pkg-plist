@@ -24,4 +24,3 @@
 %%SITE_PERL%%/Declare/Constraints/Simple/Library/Referencial.pm
 %%SITE_PERL%%/Declare/Constraints/Simple/Library/Scalar.pm
 %%SITE_PERL%%/Declare/Constraints/Simple/Result.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints/Simple/.packlist

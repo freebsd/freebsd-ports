@@ -1,12 +1,2 @@
 %%SITE_PERL%%/Catalyst/TraitFor/Controller/DBIC/DoesPaging.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/TraitFor/Controller/DBIC/DoesPaging/.packlist
 %%PERL5_MAN3%%/Catalyst::TraitFor::Controller::DBIC::DoesPaging.3.gz
-@dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Controller/DBIC
-@dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Controller
-@dirrmtry %%SITE_PERL%%/Catalyst/TraitFor
-@dirrmtry %%SITE_PERL%%/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/TraitFor/Controller/DBIC/DoesPaging
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/TraitFor/Controller/DBIC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/TraitFor/Controller
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/TraitFor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

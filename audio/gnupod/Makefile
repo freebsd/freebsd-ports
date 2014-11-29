@@ -3,7 +3,7 @@
 
 PORTNAME=	gnupod
 PORTVERSION=	0.99.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.blinkenlights.ch/gnupod-dist/stable/
@@ -42,5 +42,10 @@ post-install:
 gnupod.texi fdl.texi version.texi ipod.svg
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
+	# It tries to guess where it should install it's Perl modules, gets it
+	# wrong, and put them in BSDPAN, so move stuff at the right place.
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	${MV} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN/GNUpod ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	@${RMDIR} -p ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN 2>/dev/null || :
 
 .include <bsd.port.mk>

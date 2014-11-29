@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/pulse/client.conf-dist %D/etc/pulse/client.conf; then rm -f %D/etc/pulse/client.conf; fi
-etc/pulse/client.conf-dist
-@exec if [ ! -f %D/etc/pulse/client.conf ] ; then cp -p %D/%F %B/client.conf; fi
+@sample etc/pulse/client.conf.sample
 usr/lib/libpulse-simple.so.0
 usr/lib/libpulse-simple.so.0.0.2
 usr/lib/libpulse.so.0

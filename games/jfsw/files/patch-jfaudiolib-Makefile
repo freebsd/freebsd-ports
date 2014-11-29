@@ -1,0 +1,17 @@
+Do not enforce compilers / flags
+
+--- jfaudiolib/Makefile.orig	2014-11-13 09:26:16.821946185 +0100
++++ jfaudiolib/Makefile	2014-11-13 09:42:05.999047069 +0100
+@@ -8,9 +8,9 @@
+  OPTLEVEL=-O2
+ endif
+ 
+-CC=gcc
+-CFLAGS=-g $(OPTLEVEL) -Wall
+-CPPFLAGS=-Iinclude -Isrc
++CC?=gcc
++CFLAGS+=-Wall
++CPPFLAGS+=-Iinclude -Isrc
+ 
+ SOURCES=src/drivers.c \
+         src/fx_man.c \

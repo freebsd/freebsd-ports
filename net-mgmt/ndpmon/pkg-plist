@@ -10,9 +10,3 @@ man/man8/ndpmon.8.gz
 %%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/wka.tmpl
 %%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/manuf
 var/ndpmon/neighbor_list.xml
-@dirrmtry var/ndpmon
-@dirrmtry var
-%%MACRESOLV%%@dirrmtry %%DATADIR%%/plugins/mac_resolv
-%%MACRESOLV%%@dirrmtry %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%

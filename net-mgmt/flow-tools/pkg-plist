@@ -65,5 +65,3 @@ man/man1/flow-rpt2rrd.1.gz
 %%DATADIR%%/ip-type.sym
 %%DATADIR%%/tag.sym
 %%DATADIR%%/tcp-port.sym
-@dirrm %%DATADIR%%
-@dirrm etc/flow-tools

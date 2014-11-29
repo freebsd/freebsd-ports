@@ -18,4 +18,3 @@
 %%SITE_PERL%%/VCS/Rcs/Version.pm
 %%SITE_PERL%%/VCS/Version.pm
 %%SITE_PERL%%/VCS_dev.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS/.packlist

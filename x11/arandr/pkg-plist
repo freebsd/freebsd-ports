@@ -58,7 +58,3 @@ share/locale/sv/LC_MESSAGES/arandr.mo
 share/locale/tr/LC_MESSAGES/arandr.mo
 share/locale/uk/LC_MESSAGES/arandr.mo
 share/locale/zh_CN/LC_MESSAGES/arandr.mo
-@dirrmtry share/locale/ko_KR/LC_MESSAGES
-@dirrmtry share/locale/ko_KR
-@dirrm %%PYTHON_SITELIBDIR%%/screenlayout/data
-@dirrm %%PYTHON_SITELIBDIR%%/screenlayout

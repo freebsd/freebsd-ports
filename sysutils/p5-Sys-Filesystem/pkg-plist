@@ -22,5 +22,3 @@
 %%PERL5_MAN3%%/Sys::Filesystem::Netbsd.3.gz
 %%PERL5_MAN3%%/Sys::Filesystem::Solaris.3.gz
 %%PERL5_MAN3%%/Sys::Filesystem::Unix.3.gz
-@dirrm %%SITE_PERL%%/Sys/Filesystem
-@dirrmtry %%SITE_PERL%%/Sys

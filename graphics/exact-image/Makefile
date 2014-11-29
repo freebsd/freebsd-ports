@@ -3,7 +3,7 @@
 
 PORTNAME=	exact-image
 PORTVERSION=	0.8.9
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	graphics perl5 python
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ LOCAL/bf
 
@@ -27,19 +27,19 @@ LIB_DEPENDS=	libagg.so:${PORTSDIR}/graphics/agg \
 CFLAGS+=	-fPIC
 #hack to get custom exactcode configure script to enable tiff support with
 #broken headers on c++ in base system:
-CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 USES=		gmake perl5 pkgconfig python tar:bzip2
 USE_XORG=	x11
-USE_EFL=	evas
-USE_EFL_EVAS_ENGINES=	x11 opengl
 HAS_CONFIGURE=	yes
 INSTALL_WRKSRC=	${WRKSRC}/objdir
-BINS=	bardecode econvert edentify edisplay empty-page hocr2pdf optimize2bw
+BINS=	bardecode econvert edentify empty-page hocr2pdf optimize2bw
 PLIST_FILES=	${BINS:S|^|bin/|} \
 		%%SITE_PERL%%/ExactImage.so \
 		%%SITE_PERL%%/ExactImage.pm \
 		%%PYTHON_SITELIBDIR%%/ExactImage.py \
 		%%PYTHON_SITELIBDIR%%/_ExactImage.so
+
+BROKEN_amd64=	Fails to link
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/agg-2.4/
@@ -49,7 +49,9 @@ post-patch:
 		s|libungif|giflib|; s|LIBUNGIF|GIFLIB|; \
 		/parse_options/d;s| cc | ${CC} |;s| c++ | ${CXX} |;\
 		s|python -V|${PYTHON_CMD} -V|;\
-		/PYTHONINCS/s|=.*$$|=-I${PYTHON_INCLUDEDIR}|' \
+		/PYTHONINCS/s|=.*$$|=-I${PYTHON_INCLUDEDIR}|; \
+		s|pkg-config EVAS atleast 0.9.9|pkg-config EVAS equals 1.7.9|; \
+		s|php -config PHP atleast 5.2.0|php -config PHP atleast 15.2.0|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^Q =/d;s|$$[(]COMPILE.cc[)]|${CXX} $${CPPFLAGS} -c|;\
 		s|$$[(]CXX[)]|${CXX}|;s|$$[(]COMPILE.c[)]|${CC} $${CPPFLAGS} -c|'\
@@ -61,8 +63,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS=/s|".*"|"${CFLAGS} -I${LOCALBASE}/include"|;\
 		/LIBS=/s|".*"|"-L${LOCALBASE}/lib -lX11"|' ${WRKSRC}/config/pkgcheck-x11.c
 	@${REINPLACE_CMD} -e 's|$$prg|$$prg ${CPPFLAGS} -I${LOCALBASE}/include|;\
-		s|/usr/local|${PREFIX}|;/^var_remove/,/^}/d;/^parse_options/,/^}/d' \
-		 ${WRKSRC}/config/functions
+		s|/usr/local|${PREFIX}|;/^var_remove/,/^}/d;/^parse_options/,/^}/d; \
+		s| ++errors | errors+=1 |g' \
+		${WRKSRC}/config/functions
 	@${REINPLACE_CMD} -e 's|/usr/X11|${LOCALBASE}|' ${WRKSRC}/lib/vectorial.cc \
 		${WRKSRC}/edisplay/edisplay.cc
 

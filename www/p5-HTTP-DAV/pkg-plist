@@ -12,9 +12,4 @@ bin/dave
 %%SITE_PERL%%/HTTP/DAV/ResourceList.pm
 %%SITE_PERL%%/HTTP/DAV/Response.pm
 %%SITE_PERL%%/HTTP/DAV/Utils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/DAV/.packlist
 man/man1/dave.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/DAV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
-@dirrmtry %%SITE_PERL%%/HTTP/DAV
-@dirrmtry %%SITE_PERL%%/HTTP

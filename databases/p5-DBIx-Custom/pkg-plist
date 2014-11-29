@@ -20,4 +20,3 @@
 %%SITE_PERL%%/DBIx/Custom/Tag.pm
 %%SITE_PERL%%/DBIx/Custom/Util.pm
 %%SITE_PERL%%/DBIx/Custom/Where.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Custom/.packlist

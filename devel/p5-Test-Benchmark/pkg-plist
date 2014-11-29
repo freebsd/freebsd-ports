@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Test/Benchmark.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Benchmark/.packlist
 %%PERL5_MAN3%%/Test::Benchmark.3.gz

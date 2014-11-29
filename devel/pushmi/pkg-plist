@@ -1,5 +1,4 @@
 bin/pushmi
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pushmi/.packlist
 %%SITE_PERL%%/Pushmi.pm
 %%SITE_PERL%%/Pushmi/Command.pm
 %%SITE_PERL%%/Pushmi/Config.pm

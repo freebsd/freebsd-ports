@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.archlinux.org/other/pacman/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Package manager from ArchLinux
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
@@ -30,7 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PACMAN_ROOT="${PACMAN_ROOT}"
-PLIST_SUB=	PACMAN_ROOT="${PACMAN_ROOT}"
+PLIST_SUB=	PACMAN_ROOT="${PACMAN_ROOT:C/^${PREFIX}//}"
 
 PACMAN_ROOT?=	"${PREFIX}/pacman"
 
@@ -80,7 +80,7 @@ post-patch:
 
 post-install:
 .for f in makepkg.conf pacman.conf
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${STAGEDIR}${PREFIX}/etc/${f}.dist
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${STAGEDIR}${PREFIX}/etc/${f}.sample
 .endfor
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/PKGBUILD-example.txt ${STAGEDIR}${EXAMPLESDIR}/

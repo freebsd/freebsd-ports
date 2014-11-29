@@ -3,7 +3,7 @@
 
 PORTNAME=	pflogstats
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.aerasec.de/pub/linux/postfix/pflogsumm/${PORTNAME}/

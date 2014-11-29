@@ -27,6 +27,5 @@
 %%SITE_PERL%%/Pugs/Runtime/Perl6AST.pmc
 %%SITE_PERL%%/Pugs/Runtime/Perl6Prelude.pm
 %%SITE_PERL%%/Pugs/Runtime/Perl6Prelude.pmc
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/v6/alpha/.packlist
 %%SITE_PERL%%/v6.pm
 %%SITE_PERL%%/v6/hello_world.pl

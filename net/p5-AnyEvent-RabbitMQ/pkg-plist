@@ -6,11 +6,3 @@
 %%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ/README
 %%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ/fixed_amqp0-8.xml
 %%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ/fixed_amqp0-9-1.xml
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/RabbitMQ/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/RabbitMQ
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrmtry %%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/auto/share
-@dirrmtry %%SITE_PERL%%/AnyEvent/RabbitMQ
-@dirrmtry %%SITE_PERL%%/AnyEvent

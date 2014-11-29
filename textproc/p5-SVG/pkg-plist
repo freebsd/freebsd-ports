@@ -8,7 +8,6 @@
 %%SITE_PERL%%/SVG/Element.pm
 %%SITE_PERL%%/SVG/Extension.pm
 %%SITE_PERL%%/SVG/XML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/01_circle.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/02_circle_with_color.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/03_circle_and_square.pl
@@ -26,5 +25,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/svgtest2.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yaph5.cgi
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
-@dirrmtry %%SITE_PERL%%/SVG

@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/HTML::Template::HashWrapper.3.gz
 %%SITE_PERL%%/HTML/Template/HashWrapper.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/HashWrapper/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/HashWrapper
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML/Template
-@dirrmtry %%SITE_PERL%%/HTML

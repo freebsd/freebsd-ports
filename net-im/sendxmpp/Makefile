@@ -3,7 +3,7 @@
 
 PORTNAME=	sendxmpp
 PORTVERSION=	0.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im perl5
 MASTER_SITES=	http://www.djcbsoftware.nl/code/sendxmpp/
 
@@ -16,9 +16,6 @@ RUN_DEPENDS+=	p5-Net-XMPP>0.0:${PORTSDIR}/net-im/p5-Net-XMPP \
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/sendxmpp \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/sendxmpp/.packlist \
-		man/man1/sendxmpp.1.gz
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/sendxmpp
+PLIST_FILES=	bin/sendxmpp man/man1/sendxmpp.1.gz
 
 .include <bsd.port.mk>

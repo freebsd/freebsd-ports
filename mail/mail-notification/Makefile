@@ -8,8 +8,10 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify-orig
 
-MAINTAINER=	jonc@chen.org.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail notification for freedesktop.org-compliant system trays
+
+BROKEN=		Run-time failure with Gnome 3
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libgnome-keyring.so:${PORTSDIR}/security/gnome-keyring \

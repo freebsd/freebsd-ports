@@ -34,7 +34,6 @@ bin/slrsh
 %%SITE_PERL%%/Schedule/Load/Schedule.pm
 %%SITE_PERL%%/auto/Schedule/Load/Hosts/Host/autosplit.ix
 %%SITE_PERL%%/auto/Schedule/Load/Hosts/Proc/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Load/.packlist
 man/man1/rschedule.1.gz
 man/man1/slchoosed.1.gz
 man/man1/slchoosed_watchd.1.gz
@@ -45,14 +44,3 @@ man/man1/slrsh.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.d/slreportd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/init.d
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Load
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule
-@dirrmtry %%SITE_PERL%%/auto/Schedule/Load/Hosts/Proc
-@dirrmtry %%SITE_PERL%%/auto/Schedule/Load/Hosts/Host
-@dirrmtry %%SITE_PERL%%/auto/Schedule/Load/Hosts
-@dirrmtry %%SITE_PERL%%/auto/Schedule/Load
-@dirrmtry %%SITE_PERL%%/auto/Schedule
-@dirrmtry %%SITE_PERL%%/Schedule/Load/Reporter
-@dirrmtry %%SITE_PERL%%/Schedule/Load/Hosts
-@dirrmtry %%SITE_PERL%%/Schedule/Load
-@dirrmtry %%SITE_PERL%%/Schedule

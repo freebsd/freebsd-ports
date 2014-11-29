@@ -1,5 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Cairo/GObject.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Cairo/GObject/Install/Files.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/GObject/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cairo/GObject/GObject.so
+%%SITE_ARCH%%/Cairo/GObject.pm
+%%SITE_ARCH%%/Cairo/GObject/Install/Files.pm
+%%SITE_ARCH%%/auto/Cairo/GObject/GObject.so
 %%PERL5_MAN3%%/Cairo::GObject.3.gz

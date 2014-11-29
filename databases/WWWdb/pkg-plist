@@ -30,7 +30,6 @@
 %%SITE_PERL%%/WWWdb/DbSession/mysql.pm
 %%SITE_PERL%%/WWWdb/DbSession/ODBC.pm
 %%SITE_PERL%%/WWWdb/DbSession/InterBase.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWWdb/.packlist
 %%PERL5_MAN3%%/WWWdb::Base.3.gz
 %%PERL5_MAN3%%/WWWdb::DbSession.3.gz
 %%PERL5_MAN3%%/WWWdb::List.3.gz

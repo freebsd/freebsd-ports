@@ -1,3 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Properties/.packlist
 %%SITE_PERL%%/Config/Properties.pm
 %%PERL5_MAN3%%/Config::Properties.3.gz

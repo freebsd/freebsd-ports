@@ -3,6 +3,7 @@
 
 PORTNAME=	Email-Address-List
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://download.bestpractical.com/mirror/ \
 		CPAN

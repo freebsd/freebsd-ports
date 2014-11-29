@@ -10,4 +10,3 @@ man/man1/route53.1.gz
 %%SITE_PERL%%/Net/Amazon/Route53/HostedZone.pm
 %%SITE_PERL%%/Net/Amazon/Route53/ResourceRecordSet.pm
 %%SITE_PERL%%/Net/Amazon/Route53/ResourceRecordSet/Change.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/Route53/.packlist

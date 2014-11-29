@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/String::Format.3.gz
 %%SITE_PERL%%/String/Format.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Format/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Format
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrmtry %%SITE_PERL%%/String

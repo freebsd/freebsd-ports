@@ -1,6 +1,2 @@
 %%SITE_PERL%%/JavaScript/Packer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/Packer/.packlist
 %%PERL5_MAN3%%/JavaScript::Packer.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/Packer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript
-@dirrmtry %%SITE_PERL%%/JavaScript

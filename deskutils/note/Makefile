@@ -2,7 +2,7 @@
 
 PORTNAME=	note
 PORTVERSION=	1.3.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/note/
 

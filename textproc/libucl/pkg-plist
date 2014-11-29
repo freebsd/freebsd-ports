@@ -1,0 +1,12 @@
+%%UTILS%%bin/ucl_chargen
+%%UTILS%%bin/ucl_objdump
+%%LUA%%include/lua_ucl.h
+include/ucl.h
+lib/libucl.a
+lib/libucl.so
+lib/libucl.so.0
+lib/libucl.so.0.2.0
+%%LUA%%%%LUA_MODLIBDIR%%/ucl.a
+%%LUA%%%%LUA_MODLIBDIR%%/ucl.so
+libdata/pkgconfig/libucl.pc
+man/man3/libucl.3.gz

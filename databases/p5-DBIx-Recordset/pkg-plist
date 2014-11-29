@@ -10,4 +10,3 @@
 %%SITE_PERL%%/DBIx/Recordset.pm
 %%SITE_PERL%%/DBIx/Recordset/DBSeq.pm
 %%SITE_PERL%%/DBIx/Recordset/FileSeq.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Recordset/.packlist

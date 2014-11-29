@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.33
+PORTVERSION=	2.34
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -39,8 +40,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-Tree-DAG_Node>=1.06:${PORTSDIR}/devel/p5-Tree-DAG_Node \
 		p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-XML-Bare>=0:${PORTSDIR}/textproc/p5-XML-Bare \
-		p5-XML-Tiny>=2.06:${PORTSDIR}/textproc/p5-XML-Tiny \
-		p5-parent>=0.225:${PORTSDIR}/devel/p5-parent
+		p5-XML-Tiny>=2.06:${PORTSDIR}/textproc/p5-XML-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Version>=0:${PORTSDIR}/devel/p5-Test-Version

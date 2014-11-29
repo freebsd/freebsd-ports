@@ -36,12 +36,3 @@
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Store.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Store/Cookie.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Store/Session.pm
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Store
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Filter
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Authen
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Display
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
-@dirrmtry %%SITE_PERL%%/CGI/Application
-@dirrmtry %%SITE_PERL%%/CGI

@@ -1,21 +1,15 @@
 bin/pmath
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes/Complex.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes/Fraction.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes/Matrix.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes/Polynomial.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes/Cephes.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes/libmd/extralibs.ld
+%%SITE_ARCH%%/Math/Cephes.pm
+%%SITE_ARCH%%/Math/Cephes.pod
+%%SITE_ARCH%%/Math/Cephes/Complex.pm
+%%SITE_ARCH%%/Math/Cephes/Fraction.pm
+%%SITE_ARCH%%/Math/Cephes/Matrix.pm
+%%SITE_ARCH%%/Math/Cephes/Polynomial.pm
+%%SITE_ARCH%%/auto/Math/Cephes/Cephes.so
+%%SITE_ARCH%%/auto/Math/Cephes/libmd/extralibs.ld
 %%PERL5_MAN3%%/Math::Cephes.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Complex.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Fraction.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Matrix.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Polynomial.3.gz
 man/man1/pmath.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes/libmd
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Cephes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Math/Cephes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math

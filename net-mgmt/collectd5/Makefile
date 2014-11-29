@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.4.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 PKGNAMESUFFIX=	5
@@ -482,11 +482,6 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/collection.cgi ${STAGEDIR}${WWWDIR}/
 	${INSTALL_DATA} ${WRKSRC}/contrib/collection.conf \
 		${STAGEDIR}${WWWDIR}/collection.conf.sample
-.endif
-
-post-stage:
-.if ${PORT_OPTIONS:MPERL}
-	@${SED} -i '' -e 's,${STAGEDIR},,g' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Collectd/.packlist
 .endif
 
 .include <bsd.port.mk>

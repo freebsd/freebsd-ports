@@ -5,7 +5,6 @@
 %%SITE_PERL%%/Gtk2/Ex/Dialogs/ChooseFile.pm
 %%SITE_PERL%%/Gtk2/Ex/Dialogs/ErrorMsg.pm
 %%SITE_PERL%%/Gtk2/Ex/Dialogs/ChoosePreviewFile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Dialogs/.packlist
 %%PERL5_MAN3%%/Gtk2::Ex::Dialogs::Question.3.gz
 %%PERL5_MAN3%%/Gtk2::Ex::Dialogs::ChooseDirectory.3.gz
 %%PERL5_MAN3%%/Gtk2::Ex::Dialogs::Message.3.gz
@@ -13,9 +12,3 @@
 %%PERL5_MAN3%%/Gtk2::Ex::Dialogs::ChooseFile.3.gz
 %%PERL5_MAN3%%/Gtk2::Ex::Dialogs::ChoosePreviewFile.3.gz
 %%PERL5_MAN3%%/Gtk2::Ex::Dialogs.3.gz
-@dirrmtry %%SITE_PERL%%/Gtk2/Ex/Dialogs
-@dirrmtry %%SITE_PERL%%/Gtk2/Ex
-@dirrmtry %%SITE_PERL%%/Gtk2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Dialogs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2

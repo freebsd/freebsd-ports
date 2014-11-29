@@ -1,0 +1,38 @@
+--- progs/mincpik/mincpik.in.orig	2012-09-24 17:35:36 UTC
++++ progs/mincpik/mincpik.in
+@@ -576,8 +576,11 @@ font point size for the title
+ 
+ create an annotated bar to match the image (use height of the output image)
+ 
++=back
+ 
+ =head3 Image range and lookup table options
++
++=over
+    
+ =item B<--range>
+ 
+@@ -595,8 +598,11 @@ automatically determine image range usin
+ 
+ arguments to pass to minclookup
+ 
++=back
+ 
+ =head3 Slicing options
++
++=over
+    
+ =item B<-s> B<--slice>
+ 
+@@ -614,8 +620,11 @@ get a coronal (y) slice
+ 
+ get a sagital (x) slice
+ 
++=back
+ 
+ =head3 Triplanar options
++
++=over
+    
+ =item B<-t> B<--triplanar>
+ 

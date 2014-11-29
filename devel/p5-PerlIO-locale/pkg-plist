@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/PerlIO::locale.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/locale.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/locale/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/locale/locale.so
+%%SITE_ARCH%%/PerlIO/locale.pm
+%%SITE_ARCH%%/auto/PerlIO/locale/locale.so

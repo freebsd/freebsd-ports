@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Mail::Address::MobileJp.3.gz
 %%SITE_PERL%%/Mail/Address/MobileJp.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Address/MobileJp/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Address/MobileJp
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Address
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrmtry %%SITE_PERL%%/Mail/Address
-@dirrmtry %%SITE_PERL%%/Mail

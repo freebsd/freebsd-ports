@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Constructor/.packlist
 %%SITE_PERL%%/Class/Accessor/Constructor.pm
 %%SITE_PERL%%/Class/Accessor/Constructor/Base.pm
 %%PERL5_MAN3%%/Class::Accessor::Constructor.3.gz

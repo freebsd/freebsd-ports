@@ -12,8 +12,3 @@
 %%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/Generic.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/HTGroup.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/SimpleGroup.pm
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authorization
-@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
-@dirrmtry %%SITE_PERL%%/CGI/Application
-@dirrmtry %%SITE_PERL%%/CGI

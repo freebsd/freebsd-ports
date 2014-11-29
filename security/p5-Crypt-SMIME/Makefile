@@ -2,6 +2,7 @@
 
 PORTNAME=	Crypt-SMIME
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +23,6 @@ USE_OPENSSL=	yes
 USE_PERL5=	configure
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Crypt/SMIME/SMIME.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/SMIME/SMIME.so
 
 .include <bsd.port.mk>

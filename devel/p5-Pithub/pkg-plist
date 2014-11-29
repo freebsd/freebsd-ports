@@ -40,7 +40,6 @@
 %%SITE_PERL%%/Pithub/Users/Emails.pm
 %%SITE_PERL%%/Pithub/Users/Followers.pm
 %%SITE_PERL%%/Pithub/Users/Keys.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pithub/.packlist
 %%PERL5_MAN3%%/Pithub.3.gz
 %%PERL5_MAN3%%/Pithub::Base.3.gz
 %%PERL5_MAN3%%/Pithub::Events.3.gz

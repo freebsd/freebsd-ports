@@ -1,10 +1,2 @@
 %%PERL5_MAN3%%/XML::Parser::Style::Elemental.3.gz
 %%SITE_PERL%%/XML/Parser/Style/Elemental.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Style/Elemental/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Style/Elemental
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Style
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Parser/Style
-@dirrmtry %%SITE_PERL%%/XML/Parser
-@dirrmtry %%SITE_PERL%%/XML

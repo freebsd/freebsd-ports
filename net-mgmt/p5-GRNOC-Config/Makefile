@@ -3,6 +3,7 @@
 
 PORTNAME=	GRNOC-Config
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	SF/routerproxy/${PORTNAME}
 PKGNAMEPREFIX=	p5-
@@ -19,10 +20,6 @@ USE_PERL5=	configure
 USES=		perl5
 
 PLIST_FILES=	%%SITE_PERL%%/GRNOC/Config.pm \
-		%%PERL5_MAN3%%/GRNOC::Config.3.gz \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/GRNOC/Config/.packlist
-PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/GRNOC/Config \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/GRNOC \
-		%%SITE_PERL%%/GRNOC
+		%%PERL5_MAN3%%/GRNOC::Config.3.gz
 
 .include <bsd.port.mk>

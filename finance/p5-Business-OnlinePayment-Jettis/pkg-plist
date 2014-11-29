@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Business/OnlinePayment/Jettis.pm
 %%SITE_PERL%%/auto/Business/OnlinePayment/Jettis/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Jettis/.packlist
 %%PERL5_MAN3%%/Business::OnlinePayment::Jettis.3.gz

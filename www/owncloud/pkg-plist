@@ -1164,8 +1164,6 @@
 %%WWWDIR%%/3rdparty/miniColors/js/jquery.miniColors.min.js
 %%WWWDIR%%/3rdparty/patches.txt
 %%WWWDIR%%/3rdparty/phpass/PasswordHash.php
-%%WWWDIR%%/3rdparty/phpass/c/Makefile
-%%WWWDIR%%/3rdparty/phpass/c/crypt_private.c
 %%WWWDIR%%/3rdparty/phpass/test.php
 %%WWWDIR%%/3rdparty/phpmailer/phpmailer/LICENSE
 %%WWWDIR%%/3rdparty/phpmailer/phpmailer/PHPMailerAutoload.php
@@ -2867,218 +2865,221 @@
 %%WWWDIR%%/apps/bookmarks/js/bookmarksearch.js
 %%WWWDIR%%/apps/bookmarks/js/full_tags.php
 %%WWWDIR%%/apps/bookmarks/js/settings.js
-%%WWWDIR%%/apps/bookmarks/l10n/ach/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ady/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/af/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/af_ZA.php
-%%WWWDIR%%/apps/bookmarks/l10n/af_ZA/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ak/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/am_ET/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ar.js
+%%WWWDIR%%/apps/bookmarks/l10n/ar.json
 %%WWWDIR%%/apps/bookmarks/l10n/ar.php
-%%WWWDIR%%/apps/bookmarks/l10n/ar/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ast.js
+%%WWWDIR%%/apps/bookmarks/l10n/ast.json
 %%WWWDIR%%/apps/bookmarks/l10n/ast.php
-%%WWWDIR%%/apps/bookmarks/l10n/ast/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/az/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/az.js
+%%WWWDIR%%/apps/bookmarks/l10n/az.json
+%%WWWDIR%%/apps/bookmarks/l10n/az.php
 %%WWWDIR%%/apps/bookmarks/l10n/be.php
-%%WWWDIR%%/apps/bookmarks/l10n/be/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/bg_BG.js
+%%WWWDIR%%/apps/bookmarks/l10n/bg_BG.json
 %%WWWDIR%%/apps/bookmarks/l10n/bg_BG.php
-%%WWWDIR%%/apps/bookmarks/l10n/bg_BG/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/bn_BD.js
+%%WWWDIR%%/apps/bookmarks/l10n/bn_BD.json
 %%WWWDIR%%/apps/bookmarks/l10n/bn_BD.php
-%%WWWDIR%%/apps/bookmarks/l10n/bn_BD/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/bn_IN/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/bn_IN.js
+%%WWWDIR%%/apps/bookmarks/l10n/bn_IN.json
+%%WWWDIR%%/apps/bookmarks/l10n/bn_IN.php
 %%WWWDIR%%/apps/bookmarks/l10n/bs.php
-%%WWWDIR%%/apps/bookmarks/l10n/bs/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ca.js
+%%WWWDIR%%/apps/bookmarks/l10n/ca.json
 %%WWWDIR%%/apps/bookmarks/l10n/ca.php
-%%WWWDIR%%/apps/bookmarks/l10n/ca/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ca@valencia/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/cs_CZ.js
+%%WWWDIR%%/apps/bookmarks/l10n/cs_CZ.json
 %%WWWDIR%%/apps/bookmarks/l10n/cs_CZ.php
-%%WWWDIR%%/apps/bookmarks/l10n/cs_CZ/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/cy_GB.js
+%%WWWDIR%%/apps/bookmarks/l10n/cy_GB.json
 %%WWWDIR%%/apps/bookmarks/l10n/cy_GB.php
-%%WWWDIR%%/apps/bookmarks/l10n/cy_GB/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/da.js
+%%WWWDIR%%/apps/bookmarks/l10n/da.json
 %%WWWDIR%%/apps/bookmarks/l10n/da.php
-%%WWWDIR%%/apps/bookmarks/l10n/da/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/de.js
+%%WWWDIR%%/apps/bookmarks/l10n/de.json
 %%WWWDIR%%/apps/bookmarks/l10n/de.php
-%%WWWDIR%%/apps/bookmarks/l10n/de/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/de_AT.php
-%%WWWDIR%%/apps/bookmarks/l10n/de_AT/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/de_CH.js
+%%WWWDIR%%/apps/bookmarks/l10n/de_CH.json
 %%WWWDIR%%/apps/bookmarks/l10n/de_CH.php
-%%WWWDIR%%/apps/bookmarks/l10n/de_CH/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/de_DE.js
+%%WWWDIR%%/apps/bookmarks/l10n/de_DE.json
 %%WWWDIR%%/apps/bookmarks/l10n/de_DE.php
-%%WWWDIR%%/apps/bookmarks/l10n/de_DE/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/el.js
+%%WWWDIR%%/apps/bookmarks/l10n/el.json
 %%WWWDIR%%/apps/bookmarks/l10n/el.php
-%%WWWDIR%%/apps/bookmarks/l10n/el/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/en@pirate/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/en_GB.js
+%%WWWDIR%%/apps/bookmarks/l10n/en_GB.json
 %%WWWDIR%%/apps/bookmarks/l10n/en_GB.php
-%%WWWDIR%%/apps/bookmarks/l10n/en_GB/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/en_NZ/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/eo.js
+%%WWWDIR%%/apps/bookmarks/l10n/eo.json
 %%WWWDIR%%/apps/bookmarks/l10n/eo.php
-%%WWWDIR%%/apps/bookmarks/l10n/eo/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/es.js
+%%WWWDIR%%/apps/bookmarks/l10n/es.json
 %%WWWDIR%%/apps/bookmarks/l10n/es.php
-%%WWWDIR%%/apps/bookmarks/l10n/es/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/es_AR.js
+%%WWWDIR%%/apps/bookmarks/l10n/es_AR.json
 %%WWWDIR%%/apps/bookmarks/l10n/es_AR.php
-%%WWWDIR%%/apps/bookmarks/l10n/es_AR/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/es_BO/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/es_CL.php
-%%WWWDIR%%/apps/bookmarks/l10n/es_CL/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/es_CO/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/es_CR/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/es_EC/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/es_MX.js
+%%WWWDIR%%/apps/bookmarks/l10n/es_MX.json
 %%WWWDIR%%/apps/bookmarks/l10n/es_MX.php
-%%WWWDIR%%/apps/bookmarks/l10n/es_MX/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/es_PE/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/es_PY/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/es_US/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/es_UY/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/et_EE.js
+%%WWWDIR%%/apps/bookmarks/l10n/et_EE.json
 %%WWWDIR%%/apps/bookmarks/l10n/et_EE.php
-%%WWWDIR%%/apps/bookmarks/l10n/et_EE/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/eu.js
+%%WWWDIR%%/apps/bookmarks/l10n/eu.json
 %%WWWDIR%%/apps/bookmarks/l10n/eu.php
-%%WWWDIR%%/apps/bookmarks/l10n/eu/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/eu_ES.php
-%%WWWDIR%%/apps/bookmarks/l10n/eu_ES/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/fa.js
+%%WWWDIR%%/apps/bookmarks/l10n/fa.json
 %%WWWDIR%%/apps/bookmarks/l10n/fa.php
-%%WWWDIR%%/apps/bookmarks/l10n/fa/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/fi.php
-%%WWWDIR%%/apps/bookmarks/l10n/fi/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/fi_FI.js
+%%WWWDIR%%/apps/bookmarks/l10n/fi_FI.json
 %%WWWDIR%%/apps/bookmarks/l10n/fi_FI.php
-%%WWWDIR%%/apps/bookmarks/l10n/fi_FI/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/fr.js
+%%WWWDIR%%/apps/bookmarks/l10n/fr.json
 %%WWWDIR%%/apps/bookmarks/l10n/fr.php
-%%WWWDIR%%/apps/bookmarks/l10n/fr/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/fr_CA/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/gl.js
+%%WWWDIR%%/apps/bookmarks/l10n/gl.json
 %%WWWDIR%%/apps/bookmarks/l10n/gl.php
-%%WWWDIR%%/apps/bookmarks/l10n/gl/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/he.js
+%%WWWDIR%%/apps/bookmarks/l10n/he.json
 %%WWWDIR%%/apps/bookmarks/l10n/he.php
-%%WWWDIR%%/apps/bookmarks/l10n/he/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/hi.php
-%%WWWDIR%%/apps/bookmarks/l10n/hi/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/hi_IN/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/hr.php
-%%WWWDIR%%/apps/bookmarks/l10n/hr/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/hu_HU.js
+%%WWWDIR%%/apps/bookmarks/l10n/hu_HU.json
 %%WWWDIR%%/apps/bookmarks/l10n/hu_HU.php
-%%WWWDIR%%/apps/bookmarks/l10n/hu_HU/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/hy.php
-%%WWWDIR%%/apps/bookmarks/l10n/hy/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ia.js
+%%WWWDIR%%/apps/bookmarks/l10n/ia.json
 %%WWWDIR%%/apps/bookmarks/l10n/ia.php
-%%WWWDIR%%/apps/bookmarks/l10n/ia/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/id.js
+%%WWWDIR%%/apps/bookmarks/l10n/id.json
 %%WWWDIR%%/apps/bookmarks/l10n/id.php
-%%WWWDIR%%/apps/bookmarks/l10n/id/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/is.js
+%%WWWDIR%%/apps/bookmarks/l10n/is.json
 %%WWWDIR%%/apps/bookmarks/l10n/is.php
-%%WWWDIR%%/apps/bookmarks/l10n/is/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/it.js
+%%WWWDIR%%/apps/bookmarks/l10n/it.json
 %%WWWDIR%%/apps/bookmarks/l10n/it.php
-%%WWWDIR%%/apps/bookmarks/l10n/it/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ja.js
+%%WWWDIR%%/apps/bookmarks/l10n/ja.json
 %%WWWDIR%%/apps/bookmarks/l10n/ja.php
-%%WWWDIR%%/apps/bookmarks/l10n/ja/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ja_JP.php
 %%WWWDIR%%/apps/bookmarks/l10n/jv.php
-%%WWWDIR%%/apps/bookmarks/l10n/jv/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ka/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ka_GE.js
+%%WWWDIR%%/apps/bookmarks/l10n/ka_GE.json
 %%WWWDIR%%/apps/bookmarks/l10n/ka_GE.php
-%%WWWDIR%%/apps/bookmarks/l10n/ka_GE/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/km.js
+%%WWWDIR%%/apps/bookmarks/l10n/km.json
 %%WWWDIR%%/apps/bookmarks/l10n/km.php
-%%WWWDIR%%/apps/bookmarks/l10n/km/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/kn/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ko.js
+%%WWWDIR%%/apps/bookmarks/l10n/ko.json
 %%WWWDIR%%/apps/bookmarks/l10n/ko.php
-%%WWWDIR%%/apps/bookmarks/l10n/ko/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/ku_IQ.php
-%%WWWDIR%%/apps/bookmarks/l10n/ku_IQ/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/l10n.pl
+%%WWWDIR%%/apps/bookmarks/l10n/lb.js
+%%WWWDIR%%/apps/bookmarks/l10n/lb.json
 %%WWWDIR%%/apps/bookmarks/l10n/lb.php
-%%WWWDIR%%/apps/bookmarks/l10n/lb/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/lt_LT.js
+%%WWWDIR%%/apps/bookmarks/l10n/lt_LT.json
 %%WWWDIR%%/apps/bookmarks/l10n/lt_LT.php
-%%WWWDIR%%/apps/bookmarks/l10n/lt_LT/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/lv.js
+%%WWWDIR%%/apps/bookmarks/l10n/lv.json
 %%WWWDIR%%/apps/bookmarks/l10n/lv.php
-%%WWWDIR%%/apps/bookmarks/l10n/lv/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/mk.js
+%%WWWDIR%%/apps/bookmarks/l10n/mk.json
 %%WWWDIR%%/apps/bookmarks/l10n/mk.php
-%%WWWDIR%%/apps/bookmarks/l10n/mk/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ml/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ml_IN/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/mn/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/ms_MY.php
-%%WWWDIR%%/apps/bookmarks/l10n/ms_MY/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/my_MM.php
-%%WWWDIR%%/apps/bookmarks/l10n/my_MM/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/nb_NO.js
+%%WWWDIR%%/apps/bookmarks/l10n/nb_NO.json
 %%WWWDIR%%/apps/bookmarks/l10n/nb_NO.php
-%%WWWDIR%%/apps/bookmarks/l10n/nb_NO/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/nds/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ne/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/nl.js
+%%WWWDIR%%/apps/bookmarks/l10n/nl.json
 %%WWWDIR%%/apps/bookmarks/l10n/nl.php
-%%WWWDIR%%/apps/bookmarks/l10n/nl/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/nn_NO.js
+%%WWWDIR%%/apps/bookmarks/l10n/nn_NO.json
 %%WWWDIR%%/apps/bookmarks/l10n/nn_NO.php
-%%WWWDIR%%/apps/bookmarks/l10n/nn_NO/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/nqo/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/oc.php
-%%WWWDIR%%/apps/bookmarks/l10n/oc/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/or_IN/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/pa.php
-%%WWWDIR%%/apps/bookmarks/l10n/pa/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/pl.js
+%%WWWDIR%%/apps/bookmarks/l10n/pl.json
 %%WWWDIR%%/apps/bookmarks/l10n/pl.php
-%%WWWDIR%%/apps/bookmarks/l10n/pl/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/pl_PL.php
-%%WWWDIR%%/apps/bookmarks/l10n/pl_PL/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/pt_BR.js
+%%WWWDIR%%/apps/bookmarks/l10n/pt_BR.json
 %%WWWDIR%%/apps/bookmarks/l10n/pt_BR.php
-%%WWWDIR%%/apps/bookmarks/l10n/pt_BR/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/pt_PT.js
+%%WWWDIR%%/apps/bookmarks/l10n/pt_PT.json
 %%WWWDIR%%/apps/bookmarks/l10n/pt_PT.php
-%%WWWDIR%%/apps/bookmarks/l10n/pt_PT/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ro.js
+%%WWWDIR%%/apps/bookmarks/l10n/ro.json
 %%WWWDIR%%/apps/bookmarks/l10n/ro.php
-%%WWWDIR%%/apps/bookmarks/l10n/ro/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ru.js
+%%WWWDIR%%/apps/bookmarks/l10n/ru.json
 %%WWWDIR%%/apps/bookmarks/l10n/ru.php
-%%WWWDIR%%/apps/bookmarks/l10n/ru/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/ru_RU.php
-%%WWWDIR%%/apps/bookmarks/l10n/ru_RU/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/si_LK.js
+%%WWWDIR%%/apps/bookmarks/l10n/si_LK.json
 %%WWWDIR%%/apps/bookmarks/l10n/si_LK.php
-%%WWWDIR%%/apps/bookmarks/l10n/si_LK/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/sk.php
-%%WWWDIR%%/apps/bookmarks/l10n/sk/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/sk_SK.js
+%%WWWDIR%%/apps/bookmarks/l10n/sk_SK.json
 %%WWWDIR%%/apps/bookmarks/l10n/sk_SK.php
-%%WWWDIR%%/apps/bookmarks/l10n/sk_SK/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/sl.js
+%%WWWDIR%%/apps/bookmarks/l10n/sl.json
 %%WWWDIR%%/apps/bookmarks/l10n/sl.php
-%%WWWDIR%%/apps/bookmarks/l10n/sl/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/sq.php
-%%WWWDIR%%/apps/bookmarks/l10n/sq/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/sr.js
+%%WWWDIR%%/apps/bookmarks/l10n/sr.json
 %%WWWDIR%%/apps/bookmarks/l10n/sr.php
-%%WWWDIR%%/apps/bookmarks/l10n/sr/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/sr@latin.php
-%%WWWDIR%%/apps/bookmarks/l10n/sr@latin/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/su/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/sv.js
+%%WWWDIR%%/apps/bookmarks/l10n/sv.json
 %%WWWDIR%%/apps/bookmarks/l10n/sv.php
-%%WWWDIR%%/apps/bookmarks/l10n/sv/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/sw_KE/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ta_IN/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ta_IN.php
+%%WWWDIR%%/apps/bookmarks/l10n/ta_LK.js
+%%WWWDIR%%/apps/bookmarks/l10n/ta_LK.json
 %%WWWDIR%%/apps/bookmarks/l10n/ta_LK.php
-%%WWWDIR%%/apps/bookmarks/l10n/ta_LK/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/te.php
-%%WWWDIR%%/apps/bookmarks/l10n/te/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/templates/bookmarks.pot
+%%WWWDIR%%/apps/bookmarks/l10n/th_TH.js
+%%WWWDIR%%/apps/bookmarks/l10n/th_TH.json
 %%WWWDIR%%/apps/bookmarks/l10n/th_TH.php
-%%WWWDIR%%/apps/bookmarks/l10n/th_TH/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/tr.js
+%%WWWDIR%%/apps/bookmarks/l10n/tr.json
 %%WWWDIR%%/apps/bookmarks/l10n/tr.php
-%%WWWDIR%%/apps/bookmarks/l10n/tr/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/tzm/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/ug.js
+%%WWWDIR%%/apps/bookmarks/l10n/ug.json
 %%WWWDIR%%/apps/bookmarks/l10n/ug.php
-%%WWWDIR%%/apps/bookmarks/l10n/ug/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/uk.js
+%%WWWDIR%%/apps/bookmarks/l10n/uk.json
 %%WWWDIR%%/apps/bookmarks/l10n/uk.php
-%%WWWDIR%%/apps/bookmarks/l10n/uk/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/ur/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/ur_PK.php
-%%WWWDIR%%/apps/bookmarks/l10n/ur_PK/bookmarks.po
-%%WWWDIR%%/apps/bookmarks/l10n/uz/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/vi.js
+%%WWWDIR%%/apps/bookmarks/l10n/vi.json
 %%WWWDIR%%/apps/bookmarks/l10n/vi.php
-%%WWWDIR%%/apps/bookmarks/l10n/vi/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/xgettextfiles
-%%WWWDIR%%/apps/bookmarks/l10n/zh_CN.GB2312.php
-%%WWWDIR%%/apps/bookmarks/l10n/zh_CN.GB2312/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/zh_CN.js
+%%WWWDIR%%/apps/bookmarks/l10n/zh_CN.json
 %%WWWDIR%%/apps/bookmarks/l10n/zh_CN.php
-%%WWWDIR%%/apps/bookmarks/l10n/zh_CN/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/l10n/zh_HK.php
-%%WWWDIR%%/apps/bookmarks/l10n/zh_HK/bookmarks.po
+%%WWWDIR%%/apps/bookmarks/l10n/zh_TW.js
+%%WWWDIR%%/apps/bookmarks/l10n/zh_TW.json
 %%WWWDIR%%/apps/bookmarks/l10n/zh_TW.php
-%%WWWDIR%%/apps/bookmarks/l10n/zh_TW/bookmarks.po
 %%WWWDIR%%/apps/bookmarks/lib/bookmarks.php
 %%WWWDIR%%/apps/bookmarks/lib/search.php
 %%WWWDIR%%/apps/bookmarks/templates/addBm.php
 %%WWWDIR%%/apps/bookmarks/templates/js_tpl.php
 %%WWWDIR%%/apps/bookmarks/templates/list.php
 %%WWWDIR%%/apps/bookmarks/templates/settings.php
-%%WWWDIR%%/apps/bookmarks/tests/lib_bookmark.php
+%%WWWDIR%%/apps/bookmarks/tests/bootstrap.php
+%%WWWDIR%%/apps/bookmarks/tests/lib_bookmark_test.php
+%%WWWDIR%%/apps/bookmarks/tests/phpunit.xml
 %%WWWDIR%%/apps/calendar/3rdparty/fullcalendar/GPL-LICENSE.txt
 %%WWWDIR%%/apps/calendar/3rdparty/fullcalendar/MIT-LICENSE.txt
 %%WWWDIR%%/apps/calendar/3rdparty/fullcalendar/css/fullcalendar.css
@@ -3680,7 +3681,8 @@
 %%WWWDIR%%/apps/contacts/lib/ipimobject.php
 %%WWWDIR%%/apps/contacts/lib/jsonresponse.php
 %%WWWDIR%%/apps/contacts/lib/middleware/http.php
-%%WWWDIR%%/apps/contacts/lib/searchprovider.php
+%%WWWDIR%%/apps/contacts/lib/search/contact.php
+%%WWWDIR%%/apps/contacts/lib/search/provider.php
 %%WWWDIR%%/apps/contacts/lib/share/addressbook.php
 %%WWWDIR%%/apps/contacts/lib/share/contact.php
 %%WWWDIR%%/apps/contacts/lib/textdownloadresponse.php
@@ -5642,6 +5644,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/smb4php/smb.php
 %%WWWDIR%%/apps/files_external/ajax/addMountPoint.php
 %%WWWDIR%%/apps/files_external/ajax/addRootCertificate.php
+%%WWWDIR%%/apps/files_external/ajax/applicable.php
 %%WWWDIR%%/apps/files_external/ajax/dropbox.php
 %%WWWDIR%%/apps/files_external/ajax/google.php
 %%WWWDIR%%/apps/files_external/ajax/removeMountPoint.php
@@ -5741,6 +5744,7 @@
 %%WWWDIR%%/apps/files_external/lib/api.php
 %%WWWDIR%%/apps/files_external/lib/config.php
 %%WWWDIR%%/apps/files_external/lib/dropbox.php
+%%WWWDIR%%/apps/files_external/lib/etagpropagator.php
 %%WWWDIR%%/apps/files_external/lib/ftp.php
 %%WWWDIR%%/apps/files_external/lib/google.php
 %%WWWDIR%%/apps/files_external/lib/owncloud.php
@@ -5756,15 +5760,18 @@
 %%WWWDIR%%/apps/files_external/templates/list.php
 %%WWWDIR%%/apps/files_external/templates/settings.php
 %%WWWDIR%%/apps/files_external/tests/amazons3.php
+%%WWWDIR%%/apps/files_external/tests/amazons3migration.php
 %%WWWDIR%%/apps/files_external/tests/appSpec.js
 %%WWWDIR%%/apps/files_external/tests/config.php
 %%WWWDIR%%/apps/files_external/tests/dropbox.php
 %%WWWDIR%%/apps/files_external/tests/dynamicmountconfig.php
+%%WWWDIR%%/apps/files_external/tests/etagpropagator.php
 %%WWWDIR%%/apps/files_external/tests/ftp.php
 %%WWWDIR%%/apps/files_external/tests/google.php
 %%WWWDIR%%/apps/files_external/tests/js/mountsfilelistSpec.js
 %%WWWDIR%%/apps/files_external/tests/mountconfig.php
 %%WWWDIR%%/apps/files_external/tests/owncloud.php
+%%WWWDIR%%/apps/files_external/tests/owncloudfunctions.php
 %%WWWDIR%%/apps/files_external/tests/sftp.php
 %%WWWDIR%%/apps/files_external/tests/smb.php
 %%WWWDIR%%/apps/files_external/tests/smbfunctions.php
@@ -5998,6 +6005,7 @@
 %%WWWDIR%%/apps/files_sharing/lib/api.php
 %%WWWDIR%%/apps/files_sharing/lib/cache.php
 %%WWWDIR%%/apps/files_sharing/lib/connector/publicauth.php
+%%WWWDIR%%/apps/files_sharing/lib/exceptions.php
 %%WWWDIR%%/apps/files_sharing/lib/external/cache.php
 %%WWWDIR%%/apps/files_sharing/lib/external/manager.php
 %%WWWDIR%%/apps/files_sharing/lib/external/mount.php
@@ -6025,6 +6033,7 @@
 %%WWWDIR%%/apps/files_sharing/templates/public.php
 %%WWWDIR%%/apps/files_sharing/templates/settings-admin.php
 %%WWWDIR%%/apps/files_sharing/tests/api.php
+%%WWWDIR%%/apps/files_sharing/tests/backend.php
 %%WWWDIR%%/apps/files_sharing/tests/base.php
 %%WWWDIR%%/apps/files_sharing/tests/cache.php
 %%WWWDIR%%/apps/files_sharing/tests/externalstorage.php
@@ -7175,9 +7184,11 @@
 %%WWWDIR%%/apps/updater/COPYING-AGPL
 %%WWWDIR%%/apps/updater/README.md
 %%WWWDIR%%/apps/updater/admin.php
+%%WWWDIR%%/apps/updater/ajax/backup.php
 %%WWWDIR%%/apps/updater/ajax/backup/delete.php
 %%WWWDIR%%/apps/updater/ajax/backup/download.php
 %%WWWDIR%%/apps/updater/ajax/backup/list.php
+%%WWWDIR%%/apps/updater/ajax/download.php
 %%WWWDIR%%/apps/updater/ajax/update.php
 %%WWWDIR%%/apps/updater/appinfo/app.php
 %%WWWDIR%%/apps/updater/appinfo/info.xml
@@ -7268,12 +7279,15 @@
 %%WWWDIR%%/apps/updater/l10n/zh_TW.php
 %%WWWDIR%%/apps/updater/lib/app.php
 %%WWWDIR%%/apps/updater/lib/backup.php
+%%WWWDIR%%/apps/updater/lib/collection.php
 %%WWWDIR%%/apps/updater/lib/downloader.php
+%%WWWDIR%%/apps/updater/lib/fsexception.php
 %%WWWDIR%%/apps/updater/lib/helper.php
 %%WWWDIR%%/apps/updater/lib/location.php
 %%WWWDIR%%/apps/updater/lib/location/3rdparty.php
 %%WWWDIR%%/apps/updater/lib/location/apps.php
 %%WWWDIR%%/apps/updater/lib/location/core.php
+%%WWWDIR%%/apps/updater/lib/permissionexception.php
 %%WWWDIR%%/apps/updater/lib/updater.php
 %%WWWDIR%%/apps/updater/templates/admin.php
 %%WWWDIR%%/apps/updater/templates/update.php
@@ -7311,6 +7325,7 @@
 %%WWWDIR%%/apps/user_ldap/css/settings.css
 %%WWWDIR%%/apps/user_ldap/group_ldap.php
 %%WWWDIR%%/apps/user_ldap/group_proxy.php
+%%WWWDIR%%/apps/user_ldap/js/experiencedAdmin.js
 %%WWWDIR%%/apps/user_ldap/js/ldapFilter.js
 %%WWWDIR%%/apps/user_ldap/js/settings.js
 %%WWWDIR%%/apps/user_ldap/l10n/ach.php
@@ -7457,6 +7472,7 @@
 %%WWWDIR%%/apps/user_ldap/tests/connection.php
 %%WWWDIR%%/apps/user_ldap/tests/data/sid.dat
 %%WWWDIR%%/apps/user_ldap/tests/group_ldap.php
+%%WWWDIR%%/apps/user_ldap/tests/helper.php
 %%WWWDIR%%/apps/user_ldap/tests/user/manager.php
 %%WWWDIR%%/apps/user_ldap/tests/user/user.php
 %%WWWDIR%%/apps/user_ldap/tests/user_ldap.php
@@ -7589,57 +7605,50 @@
 %%WWWDIR%%/core/css/jquery.ocdialog.css
 %%WWWDIR%%/core/css/mobile.css
 %%WWWDIR%%/core/css/multiselect.css
+%%WWWDIR%%/core/css/select2/select2-spinner.gif
+%%WWWDIR%%/core/css/select2/select2.css
+%%WWWDIR%%/core/css/select2/select2.png
+%%WWWDIR%%/core/css/select2/select2x2.png
 %%WWWDIR%%/core/css/share.css
 %%WWWDIR%%/core/css/styles.css
-%%WWWDIR%%/core/doc/admin/_images/100000000000003800000018D49F1CE7.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000950000004412998BE7.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000A800000073F49785A6.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000B600000120706C3C75.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000CD000000ECA8DE7780.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001880000007EA4444400.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001980000009271BE0D26.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001D30000014DC251C948.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001FD000000DF8D2D7546.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002170000004A27056037.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000247000000A77440E4D3.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000027B0000011D10F70F88.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002840000016729388B7F.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002950000021E245F6883.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000372000002AF943ADDA0.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003A60000011E274A1A28.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003A6000002A9C7A660BE.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003B30000021B5EE5D338.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003DF00000071A41D8A1F.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000004100000005657010336.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000004770000008AAF3CFFDB.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000004C0000000795BB2C146.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000053A00000067708C8F53.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000552000000BF22E90239.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005970000006AE23997C9.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005AF00000074604B1A67.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005B90000007866D92D14.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005BB0000007C1DF71FA7.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005C30000006CAFFAAD61.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005D00000003B29340A7A.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005D50000009458C5EE48.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005E20000009B1BA5A8CF.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005E6000000676902E040.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005EB000000A68BA73E2D.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005EC00000073E678DFEC.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005F70000005F0912E904.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005F70000007E43DB8026.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005FA0000005CE8491B77.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005FF0000005F35710398.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000006000000005EDA7B96BE.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000060300000065DF96536B.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000006060000006A0106CA0C.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000061A0000006FC014C3A4.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000061D0000007047877972.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000061E0000006BCF9ECC0B.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000062A0000005F61A18950.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000631000000E19D116AA0.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000063F00000090AAE1FA4A.png
+%%WWWDIR%%/core/doc/admin/_images/antivirus-app.png
+%%WWWDIR%%/core/doc/admin/_images/antivirus-config.png
+%%WWWDIR%%/core/doc/admin/_images/antivirus-daemon-socket.png
+%%WWWDIR%%/core/doc/admin/_images/antivirus-executable.png
+%%WWWDIR%%/core/doc/admin/_images/antivirus-logging.png
 %%WWWDIR%%/core/doc/admin/_images/create_public_share.png
+%%WWWDIR%%/core/doc/admin/_images/documents_app_enable.png
+%%WWWDIR%%/core/doc/admin/_images/encryption1.png
+%%WWWDIR%%/core/doc/admin/_images/encryption2.png
+%%WWWDIR%%/core/doc/admin/_images/encryption3.png
+%%WWWDIR%%/core/doc/admin/_images/encryption4.png
+%%WWWDIR%%/core/doc/admin/_images/encryption5.png
+%%WWWDIR%%/core/doc/admin/_images/encryption6.png
+%%WWWDIR%%/core/doc/admin/_images/encryption7.png
+%%WWWDIR%%/core/doc/admin/_images/encryption8.png
+%%WWWDIR%%/core/doc/admin/_images/encryption9.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-amazons3.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-app-add.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-app-enable.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-app-local.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-app-usermounts.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-dropbox-allowshare.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-dropbox-app.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-dropbox-configapp.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-dropbox-oc.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-dropbox.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-ftp.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-google-drive-0auth.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-google-drive-9.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-google-drive-sdk.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-google-drive.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-google-drive1.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-google-drive2.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-google-drive5.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-google-drive7.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-google-drive8.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-smb.png
+%%WWWDIR%%/core/doc/admin/_images/external-storage-webdav.png
 %%WWWDIR%%/core/doc/admin/_images/install-wizard-advanced.png
 %%WWWDIR%%/core/doc/admin/_images/install-wizard.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-advanced-1-connection.png
@@ -7653,30 +7662,48 @@
 %%WWWDIR%%/core/doc/admin/_images/ldap-wizard-2-user.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-wizard-3-login.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-wizard-4-group.png
+%%WWWDIR%%/core/doc/admin/_images/lucene-search-enable.png
+%%WWWDIR%%/core/doc/admin/_images/lucene-search-user.png
 %%WWWDIR%%/core/doc/admin/_images/oc_admin_app_page.png
-%%WWWDIR%%/core/doc/admin/_images/oc_admin_user_manage.png
-%%WWWDIR%%/core/doc/admin/_images/oc_personal_settings_dropdown_admin.png
-%%WWWDIR%%/core/doc/admin/_images/oc_select_an_app_window.png
-%%WWWDIR%%/core/doc/admin/_images/oc_updater_enable.png
-%%WWWDIR%%/core/doc/admin/_images/oc_updater_select.png
+%%WWWDIR%%/core/doc/admin/_images/preview_images.png
 %%WWWDIR%%/core/doc/admin/_images/remote_shares.png
+%%WWWDIR%%/core/doc/admin/_images/sharing-admin.png
+%%WWWDIR%%/core/doc/admin/_images/sharing-user-local.png
+%%WWWDIR%%/core/doc/admin/_images/sharing-user.png
+%%WWWDIR%%/core/doc/admin/_images/smtp-config-php-sendmail.png
+%%WWWDIR%%/core/doc/admin/_images/smtp-config-smtp.png
+%%WWWDIR%%/core/doc/admin/_images/smtp-config-wizard.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-install.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-module.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint1.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint2.png
 %%WWWDIR%%/core/doc/admin/_images/untrusted-domain.png
+%%WWWDIR%%/core/doc/admin/_images/updater-1.png
+%%WWWDIR%%/core/doc/admin/_images/updater-2.png
+%%WWWDIR%%/core/doc/admin/_images/updater-3.png
+%%WWWDIR%%/core/doc/admin/_images/updater-4.png
+%%WWWDIR%%/core/doc/admin/_images/updater-5.png
+%%WWWDIR%%/core/doc/admin/_images/updater-6.png
+%%WWWDIR%%/core/doc/admin/_images/updater-7.png
+%%WWWDIR%%/core/doc/admin/_images/users-config.png
+%%WWWDIR%%/core/doc/admin/_images/users-create.png
+%%WWWDIR%%/core/doc/admin/_images/users-groups.png
 %%WWWDIR%%/core/doc/admin/_images/win7features.jpg
 %%WWWDIR%%/core/doc/admin/_images/winserverroles.jpg
 %%WWWDIR%%/core/doc/admin/_sources/configuration/auth_ldap.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/background_jobs.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration/configuration-antivirus.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_3rdparty.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_apps.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_assets.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_automation.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_config_sample_php.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_custom_clients.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_database.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_encryption.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_file_sharing.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_files_locking.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_knowledgebase.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_language.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_logging.txt
@@ -7685,6 +7712,8 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_reverseproxy.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_users.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuring_big_file_upload.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration/configuring_documents.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration/configuring_search.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/custom_mount_config.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/custom_mount_config_gui.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/custom_user_backend.txt
@@ -7693,6 +7722,10 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration/xsendfile.txt
 %%WWWDIR%%/core/doc/admin/_sources/contents.txt
 %%WWWDIR%%/core/doc/admin/_sources/index.txt
+%%WWWDIR%%/core/doc/admin/_sources/installation/configuration_hiawatha.txt
+%%WWWDIR%%/core/doc/admin/_sources/installation/configuration_lighttpd.txt
+%%WWWDIR%%/core/doc/admin/_sources/installation/configuration_nginx.txt
+%%WWWDIR%%/core/doc/admin/_sources/installation/configuration_yaws.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_appliance.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_linux.txt
@@ -7704,11 +7737,14 @@
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_wizard.txt
 %%WWWDIR%%/core/doc/admin/_sources/issues/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/backup.txt
+%%WWWDIR%%/core/doc/admin/_sources/maintenance/convert_db.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/enable_maintenance.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/migrating.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/restore.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/update.txt
+%%WWWDIR%%/core/doc/admin/_sources/maintenance/upgrade.txt
+%%WWWDIR%%/core/doc/admin/_sources/whats_new_admin.txt
 %%WWWDIR%%/core/doc/admin/_static/ajax-loader.gif
 %%WWWDIR%%/core/doc/admin/_static/basic.css
 %%WWWDIR%%/core/doc/admin/_static/bootstrap-responsive.css
@@ -7740,13 +7776,17 @@
 %%WWWDIR%%/core/doc/admin/_static/websupport.js
 %%WWWDIR%%/core/doc/admin/configuration/auth_ldap.html
 %%WWWDIR%%/core/doc/admin/configuration/background_jobs.html
+%%WWWDIR%%/core/doc/admin/configuration/configuration-antivirus.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_3rdparty.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_apps.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_assets.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_automation.html
+%%WWWDIR%%/core/doc/admin/configuration/configuration_config_sample_php.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_custom_clients.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_database.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_encryption.html
+%%WWWDIR%%/core/doc/admin/configuration/configuration_file_sharing.html
+%%WWWDIR%%/core/doc/admin/configuration/configuration_files_locking.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_knowledgebase.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_language.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_logging.html
@@ -7755,6 +7795,8 @@
 %%WWWDIR%%/core/doc/admin/configuration/configuration_reverseproxy.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_users.html
 %%WWWDIR%%/core/doc/admin/configuration/configuring_big_file_upload.html
+%%WWWDIR%%/core/doc/admin/configuration/configuring_documents.html
+%%WWWDIR%%/core/doc/admin/configuration/configuring_search.html
 %%WWWDIR%%/core/doc/admin/configuration/custom_mount_config.html
 %%WWWDIR%%/core/doc/admin/configuration/custom_mount_config_gui.html
 %%WWWDIR%%/core/doc/admin/configuration/custom_user_backend.html
@@ -7764,6 +7806,10 @@
 %%WWWDIR%%/core/doc/admin/contents.html
 %%WWWDIR%%/core/doc/admin/genindex.html
 %%WWWDIR%%/core/doc/admin/index.html
+%%WWWDIR%%/core/doc/admin/installation/configuration_hiawatha.html
+%%WWWDIR%%/core/doc/admin/installation/configuration_lighttpd.html
+%%WWWDIR%%/core/doc/admin/installation/configuration_nginx.html
+%%WWWDIR%%/core/doc/admin/installation/configuration_yaws.html
 %%WWWDIR%%/core/doc/admin/installation/index.html
 %%WWWDIR%%/core/doc/admin/installation/installation_appliance.html
 %%WWWDIR%%/core/doc/admin/installation/installation_linux.html
@@ -7775,15 +7821,17 @@
 %%WWWDIR%%/core/doc/admin/installation/installation_wizard.html
 %%WWWDIR%%/core/doc/admin/issues/index.html
 %%WWWDIR%%/core/doc/admin/maintenance/backup.html
+%%WWWDIR%%/core/doc/admin/maintenance/convert_db.html
 %%WWWDIR%%/core/doc/admin/maintenance/enable_maintenance.html
 %%WWWDIR%%/core/doc/admin/maintenance/index.html
 %%WWWDIR%%/core/doc/admin/maintenance/migrating.html
 %%WWWDIR%%/core/doc/admin/maintenance/restore.html
 %%WWWDIR%%/core/doc/admin/maintenance/update.html
+%%WWWDIR%%/core/doc/admin/maintenance/upgrade.html
 %%WWWDIR%%/core/doc/admin/objects.inv
 %%WWWDIR%%/core/doc/admin/search.html
 %%WWWDIR%%/core/doc/admin/searchindex.js
-%%WWWDIR%%/core/doc/user/_images/apis_auth_google_drive.png
+%%WWWDIR%%/core/doc/admin/whats_new_admin.html
 %%WWWDIR%%/core/doc/user/_images/bookmark_addurl.png
 %%WWWDIR%%/core/doc/user/_images/bookmark_setting.png
 %%WWWDIR%%/core/doc/user/_images/calendar_create_event.png
@@ -7813,13 +7861,14 @@
 %%WWWDIR%%/core/doc/user/_images/deleted_files.png
 %%WWWDIR%%/core/doc/user/_images/documents_personal_settings.png
 %%WWWDIR%%/core/doc/user/_images/dolphin_webdav.png
+%%WWWDIR%%/core/doc/user/_images/download.png
 %%WWWDIR%%/core/doc/user/_images/email_address_personal_settings.png
-%%WWWDIR%%/core/doc/user/_images/encryption_enabling.png
+%%WWWDIR%%/core/doc/user/_images/encryption1.png
+%%WWWDIR%%/core/doc/user/_images/encryption2.png
+%%WWWDIR%%/core/doc/user/_images/encryption3.png
+%%WWWDIR%%/core/doc/user/_images/encryption4.png
+%%WWWDIR%%/core/doc/user/_images/event_export.png
 %%WWWDIR%%/core/doc/user/_images/explorer_webdav.png
-%%WWWDIR%%/core/doc/user/_images/external_google_drive_1_sign_in.png
-%%WWWDIR%%/core/doc/user/_images/external_google_drive_2_verify.png
-%%WWWDIR%%/core/doc/user/_images/external_google_drive_5_setup_ownCloud.png
-%%WWWDIR%%/core/doc/user/_images/external_google_drive_6_accept.png
 %%WWWDIR%%/core/doc/user/_images/files_versioning.png
 %%WWWDIR%%/core/doc/user/_images/full_name.png
 %%WWWDIR%%/core/doc/user/_images/gnome3_nautilus_webdav.png
@@ -7833,35 +7882,35 @@
 %%WWWDIR%%/core/doc/user/_images/kdes7.png
 %%WWWDIR%%/core/doc/user/_images/kdes9.png
 %%WWWDIR%%/core/doc/user/_images/language_personal_settings.png
-%%WWWDIR%%/core/doc/user/_images/new_project_google_drive.png
-%%WWWDIR%%/core/doc/user/_images/new_project_google_drive_api_settings.png
-%%WWWDIR%%/core/doc/user/_images/new_project_google_drive_branding.png
-%%WWWDIR%%/core/doc/user/_images/new_project_google_drive_new_client.png
 %%WWWDIR%%/core/doc/user/_images/notifications_personal_settings.png
 %%WWWDIR%%/core/doc/user/_images/oc_connect.png
 %%WWWDIR%%/core/doc/user/_images/oc_documents.png
 %%WWWDIR%%/core/doc/user/_images/oc_documents_col_edit.png
 %%WWWDIR%%/core/doc/user/_images/oc_documents_edit.png
 %%WWWDIR%%/core/doc/user/_images/oc_documents_share.png
-%%WWWDIR%%/core/doc/user/_images/oc_files_share.png
-%%WWWDIR%%/core/doc/user/_images/oc_filesweb.png
 %%WWWDIR%%/core/doc/user/_images/oc_filesweb_navigate.png
 %%WWWDIR%%/core/doc/user/_images/oc_filesweb_new.png
 %%WWWDIR%%/core/doc/user/_images/oc_main_web.png
 %%WWWDIR%%/core/doc/user/_images/oc_main_web_labelled.png
 %%WWWDIR%%/core/doc/user/_images/oc_personal_settings_dropdown.png
-%%WWWDIR%%/core/doc/user/_images/oc_personal_settings_dropdown1.png
-%%WWWDIR%%/core/doc/user/_images/oc_personal_settings_window.png
-%%WWWDIR%%/core/doc/user/_images/oc_share_expiration_calendar.png
-%%WWWDIR%%/core/doc/user/_images/oc_share_with_options.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav1.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav2.png
 %%WWWDIR%%/core/doc/user/_images/password_change.png
 %%WWWDIR%%/core/doc/user/_images/personal_settings.png
 %%WWWDIR%%/core/doc/user/_images/profile_picture_personal_settings.png
-%%WWWDIR%%/core/doc/user/_images/share_link.png
-%%WWWDIR%%/core/doc/user/_images/share_link_adding.png
+%%WWWDIR%%/core/doc/user/_images/quota1.png
+%%WWWDIR%%/core/doc/user/_images/s2s-add-remote-share.png
+%%WWWDIR%%/core/doc/user/_images/s2s-connect-to-remote-share.png
+%%WWWDIR%%/core/doc/user/_images/s2s-create_public_share.png
+%%WWWDIR%%/core/doc/user/_images/s2s-remote-share-labeled.png
 %%WWWDIR%%/core/doc/user/_images/usage_indicator.png
+%%WWWDIR%%/core/doc/user/_images/users-files.png
+%%WWWDIR%%/core/doc/user/_images/users-overlays-sharepoint.png
+%%WWWDIR%%/core/doc/user/_images/users-overlays-win-net-drive.png
+%%WWWDIR%%/core/doc/user/_images/users-overlays.png
+%%WWWDIR%%/core/doc/user/_images/users-share-local.png
+%%WWWDIR%%/core/doc/user/_images/users-share-local2.png
+%%WWWDIR%%/core/doc/user/_images/users-share-public.png
 %%WWWDIR%%/core/doc/user/_sources/bookmarks.txt
 %%WWWDIR%%/core/doc/user/_sources/contents.txt
 %%WWWDIR%%/core/doc/user/_sources/documents.txt
@@ -7877,7 +7926,7 @@
 %%WWWDIR%%/core/doc/user/_sources/files/sync.txt
 %%WWWDIR%%/core/doc/user/_sources/files/versioncontrol.txt
 %%WWWDIR%%/core/doc/user/_sources/index.txt
-%%WWWDIR%%/core/doc/user/_sources/migration.txt
+%%WWWDIR%%/core/doc/user/_sources/installing_apps.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/calendar.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/contacts.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/index.txt
@@ -7934,7 +7983,7 @@
 %%WWWDIR%%/core/doc/user/files/versioncontrol.html
 %%WWWDIR%%/core/doc/user/genindex.html
 %%WWWDIR%%/core/doc/user/index.html
-%%WWWDIR%%/core/doc/user/migration.html
+%%WWWDIR%%/core/doc/user/installing_apps.html
 %%WWWDIR%%/core/doc/user/objects.inv
 %%WWWDIR%%/core/doc/user/pim/calendar.html
 %%WWWDIR%%/core/doc/user/pim/contacts.html
@@ -8200,7 +8249,62 @@
 %%WWWDIR%%/core/js/octemplate.js
 %%WWWDIR%%/core/js/placeholder.js
 %%WWWDIR%%/core/js/placeholders.js
+%%WWWDIR%%/core/js/select2/LICENSE
+%%WWWDIR%%/core/js/select2/README.md
+%%WWWDIR%%/core/js/select2/bower.json
+%%WWWDIR%%/core/js/select2/component.json
+%%WWWDIR%%/core/js/select2/composer.json
+%%WWWDIR%%/core/js/select2/package.json
+%%WWWDIR%%/core/js/select2/release.sh
+%%WWWDIR%%/core/js/select2/select2-bootstrap.css
+%%WWWDIR%%/core/js/select2/select2.jquery.json
+%%WWWDIR%%/core/js/select2/select2.js
+%%WWWDIR%%/core/js/select2/select2_locale_ar.js
+%%WWWDIR%%/core/js/select2/select2_locale_bg.js
+%%WWWDIR%%/core/js/select2/select2_locale_ca.js
+%%WWWDIR%%/core/js/select2/select2_locale_cs.js
+%%WWWDIR%%/core/js/select2/select2_locale_da.js
+%%WWWDIR%%/core/js/select2/select2_locale_de.js
+%%WWWDIR%%/core/js/select2/select2_locale_el.js
+%%WWWDIR%%/core/js/select2/select2_locale_en.js.template
+%%WWWDIR%%/core/js/select2/select2_locale_es.js
+%%WWWDIR%%/core/js/select2/select2_locale_et.js
+%%WWWDIR%%/core/js/select2/select2_locale_eu.js
+%%WWWDIR%%/core/js/select2/select2_locale_fa.js
+%%WWWDIR%%/core/js/select2/select2_locale_fi.js
+%%WWWDIR%%/core/js/select2/select2_locale_fr.js
+%%WWWDIR%%/core/js/select2/select2_locale_gl.js
+%%WWWDIR%%/core/js/select2/select2_locale_he.js
+%%WWWDIR%%/core/js/select2/select2_locale_hr.js
+%%WWWDIR%%/core/js/select2/select2_locale_hu.js
+%%WWWDIR%%/core/js/select2/select2_locale_id.js
+%%WWWDIR%%/core/js/select2/select2_locale_is.js
+%%WWWDIR%%/core/js/select2/select2_locale_it.js
+%%WWWDIR%%/core/js/select2/select2_locale_ja.js
+%%WWWDIR%%/core/js/select2/select2_locale_ka.js
+%%WWWDIR%%/core/js/select2/select2_locale_ko.js
+%%WWWDIR%%/core/js/select2/select2_locale_lt.js
+%%WWWDIR%%/core/js/select2/select2_locale_lv.js
+%%WWWDIR%%/core/js/select2/select2_locale_mk.js
+%%WWWDIR%%/core/js/select2/select2_locale_ms.js
+%%WWWDIR%%/core/js/select2/select2_locale_nl.js
+%%WWWDIR%%/core/js/select2/select2_locale_no.js
+%%WWWDIR%%/core/js/select2/select2_locale_pl.js
+%%WWWDIR%%/core/js/select2/select2_locale_pt-BR.js
+%%WWWDIR%%/core/js/select2/select2_locale_pt-PT.js
+%%WWWDIR%%/core/js/select2/select2_locale_ro.js
+%%WWWDIR%%/core/js/select2/select2_locale_rs.js
+%%WWWDIR%%/core/js/select2/select2_locale_ru.js
+%%WWWDIR%%/core/js/select2/select2_locale_sk.js
+%%WWWDIR%%/core/js/select2/select2_locale_sv.js
+%%WWWDIR%%/core/js/select2/select2_locale_th.js
+%%WWWDIR%%/core/js/select2/select2_locale_tr.js
+%%WWWDIR%%/core/js/select2/select2_locale_uk.js
+%%WWWDIR%%/core/js/select2/select2_locale_vi.js
+%%WWWDIR%%/core/js/select2/select2_locale_zh-CN.js
+%%WWWDIR%%/core/js/select2/select2_locale_zh-TW.js
 %%WWWDIR%%/core/js/setup.js
+%%WWWDIR%%/core/js/setupchecks.js
 %%WWWDIR%%/core/js/share.js
 %%WWWDIR%%/core/js/singleselect.js
 %%WWWDIR%%/core/js/snap.js
@@ -9885,6 +9989,7 @@
 %%WWWDIR%%/lib/private/davclient.php
 %%WWWDIR%%/lib/private/db.php
 %%WWWDIR%%/lib/private/db/adapter.php
+%%WWWDIR%%/lib/private/db/adaptermysql.php
 %%WWWDIR%%/lib/private/db/adapteroci8.php
 %%WWWDIR%%/lib/private/db/adapterpgsql.php
 %%WWWDIR%%/lib/private/db/adaptersqlite.php
@@ -9897,12 +10002,14 @@
 %%WWWDIR%%/lib/private/db/mdb2schemawriter.php
 %%WWWDIR%%/lib/private/db/migrationexception.php
 %%WWWDIR%%/lib/private/db/migrator.php
+%%WWWDIR%%/lib/private/db/mssqlmigrator.php
 %%WWWDIR%%/lib/private/db/mysqlmigrator.php
 %%WWWDIR%%/lib/private/db/nocheckmigrator.php
 %%WWWDIR%%/lib/private/db/oracleconnection.php
 %%WWWDIR%%/lib/private/db/oraclemigrator.php
 %%WWWDIR%%/lib/private/db/pgsqltools.php
 %%WWWDIR%%/lib/private/db/sqlitemigrator.php
+%%WWWDIR%%/lib/private/db/sqlitesessioninit.php
 %%WWWDIR%%/lib/private/db/statementwrapper.php
 %%WWWDIR%%/lib/private/defaults.php
 %%WWWDIR%%/lib/private/eventsource.php
@@ -9972,6 +10079,7 @@
 %%WWWDIR%%/lib/private/hooks/forwardingemitter.php
 %%WWWDIR%%/lib/private/hooks/legacyemitter.php
 %%WWWDIR%%/lib/private/hooks/publicemitter.php
+%%WWWDIR%%/lib/private/httphelper.php
 %%WWWDIR%%/lib/private/image.php
 %%WWWDIR%%/lib/private/installer.php
 %%WWWDIR%%/lib/private/json.php
@@ -10025,7 +10133,6 @@
 %%WWWDIR%%/lib/private/preview/provider.php
 %%WWWDIR%%/lib/private/preview/svg.php
 %%WWWDIR%%/lib/private/preview/txt.php
-%%WWWDIR%%/lib/private/preview/unknown.php
 %%WWWDIR%%/lib/private/previewmanager.php
 %%WWWDIR%%/lib/private/repair.php
 %%WWWDIR%%/lib/private/repairstep.php
@@ -10175,7 +10282,9 @@
 %%WWWDIR%%/lib/public/util.php
 %%WWWDIR%%/lib/repair/collation.php
 %%WWWDIR%%/lib/repair/innodb.php
+%%WWWDIR%%/lib/repair/preview.php
 %%WWWDIR%%/lib/repair/repairmimetypes.php
+%%WWWDIR%%/lib/repair/searchlucenetables.php
 %%WWWDIR%%/occ
 %%WWWDIR%%/ocs/providers.php
 %%WWWDIR%%/ocs/routes.php
@@ -10188,16 +10297,16 @@
 %%WWWDIR%%/search/js/result.js
 %%WWWDIR%%/search/templates/part.results.php
 %%WWWDIR%%/settings/admin.php
-%%WWWDIR%%/settings/admin/controller.php
 %%WWWDIR%%/settings/ajax/apps/ocs.php
 %%WWWDIR%%/settings/ajax/changedisplayname.php
+%%WWWDIR%%/settings/ajax/checksetup.php
 %%WWWDIR%%/settings/ajax/creategroup.php
 %%WWWDIR%%/settings/ajax/createuser.php
 %%WWWDIR%%/settings/ajax/decryptall.php
 %%WWWDIR%%/settings/ajax/deletekeys.php
 %%WWWDIR%%/settings/ajax/disableapp.php
 %%WWWDIR%%/settings/ajax/enableapp.php
-%%WWWDIR%%/settings/ajax/excludegroups.php
+%%WWWDIR%%/settings/ajax/geteveryonecount.php
 %%WWWDIR%%/settings/ajax/getlog.php
 %%WWWDIR%%/settings/ajax/grouplist.php
 %%WWWDIR%%/settings/ajax/installapp.php
@@ -10215,8 +10324,10 @@
 %%WWWDIR%%/settings/ajax/uninstallapp.php
 %%WWWDIR%%/settings/ajax/updateapp.php
 %%WWWDIR%%/settings/ajax/userlist.php
+%%WWWDIR%%/settings/application.php
 %%WWWDIR%%/settings/apps.php
 %%WWWDIR%%/settings/changepassword/controller.php
+%%WWWDIR%%/settings/controller/mailsettingscontroller.php
 %%WWWDIR%%/settings/css/settings.css
 %%WWWDIR%%/settings/help.php
 %%WWWDIR%%/settings/img/admin.png
@@ -10235,6 +10346,7 @@
 %%WWWDIR%%/settings/js/apps.js
 %%WWWDIR%%/settings/js/log.js
 %%WWWDIR%%/settings/js/personal.js
+%%WWWDIR%%/settings/js/settings.js
 %%WWWDIR%%/settings/js/users/deleteHandler.js
 %%WWWDIR%%/settings/js/users/filter.js
 %%WWWDIR%%/settings/js/users/groups.js
@@ -10335,6 +10447,7 @@
 %%WWWDIR%%/settings/templates/users/part.grouplist.php
 %%WWWDIR%%/settings/templates/users/part.setquota.php
 %%WWWDIR%%/settings/templates/users/part.userlist.php
+%%WWWDIR%%/settings/tests/js/users/deleteHandlerSpec.js
 %%WWWDIR%%/settings/users.php
 %%WWWDIR%%/status.php
 %%WWWDIR%%/themes/README
@@ -10589,7 +10702,6 @@
 @dirrmtry %%WWWDIR%%/3rdparty/miniColors/css
 @dirrmtry %%WWWDIR%%/3rdparty/miniColors/js
 @dirrmtry %%WWWDIR%%/3rdparty/miniColors
-@dirrmtry %%WWWDIR%%/3rdparty/phpass/c
 @dirrmtry %%WWWDIR%%/3rdparty/phpass
 @dirrmtry %%WWWDIR%%/3rdparty/phpmailer/phpmailer/docs
 @dirrmtry %%WWWDIR%%/3rdparty/phpmailer/phpmailer/examples/images
@@ -10882,125 +10994,6 @@
 @dirrmtry %%WWWDIR%%/apps/bookmarks/css
 @dirrmtry %%WWWDIR%%/apps/bookmarks/img
 @dirrmtry %%WWWDIR%%/apps/bookmarks/js
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ach
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ady
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/af
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/af_ZA
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ak
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/am_ET
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ar
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ast
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/az
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/be
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/bg_BG
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/bn_BD
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/bn_IN
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/bs
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ca
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ca@valencia
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/cs_CZ
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/cy_GB
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/da
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/de
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/de_AT
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/de_CH
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/de_DE
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/el
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/en@pirate
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/en_GB
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/en_NZ
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/eo
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_AR
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_BO
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_CL
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_CO
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_CR
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_EC
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_MX
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_PE
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_PY
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_US
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/es_UY
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/et_EE
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/eu
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/eu_ES
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/fa
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/fi
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/fi_FI
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/fr
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/fr_CA
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/gl
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/he
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/hi
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/hi_IN
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/hr
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/hu_HU
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/hy
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ia
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/id
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/is
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/it
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ja
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/jv
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ka
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ka_GE
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/km
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/kn
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ko
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ku_IQ
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/lb
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/lt_LT
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/lv
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/mk
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ml
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ml_IN
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/mn
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ms_MY
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/my_MM
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/nb_NO
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/nds
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ne
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/nl
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/nn_NO
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/nqo
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/oc
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/or_IN
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/pa
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/pl
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/pl_PL
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/pt_BR
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/pt_PT
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ro
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ru
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ru_RU
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/si_LK
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/sk
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/sk_SK
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/sl
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/sq
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/sr
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/sr@latin
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/su
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/sv
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/sw_KE
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ta_IN
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ta_LK
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/te
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/templates
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/th_TH
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/tr
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/tzm
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ug
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/uk
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ur
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/ur_PK
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/uz
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/vi
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/zh_CN
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/zh_CN.GB2312
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/zh_HK
-@dirrmtry %%WWWDIR%%/apps/bookmarks/l10n/zh_TW
 @dirrmtry %%WWWDIR%%/apps/bookmarks/l10n
 @dirrmtry %%WWWDIR%%/apps/bookmarks/lib
 @dirrmtry %%WWWDIR%%/apps/bookmarks/templates
@@ -12256,7 +12249,6 @@
 @dirrmtry %%WWWDIR%%/search/js
 @dirrmtry %%WWWDIR%%/search/templates
 @dirrmtry %%WWWDIR%%/search
-@dirrmtry %%WWWDIR%%/settings/admin
 @dirrmtry %%WWWDIR%%/settings/ajax/apps
 @dirrmtry %%WWWDIR%%/settings/ajax
 @dirrmtry %%WWWDIR%%/settings/changepassword

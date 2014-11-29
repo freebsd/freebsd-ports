@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/Schema/Loader/.packlist
 %%SITE_PERL%%/DBIx/Skinny/Schema/Loader.pm
 %%SITE_PERL%%/DBIx/Skinny/Schema/Loader/DBI.pm
 %%SITE_PERL%%/DBIx/Skinny/Schema/Loader/DBI/Pg.pm

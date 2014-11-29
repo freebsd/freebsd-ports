@@ -56,6 +56,3 @@ share/pixmaps/guake/add_tab.png
 share/pixmaps/guake/guake-notification.png
 share/pixmaps/guake/guake-tray.png
 share/pixmaps/guake/guake.png
-@dirrm share/pixmaps/guake
-@dirrm %%PYTHON_SITELIBDIR%%/guake
-@dirrm %%DATADIR%%

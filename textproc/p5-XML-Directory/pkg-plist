@@ -6,8 +6,3 @@
 %%SITE_PERL%%/XML/Directory/Apache.pm
 %%SITE_PERL%%/XML/Directory/SAX.pm
 %%SITE_PERL%%/XML/Directory/String.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Directory/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Directory
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Directory
-@dirrmtry %%SITE_PERL%%/XML

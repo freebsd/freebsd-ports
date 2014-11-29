@@ -16,5 +16,4 @@ bin/note
 %%SITE_PERL%%/NOTEDB/mysql.pm
 %%SITE_PERL%%/NOTEDB/pwsafe3.pm
 %%SITE_PERL%%/NOTEDB/text.pm
-%%SITE_PERL%%/mach/auto/NOTEDB/.packlist
 %%SITE_PERL%%/note.pod

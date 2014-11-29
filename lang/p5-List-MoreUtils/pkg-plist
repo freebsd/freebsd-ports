@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/List/MoreUtils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/MoreUtils/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/MoreUtils/MoreUtils.so
+%%SITE_ARCH%%/List/MoreUtils.pm
+%%SITE_ARCH%%/auto/List/MoreUtils/MoreUtils.so
 %%PERL5_MAN3%%/List::MoreUtils.3.gz

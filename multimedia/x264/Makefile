@@ -49,12 +49,9 @@ HAS_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		ASM DEBUG PGO GCC GPAC LAVF
 OPTIONS_DEFAULT=	ASM GPAC
-ASM_DESC=		Enable Assembly Optimizations
-DEBUG_DESC=		Generate Debugging Symbols
-PGO_DESC=		Use Profile-Guided Optimization
-GCC_DESC=		Use current GCC
-GPAC_DESC=		Enable MPEG-4 Output
-LAVF_DESC=		Enable libav* format input/output support (requires ffmpeg)
+GCC_DESC=		Force use of modern GCC
+GPAC_DESC=		MPEG-4 output support
+LAVF_DESC=		libav* format input/output support (requires FFmpeg)
 
 CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include" \
 			--extra-ldflags="-L${LOCALBASE}/lib" \

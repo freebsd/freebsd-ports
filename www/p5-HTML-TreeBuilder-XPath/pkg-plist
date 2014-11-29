@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/HTML::TreeBuilder::XPath.3.gz
 %%SITE_PERL%%/HTML/TreeBuilder/XPath.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TreeBuilder/XPath/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TreeBuilder/XPath
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TreeBuilder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML/TreeBuilder
-@dirrmtry %%SITE_PERL%%/HTML

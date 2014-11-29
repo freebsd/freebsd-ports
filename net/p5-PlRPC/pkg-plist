@@ -7,10 +7,3 @@
 %%SITE_PERL%%/RPC/PlServer.pm
 %%SITE_PERL%%/RPC/PlServer/Comm.pm
 %%SITE_PERL%%/RPC/PlServer/Test.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/PlServer/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/PlServer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC
-@dirrmtry %%SITE_PERL%%/RPC/PlServer
-@dirrmtry %%SITE_PERL%%/RPC/PlClient
-@dirrmtry %%SITE_PERL%%/RPC
-@dirrmtry %%SITE_PERL%%/Bundle

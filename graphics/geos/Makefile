@@ -34,4 +34,7 @@ RUBY_CONFIGURE_ENABLE=	ruby
 RUBY_CONFIGURE_ENV=	RUBY="${RUBY}"
 RUBY_USE=		RUBY=yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lstdc++||' ${WRKSRC}/configure ${WRKSRC}/tests/geostest/Makefile.in ${WRKSRC}/tests/thread/Makefile.in
+
 .include <bsd.port.mk>

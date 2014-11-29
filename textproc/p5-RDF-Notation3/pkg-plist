@@ -23,9 +23,3 @@
 %%SITE_PERL%%/RDF/Notation3/Template/TXML.pm
 %%SITE_PERL%%/RDF/Notation3/Triples.pm
 %%SITE_PERL%%/RDF/Notation3/XML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Notation3/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Notation3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF
-@dirrmtry %%SITE_PERL%%/RDF/Notation3/Template
-@dirrmtry %%SITE_PERL%%/RDF/Notation3
-@dirrmtry %%SITE_PERL%%/RDF

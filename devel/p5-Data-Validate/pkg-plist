@@ -14,5 +14,4 @@
 %%SITE_PERL%%/auto/Data/Validate/is_printable.al
 %%SITE_PERL%%/auto/Data/Validate/length_is_between.al
 %%SITE_PERL%%/auto/Data/Validate/new.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/.packlist
 %%PERL5_MAN3%%/Data::Validate.3.gz

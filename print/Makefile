@@ -109,7 +109,6 @@
     SUBDIR += latex-resume
     SUBDIR += latex2rtf
     SUBDIR += latexdiff
-    SUBDIR += latexmk
     SUBDIR += libgnomecups
     SUBDIR += libgnomeprint
     SUBDIR += libgnomeprint-reference
@@ -161,7 +160,6 @@
     SUBDIR += pdf4tcl
     SUBDIR += pdfbox
     SUBDIR += pdfcube
-    SUBDIR += pdfjam
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
     SUBDIR += pdftk

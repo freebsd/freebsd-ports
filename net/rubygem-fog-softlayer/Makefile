@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-softlayer
-PORTVERSION=	0.3.17
+PORTVERSION=	0.3.24
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,6 @@ RUN_DEPENDS=	rubygem-fog-core>=0:${PORTSDIR}/devel/rubygem-fog-core \
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

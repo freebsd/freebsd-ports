@@ -3,6 +3,7 @@
 
 PORTNAME=	xmlparser
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.yoshidam.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,7 +23,7 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-CONFIGURE_ARGS=	--with-perl-enc-map=${SITE_PERL}/${PERL_ARCH}/XML/Parser/Encodings
+CONFIGURE_ARGS=	--with-perl-enc-map=${SITE_ARCH}/XML/Parser/Encodings
 INSTALL_TARGET=	site-install
 MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"

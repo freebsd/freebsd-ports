@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clipboard manager for the GNOME panel
 
+BROKEN=		Uses unknown GNOME components pygnomedesktop and pygnomeextras
+
 USES=		gettext gmake iconv libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	gnomeprefix intltool pygnomedesktop pygnomeextras
 INSTALLS_ICONS=	yes

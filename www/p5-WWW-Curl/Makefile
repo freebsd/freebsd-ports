@@ -3,6 +3,7 @@
 
 PORTNAME=	WWW-Curl
 PORTVERSION=	4.17
+PORTREVISION=	1
 CATEGORIES=	www ftp perl5
 MASTER_SITES=	CPAN \
 		http://curl.haxx.se/libcurl/perl/

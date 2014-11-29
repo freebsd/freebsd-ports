@@ -16,4 +16,3 @@
 %%SITE_PERL%%/Date/Calendar/Profiles.pod
 %%SITE_PERL%%/Date/Calendar/Year.pm
 %%SITE_PERL%%/Date/Calendar/Year.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc/.packlist

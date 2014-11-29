@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Analytics/.packlist
 %%SITE_PERL%%/Net/Google/Analytics.pm
 %%SITE_PERL%%/Net/Google/Analytics/OAuth2.pm
 %%SITE_PERL%%/Net/Google/Analytics/Request.pm
@@ -9,7 +8,3 @@
 %%PERL5_MAN3%%/Net::Google::Analytics::Request.3.gz
 %%PERL5_MAN3%%/Net::Google::Analytics::Response.3.gz
 %%PERL5_MAN3%%/Net::Google::Analytics::Row.3.gz
-@dirrm %%SITE_PERL%%/Net/Google/Analytics
-@dirrm %%SITE_PERL%%/Net/Google
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Analytics
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google

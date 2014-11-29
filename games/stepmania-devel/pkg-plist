@@ -111,18 +111,3 @@ share/icons/hicolor/64x64/apps/stepmania-ssc.png
 share/icons/hicolor/72x72/apps/stepmania-ssc.png
 share/icons/hicolor/96x96/apps/stepmania-ssc.png
 share/icons/hicolor/scalable/apps/stepmania-ssc.svg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/license-ext/vlgothic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/license-ext
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Userdocs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Themerdocs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/SimfileFormats/SDF
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/SimfileFormats/KSF
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/SimfileFormats/DWI
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/SimfileFormats/BMS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/SimfileFormats
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Luadoc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Devdocs/negbpmtut
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Devdocs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/stepmania/Packages
-@dirrmtry lib/stepmania

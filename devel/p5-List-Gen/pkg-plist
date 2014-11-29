@@ -7,7 +7,6 @@
 %%SITE_PERL%%/List/Gen/Lazy/Ops.pm
 %%SITE_PERL%%/List/Gen/Perl6.pm
 %%SITE_PERL%%/List/Generator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Gen/.packlist
 %%PERL5_MAN3%%/List::Gen.3.gz
 %%PERL5_MAN3%%/List::Gen::Benchmark.3.gz
 %%PERL5_MAN3%%/List::Gen::Cookbook.3.gz

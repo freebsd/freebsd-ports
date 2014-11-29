@@ -36,4 +36,3 @@
 %%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Restriction.pm
 %%SITE_PERL%%/Iodef/Pb/Simple/Plugin/Url.pm
 %%SITE_PERL%%/Iodef/Pb/t1.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Iodef/Pb/Simple/.packlist

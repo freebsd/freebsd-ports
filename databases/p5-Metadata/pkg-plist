@@ -6,4 +6,3 @@
 %%SITE_PERL%%/Metadata/HTTP.pm
 %%SITE_PERL%%/Metadata/IAFA.pm
 %%SITE_PERL%%/Metadata/SOIF.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Metadata/.packlist

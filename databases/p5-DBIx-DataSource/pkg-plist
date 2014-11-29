@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DataSource/.packlist
 %%SITE_PERL%%/DBIx/DataSource.pm
 %%SITE_PERL%%/DBIx/DataSource/Driver.pm
 %%SITE_PERL%%/DBIx/DataSource/mysql.pm

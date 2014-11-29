@@ -1,6 +1,2 @@
 %%SITE_PERL%%/Umph/Prompt.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Umph/Prompt/.packlist
 %%PERL5_MAN3%%/Umph::Prompt.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Umph/Prompt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Umph
-@dirrmtry %%SITE_PERL%%/Umph

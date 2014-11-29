@@ -1,22 +1,15 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/Node.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/Selector/XPath/Context.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/Selector/XPath/Axes.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/Selector/XPath/Functions.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/Selector/XPath.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/Selector.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/NodeAttribute.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TinyXML/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TinyXML/TinyXML.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TinyXML/autosplit.ix
+%%SITE_ARCH%%/XML/TinyXML.pm
+%%SITE_ARCH%%/XML/TinyXML/Node.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector/XPath/Context.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector/XPath/Axes.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector/XPath/Functions.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector/XPath.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector.pm
+%%SITE_ARCH%%/XML/TinyXML/NodeAttribute.pm
+%%SITE_ARCH%%/auto/XML/TinyXML/TinyXML.so
+%%SITE_ARCH%%/auto/XML/TinyXML/autosplit.ix
 %%PERL5_MAN3%%/XML::TinyXML.3.gz
 %%PERL5_MAN3%%/XML::TinyXML::Node.3.gz
 %%PERL5_MAN3%%/XML::TinyXML::NodeAttribute.3.gz
 %%PERL5_MAN3%%/XML::TinyXML::Selector.3.gz
 %%PERL5_MAN3%%/XML::TinyXML::Selector::XPath.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TinyXML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/Selector/XPath
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML/Selector
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/TinyXML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML

@@ -11,6 +11,11 @@ DISTNAME=	tkMOO-light-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk-based M** client with scripting support
 
+LICENSE=	TKMOO # non-commercial
+LICENSE_NAME=	tkMOO license
+LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 USES=		tk:run
 MAKE_ENV+=	TKMOO_LIB_DIR="${DATADIR}" \
 		TKMOO_BIN_DIR="${PREFIX}/bin" WISH8.3="${WISH}"

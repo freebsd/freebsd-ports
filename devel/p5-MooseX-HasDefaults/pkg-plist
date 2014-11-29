@@ -1,4 +1,3 @@
-%%SITE_PERL%%/mach/auto/MooseX/HasDefaults/.packlist
 %%SITE_PERL%%/MooseX/HasDefaults/Meta/IsRO.pm
 %%SITE_PERL%%/MooseX/HasDefaults/Meta/IsRW.pm
 %%SITE_PERL%%/MooseX/HasDefaults/RW.pm

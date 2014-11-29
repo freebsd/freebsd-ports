@@ -24,7 +24,6 @@ bin/xmltk
 %%SITE_PERL%%/XML/Toolkit/MetaDescription/Attribute.pm
 %%SITE_PERL%%/XML/Toolkit/MetaDescription/Trait.pm
 %%SITE_PERL%%/XML/Toolkit/Trait/NoXML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Toolkit/.packlist
 %%PERL5_MAN3%%/XML::Filter::Moose.3.gz
 %%PERL5_MAN3%%/XML::Generator::Moose.3.gz
 %%PERL5_MAN3%%/XML::Toolkit.3.gz
@@ -44,18 +43,3 @@ bin/xmltk
 %%PERL5_MAN3%%/XML::Toolkit::MetaDescription::Attribute.3.gz
 %%PERL5_MAN3%%/XML::Toolkit::MetaDescription::Trait.3.gz
 %%PERL5_MAN3%%/XML::Toolkit::Trait::NoXML.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Toolkit
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/Toolkit/Trait
-@dirrm %%SITE_PERL%%/XML/Toolkit/MetaDescription
-@dirrm %%SITE_PERL%%/XML/Toolkit/Loader
-@dirrm %%SITE_PERL%%/XML/Toolkit/Generator
-@dirrm %%SITE_PERL%%/XML/Toolkit/Config
-@dirrm %%SITE_PERL%%/XML/Toolkit/Cmd/Command
-@dirrm %%SITE_PERL%%/XML/Toolkit/Cmd
-@dirrm %%SITE_PERL%%/XML/Toolkit/Builder
-@dirrm %%SITE_PERL%%/XML/Toolkit/App
-@dirrm %%SITE_PERL%%/XML/Toolkit
-@dirrm %%SITE_PERL%%/XML/Generator
-@dirrm %%SITE_PERL%%/XML/Filter
-@dirrmtry %%SITE_PERL%%/XML

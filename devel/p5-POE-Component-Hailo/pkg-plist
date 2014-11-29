@@ -1,3 +1,2 @@
 %%SITE_PERL%%/POE/Component/Hailo.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Hailo/.packlist
 %%PERL5_MAN3%%/POE::Component::Hailo.3.gz

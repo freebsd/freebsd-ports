@@ -4,4 +4,3 @@
 %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast.pm
 %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast/Meta/Accessor.pm
 %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast/Meta/Role/Attribute.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Emulate/Class/Accessor/Fast/.packlist

@@ -2,10 +2,3 @@
 %%PERL5_MAN3%%/XML::SAX::Writer::XML.3.gz
 %%SITE_PERL%%/XML/SAX/Writer.pm
 %%SITE_PERL%%/XML/SAX/Writer/XML.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Writer/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Writer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/SAX/Writer
-@dirrmtry %%SITE_PERL%%/XML/SAX
-@dirrmtry %%SITE_PERL%%/XML

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/TryCatch.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/TryCatch/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/TryCatch/TryCatch.so
+%%SITE_ARCH%%/TryCatch.pm
+%%SITE_ARCH%%/auto/TryCatch/TryCatch.so
 %%PERL5_MAN3%%/TryCatch.3.gz

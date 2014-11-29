@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.beatniksoftware.com/gimmie/releases/ \
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	Gnome desktop organizer
 
+BROKEN=		Uses unknown GNOME components pygnomedesktop and pygnomeextras
+
 RUN_DEPENDS=	${LOCALBASE}/lib/libgnomecups-1.0.a:${PORTSDIR}/print/libgnomecups \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/libgmail.py:${PORTSDIR}/mail/py-libgmail

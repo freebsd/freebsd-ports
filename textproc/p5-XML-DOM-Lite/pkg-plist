@@ -14,10 +14,3 @@
 %%SITE_PERL%%/XML/DOM/Lite/Serializer.pm
 %%SITE_PERL%%/XML/DOM/Lite/XPath.pm
 %%SITE_PERL%%/XML/DOM/Lite/XSLT.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM/Lite/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM/Lite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/DOM/Lite
-@dirrmtry %%SITE_PERL%%/XML/DOM
-@dirrmtry %%SITE_PERL%%/XML

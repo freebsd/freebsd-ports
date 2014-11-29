@@ -50,7 +50,7 @@ PLIST_FILES=	bin/theide
 SDL_USE=	sql
 OPENGL_USE=	gl
 MYSQL_USE=	mysql=yes
-PHSQL_USE=	pgsql=yes
+PGSQL_USES=	pgsql
 
 .include <bsd.port.options.mk>
 

@@ -34,4 +34,3 @@
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet/Person.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Visitor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/PopulateMore/.packlist

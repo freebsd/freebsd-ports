@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Throttle/.packlist
 %%SITE_PERL%%/Plack/Middleware/Throttle.pm
 %%SITE_PERL%%/Plack/Middleware/Throttle/Backend/Hash.pm
 %%SITE_PERL%%/Plack/Middleware/Throttle/Daily.pm
@@ -10,8 +9,3 @@
 %%PERL5_MAN3%%/Plack::Middleware::Throttle::Hourly.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Throttle::Interval.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Throttle::Limiter.3.gz
-@dirrm %%SITE_PERL%%/Plack/Middleware/Throttle/Backend
-@dirrm %%SITE_PERL%%/Plack/Middleware/Throttle
-@dirrmtry %%SITE_PERL%%/Plack/Middleware
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Throttle
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware

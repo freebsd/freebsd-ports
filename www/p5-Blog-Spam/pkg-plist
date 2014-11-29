@@ -23,7 +23,6 @@ bin/blogspam
 %%SITE_PERL%%/Blog/Spam/Plugin/surbl.pm
 %%SITE_PERL%%/Blog/Spam/Plugin/wordcount.pm
 %%SITE_PERL%%/Blog/Spam/Server.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Blog/Spam/.packlist
 %%PERL5_MAN3%%/Blog::Spam::API.3.gz
 %%PERL5_MAN3%%/Blog::Spam::Plugin::00blacklist.3.gz
 %%PERL5_MAN3%%/Blog::Spam::Plugin::00whitelist.3.gz
@@ -49,8 +48,3 @@ bin/blogspam
 %%PERL5_MAN3%%/Blog::Spam::Plugin::wordcount.3.gz
 %%PERL5_MAN3%%/Blog::Spam::Server.3.gz
 man/man1/blogspam.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Blog/Spam
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Blog
-@dirrm %%SITE_PERL%%/Blog/Spam/Plugin
-@dirrm %%SITE_PERL%%/Blog/Spam
-@dirrmtry %%SITE_PERL%%/Blog

@@ -116,17 +116,3 @@ share/TentMaker/tenttemplates/quick_edit.ttc
 share/TentMaker/tenttemplates/show_or_hide.ttc
 share/TentMaker/tenttemplates/tenter.js
 share/TentMaker/tenttemplates/tenter.tt
-@dirrmtry %%SITE_PERL%%/Bigtop/ScriptHelp/Style
-@dirrmtry %%SITE_PERL%%/Bigtop/ScriptHelp
-@dirrmtry %%SITE_PERL%%/Bigtop/Docs
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend/SiteLook
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend/SQL
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend/Model
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend/Init
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend/HttpdConf
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend/Diagram
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend/Control
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend/Conf
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend/CGI
-@dirrmtry %%SITE_PERL%%/Bigtop/Backend
-@dirrmtry %%SITE_PERL%%/Bigtop

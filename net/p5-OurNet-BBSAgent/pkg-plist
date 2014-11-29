@@ -53,14 +53,4 @@
 %%SITE_PERL%%/OurNet/BBSAgent/ufo.bbs
 %%SITE_PERL%%/OurNet/BBSAgent/wretch.bbs
 %%SITE_PERL%%/OurNet/BBSAgent/zoo.bbs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBSAgent/.packlist
 %%PERL5_MAN3%%/OurNet::BBSAgent.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBSAgent
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet
-@dirrm %%SITE_PERL%%/OurNet/BBSAgent/melix
-@dirrm %%SITE_PERL%%/OurNet/BBSAgent/maple3
-@dirrm %%SITE_PERL%%/OurNet/BBSAgent/maple2
-@dirrm %%SITE_PERL%%/OurNet/BBSAgent/firebird3
-@dirrm %%SITE_PERL%%/OurNet/BBSAgent/firebird2
-@dirrm %%SITE_PERL%%/OurNet/BBSAgent
-@dirrmtry %%SITE_PERL%%/OurNet

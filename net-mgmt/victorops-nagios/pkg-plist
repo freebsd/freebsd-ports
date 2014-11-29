@@ -16,7 +16,3 @@ libexec/victorops/stop_forwarder
 libexec/victorops/support_collect.sh
 libexec/victorops/url_encode.sed
 libexec/victorops/utils
-@dirrmtry etc/nagios
-@dirrmtry libexec/victorops
-@dirrmtry etc/periodic/daily
-@dirrmtry etc/periodic

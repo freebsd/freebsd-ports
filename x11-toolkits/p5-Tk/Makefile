@@ -3,6 +3,7 @@
 
 PORTNAME=	Tk
 PORTVERSION=	804.032
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -48,11 +49,11 @@ post-configure:
 		`${FIND} ${WRKSRC} -name Makefile`
 
 post-stage:
-	${FIND} ${STAGEDIR} -name '*.bs' -size 0c -exec ${RM} {} \;
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Tk/Tk.so
+	@${RM} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Tk/pTk/extralibs.ld
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Tk/Tk.so
 .for i in Canvas Compound Entry Event HList IO InputO JPEG Listbox Menubutton Mwm NBFrame PNG Pixmap Scale Scrollbar TList Text TixGrid WinPhoto X Xlib
 		${STRIP_CMD} \
-		    ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Tk/${i}/${i}.so
+		    ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Tk/${i}/${i}.so
 .endfor
 
 .include <bsd.port.mk>

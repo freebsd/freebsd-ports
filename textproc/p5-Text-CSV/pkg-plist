@@ -2,7 +2,3 @@
 %%PERL5_MAN3%%/Text::CSV_PP.3.gz
 %%SITE_PERL%%/Text/CSV.pm
 %%SITE_PERL%%/Text/CSV_PP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text

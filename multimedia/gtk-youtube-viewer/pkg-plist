@@ -24,6 +24,3 @@ bin/youtube-viewer
 man/man1/youtube-viewer.1.gz
 %%GTK2%%share/applications/gtk-youtube-viewer.desktop
 %%GTK2%%share/pixmaps/gtk-youtube-viewer.png
-%%GTK2%%@dirrm %%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/icons
-%%GTK2%%@dirrm %%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer
-@dirrm %%SITE_PERL%%/WWW/YoutubeViewer

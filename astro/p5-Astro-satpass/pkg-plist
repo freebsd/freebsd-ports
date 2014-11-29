@@ -19,5 +19,4 @@ bin/satpass
 %%SITE_PERL%%/Astro/Coord/ECI/TLE/Iridium.pm
 %%SITE_PERL%%/Astro/Coord/ECI/TLE/Set.pm
 %%SITE_PERL%%/Astro/Coord/ECI/Utils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Coord/ECI/.packlist
 man/man1/satpass.1.gz

@@ -61,15 +61,8 @@ bin/brackup-verify-inventory
 %%SITE_PERL%%/Brackup/TargetBackupStatInfo.pm
 %%SITE_PERL%%/Brackup/Test.pm
 %%SITE_PERL%%/Brackup/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Brackup/.packlist
 man/man1/brackup-mount.1.gz
 man/man1/brackup-restore.1.gz
 man/man1/brackup-target.1.gz
 man/man1/brackup-verify-inventory.1.gz
 man/man1/brackup.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Brackup
-@dirrmtry %%SITE_PERL%%/Brackup/Target
-@dirrmtry %%SITE_PERL%%/Brackup/Manual
-@dirrmtry %%SITE_PERL%%/Brackup/Dict
-@dirrmtry %%SITE_PERL%%/Brackup/Chunker
-@dirrmtry %%SITE_PERL%%/Brackup

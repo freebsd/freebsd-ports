@@ -97,10 +97,3 @@
 %%SITE_PERL%%/Protocol/XMPP/TextElement.pm
 %%SITE_PERL%%/Protocol/XMPP/TextElement.pod
 %%SITE_PERL%%/Protocol/XMPP/User.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/XMPP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/XMPP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
-@dirrmtry %%SITE_PERL%%/Protocol/XMPP/IQ
-@dirrmtry %%SITE_PERL%%/Protocol/XMPP/Element
-@dirrmtry %%SITE_PERL%%/Protocol/XMPP
-@dirrmtry %%SITE_PERL%%/Protocol

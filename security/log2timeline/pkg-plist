@@ -150,7 +150,6 @@ bin/timescanner
 %%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x92.pm
 %%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x94.pm
 %%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x95.pm
-%%SITE_PERL%%/mach/auto/Log2t/.packlist
 %%PERL5_MAN3%%/Log2Timeline.3.gz
 %%PERL5_MAN3%%/Log2t::BinRead.3.gz
 %%PERL5_MAN3%%/Log2t::Numbers.3.gz
@@ -190,13 +189,3 @@ bin/timescanner
 man/man1/l2t_process.1.gz
 man/man1/log2timeline.1.gz
 man/man1/timescanner.1.gz
-@dirrm %%SITE_PERL%%/Log2t/PreProc
-@dirrm %%SITE_PERL%%/Log2t/base
-@dirrm %%SITE_PERL%%/Log2t/input
-@dirrm %%SITE_PERL%%/Log2t/output
-@dirrm %%SITE_PERL%%/Log2t
-@dirrm %%SITE_PERL%%/Parse/Evtx2/BXmlNode
-@dirrm %%SITE_PERL%%/Parse/Evtx2/VariantType
-@dirrm %%SITE_PERL%%/Parse/Evtx2
-@dirrm %%SITE_PERL%%/mach/auto/Log2t
-@dirrmtry %%SITE_PERL%%/Parse

@@ -1,10 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Prefix/XS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Prefix/trie.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Prefix/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Prefix/XS/XS.so
+%%SITE_ARCH%%/Text/Prefix/XS.pm
+%%SITE_ARCH%%/Text/Prefix/trie.pl
+%%SITE_ARCH%%/auto/Text/Prefix/XS/XS.so
 %%PERL5_MAN3%%/Text::Prefix::XS.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Prefix/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Prefix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Prefix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text

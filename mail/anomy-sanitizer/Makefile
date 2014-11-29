@@ -3,7 +3,7 @@
 
 PORTNAME=	anomy-sanitizer
 PORTVERSION=	1.76
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail security
 MASTER_SITES=	http://mailtools.anomy.net/dist/
 
@@ -18,15 +18,15 @@ DOCS=		CHANGELOG.sanitizer CREDITS README.sanitizer sanitizer.html
 OPTIONS_DEFINE= DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}/Anomy/Sanitizer/
-	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/HTMLCleaner.pm ${STAGEDIR}${SITE_PERL}/Anomy
-	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Log.pm ${STAGEDIR}${SITE_PERL}/Anomy
-	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/MIMEStream.pm ${STAGEDIR}${SITE_PERL}/Anomy
-	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer.pm ${STAGEDIR}${SITE_PERL}/Anomy
-	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/FProt.pm ${STAGEDIR}${SITE_PERL}/Anomy/Sanitizer/
-	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/FileTypes.pm ${STAGEDIR}${SITE_PERL}/Anomy/Sanitizer/
-	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/MacroScanner.pm ${STAGEDIR}${SITE_PERL}/Anomy/Sanitizer/
-	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/Scoring.pm ${STAGEDIR}${SITE_PERL}/Anomy/Sanitizer/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy/Sanitizer/
+	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/HTMLCleaner.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy
+	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Log.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy
+	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/MIMEStream.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy
+	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy
+	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/FProt.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy/Sanitizer/
+	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/FileTypes.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy/Sanitizer/
+	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/MacroScanner.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy/Sanitizer/
+	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/Scoring.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Anomy/Sanitizer/
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sanitizer.pl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/simplify.pl ${STAGEDIR}${PREFIX}/bin
 

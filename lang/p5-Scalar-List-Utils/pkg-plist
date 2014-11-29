@@ -1,8 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Util/Util.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Util/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/Scalar/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/List/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/List/Util/XS.pm
+%%SITE_ARCH%%/auto/List/Util/Util.so
+%%SITE_ARCH%%/Scalar/Util.pm
+%%SITE_ARCH%%/List/Util.pm
+%%SITE_ARCH%%/List/Util/XS.pm
 %%PERL5_MAN3%%/List::Util.3.gz
 %%PERL5_MAN3%%/List::Util::XS.3.gz
 %%PERL5_MAN3%%/Scalar::Util.3.gz

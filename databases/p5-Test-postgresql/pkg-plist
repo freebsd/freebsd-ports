@@ -1,3 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/postgresql/.packlist
 %%SITE_PERL%%/Test/postgresql.pm
 %%PERL5_MAN3%%/Test::postgresql.3.gz

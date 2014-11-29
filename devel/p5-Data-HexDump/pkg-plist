@@ -1,4 +1,3 @@
 bin/hexdump
 %%PERL5_MAN3%%/Data::HexDump.3.gz
 %%SITE_PERL%%/Data/HexDump.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/HexDump/.packlist

@@ -32,10 +32,3 @@
 %%SITE_PERL%%/XML/Validator/Schema/SimpleTypeNode.pm
 %%SITE_PERL%%/XML/Validator/Schema/TypeLibrary.pm
 %%SITE_PERL%%/XML/Validator/Schema/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator/Schema/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator/Schema
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Validator/Schema
-@dirrmtry %%SITE_PERL%%/XML/Validator
-@dirrmtry %%SITE_PERL%%/XML

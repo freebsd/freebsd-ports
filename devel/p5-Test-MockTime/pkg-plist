@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Test/MockTime.pm
 %%SITE_PERL%%/Test/MockTime.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/MockTime/.packlist
 %%PERL5_MAN3%%/Test::MockTime.3.gz

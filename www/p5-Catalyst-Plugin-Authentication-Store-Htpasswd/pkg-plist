@@ -4,8 +4,3 @@
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd/Backend.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd/User.pm
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst

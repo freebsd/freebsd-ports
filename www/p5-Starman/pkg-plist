@@ -4,7 +4,6 @@ man/man1/starman.1.gz
 %%PERL5_MAN3%%/Starman.3.gz
 %%PERL5_MAN3%%/Starman::Server.3.gz
 bin/starman
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Starman/.packlist
 %%SITE_PERL%%/HTTP/Server/PSGI/Net/Server/PreFork.pm
 %%SITE_PERL%%/Plack/Handler/Starman.pm
 %%SITE_PERL%%/Starman.pm

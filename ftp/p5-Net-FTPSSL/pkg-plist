@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Net/FTPSSL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPSSL/.packlist
 %%PERL5_MAN3%%/Net::FTPSSL.3.gz

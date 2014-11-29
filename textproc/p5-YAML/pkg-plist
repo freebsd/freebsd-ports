@@ -32,8 +32,3 @@
 %%SITE_PERL%%/YAML/Tag.pod
 %%SITE_PERL%%/YAML/Types.pm
 %%SITE_PERL%%/YAML/Types.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/.packlist
-@dirrmtry %%SITE_PERL%%/YAML/Dumper
-@dirrmtry %%SITE_PERL%%/YAML/Loader
-@dirrmtry %%SITE_PERL%%/YAML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML

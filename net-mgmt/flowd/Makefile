@@ -3,7 +3,7 @@
 
 PORTNAME=	flowd
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	GOOGLE_CODE \
 		http://www2.mindrot.org/files/flowd/
@@ -31,7 +31,7 @@ GROUPS=		${FLOWD_USER}
 
 .if ${PORT_OPTIONS:MPERL}
 USES+=		perl5
-USE_PERL5+=	build run fixpacklist
+USE_PERL5+=	build run
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
@@ -66,8 +66,7 @@ post-install:
 
 .if ${PORT_OPTIONS:MPERL}
 	( cd ${WRKSRC}/Flowd-perl && ${MAKE_CMD} install )
-	-${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Flowd/Flowd.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Flowd/Flowd.so
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}

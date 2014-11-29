@@ -176,8 +176,8 @@ lib/graphviz/libgvpr.so.2
 %%PERL%%lib/graphviz/perl/gv.pm
 %%PERL%%lib/graphviz/perl/libgv_perl.la
 %%PERL%%lib/graphviz/perl/libgv_perl.so
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/gv.pm
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/gv.so
+%%PERL%%%%SITE_ARCH%%/gv.pm
+%%PERL%%%%SITE_ARCH%%/gv.so
 %%PYTHON%%lib/graphviz/python/_gv.so
 %%PYTHON%%lib/graphviz/python/gv.py
 %%PYTHON%%lib/graphviz/python/libgv_python.la

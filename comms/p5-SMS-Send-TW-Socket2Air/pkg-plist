@@ -1,3 +1,2 @@
 %%SITE_PERL%%/SMS/Send/TW/Socket2Air.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/Socket2Air/.packlist
 %%PERL5_MAN3%%/SMS::Send::TW::Socket2Air.3.gz

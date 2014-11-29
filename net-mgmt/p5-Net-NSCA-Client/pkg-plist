@@ -16,7 +16,3 @@
 %%PERL5_MAN3%%/Net::NSCA::Client::ServerConfig.3.gz
 %%PERL5_MAN3%%/Net::NSCA::Client::Troubleshooting.3.gz
 %%PERL5_MAN3%%/Net::NSCA::Client::Utils.3.gz
-@dirrm %%SITE_PERL%%/Net/NSCA/Client/Connection
-@dirrm %%SITE_PERL%%/Net/NSCA/Client
-@dirrmtry %%SITE_PERL%%/Net/NSCA
-@dirrmtry %%SITE_PERL%%/Net

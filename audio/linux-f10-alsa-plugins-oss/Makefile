@@ -3,7 +3,7 @@
 
 PORTNAME=	alsa-plugins-oss
 PORTVERSION=	1.0.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -18,13 +18,8 @@ RPMVERSION=	3.fc10
 SRC_DISTFILES=	${PORTNAME:S/-oss//}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 USE_LDCONFIG=	yes
 
-CONF_FILE=	etc/alsa/pcm/pcm-oss.conf
-
-post-patch:
-	@${RM} ${WRKSRC}/${CONF_FILE}.orig
-	@${MV} ${WRKSRC}/${CONF_FILE} ${WRKSRC}/${CONF_FILE}-dist
-
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/${CONF_FILE}-dist ${STAGEDIR}${PREFIX}/${CONF_FILE}.sample
+# We will use native configuration file, so delete a linux one
+post-extract:
+	@${RM} -r ${WRKSRC}/etc
 
 .include <bsd.port.mk>

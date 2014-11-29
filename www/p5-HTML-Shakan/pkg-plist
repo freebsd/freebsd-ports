@@ -41,12 +41,3 @@
 %%SITE_PERL%%/HTML/Shakan/Utils.pm
 %%SITE_PERL%%/HTML/Shakan/Widgets/Simple.pm
 %%SITE_PERL%%/HTML/Shakan/Widgets/jQueryUI.pm
-@dirrm %%SITE_PERL%%/HTML/Shakan/Widgets
-@dirrm %%SITE_PERL%%/HTML/Shakan/Role
-@dirrm %%SITE_PERL%%/HTML/Shakan/Renderer
-@dirrm %%SITE_PERL%%/HTML/Shakan/Model
-@dirrm %%SITE_PERL%%/HTML/Shakan/Inflator
-@dirrm %%SITE_PERL%%/HTML/Shakan/Filter
-@dirrm %%SITE_PERL%%/HTML/Shakan/Field
-@dirrm %%SITE_PERL%%/HTML/Shakan
-@dirrmtry %%SITE_PERL%%/HTML

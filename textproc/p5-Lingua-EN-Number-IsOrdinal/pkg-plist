@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Lingua::EN::Number::IsOrdinal.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Number/IsOrdinal/.packlist
 %%SITE_PERL%%/Lingua/EN/Number/IsOrdinal.pm
-@dirrmtry %%SITE_PERL%%/Lingua/EN/Number
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Number/IsOrdinal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Number

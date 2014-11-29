@@ -4,4 +4,3 @@
 %%SITE_PERL%%/Set/Infinite.pm
 %%SITE_PERL%%/Set/Infinite/Arithmetic.pm
 %%SITE_PERL%%/Set/Infinite/Basic.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Infinite/.packlist

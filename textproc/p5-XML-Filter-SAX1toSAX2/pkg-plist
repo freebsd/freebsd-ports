@@ -2,9 +2,3 @@
 %%PERL5_MAN3%%/XML::Filter::SAX2toSAX1.3.gz
 %%SITE_PERL%%/XML/Filter/SAX1toSAX2.pm
 %%SITE_PERL%%/XML/Filter/SAX2toSAX1.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/SAX1toSAX2/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/SAX1toSAX2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Filter
-@dirrmtry %%SITE_PERL%%/XML

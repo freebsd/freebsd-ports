@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Install/.packlist
 %%SITE_PERL%%/ExtUtils/Install.pm
 %%SITE_PERL%%/ExtUtils/Installed.pm
 %%SITE_PERL%%/ExtUtils/Packlist.pm

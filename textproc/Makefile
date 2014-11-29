@@ -379,6 +379,7 @@
     SUBDIR += libtextcat
     SUBDIR += libtranslate
     SUBDIR += libtre
+    SUBDIR += libucl
     SUBDIR += libunibreak
     SUBDIR += libuninameslist
     SUBDIR += libvisio
@@ -1218,6 +1219,7 @@
     SUBDIR += py-stripogram
     SUBDIR += py-syck
     SUBDIR += py-texttable
+    SUBDIR += py-tinycss
     SUBDIR += py-trans
     SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
@@ -1285,7 +1287,6 @@
     SUBDIR += rtfx
     SUBDIR += rubber
     SUBDIR += ruby-deplate
-    SUBDIR += ruby-diff
     SUBDIR += ruby-escape
     SUBDIR += ruby-format
     SUBDIR += ruby-htmlrepair
@@ -1322,6 +1323,7 @@
     SUBDIR += rubygem-fast_xs
     SUBDIR += rubygem-fast_xs073
     SUBDIR += rubygem-ferret
+    SUBDIR += rubygem-fog-xml
     SUBDIR += rubygem-gemoji
     SUBDIR += rubygem-gherkin
     SUBDIR += rubygem-github-linguist

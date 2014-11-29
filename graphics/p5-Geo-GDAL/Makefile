@@ -3,6 +3,7 @@
 
 PORTNAME=	Geo-GDAL
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -17,7 +18,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 
-USE_PERL5=	build fixpacklist run
+USE_PERL5=	build run
 USES=		perl5 tar:xz
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/perl
 
@@ -26,7 +27,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(const char \*)""|(char \*)""|' ${WRKSRC}/gdal_wrap.cpp ${WRKSRC}/ogr_wrap.cpp
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/*/*.so
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/*/*.so
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/*/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/*/*.so
 
 .include <bsd.port.mk>

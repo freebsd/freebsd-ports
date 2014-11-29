@@ -1,15 +1,9 @@
 bin/zoomdump
 bin/zselect
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/ZOOM.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/ZOOM.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/ZOOM.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM/ZOOM.so
+%%SITE_ARCH%%/Net/Z3950.pm
+%%SITE_ARCH%%/Net/Z3950/ZOOM.pm
+%%SITE_ARCH%%/ZOOM.pm
+%%SITE_ARCH%%/ZOOM.pod
+%%SITE_ARCH%%/auto/Net/Z3950/ZOOM/ZOOM.so
 %%PERL5_MAN3%%/Net::Z3950::ZOOM.3.gz
 %%PERL5_MAN3%%/ZOOM.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

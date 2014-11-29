@@ -43,6 +43,7 @@ transmission_group=${transmission_group:-$transmission_user}
 
 command=%%PREFIX%%/bin/transmission-daemon
 pidfile=/var/run/transmission/daemon.pid
+extra_commands=reload
 start_precmd=transmission_prestart
 
 transmission_flags=" \

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	powermanga
-PORTVERSION=	0.91
-PORTREVISION=	2
+PORTVERSION=	0.93
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,19 +16,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
+USES=		autoreconf
 USE_XORG=	xext xxf86dga
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal automake autoconf autoheader
-AUTOMAKE_ARGS=	-a -c -f --foreign
 
 PORTDOCS=	*
 PORTDATA=	*
 
 CFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lm
-
-.include <bsd.port.options.mk>
+LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lm
 
 post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS/ { s|-O3||; s|-Werror||; }' ${WRKSRC}/configure.ac
@@ -45,9 +42,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|Lang=fr|Lang=en|' ${WRKSRC}/texts/config.ini
 
 post-install:
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/powermanga.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/powermanga.xpm ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
+.for f in powermanga.hi powermanga.hi-easy powermanga.hi-hard
+	${MV} ${STAGEDIR}/var/games/${PORTNAME}/${f} ${STAGEDIR}/var/games/${PORTNAME}/${f}.sample
+.endfor
 
 .include <bsd.port.mk>

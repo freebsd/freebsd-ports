@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/HTTP::Date.3.gz
 %%SITE_PERL%%/HTTP/Date.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Date/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Date
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
-@dirrmtry %%SITE_PERL%%/HTTP

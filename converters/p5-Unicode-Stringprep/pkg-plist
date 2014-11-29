@@ -10,4 +10,3 @@
 %%SITE_PERL%%/Unicode/Stringprep/Prohibited.pm
 %%SITE_PERL%%/Unicode/Stringprep/Unassigned.pm
 %%SITE_PERL%%/Unicode/Stringprep/_Common.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Stringprep/.packlist

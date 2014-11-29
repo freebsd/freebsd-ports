@@ -10,7 +10,6 @@
 %%SITE_PERL%%/Device/Modem/Log/Syslog.pm
 %%SITE_PERL%%/Device/Modem/Protocol/Xmodem.pm
 %%SITE_PERL%%/Device/Modem/UsRobotics.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Modem/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/active.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/caller-id.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dial.pl

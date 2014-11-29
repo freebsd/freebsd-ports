@@ -2,8 +2,4 @@ bin/ngrams.pl
 %%PERL5_MAN3%%/Text::Ngrams.3.gz
 %%SITE_PERL%%/Text/Ngrams.pm
 %%SITE_PERL%%/Text/ngrams.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Ngrams/.packlist
 man/man1/ngrams.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Ngrams
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text

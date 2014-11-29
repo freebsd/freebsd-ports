@@ -3,6 +3,7 @@
 
 PORTNAME=	PayflowPro
 PORTVERSION=	3101
+PORTREVISION=	1
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VKHERA
@@ -22,8 +23,6 @@ post-install:
 
 PLIST_FILES=	etc/ca-bundle.crt \
 		%%SITE_PERL%%/PayflowPro.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/PayflowPro/.packlist \
 		%%PERL5_MAN3%%/PayflowPro.3.gz
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/PayflowPro
 
 .include <bsd.port.mk>

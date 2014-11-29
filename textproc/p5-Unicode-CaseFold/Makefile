@@ -3,6 +3,7 @@
 
 PORTNAME=	Unicode-CaseFold
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ARODLAND
@@ -17,16 +18,12 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	modbuild
 
-PLIST_FILES=	%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/CaseFold.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/CaseFoldPP.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/CaseFold/CaseFold.so \
+PLIST_FILES=	%%SITE_ARCH%%/Unicode/CaseFold.pm \
+		%%SITE_ARCH%%/Unicode/CaseFoldPP.pm \
+		%%SITE_ARCH%%/auto/Unicode/CaseFold/CaseFold.so \
 		%%PERL5_MAN3%%/Unicode::CaseFold.3.gz
 
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/CaseFold
-PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode \
-		%%SITE_PERL%%/%%PERL_ARCH%%/Unicode
-
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Unicode/CaseFold/CaseFold.so
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Unicode/CaseFold/CaseFold.so
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	Tree-DAG_Node
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,8 +13,7 @@ COMMENT=	Super class for representing nodes in a tree
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-File-Slurp-Tiny>=0.003:${PORTSDIR}/devel/p5-File-Slurp-Tiny \
-		p5-File-Temp>=0.23.01:${PORTSDIR}/devel/p5-File-Temp
+BUILD_DEPENDS=	p5-File-Slurp-Tiny>=0.003:${PORTSDIR}/devel/p5-File-Slurp-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 tar:tgz
@@ -24,6 +24,11 @@ USE_PERL5=	configure
 .if ${PERL_LEVEL} < 501800
 BUILD_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
 RUN_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
+.endif
+
+.if ${PERL_LEVEL} < 502000
+BUILD_DEPENDS+=	p5-File-Temp>=0.23.01:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	p5-File-Temp>=0.23.01:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
 .include <bsd.port.post.mk>

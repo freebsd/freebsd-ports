@@ -1,6 +1,2 @@
 %%SITE_PERL%%/MRTG/Parse.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MRTG/Parse/.packlist
 %%PERL5_MAN3%%/MRTG::Parse.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRTG/Parse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRTG
-@dirrmtry %%SITE_PERL%%/MRTG

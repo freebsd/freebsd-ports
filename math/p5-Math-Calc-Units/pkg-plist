@@ -15,11 +15,3 @@ bin/ucalc
 %%SITE_PERL%%/Math/Calc/Units/Grammar.pm
 %%SITE_PERL%%/Math/Calc/Units/Grammar.y
 %%SITE_PERL%%/Math/Calc/Units/Rank.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Calc/Units/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Calc/Units
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Calc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/Math/Calc/Units/Convert
-@dirrmtry %%SITE_PERL%%/Math/Calc/Units
-@dirrmtry %%SITE_PERL%%/Math/Calc
-@dirrmtry %%SITE_PERL%%/Math

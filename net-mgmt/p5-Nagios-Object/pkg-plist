@@ -18,6 +18,3 @@ man/man1/test_configuration.pl.1.gz
 %%PERL5_MAN3%%/Nagios::Object.3.gz
 %%PERL5_MAN3%%/Nagios::Object::Config.3.gz
 %%PERL5_MAN3%%/Nagios::StatusLog.3.gz
-@dirrm %%SITE_PERL%%/Nagios/Config
-@dirrm %%SITE_PERL%%/Nagios/Object
-@dirrmtry %%SITE_PERL%%/Nagios

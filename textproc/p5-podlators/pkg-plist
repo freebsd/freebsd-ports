@@ -10,7 +10,3 @@
 %%SITE_PERL%%/Pod/Text/Color.pm
 %%SITE_PERL%%/Pod/Text/Overstrike.pm
 %%SITE_PERL%%/Pod/Text/Termcap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
-@dirrmtry %%SITE_PERL%%/Pod/Text
-@dirrmtry %%SITE_PERL%%/Pod

@@ -272,3 +272,4 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/versions.md
 share/pixmaps/robocode.png
 share/pixmaps/roborumble.png
+@dir %%DATADIR%%/config

@@ -24,4 +24,3 @@
 %%SITE_PERL%%/Rose/DB/Registry/Entry.pm
 %%SITE_PERL%%/Rose/DB/SQLite.pm
 %%SITE_PERL%%/Rose/DB/Tutorial.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB/.packlist

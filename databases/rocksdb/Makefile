@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	3.6.2
+PORTVERSION=	3.7
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USES=		compiler:c++11-lang gmake
 
 GH_ACCOUNT=	facebook
-GH_COMMIT=	b11a617
+GH_COMMIT=	8d87467
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 USE_GITHUB=	yes

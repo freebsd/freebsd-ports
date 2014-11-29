@@ -3,6 +3,7 @@
 
 PORTNAME=	vagrant
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	LOCAL/swills https://codeload.github.com/mitchellh/vagrant/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
@@ -54,16 +55,29 @@ PLIST_SUB+=	GEMS_DIR="lib/ruby/gems/${RUBY_VER}/" \
 		DOC_DIR="lib/ruby/gems/${RUBY_VER}/doc" \
 		PORTVERSION="${PORTVERSION}"
 
-RUBYGEM_ARGS=	--no-ri --no-rdoc -l --no-update-sources --install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} --ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
+RUBYGEM_ARGS=	--no-ri --no-rdoc -l --no-update-sources \
+		--install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} \
+		--ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
 GEM_ENV+=	RB_USER_INSTALL=yes
 
 post-patch:
-	@${RM} ${WRKSRC}/bin/vagrant.orig
+	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' ${WRKSRC}/bin/vagrant
 
 do-build:
-	@(cd ${WRKSRC}; (${ECHO_CMD} -e "install:\n\techo\n") > Makefile)
-	@(cd ${WRKSRC}; ${SETENV} VAGRANT_INSTALLER_ENV=yes ${GEM_ENV} ${RUBYGEMBIN} build vagrant.gemspec)
-	@(cd ${WRKSRC}; ${SETENV} VAGRANT_INSTALLER_ENV=yes ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} ${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
+	(cd ${WRKSRC}; (${ECHO_CMD} -e "install:\n\techo\n") > Makefile)
+	(cd ${WRKSRC}; ${SETENV} VAGRANT_INSTALLER_ENV=yes \
+		${GEM_ENV} ${RUBYGEMBIN} build vagrant.gemspec)
+	(cd ${WRKSRC}; ${SETENV} VAGRANT_INSTALLER_ENV=yes \
+		${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} \
+		${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
+	${MKDIR} ${STAGEDIR}${DATADIR}/embedded/rgloader
+	${INSTALL_DATA} ${FILESDIR}/cacert.pem \
+		${STAGEDIR}${DATADIR}/embedded/cacert.pem
+	${INSTALL_SCRIPT} ${FILESDIR}/loader.rb \
+		${STAGEDIR}${DATADIR}/embedded/rgloader/loader.rb
+
+post-install:
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/doc
 
 .include <bsd.port.pre.mk>
 

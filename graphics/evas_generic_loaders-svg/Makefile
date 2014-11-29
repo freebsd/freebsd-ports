@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	svg
-PORTVERSION=	1.7.9
+PORTVERSION=	1.12.0
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		LOCAL/gblach/e17/
+MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PKGNAMEPREFIX:S/-//}/
 PKGNAMEPREFIX=	evas_generic_loaders-
-DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${DISTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Additional loader for Evas (svg)
 
 LICENSE=	GPLv2
 
-USES=		pkgconfig tar:bzip2
-DIST_SUBDIR=	e17
+LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl
+
+DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USE_EFL=	eina
+USES=		pkgconfig tar:xz
 USE_GNOME=	librsvg2
 USE_LDCONFIG=	yes
 

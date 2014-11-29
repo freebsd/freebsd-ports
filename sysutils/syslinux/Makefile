@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslinux
-PORTVERSION=	6.02
-PORTREVISION=	1
+PORTVERSION=	6.03
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/boot/syslinux
 
@@ -35,11 +34,11 @@ post-patch:
 		's|^UMAKEDEPS|#UMAKEDEPS|' ${WRKSRC}/mk/syslinux.mk
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bios/mtools/syslinux ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/man/syslinux.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	@${FIND} -d ${WRKSRC} -type d -empty -delete
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "bios efi32 efi64" ${STAGEDIR}${DATADIR})
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/syslinux/bios/mtools/syslinux
+	${STRIP_CMD} ${WRKSRC}/bios/mtools/syslinux
+	${INSTALL_PROGRAM} ${WRKSRC}/bios/mtools/syslinux ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/syslinux.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${FIND} -d ${WRKSRC} -type d -empty -delete
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "bios efi32 efi64" ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

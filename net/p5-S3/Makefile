@@ -3,6 +3,7 @@
 
 PORTNAME=	S3
 PORTVERSION=	20071102
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	http://s3.amazonaws.com/doc/s3-example-code/
 PKGNAMEPREFIX=	p5-

@@ -1,5 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Introspection.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Introspection/Install/Files.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Object/Introspection/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Object/Introspection/Introspection.so
+%%SITE_ARCH%%/Glib/Object/Introspection.pm
+%%SITE_ARCH%%/Glib/Object/Introspection/Install/Files.pm
+%%SITE_ARCH%%/auto/Glib/Object/Introspection/Introspection.so
 %%PERL5_MAN3%%/Glib::Object::Introspection.3.gz

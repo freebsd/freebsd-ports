@@ -95,20 +95,3 @@ bin/djabberd
 %%SITE_PERL%%/DJabberd/VHost.pm
 %%SITE_PERL%%/DJabberd/XMLElement.pm
 %%SITE_PERL%%/DJabberd/XMLParser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DJabberd/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DJabberd
-@dirrmtry %%SITE_PERL%%/DJabberd/Stanza
-@dirrmtry %%SITE_PERL%%/DJabberd/SASL/Manager
-@dirrmtry %%SITE_PERL%%/DJabberd/SASL/Connection
-@dirrmtry %%SITE_PERL%%/DJabberd/SASL
-@dirrmtry %%SITE_PERL%%/DJabberd/RosterStorage
-@dirrmtry %%SITE_PERL%%/DJabberd/Queue
-@dirrmtry %%SITE_PERL%%/DJabberd/PresenceChecker
-@dirrmtry %%SITE_PERL%%/DJabberd/Delivery
-@dirrmtry %%SITE_PERL%%/DJabberd/Connection
-@dirrmtry %%SITE_PERL%%/DJabberd/Component
-@dirrmtry %%SITE_PERL%%/DJabberd/ClusterMessage
-@dirrmtry %%SITE_PERL%%/DJabberd/Bot
-@dirrmtry %%SITE_PERL%%/DJabberd/Authen
-@dirrmtry %%SITE_PERL%%/DJabberd/Agent
-@dirrmtry %%SITE_PERL%%/DJabberd

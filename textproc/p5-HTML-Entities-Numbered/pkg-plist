@@ -2,10 +2,3 @@
 %%PERL5_MAN3%%/HTML::Entities::Numbered::Table.3.gz
 %%SITE_PERL%%/HTML/Entities/Numbered.pm
 %%SITE_PERL%%/HTML/Entities/Numbered/Table.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities/Numbered/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities/Numbered
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities
-@dirrm %%SITE_PERL%%/HTML/Entities/Numbered
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML/Entities
-@dirrmtry %%SITE_PERL%%/HTML

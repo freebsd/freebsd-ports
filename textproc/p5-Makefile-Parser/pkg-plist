@@ -15,13 +15,6 @@ bin/plmake
 %%SITE_PERL%%/Makefile/AST/Variable.pm
 %%SITE_PERL%%/Makefile/Parser.pm
 %%SITE_PERL%%/Makefile/Parser/GmakeDB.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser/.packlist
 man/man1/makesimple.1.gz
 man/man1/pgmake-db.1.gz
 man/man1/plmake.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile
-@dirrmtry %%SITE_PERL%%/Makefile/Parser
-@dirrmtry %%SITE_PERL%%/Makefile/AST/Rule
-@dirrmtry %%SITE_PERL%%/Makefile/AST
-@dirrmtry %%SITE_PERL%%/Makefile

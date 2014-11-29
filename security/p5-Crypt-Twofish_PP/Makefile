@@ -3,7 +3,7 @@
 
 PORTNAME=	Crypt-Twofish_PP
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN \
 		http://kostjn.spb.ru/freebsd/

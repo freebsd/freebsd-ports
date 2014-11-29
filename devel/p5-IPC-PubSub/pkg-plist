@@ -10,5 +10,4 @@
 %%SITE_PERL%%/IPC/PubSub/Cacheable.pm
 %%SITE_PERL%%/IPC/PubSub/Publisher.pm
 %%SITE_PERL%%/IPC/PubSub/Subscriber.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/PubSub/.packlist
 %%PERL5_MAN3%%/IPC::PubSub.3.gz

@@ -16,7 +16,6 @@
 %%SITE_PERL%%/Pipeline/Store.pm
 %%SITE_PERL%%/Pipeline/Store/ISA.pm
 %%SITE_PERL%%/Pipeline/Store/Simple.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pipeline/.packlist
 %%PERL5_MAN3%%/Pipeline::Segment.3.gz
 %%PERL5_MAN3%%/Pipeline::Store::ISA.3.gz
 %%PERL5_MAN3%%/Pipeline.3.gz

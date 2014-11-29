@@ -24,7 +24,6 @@ bin/autodia.pl
 %%SITE_PERL%%/Autodia/Handler/python.pm
 %%SITE_PERL%%/Autodia/Handler/umbrello.pm
 %%SITE_PERL%%/autodia.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Autodia/.packlist
 %%PERL5_MAN3%%/Autodia.3.gz
 %%PERL5_MAN3%%/Autodia::Diagram.3.gz
 %%PERL5_MAN3%%/Autodia::Diagram::Class.3.gz

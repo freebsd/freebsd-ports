@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/.packlist
 %%SITE_PERL%%/Graph.pm
 %%SITE_PERL%%/Graph.pod
 %%SITE_PERL%%/Graph/AdjacencyMap.pm
@@ -39,12 +38,3 @@
 %%PERL5_MAN3%%/Graph::UnionFind.3.gz
 %%PERL5_MAN3%%/Heap071::Elem.3.gz
 %%PERL5_MAN3%%/Heap071::Fibonacci.3.gz
-@dirrmtry %%SITE_PERL%%/auto/Heap071/Fibonacci
-@dirrmtry %%SITE_PERL%%/auto/Heap071/Elem
-@dirrmtry %%SITE_PERL%%/auto/Heap071
-@dirrmtry %%SITE_PERL%%/Heap071
-@dirrmtry %%SITE_PERL%%/Graph/Traversal
-@dirrmtry %%SITE_PERL%%/Graph/TransitiveClosure
-@dirrmtry %%SITE_PERL%%/Graph/AdjacencyMap
-@dirrmtry %%SITE_PERL%%/Graph
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph

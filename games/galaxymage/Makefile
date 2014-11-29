@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.gna.org/tactics/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source tactical and strategic RPG
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.txt
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric \

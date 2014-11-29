@@ -135,7 +135,6 @@ lib/purple-2/offlinemsg.so
 %%PERL:%%lib/purple-2/perl.a
 %%PERL:%%lib/purple-2/perl.so
 %%PERL:%%lib/purple-2/perl/Purple.pm
-%%PERL:%%lib/purple-2/perl/auto/Purple/.packlist
 %%PERL:%%lib/purple-2/perl/auto/Purple/Purple.so
 %%PERL:%%lib/purple-2/perl/auto/Purple/autosplit.ix
 lib/purple-2/psychic.a
@@ -320,9 +319,6 @@ share/sounds/purple/send.wav
 @dir share/locale/bn_IN
 @dir share/locale/be@latin/LC_MESSAGES
 @dir share/locale/be@latin
-%%PERL:%%@dir lib/purple-2/perl/auto/Purple
-%%PERL:%%@dir lib/purple-2/perl/auto
-%%PERL:%%@dir lib/purple-2/perl
 @dir lib/purple-2
 @dir include/libpurple/media
 @dir include/libpurple

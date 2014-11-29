@@ -16,4 +16,3 @@
 %%SITE_PERL%%/App/CLI/Extension/Component/Stash.pm
 %%SITE_PERL%%/App/CLI/Extension/Exception.pm
 %%SITE_PERL%%/App/CLI/README.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/CLI/Extension/.packlist

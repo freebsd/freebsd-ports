@@ -4,4 +4,3 @@
 %%SITE_PERL%%/POE/Component/DBIAgent.pm
 %%SITE_PERL%%/POE/Component/DBIAgent/Helper.pm
 %%SITE_PERL%%/POE/Component/DBIAgent/Queue.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/DBIAgent/.packlist

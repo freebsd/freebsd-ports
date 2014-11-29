@@ -2,6 +2,7 @@
 
 PORTNAME=	Sereal-Decoder
 PORTVERSION=	3.003
+PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:YVES
@@ -20,6 +21,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Sereal/Decoder/Decoder.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Sereal/Decoder/Decoder.so
 
 .include <bsd.port.mk>

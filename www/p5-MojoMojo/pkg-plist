@@ -422,7 +422,6 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/root/themes/purple-pleasure/page/wrapper.tt
 %%SITE_PERL%%/Text/SmartyPants.pm
 %%SITE_PERL%%/Text/Wikispaces2Markdown.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MojoMojo/.packlist
 %%PERL5_MAN3%%/MojoMojo.3.gz
 %%PERL5_MAN3%%/MojoMojo::Controller::Admin.3.gz
 %%PERL5_MAN3%%/MojoMojo::Controller::Attachment.3.gz
@@ -519,79 +518,3 @@ man/man1/mojomojo_server.pl.1.gz
 man/man1/mojomojo_spawn_db.pl.1.gz
 man/man1/mojomojo_test.pl.1.gz
 man/man1/mojomojo_update_db.pl.1.gz
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/purple-pleasure/images
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/catalyst/images/global
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/catalyst/images/planet
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/catalyst/images/layout
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/purple-pleasure/js
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/grey-scale/images
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/images
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/pink-lady/images
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/nordaaker/images
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/madrid-pm/images
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/catalyst/images
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/purple-pleasure
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/default/images
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/src
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/themes/purple-pleasure/page
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/epo/images
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/grey-scale
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/nordaaker
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/pink-lady
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/catapulse
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/madrid-pm
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/catalyst
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/themes/purple-pleasure
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/default
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/themes/pink-lady/page
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes/epo
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/themes/pink-lady
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/attachments
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/themes/madrid-pm
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms/pageadmin
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/themes/catalyst
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/mimetypes
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/rest/page
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/toolbar
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/themes
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms/comment
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/edithelp
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/comment
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/gallery
-@dirrmtry %%SITE_PERL%%/MojoMojo/Formatter/DocBook
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/emote
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/flash
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/json
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms/admin
-@dirrmtry %%SITE_PERL%%/MojoMojo/Schema/ResultSet
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms/user
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/admin
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/css
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/gfx
-@dirrmtry %%SITE_PERL%%/MojoMojo/resources/logo
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static/js
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/extensions
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/rest
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/user
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/page
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/mail
-@dirrmtry %%SITE_PERL%%/MojoMojo/Schema/Result
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/tag
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/themes
-@dirrmtry %%SITE_PERL%%/MojoMojo/Schema/Base
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/static
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/forms
-@dirrmtry %%SITE_PERL%%/MojoMojo/Controller
-@dirrmtry %%SITE_PERL%%/MojoMojo/resources
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MojoMojo
-@dirrmtry %%SITE_PERL%%/MojoMojo/root/base
-@dirrmtry %%SITE_PERL%%/MojoMojo/Extensions
-@dirrmtry %%SITE_PERL%%/MojoMojo/Formatter/File
-@dirrmtry %%SITE_PERL%%/MojoMojo/Formatter
-@dirrmtry %%SITE_PERL%%/MojoMojo/Schema
-@dirrmtry %%SITE_PERL%%/MojoMojo/Model
-@dirrmtry %%SITE_PERL%%/MojoMojo/View
-@dirrmtry %%SITE_PERL%%/MojoMojo/root
-@dirrmtry %%SITE_PERL%%/MojoMojo/I18N
-@dirrmtry %%SITE_PERL%%/MojoMojo
-@dirrmtry %%SITE_PERL%%/Text

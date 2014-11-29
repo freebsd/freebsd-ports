@@ -22,36 +22,29 @@
 %%PERL5_MAN3%%/XML::GDOME::XPath::NSResolver.3.gz
 %%PERL5_MAN3%%/XML::GDOME::XPath::Namespace.3.gz
 %%PERL5_MAN3%%/XML::GDOME::XPath::Result.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Attr.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/CDATASection.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/CharacterData.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Comment.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Document.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/DocumentFragment.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/DocumentType.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Element.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Entity.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/EntityReference.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/NamedNodeMap.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Node.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/NodeList.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Notation.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/ProcessingInstruction.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX/Builder.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX/Generator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Text.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/Evaluator.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/NSResolver.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/Namespace.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/Result.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/GDOME.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML
+%%SITE_ARCH%%/XML/GDOME.pm
+%%SITE_ARCH%%/XML/GDOME.pod
+%%SITE_ARCH%%/XML/GDOME/Attr.pod
+%%SITE_ARCH%%/XML/GDOME/CDATASection.pod
+%%SITE_ARCH%%/XML/GDOME/CharacterData.pod
+%%SITE_ARCH%%/XML/GDOME/Comment.pod
+%%SITE_ARCH%%/XML/GDOME/Document.pod
+%%SITE_ARCH%%/XML/GDOME/DocumentFragment.pod
+%%SITE_ARCH%%/XML/GDOME/DocumentType.pod
+%%SITE_ARCH%%/XML/GDOME/Element.pod
+%%SITE_ARCH%%/XML/GDOME/Entity.pod
+%%SITE_ARCH%%/XML/GDOME/EntityReference.pod
+%%SITE_ARCH%%/XML/GDOME/NamedNodeMap.pod
+%%SITE_ARCH%%/XML/GDOME/Node.pod
+%%SITE_ARCH%%/XML/GDOME/NodeList.pod
+%%SITE_ARCH%%/XML/GDOME/Notation.pod
+%%SITE_ARCH%%/XML/GDOME/ProcessingInstruction.pod
+%%SITE_ARCH%%/XML/GDOME/SAX/Builder.pm
+%%SITE_ARCH%%/XML/GDOME/SAX/Generator.pm
+%%SITE_ARCH%%/XML/GDOME/SAX/Parser.pm
+%%SITE_ARCH%%/XML/GDOME/Text.pod
+%%SITE_ARCH%%/XML/GDOME/XPath/Evaluator.pod
+%%SITE_ARCH%%/XML/GDOME/XPath/NSResolver.pod
+%%SITE_ARCH%%/XML/GDOME/XPath/Namespace.pod
+%%SITE_ARCH%%/XML/GDOME/XPath/Result.pod
+%%SITE_ARCH%%/auto/XML/GDOME/GDOME.so

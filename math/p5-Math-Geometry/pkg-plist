@@ -1,6 +1,2 @@
 %%SITE_PERL%%/Math/Geometry.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/.packlist
 %%PERL5_MAN3%%/Math::Geometry.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrmtry %%SITE_PERL%%/Math

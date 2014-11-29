@@ -1,11 +1,12 @@
-bin/fd2
-bin/goto
-bin/if
 @shell bin/osh
-bin/sh6
-bin/glob6
+@shell bin/sh6
+libexec/osh-%%VER%%/README
+libexec/osh-%%VER%%/fd2
+libexec/osh-%%VER%%/glob
+libexec/osh-%%VER%%/goto
+libexec/osh-%%VER%%/if
 man/man1/fd2.1.gz
-man/man1/glob6.1.gz
+man/man1/glob.1.gz
 man/man1/goto.1.gz
 man/man1/if.1.gz
 man/man1/osh.1.gz

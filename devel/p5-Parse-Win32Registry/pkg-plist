@@ -31,5 +31,4 @@ bin/wxregview.pl
 %%SITE_PERL%%/Parse/Win32Registry/WinNT/Key.pm
 %%SITE_PERL%%/Parse/Win32Registry/WinNT/Security.pm
 %%SITE_PERL%%/Parse/Win32Registry/WinNT/Value.pm
-%%SITE_PERL%%/mach/auto/Parse/Win32Registry/.packlist
 %%PERL5_MAN3%%/Parse::Win32Registry.3.gz

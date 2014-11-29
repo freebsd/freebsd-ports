@@ -2,26 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	pdf
-PORTVERSION=	1.7.9
+PORTVERSION=	1.12.0
 PORTREVISION=	1
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		LOCAL/gblach/e17/
+MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PKGNAMEPREFIX:S/-//}/
 PKGNAMEPREFIX=	evas_generic_loaders-
-DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${DISTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Additional loader for Evas (pdf)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
+		libpoppler.so:${PORTSDIR}/graphics/poppler
 
-USES=		pkgconfig tar:bzip2
-DIST_SUBDIR=	e17
+DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USE_EFL=	eina
+USES=		compiler:c11 pkgconfig tar:xz
 USE_LDCONFIG=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 BINSRC=		${WRKSRC}/src/bin/${PORTNAME}
 

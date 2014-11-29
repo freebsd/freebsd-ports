@@ -2,7 +2,7 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.5.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN

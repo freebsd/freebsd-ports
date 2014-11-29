@@ -2,6 +2,5 @@
 %%SITE_PERL%%/POE/Component/Daemon.pm
 %%SITE_PERL%%/POE/Component/Daemon/Scoreboard.pm
 %%SITE_PERL%%/POE/Component/Daemon/ScoreboardSemaphore.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Daemon/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/forking
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/preforking

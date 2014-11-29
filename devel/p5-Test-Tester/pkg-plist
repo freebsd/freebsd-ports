@@ -5,4 +5,3 @@
 %%SITE_PERL%%/Test/Tester/Capture.pm
 %%SITE_PERL%%/Test/Tester/CaptureRunner.pm
 %%SITE_PERL%%/Test/Tester/Delegate.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Tester/.packlist

@@ -14,12 +14,8 @@ bin/repo-remove
 bin/testdb
 bin/testpkg
 bin/vercmp
-@unexec if cmp -s %D/etc/makepkg.conf.dist %D/etc/makepkg.conf; then rm -f %D/etc/makepkg.conf; fi
-etc/makepkg.conf.dist
-@exec if [ ! -f %B/makepkg.conf ]; then cp -p %D/%F %B/makepkg.conf; fi
-@unexec if cmp -s %D/etc/pacman.conf.dist %D/etc/pacman.conf; then rm -f %D/etc/pacman.conf; fi
-etc/pacman.conf.dist
-@exec if [ ! -f %B/pacman.conf ]; then cp -p %D/%F %B/pacman.conf; fi
+@sample etc/makepkg.conf.sample
+@sample etc/pacman.conf.sample
 include/alpm.h
 include/alpm_list.h
 lib/libalpm.a
@@ -122,6 +118,7 @@ man/man8/vercmp.8.gz
 %%DATADIR%%/PKGBUILD-split.proto
 %%DATADIR%%/PKGBUILD.proto
 %%DATADIR%%/proto.install
+@dir %%PACMAN_ROOT%%
 @dir /var/cache/pacman/pkg
 @dir /var/cache/pacman
 @dir /var/lib/pacman

@@ -56,5 +56,3 @@ man/man6/xataxx.6.gz
 %%DATADIR%%/title.xbm
 %%DATADIR%%/upcursor.xbm
 %%DATADIR%%/upmask.xbm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

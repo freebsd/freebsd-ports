@@ -1,5 +1,0 @@
-include/eio-1/Eio.h
-include/eio-1/eio_inline_helper.x
-lib/libeio.so
-lib/libeio.so.8
-libdata/pkgconfig/eio.pc

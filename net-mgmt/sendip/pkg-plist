@@ -9,4 +9,3 @@ lib/sendip/ripng.so
 lib/sendip/tcp.so
 lib/sendip/udp.so
 man/man1/sendip.1.gz
-@dirrmtry lib/sendip

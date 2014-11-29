@@ -3,6 +3,7 @@
 
 PORTNAME=	PCSC-Card
 PORTVERSION=	1.4.13
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 PKGNAMEPREFIX=	p5-

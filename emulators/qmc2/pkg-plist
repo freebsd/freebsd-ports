@@ -97,6 +97,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/east.png
 %%DATADIR%%/img/circles/edit.png
 %%DATADIR%%/img/circles/editcopy.png
+%%DATADIR%%/img/circles/editcopybad.png
 %%DATADIR%%/img/circles/editcut.png
 %%DATADIR%%/img/circles/editdelete.png
 %%DATADIR%%/img/circles/editpaste.png
@@ -248,6 +249,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/romalyzer.png
 %%DATADIR%%/img/circles/romalyzer_flipped.png
 %%DATADIR%%/img/circles/romalyzer_multiple.png
+%%DATADIR%%/img/circles/romalyzer_sw.png
 %%DATADIR%%/img/circles/search.png
 %%DATADIR%%/img/circles/search_multiple.png
 %%DATADIR%%/img/circles/sleep.png
@@ -381,6 +383,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/east.png
 %%DATADIR%%/img/classic/edit.png
 %%DATADIR%%/img/classic/editcopy.png
+%%DATADIR%%/img/classic/editcopybad.png
 %%DATADIR%%/img/classic/editcut.png
 %%DATADIR%%/img/classic/editdelete.png
 %%DATADIR%%/img/classic/editpaste.png
@@ -532,6 +535,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/romalyzer.png
 %%DATADIR%%/img/classic/romalyzer_flipped.png
 %%DATADIR%%/img/classic/romalyzer_multiple.png
+%%DATADIR%%/img/classic/romalyzer_sw.png
 %%DATADIR%%/img/classic/search.png
 %%DATADIR%%/img/classic/search_multiple.png
 %%DATADIR%%/img/classic/sleep.png
@@ -670,6 +674,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/east.png
 %%DATADIR%%/img/crazy-black/edit.png
 %%DATADIR%%/img/crazy-black/editcopy.png
+%%DATADIR%%/img/crazy-black/editcopybad.png
 %%DATADIR%%/img/crazy-black/editcut.png
 %%DATADIR%%/img/crazy-black/editdelete.png
 %%DATADIR%%/img/crazy-black/editpaste.png
@@ -821,6 +826,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/romalyzer.png
 %%DATADIR%%/img/crazy-black/romalyzer_flipped.png
 %%DATADIR%%/img/crazy-black/romalyzer_multiple.png
+%%DATADIR%%/img/crazy-black/romalyzer_sw.png
 %%DATADIR%%/img/crazy-black/search.png
 %%DATADIR%%/img/crazy-black/search_multiple.png
 %%DATADIR%%/img/crazy-black/sleep.png
@@ -953,6 +959,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/east.png
 %%DATADIR%%/img/crazy/edit.png
 %%DATADIR%%/img/crazy/editcopy.png
+%%DATADIR%%/img/crazy/editcopybad.png
 %%DATADIR%%/img/crazy/editcut.png
 %%DATADIR%%/img/crazy/editdelete.png
 %%DATADIR%%/img/crazy/editpaste.png
@@ -1104,6 +1111,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/romalyzer.png
 %%DATADIR%%/img/crazy/romalyzer_flipped.png
 %%DATADIR%%/img/crazy/romalyzer_multiple.png
+%%DATADIR%%/img/crazy/romalyzer_sw.png
 %%DATADIR%%/img/crazy/search.png
 %%DATADIR%%/img/crazy/search_multiple.png
 %%DATADIR%%/img/crazy/sleep.png
@@ -1236,6 +1244,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/east.png
 %%DATADIR%%/img/cubes/edit.png
 %%DATADIR%%/img/cubes/editcopy.png
+%%DATADIR%%/img/cubes/editcopybad.png
 %%DATADIR%%/img/cubes/editcut.png
 %%DATADIR%%/img/cubes/editdelete.png
 %%DATADIR%%/img/cubes/editpaste.png
@@ -1387,6 +1396,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/romalyzer.png
 %%DATADIR%%/img/cubes/romalyzer_flipped.png
 %%DATADIR%%/img/cubes/romalyzer_multiple.png
+%%DATADIR%%/img/cubes/romalyzer_sw.png
 %%DATADIR%%/img/cubes/search.png
 %%DATADIR%%/img/cubes/search_multiple.png
 %%DATADIR%%/img/cubes/sleep.png
@@ -1495,6 +1505,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/east.png
 %%DATADIR%%/img/edit.png
 %%DATADIR%%/img/editcopy.png
+%%DATADIR%%/img/editcopybad.png
 %%DATADIR%%/img/editcut.png
 %%DATADIR%%/img/editdelete.png
 %%DATADIR%%/img/editpaste.png
@@ -1646,6 +1657,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/romalyzer.png
 %%DATADIR%%/img/romalyzer_flipped.png
 %%DATADIR%%/img/romalyzer_multiple.png
+%%DATADIR%%/img/romalyzer_sw.png
 %%DATADIR%%/img/search.png
 %%DATADIR%%/img/search_multiple.png
 %%DATADIR%%/img/sleep.png
@@ -1745,24 +1757,3 @@ bin/qmc2-sdlmess
 %%DATADIR%%/opt/SDLUME/template.xml
 %%DATADIR%%/opt/UME/template.xml
 %%DATADIR%%/opt/template.xml
-@dir %%ETCDIR%%
-%%PORTDOCS%%@dir %%DOCSDIR%%/html/de
-%%PORTDOCS%%@dir %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dir %%DOCSDIR%%/html/us
-%%PORTDOCS%%@dir %%DOCSDIR%%/html
-%%PORTDOCS%%@dir %%DOCSDIR%%
-@dir %%DATADIR%%/img/circles
-@dir %%DATADIR%%/img/classic
-@dir %%DATADIR%%/img/crazy
-@dir %%DATADIR%%/img/crazy-black
-@dir %%DATADIR%%/img/cubes
-@dir %%DATADIR%%/img
-@dir %%DATADIR%%/lng
-@dir %%DATADIR%%/opt/MAME
-@dir %%DATADIR%%/opt/MESS
-@dir %%DATADIR%%/opt/SDLMAME
-@dir %%DATADIR%%/opt/SDLMESS
-@dir %%DATADIR%%/opt/SDLUME
-@dir %%DATADIR%%/opt/UME
-@dir %%DATADIR%%/opt
-@dir %%DATADIR%%

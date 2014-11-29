@@ -3,7 +3,7 @@
 
 PORTNAME=	portscout
 PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 		http://www.atarininja.org/~wxs/distfiles/		\
@@ -61,18 +61,18 @@ post-patch:
 	@${MV} ${WRKSRC}/docs/*.* ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}/Portscout
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}/Portscout/DataSrc
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}/Portscout/SiteHandler
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}/Portscout/SQL
-	${INSTALL_SCRIPT} ${WRKSRC}/Portscout/*.pm ${STAGEDIR}${SITE_PERL}/Portscout/
-	${INSTALL_SCRIPT} ${WRKSRC}/Portscout/DataSrc/*.pm ${STAGEDIR}${SITE_PERL}/Portscout/DataSrc/
-	${INSTALL_SCRIPT} ${WRKSRC}/Portscout/SiteHandler/*.pm ${STAGEDIR}${SITE_PERL}/Portscout/SiteHandler/
-	${INSTALL_SCRIPT} ${WRKSRC}/Portscout/SQL/*.pm ${STAGEDIR}${SITE_PERL}/Portscout/SQL/
-	${INSTALL_SCRIPT} ${WRKSRC}/Portscout.pm ${STAGEDIR}${SITE_PERL}/Portscout.pm
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout/DataSrc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout/SiteHandler
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout/SQL
+	${INSTALL_SCRIPT} ${WRKSRC}/Portscout/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout/
+	${INSTALL_SCRIPT} ${WRKSRC}/Portscout/DataSrc/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout/DataSrc/
+	${INSTALL_SCRIPT} ${WRKSRC}/Portscout/SiteHandler/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout/SiteHandler/
+	${INSTALL_SCRIPT} ${WRKSRC}/Portscout/SQL/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout/SQL/
+	${INSTALL_SCRIPT} ${WRKSRC}/Portscout.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout.pm
 	${INSTALL_SCRIPT} ${WRKSRC}/portscout.pl ${STAGEDIR}${PREFIX}/bin/portscout
 
-	${INSTALL_DATA} ${WRKSRC}/portscout.pod ${STAGEDIR}${SITE_PERL}
+	${INSTALL_DATA} ${WRKSRC}/portscout.pod ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 
 	pod2man ${WRKSRC}/portscout.pod ${WRKSRC}/portscout.1
 	${INSTALL_MAN} ${WRKSRC}/portscout.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/

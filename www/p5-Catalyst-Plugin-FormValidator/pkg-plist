@@ -1,8 +1,2 @@
 %%SITE_PERL%%/Catalyst/Plugin/FormValidator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FormValidator/.packlist
 %%PERL5_MAN3%%/Catalyst::Plugin::FormValidator.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FormValidator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst

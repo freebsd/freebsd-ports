@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/WWW::NioTV.3.gz
 %%SITE_PERL%%/WWW/NioTV.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NioTV/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NioTV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW

@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/LWP::Authen::Wsse.3.gz
 %%SITE_PERL%%/LWP/Authen/Wsse.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Authen/Wsse/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Authen/Wsse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Authen
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP
-@dirrmtry %%SITE_PERL%%/LWP/Authen
-@dirrmtry %%SITE_PERL%%/LWP

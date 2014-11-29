@@ -6,4 +6,3 @@
 %%SITE_PERL%%/Audio/Wav/Tools.pm
 %%SITE_PERL%%/Audio/Wav/Write.pm
 %%SITE_PERL%%/Audio/Wav/Write/Header.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Wav/.packlist

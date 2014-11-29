@@ -153,14 +153,3 @@ share/locale/zh_CN/LC_MESSAGES/plasma_applet_rsibreak.mo
 share/locale/zh_CN/LC_MESSAGES/rsibreak.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_rsibreak.mo
 share/locale/zh_TW/LC_MESSAGES/rsibreak.mo
-@dirrm share/doc/HTML/uk/rsibreak
-@dirrm share/doc/HTML/sv/rsibreak
-@dirrm share/doc/HTML/pt_BR/rsibreak
-@dirrm share/doc/HTML/pt/rsibreak
-@dirrm share/doc/HTML/nl/rsibreak
-@dirrm share/doc/HTML/it/rsibreak
-@dirrm share/doc/HTML/fr/rsibreak
-@dirrm share/doc/HTML/et/rsibreak
-@dirrm share/doc/HTML/es/rsibreak
-@dirrm share/doc/HTML/en/rsibreak
-@dirrm share/apps/rsibreak

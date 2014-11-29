@@ -30,6 +30,7 @@ python_CMD=	${PYTHON_CMD}
 
 NUMPY_BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0:${PORTSDIR}/math/py-numpy
 NUMPY_RUN_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0:${PORTSDIR}/math/py-numpy
+NUMPY_USES=		fortran
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.py ${STAGEDIR}${PREFIX}/bin/

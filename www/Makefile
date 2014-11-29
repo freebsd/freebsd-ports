@@ -77,7 +77,6 @@
     SUBDIR += checkbot
     SUBDIR += chems
     SUBDIR += cherokee
-    SUBDIR += chimera
     SUBDIR += choqok
     SUBDIR += chpasswd
     SUBDIR += chromium
@@ -122,7 +121,6 @@
     SUBDIR += dotclear
     SUBDIR += dotproject
     SUBDIR += download-gemist
-    SUBDIR += dpsearch
     SUBDIR += drood
     SUBDIR += drraw
     SUBDIR += drupal6
@@ -394,6 +392,7 @@
     SUBDIR += luakit
     SUBDIR += lynx
     SUBDIR += lynx-current
+    SUBDIR += madsonic
     SUBDIR += magento
     SUBDIR += mahara
     SUBDIR += man2web
@@ -402,6 +401,7 @@
     SUBDIR += mediawiki119
     SUBDIR += mediawiki122
     SUBDIR += mediawiki123
+    SUBDIR += mediawiki124
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
@@ -1921,6 +1921,7 @@
     SUBDIR += sarg
     SUBDIR += scloader
     SUBDIR += script4rss
+    SUBDIR += seahub
     SUBDIR += seamonkey
     SUBDIR += seamonkey-i18n
     SUBDIR += selenium

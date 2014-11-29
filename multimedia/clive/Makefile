@@ -3,6 +3,7 @@
 
 PORTNAME=	clive
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}
 
@@ -25,8 +26,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	bin/clive \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/clive/.packlist \
 		man/man1/clive.1.gz
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/clive
 
 .include <bsd.port.mk>

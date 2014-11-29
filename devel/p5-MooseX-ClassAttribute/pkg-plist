@@ -18,4 +18,3 @@
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Mixin/HasClassAttributes.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role/Composite.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/ClassAttribute/.packlist

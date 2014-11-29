@@ -3,7 +3,7 @@
 
 PORTNAME=	TkTopNetFlows
 PORTVERSION=	0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://vfom.narod.ru/download/
 
@@ -17,7 +17,8 @@ LIB_DEPENDS+=	libBLT25.so:${PORTSDIR}/x11-toolkits/blt \
 RUN_DEPENDS=	flowdumper:${PORTSDIR}/net-mgmt/p5-Cflow
 
 NO_BUILD=	yes
-USES=		perl5 tk:85
+USES=		perl5 shebangfix tk:85
+SHEBANG_FILES=	flow_Server.pl view_definitions.pl.example
 PORTDOCS=	*
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

@@ -23,8 +23,3 @@ devmon/devmon
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-@dirrm devmon/modules
-@dirrmtry devmon
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extras
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

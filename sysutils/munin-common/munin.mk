@@ -1,4 +1,4 @@
-MUNIN_VERSION=	2.0.24
+MUNIN_VERSION=	2.0.25
 MUNIN_SITES=	SF/${PORTNAME}/stable/${MUNIN_VERSION}
 DISTINFO_FILE=	${PORTSDIR}/sysutils/munin-common/distinfo
 

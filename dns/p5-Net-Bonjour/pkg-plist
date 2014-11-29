@@ -6,4 +6,3 @@
 %%SITE_PERL%%/Net/Bonjour/Entry.pm
 %%SITE_PERL%%/Net/Rendezvous.pm
 %%SITE_PERL%%/Net/Rendezvous/Entry.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Bonjour/.packlist

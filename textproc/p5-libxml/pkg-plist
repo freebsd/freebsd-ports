@@ -30,11 +30,3 @@
 %%SITE_PERL%%/XML/PatAct/ToObjects.pm
 %%SITE_PERL%%/XML/Perl2SAX.pm
 %%SITE_PERL%%/XML/SAX2Perl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-perl/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-perl
-@dirrmtry %%SITE_PERL%%/XML/PatAct
-@dirrmtry %%SITE_PERL%%/XML/Parser
-@dirrmtry %%SITE_PERL%%/XML/Handler
-@dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%/Data/Grove
-@dirrmtry %%SITE_PERL%%/Data

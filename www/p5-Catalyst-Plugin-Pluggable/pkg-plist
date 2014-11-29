@@ -1,8 +1,2 @@
 %%SITE_PERL%%/Catalyst/Plugin/Pluggable.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Pluggable/.packlist
 %%PERL5_MAN3%%/Catalyst::Plugin::Pluggable.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Pluggable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst

@@ -29,11 +29,3 @@
 %%SITE_PERL%%/WebService/Technorati/SearchTerm.pm
 %%SITE_PERL%%/WebService/pod2html.pl
 %%SITE_PERL%%/auto/WebService/Technorati/BaseTechnoratiObject/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Technorati/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Technorati
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
-@dirrmtry %%SITE_PERL%%/auto/WebService/Technorati/BaseTechnoratiObject
-@dirrmtry %%SITE_PERL%%/auto/WebService/Technorati
-@dirrmtry %%SITE_PERL%%/auto/WebService
-@dirrmtry %%SITE_PERL%%/WebService/Technorati
-@dirrmtry %%SITE_PERL%%/WebService

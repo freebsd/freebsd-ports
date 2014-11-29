@@ -2,6 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	34227
+PORTREVISION=	1
 CATEGORIES=	print perl5
 #MASTER_SITES=	ftp://tug.org/tex-archive/systems/texlive/tlnet/archive/
 MASTER_SITES=	LOCAL/hrs
@@ -19,10 +20,10 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${SITE_PERL}/TeXLive \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/TeXLive \
 	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c/
 	${INSTALL_DATA} ${WRKSRC}/tlpkg/TeXLive/*.pm \
-	    ${STAGEDIR}${SITE_PERL}/TeXLive
+	    ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/TeXLive
 	${INSTALL_DATA} ${WRKSRC}/texmf-dist/web2c/fmtutil-hdr.cnf \
 	    ${WRKSRC}/texmf-dist/web2c/updmap-hdr.cfg \
 	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c/

@@ -1,0 +1,15 @@
+Do not enforce compilers
+
+--- jfbuild/Makefile.orig	2014-11-13 08:43:00.382215199 +0100
++++ jfbuild/Makefile	2014-11-13 08:43:23.230777638 +0100
+@@ -55,8 +55,8 @@
+   debug=-ggdb -O0 -DDEBUGGINGAIDS -DNOSDLPARACHUTE
+ endif
+ 
+-CC=gcc
+-CXX=g++
++CC?=gcc
++CXX?=g++
+ AS=nasm
+ RC=windres
+ AR=ar

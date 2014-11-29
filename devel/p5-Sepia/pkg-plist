@@ -7,7 +7,6 @@ man/man1/sepl.1.gz
 %%SITE_PERL%%/Sepia/Xref.pm
 %%SITE_PERL%%/Sepia/ReadLine.pm
 %%SITE_PERL%%/Sepia.pm
-%%SITE_PERL%%/mach/auto/Sepia/.packlist
 %%EMACS_SITE_LISPDIR%%/sepia/sepia-cpan.el
 %%EMACS_SITE_LISPDIR%%/sepia/sepia-ido.el
 %%EMACS_SITE_LISPDIR%%/sepia/sepia-snippet.el

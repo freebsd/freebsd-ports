@@ -60,4 +60,3 @@
 %%SITE_PERL%%/Cvs/Result/StatusList.pm
 %%SITE_PERL%%/Cvs/Result/Tag.pm
 %%SITE_PERL%%/Cvs/Result/Update.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cvs/.packlist

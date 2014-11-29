@@ -15,4 +15,3 @@ lib/libgsnmp.so.0.0.0
 libdata/pkgconfig/gsnmp.pc
 share/aclocal/gsnmp.m4
 man/man1/gsnmp-get.1.gz
-@dirrm include/gsnmp

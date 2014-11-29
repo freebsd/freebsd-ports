@@ -3,4 +3,3 @@
 %%SITE_PERL%%/ORLite/Migrate.pm
 %%SITE_PERL%%/ORLite/Migrate/Patch.pm
 %%SITE_PERL%%/ORLite/Migrate/Timeline.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ORLite/Migrate/.packlist

@@ -161,7 +161,6 @@
 %%SITE_PERL%%/WebService/GData/YouTube/YT/Uploaded.pm
 %%SITE_PERL%%/WebService/GData/YouTube/YT/Username.pm
 %%SITE_PERL%%/WebService/GData/YouTube/YT/Videoid.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/GData/.packlist
 %%PERL5_MAN3%%/WebService::GData::Error.3.gz
 %%PERL5_MAN3%%/WebService::GData::ClientLogin.3.gz
 %%PERL5_MAN3%%/WebService::GData::Collection.3.gz
@@ -188,24 +187,3 @@
 %%PERL5_MAN3%%/WebService::GData::YouTube::Feed::Comment.3.gz
 %%PERL5_MAN3%%/WebService::GData::YouTube::Feed::PlaylistLink.3.gz
 %%PERL5_MAN3%%/WebService::GData::YouTube::Feed::VideoMessage.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/GData
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
-@dirrm %%SITE_PERL%%/WebService/GData/YouTube/YT/Media
-@dirrm %%SITE_PERL%%/WebService/GData/YouTube/YT
-@dirrm %%SITE_PERL%%/WebService/GData/YouTube/Feed
-@dirrm %%SITE_PERL%%/WebService/GData/YouTube/Doc
-@dirrm %%SITE_PERL%%/WebService/GData/YouTube
-@dirrm %%SITE_PERL%%/WebService/GData/Serialize
-@dirrm %%SITE_PERL%%/WebService/GData/Node/OpenSearch
-@dirrm %%SITE_PERL%%/WebService/GData/Node/Media
-@dirrm %%SITE_PERL%%/WebService/GData/Node/GeoRSS
-@dirrm %%SITE_PERL%%/WebService/GData/Node/GML
-@dirrm %%SITE_PERL%%/WebService/GData/Node/GD
-@dirrm %%SITE_PERL%%/WebService/GData/Node/Atom
-@dirrm %%SITE_PERL%%/WebService/GData/Node/APP
-@dirrm %%SITE_PERL%%/WebService/GData/Node
-@dirrm %%SITE_PERL%%/WebService/GData/Feed
-@dirrm %%SITE_PERL%%/WebService/GData/Error
-@dirrm %%SITE_PERL%%/WebService/GData/Batch
-@dirrm %%SITE_PERL%%/WebService/GData
-@dirrmtry %%SITE_PERL%%/WebService

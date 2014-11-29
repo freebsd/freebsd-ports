@@ -20,4 +20,3 @@
 %%SITE_PERL%%/BZ/Client/XMLRPC/Response.pm
 %%SITE_PERL%%/BZ/Client/XMLRPC/Struct.pm
 %%SITE_PERL%%/BZ/Client/XMLRPC/Value.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ/Client/.packlist

@@ -2,6 +2,7 @@
 
 PORTNAME=	openra
 PORTVERSION=	20141029
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@vfemail.net

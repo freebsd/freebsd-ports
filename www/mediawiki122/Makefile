@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.22.13
+PORTVERSION=	1.22.14
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	122
@@ -12,7 +12,10 @@ COMMENT=	The wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki119-[0-9]* mediawiki121-[0-9]* mediawiki123-[0-9]*
+DEPRECATED=	Deprecated by upstream, use www/mediawiki12{3,4} instead
+EXPIRATION_DATE=2015-02-28
+
+CONFLICTS=	mediawiki119-[0-9]* mediawiki123-[0-9]* mediawiki124-[0-9]*
 
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom json
 WANT_PHP_WEB=	yes

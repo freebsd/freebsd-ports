@@ -3,13 +3,4 @@
 %%SITE_PERL%%/Catalyst/Controller/FormBuilder/Action/HTML/Template.pm
 %%SITE_PERL%%/Catalyst/Controller/FormBuilder/Action/Mason.pm
 %%SITE_PERL%%/Catalyst/Controller/FormBuilder/Action/TT.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller/FormBuilder/.packlist
 %%PERL5_MAN3%%/Catalyst::Controller::FormBuilder.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller/FormBuilder
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Controller/FormBuilder/Action/HTML
-@dirrmtry %%SITE_PERL%%/Catalyst/Controller/FormBuilder/Action
-@dirrmtry %%SITE_PERL%%/Catalyst/Controller/FormBuilder
-@dirrmtry %%SITE_PERL%%/Catalyst/Controller
-@dirrmtry %%SITE_PERL%%/Catalyst

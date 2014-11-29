@@ -14,6 +14,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Secret Maryo Chronicles two-dimensional platform game
 
 BROKEN=		does not run, cegui 0.8 support still in development
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-12-27
 
 LICENSE=	GPLv3
 

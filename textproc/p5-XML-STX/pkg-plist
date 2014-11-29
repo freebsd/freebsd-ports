@@ -20,7 +20,6 @@ bin/stxview.pl
 %%SITE_PERL%%/XML/STX/Stylesheet.pm
 %%SITE_PERL%%/XML/STX/TrAX.pm
 %%SITE_PERL%%/XML/STX/Writer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/STX/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/STX.html
 %%PORTDOCS%%%%DOCSDIR%%/TrAXref.html
 %%PORTDOCS%%%%DOCSDIR%%/TrAXref.pod
@@ -28,7 +27,3 @@ bin/stxview.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tester.pl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/STX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/STX
-@dirrmtry %%SITE_PERL%%/XML

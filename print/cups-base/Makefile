@@ -50,35 +50,28 @@ GROUPS=	cups
 USERS=		cups
 
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
+OPTIONS_SINGLE=		SSL
+OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
+OPTIONS_DEFAULT=	OPENSSL
+OPTIONS_SUB=		yes
 .if defined(CUPS_CLIENT)
 PORTREVISION=	2
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
-OPTIONS_SINGLE=		SSL
-OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
-OPTIONS_DEFAULT=	OPENSSL
-OPTIONS_SUB=		yes
 .elif defined(CUPS_IMAGE)
 PORTREVISION=	1
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
-OPTIONS_SINGLE=		SSL
-OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
-OPTIONS_DEFAULT=	OPENSSL
-OPTIONS_SUB=		yes
 .else
-PORTREVISION=	2
+PORTREVISION=	3
 CUPS_SUFFIX=	-base
 # No DOCS option.  Files are needed by web interface.
 OPTIONS_DEFINE=		DBUS ICONS LIBPAPER LIBUSB PAM XDG_OPEN
 OPTIONS_GROUP=		WEB
 OPTIONS_GROUP_WEB=	JAVA PERL PHP PYTHON
-OPTIONS_SINGLE=		SSL
-OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
 OPTIONS_RADIO=		ZEROCONF
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
-OPTIONS_DEFAULT=	LIBPAPER MDNSRESPONDER OPENSSL ICONS
-OPTIONS_SUB=		yes
+OPTIONS_DEFAULT+=	LIBPAPER MDNSRESPONDER ICONS
 .endif
 
 ICONS_DESC=		Desktop icons
@@ -144,82 +137,82 @@ CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 
 # Don't use CONFIGURE_ARGS+=--without-* to disable web interpreters because it
 # will set the path of the interpreter to "no" and set it's existence to TRUE.
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MJAVA}
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE)
+. if ${PORT_OPTIONS:MJAVA}
 CONFIGURE_ARGS+=	--with-java=${JAVA}
 USE_JAVA=		yes
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPERL}
+. if ${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=	--with-perl=${PERL}
 USES+=			perl5
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPHP}
+. if ${PORT_OPTIONS:MPHP}
 CONFIGURE_ARGS+=	--with-php=${LOCALBASE}/bin/php-cgi
 USE_PHP=		yes
 USE_PHP_BUILD=		yes
 WANT_PHP_CGI=		yes
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPYTHON}
+. if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 USES+=			python
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBPAPER}
+. if ${PORT_OPTIONS:MLIBPAPER}
 CONFIGURE_ARGS+=	--enable-libpaper
 LIB_DEPENDS+=		libpaper.so:${PORTSDIR}/print/libpaper
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MMDNSRESPONDER}
+. if ${PORT_OPTIONS:MMDNSRESPONDER}
 LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-avahi
 SUB_LIST+=		ZEROCONF="mdnsd"
-.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MAVAHI}
+. elif ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-avahi
 LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
 SUB_LIST+=		ZEROCONF="avahi_daemon"
-.else
+. else
 CONFIGURE_ARGS+=	--disable-dnssd
 CONFIGURE_ARGS+=	--disable-avahi
 SUB_LIST+=		ZEROCONF=""
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPAM}
+. if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--enable-pam
-.else
+. else
 CONFIGURE_ARGS+=	--disable-pam
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MDBUS}
+. if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=		libdbus-1.so:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-dbus
-.else
+. else
 CONFIGURE_ARGS+=	--disable-dbus
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MXDG_OPEN}
+. if ${PORT_OPTIONS:MXDG_OPEN}
 RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBUSB}
+. if ${PORT_OPTIONS:MLIBUSB}
 CONFIGURE_ARGS+=	--enable-libusb
-.else
+. else
 CONFIGURE_ARGS+=	--disable-libusb
-.endif
+. endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MICONS}
+. if ${PORT_OPTIONS:MICONS}
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=	--with-icondir=${PREFIX}/share/icons
+. endif
+
+SUB_FILES+=	ulpt-cupsd.conf ulpt-cupsd.sh
 .endif
 
 .if ${OSVERSION} < 1000036 && ${ARCH} == i386
 LIBS+=		-lssp_nonshared
-.endif
-
-.if ! defined(CUPS_CLIENT) && ! defined(CUPS_IMAGE)
-SUB_FILES+=	ulpt-cupsd.conf ulpt-cupsd.sh
 .endif
 
 post-patch:
@@ -239,6 +232,13 @@ post-patch:
 		-e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		-e 's|-D_LARGEFILE64_SOURCE||g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|\.default|.sample|'\
+		${WRKSRC}/cgi-bin/admin.c\
+		${WRKSRC}/CHANGES-1.3.txt\
+		${WRKSRC}/conf/Makefile\
+		${WRKSRC}/packaging/cups.list.in\
+		${WRKSRC}/packaging/cups.spec\
+		${WRKSRC}/packaging/cups.spec.in
 .if defined(CUPS_CLIENT)
 	@${REINPLACE_CMD} \
 		-e 's|cups test|cups|' \
@@ -277,6 +277,7 @@ post-configure:
 .else
 	@${REINPLACE_CMD} \
 		-e 's|filter backend|backend|' \
+		-e 's|/etc/pam.d|${LOCALBASE}/etc/pam.d|'\
 		${WRKSRC}/Makedefs
 .endif
 
@@ -292,16 +293,15 @@ pre-build:
 .endif
 
 post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/*.so.*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/*.so.*
 .if defined(CUPS_CLIENT)
 	${INSTALL_SCRIPT} ${WRKSRC}/cups-config ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/cups/libcups.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/man/cups-config.man ${STAGEDIR}${PREFIX}/man/man1/cups-config.1
 .elif defined(CUPS_IMAGE)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsimage.so.2
 .else
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupscgi.so.1
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsppdc.so.1
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsmime.so.1
 	${LN} -sf lpr ${STAGEDIR}${PREFIX}/bin/lpr-cups
 	${MKDIR} ${STAGEDIR}${ETCDIR}/
 .for f in cupsd.conf mime.convs mime.types snmp.conf

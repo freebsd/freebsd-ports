@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Search::VectorSpace.3.gz
 %%SITE_PERL%%/Search/VectorSpace.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/VectorSpace/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/VectorSpace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
-@dirrmtry %%SITE_PERL%%/Search

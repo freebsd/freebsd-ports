@@ -2,14 +2,8 @@
 %%PERL5_MAN3%%/Text::Shellwords::Cursor.3.gz
 %%SITE_PERL%%/Term/ShellUI.pm
 %%SITE_PERL%%/Text/Shellwords/Cursor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ShellUI/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fileman-example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/synopsis
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/synopsis-big
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tui-sample
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ShellUI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Text/Shellwords
-@dirrmtry %%SITE_PERL%%/Text
-@dirrmtry %%SITE_PERL%%/Term

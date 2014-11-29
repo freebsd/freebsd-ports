@@ -3,6 +3,7 @@
 
 PORTNAME=	ResourcePool-Resource-Net-LDAP
 PORTVERSION=	1.0002
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN \
 		http://www.fatalmind.com/projects/ResourcePool/

@@ -1,7 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Digest/ManberHash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/ManberHash/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/ManberHash/ManberHash.so
+%%SITE_ARCH%%/Digest/ManberHash.pm
+%%SITE_ARCH%%/auto/Digest/ManberHash/ManberHash.so
 %%PERL5_MAN3%%/Digest::ManberHash.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/ManberHash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Digest/

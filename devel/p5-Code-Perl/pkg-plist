@@ -21,4 +21,3 @@
 %%SITE_PERL%%/Code/Perl/Expr/String.pm
 %%SITE_PERL%%/Code/Perl/Expr/SubName.pm
 %%SITE_PERL%%/Code/Perl/Test/Expr.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Code/Perl/.packlist

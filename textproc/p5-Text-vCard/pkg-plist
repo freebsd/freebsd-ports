@@ -8,5 +8,4 @@
 %%SITE_PERL%%/Text/vCard.pm
 %%SITE_PERL%%/Text/vCard/Addressbook.pm
 %%SITE_PERL%%/Text/vCard/Node.pm
-%%SITE_PERL%%/mach/auto/Text/vCard/.packlist
 %%SITE_PERL%%/vCard/AddressBook.pm

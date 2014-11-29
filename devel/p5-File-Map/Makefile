@@ -2,6 +2,7 @@
 
 PORTNAME=	File-Map
 PORTVERSION=	0.63
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LEONT
@@ -24,6 +25,6 @@ USES=		perl5
 USE_PERL5=	modbuild
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/File/Map/Map.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/File/Map/Map.so
 
 .include <bsd.port.mk>

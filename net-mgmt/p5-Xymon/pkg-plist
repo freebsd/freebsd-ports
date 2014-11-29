@@ -1,4 +1,2 @@
 %%SITE_PERL%%/Xymon.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xymon/.packlist
 %%PERL5_MAN3%%/Xymon.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xymon

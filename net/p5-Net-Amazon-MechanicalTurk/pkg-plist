@@ -39,7 +39,6 @@
 %%SITE_PERL%%/Net/Amazon/MechanicalTurk/Transport/RESTTransport.pm
 %%SITE_PERL%%/Net/Amazon/MechanicalTurk/XMLParser.pm
 %%SITE_PERL%%/Net/Amazon/mturk_install.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/MechanicalTurk/.packlist
 %%PERL5_MAN3%%/Net::Amazon::MechanicalTurk.3.gz
 %%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::BulkSupport.3.gz
 %%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::AddRetry.3.gz
@@ -51,14 +50,3 @@
 %%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::ParseAssignmentAnswer.3.gz
 %%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::RetrieveResults.3.gz
 %%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::UpdateHITs.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/MechanicalTurk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/Transport
-@dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/Template
-@dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/RowData
-@dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/QAPValidator
-@dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/Command
-@dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk
-@dirrmtry %%SITE_PERL%%/Net/Amazon
-@dirrmtry %%SITE_PERL%%/Net

@@ -12,6 +12,3 @@
 %%SITE_PERL%%/Net/Twitter/Lite/WithAPIv1_1.pm
 %%SITE_PERL%%/Net/Twitter/Lite/WithAPIv1_1.pod
 %%SITE_PERL%%/Net/Twitter/Lite/WrapResult.pm
-@dirrmtry %%SITE_PERL%%/Net/Twitter/Lite/API
-@dirrmtry %%SITE_PERL%%/Net/Twitter/Lite
-@dirrmtry %%SITE_PERL%%/Net/Twitter

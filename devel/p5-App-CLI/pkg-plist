@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/CLI/.packlist
 %%SITE_PERL%%/App/CLI.pm
 %%SITE_PERL%%/App/CLI/Command.pm
 %%SITE_PERL%%/App/CLI/Command/Help.pm

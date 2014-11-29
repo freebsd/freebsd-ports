@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 # it seems perl malloc has problems with threaded perl on FreeBSD
 OPTIONS_RADIO=	EXCLUSIVE
 OPTIONS_RADIO_EXCLUSIVE=	THREADS PERL_MALLOC
-OPTIONS_DEFAULT=	PERL_64BITINT THREADS PTHREAD
+OPTIONS_DEFAULT=	PERL_64BITINT THREADS PTHREAD MULTIPLICITY
 
 EXCLUSIVE_DESC=	Exclusive OPTIONS
 GDBM_DESC=	GDBM_File extension
@@ -48,6 +48,7 @@ GDBM_CONFIGURE_OFF=	-Ui_gdbm
 GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 PERL_64BITINT_CONFIGURE_ON=	-Duse64bitint
 MULTIPLICITY_CONFIGURE_ON=	-Dusemultiplicity=y
+MULTIPLICITY_CONFIGURE_OFF=	-Dusemultiplicity=n
 SITECUSTOMIZE_CONFIGURE_ON=	-Dusesitecustomize
 THREADS_CONFIGURE_ON=	-Dusethreads=y
 THREADS_CONFIGURE_OFF=	-Dusethreads=n
@@ -63,24 +64,33 @@ PORTSCOUT=	limitw:1,even
 PERL_VERSION=	5.20.1
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
-SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
+SITE_PERL_REL?=	lib/perl5/site_perl
 SITE_PERL?=	${PREFIX}/${SITE_PERL_REL}
+SITE_ARCH_REL?=	${SITE_PERL_REL}/${PERL_ARCH}/${PERL_VER}
+SITE_ARCH?=	${PREFIX}/${SITE_ARCH_REL}
+SITE_MAN3_REL?=	${SITE_PERL_REL}/man/man3
+SITE_MAN3?=	${PREFIX}/${SITE_MAN3_REL}
 
 USES=	tar:bzip2 cpe
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
+	-Dlibperl=libperl.so.${PERL_VER} \
 	-Darchlib=${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} \
 	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VER} \
-	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VER}/perl/man/man3 \
+	-Dman3dir=${PREFIX}/${MAN3PREFIX_REL}/man/man3 \
 	-Dman1dir=${PREFIX}/man/man1 \
-	-Dsitearch=${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH} \
-	-Dsitelib=${PREFIX}/${SITE_PERL_REL} -Dscriptdir=${PREFIX}/bin \
-	-Dsiteman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
+	-Dsitearch=${SITE_ARCH} \
+	-Dsitelib=${SITE_PERL} -Dscriptdir=${PREFIX}/bin \
+	-Dsiteman3dir=${SITE_MAN3} \
 	-Dsiteman1dir=${PREFIX}/man/man1 \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
+# When upgrading to 5.22+ remove this.
+CONFIGURE_ARGS+= \
+	-Dotherlibdirs=${PREFIX}/lib/perl5/site_perl/${PERL_VER}:${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
 		LC_TIME=""
@@ -89,18 +99,20 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 
 SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \
+		SITE_PERL=${SITE_PERL_REL} \
 		PERL_ARCH=${PERL_ARCH}
 
 SUB_FILES=	perl5_version use.perl perl-man.conf
 
 PKGINSTALL=	${WRKDIR}/use.perl
 PKGDEINSTALL=	${WRKDIR}/use.perl
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 # if this port is default due PERL5_DEFAULT
-# change PKGNAME to reflect this 
+# change PKGNAME to reflect this
 .if ${PERL_VER} == ${PERL5_DEFAULT}
 PKGNAMESUFFIX=	${PERL_VERSION:C/\.[0-9]+\.[0-9]+$//}
 .else
@@ -127,14 +139,16 @@ CONFIGURE_ARGS+=	\
     -Accflags=-DPERLIOBUF_DEFAULT_BUFSIZ=${PERLIOBUF_DEFAULT_BUFSIZ}
 .endif
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}/perl
-MANDIRS+=	${MAN3PREFIX}
+MAN3PREFIX_REL=	lib/perl5/${PERL_VER}/perl
+MAN3PREFIX=	${PREFIX}/${MAN3PREFIX_REL}
+MANDIRS+=	${MAN3PREFIX}/man
 
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \
 		PERL_ARCH=${PERL_ARCH} \
-		MAN3=${MAN3PREFIX:S|^${PREFIX}/||}/man/man3 \
-		SITE_PERL=${SITE_PERL:S|^${PREFIX}/||}
+		MAN3=${MAN3PREFIX_REL}/man/man3 \
+		SITE_PERL=${SITE_PERL_REL} \
+		SITE_ARCH=${SITE_ARCH_REL}
 
 .if ${PORT_OPTIONS:MDEBUG}
 STRIP=
@@ -176,14 +190,22 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/man/man3
-	${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto
-	${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/machine
-	${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/sys
+	${MKDIR} ${STAGEDIR}${SITE_MAN3}
+	${MKDIR} ${STAGEDIR}${SITE_ARCH}/auto
 	${MKDIR} ${STAGEDIR}${SITE_PERL}/auto
 	${LN} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION} ${STAGEDIR}${PREFIX}/bin/perl5
+	${LN} -s libperl.so.${PERL_VER} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE/libperl.so
+	${LN} -s libperl.so.${PERL_VER} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE/libperl.so.${PERL_VERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 	${INSTALL_DATA} ${WRKDIR}/perl5_version ${STAGEDIR}${PREFIX}/etc
+	${MKDIR} ${STAGEDIR}${SITE_ARCH}/machine
+	${MKDIR} ${STAGEDIR}${SITE_ARCH}/sys
+	# h2ph needs perl, but perl is not installed, it's only
+	# staged, so, use the one in WRKDIR 
+	(cd /usr/include && ${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
+		${WRKSRC}/perl -I ${WRKSRC}/lib ${STAGEDIR}${PREFIX}/bin/h2ph \
+		-d ${STAGEDIR}${SITE_ARCH} *.h machine/*.h sys/*.h >/dev/null)
+	@${FIND} ${STAGEDIR}${SITE_ARCH} -name '*.ph' | sed -e 's|${STAGEDIR}||' >> ${TMPPLIST}
 .if ${OSVERSION} >= 900022
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
 .endif

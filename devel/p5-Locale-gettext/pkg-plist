@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/gettext/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/gettext/gettext.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Locale/gettext.pm
+%%SITE_ARCH%%/auto/Locale/gettext/gettext.so
+%%SITE_ARCH%%/Locale/gettext.pm
 %%PERL5_MAN3%%/Locale::gettext.3.gz

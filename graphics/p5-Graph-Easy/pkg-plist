@@ -1,5 +1,4 @@
 bin/graph-easy
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy/.packlist
 %%SITE_PERL%%/Graph/Easy.pm
 %%SITE_PERL%%/Graph/Easy/As_ascii.pm
 %%SITE_PERL%%/Graph/Easy/As_graphml.pm

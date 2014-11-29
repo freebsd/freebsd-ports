@@ -2,5 +2,4 @@ bin/zbgset
 bin/zbgset-pt
 bin/zbgset-admin
 %%SITE_PERL%%/ZConf/BGSet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/BGSet/.packlist
 %%PERL5_MAN3%%/ZConf::BGSet.3.gz

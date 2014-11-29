@@ -1,5 +1,5 @@
---- lib/Makefile.am.orig	2014-07-31 06:20:28.000000000 -0400
-+++ lib/Makefile.am	2014-09-02 13:48:35.659991963 -0400
+--- lib/Makefile.am.orig	2014-11-11 10:10:39.971972968 -0500
++++ lib/Makefile.am	2014-11-11 10:37:36.712929368 -0500
 @@ -19,7 +19,6 @@
  	peer-common.h \
  	string-util.h \
@@ -8,7 +8,14 @@
  	rpc-common.h \
  	net.h \
  	utils.h \
-@@ -66,6 +65,8 @@
+@@ -60,12 +59,14 @@
+ 
+ libccnetd_la_LDFLAGS = -no-undefined
+ libccnetd_la_LIBADD = @GLIB2_LIBS@  @GOBJECT_LIBS@ @SSL_LIBS@ @LIB_GDI32@ \
+-	                  -lsqlite3 -levent @LIB_WS32@ @LIB_UUID@ \
++	                  -lsqlite3 -levent @LIB_WS32@ @LIB_UUID@ -lkvm \
+ 					  @LIB_SHELL32@ @LIB_PSAPI@ @SEARPC_LIBS@
+ 
  
  ccnet_object_define = ccnetobj.vala
  

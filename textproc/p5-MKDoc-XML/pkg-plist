@@ -26,11 +26,3 @@
 %%SITE_PERL%%/MKDoc/XML/Tokenizer.pm
 %%SITE_PERL%%/MKDoc/XML/TreeBuilder.pm
 %%SITE_PERL%%/MKDoc/XML/TreePrinter.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MKDoc/XML/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MKDoc/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MKDoc
-@dirrmtry %%SITE_PERL%%/MKDoc/XML/Tagger
-@dirrmtry %%SITE_PERL%%/MKDoc/XML/Stripper
-@dirrmtry %%SITE_PERL%%/MKDoc/XML/Decode
-@dirrmtry %%SITE_PERL%%/MKDoc/XML
-@dirrmtry %%SITE_PERL%%/MKDoc

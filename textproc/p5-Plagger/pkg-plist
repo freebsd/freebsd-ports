@@ -412,7 +412,6 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/UserAgent.pm
 %%SITE_PERL%%/Plagger/Util.pm
 %%SITE_PERL%%/Plagger/Walker.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plagger/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/atode.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bloglines2gmail.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iefav2opml.yaml
@@ -652,36 +651,6 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Widget-Simple/mm.yaml
 %%DATADIR%%/assets/plugins/Widget-Simple/reddit.yaml
 %%DATADIR%%/assets/plugins/Widget-Simple/technorati.yaml
-@dirrm %%SITE_PERL%%/Plagger/TT/Plagger
-@dirrm %%SITE_PERL%%/Plagger/TT
-@dirrm %%SITE_PERL%%/Plagger/Rule/Deduped
-@dirrm %%SITE_PERL%%/Plagger/Rule
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Widget
-@dirrm %%SITE_PERL%%/Plagger/Plugin/UserAgent
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Summary
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Subscription/Bookmarks
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Subscription
-@dirrm %%SITE_PERL%%/Plagger/Plugin/SmartFeed
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Search
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Publish/Speech
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Publish
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Notify/OpenBrowser
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Notify/Eject
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Notify/Audio
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Notify
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Namespace
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Filter/Romanize
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Filter/FetchEnclosure
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Filter
-@dirrm %%SITE_PERL%%/Plagger/Plugin/CustomFeed/Frepa
-@dirrm %%SITE_PERL%%/Plagger/Plugin/CustomFeed
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Bundle
-@dirrm %%SITE_PERL%%/Plagger/Plugin/Aggregator
-@dirrm %%SITE_PERL%%/Plagger/Plugin
-@dirrm %%SITE_PERL%%/Plagger/Crypt
-@dirrm %%SITE_PERL%%/Plagger/Cache
-@dirrm %%SITE_PERL%%/Plagger
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plagger
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/assets/plugins/Widget-Simple
 @dirrm %%DATADIR%%/assets/plugins/Subscription-Planet

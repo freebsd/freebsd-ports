@@ -3,6 +3,7 @@
 
 PORTNAME=	imaputils
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://tsatsenko.ru/ports/distfiles/
 

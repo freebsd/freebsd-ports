@@ -5,8 +5,7 @@ PORTNAME=	nero
 PORTVERSION=	4.0.0.0
 PORTREVISION=	2
 CATEGORIES=	sysutils emulators
-MASTER_SITES=	http://ftp6.usw.nero.com/software/NeroLINUX/ \
-		ftp://ftp6.usw.nero.com/software/NeroLINUX/
+MASTER_SITES=	http://ftp20.us.nero.com/software/NeroLINUX/
 DISTNAME=	${PORTNAME}linux-${PORTVERSION}-x86
 EXTRACT_SUFX=	.rpm
 DIST_SUBDIR=	rpm
@@ -14,7 +13,6 @@ DIST_SUBDIR=	rpm
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	CD/DVD disk burner
 
-BROKEN=		Unfetchable
 RESTRICTED=	Must be downloaded from their website and a serial number must be bought
 
 ONLY_FOR_ARCHS=	i386 amd64

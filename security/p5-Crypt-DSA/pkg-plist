@@ -12,9 +12,3 @@
 %%SITE_PERL%%/Crypt/DSA/KeyChain.pm
 %%SITE_PERL%%/Crypt/DSA/Signature.pm
 %%SITE_PERL%%/Crypt/DSA/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DSA/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DSA
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/Crypt/DSA/Key
-@dirrmtry %%SITE_PERL%%/Crypt/DSA
-@dirrmtry %%SITE_PERL%%/Crypt

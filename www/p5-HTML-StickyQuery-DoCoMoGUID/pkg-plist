@@ -1,5 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/StickyQuery/DoCoMoGUID/.packlist
 %%SITE_PERL%%/HTML/StickyQuery/DoCoMoGUID.pm
 %%PERL5_MAN3%%/HTML::StickyQuery::DoCoMoGUID.3.gz
-@dirrmtry %%SITE_PERL%%/HTML/StickyQuery
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/StickyQuery/DoCoMoGUID

@@ -2,4 +2,3 @@
 %%SITE_PERL%%/MooseX/ArrayRef.pm
 %%SITE_PERL%%/MooseX/ArrayRef/Meta/Class.pm
 %%SITE_PERL%%/MooseX/ArrayRef/Meta/Instance.pm
-%%SITE_PERL%%/mach/auto/MooseX/ArrayRef/.packlist

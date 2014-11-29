@@ -20,4 +20,3 @@
 %%SITE_PERL%%/Test/Database/Handle.pm
 %%SITE_PERL%%/Test/Database/Tutorial.pod
 %%SITE_PERL%%/Test/Database/Util.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Database/.packlist

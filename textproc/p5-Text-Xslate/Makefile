@@ -3,6 +3,7 @@
 
 PORTNAME=	Text-Xslate
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SYOHEX
@@ -30,6 +31,6 @@ BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.59:${PORTSDIR}/devel/p5-ExtUtils-MakeMa
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Text/Xslate/Xslate.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Text/Xslate/Xslate.so
 
 .include <bsd.port.post.mk>

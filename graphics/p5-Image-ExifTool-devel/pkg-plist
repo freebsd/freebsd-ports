@@ -352,5 +352,4 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/XMPStruct.pl
 %%SITE_PERL%%/Image/ExifTool/ZIP.pm
 %%SITE_PERL%%/Image/ExifTool/iWork.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool/.packlist
 man/man1/exiftool.1.gz

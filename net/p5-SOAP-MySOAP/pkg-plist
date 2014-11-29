@@ -1,6 +1,2 @@
 %%SITE_PERL%%/SOAP/MySOAP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/MySOAP/.packlist
 %%PERL5_MAN3%%/SOAP::MySOAP.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/MySOAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
-@dirrmtry %%SITE_PERL%%/SOAP

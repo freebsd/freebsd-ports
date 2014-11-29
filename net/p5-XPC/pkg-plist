@@ -6,6 +6,3 @@ bin/xpcd
 %%SITE_PERL%%/XPC.pm
 %%SITE_PERL%%/XPC/Agent.pm
 %%SITE_PERL%%/XPC/Daemon.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XPC/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XPC
-@dirrmtry %%SITE_PERL%%/XPC

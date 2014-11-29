@@ -24,7 +24,6 @@
 %%SITE_PERL%%/Net/Whois/Object/RouteSet.pm
 %%SITE_PERL%%/Net/Whois/Object/RtrSet.pm
 %%SITE_PERL%%/Net/Whois/RIPE.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/RIPE/.packlist
 %%PERL5_MAN3%%/Net::Whois::Object.3.gz
 %%PERL5_MAN3%%/Net::Whois::Object::AsBlock.3.gz
 %%PERL5_MAN3%%/Net::Whois::Object::AsSet.3.gz
@@ -51,9 +50,3 @@
 %%PERL5_MAN3%%/Net::Whois::Object::RouteSet.3.gz
 %%PERL5_MAN3%%/Net::Whois::Object::RtrSet.3.gz
 %%PERL5_MAN3%%/Net::Whois::RIPE.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/RIPE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Whois/Object
-@dirrmtry %%SITE_PERL%%/Net/Whois
-@dirrmtry %%SITE_PERL%%/Net

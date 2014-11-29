@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unifi3
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.7
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 DISTNAME=	UniFi.unix
@@ -34,7 +34,7 @@ GROUPS=	unifi
 WRKSRC=	${WRKDIR}/UniFi
 
 RESTRICTED=	Redistribution of bundled firmware images is not permitted
-CONFLICTS=	unifi2-* unifi4-*
+CONFLICTS=	unifi2-[0-9]* unifi4-[0-9]* tomcat-native-[0-9]*
 
 post-extract:
 	${MKDIR} ${WRKSRC}/webapps/ROOT

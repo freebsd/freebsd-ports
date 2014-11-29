@@ -57,10 +57,3 @@
 %%SITE_PERL%%/Apache/Session/Store/Postgres.pm
 %%SITE_PERL%%/Apache/Session/Store/Sybase.pm
 %%SITE_PERL%%/Apache/Session/Sybase.pm
-@dirrmtry %%SITE_PERL%%/Apache/Session/Store
-@dirrmtry %%SITE_PERL%%/Apache/Session/Serialize
-@dirrmtry %%SITE_PERL%%/Apache/Session/MySQL
-@dirrmtry %%SITE_PERL%%/Apache/Session/Lock
-@dirrmtry %%SITE_PERL%%/Apache/Session/Generate
-@dirrmtry %%SITE_PERL%%/Apache/Session
-@dirrmtry %%SITE_PERL%%/Apache

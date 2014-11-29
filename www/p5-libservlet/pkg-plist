@@ -76,8 +76,3 @@
 %%SITE_PERL%%/Servlet/Util/Event.pm
 %%SITE_PERL%%/Servlet/Util/Exception.pm
 %%SITE_PERL%%/Servlet/Util/Principal.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/libservlet/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/libservlet
-@dirrmtry %%SITE_PERL%%/Servlet/Util
-@dirrmtry %%SITE_PERL%%/Servlet/Http
-@dirrmtry %%SITE_PERL%%/Servlet

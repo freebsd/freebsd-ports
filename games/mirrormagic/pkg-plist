@@ -1,5 +1,2 @@
-@group games
-@mode 2555
-bin/mirrormagic
-@mode
-@group
+@(,games,2555) bin/mirrormagic
+@dir(,games,775) /var/games/mirrormagic

@@ -35,7 +35,6 @@ bin/xml2yaml
 %%SITE_PERL%%/XML/Compile/xsd/2001-XMLSchema.dtd
 %%SITE_PERL%%/XML/Compile/xsd/2001-XMLSchema.xsd
 %%SITE_PERL%%/XML/Compile/xsd/2001-datatypes.dtd
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/.packlist
 %%PERL5_MAN3%%/XML::Compile.3.gz
 %%PERL5_MAN3%%/XML::Compile::FAQ.3.gz
 %%PERL5_MAN3%%/XML::Compile::Iterator.3.gz
@@ -52,10 +51,3 @@ bin/xml2yaml
 %%PERL5_MAN3%%/XML::Compile::Util.3.gz
 man/man1/schema2example.1.gz
 man/man1/xml2yaml.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Compile/xsd
-@dirrmtry %%SITE_PERL%%/XML/Compile/Translate
-@dirrmtry %%SITE_PERL%%/XML/Compile/Schema
-@dirrmtry %%SITE_PERL%%/XML/Compile
-@dirrmtry %%SITE_PERL%%/XML

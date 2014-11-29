@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/.packlist
 %%SITE_PERL%%/Mail/Address.pm
 %%SITE_PERL%%/Mail/Address.pod
 %%SITE_PERL%%/Mail/Cap.pm
@@ -41,7 +40,3 @@
 %%PERL5_MAN3%%/Mail::Mailer.3.gz
 %%PERL5_MAN3%%/Mail::Send.3.gz
 %%PERL5_MAN3%%/Mail::Util.3.gz
-@dirrmtry %%SITE_PERL%%/Mail/Mailer
-@dirrmtry %%SITE_PERL%%/Mail/Field
-@dirrmtry %%SITE_PERL%%/Mail
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail

@@ -13,4 +13,3 @@
 %%SITE_PERL%%/DBIx/NoSQL/Store.pm
 %%SITE_PERL%%/DBIx/NoSQL/TypeMap.pm
 %%SITE_PERL%%/DBIx/NoSQLite.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/NoSQL/.packlist

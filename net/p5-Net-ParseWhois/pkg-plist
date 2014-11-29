@@ -21,10 +21,3 @@
 %%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/Registrars.pm
 %%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/SRSPlus.pm
 %%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/Unknown.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ParseWhois/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ParseWhois
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/ParseWhois/Domain/Registrar
-@dirrmtry %%SITE_PERL%%/Net/ParseWhois/Domain
-@dirrmtry %%SITE_PERL%%/Net/ParseWhois
-@dirrmtry %%SITE_PERL%%/Net

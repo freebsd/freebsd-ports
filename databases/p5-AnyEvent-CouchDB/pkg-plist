@@ -3,7 +3,6 @@ bin/couchdb-push
 %%SITE_PERL%%/AnyEvent/CouchDB/Database.pm
 %%SITE_PERL%%/AnyEvent/CouchDB/Exceptions.pm
 %%SITE_PERL%%/AnyEvent/CouchDB/Stream.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/CouchDB/.packlist
 %%PERL5_MAN3%%/AnyEvent::CouchDB.3.gz
 %%PERL5_MAN3%%/AnyEvent::CouchDB::Database.3.gz
 %%PERL5_MAN3%%/AnyEvent::CouchDB::Exceptions.3.gz

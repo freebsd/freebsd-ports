@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Regexp/Shellish.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Shellish/.packlist
 %%PERL5_MAN3%%/Regexp::Shellish.3.gz

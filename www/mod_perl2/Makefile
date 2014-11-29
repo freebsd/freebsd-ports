@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	APACHE/perl
@@ -102,7 +102,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/modules/perl/mod_perl.so \
 		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_perl.so
 
-	-for f in `${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name \*.so` ; do \
+	-for f in `${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto -name \*.so` ; do \
 		${CHMOD} u+w $${f}; \
 		${STRIP_CMD} $${f}; \
 		${CHMOD} u-w $${f}; \

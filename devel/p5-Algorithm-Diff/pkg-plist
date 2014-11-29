@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Diff/.packlist
 %%SITE_PERL%%/Algorithm/Diff.pm
 %%SITE_PERL%%/Algorithm/DiffOld.pm
 %%SITE_PERL%%/Algorithm/cdiff.pl

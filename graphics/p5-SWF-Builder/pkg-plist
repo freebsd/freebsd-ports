@@ -30,5 +30,4 @@ bin/asc.plx
 %%SITE_PERL%%/SWF/Builder/ExElement.pm
 %%SITE_PERL%%/SWF/Builder/Gradient.pm
 %%SITE_PERL%%/SWF/Builder/Shape.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/Builder/.packlist
 man/man1/asc.plx.1.gz

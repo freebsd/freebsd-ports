@@ -1,3 +1,2 @@
 %%SITE_PERL%%/SOAP/Transport/FTP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/FTP/.packlist
 %%PERL5_MAN3%%/SOAP::Transport::FTP.3.gz

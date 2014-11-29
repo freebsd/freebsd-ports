@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/HTML::EscapeEvil.3.gz
 %%SITE_PERL%%/HTML/EscapeEvil.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/EscapeEvil/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/EscapeEvil
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML

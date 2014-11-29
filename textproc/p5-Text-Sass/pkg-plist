@@ -5,5 +5,3 @@ bin/sass2css.pl
 %%SITE_PERL%%/Text/Sass.pm
 %%SITE_PERL%%/Text/Sass/Expr.pm
 %%SITE_PERL%%/Text/Sass/Functions.pm
-@dirrm %%SITE_PERL%%/Text/Sass
-@dirrmtry %%SITE_PERL%%/Text

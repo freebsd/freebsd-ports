@@ -6,4 +6,3 @@
 %%SITE_PERL%%/Proc/BackOff/Exponential.pm
 %%SITE_PERL%%/Proc/BackOff/Linear.pm
 %%SITE_PERL%%/Proc/BackOff/Random.pm
-%%SITE_PERL%%/mach/auto/Proc/BackOff/.packlist

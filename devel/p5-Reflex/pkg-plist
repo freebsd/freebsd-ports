@@ -74,7 +74,6 @@
 %%SITE_PERL%%/Reflex/Trait/Watched.pm
 %%SITE_PERL%%/Reflex/UdpPeer.pm
 %%SITE_PERL%%/Reflex/Wakeup.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Reflex/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/TODO.otl
 %%PORTDOCS%%%%DOCSDIR%%/continuation-passing.otl
 %%PORTDOCS%%%%DOCSDIR%%/intro/AfterAwhileClass.pm

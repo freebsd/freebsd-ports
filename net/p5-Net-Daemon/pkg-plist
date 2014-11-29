@@ -4,8 +4,3 @@
 %%SITE_PERL%%/Net/Daemon.pm
 %%SITE_PERL%%/Net/Daemon/Log.pm
 %%SITE_PERL%%/Net/Daemon/Test.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Daemon/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Daemon
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Daemon
-@dirrmtry %%SITE_PERL%%/Net

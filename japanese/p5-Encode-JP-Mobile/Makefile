@@ -2,6 +2,7 @@
 
 PORTNAME=	Encode-JP-Mobile
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
@@ -19,7 +20,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Encode/JP/Mobile/Mobile.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Encode/JP/Mobile/Mobile.so
 
 .include <bsd.port.pre.mk>
 

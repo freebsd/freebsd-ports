@@ -4,8 +4,3 @@
 %%SITE_PERL%%/TeX/Hyphen.pm
 %%SITE_PERL%%/TeX/Hyphen/czech.pm
 %%SITE_PERL%%/TeX/Hyphen/german.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX/Hyphen/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX/Hyphen
-@dirrm %%SITE_PERL%%/TeX/Hyphen
-@dirrmtry %%SITE_PERL%%/TeX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX

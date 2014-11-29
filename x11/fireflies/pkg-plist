@@ -1,5 +1,2 @@
 bin/xscreensaver-hacks/fireflies
 share/xscreensaver/config/fireflies.xml
-@dirrmtry share/xscreensaver/config
-@dirrmtry share/xscreensaver
-@dirrmtry bin/xscreensaver-hacks

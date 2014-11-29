@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/FileHandle/Fmode.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle/Fmode/Fmode.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle/Fmode/.packlist
+%%SITE_ARCH%%/FileHandle/Fmode.pm
+%%SITE_ARCH%%/auto/FileHandle/Fmode/Fmode.so
 %%PERL5_MAN3%%/FileHandle::Fmode.3.gz

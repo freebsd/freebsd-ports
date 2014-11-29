@@ -7,9 +7,3 @@ bin/makerandom
 %%SITE_PERL%%/Crypt/Random/Provider/devurandom.pm
 %%SITE_PERL%%/Crypt/Random/Provider/egd.pm
 %%SITE_PERL%%/Crypt/Random/Provider/rand.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/Crypt/Random/Provider
-@dirrmtry %%SITE_PERL%%/Crypt/Random
-@dirrmtry %%SITE_PERL%%/Crypt

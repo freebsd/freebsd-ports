@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/net/libproxy-perl/Makefile,v 1.1 2011/01/12 13:10:53 kwm Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-perl
 
@@ -19,10 +19,10 @@ USES=		perl5
 LIBPROXY_SLAVE=	perl
 
 do-install:
-	${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/Libproxy ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/Net
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Libproxy ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/Net
 	${INSTALL_LIB} ${WRKSRC}/perl/blib/arch/auto/Net/Libproxy.so \
-		${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/Libproxy/
+		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Libproxy
 	${INSTALL_DATA} ${WRKSRC}/perl/blib/lib/Libproxy.pm \
-		${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/Net/
+		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/Net
 
 .include "${MASTERDIR}/Makefile"

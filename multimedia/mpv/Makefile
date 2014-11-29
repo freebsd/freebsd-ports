@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -24,9 +24,9 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	973b555
+GH_COMMIT=	2da6c95
 
-WAF_VERSION=	1.7.16
+WAF_VERSION=	1.8.4
 
 USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build
 USE_XORG=	x11 xv xxf86vm
@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 
 OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LIRC LUAJIT ZSH
 OPTIONS_GROUP=		IN VO AO
-OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L QUVI SMB
+OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L YTDL SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
 OPTIONS_GROUP_AO=	JACK #PULSEAUDIO
 OPTIONS_SUB=		yes
@@ -57,8 +57,8 @@ OPTIONS_SUB=		yes
 BS2B_DESC=	Enable Bauer Stereophonic-to-Binaural DSP support
 ENCA_DESC=	Enable encoding detection support
 LIBGUESS_DESC=	Enable high-speed character set detection support
-LUAJIT_DESC=	Use LuaJIT instead of Lua (Don't use with QUVI)
-QUVI_DESC=	Enable flash media stream support (Don't use with LUAJIT)
+LUAJIT_DESC=	Use LuaJIT instead of Lua
+YTDL_DESC=	Install youtube-dl
 IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
@@ -100,8 +100,7 @@ V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedi
 V4L_LIB_DEPENDS=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
 V4L_CONFIGURE_ENABLE=		tv-v4l2
 
-QUVI_LIB_DEPENDS=		libquvi.so:${PORTSDIR}/multimedia/libquvi
-QUVI_CONFIGURE_ENABLE=		libquvi
+YTDL_RUN_DEPENDS=		youtube-dl:${PORTSDIR}/www/youtube_dl
 
 SMB_LIB_DEPENDS=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 SMB_CONFIGURE_ENABLE=		libsmbclient
@@ -136,7 +135,6 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
-		-e 's|/zsh/vendor-completions|/zsh/site-functions|' \
 		${WRKSRC}/wscript_build.py
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'

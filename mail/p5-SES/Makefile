@@ -3,7 +3,7 @@
 
 PORTNAME=	SES
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://d36cz9buwru1tt.cloudfront.net/catalog/attachments/
 PKGNAMEPREFIX=	p5-

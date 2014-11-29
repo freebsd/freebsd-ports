@@ -3,7 +3,6 @@ bin/adsquery
 %%SITE_PERL%%/Astro/ADS/Query.pm
 %%SITE_PERL%%/Astro/ADS/Result.pm
 %%SITE_PERL%%/Astro/ADS/Result/Paper.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/ADS/.packlist
 %%PERL5_MAN3%%/Astro::ADS.3.gz
 %%PERL5_MAN3%%/Astro::ADS::Query.3.gz
 %%PERL5_MAN3%%/Astro::ADS::Result.3.gz

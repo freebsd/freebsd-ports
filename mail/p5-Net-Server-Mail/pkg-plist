@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server/Mail/.packlist
 %%SITE_PERL%%/Net/Server/Mail.pm
 %%SITE_PERL%%/Net/Server/Mail/ESMTP.pm
 %%SITE_PERL%%/Net/Server/Mail/ESMTP/Extension.pm
@@ -13,10 +12,3 @@
 %%PERL5_MAN3%%/Net::Server::Mail::ESMTP::XFORWARD.3.gz
 %%PERL5_MAN3%%/Net::Server::Mail::LMTP.3.gz
 %%PERL5_MAN3%%/Net::Server::Mail::SMTP.3.gz
-@dirrm %%SITE_PERL%%/Net/Server/Mail/ESMTP
-@dirrm %%SITE_PERL%%/Net/Server/Mail
-@dirrmtry %%SITE_PERL%%/Net/Server
-@dirrmtry %%SITE_PERL%%/Net
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server/Mail
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

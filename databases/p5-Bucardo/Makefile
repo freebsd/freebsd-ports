@@ -3,7 +3,7 @@
 
 PORTNAME=	Bucardo
 PORTVERSION=	5.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/ LOCAL/mat/${PORTNAME}
 PKGNAMEPREFIX=	p5-
@@ -32,7 +32,5 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dist/bucardo.rc ${STAGEDIR}${PREFIX}/etc/rc.d/bucardo
-	${RM} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Bucardo/.packlist
-	${RMDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Bucardo
 
 .include <bsd.port.mk>

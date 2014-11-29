@@ -1,7 +1,6 @@
 %%PERL5_MAN3%%/Imlib2.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/Imlib2.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imlib2/Object.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imlib2/ooimlib.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2/Imlib2.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2/autosplit.ix
+%%SITE_ARCH%%/Imlib2.pm
+%%SITE_ARCH%%/Imlib2/Object.pm
+%%SITE_ARCH%%/Imlib2/ooimlib.pl
+%%SITE_ARCH%%/auto/Imlib2/Imlib2.so
+%%SITE_ARCH%%/auto/Imlib2/autosplit.ix

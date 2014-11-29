@@ -3,5 +3,4 @@ bin/twse-eod-dump
 bin/twse-eod-update
 %%PERL5_MAN3%%/Finance::TW::TSEQuote.3.gz
 %%SITE_PERL%%/Finance/TW/TSEQuote.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW/TSEQuote/.packlist
 man/man1/pfq.1.gz

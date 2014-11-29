@@ -1,7 +1,3 @@
 %%PERL5_MAN3%%/Crypt::UnixCrypt_XS.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/UnixCrypt_XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/UnixCrypt_XS/UnixCrypt_XS.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/UnixCrypt_XS.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/UnixCrypt_XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
+%%SITE_ARCH%%/auto/Crypt/UnixCrypt_XS/UnixCrypt_XS.so
+%%SITE_ARCH%%/Crypt/UnixCrypt_XS.pm

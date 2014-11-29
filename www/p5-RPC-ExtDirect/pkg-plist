@@ -16,7 +16,6 @@
 %%SITE_PERL%%/RPC/ExtDirect/Demo/PollProvider.pm
 %%SITE_PERL%%/RPC/ExtDirect/Demo/Profile.pm
 %%SITE_PERL%%/RPC/ExtDirect/Request/PollHandler.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/ExtDirect/.packlist
 %%PERL5_MAN3%%/RPC::ExtDirect.3.gz
 %%PERL5_MAN3%%/RPC::ExtDirect::API.3.gz
 %%PERL5_MAN3%%/RPC::ExtDirect::Config.3.gz
@@ -32,9 +31,3 @@
 %%PERL5_MAN3%%/RPC::ExtDirect::Request.3.gz
 %%PERL5_MAN3%%/RPC::ExtDirect::Router.3.gz
 %%PERL5_MAN3%%/RPC::ExtDirect::Serialize.3.gz
-@dirrm %%SITE_PERL%%/RPC/ExtDirect/Request
-@dirrm %%SITE_PERL%%/RPC/ExtDirect/Demo
-@dirrm %%SITE_PERL%%/RPC/ExtDirect
-@dirrmtry %%SITE_PERL%%/RPC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/ExtDirect
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC

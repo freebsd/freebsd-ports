@@ -10,6 +10,35 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20141126:
+AUTHOR: mat@FreeBSD.org
+
+  The way Perl modules are installed has changed.  Before, we had
+
+    site_perl :           lib/perl5/site_perl/5.18
+    site_perl/perl_arch : lib/perl5/site_perl/5.18/mach
+    perl_man3 :           lib/perl5/5.18/man/man3
+
+  Now we have :
+
+    site_perl : lib/perl5/site_perl
+    site_arch : lib/perl5/site_perl/mach/5.18
+    perl_man3 : lib/perl5/site_perl/man/man3
+
+  Modules without any .so will be installed at the same place regardless of the
+  Perl version, minimizing the upgrade when the major Perl version is changed.
+  It uses a version dependent directory for modules with compiled bits.
+
+  As PERL_ARCH is no longer needed in plists, it has been removed from
+  PLIST_SUB.
+
+  The USE_PERL5=fixpacklist keyword is removed, the .packlist file is now
+  always removed, as is perllocal.pod.
+
+  The old site_perl and site_perl/arch directories have been kept in the
+  default Perl @INC for all Perl ports, and will be phased out as these old
+  Perl versions expire.
+
 20141122:
 AUTHOR: crees@FreeBSD.org
 

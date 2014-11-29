@@ -4,9 +4,3 @@
 %%SITE_PERL%%/Catalyst/Helper/View/XSLT.pm
 %%SITE_PERL%%/Catalyst/View/XSLT.pm
 %%SITE_PERL%%/Catalyst/View/XSLT/XML/LibXSLT.pm
-@dirrmtry %%SITE_PERL%%/Catalyst/View/XSLT/XML
-@dirrmtry %%SITE_PERL%%/Catalyst/View/XSLT
-@dirrmtry %%SITE_PERL%%/Catalyst/View
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper
-@dirrmtry %%SITE_PERL%%/Catalyst

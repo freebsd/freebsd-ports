@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Syntax::Highlight::Shell.3.gz
 %%SITE_PERL%%/Syntax/Highlight/Shell.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Shell/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Shell
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax
-@dirrmtry %%SITE_PERL%%/Syntax/Highlight
-@dirrmtry %%SITE_PERL%%/Syntax

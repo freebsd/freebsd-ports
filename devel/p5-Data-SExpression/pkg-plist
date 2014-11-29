@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/SExpression/.packlist
 %%SITE_PERL%%/Data/SExpression.pm
 %%SITE_PERL%%/Data/SExpression/Cons.pm
 %%SITE_PERL%%/Data/SExpression/Parser.pm

@@ -42,11 +42,3 @@
 %%SITE_PERL%%/Net/FreshBooks/API/Role/Iterator.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Role/LineItem.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Role/SendBy.pm
-@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Role
-@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Recurring/AutoBill/Card
-@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Recurring/AutoBill
-@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Recurring
-@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Client
-@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API
-@dirrmtry %%SITE_PERL%%/Net/FreshBooks
-@dirrmtry %%SITE_PERL%%/Net

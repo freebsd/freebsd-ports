@@ -76,4 +76,3 @@
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/HOWTO.pod
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Remote.pm
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Source.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/.packlist

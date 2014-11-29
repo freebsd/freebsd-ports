@@ -3,7 +3,7 @@
 
 PORTNAME=	IMDb
 PORTVERSION=	0.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	ftp://ftp.rhapsodyk.net/pub/devel/perl/
 PKGNAMEPREFIX=	p5-WWW-

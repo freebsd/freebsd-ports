@@ -27,12 +27,4 @@ bin/make_method
 %%SITE_PERL%%/RPC/XML/methodSignature.xpl
 %%SITE_PERL%%/RPC/XML/multicall.xpl
 %%SITE_PERL%%/RPC/XML/status.xpl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML/.packlist
 man/man1/make_method.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC
-@dirrmtry %%SITE_PERL%%/RPC/XML/Parser
-@dirrmtry %%SITE_PERL%%/RPC/XML
-@dirrmtry %%SITE_PERL%%/RPC
-@dirrmtry %%SITE_PERL%%/Apache/RPC
-@dirrmtry %%SITE_PERL%%/Apache

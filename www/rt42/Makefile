@@ -2,6 +2,7 @@
 
 PORTNAME=	rt
 DISTVERSION=	4.2.9
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	42
@@ -80,15 +81,12 @@ SPAWN_FCGI_DESC=		Deploy with spawn_fcgi
 SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi \
 				${FASTCGI_DEPS}
 
-MYSQL_USE=			MYSQL=yes
 MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
 
-PGSQL_USES=			pgsql
 PGSQL_RUN_DEPENDS=		${PGSQL_DEPS}
 
 ORACLE_RUN_DEPENDS=		${ORACLE_DEPS}
 
-SQLITE_USE=			SQLITE=yes
 SQLITE_RUN_DEPENDS=		${SQLITE_DEPS}
 
 DEVELOPER_DESC=			Configure for Developers

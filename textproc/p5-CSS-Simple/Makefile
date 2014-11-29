@@ -3,6 +3,7 @@
 
 PORTNAME=	CSS-Simple
 PORTVERSION=	3211
+PORTREVISION=	1
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,9 +22,5 @@ USE_PERL5=	configure
 
 PLIST_FILES=	%%SITE_PERL%%/CSS/Simple.pm \
 		%%PERL5_MAN3%%/CSS::Simple.3.gz \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Simple/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Simple \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS \
-		%%SITE_PERL%%/CSS
 
 .include <bsd.port.mk>

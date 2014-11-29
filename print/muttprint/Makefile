@@ -3,7 +3,7 @@
 
 PORTNAME?=	muttprint
 PORTVERSION=	0.72d
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES?=	print mail
 MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
@@ -12,7 +12,6 @@ COMMENT?=	Utility to print mail for most any mail client
 
 RUN_DEPENDS=	psnup:${PORTSDIR}/print/psutils \
 		uncompface:${PORTSDIR}/mail/faces \
-		convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
 
@@ -22,7 +21,10 @@ USE_TEX=	latex dvipsk
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
-OPTIONS_DEFINE=	CUPS DOCS
+OPTIONS_DEFINE=		CUPS DOCS X11
+OPTIONS_DEFAULT=	X11
+X11_DESC=		graphics/ImageMagick[-nox11] dependency
+
 CUPS_RUN_DEPENDS=	cupstestppd:${PORTSDIR}/print/cups-base \
 			espgs:${PORTSDIR}/print/cups-pstoraster
 
@@ -40,6 +42,12 @@ PRINT_COMMAND=lpr -P$$PRINTER
 
 .if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=install-with-doc
+.endif
+
+.if ${PORT_OPTIONS:MX11}
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+.else
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
 pre-everything::

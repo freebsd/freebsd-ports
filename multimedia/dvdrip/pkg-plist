@@ -98,33 +98,3 @@ man/man1/dvdrip-splitpipe.1.gz
 %%SITE_PERL%%/Video/DVDRip/splash.sr@Latn.png
 %%SITE_PERL%%/Video/DVDRip/splash.sr.png
 %%SITE_PERL%%/Video/DVDRip/translators.txt
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video
-@dirrm %%SITE_PERL%%/Video/DVDRip/Term
-@dirrm %%SITE_PERL%%/Video/DVDRip/GUI/Project
-@dirrm %%SITE_PERL%%/Video/DVDRip/GUI/Icons
-@dirrm %%SITE_PERL%%/Video/DVDRip/GUI/FormFactory
-@dirrm %%SITE_PERL%%/Video/DVDRip/GUI/Cluster
-@dirrm %%SITE_PERL%%/Video/DVDRip/GUI
-@dirrm %%SITE_PERL%%/Video/DVDRip/Cluster
-@dirrm %%SITE_PERL%%/Video/DVDRip/CPAN
-@dirrm %%SITE_PERL%%/Video/DVDRip
-@dirrmtry %%SITE_PERL%%/Video
-@dirrmtry %%SITE_PERL%%/LocaleData/sr@Latn/LC_MESSAGES
-@dirrmtry %%SITE_PERL%%/LocaleData/sr@Latn
-@dirrmtry %%SITE_PERL%%/LocaleData/sr/LC_MESSAGES
-@dirrmtry %%SITE_PERL%%/LocaleData/sr
-@dirrmtry %%SITE_PERL%%/LocaleData/it/LC_MESSAGES
-@dirrmtry %%SITE_PERL%%/LocaleData/it
-@dirrmtry %%SITE_PERL%%/LocaleData/fr/LC_MESSAGES
-@dirrmtry %%SITE_PERL%%/LocaleData/fr
-@dirrmtry %%SITE_PERL%%/LocaleData/es/LC_MESSAGES
-@dirrmtry %%SITE_PERL%%/LocaleData/es
-@dirrmtry %%SITE_PERL%%/LocaleData/de/LC_MESSAGES
-@dirrmtry %%SITE_PERL%%/LocaleData/de
-@dirrmtry %%SITE_PERL%%/LocaleData/da/LC_MESSAGES
-@dirrmtry %%SITE_PERL%%/LocaleData/da
-@dirrmtry %%SITE_PERL%%/LocaleData/cs/LC_MESSAGES
-@dirrmtry %%SITE_PERL%%/LocaleData/cs
-@dirrmtry %%SITE_PERL%%/LocaleData

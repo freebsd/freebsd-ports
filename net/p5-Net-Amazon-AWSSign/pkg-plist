@@ -1,8 +1,2 @@
 %%PERL5_MAN3%%/Net::Amazon::AWSSign.3.gz
 %%SITE_PERL%%/Net/Amazon/AWSSign.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/AWSSign/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/AWSSign
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/Amazon
-@dirrmtry %%SITE_PERL%%/Net

@@ -74,4 +74,3 @@
 %%SITE_PERL%%/Curses/UI/Tutorial.pod
 %%SITE_PERL%%/Curses/UI/Widget.pm
 %%SITE_PERL%%/Curses/UI/Window.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/UI/.packlist

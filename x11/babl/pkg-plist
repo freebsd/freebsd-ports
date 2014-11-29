@@ -27,6 +27,3 @@ lib/libbabl-0.1.so
 lib/libbabl-0.1.so.0
 lib/libbabl-0.1.so.0.109.1
 libdata/pkgconfig/babl.pc
-@dirrm lib/babl-0.1
-@dirrm include/babl-0.1/babl
-@dirrm include/babl-0.1

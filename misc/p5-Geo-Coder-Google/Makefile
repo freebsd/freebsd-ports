@@ -3,6 +3,7 @@
 
 PORTNAME=	Geo-Coder-Google
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ARCANEZ
@@ -21,6 +22,8 @@ BUILD_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-libwww>=5.5:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 USE_PERL5=	configure
 USES=		perl5

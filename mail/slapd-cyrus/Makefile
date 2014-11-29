@@ -3,7 +3,7 @@
 
 PORTNAME=	slapd-cyrus
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail net
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	Slapd-Backend-Cyrus-${PORTVERSION}
@@ -29,9 +29,9 @@ PLIST_SUB=	SITE_PERL_REL=${SITE_PERL_REL} \
 PORTDOCS=	slapd-cyrus.conf.sample
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${SITE_PERL}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_DATA} -m 0444 ${WRKSRC}/t/etc/slapd.conf.dist \
 		${STAGEDIR}${DOCSDIR}/slapd-cyrus.conf.sample
-	cd ${WRKSRC}/lib && ${PAX} -r -w . ${STAGEDIR}${SITE_PERL}
+	cd ${WRKSRC}/lib && ${PAX} -r -w . ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 
 .include <bsd.port.mk>

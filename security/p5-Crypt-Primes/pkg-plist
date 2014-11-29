@@ -1,8 +1,4 @@
 bin/largeprimes
 %%PERL5_MAN3%%/Crypt::Primes.3.gz
 %%SITE_PERL%%/Crypt/Primes.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Primes/.packlist
 man/man1/largeprimes.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Primes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/Crypt

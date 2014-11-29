@@ -21,8 +21,4 @@ bin/lanmap
 %%DATADIR%%/graph/img/switch.gif
 %%DATADIR%%/graph/img/switch.png
 %%DATADIR%%/graph/lanmap.header
-@dirrm %%DATADIR%%/graph/img
-@dirrm %%DATADIR%%/graph
-@dirrm %%DATADIR%%/data/graph
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/data/graph

@@ -1,5 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal/Encoder/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal/Encoder/Encoder.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Sereal/Encoder.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Sereal/Encoder/Constants.pm
+%%SITE_ARCH%%/auto/Sereal/Encoder/Encoder.so
+%%SITE_ARCH%%/Sereal/Encoder.pm
+%%SITE_ARCH%%/Sereal/Encoder/Constants.pm
 %%PERL5_MAN3%%/Sereal::Encoder.3.gz

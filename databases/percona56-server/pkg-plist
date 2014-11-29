@@ -40,6 +40,7 @@ lib/mysql/plugin/mypluglib.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
+lib/mysql/plugin/query_response_time.so
 lib/mysql/plugin/scalability_metrics.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
@@ -135,5 +136,15 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/slovak/errmsg.sys
 %%DATADIR%%/spanish/errmsg.sys
 %%DATADIR%%/swedish/errmsg.sys
+%%DATADIR%%/tests/suite/query_response_time/basic.result
+%%DATADIR%%/tests/suite/query_response_time/basic.test
+%%DATADIR%%/tests/suite/query_response_time/query_response_time-stored.inc
+%%DATADIR%%/tests/suite/query_response_time/query_response_time-stored.result
+%%DATADIR%%/tests/suite/query_response_time/query_response_time-stored.test
+%%DATADIR%%/tests/suite/query_response_time/query_response_time.inc
+%%DATADIR%%/tests/suite/query_response_time/query_response_time.result
+%%DATADIR%%/tests/suite/query_response_time/query_response_time.test
+%%DATADIR%%/tests/suite/query_response_time/suite.opt
+%%DATADIR%%/tests/suite/query_response_time/suite.pm
 %%DATADIR%%/ukrainian/errmsg.sys
-@dir /var/db/mysql
+@dir(mysql,mysql,) /var/db/mysql

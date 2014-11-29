@@ -178,7 +178,3 @@
 %%QUAKEWORLD%%%%QUAKEWORLD_SKINS%%%%DATADIR%%/qw/skins/wolfpak.pcx
 %%QUAKEWORLD%%%%QUAKEWORLD_SKINS%%%%DATADIR%%/qw/skins/wolfpak.txt
 %%QUAKEWORLD%%%%DATADIR%%/qw/qwprogs.dat
-%%QUAKEWORLD%%@dirrm %%DATADIR%%/qw/skins
-%%QUAKEWORLD%%@dirrm %%DATADIR%%/qw
-@dirrm %%DATADIR%%/id1
-@dirrm %%DATADIR%%

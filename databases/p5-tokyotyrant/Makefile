@@ -3,7 +3,7 @@
 
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/perlpkg/
 PKGNAMEPREFIX=	p5-

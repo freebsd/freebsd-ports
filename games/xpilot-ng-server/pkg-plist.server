@@ -16,5 +16,3 @@ share/xpilot-ng/maps/teamcup.xp
 share/xpilot-ng/maps/tourmination.xp2
 share/xpilot-ng/password.txt
 share/xpilot-ng/robots.txt
-@dirrm share/xpilot-ng/maps
-@dirrm share/xpilot-ng

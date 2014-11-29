@@ -1,4 +1,2 @@
 bin/reslog
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/reslog/.packlist
 man/man1/reslog.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/reslog

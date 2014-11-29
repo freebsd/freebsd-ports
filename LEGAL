@@ -136,7 +136,7 @@ jdk-7*-apidocs.zip	java/jdk7-doc		This documentation is under license and export
 jdk-8*-apidocs.zip	java/jdk8-doc		This documentation is under license and export control
 jdk-7*-i586.tar.gz	java/linux-sun-jdk17	Redistribution of repackaged binaries not permitted
 jdk-8*-i586.tar.gz	java/linux-oracle-jdk18	Redistribution of repackaged binaries not permitted
-jfbuild_src_*		games/jfsw		Must be distributed only through the Internet and free of charge
+jfbuild-*		games/jfsw		Must be distributed only through the Internet and free of charge
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled binaries is not permitted
 jpgraph-2.*		graphics/jpgraph2	The free version cannot be used in a commercial context
 jre-7*-i586.tar.gz	java/linux-sun-jre17	License does not allow distribution with fee
@@ -165,6 +165,7 @@ l_fc_p*_*.*.*.tar.gz	lang/ifc		Intel forbids any redistribution
 macopix-*.tar.gz	games/macopix		Contains commercial character data
 madfufw-*		audio/madfufw		No redistribution of firmware files
 majesty_demo*		games/linux-majesty-demo	Redistribution is limited, see license
+malo-fw-*.tar.gz	net/malo-firmware-kmod	Marvell refuses to grant distribution rights
 mb339pan_*		games/flightgear-mb339-pan Redistribution prohibited
 mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
 mindfocus-*		games/mindfocus		Contains commercial character data

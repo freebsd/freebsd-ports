@@ -3,7 +3,7 @@
 
 PORTNAME=	swish++
 PORTVERSION=	6.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www textproc
 MASTER_SITES=	SF/swishplusplus/swishplusplus/${PORTVERSION}
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USES=		gmake perl5
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	PERL="${PERL}" PERL_VER="${PERL_VER}"
+MAKE_ENV=	PERL="${PERL}"
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^#error/d' ${WRKSRC}/config.h

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Continuity/.packlist
 %%SITE_PERL%%/Continuity.pm
 %%SITE_PERL%%/Continuity/Adapt/FCGI.pm
 %%SITE_PERL%%/Continuity/Adapt/HttpDaemon.pm
@@ -16,6 +15,3 @@
 %%PERL5_MAN3%%/Continuity::Mapper.3.gz
 %%PERL5_MAN3%%/Continuity::Request.3.gz
 %%PERL5_MAN3%%/Continuity::RequestCallbacks.3.gz
-@dirrmtry %%SITE_PERL%%/Continuity/Adapt
-@dirrmtry %%SITE_PERL%%/Continuity
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Continuity

@@ -73,4 +73,3 @@
 %%SITE_PERL%%/auto/Log/Agent/logxcarp.al
 %%SITE_PERL%%/auto/Log/Agent/logxcroak.al
 %%SITE_PERL%%/auto/Log/Agent/prio_tag.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent/.packlist

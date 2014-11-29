@@ -96,13 +96,3 @@
 %%SITE_PERL%%/AnyEvent/XMPP/TestClient.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Util.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Writer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/XMPP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/XMPP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/IM
-@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC
-@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco
-@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/Ext
-@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/Error
-@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP
-@dirrmtry %%SITE_PERL%%/AnyEvent

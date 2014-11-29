@@ -2,10 +2,3 @@
 %%PERL5_MAN3%%/Catalyst::Plugin::Prototype.3.gz
 %%SITE_PERL%%/Catalyst/Helper/Prototype.pm
 %%SITE_PERL%%/Catalyst/Plugin/Prototype.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Prototype/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Prototype
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst/Helper
-@dirrmtry %%SITE_PERL%%/Catalyst

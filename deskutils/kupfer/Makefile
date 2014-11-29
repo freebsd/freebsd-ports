@@ -11,6 +11,8 @@ COMMENT=	Convenient command and access tool
 
 LICENSE=	GPLv3
 
+BROKEN=		Uses unknown GNOME component pygnomedesktop
+
 BUILD_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils \
 		xml2po:${PORTSDIR}/textproc/gnome-doc-utils \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \

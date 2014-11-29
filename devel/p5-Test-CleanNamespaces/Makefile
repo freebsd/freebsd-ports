@@ -3,6 +3,7 @@
 
 PORTNAME=	Test-CleanNamespaces
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,12 +30,7 @@ TEST_DEPENDS=	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CleanNamespaces/.packlist \
-		%%SITE_PERL%%/Test/CleanNamespaces.pm \
+PLIST_FILES=	%%SITE_PERL%%/Test/CleanNamespaces.pm \
 		%%PERL5_MAN3%%/Test::CleanNamespaces.3.gz
-
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CleanNamespaces
-PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test \
-		%%SITE_PERL%%/Test
 
 .include <bsd.port.mk>

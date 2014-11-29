@@ -13,8 +13,9 @@ COMMENT=	Adaptive Communication Environment for C++
 
 WRKSRC=		${WRKDIR}/ACE_wrappers
 
-USES=		gmake perl5 pkgconfig tar:bzip2
+USES=		gmake perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
+SHEBANG_FILES=	bin/*.pl MPC/*.pl
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
 		CROSS-COMPILE=1
 MAKEFILE=	GNUmakefile

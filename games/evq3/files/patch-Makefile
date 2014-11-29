@@ -1,5 +1,5 @@
---- ./Makefile.orig	2008-06-11 23:35:55.000000000 -0300
-+++ ./Makefile	2008-06-27 20:31:07.000000000 -0300
+--- Makefile.orig	2014-11-28 23:19:34.000000000 +0300
++++ Makefile	2014-11-28 23:21:07.000000000 +0300
 @@ -23,29 +23,6 @@
    endif
  endif
@@ -106,10 +106,10 @@
 -  else #default to i386
 -    ARCH=i386
 -  endif #alpha test
--
 +  BASE_CFLAGS = -DARCH='\"$(ARCH)\"' -I$(LOCALBASE)/include -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
 +    -DLIBDIR='\"$(LIBDIR)\"' -DUSE_ICON $(shell sdl-config --cflags)
  
+-
 -  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
 -    -DUSE_ICON $(shell sdl-config --cflags)
 +  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
@@ -139,7 +139,7 @@
 +    RELEASE_CFLAGS+=-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
 +       -fexpensive-optimizations
 +    ifeq ($(ARCH),i386)
-+      RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 \
++      RELEASE_CFLAGS+=-falign-functions=2 \
 +         -fstrength-reduce
 +    endif
    endif

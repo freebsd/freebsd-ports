@@ -21,9 +21,3 @@
 %%SITE_PERL%%/Tiffany/Text/MicroTemplate/File.pm
 %%SITE_PERL%%/Tiffany/Text/Xslate.pm
 %%SITE_PERL%%/Tiffany/Util.pm
-@dirrmtry %%SITE_PERL%%/Tiffany/Text/MicroTemplate
-@dirrmtry %%SITE_PERL%%/Tiffany/Text
-@dirrmtry %%SITE_PERL%%/Tiffany/Template
-@dirrmtry %%SITE_PERL%%/Tiffany/HTML/Template
-@dirrmtry %%SITE_PERL%%/Tiffany/HTML
-@dirrmtry %%SITE_PERL%%/Tiffany

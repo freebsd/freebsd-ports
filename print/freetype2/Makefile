@@ -4,7 +4,7 @@
 
 PORTNAME=	freetype2
 PORTVERSION=	2.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
@@ -18,7 +18,7 @@ DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Free and portable TrueType font rendering engine
 
-USES=		gmake libtool:keepla tar:bzip2
+USES=		gmake libtool tar:bzip2
 MAKE_ENV=	TOP=""
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--without-harfbuzz
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
 
 OPTIONS_DEFINE=		LCD_FILTERING PNG
+OPTIONS_DEFAULT=	LCD_FILTERING
 LCD_FILTERING_DESC?=	Sub-pixel rendering (patented)
 PNG_DESC=		Png compressed OpenType embedded bitmaps support
 

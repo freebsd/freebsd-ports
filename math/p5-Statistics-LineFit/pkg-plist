@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Statistics::LineFit.3.gz
 %%SITE_PERL%%/Statistics/LineFit.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/LineFit/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/LineFit
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
-@dirrmtry %%SITE_PERL%%/Statistics

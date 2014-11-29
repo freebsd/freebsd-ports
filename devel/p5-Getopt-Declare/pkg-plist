@@ -1,3 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Declare/.packlist
 %%SITE_PERL%%/Getopt/Declare.pm
 %%PERL5_MAN3%%/Getopt::Declare.3.gz

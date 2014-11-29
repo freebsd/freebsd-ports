@@ -2,7 +2,7 @@
 
 PORTNAME=	Ark
 PORTVERSION=	0.1.r1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://cloud.github.com/downloads/typester/ark-perl/ \
 		${MASTER_SITE_LOCAL}

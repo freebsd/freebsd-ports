@@ -13,12 +13,12 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN=		Fails to compile in PC-BSD poudriere
-OPTIONS_DEFINE=	PURE EXAMPLES HTML PDF DOCS
+OPTIONS_DEFINE=	PURE EXAMPLES HTML PDF DOCS SILENT
 OPTIONS_DEFAULT=EXAMPLES
 PURE_DESC=	Use all libraries from bundle, do not depend on anything
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
+SILENT_DESC=	Don't spam screen with build logs
 
 PURE_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-gcc-isl-0.13-compatibility
 PURE_LIB_DEPENDS_OFF=	\

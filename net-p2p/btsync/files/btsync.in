@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: %%PORTNAME%%
-# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
@@ -33,7 +34,7 @@ command="%%PREFIX%%/bin/btsync"
 command_args="--config %%PREFIX%%/etc/%%PORTNAME%%.conf"
 
 start_precmd=%%PORTNAME%%_prestart
-%%PORTNAME%%_prestart(){
+%%PORTNAME%%_prestart() {
 	if [ ! -d ${pidfile%/*} ]; then
 		install -d -o $%%PORTNAME%%_user -g $%%PORTNAME%%_group ${pidfile%/*}
 	fi

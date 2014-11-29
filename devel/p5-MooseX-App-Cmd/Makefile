@@ -3,6 +3,7 @@
 
 PORTNAME=	MooseX-App-Cmd
 PORTVERSION=	0.27
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,5 +30,14 @@ TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 
 USES=		perl5
 USE_PERL5=	configure
+
+# Don't conflict with devel/p5-MouseX-App-Cmd
+post-install:
+	${RM} \
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/MouseX/App/Cmd.pm \
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/MouseX/App/Cmd/Command.pm \
+		${STAGEDIR}${MAN3PREFIX}/man/man3/MouseX::App::Cmd.3 \
+		${STAGEDIR}${MAN3PREFIX}/man/man3/MouseX::App::Cmd::Command.3
+	${RMDIR} -p ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/MouseX/App/Cmd 2>/dev/null || :
 
 .include <bsd.port.mk>

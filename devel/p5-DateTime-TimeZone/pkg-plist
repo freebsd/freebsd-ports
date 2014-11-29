@@ -1,23 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone/.packlist
 %%SITE_PERL%%/DateTime/TimeZone.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Abidjan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Accra.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Addis_Ababa.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Algiers.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Asmara.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Bissau.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Cairo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Casablanca.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Ceuta.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Dar_es_Salaam.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Djibouti.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/El_Aaiun.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Johannesburg.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Kampala.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Khartoum.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Lagos.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Maputo.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Mogadishu.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Monrovia.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Nairobi.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Ndjamena.pm
@@ -313,22 +306,18 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Zurich.pm
 %%SITE_PERL%%/DateTime/TimeZone/Floating.pm
 %%SITE_PERL%%/DateTime/TimeZone/HST.pm
-%%SITE_PERL%%/DateTime/TimeZone/Indian/Antananarivo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Chagos.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Christmas.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Cocos.pm
-%%SITE_PERL%%/DateTime/TimeZone/Indian/Comoro.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Kerguelen.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Mahe.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Maldives.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Mauritius.pm
-%%SITE_PERL%%/DateTime/TimeZone/Indian/Mayotte.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Reunion.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local/Android.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local/Unix.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local/VMS.pm
-%%SITE_PERL%%/DateTime/TimeZone/Local/Win32.pm
 %%SITE_PERL%%/DateTime/TimeZone/MET.pm
 %%SITE_PERL%%/DateTime/TimeZone/MST.pm
 %%SITE_PERL%%/DateTime/TimeZone/MST7MDT.pm
@@ -385,25 +374,6 @@
 %%PERL5_MAN3%%/DateTime::TimeZone::Local.3.gz
 %%PERL5_MAN3%%/DateTime::TimeZone::Local::Unix.3.gz
 %%PERL5_MAN3%%/DateTime::TimeZone::Local::VMS.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Local::Win32.3.gz
 %%PERL5_MAN3%%/DateTime::TimeZone::OffsetOnly.3.gz
 %%PERL5_MAN3%%/DateTime::TimeZone::OlsonDB.3.gz
 %%PERL5_MAN3%%/DateTime::TimeZone::UTC.3.gz
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dir %%SITE_PERL%%/DateTime/TimeZone/Pacific
-@dir %%SITE_PERL%%/DateTime/TimeZone/OlsonDB
-@dir %%SITE_PERL%%/DateTime/TimeZone/Local
-@dir %%SITE_PERL%%/DateTime/TimeZone/Indian
-@dir %%SITE_PERL%%/DateTime/TimeZone/Europe
-@dir %%SITE_PERL%%/DateTime/TimeZone/Australia
-@dir %%SITE_PERL%%/DateTime/TimeZone/Atlantic
-@dir %%SITE_PERL%%/DateTime/TimeZone/Asia
-@dir %%SITE_PERL%%/DateTime/TimeZone/Antarctica
-@dir %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota
-@dir %%SITE_PERL%%/DateTime/TimeZone/America/Kentucky
-@dir %%SITE_PERL%%/DateTime/TimeZone/America/Indiana
-@dir %%SITE_PERL%%/DateTime/TimeZone/America/Argentina
-@dir %%SITE_PERL%%/DateTime/TimeZone/America
-@dir %%SITE_PERL%%/DateTime/TimeZone/Africa
-@dir %%SITE_PERL%%/DateTime/TimeZone
-@dir %%SITE_PERL%%/DateTime

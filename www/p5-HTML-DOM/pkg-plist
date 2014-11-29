@@ -72,7 +72,6 @@
 %%PERL5_MAN3%%/HTML::DOM::NodeList::Radio.3.gz
 %%PERL5_MAN3%%/HTML::DOM::Text.3.gz
 %%PERL5_MAN3%%/HTML::DOM::View.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/DOM/.packlist
 %%SITE_PERL%%/HTML/DOM.pm
 %%SITE_PERL%%/HTML/DOM/Attr.pm
 %%SITE_PERL%%/HTML/DOM/CharacterData.pm

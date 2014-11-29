@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/LEGO::RCX.3.gz
 %%SITE_PERL%%/LEGO/RCX.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/LEGO/RCX/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LEGO/RCX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LEGO
-@dirrmtry %%SITE_PERL%%/LEGO

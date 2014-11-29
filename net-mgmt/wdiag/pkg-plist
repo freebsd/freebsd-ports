@@ -2,4 +2,3 @@ bin/wstart
 bin/wstop
 bin/westell
 %%EXAMPLESDIR%%/wdiag.conf
-@dirrm %%EXAMPLESDIR%%

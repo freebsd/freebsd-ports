@@ -19,4 +19,8 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig tar:bzip2
 USE_EFL=	edje elementary libtool_hack modarch_hack
 
+BROKEN=		Don't build with Enlightenment 0.19
+DEPRECATED=	Broken and updates aren't available
+EXPIRATION_DATE=2014-12-31
+
 .include <bsd.port.mk>

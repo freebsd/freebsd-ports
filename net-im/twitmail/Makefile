@@ -3,6 +3,7 @@
 
 PORTNAME=	twitmail
 PORTVERSION=	0.42
+PORTREVISION=	1
 CATEGORIES=	net-im perl5
 MASTER_SITES=	http://www.hardakers.net/twitmail/releases/
 

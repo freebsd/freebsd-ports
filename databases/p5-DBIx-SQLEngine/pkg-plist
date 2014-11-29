@@ -119,4 +119,3 @@
 %%SITE_PERL%%/DBIx/SQLEngine/Schema/TableSet.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Utility/CloneWithParams.pm
 %%SITE_PERL%%/DBIx/test_cfg.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SQLEngine/.packlist

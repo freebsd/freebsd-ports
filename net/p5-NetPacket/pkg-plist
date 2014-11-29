@@ -16,4 +16,3 @@
 %%PERL5_MAN3%%/NetPacket::TCP.3.gz
 %%PERL5_MAN3%%/NetPacket::UDP.3.gz
 %%PERL5_MAN3%%/NetPacket::USBMon.3.gz
-@dirrm %%SITE_PERL%%/NetPacket

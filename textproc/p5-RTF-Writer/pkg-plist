@@ -5,8 +5,3 @@
 %%SITE_PERL%%/RTF/Writer.pm
 %%SITE_PERL%%/RTF/Writer.pod
 %%SITE_PERL%%/RTF/Writer/TableRowDecl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Writer/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Writer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF
-@dirrmtry %%SITE_PERL%%/RTF/Writer
-@dirrmtry %%SITE_PERL%%/RTF

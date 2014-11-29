@@ -3,7 +3,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.14.4.5229
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -77,7 +77,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
 .endfor
 	# Create empty rrd dir writable by www
-	@${INSTALL} -d -o www -g www ${STAGEDIR}/${WWWDIR}/rrd
+	@${MKDIR} ${STAGEDIR}/${WWWDIR}/rrd
 	# Files in scripts dir should be executable
 	@${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
 
@@ -93,8 +93,5 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${EXAMPLESDIR}
 .endfor
 .endif
-
-post-install:
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>

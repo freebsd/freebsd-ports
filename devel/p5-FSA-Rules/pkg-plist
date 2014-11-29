@@ -1,3 +1,2 @@
 %%SITE_PERL%%/FSA/Rules.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FSA/Rules/.packlist
 %%PERL5_MAN3%%/FSA::Rules.3.gz

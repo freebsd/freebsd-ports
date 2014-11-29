@@ -1,13 +1,13 @@
---- src/Makefile.in.orig	Thu Aug  7 15:58:28 2003
-+++ src/Makefile.in	Thu Sep  4 09:44:20 2003
-@@ -163,8 +163,8 @@
- target_alias = @target_alias@
- 
- localedir = $(datadir)/locale
+--- src/Makefile.in.orig	2014-11-24 20:10:25.000000000 +0100
++++ src/Makefile.in	2014-11-24 20:10:57.000000000 +0100
+@@ -327,8 +327,8 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -fontdir = $(datadir)/fonts/truetype
 -cachedir = $(localstatedir)/cache/xfstt
 +fontdir = %%TTFONTDIR%%
 +cachedir = %%TTFONTDIR%%
  pidfile = $(localstatedir)/run/xfstt.pid
- 
- LDADD = @LIBINTL@ -L$(top_srcdir)/libfstt -lfstt
+ LDADD = @LIBINTL@ -L$(top_builddir)/libfstt -lfstt
+ AM_CPPFLAGS = -DLOCALEDIR=\""$(localedir)\"" -DFONTDIR=\""$(fontdir)\"" \

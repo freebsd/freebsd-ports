@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/BeginLift.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/BeginLift/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/BeginLift/BeginLift.so
+%%SITE_ARCH%%/Devel/BeginLift.pm
+%%SITE_ARCH%%/auto/Devel/BeginLift/BeginLift.so
 %%PERL5_MAN3%%/Devel::BeginLift.3.gz

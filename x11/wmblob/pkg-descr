@@ -5,7 +5,7 @@ run with other window mangers.
 How to use it:
 
   Just start it. There are no command line options. You can change the
-  colors with the three mouse buttons.
+  colors with the three mouse buttons:
 
     - Left button: changes the inner color of the blobs.
     - Middle button: changes the border color of the blobs.
@@ -13,4 +13,4 @@ How to use it:
 
   There are 16 colors available. But not every combination looks good.
 
-WWW: http://BSDforge.com/projects/xzz/wmblob/
+WWW: http://BSDforge.com/projects/x11/wmblob/

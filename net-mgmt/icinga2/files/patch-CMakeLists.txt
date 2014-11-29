@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2014-11-24 21:13:28.953855765 +0100
++++ CMakeLists.txt	2014-11-24 21:13:39.486871283 +0100
+@@ -28,8 +28,8 @@
+       FORCE)
+ endif()
+ 
+-option(ICINGA2_WITH_MYSQL "MySQL support" ON)
+-option(ICINGA2_WITH_PGSQL "PostgreSQL support" ON)
++option(ICINGA2_WITH_MYSQL "MySQL support" OFF)
++option(ICINGA2_WITH_PGSQL "PostgreSQL support" OFF)
+ 
+ file(STRINGS icinga2.spec VERSION_LINE REGEX "^Version: ")
+ string(REPLACE "Version: " "" ICINGA2_VERSION ${VERSION_LINE})

@@ -1,5 +1,1 @@
 %%SITE_PERL%%/IMAP/Sieve.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IMAP/Sieve/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMAP/Sieve
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMAP
-@dirrmtry %%SITE_PERL%%/IMAP

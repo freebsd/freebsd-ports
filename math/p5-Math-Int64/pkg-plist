@@ -1,9 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Int64.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Int64/die_on_overflow.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/Int64/native_if_available.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Int64/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Int64/Int64.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Math/UInt64.pm
+%%SITE_ARCH%%/Math/Int64.pm
+%%SITE_ARCH%%/Math/Int64/die_on_overflow.pm
+%%SITE_ARCH%%/Math/Int64/native_if_available.pm
+%%SITE_ARCH%%/auto/Math/Int64/Int64.so
+%%SITE_ARCH%%/Math/UInt64.pm
 %%PERL5_MAN3%%/Math::Int64.3.gz
 %%PERL5_MAN3%%/Math::Int64::die_on_overflow.3.gz
 %%PERL5_MAN3%%/Math::UInt64.3.gz

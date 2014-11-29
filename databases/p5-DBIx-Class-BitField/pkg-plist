@@ -2,4 +2,3 @@
 %%PERL5_MAN3%%/DBIx::Class::ResultSet::BitField.3.gz
 %%SITE_PERL%%/DBIx/Class/BitField.pm
 %%SITE_PERL%%/DBIx/Class/ResultSet/BitField.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/BitField/.packlist

@@ -15,6 +15,5 @@ bin/indexdump
 %%SITE_PERL%%/XBase/Memo.pm
 %%SITE_PERL%%/XBase/SDBM.pm
 %%SITE_PERL%%/XBase/SQL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XBase/.packlist
 man/man1/dbfdump.1.gz
 man/man1/indexdump.1.gz

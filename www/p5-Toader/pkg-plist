@@ -85,17 +85,3 @@ bin/toader-temp
 %%SITE_PERL%%/Toader/findToaderRoot.pm
 %%SITE_PERL%%/Toader/isaToaderDir.pm
 %%SITE_PERL%%/Toader/pathHelper.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Toader/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Toader
-@dirrm %%SITE_PERL%%/Toader/Templates
-@dirrm %%SITE_PERL%%/Toader/Render/Page/backends
-@dirrm %%SITE_PERL%%/Toader/Render/Page
-@dirrm %%SITE_PERL%%/Toader/Render/Entry/backends
-@dirrm %%SITE_PERL%%/Toader/Render/Entry
-@dirrm %%SITE_PERL%%/Toader/Render/Directory/backends
-@dirrm %%SITE_PERL%%/Toader/Render/Directory
-@dirrm %%SITE_PERL%%/Toader/Render/AutoDoc
-@dirrm %%SITE_PERL%%/Toader/Render
-@dirrm %%SITE_PERL%%/Toader/Page
-@dirrm %%SITE_PERL%%/Toader/Entry
-@dirrm %%SITE_PERL%%/Toader

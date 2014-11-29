@@ -3,6 +3,7 @@
 
 PORTNAME=	Search-Xapian10
 PORTVERSION=	1.0.23.0
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/
 PKGNAMEPREFIX=	p5-

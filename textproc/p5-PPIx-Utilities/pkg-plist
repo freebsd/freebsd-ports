@@ -6,6 +6,3 @@
 %%SITE_PERL%%/PPIx/Utilities/Exception/Bug.pm
 %%SITE_PERL%%/PPIx/Utilities/Node.pm
 %%SITE_PERL%%/PPIx/Utilities/Statement.pm
-@dirrmtry %%SITE_PERL%%/PPIx/Utilities/Exception
-@dirrmtry %%SITE_PERL%%/PPIx/Utilities
-@dirrmtry %%SITE_PERL%%/PPIx

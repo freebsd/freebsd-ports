@@ -1,10 +1,2 @@
 %%PERL5_MAN3%%/Lingua::EN::Inflect::Phrase.3.gz
 %%SITE_PERL%%/Lingua/EN/Inflect/Phrase.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Inflect/Phrase/.packlist
-@dirrmtry %%SITE_PERL%%/Lingua/EN/Inflect
-@dirrmtry %%SITE_PERL%%/Lingua/EN
-@dirrmtry %%SITE_PERL%%/Lingua
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Inflect/Phrase
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Inflect
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

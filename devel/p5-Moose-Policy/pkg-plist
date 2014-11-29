@@ -6,4 +6,3 @@
 %%SITE_PERL%%/Moose/Policy/FollowPBP.pm
 %%SITE_PERL%%/Moose/Policy/JavaAccessors.pm
 %%SITE_PERL%%/Moose/Policy/SingleInheritence.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Policy/.packlist

@@ -1,4 +1,4 @@
-PgAccess is a pretty GUI (Griphical User Interface) for the open source
+PgAccess is a pretty GUI (Graphical User Interface) for the open source
 database PostgreSQL.
 
 PgAccess is a cross-platform database management tool for PostgreSQL, written in
@@ -8,6 +8,6 @@ database and remote clients).
 
 PgAccess was originally written by Constantin Teodorescu using Visual Tcl,
 "the best tool for developing Tcl/Tk applications I've ever seen."
-It is currently managed by hte developers at BSDforge.com.
+It is currently managed by the developers at BSDforge.com.
 
 WWW: http://BSDforge.com/projects/databases/pgaccess/

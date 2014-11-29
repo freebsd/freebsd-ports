@@ -3,6 +3,7 @@
 
 PORTNAME=	Device-USB
 PORTVERSION=	0.35
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/

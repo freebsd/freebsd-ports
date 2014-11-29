@@ -8,5 +8,3 @@
 %%PERL5_MAN3%%/Router::Simple::Declare.3.gz
 %%PERL5_MAN3%%/Router::Simple::Route.3.gz
 %%PERL5_MAN3%%/Router::Simple::SubMapper.3.gz
-@dirrmtry %%SITE_PERL%%/Router/Simple
-@dirrmtry %%SITE_PERL%%/Router

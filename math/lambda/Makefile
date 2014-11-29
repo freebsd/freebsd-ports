@@ -11,8 +11,9 @@ COMMENT=	Lambda calculus interpreter
 
 LICENSE=	GPLv2
 
-USES=		perl5 readline
+USES=		perl5 readline shebangfix
 USE_PERL5=	build
+SHEBANG_FILES=	docs/trans_xml_for_cat.pl
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
