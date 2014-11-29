@@ -9,6 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File integrity verification program
 
+USES=		makeinfo
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME} utils
 
