@@ -75,4 +75,3 @@ bin/gillo3
 %%DATADIR%%/training.mod
 %%DATADIR%%/wheelstripes.rgb
 %%DATADIR%%/zzap.wav
-@dirrm %%DATADIR%%
