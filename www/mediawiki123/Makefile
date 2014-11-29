@@ -8,11 +8,11 @@ MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	123
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	The wiki engine used by Wikipedia
+COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki119-[0-9]* mediawiki12[12]-[0-9]*
+CONFLICTS=	mediawiki119-[0-9]* mediawiki12[24]-[0-9]*
 
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom json
 WANT_PHP_WEB=	yes
