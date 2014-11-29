@@ -10,7 +10,3 @@
 %%GAMELIBS%%%%LIBDIR%%/missionpack/qagame.so
 %%GAMELIBS%%%%LIBDIR%%/missionpack/ui.so
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%GAMELIBS%%@dirrm %%LIBDIR%%/missionpack
-@dirrm %%LIBDIR%%/baseq3
-@dirrm %%LIBDIR%%
