@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus2courier
-DISTVERSION=	1.4
+PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.madness.at/~mad/projects/ \
 		CRITICAL
