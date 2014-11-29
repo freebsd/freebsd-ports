@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jpmobile
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.4
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
