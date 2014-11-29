@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	walcommander
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	x11-fm
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	corporateshark
 GH_PROJECT=	WalCommander
 GH_TAGNAME=	release-${PORTVERSION}
-GH_COMMIT=	a73beeb
+GH_COMMIT=	362ad22
 
 USES=		compiler:c++11-lib cmake
 USE_XORG=	x11
@@ -24,7 +24,7 @@ PORTDOCS=	CHANGELOG CHANGELOG.GitHub README.md readme_eng.txt
 
 PLIST_FILES=	bin/wcm \
 		share/applications/wcm.desktop \
-		share/pixmaps/wcm.ico
+		share/pixmaps/wcm.png
 
 OPTIONS_DEFINE=	FREETYPE SMB SSH DOCS
 OPTIONS_DEFAULT=FREETYPE SMB SSH
