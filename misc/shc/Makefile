@@ -6,10 +6,14 @@ PORTVERSION=	3.8.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/ \
 		CRITICAL
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generic script compiler
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/Copying
+
+USES=		tar:tgz
 
 PLIST_FILES=	bin/shc man/man1/shc.1.gz
 
