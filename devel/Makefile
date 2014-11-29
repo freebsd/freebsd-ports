@@ -535,6 +535,8 @@
     SUBDIR += gettext
     SUBDIR += gettext-lint
     SUBDIR += gettext-msghack
+    SUBDIR += gettext-runtime
+    SUBDIR += gettext-tools
     SUBDIR += gflags
     SUBDIR += giggle
     SUBDIR += gindent
