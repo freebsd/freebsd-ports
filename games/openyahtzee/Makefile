@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/scoped_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=		tar:bzip2 compiler:c++11-lang
+USES=		compiler:c++11-lib tar:bzip2
 USE_WX=		2.8
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
