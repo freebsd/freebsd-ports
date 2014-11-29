@@ -26,7 +26,7 @@ GROUPS=	${USERS}
 BUNDLE_LIBS=	yes
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	It is a binary-only program. Source code not available.
+ONLY_FOR_ARCHS_REASON=	binary-only program, source code not available
 
 .include <bsd.port.pre.mk>
 
