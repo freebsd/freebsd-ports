@@ -15,7 +15,8 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
-USES=		gmake libtool pathfix pkgconfig python:build tar:bzip2
+USES=		gettext-tools gmake libtool pathfix pkgconfig python:build \
+		tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 gnomedocutils intltool libxml2 \

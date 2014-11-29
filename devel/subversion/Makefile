@@ -68,7 +68,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 .if ${PORT_OPTIONS:MSTATIC}
 .  if ${PORT_OPTIONS:MNLS}
-USES+=			gettext:build
+USES+=			gettext-tools
 .  endif
 .  if ${PORT_OPTIONS:MBDB}
 BDB_BUILD_DEPENDS=	yes

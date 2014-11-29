@@ -3,7 +3,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.10.10
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -11,8 +11,8 @@ DISTNAME=	pidgin-${PORTVERSION}
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
-USES=		cpe gmake libtool pathfix pkgconfig tar:bzip2
-USE_GNOME?=	gnomeprefix intlhack glib20 libxml2
+USES=		cpe gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME?=	gnomeprefix intltool glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-consoleui \
@@ -26,7 +26,7 @@ INSTALL_TARGET=	install-strip
 .if !defined(PIDGIN_SLAVE)
 # Pidgin slave ports that require the following functionality, must explicitly
 # set these macros themselves.
-USES+=		gettext iconv python
+USES+=		iconv python
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 

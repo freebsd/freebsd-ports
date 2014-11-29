@@ -3,7 +3,7 @@
 
 PORTNAME=	pythonsudoku
 PORTVERSION=	0.13
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/Python%20Sudoku/${PORTVERSION}/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -36,7 +36,7 @@ DESKTOP_ENTRIES="Python Sudoku" "" "${PORTNAME}" \
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext:run
+NLS_USES=	gettext-runtime:run
 
 .include <bsd.port.options.mk>
 

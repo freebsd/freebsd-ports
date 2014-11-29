@@ -25,7 +25,7 @@ PLIST_FILES=	libexec/gkrellm2/plugins/volume.so \
 		share/locale/pl/LC_MESSAGES/gkrellm-volume.mo \
 		share/locale/ru/LC_MESSAGES/gkrellm-volume.mo
 
-USES=		gmake pkgconfig
+USES=		gettext gmake pkgconfig
 
 PLUGIN_DIR=	${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 

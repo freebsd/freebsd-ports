@@ -13,12 +13,12 @@ COMMENT=	GTK application to securely store sensitive data
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libgringotts.so:${PORTSDIR}/security/libgringotts
 
-USES=		pkgconfig
+USES=		gettext pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 

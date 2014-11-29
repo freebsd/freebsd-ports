@@ -46,8 +46,7 @@ LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool:build pkgconfig python:build
-USE_AUTOTOOLS=	autoconf:env automake:env
+USES=		autoreconf:build gmake iconv libtool:build pkgconfig python:build
 
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 PLIST_FILES=	bin/HandBrakeCLI
@@ -79,8 +78,11 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
 .if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--disable-gtk-update-checks --disable-gst
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libnotify.so:${PORTSDIR}/devel/libnotify
+USES+=		gettext
 USE_GNOME+=	gtk20
 PLIST_FILES+=	bin/HandBrake
 .else

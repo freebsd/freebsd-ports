@@ -1,0 +1,18 @@
+# $FreeBSD$
+
+# NOTE: before committing to this port, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
+
+PORTVERSION=	0.19.3
+PORTREVISION?=	0 # Leave this zero. Set in Makefile instead.
+CATEGORIES=	devel
+MASTER_SITES=	GNU/gettext
+DISTNAME=	gettext-${PORTVERSION}
+
+MAINTAINER=	autotools@FreeBSD.org
+
+DISTINFO_FILE=	${.CURDIR}/../gettext/distinfo
+
+DATADIR=	${PREFIX}/share/gettext
+DOCSDIR=	${PREFIX}/share/doc/gettext

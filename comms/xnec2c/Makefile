@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libccm.so:${PORTSDIR}/math/ccmath
 
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2 pkgconfig gmake
+USES=		gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	DOCS

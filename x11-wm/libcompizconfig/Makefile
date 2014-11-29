@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compi
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	intltool libxml2
 
 CPPFLAGS+=	-I${LOCALBASE}/include

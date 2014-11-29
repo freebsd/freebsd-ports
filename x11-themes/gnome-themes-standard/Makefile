@@ -13,7 +13,7 @@ COMMENT=	Standard themes for GNOME
 
 CONFLICTS=	gnome-themes-2.[0-9]*
 
-USES=		gettext:build gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext-tools gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack librsvg2
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

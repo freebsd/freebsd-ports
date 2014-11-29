@@ -1,7 +1,4 @@
-This is the GNU gettext package.  It is interesting for authors or
-maintainers of other packages or programs which they want to see
-internationalized.  As one step the handling of messages in different
-languages should be implemented.  For this task GNU gettext provides
-the needed tools and library functions.
+GNU gettext is a framework of libraries and tools for internationalisation 
+and localisation of software.
 
 WWW: http://www.gnu.org/software/gettext/

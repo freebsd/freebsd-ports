@@ -3,7 +3,7 @@
 
 PORTNAME=	cuyo
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext:run
+NLS_USES=	gettext-runtime:run
 
 # Do not use older versions
 PORTSCOUT=	skipv:2.~-1.2~beta1

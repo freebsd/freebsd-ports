@@ -13,12 +13,12 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libosp.so:${PORTSDIR}/textproc/opensp
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info
+USES=		desktop-file-utils gettext gmake pkgconfig shared-mime-info
 USE_GNOME=	gnomehier gtk20
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 

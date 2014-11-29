@@ -14,7 +14,7 @@ COMMENT=	Documents targeted for GNOME developers
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 #RUN_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnome-doc-utils
 
-USES=		gmake pkgconfig tar:xz
+USES=		gettext-tools gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

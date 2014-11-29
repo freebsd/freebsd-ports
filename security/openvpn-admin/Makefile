@@ -14,13 +14,11 @@ RUN_DEPENDS=	openvpn:${PORTSDIR}/security/openvpn
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/b//}
 
-USES=		gmake pkgconfig
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtksharp20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-.include <bsd.port.pre.mk>
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/iconv,${LOCALBASE}/bin/iconv,g' \
@@ -37,4 +35,4 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openvpn
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

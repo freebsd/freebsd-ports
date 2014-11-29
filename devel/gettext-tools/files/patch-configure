@@ -1,0 +1,20 @@
+--- configure.orig	2014-07-14 07:30:23 UTC
++++ configure
+@@ -18293,7 +18293,7 @@
+              # thread: pthread_create from libc will fail, whereas
+              # pthread_create will actually create a thread.
+              case "$host_os" in
+-               solaris* | hpux*)
++               solaris* | hpux* | freebsd*)
+ 
+ $as_echo "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
+ 
+@@ -21679,7 +21679,7 @@
+                                         if { eval "gt_val=\$$gt_func_gnugettext_libc"; test "$gt_val" = "yes"; } \
+            || { { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; } \
+                 && test "$PACKAGE" != gettext-runtime \
+-                && test "$PACKAGE" != gettext-tools; }; then
++                ; }; then
+           gt_use_preinstalled_gnugettext=yes
+         else
+                     LIBINTL=

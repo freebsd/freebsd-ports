@@ -15,11 +15,12 @@ LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20
 
 post-patch:
 	@${CHMOD} a+x ${WRKSRC}/install-sh
-	@${REINPLACE_CMD} -e 's,$$(DATADIRNAME)/locale,share/locale,' ${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>

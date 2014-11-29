@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
 
+USES=		gettext iconv pkgconfig scons tar:bzip2
 USE_GNOME=	libglade2
-USES=		iconv pkgconfig scons tar:bzip2
 USE_OPENSSL=	yes
 PORTDOCS=	*
 DESTDIRNAME=	FAKE_ROOT

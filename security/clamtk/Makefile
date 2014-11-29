@@ -3,7 +3,7 @@
 
 PORTNAME=	clamtk
 PORTVERSION=	4.45
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 NO_BUILD=	yes
-USES=		gettext:run perl5 shebangfix
+USES=		gettext-runtime:run perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	clamtk
 

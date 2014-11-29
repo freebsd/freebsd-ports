@@ -112,7 +112,6 @@ LDAP_USE=	openldap=yes
 LDAP_CONFIGURE_WITH=	ldap
 
 NLS_USES=	gettext
-NLS_USES_OFF=	gettext:build
 NLS_CONFIGURE_ENABLE=	nls
 
 DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi

@@ -14,22 +14,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	GD PHP NLS PCRE LDAP ICONV
 OPTIONS_DEFAULT=GD PHP NLS PCRE LDAP ICONV
+OPTIONS_SUB=	yes
 
 PHP_DESC=	Install PHP for reporting generating
 
 USES=		gmake
-USE_AUTOTOOLS=	autoconf aclocal
-OPTIONS_SUB=	yes
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
-		--sysconfdir="${ETCDIR}" \
+CONFIGURE_ARGS=	--sysconfdir="${ETCDIR}" \
 		--enable-fontdir="${ETCDIR}/fonts" \
 		--enable-imagedir="${ETCDIR}/images"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 NLS_USES=		gettext
-NLS_LDFLAGS=		-lintl
 NLS_CONFIGURE_ENABLE=	nls
+NLS_LIBS=		-lintl
 GD_CONFIGURE_WITH=	gd
 GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
 PHP_CONFIGURE_ON=	--enable-sargphp="${ETCDIR}"
@@ -44,6 +43,6 @@ ICONV_LDFLAGS=		${ICONV_LIB}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test .*==/ s/==/=/' \
-		${WRKSRC}/configure.in
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -22,11 +22,9 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3	\
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-path=/var/db/minidlna \
 		--with-os-url="http://www.FreeBSD.org"
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		iconv
-USE_AUTOTOOLS=	autoconf aclocal automake
-AUTOMAKE_ARGS=	--add-missing
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		autoreconf gettext-tools iconv
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message
@@ -42,7 +40,7 @@ OPTIONS_SUB=	yes
 
 DEBUG_CFLAGS=	-DDEBUG
 KQUEUE_DESC=	Experimental patch for automatic rescan using kqueue(2)
-NLS_USES=	gettext
+NLS_USES=	gettext-runtime
 
 .include <bsd.port.options.mk>
 

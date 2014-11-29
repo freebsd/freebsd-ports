@@ -16,17 +16,13 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	p5-Net-DBus>=0:${PORTSDIR}/devel/p5-Net-DBus
 
-USES=		gmake pathfix perl5 pkgconfig tar:bzip2
+USES=		gettext-tools gmake pathfix perl5 pkgconfig tar:bzip2
 USE_GNOME=	intlhack glib20
 GNU_CONFIGURE=	yes
 USE_GNOME_SUBR=	yes
 CONFIGURE_ARGS=	--with-stb-group=wheel \
 		--localstatedir=/var
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|@GETTEXT_PACKAGE@|system-tools-backends|g' \
-		${WRKSRC}/po/Makefile
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

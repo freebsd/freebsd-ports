@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
-USES=		pathfix perl5 pkgconfig
+USES=		gettext pathfix perl5 pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile*in
 USE_PERL5=	build
 USE_GNOME=	glib20 gtk20

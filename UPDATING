@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141130:
+  AFFECTS: users of devel/gettext (close to everyone)
+  AUTHOR: tijl@FreeBSD.org
+
+  The devel/gettext port has been split up in devel/gettext-runtime, a
+  lightweight package containing runtime libraries, and devel/gettext-tools,
+  a package containing developer tools.  The devel/gettext port still exists
+  as a metaport.
+
+  You must first delete the existing installation of gettext and then
+  reinstall it:
+
+  # pkg delete -f gettext
+  # portmaster devel/gettext
+
+  Or for portupgrade users:
+
+  # pkg delete -f gettext
+  # portinstall devel/gettext
+
 20141127:
   AFFECTS: users of lang/perl5.*
   AUTHOR: mat@FreeBSD.org
