@@ -6,8 +6,9 @@ when used skillfully, produces better-quality output than the tools provided by
 the camera vendor.
 
 This version is modified to add auto-rotate to exported thumbnails, and also
-add adjustment for camera timezone offset.
+add adjustment for camera timezone offset. If your thumbnails appear upside
+down, set DCRAW_RTC env var.
 
 WWW: http://www.cybercom.net/~dcoffin/dcraw/
-WWW: https://dx.burplex.com/bin/autorot.html
-WWW: https://dx.burplex.com/bin/photohack.html
+WWW: https://dx.mehomi.com/autorot.html
+WWW: https://dx.mehomi.com/photohack.html
