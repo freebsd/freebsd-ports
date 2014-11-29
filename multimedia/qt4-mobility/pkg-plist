@@ -12,9 +12,6 @@
 %%BEARER%%%%QT_LIBDIR%%/libQtBearer.so.1.2.2
 %%BEARER%%%%QT_MKSPECDIR%%/features/mobility.prf
 %%BEARER%%%%QT_MKSPECDIR%%/features/mobilityconfig.prf
-%%BEARER%%@dirrm %%QT_INCDIR%%/QtBearer
-%%BEARER%%@dirrm %%QT_INCDIR%%/QtMobility
-%%BEARER%%@dirrmtry %%QT_MKSPECDIR%%/features
 %%CONNECTIVITY%%%%QT_BINDIR%%/ndefhandlergen
 %%CONNECTIVITY%%%%QT_INCDIR%%/QtConnectivity/QBluetoothAddress
 %%CONNECTIVITY%%%%QT_INCDIR%%/QtConnectivity/QBluetoothDeviceDiscoveryAgent
@@ -83,9 +80,6 @@
 %%CONNECTIVITY%%%%QT_LIBDIR%%/libQtConnectivity.so.1
 %%CONNECTIVITY%%%%QT_LIBDIR%%/libQtConnectivity.so.1.2
 %%CONNECTIVITY%%%%QT_LIBDIR%%/libQtConnectivity.so.1.2.2
-%%CONNECTIVITY%%@dirrm %%QT_INCDIR%%/QtConnectivity
-%%CONNECTIVITY%%@dirrm %%QT_IMPORTDIR%%/QtMobility/connectivity
-%%CONNECTIVITY%%@dirrm %%QT_IMPORTDIR%%/QtMobility
 %%CONTACTS%%%%QT_INCDIR%%/QtContacts/QContact
 %%CONTACTS%%%%QT_INCDIR%%/QtContacts/QContactAbstractRequest
 %%CONTACTS%%%%QT_INCDIR%%/QtContacts/QContactAction
@@ -229,7 +223,6 @@
 %%CONTACTS%%%%QT_LIBDIR%%/libQtContacts.so.1
 %%CONTACTS%%%%QT_LIBDIR%%/libQtContacts.so.1.2
 %%CONTACTS%%%%QT_LIBDIR%%/libQtContacts.so.1.2.2
-%%CONTACTS%%@dirrm %%QT_INCDIR%%/QtContacts
 %%FEEDBACK%%%%QT_INCDIR%%/QtFeedback/QFeedbackActuator
 %%FEEDBACK%%%%QT_INCDIR%%/QtFeedback/QFeedbackEffect
 %%FEEDBACK%%%%QT_INCDIR%%/QtFeedback/QFeedbackFileEffect
@@ -248,8 +241,6 @@
 %%FEEDBACK%%%%QT_LIBDIR%%/libQtFeedback.so.1
 %%FEEDBACK%%%%QT_LIBDIR%%/libQtFeedback.so.1.2
 %%FEEDBACK%%%%QT_LIBDIR%%/libQtFeedback.so.1.2.2
-%%FEEDBACK%%@dirrm %%QT_INCDIR%%/QtFeedback
-%%FEEDBACK%%@dirrm %%QT_IMPORTDIR%%/QtMobility/feedback
 %%GALLERY%%%%QT_INCDIR%%/QtGallery/QAbstractGallery
 %%GALLERY%%%%QT_INCDIR%%/QtGallery/QDocumentGallery
 %%GALLERY%%%%QT_INCDIR%%/QtGallery/QGalleryAbstractRequest
@@ -284,8 +275,6 @@
 %%GALLERY%%%%QT_LIBDIR%%/libQtGallery.so.1
 %%GALLERY%%%%QT_LIBDIR%%/libQtGallery.so.1.2
 %%GALLERY%%%%QT_LIBDIR%%/libQtGallery.so.1.2.2
-%%GALLERY%%@dirrm %%QT_INCDIR%%/QtGallery
-%%GALLERY%%@dirrm %%QT_IMPORTDIR%%/QtMobility/gallery
 %%LOCATION%%%%QT_INCDIR%%/QtLocation/QGeoAddress
 %%LOCATION%%%%QT_INCDIR%%/QtLocation/QGeoAreaMonitor
 %%LOCATION%%%%QT_INCDIR%%/QtLocation/QGeoBoundingArea
@@ -448,10 +437,6 @@
 %%LOCATION%%%%QT_LIBDIR%%/libQtLocation.so.1.2.2
 %%LOCATION%%%%QT_PLUGINDIR%%/geoservices/libqtgeoservices_nokia.so
 %%LOCATION%%%%QT_PLUGINDIR%%/landmarks/libqtlandmarks_sqlite.so
-%%LOCATION%%@dirrm %%QT_INCDIR%%/QtLocation
-%%LOCATION%%@dirrm %%QT_IMPORTDIR%%/QtMobility/location
-%%LOCATION%%@dirrm %%QT_PLUGINDIR%%/geoservices
-%%LOCATION%%@dirrm %%QT_PLUGINDIR%%/landmarks
 %%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/QAbstractAudioDeviceInfo
 %%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/QAbstractAudioInput
 %%MULTIMEDIA%%%%QT_INCDIR%%/QtMultimediaKit/QAbstractAudioOutput
@@ -606,11 +591,6 @@
 %%MULTIMEDIA%%%%QT_PLUGINDIR%%/mediaservice/libqgstengine.so
 %%MULTIMEDIA%%%%QT_PLUGINDIR%%/mediaservice/libqtmedia_v4lengine.so
 %%MULTIMEDIA%%%%QT_PLUGINDIR%%/playlistformats/libqtmultimediakit_m3u.so
-%%MULTIMEDIA%%@dirrm %%QT_INCDIR%%/QtMultimediaKit
-%%MULTIMEDIA%%@dirrm %%QT_IMPORTDIR%%/QtMultimediaKit
-%%MULTIMEDIA%%@dirrm %%QT_PLUGINDIR%%/audio
-%%MULTIMEDIA%%@dirrm %%QT_PLUGINDIR%%/mediaservice
-%%MULTIMEDIA%%@dirrm %%QT_PLUGINDIR%%/playlistformats
 %%ORGANIZER%%%%QT_INCDIR%%/QtOrganizer/QOrganizerAbstractRequest
 %%ORGANIZER%%%%QT_INCDIR%%/QtOrganizer/QOrganizerCollection
 %%ORGANIZER%%%%QT_INCDIR%%/QtOrganizer/QOrganizerCollectionChangeSet
@@ -755,7 +735,6 @@
 %%ORGANIZER%%%%QT_LIBDIR%%/libQtOrganizer.so.1
 %%ORGANIZER%%%%QT_LIBDIR%%/libQtOrganizer.so.1.2
 %%ORGANIZER%%%%QT_LIBDIR%%/libQtOrganizer.so.1.2.2
-%%ORGANIZER%%@dirrm %%QT_INCDIR%%/QtOrganizer
 %%PUBLISHSUBSCRIBE%%%%QT_BINDIR%%/qcrmlgen
 %%PUBLISHSUBSCRIBE%%%%QT_BINDIR%%/vsexplorer
 %%PUBLISHSUBSCRIBE%%%%QT_INCDIR%%/QtPublishSubscribe/QValueSpace
@@ -771,8 +750,6 @@
 %%PUBLISHSUBSCRIBE%%%%QT_LIBDIR%%/libQtPublishSubscribe.so.1
 %%PUBLISHSUBSCRIBE%%%%QT_LIBDIR%%/libQtPublishSubscribe.so.1.2
 %%PUBLISHSUBSCRIBE%%%%QT_LIBDIR%%/libQtPublishSubscribe.so.1.2.2
-%%PUBLISHSUBSCRIBE%%@dirrm %%QT_INCDIR%%/QtPublishSubscribe
-%%PUBLISHSUBSCRIBE%%@dirrm %%QT_IMPORTDIR%%/QtMobility/publishsubscribe
 %%VERSIT%%%%QT_INCDIR%%/QtVersit/QVersitContactExporter
 %%VERSIT%%%%QT_INCDIR%%/QtVersit/QVersitContactExporterDetailHandler
 %%VERSIT%%%%QT_INCDIR%%/QtVersit/QVersitContactExporterDetailHandlerV2
@@ -804,9 +781,6 @@
 %%VERSIT%%%%QT_LIBDIR%%/libQtVersit.so.1.2.2
 %%VERSIT%%%%QT_PLUGINDIR%%/versit/libqtversit_backuphandler.so
 %%VERSIT%%%%QT_PLUGINDIR%%/versit/libqtversit_vcardpreserver.so
-%%VERSIT%%@dirrm %%QT_INCDIR%%/QtVersit
-%%VERSIT%%@dirrm %%QT_IMPORTDIR%%/QtMobility/contacts
-%%VERSIT%%@dirrm %%QT_PLUGINDIR%%/versit
 %%VERSITORGANIZER%%%%QT_INCDIR%%/QtVersitOrganizer/QVersitOrganizerExporter
 %%VERSITORGANIZER%%%%QT_INCDIR%%/QtVersitOrganizer/QVersitOrganizerExporterDetailHandler
 %%VERSITORGANIZER%%%%QT_INCDIR%%/QtVersitOrganizer/QVersitOrganizerHandler
@@ -826,8 +800,3 @@
 %%VERSITORGANIZER%%%%QT_LIBDIR%%/libQtVersitOrganizer.so.1.2
 %%VERSITORGANIZER%%%%QT_LIBDIR%%/libQtVersitOrganizer.so.1.2.2
 %%VERSITFEEDBACK%%%%QT_PLUGINDIR%%/feedback/libqtfeedback_mmk.so
-%%VERSITORGANIZER%%@dirrm %%QT_INCDIR%%/QtVersitOrganizer
-%%VERSITORGANIZER%%@dirrm %%QT_IMPORTDIR%%/QtMobility/organizer
-%%VERSITFEEDBACK%%@dirrm %%QT_PLUGINDIR%%/feedback
-%%IDIR%%@dirrm %%QT_IMPORTDIR%%/QtMobility
-%%IDIR%%@dirrmtry %%QT_IMPORTDIR%%
