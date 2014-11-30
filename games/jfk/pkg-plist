@@ -137,18 +137,3 @@ bin/jfkclient
 %%DATADIR%%/art/object/obstacle/tree_0.png
 %%DATADIR%%/levels/demolevel
 %%DATADIR%%/levels/level1
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/art/bar
-@dirrm %%DATADIR%%/art/font
-@dirrm %%DATADIR%%/art/ground
-@dirrm %%DATADIR%%/art/splash
-@dirrm %%DATADIR%%/art/object/weapon
-@dirrm %%DATADIR%%/art/object/item
-@dirrm %%DATADIR%%/art/object/person
-@dirrm %%DATADIR%%/art/object/explosion
-@dirrm %%DATADIR%%/art/object/bullet
-@dirrm %%DATADIR%%/art/object/obstacle
-@dirrm %%DATADIR%%/art/object
-@dirrm %%DATADIR%%/art
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%
