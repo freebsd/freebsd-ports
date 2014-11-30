@@ -21,4 +21,7 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/LapisPuzzle-${PORTVERSION}
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/LapisPuzzle.app/LapisPuzzle
+
 .include <bsd.port.mk>
