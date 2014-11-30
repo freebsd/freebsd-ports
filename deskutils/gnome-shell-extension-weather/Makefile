@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-shell-extension-weather
 PORTVERSION=	0.0.0.20140520
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -28,6 +29,8 @@ GH_TAGNAME=	489aaa0a7a
 GH_COMMIT=	489aaa0a7a
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
+
+GLIB_SCHEMAS=	org.gnome.shell.extensions.weather.gschema.xml
 
 pre-configure:
 		cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
