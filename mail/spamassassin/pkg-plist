@@ -200,14 +200,11 @@ man/man1/spamd.1.gz
 %%DATADIR%%/languages
 %%DATADIR%%/sa-update-pubkey.txt
 %%DATADIR%%/user_prefs.template
-@dirrm %%DATADIR%%
-@dirrmtry %%ETCDIR%%
-@dirrmtry etc/mail
 
 @unexec rm -rf /var/lib/spamassassin/2* 2>&1 >/dev/null || true
-@dirrmtry /var/lib/spamassassin
-@dirrmtry /var/lib
-@dirrmtry /var/db/spamassassin
+@dir /var/lib/spamassassin
+@dir /var/lib
+@dir /var/db/spamassassin
 
 @unexec [ -d /var/db/spamassassin ] && echo "If you are no longer using SpamAssassin, remove /var/db/spamassassin"
 @unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && echo "To delete %%USER%% permanently, 'rmuser %%USER%%'"
@@ -215,7 +212,7 @@ man/man1/spamd.1.gz
 
 @owner %%USER%%
 @group %%GROUP%%
-@dirrmtry /var/run/spamd
+@dir /var/run/spamd
 @group
 @owner
 
