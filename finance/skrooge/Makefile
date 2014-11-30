@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	skrooge
-PORTVERSION=	1.9.0
-PORTREVISION=	3
+PORTVERSION=	1.10.0
 CATEGORIES=	finance kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}
@@ -25,5 +24,11 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		GRANTLEE_VER=0.5
+
+# Skrooge creates several empty directories due to how it calls CMake's
+# install(DIRECTORY ...) function, so we need some code to remove them.
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/share/apps/skrooge/html \
+		-type d -empty -delete
 
 .include <bsd.port.mk>
