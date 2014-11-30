@@ -12,13 +12,12 @@ COMMENT=	HTML and CSS APIs for C++
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LGPL_V2
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-
-USES=		iconv libtool
+USES=		bison iconv libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 MAKE_JOBS_UNSAFE=yes
 
