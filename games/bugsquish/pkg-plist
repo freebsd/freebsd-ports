@@ -109,9 +109,3 @@ bin/bugsquish
 %%DATADIR%%/sounds/squish2.wav
 %%DATADIR%%/sounds/ugh.wav
 share/pixmaps/bugsquish.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/embedded/images
-@dirrm %%DATADIR%%/embedded
-@dirrm %%DATADIR%%
