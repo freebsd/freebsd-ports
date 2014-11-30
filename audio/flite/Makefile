@@ -19,8 +19,6 @@ USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
-CFLAGS:=	${CFLAGS:N-O:N-O[0123456789]} -O0
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pd|-p|g' ${WRKSRC}/main/Makefile
 
