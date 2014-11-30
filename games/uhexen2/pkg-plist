@@ -55,9 +55,3 @@
 %%DATADIR%%/portals/progs.dat
 %%DATADIR%%/portals/puzzles.txt
 %%DATADIR%%/portals/strings.txt
-@dirrm %%DATADIR%%/portals/maps
-@dirrm %%DATADIR%%/portals
-%%HW%%@dirrm %%DATADIR%%/hw
-@dirrm %%DATADIR%%/data1
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
