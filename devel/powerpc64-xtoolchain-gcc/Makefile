@@ -13,15 +13,20 @@ COMMENT=	Pre seeded toolchain to cross build FreeBSD base
 
 NO_BUILD=	yes
 
-XCC?=		${PKGNAMEPREFIX}portbld-${OPSYS:tl}${OSREL}-gcc
-XCXX?=		${PKGNAMEPREFIX}portbld-${OPSYS:tl}${OSREL}-g++
-XCPP?=		${PKGNAMEPREFIX}portbld-${OPSYS:tl}${OSREL}-cpp
+.if ${PKGNAMEPREFIX} == "amd64-"
+TOOLCHAIN_PREFIX=	x86_64-
+.else
+TOOLCHAIN_PREFIX=	${PKGNAMEPREFIX}
+.endif
+XCC?=		${TOOLCHAIN_PREFIX}portbld-${OPSYS:tl}${OSREL}-gcc
+XCXX?=		${TOOLCHAIN_PREFIX}portbld-${OPSYS:tl}${OSREL}-g++
+XCPP?=		${TOOLCHAIN_PREFIX}portbld-${OPSYS:tl}${OSREL}-cpp
 X_COMPILER_TYPE?=	${PKGNAMESUFFIX:C/-//g}
 
 RUN_DEPENDS?=	${XCC}:${PORTSDIR}/devel/${PKGNAMEPREFIX}${X_COMPILER_TYPE}
 
 SUB_FILES=	xtoolchain.mk
-SUB_LIST=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
+SUB_LIST=	TARGETARCH=${TOOLCHAIN_PREFIX:C/-//g} \
 		OPSYS=${OPSYS:tl} \
 		XCC=${XCC} \
 		XCXX=${XCXX} \
