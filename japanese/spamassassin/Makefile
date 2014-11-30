@@ -1,7 +1,7 @@
 # Created by: TAOKA Fumiyoshi
 # $FreeBSD$
 
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	japanese mail perl5
 PKGNAMEPREFIX=	ja-
 
