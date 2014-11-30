@@ -15,7 +15,8 @@ you update your ports collection, before attempting any port upgrades.
   as a metaport.
 
   You must first delete the existing installation of gettext and then
-  reinstall it:
+  reinstall it.  This will break sudo, so you *must* do this in a root
+  shell (sudo -i) if you use sudo.
 
   # pkg delete -f gettext
   # portmaster devel/gettext
