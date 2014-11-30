@@ -93,8 +93,6 @@ OPENAL_USES=		openal
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
-.include <bsd.port.pre.mk>
-
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
 
@@ -102,11 +100,11 @@ post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
 	          ${STAGEDIR}${WINELIBDIR}/libwine.so.1
 	@${LN} -sf libwine.so.1 ${STAGEDIR}/${WINELIBDIR}/libwine.so
-	-@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
