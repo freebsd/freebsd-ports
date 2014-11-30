@@ -9,7 +9,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer and browser for the GNOME 3 environment
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
