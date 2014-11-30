@@ -1,5 +1,24 @@
---- rec_parse.y.orig	2001-12-10 18:01:17.000000000 +0100
-+++ rec_parse.y	2009-03-03 00:57:09.000000000 +0100
+--- rec_parse.y.orig	2001-12-10 17:01:17 UTC
++++ rec_parse.y
+@@ -32,9 +32,8 @@
+ #include "dmalloc.h"
+ #endif
+ 
+-static int yyerror(char *err);
++static int yyerror(rec_t *rec, char *err);
+ 
+-#define YYPARSE_PARAM rec
+ #define YYERROR_VERBOSE
+ 
+ #ifdef REC_PARSE_DEBUG
+@@ -47,6 +46,7 @@ static feature_list_t FEATURE_ERROR = { 
+ %}
+ 
+ %pure_parser
++%parse-param { rec_t *rec }
+ 
+ %union {
+   int    ival;
 @@ -141,7 +141,7 @@ mode_decl	: MODE STRING
  		| MODE STRING 
  			{
@@ -24,3 +43,12 @@
  
  gesture_list	: gesture
  			{
+@@ -342,7 +344,7 @@ option		: OPTION STRING STRING
+ 			
+ %%
+ 
+-static int yyerror(char *err)
++static int yyerror(rec_t *rec, char *err)
+ {
+     char *loc = rec_lex_location_alloc();
+     fprintf(stderr, "%s: %s\n", loc, err);
