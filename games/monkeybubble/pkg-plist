@@ -176,15 +176,3 @@ share/locale/uk/LC_MESSAGES/monkey-bubble.mo
 share/locale/vi/LC_MESSAGES/monkey-bubble.mo
 share/locale/zh_CN/LC_MESSAGES/monkey-bubble.mo
 share/locale/zh_TW/LC_MESSAGES/monkey-bubble.mo
-@dirrm share/omf/monkey-bubble
-@dirrm share/monkey-bubble/sounds
-@dirrm share/monkey-bubble/glade
-@dirrm share/monkey-bubble/gfx/snake
-@dirrm share/monkey-bubble/gfx/number
-@dirrm share/monkey-bubble/gfx/frozen-bubble
-@dirrm share/monkey-bubble/gfx/bubbles
-@dirrm share/monkey-bubble/gfx
-@dirrm share/monkey-bubble
-@dirrm share/gnome/help/monkey-bubble/fr
-@dirrm share/gnome/help/monkey-bubble/C
-@dirrm share/gnome/help/monkey-bubble
