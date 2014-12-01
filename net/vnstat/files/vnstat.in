@@ -17,9 +17,9 @@ rcvar=vnstat_enable
 load_rc_config $name
 
 : ${vnstat_enable:=NO}
-: ${vnstat_pidfile:=/var/run/vnstat/vnstat.pid}
-: ${vnstat_config:=%%PREFIX%%/etc/vnstat.conf}
-: ${vnstat_flags:="-d --noadd"}
+: ${vnstat_pidfile=/var/run/vnstat/vnstat.pid}
+: ${vnstat_config=%%PREFIX%%/etc/vnstat.conf}
+: ${vnstat_flags="-d --noadd"}
 : ${vnstat_user:=%%USERS%%}
 : ${vnstat_group:=%%GROUPS%%}
 
