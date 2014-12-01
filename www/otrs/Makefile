@@ -3,6 +3,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	3.3.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -48,8 +49,8 @@ SHEBANG_FILES=	bin/cgi-bin/*.pl bin/fcgi-bin/*.pl bin/*.pl \
 		scripts/auto_build/*.pl scripts/tools/*.pl scripts/*.pl
 
 OPTIONS_DEFINE=		MYSQL PGSQL REPORTS_MODULES SMTP POP3 IMAP LDAP PDF \
-			GNUPG DOCS
-OPTIONS_DEFAULT=	MYSQL REPORTS_MODULES SMTP POP3 IMAP PDF ASPELL
+			GNUPG DOCS APACHE
+OPTIONS_DEFAULT=	MYSQL REPORTS_MODULES SMTP POP3 IMAP PDF ASPELL APACHE
 OPTIONS_RADIO=		SPELL
 OPTIONS_RADIO_SPELL=	ASPELL ISPELL
 
@@ -57,6 +58,7 @@ IMAP_DESC=		Fetch email via IMAP
 POP3_DESC=		Fetch email via POP3
 SMTP_DESC=		Send email via SMTP
 REPORTS_MODULES_DESC=	Reports support
+APACHE_DESC=		Apache and www/mod_perl2 support
 
 OTRSDIR=	${PREFIX}/otrs
 USERS=		${PORTNAME}
@@ -82,8 +84,6 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-4.0/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
-USE_APACHE_RUN=	22+
-
 PLIST_SUB+=	VER_CKEDITOR="4.3" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
 
 PGSQL_RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
@@ -96,8 +96,11 @@ RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
 .endif
 
+.if ${PORT_OPTIONS:MAPACHE}
+USE_APACHE_RUN=	22+
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:${PORTSDIR}/www/mod_perl2 \
 		p5-Apache-DBI>0:${PORTSDIR}/www/p5-Apache-DBI
+.endif
 
 .if ${PORT_OPTIONS:MREPORTS_MODULES}
 RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
