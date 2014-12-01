@@ -1,3 +1,4 @@
+bin/zoom-delete-records
 bin/zoomdump
 bin/zselect
 %%SITE_ARCH%%/Net/Z3950.pm
