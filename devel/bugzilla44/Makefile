@@ -2,6 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -40,6 +41,13 @@ EMPTY_DIRS_LIST=data graphs contrib lib t xt
 .include "${.CURDIR}/Makefile.common"
 .include "${.CURDIR}/Makefile.options"
 .include <bsd.port.options.mk>
+
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} >= 501800
+# XXX silence Module::Pluggable deprecated warnings (PR 194782)
+BUILD_DEPENDS+=	p5-Module-Pluggable>=5.1:${PORTSDIR}/devel/p5-Module-Pluggable
+RUN_DEPENDS+=	p5-Module-Pluggable>=5.1:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
 
 .if ${PORT_OPTIONS:MMODPERL}
 USE_APACHE_RUN=	22+
@@ -196,4 +204,4 @@ do-install:	.SILENT
 	(cd ${WRKSRC}/contrib && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/contrib)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
