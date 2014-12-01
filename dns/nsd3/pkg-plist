@@ -14,7 +14,7 @@ sbin/nsd-patch
 sbin/nsd-xfer
 sbin/nsdc
 sbin/zonec
-@exec install -o %%NSDUSER%% -g %%NSDGROUP%% -m 0755 -d %%NSDRUNDIR%%
-@exec install -o %%NSDUSER%% -g %%NSDGROUP%% -m 0755 -d %%NSDDBDIR%%
+@dir(%%NSDUSER%%,%%NSDGROUP%%,0755) %%NSDRUNDIR%%
+@dir(%%NSDUSER%%,%%NSDGROUP%%,0755) %%NSDDBDIR%%
 @exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDRUNDIR%%
 @exec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDDBDIR%%
