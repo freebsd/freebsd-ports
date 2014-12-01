@@ -1,0 +1,27 @@
+--- Makefile.orig	2008-12-31 03:42:35.000000000 +0300
++++ Makefile	2014-12-01 00:26:16.000000000 +0300
+@@ -2,9 +2,9 @@
+ 
+ #append -DWITH_WIIUSE to compile with WIIUSE support!
+ #append -DNOSOUND to compile WITHOUT sound support
+-CC=g++ -DDATADIR="\"$(DATADIR)\""
++CXX?=g++
+ 
+-CFLAGS+=-c -Wall `sdl-config --cflags`
++CXXFLAGS+=-Wall `sdl-config --cflags` -DDATADIR="\"$(DATADIR)\""
+ 
+ #append -lwiiuse to compile with WIIUSE support
+ #remove -lSDL_mixer if compiling with -DNOSOUND
+@@ -18,10 +18,10 @@
+ all: $(SOURCES) $(EXECUTABLE)
+ 	
+ $(EXECUTABLE): $(OBJECTS)
+-	$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) $(OBJECTS) $(LIBS) -o $@
+ 
+ .cpp.o:
+-	$(CC) $(CFLAGS) $< -o $@
++	$(CXX) -c $(CXXFLAGS) $< -o $@
+ 
+ clean:
+ 	rm -f *.o sdl-ball
