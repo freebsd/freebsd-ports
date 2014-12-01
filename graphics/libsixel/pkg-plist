@@ -4,7 +4,7 @@ include/sixel.h
 lib/libsixel.a
 lib/libsixel.so
 lib/libsixel.so.1
-lib/libsixel.so.1.0.2
+lib/libsixel.so.1.0.3
 libdata/pkgconfig/libsixel.pc
 man/man1/img2sixel.1.gz
 man/man1/sixel2png.1.gz
