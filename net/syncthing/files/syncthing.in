@@ -28,14 +28,12 @@ load_rc_config $name
 : ${syncthing_enable:="NO"}
 : ${syncthing_user:="syncthing"}
 : ${syncthing_group:="syncthing"}
-: ${syncthing_dir:="/var/tmp/syncthing"}
-
-export HOME=${syncthing_dir} 
+: ${syncthing_dir:="/var/db/syncthing"}
 
 pidfile=/var/run/syncthing.pid
 procname="%%PREFIX%%/bin/syncthing"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} -home=${syncthing_dir} -no-browser ${syncthing_flags}"
+command_args="-f -p ${pidfile} ${procname} -home=${syncthing_dir} -no-browser ${syncthing_args}"
 
 start_precmd=syncthing_startprecmd
 
