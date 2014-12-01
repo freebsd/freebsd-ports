@@ -18,4 +18,6 @@ SHEBANG_FILES=	mypldoc curia/plcrtest depot/pldptest villa/plvltest
 
 MAKE_JOBS_UNSAFE=	yes
 
+MAKE_ARGS=	LD=${CC}
+
 .include "${MASTERDIR}/Makefile"
