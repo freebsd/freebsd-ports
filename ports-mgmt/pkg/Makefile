@@ -1,25 +1,26 @@
-# $FreeBSD: head/ports-mgmt/pkg/Makefile 366286 2014-08-26 23:12:10Z bdrewery $
+# $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.3.8
-PORTREVISION=	3
+DISTVERSION=	1.4.0.beta2
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
-		LOCAL/portmgr \
-		http://files.etoilebsd.net/${PORTNAME}/ \
+		http://files.etoilebsd.net/pkg/ \
+		http://highsecure.ru/distfiles/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		http://pkg.semmy.ru/
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	portmgr@FreeBSD.org
+MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:xz uidfix
-
 # Disable CCACHE support because of the chicken/egg problem pkg should always
 # With no dependency at all
 NO_CCACHE=	yes
+WITH_DEBUG=	yes
+CFLAGS+=	-O0 -g
 USE_LDCONFIG=	yes
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
@@ -36,14 +37,17 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
-MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
-.endif
-
 .if defined(WITH_PKG)
-.if ${WITH_PKG} == devel
+.if ${WITH_PKG} != devel
 NO_LATEST_LINK=	yes
-IGNORE=	WITH_PKG is defined to 'devel', this version is the stable one
+.	if !defined(PACKAGE_BUILDING)
+IGNORE=	WITH_PKG is not defined to 'devel', this version is the devel one
+.	endif
+.else
+LATEST_LINK=	pkg
+PKGNAMESUFFIX=
+#define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
+PKG_DEPENDS=
 .endif
 .if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
 NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
@@ -54,7 +58,7 @@ NB_NEWPKGS=	0
 .endif
 # Only show the pre-everything notice if they have not already
 # converted any packages
-.if ${NB_OLDPKGS} > 0 && ${NB_NEWPKGS} == 0 && !defined(UPGRADEPKG)
+.if ${NB_OLDPKGS} > 0 && ${NB_NEWPKGS} == 0
 
 pre-everything::
 	@${ECHO_CMD} "You are about to convert your system to pkg while you have ports/packages"; \
@@ -62,19 +66,20 @@ pre-everything::
 	 ${ECHO_CMD} ""; \
 	 ${ECHO_CMD} "To switch to pkg:"; \
 	 ${ECHO_CMD} "    1) Install ports-mgmt/pkg"; \
-	 ${ECHO_CMD} "       cd ports-mgmt/pkg && make UPGRADEPKG=1 install clean"; \
 	 ${ECHO_CMD} "    2) Convert your package database by running pkg2ng"; \
 	 ${ECHO_CMD} ""; \
 	exit 1
 
 .endif
 .endif
+.else
+LATEST_LINK=	pkg-devel
 .endif
 
-#define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
-PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
+.if !exists(${LOCALBASE}/sbin/pkg)
 PKG_BIN=	${WRKSRC}/src/pkg-static
+.endif
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \
