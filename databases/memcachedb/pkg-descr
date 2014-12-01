@@ -1,8 +1,0 @@
-MemcacheDB is a distributed storage system designed for persistence.
-It is not a cache solution, but a persistent storage engine for fast and
-reliable key-value based object storage and retrieval. It conforms to
-memcache protocol (not complete), so any memcached client can connect to
-it. MemcacheDB uses Berkeley DB as a storing backend, so lots of
-features including transaction and replication are supported. 
-
-WWW: http://code.google.com/p/memcachedb/

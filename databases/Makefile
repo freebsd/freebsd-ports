@@ -171,7 +171,6 @@
     SUBDIR += mdbtools
     SUBDIR += mdcached
     SUBDIR += memcached
-    SUBDIR += memcachedb
     SUBDIR += memcacheq
     SUBDIR += metakit
     SUBDIR += monetdb

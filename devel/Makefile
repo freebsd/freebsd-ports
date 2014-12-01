@@ -276,7 +276,6 @@
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += cpuflags
-    SUBDIR += creduce
     SUBDIR += critcl
     SUBDIR += cross-binutils
     SUBDIR += cscope
