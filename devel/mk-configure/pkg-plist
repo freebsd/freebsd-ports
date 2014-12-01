@@ -27,6 +27,7 @@ man/man7/mk-configure.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/builtins/easy.c
 %%DATADIR%%/builtins/endianness
 %%DATADIR%%/builtins/prog_bison
 %%DATADIR%%/builtins/prog_flex
