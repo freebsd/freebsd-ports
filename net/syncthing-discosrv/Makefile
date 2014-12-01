@@ -3,7 +3,7 @@
 
 PORTNAME=	syncthing-discosrv
 PORTVERSION=	0.0.0.2014110101
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
 		https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
@@ -22,7 +22,7 @@ GH_PROJECT=	discosrv
 GH_COMMIT=	fcba610d30efa662d4435b3127300171aae7b0e9
 GH_TAGNAME=	${GH_COMMIT}
 
-SYNCTHING_VER=	0.10.8
+SYNCTHING_VER=	0.10.9
 GROUPCACHE_COMMIT=	d2a1805
 
 WRKSRC=		${WRKDIR}/discosrv-${GH_COMMIT}
@@ -40,6 +40,7 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/juju
 	@${MKDIR} ${WRKSRC}/src/github.com/syncthing
 	@${MKDIR} ${WRKSRC}/src/github.com/syndtr
+	@${MKDIR} ${WRKSRC}/src/golang.org/x
 	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/github.com/calmh \
 		${WRKSRC}/src/github.com
 	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/github.com/bkaradzic/go-lz4 \
@@ -48,12 +49,12 @@ post-patch:
 		${WRKSRC}/src/github.com/juju
 	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/github.com/syndtr/goleveldb \
 		${WRKSRC}/src/github.com/syndtr
-	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/code.google.com/p/go.text \
-		${WRKSRC}/src/code.google.com/p
 	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/github.com/syndtr/gosnappy \
 		${WRKSRC}/src/github.com/syndtr
-	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/code.google.com/p/go.crypto \
-		${WRKSRC}/src/code.google.com/p
+	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/golang.org/x/crypto \
+		${WRKSRC}/src/golang.org/x
+	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/golang.org/x/text \
+		${WRKSRC}/src/golang.org/x
 	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER} \
 		${WRKSRC}/src/github.com/syncthing/syncthing
 	@${MV} ${WRKDIR}/golang-groupcache-${GROUPCACHE_COMMIT} \
