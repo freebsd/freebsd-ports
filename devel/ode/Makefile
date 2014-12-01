@@ -49,8 +49,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e '/^DEFAULT_INCLUDES/ s|$$| -I$$(top_builddir)/include|' \
 		-e '/CFLAGS/ s|-O[12]||'
-	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
-		-i "" -e 's|<malloc.h>|<stdlib.h>|g'
+	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g' \
+		${WRKSRC}/build/config-default.h ${WRKSRC}/ou/src/ou/malloc.cpp
 
 post-install:
 	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/ode/src/config.h \
