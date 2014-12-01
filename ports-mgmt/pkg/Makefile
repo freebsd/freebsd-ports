@@ -9,7 +9,7 @@ MASTER_SITES=	\
 		http://highsecure.ru/distfiles/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		http://pkg.semmy.ru/
-PKGNAMESUFFIX=	-devel
+#PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
@@ -38,7 +38,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PKG)
-.if ${WITH_PKG} != devel
+.if ${WITH_PKG} == devel
 NO_LATEST_LINK=	yes
 .	if !defined(PACKAGE_BUILDING)
 IGNORE=	WITH_PKG is not defined to 'devel', this version is the devel one
