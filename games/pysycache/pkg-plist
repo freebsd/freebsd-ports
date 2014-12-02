@@ -400,30 +400,3 @@ bin/pysycache.py
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/xxxx-off.png
 %%PORTDOCS%%%%DOCSDIR%%/xxxx-on.png
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/help/en_EN
-@dirrm %%DATADIR%%/help/fr_FR
-@dirrm %%DATADIR%%/help/it_IT
-@dirrm %%DATADIR%%/help/de
-@dirrm %%DATADIR%%/help/es_ES
-@dirrm %%DATADIR%%/help/pt_PT
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/themes-buttons/ice
-@dirrm %%DATADIR%%/themes-buttons/wolf
-@dirrm %%DATADIR%%/themes-buttons
-@dirrm %%DATADIR%%/themes-click/dinosaurs
-@dirrm %%DATADIR%%/themes-click
-@dirrm %%DATADIR%%/themes-move/number-en/cache
-@dirrm %%DATADIR%%/themes-move/number-en
-@dirrm %%DATADIR%%/themes-move/alphabet-en/cache
-@dirrm %%DATADIR%%/themes-move/alphabet-en
-@dirrm %%DATADIR%%/themes-move
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/regles
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/faq
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
