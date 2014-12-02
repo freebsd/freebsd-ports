@@ -8,7 +8,7 @@ MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	NeXTGo-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	classic Go game for OPENSTEP/GNUstep
+COMMENT=	Classic Go game for OPENSTEP/GNUstep
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -23,5 +23,8 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 	${REINPLACE_CMD} -e 's|PSWait|myPSWait|' \
 		${WRKSRC}/Board.m
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/NeXTGo.app/NeXTGo
 
 .include <bsd.port.mk>
