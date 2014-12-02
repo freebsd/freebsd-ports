@@ -4,7 +4,7 @@
 #
 # PROVIDE: dnscrypt_proxy
 # REQUIRE: SERVERS cleanvar
-# BEFORE: named
+# BEFORE: named local_unbound unbound
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable dnscrypt-proxy:
