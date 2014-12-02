@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	klavaro
-PORTVERSION=	1.9.9
-PORTREVISION=	3
+PORTVERSION=	3.01
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -12,15 +11,15 @@ COMMENT=	Touchtyping trainer
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libgtkdatabox.so:${PORTSDIR}/x11-toolkits/gtkdatabox
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		pkgconfig gettext gmake iconv tar:bzip2
-USE_GNOME=	gtk20 intlhack
+USE_GNOME=	gtk30 intlhack
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/gtkdatabox
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-rdynamic
 LIBS+=		-L${LOCALBASE}/lib
 
 GNU_CONFIGURE=	yes
@@ -32,5 +31,8 @@ post-extract:
 pre-build:
 	@${REINPLACE_CMD} -e 's|^am__append_1|#am__append_1|' \
 		${WRKSRC}/src/Makefile
+
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
