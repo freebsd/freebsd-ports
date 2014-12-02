@@ -153,14 +153,3 @@ bin/senkenserver
 %%DATADIR%%/img/zone/house.png
 %%DATADIR%%/img/zone/industry.png
 %%DATADIR%%/img/zone/office.png
-@dirrm %%DATADIR%%/img/zone
-@dirrm %%DATADIR%%/img/terrain
-@dirrm %%DATADIR%%/img/road
-@dirrm %%DATADIR%%/img/power
-@dirrm %%DATADIR%%/img/industrial
-@dirrm %%DATADIR%%/img/house
-@dirrm %%DATADIR%%/img/government
-@dirrm %%DATADIR%%/img/commercial
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%/games
-@dirrm %%DATADIR%%
