@@ -1,5 +1,4 @@
 bin/blockout
-lib/libimagelib.a
 %%DATADIR%%/images/allPieces.png
 %%DATADIR%%/images/background.png
 %%DATADIR%%/images/background2.png
@@ -34,6 +33,3 @@ lib/libimagelib.a
 %%DATADIR%%/sounds/welldone.wav
 %%DATADIR%%/sounds/welldone2.wav
 %%DATADIR%%/sounds/wozz.wav
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
