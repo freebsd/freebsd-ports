@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	security python
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		CHEESESHOP
