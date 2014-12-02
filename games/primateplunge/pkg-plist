@@ -153,13 +153,3 @@ bin/primateplunge
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/TIPS
-@dirrm %%DATADIR%%/graphics/crumble
-@dirrm %%DATADIR%%/graphics/frenzie
-@dirrm %%DATADIR%%/graphics/junglej
-@dirrm %%DATADIR%%/graphics/moltenm
-@dirrm %%DATADIR%%/graphics/menuitems
-@dirrm %%DATADIR%%/graphics/skyscra
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
