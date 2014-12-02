@@ -130,6 +130,8 @@ lib/purple-2/log_reader.a
 lib/purple-2/log_reader.so
 lib/purple-2/newline.a
 lib/purple-2/newline.so
+lib/purple-2/nss-prefs.a
+lib/purple-2/nss-prefs.so
 lib/purple-2/offlinemsg.a
 lib/purple-2/offlinemsg.so
 %%PERL:%%lib/purple-2/perl.a
@@ -152,11 +154,11 @@ lib/purple-2/statenotify.so
 %%DBUS%%lib/libpurple-client.a
 %%DBUS%%lib/libpurple-client.so
 %%DBUS%%lib/libpurple-client.so.0
-%%DBUS%%lib/libpurple-client.so.0.10.10
+%%DBUS%%lib/libpurple-client.so.0.10.11
 lib/libpurple.a
 lib/libpurple.so
 lib/libpurple.so.0
-lib/libpurple.so.0.10.10
+lib/libpurple.so.0.10.11
 libdata/pkgconfig/purple.pc
 %%CONSOLEUI%%man/man1/finch.1.gz
 %%GTKUI%%man/man1/pidgin.1.gz
@@ -205,6 +207,7 @@ share/locale/ko/LC_MESSAGES/pidgin.mo
 share/locale/km/LC_MESSAGES/pidgin.mo
 share/locale/kn/LC_MESSAGES/pidgin.mo
 share/locale/ku/LC_MESSAGES/pidgin.mo
+share/locale/ku_IQ/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
 share/locale/lv/LC_MESSAGES/pidgin.mo
 share/locale/mai/LC_MESSAGES/pidgin.mo
