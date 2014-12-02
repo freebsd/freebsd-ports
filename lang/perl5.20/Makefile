@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -68,16 +68,20 @@ SITE_PERL_REL?=	lib/perl5/site_perl
 SITE_PERL?=	${PREFIX}/${SITE_PERL_REL}
 SITE_ARCH_REL?=	${SITE_PERL_REL}/${PERL_ARCH}/${PERL_VER}
 SITE_ARCH?=	${PREFIX}/${SITE_ARCH_REL}
-SITE_MAN3_REL?=	${SITE_PERL_REL}/man/man3
+SITE_MAN3_PREFIX=	${SITE_PERL_REL}
+SITE_MAN3_REL?=	${SITE_MAN3_PREFIX}/man/man3
 SITE_MAN3?=	${PREFIX}/${SITE_MAN3_REL}
+
+_PRIV_LIB=	lib/perl5/${PERL_VER}
+_ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
 
 USES=	tar:bzip2 cpe
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dlibperl=libperl.so.${PERL_VER} \
-	-Darchlib=${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} \
-	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VER} \
+	-Darchlib=${PREFIX}/${_ARCH_LIB} \
+	-Dprivlib=${PREFIX}/${_PRIV_LIB} \
 	-Dman3dir=${PREFIX}/${MAN3PREFIX_REL}/man/man3 \
 	-Dman1dir=${PREFIX}/man/man1 \
 	-Dsitearch=${SITE_ARCH} \
@@ -100,6 +104,9 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \
 		SITE_PERL=${SITE_PERL_REL} \
+		PRIV_LIB=${_PRIV_LIB} \
+		MAN3PREFIX=${MAN3PREFIX_REL} \
+		SITEMAN3PREFIX=${SITE_MAN3_PREFIX} \
 		PERL_ARCH=${PERL_ARCH}
 
 SUB_FILES=	perl5_version use.perl perl-man.conf
@@ -125,10 +132,10 @@ CONFLICTS_INSTALL+=	perl5-*
 .if defined(PERL_VENDOR_PREFIX)
 CONFIGURE_ARGS+=	\
 	-Dvendorprefix=${PERL_VENDOR_PREFIX} \
-	-Dvendorarch=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} \
+	-Dvendorarch=${PERL_VENDOR_PREFIX}/${_ARCH_LIB} \
 	-Dvendorbin=${PERL_VENDOR_PREFIX}/bin \
-	-Dvendorlib=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VER} \
-	-Dvendorman3dir=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
+	-Dvendorlib=${PERL_VENDOR_PREFIX}/${_PRIV_LIB} \
+	-Dvendorman3dir=${PERL_VENDOR_PREFIX}/${_PRIV_LIB}/man/man3 \
 	-Dvendorman1dir=${PERL_VENDOR_PREFIX}/man/man1
 .endif
 
@@ -139,7 +146,7 @@ CONFIGURE_ARGS+=	\
     -Accflags=-DPERLIOBUF_DEFAULT_BUFSIZ=${PERLIOBUF_DEFAULT_BUFSIZ}
 .endif
 
-MAN3PREFIX_REL=	lib/perl5/${PERL_VER}/perl
+MAN3PREFIX_REL=	${_PRIV_LIB}/perl
 MAN3PREFIX=	${PREFIX}/${MAN3PREFIX_REL}
 MANDIRS+=	${MAN3PREFIX}/man
 
@@ -147,8 +154,12 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \
 		PERL_ARCH=${PERL_ARCH} \
 		MAN3=${MAN3PREFIX_REL}/man/man3 \
+		MAN3PREFIX=${MAN3PREFIX_REL} \
+		SITEMAN3PREFIX=${SITE_MAN3_PREFIX} \
 		SITE_PERL=${SITE_PERL_REL} \
-		SITE_ARCH=${SITE_ARCH_REL}
+		SITE_ARCH=${SITE_ARCH_REL} \
+		PRIV_LIB=${_PRIV_LIB} \
+		ARCH_LIB=${_ARCH_LIB}
 
 .if ${PORT_OPTIONS:MDEBUG}
 STRIP=
@@ -165,7 +176,7 @@ PLIST_SUB+=	MANCONF="@comment "
 WITH_PTHREAD=		yes
 .endif
 
-BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
+BSDPAN_DEST=	${PREFIX}/${_PRIV_LIB}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 		ExtUtils/MM_Unix.pm \
 		ExtUtils/MakeMaker.pm \
@@ -194,8 +205,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/auto
 	${MKDIR} ${STAGEDIR}${SITE_PERL}/auto
 	${LN} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION} ${STAGEDIR}${PREFIX}/bin/perl5
-	${LN} -s libperl.so.${PERL_VER} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE/libperl.so
-	${LN} -s libperl.so.${PERL_VER} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE/libperl.so.${PERL_VERSION}
+	${LN} -s libperl.so.${PERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so
+	${LN} -s libperl.so.${PERL_VER} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/CORE/libperl.so.${PERL_VERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 	${INSTALL_DATA} ${WRKDIR}/perl5_version ${STAGEDIR}${PREFIX}/etc
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/machine
@@ -206,6 +217,12 @@ post-install:
 		${WRKSRC}/perl -I ${WRKSRC}/lib ${STAGEDIR}${PREFIX}/bin/h2ph \
 		-d ${STAGEDIR}${SITE_ARCH} *.h machine/*.h sys/*.h >/dev/null)
 	@${FIND} ${STAGEDIR}${SITE_ARCH} -name '*.ph' | sed -e 's|${STAGEDIR}||' >> ${TMPPLIST}
+	${FIND} ${STAGEDIR} -name '*.so*' -type f | while read f; \
+		do \
+			${CHMOD} 644 $$f; \
+			${STRIP_CMD} $$f; \
+			${CHMOD} 444 $$f; \
+		done
 .if ${OSVERSION} >= 900022
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
 .endif
