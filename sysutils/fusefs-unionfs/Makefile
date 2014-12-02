@@ -8,7 +8,7 @@ MASTER_SITES=	http://podgorny.cz/unionfs-fuse/releases/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	unionfs-fuse-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE based implementation of the well-known unionfs
 
 PLIST_FILES=	bin/unionfs \

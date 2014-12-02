@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the AMQP protocol for RabbitMQ clients
 
 RUN_DEPENDS=	rubygem-amq-client>=0.9.4:${PORTSDIR}/net/rubygem-amq-client \

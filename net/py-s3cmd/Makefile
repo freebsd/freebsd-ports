@@ -8,7 +8,7 @@ CATEGORIES=	net python
 MASTER_SITES=	SF/s3tools/${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix-like tools to manipulate stored files from the command line
 
 USES=		python:2

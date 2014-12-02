@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/ \
 		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/
 PKGNAMESUFFIX=	-${CODA_SUITE}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server programs for a replicated high-performance network file system
 
 LIB_DEPENDS=	liblwp.so:${PORTSDIR}/devel/lwp \

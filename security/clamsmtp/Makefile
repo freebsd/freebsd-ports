@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://thewalter.net/stef/software/clamsmtp/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ClamAV anti-virus SMTP Filter
 
 GNU_CONFIGURE=	yes

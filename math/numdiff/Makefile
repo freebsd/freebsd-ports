@@ -6,7 +6,7 @@ PORTVERSION=	5.6.1
 CATEGORIES=	math textproc
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare putatively similar files, ignoring small numeric differences
 
 LICENSE=	GPLv3

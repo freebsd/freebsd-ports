@@ -6,7 +6,7 @@ PORTVERSION=	1.14.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digramic Bayesian classifier
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

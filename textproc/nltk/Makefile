@@ -7,7 +7,7 @@ PORTEPOCH=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Natural language toolkit written in python
 
 LICENSE=	APACHE20

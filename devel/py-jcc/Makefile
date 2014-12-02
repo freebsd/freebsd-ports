@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	source/J/JCC
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	JCC-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ code generator for calling Java from C++/Python
 
 LICENSE=	APACHE20

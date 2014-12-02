@@ -6,7 +6,7 @@ PORTVERSION=	3.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hashie is a simple collection of useful Hash extensions
 
 USE_RUBY=	yes

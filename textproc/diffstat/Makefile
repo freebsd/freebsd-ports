@@ -7,7 +7,7 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes a histogram summarizing "diff" output
 
 GNU_CONFIGURE=	yes

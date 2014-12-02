@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for parsing, writing, and creating RSS
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \

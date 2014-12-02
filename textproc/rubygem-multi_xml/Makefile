@@ -6,7 +6,7 @@ PORTVERSION=	0.5.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby library provide swappable XML backends
 
 OPTIONS_DEFINE=	NOKOGIRI

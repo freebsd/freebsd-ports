@@ -6,7 +6,7 @@ PORTVERSION=	1.12.1
 CATEGORIES+=	net textproc
 MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER?=	clsung@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Dict protocol (RFC 2229) server
 
 LICENSE=	GPLv2

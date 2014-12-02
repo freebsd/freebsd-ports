@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Map IP address to geographic places
 
 LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP

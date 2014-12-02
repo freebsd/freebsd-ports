@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 DISTNAME=	srilm
 EXTRACT_SUFX?=	.tgz
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for building and applying statistical language models
 
 LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84
