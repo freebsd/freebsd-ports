@@ -16,15 +16,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the original Super Mario Bros
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/Super-Mario-Bros-Python-v${DISTVERSION}release
 
 USES=		shebangfix python:2 zip
-SHEBANG_FILES=	gamelib/*.py
-python_OLD_CMD?=	/usr/bin/env python
-python_CMD?=		${PYTHON_CMD}
+SHEBANG_FILES=	gamelib/*.py start.py
+python_OLD_CMD=	/usr/bin/env python
+python_CMD?=	${PYTHON_CMD}
 
 PORTDOCS=	changelog.txt readme.txt
 OPTIONS_DEFINE=	DOCS
@@ -36,7 +37,7 @@ DESKTOP_ENTRIES="Super Mario Bros. Python" "" ${PORTNAME} \
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '1d' \
-		-e 's|#! /usr/bin/env python|#!${PYTHON_CMD}|' \
+		-e 's|#! /usr/bin/env python|#!${python_CMD}|' \
 		${WRKSRC}/start.py
 	@${FIND} ${WRKSRC} -name "*.py~" -delete -or -name "*.sav~" -delete
 
@@ -45,7 +46,7 @@ do-build:
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${python_CMD}|' \
 		${WRKDIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
