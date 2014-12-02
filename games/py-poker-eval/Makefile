@@ -12,10 +12,10 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION:E}.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python adaptor for the poker-eval toolkit
 
-LIB_DEPENDS=	libpoker-eval.so:${PORTSDIR}/games/poker-eval
-
 LICENSE=	GPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libpoker-eval.so:${PORTSDIR}/games/poker-eval
 
 USES=		libtool pkgconfig python:2
 USE_AUTOTOOLS=	aclocal autoconf automake
@@ -27,6 +27,9 @@ PLIST_SUB=	PYVER=${PYTHON_VER:S/./_/}
 
 post-configure:
 	@${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/py-compile ${WRKSRC}/config
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pokereval_2_7.so.1.0.0
 
 test:
 	@cd ${WRKSRC} && ${MAKE} check
