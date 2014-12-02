@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-${TOOLKIT}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player network action game for TCP/IP with 3D graphics
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright
 
 OPTIONS_DEFINE=	AUDIO JOYSTICK
@@ -30,8 +30,6 @@ USE_XORG=	x11 xaw xt
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${TOOLKIT} X11Dir="${LOCALBASE}" CFlags="${CFLAGS}"
 MAKE_ENV=	SOUNDDIR="${DATADIR}/sounds"
-
-MAN_PAGES=	genlab.6 imaze.6 imazesrv.6 imazestat.6 ninja.6 xlabed.6
 
 .include <bsd.port.options.mk>
 
@@ -61,9 +59,7 @@ do-install:
 .for i in genlab imaze imazesrv imazestat ninja xlabed
 	(cd ${WRKSRC}/source && ${INSTALL_PROGRAM} ${i} ${STAGEDIR}${PREFIX}/bin)
 .endfor
-.for i in ${MAN_PAGES}
-	(cd ${WRKSRC}/man6 && ${INSTALL_MAN} ${i} ${STAGEDIR}${MAN6PREFIX}/man/man6)
-.endfor
+	(cd ${WRKSRC}/man6 && ${INSTALL_MAN} *.6 ${STAGEDIR}${MAN6PREFIX}/man/man6)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DATADIR})
 	@${MKDIR} ${STAGEDIR}${DATADIR}/labs
