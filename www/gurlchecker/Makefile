@@ -8,7 +8,7 @@ CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	547
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome program to check a page/website for broken links
 
 LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2

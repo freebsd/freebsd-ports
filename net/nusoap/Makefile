@@ -6,7 +6,7 @@ PORTVERSION=	0.9.5
 CATEGORIES=	net www
 MASTER_SITES=	SF
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SOAP Toolkit for PHP
 
 USES=		zip

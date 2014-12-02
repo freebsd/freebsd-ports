@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://vanheusden.com/mboxstats/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates top-10 lists of the messages in a mailbox
 
 PLIST_FILES=	bin/mboxstats

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	science math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General Hidden Markov Model Library in C
 
 GNU_CONFIGURE=	yes

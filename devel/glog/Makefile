@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of C++ classes for flexible logging
 
 LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags

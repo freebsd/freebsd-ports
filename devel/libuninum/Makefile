@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for converting Unicode strings to numbers
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp

@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/clsung
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	openid-python-openid-2.2.5-0-gb666238
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python OpenID version
 
 WRKSRC=		${WRKDIR}/openid-python-openid-b666238

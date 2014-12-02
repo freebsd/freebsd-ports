@@ -9,7 +9,7 @@ MASTER_SITES=	SF/crfpp/crfpp/${PORTVERSION} \
 		${MASTER_SITE_LOCAL}
 DISTNAME=	CRF++-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another CRF toolkit
 
 GNU_CONFIGURE=	yes

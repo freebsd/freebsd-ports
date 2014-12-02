@@ -6,7 +6,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Term::ANSIColor for Ruby
 
 RUN_DEPENDS=	rubygem-tins>=0.8:${PORTSDIR}/devel/rubygem-tins

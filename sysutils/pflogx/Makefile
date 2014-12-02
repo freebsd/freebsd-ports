@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://akldev.free.fr/pflogx/releases/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple tool to export pf (packet filter) logs to XML files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

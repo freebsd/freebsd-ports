@@ -8,7 +8,7 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.public-software-group.org/pub/projects/${PORTNAME}/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-8 processing library
 
 ALL_TARGET=	c-library
