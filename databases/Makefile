@@ -538,6 +538,7 @@
     SUBDIR += pgbadger
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
+    SUBDIR += pgespresso
     SUBDIR += pgfouine
     SUBDIR += pglesslog
     SUBDIR += pgloader
