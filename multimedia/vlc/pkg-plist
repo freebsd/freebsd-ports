@@ -209,38 +209,3 @@ share/apps/solid/actions/vlc-openvcd.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/zu/LC_MESSAGES/vlc.mo
-@dirrm include/vlc/plugins
-@dirrm include/vlc
-@dirrmtry share/apps/solid/actions
-@dirrmtry share/apps/solid
-@dirrmtry share/apps
-%%NLS%%@dirrmtry share/locale/ach/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ach
-%%NLS%%@dirrmtry share/locale/an/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/an
-%%NLS%%@dirrmtry share/locale/cgg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cgg
-%%NLS%%@dirrmtry share/locale/ckb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ckb
-%%NLS%%@dirrmtry share/locale/co/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/co
-%%NLS%%@dirrmtry share/locale/ff/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ff
-%%NLS%%@dirrmtry share/locale/fur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fur
-%%NLS%%@dirrmtry share/locale/gd/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gd
-%%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ia
-%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/km
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky
-%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lg
-%%NLS%%@dirrmtry share/locale/my/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/my
-%%NLS%%@dirrmtry share/locale/tet/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tet
-%%NLS%%@dirrmtry share/locale/zu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zu

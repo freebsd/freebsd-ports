@@ -13,7 +13,3 @@ lib/libgmerlin_avdec.so.1.0.0
 libdata/pkgconfig/gmerlin_avdec.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/de/LC_MESSAGES/gmerlin-avdecoder.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%GMERLIN%%@dirrmtry lib/gmerlin/plugins
-%%GMERLIN%%@dirrmtry lib/gmerlin
-@dirrmtry include/gmerlin
