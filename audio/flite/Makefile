@@ -3,6 +3,7 @@
 
 PORTNAME=	flite
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speech.cs.cmu.edu/flite/packed/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
@@ -17,13 +18,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=yes
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_UNSAFE=	yes
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pd|-p|g' ${WRKSRC}/main/Makefile
+	@${REINPLACE_CMD} -e 's|-pd|-pR|g' ${WRKSRC}/main/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>
