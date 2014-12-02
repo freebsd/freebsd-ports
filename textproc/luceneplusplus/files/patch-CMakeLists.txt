@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2014-11-29 23:14:14.000000000 +0100
++++ CMakeLists.txt	2014-11-29 23:23:52.000000000 +0100
+@@ -118,7 +118,6 @@
+ 
+ add_subdirectory(src/core)
+ add_subdirectory(src/contrib)
+-add_subdirectory(src/demo)
+ add_subdirectory(src/test)
+ 
+ #################################
+@@ -135,7 +134,7 @@
+     FILES
+     ${CMAKE_CURRENT_BINARY_DIR}/liblucene++.pc
+     ${CMAKE_CURRENT_BINARY_DIR}/liblucene++-contrib.pc
+-    DESTINATION ${LIB_DESTINATION}/pkgconfig)
++    DESTINATION libdata/pkgconfig)
+ endif()
+ 
+ ####################################
