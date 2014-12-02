@@ -14,10 +14,12 @@ lib/mediabrowser/MediaBrowser.MediaInfo.dll
 lib/mediabrowser/MediaBrowser.MediaInfo.dll.config
 lib/mediabrowser/MediaBrowser.Model.dll
 lib/mediabrowser/MediaBrowser.Model.dll.mdb
+lib/mediabrowser/MediaBrowser.Naming.dll
 lib/mediabrowser/MediaBrowser.Providers.dll
 lib/mediabrowser/MediaBrowser.Server.Implementations.dll
 lib/mediabrowser/MediaBrowser.Server.Mono.exe
 lib/mediabrowser/MediaBrowser.Server.Mono.exe.config
+lib/mediabrowser/MediaBrowser.Server.Startup.Common.dll
 lib/mediabrowser/MediaBrowser.WebDashboard.dll
 lib/mediabrowser/MediaBrowser.XbmcMetadata.dll
 lib/mediabrowser/Mono.Nat.dll
@@ -245,6 +247,8 @@ lib/mediabrowser/dashboard-ui/episodes.html
 lib/mediabrowser/dashboard-ui/favicon.ico
 lib/mediabrowser/dashboard-ui/favorites.html
 lib/mediabrowser/dashboard-ui/files/dummy.mp4
+lib/mediabrowser/dashboard-ui/forgotpassword.html
+lib/mediabrowser/dashboard-ui/forgotpasswordpin.html
 lib/mediabrowser/dashboard-ui/gamegenres.html
 lib/mediabrowser/dashboard-ui/games.html
 lib/mediabrowser/dashboard-ui/gamesrecommended.html
@@ -346,6 +350,8 @@ lib/mediabrowser/dashboard-ui/scripts/episodes.js
 lib/mediabrowser/dashboard-ui/scripts/extensions.js
 lib/mediabrowser/dashboard-ui/scripts/externalplayer.js
 lib/mediabrowser/dashboard-ui/scripts/favorites.js
+lib/mediabrowser/dashboard-ui/scripts/forgotpassword.js
+lib/mediabrowser/dashboard-ui/scripts/forgotpasswordpin.js
 lib/mediabrowser/dashboard-ui/scripts/gamegenrepage.js
 lib/mediabrowser/dashboard-ui/scripts/gamespage.js
 lib/mediabrowser/dashboard-ui/scripts/gamesrecommendedpage.js
@@ -932,7 +938,6 @@ lib/mediabrowser/dashboard-ui/wizardservice.html
 lib/mediabrowser/dashboard-ui/wizardsettings.html
 lib/mediabrowser/dashboard-ui/wizardstart.html
 lib/mediabrowser/dashboard-ui/wizarduser.html
-lib/mediabrowser/swagger-ui/css/highlight.default.css
 lib/mediabrowser/swagger-ui/css/screen.css
 lib/mediabrowser/swagger-ui/images/logo_small.png
 lib/mediabrowser/swagger-ui/images/pet_store_api.png
