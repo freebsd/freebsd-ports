@@ -608,6 +608,12 @@ usr/lib/gconv/libJISX0213.so
 usr/lib/gconv/libKSC.so
 usr/lib/gio/modules/libgiofam.so
 usr/lib/krb5/plugins/kdb/db2.so
+usr/lib/sse2/libgmp.so.3
+usr/lib/sse2/libgmp.so.3.4.2
+usr/lib/sse2/libgmpxx.so.4
+usr/lib/sse2/libgmpxx.so.4.0.2
+usr/lib/sse2/libmp.so.3
+usr/lib/sse2/libmp.so.3.1.11
 usr/lib/libdb-4.7.so
 usr/lib/libdes425.so.3
 usr/lib/libdes425.so.3.0
@@ -627,6 +633,10 @@ usr/lib/libglib-1.2.so.0
 usr/lib/libglib-1.2.so.0.0.10
 usr/lib/libgmodule-1.2.so.0
 usr/lib/libgmodule-1.2.so.0.0.10
+usr/lib/libgmp.so.3
+usr/lib/libgmp.so.3.4.2
+usr/lib/libgmpxx.so.4
+usr/lib/libgmpxx.so.4.0.2
 usr/lib/libgssapi_krb5.so.2
 usr/lib/libgssapi_krb5.so.2.2
 usr/lib/libgssrpc.so.4
@@ -653,6 +663,8 @@ usr/lib/libmenu.so.5
 usr/lib/libmenu.so.5.6
 usr/lib/libmenuw.so.5
 usr/lib/libmenuw.so.5.6
+usr/lib/libmp.so.3
+usr/lib/libmp.so.3.1.11
 usr/lib/libpanel.so.5
 usr/lib/libpanel.so.5.6
 usr/lib/libpanelw.so.5
@@ -946,6 +958,10 @@ usr/share/doc/glibc-common-2.9/ChangeLog.bz2
 usr/share/doc/glibc-common-2.9/README.timezone
 usr/share/doc/glibc-common-2.9/README.ufc-crypt
 usr/share/doc/glibc-common-2.9/gai.conf
+usr/share/doc/gmp-4.2.2/COPYING
+usr/share/doc/gmp-4.2.2/COPYING.LIB
+usr/share/doc/gmp-4.2.2/NEWS
+usr/share/doc/gmp-4.2.2/README
 usr/share/doc/grep-2.5.1a/ABOUT-NLS
 usr/share/doc/grep-2.5.1a/AUTHORS
 usr/share/doc/grep-2.5.1a/COPYING
