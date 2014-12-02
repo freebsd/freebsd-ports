@@ -4,9 +4,7 @@
 
 : ${OSVERSION:=`/sbin/sysctl -n kern.osreldate`};
 PERL_VERSION="%%PERL_VERSION%%"
-PERL_VER="%%PERL_VER%%"
 banner="# added by use.perl $(/bin/date +'%F %T')"
-special_link_list="perl perl5"
 
 do_cleanup_manpath()
 {
@@ -28,8 +26,8 @@ do_spam_manpath()
 {
 	if [ -f /etc/manpath.config ] ; then
 		echo "${banner}" >>/etc/manpath.config
-		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/${PERL_VER}/man" >>/etc/manpath.config
-		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/${PERL_VER}/perl/man" >>/etc/manpath.config
+		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/%%SITEMAN3PREFIX%%/man" >>/etc/manpath.config
+		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/%%MAN3PREFIX%%/man" >>/etc/manpath.config
 	fi
 }
 
