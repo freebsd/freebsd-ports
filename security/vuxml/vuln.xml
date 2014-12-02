@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="23ab5c3e-79c3-11e4-8b1e-d050992ecde8">
+    <topic>OpenVPN -- denial of service security vulnerability</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.0.11</lt></range>
+	<range><ge>2.1.0</ge><lt>2.2.3</lt></range>
+	<range><ge>2.3.0</ge><lt>2.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenVPN project reports:</p>
+	<blockquote cite="https://community.openvpn.net/openvpn/wiki/SecurityAnnouncement-97597e732b">
+	  <p>In late November 2014 Dragana Damjanovic notified OpenVPN
+	    developers of a critical denial of service security vulnerability
+	    (CVE-2014-8104). The vulnerability allows an tls-authenticated
+	    client to crash the server by sending a too-short control channel
+	    packet to the server.  In other words this vulnerability is denial
+	    of service only.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8104</cvename>
+      <url>https://community.openvpn.net/openvpn/wiki/SecurityAnnouncement-97597e732b</url>
+    </references>
+    <dates>
+      <discovery>2014-12-01</discovery>
+      <entry>2014-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a33addf6-74e6-11e4-a615-f8b156b6dcc8">
     <topic>flac -- Multiple vulnerabilities</topic>
     <affects>
