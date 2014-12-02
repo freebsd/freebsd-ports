@@ -1,6 +1,9 @@
 # $FreeBSD$
 
 PORTREVISION=	1
+
+MAINTAINER=	joerg@FreeBSD.org
+
 COMMENT=	GNU binutils for AVR cross-development
 PKGNAMEPREFIX=	avr-
 BUTARGET=	avr
