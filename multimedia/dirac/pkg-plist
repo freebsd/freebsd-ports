@@ -30,15 +30,11 @@ include/dirac/libdirac_decoder/decoder_types.h
 include/dirac/libdirac_decoder/dirac_parser.h
 include/dirac/libdirac_encoder/dirac_encoder.h
 lib/libdirac_decoder.a
-lib/libdirac_decoder.la
 lib/libdirac_decoder.so
-lib/libdirac_decoder.so.1
+lib/libdirac_decoder.so.0
+lib/libdirac_decoder.so.0.1.0
 lib/libdirac_encoder.a
-lib/libdirac_encoder.la
 lib/libdirac_encoder.so
-lib/libdirac_encoder.so.1
+lib/libdirac_encoder.so.0
+lib/libdirac_encoder.so.0.1.0
 libdata/pkgconfig/dirac.pc
-@dirrm include/dirac/libdirac_encoder
-@dirrm include/dirac/libdirac_decoder
-@dirrm include/dirac/libdirac_common
-@dirrm include/dirac

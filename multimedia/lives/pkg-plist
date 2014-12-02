@@ -339,3 +339,4 @@ share/applications/LiVES.desktop
 %%NLS%%share/locale/uz/LC_MESSAGES/lives.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lives.mo
 share/pixmaps/lives.xpm
+@dir lib/lives/plugins/effects/realtime/weed/icons
