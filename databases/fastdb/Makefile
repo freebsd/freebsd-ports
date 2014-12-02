@@ -6,7 +6,7 @@ PORTVERSION=	3.73
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Main Memory Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

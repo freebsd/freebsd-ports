@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Chewing intelligent phonetic input method library
 
 USES=		tar:bzip2 gmake pkgconfig pathfix libtool
