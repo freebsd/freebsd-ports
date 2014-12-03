@@ -6,8 +6,8 @@
          '~/.barman.conf',
 -        '/etc/barman.conf',
 -        '/etc/barman/barman.conf',
-+        '/usr/local/etc/barman.conf',
-+        '/usr/local/etc/barman/barman.conf',
++        '%%PREFIX%%/etc/barman.conf',
++        '%%PREFIX%%/etc/barman/barman.conf',
      ]
  
      _QUOTE_RE = re.compile(r"""^(["'])(.*)\1$""")
