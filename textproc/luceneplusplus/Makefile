@@ -2,6 +2,7 @@
 
 PORTNAME=	lucene++
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	arved@FreeBSD.org
@@ -10,7 +11,6 @@ COMMENT=	C++ port of the Lucene library
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LGPL.license
 
-BUILD_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
