@@ -5,28 +5,28 @@ PORTNAME=	decurs
 PORTVERSION=	0.55.1
 PORTREVISION=	12
 CATEGORIES=	x11
-MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
-		#http://varg.dyndns.org/psi/files/
+EXTRACT_SUFX=	_.tar.gz	# prevent clobbering of the original distfile
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X11 mouse cursor editor
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgtkmm-2.0.so:${PORTSDIR}/x11-toolkits/gtkmm20
 
-USES=		dos2unix pkgconfig
-DOS2UNIX_FILES=	src/cppstring.cc
+USE_GITHUB=	yes
+GH_ACCOUNT=	danfe
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	10c5691
+
+USES=		pkgconfig
+GNU_CONFIGURE=	yes
 USE_XORG=	x11
 USE_GNOME=	gtk20
-GNU_CONFIGURE=	yes
 
 post-patch:
-	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' \
+	@${SED} -e 's:%%PREFIX%%:${PREFIX}:' \
 		${FILESDIR}/decurs.exec > ${WRKSRC}/decurs.exec
-	@${REINPLACE_CMD} -E 's/^\/\/ friend// ; \
-		s/([^:])ostream/\1std::ostream/g ; \
-		s/CppString \&str/const &/' ${WRKSRC}/src/cppstring.hh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/decurs \
