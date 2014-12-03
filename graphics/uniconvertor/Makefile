@@ -16,6 +16,6 @@ USES=		python
 USE_PYTHON=	distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/uniconvertor/app/modules/*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/uniconvertor/app/modules/*.so
 
 .include <bsd.port.mk>
