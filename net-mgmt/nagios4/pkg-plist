@@ -381,6 +381,7 @@ bin/nagiostats
 %%NAGIOSWWWDIR%%/stylesheets/summary.css
 %%NAGIOSWWWDIR%%/stylesheets/tac.css
 %%NAGIOSWWWDIR%%/stylesheets/trends.css
+@dir libexec/nagios
 @dir %%NAGIOSWWWDIR%%/ssi
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,775) %%NAGIOSDIR%%/archives
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,2775) %%NAGIOSDIR%%/checkresults

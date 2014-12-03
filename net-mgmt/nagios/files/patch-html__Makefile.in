@@ -1,6 +1,6 @@
---- ./html/Makefile.in.orig	2013-08-30 19:46:14.000000000 +0200
-+++ ./html/Makefile.in	2014-01-14 13:57:06.000000000 +0100
-@@ -10,8 +10,6 @@
+--- html/Makefile.in.orig	2013-08-30 17:46:14 UTC
++++ html/Makefile.in
+@@ -10,8 +10,6 @@ BINDIR=@bindir@
  CGIDIR=@sbindir@
  HTMLDIR=@datadir@
  INSTALL=@INSTALL@
@@ -9,7 +9,7 @@
  
  CP=@CP@
  
-@@ -34,55 +32,55 @@
+@@ -34,55 +32,55 @@ distclean: clean
  devclean: distclean
  
  install:
@@ -29,11 +29,11 @@
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) robots.txt $(DESTDIR)$(HTMLDIR)
 -#	$(INSTALL) -m 664 $(INSTALL_OPTS) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/media
++#	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/media
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/stylesheets
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/contexthelp
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs/images
++#	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs
++#	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs/images
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/js
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images/logos
