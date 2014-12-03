@@ -18,7 +18,8 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libxdg-basedir.so:${PORTSDIR}/x11/libxdg-basedir
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake dos2unix lua:51
@@ -57,7 +58,7 @@ DESKTOP_ENTRIES="XMoto" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 BROKEN=		does not build
 .endif
 
