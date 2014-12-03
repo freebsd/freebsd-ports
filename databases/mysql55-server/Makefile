@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.5.40
+PORTVERSION=	5.5.41
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -72,7 +72,7 @@ USE_RC_SUBR=	mysql-server
 USERS=		mysql
 GROUPS=		mysql
 
-MAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 \
+MMAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 \
 		mysql.server.1 mysql_convert_table_format.1 mysql_fix_extensions.1 \
 		mysql_install_db.1 mysql_plugin.1 mysql_secure_installation.1 mysql_setpermission.1 \
 		mysql_tzinfo_to_sql.1 mysql_upgrade.1 mysql_zap.1 mysqlbug.1 \
@@ -83,6 +83,6 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
+	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
 
 .include <bsd.port.mk>
