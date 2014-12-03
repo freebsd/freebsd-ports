@@ -12,6 +12,7 @@
 %%PERL5_MAN3%%/Net::Twitter::Role::API::Search::Trends.3.gz
 %%PERL5_MAN3%%/Net::Twitter::Role::API::TwitterVision.3.gz
 %%PERL5_MAN3%%/Net::Twitter::Role::API::Upload.3.gz
+%%PERL5_MAN3%%/Net::Twitter::Role::API::UploadMedia.3.gz
 %%PERL5_MAN3%%/Net::Twitter::Role::AutoCursor.3.gz
 %%PERL5_MAN3%%/Net::Twitter::Role::InflateObjects.3.gz
 %%PERL5_MAN3%%/Net::Twitter::Role::Legacy.3.gz
@@ -36,6 +37,7 @@
 %%SITE_PERL%%/Net/Twitter/Role/API/Search/Trends.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/TwitterVision.pm
 %%SITE_PERL%%/Net/Twitter/Role/API/Upload.pm
+%%SITE_PERL%%/Net/Twitter/Role/API/UploadMedia.pm
 %%SITE_PERL%%/Net/Twitter/Role/AutoCursor.pm
 %%SITE_PERL%%/Net/Twitter/Role/InflateObjects.pm
 %%SITE_PERL%%/Net/Twitter/Role/Legacy.pm
