@@ -11,7 +11,7 @@ COMMENT=	The GGZ Gaming Zone - Core Client Libraries
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		libtool
+USES=		gettext libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --with-libggz-dir="${LOCALBASE}"
 USE_LDCONFIG=	yes
@@ -21,12 +21,6 @@ INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread -lexpat
-
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-
-NLS_USES=	gettext
-NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libggz.la|libggz.so|g' ${WRKSRC}/configure
