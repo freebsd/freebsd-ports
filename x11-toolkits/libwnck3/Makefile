@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/x11-toolkits/libwnck3/Makefile 19952 2014-10-15 08:11:00Z gusi $
 
 PORTNAME=	libwnck
-PORTVERSION=	3.4.9
+PORTVERSION=	3.14.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3

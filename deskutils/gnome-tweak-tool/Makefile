@@ -1,9 +1,9 @@
 # Created by: Jeremy Messenger <mezz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/deskutils/gnome-tweak-tool/Makefile 20001 2014-10-20 11:22:53Z gusi $
+#    $MCom: ports/trunk/deskutils/gnome-tweak-tool/Makefile 20080 2014-11-16 08:42:43Z gusi $
 
 PORTNAME=	gnome-tweak-tool
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 

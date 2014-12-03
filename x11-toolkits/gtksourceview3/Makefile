@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gtksourceview3/Makefile 19949 2014-10-15 06:25:06Z gusi $
+#   $MCom: ports/trunk/x11-toolkits/gtksourceview3/Makefile 20046 2014-11-10 07:00:12Z gusi $
 
 PORTNAME=	gtksourceview
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3

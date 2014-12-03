@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/x11/gnome3/Makefile 19831 2014-08-26 15:33:17Z kwm $
 
 PORTNAME=	gnome3
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.2
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -33,7 +33,6 @@ RUN_DEPENDS?=	dconf-editor:${PORTSDIR}/devel/dconf-editor \
 		yelp>=3.0.0:${PORTSDIR}/x11/yelp \
 		zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 		seahorse>=3.0.0:${PORTSDIR}/security/seahorse \
-		metacity>=2.34.0:${PORTSDIR}/x11-wm/metacity \
 		gnome-control-center>=3.0.0:${PORTSDIR}/sysutils/gnome-control-center \
 		${LOCALBASE}/share/gnome-background-properties/gnome-backgrounds.xml:${PORTSDIR}/x11-themes/gnome-backgrounds \
 		caribou>=0:${PORTSDIR}/accessibility/caribou \

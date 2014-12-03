@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/sysutils/gnome-control-center/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

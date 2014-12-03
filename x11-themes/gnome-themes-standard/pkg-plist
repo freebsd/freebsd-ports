@@ -114,7 +114,6 @@ share/icons/HighContrast/16x16/apps/accessories-calculator.png
 share/icons/HighContrast/16x16/apps/accessories-character-map.png
 share/icons/HighContrast/16x16/apps/accessories-dictionary.png
 share/icons/HighContrast/16x16/apps/accessories-text-editor.png
-share/icons/HighContrast/16x16/apps/anaconda.png
 share/icons/HighContrast/16x16/apps/applets-screenshooter.png
 share/icons/HighContrast/16x16/apps/applications-blender.png
 share/icons/HighContrast/16x16/apps/audiobook.png
@@ -160,6 +159,7 @@ share/icons/HighContrast/16x16/apps/libreoffice-impress.png
 share/icons/HighContrast/16x16/apps/libreoffice-math.png
 share/icons/HighContrast/16x16/apps/libreoffice-startcenter.png
 share/icons/HighContrast/16x16/apps/libreoffice-writer.png
+share/icons/HighContrast/16x16/apps/liveinst.png
 share/icons/HighContrast/16x16/apps/miro.png
 share/icons/HighContrast/16x16/apps/multimedia-volume-control.png
 share/icons/HighContrast/16x16/apps/palimpsest.png
@@ -583,7 +583,6 @@ share/icons/HighContrast/22x22/apps/accessories-calculator.png
 share/icons/HighContrast/22x22/apps/accessories-character-map.png
 share/icons/HighContrast/22x22/apps/accessories-dictionary.png
 share/icons/HighContrast/22x22/apps/accessories-text-editor.png
-share/icons/HighContrast/22x22/apps/anaconda.png
 share/icons/HighContrast/22x22/apps/applets-screenshooter.png
 share/icons/HighContrast/22x22/apps/applications-blender.png
 share/icons/HighContrast/22x22/apps/audiobook.png
@@ -629,6 +628,7 @@ share/icons/HighContrast/22x22/apps/libreoffice-impress.png
 share/icons/HighContrast/22x22/apps/libreoffice-math.png
 share/icons/HighContrast/22x22/apps/libreoffice-startcenter.png
 share/icons/HighContrast/22x22/apps/libreoffice-writer.png
+share/icons/HighContrast/22x22/apps/liveinst.png
 share/icons/HighContrast/22x22/apps/miro.png
 share/icons/HighContrast/22x22/apps/multimedia-volume-control.png
 share/icons/HighContrast/22x22/apps/palimpsest.png
@@ -1052,7 +1052,6 @@ share/icons/HighContrast/24x24/apps/accessories-calculator.png
 share/icons/HighContrast/24x24/apps/accessories-character-map.png
 share/icons/HighContrast/24x24/apps/accessories-dictionary.png
 share/icons/HighContrast/24x24/apps/accessories-text-editor.png
-share/icons/HighContrast/24x24/apps/anaconda.png
 share/icons/HighContrast/24x24/apps/applets-screenshooter.png
 share/icons/HighContrast/24x24/apps/applications-blender.png
 share/icons/HighContrast/24x24/apps/audiobook.png
@@ -1098,6 +1097,7 @@ share/icons/HighContrast/24x24/apps/libreoffice-impress.png
 share/icons/HighContrast/24x24/apps/libreoffice-math.png
 share/icons/HighContrast/24x24/apps/libreoffice-startcenter.png
 share/icons/HighContrast/24x24/apps/libreoffice-writer.png
+share/icons/HighContrast/24x24/apps/liveinst.png
 share/icons/HighContrast/24x24/apps/miro.png
 share/icons/HighContrast/24x24/apps/multimedia-volume-control.png
 share/icons/HighContrast/24x24/apps/palimpsest.png
@@ -1521,7 +1521,6 @@ share/icons/HighContrast/256x256/apps/accessories-calculator.png
 share/icons/HighContrast/256x256/apps/accessories-character-map.png
 share/icons/HighContrast/256x256/apps/accessories-dictionary.png
 share/icons/HighContrast/256x256/apps/accessories-text-editor.png
-share/icons/HighContrast/256x256/apps/anaconda.png
 share/icons/HighContrast/256x256/apps/applets-screenshooter.png
 share/icons/HighContrast/256x256/apps/audiobook.png
 share/icons/HighContrast/256x256/apps/blender.png
@@ -1566,6 +1565,7 @@ share/icons/HighContrast/256x256/apps/libreoffice-impress.png
 share/icons/HighContrast/256x256/apps/libreoffice-math.png
 share/icons/HighContrast/256x256/apps/libreoffice-startcenter.png
 share/icons/HighContrast/256x256/apps/libreoffice-writer.png
+share/icons/HighContrast/256x256/apps/liveinst.png
 share/icons/HighContrast/256x256/apps/miro.png
 share/icons/HighContrast/256x256/apps/multimedia-volume-control.png
 share/icons/HighContrast/256x256/apps/palimpsest.png
@@ -1989,7 +1989,6 @@ share/icons/HighContrast/32x32/apps/accessories-calculator.png
 share/icons/HighContrast/32x32/apps/accessories-character-map.png
 share/icons/HighContrast/32x32/apps/accessories-dictionary.png
 share/icons/HighContrast/32x32/apps/accessories-text-editor.png
-share/icons/HighContrast/32x32/apps/anaconda.png
 share/icons/HighContrast/32x32/apps/applets-screenshooter.png
 share/icons/HighContrast/32x32/apps/applications-blender.png
 share/icons/HighContrast/32x32/apps/audiobook.png
@@ -2035,6 +2034,7 @@ share/icons/HighContrast/32x32/apps/libreoffice-impress.png
 share/icons/HighContrast/32x32/apps/libreoffice-math.png
 share/icons/HighContrast/32x32/apps/libreoffice-startcenter.png
 share/icons/HighContrast/32x32/apps/libreoffice-writer.png
+share/icons/HighContrast/32x32/apps/liveinst.png
 share/icons/HighContrast/32x32/apps/miro.png
 share/icons/HighContrast/32x32/apps/multimedia-volume-control.png
 share/icons/HighContrast/32x32/apps/palimpsest.png
@@ -2461,7 +2461,6 @@ share/icons/HighContrast/48x48/apps/accessories-calculator.png
 share/icons/HighContrast/48x48/apps/accessories-character-map.png
 share/icons/HighContrast/48x48/apps/accessories-dictionary.png
 share/icons/HighContrast/48x48/apps/accessories-text-editor.png
-share/icons/HighContrast/48x48/apps/anaconda.png
 share/icons/HighContrast/48x48/apps/applets-screenshooter.png
 share/icons/HighContrast/48x48/apps/applications-blender.png
 share/icons/HighContrast/48x48/apps/audiobook.png
@@ -2507,6 +2506,7 @@ share/icons/HighContrast/48x48/apps/libreoffice-impress.png
 share/icons/HighContrast/48x48/apps/libreoffice-math.png
 share/icons/HighContrast/48x48/apps/libreoffice-startcenter.png
 share/icons/HighContrast/48x48/apps/libreoffice-writer.png
+share/icons/HighContrast/48x48/apps/liveinst.png
 share/icons/HighContrast/48x48/apps/miro.png
 share/icons/HighContrast/48x48/apps/multimedia-volume-control.png
 share/icons/HighContrast/48x48/apps/palimpsest.png
@@ -3106,9 +3106,11 @@ share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button-disabled-rtl.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button-disabled.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button-rtl.png
 share/themes/Adwaita/gtk-2.0/Entry/combo-entry-button.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-active-bg-solid-spin.png
 share/themes/Adwaita/gtk-2.0/Entry/entry-border-active-bg-solid.png
 share/themes/Adwaita/gtk-2.0/Entry/entry-border-active-bg.png
 share/themes/Adwaita/gtk-2.0/Entry/entry-border-active-notebook.png
+share/themes/Adwaita/gtk-2.0/Entry/entry-border-bg-solid-spin.png
 share/themes/Adwaita/gtk-2.0/Entry/entry-border-bg-solid.png
 share/themes/Adwaita/gtk-2.0/Entry/entry-border-bg.png
 share/themes/Adwaita/gtk-2.0/Entry/entry-border-disabled-bg.png
@@ -3117,6 +3119,9 @@ share/themes/Adwaita/gtk-2.0/Entry/entry-border-fill-plain.png
 share/themes/Adwaita/gtk-2.0/Entry/entry-border-fill-solid.png
 share/themes/Adwaita/gtk-2.0/Entry/entry-border-fill.png
 share/themes/Adwaita/gtk-2.0/Entry/entry-border-notebook.png
+share/themes/Adwaita/gtk-2.0/Entry/notebook-entry-border-active-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/notebook-entry-border-bg.png
+share/themes/Adwaita/gtk-2.0/Entry/notebook-entry-border-disabled-bg.png
 share/themes/Adwaita/gtk-2.0/Expanders/minus.png
 share/themes/Adwaita/gtk-2.0/Expanders/plus.png
 share/themes/Adwaita/gtk-2.0/Handles/handle-h.png

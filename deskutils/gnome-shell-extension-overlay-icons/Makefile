@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extension-overlay-icons/Makefile 19680 2014-05-23 14:40:39Z gusi $
 
 PORTNAME=	gnome-shell-extension-overlay-icons
-PORTVERSION=	0.0.0.20140520
+PORTVERSION=	0.0.0.20141126
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-WRKSRC=		${WRKDIR}/sustmi-gnome-shell-extensions-sustmi-47266fa
+WRKSRC=		${WRKDIR}/sustmi-gnome-shell-extensions-sustmi-${GH_COMMIT}
 
 USES=		gettext gmake pkgconfig tar:xz
 USE_GNOME=	glib20
@@ -25,8 +24,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.windowoverlay-icons.gschema.xml
 
 GH_ACCOUNT=	sustmi
-GH_TAGNAME=	47266fa129
-GH_COMMIT=	47266fa129
+GH_TAGNAME=	c2a340f
+GH_COMMIT=	c2a340f
 GH_PROJECT=	gnome-shell-extensions-sustmi
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
