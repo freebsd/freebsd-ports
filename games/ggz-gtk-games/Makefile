@@ -11,7 +11,7 @@ COMMENT=	The GGZ Gaming Zone - GTK+ Games
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ggz-gtk:${PORTSDIR}/games/ggz-gtk-client
 
-USES=		pkgconfig
+USES=		gettext pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
@@ -21,12 +21,6 @@ INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
-
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-
-NLS_USES=	gettext
-NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|_LDADD =|_LDADD = -lggzcore|' \
@@ -50,6 +44,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/reversi/module.dsc ${STAGEDIR}/${PREFIX}/share/ggz/reversi.dsc
 	${INSTALL_DATA} ${WRKSRC}/spades/module.dsc ${STAGEDIR}/${PREFIX}/share/ggz/spades.dsc
 	${INSTALL_DATA} ${WRKSRC}/tictactoe/module.dsc ${STAGEDIR}/${PREFIX}/share/ggz/tictactoe.dsc
+	${RM} ${STAGEDIR}${PREFIX}/etc/ggz.modules
 
 .include "${.CURDIR}/../libggz/bsd.ggz.mk"
 .include <bsd.port.mk>
