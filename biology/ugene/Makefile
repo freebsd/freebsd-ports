@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-DISTVERSION=	1.14.2
+DISTVERSION=	1.15.0
 CATEGORIES=	biology science
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} QueryDesigner_UserManual.pdf \
@@ -74,10 +74,8 @@ post-patch:
 .for x in ugenecl ugeneui plugins_checker
 	@${ECHO_CMD} 'LIBS += -lexecinfo' >> ${WRKSRC}/src/${x}/${x}.pro
 .endfor
-# missing linefeeds at EOF irk gcc4.2
-	@(cd ${WRKSRC}/src && ${FIND} -E . -type f -regex '.*\.(cpp|h)' | \
-	while read f; do if [ "`${TAIL} -c 1 "$$f"`" ]; then \
-		${ECHO_CMD} >&2 "$${f#./} lacks newline at EOF, fixing"; \
-		${ECHO_CMD} >> "$$f"; fi; done)
+# remove BOM that gcc4.2 trips upon
+	@env LANG=C ${REINPLACE_CMD} -e 's,^...,,' \
+		${WRKSRC}/src/include/U2Formats/MysqlUpgradeTask.h
 
 .include <bsd.port.post.mk>
