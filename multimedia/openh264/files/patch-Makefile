@@ -1,6 +1,6 @@
 --- Makefile~
 +++ Makefile
-@@ -184,7 +184,7 @@ plugin:
+@@ -202,7 +202,7 @@ plugin:
  	@echo "You do not have gmp-api.  Run make gmp-bootstrap to get the gmp-api headers."
  endif
  
@@ -9,11 +9,11 @@
  	$(QUIET)rm -f $@
  	$(QUIET_CXX)$(CXX) $(SHARED) $(LDFLAGS) $(CXX_LINK_O) $+ $(SHLDFLAGS) $(MODULE_LDFLAGS)
  
-@@ -207,7 +207,6 @@ install: install-static install-shared
+@@ -225,7 +225,6 @@ install: install-static install-shared
  	@:
  
  ifeq ($(HAVE_GTEST),Yes)
--include build/gtest-targets.mk
- include test/api/targets.mk
- include test/decoder/targets.mk
- include test/encoder/targets.mk
+-include $(SRC_PATH)build/gtest-targets.mk
+ include $(SRC_PATH)test/api/targets.mk
+ include $(SRC_PATH)test/decoder/targets.mk
+ include $(SRC_PATH)test/encoder/targets.mk

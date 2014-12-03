@@ -85,8 +85,8 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USES+=		cpe compiler:c++11-lib gmake iconv perl5 pkgconfig \
-			python:2,build desktop-file-utils
+USES+=		cpe compiler:c++11-lang gmake iconv perl5 pkgconfig \
+			python:2.7,build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_PERL5=	build
 USE_XORG=	xext xrender xt
@@ -96,10 +96,14 @@ MOZSRC?=	${WRKSRC}
 WRKSRC?=	${WRKDIR}/mozilla
 PLISTF?=	${WRKDIR}/plist_files
 
+MOZ_OBJDIR?=	${WRKSRC}/obj-${CONFIGURE_TARGET}
+
 MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
 
 PORT_MOZCONFIG?=	${FILESDIR}/mozconfig.in
 MOZCONFIG?=		${WRKSRC}/.mozconfig
+# XXX Not ?= because fmake uses MAKEFILE internally
+MAKEFILE=		${WRKSRC}/client.mk
 MOZILLA_PLIST_DIRS?=	bin lib share/pixmaps share/applications
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
@@ -109,9 +113,13 @@ PKGDEINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-deinstall.in
 MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 			${MOZILLA}-xpcom ${MOZILLA}-plugin
 
+ALL_TARGET?=	build
+
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
 				PERL="${PERL}"
-MOZ_OPTIONS+=	--prefix="${PREFIX}"
+MOZ_OPTIONS+=	${CONFIGURE_TARGET} --prefix="${PREFIX}"
+MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 
 CPPFLAGS+=		-isystem${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
@@ -330,8 +338,6 @@ MOZ_OPTIONS+=	--disable-libproxy
 USES:=		compiler:gcc-c++11-lib ${USES:Ncompiler*c++11*}
 USE_DISPLAY=yes
 
-.undef GNU_CONFIGURE
-MAKEFILE=	${WRKSRC}/client.mk
 ALL_TARGET=	profiledbuild
 MOZ_EXPORT+=MOZ_OPTIMIZE_FLAGS="-Os" MOZ_PGO_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 .endif
@@ -428,7 +434,6 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 
 .if ${ARCH} == amd64
-CONFIGURE_TARGET=x86_64-unknown-${OPSYS:tl}${OSREL}
 . if ${USE_MOZILLA:M-nss}
 USE_BINUTILS=	# intel-gcm.s
 CFLAGS+=	-B${LOCALBASE}/bin
@@ -448,17 +453,6 @@ CFLAGS+=	-mminimal-toc
 .elif ${ARCH} == "sparc64"
 # Work around miscompilation/mislinkage of the sCanonicalVTable hacks.
 MOZ_OPTIONS+=	--disable-v1-string-abi
-.endif
-
-.if defined(OBJDIR_BUILD)
-CONFIGURE_SCRIPT=../configure
-
-MOZ_OBJDIR=		${WRKSRC}/obj-${CONFIGURE_TARGET}
-CONFIGURE_WRKSRC=${MOZ_OBJDIR}
-BUILD_WRKSRC=	${MOZ_OBJDIR}
-INSTALL_WRKSRC=	${MOZ_OBJDIR}
-.else
-MOZ_OBJDIR=		${WRKSRC}
 .endif
 
 .else # bsd.port.post.mk
@@ -566,17 +560,14 @@ gecko-moz-pis-patch:
 	@${MOZCONFIG_SED} < ${FILESDIR}/${moz} > ${WRKDIR}/${moz}
 .endfor
 
-pre-configure: gecko-pre-configure
+do-configure: gecko-do-configure
 
-gecko-pre-configure:
-.if defined(OBJDIR_BUILD)
-	${MKDIR} ${MOZ_OBJDIR}
-.endif
-
-post-configure: gecko-post-configure
-
-gecko-post-configure:
-	@${ECHO_CMD} "#define JNIIMPORT" >> ${MOZSRC}/mozilla-config.h
+gecko-do-configure:
+		@(if ! ${CONFIGURE_ENV} ${DO_MAKE_BUILD} configure; then \
+			 ${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
+			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+			 ${FALSE}; \
+		fi)
 
 pre-install: gecko-moz-pis-pre-install
 post-install-script: gecko-create-plist

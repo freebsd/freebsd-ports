@@ -18,6 +18,7 @@ lib/%%APP_NAME%%/browser/omni.ja
 lib/%%APP_NAME%%/browser/plugins
 lib/%%APP_NAME%%/browser/searchplugins/amazondotcom.xml
 lib/%%APP_NAME%%/browser/searchplugins/bing.xml
+lib/%%APP_NAME%%/browser/searchplugins/ddg.xml
 lib/%%APP_NAME%%/browser/searchplugins/eBay.xml
 lib/%%APP_NAME%%/browser/searchplugins/google.xml
 lib/%%APP_NAME%%/browser/searchplugins/twitter.xml
@@ -43,6 +44,7 @@ lib/%%APP_NAME%%/libfreebl3.so
 %%GTK218%%lib/%%APP_NAME%%/libglib-2.0.so.0
 %%GTK218%%lib/%%APP_NAME%%/libgtk-x11-2.0.so.0
 lib/%%APP_NAME%%/libmozalloc.so
+lib/%%APP_NAME%%/libmozsandbox.so
 lib/%%APP_NAME%%/libmozsqlite3.so
 lib/%%APP_NAME%%/libnspr4.so
 lib/%%APP_NAME%%/libnss3.so
