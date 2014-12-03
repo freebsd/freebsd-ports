@@ -3,7 +3,7 @@
 
 PORTNAME=	sublime
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 DISTNAME=	Sublime%20Text%202.0.2
@@ -19,12 +19,11 @@ NO_BUILD=
 STRIP=	# don't strip linux binaries.
 SUB_FILES=	sublime
 
-USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX=	c6
+USE_LINUX_APPS=	xorglibs gtk2
 
 post-patch:
 	${BRANDELF} -t Linux ${WRKSRC}/sublime_text
-	${RM} -rf ${WRKSRC}/lib
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

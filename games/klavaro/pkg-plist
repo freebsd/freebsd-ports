@@ -35,6 +35,7 @@
 %%DATADIR%%/dvorak_tr_F.kbd
 %%DATADIR%%/dvorak_uk.kbd
 %%DATADIR%%/dvorak_us.kbd
+%%DATADIR%%/dvorak_us_prog.kbd
 %%DATADIR%%/el.paragraphs
 %%DATADIR%%/el.words
 %%DATADIR%%/en_GB.paragraphs
@@ -52,6 +53,8 @@
 %%DATADIR%%/gl.paragraphs
 %%DATADIR%%/gl.words
 %%DATADIR%%/go_www.png
+%%DATADIR%%/gurmukhi_in_jhelum.kbd
+%%DATADIR%%/gurmukhi_in_jhelumShift.kbd
 %%DATADIR%%/hands_0.png
 %%DATADIR%%/hands_1.png
 %%DATADIR%%/hands_2.png
@@ -73,13 +76,15 @@
 %%DATADIR%%/key.png
 %%DATADIR%%/kk.paragraphs
 %%DATADIR%%/kk.words
-%%DATADIR%%/klavaro.ui
-%%DATADIR%%/klavaro_96x96.png
+%%DATADIR%%/klavaro.glade
+%%DATADIR%%/klavaro_icon.png
 %%DATADIR%%/nb.paragraphs
 %%DATADIR%%/nb.words
 %%DATADIR%%/nl.paragraphs
 %%DATADIR%%/nl.words
 %%DATADIR%%/other.png
+%%DATADIR%%/pa.paragraphs
+%%DATADIR%%/pa.words
 %%DATADIR%%/pl.paragraphs
 %%DATADIR%%/pl.words
 %%DATADIR%%/progress.png
@@ -100,6 +105,7 @@
 %%DATADIR%%/qwerty_gr_old.kbd
 %%DATADIR%%/qwerty_il.kbd
 %%DATADIR%%/qwerty_il_old.kbd
+%%DATADIR%%/qwerty_in.kbd
 %%DATADIR%%/qwerty_it.kbd
 %%DATADIR%%/qwerty_no.kbd
 %%DATADIR%%/qwerty_jp.kbd
@@ -118,8 +124,11 @@
 %%DATADIR%%/qwertz_de.kbd
 %%DATADIR%%/qwertz_hu.kbd
 %%DATADIR%%/qwertz_pl.kbd
+%%DATADIR%%/qwertz_sl.kbd
 %%DATADIR%%/ru.paragraphs
 %%DATADIR%%/ru.words
+%%DATADIR%%/sl.paragraphs
+%%DATADIR%%/sl.words
 %%DATADIR%%/sv.paragraphs
 %%DATADIR%%/sv.words
 %%DATADIR%%/top10.png
@@ -132,12 +141,15 @@
 %%DATADIR%%/workman_us.kbd
 bin/klavaro
 man/man1/klavaro.1.gz
+share/appdata/klavaro.appdata.xml
 share/applications/klavaro.desktop
 share/icons/hicolor/16x16/apps/klavaro.png
 share/icons/hicolor/22x22/apps/klavaro.png
 share/icons/hicolor/24x24/apps/klavaro.png
 share/icons/hicolor/32x32/apps/klavaro.png
 share/icons/hicolor/48x48/apps/klavaro.png
+share/icons/hicolor/64x64/apps/klavaro.png
+share/icons/hicolor/96x96/apps/klavaro.png
 share/locale/ar/LC_MESSAGES/klavaro.mo
 share/locale/bg/LC_MESSAGES/klavaro.mo
 share/locale/bn/LC_MESSAGES/klavaro.mo
@@ -149,6 +161,7 @@ share/locale/en_GB/LC_MESSAGES/klavaro.mo
 share/locale/eo/LC_MESSAGES/klavaro.mo
 share/locale/es/LC_MESSAGES/klavaro.mo
 share/locale/eu/LC_MESSAGES/klavaro.mo
+share/locale/fi/LC_MESSAGES/klavaro.mo
 share/locale/fr/LC_MESSAGES/klavaro.mo
 share/locale/gl/LC_MESSAGES/klavaro.mo
 share/locale/hu/LC_MESSAGES/klavaro.mo
@@ -157,9 +170,11 @@ share/locale/kk/LC_MESSAGES/klavaro.mo
 share/locale/ky/LC_MESSAGES/klavaro.mo
 share/locale/nb/LC_MESSAGES/klavaro.mo
 share/locale/nl/LC_MESSAGES/klavaro.mo
+share/locale/pa/LC_MESSAGES/klavaro.mo
 share/locale/pl/LC_MESSAGES/klavaro.mo
 share/locale/pt_BR/LC_MESSAGES/klavaro.mo
 share/locale/ru/LC_MESSAGES/klavaro.mo
+share/locale/sl/LC_MESSAGES/klavaro.mo
 share/locale/sv/LC_MESSAGES/klavaro.mo
 share/locale/te/LC_MESSAGES/klavaro.mo
 share/locale/uk/LC_MESSAGES/klavaro.mo
@@ -167,26 +182,3 @@ share/locale/ur/LC_MESSAGES/klavaro.mo
 share/locale/vi/LC_MESSAGES/klavaro.mo
 share/locale/wo/LC_MESSAGES/klavaro.mo
 share/locale/zh_CN/LC_MESSAGES/klavaro.mo
-@dirrmtry share/locale/wo/LC_MESSAGES
-@dirrmtry share/locale/wo
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%

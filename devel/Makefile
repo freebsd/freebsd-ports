@@ -276,7 +276,6 @@
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += cpuflags
-    SUBDIR += creduce
     SUBDIR += critcl
     SUBDIR += cross-binutils
     SUBDIR += cscope
@@ -535,6 +534,8 @@
     SUBDIR += gettext
     SUBDIR += gettext-lint
     SUBDIR += gettext-msghack
+    SUBDIR += gettext-runtime
+    SUBDIR += gettext-tools
     SUBDIR += gflags
     SUBDIR += giggle
     SUBDIR += gindent
@@ -4806,6 +4807,7 @@
     SUBDIR += vtcl
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
+    SUBDIR += websocketpp
     SUBDIR += websvn
     SUBDIR += wininfo
     SUBDIR += winpdb

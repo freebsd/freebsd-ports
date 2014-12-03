@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${DATADIR}
+LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install install-man
 MAKE_ENV=	STRIP="${STRIP}"
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \

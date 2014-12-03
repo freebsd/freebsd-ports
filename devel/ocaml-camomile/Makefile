@@ -26,12 +26,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 post-install:
 	@${FIND} ${STAGEDIR}${DATADIR} ! -type d | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${OCAMLFIND_DESTDIR}/${PORTNAME} ! -type d | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${OCAMLFIND_DESTDIR}/${PORTNAME} -type d | \
-		${SORT} -r | ${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' \
-			>> ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -36,7 +36,6 @@
     SUBDIR += clang33
     SUBDIR += clang34
     SUBDIR += clang35
-    SUBDIR += clay
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
     SUBDIR += cmucl

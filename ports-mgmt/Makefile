@@ -33,7 +33,6 @@
     SUBDIR += pkgcompare
     SUBDIR += pkg-devel
     SUBDIR += pkg-orphan
-    SUBDIR += pkg-plist
     SUBDIR += pkg-rmleaf
     SUBDIR += pkg_cleanup
     SUBDIR += pkg_cutleaves

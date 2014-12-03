@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	olefile
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,4 +16,13 @@ LICENSE_FILE=	${WRKSRC}/olefile/LICENSE.txt
 USES=		dos2unix python zip
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Remove files not python 3 ready and allow compile again
+post-patch:
+.if ${PYTHON_REL} >= 300
+	${RM} ${WRKSRC}/olefile/olefile2.py ${WRKSRC}/olefile/test_open_string.py
+.endif
+	${REINPLACE_CMD} "/install' in sys.argv:/,+1d" ${WRKSRC}/setup.py
+
+.include <bsd.port.post.mk>

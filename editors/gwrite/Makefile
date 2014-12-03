@@ -14,7 +14,6 @@ LICENSE=	LGPL3 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distutils-extra>=2.15:${PORTSDIR}/devel/py-distutils-extra \
-		intltool-update:${PORTSDIR}/textproc/intltool \
 		${PYTHON_PKGNAMEPREFIX}jswebkit>=0:${PORTSDIR}/www/py-jswebkit \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
 RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
@@ -22,7 +21,7 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		${PYTHON_PKGNAMEPREFIX}jswebkit>=0:${PORTSDIR}/www/py-jswebkit \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
 
-USES=		desktop-file-utils python
+USES=		desktop-file-utils gettext-tools python
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 

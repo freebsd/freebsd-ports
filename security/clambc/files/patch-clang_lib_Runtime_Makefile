@@ -1,0 +1,13 @@
+--- ../clang/lib/Runtime/Makefile.orig
++++ ../clang/lib/Runtime/Makefile
+@@ -17,8 +17,8 @@ LEVEL = ../../../..
+ include $(LEVEL)/Makefile.common
+ 
+ CLANG_VERSION := $(shell cat $(PROJ_SRC_DIR)/../../VER)
+-ResourceDir := $(PROJ_OBJ_ROOT)/$(BuildMode)/lib/clang/$(CLANG_VERSION)
+-PROJ_resources := $(DESTDIR)$(PROJ_prefix)/lib/clang/$(CLANG_VERSION)
++ResourceDir := $(PROJ_OBJ_ROOT)/$(BuildMode)/share/clambc
++PROJ_resources := $(DESTDIR)$(PROJ_prefix)/share/clambc
+ 
+ ResourceLibDir := $(ResourceDir)/lib
+ PROJ_resources_lib := $(PROJ_resources)/lib

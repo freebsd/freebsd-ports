@@ -3,6 +3,7 @@
 
 PORTNAME=	pinfo
 PORTVERSION=	0.6.10
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	GENTOO/distfiles \
 		http://alioth.debian.org/frs/download.php/file/3351/
@@ -13,7 +14,7 @@ COMMENT=	Ncurses based, lynx style info documentation browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool makeinfo ncurses tar:bzip2
+USES=		autoreconf gettext-tools libtool makeinfo ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -29,12 +30,11 @@ READLINE_CONFIGURE_WITH=	readline
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=		gettext-runtime
 .for lang in cs de eu ja nl pl pt_BR ro ru sv vi
 PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/pinfo.mo
 .endfor
 .else
-USES+=		gettext:build
 CONFIGURE_ARGS+=--disable-nls
 .endif
 

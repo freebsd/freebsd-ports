@@ -3,7 +3,7 @@
 
 PORTNAME=	sublime
 PORTVERSION=	3.0.65
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 PKGNAMEPREFIX=	linux-
@@ -21,7 +21,7 @@ CONFLICTS=	linux-sublime-[0-24-9]*
 NO_BUILD=
 SUB_FILES=	sublime
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_APPS=	xorglibs gtk2
 
 post-patch:

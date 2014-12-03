@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	PAM
 OPTIONS_DEFAULT=	PAM
 OPTIONS_SUB=	yes
 
-USES=		tar:bzip2
+USES=		gettext tar:bzip2
 USE_XORG=	x11 xmu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DEF_SERVER="${DEF_SERVER}" XRDB_PATH="${XRDB_PATH}"
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-wmlist=wmaker:afterstep:blackbox:ctwm:enlightenment:fvwm:fvwm2:fvwm95:olvwm:qvwm:tvtwm
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DCSRG_BASED -DHAS_SETUSERCONTEXT
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+LIBS+=		-L${LOCALBASE}/lib
 
 DEF_SERVER?=	${LOCALBASE}/bin/X
 XRDB_PATH?=	${LOCALBASE}/bin/xrdb

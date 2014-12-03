@@ -19,13 +19,13 @@ LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		desktop-file-utils gmake libtool pathfix pkgconfig \
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		tar:bzip2
 USE_GNOME=	gnomeprefix gtk30 introspection:build libxslt:build libxml2
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-libnotify --disable-libindicate
 

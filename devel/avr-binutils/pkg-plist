@@ -6,6 +6,7 @@ avr/bin/nm
 avr/bin/objcopy
 avr/bin/objdump
 avr/bin/ranlib
+avr/bin/size
 avr/bin/strip
 avr/lib/ldscripts/avr1.x
 avr/lib/ldscripts/avr1.xbn
@@ -57,6 +58,11 @@ avr/lib/ldscripts/avr6.xbn
 avr/lib/ldscripts/avr6.xn
 avr/lib/ldscripts/avr6.xr
 avr/lib/ldscripts/avr6.xu
+avr/lib/ldscripts/avrtiny.x
+avr/lib/ldscripts/avrtiny.xbn
+avr/lib/ldscripts/avrtiny.xn
+avr/lib/ldscripts/avrtiny.xr
+avr/lib/ldscripts/avrtiny.xu
 avr/lib/ldscripts/avrxmega1.x
 avr/lib/ldscripts/avrxmega1.xbn
 avr/lib/ldscripts/avrxmega1.xn

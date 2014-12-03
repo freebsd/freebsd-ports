@@ -537,32 +537,3 @@ bin/tuxmathtestclient
 %%DATADIR%%/sounds/towerclock.wav
 %%DATADIR%%/sounds/tuxi.ogg
 %%DATADIR%%/images/menu
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/missions/multiplay
-@dirrm %%DATADIR%%/missions/lessons
-@dirrm %%DATADIR%%/missions/campaign/scout
-@dirrm %%DATADIR%%/missions/campaign/ranger
-@dirrm %%DATADIR%%/missions/campaign/commando
-@dirrm %%DATADIR%%/missions/campaign/cadet
-@dirrm %%DATADIR%%/missions/campaign/ace
-@dirrm %%DATADIR%%/missions/campaign
-@dirrm %%DATADIR%%/missions/arcade
-@dirrm %%DATADIR%%/missions
-@dirrm %%DATADIR%%/menus
-@dirrm %%DATADIR%%/images/tux
-@dirrm %%DATADIR%%/images/title
-@dirrm %%DATADIR%%/images/status
-@dirrm %%DATADIR%%/images/sprites
-@dirrm %%DATADIR%%/images/penguins
-@dirrm %%DATADIR%%/images/factoroids
-@dirrm %%DATADIR%%/images/igloos
-@dirrm %%DATADIR%%/images/icons
-@dirrm %%DATADIR%%/images/comets
-@dirrm %%DATADIR%%/images/cities
-@dirrm %%DATADIR%%/images/backgrounds
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/zam/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zam
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -93,6 +93,7 @@ rbldns:*:153:
 trircd:*:154:
 xorp:*:155:
 monetdb:*:156:
+barman:*:157:
 sfs:*:171:
 agk:*:172:
 polipo:*:173:

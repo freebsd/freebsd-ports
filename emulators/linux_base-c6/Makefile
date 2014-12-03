@@ -3,6 +3,7 @@
 
 PORTNAME=		c6
 PORTVERSION=		6.6
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/ \
 		http://mirror.centos.org/centos/6/updates/i386/Packages/
@@ -42,6 +43,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		glib2-2.28.8-4.el6.${LINUX_RPM_ARCH}.rpm \
 		glibc-2.12-1.149.el6.${LINUX_RPM_ARCH}.rpm \
 		glibc-common-2.12-1.149.el6.${LINUX_RPM_ARCH}.rpm \
+		gmp-4.3.1-7.el6_2.2.${LINUX_RPM_ARCH}.rpm \
 		grep-2.6.3-6.el6.${LINUX_RPM_ARCH}.rpm \
 		info-4.13a-8.el6.${LINUX_RPM_ARCH}.rpm \
 		keyutils-1.4-5.el6.${LINUX_RPM_ARCH}.rpm \
@@ -93,6 +95,7 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		gdbm-1.8.0-36.el6.src.rpm \
 		glib2-2.28.8-4.el6.src.rpm \
 		glibc-2.12-1.149.el6.src.rpm \
+		gmp-4.3.1-7.el6_2.2.src.rpm \
 		grep-2.6.3-6.el6.src.rpm \
 		texinfo-4.13a-8.el6.src.rpm \
 		keyutils-1.4-5.el6.src.rpm \

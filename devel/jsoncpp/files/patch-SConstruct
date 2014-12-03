@@ -1,5 +1,5 @@
---- ./SConstruct.orig	2014-08-22 14:25:14.780951671 -0500
-+++ ./SConstruct	2014-08-22 14:25:37.478948513 -0500
+--- SConstruct.orig	2014-12-02 06:28:17.000000000 +0300
++++ SConstruct	2014-12-02 06:28:31.000000000 +0300
 @@ -26,7 +26,7 @@
      if platform == 'linux-gcc':
          CXX = 'g++' # not quite right, but env is not yet available.
@@ -9,6 +9,15 @@
          platform = 'linux-gcc-%s' %version
          print "Using platform '%s'" %platform
          LD_LIBRARY_PATH = os.environ.get('LD_LIBRARY_PATH', '')
+@@ -65,7 +65,7 @@
+ 	return vars
+ 	
+ 
+-env = Environment( ENV = make_environ_vars(),
++env = Environment( ENV = os.environ,
+                    toolpath = ['scons-tools'],
+                    tools=[] ) #, tools=['default'] )
+ 
 @@ -121,6 +121,7 @@
      env.Tool( 'default' )
      env.Append( LIBS = ['pthread'], CCFLAGS = "-Wall" )

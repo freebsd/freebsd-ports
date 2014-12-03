@@ -57,6 +57,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '/OpenSSL/d' -e '/lcms/d' -e 's| -g||' \
 		-e 's/-DG_DISABLE_DEPRECATED//' \
+		-e 's/-DGDK_PIXBUF_DISABLE_DEPRECATED//' \
 		${WRKSRC}/src/netsurf-${PORTVERSION}/gtk/Makefile.target
 	@${REINPLACE_CMD} -e 's| -g|| ; s|flex|${LOCALBASE}/bin/&|' \
 		${WRKSRC}/src/nsgenbind-0.0.1/src/Makefile

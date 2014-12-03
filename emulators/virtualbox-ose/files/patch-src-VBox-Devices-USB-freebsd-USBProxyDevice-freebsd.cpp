@@ -1,5 +1,5 @@
---- src/VBox/Devices/USB/freebsd/USBProxyDevice-freebsd.cpp.orig	2014-10-11 08:06:56.000000000 -0400
-+++ src/VBox/Devices/USB/freebsd/USBProxyDevice-freebsd.cpp	2014-11-18 15:10:55.000000000 -0500
+--- src/VBox/Devices/USB/freebsd/USBProxyDevice-freebsd.cpp.orig	2014-11-21 16:22:08.000000000 +0100
++++ src/VBox/Devices/USB/freebsd/USBProxyDevice-freebsd.cpp	2014-11-28 17:25:16.000000000 +0100
 @@ -52,6 +52,7 @@
  #include <iprt/asm.h>
  #include <iprt/string.h>
@@ -48,7 +48,7 @@
          }
  
          RTFileClose(hFile);
-@@ -449,11 +461,13 @@
+@@ -449,12 +461,12 @@
  
      usbProxyFreeBSDFsUnInit(pProxyDev);
  
@@ -58,12 +58,26 @@
      RTFileClose(pDevFBSD->hFile);
      pDevFBSD->hFile = NIL_RTFILE;
  
-     RTMemFree(pDevFBSD);
+-    RTMemFree(pDevFBSD);
 -    pProxyDev->Backend.pv = NULL;
- 
+-
      LogFlow(("usbProxyFreeBSDClose: returns\n"));
  }
-@@ -822,7 +836,7 @@
+ 
+@@ -688,9 +700,10 @@
+              pUrb, (unsigned)pUrb->EndPt, (unsigned)pUrb->enmDir));
+ 
+     ep_num = pUrb->EndPt;
+-
+-    if ((pUrb->enmType != VUSBXFERTYPE_MSG) && (pUrb->enmDir == VUSBDIRECTION_IN))
++    if ((pUrb->enmType != VUSBXFERTYPE_MSG) && (pUrb->enmDir == VUSBDIRECTION_IN)) {
++        /* set IN-direction bit */
+         ep_num |= 0x80;
++    }
+ 
+     index = 0;
+ 
+@@ -822,7 +835,7 @@
      PUSBENDPOINTFBSD pEndpointFBSD;
      PVUSBURB pUrb;
      struct usb_fs_complete UsbFsComplete;
@@ -72,9 +86,12 @@
      int rc;
  
      LogFlow(("usbProxyFreeBSDUrbReap: pProxyDev=%p, cMillies=%u\n",
-@@ -948,21 +962,34 @@
+@@ -946,23 +959,38 @@
+                  (unsigned)pEndpointFBSD->acbData[1]));
+ 
      }
-     else if (cMillies && rc == VERR_RESOURCE_BUSY)
+-    else if (cMillies && rc == VERR_RESOURCE_BUSY)
++    else if (cMillies != 0 && rc == VERR_RESOURCE_BUSY)
      {
 -        /* Poll for finished transfers */
 -        PollFd.fd = RTFileToNative(pDevFBSD->hFile);
@@ -108,6 +125,8 @@
 +                    uint8_t bRead;
 +                    size_t cbIgnored = 0;
 +                    RTPipeRead(pDevFBSD->hPipeWakeupR, &bRead, 1, &cbIgnored);
++                    /* Make sure we return from this function */
++                    cMillies = 0;
 +                }
 +                break;
 +            }
@@ -120,7 +139,7 @@
      }
      return pUrb;
  }
-@@ -984,6 +1011,16 @@
+@@ -984,6 +1012,16 @@
      return usbProxyFreeBSDEndpointClose(pProxyDev, index);
  }
  
@@ -137,7 +156,16 @@
  /**
   * The FreeBSD USB Proxy Backend.
   */
-@@ -1005,6 +1042,7 @@
+@@ -992,7 +1030,7 @@
+     /* pszName */
+     "host",
+     /* cbBackend */
+-    sizeof(PUSBPROXYDEVFBSD),
++    sizeof(USBPROXYDEVFBSD),
+     usbProxyFreeBSDOpen,
+     usbProxyFreeBSDInit,
+     usbProxyFreeBSDClose,
+@@ -1005,6 +1043,7 @@
      usbProxyFreeBSDUrbQueue,
      usbProxyFreeBSDUrbCancel,
      usbProxyFreeBSDUrbReap,

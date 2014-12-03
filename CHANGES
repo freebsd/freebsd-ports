@@ -10,6 +10,19 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20141130:
+AUTHOR: tijl@FreeBSD.org
+
+  The devel/gettext port has been split up in devel/gettext-runtime which
+  contains runtime libraries such as libintl, and devel/gettext-tools which
+  contains build tools such as msgfmt.  You can use USES=gettext-runtime to
+  set a LIB/BUILD/RUN_DEPENDS on devel/gettext-runtime and USES=gettext-tools
+  to set a BUILD/RUN_DEPENDS on devel/gettext-tools.
+
+  USES=gettext is now the same as "USES=gettext-runtime gettext-tools",
+  meaning a LIB_DEPENDS on devel/gettext-runtime and a BUILD_DEPENDS on
+  devel/gettext-tools.
+
 20141126:
 AUTHOR: mat@FreeBSD.org
 

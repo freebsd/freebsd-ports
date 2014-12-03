@@ -24,50 +24,41 @@ man/man6/ggz-wrapper.6.gz
 man/man7/ggz.7.gz
 share/desktop-directories/ggz-games.directory
 share/desktop-directories/ggz.directory
-%%NLS%%share/locale/ar/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/cy/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/da/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/de/LC_MESSAGES/ggz-config.mo
-%%NLS%%share/locale/de/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/dz/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/es/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/et/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/gu/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/mk/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/oc/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/pa/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/th/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/vi/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/zh_HK/LC_MESSAGES/ggzcore.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/ggzcore.mo
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-@dirrm lib/ggz
-@dirrmtry share/desktop-directories
-@dirrmtry etc/xdg/menus/applications-merged
-@dirrmtry etc/xdg/menus
-@dirrmtry etc/xdg
+share/locale/ar/LC_MESSAGES/ggzcore.mo
+share/locale/bg/LC_MESSAGES/ggzcore.mo
+share/locale/ca/LC_MESSAGES/ggzcore.mo
+share/locale/cs/LC_MESSAGES/ggzcore.mo
+share/locale/cy/LC_MESSAGES/ggzcore.mo
+share/locale/da/LC_MESSAGES/ggzcore.mo
+share/locale/de/LC_MESSAGES/ggz-config.mo
+share/locale/de/LC_MESSAGES/ggzcore.mo
+share/locale/dz/LC_MESSAGES/ggzcore.mo
+share/locale/en_GB/LC_MESSAGES/ggzcore.mo
+share/locale/es/LC_MESSAGES/ggzcore.mo
+share/locale/et/LC_MESSAGES/ggzcore.mo
+share/locale/fi/LC_MESSAGES/ggzcore.mo
+share/locale/fr/LC_MESSAGES/ggzcore.mo
+share/locale/gl/LC_MESSAGES/ggzcore.mo
+share/locale/gu/LC_MESSAGES/ggzcore.mo
+share/locale/hu/LC_MESSAGES/ggzcore.mo
+share/locale/ja/LC_MESSAGES/ggzcore.mo
+share/locale/ko/LC_MESSAGES/ggzcore.mo
+share/locale/lt/LC_MESSAGES/ggzcore.mo
+share/locale/lv/LC_MESSAGES/ggzcore.mo
+share/locale/mk/LC_MESSAGES/ggzcore.mo
+share/locale/nb/LC_MESSAGES/ggzcore.mo
+share/locale/nl/LC_MESSAGES/ggzcore.mo
+share/locale/oc/LC_MESSAGES/ggzcore.mo
+share/locale/pa/LC_MESSAGES/ggzcore.mo
+share/locale/pt/LC_MESSAGES/ggzcore.mo
+share/locale/pt_BR/LC_MESSAGES/ggzcore.mo
+share/locale/ru/LC_MESSAGES/ggzcore.mo
+share/locale/sv/LC_MESSAGES/ggzcore.mo
+share/locale/th/LC_MESSAGES/ggzcore.mo
+share/locale/uk/LC_MESSAGES/ggzcore.mo
+share/locale/vi/LC_MESSAGES/ggzcore.mo
+share/locale/zh_CN/LC_MESSAGES/ggzcore.mo
+share/locale/zh_HK/LC_MESSAGES/ggzcore.mo
+share/locale/zh_TW/LC_MESSAGES/ggzcore.mo
 @exec touch %D/etc/ggz.modules
 @unexec [ "`wc -l<%D/etc/ggz.modules`" -gt 1 ]||rm -f %D/etc/ggz.modules

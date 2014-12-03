@@ -34,6 +34,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Vaders)
 	(cd ${WRKSRC} && ${INSTALL_DATA} icon.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.xpm)
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}/var/games
+	${ECHO_CMD} "0" > ${STAGEDIR}/var/games/xinvaders.scores.sample
 
 .include <bsd.port.mk>

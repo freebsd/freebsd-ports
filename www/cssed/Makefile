@@ -10,14 +10,14 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application to help CSS style sheets creation and maintenance
 
-USES=		dos2unix pathfix pkgconfig
+USES=		dos2unix gettext pathfix pkgconfig
 DOS2UNIX_FILES=	scintilla/gtk/ScintillaGTK.cxx
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-plugin-headers
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 DESKTOP_ENTRIES="CSSED" "CSS Editor" "${DATADIR}/pixmaps/cssed-icon.png" \
 		"${PORTNAME}" "GTK;Development;WebDevelopment;TextEditor;" ""

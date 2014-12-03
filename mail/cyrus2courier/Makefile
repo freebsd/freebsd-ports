@@ -2,14 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus2courier
-DISTVERSION=	1.4
+PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.madness.at/~mad/projects/ \
 		CRITICAL
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cyrus-IMAP to Maildir++ conversion utility
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		tar:tgz
 
 ALL_TARGET=	build
 

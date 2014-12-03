@@ -4,6 +4,7 @@
 
 PORTNAME=	adwaita-icon-theme
 PORTVERSION=	3.14.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,8 +13,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Symbolic Icons
 
 INSTALLS_ICONS=	yes
-USES=		gmake pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix intltool
+USES=		gettext-tools gmake pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix intltool gtk-update-icon-cache
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_GTK_ENCODE_SYMBOLIC_SVG="false"
 

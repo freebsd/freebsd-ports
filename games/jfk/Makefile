@@ -7,10 +7,11 @@ PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://hop.at/jfk/
 
-LICENSE=	GPLv2 # (or later)
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer 2D shoot'em up game
+
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
@@ -27,7 +28,7 @@ do-install:
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in controls.txt jfkclient.sample jfkserver.sample
-	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

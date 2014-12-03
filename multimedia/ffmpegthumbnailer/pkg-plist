@@ -1,6 +1,4 @@
 bin/ffmpegthumbnailer
-%%GNOME%%@dirrmtry etc/gconf/gconf.xml.defaults
-%%GNOME%%@dirrmtry etc/gconf/schemas
 include/libffmpegthumbnailer/filmstripfilter.h
 include/libffmpegthumbnailer/ifilter.h
 include/libffmpegthumbnailer/imagetypes.h
@@ -10,9 +8,7 @@ include/libffmpegthumbnailer/videothumbnailerc.h
 lib/libffmpegthumbnailer.a
 lib/libffmpegthumbnailer.so
 lib/libffmpegthumbnailer.so.4
-lib/libffmpegthumbnailer.so.4.0.8
+lib/libffmpegthumbnailer.so.4.0.9
 libdata/pkgconfig/libffmpegthumbnailer.pc
 man/man1/ffmpegthumbnailer.1.gz
-%%MATE%%share/thumbnailers/ffmpegthumbnailer.thumbnailer
-%%MATE%%@dirrmtry share/thumbnailers
-@dirrm include/libffmpegthumbnailer
+%%THUMBNAILER%%share/thumbnailers/ffmpegthumbnailer.thumbnailer

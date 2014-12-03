@@ -15,13 +15,12 @@ LICENSE=	GPLv2 # (or later)
 LIB_DEPENDS=	libexif-gtk.so:${PORTSDIR}/graphics/libexif-gtk \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 
-USES=		gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomehier gtk20
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-LIBS+=		`pkg-config --libs gtk+-x11-2.0`
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS GIMP GNOME
 OPTIONS_SUB=	yes
@@ -44,6 +43,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|GIMP_VERSION="2.0"|GIMP_VERSION="2.2"|g ; \
 		 s|images/gtkam|gtkam/images|g ; \
 		 s|FLAGS -g|FLAGS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/$$(GNOME_LIBS)/& $$(GTK_LIBS)/' \
+		${WRKSRC}/src/Makefile.in
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|images/gtkam|gtkam/images|g ; \
 		 s|$$(libdir)/gimp/|$$(libexecdir)/gimp/|g'

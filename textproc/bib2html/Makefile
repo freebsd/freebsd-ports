@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.arakhne.org/IMG/gz/ \
 		http://fresh.t-systems-sfr.com/fresh/unix/src/privat2/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The BibTeX to HTML Translator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]$//}/src

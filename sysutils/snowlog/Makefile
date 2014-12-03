@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kiza.kcore.de/software/snowlog/download/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webserver access log browser/analyzer
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre

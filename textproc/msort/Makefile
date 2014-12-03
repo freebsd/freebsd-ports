@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sorting files in sophisticated ways
 
 LICENSE=	GPLv3

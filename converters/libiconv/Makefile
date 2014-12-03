@@ -3,7 +3,7 @@
 
 PORTNAME=	libiconv
 PORTVERSION=	1.14
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	converters devel
 MASTER_SITES=	GNU
 
@@ -18,7 +18,7 @@ CONFIGURE_ENV=	am_cv_func_iconv="yes" \
 		am_cv_proto_iconv_arg1="const"
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
-USES=		libtool:oldver
+USES=		libtool
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 
@@ -48,6 +48,6 @@ post-patch:
 		${WRKSRC}/preload/configure
 
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/lib/*.la
+	${LN} -s libiconv.so.2 ${STAGEDIR}${PREFIX}/lib/libiconv.so.3
 
 .include <bsd.port.mk>

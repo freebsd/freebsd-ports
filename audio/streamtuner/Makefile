@@ -15,12 +15,12 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-USES=		gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20 gnomeprefix
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	SHOUTCAST LIVE365 XIPH LOCAL LOCAL_METADATA PYTHON
 OPTIONS_DEFAULT=	SHOUTCAST LIVE365 XIPH LOCAL LOCAL_METADATA
@@ -52,7 +52,6 @@ PLIST_SUB+=	LOCAL="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|[(]datadir[)]/help|(datadir)/gnome/help|g' \
 		${WRKSRC}/help/C/Makefile.in
 

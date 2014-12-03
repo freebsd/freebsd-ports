@@ -3,7 +3,7 @@
 
 PORTNAME=	devtools
 PORTVERSION=	10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/updates/${PORTVERSION}/${LINUX_RPM_ARCH}/:bin \
 		http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/${PORTVERSION}/Fedora/${LINUX_RPM_ARCH}/os/Packages/:bin
@@ -11,7 +11,6 @@ DISTFILES=	binutils-2.18.50.0.9-8.fc10.${LINUX_RPM_ARCH}.rpm:bin \
 		binutils-devel-2.18.50.0.9-8.fc10.${LINUX_RPM_ARCH}.rpm:bin \
 		glibc-devel-2.9-3.${LINUX_RPM_ARCH}.rpm:bin \
 		glibc-headers-2.9-3.${LINUX_RPM_ARCH}.rpm:bin \
-		gmp-4.2.2-8.fc10.${LINUX_RPM_ARCH}.rpm:bin \
 		kernel-headers-2.6.27.41-170.2.117.fc10.${LINUX_RPM_ARCH}.rpm:bin \
 		mpfr-2.3.2-1.fc10.${LINUX_RPM_ARCH}.rpm:bin \
 		cpp-4.3.2-7.${LINUX_RPM_ARCH}.rpm:bin \
@@ -27,7 +26,6 @@ MASTER_SITES+=	http://archives.fedoraproject.org/pub/archive/fedora/linux/update
 		http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/${PORTVERSION}/Fedora/source/SRPMS/:src
 SRC_DISTFILES=	binutils-2.18.50.0.9-8.fc10.src.rpm:src \
 		glibc-2.9-3.src.rpm:src \
-		gmp-4.2.2-8.fc10.src.rpm:src \
 		kernel-2.6.27.5-117.fc10.src.rpm:src \
 		mpfr-2.3.2-1.fc10.src.rpm:src \
 		gcc-4.3.2-7.src.rpm:src

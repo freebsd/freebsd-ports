@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/misc/gnome-devel-docs/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gnome-devel-docs
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +14,7 @@ COMMENT=	Documents targeted for GNOME developers
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 #RUN_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnome-doc-utils
 
-USES=		gmake pkgconfig tar:xz
+USES=		gettext-tools gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

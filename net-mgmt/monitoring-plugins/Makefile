@@ -107,7 +107,6 @@ LDAP_CONFIGURE_WITH=	ldap
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES_OFF=	gettext:build
 
 DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
 DBI_CONFIGURE_WITH=	dbi

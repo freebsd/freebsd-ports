@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/editors/gedit/Makefile 19980 2014-10-17 06:01:57Z gusi $
+#   $MCom: ports/trunk/editors/gedit/Makefile 20047 2014-11-10 07:28:52Z gusi $
 
 PORTNAME=	gedit
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

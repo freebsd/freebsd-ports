@@ -111,6 +111,8 @@ _RPATH=		${GSSAPILIBDIR}
 .elif ${_local} == "mit"
 KRB5_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${KRB5_HOME}
+GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
+GSSAPIINCDIR=	${GSSAPIBASEDIR}/include
 _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 .if !defined(_KRB_BOOTSTRAP)
 BUILD_DEPENDS+=	${_MITKRB5_DEPENDS}

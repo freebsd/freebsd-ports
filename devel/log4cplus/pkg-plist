@@ -71,6 +71,5 @@ include/log4cplus/win32debugappender.h
 lib/liblog4cplus-1.1.so.9
 lib/liblog4cplus-1.1.so.9.0.0
 lib/liblog4cplus.a
-lib/liblog4cplus.la
 lib/liblog4cplus.so
 libdata/pkgconfig/log4cplus.pc

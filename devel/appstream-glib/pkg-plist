@@ -59,7 +59,6 @@ lib/libappstream-glib.a
 lib/libappstream-glib.so
 lib/libappstream-glib.so.1
 lib/libappstream-glib.so.1.5.6
-lib/locale/ru/LC_MESSAGES/appstream-glib.mo
 libdata/pkgconfig/appstream-builder.pc
 libdata/pkgconfig/appstream-glib.pc
 share/aclocal/appstream-xml.m4
@@ -69,3 +68,4 @@ share/gir-1.0/AppStreamBuilder-1.0.gir
 share/gir-1.0/AppStreamGlib-1.0.gir
 share/installed-tests/appstream-glib/appdata-validate.test
 share/installed-tests/appstream-glib/destdir-check.test
+share/locale/ru/LC_MESSAGES/appstream-glib.mo

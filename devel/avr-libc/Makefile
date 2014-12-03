@@ -38,7 +38,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		dvips:${PORTSDIR}/print/tex-dvipsk
 .endif
 
-USES=		gettext:build tar:bzip2 gmake
+USES=		gettext-tools tar:bzip2 gmake
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}

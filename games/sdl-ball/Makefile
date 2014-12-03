@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	sdl-ball
-PORTVERSION=	1.01
-PORTREVISION=	8
+PORTVERSION=	1.02
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arkanoid/Breakout clone with pretty graphics
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		tar:bzip2 dos2unix gmake
@@ -19,18 +18,13 @@ USE_GL=		gl glu
 MAKE_ENV=	DATADIR=${DATADIR}/
 DOS2UNIX_FILES=	main.cpp
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/${PORTNAME}.desktop \
+		share/pixmaps/${PORTNAME}.png
 PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
-
-do-build:
-	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} `${SDL_CONFIG} --cflags --libs` \
-		-lGL -lGLU -lSDL_image -lSDL_ttf -lSDL_mixer \
-		-DDATADIR="\"${DATADIR}/\"" main.cpp -o ${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
@@ -38,5 +32,7 @@ do-install:
 	cd ${WRKSRC}/themes && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/themes/default/icon32.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKSRC}/sdl-ball.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

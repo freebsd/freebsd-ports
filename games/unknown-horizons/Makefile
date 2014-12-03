@@ -25,7 +25,7 @@ GH_ACCOUNT=	${PORTNAME}
 GH_COMMIT=	ac7af43
 
 USE_GNOME=	intltool
-USES=		gettext:build python:2 tar:xz
+USES=		gettext-tools python:2 tar:xz
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	UnknownHorizons
 

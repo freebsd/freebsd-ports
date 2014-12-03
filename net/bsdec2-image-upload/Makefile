@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
-USES=		tar:tgz
+USES=		tar:tgz uidfix
 
 # Install into ${STAGEDIR}${PREFIX}; but the build respects ${DESTDIR} so
 # all we need to give is the ${PREFIX}/bin part.

@@ -9,21 +9,24 @@ MASTER_SITES=	http://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Space adventure game set in the Milky Way galaxy
 
-LICENSE=	APACHE20 GPLv3 MIT ZLIB CCBYSAv3 DejaVu GLEW SIL
+LICENSE=	APACHE20 GPLv3 MIT ZLIB CCBYSAv3 DejaVu GLEW IUP SIL
 LICENSE_COMB=	multi
 LICENSE_NAME_CCBYSAv3=	Creative Commons Attribution-ShareAlike 3.0 Unported license
 LICENSE_NAME_DejaVu=	Bitstream Vera and Arev fonts license
 LICENSE_NAME_GLEW=	The OpenGL Extension Wrangler Library license
+LICENSE_NAME_IUP=	Galaxy colour image use policy
 LICENSE_NAME_SIL=	SIL open font license version 1.1
 LICENSE_FILE_APACHE20=	${WRKSRC}/licenses/Apache-2.0.txt
 LICENSE_FILE_CCBYSAv3=	${WRKSRC}/licenses/CC-BY-SA-3.0.txt
 LICENSE_FILE_DejaVu=	${WRKSRC}/licenses/DejaVu-license.txt
 LICENSE_FILE_GLEW=	${WRKSRC}/licenses/GLEW.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/licenses/GPL-3.txt
+LICENSE_FILE_IUP=	${WRKSRC}/licenses/Image\ Use\ Policy\ -\ NASA\ Spitzer\ Space\ Telescope.html
 LICENSE_FILE_SIL=	${WRKSRC}/licenses/SIL-1.1.txt
 LICENSE_PERMS_CCBYSAv3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_DejaVu=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_GLEW=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_IUP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/GL/glu.h:${PORTSDIR}/graphics/libGLU
@@ -35,7 +38,7 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 
 GH_ACCOUNT=	pioneerspacesim
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	20141029
+GH_TAGNAME=	20141128
 
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
@@ -70,7 +73,7 @@ MODELCOMPILER_PLIST_FILES=	bin/${PORTNAME}-modelcompiler
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000054
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
 USE_GCC=	yes
 .else
 USES+=		compiler:c++11-lang
@@ -99,7 +102,7 @@ post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/bin/modelcompiler \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-modelcompiler
 .endif
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${WRKSRC}/application-icon/pngs/pioneer-256x256.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 

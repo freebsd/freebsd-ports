@@ -28,11 +28,8 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-# avoid clash with x11-wm/clementine
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
-
-USES=		compiler:c++11-lib cmake pkgconfig desktop-file-utils execinfo
+USES=		compiler:c++11-lib cmake desktop-file-utils execinfo \
+		gettext-tools pkgconfig
 USE_GL=		glew
 USE_QT4=	dbus gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl qtestlib corelib webkit \

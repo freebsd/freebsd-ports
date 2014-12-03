@@ -1,9 +1,9 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/editors/gedit-plugins/Makefile 19980 2014-10-17 06:01:57Z gusi $
+#   $MCom: ports/trunk/editors/gedit-plugins/Makefile 20070 2014-11-12 11:53:48Z gusi $
 
 PORTNAME=	gedit-plugins
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

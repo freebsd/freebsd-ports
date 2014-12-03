@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plank
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://launchpadlibrarian.net/175961829/ \
+MASTER_SITES=	https://launchpadlibrarian.net/185556670/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -21,8 +21,9 @@ USES=		tar:xz pkgconfig gmake pathfix libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+CFLAGS+=	-Wno-return-type
 USE_GNOME=	glib20 gtk30 gdkpixbuf2 intlhack libxml2 libwnck3
-USE_XORG=	x11
+USE_XORG=	x11 xfixes xi
 INSTALLS_ICONS=	yes
 OPTIONS_SUB=	yes
 

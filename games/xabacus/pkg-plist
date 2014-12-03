@@ -1,4 +1,4 @@
-@(games,games,) bin/xabacus
+bin/xabacus
 lib/X11/app-defaults/Abacus
 man/man6/xabacus.6.gz
 share/icons/hicolor/16x16/apps/abacus.png

@@ -5,10 +5,11 @@ PORTNAME=	xlreader
 PORTVERSION=	0.9.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert .xls spread sheets to tab delimited CSV or SQL inserts
+
+USES=		tar:tgz
 
 PLIST_FILES=	bin/xlreader
 

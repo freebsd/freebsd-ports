@@ -87,9 +87,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${RM} -rf ${WRKSRC}/doc/cilcode.tmp
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-
-# Workaround bsd.ocaml.mk to fix packaging
-add-plist-post:
-	@${DO_NADA}
+# Remove orphan dir created by bsd.ocaml.mk
+	-@${RMDIR} -p ${STAGEDIR}${OCAMLFIND_DESTDIR}
 
 .include <bsd.port.mk>

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-cli
-PORTVERSION=	0.1.0.2014110101
-PORTREVISION=	2
+PORTVERSION=	0.1.0.2014113001
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/:group1 \
 		https://github.com/syncthing/syncthing/archive/v${SYNCTHING_VER}.tar.gz?dummy=/:group2 \
@@ -19,10 +19,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 GH_ACCOUNT=	syncthing
 GH_PROJECT=	syncthing-cli
-GH_COMMIT=	c87be74a305ef6b3f05debde4df84c27e9005035
+GH_COMMIT=	0adf379499930e632c4817fa57251f2e2890151b
 GH_TAGNAME=	${GH_COMMIT}
 
-SYNCTHING_VER=	0.10.8
+SYNCTHING_VER=	0.10.9
 
 WRKSRC=		${WRKDIR}/syncthing-cli-${GH_COMMIT}
 
@@ -32,13 +32,14 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/syncthing
 	@${MKDIR} ${WRKSRC}/src/github.com/AudriusButkevicius
 	@${MKDIR} ${WRKSRC}/src/code.google.com/p
+	@${MKDIR} ${WRKSRC}/src/golang.org/x
 	@${MKDIR} ${WRKSRC}/src/github.com/bkaradzic
 	@${MV} ${WRKDIR}/AudriusButkevicius-cli-7f561c7 \
 		${WRKSRC}/src/github.com/AudriusButkevicius/cli
-	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/code.google.com/p/go.crypto \
-                ${WRKSRC}/src/code.google.com/p
-	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/code.google.com/p/go.text \
-                ${WRKSRC}/src/code.google.com/p
+	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/golang.org/x/crypto \
+                ${WRKSRC}/src/golang.org/x
+	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/golang.org/x/text \
+                ${WRKSRC}/src/golang.org/x
 	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/github.com/bkaradzic/go-lz4 \
                 ${WRKSRC}/src/github.com/bkaradzic
 	@${MV} ${WRKDIR}/syncthing-${SYNCTHING_VER}/Godeps/_workspace/src/github.com/calmh \

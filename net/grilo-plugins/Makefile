@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgrilo-0.2.so:${PORTSDIR}/net/grilo \
 		libavahi-gobject.so:${PORTSDIR}/net/avahi-app \
 		libgdata.so:${PORTSDIR}/devel/libgdata
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 intlhack libxml2
 GNU_CONFIGURE=	yes

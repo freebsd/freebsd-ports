@@ -24,6 +24,7 @@ NLS_DIR=	po
 NLS_SWITCH=	--enable-nls
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+USES+=		gettext
 .endif
 
 GEANY_PLUGIN?=			${PORTNAME:S,geany-plugin-,,}

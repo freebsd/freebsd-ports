@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	diffstat
-PORTVERSION=	1.57
+PORTVERSION=	1.59
 CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Makes a histogram summarizing "diff" output
 
 GNU_CONFIGURE=	yes

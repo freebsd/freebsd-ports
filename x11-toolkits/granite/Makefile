@@ -3,32 +3,25 @@
 #
 
 PORTNAME=	granite
-PORTVERSION=	0.2.3.1
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	https://launchpadlibrarian.net/169958088/ \
-	https://launchpad.net/${PORTNAME}/0.2/${PORTVERSION}/+download/
-DIST_SUBDIR=	eos
+MASTER_SITES=	https://launchpadlibrarian.net/176306383/ \
+	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION:R}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Extensions of Gtk+ toolkit
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee
 RUN_DEPENDS=	contractor:${PORTSDIR}/sysutils/contractor
 
 USE_GCC=	yes
-USES=	cmake pkgconfig gettext tar:tgz
+USES=	cmake pkgconfig gettext
 USE_GNOME=	glib20 gtk30 introspection:build
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|gee-1.0|gee-0.8|' ${WRKSRC}/lib/granite.deps
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgranite.so
 
 .include <bsd.port.mk>

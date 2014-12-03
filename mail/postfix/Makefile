@@ -3,7 +3,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.11.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -321,6 +321,10 @@ post-patch:
 	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
 		${WRKSRC}/README_FILES/VDA_README
 .endif
+	@${ECHO} '$$manpage_directory/man1/posttls-finger.1:f:root:-:644' \
+		>> ${WRKSRC}/conf/postfix-files
+	@${ECHO} '$$command_directory/posttls-finger:f:root:-:755' \
+		>> ${WRKSRC}/conf/postfix-files
 
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \

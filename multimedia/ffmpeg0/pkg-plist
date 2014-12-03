@@ -140,14 +140,3 @@ man/man1/ffprobe%%SUFF%%.1.gz
 %%DATADIR%%/libx264-lossless_slow.ffpreset
 %%DATADIR%%/libx264-lossless_slower.ffpreset
 %%DATADIR%%/libx264-lossless_ultrafast.ffpreset
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry lib/ffmpeg%%SUFF%%
-@dirrmtry include/ffmpeg%%SUFF%%/libswscale
-@dirrmtry include/ffmpeg%%SUFF%%/libpostproc
-@dirrmtry include/ffmpeg%%SUFF%%/libavutil
-@dirrmtry include/ffmpeg%%SUFF%%/libavformat
-@dirrmtry include/ffmpeg%%SUFF%%/libavfilter
-@dirrmtry include/ffmpeg%%SUFF%%/libavdevice
-@dirrmtry include/ffmpeg%%SUFF%%/libavcodec
-@dirrmtry include/ffmpeg%%SUFF%%

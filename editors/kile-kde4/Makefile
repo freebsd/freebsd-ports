@@ -12,7 +12,7 @@ COMMENT=	LaTeX source editor for KDE
 
 RUN_DEPENDS=	identify:${PORTSDIR}/graphics/ImageMagick
 
-USES=		cmake shared-mime-info tar:bzip2
+USES=		cmake gettext-tools shared-mime-info tar:bzip2
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdeprefix kdelibs automoc4 kate_run
 USE_TEX=	latex

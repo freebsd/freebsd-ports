@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 OPTIONS_DEFINE=	NLS
 
-USES=		pkgconfig gettext:build iconv gmake tar:tgz
+USES=		pkgconfig gettext-tools iconv gmake tar:tgz
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

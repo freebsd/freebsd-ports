@@ -3,7 +3,7 @@
 
 PORTNAME=	gettext-lint
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
 
-USES=		gettext:run python:run shebangfix
+USES=		gettext-tools:run python:run shebangfix
 SHEBANG_FILES=	src/POFileEquiv.in src/POFileGlossary.in
 
 post-patch:

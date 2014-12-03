@@ -3,13 +3,18 @@
 
 PORTNAME=	recvnet
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/Linux/ \
 		CRITICAL
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recvnet (inverse telnet) is a utility for debugging tcp connections
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
+
+USES=		tar:tgz
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 LDFLAGS+=	-lcurses

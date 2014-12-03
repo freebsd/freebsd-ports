@@ -64,13 +64,3 @@ share/icons/hicolor/64x64/apps/plank.svg
 %%DATADIR%%/themes/Transparent/dock.theme
 share/vala/vapi/plank.deps
 share/vala/vapi/plank.vapi
-@dirrm %%DATADIR%%/themes/Transparent
-@dirrm %%DATADIR%%/themes/Matte
-@dirrm %%DATADIR%%/themes/Default
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@latin
-%%NLS%%@dirrmtry share/locale/sma/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sma
-@dirrm include/plank

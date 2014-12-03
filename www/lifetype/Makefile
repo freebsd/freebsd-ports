@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}.zip \
 		${CONTRIBE_VERSION}__all_templates.zip
 EXTRACT_ONLY=	${DISTNAME}.zip
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP and MySQL based blogging platform
 
 LICENSE=	GPLv2

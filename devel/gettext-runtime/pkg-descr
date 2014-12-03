@@ -1,0 +1,6 @@
+GNU gettext is a framework of libraries and tools for internationalisation
+and localisation of software.
+
+This package contains the runtime libraries and programs.
+
+WWW: http://www.gnu.org/software/gettext/

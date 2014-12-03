@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully-featured, low-level AMQP 0.9.1 client in Ruby
 
 RUN_DEPENDS=	rubygem-amq-protocol>=0.9.0:${PORTSDIR}/net/rubygem-amq-protocol \

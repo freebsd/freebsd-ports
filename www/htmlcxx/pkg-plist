@@ -23,8 +23,3 @@ lib/libhtmlcxx.so
 lib/libhtmlcxx.so.3
 lib/libhtmlcxx.so.3.1.0
 share/htmlcxx/css/default.css
-@dirrm share/htmlcxx/css
-@dirrm share/htmlcxx
-@dirrm include/htmlcxx/html
-@dirrm include/htmlcxx/css
-@dirrm include/htmlcxx

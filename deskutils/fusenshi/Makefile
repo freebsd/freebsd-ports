@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	Post-it(R) like application with network support
 
-USES=		pkgconfig tar:tgz
+USES=		gettext pkgconfig tar:tgz
 USE_GNOME=	gtkmm24 gtksourceview libxml2
 USE_XORG=	x11
 MAKE_JOBS_UNSAFE=	yes

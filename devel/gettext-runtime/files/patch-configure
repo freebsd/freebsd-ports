@@ -1,0 +1,11 @@
+--- configure.orig	2014-07-14 07:30:12 UTC
++++ configure
+@@ -16277,7 +16277,7 @@
+              # thread: pthread_create from libc will fail, whereas
+              # pthread_create will actually create a thread.
+              case "$host_os" in
+-               solaris* | hpux*)
++               solaris* | hpux* | freebsd*)
+ 
+ $as_echo "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
+ 

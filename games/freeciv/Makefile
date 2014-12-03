@@ -73,5 +73,6 @@ post-install:
 .endif
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreeciv*.so
 	-${RMDIR} ${STAGEDIR}${PREFIX}/lib/fcai
+	${RM} ${STAGEDIR}${PREFIX}/etc/ggz.modules
 
 .include <bsd.port.mk>

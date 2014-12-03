@@ -35,5 +35,3 @@ lib/libquicktime/lqt_vorbis.so
 libdata/pkgconfig/libquicktime.pc
 man/man1/lqtplay.1.gz
 share/locale/de/LC_MESSAGES/libquicktime.mo
-@dirrm lib/libquicktime
-@dirrm include/lqt

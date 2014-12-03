@@ -887,3 +887,9 @@
 %%WWWDIR%%/whine.pl
 %%WWWDIR%%/whineatnews.pl
 %%WWWDIR%%/xmlrpc.cgi
+@dir %%WWWDIR%%/contrib
+@dir %%WWWDIR%%/data
+@dir %%WWWDIR%%/graphs
+@dir %%WWWDIR%%/lib
+@dir %%WWWDIR%%/t
+@dir %%WWWDIR%%/xt

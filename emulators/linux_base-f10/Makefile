@@ -3,7 +3,7 @@
 
 PORTNAME=		f10
 PORTVERSION=		10
-PORTREVISION=		8
+PORTREVISION=		9
 CATEGORIES=		emulators linux
 MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION} \
 			FEDORA_LINUX/../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages/
@@ -36,6 +36,7 @@ BIN_DISTFILES=	basesystem-10.0-1.noarch.rpm \
 		glib2-2.18.4-2.fc10.${LINUX_RPM_ARCH}.rpm \
 		glibc-2.9-3.${LINUX_RPM_ARCH}.rpm \
 		glibc-common-2.9-3.${LINUX_RPM_ARCH}.rpm \
+		gmp-4.2.2-8.fc10.${LINUX_RPM_ARCH}.rpm \
 		grep-2.5.1a-61.fc10.${LINUX_RPM_ARCH}.rpm \
 		info-4.12-4.fc10.${LINUX_RPM_ARCH}.rpm \
 		keyutils-libs-1.2-3.fc9.${LINUX_RPM_ARCH}.rpm \
@@ -82,6 +83,7 @@ SRC_DISTFILES+=	acl-2.2.47-3.fc10.src.rpm \
 		glib-1.2.10-32.fc10.src.rpm \
 		glib2-2.18.2-3.fc10.src.rpm \
 		glibc-2.9-2.src.rpm \
+		gmp-4.2.2-8.fc10.src.rpm \
 		grep-2.5.1a-61.fc10.src.rpm \
 		keyutils-1.2-3.fc9.src.rpm \
 		krb5-1.6.3-16.fc10.src.rpm \

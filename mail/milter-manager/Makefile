@@ -18,12 +18,11 @@ RUN_DEPENDS=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2
 
 USE_RC_SUBR=	milter-manager
 GNU_CONFIGURE=	yes
-MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		--with-libev \
-		--with-package-platform=freebsd \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-USES=		gmake pkgconfig libtool
+CONFIGURE_ARGS=	--with-libev \
+		--with-package-platform=freebsd
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 USE_RUBY=	yes
@@ -31,11 +30,10 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
-MANLANG=       "" ja
 PORTDOCS=	*
 PORTEXAMPLES=	*
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--with-html-dir=${DOCSDIR}

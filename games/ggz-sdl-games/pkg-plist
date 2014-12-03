@@ -18,7 +18,4 @@ share/ggz/geekgame.dsc
 @unexec ggz-config -D --remove --modfile=%D/share/ggz/ttt3d.dsc --force
 share/ggz/ttt3d.dsc
 @exec ggz-config -D --install --modfile=%D/share/ggz/ttt3d.dsc --force
-@dirrm share/ggz/geekgame
-@dirrm share/ggz/ttt3d
-@dirrmtry lib/ggz
-@dirrmtry share/ggz
+@unexec if [ "x`cat %D/etc/ggz.modules`" = "x[Games]" ]; then echo -n > %D/etc/ggz.modules; fi

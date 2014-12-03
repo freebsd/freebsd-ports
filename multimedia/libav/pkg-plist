@@ -155,14 +155,3 @@ man/man1/avprobe.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/libavfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/nut.html
 %%PORTDOCS%%%%DOCSDIR%%/platform.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-@dirrm lib/libav
-@dirrm include/libav/libswscale
-@dirrm include/libav/libavutil
-@dirrm include/libav/libavresample
-@dirrm include/libav/libavformat
-@dirrm include/libav/libavfilter
-@dirrm include/libav/libavdevice
-@dirrm include/libav/libavcodec
-@dirrm include/libav

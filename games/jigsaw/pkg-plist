@@ -5,5 +5,3 @@ GNUstep/Local/Applications/Jigsaw.app/Resources/Jigsaw.desktop
 GNUstep/Local/Applications/Jigsaw.app/Resources/fractal.tiff
 GNUstep/Local/Applications/Jigsaw.app/stamp.make
 GNUstep/Local/Tools/Jigsaw
-@dirrm GNUstep/Local/Applications/Jigsaw.app/Resources
-@dirrm GNUstep/Local/Applications/Jigsaw.app

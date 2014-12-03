@@ -1,0 +1,33 @@
+--- CMakeLists.txt.orig	2014-04-19 20:26:40.000000000 +0200
++++ CMakeLists.txt	2014-12-03 14:38:24.000000000 +0100
+@@ -49,7 +49,6 @@
+ # bootstrap
+ ####################################
+ 
+-find_package(Subversion REQUIRED)
+ find_package(Threads REQUIRED)
+ find_package(Boost COMPONENTS
+   date_time
+@@ -113,13 +112,10 @@
+   ${CMAKE_CURRENT_BINARY_DIR}/include
+ )
+ 
+-include(CMakeExternal.txt)
+ enable_testing()
+ 
+ add_subdirectory(src/core)
+ add_subdirectory(src/contrib)
+-add_subdirectory(src/demo)
+-add_subdirectory(src/test)
+ 
+ #################################
+ # install pkg-config file
+@@ -135,7 +131,7 @@
+     FILES
+     ${CMAKE_CURRENT_BINARY_DIR}/liblucene++.pc
+     ${CMAKE_CURRENT_BINARY_DIR}/liblucene++-contrib.pc
+-    DESTINATION ${LIB_DESTINATION}/pkgconfig)
++    DESTINATION libdata/pkgconfig)
+ endif()
+ 
+ ####################################

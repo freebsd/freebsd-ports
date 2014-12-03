@@ -21,7 +21,7 @@ PIDGIN_SLAVE=	yes
 WITH_GTKUI=	yes
 
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix intlhack gtk20
+USE_GNOME=	gnomeprefix gtk20
 USE_XORG=	xscrnsaver sm
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--disable-consoleui \
@@ -29,13 +29,7 @@ CONFIGURE_ARGS=	--disable-consoleui \
 		--enable-screensaver \
 		--with-dynamic_prpls=${PRPL_MODULES:S/,$//}
 
-post-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-	    	Makefile ${MAKE_ARGS} pidgin.desktop
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/pidgin.desktop \
-	    	${STAGEDIR}${PREFIX}/share/applications/pidgin.desktop
 	${INSTALL_MAN} ${WRKSRC}/doc/pidgin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include "${MASTERDIR}/Makefile"

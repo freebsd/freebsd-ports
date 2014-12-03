@@ -3,7 +3,7 @@
 
 PORTNAME=	libexif
 PORTVERSION=	0.6.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	DOCS NLS
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes

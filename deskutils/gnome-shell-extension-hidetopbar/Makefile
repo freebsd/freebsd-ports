@@ -1,9 +1,8 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extension-hidetopbar/Makefile 19680 2014-05-23 14:40:39Z gusi $
 
 PORTNAME=	gnome-shell-extension-hidetopbar
-PORTVERSION=	0.0.0.20140520
+PORTVERSION=	0.0.0.20141126
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-WRKSRC=		${WRKDIR}/mlutfy-hidetopbar-42b0b25
+WRKSRC=		${WRKDIR}/mlutfy-hidetopbar-${GH_COMMIT}
 
 USES=		gettext gmake pkgconfig tar:xz
 USE_GNOME=	glib20
@@ -25,8 +24,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.hidetopbar.gschema.xml
 
 GH_ACCOUNT=	mlutfy
-GH_TAGNAME=	42b0b256fd
-GH_COMMIT=	42b0b256fd
+GH_TAGNAME=	033a2e5
+GH_COMMIT=	033a2e5
 GH_PROJECT=	hidetopbar
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves

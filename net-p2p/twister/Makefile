@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twister-core
-PORTVERSION=	0.141008
+PORTVERSION=	0.141130
 CATEGORIES=	net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	miguelfreitas
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	377870f
+GH_COMMIT=	9d3b074
 
 USE_BDB=	yes
 WANT_BDB_VER=	48
@@ -55,6 +55,8 @@ WITH_OPENSSL_PORT=	yes
 .endif
 
 pre-configure:
+	${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|'	\
+		${WRKSRC}/share/genbuild.sh
 	(cd ${CONFIGURE_WRKSRC} && ./autotool.sh)
 
 do-install:

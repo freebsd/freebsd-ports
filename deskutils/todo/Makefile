@@ -7,7 +7,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://cloud.github.com/downloads/ginatrapani/todo.txt-cli/
 DISTNAME=	todo.txt_cli-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Todo.txt Manager
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

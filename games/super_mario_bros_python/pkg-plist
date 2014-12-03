@@ -154,8 +154,3 @@ share/pixmaps/super_mario_bros_python.png
 %%DATADIR%%/start.py
 %%DATADIR%%/start.pyc
 %%DATADIR%%/start.pyo
-@dirrm %%DATADIR%%/gamelib
-@dirrm %%DATADIR%%/data/saves
-@dirrm %%DATADIR%%/data/fonts
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

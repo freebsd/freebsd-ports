@@ -1,9 +1,9 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/vino/Makefile 19968 2014-10-16 07:29:56Z gusi $
+#   $MCom: ports/trunk/net/vino/Makefile 20063 2014-11-10 22:11:39Z gusi $
 
 PORTNAME=	vino
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

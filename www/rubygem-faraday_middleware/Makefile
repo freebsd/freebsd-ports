@@ -6,7 +6,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Ruby Faraday middlewares
 
 RUN_DEPENDS=	rubygem-faraday>=0.7.4:${PORTSDIR}/www/rubygem-faraday

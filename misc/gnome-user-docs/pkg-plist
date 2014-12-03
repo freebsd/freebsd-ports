@@ -92,6 +92,7 @@ share/help/C/gnome-help/figures/battery-missing-symbolic.svg
 share/help/C/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/C/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/C/gnome-help/figures/bluetooth-menu.png
+share/help/C/gnome-help/figures/camera-photo-symbolic.svg
 share/help/C/gnome-help/figures/color-average.png
 share/help/C/gnome-help/figures/color-camera.png
 share/help/C/gnome-help/figures/color-display.png
@@ -101,6 +102,7 @@ share/help/C/gnome-help/figures/color-space.png
 share/help/C/gnome-help/figures/display-dual-monitors.webm
 share/help/C/gnome-help/figures/documents-icon.png
 share/help/C/gnome-help/figures/emblem-system-symbolic.svg
+share/help/C/gnome-help/figures/emblem-system.png
 share/help/C/gnome-help/figures/gnome.png
 share/help/C/gnome-help/figures/go-down.png
 share/help/C/gnome-help/figures/input-keyboard-symbolic.png
@@ -254,6 +256,7 @@ share/help/C/gnome-help/net-install-flash.page
 share/help/C/gnome-help/net-install-moonlight.page
 share/help/C/gnome-help/net-macaddress.page
 share/help/C/gnome-help/net-manual.page
+share/help/C/gnome-help/net-mobile.page
 share/help/C/gnome-help/net-othersconnect.page
 share/help/C/gnome-help/net-othersedit.page
 share/help/C/gnome-help/net-problem.page
@@ -319,6 +322,7 @@ share/help/C/gnome-help/printing-streaks.page
 share/help/C/gnome-help/printing-to-file.page
 share/help/C/gnome-help/printing.page
 share/help/C/gnome-help/privacy-history-recent-off.page
+share/help/C/gnome-help/privacy-location.page
 share/help/C/gnome-help/privacy-purge.page
 share/help/C/gnome-help/privacy-screen-lock.page
 share/help/C/gnome-help/privacy.page
@@ -507,6 +511,7 @@ share/help/as/gnome-help/figures/battery-missing-symbolic.svg
 share/help/as/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/as/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/as/gnome-help/figures/bluetooth-menu.png
+share/help/as/gnome-help/figures/camera-photo-symbolic.svg
 share/help/as/gnome-help/figures/color-average.png
 share/help/as/gnome-help/figures/color-camera.png
 share/help/as/gnome-help/figures/color-display.png
@@ -516,6 +521,7 @@ share/help/as/gnome-help/figures/color-space.png
 share/help/as/gnome-help/figures/display-dual-monitors.webm
 share/help/as/gnome-help/figures/documents-icon.png
 share/help/as/gnome-help/figures/emblem-system-symbolic.svg
+share/help/as/gnome-help/figures/emblem-system.png
 share/help/as/gnome-help/figures/gnome.png
 share/help/as/gnome-help/figures/go-down.png
 share/help/as/gnome-help/figures/input-keyboard-symbolic.png
@@ -669,6 +675,7 @@ share/help/as/gnome-help/net-install-flash.page
 share/help/as/gnome-help/net-install-moonlight.page
 share/help/as/gnome-help/net-macaddress.page
 share/help/as/gnome-help/net-manual.page
+share/help/as/gnome-help/net-mobile.page
 share/help/as/gnome-help/net-othersconnect.page
 share/help/as/gnome-help/net-othersedit.page
 share/help/as/gnome-help/net-problem.page
@@ -734,6 +741,7 @@ share/help/as/gnome-help/printing-streaks.page
 share/help/as/gnome-help/printing-to-file.page
 share/help/as/gnome-help/printing.page
 share/help/as/gnome-help/privacy-history-recent-off.page
+share/help/as/gnome-help/privacy-location.page
 share/help/as/gnome-help/privacy-purge.page
 share/help/as/gnome-help/privacy-screen-lock.page
 share/help/as/gnome-help/privacy.page
@@ -888,6 +896,7 @@ share/help/ca/gnome-help/figures/battery-missing-symbolic.svg
 share/help/ca/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/ca/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/ca/gnome-help/figures/bluetooth-menu.png
+share/help/ca/gnome-help/figures/camera-photo-symbolic.svg
 share/help/ca/gnome-help/figures/color-average.png
 share/help/ca/gnome-help/figures/color-camera.png
 share/help/ca/gnome-help/figures/color-display.png
@@ -897,6 +906,7 @@ share/help/ca/gnome-help/figures/color-space.png
 share/help/ca/gnome-help/figures/display-dual-monitors.webm
 share/help/ca/gnome-help/figures/documents-icon.png
 share/help/ca/gnome-help/figures/emblem-system-symbolic.svg
+share/help/ca/gnome-help/figures/emblem-system.png
 share/help/ca/gnome-help/figures/gnome.png
 share/help/ca/gnome-help/figures/go-down.png
 share/help/ca/gnome-help/figures/input-keyboard-symbolic.png
@@ -1050,6 +1060,7 @@ share/help/ca/gnome-help/net-install-flash.page
 share/help/ca/gnome-help/net-install-moonlight.page
 share/help/ca/gnome-help/net-macaddress.page
 share/help/ca/gnome-help/net-manual.page
+share/help/ca/gnome-help/net-mobile.page
 share/help/ca/gnome-help/net-othersconnect.page
 share/help/ca/gnome-help/net-othersedit.page
 share/help/ca/gnome-help/net-problem.page
@@ -1115,6 +1126,7 @@ share/help/ca/gnome-help/printing-streaks.page
 share/help/ca/gnome-help/printing-to-file.page
 share/help/ca/gnome-help/printing.page
 share/help/ca/gnome-help/privacy-history-recent-off.page
+share/help/ca/gnome-help/privacy-location.page
 share/help/ca/gnome-help/privacy-purge.page
 share/help/ca/gnome-help/privacy-screen-lock.page
 share/help/ca/gnome-help/privacy.page
@@ -1269,6 +1281,7 @@ share/help/cs/gnome-help/figures/battery-missing-symbolic.svg
 share/help/cs/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/cs/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/cs/gnome-help/figures/bluetooth-menu.png
+share/help/cs/gnome-help/figures/camera-photo-symbolic.svg
 share/help/cs/gnome-help/figures/color-average.png
 share/help/cs/gnome-help/figures/color-camera.png
 share/help/cs/gnome-help/figures/color-display.png
@@ -1278,6 +1291,7 @@ share/help/cs/gnome-help/figures/color-space.png
 share/help/cs/gnome-help/figures/display-dual-monitors.webm
 share/help/cs/gnome-help/figures/documents-icon.png
 share/help/cs/gnome-help/figures/emblem-system-symbolic.svg
+share/help/cs/gnome-help/figures/emblem-system.png
 share/help/cs/gnome-help/figures/gnome.png
 share/help/cs/gnome-help/figures/go-down.png
 share/help/cs/gnome-help/figures/input-keyboard-symbolic.png
@@ -1431,6 +1445,7 @@ share/help/cs/gnome-help/net-install-flash.page
 share/help/cs/gnome-help/net-install-moonlight.page
 share/help/cs/gnome-help/net-macaddress.page
 share/help/cs/gnome-help/net-manual.page
+share/help/cs/gnome-help/net-mobile.page
 share/help/cs/gnome-help/net-othersconnect.page
 share/help/cs/gnome-help/net-othersedit.page
 share/help/cs/gnome-help/net-problem.page
@@ -1496,6 +1511,7 @@ share/help/cs/gnome-help/printing-streaks.page
 share/help/cs/gnome-help/printing-to-file.page
 share/help/cs/gnome-help/printing.page
 share/help/cs/gnome-help/privacy-history-recent-off.page
+share/help/cs/gnome-help/privacy-location.page
 share/help/cs/gnome-help/privacy-purge.page
 share/help/cs/gnome-help/privacy-screen-lock.page
 share/help/cs/gnome-help/privacy.page
@@ -1650,6 +1666,7 @@ share/help/de/gnome-help/figures/battery-missing-symbolic.svg
 share/help/de/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/de/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/de/gnome-help/figures/bluetooth-menu.png
+share/help/de/gnome-help/figures/camera-photo-symbolic.svg
 share/help/de/gnome-help/figures/color-average.png
 share/help/de/gnome-help/figures/color-camera.png
 share/help/de/gnome-help/figures/color-display.png
@@ -1659,6 +1676,7 @@ share/help/de/gnome-help/figures/color-space.png
 share/help/de/gnome-help/figures/display-dual-monitors.webm
 share/help/de/gnome-help/figures/documents-icon.png
 share/help/de/gnome-help/figures/emblem-system-symbolic.svg
+share/help/de/gnome-help/figures/emblem-system.png
 share/help/de/gnome-help/figures/gnome.png
 share/help/de/gnome-help/figures/go-down.png
 share/help/de/gnome-help/figures/input-keyboard-symbolic.png
@@ -1812,6 +1830,7 @@ share/help/de/gnome-help/net-install-flash.page
 share/help/de/gnome-help/net-install-moonlight.page
 share/help/de/gnome-help/net-macaddress.page
 share/help/de/gnome-help/net-manual.page
+share/help/de/gnome-help/net-mobile.page
 share/help/de/gnome-help/net-othersconnect.page
 share/help/de/gnome-help/net-othersedit.page
 share/help/de/gnome-help/net-problem.page
@@ -1877,6 +1896,7 @@ share/help/de/gnome-help/printing-streaks.page
 share/help/de/gnome-help/printing-to-file.page
 share/help/de/gnome-help/printing.page
 share/help/de/gnome-help/privacy-history-recent-off.page
+share/help/de/gnome-help/privacy-location.page
 share/help/de/gnome-help/privacy-purge.page
 share/help/de/gnome-help/privacy-screen-lock.page
 share/help/de/gnome-help/privacy.page
@@ -2031,6 +2051,7 @@ share/help/el/gnome-help/figures/battery-missing-symbolic.svg
 share/help/el/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/el/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/el/gnome-help/figures/bluetooth-menu.png
+share/help/el/gnome-help/figures/camera-photo-symbolic.svg
 share/help/el/gnome-help/figures/color-average.png
 share/help/el/gnome-help/figures/color-camera.png
 share/help/el/gnome-help/figures/color-display.png
@@ -2040,6 +2061,7 @@ share/help/el/gnome-help/figures/color-space.png
 share/help/el/gnome-help/figures/display-dual-monitors.webm
 share/help/el/gnome-help/figures/documents-icon.png
 share/help/el/gnome-help/figures/emblem-system-symbolic.svg
+share/help/el/gnome-help/figures/emblem-system.png
 share/help/el/gnome-help/figures/gnome.png
 share/help/el/gnome-help/figures/go-down.png
 share/help/el/gnome-help/figures/input-keyboard-symbolic.png
@@ -2193,6 +2215,7 @@ share/help/el/gnome-help/net-install-flash.page
 share/help/el/gnome-help/net-install-moonlight.page
 share/help/el/gnome-help/net-macaddress.page
 share/help/el/gnome-help/net-manual.page
+share/help/el/gnome-help/net-mobile.page
 share/help/el/gnome-help/net-othersconnect.page
 share/help/el/gnome-help/net-othersedit.page
 share/help/el/gnome-help/net-problem.page
@@ -2258,6 +2281,7 @@ share/help/el/gnome-help/printing-streaks.page
 share/help/el/gnome-help/printing-to-file.page
 share/help/el/gnome-help/printing.page
 share/help/el/gnome-help/privacy-history-recent-off.page
+share/help/el/gnome-help/privacy-location.page
 share/help/el/gnome-help/privacy-purge.page
 share/help/el/gnome-help/privacy-screen-lock.page
 share/help/el/gnome-help/privacy.page
@@ -2412,6 +2436,7 @@ share/help/es/gnome-help/figures/battery-missing-symbolic.svg
 share/help/es/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/es/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/es/gnome-help/figures/bluetooth-menu.png
+share/help/es/gnome-help/figures/camera-photo-symbolic.svg
 share/help/es/gnome-help/figures/color-average.png
 share/help/es/gnome-help/figures/color-camera.png
 share/help/es/gnome-help/figures/color-display.png
@@ -2421,6 +2446,7 @@ share/help/es/gnome-help/figures/color-space.png
 share/help/es/gnome-help/figures/display-dual-monitors.webm
 share/help/es/gnome-help/figures/documents-icon.png
 share/help/es/gnome-help/figures/emblem-system-symbolic.svg
+share/help/es/gnome-help/figures/emblem-system.png
 share/help/es/gnome-help/figures/gnome.png
 share/help/es/gnome-help/figures/go-down.png
 share/help/es/gnome-help/figures/input-keyboard-symbolic.png
@@ -2574,6 +2600,7 @@ share/help/es/gnome-help/net-install-flash.page
 share/help/es/gnome-help/net-install-moonlight.page
 share/help/es/gnome-help/net-macaddress.page
 share/help/es/gnome-help/net-manual.page
+share/help/es/gnome-help/net-mobile.page
 share/help/es/gnome-help/net-othersconnect.page
 share/help/es/gnome-help/net-othersedit.page
 share/help/es/gnome-help/net-problem.page
@@ -2639,6 +2666,7 @@ share/help/es/gnome-help/printing-streaks.page
 share/help/es/gnome-help/printing-to-file.page
 share/help/es/gnome-help/printing.page
 share/help/es/gnome-help/privacy-history-recent-off.page
+share/help/es/gnome-help/privacy-location.page
 share/help/es/gnome-help/privacy-purge.page
 share/help/es/gnome-help/privacy-screen-lock.page
 share/help/es/gnome-help/privacy.page
@@ -2793,6 +2821,7 @@ share/help/fi/gnome-help/figures/battery-missing-symbolic.svg
 share/help/fi/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/fi/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/fi/gnome-help/figures/bluetooth-menu.png
+share/help/fi/gnome-help/figures/camera-photo-symbolic.svg
 share/help/fi/gnome-help/figures/color-average.png
 share/help/fi/gnome-help/figures/color-camera.png
 share/help/fi/gnome-help/figures/color-display.png
@@ -2802,6 +2831,7 @@ share/help/fi/gnome-help/figures/color-space.png
 share/help/fi/gnome-help/figures/display-dual-monitors.webm
 share/help/fi/gnome-help/figures/documents-icon.png
 share/help/fi/gnome-help/figures/emblem-system-symbolic.svg
+share/help/fi/gnome-help/figures/emblem-system.png
 share/help/fi/gnome-help/figures/gnome.png
 share/help/fi/gnome-help/figures/go-down.png
 share/help/fi/gnome-help/figures/input-keyboard-symbolic.png
@@ -2955,6 +2985,7 @@ share/help/fi/gnome-help/net-install-flash.page
 share/help/fi/gnome-help/net-install-moonlight.page
 share/help/fi/gnome-help/net-macaddress.page
 share/help/fi/gnome-help/net-manual.page
+share/help/fi/gnome-help/net-mobile.page
 share/help/fi/gnome-help/net-othersconnect.page
 share/help/fi/gnome-help/net-othersedit.page
 share/help/fi/gnome-help/net-problem.page
@@ -3020,6 +3051,7 @@ share/help/fi/gnome-help/printing-streaks.page
 share/help/fi/gnome-help/printing-to-file.page
 share/help/fi/gnome-help/printing.page
 share/help/fi/gnome-help/privacy-history-recent-off.page
+share/help/fi/gnome-help/privacy-location.page
 share/help/fi/gnome-help/privacy-purge.page
 share/help/fi/gnome-help/privacy-screen-lock.page
 share/help/fi/gnome-help/privacy.page
@@ -3174,6 +3206,7 @@ share/help/fr/gnome-help/figures/battery-missing-symbolic.svg
 share/help/fr/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/fr/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/fr/gnome-help/figures/bluetooth-menu.png
+share/help/fr/gnome-help/figures/camera-photo-symbolic.svg
 share/help/fr/gnome-help/figures/color-average.png
 share/help/fr/gnome-help/figures/color-camera.png
 share/help/fr/gnome-help/figures/color-display.png
@@ -3183,6 +3216,7 @@ share/help/fr/gnome-help/figures/color-space.png
 share/help/fr/gnome-help/figures/display-dual-monitors.webm
 share/help/fr/gnome-help/figures/documents-icon.png
 share/help/fr/gnome-help/figures/emblem-system-symbolic.svg
+share/help/fr/gnome-help/figures/emblem-system.png
 share/help/fr/gnome-help/figures/gnome.png
 share/help/fr/gnome-help/figures/go-down.png
 share/help/fr/gnome-help/figures/input-keyboard-symbolic.png
@@ -3336,6 +3370,7 @@ share/help/fr/gnome-help/net-install-flash.page
 share/help/fr/gnome-help/net-install-moonlight.page
 share/help/fr/gnome-help/net-macaddress.page
 share/help/fr/gnome-help/net-manual.page
+share/help/fr/gnome-help/net-mobile.page
 share/help/fr/gnome-help/net-othersconnect.page
 share/help/fr/gnome-help/net-othersedit.page
 share/help/fr/gnome-help/net-problem.page
@@ -3401,6 +3436,7 @@ share/help/fr/gnome-help/printing-streaks.page
 share/help/fr/gnome-help/printing-to-file.page
 share/help/fr/gnome-help/printing.page
 share/help/fr/gnome-help/privacy-history-recent-off.page
+share/help/fr/gnome-help/privacy-location.page
 share/help/fr/gnome-help/privacy-purge.page
 share/help/fr/gnome-help/privacy-screen-lock.page
 share/help/fr/gnome-help/privacy.page
@@ -3555,6 +3591,7 @@ share/help/gl/gnome-help/figures/battery-missing-symbolic.svg
 share/help/gl/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/gl/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/gl/gnome-help/figures/bluetooth-menu.png
+share/help/gl/gnome-help/figures/camera-photo-symbolic.svg
 share/help/gl/gnome-help/figures/color-average.png
 share/help/gl/gnome-help/figures/color-camera.png
 share/help/gl/gnome-help/figures/color-display.png
@@ -3564,6 +3601,7 @@ share/help/gl/gnome-help/figures/color-space.png
 share/help/gl/gnome-help/figures/display-dual-monitors.webm
 share/help/gl/gnome-help/figures/documents-icon.png
 share/help/gl/gnome-help/figures/emblem-system-symbolic.svg
+share/help/gl/gnome-help/figures/emblem-system.png
 share/help/gl/gnome-help/figures/gnome.png
 share/help/gl/gnome-help/figures/go-down.png
 share/help/gl/gnome-help/figures/input-keyboard-symbolic.png
@@ -3717,6 +3755,7 @@ share/help/gl/gnome-help/net-install-flash.page
 share/help/gl/gnome-help/net-install-moonlight.page
 share/help/gl/gnome-help/net-macaddress.page
 share/help/gl/gnome-help/net-manual.page
+share/help/gl/gnome-help/net-mobile.page
 share/help/gl/gnome-help/net-othersconnect.page
 share/help/gl/gnome-help/net-othersedit.page
 share/help/gl/gnome-help/net-problem.page
@@ -3782,6 +3821,7 @@ share/help/gl/gnome-help/printing-streaks.page
 share/help/gl/gnome-help/printing-to-file.page
 share/help/gl/gnome-help/printing.page
 share/help/gl/gnome-help/privacy-history-recent-off.page
+share/help/gl/gnome-help/privacy-location.page
 share/help/gl/gnome-help/privacy-purge.page
 share/help/gl/gnome-help/privacy-screen-lock.page
 share/help/gl/gnome-help/privacy.page
@@ -3936,6 +3976,7 @@ share/help/gu/gnome-help/figures/battery-missing-symbolic.svg
 share/help/gu/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/gu/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/gu/gnome-help/figures/bluetooth-menu.png
+share/help/gu/gnome-help/figures/camera-photo-symbolic.svg
 share/help/gu/gnome-help/figures/color-average.png
 share/help/gu/gnome-help/figures/color-camera.png
 share/help/gu/gnome-help/figures/color-display.png
@@ -3945,6 +3986,7 @@ share/help/gu/gnome-help/figures/color-space.png
 share/help/gu/gnome-help/figures/display-dual-monitors.webm
 share/help/gu/gnome-help/figures/documents-icon.png
 share/help/gu/gnome-help/figures/emblem-system-symbolic.svg
+share/help/gu/gnome-help/figures/emblem-system.png
 share/help/gu/gnome-help/figures/gnome.png
 share/help/gu/gnome-help/figures/go-down.png
 share/help/gu/gnome-help/figures/input-keyboard-symbolic.png
@@ -4098,6 +4140,7 @@ share/help/gu/gnome-help/net-install-flash.page
 share/help/gu/gnome-help/net-install-moonlight.page
 share/help/gu/gnome-help/net-macaddress.page
 share/help/gu/gnome-help/net-manual.page
+share/help/gu/gnome-help/net-mobile.page
 share/help/gu/gnome-help/net-othersconnect.page
 share/help/gu/gnome-help/net-othersedit.page
 share/help/gu/gnome-help/net-problem.page
@@ -4163,6 +4206,7 @@ share/help/gu/gnome-help/printing-streaks.page
 share/help/gu/gnome-help/printing-to-file.page
 share/help/gu/gnome-help/printing.page
 share/help/gu/gnome-help/privacy-history-recent-off.page
+share/help/gu/gnome-help/privacy-location.page
 share/help/gu/gnome-help/privacy-purge.page
 share/help/gu/gnome-help/privacy-screen-lock.page
 share/help/gu/gnome-help/privacy.page
@@ -4317,6 +4361,7 @@ share/help/hi/gnome-help/figures/battery-missing-symbolic.svg
 share/help/hi/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/hi/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/hi/gnome-help/figures/bluetooth-menu.png
+share/help/hi/gnome-help/figures/camera-photo-symbolic.svg
 share/help/hi/gnome-help/figures/color-average.png
 share/help/hi/gnome-help/figures/color-camera.png
 share/help/hi/gnome-help/figures/color-display.png
@@ -4326,6 +4371,7 @@ share/help/hi/gnome-help/figures/color-space.png
 share/help/hi/gnome-help/figures/display-dual-monitors.webm
 share/help/hi/gnome-help/figures/documents-icon.png
 share/help/hi/gnome-help/figures/emblem-system-symbolic.svg
+share/help/hi/gnome-help/figures/emblem-system.png
 share/help/hi/gnome-help/figures/gnome.png
 share/help/hi/gnome-help/figures/go-down.png
 share/help/hi/gnome-help/figures/input-keyboard-symbolic.png
@@ -4479,6 +4525,7 @@ share/help/hi/gnome-help/net-install-flash.page
 share/help/hi/gnome-help/net-install-moonlight.page
 share/help/hi/gnome-help/net-macaddress.page
 share/help/hi/gnome-help/net-manual.page
+share/help/hi/gnome-help/net-mobile.page
 share/help/hi/gnome-help/net-othersconnect.page
 share/help/hi/gnome-help/net-othersedit.page
 share/help/hi/gnome-help/net-problem.page
@@ -4544,6 +4591,7 @@ share/help/hi/gnome-help/printing-streaks.page
 share/help/hi/gnome-help/printing-to-file.page
 share/help/hi/gnome-help/printing.page
 share/help/hi/gnome-help/privacy-history-recent-off.page
+share/help/hi/gnome-help/privacy-location.page
 share/help/hi/gnome-help/privacy-purge.page
 share/help/hi/gnome-help/privacy-screen-lock.page
 share/help/hi/gnome-help/privacy.page
@@ -4698,6 +4746,7 @@ share/help/hu/gnome-help/figures/battery-missing-symbolic.svg
 share/help/hu/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/hu/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/hu/gnome-help/figures/bluetooth-menu.png
+share/help/hu/gnome-help/figures/camera-photo-symbolic.svg
 share/help/hu/gnome-help/figures/color-average.png
 share/help/hu/gnome-help/figures/color-camera.png
 share/help/hu/gnome-help/figures/color-display.png
@@ -4707,6 +4756,7 @@ share/help/hu/gnome-help/figures/color-space.png
 share/help/hu/gnome-help/figures/display-dual-monitors.webm
 share/help/hu/gnome-help/figures/documents-icon.png
 share/help/hu/gnome-help/figures/emblem-system-symbolic.svg
+share/help/hu/gnome-help/figures/emblem-system.png
 share/help/hu/gnome-help/figures/gnome.png
 share/help/hu/gnome-help/figures/go-down.png
 share/help/hu/gnome-help/figures/input-keyboard-symbolic.png
@@ -4860,6 +4910,7 @@ share/help/hu/gnome-help/net-install-flash.page
 share/help/hu/gnome-help/net-install-moonlight.page
 share/help/hu/gnome-help/net-macaddress.page
 share/help/hu/gnome-help/net-manual.page
+share/help/hu/gnome-help/net-mobile.page
 share/help/hu/gnome-help/net-othersconnect.page
 share/help/hu/gnome-help/net-othersedit.page
 share/help/hu/gnome-help/net-problem.page
@@ -4925,6 +4976,7 @@ share/help/hu/gnome-help/printing-streaks.page
 share/help/hu/gnome-help/printing-to-file.page
 share/help/hu/gnome-help/printing.page
 share/help/hu/gnome-help/privacy-history-recent-off.page
+share/help/hu/gnome-help/privacy-location.page
 share/help/hu/gnome-help/privacy-purge.page
 share/help/hu/gnome-help/privacy-screen-lock.page
 share/help/hu/gnome-help/privacy.page
@@ -5079,6 +5131,7 @@ share/help/id/gnome-help/figures/battery-missing-symbolic.svg
 share/help/id/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/id/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/id/gnome-help/figures/bluetooth-menu.png
+share/help/id/gnome-help/figures/camera-photo-symbolic.svg
 share/help/id/gnome-help/figures/color-average.png
 share/help/id/gnome-help/figures/color-camera.png
 share/help/id/gnome-help/figures/color-display.png
@@ -5088,6 +5141,7 @@ share/help/id/gnome-help/figures/color-space.png
 share/help/id/gnome-help/figures/display-dual-monitors.webm
 share/help/id/gnome-help/figures/documents-icon.png
 share/help/id/gnome-help/figures/emblem-system-symbolic.svg
+share/help/id/gnome-help/figures/emblem-system.png
 share/help/id/gnome-help/figures/gnome.png
 share/help/id/gnome-help/figures/go-down.png
 share/help/id/gnome-help/figures/input-keyboard-symbolic.png
@@ -5241,6 +5295,7 @@ share/help/id/gnome-help/net-install-flash.page
 share/help/id/gnome-help/net-install-moonlight.page
 share/help/id/gnome-help/net-macaddress.page
 share/help/id/gnome-help/net-manual.page
+share/help/id/gnome-help/net-mobile.page
 share/help/id/gnome-help/net-othersconnect.page
 share/help/id/gnome-help/net-othersedit.page
 share/help/id/gnome-help/net-problem.page
@@ -5306,6 +5361,7 @@ share/help/id/gnome-help/printing-streaks.page
 share/help/id/gnome-help/printing-to-file.page
 share/help/id/gnome-help/printing.page
 share/help/id/gnome-help/privacy-history-recent-off.page
+share/help/id/gnome-help/privacy-location.page
 share/help/id/gnome-help/privacy-purge.page
 share/help/id/gnome-help/privacy-screen-lock.page
 share/help/id/gnome-help/privacy.page
@@ -5460,6 +5516,7 @@ share/help/it/gnome-help/figures/battery-missing-symbolic.svg
 share/help/it/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/it/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/it/gnome-help/figures/bluetooth-menu.png
+share/help/it/gnome-help/figures/camera-photo-symbolic.svg
 share/help/it/gnome-help/figures/color-average.png
 share/help/it/gnome-help/figures/color-camera.png
 share/help/it/gnome-help/figures/color-display.png
@@ -5469,6 +5526,7 @@ share/help/it/gnome-help/figures/color-space.png
 share/help/it/gnome-help/figures/display-dual-monitors.webm
 share/help/it/gnome-help/figures/documents-icon.png
 share/help/it/gnome-help/figures/emblem-system-symbolic.svg
+share/help/it/gnome-help/figures/emblem-system.png
 share/help/it/gnome-help/figures/gnome.png
 share/help/it/gnome-help/figures/go-down.png
 share/help/it/gnome-help/figures/input-keyboard-symbolic.png
@@ -5622,6 +5680,7 @@ share/help/it/gnome-help/net-install-flash.page
 share/help/it/gnome-help/net-install-moonlight.page
 share/help/it/gnome-help/net-macaddress.page
 share/help/it/gnome-help/net-manual.page
+share/help/it/gnome-help/net-mobile.page
 share/help/it/gnome-help/net-othersconnect.page
 share/help/it/gnome-help/net-othersedit.page
 share/help/it/gnome-help/net-problem.page
@@ -5687,6 +5746,7 @@ share/help/it/gnome-help/printing-streaks.page
 share/help/it/gnome-help/printing-to-file.page
 share/help/it/gnome-help/printing.page
 share/help/it/gnome-help/privacy-history-recent-off.page
+share/help/it/gnome-help/privacy-location.page
 share/help/it/gnome-help/privacy-purge.page
 share/help/it/gnome-help/privacy-screen-lock.page
 share/help/it/gnome-help/privacy.page
@@ -5841,6 +5901,7 @@ share/help/ja/gnome-help/figures/battery-missing-symbolic.svg
 share/help/ja/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/ja/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/ja/gnome-help/figures/bluetooth-menu.png
+share/help/ja/gnome-help/figures/camera-photo-symbolic.svg
 share/help/ja/gnome-help/figures/color-average.png
 share/help/ja/gnome-help/figures/color-camera.png
 share/help/ja/gnome-help/figures/color-display.png
@@ -5850,6 +5911,7 @@ share/help/ja/gnome-help/figures/color-space.png
 share/help/ja/gnome-help/figures/display-dual-monitors.webm
 share/help/ja/gnome-help/figures/documents-icon.png
 share/help/ja/gnome-help/figures/emblem-system-symbolic.svg
+share/help/ja/gnome-help/figures/emblem-system.png
 share/help/ja/gnome-help/figures/gnome.png
 share/help/ja/gnome-help/figures/go-down.png
 share/help/ja/gnome-help/figures/input-keyboard-symbolic.png
@@ -6003,6 +6065,7 @@ share/help/ja/gnome-help/net-install-flash.page
 share/help/ja/gnome-help/net-install-moonlight.page
 share/help/ja/gnome-help/net-macaddress.page
 share/help/ja/gnome-help/net-manual.page
+share/help/ja/gnome-help/net-mobile.page
 share/help/ja/gnome-help/net-othersconnect.page
 share/help/ja/gnome-help/net-othersedit.page
 share/help/ja/gnome-help/net-problem.page
@@ -6068,6 +6131,7 @@ share/help/ja/gnome-help/printing-streaks.page
 share/help/ja/gnome-help/printing-to-file.page
 share/help/ja/gnome-help/printing.page
 share/help/ja/gnome-help/privacy-history-recent-off.page
+share/help/ja/gnome-help/privacy-location.page
 share/help/ja/gnome-help/privacy-purge.page
 share/help/ja/gnome-help/privacy-screen-lock.page
 share/help/ja/gnome-help/privacy.page
@@ -6222,6 +6286,7 @@ share/help/kn/gnome-help/figures/battery-missing-symbolic.svg
 share/help/kn/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/kn/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/kn/gnome-help/figures/bluetooth-menu.png
+share/help/kn/gnome-help/figures/camera-photo-symbolic.svg
 share/help/kn/gnome-help/figures/color-average.png
 share/help/kn/gnome-help/figures/color-camera.png
 share/help/kn/gnome-help/figures/color-display.png
@@ -6231,6 +6296,7 @@ share/help/kn/gnome-help/figures/color-space.png
 share/help/kn/gnome-help/figures/display-dual-monitors.webm
 share/help/kn/gnome-help/figures/documents-icon.png
 share/help/kn/gnome-help/figures/emblem-system-symbolic.svg
+share/help/kn/gnome-help/figures/emblem-system.png
 share/help/kn/gnome-help/figures/gnome.png
 share/help/kn/gnome-help/figures/go-down.png
 share/help/kn/gnome-help/figures/input-keyboard-symbolic.png
@@ -6384,6 +6450,7 @@ share/help/kn/gnome-help/net-install-flash.page
 share/help/kn/gnome-help/net-install-moonlight.page
 share/help/kn/gnome-help/net-macaddress.page
 share/help/kn/gnome-help/net-manual.page
+share/help/kn/gnome-help/net-mobile.page
 share/help/kn/gnome-help/net-othersconnect.page
 share/help/kn/gnome-help/net-othersedit.page
 share/help/kn/gnome-help/net-problem.page
@@ -6449,6 +6516,7 @@ share/help/kn/gnome-help/printing-streaks.page
 share/help/kn/gnome-help/printing-to-file.page
 share/help/kn/gnome-help/printing.page
 share/help/kn/gnome-help/privacy-history-recent-off.page
+share/help/kn/gnome-help/privacy-location.page
 share/help/kn/gnome-help/privacy-purge.page
 share/help/kn/gnome-help/privacy-screen-lock.page
 share/help/kn/gnome-help/privacy.page
@@ -6603,6 +6671,7 @@ share/help/lv/gnome-help/figures/battery-missing-symbolic.svg
 share/help/lv/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/lv/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/lv/gnome-help/figures/bluetooth-menu.png
+share/help/lv/gnome-help/figures/camera-photo-symbolic.svg
 share/help/lv/gnome-help/figures/color-average.png
 share/help/lv/gnome-help/figures/color-camera.png
 share/help/lv/gnome-help/figures/color-display.png
@@ -6612,6 +6681,7 @@ share/help/lv/gnome-help/figures/color-space.png
 share/help/lv/gnome-help/figures/display-dual-monitors.webm
 share/help/lv/gnome-help/figures/documents-icon.png
 share/help/lv/gnome-help/figures/emblem-system-symbolic.svg
+share/help/lv/gnome-help/figures/emblem-system.png
 share/help/lv/gnome-help/figures/gnome.png
 share/help/lv/gnome-help/figures/go-down.png
 share/help/lv/gnome-help/figures/input-keyboard-symbolic.png
@@ -6765,6 +6835,7 @@ share/help/lv/gnome-help/net-install-flash.page
 share/help/lv/gnome-help/net-install-moonlight.page
 share/help/lv/gnome-help/net-macaddress.page
 share/help/lv/gnome-help/net-manual.page
+share/help/lv/gnome-help/net-mobile.page
 share/help/lv/gnome-help/net-othersconnect.page
 share/help/lv/gnome-help/net-othersedit.page
 share/help/lv/gnome-help/net-problem.page
@@ -6830,6 +6901,7 @@ share/help/lv/gnome-help/printing-streaks.page
 share/help/lv/gnome-help/printing-to-file.page
 share/help/lv/gnome-help/printing.page
 share/help/lv/gnome-help/privacy-history-recent-off.page
+share/help/lv/gnome-help/privacy-location.page
 share/help/lv/gnome-help/privacy-purge.page
 share/help/lv/gnome-help/privacy-screen-lock.page
 share/help/lv/gnome-help/privacy.page
@@ -6984,6 +7056,7 @@ share/help/mr/gnome-help/figures/battery-missing-symbolic.svg
 share/help/mr/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/mr/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/mr/gnome-help/figures/bluetooth-menu.png
+share/help/mr/gnome-help/figures/camera-photo-symbolic.svg
 share/help/mr/gnome-help/figures/color-average.png
 share/help/mr/gnome-help/figures/color-camera.png
 share/help/mr/gnome-help/figures/color-display.png
@@ -6993,6 +7066,7 @@ share/help/mr/gnome-help/figures/color-space.png
 share/help/mr/gnome-help/figures/display-dual-monitors.webm
 share/help/mr/gnome-help/figures/documents-icon.png
 share/help/mr/gnome-help/figures/emblem-system-symbolic.svg
+share/help/mr/gnome-help/figures/emblem-system.png
 share/help/mr/gnome-help/figures/gnome.png
 share/help/mr/gnome-help/figures/go-down.png
 share/help/mr/gnome-help/figures/input-keyboard-symbolic.png
@@ -7146,6 +7220,7 @@ share/help/mr/gnome-help/net-install-flash.page
 share/help/mr/gnome-help/net-install-moonlight.page
 share/help/mr/gnome-help/net-macaddress.page
 share/help/mr/gnome-help/net-manual.page
+share/help/mr/gnome-help/net-mobile.page
 share/help/mr/gnome-help/net-othersconnect.page
 share/help/mr/gnome-help/net-othersedit.page
 share/help/mr/gnome-help/net-problem.page
@@ -7211,6 +7286,7 @@ share/help/mr/gnome-help/printing-streaks.page
 share/help/mr/gnome-help/printing-to-file.page
 share/help/mr/gnome-help/printing.page
 share/help/mr/gnome-help/privacy-history-recent-off.page
+share/help/mr/gnome-help/privacy-location.page
 share/help/mr/gnome-help/privacy-purge.page
 share/help/mr/gnome-help/privacy-screen-lock.page
 share/help/mr/gnome-help/privacy.page
@@ -7365,6 +7441,7 @@ share/help/nl/gnome-help/figures/battery-missing-symbolic.svg
 share/help/nl/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/nl/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/nl/gnome-help/figures/bluetooth-menu.png
+share/help/nl/gnome-help/figures/camera-photo-symbolic.svg
 share/help/nl/gnome-help/figures/color-average.png
 share/help/nl/gnome-help/figures/color-camera.png
 share/help/nl/gnome-help/figures/color-display.png
@@ -7374,6 +7451,7 @@ share/help/nl/gnome-help/figures/color-space.png
 share/help/nl/gnome-help/figures/display-dual-monitors.webm
 share/help/nl/gnome-help/figures/documents-icon.png
 share/help/nl/gnome-help/figures/emblem-system-symbolic.svg
+share/help/nl/gnome-help/figures/emblem-system.png
 share/help/nl/gnome-help/figures/gnome.png
 share/help/nl/gnome-help/figures/go-down.png
 share/help/nl/gnome-help/figures/input-keyboard-symbolic.png
@@ -7527,6 +7605,7 @@ share/help/nl/gnome-help/net-install-flash.page
 share/help/nl/gnome-help/net-install-moonlight.page
 share/help/nl/gnome-help/net-macaddress.page
 share/help/nl/gnome-help/net-manual.page
+share/help/nl/gnome-help/net-mobile.page
 share/help/nl/gnome-help/net-othersconnect.page
 share/help/nl/gnome-help/net-othersedit.page
 share/help/nl/gnome-help/net-problem.page
@@ -7592,6 +7671,7 @@ share/help/nl/gnome-help/printing-streaks.page
 share/help/nl/gnome-help/printing-to-file.page
 share/help/nl/gnome-help/printing.page
 share/help/nl/gnome-help/privacy-history-recent-off.page
+share/help/nl/gnome-help/privacy-location.page
 share/help/nl/gnome-help/privacy-purge.page
 share/help/nl/gnome-help/privacy-screen-lock.page
 share/help/nl/gnome-help/privacy.page
@@ -7746,6 +7826,7 @@ share/help/pa/gnome-help/figures/battery-missing-symbolic.svg
 share/help/pa/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/pa/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/pa/gnome-help/figures/bluetooth-menu.png
+share/help/pa/gnome-help/figures/camera-photo-symbolic.svg
 share/help/pa/gnome-help/figures/color-average.png
 share/help/pa/gnome-help/figures/color-camera.png
 share/help/pa/gnome-help/figures/color-display.png
@@ -7755,6 +7836,7 @@ share/help/pa/gnome-help/figures/color-space.png
 share/help/pa/gnome-help/figures/display-dual-monitors.webm
 share/help/pa/gnome-help/figures/documents-icon.png
 share/help/pa/gnome-help/figures/emblem-system-symbolic.svg
+share/help/pa/gnome-help/figures/emblem-system.png
 share/help/pa/gnome-help/figures/gnome.png
 share/help/pa/gnome-help/figures/go-down.png
 share/help/pa/gnome-help/figures/input-keyboard-symbolic.png
@@ -7908,6 +7990,7 @@ share/help/pa/gnome-help/net-install-flash.page
 share/help/pa/gnome-help/net-install-moonlight.page
 share/help/pa/gnome-help/net-macaddress.page
 share/help/pa/gnome-help/net-manual.page
+share/help/pa/gnome-help/net-mobile.page
 share/help/pa/gnome-help/net-othersconnect.page
 share/help/pa/gnome-help/net-othersedit.page
 share/help/pa/gnome-help/net-problem.page
@@ -7973,6 +8056,7 @@ share/help/pa/gnome-help/printing-streaks.page
 share/help/pa/gnome-help/printing-to-file.page
 share/help/pa/gnome-help/printing.page
 share/help/pa/gnome-help/privacy-history-recent-off.page
+share/help/pa/gnome-help/privacy-location.page
 share/help/pa/gnome-help/privacy-purge.page
 share/help/pa/gnome-help/privacy-screen-lock.page
 share/help/pa/gnome-help/privacy.page
@@ -8127,6 +8211,7 @@ share/help/pt_BR/gnome-help/figures/battery-missing-symbolic.svg
 share/help/pt_BR/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/pt_BR/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/pt_BR/gnome-help/figures/bluetooth-menu.png
+share/help/pt_BR/gnome-help/figures/camera-photo-symbolic.svg
 share/help/pt_BR/gnome-help/figures/color-average.png
 share/help/pt_BR/gnome-help/figures/color-camera.png
 share/help/pt_BR/gnome-help/figures/color-display.png
@@ -8136,6 +8221,7 @@ share/help/pt_BR/gnome-help/figures/color-space.png
 share/help/pt_BR/gnome-help/figures/display-dual-monitors.webm
 share/help/pt_BR/gnome-help/figures/documents-icon.png
 share/help/pt_BR/gnome-help/figures/emblem-system-symbolic.svg
+share/help/pt_BR/gnome-help/figures/emblem-system.png
 share/help/pt_BR/gnome-help/figures/gnome.png
 share/help/pt_BR/gnome-help/figures/go-down.png
 share/help/pt_BR/gnome-help/figures/input-keyboard-symbolic.png
@@ -8289,6 +8375,7 @@ share/help/pt_BR/gnome-help/net-install-flash.page
 share/help/pt_BR/gnome-help/net-install-moonlight.page
 share/help/pt_BR/gnome-help/net-macaddress.page
 share/help/pt_BR/gnome-help/net-manual.page
+share/help/pt_BR/gnome-help/net-mobile.page
 share/help/pt_BR/gnome-help/net-othersconnect.page
 share/help/pt_BR/gnome-help/net-othersedit.page
 share/help/pt_BR/gnome-help/net-problem.page
@@ -8354,6 +8441,7 @@ share/help/pt_BR/gnome-help/printing-streaks.page
 share/help/pt_BR/gnome-help/printing-to-file.page
 share/help/pt_BR/gnome-help/printing.page
 share/help/pt_BR/gnome-help/privacy-history-recent-off.page
+share/help/pt_BR/gnome-help/privacy-location.page
 share/help/pt_BR/gnome-help/privacy-purge.page
 share/help/pt_BR/gnome-help/privacy-screen-lock.page
 share/help/pt_BR/gnome-help/privacy.page
@@ -8508,6 +8596,7 @@ share/help/ru/gnome-help/figures/battery-missing-symbolic.svg
 share/help/ru/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/ru/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/ru/gnome-help/figures/bluetooth-menu.png
+share/help/ru/gnome-help/figures/camera-photo-symbolic.svg
 share/help/ru/gnome-help/figures/color-average.png
 share/help/ru/gnome-help/figures/color-camera.png
 share/help/ru/gnome-help/figures/color-display.png
@@ -8517,6 +8606,7 @@ share/help/ru/gnome-help/figures/color-space.png
 share/help/ru/gnome-help/figures/display-dual-monitors.webm
 share/help/ru/gnome-help/figures/documents-icon.png
 share/help/ru/gnome-help/figures/emblem-system-symbolic.svg
+share/help/ru/gnome-help/figures/emblem-system.png
 share/help/ru/gnome-help/figures/gnome.png
 share/help/ru/gnome-help/figures/go-down.png
 share/help/ru/gnome-help/figures/input-keyboard-symbolic.png
@@ -8670,6 +8760,7 @@ share/help/ru/gnome-help/net-install-flash.page
 share/help/ru/gnome-help/net-install-moonlight.page
 share/help/ru/gnome-help/net-macaddress.page
 share/help/ru/gnome-help/net-manual.page
+share/help/ru/gnome-help/net-mobile.page
 share/help/ru/gnome-help/net-othersconnect.page
 share/help/ru/gnome-help/net-othersedit.page
 share/help/ru/gnome-help/net-problem.page
@@ -8735,6 +8826,7 @@ share/help/ru/gnome-help/printing-streaks.page
 share/help/ru/gnome-help/printing-to-file.page
 share/help/ru/gnome-help/printing.page
 share/help/ru/gnome-help/privacy-history-recent-off.page
+share/help/ru/gnome-help/privacy-location.page
 share/help/ru/gnome-help/privacy-purge.page
 share/help/ru/gnome-help/privacy-screen-lock.page
 share/help/ru/gnome-help/privacy.page
@@ -8889,6 +8981,7 @@ share/help/sl/gnome-help/figures/battery-missing-symbolic.svg
 share/help/sl/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/sl/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/sl/gnome-help/figures/bluetooth-menu.png
+share/help/sl/gnome-help/figures/camera-photo-symbolic.svg
 share/help/sl/gnome-help/figures/color-average.png
 share/help/sl/gnome-help/figures/color-camera.png
 share/help/sl/gnome-help/figures/color-display.png
@@ -8898,6 +8991,7 @@ share/help/sl/gnome-help/figures/color-space.png
 share/help/sl/gnome-help/figures/display-dual-monitors.webm
 share/help/sl/gnome-help/figures/documents-icon.png
 share/help/sl/gnome-help/figures/emblem-system-symbolic.svg
+share/help/sl/gnome-help/figures/emblem-system.png
 share/help/sl/gnome-help/figures/gnome.png
 share/help/sl/gnome-help/figures/go-down.png
 share/help/sl/gnome-help/figures/input-keyboard-symbolic.png
@@ -9051,6 +9145,7 @@ share/help/sl/gnome-help/net-install-flash.page
 share/help/sl/gnome-help/net-install-moonlight.page
 share/help/sl/gnome-help/net-macaddress.page
 share/help/sl/gnome-help/net-manual.page
+share/help/sl/gnome-help/net-mobile.page
 share/help/sl/gnome-help/net-othersconnect.page
 share/help/sl/gnome-help/net-othersedit.page
 share/help/sl/gnome-help/net-problem.page
@@ -9116,6 +9211,7 @@ share/help/sl/gnome-help/printing-streaks.page
 share/help/sl/gnome-help/printing-to-file.page
 share/help/sl/gnome-help/printing.page
 share/help/sl/gnome-help/privacy-history-recent-off.page
+share/help/sl/gnome-help/privacy-location.page
 share/help/sl/gnome-help/privacy-purge.page
 share/help/sl/gnome-help/privacy-screen-lock.page
 share/help/sl/gnome-help/privacy.page
@@ -9270,6 +9366,7 @@ share/help/sr/gnome-help/figures/battery-missing-symbolic.svg
 share/help/sr/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/sr/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/sr/gnome-help/figures/bluetooth-menu.png
+share/help/sr/gnome-help/figures/camera-photo-symbolic.svg
 share/help/sr/gnome-help/figures/color-average.png
 share/help/sr/gnome-help/figures/color-camera.png
 share/help/sr/gnome-help/figures/color-display.png
@@ -9279,6 +9376,7 @@ share/help/sr/gnome-help/figures/color-space.png
 share/help/sr/gnome-help/figures/display-dual-monitors.webm
 share/help/sr/gnome-help/figures/documents-icon.png
 share/help/sr/gnome-help/figures/emblem-system-symbolic.svg
+share/help/sr/gnome-help/figures/emblem-system.png
 share/help/sr/gnome-help/figures/gnome.png
 share/help/sr/gnome-help/figures/go-down.png
 share/help/sr/gnome-help/figures/input-keyboard-symbolic.png
@@ -9432,6 +9530,7 @@ share/help/sr/gnome-help/net-install-flash.page
 share/help/sr/gnome-help/net-install-moonlight.page
 share/help/sr/gnome-help/net-macaddress.page
 share/help/sr/gnome-help/net-manual.page
+share/help/sr/gnome-help/net-mobile.page
 share/help/sr/gnome-help/net-othersconnect.page
 share/help/sr/gnome-help/net-othersedit.page
 share/help/sr/gnome-help/net-problem.page
@@ -9497,6 +9596,7 @@ share/help/sr/gnome-help/printing-streaks.page
 share/help/sr/gnome-help/printing-to-file.page
 share/help/sr/gnome-help/printing.page
 share/help/sr/gnome-help/privacy-history-recent-off.page
+share/help/sr/gnome-help/privacy-location.page
 share/help/sr/gnome-help/privacy-purge.page
 share/help/sr/gnome-help/privacy-screen-lock.page
 share/help/sr/gnome-help/privacy.page
@@ -9651,6 +9751,7 @@ share/help/sr@latin/gnome-help/figures/battery-missing-symbolic.svg
 share/help/sr@latin/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/sr@latin/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/sr@latin/gnome-help/figures/bluetooth-menu.png
+share/help/sr@latin/gnome-help/figures/camera-photo-symbolic.svg
 share/help/sr@latin/gnome-help/figures/color-average.png
 share/help/sr@latin/gnome-help/figures/color-camera.png
 share/help/sr@latin/gnome-help/figures/color-display.png
@@ -9660,6 +9761,7 @@ share/help/sr@latin/gnome-help/figures/color-space.png
 share/help/sr@latin/gnome-help/figures/display-dual-monitors.webm
 share/help/sr@latin/gnome-help/figures/documents-icon.png
 share/help/sr@latin/gnome-help/figures/emblem-system-symbolic.svg
+share/help/sr@latin/gnome-help/figures/emblem-system.png
 share/help/sr@latin/gnome-help/figures/gnome.png
 share/help/sr@latin/gnome-help/figures/go-down.png
 share/help/sr@latin/gnome-help/figures/input-keyboard-symbolic.png
@@ -9813,6 +9915,7 @@ share/help/sr@latin/gnome-help/net-install-flash.page
 share/help/sr@latin/gnome-help/net-install-moonlight.page
 share/help/sr@latin/gnome-help/net-macaddress.page
 share/help/sr@latin/gnome-help/net-manual.page
+share/help/sr@latin/gnome-help/net-mobile.page
 share/help/sr@latin/gnome-help/net-othersconnect.page
 share/help/sr@latin/gnome-help/net-othersedit.page
 share/help/sr@latin/gnome-help/net-problem.page
@@ -9878,6 +9981,7 @@ share/help/sr@latin/gnome-help/printing-streaks.page
 share/help/sr@latin/gnome-help/printing-to-file.page
 share/help/sr@latin/gnome-help/printing.page
 share/help/sr@latin/gnome-help/privacy-history-recent-off.page
+share/help/sr@latin/gnome-help/privacy-location.page
 share/help/sr@latin/gnome-help/privacy-purge.page
 share/help/sr@latin/gnome-help/privacy-screen-lock.page
 share/help/sr@latin/gnome-help/privacy.page
@@ -10032,6 +10136,7 @@ share/help/sv/gnome-help/figures/battery-missing-symbolic.svg
 share/help/sv/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/sv/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/sv/gnome-help/figures/bluetooth-menu.png
+share/help/sv/gnome-help/figures/camera-photo-symbolic.svg
 share/help/sv/gnome-help/figures/color-average.png
 share/help/sv/gnome-help/figures/color-camera.png
 share/help/sv/gnome-help/figures/color-display.png
@@ -10041,6 +10146,7 @@ share/help/sv/gnome-help/figures/color-space.png
 share/help/sv/gnome-help/figures/display-dual-monitors.webm
 share/help/sv/gnome-help/figures/documents-icon.png
 share/help/sv/gnome-help/figures/emblem-system-symbolic.svg
+share/help/sv/gnome-help/figures/emblem-system.png
 share/help/sv/gnome-help/figures/gnome.png
 share/help/sv/gnome-help/figures/go-down.png
 share/help/sv/gnome-help/figures/input-keyboard-symbolic.png
@@ -10194,6 +10300,7 @@ share/help/sv/gnome-help/net-install-flash.page
 share/help/sv/gnome-help/net-install-moonlight.page
 share/help/sv/gnome-help/net-macaddress.page
 share/help/sv/gnome-help/net-manual.page
+share/help/sv/gnome-help/net-mobile.page
 share/help/sv/gnome-help/net-othersconnect.page
 share/help/sv/gnome-help/net-othersedit.page
 share/help/sv/gnome-help/net-problem.page
@@ -10259,6 +10366,7 @@ share/help/sv/gnome-help/printing-streaks.page
 share/help/sv/gnome-help/printing-to-file.page
 share/help/sv/gnome-help/printing.page
 share/help/sv/gnome-help/privacy-history-recent-off.page
+share/help/sv/gnome-help/privacy-location.page
 share/help/sv/gnome-help/privacy-purge.page
 share/help/sv/gnome-help/privacy-screen-lock.page
 share/help/sv/gnome-help/privacy.page
@@ -10413,6 +10521,7 @@ share/help/ta/gnome-help/figures/battery-missing-symbolic.svg
 share/help/ta/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/ta/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/ta/gnome-help/figures/bluetooth-menu.png
+share/help/ta/gnome-help/figures/camera-photo-symbolic.svg
 share/help/ta/gnome-help/figures/color-average.png
 share/help/ta/gnome-help/figures/color-camera.png
 share/help/ta/gnome-help/figures/color-display.png
@@ -10422,6 +10531,7 @@ share/help/ta/gnome-help/figures/color-space.png
 share/help/ta/gnome-help/figures/display-dual-monitors.webm
 share/help/ta/gnome-help/figures/documents-icon.png
 share/help/ta/gnome-help/figures/emblem-system-symbolic.svg
+share/help/ta/gnome-help/figures/emblem-system.png
 share/help/ta/gnome-help/figures/gnome.png
 share/help/ta/gnome-help/figures/go-down.png
 share/help/ta/gnome-help/figures/input-keyboard-symbolic.png
@@ -10575,6 +10685,7 @@ share/help/ta/gnome-help/net-install-flash.page
 share/help/ta/gnome-help/net-install-moonlight.page
 share/help/ta/gnome-help/net-macaddress.page
 share/help/ta/gnome-help/net-manual.page
+share/help/ta/gnome-help/net-mobile.page
 share/help/ta/gnome-help/net-othersconnect.page
 share/help/ta/gnome-help/net-othersedit.page
 share/help/ta/gnome-help/net-problem.page
@@ -10640,6 +10751,7 @@ share/help/ta/gnome-help/printing-streaks.page
 share/help/ta/gnome-help/printing-to-file.page
 share/help/ta/gnome-help/printing.page
 share/help/ta/gnome-help/privacy-history-recent-off.page
+share/help/ta/gnome-help/privacy-location.page
 share/help/ta/gnome-help/privacy-purge.page
 share/help/ta/gnome-help/privacy-screen-lock.page
 share/help/ta/gnome-help/privacy.page
@@ -10794,6 +10906,7 @@ share/help/te/gnome-help/figures/battery-missing-symbolic.svg
 share/help/te/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/te/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/te/gnome-help/figures/bluetooth-menu.png
+share/help/te/gnome-help/figures/camera-photo-symbolic.svg
 share/help/te/gnome-help/figures/color-average.png
 share/help/te/gnome-help/figures/color-camera.png
 share/help/te/gnome-help/figures/color-display.png
@@ -10803,6 +10916,7 @@ share/help/te/gnome-help/figures/color-space.png
 share/help/te/gnome-help/figures/display-dual-monitors.webm
 share/help/te/gnome-help/figures/documents-icon.png
 share/help/te/gnome-help/figures/emblem-system-symbolic.svg
+share/help/te/gnome-help/figures/emblem-system.png
 share/help/te/gnome-help/figures/gnome.png
 share/help/te/gnome-help/figures/go-down.png
 share/help/te/gnome-help/figures/input-keyboard-symbolic.png
@@ -10956,6 +11070,7 @@ share/help/te/gnome-help/net-install-flash.page
 share/help/te/gnome-help/net-install-moonlight.page
 share/help/te/gnome-help/net-macaddress.page
 share/help/te/gnome-help/net-manual.page
+share/help/te/gnome-help/net-mobile.page
 share/help/te/gnome-help/net-othersconnect.page
 share/help/te/gnome-help/net-othersedit.page
 share/help/te/gnome-help/net-problem.page
@@ -11021,6 +11136,7 @@ share/help/te/gnome-help/printing-streaks.page
 share/help/te/gnome-help/printing-to-file.page
 share/help/te/gnome-help/printing.page
 share/help/te/gnome-help/privacy-history-recent-off.page
+share/help/te/gnome-help/privacy-location.page
 share/help/te/gnome-help/privacy-purge.page
 share/help/te/gnome-help/privacy-screen-lock.page
 share/help/te/gnome-help/privacy.page
@@ -11175,6 +11291,7 @@ share/help/vi/gnome-help/figures/battery-missing-symbolic.svg
 share/help/vi/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/vi/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/vi/gnome-help/figures/bluetooth-menu.png
+share/help/vi/gnome-help/figures/camera-photo-symbolic.svg
 share/help/vi/gnome-help/figures/color-average.png
 share/help/vi/gnome-help/figures/color-camera.png
 share/help/vi/gnome-help/figures/color-display.png
@@ -11184,6 +11301,7 @@ share/help/vi/gnome-help/figures/color-space.png
 share/help/vi/gnome-help/figures/display-dual-monitors.webm
 share/help/vi/gnome-help/figures/documents-icon.png
 share/help/vi/gnome-help/figures/emblem-system-symbolic.svg
+share/help/vi/gnome-help/figures/emblem-system.png
 share/help/vi/gnome-help/figures/gnome.png
 share/help/vi/gnome-help/figures/go-down.png
 share/help/vi/gnome-help/figures/input-keyboard-symbolic.png
@@ -11337,6 +11455,7 @@ share/help/vi/gnome-help/net-install-flash.page
 share/help/vi/gnome-help/net-install-moonlight.page
 share/help/vi/gnome-help/net-macaddress.page
 share/help/vi/gnome-help/net-manual.page
+share/help/vi/gnome-help/net-mobile.page
 share/help/vi/gnome-help/net-othersconnect.page
 share/help/vi/gnome-help/net-othersedit.page
 share/help/vi/gnome-help/net-problem.page
@@ -11402,6 +11521,7 @@ share/help/vi/gnome-help/printing-streaks.page
 share/help/vi/gnome-help/printing-to-file.page
 share/help/vi/gnome-help/printing.page
 share/help/vi/gnome-help/privacy-history-recent-off.page
+share/help/vi/gnome-help/privacy-location.page
 share/help/vi/gnome-help/privacy-purge.page
 share/help/vi/gnome-help/privacy-screen-lock.page
 share/help/vi/gnome-help/privacy.page
@@ -11556,6 +11676,7 @@ share/help/zh_CN/gnome-help/figures/battery-missing-symbolic.svg
 share/help/zh_CN/gnome-help/figures/bluetooth-active-symbolic.svg
 share/help/zh_CN/gnome-help/figures/bluetooth-disabled-symbolic.svg
 share/help/zh_CN/gnome-help/figures/bluetooth-menu.png
+share/help/zh_CN/gnome-help/figures/camera-photo-symbolic.svg
 share/help/zh_CN/gnome-help/figures/color-average.png
 share/help/zh_CN/gnome-help/figures/color-camera.png
 share/help/zh_CN/gnome-help/figures/color-display.png
@@ -11565,6 +11686,7 @@ share/help/zh_CN/gnome-help/figures/color-space.png
 share/help/zh_CN/gnome-help/figures/display-dual-monitors.webm
 share/help/zh_CN/gnome-help/figures/documents-icon.png
 share/help/zh_CN/gnome-help/figures/emblem-system-symbolic.svg
+share/help/zh_CN/gnome-help/figures/emblem-system.png
 share/help/zh_CN/gnome-help/figures/gnome.png
 share/help/zh_CN/gnome-help/figures/go-down.png
 share/help/zh_CN/gnome-help/figures/input-keyboard-symbolic.png
@@ -11718,6 +11840,7 @@ share/help/zh_CN/gnome-help/net-install-flash.page
 share/help/zh_CN/gnome-help/net-install-moonlight.page
 share/help/zh_CN/gnome-help/net-macaddress.page
 share/help/zh_CN/gnome-help/net-manual.page
+share/help/zh_CN/gnome-help/net-mobile.page
 share/help/zh_CN/gnome-help/net-othersconnect.page
 share/help/zh_CN/gnome-help/net-othersedit.page
 share/help/zh_CN/gnome-help/net-problem.page
@@ -11783,6 +11906,7 @@ share/help/zh_CN/gnome-help/printing-streaks.page
 share/help/zh_CN/gnome-help/printing-to-file.page
 share/help/zh_CN/gnome-help/printing.page
 share/help/zh_CN/gnome-help/privacy-history-recent-off.page
+share/help/zh_CN/gnome-help/privacy-location.page
 share/help/zh_CN/gnome-help/privacy-purge.page
 share/help/zh_CN/gnome-help/privacy-screen-lock.page
 share/help/zh_CN/gnome-help/privacy.page

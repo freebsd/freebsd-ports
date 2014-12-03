@@ -1,4 +1,4 @@
-bin/tuxtype
+@(,games,2555) bin/tuxtype
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/OFL
@@ -795,5 +795,6 @@ bin/tuxtype
 %%DATADIR%%/words/words1.txt
 %%DATADIR%%/words/words2.txt
 %%DATADIR%%/words/words3.txt
-@dir var/tuxtype/words
+@dir(,games,775) /var/games/tuxtype/words
+@dir(,games,775) /var/games/tuxtype
 @dir %%ETCDIR%%

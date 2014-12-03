@@ -17,12 +17,12 @@ LIB_DEPENDS=	libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		librest-0.7.so:${PORTSDIR}/devel/librest
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix intlhack
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix intltool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

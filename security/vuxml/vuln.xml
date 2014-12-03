@@ -57,6 +57,127 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7ae61870-9dd2-4884-a2f2-f19bb5784d09">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>34.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.3.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>34.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.31</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.3.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.31</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.3.0</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.3.0</lt></range>
+      </package>
+      <package>
+	<name>nss</name>
+	<range><lt>3.17.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>ASN.1 DER decoding of lengths is too permissive, allowing
+	    undetected smuggling of arbitrary data</p>
+	  <p>MSFA-2014-90 Apple CoreGraphics framework on OS X 10.10
+	    logging input data to /tmp directory</p>
+	  <p>MSFA-2014-89 Bad casting from the BasicThebesLayer to
+	    BasicContainerLayer</p>
+	  <p>MSFA-2014-88 Buffer overflow while parsing media content</p>
+	  <p>MSFA-2014-87 Use-after-free during HTML5 parsing</p>
+	  <p>MSFA-2014-86 CSP leaks redirect data via violation reports</p>
+	  <p>MSFA-2014-85 XMLHttpRequest crashes with some input streams</p>
+	  <p>MSFA-2014-84 XBL bindings accessible via improper CSS
+	    declarations</p>
+	  <p>MSFA-2014-83 Miscellaneous memory safety hazards (rv:34.0
+	    / rv:31.3)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1587</cvename>
+      <cvename>CVE-2014-1588</cvename>
+      <cvename>CVE-2014-1589</cvename>
+      <cvename>CVE-2014-1590</cvename>
+      <cvename>CVE-2014-1591</cvename>
+      <cvename>CVE-2014-1592</cvename>
+      <cvename>CVE-2014-1593</cvename>
+      <cvename>CVE-2014-1594</cvename>
+      <cvename>CVE-2014-1595</cvename>
+      <cvename>CVE-2014-1569</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-83</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-84</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-85</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-86</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-87</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-88</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-89</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-90</url>
+      <url>https://www.mozilla.org/security/advisories/</url>
+    </references>
+    <dates>
+      <discovery>2014-12-01</discovery>
+      <entry>2014-12-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="23ab5c3e-79c3-11e4-8b1e-d050992ecde8">
+    <topic>OpenVPN -- denial of service security vulnerability</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.0.11</lt></range>
+	<range><ge>2.1.0</ge><lt>2.2.3</lt></range>
+	<range><ge>2.3.0</ge><lt>2.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenVPN project reports:</p>
+	<blockquote cite="https://community.openvpn.net/openvpn/wiki/SecurityAnnouncement-97597e732b">
+	  <p>In late November 2014 Dragana Damjanovic notified OpenVPN
+	    developers of a critical denial of service security vulnerability
+	    (CVE-2014-8104). The vulnerability allows an tls-authenticated
+	    client to crash the server by sending a too-short control channel
+	    packet to the server.  In other words this vulnerability is denial
+	    of service only.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8104</cvename>
+      <url>https://community.openvpn.net/openvpn/wiki/SecurityAnnouncement-97597e732b</url>
+    </references>
+    <dates>
+      <discovery>2014-12-01</discovery>
+      <entry>2014-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a33addf6-74e6-11e4-a615-f8b156b6dcc8">
     <topic>flac -- Multiple vulnerabilities</topic>
     <affects>

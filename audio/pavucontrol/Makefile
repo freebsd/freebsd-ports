@@ -3,7 +3,7 @@
 
 PORTNAME=	pavucontrol
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -16,9 +16,11 @@ LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio \
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gettext gmake pkgconfig
 USE_GNOME=	intltool
 
 CONFIGURE_ARGS=	--disable-lynx
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

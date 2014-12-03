@@ -3,7 +3,7 @@
 
 PORTNAME=	itools
 PORTVERSION=	0.75.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,6 @@ BUILD_DEPENDS=  ${LOCALBASE}/include/poppler/goo/gtypes.h:${PORTSDIR}/graphics/p
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}gobject>=2.16.1:${PORTSDIR}/devel/py-gobject \
-		gettext:${PORTSDIR}/devel/gettext \
 		python:${PORTSDIR}/lang/python
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20 \
@@ -30,7 +29,7 @@ LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20 \
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/poppler
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES=	pkgconfig python:2.7+
+USES=		gettext-tools:run pkgconfig python:2.7+
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	DOCS

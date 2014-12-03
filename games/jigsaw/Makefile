@@ -4,14 +4,13 @@ PORTNAME=	jigsaw
 PORTVERSION=	0.8
 PORTREVISION=	2
 CATEGORIES=	games gnustep
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	gap
+MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	Jigsaw-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulates a jigsaw puzzle and illustrates the use of clipping paths
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

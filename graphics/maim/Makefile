@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	maim
-PORTVERSION=	2.3.37
+PORTVERSION=	3.3.39
 CATEGORIES=	graphics
 
 MAINTAINER=	neel@neelc.org
@@ -13,7 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	naelstrof
 GH_PROJECT=	maim
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	8706bc4
+GH_COMMIT=	17c3b27
 
 USES=		cmake
 USE_EFL=	imlib2

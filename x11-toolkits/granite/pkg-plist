@@ -2,13 +2,15 @@ include/granite/granite.h
 include/granite/widgets-utils.h
 lib/girepository-1.0/Granite-1.0.typelib
 lib/libgranite.so
-lib/libgranite.so.1
-lib/libgranite.so.1.0.1
+lib/libgranite.so.2
+lib/libgranite.so.2.0.1
 libdata/pkgconfig/granite.pc
 share/gir-1.0/Granite-1.0.gir
 share/icons/hicolor/16x16/actions/application-menu.svg
+share/icons/hicolor/16x16/actions/appointment.svg
 share/icons/hicolor/22x22/actions/application-menu.svg
 share/icons/hicolor/24x24/actions/application-menu.svg
+share/icons/hicolor/24x24/actions/appointment.svg
 share/icons/hicolor/32x32/actions/application-menu.svg
 share/icons/hicolor/48x48/actions/application-menu.svg
 share/icons/hicolor/scalable/actions/application-menu-symbolic.svg
@@ -60,8 +62,10 @@ share/locale/rue/LC_MESSAGES/granite.mo
 share/locale/sk/LC_MESSAGES/granite.mo
 share/locale/sl/LC_MESSAGES/granite.mo
 share/locale/sma/LC_MESSAGES/granite.mo
+share/locale/sq/LC_MESSAGES/granite.mo
 share/locale/sr/LC_MESSAGES/granite.mo
 share/locale/sv/LC_MESSAGES/granite.mo
+share/locale/ta/LC_MESSAGES/granite.mo
 share/locale/te/LC_MESSAGES/granite.mo
 share/locale/tr/LC_MESSAGES/granite.mo
 share/locale/ug/LC_MESSAGES/granite.mo
@@ -71,18 +75,3 @@ share/locale/zh_CN/LC_MESSAGES/granite.mo
 share/locale/zh_TW/LC_MESSAGES/granite.mo
 share/vala/vapi/granite.deps
 share/vala/vapi/granite.vapi
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sma/LC_MESSAGES
-@dirrmtry share/locale/sma
-@dirrmtry share/locale/rue/LC_MESSAGES
-@dirrmtry share/locale/rue
-@dirrmtry share/locale/lb/LC_MESSAGES
-@dirrmtry share/locale/lb
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fr_CA/LC_MESSAGES
-@dirrmtry share/locale/fr_CA
-@dirrm include/granite

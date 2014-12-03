@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	2.25
-PORTREVISION=	1
+PORTVERSION=	2.26
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN \
 		http://www.template-toolkit.org/download/
@@ -27,27 +26,17 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	TT_ACCEPT=y
 
-.include <bsd.port.options.mk>
+DATE_CALC_BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
+DATE_CALC_RUN_DEPENDS=		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 
-.if ${PORT_OPTIONS:MDATE_CALC}
-BUILD_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
-RUN_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
-.endif
+IMAGE_INFO_BUILD_DEPENDS=	p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
+IMAGE_INFO_RUN_DEPENDS=		p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
 
-.if ${PORT_OPTIONS:MIMAGE_INFO}
-BUILD_DEPENDS+=	p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
-RUN_DEPENDS+=	p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
-.endif
+IMAGE_SIZE_BUILD_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
+IMAGE_SIZE_RUN_DEPENDS=		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
 
-.if ${PORT_OPTIONS:MIMAGE_SIZE}
-BUILD_DEPENDS+=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
-RUN_DEPENDS+=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
-.endif
-
-.if ${PORT_OPTIONS:MPOD_POM}
-BUILD_DEPENDS+=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM
-RUN_DEPENDS+=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM
-.endif
+POD_POM_BUILD_DEPENDS=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM
+POD_POM_RUN_DEPENDS=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM
 
 post-patch:
 	@${REINPLACE_CMD} -e '/PREFIX/ s|/usr/local|${PREFIX}/share|' \

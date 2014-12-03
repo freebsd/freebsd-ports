@@ -3,6 +3,7 @@
 
 PORTNAME=	gourmet
 PORTVERSION=	0.17.4
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	https://github.com/thinkle/gourmet/archive/
 DISTNAME=	${PORTVERSION}
@@ -13,8 +14,6 @@ COMMENT=	GNOME recipe manager
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		Uses unknown GNOME component pygnomeextras
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distutils-extra>0:${PORTSDIR}/devel/py-distutils-extra \
 		${PYTHON_PKGNAMEPREFIX}elib.intl>0:${PORTSDIR}/textproc/py-elib.intl
@@ -31,10 +30,14 @@ IPYTHON_DESC=		Interactive shell support
 IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>0:${PORTSDIR}/devel/ipython
 
 USES=		gettext python:2
-USE_GNOME=	pygnome2 pygnomeextras pygtk2
+USE_GNOME=	pygnome2 pygtk2
 USE_PYTHON=	autoplist distutils
 PLIST_FILES+=	man/man1/gourmet.1.gz
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,'spellcheck',#'spellcheck',g" \
+		${WRKSRC}/gourmet/plugin_loader.py
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/gourmet.1 ${STAGEDIR}${PREFIX}/man/man1/

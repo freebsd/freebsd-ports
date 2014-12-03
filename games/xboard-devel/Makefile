@@ -26,15 +26,14 @@ DATADIR=	${PREFIX}/share/games/xboard
 DOCSDIR=	${PREFIX}/share/doc/xboard
 XBOARDCONF=	${WRKSRC}/xboard.conf.in
 
-USES=		gmake shebangfix
+USES=		autoreconf gettext-tools gmake shebangfix
 SHEBANG_FILES=	texi2man
-USE_AUTOTOOLS=	automake aclocal
 
 INSTALL_TARGET=	install-strip
 
 pre-configure:
+	${RM} ${WRKSRC}/m4/*.m4
 	${REINPLACE_CMD} -e "s|\(GITVERSION=\).*|\1${COMMIT_HASH}|" ${WRKSRC}/Makefile.am
 	${REINPLACE_CMD} -E "s|(AC_INIT\(\[xboard\],\[master-[^]]+)(\].+\))|\1-git:${COMMIT_HASH}\2|" ${WRKSRC}/configure.ac
-	@cd ${WRKSRC} && ./autogen.sh
 
 .include "${MASTERDIR}/Makefile"

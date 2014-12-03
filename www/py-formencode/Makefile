@@ -3,7 +3,7 @@
 
 PORTNAME=	formencode
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE=	PSFL
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gettext:run python:2 zip
+USES=		gettext-runtime:run python:2 zip
 USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

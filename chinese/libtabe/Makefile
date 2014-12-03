@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://cle.linux.org.tw/pub/xcin/cvs/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unified library for Chinese text processing
 
 USES=		gmake libtool

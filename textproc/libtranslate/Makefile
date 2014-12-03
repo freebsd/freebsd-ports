@@ -3,7 +3,7 @@
 
 PORTNAME=		libtranslate
 PORTVERSION=		0.99
-PORTREVISION=		7
+PORTREVISION=		8
 CATEGORIES=		textproc
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,12 +17,12 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Natural language translation library
 
-USES=			gmake pathfix pkgconfig
+USES=			gettext gmake libtool pathfix pkgconfig
 USE_GNOME=		glib20 intlhack
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
+LIBS+=			-L${LOCALBASE}/lib
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc
 
 OPTIONS_DEFINE=	GENERIC TALKFILTERS
@@ -31,8 +31,7 @@ GENERIC_DESC=	generic module
 TALKFILTERS_DESC=	talkfilters module
 
 post-patch::
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|'	\
-		-e 's|libsoup-2.2|libsoup-2.4|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libsoup-2.2|libsoup-2.4|g' ${WRKSRC}/configure
 
 .include <bsd.port.options.mk>
 

@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-klotski/Makefile 19989 2014-10-18 09:53:56Z gusi $
+#   $MCom: ports/trunk/games/gnome-klotski/Makefile 20056 2014-11-10 20:49:39Z gusi $
 
 PORTNAME=	gnome-klotski
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

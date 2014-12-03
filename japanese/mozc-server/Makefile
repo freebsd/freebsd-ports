@@ -47,6 +47,8 @@ USE_XORG=	xcb
 USE_GNOME=	glib20 gtk20
 .elif ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 USE_EMACS=	yes
+.elif ${BUILD_MOZC_LIST:Mfcitx_mozc}
+USES+=		gettext-tools
 .endif
 
 # Use GCC only when the stock clang does not have libc++.so.

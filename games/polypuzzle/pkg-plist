@@ -23,5 +23,3 @@ bin/polypuzzle
 %%PORTDOCS%%%%DOCSDIR%%/Readme
 %%PORTDOCS%%%%DOCSDIR%%/Thanks
 %%PORTDOCS%%%%DOCSDIR%%/Todo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

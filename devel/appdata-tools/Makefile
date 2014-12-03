@@ -4,6 +4,7 @@
 
 PORTNAME=	appdata-tools
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	devel
 DIST_SUBDIR=	gnome3
 
@@ -24,8 +25,8 @@ GNU_CONFIGURE=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 #CONFIGURE_ARGS=	--enable-introspection=yes
 USE_GITHUB=	yes
-USES=		autoreconf:build gmake libtool pathfix pkgconfig
-USE_GNOME=	gdkpixbuf2 glib20 intlhack introspection:build
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	gdkpixbuf2 glib20 intltool introspection:build
 USE_LDCONFIG=	yes
 
 post-patch:
@@ -37,6 +38,8 @@ post-patch:
 		${WRKSRC}/configure.ac
 
 pre-configure:
-	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh
+	(cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh)
+	${REINPLACE_CMD} 's/DATADIRNAME=lib/DATADIRNAME=share/' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
