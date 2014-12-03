@@ -11,16 +11,10 @@ include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.3800.0
+lib/libvte-%%VERSION%%.so.0.3800.2
 libdata/pkgconfig/vte-%%VERSION%%.pc
 share/doc/vte-%%VERSION%%/VteTerminal.html
 share/doc/vte-%%VERSION%%/annotation-glossary.html
-share/doc/vte-%%VERSION%%/api-index-0-20.html
-share/doc/vte-%%VERSION%%/api-index-0-24.html
-share/doc/vte-%%VERSION%%/api-index-0-26.html
-share/doc/vte-%%VERSION%%/api-index-0-28.html
-share/doc/vte-%%VERSION%%/api-index-0-34.html
-share/doc/vte-%%VERSION%%/api-index-0-36.html
 share/doc/vte-%%VERSION%%/api-index-deprecated.html
 share/doc/vte-%%VERSION%%/api-index-full.html
 share/doc/vte-%%VERSION%%/ch01.html
@@ -75,6 +69,7 @@ share/locale/fi/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/fur/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/ga/LC_MESSAGES/vte-%%VERSION%%.mo
+share/locale/gd/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/gl/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/gu/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/he/LC_MESSAGES/vte-%%VERSION%%.mo

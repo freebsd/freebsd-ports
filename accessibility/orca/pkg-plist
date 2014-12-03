@@ -500,6 +500,8 @@ man/man1/orca.1.gz
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/__pycache__/speech_generator.cpython-33.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/__pycache__/structural_navigation.cpython-33.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/__pycache__/structural_navigation.cpython-33.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/__pycache__/tutorial_generator.cpython-33.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/__pycache__/tutorial_generator.cpython-33.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/bookmarks.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/braille_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/formatting.py
@@ -508,6 +510,7 @@ man/man1/orca.1.gz
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/script_utilities.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/speech_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/structural_navigation.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko/tutorial_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/__pycache__/__init__.cpython-33.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge/__pycache__/__init__.cpython-33.pyo

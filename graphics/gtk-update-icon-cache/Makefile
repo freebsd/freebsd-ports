@@ -38,6 +38,10 @@ PLIST_FILES=	bin/gtk-update-icon-cache \
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DGDK_PIXBUF_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
+
 pre-configure:
 .if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc)
 	@${ECHO_CMD} "${PKGNAME}: Needs cairo with X11 support enabled."

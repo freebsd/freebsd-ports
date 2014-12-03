@@ -500,6 +500,7 @@ share/help/C/hig/design-principles.page
 share/help/C/hig/dialogs.page
 share/help/C/hig/drop-down-lists.page
 share/help/C/hig/essentials.page
+share/help/C/hig/figures/hig.png
 share/help/C/hig/figures/icons/inverting.svg
 share/help/C/hig/figures/icons/palette/aluminium1.svg
 share/help/C/hig/figures/icons/palette/aluminium2.svg
@@ -1788,6 +1789,7 @@ share/help/de/hig/design-principles.page
 share/help/de/hig/dialogs.page
 share/help/de/hig/drop-down-lists.page
 share/help/de/hig/essentials.page
+share/help/de/hig/figures/hig.png
 share/help/de/hig/figures/icons/inverting.svg
 share/help/de/hig/figures/icons/palette/aluminium1.svg
 share/help/de/hig/figures/icons/palette/aluminium2.svg
@@ -2455,6 +2457,7 @@ share/help/el/hig/design-principles.page
 share/help/el/hig/dialogs.page
 share/help/el/hig/drop-down-lists.page
 share/help/el/hig/essentials.page
+share/help/el/hig/figures/hig.png
 share/help/el/hig/figures/icons/inverting.svg
 share/help/el/hig/figures/icons/palette/aluminium1.svg
 share/help/el/hig/figures/icons/palette/aluminium2.svg
@@ -3122,6 +3125,7 @@ share/help/es/hig/design-principles.page
 share/help/es/hig/dialogs.page
 share/help/es/hig/drop-down-lists.page
 share/help/es/hig/essentials.page
+share/help/es/hig/figures/hig.png
 share/help/es/hig/figures/icons/inverting.svg
 share/help/es/hig/figures/icons/palette/aluminium1.svg
 share/help/es/hig/figures/icons/palette/aluminium2.svg

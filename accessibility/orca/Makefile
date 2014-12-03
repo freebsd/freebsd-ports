@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/orca/Makefile 19990 2014-10-18 18:27:31Z gusi $
+#   $MCom: ports/trunk/accessibility/orca/Makefile 20054 2014-11-10 17:23:39Z gusi $
 
 PORTNAME=	orca
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.2
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,14 +11,14 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Scriptable screen reader
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py3-dbus \
-		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg \
-		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py3-cairo \
+BUILD_DEPENDS=	py3?-dbus>=0:${PORTSDIR}/devel/py3-dbus \
+		py3?-xdg>=0:${PORTSDIR}/devel/py3-xdg \
+		py3?-cairo>=0:${PORTSDIR}/graphics/py3-cairo \
 		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libatspi.so:${PORTSDIR}/accessibility/at-spi2-core
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py3-dbus \
-		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg \
-		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py3-cairo
+RUN_DEPENDS=	py3?-dbus>=0:${PORTSDIR}/devel/py3-dbus \
+		py3?-xdg>=0:${PORTSDIR}/devel/py3-xdg \
+		py3?-cairo>=0:${PORTSDIR}/graphics/py3-cairo
 
 # conflict with py*-json-py because orca uses the json from python itself
 # and py*-json-py shadows this.

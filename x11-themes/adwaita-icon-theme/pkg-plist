@@ -2576,3 +2576,5 @@ share/icons/Adwaita/scalable/status/weather-showers-scattered-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-showers-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-snow-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-storm-symbolic.svg
+@exec /usr/bin/find %%LOCALBASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
+@unexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true

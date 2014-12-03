@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extension-audio-output-switcher/Makefile 19693 2014-05-26 08:54:39Z gusi $
 
 PORTNAME=	gnome-shell-extension-audio-output-switcher
 PORTVERSION=	0.0.0.20140520
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-WRKSRC=		${WRKDIR}/anduchs-audio-output-switcher-2bec66d
+WRKSRC=		${WRKDIR}/anduchs-audio-output-switcher-${GH_COMMIT}
 
 USES=		gettext gmake pkgconfig tar:xz
 USE_GNOME=	glib20
@@ -24,13 +24,17 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GH_ACCOUNT=	anduchs
-GH_TAGNAME=	2bec66de5e
-GH_COMMIT=	2bec66de5e
+GH_TAGNAME=	2bec66d
+GH_COMMIT=	2bec66d
 GH_PROJECT=	audio-output-switcher
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 
 NO_BUILD=	yes
+
+post-patch:
+		@${REINPLACE_CMD} -e 's|3.12"|3.12","3.14"|g' \
+			${WRKSRC}/metadata.json
 
 do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/audio-output-switcher@anduchs

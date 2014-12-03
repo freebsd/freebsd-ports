@@ -103,7 +103,7 @@ lib/girepository-1.0/GData-0.0.typelib
 lib/libgdata.a
 lib/libgdata.so
 lib/libgdata.so.19
-lib/libgdata.so.19.2.0
+lib/libgdata.so.19.2.1
 libdata/pkgconfig/libgdata.pc
 share/doc/gdata/GDataAPPCategories.html
 share/doc/gdata/GDataAccessHandler.html

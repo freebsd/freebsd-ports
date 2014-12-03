@@ -1,9 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/bijiben/Makefile 19980 2014-10-17 06:01:57Z gusi $
+#   $MCom: ports/trunk/deskutils/bijiben/Makefile 20065 2014-11-11 07:36:48Z gusi $
 
 PORTNAME=	bijiben
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

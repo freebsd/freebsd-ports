@@ -34,6 +34,17 @@ lib/eog/plugins/send-by-mail.plugin
 %%PYTHON%%lib/eog/plugins/slideshowshuffle.py
 %%PYTHON%%lib/eog/plugins/__pycache__/slideshowshuffle.cpython-%%PYVER%%.pyc
 %%PYTHON%%lib/eog/plugins/__pycache__/slideshowshuffle.cpython-%%PYVER%%.pyo
+share/appdata/eog-exif-display.metainfo.xml
+%%PYTHON%%share/appdata/eog-export-to-folder.metainfo.xml
+share/appdata/eog-fit-to-width.metainfo.xml
+%%PYTHON%%share/appdata/eog-fullscreenbg.metainfo.xml
+share/appdata/eog-hide-titlebar.metainfo.xml
+share/appdata/eog-light-theme.metainfo.xml
+%%PYTHON%%share/appdata/eog-map.metainfo.xml
+share/appdata/eog-postasa.metainfo.xml
+%%PYTHON%%share/appdata/eog-pythonconsole.metainfo.xml
+share/appdata/eog-send-by-mail.metainfo.xml
+%%PYTHON%%share/appdata/eog-slideshowshuffle.metainfo.xml
 %%PYTHON%%share/eog/plugins/export-to-folder/preferences_dialog.ui
 %%PYTHON%%share/eog/plugins/fullscreenbg/preferences_dialog.ui
 %%PYTHON%%share/eog/plugins/pythonconsole/config.ui

@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-shell-extension-backslide
 PORTVERSION=	0.0.0.20140520
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	https://bitbucket.org/LukasKnuth/backslide/get/
 DISTFILES=	7e36a49fc5e1.zip
@@ -32,6 +33,8 @@ NO_BUILD=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|Me.dir.get_child(\'schemas\').get_path()|'${PREFIX}/share/glib-2.0/schemas'|g" \
 		${WRKSRC}/backslide@codeisland.org/settings.js
+	@${REINPLACE_CMD} -e 's|3.12|3.12", "3.14|g' \
+		${WRKSRC}/backslide\@codeisland.org/metadata.json
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
