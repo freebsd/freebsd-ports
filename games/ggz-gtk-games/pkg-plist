@@ -125,33 +125,14 @@ share/ggz/spades.dsc
 @unexec ggz-config -D --remove --modfile=%D/share/ggz/tictactoe.dsc --force
 share/ggz/tictactoe.dsc
 @exec ggz-config -D --install --modfile=%D/share/ggz/tictactoe.dsc --force
-%%NLS%%share/locale/de/LC_MESSAGES/chess.mo
-%%NLS%%share/locale/de/LC_MESSAGES/chinese-checkers.mo
-%%NLS%%share/locale/de/LC_MESSAGES/combat.mo
-%%NLS%%share/locale/de/LC_MESSAGES/common.mo
-%%NLS%%share/locale/de/LC_MESSAGES/dots.mo
-%%NLS%%share/locale/de/LC_MESSAGES/ggzcards.mo
-%%NLS%%share/locale/de/LC_MESSAGES/hastings.mo
-%%NLS%%share/locale/de/LC_MESSAGES/reversi.mo
-%%NLS%%share/locale/de/LC_MESSAGES/spades.mo
-%%NLS%%share/locale/de/LC_MESSAGES/tictactoe.mo
-@dirrm share/ggz/tictactoe/pixmaps
-@dirrm share/ggz/tictactoe
-@dirrm share/ggz/reversi/pixmaps
-@dirrm share/ggz/reversi
-@dirrm share/ggz/pixmaps
-@dirrm share/ggz/hastings/pixmaps
-@dirrm share/ggz/hastings
-@dirrm share/ggz/combat/pixmaps/default
-@dirrm share/ggz/combat/pixmaps
-@dirrm share/ggz/combat/maps
-@dirrm share/ggz/combat
-@dirrm share/ggz/chess/pixmaps
-@dirrm share/ggz/chess
-@dirrm share/ggz/ccheckers/pixmaps/templates
-@dirrm share/ggz/ccheckers/pixmaps/default
-@dirrm share/ggz/ccheckers/pixmaps/Electric
-@dirrm share/ggz/ccheckers/pixmaps/Dragon
-@dirrm share/ggz/ccheckers/pixmaps
-@dirrm share/ggz/ccheckers
-@dirrmtry lib/ggz
+share/locale/de/LC_MESSAGES/chess.mo
+share/locale/de/LC_MESSAGES/chinese-checkers.mo
+share/locale/de/LC_MESSAGES/combat.mo
+share/locale/de/LC_MESSAGES/common.mo
+share/locale/de/LC_MESSAGES/dots.mo
+share/locale/de/LC_MESSAGES/ggzcards.mo
+share/locale/de/LC_MESSAGES/hastings.mo
+share/locale/de/LC_MESSAGES/reversi.mo
+share/locale/de/LC_MESSAGES/spades.mo
+share/locale/de/LC_MESSAGES/tictactoe.mo
+@unexec if [ "x`cat %D/etc/ggz.modules`" = "x[Games]" ]; then echo -n > %D/etc/ggz.modules; fi
