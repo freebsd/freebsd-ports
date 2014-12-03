@@ -24,27 +24,22 @@ USES=		gmake
 USE_SDL=	image mixer sdl
 
 PORTDOCS=	CHANGES.txt README.txt
-OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Fight or Perish" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/data/| ; \
-		s|char [256],|char [512],|' ${WRKSRC}/src/fop.c
-	@${REINPLACE_CMD} -e 's|CC=gcc|CC=${CC}| ; \
-		s|CFLAGS=-Wall -O2|CFLAGS+=| ; \
-		s|SDL_CFLAGS=|SDL_CFLAGS+=| ; \
-		s|SDL_LIBS=|SDL_LIBS+=|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/data/|' \
+		 ${WRKSRC}/src/fop.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fop ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "images maps sounds" \
 		${STAGEDIR}${DATADIR}/data)
-
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
 
