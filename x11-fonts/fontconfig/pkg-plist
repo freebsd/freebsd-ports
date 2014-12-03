@@ -51,15 +51,11 @@ etc/fonts/conf.d/69-unifont.conf
 etc/fonts/conf.d/80-delicious.conf
 etc/fonts/conf.d/90-synthetic.conf
 etc/fonts/conf.d/README
-@unexec if cmp -s %D/etc/fonts/fonts.conf %D/etc/fonts/fonts.conf.default; then rm -f %D/etc/fonts/fonts.conf; fi
-etc/fonts/fonts.conf.default
-@exec [ -f %B/fonts.conf ] || cp %B/%f %B/fonts.conf
+@sample etc/fonts/fonts.conf.sample
 etc/fonts/fonts.dtd
 include/fontconfig/fcfreetype.h
 include/fontconfig/fcprivate.h
 include/fontconfig/fontconfig.h
-lib/libfontconfig.a
-lib/libfontconfig.la
 lib/libfontconfig.so
 lib/libfontconfig.so.1
 lib/libfontconfig.so.1.8.0
@@ -71,9 +67,5 @@ man/man1/fc-match.1.gz
 man/man1/fc-query.1.gz
 man/man1/fc-scan.1.gz
 man/man5/fonts-conf.5.gz
-@dirrm include/fontconfig
-@dirrmtry etc/fonts/conf.d
-@dirrmtry etc/fonts/conf.avail
-@dirrmtry etc/fonts
 @unexec rmdir /var/db/fontconfig/* 2>/dev/null || true
-@dirrmtry /var/db/fontconfig
+@dir /var/db/fontconfig
