@@ -27,8 +27,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/src/utils/fs.py
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/sk1libs/ft2engine/*.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/sk1libs/pycms/*.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/sk1libs/imaging/*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sk1libs/ft2engine/*.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sk1libs/pycms/*.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sk1libs/imaging/*.so
 
 .include <bsd.port.mk>
