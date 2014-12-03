@@ -75,6 +75,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/F5.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Foundry.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Force10.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Fortinet.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/H3C.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/IBMGbTor.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Juniper.pm
@@ -181,6 +182,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Extreme.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::F5.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Force10.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer3::Fortinet.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Foundry.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::H3C.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::HP9300.3.gz
