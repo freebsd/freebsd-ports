@@ -163,8 +163,8 @@ share/applications/freeciv-server.desktop
 %%DATADIR%%/civ2.serv
 %%X11%%@unexec ggz-config --remove --modfile %D/%%DATADIR%%/civclient.dsc
 %%X11%%%%DATADIR%%/civclient.dsc
-%%X11%%etc/ggz.modules
 %%X11%%@exec ggz-config --install --modfile %D/%%DATADIR%%/civclient.dsc
+%%X11%%@unexec if [ "x`cat %D/etc/ggz.modules`" = "x[Games]" ]; then echo -n > %D/etc/ggz.modules; fi
 %%DATADIR%%/default/ai_effects.ruleset
 %%DATADIR%%/default/default.lua
 %%DATADIR%%/default/buildings.ruleset
@@ -3299,51 +3299,3 @@ share/icons/hicolor/64x64/apps/freeciv-server.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/freeciv.mo
 %%X11%%share/pixmaps/freeciv-client.png
-%%X11%%@dirrm %%DATADIR%%/amplio2
-%%X11%%@dirrm %%DATADIR%%/buildings
-%%X11%%@dirrm %%DATADIR%%/cimpletoon
-@dirrm %%DATADIR%%/civ1
-@dirrm %%DATADIR%%/civ2
-@dirrm %%DATADIR%%/default
-@dirrm %%DATADIR%%/experimental
-%%X11%%@dirrm %%DATADIR%%/flags
-%%X11%%@dirrm %%DATADIR%%/hex2t
-%%X11%%@dirrm %%DATADIR%%/isophex
-%%X11%%@dirrm %%DATADIR%%/isotrident
-%%X11%%@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/multiplayer
-@dirrm %%DATADIR%%/nation
-@dirrm %%DATADIR%%/scenarios
-%%X11%%@dirrm %%DATADIR%%/stdsounds
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Arrows
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Buttons
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Check-Radio
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Combo
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Frame-Gap
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Handles
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Lines
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/ListHeaders
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Menu-Menubar
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Others
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Panel
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/ProgressBar
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Range
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Scrollbars
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Shadows
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Spin
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Tabs
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0/Toolbar
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv/gtk-2.0
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0/Freeciv
-%%GTK%%@dirrm %%DATADIR%%/themes/gui-gtk-2.0
-%%SDL%%@dirrm %%DATADIR%%/themes/gui-sdl/human
-%%SDL%%@dirrm %%DATADIR%%/themes/gui-sdl
-%%X11%%@dirrm %%DATADIR%%/themes
-%%X11%%@dirrm %%DATADIR%%/trident
-%%X11%%@dirrm %%DATADIR%%/wonders
-@dirrmtry %%DATADIR%%
-@dirrmtry share/appdata
-%%NLS%%@dirrm share/locale/gd/LC_MESSAGES
-%%NLS%%@dirrm share/locale/gd
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry etc/freeciv
