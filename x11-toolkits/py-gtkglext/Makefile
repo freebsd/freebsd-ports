@@ -20,4 +20,8 @@ USES=		gmake libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/gtk/gtkgl/_gtkgl.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/gtk/gdkgl/_gdkgl.so
+
 .include <bsd.port.mk>
