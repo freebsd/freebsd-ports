@@ -296,3 +296,4 @@ share/pixmaps/tux_aqfh.png
 %%DATADIR%%/wavs/whistle.wav
 %%DATADIR%%/wavs/who.wav
 %%DATADIR%%/wavs/who_else.wav
+@dir %%DATADIR%%/slamcode
