@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Thrust PBEM Client
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/License.txt
 
 USES=		zip
 USE_JAVA=	yes
@@ -32,6 +33,17 @@ DATAFILES=	Images IncomingGames OutgoingGames Ships FTJava.jar \
 PLIST_FILES=	bin/ftjava
 PORTDOCS=	FTJava_Linux.html faq.html FTJava_Documentation.html
 PORTDATA=	*
+PLIST_DIRS=	%%DATADIR%%/Ships/FullThrust/Kravak \
+		%%DATADIR%%/Ships/EFSB/NonAligned \
+		%%DATADIR%%/OutgoingGames \
+		%%DATADIR%%/IncomingGames \
+		%%DATADIR%%/Images/StarFleetWars/Terran \
+		%%DATADIR%%/Images/StarFleetWars/Entomalian \
+		%%DATADIR%%/Images/ShipIcons/StarFleetWars \
+		%%DATADIR%%/Images/ShipIcons/FullThrust \
+		%%DATADIR%%/Images/FullThrust/Sylvian \
+		%%DATADIR%%/Images/FullThrust/Kali \
+		%%DATADIR%%/Images/FullThrust/Eurasian
 
 SUB_FILES=	ftjava.sh
 
