@@ -24,15 +24,15 @@ USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid -pthread
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
-
 DESKTOP_ENTRIES="Tuxedo The Penguin: A Quest for Herring" "" ${PORTNAME} \
 		"${PORTNAME}" "Game;SportsGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
