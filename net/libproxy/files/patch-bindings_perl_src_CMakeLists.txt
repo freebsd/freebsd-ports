@@ -1,0 +1,10 @@
+--- bindings/perl/src/CMakeLists.txt.orig	2010-09-01 20:23:34 UTC
++++ bindings/perl/src/CMakeLists.txt
+@@ -12,6 +12,7 @@ set(Libproxy_LIB_SRCS Libproxy.c)
+ 
+ set(CMAKE_C_COMPILER ${CMAKE_CXX_COMPILER})
+ set(CMAKE_C_FLAGS ${PERL_CXX_FLAGS} )
++SET(CMAKE_INSTALL_RPATH ${PERL_INCLUDE_DIR})
+ 
+ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/perl/blib/arch/auto/Net)
+ add_library(PLlibproxy SHARED ${Libproxy_LIB_SRCS})
