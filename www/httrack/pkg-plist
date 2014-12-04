@@ -76,13 +76,3 @@ share/applications/WebHTTrack.desktop
 share/pixmaps/httrack16x16.xpm
 share/pixmaps/httrack32x32.xpm
 share/pixmaps/httrack48x48.xpm
-%%ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/16x16
-%%ICONS%%@dirrmtry share/icons/hicolor/32x32/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/32x32
-%%ICONS%%@dirrmtry share/icons/hicolor/48x48/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/48x48
-%%ICONS%%@dirrmtry share/icons/hicolor
-%%ICONS%%@dirrmtry share/icons
-@dirrm lib/httrack
-@dirrm include/httrack
