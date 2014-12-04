@@ -14,13 +14,7 @@ USES=		gmake tar:bzip2
 
 PLIST_FILES=	bin/pmt
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800071
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config.mak
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pmt ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
