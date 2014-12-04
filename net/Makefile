@@ -1037,6 +1037,7 @@
     SUBDIR += rubygem-omniauth-twitter
     SUBDIR += rubygem-open-uri-cached
     SUBDIR += rubygem-openid
+    SUBDIR += rubygem-opennebula
     SUBDIR += rubygem-packetfu
     SUBDIR += rubygem-pcaprub
     SUBDIR += rubygem-rabbiter
