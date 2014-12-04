@@ -19,4 +19,3 @@ libexec/annelid
 %%DATADIR%%/speed.wav
 %%DATADIR%%/title.tga
 %%DATADIR%%/vortex.wav
-@dirrm %%DATADIR%%
