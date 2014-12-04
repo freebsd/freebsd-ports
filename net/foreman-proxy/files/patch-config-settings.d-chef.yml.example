@@ -1,8 +1,0 @@
---- config/settings.d/chef.yml.example.orig	2014-09-27 09:04:18.593468858 +0200
-+++ config/settings.d/chef.yml.example	2014-09-27 09:04:57.195544853 +0200
-@@ -5,4 +5,4 @@
- # smart-proxy client node needs to have some admin right on chef-server
- # in order to retrive all nodes public keys
- # :chef_smartproxy_clientname: 'host.example.net'
--# :chef_smartproxy_privatekey: '/etc/chef/client.pem'
-+# :chef_smartproxy_privatekey: '%%LOCALBASE%%/etc/chef/client.pem'
