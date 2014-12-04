@@ -12,7 +12,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Musicpd client plugin for the Xfce panel
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
 RUN_DEPENDS=	musicpd:${PORTSDIR}/audio/musicpd
