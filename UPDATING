@@ -34,6 +34,11 @@ you update your ports collection, before attempting any port upgrades.
   # pkg delete -f gettext
   # portinstall devel/gettext
 
+  Or for binary users:
+
+  # pkg delete -f gettext
+  # pkg upgrade
+
 20141127:
   AFFECTS: users of lang/perl5.*
   AUTHOR: mat@FreeBSD.org
