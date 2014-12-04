@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn-based strategy game for GNOME
 
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		pathfix gmake libtool iconv pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 CPPFLAGS+=	-I${LOCALBASE}/include
