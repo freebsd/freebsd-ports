@@ -2400,6 +2400,7 @@
     SUBDIR += p5-Module-Reload
     SUBDIR += p5-Module-Reload-Sel
     SUBDIR += p5-Module-Runtime
+    SUBDIR += p5-Module-Runtime-Conflicts
     SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-Module-Setup
     SUBDIR += p5-Module-Starter
