@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	net
 MASTER_SITES=	GH
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	rubygem-bundler_ext>=0.4:${PORTSDIR}/sysutils/rubygem-bundler_ext \
 		rubygem-json>=1.8.1:${PORTSDIR}/devel/rubygem-json \
-		rubygem-rack>=1.1:${PORTSDIR}/www/rubygem-rack \
+		rubygem-rack>=1.4:${PORTSDIR}/www/rubygem-rack \
 		rubygem-sinatra>=1.4.3:${PORTSDIR}/www/rubygem-sinatra \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
@@ -24,7 +24,7 @@ PUPPET_DESC=	Depend on Puppet
 USE_GITHUB=	yes
 GH_ACCOUNT=	theforeman
 GH_PROJECT=	smart-proxy
-GH_COMMIT=	b53b4d0
+GH_COMMIT=	eaa557d
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RC_SUBR=	foreman-proxy
@@ -82,7 +82,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/config/settings.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml.sample
-.for cfg in bmc chef dhcp dns puppet puppetca realm tftp
+.for cfg in bmc dhcp dns facts puppet puppetca realm templates tftp
 	${INSTALL_DATA} ${WRKSRC}/config/settings.d/${cfg}.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/${cfg}.yml.sample
 .endfor

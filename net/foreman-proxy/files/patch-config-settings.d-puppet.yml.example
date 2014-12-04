@@ -1,6 +1,6 @@
---- config/settings.d/puppet.yml.example.orig	2014-09-27 09:04:06.613473296 +0200
-+++ config/settings.d/puppet.yml.example	2014-09-27 09:13:36.804706968 +0200
-@@ -10,19 +10,19 @@
+--- config/settings.d/puppet.yml.example.orig	2014-12-02 11:27:28.000000000 +0100
++++ config/settings.d/puppet.yml.example	2014-12-04 11:27:31.399941182 +0100
+@@ -10,23 +10,23 @@
  
  # Customrun command details
  # Set :customrun_cmd to the full path of the script you want to run, instead of /bin/false
@@ -17,6 +17,10 @@
  # the command which will be sent to the host
 -:puppetssh_command: /usr/bin/puppet agent --onetime --no-usecacheonfailure
 +:puppetssh_command: %%LOCALBASE%%/bin/puppet agent --onetime --no-usecacheonfailure
+ # wait for the command to finish (and capture exit code), or detach process and return 0
+ # Note: enabling this option causes the Foreman web UI to be blocked when executing puppetrun,
+ # with timeout from the Browser and/or Foreman's REST client after 60 seconds.
+ :puppetssh_wait: false
  # With which user should the proxy connect
  #:puppetssh_user: root
 -#:puppetssh_keyfile: /etc/foreman-proxy/id_rsa
@@ -24,7 +28,7 @@
  
  # Which user to invoke sudo as to run puppet commands
  #:puppet_user: root
-@@ -30,9 +30,9 @@
+@@ -34,9 +34,9 @@
  # URL of the puppet master itself for API requests
  #:puppet_url: https://puppet.example.com:8140
  # SSL certificates used to access the puppet master API
