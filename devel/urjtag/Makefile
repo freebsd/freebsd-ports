@@ -41,7 +41,7 @@ USB_CONFIGURE_ON=	--with-libusb=/usr
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000033
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	LEX=${LOCALBASE}/bin/flex
 .endif
