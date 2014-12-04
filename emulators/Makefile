@@ -120,6 +120,7 @@
     SUBDIR += quasi88
     SUBDIR += raine
     SUBDIR += rtc
+    SUBDIR += rubygem-fission
     SUBDIR += sim6811
     SUBDIR += simh
     SUBDIR += skyeye
