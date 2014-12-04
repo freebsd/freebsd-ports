@@ -39,7 +39,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 BROKEN=		doesn't build on pre-10.x
 .endif
 
