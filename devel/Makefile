@@ -4261,6 +4261,7 @@
     SUBDIR += ruby-subversion
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
+    SUBDIR += rubygem-CFPropertyList
     SUBDIR += rubygem-abstract
     SUBDIR += rubygem-actionpack-action_caching
     SUBDIR += rubygem-actionview
