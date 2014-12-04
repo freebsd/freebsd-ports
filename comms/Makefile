@@ -80,6 +80,7 @@
     SUBDIR += libimobiledevice
     SUBDIR += libirman
     SUBDIR += libmodbus
+    SUBDIR += librs232
     SUBDIR += libticables2
     SUBDIR += libticalcs2
     SUBDIR += libusbmuxd
