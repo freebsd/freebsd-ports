@@ -11,7 +11,7 @@ DISTNAME=	cku${PORTVERSION:E}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Portable scriptable network and serial communication program
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_OPENSSL=	yes
 NO_WRKSUBDIR=	yes
