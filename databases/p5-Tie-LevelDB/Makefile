@@ -18,7 +18,13 @@ LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
 MAKE_ARGS=	CC="${CXX}"
 USE_PERL5=	configure
-USES=		gmake perl5
+USES=		compiler gmake perl5
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang
+CFLAGS+=	-Wno-reserved-user-defined-literal
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/build_detect_platform/d' \
@@ -28,11 +34,5 @@ post-patch:
 		-e '/LIBS/ s|\[\(.*\)\]|["-L${LOCALBASE}/lib -lleveldb " . (\1)]|' \
 		-e 's|g++|${CXX}|' \
 			${WRKSRC}/Makefile.PL
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=		Does not build on FreeBSD 10.0+
-.endif
 
 .include <bsd.port.post.mk>
