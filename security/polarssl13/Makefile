@@ -5,6 +5,7 @@ PORTVERSION=	1.3.9
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/download/
+PKGNAMESUFFIX=	13
 
 MAINTAINER=	chris@bsdjunk.com
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
@@ -18,11 +19,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-# PolarSSL 1.3 branch introduces API changes that would best be served at this
-# time by a new/seperate polarssl13 port. Therefore, limit Portscout to the
-# 1.2 branch for this port.
-#Why ?
-#PORTSCOUT=	limit:^1\.2\.
+CONFLICTS=	polarssl-[0-9]*
 
 DOCFILES=	ChangeLog README.rst LICENSE
 BINFILES=	aescrypt2 benchmark dh_client dh_genprime dh_server hello \
