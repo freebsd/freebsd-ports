@@ -14,9 +14,10 @@ COMMENT=	Commercial FTP daemon with a 30-day evaluation license
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-ONLY_FOR_ARCHS=	i386 amd64
-BROKEN_i386=	Unfetchable
-NO_BUILD=	YES
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	only available for amd64
+
+NO_BUILD=	yes
 RESTRICTED=	30 day evaluation license
 
 USE_RC_SUBR=	ncftpd
@@ -28,13 +29,12 @@ PORTDOCS=	install.html README README.freebsd LICENSE
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 900000
 BINVER=		9.0
-IGNORE=		not yet available for 9.x
-.elif ${OSVERSION} >= 800000
+.elif ${OPSYS} == FreeBSD
 BINVER=		8.0
 .else
-BINVER=		7.0
+IGNORE=		requires FreeBSD
 .endif
 
 .if ${ARCH} == amd64
