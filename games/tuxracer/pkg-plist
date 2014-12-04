@@ -150,24 +150,3 @@ bin/tuxracer
 %%DATADIR%%/textures/wind_button.rgb
 %%DATADIR%%/tux.tcl
 %%DATADIR%%/tuxracer_init.tcl
-@dirrmtry %%DATADIR%%/textures
-@dirrmtry %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%/music
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%/courses/twisty_slope
-@dirrmtry %%DATADIR%%/courses/path_of_daggers
-@dirrmtry %%DATADIR%%/courses/frozen_river
-@dirrmtry %%DATADIR%%/courses/contrib/twin_paths
-@dirrmtry %%DATADIR%%/courses/contrib/sentinel_towers
-@dirrmtry %%DATADIR%%/courses/contrib/penguins_cant_fly
-@dirrmtry %%DATADIR%%/courses/contrib/nebula
-@dirrmtry %%DATADIR%%/courses/contrib/jools_big_mountain
-@dirrmtry %%DATADIR%%/courses/contrib/ingos_speedway
-@dirrmtry %%DATADIR%%/courses/contrib/ice_canyon
-@dirrmtry %%DATADIR%%/courses/contrib/downhill_fear
-@dirrmtry %%DATADIR%%/courses/contrib
-@dirrmtry %%DATADIR%%/courses/common
-@dirrmtry %%DATADIR%%/courses/bunny_hill
-@dirrmtry %%DATADIR%%/courses/bumpy_ride
-@dirrmtry %%DATADIR%%/courses
-@dirrmtry %%DATADIR%%
