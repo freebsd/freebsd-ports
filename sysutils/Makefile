@@ -564,6 +564,7 @@
     SUBDIR += nvramtool
     SUBDIR += oak
     SUBDIR += obliterate
+    SUBDIR += odo
     SUBDIR += ods2
     SUBDIR += open
     SUBDIR += openipmi
