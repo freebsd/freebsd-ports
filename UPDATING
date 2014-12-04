@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141203:
+  AFFECTS: users of ports-mgmt/poudriere
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Poudriere has been updated to 3.1.0. See the release notes at
+  https://github.com/freebsd/poudriere/wiki/release_notes_31 for
+  information on changed features and required setup.
+
 20141130:
   AFFECTS: users of devel/gettext (close to everyone)
   AUTHOR: tijl@FreeBSD.org
