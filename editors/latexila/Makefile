@@ -3,6 +3,7 @@
 
 PORTNAME=	latexila
 PORTVERSION=	3.14.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,7 +12,8 @@ MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Integrated LaTeX environment
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala \
-	itstool:${PORTSDIR}/textproc/itstool
+	itstool:${PORTSDIR}/textproc/itstool \
+	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
 	libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3
 
