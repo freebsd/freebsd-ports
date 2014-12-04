@@ -122,6 +122,8 @@ post-patch:
 		${WRKSRC}/code/botlib/be_interface.c
 	@${REINPLACE_CMD} '/callMask/ s|static||' \
 		${WRKSRC}/code/qcommon/vm_x86.c
+	@${REINPLACE_CMD} 's|-falign-loops=2||; s|-falign-jumps=2||' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/wop
