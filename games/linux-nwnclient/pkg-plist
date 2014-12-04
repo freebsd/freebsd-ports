@@ -88,14 +88,4 @@ bin/nwn
 %%DIAMOND%%%%DATADIR%%/texturepacks/xp2_tex_tpa.erf
 %%DIAMOND%%%%DATADIR%%/xp2patch.key
 %%DATADIR%%/xp3.key
-%%DIAMOND%%@dirrm %%DATADIR%%/texturepacks
-@dirrm %%DATADIR%%/override
-%%NWMOVIES%%@dirrm %%DATADIR%%/nwmovies/libdis
-%%NWMOVIES%%@dirrm %%DATADIR%%/nwmovies
-@dirrm %%DATADIR%%/nwm
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/miles
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/ambient
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/lib
