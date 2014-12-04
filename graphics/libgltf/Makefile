@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:${PORTSDIR}/
 		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 LIB_DEPENDS=	libGLEW.so:${PORTSDIR}/graphics/glew
 
-USES=	compiler:c++11-lang pathfix pkgconfig libtool tar:bzip2
+USES=		pathfix pkgconfig libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror
