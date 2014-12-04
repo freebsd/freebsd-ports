@@ -57,6 +57,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c9c46fbf-7b83-11e4-a96e-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS and DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.13.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-17.php">
+	  <p>DoS vulnerability with long passwords.</p>
+	  <p>With very long passwords it was possible to initiate a
+	    denial of service attack on phpMyAdmin.</p>
+	  <p>We consider this vulnerability to be serious.</p>
+	  <p>This vulnerability can be mitigated by configuring
+	    throttling in the webserver.</p>
+	</blockquote>
+
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-18.php">
+	  <p>XSS vulnerability in redirection mechanism.</p>
+	  <p>With a crafted URL it was possible to trigger an XSS in
+	    the redirection mechanism in phpMyAdmin.</p>
+	  <p>We consider this vulnerability to be non critical.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-17.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-18.php</url>
+      <cvename>CVE-2014-9218</cvename>
+      <cvename>CVE-2014-9219</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-03</discovery>
+      <entry>2014-12-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7ae61870-9dd2-4884-a2f2-f19bb5784d09">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
