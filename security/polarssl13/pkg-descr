@@ -1,0 +1,21 @@
+PolarSSL is a light-weight open source cryptographic and SSL/TLS library
+written in C. PolarSSL is written with embedded systems in mind and has
+been ported on a number of architectures, including ARM, PowerPC, MIPS
+and Motorola 68000.
+
+Features include:
+ * Small memory footprint
+ * Clean and simple API for integration
+ * Loose coupling of cryptographic code.
+ * Symmetric encryption algorithms: AES, Triple-DES, DES, ARC4, Camellia, XTEA
+ * Hash algorithms: MD2, MD4, MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512
+ * HAVEGE random number generator
+ * RSA with PKCS#1 v1.5 padding
+ * SSL version 3 and TLS version 1 client support
+ * X.509 certificate and CRL reading from memory or disk in PEM and DER formats
+ * Over 900 regression and code coverage tests
+ * Example applications
+
+LICENSE: GPL2
+
+WWW: http://polarssl.org/

@@ -734,6 +734,7 @@
     SUBDIR += pktsuckers
     SUBDIR += please
     SUBDIR += polarssl
+    SUBDIR += polarssl13
     SUBDIR += poly1305aes
     SUBDIR += pond
     SUBDIR += portsentry
