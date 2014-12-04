@@ -12,7 +12,7 @@ COMMENT=	Interactive fluid dynamics simulation
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PORTCOUT=	skipv:0.9.1
+PORTSCOUT=	skipv:0.9.1
 USES=		motif
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG" \
 		X11INCLUDE="-I${LOCALBASE}/include" X11LIB="-L${LOCALBASE}/lib"
