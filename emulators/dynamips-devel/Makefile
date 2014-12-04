@@ -21,7 +21,8 @@ USES=		gmake
 ALL_TARGET=	${PORTNAME} nvram_export
 MAKE_ENV=	DYNAMIPS_ARCH=${DYNAMIPS_ARCH}\
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS}\
-		PTHREAD_LIBS=${PTHREAD_LIBS}
+		PTHREAD_LIBS=${PTHREAD_LIBS} \
+		HAS_POSIX_MEMALIGN=1
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} bin/nvram_export
@@ -41,19 +42,6 @@ DYNAMIPS_ARCH=	"x86"
 DYNAMIPS_ARCH=	"amd64"
 .else
 DYNAMIPS_ARCH=	"nojit"
-.endif
-
-# It required libpcap version 0.9.4 or is higher.
-.if ${OSVERSION} < 700021
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-MAKE_ENV+=	PCAP_LIB=${LOCALBASE}/lib/libpcap.a
-#.warning Do not overlook, make libpcap with LIBPCAP_OVERWRITE_BASE parameter, for use with shared library.
-#LIB_DEPENDS+=	pcap.\(0.9.\)?[2-9]:${PORTSDIR}/net/libpcap
-#MAKE_ENV+=	PCAP_LIB=-lpcap.2
-.endif
-
-.if ${OSVERSION} >= 700013
-MAKE_ENV+=	HAS_POSIX_MEMALIGN=1
 .endif
 
 do-install:
