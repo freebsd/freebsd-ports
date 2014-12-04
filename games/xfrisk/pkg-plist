@@ -7,4 +7,3 @@ bin/aiColson
 lib/xfrisk/World.risk
 lib/xfrisk/Countries.risk
 lib/xfrisk/Help.risk
-@dirrm lib/xfrisk
