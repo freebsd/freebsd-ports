@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	httrack
-PORTVERSION=	3.48.19
+PORTVERSION=	3.48.20
 CATEGORIES=	www
 MASTER_SITES=	http://download.httrack.com/ \
+		http://mirror.httrack.com/ \
 		http://mirror.httrack.com/historical/ \
 		LOCAL/sunpoet
 
@@ -23,7 +24,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/httrack
-USES=		alias gmake iconv libtool shebangfix
+USES=		alias execinfo gmake iconv libtool shebangfix
 
 PORTDATA=	*
 PORTDOCS=	*
