@@ -25,8 +25,7 @@ RUN_DEPENDS=	mate-base>=1.8.0:${PORTSDIR}/x11/mate-base \
 		mate-volume-control:${PORTSDIR}/audio/mate-media \
 		mate-power-manager:${PORTSDIR}/sysutils/mate-power-manager \
 		mozo:${PORTSDIR}/deskutils/mozo \
-		mate-applets>=1.8.0:${PORTSDIR}/x11/mate-applets \
-		mate-utils>=1.8.1:${PORTSDIR}/deskutils/mate-utils
+		mate-applets>=1.8.0:${PORTSDIR}/x11/mate-applets
 
 USE_MATE=	pluma:run
 
