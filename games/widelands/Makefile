@@ -42,7 +42,7 @@ DESKTOP_ENTRIES="Widelands" \
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
 IGNORE=		doesn't build on 8.x
 .endif
 
