@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	goaccess
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tar.goaccess.io/
 
@@ -37,5 +37,8 @@ do-install:
 .endif
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
