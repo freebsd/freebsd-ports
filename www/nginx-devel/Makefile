@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES+=		cpe
 
