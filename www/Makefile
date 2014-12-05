@@ -1821,6 +1821,7 @@
     SUBDIR += rubygem-jquery-ui-rails
     SUBDIR += rubygem-jquery-ui-rails-rails4
     SUBDIR += rubygem-jruby-rack
+    SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-rails4
