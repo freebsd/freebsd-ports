@@ -38,6 +38,9 @@ MAKE_ENV+=	LINK=clang++
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
 .if ${COMPILER_VERSION} >= 34
 CFLAGS+=	-Wno-unused-const-variable
+.if ${COMPILER_VERSION} >= 35
+CFLAGS+=	-Wno-tautological-undefined-compare
+.endif
 .endif
 .endif
 .else

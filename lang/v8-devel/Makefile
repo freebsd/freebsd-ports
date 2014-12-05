@@ -38,9 +38,12 @@ MAKE_ARGS+=	clang=on
 MAKE_ENV+=	LINK=clang++ AR=/usr/bin/ar
 .if ${COMPILER_VERSION} >= 33
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
-.endif
 .if ${COMPILER_VERSION} >= 34
 CFLAGS+=	-Wno-unused-const-variable
+.if ${COMPILER_VERSION} >= 35
+CFLAGS+=	-Wno-tautological-undefined-compare
+.endif
+.endif
 .endif
 .else
 MAKE_ARGS+=	strictaliasing=off
