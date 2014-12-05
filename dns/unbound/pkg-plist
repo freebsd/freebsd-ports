@@ -1,6 +1,6 @@
 etc/unbound/unbound.conf.sample
 include/unbound.h
-lib/libunbound.so.2.2.1
+lib/libunbound.so.2.3.3
 lib/libunbound.so.2
 lib/libunbound.so
 lib/libunbound.a
@@ -51,7 +51,7 @@ sbin/unbound-host
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so.2
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so.2.2.1
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so.2.3.3
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/unbound.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/unboundmodule.py
 %%MUNIN%%etc/munin/plugins/unbound_munin_by_class
