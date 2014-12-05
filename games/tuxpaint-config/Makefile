@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical tool to change TuxPaint settings
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
