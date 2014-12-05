@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/alepulver
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II engine modification compatible with R1Q2
 
 LICENSE=	GPLv2 # or later
