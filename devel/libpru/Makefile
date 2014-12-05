@@ -4,11 +4,11 @@ PORTNAME=	libpru
 PORTVERSION=	0.1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/rpaulo/libpru/get/
-#DISTNAME=	libpru-${PORTVERSION}
-LICENSE=	BSD2CLAUSE
 
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	Library to interface with PRUs
+
+LICENSE=	BSD2CLAUSE
 
 USES=		cmake
 
