@@ -29,7 +29,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	squid33-*
 
-USES=		cpe perl5 tar:xz shebangfix
+USES=		compiler cpe perl5 shebangfix tar:xz
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl src/*.pl tools/*.pl \
 		helpers/ssl/cert_valid.pl
@@ -185,11 +185,6 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 
 .include <bsd.port.options.mk>
 
-.if ${CC:T:Mclang*} || ${CXX:T:Mclang++*} \
-	|| ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
-CXXFLAGS+=	-Wno-unused-private-field
-.endif
-
 # Authentication methods and modules:
 
 basic_auth=	DB MSNT MSNT-multi-domain NCSA PAM POP3 RADIUS fake getpwnam
@@ -342,4 +337,13 @@ post-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
 	${MKDIR} ${STAGEDIR}/var/squid/logs
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang
+CXXFLAGS+=	-Wno-unused-private-field
+.if ${COMPILER_VERSION} >= 35
+CXXFLAGS+=	-Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -Wno-dynamic-class-memaccess
+.endif
+.endif
+
+.include <bsd.port.post.mk>
