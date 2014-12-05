@@ -1,5 +1,0 @@
-The readline library provides a pure Ruby implementation of the GNU readline C
-library, as well as the Readline extension that ships as part of the standard
-library.
-
-WWW: https://github.com/luislavena/rb-readline
