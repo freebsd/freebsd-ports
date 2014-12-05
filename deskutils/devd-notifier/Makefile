@@ -11,7 +11,7 @@ MAINTAINER=	f.unglaub@googlemail.com
 COMMENT=	Daemon notifying the user about devd(8) events \
 		with libnotify
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
