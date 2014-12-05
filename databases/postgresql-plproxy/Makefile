@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	postgresql-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PL/Proxy - database partitioning system
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 USES+=		bison gmake pgsql
 

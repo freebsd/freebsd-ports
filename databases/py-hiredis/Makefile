@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Python extension that wraps hiredis
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
 

@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ivoras@FreeBSD.org
 COMMENT=	The PHP client library for Bullet Cache (mdcached)
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libmdcached.so:${PORTSDIR}/databases/mdcached
 

@@ -8,6 +8,11 @@ MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	Web-based administration tool for pgpool-II
 
+LICENSE=	PGPOOL
+LICENSE_NAME=	PGPOOL
+LICENSE_TEXT=	http://www.pgpool.net/mediawiki/index.php/pgpool-II_License
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 RUN_DEPENDS=	pgpool:${PORTSDIR}/databases/pgpool-II
 
 USE_PHP=	mbstring pcre pgsql session
