@@ -27,6 +27,3 @@ share/pixmaps/gnomeattacks/Original/level_2_bg.png
 share/pixmaps/gnomeattacks/Original/level_2_fg.png
 share/pixmaps/gnomeattacks/ship.png
 share/pixmaps/gnomeattacks/title.png
-@dirrm share/pixmaps/gnomeattacks/Original
-@dirrm share/pixmaps/gnomeattacks/London
-@dirrm share/pixmaps/gnomeattacks
