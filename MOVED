@@ -5313,8 +5313,6 @@ finance/quantlib||2013-12-22|Has expired: Broken for more than 6 month
 games/xkobo||2013-12-22|Has expired: Broken for more than 6 month
 games/quake3-rq3||2013-12-22|Has expired: Broken for more than 6 month
 math/fbm||2013-12-22|Has expired: No new release since 2004, new supported upstream
-graphics/yukon||2013-12-22|Removed, depends on graphics/seom
-graphics/seom||2013-12-22|Has expired: Broken for more than 6 month
 deskutils/libopensync-plugin-python-devel||2013-12-22|Has expired: Broken for more than 6 month
 deskutils/libopensync-plugin-synce-devel||2013-12-22|Removed, unmaintained, depends on deskutils/libopensync-plugin-python-devel
 net-im/libmsn||2013-12-22|Has expired: Primary MSN Messenger service terminated 30 APR 2013
@@ -6137,7 +6135,7 @@ japanese/bugzilla42|japanese/bugzilla44|2014-06-21|Removed, localized version of
 russian/bugzilla40|russian/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla40
 russian/bugzilla42|russian/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla42
 mail/sastatd|sysutils/p5-Tail-Stat|2014-06-21|Has expired: Superseded by sysutils/p5-Tail-Stat
-www/mod_ruby||2014-06-21|Has expired: Only for threadless ruby
+www/mod_ruby||2014-06-21|Has expired: Only for threadless Ruby
 textproc/eruby|www/rubygem-erubis|2014-06-21|Has expired: Only for threadless ruby, use ruby-gem erubis instead
 mail/p5-FuzzyOcr|mail/p5-FuzzyOcr-devel|2014-06-21|Has expired: Unmaintained upstream, no ports depending on it. Use mail/p5-FuzzyOcr-devel instead
 devel/bugzilla40|devel/bugzilla44|2014-06-21|Has expired
@@ -6255,7 +6253,7 @@ sysutils/gtk-send-pr||2014-07-17|Has expired: Obsolete after migration to Bugzil
 lang/stklos||2014-07-20|Has expired: Fails testsuite on all platforms, unmaintained upstream
 lang/ikarus||2014-07-20|Has expired: Upstream project died in 2009
 security/pam_pgina||2014-07-20|Has expired: main site disappeared, no more public distfiles
-www/linux-opera-devel|www/opera|2014-07-20|Has expired: Not staged and multiple vulnerabilities. 
+www/linux-opera-devel|www/opera|2014-07-20|Has expired: Not staged and multiple vulnerabilities
 www/opera-devel|www/opera|2014-07-20|Has expired: Not staged, multiple vulnerabilities, older than non-devel
 accessibility/at-poke||2014-07-21|Has expired: Depends on expired libgailgnome
 misc/bigboard||2014-07-21|Has expired: gnome-panel will be updated to the 3.x version which is not compatible with 2.x
@@ -7230,7 +7228,7 @@ editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use
 net-im/tg|net-im/telegram|2014-11-20|Renamed to more specific name
 net-mgmt/virtinst|deskutils/virt-manager|2014-11-20|Obsoleted by deskutils/virt-manager
 sysutils/firstboot-growfs||2014-11-23|Part of the base system
-graphics/linux-c6-gdk-pixbuf|graphics/linux-c6-gdk-pixbuf2|2014-11-24|Port renamed to align with upstream.
+graphics/linux-c6-gdk-pixbuf|graphics/linux-c6-gdk-pixbuf2|2014-11-24|Port renamed to align with upstream
 devel/libole2||2014-11-24|Abandoned upstream, incomplete, not depend on
 net/p5-SOAP-Transport-TCP|net/p5-SOAP-Lite|2014-11-24|Has been integrated into net/p5-SOAP-Lite
 www/chimera||2014-11-24|Has expired: Abandonware (last update in 1997), restrictive license
@@ -7315,4 +7313,4 @@ lang/clay||2014-12-01|Has expired: No development since July 2013, depends on ob
 textproc/libodfgen|textproc/libodfgen01|2014-12-02|Replaced by newer version
 graphics/libetonyek|graphics/libetonyek01|2014-12-02|Replaced by newer version
 textproc/sw-hunspell|textproc/sv-hunspell|2014-12-02|Swedish is sv not sw
-deskutils/gnome-shell-extension-gtile||2014-12-03|Removed doesn't work properly
+deskutils/gnome-shell-extension-gtile||2014-12-03|Removed, doesn't work properly
