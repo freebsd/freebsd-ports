@@ -209,11 +209,3 @@ man/man6/xpuyopuyo.6.gz
 %%DATADIR%%/themes/spheres/img_top.xpm
 %%DATADIR%%/themes/spheres/img_trans.xpm
 %%DATADIR%%/xpuyopuyo.txt
-@dirrm %%DATADIR%%/themes/spheres
-@dirrm %%DATADIR%%/themes/smileys
-@dirrm %%DATADIR%%/themes/fabo
-@dirrm %%DATADIR%%/themes/default
-@dirrm %%DATADIR%%/themes/3dRokz
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%

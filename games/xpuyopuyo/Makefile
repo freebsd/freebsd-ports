@@ -10,6 +10,9 @@ MASTER_SITES=	http://chaos2.org/xpuyopuyo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle game, somewhat like Tetris
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gnome
 USES=		gmake libtool
