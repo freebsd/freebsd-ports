@@ -5,9 +5,8 @@ PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 PORTREVISION=	2
 CATEGORIES=	japanese mail
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/
-MASTER_SITE_SUBDIR=	motoyuki
+MASTER_SITES=	ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/ \
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
 
 MAINTAINER=	CQG00620@nifty.ne.jp
