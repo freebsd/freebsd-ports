@@ -1,0 +1,3 @@
+include/libpru.h
+lib/libpru.so.1
+lib/libpru.so

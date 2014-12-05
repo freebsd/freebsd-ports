@@ -1118,6 +1118,7 @@
     SUBDIR += libphutil
     SUBDIR += libplist
     SUBDIR += libpo6
+    SUBDIR += libpru
     SUBDIR += libpthread-stubs
     SUBDIR += libqcow
     SUBDIR += libqxt
