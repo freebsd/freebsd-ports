@@ -1054,6 +1054,7 @@
     SUBDIR += yafray
     SUBDIR += yagf
     SUBDIR += yed
+    SUBDIR += yukon
     SUBDIR += zathura
     SUBDIR += zathura-djvu
     SUBDIR += zathura-pdf-mupdf
