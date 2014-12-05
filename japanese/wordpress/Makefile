@@ -3,6 +3,7 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	3.9.1
+PORTREVISION=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ja
@@ -15,9 +16,15 @@ LICENSE=	GPLv2
 CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-3.* ru-wordpress-3.*
 
 NO_BUILD=	yes
-USE_PHP=	curl gd mysql pcre tokenizer xml zip
+USES=		cpe
+USE_PHP=	curl gd mysql pcre tokenizer xml zip zlib
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+CPE_LANG=	ja
+.if ${PORTVERSION:N*.*.*}
+CPE_VERSION=	${PORTVERSION}.0
+.endif
 
 SUB_FILES=	pkg-message
 PLIST=		${WRKDIR}/pkg-plist
