@@ -98,8 +98,3 @@ man/man6/tksol.6.gz
 %%DATADIR%%/pictures/ratel.xbm
 %%DATADIR%%/pictures/thewingedhorse.xbm
 %%DATADIR%%/place.xbm
-@dirrm %%DATADIR%%/pictures/mini
-@dirrm %%DATADIR%%/pictures
-@dirrm %%DATADIR%%/cards
-@dirrm %%DATADIR%%/cardbacks
-@dirrm %%DATADIR%%
