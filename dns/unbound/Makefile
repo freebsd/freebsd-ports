@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.4.22
-PORTREVISION=	5
+PORTVERSION=	1.5.0
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -32,7 +31,7 @@ PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT
 OPTIONS_DEFAULT=THREADS ECDSA
 
-LIBEVENT_DESC=	Build against libevent (BROKEN on =10.0-RELEASE)
+LIBEVENT_DESC=	Build against libevent
 GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
 ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
 MUNIN_DESC=	Install Munin plugin
@@ -79,11 +78,6 @@ MUNIN=		"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBEVENT}
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000015
-SUB_LIST+=	BROKEN="WARNING: Unbound with LIBEVENT crashes if run on FreeBSD 10.0-RELEASE. Update to 10.1-RELEASE or stable/10 after r273137."
-.else
-SUB_LIST+=	BROKEN=""
-.endif
 LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
 USES+=		pkgconfig
 CONFIGURE_ARGS+=--with-libevent
@@ -100,6 +94,9 @@ CONFIGURE_ARGS+=--without-pthreads
 post-patch:
 	@${MKDIR} ${WRKSRC}/balancer
 	@${RM} ${WRKSRC}/util/configlexer.c
+	@${REINPLACE_CMD} -e 's|if test ! -e $$(DESTDIR)$$(configfile); then || ; \
+		s|$$(configfile); fi|$$(configfile).sample|' \
+		${WRKSRC}/Makefile.in
 
 post-build:
 	@for s in ${STRIP_FILES}; do ${STRIP_CMD} ${WRKSRC}/$$s; done
