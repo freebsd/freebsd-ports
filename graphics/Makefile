@@ -954,6 +954,7 @@
     SUBDIR += sdl_ttf
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
+    SUBDIR += seom
     SUBDIR += separate
     SUBDIR += seq2gif
     SUBDIR += shared-color-profiles
