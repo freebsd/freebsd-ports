@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cwp
-PORTVERSION=	1.11.1
-PORTREVISION=	1
+PORTVERSION=	1.12.0
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
+MASTER_SITES=	http://kde-look.org/CONTENT/content-files/ LOCAL/dbn/${PORTNAME}
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	98925-cwp-${PORTVERSION}
 
