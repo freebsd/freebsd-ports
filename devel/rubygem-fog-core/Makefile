@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-net-scp>=1.1:${PORTSDIR}/security/rubygem-net-scp \
 		rubygem-net-ssh>=2.1.3:${PORTSDIR}/security/rubygem-net-ssh
 
+PORTSCOUT=	skipv:1.26.0
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
