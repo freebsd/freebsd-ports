@@ -9,7 +9,7 @@ MASTER_SITES=	GH
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Top like utility for PostgreSQL activity monitoring
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:${PORTSDIR}/databases/py-psycopg2 \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:${PORTSDIR}/sysutils/py-psutil

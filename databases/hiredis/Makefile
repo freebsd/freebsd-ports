@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Minimalistic C client library for the Redis database
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	redis
