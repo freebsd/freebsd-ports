@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.153002
-PORTREVISION=	1
+PORTVERSION=	0.155004
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,6 +33,8 @@ RUN_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 	p5-MooX-Types-MooseLike-Numeric>=0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike-Numeric \
 	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-Plack>=0:${PORTSDIR}/www/p5-Plack \
+	p5-Plack-Middleware-FixMissingBodyInRedirect>=0:${PORTSDIR}/www/p5-Plack-Middleware-FixMissingBodyInRedirect \
+	p5-Plack-Middleware-RemoveRedundantBody>=0:${PORTSDIR}/www/p5-Plack-Middleware-RemoveRedundantBody \
 	p5-Return-MultiLevel>=0:${PORTSDIR}/devel/p5-Return-MultiLevel \
 	p5-Safe-Isa>=0:${PORTSDIR}/devel/p5-Safe-Isa \
 	p5-Template-Tiny>=0:${PORTSDIR}/textproc/p5-Template-Tiny \
@@ -46,7 +47,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 	p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime \
 	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
-	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
+	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP \
+	p5-LWP-Protocol-https>0:${PORTSDIR}/www/p5-LWP-Protocol-https
 
 USES=		perl5
 USE_PERL5=	configure
