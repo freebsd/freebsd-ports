@@ -200,8 +200,24 @@ detect_beadm()
       NICK="TrueOS"
    fi
 
+   # Figure out which BE to list first
+   $BEADM list -H >/tmp/.grub-beadm.$$ 2>/dev/null
+   while read line
+   do
+     be=`echo $line | awk '{print $1}'`
+     flags=`echo $line | awk '{print $2}'`
+
+     # Is this BE marked as wanting to be used for next boot? Make it the first one if so
+     if [ "$flags" = "NR" -o "$flags" = "R" ] ; then
+        BE_LIST="$be $BE_LIST"
+        continue
+     fi
+     BE_LIST="$BE_LIST $be"
+   done < /tmp/.grub-beadm.$$
+   rm /tmp/.grub-beadm.$$
+
    # Get list of beadm datasets
-   for b in `${BEADM} list -H 2>/dev/null | awk '{print $1}'`
+   for b in $BE_LIST
    do 
       # Got a beadm snapshot, lets get the complete dataset name
       beLine=`${BEADM} list -a | grep "/$BEDS/${b}"`
