@@ -3,6 +3,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	4.10.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GH
 
@@ -27,7 +28,6 @@ RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		rubygem-pcaprub>=0:${PORTSDIR}/net/rubygem-pcaprub \
 		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties \
 		rubygem-recog>=1.0:${PORTSDIR}/security/rubygem-recog \
-		rubygem-rb-readline>=0:${PORTSDIR}/devel/rubygem-rb-readline \
 		rubygem-robots>=0:${PORTSDIR}/www/rubygem-robots \
 		rubygem-rubyzip>=1.1:${PORTSDIR}/archivers/rubygem-rubyzip \
 		rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3 \
@@ -57,8 +57,9 @@ DB_RUN_DEPENDS=	rubygem-activerecord>=3.0.0:${PORTSDIR}/databases/rubygem-active
 .include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} 's,git ls-files,find . ! -type d ! -ipath "config/*" | sed "s|^./||", ; \
-		/packetfu/s/1.1.9/>= 1.1.9/' ${WRKSRC}/metasploit-framework.gemspec
+	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
+		/packetfu/s/1.1.9/>= 1.1.9/ ; \
+		/rb-readline/d' ${WRKSRC}/metasploit-framework.gemspec
 
 do-build:
 	${RM} ${WRKSRC}/Gemfile.lock
