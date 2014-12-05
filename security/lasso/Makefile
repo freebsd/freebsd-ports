@@ -37,7 +37,7 @@ PLIST_SUB+=	PERL="@comment "
 .if ${PORT_OPTIONS:MPHP}
 CONFIGURE_ARGS+=	--enable-php5 \
 		--with-php5-config="${LOCALBASE}/bin/php-config"
-LDFLAGS+=	"-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
 PLIST_SUB+=	PHP5=""
 USE_PHP=	yes
@@ -59,7 +59,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E 's,(xmlsec1-openssl >= 1.2.6) openssl,\1,' \
+	@${REINPLACE_CMD} -E 's,(xmlsec1-openssl >= 1\.2\.6) openssl,\1,' \
 		${CONFIGURE_WRKSRC}/configure
 
 .include <bsd.port.mk>
