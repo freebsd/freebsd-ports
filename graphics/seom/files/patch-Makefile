@@ -1,0 +1,68 @@
+--- Makefile.orig	2007-03-27 19:23:25 UTC
++++ Makefile
+@@ -1,35 +1,43 @@
++.SUFFIXES:	.c .o .asm
+ 
+ MAJOR    = 0
+ LIBRARY  = libseom.so
+ 
+-DESTDIR  = 
++DESTDIR  ?=
++
++# XXX override passed in
+ LIBDIR   = lib
++LIBDATADIR   = libdata
+ 
+-CC       = gcc
++CC       ?= gcc
+ ASM      = yasm
+ 
+-CFLAGS   = -Iinclude -std=c99
++CFLAGS   += -Iinclude -std=c99
+ LDFLAGS  = -Wl,--as-needed
+ 
+-include config.make
++###include config.make
++
++ARCH     = C
++CFLAGS  += -I${LOCALBASE}/include
++LDFLAGS += -L${LOCALBASE}/lib
+ 
+ OBJS = src/buffer.o src/client.o src/codec.o src/frame.o src/opengl.o \
+-       src/server.o src/stream.o src/arch/$(ARCH)/frame.o
++       src/server.o src/stream.o src/arch/$(subst i3,x,$(ARCH))/frame.o
+ 
+ APPS = filter player server
+-playerLIBS = -lX11 -lXv
++playerLIBS = -lX11 -lXv -lXext
+ 
+ .PHONY: all clean install
+ all: $(LIBRARY) $(APPS)
+ 
+ %.o: %.asm
+-	$(ASM) -m $(ARCH) -f elf -o $@ $<
++	$(ASM) -m $(subst i3,x,$(ARCH)) -f elf -o $@ $<
+ 
+ %.o: %.c
+ 	$(CC) $(CFLAGS) -fPIC -c -o $@ $<
+ 
+ $(LIBRARY): $(OBJS)
+-	$(CC) -shared $(LDFLAGS) -Wl,-soname,$@.$(MAJOR) -o $@ $(OBJS) -ldl -lpthread
++	$(CC) -shared $(LDFLAGS) -Wl,-soname,$@.$(MAJOR) -o $@ $(OBJS) -lpthread
+ 
+ $(APPS): $(LIBRARY)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -L. -o $@ src/$@/main.c -lseom $($@LIBS)
+@@ -39,11 +47,11 @@ seom.pc: seom.pc.in
+ 
+ inst = install -m 755 -d $(DESTDIR)$(3); install -m $(1) $(2) $(DESTDIR)$(3)$(if $(4),/$(4));
+ install: $(LIBRARY) $(APPS) seom.pc
+-	$(call inst,644,seom.pc,$(PREFIX)/$(LIBDIR)/pkgconfig)
++	$(call inst,644,seom.pc,$(PREFIX)/$(LIBDATADIR)/pkgconfig)
+ 	$(call inst,755,$(LIBRARY),$(PREFIX)/$(LIBDIR),$(LIBRARY).$(MAJOR))
+ 	ln -sf $(LIBRARY).$(MAJOR) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(LIBRARY)
+ 
+-	$(call inst,644,art/seom.svg,$(PREFIX)/share/seom,seom.svg)
++	$(call inst,644,art/seom.svg,$(DATADIR),seom.svg)
+ 	$(call inst,644,include/seom/*,$(PREFIX)/include/seom)
+ 	$(call inst,755,src/scripts/backup,$(PREFIX)/bin,seom-backup)
+ 	$(foreach app,$(APPS),$(call inst,755,$(app),$(PREFIX)/bin,seom-$(app)))
