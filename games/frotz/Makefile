@@ -8,7 +8,7 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infocom games interpreter
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
