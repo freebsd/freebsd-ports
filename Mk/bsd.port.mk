@@ -3414,9 +3414,10 @@ run-autotools-fixup:
 				-e 's|freebsd\[\[12\]\]\*)|freebsd[[12]].*)|g' \
 				-e 's|freebsd\[\[123\]\]\*)|freebsd[[123]].*)|g' \
 					$${f} ; \
+			cmp -s $${f}.fbsd10bak $${f} || \
+			${ECHO_MSG} "===>   FreeBSD 10 autotools fix applied to $${f}"; \
 			${TOUCH} ${TOUCH_FLAGS} -mr $${f}.fbsd10bak $${f} ; \
 			${RM} -f $${f}.fbsd10bak ; \
-			${ECHO_MSG} "===>   FreeBSD 10 autotools fix applied to $${f}"; \
 		done
 .endif
 .endif
@@ -5946,9 +5947,9 @@ _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-sheban
 				pre-patch \
 				pre-patch-script do-patch charsetfix-post-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
-_CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
+_CONFIGURE_SEQ=	build-depends lib-depends configure-message \
 				pre-configure pre-configure-script \
-				run-autotools do-autoreconf patch-libtool do-configure \
+				run-autotools do-autoreconf patch-libtool run-autotools-fixup do-configure \
 				post-configure post-configure-script
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
