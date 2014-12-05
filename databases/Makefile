@@ -834,6 +834,7 @@
     SUBDIR += rubygem-activerecord-mysql-adapter
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
+    SUBDIR += rubygem-arel-helpers
     SUBDIR += rubygem-arel3
     SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1

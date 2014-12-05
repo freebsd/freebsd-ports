@@ -1,0 +1,3 @@
+Useful tools to help construct database queries with ActiveRecord and Arel.
+
+WWW: https://github.com/camertron/arel-helpers
