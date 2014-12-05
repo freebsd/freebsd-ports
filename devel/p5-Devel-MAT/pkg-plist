@@ -13,6 +13,7 @@ bin/pmat-sizes
 %%SITE_ARCH%%/Devel/MAT/Context.pm
 %%SITE_ARCH%%/Devel/MAT/Dumper.pm
 %%SITE_ARCH%%/Devel/MAT/Dumpfile.pm
+%%SITE_ARCH%%/Devel/MAT/Graph.pm
 %%SITE_ARCH%%/Devel/MAT/SV.pm
 %%SITE_ARCH%%/Devel/MAT/Tool.pod
 %%SITE_ARCH%%/Devel/MAT/Tool/Count.pm
@@ -58,6 +59,7 @@ bin/pmat-sizes
 %%PERL5_MAN3%%/Devel::MAT::Context.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Dumper.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Dumpfile.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Graph.3.gz
 %%PERL5_MAN3%%/Devel::MAT::SV.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Count.3.gz
