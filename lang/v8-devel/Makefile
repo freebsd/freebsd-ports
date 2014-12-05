@@ -49,7 +49,7 @@ USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^exec python / s| python | ${PYTHON_CMD} |' ${WRKSRC}/build/gyp/gyp
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/build/gyp/gyp ${WRKSRC}/tools/gyp/v8.gyp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${STAGEDIR}${PREFIX}/bin/d8
