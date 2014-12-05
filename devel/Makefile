@@ -4521,6 +4521,7 @@
     SUBDIR += rubygem-rb-fsevent
     SUBDIR += rubygem-rb-inotify
     SUBDIR += rubygem-rb-kqueue
+    SUBDIR += rubygem-rb-readline
     SUBDIR += rubygem-rbtrace
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rdoc
