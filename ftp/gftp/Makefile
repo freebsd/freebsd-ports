@@ -23,14 +23,4 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-.include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		s|"-lssl |& -lcrypto|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|size_t dest_len|size_t *dest_len|g ; \
-		s|\(gftp_filename_from_utf8 (gftp_request \* request,\) int force_local,|\1|' \
-		${WRKSRC}/lib/charset-conv.c
-
 .include <bsd.port.mk>
