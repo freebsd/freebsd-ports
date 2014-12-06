@@ -10,7 +10,7 @@ MASTER_SITES=	http://smarden.org/qconfirm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter spam by requesting confirmation from sender
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/package/COPYING
 
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}
