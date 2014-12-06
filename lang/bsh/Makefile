@@ -2,20 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	bsh
-PORTVERSION=	2.0.b4
-PORTREVISION=	6
+PORTVERSION=	2.0.b5
 CATEGORIES=	lang java
-MASTER_SITES=	http://www.beanshell.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
-EXTRACT_SUFX=	.jar
-EXTRACT_ONLY=
+MASTER_SITES=	http://svn.codespot.com/a/apache-extras.org/beanshell/src_releases/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java scripting language
 
+LICENSE=	APACHE20
+
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-NO_BUILD=	yes
+
+USE_ANT=	yes
+ALL_TARGET=	jarall
+
+WRKSRC=		${WRKDIR}/BeanShell-${PORTVERSION:S/.b/b/}
 
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JARNAME=${PORTNAME}.jar
@@ -24,7 +28,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		bin/${PORTNAME}
 
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
+	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION:S/.b/b/}.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
