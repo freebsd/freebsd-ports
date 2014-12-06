@@ -7302,7 +7302,6 @@ lang/ironpython||2014-11-29|Has expired: Broken for more than 6 months
 www/dpsearch||2014-11-29|Has expired: Broken for more than 6 months
 multimedia/y4mscaler||2014-11-29|Has expired: Broken for more than 6 months
 devel/rubygem-dep_selector||2014-11-29|Has expired: Broken for more than 6 months
-ports-mgmt/pkg-plist||2014-12-01|Has expired: Generate incorrect plists
 sysutils/rubygem-hiera-puppet||2014-12-01|Has expired: Has been incorporated into hiera
 sysutils/rubygem-hiera-json||2014-12-01|Has expired: Has been incorporated into hiera
 databases/memcachedb||2014-12-01|Has expired: Depends on deprecated Berkeley DB version, needs porting to DB_SITE
