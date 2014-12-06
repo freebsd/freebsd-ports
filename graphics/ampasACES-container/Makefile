@@ -8,7 +8,10 @@ CATEGORIES=	graphics devel
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	ACES Container Reference Implementation
 
-LICENSE=	BSD
+LICENSE=	AMPAS
+LICENSE_NAME=	AMPAS
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ampas
