@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141205:
+  AFFECTS: users of polish/kadu
+  AUTHOR: pawel@FreeBSD.org
+
+  Before running kadu 1.x for the first time upstream developers
+  advise to backup your ~/.kadu directory.
+
 20141203:
   AFFECTS: users of ports-mgmt/poudriere
   AUTHOR: bdrewery@FreeBSD.org
