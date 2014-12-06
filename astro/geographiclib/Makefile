@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	geographiclib
-PORTVERSION=	1.38
+PORTVERSION=	1.39
 CATEGORIES=	astro
-MASTER_SITES=	SF/geographiclib/distrib \
+MASTER_SITES=	SF/geographiclib/distrib\
 		SF/geographiclib:geoids,gravity,magnetic
 DISTNAME=	GeographicLib-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -27,12 +27,20 @@ MAKE_ARGS+=	pythondir=${PYTHON_SITELIBDIR}/geographiclib
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFAULT=	GEOID_EGM96_5 GRAVITY_EGM96 GRAVITY_WGS84 \
+OPTIONS_DEFINE=	DOXYGEN PERL
+OPTIONS_DEFAULT=	DOXYGEN PERL\
+			GEOID_EGM96_5 GRAVITY_EGM96 GRAVITY_WGS84\
 			MAGNETIC_WMM2010 MAGNETIC_IGRF11
+PERL_DESC=	Build documentation with pod2man and pod2html
 OPTIONS_GROUP=	DATASETS
 OPTIONS_SUB=	yes
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_DOXYGEN=
+PERL_USE=	PERL5=build
+PERL_USES=	perl5
+PERL_CONFIGURE_ENV_OFF=	ac_cv_prog_POD2MAN= ac_cv_prog_POD2HTML=
 
-GEOID_NAMES:=		egm84-30 egm84-15 egm96-15 egm96-5 \
+GEOID_NAMES:=		egm84-30 egm84-15 egm96-15 egm96-5\
 			egm2008-5 egm2008-2_5 egm2008-1
 GRAVITY_NAMES:=		egm84 egm96 egm2008 wgs84 grs80
 MAGNETIC_NAMES:=	wmm2010 igrf11 emm2010
@@ -67,13 +75,13 @@ OPTIONS_DEFAULT=	${MAKESUM_OPTIONS_DEFAULT}
 .include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e '/wget/s/wget -O/fetch -o /' \
+	${REINPLACE_CMD} -e '/wget/s/wget -O/fetch -o /'\
 		${WRKSRC}/tools/geographiclib-get-*.sh
 
 .for n in geoids gravity magnetic
 install-datasets-${n}: .NOTMAIN
 	${MKDIR} ${STAGEDIR}${DATADIR}/${n}
-	(cd ${WRKDIR}/${n} && \
+	(cd ${WRKDIR}/${n} &&\
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${n})
 .PHONY: install-datasets-${n}
 .endfor
@@ -91,7 +99,7 @@ post-install: install-datasets-magnetic
 .PHONY: x-tool-plist
 x-tool-plist: ${PLIST} .NOTMAIN
 	${REINPLACE_CMD}\
-		-e '/^%%PORTDOCS%%/d' -e '/@dir /d'\
+		-e '/^%%PORTDOCS%%/d'\
 		-e '/^%%DATADIR%%\/geoids\/[^.]/{\
 		h;s|^%%DATADIR%%/geoids/\([^.]\{1,\}\).*|GEOID_\1|;\
 		s/[^0-9A-Za-z]/_/g;\
