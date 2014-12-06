@@ -10,9 +10,10 @@ MASTER_SITES=	http://www.schwardtnet.de/alienblaster/archives/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alien Blaster
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	gmake tar:tgz
+USES=		gmake tar:tgz
 USE_SDL=	mixer sdl
 REINPLACE_ARGS=	-i ''
 
