@@ -10,11 +10,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Anti-spam / denial of service counter-measure tool
 
-LICENSE=BSD LGPL21 GPLv2
-LICENSE_COMB=dual
-
-# Also CPL: https://en.wikipedia.org/wiki/Common_Public_License
-# and Public Domain
+LICENSE=        CPL
+LICENSE_NAME=   CPL
+LICENSE_TEXT=   http://www.cypherspace.org/CPL/
+LICENSE_PERMS=  dist-mirror pkg-mirror auto-accept
 
 MAN1=		hashcash.1 sha1-hashcash.1
 PLIST_FILES=	bin/hashcash bin/sha1
