@@ -154,31 +154,8 @@ lib/RealPlayer/share/realplay/logo.png
 lib/RealPlayer/share/realplay/prefs_general.png
 lib/RealPlayer/share/realplay/setup_title.png
 lib/RealPlayer/share/realplay/setup_welcome.png
-lib/linux-mozilla/plugins/nphelix.so
-lib/linux-mozilla/plugins/nphelix.xpt
-@dirrm lib/RealPlayer/codecs
-@dirrm lib/RealPlayer/common
-@dirrm lib/RealPlayer/lib
-@dirrm lib/RealPlayer/plugins
-@dirrm lib/RealPlayer/share/default
-%%NLS%%@dirrm lib/RealPlayer/share/locale/de
-%%NLS%%@dirrm lib/RealPlayer/share/locale/es
-%%NLS%%@dirrm lib/RealPlayer/share/locale/fr
-%%NLS%%@dirrm lib/RealPlayer/share/locale/hi
-%%NLS%%@dirrm lib/RealPlayer/share/locale/it
-%%NLS%%@dirrm lib/RealPlayer/share/locale/ja
-%%NLS%%@dirrm lib/RealPlayer/share/locale/ko
-%%NLS%%@dirrm lib/RealPlayer/share/locale/pl
-%%NLS%%@dirrm lib/RealPlayer/share/locale/pt_BR
-%%NLS%%@dirrm lib/RealPlayer/share/locale/zh_CN
-%%NLS%%@dirrm lib/RealPlayer/share/locale/zh_TW
-%%NLS%%@dirrm lib/RealPlayer/share/locale
-@dirrm lib/RealPlayer/share/realplay
-@dirrm lib/RealPlayer/share
-@dirrm lib/RealPlayer
-@dirrmtry lib/linux-mozilla/plugins
-@dirrmtry lib/linux-mozilla
-%%X11%%@cwd %%LOCALBASE%%
+%%WEBPLUGIN_DIR%%/nphelix.so
+%%WEBPLUGIN_DIR%%/nphelix.xpt
 %%GNOME%%share/application-registry/realplay.applications
 %%GNOME%%share/applications/realplay.desktop
 %%GNOME%%share/mime-info/realplay.keys
@@ -230,54 +207,41 @@ lib/linux-mozilla/plugins/nphelix.xpt
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-ogg_48x48.png
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-rv_48x48.png
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-swf_48x48.png
-%%ICONS%%@dirrmtry share/icons/hicolor/48x48/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/48x48/mimetypes
-%%ICONS%%@dirrmtry share/icons/hicolor/48x48
-%%ICONS%%@dirrmtry share/icons/hicolor/32x32/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/32x32
-%%ICONS%%@dirrmtry share/icons/hicolor/192x192/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/192x192/mimetypes
-%%ICONS%%@dirrmtry share/icons/hicolor/192x192
-%%ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
-%%ICONS%%@dirrmtry share/icons/hicolor/16x16
-%%ICONS%%@dirrmtry share/icons/hicolor
-%%ICONS%%@dirrmtry share/icons
-%%NLS%%@cwd %%LINUXBASE%%
-%%NLS%%usr/share/locale/de/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/es/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/fr/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/hi/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/it/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/ja/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/ko/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/pl/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/realplay.mo
-%%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/realplay.mo
-%%NLS%%@dirrmtry usr/share/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/de
-%%NLS%%@dirrmtry usr/share/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/es
-%%NLS%%@dirrmtry usr/share/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/fr
-%%NLS%%@dirrmtry usr/share/locale/hi/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/hi
-%%NLS%%@dirrmtry usr/share/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/it
-%%NLS%%@dirrmtry usr/share/locale/ja/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/ja
-%%NLS%%@dirrmtry usr/share/locale/ko/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/ko
-%%NLS%%@dirrmtry usr/share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/pl
-%%NLS%%@dirrmtry usr/share/locale/pt_BR/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/pt_BR
-%%NLS%%@dirrmtry usr/share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/zh_CN
-%%NLS%%@dirrmtry usr/share/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrmtry usr/share/locale/zh_TW
-%%NLS%%@dirrmtry usr/share/locale
-%%NLS%%@dirrmtry usr/share
-%%NLS%%@dirrmtry usr
-%%NLS%%@unexec rmdir "%%LINUXBASE%%" >/dev/null 2>&1 || :
-%%NLS%%@unexec rmdir "/compat" >/dev/null 2>&1 || :
+%%NLS%%%%LINUXBASE%%/usr/share/locale/de/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/es/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/fr/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/hi/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/it/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/ja/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/ko/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/pl/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/pt_BR/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/zh_CN/LC_MESSAGES/realplay.mo
+%%NLS%%%%LINUXBASE%%/usr/share/locale/zh_TW/LC_MESSAGES/realplay.mo
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/de/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/de
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/es/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/es
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/fr/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/fr
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/hi/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/hi
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/it/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/it
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/ja/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/ja
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/ko/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/ko
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/pl/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/pl
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/pt_BR
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/zh_CN
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale/zh_TW
+%%NLS%%@dir %%LINUXBASE%%/usr/share/locale
+%%NLS%%@dir %%LINUXBASE%%/usr/share
+%%NLS%%@dir %%LINUXBASE%%/usr
+%%NLS%%@dir %%LINUXBASE%%
+%%NLS%%@dir /compat
