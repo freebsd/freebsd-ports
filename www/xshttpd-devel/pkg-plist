@@ -88,15 +88,7 @@ man/man5/xsredir.5.gz
 man/man5/xsscripts.5.gz
 man/man7/httpd_cgi.7.gz
 man/man7/httpd_ssi.7.gz
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%/gfxcount
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%
-@dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%/htdocs
-@dirrmtry %%WWWDIR%%
-@dirrmtry %%ETCDIR%%
-@dirrmtry libexec/xshttpd
-@dirrmtry /var/log/xshttpd
-@dirrmtry /var/db/xshttpd/sessions
-@dirrmtry /var/db/xshttpd
+@dir %%WWWDIR%%/htdocs
+@dir /var/db/xshttpd/sessions
+@dir /var/db/xshttpd
+@dir /var/log/xshttpd
