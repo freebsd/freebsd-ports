@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xtrabackup
-PORTVERSION=	2.1.7
-PORTREVISION=	1
+PORTVERSION=	2.2.6
 CATEGORIES=	databases
-MASTER_SITES=	http://www.percona.com/downloads/XtraBackup/XtraBackup-${PORTVERSION}/source/
+MASTER_SITES=	http://www.percona.com/redir/downloads/XtraBackup/LATEST/source/tarball/
 DISTNAME=	percona-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DISTFILES=	percona-xtrabackup-${PORTVERSION}.tar.gz
 EXTRACT_ONLY=	percona-xtrabackup-${PORTVERSION}.tar.gz
@@ -18,7 +17,6 @@ LICENSE=	GPLv2
 # quilt is required by build.sh
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		cmake:${PORTSDIR}/devel/cmake \
-		quilt:${PORTSDIR}/devel/quilt \
 		bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error
@@ -26,28 +24,11 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		qpress:${PORTSDIR}/archivers/qpress
 
 # autotool is in use for 5.1 builds
-USES=		autoreconf:build gettext gmake iconv libtool perl5
+USES=		autoreconf:build gettext cmake iconv libtool perl5
 
-PLIST_FILES=	bin/xtrabackup bin/xtrabackup_55 bin/xtrabackup_56 bin/xbstream \
-		bin/innobackupex bin/xbcrypt
+PLIST_FILES=	bin/xtrabackup bin/xbstream bin/innobackupex bin/xbcrypt
 
 pre-build:
 	${CP} ${DISTDIR}/percona-xtrabackup-${PORTVERSION}.tar.gz ${WRKSRC}
-
-do-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./utils/build.sh xtradb55)
-	${CP} ${WRKSRC}/src/xtrabackup_55 ${WRKSRC}
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./utils/build.sh innodb56)
-	${CP} ${WRKSRC}/src/xtrabackup_56 ${WRKSRC}
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./utils/build.sh xtradb)
-	${CP} ${WRKSRC}/src/xtrabackup ${WRKSRC}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup_55 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup_56 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xbstream ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xbcrypt ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/innobackupex ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
