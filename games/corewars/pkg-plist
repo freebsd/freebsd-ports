@@ -98,5 +98,3 @@ man/man6/corewars.6.gz
 %%DATADIR%%/wintermute.red
 %%DATADIR%%/xcopy.cw
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
