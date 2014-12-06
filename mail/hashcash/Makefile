@@ -5,7 +5,6 @@ PORTNAME=	hashcash
 PORTVERSION=	1.22
 CATEGORIES=	mail
 MASTER_SITES=	http://www.hashcash.org/source/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Anti-spam / denial of service counter-measure tool
@@ -15,15 +14,16 @@ LICENSE_NAME=	CPL
 LICENSE_TEXT=	http://www.cypherspace.org/CPL/
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-MAN1=		hashcash.1 sha1-hashcash.1
+USES=	tar:tgz
+
 PLIST_FILES=	bin/hashcash bin/sha1
-PLIST_FILES+= man/man1/hashcash.1.gz
-PLIST_FILES+= man/man1/sha1-hashcash.1.gz
+PLIST_FILES+=	man/man1/hashcash.1.gz
+PLIST_FILES+=	man/man1/sha1-hashcash.1.gz
 
 PORTDOCS=	CHANGELOG LICENSE README
 ALL_TARGET=	generic
 
-MAKE_ENV+= STAGEDIR=${STAGEDIR}
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
 OPTIONS_DEFINE=	DOCS
 
