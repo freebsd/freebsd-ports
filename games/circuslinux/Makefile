@@ -10,8 +10,20 @@ MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/circus-linux/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Circus Linux!" is a clone of the Atari 2600 game "Circus Atari"
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=""
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
