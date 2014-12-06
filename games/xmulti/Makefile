@@ -16,14 +16,14 @@ WRKSRC=		${WRKDIR}/xmulti200beta4
 USES=		imake
 USE_XORG=	x11 xext xaw xmu xt xpm sm ice
 
-DOCSDIR=	${PREFIX}/share/doc/ja/{PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in MODULE.jp README.jp STYLESHEET.jp XMULTI.jp
-	${INSTALL_MAN} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
