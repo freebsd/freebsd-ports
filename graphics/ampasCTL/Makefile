@@ -9,14 +9,17 @@ CATEGORIES=	graphics devel
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Color Transformation Language interpreter
 
-LICENSE=	BSD
-
-CONFLICTS=	openexr_ctl-1.[0-4].*
+LICENSE=	AMPAS
+LICENSE_NAME=	AMPAS
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libAcesContainer.so:${PORTSDIR}/graphics/ampasACES-container
+
+CONFLICTS=	openexr_ctl-1.[0-4].*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ampas
