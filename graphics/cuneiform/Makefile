@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	OCR system developed and open sourced by Cognitive technologies
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/cuneiform_src/Kern/license.txt
 
 ONLY_FOR_ARCHS=	i386 amd64
