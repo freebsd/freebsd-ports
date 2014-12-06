@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# motsognir.sh for rc.d usage (c) 2013 Mateusz Viste.
+# motsognir.sh for rc.d usage (c) 2013-2014 Mateusz Viste.
 # $Id$
 
 # $FreeBSD$
