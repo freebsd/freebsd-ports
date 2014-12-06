@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/souce%20code/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 dice roller
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20 libgnomeui
