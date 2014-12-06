@@ -13,7 +13,7 @@ COMMENT=	Python interface for Zinnia
 LIB_DEPENDS=	libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	zinnia:${PORTSDIR}/japanese/zinnia
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python
