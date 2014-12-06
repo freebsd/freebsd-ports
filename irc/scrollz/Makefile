@@ -12,7 +12,7 @@ DISTNAME=	ScrollZ-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		gmake iconv ncurses
