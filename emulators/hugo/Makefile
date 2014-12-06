@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.zeograd.com/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC Engine (TurboGrafx 16) emulator
 
-LICENSE=	BSD GPLv2
+LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
