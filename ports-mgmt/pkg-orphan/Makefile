@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	vsemionov@gmail.com
 COMMENT=	Console utility for managing unreferenced FreeBSD packages
 
+DEPRECATED=	Does not support pkgng
+EXPIRATION_DATE=	2015-01-06
+
 NO_BUILD=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	pkg-orphan.pl

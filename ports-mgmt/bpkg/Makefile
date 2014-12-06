@@ -10,6 +10,9 @@ DISTFILES=	# none
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Simple tool for displaying information about ports
 
+DEPRECATED=	Does not support pkgng
+EXPIRATION_DATE=	2015-01-06
+
 NO_BUILD=	yes
 SUB_FILES=	bpkg.sh
 
