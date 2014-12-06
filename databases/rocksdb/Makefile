@@ -32,6 +32,9 @@ PROGRAMS=	blob_store_bench db_bench db_repl_stress db_sanity_test \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|; s| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
+.if defined(WITHOUT_PROFILE)
+	@${REINPLACE_CMD} -e 's| -pg||' ${WRKSRC}/Makefile
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/rocksdb/ ${STAGEDIR}${DATADIR}/
