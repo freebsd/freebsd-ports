@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vi clone inspired by the userfriendly comic strip
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
