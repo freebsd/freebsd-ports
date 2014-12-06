@@ -7,9 +7,10 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.s48.org/${PORTVERSION}/
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	The Scheme Underground's implementation of R5RS
+COMMENT=	Scheme Underground's implementation of R5RS
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE MIT
+LICENSE_COMB=	multi
 
 CONFLICTS=	scsh-[0-9]*
 
