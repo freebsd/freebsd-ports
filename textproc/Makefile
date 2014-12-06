@@ -1501,6 +1501,7 @@
     SUBDIR += txt2html
     SUBDIR += txt2man
     SUBDIR += txt2tags
+    SUBDIR += uchardet
     SUBDIR += uim
     SUBDIR += uim-el
     SUBDIR += uim-gtk
