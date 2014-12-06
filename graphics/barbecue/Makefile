@@ -10,7 +10,7 @@ DIST_SUBDIR=	java
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java barcode generator
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom
 

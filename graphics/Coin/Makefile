@@ -10,7 +10,7 @@ MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ 3D graphics library based on the Open Inventor 2.1 API
 
-LICENSE=	BSD
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsimage.so:${PORTSDIR}/graphics/simage
 

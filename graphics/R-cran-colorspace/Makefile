@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Color Space Manipulation
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=	cran:auto-plist
 
