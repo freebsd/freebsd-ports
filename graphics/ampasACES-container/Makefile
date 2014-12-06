@@ -11,7 +11,7 @@ COMMENT=	ACES Container Reference Implementation
 LICENSE=	AMPAS
 LICENSE_NAME=	AMPAS
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ampas
