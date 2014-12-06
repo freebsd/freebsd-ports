@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	migrate
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.5
 CATEGORIES=	biology
 MASTER_SITES=	http://popgen.sc.fsu.edu/currentversions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to estimate population sizes and migration rates
 
 GNU_CONFIGURE=	yes
@@ -17,8 +17,7 @@ MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-n \
-		man/man1/${PORTNAME}.1.gz man/man1/${PORTNAME}-n.1.gz
+PLIST_SUB+=	PORTNAME=${PORTNAME}
 PORTDOCS=	HISTORY README README_PARALLEL_GENERAL ${PORTNAME}.html
 PORTEXAMPLES=	*
 
@@ -33,6 +32,10 @@ ALL_TARGET=	thread
 ALL_TARGET=	all
 .endif
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|="-O "|="$$CFLAGS"|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
@@ -46,10 +49,12 @@ do-install:
 		${STAGEDIR}${MAN1PREFIX}/man/man1
 	${LN} -sf ${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}-n.1
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/../,} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/graphics
 	${INSTALL_DATA} ${WRKSRC}/../graphics/* ${STAGEDIR}${DOCSDIR}/graphics
+
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/../example/[A-Za-z]* \
 		${STAGEDIR}${EXAMPLESDIR}
