@@ -28,7 +28,6 @@
     SUBDIR += packagekit
     SUBDIR += packagekit-qt4
     SUBDIR += pchecker
-    SUBDIR += pib
     SUBDIR += pkg
     SUBDIR += pkg-devel
     SUBDIR += pkg-orphan
