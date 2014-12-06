@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	baka-mplayer
-DISTVERSION=	1.9.9-alpha
+DISTVERSION=	2.0.0
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	jbeich@vfemail.net
-COMMENT=	Qt 5 multimedia player based on Mpv
+COMMENT=	Qt 5 multimedia player based on libmpv
 
 LICENSE=	GPLv2
 
@@ -15,10 +15,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	u8sand
 GH_PROJECT=	Baka-MPlayer
 GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	27310b1
+GH_COMMIT=	0393546
 
-USES=		cmake compiler:c++11-lib ninja pkgconfig
-USE_QT5=	qmake_build buildtools_build gui network svg widgets x11extras
+USES=		compiler:c++11-lib pkgconfig qmake
+USE_QT5=	qmake_build buildtools_build gui network svg_run widgets x11extras
+QMAKE_ARGS=	src/${GH_PROJECT}.pro
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NOTO
@@ -29,14 +30,14 @@ NOTO_RUN_DEPENDS=	noto>0:${PORTSDIR}/x11-fonts/noto
 
 post-patch:
 	${REINPLACE_CMD} '/^Comment/s,=.*,=${COMMENT},' \
-		${WRKSRC}/etc/sbin/pkgbuild/${PORTNAME}.desktop
+		${WRKSRC}/arch/${PORTNAME}.desktop
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
+	${INSTALL_PROGRAM} ${WRKSRC}/build/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/etc/doc/${PORTNAME}.man \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
-	${INSTALL_DATA} ${WRKSRC}/etc/sbin/pkgbuild/${PORTNAME}.desktop \
+	${INSTALL_DATA} ${WRKSRC}/arch/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}
