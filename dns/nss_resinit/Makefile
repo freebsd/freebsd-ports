@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.mahoroba.org/~ume/FreeBSD/
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Resolver re-initialization NSS module
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		uidfix
 
