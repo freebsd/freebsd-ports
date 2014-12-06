@@ -3530,6 +3530,7 @@
     SUBDIR += protobuf
     SUBDIR += protobuf-c
     SUBDIR += protobuf25
+    SUBDIR += pructl
     SUBDIR += psptoolchain
     SUBDIR += psptoolchain-binutils
     SUBDIR += psptoolchain-gcc-stage1
