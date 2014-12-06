@@ -10,10 +10,7 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/1446/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
 
-LICENSE=	PGPOOL
-LICENSE_NAME=	PGPOOL
-LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	MIT
 
 USES=		gmake
 GNU_CONFIGURE=	yes
