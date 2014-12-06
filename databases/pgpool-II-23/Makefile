@@ -11,10 +11,7 @@ PKGNAMESUFFIX=	23
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
 
-LICENSE=	PGPOOL
-LICENSE_NAME=	PGPOOL
-LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	MIT
 
 USES=		gmake pgsql libtool
 GNU_CONFIGURE=	yes
