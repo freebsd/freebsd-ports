@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grizzled>=0.8.1:${PORTSDIR}/devel/py-grizz
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=	${WRKDIR}/bmc-${PORTNAME}-e7d5553
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|'man'|'man/man1'|g" ${WRKSRC}/setup.py

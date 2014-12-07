@@ -14,9 +14,8 @@ COMMENT=	Spellchecking library for Python based on the Enchant library
 
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_WX=		3.0+
 WX_COMPS=	python:run
 

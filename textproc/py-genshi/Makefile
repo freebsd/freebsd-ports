@@ -18,9 +18,8 @@ OPTIONS_DEFINE=	BABEL
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 BABEL_DESC=	I18n support through the Babel plugin
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.options.mk>
 

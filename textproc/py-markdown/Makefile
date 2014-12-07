@@ -17,10 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}pytidylib:${PORTSDIR}/textproc/py-pytidylib
 
-USES=			dos2unix
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		dos2unix python
+USE_PYTHON=	distutils autoplist
 
 regression-test: build
 	@cd ${WRKSRC} && nosetests

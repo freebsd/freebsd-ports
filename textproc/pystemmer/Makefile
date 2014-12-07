@@ -12,8 +12,7 @@ DISTNAME=	PyStemmer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Snowball Stemming Algorithms for Information Retrieval
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

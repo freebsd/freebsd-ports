@@ -11,9 +11,8 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to parse or write delimeter-separated (e.g. CSV) files
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 DSV_BASEDIR=	${PYTHONPREFIX_SITELIBDIR}/DSV
 
 OPTIONS_DEFINE=	DOCS

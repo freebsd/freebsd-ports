@@ -11,9 +11,8 @@ PKGNAMESUFFIX=	-${PYTHON_PKGNAMEPREFIX:S/-//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Highlighter for HTML
 
-USES=			shebangfix
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
+USES=		python:2 shebangfix
+USE_PYTHON=	distutils autoplist
 
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	${PYTHON_CMD}

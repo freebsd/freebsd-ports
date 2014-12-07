@@ -22,9 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		compiler gmake libtool pathfix pkgconfig
+USES=		compiler gmake libtool pathfix pkgconfig python
 USE_GNOME=	pygobject3
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

@@ -11,9 +11,8 @@ DISTNAME=	Reverend-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Simple Bayesian classifier written in Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Reverend
+USES=		python
+USE_PYTHON=	distutils autoplist
 OPTIONS_DEFINE=	EXAMPLES
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
