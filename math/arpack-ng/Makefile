@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT+=	Revised Argand library for solving large-scale eigenvalue problems
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		fortran libtool
 USE_LDCONFIG=	yes

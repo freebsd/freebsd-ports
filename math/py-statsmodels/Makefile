@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	xmj@chaot.net
 COMMENT=	Complement to SciPy for statistical computations
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BROKEN=		Fails to build
 

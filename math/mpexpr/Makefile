@@ -9,7 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Multiple precision math for Tcl
 
-LICENSE=	BSD
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/LICENSE.TERMS
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
