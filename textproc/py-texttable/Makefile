@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Module for creating simple ASCII tables
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/texttable.py \
 		%%PYTHON_SITELIBDIR%%/texttable.pyc \

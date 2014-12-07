@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 		${PYTHON_SITELIBDIR}/chm/chm.py:${PORTSDIR}/textproc/pychm
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=	0.9
 
 PLIST_FILES=	bin/chm2pdf

@@ -16,9 +16,8 @@ DISTFILES=	pywordnet-${PORTVERSION}.tar.gz:pywn \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to WordNet
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
 PLIST_SUB=	WNDATA=${WORDNETDATA}

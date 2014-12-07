@@ -12,9 +12,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Python toolkit for stream-based generation of output for the web
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/genshi
 CONFLICTS=	py-genshi-[0-9]*

@@ -14,9 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast validating XML parser for Python
 
 NO_WRKSUBDIR=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-rxp
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp

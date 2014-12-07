@@ -12,8 +12,7 @@ COMMENT=	Source code spelling checker
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	3
-USES=		tar:xz
+USES=		python:3 tar:xz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

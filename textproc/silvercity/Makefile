@@ -10,9 +10,8 @@ DISTNAME=	SilverCity-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lexing package for over 20 programming and markup languages
 
-USES=		dos2unix
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		dos2unix python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	SilverCity
 
 .include <bsd.port.mk>

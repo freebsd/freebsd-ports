@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PORTDOCS=	*

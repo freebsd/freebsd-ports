@@ -17,9 +17,8 @@ GH_ACCOUNT=	regit
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	d4eb23e
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PLIST_FILES=	man/man1/coccigrep.1.gz \
 		${DATADIR_REL}/cocci-grep.el \

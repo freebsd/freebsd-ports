@@ -12,9 +12,8 @@ COMMENT=	Character encoding auto-detection in Python
 
 LICENSE=	LGPL21
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	*

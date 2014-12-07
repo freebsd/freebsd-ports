@@ -16,7 +16,7 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 
-USE_PYTHON=	2
+USES=		python:2
 MAKE_ARGS=	dict WORDNETDICT="${LOCALBASE}/share/WordNet"
 
 PORTDOCS=	address.png index-e.html index.html

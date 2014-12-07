@@ -14,9 +14,8 @@ COMMENT=	Python binding for Syck, a YAML parser and emitter
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:${PORTSDIR}/textproc/syck
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include|include|g ; s|#library_dirs|library_dirs|g ; \

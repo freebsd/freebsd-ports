@@ -17,8 +17,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME+=	libxml2
 USES=		python:3
-USE_PYDISTUTILS=yes
-#USE_PYTHON=	distutils:3
+USE_PYTHON=	distutils
 PYDISTUTILS_EGGINFO=	libxml2_python-${PORTVERSION}-py${PYTHON_VER}.egg-info
 PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//}
 
