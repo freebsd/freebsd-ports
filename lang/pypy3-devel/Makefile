@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pypy3
-DISTVERSION=	2.1-beta1
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	lang python java
-MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/
+MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/ \
+		https://bitbucket.org/pypy/pypy/downloads/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	dbn@FreeBSD.org
@@ -58,9 +58,6 @@ PLIST_SUB+=	PYPY_LIBDIR=${PYPY_LIBDIR} \
 
 MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
 		WRKSRC=${WRKSRC} PYPY_LOCALBASE=${LOCALBASE}
-
-LOCALBASE_REFIX=	\
-		lib_pypy/_sqlite3.py
 
 .include <bsd.port.options.mk>
 .include "${MASTERDIR}/files/bsd.pypy.inst.mk"
@@ -228,11 +225,6 @@ post-extract:
 .endfor
 	${LN} -s ${WRKDIR}/lib ${WRKSRC}/lib
 
-post-patch:
-.for file in ${LOCALBASE_REFIX}
-	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${file}
-.endfor
-
 do-configure:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%PYPY_NAMES%%|${PYPY_NAMES}|g' \
@@ -244,8 +236,9 @@ do-configure:
 post-build:
 # UPDATING: check pypy/tool/release/package.py for list of cffi modules
 .for mod in _sqlite3 _curses syslog
-	${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
+	${SETENV} ${MAKE_ENV} ${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
 .endfor
+	${STRIP_CMD} ${WRKDIR}/${PYPY_LIBDIR}/lib_pypy/__pycache__/_cffi__*.pypy3-${PYPY_VER:C/\.//}.so
 .for _path in ${PYPYDIRS}
 	-${FIND} ${WRKDIR}/${_path:C/.*://}/ -type d | \
 		${XARGS} -n1 ${WRKDIR}/${PYPY_PRIMARY} -m compileall -fl
@@ -279,7 +272,6 @@ pkg-plist: build
 	${RM} -f ${WRKDIR}/.plist-files-gen ${WRKDIR}/.plist-dirs-gen
 .for path in ${PYPYDIRS}
 	cd ${WRKDIR} && ${FIND} ${path:C/.*://}/ -type f >> ${WRKDIR}/.plist-files-gen
-	cd ${WRKDIR} && ${FIND} ${path:C/.*://}/ -type d | ${SED} 's|/$$||' >> ${WRKDIR}/.plist-dirs-gen
 .endfor
 	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|%%PYPY_LIBDIR%%|g' \
 		-e 's|^${PYPY_INCLUDEDIR}|%%PYPY_INCLUDEDIR%%|g' \
@@ -287,16 +279,7 @@ pkg-plist: build
 		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
 		-e 's|-${PYPY_VER:C/\.//}\.|-%%PYPY_VER%%.|g' \
 			${WRKDIR}/.plist-files-gen
-	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|@dirrm %%PYPY_LIBDIR%%|g' \
-		-e 's|^${PYPY_INCLUDEDIR}|@dirrm %%PYPY_INCLUDEDIR%%|g' \
-			${WRKDIR}/.plist-dirs-gen
 	${SORT} ${WRKDIR}/.plist-files-gen > ${WRKDIR}/pkg-plist
-	${SORT} -r ${WRKDIR}/.plist-dirs-gen >> ${WRKDIR}/pkg-plist
-	${REINPLACE_CMD} \
-		-e 's|^@dirrm %%PYPY_LIBDIR%%/site-packages$$|@dirrmtry %%PYPY_LIBDIR%%/site-packages|' \
-		-e 's|^@dirrm %%PYPY_LIBDIR%%$$|@dirrmtry %%PYPY_LIBDIR%%|' \
-		-e 's|^@dirrm %%PYPY_INCLUDEDIR%%$$|@dirrmtry %%PYPY_INCLUDEDIR%%|' \
-			${WRKDIR}/pkg-plist
 	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
 
 .include <bsd.port.mk>
