@@ -82,8 +82,8 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${RADIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${RADIR}
+	${BRANDELF} -t Linux ${WRKSRC}/realplay.bin
 	${INSTALL_PROGRAM} ${WRKSRC}/realplay.bin ${STAGEDIR}${RADIR}
-	${BRANDELF} -t Linux ${STAGEDIR}${RADIR}/realplay.bin
 .for dir in codecs common lib plugins share/default share/realplay
 	@${MKDIR} ${STAGEDIR}${RADIR}/${dir}
 	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${STAGEDIR}${RADIR}/${dir}
