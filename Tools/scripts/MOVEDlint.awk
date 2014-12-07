@@ -102,15 +102,5 @@ END {
         error[missing[port]] = 1
     }
 
-    if (annotate) {
-        line = 1
-        while (annotate | getline) {
-            if (error[line])
-                printf "%5d\n%5d! %s\n", line, line, $0 | sort
-            line++
-        }
-        close(annotate)
-    }
-
     close(sort)
 }
