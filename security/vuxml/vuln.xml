@@ -57,6 +57,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="567beb1e-7e0a-11e4-b9cc-bcaec565249c">
+    <topic>freetype -- Out of bounds stack-based read/write</topic>
+    <affects>
+      <package>
+	<name>freetype2</name>
+	<range><lt>2.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Werner LEMBERG reports:</p>
+	<blockquote cite="http://lists.nongnu.org/archive/html/freetype-announce/2014-12/msg00000.html">
+	  <p>The fix for CVE-2014-2240 was not 100% complete to fix the issue
+	    from the CVE completly.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.nongnu.org/archive/html/freetype-announce/2014-12/msg00000.html</url>
+      <cvename>CVE-2014-2240</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-07</discovery>
+      <entry>2014-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c9c46fbf-7b83-11e4-a96e-6805ca0b3d42">
     <topic>phpMyAdmin -- XSS and DoS vulnerabilities</topic>
     <affects>
