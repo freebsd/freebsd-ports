@@ -19,13 +19,11 @@ LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libAcesContainer.so:${PORTSDIR}/graphics/ampasACES-container
 
-CONFLICTS=	openexr_ctl-1.[0-4].*
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	ampas
 GH_PROJECT=	CTL
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	afcff97
+GH_COMMIT=	57b48a2
 
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
