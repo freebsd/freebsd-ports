@@ -11,7 +11,10 @@ DISTFILES=	# none
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Verifier for FreeBSD port directory
 
-LICENSE=	BSD
+LICENSE=	ITOJUN
+LICENSE_NAME=	Itojun License
+LICENSE_TEXT=	All rights reserved. Freely redistributable.  Absolutely no warranty.
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/src
