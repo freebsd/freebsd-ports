@@ -3,7 +3,7 @@
 
 PORTNAME=	elasticsearch
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -62,6 +62,24 @@ USERS=		${SEARCHUSER}
 GROUPS=		${SEARCHGROUP}
 ELASTIC_DBDIR=	/var/db/elasticsearch
 ELASTIC_LOGDIR=	/var/log/elasticsearch
+
+.if ${OPSYS} == FreeBSD
+.  if ${OSVERSION} >= 1000000
+PLATFORM_VER=	1
+.  elif ${OSVERSION} >= 900000
+PLATFORM_VER=	9
+.  elif ${OSVERSION} >= 800000
+PLATFORM_VER=	8
+.  elif ${OSVERSION} >= 700000
+PLATFORM_VER=	7
+.  elif ${OSVERSION} >= 600000
+PLATFORM_VER=	6
+.  else
+BROKEN=		Unsupported FreeBSD version
+.  endif
+.else
+BROKEN=		${OPSYS} platform is not supported
+.endif
 
 SIGAR_LIBNAME=	libsigar-${ARCH:S,i386,x86,}-freebsd-${PLATFORM_VER}.so
 
