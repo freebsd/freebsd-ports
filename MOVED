@@ -7315,3 +7315,4 @@ deskutils/gnome-shell-extension-gtile||2014-12-03|Removed, doesn't work properly
 devel/rubygem-rb-readline||2014-12-05|Removed, not needed
 ports-mgmt/pib||2014-12-06|Has expired: Does not work with tcl/tk 8.4+, does not support pkgng
 editors/texmakerx|editors/texstudio|2014-12-06|The project has been renamed
+databases/postgresql93-plv8js|databases/postgresql-plv8js|2014-12-07|Breaks index when PGSQL_DEFAULT=9.3 and master port can be used for pgsql 9.3
