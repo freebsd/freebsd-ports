@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension to the Tk toolkit
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
