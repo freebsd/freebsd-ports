@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
+	@${RM} ${WRKSRC}/bin/linux/inadyn
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$$\(CC\)|g' ${WRKSRC}/makefile
