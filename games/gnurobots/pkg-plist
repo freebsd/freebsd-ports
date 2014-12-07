@@ -9,6 +9,3 @@ bin/gnurobots
 %%DATADIR%%/scheme/stop.scm
 %%DATADIR%%/scheme/zap.scm
 share/pixmaps/gnurobots.png
-@dirrm %%DATADIR%%/scheme
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%
