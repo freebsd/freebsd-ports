@@ -81,6 +81,3 @@ GNUstep/System/Applications/GShisen.app/Resources/green.tiff
 GNUstep/System/Applications/GShisen.app/Resources/x.tiff
 GNUstep/System/Applications/GShisen.app/stamp.make
 GNUstep/System/Tools/GShisen
-@dirrm GNUstep/System/Applications/GShisen.app/Resources/GShisen.gorm
-@dirrm GNUstep/System/Applications/GShisen.app/Resources
-@dirrm GNUstep/System/Applications/GShisen.app
