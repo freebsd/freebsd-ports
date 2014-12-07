@@ -47,7 +47,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lsmpeg -lm ${PTHREAD_LIBS}
 
 post-patch:
 	@for dir in ${DATASRC} ${SOUNDSRC} ${MUSICSRC}; do \
-		${FIND} $${dir} -name "Makefile*" | ${XARGS} ${RM}; \
+		${FIND} $${dir} -name "Makefile*" -delete; \
 	done
 	@${RM} -f ${WRKSRC}/lib/getopt.h
 	@${RM} -f ${WRKSRC}/doc/*.info*
