@@ -295,15 +295,15 @@
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
     SUBDIR += libyubikey
+    SUBDIR += linux-c6-cyrus-sasl2
+    SUBDIR += linux-c6-gnutls
+    SUBDIR += linux-c6-libgcrypt
     SUBDIR += linux-c6-libgpg-error
     SUBDIR += linux-c6-libssh2
-    SUBDIR += linux-c6-openssl
     SUBDIR += linux-c6-libtasn1
     SUBDIR += linux-c6-nss
-    SUBDIR += linux-c6-gnutls
-    SUBDIR += linux-c6-cyrus-sasl2
+    SUBDIR += linux-c6-openssl
     SUBDIR += linux-c6-openssl-compat
-    SUBDIR += linux-c6-libgcrypt
     SUBDIR += linux-f10-cyrus-sasl2
     SUBDIR += linux-f10-gnutls
     SUBDIR += linux-f10-libgcrypt
@@ -375,8 +375,8 @@
     SUBDIR += openscep
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
-    SUBDIR += openssh-portable66
     SUBDIR += openssh-portable-base
+    SUBDIR += openssh-portable66
     SUBDIR += openssl
     SUBDIR += openssl_tpm_engine
     SUBDIR += openvas-client
@@ -499,6 +499,7 @@
     SUBDIR += p5-Crypt-RC4
     SUBDIR += p5-Crypt-RC5
     SUBDIR += p5-Crypt-RC6
+    SUBDIR += p5-Crypt-RHash
     SUBDIR += p5-Crypt-RIPEMD160
     SUBDIR += p5-Crypt-RSA
     SUBDIR += p5-Crypt-RSA-Yandex
@@ -506,7 +507,6 @@
     SUBDIR += p5-Crypt-RandPasswd
     SUBDIR += p5-Crypt-Random
     SUBDIR += p5-Crypt-Random-Source
-    SUBDIR += p5-Crypt-RHash
     SUBDIR += p5-Crypt-Rijndael
     SUBDIR += p5-Crypt-Rijndael_PP
     SUBDIR += p5-Crypt-SKey
@@ -520,8 +520,8 @@
     SUBDIR += p5-Crypt-SmbHash
     SUBDIR += p5-Crypt-Solitaire
     SUBDIR += p5-Crypt-TEA
-    SUBDIR += p5-Crypt-Tea_JS
     SUBDIR += p5-Crypt-T_e_a
+    SUBDIR += p5-Crypt-Tea_JS
     SUBDIR += p5-Crypt-TripleDES
     SUBDIR += p5-Crypt-Twofish
     SUBDIR += p5-Crypt-Twofish2
@@ -893,9 +893,9 @@
     SUBDIR += rubygem-net-scp11
     SUBDIR += rubygem-net-sftp
     SUBDIR += rubygem-net-ssh
-    SUBDIR += rubygem-net-ssh27
     SUBDIR += rubygem-net-ssh-gateway
     SUBDIR += rubygem-net-ssh-multi
+    SUBDIR += rubygem-net-ssh27
     SUBDIR += rubygem-nmap-parser
     SUBDIR += rubygem-omniauth
     SUBDIR += rubygem-origami
