@@ -494,37 +494,3 @@ bin/2ManDVD
 %%DATADIR%%/fake.pl
 share/applications/2ManDVD.desktop
 share/pixmaps/mandvdico.png
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/States
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Paris
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Neige
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Diapos sur bois
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Crépuscule_2
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Crépuscule
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Caraïbes
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Textures/Métal
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Textures/Minéraux
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Textures/Feuilles
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Textures/Briques
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Textures/Aqua
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Textures
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Nature/Sapins sous la neige
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Nature/Parc
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Nature/Fleurs2
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Nature/Fleurs
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Nature/Crépuscule
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Nature/Brume
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Nature
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Papillons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Oiseaux
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Duo
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Coquillage
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Chat
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux
-@dirrm %%DATADIR%%/Bibliotheque/Themes
-@dirrm %%DATADIR%%/Bibliotheque/Masks
-@dirrm %%DATADIR%%/Bibliotheque/Luma
-@dirrm %%DATADIR%%/Bibliotheque/Animations
-@dirrm %%DATADIR%%/Bibliotheque/3d
-@dirrm %%DATADIR%%/Bibliotheque
-@dirrm %%DATADIR%%
