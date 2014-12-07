@@ -16,8 +16,6 @@ LICENSE=	MIT
 USES=		autoreconf pathfix libtool
 PATHFIX_MAKEFILEIN=	Makefile.am
 USE_AUTOTOOLS=	aclocal automake autoconf
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
