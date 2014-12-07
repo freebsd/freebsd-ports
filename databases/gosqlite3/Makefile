@@ -10,10 +10,15 @@ MASTER_SITES=	LOCAL/jlaffaye
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Go interface for SQLite3
 
+USES=		compiler
+
 LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 GO_PKGNAME=	github.com/kuroneko/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"
+.if ${COMPILER_TYPE} == clang && ${CC} == cc
+CC=	clang
+.endif
 .include <bsd.port.post.mk>

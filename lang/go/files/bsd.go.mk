@@ -44,7 +44,7 @@ GO_WRKDIR_PKG=	${WRKDIR}/pkg/freebsd_${GOARCH}
 BUILD_DEPENDS+=	${GO_CMD}:${PORTSDIR}/lang/go
 GO_ENV+=	GOPATH="${WRKDIR}:${LOCAL_GOPATH}" \
 		CGO_CFLAGS="${CGO_CFLAGS}" \
-		CGO_LDFLAGS="${CGO_LDFLAGS}"
+		CGO_LDFLAGS="${CGO_LDFLAGS}" \
 PLIST_SUB+=	GO_LIBDIR=${GO_LIBDIR} \
 		GO_SRCDIR=${GO_SRCDIR} \
 		GO_PKGNAME=${GO_PKGNAME}
@@ -57,7 +57,7 @@ post-extract:
 
 .if !target(do-build)
 do-build:
-	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} install -v ${GO_TARGET})
+	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install -v ${GO_TARGET})
 .endif
 
 .if !target(do-install)
