@@ -25,11 +25,11 @@
     SUBDIR += bmpanel2
     SUBDIR += bricons
     SUBDIR += brightside
+    SUBDIR += cinnamon
     SUBDIR += cinnamon-desktop
     SUBDIR += cinnamon-menus
     SUBDIR += cinnamon-screensaver
     SUBDIR += cinnamon-session
-    SUBDIR += cinnamon
     SUBDIR += cl-clx
     SUBDIR += compositeproto
     SUBDIR += damageproto
@@ -76,8 +76,8 @@
     SUBDIR += gnome-desktop-reference
     SUBDIR += gnome-menus
     SUBDIR += gnome-session
-    SUBDIR += gnome-shell-extensions
     SUBDIR += gnome-shell
+    SUBDIR += gnome-shell-extensions
     SUBDIR += gnome-terminal
     SUBDIR += gnome3
     SUBDIR += gnome3-lite

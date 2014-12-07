@@ -12,8 +12,8 @@
     SUBDIR += WebMagick
     SUBDIR += ach
     SUBDIR += adzap
-    SUBDIR += amphetadesk
     SUBDIR += alef-webfont
+    SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += anyremote2html
     SUBDIR += anyterm
@@ -375,8 +375,8 @@
     SUBDIR += links
     SUBDIR += links-hacked
     SUBDIR += links1
-    SUBDIR += linux-c6-qt47-webkit
     SUBDIR += linux-c6-flashplugin11
+    SUBDIR += linux-c6-qt47-webkit
     SUBDIR += linux-f10-flashplugin11
     SUBDIR += linux-firefox
     SUBDIR += linux-libgtkembedmoz
@@ -556,8 +556,8 @@
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += oscommerce
-    SUBDIR += otter-browser
     SUBDIR += otrs
+    SUBDIR += otter-browser
     SUBDIR += owncloud
     SUBDIR += p5-AMF-Perl
     SUBDIR += p5-Acme-Monta
@@ -1672,8 +1672,8 @@
     SUBDIR += py-seafobj
     SUBDIR += py-selector
     SUBDIR += py-selenium
-    SUBDIR += py-slimmer
     SUBDIR += py-slimit
+    SUBDIR += py-slimmer
     SUBDIR += py-slumber
     SUBDIR += py-splinter
     SUBDIR += py-surl
@@ -1879,9 +1879,9 @@
     SUBDIR += rubygem-rfeedfinder
     SUBDIR += rubygem-rinku
     SUBDIR += rubygem-rkelly-remix
-    SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
+    SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-rtlit
     SUBDIR += rubygem-ruby-readability
     SUBDIR += rubygem-savon

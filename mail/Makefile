@@ -402,8 +402,8 @@
     SUBDIR += p5-Net-SMTP-Server
     SUBDIR += p5-Net-SMTP-TLS
     SUBDIR += p5-Net-SMTP-TLS-ButMaintained
-    SUBDIR += p5-Net-SMTP_auth
     SUBDIR += p5-Net-SMTPS
+    SUBDIR += p5-Net-SMTP_auth
     SUBDIR += p5-Net-SenderBase
     SUBDIR += p5-Net-Server-Mail
     SUBDIR += p5-POE-Component-Client-POP3

@@ -28,7 +28,6 @@
     SUBDIR += cwm
     SUBDIR += devilspie
     SUBDIR += dwm
-    SUBDIR += e16
     SUBDIR += e-module-alarm
     SUBDIR += e-module-cpu
     SUBDIR += e-module-deskshow
@@ -45,6 +44,7 @@
     SUBDIR += e-module-tclock
     SUBDIR += e-module-wlan
     SUBDIR += e-modules
+    SUBDIR += e16
     SUBDIR += e17-module-comp-scale
     SUBDIR += e17-module-eektool
     SUBDIR += e17-module-elfe

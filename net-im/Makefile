@@ -53,9 +53,9 @@
     SUBDIR += ktp-send-file
     SUBDIR += ktp-text-ui
     SUBDIR += libjreen
+    SUBDIR += libnice
     SUBDIR += libnice-gst010
     SUBDIR += libnice-gst1
-    SUBDIR += libnice
     SUBDIR += libpurple
     SUBDIR += libtelepathy
     SUBDIR += libyahoo2
