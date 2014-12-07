@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little Asteroids-like Shooter game
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 RUN_DEPENDS=	${PYGAME}
 
