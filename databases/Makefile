@@ -204,6 +204,7 @@
     SUBDIR += mysql56-client
     SUBDIR += mysql56-server
     SUBDIR += mysqlbackup
+    SUBDIR += mysqlbigram
     SUBDIR += mysqldumper
     SUBDIR += mysqlidxchk
     SUBDIR += mysqlreport
