@@ -15,7 +15,7 @@ COMMENT?=	The XSLT C library for GNOME
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gmake libtool:oldver pathfix
+USES+=		gmake libtool:oldver pathfix
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
