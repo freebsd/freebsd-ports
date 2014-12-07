@@ -1,54 +1,21 @@
---- /dev/null	2014-05-31 00:44:00.000000000 +0000
-+++ build/pkgs/python/fbsd-patch-src_Makefile.pre.in	2014-05-31 00:35:21.000000000 +0000
-@@ -0,0 +1,51 @@
-+# Description: Fix out-of-tree build as a result of upstream #15819
-+# Submitted by: rm (r318353)
-+# Issue ID: http://bugs.python.org/issue15819#msg203348
+--- /dev/null	2014-11-18 03:33:07.000000000 +0000
++++ build/pkgs/python/fbsd-patch-src_Makefile.pre.in	2014-11-18 03:37:12.000000000 +0000
+@@ -0,0 +1,18 @@
++# Description: Link scripts in the same way Python3 does
++# Submitted by: mva
 +
-+# Description: Run pycompile only once
-+# Submitted by: antoine (r350207)
-+# TODO: ?
-+
-+# Description: Run ranlib before installing the library read-only
-+# Submitted by: antoine@ (r350207)
-+# TODO: Upstream
-+
-+--- src/./Makefile.pre.in.orig	2013-11-10 07:36:41.000000000 +0000
-++++ src/./Makefile.pre.in	2014-04-04 09:16:00.000000000 +0000
-+@@ -285,9 +285,9 @@
++--- src/Makefile.pre.in.orig	2014-06-30 04:05:39.000000000 +0200
+++++ src/Makefile.pre.in	2014-07-26 11:09:46.000000000 +0200
++@@ -868,6 +868,12 @@
++	(cd $(DESTDIR)$(LIBPC); $(LN) -s python-$(VERSION).pc python2.pc)
++	-rm -f $(DESTDIR)$(LIBPC)/python.pc
++	(cd $(DESTDIR)$(LIBPC); $(LN) -s python2.pc python.pc)
+++	-rm -f $(DESTDIR)$(BINDIR)/idle
+++	(cd $(DESTDIR)$(BINDIR); $(LN) -s idle$(VERSION) idle2)
+++	-rm -f $(DESTDIR)$(BINDIR)/pydoc
+++	(cd $(DESTDIR)$(BINDIR); $(LN) -s pydoc$(VERSION) pydoc2)
+++	-rm -f $(DESTDIR)$(BINDIR)/2to3
+++	(cd $(DESTDIR)$(BINDIR); $(LN) -s 2to3-$(VERSION) 2to3)
 + 
-+ ##########################################################################
-+ # AST
-+-AST_H_DIR=	Include
-++AST_H_DIR=	$(srcdir)/Include
-+ AST_H=		$(AST_H_DIR)/Python-ast.h
-+-AST_C_DIR=	Python
-++AST_C_DIR=	$(srcdir)/Python
-+ AST_C=		$(AST_C_DIR)/Python-ast.c
-+ AST_ASDL=	$(srcdir)/Parser/Python.asdl
-+ 
-+@@ -1006,12 +1006,12 @@
-+ 			$(DESTDIR)$(LIBDEST)/distutils/tests ; \
-+ 	fi
-+ 	PYTHONPATH=$(DESTDIR)$(LIBDEST)  $(RUNSHARED) \
-+-		$(PYTHON_FOR_BUILD) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \
-++		$(PYTHON_FOR_BUILD) -B -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \
-+ 		-d $(LIBDEST) -f \
-+ 		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
-+ 		$(DESTDIR)$(LIBDEST)
-+ 	PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
-+-		$(PYTHON_FOR_BUILD) -Wi -tt -O $(DESTDIR)$(LIBDEST)/compileall.py \
-++		$(PYTHON_FOR_BUILD) -B -Wi -tt -O $(DESTDIR)$(LIBDEST)/compileall.py \
-+ 		-d $(LIBDEST) -f \
-+ 		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
-+ 		$(DESTDIR)$(LIBDEST)
-+@@ -1089,8 +1089,8 @@
-+ 			if test "$(SO)" = .dll; then \
-+ 				$(INSTALL_DATA) $(LDLIBRARY) $(DESTDIR)$(LIBPL) ; \
-+ 			else \
-++				$(RANLIB) $(LIBRARY) ; \
-+ 				$(INSTALL_DATA) $(LIBRARY) $(DESTDIR)$(LIBPL)/$(LIBRARY) ; \
-+-				$(RANLIB) $(DESTDIR)$(LIBPL)/$(LIBRARY) ; \
-+ 			fi; \
-+ 		else \
-+ 			echo Skip install of $(LIBRARY) - use make frameworkinstall; \
++ # Install the interpreter with $(VERSION) affixed
++ # This goes into $(exec_prefix)
