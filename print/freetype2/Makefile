@@ -3,8 +3,7 @@
 #   $MCom: ports/print/freetype2/Makefile,v 1.28 2011/10/25 18:31:21 kwm Exp $
 
 PORTNAME=	freetype2
-PORTVERSION=	2.5.3
-PORTREVISION=	3
+PORTVERSION=	2.5.4
 CATEGORIES=	print
 MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
