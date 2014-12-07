@@ -3,7 +3,7 @@
 @@ -22,11 +22,14 @@
  
  import sys, os
- sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
+ sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..')))
 +from pypy.module.sys.version import PYPY_VERSION
  from rpython.translator.sandbox.sandlib import SimpleIOSandboxedProc
  from rpython.translator.sandbox.sandlib import VirtualizedSandboxedProc

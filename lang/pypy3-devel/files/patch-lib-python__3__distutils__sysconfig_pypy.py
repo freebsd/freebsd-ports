@@ -13,7 +13,7 @@
      if prefix is None:
          prefix = PREFIX
      if standard_lib:
--        return os.path.join(prefix, "lib-python", get_python_version())
+-        return os.path.join(prefix, "lib-python", sys.version[0])
 -    return os.path.join(prefix, 'site-packages')
 +        return os.path.join(prefix, 'lib', 'pypy3-%s.%s' % sys.pypy_version_info[:2])
 +    return os.path.join(prefix, 'lib', 'pypy3-%s.%s' % sys.pypy_version_info[:2], 'site-packages')
