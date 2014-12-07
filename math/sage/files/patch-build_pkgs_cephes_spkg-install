@@ -1,6 +1,16 @@
---- build/pkgs/cephes/spkg-install-orig	2013-03-30 20:48:35.000000000 +0000
-+++ build/pkgs/cephes/spkg-install	2013-03-30 20:48:57.000000000 +0000
-@@ -24,6 +24,8 @@
+--- build/pkgs/cephes/spkg-install.orig	2014-11-14 12:09:55.000000000 +0000
++++ build/pkgs/cephes/spkg-install	2014-12-06 23:43:50.000000000 +0000
+@@ -11,6 +11,9 @@
+     exit 0
+ fi
+ 
++# Not working properly with FreeBSD right now.
++exit 0
++
+ CUR=`pwd`
+ cd src
+ 
+@@ -24,6 +27,8 @@
      fi
  done
  

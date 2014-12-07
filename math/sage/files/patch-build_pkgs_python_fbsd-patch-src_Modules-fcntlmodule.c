@@ -1,9 +1,9 @@
---- /dev/null	2014-05-31 00:44:00.000000000 +0000
-+++ build/pkgs/python/fbsd-patch-src_Modules-fcntlmodule.c	2014-05-31 00:35:21.000000000 +0000
+--- /dev/null	2014-11-18 03:33:07.000000000 +0000
++++ build/pkgs/python/fbsd-patch-src_Modules__fcntlmodule.c	2014-11-18 03:37:12.000000000 +0000
 @@ -0,0 +1,53 @@
-+--- src/Modules/fcntlmodule.c.orig	2010-08-14 16:36:54.991363730 +0800
-++++ src/Modules/fcntlmodule.c	2010-08-14 16:41:05.555822031 +0800
-+@@ -97,20 +97,15 @@
++--- src/./Modules/fcntlmodule.c.orig	2014-07-03 21:57:10.429953240 +1000
+++++ src/./Modules/fcntlmodule.c	2014-07-03 21:59:36.517210444 +1000
++@@ -98,20 +98,15 @@
 + {
 + #define IOCTL_BUFSZ 1024
 +     int fd;
@@ -15,7 +15,7 @@
 +        whereas the system expects it to be a 32bit bit field value
 +        regardless of it being passed as an int or unsigned long on
 +-       various platforms.  See the termios.TIOCSWINSZ constant across
-+-       platforms for an example of thise.
++-       platforms for an example of this.
 +-
 +-       If any of the 64bit platforms ever decide to use more than 32bits
 +-       in their unsigned long ioctl codes this will break and need
@@ -27,7 +27,7 @@
 +     int arg;
 +     int ret;
 +     char *str;
-+@@ -118,7 +113,7 @@
++@@ -119,7 +114,7 @@
 +     int mutate_arg = 1;
 +     char buf[IOCTL_BUFSZ+1];  /* argument plus NUL byte */
 + 
@@ -36,7 +36,7 @@
 +                          conv_descriptor, &fd, &code,
 +                          &str, &len, &mutate_arg)) {
 +         char *arg;
-+@@ -169,7 +164,7 @@
++@@ -170,7 +165,7 @@
 +     }
 + 
 +     PyErr_Clear();
@@ -45,7 +45,7 @@
 +                          conv_descriptor, &fd, &code, &str, &len)) {
 +         if (len > IOCTL_BUFSZ) {
 +             PyErr_SetString(PyExc_ValueError,
-+@@ -191,7 +186,7 @@
++@@ -192,7 +187,7 @@
 +     PyErr_Clear();
 +     arg = 0;
 +     if (!PyArg_ParseTuple(args,
