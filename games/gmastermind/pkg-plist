@@ -5,6 +5,3 @@ GNUstep/Local/Applications/GMastermind.app/Resources/GMastermind.tiff
 GNUstep/Local/Applications/GMastermind.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/GMastermind.app/stamp.make
 GNUstep/Local/Tools/GMastermind
-@dirrm GNUstep/Local/Applications/GMastermind.app/Resources/French.lproj
-@dirrm GNUstep/Local/Applications/GMastermind.app/Resources
-@dirrm GNUstep/Local/Applications/GMastermind.app
