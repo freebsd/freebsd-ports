@@ -15,8 +15,7 @@ LICENSE=	PostgreSQL
 
 LIB_DEPENDS+=	libv8.so:${PORTSDIR}/lang/v8
 
-WANT_PGSQL_VER?=	9.1+
-USES=		gmake perl5 zip pgsql:${WANT_PGSQL_VER}
+USES=		gmake perl5 zip pgsql:9.1+
 USE_PERL5=	build
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 

@@ -686,7 +686,6 @@
     SUBDIR += postgresql93-plperl
     SUBDIR += postgresql93-plpython
     SUBDIR += postgresql93-pltcl
-    SUBDIR += postgresql93-plv8js
     SUBDIR += postgresql93-server
     SUBDIR += postgresql94-client
     SUBDIR += postgresql94-contrib
