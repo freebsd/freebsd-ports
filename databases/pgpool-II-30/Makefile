@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake pgsql libtool
+USES=		gmake pgsql:9.2- libtool
 USE_LDCONFIG=	yes
 
 CONFLICTS=	pgpool-3.* pgpool-II-3.* pgpool-II-22-* pgpool-II-23-* 
