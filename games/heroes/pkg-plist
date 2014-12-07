@@ -212,10 +212,3 @@ share/locale/fr/LC_MESSAGES/heroes.mo
 share/locale/it/LC_MESSAGES/heroes.mo
 share/locale/nl/LC_MESSAGES/heroes.mo
 share/locale/pt_BR/LC_MESSAGES/heroes.mo
-@dirrm %%DATADIR%%/tilesets
-@dirrm %%DATADIR%%/sfx
-@dirrm %%DATADIR%%/pics
-@dirrm %%DATADIR%%/mod
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%
