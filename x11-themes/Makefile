@@ -31,6 +31,7 @@
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += fvwm-themes
     SUBDIR += gnome-backgrounds
+    SUBDIR += gnome-icon-theme-symbolic
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-crystal
@@ -49,7 +50,6 @@
     SUBDIR += gnome-icons-slick
     SUBDIR += gnome-icons-snow-apple
     SUBDIR += gnome-icons-stylish
-    SUBDIR += gnome-icon-theme-symbolic
     SUBDIR += gnome-icons-ximian-south
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras

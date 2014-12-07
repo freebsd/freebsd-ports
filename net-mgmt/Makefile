@@ -117,13 +117,13 @@
     SUBDIR += nagios-check_netsnmp
     SUBDIR += nagios-check_ports
     SUBDIR += nagios-check_postgres
-    SUBDIR += nagios-check_relayd_status
     SUBDIR += nagios-check_puppet
+    SUBDIR += nagios-check_relayd_status
     SUBDIR += nagios-check_smartmon
     SUBDIR += nagios-check_tftp
-    SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-geom
     SUBDIR += nagios-openldap-plugins
+    SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-snmp-plugins-extras
