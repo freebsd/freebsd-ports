@@ -58,5 +58,3 @@ share/pixmaps/tuxfighter.png
 %%DATADIR%%/data/winlogoh1.png
 %%DATADIR%%/data/winlogoh2.png
 %%DATADIR%%/data/winlogoh3.png
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
