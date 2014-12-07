@@ -38,12 +38,3 @@ share/gnome/help/grhino/C/figures/toolbar-edit.png
 share/omf/grhino/grhino-C.omf
 share/pixmaps/grhino.png
 share/locale/en_GB/LC_MESSAGES/grhino.mo
-@dirrm share/omf/grhino
-@dirrm share/gnome/help/grhino/C/figures
-@dirrm share/gnome/help/grhino/C
-@dirrm share/gnome/help/grhino
-@dirrm share/grhino-%%VERSION%%/theme/small
-@dirrm share/grhino-%%VERSION%%/theme
-@dirrm share/grhino-%%VERSION%%/book
-@dirrm share/grhino-%%VERSION%%/pattern
-@dirrm share/grhino-%%VERSION%%
