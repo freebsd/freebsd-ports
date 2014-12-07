@@ -11,7 +11,10 @@ DISTFILES=	cblas.tgz
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Reference implementation of the C interface to the legacy Fortran BLAS
 
-LICENSE=	BSD
+LICENSE=	BLAS
+LICENSE_NAME=	BLAS License
+LICENSE_TEXT=	http://www.netlib.org/blas/#_licensing
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 USES=		fortran
 

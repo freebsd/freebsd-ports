@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	xmj@chaot.net
 COMMENT=	Python package for statistical models and design matrices
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE PSFL
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}

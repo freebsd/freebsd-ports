@@ -10,7 +10,7 @@ DISTNAME=	xblas
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Extra Precise Basic Linear Algebra Subroutines (BLAS)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_LDCONFIG=	yes
 

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	cnszym@gmail.com
 COMMENT=	Generalized Dynamic Linear Modeler
 
-LICENSE=	GPLv2 GPLv3 BSD
+LICENSE=	GPLv2 GPLv3 BSD2CLAUSE
 LICENSE_COMB=	dual
 
 USES=	cran:auto-plist
