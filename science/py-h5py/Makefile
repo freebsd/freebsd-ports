@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	xmj@chaot.net
 COMMENT=	General-purpose Python interface to the HDF5 library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		cython:${PORTSDIR}/lang/cython

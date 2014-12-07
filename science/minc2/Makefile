@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medical Imaging NetCDF
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libnetcdf.so:${PORTSDIR}/science/netcdf
