@@ -12,7 +12,7 @@ COMMENT=	Color Transformation Language interpreter
 LICENSE=	AMPAS
 LICENSE_NAME=	AMPAS
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \

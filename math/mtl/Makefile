@@ -12,7 +12,7 @@ COMMENT=	The Matrix Template Library, Version 2
 LICENSE=	MTL
 LICENSE_NAME=	Matrix Template Library License
 LICENSE_FILE=	${WRKSRC}/license.mtl.txt
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFIGURE_ENV=	CXXCPP="${CXXCPP}"
 CXXCPP?=	${CXX} -E

@@ -12,7 +12,7 @@ COMMENT=	Anti-spam / denial of service counter-measure tool
 LICENSE=	CPL
 LICENSE_NAME=	CPL
 LICENSE_TEXT=	http://www.cypherspace.org/CPL/
-LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=	tar:tgz
 

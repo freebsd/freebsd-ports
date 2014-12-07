@@ -16,7 +16,7 @@ LICENSE_TEXT=	"THE BEER-WARE LICENCE": Philipp Wuensche <cryx-ports@h3q.com> \
 		wrote this software. As long as you retain this notice you can \
 		do whatever you want with this stuff. If we meet some day, and \
 		you think this stuff is worth it, you can buy me a beer in return.
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=	tar:bzip2
 

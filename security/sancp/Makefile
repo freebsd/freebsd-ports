@@ -14,7 +14,7 @@ COMMENT=	Network connection profiler
 LICENSE=	QPLv1
 LICENSE_NAME=	Q PUBLIC LICENSE v1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ALL_TARGET=	bsd
 USE_RC_SUBR=	sancp
