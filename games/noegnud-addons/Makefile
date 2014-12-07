@@ -13,7 +13,9 @@ COMMENT=	Addons (tilesets and sound themes) for noeGNUd
 
 USES=		tar:bzip2
 NO_BUILD=	yes
-PLIST=		${WRKDIR}/pkg-plist
+NO_ARCH=	yes
+DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
+PORTDATA=	*
 
 OPTIONS_DEFINE=	ABSURD ITAKURA ITAKURA ABIGABI GEODUCK LAGGED AOKI \
 		TFALCONSEYE NHS SFALCONSEYE
@@ -42,15 +44,10 @@ OPTIONS_DEFAULT=	ABSURD
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MABSURD}
-DISTFILES=
+DISTFILES=	# empty
 .endif
 
-pre-install:
-	@${TOUCH} ${PLIST}
-	@(cd ${WRKDIR} && ${FIND} ${DISTNAME} \! -type d) | ${SORT} | ${SED} -e 's:^:share/:' > ${PLIST}
-	@(cd ${WRKDIR} && ${FIND} ${DISTNAME} -type d) | ${SORT} -r | ${SED} -e 's:^:@unexec rmdir %D/share/:' | ${SED} -e 's:$$: 2>/dev/null || true:' >> ${PLIST}
-
 do-install:
-	${CP} -R ${WRKSRC} ${STAGEDIR}${PREFIX}/share
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
