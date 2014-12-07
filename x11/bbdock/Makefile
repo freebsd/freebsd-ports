@@ -10,7 +10,7 @@ MASTER_SITES=	http://bbdock.nethence.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application launcher for Blackbox-like window manager
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
