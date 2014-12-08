@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	3
+# Define PORTREVISION in ${MASTERDIR}
 PKGNAMESUFFIX=	-tools
 
 COMMENT=	Command line tools from BIND: dig, host, and nslookup
