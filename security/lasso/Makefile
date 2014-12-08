@@ -3,6 +3,7 @@
 
 PORTNAME=	lasso
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://dev.entrouvert.org/releases/lasso/
 
@@ -14,12 +15,13 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-java --with-zlib
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PERL PHP PYTHON DOCS
 
@@ -51,7 +53,6 @@ PLIST_SUB+=	PHP5="@comment "
 CONFIGURE_ARGS+=	--enable-python
 PLIST_SUB+=	PYTHON=""
 USES+=		python
-USE_PYTHON=	yes
 .else
 USES+=		python:build
 CONFIGURE_ARGS+=	--disable-python
