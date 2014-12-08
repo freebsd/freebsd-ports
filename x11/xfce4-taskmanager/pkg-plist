@@ -51,21 +51,3 @@ share/locale/vi/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-taskmanager.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
