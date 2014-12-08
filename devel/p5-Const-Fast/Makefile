@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Sub-Exporter-Progressive>=0.001.007:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive
+		p5-Sub-Exporter-Progressive>=0.001007:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive
 TEST_DEPENDS=	p5-Test-Exception>=0.29:${PORTSDIR}/devel/p5-Test-Exception
 
 USES=		perl5
