@@ -8,9 +8,9 @@ include/org_proj4_Projections.h
 include/proj_api.h
 include/projects.h
 lib/libproj.a
-lib/libproj.la
 lib/libproj.so
-lib/libproj.so.7
+lib/libproj.so.0
+lib/libproj.so.0.7.0
 libdata/pkgconfig/proj.pc
 man/man1/cs2cs.1.gz
 man/man1/geod.1.gz

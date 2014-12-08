@@ -3,7 +3,7 @@
 
 PORTNAME=	generator
 PORTVERSION=	0.35.r4
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.squish.net/generator/cbiere/generator/

@@ -10,8 +10,9 @@ include/curl/multi.h
 include/curl/stdcheaders.h
 include/curl/typecheck-gcc.h
 lib/libcurl.a
-lib/libcurl.la
 lib/libcurl.so
+lib/libcurl.so.4
+lib/libcurl.so.4.3.0
 lib/libcurl.so.7
 libdata/pkgconfig/libcurl.pc
 man/man1/curl-config.1.gz

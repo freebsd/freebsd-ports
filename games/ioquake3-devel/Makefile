@@ -3,7 +3,7 @@
 
 PORTNAME?=	ioquake3-devel
 DISTVERSION?=	GIT${GITREVISION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 MASTER_SITES?=	ftp://deponie.yamagi.org/freebsd/distfiles/ioquake3/ \
 		http://deponie.yamagi.org/freebsd/distfiles/ioquake3/
 EXTRACT_SUFX?=	.tar.xz

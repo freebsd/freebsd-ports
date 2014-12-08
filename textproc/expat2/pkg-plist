@@ -2,9 +2,9 @@ bin/xmlwf
 include/expat.h
 include/expat_external.h
 lib/libexpat.a
-lib/libexpat.la
 lib/libexpat.so
-lib/libexpat.so.%%SHLIB_MAJOR%%
-lib/libexpat.so.%%SHLIB_MAJOR%%.0.0
+lib/libexpat.so.1
+lib/libexpat.so.1.6.0
+lib/libexpat.so.6
 libdata/pkgconfig/expat.pc
 man/man1/xmlwf.1.gz

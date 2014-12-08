@@ -3,7 +3,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	4.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
@@ -17,8 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit
 
-#TODO: Remove :oldver together with VERSION_INFO patching in pre-configure.
-USES=		libtool:oldver
+USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
@@ -102,15 +101,13 @@ post-patch:
 
 pre-configure:
 	${REINPLACE_CMD} \
-		-e 's|^LIBTIFF_VERSION_INFO =.*$$|LIBTIFF_VERSION_INFO = 4:0:0|' \
-		${WRKSRC}/libtiff/Makefile.in
-	${REINPLACE_CMD} \
 		-e 's|tiffgt.1 ||' \
 		${WRKSRC}/man/Makefile.in
 	${REINPLACE_CMD} -e 's|^docfiles|no-docfiles|' \
 		-e 's|man html|man|' ${WRKSRC}/Makefile.in
 
 post-install:
+	${LN} -s libtiff.so.5 ${STAGEDIR}${PREFIX}/lib/libtiff.so.4
 	( cd ${STAGEDIR}${PREFIX}/man/man3 && ${__pmlinks3} )
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/images ${STAGEDIR}${DOCSDIR}/man

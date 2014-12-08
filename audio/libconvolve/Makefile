@@ -3,7 +3,7 @@
 
 PORTNAME=	libconvolve
 PORTVERSION=	0.0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF/heaven/Audio%20Applications/Jack%20Related/jack_convolve/
 

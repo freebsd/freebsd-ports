@@ -3,7 +3,7 @@
 
 PORTNAME=	higan
 PORTVERSION=	0.94
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://byuu.org/files/ \
 		http://www.cyberbotx.com/higan/

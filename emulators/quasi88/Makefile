@@ -3,7 +3,7 @@
 
 PORTNAME=	quasi88
 PORTVERSION=	0.6.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 

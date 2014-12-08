@@ -3,7 +3,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		http://nosignal.fi/download/ \

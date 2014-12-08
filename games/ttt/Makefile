@@ -3,7 +3,7 @@
 
 PORTNAME=	ttt
 PORTVERSION=	2011.04
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/ttt/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

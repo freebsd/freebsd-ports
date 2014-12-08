@@ -3,9 +3,9 @@ bin/wvgain
 bin/wvunpack
 include/wavpack/wavpack.h
 lib/libwavpack.a
-lib/libwavpack.la
 lib/libwavpack.so
-lib/libwavpack.so.2
+lib/libwavpack.so.1
+lib/libwavpack.so.1.1.4
 libdata/pkgconfig/wavpack.pc
 man/man1/wavpack.1.gz
 man/man1/wvgain.1.gz

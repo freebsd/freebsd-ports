@@ -3,7 +3,7 @@
 
 PORTNAME=	entombed
 PORTVERSION=	2007.07.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/entombed/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons

@@ -3,7 +3,7 @@
 
 PORTNAME=	libart_lgpl
 PORTVERSION=	2.3.21
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
@@ -13,11 +13,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for high-performance 2D graphics
 
+USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
-USES=		libtool:oldver pathfix tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	libart-[0-9]*
+
+post-stage:
+	${LN} -s libart_lgpl_2.so.2 ${STAGEDIR}${PREFIX}/lib/libart_lgpl_2.so.5
 
 .include <bsd.port.mk>

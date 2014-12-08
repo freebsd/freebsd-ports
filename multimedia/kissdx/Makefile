@@ -3,7 +3,7 @@
 
 PORTNAME=	kissdx
 PORTVERSION=	0.13.10a
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://paragi.dk/kiss/
 

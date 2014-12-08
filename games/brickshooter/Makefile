@@ -3,7 +3,7 @@
 
 PORTNAME=	brickshooter
 PORTVERSION=	0.04
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://bilious.homelinux.org/~paxed/brickshooter/ \
 		http://mirror.amdmi3.ru/distfiles/

@@ -3,7 +3,7 @@
 
 PORTNAME=	moonlander
 PORTVERSION=	1.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	DEBIAN/pool/main/m/moon-lander
 DISTNAME=	moon-lander_${PORTVERSION}.orig

@@ -13,11 +13,10 @@ include/tomoe/gtk/tomoe-reading-search.h
 include/tomoe/gtk/tomoe-scrollable.h
 include/tomoe/gtk/tomoe-window.h
 lib/libtomoe-gtk.a
-lib/libtomoe-gtk.la
 lib/libtomoe-gtk.so
-lib/libtomoe-gtk.so.1
+lib/libtomoe-gtk.so.0
+lib/libtomoe-gtk.so.0.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gtk-2.0/tomoegtk.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gtk-2.0/tomoegtk.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gtk-2.0/tomoegtk.so
 libdata/pkgconfig/tomoe-gtk.pc
 share/tomoe-gtk/tomoe-data-view.png

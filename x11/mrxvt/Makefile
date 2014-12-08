@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tabbed version of rxvt
 
-LIB_DEPENDS=	libjpeg.so.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
 CONFLICTS=	mrxvt-0.5.*

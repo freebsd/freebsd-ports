@@ -3,7 +3,7 @@
 
 PORTNAME=	jackit
 PORTVERSION=	0.124.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}

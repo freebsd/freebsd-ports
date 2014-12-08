@@ -3,6 +3,7 @@
 
 PORTNAME=	scummvm-tools
 DISTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/scummvm/${PORTNAME}/${DISTVERSION}
 

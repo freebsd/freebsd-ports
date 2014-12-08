@@ -2,6 +2,7 @@
 
 PORTNAME=	simutrans
 DISTVERSION=	120-0-1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION} \
 		SF/simutrans/pak64/${PAK64_SUBDIR}:pak64 \

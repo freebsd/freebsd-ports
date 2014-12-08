@@ -15,13 +15,13 @@ include/FLAC/ordinals.h
 include/FLAC/stream_decoder.h
 include/FLAC/stream_encoder.h
 lib/libFLAC++.a
-lib/libFLAC++.la
 lib/libFLAC++.so
-lib/libFLAC++.so.9
+lib/libFLAC++.so.6
+lib/libFLAC++.so.6.3.0
 lib/libFLAC.a
-lib/libFLAC.la
 lib/libFLAC.so
-lib/libFLAC.so.11
+lib/libFLAC.so.8
+lib/libFLAC.so.8.3.0
 libdata/pkgconfig/flac++.pc
 libdata/pkgconfig/flac.pc
 man/man1/flac.1.gz

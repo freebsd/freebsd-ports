@@ -2,13 +2,10 @@
 @sample(,bacula,) %%ETCDIR%%/bacula-dir.conf.sample
 @sample(,bacula,) %%ETCDIR%%/bacula-sd.conf.sample
 lib/libbaccats-%%LIB_VERSION%%.so
-lib/libbaccats.la
 lib/libbaccats.so
 lib/libbaccats-%%DBTYPE%%-%%LIB_VERSION%%.so
-lib/libbaccats-%%DBTYPE%%.la
 lib/libbaccats-%%DBTYPE%%.so
 lib/libbacsql-%%LIB_VERSION%%.so
-lib/libbacsql.la
 lib/libbacsql.so
 sbin/bacula
 sbin/bacula-dir

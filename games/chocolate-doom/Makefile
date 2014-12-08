@@ -2,6 +2,7 @@
 
 PORTNAME=	chocolate-doom
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.chocolate-doom.org/downloads/${PORTVERSION}/
 

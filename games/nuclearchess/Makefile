@@ -3,7 +3,7 @@
 
 PORTNAME=	nuclearchess
 PORTVERSION=	1.0.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://www.linux-games.com/nuclearchess/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

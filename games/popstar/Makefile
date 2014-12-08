@@ -3,7 +3,7 @@
 
 PORTNAME=	popstar
 PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/popstar/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
