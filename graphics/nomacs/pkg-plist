@@ -1,5 +1,4 @@
 bin/nomacs
-man/man1/nomacs.1.gz
 share/applications/nomacs.desktop
 %%DATADIR%%/translations/nomacs_als.qm
 %%DATADIR%%/translations/nomacs_az.qm
