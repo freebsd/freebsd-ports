@@ -3,7 +3,7 @@
 
 PORTNAME=	proj
 PORTVERSION=	4.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/proj/ \
 		http://download.osgeo.org/proj/
@@ -18,15 +18,11 @@ CONFLICTS=	proj4-[0-9]*
 DATUM_GRID_FILES=	proj-datumgrid-1.5.zip
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool:oldver zip:infozip
+USES=		gmake libtool pathfix zip:infozip
 USE_LDCONFIG=	yes
 
 post-extract:
 	@${UNZIP_CMD} -q ${DISTDIR}/${DATUM_GRID_FILES} -d ${WRKSRC}/nad
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/projects.h ${STAGEDIR}${PREFIX}/include

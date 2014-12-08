@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_mono
 PORTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -17,11 +18,11 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		xsp:${PORTSDIR}/www/xsp
 
-USES=		libtool:oldver mono pkgconfig
 GNU_CONFIGURE=	yes
-USE_APACHE=	22+
-CONFIGURE_ARGS=	--man=${PREFIX}/man
+CONFIGURE_ARGS=	--disable-static --man=${PREFIX}/man
 INSTALL_TARGET=	install
+USES=		libtool mono pkgconfig
+USE_APACHE=	22+
 
 .include <bsd.port.pre.mk>
 
@@ -36,5 +37,7 @@ PLIST_SUB+=	MOD_MONOCONFDIR=${MOD_MONOCONFDIR}
 post-patch:
 	@${REINPLACE_CMD} 's|%%MOD_MONOCONFDIR%%|${PREFIX}/${MOD_MONOCONFDIR}|g' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} '/^mod_mono_la_LDFLAGS =/s/$$/ -avoid-version/' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>

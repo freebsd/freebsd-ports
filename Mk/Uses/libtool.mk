@@ -34,21 +34,7 @@ patch-libtool:
 		-e '/link_all_deplibs[0-9A-Z_]*=/s/=unknown/=no/'	\
 		-e '/objformat=/s/echo aout/echo elf/'			\
 		-e "/freebsd-elf\\*)/,/;;/ {				\
-		    /deplibs_check_method=/s/=.*/=pass_all/; }"		\
-		$${i} && ${TOUCH} -mr $${i}.bak $${i}; done
-
-	@${FIND} ${WRKDIR} -type f -name ltmain.sh |			\
-		${XARGS} ${REINPLACE_CMD}				\
-		-e '/if.*linkmode.*prog.*mode.*!= relink/s/if.*;/if :;/'\
-		-e '/if.*prog.*linkmode.*relink !=.*mode/s/if.*;/if :;/'\
-		-e '/if.*linkmode.*prog.*mode.* = relink/s/||.*;/;/'	\
-		-e '/if.*prog.*linkmode.*relink = .*mode/s/||.*;/;/'	\
-		-e 's/|-p|-pg|/|-B*|-p|-pg|/'
-
-.if ! ${libtool_ARGS:Moldver}
-	@${FIND} ${WRKDIR} \( -name configure -or -name ltconfig \)	\
-		-type f | while read i; do ${SED} -i.bak		\
-		-e "/freebsd-elf\\*)/,/;;/ {				\
+		    /deplibs_check_method=/s/=.*/=pass_all/;		\
 		    /library_names_spec=.*\\.so/			\
 		    s/=.*/='\$$libname\$$release.so\$$versuffix		\
 			\$$libname\$$release.so\$$major \$$libname.so'	\
@@ -66,11 +52,15 @@ patch-libtool:
 		    s/darwin|linux|/darwin|freebsd-elf|linux|/'		\
 		-e '/freebsd-elf)/,+2 {					\
 		    /major=/s/=.*/=.$$(($$current - $$age))/;		\
-		    /versuffix=/s/=.*/="$$major.$$age.$$revision"/; }'
-.endif
+		    /versuffix=/s/=.*/="$$major.$$age.$$revision"/; }'	\
+		-e '/if.*linkmode.*prog.*mode.*!= relink/s/if.*;/if :;/'\
+		-e '/if.*prog.*linkmode.*relink !=.*mode/s/if.*;/if :;/'\
+		-e '/if.*linkmode.*prog.*mode.* = relink/s/||.*;/;/'	\
+		-e '/if.*prog.*linkmode.*relink = .*mode/s/||.*;/;/'	\
+		-e 's/|-p|-pg|/|-B*|-p|-pg|/'
 
 patch-lafiles:
-.if ${libtool_ARGS:Mkeepla} || ${libtool_ARGS:Moldver}
+.if ${libtool_ARGS:Mkeepla}
 	@${FIND} ${STAGEDIR} -type f -name '*.la' |			\
 		${XARGS} ${SED} -i '' -e "/dependency_libs=/s/=.*/=''/"
 .else

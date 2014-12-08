@@ -3,7 +3,7 @@
 
 PORTNAME=	explosions
 PORTVERSION=	0.2005.07.31
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

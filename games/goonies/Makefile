@@ -3,7 +3,7 @@
 
 PORTNAME=	goonies
 PORTVERSION=	1.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://goonies.jorito.net/download/ \
 		http://mirror.amdmi3.ru/distfiles/

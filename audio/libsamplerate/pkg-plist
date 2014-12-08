@@ -1,9 +1,9 @@
 %%PORTEXAMPLES%%bin/sndfile-resample
 include/samplerate.h
 lib/libsamplerate.a
-lib/libsamplerate.la
 lib/libsamplerate.so
-lib/libsamplerate.so.1
+lib/libsamplerate.so.0
+lib/libsamplerate.so.0.1.8
 libdata/pkgconfig/samplerate.pc
 %%PORTDOCS%%%%DOCSDIR%%/SRC.css
 %%PORTDOCS%%%%DOCSDIR%%/SRC.png

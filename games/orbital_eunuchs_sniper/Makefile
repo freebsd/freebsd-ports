@@ -3,7 +3,7 @@
 
 PORTNAME=	orbital_eunuchs_sniper
 PORTVERSION=	1.30
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://offload2.icculus.org:9090/oes/ \
 		http://offload1.icculus.org:9090/oes/

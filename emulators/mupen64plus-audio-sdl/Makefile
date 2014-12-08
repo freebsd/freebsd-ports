@@ -1,6 +1,7 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	3
 PKGNAMESUFFIX=	-audio-sdl
 
 COMMENT=	Mupen64plus audio sdl plugin

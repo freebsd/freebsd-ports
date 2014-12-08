@@ -3,7 +3,7 @@
 
 PORTNAME=	xneur
 PORTVERSION=	0.15.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 		http://mirror.amdmi3.ru/distfiles/

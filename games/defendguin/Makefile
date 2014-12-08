@@ -3,7 +3,7 @@
 
 PORTNAME=	defendguin
 PORTVERSION=	0.0.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/defendguin/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

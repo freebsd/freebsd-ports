@@ -27,13 +27,14 @@ include/tiffio.h
 include/tiffio.hxx
 include/tiffvers.h
 lib/libtiff.a
-lib/libtiff.la
 lib/libtiff.so
 lib/libtiff.so.4
+lib/libtiff.so.5
+lib/libtiff.so.5.2.0
 lib/libtiffxx.a
-lib/libtiffxx.la
 lib/libtiffxx.so
-lib/libtiffxx.so.4
+lib/libtiffxx.so.5
+lib/libtiffxx.so.5.2.0
 libdata/pkgconfig/libtiff-4.pc
 man/man1/bmp2tiff.1.gz
 man/man1/fax2ps.1.gz

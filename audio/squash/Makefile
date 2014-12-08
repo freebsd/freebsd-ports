@@ -1,12 +1,11 @@
 # Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
 
-PORTNAME=		squash
-PORTVERSION=		1.0
-PORTREVISION=		13
-CATEGORIES=		audio
-MASTER_SITES=		${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+PORTNAME=	squash
+PORTVERSION=	1.0
+PORTREVISION=	14
+CATEGORIES=	audio
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Learning console-based MP3/OGG player

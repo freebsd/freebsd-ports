@@ -8,4 +8,3 @@
 %%HIPHOP_DIR%%/ext/include/curl/stdcheaders.h
 %%HIPHOP_DIR%%/ext/include/curl/typecheck-gcc.h
 %%HIPHOP_DIR%%/ext/lib/libcurl.a
-%%HIPHOP_DIR%%/ext/lib/libcurl.la

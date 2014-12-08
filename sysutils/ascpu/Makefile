@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/ascpu/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	CPU statistics monitor utility for XFree86
 
-LIB_DEPENDS=	libjpeg.so.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

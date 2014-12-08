@@ -3,7 +3,7 @@
 
 PORTNAME=	liblo
 PORTVERSION=	0.28
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -12,12 +12,10 @@ COMMENT=	Lightweight Open Sound Control implementation
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool:oldver pathfix
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix
 USE_LDCONFIG=	yes
-
-SHLIB_VER=	9
-PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"
 
 PORTDOCS=	*
 PORTEXAMPLES=	example_client example_server \
@@ -37,7 +35,6 @@ post-patch:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblo.so.${SHLIB_VER}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS ChangeLog NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}

@@ -3,7 +3,7 @@
 
 PORTNAME=	bubble-chains
 PORTVERSION=	0.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://bubble-chains.sintegrial.com/files/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -29,7 +29,7 @@ USE_GL=		glut glew glu
 USE_XORG=	xrandr
 USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
 		corelib svg xml opengl network
-LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lSDL-1.2
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lSDL
 
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS

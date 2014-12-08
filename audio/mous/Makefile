@@ -3,7 +3,7 @@
 
 PORTNAME=	mous
 PORTVERSION=	1.1a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/bsdelf/mous/
 

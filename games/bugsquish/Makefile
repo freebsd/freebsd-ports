@@ -3,7 +3,7 @@
 
 PORTNAME=	bugsquish
 PORTVERSION=	0.0.6
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/bugsquish/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:music

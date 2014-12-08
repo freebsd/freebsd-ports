@@ -13,7 +13,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Very simplistic image viewer that loads JPEG images
 
 BUILD_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
-LIB_DEPENDS=	libjpeg.so.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

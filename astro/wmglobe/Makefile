@@ -3,7 +3,7 @@
 
 PORTNAME=	wmglobe
 PORTVERSION=	1.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	astro windowmaker geography
 MASTER_SITES=	http://hamete.org/static/wmg/
 

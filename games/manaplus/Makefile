@@ -3,6 +3,7 @@
 
 PORTNAME=	manaplus
 PORTVERSION=	1.4.9.27
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 

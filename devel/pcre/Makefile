@@ -3,7 +3,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.35
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
@@ -18,7 +18,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 GNU_CONFIGURE=	yes
-USES=		libtool:oldver pathfix tar:bzip2
+USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 		--enable-pcre8 --enable-pcre16 --enable-pcre32
@@ -105,6 +105,9 @@ CORELIMIT?=	/usr/bin/limits -Sc 0
 .endif
 TESTLOGS?=	RunGrepTest RunTest pcre_jit_test pcre_scanner_unittest \
 		pcre_stringpiece_unittest pcrecpp_unittest
+
+post-stage:
+	${LN} -s libpcre.so.1 ${STAGEDIR}${PREFIX}/lib/libpcre.so.3
 
 check regression-test test: build
 	@cd ${WRKSRC} ; \

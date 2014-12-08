@@ -3,7 +3,7 @@
 
 PORTNAME=	kuklomenos
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/
 

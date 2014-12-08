@@ -3,6 +3,7 @@
 
 PORTNAME=	liblastfm
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org

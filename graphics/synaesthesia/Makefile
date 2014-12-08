@@ -3,7 +3,7 @@
 
 PORTNAME=	synaesthesia
 PORTVERSION=	2.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics audio
 MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/
 

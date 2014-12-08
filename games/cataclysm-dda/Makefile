@@ -3,6 +3,7 @@
 
 PORTNAME=	cataclysm-dda
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	wulf@cicgroup.ru

@@ -3,6 +3,7 @@
 
 PORTNAME=	jfsw
 PORTVERSION=	20131019
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://github.com/jonof/${PORTNAME}/archive/${JFSW_COMMIT}.tar.gz?dummy=/ \
 		http://github.com/jonof/jfbuild/archive/${JFBUILD_COMMIT}.tar.gz?dummy=/ \

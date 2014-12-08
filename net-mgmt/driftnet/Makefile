@@ -3,7 +3,7 @@
 
 PORTNAME=	driftnet
 PORTVERSION=	0.1.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ex-parrot.com/~chris/driftnet/ \
 		http://www.vanheusden.com/mirrors/

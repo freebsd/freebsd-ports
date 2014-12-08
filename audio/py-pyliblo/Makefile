@@ -3,6 +3,7 @@
 
 PORTNAME=	pyliblo
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://das.nasophon.de/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

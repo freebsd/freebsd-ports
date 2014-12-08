@@ -3,7 +3,7 @@
 
 PORTNAME=	m17n-lib
 PORTVERSION=	1.6.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel textproc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	m17n
@@ -22,7 +22,7 @@ RUN_DEPENDS=	m17n-db>=1.6.4:${PORTSDIR}/devel/m17n-db
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		pkgconfig libtool:oldver
+USES=		libtool pkgconfig
 USE_XORG=	ice sm x11 xaw xft xt
 USE_GNOME=	libxml2
 USE_AUTOTOOLS=	autoconf

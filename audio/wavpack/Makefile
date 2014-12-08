@@ -3,7 +3,7 @@
 
 PORTNAME=	wavpack
 PORTVERSION=	4.60.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.wavpack.com/
 
@@ -13,11 +13,11 @@ COMMENT=	Audio codec for lossless, lossy, and hybrid compression
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		tar:bzip2 pathfix pkgconfig iconv libtool:oldver
+USES=		iconv libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .if ${MACHINE_CPU:Mmmx}
