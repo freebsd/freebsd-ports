@@ -1,7 +1,6 @@
 %%DOCSDIR%%/en
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/building-products
-@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/imagelib/callouts
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/imagelib
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide
