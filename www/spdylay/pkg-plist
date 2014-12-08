@@ -10,4 +10,3 @@ lib/libspdylay.so
 lib/libspdylay.so.7
 lib/libspdylay.so.7.1.1
 libdata/pkgconfig/libspdylay.pc
-@dirrm include/spdylay
