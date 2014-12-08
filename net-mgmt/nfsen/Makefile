@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Web based frontend to nfdump netflow collector
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
