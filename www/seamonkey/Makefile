@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.30
+DISTVERSION=	2.31
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
@@ -13,7 +13,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
 BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
-		nss>=3.16:${PORTSDIR}/security/nss \
+		nss>=3.17.2:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
 		cairo>=1.12.16_1,2:${PORTSDIR}/graphics/cairo \
 		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
 		opus>=1.1:${PORTSDIR}/audio/opus \
 		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
-		sqlite3>=3.8.4.2:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.8.6:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		zip:${PORTSDIR}/archivers/zip \
@@ -31,17 +31,12 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.7.2
-L_VERSION=	3.5
+L_VERSION=	3.6
 
 SSP_UNSAFE=	yes
-USE_AUTOTOOLS=	autoconf213:env
-OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
-WANT_GNOME=	yes
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
-WANT_PERL=	yes
-ALL_TARGET=	default
 USE_GL=		gl
 USES=		dos2unix tar:bzip2
 DOS2UNIX_FILES=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
@@ -57,17 +52,12 @@ MOZ_PKGCONFIG_FILES=
 NOT_FOR_ARCHS=	ia64
 
 OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
-OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
+OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL LIGHTNING MAILNEWS
 
 CHATZILLA_DESC?=Chatzilla IRC module
 COMPOSER_DESC?=	HTML Composer module
 LDAP_DESC?=	LDAP support for Mailnews
 MAILNEWS_DESC?=	Mail and News modules
-
-# non-client.mk objdir build broken after bug 846540
-.undef GNU_CONFIGURE
-ALL_TARGET=	build
-MAKEFILE=	${WRKSRC}/client.mk
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.options.mk>
@@ -82,23 +72,6 @@ WRKSRC=		${WRKDIR}/comm-release
 MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
-
-# avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
-# To be removed when 9.2R goes EOL. http://llvm.org/PR15840
-.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION:M3[23]}
-. if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
-		a ${CHOSEN_COMPILER_TYPE} bug: unset the option or \
-		use FAVORITE_COMPILER=gcc in Makefile.local/make.conf
-# apply workaround only for -O2 or greater
-. elif ${CXXFLAGS:M-O*} && ! ${CXXFLAGS:M-O[01]}
-.  if ${MACHINE_CPU:Msse2}
-CXXFLAGS+=	-msse2
-.  else
-CXXFLAGS+=	-O1
-.  endif
-. endif
-.endif
 
 .if ${PORT_OPTIONS:MALSA}
 RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
@@ -115,6 +88,8 @@ MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .if ! ${PORT_OPTIONS:MLDAP}
 MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
 .else
+BROKEN=		XPCOMGlueLoad error for file ${LOCALBASE}/lib/${MOZILLA}/libxul.so: \
+		Cannot open "../../ldap/sdks/c-sdk/ldap/libraries/libldap/libldap60.so"
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews
 .endif
 .if ${PORT_OPTIONS:MENIGMAIL}
@@ -140,7 +115,7 @@ MOZ_OPTIONS+=	--disable-composer
 MOZ_OPTIONS+=	--enable-calendar
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=calendar
 LIGHTNING_DIR=	share/lightning
-XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning-${L_VERSION}.en-US.${OPSYS:tl}${OSREL}-${ARCH:S/amd64/x86_64/}.xpi
+XPI_FILE=	${MOZ_OBJDIR}/dist/xpi-stage/lightning-${L_VERSION}.en-US.${OPSYS:tl}${OSREL}-${ARCH:S/amd64/x86_64/}.xpi
 XPI_ORIG_ID=	{e2fda1a4-762b-4020-b5ad-a41df1933103}
 XPI_ID=		lightning@seamonkey.mozilla.org
 .else
@@ -159,7 +134,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/suite/app/nsSuiteApp.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
-		${WRKSRC}/mozilla/modules/libpref/src/init/all.js
+		${WRKSRC}/mozilla/modules/libpref/init/all.js
 	@${SED} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		< ${FILESDIR}/seamonkey.desktop.in > \
 		${WRKDIR}/${MOZILLA}.desktop
@@ -184,7 +159,7 @@ pre-configure:
 .if ${PORT_OPTIONS:MMAILNEWS} && ${PORT_OPTIONS:MENIGMAIL}
 post-configure:
 	cd ${WRKSRC}/mailnews/extensions/enigmail/ && \
-		${SETENV} ${MAKE_ENV} ./configure
+		${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure
 .endif
 
 .if ${PORT_OPTIONS:MMAILNEWS} && ${PORT_OPTIONS:MENIGMAIL}
