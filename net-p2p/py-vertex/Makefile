@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-eps
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsilon \
 		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 USES=		python twisted
 USE_PYTHON=	distutils autoplist
