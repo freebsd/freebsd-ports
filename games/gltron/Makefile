@@ -11,6 +11,9 @@ EXTRACT_SUFX=	-source.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D worm game for two players for X Window System
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		gmake

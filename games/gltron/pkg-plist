@@ -52,10 +52,3 @@ bin/gltron
 %%DATADIR%%/scripts/menu_functions.lua
 %%DATADIR%%/scripts/save.lua
 %%DATADIR%%/scripts/video.lua
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/art/default
-@dirrm %%DATADIR%%/art
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
