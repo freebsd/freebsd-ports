@@ -1,5 +1,5 @@
---- cmake/Unix.cmake.orig	2014-11-11 12:00:55.000000000 +0000
-+++ cmake/Unix.cmake	2014-12-05 08:24:29.222613898 +0000
+--- cmake/Unix.cmake
++++ cmake/Unix.cmake
 @@ -34,17 +34,15 @@
  endif(NOT EXIV2_FOUND)
  
@@ -52,3 +52,12 @@
  #search for quazip
  unset(QUAZIP_SOURCE_DIRECTORY CACHE)
  unset(QUAZIP_INCLUDE_DIRECTORY CACHE)
+@@ -128,6 +129,8 @@
+ SET(WEBP_INCLUDE_DIR "")
+ SET(WEBP_SOURCE "")
+ if(ENABLE_WEBP)
++	find_package(Threads REQUIRED)
++
+ 	add_definitions(-DNDEBUG -DWEBP_USE_THREAD)
+ 
+ 	file(GLOB WEBP_DEC_SRCS
