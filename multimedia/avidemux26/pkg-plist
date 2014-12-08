@@ -1,5 +1,5 @@
 lib/libADM6avcodec.so.54
-lib/libADM6avformat.so.54
+lib/libADM7avformat.so.54
 lib/libADM6avutil.so.52
 lib/libADM6postproc.so.52
 lib/libADM6swscale.so.2
@@ -60,10 +60,3 @@ include/avidemux/2.6/libswscale/swscale.h
 include/avidemux/2.6/libswscale/version.h
 include/avidemux/2.6/ADM_coreConfig.h
 include/avidemux/2.6/ADM_coreConfig.cmake
-@dirrm include/avidemux/2.6/libavutil
-@dirrm include/avidemux/2.6/libavcodec
-@dirrm include/avidemux/2.6/libavformat
-@dirrm include/avidemux/2.6/libpostproc
-@dirrm include/avidemux/2.6/libswscale
-@dirrm include/avidemux/2.6
-@dirrm include/avidemux
