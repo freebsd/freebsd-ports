@@ -1,0 +1,2 @@
+pref("media.gmp-gmpopenh264.path", "%%WEBPLUGIN_DIR%%");
+pref("media.gmp-gmpopenh264.version", "%%PORTVERSION%%");
