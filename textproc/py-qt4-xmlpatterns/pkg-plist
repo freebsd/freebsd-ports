@@ -15,5 +15,3 @@ share/py-sip/QtXmlPatterns/qxmlschema.sip
 share/py-sip/QtXmlPatterns/qxmlschemavalidator.sip
 share/py-sip/QtXmlPatterns/qxmlserializer.sip
 %%API%%share/qt4/qsci/api/python/QtXmlPatterns.api
-@dirrm share/py-sip/QtXmlPatterns
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

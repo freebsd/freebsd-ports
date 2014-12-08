@@ -38,8 +38,3 @@ lib/elasticsearch/sigar/%%SIGAR_LIBNAME%%
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.textile
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%
-@dirrmtry etc/elasticsearch
-@dirrm lib/elasticsearch/sigar
-@dirrm lib/elasticsearch

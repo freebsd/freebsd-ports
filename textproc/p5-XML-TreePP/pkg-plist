@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/XML::TreePP.3.gz
 %%SITE_PERL%%/XML/TreePP.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/envxml.cgi
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

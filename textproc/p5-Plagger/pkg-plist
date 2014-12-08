@@ -651,38 +651,3 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Widget-Simple/mm.yaml
 %%DATADIR%%/assets/plugins/Widget-Simple/reddit.yaml
 %%DATADIR%%/assets/plugins/Widget-Simple/technorati.yaml
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/assets/plugins/Widget-Simple
-@dirrm %%DATADIR%%/assets/plugins/Subscription-Planet
-@dirrm %%DATADIR%%/assets/plugins/Search-Spotlight
-@dirrm %%DATADIR%%/assets/plugins/Search-Namazu
-@dirrm %%DATADIR%%/assets/plugins/Publish-Takahashi
-@dirrm %%DATADIR%%/assets/plugins/Publish-Planet/sixapart-std/template
-@dirrm %%DATADIR%%/assets/plugins/Publish-Planet/sixapart-std
-@dirrm %%DATADIR%%/assets/plugins/Publish-Planet/default/template
-@dirrm %%DATADIR%%/assets/plugins/Publish-Planet/default/static/css
-@dirrm %%DATADIR%%/assets/plugins/Publish-Planet/default/static
-@dirrm %%DATADIR%%/assets/plugins/Publish-Planet/default
-@dirrm %%DATADIR%%/assets/plugins/Publish-Planet
-@dirrm %%DATADIR%%/assets/plugins/Publish-PalmDoc
-@dirrm %%DATADIR%%/assets/plugins/Publish-PSP
-@dirrm %%DATADIR%%/assets/plugins/Publish-OPML
-@dirrm %%DATADIR%%/assets/plugins/Publish-MTWidget
-@dirrm %%DATADIR%%/assets/plugins/Publish-MT
-@dirrm %%DATADIR%%/assets/plugins/Publish-JavaScript
-@dirrm %%DATADIR%%/assets/plugins/Publish-Gmail
-@dirrm %%DATADIR%%/assets/plugins/Publish-FOAFRoll
-@dirrm %%DATADIR%%/assets/plugins/Publish-CHTML
-@dirrm %%DATADIR%%/assets/plugins/Notify-Tiarra
-@dirrm %%DATADIR%%/assets/plugins/Notify-SSTP
-@dirrm %%DATADIR%%/assets/plugins/Notify-NetSend
-@dirrm %%DATADIR%%/assets/plugins/Notify-IRC
-@dirrm %%DATADIR%%/assets/plugins/Filter-TruePermalink
-@dirrm %%DATADIR%%/assets/plugins/Filter-StripRSSAd
-@dirrm %%DATADIR%%/assets/plugins/Filter-FindEnclosures
-@dirrm %%DATADIR%%/assets/plugins/Filter-EntryFullText
-@dirrm %%DATADIR%%/assets/plugins/CustomFeed-Script
-@dirrm %%DATADIR%%/assets/plugins
-@dirrm %%DATADIR%%/assets/common
-@dirrm %%DATADIR%%/assets
-@dirrm %%DATADIR%%

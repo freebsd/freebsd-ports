@@ -20,5 +20,3 @@
 %%JAVAJARDIR%%/solrj-lib/optional/httpclient-4.1.3.jar
 %%JAVAJARDIR%%/solrj-lib/optional/httpcore-4.1.4.jar
 %%JAVAJARDIR%%/solrj-lib/optional/httpmime-4.1.3.jar
-@dirrmtry %%JAVAJARDIR%%/solrj-lib/optional
-@dirrmtry %%JAVAJARDIR%%/solrj-lib

@@ -149,7 +149,3 @@ man/man1/chartex.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/write_handler3.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/write_handler4.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/write_to_scalar.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tpj_images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -82,14 +82,3 @@ www/glpi/plugins/datainjection/plugin_datainjection.includes.php
 www/glpi/plugins/datainjection/setup.php
 @group
 @owner
-@dirrm www/glpi/plugins/datainjection/pics
-@dirrm www/glpi/plugins/datainjection/locales
-@dirrm www/glpi/plugins/datainjection/javascript
-@dirrm www/glpi/plugins/datainjection/inc
-@dirrm www/glpi/plugins/datainjection/front
-@dirrm www/glpi/plugins/datainjection/fonts
-@dirrm www/glpi/plugins/datainjection/docs
-@dirrm www/glpi/plugins/datainjection/css
-@dirrm www/glpi/plugins/datainjection/config
-@dirrm www/glpi/plugins/datainjection/ajax
-@dirrm www/glpi/plugins/datainjection
