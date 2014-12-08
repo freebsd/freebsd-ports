@@ -21,12 +21,6 @@ share/ADM_scripts/auto/Optical Disc/Video CD.js
 share/ADM_scripts/auto/Optical Disc/Super Video CD.js
 share/ADM_scripts/auto/Optical Disc/DVD.js
 share/ADM_scripts/auto/Apple iPod.js
-@dirrm share/ADM_addons/avsfilter
-@dirrm share/ADM_addons
-@dirrm share/ADM_scripts/auto/Optical Disc
-@dirrm share/ADM_scripts/auto
-@dirrm share/ADM_scripts/video
-@dirrm share/ADM_scripts
 %%GTK%%bin/avidemux2_gtk
 %%QT4%%bin/avidemux2_qt4
 %%GTK%%lib/libADM_UIGtk.so
@@ -51,8 +45,6 @@ share/ADM_scripts/auto/Apple iPod.js
 %%NLS%%share/locale/tr/LC_MESSAGES/avidemux.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/avidemux.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/avidemux.mo
-%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@latin
 %%QT_NLS%%share/avidemux/i18n/avidemux_ca.qm
 %%QT_NLS%%share/avidemux/i18n/avidemux_cs.qm
 %%QT_NLS%%share/avidemux/i18n/avidemux_de.qm
@@ -74,5 +66,3 @@ share/ADM_scripts/auto/Apple iPod.js
 %%QT_NLS%%share/avidemux/i18n/qt_fr.qm
 %%QT_NLS%%share/avidemux/i18n/qt_it.qm
 %%QT_NLS%%share/avidemux/i18n/qt_zh_TW.qm
-%%QT_NLS%%@dirrm share/avidemux/i18n
-%%QT_NLS%%@dirrm share/avidemux
