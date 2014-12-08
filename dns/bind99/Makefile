@@ -2,7 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	99
@@ -14,7 +14,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.6
+ISCVERSION=	9.9.6-P1
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -109,7 +109,7 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
-RPZ_PATCH_PATCHFILES=	9.9.6-rpz2+rl.14038.05.patch:vix
+RPZ_PATCH_PATCHFILES=	9.9.6-P1-rpz2+rl.14038.05.patch:vix
 RPZ_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix ${MASTER_SITE_LOCAL:S/%SUBDIR%/mat\/bind/:S/$/:vix/}
 
 RRL_CONFIGURE_ENABLE=	rrl
