@@ -53,7 +53,6 @@ lib/%%APP_NAME%%/chrome/icons/default/seamonkey.png
 lib/%%APP_NAME%%/components/components.manifest
 lib/%%APP_NAME%%/components/libdbusservice.so
 lib/%%APP_NAME%%/components/libmozgnome.so
-lib/%%APP_NAME%%/components/libnkgnomevfs.so
 lib/%%APP_NAME%%/components/libsuite.so
 lib/%%APP_NAME%%/crashreporter
 lib/%%APP_NAME%%/crashreporter-override.ini
@@ -63,7 +62,6 @@ lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
 lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
 lib/%%APP_NAME%%/defaults/profile/chrome/userChrome-example.css
 lib/%%APP_NAME%%/defaults/profile/chrome/userContent-example.css
-lib/%%APP_NAME%%/defaults/profile/localstore.rdf
 lib/%%APP_NAME%%/defaults/profile/mimeTypes.rdf
 lib/%%APP_NAME%%/defaults/profile/panels.rdf
 lib/%%APP_NAME%%/dependentlibs.list
@@ -90,6 +88,7 @@ lib/%%APP_NAME%%/libfreebl3.so
 lib/%%APP_NAME%%/libldap60.so
 lib/%%APP_NAME%%/libldif60.so
 lib/%%APP_NAME%%/libmozalloc.so
+lib/%%APP_NAME%%/libmozsandbox.so
 lib/%%APP_NAME%%/libmozsqlite3.so
 lib/%%APP_NAME%%/libnspr4.so
 lib/%%APP_NAME%%/libnss3.so

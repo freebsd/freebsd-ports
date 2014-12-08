@@ -235,12 +235,12 @@ index a962553..1f780f4 100644
    assert(p);
  
    pthread_mutex_unlock(&stm->mutex);
-@@ -313,10 +360,10 @@ alsa_refill_stream(cubeb_stream * stm)
-     return ERROR;
-   }
-   if (got > 0) {
--    snd_pcm_sframes_t wrote = snd_pcm_writei(stm->pcm, p, got);
-+    snd_pcm_sframes_t wrote = WRAP(snd_pcm_writei)(stm->pcm, p, got);
+@@ -327,10 +374,10 @@ alsa_refill_stream(cubeb_stream * stm)
+         b[i] *= stm->volume;
+       }
+     }
+-    wrote = snd_pcm_writei(stm->pcm, p, got);
++    wrote = WRAP(snd_pcm_writei)(stm->pcm, p, got);
      if (wrote == -EPIPE) {
 -      snd_pcm_recover(stm->pcm, wrote, 1);
 -      wrote = snd_pcm_writei(stm->pcm, p, got);
@@ -660,7 +660,7 @@ new file mode 100644
 index 0000000..5e38e27
 --- /dev/null
 +++ mozilla/media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,399 @@
+@@ -0,0 +1,404 @@
 +/*
 + * Copyright © 2014 Mozilla Foundation
 + *
@@ -1058,7 +1058,12 @@ index 0000000..5e38e27
 +  .stream_start = oss_stream_start,
 +  .stream_stop = oss_stream_stop,
 +  .stream_get_position = oss_stream_get_position,
-+  .stream_get_latency = oss_stream_get_latency
++  .stream_get_latency = oss_stream_get_latency,
++  .stream_set_volume = oss_stream_set_volume,
++  .stream_set_panning = oss_stream_set_panning,
++  .stream_get_current_device = NULL,
++  .stream_device_destroy = NULL,
++  .stream_register_device_changed_callback = NULL
 +};
 diff --git media/libcubeb/src/moz.build media/libcubeb/src/moz.build
 index 8b7a0dd..31212ce 100644
@@ -1084,18 +1089,17 @@ index 8b7a0dd..31212ce 100644
 +CFLAGS += CONFIG['MOZ_OSS_CFLAGS']
  CFLAGS += CONFIG['MOZ_ALSA_CFLAGS']
  CFLAGS += CONFIG['MOZ_PULSEAUDIO_CFLAGS']
-diff --git toolkit/library/libxul.mk toolkit/library/libxul.mk
+diff --git toolkit/library/moz.build toolkit/library/moz.build
 index e191f13..4fb268a 100644
---- mozilla/toolkit/library/libxul.mk
-+++ mozilla/toolkit/library/libxul.mk
-@@ -146,6 +146,10 @@ OS_LIBS += $(call EXPAND_LIBNAME,secur32
- endif
- endif
+--- mozilla/toolkit/library/moz.build
++++ mozilla/toolkit/library/moz.build
+@@ -239,6 +239,9 @@ if CONFIG['MOZ_NATIVE_LIBVPX']:
+ if not CONFIG['MOZ_TREE_PIXMAN']:
+     OS_LIBS += CONFIG['MOZ_PIXMAN_LIBS']
  
-+ifdef MOZ_OSS
-+EXTRA_DSO_LDOPTS += $(MOZ_OSS_LIBS)
-+endif
++if CONFIG['MOZ_OSS']:
++    OS_LIBS += CONFIG['MOZ_OSS_LIBS']
 +
- ifdef MOZ_ALSA
- EXTRA_DSO_LDOPTS += $(MOZ_ALSA_LIBS)
- endif
+ if CONFIG['MOZ_ALSA']:
+     OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
+ 
