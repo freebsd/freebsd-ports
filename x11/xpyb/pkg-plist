@@ -75,4 +75,3 @@
 %%PYTHON_SITELIBDIR%%/xcb/xvmc.pyo
 include/xpyb.h
 libdata/pkgconfig/xpyb.pc
-@dirrm %%PYTHON_SITELIBDIR%%/xcb

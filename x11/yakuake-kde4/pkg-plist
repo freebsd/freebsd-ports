@@ -142,14 +142,3 @@ share/locale/uk/LC_MESSAGES/yakuake.mo
 share/locale/wa/LC_MESSAGES/yakuake.mo
 share/locale/zh_CN/LC_MESSAGES/yakuake.mo
 share/locale/zh_TW/LC_MESSAGES/yakuake.mo
-@dirrm share/apps/yakuake/skins/plastik_light/title
-@dirrm share/apps/yakuake/skins/plastik_light/tabs
-@dirrm share/apps/yakuake/skins/plastik_light
-@dirrm share/apps/yakuake/skins/plastik_dark/title
-@dirrm share/apps/yakuake/skins/plastik_dark/tabs
-@dirrm share/apps/yakuake/skins/plastik_dark
-@dirrm share/apps/yakuake/skins/default/title
-@dirrm share/apps/yakuake/skins/default/tabs
-@dirrm share/apps/yakuake/skins/default
-@dirrm share/apps/yakuake/skins
-@dirrm share/apps/yakuake
