@@ -10,7 +10,3 @@ share/locale/pl/LC_MESSAGES/xfce4-quicklauncher-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-quicklauncher-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-quicklauncher-plugin.mo
 share/xfce4/panel-plugins/quicklauncher.desktop
-@dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4
-@dirrmtry lib/xfce4/panel-plugins
-@dirrmtry lib/xfce4

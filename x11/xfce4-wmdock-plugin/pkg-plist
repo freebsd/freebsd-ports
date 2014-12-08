@@ -26,17 +26,3 @@ share/locale/ur/LC_MESSAGES/xfce4-wmdock-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-wmdock-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-wmdock-plugin.mo
 share/xfce4/panel-plugins/wmdock.desktop
-@dirrm share/xfce4/panel-plugins
-@dirrm share/xfce4
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
