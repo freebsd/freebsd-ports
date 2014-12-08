@@ -2065,6 +2065,7 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_explosm.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_gocomics.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_pa.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_tfd.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_twp.php
 %%WWWDIR%%/plugins/af_comics/init.php
 %%WWWDIR%%/plugins/af_elreg/init.php
@@ -2073,7 +2074,9 @@
 %%WWWDIR%%/plugins/af_natgeo/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
 %%WWWDIR%%/plugins/af_sciam/init.php
+%%WWWDIR%%/plugins/af_tumblr_1280/init.php
 %%WWWDIR%%/plugins/af_unburn/init.php
+%%WWWDIR%%/plugins/af_zz_imgsetsizes/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
 %%WWWDIR%%/plugins/auth_remote/init.php
 %%WWWDIR%%/plugins/bookmarklets/init.php
