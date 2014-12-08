@@ -4,6 +4,3 @@ include/X11/bitmaps/rdblarrow
 man/man1/xditview.1.gz
 share/X11/app-defaults/Xditview
 share/X11/app-defaults/Xditview-chrtr
-@dirrmtry share/X11/app-defaults
-@dirrmtry share/X11
-@dirrmtry include/X11/bitmaps
