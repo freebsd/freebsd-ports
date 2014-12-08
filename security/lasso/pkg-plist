@@ -17,10 +17,8 @@
 %%PHP5%%etc/php5/conf.d/lasso.ini
 %%PHP5%%share/php/lasso.php
 %%PHP5%%lib/php/%%PHP_EXT_DIR%%/lasso.a
-%%PHP5%%lib/php/%%PHP_EXT_DIR%%/lasso.la
 %%PHP5%%lib/php/%%PHP_EXT_DIR%%/lasso.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_lasso.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_lasso.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_lasso.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/lasso.py
 include/lasso/backward_comp.h
@@ -171,7 +169,7 @@ include/lasso/xml/tools.h
 include/lasso/xml/xml.h
 include/lasso/xml/xml_enc.h
 lib/liblasso.a
-lib/liblasso.la
 lib/liblasso.so
-lib/liblasso.so.14
+lib/liblasso.so.3
+lib/liblasso.so.3.11.1
 libdata/pkgconfig/lasso.pc
