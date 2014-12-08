@@ -10,10 +10,5 @@ bin/mnrpes-scheduler.rb
 %%RUBY_SITELIBDIR%%/%%PORTNAME%%/output/nagios.rb
 %%RUBY_SITELIBDIR%%/%%PORTNAME%%/output/redis_status.rb
 %%RUBY_SITELIBDIR%%/%%PORTNAME%%/output/stdout.rb
-@dirrmtry %%ETCDIR%%
-@dirrm %%RUBY_SITELIBDIR%%/%%PORTNAME%%/output
-@dirrm %%RUBY_SITELIBDIR%%/%%PORTNAME%%
-@cwd /
-@dirrmtry var/run/%%PORTNAME%%
-@dirrmtry var/log/%%PORTNAME%%
-@cwd %%RESETPREFIX%%
+@dir /var/run/%%PORTNAME%%
+@dir /var/log/%%PORTNAME%%
