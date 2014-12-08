@@ -32,6 +32,3 @@
 %%FONTSDIR%%/DejaVuSerifCondensed-Italic.ttf
 %%FONTSDIR%%/DejaVuSerifCondensed.ttf
 @fcfontsdir %%FONTSDIR%%
-%%LINKS%%@dirrmtry %%FCDIR_LINKS%%
-@dirrmtry %%FCDIR%%
-@dirrmtry etc/fonts
