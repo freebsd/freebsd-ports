@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	adblock_plus
-PORTVERSION=	2.6.4
-DISTVERSIONSUFFIX=	-fx+an+sm+tb
+PORTVERSION=	2.6.6
+DISTVERSIONSUFFIX=	-tb+an+fx+sm
 CATEGORIES=	www
 
 MAINTAINER=	bar@FreeBSD.org
