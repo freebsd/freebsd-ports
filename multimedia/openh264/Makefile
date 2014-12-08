@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openh264
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -13,7 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT} # v${PORTVERSION}
-GH_COMMIT=	c79be44 # v1.1-Firefox33
+GH_COMMIT=	ca0ed2a # openh264v1.2
 
 USES=		gmake
 USE_LDCONFIG=	yes
@@ -26,8 +26,8 @@ OPTIONS_DEFINE=	PLUGINS TEST
 OPTIONS_DEFAULT=PLUGINS
 OPTIONS_SUB=	yes
 
-PLUGINS_BUILD_DEPENDS=gmp-api>=33.0:${PORTSDIR}/multimedia/gmp-api \
-			gmp-api<34.0:${PORTSDIR}/multimedia/gmp-api
+PLUGINS_BUILD_DEPENDS=gmp-api>=34.0:${PORTSDIR}/multimedia/gmp-api
+#			gmp-api<36.0:${PORTSDIR}/multimedia/gmp-api
 PLUGINS_CFLAGS=	-I${LOCALBASE}/include/gmp-api
 PLUGINS_MAKE_ARGS=HAVE_GMP_API=Yes
 PLUGINS_ALL_TARGET=plugin

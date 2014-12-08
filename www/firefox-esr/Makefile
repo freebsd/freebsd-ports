@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	31.2.0
+DISTVERSION=	31.3.0
 DISTVERSIONSUFFIX=esr.source
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
@@ -30,8 +30,6 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
-USE_AUTOTOOLS=	autoconf213:env
-OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
 CPE_PRODUCT=	${PORTNAME}_esr
 CONFLICTS=	firefox-3[02-9].* firefox-2[0-35-9].*
@@ -39,15 +37,11 @@ MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
 
-WANT_GNOME=	yes
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
-ALL_TARGET=	default
-GNU_CONFIGURE=	yes
 USE_GL=		gl
 USES=		dos2unix tar:bzip2
 DOS2UNIX_FILES=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
-NO_MOZPKGINSTALL=yes
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
@@ -59,23 +53,6 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 .include <bsd.port.pre.mk>
 
 WRKSRC:=	${WRKDIR}/mozilla-esr31
-
-# avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
-# To be removed when 9.2R goes EOL. http://llvm.org/PR15840
-.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION:M3[23]}
-. if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
-		a ${CHOSEN_COMPILER_TYPE} bug: unset the option or \
-		use FAVORITE_COMPILER=gcc in Makefile.local/make.conf
-# apply workaround only for -O2 or greater
-. elif ${CXXFLAGS:M-O*} && ! ${CXXFLAGS:M-O[01]}
-.  if ${MACHINE_CPU:Msse2}
-CXXFLAGS+=	-msse2
-.  else
-CXXFLAGS+=	-O1
-.  endif
-. endif
-.endif
 
 .if ${PORT_OPTIONS:MALSA}
 RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
