@@ -18,18 +18,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/trademarks.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/challenge.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/freebsd.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/results.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/archs.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/bugzilla.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/commit-log-message.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/committer.types.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/conventions.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/coverity.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/developer.relations.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/gnats.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/google-analytics.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/if-in-doubt.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/index.html
@@ -480,7 +475,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/sect-hats.html
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/sub-project-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/sub-projects.html
-%%DOCSDIR%%/%%DOCLANG%%/books/dev-model/tool-gnats.html
+%%DOCSDIR%%/%%DOCLANG%%/books/dev-model/tool-bugzilla.html
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/tool-perforce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/tool-pgp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/tool-ssh2.html
@@ -894,6 +889,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-bhyve.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-virtualbox.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config-quick-start.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-fonts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-install.html
@@ -953,7 +949,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-feedback.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-misc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-noinstall.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-pthread.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-rational.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-readme.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-rerolling-distfiles.html

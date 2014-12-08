@@ -1,6 +1,5 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/article.txt
