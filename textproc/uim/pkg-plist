@@ -382,13 +382,3 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/yahoo-jp-key-custom.scm
 %%DATADIR%%/yahoo-jp.scm
 %%DATADIR%%/zaurus.scm
-@dirrm include/uim
-@dirrm lib/uim/plugin
-@dirrm lib/uim
-%%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/helperdata
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/tables
-@dirrm %%DATADIR%%

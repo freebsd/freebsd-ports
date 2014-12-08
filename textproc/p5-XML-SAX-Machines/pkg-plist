@@ -28,4 +28,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/output_to_process
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml_records_thru_libxslt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml_records_to_data_structures
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

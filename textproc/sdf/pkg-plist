@@ -625,17 +625,3 @@ man/man1/pod2sdf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/user/ugasdf.html
 %%PORTDOCS%%%%DOCSDIR%%/user/ugasdf.sdf
 %%PORTDOCS%%%%DOCSDIR%%/website
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/user
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/release
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ref/macros
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ref/filters
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ref/classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ref
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/quickref
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/podusers
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/paper
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/notes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guru
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/genhtml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

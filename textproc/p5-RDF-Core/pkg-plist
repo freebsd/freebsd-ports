@@ -74,9 +74,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Storage/DB_File.pm.html
 %%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Storage/Memory.pm.html
 %%PORTDOCS%%%%DOCSDIR%%/RDF/Core/Storage/Postgres.pm.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF/Core/Storage
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF/Core/Model
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF/Core/Enumerator
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF/Core
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

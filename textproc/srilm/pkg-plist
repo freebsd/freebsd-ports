@@ -111,4 +111,3 @@ man/man5/nbest-format.5.gz
 man/man5/ngram-format.5.gz
 man/man5/pfsg-format.5.gz
 man/man5/wlat-format.5.gz
-@dirrm %%EXAMPLESDIR%%

@@ -56,15 +56,3 @@ share/locale/vi/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/wa/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/xh/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
-@dirrm share/gnome-spell-%%VERSION%%
-@dirrmtry share/control-center-2.0/icons
-@dirrmtry share/control-center-2.0
-@dirrm lib/gnome-spell
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz

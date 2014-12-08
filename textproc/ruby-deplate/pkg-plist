@@ -197,28 +197,3 @@ bin/deplate
 %%DATADIR%%/templates/html-tabbar-top.html
 %%DATADIR%%/templates/html-tabbar.html
 man/man1/deplate.1.gz
-@dirrm %%RUBY_SITELIBDIR%%/deplate/compat
-@dirrm %%RUBY_SITELIBDIR%%/deplate/ents
-@dirrm %%RUBY_SITELIBDIR%%/deplate/fmt
-@dirrm %%RUBY_SITELIBDIR%%/deplate/input
-@dirrm %%RUBY_SITELIBDIR%%/deplate/metadata
-@dirrm %%RUBY_SITELIBDIR%%/deplate/mod
-@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/s5.xhtml/templates
-@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/s5.xhtml
-@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/css
-@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/resources
-@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/templates
-@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html
-@dirrmtry %%RUBY_SITELIBDIR%%/deplate/themes/navbar-right.html
-@dirrm %%RUBY_SITELIBDIR%%/deplate/themes
-@dirrm %%RUBY_SITELIBDIR%%/deplate
-@dirrm %%DATADIR%%/css
-@dirrm %%DATADIR%%/lib/html
-@dirrm %%DATADIR%%/lib/javascript
-@dirrm %%DATADIR%%/lib/latex
-@dirrm %%DATADIR%%/lib/plain
-@dirrm %%DATADIR%%/lib/php
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%

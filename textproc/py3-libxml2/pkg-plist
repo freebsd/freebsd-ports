@@ -5,5 +5,4 @@
 %%PYTHON_SITELIBDIR%%/drv_libxml2.py
 %%PYTHON_SITELIBDIR%%/libxml2.py
 %%PYTHON_SITELIBDIR%%/libxml2mod.so
-@dirrmtry %%PYTHON_SITELIBDIR%%/__pycache__
 

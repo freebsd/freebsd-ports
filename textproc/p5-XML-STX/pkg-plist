@@ -25,5 +25,3 @@ bin/stxview.pl
 %%PORTDOCS%%%%DOCSDIR%%/TrAXref.pod
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stx-filter.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tester.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

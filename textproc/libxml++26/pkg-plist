@@ -34,11 +34,3 @@ lib/libxml++-%%VERSION%%.so
 lib/libxml++-%%VERSION%%.so.2
 lib/libxml++-%%VERSION%%.so.2.0.7
 libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
-@dirrm include/libxml++-%%API_VERSION%%/libxml++/validators
-@dirrm include/libxml++-%%API_VERSION%%/libxml++/parsers
-@dirrm include/libxml++-%%API_VERSION%%/libxml++/nodes
-@dirrm include/libxml++-%%API_VERSION%%/libxml++/io
-@dirrm include/libxml++-%%API_VERSION%%/libxml++/exceptions
-@dirrm include/libxml++-%%API_VERSION%%/libxml++
-@dirrm include/libxml++-%%API_VERSION%%/include
-@dirrm include/libxml++-%%API_VERSION%%

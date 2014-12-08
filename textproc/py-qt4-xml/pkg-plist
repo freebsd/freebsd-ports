@@ -6,5 +6,3 @@ share/py-sip/QtXml/qdom.sip
 share/py-sip/QtXml/qxml.sip
 share/py-sip/QtXml/qxmlstream.sip
 %%API%%share/qt4/qsci/api/python/QtXml.api
-@dirrm share/py-sip/QtXml
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4
