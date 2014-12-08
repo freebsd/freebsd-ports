@@ -196,16 +196,4 @@ share/locale/sv/LC_MESSAGES/poker-engine.mo
 %%DATADIR%%/conf/poker.payouts.xml
 %%DATADIR%%/conf/poker.razz.xml
 man/man8/pokerconfigupgrade.8.gz
-@dirrmtry share/locale/fr_FX/LC_MESSAGES
-@dirrmtry share/locale/fr_FX
-@dirrmtry share/locale/fr_CA/LC_MESSAGES
-@dirrmtry share/locale/fr_CA
-@dirrmtry share/locale/fr_BE/LC_MESSAGES
-@dirrmtry share/locale/fr_BE
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
-@dirrm %%DATADIR%%/upgrades
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/pokerengine
-@dirrm %%ETCDIR%%
+@dir %%DATADIR%%/upgrades
