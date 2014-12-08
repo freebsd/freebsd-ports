@@ -79,6 +79,7 @@
     SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
     SUBDIR += gmimms
+    SUBDIR += gmp-api
     SUBDIR += gmtk
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
