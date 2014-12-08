@@ -1,23 +1,16 @@
-%%DATADIR_REL%%/actor/actor_madspin/star1.bmp
-%%DATADIR_REL%%/actor/actor_madspin/star2.bmp
-@dirrm %%DATADIR_REL%%/actor/actor_madspin
-@dirrm %%DATADIR_REL%%/actor
-@dirrm %%DATADIR_REL%%
-@cwd %%PLUGINS_BASE_DIR%%
-actor/actor_lv_gltest.so
-actor/actor_nastyfft.so
-actor/actor_madspin.so
-actor/actor_flower.so
-actor/actor_infinite.so
-actor/actor_corona.so
-actor/actor_lv_scope.so
-actor/actor_oinksie.so
-actor/actor_jakdaw.so
-actor/actor_bumpscope.so
-morph/morph_alphablend.so
-morph/morph_flash.so
-morph/morph_tentacle.so
-morph/morph_slide.so
-@dirrm actor
-@dirrm morph
-@dirrm %%PLUGINS_BASE_DIR%%
+%%DATADIR%%/actor/actor_madspin/star1.bmp
+%%DATADIR%%/actor/actor_madspin/star2.bmp
+%%PLUGINS_BASE_DIR%%/actor/actor_lv_gltest.so
+%%PLUGINS_BASE_DIR%%/actor/actor_nastyfft.so
+%%PLUGINS_BASE_DIR%%/actor/actor_madspin.so
+%%PLUGINS_BASE_DIR%%/actor/actor_flower.so
+%%PLUGINS_BASE_DIR%%/actor/actor_infinite.so
+%%PLUGINS_BASE_DIR%%/actor/actor_corona.so
+%%PLUGINS_BASE_DIR%%/actor/actor_lv_scope.so
+%%PLUGINS_BASE_DIR%%/actor/actor_oinksie.so
+%%PLUGINS_BASE_DIR%%/actor/actor_jakdaw.so
+%%PLUGINS_BASE_DIR%%/actor/actor_bumpscope.so
+%%PLUGINS_BASE_DIR%%/morph/morph_alphablend.so
+%%PLUGINS_BASE_DIR%%/morph/morph_flash.so
+%%PLUGINS_BASE_DIR%%/morph/morph_tentacle.so
+%%PLUGINS_BASE_DIR%%/morph/morph_slide.so
