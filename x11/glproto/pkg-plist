@@ -4,5 +4,3 @@ include/GL/glxproto.h
 include/GL/glxtokens.h
 include/GL/internal/glcore.h
 libdata/pkgconfig/glproto.pc
-@dirrmtry include/GL/internal
-@dirrmtry include/GL
