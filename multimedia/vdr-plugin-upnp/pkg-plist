@@ -5,15 +5,6 @@ etc/vdr/plugins/upnp/http/icons/upnpIconSm.jpeg
 etc/vdr/plugins/upnp/http/icons/upnpIconSm.png
 etc/vdr/plugins/upnp/http/xml/cds_scpd.xml
 etc/vdr/plugins/upnp/http/xml/cms_scpd.xml
-@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d /var/cache/vdr/upnp
-@dirrm etc/vdr/plugins/upnp/http/xml
-@dirrm etc/vdr/plugins/upnp/http/icons
-@dirrm etc/vdr/plugins/upnp/http
-@dirrmtry etc/vdr/plugins/upnp
 %%NLS%%share/locale/de-DE/LC_MESSAGES/vdr-upnp.mo
-%%NLS%%@dirrmtry share/locale/de-DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de-DE
-@cwd /
-@dirrmtry var/cache/vdr/upnp
-@dirrmtry var/cache/vdr
-@cwd
+@dir(%%VDR_USER%%,%%VDR_GROUP%%,) /var/cache/vdr/upnp
+@dir /var/cache/vdr

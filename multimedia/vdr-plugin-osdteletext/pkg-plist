@@ -1,5 +1,4 @@
 lib/vdr/libvdr-osdteletext.so.%%APIVERSION%%
-@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d /var/cache/vdr/vtx
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/vdr-osdteletext.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-osdteletext.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr-osdteletext.mo
@@ -10,7 +9,5 @@ lib/vdr/libvdr-osdteletext.so.%%APIVERSION%%
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/vdr-osdteletext.mo
 %%NLS%%share/locale/sk_SK/LC_MESSAGES/vdr-osdteletext.mo
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/vdr-osdteletext.mo
-@cwd /
-@dirrmtry var/cache/vdr/vtx
-@dirrmtry var/cache/vdr
-@cwd
+@dir(%%VDR_USER%%,%%VDR_GROUP%%,) /var/cache/vdr/vtx
+@dir /var/cache/vdr
