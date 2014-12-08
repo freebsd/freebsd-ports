@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	33.0
+DISTVERSION=	34.0.5
 DISTVERSIONSUFFIX=.source
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source/
+		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
-		nss>=3.16.2:${PORTSDIR}/security/nss \
+		nss>=3.17.2:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
 		cairo>=1.12.16_1,2:${PORTSDIR}/graphics/cairo \
 		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
 		opus>=1.1:${PORTSDIR}/audio/opus \
 		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
-		sqlite3>=3.8.4.2:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.8.6:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		zip:${PORTSDIR}/archivers/zip \
@@ -30,23 +30,17 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
-USE_AUTOTOOLS=	autoconf213:env
-OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
 CONFLICTS=	firefox-esr-31.* firefox-esr-24.* firefox-esr-17.*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
 
-WANT_GNOME=	yes
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
-ALL_TARGET=	default
-GNU_CONFIGURE=	yes
 USE_GL=		gl
 USES=		dos2unix tar:bzip2
 DOS2UNIX_FILES=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
-NO_MOZPKGINSTALL=yes
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
@@ -54,27 +48,15 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
+OPTIONS_DEFAULT=	GTK2
+
+OPTIONS_SINGLE+=	TOOLKIT
+OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
+
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
 WRKSRC:=	${WRKDIR}/mozilla-release
-
-# avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
-# To be removed when 9.2R goes EOL. http://llvm.org/PR15840
-.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION:M3[23]}
-. if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
-		a ${CHOSEN_COMPILER_TYPE} bug: unset the option or \
-		use FAVORITE_COMPILER=gcc in Makefile.local/make.conf
-# apply workaround only for -O2 or greater
-. elif ${CXXFLAGS:M-O*} && ! ${CXXFLAGS:M-O[01]}
-.  if ${MACHINE_CPU:Msse2}
-CXXFLAGS+=	-msse2
-.  else
-CXXFLAGS+=	-O1
-.  endif
-. endif
-.endif
 
 .if ${PORT_OPTIONS:MALSA}
 RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
@@ -82,6 +64,12 @@ RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
 
 .if ${PORT_OPTIONS:MGSTREAMER}
 RUN_DEPENDS+=	gstreamer1-libav>=1.2.4_1:${PORTSDIR}/multimedia/gstreamer1-libav
+.endif
+
+.if ${PORT_OPTIONS:MGTK3}
+BUILD_DEPENDS+=	gtk3>=3.14.3:${PORTSDIR}/x11-toolkits/gtk30
+# XXX ports/195455
+RUN_DEPENDS+=	adwaita-icon-theme>=3.14:${PORTSDIR}/x11-themes/adwaita-icon-theme
 .endif
 
 post-extract:

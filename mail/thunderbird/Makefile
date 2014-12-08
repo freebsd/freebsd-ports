@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	31.2.0
+DISTVERSION=	31.3.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source/
+		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 
@@ -31,18 +31,14 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.7.2
-L_VERSION=	3.3.2
+L_VERSION=	3.3.3
 
 SSP_UNSAFE=	yes
-USE_AUTOTOOLS=	autoconf213:env
-OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
 USE_MOZILLA=	# empty
 
-WANT_GNOME=	yes
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
-ALL_TARGET=	default
 USE_GL=		gl
 USES=		dos2unix tar:bzip2
 DOS2UNIX_FILES=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
@@ -63,11 +59,6 @@ MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 OPTIONS_DEFINE=	ENIGMAIL LIGHTNING
 OPTIONS_DEFAULT=ENIGMAIL LIGHTNING
 
-# non-client.mk objdir build broken after bug 846540
-.undef GNU_CONFIGURE
-ALL_TARGET=	build
-MAKEFILE=	${WRKSRC}/client.mk
-
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
 OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/GSTREAMER//}
@@ -79,21 +70,9 @@ MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 
-# avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
-# To be removed when 9.2R goes EOL. http://llvm.org/PR15840
-.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION:M3[23]}
-. if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
-		a ${CHOSEN_COMPILER_TYPE} bug: unset the option or \
-		use FAVORITE_COMPILER=gcc in Makefile.local/make.conf
-# apply workaround only for -O2 or greater
-. elif ${CXXFLAGS:M-O*} && ! ${CXXFLAGS:M-O[01]}
-.  if ${MACHINE_CPU:Msse2}
-CXXFLAGS+=	-msse2
-.  else
-CXXFLAGS+=	-O1
-.  endif
-. endif
+.if ${PORTVERSION:R:R} < 33
+CONFIGURE_TARGET:=${CONFIGURE_TARGET:S/portbld/unknown/}
+MOZ_OPTIONS:=	${MOZ_OPTIONS:S/${CONFIGURE_TARGET}//}
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
@@ -163,7 +142,7 @@ pre-configure:
 .if ${PORT_OPTIONS:MENIGMAIL}
 post-configure:
 	cd ${WRKSRC}/mailnews/extensions/enigmail/ && \
-		${SETENV} ${MAKE_ENV} ./configure
+		${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure
 
 post-build:
 	${DO_MAKE_BUILD:S/${MAKEFILE}/Makefile/} all xpi \
