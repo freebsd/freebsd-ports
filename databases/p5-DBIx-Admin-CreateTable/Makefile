@@ -16,7 +16,7 @@ LICENSE=	ART20
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Moo>=1.004002:${PORTSDIR}/devel/p5-Moo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Version>=1.002.003:${PORTSDIR}/devel/p5-Test-Version
+TEST_DEPENDS=	p5-Test-Version>=1.002003:${PORTSDIR}/devel/p5-Test-Version
 
 USE_PERL5=	configure
 USES=		perl5 tar:tgz
