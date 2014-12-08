@@ -22,4 +22,10 @@ post-extract:
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} "! -name *\.orig" )
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PGSQL_DEFAULT} > 9.2
+IGNORE=		you have PGSQL_DEFAULT set to ${PGSQL_DEFAULT} but pgpool-II needs 9.2 or less
+.endif
+
+.include <bsd.port.post.mk>
