@@ -1,2 +1,11 @@
-dictfmt converts databases in various formats into working databases
-and indices for the DICT server.
+The Dictionary Server Protocol (DICT) is a TCP transaction based query/response
+protocol that allows a client to access dictionary definitions from a set of
+natural language dictionary databases.
+
+RFC 2229 describes the DICT client/server protocol.
+
+dictfmt converts databases in various formats into working databases and indices
+for the DICT server.
+
+WWW: http://www.dict.org/
+WWW: http://sourceforge.net/projects/dict/
