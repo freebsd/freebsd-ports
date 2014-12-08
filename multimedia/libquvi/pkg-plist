@@ -7,20 +7,3 @@ lib/libquvi.so.7
 lib/libquvi.so.7.0.1
 libdata/pkgconfig/libquvi.pc
 man/man3/libquvi.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/About.txt
-%%PORTDOCS%%%%DOCSDIR%%/Help/Development.txt
-%%PORTDOCS%%%%DOCSDIR%%/Help/Help.txt
-%%PORTDOCS%%%%DOCSDIR%%/Help/Patches.txt
-%%PORTDOCS%%%%DOCSDIR%%/Help/Style.txt
-%%PORTDOCS%%%%DOCSDIR%%/Overviews/Formats.txt
-%%PORTDOCS%%%%DOCSDIR%%/Overviews/Overview.txt
-%%PORTDOCS%%%%DOCSDIR%%/Overviews/Overview_LinkedList.txt
-%%PORTDOCS%%%%DOCSDIR%%/Overviews/Overview_Network.txt
-%%PORTDOCS%%%%DOCSDIR%%/Webscripts/Guidelines.txt
-%%PORTDOCS%%%%DOCSDIR%%/Webscripts/Tutorial.txt
-%%PORTDOCS%%%%DOCSDIR%%/Webscripts/Webscript.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Webscripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Overviews
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/quvi

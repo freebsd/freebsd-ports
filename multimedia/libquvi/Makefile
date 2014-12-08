@@ -29,6 +29,8 @@ INSTALL_TARGET=	install-strip
 USES=		iconv libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
+PORTDOCS=	*
+
 PROJECTHOST=	quvi
 
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
