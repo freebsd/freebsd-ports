@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.4.5.10
+PORTVERSION=	1.4.6
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
