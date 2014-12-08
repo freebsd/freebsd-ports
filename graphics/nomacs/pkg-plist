@@ -1,5 +1,6 @@
 bin/nomacs
 share/applications/nomacs.desktop
+share/man/man1/nomacs.1
 %%DATADIR%%/translations/nomacs_als.qm
 %%DATADIR%%/translations/nomacs_az.qm
 %%DATADIR%%/translations/nomacs_cs.qm
@@ -8,6 +9,7 @@ share/applications/nomacs.desktop
 %%DATADIR%%/translations/nomacs_es.qm
 %%DATADIR%%/translations/nomacs_fr.qm
 %%DATADIR%%/translations/nomacs_it.qm
+%%DATADIR%%/translations/nomacs_ja.qm
 %%DATADIR%%/translations/nomacs_pl.qm
 %%DATADIR%%/translations/nomacs_pt.qm
 %%DATADIR%%/translations/nomacs_ru.qm
