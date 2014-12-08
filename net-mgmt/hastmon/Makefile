@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Cluster monitoring daemon
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	mk-configure>=0.20:${PORTSDIR}/devel/mk-configure
 

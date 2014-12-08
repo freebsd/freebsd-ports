@@ -11,7 +11,7 @@ DIST_SUBDIR=	repacked
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple arp scanner
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet
