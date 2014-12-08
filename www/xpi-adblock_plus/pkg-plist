@@ -61,6 +61,14 @@
 %%XPI_XPIDIR%%/chrome/locale/cs/sendReport.dtd
 %%XPI_XPIDIR%%/chrome/locale/cs/sidebar.dtd
 %%XPI_XPIDIR%%/chrome/locale/cs/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy/firstRun.properties
+%%XPI_XPIDIR%%/chrome/locale/cy/global.properties
+%%XPI_XPIDIR%%/chrome/locale/cy/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/cy/subscriptionSelection.dtd
 %%XPI_XPIDIR%%/chrome/locale/da/composer.dtd
 %%XPI_XPIDIR%%/chrome/locale/da/filters.dtd
 %%XPI_XPIDIR%%/chrome/locale/da/firstRun.properties
@@ -514,66 +522,3 @@
 %%XPI_XPIDIR%%/lib/ui.js
 %%XPI_XPIDIR%%/lib/utils.js
 %%XPI_XPIDIR%%/lib/windowObserver.js
-@dirrm %%XPI_XPIDIR%%/chrome/content/ui
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ar
-@dirrm %%XPI_XPIDIR%%/chrome/locale/bg
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ca
-@dirrm %%XPI_XPIDIR%%/chrome/locale/cs
-@dirrm %%XPI_XPIDIR%%/chrome/locale/da
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de
-@dirrm %%XPI_XPIDIR%%/chrome/locale/dsb
-@dirrm %%XPI_XPIDIR%%/chrome/locale/el
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-GB
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/eo
-@dirrm %%XPI_XPIDIR%%/chrome/locale/es-AR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/chrome/locale/es-MX
-@dirrm %%XPI_XPIDIR%%/chrome/locale/et
-@dirrm %%XPI_XPIDIR%%/chrome/locale/eu
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fa
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fi
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fr
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fy-NL
-@dirrm %%XPI_XPIDIR%%/chrome/locale/gl
-@dirrm %%XPI_XPIDIR%%/chrome/locale/he
-@dirrm %%XPI_XPIDIR%%/chrome/locale/hr
-@dirrm %%XPI_XPIDIR%%/chrome/locale/hsb
-@dirrm %%XPI_XPIDIR%%/chrome/locale/hu
-@dirrm %%XPI_XPIDIR%%/chrome/locale/hy-AM
-@dirrm %%XPI_XPIDIR%%/chrome/locale/id
-@dirrm %%XPI_XPIDIR%%/chrome/locale/is
-@dirrm %%XPI_XPIDIR%%/chrome/locale/it
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ja
-@dirrm %%XPI_XPIDIR%%/chrome/locale/kk
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ko
-@dirrm %%XPI_XPIDIR%%/chrome/locale/lt
-@dirrm %%XPI_XPIDIR%%/chrome/locale/lv
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ms
-@dirrm %%XPI_XPIDIR%%/chrome/locale/nb-NO
-@dirrm %%XPI_XPIDIR%%/chrome/locale/nl
-@dirrm %%XPI_XPIDIR%%/chrome/locale/pl
-@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-PT
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ro
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ru
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sk
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sl
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sq
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sr
-@dirrm %%XPI_XPIDIR%%/chrome/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/chrome/locale/th
-@dirrm %%XPI_XPIDIR%%/chrome/locale/tr
-@dirrm %%XPI_XPIDIR%%/chrome/locale/uk
-@dirrm %%XPI_XPIDIR%%/chrome/locale/vi
-@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
-@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome/skin/features
-@dirrm %%XPI_XPIDIR%%/chrome/skin/fonts
-@dirrm %%XPI_XPIDIR%%/chrome/skin/social
-@dirrm %%XPI_XPIDIR%%/chrome/skin
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/lib
