@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Allows multiple Redmine plugins to use tags safely
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	rubygem-acts-as-taggable-on>=2.3:${PORTSDIR}/www/rubygem-acts-as-taggable-on
 
 USE_RUBY=	yes
