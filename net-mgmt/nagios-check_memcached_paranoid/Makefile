@@ -15,6 +15,7 @@ BUILD_DEPENDS=	nagios-plugins>0:${PLUGINS} \
 		${EXTRA_DEPENDS} \
 		${NONEXISTENT}:${PLUGINS}:build
 
+USES=		gettext-runtime
 FILE=		${PORTNAME}.c
 PLUGINS=	${PORTSDIR}/net-mgmt/nagios-plugins
 NDIR_CMD=	cd ${PLUGINS} && ${MAKE} -VWRKSRC
