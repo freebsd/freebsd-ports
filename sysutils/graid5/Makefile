@@ -16,8 +16,6 @@ NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 MAINVERSION=1.3
 VERSIONDATE=20140711.62
 
-KMODDIR?=	/boot/modules
-PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
 MAKE_ENV+=	KMODDIR=${KMODDIR} SRC_BASE=${SRC_BASE}
 
 USES=		tar:bzip2 kmod uidfix
