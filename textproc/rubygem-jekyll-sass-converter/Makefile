@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-sass-converter
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
