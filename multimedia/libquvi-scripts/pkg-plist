@@ -64,8 +64,3 @@ man/man7/libquvi-scripts.7.gz
 %%NSFW%%%%DATADIR%%/lua/website/youjizz.lua
 %%DATADIR%%/lua/website/youtube.lua
 %%DATADIR%%/version
-@dirrm %%DATADIR%%/lua/website/quvi
-@dirrm %%DATADIR%%/lua/website
-@dirrm %%DATADIR%%/lua/util
-@dirrm %%DATADIR%%/lua
-@dirrmtry %%DATADIR%%
