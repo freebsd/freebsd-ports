@@ -22,4 +22,3 @@ man/man3/DMXQueryVersion.3.gz
 man/man3/DMXRemoveInput.3.gz
 man/man3/DMXRemoveScreen.3.gz
 man/man3/DMXSync.3.gz
-@dirrmtry include/X11/extensions

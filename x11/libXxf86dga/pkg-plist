@@ -27,4 +27,3 @@ man/man3/XDGASync.3.gz
 man/man3/XDGAKeyEventToXKeyEvent.3.gz
 man/man3/XF86DGA.3.gz
 man/man3/XFree86-DGA.3.gz
-@dirrmtry include/X11/extensions

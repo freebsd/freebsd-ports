@@ -79,4 +79,3 @@ man/man3/XSetDeviceValuators.3.gz
 man/man3/XUngrabDevice.3.gz
 man/man3/XUngrabDeviceButton.3.gz
 man/man3/XUngrabDeviceKey.3.gz
-@dirrmtry include/X11/extensions

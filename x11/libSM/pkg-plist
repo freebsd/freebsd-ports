@@ -7,4 +7,3 @@ lib/libSM.so
 lib/libSM.so.6
 lib/libSM.so.6.0.1
 libdata/pkgconfig/sm.pc
-@dirrm include/X11/SM
