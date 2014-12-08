@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141208:
+  AFFECTS: users of ports-mgmt/poudriere, ports-mgmt/poudriere-devel
+  AUTHOR: bdrewery@FreeBSD.org
+
+  8.4 jails created with Poudriere 3.1, or poudriere-devel-3.0.99.20141117
+  should be recreated with 'jail -d' and 'jail -c'. This fixes pkg(8)
+  crashes.
+
 20141205:
   AFFECTS: users of polish/kadu
   AUTHOR: pawel@FreeBSD.org
