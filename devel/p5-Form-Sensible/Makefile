@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Form-Sensible
-PORTVERSION=	0.20.023
-PORTREVISION=	1
+PORTVERSION=	0.20023
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sensible way to handle form based user interface
@@ -26,8 +24,5 @@ USES=		perl5
 
 post-extract:
 	@${RM} ${WRKSRC}/lib/Form/Sensible/Renderer/HTML/RenderedForm.pm.orig
-
-#post-patch:
-#	@${REINPLACE_CMD} -e 's|Form-Sensible|Form::Sensible|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
