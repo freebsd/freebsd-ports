@@ -1,5 +1,5 @@
 lib/libADM6avcodec.so.54
-lib/libADM7avformat.so.54
+lib/libADM6avformat.so.54
 lib/libADM6avutil.so.52
 lib/libADM6postproc.so.52
 lib/libADM6swscale.so.2
