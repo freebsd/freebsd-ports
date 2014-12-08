@@ -54,5 +54,3 @@ lib/X11/xdtm/icons/xdtm.icon
 lib/X11/xdtm/icons/ycode.icon
 lib/X11/xdtm/icons/z.icon
 man/man1/xdtm.1.gz
-@dirrm lib/X11/xdtm/icons
-@dirrm lib/X11/xdtm

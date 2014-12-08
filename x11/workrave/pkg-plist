@@ -112,9 +112,3 @@ share/sounds/workrave/subtle/soundtheme
 %%DATADIR%%/images/workrave-suspended-icon-medium.png
 %%DATADIR%%/images/workrave.png
 %%DATADIR%%/images/workrave.xpm
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/exercises
-@dirrm %%DATADIR%%
-@dirrm share/sounds/workrave/subtle
-@dirrm share/sounds/workrave/default
-@dirrm share/sounds/workrave
