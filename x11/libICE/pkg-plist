@@ -12,5 +12,3 @@ lib/libICE.so.6.3.0
 libdata/pkgconfig/ice.pc
 %%DOCSDIR%%/ICElib.xml
 %%DOCSDIR%%/ice.xml
-@dirrm %%DOCSDIR%%
-@dirrm include/X11/ICE

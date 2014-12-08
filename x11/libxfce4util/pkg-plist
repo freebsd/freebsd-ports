@@ -92,24 +92,3 @@ sbin/xfce4-kiosk-query
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libxfce4util.mo
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/tl_PH/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tl_PH
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%PORTDOCS%%@dirrm share/gtk-doc/html/libxfce4util
-%%PORTDOCS%%@dirrmtry share/gtk-doc/html
-%%PORTDOCS%%@dirrmtry share/gtk-doc
-@dirrm include/xfce4/libxfce4util
-@dirrmtry include/xfce4

@@ -185,27 +185,3 @@ share/xfce4/helpers/w3m.desktop
 share/xfce4/helpers/xfce4-terminal.desktop
 share/xfce4/helpers/xfe.desktop
 share/xfce4/helpers/xterm.desktop
-@dirrm share/xfce4/helpers
-@dirrmtry share/xfce4
-@dirrm share/pixmaps/exo-1
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%APIDOCS%%@dirrm share/gtk-doc/html/exo-1
-%%APIDOCS%%@dirrmtry share/gtk-doc/html
-%%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrm lib/xfce4/exo-1
-@dirrmtry lib/xfce4
-@dirrm include/exo-1/exo
-@dirrm include/exo-1
-@dirrmtry etc/xdg/xfce4
-@dirrmtry etc/xdg

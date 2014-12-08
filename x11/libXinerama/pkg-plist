@@ -11,4 +11,3 @@ man/man3/XineramaQueryExtension.3.gz
 man/man3/XineramaQueryVersion.3.gz
 man/man3/XineramaIsActive.3.gz
 man/man3/XineramaQueryScreens.3.gz
-@dirrmtry include/X11/extensions

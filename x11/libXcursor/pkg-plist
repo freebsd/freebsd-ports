@@ -37,4 +37,3 @@ man/man3/XcursorSetDefaultSize.3.gz
 man/man3/XcursorGetDefaultSize.3.gz
 man/man3/XcursorSetTheme.3.gz
 man/man3/XcursorGetTheme.3.gz
-@dirrm include/X11/Xcursor
