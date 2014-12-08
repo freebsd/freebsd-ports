@@ -18,5 +18,3 @@ lib/libquvi-0.9.so
 libdata/pkgconfig/libquvi-0.9.pc
 man/man3/libquvi09.3.gz
 man/man7/quvi-object09.7.gz
-@dirrm include/quvi-%%VERSION%%/quvi
-@dirrm include/quvi-%%VERSION%%
