@@ -10,7 +10,7 @@ MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk script to read GNU "info" files and display them
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 NO_BUILD=	yes
 USES+=		tk

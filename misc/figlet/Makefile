@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	obrien
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	SysV banner-like program prints strings in large fancy ASCII art
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_ENV=	datadir=${DATADIR} prefix=${PREFIX}
