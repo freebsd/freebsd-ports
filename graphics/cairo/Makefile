@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/graphics/cairo/Makefile 18928 2013-11-30 02:00:25Z marcus $
 
 PORTNAME=	cairo
-PORTVERSION=	1.12.16
-PORTREVISION=	1
+PORTVERSION=	1.12.18
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -26,8 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
 		--enable-tee
-USES+=		libtool:keepla pathfix pkgconfig
-USE_XORG=	pixman xext
+USES+=		libtool pathfix pkgconfig
+USE_XORG=	pixman
 USE_GNOME=	referencehack
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -45,7 +44,7 @@ OPTIONS_DEFAULT=XCB GLIB X11
 XCB_DESC=	Enable XCB (X C-language Binding) Support
 GLIB_DESC=	Enable GObject Functions Feature
 OPTIONS_SUB=	yes
-X11_USE=	xorg=xrender
+X11_USE=	xorg=xrender,xext
 X11_CONFIGURE_ENABLE=xlib
 OPENGL_USE=	gl=gl xorg=glproto:both,dri2proto:both
 OPENGL_CONFIGURE_ENABLE=gl
@@ -56,7 +55,7 @@ XCB_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x1
 XCB_CONFIGURE_ENABLE=	xcb
 # this has another option --enable-xlib-xcb=auto but it is buggy.
 
-PLIST_SUB+=	LIBVER=2.11200.16
+PLIST_SUB+=	LIBVER=2.11200.18
 
 .include <bsd.port.options.mk>
 
