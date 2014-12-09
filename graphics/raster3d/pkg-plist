@@ -163,9 +163,3 @@ man/manl/stereo3d.l.gz
 %%DATADIR%%/materials/transparent1.r3d
 %%DATADIR%%/materials/white.r3d
 %%DATADIR%%/materials/yellow.r3d
-@dirrm %%DATADIR%%/materials
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/msms
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

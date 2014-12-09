@@ -342,11 +342,3 @@ share/locale/fr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ru/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
-@dirrm include/gegl-%%GEGL_VER%%/operation
-@dirrm include/gegl-%%GEGL_VER%%/opencl
-@dirrm include/gegl-%%GEGL_VER%%
-@dirrm lib/gegl-%%GEGL_VER%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/gallery
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
