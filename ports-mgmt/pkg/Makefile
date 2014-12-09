@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.3.8
-PORTREVISION=	3
+DISTVERSION=	1.4.0
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
-		LOCAL/portmgr \
 		http://files.etoilebsd.net/${PORTNAME}/ \
+		LOCAL/portmgr \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 
 MAINTAINER=	portmgr@FreeBSD.org
