@@ -192,9 +192,3 @@ share/xorp/templates/static_routes.tp
 share/xorp/templates/vrrp.cmds
 share/xorp/templates/vrrp.tp
 share/xorp/templates/xorpsh.cmds
-@dirrm share/xorp/templates
-@dirrm share/xorp
-%%XORP_SHLIB%%@dirrm lib/xorp/lib
-@dirrm lib/xorp/bin
-@dirrm lib/xorp/sbin
-@dirrm lib/xorp

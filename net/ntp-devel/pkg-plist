@@ -494,24 +494,3 @@ sbin/sntp
 %%EXAMPLESDIR%%/malarky.conf
 %%EXAMPLESDIR%%/pogo.conf
 %%EXAMPLESDIR%%/rackety.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/hints
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/drivers/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/drivers/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/drivers
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hints
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm share/ntp/lib/NTP
-%%PORTDOCS%%@dirrm share/ntp/lib
-%%PORTDOCS%%@dirrm share/ntp
-%%PORTDOCS%%@dirrm share/doc/sntp
-@dirrm %%EXAMPLESDIR%%

@@ -35,11 +35,3 @@ share/locale/ca/LC_MESSAGES/service-discovery-applet.mo
 share/locale/da/LC_MESSAGES/service-discovery-applet.mo
 share/locale/de/LC_MESSAGES/service-discovery-applet.mo
 share/locale/fr/LC_MESSAGES/service-discovery-applet.mo
-@dirrm share/service-discovery-applet/tools
-@dirrm share/service-discovery-applet/plugins
-@dirrm share/service-discovery-applet/interfaces
-@dirrm share/service-discovery-applet/icons/48x48
-@dirrm share/service-discovery-applet/icons/24x24
-@dirrm share/service-discovery-applet/icons
-@dirrm share/service-discovery-applet
-@dirrm %%PYTHON_SITELIBDIR%%/sdapplet

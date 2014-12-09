@@ -1093,12 +1093,3 @@ bin/vmware-cmd
 %%EXAMPLESDIR%%/AppUtil/XMLInputUtil.pm
 %%EXAMPLESDIR%%/AppUtil/VMUtil.pm
 %%EXAMPLESDIR%%/AppUtil/HostUtil.pm
-@dirrmtry %%EXAMPLESDIR%%/vm
-@dirrmtry %%EXAMPLESDIR%%/session
-@dirrmtry %%EXAMPLESDIR%%/schema
-@dirrmtry %%EXAMPLESDIR%%/sampledata
-@dirrmtry %%EXAMPLESDIR%%/performance
-@dirrmtry %%EXAMPLESDIR%%/host
-@dirrmtry %%EXAMPLESDIR%%/general
-@dirrmtry %%EXAMPLESDIR%%/AppUtil
-@dirrmtry %%EXAMPLESDIR%%

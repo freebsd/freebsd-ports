@@ -67,14 +67,3 @@ man/man1/netdude.1.gz
 %%DATADIR%%/0.5/protocols/nd_udp.so
 %%DATADIR%%/0.5/protocols/nd_vlan.a
 %%DATADIR%%/0.5/protocols/nd_vlan.so
-@dirrm %%DATADIR%%/0.5/protocols
-@dirrm %%DATADIR%%/0.5/plugins
-@dirrm %%DATADIR%%/0.5/pixmaps
-@dirrm %%DATADIR%%/0.5
-@dirrm %%DATADIR%%
-@dirrm include/netdude/0.5/protocols/vlan
-@dirrm include/netdude/0.5/protocols/snap
-@dirrm include/netdude/0.5/protocols/fddi
-@dirrm include/netdude/0.5/protocols
-@dirrm include/netdude/0.5
-@dirrm include/netdude

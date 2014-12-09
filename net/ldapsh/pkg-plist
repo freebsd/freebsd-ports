@@ -26,5 +26,3 @@ bin/ldapsh
 man/man1/ldapsh.1.gz
 %%DOCSDIR%%/COMMANDS
 %%EXAMPLESDIR%%/ldapsh_config
-@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%

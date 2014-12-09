@@ -220,13 +220,3 @@ man/man1/ntp-keygen.1.gz
 %%EXAMPLESDIR%%/malarky.conf
 %%EXAMPLESDIR%%/pogo.conf
 %%EXAMPLESDIR%%/rackety.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hints
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/description_files
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%

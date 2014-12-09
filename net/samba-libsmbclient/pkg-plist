@@ -44,5 +44,3 @@ man/man7/libsmbclient.7.gz
 %%EXAMPLESDIR%%/testutime.c
 %%EXAMPLESDIR%%/testwrite.c
 %%EXAMPLESDIR%%/tree.c
-@dirrm %%EXAMPLESDIR%%/smbwrapper
-@dirrm %%EXAMPLESDIR%%

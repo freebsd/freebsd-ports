@@ -289,30 +289,3 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/modules/persistence.lua
 %%DATADIR%%/scripts/lua/modules/template.lua
 %%DATADIR%%/scripts/lua/modules/top_talkers.lua
-@dirrm %%DATADIR%%/scripts/lua/protocols
-@dirrm %%DATADIR%%/scripts/lua/modules
-@dirrm %%DATADIR%%/scripts/lua/inc
-@dirrm %%DATADIR%%/scripts/lua/examples
-@dirrm %%DATADIR%%/scripts/lua/admin
-@dirrm %%DATADIR%%/scripts/lua
-@dirrm %%DATADIR%%/scripts/callbacks
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/httpdocs/js
-@dirrm %%DATADIR%%/httpdocs/inc
-@dirrm %%DATADIR%%/httpdocs/img/maps
-@dirrm %%DATADIR%%/httpdocs/img/interaction-graph-icons
-@dirrm %%DATADIR%%/httpdocs/img
-@dirrm %%DATADIR%%/httpdocs/font-awesome/scss
-@dirrm %%DATADIR%%/httpdocs/font-awesome/less
-@dirrm %%DATADIR%%/httpdocs/font-awesome/fonts
-@dirrm %%DATADIR%%/httpdocs/font-awesome/css
-@dirrm %%DATADIR%%/httpdocs/font-awesome
-@dirrm %%DATADIR%%/httpdocs/css/Rickshaw
-@dirrm %%DATADIR%%/httpdocs/css
-@dirrm %%DATADIR%%/httpdocs/bootstrap/js
-@dirrm %%DATADIR%%/httpdocs/bootstrap/img
-@dirrm %%DATADIR%%/httpdocs/bootstrap/fonts
-@dirrm %%DATADIR%%/httpdocs/bootstrap/css
-@dirrm %%DATADIR%%/httpdocs/bootstrap
-@dirrm %%DATADIR%%/httpdocs
-@dirrm %%DATADIR%%
