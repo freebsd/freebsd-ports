@@ -74,9 +74,3 @@ libdata/pkgconfig/libmdbsql.pc
 %%GNOME:%%share/gnome/help/gmdb/C/figures/gmdb2_window.png
 %%GNOME:%%share/gnome/help/gmdb/C/gmdb.xml
 %%GNOME:%%share/gnome/help/gmdb/C/legal.xml
-%%GNOME:%%@dirrm share/gnome/help/gmdb/C/figures
-%%GNOME:%%@dirrm share/gnome/help/gmdb/C
-%%GNOME:%%@dirrm share/gnome/help/gmdb
-%%GNOME:%%@dirrm share/gmdb/glade
-%%GNOME:%%@dirrm share/gmdb
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

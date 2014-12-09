@@ -1,15 +1,8 @@
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/interface
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/tools
-@dirrmtry %%DATADIR%%
-@dirrmtry %%DATADIR%%/conf
 @sample %%DATADIR%%/conf/cassandra-rackdc.properties.sample
 @sample %%DATADIR%%/conf/cassandra-topology.properties.sample
 @sample %%DATADIR%%/conf/cassandra.yaml.sample
 @sample %%DATADIR%%/conf/commitlog_archiving.properties.sample
 @sample %%DATADIR%%/conf/cqlshrc.sample
-%%CQL%%@dirrmtry %%DATADIR%%/pylib
 %%CQL%%%%DATADIR%%/bin/cqlsh
 %%CQL%%%%DATADIR%%/lib/cassandra-driver-internal-only-2.1.1.post.zip
 %%CQL%%%%DATADIR%%/lib/futures-2.1.6-py2.py3-none-any.zip
