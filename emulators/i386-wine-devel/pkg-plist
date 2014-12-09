@@ -715,8 +715,11 @@ include/wine/windows/vfwmsgs.h
 include/wine/windows/vmr9.h
 include/wine/windows/vmr9.idl
 include/wine/windows/vmrender.idl
+include/wine/windows/vss.h
+include/wine/windows/vss.idl
 include/wine/windows/vsstyle.h
 include/wine/windows/vssym32.h
+include/wine/windows/vswriter.h
 include/wine/windows/wbemcli.h
 include/wine/windows/wbemcli.idl
 include/wine/windows/wbemdisp.h
@@ -850,14 +853,16 @@ lib32/libfontconfig.so.1
 lib32/libfreetype.so.6
 %%OSREL8%%lib32/libgcc_s.so.1
 %%OSREL9%%lib32/libgcc_s.so.1
-lib32/libgettextpo.so.5
+lib32/libgettextpo.so.0
 lib32/libglapi.so.0
 lib32/libgmp.so.10
 lib32/libgnutls.so.28
 lib32/libhogweed.so.2
+%%OSREL8%%lib32/libiconv.so.2
+%%OSREL9%%lib32/libiconv.so.2
 %%OSREL8%%lib32/libiconv.so.3
 %%OSREL9%%lib32/libiconv.so.3
-lib32/libintl.so.9
+lib32/libintl.so.8
 lib32/libjpeg.so.11
 lib32/liblcms2.so.2
 %%OSREL8%%lib32/libllvmradeon9.1.7.so
@@ -984,6 +989,7 @@ lib32/wine/crtdll.dll.so
 lib32/wine/crypt32.dll.so
 lib32/wine/cryptdlg.dll.so
 lib32/wine/cryptdll.dll.so
+lib32/wine/cryptext.dll.so
 lib32/wine/cryptnet.dll.so
 lib32/wine/cryptui.dll.so
 lib32/wine/cscript.exe.so
@@ -1193,6 +1199,7 @@ lib32/wine/fakedlls/crtdll.dll
 lib32/wine/fakedlls/crypt32.dll
 lib32/wine/fakedlls/cryptdlg.dll
 lib32/wine/fakedlls/cryptdll.dll
+lib32/wine/fakedlls/cryptext.dll
 lib32/wine/fakedlls/cryptnet.dll
 lib32/wine/fakedlls/cryptui.dll
 lib32/wine/fakedlls/cscript.exe
@@ -1607,6 +1614,7 @@ lib32/wine/fakedlls/view.exe
 lib32/wine/fakedlls/vmm.vxd
 lib32/wine/fakedlls/vnbt.vxd
 lib32/wine/fakedlls/vnetbios.vxd
+lib32/wine/fakedlls/vssapi.dll
 lib32/wine/fakedlls/vtdapi.vxd
 lib32/wine/fakedlls/vwin32.vxd
 lib32/wine/fakedlls/w32skrnl.dll
@@ -2176,6 +2184,7 @@ lib32/wine/view.exe.so
 lib32/wine/vmm.vxd.so
 lib32/wine/vnbt.vxd.so
 lib32/wine/vnetbios.vxd.so
+lib32/wine/vssapi.dll.so
 lib32/wine/vtdapi.vxd.so
 lib32/wine/vwin32.vxd.so
 lib32/wine/w32skrnl.dll.so
