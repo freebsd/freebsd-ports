@@ -1,7 +1,181 @@
-Index: sys/net/if_stf.c
-===================================================================
---- sys/net/if_stf.c	(revision 212820)
-+++ sys/net/if_stf.c	(working copy)
+diff --git a/share/man/man4/stf.4 b/share/man/man4/stf.4
+index 5e210df..1f3da39 100644
+--- a/share/man/man4/stf.4
++++ b/share/man/man4/stf.4
+@@ -1,6 +1,7 @@
+ .\"     $KAME: stf.4,v 1.35 2001/05/02 06:24:49 itojun Exp $
+ .\"
+ .\" Copyright (C) 1995, 1996, 1997, and 1998 WIDE Project.
++.\" Copyright (c) 2010 Hiroki Sato <hrs@FreeBSD.org>
+ .\" All rights reserved.
+ .\"
+ .\" Redistribution and use in source and binary forms, with or without
+@@ -42,21 +43,11 @@ tunnel interface
+ .Sh DESCRIPTION
+ The
+ .Nm
+-interface supports
+-.Dq 6to4
+-IPv6 in IPv4 encapsulation.
+-It can tunnel IPv6 traffic over IPv4, as specified in
+-.Li RFC3056 .
+-.Pp
+-For ordinary nodes in 6to4 site, you do not need
+-.Nm
+-interface.
+-The
+-.Nm
+-interface is necessary for site border router
+-(called
+-.Dq 6to4 router
+-in the specification).
++interface supports IPv6 in IPv4 encapsulation by
++tunneling IPv6 traffic over IPv4, as specified in
++.Li RFC3056 Pq 6to4
++and
++.Li RFC5569 Pq 6rd .
+ .Pp
+ Each
+ .Nm
+@@ -72,12 +63,28 @@ variable in
+ .Pp
+ Due to the way 6to4 protocol is specified,
+ .Nm
+-interface requires certain configuration to work properly.
++interface requires certain configuration to work properly.  Two
++different protocols defined in RFC3056 and RFC5569 are basically the
++same as each other except for address handling, so
++.Nm
++decides its behavior based on the configured IPv6 addresses as
++explained in the following.
++The
++.Nm
++interface can be configured with multiple IPv6 addresses including
++both 6to4 and 6rd.
++.Sh RFC3056 (a.k.a. 6to4)
+ Single
+-(no more than 1)
+-valid 6to4 address needs to be configured to the interface.
+-.Dq A valid 6to4 address
+-is an address which has the following properties.
++.Pq no more than 1 valid 6to4 address needs to be configured to the interface.
++.Dq a valid 6to4 address
++is an address which has the following properties.  For ordinary nodes
++in 6to4 site, you do not need
++.Nm
++interface; it is necessary only for site border router
++(called
++.Dq 6to4 router
++in the specification).
++.Pp
+ If any of the following properties are not satisfied,
+ .Nm
+ raises runtime error on packet transmission.
+@@ -110,6 +117,78 @@ you may want to configure IPv6 prefix length as
+ .Nm
+ interface will check the IPv4 source address on packets,
+ if the IPv6 prefix length is larger than 16.
++.Sh RFC5569 (a.k.a. 6rd)
++The
++.Nm
++interface works in the 6rd mode when one or more IPv6 addresses that
++consists of an IPv6 prefix and 32-bit IPv4 part with a prefix length
++equal to or shorter than 64.  In 6rd protocol, an IPv6 address
++.Li 2001:db8:c000:205::1/32
++means the following, for example:
++.Bl -bullet
++.It
++The 6rd relay prefix is
++.Li 2001:db8::/32 .
++.It
++The 6rd router's IPv4 address is
++.Li 192.0.2.5 .
++.El
++.Pp
++As you can see the IPv4 address is embedded in the IPv6 address just
++after the prefix.  While you can choose an IPv6 prefix length other
++than 32, it must be from 0 to 32.
++.Pp
++Assuming this address is configured on the
++.Nm
++interface, it does the following:
++.Bl -bullet
++.It
++An incoming IPv6 packet on
++.Nm
++will be encapsuled in an IPv4 packet with the source address
++.Li 192.0.2.5
++and then the IPv4 packet is delivered based on the IPv4 routing table.
++The IPv4 destination address is calculated from the destination
++address of the original IPv6 packet in the same way as the source.
++.It
++An incoming IPv4 packet which encapsules an IPv6 packet whose
++destination address matches a 6rd prefix with embedded IPv4 address
++configured on the
++.Nm
++interface, the IPv6 packet will be decapsulated and delivered based on
++the IPv6 routing table.  Note that
++.Nm
++interface normally has a route which covers whole range of a 6rd relay
++prefix, the delivered IPv6 packet can return to
++.Nm
++if there is no more specific route.  In that case, the returned packet
++will be discarded silently.
++.El
++.\" XXX: example configuration will be added
++.\" .Pp
++.\" By using this interface, you can configure a 6rd domain.  For simplicity,
++.\" we assume the following here:
++.\" .Bl -bullet
++.\" .It
++.\" A 6rd Customer, who has an IPv6/IPv4 LAN and an IPv4-only access
++.\" toward network of his Internet Service Provider.  The Customer has
++.\" a router called
++.\" .Dq CE Pq Customer Edge
++.\" Router, which can communicate between his LAN and the ISP over IPv4
++.\" and encapsulate  
++.\" his networks.
++.\" .It
++.\" A 6rd Provider, who provides IPv6 Internet reachability by using 6rd
++.\" protocol.  The Provider offers access to a router called
++.\" .Dq PE Pq Provider Edge
++.\" Router, which can communicate with 
++.\" .El
++.\" .Pp
++.\" A 6rd customer
++.\" needs to configure
++.\" .Nm
++.\" on his CE (Customer Edge) router.
++.Sh Other Functionality of the Interface
+ .Pp
+ .Nm
+ can be configured to be ECN friendly.
+@@ -147,9 +226,6 @@ Packets with IPv4 multicast address as outer IPv4 source/destination
+ Packets with limited broadcast address as outer IPv4 source/destination
+ .Pq Li 255.0.0.0/8
+ .It
+-Packets with private address as outer IPv4 source/destination
+-.Pq Li 10.0.0.0/8 , 172.16.0.0/12 , 192.168.0.0/16
+-.It
+ Packets with subnet broadcast address as outer IPv4 source/destination.
+ The check is made against subnet broadcast addresses for
+ all of the directly connected subnets.
+@@ -164,6 +240,11 @@ The same set of rules are applied against the IPv4 address embedded into
+ inner IPv6 address, if the IPv6 address matches 6to4 prefix.
+ .El
+ .Pp
++In addition to them, packets with private address as outer IPv4
++source/destination
++.Pq Li 10.0.0.0/8 , 172.16.0.0/12 , 192.168.0.0/16
++are filtered out only in the 6to4 mode.
++.Pp
+ It is recommended to filter/audit
+ incoming IPv4 packet with IP protocol number 41, as necessary.
+ It is also recommended to filter/audit encapsulated IPv6 packets as well.
+diff --git a/sys/net/if_stf.c b/sys/net/if_stf.c
+index 20251dc..37d96a9 100644
+--- a/sys/net/if_stf.c
++++ b/sys/net/if_stf.c
 @@ -3,6 +3,7 @@
  
  /*-
@@ -41,7 +215,7 @@ Index: sys/net/if_stf.c
   */
  
  #include "opt_inet.h"
-@@ -120,15 +127,41 @@
+@@ -120,20 +127,45 @@
  
  #include <security/mac/mac_framework.h>
  
@@ -63,7 +237,7 @@ Index: sys/net/if_stf.c
 +#endif
 +
  SYSCTL_DECL(_net_link);
- SYSCTL_NODE(_net_link, IFT_STF, stf, CTLFLAG_RW, 0, "6to4 Interface");
+ static SYSCTL_NODE(_net_link, IFT_STF, stf, CTLFLAG_RW, 0, "6to4 Interface");
  
 -static int stf_route_cache = 1;
 -SYSCTL_INT(_net_link_stf, OID_AUTO, route_cache, CTLFLAG_RW,
@@ -73,7 +247,7 @@ Index: sys/net/if_stf.c
 +SYSCTL_VNET_INT(_net_link_stf, OID_AUTO, route_cache, CTLFLAG_RW,
 +    &VNET_NAME(stf_route_cache), 0,
 +    "Enable caching of IPv4 routes for 6to4 output.");
- 
++
 +#if STF_DEBUG
 +static VNET_DEFINE(int, stf_debug) = 0;
 +#define V_stf_debug	VNET(stf_debug)
@@ -81,13 +255,18 @@ Index: sys/net/if_stf.c
 +    &VNET_NAME(stf_debug), 0,
 +    "Enable displaying verbose debug message of stf interfaces");
 +#endif
-+
- #define STFNAME		"stf"
--#define STFUNIT		0
  
+ static int stf_permit_rfc1918 = 0;
+ TUNABLE_INT("net.link.stf.permit_rfc1918", &stf_permit_rfc1918);
+ SYSCTL_INT(_net_link_stf, OID_AUTO, permit_rfc1918, CTLFLAG_RW | CTLFLAG_TUN,
+     &stf_permit_rfc1918, 0, "Permit the use of private IPv4 addresses");
+ 
+-#define STFUNIT		0
+-
  #define IN6_IS_ADDR_6TO4(x)	(ntohs((x)->s6_addr16[0]) == 0x2002)
  
-@@ -145,17 +178,26 @@
+ /*
+@@ -149,19 +181,28 @@ struct stf_softc {
  		struct route_in6 __sc_ro6; /* just for safety */
  	} __sc_ro46;
  #define sc_ro	__sc_ro46.__sc_ro4
@@ -100,12 +279,14 @@ Index: sys/net/if_stf.c
  };
  #define STF2IFP(sc)	((sc)->sc_ifp)
  
+ static const char stfname[] = "stf";
+ 
 -/*
 - * Note that mutable fields in the softc are not currently locked.
 - * We do lock sc_ro in stf_output though.
 - */
 +static struct mtx stf_mtx;
- static MALLOC_DEFINE(M_STF, STFNAME, "6to4 Tunnel Interface");
+ static MALLOC_DEFINE(M_STF, stfname, "6to4 Tunnel Interface");
 +static VNET_DEFINE(LIST_HEAD(, stf_softc), stf_softc_list);
 +#define V_stf_softc_list	VNET(stf_softc_list)
 +
@@ -119,61 +300,34 @@ Index: sys/net/if_stf.c
  static const int ip_stf_ttl = 40;
  
  extern  struct domain inetdomain;
-@@ -170,8 +212,6 @@
- 	.pr_usrreqs =		&rip_usrreqs
- };
- 
--static char *stfnames[] = {"stf0", "stf", "6to4", NULL};
--
- static int stfmodevent(module_t, int, void *);
- static int stf_encapcheck(const struct mbuf *, int, int, void *);
- static struct in6_ifaddr *stf_getsrcifa6(struct ifnet *);
-@@ -184,68 +224,45 @@
+@@ -190,7 +231,18 @@ static int stf_checkaddr6(struct stf_softc *, struct in6_addr *,
  	struct ifnet *);
  static void stf_rtrequest(int, struct rtentry *, struct rt_addrinfo *);
  static int stf_ioctl(struct ifnet *, u_long, caddr_t);
+-
 +static int stf_is_up(struct ifnet *);
- 
--static int stf_clone_match(struct if_clone *, const char *);
--static int stf_clone_create(struct if_clone *, char *, size_t, caddr_t);
--static int stf_clone_destroy(struct if_clone *, struct ifnet *);
--struct if_clone stf_cloner = IFC_CLONE_INITIALIZER(STFNAME, NULL, 0,
--    NULL, stf_clone_match, stf_clone_create, stf_clone_destroy);
++
 +#define STF_GETIN4_USE_CACHE	1
 +static struct sockaddr_in *stf_getin4addr(struct sockaddr_in *,
 +					  struct ifaddr *,
 +					  int);
 +static struct sockaddr_in *stf_getin4addr_in6(struct sockaddr_in *,
 +					      struct ifaddr *,
-+					      struct in6_addr *);
++					      const struct in6_addr *);
 +static struct sockaddr_in *stf_getin4addr_sin6(struct sockaddr_in *,
 +					       struct ifaddr *,
 +					       struct sockaddr_in6 *);
-+static int stf_clone_create(struct if_clone *, int, caddr_t);
-+static void stf_clone_destroy(struct ifnet *);
- 
--static int
--stf_clone_match(struct if_clone *ifc, const char *name)
--{
--	int i;
-+IFC_SIMPLE_DECLARE(stf, 0);
- 
--	for(i = 0; stfnames[i] != NULL; i++) {
--		if (strcmp(stfnames[i], name) == 0)
--			return (1);
--	}
--
--	return (0);
--}
--
+ static int stf_clone_match(struct if_clone *, const char *);
+ static int stf_clone_create(struct if_clone *, char *, size_t, caddr_t);
+ static int stf_clone_destroy(struct if_clone *, struct ifnet *);
+@@ -212,45 +264,38 @@ stf_clone_match(struct if_clone *ifc, const char *name)
  static int
--stf_clone_create(struct if_clone *ifc, char *name, size_t len, caddr_t params)
-+stf_clone_create(struct if_clone *ifc, int unit, caddr_t params)
+ stf_clone_create(struct if_clone *ifc, char *name, size_t len, caddr_t params)
  {
 -	int err, unit;
  	struct stf_softc *sc;
  	struct ifnet *ifp;
- 
+-
 -	/*
 -	 * We can only have one unit, but since unit allocation is
 -	 * already locked, we use it to keep from allocating extra
@@ -183,7 +337,9 @@ Index: sys/net/if_stf.c
 -	err = ifc_alloc_unit(ifc, &unit);
 -	if (err != 0)
 -		return (err);
--
++	char *dp;
++	int error, unit, wildcard;
+ 
  	sc = malloc(sizeof(struct stf_softc), M_STF, M_WAITOK | M_ZERO);
 +	sc->sc_fibnum = curthread->td_proc->p_fibnum;
  	ifp = STF2IFP(sc) = if_alloc(IFT_STF);
@@ -197,14 +353,25 @@ Index: sys/net/if_stf.c
 +	STF_LOCK_INIT(sc);
  	ifp->if_softc = sc;
 -	sc->sc_fibnum = curthread->td_proc->p_fibnum;
-+	if_initname(ifp, ifc->ifc_name, unit);
- 
+-
 -	/*
 -	 * Set the name manually rather then using if_initname because
 -	 * we don't conform to the default naming convention for interfaces.
 -	 */
--	strlcpy(ifp->if_xname, name, IFNAMSIZ);
--	ifp->if_dname = ifc->ifc_name;
++	error = ifc_name2unit(name, &unit);
++	if (error != 0)
++		return (error);
++	wildcard = (unit < 0);
++	/* In the wildcard case, we need to update the name. */
++	if (wildcard) {
++		for (dp = name; *dp != '\0'; dp++);
++		if (snprintf(dp, len - (dp-name), "%d", unit) > len - (dp-name) - 1) {
++			panic("%s: interface name too long", __func__);
++		}
++	}
++	ifp->if_dname = name;
+ 	strlcpy(ifp->if_xname, name, IFNAMSIZ);
+-	ifp->if_dname = stfname;
 -	ifp->if_dunit = IF_DUNIT_NONE;
 -
 -	mtx_init(&(sc)->sc_ro_mtx, "stf ro", NULL, MTX_DEF);
@@ -217,7 +384,7 @@ Index: sys/net/if_stf.c
  		return (ENOMEM);
  	}
  
-@@ -255,41 +272,57 @@
+@@ -260,6 +305,11 @@ stf_clone_create(struct if_clone *ifc, char *name, size_t len, caddr_t params)
  	ifp->if_snd.ifq_maxlen = ifqmaxlen;
  	if_attach(ifp);
  	bpfattach(ifp, DLT_NULL, sizeof(u_int32_t));
@@ -229,11 +396,7 @@ Index: sys/net/if_stf.c
  	return (0);
  }
  
--static int
--stf_clone_destroy(struct if_clone *ifc, struct ifnet *ifp)
-+static void
-+stf_clone_destroy(struct ifnet *ifp)
- {
+@@ -269,33 +319,44 @@ stf_clone_destroy(struct if_clone *ifc, struct ifnet *ifp)
  	struct stf_softc *sc = ifp->if_softc;
  	int err;
  
@@ -252,8 +415,7 @@ Index: sys/net/if_stf.c
  	free(sc, M_STF);
 -	ifc_free_unit(ifc, STFUNIT);
  
--	return (0);
-+	return;
+ 	return (0);
  }
  
 +static void
@@ -276,15 +438,16 @@ Index: sys/net/if_stf.c
  	switch (type) {
  	case MOD_LOAD:
 +		mtx_init(&stf_mtx, "stf_mtx", NULL, MTX_DEF);
- 		if_clone_attach(&stf_cloner);
+ 		stf_cloner = if_clone_advanced(stfname, 0, stf_clone_match,
+ 		    stf_clone_create, stf_clone_destroy);
  		break;
  	case MOD_UNLOAD:
- 		if_clone_detach(&stf_cloner);
+ 		if_clone_detach(stf_cloner);
 +		mtx_destroy(&stf_mtx);
  		break;
  	default:
  		return (EOPNOTSUPP);
-@@ -305,28 +338,31 @@
+@@ -311,28 +372,31 @@ static moduledata_t stf_mod = {
  };
  
  DECLARE_MODULE(if_stf, stf_mod, SI_SUB_PSEUDO, SI_ORDER_ANY);
@@ -324,7 +487,7 @@ Index: sys/net/if_stf.c
  		return 0;
  
  	if (proto != IPPROTO_IPV6)
-@@ -338,86 +374,162 @@
+@@ -344,83 +408,162 @@ stf_encapcheck(m, off, proto, arg)
  	if (ip.ip_v != 4)
  		return 0;
  
@@ -383,6 +546,12 @@ Index: sys/net/if_stf.c
 -	bzero(&a, sizeof(a));
 -	bcopy(GET_V4(&ia6->ia_addr.sin6_addr), &a, sizeof(a));
 -	bcopy(GET_V4(&ia6->ia_prefixmask.sin6_addr), &mask, sizeof(mask));
+-	ifa_free(&ia6->ia_ifa);
+-	a.s_addr &= mask.s_addr;
+-	b = ip.ip_src;
+-	b.s_addr &= mask.s_addr;
+-	if (a.s_addr != b.s_addr)
+-		return 0;
 +	DEBUG_PRINTF(1, "%s: check2: ia6->ia_addr is 2002::/16?\n", __func__);
 +	if (IN6_IS_ADDR_6TO4(&ia6->ia_addr.sin6_addr)) {
 +		/* 6to4 (RFC 3056) */
@@ -416,7 +585,7 @@ Index: sys/net/if_stf.c
 +				     __func__);
 +		}
 +#endif
-+
+ 
 +		if ((ia6_in4addr.sin_addr.s_addr & ia6_in4mask.sin_addr.s_addr) !=
 +		    (ip.ip_src.s_addr & ia6_in4mask.sin_addr.s_addr)) {
 +			DEBUG_PRINTF(1, "%s: check3: false.  Ignore this packet.\n",
@@ -438,18 +607,12 @@ Index: sys/net/if_stf.c
 +		 */
 +	}
 +	DEBUG_PRINTF(1, "%s: all clear!\n", __func__);
-+	/* stf interface makes single side match only */
+ 	/* stf interface makes single side match only */
+-	return 32;
 +	ret = 32;
 +freeit:
- 	ifa_free(&ia6->ia_ifa);
--	a.s_addr &= mask.s_addr;
--	b = ip.ip_src;
--	b.s_addr &= mask.s_addr;
--	if (a.s_addr != b.s_addr)
--		return 0;
- 
--	/* stf interface makes single side match only */
--	return 32;
++	ifa_free(&ia6->ia_ifa);
++
 +	return (ret);
  }
  
@@ -513,24 +676,21 @@ Index: sys/net/if_stf.c
  }
  
  static int
--stf_output(ifp, m, dst, ro)
--	struct ifnet *ifp;
--	struct mbuf *m;
--	struct sockaddr *dst;
--	struct route *ro;
-+stf_output(struct ifnet *ifp, struct mbuf *m, struct sockaddr *dst, struct route *ro)
+-stf_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
+-	struct route *ro)
++stf_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst, struct route *ro)
  {
  	struct stf_softc *sc;
- 	struct sockaddr_in6 *dst6;
+ 	const struct sockaddr_in6 *dst6;
  	struct route *cached_route;
 -	struct in_addr in4;
--	caddr_t ptr;
+-	const void *ptr;
 +	struct sockaddr_in *sin;
 +	struct sockaddr_in in4;
  	struct sockaddr_in *dst4;
  	u_int8_t tos;
  	struct ip *ip;
-@@ -479,20 +591,28 @@
+@@ -472,20 +615,28 @@ stf_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
  	/*
  	 * Pickup the right outer dst addr from the list of candidates.
  	 * ip6_dst has priority as it may be able to give us shorter IPv4 hops.
@@ -566,7 +726,7 @@ Index: sys/net/if_stf.c
  	if (bpf_peers_present(ifp->if_bpf)) {
  		/*
  		 * We need to prepend the address family as
-@@ -516,11 +636,26 @@
+@@ -509,11 +660,26 @@ stf_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
  	ip = mtod(m, struct ip *);
  
  	bzero(ip, sizeof(*ip));
@@ -595,8 +755,8 @@ Index: sys/net/if_stf.c
 -	bcopy(&in4, &ip->ip_dst, sizeof(ip->ip_dst));
  	ip->ip_p = IPPROTO_IPV6;
  	ip->ip_ttl = ip_stf_ttl;
- 	ip->ip_len = m->m_pkthdr.len;	/*host order*/
-@@ -529,7 +664,7 @@
+ 	ip->ip_len = htons(m->m_pkthdr.len);
+@@ -522,7 +688,7 @@ stf_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
  	else
  		ip_ecn_ingress(ECN_NOCARE, &ip->ip_tos, &tos);
  
@@ -605,7 +765,7 @@ Index: sys/net/if_stf.c
  		cached_route = NULL;
  		goto sendit;
  	}
-@@ -537,7 +672,7 @@
+@@ -530,7 +696,7 @@ stf_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
  	/*
  	 * Do we have a cached route?
  	 */
@@ -614,25 +774,24 @@ Index: sys/net/if_stf.c
  	dst4 = (struct sockaddr_in *)&sc->sc_ro.ro_dst;
  	if (dst4->sin_family != AF_INET ||
  	    bcmp(&dst4->sin_addr, &ip->ip_dst, sizeof(ip->ip_dst)) != 0) {
-@@ -555,44 +690,48 @@
+@@ -548,8 +714,15 @@ stf_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
  		rtalloc_fib(&sc->sc_ro, sc->sc_fibnum);
  		if (sc->sc_ro.ro_rt == NULL) {
  			m_freem(m);
 -			mtx_unlock(&(sc)->sc_ro_mtx);
  			ifp->if_oerrors++;
 +			STF_UNLOCK(sc);
- 			return ENETUNREACH;
- 		}
++			return ENETUNREACH;
++		}
 +		if (sc->sc_ro.ro_rt->rt_ifp == ifp) {
 +			/* infinite loop detection */
 +			m_free(m);
 +			ifp->if_oerrors++;
 +			STF_UNLOCK(sc);
-+			return ENETUNREACH;
-+		}
+ 			return ENETUNREACH;
+ 		}
  	}
- 	cached_route = &sc->sc_ro;
- 
+@@ -558,35 +731,32 @@ stf_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
  sendit:
  	M_SETFIB(m, sc->sc_fibnum);
  	ifp->if_opackets++;
@@ -654,12 +813,13 @@ Index: sys/net/if_stf.c
  	 * returns 1 if private address range:
  	 * 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16
  	 */
--	if ((ntohl(in->s_addr) & 0xff000000) >> 24 == 10 ||
+ 	if (stf_permit_rfc1918 == 0 && (
+-	    (ntohl(in->s_addr) & 0xff000000) >> 24 == 10 ||
 -	    (ntohl(in->s_addr) & 0xfff00000) >> 16 == 172 * 256 + 16 ||
--	    (ntohl(in->s_addr) & 0xffff0000) >> 16 == 192 * 256 + 168)
-+	if ((ntohl(in->s_addr) & 0xff000000) == 10 << 24 ||
+-	    (ntohl(in->s_addr) & 0xffff0000) >> 16 == 192 * 256 + 168))
++	    (ntohl(in->s_addr) & 0xff000000) == 10 << 24 ||
 +	    (ntohl(in->s_addr) & 0xfff00000) == (172 * 256 + 16) << 16 ||
-+	    (ntohl(in->s_addr) & 0xffff0000) == (192 * 256 + 168) << 16 )
++	    (ntohl(in->s_addr) & 0xffff0000) == (192 * 256 + 168) << 16 ))
  		return 1;
  
  	return 0;
@@ -674,7 +834,7 @@ Index: sys/net/if_stf.c
  {
  	struct in_ifaddr *ia4;
  
-@@ -608,20 +747,10 @@
+@@ -602,13 +772,6 @@ stf_checkaddr4(sc, in, inifp)
  	}
  
  	/*
@@ -688,15 +848,7 @@ Index: sys/net/if_stf.c
  	 * reject packets with broadcast
  	 */
  	IN_IFADDR_RLOCK();
--	for (ia4 = TAILQ_FIRST(&V_in_ifaddrhead);
--	     ia4;
--	     ia4 = TAILQ_NEXT(ia4, ia_link))
--	{
-+	TAILQ_FOREACH(ia4, &V_in_ifaddrhead, ia_link) {
- 		if ((ia4->ia_ifa.ifa_ifp->if_flags & IFF_BROADCAST) == 0)
- 			continue;
- 		if (in->s_addr == ia4->ia_broadaddr.sin_addr.s_addr) {
-@@ -640,7 +769,7 @@
+@@ -631,7 +794,7 @@ stf_checkaddr4(sc, in, inifp)
  
  		bzero(&sin, sizeof(sin));
  		sin.sin_family = AF_INET;
@@ -705,7 +857,7 @@ Index: sys/net/if_stf.c
  		sin.sin_addr = *in;
  		rt = rtalloc1_fib((struct sockaddr *)&sin, 0,
  		    0UL, sc->sc_fibnum);
-@@ -661,10 +790,7 @@
+@@ -652,10 +815,7 @@ stf_checkaddr4(sc, in, inifp)
  }
  
  static int
@@ -717,7 +869,7 @@ Index: sys/net/if_stf.c
  {
  	/*
  	 * check 6to4 addresses
-@@ -688,9 +814,7 @@
+@@ -679,9 +839,7 @@ stf_checkaddr6(sc, in6, inifp)
  }
  
  void
@@ -728,7 +880,7 @@ Index: sys/net/if_stf.c
  {
  	int proto;
  	struct stf_softc *sc;
-@@ -698,6 +822,7 @@
+@@ -689,6 +847,7 @@ in_stf_input(m, off)
  	struct ip6_hdr *ip6;
  	u_int8_t otos, itos;
  	struct ifnet *ifp;
@@ -736,7 +888,7 @@ Index: sys/net/if_stf.c
  
  	proto = mtod(m, struct ip *)->ip_p;
  
-@@ -721,6 +846,17 @@
+@@ -712,6 +871,17 @@ in_stf_input(m, off)
  	mac_ifnet_create_mbuf(ifp, m);
  #endif
  
@@ -754,7 +906,7 @@ Index: sys/net/if_stf.c
  	/*
  	 * perform sanity check against outer src/dst.
  	 * for source, perform ingress filter as well.
-@@ -741,6 +877,17 @@
+@@ -732,6 +902,17 @@ in_stf_input(m, off)
  	}
  	ip6 = mtod(m, struct ip6_hdr *);
  
@@ -772,7 +924,7 @@ Index: sys/net/if_stf.c
  	/*
  	 * perform sanity check against inner src/dst.
  	 * for source, perform ingress filter as well.
-@@ -751,6 +898,41 @@
+@@ -742,6 +923,41 @@ in_stf_input(m, off)
  		return;
  	}
  
@@ -814,7 +966,7 @@ Index: sys/net/if_stf.c
  	itos = (ntohl(ip6->ip6_flow) >> 20) & 0xff;
  	if ((ifp->if_flags & IFF_LINK1) != 0)
  		ip_ecn_egress(ECN_ALLOWED, &otos, &itos);
-@@ -760,7 +942,7 @@
+@@ -751,7 +967,7 @@ in_stf_input(m, off)
  	ip6->ip6_flow |= htonl((u_int32_t)itos << 20);
  
  	m->m_pkthdr.rcvif = ifp;
@@ -823,7 +975,7 @@ Index: sys/net/if_stf.c
  	if (bpf_peers_present(ifp->if_bpf)) {
  		/*
  		 * We need to prepend the address family as
-@@ -773,6 +955,7 @@
+@@ -764,6 +980,7 @@ in_stf_input(m, off)
  		bpf_mtap2(ifp->if_bpf, &af, sizeof(af), m);
  	}
  
@@ -831,7 +983,7 @@ Index: sys/net/if_stf.c
  	/*
  	 * Put the packet to the network layer input queue according to the
  	 * specified address family.
-@@ -786,27 +969,277 @@
+@@ -778,27 +995,277 @@ in_stf_input(m, off)
  
  /* ARGSUSED */
  static void
@@ -843,7 +995,7 @@ Index: sys/net/if_stf.c
  {
 +
  	RT_LOCK_ASSERT(rt);
- 	rt->rt_rmx.rmx_mtu = IPV6_MMTU;
+ 	rt->rt_mtu = rt->rt_ifp->if_mtu;
  }
  
 +/* Check whether we have at least one instance with IFF_UP. */
@@ -853,7 +1005,7 @@ Index: sys/net/if_stf.c
 -	u_long cmd;
 -	caddr_t data;
 +stf_is_up(struct ifnet *ifp)
- {
++{
 +	struct stf_softc *scp;
 +	struct stf_softc *sc_cur;
 +	struct stf_softc *sc_is_up;
@@ -883,7 +1035,7 @@ Index: sys/net/if_stf.c
 +static struct sockaddr_in *
 +stf_getin4addr_in6(struct sockaddr_in *sin,
 +		   struct ifaddr *ifa,
-+		   struct in6_addr *in6)
++		   const struct in6_addr *in6)
 +{
 +	struct sockaddr_in6 sin6;
 +
@@ -1085,13 +1237,13 @@ Index: sys/net/if_stf.c
 +
 +static int
 +stf_ioctl(struct ifnet *ifp, u_long cmd, caddr_t data)
-+{
+ {
  	struct ifaddr *ifa;
  	struct ifreq *ifr;
 -	struct sockaddr_in6 *sin6;
 -	struct in_addr addr;
 +	struct sockaddr_in in4;
- 	int error;
+ 	int error, mtu;
  
 +	/*
 +	 * Sanity check: if more than two interfaces have IFF_UP, do
@@ -1119,7 +1271,7 @@ Index: sys/net/if_stf.c
  	error = 0;
  	switch (cmd) {
  	case SIOCSIFADDR:
-@@ -815,17 +1248,16 @@
+@@ -807,17 +1274,16 @@ stf_ioctl(ifp, cmd, data)
  			error = EAFNOSUPPORT;
  			break;
  		}
@@ -1144,189 +1296,3 @@ Index: sys/net/if_stf.c
  		ifa->ifa_rtrequest = stf_rtrequest;
  		ifp->if_flags |= IFF_UP;
  		break;
-Index: share/man/man4/stf.4
-===================================================================
---- share/man/man4/stf.4	(revision 212990)
-+++ share/man/man4/stf.4	(working copy)
-@@ -1,6 +1,7 @@
- .\"     $KAME: stf.4,v 1.35 2001/05/02 06:24:49 itojun Exp $
- .\"
- .\" Copyright (C) 1995, 1996, 1997, and 1998 WIDE Project.
-+.\" Copyright (c) 2010 Hiroki Sato <hrs@FreeBSD.org>
- .\" All rights reserved.
- .\"
- .\" Redistribution and use in source and binary forms, with or without
-@@ -29,7 +30,7 @@
- .\"
- .\" $FreeBSD$
- .\"
--.Dd April 27, 2001
-+.Dd September 23, 2010
- .Dt STF 4
- .Os
- .Sh NAME
-@@ -42,22 +43,12 @@
- .Sh DESCRIPTION
- The
- .Nm
--interface supports
--.Dq 6to4
--IPv6 in IPv4 encapsulation.
--It can tunnel IPv6 traffic over IPv4, as specified in
--.Li RFC3056 .
-+interface supports IPv6 in IPv4 encapsulation by
-+tunneling IPv6 traffic over IPv4, as specified in
-+.Li RFC3056 Pq 6to4
-+and
-+.Li RFC5569 Pq 6rd .
- .Pp
--For ordinary nodes in 6to4 site, you do not need
--.Nm
--interface.
--The
--.Nm
--interface is necessary for site border router
--(called
--.Dq 6to4 router
--in the specification).
--.Pp
- Each
- .Nm
- interface is created at runtime using interface cloning.
-@@ -72,12 +63,28 @@
- .Pp
- Due to the way 6to4 protocol is specified,
- .Nm
--interface requires certain configuration to work properly.
-+interface requires certain configuration to work properly.  Two
-+different protocols defined in RFC3056 and RFC5569 are basically the
-+same as each other except for address handling, so
-+.Nm
-+decides its behavior based on the configured IPv6 addresses as
-+explained in the following.
-+The
-+.Nm
-+interface can be configured with multiple IPv6 addresses including
-+both 6to4 and 6rd.
-+.Sh RFC3056 (a.k.a. 6to4)
- Single
--(no more than 1)
--valid 6to4 address needs to be configured to the interface.
--.Dq A valid 6to4 address
--is an address which has the following properties.
-+.Pq no more than 1 valid 6to4 address needs to be configured to the interface.
-+.Dq a valid 6to4 address
-+is an address which has the following properties.  For ordinary nodes
-+in 6to4 site, you do not need
-+.Nm
-+interface; it is necessary only for site border router
-+(called
-+.Dq 6to4 router
-+in the specification).
-+.Pp
- If any of the following properties are not satisfied,
- .Nm
- raises runtime error on packet transmission.
-@@ -110,8 +117,80 @@
- .Nm
- interface will check the IPv4 source address on packets,
- if the IPv6 prefix length is larger than 16.
-+.Sh RFC5569 (a.k.a. 6rd)
-+The
-+.Nm
-+interface works in the 6rd mode when one or more IPv6 addresses that
-+consists of an IPv6 prefix and 32-bit IPv4 part with a prefix length
-+equal to or shorter than 64.  In 6rd protocol, an IPv6 address
-+.Li 2001:db8:c000:205::1/32
-+means the following, for example:
-+.Bl -bullet
-+.It
-+The 6rd relay prefix is
-+.Li 2001:db8::/32 .
-+.It
-+The 6rd router's IPv4 address is
-+.Li 192.0.2.5 .
-+.El
- .Pp
-+As you can see the IPv4 address is embedded in the IPv6 address just
-+after the prefix.  While you can choose an IPv6 prefix length other
-+than 32, it must be from 0 to 32.
-+.Pp
-+Assuming this address is configured on the
- .Nm
-+interface, it does the following:
-+.Bl -bullet
-+.It
-+An incoming IPv6 packet on
-+.Nm
-+will be encapsuled in an IPv4 packet with the source address
-+.Li 192.0.2.5
-+and then the IPv4 packet is delivered based on the IPv4 routing table.
-+The IPv4 destination address is calculated from the destination
-+address of the original IPv6 packet in the same way as the source.
-+.It
-+An incoming IPv4 packet which encapsules an IPv6 packet whose
-+destination address matches a 6rd prefix with embedded IPv4 address
-+configured on the
-+.Nm
-+interface, the IPv6 packet will be decapsulated and delivered based on
-+the IPv6 routing table.  Note that
-+.Nm
-+interface normally has a route which covers whole range of a 6rd relay
-+prefix, the delivered IPv6 packet can return to
-+.Nm
-+if there is no more specific route.  In that case, the returned packet
-+will be discarded silently.
-+.El
-+.\" XXX: example configuration will be added
-+.\" .Pp
-+.\" By using this interface, you can configure a 6rd domain.  For simplicity,
-+.\" we assume the following here:
-+.\" .Bl -bullet
-+.\" .It
-+.\" A 6rd Customer, who has an IPv6/IPv4 LAN and an IPv4-only access
-+.\" toward network of his Internet Service Provider.  The Customer has
-+.\" a router called
-+.\" .Dq CE Pq Customer Edge
-+.\" Router, which can communicate between his LAN and the ISP over IPv4
-+.\" and encapsulate  
-+.\" his networks.
-+.\" .It
-+.\" A 6rd Provider, who provides IPv6 Internet reachability by using 6rd
-+.\" protocol.  The Provider offers access to a router called
-+.\" .Dq PE Pq Provider Edge
-+.\" Router, which can communicate with 
-+.\" .El
-+.\" .Pp
-+.\" A 6rd customer
-+.\" needs to configure
-+.\" .Nm
-+.\" on his CE (Customer Edge) router.
-+.Sh Other Functionality of the Interface
-+.Pp
-+.Nm
- can be configured to be ECN friendly.
- This can be configured by
- .Dv IFF_LINK1 .
-@@ -147,9 +226,6 @@
- Packets with limited broadcast address as outer IPv4 source/destination
- .Pq Li 255.0.0.0/8
- .It
--Packets with private address as outer IPv4 source/destination
--.Pq Li 10.0.0.0/8 , 172.16.0.0/12 , 192.168.0.0/16
--.It
- Packets with subnet broadcast address as outer IPv4 source/destination.
- The check is made against subnet broadcast addresses for
- all of the directly connected subnets.
-@@ -164,6 +240,11 @@
- inner IPv6 address, if the IPv6 address matches 6to4 prefix.
- .El
- .Pp
-+In addition to them, packets with private address as outer IPv4
-+source/destination
-+.Pq Li 10.0.0.0/8 , 172.16.0.0/12 , 192.168.0.0/16
-+are filtered out only in the 6to4 mode.
-+.Pp
- It is recommended to filter/audit
- incoming IPv4 packet with IP protocol number 41, as necessary.
- It is also recommended to filter/audit encapsulated IPv6 packets as well.
