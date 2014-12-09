@@ -87,22 +87,3 @@
 %%DATADIR%%/linuxService.sh
 %%DATADIR%%/linuxStopService.sh
 %%DATADIR%%/linuxServiceStatus.sh
-@dirrm %%DATADIR%%/Licences
-@dirrm %%DATADIR%%/Classes/JARs
-@dirrm %%DATADIR%%/Classes/Base/resources
-@dirrm %%DATADIR%%/Classes/Base/conf
-@dirrm %%DATADIR%%/Classes/Base/Outgoing/results
-@dirrm %%DATADIR%%/Classes/Base/Outgoing/log
-@dirrm %%DATADIR%%/Classes/Base/Outgoing
-@dirrm %%DATADIR%%/Classes/Base/Incoming/Keepalive
-@dirrm %%DATADIR%%/Classes/Base/Incoming
-@dirrm %%DATADIR%%/Classes/Base/History
-@dirrm %%DATADIR%%/Classes/Base/bin_linux
-@dirrm %%DATADIR%%/Classes/Base/dimes/service
-@dirrm %%DATADIR%%/Classes/Base/dimes
-@dirrm %%DATADIR%%/Classes/Base
-@dirrm %%DATADIR%%/Classes/dimes/service
-@dirrm %%DATADIR%%/Classes/dimes
-@dirrm %%DATADIR%%/Classes
-@dirrm %%DATADIR%%/scripts_linux
-@dirrm %%DATADIR%%

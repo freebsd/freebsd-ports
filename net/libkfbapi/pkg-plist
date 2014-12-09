@@ -81,5 +81,3 @@ share/locale/tr/LC_MESSAGES/libkfbapi.mo
 share/locale/ug/LC_MESSAGES/libkfbapi.mo
 share/locale/uk/LC_MESSAGES/libkfbapi.mo
 share/locale/zh_TW/LC_MESSAGES/libkfbapi.mo
-@dirrm lib/cmake/LibKFbAPI
-@dirrm include/libkfbapi

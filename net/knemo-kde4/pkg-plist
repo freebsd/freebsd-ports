@@ -145,7 +145,3 @@ share/locale/zh_CN/LC_MESSAGES/kcm_knemo.mo
 share/locale/zh_CN/LC_MESSAGES/knemo.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_knemo.mo
 share/locale/zh_TW/LC_MESSAGES/knemo.mo
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrm share/apps/knemo/themes
-@dirrm share/apps/knemo

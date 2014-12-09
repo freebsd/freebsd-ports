@@ -172,23 +172,3 @@ share/locale/sr@latin/LC_MESSAGES/avahi.mo
 share/locale/uk/LC_MESSAGES/avahi.mo
 share/locale/zh_CN/LC_MESSAGES/avahi.mo
 share/locale/zh_TW/LC_MESSAGES/avahi.mo
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrmtry share/locale/en_NZ/LC_MESSAGES
-@dirrmtry share/locale/en_NZ
-@dirrm %%DATADIR%%
-@dirrm lib/avahi
-@dirrm include/avahi-gobject
-@dirrm include/avahi-glib
-@dirrm include/avahi-core
-@dirrm include/avahi-compat-howl/salt
-@dirrm include/avahi-compat-howl/rendezvous
-@dirrm include/avahi-compat-howl/discovery
-@dirrm include/avahi-compat-howl/corby
-@dirrm include/avahi-compat-howl
-@dirrm include/avahi-common
-@dirrm include/avahi-client
-@dirrm etc/avahi/services
-@dirrm etc/avahi

@@ -11,10 +11,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/org/beepcore/beep/example/Bing.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/org/beepcore/beep/example/README_EXAMPLE
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/org/beepcore/beep/example/beepd-config.xml
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org/beepcore/beep/util
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org/beepcore/beep/example
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org/beepcore/beep
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org/beepcore
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

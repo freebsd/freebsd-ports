@@ -54,18 +54,3 @@ lib/libnetdude.so.0.0.0
 %%DATADIR%%/%%PORTVERSION%%/protocols/libnd_tcp.so
 %%DATADIR%%/%%PORTVERSION%%/protocols/libnd_udp.so
 %%DATADIR%%/%%PORTVERSION%%/protocols/libnd_vlan.so
-@dirrm %%DATADIR%%/%%PORTVERSION%%/protocols
-@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins
-@dirrm %%DATADIR%%/%%PORTVERSION%%
-@dirrm %%DATADIR%%
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/vlan
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/udp
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/tcp
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/snap
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/ip
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/icmp
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/fddi
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols
-@dirrm include/libnetdude/%%PORTVERSION%%/plugins
-@dirrm include/libnetdude/%%PORTVERSION%%
-@dirrm include/libnetdude

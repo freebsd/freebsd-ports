@@ -45,28 +45,6 @@ sbin/rwhoisd
 %%ETCDIR%%/samples/rwhoisd.dir
 %%ETCDIR%%/samples/rwhoisd.root
 %%ETCDIR%%/samples/rwhoisd.x.dir
-@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8/data/referral
-@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8/data/network
-@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8/data
-@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8/attribute_defs
-@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8
-@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32/attribute_defs
-@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32/data/referral
-@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32/data/network
-@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32/data
-@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32
-@dirrm %%ETCDIR%%/samples/a.com/data/referral
-@dirrm %%ETCDIR%%/samples/a.com/data/org
-@dirrm %%ETCDIR%%/samples/a.com/data/host
-@dirrm %%ETCDIR%%/samples/a.com/data/guardian
-@dirrm %%ETCDIR%%/samples/a.com/data/domain
-@dirrm %%ETCDIR%%/samples/a.com/data/contact
-@dirrm %%ETCDIR%%/samples/a.com/data/asn
-@dirrm %%ETCDIR%%/samples/a.com/data
-@dirrm %%ETCDIR%%/samples/a.com/attribute_defs
-@dirrm %%ETCDIR%%/samples/a.com
-@dirrm %%ETCDIR%%/samples
-@dirrmtry %%ETCDIR%%
 @exec install -d -o nobody /var/log/rwhoisd /var/run/rwhoisd
 @exec for f in %%ETCFILES%%; do [ -f %D/%%ETCDIR%%/$f ] || cp -p %D/%%ETCDIR%%/samples/$f %D/%%ETCDIR%%/$f; done
 @unexec for f in %%ETCFILES%%; do cmp -s %D/%%ETCDIR%%/$f %D/%%ETCDIR%%/samples/$f && rm -f %D/%%ETCDIR%%/$f || true; done

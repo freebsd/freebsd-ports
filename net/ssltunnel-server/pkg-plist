@@ -6,5 +6,3 @@ libexec/pppserver
 sbin/pppwho
 %%PORTDOCS%%%%DOCSDIR%%/server.LISEZ-MOI
 %%PORTDOCS%%%%DOCSDIR%%/server.README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%ETCDIR%%

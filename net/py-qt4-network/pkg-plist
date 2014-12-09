@@ -35,5 +35,3 @@ share/py-sip/QtNetwork/qtcpsocket.sip
 share/py-sip/QtNetwork/qudpsocket.sip
 share/py-sip/QtNetwork/qurlinfo.sip
 %%API%%share/qt4/qsci/api/python/QtNetwork.api
-@dirrm share/py-sip/QtNetwork
-@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4
