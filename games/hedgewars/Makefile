@@ -18,7 +18,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	depends on fpc which is only available for i386 and amd64
 
-USES=		tar:bzip2 cmake lua:51
+USES=		cmake desktop-file-utils lua:51 tar:bzip2
 USE_SDL=	sdl mixer image ttf net
 USE_FPC=	opengl libpng
 USE_QT4=	corelib gui moc_build network \
@@ -64,6 +64,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/cmake_modules/*.cmake
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	${INSTALL_DATA} ${WRKSRC}/share/hedgewars/Data/misc/hedgewars.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/misc/hedgewars.png \
