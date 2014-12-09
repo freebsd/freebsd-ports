@@ -131,13 +131,3 @@ share/locale/sv/LC_MESSAGES/decibel-audio-player.mo
 share/locale/tr/LC_MESSAGES/decibel-audio-player.mo
 share/locale/zh_CN/LC_MESSAGES/decibel-audio-player.mo
 share/pixmaps/decibel-audio-player.png
-@dirrm %%DATADIR%%/src/tools
-@dirrm %%DATADIR%%/src/modules
-@dirrm %%DATADIR%%/src/media/track
-@dirrm %%DATADIR%%/src/media/format
-@dirrm %%DATADIR%%/src/media
-@dirrm %%DATADIR%%/src/gui
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/res
-@dirrm %%DATADIR%%/pix
-@dirrm %%DATADIR%%
