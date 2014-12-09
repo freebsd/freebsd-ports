@@ -18,4 +18,7 @@ USES=		perl5
 USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Math/Geometry/Planar/GPC/Polygon/Polygon.so
+
 .include <bsd.port.mk>
