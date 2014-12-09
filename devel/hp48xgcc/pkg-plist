@@ -124,15 +124,3 @@ saturn-local-hp48/samples/mandel/Makefile
 saturn-local-hp48/samples/mandel/mandel.c
 saturn-local-hp48/samples/math/Makefile
 saturn-local-hp48/samples/math/gamma.c
-@dirrm saturn-local-hp48/samples/math
-@dirrm saturn-local-hp48/samples/mandel
-@dirrm saturn-local-hp48/samples/lib-test
-@dirrm saturn-local-hp48/samples/lcd
-@dirrm saturn-local-hp48/samples/hello
-@dirrm saturn-local-hp48/samples/func
-@dirrm saturn-local-hp48/samples/float
-@dirrm saturn-local-hp48/samples/download
-@dirrm saturn-local-hp48/samples/c++-hello
-@dirrm saturn-local-hp48/samples/asm-test
-@dirrm saturn-local-hp48/samples
-@dirrm saturn-local-hp48
