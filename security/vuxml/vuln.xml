@@ -57,6 +57,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="10d73529-7f4b-11e4-af66-00215af774f0">
+    <topic>unbound -- can be tricked into following an endless series of delegations, this consumes a lot of resources</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Unbound developer reports:</p>
+	<blockquote cite="http://unbound.net/downloads/CVE-2014-8602.txt">
+	  <p>The resolver can be tricked into following an endless series of
+	    delegations, this consumes a lot of resources..</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://unbound.net/downloads/CVE-2014-8602.txt</url>
+      <cvename>CVE-2014-8602</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-08</discovery>
+      <entry>2014-12-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="567beb1e-7e0a-11e4-b9cc-bcaec565249c">
     <topic>freetype -- Out of bounds stack-based read/write</topic>
     <affects>
