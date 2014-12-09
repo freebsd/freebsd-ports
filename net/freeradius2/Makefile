@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	2.2.5
-PORTREVISION=	3
+DISTVERSION=	2.2.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -28,7 +27,7 @@ CONFLICTS_INSTALL=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 
 USE_RC_SUBR=	radiusd
 
-USES=		gmake libtool shebangfix tar:bzip2
+USES=		gmake libtool shebangfix tar:bzip2 libtool autoreconf
 SHEBANG_FILES=	scripts/radsqlrelay src/modules/rlm_counter/rad_counter
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader
 USE_OPENSSL=	yes
@@ -238,21 +237,21 @@ EXPM=		yes
 .endif
 
 # No SMB option yet; rlm_smb is still unbuildable
-.if ${PORT_OPTIONS:MSMB}
-LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-CONFIGURE_ARGS+=--with-rlm_smb
-CONFIGURE_ARGS+=--with-rlm-smb-lib-dir=${LOCALBASE}/lib
-CONFIGURE_ARGS+=--with-rlm-smb-include-dir=${LOCALBASE}/include
-PLIST_SUB+=	SMB=""
-.else
-CONFIGURE_ARGS+=--without-rlm_smb
-PLIST_SUB+=	SMB="@comment "
-.endif
-
-# SMB module is still experimental
-.if ${PORT_OPTIONS:MSMB} && empty(PORT_OPTIONS:MSMB)
-EXPM=		yes
-.endif
+#.if ${PORT_OPTIONS:MSMB}
+#LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+#CONFIGURE_ARGS+=--with-rlm_smb
+#CONFIGURE_ARGS+=--with-rlm-smb-lib-dir=${LOCALBASE}/lib
+#CONFIGURE_ARGS+=--with-rlm-smb-include-dir=${LOCALBASE}/include
+#PLIST_SUB+=	SMB=""
+#.else
+#CONFIGURE_ARGS+=--without-rlm_smb
+#PLIST_SUB+=	SMB="@comment "
+#.endif
+#
+## SMB module is still experimental
+#.if ${PORT_OPTIONS:MSMB} && empty(PORT_OPTIONS:MSMB)
+#EXPM=		yes
+#.endif
 
 # Oracle support is experimental under FreeBSD
 .if ${PORT_OPTIONS:MOCI8}
@@ -341,5 +340,10 @@ pre-configure:
 		&& ${AUTOCONF} -I ${WRKSRC}
 	@cd ${WRKSRC}/src/modules/rlm_perl && ${AUTOCONF} -I ${WRKSRC}
 	@cd ${WRKSRC}/src/modules/rlm_python && ${AUTOCONF} -I ${WRKSRC}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}-${PORTVERSION}/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rlm_* \
+		${STAGEDIR}${PREFIX}/sbin/rad*
 
 .include <bsd.port.post.mk>
