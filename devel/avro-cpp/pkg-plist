@@ -39,6 +39,3 @@ include/avro/buffer/detail/BufferDetailIterator.hh
 lib/libavrocpp.so
 lib/libavrocpp.so.0
 lib/libavrocpp_s.a
-@dirrm include/avro/buffer/detail
-@dirrm include/avro/buffer
-@dirrm include/avro

@@ -22,4 +22,3 @@ lib/libavro.a
 lib/libavro.so
 lib/libavro.so.0
 libdata/pkgconfig/avro-c.pc
-@dirrm include/avro
