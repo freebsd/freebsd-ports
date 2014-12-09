@@ -1,5 +1,5 @@
---- apipie-bindings-0.0.10.gemspec.orig	2014-08-29 16:34:08.000000000 +0200
-+++ apipie-bindings-0.0.10.gemspec	2014-08-29 16:34:20.000000000 +0200
+--- apipie-bindings-0.0.11.gemspec.orig	2014-08-29 16:34:08.000000000 +0200
++++ apipie-bindings-0.0.11.gemspec	2014-08-29 16:34:20.000000000 +0200
 @@ -78,7 +78,7 @@
      requirements:
      - - ~>
