@@ -8,7 +8,7 @@ MASTER_SITES=	SF/matroska/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean and optimize Matroska and WebM files
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 HAS_CONFIGURE=	yes
 

@@ -9,7 +9,8 @@ MASTER_SITES=	ftp://corona.homeunix.net/ports/libtuner/
 MAINTAINER=	jason.harmening@gmail.com
 COMMENT=	Userspace drivers for various TV/radio tuner ICs
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE MIT
+LICENSE_COMB=	multi
 
 MAKE_ARGS+=	INSTALLDIR=${STAGEDIR}${PREFIX}
 USE_LDCONFIG=	${PREFIX}/lib/libtuner
