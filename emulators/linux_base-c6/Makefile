@@ -131,7 +131,7 @@ LINUX_RPM_ARCH=		i686
 USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
-PLIST_SUB=		GLIBCVER="2.12"
+PLIST_SUB=		GLIBCVER="2.12" LINUXBASE=${LINUXBASE}
 USES=	shebangfix
 SHEBANG_FILES=	bin/redhat_lsb_init sbin/mount.tmpfs
 # bash scripts need to work in chroot /compat/linux, so use env instead.
