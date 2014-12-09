@@ -81,18 +81,3 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/conf/modules/llia_phon-generic.conf
 %%DATADIR%%/conf/modules/swift-generic.conf
 %%DATADIR%%/conf/speechd.conf
-@dirrm %%DATADIR%%/conf/modules
-@dirrm %%DATADIR%%/conf/clients
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%
-@dirrm share/sounds/speech-dispatcher
-@dirrm lib/speech-dispatcher-modules
-@dirrm lib/speech-dispatcher
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/speechd_config
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/speechd
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-%%PYTHON%%@dirrmtry %%PYTHON_LIBDIR%%
-@dirrm include/speech-dispatcher
-@dirrmtry %%ETCDIR%%/modules
-@dirrmtry %%ETCDIR%%/clients
-@dirrmtry %%ETCDIR%%
