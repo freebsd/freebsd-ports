@@ -3,6 +3,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -46,9 +47,9 @@ STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=		python:2
-CONFIGURE_ARGS+=--with-pyunbound=yes --with-pythonmodule=yes
+CONFIGURE_ARGS+=--with-pyunbound=yes --with-pythonmodule=yes LDFLAGS="-L${LOCALBASE}/lib"
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
-BROKEN=	Does not build
+STRIP_FILES+=	.libs/_unbound.so
 PYTHON=
 .else
 PYTHON=		"@comment "
