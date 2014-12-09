@@ -1,19 +1,12 @@
 # Created by: erich@FreeBSD.org
 # $FreeBSD$
-#   $MCom: ports/graphics/gimp-app/Makefile,v 1.65 2012/12/30 18:09:11 mezz Exp $
 
 PORTNAME?=	gimp-app
-PORTVERSION=	2.8.10
-PORTREVISION?=	7
+PORTVERSION=	2.8.14
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
-MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
-		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
-		ftp://ftp.is.co.za/mirror/ftp.gimp.org/gimp/%SUBDIR%/ \
-		ftp://ftp.cc.uoc.gr/mirrors/gimp/%SUBDIR%/ \
-		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
+MASTER_SITES=	GIMP
 MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
 DISTNAME=	gimp-${PORTVERSION}
 
@@ -33,10 +26,10 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 GNU_CONFIGURE=	yes
-USES+=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+USES+=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:bzip2
 USE_XORG=	xpm xmu xext
-USE_GNOME+=	intltool intlhack gtk20 libartlgpl2 gnomehier
+USE_GNOME+=	intlhack gtk20
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
@@ -54,6 +47,8 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 CONFIGURE_ENV=	GIMP_THREAD_LIBS=${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+
+PLIST_SUB+=	LIBVER=0.800.14
 
 .if !defined(GIMP_SLAVE)
 
