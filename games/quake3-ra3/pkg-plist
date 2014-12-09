@@ -32,5 +32,3 @@
 %%DATADIR%%/sounds.pk3
 %%DATADIR%%/textures.pk3
 %%DATADIR%%/vm.pk3
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
