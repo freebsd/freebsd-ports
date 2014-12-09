@@ -1,5 +1,5 @@
 Faraday Middleware
 
-Collection of Faraday middlewares used in some of my API wrappers
+Various Faraday middlewares for Faraday-based API wrappers
 
-WWW: https://github.com/pengwynn/faraday_middleware
+WWW: https://github.com/lostisland/faraday_middleware
