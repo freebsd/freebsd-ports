@@ -2,4 +2,3 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/progressbar.en.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/progressbar.ja.rd
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

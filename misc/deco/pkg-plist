@@ -23,5 +23,3 @@ man/ru.KOI8-R/man1/deco.1.gz
 %%DATADIR%%/help/u.view
 %%DATADIR%%/menu
 %%DATADIR%%/profile
-@dirrm %%DATADIR%%/help
-@dirrm share/deco

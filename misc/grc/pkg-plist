@@ -23,4 +23,3 @@ man/man1/grcat.1.gz
 %%DATADIR%%/conf.ps
 %%DATADIR%%/conf.traceroute
 %%DATADIR%%/conf.wdiff
-@dirrm %%DATADIR%%

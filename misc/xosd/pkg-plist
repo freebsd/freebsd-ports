@@ -32,4 +32,3 @@ share/aclocal/libxosd.m4
 %%DATADIR%%/top-left.png
 %%DATADIR%%/top-right.png
 %%DATADIR%%/top.png
-@dirrm %%DATADIR%%

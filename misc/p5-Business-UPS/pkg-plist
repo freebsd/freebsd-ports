@@ -2,4 +2,3 @@
 %%SITE_PERL%%/Business/UPS.pm
 %%SITE_PERL%%/auto/Business/UPS/autosplit.ix
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

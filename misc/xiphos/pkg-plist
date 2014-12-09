@@ -222,13 +222,3 @@ share/omf/xiphos/xiphos-fr.omf
 %%DATADIR%%/xiphos-button-125.png
 %%DATADIR%%/xiphos-x-16.png
 %%DATADIR%%/xiphos.xpm
-@dirrmtry %%DATADIR%%
-@dirrmtry share/omf/xiphos
-@dirrmtry share/gnome/help/xiphos/fr/figures
-@dirrmtry share/gnome/help/xiphos/fr
-@dirrmtry share/gnome/help/xiphos/fa/figures
-@dirrmtry share/gnome/help/xiphos/fa
-@dirrmtry share/gnome/help/xiphos/C/figures
-@dirrmtry share/gnome/help/xiphos/C
-@dirrmtry share/gnome/help/xiphos
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

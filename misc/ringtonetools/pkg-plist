@@ -4,6 +4,4 @@ bin/ringtonetools
 %%DATADIR%%/ionian.rtttl
 %%DATADIR%%/usa.emelody
 %%DATADIR%%/yngwie_trilogy.rtttl
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

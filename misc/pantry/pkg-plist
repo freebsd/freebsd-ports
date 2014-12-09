@@ -22,10 +22,3 @@ bin/pantryd
 %%DATADIR%%/scripts/zsh_functions
 man/man1/pantry.1.gz
 man/man1/pantryd.1.gz
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/examples/recipes
-@dirrm %%DATADIR%%/examples/foods
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%

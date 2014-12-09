@@ -467,20 +467,3 @@
 %%DATADIR%%/WET
 %%DATADIR%%/posixrules
 %%DATADIR%%/zone.tab
-@dirrm %%DATADIR%%/Africa
-@dirrm %%DATADIR%%/America
-@dirrm %%DATADIR%%/America/Argentina
-@dirrm %%DATADIR%%/America/Indiana
-@dirrm %%DATADIR%%/America/Kentucky
-@dirrm %%DATADIR%%/America/North_Dakota
-@dirrm %%DATADIR%%/Antarctica
-@dirrm %%DATADIR%%/Arctic
-@dirrm %%DATADIR%%/Asia
-@dirrm %%DATADIR%%/Atlantic
-@dirrm %%DATADIR%%/Australia
-@dirrm %%DATADIR%%/Etc
-@dirrm %%DATADIR%%/Europe
-@dirrm %%DATADIR%%/Indian
-@dirrm %%DATADIR%%/Pacific
-@dirrm %%DATADIR%%/SystemV
-@dirrmtry %%DATADIR%%

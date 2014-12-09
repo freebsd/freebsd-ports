@@ -8,4 +8,3 @@ bin/wmtunlo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.original
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

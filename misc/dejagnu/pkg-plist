@@ -160,7 +160,3 @@ man/man1/runtest.1.gz
 %%DATADIR%%/testglue.c
 %%DATADIR%%/tip.exp
 %%DATADIR%%/utils.exp
-@dirrm %%DATADIR%%/libexec
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/baseboards
-@dirrm %%DATADIR%%

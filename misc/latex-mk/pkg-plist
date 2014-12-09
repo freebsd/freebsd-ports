@@ -27,6 +27,3 @@ bin/latex-mk
 %%DATADIR%%/tgif.mk
 %%DATADIR%%/xfig.gmk
 %%DATADIR%%/xfig.mk
-@dirrm %%DATADIR%%/example/tgif
-@dirrm %%DATADIR%%/example
-@dirrm %%DATADIR%%

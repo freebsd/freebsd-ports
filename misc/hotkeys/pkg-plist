@@ -31,4 +31,3 @@ man/man1/hotkeys.1.gz
 %%DATADIR%%/sk2800c.def
 %%DATADIR%%/sk7100.def
 %%DATADIR%%/sk9925.def
-@dirrm %%DATADIR%%

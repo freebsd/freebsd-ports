@@ -57,5 +57,3 @@ bin/asbutton
 %%DATADIR%%/asb9-xmms.xpm
 %%DATADIR%%/asb9-xv.xpm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/asbuttonrc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%

@@ -371,6 +371,3 @@ share/locale/tg/LC_MESSAGES/useraccount.mo
 share/locale/tg/LC_MESSAGES/validatorsplugin.mo
 share/locale/tg/LC_MESSAGES/webarchiver.mo
 share/locale/tg/entry.desktop
-@dirrm share/apps/kvtml/tg
-@dirrm share/apps/kvtml
-@dirrm share/apps/khangman

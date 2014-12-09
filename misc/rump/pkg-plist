@@ -393,4 +393,3 @@ lib/librumpvfs_layerfs.so.0
 lib/librumpvfs_layerfs.so.0.0
 lib/librumpvfs_layerfs_pic.a
 lib/librumpvfs_pic.a
-@dirrmtry include/rump

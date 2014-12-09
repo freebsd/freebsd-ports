@@ -2,4 +2,3 @@ bin/bible
 man/man1/bible.1.gz
 %%DATADIR%%/bible.data
 %%DATADIR%%/bible.data.conc
-@dirrm %%DATADIR%%

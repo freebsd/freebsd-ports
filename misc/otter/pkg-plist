@@ -320,20 +320,3 @@ bin/otter
 %%PORTEXAMPLES%%share/examples/mace2/Perl-examples/index.html
 %%PORTEXAMPLES%%share/examples/mace2/Perl-examples/README
 %%PORTEXAMPLES%%share/examples/mace2/Perl-examples/candidates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/auto
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fringe
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/wos
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Loop
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ivy
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/program
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kalman
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/split
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTEXAMPLES%%@dirrm share/examples/mace2/basic
-%%PORTEXAMPLES%%@dirrm share/examples/mace2/iterate
-%%PORTEXAMPLES%%@dirrm share/examples/mace2/propositional
-%%PORTEXAMPLES%%@dirrm share/examples/mace2/lattice
-%%PORTEXAMPLES%%@dirrm share/examples/mace2/quasigroup
-%%PORTEXAMPLES%%@dirrm share/examples/mace2/Perl-examples
-%%PORTEXAMPLES%%@dirrm share/examples/mace2

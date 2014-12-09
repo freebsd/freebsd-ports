@@ -23,5 +23,3 @@ lib/libgctpc.so.1
 %%PORTDOCS%%%%DOCSDIR%%/reference.txt
 %%PORTDOCS%%%%DOCSDIR%%/xxxfor.ps
 %%PORTDOCS%%%%DOCSDIR%%/xxxinv.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/gctpc

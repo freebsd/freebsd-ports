@@ -44,5 +44,3 @@ share/games/fortune/zuse
 share/games/fortune/zuse-o
 share/games/fortune/zuse-o.dat
 share/games/fortune/zuse.dat
-@dirrm share/games/fortune
-@dirrm share/games

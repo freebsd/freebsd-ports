@@ -62,6 +62,3 @@ share/locale/sv/LC_MESSAGES/gnome-osd.mo
 share/locale/tr/LC_MESSAGES/gnome-osd.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-osd.mo
 share/pixmaps/gnome-osd.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/gnomeosd

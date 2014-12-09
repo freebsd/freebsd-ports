@@ -371,24 +371,3 @@ share/locale/zh_CN/LC_MESSAGES/tellico.mo
 share/locale/zh_TW/LC_MESSAGES/tellico.mo
 share/mime/packages/tellico.xml
 share/mimelnk/application/x-tellico.desktop
-@dirrmtry share/mimelnk/application
-@dirrmtry share/mimelnk
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrmtry share/appdata
-@dirrm share/doc/HTML/uk/tellico
-@dirrm share/doc/HTML/sv/tellico
-@dirrm share/doc/HTML/pt_BR/tellico
-@dirrm share/doc/HTML/pt/tellico
-@dirrm share/doc/HTML/nl/tellico
-@dirrm share/doc/HTML/fr/tellico
-@dirrm share/doc/HTML/et/tellico
-@dirrm share/doc/HTML/es/tellico
-@dirrm share/doc/HTML/en/tellico
-@dirrm share/doc/HTML/de/tellico
-@dirrm share/doc/HTML/ca/tellico
-@dirrm share/apps/tellico/report-templates
-@dirrm share/apps/tellico/pics
-@dirrm share/apps/tellico/entry-templates
-@dirrm share/apps/tellico/data-sources
-@dirrm share/apps/tellico

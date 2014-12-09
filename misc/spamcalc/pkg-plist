@@ -23,6 +23,3 @@ etc/spamcalc.conf
 %%PORTDOCS%%%%DOCSDIR%%/files
 %%PORTDOCS%%%%DOCSDIR%%/introduction
 %%PORTDOCS%%%%DOCSDIR%%/todo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

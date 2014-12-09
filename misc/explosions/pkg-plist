@@ -7,4 +7,3 @@ bin/explosions
 %%DATADIR%%/spark6.png
 %%DATADIR%%/spark7.png
 share/pixmaps/explosions.png
-@dirrm %%DATADIR%%

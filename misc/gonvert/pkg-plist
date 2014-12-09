@@ -5,5 +5,3 @@ share/applications/gonvert.desktop
 %%DATADIR%%/pixmaps/gonvert.png
 %%NLS%%share/locale/pl/LC_MESSAGES/gonvert.mo
 share/pixmaps/gonvert.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
