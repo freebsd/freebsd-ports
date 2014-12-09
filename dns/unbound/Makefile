@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -48,6 +48,7 @@ STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 USES+=		python:2
 CONFIGURE_ARGS+=--with-pyunbound=yes --with-pythonmodule=yes
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
+BROKEN=	Does not build
 PYTHON=
 .else
 PYTHON=		"@comment "
