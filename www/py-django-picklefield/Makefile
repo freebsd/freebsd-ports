@@ -16,9 +16,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=0:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	README
 
