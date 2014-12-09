@@ -16,13 +16,10 @@ USE_PYTHON=	distutils autoplist
 OPTIONS_DEFINE=	EXAMPLES
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-
-.include <bsd.port.options.mk>
+PORTEXAMPLES=	emailtrainer.py readme.txt
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
