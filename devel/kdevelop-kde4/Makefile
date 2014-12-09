@@ -17,7 +17,7 @@ RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 USE_KDE4=	kdelibs kdeprefix workspace automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		corelib declarative gui help script webkit xml
-USES=		cmake gmake shared-mime-info tar:xz
+USES=		cmake:outsource compiler:c++11-lib gmake shared-mime-info tar:xz
 
 OPTIONS_DEFINE=	OKTETA PHP NLS
 OPTIONS_DEFAULT=	OKTETA PHP
