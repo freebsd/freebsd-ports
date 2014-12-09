@@ -133,6 +133,3 @@ man/man1/avr-strings.1.gz
 man/man1/avr-strip.1.gz
 man/man1/avr-windmc.1.gz
 man/man1/avr-windres.1.gz
-@dirrm avr/lib/ldscripts
-@dirrm avr/lib
-@dirrm avr/bin
