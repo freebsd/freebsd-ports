@@ -82,8 +82,3 @@ lib/libgdamm-4.0.so.12
 lib/libgdamm-4.0.so.12.0.0
 lib/libgdamm-4.0/include/libgdammconfig.h
 libdata/pkgconfig/libgdamm-4.0.pc
-@dirrm lib/libgdamm-4.0/include
-@dirrm lib/libgdamm-4.0
-@dirrm include/libgdamm-4.0/libgdamm/private
-@dirrm include/libgdamm-4.0/libgdamm
-@dirrm include/libgdamm-4.0

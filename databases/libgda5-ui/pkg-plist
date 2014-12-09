@@ -484,37 +484,3 @@ share/libgda-%%VERSION%%/server_operation.glade
 share/libgda-%%VERSION%%/ui/gdaui-entry-number.xml
 share/libgda-%%VERSION%%/ui/gdaui-entry-string.xml
 share/pixmaps/gda-browser-%%VERSION%%.png
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/scalable/actions
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/scalable
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/32x32/actions
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/32x32
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/24x24/actions
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/24x24
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/22x22/actions
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/22x22
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/16x16/actions
-@dirrm share/libgda-%%VERSION%%/icons/hicolor/16x16
-@dirrm share/libgda-%%VERSION%%/icons/hicolor
-@dirrm share/libgda-%%VERSION%%/icons
-@dirrm share/gnome/help/gda-browser/zh_CN/figures
-@dirrm share/gnome/help/gda-browser/zh_CN
-@dirrm share/gnome/help/gda-browser/sl/figures
-@dirrm share/gnome/help/gda-browser/sl
-@dirrm share/gnome/help/gda-browser/gl/figures
-@dirrm share/gnome/help/gda-browser/gl
-@dirrm share/gnome/help/gda-browser/es/figures
-@dirrm share/gnome/help/gda-browser/es
-@dirrm share/gnome/help/gda-browser/el/figures
-@dirrm share/gnome/help/gda-browser/el
-@dirrm share/gnome/help/gda-browser/de/figures
-@dirrm share/gnome/help/gda-browser/de
-@dirrm share/gnome/help/gda-browser/C/figures
-@dirrm share/gnome/help/gda-browser/C
-@dirrm share/gnome/help/gda-browser
-@dirrm share/libgda-%%VERSION%%/ui
-@dirrm share/libgda-%%VERSION%%/pixmaps
-@dirrm share/libgda-%%VERSION%%/language-specs
-@dirrm share/libgda-%%VERSION%%/demo
-@dirrm share/doc/gda-browser
-@dirrm lib/libgda-%%VERSION%%/plugins
-@dirrm include/libgda-%%VERSION%%/libgda-ui

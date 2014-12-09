@@ -84,8 +84,3 @@ lib/libgdamm-5.0.so.13
 lib/libgdamm-5.0.so.13.0.0
 lib/libgdamm-5.0/include/libgdammconfig.h
 libdata/pkgconfig/libgdamm-5.0.pc
-@dirrm lib/libgdamm-5.0/include
-@dirrm lib/libgdamm-5.0
-@dirrm include/libgdamm-5.0/libgdamm/private
-@dirrm include/libgdamm-5.0/libgdamm
-@dirrm include/libgdamm-5.0
