@@ -20,6 +20,7 @@ USES=		perl5
 USE_PERL5=	build
 USE_XORG=	x11 xaw xext xmu xpm xt
 WRKSRC=		${WRKDIR}/3Dc/src
+DOCSDIR=	${PREFIX}/share/doc/3Dc
 
 OPTIONS_DEFINE=	DOCS
 
@@ -31,9 +32,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/3Dc ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/3Dc
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in 3Dc-rules.html ACKNOWLEDGEMENTS GPL README TODO
-	${INSTALL_DATA} ${WRKSRC}/../${file} ${STAGEDIR}${PREFIX}/share/doc/3Dc
+	${INSTALL_DATA} ${WRKSRC}/../${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
