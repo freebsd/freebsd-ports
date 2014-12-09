@@ -2011,6 +2011,7 @@ usr/share/man/man8/setserial.8.gz
 usr/share/man/man8/tune2fs.8.gz
 usr/tmp
 var/mail
+@dir %%LINUXBASE%%
 @rmtry var/cache/ldconfig/aux-cache
 @comment empty directory listing
 @dir var/yp

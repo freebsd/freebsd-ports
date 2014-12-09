@@ -2340,8 +2340,7 @@ usr/tmp
 var/mail
 @sample etc/krb5.conf.sample
 @sample etc/yp.conf.sample
-@dir /compat/linux
-@dir /compat
+@dir %%LINUXBASE%%
 @dir etc/X11/applnk
 @dir etc/X11/fontpath.d
 @dir etc/ld.so.conf.d
