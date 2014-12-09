@@ -4,7 +4,7 @@
 
 PORTNAME=	gimp
 DISTVERSION?=	2.8.10
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES?=	# empty
@@ -29,7 +29,7 @@ NO_MTREE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHELP}
-RUN_DEPENDS+=	gimp-help*>0:${PORTSDIR}/graphics/gimp-help
+RUN_DEPENDS+=	en-gimp-help-html>=0:${PORTSDIR}/misc/gimp-help-en
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
