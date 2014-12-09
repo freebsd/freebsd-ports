@@ -171,26 +171,5 @@
 %%TEXMFLOCALDIR%%/tex/latex/arabtex/xarbskel.sty
 %%TEXMFLOCALDIR%%/tex/latex/arabtex/xarbsymb.sty
 %%TEXMFLOCALDIR%%/tex/latex/arabtex/yiddish.sty
-@dirrmtry %%TEXMFLOCALDIR%%/tex/latex/arabtex
-@dirrmtry %%TEXMFLOCALDIR%%/tex/latex
-@dirrmtry %%TEXMFLOCALDIR%%/tex
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/type1/arabtex
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/type1
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/tfm/arabtex
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/tfm
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/source/arabtex
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/source
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/pk/arabtex/yarborn
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/pk/arabtex/xnsh
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/pk/arabtex/hclassic
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/pk/arabtex/hcaption
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/pk/arabtex
-@dirrmtry %%TEXMFLOCALDIR%%/fonts/pk
-@dirrmtry %%TEXMFLOCALDIR%%/fonts
-%%PORTDOCS%%@dirrmtry %%TEXMFLOCALDIR%%/doc/arabtex/txt
-%%PORTDOCS%%@dirrmtry %%TEXMFLOCALDIR%%/doc/arabtex/html
-%%PORTDOCS%%@dirrmtry %%TEXMFLOCALDIR%%/doc/arabtex
-%%PORTDOCS%%@dirrmtry %%TEXMFLOCALDIR%%/doc
-@dirrmtry %%TEXMFLOCALDIR%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
