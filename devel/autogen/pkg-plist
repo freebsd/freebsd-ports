@@ -79,4 +79,3 @@ man/man3/streqvcmp.3.gz
 man/man3/streqvmap.3.gz
 man/man3/strneqvcmp.3.gz
 man/man3/strtransform.3.gz
-@dirrm include/autoopts
