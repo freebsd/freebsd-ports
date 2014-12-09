@@ -17,4 +17,6 @@ INSTALL_TARGET+=	install-target-libgcc
 CONFIGURE_ARGS+=	--disable-libstdcxx --disable-multilib
 
 # The following is required for clang to bootstrap gcc.
+.if ${COMPILER_TYPE} == clang
 MAKE_ARGS+=	CXXFLAGS=-fbracket-depth=512
+.endif
