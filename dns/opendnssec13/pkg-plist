@@ -49,9 +49,8 @@ sbin/ods-signerd
 %%DATADIR%%/zonefetch.rng
 %%DATADIR%%/zonelist.rnc
 %%DATADIR%%/zonelist.rng
-@exec mkdir -p %D/var/run/opendnssec
-@exec mkdir -p %D/var/opendnssec/unsigned
-@exec mkdir -p %D/var/opendnssec/tmp
-@exec mkdir -p %D/var/opendnssec/signed
-@exec mkdir -p %D/var/opendnssec/signconf
-@exec chown -R %%USER%%:%%GROUP%% %D/var/opendnssec
+@dir(%%USER%%,%%GROUP%%,) var/run/opendnssec
+@dir(%%USER%%,%%GROUP%%,) var/opendnssec/unsigned
+@dir(%%USER%%,%%GROUP%%,) var/opendnssec/tmp
+@dir(%%USER%%,%%GROUP%%,) var/opendnssec/signed
+@dir(%%USER%%,%%GROUP%%,) var/opendnssec/signconf
