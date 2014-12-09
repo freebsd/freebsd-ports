@@ -322,6 +322,7 @@ share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 %%DATADIR%%/ui/search_bar.ui
 %%DATADIR%%/ui/search_sidebar_context.ui
 %%DATADIR%%/ui/set_background_dialog.glade
+%%DATADIR%%/ui/set_background_slideshow_dialog.glade
 %%DATADIR%%/ui/shotwell.glade
 %%DATADIR%%/ui/shotwell.xml
 %%DATADIR%%/ui/sidebar_default_context.ui
