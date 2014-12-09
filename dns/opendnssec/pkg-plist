@@ -46,22 +46,8 @@ man/man8/ods-enforcerd.8.gz
 man/man8/ods-getconf.8.gz
 man/man8/ods-signer.8.gz
 man/man8/ods-signerd.8.gz
-@owner opendnssec
-@group opendnssec
-@exec install -d -o opendnssec -g opendnssec %D/var/opendnssec/unsigned
-@exec install -d -o opendnssec -g opendnssec %D/var/opendnssec/tmp
-@exec install -d -o opendnssec -g opendnssec %D/var/opendnssec/signed
-@exec install -d -o opendnssec -g opendnssec %D/var/opendnssec/signconf
-@exec install -d -o opendnssec -g opendnssec %D/var/run/opendnssec
-@dirrm var/opendnssec/unsigned
-@dirrm var/opendnssec/tmp
-@dirrm var/opendnssec/signed
-@dirrm var/opendnssec/signconf
-@dirrm var/opendnssec
-@dirrmtry var/run/opendnssec
-@owner root
-@group wheel
-@dirrm %%DATADIR%%
-@dirrm %%ETCDIR%%
-@dirrmtry var/run
-@dirrmtry var
+@dir(opendnssec,opendnssec,) var/opendnssec/unsigned
+@dir(opendnssec,opendnssec,) var/opendnssec/tmp
+@dir(opendnssec,opendnssec,) var/opendnssec/signed
+@dir(opendnssec,opendnssec,) var/opendnssec/signconf
+@dir(opendnssec,opendnssec,) var/run/opendnssec
