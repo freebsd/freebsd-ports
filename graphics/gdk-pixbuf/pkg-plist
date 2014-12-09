@@ -48,8 +48,3 @@ share/aclocal/gdk-pixbuf.m4
 %%DOCSDIR%%/r27.html
 %%DOCSDIR%%/x3715.html
 %%DOCSDIR%%/x3767.html
-@dirrm %%DOCSDIR%%
-@dirrm lib/gdk-pixbuf/loaders
-@dirrm lib/gdk-pixbuf
-@dirrm include/gdk-pixbuf-1.0/gdk-pixbuf
-@dirrm include/gdk-pixbuf-1.0

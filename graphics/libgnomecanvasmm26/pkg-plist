@@ -43,10 +43,3 @@ lib/libgnomecanvasmm-%%API_VERSION%%/include/libgnomecanvasmmconfig.h
 lib/libgnomecanvasmm-%%API_VERSION%%/proc/m4/convert.m4
 lib/libgnomecanvasmm-%%API_VERSION%%/proc/m4/convert_libgnomecanvasmm.m4
 libdata/pkgconfig/libgnomecanvasmm-%%API_VERSION%%.pc
-@dirrm lib/libgnomecanvasmm-%%API_VERSION%%/proc/m4
-@dirrm lib/libgnomecanvasmm-%%API_VERSION%%/proc
-@dirrm lib/libgnomecanvasmm-%%API_VERSION%%/include
-@dirrm lib/libgnomecanvasmm-%%API_VERSION%%
-@dirrm include/libgnomecanvasmm-%%API_VERSION%%/libgnomecanvasmm/private
-@dirrm include/libgnomecanvasmm-%%API_VERSION%%/libgnomecanvasmm
-@dirrm include/libgnomecanvasmm-%%API_VERSION%%
