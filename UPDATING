@@ -5,6 +5,54 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141209:
+  AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
+  AUTHOR: xmj@freebsd.org
+
+  The CentOS ports infrastructure has replaced Fedora 10 as default.
+
+  1. Please delete all remaining f10 ports/packages:
+
+     # pkg delete -f linux_base-f10 linux-f10-\*
+
+  2. Persistently update the Linux kernel version in /etc/sysctl.conf:
+
+     compat.linux.osrelease=2.6.18
+
+    This step is necessary on all FreeBSD versions older than 10.1-RELEASE.
+
+  3. Reinstall all software depending on Linux emulation.
+     As an example, reinstall linux-firefox:
+
+     # portmaster -r linux-firefox
+       or
+     # portupgrade -f www/linux-firefox
+       or
+     # pkg install linux-firefox
+
+  If difficulties are encountered, please follow the UPDATING entry 20140922
+  but skip step 2 (OVERRIDE_LINUX_BASE_PORT and OVERRIDE_LINUX_NONBASE_PORTS
+  in /etc/make.conf). In case these steps do not fix the issues, please submit
+  an issue report in Bugzilla and send an email to FreeBSD's emulation@ mailing
+  list.
+
+  Users who need to continue using Fedora 10 base and userland should do the
+  following instead:
+  
+  1. Add these lines to /etc/make.conf:
+
+      OVERRIDE_LINUX_BASE_PORT=f10
+      OVERRIDE_LINUX_NONBASE_PORTS=f10
+
+  2. Downgrade the Linux kernel version in /etc/sysctl.conf on FreeBSD versions
+     newer than and including 10.1-RELEASE:
+
+       compat.linux.osrelease=2.6.16
+
+  This is all that is needed to continue using an existing Fedora 10 Linux base
+  and userland.
+
+
 20141208:
   AFFECTS: users of ports-mgmt/poudriere, ports-mgmt/poudriere-devel
   AUTHOR: bdrewery@FreeBSD.org

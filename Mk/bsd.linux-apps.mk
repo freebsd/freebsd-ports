@@ -51,8 +51,8 @@ IGNORE=         valid values for OVERRIDE_LINUX_NONBASE_PORTS are: \"f10\" and \
 LINUX_DIST_SUFFIX=      -${USE_LINUX}
 .        endif
 .  else
-# default
-LINUX_DIST_SUFFIX=      -f10 # temporary default, set to -c6 soon
+# default to CentOS
+LINUX_DIST_SUFFIX=      -c6
 .  endif
 
 WEB_AUTH=			nvu
@@ -208,9 +208,9 @@ gdkpixbuf_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-gdk-pixbuf
 gdkpixbuf2_f10_FILE=${LINUXBASE}/usr/lib/libgdk_pixbuf-2.0.so.0
 gdkpixbuf2_c6_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf-2.0.so.0
 gdkpixbuf2_DETECT=	${gdkpixbuf2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
-.if ${USE_LINUX} == "f10" || ${USE_LINUX} == "yes"	# temporary default, remove or clause soon
+.if ${USE_LINUX} == "f10"
 gdkpixbuf2_PORT=	${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-gtk2
-.else
+.else # default to CentOS 6.
 gdkpixbuf2_PORT=	${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-gdk-pixbuf2
 .endif
 

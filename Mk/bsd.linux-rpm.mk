@@ -43,13 +43,13 @@ NO_WRKSUBDIR=		yes
 NO_BUILD=			yes
 
 .	if ${ARCH} == "amd64" || ${ARCH} == "i386"
-.		if ${USE_LINUX} == "c6"
-# Do not build CentOS 6.6 ports if overridden by f10
+.		if ${USE_LINUX} == "c6" || ${USE_LINUX} == "yes" # default to CentOS
+# Do not build CentOS 6 ports if overridden by f10
 .			if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
 IGNORE=		This port requires CentOS ${LINUX_DIST_VER}. Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
 .			endif
 LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
-.		elif ${USE_LINUX} == "f10" || ${USE_LINUX} == "yes" # temporary default, move or clause to line 46
+.		elif ${USE_LINUX} == "f10"
 # Do not build Fedora 10 ports unless specifically overridden.
 #.			if ! defined(OVERRIDE_LINUX_NONBASE_PORTS) || ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
 #IGNORE=		This port requires Fedora 10, yet Fedora 10 is heavily outdated and contains many vulnerable ports. If you really need it, add OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
@@ -68,11 +68,11 @@ LINUX_RPM_ARCH?=	ppc
 
 Linux_RPM_Post_Include=	bsd.linux-rpm.mk
 
-.if ${USE_LINUX} == "f10" || ${USE_LINUX} == "yes" # temporary default, remove or clause soon
+.if ${USE_LINUX} == "f10"
 USE_LINUX?=	"f10"
 LINUX_DIST=	fedora
 LINUX_DIST_VER=	10
-.else
+.else			# default to CentOS
 LINUX_DIST=	centos
 LINUX_DIST_VER=	6.6
 .endif
