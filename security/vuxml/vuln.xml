@@ -70,7 +70,7 @@ Notes:
 	<p>Unbound developer reports:</p>
 	<blockquote cite="http://unbound.net/downloads/CVE-2014-8602.txt">
 	  <p>The resolver can be tricked into following an endless series of
-	    delegations, this consumes a lot of resources..</p>
+	    delegations, this consumes a lot of resources.</p>
 	</blockquote>
       </body>
     </description>
