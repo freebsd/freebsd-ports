@@ -20,7 +20,7 @@ LICENSE=	BSD2CLAUSE
 # With no dependency at all
 NO_CCACHE=	yes
 WITH_DEBUG=	yes
-CFLAGS+=	-O0 -g
+CFLAGS+=	-O0 -g -Wno-error
 USE_LDCONFIG=	yes
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
