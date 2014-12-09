@@ -30,6 +30,9 @@ BROKEN=		Does not install on sparc64-9
 post-patch:
 	@${REINPLACE_CMD} -e "s|'lualib',||; s|lua|lua-${LUA_VER}|g" ${WRKSRC}/config_posix.py
 
+post-build:
+	${STRIP_CMD} ${WRKSRC}/lib/libtolua++.so
+
 do-install:
 	${MKDIR} ${STAGEDIR}${TGT_BINDIR} ${STAGEDIR}${TGT_INCDIR} ${STAGEDIR}${TGT_LIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua++ ${STAGEDIR}${TGT_BINDIR}
