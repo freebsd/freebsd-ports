@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/misc/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-8 character set support library, including regular expressions
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ETCDIR="${DATADIR}"
