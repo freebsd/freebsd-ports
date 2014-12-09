@@ -5,5 +5,3 @@ man/man1/tcb.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/HELP
 %%DATADIR%%/tcbrc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

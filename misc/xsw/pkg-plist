@@ -28,6 +28,3 @@ man/man1/xswconv.1.gz
 %%DATADIR%%/tutorial/tutorial.xsw
 %%DATADIR%%/tutorial/tutorial.xsw.in
 %%DATADIR%%/tutorial/tux.png
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%DATADIR%%/tutorial
-@dirrm %%DATADIR%%

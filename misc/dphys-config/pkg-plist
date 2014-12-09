@@ -18,7 +18,3 @@ man/man1/dphys-config.1.gz
 %%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-quota
 %%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-usb-storage
 %%EXAMPLESDIR%%/site.example/local/sbin/dphys-config-x
-@dirrm %%EXAMPLESDIR%%/site.example/local/sbin
-@dirrm %%EXAMPLESDIR%%/site.example/local
-@dirrm %%EXAMPLESDIR%%/site.example
-@dirrm %%EXAMPLESDIR%%

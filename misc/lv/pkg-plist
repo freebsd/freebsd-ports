@@ -6,5 +6,3 @@ man/man1/lv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/hello.sample.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/relnote.html
-@dirrmtry lib/lv
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

@@ -124,6 +124,3 @@
 %%NAGIOSWWWDIR%%/images/logos/yellowdog.gif
 %%NAGIOSWWWDIR%%/images/logos/yellowdog.jpg
 %%NAGIOSWWWDIR%%/images/logos/yellowdog.png
-@dirrmtry %%NAGIOSWWWDIR%%/images/logos
-@dirrmtry %%NAGIOSWWWDIR%%/images
-@dirrmtry %%NAGIOSWWWDIR%%

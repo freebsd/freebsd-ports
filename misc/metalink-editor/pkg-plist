@@ -7,5 +7,3 @@ bin/metalink_editor.py
 %%PYTHON_SITELIBDIR%%/Metalink_editor/metalink.pyo
 %%DATADIR%%/metalink.png
 %%DATADIR%%/metalink_small.png
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/Metalink_editor

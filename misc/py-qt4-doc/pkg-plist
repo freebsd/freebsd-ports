@@ -1335,8 +1335,3 @@
 %%DOCSDIR%%/html/searchindex.js
 %%DOCSDIR%%/html/threads.html
 %%DOCSDIR%%/html/webkit.html
-@dirrm %%DOCSDIR%%/html/images
-@dirrm %%DOCSDIR%%/html/_static
-@dirrm %%DOCSDIR%%/html/_sources
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%

@@ -6,5 +6,3 @@ bin/pypanda
 %%DATADIR%%/pypanda.py
 %%DATADIR%%/pypanda.pyc
 %%DATADIR%%/pypanda.pyo
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

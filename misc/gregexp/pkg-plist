@@ -2,5 +2,3 @@ bin/gregexp
 share/applications/gregexp.desktop
 share/pixmaps/gregexp.png
 share/gregexp/glade/gregexp.glade
-@dirrm share/gregexp/glade
-@dirrm share/gregexp

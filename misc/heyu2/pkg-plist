@@ -11,4 +11,3 @@ man/man5/x10sched.5.gz
 man/man5/x10scripts.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/x10.sched.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/x10config.sample
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

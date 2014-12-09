@@ -3,4 +3,3 @@ bin/simbj
 share/bbjd/Interactive
 share/bbjd/Simulation
 share/bbjd/Theory
-@dirrm share/bbjd

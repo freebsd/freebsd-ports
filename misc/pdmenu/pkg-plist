@@ -8,4 +8,3 @@ share/locale/fr/LC_MESSAGES/pdmenu.mo
 share/locale/ru/LC_MESSAGES/pdmenu.mo
 %%DATADIR%%/editdir.pl
 %%DATADIR%%/showdir.pl
-@dirrm %%DATADIR%%

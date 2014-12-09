@@ -61,8 +61,3 @@ share/hercules/xrc/exercisewizard.xrc
 share/hercules/xrc/hercules.xrc
 share/locale/cs/LC_MESSAGES/hercules.mo
 share/locale/ru/LC_MESSAGES/hercules.mo
-@dirrm share/hercules/xrc
-@dirrm share/hercules
-@dirrm %%PYTHON_SITELIBDIR%%/Hercules/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/Hercules/gui
-@dirrm %%PYTHON_SITELIBDIR%%/Hercules

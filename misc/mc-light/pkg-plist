@@ -129,9 +129,3 @@ share/mc/term/xterm.ad
 share/mc/term/xterm.tcap
 share/mc/term/xterm.ti
 %%NLS%%share/locale/ru/LC_MESSAGES/mc.mo
-@dirrm share/mc/term
-@dirrm share/mc/syntax
-@dirrm share/mc/extfs
-@dirrm share/mc/codepages
-@dirrm share/mc/bin
-@dirrm share/mc
