@@ -1,6 +1,6 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-.if defined(OVERRIDE_LINUX_NONBASE_PORTS) && \
+.if !defined(OVERRIDE_LINUX_NONBASE_PORTS) || \
     ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
 .undef WANT_GTK218
 .endif

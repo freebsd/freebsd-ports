@@ -9,7 +9,6 @@ variable of rc.conf(5).
 ----------------------
 You should enable Linux mode with the linux_enable variable of rc.conf(5) 
 and use compat.linux.osrelease=2.6.18 in sysctl.conf(5).
-This is highly experimental!
 ----------------------
 
 If you want to use shared memory in Linux applications, you need to set up
