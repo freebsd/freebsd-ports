@@ -21,10 +21,3 @@ usr/share/doc/audiofile-0.2.6/docs/afSetVirtualByteOrder
 usr/share/doc/audiofile-0.2.6/docs/afWriteFrames
 usr/share/doc/audiofile-0.2.6/docs/sfconvert
 usr/share/doc/audiofile-0.2.6/docs/sfinfo
-@dirrmtry usr/share/doc/audiofile-0.2.6/docs
-@dirrmtry usr/share/doc/audiofile-0.2.6
-@dirrmtry usr/share/doc
-@dirrmtry usr/share
-@dirrmtry usr/lib
-@dirrmtry usr/bin
-@dirrmtry usr

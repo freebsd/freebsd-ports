@@ -42,5 +42,3 @@ usr/share/locale/te/LC_MESSAGES/pulseaudio.mo
 usr/share/locale/uk/LC_MESSAGES/pulseaudio.mo
 usr/share/locale/zh_CN/LC_MESSAGES/pulseaudio.mo
 usr/share/locale/zh_TW/LC_MESSAGES/pulseaudio.mo
-@dirrmtry etc/pulse
-@dirrmtry usr/share/doc/pulseaudio-libs-0.9.21
