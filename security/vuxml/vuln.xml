@@ -57,6 +57,71 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="27b9b2f0-8081-11e4-b4ca-bcaec565249c">
+    <topic>xserver -- multiple issue with X client request handling</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>1.12.4_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="http://lists.x.org/archives/xorg-announce/2014-December/002500.html">
+	  <p>Ilja van Sprundel, a security researcher with IOActive, has
+	    discovered a large number of issues in the way the X server
+	    code base handles requests from X clients, and has worked
+	    with X.Org's security team to analyze, confirm, and fix
+	    these issues.</p>
+
+	  <p>The vulnerabilities could be exploited to cause the X server
+	    to access uninitialized memory or overwrite arbitrary memory
+	    in the X server process.  This can cause a denial of service
+	    (e.g., an X server segmentation fault), or could be exploited
+	    to achieve arbitrary code execution.</p>
+
+	  <p>The GLX extension to the X Window System allows an X client
+	    to send X protocol to the X server, to request that the X
+	    server perform OpenGL rendering on behalf of the X client.
+	    This is known as "GLX indirect rendering", as opposed to
+	    "GLX direct rendering" where the X client submits OpenGL
+	    rendering commands directly to the GPU, bypassing the X
+	    server and avoiding the X server code for GLX protocol
+	    handling.</p>
+
+	  <p>Most GLX indirect rendering implementations share some
+	    common ancestry, dating back to "Sample Implementation"
+	    code from Silicon Graphics, Inc (SGI), which SGI
+	    originally commercially licensed to other Unix workstation
+	    and graphics vendors, and later released as open source, so
+	    those vulnerabilities may affect other licensees of SGI's
+	    code base beyond those running code from the X.Org Foundation
+	    or the XFree86 Project.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.x.org/archives/xorg-announce/2014-December/002500.html</url>
+      <cvename>CVE-2014-8091</cvename>
+      <cvename>CVE-2014-8092</cvename>
+      <cvename>CVE-2014-8093</cvename>
+      <cvename>CVE-2014-8094</cvename>
+      <cvename>CVE-2014-8095</cvename>
+      <cvename>CVE-2014-8096</cvename>
+      <cvename>CVE-2014-8097</cvename>
+      <cvename>CVE-2014-8098</cvename>
+      <cvename>CVE-2014-8099</cvename>
+      <cvename>CVE-2014-8100</cvename>
+      <cvename>CVE-2014-8101</cvename>
+      <cvename>CVE-2014-8102</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-09</discovery>
+      <entry>2014-12-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="10d73529-7f4b-11e4-af66-00215af774f0">
     <topic>unbound -- can be tricked into following an endless series of delegations, this consumes a lot of resources</topic>
     <affects>
