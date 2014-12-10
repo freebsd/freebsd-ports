@@ -3625,6 +3625,7 @@
     SUBDIR += py-ZopeUndo
     SUBDIR += py-akismet
     SUBDIR += py-anonfunc
+    SUBDIR += py-anyconfig
     SUBDIR += py-anyjson
     SUBDIR += py-apipkg
     SUBDIR += py-appdirs
