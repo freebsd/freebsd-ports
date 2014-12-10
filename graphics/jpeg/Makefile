@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	jpeg
-PORTVERSION=	9
-PORTREVISION=	0
+PORTVERSION=	8
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		http://sylvana.net/jpegcrop/:exif
@@ -19,7 +19,7 @@ COMMENT=	IJG's jpeg compression utilities
 #CONFLICTS=	libjpeg-turbo-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION2}
-DISTVERSION2=	9
+DISTVERSION2=	8d
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -48,7 +48,7 @@ test: build
 regression-test:	test
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjpeg.so.9.0.0
+	${LN} -s libjpeg.so.8 ${STAGEDIR}${PREFIX}/lib/libjpeg.so.11
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/jpeg
 	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/jpeg/
