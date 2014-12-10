@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gerard@seibercom.net
 COMMENT=	Download & Install additional definition files for Clamav
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	bash>=4.2.42:${PORTSDIR}/shells/bash \
 		clamav>=0.97.8:${PORTSDIR}/security/clamav \
