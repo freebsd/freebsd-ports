@@ -12,7 +12,7 @@ DISTNAME=	tre-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Lightweight fully POSIX compliant regexp matching library
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		libtool pathfix pkgconfig tar:bzip2

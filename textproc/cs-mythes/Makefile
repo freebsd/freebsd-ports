@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Czech thesaurus
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 USES=		zip
 NO_BUILD=	yes

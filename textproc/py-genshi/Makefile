@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python toolkit for stream-based generation of output for the web
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	BABEL
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
