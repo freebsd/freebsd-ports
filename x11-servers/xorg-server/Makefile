@@ -35,13 +35,14 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 
 .if defined(WITH_NEW_XORG)
 XORG_VERSION=	1.12.4
-XORG_REVISION=	9
+XORG_REVISION=	10
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang \
 		${FILESDIR}/extra-configure \
 		${FILESDIR}/extra-new-bad-impl \
 		${FILESDIR}/extra-new-dix_dixfonts.c
 .else
+FORBIDDEN=		unfixed security issues
 XORG_VERSION=	1.7.7
 XORG_REVISION=	14
 PLIST_SUB+=	OLD="" NEW="@comment "
