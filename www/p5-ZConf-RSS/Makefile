@@ -3,7 +3,7 @@
 
 PORTNAME=	ZConf-RSS
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf \
 		p5-HTML-FormatText-WithLinks>=0:${PORTSDIR}/textproc/p5-HTML-FormatText-WithLinks
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+SHEBANG_FILES=	bin/*
 
 .include <bsd.port.mk>
