@@ -23,6 +23,7 @@ DISTVERSION2=	8d
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+BROKEN=		shared lib version going backwards
 
 ADDITIONAL_HEADER=	jinclude.h jpegint.h
 
