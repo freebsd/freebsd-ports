@@ -13,8 +13,9 @@ include/jpegint.h
 include/jpeglib.h
 lib/libjpeg.a
 lib/libjpeg.so
-lib/libjpeg.so.9
-lib/libjpeg.so.9.0.0
+lib/libjpeg.so.11
+lib/libjpeg.so.8
+lib/libjpeg.so.8.4.0
 man/man1/cjpeg.1.gz
 man/man1/djpeg.1.gz
 man/man1/jpegtran.1.gz
