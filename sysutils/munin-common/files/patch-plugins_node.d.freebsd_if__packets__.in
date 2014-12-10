@@ -1,4 +1,4 @@
---- plugins/node.d.freebsd/if_packets_.in.orig	2014-11-17 14:29:50 UTC
+--- plugins/node.d.freebsd/if_packets_.in.orig	2014-12-10 15:34:51 UTC
 +++ plugins/node.d.freebsd/if_packets_.in
 @@ -0,0 +1,110 @@
 +#!@@GOODSH@@
