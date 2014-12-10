@@ -19,6 +19,8 @@ USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
 post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Geometry/Planar/GPC/Polygon/Polygon.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Geometry/Planar/GPC/Polygon/Polygon.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Geometry/Planar/GPC/Polygon/Polygon.so
 
 .include <bsd.port.mk>
