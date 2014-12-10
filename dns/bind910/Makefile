@@ -2,6 +2,13 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
+.if defined(BIND_TOOLS_SLAVE)
+# dns/bind-tools here
+PORTREVISION=	0
+.else
+# dns/bind910 here
+PORTREVISION=	0
+.endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX?=	910
@@ -13,7 +20,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.10.1
+ISCVERSION=	9.10.1-P1
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -169,8 +176,10 @@ CONFIGURE_ARGS+=	--disable-threads
 PKGINSTALL=	${NONEXISTENT}
 PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
+.if !defined(BIND_TOOLS_SLAVE)
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
+.endif # !defined(BIND_TOOLS_SLAVE)
 .if ${PORT_OPTIONS:MGOST}
 WITH_OPENSSL_PORT=yes
 .endif
@@ -194,19 +203,11 @@ PORTDOCS=	*
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
-	@${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.Dist
-	@${SED} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
+	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${ETCDIR}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
-		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
+		${WRKSRC}/bin/${FILE}
 .endfor
-	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.Dist
-	@${SED} -e 's#.*bind\.keys.*##' ${WRKSRC}/Makefile.in.Dist > \
-		${WRKSRC}/Makefile.in
-	@${MV} ${WRKSRC}/bin/named/Makefile.in ${WRKSRC}/bin/named/Makefile.in.Dist
-	@${SED} -e 's/$${PERL}/#/' -e 's/bind.keys.h/#/g' -e 's/bind9.xsl.h/#/g' \
-		${WRKSRC}/bin/named/Makefile.in.Dist > \
-		${WRKSRC}/bin/named/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
