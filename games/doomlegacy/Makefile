@@ -22,6 +22,7 @@ USE_SDL=	mixer sdl
 
 CFLAGS+=	-DSVN_REV=\\\"1107\\\"
 WRKSRC=		${WRKDIR}/${DISTNAME:S,_beta1,,}/src
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} share/doom/legacy.wad
 PORTDOCS=	*
