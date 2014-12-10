@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ee.lbl.gov/
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Create openssl client key and certificates
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 PLIST_FILES=	sbin/create-cert \
 		man/man8/create-cert.8.gz

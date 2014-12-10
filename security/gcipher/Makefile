@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple encryption tool
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_GNOME=	pygnome2
 USES=		python

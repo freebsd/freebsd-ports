@@ -7,7 +7,7 @@ CATEGORIES=	security
 MAINTAINER=	6yearold@gmail.com
 COMMENT=	Platform independent Qt API for storing passwords
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes

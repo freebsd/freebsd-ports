@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	UNIX/cgi-scanners
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful webserver security scanner for network
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

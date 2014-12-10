@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	RFC-compliant Python implementation of OAuth
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose \
