@@ -2,6 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
+PORTREVISION=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	99
@@ -13,7 +14,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.6
+ISCVERSION=	9.9.6-P1
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -108,7 +109,7 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
-RPZ_PATCH_PATCHFILES=	9.9.6-rpz2+rl.14038.05.patch:vix
+RPZ_PATCH_PATCHFILES=	9.9.6-P1-rpz2+rl.14038.05.patch:vix
 RPZ_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix ${MASTER_SITE_LOCAL:S/%SUBDIR%/mat\/bind/:S/$/:vix/}
 
 RRL_CONFIGURE_ENABLE=	rrl
@@ -173,6 +174,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
 SUB_LIST+=	BIND_DESTETC="${BIND_DESTETC}"
+PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 
 PORTDOCS=	*
 
@@ -193,19 +195,11 @@ WITH_OPENSSL_PORT=	yes
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
-	@${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.Dist
-	@${SED} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
+	@${REINPLACE_CMD} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${BIND_DESTETC}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
-		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
+		${WRKSRC}/bin/${FILE}
 .endfor
-	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.Dist
-	@${SED} -e 's#.*bind\.keys.*##' ${WRKSRC}/Makefile.in.Dist > \
-		${WRKSRC}/Makefile.in
-	@${MV} ${WRKSRC}/bin/named/Makefile.in ${WRKSRC}/bin/named/Makefile.in.Dist
-	@${SED} -e 's/$${PERL}/#/' -e 's/bind.keys.h/#/g' -e 's/bind9.xsl.h/#/g' \
-		${WRKSRC}/bin/named/Makefile.in.Dist > \
-		${WRKSRC}/bin/named/Makefile.in
 
 post-configure:
 	@${REINPLACE_CMD} -e '/^SO_LDFLAGS/s/-Wl,-rpath,/-rpath /' ${WRKSRC}/bin/tests/system/dlzexternal/Makefile
