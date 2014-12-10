@@ -88,8 +88,11 @@ VBOX_LIBS=	VBoxOGL.so \
 
 .if ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/X:${PORTSDIR}/x11-servers/xorg-server
-VBOX_WITH_X11=	1
 USE_XORG=	xcursor xmu inputproto xorg-server xrandr
+USES+=		pkgconfig
+VBOX_WITH_X11=	1
+XORG_DRV_ABI=	pkgconf --modversion xorg-server | \
+		${SED} -E -e 's/\.[0-9]+$$//' -e 's/\.//'
 .else
 VBOX_WITH_X11=
 .endif
@@ -99,8 +102,6 @@ KMK_ARCH=	freebsd.x86
 .else
 KMK_ARCH=	freebsd.${ARCH}
 .endif
-
-XSERVER_ABI:=	${XSERVER_VER:S/.//:R}
 
 .include <bsd.port.pre.mk>
 
@@ -181,11 +182,11 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/share/autostart/
 
 	${MKDIR} ${STAGEDIR}${VIDEODIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_${XSERVER_ABI}.so \
+	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_$$(${XORG_DRV_ABI}).so \
 	    ${STAGEDIR}${VIDEODIR}/vboxvideo_drv.so
 
 	${MKDIR} ${STAGEDIR}${INPUTDIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_${XSERVER_ABI}.so \
+	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_$$(${XORG_DRV_ABI}).so \
 	    ${STAGEDIR}${INPUTDIR}/vboxmouse_drv.so
 .endif
 
