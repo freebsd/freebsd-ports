@@ -1,3 +1,13 @@
+--- build/make/configure.sh.orig	2014-11-27 18:00:48 UTC
++++ build/make/configure.sh
+@@ -799,7 +799,6 @@ process_common_toolchain() {
+ 
+         case ${tgt_cc} in
+         gcc)
+-            CROSS=${CROSS:-arm-none-linux-gnueabi-}
+             link_with_cc=gcc
+             setup_gnu_toolchain
+             arch_int=${tgt_isa##armv}
 $FreeBSD$
 
 --- build/make/configure.sh.orig	2014-12-03 18:11:14.000000000 +0100
