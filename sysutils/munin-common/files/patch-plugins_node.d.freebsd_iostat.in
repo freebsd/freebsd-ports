@@ -1,4 +1,4 @@
---- plugins/node.d.freebsd/iostat.in.orig	2014-10-26 14:12:24 UTC
+--- plugins/node.d.freebsd/iostat.in.orig	2014-11-24 21:46:24 UTC
 +++ plugins/node.d.freebsd/iostat.in
 @@ -56,13 +56,11 @@ if [ "$1" = "config" ]; then
      for d in $drives; do

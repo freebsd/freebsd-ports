@@ -1,4 +1,4 @@
---- plugins/node.d.freebsd/if_errcoll_.in.orig	2014-10-26 14:12:24 UTC
+--- plugins/node.d.freebsd/if_errcoll_.in.orig	2014-11-24 21:46:24 UTC
 +++ plugins/node.d.freebsd/if_errcoll_.in
 @@ -19,7 +19,7 @@
  INTERFACE=${0##*if_errcoll_}
