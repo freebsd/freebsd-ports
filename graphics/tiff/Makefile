@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
 
 LICENSE=	BSD3CLAUSE
@@ -17,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit
 
-BROKEN=		shared lib version going backwards
 USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
