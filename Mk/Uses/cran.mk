@@ -13,9 +13,7 @@
 .if !defined(_INCLUDE_USES_CRAN_MK)
 _INCLUDE_USES_CRAN_MK=	yes
 
-MASTER_SITE_CRAN+=	http://ftp.ctex.org/mirrors/CRAN/src/contrib/ \
-			http://cran.rakanu.com/src/contrib/ \
-			http://cran.ms.unimelb.edu.au/src/contrib/ \
+MASTER_SITE_CRAN+=	http://cran.ms.unimelb.edu.au/src/contrib/ \
 			http://mirror.its.dal.ca/cran/src/contrib/ \
 			http://mirrors.dotsrc.org/cran/src/contrib/ \
 			http://cran.univ-lyon1.fr/src/contrib/ \
@@ -23,7 +21,9 @@ MASTER_SITE_CRAN+=	http://ftp.ctex.org/mirrors/CRAN/src/contrib/ \
 			http://cran.stat.unipd.it/src/contrib/ \
 			http://cran.md.tsukuba.ac.jp/src/contrib/ \
 			http://mirrors.ibiblio.org/pub/mirrors/CRAN/src/contrib/ \
-			http://cran.cnr.berkeley.edu/src/contrib/
+			http://cran.cnr.berkeley.edu/src/contrib/ \
+			http://cran.rakanu.com/src/contrib/ \
+			http://ftp.ctex.org/mirrors/CRAN/src/contrib/
 MASTER_SITE_CRAN_ARCHIVE+=	${MASTER_SITE_CRAN:S,$,Archive/${PORTNAME}/,}
 
 MASTER_SITES?=	${MASTER_SITE_CRAN} ${MASTER_SITE_CRAN_ARCHIVE}
