@@ -11,7 +11,7 @@ DISTNAME=	PackterAgent-${PORTVERSION}
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Agent of the tool for graphical Internet traffic visualization
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig

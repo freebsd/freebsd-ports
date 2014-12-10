@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.scythe.jp/pub/u6rd/release/
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	User-space 6rd (RFC 5569) implementation
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	u6rd

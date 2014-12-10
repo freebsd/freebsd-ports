@@ -9,7 +9,7 @@ CATEGORIES=	net www pear
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	PEAR class that determines the Web browser, version, and platform
 
-LICENSE=	BSD
+LICENSE=	PHP202
 
 USES=	pear
 
