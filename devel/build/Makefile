@@ -6,7 +6,7 @@ PORTVERSION=	0.3.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Massively-parallel build system implemented on top of GNU make
 
 LICENSE=	GPLv2

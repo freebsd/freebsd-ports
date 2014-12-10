@@ -9,7 +9,7 @@ MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert LaTeX to HTML
 
 OPTIONS_DEFINE=	DOCS

@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 DISTNAME=	XQilla-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XQuery and XPath2 library
 
 OPTIONS_DEFINE=	DOCS

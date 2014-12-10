@@ -9,7 +9,7 @@ CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical user interface toolkit for X Window System
 
 LICENSE=	LGPL21

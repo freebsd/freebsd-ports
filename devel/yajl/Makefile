@@ -4,7 +4,7 @@ PORTNAME=	yajl
 PORTVERSION=	2.1.0
 CATEGORIES=	devel
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable JSON parsing and serialization library in ANSI C
 
 LICENSE=	ISCL

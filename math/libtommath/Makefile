@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://libtom.org/files/
 DISTNAME=	ltm-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable mathematical routines
 
 OPTIONS_DEFINE=	DOCS SHARED

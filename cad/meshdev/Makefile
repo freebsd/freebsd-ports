@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~gahr/distfiles/
 MASTER_SITE_SUBDIR=	gahr
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mesh comparison software
 
 USES=		dos2unix

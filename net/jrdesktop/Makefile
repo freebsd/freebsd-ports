@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.jar
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View and/or control a remote PC
 
 LICENSE=	GPLv3

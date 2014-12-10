@@ -7,7 +7,7 @@ PORTREVISION=	14
 CATEGORIES=	games devel
 MASTER_SITES=	http://adgali.apiou.org/download/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source game library useful for 2D game development
 
 LICENSE=	GPLv2

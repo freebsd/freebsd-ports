@@ -5,7 +5,7 @@ PORTNAME=	catch
 PORTVERSION=	1.0.53
 CATEGORIES=	devel
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Header-only test framework for C++
 
 LICENSE=	BSL

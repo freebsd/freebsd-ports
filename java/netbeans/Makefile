@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
     		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
 DISTNAME=	netbeans-${PORTVERSION}-201408251540
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular, standards-based integrated development environment
 
 LICENSE=	CDDL GPLv2

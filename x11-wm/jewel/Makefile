@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://mjr.towers.org.uk/comp/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager based on aewm++
 
 OPTIONS_DEFINE=	DOCS

@@ -8,7 +8,7 @@ MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/8.0/beta/zip/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	netbeans-${DISTVERSION}-201401141042
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured integrated environment for Java
 
 LICENSE=	CDDL GPLv2

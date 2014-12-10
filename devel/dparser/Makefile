@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	d-${PORTVERSION}-src
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but powerful tool for parsing
 
 LICENSE=	BSD3CLAUSE

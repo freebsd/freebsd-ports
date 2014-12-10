@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	audio java
 MASTER_SITES=	SF/rasmusdsp/${PORTNAME}/Gervill%20${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic sound synthesizer for Java
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTVERSION=	1.3.4
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION:R}/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
 
 LICENSE=	GPLv2

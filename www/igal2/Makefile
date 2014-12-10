@@ -6,7 +6,7 @@ PORTVERSION=	2.1
 CATEGORIES=	www graphics
 MASTER_SITES=	http://igal.trexler.at/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple CLI image gallery generator
 
 LICENSE=	GPLv2

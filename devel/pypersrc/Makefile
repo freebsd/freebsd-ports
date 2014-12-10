@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.jimbrooks.org/software/pypersrc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python/Tkinter based source browser
 
 LICENSE=	GPLv2

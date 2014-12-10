@@ -6,7 +6,7 @@ PORTVERSION=	2.5.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/freetype/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small build tool that can be used as a replacement for make(1)
 
 OPTIONS_DEFINE=	DOCS

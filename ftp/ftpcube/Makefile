@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	ftp python
 MASTER_SITES=	SF
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical FTP Client
 
 LICENSE=	ART10

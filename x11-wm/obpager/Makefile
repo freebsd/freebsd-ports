@@ -6,7 +6,7 @@ PORTVERSION=	1.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight pager for netwm compatible window managers
 
 LICENSE=	GPLv2

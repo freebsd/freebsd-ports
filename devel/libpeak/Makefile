@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/peak/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel Events and Asynchronous tasKing Library
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64

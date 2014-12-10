@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 
-MAINTAINER?=	gahr@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \

@@ -6,7 +6,7 @@ PORTVERSION=	15.8a
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive C program browser
 
 LICENSE=	BSD3CLAUSE

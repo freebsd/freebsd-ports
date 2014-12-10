@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome2 front-end to mplayer/mencoder
 
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder

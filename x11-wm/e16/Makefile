@@ -6,7 +6,7 @@ PORTVERSION=	1.0.14.001
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enlightenment DR16 window manager
 
 LICENSE=	MIT

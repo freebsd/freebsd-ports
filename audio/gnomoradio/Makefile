@@ -8,7 +8,7 @@ CATEGORIES=		audio net
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		gahr@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Program for finding and playing free music from the Internet
 
 LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis \

@@ -5,7 +5,7 @@ PORTNAME=	tivoka
 PORTVERSION=	3.2.1
 CATEGORIES=	www
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JSON-RPC client/server library for PHP
 
 LICENSE=	MIT

@@ -13,7 +13,7 @@ DISTFILES=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}:src \
 		8MBGMSFX.SF2:fluid
 EXTRACT_ONLY=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack tablature editor and player
 
 LICENSE=	LGPL21

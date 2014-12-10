@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment/e16-docs/${PORTVERSION}
 DISTNAME=	e16-docs-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files of enlightenment DOX
 
 RUN_DEPENDS=	${LOCALBASE}/bin/e16:${PORTSDIR}/x11-wm/e16

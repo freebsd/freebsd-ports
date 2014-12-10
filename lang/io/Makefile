@@ -6,7 +6,7 @@ PORTVERSION=	2013.12.04
 PORTREVISION=	3
 CATEGORIES=	lang
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small prototype-based programming language
 
 LICENSE=	BSD3CLAUSE

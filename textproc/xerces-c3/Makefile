@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	xerces/c/3/sources
 DISTNAME=	xerces-c-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
 
 CONFLICTS=	xerces-c2-[0-9]* xerces-c2-devel-[0-9]*

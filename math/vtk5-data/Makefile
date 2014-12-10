@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 PKGNAMESUFFIX=	5-data
 DISTNAME=	vtkdata-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visualization Toolkit test and example data
 
 WRKSRC=		${WRKDIR}/VTKData${PORTVERSION}

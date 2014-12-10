@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MS-Explorer like file manager for X
 
 LICENSE=	GPLv2
