@@ -18,6 +18,7 @@ USES=		tar:bzip2 libtool shebangfix
 SHEBANG_FILES=	${WRKSRC}/util/gifburst
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+BROKEN=		shared lib vesion going backwards
 
 LMAN1=	gif2rgb.1 gifasm.1 gifbg.1 gifclip.1 gifclrmp.1 gifcolor.1 gifcomb.1 \
 	gifcompose.1 giffiltr.1 giffix.1 gifflip.1 gifhisto.1 gifinter.1 \
