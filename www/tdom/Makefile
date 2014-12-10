@@ -23,8 +23,6 @@ CONFIGURE_SCRIPT=	../configure
 pre-configure:
 	${RM} -f ${WRKSRC}/../generic/domalloc.?
 
-USE_LDCONFIG=	${TDOMBASE}
-
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 DOCS=		CHANGES LICENSE README README.AOL
@@ -43,6 +41,8 @@ CONFIGURE_ARGS+=--enable-threads --disable-tdomalloc \
 		--prefix=${PREFIX} --exec-prefix=${PREFIX}
 
 post-install:
+	chmod 755 ${STAGEDIR}${TDOMBASE}
+	chmod 644 ${STAGEDIR}${TDOMBASE}/*
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 . for FILE in ${DOCS}
