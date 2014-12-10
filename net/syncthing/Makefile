@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	0.10.9
+PORTVERSION=	0.10.11
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 
@@ -17,6 +17,8 @@ PORTDOCS=	*
 
 USERS=		syncthing
 GROUPS=		syncthing
+
+STRIP=		# stripping can break go binaries
 
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${PORTNAME}/${PORTNAME} ; \
