@@ -6,7 +6,7 @@ DISTVERSION=	2.4.0-b1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Jamaica%20Core/Jamaica%20${DISTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework to create fully dynamic Content Management Solutions
 
 LICENSE=	GPLv2

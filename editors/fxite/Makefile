@@ -6,7 +6,7 @@ PORTVERSION=	0.92
 PORTREVISION=	3
 CATEGORIES=	editors
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced cross-platform text editor
 
 LICENSE=	GPLv3

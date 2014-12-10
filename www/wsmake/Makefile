@@ -6,7 +6,7 @@ PORTVERSION=	0.7.901
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for production and maintenance of web sites
 
 OPTIONS_DEFINE=	DOCS

@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/trickle/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, portable bandwidth shaper
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2

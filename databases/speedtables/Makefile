@@ -5,7 +5,7 @@ PORTNAME=	speedtables
 PORTVERSION=	1.8.3
 CATEGORIES=	databases
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance memory-resident database
 
 LICENSE=	BSD3CLAUSE

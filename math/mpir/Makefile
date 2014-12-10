@@ -6,7 +6,7 @@ DISTVERSION=	2.7.0-alpha12
 CATEGORIES=	math
 MASTER_SITES=	http://www.mpir.org/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprecision integer library
 
 LICENSE=	LGPL3

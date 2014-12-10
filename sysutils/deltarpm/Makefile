@@ -6,7 +6,7 @@ PORTVERSION=	3.6
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/deltarpm/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that generates delta RPMs
 
 LICENSE=	BSD3CLAUSE

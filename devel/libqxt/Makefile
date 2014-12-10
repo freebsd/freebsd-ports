@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://dev.libqxt.org/libqxt/get/
 DISTNAME=	v${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension library for Qt
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

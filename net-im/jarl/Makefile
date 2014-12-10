@@ -8,7 +8,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	SF
 DISTNAME=	Jarl-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl/Tk Jabber client
 
 LICENSE=	GPLv2

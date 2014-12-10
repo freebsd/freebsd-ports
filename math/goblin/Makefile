@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}2/${PORTNAME}.${DISTVERSION}
 DISTNAME=	${PORTNAME}.${DISTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph Object Library for Network Programming Problems
 
 CONFLICTS=	glpk-*

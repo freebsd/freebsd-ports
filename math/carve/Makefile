@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, robust constructive solid geometry library
 
 LICENSE=	GPLv2

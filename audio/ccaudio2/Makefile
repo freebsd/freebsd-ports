@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=ccaudio
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
 
 LIB_DEPENDS=	libccgnu2.so:${PORTSDIR}/devel/commoncpp \

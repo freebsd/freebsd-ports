@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.informatik.uni-koeln.de/abacus/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Branch-And-CUt System
 
 LICENSE=	GPLv2

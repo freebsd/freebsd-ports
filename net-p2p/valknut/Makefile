@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/wxdcgui/${PORTNAME}-qt4/${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based Direct Connect client
 
 LICENSE=	GPLv2

@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
 DISTNAME=	radius-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU RADIUS server
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
