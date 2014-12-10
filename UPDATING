@@ -19,7 +19,8 @@ you update your ports collection, before attempting any port upgrades.
 
      compat.linux.osrelease=2.6.18
 
-    This step is necessary on all FreeBSD versions older than 10.1-RELEASE.
+    This step is necessary on all FreeBSD versions, apart from 11.0-CURRENT
+    (after revision 271982).
 
   3. Reinstall all software depending on Linux emulation.
      As an example, reinstall linux-firefox:
@@ -45,7 +46,7 @@ you update your ports collection, before attempting any port upgrades.
       OVERRIDE_LINUX_NONBASE_PORTS=f10
 
   2. Downgrade the Linux kernel version in /etc/sysctl.conf on FreeBSD versions
-     newer than and including 10.1-RELEASE:
+     newer than and including 11.0-CURRENT (after revision 271982).
 
        compat.linux.osrelease=2.6.16
 
