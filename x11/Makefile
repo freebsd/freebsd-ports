@@ -472,6 +472,7 @@
     SUBDIR += xvinfo
     SUBDIR += xvkbd
     SUBDIR += xvmcinfo
+    SUBDIR += xvt
     SUBDIR += xwatchwin
     SUBDIR += xwd
     SUBDIR += xwininfo
