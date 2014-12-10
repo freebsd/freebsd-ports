@@ -1,11 +1,8 @@
-bin/columns
+@(,games,2555) bin/columns
 %%DATADIR%%/applause.wav
 %%DATADIR%%/bg.bmp
 %%DATADIR%%/big.fnt
 %%DATADIR%%/bye.wav
-@mode 0666
-%%DATADIR%%/columns.hsc
-@mode
 %%DATADIR%%/drop.wav
 %%DATADIR%%/hello.wav
 %%DATADIR%%/laugh.wav
@@ -17,4 +14,4 @@ bin/columns
 %%DATADIR%%/rotate.wav
 %%DATADIR%%/small.fnt
 %%DATADIR%%/tiles.bmp
-@dirrm %%DATADIR%%
+@sample(,games,664) /var/games/columns.hsc.sample
