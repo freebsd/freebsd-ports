@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit
 
+BROKEN=		shared lib version going backwards
 USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
