@@ -9,7 +9,7 @@ MASTER_SITES=	http://gomor.org/files/
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	SSL Capable Netcat
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6

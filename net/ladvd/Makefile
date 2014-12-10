@@ -11,7 +11,7 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	Minimal LLDP/CDP daemon
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 

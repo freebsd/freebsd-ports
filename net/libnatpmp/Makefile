@@ -9,7 +9,7 @@ MASTER_SITES=	http://miniupnp.free.fr/files/
 MAINTAINER=	gaod@hychen.org
 COMMENT=	NAT-PMP lightweight library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		gmake
 USE_LDCONFIG=	yes
