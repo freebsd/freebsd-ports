@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
 DISTNAME=	tiff-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 Tools for working with TIFF images
 
 LICENSE=	BSD3CLAUSE
