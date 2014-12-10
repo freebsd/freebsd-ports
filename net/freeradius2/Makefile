@@ -344,6 +344,6 @@ pre-configure:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}-${PORTVERSION}/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rlm_* \
-		${STAGEDIR}${PREFIX}/sbin/rad*
+		${STAGEDIR}${PREFIX}/sbin/radiusd
 
 .include <bsd.port.post.mk>
