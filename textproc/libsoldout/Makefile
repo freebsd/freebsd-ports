@@ -8,7 +8,7 @@ MASTER_SITES=	http://instinctive.eu/code/
 MAINTAINER=	natbsd@instinctive.eu
 COMMENT=	Flexible C library for markdown
 
-LICENSE=	BSD
+LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKEFILE=	BSDmakefile
