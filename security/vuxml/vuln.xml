@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="94268da0-8118-11e4-a180-001999f8d30b">
+    <topic>asterisk -- Remote Crash Vulnerability in WebSocket Server</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.14.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>When handling a WebSocket frame the res_http_websocket
+	  module dynamically changes the size of the memory used
+	  to allow the provided payload to fit. If a payload length
+	  of zero was received the code would incorrectly attempt
+	  to resize to zero. This operation would succeed and end
+	  up freeing the memory but be treated as a failure. When
+	  the session was subsequently torn down this memory would
+	  get freed yet again causing a crash.</p>
+	  <p>Users of the WebSocket functionality also did not take
+	  into account that provided text frames are not guaranteed
+	  to be NULL terminated. This has been fixed in chan_sip
+	  and chan_pjsip in the applicable versions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-019.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-30</discovery>
+      <entry>2014-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27b9b2f0-8081-11e4-b4ca-bcaec565249c">
     <topic>xserver -- multiple issue with X client request handling</topic>
     <affects>
