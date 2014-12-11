@@ -153,6 +153,10 @@ CONFIGURE_ARGS+=	--disable-threads
 .if ${PORT_OPTIONS:MREPLACE_BASE}
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 IGNORE=		REPLACE_BASE option is not supported on this release
+.else # >= 10.0
+# Move to BROKEN after expiration.
+DEPRECATED=		REPLACE_BASE option will be removed.  There is no real need for foot-shooting.
+EXPIRATION_DATE=	2015-01-01
 .endif # >= 10.0
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
