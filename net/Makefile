@@ -753,6 +753,7 @@
     SUBDIR += p5-XML-Fast
     SUBDIR += p5-XML-RPC
     SUBDIR += p5-XML-RPC-Fast
+    SUBDIR += p5-XMLRPC-Lite
     SUBDIR += p5-XPC
     SUBDIR += p5-ZConf
     SUBDIR += p5-ZConf-Bookmarks
