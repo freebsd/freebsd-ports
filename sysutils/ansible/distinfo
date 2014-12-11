@@ -1,4 +1,2 @@
-SHA256 (ansible-1.7.2.tar.gz) = e27afa6074cf5c4451d0ae2002413d6328357daa0b5c678490d56b45a4ba2179
-SIZE (ansible-1.7.2.tar.gz) = 1267016
-SHA256 (ansible.png) = 9bf68abd2c95db4dc8dfc091c0e0e0a9716891f28d157e3f04e541d96e1c6850
-SIZE (ansible.png) = 1160
+SHA256 (ansible-1.8.2.tar.gz) = 629d88f44e60b1a581a6164762447635121d4dd272bf2fd0a55f681895daa5b1
+SIZE (ansible-1.8.2.tar.gz) = 934386
