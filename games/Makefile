@@ -1041,6 +1041,7 @@
     SUBDIR += wordplay
     SUBDIR += worldofpadman
     SUBDIR += wtf
+    SUBDIR += wxlauncher
     SUBDIR += xabacus
     SUBDIR += xasteroids
     SUBDIR += xataxx
