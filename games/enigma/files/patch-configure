@@ -1,6 +1,6 @@
---- configure.orig	2007-09-08 14:39:18.000000000 +0200
-+++ configure	2011-08-01 09:59:45.000000000 +0200
-@@ -753,8 +753,7 @@ CPP
+--- configure.orig	2007-09-08 16:39:18.000000000 +0400
++++ configure	2014-12-11 18:27:47.000000000 +0300
+@@ -753,8 +753,7 @@
  CXX
  CXXFLAGS
  CCC'
@@ -10,7 +10,25 @@
  
  # Initialize some variables set by options.
  ac_init_help=
-@@ -15279,10 +15278,10 @@ fi
+@@ -14740,7 +14739,7 @@
+ 
+ _ACEOF
+ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-  $EGREP "gXercesMajVersion = 3" >/dev/null 2>&1; then
++  $EGREP "XERCES_VERSION_MAJOR 3" >/dev/null 2>&1; then
+   { echo "$as_me:$LINENO: result: found" >&5
+ echo "${ECHO_T}found" >&6; }
+ else
+@@ -14848,7 +14847,7 @@
+ 
+ _ACEOF
+ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-  $EGREP "gXercesMajVersion = 3" >/dev/null 2>&1; then
++  $EGREP "XERCES_VERSION_MAJOR 3" >/dev/null 2>&1; then
+   xerces3exp="yes"
+ else
+   xerces3exp="no"
+@@ -15279,10 +15278,10 @@
  
  subdirs="$subdirs lib-src/zipios++"
  
@@ -23,7 +41,7 @@
  
  
  ac_config_files="$ac_config_files etc/mingw32-dist.sh"
-@@ -15912,7 +15911,6 @@ do
+@@ -15912,7 +15911,6 @@
      "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
      "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
      "m4/Makefile") CONFIG_FILES="$CONFIG_FILES m4/Makefile" ;;
@@ -31,7 +49,7 @@
      "data/Makefile") CONFIG_FILES="$CONFIG_FILES data/Makefile" ;;
      "data/gfx/Makefile") CONFIG_FILES="$CONFIG_FILES data/gfx/Makefile" ;;
      "data/gfx32/Makefile") CONFIG_FILES="$CONFIG_FILES data/gfx32/Makefile" ;;
-@@ -15955,10 +15953,8 @@ do
+@@ -15955,10 +15953,8 @@
      "etc/Makefile") CONFIG_FILES="$CONFIG_FILES etc/Makefile" ;;
      "lib-src/Makefile") CONFIG_FILES="$CONFIG_FILES lib-src/Makefile" ;;
      "lib-src/oxydlib/Makefile") CONFIG_FILES="$CONFIG_FILES lib-src/oxydlib/Makefile" ;;
