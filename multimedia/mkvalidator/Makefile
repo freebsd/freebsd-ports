@@ -8,7 +8,8 @@ MASTER_SITES=	SF/matroska/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to verify Matroska and WebM files
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE BSD4CLAUSE GPLv2
+LICENSE_COMB=	multi
 
 HAS_CONFIGURE=	yes
 

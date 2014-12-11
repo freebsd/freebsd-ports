@@ -3,13 +3,13 @@
 
 PORTNAME=	atr3d
 PORTVERSION=	0.6
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D asteroids-like multiplayer game
 
 OPTIONS_DEFINE=	OPENAL

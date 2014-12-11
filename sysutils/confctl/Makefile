@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	trasz
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Utility to parse and modify C-like configuration files
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/confctl \

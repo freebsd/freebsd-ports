@@ -10,5 +10,3 @@ lib/libDnd.so.1
 %%PORTDOCS%%%%DOCSDIR%%/DNDa4.ps
 %%PORTDOCS%%%%DOCSDIR%%/DNDletter.ps
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/OffiX

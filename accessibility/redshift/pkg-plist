@@ -36,8 +36,3 @@ share/icons/hicolor/scalable/apps/redshift-status-on.svg
 %%GUI%%%%PYTHON_SITELIBDIR%%/gtk_redshift/utils.pyc
 %%GUI%%%%PYTHON_SITELIBDIR%%/gtk_redshift/utils.pyo
 %%GUI%%share/applications/gtk-redshift.desktop
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-%%GUI%%@dirrmtry %%PYTHON_SITELIBDIR%%/gtk_redshift

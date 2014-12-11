@@ -3,14 +3,14 @@
 
 PORTNAME=	etcd
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~gahr/distfiles/ \
 		http://www.gahr.ch/etcd/
 MASTER_SITE_SUBDIR=	gahr
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Tiny CD, a simple ncurses-based CD player
 
 USE_SDL=	sdl

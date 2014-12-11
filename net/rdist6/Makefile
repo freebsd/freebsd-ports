@@ -3,7 +3,7 @@
 
 PORTNAME=	rdist
 PORTVERSION=	6.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-magnicomp/download/rdist/

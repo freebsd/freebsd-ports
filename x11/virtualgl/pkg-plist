@@ -43,9 +43,3 @@ VirtualGL/include/rrtransport.h
 VirtualGL/lib/libdlfaker.so
 VirtualGL/lib/libgefaker.so
 VirtualGL/lib/librrfaker.so
-@dirrmtry VirtualGL/bin
-@dirrmtry VirtualGL/doc
-@dirrmtry VirtualGL/fakelib
-@dirrmtry VirtualGL/include
-@dirrmtry VirtualGL/lib
-@dirrmtry VirtualGL

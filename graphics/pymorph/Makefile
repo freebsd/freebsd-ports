@@ -10,7 +10,7 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	sawp@sawp.com.br
 COMMENT=	Pymorph is a pure implementations of image morphology functions
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS+=	${PYNUMPY}
 

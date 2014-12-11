@@ -5,4 +5,3 @@ lib/libxcb-cursor.so
 lib/libxcb-cursor.so.0
 lib/libxcb-cursor.so.0.0.0
 libdata/pkgconfig/xcb-cursor.pc
-@dirrmtry include/xcb

@@ -15,4 +15,3 @@ usr/lib/libsndfile.so.1.0.20
 usr/share/man/man1/sndfile-convert.1.gz
 usr/share/man/man1/sndfile-info.1.gz
 usr/share/man/man1/sndfile-play.1.gz
-%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%-1.0.20

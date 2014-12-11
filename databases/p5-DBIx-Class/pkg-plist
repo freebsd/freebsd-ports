@@ -118,6 +118,7 @@ bin/dbicadmin
 %%PERL5_MAN3%%/SQL::Translator::Parser::DBIx::Class.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Producer::DBIx::Class::File.3.gz
 %%SITE_PERL%%/DBIx/Class.pm
+%%SITE_PERL%%/DBIx/Class.pod
 %%SITE_PERL%%/DBIx/Class/AccessorGroup.pm
 %%SITE_PERL%%/DBIx/Class/Admin.pm
 %%SITE_PERL%%/DBIx/Class/Admin/Descriptive.pm
@@ -225,12 +226,14 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/SQLAHacks/OracleJoins.pm
 %%SITE_PERL%%/DBIx/Class/SQLAHacks/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker.pm
+%%SITE_PERL%%/DBIx/Class/SQLMaker.pod
 %%SITE_PERL%%/DBIx/Class/SQLMaker/ACCESS.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/LimitDialects.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/MySQL.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/Oracle.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/OracleJoins.pm
+%%SITE_PERL%%/DBIx/Class/SQLMaker/OracleJoins.pod
 %%SITE_PERL%%/DBIx/Class/SQLMaker/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Schema.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Versioned.pm

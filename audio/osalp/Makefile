@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-beta
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Audio Library Project
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123

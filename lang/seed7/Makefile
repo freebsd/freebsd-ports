@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level, extensible programming language
 
 # The language libraries are licensed under the LGPL21 license. Starting from

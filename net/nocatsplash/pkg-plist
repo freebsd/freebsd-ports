@@ -9,10 +9,6 @@ share/nocat/htdocs/images/logout.gif
 share/nocat/htdocs/images/login.gif
 share/nocat/htdocs/images/continue.gif
 share/nocat/htdocs/images/auth_logo.gif
-@dirrm share/nocat/htdocs/images
-@dirrm share/nocat/htdocs
-@dirrm share/nocat
 sbin/splashd
 sbin/ghttpd
-@dirrm libexec/nocat
 etc/nocat.conf

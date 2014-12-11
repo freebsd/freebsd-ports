@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.3.1
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 PKGNAMESUFFIX=	-devel
@@ -45,7 +44,7 @@ USES=		compiler:c11 gettext iconv tar:bzip2
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/pypy-pypy-32f35069a16d
+WRKSRC=		${WRKDIR}/pypy-pypy-c6ad44ecf5d8
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
@@ -274,7 +273,6 @@ pkg-plist: build
 	${RM} -f ${WRKDIR}/.plist-files-gen ${WRKDIR}/.plist-dirs-gen
 .for path in ${PYPYDIRS}
 	cd ${WRKDIR} && ${FIND} ${path:C/.*://}/ -type f >> ${WRKDIR}/.plist-files-gen
-	cd ${WRKDIR} && ${FIND} ${path:C/.*://}/ -type d | ${SED} 's|/$$||' >> ${WRKDIR}/.plist-dirs-gen
 .endfor
 	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|%%PYPY_LIBDIR%%|g' \
 		-e 's|^${PYPY_INCLUDEDIR}|%%PYPY_INCLUDEDIR%%|g' \
@@ -282,16 +280,7 @@ pkg-plist: build
 		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
 		-e 's|-${PYPY_VER:C/\.//}\.|-%%PYPY_VER%%.|g' \
 			${WRKDIR}/.plist-files-gen
-	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|@dirrm %%PYPY_LIBDIR%%|g' \
-		-e 's|^${PYPY_INCLUDEDIR}|@dirrm %%PYPY_INCLUDEDIR%%|g' \
-			${WRKDIR}/.plist-dirs-gen
 	${SORT} ${WRKDIR}/.plist-files-gen > ${WRKDIR}/pkg-plist
-	${SORT} -r ${WRKDIR}/.plist-dirs-gen >> ${WRKDIR}/pkg-plist
-	${REINPLACE_CMD} \
-		-e 's|^@dirrm %%PYPY_LIBDIR%%/site-packages$$|@dirrmtry %%PYPY_LIBDIR%%/site-packages|' \
-		-e 's|^@dirrm %%PYPY_LIBDIR%%$$|@dirrmtry %%PYPY_LIBDIR%%|' \
-		-e 's|^@dirrm %%PYPY_INCLUDEDIR%%$$|@dirrmtry %%PYPY_INCLUDEDIR%%|' \
-			${WRKDIR}/pkg-plist
 	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
 
 .include <bsd.port.mk>

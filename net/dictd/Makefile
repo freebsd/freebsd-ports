@@ -6,34 +6,29 @@ PORTVERSION=	1.12.1
 CATEGORIES+=	net textproc
 MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dict protocol (RFC 2229) server
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
-USE_RC_SUBR=	${PORTNAME}
-USES=		bison gmake libtool:build
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
-		--without-local-zlib
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-
-SUB_FILES+=	dictd.conf pkg-message
-SUB_LIST+=	PORTSDIR=${PORTSDIR}
-
 ALL_TARGET=	dictd dictzip
+CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install.dictd install.dictzip
+LIBS+=		-L${LOCALBASE}/lib
+USES=		bison gmake libtool:build
+
+SUB_FILES=	dictd.conf pkg-message
+SUB_LIST=	PORTSDIR=${PORTSDIR}
+USE_RC_SUBR=	${PORTNAME}
 
 post-patch:
-.for i in Makefile.in dict.1.in dictd.8.in
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$i
-.endfor
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Makefile.in ${WRKSRC}/dict.1.in ${WRKSRC}/dictd.8.in
 	@${REINPLACE_CMD} -e "s|\([\ \t(]\)T_USER|\1T_USERNAME|g" ${WRKSRC}/*.[chly]
 
 post-install:
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>

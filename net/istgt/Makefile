@@ -40,17 +40,10 @@ CONFIGURE_ARGS+=	--enable-symlink-device
 .endif
 
 .if ${PORT_OPTIONS:MVBOXVD}
-. if ${OSVERSION} < 802000
-VBOX_WRKSRC=	`${MAKE} -C ${PORTSDIR}/emulators/virtualbox-ose-legacy -V WRKSRC`
-RUN_DEPENDS+=	${LOCALBASE}/lib/virtualbox/VBoxRT.so:${PORTSDIR}/emulators/virtualbox-ose-legacy
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/emulators/virtualbox-ose-legacy:patch
-CONFIGURE_ARGS+=	--with-vbox=${VBOX_WRKSRC}/include
-. else
 VBOX_WRKSRC=	`${MAKE} -C ${PORTSDIR}/emulators/virtualbox-ose -V WRKSRC`
 RUN_DEPENDS+=	${LOCALBASE}/lib/virtualbox/VBoxRT.so:${PORTSDIR}/emulators/virtualbox-ose
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/emulators/virtualbox-ose:patch
 CONFIGURE_ARGS+=	--with-vbox=${VBOX_WRKSRC}/include
-. endif
 .endif
 
 post-extract:

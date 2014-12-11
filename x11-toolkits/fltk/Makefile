@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fltk.org/pub/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform C++ graphical user interface toolkit
 
 LICENSE=	LGPL20

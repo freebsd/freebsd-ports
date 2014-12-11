@@ -6,7 +6,7 @@ PORTVERSION=	4.1.1
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio dispatching library
 
 LICENSE=	MIT

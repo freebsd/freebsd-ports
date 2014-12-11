@@ -2,7 +2,7 @@
 
 PORTNAME=	gmtp
 PORTVERSION=	1.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/gMTP-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-i386
@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-i386
 MAINTAINER=	freebsd-ports-local@be-well.ilk.org
 COMMENT=	Media Transfer Protocol (MTP) GUI client
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag \

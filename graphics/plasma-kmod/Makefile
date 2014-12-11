@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plasma-effect screensaver kernel module
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 PLIST_FILES=	${KMODDIR}/plasma_saver.ko
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyassl
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 

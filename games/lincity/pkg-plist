@@ -533,8 +533,3 @@ man/man6/lincity.6.gz
 %%DATADIR%%/opening/winfont_8x8.fnt
 %%NLS%%share/locale/ca/LC_MESSAGES/lincity.mo
 %%NLS%%share/locale/it/LC_MESSAGES/lincity.mo
-@dirrm %%DATADIR%%/opening
-@dirrm %%DATADIR%%/messages
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%

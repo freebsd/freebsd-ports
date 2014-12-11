@@ -10,3 +10,5 @@ SHA256 (ncftpd-2.8.7-freebsd8.0-i386-export.tar.gz) = 165b26cb7a3a77ec9a837cb486
 SIZE (ncftpd-2.8.7-freebsd8.0-i386-export.tar.gz) = 423345
 SHA256 (ncftpd-2.8.7-freebsd8.0-x86_64-export.tar.gz) = e31c65ef6ee49d8bfea329bce2e854cbff276d93fcd52efce44c950c2c813a85
 SIZE (ncftpd-2.8.7-freebsd8.0-x86_64-export.tar.gz) = 460355
+SHA256 (ncftpd-2.8.7-freebsd9.0-x86_64-export.tar.gz) = 3506dca3bc97315ad251afe5490b3afa381816dbbb423f358bb284f79c2fae3e
+SIZE (ncftpd-2.8.7-freebsd9.0-x86_64-export.tar.gz) = 499272

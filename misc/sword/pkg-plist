@@ -277,7 +277,3 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/zh_TW-utf8.conf
 %%DATADIR%%/locales.d/zh_english-utf8.conf
 %%DATADIR%%/mods.d/globals.conf
-@dirrm %%DATADIR%%/mods.d
-@dirrm %%DATADIR%%/locales.d
-@dirrm %%DATADIR%%
-@dirrm include/sword

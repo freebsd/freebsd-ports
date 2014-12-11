@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.burplex.com/ \
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Preview and select images for batch processing
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dcraw:${PORTSDIR}/graphics/dcraw
 

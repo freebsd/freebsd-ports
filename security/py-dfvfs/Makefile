@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20141108
+PORTVERSION=	20141205
 CATEGORIES=	security devel python
-MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSZTI3MWV6di1fRDg/ \
-		https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
+MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

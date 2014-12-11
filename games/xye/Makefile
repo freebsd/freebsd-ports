@@ -3,7 +3,7 @@
 
 PORTNAME=	xye
 PORTVERSION=	0.12.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF:game \
 		http://xye.sourceforge.net/levels/ \

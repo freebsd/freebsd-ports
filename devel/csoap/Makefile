@@ -8,7 +8,7 @@ CATEGORIES=	devel net www
 MASTER_SITES=	SF/${PORTNAME}/libsoap/${PORTVERSION}
 DISTNAME=	libsoap-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client/server SOAP library written in pure C
 
 GNU_CONFIGURE=	yes

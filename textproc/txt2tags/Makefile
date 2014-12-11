@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
-USE_PYTHON=	2
+USES=		python:2
 NO_BUILD=	yes
 
 PORTDOCS=	ChangeLog README userguide.pdf

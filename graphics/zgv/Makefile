@@ -3,7 +3,7 @@
 
 PORTNAME=	zgv
 PORTVERSION=	5.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE/apps/graphics/viewers/svga
 

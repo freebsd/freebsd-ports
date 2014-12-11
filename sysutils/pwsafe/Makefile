@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://nsd.dyndns.org/pwsafe/releases/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cmdline program that manages encrypted password databases
 
 OPTIONS_DEFINE=	SETUID X11

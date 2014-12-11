@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Parses the contents of FreeBSD package DB under /var/db/pkg
 
+DEPRECATED=	Does not support pkgng
+EXPIRATION_DATE=	2015-01-06
+
 BUILD_DEPENDS=	p5-Error-Helper>=0:${PORTSDIR}/devel/p5-Error-Helper
 RUN_DEPENDS=	p5-Error-Helper>=0:${PORTSDIR}/devel/p5-Error-Helper
 

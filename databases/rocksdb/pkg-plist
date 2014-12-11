@@ -20,13 +20,16 @@ include/rocksdb/immutable_options.h
 include/rocksdb/iostats_context.h
 include/rocksdb/iterator.h
 include/rocksdb/ldb_tool.h
+include/rocksdb/listener.h
 include/rocksdb/memtablerep.h
 include/rocksdb/merge_operator.h
+include/rocksdb/metadata.h
 include/rocksdb/options.h
 include/rocksdb/perf_context.h
 include/rocksdb/rate_limiter.h
 include/rocksdb/slice.h
 include/rocksdb/slice_transform.h
+include/rocksdb/sst_dump_tool.h
 include/rocksdb/statistics.h
 include/rocksdb/status.h
 include/rocksdb/table.h
@@ -35,6 +38,7 @@ include/rocksdb/transaction_log.h
 include/rocksdb/types.h
 include/rocksdb/universal_compaction.h
 include/rocksdb/utilities/backupable_db.h
+include/rocksdb/utilities/convenience.h
 include/rocksdb/utilities/db_ttl.h
 include/rocksdb/utilities/document_db.h
 include/rocksdb/utilities/geo_db.h

@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Creating port from perl module
 
+DEPRECATED=	Does not know about USES=perl, generates incorrect pkg-plist
+EXPIRATION_DATE=	2015-01-06
+
 BUILD_DEPENDS=	p5-CPANPLUS>=0:${PORTSDIR}/devel/p5-CPANPLUS \
 		p5-FreeBSD-Ports-INDEXhash>=0:${PORTSDIR}/ports-mgmt/p5-FreeBSD-Ports-INDEXhash \
 		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \

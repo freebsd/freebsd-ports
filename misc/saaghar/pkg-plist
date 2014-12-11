@@ -118,9 +118,3 @@ share/saaghar/themes/iconsets/light-gray/search.png
 share/saaghar/themes/iconsets/light-gray/select-mask.png
 share/saaghar/themes/iconsets/light-gray/settings.png
 share/saaghar/themes/iconsets/light-gray/up.png
-@dirrm share/saaghar/themes/iconsets/light-gray
-@dirrm share/saaghar/themes/iconsets
-@dirrm share/saaghar/themes/backgrounds
-@dirrm share/saaghar/themes
-@dirrm share/saaghar/poets_images
-@dirrm share/saaghar

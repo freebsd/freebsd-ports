@@ -263,18 +263,3 @@ share/pixmaps/terraform/zoom.xpm
 %%DATADIR%%/objects/tree_parametric_7.inc
 %%DATADIR%%/objects/tree_parametric_macro_inc.txt
 %%DATADIR%%/objects/tree_parametric_texture_inc.txt
-@dirrm %%DATADIR%%/objects
-@dirrm %%DATADIR%%/include/water
-@dirrm %%DATADIR%%/include/skies/include
-@dirrm %%DATADIR%%/include/skies
-@dirrm %%DATADIR%%/include/earth_textures
-@dirrm %%DATADIR%%/include/atmospheres
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/image_maps
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-@dirrm share/pixmaps/terraform
-@dirrm share/gnome/help/terraform/fr
-@dirrm share/gnome/help/terraform/C
-@dirrm share/gnome/help/terraform
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

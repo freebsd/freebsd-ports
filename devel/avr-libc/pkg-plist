@@ -631,22 +631,3 @@ avr/lib/tiny-stack/libscanf_flt.a
 avr/lib/tiny-stack/libscanf_min.a
 bin/avr-man
 share/doc/avr-libc/AUTHORS
-@dirrm avr/include/util
-@dirrm avr/include/compat
-@dirrm avr/include/avr
-@dirrm avr/include
-@dirrm avr/lib/avr25
-@dirrm avr/lib/avr3
-@dirrm avr/lib/avr31
-@dirrm avr/lib/avr35
-@dirrm avr/lib/avr4
-@dirrm avr/lib/avr5
-@dirrm avr/lib/avr51
-@dirrm avr/lib/avr6
-@dirrm avr/lib/avrxmega2
-@dirrm avr/lib/avrxmega4
-@dirrm avr/lib/avrxmega5
-@dirrm avr/lib/avrxmega6
-@dirrm avr/lib/avrxmega7
-@dirrm avr/lib/tiny-stack
-@dirrm share/doc/avr-libc

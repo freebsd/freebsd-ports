@@ -7,25 +7,18 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/dict/dictd/dictd-${PORTVERSION}
 DISTNAME=	dictd-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Formats a DICT protocol dictionary database
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
-USES=		gmake libtool:build
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cflags="${CFLAGS}"
 ALL_TARGET=	dictfmt
-INSTALL_TARGET=	install.dictfmt
-
-PLIST_FILES=	bin/dictfmt bin/dictfmt_index2suffix bin/dictfmt_index2word \
-		bin/dictunformat man/man1/dictfmt.1.gz \
-		man/man1/dictfmt_index2suffix.1.gz \
-		man/man1/dictfmt_index2word.1.gz man/man1/dictunformat.1.gz
-
 CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install.dictfmt
 LIBS+=		-L${LOCALBASE}/lib
+USES=		gmake libtool:build
 
 .include <bsd.port.mk>

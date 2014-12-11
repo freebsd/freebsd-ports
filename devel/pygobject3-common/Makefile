@@ -30,7 +30,10 @@ CONFLICTS=	py*-gtk-0* py*-gobject-2.*.[0-6] py*-gobject-2.*.[7-9] \
 		py*-gobject-2.*.6_1
 
 PLIST_SUB=	ARCH=${ARCH} UNAME_R=${UNAME_R} VERSION=${PORTVERSION} \
-		OPSYS=${OPSYS:tl}
+		OPSYS=${OPSYS:tl} UNAME_M=${UNAME_M}
+
+# Override PYTHON_VERSION from DEPENDS_ARGS
+MAKE_ARGS=	PYTHON_VERSION=${PYTHON_VER}
 
 .if ${SLAVE_PORT} == no
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
@@ -70,5 +73,6 @@ post-install:
 .include <bsd.port.pre.mk>
 
 UNAME_R!=	${UNAME} -r
+UNAME_M!=	${UNAME} -m
 
 .include <bsd.port.post.mk>

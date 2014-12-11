@@ -2024,4 +2024,4 @@
 %%TOMCATDIR%%/webapps/deegree-wms/wms_getmap.html
 %%TOMCATDIR%%/webapps/deegree-wms/wms_main.html
 %%TOMCATDIR%%/webapps/deegree-wms/wms_navi.jsp
-@dirrm(%%WWWOWN%%,%%WWWGRP%%,) %%TOMCATDIR%%/webapps/deegree-wms
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%TOMCATDIR%%/webapps/deegree-wms

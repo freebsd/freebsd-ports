@@ -5,7 +5,7 @@ PORTNAME=	libebur128
 PORTVERSION=	1.0.1
 CATEGORIES=	audio
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the EBU R128 loudness standard
 
 LICENSE=	MIT

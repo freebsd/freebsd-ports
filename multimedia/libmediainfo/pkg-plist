@@ -194,14 +194,3 @@ lib/libmediainfo.so
 lib/libmediainfo.so.0
 lib/libmediainfo.so.0.0.0
 libdata/pkgconfig/libmediainfo.pc
-@dirrm include/MediaInfo/Video
-@dirrm include/MediaInfo/Text
-@dirrm include/MediaInfo/Tag
-@dirrm include/MediaInfo/Reader
-@dirrm include/MediaInfo/Multiple
-@dirrm include/MediaInfo/Image
-@dirrm include/MediaInfo/Export
-@dirrm include/MediaInfo/Duplicate
-@dirrm include/MediaInfo/Audio
-@dirrm include/MediaInfo/Archive
-@dirrm include/MediaInfo

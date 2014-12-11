@@ -12,7 +12,7 @@ DISTFILES=	cfortran.h \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use powerful bridge between C and FORTRAN
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

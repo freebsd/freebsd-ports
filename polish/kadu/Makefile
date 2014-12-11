@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kadu
-PORTVERSION=	0.12.3
-PORTREVISION=	2
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -26,16 +25,16 @@ LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
 		libqca.so:${PORTSDIR}/devel/qca \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libgadu.so:${PORTSDIR}/polish/libgadu \
+		libotr.so:${PORTSDIR}/security/libotr \
 		libenchant.so:${PORTSDIR}/textproc/enchant
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
-# TODO enable devel/libexecinfo
 # TODO ntrack and ntrack-qt (needs porting) ?
 # TODO separate ports for plugins and themes (possible starting with 0.10)
 
 GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
-USES=		cmake pkgconfig tar:bzip2
+USES=		cmake execinfo pkgconfig tar:bzip2
 USE_XORG=	xscrnsaver
 CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 # Setting KADU_VERSION disables git invocation
@@ -43,6 +42,7 @@ CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 USE_QT4=	dbus gui network phonon script scripttools webkit xml \
 		linguist_build moc_build qmake_build rcc_build uic_build \
 		imageformats_run sql-sqlite3_run
+LDFLAGS+=	-lexecinfo
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GG_EMOTS
@@ -54,14 +54,15 @@ GG_EMOTS_DISTFILES=	${GG6_EMOTS_DISTFILE}:additions \
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} > 1000051
-LDFLAGS+=	-lexecinfo
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000009
+LIB_DEPENDS+=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/plugins/single_window/CMakeLists.txt \
-		${WRKSRC}/plugins/tabs/CMakeLists.txt
 	@${FIND} ${WRKSRC} -exec ${GREP} -q "#!/bin/bash" {} \; \
 		-exec ${REINPLACE_CMD} -e 's|#!/bin/bash|#!/usr/bin/env bash|g' {} \;
 	@${REINPLACE_CMD} 's|/bin/bash|${LOCALBASE}/bin/bash|' \
@@ -69,6 +70,7 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MGG_EMOTS}
+	@${MKDIR} ${WRKSRC}/varia/themes/emoticons
 	@cd ${WRKSRC}/varia/themes/emoticons && \
 	${TAR} -zxf ${_DISTDIR}/${GG6_EMOTS_DISTFILE} && \
 	${MV} kompatybilne_z_GG6 gg6_compatible && \

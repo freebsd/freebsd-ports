@@ -3,7 +3,7 @@
 
 PORTNAME=	torrent
 PORTVERSION=	0.8.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/torrent/ \
 		http://mirror.amdmi3.ru/distfiles/

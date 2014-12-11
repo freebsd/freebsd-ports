@@ -59,9 +59,3 @@
 %%RUBY%%%%RUBY_LIBDIR%%/rdf/redland/uri.rb
 %%RUBY%%%%RUBY_LIBDIR%%/rdf/redland/util.rb
 %%RUBY%%%%RUBY_LIBDIR%%/rdf/redland.rb
-%%RUBY%%@dirrm %%RUBY_LIBDIR%%/rdf/redland/schemas
-%%RUBY%%@dirrm %%RUBY_LIBDIR%%/rdf/redland
-%%RUBY%%@dirrm %%RUBY_LIBDIR%%/rdf
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-%%PYTHON%%@dirrmtry %%PYTHON_LIBDIR%%
-%%PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%

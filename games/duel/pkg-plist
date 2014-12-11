@@ -75,8 +75,3 @@ libexec/duel
 %%DATADIR%%/data/shot2.bmp
 %%DATADIR%%/data/shot3.bmp
 %%DATADIR%%/data/stars.bmp
-@dirrm %%DATADIR%%/data/ships
-@dirrm %%DATADIR%%/data/levels
-@dirrm %%DATADIR%%/data/Artlookin
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

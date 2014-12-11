@@ -15,12 +15,10 @@ COMMENT=	Python interface for the tre regular expressions library
 
 LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-USES=	tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python tar:bzip2
+USE_PYTHON=	distutils autoplist
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python

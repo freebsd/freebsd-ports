@@ -4,7 +4,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.8.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -37,6 +37,7 @@ CONFIGURE_ARGS=	--without-gnomevfs --enable-plugins="${ABIWORD_PLUGINS}" \
 		--enable-collab-backend-sugar
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 ABIVERSION=	2.8
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}

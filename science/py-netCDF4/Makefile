@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	netCDF4
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	science python
-MASTER_SITES=	GH
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	5u623l20@gmail.com
@@ -16,38 +14,35 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libnetcdf.so:${PORTSDIR}/science/netcdf
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Unidata
-GH_PROJECT=	netcdf4-python
-GH_TAGNAME=	v${PORTVERSION}rel
-GH_COMMIT=	1344040
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		DOCS EXAMPLES
+GH_ACCOUNT=	Unidata
+GH_COMMIT=	08e4708
+GH_PROJECT=	netcdf4-python
+GH_TAGNAME=	v${PORTVERSION}rel
+USE_GITHUB=	yes
 
 post-patch:
 	@${ECHO_CMD} -n > ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "[options]" >> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "use_ncconfig=True" >> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "ncconfig=${LOCALBASE}/bin/nc-config" \
-		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "ncconfig=${LOCALBASE}/bin/nc-config" >> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "[directories]" >> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "HDF5_libdir=${LOCALBASE}/lib" \
-		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "HDF5_incdir=${LOCALBASE}/include" \
-		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HDF5_libdir=${LOCALBASE}/lib" >> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HDF5_incdir=${LOCALBASE}/include" >> ${WRKSRC}/setup.cfg
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/netCDF4.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

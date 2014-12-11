@@ -22,7 +22,6 @@ USE_TEX=	latex dvipsk
 QMAKE_ARGS=	ICONDIR=${PREFIX}/share/pixmaps \
 		DESKTOPDIR=${DESKTOPDIR}
 
-OPTIONS_DEFINE=	GV XDVI
 OPTIONS_SINGLE=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
 OPTIONS_DEFAULT=	QT5
@@ -32,11 +31,5 @@ QT4_USE=	${_USE_QT4:S/^/QT4=/}
 QT4_LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
 QT5_USE=	${_USE_QT5:S/^/QT5=/}
 QT5_LIB_DEPENDS=	libpoppler-qt5.so:${PORTSDIR}/graphics/poppler-qt5
-
-GV_DESC=	View ps files with gv
-GV_RUN_DEPENDS=	gv:${PORTSDIR}/print/gv
-
-XDVI_DESC=	View dvi files with xdvi
-XDVI_RUN_DEPENDS=	xdvi:${PORTSDIR}/print/xdvik
 
 .include <bsd.port.mk>

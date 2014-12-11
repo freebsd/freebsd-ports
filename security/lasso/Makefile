@@ -2,63 +2,65 @@
 # $FreeBSD$
 
 PORTNAME=	lasso
-PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/594/
+MASTER_SITES=	https://dev.entrouvert.org/releases/lasso/
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Free Liberty Alliance Implementation
 
-BROKEN=		Fails to build
-DEPRECATED=	Broken for more than 6 months
-EXPIRACTION_DATE=	2014-12-27
+LICENSE=	GPLv2
 
-RUN_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFIGURE_ARGS+=	--disable-java --disable-php4 --with-zlib
+USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GNOME=	gnomehack glib20 libxml2
+CONFIGURE_ARGS=	--disable-java --with-zlib
+USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PERL PHP PYTHON DOCS
 
 .include <bsd.port.options.mk>
 
-.if !empty(PORT_OPTIONS:MPERL)
+.if ${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=	--enable-perl
-PLIST_SUB+=	WITH_PERL=""
+PLIST_SUB+=	PERL=""
 USES+=		perl5
 .else
 CONFIGURE_ARGS+=	--disable-perl
-PLIST_SUB+=	WITH_PERL="@comment "
+PLIST_SUB+=	PERL="@comment "
 .endif
 
-.if !empty(PORT_OPTIONS:MPHP)
+.if ${PORT_OPTIONS:MPHP}
 CONFIGURE_ARGS+=	--enable-php5 \
 		--with-php5-config="${LOCALBASE}/bin/php-config"
-LDFLAGS+=	"-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
-PLIST_SUB+=	WITH_PHP5=""
+PLIST_SUB+=	PHP5=""
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 .else
 CONFIGURE_ARGS+=	--disable-php5
-PLIST_SUB+=	WITH_PHP5="@comment "
+PLIST_SUB+=	PHP5="@comment "
 .endif
 
-.if !empty(PORT_OPTIONS:MPYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--enable-python
-PLIST_SUB+=	WITH_PYTHON=""
+PLIST_SUB+=	PYTHON=""
 USES+=		python
-USE_PYTHON=	yes
 .else
 USES+=		python:build
 CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=	WITH_PYTHON="@comment "
+PLIST_SUB+=	PYTHON="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -E 's,(xmlsec1-openssl >= 1\.2\.6) openssl,\1,' \
+		${CONFIGURE_WRKSRC}/configure
 
 .include <bsd.port.mk>

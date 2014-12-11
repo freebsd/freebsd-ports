@@ -23,5 +23,3 @@ man/man8/torsocks.8.gz
 %%DATADIR%%/tordns.patch
 %%DATADIR%%/test/expectedresults.txt
 %%DATADIR%%/test/run_tests.sh
-@dirrm %%DATADIR%%/test
-@dirrm %%DATADIR%%

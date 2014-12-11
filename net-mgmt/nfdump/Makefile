@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6.12
-PORTREVISION=	1
+PORTVERSION=	1.6.13
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -49,7 +48,7 @@ CONFIGURE_ARGS+=	--disable-compat15
 PLIST_FILES=	bin/nfanon bin/nfcapd bin/nfdump bin/nfexpire bin/nfreplay \
 		man/man1/nfanon.1.gz man/man1/nfcapd.1.gz man/man1/nfdump.1.gz \
 		man/man1/nfexpire.1.gz man/man1/nfreplay.1.gz
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README ToDo
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 
 .if ${PORT_OPTIONS:MFIXTIMEBUG}
 CONFIGURE_ARGS+=	--enable-fixtimebug

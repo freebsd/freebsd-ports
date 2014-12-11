@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	23
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
 
+LICENSE=	MIT
+
 USES=		gmake pgsql libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -57,6 +57,201 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="94268da0-8118-11e4-a180-001999f8d30b">
+    <topic>asterisk -- Remote Crash Vulnerability in WebSocket Server</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.14.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>When handling a WebSocket frame the res_http_websocket
+	  module dynamically changes the size of the memory used
+	  to allow the provided payload to fit. If a payload length
+	  of zero was received the code would incorrectly attempt
+	  to resize to zero. This operation would succeed and end
+	  up freeing the memory but be treated as a failure. When
+	  the session was subsequently torn down this memory would
+	  get freed yet again causing a crash.</p>
+	  <p>Users of the WebSocket functionality also did not take
+	  into account that provided text frames are not guaranteed
+	  to be NULL terminated. This has been fixed in chan_sip
+	  and chan_pjsip in the applicable versions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-019.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-30</discovery>
+      <entry>2014-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="27b9b2f0-8081-11e4-b4ca-bcaec565249c">
+    <topic>xserver -- multiple issue with X client request handling</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>1.12.4_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="http://lists.x.org/archives/xorg-announce/2014-December/002500.html">
+	  <p>Ilja van Sprundel, a security researcher with IOActive, has
+	    discovered a large number of issues in the way the X server
+	    code base handles requests from X clients, and has worked
+	    with X.Org's security team to analyze, confirm, and fix
+	    these issues.</p>
+
+	  <p>The vulnerabilities could be exploited to cause the X server
+	    to access uninitialized memory or overwrite arbitrary memory
+	    in the X server process.  This can cause a denial of service
+	    (e.g., an X server segmentation fault), or could be exploited
+	    to achieve arbitrary code execution.</p>
+
+	  <p>The GLX extension to the X Window System allows an X client
+	    to send X protocol to the X server, to request that the X
+	    server perform OpenGL rendering on behalf of the X client.
+	    This is known as "GLX indirect rendering", as opposed to
+	    "GLX direct rendering" where the X client submits OpenGL
+	    rendering commands directly to the GPU, bypassing the X
+	    server and avoiding the X server code for GLX protocol
+	    handling.</p>
+
+	  <p>Most GLX indirect rendering implementations share some
+	    common ancestry, dating back to "Sample Implementation"
+	    code from Silicon Graphics, Inc (SGI), which SGI
+	    originally commercially licensed to other Unix workstation
+	    and graphics vendors, and later released as open source, so
+	    those vulnerabilities may affect other licensees of SGI's
+	    code base beyond those running code from the X.Org Foundation
+	    or the XFree86 Project.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.x.org/archives/xorg-announce/2014-December/002500.html</url>
+      <cvename>CVE-2014-8091</cvename>
+      <cvename>CVE-2014-8092</cvename>
+      <cvename>CVE-2014-8093</cvename>
+      <cvename>CVE-2014-8094</cvename>
+      <cvename>CVE-2014-8095</cvename>
+      <cvename>CVE-2014-8096</cvename>
+      <cvename>CVE-2014-8097</cvename>
+      <cvename>CVE-2014-8098</cvename>
+      <cvename>CVE-2014-8099</cvename>
+      <cvename>CVE-2014-8100</cvename>
+      <cvename>CVE-2014-8101</cvename>
+      <cvename>CVE-2014-8102</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-09</discovery>
+      <entry>2014-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="10d73529-7f4b-11e4-af66-00215af774f0">
+    <topic>unbound -- can be tricked into following an endless series of delegations, this consumes a lot of resources</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Unbound developer reports:</p>
+	<blockquote cite="http://unbound.net/downloads/CVE-2014-8602.txt">
+	  <p>The resolver can be tricked into following an endless series of
+	    delegations, this consumes a lot of resources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://unbound.net/downloads/CVE-2014-8602.txt</url>
+      <cvename>CVE-2014-8602</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-08</discovery>
+      <entry>2014-12-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="567beb1e-7e0a-11e4-b9cc-bcaec565249c">
+    <topic>freetype -- Out of bounds stack-based read/write</topic>
+    <affects>
+      <package>
+	<name>freetype2</name>
+	<range><lt>2.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Werner LEMBERG reports:</p>
+	<blockquote cite="http://lists.nongnu.org/archive/html/freetype-announce/2014-12/msg00000.html">
+	  <p>The fix for CVE-2014-2240 was not 100% complete to fix the issue
+	    from the CVE completly.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.nongnu.org/archive/html/freetype-announce/2014-12/msg00000.html</url>
+      <cvename>CVE-2014-2240</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-07</discovery>
+      <entry>2014-12-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c9c46fbf-7b83-11e4-a96e-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS and DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.13.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-17.php">
+	  <p>DoS vulnerability with long passwords.</p>
+	  <p>With very long passwords it was possible to initiate a
+	    denial of service attack on phpMyAdmin.</p>
+	  <p>We consider this vulnerability to be serious.</p>
+	  <p>This vulnerability can be mitigated by configuring
+	    throttling in the webserver.</p>
+	</blockquote>
+
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-18.php">
+	  <p>XSS vulnerability in redirection mechanism.</p>
+	  <p>With a crafted URL it was possible to trigger an XSS in
+	    the redirection mechanism in phpMyAdmin.</p>
+	  <p>We consider this vulnerability to be non critical.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-17.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-18.php</url>
+      <cvename>CVE-2014-9218</cvename>
+      <cvename>CVE-2014-9219</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-03</discovery>
+      <entry>2014-12-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7ae61870-9dd2-4884-a2f2-f19bb5784d09">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>

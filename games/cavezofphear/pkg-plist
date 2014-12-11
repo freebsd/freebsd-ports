@@ -14,6 +14,3 @@ bin/phear
 %%DATADIR%%/data/levels/11
 %%DATADIR%%/data/spgraf
 %%DATADIR%%/data/tdesc
-@dirrm %%DATADIR%%/data/levels
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

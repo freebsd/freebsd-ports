@@ -1,4 +1,11 @@
-pylibmc is a Python wrapper around the accompanying C Python extension
-_pylibmc, which is a wrapper around libmemcached from TangentOrg.
+pylibmc is a client in Python for memcached. It is a wrapper around
+TangentOrg's libmemcached library.
 
-WWW: https://pypi.python.org/pypi/pylibmc
+The interface is intentionally made as close to python-memcached as possible,
+so that applications can drop-in replace it.
+
+pylibmc leverages among other things configurable behaviors, data pickling,
+data compression, battle-tested GIL retention, consistent distribution, and
+the binary memcached protocol.
+
+WWW: http://sendapatch.se/projects/pylibmc

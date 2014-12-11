@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Portable software library for volume rendering
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	MFLAGS=""	# required for bmake(1) and -jX builds

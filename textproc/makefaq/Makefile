@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makefaq is a Python program that creates a (FAQ)
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/makefaq.py man/man1/makefaq.1.gz

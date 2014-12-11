@@ -3,7 +3,7 @@
 
 PORTNAME=	bumprace
 PORTVERSION=	1.5.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://user.cs.tu-berlin.de/~karlb/bumprace/ \
 		http://mirror.amdmi3.ru/distfiles/

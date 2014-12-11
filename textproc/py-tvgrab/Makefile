@@ -14,10 +14,9 @@ COMMENT=	Library to write grabbers of tv scheduling collections
 
 EXTRACT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil:extract
 
-USES=		tar:bzip2
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2 tar:bzip2
+USE_PYTHON=	distutils autoplist
+
 
 PORTDOCS=	README
 

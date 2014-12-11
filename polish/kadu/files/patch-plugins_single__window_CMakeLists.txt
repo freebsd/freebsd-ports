@@ -1,0 +1,11 @@
+--- plugins/single_window/CMakeLists.txt.orig	2014-12-04 20:56:15 UTC
++++ plugins/single_window/CMakeLists.txt
+@@ -19,6 +19,8 @@ set (CONFIGURATION_FILES
+ 	configuration/single_window.ui
+ )
+ 
++include_directories (${X11_X11_INCLUDE_PATH})
++
+ kadu_plugin (single_window
+ 	PLUGIN_SOURCES ${SOURCES}
+ 	PLUGIN_MOC_SOURCES ${MOC_SOURCES}

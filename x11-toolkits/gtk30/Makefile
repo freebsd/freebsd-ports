@@ -5,7 +5,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	3.14.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -41,6 +41,7 @@ CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit \
 		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LIBS+=		-L${LOCALBASE}/lib
+INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 LIBVERSION=	0.1400.5

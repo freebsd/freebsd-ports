@@ -241,7 +241,7 @@
     SUBDIR += tetradraw
     SUBDIR += texmacs
     SUBDIR += texmaker
-    SUBDIR += texmakerx
+    SUBDIR += texstudio
     SUBDIR += textroom
     SUBDIR += texworks
     SUBDIR += thoteditor

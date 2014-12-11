@@ -1,0 +1,10 @@
+--- plugins/node.d/multiping.in.orig	2014-11-24 21:46:24 UTC
++++ plugins/node.d/multiping.in
+@@ -59,6 +59,7 @@ if [ -z "$host" ]; then
+     host=${host:-${file_host:-www.google.com}}
+ fi
+ 
++site=0
+ if [ "$1" = "config" ]; then
+     echo graph_title Ping times
+     echo 'graph_args --base 1000 -l 0'

@@ -10,6 +10,9 @@ MASTER_SITES=	http://wolfram.schneider.org/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkout and build ports and all depending ports
 
+DEPRECATED=	Uses ports cvs repo, which is long gone
+EXPIRATION_DATE=	2015-01-06
+
 USES=		perl5 shebangfix uidfix
 SHEBANG_FILES=	${PORTNAME}.pl
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz

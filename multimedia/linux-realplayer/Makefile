@@ -3,7 +3,7 @@
 
 PORTNAME=	linux-realplayer
 DISTVERSION=	10.0.9.809-20070726
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	ftp://ftp.tw.freebsd.org/pub/distfiles/:player \
 		http://freeheimdall.spdns.org/files/:player \
@@ -25,14 +25,14 @@ LICENSE_PERMS=	auto-accept
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386 amd64
+USES=		webplugin:linux
+WEBPLUGIN_FILES=nphelix.so nphelix.xpt
 USE_LINUX=	yes
 USE_LINUX_APPS=	gtk2 xorglibs
 RESTRICTED=	Redistribution not allowed
 NO_BUILD=	yes
-WANT_GNOME=	yes
 
 RADIR=		${PREFIX}/lib/RealPlayer
-PLUGINSDIR=	${PREFIX}/lib/linux-mozilla/plugins
 RABINDIR=	${PREFIX}/bin
 
 OPTIONS_DEFINE=	GNOME ICONS NLS
@@ -48,8 +48,6 @@ PLIST_SUB+=	NLS="" LINUXBASE="${LINUXBASE}"
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MICONS}
 PLIST_SUB+=	ICONS=""
@@ -84,8 +82,8 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${RADIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${RADIR}
+	${BRANDELF} -t Linux ${WRKSRC}/realplay.bin
 	${INSTALL_PROGRAM} ${WRKSRC}/realplay.bin ${STAGEDIR}${RADIR}
-	${BRANDELF} -t Linux ${STAGEDIR}${RADIR}/realplay.bin
 .for dir in codecs common lib plugins share/default share/realplay
 	@${MKDIR} ${STAGEDIR}${RADIR}/${dir}
 	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${STAGEDIR}${RADIR}/${dir}
@@ -109,8 +107,8 @@ do-install:
 .endfor
 .endif
 
-	@${MKDIR} ${STAGEDIR}${PLUGINSDIR}
-	${INSTALL_DATA} ${WRKSRC}/mozilla/* ${STAGEDIR}${PLUGINSDIR}
+	@${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}
+	${INSTALL_DATA} ${WRKSRC}/mozilla/* ${STAGEDIR}${WEBPLUGIN_DIR}
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/realplay ${STAGEDIR}${PREFIX}/bin
@@ -146,4 +144,4 @@ do-install:
 		${STAGEDIR}${LOCALBASE}/share/mime-info
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

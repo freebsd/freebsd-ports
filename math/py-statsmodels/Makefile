@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	statsmodels
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.6.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	xmj@chaot.net
 COMMENT=	Complement to SciPy for statistical computations
 
-LICENSE=	BSD
-
-BROKEN=		Fails to build
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:${PORTSDIR}/science/py-scipy \
@@ -25,14 +22,9 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}patsy>0:${PORTSDIR}/math/py-patsy
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 USES=		python
-USE_PYTHON=	distutils py3kplist noegginfo
-PLIST_SUB=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
-PORTDOCS=	* .buildinfo
-PORTEXAMPLES=	*
+USE_PYTHON=	py3kplist distutils concurrent
 
 .include <bsd.port.options.mk>
 
@@ -50,7 +42,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/tsa/kalmanf/kalman_loglike.so
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${WRKSRC}/README_l1.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.rst ${WRKSRC}/README_l1.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/build/sphinx/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -163,9 +163,5 @@
 %%HUD_SA%%%%Q1DIR%%/joequake/textures/wad/inva3_rlaunch.png
 %%HUD_SA%%%%Q1DIR%%/joequake/textures/wad/inva4_rlaunch.png
 %%HUD_SA%%%%Q1DIR%%/joequake/textures/wad/inva5_rlaunch.png
-%%HUD_DIR%%@dirrm %%Q1DIR%%/joequake/textures/wad
-%%HUD_DIR%%@dirrm %%Q1DIR%%/joequake/textures
 %%PORTDOCS%%%%DOCSDIR%%/joequake.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
-@dirrm %%Q1DIR%%/joequake
-@dirrm %%DOCSDIR%%

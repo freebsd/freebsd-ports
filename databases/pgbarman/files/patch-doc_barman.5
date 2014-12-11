@@ -1,0 +1,51 @@
+--- doc/barman.5.orig	2014-08-18 10:29:45 UTC
++++ doc/barman.5
+@@ -37,7 +37,7 @@ The system\-level Barman configuration f
+ .RS 4
+ .\}
+ .nf
+-/etc/barman\&.conf
++/usr/local/etc/barman\&.conf
+ .fi
+ .if n \{\
+ .RE
+@@ -49,7 +49,7 @@ or
+ .RS 4
+ .\}
+ .nf
+-/etc/barman/barman\&.conf
++/usr/local/etc/barman/barman\&.conf
+ .fi
+ .if n \{\
+ .RE
+@@ -71,7 +71,7 @@ $HOME/\&.barman\&.conf
+ The Barman configuration file is a plain ini file\&. There is a general section called [barman] and a section [servername] for each server you want to backup\&. Rows starting with ; are comments\&.
+ .SH "CONFIGURATION FILE DIRECTORY"
+ .sp
+-Barman supports the inclusion of multiple configuration files, through the configuration_files_directory option\&. Included files must contain only server specifications, not global configurations\&. If the value of configuration_files_directory is a directory, Barman reads all files with \&.conf extension that exist in that folder\&. For example, if you set it to /etc/barman\&.d, you can specify your PostgreSQL servers placing each section in a separate \&.conf file inside the /etc/barman\&.d folder\&.
++Barman supports the inclusion of multiple configuration files, through the configuration_files_directory option\&. Included files must contain only server specifications, not global configurations\&. If the value of configuration_files_directory is a directory, Barman reads all files with \&.conf extension that exist in that folder\&. For example, if you set it to /usr/local/etc/barman\&.d, you can specify your PostgreSQL servers placing each section in a separate \&.conf file inside the /usr/local/etc/barman\&.d folder\&.
+ .SH "OPTIONS"
+ .PP
+ \fBactive\fR
+@@ -322,7 +322,7 @@ Example of the configuration file:
+ .nf
+ [barman]
+ ; Main directory
+-barman_home = /var/lib/barman
++barman_home = /var/barman
+ 
+ ; System user
+ barman_user = barman
+@@ -339,10 +339,10 @@ log_file = /var/log/barman/barman\&.log
+ description =  "Main PostgreSQL Database"
+ 
+ ; SSH options
+-ssh_command = ssh postgres@pg
++ssh_command = ssh pgsql@pg
+ 
+ ; PostgreSQL connection string
+-conninfo = host=pg user=postgres
++conninfo = host=pg user=pgsql dbname=postgres
+ 
+ ; Minimum number of required backups (redundancy)
+ minimum_redundancy = 1

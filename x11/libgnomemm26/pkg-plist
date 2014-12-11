@@ -16,10 +16,3 @@ lib/libgnomemm-%%API_VERSION%%/include/libgnomemmconfig.h
 lib/libgnomemm-%%API_VERSION%%/proc/m4/convert.m4
 lib/libgnomemm-%%API_VERSION%%/proc/m4/convert_libgnomemm.m4
 libdata/pkgconfig/libgnomemm-%%API_VERSION%%.pc
-@dirrm lib/libgnomemm-%%API_VERSION%%/proc/m4
-@dirrm lib/libgnomemm-%%API_VERSION%%/proc
-@dirrm lib/libgnomemm-%%API_VERSION%%/include
-@dirrm lib/libgnomemm-%%API_VERSION%%
-@dirrm include/libgnomemm-%%API_VERSION%%/libgnomemm/private
-@dirrm include/libgnomemm-%%API_VERSION%%/libgnomemm
-@dirrm include/libgnomemm-%%API_VERSION%%

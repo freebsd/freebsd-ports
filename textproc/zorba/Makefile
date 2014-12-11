@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose C++ XQuery processor
 
 LICENSE=	APACHE20
@@ -59,7 +59,7 @@ PLIST_SUB+=	WITH_PHP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 WITH_SWIG=	yes
 CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=true \
 		-DPYTHON_SWIG_INSTALL_DIR:FILEPATH=${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}\///}

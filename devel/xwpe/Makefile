@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.identicalsoftware.com/pub/linux/xwpe/
 MASTER_SITE_SUBDIR=	apps/editors/X
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Borland-like IDE programming environment
 
 USES=		desthack gmake

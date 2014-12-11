@@ -10,7 +10,7 @@ MASTER_SITES=	SF/vde/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
 
-LICENSE=	BSD GPLv2 LGPL21
+LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 CONFLICTS=	vde-[0-9]*

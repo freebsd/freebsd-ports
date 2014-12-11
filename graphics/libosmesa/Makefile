@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2

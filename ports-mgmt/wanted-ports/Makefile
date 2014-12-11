@@ -11,7 +11,7 @@ DISTFILES=	# none
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Just depend on a configurable, arbitrary set of other ports
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 NO_ARCH=	yes
 NO_BUILD=	yes

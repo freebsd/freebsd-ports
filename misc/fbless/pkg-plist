@@ -32,5 +32,3 @@ bin/fbless
 %%PYTHON_SITELIBDIR%%/fbless_lib/paragraph.py
 %%PYTHON_SITELIBDIR%%/fbless_lib/paragraph.pyc
 %%PYTHON_SITELIBDIR%%/fbless_lib/paragraph.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/fbless_lib/hyph_dicts
-@dirrm %%PYTHON_SITELIBDIR%%/fbless_lib

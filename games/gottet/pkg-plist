@@ -24,5 +24,3 @@ share/icons/hicolor/64x64/apps/gottet.png
 share/icons/hicolor/scalable/apps/gottet.svg
 share/pixmaps/gottet.png
 share/pixmaps/gottet.xpm
-%%NLS%%@dirrm %%DATADIR%%/translations
-%%NLS%%@dirrm %%DATADIR%%

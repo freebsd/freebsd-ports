@@ -1,6 +1,6 @@
---- src/auto/configure.orig	2014-05-31 15:02:24.446323494 +0800
-+++ src/auto/configure	2014-05-31 15:02:24.593321540 +0800
-@@ -888,7 +888,7 @@
+--- src/auto/configure.orig	2014-12-04 04:16:00.326888901 +0800
++++ src/auto/configure	2014-12-04 04:18:43.019881161 +0800
+@@ -889,7 +889,7 @@
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,7 +9,7 @@
  
  ac_prev=
  ac_dashdash=
-@@ -4951,7 +4951,7 @@
+@@ -4952,7 +4952,7 @@
  if ${vi_cv_version_lua_luajit+:} false; then :
    $as_echo_n "(cached) " >&6
  else
@@ -18,7 +18,7 @@
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_lua_luajit" >&5
  $as_echo "$vi_cv_version_lua_luajit" >&6; }
-@@ -5005,7 +5005,7 @@
+@@ -5006,7 +5006,7 @@
  if ${vi_cv_version_plain_lua+:} false; then :
    $as_echo_n "(cached) " >&6
  else
@@ -27,7 +27,7 @@
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_plain_lua" >&5
  $as_echo "$vi_cv_version_plain_lua" >&6; }
-@@ -5096,7 +5096,7 @@
+@@ -5097,7 +5097,7 @@
        LIBS=$libs_save
      fi
      if test "x$lua_ok" = "xyes"; then
@@ -36,7 +36,7 @@
        LUA_SRC="if_lua.c"
        LUA_OBJ="objects/if_lua.o"
        LUA_PRO="if_lua.pro"
-@@ -5153,7 +5153,8 @@
+@@ -5154,7 +5154,8 @@
        $as_echo "#define DYNAMIC_LUA 1" >>confdefs.h
  
        LUA_LIBS=""
@@ -46,25 +46,25 @@
      fi
      if test "X$LUA_CFLAGS$LUA_LIBS" != "X" && \
         test "x$MACOSX" = "xyes" && test "x$vi_cv_with_luajit" != "xno" && \
-@@ -5719,7 +5720,7 @@
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $enable_pythoninterp" >&5
- $as_echo "$enable_pythoninterp" >&6; }
- if test "$enable_pythoninterp" = "yes" -o "$enable_pythoninterp" = "dynamic"; then
+@@ -5732,7 +5733,7 @@
+     as_fn_error $? "cannot use Python with tiny or small features" "$LINENO" 5
+   fi
+ 
 -    for ac_prog in python2 python
 +    for ac_prog in python2.7
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -6035,7 +6036,7 @@
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $enable_python3interp" >&5
- $as_echo "$enable_python3interp" >&6; }
- if test "$enable_python3interp" = "yes" -o "$enable_python3interp" = "dynamic"; then
+@@ -6052,7 +6053,7 @@
+     as_fn_error $? "cannot use Python with tiny or small features" "$LINENO" 5
+   fi
+ 
 -    for ac_prog in python3 python
-+    for ac_prog in python3.3 python3.2 python3.1
++    for ac_prog in python3.4 python3.3 python3.2
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -6850,7 +6851,7 @@
+@@ -6867,7 +6868,7 @@
  $as_echo "$try/tclConfig.sh" >&6; }
  	    . $try/tclConfig.sh
  	    	    TCL_LIBS=`eval echo "$TCL_LIB_SPEC $TCL_LIBS"`

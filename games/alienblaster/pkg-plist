@@ -133,7 +133,3 @@ bin/alienblaster
 %%DATADIR%%/sound/playon.wav
 %%DATADIR%%/sound/shotPrimary.wav
 %%DATADIR%%/sound/shotSecondary.wav
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/cfg
-@dirrm %%DATADIR%%

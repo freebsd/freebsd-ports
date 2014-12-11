@@ -9,7 +9,7 @@ MASTER_SITES=	http://business-php.com/opensource/ez-pine-gpg/
 DISTNAME=	${PORTNAME}_v${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of scripts to use gpg with Pine
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg

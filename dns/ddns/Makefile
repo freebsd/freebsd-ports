@@ -9,7 +9,7 @@ MASTER_SITES=	http://instinctive.eu/code/
 MAINTAINER=	natbsd@instinctive.eu
 COMMENT=	Lightweight UDP-based dynamic DNS updater
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 MAKEFILE=	BSDmakefile
 USES=	tar:bzip2

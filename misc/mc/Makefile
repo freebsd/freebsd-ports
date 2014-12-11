@@ -3,7 +3,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.8.13
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/ \

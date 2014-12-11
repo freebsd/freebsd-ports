@@ -10,6 +10,8 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/1446/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
 
+LICENSE=	MIT
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 

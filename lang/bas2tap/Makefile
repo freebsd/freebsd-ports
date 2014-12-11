@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bas2tap
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.worldofspectrum.org/pub/sinclair/tools/generic/
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}-generic

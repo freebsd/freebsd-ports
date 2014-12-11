@@ -577,6 +577,16 @@ MASTER_SITE_GNOME+= \
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_GIMP)
+MASTER_SITE_GIMP+= \
+	http://gimp.mirrors.hoobly.com/pub/%SUBDIR%/ \
+	http://gimper.net/downloads/pub/%SUBDIR%/ \
+	http://mirror.hessmo.com/gimp/pub/%SUBDIR%/ \
+	http://de-mirror.gimper.net/pub/%SUBDIR%/ \
+	http://gimp.afri.cc/pub/%SUBDIR%/ \
+	http://download.gimp.org/pub/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_GNU)
 MASTER_SITE_GNU+= \
 	http://ftpmirror.gnu.org/%SUBDIR%/ \
@@ -1522,6 +1532,7 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_CLOUD:${GH_ACCOUNT}/${GH_PROJECT}/ \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
+			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GNU:${PORTNAME} \
 			GNU_ALPHA:${PORTNAME} \
 			HORDE:${PORTNAME} \

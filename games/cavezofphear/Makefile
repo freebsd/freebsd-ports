@@ -12,8 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Boulder Dash / Digger-like game written using ncurses
 
 LICENSE=	GPLv3 # (or later)
-
-OPTIONS_DEFINE=	DOCS
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
@@ -22,6 +21,8 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	phear
 
 PORTDOCS=	ChangeLog README README-EDITOR TODO
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\./data|${DATADIR}/data|' ${WRKSRC}/src/chk.c

@@ -53,6 +53,3 @@
 %%DATADIR%%/v101qc/wizard.qc
 %%DATADIR%%/v101qc/world.qc
 %%DATADIR%%/v101qc/zombie.qc
-@dirrm %%DATADIR%%/v101qc
-%%QUAKEWORLD%%@dirrm %%DATADIR%%/qw
-@dirrm %%DATADIR%%

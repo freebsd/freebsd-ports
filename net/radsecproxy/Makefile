@@ -9,7 +9,7 @@ MASTER_SITES=	http://software.uninett.no/radsecproxy/
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Radsecproxy is a generic RADIUS proxy
 
-LICENSE=	GPLv2 BSD
+LICENSE=	GPLv2 BSD3CLAUSE
 LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes

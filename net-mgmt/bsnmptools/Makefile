@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	unixmania@gmail.com
 COMMENT=	Snmp client tools
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 .include <bsd.port.pre.mk>
 

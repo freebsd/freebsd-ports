@@ -6,5 +6,3 @@ etc/rc.d/pipsecd.sh
 %%PORTDOCS%%share/doc/pipsecd/README
 %%PORTDOCS%%share/doc/pipsecd/COPYRIGHT
 %%PORTDOCS%%share/doc/pipsecd/README.port
-%%PORTDOCS%%@dirrm share/doc/pipsecd
-@dirrm etc/ipsec

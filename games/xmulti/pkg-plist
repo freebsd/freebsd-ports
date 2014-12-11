@@ -63,7 +63,3 @@ man/man1/xmaid.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.jp
 %%PORTDOCS%%%%DOCSDIR%%/STYLESHEET.jp
 %%PORTDOCS%%%%DOCSDIR%%/XMULTI.jp
-@dirrm lib/X11/xmaid/datas
-@dirrm lib/X11/xmaid/multi
-@dirrm lib/X11/xmaid
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

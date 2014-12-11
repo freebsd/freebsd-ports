@@ -10,9 +10,9 @@ include/lo/lo_osc_types.h
 include/lo/lo_serverthread.h
 include/lo/lo_throw.h
 include/lo/lo_types.h
-lib/liblo.la
 lib/liblo.so
-lib/liblo.so.%%SHLIB_VER%%
+lib/liblo.so.7
+lib/liblo.so.7.2.0
 libdata/pkgconfig/liblo.pc
 %%DOXYGEN%%man/man3/liblo.3.gz
 %%DOXYGEN%%man/man3/liblolowlevel.3.gz

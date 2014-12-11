@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.20
-PORTREVISION=	2
+PORTVERSION=	1.4.21
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 CONFLICTS=	memcached-1.2*
 
 # Dtrace option disabled until it is fixed upstream
-OPTIONS_DEFINE=	SASL DOCS DTRACE
+OPTIONS_DEFINE=		SASL DOCS DTRACE
 OPTIONS_DEFAULT=	SASL DOCS
 
 DTRACE_DESC=	Enable dtrace probes
@@ -34,11 +33,9 @@ SHEBANG_FILES=	scripts/memcached-tool
 
 USE_CSTD=	c99
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --program-prefix= \
+CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
+		--program-prefix= \
 		--disable-coverage
-
-CFLAGS+=	-fstack-protector \
-		-I${LOCALBASE}/include
 
 DTRACE_CONFIGURE_ENABLE=	dtrace
 

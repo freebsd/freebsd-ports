@@ -235,14 +235,4 @@ share/locale/it/LC_MESSAGES/teg.mo
 share/locale/pl/LC_MESSAGES/teg.mo
 share/locale/pt/LC_MESSAGES/teg.mo
 share/locale/pt_BR/LC_MESSAGES/teg.mo
-@dirrm share/pixmaps/teg_pix/themes/sentimental
-@dirrm share/pixmaps/teg_pix/themes/m2
-@dirrm share/pixmaps/teg_pix/themes/draco
-@dirrm share/pixmaps/teg_pix/themes
-@dirrm share/pixmaps/teg_pix
-@dirrm share/gnome/help/teg/C/stylesheet-images
-@dirrm share/gnome/help/teg/C/figures
-@dirrm share/gnome/help/teg/C
-@dirrm share/gnome/help/teg
-@dirrmtry share/locale/hu_HU/LC_MESSAGES
-@dirrmtry share/locale/hu_HU
+@dir share/gnome/help/teg/C/stylesheet-images

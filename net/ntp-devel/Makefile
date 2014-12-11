@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p482
+PORTVERSION=	4.2.7p483
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/

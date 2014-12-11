@@ -9,7 +9,7 @@ MASTER_SITES=	http://lv2plug.in/spec/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LV2 Core Package
 
-LICENSE=	BSD
+LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig python:build tar:bzip2

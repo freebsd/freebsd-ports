@@ -9,7 +9,7 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build network xml gui
 
 PORTNAME=	qt4-qtsolutions-soap
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT4 Solutions SOAP Component
 
 DESCR=		${.CURDIR}/pkg-descr

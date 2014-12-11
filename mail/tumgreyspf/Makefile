@@ -3,6 +3,7 @@
 
 PORTNAME=	tumgreyspf
 PORTVERSION=	1.38
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/ \
@@ -20,15 +21,14 @@ OPTIONS_DEFINE=	DOCS
 NO_BUILD=	yes
 USES=		python shebangfix
 
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKSRC}/pkg-message
-PORTDOCS=	*
-SUB_FILES=	pkg-deinstall pkg-install pkg-message
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
-		TUMGREYSPF_DIR=${TUMGREYSPF_DIR} \
+PLIST_SUB=	TUMGREYSPF_DIR=${TUMGREYSPF_DIR} \
 		TUMGREYSPF_USER=${TUMGREYSPF_USER} \
 		TUMGREYSPF_GROUP=${TUMGREYSPF_GROUP}
+PORTDOCS=	*
+SUB_FILES=	pkg-message
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
+		TUMGREYSPF_USER=${TUMGREYSPF_USER}
 
 SHEBANG_FILES=	*
 python_OLD_CMD=	${SETENV} python
@@ -63,18 +63,13 @@ do-install:
 	cd ${WRKSRC}/ && ${INSTALL_SCRIPT} tumgreyspf tumgreyspf-clean tumgreyspf-configtest tumgreyspf-stat ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC}/ && ${INSTALL_SCRIPT} gentest ${STAGEDIR}${PREFIX}/bin/tumgreyspf-gentest
 	cd ${WRKSRC}/ && ${INSTALL_SCRIPT} tumgreyspfsupp.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} tumgreyspf.conf ${STAGEDIR}${PREFIX}/etc/tumgreyspf.conf.default
-.if !exists(${PREFIX}/etc/tumgreyspf.conf)
-	${INSTALL_DATA} ${WRKSRC}/tumgreyspf.conf ${STAGEDIR}${PREFIX}/etc/
-.endif
-
-post-install:
+	cd ${WRKSRC}/ && ${INSTALL_DATA} tumgreyspf.conf ${STAGEDIR}${PREFIX}/etc/tumgreyspf.conf.sample
 	${MKDIR} ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/__default__.dist ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/__default__.dist ${STAGEDIR}${DATADIR}/__default__.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}/
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+	${MKDIR} -m 755 -p ${STAGEDIR}${TUMGREYSPF_DIR}
+	${MKDIR} -m 755 ${STAGEDIR}${TUMGREYSPF_DIR}/config
+	${MKDIR} -m 700 ${STAGEDIR}${TUMGREYSPF_DIR}/data
 
 .include <bsd.port.mk>

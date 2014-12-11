@@ -14,9 +14,9 @@ include/libvcd/sector.h
 include/libvcd/types.h
 include/libvcd/version.h
 lib/libvcdinfo.a
-lib/libvcdinfo.la
 lib/libvcdinfo.so
-lib/libvcdinfo.so.2
+lib/libvcdinfo.so.0
+lib/libvcdinfo.so.0.2.0
 libdata/pkgconfig/libvcdinfo.pc
 man/man1/cdxa2mpeg.1.gz
 man/man1/vcd-info.1.gz
@@ -25,4 +25,3 @@ man/man1/vcdxbuild.1.gz
 man/man1/vcdxgen.1.gz
 man/man1/vcdxminfo.1.gz
 man/man1/vcdxrip.1.gz
-@dirrm include/libvcd

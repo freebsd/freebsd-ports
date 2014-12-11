@@ -28,11 +28,10 @@
     SUBDIR += packagekit
     SUBDIR += packagekit-qt4
     SUBDIR += pchecker
-    SUBDIR += pib
     SUBDIR += pkg
-    SUBDIR += pkgcompare
     SUBDIR += pkg-devel
     SUBDIR += pkg-orphan
+    SUBDIR += pkg-plist
     SUBDIR += pkg-rmleaf
     SUBDIR += pkg_cleanup
     SUBDIR += pkg_cutleaves
@@ -43,6 +42,7 @@
     SUBDIR += pkg_search
     SUBDIR += pkg_trackinst
     SUBDIR += pkg_tree
+    SUBDIR += pkgcompare
     SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools

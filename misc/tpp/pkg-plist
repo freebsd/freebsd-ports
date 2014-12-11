@@ -24,6 +24,3 @@ man/man1/tpp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/test.tpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/tpp-features.tpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/wrap.tpp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

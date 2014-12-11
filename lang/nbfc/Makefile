@@ -6,7 +6,7 @@ PORTVERSION=	0.1
 CATEGORIES=	lang
 MASTER_SITES=	http://koeln.ccc.de/ablage/brainfuck/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New Brainfuck Compiler
 
 LICENSE=	BSD2CLAUSE

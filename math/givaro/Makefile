@@ -11,7 +11,7 @@ COMMENT=	C++ library for computer algebra
 LICENSE=	CeCILL-Bv1-en.txt
 LICENSE_NAME=	Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre] B license, version 1
 LICENSE_FILE=	${WRKSRC}/Licence_CeCILL-B_V1-en.txt
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libgmp.so.10:${PORTSDIR}/math/gmp
 

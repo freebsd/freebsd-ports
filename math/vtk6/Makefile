@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visualization Toolkit
 
 LICENSE=	BSD3CLAUSE

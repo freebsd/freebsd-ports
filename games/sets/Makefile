@@ -3,7 +3,7 @@
 
 PORTNAME=	sets
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.linuxmotors.com/sets/downloads/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

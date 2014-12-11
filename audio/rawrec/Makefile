@@ -3,12 +3,16 @@
 
 PORTNAME=	rawrec
 PORTVERSION=	0.9.991
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE:S/%SUBDIR%/apps\/sound\/recorders/} \
 		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to record and playback raw audio data
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKDIR}/${DISTNAME}/copyright
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

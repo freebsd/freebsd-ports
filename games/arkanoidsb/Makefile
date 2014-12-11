@@ -3,6 +3,7 @@
 
 PORTNAME=	arkanoidsb
 PORTVERSION=	1.3.2.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.wegroup.org/downloads/
 

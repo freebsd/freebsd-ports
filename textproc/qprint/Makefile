@@ -11,7 +11,7 @@ COMMENT=	Encode and decode Quoted-Printable files
 LICENSE=	public
 LICENSE_NAME=	Public Domain
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes

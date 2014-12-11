@@ -31,13 +31,13 @@
  static int bind_kernel_driver(int fd)
  {
  	unsigned long devt;
-@@ -77,9 +85,11 @@ static int bind_kernel_driver(int fd)
+@@ -77,9 +84,11 @@ static int bind_kernel_driver(int fd)
  
  	return 0;
  }
 +#endif
  
- int get_baud_rate(int fd)
+ static int get_baud_rate(int fd)
  {
 +#ifdef __linux__
  	struct stat st;

@@ -3,16 +3,17 @@
 
 PORTNAME=	alienblaster
 PORTVERSION=	1.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.schwardtnet.de/alienblaster/archives/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alien Blaster
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	gmake tar:tgz
+USES=		gmake tar:tgz
 USE_SDL=	mixer sdl
 REINPLACE_ARGS=	-i ''
 

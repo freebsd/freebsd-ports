@@ -1581,6 +1581,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.skysports/URL/SkySports/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.slice/URL/Slice/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.snotr/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.snotr/URL/Snotr/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sohutv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sohutv/URL/Sohu TV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.soundcloud/ServiceInfo.plist
@@ -1886,6 +1888,7 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/ja.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/ko.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/lt.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/my.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/nl.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/no.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/pl.json
@@ -3021,8 +3024,8 @@
 %%DATADIR%%/libopencv_imgproc.so.2.4
 %%DATADIR%%/libpython2.7.so
 %%DATADIR%%/libpython2.7.so.1
-%%DATADIR%%/libsoci_core-gcc-3_0.so.3.0.0
-%%DATADIR%%/libsoci_sqlite3-gcc-3_0.so.3.0.0
+%%DATADIR%%/libsoci_core.so.3.0.0
+%%DATADIR%%/libsoci_sqlite3.so.3.0.0
 %%DATADIR%%/libsqlite3.so.8
 %%DATADIR%%/libssl.so.1.0.0
 %%DATADIR%%/libswscale.so.2
@@ -3031,24 +3034,3 @@
 %%DATADIR%%/libxslt.so.2
 %%DATADIR%%/libz.so.1
 %%DATADIR%%/libzen.so.0
-@dir %%DATADIR%%/Resources/English.lproj
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/bsddb
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/distutils
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/email/test
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/idlelib
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/lib-tk
-@dir %%DATADIR%%/Resources/Python/lib/python2.7/test
-@dir %%DATADIR%%/Resources/locale/ar/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/cs-CZ/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/da/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/de/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/en/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/es/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/fr/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/he/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/it/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/lt/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/nl/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/nl-BE/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/no/LC_MESSAGES
-@dir %%DATADIR%%/Resources/locale/pt-BR/LC_MESSAGES

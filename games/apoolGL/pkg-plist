@@ -59,7 +59,3 @@ bin/apool
 %%DATADIR%%/textures-med/Holz.bmp
 %%DATADIR%%/textures-med/Marmor.bmp
 %%DATADIR%%/textures-med/Tuch.bmp
-@dirrm %%DATADIR%%/textures-med
-@dirrm %%DATADIR%%/textures-lo
-@dirrm %%DATADIR%%/textures-hi
-@dirrm %%DATADIR%%

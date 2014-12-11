@@ -38,15 +38,3 @@ libexec/xfce4/panel-plugins/xfce4-verve-plugin
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-verve-plugin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-verve-plugin.mo
 share/xfce4/panel-plugins/xfce4-verve-plugin.desktop
-@dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4

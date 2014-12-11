@@ -11,9 +11,5 @@ share/xml/xhtml/1.1/dtd/xml1n.dcl
 share/xml/xhtml/1.1/xsd/xhtml11-model-1.xsd
 share/xml/xhtml/1.1/xsd/xhtml11-modules-1.xsd
 share/xml/xhtml/1.1/xsd/xhtml11.xsd
-@dirrm share/xml/xhtml/1.1/dtd
-@dirrm share/xml/xhtml/1.1/xsd
-@dirrm share/xml/xhtml/1.1
-@dirrmtry share/xml/xhtml
 @exec %%XMLCAT_ADD%%
 @exec %%SGMLCAT_ADD%%

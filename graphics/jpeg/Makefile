@@ -3,7 +3,7 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		http://sylvana.net/jpegcrop/:exif
@@ -13,15 +13,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}${DISTVERSION2}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
 
 #CONFLICTS=	libjpeg-turbo-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION2}
 DISTVERSION2=	8d
-# TODO: Remove :oldver together with patch-configure.
-USES=		libtool:oldver
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -49,6 +48,7 @@ test: build
 regression-test:	test
 
 post-install:
+	${LN} -s libjpeg.so.8 ${STAGEDIR}${PREFIX}/lib/libjpeg.so.11
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/jpeg
 	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/jpeg/

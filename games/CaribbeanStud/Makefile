@@ -5,12 +5,13 @@ PORTNAME=	CaribbeanStud
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
+MASTER_SITES=	XCONTRIB/games
 DISTNAME=	CS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Caribbean Stud gambling game for X Window System
+
+LICENSE=	MIT
 
 MAKEFILE=	Xmakefile
 USES=		motif

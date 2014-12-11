@@ -1,12 +1,13 @@
 sbin/smart-proxy
 @sample etc/foreman-proxy/settings.yml.sample
 @sample etc/foreman-proxy/settings.d/bmc.yml.sample
-@sample etc/foreman-proxy/settings.d/chef.yml.sample
 @sample etc/foreman-proxy/settings.d/dhcp.yml.sample
 @sample etc/foreman-proxy/settings.d/dns.yml.sample
+@sample etc/foreman-proxy/settings.d/facts.yml.sample
 @sample etc/foreman-proxy/settings.d/puppet.yml.sample
 @sample etc/foreman-proxy/settings.d/puppetca.yml.sample
 @sample etc/foreman-proxy/settings.d/realm.yml.sample
+@sample etc/foreman-proxy/settings.d/templates.yml.sample
 @sample etc/foreman-proxy/settings.d/tftp.yml.sample
 %%DATADIR%%/CHANGELOG
 %%DATADIR%%/Contributors
@@ -17,7 +18,6 @@ sbin/smart-proxy
 %%DATADIR%%/Rakefile
 %%DATADIR%%/VERSION
 %%DATADIR%%/bundler.d/bmc.rb
-%%DATADIR%%/bundler.d/chef.rb
 %%DATADIR%%/bundler.d/development.rb
 %%DATADIR%%/bundler.d/krb5.rb
 %%DATADIR%%/bundler.d/puppet.rb
@@ -29,6 +29,7 @@ sbin/smart-proxy
 %%DATADIR%%/lib/bundler_helper.rb
 %%DATADIR%%/lib/checks.rb
 %%DATADIR%%/lib/daemon.rb
+%%DATADIR%%/lib/poodles-fix.rb
 %%DATADIR%%/lib/proxy/error.rb
 %%DATADIR%%/lib/proxy/helpers.rb
 %%DATADIR%%/lib/proxy/http_downloads.rb
@@ -56,25 +57,20 @@ sbin/smart-proxy
 %%DATADIR%%/modules/bmc/http_config.ru
 %%DATADIR%%/modules/bmc/ipmi.rb
 %%DATADIR%%/modules/bmc/shell.rb
-%%DATADIR%%/modules/chef_proxy/authentication.rb
-%%DATADIR%%/modules/chef_proxy/chef.rb
-%%DATADIR%%/modules/chef_proxy/chef_api.rb
-%%DATADIR%%/modules/chef_proxy/chef_plugin.rb
-%%DATADIR%%/modules/chef_proxy/http_config.ru
-%%DATADIR%%/modules/dhcp/dhcp/dhcp_api.rb
-%%DATADIR%%/modules/dhcp/dhcp/dhcp_plugin.rb
-%%DATADIR%%/modules/dhcp/dhcp/http_config.ru
-%%DATADIR%%/modules/dhcp/dhcp/monkey_patch_subnet.rb
-%%DATADIR%%/modules/dhcp/dhcp/monkey_patches.rb
-%%DATADIR%%/modules/dhcp/dhcp/providers/server/isc.rb
-%%DATADIR%%/modules/dhcp/dhcp/providers/server/ms.rb
-%%DATADIR%%/modules/dhcp/dhcp/providers/server/native_ms.rb
-%%DATADIR%%/modules/dhcp/dhcp/providers/server/virsh.rb
-%%DATADIR%%/modules/dhcp/dhcp/record/lease.rb
-%%DATADIR%%/modules/dhcp/dhcp/record/reservation.rb
-%%DATADIR%%/modules/dhcp/dhcp/record.rb
-%%DATADIR%%/modules/dhcp/dhcp/server.rb
-%%DATADIR%%/modules/dhcp/dhcp/subnet.rb
+%%DATADIR%%/modules/dhcp/dhcp_api.rb
+%%DATADIR%%/modules/dhcp/dhcp_plugin.rb
+%%DATADIR%%/modules/dhcp/http_config.ru
+%%DATADIR%%/modules/dhcp/monkey_patch_subnet.rb
+%%DATADIR%%/modules/dhcp/monkey_patches.rb
+%%DATADIR%%/modules/dhcp/providers/server/isc.rb
+%%DATADIR%%/modules/dhcp/providers/server/ms.rb
+%%DATADIR%%/modules/dhcp/providers/server/native_ms.rb
+%%DATADIR%%/modules/dhcp/providers/server/virsh.rb
+%%DATADIR%%/modules/dhcp/record/lease.rb
+%%DATADIR%%/modules/dhcp/record/reservation.rb
+%%DATADIR%%/modules/dhcp/record.rb
+%%DATADIR%%/modules/dhcp/server.rb
+%%DATADIR%%/modules/dhcp/subnet.rb
 %%DATADIR%%/modules/dhcp/dhcp.rb
 %%DATADIR%%/modules/dns/dns.rb
 %%DATADIR%%/modules/dns/dns_api.rb
@@ -120,6 +116,11 @@ sbin/smart-proxy
 %%DATADIR%%/modules/root/root.rb
 %%DATADIR%%/modules/root/root_api.rb
 %%DATADIR%%/modules/root/root_plugin.rb
+%%DATADIR%%/modules/templates/handler.rb
+%%DATADIR%%/modules/templates/http_config.ru
+%%DATADIR%%/modules/templates/templates.rb
+%%DATADIR%%/modules/templates/templates_api.rb
+%%DATADIR%%/modules/templates/templates_plugin.rb
 %%DATADIR%%/modules/tftp/http_config.ru
 %%DATADIR%%/modules/tftp/server.rb
 %%DATADIR%%/modules/tftp/tftp.rb

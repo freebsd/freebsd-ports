@@ -5,4 +5,3 @@ lib/libxkbui.so
 lib/libxkbui.so.1
 lib/libxkbui.so.1.0.0
 libdata/pkgconfig/xkbui.pc
-@dirrmtry include/X11/extensions

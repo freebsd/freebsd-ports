@@ -66,33 +66,3 @@ share/locale/zh_TW/LC_MESSAGES/gtkspell3.mo
 share/locale/zu/LC_MESSAGES/gtkspell3.mo
 share/vala/vapi/gtkspell3-3.0.deps
 share/vala/vapi/gtkspell3-3.0.vapi
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/st/LC_MESSAGES
-@dirrmtry share/locale/st
-@dirrmtry share/locale/son/LC_MESSAGES
-@dirrmtry share/locale/son
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/rm/LC_MESSAGES
-@dirrmtry share/locale/rm
-@dirrmtry share/locale/nso/LC_MESSAGES
-@dirrmtry share/locale/nso
-@dirrmtry share/locale/lg/LC_MESSAGES
-@dirrmtry share/locale/lg
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrmtry share/locale/ff/LC_MESSAGES
-@dirrmtry share/locale/ff
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/ak/LC_MESSAGES
-@dirrmtry share/locale/ak
-@dirrm include/gtkspell-3.0/gtkspell
-@dirrm include/gtkspell-3.0

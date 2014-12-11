@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-03-20 18:05:17.000000000 -0700
-+++ Makefile.in	2014-06-27 18:16:06.000000000 -0700
+--- Makefile.in.orig	2014-11-04 02:25:00.000000000 -0800
++++ Makefile.in	2014-12-08 03:03:40.000000000 -0800
 @@ -23,7 +23,7 @@
  #
  # -----------     Compilers     ----------------
@@ -13,71 +13,85 @@
  # (*.o files can be present by mistake)
  # Always use the same flags.
  # -Wconversion -Wno-sign-conversion -Wunreachable-code
--CFL	= -g -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ -W -Wall \
-+CFL	= -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ \
- @PORTAUDIO32_INC@ -DCPU=@CPU@ -DLIBBLADERF_PRESENT=@LIBBLADERF32_OK@ \
- -DSHM_INSTALLED=@LIBXEXT32_OK@ -DPERSEUSLIB_PRESENT=@PERSEUS32_OK@ -Wimplicit \
- -DALSA_PRESENT=@ALSA32_OK@ -DPA_OK=@PORTAUDIO32_OK@ -DREALT=@PA_REALT32@ \
-@@ -51,9 +51,7 @@
- -DLIBUSB1_PRESENT=@LIBUSB1_32_OK@ -DLIBFTDI_PRESENT=@LIBFTDI32_OK@ @DARWIN@ \
- -DLIBUDEV_PRESENT=@LIBUDEV_32_OK@ -DPCIE9842_PRESENT=@LIBWD_DASK_32_OK@ \
- -DLIBMIRISDR_PRESENT=@LIBMIRISDR32_OK@ -DSERVER=@MAKE_SERVER@ \
---Wreturn-type -Wformat @M32@ -Wunused -Wcomment -Wchar-subscripts -Wshadow \
---Wuninitialized -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
---Wundef -fomit-frame-pointer -c -o
-+@M32@ -ffast-math -fomit-frame-pointer -c -o
+-CFL	= -g -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ -W -Wall -DCPU=@CPU@ \
++CFL	= -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ -W -Wall -DCPU=@CPU@ \
+ -DSHM_INSTALLED=@LIBXEXT32_OK@ -Wimplicit \
+ -DALSA_PRESENT=@ALSA32_OK@  -DIA64=0 \
+ @DARWIN@ -DLIBUDEV_PRESENT=@LIBUDEV_32_OK@ -DSERVER=@MAKE_SERVER@ \
+@@ -50,7 +50,7 @@
+ -Wuninitialized -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
+ -Wundef -fomit-frame-pointer -c -o
  
- CFLN	= -g -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ -W -Wall \
- @PORTAUDIO32_INC@  -DCPU=@CPU@ -DLIBBLADERF_PRESENT=@LIBBLADERF32_OK@ \
-@@ -1217,7 +1215,7 @@
- @LIBWD_DASK_32_LD@ \
- @LIBBLADERF32_LD@ \
- @LIBMIRISDR32_LD@ \
+-CFLN	= -g -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ -W -Wall \
++CFLN	= -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ -W -Wall \
+ -DCPU=@CPU@ -DSHM_INSTALLED=@LIBXEXT32_OK@ -Wimplicit \
+ -DALSA_PRESENT=@ALSA32_OK@ -DIA64=0 \
+ @DARWIN@ -DLIBUDEV_PRESENT=@LIBUDEV_32_OK@ -DSERVER=@MAKE_SERVER@ \
+@@ -58,13 +58,13 @@
+ -Wuninitialized -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
+ -Wundef -fomit-frame-pointer -c -o
+ 
+-CFW	= -g -O2 -DOSNUM=2 -DMEMREF_T=int -W -Wall -Wimplicit -DIA64=0 \
++CFW	= -O2 -DOSNUM=2 -DMEMREF_T=int -W -Wall -Wimplicit -DIA64=0 \
+ -DLIBUDEV_PRESENT=1 -DCPU=CPU_INTEL -DSERVER=@MAKE_SERVER@ \
+ @M32@ -Wreturn-type -Wformat -Wunused -Wcomment -Wchar-subscripts \
+ -Wshadow -Wuninitialized -Wparentheses -Wstrict-prototypes -Werror \
+ -ffast-math -Wundef -fomit-frame-pointer -c -o
+ 
+-CFL64	= -g -O2 -DOSNUM=1 -DMEMREF_T='long int' @X11_64_INC@ -W -Wall \
++CFL64	= -O2 -DOSNUM=1 -DMEMREF_T='long int' @X11_64_INC@ -W -Wall \
+ -DCPU=@CPU@ -DSHM_INSTALLED=@LIBXEXT64_OK@ -DALSA_PRESENT=@ALSA64_OK@ \
+ -DIA64=1 @DARWIN@ -DLIBUDEV_PRESENT=@LIBUDEV_64_OK@ -DSERVER=@MAKE_SERVER@ \
+ -Wimplicit -Wreturn-type -Wformat -m64 -Wunused -Wcomment \
+@@ -1040,7 +1040,7 @@
+ @SVGA32_LD@ \
+ @SVGAGL32_LD@ \
+ @LIBUDEV_32_LD@ \
 --lpthread @LIBRT@ -lm -ldl  
-+-lpthread @LIBRT@ -lm  
++-lpthread @LIBRT@ -lm
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1324,7 +1322,7 @@
- @LIBWD_DASK_32_LD@ \
- @LIBBLADERF32_LD@ \
- @LIBMIRISDR32_LD@ \
+@@ -1137,7 +1137,7 @@
+ @X11_32_LD@ \
+ @ALSA32_LD@ \
+ @LIBUDEV_32_LD@ \
 --lpthread @LIBRT@ -lm -ldl
 +-lpthread @LIBRT@ -lm
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1407,7 +1405,7 @@
- @LIBWD_DASK_32_LD@ \
- @LIBBLADERF32_LD@ \
- @LIBMIRISDR32_LD@ \
+@@ -1210,7 +1210,7 @@
+ @SVGA32_LD@ \
+ @SVGAGL32_LD@ \
+ @LIBUDEV_32_LD@ \
 --lpthread @LIBRT@ -lm -ldl  
-+-lpthread @LIBRT@ -lm  
++-lpthread @LIBRT@ -lm
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1726,7 +1724,7 @@
- @LIBWD_DASK_64_LD@ \
- @LIBBLADERF64_LD@ \
- @LIBMIRISDR64_LD@ \
+@@ -1527,7 +1527,7 @@
+ @SVGA64_LD@ \
+ @SVGAGL64_LD@ \
+ @LIBUDEV_64_LD@ \
 --lpthread @LIBRT@ -lm -ldl  
-+-lpthread @LIBRT@ -lm  
++-lpthread @LIBRT@ -lm
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1821,7 +1819,7 @@
- @LIBWD_DASK_64_LD@ \
- @LIBBLADERF64_LD@ \
- @LIBMIRISDR64_LD@ \
+@@ -1612,7 +1612,7 @@
+ @ALSA64_LD@ \
+ @X11_64_LD@ \
+ @LIBUDEV_64_LD@ \
 --lpthread @LIBRT@ -lm -ldl
 +-lpthread @LIBRT@ -lm
  
  	@echo " "
  	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
-@@ -1905,7 +1903,7 @@
- @LIBWD_DASK_64_LD@ \
- @LIBBLADERF64_LD@ \
- @LIBMIRISDR64_LD@ \
+@@ -1686,7 +1686,7 @@
+ @SVGA64_LD@ \
+ @SVGAGL64_LD@ \
+ @LIBUDEV_64_LD@ \
 --lpthread @LIBRT@ -lm -ldl
 +-lpthread @LIBRT@ -lm
  

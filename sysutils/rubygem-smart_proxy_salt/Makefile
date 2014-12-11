@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smart_proxy_salt
-PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -27,7 +26,8 @@ post-patch:
 			-e "s|/usr/bin/env ruby|${RUBY}|g" \
 			-e "s|/usr/bin/env python|${PYTHON_CMD}|g" \
 			-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-			${WRKSRC}/bin/foreman-node
+			${WRKSRC}/bin/foreman-node \
+			${WRKSRC}/sbin/upload-salt-reports
 
 post-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/etc/foreman-proxy
@@ -38,5 +38,6 @@ post-install:
 		${INSTALL_DATA} ${FILESDIR}/salt.rb ${STAGEDIR}${PREFIX}/share/foreman-proxy/bundler.d/salt.rb
 		${MKDIR} ${STAGEDIR}${PREFIX}/etc/salt
 		${INSTALL_DATA} ${FILESDIR}/foreman.yaml.sample ${STAGEDIR}${PREFIX}/etc/salt/foreman.yaml.sample
+		${INSTALL_SCRIPT} ${WRKSRC}/sbin/upload-salt-reports ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.post.mk>

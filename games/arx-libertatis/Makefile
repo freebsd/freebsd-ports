@@ -3,6 +3,7 @@
 
 PORTNAME=	arx-libertatis
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://downloads.sourceforge.net/arx/ \
 		http://arx-libertatis.org/files/
@@ -41,7 +42,7 @@ PLIST_SUB+=	CRASHREPORTER="@comment "
 .endif
 
 post-patch:
-.if (${OSVERSION} >= 1000705 && ${OSVERSION} < 1001503) || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100046)
+.if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1000705 && ${OSVERSION} < 1001503) || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100046))
 # Workaround for clang 3.4 bug: it crashes when debug info is enabled
 # See http://llvm.org/bugs/show_bug.cgi?id=19031, http://llvm.org/bugs/show_bug.cgi?id=20893
 	@${REINPLACE_CMD} -e '/add_cxxflag.*-g2/ d' ${WRKSRC}/cmake/BuildType.cmake

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.hellanzb.com/distfiles/
 MAINTAINER=	pjenvey@groovie.org
 COMMENT=	Nzb downloader and post processor
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	par2:${PORTSDIR}/archivers/par2cmdline \
 		flac:${PORTSDIR}/audio/flac \

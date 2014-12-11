@@ -596,19 +596,8 @@ sbin/saned
 %%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/sane-backends.mo
-@exec mkdir %D/etc/sane.d/dll.d
-@exec mkdir %D/share/sane
-@exec mkdir %D/share/sane/artec_eplus48u
-@exec mkdir %D/share/sane/epjitsu
-@exec mkdir %D/share/sane/gt68xx
-@exec mkdir %D/share/sane/snapscan
-@dirrmtry share/sane/snapscan
-@dirrmtry share/sane/gt68xx
-@dirrmtry share/sane/epjitsu
-@dirrmtry share/sane/artec_eplus48u
-@dirrmtry share/sane
-@dirrm lib/sane
-@dirrm include/sane
-@dirrmtry etc/sane.d/dll.d
-@dirrm etc/sane.d/dist
-@dirrmtry etc/sane.d
+@dir etc/sane.d/dll.d
+@dir share/sane/artec_eplus48u
+@dir share/sane/epjitsu
+@dir share/sane/gt68xx
+@dir share/sane/snapscan

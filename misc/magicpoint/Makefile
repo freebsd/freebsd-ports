@@ -3,12 +3,14 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X11-based presentation tool
+
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
 		libmng.so:${PORTSDIR}/graphics/libmng

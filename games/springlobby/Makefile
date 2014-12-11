@@ -48,7 +48,7 @@ NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 901000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 901000
 IGNORE=		does not build (no strtoll(3) support)
 .endif
 

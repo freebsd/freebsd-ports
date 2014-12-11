@@ -3,7 +3,7 @@
 
 PORTNAME=	worldofpadman
 PORTVERSION=	1.2.20080621
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.snt.utwente.nl/pub/games/worldofpadman/linux/:full,update \
 		${MASTER_SITE_LOCAL:S|$|alepulver/:source|}
@@ -122,6 +122,8 @@ post-patch:
 		${WRKSRC}/code/botlib/be_interface.c
 	@${REINPLACE_CMD} '/callMask/ s|static||' \
 		${WRKSRC}/code/qcommon/vm_x86.c
+	@${REINPLACE_CMD} 's|-falign-loops=2||; s|-falign-jumps=2||' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/wop

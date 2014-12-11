@@ -11,11 +11,11 @@ MASTER_SITES=	LOCAL/kuriyama \
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake pgsql libtool
+USES=		gmake pgsql:9.2- libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-openssl

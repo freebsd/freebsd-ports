@@ -2,7 +2,7 @@
 
 PORTNAME=	check_memcached_paranoid
 PORTVERSION=	0.20131004
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagiosplug/nagiosplug/1.5
 DISTFILES=	nagios-plugins-1.5.tar.gz
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	nagios-plugins>0:${PLUGINS} \
 		${EXTRA_DEPENDS} \
 		${NONEXISTENT}:${PLUGINS}:build
 
+USES=		gettext-runtime
 FILE=		${PORTNAME}.c
 PLUGINS=	${PORTSDIR}/net-mgmt/nagios-plugins
 NDIR_CMD=	cd ${PLUGINS} && ${MAKE} -VWRKSRC

@@ -3,7 +3,7 @@
 
 PORTNAME=	xmcd
 PORTVERSION=	3.3.2
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.2/src/
 

@@ -1,5 +1,5 @@
---- /dev/null	2014-05-31 00:44:00.000000000 +0000
-+++ build/pkgs/python/fbsd-patch-src_Lib__distutils__unixccompiler.py	2014-05-31 00:35:21.000000000 +0000
+--- /dev/null	2014-11-18 03:33:07.000000000 +0000
++++ build/pkgs/python/fbsd-patch-src_Lib__distutils__unixccompiler.py	2014-11-18 03:37:12.000000000 +0000
 @@ -0,0 +1,15 @@
 +# Description: Some python extensions can't be compiled with clang 3.4
 +# Issue ID: http://bugs.python.org/issue20767

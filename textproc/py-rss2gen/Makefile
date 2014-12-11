@@ -11,8 +11,7 @@ DISTNAME=	PyRSS2Gen-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library for generating RSS 2.0 feeds
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

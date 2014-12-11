@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	linrad
-PORTVERSION=	4.00
+PORTVERSION=	4.02
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
 		http://www.sm5bsz.com/linuxdsp/archive/
-DISTNAME=	lir04-00
+DISTNAME=	lir04-02
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	hamradio@FreeBSD.org

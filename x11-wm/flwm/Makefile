@@ -6,7 +6,7 @@ PORTVERSION=	1.14
 PORTREVISION=	2
 CATEGORIES=	x11-wm
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Fast Light Window Manager
 
 LICENSE=	GPLv2

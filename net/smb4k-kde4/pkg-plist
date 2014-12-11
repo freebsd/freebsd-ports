@@ -99,5 +99,3 @@ lib/libsmb4kcore.so
 lib/libsmb4kcore.so.3
 lib/libsmb4kcore.so.3.2.0
 lib/libsmb4kdialogs.so
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm share/apps/smb4k

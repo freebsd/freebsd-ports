@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	VIM:source \
 		${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|}:patch \
@@ -34,13 +34,14 @@ XTERM_SAVE_DESC=	Restore xterm screen after exit
 
 ALL_TARGET=	# empty
 MAKE_ARGS+=	CC="${CC}" CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP="${STRIP_CMD}" CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=termlib
+MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
 PATCH=		${LOCALBASE}/bin/gpatch
 PATCH_DIST_ARGS=--batch --directory ${WRKSRC} --forward --quiet --remove-empty-files ${PATCH_DIST_STRIP}
 REINPLACE_ARGS=	-i ''
 USES=		cpe iconv pkgconfig shebangfix tar:bzip2
 WANT_GNOME=	yes
 
-PATCHLEVEL=	518
+PATCHLEVEL=	540
 PATCHFILES!=	/usr/bin/jot -s " " -w "%03d" ${PATCHLEVEL} 1 ${PATCHLEVEL}
 #POSTPONED_PATCHES=	064 087 147	# patch files postponed to be applied in post-patch:
 SKIPPED_PATCHES=	208 356		# patch files skipped
@@ -153,6 +154,8 @@ post-patch:
 	@${ECHO_MSG} "===>   Applying distribution patch ${p}"
 	@${PATCH} ${PATCH_DIST_ARGS} -i ${_DISTDIR}/${PORTVERSION:R}.${p}
 .endfor
+	@${ECHO_CMD} '#define SYS_VIMRC_FILE "'${ETCDIR}'/vimrc"' >> ${WRKSRC}/src/feature.h
+	@${ECHO_CMD} '#define SYS_GVIMRC_FILE "'${ETCDIR}'/gvimrc"' >> ${WRKSRC}/src/feature.h
 
 pre-configure:
 	@${CP} ${WRKSRC}/src/config.mk.dist ${WRKSRC}/src/auto/config.mk
@@ -180,8 +183,9 @@ post-install:
 .endfor
 .endif
 .if ${PORT_OPTIONS:MDEFAULT_VIMRC}
-	${INSTALL_DATA} ${WRKSRC}/runtime/gvimrc_example.vim ${STAGEDIR}${DATADIR}/gvimrc.sample
-	${INSTALL_DATA} ${WRKSRC}/runtime/vimrc_example.vim ${STAGEDIR}${DATADIR}/vimrc.sample
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${ETCDIR}/gvimrc.sample
+	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${ETCDIR}/vimrc.sample
 .endif
 .if !${PORT_OPTIONS:MNLS}
 	${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/

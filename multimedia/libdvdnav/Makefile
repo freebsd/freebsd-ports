@@ -3,7 +3,7 @@
 
 PORTNAME=	libdvdnav
 PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 # Svn repository URL : svn://svn.mplayerhq.hu/dvdnav/trunk/libdvdnav
 MASTER_SITES=	http://dvdnav.mplayerhq.hu/releases/ \

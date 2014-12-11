@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DEBUG POSTPROC RUNTIME THREADS SHARED
 OPTIONS_DEFAULT=	POSTPROC RUNTIME THREADS SHARED
+OPTIONS_EXCLUDE_armv6=	RUNTIME
 POSTPROC_DESC=	Enable postprocessing
 RUNTIME_DESC=	Enable runtime CPU detection
 SHARED_DESC=	Enable shared-library support
@@ -74,6 +75,9 @@ CONFIGURE_ARGS+=	--target=ia64-linux-gcc
 CONFIGURE_ARGS+=	--target=ppc32-linux-gcc
 .elif ${ARCH} == "powerpc64"
 CONFIGURE_ARGS+=	--target=ppc64-linux-gcc
+.elif ${ARCH} == "armv6"
+CONFIGURE_ARGS+=	--target=armv6-linux-gcc --cpu=armv6
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-build_make_Makefile
 .else
 IGNORE=	no support for ${ARCH} the moment. testing/patches are welcome
 .endif

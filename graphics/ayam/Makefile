@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Ayam/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D modeling environment for the RenderMan interface
 
 LICENSE=	BSD

@@ -4,37 +4,40 @@
 %%WWWDIR%%/README.md
 %%WWWDIR%%/albums/.keepme
 %%WWWDIR%%/cache/.keepme
-%%WWWDIR%%/doc_files/zenphoto_database_quick_reference.pdf
 %%WWWDIR%%/index.php
 %%WWWDIR%%/plugins/gd_fonts/.keepme
 %%WWWDIR%%/plugins/imagick_fonts/.keepme
 %%WWWDIR%%/plugins/watermarks/.keepme
-%%WWWDIR%%/themes/default/404.php
-%%WWWDIR%%/themes/default/album.php
-%%WWWDIR%%/themes/default/archive.php
-%%WWWDIR%%/themes/default/common.css
-%%WWWDIR%%/themes/default/contact.php
-%%WWWDIR%%/themes/default/favorites.php
-%%WWWDIR%%/themes/default/functions.php
-%%WWWDIR%%/themes/default/image.php
-%%WWWDIR%%/themes/default/images/50percent.png
-%%WWWDIR%%/themes/default/images/admin-buttonback.jpg
-%%WWWDIR%%/themes/default/images/img-bg.gif
-%%WWWDIR%%/themes/default/images/tag.png
-%%WWWDIR%%/themes/default/index.php
-%%WWWDIR%%/themes/default/password.php
-%%WWWDIR%%/themes/default/register.php
-%%WWWDIR%%/themes/default/search.php
-%%WWWDIR%%/themes/default/slideshow-controls.png
-%%WWWDIR%%/themes/default/slideshow.css
-%%WWWDIR%%/themes/default/slideshow.php
-%%WWWDIR%%/themes/default/styles/dark.css
-%%WWWDIR%%/themes/default/styles/light.css
-%%WWWDIR%%/themes/default/styles/sterile-dark.css
-%%WWWDIR%%/themes/default/styles/sterile-light.css
-%%WWWDIR%%/themes/default/theme.png
-%%WWWDIR%%/themes/default/theme_description.php
-%%WWWDIR%%/themes/default/themeoptions.php
+%%WWWDIR%%/themes/basic/404.php
+%%WWWDIR%%/themes/basic/album.php
+%%WWWDIR%%/themes/basic/archive.php
+%%WWWDIR%%/themes/basic/common.css
+%%WWWDIR%%/themes/basic/contact.php
+%%WWWDIR%%/themes/basic/favorites.php
+%%WWWDIR%%/themes/basic/functions.php
+%%WWWDIR%%/themes/basic/image.php
+%%WWWDIR%%/themes/basic/images/50percent.png
+%%WWWDIR%%/themes/basic/images/admin-buttonback.jpg
+%%WWWDIR%%/themes/basic/images/img-bg.gif
+%%WWWDIR%%/themes/basic/images/tag.png
+%%WWWDIR%%/themes/basic/index.php
+%%WWWDIR%%/themes/basic/password.php
+%%WWWDIR%%/themes/basic/register.php
+%%WWWDIR%%/themes/basic/search.php
+%%WWWDIR%%/themes/basic/slideshow-controls.png
+%%WWWDIR%%/themes/basic/slideshow.css
+%%WWWDIR%%/themes/basic/slideshow.php
+%%WWWDIR%%/themes/basic/styles/dark.css
+%%WWWDIR%%/themes/basic/styles/light.css
+%%WWWDIR%%/themes/basic/styles/sterile-dark.css
+%%WWWDIR%%/themes/basic/styles/sterile-light.css
+%%WWWDIR%%/themes/basic/theme.png
+%%WWWDIR%%/themes/basic/theme_description.php
+%%WWWDIR%%/themes/basic/themeoptions.php
+%%WWWDIR%%/themes/basic/tinymce4/config/dark_comment-full.js.php
+%%WWWDIR%%/themes/basic/tinymce4/config/dark_comment-ribbon.js.php
+%%WWWDIR%%/themes/basic/tinymce4/config/dark_comment-slim.js.php
+%%WWWDIR%%/themes/basic/tinymce4/config/dark_content.css
 %%WWWDIR%%/themes/effervescence_plus/404.php
 %%WWWDIR%%/themes/effervescence_plus/album.php
 %%WWWDIR%%/themes/effervescence_plus/archive.php
@@ -118,65 +121,6 @@
 %%WWWDIR%%/themes/garland/theme_description.php
 %%WWWDIR%%/themes/garland/themeoptions.php
 %%WWWDIR%%/themes/garland/zen.css
-%%WWWDIR%%/themes/stopdesign/404.php
-%%WWWDIR%%/themes/stopdesign/album.php
-%%WWWDIR%%/themes/stopdesign/comment.php
-%%WWWDIR%%/themes/stopdesign/comment_form/comment_form.php
-%%WWWDIR%%/themes/stopdesign/contact.php
-%%WWWDIR%%/themes/stopdesign/css/comments-hide.css
-%%WWWDIR%%/themes/stopdesign/css/comments-show.css
-%%WWWDIR%%/themes/stopdesign/css/custom.css
-%%WWWDIR%%/themes/stopdesign/css/master.css
-%%WWWDIR%%/themes/stopdesign/css/photos.css
-%%WWWDIR%%/themes/stopdesign/favorites.php
-%%WWWDIR%%/themes/stopdesign/functions.php
-%%WWWDIR%%/themes/stopdesign/gallery.php
-%%WWWDIR%%/themes/stopdesign/image.php
-%%WWWDIR%%/themes/stopdesign/images/50percent.png
-%%WWWDIR%%/themes/stopdesign/images/admin-buttonback.jpg
-%%WWWDIR%%/themes/stopdesign/images/bg_gal.png
-%%WWWDIR%%/themes/stopdesign/images/bg_page.jpg
-%%WWWDIR%%/themes/stopdesign/images/bg_path.gif
-%%WWWDIR%%/themes/stopdesign/images/bg_shadow.png
-%%WWWDIR%%/themes/stopdesign/images/bg_slide.png
-%%WWWDIR%%/themes/stopdesign/images/bg_slide_sm.png
-%%WWWDIR%%/themes/stopdesign/images/btn_add_a_comment.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_all_favorites.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_gallery_archive.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_go.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_hide.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_preview.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_rss.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_save.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_show.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_submit.gif
-%%WWWDIR%%/themes/stopdesign/images/btn_view_gallery.gif
-%%WWWDIR%%/themes/stopdesign/images/bullet_white.gif
-%%WWWDIR%%/themes/stopdesign/images/canon_sd10.jpg
-%%WWWDIR%%/themes/stopdesign/images/divider_l.png
-%%WWWDIR%%/themes/stopdesign/images/divider_r.png
-%%WWWDIR%%/themes/stopdesign/images/err-passwordprotected.gif
-%%WWWDIR%%/themes/stopdesign/images/icon_pushpin.gif
-%%WWWDIR%%/themes/stopdesign/images/imageDefault.png
-%%WWWDIR%%/themes/stopdesign/images/moreslide_next.gif
-%%WWWDIR%%/themes/stopdesign/images/moreslide_prev.gif
-%%WWWDIR%%/themes/stopdesign/images/photonav_next.png
-%%WWWDIR%%/themes/stopdesign/images/photonav_prev.png
-%%WWWDIR%%/themes/stopdesign/images/slide_minis.gif
-%%WWWDIR%%/themes/stopdesign/images/txt_backward.gif
-%%WWWDIR%%/themes/stopdesign/images/txt_forward.gif
-%%WWWDIR%%/themes/stopdesign/index.php
-%%WWWDIR%%/themes/stopdesign/js/comments.js
-%%WWWDIR%%/themes/stopdesign/normalizer.php
-%%WWWDIR%%/themes/stopdesign/password.php
-%%WWWDIR%%/themes/stopdesign/register.php
-%%WWWDIR%%/themes/stopdesign/search.php
-%%WWWDIR%%/themes/stopdesign/slideshow-controls.png
-%%WWWDIR%%/themes/stopdesign/slideshow.css
-%%WWWDIR%%/themes/stopdesign/slideshow.php
-%%WWWDIR%%/themes/stopdesign/theme.png
-%%WWWDIR%%/themes/stopdesign/theme_description.php
-%%WWWDIR%%/themes/stopdesign/themeoptions.php
 %%WWWDIR%%/themes/zenpage/404.php
 %%WWWDIR%%/themes/zenpage/album.php
 %%WWWDIR%%/themes/zenpage/archive.php
@@ -224,12 +168,209 @@
 %%WWWDIR%%/themes/zpmobile/images/rss.png
 %%WWWDIR%%/themes/zpmobile/index.php
 %%WWWDIR%%/themes/zpmobile/jquerymobile/images/ajax-loader.gif
-%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-18-black.png
-%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-18-white.png
-%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-36-black.png
-%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-36-white.png
-%%WWWDIR%%/themes/zpmobile/jquerymobile/jquery.mobile-1.3.2.min.css
-%%WWWDIR%%/themes/zpmobile/jquerymobile/jquery.mobile-1.3.2.min.js
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/action-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/action-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/alert-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/alert-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-d-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-d-l-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-d-l-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-d-r-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-d-r-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-d-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-l-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-l-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-r-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-r-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-u-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-u-l-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-u-l-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-u-r-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-u-r-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/arrow-u-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/audio-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/audio-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/back-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/back-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/bars-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/bars-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/bullets-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/bullets-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/calendar-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/calendar-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/camera-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/camera-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/carat-d-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/carat-d-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/carat-l-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/carat-l-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/carat-r-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/carat-r-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/carat-u-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/carat-u-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/check-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/check-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/clock-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/clock-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/cloud-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/cloud-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/comment-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/comment-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/delete-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/delete-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/edit-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/edit-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/eye-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/eye-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/forbidden-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/forbidden-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/forward-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/forward-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/gear-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/gear-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/grid-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/grid-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/heart-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/heart-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/home-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/home-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/info-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/info-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/location-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/location-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/lock-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/lock-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/mail-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/mail-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/minus-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/minus-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/navigation-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/navigation-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/phone-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/phone-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/plus-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/plus-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/power-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/power-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/recycle-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/recycle-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/refresh-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/refresh-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/search-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/search-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/shop-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/shop-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/star-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/star-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/tag-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/tag-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/user-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/user-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/video-black.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-png/video-white.png
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/action-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/action-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/alert-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/alert-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-d-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-d-l-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-d-l-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-d-r-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-d-r-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-d-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-l-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-l-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-r-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-r-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-u-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-u-l-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-u-l-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-u-r-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-u-r-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/arrow-u-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/audio-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/audio-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/back-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/back-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/bars-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/bars-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/bullets-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/bullets-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/calendar-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/calendar-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/camera-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/camera-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/carat-d-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/carat-d-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/carat-l-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/carat-l-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/carat-r-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/carat-r-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/carat-u-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/carat-u-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/check-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/check-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/clock-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/clock-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/cloud-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/cloud-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/comment-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/comment-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/delete-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/delete-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/edit-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/edit-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/eye-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/eye-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/forbidden-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/forbidden-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/forward-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/forward-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/gear-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/gear-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/grid-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/grid-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/heart-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/heart-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/home-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/home-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/info-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/info-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/location-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/location-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/lock-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/lock-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/mail-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/mail-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/minus-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/minus-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/navigation-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/navigation-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/phone-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/phone-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/plus-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/plus-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/power-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/power-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/recycle-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/recycle-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/refresh-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/refresh-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/search-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/search-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/shop-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/shop-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/star-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/star-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/tag-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/tag-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/user-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/user-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/video-black.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/images/icons-svg/video-white.svg
+%%WWWDIR%%/themes/zpmobile/jquerymobile/jquery.mobile-1.4.2.min.css
+%%WWWDIR%%/themes/zpmobile/jquerymobile/jquery.mobile-1.4.2.min.js
+%%WWWDIR%%/themes/zpmobile/jquerymobile/jquery.mobile-1.4.2.min.map
 %%WWWDIR%%/themes/zpmobile/news.php
 %%WWWDIR%%/themes/zpmobile/pages.php
 %%WWWDIR%%/themes/zpmobile/password.php
@@ -263,7 +404,6 @@
 %%WWWDIR%%/zp-core/auth_zp.php
 %%WWWDIR%%/zp-core/cacheprotect
 %%WWWDIR%%/zp-core/class-album.php
-%%WWWDIR%%/zp-core/class-comment.php
 %%WWWDIR%%/zp-core/class-feed.php
 %%WWWDIR%%/zp-core/class-gallery.php
 %%WWWDIR%%/zp-core/class-image.php
@@ -420,30 +560,87 @@
 %%WWWDIR%%/zp-core/js/htmlencoder.js
 %%WWWDIR%%/zp-core/js/jquery.Jcrop.css
 %%WWWDIR%%/zp-core/js/jquery.Jcrop.js
+%%WWWDIR%%/zp-core/js/jquery.are-you-sure.js
 %%WWWDIR%%/zp-core/js/jquery.js
 %%WWWDIR%%/zp-core/js/jquery.masonry.min.js
 %%WWWDIR%%/zp-core/js/jquery.pagination.js
 %%WWWDIR%%/zp-core/js/jquery.scrollTo.js
 %%WWWDIR%%/zp-core/js/jquery.ui.nestedSortable.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery-ui-i18n.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-af.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ar-DZ.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ar.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-az.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-be.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-bg.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-bs.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ca.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-cs.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-cy-GB.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-da.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-de.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-el.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-en-AU.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-en-GB.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-en-NZ.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-eo.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-es.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-et.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-eu.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-fa.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-fi.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-fo.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-fr-CA.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-fr-CH.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-fr.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-gl.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-he.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-hi.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-hr.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-hu.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-hy.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-id.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-is.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-it.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ja.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ka.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-kk.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-km.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ko.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ky.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-lb.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-lt.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-lv.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-mk.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ml.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ms.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-nb.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-nl-BE.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-nl.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-nn.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-no.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-pl.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-pt-BR.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-pt.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-rm.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ro.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ru.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-sk.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-sl.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-sq.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-sr-SR.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-sr.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-sv.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-ta.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-th.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-tj.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-tr.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-uk.js
+%%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-vi.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-zh-CN.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-zh-HK.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-zh-TW.js
+%%WWWDIR%%/zp-core/js/jqueryui/images/animated-overlay.gif
 %%WWWDIR%%/zp-core/js/jqueryui/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%WWWDIR%%/zp-core/js/jqueryui/images/ui-bg_flat_75_ffffff_40x100.png
 %%WWWDIR%%/zp-core/js/jqueryui/images/ui-bg_glass_55_fbf9ee_1x400.png
@@ -506,6 +703,9 @@
 %%WWWDIR%%/zp-core/locale/he_IL/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/he_IL/flag.png
 %%WWWDIR%%/zp-core/locale/he_IL/select_files_button.png
+%%WWWDIR%%/zp-core/locale/is_IS/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/is_IS/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/is_IS/flag.png
 %%WWWDIR%%/zp-core/locale/it_IT/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/it_IT/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/it_IT/flag.png
@@ -535,6 +735,10 @@
 %%WWWDIR%%/zp-core/locale/sv_SE/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/sv_SE/flag.png
 %%WWWDIR%%/zp-core/locale/sv_SE/select_files_button.png
+%%WWWDIR%%/zp-core/locale/tr_TR/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/tr_TR/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/tr_TR/flag.png
+%%WWWDIR%%/zp-core/locale/tr_TR/select_files_button.png
 %%WWWDIR%%/zp-core/locale/zh_CN/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/zh_CN/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/zh_CN/flag.png
@@ -560,6 +764,7 @@
 %%WWWDIR%%/zp-core/setup/setup_set-mod_rewrite.php
 %%WWWDIR%%/zp-core/setup/setup_themeOptions.php
 %%WWWDIR%%/zp-core/setup.php
+%%WWWDIR%%/zp-core/template-filters.php
 %%WWWDIR%%/zp-core/template-functions.php
 %%WWWDIR%%/zp-core/utilities/backup_restore.php
 %%WWWDIR%%/zp-core/utilities/database_reference.php
@@ -589,6 +794,14 @@
 %%WWWDIR%%/zp-core/zp-extensions/PHPMailer.php
 %%WWWDIR%%/zp-core/zp-extensions/admin-approval.php
 %%WWWDIR%%/zp-core/zp-extensions/auto_backup.php
+%%WWWDIR%%/zp-core/zp-extensions/bxslider_thumb_nav/images/bx_loader.gif
+%%WWWDIR%%/zp-core/zp-extensions/bxslider_thumb_nav/images/controls.png
+%%WWWDIR%%/zp-core/zp-extensions/bxslider_thumb_nav/jquery.bxslider.css
+%%WWWDIR%%/zp-core/zp-extensions/bxslider_thumb_nav/jquery.bxslider.js
+%%WWWDIR%%/zp-core/zp-extensions/bxslider_thumb_nav/jquery.bxslider.min.js
+%%WWWDIR%%/zp-core/zp-extensions/bxslider_thumb_nav/plugins/jquery.easing.1.3.js
+%%WWWDIR%%/zp-core/zp-extensions/bxslider_thumb_nav/plugins/jquery.fitvids.js
+%%WWWDIR%%/zp-core/zp-extensions/bxslider_thumb_nav.php
 %%WWWDIR%%/zp-core/zp-extensions/cacheManager/cacheDBImages.php
 %%WWWDIR%%/zp-core/zp-extensions/cacheManager/cacheImages.php
 %%WWWDIR%%/zp-core/zp-extensions/cacheManager/functions.php
@@ -601,9 +814,11 @@
 %%WWWDIR%%/zp-core/zp-extensions/class-WEBdocs/tifDefault.png
 %%WWWDIR%%/zp-core/zp-extensions/class-WEBdocs.php
 %%WWWDIR%%/zp-core/zp-extensions/class-textobject/class-textobject_core.php
+%%WWWDIR%%/zp-core/zp-extensions/class-textobject/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/class-textobject/textDefault.png
 %%WWWDIR%%/zp-core/zp-extensions/class-textobject.php
 %%WWWDIR%%/zp-core/zp-extensions/class-video/3gpDefault.png
+%%WWWDIR%%/zp-core/zp-extensions/class-video/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/class-video/flaDefault.png
 %%WWWDIR%%/zp-core/zp-extensions/class-video/flvDefault.png
 %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/getid3.lib.php
@@ -630,19 +845,45 @@
 %%WWWDIR%%/zp-core/zp-extensions/cloneZenphoto/clone.php
 %%WWWDIR%%/zp-core/zp-extensions/cloneZenphoto/cloneTab.php
 %%WWWDIR%%/zp-core/zp-extensions/cloneZenphoto.php
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/colorbox_ie.css.php
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-ar.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-bg.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-ca.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-cs.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-da.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-de.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-es.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-et.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-fa.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-fi.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-fr.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-gl.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-gr.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-he.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-hr.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-hu.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-id.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-it.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-ja.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-kr.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-lv.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-nl.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-no.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-pl.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-pt-br.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-ro.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-ru.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-si.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-sk.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-sr.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-sv.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-tr.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-uk.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-zh-CN.js
+%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/i18n/jquery.colorbox-zh-TW.js
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/jquery.colorbox-min.js
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/colorbox.css
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/border.png
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/controls.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/ie6/borderBottomCenter.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/ie6/borderBottomLeft.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/ie6/borderBottomRight.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/ie6/borderMiddleLeft.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/ie6/borderMiddleRight.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/ie6/borderTopCenter.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/ie6/borderTopLeft.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/ie6/borderTopRight.png
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/loading.gif
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/loading_background.png
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/overlay.png
@@ -658,14 +899,6 @@
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/colorbox.css
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/border1.png
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/border2.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/ie6/borderBottomCenter.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/ie6/borderBottomLeft.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/ie6/borderBottomRight.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/ie6/borderMiddleLeft.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/ie6/borderMiddleRight.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/ie6/borderTopCenter.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/ie6/borderTopLeft.png
-%%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/ie6/borderTopRight.png
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/loading.gif
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4.jpg
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example5/colorbox.css
@@ -676,7 +909,9 @@
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example5.jpg
 %%WWWDIR%%/zp-core/zp-extensions/colorbox_js.php
 %%WWWDIR%%/zp-core/zp-extensions/comment_form/admin-comments.php
+%%WWWDIR%%/zp-core/zp-extensions/comment_form/class-comment.php
 %%WWWDIR%%/zp-core/zp-extensions/comment_form/comment_form.php
+%%WWWDIR%%/zp-core/zp-extensions/comment_form/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/comment_form/functions.php
 %%WWWDIR%%/zp-core/zp-extensions/comment_form.php
 %%WWWDIR%%/zp-core/zp-extensions/common/adGallery/LICENSE.txt
@@ -690,6 +925,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/common/adGallery/loader.gif
 %%WWWDIR%%/zp-core/zp-extensions/common/adGallery/opa75.png
 %%WWWDIR%%/zp-core/zp-extensions/common/adGallery/trans.gif
+%%WWWDIR%%/zp-core/zp-extensions/common/fieldExtender.php
 %%WWWDIR%%/zp-core/zp-extensions/common/jsMin/JSMin.php
 %%WWWDIR%%/zp-core/zp-extensions/common/oAuth/OAuth.php
 %%WWWDIR%%/zp-core/zp-extensions/contact_form/form.php
@@ -699,9 +935,13 @@
 %%WWWDIR%%/zp-core/zp-extensions/crop_image/swap_down.png
 %%WWWDIR%%/zp-core/zp-extensions/crop_image/swap_up.png
 %%WWWDIR%%/zp-core/zp-extensions/crop_image.php
+%%WWWDIR%%/zp-core/zp-extensions/defaultCodeblocks.php
+%%WWWDIR%%/zp-core/zp-extensions/deprecated-functions/admin_tab.php
+%%WWWDIR%%/zp-core/zp-extensions/deprecated-functions/check_for_deprecated.php
+%%WWWDIR%%/zp-core/zp-extensions/deprecated-functions/deprecated-functions.php
+%%WWWDIR%%/zp-core/zp-extensions/deprecated-functions/functions.php
 %%WWWDIR%%/zp-core/zp-extensions/deprecated-functions.php
-%%WWWDIR%%/zp-core/zp-extensions/deprecated_functions/check_for_deprecated.php
-%%WWWDIR%%/zp-core/zp-extensions/deprecated_functions/functions.php
+%%WWWDIR%%/zp-core/zp-extensions/downloadList/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/downloadList/download_statistics.php
 %%WWWDIR%%/zp-core/zp-extensions/downloadList.php
 %%WWWDIR%%/zp-core/zp-extensions/dynamic-locale/locale.css
@@ -756,6 +996,9 @@
 %%WWWDIR%%/zp-core/zp-extensions/elFinder.php
 %%WWWDIR%%/zp-core/zp-extensions/email-newuser.php
 %%WWWDIR%%/zp-core/zp-extensions/exampleMacros.php
+%%WWWDIR%%/zp-core/zp-extensions/externalFeed.php
+%%WWWDIR%%/zp-core/zp-extensions/favoritesHandler/deprecated-functions.php
+%%WWWDIR%%/zp-core/zp-extensions/favoritesHandler/favoritesClass.php
 %%WWWDIR%%/zp-core/zp-extensions/favoritesHandler.php
 %%WWWDIR%%/zp-core/zp-extensions/federated_logon/Auth/Janrain Readme.txt
 %%WWWDIR%%/zp-core/zp-extensions/federated_logon/Auth/OpenID/AX.php
@@ -821,6 +1064,8 @@
 %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail/lock.png
 %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail/new.png
 %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail.php
+%%WWWDIR%%/zp-core/zp-extensions/galleryArticles/combiNews.php
+%%WWWDIR%%/zp-core/zp-extensions/galleryArticles.php
 %%WWWDIR%%/zp-core/zp-extensions/googleVerify.php
 %%WWWDIR%%/zp-core/zp-extensions/hitcounter.php
 %%WWWDIR%%/zp-core/zp-extensions/html_meta_tags.php
@@ -853,6 +1098,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/image_effects/sphere.txt
 %%WWWDIR%%/zp-core/zp-extensions/image_effects.php
 %%WWWDIR%%/zp-core/zp-extensions/ipBlocker.php
+%%WWWDIR%%/zp-core/zp-extensions/jcarousel_thumb_nav/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/jcarousel_thumb_nav/jcarousel.css
 %%WWWDIR%%/zp-core/zp-extensions/jcarousel_thumb_nav/jcarousel.js
 %%WWWDIR%%/zp-core/zp-extensions/jcarousel_thumb_nav/jcarousel_ajax.php
@@ -910,11 +1156,12 @@
 %%WWWDIR%%/zp-core/zp-extensions/publishContent/publishContent.php
 %%WWWDIR%%/zp-core/zp-extensions/publishContent.php
 %%WWWDIR%%/zp-core/zp-extensions/quota_manager.php
-%%WWWDIR%%/zp-core/zp-extensions/rating/delete.gif
+%%WWWDIR%%/zp-core/zp-extensions/rating/delete.png
+%%WWWDIR%%/zp-core/zp-extensions/rating/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/rating/jquery.MetaData.js
 %%WWWDIR%%/zp-core/zp-extensions/rating/jquery.rating.css
 %%WWWDIR%%/zp-core/zp-extensions/rating/jquery.rating.js
-%%WWWDIR%%/zp-core/zp-extensions/rating/star.gif
+%%WWWDIR%%/zp-core/zp-extensions/rating/star.png
 %%WWWDIR%%/zp-core/zp-extensions/rating/update.php
 %%WWWDIR%%/zp-core/zp-extensions/rating.php
 %%WWWDIR%%/zp-core/zp-extensions/reCaptcha/recaptchalib.php
@@ -972,7 +1219,12 @@
 %%WWWDIR%%/zp-core/zp-extensions/register_user/register_user_form.php
 %%WWWDIR%%/zp-core/zp-extensions/register_user.php
 %%WWWDIR%%/zp-core/zp-extensions/related_items.php
+%%WWWDIR%%/zp-core/zp-extensions/rewriteRules/admin_tab.php
+%%WWWDIR%%/zp-core/zp-extensions/rewriteRules/functions.php
+%%WWWDIR%%/zp-core/zp-extensions/rewriteRules.php
+%%WWWDIR%%/zp-core/zp-extensions/rewriteTokens/admin_tab.php
 %%WWWDIR%%/zp-core/zp-extensions/rewriteTokens.php
+%%WWWDIR%%/zp-core/zp-extensions/rss/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/rss/rss.css
 %%WWWDIR%%/zp-core/zp-extensions/rss.php
 %%WWWDIR%%/zp-core/zp-extensions/search_statistics/search_analysis.php
@@ -992,502 +1244,192 @@
 %%WWWDIR%%/zp-core/zp-extensions/sitemap-extended/sitemap-extended-admin.php
 %%WWWDIR%%/zp-core/zp-extensions/sitemap-extended.php
 %%WWWDIR%%/zp-core/zp-extensions/slideshow/controls.png
+%%WWWDIR%%/zp-core/zp-extensions/slideshow/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/slideshow/jquery.cycle.all.js
 %%WWWDIR%%/zp-core/zp-extensions/slideshow/slideshow-controls.png
 %%WWWDIR%%/zp-core/zp-extensions/slideshow/slideshow-counter.php
 %%WWWDIR%%/zp-core/zp-extensions/slideshow/slideshow.css
 %%WWWDIR%%/zp-core/zp-extensions/slideshow.php
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/cycle.css
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/cycle2-icons.eot
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/cycle2-icons.svg
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/cycle2-icons.ttf
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/cycle2-icons.woff
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/ie7.css
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/ie7.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/style.css
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/ios6fix.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.caption2.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.carousel.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.center.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.flip.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.ie-fade.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.js.map
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.scrollVert.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.shuffle.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.swipe.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.tile.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.video.min.js
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/slideshow-counter.php
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2.php
 %%WWWDIR%%/zp-core/zp-extensions/static_html_cache.php
 %%WWWDIR%%/zp-core/zp-extensions/tag_extras.php
 %%WWWDIR%%/zp-core/zp-extensions/tag_suggest/tag.css
 %%WWWDIR%%/zp-core/zp-extensions/tag_suggest.php
 %%WWWDIR%%/zp-core/zp-extensions/themeSwitcher.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/config/comment_form-default.js.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/config/content.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/config/zenpage-default-full.js.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/config/zenpage-default-light.js.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/config/zenphoto-default-light.js.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/config/zenphoto-default-with-customdatafield.js.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/config/zenphoto-default.js.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/de.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/en.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/es.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/fr.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/he.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/it.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/ja.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/nl.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/pl.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/ru.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/sk.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/sv.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/zh-cn.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs/zh-tw.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/css/advhr.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/js/rule.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/rule.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/css/advimage.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/image.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/img/sample.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/js/image.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/css/advlink.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/js/advlink.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/link.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlist/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlist/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autolink/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autolink/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autoresize/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autoresize/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autosave/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autosave/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/bbcode/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/bbcode/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/contextmenu/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/contextmenu/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/directionality/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/directionality/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/emotions.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-cool.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-cry.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-embarassed.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-foot-in-mouth.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-frown.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-innocent.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-kiss.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-laughing.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-money-mouth.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-sealed.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-smile.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-surprised.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-tongue-out.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-undecided.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-wink.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img/smiley-yell.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/js/emotions.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/dialog.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/img/example.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/js/dialog.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/langs/en.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example_dependency/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example_dependency/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/css/fullpage.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/fullpage.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/js/fullpage.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullscreen/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullscreen/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullscreen/fullscreen.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/iespell/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/iespell/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/button.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/template.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/insertdatetime/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/layer/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/layer/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/legacyoutput/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/legacyoutput/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/lists/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/lists/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/css/media.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/js/embed.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/js/media.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/media.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/moxieplayer.swf
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/nonbreaking/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/noneditable/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/noneditable/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/pagebreak/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/pagebreak/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/js/pastetext.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/js/pasteword.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/pastetext.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/pasteword.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/preview/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/preview/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/preview/example.html
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/preview/jscripts/embed.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/preview/preview.html
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/print/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/print/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/save/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/save/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/css/searchreplace.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/js/searchreplace.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/searchreplace.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/css/content.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/img/wline.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/css/props.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/js/props.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/props.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/readme.txt
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tabfocus/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tabfocus/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/cell.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/css/cell.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/css/row.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/css/table.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/js/cell.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/js/merge_cells.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/js/row.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/js/table.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/merge_cells.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/row.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/table.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/blank.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/css/template.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/js/template.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/template.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/License.txt
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/css/thickbox.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/css/tinyzenpage.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/img/loadingAnimation.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/img/magnify.png
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/img/tinyzenpage.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/img/wrapLeft.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/img/wrapNone.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/img/wrapRight.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/js/dialog.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/tinyzenpage-functions.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/tinyzenpage.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/zoom.php
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/visualblocks/css/visualblocks.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/visualblocks/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/visualblocks/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/visualchars/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/visualchars/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/wordcount/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/wordcount/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/abbr.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/acronym.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/attributes.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/cite.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/css/attributes.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/css/popup.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/del.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/editor_plugin.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/editor_plugin_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/ins.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/js/abbr.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/js/acronym.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/js/attributes.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/js/cite.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/js/del.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/js/element_common.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/js/ins.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/about.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/anchor.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/charmap.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/color_picker.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/editor_template.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/editor_template_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/image.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/colorpicker.jpg
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/flash.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/icons.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/iframe.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/pagebreak.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/quicktime.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/realmedia.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/shockwave.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/trans.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/video.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img/windowsmedia.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/js/about.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/js/anchor.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/js/charmap.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/js/color_picker.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/js/image.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/js/link.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/js/source_editor.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/de.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/de_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/en.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/en_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/es.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/es_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/fr.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/fr_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/he.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/he_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/it.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/it_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/ja.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/ja_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/nl.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/nl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/pl.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/pl_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/ru.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/ru_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/sk.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/sk_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/sv.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/sv_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/zh-cn.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/zh-cn_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/zh-tw.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs/zh-tw_dlg.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/link.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/shortcuts.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/content.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/dialog.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/img/buttons.png
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/img/items.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/img/progress.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/img/tabs.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/ui.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/highcontrast/content.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/highcontrast/dialog.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/highcontrast/ui.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7/content.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7/dialog.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_black.png
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_silver.png
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7/ui.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7/ui_black.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7/ui_silver.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/source_editor.htm
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/editor_template.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/editor_template_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/img/icons.gif
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/de.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/en.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/es.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/fr.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/he.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/it.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/ja.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/nl.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/pl.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/ru.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/sk.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/sv.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/zh-cn.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs/zh-tw.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/skins/default/content.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/skins/default/ui.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/skins/o2k7/content.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/skins/o2k7/img/button_bg.png
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/skins/o2k7/ui.css
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/tiny_mce.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/tiny_mce_popup.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/tiny_mce_src.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/utils/editable_selects.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/utils/form_utils.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/utils/mctabs.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce/utils/validate.js
-%%WWWDIR%%/zp-core/zp-extensions/tiny_mce.php
+%%WWWDIR%%/zp-core/zp-extensions/tinyURL.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/comment-full.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/comment-ribbon.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/comment-slim.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/content.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenpage-basic.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenpage-classic.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenpage-full.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenpage-light.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenpage-ribbon.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenpage-slim.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenphoto-basic.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenphoto-classic.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenphoto-full.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenphoto-light.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenphoto-ribbon.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/config/zenphoto-slim.js.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/da.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/de.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/es.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/fr_FR.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/gl.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/he_IL.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/it.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/ja.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/nl.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/pl.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/ru.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/sk.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/sv_SE.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/zh_CN.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/langs/zh_TW.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/license.txt
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/advlist/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/anchor/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/autolink/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/autoresize/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/autosave/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/bbcode/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/charmap/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/code/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/compat3x/editable_selects.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/compat3x/form_utils.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/compat3x/mctabs.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/compat3x/tiny_mce_popup.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/compat3x/validate.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/contextmenu/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/directionality/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-cool.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-cry.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-embarassed.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-foot-in-mouth.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-frown.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-innocent.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-kiss.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-laughing.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-money-mouth.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-sealed.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-smile.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-surprised.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-tongue-out.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-undecided.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-wink.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/img/smiley-yell.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/emoticons/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/example/dialog.html
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/example/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/example_dependency/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/fullpage/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/fullscreen/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/hr/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/image/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/importcss/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/insertdatetime/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/layer/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/legacyoutput/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/link/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/lists/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/media/moxieplayer.swf
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/media/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/nonbreaking/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/noneditable/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/pagebreak/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/paste/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/preview/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/print/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/save/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/searchreplace/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/spellchecker/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tabfocus/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/table/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/template/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/textcolor/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/License.txt
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/css/thickbox.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/css/tinyzenpage.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/img/loadingAnimation.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/img/magnify.png
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/img/tinyzenpage.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/img/wrapLeft.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/img/wrapNone.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/img/wrapRight.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/js/dialog.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/tinyzenpage-functions.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/tinyzenpage.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/tinyzenpage/zoom.php
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/visualblocks/css/visualblocks.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/visualblocks/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/visualchars/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/wordcount/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/content.inline.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/content.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/readme.md
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce-small.dev.svg
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce-small.eot
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce-small.svg
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce-small.ttf
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce-small.woff
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce.dev.svg
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce.eot
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce.svg
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce.ttf
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/fonts/tinymce.woff
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/img/anchor.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/img/loader.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/img/object.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/img/trans.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/skin.ie7.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/skin.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/content.inline.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/content.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/icomoon-small.eot
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/icomoon-small.svg
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/icomoon-small.ttf
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/icomoon-small.woff
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/icomoon.eot
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/icomoon.svg
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/icomoon.ttf
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/icomoon.woff
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/readme.md
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/img/anchor.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/img/loader.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/img/object.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/img/trans.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/img/wline.gif
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/skin.ie7.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/skin.json
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/skin.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/themes/modern/theme.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/tinymce.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4.php
 %%WWWDIR%%/zp-core/zp-extensions/trivialSpam.php
 %%WWWDIR%%/zp-core/zp-extensions/tweet_news/twitter_newbird_blue.png
 %%WWWDIR%%/zp-core/zp-extensions/tweet_news/twitteroauth.php
@@ -1503,12 +1445,14 @@
 %%WWWDIR%%/zp-core/zp-extensions/uploader_jQuery/jquery.fileupload.js
 %%WWWDIR%%/zp-core/zp-extensions/uploader_jQuery/jquery.iframe-transport.js
 %%WWWDIR%%/zp-core/zp-extensions/uploader_jQuery/jquery.tmpl.min.js
+%%WWWDIR%%/zp-core/zp-extensions/uploader_jQuery/jqueryui/jquery-ui-zenphoto.js
 %%WWWDIR%%/zp-core/zp-extensions/uploader_jQuery/pbar-ani.gif
 %%WWWDIR%%/zp-core/zp-extensions/uploader_jQuery/upload_form.php
 %%WWWDIR%%/zp-core/zp-extensions/uploader_jQuery/uploader.php
 %%WWWDIR%%/zp-core/zp-extensions/uploader_jQuery.php
 %%WWWDIR%%/zp-core/zp-extensions/user-expiry/user-expiry-tab.php
 %%WWWDIR%%/zp-core/zp-extensions/user-expiry.php
+%%WWWDIR%%/zp-core/zp-extensions/userAddressFields.php
 %%WWWDIR%%/zp-core/zp-extensions/user_groups/user_groups-tab.php
 %%WWWDIR%%/zp-core/zp-extensions/user_groups.php
 %%WWWDIR%%/zp-core/zp-extensions/user_login-out.php
@@ -1521,6 +1465,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/admin-edit.php
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/admin-news-articles.php
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/admin-pages.php
+%%WWWDIR%%/zp-core/zp-extensions/zenpage/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/images/add.png
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/images/clock.png
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/images/folder.png
@@ -1545,287 +1490,8 @@
 %%WWWDIR%%/zp-core/zp-extensions/zpCaptcha/c.php
 %%WWWDIR%%/zp-core/zp-extensions/zpCaptcha.php
 %%WWWDIR%%/zp-data/.keepme
-@dir %%WWWDIR%%/zp-data
-@dir %%WWWDIR%%/zp-core/zp-extensions/zpCaptcha
-@dir %%WWWDIR%%/zp-core/zp-extensions/zenphoto_news
-@dir %%WWWDIR%%/zp-core/zp-extensions/zenpage/images
-@dir %%WWWDIR%%/zp-core/zp-extensions/zenpage
-@dir %%WWWDIR%%/zp-core/zp-extensions/wordpress_import
-@dir %%WWWDIR%%/zp-core/zp-extensions/user_groups
-@dir %%WWWDIR%%/zp-core/zp-extensions/user-expiry
-@dir %%WWWDIR%%/zp-core/zp-extensions/uploader_jQuery
-@dir %%WWWDIR%%/zp-core/zp-extensions/uploader_http
-@dir %%WWWDIR%%/zp-core/zp-extensions/tweet_news
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/utils
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/skins/o2k7/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/skins/o2k7
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/skins/default
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/skins
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/simple
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/o2k7
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/highcontrast
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins/default
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/skins
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes/advanced
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/themes
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/xhtmlxtras
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/wordcount
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/visualchars
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/visualblocks/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/visualblocks
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tinyzenpage
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/template
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/table
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/tabfocus
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/style
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/spellchecker
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/searchreplace
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/save
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/print
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/preview/jscripts
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/preview
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/paste
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/pagebreak
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/noneditable
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/nonbreaking
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/media
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/lists
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/legacyoutput
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/layer
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/insertdatetime
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins/clearlooks2
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups/skins
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/inlinepopups
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/iespell
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullscreen
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/fullpage
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example_dependency
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/example
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/emotions
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/directionality
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/contextmenu
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/bbcode
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autosave
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autoresize
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/autolink
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlist
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advlink
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advimage
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins/advhr
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/plugins
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/langs
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce/config
-@dir %%WWWDIR%%/zp-core/zp-extensions/tiny_mce
-@dir %%WWWDIR%%/zp-core/zp-extensions/tag_suggest
-@dir %%WWWDIR%%/zp-core/zp-extensions/slideshow
-@dir %%WWWDIR%%/zp-core/zp-extensions/sitemap-extended
-@dir %%WWWDIR%%/zp-core/zp-extensions/site_upgrade
-@dir %%WWWDIR%%/zp-core/zp-extensions/search_statistics
-@dir %%WWWDIR%%/zp-core/zp-extensions/rss
-@dir %%WWWDIR%%/zp-core/zp-extensions/register_user
-@dir %%WWWDIR%%/zp-core/zp-extensions/reCaptcha/zpTextured
-@dir %%WWWDIR%%/zp-core/zp-extensions/reCaptcha/zpRed
-@dir %%WWWDIR%%/zp-core/zp-extensions/reCaptcha/zpLightBlue
-@dir %%WWWDIR%%/zp-core/zp-extensions/reCaptcha/zpGreen
-@dir %%WWWDIR%%/zp-core/zp-extensions/reCaptcha/zpClean
-@dir %%WWWDIR%%/zp-core/zp-extensions/reCaptcha/zpBrown
-@dir %%WWWDIR%%/zp-core/zp-extensions/reCaptcha/zpBlue
-@dir %%WWWDIR%%/zp-core/zp-extensions/reCaptcha/zpBlack
-@dir %%WWWDIR%%/zp-core/zp-extensions/reCaptcha
-@dir %%WWWDIR%%/zp-core/zp-extensions/rating
-@dir %%WWWDIR%%/zp-core/zp-extensions/publishContent
-@dir %%WWWDIR%%/zp-core/zp-extensions/mobileTheme
-@dir %%WWWDIR%%/zp-core/zp-extensions/menu_manager
-@dir %%WWWDIR%%/zp-core/zp-extensions/macroList
-@dir %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/zenphotolight
-@dir %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/zenphotodark
-@dir %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag
-@dir %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/circle.skin
-@dir %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday
-@dir %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin
-@dir %%WWWDIR%%/zp-core/zp-extensions/jplayer/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/jplayer
-@dir %%WWWDIR%%/zp-core/zp-extensions/jcarousel_thumb_nav
-@dir %%WWWDIR%%/zp-core/zp-extensions/image_effects
-@dir %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail
-@dir %%WWWDIR%%/zp-core/zp-extensions/federated_logon/Auth/Yadis
-@dir %%WWWDIR%%/zp-core/zp-extensions/federated_logon/Auth/OpenID
-@dir %%WWWDIR%%/zp-core/zp-extensions/federated_logon/Auth
-@dir %%WWWDIR%%/zp-core/zp-extensions/federated_logon
-@dir %%WWWDIR%%/zp-core/zp-extensions/elFinder/php
-@dir %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/proxy
-@dir %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n
-@dir %%WWWDIR%%/zp-core/zp-extensions/elFinder/js
-@dir %%WWWDIR%%/zp-core/zp-extensions/elFinder/img
-@dir %%WWWDIR%%/zp-core/zp-extensions/elFinder/css
-@dir %%WWWDIR%%/zp-core/zp-extensions/elFinder
-@dir %%WWWDIR%%/zp-core/zp-extensions/dynamic-locale
-@dir %%WWWDIR%%/zp-core/zp-extensions/downloadList
-@dir %%WWWDIR%%/zp-core/zp-extensions/deprecated_functions
-@dir %%WWWDIR%%/zp-core/zp-extensions/crop_image
-@dir %%WWWDIR%%/zp-core/zp-extensions/contact_form
-@dir %%WWWDIR%%/zp-core/zp-extensions/common/oAuth
-@dir %%WWWDIR%%/zp-core/zp-extensions/common/jsMin
-@dir %%WWWDIR%%/zp-core/zp-extensions/common/adGallery
-@dir %%WWWDIR%%/zp-core/zp-extensions/common
-@dir %%WWWDIR%%/zp-core/zp-extensions/comment_form
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example5/images
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example5
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images/ie6
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4/images
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example4
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example3/images
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example3
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example2/images
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example2
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images/ie6
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1/images
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes/example1
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js/themes
-@dir %%WWWDIR%%/zp-core/zp-extensions/colorbox_js
-@dir %%WWWDIR%%/zp-core/zp-extensions/cloneZenphoto
-@dir %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3
-@dir %%WWWDIR%%/zp-core/zp-extensions/class-video
-@dir %%WWWDIR%%/zp-core/zp-extensions/class-textobject
-@dir %%WWWDIR%%/zp-core/zp-extensions/class-WEBdocs
-@dir %%WWWDIR%%/zp-core/zp-extensions/class-AnyFile
-@dir %%WWWDIR%%/zp-core/zp-extensions/cacheManager
-@dir %%WWWDIR%%/zp-core/zp-extensions/PHPMailer
-@dir %%WWWDIR%%/zp-core/zp-extensions/GoogleMap/overlappingMarkerSpiderfier
-@dir %%WWWDIR%%/zp-core/zp-extensions/GoogleMap/markerClustererPlus
-@dir %%WWWDIR%%/zp-core/zp-extensions/GoogleMap/CodeIgniter-Google-Maps-V3-API
-@dir %%WWWDIR%%/zp-core/zp-extensions/GoogleMap
-@dir %%WWWDIR%%/zp-core/zp-extensions
-@dir %%WWWDIR%%/zp-core/watermarks
-@dir %%WWWDIR%%/zp-core/utilities
-@dir %%WWWDIR%%/zp-core/setup
-@dir %%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/zh_TW
-@dir %%WWWDIR%%/zp-core/locale/zh_CN/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/zh_CN
-@dir %%WWWDIR%%/zp-core/locale/sv_SE/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/sv_SE
-@dir %%WWWDIR%%/zp-core/locale/sk_SK/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/sk_SK
-@dir %%WWWDIR%%/zp-core/locale/ru_RU/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/ru_RU
-@dir %%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/pl_PL
-@dir %%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/nl_NL
-@dir %%WWWDIR%%/zp-core/locale/ja_JP/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/ja_JP
-@dir %%WWWDIR%%/zp-core/locale/it_IT/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/it_IT
-@dir %%WWWDIR%%/zp-core/locale/he_IL/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/he_IL
-@dir %%WWWDIR%%/zp-core/locale/gl_ES/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/gl_ES
-@dir %%WWWDIR%%/zp-core/locale/fr_FR/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/fr_FR
-@dir %%WWWDIR%%/zp-core/locale/es_ES/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/es_ES
-@dir %%WWWDIR%%/zp-core/locale/en_US
-@dir %%WWWDIR%%/zp-core/locale/de_DE/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/de_DE
-@dir %%WWWDIR%%/zp-core/locale/da_DK/LC_MESSAGES
-@dir %%WWWDIR%%/zp-core/locale/da_DK
-@dir %%WWWDIR%%/zp-core/locale
-@dir %%WWWDIR%%/zp-core/lib-gettext
-@dir %%WWWDIR%%/zp-core/js/jqueryui/images
-@dir %%WWWDIR%%/zp-core/js/jqueryui/i18n
-@dir %%WWWDIR%%/zp-core/js/jqueryui
-@dir %%WWWDIR%%/zp-core/js
-@dir %%WWWDIR%%/zp-core/images/strengths
-@dir %%WWWDIR%%/zp-core/images
-@dir %%WWWDIR%%/zp-core/gd_fonts
-@dir %%WWWDIR%%/zp-core/exif/makers
-@dir %%WWWDIR%%/zp-core/exif
 @dir %%WWWDIR%%/zp-core
-@dir %%WWWDIR%%/uploaded
-@dir %%WWWDIR%%/themes/zpmobile/jquerymobile/images
-@dir %%WWWDIR%%/themes/zpmobile/jquerymobile
-@dir %%WWWDIR%%/themes/zpmobile/images
-@dir %%WWWDIR%%/themes/zpmobile
-@dir %%WWWDIR%%/themes/zenpage/images
-@dir %%WWWDIR%%/themes/zenpage
-@dir %%WWWDIR%%/themes/stopdesign/js
-@dir %%WWWDIR%%/themes/stopdesign/images
-@dir %%WWWDIR%%/themes/stopdesign/css
-@dir %%WWWDIR%%/themes/stopdesign/comment_form
-@dir %%WWWDIR%%/themes/stopdesign
-@dir %%WWWDIR%%/themes/garland/images
-@dir %%WWWDIR%%/themes/garland/image_page
-@dir %%WWWDIR%%/themes/garland/image_gallery
-@dir %%WWWDIR%%/themes/garland/colorbox
-@dir %%WWWDIR%%/themes/garland
-@dir %%WWWDIR%%/themes/effervescence_plus/styles
-@dir %%WWWDIR%%/themes/effervescence_plus/images
-@dir %%WWWDIR%%/themes/effervescence_plus/image_page
-@dir %%WWWDIR%%/themes/effervescence_plus/image_gallery
-@dir %%WWWDIR%%/themes/effervescence_plus/colorbox
-@dir %%WWWDIR%%/themes/effervescence_plus
-@dir %%WWWDIR%%/themes/default/styles
-@dir %%WWWDIR%%/themes/default/images
-@dir %%WWWDIR%%/themes/default
 @dir %%WWWDIR%%/themes
-@dir %%WWWDIR%%/plugins/watermarks
-@dir %%WWWDIR%%/plugins/imagick_fonts
-@dir %%WWWDIR%%/plugins/gd_fonts
-@dir %%WWWDIR%%/plugins
-@dir %%WWWDIR%%/doc_files
 @dir %%WWWDIR%%/cache
 @dir %%WWWDIR%%/albums
 @dir %%WWWDIR%%

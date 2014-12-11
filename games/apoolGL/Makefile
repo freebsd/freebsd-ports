@@ -3,7 +3,7 @@
 
 PORTNAME=	apoolGL
 PORTVERSION=	0.99.22
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.planetjahn.de/files/
 DISTNAME=	${PORTNAME}-099-pre22
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-099-pre22
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another billiards simulator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 
 USE_SDL=	sdl
 USE_GL=		gl

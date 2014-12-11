@@ -112,6 +112,7 @@ include/isc/buffer.h
 include/isc/bufferlist.h
 include/isc/commandline.h
 include/isc/condition.h
+include/isc/counter.h
 include/isc/dir.h
 include/isc/entropy.h
 include/isc/error.h

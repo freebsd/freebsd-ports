@@ -3,6 +3,7 @@
 
 PORTNAME=	qTox
 PORTVERSION=	0.141118
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	yuri@rawbw.com
@@ -21,8 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tux3
 GH_COMMIT=	7c499c2
 GH_TAGNAME=	${GH_COMMIT}
-USE_QT5=	core gui network xml opengl sql widgets concurrent \
-		buildtools_build linguisttools
+USE_QT5=	core gui network xml opengl sql sql-sqlite3_run widgets \
+		concurrent buildtools_build linguisttools_build
 USES=		compiler:c++11-lib desktop-file-utils openal:soft qmake gmake
 
 PLIST_FILES=	bin/qtox \

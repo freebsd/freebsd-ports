@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	devel tk
 MASTER_SITES=	SF
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front end for cscope and cscope clones
 
 RUN_DEPENDS=	cscope:${PORTSDIR}/devel/cscope

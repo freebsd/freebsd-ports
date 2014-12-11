@@ -42,6 +42,3 @@ apps/XDG-Menu/python/xdgmenu.pyc
 apps/XDG-Menu/python/xdgmenu.pyo
 bin/xdg-menu
 share/pixmaps/xdg-menu.png
-@dirrm apps/XDG-Menu/python
-@dirrm apps/XDG-Menu/Messages
-@dirrm apps/XDG-Menu

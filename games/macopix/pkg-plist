@@ -1976,6 +1976,3 @@ share/locale/ja/LC_MESSAGES/macopix.mo
 %%DATADIR%%/tsuki_kohaku_kimono.mcpx
 %%DATADIR%%/tsuki_ren.mcpx
 %%DATADIR%%/tsuki_satsuki.mcpx
-@dirrm %%DATADIR%%/pixmap
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -5,4 +5,3 @@ lib/libXprintAppUtil.so
 lib/libXprintAppUtil.so.1
 lib/libXprintAppUtil.so.1.0.0
 libdata/pkgconfig/xprintapputil.pc
-@dirrm include/X11/XprintAppUtil

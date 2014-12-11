@@ -29,4 +29,3 @@ share/kde4/servicetypes/kwootyplugin.desktop
 share/locale/cs/LC_MESSAGES/kwooty.mo
 share/locale/de/LC_MESSAGES/kwooty.mo
 share/locale/fr/LC_MESSAGES/kwooty.mo
-@dirrm share/apps/kwooty

@@ -3,7 +3,7 @@
 
 PORTNAME=	widelands
 DISTVERSION=	build18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	https://launchpadlibrarian.net/167260749/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -42,7 +42,7 @@ DESKTOP_ENTRIES="Widelands" \
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
 IGNORE=		doesn't build on 8.x
 .endif
 

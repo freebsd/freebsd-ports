@@ -153,11 +153,3 @@ libdata/pkgconfig/cluttermm-1.0.pc
 %%DATADIR%%-1.0/proc/m4/convert_cairo.m4
 %%DATADIR%%-1.0/proc/m4/convert_clutter.m4
 %%DATADIR%%-1.0/proc/m4/convert_cogl.m4
-@dirrm lib/cluttermm-1.0/include
-@dirrm lib/cluttermm-1.0
-@dirrm include/cluttermm-1.0/cluttermm/private
-@dirrm include/cluttermm-1.0/cluttermm
-@dirrm include/cluttermm-1.0
-@dirrm %%DATADIR%%-1.0/proc/m4
-@dirrm %%DATADIR%%-1.0/proc
-@dirrm %%DATADIR%%-1.0

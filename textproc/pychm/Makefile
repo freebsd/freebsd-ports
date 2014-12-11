@@ -12,8 +12,8 @@ COMMENT=	Bindings for CHMLIB library
 LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 .include <bsd.port.pre.mk>
 

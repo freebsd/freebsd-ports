@@ -1,0 +1,22 @@
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	fission
+PORTVERSION=	0.5.0
+CATEGORIES=	emulators rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Utility to manage VMware Fusion VMs from the command line
+
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-CFPropertyList>=2.2:${PORTSDIR}/devel/rubygem-CFPropertyList
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+PLIST_FILES=	bin/fission
+
+.include <bsd.port.mk>

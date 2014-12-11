@@ -3,6 +3,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -13,9 +14,8 @@ LICENSE=	GPLv3 # (or later)
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
-USES=		iconv gettext libtool makeinfo pathfix pkgconfig
+USES=		iconv gettext libtool makeinfo pathfix pkgconfig python
 USE_GNOME=	gtk20
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk-version=2 \
 		--with-ltdl=${LOCALBASE}

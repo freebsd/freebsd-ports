@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ivoras@FreeBSD.org
 COMMENT=	High performance cache server similar to memcached
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 USE_LDCONFIG=	yes

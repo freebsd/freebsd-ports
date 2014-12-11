@@ -2,6 +2,7 @@
 
 PORTNAME=	tagutil
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	alex@kaworu.ch

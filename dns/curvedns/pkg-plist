@@ -1,13 +1,7 @@
 bin/curvedns
 bin/curvedns-keygen
-@owner %%CURVE_UID%%
-@group %%CURVE_GID%%
-%%ETCDIR%%/env/UID
-%%ETCDIR%%/env/GID
-@sample %%ETCDIR%%/run.sample
-@sample %%ETCDIR%%/log/run.sample
-@mode 0700
-@dirrmtry %%ETCDIR%%/env
-@mode
-@dirrmtry %%ETCDIR%%/log
-@dirrmtry %%ETCDIR%%
+@(%%CURVE_UID%%,%%CURVE_GID%%,) %%ETCDIR%%/env/UID
+@(%%CURVE_UID%%,%%CURVE_GID%%,) %%ETCDIR%%/env/GID
+@sample(%%CURVE_UID%%,%%CURVE_GID%%,) %%ETCDIR%%/run.sample
+@sample(%%CURVE_UID%%,%%CURVE_GID%%,) %%ETCDIR%%/log/run.sample
+@dir(%%CURVE_UID%%,%%CURVE_GID%%,700) %%ETCDIR%%/env

@@ -45,4 +45,3 @@ bin/snipe2d
 %%DATADIR%%/twang.wav
 %%DATADIR%%/window.png
 %%DATADIR%%/windowh.png
-@dirrm %%DATADIR%%

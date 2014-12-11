@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	BitcoinArmory
-PORTVERSION=	0.92.1
-PORTREVISION=	1
+PORTVERSION=	0.92.3
 CATEGORIES=	finance
-MASTER_SITES=	https://codeload.github.com/etotheipi/BitcoinArmory/tar.gz/v${PORTVERSION}?dummy=/
 
 MAINTAINER=	yuri@rawbw.com
-COMMENT=	An implementation of desktop bitcoin management system
+COMMENT=	Implementation of desktop bitcoin management system
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,6 +18,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:${PORTSDIR}/devel
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}twistedCore>=14.0.0:${PORTSDIR}/devel/py-twistedCore \
 		${PYTHON_PKGNAMEPREFIX}psutil>1.2.1:${PORTSDIR}/sysutils/py-psutil
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	etotheipi
+GH_PROJECT=	BitcoinArmory
+GH_COMMIT=	2aa5449
+GH_TAGNAME=	v${PORTVERSION}
 
 USES=		gmake python
 USE_GCC=	yes

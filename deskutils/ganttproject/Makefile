@@ -8,7 +8,7 @@ CATEGORIES=	deskutils java
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-r1544
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gantt chart based project scheduling and management tool
 
 LICENSE=	GPLv3

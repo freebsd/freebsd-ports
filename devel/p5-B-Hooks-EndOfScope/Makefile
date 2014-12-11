@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Module-Implementation>=0.05:${PORTSDIR}/devel/p5-Module-Implementation \
 		p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
-		p5-Sub-Exporter-Progressive>=0.001.006:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive
+		p5-Sub-Exporter-Progressive>=0.001006:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

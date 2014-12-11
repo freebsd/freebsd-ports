@@ -681,15 +681,3 @@ bin/csmash
 share/locale/de/LC_MESSAGES/csmash.mo
 share/locale/fr/LC_MESSAGES/csmash.mo
 share/locale/ja/LC_MESSAGES/csmash.mo
-@dirrm %%DATADIR%%/wav
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/Parts/Fsmash
-@dirrm %%DATADIR%%/Parts/Fpeck
-@dirrm %%DATADIR%%/Parts/Fnormal
-@dirrm %%DATADIR%%/Parts/Fdrive
-@dirrm %%DATADIR%%/Parts/Fcut
-@dirrm %%DATADIR%%/Parts/Bpeck
-@dirrm %%DATADIR%%/Parts/Bnormal
-@dirrm %%DATADIR%%/Parts/Bcut
-@dirrm %%DATADIR%%/Parts
-@dirrm %%DATADIR%%

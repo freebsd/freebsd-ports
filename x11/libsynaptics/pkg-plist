@@ -11,4 +11,3 @@ lib/libsynaptics.a
 lib/libsynaptics.so
 lib/libsynaptics.so.0
 lib/libsynaptics.so.0.0.0
-@dirrm include/synaptics

@@ -1,0 +1,3 @@
+The Metasploit::Credential namespace and its ActiveRecord::Base subclasses
+
+WWW: https://github.com/rapid7/metasploit-credential

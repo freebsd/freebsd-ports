@@ -27,4 +27,3 @@ man/man3/XF86VidModeGetPermissions.3.gz
 man/man3/XF86VidModeSwitchToMode.3.gz
 man/man3/XF86VidModeGetViewPort.3.gz
 man/man3/XF86VidModeValidateModeLine.3.gz
-@dirrmtry include/X11/extensions

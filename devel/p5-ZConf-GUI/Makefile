@@ -3,7 +3,7 @@
 
 PORTNAME=	ZConf-GUI
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-ZConf>=6.1.0:${PORTSDIR}/net/p5-ZConf \
 		${LOCALBASE}/bin/xhost:${PORTSDIR}/x11/xhost
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+SHEBANG_FILES=	bin/*
 
 .include <bsd.port.mk>

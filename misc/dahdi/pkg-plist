@@ -23,6 +23,3 @@ man/man8/dahdi_scan.8.gz
 man/man8/dahdi_test.8.gz
 man/man8/dahdi_tool.8.gz
 man/man8/fxotune.8.gz
-@dirrm include/dahdi/compat
-@dirrm include/dahdi
-@dirrmtry etc/dahdi

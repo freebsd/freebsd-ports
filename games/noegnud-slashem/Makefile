@@ -3,7 +3,7 @@
 
 PORTNAME=	noegnud
 PORTVERSION=	0.8.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION}/:noegnud	\
 		SF/slashem/slashem-source/0.0.6E4F8:slashem

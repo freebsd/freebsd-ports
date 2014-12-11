@@ -39,8 +39,3 @@ lib/libzen.so
 lib/libzen.so.0
 lib/libzen.so.0.0.0
 libdata/pkgconfig/libzen.pc
-@dirrm include/ZenLib/HTTP_Client
-@dirrm include/ZenLib/Format/Http
-@dirrm include/ZenLib/Format/Html
-@dirrm include/ZenLib/Format
-@dirrm include/ZenLib

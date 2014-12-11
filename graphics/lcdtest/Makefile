@@ -3,7 +3,7 @@
 
 PORTNAME=	lcdtest
 PORTVERSION=	1.18
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.brouhaha.com/~eric/software/lcdtest/download/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

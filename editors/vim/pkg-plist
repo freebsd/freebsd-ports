@@ -1,7 +1,5 @@
 %%GUI%%bin/eview
 bin/evim
-@comment bin/ex
-%%GUI%%@comment bin/gex
 %%GUI%%bin/gview
 %%GUI%%bin/gvim
 %%GUI%%bin/gvimdiff
@@ -14,7 +12,8 @@ bin/vim
 bin/vimdiff
 bin/vimtutor
 bin/xxd
-@comment bin/view
+%%DEFAULT_VIMRC%%@sample %%ETCDIR%%/gvimrc.sample
+%%DEFAULT_VIMRC%%@sample %%ETCDIR%%/vimrc.sample
 %%GUI%%%%NON_LITE%%%%NLS%%man/fr/man1/eview.1.gz
 %%NON_LITE%%%%NLS%%man/fr/man1/evim.1.gz
 %%GUI%%%%NON_LITE%%%%NLS%%man/fr/man1/gview.1.gz
@@ -184,5 +183,3 @@ man/man1/xxd.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimdiff.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimtutor.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/xxd.1.gz
-%%DEFAULT_VIMRC%%@sample share/vim/gvimrc.sample
-%%DEFAULT_VIMRC%%@sample share/vim/vimrc.sample

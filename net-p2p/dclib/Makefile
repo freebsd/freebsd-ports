@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/wxdcgui/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Direct connect interface library for valknut
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg

@@ -107,24 +107,3 @@ www/glpi/plugins/reports/report/statticketsbypriority/statticketsbypriority.php
 www/glpi/plugins/reports/setup.php
 @group
 @owner
-@dirrm www/glpi/plugins/reports/report/statticketsbypriority
-@dirrm www/glpi/plugins/reports/report/statnightticketsbypriority
-@dirrm www/glpi/plugins/reports/report/rules
-@dirrm www/glpi/plugins/reports/report/pcsbyentity
-@dirrm www/glpi/plugins/reports/report/location
-@dirrm www/glpi/plugins/reports/report/listgroups
-@dirrm www/glpi/plugins/reports/report/licensesexpires
-@dirrm www/glpi/plugins/reports/report/licenses
-@dirrm www/glpi/plugins/reports/report/infocom
-@dirrm www/glpi/plugins/reports/report/histoinst
-@dirrm www/glpi/plugins/reports/report/histohard
-@dirrm www/glpi/plugins/reports/report/globalhisto
-@dirrm www/glpi/plugins/reports/report/equipmentbylocation
-@dirrm www/glpi/plugins/reports/report/equipmentbygroups
-@dirrm www/glpi/plugins/reports/report/doublons
-@dirrm www/glpi/plugins/reports/report
-@dirrm www/glpi/plugins/reports/locales
-@dirrm www/glpi/plugins/reports/inc
-@dirrm www/glpi/plugins/reports/front
-@dirrm www/glpi/plugins/reports/docs
-@dirrm www/glpi/plugins/reports

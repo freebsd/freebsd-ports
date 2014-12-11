@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Web interface for managing virtual domains for exim
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB

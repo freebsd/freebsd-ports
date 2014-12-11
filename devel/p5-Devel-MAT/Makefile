@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-MAT
-PORTVERSION=	0.19
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,5 +33,10 @@ RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.29:${PORTSDIR}/lang/p5-Scalar-List-Utils
 BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif
+
+post-install:
+	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/Dumper/Dumper.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/MAT.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/Dumper/Dumper.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/MAT.so
+	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/Dumper/Dumper.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/MAT.so
 
 .include <bsd.port.post.mk>

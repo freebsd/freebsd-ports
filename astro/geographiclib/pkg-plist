@@ -51,8 +51,8 @@ include/GeographicLib/UTMUPS.hpp
 include/GeographicLib/Utility.hpp
 lib/libGeographic.a
 lib/libGeographic.so
-lib/libGeographic.so.13
-lib/libGeographic.so.13.0.1
+lib/libGeographic.so.14
+lib/libGeographic.so.14.0.0
 %%PYTHON_SITELIBDIR%%/geographiclib/__init__.py
 %%PYTHON_SITELIBDIR%%/geographiclib/accumulator.py
 %%PYTHON_SITELIBDIR%%/geographiclib/constants.py
@@ -116,6 +116,7 @@ libexec/GeographicLib/matlab/private/C3coeff.m
 libexec/GeographicLib/matlab/private/C3f.m
 libexec/GeographicLib/matlab/private/C4coeff.m
 libexec/GeographicLib/matlab/private/C4f.m
+libexec/GeographicLib/matlab/private/G4coeff.m
 libexec/GeographicLib/matlab/private/SinCosNorm.m
 libexec/GeographicLib/matlab/private/SinCosSeries.m
 libexec/GeographicLib/matlab/private/atanhee.m

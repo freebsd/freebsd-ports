@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Exception-Class
-PORTVERSION=	1.38
-PORTREVISION=	1
+PORTVERSION=	1.39
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +12,7 @@ COMMENT=	Real exception classes in Perl
 LICENSE=	ART20
 
 BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0.02:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-Devel-StackTrace>=1.20:${PORTSDIR}/devel/p5-Devel-StackTrace
+		p5-Devel-StackTrace>=2.00:${PORTSDIR}/devel/p5-Devel-StackTrace
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

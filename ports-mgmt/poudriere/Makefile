@@ -1,26 +1,40 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	3.0.19
+DISTVERSION=	3.1.1
+PORTREVISION=	0
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
-		LOCAL/bdrewery/${PORTNAME}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?uuid=${PORTVERSION}
+MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		GH
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Port build and test system
 
 LICENSE=	BSD2CLAUSE
 
-OPTIONS_DEFINE=	ZSH
+CONFLICTS_INSTALL=	poudriere-devel-[0-9]*
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	freebsd
+GH_COMMIT=	9f9e43d
+GH_TAGNAME=	${GH_COMMIT}
+
+GNU_CONFIGURE=	yes
+ETCDIR=		${PREFIX}/etc/poudriere.d
+
+OPTIONS_DEFINE=	ZSH QEMU
 OPTIONS_SUB=	yes
 
-CONFLICTS_INSTALL=	poudriere-devel
+QEMU_DESC=	Add qemu-user-static to compile ports for non-x86 architectures
+QEMU_RUN_DEPENDS=	qemu-user-static>0:${PORTSDIR}/emulators/qemu-user-static
+
+.include <bsd.port.options.mk>
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/poudriere/*
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
-	@${INSTALL_DATA} ${WRKSRC}/zsh-completions \
-	    ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_poudriere
+	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_poudriere \
+	    ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 
 .include <bsd.port.mk>

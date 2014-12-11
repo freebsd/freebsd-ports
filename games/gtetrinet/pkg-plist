@@ -47,8 +47,3 @@ share/locale/vi/LC_MESSAGES/gtetrinet.mo
 share/locale/zh_CN/LC_MESSAGES/gtetrinet.mo
 share/locale/zh_HK/LC_MESSAGES/gtetrinet.mo
 share/locale/zh_TW/LC_MESSAGES/gtetrinet.mo
-@dirrm share/gtetrinet/themes/small
-@dirrm share/gtetrinet/themes/default
-@dirrm share/gtetrinet/themes
-@dirrm share/gtetrinet
-@dirrm share/pixmaps/gtetrinet

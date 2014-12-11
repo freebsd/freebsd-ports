@@ -1,11 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.22.01
+PORTVERSION=	3.22.02
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+MASTER_SITE_SUBDIR=	shurd
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
@@ -38,7 +39,7 @@ PORTAUDIO_DESC=		PortAudio support
 PULSEAUDIO_DESC=	PulseAudio support
 HAMLIB_DESC=		Support rig control via hamlib
 
-OPTIONS_DEFAULT=	OPTFLARQ OPTOSS HAMLIB
+OPTIONS_DEFAULT=	FLARQ OSS HAMLIB
 
 .include <bsd.port.pre.mk>
 
@@ -114,8 +115,10 @@ post-configure:
 	${RM} ${WRKSRC}/doc/*.1
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/guide.html ${STAGEDIR}${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/guide.html ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>

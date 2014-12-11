@@ -32,9 +32,3 @@
 %%WWWDIR%%/style/ltb-logo.png
 %%WWWDIR%%/style/styles.css
 %%WWWDIR%%/style/user_suit.png
-@dirrm %%WWWDIR%%/pages
-@dirrm %%WWWDIR%%/conf
-@dirrm %%WWWDIR%%/style
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/lib
-@dirrmtry %%WWWDIR%%

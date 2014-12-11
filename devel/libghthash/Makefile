@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Hash Table
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

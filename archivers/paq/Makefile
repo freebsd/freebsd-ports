@@ -5,7 +5,7 @@ PORTNAME=	paq
 PORTVERSION=	20140131
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	wbpe110.zip zpaqd633.zip zpaq649.zip zpipe.201.zip
+DISTFILES=	wbpe110.zip zpaqd633.zip zpaq657.zip zpipe.201.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
@@ -42,11 +42,12 @@ DISTFILES+=	bmp_j4c.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
 		zpsfx.100.zip zpsfx101.cpp
 
 .if ${PORT_OPTIONS:MDOCS} || make(makesum)
-DISTFILES+=	zpaq1.pdf zpaq202.pdf zpaq203.pdf
+DISTFILES+=	zpaq1.pdf zpaq202.pdf zpaq203.pdf zpaq204.pdf
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	libzpaq.cpp wbpe.cpp zpaq.cpp zpaq1.pdf zpaq202.pdf zpaq203.pdf zpipe.cpp
+PORTDOCS=	libzpaq.cpp wbpe.cpp zpaq.cpp zpaq.pod zpaq1.pdf \
+		zpaq202.pdf zpaq203.pdf zpaq204.pdf zpipe.cpp
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -90,27 +91,27 @@ do-build:
 	@cd ${WRKSRC}; \
 	${CXX} ${CXXFLAGS} -o wbpe wbpe.cpp; \
 	${CXX} ${CXXFLAGS} ${OPENMP_CFLAGS} ${ZPAQFLAGS} \
-	-o zpaq zpaq.cpp libzpaq.cpp divsufsort.c ${LDFLAGS} -pthread; \
+	-o zpaq zpaq.cpp libzpaq.cpp ${LDFLAGS} -pthread; \
 	${CXX} ${CXXFLAGS:N-DNDEBUG} ${ZPAQFLAGS} \
 	-o zpaqd zpaqd.cpp libzpaq.cpp ${LDFLAGS}; \
 	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} -o zpipe zpipe.cpp libzpaq.cpp
 
 do-install:
 .for prog in wbpe zpaq zpaqd zpipe
-	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/libzpaq.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libzpaq.h ${STAGEDIR}${PREFIX}/include
 .for prog in bwt_ bwtpre bwtrle exe_jo jpeg_jo lazy2 lzpre lzppre
-	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${WDATA} ${STAGEDIR}${DATADIR}; \
+	cd ${WRKSRC}; ${INSTALL_DATA} ${WDATA} ${STAGEDIR}${DATADIR}; \
 	${INSTALL_LIB} zpsfx ${STAGEDIR}${DATADIR}
-	@cd ${_DISTDIR}; ${INSTALL_DATA} ${DDATA} ${STAGEDIR}${DATADIR}
+	cd ${_DISTDIR}; ${INSTALL_DATA} ${DDATA} ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS:N*.pdf} ${STAGEDIR}${DOCSDIR}
-	@cd ${DISTDIR}/${DIST_SUBDIR}; ${INSTALL_DATA} ${PORTDOCS:M*.pdf} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS:N*.pdf} ${STAGEDIR}${DOCSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR}; ${INSTALL_DATA} ${PORTDOCS:M*.pdf} ${STAGEDIR}${DOCSDIR}
 .endif
 
 check regression-test test: build
@@ -118,8 +119,10 @@ check regression-test test: build
 .for _c in -list -test
 	${WRKSRC}/zpaq ${_c} ${DISTDIR}/${DIST_SUBDIR}/${_f}
 .endfor
-	${WRKSRC}/zpaq -encrypt ${DISTDIR}/${DIST_SUBDIR}/${_f} -to ${WRKSRC}/encrypted_${_f} password
-	${WRKSRC}/zpaq -test ${WRKSRC}/encrypted_${_f} -key password
+	cd ${WRKSRC}; ./zpaq -extract ${DISTDIR}/${DIST_SUBDIR}/${_f}; \
+	./zpaq -add encrypted_${_f} calgary -key password; \
+	./zpaq -test encrypted_${_f} -key password; \
+	${RM} -r calgary
 .endfor
 
 .include <bsd.port.mk>

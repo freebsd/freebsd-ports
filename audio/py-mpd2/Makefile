@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpd2
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Mic92
 GH_PROJECT=	python-${PORTNAME}
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	cfeb3b5
+GH_COMMIT=	504bcb1
 
 USES=		shebangfix python
 SHEBANG_FILES=	examples/helloworld.py
@@ -28,13 +28,17 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-PORTDOCS_1=	generate_command_reference.py index.rst changes.rst
+PORTDOCS_1=	commands_header.txt index.rst changes.rst
 PORTDOCS_2=	topics/advanced.rst topics/commands.rst \
 		topics/getting-started.rst topics/logging.rst
-PORTDOCS=	${PORTDOCS_1} ${PORTDOCS_2}
+PORTDOCS_3=	generate_command_reference.py
+PORTDOCS=	${PORTDOCS_1} ${PORTDOCS_2} ${PORTDOCS_3}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-PORTEXAMPLES=	helloworld.py locking.py logger.py
-PLIST_DIRSTRY=	${DOCSDIR}/topics
+PORTEXAMPLES_1=	errorhandling.py helloworld.py idle.py locking.py logger.py \
+		multitags.py randomqueue.py stats.py stickers.py
+PORTEXAMPLES_2=	summary.txt
+PORTEXAMPLES=	${PORTEXAMPLES_1} ${PORTEXAMPLES_2}
+PLIST_DIRS=	${DOCSDIR}/topics
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/topics
@@ -44,9 +48,15 @@ post-install:
 .for f in ${PORTDOCS_2}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}/topics
 .endfor
+.for f in ${PORTDOCS_3}
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for f in ${PORTEXAMPLES}
+.for f in ${PORTEXAMPLES_1}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
+.for f in ${PORTEXAMPLES_2}
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
 .include <bsd.port.mk>

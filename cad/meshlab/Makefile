@@ -8,7 +8,7 @@ CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_LOCAL}/gahr/ \
 		http://people.freebsd.org/~gahr/distfiles/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D triangular meshes processing and editing tool
 
 LIB_DEPENDS=	libQtSolutions_SOAP-head.so:${PORTSDIR}/devel/qt4-qtsolutions-soap

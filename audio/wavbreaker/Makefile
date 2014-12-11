@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to split and merge wav files
 
 LICENSE=	GPLv2

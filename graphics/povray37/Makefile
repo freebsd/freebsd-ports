@@ -2,7 +2,7 @@
 
 PORTNAME=	povray
 DISTVERSION=	3.7.0.RC6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.povray.org/beta/source/
 PKGNAMESUFFIX=	37

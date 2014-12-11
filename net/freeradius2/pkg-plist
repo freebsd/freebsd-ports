@@ -1,4 +1,3 @@
-@stopdaemon radiusd
 @unexec different=0 ; for i in `find %D/%%EXAMPLESDIR%%/raddb/certs/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/certs/::g'`; do if ! cmp -hsz %D/%%EXAMPLESDIR%%/raddb/certs/${i} %D/etc/raddb/certs/${i}; then different=1; break; fi; done; if [ ${different} -eq 0 ] && diff -rq --exclude=certs %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb >/dev/null 2>&1; then rm -rf %D/etc/raddb; fi
 @unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it any more."; fi
 bin/rad_counter
@@ -588,6 +587,7 @@ sbin/radwatch
 %%DATADIR%%/dictionary.azaire
 %%DATADIR%%/dictionary.bay
 %%DATADIR%%/dictionary.bintec
+%%DATADIR%%/dictionary.bluecoat
 %%DATADIR%%/dictionary.bristol
 %%DATADIR%%/dictionary.broadsoft
 %%DATADIR%%/dictionary.brocade
@@ -601,19 +601,23 @@ sbin/radwatch
 %%DATADIR%%/dictionary.cisco.bbsm
 %%DATADIR%%/dictionary.cisco.vpn3000
 %%DATADIR%%/dictionary.cisco.vpn5000
+%%DATADIR%%/dictionary.citrix
 %%DATADIR%%/dictionary.clavister
 %%DATADIR%%/dictionary.colubris
 %%DATADIR%%/dictionary.columbia_university
 %%DATADIR%%/dictionary.compat
+%%DATADIR%%/dictionary.compatible
 %%DATADIR%%/dictionary.cosine
 %%DATADIR%%/dictionary.dante
 %%DATADIR%%/dictionary.dhcp
 %%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.dlink
+%%DATADIR%%/dictionary.dragonwave
 %%DATADIR%%/dictionary.efficientip
 %%DATADIR%%/dictionary.eltex
 %%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.ericsson
+%%DATADIR%%/dictionary.ericsson.packet.core.networks
 %%DATADIR%%/dictionary.erx
 %%DATADIR%%/dictionary.extreme
 %%DATADIR%%/dictionary.f5
@@ -697,8 +701,12 @@ sbin/radwatch
 %%DATADIR%%/dictionary.rfc6677
 %%DATADIR%%/dictionary.rfc6911
 %%DATADIR%%/dictionary.rfc6930
+%%DATADIR%%/dictionary.rfc7055
+%%DATADIR%%/dictionary.rfc7268
+%%DATADIR%%/dictionary.riverbed
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
+%%DATADIR%%/dictionary.ruckus
 %%DATADIR%%/dictionary.sg
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva
@@ -737,24 +745,24 @@ sbin/radwatch
 %%DATADIR%%/dictionary.zyxel
 @unexec rmdir "/var/run/radiusd" >/dev/null 2>&1 || :
 @unexec rmdir "/var/log/radacct" >/dev/null 2>&1 || :
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/raddb/sql/postgresql
-@dirrm %%EXAMPLESDIR%%/raddb/sql/oracle
-@dirrm %%EXAMPLESDIR%%/raddb/sql/ndb
-@dirrm %%EXAMPLESDIR%%/raddb/sql/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/sql/mssql
-@dirrm %%EXAMPLESDIR%%/raddb/sql
-@dirrm %%EXAMPLESDIR%%/raddb/sites-enabled
-@dirrm %%EXAMPLESDIR%%/raddb/sites-available
-@dirrm %%EXAMPLESDIR%%/raddb/modules
-@dirrm %%EXAMPLESDIR%%/raddb/certs
-@dirrm %%EXAMPLESDIR%%/raddb
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LIBDIR%%
-@dirrm include/freeradius
+@dir %%DATADIR%%
+@dir %%EXAMPLESDIR%%/raddb/sql/postgresql
+@dir %%EXAMPLESDIR%%/raddb/sql/oracle
+@dir %%EXAMPLESDIR%%/raddb/sql/ndb
+@dir %%EXAMPLESDIR%%/raddb/sql/mysql
+@dir %%EXAMPLESDIR%%/raddb/sql/mssql
+@dir %%EXAMPLESDIR%%/raddb/sql
+@dir %%EXAMPLESDIR%%/raddb/sites-enabled
+@dir %%EXAMPLESDIR%%/raddb/sites-available
+@dir %%EXAMPLESDIR%%/raddb/modules
+@dir %%EXAMPLESDIR%%/raddb/certs
+@dir %%EXAMPLESDIR%%/raddb
+@dir %%EXAMPLESDIR%%
+%%PORTDOCS%%@dir %%DOCSDIR%%/rfc
+%%PORTDOCS%%@dir %%DOCSDIR%%/examples
+%%PORTDOCS%%@dir %%DOCSDIR%%
+@dir %%LIBDIR%%
+@dir include/freeradius
 @exec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
 @exec chmod -R g-w,o-rwx %D/etc/raddb
 @exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi

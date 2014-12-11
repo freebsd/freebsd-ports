@@ -1,31 +1,60 @@
 # $FreeBSD$
 
 PORTNAME=	libmemcached
-PORTVERSION=	1.0.7
-PORTREVISION=	4
+PORTVERSION=	1.0.18
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	C and C++ client library to the memcached server
 
-LIB_DEPENDS?=	libevent.so:${PORTSDIR}/devel/libevent2
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		execinfo gmake pathfix pkgconfig perl5 libtool
-USE_PERL5=	build
+LIB_DEPENDS?=	libevent.so:${PORTSDIR}/devel/libevent2
+TEST_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
+
+USES=		autoreconf execinfo gmake pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-memcached
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
+CONFIGURE_ARGS=	--without-memcached \
+		--enable-libmemcachedprotocol
+
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 CXXFLAGS+=	-D__STDC_CONSTANT_MACROS
 
-OPTIONS_DEFINE=	SASL
+OPTIONS_DEFINE=		DEBUG DTRACE MEMASLAP SASL
+OPTIONS_DEFAULT=	MEMASLAP SASL MURMUR FNV64
+OPTIONS_GROUP=		HASH
+OPTIONS_GROUP_HASH=	FNV64 HSIEH MURMUR
 
+DTRACE_DESC=	Enable DTrace support
+MEMASLAP_DESC=	Load generation and benchmark tool
+FNV64_DESC=	Enable fnv64 hashing
+HSIEH_DESC=	Enable hsieh hashing
+MURMUR_DESC=	Enable murmur hashing
+
+DEBUG_CONFIGURE_ENABLE=		debug
+DTRACE_CONFIGURE_ENABLE=	dtrace
+MEMASLAP_CONFIGURE_ENABLE=	memaslap
+FNV64_CONFIGURE_ENABLE=		fnv64_hash
+HSIEH_CONFIGURE_ENABLE=		hsieh_hash
+MURMUR_CONFIGURE_ENABLE=	murmur_hash
+
+SASL_CONFIGURE_ENABLE=	sasl
 SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
+PATHFIX_MAKEFILEIN=	include.am
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
-			 -e '/^LDFLAGS *=/ s/$$/ $${LTLIBSASL2}/' \
-			${WRKSRC}/Makefile.in ${WRKSRC}/support/include.am
+	@${REINPLACE_CMD} -e '/^LDFLAGS *=/ s/$$/ $${LTLIBSASL2}/' \
+			${WRKSRC}/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
+
+regression-test: build
+	@cd ${WRKSRC} && ${GMAKE} check
 
 .include <bsd.port.mk>

@@ -57,7 +57,7 @@ post-extract:
 
 .if !target(do-build)
 do-build:
-	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} install -v ${GO_TARGET})
+	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install -v ${GO_TARGET})
 .endif
 
 .if !target(do-install)

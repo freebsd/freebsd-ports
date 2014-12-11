@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl extension for direct-to-lpd printing
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		perl5
 USE_PERL5=	configure

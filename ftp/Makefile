@@ -29,6 +29,7 @@
     SUBDIR += ftpproxy
     SUBDIR += ftpsesame
     SUBDIR += ftpsync
+    SUBDIR += gftp
     SUBDIR += gnusget
     SUBDIR += gnustep-ftp
     SUBDIR += gstreamer1-plugins-curl

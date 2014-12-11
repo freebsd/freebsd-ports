@@ -17,4 +17,3 @@ man/man1/xxkb.1.gz
 %%DATADIR%%/su48.xpm
 %%DATADIR%%/ua15.xpm
 %%DATADIR%%/ua48.xpm
-@dirrm %%DATADIR%%

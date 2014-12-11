@@ -17,6 +17,7 @@ NO_ARCH=	*
 WRKSRC=		${WRKDIR}/scourge_data
 DATADIR=	${PREFIX}/share/scourge
 PORTDATA=	*
+PLIST_DIRS=	%%DATADIR%%/world
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}

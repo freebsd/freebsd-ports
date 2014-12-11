@@ -3,7 +3,7 @@
 
 PORTNAME=	pwcbsd
 PORTVERSION=	1.4.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \
@@ -19,9 +19,9 @@ CONFLICTS=	pwcview-[0-9]*
 
 SSP_UNSAFE=	kernel module does not support ssp
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		kmod
 
-PLIST_SUB=	KMODDIR=${KMODDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	PROGRAMS MMAP
 OPTIONS_DEFAULT=	PROGRAMS

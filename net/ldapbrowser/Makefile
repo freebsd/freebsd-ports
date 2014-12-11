@@ -6,7 +6,8 @@ PORTVERSION=	2.8.2
 PORTREVISION=	3
 CATEGORIES=	net java
 MASTER_SITES=	http://web.talf.org/software/ \
-		http://freebsd.nsu.ru/distfiles/
+		http://freebsd.nsu.ru/distfiles/ \
+		http://www.klop.ws/distfiles/
 DISTNAME=	Browser282b2
 
 MAINTAINER=	ronald-lists@klop.ws

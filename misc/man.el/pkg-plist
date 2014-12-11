@@ -12,11 +12,3 @@ lib/xemacs/site-packages/lisp/i18n-man-ja/i18n-man.el
 lib/xemacs/site-packages/lisp/i18n-man-ja/i18n-man-ja.el
 lib/xemacs/site-packages/pkginfo/MANIFEST.i18n-man-ja
 share/doc/i18n-man/byte-compile
-@dirrm lib/xemacs/site-packages/lisp/i18n-man-de
-@dirrm lib/xemacs/site-packages/lisp/i18n-man-en
-@dirrm lib/xemacs/site-packages/lisp/i18n-man-ja
-@dirrmtry lib/xemacs/site-packages/lisp
-@dirrmtry lib/xemacs/site-packages/pkginfo
-@dirrmtry lib/xemacs/site-packages
-@dirrmtry lib/xemacs
-@dirrm share/doc/i18n-man

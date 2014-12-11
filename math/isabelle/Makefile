@@ -12,7 +12,7 @@ DISTNAME=	Isabelle2009-2
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Generic proof assistant
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BROKEN=		Build seems to hang on the package builders

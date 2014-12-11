@@ -11,10 +11,10 @@ MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Document preparation system using an Almost Free Text input format
 
 LICENSE=	CART
-LICENSE_GROUPS=	FSF OSI
+LICENSE_GROUPS=	FSF GPL OSI
 LICENSE_NAME=	Clarified Artistic License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		perl5 gmake
 GNU_CONFIGURE=	yes

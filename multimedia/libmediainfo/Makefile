@@ -31,6 +31,7 @@ WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/MediaInfoLib/Project/GNU/Library
 CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
 CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 MMS_CONFIGURE_ON=	--with-libmms=${LOCALBASE}
+MMS_LDFLAGS=		-L${LOCALBASE}/lib -lmms
 MMS_LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
 TINYXML2_CONFIGURE_ENV=	TINYXML2_CFLAGS=-I${LOCALBASE}/include TINYXML2_LIBS="-L${LOCALBASE}lib -ltinyxml2"
 TINYXML2_CONFIGURE_ON=	--with-libtinyxml2=yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	concentration
 PORTVERSION=	1.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/concentration/ \
 		http://mirror.amdmi3.ru/distfiles/

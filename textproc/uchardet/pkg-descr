@@ -1,0 +1,4 @@
+uchardet is a C language binding of the original C++ implementation
+of the universal charset detection library by Mozilla.
+
+WWW: https://code.google.com/p/uchardet/

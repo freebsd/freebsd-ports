@@ -11,4 +11,3 @@
 %%SITE_PERL%%/WDDX/String.pm
 %%SITE_PERL%%/WDDX/Struct.pm
 %%PORTDOCS%%%%DOCSDIR%%/Changes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

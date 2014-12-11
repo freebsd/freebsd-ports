@@ -13,10 +13,9 @@ LICENSE=	GPLv2
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
-USE_GITHUB=		yes
-USE_PYTHON=		-2.7
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_GITHUB=	yes
+USES=		python:-2.7
+USE_PYTHON=	distutils autoplist
 
 GH_ACCOUNT=	transifex
 GH_COMMIT=	84c9dcc

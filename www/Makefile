@@ -1142,6 +1142,7 @@
     SUBDIR += p5-RTx-Calendar
     SUBDIR += p5-Reaction
     SUBDIR += p5-Reddit
+    SUBDIR += p5-Reddit-Client
     SUBDIR += p5-Rose-HTML-Objects
     SUBDIR += p5-Router-Boom
     SUBDIR += p5-Router-Simple
@@ -1823,6 +1824,7 @@
     SUBDIR += rubygem-jquery-ui-rails
     SUBDIR += rubygem-jquery-ui-rails-rails4
     SUBDIR += rubygem-jruby-rack
+    SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-rails4
@@ -1900,6 +1902,7 @@
     SUBDIR += rubygem-thin
     SUBDIR += rubygem-tinyatom
     SUBDIR += rubygem-tinymce-rails
+    SUBDIR += rubygem-tumblr_client
     SUBDIR += rubygem-turbolinks
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
@@ -2059,7 +2062,6 @@
     SUBDIR += tt-rss
     SUBDIR += ttf2eot
     SUBDIR += twig
-    SUBDIR += twig-php
     SUBDIR += twiki
     SUBDIR += twiki-BehaviourContrib
     SUBDIR += twiki-BlogAddOn

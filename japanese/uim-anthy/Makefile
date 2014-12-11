@@ -1,6 +1,7 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	2
 CATEGORIES=	japanese
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-anthy-nox11

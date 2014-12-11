@@ -187,18 +187,3 @@
 %%DATADIR%%/textures/roof1_dpzoo.jpg
 %%DATADIR%%/textures/wall1_dpzoo.jpg
 %%DATADIR%%/textures/window1_dpzoo.jpg
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/sound/weapons/bomb
-@dirrm %%DATADIR%%/sound/weapons
-@dirrm %%DATADIR%%/sound/plasma
-@dirrm %%DATADIR%%/sound/misc
-@dirrm %%DATADIR%%/sound/fire
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/qc/menu
-@dirrm %%DATADIR%%/qc
-@dirrm %%DATADIR%%/progs
-@dirrm %%DATADIR%%/menu
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/env
-@dirrm %%DATADIR%%/cubemaps
-@dirrm %%DATADIR%%

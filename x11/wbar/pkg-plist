@@ -13,10 +13,3 @@ man/man1/wbar.1.gz
 share/pixmaps/wbar/dock.png
 share/pixmaps/wbar/wbar.png
 %%DATADIR%%/glade/wbar.glade
-@dirrm share/pixmaps/wbar
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-@dirrmtry etc/bash_completion.d
-@dirrm etc/wbar.d
-@dirrmtry man/es/man1
-@dirrmtry man/es

@@ -1,0 +1,11 @@
+--- plugins/encryption_otr/CMakeLists.txt.orig	2014-12-04 20:34:30 UTC
++++ plugins/encryption_otr/CMakeLists.txt
+@@ -102,6 +102,8 @@ pkg_check_modules (LIBOTR REQUIRED libot
+ 
+ set (LIBRARIES ${QCA2_LIBRARIES} ${LIBOTR_LDFLAGS} gcrypt)
+ 
++include_directories (${LIBOTR_INCLUDE_DIRS})
++
+ kadu_plugin (encryption_otr
+ 	PLUGIN_SOURCES ${SOURCES}
+ 	PLUGIN_MOC_SOURCES ${MOC_SOURCES}

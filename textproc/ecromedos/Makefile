@@ -15,7 +15,7 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+USES=		python
 USE_TEX=	latex
 USE_GNOME=	libxml2 libxslt
 

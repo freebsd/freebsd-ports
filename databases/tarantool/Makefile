@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	High performance key/value storage server
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 TR_REV=		102-g2857a4e
 MAKE_JOBS_UNSAFE=yes

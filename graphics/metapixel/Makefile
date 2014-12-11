@@ -3,7 +3,7 @@
 
 PORTNAME=	metapixel
 PORTVERSION=	1.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 		http://mirror.roe.ch/dist/metapixel/

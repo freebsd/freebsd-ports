@@ -3,7 +3,7 @@
 
 PORTNAME=	meritous
 PORTVERSION=	1.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://www.asceai.net/files/ \
 		http://mirror.amdmi3.ru/distfiles/

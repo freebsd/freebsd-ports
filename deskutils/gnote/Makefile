@@ -38,6 +38,10 @@ DOCS=		AUTHORS ChangeLog NEWS README TODO
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 900000
+BROKEN=		Fails to build
+.endif
+
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-install:

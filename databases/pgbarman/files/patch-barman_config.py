@@ -1,4 +1,4 @@
---- barman/config.py.orig	2014-12-02 14:47:11 UTC
+--- barman/config.py.orig	2014-08-01 13:50:46 UTC
 +++ barman/config.py
 @@ -341,8 +341,8 @@ class Config(object):
      """

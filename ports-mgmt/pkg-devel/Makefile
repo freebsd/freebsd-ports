@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.4.0.beta2
+DISTVERSION=	1.4.99.0
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
@@ -20,7 +20,7 @@ LICENSE=	BSD2CLAUSE
 # With no dependency at all
 NO_CCACHE=	yes
 WITH_DEBUG=	yes
-CFLAGS+=	-O0 -g
+CFLAGS+=	-O0 -g -Wno-error
 USE_LDCONFIG=	yes
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes

@@ -13,4 +13,3 @@ man/man1/padload.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/PROTOCOL
 %%PORTDOCS%%%%DOCSDIR%%/README.english
 %%PORTDOCS%%%%DOCSDIR%%/README.japanese
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

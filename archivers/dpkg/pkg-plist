@@ -230,6 +230,7 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/es/man8/dpkg-divert.8.gz
 %%NLS%%man/es/man8/start-stop-daemon.8.gz
 %%NLS%%man/es/man8/update-alternatives.8.gz
+%%NLS%%man/fr/man1/dpkg-architecture.1.gz
 %%NLS%%man/fr/man1/dpkg-buildflags.1.gz
 %%NLS%%man/fr/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/fr/man1/dpkg-checkbuilddeps.1.gz
@@ -445,6 +446,7 @@ man/man8/update-alternatives.8.gz
 %%NLS%%man/pl/man8/dpkg-divert.8.gz
 %%NLS%%man/pl/man8/start-stop-daemon.8.gz
 %%NLS%%man/pl/man8/update-alternatives.8.gz
+%%NLS%%man/sv/man1/dpkg-architecture.1.gz
 %%NLS%%man/sv/man1/dpkg-buildflags.1.gz
 %%NLS%%man/sv/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/sv/man1/dpkg-checkbuilddeps.1.gz

@@ -69,8 +69,8 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Logger/Null.pm
 %%SITE_PERL%%/Dancer2/Manual.pod
 %%SITE_PERL%%/Dancer2/Manual/Migration.pod
+%%SITE_PERL%%/Dancer2/Manual/Testing.pod
 %%SITE_PERL%%/Dancer2/Plugin.pm
-%%SITE_PERL%%/Dancer2/Plugin/Ajax.pm
 %%SITE_PERL%%/Dancer2/Plugins.pod
 %%SITE_PERL%%/Dancer2/Policy.pod
 %%SITE_PERL%%/Dancer2/Serializer/Dumper.pm
@@ -134,8 +134,8 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Logger::Null.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual::Migration.3.gz
+%%PERL5_MAN3%%/Dancer2::Manual::Testing.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugin.3.gz
-%%PERL5_MAN3%%/Dancer2::Plugin::Ajax.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugins.3.gz
 %%PERL5_MAN3%%/Dancer2::Policy.3.gz
 %%PERL5_MAN3%%/Dancer2::Serializer::Dumper.3.gz

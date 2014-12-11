@@ -3,12 +3,15 @@
 
 PORTNAME=	csmash
 PORTVERSION=	0.6.6
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	games
 MASTER_SITES=	SF/cannonsmash/CannonSmash/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D tabletennis game
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext gmake pkgconfig
 USE_SDL=	image mixer sdl

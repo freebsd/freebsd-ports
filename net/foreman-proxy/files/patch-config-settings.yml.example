@@ -1,0 +1,11 @@
+--- config/settings.yml.example.orig	2014-12-04 11:41:56.011675735 +0100
++++ config/settings.yml.example	2014-12-04 11:42:13.978674196 +0100
+@@ -25,7 +25,7 @@
+ #:foreman_ssl_key: ssl/private_keys/fqdn.pem
+ 
+ # by default smart_proxy runs in the foreground. To enable running as a daemon, uncomment 'daemon' setting
+-#:daemon: true
++:daemon: true
+ # Only used when 'daemon' is set to true.
+ # Uncomment and modify if you want to change the default pid file '/var/run/foreman-proxy/foreman-proxy.pid'
+ #:daemon_pid: /var/run/foreman-proxy/foreman-proxy.pid

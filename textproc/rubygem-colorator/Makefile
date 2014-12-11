@@ -9,8 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Colorize your text in a terminal with a simple API
 
+USES=		python
 USE_RUBY=	yes
-USE_PYTHON=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 

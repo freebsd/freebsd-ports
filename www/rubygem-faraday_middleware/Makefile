@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	faraday_middleware
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Collection of Ruby Faraday middlewares
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-faraday>=0.7.4:${PORTSDIR}/www/rubygem-faraday
 

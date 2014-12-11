@@ -31,4 +31,3 @@ man/man3/XvShmPutImage.3.gz
 man/man3/XvStopVideo.3.gz
 man/man3/XvUngrabPort.3.gz
 man/man3/XvVideoNotify.3.gz
-@dirrmtry include/X11/extensions

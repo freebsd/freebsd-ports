@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-brightbox
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-fog-core>=1.22:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-fog-json>=0:${PORTSDIR}/devel/rubygem-fog-json \
-		rubygem-inflecto>=0:${PORTSDIR}/devel/rubygem-inflecto
+		rubygem-inflecto>=0.0.2:${PORTSDIR}/devel/rubygem-inflecto
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -3,12 +3,15 @@
 
 PORTNAME=	atris
 PORTVERSION=	1.0.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.sourcefiles.org/Games/Arcade/Block_Based/Tetris/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atris: Alizarin Tetris
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 USE_SDL=	sdl ttf
@@ -20,6 +23,7 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 OPTIONS_DEFINE=	DOCS
+
 post-patch:
 # Fix path to ${DATADIR}
 	${REINPLACE_CMD} -e 's|\(GAME_INSTALLDIR=\).*|\1"${DATADIR}"|' \

@@ -9,8 +9,10 @@ MASTER_SITES=	SF/xiangqi-engine/xiangqi-engine/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese chess (Xiangqi) program
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix="${PREFIX}"
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+GNU_CONFIGURE=	yes
 LIBS+=		-lcompat
 
 .include <bsd.port.mk>

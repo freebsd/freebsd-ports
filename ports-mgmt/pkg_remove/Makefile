@@ -10,6 +10,9 @@ DISTFILES=	# none
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	Utility to uninstall packages
 
+DEPRECATED=	Does not support pkgng
+EXPIRATION_DATE=	2015-01-06
+
 USES=		shebangfix
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

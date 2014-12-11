@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	kawa
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	lang scheme java
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	kawa
+MASTER_SITES=	GNU
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java-based Scheme implementation
 
 LICENSE=	MIT
@@ -20,8 +18,8 @@ USE_JAVA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
 		--with-java-source=${JAVA_PORT_VERSION}
-CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
-MAKE_ENV+=	READLINE_LIB_PATH=${LOCALBASE}/lib
+CONFIGURE_ENV=	MAKEINFO=${LOCALBASE}/bin/makeinfo
+MAKE_ENV=	READLINE_LIB_PATH=${LOCALBASE}/lib
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -37,10 +35,9 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
 		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^READLINE_LIB_PATH =/s|$$|-L${LOCALBASE}/lib|' \
-		${WRKSRC}/bin/Makefile.in \
-		${WRKSRC}/bin/Makefile.am
+		${WRKSRC}/bin/Makefile.in ${WRKSRC}/bin/Makefile.am
 
 regression-test: build
-	cd ${WRKSRC} && ${MAKE_CMD} check
+	${MAKE_CMD} -C ${WRKSRC} check
 
 .include <bsd.port.mk>

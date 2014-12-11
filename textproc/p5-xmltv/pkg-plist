@@ -190,16 +190,3 @@ man/man1/tv_validate_grabber.1.gz
 %%DATADIR%%/xmltv-lineups.xsd
 %%DATADIR%%/xmltv.dtd
 %%CGIDIR%%/tv_pick.cgi
-@dirrm %%DATADIR%%/tv_grab_eu_epgdata
-@dirrm %%DATADIR%%/tv_grab_huro
-@dirrm %%DATADIR%%/tv_grab_it
-@dirrm %%DATADIR%%/tv_grab_it_dvb
-@dirrm %%DATADIR%%/tv_grab_uk_atlas/cgi-bin
-@dirrm %%DATADIR%%/tv_grab_uk_atlas
-@dirrm %%DATADIR%%/tv_grab_uk_bleb
-@dirrm %%DATADIR%%/tv_grab_uk_guardian
-@dirrm %%DATADIR%%/tv_grab_uk_rt/lineups
-@dirrm %%DATADIR%%/tv_grab_uk_rt
-@dirrm %%DATADIR%%/tv_grab_uk_tvguide
-@dirrm %%DATADIR%%
-@dirrmtry %%CGIDIR%%

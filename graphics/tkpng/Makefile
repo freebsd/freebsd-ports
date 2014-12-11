@@ -11,8 +11,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PNG support for Tcl/Tk
 
-LICENSE=	BSD
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES+=		tk tar:tgz
 GNU_CONFIGURE=	yes

@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based interface to taskwarrior
 
 LICENSE=	GPLv3

@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}-src.tgz ${DATAFILES}:theme
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockable CD player for AfterStep or WindowMaker
 
-LICENSE=	BSD
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libworkman.so:${PORTSDIR}/audio/libworkman
 

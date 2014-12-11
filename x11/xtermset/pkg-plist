@@ -2,4 +2,3 @@ bin/xtermset
 man/man1/xtermset.1.gz
 man/man5/terms.5.gz
 %%DATADIR%%/terms
-@dirrm %%DATADIR%%

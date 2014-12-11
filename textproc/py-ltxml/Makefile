@@ -15,9 +15,8 @@ COMMENT=	Python bindings to the LT XML toolkit
 BUILD_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:${PORTSDIR}/textproc/ltxml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

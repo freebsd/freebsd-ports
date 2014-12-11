@@ -95,35 +95,3 @@ share/icons/hicolor/48x48/apps/xfce4-logo.png
 %%NLS%%share/locale/vi/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libxfce4ui.mo
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/tl_PH/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tl_PH
-%%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tl
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ku
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%APIDOCS%%@dirrm share/gtk-doc/html/libxfce4ui
-%%APIDOCS%%@dirrmtry share/gtk-doc/html
-%%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrm include/xfce4/libxfce4ui-1/libxfce4ui
-@dirrm include/xfce4/libxfce4ui-1
-@dirrm include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private
-@dirrm include/xfce4/libxfce4kbd-private-2
-@dirrmtry include/xfce4
-@dirrmtry etc/xdg/xfce4/xfconf/xfce-perchannel-xml
-@dirrmtry etc/xdg/xfce4/xfconf
-@dirrmtry etc/xdg/xfce4
-@dirrmtry etc/xdg

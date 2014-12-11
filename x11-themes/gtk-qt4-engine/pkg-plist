@@ -11,8 +11,5 @@ share/locale/nn/LC_MESSAGES/gtkqtengine.mo
 share/locale/ru/LC_MESSAGES/gtkqtengine.mo
 share/locale/sv/LC_MESSAGES/gtkqtengine.mo
 share/locale/tr/LC_MESSAGES/gtkqtengine.mo
-@cwd %%LOCALBASE%%
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libqt4engine.so
-share/themes/Qt4/gtk-2.0/gtkrc
-@dirrm share/themes/Qt4/gtk-2.0
-@dirrm share/themes/Qt4
+%%LOCALBASE%%/lib/gtk-2.0/%%GTK2_VERSION%%/engines/libqt4engine.so
+%%LOCALBASE%%/share/themes/Qt4/gtk-2.0/gtkrc

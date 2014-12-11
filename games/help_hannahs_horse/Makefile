@@ -3,7 +3,7 @@
 
 PORTNAME=	help_hannahs_horse
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/hannah/hannah/hannah-${DISTVERSION}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

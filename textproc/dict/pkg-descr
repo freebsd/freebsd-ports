@@ -1,10 +1,10 @@
-The Dictionary Server Protocol (DICT) is a TCP transaction based
-query/response protocol that allows a client to access dictionary
-definitions from a set of natural language dictionary databases.
+The Dictionary Server Protocol (DICT) is a TCP transaction based query/response
+protocol that allows a client to access dictionary definitions from a set of
+natural language dictionary databases.
 
 RFC 2229 describes the DICT client/server protocol.
 
-dict(1) is a client which can access DICT servers from the
-command line.
+dict is a client which can access DICT servers from the command line.
 
 WWW: http://www.dict.org/
+WWW: http://sourceforge.net/projects/dict/

@@ -3,7 +3,7 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	1.1.28
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
@@ -15,7 +15,7 @@ COMMENT?=	The XSLT C library for GNOME
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gmake libtool:oldver pathfix
+USES+=		gmake libtool pathfix
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
@@ -47,6 +47,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[$$](bindir)/xsltproc|../xsltproc/xsltproc|g ; \
 		s|[$$](bindir)/xmllint|../xmllint/xmllint|g' \
 		${WRKSRC}/doc/Makefile.in
+
+.if !defined(MASTERDIR)
+post-stage:
+	${LN} -s libxslt.so.1 ${STAGEDIR}${PREFIX}/lib/libxslt.so.2
+	${LN} -s libexslt.so.0 ${STAGEDIR}${PREFIX}/lib/libexslt.so.8
+.endif
 
 .include <bsd.port.mk>
 

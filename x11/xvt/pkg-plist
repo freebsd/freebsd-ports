@@ -1,0 +1,11 @@
+@mode 4711
+bin/xvt
+bin/xvt-3.0.0
+@mode
+include/xvtlib.h
+lib/libxvt.a
+lib/libxvt.so
+lib/libxvt.so.1
+lib/libxvt.so.1.0.0
+man/man1/xvt.1.gz
+share/pixmaps/xvt.png

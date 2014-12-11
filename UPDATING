@@ -5,6 +5,78 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141209:
+  AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
+  AUTHOR: xmj@freebsd.org
+
+  The CentOS ports infrastructure has replaced Fedora 10 as default.
+
+  1. Please delete all remaining f10 ports/packages:
+
+     # pkg delete -f linux_base-f10 linux-f10-\*
+
+  2. Persistently update the Linux kernel version in /etc/sysctl.conf:
+
+     compat.linux.osrelease=2.6.18
+
+    This step is necessary on all FreeBSD versions, apart from 11.0-CURRENT
+    (after revision 271982).
+
+  3. Reinstall all software depending on Linux emulation.
+     As an example, reinstall linux-firefox:
+
+     # portmaster -r linux-firefox
+       or
+     # portupgrade -f www/linux-firefox
+       or
+     # pkg install linux-firefox
+
+  If difficulties are encountered, please follow the UPDATING entry 20140922
+  but skip step 2 (OVERRIDE_LINUX_BASE_PORT and OVERRIDE_LINUX_NONBASE_PORTS
+  in /etc/make.conf). In case these steps do not fix the issues, please submit
+  an issue report in Bugzilla and send an email to FreeBSD's emulation@ mailing
+  list.
+
+  Users who need to continue using Fedora 10 base and userland should do the
+  following instead:
+
+  1. Add these lines to /etc/make.conf:
+
+      OVERRIDE_LINUX_BASE_PORT=f10
+      OVERRIDE_LINUX_NONBASE_PORTS=f10
+
+  2. Downgrade the Linux kernel version in /etc/sysctl.conf on FreeBSD versions
+     newer than and including 11.0-CURRENT (after revision 271982).
+
+       compat.linux.osrelease=2.6.16
+
+  This is all that is needed to continue using an existing Fedora 10 Linux base
+  and userland.
+
+
+20141208:
+  AFFECTS: users of ports-mgmt/poudriere, ports-mgmt/poudriere-devel
+  AUTHOR: bdrewery@FreeBSD.org
+
+  8.4 jails created with Poudriere 3.1, or poudriere-devel-3.0.99.20141117
+  should be recreated with 'jail -d' and 'jail -c'. This fixes pkg(8)
+  crashes.
+
+20141205:
+  AFFECTS: users of polish/kadu
+  AUTHOR: pawel@FreeBSD.org
+
+  Before running kadu 1.x for the first time upstream developers
+  advise to backup your ~/.kadu directory.
+
+20141203:
+  AFFECTS: users of ports-mgmt/poudriere
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Poudriere has been updated to 3.1.0. See the release notes at
+  https://github.com/freebsd/poudriere/wiki/release_notes_31 for
+  information on changed features and required setup.
+
 20141130:
   AFFECTS: users of devel/gettext (close to everyone)
   AUTHOR: tijl@FreeBSD.org
@@ -26,12 +98,17 @@ you update your ports collection, before attempting any port upgrades.
   # pkg delete -f gettext
   # portinstall devel/gettext
 
+  Or for binary users:
+
+  # pkg delete -f gettext
+  # pkg upgrade
+
 20141127:
   AFFECTS: users of lang/perl5.*
   AUTHOR: mat@FreeBSD.org
 
   There was a nasty bug introduced in the update below, it was introduced in
-  svn revision 373476 and corrected in 373485.  If you get errors looking like
+  SVN revision 373476 and corrected in 373485.  If you get errors looking like
   this one:
 
   ===>   Registering installation for p5-Params-Util-1.07_1 as automatic
@@ -61,10 +138,10 @@ you update your ports collection, before attempting any port upgrades.
   With the recent split of multimedia/x264 in library and binary and library
   components, if an application that uses libx264 is updated before x264 itself,
   multimedia/libx264 will conflict with the existing x264 package. Delete
-  this package before continuing any update that depends on it: 
-  
-  # pkg delete -f x264
-  
+  this package before continuing any update that depends on it:
+
+	# pkg delete -f x264
+
   Install the updated x264 and/or upgrade the other applications that
   depend on libx264, such as ffmpeg.
 
@@ -354,7 +431,7 @@ you update your ports collection, before attempting any port upgrades.
   turned on by default to make such functionality available to users
   of binary packages.
 
-  Some care should be taken before upgrading by people not using lua
+  Some care should be taken before upgrading by people not using Lua
   to avoid the sample extensions.lua file from being loaded on reload
   after updating the asterisk port/pkg.
 
@@ -362,7 +439,7 @@ you update your ports collection, before attempting any port upgrades.
   to disable the option before updating.
 
   People using binary packages(or not wanting to disable the LUA
-  option in the port) not using the lua functionality should add:
+  option in the port) not using the Lua functionality should add:
 
   noload => pbx_lua.so
 
@@ -430,9 +507,9 @@ you update your ports collection, before attempting any port upgrades.
   (Replace libfoo\.la with the *.la file that is missing.)
 
   This command will print a list of *.la files that refer to the missing *.la
-  file and what package they belong to.  First, where it says "not found in the
-  datatbase", remove the *.la file.  After removing all such files, where it
-  says "installed by package X", rebuild X.  Eventually the list printed by
+  file and what package they belong to.  First, where it says "not found in
+  the database", remove the *.la file.  After removing all such files, where
+  it says "installed by package X", rebuild X.  Eventually the list printed by
   that command will be empty and the build error should be gone.
 
 20140826:
@@ -532,7 +609,7 @@ you update your ports collection, before attempting any port upgrades.
     or
   # portupgrade -fr graphics/ilmbase graphics/OpenEXR
 
-  The PORTREVISIONS of all ports that require ilmbase and/or OpenEXR
+  The PORTREVISIONs of all ports that require ilmbase and/or OpenEXR
   have been bumped.
 
 20140810:
@@ -958,6 +1035,21 @@ you update your ports collection, before attempting any port upgrades.
 
   # pkg set -o databases/postgresql90-client:databases/postgresql92-client
 
+20141208:
+  AFFECTS: users of databases/postgresql??-(server|client)
+  AUTHOR: marino@FreeBSD.org
+
+  PostgreSQL version 9.3 is now the default. To upgrade from a version
+  lower than 9.3, follow the instructions on the PostgreSQL.org website.
+  http://www.postgresql.org/docs/9.3/interactive/upgrading.html
+  Please note that the pg_upgrade program is installed by the
+  databases/postgresql93-contrib port
+
+  When using binary packages, if you only use the client port, you can
+  issue the following command to follow the default version:
+
+  # pkg set -o databases/postgresql92-client:databases/postgresql93-client
+
 20140528:
   AFFECTS: users of security/calife & security/calife-devel
   AUTHOR: roberto@FreeBSD.org
@@ -992,7 +1084,7 @@ you update your ports collection, before attempting any port upgrades.
 20140526:
   AFFECTS: users of lang/lua
 
-  lang/lua has been relaced by lang/lua51
+  lang/lua has been replaced by lang/lua51.
 
   For port builds system please follow the following instructions:
 

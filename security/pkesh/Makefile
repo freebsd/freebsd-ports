@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.daemonology.net/pkesh/
 MAINTAINER=	cperciva@FreeBSD.org
 COMMENT=	Public Key Encryption SHell script
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

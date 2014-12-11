@@ -12,4 +12,3 @@ lib/libxcb-ewmh.so.2
 lib/libxcb-ewmh.so.2.0.0
 libdata/pkgconfig/xcb-icccm.pc
 libdata/pkgconfig/xcb-ewmh.pc
-@dirrmtry include/xcb

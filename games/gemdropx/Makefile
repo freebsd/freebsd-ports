@@ -3,7 +3,7 @@
 
 PORTNAME=	gemdropx
 PORTVERSION=	0.9
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/gemdropx/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

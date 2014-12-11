@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	scintilla
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Full-featured free source code editing component for GTK+
+
+LICENSE=	SCINTILLA
+LICENSE_NAME=	License for Scintilla and SciTE
+LICENSE_FILE=	${WRKSRC}/../License.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
@@ -26,6 +31,9 @@ PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| -Os||g' ${WRKSRC}/makefile
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/scintilla

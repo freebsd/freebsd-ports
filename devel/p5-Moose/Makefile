@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1204
-PORTREVISION=	1
+PORTVERSION=	2.1402
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -21,7 +20,8 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Class-Load-XS>=0.01:${PORTSDIR}/devel/p5-Class-Load-XS \
 		p5-Data-OptList>=0.107:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
-		p5-Devel-StackTrace>=1.30:${PORTSDIR}/devel/p5-Devel-StackTrace \
+		p5-Devel-OverloadInfo>=0.002:${PORTSDIR}/devel/p5-Devel-OverloadInfo \
+		p5-Devel-StackTrace>=1.33:${PORTSDIR}/devel/p5-Devel-StackTrace \
 		p5-Eval-Closure>=0.04:${PORTSDIR}/devel/p5-Eval-Closure \
 		p5-List-MoreUtils>=0.28:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
@@ -35,11 +35,13 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
+TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
+		p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
 		p5-Declare-Constraints-Simple>=0:${PORTSDIR}/devel/p5-Declare-Constraints-Simple \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Module-Refresh>=0:${PORTSDIR}/devel/p5-Module-Refresh \
 		p5-SUPER>=0:${PORTSDIR}/devel/p5-SUPER \
+		p5-Test-CleanNamespaces>=0.13:${PORTSDIR}/devel/p5-Test-CleanNamespaces \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
@@ -58,6 +60,11 @@ post-patch:
 .if ${PERL_LEVEL} < 501600
 BUILD_DEPENDS+=	p5-Carp>=1.22:${PORTSDIR}/devel/p5-Carp
 RUN_DEPENDS+=	p5-Carp>=1.22:${PORTSDIR}/devel/p5-Carp
+.endif
+
+.if ${PERL_LEVEL} < 502000
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
 .include <bsd.port.post.mk>

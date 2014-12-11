@@ -1,13 +1,10 @@
 @sample(,bacula,640) %%ETCDIR%%/bacula-fd.conf.sample
 @sample(,bacula,640) %%ETCDIR%%/bconsole.conf.sample
 lib/libbac-%%LIB_VERSION%%.so
-lib/libbac.la
 lib/libbac.so
 lib/libbaccfg-%%LIB_VERSION%%.so
-lib/libbaccfg.la
 lib/libbaccfg.so
 lib/libbacfind-%%LIB_VERSION%%.so
-lib/libbacfind.la
 lib/libbacfind.so
 lib/bpipe-fd.so
 man/man8/bacula.8.gz

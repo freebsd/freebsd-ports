@@ -6,7 +6,6 @@ PORTVERSION=	1.8.4
 PORTREVISION=	1
 CATEGORIES=	games tk
 MASTER_SITES=	SUNSITE/games/solitaires
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version of the card game solitaire
@@ -15,6 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 

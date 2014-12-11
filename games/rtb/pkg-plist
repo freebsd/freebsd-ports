@@ -193,22 +193,3 @@ share/locale/ja/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pl/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pt/LC_MESSAGES/RealTimeBattle.mo
 share/locale/sv/LC_MESSAGES/RealTimeBattle.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Spanish
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/German
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/French
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/RealTimeBattle/Robots/xt-bot
-@dirrm lib/RealTimeBattle/Robots/thomas2
-@dirrm lib/RealTimeBattle/Robots/seek_and_destroy
-@dirrm lib/RealTimeBattle/Robots/rtb-team-framework
-@dirrm lib/RealTimeBattle/Robots/rotate_and_fire
-@dirrm lib/RealTimeBattle/Robots/raziel
-@dirrm lib/RealTimeBattle/Robots/perl-Skeleton
-@dirrm lib/RealTimeBattle/Robots/perl
-@dirrm lib/RealTimeBattle/Robots/joypad_robot
-@dirrm lib/RealTimeBattle/Robots/jBot
-@dirrm lib/RealTimeBattle/Robots/empty
-@dirrm lib/RealTimeBattle/Robots
-@dirrm lib/RealTimeBattle/Arenas
-@dirrm lib/RealTimeBattle
-@dirrm include/RealTimeBattle

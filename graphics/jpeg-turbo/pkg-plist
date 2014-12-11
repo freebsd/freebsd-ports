@@ -10,8 +10,8 @@
 @comment %%JPEG%%include/jpeglib.h
 @comment %%JPEG%%lib/libjpeg.a
 @comment %%JPEG%%lib/libjpeg.so
-%%JPEG%%lib/libjpeg.so.62
-%%JPEG%%lib/libjpeg.so.62.0.2
+@comment %%JPEG%%lib/libjpeg.so.8
+%%JPEG%%lib/libjpeg.so.8.0.2
 %%JPEG%%man/man1/cjpeg-turbo.1.gz
 %%JPEG%%man/man1/djpeg-turbo.1.gz
 %%JPEG%%man/man1/jpegtran-turbo.1.gz

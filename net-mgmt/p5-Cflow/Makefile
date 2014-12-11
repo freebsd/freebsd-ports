@@ -21,23 +21,12 @@ FLOW_TOOLS_NG_DESC=	Enable flow-tools-ng support
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.options.mk>
+FLOW_TOOLS_BUILD_DEPENDS=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
+FLOW_TOOLS_RUN_DEPENDS=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
+FLOW_TOOLS_NG_BUILD_DEPENDS=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools-ng
+FLOW_TOOLS_NG_RUN_DEPENDS=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools-ng
 
-.if ${PORT_OPTIONS:MFLOW_TOOLS}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
-RUN_DEPENDS+=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
-.endif
-
-.if ${PORT_OPTIONS:MFLOW_TOOLS_NG}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools-ng
-RUN_DEPENDS+=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools-ng
-.endif
-
-.if ${PORT_OPTIONS:MFLOW_TOOLS}||${PORT_OPTIONS:MFLOW_TOOLS_NG}
-CFLAGS+=	-I${LOCALBASE}/include -DOSU
-CONFIGURE_ARGS+=	\
-	"LDDLFLAGS= -shared -L${LOCALBASE}/lib -lft -lz" \
-	"INC= -I${LOCALBASE}/include" "LDLOADLIBS= -L${LOCALBASE}/lib -lft -lz"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|\.\./\.\./lib|${LOCALBASE}/lib|g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

@@ -57,27 +57,6 @@ pre-install:
 	@cd ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE} && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/lazcontrols/lib/%%BUILDNAME%%/${LCL_INTERFACE}/|' -e 's|//|/|' >> ${PLIST}
 
-.if ${PKGNAMESUFFIX} != "-lcl-units"
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}
-.endif
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/ideintf/units/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/ideintf/units/%%BUILDNAME%%" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/ideintf/units" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/ideintf" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit/units/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit/units/%%BUILDNAME%%" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit/units" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols/lib/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols/lib/%%BUILDNAME%%" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols/lib" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/lcl/units/%%BUILDNAME%%" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/lcl/units" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/lcl" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}

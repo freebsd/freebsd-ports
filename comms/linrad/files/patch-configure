@@ -1,6 +1,6 @@
---- configure.orig	2014-03-21 16:56:05.000000000 -0700
-+++ configure	2014-06-27 20:23:16.000000000 -0700
-@@ -1883,11 +1883,6 @@
+--- configure.orig	2014-11-04 02:25:00.000000000 -0800
++++ configure	2014-12-09 10:52:10.000000000 -0800
+@@ -1832,11 +1832,6 @@
  ELF32=""
  ELF64=""
  if test ${OS} != "Darwin"; then
@@ -12,7 +12,7 @@
    ELF64="-felf64"
    LIBEXT="so"
    S_OS_TYPE="OS_LINUX"
-@@ -1904,7 +1899,9 @@
+@@ -1853,7 +1848,9 @@
  fi
  
  # Find out whether we have gcc
@@ -23,12 +23,21 @@
  # Extract the first word of "${CC} ", so it can be a program name with args.
  set dummy ${CC} ; ac_word=$2
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
-@@ -4318,7 +4315,7 @@
- # Look for the libusb-1.0 package that we need for Perseus.
- LIBUSB1_32_OK="0"
- LIBUSB1_64_OK="0"
--X=`./libfind1 libusb-1.0.${LIBEXT}`
-+X=`./libfind1 libusb.${LIBEXT}`
- LIBUSB1_32_INC=`./libfind2 1 "$X"`
- LIBUSB1_64_INC=`./libfind2 2 "$X"`
- Y=`./libfind2 0 "$X"`
+@@ -4025,6 +4022,9 @@
+ ALSA64_OK="0"
+ ALSA32_INSTALLED="0"
+ ALSA64_INSTALLED="0"
++ALSA32_LD=""
++ALSA64_LD=""
++<<DISABLE_ALSA
+ ALSA32_LD="libasound.${LIBEXT}"
+ X=`./libfind1 libasound.${LIBEXT}`
+ ALSA32_INC=`./libfind2 1 "$X"`
+@@ -4090,6 +4090,7 @@
+     ALSA64_LD=""
+   fi
+ fi
++DISABLE_ALSA
+ 
+ 
+ 

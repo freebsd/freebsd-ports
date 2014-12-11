@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:S/_/-/}/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PAM module that can mount volumes for a user session
 
 LICENSE=	LGPL21 GPLv2

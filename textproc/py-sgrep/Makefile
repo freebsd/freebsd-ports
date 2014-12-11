@@ -16,9 +16,8 @@ COMMENT=	Python wrappers for Sgrep
 SGREP_VER=	1.94a
 WRKSRC=		${WRKDIR}/sgrep-${SGREP_VER}
 GNU_CONFIGURE=	yes
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 post-extract:
 	@${TAR} -zxf ${DISTDIR}/pysgrep-${PORTVERSION}.tar.gz -C ${WRKSRC}

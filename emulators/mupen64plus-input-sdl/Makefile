@@ -1,6 +1,7 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	3
 PKGNAMESUFFIX=	-input-sdl
 
 COMMENT=	Input plugin for Mupen64plus

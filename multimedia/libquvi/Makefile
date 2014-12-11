@@ -37,6 +37,8 @@ INSTALL_TARGET=	install-strip
 QUVI_VER=	0.9
 PLIST_SUB+=	VERSION=${QUVI_VER}
 
+PORTDOCS=	*
+
 PROJECTHOST=	quvi
 
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit

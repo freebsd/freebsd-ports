@@ -11,7 +11,7 @@ DISTNAME=	pylib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 

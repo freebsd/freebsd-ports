@@ -168,16 +168,3 @@ share/applications/lxshortcut.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libfm.mo
 share/mime/packages/libfm.xml
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tt_RU
-%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lg
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrm lib/libfm/modules
-@dirrm lib/libfm
-@dirrm include/libfm-%%MAJORVER%%
-@dirrmtry etc/xdg/libfm

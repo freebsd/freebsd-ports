@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.fhttpd.org/pub/qcread/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supports both color and B&W parallel-port Connectix QuickCam for PC
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 USE_CSTD=	gnu89
 

@@ -10,7 +10,7 @@ DISTFILES=	# none
 MAINTAINER=	shen.elf@gmail.com
 COMMENT=	Remove leaf packages
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}

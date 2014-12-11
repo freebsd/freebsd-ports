@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.4.24
+DISTVERSION=	0.2.5.10
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -19,18 +20,19 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
-OPTIONS_DEFINE=	BUFFEREVENTS BUFFREELISTS INSTR_DOWNLOADS \
+OPTIONS_DEFINE=	BUFFEREVENTS BUFFREELISTS INSTR_DOWNLOADS MEMPOOLS \
 		STATIC_TOR TCMALLOC THREADS TOR2WEB TRANSPARENT
 
 BUFFEREVENTS_DESC=	Use libevent's buffered IO
 BUFFREELISTS_DESC=	Freelists for buffer RAM
 INSTR_DOWNLOADS_DESC=	Instrument downloads for analysis
+MEMPOOLS_DESC=		Mempools for relay cells
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 TOR2WEB_DESC=		Faster but non-anonymous hidden services
 TRANSPARENT_DESC=	Transparent proxy support
 
-OPTIONS_DEFAULT=	BUFFREELISTS THREADS TRANSPARENT
+OPTIONS_DEFAULT=	THREADS TRANSPARENT
 
 USE_OPENSSL=	yes
 
@@ -68,6 +70,12 @@ CONFIGURE_ARGS+=	--disable-buf-freelists
 CONFIGURE_ARGS+=	--enable-instrument-downloads
 .else
 CONFIGURE_ARGS+=	--disable-instrument-downloads
+.endif
+
+.if ${PORT_OPTIONS:MMEMPOOLS}
+CONFIGURE_ARGS+=	--enable-mempools
+.else
+CONFIGURE_ARGS+=	--disable-mempools
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC_TOR}
@@ -121,7 +129,7 @@ post-patch:
 post-configure:
 	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|-lpthread|${PTHREAD_LIBS}|g"
-	@${REINPLACE_CMD} -e '\|^nodist_man1_MANS =|s|$$|$$(regular_mans:=.1)|' \
+	@${REINPLACE_CMD} -e '\|^nodist_man1_MANS =|s|$$|$$(install_mans:=.1)|' \
 		${WRKSRC}/Makefile
 
 .if ! ${PORT_OPTIONS:MTOR2WEB}

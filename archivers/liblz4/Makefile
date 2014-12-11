@@ -23,7 +23,7 @@ CONFLICTS=	lz4-*
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
-ALL_TARGET=	all liblz4 liblz4.pc
+ALL_TARGET=	default liblz4.pc
 SO_VER=		1.3.1
 
 post-patch:

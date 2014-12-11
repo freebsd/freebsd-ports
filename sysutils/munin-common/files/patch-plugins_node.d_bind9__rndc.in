@@ -1,0 +1,52 @@
+--- plugins/node.d/bind9_rndc.in.orig	2014-11-24 21:46:24 UTC
++++ plugins/node.d/bind9_rndc.in
+@@ -63,6 +63,7 @@ use strict;
+ my $rndc = defined($ENV{rndc}) ? $ENV{rndc} : '/usr/sbin/rndc';
+ my $querystats = $ENV{querystats} || '/var/run/named.stats';
+ my %IN;
++my @IN_KEYS;
+ 
+ # attempt to create log file if it doesn't exist
+ if ( ! -r $querystats ) {
+@@ -124,20 +125,13 @@ chomp $line;
+ if ($line eq '++ Incoming Requests ++') {
+     # new format
+ 
+-    %IN = (
+-           requests => 0,
+-           responses => 0,
+-           success => 0,
+-           auth_answer => 0,
+-           nonauth_answer => 0,
+-           nxrrset => 0,
+-           failure => 0,
+-           nxdomain => 0,
+-           recursion => 0,
+-           duplicates => 0,
+-           transfers => 0,
+-           rejections => 0,
+-          );
++    @IN_KEYS = ('requests', 'responses', 'success', 'auth_answer',
++                'nonauth_answer', 'nxrrset', 'failure', 'nxdomain',
++                'recursion', 'duplicates', 'transfers', 'rejections');
++    %IN = ();
++    for my $key (@IN_KEYS) {
++        $IN{$key} = 0;
++    }
+ 
+     # jump to server stats section
+     while ($line ne '++ Name Server Statistics ++') {
+@@ -197,11 +191,11 @@ if (defined($ARGV[0]) and ($ARGV[0] eq '
+     print "graph_vlabel queries / \${graph_period}\n";
+     print "graph_category BIND\n";
+ 
+-    for my $key (keys %IN) {
++    for my $key (@IN_KEYS) {
+         print "query_$key.label $key\n";
+         print "query_$key.type DERIVE\n";
+         print "query_$key.min 0\n";
+     }
+ } else {
+-    print "query_$_.value $IN{$_}\n" for keys %IN;
++    print "query_$_.value $IN{$_}\n" for @IN_KEYS;
+ }

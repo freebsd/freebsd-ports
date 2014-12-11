@@ -42,4 +42,3 @@ man/man1/zgrep.1.gz
 %%NLS%%share/nls/ru_RU.KOI8-R/grep.cat
 %%NLS%%share/nls/uk_UA.UTF-8/grep.cat
 %%NLS%%share/nls/zh_CN.UTF-8/grep.cat
-%%NLS%%@dirrmtry share/nls/gl_ES.ISO8859-1

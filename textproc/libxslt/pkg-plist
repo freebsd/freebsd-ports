@@ -25,12 +25,14 @@ include/libxslt/xsltexports.h
 include/libxslt/xsltlocale.h
 include/libxslt/xsltutils.h
 lib/libexslt.a
-lib/libexslt.la
 lib/libexslt.so
+lib/libexslt.so.0
+lib/libexslt.so.0.8.17
 lib/libexslt.so.8
 lib/libxslt.a
-lib/libxslt.la
 lib/libxslt.so
+lib/libxslt.so.1
+lib/libxslt.so.1.1.28
 lib/libxslt.so.2
 lib/xsltConf.sh
 libdata/pkgconfig/libexslt.pc

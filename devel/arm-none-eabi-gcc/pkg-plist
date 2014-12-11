@@ -7,6 +7,11 @@ bin/%%GCC_TARGET%%-gcc-ar
 bin/%%GCC_TARGET%%-gcc-nm
 bin/%%GCC_TARGET%%-gcc-ranlib
 bin/%%GCC_TARGET%%-gcov
+lib/gcc/%%GCC_TARGET%%/4.9.1/libgcc.a
+lib/gcc/%%GCC_TARGET%%/4.9.1/crtbegin.o
+lib/gcc/%%GCC_TARGET%%/4.9.1/crtend.o
+lib/gcc/%%GCC_TARGET%%/4.9.1/crti.o
+lib/gcc/%%GCC_TARGET%%/4.9.1/crtn.o
 lib/gcc/%%GCC_TARGET%%/4.9.1/include-fixed/README
 lib/gcc/%%GCC_TARGET%%/4.9.1/include-fixed/limits.h
 lib/gcc/%%GCC_TARGET%%/4.9.1/include-fixed/syslimits.h

@@ -29,6 +29,3 @@ share/applications/LinM.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.ko_utf8
 share/locale/ko/LC_MESSAGES/linm.mo
 share/pixmaps/linm.xpm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry etc/profile.d
-@dirrm %%ETCDIR%%

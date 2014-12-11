@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Spellathon%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Word game to test your English vocabulary skills
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libpcre.so:${PORTSDIR}/devel/pcre \
@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_WRKSRC=	${WRKSRC}/src/gui
 
-DESKTOP_ENTRIES="Spellathon" "${COMMENT}" "" "${PORTNAME}" "Education;Languages;" "true"
+DESKTOP_ENTRIES="Spellathon" "" "" "${PORTNAME}" "Education;Languages;" true
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \

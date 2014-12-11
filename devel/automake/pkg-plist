@@ -115,8 +115,3 @@ share/automake-%%BUILD_VERSION%%/test-driver
 share/automake-%%BUILD_VERSION%%/texinfo.tex
 share/automake-%%BUILD_VERSION%%/ylwrap
 @dir share/aclocal
-@dirrm share/aclocal-%%BUILD_VERSION%%/internal
-@dirrm share/aclocal-%%BUILD_VERSION%%
-@dirrm share/automake-%%BUILD_VERSION%%/Automake
-@dirrm share/automake-%%BUILD_VERSION%%/am
-@dirrm share/automake-%%BUILD_VERSION%%

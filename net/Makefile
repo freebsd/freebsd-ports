@@ -153,16 +153,16 @@
     SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
-    SUBDIR += googlecl
     SUBDIR += google-cloud-sdk
     SUBDIR += google-daemon
+    SUBDIR += googlecl
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gpxe
     SUBDIR += gq
     SUBDIR += grdesktop
-    SUBDIR += grilo-plugins
     SUBDIR += grilo
+    SUBDIR += grilo-plugins
     SUBDIR += grive
     SUBDIR += grsync
     SUBDIR += gsk
@@ -753,6 +753,7 @@
     SUBDIR += p5-XML-Fast
     SUBDIR += p5-XML-RPC
     SUBDIR += p5-XML-RPC-Fast
+    SUBDIR += p5-XMLRPC-Lite
     SUBDIR += p5-XPC
     SUBDIR += p5-ZConf
     SUBDIR += p5-ZConf-Bookmarks
@@ -1011,6 +1012,7 @@
     SUBDIR += rubygem-fog-sakuracloud
     SUBDIR += rubygem-fog-softlayer
     SUBDIR += rubygem-fog-terremark
+    SUBDIR += rubygem-fog-vmfusion
     SUBDIR += rubygem-fog-voxel
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitlab_omniauth-ldap
@@ -1020,9 +1022,9 @@
     SUBDIR += rubygem-iproto
     SUBDIR += rubygem-lita-gems
     SUBDIR += rubygem-macaddr
-    SUBDIR += rubygem-netrc
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
+    SUBDIR += rubygem-netrc
     SUBDIR += rubygem-network_interface
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
@@ -1037,9 +1039,11 @@
     SUBDIR += rubygem-omniauth-twitter
     SUBDIR += rubygem-open-uri-cached
     SUBDIR += rubygem-openid
+    SUBDIR += rubygem-opennebula
     SUBDIR += rubygem-packetfu
     SUBDIR += rubygem-pcaprub
     SUBDIR += rubygem-rabbiter
+    SUBDIR += rubygem-rbvmomi
     SUBDIR += rubygem-rightaws
     SUBDIR += rubygem-rightflexiscale
     SUBDIR += rubygem-rightgogrid

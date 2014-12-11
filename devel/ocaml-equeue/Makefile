@@ -11,10 +11,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	michipili@gmail.com
 COMMENT=	The Equeue library for OCaml
 
-LICENSE=	EULA
-LICENSE_NAME=	End User License Agreement
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib

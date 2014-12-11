@@ -375,8 +375,8 @@
     SUBDIR += openscep
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
-    SUBDIR += openssh-portable66
     SUBDIR += openssh-portable-base
+    SUBDIR += openssh-portable66
     SUBDIR += openssl
     SUBDIR += openssl_tpm_engine
     SUBDIR += openvas-client
@@ -734,6 +734,7 @@
     SUBDIR += pktsuckers
     SUBDIR += please
     SUBDIR += polarssl
+    SUBDIR += polarssl13
     SUBDIR += poly1305aes
     SUBDIR += pond
     SUBDIR += portsentry
@@ -883,7 +884,11 @@
     SUBDIR += rubygem-gssapi
     SUBDIR += rubygem-hmac
     SUBDIR += rubygem-jugyo-twitter_oauth
+    SUBDIR += rubygem-metasploit-concern
+    SUBDIR += rubygem-metasploit-credential
+    SUBDIR += rubygem-metasploit-model
     SUBDIR += rubygem-metasploit_data_models
+    SUBDIR += rubygem-meterpreter_bins
     SUBDIR += rubygem-net-scp
     SUBDIR += rubygem-net-scp11
     SUBDIR += rubygem-net-sftp
@@ -897,6 +902,7 @@
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-rc4
+    SUBDIR += rubygem-recog
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-ruby-hmac
     SUBDIR += rubygem-six

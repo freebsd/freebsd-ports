@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	Database library for PHP
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 
 USE_PHP=	pcre
 

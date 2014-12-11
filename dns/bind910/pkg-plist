@@ -122,6 +122,7 @@ include/isc/buffer.h
 include/isc/bufferlist.h
 include/isc/commandline.h
 include/isc/condition.h
+include/isc/counter.h
 include/isc/crc64.h
 include/isc/dir.h
 include/isc/entropy.h
@@ -408,7 +409,7 @@ sbin/rndc
 sbin/rndc-confgen
 sbin/tsig-keygen
 %%ETCDIR%%/rndc.conf.sample
-%%NOBASE%%%%ETCDIR%%/bind.keys
+%%ETCDIR%%/bind.keys
 %%NOBASE%%@sample %%ETCDIR%%/named.conf.sample
 %%NOBASE%%%%ETCDIR%%/named.root
 %%NOBASE%%%%ETCDIR%%/master/empty.db

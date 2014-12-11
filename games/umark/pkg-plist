@@ -41,9 +41,3 @@ bin/umark
 %%DATADIR%%/html/headtrim.png
 %%DATADIR%%/pixmaps/umark.png
 %%DATADIR%%/pixmaps/umark_icon.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%/data/UT2004
-@dirrm %%DATADIR%%/data/UT2003
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%

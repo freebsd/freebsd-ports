@@ -524,35 +524,3 @@ share/locale/vi/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/libgda-%%VERSION%%.mo
-@dirrm share/libgda-%%VERSION%%/web
-@dirrm share/libgda-%%VERSION%%/php
-@dirrm share/libgda-%%VERSION%%/gda_trml2pdf
-@dirrm share/libgda-%%VERSION%%/gda_trml2html
-@dirrm share/libgda-%%VERSION%%/dtd
-@dirrm share/libgda-%%VERSION%%/
-@dirrm share/gnome/help/gda-sql/C
-@dirrm share/gnome/help/gda-sql
-@dirrm share/doc/libgda-%%VERSION%%
-@dirrm lib/libgda-%%VERSION%%/providers
-@dirrm lib/libgda-%%VERSION%%
-@dirrm include/libgda-%%VERSION%%/libgda/virtual
-@dirrm include/libgda-%%VERSION%%/libgda/thread-wrapper
-@dirrm include/libgda-%%VERSION%%/libgda/sqlite
-@dirrm include/libgda-%%VERSION%%/libgda/sql-parser
-@dirrm include/libgda-%%VERSION%%/libgda/providers-support
-@dirrm include/libgda-%%VERSION%%/libgda/handlers
-@dirrm include/libgda-%%VERSION%%/libgda-xslt
-@dirrm include/libgda-%%VERSION%%/libgda-report
-@dirrm include/libgda-%%VERSION%%/libgda
-@dirrm include/libgda-%%VERSION%%
-@dirrmtry etc/libgda-%%VERSION%%
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia

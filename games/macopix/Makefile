@@ -11,6 +11,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window sitter for X11
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff

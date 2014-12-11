@@ -3,14 +3,14 @@
 
 PORTNAME=	paintown
 PORTVERSION=	3.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Fighting game similar to Streets of Rage and TMNT
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro \
 		libpng.so:${PORTSDIR}/graphics/png \

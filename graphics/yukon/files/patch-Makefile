@@ -1,0 +1,51 @@
+--- Makefile.orig	2007-07-31 17:10:01 UTC
++++ Makefile
+@@ -1,15 +1,14 @@
+ 
+ DESTDIR  = 
+-PREFIX   = /usr/local
+ LIBDIR   = lib
+ 
+-CC       = gcc
+-CFLAGS   = -Iinclude -Wall -std=c99 -O3
++CC       ?= gcc
++CFLAGS   = -I${PWD}/include -Wall -std=c99 -I$(LOCALBASE)/include -L$(LOCALBASE)/lib
+ 
+ OBJS     = src/core/conf.o src/core/glue.o src/core/log.o
+ LIBS     = libX11.so libGL.so
+ 
+--include config.make
++###-include config.make
+ 
+ .PHONY: all clean install
+ all: $(LIBS) yukon-core-lib sysconf
+@@ -23,19 +22,24 @@ $(LIBS):
+ 	rm -f $@.native
+ 
+ yukon-core-lib: $(OBJS)
+-	$(CC) -shared -o $@ $(OBJS) -lseom
++	$(CC) -shared -o $@ $(OBJS) -lseom -L${LOCALBASE}/lib
+ 
+ sysconf:
+ 	echo 'LDPATH="$(PREFIX)/$(LIBDIR)/yukon"' > $@
+ 
+-soname = `objdump -x /usr/$(LIBDIR)/$(1) | grep SONAME | awk '{ print $$2 }'`
++soname = `objdump -x $(PREFIX)/$(LIBDIR)/$(1) | grep SONAME | awk '{ print $$2 }'`
+ install: $(LIBS) yukon-core-lib
+ 	install -m 755 -d $(DESTDIR)$(PREFIX)/bin $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon
+ 	install -m 755 src/scripts/yukon $(DESTDIR)$(PREFIX)/bin
+ 	install -m 755 yukon-core-lib $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon
+-
+-	$(foreach lib,$(LIBS),ln -sf /usr/$(LIBDIR)/$(lib) $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon/$(lib).native;)
+-	$(foreach lib,$(LIBS),install -m 755 $(lib) $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon/$(call soname,$(lib));)
++	ln -sf $(LOCALBASE)/lib/libX11.so.$(LIBX11_MAJOR) \
++	    $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon/libX11.so.native
++	ln -sf $(LOCALBASE)/lib/libGL.so.$(LIBGL_MAJOR) \
++	    $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon/libGL.so.native
++	install -m 755 libX11.so \
++	    $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon/libX11.so.$(LIBX11_MAJOR)
++	install -m 755 libGL.so \
++	    $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon/libGL.so.$(LIBGL_MAJOR)
+ 
+ clean:
+ 	rm -f $(OBJS) $(LIBS) yukon-core-lib sysconf

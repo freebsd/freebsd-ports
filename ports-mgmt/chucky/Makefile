@@ -16,7 +16,7 @@ LICENSE_NAME=	CHUCKY BSD LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpkg.so:${PORTSDIR}/ports-mgmt/pkg \
+LIB_DEPENDS=	libpkg.so:${PORTSDIR}/${PKG_ORIGIN} \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USE_GITHUB=	yes

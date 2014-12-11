@@ -25,9 +25,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--prefix=${PREFIX}
-USES=	python:2.7 desktop-file-utils gettext shebangfix cpe
+USES=	python:2.7 desktop-file-utils gettext shebangfix
 USE_PYTHON=	distutils autoplist
-CPE_VENDOR=	redhat
 
 USE_GNOME=	introspection:run intltool librsvg2 pygobject3
 

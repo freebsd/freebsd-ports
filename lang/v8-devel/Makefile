@@ -13,10 +13,11 @@ COMMENT=	Open source JavaScript engine by Google
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
 
 CONFLICTS_INSTALL=	v8-[0-9]*
+
+ONLY_FOR_ARCHS=	i386 amd64
 
 ALL_TARGET=	native
 MAKE_ARGS=	library=shared use_system_icu=on
@@ -26,7 +27,7 @@ USES=		compiler cpe execinfo gmake python:2 shebangfix tar:xz
 
 CPE_VENDOR=	google
 
-SHEBANG_FILES=	${WRKSRC}/build/gyp/gyp
+SHEBANG_FILES=	build/gyp/gyp
 bash_CMD=	${SH}
 
 .include <bsd.port.pre.mk>
@@ -37,19 +38,24 @@ MAKE_ARGS+=	clang=on
 MAKE_ENV+=	LINK=clang++ AR=/usr/bin/ar
 .if ${COMPILER_VERSION} >= 33
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
-.endif
 .if ${COMPILER_VERSION} >= 34
 CFLAGS+=	-Wno-unused-const-variable
+.if ${COMPILER_VERSION} >= 35
+CFLAGS+=	-Wno-tautological-undefined-compare
+.endif
+.endif
 .endif
 .else
 MAKE_ARGS+=	strictaliasing=off
 USE_GCC=	any
 .endif
 
-ONLY_FOR_ARCHS=	i386 amd64
-
 post-patch:
-	@${REINPLACE_CMD} -e '/^exec python / s| python | ${PYTHON_CMD} |' ${WRKSRC}/build/gyp/gyp
+	@${REINPLACE_CMD} -e 's|test/cctest/cctest.gyp||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/test\/cctest\/cctest.gyp/d' ${WRKSRC}/build/all.gyp
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/build/shim_headers.gypi ${WRKSRC}/build/gyp/gyp ${WRKSRC}/tools/gyp/v8.gyp
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/build/toolchain.gypi ${WRKSRC}/tools/gyp/v8.gyp
+	@${REINPLACE_CMD} -e 's, | MAP_NORESERVE,,' ${WRKSRC}/src/platform-freebsd.cc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${STAGEDIR}${PREFIX}/bin/d8

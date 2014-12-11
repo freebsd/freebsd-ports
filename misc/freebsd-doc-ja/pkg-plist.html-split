@@ -134,7 +134,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-configfiles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-core-configuration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-disk.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-initial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-kernel-limits.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-starting-services.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-sysctl.html

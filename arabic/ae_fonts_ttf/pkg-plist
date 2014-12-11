@@ -43,10 +43,3 @@ lib/X11/fonts/ae_fonts1/Shmookh/ae_Ouhod.ttf
 lib/X11/fonts/ae_fonts1/Shmookh/ae_Rehan.ttf
 lib/X11/fonts/ae_fonts1/Shmookh/ae_Sharjah.ttf
 lib/X11/fonts/ae_fonts1/Shmookh/ae_Tarablus.ttf
-@dirrm lib/X11/fonts/ae_fonts1/Shmookh
-@dirrm lib/X11/fonts/ae_fonts1/MCS
-@dirrm lib/X11/fonts/ae_fonts1/Kasr
-@dirrm lib/X11/fonts/ae_fonts1/FS
-@dirrm lib/X11/fonts/ae_fonts1/AGA
-@dirrm lib/X11/fonts/ae_fonts1/AAHS
-@dirrm lib/X11/fonts/ae_fonts1

@@ -3,5 +3,3 @@ bin/quotesmailer
 etc/quotesrc.sample
 %%PORTDOCS%%%%DOCSDIR%%/quotes.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/QuExample.pm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

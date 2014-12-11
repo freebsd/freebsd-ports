@@ -28,9 +28,9 @@ bin/rgb2gif
 bin/text2gif
 include/gif_lib.h
 lib/libgif.a
-lib/libgif.la
 lib/libgif.so
-lib/libgif.so.5
+lib/libgif.so.4
+lib/libgif.so.4.1.7
 man/man1/gif2rgb.1.gz
 %%X11%%man/man1/gif2x11.1.gz
 man/man1/gifasm.1.gz

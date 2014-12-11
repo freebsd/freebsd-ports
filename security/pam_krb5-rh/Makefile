@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-rh
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	The Red Hat Pluggable Authentication Module for Kerberos 5
 
-LICENSE=	LGPL21 BSD
+LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	dual
 
 CONFLICTS=	pam_krb5-4.*

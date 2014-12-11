@@ -1,7 +1,6 @@
 etc/esecannarc
 @dir lib/esecanna
 sbin/esecannaserver
-@mkdir /var/run/esecanna
 %%PORTDOCS%%share/doc/esecanna/CREDITS
 %%PORTDOCS%%share/doc/esecanna/CHANGES.jp
 %%PORTDOCS%%share/doc/esecanna/README.First.jp

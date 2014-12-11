@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.7.7
-PORTREVISION=	1
+PORTVERSION=	1.7.8
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -14,7 +13,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES+=		cpe
 

@@ -112,14 +112,3 @@
 %%SEARCHDIR%%/confdef.pl
 @group
 @owner
-@dirrm %%SEARCHDIR%%/tools/prosearch/files
-@dirrm %%SEARCHDIR%%/tools/prosearch
-@dirrm %%SEARCHDIR%%/tools
-@dirrm %%SEARCHDIR%%/web/img
-@dirrm %%SEARCHDIR%%/web/lib
-@dirrm %%SEARCHDIR%%/doc
-@dirrm %%SEARCHDIR%%/example
-@dirrm %%SEARCHDIR%%/lib
-@dirrm %%SEARCHDIR%%/t
-@dirrmtry %%SEARCHDIR%%/web
-@dirrmtry %%SEARCHDIR%%

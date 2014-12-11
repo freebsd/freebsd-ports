@@ -9,7 +9,7 @@
 # dictd_enable="YES"
 #
 
-dictd_enable=${dictd_enable-"NO"}
+dictd_enable=${dictd_enable:-"NO"}
 
 . /etc/rc.subr
 

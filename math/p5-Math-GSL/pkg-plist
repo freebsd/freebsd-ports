@@ -124,6 +124,7 @@ bin/smolder_smoke_signal
 %%PERL5_MAN3%%/Math::GSL::Heapsort.3.gz
 %%PERL5_MAN3%%/Math::GSL::Histogram.3.gz
 %%PERL5_MAN3%%/Math::GSL::Histogram2D.3.gz
+%%PERL5_MAN3%%/Math::GSL::IEEEUtils.3.gz
 %%PERL5_MAN3%%/Math::GSL::Integration.3.gz
 %%PERL5_MAN3%%/Math::GSL::Interp.3.gz
 %%PERL5_MAN3%%/Math::GSL::Linalg.3.gz

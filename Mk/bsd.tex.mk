@@ -507,11 +507,13 @@ TEX_FORMAT_PDFTEX_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/pdfetex.log \
 	${TEXMFVARDIR}/web2c/pdftex/pdfetex.fmt
 TEX_FORMAT_PDFTEX_BIN= \
+	bin/etex \
 	bin/pdfetex
 TEX_FORMAT_PDFTEX_DIRS= \
 	${TEXMFVARDIR}/web2c/pdftex
 post-install-pdftex:
 	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/pdfetex
+	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/etex
 
 TEX_FORMAT_PTEX?= \
 	"ptex ptex - ptex.ini" \

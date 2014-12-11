@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	PostgreSQL PQ Protocol Modules
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist

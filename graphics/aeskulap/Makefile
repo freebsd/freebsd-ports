@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.bms-austria.com/%7Epipelka/${PORTNAME}/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medical image viewer
 
 LICENSE=	GPLv2

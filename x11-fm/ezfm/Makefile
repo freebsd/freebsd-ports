@@ -8,7 +8,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTNAME=	EZFM-${PORTVERSION:R}-src
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EZWGL-based file manager for X Window System
 
 LICENSE=	GPLv2

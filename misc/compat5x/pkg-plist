@@ -209,6 +209,3 @@ lib/compat/snmp_netgraph.so.2
 %%AMD64%%lib32/compat/snmp_mibII.so.2
 %%AMD64%%lib32/compat/snmp_netgraph.so.2
 %%AMD64%%@exec %%LDCONFIG_LIB32%% -m %D/lib32/compat
-%%AMD64%%@dirrmtry lib32/compat
-%%AMD64%%@dirrmtry lib32
-@dirrmtry lib/compat

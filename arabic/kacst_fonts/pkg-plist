@@ -13,4 +13,3 @@ lib/X11/fonts/kacst_fonts/KacstScreen.ttf
 lib/X11/fonts/kacst_fonts/KacstTitle.ttf
 lib/X11/fonts/kacst_fonts/KacstTitleL.ttf
 lib/X11/fonts/kacst_fonts/fonts.dir
-@dirrm lib/X11/fonts/kacst_fonts

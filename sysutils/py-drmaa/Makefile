@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	i@levsha.me
 COMMENT=	Interact with DRMAA-compliant distributed resource management systems
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 PROJECTHOST=	drmaa-python
 
 USES=		python

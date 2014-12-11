@@ -28,10 +28,10 @@ index 4165a75..81914d5 100644
  #if defined(XP_MACOSX)
    nsAutoString binaryName = NS_LITERAL_STRING("lib") + baseName + NS_LITERAL_STRING(".dylib");
 diff --git content/media/gmp/GMPParent.cpp content/media/gmp/GMPParent.cpp
-index e63453e..bf83b30 100644
+index aa60acf..90878ca 100644
 --- mozilla/content/media/gmp/GMPParent.cpp
 +++ mozilla/content/media/gmp/GMPParent.cpp
-@@ -87,23 +87,16 @@
+@@ -90,23 +90,16 @@
    mService = aService;
    mDirectory = aPluginDir;
  
@@ -49,7 +49,7 @@ index e63453e..bf83b30 100644
    if (NS_FAILED(rv)) {
      return rv;
    }
-   LOGD(("%s::%s: %p for %s", __CLASS__, __FUNCTION__, this, 
+   LOGD(("%s::%s: %p for %s", __CLASS__, __FUNCTION__, this,
 -       NS_LossyConvertUTF16toASCII(parentLeafName).get()));
 +       NS_LossyConvertUTF16toASCII(leafname).get()));
  

@@ -3,11 +3,11 @@ bin/arithmetic
 bin/atc
 bin/backgammon
 bin/battlestar
-bin/bs
+bin/bs-game
 bin/canfield
 bin/cfscores
 bin/cribbage
-bin/fish
+bin/fish-game
 bin/hack
 bin/hangman
 bin/hunt
@@ -35,11 +35,11 @@ man/man6/arithmetic.6.gz
 man/man6/atc.6.gz
 man/man6/backgammon.6.gz
 man/man6/battlestar.6.gz
-man/man6/bs.6.gz
+man/man6/bs-game.6.gz
 man/man6/canfield.6.gz
 man/man6/cfscores.6.gz
 man/man6/cribbage.6.gz
-man/man6/fish.6.gz
+man/man6/fish-game.6.gz
 man/man6/hack.6.gz
 man/man6/hangman.6.gz
 man/man6/hunt.6.gz
@@ -106,10 +106,6 @@ share/games/quiz.db/ucc
 share/games/cribbage.instr
 share/games/fish.instr
 share/games/wump.info
-@dirrm share/games/atc
-@dirrm share/games/larn
-@dirrm share/games/quiz.db
-@dirrm share/games
 @group games
 @mode 664
 @sample /var/games/atc_score.sample
@@ -138,13 +134,13 @@ share/games/wump.info
 @sample /var/games/snakerawscores.sample
 @sample /var/games/snake.log.sample
 @mode 0775
-@dirrmtry /var/games/phantasia
-@dirrmtry /var/games/larn
+@dir /var/games/phantasia
+@dir /var/games/larn
 @mode 0770
-@dirrmtry /var/games/hackdir/save
+@dir /var/games/hackdir/save
 @mode 0775
-@dirrmtry /var/games/hackdir
-@dirrmtry /var/games/battlestar
-@dirrmtry /var/games/atc
+@dir /var/games/hackdir
+@dir /var/games/battlestar
+@dir /var/games/atc
 @group wheel
 @mode

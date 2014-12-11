@@ -101,6 +101,3 @@ share/doc/gbottler-%%VERSION%%/ChangeLog
 share/doc/gbottler-%%VERSION%%/README
 share/doc/gbottler-%%VERSION%%/README.bottler
 share/doc/gbottler-%%VERSION%%/TODO
-@dirrm share/doc/gbottler-%%VERSION%%
-@dirrm lib/gbottler-%%VERSION%%/viewer
-@dirrm lib/gbottler-%%VERSION%%

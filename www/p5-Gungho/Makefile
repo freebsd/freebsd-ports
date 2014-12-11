@@ -3,7 +3,7 @@
 
 PORTNAME=	Gungho
 PORTVERSION=	0.09.008
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -46,8 +46,9 @@ BUILD_DEPENDS=	p5-Best>=0:${PORTSDIR}/devel/p5-Best \
 		p5-UNIVERSAL-isa>=0.06:${PORTSDIR}/devel/p5-UNIVERSAL-isa
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+SHEBANG_FILES=	script/*
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/script/gungho ${STAGEDIR}${PREFIX}/bin/gungho

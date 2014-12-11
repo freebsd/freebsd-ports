@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jjachuf@gmail.com
 COMMENT=	Firebird RDBMS bindings for Python
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 LIB_DEPENDS=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
 

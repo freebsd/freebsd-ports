@@ -88,6 +88,3 @@ lib/libtextcat.so.0.0.0
 %%DATADIR%%/LM/welsh.lm
 %%DATADIR%%/LM/yiddish-utf.lm
 %%DATADIR%%/conf.txt
-@dirrm %%DATADIR%%/LM
-@dirrm %%DATADIR%%
-@dirrm include/libtextcat

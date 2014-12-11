@@ -1,6 +1,15 @@
---- inc/GSLBuilder.pm.orig	2011-09-18 00:40:52.000000000 +0800
-+++ inc/GSLBuilder.pm	2011-09-20 10:26:22.405819397 +0800
-@@ -258,7 +258,7 @@
+--- inc/GSLBuilder.pm.orig	2014-09-25 17:36:46 UTC
++++ inc/GSLBuilder.pm
+@@ -266,7 +266,7 @@ sub link_c {
+       }
+     }
+ 
+-    my @lddlflags = $self->split_like_shell($cf->{lddlflags});
++    my @lddlflags = $self->split_like_shell($Config{lddlflags});
+     my @shrp = $self->split_like_shell($cf->{shrpenv});
+     my @ld = $self->split_like_shell($cf->{ld} || $Config{cc});
+ 
+@@ -298,7 +298,7 @@ sub compile_c {
  
    $cf->{installarchlib} = $Config{archlib};
  

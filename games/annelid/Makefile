@@ -3,7 +3,7 @@
 
 PORTNAME=	annelid
 PORTVERSION=	1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.garthgillespie.com/annelid/
 DISTFILES=	${PORTNAME}-src${EXTRACT_SUFX} \
@@ -14,7 +14,7 @@ COMMENT=	Remake of the ubiquitous "Snake" and "Worm" games
 
 RESTRICTED=	No redistribution allowed
 
-USES=	gmake zip
+USES=		gmake zip
 USE_SDL=	sdl
 USE_GL=		gl
 NO_WRKSUBDIR=	yes

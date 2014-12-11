@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -23,7 +23,7 @@ RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 		${LOCALBASE}/share/xml/dtd/xhtml/xhtml.soc:${PORTSDIR}/textproc/xhtml \
 		docbook-xsl-ns>=1.78.1_4:${PORTSDIR}/textproc/docbook-xsl-ns \
 		${LOCALBASE}/share/xsl/iso-schematron/xslt1/iso_schematron_skeleton_for_xslt1.xsl:${PORTSDIR}/textproc/iso-schematron-xslt \
-		${LOCALBASE}/share/xml/docbook/5.0:${PORTSDIR}/textproc/docbook-xml \
+		${LOCALBASE}/share/xml/docbook/catalog:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser \
 		zip:${PORTSDIR}/archivers/zip
@@ -35,50 +35,39 @@ DEPENDS_ARGS+=	BATCH=yes
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=		X11 CJK SVN IGOR FOP JING DBLATEX
-OPTIONS_DEFAULT=	X11 CJK SVN IGOR
-CJK_DESC=		CJK (Simplified Chinese Language) support
+OPTIONS_DEFAULT=	X11 CJK     IGOR
+.if !exists(/usr/bin/svnlite)
+OPTIONS_DEFAULT+=	SVN
+.endif
+CJK_DESC=		CJK support
+CJK_RUN_DEPENDS=	html2text:${PORTSDIR}/textproc/html2text
 SVN_DESC=		Subversion support (required to check out sources)
+SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 IGOR_DESC=		Igor automated proofreader for documentation
+IGOR_RUN_DEPENDS=	igor:${PORTSDIR}/textproc/igor
 FOP_DESC=		FOP PDF renderer (requires Java)
+FOP_RUN_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
+			${FONTS}
 JING_DESC=		Jing for advanced RELAX NG validation (optional)
+JING_RUN_DEPENDS=	jing:${PORTSDIR}/textproc/jing
 DBLATEX_DESC=		dblatex PDF renderer (experimental, requires TeXLive)
+DBLATEX_RUN_DEPENDS=	dblatex:${PORTSDIR}/textproc/dblatex \
+			${FONTS}
+DBLATEX_USE=		TEX=xetex
+
+FONTS=	${LOCALBASE}/lib/X11/fonts/GentiumPlus/GentiumPlus-R.ttf:${PORTSDIR}/x11-fonts/gentium-plus \
+	${LOCALBASE}/lib/X11/fonts/Droid/DroidSans.ttf:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
+	${LOCALBASE}/lib/X11/fonts/Lohit/Lohit-Bengali.ttf:${PORTSDIR}/x11-fonts/lohit \
+	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSansMono.ttf:${PORTSDIR}/x11-fonts/dejavu
+FONTS_CJK=${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
+	${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSVN}
-RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-.endif
-
-.if ${PORT_OPTIONS:MIGOR}
-RUN_DEPENDS+=	igor:${PORTSDIR}/textproc/igor
-.endif
-
-.if ${PORT_OPTIONS:MCJK}
-RUN_DEPENDS+=	html2text:${PORTSDIR}/textproc/html2text
-.endif
-
-.if ${PORT_OPTIONS:MFOP}
-RUN_DEPENDS+=	fop:${PORTSDIR}/textproc/fop
-.endif
-
-.if ${PORT_OPTIONS:MJING}
-RUN_DEPENDS+=	jing:${PORTSDIR}/textproc/jing
-.endif
-
-.if ${PORT_OPTIONS:MDBLATEX}
-USE_TEX=	texlive xetex
-RUN_DEPENDS+=	dblatex:${PORTSDIR}/textproc/dblatex
-.endif
-
 .if ${PORT_OPTIONS:MFOP} || ${PORT_OPTIONS:MDBLATEX}
 ONLY_FOR_ARCHS=	amd64 i386
-RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/GentiumPlus/GentiumPlus-R.ttf:${PORTSDIR}/x11-fonts/gentium-plus
-RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/Droid/DroidSans.ttf:${PORTSDIR}/x11-fonts/droid-fonts-ttf
-RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/Lohit/Lohit-Bengali.ttf:${PORTSDIR}/x11-fonts/lohit
-RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSansMono.ttf:${PORTSDIR}/x11-fonts/dejavu
 .if ${PORT_OPTIONS:MCJK}
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese/arphicttf
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa
+RUN_DEPENDS+=	${FONTS_CJK}
 .endif
 .endif
 

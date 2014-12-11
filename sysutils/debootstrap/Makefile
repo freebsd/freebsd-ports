@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	debootstrap
-PORTVERSION=	1.0.64
+PORTVERSION=	1.0.66
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN/pool/main/d/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		gmake perl5 tar:xz
+USES=		gmake perl5
 USE_PERL5=	run
 MAKE_ARGS=	DESTDIR="${STAGEDIR}"
 
