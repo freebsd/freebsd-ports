@@ -95,12 +95,10 @@ include/OpenEXR/OpenEXRConfig.h
 lib/libIlmImf-%%MAJORVER%%.so.%%VER%%
 lib/libIlmImf-%%MAJORVER%%.so.%%VER%%.0.0
 lib/libIlmImf.a
-lib/libIlmImf.la
 lib/libIlmImf.so
 lib/libIlmImfUtil-%%MAJORVER%%.so.22
 lib/libIlmImfUtil-%%MAJORVER%%.so.22.0.0
 lib/libIlmImfUtil.a
-lib/libIlmImfUtil.la
 lib/libIlmImfUtil.so
 libdata/pkgconfig/OpenEXR.pc
 share/aclocal/openexr.m4
