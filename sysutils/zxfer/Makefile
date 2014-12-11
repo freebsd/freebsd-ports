@@ -13,7 +13,7 @@ GH_TAGNAME=	1.1.0
 MAINTAINER=	ports@scaleengine.com
 COMMENT=	Easily and reliably transfer ZFS filesystems
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/ipa-system
 MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
 COMMENT=	Pluggable accounting system
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=	tar:bzip2
 GNU_CONFIGURE=	yes

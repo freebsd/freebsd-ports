@@ -9,7 +9,7 @@ MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Utility to get or set rc.conf(5) values
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 

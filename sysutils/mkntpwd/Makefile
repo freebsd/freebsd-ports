@@ -14,7 +14,7 @@ COMMENT=	Utility to create Samba password hashes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/mkntpwd
 
-LICENSE=	GPLv2 BSD
+LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 
 do-install:

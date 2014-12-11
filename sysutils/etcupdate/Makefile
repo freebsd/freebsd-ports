@@ -10,7 +10,7 @@ DISTFILES=	# none
 MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	Manage updates to /etc automatically
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

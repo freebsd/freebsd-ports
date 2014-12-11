@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.Awfulhak.org/vmdktool/ \
 MAINTAINER=	brian@FreeBSD.org
 COMMENT=	Convert VMDK files to/from raw disk images
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	bin/vmdktool \
 		man/man8/vmdktool.8.gz

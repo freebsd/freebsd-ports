@@ -11,7 +11,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	System Load plugin for Xfce4 panel
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower
 

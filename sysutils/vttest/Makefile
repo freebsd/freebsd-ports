@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Program to test "VT100-compatibility" of terminals
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 

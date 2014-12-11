@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	cperciva@FreeBSD.org
 COMMENT=	Startup scripts for FreeBSD/EC2 environment
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 OPTIONS_DEFINE=	NOFIRSTBOOT
 NOFIRSTBOOT_DESC=	Use old (pre-firstboot support) version of scripts
