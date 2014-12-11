@@ -12,5 +12,8 @@ touch /var/log/tor
 chown -R _tor:_tor /var/db/tor /var/log/tor /var/run/tor
 chmod -R 700 /var/db/tor
 
-before starting the tor server.
+before starting the tor server. Tor users are strongly advised to prevent traffic
+analysis that exploits sequential IP IDs by setting:
+
+sysctl net.inet.ip.random_id=1
 ================================================================================
