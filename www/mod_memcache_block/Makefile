@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_memcache_block
 PORTVERSION=	20120821
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/netik/mod_memcache_block/tarball/${GITVERSION}/
 DISTNAME=	mod_memcache_block-${GITVERSION}

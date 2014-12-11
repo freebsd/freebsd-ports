@@ -3,6 +3,7 @@
 
 PORTNAME=	memoize
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

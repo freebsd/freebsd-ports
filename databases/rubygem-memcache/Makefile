@@ -3,6 +3,7 @@
 
 PORTNAME=	memcache
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

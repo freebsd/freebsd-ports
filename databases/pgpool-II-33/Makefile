@@ -2,6 +2,7 @@
 
 PORTNAME=	pgpool-II
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/ \
 		LOCAL/matthew/${PORTNAME}
