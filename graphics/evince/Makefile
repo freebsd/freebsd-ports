@@ -4,6 +4,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	3.14.1
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,6 +23,8 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		adwaita-icon-theme>=0:${PORTSDIR}/x11-themes/adwaita-icon-theme \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
+CONFLICT_INSTALL=	evince-lite-*
+
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool \
 		pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
@@ -39,7 +42,7 @@ GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
 PLIST_SUB=	VERSION=3.0
 
 OPTIONS_DEFINE=	DVI XPS T1LIB NAUTILUS KEYRING COMICS IMPRESS DJVU
-OPTIONS_DEFAULT=NAUTILUS KEYRING COMICS
+OPTIONS_DEFAULT=NAUTILUS KEYRING COMICS XPS
 DVI_DESC=	DVI viewer support
 T1LIB_DESC=	T1LIB for TYPE1 fonts to DVI (Enables DVI)
 NAUTILUS_DESC=	Nautilus plugin
