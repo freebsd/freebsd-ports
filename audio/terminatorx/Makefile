@@ -4,7 +4,7 @@
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.84
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -43,10 +43,13 @@ ALSA_CONFIGURE_OFF=	--disable-alsa
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CONFIGURE_OFF=	--disable-jack
 MPG123_BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+MPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 MPG123_CONFIGURE_OFF=	--disable-mpg123
 SOX_BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
+SOX_RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 SOX_CONFIGURE_OFF=	--disable-sox
 VORBIS_BUILD_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
+VORBIS_RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_OFF=	--disable-vorbis
 MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
