@@ -3,6 +3,7 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}/:doc \
