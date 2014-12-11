@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Spellathon%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Word game to test your English vocabulary skills
 
-LICENSE=	MIT
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libpcre.so:${PORTSDIR}/devel/pcre \
