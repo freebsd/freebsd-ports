@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmux
-DISTVERSION=	1.9a
-PORTREVISION=	2
+PORTVERSION=	1.9a
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -37,10 +36,6 @@ BACKSPACE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tty-keys.c
 
 LIBEVENT_STATIC_LIB_DEPENDS_OFF=	libevent.so:${PORTSDIR}/devel/libevent2
 LIBEVENT_STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent2
-
-# 1.9a was released as an errata to 1.9
-# this port was never updated to 1.9
-PORTSCOUT=	ignore:1.9
 
 .include <bsd.port.options.mk>
 
