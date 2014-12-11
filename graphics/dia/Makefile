@@ -3,8 +3,7 @@
 #   $MCom: ports/graphics/dia/Makefile,v 1.16 2007/10/11 02:49:12 mezz Exp $
 
 PORTNAME=	dia
-DISTVERSION=	0.97.2
-PORTREVISION=	4
+PORTVERSION=	0.97.3
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
@@ -15,8 +14,7 @@ COMMENT=	Diagram creation program, similar to Visio
 
 OPTIONS_DEFINE=	DOCS
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
@@ -32,14 +30,14 @@ INSTALL_TARGET=	install-strip
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "i386"
-LIB_DEPENDS+=		libEMF.so:${PORTSDIR}/graphics/libemf
-CONFIGURE_ARGS+=	--enable-libemf
-PLIST_SUB+=		WMF=""
-.else
+#.if ${ARCH} == "i386"
+#LIB_DEPENDS+=		libEMF.so:${PORTSDIR}/graphics/libemf
+#CONFIGURE_ARGS+=	--enable-libemf
+#PLIST_SUB+=		WMF=""
+#.else
 CONFIGURE_ARGS+=	--disable-libemf
 PLIST_SUB+=		WMF="@comment "
-.endif
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
