@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
-COMMENT=	XMLRPC::Lite - Client and server side XMLRPC implementation
+COMMENT=	Client and server side XMLRPC implementation
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -21,8 +21,6 @@ INSTALL_TARGET=	pure_install
 USE_PERL5=	configure
 USES=		perl5
 NO_ARCH=	yes
-
-#pre-install:	test
 
 perl_OLD_CMD=	.*perl
 
