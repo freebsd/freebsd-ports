@@ -39,7 +39,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Users who need to continue using Fedora 10 base and userland should do the
   following instead:
-  
+
   1. Add these lines to /etc/make.conf:
 
       OVERRIDE_LINUX_BASE_PORT=f10
@@ -108,7 +108,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: mat@FreeBSD.org
 
   There was a nasty bug introduced in the update below, it was introduced in
-  svn revision 373476 and corrected in 373485.  If you get errors looking like
+  SVN revision 373476 and corrected in 373485.  If you get errors looking like
   this one:
 
   ===>   Registering installation for p5-Params-Util-1.07_1 as automatic
@@ -138,10 +138,10 @@ you update your ports collection, before attempting any port upgrades.
   With the recent split of multimedia/x264 in library and binary and library
   components, if an application that uses libx264 is updated before x264 itself,
   multimedia/libx264 will conflict with the existing x264 package. Delete
-  this package before continuing any update that depends on it: 
-  
-  # pkg delete -f x264
-  
+  this package before continuing any update that depends on it:
+
+	# pkg delete -f x264
+
   Install the updated x264 and/or upgrade the other applications that
   depend on libx264, such as ffmpeg.
 
@@ -431,7 +431,7 @@ you update your ports collection, before attempting any port upgrades.
   turned on by default to make such functionality available to users
   of binary packages.
 
-  Some care should be taken before upgrading by people not using lua
+  Some care should be taken before upgrading by people not using Lua
   to avoid the sample extensions.lua file from being loaded on reload
   after updating the asterisk port/pkg.
 
@@ -439,7 +439,7 @@ you update your ports collection, before attempting any port upgrades.
   to disable the option before updating.
 
   People using binary packages(or not wanting to disable the LUA
-  option in the port) not using the lua functionality should add:
+  option in the port) not using the Lua functionality should add:
 
   noload => pbx_lua.so
 
@@ -507,9 +507,9 @@ you update your ports collection, before attempting any port upgrades.
   (Replace libfoo\.la with the *.la file that is missing.)
 
   This command will print a list of *.la files that refer to the missing *.la
-  file and what package they belong to.  First, where it says "not found in the
-  datatbase", remove the *.la file.  After removing all such files, where it
-  says "installed by package X", rebuild X.  Eventually the list printed by
+  file and what package they belong to.  First, where it says "not found in
+  the database", remove the *.la file.  After removing all such files, where
+  it says "installed by package X", rebuild X.  Eventually the list printed by
   that command will be empty and the build error should be gone.
 
 20140826:
@@ -609,7 +609,7 @@ you update your ports collection, before attempting any port upgrades.
     or
   # portupgrade -fr graphics/ilmbase graphics/OpenEXR
 
-  The PORTREVISIONS of all ports that require ilmbase and/or OpenEXR
+  The PORTREVISIONs of all ports that require ilmbase and/or OpenEXR
   have been bumped.
 
 20140810:
@@ -1084,7 +1084,7 @@ you update your ports collection, before attempting any port upgrades.
 20140526:
   AFFECTS: users of lang/lua
 
-  lang/lua has been relaced by lang/lua51
+  lang/lua has been replaced by lang/lua51.
 
   For port builds system please follow the following instructions:
 
