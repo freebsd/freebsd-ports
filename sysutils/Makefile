@@ -79,6 +79,8 @@
     SUBDIR += bkpupsd
     SUBDIR += bksh
     SUBDIR += bontmia
+    SUBDIR += boxbackup
+    SUBDIR += boxbackup-devel
     SUBDIR += brasero
     SUBDIR += brebis
     SUBDIR += bsd-splash-changer
