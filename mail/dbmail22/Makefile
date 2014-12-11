@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 PKGNAMESUFFIX=	22
 
-MAINTAINER=	ahicks@p-o.co.uk
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	SQL database-based mail system (POP3 and IMAP)
 
 LICENSE=	GPLv2

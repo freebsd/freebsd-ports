@@ -8,7 +8,7 @@ CATEGORIES?=	mail
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	2
 
-MAINTAINER?=	ahicks@p-o.co.uk
+MAINTAINER?=	5u623l20@gmail.com
 COMMENT?=	Library (written in C) for parsing and creating messages using MIME
 
 LICENSE=	LGPL21
