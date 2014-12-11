@@ -10,7 +10,7 @@ MASTER_SITES=	http://dist.epipe.com/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System downtime monitoring and reporting tool
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:xz

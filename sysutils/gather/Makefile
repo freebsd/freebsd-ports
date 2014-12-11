@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Utility to store and display system statistics
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 PROJECTHOST=	gatherit
 

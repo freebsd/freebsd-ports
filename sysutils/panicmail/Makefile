@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.daemonology.net/panicmail/
 MAINTAINER=	cperciva@FreeBSD.org
 COMMENT=	Automatically report kernel panics
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	pkesh:${PORTSDIR}/security/pkesh
 

@@ -12,7 +12,7 @@ COMMENT=	Removes non-standard characters from filenames
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .include <bsd.port.mk>

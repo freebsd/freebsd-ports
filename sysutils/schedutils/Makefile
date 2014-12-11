@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of realtime scheduling tools
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 

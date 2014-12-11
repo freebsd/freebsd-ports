@@ -9,7 +9,7 @@ MASTER_SITES=	http://bluestop.org/ataidle/
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Utility to spin down ATA drives
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_RC_SUBR=	${PORTNAME}
 PORTDOCS=	Changelog README

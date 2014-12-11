@@ -10,7 +10,7 @@ DISTFILES=	# none
 MAINTAINER=	freebsd@nagilum.org
 COMMENT=	Add/remove swapspace as needed
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 
