@@ -2,7 +2,7 @@
 
 PORTNAME=	check_memcached_paranoid
 PORTVERSION=	0.20131004
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagiosplug/nagiosplug/1.5
 DISTFILES=	nagios-plugins-1.5.tar.gz

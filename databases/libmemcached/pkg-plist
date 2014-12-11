@@ -103,8 +103,8 @@ lib/libhashkit.so.2
 lib/libhashkit.so.2.0.0
 lib/libmemcached.a
 lib/libmemcached.so
-lib/libmemcached.so.10
-lib/libmemcached.so.10.0.0
+lib/libmemcached.so.11
+lib/libmemcached.so.11.0.0
 lib/libmemcachedprotocol.a
 lib/libmemcachedprotocol.so
 lib/libmemcachedprotocol.so.0
@@ -120,10 +120,14 @@ man/man1/memcat.1.gz
 man/man1/memcp.1.gz
 man/man1/memdump.1.gz
 man/man1/memerror.1.gz
+man/man1/memexist.1.gz
 man/man1/memflush.1.gz
+man/man1/memparse.1.gz
+man/man1/memping.1.gz
 man/man1/memrm.1.gz
 man/man1/memslap.1.gz
 man/man1/memstat.1.gz
+man/man1/memtouch.1.gz
 man/man3/hashkit_clone.3.gz
 man/man3/hashkit_crc32.3.gz
 man/man3/hashkit_create.3.gz
@@ -227,3 +231,4 @@ man/man3/memcached_touch.3.gz
 man/man3/memcached_touch_by_key.3.gz
 man/man3/memcached_verbosity.3.gz
 man/man3/memcached_version.3.gz
+share/aclocal/ax_libmemcached.m4
