@@ -8,7 +8,7 @@ DISTFILES=	# empty
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Generic iPad USB charging utility
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	etc/devd/ipad_charge.conf
 USE_RC_SUBR=	ipad_charge
