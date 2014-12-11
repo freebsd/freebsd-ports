@@ -4865,7 +4865,7 @@ create-manifest:
 		echo "categories: [ ${CATEGORIES:u:S/$/,/} ]" ; \
 		l=${LICENSE_COMB} ; \
 		[ -n "${NO_ARCH}" ] && echo "arch : `${PKG_BIN} config abi | tr '[:upper:]' '[:lower:]' | ${CUT} -d: -f1,2`:*" ; \
-		[ -n "${NO_ARCH}" ] && echo "abi : `${PKG_BIN} config abi | tr '[:upper:]' '[:lower:]' | ${CUT} -d: -f1,2`:*" ; \
+		[ -n "${NO_ARCH}" ] && echo "abi : `${PKG_BIN} config abi | ${CUT} -d: -f1,2`:*" ; \
 		echo "licenselogic: $${l:-single}" ; \
 		[ -z "${LICENSE}" ] || echo "licenses: [ ${LICENSE:u:S/$/,/} ]" ; \
 		[ -z "${USERS}" ] || echo "users: [ ${USERS:u:S/$/,/} ]" ; \
