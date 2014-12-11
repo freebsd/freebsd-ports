@@ -355,6 +355,7 @@
     SUBDIR += mcast-tools
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
+    SUBDIR += megatools
     SUBDIR += mgen
     SUBDIR += micro_inetd
     SUBDIR += micro_proxy
