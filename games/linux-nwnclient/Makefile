@@ -80,6 +80,7 @@ do-extract:
 		${RM} ${WRKSRC}/SDL-1.2.5/*; \
 		${RMDIR} ${WRKSRC}/SDL-1.2.5; \
 	fi
+	@${FIND} ${WRKSRC} -type f -name ".*" -delete
 
 do-configure:
 	${SED} -e 's|%%NWNDATADIR%%|${NWNDATADIR}|' \
