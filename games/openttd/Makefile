@@ -92,6 +92,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/config.lib
+	@${REINPLACE_CMD} -e '/FS_NORMAL/s,max(1,&U,' \
+		${WRKSRC}/src/fontcache.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
