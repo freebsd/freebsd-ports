@@ -1,4 +1,6 @@
 # Figure out what to install
+.if ${OPSYS} == FreeBSD
+
 .if ${ARCH} == amd64
 . if ${OSVERSION} >= 1000100
 PLATFORM=	freebsd100x86_64
@@ -19,4 +21,8 @@ IGNORE=		unsupported OS release, sorry
 
 .else
 IGNORE=		unsupported OS release, sorry
+.endif
+
+.else
+IGNORE=		${OPSYS} is unsupported, sorry
 .endif
