@@ -26,12 +26,6 @@ SUB_FILES=	maudio-devd.conf pkg-message
 NO_BUILD=	yes
 NO_PACKAGE=	redistribution of firmware files not permitted
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800064
-BROKEN=		port requires FreeBSD 8.x
-.endif
-
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/maudio
 	${INSTALL_DATA} ${WRKSRC}/ma003101.bin ${WRKSRC}/ma004103.bin \
@@ -39,4 +33,4 @@ do-install:
 		${WRKSRC}/ma008100.bin ${STAGEDIR}${PREFIX}/share/maudio
 	${INSTALL_DATA} ${WRKDIR}/maudio-devd.conf ${STAGEDIR}${PREFIX}/etc/devd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
