@@ -4,7 +4,7 @@
 PORTNAME=	wget
 DISTVERSION=	1.16
 CATEGORIES=	ftp www ipv6
-MASTER_SITES=	GNU/wget
+MASTER_SITES=	GNU
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
