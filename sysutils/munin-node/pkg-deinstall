@@ -1,13 +1,5 @@
 #! /bin/sh
 
-stop_process() {
-    STARTSTOP=${PKG_PREFIX}/etc/rc.d/munin-node
-
-    if [ -x $STARTSTOP ]; then
-	$STARTSTOP stop
-    fi
-}
-
 delnewsyslog() {
     tmp="/etc/#munin-node$$"
     sed -e '/^\/var\/log\/munin\/munin-node.log[ 	]/d' /etc/newsyslog.conf >${tmp}
@@ -32,7 +24,6 @@ newsyslog() {
 case $2 in
     DEINSTALL)
 	if [ -z "${PACKAGE_BUILDING}" ]; then
-		stop_process
 		newsyslog
 	fi
 	;;
