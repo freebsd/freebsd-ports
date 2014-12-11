@@ -57,6 +57,70 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ab3e98d9-8175-11e4-907d-d050992ecde8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<name>bind99-base</name>
+	<range><lt>9.9.6</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<name>bind98-base</name>
+	<name>bind96</name>
+	<name>bind96-base</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.3</gt><lt>9.3_6</lt></range>
+	<range><gt>9.2</gt><lt>9.2_16</lt></range>
+	<range><gt>9.1</gt><lt>9.1_23</lt></range>
+	<range><gt>8.4</gt><lt>8.4_20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://www.isc.org/blogs/important-security-advisory-posted/">
+	  <p>We have today posted updated versions of 9.9.6 and 9.10.1
+	    to address a significant security vulnerability in DNS
+	    resolution. The flaw was discovered by Florian Maury of
+	    ANSSI, and applies to any recursive resolver that does not
+	    support a limit on the number of recursions. [<a href="http://cert.ssi.gouv.fr/site/CERTFR-2014-AVI-512/index.html">CERTFR-2014-AVI-512</a>],
+	    [USCERT <a href="www.kb.cert.org/vuls/id/264212">VU#264212</a>]</p>
+	  <p>A flaw in delegation handling could be exploited to put named
+	    into an infinite loop, in which each lookup of a name server
+	    triggered additional lookups of more name servers.  This has
+	    been addressed by placing limits on the number of levels of
+	    recursion named will allow (default 7), and on the number of
+	    queries that it will send before terminating a recursive query
+	    (default 50).  The recursion depth limit is configured via the
+	    max-recursion-depth option, and the query limit via the
+	    max-recursion-queries option.  For more information, see the
+	    security advisory at <a href="https://kb.isc.org/article/AA-01216/">https://kb.isc.org/article/AA-01216/</a>.
+	    <a href="https://kb.isc.org/article/AA-01216/">[CVE-2014-8500]</a>
+	    [RT #37580]</p>
+	  <p>In addition, we have also corrected a potential security
+	    vulnerability in the GeoIP feature in the 9.10.1 release only.
+	    For more information on this issue, see the security advisory
+	    at <a href="https://kb.isc.org/article/AA-01217">https://kb.isc.org/article/AA-01217</a>.
+	    <a href="https://kb.isc.org/article/AA-01217">[CVE-2014-8680]</a></p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8500</cvename>
+      <cvename>CVE-2014-8680</cvename>
+      <url>https://www.isc.org/blogs/important-security-advisory-posted/</url>
+    </references>
+    <dates>
+      <discovery>2014-12-08</discovery>
+      <entry>2014-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="94268da0-8118-11e4-a180-001999f8d30b">
     <topic>asterisk -- Remote Crash Vulnerability in WebSocket Server</topic>
     <affects>
