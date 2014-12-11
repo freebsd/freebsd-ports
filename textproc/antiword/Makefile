@@ -3,12 +3,14 @@
 
 PORTNAME=	antiword
 PORTVERSION=	0.37
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Application for displaying Microsoft(R) Word documents
+
+OPTIONS_DEFINE=	DEBUG
 
 LICENSE=	GPLv2
 
@@ -24,11 +26,17 @@ INSTALL_TARGET=	global_install
 PORTDOCS=	COPYING ChangeLog Emacs Exmh FAQ History Mozilla Mutt Netscape \
 		QandA ReadMe antiword.1 antiword.man antiword.php testdoc.doc
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
+CFLAGS+=	-DDEBUG
+.else
 CFLAGS+=	-DNDEBUG
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,/usr/share,${LOCALBASE}/share,g; s,fonts2,fonts,' ${WRKSRC}/Unix-only/fontinfo.pl
-	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS)/d; s,/usr/share,${PREFIX}/share,g; s|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS|OPT)/d; s,/usr/share,${PREFIX}/share,g; s|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -E 's,/usr/share,${PREFIX}/share,g' ${WRKSRC}/antiword.h
 
 post-install:
