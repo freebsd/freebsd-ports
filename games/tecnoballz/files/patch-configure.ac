@@ -1,0 +1,20 @@
+--- configure.ac.orig	2014-09-30 14:20:26.000000000 +0400
++++ configure.ac	2014-12-04 03:31:46.000000000 +0300
+@@ -40,6 +40,8 @@
+ AC_SUBST(MIKMOD_FLAGS)
+ AC_SUBST(MIKMOD_LIBS)
+ 
++AC_LANG_PUSH([C++])
++
+ AC_CHECK_LIB([tinyxml], [main], [
+   TINYXML_LIBS="-ltinyxml"
+ ],[
+@@ -47,6 +49,8 @@
+ ])
+ AC_SUBST(TINYXML_LIBS)
+ 
++AC_LANG_POP([C++])
++
+ # Checks for header files.
+ AC_CHECK_HEADERS([fcntl.h stddef.h stdlib.h string.h sys/time.h unistd.h])
+ 
