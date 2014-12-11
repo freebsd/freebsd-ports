@@ -1,0 +1,14 @@
+U-Boot loader for Raspberry Pi
+
+To install this bootloader, copy the file uboot.img to the FAT parition
+on an SD card.  Other files (not part of this package) are also required.
+
+This version is patched so that:
+ * ELF and API features are enabled.
+ * The default environment is trimmed to just what's needed to boot.
+ * The saveenv command writes to the file uboot.env on the FAT partition.
+
+For information about running FreeBSD on RaspberryPi, see
+WWW: http://wiki.freebsd.org/FreeBSD/arm/Raspberry%20Pi
+
+For general information about U-Boot see WWW: http://www.denx.de/wiki/U-Boot
