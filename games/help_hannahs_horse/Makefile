@@ -24,9 +24,10 @@ WRKSRC=		${WRKDIR}/hhh-2008-03-29
 USES=		gmake
 USE_SDL=	sdl image mixer ttf
 ALL_TARGET=	# empty
+MAKE_ENV=	DATA_INSTALL_DIR="${DATADIR}" \
+		BIN_DIR="${PREFIX}/bin"
 
 PORTDOCS=	CHANGELOG README
-OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
@@ -34,27 +35,13 @@ ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 DESKTOP_ENTRIES="Help Hannah's Horse" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/games/hhh|${DATADIR}|; \
-		s|/usr/local/bin|${PREFIX}/bin|; \
-		s|CXX       = g++|CXX       ?= g++}|; \
-		s|CXXFLAGS   = -O2 -Wall -g|CXXFLAGS   +=|; \
-		s|OUT = hhh|OUT = ${PORTNAME}|; \
-		s|-include deps|#-include deps|' \
-		${WRKSRC}/Makefile
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-
-.for d in blue carrot default freeze hannah images invert invis maps newanim \
-		 pink red sounds stop
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
-.endfor
-.for f in *.ogg *.ttf *.dat *.png
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
-.endfor
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/hhh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "blue carrot default freeze hannah \
+		images invert invis maps newanim pink red sounds stop \
+		*.ogg *.ttf *.dat *.png" ${STAGEDIR}${DATADIR})
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
