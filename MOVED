@@ -7316,3 +7316,5 @@ editors/texmakerx|editors/texstudio|2014-12-06|The project has been renamed
 databases/postgresql93-plv8js|databases/postgresql-plv8js|2014-12-07|Breaks index when PGSQL_DEFAULT=9.3 and master port can be used for pgsql 9.3
 www/twig-php||2014-12-08|Removed, as it was replaced and conflicting with www/pear-twig and www/pecl-twig
 net/ntp-rc|net/ntp-devel|2014-12-11|Upline uses devel and relesae candidate interchangably.
+textproc/xerces-c2|textproc/xerces-c3|2014-12-12|Unused, conflicting with xerces-c3
+textproc/xerces-c2-devel|textproc/xerces-c3|2014-12-12|Unused, conflicting with xerces-c3
