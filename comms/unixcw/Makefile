@@ -3,10 +3,10 @@
 # NOTE: comms/xcwcp is a sub-port of this.  When making changes, ensure
 #       it still works as well.
 
-PORTNAME=	unixcw
+PORTNAME?=	unixcw
 PORTVERSION=	3.4.0
-CATEGORIES?=	comms hamradio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+CATEGORIES=	comms hamradio
+MASTER_SITES=	SF/unixcw/unixcw-${PORTVERSION}
 DISTNAME=	unixcw_${PORTVERSION}.orig
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -25,7 +25,7 @@ CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
 USE_LDCONFIG=	yes
 USES=		gmake libtool pkgconfig
 USE_CSTD=	gnu99
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/unixcw-${PORTVERSION}
 
 post-install:
 	  ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcw.so.6.2.1
