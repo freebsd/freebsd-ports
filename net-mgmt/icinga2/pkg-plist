@@ -54,7 +54,6 @@ lib/icinga2/libmmatch.so
 lib/icinga2/libnotification.so
 lib/icinga2/libperfdata.so
 lib/icinga2/libremote.so
-man/man8/icinga2-prepare-dirs.8.gz
 man/man8/icinga2.8.gz
 sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
