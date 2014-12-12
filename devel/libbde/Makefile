@@ -3,8 +3,9 @@
 
 PORTNAME=	libbde
 DISTVERSION=	alpha-20141023
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSX2VCRk16TnpDd0U/ \
+MASTER_SITES=	https://github.com/libyal/libbde/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -18,6 +19,8 @@ USES=		fuse gettext iconv libtool pathfix pkgconfig python:2
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+CPPFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
 
 PORTDOCS=	AUTHORS ChangeLog
