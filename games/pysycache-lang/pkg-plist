@@ -1038,23 +1038,3 @@
 %%SPANISH%%%%DATADIR%%/themes-move/alphabet-es/z000.dfg
 %%SPANISH%%%%DATADIR%%/themes-move/alphabet-es/w000.jpeg
 %%SPANISH%%%%DATADIR%%/themes-move/alphabet-es/w000.dfg
-%%FRENCH%%@dirrm %%DATADIR%%/themes-move/number-fr/cache
-%%FRENCH%%@dirrm %%DATADIR%%/themes-move/number-fr
-%%FRENCH%%@dirrm %%DATADIR%%/themes-move/alphabet-fr/cache
-%%FRENCH%%@dirrm %%DATADIR%%/themes-move/alphabet-fr
-%%GERMAN%%@dirrm %%DATADIR%%/themes-move/number-de/cache
-%%GERMAN%%@dirrm %%DATADIR%%/themes-move/number-de
-%%GERMAN%%@dirrm %%DATADIR%%/themes-move/alphabet-de/cache
-%%GERMAN%%@dirrm %%DATADIR%%/themes-move/alphabet-de
-%%ITALIAN%%@dirrm %%DATADIR%%/themes-move/number-it/cache
-%%ITALIAN%%@dirrm %%DATADIR%%/themes-move/number-it
-%%ITALIAN%%@dirrm %%DATADIR%%/themes-move/alphabet-it/cache
-%%ITALIAN%%@dirrm %%DATADIR%%/themes-move/alphabet-it
-%%PORTUGUESE%%@dirrm %%DATADIR%%/themes-move/number-pt/cache
-%%PORTUGUESE%%@dirrm %%DATADIR%%/themes-move/number-pt
-%%PORTUGUESE%%@dirrm %%DATADIR%%/themes-move/alphabet-pt/cache
-%%PORTUGUESE%%@dirrm %%DATADIR%%/themes-move/alphabet-pt
-%%SPANISH%%@dirrm %%DATADIR%%/themes-move/number-es/cache
-%%SPANISH%%@dirrm %%DATADIR%%/themes-move/number-es
-%%SPANISH%%@dirrm %%DATADIR%%/themes-move/alphabet-es/cache
-%%SPANISH%%@dirrm %%DATADIR%%/themes-move/alphabet-es
