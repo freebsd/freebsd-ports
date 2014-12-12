@@ -628,6 +628,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-memc-nginx-module-${GIT_MEMC_VE
 NGINX_MODSECURITY_VERSION=	2.8.0
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libcurl.so:${PORTSDIR}/ftp/curl \
 		libyajl.so:${PORTSDIR}/devel/yajl
 USE_APACHE=	22+
 USE_GNOME=	libxml2
