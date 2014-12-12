@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Multi-user server for taskwarrior
 
 LICENSE=	MIT
