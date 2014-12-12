@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	livestreamer
-PORTVERSION=	1.10.2
+PORTVERSION=	1.11.0
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,6 @@ RUN_DEPENDS=	rtmpdump:${PORTSDIR}/multimedia/rtmpdump \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+PATCH_STRIP=	-p1
 
 .include <bsd.port.mk>
