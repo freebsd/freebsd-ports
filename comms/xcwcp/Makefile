@@ -1,10 +1,7 @@
 # $FreeBSD$
 
-CATEGORIES=	comms hamradio
-
+PORTNAME=	xcwcp
 COMMENT=	X11 CW Tutor using unixcw
-
-LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcw.so:${PORTSDIR}/comms/unixcw
 
