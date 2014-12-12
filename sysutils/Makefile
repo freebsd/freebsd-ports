@@ -777,6 +777,7 @@
     SUBDIR += rej
     SUBDIR += relaxconf
     SUBDIR += rename
+    SUBDIR += renameutils
     SUBDIR += reoback
     SUBDIR += respond
     SUBDIR += retail
