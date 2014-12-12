@@ -1396,6 +1396,7 @@
     SUBDIR += s5
     SUBDIR += sablotron
     SUBDIR += sagasu
+    SUBDIR += sansi
     SUBDIR += sarep
     SUBDIR += sary
     SUBDIR += sassc
