@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashplugin
-PORTVERSION=	11.2r202.406
+PORTVERSION=	11.2r202.425
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
 		LOCAL/nox:suplib
@@ -16,7 +16,7 @@ COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	c6
-USE_LINUX_APPS=	openssl-compat curl cyrus-sasl2 nspr nss gtk2 #-alsalib libssh2 openldap
+USE_LINUX_APPS=	curl cyrus-sasl2 gtk2 nspr nss openssl-compat #-alsalib libssh2 openldap
 WANT_GNOME=	yes
 
 RESTRICTED=	Redistribution not allowed
@@ -31,10 +31,11 @@ WEBPLUGIN_FILES=	libflashplayer.so
 OPTIONS_DEFINE=	GNOME
 GNOME_DESC=	include gnome support for .desktop file
 
-CPE_VENDOR=     adobe
-CPE_PRODUCT=    flash_player
+CPE_VENDOR=	adobe
+CPE_PRODUCT=	flash_player
 
 OPTIONS_SUB=	yes
+PLIST_SUB=	LINUXBASE="${LINUXBASE}"
 
 .include <bsd.port.options.mk>
 
