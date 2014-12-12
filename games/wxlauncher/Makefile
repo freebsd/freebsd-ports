@@ -3,6 +3,7 @@
 
 PORTNAME=	wxlauncher
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	lightside@gmx.com
@@ -20,7 +21,7 @@ GH_PROJECT=	${PORTNAME}
 GH_COMMIT=	d251770
 GH_TAGNAME=	${GH_COMMIT}
 
-USES=		cmake:outsource openal python:2:build
+USES=		cmake:outsource openal python:2,build
 USE_SDL=	sdl
 USE_WX=		2.8
 WX_UNICODE=	yes
