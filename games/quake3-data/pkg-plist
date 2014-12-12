@@ -10,6 +10,4 @@
 %%TEAMARENA%%%%DATADIR%%/missionpack/pak2.pk3
 %%TEAMARENA%%%%DATADIR%%/missionpack/pak3.pk3
 share/pixmaps/quake3.xpm
-%%TEAMARENA%%@dirrmtry %%DATADIR%%/missionpack
-@dirrmtry %%DATADIR%%/baseq3
-@unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%." | fmt
+@unexec if [ -e %D/%%DATADIR%%/baseq3/pak0.pk3 ]; then echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%."; fi
