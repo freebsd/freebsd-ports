@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Collection of standard Unix utilities
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
