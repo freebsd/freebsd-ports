@@ -68,7 +68,3 @@
 %%DATADIR%%/pak35b.pk3
 %%DATADIR%%/servercfg.cfg
 %%DATADIR%%/wfa-server.cfg
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/EnglishRadioHelp
-@dirrm %%DOCSDIR%%
