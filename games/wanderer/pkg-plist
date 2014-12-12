@@ -1,8 +1,4 @@
-@group games
-@mode 2555
-bin/wanderer
-@group
-@mode
+@(,games,2555) bin/wanderer
 man/man6/wanderer.6.gz
 %%DATADIR%%/screens/credits
 %%DATADIR%%/screens/screen.1
@@ -63,5 +59,3 @@ man/man6/wanderer.6.gz
 %%DATADIR%%/screens/screen.6
 %%DATADIR%%/screens/screen.60
 %%DATADIR%%/screens/screen.61
-@dirrm %%DATADIR%%/screens
-@dirrm %%DATADIR%%
