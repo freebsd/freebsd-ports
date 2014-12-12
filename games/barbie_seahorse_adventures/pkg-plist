@@ -417,29 +417,3 @@ share/icons/hicolor/128x128/apps/barbie_seahorse_adventures.png
 share/icons/hicolor/32x32/apps/barbie_seahorse_adventures.png
 share/icons/hicolor/64x64/apps/barbie_seahorse_adventures.png
 share/pixmaps/barbie_seahorse_adventures.png
-@dirrm %%DATADIR%%/lib/pgu/gui
-@dirrm %%DATADIR%%/lib/pgu
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/data/themes/tools
-@dirrm %%DATADIR%%/data/themes/itheme/todo
-@dirrm %%DATADIR%%/data/themes/itheme/extras
-@dirrm %%DATADIR%%/data/themes/itheme
-@dirrm %%DATADIR%%/data/themes/gray
-@dirrm %%DATADIR%%/data/themes/default
-@dirrm %%DATADIR%%/data/themes
-@dirrm %%DATADIR%%/data/sfx
-@dirrm %%DATADIR%%/data/music
-@dirrm %%DATADIR%%/data/levels
-@dirrm %%DATADIR%%/data/intro
-@dirrm %%DATADIR%%/data/images/splayer
-@dirrm %%DATADIR%%/data/images/points
-@dirrm %%DATADIR%%/data/images/player
-@dirrm %%DATADIR%%/data/images/platform
-@dirrm %%DATADIR%%/data/images/parrot
-@dirrm %%DATADIR%%/data/images/frog
-@dirrm %%DATADIR%%/data/images/boss
-@dirrm %%DATADIR%%/data/images
-@dirrm %%DATADIR%%/data/fonts
-@dirrm %%DATADIR%%/data/bkgr
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
