@@ -457,21 +457,3 @@
 %%DATADIR%%/qw/skins/player_green.png
 %%DATADIR%%/qw/skins/player_red.png
 %%DATADIR%%/qw/skins/player_white.png
-@dirrm %%DATADIR%%/qw/skins
-@dirrm %%DATADIR%%/qw
-@dirrm %%DATADIR%%/ezquake/sb
-@dirrm %%DATADIR%%/ezquake/manual/ezquake.sourceforge.net/gallery
-@dirrm %%DATADIR%%/ezquake/manual/ezquake.sourceforge.net/docs/pics
-@dirrm %%DATADIR%%/ezquake/manual/ezquake.sourceforge.net/docs/gfx
-@dirrm %%DATADIR%%/ezquake/manual/ezquake.sourceforge.net/docs
-@dirrm %%DATADIR%%/ezquake/manual/ezquake.sourceforge.net
-@dirrm %%DATADIR%%/ezquake/manual
-@dirrm %%DATADIR%%/ezquake/keymaps
-@dirrm %%DATADIR%%/ezquake/help/xsl
-@dirrm %%DATADIR%%/ezquake/help/xsd
-@dirrm %%DATADIR%%/ezquake/help/manual/demos
-@dirrm %%DATADIR%%/ezquake/help/manual
-@dirrm %%DATADIR%%/ezquake/help
-@dirrm %%DATADIR%%/ezquake/cfg
-@dirrm %%DATADIR%%/ezquake
-@dirrm %%DATADIR%%
