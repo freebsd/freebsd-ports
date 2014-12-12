@@ -3,7 +3,7 @@
 
 #TODO bz@ : if you do undestand the gyp stuff, third_party/widevine/cdm/widevine_cdm.gyp talks about it (plz install libwidevinecdm.so)
 PORTNAME=	chromium
-PORTVERSION=	39.0.2171.71
+PORTVERSION=	39.0.2171.95
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
