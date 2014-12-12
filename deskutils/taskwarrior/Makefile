@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 DISTNAME=	task-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Feature-rich command-line todo list manager
 
 LICENSE=	MIT
