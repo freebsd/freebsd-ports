@@ -10,6 +10,16 @@ COMMENT=	Library to interface with PRUs
 
 LICENSE=	BSD2CLAUSE
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} != FreeBSD
+IGNORE=	Only supported on FreeBSD
+.endif
+
+.if ${OSVERSION} < 1000510
+IGNORE=	Only supported on FreeBSD 10+
+.endif
+
 USES=		cmake
 
 WRKSRC=		${WRKDIR}/rpaulo-libpru-e1aae0486927
