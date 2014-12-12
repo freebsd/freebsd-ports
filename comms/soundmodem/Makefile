@@ -1,11 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	soundmodem
-PORTVERSION=	0.17
-PORTREVISION=	2
+PORTVERSION=	0.18
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
-		http://chronos.org.uk/distfiles/
+		http://soundmodem.vk4msl.yi.org/ \
+		http://pv529.ncsrv.de/soundmodem/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	shurd
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio sound modem
