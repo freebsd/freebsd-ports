@@ -154,3 +154,4 @@ share/icons/hicolor/64x64/apps/help_hannahs_horse.png
 share/icons/hicolor/72x72/apps/help_hannahs_horse.png
 share/icons/hicolor/96x96/apps/help_hannahs_horse.png
 share/pixmaps/help_hannahs_horse.png
+@dir %%DATADIR%%/default
