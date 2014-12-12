@@ -39,4 +39,3 @@ man/man6/acm.6.gz
 %%DATADIR%%/telar1.obv
 %%DATADIR%%/tower.obv
 %%DATADIR%%/tracer.obv
-@dirrm %%DATADIR%%
