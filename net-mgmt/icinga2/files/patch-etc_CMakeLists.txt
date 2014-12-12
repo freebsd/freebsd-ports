@@ -1,20 +1,37 @@
---- etc/CMakeLists.txt.orig	2014-11-18 14:28:49 UTC
-+++ etc/CMakeLists.txt
-@@ -23,43 +23,43 @@ configure_file(icinga2/constants.conf.cm
- 
- if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+--- etc/CMakeLists.txt.orig	2014-12-01 13:30:51.000000000 +0100
++++ etc/CMakeLists.txt	2014-12-10 17:00:02.582959152 +0100
+@@ -28,50 +28,50 @@
    configure_file(logrotate.d/icinga2.cmake ${CMAKE_CURRENT_BINARY_DIR}/logrotate.d/icinga2 @ONLY)
-+  install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/logrotate.d/icinga2 ${CMAKE_INSTALL_SYSCONFDIR}/logrotate.d)
  endif()
  
 -install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/init.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
 -install_if_not_exists(icinga2/icinga2.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
--install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/constants.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
++install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/init.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
++install_if_not_exists(icinga2/icinga2.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
+ 
+ if(NOT WIN32)
+-  install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/constants.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
++  install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/constants.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
+ else()
+   install_if_not_exists(${CMAKE_CURRENT_SOURCE_DIR}/icinga2/win32/constants.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
+ endif()
+ 
 -install_if_not_exists(icinga2/zones.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
 -install_if_not_exists(icinga2/conf.d/commands.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 -install_if_not_exists(icinga2/conf.d/downtimes.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 -install_if_not_exists(icinga2/conf.d/groups.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
--install_if_not_exists(icinga2/conf.d/hosts.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
++install_if_not_exists(icinga2/zones.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
++install_if_not_exists(icinga2/conf.d/commands.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
++install_if_not_exists(icinga2/conf.d/downtimes.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
++install_if_not_exists(icinga2/conf.d/groups.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
+ 
+ if(NOT WIN32)
+-  install_if_not_exists(icinga2/conf.d/hosts.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
++  install_if_not_exists(icinga2/conf.d/hosts.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
+ else()
+   install_if_not_exists(icinga2/conf.d/win32/hosts.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
+ endif()
+ 
 -install_if_not_exists(icinga2/conf.d/notifications.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 -install_if_not_exists(icinga2/conf.d/satellite.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 -install_if_not_exists(icinga2/conf.d/services.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
@@ -39,14 +56,6 @@
 -install_if_not_exists(icinga2/features-available/syslog.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available)
 -install_if_not_exists(icinga2/scripts/mail-host-notification.sh ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/scripts)
 -install_if_not_exists(icinga2/scripts/mail-service-notification.sh ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/scripts)
-+install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/init.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
-+install_if_not_exists(icinga2/icinga2.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
-+install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/icinga2/constants.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
-+install_if_not_exists(icinga2/zones.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
-+install_if_not_exists(icinga2/conf.d/commands.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
-+install_if_not_exists(icinga2/conf.d/downtimes.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
-+install_if_not_exists(icinga2/conf.d/groups.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
-+install_if_not_exists(icinga2/conf.d/hosts.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 +install_if_not_exists(icinga2/conf.d/notifications.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 +install_if_not_exists(icinga2/conf.d/satellite.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 +install_if_not_exists(icinga2/conf.d/services.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
@@ -73,7 +82,4 @@
 +install_if_not_exists(icinga2/scripts/mail-service-notification.sh.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/scripts)
  install_if_not_exists(icinga2/zones.d/README ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/zones.d)
  install_if_not_exists(icinga2/repository.d/README ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/repository.d)
--install_if_not_exists(${CMAKE_CURRENT_BINARY_DIR}/logrotate.d/icinga2 ${CMAKE_INSTALL_SYSCONFDIR}/logrotate.d)
  
- install(CODE "file(MAKE_DIRECTORY \"\$ENV{DESTDIR}${CMAKE_INSTALL_FULL_SYSCONFDIR}/icinga2/pki\")")
- install(CODE "file(MAKE_DIRECTORY \"\$ENV{DESTDIR}${CMAKE_INSTALL_FULL_SYSCONFDIR}/icinga2/repository.d\")")
