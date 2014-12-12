@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic breakout game
 
-USES=		pathfix pkgconfig
+USES=		gettext-tools pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

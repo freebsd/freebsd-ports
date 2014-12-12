@@ -12,7 +12,7 @@ COMMENT=	GNOME version of Kisekae Set System
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-USES=		pkgconfig
+USES=		gettext-tools pkgconfig
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
