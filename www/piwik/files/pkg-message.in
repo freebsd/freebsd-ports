@@ -13,8 +13,8 @@ POST-INSTALL CONFIGURATION FOR Piwik
    <Directory %%WWWDIR%%>
       AllowOverride None
       Options Indexes FollowSymLinks
-      Order Allow,Deny
-      Allow from all
+      # Apache 2.4 no longer accepts "Order" or "Allow from ..."
+      Require all granted
    </Directory>
 
 3) Visit your Piwik site with a browser (i.e.,
