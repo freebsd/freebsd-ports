@@ -107,7 +107,3 @@ libexec/ninix/ninix_main.pyc
 %%PORTDOCS%%%%DOCSDIR%%/saori.txt
 %%NLS%%share/locale/ja/LC_MESSAGES/ninix.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ninix.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/ninix/ninix/dll
-@dirrm libexec/ninix/ninix
-@dirrm libexec/ninix
