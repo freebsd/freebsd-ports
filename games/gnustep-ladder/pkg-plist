@@ -20,8 +20,3 @@ GNUstep/Local/Applications/Ladder.app/Resources/network_icon.png
 GNUstep/Local/Applications/Ladder.app/Resources/wood.jpg
 GNUstep/Local/Applications/Ladder.app/stamp.make
 GNUstep/Local/Tools/Ladder
-@dirrm GNUstep/Local/Applications/Ladder.app/Resources/Ladder.gorm
-@dirrm GNUstep/Local/Applications/Ladder.app/Resources/Clock.gorm
-@dirrm GNUstep/Local/Applications/Ladder.app/Resources/GoDocument.gorm
-@dirrm GNUstep/Local/Applications/Ladder.app/Resources
-@dirrm GNUstep/Local/Applications/Ladder.app
