@@ -1,9 +1,5 @@
-Backported from:
-
-	http://git.videolan.org/gitweb.cgi/vlc.git/?a=commit;h=c1622c2c6e0e15a38fef723086ca8bf75a75b46b
-
---- modules/audio_output/oss.c.orig
-+++ modules/audio_output/oss.c
+--- modules/audio_output/oss.c.orig	2014-02-27 14:31:53.000000000 +0100
++++ modules/audio_output/oss.c	2014-09-21 13:19:37.000000000 +0200
 @@ -37,6 +37,7 @@
  #else
  # include <sys/soundcard.h>
@@ -12,7 +8,7 @@ Backported from:
  
  #ifndef SNDCTL_DSP_HALT
  # define SNDCTL_DSP_HALT SNDCTL_DSP_RESET
-@@ -209,6 +210,22 @@ static int Start (audio_output_t *aout, 
+@@ -209,6 +210,22 @@
      }
      aout_FormatPrepare (fmt);
  
@@ -35,3 +31,14 @@ Backported from:
      sys->fd = fd;
      VolumeSync (aout);
      sys->starting = true;
+@@ -230,8 +247,8 @@
+         return -1;
+     }
+ 
+-    *pts = (delay * CLOCK_FREQ * sys->format.i_frame_length)
+-                        / (sys->format.i_rate * sys->format.i_bytes_per_frame);
++    *pts = (delay * CLOCK_FREQ)
++	/ (sys->format.i_rate * sys->format.i_bytes_per_frame);
+     return 0;
+ }
+ 
