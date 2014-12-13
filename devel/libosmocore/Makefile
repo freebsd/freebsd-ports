@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libosmocore
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
-MASTER_SITES=	http://chaosophia.net/downloads/osmocom/${PORTNAME}/ \
-		http://ns1.chaosophia.net/downloads/osmocom/${PORTNAME}/
+MASTER_SITES=	http://git.osmocom.org/libosmocore/snapshot/ \
+		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Common library for all Osmocom projects
