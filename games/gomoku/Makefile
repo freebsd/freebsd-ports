@@ -11,7 +11,7 @@ DISTNAME=	Gomoku-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Gomoku game
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
