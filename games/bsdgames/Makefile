@@ -3,7 +3,7 @@
 
 PORTNAME=	bsdgames
 PORTVERSION=	3.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games
 # Fetched from git://git.dragonflybsd.org/dragonfly.git, v${PORTVERSION}, /games
@@ -18,8 +18,7 @@ LICENSE=	BSD3CLAUSE
 CONFLICTS=	hangman-[0-9]*
 
 USES=		uidfix tar:xz
-MAKE_ENV+=	NO_WERROR=1
-MAKE_ARGS=	BINGRP=${BINGRP}
+MAKE_ENV+=	NO_WERROR=1 BINGRP=${BINGRP}
 
 # contain /usr/share/games
 SHAREPATH_FILES=atc/atc.6 \
