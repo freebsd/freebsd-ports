@@ -492,6 +492,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/vulnerable-passwords
 %%PORTDOCS%%%%DOCSDIR%%/web_deployment.pod
 %%PORTDOCS%%%%DOCSDIR%%/writing_extensions.pod
+@dir %%DATADIR%%/etc
 %%DATADIR%%/fonts/Droid.README
 %%DATADIR%%/fonts/DroidSans.ttf
 %%DATADIR%%/fonts/DroidSansFallback.ttf
@@ -1055,6 +1056,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/m/ticket/select_create_queue
 %%DATADIR%%/html/m/ticket/show
 %%DATADIR%%/html/m/tickets/search
+@dir %%DATADIR%%/lib
+@dir %%DATADIR%%/plugins
 %%DATADIR%%/po/ar.po
 %%DATADIR%%/po/bg.po
 %%DATADIR%%/po/ca.po
@@ -1500,9 +1503,9 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/supersubs.js
 %%DATADIR%%/static/js/titlebox-state.js
 %%DATADIR%%/static/js/util.js
-@unexec rmdir "/var/run/rt42/mason_data/cache" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42/mason_data/etc" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42/mason_data/obj" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42/mason_data" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42/session_data" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42" >/dev/null 2>&1 || :
+@dir(www,www,755) /var/run/rt42/mason_data/cache
+@dir(www,www,755) /var/run/rt42/mason_data/etc
+@dir(www,www,755) /var/run/rt42/mason_data/obj
+@dir(www,www,755) /var/run/rt42/mason_data
+@dir(www,www,755) /var/run/rt42/session_data
+@dir /var/run/rt42
