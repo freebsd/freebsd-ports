@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
