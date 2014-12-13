@@ -4,5 +4,3 @@ GNUstep/Local/Applications/GMines.app/Resources/GMines.tiff
 GNUstep/Local/Applications/GMines.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/GMines.app/stamp.make
 GNUstep/Local/Tools/GMines
-@dirrm GNUstep/Local/Applications/GMines.app/Resources
-@dirrm GNUstep/Local/Applications/GMines.app
