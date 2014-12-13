@@ -1,4 +1,5 @@
 bin/ssdeep
+include/edit_dist.h
 include/fuzzy.h
 lib/libfuzzy.a
 lib/libfuzzy.so
