@@ -10,14 +10,16 @@ MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	SPEED
 SPEED_DESC=	Optimize for speed over accuracy
 
 CONFIGURE_ARGS=	--disable-debugging --enable-sso
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
 USE_LDCONFIG=	yes
+USES=		libtool
 
 SUB_LIST=	VERSION=${PORTVERSION}
 SUB_FILES=	mad.pc
