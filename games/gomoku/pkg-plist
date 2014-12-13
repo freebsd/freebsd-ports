@@ -40,14 +40,3 @@ GNUstep/Local/Applications/Gomoku.app/Resources/Swedish.lproj/Localizable.string
 GNUstep/Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj/Localizable.strings
 GNUstep/Local/Applications/Gomoku.app/stamp.make
 GNUstep/Local/Tools/Gomoku
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Swedish.lproj
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Spanish.lproj
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Norwegian.lproj
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Italian.lproj
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Hungarian.lproj
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/French.lproj
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Gomoku.app/Resources
-@dirrm GNUstep/Local/Applications/Gomoku.app
