@@ -3428,6 +3428,7 @@
     SUBDIR += pecl-spl_types
     SUBDIR += pecl-spread
     SUBDIR += pecl-statgrab
+    SUBDIR += pecl-strict
     SUBDIR += pecl-svn
     SUBDIR += pecl-swoole
     SUBDIR += pecl-sync
