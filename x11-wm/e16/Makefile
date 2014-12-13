@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	e16
-PORTVERSION=	1.0.14.001
+PORTVERSION=	1.0.15
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots/
+MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Enlightenment DR16 window manager
