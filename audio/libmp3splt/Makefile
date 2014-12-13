@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmp3splt
-PORTVERSION=	0.8.2
-PORTREVISION=	3
+PORTVERSION=	0.9.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -18,70 +17,36 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cutter --disable-doxygen_doc
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_MULTI=	plugin
-OPTIONS_MULTI_plugin=	MAD VORBIS
+OPTIONS_MULTI_plugin=	MAD FLAC VORBIS
 OPTIONS_DEFINE=	ID3 PCRE NLS
+OPTIONS_SUB=	yes
 
 PCRE_DESC=	PCRE support to set tags from input filename
 
-OPTIONS_DEFAULT=	MAD VORBIS ID3 PCRE NLS
+OPTIONS_DEFAULT=	MAD FLAC VORBIS ID3 PCRE NLS
 
-PLUGIN_DIR=	libmp3splt0
+MAD_CONFIGURE_ENABLE=	mp3
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 
-PLIST_DIRS=	include/libmp3splt lib/${PLUGIN_DIR}
-PLIST_FILES=	include/libmp3splt/mp3splt.h include/libmp3splt/version.h lib/libmp3splt.a \
-		lib/libmp3splt.so lib/libmp3splt.so.0 lib/libmp3splt.so.0.0.8 \
-		libdata/pkgconfig/libmp3splt.pc
+FLAC_CONFIGURE_ENABLE=	flac
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
 
-.include <bsd.port.options.mk>
+VORBIS_CONFIGURE_ENABLE=ogg
+VORBIS_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+			libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-.if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
-PLIST_FILES+=	lib/${PLUGIN_DIR}/libsplt_mp3.a \
-		lib/${PLUGIN_DIR}/libsplt_mp3.so \
-		lib/${PLUGIN_DIR}/libsplt_mp3.so.0 \
-		lib/${PLUGIN_DIR}/libsplt_mp3.so.0.0.0
-.else
-CONFIGURE_ARGS+=	--disable-mp3
-.endif
+PCRE_CONFIGURE_ENABLE=	pcre
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-PLIST_FILES+=	lib/${PLUGIN_DIR}/libsplt_ogg.a \
-		lib/${PLUGIN_DIR}/libsplt_ogg.so \
-		lib/${PLUGIN_DIR}/libsplt_ogg.so.0 \
-		lib/${PLUGIN_DIR}/libsplt_ogg.so.0.0.0
-.else
-CONFIGURE_ARGS+=	--disable-ogg
-.endif
+MID3_LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag
+MID3_CONFIGURE_ENABLE=	id3tag
 
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
-.else
-CONFIGURE_ARGS+=	--disable-pcre
-.endif
-
-.if ${PORT_OPTIONS:MID3}
-LIB_DEPENDS+=	libid3tag.so:${PORTSDIR}/audio/libid3tag
-.else
-CONFIGURE_ARGS+=	--disable-id3tag
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-LANGUAGES=	de_DE cs es fr_FR hr
-.for language in ${LANGUAGES}
-PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/libmp3splt0.mo
-.endfor
-PLIST_FILES+=	"@dirrmtry share/locale/de_DE/LC_MESSAGES"
-PLIST_FILES+=	"@dirrmtry share/locale/de_DE"
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>
