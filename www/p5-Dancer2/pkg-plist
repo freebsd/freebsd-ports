@@ -3,6 +3,7 @@ bin/dancer2
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/Makefile.PL
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/config.yml
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/bin/+app.pl
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/cpanfile
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/environments/development.yml
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/environments/production.yml
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/lib/AppFile.pm
