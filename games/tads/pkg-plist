@@ -4,4 +4,3 @@ bin/tdb
 %%DATADIR%%/adv.t
 %%DATADIR%%/std.t
 %%DATADIR%%/gameinfo.t
-@dirrm %%DATADIR%%
