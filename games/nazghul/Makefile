@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Computer role-playing game engine
 
+LICENSE=	GPLv2 # or later (GPLv3 text bundled, but sources mention GPLv2+)
+
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USE_SDL=	sdl image mixer
