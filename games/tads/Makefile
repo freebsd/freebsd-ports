@@ -4,17 +4,21 @@
 PORTNAME=	tads
 PORTVERSION=	2.5.9
 CATEGORIES=	games lang
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kris
+MASTER_SITES=	LOCAL/kris
 DISTNAME=	tads23-unix
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TADS compiler/interpreter for interactive fiction
 
+LICENSE=	TADS
+LICENSE_NAME=	TADS FREEWARE SOURCE CODE LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 CONFLICTS=	frobtads-1.*
 
 WRKSRC=		${WRKDIR}/tads-3.0.8/tads2
-DATADIR=	share/tads2
+DATADIR=	${PREFIX}/share/tads2
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/tads2
