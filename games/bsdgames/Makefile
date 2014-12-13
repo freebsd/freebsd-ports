@@ -3,6 +3,7 @@
 
 PORTNAME=	bsdgames
 PORTVERSION=	3.8.2
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	games
 # Fetched from git://git.dragonflybsd.org/dragonfly.git, v${PORTVERSION}, /games
@@ -75,6 +76,12 @@ pre-install:
 .endfor
 
 post-install:
+# avoid conflict with games/bs and shells/fish
+.for prog in bs fish
+	${MV} ${STAGEDIR}${PREFIX}/bin/${prog} ${STAGEDIR}${PREFIX}/bin/${prog}-game
+	${MV} ${STAGEDIR}${MAN6PREFIX}/man/man6/${prog}.6.gz ${STAGEDIR}${MAN6PREFIX}/man/man6/${prog}-game.6.gz
+.endfor
+
 	@${TOUCH} ${STAGEDIR}/var/games/atc_score
 	@${FIND} ${STAGEDIR}/var/games -type f -exec ${MV} {} {}.sample \;
 
