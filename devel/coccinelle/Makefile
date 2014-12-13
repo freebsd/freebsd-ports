@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	coccinelle
-DISTVERSION=	1.0.0-rc19
+DISTVERSION=	1.0.0-rc22
 CATEGORIES=	devel
 MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
 
