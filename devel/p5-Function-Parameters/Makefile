@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Function-Parameters
-PORTVERSION=	1.0401
+PORTVERSION=	1.0603
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAUKE
@@ -22,7 +22,14 @@ TEST_DEPENDS=	p5-Dir-Self>=0:${PORTSDIR}/devel/p5-Dir-Self \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Function/Parameters/Parameters.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Function/Parameters/Parameters.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Function/Parameters/Parameters.so
 
 .include <bsd.port.mk>
