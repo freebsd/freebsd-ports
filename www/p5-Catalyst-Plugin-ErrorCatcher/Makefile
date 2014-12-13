@@ -3,7 +3,7 @@
 
 PORTNAME=	Catalyst-Plugin-ErrorCatcher
 PORTVERSION=	0.0.8.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHISEL
@@ -44,7 +44,7 @@ USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 502000
+.if ${PERL_LEVEL} >= 501800
 BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif
