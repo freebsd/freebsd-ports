@@ -71,11 +71,3 @@ share/aclocal/gtkglext-1.0.m4
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/gtkglext-1.0/gtk
-@dirrm include/gtkglext-1.0/gdk/x11
-@dirrm include/gtkglext-1.0/gdk/glext
-@dirrm include/gtkglext-1.0/gdk
-@dirrm include/gtkglext-1.0
-@dirrm lib/gtkglext-1.0/include
-@dirrm lib/gtkglext-1.0
