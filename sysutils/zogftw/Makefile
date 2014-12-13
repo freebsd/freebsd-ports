@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	zogftw
-PORTVERSION=	0.0.2014.09.20
+PORTVERSION=	0.0.2014.12.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fabiankeil.de/sourcecode/zogftw/
-DISTNAME=	${PORTNAME}-2014-09-20-28bc862
+DISTNAME=	${PORTNAME}-2014-12-12-71f792b
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Creates redundant backups on encrypted ZFS pools
@@ -23,8 +23,7 @@ PLIST_FILES=	sbin/zogftw \
 NO_BUILD=	yes
 PORTSCOUT=	ignore:1
 
-GNUPG_RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1 \
-			gpg-agent:${PORTSDIR}/security/gnupg
+GNUPG_RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 EXECUTE_TESTS_BUILD_DEPENDS=	atf-sh:${PORTSDIR}/devel/atf \
 				kyua:${PORTSDIR}/devel/kyua
