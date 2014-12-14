@@ -10,13 +10,15 @@ MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/pongix/descargas/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free pong-like game
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 USE_SDL=	sdl image net
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lm -L${LOCALBASE}/lib ${PTHREAD}
+LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lm
 PORTDOCS=	AUTHORS ChangeLog README
 
 do-install:
