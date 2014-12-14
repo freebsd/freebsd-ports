@@ -8,4 +8,6 @@ PORTREVISION=	2
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 PKGNAMESUFFIX=	-96
 
+FORBIDDEN=	vulnerable to denial of service or arbitrary code execution (CVE-2014-8298)
+
 .include "${MASTERDIR}/Makefile"
