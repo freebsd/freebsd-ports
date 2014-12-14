@@ -11,8 +11,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another little mind game
 
-USES=		gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gettext gmake pathfix pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix intlhack libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lm
