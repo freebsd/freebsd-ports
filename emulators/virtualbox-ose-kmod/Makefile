@@ -2,7 +2,7 @@
 # $FreeBSD: head/emulators/virtualbox-ose-kmod/Makefile 354896 2014-05-22 23:10:51Z jkim $
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.20
+DISTVERSION=	4.3.12
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -18,10 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	kmk:${PORTSDIR}/devel/kBuild
 
-CPE_VENDOR=	oracle
-CPE_PRODUCT=	vm_virtualbox
-
-USES=		cpe kmod tar:bzip2
+USES=		kmod tar:bzip2
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}

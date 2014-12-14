@@ -2,8 +2,8 @@
 # $FreeBSD: head/emulators/virtualbox-ose/Makefile 354896 2014-05-22 23:10:51Z jkim $
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.20
-PORTREVISION=	2
+DISTVERSION=	4.3.12
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -29,13 +29,11 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:${PORTSDIR}/emulators/virtualbox-ose-kmod \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-CPE_VENDOR=	oracle
-CPE_PRODUCT=	vm_virtualbox
-
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler cpe iconv pkgconfig tar:bzip2
+USES=		compiler iconv pkgconfig tar:bzip2
 USE_GNOME=	libidl
+USE_PYTHON_BUILD=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-java --passive-mesa
@@ -129,16 +127,15 @@ RESTRICTED_FILES=	${GUESTADDITIONS}
 .endif
 
 .if ${PORT_OPTIONS:MMANUAL}
-USE_TEX=	dvipsk:build formats:build
+USE_TEX=	dvipsk:build formats:build texlive
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2
-USE_PYTHON=	distutils noegginfo
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	vboxapi
 PYDISTUTILS_PKGVERSION=	1.0
-.else
-USES+=		python:build
+PYDISTUTILS_NOEGGINFO=	yes
 .endif
 
 .if ${PORT_OPTIONS:MQT4}

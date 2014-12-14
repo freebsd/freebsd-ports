@@ -1,6 +1,6 @@
---- Config.kmk.orig	2014-07-16 16:59:27.000000000 -0400
-+++ Config.kmk	2014-07-16 17:12:48.000000000 -0400
-@@ -339,7 +339,7 @@
+--- Config.kmk.orig	2014-03-26 15:12:14.000000000 -0400
++++ Config.kmk	2014-05-09 14:58:40.000000000 -0400
+@@ -334,7 +334,7 @@
  # Include documentation in the package
  VBOX_WITH_DOCS_PACKING = 1
  # Include CHM when building docs (unset in LocalConfig.kmk to suppress CHM)
@@ -8,8 +8,8 @@
 +ifn1of ($(KBUILD_TARGET), freebsd linux)
   VBOX_WITH_DOCS_CHM = 1
  endif
- # By default only include translations in documentation-only builds
-@@ -602,7 +602,7 @@
+ # Include translations
+@@ -584,7 +584,7 @@
  # Enable this to build vbox-img even if VBOX_WITH_TESTCASES is disabled
  VBOX_WITH_VBOX_IMG =
  # Enables the VPX module for VM video capturing
@@ -18,7 +18,7 @@
   VBOX_WITH_VPX = 1
  endif
  # Enable shared folders
-@@ -891,10 +891,6 @@
+@@ -877,10 +877,6 @@
   VBOX_WITH_VBOXSDL=
  endif
  
@@ -29,16 +29,16 @@
  ifeq ($(KBUILD_TARGET),haiku)
   # Don't bother with SDL ttf for now.
   VBOX_WITH_SECURELABEL=
-@@ -1050,7 +1046,7 @@
+@@ -1035,7 +1031,7 @@
+  VBOX_WITH_OS2_ADDITIONS_BIN=
   VBOX_WITH_SECURELABEL=
   VBOX_WITH_KCHMVIEWER=
-  VBOX_WITH_PLUGIN_CRYPT=
 - ifn1of ($(KBUILD_TARGET), linux)
 + ifn1of ($(KBUILD_TARGET), freebsd linux)
    VBOX_WITH_DOCS=
    VBOX_WITH_DOCS_PACKING=
   endif
-@@ -3476,16 +3472,16 @@
+@@ -3399,16 +3395,16 @@
  	$(VBOX_GCC_WARN) -Wpointer-arith -Winline $(VBOX_GCC_Wno-pointer-sign) $(VBOX_GCC_fdiagnostics-show-option) \
  	-Wstrict-prototypes -Wmissing-prototypes -Wstrict-prototypes \
  	-Wimplicit-function-declaration -Werror-implicit-function-declaration \
@@ -58,12 +58,8 @@
  	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
  	-nostdinc
  TEMPLATE_VBOXR0DRV_CXXFLAGS.x86        = $(TEMPLATE_VBOXR0DRV_CFLAGS.x86)
-@@ -3719,12 +3715,8 @@
- TEMPLATE_VBOXR3EXE_TOOL                = GXX3
- TEMPLATE_VBOXR3EXE_LIBS                = pthread
- TEMPLATE_VBOXR3EXE_INCS               += \
--	/usr/include \
--	/usr/X11R6/include \
+@@ -3642,8 +3638,6 @@
+ 	/usr/X11R6/include \
  	/usr/local/include
  TEMPLATE_VBOXR3EXE_LIBPATH            += \
 -	/usr/lib \
@@ -71,21 +67,17 @@
  	/usr/local/lib
   else ifeq ($(KBUILD_TARGET),solaris)
  TEMPLATE_VBOXR3EXE_TOOL                = GXX3PLAIN
-@@ -3982,7 +3974,7 @@
-  TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.win.amd64 = $(TEMPLATE_VBOXR3EXE_LDFLAGS.win.amd64) /entry:suplibHardenedWindowsMain
-  TEMPLATE_VBOXR3HARDENEDEXE_LIBS.x86       = $(NOT_SUCH_VARIABLE)
-  TEMPLATE_VBOXR3HARDENEDEXE_LIBS.amd64     = $(NOT_SUCH_VARIABLE)
--else ifn1of ($(KBUILD_TARGET), os2)
-+else ifn1of ($(KBUILD_TARGET), os2 freebsd)
+@@ -3880,7 +3874,7 @@
+ # not necessary except USE_LIB_PCAP is defined in SUPR3HardenedMain.cpp
+ # TEMPLATE_VBOXR3HARDENEDEXE_LIBS += cap
+ endif
+-ifn1of ($(KBUILD_TARGET), win os2)
++ifn1of ($(KBUILD_TARGET), win os2 freebsd)
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBOXR3EXE_LDFLAGS))
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.linux))
  endif
-@@ -4370,12 +4362,8 @@
- TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
- TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
- TEMPLATE_VBOXMAINEXE_INCS               += \
--	/usr/include \
--	/usr/X11R6/include \
+@@ -4221,8 +4215,6 @@
+ 	/usr/X11R6/include \
  	/usr/local/include
  TEMPLATE_VBOXMAINEXE_LIBPATH            += \
 -	/usr/lib \
@@ -93,12 +85,8 @@
  	/usr/local/lib
  else ifeq ($(KBUILD_TARGET),solaris)
  TEMPLATE_VBOXMAINEXE_TOOL                = GXX3PLAIN
-@@ -4838,12 +4826,8 @@
- 	$(VBOX_LIBPATH_X11)
-    ifeq ($(KBUILD_TARGET),freebsd)
-     TEMPLATE_VBOXQT4GUIEXE_INCS += \
--	/usr/include \
--	/usr/X11R6/include \
+@@ -4688,8 +4680,6 @@
+ 	/usr/X11R6/include \
  	/usr/local/include
      TEMPLATE_VBOXQT4GUIEXE_LIBPATH += \
 -	/usr/lib \
@@ -106,16 +94,12 @@
  	/usr/local/lib
     endif
     ifeq ($(KBUILD_TARGET),solaris)
-@@ -5035,12 +5019,8 @@
- TEMPLATE_VBoxBldProg_TOOL                = GXX3
- TEMPLATE_VBoxBldProg_LIBS                = pthread
- TEMPLATE_VBoxBldProg_INCS               += \
--	/usr/include \
--	/usr/X11R6/include \
+@@ -4884,8 +4874,6 @@
+ 	/usr/X11R6/include \
  	/usr/local/include
- TEMPLATE_VBoxBldProg_LIBPATH            += \
+ TEMPLATE_VBOXBLDPROG_LIBPATH            += \
 -	/usr/lib \
 -	/usr/X11R6/lib \
  	/usr/local/lib
   else ifeq ($(KBUILD_HOST),solaris)
- TEMPLATE_VBoxBldProg_TOOL                = GXX3PLAIN
+ TEMPLATE_VBOXBLDPROG_TOOL                = GXX3PLAIN

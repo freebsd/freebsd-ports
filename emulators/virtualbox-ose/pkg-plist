@@ -452,6 +452,7 @@ lib/virtualbox/components/VBoxXPCOMIPCC.so
 lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%QT4%%share/applications/virtualbox.desktop
 %%MANUAL%%%%DOCSDIR%%/UserManual.pdf
+%%MANUAL%%%%DOCSDIR%%/UserManual_fr_FR.pdf
 %%QT4%%share/pixmaps/VBox.png
 %%DATADIR%%/idl/VirtualBox_XPCOM.idl
 %%DATADIR%%/idl/ipcIClientObserver.idl
@@ -650,3 +651,31 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xpcom/server/module.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xpcom/server/policy.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xpcom/server/policy.pyc
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/xpcom/server
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/xpcom/client
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/xpcom
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vboxapi
+%%PYTHON%%@dirrm %%DATADIR%%/sdk/bindings/xpcom/python
+%%PYTHON%%@dirrm %%DATADIR%%/sdk/bindings/xpcom
+%%WEBSERVICE%%@dirrm %%DATADIR%%/sdk/bindings/webservice
+%%SDK%%@dirrm %%DATADIR%%/sdk/bindings
+%%SDK%%@dirrm %%DATADIR%%/sdk
+@dirrm %%DATADIR%%/samples
+%%NLS%%@dirrm %%DATADIR%%/nls
+@dirrm %%DATADIR%%/idl
+@dirrm %%DATADIR%%
+%%MANUAL%%@dirrm %%DOCSDIR%%
+@dirrm lib/virtualbox/components
+%%GUESTADDITIONS%%@dirrm lib/virtualbox/additions
+%%VNC%%@dirrm lib/virtualbox/ExtensionPacks/VNC/%%ARCH%%
+%%VNC%%@dirrm lib/virtualbox/ExtensionPacks/VNC
+%%VNC%%@dirrmtry lib/virtualbox/ExtensionPacks
+@dirrmtry lib/virtualbox
+@dirrm include/virtualbox/xpcom
+@dirrm include/virtualbox/string
+@dirrm include/virtualbox/nsprpub/private
+@dirrm include/virtualbox/nsprpub/obsolete
+@dirrm include/virtualbox/nsprpub/md
+@dirrm include/virtualbox/nsprpub
+@dirrm include/virtualbox/ipcd
+@dirrm include/virtualbox
