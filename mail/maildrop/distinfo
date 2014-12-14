@@ -1,4 +1,2 @@
-SHA256 (maildrop-2.7.2.tar.bz2) = d978cba4a6f1f139216f22cf03ee3c878fe2b287c9409024a2d41ef54931a4a6
-SIZE (maildrop-2.7.2.tar.bz2) = 1968673
-SHA256 (maildrop-2.7.0-dovecotauth.patch.txt) = 2987e56071d78dc55ac2ce523fe041dbf6565a90e98410f9fa2219d7434b945b
-SIZE (maildrop-2.7.0-dovecotauth.patch.txt) = 22063
+SHA256 (maildrop-2.8.0.tar.bz2) = 28e37051eba909d89a9769556171dde7663a805e69d85e4a7664782b0b3a3c1a
+SIZE (maildrop-2.8.0.tar.bz2) = 1989763
