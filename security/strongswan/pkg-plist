@@ -311,25 +311,25 @@ man/man8/_updown_espmark.8.gz
 %%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.so
 %%TESTVECTOR%%%%DATADIR%%/templates/config/plugins/test-vectors.conf
 %%TESTVECTOR%%@sample %%ETCDIR%%.d/charon/test-vectors.conf.sample
-%%TOOLS%%bin/pki
-%%TOOLS%%libexec/ipsec/scepclient
-%%TOOLS%%man/man1/pki---acert.1.gz
-%%TOOLS%%man/man1/pki---gen.1.gz
-%%TOOLS%%man/man1/pki---issue.1.gz
-%%TOOLS%%man/man1/pki---keyid.1.gz
-%%TOOLS%%man/man1/pki---pkcs7.1.gz
-%%TOOLS%%man/man1/pki---print.1.gz
-%%TOOLS%%man/man1/pki---pub.1.gz
-%%TOOLS%%man/man1/pki---req.1.gz
-%%TOOLS%%man/man1/pki---self.1.gz
-%%TOOLS%%man/man1/pki---signcrl.1.gz
-%%TOOLS%%man/man1/pki---verify.1.gz
-%%TOOLS%%man/man1/pki.1.gz
-%%TOOLS%%man/man8/scepclient.8.gz
-%%TOOLS%%%%DATADIR%%/templates/config/strongswan.d/pki.conf
-%%TOOLS%%@sample %%ETCDIR%%.d/pki.conf.sample
-%%TOOLS%%%%DATADIR%%/templates/config/strongswan.d/scepclient.conf
-%%TOOLS%%@sample %%ETCDIR%%.d/scepclient.conf.sample
+%%PKI%%bin/pki
+%%PKI%%man/man1/pki---acert.1.gz
+%%PKI%%man/man1/pki---gen.1.gz
+%%PKI%%man/man1/pki---issue.1.gz
+%%PKI%%man/man1/pki---keyid.1.gz
+%%PKI%%man/man1/pki---pkcs7.1.gz
+%%PKI%%man/man1/pki---print.1.gz
+%%PKI%%man/man1/pki---pub.1.gz
+%%PKI%%man/man1/pki---req.1.gz
+%%PKI%%man/man1/pki---self.1.gz
+%%PKI%%man/man1/pki---signcrl.1.gz
+%%PKI%%man/man1/pki---verify.1.gz
+%%PKI%%man/man1/pki.1.gz
+%%PKI%%%%DATADIR%%/templates/config/strongswan.d/pki.conf
+%%PKI%%@sample %%ETCDIR%%.d/pki.conf.sample
+%%SCEP%%libexec/ipsec/scepclient
+%%SCEP%%man/man8/scepclient.8.gz
+%%SCEP%%%%DATADIR%%/templates/config/strongswan.d/scepclient.conf
+%%SCEP%%@sample %%ETCDIR%%.d/scepclient.conf.sample
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.a
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.la
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.so
@@ -393,13 +393,11 @@ lib/ipsec/libcharon.so.0.0.0
 lib/ipsec/libhydra.so.0.0.0
 lib/ipsec/libstrongswan.so.0.0.0
 lib/ipsec/libtls.so.0.0.0
-@dir %%DATADIR%%/templates/config/plugins
-@dir lib/ipsec/plugins
-@dir etc/ipsec.d/reqs
-@dir etc/ipsec.d/private
-@dir etc/ipsec.d/ocspcerts
-@dir etc/ipsec.d/crls
-@dir etc/ipsec.d/certs
-@dir etc/ipsec.d/cacerts
-@dir etc/ipsec.d/acerts
 @dir etc/ipsec.d/aacerts
+@dir etc/ipsec.d/acerts
+@dir etc/ipsec.d/cacerts
+@dir etc/ipsec.d/certs
+@dir etc/ipsec.d/crls
+@dir etc/ipsec.d/ocspcerts
+@dir etc/ipsec.d/private
+@dir etc/ipsec.d/reqs
