@@ -40,7 +40,7 @@ QUICK GUIDE TO ADDING A NEW ENTRY
 4. fix any errors
 5. profit!
 
-Addtional tests can be done this way:
+Additional tests can be done this way:
  $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py26-django-1.6
  $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py27-django-1.6.1
 
@@ -57,6 +57,60 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fdf72a0e-8371-11e4-bc20-001636d274f3">
+    <topic>NVIDIA UNIX driver -- remote denial of service or arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>nvidia-driver</name>
+	<range><lt>340.65</lt></range>
+      </package>
+      <package>
+	<name>nvidia-driver-304</name>
+	<range><lt>304.125</lt></range>
+      </package>
+      <package>
+	<name>nvidia-driver-173</name>
+	<range><le>173.14.35_3</le></range>
+      </package>
+      <package>
+	<name>nvidia-driver-96</name>
+	<range><le>96.43.23_2</le></range>
+      </package>
+      <package>
+	<name>nvidia-driver-71</name>
+	<range><le>71.86.15_4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVIDIA Unix security team reports:</p>
+	<blockquote cite="http://nvidia.custhelp.com/app/answers/detail/a_id/3610">
+	  <p>The GLX indirect rendering support supplied on NVIDIA products
+	     is subject to the recently disclosed X.Org vulnerabilities
+	     (CVE-2014-8093, CVE-2014-8098) as well as internally identified
+	     vulnerabilities (CVE-2014-8298).</p>
+	  <p>Depending on how it is configured, the X server typically runs
+	     with raised privileges, and listens for GLX indirect rendering
+	     protocol requests from a local socket and potentially a TCP/IP
+	     port.  The vulnerabilities could be exploited in a way that
+	     causes the X server to access uninitialized memory or overwrite
+	     arbitrary memory in the X server process.  This can cause a
+	     denial of service (e.g., an X server segmentation fault), or
+	     could be exploited to achieve arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8298</cvename>
+      <cvename>CVE-2014-8093</cvename>
+      <cvename>CVE-2014-8098</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-03</discovery>
+      <entry>2014-12-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab3e98d9-8175-11e4-907d-d050992ecde8">
     <topic>bind -- denial of service vulnerability</topic>
     <affects>
