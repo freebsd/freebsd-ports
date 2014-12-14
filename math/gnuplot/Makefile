@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Command-line driven graphing utility
 
-USES=		iconv lua
+USES=		iconv lua pkgconfig
 USE_TEX=	kpathsea
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
@@ -22,6 +22,7 @@ CONFIGURE_ARGS+=--with-lasergnu \
 		--without-tutorial \
 		--with-bitmap-terminals \
 		--with-latex \
+		ac_cv_prog_KPSEXPAND=${LOCALBASE}/bin/kpsexpand \
 		ac_cv_prog_PLAINTEX=${LOCALBASE}/bin/tex \
 		ac_cv_prog_LATEX=${LOCALBASE}/bin/latex \
 		ac_cv_prog_PDFLATEX=${LOCALBASE}/bin/pdflatex
