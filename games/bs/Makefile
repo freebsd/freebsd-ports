@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bs
-PORTVERSION=	2.9
-PORTREVISION=	1
+PORTVERSION=	2.10
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bs/
 
@@ -18,18 +17,21 @@ ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz \
+		share/appdata/${PORTNAME}.xml \
 		${DESKTOPDIR}/${PORTNAME}.desktop \
-		share/pixmaps/battleship.png
+		share/icons/hicolor/32x32/apps/battleship.png
 
 PORTDOCS=	NEWS README
 OPTIONS_DEFINE=	DOCS
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/battleship.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin/|; \
+		s|/usr/share/|${PREFIX}/share/|; \
+		s|/usr/local/share/man|${PREFIX}/man/|' \
+		${WRKSRC}/Makefile
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
