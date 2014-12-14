@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 DESTDIRNAME=		--destdir
 
 OPTIONS_DEFINE=		MANPAGES
-MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
+MANPAGES_DESC=		Build and install manpages(requires textproc/docbook-xsl)
 
 .include <bsd.port.options.mk>
 
