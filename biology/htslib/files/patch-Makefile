@@ -1,0 +1,64 @@
+--- Makefile.orig	2014-09-23 14:39:41 UTC
++++ Makefile
+@@ -22,33 +22,27 @@
+ # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ # DEALINGS IN THE SOFTWARE.
+ 
+-CC     = gcc
+-AR     = ar
+-RANLIB = ranlib
++CC    ?= cc
++AR     = /usr/bin/ar
++RANLIB = /usr/bin/ranlib
+ 
+ # TODO: edit cram code to remove need for -DSAMTOOLS
+-CPPFLAGS = -I. -DSAMTOOLS=1
++CPPFLAGS += -I. -DSAMTOOLS=1 -Wno-unused-function -Wno-implicit-function-declaration
+ # TODO: probably update cram code to make it compile cleanly with -Wc++-compat
+-CFLAGS   = -g -Wall -O2
++CFLAGS   += -Wall
+ EXTRA_CFLAGS_PIC = -fpic
+-LDFLAGS  =
+-LDLIBS   =
++LDFLAGS  +=
++LDLIBS   +=
+ 
+-prefix      = /usr/local
++prefix      = ${STAGEDIR}${PREFIX}
+ exec_prefix = $(prefix)
+ bindir      = $(exec_prefix)/bin
+ includedir  = $(prefix)/include
+ libdir      = $(exec_prefix)/lib
+-mandir      = $(prefix)/share/man
++mandir      = $(prefix)/man
+ man1dir     = $(mandir)/man1
+ man5dir     = $(mandir)/man5
+-pkgconfigdir= $(libdir)/pkgconfig
+-
+-MKDIR_P = mkdir -p
+-INSTALL = install -p
+-INSTALL_PROGRAM = $(INSTALL)
+-INSTALL_DATA    = $(INSTALL) -m 644
+-INSTALL_DIR     = $(MKDIR_P) -m 755
++pkgconfigdir= $(exec_prefix)/libdata/pkgconfig
+ 
+ BUILT_PROGRAMS = \
+ 	bgzip \
+@@ -62,7 +56,7 @@ BUILT_TEST_PROGRAMS = \
+ 	test/test-vcf-api \
+ 	test/test-vcf-sweep
+ 
+-all: lib-static lib-shared $(BUILT_PROGRAMS) $(BUILT_TEST_PROGRAMS)
++all: lib-static lib-shared $(BUILT_PROGRAMS)
+ 
+ HTSPREFIX =
+ include htslib_vars.mk
+@@ -284,7 +278,7 @@ installdirs:
+ # and libhts.so.NN (used by client executables at runtime).
+ 
+ install-so: libhts.so installdirs
+-	$(INSTALL_DATA) libhts.so $(DESTDIR)$(libdir)/libhts.so.$(PACKAGE_VERSION)
++	$(INSTALL_LIB) libhts.so $(DESTDIR)$(libdir)/libhts.so.$(PACKAGE_VERSION)
+ 	ln -sf libhts.so.$(PACKAGE_VERSION) $(DESTDIR)$(libdir)/libhts.so
+ 	ln -sf libhts.so.$(PACKAGE_VERSION) $(DESTDIR)$(libdir)/libhts.so.$(LIBHTS_SOVERSION)
+ 
