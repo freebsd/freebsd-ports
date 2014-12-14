@@ -2,5 +2,5 @@ SHA256 (fontforge_full-20120731-b.tar.bz2) = 1b6184caff211e315783a029256f56cf05f
 SIZE (fontforge_full-20120731-b.tar.bz2) = 5541994
 SHA256 (fontforge_htdocs-20120731-b.tar.bz2) = 6c3f178484d21814762c52859ffead25564a93e88cd5fe7cc9877e4b7e85105d
 SIZE (fontforge_htdocs-20120731-b.tar.bz2) = 3506833
-SHA256 (freetype-2.5.3.tar.bz2) = c0848b29d52ef3ca27ad92e08351f023c5e24ce8cea7d8fe69fc96358e65f75e
-SIZE (freetype-2.5.3.tar.bz2) = 1703842
+SHA256 (freetype-2.5.4.tar.bz2) = 3b4e2c666b33b32ad29ff0fe5c6538e757d3c73368e5dfa88bd59b4bc95cbabb
+SIZE (freetype-2.5.4.tar.bz2) = 1726105
