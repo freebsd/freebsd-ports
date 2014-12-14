@@ -150,6 +150,7 @@
     SUBDIR += gnubc
     SUBDIR += gnumeric
     SUBDIR += gnuplot
+    SUBDIR += gnuplot-tex-extras
     SUBDIR += goblin
     SUBDIR += gotoblas
     SUBDIR += grace
