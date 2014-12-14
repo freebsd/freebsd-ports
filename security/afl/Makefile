@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	0.61b
+PORTVERSION=	0.80b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
@@ -13,7 +13,8 @@ USES=		compiler gmake tar:tgz
 
 OPTIONS_DEFINE=			DEBUG DOCS TEST_INSTRUMENTATION
 TEST_INSTRUMENTATION_DESC=	Execute tests expected to fail in jails
-OPTIONS_DEFAULT=		DOCS
+
+PORTSCOUT=	ignore:1
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	Uses binary instrumentation
@@ -47,10 +48,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's@ifdef.*\(__OpenBSD__\)@if defined(\1) || \
 		(defined(__FreeBSD__) \&\& __FreeBSD__ < 9)@' \
 		${WRKSRC}/afl-as.h
+	${REINPLACE_CMD} -e 's@sys/\(termios.h\)@\1@' \
+		${WRKSRC}/afl-fuzz.c
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/COPYING ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.post.mk>

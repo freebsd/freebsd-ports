@@ -16,6 +16,9 @@ bin/afl-gcc
 bin/afl-showmap
 lib/afl/afl-as
 lib/afl/as
+share/afl/archives/ar/small_archive.a
+share/afl/archives/compress/small_archive.Z
+share/afl/archives/cpio/small_archive.cpio
 share/afl/archives/gzip/small_archive.gz
 share/afl/archives/lzo/small_achive.lzo
 share/afl/archives/tar/small_archive.tar
