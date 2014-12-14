@@ -26,6 +26,7 @@
     SUBDIR += gperiodic
     SUBDIR += grappa
     SUBDIR += hmmer
+    SUBDIR += htslib
     SUBDIR += iolib
     SUBDIR += jalview
     SUBDIR += lagan
