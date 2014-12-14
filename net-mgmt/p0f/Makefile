@@ -3,6 +3,7 @@
 
 PORTNAME=	p0f
 PORTVERSION=	3.08b
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/ \
 		http://fossies.org/unix/privat/
