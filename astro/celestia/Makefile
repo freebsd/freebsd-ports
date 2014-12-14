@@ -3,7 +3,7 @@
 
 PORTNAME=	celestia
 PORTVERSION=	1.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Celestia-source/${PORTVERSION}
 PKGNAMESUFFIX=	-${CELESTIA_UI}
@@ -20,6 +20,7 @@ USES=		gettext gmake libtool lua pkgconfig
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 EXTRA_PATCHES=	${FILESDIR}/celestia-1.6.1-lua-5.2.patch:-p1 \
+		${FILESDIR}/celestia-lua-52-fix.patch:-p1 \
 		${FILESDIR}/celestia-1.6.1-gcc47.patch:-p1 \
 		${FILESDIR}/celestia-1.6.1-gcc48.patch:-p1
 
