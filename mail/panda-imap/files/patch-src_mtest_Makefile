@@ -1,0 +1,30 @@
+--- src/mtest/Makefile.orig	Wed Oct 25 01:55:39 2000
++++ src/mtest/Makefile	Mon Oct  1 03:42:11 2001
+@@ -19,24 +19,17 @@
+ 
+ 
+ C = ../c-client
+-CCLIENTLIB = $C/c-client.a
+ SHELL = /bin/sh
+ 
+ # Get local definitions from c-client directory
+ 
+-CC = `cat $C/CCTYPE`
+-CFLAGS = -I$C `cat $C/CFLAGS`
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client
++LDFLAGS+=	-L$(LOCALBASE)/lib -lc-client4
+ 
+ all:	mtest
+ 
+-mtest: $(CCLIENTLIB) mtest.o
++mtest: mtest.o
+ 	$(CC) $(CFLAGS) -o mtest mtest.o $(LDFLAGS)
+-
+-mtest.o: $C/mail.h $C/misc.h $C/osdep.h $C/rfc822.h $C/smtp.h $C/nntp.h
+-
+-$(CCLIENTLIB):
+-	cd $C;make
+ 
+ clean:
+ 	rm -f *.o mtest || true

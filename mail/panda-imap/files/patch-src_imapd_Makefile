@@ -1,0 +1,61 @@
+--- src/imapd/Makefile.orig	2013-06-21 23:29:17.000000000 +0200
++++ src/imapd/Makefile	2014-12-14 14:44:16.000000000 +0100
+@@ -26,11 +26,11 @@
+ #     http://www.apache.org/licenses/LICENSE-2.0
+ 
+ 
+-ALERT=/etc/imapd.alert
++ALERT=$(PREFIX)/etc/imapd.alert
+ USERALERT=.imapalert
+-SHUTDOWN=/etc/nologin
+-ANO=/etc/anonymous.newsgroups
+-NNTP=/etc/imapd.nntp
++SHUTDOWN=$(PREFIX)/etc/nologin
++ANO=$(PREFIX)/etc/anonymous.newsgroups
++NNTP=$(PREFIX)//etc/imapd.nntp
+ SHELL= /bin/sh
+ 
+ 
+@@ -38,7 +38,9 @@
+ # causes the "Manage Mail" menu item to open the given URL, e.g. to point to
+ # an alternative IMAP client (e.g. Pine) or perhaps to a homebrew mail
+ # account management page.
+-#NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://sourceforge.net/projects/re-alpine\"
++.if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
++NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://sourceforge.net/projects/re-alpine\"
++.endif
+ 
+ # Un-comment to enable the ESEARCH command.  Unfortunately, the iOS4 Mail
+ # client misinterprets the ESEARCH results due to an ambiguity in RFC 4731.
+@@ -46,23 +48,21 @@
+ 
+ # Get local definitions from c-client directory
+ 
+-C = ../c-client
+-CCLIENTLIB = $C/c-client.a
+-CC = `cat $C/CCTYPE`
+-CFLAGS = -I$C `cat $C/CFLAGS` $(NSBD) $(ESEARCH) -DANOFILE=\"$(ANO)\" \
++CFLAGS = -DNFSKLUDGE -I$(LOCALBASE)/include/c-client $(NSBD) \
++	-DANOFILE=\"$(ANO)\" \
+ 	-DALERTFILE=\"$(ALERT)\" -DNNTPFILE=\"$(NNTP)\" \
+ 	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client4
++.if defined(WITH_DRAC)
++CFLAGS+=	-DETC_DIR=\"$(PREFIX)/etc\" -DDRAC_AUTH
++LDFLAGS+=	-ldrac
++.endif
+ 
+ all:	imapd
+ 
+-imapd: $(CCLIENTLIB) imapd.o
++imapd: imapd.o
+ 	$(CC) $(CFLAGS) -o imapd imapd.o $(LDFLAGS)
+ 
+-imapd.o: $C/mail.h $C/misc.h $C/osdep.h
+-
+-$(CCLIENTLIB):
+-	cd $C;make
+ 
+ clean:
+ 	rm -f *.o imapd || true
