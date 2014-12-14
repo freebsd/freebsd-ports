@@ -1,5 +1,5 @@
---- ./texk/texlive/tl_scripts/Makefile.in.orig	2013-12-26 00:37:50.000000000 +0900
-+++ ./texk/texlive/tl_scripts/Makefile.in	2014-08-20 23:57:06.000000000 +0900
+--- texk/texlive/tl_scripts/Makefile.in.orig	2013-12-26 00:37:50.000000000 +0900
++++ texk/texlive/tl_scripts/Makefile.in	2014-12-15 00:41:48.000000000 +0900
 @@ -121,10 +121,9 @@
      || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
           $(am__cd) "$$dir" && rm -f $$files; }; \
@@ -13,7 +13,41 @@
  SCRIPTS = $(dist_texconfig_SCRIPTS) $(dist_texmf_SCRIPTS) \
  	$(nodist_bin_SCRIPTS)
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -627,7 +626,7 @@
+@@ -253,8 +252,6 @@
+ 	dvired \
+ 	fmtutil \
+ 	fontinst \
+-	kpsetool \
+-	kpsewhere \
+ 	ps2frag \
+ 	pslatex \
+ 	rubibtex \
+@@ -283,8 +280,6 @@
+ 	fmtutil.1 \
+ 	fmtutil.cnf.5 \
+ 	fontinst.1 \
+-	kpsetool.1 \
+-	kpsewhere.1 \
+ 	ps2frag.1 \
+ 	pslatex.1 \
+ 	rubibtex.1 \
+@@ -296,14 +291,10 @@
+ 
+ bin_links = \
+ 	allcm:allec \
+-	fmtutil:mktexfmt \
+-	kpsetool:kpsexpand \
+-	kpsetool:kpsepath
++	fmtutil:mktexfmt
+ 
+ man1_links = \
+ 	fmtutil:fmtutil-sys \
+-	kpsetool:kpsexpand \
+-	kpsetool:kpsepath \
+ 	fmtutil:mktexfmt \
+ 	texconfig:texconfig-sys \
+ 	updmap:updmap-sys
+@@ -627,7 +618,7 @@
  check: check-am
  all-am: Makefile $(SCRIPTS) $(MANS) $(DATA) all-local
  installdirs:
@@ -22,7 +56,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -681,8 +680,8 @@
+@@ -681,8 +672,8 @@
  
  info-am:
  

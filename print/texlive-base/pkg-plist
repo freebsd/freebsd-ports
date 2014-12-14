@@ -99,10 +99,6 @@ bin/kanji-config-updmap
 bin/kanji-config-updmap-sys
 bin/kanji-fontmap-creator
 bin/komkindex
-bin/kpsepath
-bin/kpsetool
-bin/kpsewhere
-bin/kpsexpand
 bin/lacheck
 bin/latex-git-log
 bin/latex2man
@@ -283,10 +279,6 @@ man/man1/fmtutil.1.gz
 man/man1/fontinst.1.gz
 man/man1/gsftopk.1.gz
 man/man1/hbf2gf.1.gz
-man/man1/kpsepath.1.gz
-man/man1/kpsetool.1.gz
-man/man1/kpsewhere.1.gz
-man/man1/kpsexpand.1.gz
 man/man1/lacheck.1.gz
 man/man1/mag.1.gz
 man/man1/makeindex.1.gz
@@ -471,8 +463,6 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/texlive/fmtutil-sys.sh
 %%TEXMFDISTDIR%%/scripts/texlive/fmtutil.sh
 %%TEXMFDISTDIR%%/scripts/texlive/fontinst.sh
-%%TEXMFDISTDIR%%/scripts/texlive/kpsetool.sh
-%%TEXMFDISTDIR%%/scripts/texlive/kpsewhere.sh
 %%TEXMFDISTDIR%%/scripts/texlive/ps2frag.sh
 %%TEXMFDISTDIR%%/scripts/texlive/pslatex.sh
 %%TEXMFDISTDIR%%/scripts/texlive/rubibtex.sh

@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141214:
+  AFFECTS: users of TeXLive
+  AUTHOR: hrs@FreeBSD.org
+
+  Several scripts in print/texlive-base have been moved to
+  devel/tex-kpathsea.  Upgrading them can fail because texlive-base
+  depends on tex-kpathsea, and the new tex-kpathsea tries to install
+  files which were installed by the old texlive-base.  The following
+  error message indicates this situation:
+
+    pkg-static: tex-kpathsea-6.2.0_1 conflicts with texlive-base-20140525_3 (installs files into the same place).  Problematic file: /usr/local/bin/kpsewhere
+
+  To solve this problem, remove both of tex-kpathsea and texlive-base first
+  and install the new versions:
+
+   # pkg delete -f tex-kpathsea texlive-base
+
 20141209:
   AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
   AUTHOR: xmj@freebsd.org
