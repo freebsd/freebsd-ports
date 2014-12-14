@@ -124,14 +124,8 @@ HTML_DOCS=		ftp.html kdestroy.html kinit.html klist.html \
 CONFIGURE_ARGS+=	CPPFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}"
 
 post-extract:
-	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
+	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz --no-same-owner --no-same-permissions
 	@${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz.asc
-.if !defined(EXTRACT_PRESERVE_OWNERSHIP)
-	@if [ `id -u` = 0 ]; then \
-		${CHMOD} -R ug-s,go-w ${WRKDIR}/${PORTNAME}-${PORTVERSION}; \
-		${CHOWN} -R 0:0 ${WRKDIR}/${PORTNAME}-${PORTVERSION}; \
-	fi
-.endif
 
 post-install:
 	@${ECHO} "------------------------------------------------------"
