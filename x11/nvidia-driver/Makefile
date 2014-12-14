@@ -77,7 +77,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-Makefile \
 		${FILESDIR}/extra-patch-src-nv-misc.h
 .endif
 
-.if ${NVVERSION} >= 331.020
+.if ${NVVERSION} >= 304.125 # 331.020
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x11-driver-Makefile
 .else
 EXTRA_PATCHES+=	${FILESDIR}/legacy-patch-x11-driver-Makefile
