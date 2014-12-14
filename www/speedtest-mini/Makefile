@@ -3,6 +3,7 @@
 
 PORTNAME=	speedtest-mini
 PORTVERSION=	2.1.8.20141003
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://c.speedtest.net/mini/
@@ -25,6 +26,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/speedtest/swfobject.js \
 		${STAGEDIR}${WWWDIR}/speedtest
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/speedtest/upload.php \
+		${STAGEDIR}${WWWDIR}/speedtest
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/speedtest/latency.txt \
 		${STAGEDIR}${WWWDIR}/speedtest
 
 .include <bsd.port.mk>
