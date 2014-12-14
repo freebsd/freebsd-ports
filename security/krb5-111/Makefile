@@ -81,14 +81,8 @@ PDF_DOC_DIR=		${WRKDIR}/krb5-${PORTVERSION}/doc/pdf
 CONFIGURE_ARGS+=	CPPFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB} -L${LOCALBASE}/include"
 
 post-extract:
-	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/krb5-${PORTVERSION}.tar.gz
+	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/krb5-${PORTVERSION}.tar.gz --no-same-owner --no-same-permissions
 	@${RM} ${WRKDIR}/krb5-${PORTVERSION}.tar.gz ${WRKDIR}/krb5-${PORTVERSION}.tar.gz.asc
-.if !defined(EXTRACT_PRESERVE_OWNERSHIP)
-	@if [ `id -u` = 0 ]; then \
-		${CHMOD} -R ug-s,go-w ${WRKDIR}/krb5-${PORTVERSION}; \
-		${CHOWN} -R 0:0 ${WRKDIR}/krb5-${PORTVERSION}; \
-	fi
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5
