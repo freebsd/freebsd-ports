@@ -3,7 +3,7 @@
 
 PORTNAME=	postgresql-repmgr
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.repmgr.org/download/
 DISTNAME=	repmgr-${PORTVERSION}
@@ -30,5 +30,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/repmgr.sql ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sql/repmgr_funcs.sql ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sql/uninstall_repmgr_funcs.sql ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/postgresql
+	${INSTALL_LIB} ${WRKSRC}/sql/repmgr_funcs.so ${STAGEDIR}${PREFIX}/lib/postgresql
+
 
 .include <bsd.port.mk>
