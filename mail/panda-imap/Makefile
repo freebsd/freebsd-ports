@@ -1,26 +1,25 @@
 # Created by: pst
 # $FreeBSD$
 
-PORTNAME=	imap
-PORTVERSION=	2007f
-PORTEPOCH=	1
+PORTNAME=	panda-imap
+PORTVERSION=	20130621
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
-		http://atreides.freenix.no/~anders/%SUBDIR%/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
-PKGNAMESUFFIX=	-uw
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
+MAINTAINER=	thierry@FreeBSD.org
+COMMENT=	IMAP4rev1/POP2/POP3 mail servers forked from imap-uw
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libc-client4.so.9:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	libc-client4.so.10:${PORTSDIR}/mail/panda-cclient
 
-CONFLICTS_INSTALL=	panda-imap-20*
+USE_GITHUB=	yes
+GH_ACCOUNT=	jonabbey
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	7905901
+
+CONFLICTS_INSTALL=	imap-uw-20*
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
@@ -42,7 +41,7 @@ NETSCAPE_BRAIN_DAMAGE_DESC=	See Makefile for documentation
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDRAC}
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 MAKE_ARGS+=	WITH_DRAC=yes
 .endif
 
@@ -81,7 +80,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop2d ${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop3d ${STAGEDIR}${PREFIX}/libexec/
-	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g mail -m 2711 \
+	${INSTALL} ${COPY} ${STRIP}	\
 		${WRKSRC}/mlock/mlock ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/mtest/mtest ${STAGEDIR}${PREFIX}/bin/mboxtest
 	${INSTALL_MAN} \
@@ -118,15 +117,15 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} -m 0755 -p ${STAGEDIR}${DOCSDIR}
-	@${TAR} -C ${WRKSRC}/docs -cf - . | \
+	${TAR} -C ${WRKSRC}/docs -cf - . | \
 		(umask 022; ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -)
 .endif
 
 cert:
-	@${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/certs
-	@openssl req -new -x509 -days 365 -nodes -config ${FILESDIR}/imap-uw.cnf -out ${PREFIX}/certs/imapd.pem -keyout ${PREFIX}/certs/imapd.pem
-	@openssl x509 -subject -dates -fingerprint -noout -in ${PREFIX}/certs/imapd.pem
-	@${CHMOD} 700 ${PREFIX}/certs/imapd.pem
-	@${LN} -s ${PREFIX}/certs/imapd.pem ${PREFIX}/certs/ipop3d.pem
+	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/certs
+	openssl req -new -x509 -days 365 -nodes -config ${FILESDIR}/imap-uw.cnf -out ${PREFIX}/certs/imapd.pem -keyout ${PREFIX}/certs/imapd.pem
+	openssl x509 -subject -dates -fingerprint -noout -in ${PREFIX}/certs/imapd.pem
+	${CHMOD} 700 ${PREFIX}/certs/imapd.pem
+	${LN} -s ${PREFIX}/certs/imapd.pem ${PREFIX}/certs/ipop3d.pem
 
 .include <bsd.port.post.mk>

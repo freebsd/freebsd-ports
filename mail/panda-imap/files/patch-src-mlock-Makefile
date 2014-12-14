@@ -1,0 +1,12 @@
+--- src/mlock/Makefile.orig	Wed Nov 27 04:06:19 2002
++++ src/mlock/Makefile	Wed Nov 27 04:09:37 2002
+@@ -22,8 +22,7 @@
+ 
+ # Get local definitions from c-client directory
+ 
+-CC = `cat $C/CCTYPE`
+-CFLAGS = `cat $C/CFLAGS`
++CFLAGS+=	-DNFSKLUDGE
+ 
+ all:	mlock
+ 

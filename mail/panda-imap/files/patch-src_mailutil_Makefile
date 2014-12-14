@@ -1,0 +1,28 @@
+--- src/mailutil/Makefile.orig	Tue Nov 19 01:41:46 2002
++++ src/mailutil/Makefile	Wed Nov 27 03:51:27 2002
+@@ -19,22 +19,15 @@
+ 
+ 
+ C = ../c-client
+-CCLIENTLIB = $C/c-client.a
+ SHELL = /bin/sh
+ 
+ # Get local definitions from c-client directory
+ 
+-CC = `cat $C/CCTYPE`
+-CFLAGS = -I$C `cat $C/CFLAGS`
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client
++LDFLAGS+=	-L$(LOCALBASE)/lib -lc-client4
+ 
+-mailutil: $(CCLIENTLIB) mailutil.o
++mailutil: mailutil.o
+ 	$(CC) $(CFLAGS) -o mailutil mailutil.o $(LDFLAGS)
+-
+-mailutil.o: $C/mail.h $C/misc.h $C/osdep.h
+-
+-$(CCLIENTLIB):
+-	cd $C;make
+ 
+ clean:
+ 	rm -f *.o mailutil

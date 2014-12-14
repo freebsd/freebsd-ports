@@ -2,24 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	cclient
-PORTVERSION=	2007f
-PORTREVISION=	2
-PORTEPOCH=	1
+PORTVERSION=	20130621
 CATEGORIES=	mail devel ipv6
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
-		http://atreides.freenix.no/~anders/%SUBDIR%/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
-DISTNAME=	imap-${PORTVERSION}
+PKGNAMEPREFIX=	panda-
+DISTNAME=	panda-imap-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Mark Crispin's C-client mail access routines
+MAINTAINER=	thierry@FreeBSD.org
+COMMENT=	Mark Crispin's C-client mail access routines forked from UW
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	panda-cclient-20*
+USE_GITHUB=	yes
+GH_ACCOUNT=	jonabbey
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	7905901
+
+CONFLICTS_INSTALL=	cclient-20*
 
 OPTIONS_DEFINE=	SSL SSL_AND_PLAINTEXT IPV6 MBX_DEFAULT
 OPTIONS_DEFAULT=	SSL
@@ -49,34 +49,34 @@ MAKE_ARGS+=	SSLTYPE=unix.nopwd SSLDIR=${OPENSSLDIR}
 .endif
 .endif
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${DISTNAME:C|${PORTVERSION}|${GH_COMMIT}|}
 MAKE_ARGS+=	EXTRACFLAGS="${CFLAGS}"
 
 SHLIBBASE=	c-client4
-SHLIBMAJ=	9
+SHLIBMAJ=	10
 SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}
 MAKE_ENV+=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 
-post-patch:
+pre-configure:
 .for file in Makefile src/osdep/unix/Makefile src/osdep/unix/Makefile.gss
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${file}
+	${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e "s:/etc/ssl/certs:${PREFIX}/certs:g; \
+	${REINPLACE_CMD} -e "s:/etc/ssl/certs:${PREFIX}/certs:g; \
 		s:/etc/ssl/private:${PREFIX}/certs:g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s:/etc/c-client.cf:${PREFIX}/etc/c-client.cf:" \
+	${REINPLACE_CMD} -e "s:/etc/c-client.cf:${PREFIX}/etc/c-client.cf:" \
 		${WRKSRC}/src/osdep/unix/env_unix.h
 .if ${PORT_OPTIONS:MSSL}
-	@${REINPLACE_CMD} -e " \
+	${REINPLACE_CMD} -e " \
 		s:SSLINCLUDE=/usr/include/openssl SSLLIB=/usr/lib:SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}: \
 		" ${WRKSRC}/Makefile
 .endif
 .if ${PORT_OPTIONS:MIPV6}
-	@${REINPLACE_CMD} -e "s|^IP=4|IP=6|" ${WRKSRC}/Makefile \
+	${REINPLACE_CMD} -e "s|^IP=4|IP=6|" ${WRKSRC}/Makefile \
 		${WRKSRC}/src/osdep/unix/Makefile
 .endif
 .if ${PORT_OPTIONS:MMBX_DEFAULT}
-	@${REINPLACE_CMD} -e "s|^CREATEPROTO=unixproto|CREATEPROTO=mbxproto|" \
+	${REINPLACE_CMD} -e "s|^CREATEPROTO=unixproto|CREATEPROTO=mbxproto|" \
 		${WRKSRC}/src/osdep/unix/Makefile
 .endif
 

@@ -422,6 +422,8 @@
     SUBDIR += p5-WWW-Hotmail
     SUBDIR += p5-ZConf-Mail
     SUBDIR += p5-qpsmtpd
+    SUBDIR += panda-cclient
+    SUBDIR += panda-imap
     SUBDIR += pantomime
     SUBDIR += pathalias
     SUBDIR += pear-Contact_Vcard_Build
