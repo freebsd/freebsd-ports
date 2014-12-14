@@ -10,10 +10,13 @@ MASTER_SITES=	http://devel.tlrmx.org/kiss/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of Kisekae Set System
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-USES=		gettext-tools pkgconfig
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
+USES=		gettext-tools pathfix pkgconfig
+USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
