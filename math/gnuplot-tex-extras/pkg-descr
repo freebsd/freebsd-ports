@@ -1,0 +1,10 @@
+Gnuplot is a portable multi-platform command-line driven graphing utility. It
+was originally created to allow scientists and students to visualize
+mathematical functions and data interactively, but has grown to support many
+non-interactive uses such as web scripting. It is also used as a plotting engine
+by third-party applications like Octave. Gnuplot has been supported and under
+active development since 1986.
+
+This port installs extra files for TeX terminals (latex, epslatex, Tikz, etc). 
+
+WWW: http://www.gnuplot.info/
