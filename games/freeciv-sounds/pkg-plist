@@ -15,5 +15,3 @@
 %%DATADIR%%/stdsounds/wall01.ogg
 %%DATADIR%%/stdsounds/woodbrk.ogg
 %%DATADIR%%/stdsounds.soundspec
-@dirrm %%DATADIR%%/stdsounds
-@dirrmtry %%DATADIR%%
