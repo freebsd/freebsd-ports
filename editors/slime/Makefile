@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slime
-PORTVERSION=	2.10.1
-PORTREVISION=	1
+PORTVERSION=	2.11
 CATEGORIES=	editors elisp
 MASTER_SITES=	https://codeload.github.com/slime/slime/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
@@ -21,7 +20,7 @@ USES=		gmake
 USE_EMACS=	yes
 
 SLIME_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/slime
-WRKSRC=		${WRKDIR}/slime-slime-295edb8
+WRKSRC=		${WRKDIR}/slime-slime-d7ae5d3
 
 SUB_FILES=	pkg-message
 SUB_LIST=	SLIME_LISPDIR="${SLIME_LISPDIR}"
