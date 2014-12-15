@@ -3,7 +3,9 @@
 
 PORTNAME=	ansible
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	sysutils python
+MASTER_SITES=	http://releases.ansible.com/ansible/
 
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Radically simple IT automation
@@ -18,14 +20,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 
 OPTIONS_DEFINE=		EXAMPLES
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	6f568bd
-
 USES=		cpe python:2 shebangfix
 USE_PYTHON=	autoplist distutils
-SHEBANG_FILES=	lib/ansible/runner/action_plugins/synchronize.py
+SHEBANG_FILES=	lib/ansible/runner/action_plugins/synchronize.py \
+		lib/ansible/modules/core/*/*.py \
+		lib/ansible/modules/core/*/*/*.py \
+		lib/ansible/modules/extras/*/*.py \
+		lib/ansible/modules/extras/*/*/*.py
 CPE_VENDOR=	ansibleworks
 
 SUB_FILES=	pkg-message
@@ -43,18 +44,14 @@ post-patch:
 .for f in bin/ansible-galaxy docs/man/man1/ansible-galaxy.1 \
 	docs/man/man1/ansible-playbook.1 docs/man/man1/ansible.1 \
 	examples/ansible.cfg examples/hosts lib/ansible/constants.py \
-	lib/ansible/module_utils/urls.py lib/ansible/playbook/__init__.py \
-	lib/ansible/runner/__init__.py plugins/README.md \
-	plugins/inventory/cobbler.py plugins/inventory/collins.py \
-	plugins/inventory/nova.py plugins/inventory/spacewalk.py \
-	v2/ansible/constants.py v2/ansible/playbook/role/definition.py
+	lib/ansible/module_utils/urls.py lib/ansible/modules/core/system/setup.py \
+	lib/ansible/playbook/__init__.py lib/ansible/runner/__init__.py
 	@${REINPLACE_CMD} -e 's|/etc/ansible|${ETCDIR}|' ${WRKSRC}/${f}
 .endfor
 
 .for f in docs/man/man1/ansible-playbook.1 docs/man/man1/ansible.1 \
 	examples/ansible.cfg lib/ansible/constants.py \
 	lib/ansible/playbook/__init__.py lib/ansible/runner/__init__.py \
-	v2/ansible/constants.py
 	@${REINPLACE_CMD} -e 's|/usr/share/ansible|${DATADIR}|' ${WRKSRC}/${f}
 .endfor
 
