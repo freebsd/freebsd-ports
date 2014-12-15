@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141209:
+  AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
+  AUTHOR: sbruno@freebsd.org
+
+  The CentOS ports are now the default for stable/10 (after revision 275807).
+  See UPDATING entry 20141209 for details on migration of systems.
+
 20141214:
   AFFECTS: users of TeXLive
   AUTHOR: hrs@FreeBSD.org
