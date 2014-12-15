@@ -28,6 +28,7 @@
     SUBDIR += aslookup
     SUBDIR += asterisk
     SUBDIR += asterisk11
+    SUBDIR += asterisk13
     SUBDIR += avahi
     SUBDIR += avahi-app
     SUBDIR += avahi-autoipd

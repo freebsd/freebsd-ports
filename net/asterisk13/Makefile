@@ -1,31 +1,31 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	11.14.2
-PORTREVISION=	1
+PORTVERSION=	13.0.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
-PKGNAMESUFFIX=	11
+PKGNAMESUFFIX=	13
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
 
-LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex \
-		libnewt.so:${PORTSDIR}/devel/newt \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libjansson.so:${PORTSDIR}/devel/jansson
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
+CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 USE_GCC=	yes
 USE_GNOME=	libxml2
-USES=		bison cpe gmake
+USE_LDCONFIG=	yes
+USES=		bison cpe gmake iconv
 CPE_VENDOR=	digium
 USE_RC_SUBR=	asterisk
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -37,14 +37,16 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		NOISY_BUILD=YES \
 		DOCSDIR=${DOCSDIR} \
 		ASTCFLAGS="${CFLAGS}"
+CONFIGURE_ARGS+=	--datarootdir=${DATADIR}
 
+CONFLICTS=		ossp-uuid-[0-9]*
 CONFLICTS_BUILD=	linuxthreads-*
-CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-13*
+CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-11*
 
 OPTIONS_DEFINE=	VORBIS PGSQL MYSQL ODBC RADIUS SNMP FREETDS XMPP SQLITE GSM \
-		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 UUID
+		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323 PJSIP SPEEX
 OPTIONS_DEFAULT=	VORBIS ODBC PGSQL RADIUS SNMP FREETDS \
-		XMPP GSM SQLITE CURL LUA UUID
+		XMPP GSM SQLITE3 CURL LUA PJSIP SPEEX
 
 OPTIONS_DEFINE_i386=	DAHDI
 OPTIONS_DEFINE_amd64=	DAHDI
@@ -60,7 +62,7 @@ SRTP_DESC?=	SecureRTP support
 OOH323_DESC?=	ooh323 support
 DAHDI_DESC?=	DAHDI support
 XMPP_DESC?=	XMPP/GTALK support
-UUID_DESC?=	libuuid support(required for ICE and TURN in RTP)
+PJSIP_DESC?=	Build the PJSIP based SIP channel
 
 OPTIONS_SUB=	yes
 OOH323_LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib \
@@ -109,10 +111,11 @@ LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
-UUID_LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
-UUID_CONFIGURE_ON=	--with-uuid=${LOCALBASE}
-UUID_CONFIGURE_OFF=	--disable-uuid
-UUID_CONFLICTS=		ossp-uuid-[0-9]*
+PJSIP_LIB_DEPENDS=	libpj.so:${PORTSDIR}/net/pjsip
+PJSIP_CONFIGURE_WITH=	pjproject
+PJSIP_USES=		pkgconfig
+SPEEX_LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speex
+SPEEX_CONFIGURE_WITH=	speex
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -137,7 +140,7 @@ post-extract:
 	${FIND} ${WRKSRC} -name '*.d' -delete
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts
