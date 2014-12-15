@@ -332,6 +332,7 @@ lib/asterisk/modules/bridge_softmix.so
 %%ODBC%%lib/asterisk/modules/cdr_adaptive_odbc.so
 %%XMPP%%lib/asterisk/modules/chan_motif.so
 lib/asterisk/modules/chan_bridge_media.so
+%%OOH323%%lib/asterisk/modules/chan_ooh323.so
 %%PJSIP%%lib/asterisk/modules/chan_pjsip.so
 lib/asterisk/modules/chan_unistim.so
 lib/asterisk/modules/codec_g722.so
