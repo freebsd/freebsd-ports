@@ -1,0 +1,11 @@
+--- main/asterisk.exports.in.orig	2013-08-22 08:26:55 UTC
++++ main/asterisk.exports.in
+@@ -68,6 +68,8 @@
+ 
+ 		*/
+ 		LINKER_SYMBOL_PREFIX_IO_stdin_used;
++		LINKER_SYMBOL_PREFIX__progname;
++		LINKER_SYMBOL_PREFIXenviron;
+ 	local:
+ 		*;
+ };
