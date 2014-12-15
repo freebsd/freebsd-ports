@@ -178,6 +178,3 @@ man/man3/neon.3.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/neon.mo
-@dirrm include/neon
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
