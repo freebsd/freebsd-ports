@@ -85,8 +85,11 @@ if [ $? -ne 0 ] ; then
    exit 1
 fi
 
+# Get user group
+usergroup=`groups $username | cut -d " " -f 1`
+
 # Chown the directory
-chown $username:$username ${userhome}/.wine-pipelight
+chown $username:$usergroup ${userhome}/.wine-pipelight
 
 # Save to fstab
 echo "/dev/zvol/$zpool/$username-pipelight  ${userhome}/.wine-pipelight	ufs            rw,late              0       0" >> /etc/fstab
