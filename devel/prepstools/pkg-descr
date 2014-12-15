@@ -1,8 +1,0 @@
-The PRepS Tools package contains a tool called prepsdb_tool that is used to
-create and update PRepS databases.  This package also contains libpreps.
-libpreps is a library  that contains routines used by the database server.
-libPRepS only needs to be installed on the machine where the PRepS
-database(s) reside.
-
-For more information see:
-WWW: http://webpages.charter.net/stuffle/preps/preps.html
