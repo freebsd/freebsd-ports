@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	edgar
-DISTVERSION=	1.18-1
-PORTREVISION=	1
+DISTVERSION=	1.19-1
 CATEGORIES=	games
 MASTER_SITES=	SF/legendof${PORTNAME}/${PORTVERSION:R}/
 PKGNAMEPREFIX=	legend-of-
@@ -37,6 +36,7 @@ post-patch:
 		s|$$(DESTDIR)/usr|$$(DESTDIR)/usr/local|; \
 		s|$$(PREFIX)/games/|$$(PREFIX)/bin/|; \
 		s|/share/games/edgar/|/share/edgar/|; \
+		s|/share/man/|/man/|; \
 		s|-Wall ||; \
 		s|sdl-config|$(SDL_CONFIG)|; \
 		s|-s ||' \
