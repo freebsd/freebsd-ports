@@ -23,12 +23,3 @@ share/icons/hicolor/scalable/apps/numptyphysics.png
 %%DATADIR%%/play.png
 %%DATADIR%%/record.png
 %%DATADIR%%/theend.png
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/26x26/apps
-@dirrmtry share/icons/hicolor/26x26
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
