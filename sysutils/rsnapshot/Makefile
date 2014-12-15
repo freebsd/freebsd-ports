@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	remko@FreeBSD.org
 COMMENT=	Filesystem snapshot utility based on rsync(1)
 
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
