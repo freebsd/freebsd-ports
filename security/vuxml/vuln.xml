@@ -57,6 +57,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f5561ade-846c-11e4-b7a7-20cf30e32f6d">
+    <topic>subversion -- DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.0.0</ge><lt>1.7.19</lt></range>
+      </package>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.8.0</ge><lt>1.8.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/">
+	  <p>Subversion's mod_dav_svn Apache HTTPD server module will crash when it
+	     receives a REPORT request for some invalid formatted special URIs.</p>
+	  <p>Subversion's mod_dav_svn Apache HTTPD server module will crash when it
+	     receives a request for some invalid formatted special URIs.</p>
+	  <p>We consider this to be a medium risk vulnerability.  Repositories which
+	     allow for anonymous reads will be vulnerable without authentication.
+	     Unfortunately, no special configuration is required and all mod_dav_svn
+	     servers are vulnerable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3580</cvename>
+      <cvename>CVE-2014-8108</cvename>
+      <url>http://subversion.apache.org/security/CVE-2014-3580-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2014-8108-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-12-13</discovery>
+      <entry>2014-12-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fdf72a0e-8371-11e4-bc20-001636d274f3">
     <topic>NVIDIA UNIX driver -- remote denial of service or arbitrary code execution</topic>
     <affects>
