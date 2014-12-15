@@ -1345,3 +1345,4 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/README
 %%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/appp.sh
 %%CONTRIB%%share/git-core/contrib/workdir/git-new-workdir
+@dir %%DATADIR%%-core/templates/branches
