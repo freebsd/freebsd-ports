@@ -15,6 +15,7 @@ RUN_DEPENDS=	numptyphysics:${PORTSDIR}/games/numptyphysics
 
 USES=		tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/npcomplete
 DATADIR=	${PREFIX}/share/numptyphysics
 
