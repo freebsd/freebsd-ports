@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	1.4.2
-PORTREVISION=	6
+PORTVERSION=	1.6.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION}/
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	Virtual lighttable and darkroom for photographers
@@ -21,7 +20,8 @@ LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE extensions
 
-USES=		cmake:outsource desktop-file-utils ninja pkgconfig tar:xz
+USES=		compiler:c++11-lib cmake:outsource desktop-file-utils	\
+		ninja pkgconfig tar:xz
 USE_GNOME=	librsvg2
 USE_SQLITE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -29,20 +29,23 @@ INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	COLORD DOCS FB_PICASA FLICKR GEO GNOMEKEYRING GPHOTO	\
-		GRAPHMAGICK LUA NLS OPENEXR OPENJPEG RAWSPEED SLIDESHOW	\
-		SQUISH WEBP
+		GRAPHMAGICK LIBSECRET LUA NLS OPENEXR OPENJPEG RAWSPEED	\
+		SLIDESHOW SQUISH WEBP
 
 GEO_DESC=	Support geotagging
 FB_PICASA_DESC=	Support export to Facebook and Picasa
+LIBSECRET_DESC=	Support libsecret as password backend
 SQUISH_DESC=	Compress thumbnail via libsquish
 RAWSPEED_DESC=	Compile with rawspeed backend
 SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
 
 OPTIONS_DEFAULT=COLORD FB_PICASA FLICKR GEO GPHOTO LUA NLS OPENEXR	\
-		OPENJPEG RAWSPEED WEBP
+		OPENJPEG RAWSPEED SLIDESHOW SQUISH WEBP
 OPTIONS_SUB=	yes
 
 CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1
+CMAKE_ARGS+=	-DBUILD_CMSTEST:BOOL=ON
+CMAKE_ARGS+=	-DUSE_KWALLET:BOOL=ON
 
 # darktable 1.4 can use colord but provides its own libcolord,
 # statically linked to libdarktable.so.
@@ -67,6 +70,9 @@ GPHOTO_CMAKE_OFF=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
 GRAPHMAGICK_LIB_DEPENDS=libGraphicsMagick.so:${PORTSDIR}/graphics/GraphicsMagick
 GRAPHMAGICK_CMAKE_OFF=	-DUSE_GRAPHICSMAGICK:BOOL=OFF
 
+LIBSECRET_LIB_DEPENDS=	libsecret-1.so:${PORTSDIR}/security/libsecret
+LIBSECRET_CMAKE_OFF=	-DUSE_LIBSECRET:BOOL=OFF
+
 LUA_USES=		lua
 LUA_CMAKE_OFF=		-DUSE_LUA:BOOL=OFF
 
@@ -81,7 +87,7 @@ OPENJPEG_CMAKE_OFF=	-DUSE_OPENJPEG:BOOL=OFF
 
 RAWSPEED_CMAKE_OFF=	-DDONT_USE_RAWSPEED:BOOL=ON
 
-SLIDESHOW_USE=		 GL=gl SDL=sdl
+SLIDESHOW_USE=		GL=gl SDL=sdl
 SLIDESHOW_CMAKE_OFF=	-DBUILD_SLIDESHOW:BOOL=OFF
 
 SQUISH_BUILD_DEPENDS=	${LOCALBASE}/lib/libsquish.a:${PORTSDIR}/graphics/squish
@@ -92,12 +98,8 @@ WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
-
 .if defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE?=	RelWithDebInfo
+CMAKE_BUILD_TYPE=	RelWithDebInfo
 STRIP=
 .endif
 
