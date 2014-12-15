@@ -1,9 +1,9 @@
 # Created by: Robert Crossfield <robcrossfield@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/games/drcreep/Makefile 374303 2014-12-08 16:48:38Z tijl $
 
 PORTNAME=	drcreep
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/creep/
