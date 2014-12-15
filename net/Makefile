@@ -38,6 +38,7 @@
     SUBDIR += avahi-libdns
     SUBDIR += avahi-qt4
     SUBDIR += avahi-sharp
+    SUBDIR += axa
     SUBDIR += babeld
     SUBDIR += beacon
     SUBDIR += beanstalkd
