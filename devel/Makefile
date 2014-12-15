@@ -3524,8 +3524,6 @@
     SUBDIR += ppl
     SUBDIR += premake
     SUBDIR += premake4
-    SUBDIR += preps-gui
-    SUBDIR += prepstools
     SUBDIR += privman
     SUBDIR += projectcenter
     SUBDIR += protobuf

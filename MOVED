@@ -7319,3 +7319,5 @@ net/ntp-rc|net/ntp-devel|2014-12-11|Upline uses devel and relesae candidate inte
 textproc/xerces-c2|textproc/xerces-c3|2014-12-12|Unused, conflicting with xerces-c3
 textproc/xerces-c2-devel|textproc/xerces-c3|2014-12-12|Unused, conflicting with xerces-c3
 games/empire|games/vms-empire|2014-12-15|Moved to match upstream name
+devel/preps-gui||2014-12-15|Has expired: upstream disappeared
+devel/prepstools||2014-12-15|Has expired: upstream disappeared
