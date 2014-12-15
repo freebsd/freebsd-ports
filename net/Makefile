@@ -848,6 +848,7 @@
     SUBDIR += phpldapadmin
     SUBDIR += pimdd
     SUBDIR += pipsecd
+    SUBDIR += pjsip
     SUBDIR += pktanon
     SUBDIR += pload
     SUBDIR += plugdaemon
