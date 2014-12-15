@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20141215:
+  AFFECTS: users of comms/spandsp-devel
+  AUTHOR: pawel@FreeBSD.org
+
+  comms/spandsp has been upgraded to version 0.0.6
+  comms/spandsp-devel is now deprecated and set for removal, all ports using
+  it were converted to use newer comms/spandsp. Before upgrade you must
+  remove comms/spandsp-devel so that ports can pick up new dependency.
+
+  # pkg delete -f spandsp-devel
+
+20141215:
   AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
   AUTHOR: sbruno@freebsd.org
 
