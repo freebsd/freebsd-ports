@@ -17,7 +17,7 @@ bin/regpatch
 bin/regshell
 bin/regtree
 bin/rpcclient
-bin/samba-tool
+%%AD_DC%%bin/samba-tool
 bin/sharesec
 bin/smbcacls
 bin/smbclient
@@ -35,11 +35,11 @@ bin/smbtree
 bin/testparm
 bin/wbinfo
 sbin/nmbd
-sbin/samba
-sbin/samba_dnsupdate
-sbin/samba_kcc
-sbin/samba_spnupdate
-sbin/samba_upgradedns
+%%AD_DC%%sbin/samba
+%%AD_DC%%sbin/samba_dnsupdate
+%%AD_DC%%sbin/samba_kcc
+%%AD_DC%%sbin/samba_spnupdate
+%%AD_DC%%sbin/samba_upgradedns
 sbin/smbd
 %%SWAT%%sbin/swat
 sbin/winbindd
@@ -50,7 +50,7 @@ include/samba4/core/ntstatus.h
 include/samba4/core/werror.h
 include/samba4/credentials.h
 include/samba4/dcerpc.h
-include/samba4/dcerpc_server.h
+%%AD_DC%%include/samba4/dcerpc_server.h
 include/samba4/dlinklist.h
 include/samba4/domain_credentials.h
 include/samba4/gen_ndr/atsvc.h
@@ -164,8 +164,8 @@ lib/libdcerpc-binding.so
 lib/libdcerpc-binding.so.0
 lib/libdcerpc-samr.so
 lib/libdcerpc-samr.so.0
-lib/libdcerpc-server.so
-lib/libdcerpc-server.so.0
+%%AD_DC%%lib/libdcerpc-server.so
+%%AD_DC%%lib/libdcerpc-server.so.0
 lib/libdcerpc.so
 lib/libdcerpc.so.0
 lib/libgensec.so
@@ -243,7 +243,7 @@ lib/samba/libdbwrap.so
 lib/samba/libdcerpc-samba.so
 lib/samba/libdcerpc-samba4.so
 lib/samba/libdfs_server_ad.so
-lib/samba/libdlz_bind9_for_torture.so
+%%AD_DC%%lib/samba/libdlz_bind9_for_torture.so
 lib/samba/libdsdb-module.so
 lib/samba/liberrors.so
 lib/samba/libevents.so
@@ -274,12 +274,12 @@ lib/samba/libnet_keytab.so
 lib/samba/libnetif.so
 lib/samba/libnpa_tstream.so
 lib/samba/libnss_info.so
-lib/samba/libntvfs.so
+%%AD_DC%%lib/samba/libntvfs.so
 lib/samba/libpac.so
 lib/samba/libpopt_samba3.so
-lib/samba/libposix_eadb.so
+%%AD_DC%%lib/samba/libposix_eadb.so
 lib/samba/libprinting_migrate.so
-lib/samba/libprocess_model.so
+%%AD_DC%%lib/samba/libprocess_model.so
 lib/samba/libreplace.so
 lib/samba/libroken-samba4.so.19
 lib/samba/libsamba-modules.so
@@ -291,7 +291,7 @@ lib/samba/libsamba_python.so
 lib/samba/libsamdb-common.so
 lib/samba/libsecrets3.so
 lib/samba/libserver-role.so
-lib/samba/libservice.so
+%%AD_DC%%lib/samba/libservice.so
 lib/samba/libshares.so
 lib/samba/libsmb_transport.so
 lib/samba/libsmbd_base.so
@@ -315,80 +315,80 @@ lib/samba/libxattr_tdb.so
 %%DEVELOPER%%lib/samba/libuid_wrapper.so
 %%DEVELOPER%%lib/samba/libsocket_wrapper.so
 lib/shared-modules/auth/script.so
-@comment auth_skel lib/shared-modules/auth/skel.so
-lib/shared-modules/bind9/dlz_bind9.so
-lib/shared-modules/bind9/dlz_bind9_9.so
-lib/shared-modules/gensec/krb5.so
+%%MODULE_AUTH_SKEL%%lib/shared-modules/auth/skel.so
+%%AD_DC%%lib/shared-modules/bind9/dlz_bind9.so
+%%AD_DC%%lib/shared-modules/bind9/dlz_bind9_9.so
+%%AD_DC%%lib/shared-modules/gensec/krb5.so
 lib/shared-modules/idmap/autorid.so
 lib/shared-modules/idmap/hash.so
 lib/shared-modules/idmap/rid.so
 lib/shared-modules/idmap/tdb2.so
-lib/shared-modules/ldb/acl.so
-lib/shared-modules/ldb/aclread.so
-lib/shared-modules/ldb/anr.so
-lib/shared-modules/ldb/descriptor.so
-lib/shared-modules/ldb/dirsync.so
-lib/shared-modules/ldb/extended_dn_in.so
-lib/shared-modules/ldb/extended_dn_out.so
-lib/shared-modules/ldb/extended_dn_store.so
+%%AD_DC%%lib/shared-modules/ldb/acl.so
+%%AD_DC%%lib/shared-modules/ldb/aclread.so
+%%AD_DC%%lib/shared-modules/ldb/anr.so
+%%AD_DC%%lib/shared-modules/ldb/descriptor.so
+%%AD_DC%%lib/shared-modules/ldb/dirsync.so
+%%AD_DC%%lib/shared-modules/ldb/extended_dn_in.so
+%%AD_DC%%lib/shared-modules/ldb/extended_dn_out.so
+%%AD_DC%%lib/shared-modules/ldb/extended_dn_store.so
 lib/shared-modules/ldb/ildap.so
-lib/shared-modules/ldb/instancetype.so
-lib/shared-modules/ldb/lazy_commit.so
+%%AD_DC%%lib/shared-modules/ldb/instancetype.so
+%%AD_DC%%lib/shared-modules/ldb/lazy_commit.so
 lib/shared-modules/ldb/ldbsamba_extensions.so
-lib/shared-modules/ldb/linked_attributes.so
-lib/shared-modules/ldb/local_password.so
-lib/shared-modules/ldb/new_partition.so
-lib/shared-modules/ldb/objectclass.so
-lib/shared-modules/ldb/objectclass_attrs.so
-lib/shared-modules/ldb/objectguid.so
-lib/shared-modules/ldb/operational.so
-lib/shared-modules/ldb/partition.so
-lib/shared-modules/ldb/password_hash.so
-lib/shared-modules/ldb/ranged_results.so
-lib/shared-modules/ldb/repl_meta_data.so
-lib/shared-modules/ldb/resolve_oids.so
-lib/shared-modules/ldb/rootdse.so
-lib/shared-modules/ldb/samba3sam.so
-lib/shared-modules/ldb/samba3sid.so
-lib/shared-modules/ldb/samba_dsdb.so
-lib/shared-modules/ldb/samba_secrets.so
-lib/shared-modules/ldb/samldb.so
-lib/shared-modules/ldb/schema_data.so
-lib/shared-modules/ldb/schema_load.so
-lib/shared-modules/ldb/secrets_tdb_sync.so
-lib/shared-modules/ldb/show_deleted.so
-lib/shared-modules/ldb/simple_dn.so
-lib/shared-modules/ldb/simple_ldap_map.so
-lib/shared-modules/ldb/subtree_delete.so
-lib/shared-modules/ldb/subtree_rename.so
-lib/shared-modules/ldb/update_keytab.so
-lib/shared-modules/ldb/wins_ldb.so
+%%AD_DC%%lib/shared-modules/ldb/linked_attributes.so
+%%AD_DC%%lib/shared-modules/ldb/local_password.so
+%%AD_DC%%lib/shared-modules/ldb/new_partition.so
+%%AD_DC%%lib/shared-modules/ldb/objectclass.so
+%%AD_DC%%lib/shared-modules/ldb/objectclass_attrs.so
+%%AD_DC%%lib/shared-modules/ldb/objectguid.so
+%%AD_DC%%lib/shared-modules/ldb/operational.so
+%%AD_DC%%lib/shared-modules/ldb/partition.so
+%%AD_DC%%lib/shared-modules/ldb/password_hash.so
+%%AD_DC%%lib/shared-modules/ldb/ranged_results.so
+%%AD_DC%%lib/shared-modules/ldb/repl_meta_data.so
+%%AD_DC%%lib/shared-modules/ldb/resolve_oids.so
+%%AD_DC%%lib/shared-modules/ldb/rootdse.so
+%%AD_DC%%lib/shared-modules/ldb/samba3sam.so
+%%AD_DC%%lib/shared-modules/ldb/samba3sid.so
+%%AD_DC%%lib/shared-modules/ldb/samba_dsdb.so
+%%AD_DC%%lib/shared-modules/ldb/samba_secrets.so
+%%AD_DC%%lib/shared-modules/ldb/samldb.so
+%%AD_DC%%lib/shared-modules/ldb/schema_data.so
+%%AD_DC%%lib/shared-modules/ldb/schema_load.so
+%%AD_DC%%lib/shared-modules/ldb/secrets_tdb_sync.so
+%%AD_DC%%lib/shared-modules/ldb/show_deleted.so
+%%AD_DC%%lib/shared-modules/ldb/simple_dn.so
+%%AD_DC%%lib/shared-modules/ldb/simple_ldap_map.so
+%%AD_DC%%lib/shared-modules/ldb/subtree_delete.so
+%%AD_DC%%lib/shared-modules/ldb/subtree_rename.so
+%%AD_DC%%lib/shared-modules/ldb/update_keytab.so
+%%AD_DC%%lib/shared-modules/ldb/wins_ldb.so
 lib/shared-modules/nss_info/hash.so
-@comment perfcount_test lib/shared-modules/perfcount/test.so
-@comment pdb_test lib/shared-modules/pdb/test.so
-lib/shared-modules/process_model/onefork.so
-lib/shared-modules/process_model/prefork.so
-lib/shared-modules/process_model/standard.so
-lib/shared-modules/service/cldap.so
-lib/shared-modules/service/dcerpc.so
-lib/shared-modules/service/dns.so
-lib/shared-modules/service/dns_update.so
-lib/shared-modules/service/drepl.so
-lib/shared-modules/service/kcc.so
-lib/shared-modules/service/kdc.so
-lib/shared-modules/service/ldap.so
-lib/shared-modules/service/nbtd.so
-lib/shared-modules/service/ntp_signd.so
-lib/shared-modules/service/s3fs.so
-lib/shared-modules/service/smb.so
-lib/shared-modules/service/web.so
-lib/shared-modules/service/winbind.so
-lib/shared-modules/service/wrepl.so
+%%MODULE_PERFCOUNT_TEST%%lib/shared-modules/perfcount/test.so
+%%MODULE_PDB_TEST%%lib/shared-modules/pdb/test.so
+%%AD_DC%%lib/shared-modules/process_model/onefork.so
+%%AD_DC%%lib/shared-modules/process_model/prefork.so
+%%AD_DC%%lib/shared-modules/process_model/standard.so
+%%AD_DC%%lib/shared-modules/service/cldap.so
+%%AD_DC%%lib/shared-modules/service/dcerpc.so
+%%AD_DC%%lib/shared-modules/service/dns.so
+%%AD_DC%%lib/shared-modules/service/dns_update.so
+%%AD_DC%%lib/shared-modules/service/drepl.so
+%%AD_DC%%lib/shared-modules/service/kcc.so
+%%AD_DC%%lib/shared-modules/service/kdc.so
+%%AD_DC%%lib/shared-modules/service/ldap.so
+%%AD_DC%%lib/shared-modules/service/nbtd.so
+%%AD_DC%%lib/shared-modules/service/ntp_signd.so
+%%AD_DC%%lib/shared-modules/service/s3fs.so
+%%AD_DC%%lib/shared-modules/service/smb.so
+%%AD_DC%%lib/shared-modules/service/web.so
+%%AD_DC%%lib/shared-modules/service/winbind.so
+%%AD_DC%%lib/shared-modules/service/wrepl.so
 lib/shared-modules/vfs/acl_tdb.so
 lib/shared-modules/vfs/acl_xattr.so
 lib/shared-modules/vfs/aio_fork.so
-@comment vfs_aio_posix lib/shared-modules/vfs/aio_posix.so
-@comment vfs_aio_pthread lib/shared-modules/vfs/aio_pthread.so
+%%MODULE_VFS_AIO_POSIX%%lib/shared-modules/vfs/aio_posix.so
+%%MODULE_VFS_AIO_PTHREAD%%lib/shared-modules/vfs/aio_pthread.so
 lib/shared-modules/vfs/audit.so
 lib/shared-modules/vfs/cap.so
 lib/shared-modules/vfs/catia.so
@@ -403,8 +403,8 @@ lib/shared-modules/vfs/full_audit.so
 lib/shared-modules/vfs/linux_xfs_sgid.so
 lib/shared-modules/vfs/media_harmony.so
 lib/shared-modules/vfs/netatalk.so
-@comment vfs_notify_fam lib/shared-modules/vfs/notify_fam.so
-lib/shared-modules/vfs/posix_eadb.so
+%%MODULE_VFS_NOTIFY_FAM%%lib/shared-modules/vfs/notify_fam.so
+%%AD_DC%%lib/shared-modules/vfs/posix_eadb.so
 lib/shared-modules/vfs/preopen.so
 lib/shared-modules/vfs/readahead.so
 lib/shared-modules/vfs/readonly.so
@@ -419,35 +419,35 @@ lib/shared-modules/vfs/syncops.so
 lib/shared-modules/vfs/time_audit.so
 lib/shared-modules/vfs/xattr_tdb.so
 lib/shared-modules/vfs/zfsacl.so
-@comment auth_samba4 lib/shared-modules/auth/samba4.so
-@comment auth_unix lib/shared-modules/auth/unix.so
-@comment auth_wbc lib/shared-modules/auth/wbc.so
-@comment gpext_registry lib/shared-modules/gpext/registry.so
-@comment gpext_scripts lib/shared-modules/gpext/scripts.so
-@comment gpext_security lib/shared-modules/gpext/security.so
-@comment idmap_ad lib/shared-modules/idmap/ad.so
-@comment idmap_ad lib/shared-modules/nss_info/rfc2307.so
-@comment idmap_ad lib/shared-modules/nss_info/sfu.so
-@comment idmap_ad lib/shared-modules/nss_info/sfu20.so
-@comment idmap_ldap lib/shared-modules/idmap/ldap.so
-@comment idmap_nss lib/shared-modules/idmap/nss.so
-@comment idmap_passdb lib/shared-modules/idmap/passdb.so
-@comment idmap_tdb lib/shared-modules/idmap/tdb.so
-@comment nss_info_template lib/shared-modules/nss_info/template.so
-@comment pdb_ldap lib/shared-modules/pdb/ldap.so
-@comment pdb_samba_dsdb lib/shared-modules/pdb/samba_dsdb.so
-@comment pdb_smbpasswd lib/shared-modules/pdb/smbpasswd.so
-@comment pdb_tdbsam lib/shared-modules/pdb/tdbsam.so
-@comment pdb_wbc_sam lib/shared-modules/pdb/wbc_sam.so
-@comment vfs_cacheprime lib/shared-modules/vfs/cacheprime.so
-@comment vfs_dfs_samba4 lib/shared-modules/vfs/dfs_samba4.so
-@comment vfs_fake_acls lib/shared-modules/vfs/fake_acls.so
-@comment vfs_shadow_copy_test lib/shared-modules/vfs/shadow_copy_test.so
-@comment vfs_skel_opaque lib/shared-modules/vfs/skel_opaque.so
-@comment vfs_skel_transparent lib/shared-modules/vfs/skel_transparent.so
+%%MODULE_AUTH_SAMBA4%%lib/shared-modules/auth/samba4.so
+%%MODULE_AUTH_UNIX%%lib/shared-modules/auth/unix.so
+%%MODULE_AUTH_WBC%%lib/shared-modules/auth/wbc.so
+%%MODULE_GPEXT_REGISTRY%%lib/shared-modules/gpext/registry.so
+%%MODULE_GPEXT_SCRIPTS%%lib/shared-modules/gpext/scripts.so
+%%MODULE_GPEXT_SECURITY%%lib/shared-modules/gpext/security.so
+%%MODULE_IDMAP_AD%%lib/shared-modules/idmap/ad.so
+%%MODULE_IDMAP_AD%%lib/shared-modules/nss_info/rfc2307.so
+%%MODULE_IDMAP_AD%%lib/shared-modules/nss_info/sfu.so
+%%MODULE_IDMAP_AD%%lib/shared-modules/nss_info/sfu20.so
+%%MODULE_IDMAP_LDAP%%lib/shared-modules/idmap/ldap.so
+%%MODULE_IDMAP_NSS%%lib/shared-modules/idmap/nss.so
+%%MODULE_IDMAP_PASSDB%%lib/shared-modules/idmap/passdb.so
+%%MODULE_IDMAP_TDB%%lib/shared-modules/idmap/tdb.so
+%%MODULE_NSS_INFO_TEMPLATE%%lib/shared-modules/nss_info/template.so
+%%MODULE_PDB_LDAP%%lib/shared-modules/pdb/ldap.so
+%%MODULE_PDB_SAMBA_DSDB%%lib/shared-modules/pdb/samba_dsdb.so
+%%MODULE_PDB_SMBPASSWD%%lib/shared-modules/pdb/smbpasswd.so
+%%MODULE_PDB_TDBSAM%%lib/shared-modules/pdb/tdbsam.so
+%%MODULE_PDB_WBC_SAM%%lib/shared-modules/pdb/wbc_sam.so
+%%MODULE_VFS_CACHEPRIME%%lib/shared-modules/vfs/cacheprime.so
+%%MODULE_VFS_DFS_SAMBA4%%lib/shared-modules/vfs/dfs_samba4.so
+%%MODULE_VFS_FAKE_ACLS%%lib/shared-modules/vfs/fake_acls.so
+%%MODULE_VFS_SHADOW_COPY_TEST%%lib/shared-modules/vfs/shadow_copy_test.so
+%%MODULE_VFS_SKEL_OPAQUE%%lib/shared-modules/vfs/skel_opaque.so
+%%MODULE_VFS_SKEL_TRANSPARENT%%lib/shared-modules/vfs/skel_transparent.so
 @dirrmtry lib/shared-modules/vfs
-@dirrmtry lib/shared-modules/service
-@dirrmtry lib/shared-modules/process_model
+%%AD_DC%%@dirrmtry lib/shared-modules/service
+%%AD_DC%%@dirrmtry lib/shared-modules/process_model
 @dirrmtry lib/shared-modules/perfcount
 @dirrmtry lib/shared-modules/pdb
 @dirrmtry lib/shared-modules/nss_info
@@ -462,7 +462,7 @@ lib/shared-modules/vfs/zfsacl.so
 libdata/pkgconfig/dcerpc.pc
 libdata/pkgconfig/dcerpc_atsvc.pc
 libdata/pkgconfig/dcerpc_samr.pc
-libdata/pkgconfig/dcerpc_server.pc
+%%AD_DC%%libdata/pkgconfig/dcerpc_server.pc
 libdata/pkgconfig/gensec.pc
 libdata/pkgconfig/ndr.pc
 libdata/pkgconfig/ndr_krb5pac.pc
@@ -520,7 +520,7 @@ libdata/pkgconfig/wbclient.pc
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/winreg.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/wkssvc.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/xattr.so
-%%PYTHON_SITELIBDIR%%/samba/dckeytab.so
+%%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/dckeytab.so
 %%PYTHON_SITELIBDIR%%/samba/descriptor.py
 %%PYTHON_SITELIBDIR%%/samba/drs_utils.py
 %%PYTHON_SITELIBDIR%%/samba/dsdb.so
@@ -701,7 +701,7 @@ libdata/pkgconfig/wbclient.pc
 %%PYTHON_SITELIBDIR%%/samba/ntacls.py
 %%PYTHON_SITELIBDIR%%/samba/param.so
 %%PYTHON_SITELIBDIR%%/samba/policy.so
-%%PYTHON_SITELIBDIR%%/samba/posix_eadb.so
+%%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/posix_eadb.so
 %%PYTHON_SITELIBDIR%%/samba/provision/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/provision/backend.py
 %%PYTHON_SITELIBDIR%%/samba/provision/common.py
@@ -776,8 +776,8 @@ libdata/pkgconfig/wbclient.pc
 %%PYTHON_SITELIBDIR%%/samba/upgradehelpers.py
 %%PYTHON_SITELIBDIR%%/samba/web_server/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/xattr.py
-%%PYTHON_SITELIBDIR%%/samba/xattr_native.so
-%%PYTHON_SITELIBDIR%%/samba/xattr_tdb.so
+%%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/xattr_native.so
+%%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/xattr_tdb.so
 @unexec find %D/%%PYTHON_SITELIBDIR%%/samba -name '*.py[co]' -delete >/dev/null 2>&1
 @dirrm %%PYTHON_SITELIBDIR%%/samba/web_server
 @dirrm %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool
@@ -812,96 +812,96 @@ libdata/pkgconfig/wbclient.pc
 %%DATADIR%%/codepages/tr.msg
 %%DATADIR%%/codepages/upcase.dat
 %%DATADIR%%/codepages/valid.dat
-%%DATADIR%%/setup/DB_CONFIG
-%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Attributes.txt
-%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Classes.txt
-%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_R2_Attributes.txt
-%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_R2_Classes.txt
-%%DATADIR%%/setup/ad-schema/licence.txt
-%%DATADIR%%/setup/aggregate_schema.ldif
-%%DATADIR%%/setup/cn=replicator.ldif
-%%DATADIR%%/setup/cn=samba-admin.ldif
-%%DATADIR%%/setup/cn=samba.ldif
-%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k0.txt
-%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k3.txt
-%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k3R2.txt
-%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k8.txt
-%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k8R2.txt
-%%DATADIR%%/setup/dns_update_list
-%%DATADIR%%/setup/fedora-ds-init.ldif
-%%DATADIR%%/setup/fedorads-dna.ldif
-%%DATADIR%%/setup/fedorads-index.ldif
-%%DATADIR%%/setup/fedorads-linked-attributes.ldif
-%%DATADIR%%/setup/fedorads-pam.ldif
-%%DATADIR%%/setup/fedorads-partitions.ldif
-%%DATADIR%%/setup/fedorads-refint-add.ldif
-%%DATADIR%%/setup/fedorads-refint-delete.ldif
-%%DATADIR%%/setup/fedorads-samba.ldif
-%%DATADIR%%/setup/fedorads-sasl.ldif
-%%DATADIR%%/setup/fedorads.inf
-%%DATADIR%%/setup/idmap_init.ldif
-%%DATADIR%%/setup/krb5.conf
-%%DATADIR%%/setup/memberof.conf
-%%DATADIR%%/setup/mmr_serverids.conf
-%%DATADIR%%/setup/mmr_syncrepl.conf
-%%DATADIR%%/setup/modules.conf
-%%DATADIR%%/setup/named.conf
-%%DATADIR%%/setup/named.conf.dlz
-%%DATADIR%%/setup/named.conf.update
-%%DATADIR%%/setup/named.txt
-%%DATADIR%%/setup/olc_mmr.conf
-%%DATADIR%%/setup/olc_seed.ldif
-%%DATADIR%%/setup/olc_serverid.conf
-%%DATADIR%%/setup/olc_syncrepl.conf
-%%DATADIR%%/setup/olc_syncrepl_seed.conf
-%%DATADIR%%/setup/prefixMap.txt
-%%DATADIR%%/setup/provision.ldif
-%%DATADIR%%/setup/provision.reg
-%%DATADIR%%/setup/provision.zone
-%%DATADIR%%/setup/provision_basedn.ldif
-%%DATADIR%%/setup/provision_basedn_modify.ldif
-%%DATADIR%%/setup/provision_basedn_options.ldif
-%%DATADIR%%/setup/provision_basedn_references.ldif
-%%DATADIR%%/setup/provision_computers_add.ldif
-%%DATADIR%%/setup/provision_computers_modify.ldif
-%%DATADIR%%/setup/provision_configuration.ldif
-%%DATADIR%%/setup/provision_configuration_basedn.ldif
-%%DATADIR%%/setup/provision_configuration_modify.ldif
-%%DATADIR%%/setup/provision_configuration_references.ldif
-%%DATADIR%%/setup/provision_dns_accounts_add.ldif
-%%DATADIR%%/setup/provision_dns_add_samba.ldif
-%%DATADIR%%/setup/provision_dnszones_add.ldif
-%%DATADIR%%/setup/provision_dnszones_modify.ldif
-%%DATADIR%%/setup/provision_dnszones_partitions.ldif
-%%DATADIR%%/setup/provision_group_policy.ldif
-%%DATADIR%%/setup/provision_init.ldif
-%%DATADIR%%/setup/provision_partitions.ldif
-%%DATADIR%%/setup/provision_privilege.ldif
-%%DATADIR%%/setup/provision_rootdse_add.ldif
-%%DATADIR%%/setup/provision_rootdse_modify.ldif
-%%DATADIR%%/setup/provision_schema_basedn.ldif
-%%DATADIR%%/setup/provision_schema_basedn_modify.ldif
-%%DATADIR%%/setup/provision_self_join.ldif
-%%DATADIR%%/setup/provision_self_join_config.ldif
-%%DATADIR%%/setup/provision_self_join_modify.ldif
-%%DATADIR%%/setup/provision_self_join_modify_config.ldif
-%%DATADIR%%/setup/provision_users.ldif
-%%DATADIR%%/setup/provision_users_add.ldif
-%%DATADIR%%/setup/provision_users_modify.ldif
-%%DATADIR%%/setup/provision_well_known_sec_princ.ldif
-%%DATADIR%%/setup/refint.conf
-%%DATADIR%%/setup/schema-map-fedora-ds-1.0
-%%DATADIR%%/setup/schema-map-openldap-2.3
-%%DATADIR%%/setup/schema_samba4.ldif
-%%DATADIR%%/setup/secrets.ldif
-%%DATADIR%%/setup/secrets_dns.ldif
-%%DATADIR%%/setup/secrets_init.ldif
-%%DATADIR%%/setup/secrets_sasl_ldap.ldif
-%%DATADIR%%/setup/secrets_simple_ldap.ldif
-%%DATADIR%%/setup/share.ldif
-%%DATADIR%%/setup/slapd.conf
-%%DATADIR%%/setup/spn_update_list
-%%DATADIR%%/setup/ypServ30.ldif
+%%AD_DC%%%%DATADIR%%/setup/DB_CONFIG
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Attributes.txt
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Classes.txt
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_R2_Attributes.txt
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_R2_Classes.txt
+%%AD_DC%%%%DATADIR%%/setup/ad-schema/licence.txt
+%%AD_DC%%%%DATADIR%%/setup/aggregate_schema.ldif
+%%AD_DC%%%%DATADIR%%/setup/cn=replicator.ldif
+%%AD_DC%%%%DATADIR%%/setup/cn=samba-admin.ldif
+%%AD_DC%%%%DATADIR%%/setup/cn=samba.ldif
+%%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k0.txt
+%%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k3.txt
+%%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k3R2.txt
+%%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k8.txt
+%%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k8R2.txt
+%%AD_DC%%%%DATADIR%%/setup/dns_update_list
+%%AD_DC%%%%DATADIR%%/setup/fedora-ds-init.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads-dna.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads-index.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads-linked-attributes.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads-pam.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads-partitions.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads-refint-add.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads-refint-delete.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads-samba.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads-sasl.ldif
+%%AD_DC%%%%DATADIR%%/setup/fedorads.inf
+%%AD_DC%%%%DATADIR%%/setup/idmap_init.ldif
+%%AD_DC%%%%DATADIR%%/setup/krb5.conf
+%%AD_DC%%%%DATADIR%%/setup/memberof.conf
+%%AD_DC%%%%DATADIR%%/setup/mmr_serverids.conf
+%%AD_DC%%%%DATADIR%%/setup/mmr_syncrepl.conf
+%%AD_DC%%%%DATADIR%%/setup/modules.conf
+%%AD_DC%%%%DATADIR%%/setup/named.conf
+%%AD_DC%%%%DATADIR%%/setup/named.conf.dlz
+%%AD_DC%%%%DATADIR%%/setup/named.conf.update
+%%AD_DC%%%%DATADIR%%/setup/named.txt
+%%AD_DC%%%%DATADIR%%/setup/olc_mmr.conf
+%%AD_DC%%%%DATADIR%%/setup/olc_seed.ldif
+%%AD_DC%%%%DATADIR%%/setup/olc_serverid.conf
+%%AD_DC%%%%DATADIR%%/setup/olc_syncrepl.conf
+%%AD_DC%%%%DATADIR%%/setup/olc_syncrepl_seed.conf
+%%AD_DC%%%%DATADIR%%/setup/prefixMap.txt
+%%AD_DC%%%%DATADIR%%/setup/provision.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision.reg
+%%AD_DC%%%%DATADIR%%/setup/provision.zone
+%%AD_DC%%%%DATADIR%%/setup/provision_basedn.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_basedn_modify.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_basedn_options.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_basedn_references.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_computers_add.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_computers_modify.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_configuration.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_configuration_basedn.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_configuration_modify.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_configuration_references.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_dns_accounts_add.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_dns_add_samba.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_dnszones_add.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_dnszones_modify.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_dnszones_partitions.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_group_policy.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_init.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_partitions.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_privilege.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_rootdse_add.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_rootdse_modify.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_schema_basedn.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_schema_basedn_modify.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_self_join.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_self_join_config.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_self_join_modify.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_self_join_modify_config.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_users.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_users_add.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_users_modify.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_well_known_sec_princ.ldif
+%%AD_DC%%%%DATADIR%%/setup/refint.conf
+%%AD_DC%%%%DATADIR%%/setup/schema-map-fedora-ds-1.0
+%%AD_DC%%%%DATADIR%%/setup/schema-map-openldap-2.3
+%%AD_DC%%%%DATADIR%%/setup/schema_samba4.ldif
+%%AD_DC%%%%DATADIR%%/setup/secrets.ldif
+%%AD_DC%%%%DATADIR%%/setup/secrets_dns.ldif
+%%AD_DC%%%%DATADIR%%/setup/secrets_init.ldif
+%%AD_DC%%%%DATADIR%%/setup/secrets_sasl_ldap.ldif
+%%AD_DC%%%%DATADIR%%/setup/secrets_simple_ldap.ldif
+%%AD_DC%%%%DATADIR%%/setup/share.ldif
+%%AD_DC%%%%DATADIR%%/setup/slapd.conf
+%%AD_DC%%%%DATADIR%%/setup/spn_update_list
+%%AD_DC%%%%DATADIR%%/setup/ypServ30.ldif
 %%DATADIR%%/swat/help/welcome-no-samba-doc.html
 %%DATADIR%%/swat/help/welcome.html
 %%DATADIR%%/swat/images/globals.gif
@@ -950,9 +950,9 @@ libdata/pkgconfig/wbclient.pc
 @dirrm %%DATADIR%%/swat/images
 @dirrm %%DATADIR%%/swat/help
 @dirrm %%DATADIR%%/swat
-@dirrm %%DATADIR%%/setup/display-specifiers
-@dirrm %%DATADIR%%/setup/ad-schema
-@dirrm %%DATADIR%%/setup
+%%AD_DC%%@dirrm %%DATADIR%%/setup/display-specifiers
+%%AD_DC%%@dirrm %%DATADIR%%/setup/ad-schema
+%%AD_DC%%@dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/codepages
 @dirrm %%DATADIR%%
 man/man1/dbwrap_tool.1.gz
