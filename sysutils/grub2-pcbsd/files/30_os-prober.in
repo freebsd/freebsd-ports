@@ -32,7 +32,7 @@ check_ntfs_part()
    fs_label=`grub-probe --device /dev/${disk} --target=fs_label`
 
    # Check for common windows NTFS labels for bootable partitions
-   if [ "$fs_label" != "System Reserved" -a "$fs_label" != "SYSTEM RESERVED" -a "$fs_label" != "eMachines" -a "$fs_label" != "OS" -a "$fs_label" != "SYSTEM" ] ; then return; fi
+   if [ "$fs_label" != "System Reserved" -a "$fs_label" != "SYSTEM RESERVED" -a "$fs_label" != "eMachines" -a "$fs_label" != "OS" -a "$fs_label" != "SYSTEM" -a "$fs_label" != "SYSTEM_DRV" ] ; then return; fi
 
    fs_uuid=`grub-probe --device /dev/${disk} --target=fs_uuid`
    if [ -z "$fs_uuid" ] ; then
