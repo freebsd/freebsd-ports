@@ -10,7 +10,8 @@ MASTER_SITES=	http://www.dynare.org/release/source/
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/unordered_set.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/unordered_set.hpp:${PORTSDIR}/devel/boost-libs \
+		ctangle:${PORTSDIR}/devel/cweb
 LIB_DEPENDS=	libumfpack.so:${PORTSDIR}/math/suitesparse \
 		libmatio.so:${PORTSDIR}/math/matio
 
