@@ -26,9 +26,8 @@
 %%PYTHON_SITELIBDIR%%/zfs/util.py
 %%PYTHON_SITELIBDIR%%/zfs/util.pyc
 %%PYTHON_SITELIBDIR%%/zfs/util.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/zfs
-@cwd /usr/lib
-zfs/pyzfs.py
-zfs/pyzfs.pyc
-zfs/pyzfs.pyo
-@dirrm zfs
+@dir %%PYTHON_SITELIBDIR%%/zfs
+/usr/lib/zfs/pyzfs.py
+/usr/lib/zfs/pyzfs.pyc
+/usr/lib/zfs/pyzfs.pyo
+@dir /usr/lib/zfs
