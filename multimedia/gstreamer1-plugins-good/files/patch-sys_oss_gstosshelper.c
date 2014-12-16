@@ -1,22 +1,18 @@
---- sys/oss/gstosshelper.c.orig	2014-01-14 13:03:14.000000000 +0100
-+++ sys/oss/gstosshelper.c	2014-09-11 09:10:55.115013111 +0200
-@@ -95,9 +95,13 @@
-   format_mask = AFMT_U8 | AFMT_S8;
- 
-   if (G_BYTE_ORDER == G_LITTLE_ENDIAN)
--    format_mask |= AFMT_S16_LE | AFMT_U16_LE;
-+    format_mask |= AFMT_S16_LE | AFMT_U16_LE
-+      | AFMT_S24_LE | AFMT_U24_LE
-+      | AFMT_S32_LE | AFMT_U32_LE;
-   else
--    format_mask |= AFMT_S16_BE | AFMT_U16_BE;
-+    format_mask |= AFMT_S16_BE | AFMT_U16_BE
-+      | AFMT_S24_BE | AFMT_U24_BE
-+      | AFMT_S32_BE | AFMT_U32_BE;
- 
-   caps = gst_caps_new_empty ();
- 
-@@ -169,6 +173,9 @@
+--- sys/oss/gstosshelper.c.orig	2014-07-21 10:24:27.000000000 +0200
++++ sys/oss/gstosshelper.c	2014-10-12 18:13:53.847663389 +0200
+@@ -82,9 +82,9 @@
+ gst_oss_helper_probe_caps (gint fd)
+ {
+ #if G_BYTE_ORDER == G_LITTLE_ENDIAN
+-  const guint probe_formats[] = { AFMT_S16_LE, AFMT_U16_LE, AFMT_U8, AFMT_S8 };
++  const guint probe_formats[] = { AFMT_U32_LE, AFMT_S32_LE, AFMT_U24_LE, AFMT_S24_LE, AFMT_S16_LE, AFMT_U16_LE, AFMT_U8, AFMT_S8 };
+ #else
+-  const guint probe_formats[] = { AFMT_S16_BE, AFMT_U16_BE, AFMT_U8, AFMT_S8 };
++  const guint probe_formats[] = { AFMT_U32_BE, AFMT_S32_BE, AFMT_U24_BE, AFMT_S24_BE, AFMT_S16_BE, AFMT_U16_BE, AFMT_U8, AFMT_S8 };
+ #endif
+   GstOssProbe *probe;
+   int i, f;
+@@ -165,6 +165,9 @@
    const gchar *format;
  
    switch (format_bit) {
@@ -26,7 +22,7 @@
      case AFMT_U8:
        format = "U8";
        break;
-@@ -178,15 +185,36 @@
+@@ -174,15 +177,36 @@
      case AFMT_S16_BE:
        format = "S16BE";
        break;
@@ -66,7 +62,7 @@
      default:
        g_assert_not_reached ();
        return NULL;
-@@ -324,13 +352,17 @@
+@@ -320,13 +344,17 @@
    int format;
    int n_channels;
    int ret;

@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTREVISION=	0
-CATEGORIES=	graphics
+CATEGORIES=	audio
 
-COMMENT=	Gstreamer webp image decoder plugin
+COMMENT=	GStreamer plugin for pulseaudio
 
-GST_PLUGIN=	webp
-DIST=		bad
+GST_PLUGIN=	pulse
+DIST=		good
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 

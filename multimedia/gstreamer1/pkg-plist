@@ -13,14 +13,15 @@ include/gstreamer-%%VERSION%%/gst/base/gstbitreader.h
 include/gstreamer-%%VERSION%%/gst/base/gstbytereader.h
 include/gstreamer-%%VERSION%%/gst/base/gstbytewriter.h
 include/gstreamer-%%VERSION%%/gst/base/gstcollectpads.h
+include/gstreamer-%%VERSION%%/gst/base/gstflowcombiner.h
 include/gstreamer-%%VERSION%%/gst/base/gstpushsrc.h
 include/gstreamer-%%VERSION%%/gst/base/gsttypefindhelper.h
-%%CHECK%%include/gstreamer-%%VERSION%%/gst/check/check.h
-%%CHECK%%include/gstreamer-%%VERSION%%/gst/check/gstbufferstraw.h
-%%CHECK%%include/gstreamer-%%VERSION%%/gst/check/gstcheck.h
-%%CHECK%%include/gstreamer-%%VERSION%%/gst/check/gstconsistencychecker.h
-%%CHECK%%include/gstreamer-%%VERSION%%/gst/check/gsttestclock.h
-%%CHECK%%include/gstreamer-%%VERSION%%/gst/check/internal-check.h
+%%LIBCHECK%%include/gstreamer-%%VERSION%%/gst/check/check.h
+%%LIBCHECK%%include/gstreamer-%%VERSION%%/gst/check/gstbufferstraw.h
+%%LIBCHECK%%include/gstreamer-%%VERSION%%/gst/check/gstcheck.h
+%%LIBCHECK%%include/gstreamer-%%VERSION%%/gst/check/gstconsistencychecker.h
+%%LIBCHECK%%include/gstreamer-%%VERSION%%/gst/check/gsttestclock.h
+%%LIBCHECK%%include/gstreamer-%%VERSION%%/gst/check/internal-check.h
 include/gstreamer-%%VERSION%%/gst/controller/controller.h
 include/gstreamer-%%VERSION%%/gst/controller/gstargbcontrolbinding.h
 include/gstreamer-%%VERSION%%/gst/controller/gstdirectcontrolbinding.h
@@ -48,6 +49,10 @@ include/gstreamer-%%VERSION%%/gst/gstcontrolbinding.h
 include/gstreamer-%%VERSION%%/gst/gstcontrolsource.h
 include/gstreamer-%%VERSION%%/gst/gstdatetime.h
 include/gstreamer-%%VERSION%%/gst/gstdebugutils.h
+include/gstreamer-%%VERSION%%/gst/gstdevice.h
+include/gstreamer-%%VERSION%%/gst/gstdevicemonitor.h
+include/gstreamer-%%VERSION%%/gst/gstdeviceprovider.h
+include/gstreamer-%%VERSION%%/gst/gstdeviceproviderfactory.h
 include/gstreamer-%%VERSION%%/gst/gstelement.h
 include/gstreamer-%%VERSION%%/gst/gstelementfactory.h
 include/gstreamer-%%VERSION%%/gst/gstelementmetadata.h
@@ -100,34 +105,28 @@ include/gstreamer-%%VERSION%%/gst/net/gstnettimepacket.h
 include/gstreamer-%%VERSION%%/gst/net/gstnettimeprovider.h
 lib/girepository-1.0/Gst-%%VERSION%%.typelib
 lib/girepository-1.0/GstBase-%%VERSION%%.typelib
-%%CHECK%%lib/girepository-1.0/GstCheck-%%VERSION%%.typelib
+%%LIBCHECK%%lib/girepository-1.0/GstCheck-%%VERSION%%.typelib
 lib/girepository-1.0/GstController-%%VERSION%%.typelib
 lib/girepository-1.0/GstNet-%%VERSION%%.typelib
-lib/gstreamer-%%VERSION%%/libgstcoreelements.la
 lib/gstreamer-%%VERSION%%/libgstcoreelements.so
-lib/libgstbase-%%VERSION%%.la
 lib/libgstbase-%%VERSION%%.so
 lib/libgstbase-%%VERSION%%.so.0
 lib/libgstbase-%%VERSION%%.so.%%SOVERSION%%
-%%CHECK%%lib/libgstcheck-%%VERSION%%.la
-%%CHECK%%lib/libgstcheck-%%VERSION%%.so
-%%CHECK%%lib/libgstcheck-%%VERSION%%.so.0
-%%CHECK%%lib/libgstcheck-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstcontroller-%%VERSION%%.la
+%%LIBCHECK%%lib/libgstcheck-%%VERSION%%.so
+%%LIBCHECK%%lib/libgstcheck-%%VERSION%%.so.0
+%%LIBCHECK%%lib/libgstcheck-%%VERSION%%.so.%%SOVERSION%%
 lib/libgstcontroller-%%VERSION%%.so
 lib/libgstcontroller-%%VERSION%%.so.0
 lib/libgstcontroller-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstnet-%%VERSION%%.la
 lib/libgstnet-%%VERSION%%.so
 lib/libgstnet-%%VERSION%%.so.0
 lib/libgstnet-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstreamer-%%VERSION%%.la
 lib/libgstreamer-%%VERSION%%.so
 lib/libgstreamer-%%VERSION%%.so.0
 lib/libgstreamer-%%VERSION%%.so.%%SOVERSION%%
 libdata/pkgconfig/gstreamer-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-base-%%VERSION%%.pc
-%%CHECK%%libdata/pkgconfig/gstreamer-check-%%VERSION%%.pc
+%%LIBCHECK%%libdata/pkgconfig/gstreamer-check-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-controller-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-net-%%VERSION%%.pc
 libexec/gstreamer-%%VERSION%%/gst-plugin-scanner
@@ -137,7 +136,7 @@ man/man1/gst-typefind-1.0.1.gz
 share/aclocal/gst-element-check-%%VERSION%%.m4
 share/gir-1.0/Gst-%%VERSION%%.gir
 share/gir-1.0/GstBase-%%VERSION%%.gir
-%%CHECK%%share/gir-1.0/GstCheck-%%VERSION%%.gir
+%%LIBCHECK%%share/gir-1.0/GstCheck-%%VERSION%%.gir
 share/gir-1.0/GstController-%%VERSION%%.gir
 share/gir-1.0/GstNet-%%VERSION%%.gir
 share/locale/af/LC_MESSAGES/gstreamer-%%VERSION%%.mo
@@ -179,13 +178,3 @@ share/locale/uk/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gstreamer-%%VERSION%%.mo
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrm libexec/gstreamer-%%VERSION%%
-@dirrm lib/gstreamer-%%VERSION%%
-@dirrm include/gstreamer-%%VERSION%%/gst/net
-@dirrm include/gstreamer-%%VERSION%%/gst/controller
-%%CHECK%%@dirrm include/gstreamer-%%VERSION%%/gst/check
-@dirrm include/gstreamer-%%VERSION%%/gst/base
-@dirrm include/gstreamer-%%VERSION%%/gst
-@dirrm include/gstreamer-%%VERSION%%
