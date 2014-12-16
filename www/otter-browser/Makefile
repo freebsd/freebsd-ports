@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	otter
-PORTVERSION=	0.9.02
-PORTREVISION=	1
+PORTVERSION=	0.9.03
 CATEGORIES=	www
 # Avoid pkgname conflict with misc/otter
 PKGNAMESUFFIX=	-browser
@@ -13,13 +12,13 @@ COMMENT=	Browser based on Qt 5
 
 USE_QT5=	concurrent core gui network printsupport script sql webkit \
 		widgets buildtools_build
-USES=		desktop-file-utils qmake:outsource
+USES=		cmake:outsource desktop-file-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Emdek
 GH_PROJECT=	otter
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	f33f3ae
+GH_COMMIT=	cc6c9a7
 
 PLIST_FILES=	bin/otter-browser \
 		share/applications/otter-browser.desktop
