@@ -1,4 +1,9 @@
-This is an iSCSI target, it serves iSCSI protocol and provides
-SCSI devices to the initiator (client).
+This software (istgt) is the implementation of iSCSI target (refer to RFC3720
+about iSCSI) for FreeBSD.
 
-WWW:	http://shell.peach.ne.jp/aoyama/
+It includes iSCSI protocol processor and SPC-3 (SCSI Primary Commands - 3)
+based logical unit emulation.  You can easily create over 2TB storage for
+iSCSI target.  If necessary, you can configure to use multipath failover or
+MCS failover.
+
+WWW: http://shell.peach.ne.jp/aoyama/
