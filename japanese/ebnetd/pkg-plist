@@ -13,4 +13,4 @@ sbin/ebnupgrade
 sbin/ndtpcheck
 sbin/ndtpcontrol
 sbin/ndtpd
-@dir(,,0755) %%EBNETD_RUNDIR%%
+@dir(%%EBNETD_USER%%,%%EBNETD_GROUP%%,0755) %%EBNETD_RUNDIR%%
