@@ -114,6 +114,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/icons_rc.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/icons_rc.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/icons_rc.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/infobar.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/infobar.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/infobar.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/lexers.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/lexers.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/lexers.pyo
@@ -150,6 +153,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/postreview_ui.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/postreview_ui.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/postreview_ui.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/prune.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/prune.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/prune.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/purge.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/purge.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/purge.pyo
@@ -306,6 +312,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/gpg.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/gpg.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/gpg.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/hgcommands.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/hgcommands.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/hgcommands.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hgdispatch.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hgdispatch.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hgdispatch.pyo
