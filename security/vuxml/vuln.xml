@@ -61,11 +61,20 @@ Notes:
     <topic>subversion -- DoS vulnerabilities</topic>
     <affects>
       <package>
+	<name>mod_dav_svn</name>
+	<range><ge>1.8.0</ge><lt>1.8.11</lt></range>
+      </package>
+      <package>
+	<name>subversion16</name>
+	<range><ge>1.0.0</ge><lt>1.7.19</lt></range>
+      </package>
+      <package>
 	<name>subversion17</name>
 	<range><ge>1.0.0</ge><lt>1.7.19</lt></range>
       </package>
       <package>
 	<name>subversion</name>
+	<range><ge>1.0.0</ge><lt>1.7.19</lt></range>
 	<range><ge>1.8.0</ge><lt>1.8.11</lt></range>
       </package>
     </affects>
@@ -2712,11 +2721,16 @@ Notes:
     <topic>subversion -- several vulnerabilities</topic>
     <affects>
       <package>
+	<name>subversion16</name>
+	<range><ge>1.0.0</ge><lt>1.7.18</lt></range>
+      </package>
+      <package>
 	<name>subversion17</name>
-	<range><ge>1.7.0</ge><lt>1.7.18</lt></range>
+	<range><ge>1.0.0</ge><lt>1.7.18</lt></range>
       </package>
       <package>
 	<name>subversion</name>
+	<range><ge>1.0.0</ge><lt>1.7.18</lt></range>
 	<range><ge>1.8.0</ge><lt>1.8.10</lt></range>
       </package>
     </affects>
@@ -6341,10 +6355,6 @@ Notes:
 	<name>subversion17</name>
 	<range><ge>1.3.0</ge><lt>1.7.16</lt></range>
       </package>
-      <package>
-	<name>subversion18</name>
-	<range><ge>1.8.0</ge><lt>1.8.8</lt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -8191,9 +8201,8 @@ JavaScript code would be executed.</p>
     <affects>
       <package>
 	<name>subversion</name>
+	<range><ge>1.4.0</ge><lt>1.7.14</lt></range>
 	<range><ge>1.8.0</ge><lt>1.8.5</lt></range>
-	<range><ge>1.7.0</ge><lt>1.7.14</lt></range>
-	<range><ge>1.6.0</ge><lt>1.6.24</lt></range>
       </package>
     </affects>
     <description>
@@ -13337,7 +13346,7 @@ affected..</p>
       <package>
 	<name>subversion</name>
 	<range><ge>1.7.0</ge><lt>1.7.9</lt></range>
-	<range><ge>1.6.0</ge><lt>1.6.21</lt></range>
+	<range><ge>1.0.0</ge><lt>1.6.21</lt></range>
       </package>
     </affects>
     <description>
