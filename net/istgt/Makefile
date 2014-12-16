@@ -3,35 +3,26 @@
 
 PORTNAME=	istgt
 PORTVERSION=	20121028
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	iSCSI target for openSUSE/Debian/NetBSD/FreeBSD
 
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/istgt \
-		bin/istgtcontrol \
-		etc/rc.d/istgt \
-		%%ETCDIR%%/auth.conf.sample \
-		%%ETCDIR%%/istgt.conf.sample \
-		%%ETCDIR%%/istgt.large.conf.sample \
-		%%ETCDIR%%/istgtcontrol.conf.sample \
-		man/man1/istgt.1.gz
-PLIST_DIRSTRY=	%%ETCDIR%%
-PORTDOCS=	${DOCS:T}
+PORTDOCS=	${DOCFILES:T}
+DOCFILES=	ChangeLog.jp README doc/QUICKSTART doc/QUICKSTART.jp
 
-DOCS=		ChangeLog.jp README doc/QUICKSTART doc/QUICKSTART.jp
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	SYMLNKDEV VBOXVD
-OPTIONS_DEFAULT=
+
 SYMLNKDEV_DESC=	Allow symbolic link for device file
-VBOXVD_DESC=	Build with VBox VD support(no X11 required)
+VBOXVD_DESC=	Build with VBox VD support (no X11 required)
 
 .include <bsd.port.options.mk>
 
@@ -50,7 +41,7 @@ post-extract:
 	@${REINPLACE_CMD} -e '/\/doc\/istgt/d' ${WRKSRC}/doc/Makefile.in
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_MAN} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

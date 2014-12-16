@@ -1,0 +1,8 @@
+bin/istgt
+bin/istgtcontrol
+etc/rc.d/istgt
+@sample %%ETCDIR%%/auth.conf.sample
+@sample %%ETCDIR%%/istgt.conf.sample
+@sample %%ETCDIR%%/istgt.large.conf.sample
+@sample %%ETCDIR%%/istgtcontrol.conf.sample
+man/man1/istgt.1.gz
