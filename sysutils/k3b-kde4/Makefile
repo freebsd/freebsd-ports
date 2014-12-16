@@ -1,4 +1,4 @@
-# Created by: Heiner <h.eichmann@gmx.de>
+# Created by: Heiner Eichmann <h.eichmann@gmx.de>
 # $FreeBSD$
 
 PORTNAME=	k3b
@@ -34,7 +34,7 @@ OPTIONS_SUB=	yes # FFMPEG FLAC MAD MUSEPACK SNDFILE VORBIS_ENC VORBIS_DEC LIBDVD
 CDRDAO_DESC=		Burning: cdrdao
 CDRDAO_RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
-DVDPLUSRW_DESC=		Burning: DVD+RW Tools (DVD+/-R(W))
+DVDPLUSRW_DESC=		Burning: DVD+RW tools (DVD+/-R(W))
 DVDPLUSRW_RUN_DEPENDS=	dvd+rw-format:${PORTSDIR}/sysutils/dvd+rw-tools
 
 EMOVIX_DESC=		Burning: eMovix (bootable video CDs)
