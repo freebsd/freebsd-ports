@@ -1,12 +1,7 @@
-lib/gstreamer-%%VERSION%%/libgstasf.la
 lib/gstreamer-%%VERSION%%/libgstasf.so
-lib/gstreamer-%%VERSION%%/libgstdvdlpcmdec.la
 lib/gstreamer-%%VERSION%%/libgstdvdlpcmdec.so
-lib/gstreamer-%%VERSION%%/libgstdvdsub.la
 lib/gstreamer-%%VERSION%%/libgstdvdsub.so
-lib/gstreamer-%%VERSION%%/libgstrmdemux.la
 lib/gstreamer-%%VERSION%%/libgstrmdemux.so
-lib/gstreamer-%%VERSION%%/libgstxingmux.la
 lib/gstreamer-%%VERSION%%/libgstxingmux.so
 share/locale/af/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo

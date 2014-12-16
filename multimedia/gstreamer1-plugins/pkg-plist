@@ -1,3 +1,4 @@
+bin/gst-device-monitor-%%VERSION%%
 bin/gst-discoverer-%%VERSION%%
 bin/gst-play-%%VERSION%%
 include/gstreamer-%%VERSION%%/gst/allocators/allocators.h
@@ -61,6 +62,7 @@ include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsprange.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsptransport.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspurl.h
 include/gstreamer-%%VERSION%%/gst/rtsp/rtsp.h
+include/gstreamer-%%VERSION%%/gst/sdp/gstmikey.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstsdp.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstsdpmessage.h
 include/gstreamer-%%VERSION%%/gst/sdp/sdp.h
@@ -87,6 +89,7 @@ include/gstreamer-%%VERSION%%/gst/video/video-format.h
 include/gstreamer-%%VERSION%%/gst/video/video-frame.h
 include/gstreamer-%%VERSION%%/gst/video/video-info.h
 include/gstreamer-%%VERSION%%/gst/video/video-overlay-composition.h
+include/gstreamer-%%VERSION%%/gst/video/video-tile.h
 include/gstreamer-%%VERSION%%/gst/video/video.h
 include/gstreamer-%%VERSION%%/gst/video/videoorientation.h
 include/gstreamer-%%VERSION%%/gst/video/videooverlay.h
@@ -101,81 +104,53 @@ lib/girepository-1.0/GstRtsp-%%VERSION%%.typelib
 lib/girepository-1.0/GstSdp-%%VERSION%%.typelib
 lib/girepository-1.0/GstTag-%%VERSION%%.typelib
 lib/girepository-1.0/GstVideo-%%VERSION%%.typelib
-lib/gstreamer-%%VERSION%%/libgstadder.la
 lib/gstreamer-%%VERSION%%/libgstadder.so
-lib/gstreamer-%%VERSION%%/libgstapp.la
 lib/gstreamer-%%VERSION%%/libgstapp.so
-lib/gstreamer-%%VERSION%%/libgstaudioconvert.la
 lib/gstreamer-%%VERSION%%/libgstaudioconvert.so
-lib/gstreamer-%%VERSION%%/libgstaudiorate.la
 lib/gstreamer-%%VERSION%%/libgstaudiorate.so
-lib/gstreamer-%%VERSION%%/libgstaudioresample.la
 lib/gstreamer-%%VERSION%%/libgstaudioresample.so
-lib/gstreamer-%%VERSION%%/libgstaudiotestsrc.la
 lib/gstreamer-%%VERSION%%/libgstaudiotestsrc.so
-lib/gstreamer-%%VERSION%%/libgstencodebin.la
 lib/gstreamer-%%VERSION%%/libgstencodebin.so
-lib/gstreamer-%%VERSION%%/libgstgio.la
 lib/gstreamer-%%VERSION%%/libgstgio.so
-lib/gstreamer-%%VERSION%%/libgstplayback.la
 lib/gstreamer-%%VERSION%%/libgstplayback.so
-lib/gstreamer-%%VERSION%%/libgstsubparse.la
 lib/gstreamer-%%VERSION%%/libgstsubparse.so
-lib/gstreamer-%%VERSION%%/libgsttcp.la
 lib/gstreamer-%%VERSION%%/libgsttcp.so
-lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.la
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.so
-lib/gstreamer-%%VERSION%%/libgstvideoconvert.la
 lib/gstreamer-%%VERSION%%/libgstvideoconvert.so
-lib/gstreamer-%%VERSION%%/libgstvideorate.la
 lib/gstreamer-%%VERSION%%/libgstvideorate.so
-lib/gstreamer-%%VERSION%%/libgstvideoscale.la
 lib/gstreamer-%%VERSION%%/libgstvideoscale.so
-lib/gstreamer-%%VERSION%%/libgstvideotestsrc.la
 lib/gstreamer-%%VERSION%%/libgstvideotestsrc.so
-lib/gstreamer-%%VERSION%%/libgstvolume.la
 lib/gstreamer-%%VERSION%%/libgstvolume.so
-lib/libgstallocators-%%VERSION%%.la
 lib/libgstallocators-%%VERSION%%.so
 lib/libgstallocators-%%VERSION%%.so.0
 lib/libgstallocators-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstapp-%%VERSION%%.la
 lib/libgstapp-%%VERSION%%.so
 lib/libgstapp-%%VERSION%%.so.0
 lib/libgstapp-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstaudio-%%VERSION%%.la
 lib/libgstaudio-%%VERSION%%.so
 lib/libgstaudio-%%VERSION%%.so.0
 lib/libgstaudio-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstfft-%%VERSION%%.la
 lib/libgstfft-%%VERSION%%.so
 lib/libgstfft-%%VERSION%%.so.0
 lib/libgstfft-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstpbutils-%%VERSION%%.la
 lib/libgstpbutils-%%VERSION%%.so
 lib/libgstpbutils-%%VERSION%%.so.0
 lib/libgstpbutils-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstriff-%%VERSION%%.la
 lib/libgstriff-%%VERSION%%.so
 lib/libgstriff-%%VERSION%%.so.0
 lib/libgstriff-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstrtp-%%VERSION%%.la
 lib/libgstrtp-%%VERSION%%.so
 lib/libgstrtp-%%VERSION%%.so.0
 lib/libgstrtp-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstrtsp-%%VERSION%%.la
 lib/libgstrtsp-%%VERSION%%.so
 lib/libgstrtsp-%%VERSION%%.so.0
 lib/libgstrtsp-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstsdp-%%VERSION%%.la
 lib/libgstsdp-%%VERSION%%.so
 lib/libgstsdp-%%VERSION%%.so.0
 lib/libgstsdp-%%VERSION%%.so.%%SOVERSION%%
-lib/libgsttag-%%VERSION%%.la
 lib/libgsttag-%%VERSION%%.so
 lib/libgsttag-%%VERSION%%.so.0
 lib/libgsttag-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstvideo-%%VERSION%%.la
 lib/libgstvideo-%%VERSION%%.so
 lib/libgstvideo-%%VERSION%%.so.0
 lib/libgstvideo-%%VERSION%%.so.%%SOVERSION%%
@@ -191,8 +166,9 @@ libdata/pkgconfig/gstreamer-rtsp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-sdp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-tag-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-video-%%VERSION%%.pc
-man/man1/gst-discoverer-1.0.1.gz
-man/man1/gst-play-1.0.1.gz
+man/man1/gst-device-monitor-%%VERSION%%.1.gz
+man/man1/gst-discoverer-%%VERSION%%.1.gz
+man/man1/gst-play-%%VERSION%%.1.gz
 share/gir-1.0/GstAllocators-%%VERSION%%.gir
 share/gir-1.0/GstApp-%%VERSION%%.gir
 share/gir-1.0/GstAudio-%%VERSION%%.gir
@@ -243,16 +219,3 @@ share/locale/tr/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
-@dirrm share/gst-plugins-base/1.0
-@dirrmtry share/gst-plugins-base
-@dirrm include/gstreamer-%%VERSION%%/gst/video
-@dirrm include/gstreamer-%%VERSION%%/gst/tag
-@dirrm include/gstreamer-%%VERSION%%/gst/sdp
-@dirrm include/gstreamer-%%VERSION%%/gst/rtsp
-@dirrm include/gstreamer-%%VERSION%%/gst/rtp
-@dirrm include/gstreamer-%%VERSION%%/gst/riff
-@dirrm include/gstreamer-%%VERSION%%/gst/pbutils
-@dirrm include/gstreamer-%%VERSION%%/gst/fft
-@dirrm include/gstreamer-%%VERSION%%/gst/audio
-@dirrm include/gstreamer-%%VERSION%%/gst/app
-@dirrm include/gstreamer-%%VERSION%%/gst/allocators

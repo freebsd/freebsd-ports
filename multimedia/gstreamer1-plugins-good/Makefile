@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer1-plugins-good/Makefile,v 1.4 2013/01/15 21:43:45 kwm Exp $
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	Good gstreamer-plugins
@@ -11,8 +11,6 @@ GST_PLUGIN=	good
 GST_PLUGIN_SUFFIX=	-good
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-CONFIGURE_ARGS+=--enable-monoscope
 
 BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins
 RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins
