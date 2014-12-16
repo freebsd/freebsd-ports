@@ -71,9 +71,9 @@ NONECIPHER_CONFIGURE_WITH=	nonecipher
 AES_THREADED_CONFIGURE_WITH=	aes-threaded
 
 # See http://www.roumenpetrov.info/openssh/
-X509_VERSION=		7.9
+X509_VERSION=		8.2
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
-X509_PATCHFILES=	${PORTNAME}-6.6p1+x509-${X509_VERSION}.diff.gz:-p1:x509
+X509_PATCHFILES=	${PORTNAME}-6.7p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 # See https://bugzilla.mindrot.org/show_bug.cgi?id=2016
 SCTP_PATCHFILES=	${PORTNAME}-6.7p1-sctp-2496.patch.gz:-p1
@@ -96,6 +96,11 @@ BSM_CONFIGURE_ON=	--with-audit=bsm
 .include <bsd.port.pre.mk>
 
 PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
+
+# X509 patch includes TCP Wrapper support already
+.if ${PORT_OPTIONS:MX509}
+EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
+.endif
 
 # http://www.psc.edu/index.php/hpn-ssh
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
@@ -123,9 +128,6 @@ CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp --disable-wtmpx --without-lastlog
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sshd-utmp-size
 .endif
 
-.if ${PORT_OPTIONS:MX509}
-BROKEN=		X509 does not apply yet. Use security/openssh-portable66
-.endif
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 BROKEN=		HPN does not apply yet. Use security/openssh-portable66
 .endif
