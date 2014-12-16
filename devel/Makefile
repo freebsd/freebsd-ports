@@ -1189,6 +1189,7 @@
     SUBDIR += libwfut
     SUBDIR += libx86
     SUBDIR += libxalloc
+    SUBDIR += libxo
     SUBDIR += libxs
     SUBDIR += libytnef
     SUBDIR += libzookeeper
