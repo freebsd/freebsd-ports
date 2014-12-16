@@ -41,7 +41,7 @@ OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
 TCP_WRAPPERS_DESC=	tcp_wrappers support
 BSM_DESC=		OpenBSM Auditing
-KERB_GSSAPI_DESC=	Kerberos/GSSAPI patch (req: GSSAPI) [BROKEN]
+KERB_GSSAPI_DESC=	Kerberos/GSSAPI patch (req: GSSAPI)
 HPN_DESC=		HPN-SSH patch [BROKEN]
 LDNS_DESC=		SSHFP/LDNS support
 X509_DESC=		x509 certificate patch
@@ -79,10 +79,11 @@ X509_PATCHFILES=	${PORTNAME}-6.7p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 SCTP_PATCHFILES=	${PORTNAME}-6.7p1-sctp-2496.patch.gz:-p1
 SCTP_CONFIGURE_WITH=	sctp
 
-# 6.6 patch taken from http://www.stacken.kth.se/~haba/ which was originally
-# based on 5.7 patch at http://www.sxw.org.uk/computing/patches/
-KERB_GSSAPI_PATCHFILES=	openssh-6.6p1-gsskex-all-20140318.patch.gz:-p1:gsskex
-#KERB_GSSAPI_PATCH_SITES=http://www.stacken.kth.se/~haba/:gsskex
+# 6.7 patch taken from
+# http://sources.debian.net/data/main/o/openssh/1:6.7p1-3/debian/patches/gssapi.patch
+# which was originally based on 5.7 patch from
+# http://www.sxw.org.uk/computing/patches/
+KERB_GSSAPI_PATCHFILES=	openssh-6.7p1-gsskex-all-20141021-284f364.patch.gz:-p1:gsskex
 
 MIT_LIB_DEPENDS=		libkrb5.so.3:${PORTSDIR}/security/krb5
 HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:${PORTSDIR}/security/heimdal
@@ -130,9 +131,6 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sshd-utmp-size
 
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 BROKEN=		HPN does not apply yet. Use security/openssh-portable66
-.endif
-.if ${PORT_OPTIONS:MKERB_GSSAPI}
-BROKEN=		KERB_GSSAPI does not apply yet. Use security/openssh-portable66
 .endif
 
 .if ${PORT_OPTIONS:MX509}
