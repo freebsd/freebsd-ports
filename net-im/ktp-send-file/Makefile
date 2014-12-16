@@ -2,7 +2,6 @@
 
 PORTNAME=	ktp-send-file
 PORTVERSION=	${KTP_VERSION}
-PORTREVISION=	3
 CATEGORIES=	net-im kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4 \
 RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/libexec/ktp-filetransfer-handler:${PORTSDIR}/net-im/ktp-filetransfer-handler \
 		${KDE4_PREFIX}/bin/ktp-contactlist:${PORTSDIR}/net-im/ktp-contact-list
 
-USE_KDE4=	kdehier kdeprefix kdelibs automoc4
+USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
 USES=		cmake gettext tar:bzip2
 

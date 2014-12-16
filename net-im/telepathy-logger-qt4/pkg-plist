@@ -4,6 +4,7 @@ include/telepathy-logger-0.2/TelepathyLoggerQt4/Event
 include/telepathy-logger-0.2/TelepathyLoggerQt4/Global
 include/telepathy-logger-0.2/TelepathyLoggerQt4/Init
 include/telepathy-logger-0.2/TelepathyLoggerQt4/LogManager
+include/telepathy-logger-0.2/TelepathyLoggerQt4/LogWalker
 include/telepathy-logger-0.2/TelepathyLoggerQt4/PendingDates
 include/telepathy-logger-0.2/TelepathyLoggerQt4/PendingEntities
 include/telepathy-logger-0.2/TelepathyLoggerQt4/PendingEvents
@@ -21,6 +22,7 @@ include/telepathy-logger-0.2/TelepathyLoggerQt4/event.h
 include/telepathy-logger-0.2/TelepathyLoggerQt4/global.h
 include/telepathy-logger-0.2/TelepathyLoggerQt4/init.h
 include/telepathy-logger-0.2/TelepathyLoggerQt4/log-manager.h
+include/telepathy-logger-0.2/TelepathyLoggerQt4/log-walker.h
 include/telepathy-logger-0.2/TelepathyLoggerQt4/pending-dates.h
 include/telepathy-logger-0.2/TelepathyLoggerQt4/pending-entities.h
 include/telepathy-logger-0.2/TelepathyLoggerQt4/pending-events.h
@@ -35,5 +37,5 @@ lib/cmake/TelepathyLoggerQt4/TelepathyLoggerQt4Targets-%%CMAKE_BUILD_TYPE%%.cmak
 lib/cmake/TelepathyLoggerQt4/TelepathyLoggerQt4Targets.cmake
 lib/libtelepathy-logger-qt4.so
 lib/libtelepathy-logger-qt4.so.1
-lib/libtelepathy-logger-qt4.so.1.0.5.60
+lib/libtelepathy-logger-qt4.so.1.0.8.0
 libdata/pkgconfig/TelepathyLoggerQt4.pc
