@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdata_provider
-PORTVERSION=	0.32
+PORTVERSION=	1.0.3
 DISTVERSIONSUFFIX=	-tb+sm
 CATEGORIES=	www deskutils
 

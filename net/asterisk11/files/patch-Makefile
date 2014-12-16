@@ -1,6 +1,6 @@
---- Makefile.orig	2012-06-13 16:30:34.000000000 +0200
-+++ Makefile	2012-08-02 00:12:13.812569306 +0200
-@@ -123,7 +123,7 @@
+--- Makefile.orig	2014-10-31 16:40:55 UTC
++++ Makefile
+@@ -126,7 +126,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -9,16 +9,16 @@
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -192,7 +192,7 @@
+@@ -202,7 +202,7 @@ endif
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
 -  BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
 +  BSDVERSION=$(OSVERSION)
    _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
- endif
- 
-@@ -425,8 +425,12 @@
+   # flag to tell 'ldconfig' to only process specified directories
+   LDCONFIG_FLAGS=-m
+@@ -456,8 +456,12 @@ datafiles: _all doc/core-en_US.xml
  			$(INSTALL) -m 644 $$n "$(DESTDIR)$(ASTDATADIR)/static-http/docs" ; \
  		done \
  	fi
@@ -32,7 +32,7 @@
  	done
  	$(MAKE) -C sounds install
  
-@@ -485,7 +489,7 @@
+@@ -537,7 +541,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(ASTMODDIR)
  	"$(ASTDATADIR)/documentation/thirdparty" "$(ASTDATADIR)/firmware" \
  	"$(ASTDATADIR)/firmware/iax" "$(ASTDATADIR)/images" "$(ASTDATADIR)/keys" \
  	"$(ASTDATADIR)/phoneprov" "$(ASTDATADIR)/static-http" "$(ASTDATADIR)/sounds" \
@@ -41,7 +41,7 @@
  
  installdirs:
  	@for i in $(INSTALLDIRS); do \
-@@ -552,7 +556,7 @@
+@@ -606,7 +610,7 @@ ifneq ($(filter ~%,$(DESTDIR)),)
  	@exit 1
  endif
  
@@ -50,12 +50,34 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install "$(DESTDIR)" . ; \
  	fi
-@@ -594,29 +598,18 @@
+@@ -615,21 +619,7 @@ install: badshell bininstall datafiles
+ 	@echo " +    YOU MUST READ THE SECURITY DOCUMENT    +"
+ 	@echo " +                                           +"
+ 	@echo " + Asterisk has successfully been installed. +"
+-	@echo " + If you would like to install the sample   +"
+-	@echo " + configuration files (overwriting any      +"
+-	@echo " + existing config files), run:              +"
+ 	@echo " +                                           +"
+-	@echo " +               $(mK) samples               +"
+-	@echo " +                                           +"
+-	@echo " +-----------------  or ---------------------+"
+-	@echo " +                                           +"
+-	@echo " + You can go ahead and install the asterisk +"
+-	@echo " + program documentation now or later run:   +"
+-	@echo " +                                           +"
+-	@echo " +              $(mK) progdocs               +"
+-	@echo " +                                           +"
+-	@echo " + **Note** This requires that you have      +"
+-	@echo " + doxygen installed on your local system    +"
+ 	@echo " +-------------------------------------------+"
+ 	@$(MAKE) -s oldmodcheck
+ 
+@@ -648,45 +638,30 @@ adsi:
  		else \
  			echo "Installing $$x" ; \
  		fi ; \
 -		$(INSTALL) -m 644 "$$x" "$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`" ; \
-+		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`-dist ; \
++		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`.sample ; \
  	done
  
  samples: adsi
@@ -73,23 +95,43 @@
 -				echo "Skipping config file $$x"; \
 -				continue; \
 -			fi ;\
-+		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`-dist ; \
-+		if [ ! -f $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample` ]; then \
-+			$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`; \
- 		fi ; \
--		echo "Installing file $$x"; \
+-		fi ; \
+ 		echo "Installing file $$x"; \
 -		$(INSTALL) -m 644 "$$x" "$${dst}" ;\
++		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x` ;\
  	done
 -	if [ "$(OVERWRITE)" = "y" ]; then \
-+	@if true; then \
- 		echo "Updating asterisk.conf" ; \
- 		sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
- 			-e 's|^astmoddir.*$$|astmoddir => $(MODULES_DIR)|' \
-@@ -630,6 +623,7 @@
- 			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
- 			"$(DESTDIR)$(ASTCONFPATH)" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
- 		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH)" ; \
-+		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH)-dist" ; \
- 		rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
- 	fi ; \
+-		echo "Updating asterisk.conf" ; \
+-		sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
+-			-e 's|^astmoddir.*$$|astmoddir => $(ASTMODDIR)|' \
+-			-e 's|^astvarlibdir.*$$|astvarlibdir => $(ASTVARLIBDIR)|' \
+-			-e 's|^astdbdir.*$$|astdbdir => $(ASTDBDIR)|' \
+-			-e 's|^astkeydir.*$$|astkeydir => $(ASTKEYDIR)|' \
+-			-e 's|^astdatadir.*$$|astdatadir => $(ASTDATADIR)|' \
+-			-e 's|^astagidir.*$$|astagidir => $(AGI_DIR)|' \
+-			-e 's|^astspooldir.*$$|astspooldir => $(ASTSPOOLDIR)|' \
+-			-e 's|^astrundir.*$$|astrundir => $(ASTVARRUNDIR)|' \
+-			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
+-			-e 's|^astsbindir.*$$|astsbindir => $(ASTSBINDIR)|' \
+-			"$(DESTDIR)$(ASTCONFPATH)" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
+-		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH)" ; \
+-		rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
+-	fi ; \
++	echo "Updating asterisk.conf" ; \
++	sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
++		-e 's|^astmoddir.*$$|astmoddir => $(ASTMODDIR)|' \
++		-e 's|^astvarlibdir.*$$|astvarlibdir => $(ASTVARLIBDIR)|' \
++		-e 's|^astdbdir.*$$|astdbdir => $(ASTDBDIR)|' \
++		-e 's|^astkeydir.*$$|astkeydir => $(ASTKEYDIR)|' \
++		-e 's|^astdatadir.*$$|astdatadir => $(ASTDATADIR)|' \
++		-e 's|^astagidir.*$$|astagidir => $(AGI_DIR)|' \
++		-e 's|^astspooldir.*$$|astspooldir => $(ASTSPOOLDIR)|' \
++		-e 's|^astrundir.*$$|astrundir => $(ASTVARRUNDIR)|' \
++		-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
++		-e 's|^astsbindir.*$$|astsbindir => $(ASTSBINDIR)|' \
++		"$(DESTDIR)$(ASTCONFPATH)" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
++	$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH).sample" ; \
++	rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX"
+ 	build_tools/make_sample_voicemail "$(DESTDIR)/$(ASTDATADIR)" "$(DESTDIR)/$(ASTSPOOLDIR)"
+ 

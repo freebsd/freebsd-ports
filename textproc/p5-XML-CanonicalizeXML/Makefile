@@ -19,4 +19,6 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 USE_PERL5=	configure
 USES=		perl5
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>

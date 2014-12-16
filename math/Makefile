@@ -150,6 +150,7 @@
     SUBDIR += gnubc
     SUBDIR += gnumeric
     SUBDIR += gnuplot
+    SUBDIR += gnuplot-tex-extras
     SUBDIR += goblin
     SUBDIR += gotoblas
     SUBDIR += grace
@@ -328,6 +329,7 @@
     SUBDIR += octave-forge-octproj
     SUBDIR += octave-forge-odebvp
     SUBDIR += octave-forge-odepkg
+    SUBDIR += octave-forge-optics
     SUBDIR += octave-forge-optim
     SUBDIR += octave-forge-optiminterp
     SUBDIR += octave-forge-outliers

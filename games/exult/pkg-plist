@@ -43,8 +43,3 @@ share/applications/exult.desktop
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
 share/icons/exult.png
-@dirrmtry share/icons
-%%STUDIO%%@dirrmtry %%DATADIR%%/estudio/new
-%%STUDIO%%@dirrmtry %%DATADIR%%/estudio
-@dirrmtry %%DATADIR%%
-@dirrmtry %%DOCSDIR%%

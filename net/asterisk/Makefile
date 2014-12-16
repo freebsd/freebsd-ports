@@ -3,6 +3,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.8.32.1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -44,7 +45,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		ASTCFLAGS="${CFLAGS}"
 
 CONFLICTS_BUILD=	linuxthreads-*
-CONFLICTS_INSTALL=	asterisk*-1.4* asterisk*-1.6* asterisk*-10*
+CONFLICTS_INSTALL=	asterisk*-11* asterisk*-13*
 
 OPTIONS_DEFINE=	VORBIS PGSQL MYSQL ODBC RADIUS SNMP H323 FREETDS JABBER SQLITE GSM \
 		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP OOH323
@@ -104,7 +105,7 @@ CURL_CONFIGURE_ON=	--with-libcurl
 CURL_CONFIGURE_OFF=	--with-libcurl=no
 CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 SPANDSP_CONFIGURE_WITH=	spandsp
-SPANDSP_LIB_DEPENDS=	libspandsp.so.2:${PORTSDIR}/comms/spandsp-devel
+SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
 EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
 EXCHANGE_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
 SRTP_CONFIGURE_WITH=	srtp

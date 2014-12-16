@@ -1,0 +1,40 @@
+--- Makefile.orig	2007-02-07 00:31:11.000000000 +0300
++++ Makefile	2014-12-12 01:25:23.000000000 +0300
+@@ -4,11 +4,11 @@
+ # Install options
+ #
+ # For local install, comment the next line and uncomment the one after
+-DATA_INSTALL_DIR=/usr/local/games/hhh
++DATA_INSTALL_DIR?=/usr/local/games/hhh
+ #DATA_INSTALL_DIR=.
+ 
+ # Where the binary goes (you might want /usr/bin instead)
+-BIN_DIR=/usr/local/bin
++BIN_DIR?=/usr/local/bin
+ 
+ # Where the hiscore table is saved: user's home dir/.hannah
+ #SCORE_DIR=${HOME}/.hannah
+@@ -16,10 +16,10 @@
+ 
+ 
+ # compiler options
+-CXX       = g++
+-CPPFLAGS = $(shell sdl-config --cflags) -DDATA_INSTALL_DIR=\"${DATA_INSTALL_DIR}\" #-DSCORE_DIR=\"${SCORE_DIR}\"
+-CXXFLAGS   = -O2 -Wall -g
+-LIBS     = $(shell sdl-config --libs) -lSDL_image -lSDL_ttf -lSDL_mixer
++CXX       ?= g++
++CPPFLAGS += $(shell sdl-config --cflags) -DDATA_INSTALL_DIR=\"${DATA_INSTALL_DIR}\" #-DSCORE_DIR=\"${SCORE_DIR}\"
++CXXFLAGS += -Wall
++LIBS     += $(shell sdl-config --libs) -lSDL_image -lSDL_ttf -lSDL_mixer
+ 
+ # target binary and directory name
+ OUT = hhh
+@@ -39,7 +39,7 @@
+ deps: $(SRCS)
+ 	gcc $(CPPFLAGS) -MM $^ > deps
+ 
+--include deps
++#-include deps
+ 
+ 
+ install: hhh	

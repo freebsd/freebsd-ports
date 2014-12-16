@@ -13,3 +13,4 @@ share/icons/hicolor/48x48/apps/enigma.png
 %%NLS%%share/locale/ru/LC_MESSAGES/enigma.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/enigma.mo
 share/pixmaps/enigma.png
+@dir %%DATADIR%%/levels/enigma_stable

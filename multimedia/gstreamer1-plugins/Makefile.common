@@ -360,8 +360,7 @@ gst_soup_PLIST_FILES=	${GST_LIB_DIR}/libgstsouphttpsrc.la \
 			${GST_LIB_DIR}/libgstsouphttpsrc.so
 
 # spandsp
-# keep shlib version here, so we don't pick up the comms/spandsp port by accident.
-gst_spandsp_LIB_DEPENDS=	libspandsp.so.2:${PORTSDIR}/comms/spandsp-devel
+gst_spandsp_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
 
 # speex
 gst_speex_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex

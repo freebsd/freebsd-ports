@@ -5,20 +5,19 @@
 %%FLOWVIEWERDIR%%/FlowGrapher_Main.cgi
 %%FLOWVIEWERDIR%%/FlowGrapher_Replay.cgi
 %%FLOWVIEWERDIR%%/FlowGrapher_Sort.cgi
-%%FLOWVIEWERDIR%%/FlowTracker.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_AltDashboard
-%%FLOWVIEWERDIR%%/FlowTracker_Collector
-%%FLOWVIEWERDIR%%/FlowTracker_Dashboard.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_Display.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_DisplayPublic.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_Dumper.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_Grapher
-%%FLOWVIEWERDIR%%/FlowTracker_Group.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_Main.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_Management.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_Recreate
-%%FLOWVIEWERDIR%%/FlowTracker_Replay.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_Thumbnail
+%%FLOWVIEWERDIR%%/FlowMonitor.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Collector
+%%FLOWVIEWERDIR%%/FlowMonitor_Dashboard.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Display.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_DisplayPublic.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Dumper.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Grapher
+%%FLOWVIEWERDIR%%/FlowMonitor_Group.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Main.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Management.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Recreate
+%%FLOWVIEWERDIR%%/FlowMonitor_Replay.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Thumbnail
 %%FLOWVIEWERDIR%%/FlowViewer.cgi
 %%FLOWVIEWERDIR%%/FlowViewer_CleanASCache
 %%FLOWVIEWERDIR%%/FlowViewer_CleanFiles
@@ -36,7 +35,7 @@
 %%FLOWVIEWERDIR%%/NamedInterfaces_Exporters
 %%FLOWVIEWERDIR%%/dscan.suppress.dst
 %%FLOWVIEWERDIR%%/dscan.suppress.src
-%%FLOWVIEWERDIR%%/tools/analyze_flowtracker_debug
+%%FLOWVIEWERDIR%%/tools/analyze_flowmonitor_debug
 %%FLOWVIEWERDIR%%/tools/analyze_netflow_packets
 %%FLOWVIEWERDIR%%/tools/convert_pre40_filters
 %%FLOWVIEWERDIR%%/tools/date_to_epoch_gm
@@ -45,30 +44,29 @@
 %%FLOWVIEWERDIR%%/tools/epoch_to_date_local
 %%FLOWVIEWERDIR%%/tools/flow-capture-table.conf
 %%FLOWVIEWERDIR%%/tools/flowcapture_restart
-%%FLOWVIEWERDIR%%/tools/flowtracker_archive_restore
-%%FLOWVIEWERDIR%%/tools/flowtracker_grapher_nonlazy
-%%FLOWVIEWERDIR%%/tools/flowtracker_grapher_recent
-%%FLOWVIEWERDIR%%/tools/flowtracker_restart
+%%FLOWVIEWERDIR%%/tools/flowmonitor_archive_restore
+%%FLOWVIEWERDIR%%/tools/flowmonitor_grapher_nonlazy
+%%FLOWVIEWERDIR%%/tools/flowmonitor_grapher_recent
+%%FLOWVIEWERDIR%%/tools/flowmonitor_restart
 %%FLOWVIEWERDIR%%/tools/performance_check
 %%FLOWVIEWERDIR%%/tools/resize_rrdtools
 %%FLOWVIEWERDIR%%/tools/rsync_flows
 %%FLOWVIEWERDIR%%/tools/rsync_htmls
-%%FLOWVIEWERDIR%%/tools/rsync_trackings
+%%FLOWVIEWERDIR%%/tools/rsync_monitors
 %%FLOWVIEWERDIR%%/tools/rwflowpack_start
 %%FLOWVIEWERDIR%%/reports/FG_button.png
-%%FLOWVIEWERDIR%%/reports/FT_button.png
+%%FLOWVIEWERDIR%%/reports/FM_button.png
 %%FLOWVIEWERDIR%%/reports/FV_button.png
 %%FLOWVIEWERDIR%%/reports/FlowViewer.css
-@exec /usr/sbin/chown %%WWWOWN%%:%%WWWGRP%% %%FLOWVIEWERDIR%%/tmp %%FLOWVIEWERDIR%%/reports %%FLOWVIEWERDIR%%/graphs %%FLOWVIEWERDIR%%/tracker  %%FLOWVIEWERDIR%%/working %%FLOWVIEWERDIR%%/saves %%FLOWVIEWERDIR%%/names %%FLOWVIEWERDIR%%/filters %%FLOWVIEWERDIR%%/rrdtools %%FLOWVIEWERDIR%%/FlowViewer_Dashboard %%FLOWVIEWERDIR%%/tools
-@dirrmtry %%FLOWVIEWERDIR%%/working
-@dirrmtry %%FLOWVIEWERDIR%%/tracker
-@dirrmtry %%FLOWVIEWERDIR%%/tools
-@dirrmtry %%FLOWVIEWERDIR%%/tmp
-@dirrmtry %%FLOWVIEWERDIR%%/saves
-@dirrmtry %%FLOWVIEWERDIR%%/rrdtools
-@dirrmtry %%FLOWVIEWERDIR%%/reports
-@dirrmtry %%FLOWVIEWERDIR%%/names
-@dirrmtry %%FLOWVIEWERDIR%%/graphs
-@dirrmtry %%FLOWVIEWERDIR%%/filters
-@dirrmtry %%FLOWVIEWERDIR%%/FlowViewer_Dashboard
-@dirrmtry %%FLOWVIEWERDIR%%
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/FlowViewer_Dashboard
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/filters
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/graphs
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/ipsets
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/monitor
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/names
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/reports
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/rrdtools
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/saves
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/tmp
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/tools
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/working

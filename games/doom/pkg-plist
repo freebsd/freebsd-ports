@@ -1,4 +1,3 @@
 bin/doom
 libexec/doom/sndserver
 libexec/doom/xdoom
-@dirrm libexec/doom

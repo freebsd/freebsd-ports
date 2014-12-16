@@ -13,7 +13,7 @@ COMMENT=	Turn-based strategy game for GNOME
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix gmake libtool iconv pkgconfig
+USES=		gettext-tools gmake iconv libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.2.0
-PORTREVISION=	1
+PORTVERSION=	5.2.1
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -11,9 +10,7 @@ MASTER_SITES=	http://download.strongswan.org/ \
 MAINTAINER=	strongswan@nanoteq.com
 COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-
-USES=		libtool:keepla tar:bzip2
+USES=		execinfo libtool:keepla tar:bzip2
 USE_OPENSSL=	yes
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
@@ -41,8 +38,8 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--with-lib-prefix=${PREFIX}
 
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE IKEv1 \
-		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL SQLITE \
-		TESTVECTOR TOOLS UNBOUND XAUTH
+		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL PKI SCEP SQLITE \
+		TESTVECTOR UNBOUND XAUTH
 OPTIONS_SUB=	yes
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
@@ -54,7 +51,8 @@ IPSECKEY_DESC=	Enable authentication with IPSECKEY resource records with DNSSEC
 KERNELLIBIPSEC_DESC=	Enable IPSec userland backend
 LOADTESTER_DESC=	Enable load testing plugin
 TESTVECTOR_DESC=	Enable crypto test vectors
-TOOLS_DESC=	Enable PKI tools
+PKI_DESC=	Enable PKI tools
+SCEP_DESC=	Enable Simple Certificate Enrollment Protocol
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
 XAUTH_DESC=	Enable XAuth password verification
 
@@ -71,13 +69,14 @@ IPSECKEY_CONFIGURE_ON=	--enable-ipseckey
 KERNELLIBIPSEC_CONFIGURE_ON=	--enable-kernel-libipsec
 LOADTESTER_CONFIGURE_ON=--enable-load-tester
 LDAP_CONFIGURE_ON=	--enable-ldap
-LDAP_USE=		USE_OPENLDAP=yes
+LDAP_USE=		OPENLDAP=yes
 MYSQL_CONFIGURE_ON=	--enable-mysql
-MYSQL_USE=		USE_MYSQL=yes
+MYSQL_USE=		MYSQL=yes
 SQLITE_CONFIGURE_ON=	--enable-sqlite
 SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
-TOOLS_CONFIGURE_OFF=	--disable-tools
+PKI_CONFIGURE_OFF=	--disable-pki
+SCEP_CONFIGURE_OFF=	--disable-scepclient
 UNBOUND_CONFIGURE_ON=	--enable-unbound
 UNBOUND_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic

@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20140525
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMESUFFIX=	-base
@@ -114,6 +114,7 @@ CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/kpathsea \
 		-I${LOCALBASE}/include/ptexenc
 PLIST_SUB=	INSTALL_DATA="${INSTALL_DATA}"
+INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	texk/texlive/linked_scripts/a2ping/a2ping.pl \
 		texk/texlive/linked_scripts/accfonts/mkt1font \

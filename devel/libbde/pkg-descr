@@ -1,4 +1,4 @@
 Library and tools to access the BitLocker Drive Encryption (BDE) encrypted
 volumes.
 
-WWW: http://code.google.com/p/libbde/
+WWW: https://github.com/libyal/libbde

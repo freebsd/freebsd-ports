@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-utils
 PORTVERSION=	3.14.0
+PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty

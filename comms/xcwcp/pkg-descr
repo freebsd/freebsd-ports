@@ -1,0 +1,6 @@
+xcwcp: a CW tutor program for X Window environment.  It offers the
+same random and keyboard sending as comms/cwcp, and in addition can
+read CW that sent to it using the keyboard or mouse as a keyer,
+making it useful for sending as well as receiving practice.
+
+WWW: http://www.ibiblio.org/pub/linux/apps/ham/morse/

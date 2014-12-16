@@ -2,7 +2,7 @@
 
 PORTNAME=	wspr
 DISTVERSION=	${VERSION}.r${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
@@ -24,18 +24,21 @@ LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib \
 
 DISABLE_MAKE_JOBS=	yes
 USE_AUTOTOOLS=	autoconf
-USES=		fortran gmake libtool tar:bzip2 python:3.3
+USES=		fortran gmake libtool tar:bzip2 python:3.3 dos2unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gfortran=${FC} \
 		--with-f2py=f2py-${PYTHON_VER} \
 		--with-python3=${PYTHON_CMD}
 MAKE_ENV+=	PYTHONUSERBASE=${STAGEDIR}${PYTHONBASE}
-LDFLAGS+=	-shared
+#LDFLAGS+=	-shared
 VERSION=	4.00
 
 .include <bsd.port.pre.mk>
 pre-configure:
 	@${CP} ${FILESDIR}/wspr.sh.in ${WRKSRC}
+
+do-build:
+	(cd ${WRKSRC};${GMAKE})
 
 post-install:
 .if defined(BOOTSTRAP)

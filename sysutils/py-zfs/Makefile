@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zfs
-PORTVERSION=	1
-PORTREVISION=	4
+PORTVERSION=	1.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,6 @@ MAKE_ARGS+=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}" \
 		PYTHON_LDFLAGS="-L${LOCALBASE}/lib -l${PYTHON_VERSION}"
 NO_WRKSUBDIR=	yes
 
-SUB_FILES+=	compile.py
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 PYFILES=	__init__.py \
@@ -78,12 +76,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PYFILE} \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zfs
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/ioctl.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zfs
-	@${PYTHON_CMD} ${WRKDIR}/compile.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zfs
-	@${PYTHON_CMD} -O ${WRKDIR}/compile.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zfs
+	${INSTALL_LIB} ${WRKSRC}/ioctl.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zfs
+	(cd ${STAGEDIR}${PREFIX} && \
+	    ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} && \
+	    ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 	${MKDIR} ${STAGEDIR}/usr/lib/zfs
 	${INSTALL_SCRIPT} ${WRKSRC}/pyzfs.py ${STAGEDIR}/usr/lib/zfs
-	@${PYTHON_CMD} ${WRKDIR}/compile.py ${STAGEDIR}/usr/lib/zfs
-	@${PYTHON_CMD} -O ${WRKDIR}/compile.py ${STAGEDIR}/usr/lib/zfs
+	(cd ${STAGEDIR}/usr/lib/zfs && \
+	    ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d /usr/lib/zfs -f ${STAGEDIR}/usr/lib/zfs && \
+	    ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d /usr/lib/zfs -f ${STAGEDIR}/usr/lib/zfs)
 
 .include <bsd.port.post.mk>

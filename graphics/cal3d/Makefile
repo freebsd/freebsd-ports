@@ -16,6 +16,7 @@ CONFLICTS=	cal3d-devel-[0-9]*
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<istream>|<iostream>|' \

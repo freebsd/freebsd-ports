@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder_nss
-PORTVERSION=	544
-PORTREVISION=	1
+PORTVERSION=	561.1.1
 CATEGORIES=	dns net
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 DISTNAME=	${PORTNAME:S/_nss//}-${PORTVERSION}
@@ -18,6 +17,12 @@ LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 CONFLICTS_INSTALL=	nss_mdns-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_nss//}-${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:C/^(...).*/\1/} == "arm"
+LD=${CC}
+.endif
 
 post-extract:
 	@${CP} ${FILESDIR}/nss_mdns_freebsd.c ${WRKSRC}/mDNSPosix
@@ -47,4 +52,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/mDNSPosix/nss_mdns.conf \
 		${STAGEDIR}${PREFIX}/etc/nss_mdns.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

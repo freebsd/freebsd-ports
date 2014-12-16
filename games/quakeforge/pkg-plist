@@ -297,17 +297,3 @@ man/man1/wad.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ideas/quakedownload.txt
 %%PORTDOCS%%%%DOCSDIR%%/ideas/rhamph.txt
 %%PORTDOCS%%%%DOCSDIR%%/ideas/serverlist.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ideas
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/config/gib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/config
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/data/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/data
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/QF/GL
-@dirrm include/QF/plugin
-@dirrm include/QF/ruamoko/gui
-@dirrm include/QF/ruamoko
-@dirrm include/QF
-@dirrm lib/ruamoko
-@dirrm lib/quakeforge
-@dirrm %%DATADIR%%/QF

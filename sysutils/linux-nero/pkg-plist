@@ -1,4 +1,3 @@
-@comment file listing
 etc/nero/config
 usr/bin/nero
 usr/bin/nerocmd
@@ -32,43 +31,43 @@ usr/lib/nero/plug-ins/libOggVorbis.so
 usr/lib/nero/plug-ins/libWav.so
 usr/share/applications/nerolinux.desktop
 usr/share/applications/nerolinuxexpress.desktop
-usr/share/doc/nero/EULA-DE.txt
-usr/share/doc/nero/EULA-ES.txt
-usr/share/doc/nero/EULA-FR.txt
-usr/share/doc/nero/EULA-JP.txt
-usr/share/doc/nero/EULA-KO.txt
-usr/share/doc/nero/EULA-US.txt
-usr/share/doc/nero/EULA-ZH_CN.txt
-usr/share/doc/nero/EULA-ZH_TW.txt
-usr/share/doc/nero/NEWS
-usr/share/doc/nero/NeroLinuxExpressManual.pdf
-usr/share/doc/nero/NeroLinuxManual.pdf
-usr/share/doc/nero/copyright
+%%PORTDOCS%%usr/share/doc/nero/EULA-DE.txt
+%%PORTDOCS%%usr/share/doc/nero/EULA-ES.txt
+%%PORTDOCS%%usr/share/doc/nero/EULA-FR.txt
+%%PORTDOCS%%usr/share/doc/nero/EULA-JP.txt
+%%PORTDOCS%%usr/share/doc/nero/EULA-KO.txt
+%%PORTDOCS%%usr/share/doc/nero/EULA-US.txt
+%%PORTDOCS%%usr/share/doc/nero/EULA-ZH_CN.txt
+%%PORTDOCS%%usr/share/doc/nero/EULA-ZH_TW.txt
+%%PORTDOCS%%usr/share/doc/nero/NEWS
+%%PORTDOCS%%usr/share/doc/nero/NeroLinuxExpressManual.pdf
+%%PORTDOCS%%usr/share/doc/nero/NeroLinuxManual.pdf
+%%PORTDOCS%%usr/share/doc/nero/copyright
 usr/share/icons/hicolor/128x128/apps/nerolinux.png
 usr/share/icons/hicolor/128x128/apps/nerolinuxexpress.png
 usr/share/icons/hicolor/16x16/apps/nerolinux.png
 usr/share/icons/hicolor/16x16/apps/nerolinuxexpress.png
 usr/share/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-nero-disc-image.png
-usr/share/icons/hicolor/16x16/mimetypes/nero-disc-image.png
 usr/share/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-nero-linux-compilation.png
+usr/share/icons/hicolor/16x16/mimetypes/nero-disc-image.png
 usr/share/icons/hicolor/16x16/mimetypes/nero-linux-compilation.png
 usr/share/icons/hicolor/24x24/apps/nerolinux.png
 usr/share/icons/hicolor/24x24/apps/nerolinuxexpress.png
 usr/share/icons/hicolor/24x24/mimetypes/gnome-mime-application-x-nero-disc-image.png
-usr/share/icons/hicolor/24x24/mimetypes/nero-disc-image.png
 usr/share/icons/hicolor/24x24/mimetypes/gnome-mime-application-x-nero-linux-compilation.png
+usr/share/icons/hicolor/24x24/mimetypes/nero-disc-image.png
 usr/share/icons/hicolor/24x24/mimetypes/nero-linux-compilation.png
 usr/share/icons/hicolor/32x32/apps/nerolinux.png
 usr/share/icons/hicolor/32x32/apps/nerolinuxexpress.png
 usr/share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-nero-disc-image.png
-usr/share/icons/hicolor/32x32/mimetypes/nero-disc-image.png
 usr/share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-nero-linux-compilation.png
+usr/share/icons/hicolor/32x32/mimetypes/nero-disc-image.png
 usr/share/icons/hicolor/32x32/mimetypes/nero-linux-compilation.png
 usr/share/icons/hicolor/48x48/apps/nerolinux.png
 usr/share/icons/hicolor/48x48/apps/nerolinuxexpress.png
 usr/share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-nero-disc-image.png
-usr/share/icons/hicolor/48x48/mimetypes/nero-disc-image.png
 usr/share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-nero-linux-compilation.png
+usr/share/icons/hicolor/48x48/mimetypes/nero-disc-image.png
 usr/share/icons/hicolor/48x48/mimetypes/nero-linux-compilation.png
 usr/share/icons/hicolor/64x64/apps/nerolinux.png
 usr/share/icons/hicolor/64x64/apps/nerolinuxexpress.png
@@ -603,68 +602,4 @@ usr/share/nero/sounds/Boo.wav
 usr/share/nero/sounds/DingDong.wav
 usr/share/nero/sounds/Trumpet.wav
 usr/share/pixmaps/nerolinux.xpm
-@comment deal with empty directories installed by the port
-@exec /bin/mkdir -p %D/usr/share/nero/eeepc/icons
-@dirrmtry usr/share/nero/eeepc/icons
-@comment non-empty directory listing in revers order
-@dirrm usr/share/nero/sounds
-@dirrm usr/share/nero/mime/shared
-@dirrm usr/share/nero/mime/kde
-@dirrm usr/share/nero/mime
-@dirrm usr/share/nero/images/wizards
-@dirrm usr/share/nero/images/wavesplashscreen
-@dirrm usr/share/nero/images/watermarks
-@dirrm usr/share/nero/images/waitformedia
-@dirrm usr/share/nero/images/tracktypes
-@dirrm usr/share/nero/images/toolbar
-@dirrm usr/share/nero/images/splashscreen
-@dirrm usr/share/nero/images/propertiesdialog
-@dirrm usr/share/nero/images/previewplayer
-@dirrm usr/share/nero/images/options
-@dirrm usr/share/nero/images/menubar
-@dirrm usr/share/nero/images/license
-@dirrm usr/share/nero/images/folders
-@dirrm usr/share/nero/images/finalscreen
-@dirrm usr/share/nero/images/filetypes
-@dirrm usr/share/nero/images/expressdisctypes
-@dirrm usr/share/nero/images/erasedisc
-@dirrm usr/share/nero/images/editor
-@dirrm usr/share/nero/images/disctypes
-@dirrm usr/share/nero/images/dialogs
-@dirrm usr/share/nero/images/devices
-@dirrm usr/share/nero/images/confirmdialogs
-@dirrm usr/share/nero/images/compilationtypes
-@dirrm usr/share/nero/images/compilationpreview
-@dirrm usr/share/nero/images/cdplayer
-@dirrm usr/share/nero/images/buttons
-@dirrm usr/share/nero/images/burnprocess
-@dirrm usr/share/nero/images/audiopluginmgr
-@dirrm usr/share/nero/images/appicons
-@dirrm usr/share/nero/images/animations
-@dirrm usr/share/nero/images
-@dirrm usr/share/nero/helpers/splash
-@dirrm usr/share/nero/helpers
-@dirrm usr/share/nero/eula
-@dirrm usr/share/nero/eeepc
-@dirrm usr/share/nero
-@dirrmtry usr/share/icons/hicolor/64x64/apps
-@dirrmtry usr/share/icons/hicolor/64x64
-@dirrmtry usr/share/icons/hicolor/48x48/mimetypes
-@dirrmtry usr/share/icons/hicolor/48x48/apps
-@dirrmtry usr/share/icons/hicolor/48x48
-@dirrmtry usr/share/icons/hicolor/32x32/mimetypes
-@dirrmtry usr/share/icons/hicolor/32x32/apps
-@dirrmtry usr/share/icons/hicolor/32x32
-@dirrmtry usr/share/icons/hicolor/24x24/mimetypes
-@dirrmtry usr/share/icons/hicolor/24x24/apps
-@dirrmtry usr/share/icons/hicolor/24x24
-@dirrmtry usr/share/icons/hicolor/16x16/mimetypes
-@dirrmtry usr/share/icons/hicolor/16x16/apps
-@dirrmtry usr/share/icons/hicolor/16x16
-@dirrmtry usr/share/icons/hicolor/128x128/apps
-@dirrmtry usr/share/icons/hicolor/128x128
-@dirrmtry usr/share/icons/hicolor
-@dirrm usr/share/doc/nero
-@dirrm usr/lib/nero/plug-ins
-@dirrm usr/lib/nero
-@dirrm etc/nero
+@dir usr/share/nero/eeepc/icons

@@ -9,6 +9,9 @@ DISTFILES=	# none
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Tool for fetching and building ports
 
+DEPRECATED=	Does not support pkgng
+EXPIRATION_DATE=	2015-01-12
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USES=		perl5

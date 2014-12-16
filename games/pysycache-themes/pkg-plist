@@ -518,20 +518,3 @@
 %%WORLD%%%%DATADIR%%/themes-move/world/503.dfg
 %%WORLD%%%%DATADIR%%/themes-move/world/514.dfg
 %%WORLD%%%%DATADIR%%/themes-move/world/00093.dfg
-%%AFRICA%%@dirrm %%DATADIR%%/themes-click/africa
-%%ANIMALS%%@dirrm %%DATADIR%%/themes-move/animals/cache
-%%ANIMALS%%@dirrm %%DATADIR%%/themes-move/animals
-%%EARTH%%@dirrm %%DATADIR%%/themes-move/earth/cache
-%%EARTH%%@dirrm %%DATADIR%%/themes-move/earth
-%%FOOD%%@dirrm %%DATADIR%%/themes-move/food/cache
-%%FOOD%%@dirrm %%DATADIR%%/themes-move/food
-%%PLANTS%%@dirrm %%DATADIR%%/themes-move/plants/cache
-%%PLANTS%%@dirrm %%DATADIR%%/themes-move/plants
-%%SKY%%@dirrm %%DATADIR%%/themes-move/sky/cache
-%%SKY%%@dirrm %%DATADIR%%/themes-move/sky
-%%SPORTS%%@dirrm %%DATADIR%%/themes-move/sports/cache
-%%SPORTS%%@dirrm %%DATADIR%%/themes-move/sports
-%%VEHICLE%%@dirrm %%DATADIR%%/themes-move/vehicle/cache
-%%VEHICLE%%@dirrm %%DATADIR%%/themes-move/vehicle
-%%WORLD%%@dirrm %%DATADIR%%/themes-move/world/cache
-%%WORLD%%@dirrm %%DATADIR%%/themes-move/world

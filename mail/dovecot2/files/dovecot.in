@@ -26,6 +26,7 @@ command="%%PREFIX%%/sbin/${name}"
 start_precmd="start_precmd"
 stop_postcmd="stop_postcmd"
 restart_cmd="restart_cmd"
+extra_commands="reload"
 
 start_precmd()
 {	# Ensure runtime directories exist with correct permissions

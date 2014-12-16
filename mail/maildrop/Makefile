@@ -15,8 +15,7 @@
 # MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
 
 PORTNAME=	maildrop
-PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -76,6 +75,7 @@ GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 IDN_CONFIGURE_WITH=	libidn
 IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 MAILWRAPPER_CONFIGURE_OFF=	--enable-sendmail=/usr/sbin/sendmail
+DOVECOTAUTH_CONFIGURE_ENABLE=	dovecotauth
 
 .include <bsd.port.options.mk>
 
@@ -100,12 +100,6 @@ CONFIGURE_ARGS+=	ac_cv_header_fam_h=no ac_cv_lib_fam_FAMOpen=no
 
 .if defined(MAILDROP_TRUSTED_USERS)
 CONFIGURE_ARGS+=	--enable-trusted-users="${MAILDROP_TRUSTED_USERS}"
-.endif
-
-.if ${PORT_OPTIONS:MDOVECOTAUTH}
-PATCH_SITES=	http://www.madpilot.net/maildrop/
-PATCHFILES=	maildrop-2.7.0-dovecotauth.patch.txt
-PATCH_DIST_STRIP=	-p1
 .endif
 
 post-patch:

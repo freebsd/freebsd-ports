@@ -66,8 +66,3 @@ etc/privoxy/templates/url-info-osd.xml
 %%EXAMPLESDIR%%/match-all.action
 %%EXAMPLESDIR%%/trust
 %%EXAMPLESDIR%%/user.action
-@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/user-manual
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry etc/privoxy/templates
-@dirrmtry etc/privoxy

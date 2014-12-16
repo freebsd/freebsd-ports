@@ -3,6 +3,7 @@
 
 PORTNAME=	mpg123
 PORTVERSION=	1.21.0
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -14,13 +15,14 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
-USES=		tar:bzip2 gmake libtool:keepla pathfix
+USES=		tar:bzip2 gmake libtool pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-optimization=0 \
 		--with-audio=oss \
-		--with-default-audio=oss
+		--with-default-audio=oss \
+		--with-module-suffix=.so
 CONFIGURE_ENV=	CONFIG_SHELL=${SH}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -11,7 +11,7 @@ MASTER_SITES=	http://members.chello.nl/~h.lai/libgnomesu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library and frontend for running commands as root
 
-USES=		pathfix gmake pkgconfig libtool
+USES=		gmake gettext-tools libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix libgnomeui
 CONFIGURE_ARGS+=--disable-install-pam

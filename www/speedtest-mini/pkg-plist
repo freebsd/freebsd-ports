@@ -2,6 +2,7 @@
 @group %%WWWGRP%%
 %%WWWDIR%%/index.html
 %%WWWDIR%%/speedtest.swf
+%%WWWDIR%%/speedtest/latency.txt
 %%WWWDIR%%/speedtest/random1000x1000.jpg
 %%WWWDIR%%/speedtest/random1500x1500.jpg
 %%WWWDIR%%/speedtest/random2000x2000.jpg

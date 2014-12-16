@@ -18,7 +18,9 @@ COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libc-client4.so:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	libc-client4.so.9:${PORTSDIR}/mail/cclient
+
+CONFLICTS_INSTALL=	panda-imap-20*
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message

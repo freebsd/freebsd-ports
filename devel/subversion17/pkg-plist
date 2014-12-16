@@ -134,9 +134,9 @@ lib/libsvn_wc-1.a
 %%MOD_DAV_SVN%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+authz_svn_module/d' %D/%%APACHEETCDIR%%/httpd.conf
 %%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -a -n authz_svn %D/%F
-%%MOD_DAV_SVN%%%%TOOLS%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dontdothat_module/d' %D/%%APACHEETCDIR%%/httpd.conf
-%%MOD_DAV_SVN%%%%TOOLS%%%%APACHEMODDIR%%/mod_dontdothat.so
-%%MOD_DAV_SVN%%%%TOOLS%%@exec %D/sbin/apxs -e -a -n dontdothat %D/%F
+%%MOD_DAV_SVN%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dontdothat_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dontdothat.so
+%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -a -n dontdothat %D/%F
 man/man1/svn.1.gz
 man/man1/svnadmin.1.gz
 man/man1/svndumpfilter.1.gz

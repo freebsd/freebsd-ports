@@ -14,7 +14,7 @@ COMMENT=	GNOME frontend for the remote desktop client (rdesktop)
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
 GNU_CONFIGURE=	yes
-USES=		pathfix gmake pkgconfig
+USES=		gettext-tools gmake pathfix pkgconfig
 USE_GNOME=	libgnomeui gnomeprefix
 GCONF_SCHEMAS=	grdesktop.schemas
 INSTALLS_OMF=	yes

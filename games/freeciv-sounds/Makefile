@@ -4,7 +4,8 @@
 PORTNAME=	freeciv
 PORTVERSION=	3
 CATEGORIES=	games
-MASTER_SITES=	GENTOO/distfiles ftp://ftp.freeciv.org/freeciv/contrib/audio/soundsets/
+MASTER_SITES=	GENTOO/distfiles \
+		ftp://ftp.freeciv.org/freeciv/contrib/audio/soundsets/
 PKGNAMESUFFIX=	-sounds
 DISTNAME=	stdsounds${DISTVERSION}
 
@@ -13,6 +14,7 @@ COMMENT=	Freeciv standard sound set
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/data
+NO_ARCH=	yes
 
 do-install:
 	@cd ${WRKSRC}/&&${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/

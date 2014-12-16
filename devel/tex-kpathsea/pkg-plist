@@ -7,6 +7,10 @@ bin/mktexmf
 bin/mktexpk
 bin/mktextfm
 bin/texhash
+bin/kpsewhere
+bin/kpsetool
+bin/kpsexpand
+bin/kpsepath
 include/kpathsea/absolute.h
 include/kpathsea/c-auto.h
 include/kpathsea/c-ctype.h
@@ -57,6 +61,10 @@ man/man1/kpseaccess.1.gz
 man/man1/kpsereadlink.1.gz
 man/man1/kpsestat.1.gz
 man/man1/kpsewhich.1.gz
+man/man1/kpsepath.1.gz
+man/man1/kpsetool.1.gz
+man/man1/kpsewhere.1.gz
+man/man1/kpsexpand.1.gz
 man/man1/mktexlsr.1.gz
 man/man1/mktexmf.1.gz
 man/man1/mktexpk.1.gz

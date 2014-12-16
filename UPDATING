@@ -5,6 +5,41 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141215:
+  AFFECTS: users of comms/spandsp-devel
+  AUTHOR: pawel@FreeBSD.org
+
+  comms/spandsp has been upgraded to version 0.0.6
+  comms/spandsp-devel is now deprecated and set for removal, all ports using
+  it were converted to use newer comms/spandsp. Before upgrade you must
+  remove comms/spandsp-devel so that ports can pick up new dependency.
+
+  # pkg delete -f spandsp-devel
+
+20141215:
+  AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
+  AUTHOR: sbruno@freebsd.org
+
+  The CentOS ports are now the default for stable/10 (after revision 275807).
+  See UPDATING entry 20141209 for details on migration of systems.
+
+20141214:
+  AFFECTS: users of TeXLive
+  AUTHOR: hrs@FreeBSD.org
+
+  Several scripts in print/texlive-base have been moved to
+  devel/tex-kpathsea.  Upgrading them can fail because texlive-base
+  depends on tex-kpathsea, and the new tex-kpathsea tries to install
+  files which were installed by the old texlive-base.  The following
+  error message indicates this situation:
+
+    pkg-static: tex-kpathsea-6.2.0_1 conflicts with texlive-base-20140525_3 (installs files into the same place).  Problematic file: /usr/local/bin/kpsewhere
+
+  To solve this problem, remove both of tex-kpathsea and texlive-base first
+  and install the new versions:
+
+   # pkg delete -f tex-kpathsea texlive-base
+
 20141209:
   AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
   AUTHOR: xmj@freebsd.org
@@ -61,6 +96,21 @@ you update your ports collection, before attempting any port upgrades.
   8.4 jails created with Poudriere 3.1, or poudriere-devel-3.0.99.20141117
   should be recreated with 'jail -d' and 'jail -c'. This fixes pkg(8)
   crashes.
+
+20141208:
+  AFFECTS: users of databases/postgresql??-(server|client)
+  AUTHOR: marino@FreeBSD.org
+
+  PostgreSQL version 9.3 is now the default. To upgrade from a version
+  lower than 9.3, follow the instructions on the PostgreSQL.org website.
+  http://www.postgresql.org/docs/9.3/interactive/upgrading.html
+  Please note that the pg_upgrade program is installed by the
+  databases/postgresql93-contrib port
+
+  When using binary packages, if you only use the client port, you can
+  issue the following command to follow the default version:
+
+  # pkg set -o databases/postgresql92-client:databases/postgresql93-client
 
 20141205:
   AFFECTS: users of polish/kadu
@@ -1034,21 +1084,6 @@ you update your ports collection, before attempting any port upgrades.
   the following command to follow the default version:
 
   # pkg set -o databases/postgresql90-client:databases/postgresql92-client
-
-20141208:
-  AFFECTS: users of databases/postgresql??-(server|client)
-  AUTHOR: marino@FreeBSD.org
-
-  PostgreSQL version 9.3 is now the default. To upgrade from a version
-  lower than 9.3, follow the instructions on the PostgreSQL.org website.
-  http://www.postgresql.org/docs/9.3/interactive/upgrading.html
-  Please note that the pg_upgrade program is installed by the
-  databases/postgresql93-contrib port
-
-  When using binary packages, if you only use the client port, you can
-  issue the following command to follow the default version:
-
-  # pkg set -o databases/postgresql92-client:databases/postgresql93-client
 
 20140528:
   AFFECTS: users of security/calife & security/calife-devel

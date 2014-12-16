@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elmerfem
-PORTVERSION=	7.0.20141015
+PORTVERSION=	7.0.20141202
 CATEGORIES=	cad science
 
 MAINTAINER=	pfg@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
 GH_PROJECT=	elmerfem
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	539967a
+GH_COMMIT=	0300707
 
 USES=		cmake fortran gmake tcl
 

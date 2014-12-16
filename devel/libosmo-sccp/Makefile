@@ -2,6 +2,7 @@
 
 PORTNAME=	libosmo-sccp
 PORTVERSION=	0.0.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=   http://chaosophia.net/downloads/osmocom/${PORTNAME}/ \
 		http://ns1.chaosophia.net/downloads/osmocom/${PORTNAME}/

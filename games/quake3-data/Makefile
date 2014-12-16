@@ -16,6 +16,7 @@ COMMENT=	Quake III Arena data files
 DATADIR=	${Q3DIR}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 

@@ -13,11 +13,12 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:${PORTSDIR}/devel/py-gdata
 
-USES=		python
-USE_PYTHON=	distutils
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	DOCS
 
+PLIST_FILES=	man/man1/google.1.gz
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>

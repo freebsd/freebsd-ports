@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -12,20 +11,21 @@ COMMENT=	Geographical Information System (GIS) data viewer
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	txt2tags:${PORTSDIR}/textproc/txt2tags
-LIB_DEPENDS=	libgeos.so:${PORTSDIR}/graphics/geos \
-		libproj.so:${PORTSDIR}/graphics/proj \
-		libgsl.so:${PORTSDIR}/math/gsl \
-		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libgdal.so:${PORTSDIR}/graphics/gdal \
-		libspatialite.so:${PORTSDIR}/databases/spatialite \
+		libgeos.so:${PORTSDIR}/graphics/geos \
+		libgsl.so:${PORTSDIR}/math/gsl \
+		libproj.so:${PORTSDIR}/graphics/proj \
+		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2 \
+		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
 		libspatialindex.so:${PORTSDIR}/devel/spatialindex \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+		libspatialite.so:${PORTSDIR}/databases/spatialite
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-QGIS-${GH_COMMIT}
 
 USE_GITHUB=
 GH_ACCOUNT=	qgis
-GH_COMMIT=	5016213
+GH_COMMIT=	e2a51df
 GH_TAGNAME=	${GH_COMMIT}
 
 USES=		bison cmake fortran gmake python
@@ -44,10 +44,13 @@ CMAKE_ARGS+=	-Wno-dev
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000033
 USES+=		compiler:features
 .else
 USES+=		compiler:gcc-c++11-lib
+BUILD_DEPENDS+=	flex>=2.5.39:${PORTSDIR}/textproc/flex
+CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex
+CXXFLAGS+=	-I${LOCALBASE}/include/flex
 .endif
 
 .if ${PORT_OPTIONS:MGRASS}
@@ -104,7 +107,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gdal>=1.11.1:${PORTSDIR}/graphics/py-gdal \
 		${PYTHON_PKGNAMEPREFIX}qt4-svg>=4.8.5:${PORTSDIR}/graphics/py-qt4-svg \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:${PORTSDIR}/databases/pyspatialite
+		${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:${PORTSDIR}/databases/pyspatialite \
+		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.3:${PORTSDIR}/databases/py-psycopg2
 .else
 CMAKE_ARGS+=	-DWITH_BINDINGS:BOOL=FALSE
 PLIST_SUB+=	QGIS_PYTHON="@comment "

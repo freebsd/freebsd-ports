@@ -1,43 +1,33 @@
 # $FreeBSD$
 
-PORTNAME=	unixcw
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+# NOTE: comms/xcwcp is a sub-port of this.  When making changes, ensure
+#       it still works as well.
+
+PORTNAME?=	unixcw
+PORTVERSION=	3.4.0
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-DISTNAME=	unixcw_3.3.0.orig
+MASTER_SITES=	SF/unixcw/unixcw-${PORTVERSION}
+DISTNAME=	unixcw_${PORTVERSION}.orig
 
 MAINTAINER=	hamradio@FreeBSD.org
-COMMENT=	Libs for cw on unix
+COMMENT?=	Libs for cw on unix
 
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+.ifndef CONFIGURE_ARGS
+CONFIGURE_ARGS=	--disable-xcwcp
+.endif
 CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
 			--libdir="${LOCALBASE}/lib" \
 			--disable-alsa --disable-pulseaudio
 
-.if defined(WITH_XCWCP)
-USE_QT4=	gui moc_build qmake_build rcc_build uic_build designer
-USE_AUTOTOOLS=	autoconf
-PLIST_SUB+=	XCWCP=""
-CONFIGURE_ARGS+=	--enable-xcwcp
-.else
-PLIST_SUB+=	XCWCP="@comment "
-CONFIGURE_ARGS+=	--disable-xcwcp
-.endif
 USE_LDCONFIG=	yes
-USES=		gmake libtool
+USES=		gmake libtool pkgconfig
 USE_CSTD=	gnu99
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/unixcw-${PORTVERSION}
 
-pre-extract:
-.if !defined(WITH_XCWCP)
-	@${ECHO_CMD}
-	@${ECHO_CMD} "****** To build xcwcp, interrupt the build  ******"
-	@${ECHO_CMD} "****** now, set WITH_XCWCP and start again. ******"
-	@${ECHO_CMD}
-	@sleep 3
-.endif
+post-install:
+	  ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcw.so.6.2.1
 
 .include <bsd.port.mk>

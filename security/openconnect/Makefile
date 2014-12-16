@@ -1,4 +1,4 @@
-# Created by: Damian Gerow
+# Created by: Damian Gerow <dgerow@afflictions.org>
 # $FreeBSD$
 
 PORTNAME=	openconnect
@@ -28,11 +28,11 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	PROXY GNUTLS
 
-PROXY_DESC=		Enable automatic proxy configuratio via libproxy
+PROXY_DESC=		Automatic proxy configuration via libproxy
 PROXY_LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 PROXY_CONFIGURE_WITH=	libproxy
 
-GNUTLS_DESC=		Use GnuTLS instead of OpenSSL(EXPERIMENTAL)
+GNUTLS_DESC=		Use GnuTLS instead of OpenSSL (experimental)
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_USE_OFF=		OPENSSL=yes

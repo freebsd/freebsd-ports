@@ -20,6 +20,7 @@ share/elmersolver/include/bandmatrix.mod
 share/elmersolver/include/bandwidthoptimize.mod
 share/elmersolver/include/binio.mod
 share/elmersolver/include/blocksolve.mod
+share/elmersolver/include/blowers.mod
 share/elmersolver/include/clusteringmethods.mod
 share/elmersolver/include/coordinatesystems.mod
 share/elmersolver/include/crsmatrix.mod
@@ -93,6 +94,7 @@ share/elmersolver/include/statelecboundaryutils.mod
 share/elmersolver/include/stressgeneral.mod
 share/elmersolver/include/stresslocal.mod
 share/elmersolver/include/timeintegrate.mod
+share/elmersolver/include/toroidcurrents.mod
 share/elmersolver/include/types.mod
 share/elmersolver/include/viewfactorglobals.mod
 share/elmersolver/include/vtklegacyfile.mod

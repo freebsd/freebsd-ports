@@ -2,7 +2,7 @@ lib/kde4/kded_ktp_approver.so
 share/config/ktp_approverrc
 share/dbus-1/services/org.freedesktop.Telepathy.Client.KTp.Approver.service
 share/kde4/services/kded/ktp_approver.desktop
-share/kde4/servicetypes/ktp-approver.service
+share/kde4/servicetypes/ktp-approver.desktop
 share/locale/bs/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/ca/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/ca@valencia/LC_MESSAGES/kded_ktp_approver.mo
@@ -22,6 +22,7 @@ share/locale/it/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/ja/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/kk/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/km/LC_MESSAGES/kded_ktp_approver.mo
+share/locale/ko/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/lt/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/mr/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/nb/LC_MESSAGES/kded_ktp_approver.mo

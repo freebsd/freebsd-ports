@@ -321,6 +321,7 @@ lib/shared-modules/auth/script.so
 %%MODULE_AUTH_SKEL%%lib/shared-modules/auth/skel.so
 %%AD_DC%%lib/shared-modules/bind9/dlz_bind9.so
 %%AD_DC%%lib/shared-modules/bind9/dlz_bind9_9.so
+%%AD_DC%%lib/shared-modules/bind9/dlz_bind9_10.so
 %%AD_DC%%lib/shared-modules/gensec/krb5.so
 lib/shared-modules/idmap/autorid.so
 lib/shared-modules/idmap/hash.so

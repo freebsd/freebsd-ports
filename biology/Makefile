@@ -26,6 +26,7 @@
     SUBDIR += gperiodic
     SUBDIR += grappa
     SUBDIR += hmmer
+    SUBDIR += htslib
     SUBDIR += iolib
     SUBDIR += jalview
     SUBDIR += lagan
@@ -75,6 +76,7 @@
     SUBDIR += python-nexus
     SUBDIR += recombine
     SUBDIR += ruby-bio
+    SUBDIR += samtools
     SUBDIR += seaview
     SUBDIR += seqan
     SUBDIR += seqio

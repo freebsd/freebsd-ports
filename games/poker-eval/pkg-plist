@@ -40,5 +40,3 @@ lib/libpoker-eval.so
 lib/libpoker-eval.so.1
 lib/libpoker-eval.so.1.0.0
 libdata/pkgconfig/poker-eval.pc
-@dirrm include/poker-eval/inlines
-@dirrm include/poker-eval

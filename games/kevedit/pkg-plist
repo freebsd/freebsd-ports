@@ -3,4 +3,3 @@ bin/kevedit
 %%DATADIR%%/kevedos.cfg
 %%DATADIR%%/kevedos.iso
 %%DATADIR%%/soundfx.zzm
-@dirrmtry %%DATADIR%%

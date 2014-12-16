@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSP library and software FAX machine
 
+DEPRECATED=	Use newer comms/spandsp
+EXPIRATION_DATE=2015-01-15
+
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/spandsp-${DISTVERSION:C/pre.*//}

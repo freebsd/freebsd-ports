@@ -3,4 +3,3 @@ bin/pongix
 %%DATADIR%%/fuente.bmp
 %%DATADIR%%/paleta.bmp
 %%DATADIR%%/pelota.bmp
-@dirrm %%DATADIR%%

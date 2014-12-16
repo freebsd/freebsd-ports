@@ -10,8 +10,14 @@ MASTER_SITES=	http://kozos.jp/myfreesoft/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes the root window bloody
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11
 PLIST_FILES=	bin/xblood man/man1/xblood.1.gz
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xblood
 
 .include <bsd.port.mk>

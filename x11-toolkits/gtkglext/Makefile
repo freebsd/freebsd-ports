@@ -11,7 +11,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL extension to GTK+
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake iconv libtool pathfix pkgconfig tar:bzip2

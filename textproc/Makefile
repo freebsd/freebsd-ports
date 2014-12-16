@@ -1396,6 +1396,7 @@
     SUBDIR += s5
     SUBDIR += sablotron
     SUBDIR += sagasu
+    SUBDIR += sansi
     SUBDIR += sarep
     SUBDIR += sary
     SUBDIR += sassc
@@ -1535,8 +1536,6 @@
     SUBDIR += wv
     SUBDIR += wv2
     SUBDIR += xalan-j
-    SUBDIR += xerces-c2
-    SUBDIR += xerces-c2-devel
     SUBDIR += xerces-c3
     SUBDIR += xerces-j
     SUBDIR += xfce4-dict-plugin

@@ -1,4 +1,5 @@
 bin/edgar
+man/man6/edgar.6x.gz
 share/applications/edgar.desktop
 %%DATADIR%%/edgar.pak
 share/icons/hicolor/16x16/apps/edgar.png

@@ -3,7 +3,7 @@
 
 PORTNAME=	Catalyst-Runtime
 PORTVERSION=	5.90070
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
@@ -79,7 +79,7 @@ RUN_DEPENDS+=	p5-Encode>=2.49:${PORTSDIR}/converters/p5-Encode
 .endif
 
 # Devel::InnerPackage (in Module::Pluggable) will be removed from core since Perl 5.20
-.if ${PERL_LEVEL} >= 502000
+.if ${PERL_LEVEL} >= 501800
 BUILD_DEPENDS+=	p5-Module-Pluggable>=4.7:${PORTSDIR}/devel/p5-Module-Pluggable
 RUN_DEPENDS+=	p5-Module-Pluggable>=4.7:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif

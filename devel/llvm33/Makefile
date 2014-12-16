@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -113,7 +113,7 @@ MAN1SRCS+=		lit.1
 USES+=			python:-2.9
 LIT_COMMANDS=		lit llvm-lit FileCheck
 .else
-USES+=			python:-2.9:build
+USES+=			python:-2.9,build
 .endif
 
 .if ${PORT_OPTIONS:MLTOPLUGIN}

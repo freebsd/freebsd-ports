@@ -3,7 +3,7 @@
 
 PORTNAME=	bsdgames
 PORTVERSION=	3.8.2
-PORTREVISION=	1
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	games
 # Fetched from git://git.dragonflybsd.org/dragonfly.git, v${PORTVERSION}, /games

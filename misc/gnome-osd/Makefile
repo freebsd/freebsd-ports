@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-Screen-Display infrastructure using Pango text rendering
 
-USES=		pathfix gmake pkgconfig python
+USES=		gettext-tools gmake pathfix pkgconfig python
 USE_GNOME=	gnomeprefix intlhack pygnome2
 GNU_CONFIGURE=	yes
 

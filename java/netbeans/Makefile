@@ -5,11 +5,10 @@ PORTNAME=	netbeans
 PORTVERSION=	8.0.1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
-    static bool firstTime { true };
     		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
 DISTNAME=	netbeans-${PORTVERSION}-201408251540
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Modular, standards-based integrated development environment
 
 LICENSE=	CDDL GPLv2

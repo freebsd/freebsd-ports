@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guard
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

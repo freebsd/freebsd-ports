@@ -325,6 +325,3 @@ bin/nazghul
 %%DATADIR%%/haxima/zane.scm
 %%DATADIR%%/haxima/zones.scm
 %%DATADIR%%/haxima/ztats-quest-ui.scm
-@dirrm %%DATADIR%%/haxima/music
-@dirrm %%DATADIR%%/haxima
-@dirrm %%DATADIR%%
