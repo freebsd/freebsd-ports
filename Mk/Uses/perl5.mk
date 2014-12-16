@@ -1,36 +1,35 @@
 # $FreeBSD$
-# ex:ts=4
 #
 # Provide support to use perl5
 #
-# PERL5			- Set to full path of perl5, either in the system or
-#				  installed from a port.
-# PERL			- Set to full path of perl5, either in the system or
-#				  installed from a port, but without the version number.
-#				  Use this if you need to replace "#!" lines in scripts.
+# PERL5		- Set to full path of perl5, either in the system or
+#		  installed from a port.
+# PERL		- Set to full path of perl5, either in the system or
+#		  installed from a port, but without the version number.
+#		  Use this if you need to replace "#!" lines in scripts.
 # PERL_VERSION	- Full version of perl5 (see below for current value).
 #
 # PERL_VER	- Short version of perl5 (major.minor without patchlevel)
 #
 # PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
-#				  M is major version, N is minor version, and P is
-#				  the patch level. E.g., PERL_VERSION=5.14.4 would give
-#				  a PERL_LEVEL of 501404. This can be used in comparisons
-#				  to determine if the version of perl is high enough,
-#				  whether a particular dependency is needed, etc.
-# PERL_ARCH		- Directory name of architecture dependent libraries
-#				  (value: mach).
-# PERL_PORT		- Name of the perl port that is installed
-#				  (value: perl5.14)
-# SITE_PERL		- Directory name where site specific perl packages go.
-#				  This value is added to PLIST_SUB.
-# SITE_ARCH		- Directory name where arch site specific perl packages go.
-#				  This value is added to PLIST_SUB.
-# USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
-#				  patch, build, install or run phases.
-#				  It can also have configure, modbuild and modbuildtiny when
-#				  the port needs to run Makefile.PL, Build.PL and a
-#				  Module::Build::Tiny flavor of Build.PL.
+#		  M is major version, N is minor version, and P is
+#		  the patch level. E.g., PERL_VERSION=5.14.4 would give
+#		  a PERL_LEVEL of 501404. This can be used in comparisons
+#		  to determine if the version of perl is high enough,
+#		  whether a particular dependency is needed, etc.
+# PERL_ARCH	- Directory name of architecture dependent libraries
+#		  (value: mach).
+# PERL_PORT	- Name of the perl port that is installed
+#		  (value: perl5.14)
+# SITE_PERL	- Directory name where site specific perl packages go.
+#		  This value is added to PLIST_SUB.
+# SITE_ARCH	- Directory name where arch site specific perl packages go.
+#		  This value is added to PLIST_SUB.
+# USE_PERL5	- If set, this port uses perl5 in one or more of the extract,
+#		  patch, build, install or run phases.
+#		  It can also have configure, modbuild and modbuildtiny when
+#		  the port needs to run Makefile.PL, Build.PL and a
+#		  Module::Build::Tiny flavor of Build.PL.
 #
 # MAINTAINER: perl@FreeBSD.org
 
@@ -66,32 +65,32 @@ IGNORE=	Invalid perl5 version ${PERL5_DEFAULT}
 PERL_VER?=	${PERL_VERSION:C/\.[0-9]+$//}
 
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
-perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
+perl_major=	${PERL_VERSION:C|^([1-9]+).*|\1|}
 _perl_minor=	00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
-perl_minor=		${_perl_minor:C|^.*(...)|\1|}
+perl_minor=	${_perl_minor:C|^.*(...)|\1|}
 .if ${perl_minor} >= 100
-perl_minor=		${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
-perl_patch=		${PERL_VERSION:C|^.*(..)|\1|}
+perl_minor=	${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
+perl_patch=	${PERL_VERSION:C|^.*(..)|\1|}
 .else # ${perl_minor} < 100
 _perl_patch=	0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
-perl_patch=		${_perl_patch:C|^.*(..)|\1|}
+perl_patch=	${_perl_patch:C|^.*(..)|\1|}
 .endif # ${perl_minor} < 100
 PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
 .else
 PERL_LEVEL=0
 .endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
 
-PERL_ARCH?=		mach
+PERL_ARCH?=	mach
 
 # there must always be a default to prevent dependency failures such
 # as "ports/lang: not found"
-.if    ${PERL_LEVEL} >= 502000
+.if   ${PERL_LEVEL} >= 502000
 PERL_PORT?=	perl5.20
-.elif    ${PERL_LEVEL} >= 501800
+.elif ${PERL_LEVEL} >= 501800
 PERL_PORT?=	perl5.18
-.elif    ${PERL_LEVEL} >= 501600
+.elif ${PERL_LEVEL} >= 501600
 PERL_PORT?=	perl5.16
-.else  # ${PERL_LEVEL} < 501600
+.else # ${PERL_LEVEL} < 501600
 PERL_PORT?=	perl5.14
 .endif
 
@@ -158,10 +157,10 @@ _USES_POST+=	perl5
 _INCLUDE_USES_PERL5_POST_MK=	yes
 
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
-			PERL_VER=${PERL_VER} \
-			PERL5_MAN3=${SITE_MAN3_REL} \
-			SITE_PERL=${SITE_PERL_REL} \
-			SITE_ARCH=${SITE_ARCH_REL}
+		PERL_VER=${PERL_VER} \
+		PERL5_MAN3=${SITE_MAN3_REL} \
+		SITE_PERL=${SITE_PERL_REL} \
+		SITE_ARCH=${SITE_ARCH_REL}
 
 # handle perl5 specific manpages
 .for sect in 3
@@ -175,11 +174,11 @@ MANDIRS+=	${SITE_PERL}/man
 _USE_PERL5+=	configure
 ALL_TARGET?=	# empty
 CONFIGURE_ARGS+=--install_path lib="${SITE_PERL}" \
-				--install_path arch="${SITE_ARCH}" \
-				--install_path script="${PREFIX}/bin" \
-				--install_path bin="${PREFIX}/bin" \
-				--install_path libdoc="${MAN3PREFIX}/man/man3" \
-				--install_path bindoc="${MAN1PREFIX}/man/man1"
+		--install_path arch="${SITE_ARCH}" \
+		--install_path script="${PREFIX}/bin" \
+		--install_path bin="${PREFIX}/bin" \
+		--install_path libdoc="${MAN3PREFIX}/man/man3" \
+		--install_path bindoc="${MAN1PREFIX}/man/man1"
 CONFIGURE_SCRIPT?=	Build.PL
 PL_BUILD?=	Build
 CONFIGURE_ARGS+=--destdir ${STAGEDIR}
@@ -237,15 +236,15 @@ MAN3PREFIX?=		${SITE_PERL}
 .if !target(do-configure)
 do-configure:
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
-		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-		${SCRIPTDIR}/configure; \
+	    cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
+	    ${SCRIPTDIR}/configure; \
 	fi
 	@cd ${CONFIGURE_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} \
-		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+	    ${SETENV} ${CONFIGURE_ENV} \
+	    ${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 .if !${_USE_PERL5:Mmodbuild*}
 	@cd ${CONFIGURE_WRKSRC} && \
-		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 .endif # ! modbuild
 .endif # !target(do-configure)
 .endif # configure
@@ -271,10 +270,10 @@ PACKLIST_DIR?=	${PREFIX}/${SITE_ARCH_REL}/auto
 fix-perl-things:
 # Remove STAGEDIR from .packlist and add the file to the plist.
 	@(if [ -d ${STAGEDIR}${PACKLIST_DIR} ] ; then \
-			${FIND} ${STAGEDIR}${PACKLIST_DIR} -name .packlist | while read f ; do \
-					${SED} -i '' 's|^${STAGEDIR}||' "$$f"; \
-					${ECHO} $$f | ${SED} -e 's|^${STAGEDIR}||' >> ${TMPPLIST}; \
-			done \
+		${FIND} ${STAGEDIR}${PACKLIST_DIR} -name .packlist | while read f ; do \
+			${SED} -i '' 's|^${STAGEDIR}||' "$$f"; \
+			${ECHO} $$f | ${SED} -e 's|^${STAGEDIR}||' >> ${TMPPLIST}; \
+		done \
 	fi) || :
 
 # Starting with perl 5.20, the empty bootstrap files are not installed any more
