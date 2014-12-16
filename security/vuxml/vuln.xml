@@ -264,7 +264,7 @@ Notes:
     <affects>
       <package>
 	<name>xorg-server</name>
-	<range><lt>1.12.4_10</lt></range>
+	<range><lt>1.12.4_10,1</lt></range>
       </package>
     </affects>
     <description>
