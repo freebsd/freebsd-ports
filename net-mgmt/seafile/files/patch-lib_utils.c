@@ -87,11 +87,10 @@
 +
 +#elif defined(__DragonFly__)
 +#define	PSKIP(kp) ((kp)->kp_pid == mypid ||			\
-+		   (!kthreads && ((kp)->kp_flags & P_KTHREADP) != 0))
++		   (!kthreads && ((kp)->kp_flags & P_SYSTEM) != 0))
 +#define KVM_OPENFILES(exec, coref, buf) \
 +		kvm_openfiles(exec, coref, NULL, O_RDONLY, buf)
-+#define KVM_GETPROCS(kd, plist, nproc) \
-+		kvm_getprocs(kd, KERN_PROC_ALL, 0, &nproc)
++#define KVM_GETPROCS(kd, plist, nproc) \+		kvm_getprocs(kd, KERN_PROC_ALL, 0, &nproc)
 +
 +#elif defined(__NetBSD__)
 +#define	PSKIP(kp) ((kp)->kp_pid == mypid ||			\
