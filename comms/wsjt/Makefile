@@ -2,7 +2,7 @@
 
 PORTNAME=	wsjt
 VERSION=	9.1
-PORTREVISION=	7
+PORTREVISION=	8	
 DISTVERSION=	${VERSION}.r${SVN_REV}
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -12,8 +12,6 @@ DISTNAME=	wsjt-r${SVN_REV}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
 
-BROKEN=		Fails to configure
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
@@ -22,15 +20,16 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
 
-ALL_TARGET=	build
+USE_GCC=	yes
 USES=		fortran gmake python tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	--enable-gfortran --prefix=${STAGEDIR}${LOCALBASE} \
 		--with-portaudio-include-dir=${LOCALBASE}/include/portaudio2 \
 		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-LDFLAGS+=	-shared
+# Adding this breaks configure
+#LDFLAGS+=	-shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		VERSION=${VERSION}
 
@@ -67,5 +66,13 @@ post-install:
 	${WRKSRC}/WSJT_Source_Code.txt ${WRKSRC}/LICENSE.TXT
 	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+do-build:
+	(cd ${WRKSRC};${GMAKE})
+
+post-stage:
+	(cd ${STAGEDIR}${PREFIX} \
+	  && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+	   -d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
 .include <bsd.port.post.mk>
