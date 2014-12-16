@@ -24,11 +24,11 @@ PLIST=		${WRKDIR}/plist
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL XCACHE IMAGICK
 OPTIONS_DEFAULT=MYSQL
 
-MEMCACHED_DESC=	use memcached
-APC_DESC=	use pecl-APC(Mediawiki recommended)
-EACCEL_DESC=	use eAccelerator (instead of pecl-APC)
-XCACHE_DESC=	use xCache (instead of pecl-APC)
-IMAGICK_DESC=	use ImageMagick
+MEMCACHED_DESC=	Use memcached
+APC_DESC=	Use pecl-APC (Mediawiki recommended)
+EACCEL_DESC=	Use eAccelerator (instead of pecl-APC)
+XCACHE_DESC=	Use xCache (instead of pecl-APC)
+IMAGICK_DESC=	Use ImageMagick
 
 .include <bsd.port.options.mk>
 

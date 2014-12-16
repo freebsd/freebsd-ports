@@ -1,4 +1,4 @@
-# Created by: jaap
+# Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
 # $FreeBSD$
 
 PORTNAME=	credns
@@ -39,11 +39,10 @@ USE_OPENSSL=	yes
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	ROOT_SERVER IPV6 CHECKING MMAP MAXIPS DOCS
-OPTIONS_DEFAULT=	IPV6
 
 ROOT_SERVER_DESC=	Credns as proxy for a (local) root
 CHECKING_DESC=	Internal runtime checks
-MMAP_DESC=	Use mmap instead of malloc(experimental)
+MMAP_DESC=	Use mmap() instead of malloc() (experimental)
 MAXIPS_DESC=	Raise max-ips from 8 to ${NSDMAX_IPS}
 
 ROOT_SERVER_CONFIGURE_ENABLE=	root-server

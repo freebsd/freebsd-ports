@@ -28,7 +28,8 @@ PATHFIX_MAKEFILEIN=	Makefile.am
 OPTIONS_DEFINE=		AUT BAS CON CUR DEB EXA ITE MEM
 OPTIONS_DEFAULT=	AUT BAS CON
 OPTIONS_SUB=		yes
-AUT_DESC=	Automated(XML) interface
+
+AUT_DESC=	Automated (XML) interface
 BAS_DESC=	Basic interface
 CON_DESC=	Console interface
 CUR_DESC=	Curses interface
