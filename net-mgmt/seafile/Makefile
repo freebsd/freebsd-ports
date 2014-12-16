@@ -2,7 +2,7 @@
 
 PORTNAME=	seafile
 PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	yan_jingfeng@yahoo.com
