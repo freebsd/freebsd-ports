@@ -35,7 +35,7 @@ INSTALL_TARGET=	install-strip
 
 LATEST_LINK=	jack
 
-OPTIONS_DEFINE=	ALSA DOCS READLINE
+OPTIONS_DEFINE=	ALSA DOXYGEN READLINE
 OPTIONS_DEFAULT=READLINE
 OPTIONS_SUB=	yes
 
@@ -46,7 +46,7 @@ READLINE_LIB_DEPENDS=	libreadline.so:${PORTSDIR}/devel/readline
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 .else
 CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN="false"
