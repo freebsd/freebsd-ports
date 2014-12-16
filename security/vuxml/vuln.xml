@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0c5cf7c4-856e-11e4-a089-60a44c524f57">
+    <topic>otrs -- Incomplete Access Control</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><gt>3.2.*</gt><lt>3.2.17</lt></range>
+	<range><gt>3.3.*</gt><lt>3.3.11</lt></range>
+	<range><gt>4.0.*</gt><lt>4.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS project reports:</p>
+	<blockquote cite="http://www.otrs.com/security-advisory-2014-06-incomplete-access-control/">
+	  <p>An attacker with valid OTRS credentials could access and manipulate ticket data
+	     of other users via the GenericInterface, if a ticket webservice is configured
+	     and not additionally secured.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.otrs.com/security-advisory-2014-06-incomplete-access-control/</url>
+      <cvename>CVE-2014-9324</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-16</discovery>
+      <entry>2014-12-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5561ade-846c-11e4-b7a7-20cf30e32f6d">
     <topic>subversion -- DoS vulnerabilities</topic>
     <affects>
