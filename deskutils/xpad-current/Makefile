@@ -32,10 +32,6 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|SUBDIRS = autopackage doc src images po|SUBDIRS = autopackage doc src images|' \
-		${WRKSRC}/Makefile.in
-.endif
 	@${REINPLACE_CMD} -e 's|glib/glist.h|glib.h|g' \
 		${WRKSRC}/src/xpad-undo.c
 
