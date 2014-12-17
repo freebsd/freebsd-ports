@@ -1,7 +1,5 @@
 lib/syslog-ng/libbasicfuncs-plus.a
 lib/syslog-ng/libbasicfuncs-plus.so
-lib/syslog-ng/libgraphite.a
-lib/syslog-ng/libgraphite.so
 lib/syslog-ng/liblua.a
 lib/syslog-ng/liblua.so
 lib/syslog-ng/libmod-perl.a
@@ -18,8 +16,6 @@ lib/syslog-ng/libtrigger-source.a
 lib/syslog-ng/libtrigger-source.so
 share/syslog-ng/include/scl/elasticsearch/es-bridge
 share/syslog-ng/include/scl/elasticsearch/plugin.conf
-share/syslog-ng/include/scl/graphite/plugin.conf
-@dirrmtry share/syslog-ng/include/scl/graphite
 @dirrm share/syslog-ng/include/scl/elasticsearch
 @dirrmtry share/syslog-ng/include/scl
 @dirrmtry share/syslog-ng/include
