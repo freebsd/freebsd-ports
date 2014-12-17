@@ -5,7 +5,7 @@
  		$spitshell >>$Makefile <<'!NO!SUBS!'
  	rm -f $@
 -	$(LD) -o $@ $(SHRPLDFLAGS) $(obj) $(DYNALOADER) $(libs)
-+	$(LD) -o $@ $(SHRPLDFLAGS) -Wl,-soname,$(LIBPERL) $(obj) $(DYNALOADER) $(libs)
++	$(LD) -o $@ $(SHRPLDFLAGS%%HOLDER%%) -Wl,-soname,$(LIBPERL:R) $(obj) $(DYNALOADER) $(libs)
  !NO!SUBS!
  		case "$osname" in
  		aix)
