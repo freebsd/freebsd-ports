@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141217:
+  AFFECTS: users of lang/perl5.*
+  AUTHOR: mat@FreeBSD.org
+
+  Perl now links all .so it builds with libperl.so, it makes upgrading from one
+  Perl major version to another way easier.  For binary package users, it means
+  pkg upgrade will detect the libperl.so.x.yy change, and reinstall the
+  affected packages.  For users using ports, it will save rebuild time as it's
+  easier to detect what ports really need to be rebuilt.
+
+  Ports users are encouraged to rebuild ports that install files in SITE_ARCH.
+  If using Perl 5.18, run:
+
+  With portupgrade:
+
+    portupgrade `find /usr/local/lib/perl5/site_perl/mach/5.18 -name '*.so'|xargs pkg which -qo|sort -u`
+
+  With portmaster:
+
+    portupgrade `find /usr/local/lib/perl5/site_perl/mach/5.18 -name '*.so'|xargs pkg which -qo|sort -u`
+
 20141216:
   AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
