@@ -3,7 +3,7 @@
 
 PORTNAME=	hylafax
 PORTVERSION=	6.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -16,10 +16,9 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit
 
 MAKE_JOBS_UNSAFE=	yes
-NEED_ROOT=	yes
-
 USE_GHOSTSCRIPT=yes
 HAS_CONFIGURE=	yes
+USES=		fakeroot
 
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg" \
@@ -36,11 +35,6 @@ MAKE_ARGS+=	OPTIMIZER="" -DOPTIMIZER
 PORTDOCS=	RELEASENOTES-4.3.txt RELEASENOTES-4.4.txt RELEASENOTES-6.0.txt
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	hylafax
-
-SUID_EXES=	${STAGEDIR}${PREFIX}/sbin/faxgetty \
-		${STAGEDIR}${PREFIX}/sbin/faxq \
-		${STAGEDIR}${PREFIX}/bin/faxrm \
-		${STAGEDIR}${PREFIX}/bin/faxalter
 
 OPTIONS_DEFINE=	PAM NLS GAWK DOCS
 OPTIONS_DEFAULT=PAM NLS
@@ -92,14 +86,17 @@ post-patch:
 		${WRKSRC}/libhylafax/Makefile.in
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${HYLAFAX_SPOOL}
+	${MKDIR} ${STAGEDIR}${HYLAFAX_SPOOL}/archive \
+		${STAGEDIR}${HYLAFAX_SPOOL}/docq \
+		${STAGEDIR}${HYLAFAX_SPOOL}/doneq \
+		${STAGEDIR}${HYLAFAX_SPOOL}/pollq \
+		${STAGEDIR}${HYLAFAX_SPOOL}/sendq \
+		${STAGEDIR}${HYLAFAX_SPOOL}/tmp \
+		${STAGEDIR}${HYLAFAX_SPOOL}/info \
+		${STAGEDIR}${HYLAFAX_SPOOL}/log
 
 post-install:
-	${CHOWN} uucp ${SUID_EXES}
-	${CHMOD} 4555 ${SUID_EXES}
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

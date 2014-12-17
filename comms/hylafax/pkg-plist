@@ -1,7 +1,7 @@
-bin/faxalter
+@(uucp,,4555) bin/faxalter
 bin/faxcover
 bin/faxmail
-bin/faxrm
+@(uucp,,4555) bin/faxrm
 bin/faxstat
 bin/sendfax
 bin/sendpage
@@ -17,7 +17,6 @@ lib/fax/pagesizes-dist
 @unexec if cmp -s %D/lib/fax/typerules %D/lib/fax/typerules-dist; then rm -f %D/lib/fax/typerules; fi
 lib/fax/typerules-dist
 @exec [ -f %B/typerules ] || cp %B/%f %B/typerules
-@dirrm lib/fax
 man/man1/edit-faxcover.1.gz
 man/man1/faxalter.1.gz
 man/man1/faxcover.1.gz
@@ -102,9 +101,9 @@ sbin/xferfaxstats
 sbin/recvstats
 sbin/faxcron
 sbin/edit-faxcover
-sbin/faxq
+@(uucp,,4555) sbin/faxq
 sbin/faxqclean
-sbin/faxgetty
+@(uucp,,4555) sbin/faxgetty
 sbin/faxsend
 sbin/pagesend
 sbin/tsitest
@@ -136,392 +135,352 @@ sbin/hylafax
 %%NLS%%share/locale/vi/LC_MESSAGES/hylafax-client.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/hylafax-server.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libhylafax.mo
-@cwd %%HYLAFAX_SPOOL%%
-COPYRIGHT
-@exec mkfifo %D/FIFO
-@exec chown uucp:dialer %D/FIFO
-@exec chmod 0600 %D/FIFO
-@rmtry FIFO
-@exec mkdir %D/archive
-@exec chown uucp:dialer %D/archive
-@exec chmod 0700 %D/archive
-bin/ps2fax.gs
-bin/ps2fax.dps
-bin/ps2fax.imp
-bin/pdf2fax.gs
-bin/pcl2fax
-bin/tiff2fax
-bin/tiff2pdf
-bin/notify
-bin/notify-4.1
-bin/notify-4.2
-bin/archive
-bin/common-functions
-bin/dictionary
-bin/notify.awk
-bin/qp-encode.awk
-bin/b64-encode.awk
-bin/faxrcvd
-bin/pollrcvd
-bin/mkcover
-bin/wedged
-@unexec if [ -f %D/bin/pdf2fax ]; then rm %D/bin/pdf2fax; fi
-@unexec if [ -f %D/bin/ps2fax ]; then rm %D/bin/ps2fax; fi
-@exec mkdir %D/client
-@exec chown uucp:dialer %D/client
-@exec chmod 0755 %D/client
-config/class1
-config/class1.0
-config/class2
-config/class2.0
-config/class2.1
-config/skel
-config/att-dataport-2
-config/att-dataport-2.0
-config/att-dataport
-config/att-dpexpress-2
-config/cirrus
-config/conexant-1.0
-config/digi
-config/digi-2
-config/digi-20
-config/davicom-2
-config/dsi-scout+
-config/e-tech
-config/eicon
-config/eicon-2
-config/elsa-microlink-56k-basic-2.0
-config/everex-2496d
-config/exar
-config/gvc-288
-config/gvc-288-2
-config/hayes
-config/iaxmodem
-config/intel-400e
-config/ip568x
-config/linux-isdn-2
-config/lucent
-config/lucent-isa
-config/lucent-mt-10
-config/lucent-mt-2
-config/lucent-mt-20
-config/lucent-mt-21
-config/mainpine-10
-config/mainpine-2
-config/mainpine-20
-config/mainpine-21
-config/moto-288
-config/mt-1432
-config/nuvo-voyager
-config/ppi-pm14400fxmt
-config/ppi-pm14400fxsa
-config/prometheus
-config/rc144ac
-config/rc144ac-1
-config/rc288dpi
-config/rc288dpi-1
-config/rc32acl
-config/rc32acl-1
-config/rockwell-k56
-config/rockwell-rc
-config/t38modem
-config/telebit-t3000
-config/telebit-qblazer
-config/telebit-wb
-config/topic
-config/tricom2842
-config/uds-fastalk
-config/umc92144
-config/umc9624
-config/usr-2.0
-config/usr-rts
-config/usr-xon
-config/zyxel-1496e
-config/zyxel-1496e-1
-config/zyxel-1496e-2.0
-config/zyxel-2864
-config/sierra
-@exec mkdir %D/dev
-@exec chown uucp:dialer %D/dev
-@exec chmod 0755 %D/dev
-@exec mkdir %D/docq
-@exec chown uucp:dialer %D/docq
-@exec chmod 0700 %D/docq
-@exec mkdir %D/doneq
-@exec chown uucp:dialer %D/doneq
-@exec chmod 0700 %D/doneq
-etc/dpsprinter.ps
-etc/cover.templ
-etc/xferfaxlog
-@unexec if cmp -s %D/etc/hosts.hfaxd %D/etc/hosts.hfaxd-dist; then rm -f %D/etc/hosts.hfaxd; fi
-etc/hosts.hfaxd-dist
-@exec [ -f %B/hosts.hfaxd ] || cp %B/%f %B/hosts.hfaxd
-etc/dialrules
-etc/dialrules.sf-ba
-etc/dialrules.europe
-etc/lutRS18.pcf
-etc/templates/README
-etc/templates/en/faxrcvd-error.txt
-etc/templates/en/faxrcvd-failure.txt
-etc/templates/en/faxrcvd-notify-error.txt
-etc/templates/en/faxrcvd-notify-success.txt
-etc/templates/en/faxrcvd-success.txt
-etc/templates/en/notify-blocked.txt
-etc/templates/en/notify-done-page.txt
-etc/templates/en/notify-done.txt
-etc/templates/en/notify-faxmaster.txt
-etc/templates/en/notify-failed-page.txt
-etc/templates/en/notify-failed.txt
-etc/templates/en/notify-format_failed.txt
-etc/templates/en/notify-killed.txt
-etc/templates/en/notify-no_formatter.txt
-etc/templates/en/notify-poll_failed.txt
-etc/templates/en/notify-poll_no_document.txt
-etc/templates/en/notify-poll_rejected.txt
-etc/templates/en/notify-rejected.txt
-etc/templates/en/notify-removed.txt
-etc/templates/en/notify-requeued.txt
-etc/templates/en/notify-timedout.txt
-etc/templates/fr/faxrcvd-error.txt
-etc/templates/fr/faxrcvd-failure.txt
-etc/templates/fr/faxrcvd-notify-error.txt
-etc/templates/fr/faxrcvd-notify-success.txt
-etc/templates/fr/faxrcvd-success.txt
-etc/templates/fr/notify-blocked.txt
-etc/templates/fr/notify-done-page.txt
-etc/templates/fr/notify-done.txt
-etc/templates/fr/notify-faxmaster.txt
-etc/templates/fr/notify-failed-page.txt
-etc/templates/fr/notify-failed.txt
-etc/templates/fr/notify-format_failed.txt
-etc/templates/fr/notify-killed.txt
-etc/templates/fr/notify-no_formatter.txt
-etc/templates/fr/notify-poll_failed.txt
-etc/templates/fr/notify-poll_no_document.txt
-etc/templates/fr/notify-poll_rejected.txt
-etc/templates/fr/notify-rejected.txt
-etc/templates/fr/notify-removed.txt
-etc/templates/fr/notify-requeued.txt
-etc/templates/fr/notify-timedout.txt
-etc/templates/de/faxrcvd-error.txt
-etc/templates/de/faxrcvd-failure.txt
-etc/templates/de/faxrcvd-notify-error.txt
-etc/templates/de/faxrcvd-notify-success.txt
-etc/templates/de/faxrcvd-success.txt
-etc/templates/de/notify-blocked.txt
-etc/templates/de/notify-done-page.txt
-etc/templates/de/notify-done.txt
-etc/templates/de/notify-faxmaster.txt
-etc/templates/de/notify-failed-page.txt
-etc/templates/de/notify-failed.txt
-etc/templates/de/notify-format_failed.txt
-etc/templates/de/notify-killed.txt
-etc/templates/de/notify-no_formatter.txt
-etc/templates/de/notify-poll_failed.txt
-etc/templates/de/notify-poll_no_document.txt
-etc/templates/de/notify-poll_rejected.txt
-etc/templates/de/notify-rejected.txt
-etc/templates/de/notify-removed.txt
-etc/templates/de/notify-requeued.txt
-etc/templates/de/notify-timedout.txt
-etc/templates/ro/faxrcvd-error.txt
-etc/templates/ro/faxrcvd-failure.txt
-etc/templates/ro/faxrcvd-notify-error.txt
-etc/templates/ro/faxrcvd-notify-success.txt
-etc/templates/ro/faxrcvd-success.txt
-etc/templates/ro/notify-blocked.txt
-etc/templates/ro/notify-done-page.txt
-etc/templates/ro/notify-done.txt
-etc/templates/ro/notify-faxmaster.txt
-etc/templates/ro/notify-failed-page.txt
-etc/templates/ro/notify-failed.txt
-etc/templates/ro/notify-format_failed.txt
-etc/templates/ro/notify-killed.txt
-etc/templates/ro/notify-no_formatter.txt
-etc/templates/ro/notify-poll_failed.txt
-etc/templates/ro/notify-poll_no_document.txt
-etc/templates/ro/notify-poll_rejected.txt
-etc/templates/ro/notify-rejected.txt
-etc/templates/ro/notify-removed.txt
-etc/templates/ro/notify-requeued.txt
-etc/templates/ro/notify-timedout.txt
-etc/templates/pt_BR/faxrcvd-error.txt
-etc/templates/pt_BR/faxrcvd-failure.txt
-etc/templates/pt_BR/faxrcvd-notify-error.txt
-etc/templates/pt_BR/faxrcvd-notify-success.txt
-etc/templates/pt_BR/faxrcvd-success.txt
-etc/templates/pt_BR/notify-blocked.txt
-etc/templates/pt_BR/notify-done-page.txt
-etc/templates/pt_BR/notify-done.txt
-etc/templates/pt_BR/notify-faxmaster.txt
-etc/templates/pt_BR/notify-failed-page.txt
-etc/templates/pt_BR/notify-failed.txt
-etc/templates/pt_BR/notify-format_failed.txt
-etc/templates/pt_BR/notify-killed.txt
-etc/templates/pt_BR/notify-no_formatter.txt
-etc/templates/pt_BR/notify-poll_failed.txt
-etc/templates/pt_BR/notify-poll_no_document.txt
-etc/templates/pt_BR/notify-poll_rejected.txt
-etc/templates/pt_BR/notify-rejected.txt
-etc/templates/pt_BR/notify-removed.txt
-etc/templates/pt_BR/notify-requeued.txt
-etc/templates/pt_BR/notify-timedout.txt
-etc/templates/pt/faxrcvd-error.txt
-etc/templates/pt/faxrcvd-failure.txt
-etc/templates/pt/faxrcvd-notify-error.txt
-etc/templates/pt/faxrcvd-notify-success.txt
-etc/templates/pt/faxrcvd-success.txt
-etc/templates/pt/notify-blocked.txt
-etc/templates/pt/notify-done-page.txt
-etc/templates/pt/notify-done.txt
-etc/templates/pt/notify-faxmaster.txt
-etc/templates/pt/notify-failed-page.txt
-etc/templates/pt/notify-failed.txt
-etc/templates/pt/notify-format_failed.txt
-etc/templates/pt/notify-killed.txt
-etc/templates/pt/notify-no_formatter.txt
-etc/templates/pt/notify-poll_failed.txt
-etc/templates/pt/notify-poll_no_document.txt
-etc/templates/pt/notify-poll_rejected.txt
-etc/templates/pt/notify-rejected.txt
-etc/templates/pt/notify-removed.txt
-etc/templates/pt/notify-requeued.txt
-etc/templates/pt/notify-timedout.txt
-etc/templates/es/faxrcvd-error.txt
-etc/templates/es/faxrcvd-failure.txt
-etc/templates/es/faxrcvd-notify-error.txt
-etc/templates/es/faxrcvd-notify-success.txt
-etc/templates/es/faxrcvd-success.txt
-etc/templates/es/notify-blocked.txt
-etc/templates/es/notify-done-page.txt
-etc/templates/es/notify-done.txt
-etc/templates/es/notify-faxmaster.txt
-etc/templates/es/notify-failed-page.txt
-etc/templates/es/notify-failed.txt
-etc/templates/es/notify-format_failed.txt
-etc/templates/es/notify-killed.txt
-etc/templates/es/notify-no_formatter.txt
-etc/templates/es/notify-poll_failed.txt
-etc/templates/es/notify-poll_no_document.txt
-etc/templates/es/notify-poll_rejected.txt
-etc/templates/es/notify-rejected.txt
-etc/templates/es/notify-removed.txt
-etc/templates/es/notify-requeued.txt
-etc/templates/es/notify-timedout.txt
-etc/templates/it/faxrcvd-error.txt
-etc/templates/it/faxrcvd-failure.txt
-etc/templates/it/faxrcvd-notify-error.txt
-etc/templates/it/faxrcvd-notify-success.txt
-etc/templates/it/faxrcvd-success.txt
-etc/templates/it/notify-blocked.txt
-etc/templates/it/notify-done-page.txt
-etc/templates/it/notify-done.txt
-etc/templates/it/notify-faxmaster.txt
-etc/templates/it/notify-failed-page.txt
-etc/templates/it/notify-failed.txt
-etc/templates/it/notify-format_failed.txt
-etc/templates/it/notify-killed.txt
-etc/templates/it/notify-no_formatter.txt
-etc/templates/it/notify-poll_failed.txt
-etc/templates/it/notify-poll_no_document.txt
-etc/templates/it/notify-poll_rejected.txt
-etc/templates/it/notify-rejected.txt
-etc/templates/it/notify-removed.txt
-etc/templates/it/notify-requeued.txt
-etc/templates/it/notify-timedout.txt
-etc/templates/pl/faxrcvd-error.txt
-etc/templates/pl/faxrcvd-failure.txt
-etc/templates/pl/faxrcvd-notify-error.txt
-etc/templates/pl/faxrcvd-notify-success.txt
-etc/templates/pl/faxrcvd-success.txt
-etc/templates/pl/notify-blocked.txt
-etc/templates/pl/notify-done-page.txt
-etc/templates/pl/notify-done.txt
-etc/templates/pl/notify-faxmaster.txt
-etc/templates/pl/notify-failed-page.txt
-etc/templates/pl/notify-failed.txt
-etc/templates/pl/notify-format_failed.txt
-etc/templates/pl/notify-killed.txt
-etc/templates/pl/notify-no_formatter.txt
-etc/templates/pl/notify-poll_failed.txt
-etc/templates/pl/notify-poll_no_document.txt
-etc/templates/pl/notify-poll_rejected.txt
-etc/templates/pl/notify-rejected.txt
-etc/templates/pl/notify-removed.txt
-etc/templates/pl/notify-requeued.txt
-etc/templates/pl/notify-timedout.txt
-etc/templates/html-sample1/css.inc
-etc/templates/html-sample1/divider.inc
-etc/templates/html-sample1/fax-attach.inc
-etc/templates/html-sample1/fax-data.inc
-etc/templates/html-sample1/fax-dispatched.inc
-etc/templates/html-sample1/faxrcvd-error.txt
-etc/templates/html-sample1/faxrcvd-failure.txt
-etc/templates/html-sample1/faxrcvd-notify-error.txt
-etc/templates/html-sample1/faxrcvd-notify-success.txt
-etc/templates/html-sample1/faxrcvd-success.txt
-etc/templates/html-sample1/footer.inc
-etc/templates/html-sample1/header.inc
-etc/templates/html-sample1/hook.sh
-etc/templates/html-sample1/job-data.inc
-etc/templates/html-sample1/notify-blocked.txt
-etc/templates/html-sample1/notify-done.txt
-etc/templates/html-sample1/notify-faxmaster.txt
-etc/templates/html-sample1/notify-failed.txt
-etc/templates/html-sample1/notify-format_failed.txt
-etc/templates/html-sample1/session_log.inc
-etc/templates/html-sample1/notify-killed.txt
-etc/templates/html-sample1/notify-no_formatter.txt
-etc/templates/html-sample1/notify-rejected.txt
-etc/templates/html-sample1/notify-removed.txt
-etc/templates/html-sample1/notify-requeued.txt
-etc/templates/html-sample1/notify-timedout.txt
-@exec mkdir %D/info
-@exec chown uucp:dialer %D/info
-@exec chmod 755 %D/info
-@exec mkdir %D/log
-@exec chown uucp:dialer %D/log
-@exec chmod 755 %D/log
-@exec mkdir %D/pollq
-@exec chown uucp:dialer %D/pollq
-@exec chmod 700 %D/pollq
-@exec mkdir %D/recvq
-@exec chown uucp:dialer %D/recvq
-@exec chmod 755 %D/recvq
-@exec mkdir %D/sendq
-@exec chown uucp:dialer %D/sendq
-@exec chmod 700 %D/sendq
-@exec mkdir %D/status
-@exec chown uucp:dialer %D/status
-@exec chmod 755 %D/status
-@exec mkdir %D/tmp
-@exec chown uucp:dialer %D/tmp
-@exec chmod 700 %D/tmp
-@dirrm bin
-@dirrm client
-@dirrm config
-@dirrm docq
-@dirrm pollq
-@dirrm recvq
-@dirrm sendq
-@dirrm status
-@dirrm tmp
-@dirrmtry log
-@dirrmtry info
-@dirrmtry etc/templates/ro
-@dirrmtry etc/templates/pt_BR
-@dirrmtry etc/templates/pt
-@dirrmtry etc/templates/pl
-@dirrmtry etc/templates/it
-@dirrmtry etc/templates/html-sample1
-@dirrmtry etc/templates/fr
-@dirrmtry etc/templates/es
-@dirrmtry etc/templates/en
-@dirrmtry etc/templates/de
-@dirrmtry etc/templates
-@dirrmtry etc
-@dirrmtry doneq
-@dirrmtry dev
-@dirrmtry archive
-@unexec rmdir %D 2>/dev/null || echo "If you are permanently removing this port, you should do a ''rm -rf %%HYLAFAX_SPOOL%%'' to remove any binary, configuration and log files left." | fmt
-@unexec echo "-----------------"
+%%HYLAFAX_SPOOL%%/COPYRIGHT
+@exec mkfifo -m 0600 %%HYLAFAX_SPOOL%%/FIFO
+@exec chown uucp:dialer %%HYLAFAX_SPOOL%%/FIFO
+@rmtry %%HYLAFAX_SPOOL%%/FIFO
+%%HYLAFAX_SPOOL%%/bin/ps2fax.gs
+%%HYLAFAX_SPOOL%%/bin/ps2fax.dps
+%%HYLAFAX_SPOOL%%/bin/ps2fax.imp
+%%HYLAFAX_SPOOL%%/bin/pdf2fax.gs
+%%HYLAFAX_SPOOL%%/bin/pcl2fax
+%%HYLAFAX_SPOOL%%/bin/tiff2fax
+%%HYLAFAX_SPOOL%%/bin/tiff2pdf
+%%HYLAFAX_SPOOL%%/bin/notify
+%%HYLAFAX_SPOOL%%/bin/notify-4.1
+%%HYLAFAX_SPOOL%%/bin/notify-4.2
+%%HYLAFAX_SPOOL%%/bin/archive
+%%HYLAFAX_SPOOL%%/bin/common-functions
+%%HYLAFAX_SPOOL%%/bin/dictionary
+%%HYLAFAX_SPOOL%%/bin/notify.awk
+%%HYLAFAX_SPOOL%%/bin/qp-encode.awk
+%%HYLAFAX_SPOOL%%/bin/b64-encode.awk
+%%HYLAFAX_SPOOL%%/bin/faxrcvd
+%%HYLAFAX_SPOOL%%/bin/pollrcvd
+%%HYLAFAX_SPOOL%%/bin/mkcover
+%%HYLAFAX_SPOOL%%/bin/wedged
+@rmtry %%HYLAFAX_SPOOL%%/bin/pdf2fax
+%%HYLAFAX_SPOOL%%/config/class1
+%%HYLAFAX_SPOOL%%/config/class1.0
+%%HYLAFAX_SPOOL%%/config/class2
+%%HYLAFAX_SPOOL%%/config/class2.0
+%%HYLAFAX_SPOOL%%/config/class2.1
+%%HYLAFAX_SPOOL%%/config/skel
+%%HYLAFAX_SPOOL%%/config/att-dataport-2
+%%HYLAFAX_SPOOL%%/config/att-dataport-2.0
+%%HYLAFAX_SPOOL%%/config/att-dataport
+%%HYLAFAX_SPOOL%%/config/att-dpexpress-2
+%%HYLAFAX_SPOOL%%/config/cirrus
+%%HYLAFAX_SPOOL%%/config/conexant-1.0
+%%HYLAFAX_SPOOL%%/config/digi
+%%HYLAFAX_SPOOL%%/config/digi-2
+%%HYLAFAX_SPOOL%%/config/digi-20
+%%HYLAFAX_SPOOL%%/config/davicom-2
+%%HYLAFAX_SPOOL%%/config/dsi-scout+
+%%HYLAFAX_SPOOL%%/config/e-tech
+%%HYLAFAX_SPOOL%%/config/eicon
+%%HYLAFAX_SPOOL%%/config/eicon-2
+%%HYLAFAX_SPOOL%%/config/elsa-microlink-56k-basic-2.0
+%%HYLAFAX_SPOOL%%/config/everex-2496d
+%%HYLAFAX_SPOOL%%/config/exar
+%%HYLAFAX_SPOOL%%/config/gvc-288
+%%HYLAFAX_SPOOL%%/config/gvc-288-2
+%%HYLAFAX_SPOOL%%/config/hayes
+%%HYLAFAX_SPOOL%%/config/iaxmodem
+%%HYLAFAX_SPOOL%%/config/intel-400e
+%%HYLAFAX_SPOOL%%/config/ip568x
+%%HYLAFAX_SPOOL%%/config/linux-isdn-2
+%%HYLAFAX_SPOOL%%/config/lucent
+%%HYLAFAX_SPOOL%%/config/lucent-isa
+%%HYLAFAX_SPOOL%%/config/lucent-mt-10
+%%HYLAFAX_SPOOL%%/config/lucent-mt-2
+%%HYLAFAX_SPOOL%%/config/lucent-mt-20
+%%HYLAFAX_SPOOL%%/config/lucent-mt-21
+%%HYLAFAX_SPOOL%%/config/mainpine-10
+%%HYLAFAX_SPOOL%%/config/mainpine-2
+%%HYLAFAX_SPOOL%%/config/mainpine-20
+%%HYLAFAX_SPOOL%%/config/mainpine-21
+%%HYLAFAX_SPOOL%%/config/moto-288
+%%HYLAFAX_SPOOL%%/config/mt-1432
+%%HYLAFAX_SPOOL%%/config/nuvo-voyager
+%%HYLAFAX_SPOOL%%/config/ppi-pm14400fxmt
+%%HYLAFAX_SPOOL%%/config/ppi-pm14400fxsa
+%%HYLAFAX_SPOOL%%/config/prometheus
+%%HYLAFAX_SPOOL%%/config/rc144ac
+%%HYLAFAX_SPOOL%%/config/rc144ac-1
+%%HYLAFAX_SPOOL%%/config/rc288dpi
+%%HYLAFAX_SPOOL%%/config/rc288dpi-1
+%%HYLAFAX_SPOOL%%/config/rc32acl
+%%HYLAFAX_SPOOL%%/config/rc32acl-1
+%%HYLAFAX_SPOOL%%/config/rockwell-k56
+%%HYLAFAX_SPOOL%%/config/rockwell-rc
+%%HYLAFAX_SPOOL%%/config/t38modem
+%%HYLAFAX_SPOOL%%/config/telebit-t3000
+%%HYLAFAX_SPOOL%%/config/telebit-qblazer
+%%HYLAFAX_SPOOL%%/config/telebit-wb
+%%HYLAFAX_SPOOL%%/config/topic
+%%HYLAFAX_SPOOL%%/config/tricom2842
+%%HYLAFAX_SPOOL%%/config/uds-fastalk
+%%HYLAFAX_SPOOL%%/config/umc92144
+%%HYLAFAX_SPOOL%%/config/umc9624
+%%HYLAFAX_SPOOL%%/config/usr-2.0
+%%HYLAFAX_SPOOL%%/config/usr-rts
+%%HYLAFAX_SPOOL%%/config/usr-xon
+%%HYLAFAX_SPOOL%%/config/zyxel-1496e
+%%HYLAFAX_SPOOL%%/config/zyxel-1496e-1
+%%HYLAFAX_SPOOL%%/config/zyxel-1496e-2.0
+%%HYLAFAX_SPOOL%%/config/zyxel-2864
+%%HYLAFAX_SPOOL%%/config/sierra
+%%HYLAFAX_SPOOL%%/etc/dpsprinter.ps
+%%HYLAFAX_SPOOL%%/etc/cover.templ
+%%HYLAFAX_SPOOL%%/etc/xferfaxlog
+@unexec if cmp -s %%HYLAFAX_SPOOL%%/etc/hosts.hfaxd %%HYLAFAX_SPOOL%%/etc/hosts.hfaxd-dist; then rm -f %%HYLAFAX_SPOOL%%/etc/hosts.hfaxd; fi
+%%HYLAFAX_SPOOL%%/etc/hosts.hfaxd-dist
+@exec [ -f %%HYLAFAX_SPOOL%%/etc/hosts.hfaxd ] || cp %%HYLAFAX_SPOOL%%/etc/hosts.hfaxd-dist %%HYLAFAX_SPOOL%%/hosts.hfaxd
+%%HYLAFAX_SPOOL%%/etc/dialrules
+%%HYLAFAX_SPOOL%%/etc/dialrules.sf-ba
+%%HYLAFAX_SPOOL%%/etc/dialrules.europe
+%%HYLAFAX_SPOOL%%/etc/lutRS18.pcf
+%%HYLAFAX_SPOOL%%/etc/templates/README
+%%HYLAFAX_SPOOL%%/etc/templates/en/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-done-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-failed-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-poll_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-poll_no_document.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-poll_rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/en/notify-timedout.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-done-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-failed-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-poll_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-poll_no_document.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-poll_rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/fr/notify-timedout.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-done-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-failed-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-poll_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-poll_no_document.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-poll_rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/de/notify-timedout.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-done-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-failed-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-poll_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-poll_no_document.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-poll_rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/ro/notify-timedout.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-done-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-failed-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-poll_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-poll_no_document.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-poll_rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt_BR/notify-timedout.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-done-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-failed-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-poll_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-poll_no_document.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-poll_rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pt/notify-timedout.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-done-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-failed-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-poll_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-poll_no_document.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-poll_rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/es/notify-timedout.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-done-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-failed-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-poll_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-poll_no_document.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-poll_rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/it/notify-timedout.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-done-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-failed-page.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-poll_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-poll_no_document.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-poll_rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/pl/notify-timedout.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/css.inc
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/divider.inc
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/fax-attach.inc
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/fax-data.inc
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/fax-dispatched.inc
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/faxrcvd-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/faxrcvd-failure.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/faxrcvd-notify-error.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/faxrcvd-notify-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/faxrcvd-success.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/footer.inc
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/header.inc
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/hook.sh
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/job-data.inc
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-blocked.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-done.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-faxmaster.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-format_failed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/session_log.inc
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-killed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-no_formatter.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-rejected.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-removed.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-requeued.txt
+%%HYLAFAX_SPOOL%%/etc/templates/html-sample1/notify-timedout.txt
+@dir(uucp,dialer,0700) %%HYLAFAX_SPOOL%%/archive
+@dir(uucp,dialer,755) %%HYLAFAX_SPOOL%%/info
+@dir(uucp,dialer,755) %%HYLAFAX_SPOOL%%/log
+@dir(uucp,dialer,700) %%HYLAFAX_SPOOL%%/pollq
+@dir(uucp,dialer,755) %%HYLAFAX_SPOOL%%/recvq
+@dir(uucp,dialer,700) %%HYLAFAX_SPOOL%%/sendq
+@dir(uucp,dialer,755) %%HYLAFAX_SPOOL%%/status
+@dir(uucp,dialer,700) %%HYLAFAX_SPOOL%%/tmp
+@dir(uucp,dialer,0755) %%HYLAFAX_SPOOL%%/dev
+@dir(uucp,dialer,0700) %%HYLAFAX_SPOOL%%/docq
+@dir(uucp,dialer,0700) %%HYLAFAX_SPOOL%%/doneq
+@dir(uucp,dialer,0755) %%HYLAFAX_SPOOL%%/client
+@dir %%HYLAFAX_SPOOL%%/bin
+@dir %%HYLAFAX_SPOOL%%/config
+@dir %%HYLAFAX_SPOOL%%/etc/templates/ro
+@dir %%HYLAFAX_SPOOL%%/etc/templates/pt_BR
+@dir %%HYLAFAX_SPOOL%%/etc/templates/pt
+@dir %%HYLAFAX_SPOOL%%/etc/templates/pl
+@dir %%HYLAFAX_SPOOL%%/etc/templates/it
+@dir %%HYLAFAX_SPOOL%%/etc/templates/html-sample1
+@dir %%HYLAFAX_SPOOL%%/etc/templates/fr
+@dir %%HYLAFAX_SPOOL%%/etc/templates/es
+@dir %%HYLAFAX_SPOOL%%/etc/templates/en
+@dir %%HYLAFAX_SPOOL%%/etc/templates/de
+@dir %%HYLAFAX_SPOOL%%/etc/templates
+@dir %%HYLAFAX_SPOOL%%/etc
+@dir %%HYLAFAX_SPOOL%%
