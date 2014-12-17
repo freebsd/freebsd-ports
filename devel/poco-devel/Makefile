@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	poco
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	devel net
 MASTER_SITES=	https://codeload.github.com/pocoproject/poco/legacy.tar.gz/poco-${PORTVERSION}-release?dummy=/
 PKGNAMESUFFIX=	-devel
@@ -33,7 +33,7 @@ MAKE_JOBS_UNSAFE=true
 
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libexpat.so:${PORTSDIR}/textproc/expat2
-WRKSRC=		${WRKDIR}/pocoproject-poco-23760af
+WRKSRC=		${WRKDIR}/pocoproject-poco-a64ebba
 MAKE_ARGS=	CXX=c++ CC=cc POCO_ODBC_LIB=${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
@@ -69,5 +69,11 @@ USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/ =/ ?=/g" ${WRKSRC}/build/config/FreeBSD
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cpspcd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/f2cpspd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/f2cpspd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*d.so.*
 
 .include <bsd.port.mk>
