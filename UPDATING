@@ -24,7 +24,7 @@ you update your ports collection, before attempting any port upgrades.
 
   With portmaster:
 
-    portupgrade `find /usr/local/lib/perl5/site_perl/mach/5.18 -name '*.so'|xargs pkg which -qo|sort -u`
+    portmaster `find /usr/local/lib/perl5/site_perl/mach/5.18 -name '*.so'|xargs pkg which -qo|sort -u`
 
 20141216:
   AFFECTS: users of security/openssh-portable, security/openssh-portable66
