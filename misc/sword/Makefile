@@ -49,7 +49,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|-O3||' ${WRKSRC}/configure
 
 post-install:
-	@(cd ${WRKSRC} && ${MAKE_CMD} install_config)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install_config)
 	${MV} ${STAGEDIR}${PREFIX}/etc/sword.conf \
 		${STAGEDIR}${PREFIX}/etc/sword.conf.sample
 
