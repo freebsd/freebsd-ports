@@ -5,13 +5,8 @@ PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
 PORTREVISION=	17
 CATEGORIES=	lang devel perl5
-MASTER_SITES=	CPAN \
-		${MASTER_SITE_LOCAL:S/$/:local/} \
-		http://protey.ru/freebsd/distfiles/:local
-MASTER_SITE_SUBDIR=	../../src \
-			skv/:local
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		BSDPAN-${BSDPAN_VERSION}${EXTRACT_SUFX}:local
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../src
 DIST_SUBDIR=	perl
 
 MAINTAINER=	perl@FreeBSD.org
@@ -72,8 +67,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dsiteman1dir=${PREFIX}/man/man1 \
 	-Dotherlibdirs=${PREFIX}/lib/perl5/site_perl/${PERL_VER}:${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH} \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
-	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
-	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
+	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
 		LC_TIME=""
@@ -201,18 +195,7 @@ LINK_USRBIN=	no
 .endif
 SUB_LIST+=	LINK_USRBIN=${LINK_USRBIN}
 
-BSDPAN_DEST=	${PREFIX}/${_PRIV_LIB}/BSDPAN
-BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
-		ExtUtils/MM_Unix.pm \
-		ExtUtils/MakeMaker.pm \
-		ExtUtils/Packlist.pm
-BSDPAN_VERSION=	20111107
-BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-${BSDPAN_VERSION}
-
 post-patch:
-	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|${PERL_VER}|g;' \
-		-e 's!%%BSDPAN_VERSION%%!${BSDPAN_VERSION}!g;' \
-		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
 .if ${PORT_OPTIONS:MPTHREAD}
@@ -252,11 +235,6 @@ post-install:
 .if ${OSVERSION} >= 900022
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
 .endif
-.for files in ${BSDPAN_FILES}
-	${MKDIR} ${STAGEDIR}${BSDPAN_DEST}/${files:H}
-	${INSTALL_DATA} \
-		${BSDPAN_WRKSRC}/${files} ${STAGEDIR}${BSDPAN_DEST}/${files}
-.endfor
 
 test: build
 	(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
