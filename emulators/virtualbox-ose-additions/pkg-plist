@@ -14,6 +14,13 @@
 sbin/VBoxControl
 sbin/VBoxService
 %%X11%%share/autostart/vboxclient.desktop
-/%%KMODDIR%%/vboxguest.ko
-%%DEBUG%%/%%KMODDIR%%/vboxguest.ko.symbols
-%%X11%%/%%KMODDIR%%/vboxvideo.ko
+%%X11%%@dirrmtry share/autostart
+%%X11%%@dirrmtry lib/xorg/modules/drivers
+%%X11%%@dirrmtry lib/xorg/modules/input
+%%X11%%@dirrmtry lib/xorg/modules
+%%X11%%@dirrmtry lib/xorg
+%%OPENGL%%@dirrmtry lib/dri
+@cwd /
+%%KMODDIR%%/vboxguest.ko
+%%DEBUG%%%%KMODDIR%%/vboxguest.ko.symbols
+%%X11%%%%KMODDIR%%/vboxvideo.ko
