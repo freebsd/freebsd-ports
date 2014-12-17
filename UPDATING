@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141216:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  All patches have been fixed for version 6.7. It is no longer required to use
+  the security/openssh-portable66 port.
+
 20141215:
   AFFECTS: users of comms/spandsp-devel
   AUTHOR: pawel@FreeBSD.org
