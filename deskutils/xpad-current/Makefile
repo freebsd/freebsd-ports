@@ -17,13 +17,12 @@ OPTIONS_SUB=	yes
 
 CONFLICTS_INSTALL=	xpad-[0-9]*
 USE_XORG=	x11 sm
-USE_GNOME=	gtk30 gnomehier intltool gtksourceview3
+USE_GNOME=	gtk30 intltool gtksourceview3
 USES=	pkgconfig gmake tar:bzip2
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-NEED_ROOT=yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
