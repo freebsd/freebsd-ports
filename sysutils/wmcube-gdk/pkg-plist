@@ -1,4 +1,4 @@
-bin/wmcube-gdk
+@(,kmem,) bin/wmcube-gdk
 %%DATADIR%%/2planes-solid.wmc
 %%DATADIR%%/4d.wmc
 %%DATADIR%%/8star-small.wmc
