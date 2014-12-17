@@ -20,7 +20,7 @@ you update your ports collection, before attempting any port upgrades.
 
   With portupgrade:
 
-    portupgrade `find /usr/local/lib/perl5/site_perl/mach/5.18 -name '*.so'|xargs pkg which -qo|sort -u`
+    portupgrade -f `find /usr/local/lib/perl5/site_perl/mach/5.18 -name '*.so'|xargs pkg which -qo|sort -u`
 
   With portmaster:
 
