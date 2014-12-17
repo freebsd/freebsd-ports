@@ -1,5 +1,5 @@
---- lib/utils.c.orig	2014-08-05 01:28:35.000000000 -0400
-+++ lib/utils.c	2014-11-22 20:17:13.543784891 -0500
+--- lib/utils.c.orig	2014-08-05 05:28:35 UTC
++++ lib/utils.c
 @@ -46,6 +46,15 @@
  
  #include <zlib.h>
@@ -16,7 +16,7 @@
  extern int inet_pton(int af, const char *src, void *dst);
  
  
-@@ -1756,14 +1765,19 @@
+@@ -1756,14 +1765,19 @@ wchar_from_utf8 (const char *utf8)
  
  #endif  /* ifdef WIN32 */
  
@@ -37,7 +37,7 @@
          return -1;
      }
  
-@@ -1787,7 +1801,8 @@
+@@ -1787,7 +1801,8 @@ find_process_in_dirent(struct dirent *di
  }
  
  /* read the /proc fs to determine whether some process is running */
@@ -47,7 +47,7 @@
  {
      DIR *proc_dir = opendir("/proc");
      if (!proc_dir) {
-@@ -1812,7 +1827,8 @@
+@@ -1812,7 +1827,8 @@ gboolean process_is_running (const char 
      return FALSE;
  }
  
@@ -57,7 +57,7 @@
  {
      int count = 0;
      DIR *proc_dir = opendir("/proc");
-@@ -1836,6 +1852,14 @@
+@@ -1836,6 +1852,14 @@ int count_process(const char *process_na
      return count;
  }
  
@@ -72,7 +72,7 @@
  #endif
  
  #ifdef __APPLE__
-@@ -1846,6 +1870,120 @@
+@@ -1846,6 +1870,120 @@ gboolean process_is_running (const char 
  }
  #endif
  
@@ -90,7 +90,8 @@
 +		   (!kthreads && ((kp)->kp_flags & P_SYSTEM) != 0))
 +#define KVM_OPENFILES(exec, coref, buf) \
 +		kvm_openfiles(exec, coref, NULL, O_RDONLY, buf)
-+#define KVM_GETPROCS(kd, plist, nproc) \+		kvm_getprocs(kd, KERN_PROC_ALL, 0, &nproc)
++#define KVM_GETPROCS(kd, plist, nproc) \
++		kvm_getprocs(kd, KERN_PROC_ALL, 0, &nproc)
 +
 +#elif defined(__NetBSD__)
 +#define	PSKIP(kp) ((kp)->kp_pid == mypid ||			\
