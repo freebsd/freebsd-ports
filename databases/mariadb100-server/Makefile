@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.14
+PORTVERSION=	10.0.15
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -26,7 +26,7 @@ SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
 
 BROKEN_arm=	Does not compile on arm
 
-OPTIONS_DEFINE=		SSL OPENSSL PORTSSL FASTMTX
+OPTIONS_DEFINE=		INNODB SSL OPENSSL PORTSSL FASTMTX
 OPTIONS_DEFAULT=	SSL
 NO_OPTIONS_SORT=	yes
 
@@ -64,10 +64,12 @@ DATADIR=	${PREFIX}/share/mysql
 # MySQL-Server options
 .if !defined(CLIENT_ONLY)
 USE_MYSQL=		yes
-OPTIONS_DEFINE+=	OQGRAPH MAXKEY
+OPTIONS_DEFINE+=	INNODB MROONGA OQGRAPH MAXKEY
 OPTIONS_DEFAULT+=	MAXKEY
 
-OQGRAPH_DESC=		Open Query Graph Computation engine
+INNODB_DESC=            Build InnoDB engine next to XtraDB
+MROONGA_DESC=		Mroonga Full Text Search engine (gcc)
+OQGRAPH_DESC=		Open Query Graph Computation engine (gcc)
 MAXKEY_DESC=		Change max key length from 1000 to 4000
 .endif
 
@@ -120,6 +122,22 @@ GROUPS=		mysql
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
 		-DCMAKE_SKIP_BUILD_RPATH:BOOL=YES \
 		-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1
+
+.  if empty(PORT_OPTIONS:MINNODB)
+PLIST_SUB+=	INNODB="@comment "
+.  else
+CMAKE_ARGS+=	-DWITHOUT_INNOBASE=1
+PLIST_SUB+=	INNODB=""
+.  endif
+
+.  if empty(PORT_OPTIONS:MMROONGA)
+CMAKE_ARGS+=    -DWITHOUT_MROONGA=1
+PLIST_SUB+=     MROONGA="@comment "
+.  else
+USE_GCC?=       yes
+CMAKE_ARGS+=    -DWITH_MROONGA_STORAGE_ENGINE=1
+PLIST_SUB+=     MROONGA=""
+.  endif
 
 .  if empty(PORT_OPTIONS:MOQGRAPH)
 CMAKE_ARGS+=	-DWITHOUT_OQGRAPH=1
