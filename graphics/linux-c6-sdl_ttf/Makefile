@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl_ttf
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.0.11
 CATEGORIES=	graphics linux
 MASTER_SITES=	EPEL
 DISTNAME=	SDL_ttf-${PORTVERSION}-${RPMVERSION}
@@ -26,7 +25,7 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	CHANGES COPYING README
 
 PLIST_FILES=	usr/lib/libSDL_ttf-2.0.so.0 \
-	usr/lib/libSDL_ttf-2.0.so.0.6.3
+	usr/lib/libSDL_ttf-2.0.so.0.10.1
 DESCR=		${.CURDIR}/../linux-f10-sdl_ttf/pkg-descr
 
 .include <bsd.port.mk>
