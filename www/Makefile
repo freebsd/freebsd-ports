@@ -1536,6 +1536,7 @@
     SUBDIR += py-flask-flatpages
     SUBDIR += py-flask-sockets
     SUBDIR += py-flask-uploads
+    SUBDIR += py-flask-wtf
     SUBDIR += py-flexget
     SUBDIR += py-flup
     SUBDIR += py-formalchemy
