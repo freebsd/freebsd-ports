@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 
 COMMENT=	Gstreamer DSP library and software FAX machine plugin

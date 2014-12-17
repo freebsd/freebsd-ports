@@ -259,7 +259,7 @@ gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.so
 gst_gl_USE_GL=	gl glu glesv2 egl
 gst_gl_CONFIGURE_ARGS=	--enable-gl --enable-glx \
 			--enable-egl --enable-gles2
-gst_gl_PLIST=		#
+gst_gl_PLIST_FILES=		#
 
 # gme
 gst_gme_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
@@ -429,12 +429,8 @@ gst_${GST_PLUGIN}_BUILD_DEPENDS?=
 gst_${GST_PLUGIN}_LIB_DEPENDS?=
 gst_${GST_PLUGIN}_RUN_DEPENDS?=
 gst_${GST_PLUGIN}_USE_XORG?=
-# this should be ${PLIST} == ${NONEXISTENT} but make on 9.x and 8.x is trowing
-# a fit over it.
-.if ${PLIST} == "/nonexistent"
 gst_${GST_PLUGIN}_PLIST_FILES?= \
 		${GST_LIB_DIR}/libgst${GST_PLUGIN}${GST_PLIST_SUFFIX}.so
-.endif
 gst_${GST_PLUGIN}_EXTRA_LIBS?=
 gst_${GST_PLUGIN}_PREBUILD_DIR?=
 gst_${GST_PLUGIN}_GST_PLUGIN_DIR?=	ext/${GST_PLUGIN}

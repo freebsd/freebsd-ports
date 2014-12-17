@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer ATSC A/52 stream aka AC-3 (dvd audio) plugin
