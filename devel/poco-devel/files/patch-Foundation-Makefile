@@ -1,0 +1,10 @@
+--- Foundation/Makefile.orig	2014-10-16 05:16:40.000000000 -0700
++++ Foundation/Makefile	2014-10-17 15:28:45.000000000 -0700
+@@ -46,6 +46,7 @@
+ 
+ ifdef POCO_UNBUNDLED
+ 	SYSLIBS += -lpcre -lz
++	objects += $(pcre_utf8_objects) # unicode.cpp uses internal pcre tables
+ else
+ 	objects += $(zlib_objects) $(pcre_objects) $(pcre_utf8_objects)
+ endif
