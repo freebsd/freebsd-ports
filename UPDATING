@@ -27,11 +27,14 @@ you update your ports collection, before attempting any port upgrades.
     portupgrade `find /usr/local/lib/perl5/site_perl/mach/5.18 -name '*.so'|xargs pkg which -qo|sort -u`
 
 20141216:
-  AFFECTS: users of security/openssh-portable
+  AFFECTS: users of security/openssh-portable, security/openssh-portable66
   AUTHOR: bdrewery@FreeBSD.org
 
   All patches have been fixed for version 6.7. It is no longer required to use
   the security/openssh-portable66 port.
+
+  The LPK option was removed from security/openssh-portable as it has been
+  deprecated since May 2013. Use AuthorizedKeysCommand as a replacement.
 
 20141215:
   AFFECTS: users of comms/spandsp-devel
