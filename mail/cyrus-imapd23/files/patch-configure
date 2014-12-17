@@ -19,17 +19,6 @@ diff -u configure.orig configure
  		LIBS="$LIBS -lpcre -lpcreposix";
  
  $as_echo "#define ENABLE_REGEX /**/" >>confdefs.h
-@@ -10688,7 +10689,9 @@
- 
-     if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
-       CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
--      LIB_UCDSNMP=$SNMP_LIBS
-+      LIB_UCDSNMP="$SNMP_LIBS -lwrap"
-+      PERLLIBDIR=`$PERL -e 'use Config; print "$Config{archlibexp}/CORE";'`
-+      LDFLAGS_UCDSNMP="-L${PERLLIBDIR} -R${PERLLIBDIR}"
- 
- $as_echo "#define HAVE_NETSNMP 1" >>confdefs.h
- 
 @@ -10781,7 +10784,7 @@
  
  $as_echo "#define HAVE_UCDSNMP 1" >>confdefs.h
