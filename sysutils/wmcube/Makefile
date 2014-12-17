@@ -24,10 +24,9 @@ PORTDOCS=	CHANGES README TODO
 SUB_FILES=	pkg-message
 USE_CSTD=	gnu89
 MAKE_JOBS_UNSAFE=	yes
-NEED_ROOT=	yes
 
 do-install:
-	${INSTALL_PROGRAM} -m 2755 -o root -g kmem ${WRKSRC}/wmcube ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} -m 2755 ${WRKSRC}/wmcube ${STAGEDIR}${PREFIX}/bin
 .for file in *.wmc
 	@${ECHO} "===>   Installing extra 3d objects in ${STAGEDIR}${PREFIX}/share/${PORTNAME}"
 	@${MKDIR} ${STAGEDIR}${DATADIR}
