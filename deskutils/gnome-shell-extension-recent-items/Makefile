@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-shell-extension-recent-items
 PORTVERSION=	0.0.0.20141001
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.bananenfisch.net/code/
 DISTNAME=	RecentItems-11
@@ -22,8 +23,9 @@ PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 NO_BUILD=	yes
 
 do-install:
-		@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/RecentItems@bananenfisch.net
-		@(cd ${WRKSRC} && ${CP} -pPR * \
-                        ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/RecentItems@bananenfisch.net)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/RecentItems@bananenfisch.net
+	@(cd ${WRKSRC} && ${CP} -pPR * \
+		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/RecentItems@bananenfisch.net)
+	@chmod +r ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/RecentItems@bananenfisch.net/metadata.json
 
 .include <bsd.port.mk>
