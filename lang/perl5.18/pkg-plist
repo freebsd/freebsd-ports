@@ -59,12 +59,6 @@ etc/perl5_version
 %%PRIV_LIB%%/B/Deparse.pm
 %%PRIV_LIB%%/B/Lint.pm
 %%PRIV_LIB%%/B/Lint/Debug.pm
-%%PRIV_LIB%%/BSDPAN/BSDPAN.pm
-%%PRIV_LIB%%/BSDPAN/BSDPAN/Override.pm
-%%PRIV_LIB%%/BSDPAN/Config.pm
-%%PRIV_LIB%%/BSDPAN/ExtUtils/MM_Unix.pm
-%%PRIV_LIB%%/BSDPAN/ExtUtils/MakeMaker.pm
-%%PRIV_LIB%%/BSDPAN/ExtUtils/Packlist.pm
 %%PRIV_LIB%%/Benchmark.pm
 %%PRIV_LIB%%/CGI.pm
 %%PRIV_LIB%%/CGI/Apache.pm
