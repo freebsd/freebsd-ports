@@ -37,9 +37,9 @@
 --- readconf.c.orig	2013-10-11 09:24:10.812126846 -0500
 +++ readconf.c	2013-10-11 09:19:12.295135966 -0500
 @@ -268,12 +268,16 @@ static struct {
- 	{ "canonicalizehostname", oCanonicalizeHostname },
- 	{ "canonicalizemaxdots", oCanonicalizeMaxDots },
  	{ "canonicalizepermittedcnames", oCanonicalizePermittedCNAMEs },
+ 	{ "streamlocalbindmask", oStreamLocalBindMask },
+ 	{ "streamlocalbindunlink", oStreamLocalBindUnlink },
 +#ifdef NONECIPHER
  	{ "noneenabled", oNoneEnabled },
  	{ "noneswitch", oNoneSwitch },
@@ -53,7 +53,7 @@
  	{ "ignoreunknown", oIgnoreUnknown },
  
  	{ NULL, oBadOption }
-@@ -1739,12 +1743,20 @@ fill_default_options(Options * options)
+@@ -1819,12 +1823,20 @@ fill_default_options(Options * options)
  		options->server_alive_interval = 0;
  	if (options->server_alive_count_max == -1)
  		options->server_alive_count_max = 3;
