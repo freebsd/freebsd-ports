@@ -9,6 +9,6 @@ LIB=		st
 NO_PROFILE=	yes
 
 SRCS=		io.c key.c sched.c stk.c sync.c event.c
-CFLAGS+=	-DFREEBSD
+CFLAGS+=	-DFREEBSD -DMD_HAVE_KQUEUE
 
 .include <bsd.lib.mk>
