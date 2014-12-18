@@ -10,8 +10,8 @@
 
 .if !defined(_INCLUDE_USES_FAKEROOT_MK)
 _INCLUDE_USES_FAKEROOT_MK=	yes
-.if ${UID} != 0
 BUILD_DEPENDS+=	fakeroot:${PORTSDIR}/security/fakeroot
+.if ${UID} != 0
 FAKEROOT?=	fakeroot
 .endif
 .endif
