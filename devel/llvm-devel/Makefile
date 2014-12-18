@@ -3,6 +3,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.6.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -91,6 +92,9 @@ STRIP_LIBS=	BugpointPasses.so \
 		libLTO.so
 
 .include <bsd.port.options.mk>
+
+# keep in sync with /usr/src/lib/clang/clang.build.mk
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${OSREL}
 
 .if ${PORT_OPTIONS:MASSERTS}
 RELEASE_TYPE=		Release+Asserts
