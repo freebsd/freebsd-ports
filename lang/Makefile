@@ -32,7 +32,6 @@
     SUBDIR += cjs
     SUBDIR += clang-cheri
     SUBDIR += clang-devel
-    SUBDIR += clang32
     SUBDIR += clang33
     SUBDIR += clang34
     SUBDIR += clang35
