@@ -12,6 +12,8 @@ DIST_SUBDIR=	pure
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Modern-style functional programming language
 
+BROKEN=		Depends on deleted devel/llvm32
+
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
