@@ -22,7 +22,7 @@ LLVM_VERSION=	32
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr
-BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
+#BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_FILES=	pkg-message
