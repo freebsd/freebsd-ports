@@ -15,8 +15,8 @@ OPTIONS_DEFINE=	DOCS
 
 USE_RC_SUBR=	${PORTNAME}
 
-USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf libtool
+GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample \
