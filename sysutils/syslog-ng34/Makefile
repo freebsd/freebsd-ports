@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 PKGNAMESUFFIX=	34
@@ -127,6 +127,8 @@ PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 CONFIGURE_ARGS+=        --disable-json
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 900034
 CONFIGURE_ARGS+=        --disable-linux-caps
 .endif
@@ -147,4 +149,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/scl/syslog-ng.conf.dist ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/scl/scl.conf.dist ${STAGEDIR}${PREFIX}/etc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
