@@ -13,8 +13,7 @@ COMMENT=	Commandline tool that performs SDR with RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig libtool tar:tgz
-USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtoolize:env
+USES=		autoreconf gmake pkgconfig libtool tar:tgz
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -28,7 +27,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.am
 .endif
@@ -38,8 +37,5 @@ post-patch:
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} 's|^pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.am
-
-pre-configure:
-	@(cd ${WRKSRC} && ${AUTORECONF} -fi)
 
 .include <bsd.port.mk>
