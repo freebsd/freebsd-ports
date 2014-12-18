@@ -3,7 +3,7 @@
 
 PORTNAME=	gc
 PORTVERSION=	7.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/
 PKGNAMEPREFIX=	boehm-
@@ -55,6 +55,10 @@ PORTDOCS=	*
 .endif
 
 NOT_FOR_ARCHS=	ia64
+
+# no rule to get .lo from .S in subdirectory
+pre-build:
+	${LN} -sf ${WRKSRC}/src/sparc_mach_dep.S ${WRKSRC}
 
 .include <bsd.port.options.mk>
 
