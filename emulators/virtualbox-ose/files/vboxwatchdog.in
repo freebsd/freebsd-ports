@@ -48,6 +48,6 @@ load_rc_config $name
 
 : ${vboxwatchdog_enable="NO"}
 : ${vboxwatchdog_user="%%VBOXUSER%%"}
-: ${vboxwatchdog_flags="-b"}
+: ${vboxwatchdog_flags=""}
 
 run_rc_command "$1"
