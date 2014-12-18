@@ -45,7 +45,7 @@ gnupod.texi fdl.texi version.texi ipod.svg
 	# It tries to guess where it should install it's Perl modules, gets it
 	# wrong, and put them in BSDPAN, so move stuff at the right place.
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
-	${MV} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN/GNUpod ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
-	@${RMDIR} -p ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN 2>/dev/null || :
+	${MV} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/GNUpod ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	@${RMDIR} -p ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} 2>/dev/null || :
 
 .include <bsd.port.mk>
