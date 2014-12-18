@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt-glib
-PORTVERSION=	0.1.9
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Glib bindings for Libvirt virtualization API
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
 
@@ -22,6 +23,7 @@ LDFLAGS+=	-fstack-protector
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-SHLIB_VER=	1.0
+PLIST_SUB=	VERSION=1.0 \
+		SHLIB_VER=${PORTVERSION}
 
 .include <bsd.port.mk>
