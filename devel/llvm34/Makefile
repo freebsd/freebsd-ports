@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -84,6 +85,9 @@ STRIP_LIBS=	BugpointPasses.so \
 CONFIGURE_ARGS+=--enable-experimental-targets=R600
 
 .include <bsd.port.options.mk>
+
+# keep in sync with /usr/src/lib/clang/clang.build.mk
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${OSREL}
 
 .if ${PORT_OPTIONS:MASSERTS}
 CONFIGURE_ARGS+=	--enable-assertions
