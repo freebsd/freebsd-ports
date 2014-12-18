@@ -29,10 +29,9 @@ PLIST_SUB=	SHLIB="@comment " NSHLIB=""
 MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 CONFLICTS=	tidy-20000804* tidy-lib-[0-9]*
 .else
-USES+=		libtool
-USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
-AUTOMAKE_ARGS+=	-a -c --foreign
+USES+=		autoreconf libtool
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	SHLIB="" NSHLIB="@comment "
 CONFLICTS=	tidy-devel-[0-9]*
