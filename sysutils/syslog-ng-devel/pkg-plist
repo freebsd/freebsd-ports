@@ -153,6 +153,7 @@ include/syslog-ng/str-format.h
 include/syslog-ng/syslog-names.h
 include/syslog-ng/syslog-ng.h
 include/syslog-ng/tags.h
+include/syslog-ng/template/common-template-typedefs.h
 include/syslog-ng/template/compiler.h
 include/syslog-ng/template/escaping.h
 include/syslog-ng/template/function.h
@@ -214,6 +215,7 @@ share/syslog-ng/include/scl/graphite/plugin.conf
 share/syslog-ng/include/scl/graphite/README
 share/syslog-ng/include/scl/nodejs/plugin.conf
 share/syslog-ng/include/scl/pacct/plugin.conf
+share/syslog-ng/include/scl/solaris/plugin.conf
 share/syslog-ng/include/scl/syslogconf/README
 share/syslog-ng/include/scl/syslogconf/convert-syslogconf.awk
 share/syslog-ng/include/scl/syslogconf/plugin.conf
