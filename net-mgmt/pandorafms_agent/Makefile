@@ -40,6 +40,7 @@ post-patch:
 
 post-install:
 	@${RM} -f ${STAGEDIR}${LOGDIR}/pandora_agent.log
+	@${RM} -f ${STAGEDIR}${DATADIR}/collections/.empty
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}

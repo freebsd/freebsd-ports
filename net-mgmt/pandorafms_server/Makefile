@@ -2,8 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	pandora_server
-PORTREVISION=	2
-
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
@@ -21,14 +19,13 @@ PANDORA_DEPS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
-
 BUILD_DEPENDS=	${PANDORA_DEPS}
-
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-DBD-mysql>=4:${PORTSDIR}/databases/p5-DBD-mysql \
 		${LOCALBASE}/bin/wmic:${PORTSDIR}/net-mgmt/wmi-client \
 		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
 		${PANDORA_DEPS}
 
 OPTIONS_DEFINE=	DOCS TENTACLE XPROBE PGSQL ORACLE EXTRAS
@@ -104,7 +101,7 @@ post-install:
 	@${MV} ${STAGEDIR}${ETCDIR}/pandora_server.conf ${STAGEDIR}${ETCDIR}/pandora_server.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.post.mk>

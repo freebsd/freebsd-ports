@@ -1,21 +1,17 @@
-@comment /var/log/pandora
-@mode 770
 @owner pandora
 @group wheel
-%%USE_LOGDIR%%@unexec rmdir %%LOGDIR%% 2>/dev/null || :
-@comment /var/spool/pandora/data_out
-@mode 700
-%%USE_SPOOL_OUT%%@unexec rmdir %%SPOOLDIR%%/data_out 2>/dev/null || :
-@comment /var/spool/pandora/data_in and subdirectories
+%%USE_LOGDIR%%@mode 770
+%%USE_LOGDIR%%@dir %%LOGDIR%%
+%%USE_SPOOL_OUT%%@mode 700
+%%USE_SPOOL_OUT%%@dir %%SPOOLDIR%%/data_out
 @mode 770
 @group www
-%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/collections 2>/dev/null || :
-%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/conf 2>/dev/null || :
-%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/md5 2>/dev/null || :
-%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/netflow 2>/dev/null || :
-%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in 2>/dev/null || :
-@comment /var/spool/pandora
-@unexec rmdir %%SPOOLDIR%% 2>/dev/null || :
+%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in/collections
+%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in/conf
+%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in/md5
+%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in/netflow
+%%USE_SPOOL_IN%%@dir %%SPOOLDIR%%/data_in
+@dir %%SPOOLDIR%%
 @comment unset mode/owner/group
 @mode
 @owner
