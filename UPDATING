@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141218:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH 6.7 disables some insecure ciphers by default, such as arcfour
+  and blowfish. You may have clients using these over LAN where security is
+  considered less important for the connection. For these cases you may need
+  to update your Ciphers entry in your sshd_config to enable them again.
+
+  See http://mgalgs.github.io/2014/10/22/enable-arcfour-and-other-fast-ciphers-on-recent-versions-of-openssh.html
+
 20141217:
   AFFECTS: users of lang/perl5.*
   AUTHOR: mat@FreeBSD.org
