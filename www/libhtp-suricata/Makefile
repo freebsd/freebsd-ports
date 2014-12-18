@@ -13,13 +13,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	inliniac
 GH_COMMIT=	0294c27
 
-USES=		libtool pathfix pkgconfig
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
+USES=		autoreconf libtool pathfix pkgconfig
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	libhtp-[0-9]*
 
 PATHFIX_MAKEFILEIN=	Makefile.am
-AUTOMAKE_ARGS+=		--force-missing --add-missing
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
