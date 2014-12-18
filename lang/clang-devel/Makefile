@@ -3,6 +3,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.6.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -83,6 +84,9 @@ RELTYPE=		Release
 .endif
 
 .include <bsd.port.pre.mk>
+
+# keep in sync with /usr/src/lib/clang/clang.build.mk
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${OSREL}
 
 .include "${.CURDIR}/../../devel/llvm-devel/Makefile.svn_rev"
 
