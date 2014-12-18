@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcpreplay
-PORTVERSION=	4.0.5
+PORTVERSION=	4.1.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
