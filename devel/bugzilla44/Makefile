@@ -2,7 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -44,9 +44,11 @@ EMPTY_DIRS_LIST=data graphs contrib lib t xt
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} >= 501800
-# XXX silence Module::Pluggable deprecated warnings (PR 194782)
+# PR 194782: silence Module::Pluggable deprecated warnings
 BUILD_DEPENDS+=	p5-Module-Pluggable>=5.1:${PORTSDIR}/devel/p5-Module-Pluggable
 RUN_DEPENDS+=	p5-Module-Pluggable>=5.1:${PORTSDIR}/devel/p5-Module-Pluggable
+# PR 196060,196100: explicitly depend on textproc/p5-Text-Tabv
+RUN_DEPENDS+=	p5-Text-Tabs+Wrap>=2013.0523:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
 .endif
 
 .if ${PORT_OPTIONS:MMODPERL}
