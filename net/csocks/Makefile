@@ -3,6 +3,7 @@
 
 PORTNAME=	csocks
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://csocks.altervista.org/download/ \
 		http://csocks.virtuale.org/download/
@@ -17,6 +18,9 @@ PLIST_FILES=	etc/csocks.conf.sample lib/libcsocks.so lib/libcsocks.so.1 \
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/src
+
+post-patch:
+	${REINPLACE_CMD} 's|libc.so|/lib/libc.so.7|' ${WRKSRC}/csocks.h
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/freebsd/csocks ${STAGEDIR}${PREFIX}/bin
