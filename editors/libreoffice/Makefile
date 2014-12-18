@@ -16,6 +16,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		gpatch:${PORTSDIR}/devel/patch \
 		ucpp:${PORTSDIR}/devel/ucpp \
 		vigra-config:${PORTSDIR}/graphics/vigra \
+		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm \
 		bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
@@ -34,6 +35,7 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libfreehand-0.1.so:${PORTSDIR}/graphics/libfreehand \
 		libgltf-0.0.so:${PORTSDIR}/graphics/libgltf \
 		libwpg-0.3.so:${PORTSDIR}/graphics/libwpg03 \
+		libGeneratedSaxParser.so:${PORTSDIR}/graphics/opencollada \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		liblpsolve55.so:${PORTSDIR}/math/lp_solve \
@@ -85,15 +87,23 @@ DISTFILES+=	${PORTNAME}-help-${LOVERSION}${EXTRACT_SUFX}
 EXTRACT_ONLY:=	${DISTFILES}
 
 DISTFILES+=	1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:src \
-		4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
-		OpenCOLLADA-master-6509aa13af.tar.bz2:src
+		4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src
 
 DIST_SUBDIR=	libreoffice
+EXTRA_PATCHES=	${FILESDIR}/enable-opencollada:-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
+
+COLLADA_MODS=		COLLADABaseUtils COLLADAFramework \
+			COLLADASaxFrameworkLoader GeneratedSaxParser
+COLLADA_CFLAGS=		${COLLADA_MODS:S|^|-I${LOCALBASE}/include/opencollada/|}
+COLLADA_LIBS=		-L${LOCALBASE}/lib/opencollada \
+			${COLLADA_MODS:S|^COLLADA|OpenCOLLADA|:S|^|-l|}
 
 CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
 			GNUTAR="${TAR}" \
 			GPERF=${LOCALBASE}/bin/gperf \
+			OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
+			OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
 			OPENSSL_CFLAGS="-I/usr/include" \
 			OPENSSL_LIBS="-lcrypto -lssl" \
 			PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
@@ -136,6 +146,7 @@ CONFIGURE_ARGS+=	--disable-coinmp \
 			--with-system-dicts \
 			--with-system-expat \
 			--with-system-glew \
+			--with-system-glm \
 			--with-system-graphite \
 			--with-system-harfbuzz \
 			--with-system-hunspell \
@@ -167,6 +178,7 @@ CONFIGURE_ARGS+=	--disable-coinmp \
 			--with-system-mythes \
 			--with-system-neon \
 			--with-system-nss \
+			--with-system-opencollada \
 			--with-system-openldap \
 			--with-system-openssl \
 			--with-system-orcus \
@@ -274,6 +286,8 @@ WEBDAV_CONFIGURE_ENABLE=	neon
 
 .if ${PORT_OPTIONS:MDEBUG}
 IGNORE=			is broken with DEBUG option
+.else
+EXTRA_PATCHES+=		${FILESDIR}/extra-Makefile.in
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG} || ${PORT_OPTIONS:MVERBOSE}
@@ -303,13 +317,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-libc++:-p1
 EXTRA_PATCHES+=	${FILESDIR}/extra-libc++.i386:-p0
 .endif
 
-.if ${COMPILER_FEATURES:Mlibstdc++} && ${CHOSEN_COMPILER_TYPE} == clang
-DISTFILES+=	bae83fa5dc7f081768daace6e199adc3-glm-0.9.4.6-libreoffice.zip:src
-EXTRA_PATCHES+=	${FILESDIR}/extra-collada2gltf \
-		${FILESDIR}/extra-configure.ac
-.else
-BUILD_DEPENDS+=		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
-CONFIGURE_ARGS+=	--with-system-glm
+.if ${COMPILER_FEATURES:Mlibstdc++}
+EXTRA_PATCHES+=	${FILESDIR}/extra-configure.ac
 .endif
 
 .if ${OSVERSION} < 900506
