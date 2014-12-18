@@ -12,12 +12,9 @@ COMMENT=	OWFS -- 1-Wire file system
 
 LICENSE=	GPLv2
 
-USES=		libtool
-ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
+USES=		autoreconf libtool
 
-USE_AUTOTOOLS=	libtoolize aclocal autoheader autoconf automake
-AUTOMAKE_ARGS=	--add-missing
-GNU_CONFIGURE=	On
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
