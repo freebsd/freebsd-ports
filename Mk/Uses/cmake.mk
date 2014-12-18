@@ -13,9 +13,9 @@
 #
 # User defined variables:
 # CMAKE_VERBOSE		- Enable verbose build output
-#			Default: not set, until BATCH or PACKAGE_BUILDING is defined
+#			Default: not set, unless BATCH or PACKAGE_BUILDING is defined
 # CMAKE_NOCOLOR		- Disable colour build output
-#			Default: not set, until BATCH or PACKAGE_BUILDING is defined
+#			Default: not set, unless BATCH or PACKAGE_BUILDING is defined
 # CMAKE_NINJA		- Use ninja instead of make(1)
 #
 # Variables for ports:
