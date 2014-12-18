@@ -22,20 +22,16 @@ CONFLICTS=	lesstif-[0-9]*
 # WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/motif-${PORTVERSION}
 
-USES=		gmake iconv libtool:keepla pkgconfig tar:tgz
-USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
-ACLOCAL_ARGS=	-I.
-AUTOMAKE_ARGS=	-a -c -f --foreign
+USES=		autoreconf gmake iconv libtool:keepla pkgconfig tar:tgz
 USE_XORG=	x11 xaw xbitmaps xext xft xt
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
 CPPFLAGS+=	-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI -I${PREFIX}/include
 USE_CSTD=	gnu89
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 # fix sections
