@@ -13,10 +13,9 @@ COMMENT=	Zip library and programs from Zlib distribution
 
 LICENSE=	ZLIB
 
-USES=		libtool pathfix tar:xz
+USES=		autoreconf libtool pathfix tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.am
-USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
-AUTOMAKE_ARGS=	-a -c -f
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-demos
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/zlib-${PORTVERSION}/contrib/minizip
