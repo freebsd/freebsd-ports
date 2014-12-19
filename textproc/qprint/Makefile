@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qprint
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.fourmilab.ch/webtools/qprint/
 
