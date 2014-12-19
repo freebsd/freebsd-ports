@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20141219:
+  AFFECTS: users of audio/abcde
+  AUTHOR: gblach@FreeBSD.org
+
+  In audio/abcde dependency has been changed from audio/py-eyed3-06
+  to audio/py-eyed3. Before updating audio/abcde to 2.6 you must manually
+  deinstall audio/py-eyed-06.
+
+  # pkg delete -f pyXX-eyed3-06
+
 20141218:
   AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
