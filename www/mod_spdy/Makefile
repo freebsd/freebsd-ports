@@ -61,7 +61,8 @@ USE_GCC?=	yes
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 .else
 .if ${OSVERSION} < 902000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang32:${PORTSDIR}/lang/clang32
+BROKEN=		Depends on deleted lang/llvm32
+#BUILD_DEPENDS+=	${LOCALBASE}/bin/clang32:${PORTSDIR}/lang/clang32
 CC=		${LOCALBASE}/bin/clang32
 CXX=		${LOCALBASE}/bin/clang++32
 .else
