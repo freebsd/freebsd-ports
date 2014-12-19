@@ -2,7 +2,7 @@
 
 PORTNAME=	ccnet
 PORTVERSION=	3.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	yan_jingfeng@yahoo.com
