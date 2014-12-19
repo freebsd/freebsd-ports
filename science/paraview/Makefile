@@ -16,6 +16,8 @@ LICENSE_NAME=	ParaView_License
 LICENSE_FILE=	${PATCH_WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:${PORTSDIR}/math/py-matplotlib
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libpng.so:${PORTSDIR}/graphics/png \
