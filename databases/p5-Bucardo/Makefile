@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Bucardo
-PORTVERSION=	5.1.2
-PORTREVISION=	3
+PORTVERSION=	5.2.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/ LOCAL/mat/${PORTNAME}
 PKGNAMEPREFIX=	p5-
