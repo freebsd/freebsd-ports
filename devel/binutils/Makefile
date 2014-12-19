@@ -58,7 +58,7 @@ NLS_CONFIGURE_ENABLE=	nls
 .include <bsd.port.options.mk>
 
 # Actual earliest version may differ slightly
-.if ${ARCH} != ia64 && ${OSVERSION} >= 900044 && !defined(PKGNAMEPREFIX)
+.if ${ARCH} != ia64 && ${ARCH} != mips && ${OSVERSION} >= 900044 && !defined(PKGNAMEPREFIX)
 CONFIGURE_ARGS+=	--enable-gold --enable-plugins
 PLIST_SUB+=	GOLD=""
 .else
