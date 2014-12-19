@@ -91,6 +91,7 @@ man/man1/spin.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Examples/LTL/salesman2.pml
 %%PORTDOCS%%%%DOCSDIR%%/Examples/LTL/train.pml
 %%PORTDOCS%%%%DOCSDIR%%/Examples/LTL/zune.pml
+%%PORTDOCS%%%%DOCSDIR%%/Examples/LTL/_spin_nvr.tmp
 %%PORTDOCS%%%%DOCSDIR%%/Examples/README_tests.txt
 %%PORTDOCS%%%%DOCSDIR%%/Examples/abp.pml
 %%PORTDOCS%%%%DOCSDIR%%/Examples/calculator.pml
