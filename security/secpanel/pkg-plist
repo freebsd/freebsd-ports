@@ -19,5 +19,3 @@ share/pixmaps/secpanel.png
 %%DATADIR%%/secpanel_remoteconf.sh
 %%DATADIR%%/spdistkey
 %%DATADIR%%/termdefs.txt
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
