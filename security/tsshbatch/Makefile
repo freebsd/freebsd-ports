@@ -14,6 +14,8 @@ LICENSE_NAME=	tsshbatch
 LICENSE_FILE=	${WRKSRC}/tsshbatch-license.txt
 LICENSE_PERMS=	auto-accept
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:${PORTSDIR}/security/py-paramiko
 
 USES=		python:run
