@@ -104,8 +104,7 @@ MASTER_SITE_APACHE_XML+= \
 
 .if !defined(IGNORE_MASTER_SITE_BERLIOS)
 MASTER_SITE_BERLIOS+= \
-	http://download.berlios.de/%SUBDIR%/ \
-	http://download2.berlios.de/%SUBDIR%/
+	${MASTER_SITE_SOURCEFORGE}
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CENKES)
@@ -1523,7 +1522,7 @@ MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			RG:RUBYGEMS \
 			RF:RUBYFORGE
 MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
-			BERLIOS:${PORTNAME:tl} \
+			BERLIOS:${PORTNAME:tl}.berlios \
 			CENKES:myports \
 			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:C/(.*)-[0-9].*/\1/} \
 			CSME:myports \
