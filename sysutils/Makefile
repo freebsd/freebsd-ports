@@ -823,6 +823,7 @@
     SUBDIR += rubygem-hiera
     SUBDIR += rubygem-librarian-puppet
     SUBDIR += rubygem-log4r
+    SUBDIR += rubygem-logify
     SUBDIR += rubygem-mogilefs-client
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
