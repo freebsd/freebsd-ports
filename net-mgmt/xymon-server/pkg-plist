@@ -107,6 +107,7 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/server/bin/bbhostshow
 %%WWWDIR%%/server/bin/beastat
 %%WWWDIR%%/server/bin/boilerplate.cgi
+%%WWWDIR%%/server/bin/cgiwrap
 %%WWWDIR%%/server/bin/combostatus
 %%WWWDIR%%/server/bin/confreport.cgi
 %%WWWDIR%%/server/bin/convertnk
