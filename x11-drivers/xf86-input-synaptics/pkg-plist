@@ -1,15 +1,9 @@
 bin/synclient
 bin/syndaemon
 include/xorg/synaptics-properties.h
-%%OLD%%include/xorg/synaptics.h
 lib/xorg/modules/input/synaptics_drv.so
 libdata/pkgconfig/xorg-synaptics.pc
 man/man1/synclient.1.gz
 man/man1/syndaemon.1.gz
 man/man4/synaptics.4x.gz
-%%NEW%%share/X11/xorg.conf.d/50-synaptics.conf
-%%NEW%%@dirrmtry share/X11/xorg.conf.d
-@dirrmtry lib/xorg/modules/input
-@dirrmtry lib/xorg/modules
-@dirrmtry lib/xorg
-@dirrmtry include/xorg
+share/X11/xorg.conf.d/50-synaptics.conf

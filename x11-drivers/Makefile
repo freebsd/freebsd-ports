@@ -4,7 +4,6 @@
     COMMENT = X11 drivers
 
     SUBDIR += xf86-input-acecad
-    SUBDIR += xf86-input-egalax
     SUBDIR += xf86-input-elographics
     SUBDIR += xf86-input-fpit
     SUBDIR += xf86-input-hyperpen
@@ -32,7 +31,6 @@
     SUBDIR += xf86-video-mach64
     SUBDIR += xf86-video-mga
     SUBDIR += xf86-video-neomagic
-    SUBDIR += xf86-video-newport
     SUBDIR += xf86-video-nv
     SUBDIR += xf86-video-openchrome
     SUBDIR += xf86-video-r128
@@ -45,7 +43,6 @@
     SUBDIR += xf86-video-sis
     SUBDIR += xf86-video-sunffb
     SUBDIR += xf86-video-tdfx
-    SUBDIR += xf86-video-tga
     SUBDIR += xf86-video-trident
     SUBDIR += xf86-video-tseng
     SUBDIR += xf86-video-vesa

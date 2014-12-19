@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20141219:
+  AFFECTS: users of x11/xorg and all xorg ports
+  AUTHOR: dumbbell@FreeBSD.org
+
+  The X.Org server (x11-servers/xorg-server) is updated to 1.14. All
+  ports which provide X.Org drivers must be updated simultaneously, i.e.
+  x11-drivers/xf86-*, emulators/virtualbox-ose-additions, net/tigervnc,
+  etc.
+
+  The input device autodetection backend is switched from HAL to devd.
+  If you configure your keyboard layout through HAL .fdi files, you need
+  to migrate this configuration to plain X.Org configuration files.
+
+  Up-to-date instructions and a description of the changes brought by
+  this update are detailed in a blog post:
+
+  http://blogs.freebsdish.org/graphics/2014/11/19/xserver-1-14-update-ready/
+
+20141219:
   AFFECTS: users of net-mgmt/xymon-server
   AUTHOR: feld@FreeBSD.org
 

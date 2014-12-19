@@ -1,5 +1,2 @@
 lib/xorg/modules/drivers/chips_drv.so
 man/man4/chips.4x.gz
-@dirrmtry lib/xorg/modules/drivers
-@dirrmtry lib/xorg/modules
-@dirrmtry lib/xorg

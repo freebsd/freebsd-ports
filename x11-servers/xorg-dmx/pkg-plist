@@ -1,8 +1,7 @@
 bin/Xdmx
-%%OLD%%bin/xdmx
 bin/dmxaddinput
 bin/dmxaddscreen
-%%NEW%%bin/dmxinfo
+bin/dmxinfo
 bin/dmxreconfig
 bin/dmxresize
 bin/dmxrminput
