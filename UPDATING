@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20141219:
+  AFFECTS: users of net-mgmt/xymon-server
+  AUTHOR: feld@FreeBSD.org
+
+  Xymon has been updated to 4.3.18. A major change is the replacement of
+  the individual cgi shell scripts with symlinks to a cgi program written
+  in C. This is to mitigate shellshock on Linux systems where the
+  /bin/sh -> /bin/bash. FreeBSD users were not exposed except in the
+  most unusual and unsupported circumstances. However, this is an
+  important update for security. This change could break your
+  configuration as Henrik describes here:
+
+  > NOTE: Replacing the shell script wrappers means that the cgioptions.cfg
+  > file is no longer processed as a shell script. The new wrapper works
+  > fine with the default version of cgioptions.cfg, but it you have
+  > modified it in a way that it relies on being processed by a shell, then
+  > it will break.
+
+20141219:
   AFFECTS: users of audio/abcde
   AUTHOR: gblach@FreeBSD.org
 
