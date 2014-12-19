@@ -2,7 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -72,6 +72,9 @@ PORTDATA=	scanview.css \
 		sorttable.js
 
 .include <bsd.port.options.mk>
+
+# keep in sync with /usr/src/lib/clang/clang.build.mk
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${OSREL}
 
 .if ${PORT_OPTIONS:MASSERTS}
 CONFIGURE_ARGS+=	--enable-assertions
