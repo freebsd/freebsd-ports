@@ -12,13 +12,10 @@ include/xorg/BT.h
 include/xorg/IBM.h
 include/xorg/TI.h
 include/xorg/XIstubs.h
-%%NEW%%include/xorg/Xprintf.h
+include/xorg/Xprintf.h
 include/xorg/bt829.h
-%%OLD%%include/xorg/bstore.h
-%%OLD%%include/xorg/bstorestr.h
-%%NEW%%include/xorg/callback.h
-%%OLD%%include/xorg/cfb8_16.h
-%%NEW%%include/xorg/client.h
+include/xorg/callback.h
+include/xorg/client.h
 include/xorg/closestr.h
 include/xorg/closure.h
 include/xorg/colormap.h
@@ -61,14 +58,13 @@ include/xorg/geext.h
 include/xorg/geint.h
 include/xorg/globals.h
 include/xorg/glyphstr.h
+include/xorg/glx_extinit.h
 include/xorg/hotplug.h
 include/xorg/i2c_def.h
 include/xorg/input.h
 include/xorg/inputstr.h
-%%NEW%%include/xorg/list.h
+include/xorg/list.h
 include/xorg/mi.h
-%%OLD%%include/xorg/mibank.h
-include/xorg/mibstore.h
 include/xorg/micmap.h
 include/xorg/micoord.h
 include/xorg/mifillarc.h
@@ -82,15 +78,15 @@ include/xorg/misc.h
 include/xorg/miscstruct.h
 include/xorg/mispans.h
 include/xorg/mistruct.h
-%%NEW%%include/xorg/misync.h
-%%NEW%%include/xorg/misyncstr.h
+include/xorg/misync.h
+include/xorg/misyncstr.h
 include/xorg/miwideline.h
 include/xorg/mizerarc.h
 include/xorg/mioverlay.h
 include/xorg/msp3430.h
 include/xorg/opaque.h
 include/xorg/os.h
-%%NEW%%include/xorg/optionstr.h
+include/xorg/optionstr.h
 include/xorg/panoramiXsrv.h
 include/xorg/panoramiX.h
 include/xorg/picture.h
@@ -102,7 +98,6 @@ include/xorg/property.h
 include/xorg/propertyst.h
 include/xorg/ptrveloc.h
 include/xorg/randrstr.h
-%%OLD%%include/xorg/renderedge.h
 include/xorg/region.h
 include/xorg/regionstr.h
 include/xorg/registry.h
@@ -120,7 +115,7 @@ include/xorg/shmint.h
 include/xorg/site.h
 include/xorg/swaprep.h
 include/xorg/swapreq.h
-%%NEW%%include/xorg/syncsdk.h
+include/xorg/syncsdk.h
 include/xorg/tda8425.h
 include/xorg/tda9850.h
 include/xorg/tda9885.h
@@ -133,9 +128,6 @@ include/xorg/vidmodeproc.h
 include/xorg/wfbrename.h
 include/xorg/window.h
 include/xorg/windowstr.h
-include/xorg/xaa.h
-%%OLD%%include/xorg/xaaWrapper.h
-include/xorg/xaalocal.h
 include/xorg/xaarop.h
 include/xorg/xace.h
 include/xorg/xacestr.h
@@ -146,7 +138,7 @@ include/xorg/xf86DDC.h
 include/xorg/xf86Modes.h
 include/xorg/xf86Module.h
 include/xorg/xf86Opt.h
-%%NEW%%include/xorg/xf86Optionstr.h
+include/xorg/xf86Optionstr.h
 include/xorg/xf86Optrec.h
 include/xorg/xf86Parser.h
 include/xorg/xf86Pci.h
@@ -165,6 +157,7 @@ include/xorg/xf86cmap.h
 include/xorg/xf86fbman.h
 include/xorg/xf86i2c.h
 include/xorg/xf86int10.h
+include/xorg/xf86platformBus.h
 include/xorg/xf86sbusBus.h
 include/xorg/xf86str.h
 include/xorg/xf86xv.h
@@ -181,54 +174,22 @@ include/xorg/xorgVersion.h
 include/xorg/xserver-properties.h
 include/xorg/xvdix.h
 include/xorg/xvmcext.h
-lib/xorg/modules/extensions/libdbe.la
-lib/xorg/modules/extensions/libdbe.so
-lib/xorg/modules/extensions/libdri.la
-lib/xorg/modules/extensions/libdri.so
-lib/xorg/modules/extensions/libdri2.la
-lib/xorg/modules/extensions/libdri2.so
-lib/xorg/modules/extensions/libextmod.la
-lib/xorg/modules/extensions/libextmod.so
-lib/xorg/modules/extensions/librecord.la
-lib/xorg/modules/extensions/librecord.so
 lib/xorg/modules/extensions/.xorg/libglx.so
-lib/xorg/modules/libexa.la
 lib/xorg/modules/libexa.so
-lib/xorg/modules/libfb.la
 lib/xorg/modules/libfb.so
-%%NEW%%lib/xorg/modules/libfbdevhw.so
-%%NEW%%lib/xorg/modules/libfbdevhw.la
-lib/xorg/modules/libint10.la
+lib/xorg/modules/libfbdevhw.so
 lib/xorg/modules/libint10.so
-lib/xorg/modules/libshadow.la
 lib/xorg/modules/libshadow.so
-lib/xorg/modules/libshadowfb.la
 lib/xorg/modules/libshadowfb.so
-lib/xorg/modules/libvbe.la
 lib/xorg/modules/libvbe.so
-lib/xorg/modules/libvgahw.la
 lib/xorg/modules/libvgahw.so
-lib/xorg/modules/libwfb.la
 lib/xorg/modules/libwfb.so
-lib/xorg/modules/libxaa.la
-lib/xorg/modules/libxaa.so
-%%OLD%%lib/xorg/modules/libxf8_16bpp.la
-%%OLD%%lib/xorg/modules/libxf8_16bpp.so
-%%OLD%%lib/xorg/modules/linux/libfbdevhw.la
-%%OLD%%lib/xorg/modules/linux/libfbdevhw.so
-lib/xorg/modules/multimedia/bt829_drv.la
 lib/xorg/modules/multimedia/bt829_drv.so
-lib/xorg/modules/multimedia/fi1236_drv.la
 lib/xorg/modules/multimedia/fi1236_drv.so
-lib/xorg/modules/multimedia/msp3430_drv.la
 lib/xorg/modules/multimedia/msp3430_drv.so
-lib/xorg/modules/multimedia/tda8425_drv.la
 lib/xorg/modules/multimedia/tda8425_drv.so
-lib/xorg/modules/multimedia/tda9850_drv.la
 lib/xorg/modules/multimedia/tda9850_drv.so
-lib/xorg/modules/multimedia/tda9885_drv.la
 lib/xorg/modules/multimedia/tda9885_drv.so
-lib/xorg/modules/multimedia/uda1380_drv.la
 lib/xorg/modules/multimedia/uda1380_drv.so
 lib/xorg/protocol.txt
 libdata/pkgconfig/xorg-server.pc
@@ -239,15 +200,6 @@ man/man1/gtf.1.gz
 man/man4/exa.4.gz
 man/man4/fbdevhw.4.gz
 man/man5/xorg.conf.5.gz
-%%NEW%%man/man5/xorg.conf.d.5.gz
+man/man5/xorg.conf.d.5.gz
 share/aclocal/xorg-server.m4
-@comment %%NEW%%@dirrm share/doc/xorg-server
-@dirrm include/xorg
-@dirrm lib/xorg/modules/extensions/.xorg
-@dirrm lib/xorg/modules/extensions
-@dirrm lib/xorg/modules/multimedia
-%%OLD%%@dirrm lib/xorg/modules/linux
-@dirrm lib/xorg/modules
-@dirrm lib/xorg
-%%NEW%%@dirrmtry etc/X11/xorg.conf.d
-%%NEW%%@dirrmtry etc/X11
+@dir etc/X11/xorg.conf.d
