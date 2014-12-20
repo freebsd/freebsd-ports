@@ -3,6 +3,7 @@
 
 PORTNAME=	caja-extensions
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -16,7 +17,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_MATE=	caja desktop
-USE_GNOME=	glib20 gnomehier intlhack
+USE_GNOME=	glib20 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

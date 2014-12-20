@@ -18,7 +18,7 @@ OPTIONS_SUB=	yes
 CONFLICTS_INSTALL=	xpad-current-[0-9]*
 
 USE_XORG=	x11 sm
-USE_GNOME=	gtk20 gnomehier intltool
+USE_GNOME=	gtk20 intltool
 USES=	pkgconfig gmake tar:bzip2
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
