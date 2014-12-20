@@ -26,7 +26,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DOCSDIR%%/FAQ \
 		%%DOCSDIR%%/NEWS \
 		%%DOCSDIR%%/dotzile.sample
-PLIST_DIRS=	%%DOCSDIR%%
 
 CPPFLAGS+=	-I${LOCALBASE}/include -isystem /usr/include/gnu
 LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex

@@ -15,7 +15,6 @@ RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem
 
 USES=		lua:52 tar:bzip2 gmake
 
-PLIST_DIRS=	share/doc/wordgrinder
 PLIST_FILES=	bin/wordgrinder \
 		share/doc/wordgrinder/README.wg \
 		man/man1/wordgrinder.1.gz
