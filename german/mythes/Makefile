@@ -18,7 +18,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/th_de_DE_v2.idx \
 		%%DATADIR%%/th_de_DE_v2.dat
-PLIST_DIRSTRY=	%%DATADIR%%
 
 DEALIASES=	de_AT de_BE de_CH de_LI de_LU
 
