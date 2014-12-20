@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytsk
-PORTVERSION=	20140506
+PORTVERSION=	20141220
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiScUxsUm54cG02RDA/ \
 		LOCAL/antoine
@@ -29,7 +29,7 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	${REINPLACE_CMD} -e "s|'/', 'usr', 'local'|'${LOCALBASE}'|" \
+	${REINPLACE_CMD} 's|"/", "usr", "local"|"${LOCALBASE}"|' \
 		${WRKSRC}/setup.py
 
 post-install:
