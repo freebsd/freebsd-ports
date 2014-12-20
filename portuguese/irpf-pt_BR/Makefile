@@ -85,10 +85,6 @@ PLIST_FILES+=	bin/${PORTNAME}
 PLIST_FILES+=	%%JAR_DIR%%/${jar:C/^lib\///}
 .endfor
 
-# jar dir
-PLIST_DIRS+=	\
-		%%JAR_DIR%%
-
 post-extract:
 	@( cd ${WRKSRC} && ${TAR} xf ./irpf.jar IRPF-Licenses.txt )
 

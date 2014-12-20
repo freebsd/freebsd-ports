@@ -25,7 +25,6 @@ PLIST_FILES=	%%DATADIR%%/pt_BR.aff \
 		%%DATADIR%%/pt_BR.dic \
 		%%DATADIR%%/pt_PT.aff \
 		%%DATADIR%%/pt_PT.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
