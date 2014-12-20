@@ -19,7 +19,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/th_fr_FR_v2.dat \
 		%%DATADIR%%/th_fr_FR_v2.idx
-PLIST_DIRSTRY=	%%DATADIR%%
 
 FRALIASES=	fr_BE fr_CA fr_CH fr_LU
 .for ALIAS in ${FRALIASES}
