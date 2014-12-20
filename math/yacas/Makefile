@@ -3,6 +3,7 @@
 
 PORTNAME=	yacas
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION:R}/
 
@@ -15,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
+USES=		libtool
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.options.mk>
 
