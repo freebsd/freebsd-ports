@@ -1,0 +1,18 @@
+Using ENV in Ruby is like using raw SQL statements - it feels wrong, because it
+is. If you agree, this gem is for you.
+
+The benefits over using ENV directly:
+- much friendlier stubbing in tests
+- you no longer have to care whether false is "0" or "false" or whatever
+- NO MORE ALL CAPS EVERYWHERE!
+- keys become methods
+- namespaces which can be passed around as objects
+- you can subclass!
+- you can marshal/unmarshal your own types automatically!
+- strict mode saves you from doing validation yourself
+- and there's more to come...
+- it's designed to be as lightweight and as fast as possible compared to ENV
+- designed to be both hackable and convenient
+
+WWW: https://github.com/e2/nenv
+RG:  https://rubygems.org/gems/nenv
