@@ -1374,6 +1374,7 @@ lib/wine/fakedlls/winefile.exe
 lib/wine/fakedlls/winemapi.dll
 lib/wine/fakedlls/winemenubuilder.exe
 lib/wine/fakedlls/winemine.exe
+%%MPG123%%lib/wine/fakedlls/winemp3.acm
 lib/wine/fakedlls/winemsibuilder.exe
 lib/wine/fakedlls/wineoss.drv
 lib/wine/fakedlls/winepath.exe
@@ -1907,6 +1908,7 @@ lib/wine/winefile.exe.so
 lib/wine/winemapi.dll.so
 lib/wine/winemenubuilder.exe.so
 lib/wine/winemine.exe.so
+%%MPG123%%lib/wine/winemp3.acm.so
 lib/wine/winemsibuilder.exe.so
 lib/wine/wineoss.drv.so
 lib/wine/winepath.exe.so
