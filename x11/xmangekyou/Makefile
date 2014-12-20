@@ -16,7 +16,6 @@ ALL_TARGET=	xmangekyou
 PORTDOCS=	COPYRIGHT.euc HISTORY.euc README.euc
 PLIST_FILES=	bin/xmangekyou lib/X11/XMangekyou/animation.dat \
 		man/man1/xmangekyou.1.gz
-PLIST_DIRS=	lib/X11/XMangekyou
 
 OPTIONS_DEFINE=	DOCS
 
