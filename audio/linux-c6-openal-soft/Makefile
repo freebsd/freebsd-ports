@@ -20,7 +20,6 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/lib/libopenal.so.1 usr/lib/libopenal.so.${PORTVERSION} \
 		usr/bin/openal-info etc/openal/alsoft.conf
-PLIST_DIRS=	etc/openal
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	COPYING
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

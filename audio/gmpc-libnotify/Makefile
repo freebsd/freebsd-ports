@@ -20,6 +20,5 @@ USE_GNOME=	glib20 gtk20 intltool
 USES=		gettext gmake libtool pkgconfig
 
 PLIST_FILES=	lib/gmpc/plugins/libnotifyplugin.so
-PLIST_DIRSTRY=	lib/gmpc/plugins lib/gmpc
 
 .include <bsd.port.mk>

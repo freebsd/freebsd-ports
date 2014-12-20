@@ -31,7 +31,6 @@ PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
 		ezstream_vorbis.xml meta.sh play.sh
 PLIST_FILES=	bin/ezstream bin/ezstream-file.sh etc/ezstream/ezstream.xml \
 		man/man1/ezstream-file.sh.1.gz man/man1/ezstream.1.gz
-PLIST_DIRS=	${ETCDIR}
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

@@ -24,7 +24,6 @@ USES=		gmake
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS} -fPIC -DPIC"
 
 PLIST_FILES=	lib/ladspa/caps.so share/ladspa/rdf/caps.rdf
-PLIST_DIRSTRY=	share/ladspa/rdf share/ladspa
 
 OPTIMIZED_CFLAGS_CFLAGS=	-O2 -ffast-math -funroll-loops
 

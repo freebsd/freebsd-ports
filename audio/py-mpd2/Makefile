@@ -38,7 +38,6 @@ PORTEXAMPLES_1=	errorhandling.py helloworld.py idle.py locking.py logger.py \
 		multitags.py randomqueue.py stats.py stickers.py
 PORTEXAMPLES_2=	summary.txt
 PORTEXAMPLES=	${PORTEXAMPLES_1} ${PORTEXAMPLES_2}
-PLIST_DIRS=	${DOCSDIR}/topics
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/topics

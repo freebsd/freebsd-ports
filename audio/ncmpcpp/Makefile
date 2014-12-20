@@ -38,7 +38,6 @@ PLIST_FILES=	bin/ncmpcpp \
 		%%DOCSDIR%%/NEWS \
 		%%DOCSDIR%%/AUTHORS \
 		%%DOCSDIR%%/COPYING
-PLIST_DIRS=	%%DOCSDIR%%
 
 .if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl

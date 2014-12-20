@@ -31,7 +31,6 @@ PLIST_FILES=	bin/ncmpc \
 		%%EXAMPLESDIR%%/config \
 		%%EXAMPLESDIR%%/keys \
 		%%EXAMPLESDIR%%/ncmpc.lirc
-PLIST_DIRS=%%EXAMPLESDIR%%
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext

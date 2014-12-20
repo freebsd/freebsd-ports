@@ -31,7 +31,6 @@ ENCODINGS_PATCH_DESC=	Enable ID3 tags recoding support
 
 XMMS_LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 XMMS_PLIST_FILES=	lib/xmms/General/libxmms_scrobbler.so
-XMMS_PLIST_DIRS=	lib/xmms/General lib/xmms
 XMMS_CONFIGURE_ENABLE=	xmms-plugin
 
 CONFIGURE_ARGS+=	--disable-bmp-plugin

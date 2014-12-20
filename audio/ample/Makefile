@@ -13,7 +13,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ample man/man1/ample.1.gz man/man5/ample.conf.5.gz \
 		man/man5/ample.html.5.gz
-PLIST_DIRSTRY=	var/log var
+PLIST_DIRS=	var/log
 
 post-configure:
 	@${REINPLACE_CMD} -E '/INSTALL/ s,\((bin|log)dir\),\(DESTDIR\)$$&,g' \

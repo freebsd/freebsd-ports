@@ -18,7 +18,6 @@ USES=		gmake
 MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -fPIC"
 
 PLIST_FILES=	lib/ladspa/aw.so
-PLIST_DIRSTRY=	lib/ladspa
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ladspa
