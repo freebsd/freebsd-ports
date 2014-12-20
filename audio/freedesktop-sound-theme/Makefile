@@ -4,7 +4,7 @@
 
 PORTNAME=	freedesktop-sound-theme
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	kwm
@@ -13,7 +13,7 @@ DISTNAME=	sound-theme-freedesktop-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound theme based on the FreeDesktop specification
 
-USE_GNOME=	gnomehier intlhack
+USE_GNOME=	intlhack
 USES=		gettext gmake tar:bzip2
 GNU_CONFIGURE=	yes
 

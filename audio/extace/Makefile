@@ -3,7 +3,7 @@
 
 PORTNAME=	extace
 PORTVERSION=	1.9.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/eXtace/${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Audio visualization plugin for the X Window System
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
 
 USES=		libtool pathfix pkgconfig
-USE_GNOME=	esound gnomehier gtk20
+USE_GNOME=	esound gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lm
