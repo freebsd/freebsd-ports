@@ -18,8 +18,6 @@ QMAKE_ARGS+=	CONFIG+=QwtDesigner \
 		PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}
 
 PLIST_FILES=	${QT_PLUGINDIR_REL}/designer/libqwt6_designer_plugin.so
-PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/designer \
-		${QT_PLUGINDIR_REL}
 
 STRIP_FILES=	${QT_PLUGINDIR_REL}/designer/libqwt6_designer_plugin.so
 
