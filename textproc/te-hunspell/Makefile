@@ -21,7 +21,6 @@ USES=		tar:bzip2
 
 PLIST_FILES=	%%DATADIR%%/te_IN.aff \
 		%%DATADIR%%/te_IN.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-build:
 	@cd ${WRKSRC}; \

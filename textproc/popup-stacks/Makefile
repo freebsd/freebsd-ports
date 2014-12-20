@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 STACKS=		English-German.cstack German-French.cstack
-PLIST_DIRS=	${EXAMPLESDIR}
 .for i in ${STACKS}
 PLIST_FILES+=	${EXAMPLESDIR}/${i}
 .endfor

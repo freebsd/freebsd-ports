@@ -30,6 +30,5 @@ PLIST_FILES=	lib/libcrm114.so \
 		include/crm114_sysincludes.h \
 		share/doc/libcrm114/HOWTO.txt \
 		share/doc/libcrm114/simple_demo.c
-PLIST_DIRS=	share/doc/libcrm114
 
 .include <bsd.port.mk>

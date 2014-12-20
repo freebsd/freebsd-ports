@@ -20,7 +20,6 @@ NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/th_bg_BG.dat \
 		%%DATADIR%%/th_bg_BG.idx
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

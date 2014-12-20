@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/hunspell
 
 PLIST_FILES=	%%DATADIR%%/uz_UZ.aff \
 		%%DATADIR%%/uz_UZ.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

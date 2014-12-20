@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/dictionaries
 
 PLIST_FILES=	%%DATADIR%%/so_SO.aff \
 		%%DATADIR%%/so_SO.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

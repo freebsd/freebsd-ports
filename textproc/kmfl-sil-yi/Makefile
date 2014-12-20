@@ -27,8 +27,6 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	${KMFL_DIR}/Yi7.kmn \
 		${KMFL_ICONS_DIR}/YiPinYin.bmp
-PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
-		${KMFL_DIR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${KMFL_DIR} ${STAGEDIR}${PREFIX}/${KMFL_ICONS_DIR}

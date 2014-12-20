@@ -28,7 +28,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTDOCS=	foiltex.dtx foiltex.dvi
 PORTEXAMPLES=	sampfoil.tex
 PLIST_FILES=	${FOIL_FILES:S,^,${FOIL_DIR}/,}
-PLIST_DIRS=	${FOIL_DIR}
 
 do-extract:
 	${MKDIR} ${WRKDIR}

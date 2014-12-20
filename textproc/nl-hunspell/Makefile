@@ -24,7 +24,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/nl_NL.aff \
 		%%DATADIR%%/nl_NL.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 NLALIASES=	nl_AW nl_BE
 .for ALIAS in ${NLALIASES}

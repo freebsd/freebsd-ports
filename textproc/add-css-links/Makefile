@@ -14,7 +14,6 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xhtml
 
 PLIST_FILES=	share/xsl/xhtml/add-css-links.xsl
-PLIST_DIRSTRY=	share/xsl/xhtml share/xsl
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xsl/xhtml

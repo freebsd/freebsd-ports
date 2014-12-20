@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/dictionaries
 
 PLIST_FILES=	%%DATADIR%%/ve.aff \
 		%%DATADIR%%/ve.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

@@ -20,7 +20,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/ro_RO.aff \
 		%%DATADIR%%/ro_RO.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

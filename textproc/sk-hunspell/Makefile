@@ -20,7 +20,6 @@ NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/sk_SK.aff \
 		%%DATADIR%%/sk_SK.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

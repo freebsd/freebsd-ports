@@ -30,7 +30,6 @@ OPTIONS_DEFAULT=	APACHE
 
 APACHE_USE=	APACHE=22+
 APACHE_CONFIGURE_ON=	--with-apache=${LOCALBASE}/sbin
-APACHE_PLIST_DIRSTRY=	www/cgi-bin www/data www/icons
 
 PORTDOCS=	*
 

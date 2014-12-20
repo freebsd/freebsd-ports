@@ -23,7 +23,6 @@ SRC_EL=		dictem.el dictem-lingvo-dsl.el dictem-elisp.el
 PLIST_FILES+=	${LISPDIR}/${f} \
 		${LISPDIR}/${f:S/.el$/.elc/}
 .endfor
-PLIST_DIRS+=	${LISPDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS+=	README AUTHORS NEWS COPYING TODO
