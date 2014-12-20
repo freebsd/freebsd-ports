@@ -23,7 +23,6 @@ NO_BUILD=	yes
 THEME_FILES=	README index.theme gtk-2.0/gtkrc
 THEME_DIR=	share/themes/Beastie/
 PLIST_FILES=	${THEME_FILES:S|^|${THEME_DIR}|}
-PLIST_DIRS=	${THEME_DIR}/gtk-2.0 ${THEME_DIR}
 
 .include <bsd.port.pre.mk>
 

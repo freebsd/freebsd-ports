@@ -21,8 +21,6 @@ DATADIR=	share/themes/Clearlooks/metacity-1
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/metacity-theme-1.xml
-PLIST_DIRS=	%%DATADIR%% \
-		share/themes/Clearlooks
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}
