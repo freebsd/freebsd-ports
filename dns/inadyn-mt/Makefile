@@ -22,8 +22,6 @@ MAKE_ARGS+=	INSTALL_PREFIX="${STAGEDIR}${PREFIX}/etc"
 PORTDOCS=	readme.html AUTHORS README
 PORTEXAMPLES=	*
 
-PLIST_DIRS=	etc/inadyn-mt/lang
-PLIST_DIRSTRY=	etc/inadyn-mt
 PLIST_FILES=	bin/inadyn-mt etc/inadyn-mt/lang/en.lng \
 		man/man5/inadyn-mt.conf.5.gz \
 		man/man8/inadyn-mt.8.gz

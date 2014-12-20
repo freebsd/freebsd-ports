@@ -20,7 +20,6 @@ PLIST_FILES=	sbin/dnsproxy etc/${PORTNAME}/dnsproxy.conf.sample \
 		man/man1/dnsproxy.1.gz
 
 SUB_FILES=	pkg-message
-PLIST_DIRS=	%%ETCDIR%%
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnsproxy ${STAGEDIR}${PREFIX}/sbin

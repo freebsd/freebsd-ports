@@ -19,7 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 PLIST_FILES=	sbin/autotrust man/man8/autotrust.8.gz \
 		etc/autotrust/autotrust.conf.sample
-PLIST_DIRS=	etc/autotrust
 
 do-patch:
 	${REINPLACE_CMD} \
