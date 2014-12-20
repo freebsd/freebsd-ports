@@ -25,7 +25,6 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	lib/X11/fonts/local/sgi/fonts.alias \
 		lib/X11/fonts/local/sgi/fonts.dir \
 		${FONTS:S!^!lib/X11/fonts/local/sgi/!:S!$!.pcf.gz!}
-PLIST_DIRS=	lib/X11/fonts/local/sgi
 
 FONTS=		Scr7 Scr8 Scr9 Scr10 Scr11 Scr12 \
 		Scr13 Scr14 Scr15 Scr16 Scr18 \

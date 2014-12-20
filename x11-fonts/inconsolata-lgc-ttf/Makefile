@@ -24,7 +24,6 @@ PLIST_FILES=	lib/X11/fonts/${FONTDIR}/inconsolatalgc.ttf \
 		lib/X11/fonts/${FONTDIR}/inconsolatalgcbold.ttf \
 		lib/X11/fonts/${FONTDIR}/inconsolatalgcbolditalic.ttf \
 		lib/X11/fonts/${FONTDIR}/inconsolatalgcitalic.ttf
-PLIST_DIRSTRY=	lib/X11/fonts/${FONTDIR}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/${FONTDIR}
