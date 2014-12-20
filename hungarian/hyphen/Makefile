@@ -18,7 +18,6 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/hyph_hu_HU.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

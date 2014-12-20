@@ -19,7 +19,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/th_hu_HU.dat \
 		%%DATADIR%%/th_hu_HU.idx
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
