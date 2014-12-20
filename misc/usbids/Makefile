@@ -16,7 +16,6 @@ NO_BUILD=	yes
 USES=		tar:xz
 
 PLIST_FILES=	%%DATADIR%%/usb.ids
-PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
