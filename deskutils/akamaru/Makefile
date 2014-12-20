@@ -3,7 +3,7 @@
 
 PORTNAME=	akamaru
 PORTVERSION=	0.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://people.freedesktop.org/~krh/
 DISTNAME=	${PORTNAME}
@@ -11,10 +11,10 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	Simple, but fun, physics engine prototype
 
-RUN_DEPENDS=xcompmgr:${PORTSDIR}/x11-wm/xcompmgr
+RUN_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr
 
 USES=		gmake pkgconfig
-USE_GNOME=	gconf2 gnomehier gtk20
+USE_GNOME=	gconf2 gtk20
 GCONF_SCHEMAS=	kiba.schemas
 SUB_FILES=	pkg-message
 
@@ -25,6 +25,7 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dock ${STAGEDIR}${PREFIX}/bin/kiba-dock
 	@${INSTALL_PROGRAM} ${WRKSRC}/akamaru ${STAGEDIR}${PREFIX}/bin/akamaru
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
 	@${INSTALL_DATA} ${WRKSRC}/kiba.schemas ${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/populate-dock.sh ${STAGEDIR}${DATADIR}
