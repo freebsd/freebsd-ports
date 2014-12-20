@@ -21,7 +21,6 @@ USE_PERL5=	run
 NO_BUILD=	yes
 
 PLIST_FILES=	libexec/nagios/check_hp_bladechassis man/man8/check_hp_bladechassis.8.gz
-PLIST_DIRSTRY=	libexec/nagios
 SHEBANG_FILES=	check_hp_bladechassis
 
 do-install:

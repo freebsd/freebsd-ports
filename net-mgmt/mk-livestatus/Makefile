@@ -30,7 +30,6 @@ NAGIOS4_CONFIGURE_ON=	--with-nagios4
 
 PLIST_FILES=	lib/mk-livestatus/unixcat \
 		lib/mk-livestatus/livestatus.o
-PLIST_DIRS=	lib/${PORTNAME}
 SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX=${PREFIX}
 
