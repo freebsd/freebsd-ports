@@ -28,8 +28,6 @@ PLIST_FILES=	${BINS:S,^,bin/,} ${SCRIPTS:S,^,bin/,} \
 		${DATA:S,^,%%DATADIR%%/pixmaps/,} \
 		man/man1/swm.1.gz man/man1/swmbg.1.gz man/man1/swmswitch.1.gz \
 		man/de/man1/swm.1.gz man/de/man1/swmbg.1.gz man/de/man1/swmswitch.1.gz
-PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
-PLIST_DIRSTRY=	man/de/man1 man/de
 
 BINS=		swm swmbg swmswitch
 SCRIPTS=	startswm

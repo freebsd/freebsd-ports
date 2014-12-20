@@ -32,8 +32,6 @@ PLIST_FILES=	bin/qlwm \
 		lib/qlwm/files/winlist.xpm \
 		lib/qlwm/qlwm \
 		man/man1/qlwm.1.gz
-PLIST_DIRS=	lib/qlwm/files \
-		lib/qlwm
 
 SUB_FILES=	qlwm
 

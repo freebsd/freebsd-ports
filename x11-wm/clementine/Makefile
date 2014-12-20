@@ -32,7 +32,6 @@ PLIST_FILES=	bin/clementine \
 		%%DATADIR%%/look-turq \
 		%%DATADIR%%/look-xemacs \
 		%%DATADIR%%/keys
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e \
