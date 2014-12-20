@@ -4,7 +4,7 @@
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.84
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -26,11 +26,9 @@ SOX_DESC=	sox (.au) support
 MPG123_DESC=	mpg123 support
 
 USE_XORG=	x11 xext xi xxf86dga ice sm
-USES=		tar:bzip2 gmake pathfix pkgconfig
-USE_GNOME=	gnomehier gtk20 libxml2
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
+USES=		tar:bzip2 gmake pathfix pkgconfig autoreconf
+USE_GNOME=	gtk20 libxml2
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsamidi \
 		--disable-scheduler
 INSTALLS_OMF=	yes
@@ -68,6 +66,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/${file} \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 .endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/mime-info
 .for f in terminatorX.mime terminatorX.keys
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/${f} \
 		${STAGEDIR}${PREFIX}/share/mime-info

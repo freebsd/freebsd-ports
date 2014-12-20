@@ -17,7 +17,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_MATE=	desktop panel
-USE_GNOME=	gnomehier glib20 gnomehier gtk20 intlhack libxml2
+USE_GNOME=	glib20 gtk20 intlhack libxml2
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--disable-pulseaudio \
 		--enable-gst-mixer-applet
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.panel.applet.mixer.gschema.xml \
 		org.mate.volume-control.gschema.xml
