@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Provides CLI interfaces for Ruby apps
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.8:${PORTSDIR}/devel/rubygem-apipie-bindings \
+RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.10:${PORTSDIR}/devel/rubygem-apipie-bindings \
 		rubygem-awesome_print>=1.1.0:${PORTSDIR}/devel/rubygem-awesome_print \
 		rubygem-clamp>=0.6.3_1:${PORTSDIR}/devel/rubygem-clamp \
 		rubygem-fastercsv>=1.5.5:${PORTSDIR}/devel/rubygem-fastercsv \
@@ -28,11 +28,8 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.pre.mk>
-
 post-install:
-		${MKDIR} ${STAGEDIR}${PREFIX}/etc/hammer
-		${MKDIR} ${STAGEDIR}${PREFIX}/etc/hammer/cli.modules.d
-		${INSTALL_DATA} ${FILESDIR}/cli_config.yml.sample ${STAGEDIR}${PREFIX}/etc/hammer/cli_config.yml.sample
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hammer/cli.modules.d
+	${INSTALL_DATA} ${FILESDIR}/cli_config.yml.sample ${STAGEDIR}${PREFIX}/etc/hammer
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

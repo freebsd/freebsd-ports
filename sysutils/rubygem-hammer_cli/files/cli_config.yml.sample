@@ -11,6 +11,9 @@
 # Enable/disable color output of logger in Clamp commands
 :watch_plain: false
 
+# Force reload of Apipie cache with every Hammer invocation
+:reload_cache: false
+
 # Directory where the logs are stored. The default is /var/log/hammer/ and the log file is named hammer.log
 :log_dir: '~/.hammer/log'
 
