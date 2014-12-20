@@ -45,7 +45,6 @@ PLIST_DATA=	lib/nonpareil/21.kml lib/nonpareil/21.obj \
 		lib/nonpareil/82143a.mod lib/nonpareil/82182a.mod
 
 PLIST_FILES=	${PLIST_EXECS} ${PLIST_DATA}
-PLIST_DIRS=	lib/nonpareil
 PORTDOCS=	CREDITS DEBUGGING README TODO
 
 post-patch:

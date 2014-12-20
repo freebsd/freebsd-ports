@@ -20,7 +20,6 @@ ALL_TARGET=	${PORTNAME}
 PORTDOCS=	cycle.ps.gz spim.ps.gz SPIM.html
 PLIST_FILES=	bin/spim %%DATADIR%%/exceptions.s \
 	man/man1/spim.1.gz
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.options.mk>
 

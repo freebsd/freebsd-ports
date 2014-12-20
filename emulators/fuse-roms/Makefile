@@ -22,7 +22,6 @@ DATADIR=	${PREFIX}/share/fuse
 ROMS=		128p-0.rom 128p-1.rom 256s-0.rom 256s-1.rom 256s-2.rom \
 		256s-3.rom gluck.rom if1-1.rom if1-2.rom opus.rom trdos.rom
 PLIST_FILES=	${ROMS:S|^|%%DATADIR%%/|}
-PLIST_DIRSTRY=	%%DATADIR%%
 
 RESTRICTED=	No explicit permission to redistribute
 
