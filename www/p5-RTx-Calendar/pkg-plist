@@ -1,12 +1,7 @@
 man/man3/RTx::Calendar.3.gz
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Tabs/Privileged
-%%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs/Default
-%%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/User/Elements/Tabs/Default
 %%RTHOME%%/plugins/RTx-Calendar/html/Elements/CalendarEvent
 %%RTHOME%%/plugins/RTx-Calendar/html/Elements/MyCalendar
-%%RTHOME%%/plugins/RTx-Calendar/html/NoAuth/Calendar/dhandler
-%%RTHOME%%/plugins/RTx-Calendar/html/Prefs/Calendar.html
-%%RTHOME%%/plugins/RTx-Calendar/html/Prefs/Elements/CalendarFeed
 %%RTHOME%%/plugins/RTx-Calendar/html/Search/Calendar.html
 %%RTHOME%%/plugins/RTx-Calendar/lib/RTx/Calendar.pm
 %%RTHOME%%/plugins/RTx-Calendar/static/css/calendar.css
