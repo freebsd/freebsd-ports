@@ -15,6 +15,5 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/rote-config include/rote/rote.h \
 		lib/librote.so.${PORTVERSION} lib/librote.so.0 lib/librote.so
-PLIST_DIRS=	include/rote
 
 .include <bsd.port.mk>

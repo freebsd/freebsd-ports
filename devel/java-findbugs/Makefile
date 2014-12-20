@@ -40,9 +40,6 @@ PLIST_FILES+=		%%DATADIR%%/lib/${f}
 .endfor
 PLIST_FILES+=		%%DATADIR%%/bin/${PORTNAME} \
 			bin/${PORTNAME}
-PLIST_DIRS+=		%%DATADIR%%/lib \
-			%%DATADIR%%/bin \
-			%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

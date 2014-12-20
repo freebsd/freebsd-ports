@@ -17,7 +17,6 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--prefix=${PREFIX} \
 		--exec-prefix=${PREFIX}
 
-PLIST_DIRS=	lib/mmap${PORTVERSION}
 PLIST_FILES=	lib/mmap${PORTVERSION}/pkgIndex.tcl \
 		lib/mmap${PORTVERSION}/libmmap${PORTVERSION}.so \
 		man/mann/tcl-mmap.n.gz

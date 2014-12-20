@@ -31,8 +31,6 @@ USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	distorm3
 PYDISTUTILS_PKGVERSION=	3
 
-PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/distorm3
-
 PLIST_FILES=	bin/dislib.py \
 		%%PYTHON_SITELIBDIR%%/distorm3/sample.py \
 		%%PYTHON_SITELIBDIR%%/distorm3/__init__.py \

@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 PLIST_FILES=	bin/chruby-exec share/chruby/auto.sh share/chruby/chruby.sh
-PLIST_DIRS=	share/chruby
 
 SUB_FILES=	pkg-message
 

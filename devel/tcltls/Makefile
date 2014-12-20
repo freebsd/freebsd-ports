@@ -31,7 +31,6 @@ PLIST_FILES=	include/tls.h \
 		lib/${TCLPKG}/lib${TCLPKG}.so \
 		lib/${TCLPKG}/pkgIndex.tcl \
 		lib/${TCLPKG}/tls.tcl
-PLIST_DIRS=	lib/${TCLPKG}
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>

@@ -22,8 +22,6 @@ PLIST_FILES=	bin/hub \
 		etc/bash_completion.d/hub \
 		share/zsh/site-functions/_hub \
 		man/man1/hub.1.gz
-PLIST_DIRSTRY=	etc/bash_completion.d \
-		share/zsh/site-functions share/zsh
 
 do-build:
 	@cd ${WRKSRC} && ${RAKE_BIN} standalone

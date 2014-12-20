@@ -39,7 +39,6 @@ LIBRARIES=	libc.so.0 libcrypto.so.0 libm.so.0
 
 PLIST_FILES=	${BINARIES:S/^/bin\/asmutils\//:S/bonus\///} \
 		${LINKS:S/^/bin\/asmutils\//} ${LIBRARIES:S/^/lib\/asmutils\//}
-PLIST_DIRS=	bin/asmutils lib/asmutils
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/beautify_php share/${PORTNAME}/beautify_php.php \
 		share/pear/beautify_php.class.inc
-PLIST_DIRS=	share/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/bin/php,${LOCALBASE}/bin/php,g' ${WRKSRC}/beautify_php

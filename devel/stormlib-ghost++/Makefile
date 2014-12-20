@@ -20,7 +20,6 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	include/StormLib/StormLib.h \
 		include/StormLib/StormPort.h \
 		lib/libStorm.so
-PLIST_DIRS=	include/StormLib
 
 WRKSRC=		${WRKDIR}/ghost/StormLib/stormlib
 

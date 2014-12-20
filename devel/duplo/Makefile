@@ -13,7 +13,6 @@ COMMENT=	Find duplicated code blocks in large C/C++/Java/C#/VB.Net systems
 USES=		gmake
 
 PLIST_FILES=	bin/duplo %%DATADIR%%/duplo.xsl
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CC,#CC," \

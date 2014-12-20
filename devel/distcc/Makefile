@@ -48,7 +48,6 @@ CONFIGURE_ARGS+=	--disable-rfc2553
 
 .if ${PORT_OPTIONS:MCOMPILER_LINKS}
 CCLINKDIR?=		libexec/distcc
-PLIST_DIRS=		${CCLINKDIR}
 GNU_COMPILERS=		34 42 43 44 45 46 47 48 -ooo
 DISTCC_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 DISTCC_COMPILERS+=	clang clang++ llvm-gcc llvm-c++ llvm-g++

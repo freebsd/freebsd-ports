@@ -19,8 +19,6 @@ PLIST_FILES=	bin/tass64 \
 		%%DOCSDIR%%/README \
 		%%DOCSDIR%%/README.html
 
-PLIST_DIRSTRY=	%%DOCSDIR%%
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/64tass ${STAGEDIR}${PREFIX}/bin/tass64
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

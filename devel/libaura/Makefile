@@ -23,7 +23,6 @@ PLIST_FILES=	lib/${SONAME} \
 		include/aura3/popen.h \
 		include/aura3/fspred.h \
 		include/aura3/mem.h
-PLIST_DIRS=	include/aura3
 PORTDOCS=	README
 
 MAKE_ENV=	SONAME=${SONAME} SOLINK=${SOLINK}

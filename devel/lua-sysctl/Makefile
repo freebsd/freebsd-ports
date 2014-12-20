@@ -13,7 +13,6 @@ USE_GITHUB=	yes
 USES=		pkgconfig lua
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/sysctl.lua \
 		%%LUA_MODLIBDIR%%/sysctl/core.so
-PLIST_DIRS=	%%LUA_MODLIBDIR%%/sysctl
 
 GH_ACCOUNT=	kAworu
 GH_PROJECT=	lua-${PORTNAME}

@@ -31,7 +31,6 @@ MAKE_ARGS+=	CXX=${CXX}
 
 .if ${PORT_OPTIONS:MDOCS}
 PLIST_FILES+=	share/doc/${PORTNAME}/README
-PLIST_DIRS+=	share/doc/${PORTNAME}
 .endif
 
 do-install:

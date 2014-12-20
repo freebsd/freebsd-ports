@@ -31,14 +31,6 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_DIRSTRY+=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_DIRSTRY+=	${OCAML_EXAMPLESDIR:S,^${PREFIX}/,,}
-.endif
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
