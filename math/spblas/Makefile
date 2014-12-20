@@ -23,7 +23,6 @@ MAKE_ENV=	LIB=spblas SHLIB_MAJOR="${SHLIB_MAJOR}" \
 NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	PROFILE DOCS EXAMPLES
 
-PLIST_DIRS=	${HDIR}
 PLIST_FILES=	${HEADERS:S|^|${HDIR}/|} lib/libspblas.a lib/libspblas.so \
 		lib/libspblas.so.${SHLIB_MAJOR}
 

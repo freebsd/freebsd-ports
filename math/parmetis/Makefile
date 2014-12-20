@@ -32,9 +32,6 @@ PLIST_FILES=	include/parmetis/metis.h \
 		lib/parmetis/libmetis.a \
 		lib/parmetis/libparmetis.a \
 		${DOCSDIR}/manual.pdf
-PLIST_DIRS=	include/parmetis \
-		lib/parmetis \
-		${DOCSDIR}
 
 .include <bsd.port.options.mk>
 

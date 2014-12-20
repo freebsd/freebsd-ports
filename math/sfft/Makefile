@@ -32,7 +32,6 @@ HDIR=		include/sfft
 MAKE_ENV=	LDADD="-lfftw3 ${LIBM}" LIB=sfft SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF=/dev/null SRCS="${SRCS}"
 
-PLIST_DIRS=	${HDIR}
 PLIST_FILES=	${HEADERS:S|^|${HDIR}/|} lib/libsfft.a lib/libsfft.so \
 		lib/libsfft.so.${SHLIB_MAJOR}
 

@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz \
 		%%DATADIR%%/${PORTNAME}.awk
-PLIST_DIRS=	%%DATADIR%%
 
 PORTDOCS=	*.html *.pdf *.ps *.txt
 
