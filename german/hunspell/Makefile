@@ -28,7 +28,6 @@ PLIST_FILES=	%%DATADIR%%/de_AT.aff \
 		%%DATADIR%%/de_CH.dic \
 		%%DATADIR%%/de_DE.aff \
 		%%DATADIR%%/de_DE.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 CHALIASES=	de_LI
 DEALIASES=	de_BE de_LU

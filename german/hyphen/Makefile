@@ -18,7 +18,6 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/hyph_de_DE.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 DEALIASES=	de_AT de_BE de_CH de_LI de_LU
 .for ALIAS in ${DEALIASES}
