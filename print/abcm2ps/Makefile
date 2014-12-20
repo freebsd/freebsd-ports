@@ -18,7 +18,6 @@ PORTDOCS=	Changes README deco.abc newfeatures.abc sample.abc sample2.abc\
 PLIST_FILES=	bin/abcm2ps %%DATADIR%%/fbook.fmt %%DATADIR%%/fonts.fmt \
 		%%DATADIR%%/flute.fmt %%DATADIR%%/landscape.fmt \
 		%%DATADIR%%/tight.fmt %%DATADIR%%/musicfont.fmt
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 

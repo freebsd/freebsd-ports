@@ -3,6 +3,7 @@
 
 PORTNAME=	gv
 PORTVERSION=	3.7.4
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU/${PORTNAME}
 
@@ -27,14 +28,9 @@ INFO=		gv
 PLIST_FILES=	bin/gv \
 		bin/gv-update-userconfig \
 		%%DATADIR%%/gv_system.ad \
-		%%DATADIR%%/safe-gs-workdir/.keep_me \
 		lib/X11/app-defaults/GV \
 		man/man1/gv.1.gz \
 		man/man1/gv-update-userconfig.1.gz
-PLIST_DIRS=	%%DATADIR%%/safe-gs-workdir \
-		%%DATADIR%%
-
-post-install:
-	@${TOUCH} ${STAGEDIR}${DATADIR}/safe-gs-workdir/.keep_me
+PLIST_DIRS=	%%DATADIR%%/safe-gs-workdir
 
 .include <bsd.port.mk>

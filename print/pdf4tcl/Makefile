@@ -23,7 +23,6 @@ PLIST_FILES=	lib/${PKGNAME}/glyph2uni.tcl \
 		lib/${PKGNAME}/pdf4tcl.tcl \
 		lib/${PKGNAME}/stdmetrics.tcl \
 		man/mann/pdf4tcl.n.gz
-PLIST_DIRS=	lib/${PKGNAME}
 
 .include <bsd.port.options.mk>
 
