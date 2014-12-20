@@ -9,6 +9,8 @@ bin/testAMRAudioStreamer
 bin/testDVVideoStreamer
 bin/testH264VideoStreamer
 bin/testH264VideoToTransportStream
+bin/testH265VideoStreamer
+bin/testH265VideoToTransportStream
 bin/testMP3Receiver
 bin/testMP3Streamer
 bin/testMPEG1or2AudioVideoStreamer
@@ -20,6 +22,8 @@ bin/testMPEG2TransportReceiver
 bin/testMPEG2TransportStreamTrickPlay
 bin/testMPEG2TransportStreamer
 bin/testMPEG4VideoStreamer
+bin/testMKVStreamer
+bin/testOggStreamer
 bin/testOnDemandRTSPServer
 bin/testRTSPClient
 bin/testRelay
@@ -92,6 +96,16 @@ include/liveMedia/H264VideoRTPSink.hh
 include/liveMedia/H264VideoRTPSource.hh
 include/liveMedia/H264VideoStreamDiscreteFramer.hh
 include/liveMedia/H264VideoStreamFramer.hh
+include/liveMedia/H264or5VideoFileSink.hh
+include/liveMedia/H264or5VideoRTPSink.hh
+include/liveMedia/H264or5VideoStreamDiscreteFramer.hh
+include/liveMedia/H264or5VideoStreamFramer.hh
+include/liveMedia/H265VideoFileServerMediaSubsession.hh
+include/liveMedia/H265VideoFileSink.hh
+include/liveMedia/H265VideoRTPSink.hh
+include/liveMedia/H265VideoRTPSource.hh
+include/liveMedia/H265VideoStreamDiscreteFramer.hh
+include/liveMedia/H265VideoStreamFramer.hh
 include/liveMedia/InputFile.hh
 include/liveMedia/JPEGVideoRTPSink.hh
 include/liveMedia/JPEGVideoRTPSource.hh
@@ -144,6 +158,9 @@ include/liveMedia/MediaSink.hh
 include/liveMedia/MediaSource.hh
 include/liveMedia/MultiFramedRTPSink.hh
 include/liveMedia/MultiFramedRTPSource.hh
+include/liveMedia/OggFile.hh
+include/liveMedia/OggFileServerDemux.hh
+include/liveMedia/OggFileSink.hh
 include/liveMedia/OnDemandServerMediaSubsession.hh
 include/liveMedia/OutputFile.hh
 include/liveMedia/PassiveServerMediaSubsession.hh
@@ -168,8 +185,12 @@ include/liveMedia/StreamReplicator.hh
 include/liveMedia/T140TextRTPSink.hh
 include/liveMedia/TCPStreamSink.hh
 include/liveMedia/TextRTPSink.hh
+include/liveMedia/TheoraVideoRTPSink.hh
+include/liveMedia/TheoraVideoRTPSource.hh
 include/liveMedia/VP8VideoRTPSink.hh
 include/liveMedia/VP8VideoRTPSource.hh
+include/liveMedia/VP9VideoRTPSink.hh
+include/liveMedia/VP9VideoRTPSource.hh
 include/liveMedia/VideoRTPSink.hh
 include/liveMedia/VorbisAudioRTPSink.hh
 include/liveMedia/VorbisAudioRTPSource.hh
@@ -177,6 +198,7 @@ include/liveMedia/WAVAudioFileServerMediaSubsession.hh
 include/liveMedia/WAVAudioFileSource.hh
 include/liveMedia/liveMedia.hh
 include/liveMedia/liveMedia_version.hh
+include/liveMedia/ourMD5.hh
 include/liveMedia/uLawAudioFilter.hh
 lib/libBasicUsageEnvironment.so
 lib/libBasicUsageEnvironment.so.0
