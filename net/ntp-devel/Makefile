@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION}-RC
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
+FORBIDDEN=	http://www.kb.cert.org/vuls/id/852879
+
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
 USES=		pathfix shebangfix libtool
