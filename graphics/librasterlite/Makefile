@@ -3,7 +3,7 @@
 
 PORTNAME=	librasterlite
 PORTVERSION=	1.1g
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/librasterlite-sources/
 

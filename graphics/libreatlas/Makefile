@@ -3,7 +3,7 @@
 
 PORTNAME=	libreatlas
 PORTVERSION=	1.0.0a
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
