@@ -57,6 +57,51 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4033d826-87dd-11e4-9079-3c970e169bc2">
+    <topic>ntp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<name>ntp-devel</name>
+	<range><lt>4.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CERT reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/852879">
+	  <p>The Network Time Protocol (NTP) provides networked
+	    systems with a way to synchronize time for various
+	    services and applications. ntpd version 4.2.7 and
+	    pervious versions allow attackers to overflow several
+	    buffers in a way that may allow malicious code to
+	    be executed. ntp-keygen prior to version 4.2.7p230
+	    also uses a non-cryptographic random number generator
+	    when generating symmetric keys.</p>
+          <p>The buffer overflow vulnerabilities in ntpd may
+	    allow a remote unauthenticated attacker to execute
+	    arbitrary malicious code with the privilege level
+	    of the ntpd process. The weak default key and
+	    non-cryptographic random number generator in
+	    ntp-keygen may allow an attacker to gain
+	    information regarding the integrity checking
+	    and authentication encryption schemes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9293</cvename>
+      <cvename>CVE-2014-9294</cvename>
+      <cvename>CVE-2014-9295</cvename>
+      <cvename>CVE-2014-9296</cvename>
+      <url>http://www.kb.cert.org/vuls/id/852879</url>
+    </references>
+    <dates>
+      <discovery>2014-12-19</discovery>
+      <entry>2014-12-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1d567278-87a5-11e4-879c-000c292ee6b8">
     <topic>git -- Arbitrary command execution on case-insensitive filesystems</topic>
     <affects>
