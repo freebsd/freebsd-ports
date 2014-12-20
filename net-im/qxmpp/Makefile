@@ -18,8 +18,7 @@ USE_QT4=	gui network qtestlib xml uic_build moc_build \
 USE_GITHUB=	yes
 GH_ACCOUNT=	qxmpp-project
 GH_TAGNAME=	v${PORTVERSION}
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-cc09061
+GH_COMMIT=	cc09061
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|pkgconfig|../libdata/pkgconfig|g' \
