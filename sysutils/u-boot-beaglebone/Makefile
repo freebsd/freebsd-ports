@@ -20,7 +20,6 @@ USES=		gmake tar:bzip2
 SSP_UNSAFE=	yes # cross-LD does not support -fstack-protector
 
 U_BOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
-PLIST_DIRS=	${U_BOOT_DIR} share/u-boot
 PLIST_FILES=	${U_BOOT_DIR}/bb-uboot.img \
 		${U_BOOT_DIR}/MLO \
 		${U_BOOT_DIR}/README

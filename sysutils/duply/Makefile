@@ -21,7 +21,6 @@ NO_BUILD=	yes
 
 PORTDOCS=	INSTALL.txt gpl-2.0.txt
 PLIST_FILES=	bin/duply ${PERIODICDIR}/${PERIODICFILE}
-PLIST_DIRSTRY=	etc/periodic ${PERIODICDIR}
 PERIODICFILE?=	300.duply
 PERIODICDIR?=	${PREFIX}/etc/periodic/backup
 SUB_FILES=	pkg-message periodic_duply

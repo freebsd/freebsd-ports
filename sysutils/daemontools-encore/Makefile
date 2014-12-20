@@ -58,8 +58,6 @@ PLIST_FILES=	\
 	%%DOCSDIR%%/CHANGES.djb \
 	${MANFILES:S,^,man/man8/,:S,$,.gz,}
 
-PLIST_DIRSTRY=	%%DOCSDIR%%
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/svscanboot.sh ${STAGEDIR}${PREFIX}/bin/svscanboot
 .for binfile in envdir envuidgid fghack multilog pgrphack readproctitle setlock setuidgid softlimit supervise svc svok svscan svstat svup tai64n tai64nlocal

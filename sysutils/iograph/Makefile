@@ -17,7 +17,6 @@ PLIST_FILES=	bin/iograph \
 		%%DATADIR%%/in.gif \
 		%%DATADIR%%/out.gif \
 		%%DATADIR%%/iograph.gif
-PLIST_DIRS=	%%DATADIR%%
 
 GNU_CONFIGURE=	yes
 

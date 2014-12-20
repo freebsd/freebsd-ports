@@ -27,7 +27,6 @@ LIBS+=		-L${LOCALBASE}/lib
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz \
 		${DOCSDIR_REL}/manual.css ${DOCSDIR_REL}/manual.xml \
 		${DOCSDIR_REL}/bg.png ${DOCSDIR_REL}/html.xsl
-PLIST_DIRS=	${DOCSDIR_REL}
 
 # XXX should probably be converted to OptionsNG
 .if !defined(WANT_OPENLDAP_SASL) || defined(WITHOUT_SASL)

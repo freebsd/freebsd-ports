@@ -34,6 +34,5 @@ PLIST_FILES=	bin/dunst \
 		share/dunst/dunstrc \
 		man/man1/dunst.1.gz \
 		share/dbus-1/services/org.knopwob.dunst.service
-PLIST_DIRS=	share/dunst
 
 .include <bsd.port.mk>

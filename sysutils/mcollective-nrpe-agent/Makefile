@@ -21,7 +21,7 @@ PLIST_FILES=	share/mcollective/agent/nrpe.ddl \
 		share/mcollective/data/nrpe_data.ddl \
 		share/mcollective/data/nrpe_data.rb \
 		sbin/check-mc-nrpe
-PLIST_DIRSTRY=	share/mcollective/agent \
+PLIST_DIRS=	share/mcollective/agent \
 		share/mcollective/aggregate \
 		share/mcollective/application \
 		share/mcollective/data
@@ -30,7 +30,7 @@ NO_BUILD=	yes
 
 do-install:
 
-.for dir in ${PLIST_DIRSTRY}
+.for dir in ${PLIST_DIRS}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${dir}
 .endfor
 

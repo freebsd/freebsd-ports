@@ -25,7 +25,6 @@ PLIST_FILES=	bin/autojump \
 		share/autojump/autojump.bash \
 		share/autojump/autojump.zsh \
 		share/autojump/icon.png
-PLIST_DIRS=	share/autojump
 
 OPTIONS_DEFINE=		ZSH
 OPTIONS_DEFAULT=	ZSH

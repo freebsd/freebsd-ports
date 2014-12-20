@@ -17,7 +17,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_FILES=	bin/torsmo \
 		man/man1/torsmo.1.gz \
 		%%EXAMPLESDIR%%/torsmorc.sample
-PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	XFT DOUBLE_BUFFER DOCS

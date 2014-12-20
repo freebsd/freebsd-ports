@@ -20,7 +20,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 PLIST_FILES=	bin/fluent-cat bin/fluent-debug bin/fluent-gem bin/fluentd \
 		"@sample etc/fluentd/fluent.conf.sample"
-PLIST_DIRS=	etc/fluentd/plugin etc/fluentd
 RUBYGEM_AUTOPLIST=	yes
 USE_RC_SUBR=	fluentd
 USERS=		fluentd

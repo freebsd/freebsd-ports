@@ -26,9 +26,6 @@ MAKE_ARGS=	CC="${CC} ${CFLAGS} $$(pkg-config gtk+-2.0 --cflags)" \
 CFLAGS+=	-fPIC -DFREEBSD -DGKRELLM2
 
 PLIST_FILES=	libexec/gkrellm2/plugins-gkrellmd/gkrelltopd.so
-PLIST_DIRS=	libexec/gkrellm2/plugins-gkrellmd \
-		libexec/gkrellm2/plugins \
-		libexec/gkrellm2
 
 .if defined(GKRELLM_SERVER_ONLY)
 ALL_TARGET=	server
