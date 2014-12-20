@@ -1,31 +1,35 @@
 # Created by: gahr
 # $FreeBSD$
 
-PORTNAME=	xerces-c3
+PORTNAME=	xerces-c
 PORTVERSION=	3.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	xerces/c/3/sources
-DISTNAME=	xerces-c-${PORTVERSION}
+MASTER_SITES=	APACHE/xerces/c/3/sources
+PKGNAMESUFFIX=	3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
 
-CONFLICTS=	xerces-c2-[0-9]* xerces-c2-devel-[0-9]*
+LICENSE=	APACHE20
 
-USES=		gmake pathfix libtool
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+CONFLICTS_INSTALL=	xerces-c2-[0-9]* xerces-c2-devel-[0-9]*
+
+CONFIGURE_ARGS=	--enable-netaccessor-socket \
 		--enable-transcoder-iconv \
-		--enable-netaccessor-socket
-MAKE_ENV+=	XERCESCROOT=${WRKSRC}
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+MAKE_ENV=	XERCESCROOT=${WRKSRC}
+USE_LDCONFIG=	yes
+USES=		gmake libtool pathfix
+
+PLIST_SUB=	MAJOR_VER=${PORTVERSION:R}
 
 post-install:
-	${LN} -sf libxerces-c-${PORTVERSION:R}.so ${STAGEDIR}${PREFIX}/lib/libxerces-c.so.${PORTVERSION:R:R}
+	${LN} -s libxerces-c-${PORTVERSION:R}.so ${STAGEDIR}${PREFIX}/lib/libxerces-c.so.${PORTVERSION:R:R}
 
-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+regression-test test: build
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
