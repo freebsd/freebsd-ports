@@ -21,7 +21,6 @@ USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/j-ftp
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-PLIST_DIRS=	%%DATADIR%%
 PLIST_FILES=	bin/jftp %%DATADIR%%/jftp.jar
 SUB_FILES=	jftp.sh
 

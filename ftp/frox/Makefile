@@ -25,7 +25,6 @@ PORTDOCS=	SECURITY CREDITS ChangeLog FAQ.html FAQ-1.html FAQ-2.html \
 		FAQ-8.html
 PLIST_FILES=	sbin/frox ${EXAMPLESDIR:S,${PREFIX}/,,}/frox.conf \
 		man/man1/frox.1.gz man/man5/frox.conf.5.gz
-PLIST_DIRS=	${EXAMPLESDIR:S,${PREFIX}/,,}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
