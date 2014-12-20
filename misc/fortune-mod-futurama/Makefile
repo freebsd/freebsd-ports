@@ -15,7 +15,6 @@ USES=	tar:bzip2
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	share/games/fortune/futurama share/games/fortune/futurama.dat
-PLIST_DIRS=	share/games/fortune share/games
 
 do-build:
 	@cd ${WRKSRC} && /usr/games/strfile futurama

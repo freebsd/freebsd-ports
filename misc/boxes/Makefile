@@ -24,7 +24,6 @@ GLOBALCONF=	${DATADIR}/boxes-config
 PLIST_FILES=	bin/${PORTNAME} \
 		${DATADIR_REL}/${PORTNAME}-config \
 		man/man1/${PORTNAME}.1.gz
-PLIST_DIRS=	${DATADIR_REL}
 
 PORTDOCS=	README
 

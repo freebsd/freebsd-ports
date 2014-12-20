@@ -23,8 +23,6 @@ PLIST_FILES=	bin/xpns \
 		libexec/xpns/pns \
 		%%DATADIR%%/pns.hlp \
 		%%DATADIR%%/pns.shell
-PLIST_DIRS=	%%DATADIR%% \
-		libexec/xpns
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/xpns

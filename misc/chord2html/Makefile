@@ -17,7 +17,6 @@ NO_BUILD=	yes
 SHEBANG_FILES=	chord2html
 
 PLIST_FILES=	bin/chord2html share/chord2html/chord2html.css man/man1/chord2html.1.gz
-PLIST_DIRS=	share/chord2html
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s,%%PREFIX%%,${PREFIX},g ; \

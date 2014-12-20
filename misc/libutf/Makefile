@@ -19,7 +19,6 @@ ALL_TARGET=	tst
 
 PLIST_FILES=	include/ure.h include/utf.h lib/libutf.a \
 		man/man3/ure.3.gz man/man3/utf.3.gz %%DATADIR%%/langcoll.utf
-PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/ure.h ${STAGEDIR}${PREFIX}/include

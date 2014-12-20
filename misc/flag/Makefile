@@ -21,7 +21,6 @@ PLIST_FILES=	bin/flag
 
 .if ${PORT_OPTIONS:MBASH}
 PLIST_FILES+=	share/flag/bash_prompt.sh
-PLIST_DIRS+=	share/flag
 .endif
 
 post-extract:
