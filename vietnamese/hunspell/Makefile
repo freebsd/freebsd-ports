@@ -20,7 +20,6 @@ PROJECTHOST=	hunspell-spellcheck-vi
 
 PLIST_FILES=	%%DATADIR%%/vi_VN.aff \
 		%%DATADIR%%/vi_VN.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
