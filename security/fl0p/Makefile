@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	ChangeLog CREDITS README TODO
 PLIST_FILES=	bin/fl0p %%DATADIR%%/fl0p.fp
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e \

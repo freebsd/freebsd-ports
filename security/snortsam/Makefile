@@ -22,7 +22,6 @@ USE_RC_SUBR=	snortsam
 SUB_FILES=	pkg-message \
 		pkg-install
 
-PLIST_DIRS=	etc/snortsam
 PLIST_FILES=	sbin/snortsam \
 		%%ETCDIR%%/snortsam.conf.sample \
 		%%ETCDIR%%/country-rootservers.conf.sample \

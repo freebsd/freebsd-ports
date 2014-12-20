@@ -34,7 +34,6 @@ PLIST_FILES=	bin/authforce \
 		%%DATADIR%%/password.lst \
 		%%DATADIR%%/username.lst \
 		%%DATADIR%%/userpass.lst
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=		CURL NLS
 

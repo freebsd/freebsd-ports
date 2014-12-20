@@ -21,8 +21,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
-PLIST_DIRS=	etc/courier/clamcour
-PLIST_DIRSTRY=	etc/courier libexec/filters
 PLIST_FILES=	libexec/filters/clamcour man/man1/clamcour.1.gz
 
 post-patch:
