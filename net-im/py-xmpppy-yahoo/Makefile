@@ -28,7 +28,6 @@ FILES_CURPHOO=	YahooMD5.py __init__.py cpformat.py md5crypt.py pysha.py yahoo_fn
 PFILES=		${FILES:S.^.%%PYTHON_SITELIBDIR%%/xmpp/yahoo/.} \
 		${FILES_CURPHOO:S.^.%%PYTHON_SITELIBDIR%%/xmpp/yahoo/curphoo/.}
 PLIST_FILES=	${PFILES} ${PFILES:S.$.c.} ${PFILES:S.$.o.} etc/${UNIQUENAME:S.-._.}.conf.sample
-PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/xmpp/yahoo/curphoo %%PYTHON_SITELIBDIR%%/xmpp/yahoo
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD} BINDIR=${PYTHON_SITELIBDIR}/xmpp/yahoo \
 		JABBER_USER=${JABBER_USER}
 USE_RC_SUBR=	${UNIQUENAME:S/-/_/}

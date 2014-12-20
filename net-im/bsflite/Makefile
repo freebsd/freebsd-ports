@@ -10,7 +10,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Lightweight command line AIM client
 
 PLIST_FILES=	bin/bsflite %%EXAMPLESDIR%%/config-example
-PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	COPYING ChangeLog README
 
 OPTIONS_DEFINE=	DOCS

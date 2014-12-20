@@ -19,7 +19,6 @@ CONFIGURE_ARGS=	--with-tclinclude=${TCL_INCLUDEDIR} \
 
 PORTEXAMPLES=	bartender confuse echofunctions sample.icbrc
 PLIST_FILES=	bin/icb %%DATADIR%%/icbserverdb
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	EXAMPLES
 
