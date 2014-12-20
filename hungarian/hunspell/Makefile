@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/hu_HU-${PORTVERSION}
 
 PLIST_FILES=	%%DATADIR%%/hu_HU.aff \
 		%%DATADIR%%/hu_HU.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
