@@ -14,7 +14,6 @@ COMMENT=	Simple HTTP scanner
 USES=		dos2unix
 
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/requests.txt %%DATADIR%%/subdomains.txt
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -E '/^#define/s!([a-z]*\.txt)!${DATADIR}/\1!' ${WRKSRC}/${DISTNAME:tl}.c

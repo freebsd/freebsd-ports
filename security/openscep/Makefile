@@ -19,8 +19,6 @@ USE_APACHE=	22+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PLIST_DIRSTRY=	www/cgi-bin
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-html-install-dir="${PREFIX}/www/openscep" \

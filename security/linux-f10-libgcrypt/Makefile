@@ -16,7 +16,6 @@ RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libgcrypt.so.11 lib/libgcrypt.so.11.5.2
-PLIST_DIRS=	etc/gcrypt
 DESCR=		${.CURDIR}/../libgcrypt/pkg-descr
 
 post-install:

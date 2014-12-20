@@ -32,7 +32,6 @@ PLIST_FILES=	bin/ykchalresp \
 		man/man1/ykchalresp.1.gz \
 		man/man1/ykinfo.1.gz \
 		man/man1/ykpersonalize.1.gz
-PLIST_DIRS=	include/ykpers-1
 
 OPTIONS_DEFINE=	STATIC
 

@@ -25,7 +25,6 @@ PLIST_FILES=	bin/smtpscan \
 		man/man1/smtpscan.1.gz \
 		%%DATADIR%%/fingerprints \
 		%%DATADIR%%/tests
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e \
