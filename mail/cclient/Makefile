@@ -32,7 +32,7 @@ USE_LDCONFIG=	yes
 
 SSL_USE=		OPENSSL=yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
 PKGMESSAGE=	pkg-message-ssl
@@ -111,4 +111,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/c-client/OSCFLAGS ${STAGEDIR}${PREFIX}/include/c-client
 	${INSTALL_DATA} ${PORTREV_H} ${STAGEDIR}${PREFIX}/include/c-client
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
