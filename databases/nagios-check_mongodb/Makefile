@@ -22,7 +22,6 @@ python_OLD_CMD=	"/usr/bin/env\ python"
 python_CMD=	${PYTHON_CMD}
 NO_BUILD=	yes
 PLIST_FILES=	libexec/nagios/check_mongodb
-PLIST_DIRSTRY=	libexec/nagios
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
