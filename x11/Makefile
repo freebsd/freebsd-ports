@@ -268,6 +268,7 @@
     SUBDIR += sterm
     SUBDIR += stjerm
     SUBDIR += swarp
+    SUBDIR += sxhkd
     SUBDIR += sxpc
     SUBDIR += tabbed
     SUBDIR += temperature.app
