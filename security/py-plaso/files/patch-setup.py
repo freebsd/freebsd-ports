@@ -1,6 +1,6 @@
---- ./setup.py.orig	2014-05-25 08:56:12.000000000 +0000
-+++ ./setup.py	2014-06-06 12:47:49.000000000 +0000
-@@ -106,5 +106,5 @@
+--- setup.py.orig	2014-12-20 17:43:35 UTC
++++ setup.py
+@@ -119,5 +119,5 @@ setup(
          'Programming Language :: Python',
      ],
      package_dir={'plaso': 'plaso'},
