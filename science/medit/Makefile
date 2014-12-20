@@ -42,7 +42,6 @@ DISTFILES+=	meshes.tar.gz
 EXTRACT_ONLY+=	meshes.tar.gz
 MESHES=		DEFAULT.medit ozark.gis part.bb part.mesh thepart.mesh
 PLIST_FILES+=	${MESHES:S|^|%%EXAMPLESDIR%%/|}
-PLIST_DIRS=	%%EXAMPLESDIR%%
 . endif
 
 post-extract:

@@ -24,7 +24,6 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 USE_FPC=	yes
 
 PLIST_FILES=	bin/${PORTNAME} bin/mol2svg %%DATADIR%%/color.conf
-PLIST_DIRS=	%%DATADIR%%
 
 do-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/fpc ${EXTRACT_ONLY} -S2 -O3)
