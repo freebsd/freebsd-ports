@@ -26,8 +26,6 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	${KMFL_DIR}/mozhi_1.1.0.kmn \
 		${KMFL_ICONS_DIR}/mozhi.bmp
-PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
-		${KMFL_DIR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${KMFL_DIR} ${STAGEDIR}${PREFIX}/${KMFL_ICONS_DIR}

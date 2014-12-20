@@ -22,7 +22,6 @@ PLIST_FILES=	%%DATADIR%%/sh_YU.aff \
 		%%DATADIR%%/sh_YU.dic \
 		%%DATADIR%%/sr_YU.aff \
 		%%DATADIR%%/sr_YU.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

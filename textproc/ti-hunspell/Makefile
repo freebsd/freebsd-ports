@@ -20,7 +20,6 @@ PLIST_FILES=	%%DATADIR%%/ti_ER.dic \
 		%%DATADIR%%/ti_ER.aff \
 		%%DATADIR%%/ti_ET.dic \
 		%%DATADIR%%/ti_ET.aff
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

@@ -21,7 +21,6 @@ USES=		tar:bzip2
 
 PLIST_FILES=	%%DATADIR%%/wa.aff \
 		%%DATADIR%%/wa.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

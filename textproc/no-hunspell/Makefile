@@ -21,7 +21,6 @@ PLIST_FILES=	%%DATADIR%%/nb_NO.aff \
 		%%DATADIR%%/nb_NO.dic \
 		%%DATADIR%%/nn_NO.aff \
 		%%DATADIR%%/nn_NO.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 post-extract:
 	@${MKDIR} ${WRKSRC}

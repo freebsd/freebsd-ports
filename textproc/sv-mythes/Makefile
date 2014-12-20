@@ -22,7 +22,6 @@ PLIST_FILES=	%%DATADIR%%/th_sv_SE.dat \
 		%%DATADIR%%/th_sv_SE.idx \
 		%%DATADIR%%/th_sv_FI.dat \
 		%%DATADIR%%/th_sv_FI.idx
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

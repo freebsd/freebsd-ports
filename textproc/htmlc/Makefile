@@ -15,7 +15,6 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 USES=		gmake tar:tgz
 
 PLIST_FILES=	bin/htmlc bin/htmlc.byt share/htmlc/env
-PLIST_DIRS=	share/htmlc
 PORTDOCS=	LICENSE INSTALL README JoeCaml.gif rocq.gif copyright-eng.htm \
 		copyright-fra.htm eng.htm fra.htm index.htm
 

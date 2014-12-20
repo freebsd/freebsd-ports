@@ -30,7 +30,6 @@ PLIST_FILES=	include/kmfl/libkmfl.h \
 		lib/libkmfl.so \
 		lib/libkmfl.so.0.0.0 \
 		lib/libkmfl.so.0
-PLIST_DIRSTRY=	include/kmfl share/doc/kmfl
 
 post-patch:
 	@${REINPLACE_CMD} \

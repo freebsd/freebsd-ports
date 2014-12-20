@@ -22,7 +22,6 @@ PLIST_FILES=	share/guile/sdom/common.scm \
 		share/guile/sdom/events.scm \
 		share/guile/sdom/ls.scm \
 		share/guile/sdom/parser.scm
-PLIST_DIRS=	share/guile/sdom
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/guile/sdom

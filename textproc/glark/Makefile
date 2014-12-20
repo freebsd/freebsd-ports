@@ -25,7 +25,6 @@ PLIST_FILES=	bin/glark \
 		share/glark/optproc.rb \
 		share/glark/regexp.rb \
 		share/glark/text.rb
-PLIST_DIRS=	share/glark
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/glark ${STAGEDIR}${PREFIX}/bin

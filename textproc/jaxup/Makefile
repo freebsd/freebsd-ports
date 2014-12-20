@@ -35,7 +35,6 @@ DOCS_ALL_TARGET=docs
 
 PLIST_FILES+=	%%DATADIR%%/jaxup-xupdater.jar bin/jaxup-xupdater \
 		%%JAVAJARDIR%%/${PORTNAME}.jar
-PLIST_DIRS=	%%DATADIR%%
 
 PORTDOCS=	LICENSE.txt api index.html jaxup_files xupdate-wd.html xupdate-wd_files
 

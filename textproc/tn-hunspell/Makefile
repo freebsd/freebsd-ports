@@ -20,7 +20,6 @@ PLIST_FILES=	%%DATADIR%%/tn_BW.aff \
 		%%DATADIR%%/tn_BW.dic \
 		%%DATADIR%%/tn_ZA.aff \
 		%%DATADIR%%/tn_ZA.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

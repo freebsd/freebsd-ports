@@ -19,7 +19,6 @@ NO_BUILD=	yes
 CGIDIR=		${PREFIX}/www/cgi-bin
 
 PLIST_FILES=	bin/man2html man/man1/man2html.1.gz www/cgi-bin/man.cgi
-PLIST_DIRS=	www/cgi-bin
 
 post-patch:
 	${REINPLACE_CMD} -e "s#/usr/local/bin/perl#${PERL5}#" ${WRKSRC}/man2html
