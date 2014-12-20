@@ -27,7 +27,6 @@ MAKE_ENV+=	CLEANFILES="${CLEANFILES}" \
 		SRCS="${SRCS}" SRCCONF="${SRCCONF}"
 NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	PROFILE DOCS EXAMPLES
-PLIST_DIRS=	include/${PORTNAME}
 PLIST_FILES=	${DISTFILES:M*.h\:1:S|:1$||:S|^|include/${PORTNAME}/|:} \
 		lib/lib${LIB}.a lib/lib${LIB}.so \
 		lib/lib${LIB}.so.${SHLIB_MAJOR}

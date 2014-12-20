@@ -10,6 +10,5 @@ LIBR_SLAVEPORT=	yes
 MASTERDIR=	${.CURDIR}/../R
 PLIST=	${.CURDIR}/pkg-plist
 PLIST_FILES=	lib/R/lib/libR.a
-PLIST_DIRSTRY=	lib/R/lib lib/R
 
 .include "${MASTERDIR}/Makefile"

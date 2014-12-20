@@ -21,7 +21,6 @@ OPTIONS_DEFINE=	DOCS
 PLIST_FILES=	bin/lambda \
 		share/lambda/definitions \
 		share/lambda/definitions_with_numbers
-PLIST_DIRS=	share/lambda
 
 DOCS=		lambda.html lambdamanual.html user_manual_style.css
 PORTDOCS=	*
