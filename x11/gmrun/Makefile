@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--disable-stlport
 
 PORTDOCS=	README
 PLIST_FILES=	bin/gmrun %%DATADIR%%/gmrunrc
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 

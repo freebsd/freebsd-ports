@@ -21,7 +21,6 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL README TODO wmdrawerrc.example
 PLIST_FILES=	bin/wmdrawer man/man1/wmdrawer.1x.gz %%DATADIR%%/beastie.png
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 

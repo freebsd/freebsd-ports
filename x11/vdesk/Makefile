@@ -13,7 +13,6 @@ COMMENT=	Command-line utility for setting up and using virtual desktops
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
-PLIST_DIRS=	share/doc/vdesk
 PLIST_FILES=	bin/vdesk
 
 USE_AUTOTOOLS=	autoconf

@@ -17,7 +17,6 @@ USES=		bison imake
 USE_XORG=	xft x11 xext xi xtst
 
 PLIST_FILES=	bin/xstroke %%ETCDIR%%/alphabet man/man1/xstroke.1.gz
-PLIST_DIRS=	%%ETCDIR%%
 
 CFLAGS+=	-I.
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

@@ -19,7 +19,6 @@ PORTDOCS=	README README.windowmanagers
 PLIST_FILES=	bin/3ddesk bin/3ddeskd etc/3ddesktop.conf \
 		%%DATADIR%%/digits.bmp \
 		man/man1/3ddesk.1.gz man/man1/3ddeskd.1.gz
-PLIST_DIRS=	%%DATADIR%%
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT  -pthread
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread

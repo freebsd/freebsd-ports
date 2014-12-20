@@ -18,7 +18,6 @@ PORTDOCS=	README
 PLIST_FILES=	bin/gtkterm2 \
 		share/locale/de/LC_MESSAGES/gtkterm2.mo \
 		%%DATADIR%%/pixmaps/gtkterm2.png
-PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
