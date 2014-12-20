@@ -21,7 +21,6 @@ PLIST_FILES=	%%DATADIR%%/th_ru_RU_v2.dat \
 		%%DATADIR%%/th_ru_RU_v2.idx \
 		%%DATADIR%%/th_ru_UA_v2.dat \
 		%%DATADIR%%/th_ru_UA_v2.idx
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
