@@ -14,6 +14,5 @@ COMMENT=	Port searching tool that supports search by packing list files
 LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	bin/portsearch %%DATADIR%%/Makefile
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>
