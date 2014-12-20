@@ -37,10 +37,6 @@ NLS_USES=		gettext
 NLS_PLIST_FILES+=	man/${lang}/man1/help2man.1.gz \
 			share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
-.for lang in ${LANGS}
-NLS_PLIST_DIRS+=	man/${lang}/man1 \
-			man/${lang}
-.endfor
 
 .include <bsd.port.options.mk>
 
