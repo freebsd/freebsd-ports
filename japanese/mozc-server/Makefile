@@ -174,7 +174,6 @@ PLIST_FILES+=	libexec/mozc_tool \
 		bin/mozc_tool \
 		%%DATADIR%%/icons/product_logo.png \
 		%%DATADIR%%/icons/update_uptodate.png
-PLIST_DIRS+=	%%DATADIR%%/icons ${DATADIR_REL}
 SUB_FILES+=	mozc_tool
 
 do-build-mozc_tool:

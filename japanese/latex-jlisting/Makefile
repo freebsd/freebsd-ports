@@ -14,8 +14,6 @@ NO_BUILD=	yes
 USE_TEX=	latex texhash
 JLDIR=		${TEXMFLOCALDIR}/tex/latex/jlisting
 PLIST_FILES=	${JLDIR}/jlisting.sty
-PLIST_DIRS=	${JLDIR}
-PLIST_DIRSTRY=	${TEXMFLOCALDIR}/tex/latex ${TEXMFLOCALDIR}/tex
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

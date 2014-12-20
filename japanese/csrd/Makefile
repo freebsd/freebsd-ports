@@ -24,7 +24,6 @@ ALL_TARGET=	csrd
 
 OPTIONS_DEFINE=	DOCS
 
-PLIST_DIRS=	%%DATADIR%%
 PLIST_FILES=	bin/csrd %%DATADIR%%/csrd.fmt %%DATADIR%%/csrd.gai \
 		%%DATADIR%%/quiet.fmt %%DATADIR%%/quiet.gai
 
