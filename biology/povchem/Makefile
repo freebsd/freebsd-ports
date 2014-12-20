@@ -25,7 +25,6 @@ CPPFLAGS+=	-DDATADIR=\"${DATADIR}\" \
 		-DSYSCONFDIR=\"${PREFIX}/etc\"
 
 PLIST_FILES=	bin/povchem etc/povchem.cfg %%DATADIR%%/periodic.tab
-PLIST_DIRS=	%%DATADIR%%
 
 post-extract:
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${TAR} -cf - ${DISTFILES}) | \

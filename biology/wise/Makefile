@@ -23,7 +23,6 @@ SUB_FILES=	pkg-message
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	${BINFILES:S,^,bin/,} ${DATAFILES:S,^,%%DATADIR%%/,}
-PLIST_DIRS=	%%DATADIR%%
 
 #
 # Actually want an 'ALL_TARGET = all perl' which then requires

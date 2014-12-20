@@ -21,7 +21,6 @@ PORTDOCS=	*
 PLIST_FILES=	${BIN_FILES:S|^|bin/|} \
 		${BIN_FILES:S|^|lib/${PORTNAME}/|} \
 		${DATA_FILES:S|^|lib/${PORTNAME}/|}
-PLIST_DIRS=	lib/${PORTNAME}
 
 BIN_FILES=	avida avida-viewer
 DATA_FILES=	analyze.cfg avida.cfg default-gx.org \
