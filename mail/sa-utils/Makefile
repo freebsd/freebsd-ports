@@ -23,7 +23,6 @@ SUB_FILES=	sa-utils
 PERIODIC_DAILY=	etc/periodic/daily
 
 PLIST_FILES=	${PERIODIC_DAILY}/sa-utils
-PLIST_DIRS=	${PERIODIC_DAILY} ${PERIODIC_DAILY:H}
 
 .include <bsd.port.options.mk>
 

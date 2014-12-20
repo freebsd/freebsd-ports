@@ -50,7 +50,6 @@ PLIST_FILES=	%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr.pm		\
 		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr/Preprocessor.pm \
 		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr/Scanset.pm \
 		%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr/Scoring.pm
-PLIST_DIRS=	%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr
 
 #.if defined(WITH_OCRAD)
 #RUN_DEPENDS+=	ocrad:${PORTSDIR}/graphics/ocrad

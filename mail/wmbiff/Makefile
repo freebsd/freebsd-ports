@@ -24,9 +24,6 @@ PLIST_FILES=	bin/wmbiff \
 		%%DATADIR%%/sample.wmbiffrc \
 		%%DATADIR%%/skins/wmbiff-master-contrast.xpm \
 		%%DATADIR%%/skins/wmbiff-master-led.xpm
-PLIST_DIRS=	%%DATADIR%%/skins \
-		%%DATADIR%% \
-		lib/wmbiff
 
 .include <bsd.port.pre.mk>
 

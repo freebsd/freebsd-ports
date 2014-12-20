@@ -19,7 +19,6 @@ MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		INSTALL_DATA="${INSTALL_DATA}" MKDIR="${MKDIR}" WRKSRC="${WRKSRC}"
 
 PLIST_FILES=	sbin/bent sbin/mps etc/mps/pop3d.conf-dist
-PLIST_DIRS=	etc/mps
 
 USE_RC_SUBR=	mps
 
