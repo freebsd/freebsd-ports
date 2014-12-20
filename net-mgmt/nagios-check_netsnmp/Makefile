@@ -18,7 +18,6 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	libexec/nagios/check_netsnmp %%DOCSDIR%%/check_netsnmp.html
-PLIST_DIRS=	%%DOCSDIR%%
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios

@@ -18,7 +18,6 @@ USES=		perl5
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	${NAGIOS_PLUGIN_DIR}/check_spamd.pl
-PLIST_DIRS=	${NAGIOS_PLUGIN_DIR}
 
 NAGIOS_PLUGIN_DIR=	libexec/nagios
 

@@ -33,7 +33,6 @@ PLIST_FILES=	libexec/nagios/check_berkeleydb_locks.pl \
 		libexec/nagios/check_ldap_syncrepl_status.pl \
 		libexec/nagios/check_ldap_time.pl \
 		libexec/nagios/restart_slapd.sh
-PLIST_DIRSTRY=	libexec/nagios
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

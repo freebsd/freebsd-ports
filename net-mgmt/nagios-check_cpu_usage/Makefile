@@ -12,7 +12,6 @@ COMMENT=	Nagios plug-in to check CPU usage
 
 NO_BUILD=	yes
 
-PLIST_DIRSTRY=	libexec/nagios
 PLIST_FILES=	libexec/nagios/check_cpu_usage
 
 do-install:
