@@ -1,5 +1,5 @@
---- deps/leo_storage/priv/leo_storage.schema.orig	2014-06-15 20:35:05.000000000 +0300
-+++ deps/leo_storage/priv/leo_storage.schema	2014-06-15 20:35:22.000000000 +0300
+--- deps/leo_storage/priv/leo_storage.schema.orig	2014-12-17 11:21:38.000000000 +0200
++++ deps/leo_storage/priv/leo_storage.schema	2014-12-20 00:06:58.000000000 +0200
 @@ -37,7 +37,7 @@
   "sasl.sasl_error_logger",
   [
@@ -28,15 +28,15 @@
                   lists:map(fun(X) ->
                                     list_to_atom(X)
 @@ -146,7 +146,7 @@
-          Pathes = cuttlefish_util:conf_get_value("obj_containers.path", Conf),
-          Pathes_1 = case string:tokens(Pathes, "[ , ]") of
-                         [] ->
--                            ["./avs"];
-+                            ["%%LEOFS_DBDIR%%/leo_storage/avs"];
-                         Tokens_1 ->
-                             Tokens_1
-                     end,
-@@ -482,7 +482,7 @@
+          Paths = cuttlefish_util:conf_get_value("obj_containers.path", Conf),
+          Paths_1 = case string:tokens(Paths, "[ , ]") of
+                        [] ->
+-                           ["./avs"];
++                           ["%%LEOFS_DBDIR%%/leo_storage/avs"];
+                        Tokens_1 ->
+                            Tokens_1
+                    end,
+@@ -780,7 +780,7 @@
   "leo_storage.log_dir",
   [
    {datatype, string},
@@ -45,7 +45,7 @@
   ]}.
  
  %% @doc Output log file(s) - app
-@@ -491,7 +491,7 @@
+@@ -789,7 +789,7 @@
   "leo_storage.log_appender",
   [
    {datatype, string},
@@ -54,7 +54,7 @@
   ]}.
  
  {translation, "leo_storage.log_appender",
-@@ -506,7 +506,7 @@
+@@ -804,7 +804,7 @@
   "leo_redundant_manager.log_dir_member",
   [
    {datatype, string},
@@ -63,7 +63,7 @@
   ]}.
  
  %% @doc Output log file(s) - ring
-@@ -515,7 +515,7 @@
+@@ -813,7 +813,7 @@
   "leo_redundant_manager.log_dir_ring",
   [
    {datatype, string},
@@ -71,8 +71,8 @@
 +  {default, "%%LEOFS_LOGDIR%%/leo_storage/ring"}
   ]}.
  
- 
-@@ -527,7 +527,7 @@
+ %% @doc is enable data-diagnosis log
+@@ -833,7 +833,7 @@
   "queue_dir",
   "leo_storage.queue_dir",
   [
@@ -81,7 +81,7 @@
   ]}.
  
  %% @doc Directory of SNMP agent configuration
-@@ -535,7 +535,7 @@
+@@ -841,7 +841,7 @@
   "snmp_agent",
   "leo_storage.snmp_agent",
   [
@@ -90,7 +90,7 @@
   ]}.
  
  
-@@ -769,7 +769,7 @@
+@@ -1070,7 +1070,7 @@
   "nodename",
   "vm_args.-name",
   [
@@ -99,7 +99,7 @@
   ]}.
  
  %% @doc Cookie for distributed node communication.  All nodes in the same cluster
-@@ -817,7 +817,7 @@
+@@ -1121,7 +1121,7 @@
   "erlang.crash_dump",
   "vm_args.-env ERL_CRASH_DUMP",
   [
@@ -108,7 +108,7 @@
   ]}.
  
  %% @doc Raise the ETS table limit
-@@ -856,5 +856,5 @@
+@@ -1202,5 +1202,5 @@
   "snmp_conf",
   "vm_args.-config",
   [
