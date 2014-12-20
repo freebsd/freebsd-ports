@@ -22,6 +22,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/zoom %%DATADIR%%/zoomrc
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>

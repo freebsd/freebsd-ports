@@ -29,7 +29,6 @@ PLIST_FILES=	bin/xteddy bin/xteddy_test bin/xtoys \
 		%%DATADIR%%/xpenguin.png %%DATADIR%%/xpuppy.png \
 		%%DATADIR%%/xruessel.png %%DATADIR%%/xteddy.png \
 		%%DATADIR%%/xtrouble.png %%DATADIR%%/xtuxxy.png
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 .for f in configure xteddy.c

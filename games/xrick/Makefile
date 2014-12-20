@@ -17,7 +17,6 @@ USES=		gmake tar:tgz
 USE_SDL=	sdl
 
 PLIST_FILES=	bin/xrick man/man6/xrick.6.gz share/xrick/data.zip
-PLIST_DIRS=	share/xrick
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sysarg_args_data = NULL|sysarg_args_data = "${PREFIX}/share/xrick/data.zip"|' ${WRKSRC}/src/sysarg.c

@@ -32,7 +32,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/maxqi.6.gz \
 		%%DATADIR%%/fmax.ini \
 		%%DATADIR%%/qmax.ini
-PLIST_DIRS=	%%DATADIR%%
 
 USES=		gmake perl5
 USE_PERL5=	build

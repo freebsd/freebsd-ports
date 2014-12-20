@@ -19,7 +19,6 @@ MAKEFILE=	GNUmakefile
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/oldrunner ${DATADIR_REL}/original.lvl man/man6/oldrunner.6.gz
-PLIST_DIRS=	${DATADIR_REL}
 
 post-patch:
 	${REINPLACE_CMD} -e '/LEVELS_PATH/s,/usr/local/share/oldrunner,${DATADIR},g' \

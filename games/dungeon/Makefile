@@ -28,7 +28,6 @@ PLIST_FILES=	bin/dungeon \
 		man/man6/dungeon.6.gz \
 		%%DATADIR%%/dundat \
 		%%PORTDOCS%%%%DOCSDIR%%/dungn32b.zip
-PLIST_DIRS=	%%DATADIR%%
 
 PORTDOCS=	HISTORY MANIFEST README
 

@@ -32,7 +32,6 @@ INSTALLS_ICONS=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png \
 		%%DATADIR%%/${PORTNAME}.pak
-PLIST_DIRS=	%%DATADIR%%
 
 PORTDOCS=	index.html
 

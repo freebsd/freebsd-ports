@@ -21,7 +21,6 @@ PLIST_FILES=	bin/xwelltris \
 		share/xwelltris/wellcuts.gif \
 		share/xwelltris/wellintro.gif \
 		share/xwelltris/welltris.scores
-PLIST_DIRS=	share/xwelltris
 GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xi xrandr
 

@@ -21,7 +21,6 @@ PLIST_FILES=	bin/xwordpy \
 		%%DATADIR%%/crossword-clock.png \
 		%%DATADIR%%/crossword-solve.png \
 		%%DATADIR%%/layout-rtb.png
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%DATADIR%%|\'${DATADIR}\'|g" \

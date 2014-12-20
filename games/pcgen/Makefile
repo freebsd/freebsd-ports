@@ -25,7 +25,6 @@ SUB_FILES=	pcgen.sh
 PLIST_FILES=	bin/pcgen
 PORTDATA=	*
 PORTDOCS=	*
-PLIST_DIRS=	%%DATADIR%%/characters
 
 OPTIONS_DEFINE=	DOCS
 
