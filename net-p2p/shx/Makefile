@@ -72,8 +72,6 @@ PLIST_FILES=	bin/hx				\
 		share/examples/shx/hxrc		\
 		share/examples/shx/hxvars
 
-PLIST_DIRS=	share/examples/shx
-
 do-install:
 	${CP} -fv ${WRKSRC}/run/hx ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/${PORTNAME}

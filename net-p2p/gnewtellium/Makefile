@@ -19,6 +19,5 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 PLIST_FILES=	bin/gnewtellium %%DATADIR%%/pixmaps/gnewtellium.xpm
-PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 
 .include <bsd.port.mk>

@@ -23,7 +23,6 @@ LDFLAGS+=	-L${LUA_LIBDIR}
 PLIST_FILES=	share/verlihub/scripts/ptokax.lua.inc \
 		share/verlihub/scripts/ptokaxtest.lua \
 		share/verlihub/scripts/script.lua
-PLIST_DIRS=	share/verlihub/scripts
 
 OPTIONS_DEFINE=	SOCKET
 SOCKET_DESC=	Build with LuaSocket support
