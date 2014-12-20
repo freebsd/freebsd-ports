@@ -21,7 +21,6 @@ MAKEFILE=	Makefile.x11
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/dtcyber %%EXAMPLESDIR%%/cyber.ini %%EXAMPLESDIR%%/cos.tap
-PLIST_DIRS=	%%EXAMPLESDIR%%
 
 pre-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.x11

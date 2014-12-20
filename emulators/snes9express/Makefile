@@ -24,7 +24,6 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/snes.s9xskin \
 		%%DATADIR%%/snsp.s9xskin
-PLIST_DIRS=	%%DATADIR%%
 
 # fix build with clang
 CFLAGS+= -Wno-return-type

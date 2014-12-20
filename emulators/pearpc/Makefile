@@ -20,7 +20,6 @@ BROKEN_ia64=	Internal compiler error on ia64
 
 PORTEXAMPLES=	ppccfg.example
 PLIST_FILES=	bin/ppc man/man1/ppc.1.gz %%DATADIR%%/video.x
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=		DEBUG EXAMPLES OPTIMIZED_CFLAGS SDL
 
