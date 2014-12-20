@@ -4,7 +4,7 @@
 
 PORTNAME=	libgee
 PORTVERSION=	0.6.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	06
@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomehier introspection:build
+USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

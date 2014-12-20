@@ -12,9 +12,10 @@ COMMENT=	Library for managing OS information for virtualization
 LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 
 USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomehier glib20 libxml2 libxslt introspection:build intlhack
+USE_GNOME=	glib20 libxml2 libxslt introspection:build intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-tests --disable-vala
 CPPFLAGS+=	-I${LOCALBASE}/include
