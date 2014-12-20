@@ -28,7 +28,6 @@ PLIST_FILES=	bin/gsview \
 		bin/gsview-help \
 		etc/gsview/printer.ini \
 		man/man1/gsview.1.gz
-PLIST_DIRS=	etc/gsview
 PORTDOCS=	gsview.css cdorder.txt regorder.txt Readme.htm LICENCE \
 		gvxct.htm gvxde.htm gvxen.htm gvxes.htm gvxfr.htm gvxgr.htm \
 		gvxit.htm gvxnl.htm gvxru.htm gvxse.htm gvxsk.htm

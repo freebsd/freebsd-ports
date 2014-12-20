@@ -16,7 +16,6 @@ USE_GHOSTSCRIPT_RUN=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/font2svg %%DATADIR%%/encodings %%DATADIR%%/font2svg.ps
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^#!/bin/bash|#!/usr/bin/env bash| ; \

@@ -48,8 +48,6 @@ CONFIGURE_ARGS+=--without-gimp2
 .if ${OSVERSION} > 1000000
 PLIST_FILES+=	libexec/cups/backend/gutenprint52+usb \
 		share/cups/usb/net.sf.gimp-print.usb-quirks
-PLIST_DIRS+=	libexec/cups/backend \
-		share/cups/usb
 .endif
 LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client \
 		libcupsimage.so:${PORTSDIR}/print/cups-image

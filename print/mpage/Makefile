@@ -22,7 +22,6 @@ PLIST_FILES=	bin/mpage %%DATADIR%%/CP850.PC %%DATADIR%%/ISO+STD+OTH \
 		%%DATADIR%%/ISO-8859.1 %%DATADIR%%/ISO-8859.15 \
 		%%DATADIR%%/ISO-Latin.1 %%DATADIR%%/ISO-Latin.2 \
 		man/man1/mpage.1.gz
-PLIST_DIRS=	%%DATADIR%%
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
