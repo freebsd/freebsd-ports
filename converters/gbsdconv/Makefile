@@ -28,6 +28,5 @@ PLIST_FILES=	bin/gbsdconv \
 		%%DATADIR%%/gbsdconv.png \
 		%%DATADIR%%/gbsdconv.xml \
 		%%DATADIR%%/gbsdconv2.png
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>
