@@ -31,7 +31,6 @@ python_CMD=	${PYTHON_CMD}
 PYCACHE_DIR=	# empty
 PYCACHE_FILE=	${PORTNAME}
 .else
-PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/__pycache__
 PYCACHE_DIR=	__pycache__/
 PYCACHE_FILE=	${PORTNAME}.cpython-${PYTHON_SUFFIX}
 .endif
