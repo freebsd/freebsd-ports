@@ -22,7 +22,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	%%ETCDIR%%/ldap.conf %%ETCDIR%%/modules/ldap.so \
 		%%ETCDIR%%/yptransitd.conf sbin/yptransitd
-PLIST_DIRS=	%%ETCDIR%%/modules %%ETCDIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, $$(CONFDIR), $${DESTDIR}$$(CONFDIR),' \

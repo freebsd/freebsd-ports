@@ -16,7 +16,6 @@ GNU_CONFIGURE=	yes
 BINMODE=	4755
 
 PLIST_FILES=	bin/wmnetmon share/examples/wmnetmon/wmnetmonrc
-PLIST_DIRS=	share/examples/wmnetmon
 
 OPTIONS_DEFINE=	EXAMPLES
 

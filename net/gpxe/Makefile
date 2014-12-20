@@ -19,7 +19,6 @@ BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux \
 USES=		gmake perl5
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-PLIST_DIRS=	%%DATADIR%%
 PLIST_FILES=	%%DATADIR%%/gpxe.dsk \
 		%%DATADIR%%/gpxe.usb \
 		%%DATADIR%%/gpxe.iso

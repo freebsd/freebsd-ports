@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1/
 PLIST_FILES=	bin/dhcperf \
 		share/doc/dhcperf/dcsevaltutorial.pdf \
 		share/doc/dhcperf/dhcperf.pdf man/man1/dhcperf.1.gz
-PLIST_DIRS=	share/doc/dhcperf
 
 post-extract:
 	${TAR} -C ${WRKSRC} -zxvf ${WRKSRC}/${PORTNAME}-${PORTVERSION}_1.tgz

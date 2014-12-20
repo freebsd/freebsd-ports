@@ -15,7 +15,6 @@ USES=		motif tk
 USE_XORG=	xt
 
 PORTDOCS=	tcpclient.log tcpserver.log
-PLIST_DIRS=	share/tcpillust
 PLIST_FILES=	bin/tcpillust \
 		man/man1/tcpillust.1.gz \
 		share/tcpillust/tcpillust.tcl \
