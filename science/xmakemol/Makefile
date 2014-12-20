@@ -20,6 +20,5 @@ PLIST_FILES=	bin/xmake_anim.pl \
 		bin/xmakemol \
 		man/man1/xmakemol.1.gz \
 		%%DATADIR%%/elements
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>
