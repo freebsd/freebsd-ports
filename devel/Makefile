@@ -1025,6 +1025,7 @@
     SUBDIR += libfreefare
     SUBDIR += libftdi
     SUBDIR += libftdi1
+    SUBDIR += libfwsi
     SUBDIR += libg19
     SUBDIR += libg19draw
     SUBDIR += libgalago
