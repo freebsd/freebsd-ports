@@ -3,6 +3,7 @@
 
 PORTNAME=	mythweb
 PORTVERSION=	0.27
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	mythplugin-
 DISTNAME=	mythweb-${PORTVERSION}
@@ -16,13 +17,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythweb
 GH_TAGNAME=	v${PORTVERSION}
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-b1df7d2
+GH_COMMIT=	b1df7d2
 
 NO_BUILD=	yes
 USE_PHP=	spl session mysql pcre posix json
 SUB_FILES=	pkg-message
 REINPLACE_ARGS=	-i ""
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
@@ -45,8 +46,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/data
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} "! -name *.orig")
-
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	${CHMOD} -R 775 ${STAGEDIR}${WWWDIR}/data
 
 .include <bsd.port.mk>
