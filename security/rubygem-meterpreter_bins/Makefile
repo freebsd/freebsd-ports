@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	meterpreter_bins
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.12
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
