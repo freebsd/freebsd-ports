@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-12-15 21:21:15 UTC
++++ Makefile
+@@ -9,7 +9,7 @@ LDFLAGS += -L$(PREFIX)/lib
+ 
+ PREFIX    ?= /usr/local
+ BINPREFIX  = $(PREFIX)/bin
+-MANPREFIX  = $(PREFIX)/share/man
++MANPREFIX  = $(PREFIX)/man
+ 
+ SRC = $(wildcard *.c)
+ OBJ = $(SRC:.c=.o)
