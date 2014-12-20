@@ -17,8 +17,9 @@ USE_QT4=	designer gui network xml qmake_build uic_build moc_build \
 USE_GITHUB=	yes
 GH_ACCOUNT=	0xd34df00d
 GH_PROJECT=	Qross
+GH_COMMIT=	82e1fd2
 
-WRKSRC=		${WRKDIR}/0xd34df00d-Qross-82e1fd2/src
+WRKSRC_SUBDIR=	src
 
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_SUB=	yes
