@@ -4,7 +4,7 @@
 
 PORTNAME=	dasher
 PORTVERSION=	4.10.1
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	2
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	GNOME
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USES=		gettext gmake pathfix pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix intlhack gnomehier libgnomeui atspi \
+USE_GNOME=	gnomeprefix intlhack libgnomeui atspi \
 		libwnck gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
