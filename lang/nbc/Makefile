@@ -30,7 +30,6 @@ PLIST_FILES=		bin/nbc \
 			include/nbc/NXCDefs.h \
 			include/nbc/NBCCommon.h \
 			include/nbc/NXTDefs.h
-PLIST_DIRS=		include/nbc
 
 PORTDOCS=		Changelog \
 			Readme

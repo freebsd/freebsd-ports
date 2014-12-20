@@ -24,7 +24,6 @@ PGSQL_CONFIGURE_ENABLE=	postgresql
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compiler
 
-PLIST_DIRS=	include/algol68g
 PLIST_FILES=	bin/a68g man/man1/a68g.1.gz \
 		include/algol68g/a68g.h include/algol68g/a68g-config.h
 
