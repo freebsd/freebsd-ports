@@ -18,7 +18,6 @@ CFLAGS+=	-DIMAGE_PATH="\\\"${PREFIX}/lib/X11/glclock/\\\""
 
 PLIST_FILES=	${PROGRAMS:S,^,bin/,} ${SCRIPTS:S,^,bin/,} \
 		${TEXTURES:S,^,lib/X11/glclock/,}
-PLIST_DIRS=	lib/X11/glclock
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 

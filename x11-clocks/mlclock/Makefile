@@ -15,7 +15,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XORG=	x11 xau xdmcp
 
 PLIST_FILES=	bin/mlclock %%DATADIR%%/mlclockrc %%DATADIR%%/mlclockrc-kanji
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e \

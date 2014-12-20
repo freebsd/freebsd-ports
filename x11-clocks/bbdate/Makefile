@@ -16,6 +16,5 @@ USE_XORG=	x11 xau xdmcp xext xfixes xi xrandr ice sm
 PLIST_FILES=	bin/bbdate share/bbtools/README.bbdate \
 		share/bbtools/bbdate.conf share/bbtools/bbdate.nobb \
 		share/bbtools/bbdate.style share/bbtools/bbtoolsrc.in
-PLIST_DIRSTRY=	share/bbtools
 
 .include <bsd.port.mk>
