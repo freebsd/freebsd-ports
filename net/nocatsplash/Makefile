@@ -12,6 +12,8 @@ DISTNAME=	NoCatSplash-nightly
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open 802.11 Splash Screen
 
+BROKEN=		Broken pkg-install script, should use USERS and UIDs
+
 USE_GNOME=	glib12
 
 CONFLICTS=	nocatauth-server-*
