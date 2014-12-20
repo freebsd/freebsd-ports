@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	colorize
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
