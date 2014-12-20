@@ -29,9 +29,6 @@ PLIST_FILES=	${BINFILES:S,^,bin/,} \
 		${LIBFILES:S,^,%%SITE_PERL%%/CIL/,} \
 		${LIBBINS:S,^,%%SITE_PERL%%/CIL/,} \
 		${LIBAFILES:S,^,%%SITE_PERL%%/CIL/,}
-PLIST_DIRS=	%%SITE_PERL%%/CIL/App/Cilly \
-		%%SITE_PERL%%/CIL/App \
-		%%SITE_PERL%%/CIL
 BINFILES=	cilly cilly.native
 LIBAFILES=	App/Cilly.pm
 LIBFILES=	App/Cilly/KeptFile.pm \

@@ -26,7 +26,6 @@ JARFILES=	slf4j-migrator.jar \
 
 PLIST_FILES=	%%JAVAJARDIR%%/slf4j-api.jar \
 		${JARFILES:S,^,%%DATADIR%%/,}
-PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/slf4j-api-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/slf4j-api.jar

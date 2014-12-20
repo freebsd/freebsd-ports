@@ -23,7 +23,6 @@ GH_COMMIT=	9878a30
 USES=		python:2,run
 NO_BUILD=	yes
 PLIST_FILES=	libexec/git-core/git-bzr
-PLIST_DIRSTRY=	libexec/git-core
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

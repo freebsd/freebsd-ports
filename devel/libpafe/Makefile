@@ -23,7 +23,6 @@ PLIST_FILES=	bin/felica_dump bin/pasori_test \
 		include/libpafe/pasori_command.h \
 		lib/libpafe.a lib/libpafe.so lib/libpafe.so.0 \
 		lib/libpafe.so.0.0.8
-PLIST_DIRS=	include/libpafe
 
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \
 		LIBUSB_LIBS="-L/usr/lib -lusb"

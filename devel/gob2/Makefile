@@ -18,7 +18,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/gob2 share/aclocal/gob2.m4 ${EXAMPLES:S/^/%%EXAMPLESDIR%%\//} \
 		man/man1/gob2.1.gz
-PLIST_DIRS=	%%EXAMPLESDIR%%
 
 EXAMPLES=	GNOME_Foo_SomeInterface.idl \
 		README \

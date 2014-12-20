@@ -20,7 +20,6 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
 PORTDOCS=	*
 PLIST_FILES=	bin/menhir man/man1/menhir.1.gz %%DATADIR%%/standard.mly
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 

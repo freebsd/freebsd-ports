@@ -20,6 +20,5 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
-PLIST_DIRS=	%%SITE_PERL%%/Parallel/Async %%SITE_PERL%%/Parallel
 
 .include <bsd.port.mk>

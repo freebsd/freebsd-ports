@@ -20,7 +20,6 @@ PLIST_FILES=	include/arena/align.h \
 		include/arena/rbits.h \
 		include/arena/util.h \
 		lib/libarena.a
-PLIST_DIRS=	include/arena
 
 post-patch:
 .for i in Epilogue.mk Prologue.mk

@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/sbt \
 		%%DATADIR%%/sbt-launch.jar
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.options.mk>
 

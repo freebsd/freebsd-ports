@@ -24,7 +24,6 @@ PLIST_FILES=	arduino/libraries/IRremote/IRremote.cpp \
 		arduino/libraries/IRremote/IRremote.h \
 		arduino/libraries/IRremote/IRremoteInt.h \
 		arduino/libraries/IRremote/keywords.txt
-PLIST_DIRS=	arduino/libraries/IRremote
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES

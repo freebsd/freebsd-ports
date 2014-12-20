@@ -20,7 +20,6 @@ PLIST_FILES=	bin/cbrowser \
 		lib/cbrowser/builder.tcl lib/cbrowser/calltree.tcl \
 		lib/cbrowser/ftcllib.tcl lib/cbrowser/hierarchy.tcl \
 		lib/cbrowser/widget.tcl
-PLIST_DIRS=	lib/cbrowser
 
 post-patch:
 	${REINPLACE_CMD} -i "" -e '3s|wish|${WISH}|' ${WRKSRC}/cbrowser

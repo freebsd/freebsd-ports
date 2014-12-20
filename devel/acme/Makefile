@@ -28,10 +28,6 @@ PLIST_FILES=	bin/acme \
 		%%DATADIR%%/65816/Help.txt \
 		%%DATADIR%%/65816/std.a \
 		%%DATADIR%%/Own/Help.txt
-PLIST_DIRSTRY=	%%DATADIR%%/6502 \
-		%%DATADIR%%/65816 \
-		%%DATADIR%%/Own \
-		%%DATADIR%%
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/acme ${STAGEDIR}${PREFIX}/bin

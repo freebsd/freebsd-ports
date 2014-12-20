@@ -32,7 +32,6 @@ PLIST_FILES=	bin/jsvn bin/jsvnadmin bin/jsvnlook \
 		bin/jsvnsync bin/jsvnversion \
 		bin/jsvndumpfilter \
 		${DATA_FILES:S,^,%%DATADIR%%/,}
-PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	javasvn.sh svnsync.sh jsvnadmin.sh jsvnlook.sh jsvnversion.sh jsvndumpfilter.sh
 PORTDOCS=	*

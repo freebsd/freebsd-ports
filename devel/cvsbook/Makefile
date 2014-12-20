@@ -48,12 +48,6 @@ PLIST_FILES+=	%%DOCSDIR%%/cvsbook.pdf
 .endif
 
 .if ${PORT_OPTIONS:MSPLIT_HTML}
-PLIST_DIRS+=	%%DOCSDIR%%/cvsbook-shtml
-.endif
-
-PLIST_DIRS+=	%%DOCSDIR%%
-
-.if ${PORT_OPTIONS:MSPLIT_HTML}
 post-patch:
 	@${REINPLACE_CMD} -e \
 	'/Non-monolithic HTML not supported/s|@.*|makeinfo --html main.texi|' \

@@ -18,7 +18,6 @@ CFLAGS+=	-DNOGNU='\"${PREFIX}/include/ncc/nognu\"' -fpermissive
 PLIST_FILES=	bin/ncc bin/nccnav bin/nccnavi bin/ncc-gengraph.py \
 		${LINKS:S+^+bin/+} include/ncc/nognu bin/nccstrip2.py \
 		man/man1/ncc.1.gz
-PLIST_DIRS=	include/ncc
 PORTDOCS=	*
 
 LINKS=		nccar nccld nccc++ nccg++

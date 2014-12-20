@@ -27,6 +27,5 @@ PLIST_FILES=	bin/mcpp    \
 		share/doc/mcpp/README   \
 		share/doc/mcpp/mcpp-manual.html  \
 		share/doc/mcpp/mcpp-manual-jp.html
-PLIST_DIRS=	share/doc/mcpp
 
 .include <bsd.port.mk>

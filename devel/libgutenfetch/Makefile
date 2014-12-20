@@ -25,7 +25,7 @@ PLIST_FILES=	include/gutenfetch.h \
 		man/man3/gutenfetch_duplicate_server.3.gz \
 		man/man3/gutenfetch_free_server.3.gz \
 		man/man3/gutenfetch_free_servers.3.gz \
- 		man/man3/gutenfetch_get_active_server.3.gz \
+		man/man3/gutenfetch_get_active_server.3.gz \
 		man/man3/gutenfetch_get_aussie_server.3.gz \
 		man/man3/gutenfetch_init.3.gz \
 		man/man3/gutenfetch_is_threadsafe.3.gz \
@@ -36,7 +36,5 @@ PLIST_FILES=	include/gutenfetch.h \
 		man/man3/gutenfetch_shutdown.3.gz \
 		man/man3/gutenfetch_version.3.gz \
 		man/man3/libgutenfetch.3.gz
-
-PLIST_DIRS=	share/libgutenfetch
 
 .include <bsd.port.mk>

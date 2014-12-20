@@ -16,6 +16,5 @@ MAKE_ENV+=	INSTALL_PREFIX=${PREFIX}
 NO_BUILD=	yes
 
 PLIST_FILES=	include/pstreams/pstream.h
-PLIST_DIRS=	include/pstreams
 
 .include <bsd.port.mk>

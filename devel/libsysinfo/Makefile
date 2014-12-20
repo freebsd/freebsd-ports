@@ -23,6 +23,5 @@ PLIST_FILES=	include/sys/sysinfo.h \
 		lib/libsysinfo.so \
 		lib/libsysinfo.so.0 \
 		man/man3/sysinfo.3.gz
-PLIST_DIRSTRY=	include/sys
 
 .include <bsd.port.mk>

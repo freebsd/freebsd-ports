@@ -66,10 +66,6 @@ USE_SDL+=	ttf
 CONFIGURE_ARGS+=--disable-sdl-ttf
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_DIRSTRY+=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/dllsdlloaderstub.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/dllsdlttfstub.so

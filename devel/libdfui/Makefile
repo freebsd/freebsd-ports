@@ -29,7 +29,6 @@ PLIST_FILES=	lib/${SONAME} \
 		include/dfui4/encoding.h \
 		include/dfui4/lang.h \
 		include/dfui4/system.h
-PLIST_DIRS=	include/dfui4
 PORTDOCS=	README
 
 MAKE_ENV=	SONAME=${SONAME} SOLINK=${SOLINK}

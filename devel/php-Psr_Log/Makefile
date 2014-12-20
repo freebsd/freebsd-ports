@@ -20,11 +20,6 @@ GH_TAGNAME=	${PORTVERSION}
 GH_COMMIT=	fe0936e
 GH_PROJECT=	log
 
-PLIST_DIRSTRY=	share/pear/Psr/Log/Test \
-		share/pear/Psr/Log \
-		share/pear/Psr \
-		share/pear
-
 PLIST_FILES=	share/pear/Psr/Log/AbstractLogger.php \
 		share/pear/Psr/Log/InvalidArgumentException.php \
 		share/pear/Psr/Log/LogLevel.php \

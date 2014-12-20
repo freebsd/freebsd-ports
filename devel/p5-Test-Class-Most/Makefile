@@ -24,6 +24,5 @@ USE_PERL5=	modbuild
 
 PLIST_FILES=	%%SITE_PERL%%/Test/Class/Most.pm \
 		%%PERL5_MAN3%%/Test::Class::Most.3.gz
-PLIST_DIRSTRY=	%%SITE_PERL%%/Test/Class %%SITE_PERL%%/Test
 
 .include <bsd.port.mk>

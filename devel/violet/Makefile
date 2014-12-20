@@ -21,7 +21,6 @@ LICENSE=	GPLv2
 NO_BUILD=	YES
 
 PLIST_FILES=	%%JAVASHAREDIR%%/${PORTNAME}/com.horstmann.violet.jar bin/${PORTNAME}
-PLIST_DIRS=	%%JAVASHAREDIR%%/${PORTNAME}
 
 pre-install:
 	${ECHO} "#!/bin/sh" > ${WRKDIR}/violet.sh
