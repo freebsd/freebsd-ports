@@ -27,10 +27,6 @@ GIMP_SCRIPTS_DIR?=	share/gimp/scripts
 
 PLIST_FILES=	${GIMP_SCRIPTS_DIR}/${DISTNAME}
 
-# installed dirs
-PLIST_DIRSTRY=	${GIMP_SCRIPTS_DIR} \
-		share/gimp
-
 post-extract:
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 

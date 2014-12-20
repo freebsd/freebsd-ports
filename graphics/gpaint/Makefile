@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 LIBS+=		-lm
 
 PLIST_FILES=	bin/gpaint-2 %%DATADIR%%/glade/gpaint.glade
-PLIST_DIRS=	%%DATADIR%%/glade %%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -21,6 +21,5 @@ CONFLICTS=	zathura-pdf-mupdf-[0-9]*
 
 PLIST_FILES=	lib/zathura/pdf.so \
 		share/applications/zathura-pdf-poppler.desktop
-PLIST_DIRSTRY=	lib/zathura
 
 .include <bsd.port.mk>

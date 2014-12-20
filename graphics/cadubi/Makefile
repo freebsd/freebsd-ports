@@ -20,7 +20,6 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/help.txt \
 		%%DATADIR%%/logo.txt
-PLIST_DIRS=	%%DATADIR%%
 
 PORTDOCS=	*
 

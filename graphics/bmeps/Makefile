@@ -32,7 +32,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/bmpp %%DATADIR%%/bmpp.txt
-PLIST_DIRS=	%%DATADIR%%
 
 pre-patch:
 	@${REINPLACE_CMD} 's@sz->lsz =@// sz->lsz =@' ${WRKSRC}/dk3sf.c

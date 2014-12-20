@@ -23,8 +23,6 @@ PLIST_FILES=	include/pngwriter.h \
 		lib/libpngwriter.a \
 		%%DATADIR%%/fonts/FreeMonoBold.ttf \
 		%%DATADIR%%/fonts/FreeSansBold.ttf
-PLIST_DIRS=	%%DATADIR%%/fonts \
-		%%DATADIR%%
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

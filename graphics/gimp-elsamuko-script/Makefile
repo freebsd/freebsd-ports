@@ -24,10 +24,6 @@ NO_BUILD=	yes
 
 GIMP_SCRIPTS_DIR?=	share/gimp/scripts
 
-# installed dirs
-PLIST_DIRSTRY=	${GIMP_SCRIPTS_DIR} \
-		share/gimp
-
 # installation dir
 PLIST_SUB=	GIMP_SCRIPTS_DIR=${GIMP_SCRIPTS_DIR}
 

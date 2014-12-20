@@ -31,6 +31,5 @@ PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG} TKLIBVER=${TKLIBVER}
 
 PLIST_FILES=	lib/${TKPKG}/lib${TKPKG}.so \
 		lib/${TKPKG}/pkgIndex.tcl
-PLIST_DIRS=	lib/${TKPKG}
 
 .include <bsd.port.mk>

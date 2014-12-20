@@ -30,7 +30,6 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		share/java/cbviewer/CBViewer.jar \
 		share/pixmaps/${PORTNAME}.png
-PLIST_DIRSTRY=	share/java/cbviewer
 
 PORTDOCS=	CREDITS
 OPTIONS_DEFINE=	DOCS
