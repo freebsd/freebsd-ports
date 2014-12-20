@@ -15,12 +15,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	junit-team
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	r${PORTVERSION}
+GH_COMMIT=	c62e2df
 
 USES=		perl5
 USE_JAVA=	yes
 USE_ANT=	yes
-
-WRKSRC=		${WRKDIR}/junit-team-junit-c62e2df
 
 PORTDOCS=	README.html cpl-v10.html doc javadoc
 PORTEXAMPLES=	*
