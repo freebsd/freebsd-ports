@@ -18,7 +18,6 @@ USE_PERL5=	build
 
 PLIST_FILES=	%%DATADIR%%/th_uk_UA.dat \
 		%%DATADIR%%/th_uk_UA.idx
-PLIST_DIRSTRY=	%%DATADIR%%
 
 do-build:
 	@${PERL} ${WRKSRC}/bin/th_gen_idx.pl < ${WRKSRC}/src/thesaurus/th_uk_UA.dat > ${WRKSRC}/src/thesaurus/th_uk_UA.idx

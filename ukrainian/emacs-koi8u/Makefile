@@ -18,7 +18,6 @@ EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 PLIST_FILES=	share/emacs/site-lisp/ukr-koi8u.el lib/xemacs/site-lisp/ukr-koi8u.el
-PLIST_DIRS=	lib/xemacs/site-lisp lib/xemacs
 
 do-install:
 	${MKDIR} ${STAGEDIR}${EMACSLISPDIR}
