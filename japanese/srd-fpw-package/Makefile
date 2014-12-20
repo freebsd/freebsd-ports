@@ -21,7 +21,6 @@ PKG_DIR=	${STAGEDIR}${PREFIX}/share/dict/lookup-package
 
 PLIST_FILES=	share/dict/lookup-package/srd-fpw.el \
 		share/dict/lookup-package/extract-srd.pl
-PLIST_DIRS=	share/dict/lookup-package
 PORTDOCS=	ChangeLog README.TXT
 
 OPTIONS_DEFINE=	DOCS

@@ -16,7 +16,6 @@ DIST_SUBDIR=	${PORTNAME}
 
 PLIST_FILES=	bin/cdgaiji bin/cdrom2 lib/cdrom2/kojien3.tbl \
 		lib/cdrom2/ruigo.tbl
-PLIST_DIRS=	lib/cdrom2
 PORTDOCS=	errata.doc gaiji.txt index.doc install.doc kekka.txt \
 		kojien3.doc menu.doc readers.doc readme.doc readme.org \
 		ruigo.doc x_option.doc

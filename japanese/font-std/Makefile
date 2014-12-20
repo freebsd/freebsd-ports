@@ -17,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/font-ipa/ipam.otf:${PORTSDIR}/japanese/font-ipa 
 
 NO_BUILD=	yes
 PLIST_FILES=	${STD:S,^,${FONTSDIR}/std.ja_JP/,}
-PLIST_DIRS=	${FONTSDIR}/std.ja_JP
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
 FONTSDIR=	share/fonts
 

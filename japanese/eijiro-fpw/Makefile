@@ -29,9 +29,6 @@ SRCFILE?=	eijiro52.txt
 
 PLIST_FILES=	share/dict/eijiro-fpw/eijiro/data/honmon \
 		share/dict/eijiro-fpw/catalogs
-PLIST_DIRS=	share/dict/eijiro-fpw/eijiro/data \
-		share/dict/eijiro-fpw/eijiro \
-		share/dict/eijiro-fpw
 
 # For eijiro included in a book sold by ALC Inc.
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)
