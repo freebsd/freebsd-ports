@@ -32,7 +32,6 @@ PORTDOCS=	COPYRIGHT Changelog README.cisco README.ssl README.md \
 		sample-etc_dhcpc_dhcpcd-eth0.exe sample-etc_ppp_ip-up.local
 PLIST_FILES=	etc/ddclient.conf.sample etc/periodic/daily/ddclient_force \
 		sbin/ddclient
-PLIST_DIRSTRY=	etc/periodic/daily etc/periodic
 
 post-patch:
 	@${GREP} -lR '/usr' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
