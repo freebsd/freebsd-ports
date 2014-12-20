@@ -20,7 +20,6 @@ PLIST_FILES=	${FONTSDIR}/std.zh_CN/STHeiti-Regular \
 		${FONTSDIR}/std.zh_CN/STSong-Light \
 		${FONTSDIR}/std.zh_CN/MSung-Light \
 		${FONTSDIR}/std.zh_CN/MHei-Medium
-PLIST_DIRS=	${FONTSDIR}/std.zh_CN
 FONTSDIR=	share/fonts
 
 do-fetch:

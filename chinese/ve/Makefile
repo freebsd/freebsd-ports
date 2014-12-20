@@ -17,7 +17,6 @@ MAKE_ARGS=	CC="${CC}"
 
 PLIST_FILES=	bin/ve \
 		%%DATADIR%%/ve.hlp
-PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/
