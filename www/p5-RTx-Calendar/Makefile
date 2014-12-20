@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RTx-Calendar
-PORTVERSION=	0.20
-PORTREVISION=	1
+PORTVERSION=	1.00
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,15 +24,14 @@ USES+=		perl5
 USE_PERL5=	configure
 
 OPTIONS_SINGLE=			RTVERSION
-OPTIONS_SINGLE_RTVERSION=	RT38 RT40 RT42
-RT38_DESC=			Install for rt-3.8.x (www/rt38)
+OPTIONS_SINGLE_RTVERSION=	RT40 RT42
 RT40_DESC=			Install for rt-4.0.x (www/rt40)
 RT42_DESC=			Install for rt-4.2.x (www/rt42)
 OPTIONS_DEFAULT=		RT42
 
 .include <bsd.port.options.mk>
 
-.for opt in 38 40 42
+.for opt in 40 42
 .if ${PORT_OPTIONS:MRT${opt}}
 RT_VER=		${opt}
 .endif
