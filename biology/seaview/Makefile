@@ -29,7 +29,6 @@ ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/seaview man/man1/seaview.1.gz %%DATADIR%%/seaview.html \
 		share/pixmaps/seaview.xpm
-PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="SeaView" "" "${PREFIX}/share/pixmaps/seaview.xpm" "seaview" \
 		"Biology;Science;" true

@@ -32,8 +32,6 @@ PORTDOCS=	README
 PLIST_FILES=	${EXECUTABLES:S,^,bin/,} \
 		lib/blat/webBlat/webBlat \
 		lib/blat/webBlat/install.txt
-PLIST_DIRS=	lib/blat/webBlat \
-		lib/blat
 
 EXECUTABLES=	blat faToNib faToTwoBit gfClient gfServer nibFrag \
 		pslPretty pslReps pslSort twoBitInfo twoBitToFa

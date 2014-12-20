@@ -22,7 +22,6 @@ ALL_TARGET=	ssaha
 
 PLIST_FILES=	bin/ssaha %%DATADIR%%/testSSAHA.csh \
 		${DATA_FILES:S,^,%%DATADIR%%/,}
-PLIST_DIRS=	%%DATADIR%%
 
 DATA_FILES=	test.fasta test_extract.fasta test_filter.fail \
 		test_filter.fastq test_protein.fasta README
