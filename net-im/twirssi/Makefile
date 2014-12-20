@@ -36,7 +36,6 @@ SUB_FILES=	pkg-message
 
 NO_BUILD=	yes
 PLIST_FILES=	%%DATADIR%%/${PORTNAME}.pl
-PLIST_DIRS=	%%DATADIR%%
 
 post-extract:
 	@${MKDIR} ${WRKSRC}

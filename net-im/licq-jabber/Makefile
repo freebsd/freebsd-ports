@@ -19,7 +19,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DOCFILES=	README
 PLIST_FILES=	lib/licq/protocol_jabber.so \
 		%%PORTDOCS%%%%DOCSDIR%%/README
-PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
 
 LICQ_PORT?=	net-im/licq
 
