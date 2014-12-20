@@ -45,9 +45,6 @@ PCAP_FILES=	dtmf_2833_0.pcap dtmf_2833_1.pcap dtmf_2833_2.pcap \
 		dtmf_2833_9.pcap dtmf_2833_pound.pcap dtmf_2833_star.pcap \
 		g711a.pcap
 
-PLIST_DIRS=	%%DATADIR%%/pcap \
-		%%DATADIR%%
-
 .for f in ${PCAP_FILES}
 PLIST_FILES+=	%%DATADIR%%/pcap/${f}
 .endfor
