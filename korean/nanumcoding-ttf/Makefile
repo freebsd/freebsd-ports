@@ -24,7 +24,6 @@ FONTLIST=	NanumGothicCoding \
 		NanumGothicCoding-Bold
 FONTFILES=	${FONTLIST:S/$/.ttf/} fonts.dir fonts.scale
 
-PLIST_DIRS=	${FONTSDIR}
 PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|}
 
 post-extract:

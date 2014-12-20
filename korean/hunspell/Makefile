@@ -18,7 +18,6 @@ USES=		gmake python:build tar:xz
 
 PLIST_FILES=	%%DATADIR%%/ko_KR.aff \
 		%%DATADIR%%/ko_KR.dic
-PLIST_DIRSTRY=	%%DATADIR%%
 
 PROJECTHOST=	spellcheck-ko
 
