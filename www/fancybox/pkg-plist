@@ -15,7 +15,5 @@
 %%WWWDIR%%/jquery.fancybox.css
 %%WWWDIR%%/jquery.fancybox.js
 %%WWWDIR%%/jquery.fancybox.pack.js
-@dirrm %%WWWDIR%%/helpers
-@dirrm %%WWWDIR%%
 @owner
 @group
