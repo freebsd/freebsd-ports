@@ -50,7 +50,6 @@ PLIST_FILES+=	lib/X11/xanim/cvid.readme lib/X11/xanim/cyuv.readme \
 		lib/X11/xanim/vid_iv32_2.1_freebsdELFx86.xa \
 		lib/X11/xanim/vid_iv41_1.1_freebsdELFx86.xa \
 		lib/X11/xanim/vid_iv50_1.0_freebsdELFx86.xa
-PLIST_DIRS+=	lib/X11/xanim
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DLLDIR}

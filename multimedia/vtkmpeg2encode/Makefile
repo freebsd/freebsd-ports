@@ -25,7 +25,6 @@ SUB_FILES=	vtkmpeg2encode.3
 
 MPEGLIB=	libvtkMPEG2Encode
 
-PLIST_DIRS=	include/vtk-${VTK_VERSION:R}
 PLIST_FILES=	lib/${MPEGLIB}.so.${PORTVERSION} \
 		lib/${MPEGLIB}.so.${VTK_VERSION:R} \
 		lib/${MPEGLIB}.so.${VTK_VERSION:R:R} \

@@ -22,7 +22,6 @@ PORTDOCS=	README readme-en.txt readme-jp.txt
 PLIST_FILES=	bin/b25 \
 		lib/libab25.a lib/libab25_p.a lib/libab25.so.1 lib/libab25.so \
 		include/ab25/arib_std_b25.h include/ab25/b_cas_card.h
-PLIST_DIRS=	include/ab25
 
 OPTIONS_DEFINE=	DOCS
 
