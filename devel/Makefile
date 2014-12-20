@@ -4691,6 +4691,7 @@
     SUBDIR += sparc64-binutils
     SUBDIR += sparc64-gcc
     SUBDIR += sparc64-xtoolchain-gcc
+    SUBDIR += spark
     SUBDIR += spatialindex
     SUBDIR += spdict
     SUBDIR += spin
