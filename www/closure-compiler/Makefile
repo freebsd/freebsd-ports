@@ -18,7 +18,6 @@ SUB_FILES=	closure-compiler
 SUB_LIST=	JAVA="${JAVA}"
 USE_JAVA=	yes
 
-PLIST_DIRSTRY=	%%DATADIR%%
 PLIST_FILES=	bin/closure-compiler \
 		%%DATADIR%%/compiler.jar
 

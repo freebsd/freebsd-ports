@@ -23,8 +23,6 @@ WWWDIR?=	${PREFIX}/www/redmine/public/themes/${PORTNAME}
 
 PLIST_FILES=	%%WWWDIR%%/README.md \
 		%%WWWDIR%%/stylesheets/application.css
-PLIST_DIRS=	%%WWWDIR%%/stylesheets \
-		%%WWWDIR%%
 
 do-install:
 		${MKDIR} ${STAGEDIR}${WWWDIR}

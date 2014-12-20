@@ -29,7 +29,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/webinject.pl \
 		${DATADIR:S,^${PREFIX}/,,}/config.xml \
 		${DATADIR:S,^${PREFIX}/,,}/testcases.xml
-PLIST_DIRS=	${DATADIR:S,^${PREFIX}/,,}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	api guide index.html css img ref
 PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} \
 		${SCRIPTFILES:S,^,${DATADIR:S,${PREFIX}/,,}/bin/,}
-PLIST_DIRS=	${DATADIR:S,${PREFIX}/,,}/bin
 SUB_FILES=	edit-startGrails.sed pkg-message
 
 do-install:

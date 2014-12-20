@@ -14,7 +14,6 @@ LICENSE=	MIT
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PLIST_DIRS=	%%DOCSDIR%%
 PLIST_FILES=	bin/download-gemist \
 		bin/download-gemist-guide \
 		%%DOCSDIR%%/README.md
