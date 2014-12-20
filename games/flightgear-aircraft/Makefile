@@ -64,7 +64,6 @@ EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 DATADIR=	${PREFIX}/share/flightgear/Aircraft
 
 PLIST=		${WRKDIR}/pkg-plist
-PLIST_DIRS=	%%DATADIR%%
 
 pre-extract:
 	@${MKDIR} ${WRKSRC}

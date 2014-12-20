@@ -23,7 +23,6 @@ WRKSRC=		${WRKDIR}/fgdata
 DATADIR=	${PREFIX}/share/flightgear
 
 PLIST=		${WRKDIR}/pkg-plist
-PLIST_DIRS=	%%DATADIR%%
 
 MANUAL_PACKAGE_BUILD=	very large distfile (>1 GB)
 

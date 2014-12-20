@@ -29,7 +29,6 @@ DATADIR=	${PREFIX}/share/Shaaft
 
 PLIST_FILES=	bin/Packer bin/shaaft %%DATADIR%%/resource.dat \
 		man/man6/shaaft.6.gz
-PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="Shaaft" "" "" "${PORTNAME}" "" ""
 

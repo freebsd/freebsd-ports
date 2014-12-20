@@ -26,7 +26,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/${PORTNAME} \
 		share/games/${PORTNAME}.res \
 		share/pixmaps/${PORTNAME}.xpm
-PLIST_DIRSTRY=	share/games
 
 DESKTOP_ENTRIES=	"Quadra" "${COMMENT}" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \

@@ -18,7 +18,6 @@ PORTDOCS=	readme
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/words721.txt
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=gcc|CC?=g++|' ${WRKSRC}/makefile

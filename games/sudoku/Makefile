@@ -14,7 +14,6 @@ USES=		ncurses tar:bzip2
 PLIST_FILES=	bin/sudoku \
 		man/man6/sudoku.6.gz \
 		share/sudoku/template
-PLIST_DIRS=	share/sudoku
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

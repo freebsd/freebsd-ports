@@ -20,7 +20,6 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
-PLIST_DIRS=	%%DATADIR%%/mix
 
 post-patch:
 	@${MV} ${WRKSRC}/SConstruct ${WRKSRC}/SConstruct.orig
