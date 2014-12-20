@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lsof
-DISTVERSION=	4.89A
+DISTVERSION=	4.89B
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
@@ -48,6 +48,8 @@ BROKEN=		Does not compile on arm
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
+
+CFLAGS+=	-DNEEDS_BOOL_TYPEDEF
 
 .if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
 IGNORE=		requires kernel sources
