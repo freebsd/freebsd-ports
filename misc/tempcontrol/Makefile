@@ -16,7 +16,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/tempcontrol share/tempcontrol/temperaturecontrolrc.sample \
 		etc/rc.d/temperaturecontrol.sh.sample
-PLIST_DIRS=	share/tempcontrol
 
 PORTDOCS=	README
 

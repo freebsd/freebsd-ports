@@ -18,6 +18,5 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/diction bin/style ${DATADIR}/C ${DATADIR}/de \
 		${DATADIR}/en ${DATADIR}/en_GB ${DATADIR}/nl \
 		man/man1/diction.1.gz man/man1/style.1.gz
-PLIST_DIRS=	${DATADIR}
 
 .include <bsd.port.mk>

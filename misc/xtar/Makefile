@@ -23,7 +23,6 @@ MAKE_ARGS=	XINC="-I${LOCALBASE}/include" XMLIB="${MOTIFLIB}" \
 
 PLIST_FILES=	bin/xtar lib/X11/xtar/xtar.doc lib/X11/app-defaults/XTar \
 		man/man1/xtar.1.gz
-PLIST_DIRS=	lib/X11/xtar
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,(APP|BIN|LIB|MAN)DIR),DESTDIR)$$(&,' \

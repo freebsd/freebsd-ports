@@ -14,8 +14,6 @@ USES=		tar:bzip2
 
 PLIST_FILES=	share/games/fortune/epictetus \
 		share/games/fortune/epictetus.dat
-PLIST_DIRSTRY=	share/games/fortune \
-		share/games
 
 STRFILE=	/usr/games/strfile
 

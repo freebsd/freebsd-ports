@@ -19,7 +19,6 @@ EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 PLIST_FILES=	share/emacs/site-lisp/${PORTNAME} lib/xemacs/site-lisp/${PORTNAME}
-PLIST_DIRS=	lib/xemacs/site-lisp lib/xemacs
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${EMACSLISPDIR}

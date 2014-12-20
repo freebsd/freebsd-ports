@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/bb-1.3.0
 PORTDOCS=	README
 PLIST_FILES=	bin/bb man/man1/bb.1.gz share/bb/bb.s3m share/bb/bb2.s3m \
 		share/bb/bb3.s3m
-PLIST_DIRS=	share/bb
 
 OPTIONS_DEFINE=	DOCS
 

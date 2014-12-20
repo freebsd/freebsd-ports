@@ -16,6 +16,5 @@ CONFIGURE_ARGS+=--enable-testfile
 
 PLIST_FILES=	bin/grun %%DATADIR%%/consfile %%DATADIR%%/gassoc \
 		man/man1/grun.1x.gz
-PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>
