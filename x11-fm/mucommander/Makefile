@@ -17,7 +17,6 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mucommander %%DATADIR%%/mucommander.jar %%DATADIR%%/license.txt
-PLIST_DIRS=	%%DATADIR%%
 SUB_FILES=	mucommander
 
 PORTDOCS=	readme.txt
