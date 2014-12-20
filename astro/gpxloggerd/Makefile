@@ -4,7 +4,9 @@
 PORTNAME=	gpxloggerd
 PORTVERSION=	0.2.1
 CATEGORIES=	astro
-MASTER_SITES=	http://github.com/glebius/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
+MASTER_SITES=	GHR
+USE_GITHUB=	yes
+GH_ACCOUNT=	glebius
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Daemon that connects to the GPSD daemon and logs GPS traces
