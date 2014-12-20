@@ -49,7 +49,6 @@ PLIST_FILES+=	%%DATADIR%%/translations/${PORTNAME}_${lang}.qm
 PLIST_FILES+=	share/icons/hicolor/${size}x${size}/apps/${PORTNAME}_logo.png
 .endfor
 PLIST_FILES+=	share/icons/hicolor/scalable/apps/${PORTNAME}_logo.svg
-PLIST_DIRS=	%%DATADIR%%/translations %%DATADIR%%
 
 DESKTOP_ENTRIES="CdCat" "Hyper's CD Catalog" "${DATADIR}/${PORTNAME}.png" \
 		"${PORTNAME}" "AudioVideo;Qt;" ""

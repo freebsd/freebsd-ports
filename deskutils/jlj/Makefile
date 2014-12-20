@@ -19,7 +19,6 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/jlj share/examples/jlj/dot.livejournal.rc
-PLIST_DIRS=	share/examples/jlj
 PORTDOCS=	README
 
 SHEBANG_FILES=	jlj.pl
