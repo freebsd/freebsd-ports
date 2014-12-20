@@ -22,7 +22,6 @@ MAKE_ARGS=	CC="${CC}" C_FLAGS="${CFLAGS}" \
 USE_XORG=	xt
 
 PLIST_FILES=	bin/slrnface man/man1/slrnface.1.gz %%DATADIR%%/slrnface.sl
-PLIST_DIRS=		%%DATADIR%%
 
 SUB_FILES=	pkg-message
 
