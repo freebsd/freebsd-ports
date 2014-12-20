@@ -23,7 +23,6 @@ CONFLICTS_INSTALL=	py*-rss2email-3.*
 
 PLIST_FILES=	bin/r2e \
 		%%DATADIR%%/rss2email.py
-PLIST_DIRS=	%%DATADIR%%
 PORTEXAMPLES=	config.py.example
 
 OPTIONS_DEFINE=	EXAMPLES
