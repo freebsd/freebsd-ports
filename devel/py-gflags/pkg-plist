@@ -1,7 +1,0 @@
-bin/gflags2man.py
-%%PYTHON_SITELIBDIR%%/gflags.py
-%%PYTHON_SITELIBDIR%%/gflags.pyc
-%%PYTHON_SITELIBDIR%%/gflags.pyo
-%%PYTHON_SITELIBDIR%%/gflags_validators.py
-%%PYTHON_SITELIBDIR%%/gflags_validators.pyc
-%%PYTHON_SITELIBDIR%%/gflags_validators.pyo

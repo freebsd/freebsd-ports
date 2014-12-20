@@ -3,7 +3,7 @@
 
 PORTNAME=	gflags
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,12 @@ COMMENT=	Commandline flags module for Python
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:2
-USE_PYTHON=	distutils
-PYDISTUTILS_PKGNAME=	python_gflags
+USES=		python:2 shebangfix
+USE_PYTHON=	autoplist distutils
+
+SHEBANG_FILES=	gflags2man.py
+python_OLD_CMD=	${SETENV} python
+python_CMD=	${PYTHON_CMD}
 
 PROJECTHOST=	python-gflags
 
