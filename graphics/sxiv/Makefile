@@ -23,8 +23,6 @@ PLIST_FILES=	bin/sxiv \
 		man/man1/sxiv.1.gz \
 		share/sxiv/exec/image-info \
 		share/sxiv/exec/key-handler
-PLIST_DIRS=	share/sxiv/exec \
-		share/sxiv
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sxiv

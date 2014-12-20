@@ -22,8 +22,6 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIBVISUAL_VER=	0.4
 
 PLIST_FILES=	lib/libvisual-${LIBVISUAL_VER}/actor/libprojectM_libvisual.so
-PLIST_DIRS=	lib/libvisual-${LIBVISUAL_VER}/actor \
-		lib/libvisual-${LIBVISUAL_VER}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[hc]*" | ${XARGS} ${REINPLACE_CMD} \

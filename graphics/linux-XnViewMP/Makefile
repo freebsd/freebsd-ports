@@ -23,7 +23,6 @@ USE_LINUX_APPS=	xorglibs
 
 PLIST_FILES=	bin/xnview-mp lib/xnview-mp/libQtCore.so.4 \
 		lib/xnview-mp/libQtGui.so.4 lib/xnview-mp/xnview
-PLIST_DIRS=	lib/xnview-mp
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\.|${PREFIX}/lib/xnview-mp|" ${WRKSRC}/xnview.sh

@@ -42,7 +42,6 @@ PLIST_FILES=	bin/gmic \
 		man/man1/gmic.1.gz \
 		%%BASH%%etc/bash_completion.d/gmic_bashcompletion.sh \
 		%%PLUGIN_DIR%%/gmic_gimp
-PLIST_DIRSTRY=	%%PLUGIN_DIR%%
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PORTEXAMPLES=	gmic_in_script.scm gmic_use_lib.cpp

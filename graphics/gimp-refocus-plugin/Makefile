@@ -37,11 +37,6 @@ GIMP_PLUGIN_DIR=	libexec/gimp/2.2/plug-ins
 # installed files
 PLIST_FILES=	${GIMP_PLUGIN_DIR}/${PORTNAME}
 
-# installed dirs
-PLIST_DIRSTRY=	libexec/gimp/2.2/plug-ins \
-		libexec/gimp/2.2 \
-		libexec/gimp
-
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.am \
 		-exec ${REINPLACE_CMD} -e "s|; make|; ${MAKE_CMD}|" {} \;

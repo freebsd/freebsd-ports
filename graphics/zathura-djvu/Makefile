@@ -19,6 +19,5 @@ USES=		desktop-file-utils gmake pkgconfig
 
 PLIST_FILES=	lib/zathura/djvu.so \
 		share/applications/zathura-djvu.desktop
-PLIST_DIRSTRY=	lib/zathura
 
 .include <bsd.port.mk>
