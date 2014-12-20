@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/tclsyslog
 PLIST_FILES=	lib/syslog/libsyslog.so.2.1 \
 		lib/syslog/pkgIndex.tcl \
 		man/mann/syslog.n.gz
-PLIST_DIRS=	lib/syslog
 
 post-patch:
 	@${REINPLACE_CMD} -E \

@@ -24,12 +24,12 @@ GH_COMMIT=	9fb27d5
 PLIST_FILES=	share/mcollective/application/shell/watcher.rb \
 		share/mcollective/application/shell/prefix_stream_buf.rb \
 		share/mcollective/application/shell.rb
-PLIST_DIRSTRY=	share/mcollective/application/shell
+PLIST_DIRS=	share/mcollective/application/shell
 
 NO_BUILD=	yes
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_DIRSTRY}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_DIRS}
 	${INSTALL_DATA} ${WRKSRC}/lib/mcollective/application/shell/watcher.rb ${STAGEDIR}${PREFIX}/share/mcollective/application/shell/
 	${INSTALL_DATA} ${WRKSRC}/lib/mcollective/application/shell/prefix_stream_buf.rb ${STAGEDIR}${PREFIX}/share/mcollective/application/shell/
 	${INSTALL_DATA} ${WRKSRC}/lib/mcollective/application/shell.rb ${STAGEDIR}${PREFIX}/share/mcollective/application/

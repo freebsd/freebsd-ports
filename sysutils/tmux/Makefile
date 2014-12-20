@@ -20,7 +20,6 @@ CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
 PLIST_FILES=	bin/tmux \
 		man/man1/tmux.1.gz \
 		etc/bash_completion.d/tmux
-PLIST_DIRSTRY=	etc/bash_completion.d
 
 PORTDOCS=	CHANGES FAQ README TODO
 PORTEXAMPLES=	*

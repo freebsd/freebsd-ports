@@ -17,7 +17,6 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 PLIST_FILES=	bin/graffer \
 		etc/graffer/graffer.conf.example \
 		man/man8/graffer.8.gz
-PLIST_DIRS=	etc/graffer
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \

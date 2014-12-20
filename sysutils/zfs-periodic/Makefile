@@ -25,7 +25,6 @@ PERIODIC_FILES=	etc/periodic/hourly/000.zfs-snapshot \
 		etc/periodic/monthly/000.zfs-snapshot
 
 PLIST_FILES=	${PERIODIC_FILES} bin/zfs-snapshot
-PLIST_DIRSTRY=	${PERIODIC_DIRS}
 
 post-patch:
 .for _file in ${PERIODIC_FILES}

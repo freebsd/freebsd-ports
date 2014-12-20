@@ -27,7 +27,6 @@ USES=		gmake
 SSP_UNSAFE=	yes # cross-build static linking dies with -fstack-protector
 
 U_BOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
-PLIST_DIRS=	${U_BOOT_DIR} share/u-boot
 PLIST_FILES=	${U_BOOT_DIR}/uboot.img \
 		${U_BOOT_DIR}/README
 
