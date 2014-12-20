@@ -21,7 +21,6 @@ USES=		gmake
 
 PLIST_FILES=	bin/xtrader \
 		%%DATADIR%%/sample.xt
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	${REINPLACE_CMD} -e 's|char|const char|' \
