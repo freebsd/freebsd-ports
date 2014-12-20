@@ -31,7 +31,6 @@ PLIST_FILES=	bin/${PORTNAME} include/ficl.h include/ficlcompatibility.h \
 		include/ficllocal.h include/ficlplatform/unix.h \
 		include/ficltokens.h lib/lib${PORTNAME}.so \
 		lib/lib${PORTNAME}.so.${PORTVERSION} lib/lib${PORTNAME}.a
-PLIST_DIRS=	include/ficlplatform
 
 PORTDOCS=	*
 PORTDATA=	*

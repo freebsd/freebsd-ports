@@ -25,7 +25,6 @@ PLIST_FILES=	bin/mixasm \
 		share/locale/de/LC_MESSAGES/mdk.mo \
 		%%DATADIR%%/mixal-mode.el \
 		%%DATADIR%%/mixvm.el
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	GLADE GUILE
 OPTIONS_DEFAULT=GLADE GUILE
