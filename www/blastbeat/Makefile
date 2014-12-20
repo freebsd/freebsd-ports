@@ -31,7 +31,6 @@ LIBS+=		-L${LOCALBASE}/lib -lm
 
 PLIST_FILES=	bin/blastbeat \
 		%%ETCDIR%%/blastbeat.ini.sample
-PLIST_DIRSTRY=	%%ETCDIR%%
 
 OPTIONS_DEFINE=	EXAMPLES
 

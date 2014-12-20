@@ -18,6 +18,5 @@ USE_PERL5=	modbuild
 PLIST_FILES=	${SITE_PERL_REL}/SCGI.pm ${SITE_PERL_REL}/SCGI/Request.pm \
 		%%PERL5_MAN3%%/SCGI.3.gz \
 		%%PERL5_MAN3%%/SCGI::Request.3.gz
-PLIST_DIRS=	${SITE_PERL_REL}/SCGI
 
 .include <bsd.port.mk>

@@ -25,7 +25,6 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_LIST=	SQSTATDIR=${SQSTATDIR}
 
-PLIST_DIRS=	${SQSTATDIR}
 PLIST_FILES=	${SQSTATDIR}/arrow.gif ${SQSTATDIR}/sqstat.class.php \
 		${SQSTATDIR}/sqstat.css ${SQSTATDIR}/sqstat.php \
 		${SQSTATDIR}/zhabascript.js \

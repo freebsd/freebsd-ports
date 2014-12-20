@@ -23,10 +23,6 @@ SUB_FILES+=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-PLIST_DIRSTRY=	www/cgi-bin
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/usr/local/bin/perl,#!${PERL},g" \
 		-e "s,authorized_uid = 1031;,authorized_uid = ${WWWOWN};,g" \
@@ -40,7 +36,4 @@ do-install:
 	  @${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .	endfor
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

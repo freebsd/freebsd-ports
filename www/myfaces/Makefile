@@ -22,9 +22,6 @@ PORTDOCS=	javadoc tlddoc LICENSE.txt NOTICE.txt
 JAR_FILES=	myfaces-all.jar myfaces-api.jar myfaces-impl.jar tomahawk.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		${JAR_FILES:S|^|%%DATADIR%%/|}
-PLIST_DIRS=	%%DATADIR%%
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/myfaces-all.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
@@ -36,4 +33,4 @@ do-install:
 	cd ${WRKSRC} && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \;
 	cd ${WRKSRC} && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

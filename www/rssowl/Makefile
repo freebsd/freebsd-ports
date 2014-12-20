@@ -32,7 +32,6 @@ PORTDOCS=	CHANGELOG.txt epl-v10.html mpl-v11.txt LICENSE.txt \
 		faq.html rssowl_i18n.template README.txt faq.xml
 
 PLIST_FILES=	bin/rssowl %%DATADIR%%/rssowl.jar share/pixmaps/rssowl.png
-PLIST_DIRS=	%%DATADIR%%
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="RSSOwl" \
