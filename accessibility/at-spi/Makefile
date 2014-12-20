@@ -4,7 +4,7 @@
 
 PORTNAME=	at-spi
 PORTVERSION=	1.32.0
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,7 @@ USES+=		tar:bzip2
 RUN_DEPENDS=	at-spi2-atk>2.6.0:${PORTSDIR}/accessibility/at-spi2-atk
 
 USES+=		gmake gettext libtool pathfix pkgconfig python:2
-USE_GNOME=	gnomehier intlhack gtk20 gconf2 libbonobo
+USE_GNOME=	intlhack gtk20 gconf2 libbonobo
 USE_XORG=	x11 xtst
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
