@@ -21,6 +21,5 @@ TKPKG=		${PORTNAME}${PORTVERSION}
 PLIST_FILES=	lib/${TKPKG}/libtktray.so.1 \
 		lib/${TKPKG}/pkgIndex.tcl \
 		man/mann/${PORTNAME}.n.gz
-PLIST_DIRS=	lib/${TKPKG}
 
 .include <bsd.port.mk>
