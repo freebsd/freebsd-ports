@@ -21,7 +21,6 @@ CONFIGURE_ARGS=	--disable-static
 
 PLIST_FILES=	lib/xmms/Input/libxymms.so \
 		%%EXAMPLESDIR%%/sample.gym
-PLIST_DIRS=	%%EXAMPLESDIR%%
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -19,6 +19,5 @@ USE_GNOME=	intltool glib20 gtk20 libxml2
 USES=		gettext gmake libtool pathfix pkgconfig
 
 PLIST_FILES=	lib/gmpc/plugins/lyricsplugin.so
-PLIST_DIRSTRY=	lib/gmpc/plugins lib/gmpc
 
 .include <bsd.port.mk>

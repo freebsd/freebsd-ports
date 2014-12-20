@@ -31,7 +31,6 @@ LIBS+=		-L${LOCALBASE}/lib -lbinio
 CONFIGURE_ARGS+=	--sharedstatedir=${DATADIR}
 
 PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db man/man1/adplay.1.gz
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	SDL
 

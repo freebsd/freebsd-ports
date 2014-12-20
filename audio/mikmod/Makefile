@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mikmod \
 		man/man1/mikmod.1.gz \
 		%%DATADIR%%/mikmodrc
-PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	AUTHORS NEWS README
 
 OPTIONS_DEFINE=	DOCS

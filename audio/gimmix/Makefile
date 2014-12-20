@@ -5,7 +5,7 @@ PORTNAME=	gimmix
 PORTVERSION=	0.5.7.1
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	BERLIOS/gimmix
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimmix is a graphical MPD client written in C using GTK+2

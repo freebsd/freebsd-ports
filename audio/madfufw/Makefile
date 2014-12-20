@@ -20,7 +20,6 @@ PLIST_FILES=	share/maudio/ma003101.bin \
 		share/maudio/ma006100.bin \
 		share/maudio/ma008100.bin \
 		etc/devd/maudio-devd.conf
-PLIST_DIRS=	share/maudio
 USE_RC_SUBR=	maudio
 SUB_FILES=	maudio-devd.conf pkg-message
 NO_BUILD=	yes

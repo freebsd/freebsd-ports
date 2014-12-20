@@ -31,7 +31,6 @@ PLIST_FILES=	bin/mp3stat \
 		lib/mp3stat/input_mp3.so \
 		lib/mp3stat/ui_gtk2.so \
 		lib/mp3stat/ui_console.so
-PLIST_DIRS=	lib/mp3stat
 
 .include <bsd.port.options.mk>
 
