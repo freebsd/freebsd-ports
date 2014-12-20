@@ -50,7 +50,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/syntax/texinfo.jsf %%DATADIR%%/syntax/troff.jsf \
 		%%DATADIR%%/syntax/txt2tags.jsf %%DATADIR%%/syntax/verilog.jsf \
 		%%DATADIR%%/syntax/vhdl.jsf %%DATADIR%%/syntax/xml.jsf
-PLIST_DIRS=	%%DATADIR%%/syntax %%DATADIR%%
 
 OPTIONS_DEFINE=	DEBUG DOCS
 

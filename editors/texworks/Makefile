@@ -45,7 +45,6 @@ DESKTOP_ENTRIES="TexWorks" \
 PLIST_FILES=	bin/texworks \
 		man/man1/texworks.1.gz \
 		share/pixmaps/TeXworks.png
-PLIST_DIRS=	lib/texworks
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
