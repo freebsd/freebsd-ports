@@ -38,7 +38,6 @@ SUB_LIST=	USERS="${USERS}"
 PORTDOCS=	*
 PLIST_FILES=	bin/minbif %%ETCDIR%%/minbif.conf-dist \
 		%%ETCDIR%%/minbif.motd-dist man/man8/minbif.8.gz
-PLIST_DIRS=	%%ETCDIR%%
 
 CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
 CACA_CMAKE_ON=		-DENABLE_CACA:BOOL=ON -DENABLE_IMLIB:BOOL=ON
