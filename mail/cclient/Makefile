@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	. old
 DISTNAME=	imap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Mark Crispin's C-client mail access routines
+COMMENT=	C-client mail access routines by Mark Crispin
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -26,19 +26,18 @@ OPTIONS_DEFAULT=	SSL
 SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
 MBX_DEFAULT_DESC=	Use MBX as default mailbox format
 
+ALL_TARGET=	bsf
 MAKE_JOBS_UNSAFE=	yes
+USE_LDCONFIG=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-PKGMESSAGE=	pkg-message-ssl
-.endif
+SSL_USE=		OPENSSL=yes
 
 .include <bsd.port.pre.mk>
 
-USE_LDCONFIG=	yes
-ALL_TARGET=	bsf
+.if ${PORT_OPTIONS:MSSL}
+PKGMESSAGE=	pkg-message-ssl
+.endif
+
 .if ! ${PORT_OPTIONS:MSSL}
 MAKE_ARGS+=	SSLTYPE=none SSLDIR=${OPENSSLBASE}
 .else
