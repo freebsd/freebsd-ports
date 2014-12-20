@@ -47,7 +47,6 @@ post-install:
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 PLIST_FILES+=	etc/bash_completion.d/gammu
-PLIST_DIRSTRY+=	etc/bash_completion.d
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_CMakeLists.txt
 .endif
