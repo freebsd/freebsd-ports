@@ -28,7 +28,6 @@ DOCSDIR?=	${PREFIX}/share/doc/tcl-MySQL
 
 PLIST_FILES=	lib/sql1.0/${LIB_NAME} \
 		lib/sql1.0/pkgIndex.tcl
-PLIST_DIRS=	lib/sql1.0
 PORTDOCS=	*
 
 post-patch:

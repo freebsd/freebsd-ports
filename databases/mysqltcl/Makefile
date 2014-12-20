@@ -16,7 +16,6 @@ USE_MYSQL=	yes
 PLIST_FILES=	lib/${PORTNAME}-${PORTVERSION}/libmysqltcl${PORTVERSION}.so \
 		lib/${PORTNAME}-${PORTVERSION}/pkgIndex.tcl \
 		man/mann/mysqltcl.n.gz
-PLIST_DIRS=	lib/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 

@@ -55,10 +55,6 @@ BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}
 			xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 
-PLIST_DIRSTRY=		lib/ldb \
-			lib/shared-modules/ldb \
-			lib/shared-modules
-
 PLIST_FILES=		bin/ldbedit \
 			bin/ldbmodify \
 			bin/ldbadd \

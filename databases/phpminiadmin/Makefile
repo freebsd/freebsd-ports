@@ -20,7 +20,6 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	${WWWDIR_REL}/phpminiadmin.php
-PLIST_DIRS=	${WWWDIR_REL}
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	mysql session pcre

@@ -23,8 +23,6 @@ PERIODICS=	200.mysqlbackup.daily \
 PLIST_FILES=	bin/mysqlbackup \
 		${PERIODICS:C,^(.*)\.(.*)$,\2/\1,:S,^,etc/periodic/,} \
 		man/man1/mysqlbackup.1.gz
-PLIST_DIRS=	${PERIODICS:C,^(.*)\.(.*)$,etc/periodic/\2,:u} \
-		etc/periodic
 
 pre-install:
 	${REINPLACE_CMD} ${SUB_LIST:S,$,!g,:S,^, -e s!%%,:S,=,%%!,} \

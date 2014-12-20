@@ -22,8 +22,6 @@ MODULES=	colwidth confidence_higher confidence_lower correlation \
 PLIST_FILES+=	lib/mysql/plugin/udf_${MODULE}.so
 .endfor
 
-PLIST_DIRS=	lib/mysql/plugin
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
