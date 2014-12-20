@@ -23,7 +23,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/paypal-logo.png \
 		%%DATADIR%%/paypal.png \
 		%%DATADIR%%/splash.png
-PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="Clipgrab" "Download and convert videos from YouTube and etc" \
 		"${DATADIR}/icon.png" "${PORTNAME}" \
