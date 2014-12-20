@@ -46,7 +46,6 @@ FONTLIST=	NanumBrush \
 		NanumPen
 FONTFILES=	${FONTLIST:S/$/.${FONTTYPE}/} fonts.dir fonts.scale
 
-PLIST_DIRS=	${FONTSDIR}
 PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|}
 
 do-build:
