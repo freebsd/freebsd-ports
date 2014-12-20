@@ -27,7 +27,6 @@ PLIST_FILES=	bin/echinus \
 		etc/echinus/echinusrc \
 		man/man1/echinus.1.gz
 
-PLIST_DIRS=	etc/echinus
 SUB_FILES=	pkg-message
 
 post-patch:
