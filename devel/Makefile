@@ -4648,6 +4648,7 @@
     SUBDIR += scons
     SUBDIR += sdl12
     SUBDIR += sdl20
+    SUBDIR += sdl2pp
     SUBDIR += sdl_console
     SUBDIR += sdl_gnat
     SUBDIR += sdl_sge

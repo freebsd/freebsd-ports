@@ -1,0 +1,41 @@
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	sdl2pp
+PORTVERSION=	0.4.0
+CATEGORIES=	devel
+
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	C++11 bindings/wrapper for SDL2
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	AMDmi3
+GH_PROJECT=	libSDL2pp
+GH_COMMIT=	eea2b29
+
+USES=		compiler:c++11-lib cmake
+CMAKE_ARGS=	-DRUN_GUI_TESTS=OFF \
+		-DSDL2PP_WITH_WERROR=ON
+USE_SDL=	sdl2 image2
+
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == gcc
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
+.endif
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
+
+regression-test: build
+	cd ${WRKSRC} && ${DO_MAKE_BUILD} test
+
+.include <bsd.port.post.mk>
