@@ -16,12 +16,11 @@ DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 GH_ACCOUNT=	silentbicycle
 GH_PROJECT=	lua-mpd
 GH_TAGNAME=	v0.1
+GH_COMMIT=	ca32f43
 
 USES=		lua:51
 USE_GITHUB=	yes
 NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-lua-${PORTNAME}-ca32f43
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
