@@ -10,7 +10,7 @@ MASTER_SITES=	http://chaosophia.net/downloads/rssroll/ \
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	RSS collector in C
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \

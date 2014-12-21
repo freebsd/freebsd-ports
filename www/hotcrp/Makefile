@@ -18,7 +18,7 @@ USE_MYSQL=	server
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-LICENSE=	BSD
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 do-install:

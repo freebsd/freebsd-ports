@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	pelican
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.5.0
+PORTREVISION=	0
 CATEGORIES=	www textproc
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Static site generator written in Python
+
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}markdown>0:${PORTSDIR}/textproc/py-markdown \
@@ -30,10 +33,6 @@ OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 PYDISTUTILS_AUTOPLIST=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON=		yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	getpelican
-GH_COMMIT=	b35ce43
 
 .if ${PORT_OPTIONS:MTEST}
 BUILD_DEPENDS:=	${TEST_DEPENDS}

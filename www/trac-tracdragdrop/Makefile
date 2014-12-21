@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Provides extends attachments list of Trac
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 SVN_REV=	12822
 

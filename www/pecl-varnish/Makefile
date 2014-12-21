@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	jim@ohlste.in
 COMMENT=	Varnish cache extension
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/varnishd:${PORTSDIR}/www/varnish
 

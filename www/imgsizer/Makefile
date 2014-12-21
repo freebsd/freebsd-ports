@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.catb.org/~esr/imgsizer/ \
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Tool to autogenerate WIDTH and HEIGHT for IMG HTML tags
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 
 RUN_DEPENDS=	rdjpgcom:${PORTSDIR}/graphics/jpeg \
 		identify:${PORTSDIR}/graphics/ImageMagick

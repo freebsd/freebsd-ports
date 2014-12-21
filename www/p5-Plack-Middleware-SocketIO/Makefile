@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for Socket.IO Plack middleware
 
-LICENSE=	BSD
+LICENSE=	ART20
 
 RUN_DEPENDS=	\
 	p5-AnyEvent>0:${PORTSDIR}/devel/p5-AnyEvent \

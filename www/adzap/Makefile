@@ -10,7 +10,7 @@ MASTER_SITES=	http://adzapper.sourceforge.net/
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Filter out animated ad banners from web pages
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		perl5
 NO_BUILD=	yes

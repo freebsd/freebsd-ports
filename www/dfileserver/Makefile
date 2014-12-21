@@ -10,7 +10,7 @@ MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Compact webserver designed to make sharing files easy
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 PLIST_FILES=	bin/dfileserver
 

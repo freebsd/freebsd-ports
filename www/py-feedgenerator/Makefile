@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Standalone version of django.utils.feedgenerator
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six

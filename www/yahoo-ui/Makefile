@@ -15,7 +15,8 @@ DISTFILES=	yui_${DISTVERSION}r1.zip:main \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Yahoo! User Interface (YUI) Library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE MIT
+LICENSE_COMB=	multi
 
 USES=		zip
 

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Build data structures from CGI request parameters
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 

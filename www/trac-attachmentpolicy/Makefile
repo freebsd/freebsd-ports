@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Provides delete permission to Trac normal user
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 SVN_REV=	12775
 

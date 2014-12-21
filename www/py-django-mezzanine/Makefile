@@ -12,7 +12,7 @@ DISTNAME=	Mezzanine-${PORTVERSION}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Content management platform built using the Django framework
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}south>=0.7.3:${PORTSDIR}/databases/py-south \
