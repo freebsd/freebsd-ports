@@ -3,6 +3,7 @@
 
 PORTNAME=	cdrkit
 PORTVERSION=	1.1.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cdrkit.org/releases/ \
 		http://debburn.alioth.debian.org/
@@ -10,7 +11,9 @@ MASTER_SITES=	http://cdrkit.org/releases/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Command-line CD/DVD writing suite
 
-USES=		cmake iconv
+USES=		cmake iconv perl5 shebangfix
+USE_PERL5=	run
+SHEBANG_FILES=	3rd-party/dirsplit/dirsplit
 
 CONFLICTS=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
 
