@@ -3,7 +3,7 @@
 
 PORTNAME=	gcl
 PORTVERSION=	2.6.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	GNU
 
@@ -52,6 +52,7 @@ PLIST_FILES=	bin/gcl \
 		${FILES_LSP:S|^|lib/${DISTNAME}/lsp/|} \
 		${PCL_FILES:S|^|lib/${DISTNAME}/pcl/|} \
 		${FILES_UNIXPORT:S|^|lib/${DISTNAME}/unixport/|}
+PLIST_DIRS=	lib/${DISTNAME}/pcl
 
 ONLY_FOR_ARCHS=	amd64 i386
 
