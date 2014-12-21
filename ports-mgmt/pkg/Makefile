@@ -14,8 +14,6 @@ COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:xz uidfix
-
 # Disable CCACHE support because of the chicken/egg problem pkg should always
 # With no dependency at all
 NO_CCACHE=	yes
