@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-calc
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	math mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake pkgconfig tar:xz
-USE_GNOME=	glib20 gnomehier gtk20 intlhack libxml2
+USE_GNOME=	glib20 gtk20 intlhack libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk=2.0
 CPPFLAGS+=	-I${LOCALBASE}/include
