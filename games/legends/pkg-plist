@@ -32,9 +32,3 @@ bin/legends
 %%PORTDOCS%%%%DOCSDIR%%/default.keybinds.txt
 %%PORTDOCS%%%%DOCSDIR%%/linux.txt
 share/pixmaps/legends.ico
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/show
-@dirrm %%DATADIR%%/legends/prefs
-@dirrm %%DATADIR%%/legends
-@dirrm %%DATADIR%%/common
-@dirrm %%DATADIR%%
