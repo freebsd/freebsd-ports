@@ -3,7 +3,7 @@
 
 PORTNAME=	winefish
 DISTVERSION=	1.3.3
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	editors print
 MASTER_SITES=	http://download.berlios.de/winefish/ \
 		http://nivi.interfree.it/distfiles/winefish/
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-freedesktop_org-menu=${GNOME_LOCALSTATEDIR}/applications 
 		--with-icon-path=${GNOME_LOCALSTATEDIR}/pixmaps --disable-update-databases
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig desktop-file-utils shared-mime-info
-USE_GNOME=	libgnomeui gnomehier
+USE_GNOME=	libgnomeui
 USE_TEX=	latex
 
 OPTIONS_DEFINE=	CONTEXT VNTEX UNIKEY_GTK NLS DOCS

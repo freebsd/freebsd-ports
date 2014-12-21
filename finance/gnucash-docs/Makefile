@@ -4,6 +4,7 @@
 
 PORTNAME=	gnucash-docs
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/gnucash/${PORTNAME}/${PORTVERSION} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/ \
@@ -18,7 +19,7 @@ RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
 INSTALLS_OMF=	yes
 USES=		gmake
-USE_GNOME=	libxml2 gnomehier
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
