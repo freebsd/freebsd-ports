@@ -17,7 +17,7 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libspeex.so:${PORTSDIR}/audio/speex \
 		libgsm.so:${PORTSDIR}/audio/gsm
 
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64 armv6
 
 USE_AUTOTOOLS=	autoconf
 USES=		bison gmake
