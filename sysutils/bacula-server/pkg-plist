@@ -68,3 +68,4 @@ man/man8/btape.8.gz
 man/man8/btraceback.8.gz
 man/man8/bwild.8.gz
 man/man8/dbcheck.8.gz
+@dir(bacula,bacula,)  %%BACULA_DIR%%

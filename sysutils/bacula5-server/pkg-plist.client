@@ -25,7 +25,6 @@ sbin/bacula-fd
 @group bacula
 sbin/bconsole
 @group wheel
-@exec mkdir -p %%BACULA_DIR%%
-@dirrmtry %%BACULA_DIR%%
-@dirrmtry share/bacula
-@dirrmtry %%ETCDIR%%
+@dir(bacula,bacula,)  %%BACULA_DIR%%
+@dir share/bacula
+@dir(,bacula,) %%ETCDIR%%

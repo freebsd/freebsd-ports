@@ -12,7 +12,6 @@ man/man8/bacula-fd.8.gz
 man/man8/bconsole.8.gz
 sbin/bacula-fd
 @(,bacula,750) sbin/bconsole
-@exec mkdir -p %%BACULA_DIR%%
-@dirrmtry %%BACULA_DIR%%
-@dirrmtry share/bacula
-@dirrmtry %%ETCDIR%%
+@dir(bacula,bacula,)  %%BACULA_DIR%%
+@dir share/bacula
+@dir(,bacula,) %%ETCDIR%%
