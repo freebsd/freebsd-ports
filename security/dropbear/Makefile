@@ -15,16 +15,6 @@ USES=	gmake tar:bzip2
 
 USE_RC_SUBR=	${PORTNAME}
 
-PLIST_FILES=	bin/dbclient \
-		bin/dropbearconvert \
-		bin/dropbearkey \
-		sbin/dropbear \
-		man/man1/dbclient.1.gz \
-		man/man1/dropbearconvert.1.gz \
-		man/man1/dropbearkey.1.gz \
-		man/man8/dropbear.8.gz
-PLIST_DIRS=	etc/dropbear
-
 OPTIONS_DEFINE=	STATIC
 
 STATIC_LDFLAGS=	-static
