@@ -3,6 +3,7 @@
 
 PORTNAME=	shotwell
 PORTVERSION=	0.20.2
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
@@ -27,7 +28,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		librest-0.7.so:${PORTSDIR}/devel/librest
 
 USES=		shebangfix gettext desktop-file-utils gmake pkgconfig tar:xz
-USE_GNOME=	dconf gnomehier gtk30 gnomedocutils
+USE_GNOME=	dconf gtk30 gnomedocutils
 USE_SQLITE=	3
 USE_GSTREAMER1=	yes
 HAS_CONFIGURE=	yes
