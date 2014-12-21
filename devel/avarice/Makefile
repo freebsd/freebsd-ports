@@ -3,7 +3,7 @@
 
 PORTNAME=	avarice
 PORTVERSION=	2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,5 +15,6 @@ LICENSE=	GPLv2
 USES=		perl5 tar:bzip2
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_pathperl=${PERL}
 
 .include <bsd.port.mk>
