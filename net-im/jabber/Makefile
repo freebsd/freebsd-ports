@@ -3,7 +3,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	17
+PORTREVISION=	18
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/%SUBDIR%/
@@ -40,10 +40,15 @@ CPPFLAGS+=	$$(pth-config --cflags) \
 LDFLAGS+=	$$(pth-config --ldflags) \
 		-L${LOCALBASE}/lib
 
-SUB_FILES=	pkg-install pkg-deinstall pkg-message
+SUB_FILES=	pkg-message
 SUB_LIST=	JABBER_USER=${JABBER_USER} \
 		JABBER_GROUP=${JABBER_GROUP} \
 		JABBER_ETCDIR="${JABBER_ETCDIR}" \
+		JABBER_LOGDIR="${JABBER_LOGDIR}" \
+		JABBER_SPOOLDIR="${JABBER_SPOOLDIR}" \
+		JABBER_RUNDIR="${JABBER_RUNDIR}"
+PLIST_SUB=	JABBER_USER=${JABBER_USER} \
+		JABBER_GROUP=${JABBER_GROUP} \
 		JABBER_LOGDIR="${JABBER_LOGDIR}" \
 		JABBER_SPOOLDIR="${JABBER_SPOOLDIR}" \
 		JABBER_RUNDIR="${JABBER_RUNDIR}"
@@ -53,10 +58,10 @@ GROUPS=		${JABBER_GROUP}
 
 JABBER_USER=	jabber
 JABBER_GROUP=	jabber
-JABBER_ETCDIR=	"${PREFIX}/etc"
-JABBER_RUNDIR=	"/var/run/jabberd"
-JABBER_SPOOLDIR="/var/spool/jabberd"
-JABBER_LOGDIR=	"/var/log/jabberd"
+JABBER_ETCDIR=	${PREFIX}/etc
+JABBER_RUNDIR=	/var/run/jabberd
+JABBER_SPOOLDIR=/var/spool/jabberd
+JABBER_LOGDIR=	/var/log/jabberd
 
 .include <bsd.port.options.mk>
 
