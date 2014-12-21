@@ -2,6 +2,7 @@
 
 PORTNAME=	homebank
 PORTVERSION=	4.6.3
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libosp.so:${PORTSDIR}/textproc/opensp
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake pkgconfig shared-mime-info
-USE_GNOME=	gnomehier gtk20
+USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
