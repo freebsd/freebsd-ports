@@ -3,7 +3,7 @@
 
 PORTNAME=	texworks
 PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-r${VCS_REVISION}
@@ -45,6 +45,7 @@ DESKTOP_ENTRIES="TexWorks" \
 PLIST_FILES=	bin/texworks \
 		man/man1/texworks.1.gz \
 		share/pixmaps/TeXworks.png
+PLIST_DIRS=	lib/texworks
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
