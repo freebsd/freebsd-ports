@@ -75,5 +75,6 @@ sbin/dbcheck
 %%DATADIR%%/query.sql
 %%DATADIR%%/update_bacula_tables
 %%DATADIR%%/update_%%DBTYPE%%_tables
+@dir(bacula,bacula,)  %%BACULA_DIR%%
 @owner root
 @group wheel

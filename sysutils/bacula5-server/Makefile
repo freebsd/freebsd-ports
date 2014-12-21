@@ -3,7 +3,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	5.2.12
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -168,9 +168,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|fd_plugins.h|filed/fd_plugins.h|g' -e 's|dir_plugins.h|dird/dir_plugins.h|g' -e 's|stored.h|stored/stored.h|g' \
 		${WRKSRC}/src/tools/bpluginfo.c
 .endif
-
-pre-install:
-	${MKDIR} ${STAGEDIR}${BACULA_DIR}
 
 .if !target(post-install)
 post-install:
