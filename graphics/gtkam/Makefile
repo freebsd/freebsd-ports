@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkam
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexif-gtk.so:${PORTSDIR}/graphics/libexif-gtk \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 
 USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomehier gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

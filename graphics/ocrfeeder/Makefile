@@ -3,7 +3,7 @@
 
 PORTNAME=	ocrfeeder
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -24,7 +24,7 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${BUILD_DEPENDS}
 
 USES=		desktop-file-utils gettext gmake pkgconfig python tar:xz
-USE_GNOME=	gnomedocutils gnomehier gtk30 librsvg2 pygobject3
+USE_GNOME=	gnomedocutils gtk30 librsvg2 pygobject3
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
