@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides an XML-RPC interface to Trac
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 SVN_REV=	13203
 

@@ -11,7 +11,7 @@ DISTNAME=	WebHelpers-${PORTVERSION}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python helper functions for writing templates in web applications
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}routes>=1.1:${PORTSDIR}/www/py-routes \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:${PORTSDIR}/textproc/py-MarkupSafe

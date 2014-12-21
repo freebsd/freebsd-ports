@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Support for having child-tickets in Trac
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 

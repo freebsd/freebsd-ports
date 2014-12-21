@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Watchlist feature for wikis and tickets of Trac
 
-LICENSE=	BSD
+LICENSE=	GPLv3
 
 SVN_REV=	11526
 

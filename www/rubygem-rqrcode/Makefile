@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	Library for encoding QR Codes
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

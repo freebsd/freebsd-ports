@@ -12,7 +12,7 @@ DISTNAME=	django_evolution-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database schema evolution tool for the Django web framework
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.1.1:${PORTSDIR}/www/py-django14
 

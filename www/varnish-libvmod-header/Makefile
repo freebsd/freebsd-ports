@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	varnish-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for manipulation of duplicated headers
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/varnish/varnishapi.h:${PORTSDIR}/www/varnish \
 		rst2man:${PORTSDIR}/textproc/py-docutils
