@@ -8,6 +8,7 @@ lib/jabber/libjabberd.so
 lib/jabber/libjabberd.so.2
 lib/jabber/libjabberd.so.2.0.0
 lib/jabber/libjabberddialback.so
+lib/jabber/libjabberddialback.so.2
 lib/jabber/libjabberddialback.so.2.0.0
 lib/jabber/libjabberddnsrv.so
 lib/jabber/libjabberddnsrv.so.2
@@ -44,6 +45,6 @@ share/locale/nl/LC_MESSAGES/jabberd14.mo
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/mysql.sql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/jabber
-@dirrmtry include/jabber
+@dir %%JABBER_LOGDIR%%
+@dir(%%JABBER_USER%%,%%JABBER_GROUP%%,0700) %%JABBER_RUNDIR%%
+@dir(%%JABBER_USER%%,%%JABBER_GROUP%%,0700) %%JABBER_SPOOLDIR%%
