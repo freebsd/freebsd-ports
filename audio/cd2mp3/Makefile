@@ -3,7 +3,7 @@
 
 PORTNAME=	cd2mp3
 PORTVERSION=	0.82
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ \
@@ -15,6 +15,9 @@ COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		dagrab:${PORTSDIR}/audio/dagrab
 
+USES=		perl5 shebangfix
+USE_PERL5=	run
+SHEBANG_FILES=	cd2mp3
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cd2mp3
 
