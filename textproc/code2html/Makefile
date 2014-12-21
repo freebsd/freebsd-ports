@@ -3,6 +3,7 @@
 
 PORTNAME=	code2html
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF \
 		http://www.palfrader.org/code2html/all/
@@ -11,8 +12,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sourcecode to HTML converter
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	code2html
 
 PLIST_FILES=	bin/code2html man/man1/code2html.1.gz
 
