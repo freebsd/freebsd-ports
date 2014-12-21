@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rekall
-DISTVERSION=	1.1.0.beta
+PORTVERSION=	1.2.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
 		${PYTHON_PKGNAMEPREFIX}acora>=1.8:${PORTSDIR}/textproc/py-acora \
+		${PYTHON_PKGNAMEPREFIX}capstone>=0:${PORTSDIR}/devel/py-capstone \
 		${PYTHON_PKGNAMEPREFIX}codegen>=1.0:${PORTSDIR}/devel/py-codegen \
 		${PYTHON_PKGNAMEPREFIX}distorm>=0:${PORTSDIR}/devel/py-distorm \
 		${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:${PORTSDIR}/www/py-flask \
@@ -23,7 +24,7 @@ RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
 		${PYTHON_PKGNAMEPREFIX}gevent-websocket>=0.9.3:${PORTSDIR}/www/py-gevent-websocket \
 		${PYTHON_PKGNAMEPREFIX}ipython>=2.0.0:${PORTSDIR}/devel/ipython \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.3.1:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}pyelftools>=0.21:${PORTSDIR}/devel/py-pyelftools \
+		${PYTHON_PKGNAMEPREFIX}pyelftools>=0.22:${PORTSDIR}/devel/py-pyelftools \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2012:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}yaml>=2.10:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}yara>=0:${PORTSDIR}/security/py-yara
@@ -38,6 +39,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${CHMOD} -R a+rX ${WRKSRC}
 	@${REINPLACE_CMD} '/argparse/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} 's,styles.NumberFormat(,, ; s,format_code=\(.*\)),\1,' \
+		${WRKSRC}/rekall/plugins/renderers/xls.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
