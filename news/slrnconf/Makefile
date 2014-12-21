@@ -3,7 +3,7 @@
 
 PORTNAME=	slrnconf
 PORTVERSION=	0.8.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	news
 MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 
@@ -13,7 +13,8 @@ COMMENT=	Graphical configuration utility for the newsreader slrn
 BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
-USES=		perl5 tar:bzip2
+USES=		perl5 shebangfix tar:bzip2
+SHEBANG_FILES=	slrnconf.in
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
 OPTIONS_DEFINE=	DOCS
