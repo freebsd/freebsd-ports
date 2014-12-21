@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast-paced first-person-perspective online multiplayer game
 
-OPTIONS_DEFINE=	DOCS
-
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		makeself
@@ -30,6 +28,8 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 # Standard map pack used in official servers.
 MAP_PACK=	BTMappack-1.05.unf
 PLIST_SUB=	MAP_PACK="${MAP_PACK}"
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@cd ${WRKDIR} && ${TAR} xf legends.tar
