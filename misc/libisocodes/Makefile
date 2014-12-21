@@ -3,6 +3,7 @@
 
 PORTNAME=	libisocodes
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomehier introspection:build libxml2
+USE_GNOME=	glib20 introspection:build libxml2
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	VERSION=${PORTVERSION}

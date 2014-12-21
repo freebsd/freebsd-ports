@@ -3,7 +3,7 @@
 
 PORTNAME=	lybniz
 PORTVERSION=	1.3.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}/${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils
-USE_GNOME=	pygtk2 gnomehier
+USE_GNOME=	pygtk2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g'\

@@ -3,6 +3,7 @@
 
 PORTNAME=	terraform
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 DISTVERSIONPREFIX=	src-
 PORTREVISION=	3
 CATEGORIES=	misc gnome
@@ -20,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		pathfix gettext gmake pkgconfig tar:tgz
 USE_GCC=	yes
-USE_GNOME=	gnomehier libgnomeprintui libgnomeui
+USE_GNOME=	libgnomeprintui libgnomeui
 USE_AUTOTOOLS=	automake:env
 GNU_CONFIGURE=	yes
 
