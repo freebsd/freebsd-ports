@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	10.1.1
-PORTREVISION=	2
+PORTVERSION=	10.1.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	1a5ce04
+GH_COMMIT=	e4fa984
 
 USE_RC_SUBR=	cbsdd cbsdrsyncd
 
