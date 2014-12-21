@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	claroline
-PORTVERSION=	1.11.10
+PORTVERSION=	1.11.10.1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Claroline/Claroline_${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Claroline/Claroline_1.11.10
+DISTNAME=	${PORTNAME}-1.11.10-1
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source eLearning and eWorking platform
@@ -15,6 +16,8 @@ NO_BUILD=	yes
 USE_PHP=	mysql
 WRKSRC=		${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-message
+PLIST=		${WRKDIR}/plist
+CLARODIR=	www/claroline
 
 OPTIONS_DEFINE=		LDAP GD SSL
 OPTIONS_DEFAULT=	GD
@@ -33,15 +36,19 @@ USE_PHP+=	openssl
 USE_PHP+=	ldap
 .endif
 
+pre-install:
+	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
+	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
+	@${ECHO_CMD} "@mode 755" >> ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${CLARODIR}?g" >>${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${CLARODIR}?g" >> ${PLIST}
+	@${ECHO_CMD} "@mode" >> ${PLIST}
+	@${ECHO_CMD} "@group" >> ${PLIST}
+	@${ECHO_CMD} "@owner" >> ${PLIST}
+
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}' >>${TMPPLIST}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}' >>${PLIST}
 
 .include <bsd.port.mk>
