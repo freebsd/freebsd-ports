@@ -3,6 +3,7 @@
 
 PORTNAME=	rej
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CRITICAL
 
@@ -12,7 +13,7 @@ COMMENT=	Merges patch-rejects and runs a merge program to verify the changes
 USES=		shebangfix perl5
 NO_BUILD=	yes
 
-SHEBANG_FILES=	qp mp
+SHEBANG_FILES=	mp qp rej
 
 PORTDOCS=	CHANGELOG README vimrc
 PLIST_FILES=	bin/rej bin/rej-qp bin/rej-mp
