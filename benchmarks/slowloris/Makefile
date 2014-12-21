@@ -3,6 +3,7 @@
 
 PORTNAME=	slowloris
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
@@ -14,8 +15,9 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 
 NO_BUILD=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	slowloris.pl
 
 PLIST_FILES=	bin/slowloris
 
