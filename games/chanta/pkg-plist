@@ -12,7 +12,3 @@ bin/chanta
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/ima
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
